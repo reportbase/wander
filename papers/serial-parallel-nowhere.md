@@ -750,6 +750,24 @@ Near the corner they look alike. Far out, the sech bell halves every octave, the
 in every octave without end. The normal curve falls ever faster, and its far octaves vanish. So the normal curve has no
 horizon, and the parallel reader's bell does.
 
+**g is the sweep of v over a held h** (Tom, 6 October: "g … is the sweep of V over a held h. because it has two
+relations, it must be radial between 0 and PI/2. g=PI/2, then v is fully expressed. if g = 0, v is unexpressed?").
+This is §3.5's "g is the sweep" (R170) counted in radians: g = θ = atan(v/h) on [0, π/2], the corner at π/4. The
+share form, (2/π)·g on [0, 1], is the same sweep. It must be a turn because v/h and h/v are one relation from its two
+facings, and the one measure fair to both is an angle mirrored about the corner. What its ends mean depends on what
+is held:
+
+- **h held** (situations 3 and 4). With h fixed at 1, v climbs a vertical line from it and the ray to (1, v) turns.
+  g = 0 is v = 0: v unexpressed, home. g = π/4 is v = h, the corner. g = π/2 needs v unbounded: v fully expressed
+  only at the horizon, approached and never reached. Home is a limit too, so with h held both ends are approached.
+- **The whole held** (situations 1 and 2). With v² + h² = 1 the point runs round the circle. g = 0 is v = 0 and h = 1:
+  v unexpressed. g = π/2 is v = 1 and h = 0: v fully expressed. Both ends are reached.
+
+So "g = π/2, v fully expressed; g = 0, v unexpressed" holds exactly with the whole held. With h held it holds as the
+two limits, home and horizon. This is the circle and the hyperbola of "The relation forces the logarithm" once more.
+g is the turn, not the share of distance along the line from A to B: the two agree only at 0, at the corner and at
+the end (a quarter of the distance is 0.205 of the turn; "The first octave is half the distance").
+
 The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
 the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
 from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 between them.
