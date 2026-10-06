@@ -409,6 +409,10 @@ The situations are set by what the reader knows of the breadths, not by the worl
 direction: how far a thing reaches that way ("breadth means extent, not quantity", Sep 24). The world is breadth, always
 fully expressed whoever observes it (R124).
 
+*The clearest single picture of the five is the number line itself, laid on the unit line and on the quarter circle
+and compared ("The number line laid twice", below; Tom, 6 October: "This our best explanation of the situation yet,
+the number line itself.").*
+
 **The five, in brief** (6 October; Tom's list, gathered from the paragraphs below). The numbering is Tom's of 6
 October, and the whole paper uses it, except in quotations and in the earlier table below, kept as written. Tom, of
 1 and 2: "1 and 2 are mathmatical views, can be an equation or an array or similar." The 3d repository draws the five
