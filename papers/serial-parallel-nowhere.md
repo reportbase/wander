@@ -357,6 +357,26 @@ from 0 to 1 as pure distance. *The 90° turn*: one sweep is one quarter turn. *T
 same sweep again (Proposition 3.12). *The logarithmic spiral*: sweeps composed one after another (Proposition 3.13).
 Larger shapes compose from these and are not needed to understand the situations.
 
+**π/2 and 2/π, with 1 between them** (Tom, 6 October):
+
+> "parallel is pi/2 and serial is 2/PI. serial*parallel = 1. parallel 1.5, line = 1, serial = 0.633"
+>
+> "lets include 2/PI and pi/2 in this simplified framing. notice that this includes the radial turn. and 1 is
+> midpoint between them. the corner is also 1, where v = h. so a relation between two things automatically shoots you
+> into a radial system of measurement."
+
+Measured against the line (1), the sweep with its radial turn gives two numbers, each the other's reciprocal:
+
+- **π/2 = 1.5708, parallel**: the quarter turn's arc against the line, the sweep counted whole.
+- **2/π = 0.6366, serial**: the arc projected onto the line one point at a time, the mean of sin θ over the quarter
+  turn (Buffon's needle; the Cauchy–Crofton formula).
+- **1, the line, between them**: their product is 1, so on the logarithmic scale, the sweep's own measure, 1 is exactly
+  their middle (ln π/2 = +0.452, ln 2/π = −0.452). It is the flip s ↦ 1/s once more, parallel and serial its two facings.
+
+The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
+the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
+from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 between them.
+
 *A reading* (Claude's, unruled): the radial turn needs a pivot to turn about, a standpoint, and pure distance does not.
 So the sweep as a turn (0 to π/2) is the situated reader's (3, 4), and the sweep as distance (0 to 1) is the line the
 equations of 1 and 2 hold whole.
