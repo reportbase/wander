@@ -38,37 +38,42 @@ block only puts them in order.*
 | reading | s = v/h on [0, ∞). The flip s ↔ 1/s reads the same relation from the other facing | §1, §3.2 |
 | corner | s = 1, v = h: the flip's one fixed point; g = ½ (in 1 and 2, 45°) | §3 |
 | sweep | the running share g of the relations, from 0 (v unexpressed) to 1 (v fully expressed). Each relation s takes the share ds/(1 + s²); their total is π/2, and g is the running share over that total (R170, "g is the sweep"). The flip sends g to 1 − g. In situations 1 and 2, with both breadths held, the same g is an angle, θ = (π/2)·g, and 90° is meaningful there; in 3 and 4 nothing turns, and g is a share | §2.1, §3.5 |
-| octave | a sweep entered again, with its own home, corner and far wall. In place, 2h: a front half of one h, proportional, and a back half of one h holding the rest, in which the next octave nests (§3.3, "The octave as 2h, in place"). Laid side by side round its own corner, 1/r to r, it is one quarter turn, whatever the ratio r (Proposition 3.12) | §3.3, Proposition 3.12 |
-| recursion | octaves within octaves: each level the same sweep again | §3.3, Proposition 3.11; "Recursion, after the corner" |
+| level | a sweep entered again, with its own home, corner and far wall. In place, 2h: a front half of one h, proportional, and a back half of one h holding the rest, in which the next level nests (§3.3, "The level as 2h, in place"). Laid side by side round its own corner, 1/r to r, it is one quarter turn, whatever the ratio r (Proposition 3.12) | §3.3, Proposition 3.12 |
+| recursion | levels within levels: each level the same sweep again | §3.3, Proposition 3.11; "Recursion, after the corner" |
 | depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
-| continuous sweep, spiral | the octaves drawn. Unwrapped, one turn running on, octave into octave with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
+| continuous sweep, spiral | the levels drawn. Unwrapped, one turn running on, level into level with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
 
-**Units: a doubling, a level, and the ratio between levels** (Tom, 6 October, choosing between the two spacings: "the first is simpler, go with that.")
+**Units: a doubling, a level, and dyadic** (Tom, 6 October: "the first is simpler, go with that"; "we don't need to
+use octave, its just a place holder"; "level and dyadic, go ahead").
 
-- **A doubling** is v/h × 2.
-- **A level, the octave**, is one octave of 2h in place (§3.3, "The octave as 2h, in place"): home, corner, far wall. Its
-  front half, one h, is proportional and seen; its back half, one h, holds the rest, and the next level nests there.
-  Successive corners are **one doubling apart**: v/h = 1, 2, 4, 8, …; each level's front half past the reader's
-  corner is one doubling (1–2, 2–4, …).
-- **The ratio between levels** is therefore 2 in this layout. Whether 2 is forced, or set by what is read, is the open
-  question (below, "Central result, and the open question").
+- **A doubling** is v/h × 2; a halving, v/h ÷ 2. A **dyadic** step is one of either.
+- **A level** is the unit of the reading: home, corner, far wall, one sweep, g from 0 to 1. Laid in place it is 2h
+  (§3.3, "The level as 2h, in place"): a front half of one h, proportional and seen, and a back half of one h holding
+  the rest, in which the next level nests. The word says nothing about the ratio between levels.
+- **The ratio between levels** is set by one rule of nesting: *the next level is exactly the parent's back half*.
+  The corner bisecting the level is proved (the halves are equal); that the next level fills the whole back half is
+  the layout's rule, not a theorem. With that rule the corners fall one doubling apart, v/h = 1, 2, 4, 8, …, and the
+  levels are **dyadic**. A next level filling another share of the back half would give another ratio.
+- **The open question** is whether a reader's levels are dyadic: whether a reader uses that rule of its own, or
+  whether what it reads sets the ratio ("Central result, and the open question", below). Laid side by side round their
+  corners (Proposition 3.12), dyadic levels are pieces with r = √2, q = r² = 2.
 
-This replaces R172's octave with two facings, ½c to 2c round a corner c (×4, corners at 4ⁿh), as the paper's unit.
-Where §3.3–§3.8 and §14 speak of that octave, its edges ½h and 2h, or corners at 4ⁿh, read them through this block: the
-stretch from ½h to 2h is the end of the reader's proportional front and the first level past its corner, and the
-corners are at 2ⁿh. Laid side by side round their corners (Proposition 3.12), the paper's levels are pieces with
-r = √2, so that q = r² = 2.
+"Octave" was the paper's placeholder for a level, and in older text for a doubling. The paper's own text now says
+"level"; "octave" remains in quotations, in the musical octave, and in R172's **octave with two facings**, ½c to 2c
+round a corner c (×4, corners at 4ⁿh), which this block replaces as the paper's unit. Where older passages give that
+unit, its edges ½h and 2h, or corners at 4ⁿh, read them through this block: the stretch from ½h to 2h is the end of the
+reader's proportional front and the first level past its corner, and the corners are at 2ⁿh.
 
 Two measures of one sweep, for the situated readers (§2.1):
 
 - **the fisheye**, the running total of the turn, r = θ (the serial reader);
-- **the bell**, every relation's share at once, ½·sech(ln s) on the octave axis (the parallel reader).
+- **the bell**, every relation's share at once, ½·sech(ln s) on the log axis (the parallel reader).
 
 The running area under the bell is the fisheye's radius. That identity is standard mathematics, since the Gudermannian
 is the running integral of sech. What is new is the reading: which reader holds which.
 
 Where older text says "sweep" without qualification, it means the row above: the reading as a turn, one side, 0 to π/2.
-"Each octave is a sweep" means each octave is that same object again, over its own window.
+"Each level is a sweep" (older text: "each octave") means each level is that same object again, over its own window.
 
 **How the parts depend on each other.**
 
@@ -93,7 +98,7 @@ computed exactly                       the fisheye (serial), the bell (parallel)
    │                                   │
    ▼                                   ▼
 proportional on both sides of the      proportional before the corner,
-corner. 1: no depth. 2: depth, the     octaves past it: recursion forced by
+corner. 1: no depth. 2: depth, the     levels past it: recursion forced by
 shape's difference from the circle,    the horizon, without end, every level
 held level by level, stopping where    alike; no depth, since the shape is
 nothing is left                        not known
@@ -103,7 +108,7 @@ nothing is left                        not known
 each level the same sweep, with its own home, corner and wall
                      │
                      ▼
-the octaves drawn: one continuous sweep; wrapped, a logarithmic spiral
+the levels drawn: one continuous sweep; wrapped, a logarithmic spiral
                      │
                      ▼
 open: what fixes the ratio between rungs (the 2), which is the spiral's pitch
@@ -113,7 +118,7 @@ open: what fixes the ratio between rungs (the 2), which is the spiral's pitch
 
 | level | what | standing |
 |---|---|---|
-| the relation | the reading, the flip, the corner; the corner bisects every octave; each octave one quarter turn, for every ratio; the spiral form | **proved** (§3; Propositions 3.2(b), 3.12, 3.13), on the premises named |
+| the relation | the reading, the flip, the corner; the corner bisects every level; each level one quarter turn, for every ratio; the spiral form | **proved** (§3; Propositions 3.2(b), 3.12, 3.13), on the premises named |
 | the situated reader | one breadth known gives the horizon, the fisheye and the bell; the corner approached, never found | **proved** as mathematics (§2.1); that a reader *is* such a thing is the paper's proposal |
 | recursion | the same sweep at every level; depth beats breadth; cost follows the shape | **ruled** where it rests on (R) (R172, R175, R180); **measured** on shapes (NST, the 3d bench, "Recursion, after the corner"); forced, far out, for a finite reader facing a horizon (`plans/resolution-recursion.md`, unruled) |
 | the ratio between rungs | why 2 | **open**: not derived; the runs so far found it set by the builder's rule or by the scene (below) |
@@ -126,12 +131,14 @@ open: what fixes the ratio between rungs (the 2), which is the spiral's pitch
 *Split, 6 October* (Tom: "all three", taking a review's advice). The hypothesis as promoted holds two claims of
 different standing, as the correction below found. They are now stated apart:
 
-> **Central result.** h is the front, proportional half of the reader's octave: the corner divides the octave exactly
-> in half, for every ratio between rungs. Proved, on R162 (Proposition 3.2(b) in the octave's place); no run needs to
-> test it.
+> **Central result.** The corner bisects the reader's level: it sits at g = ½ of the level's sweep, and at the middle
+> of the level in place, for every ratio between levels. Proved, on R162 (Proposition 3.2(b) in the level's place); no
+> run needs to test it. The front half is the part read in h's. Laid in place with that front half as one h, the level
+> is 2h; that is the layout's choice of scale, not a further theorem.
 >
-> **Central open question.** What fixes a reader's ratio between rungs? The hypothesis says 2, so that the octave is 2h.
-> Nothing has derived it. The runs so far (HRT; the 3d bench) found the ratio set by the builder's rule or by the
+> **Central open question.** What fixes the ratio between a reader's levels: are they dyadic? The hypothesis says 2,
+> which is the rule that each level nests in the whole back half of the last ("Units", at the opening). Nothing has
+> derived that rule. The runs so far (HRT; the 3d bench) found the ratio set by the builder's rule or by the
 > scene. A test must find what fixes it without the builder choosing it and without the shape's own scales choosing it.
 
 The hypothesis as promoted, with its history, is kept below as written.
@@ -142,27 +149,27 @@ The hypothesis as promoted, with its history, is kept below as written.
 
 **What follows if it holds:**
 
-- Every reader builds its geometry from its own h. That includes every dweller in *Launch from Somewhere*, whose h is half of the octave it lives in.
+- Every reader builds its geometry from its own h. That includes every dweller in *Launch from Somewhere*, whose h is half of the level it lives in.
 - A reader knows its whole octave by doubling its h, and needs nothing from the level above.
-- Every nested octave is the same object at a smaller h. Depth (R180) is then h's nested inside h's.
+- Every nested level is the same object at a smaller h. Depth (R180) is then h's nested inside h's.
 - A format holding depth (R182) needs each nested row to carry only its own h.
 
 **Status: consistent with everything built, and not yet tested.**
 
-- `wander/depth/nest.py` runs exactly this. On the front half of an octave the reading is ρ = f/½, counting h's from home; on the back half it is ρ = ½/(1 − f), measured against the far wall.
+- `wander/depth/nest.py` runs exactly this. On the front half of a level the reading is ρ = f/½, counting h's from home; on the back half it is ρ = ½/(1 − f), measured against the far wall.
 - The nesting round-trips to machine precision, and the game lays its screen as 2h.
 - But all of these were laid out this way, so agreement with them is not evidence. The hypothesis needs a test from something that was not built to assume it. No such test has been designed yet; finding one is the first job. (Refined below: the hypothesis follows from R180, so the test needed is a test of the recursion.)
 
-**Why it holds, if the recursion holds** (derivation, 5 Oct 10:02; arithmetic only). Take a reader in an octave from a to 2a, with place f running from 0 at home to 1 at the far wall.
+**Why it holds, if the recursion holds** (derivation, 5 Oct 10:02; arithmetic only). Take a reader in a level from a to 2a, with place f running from 0 at home to 1 at the far wall.
 
-1. The reader reads the front of its octave as v/h, counting h's from home, and the back as h/v, counting back from the far wall.
-2. Swapping v/h for h/v reads the same octave from the other end. In place terms, f becomes 1 − f.
+1. The reader reads the front of its level as v/h, counting h's from home, and the back as h/v, counting back from the far wall.
+2. Swapping v/h for h/v reads the same level from the other end. In place terms, f becomes 1 − f.
 3. The corner, v = h, is the point the swap leaves where it is. The only place with f = 1 − f is f = ½.
-4. So the front half is one h, and the octave is 2h. That is the hypothesis.
+4. So the front half is one h, and the level is 2h. That is the hypothesis.
 
-With a fixed h (candidate (c)), unless h happens to equal half the octave the reader stands in, the swap no longer maps the octave onto itself: the corner sits off-centre and the halves are unequal. Then the octave's own octaves do not repeat the parent's layout, and the nesting of R180 breaks.
+With a fixed h (candidate (c)), unless h happens to equal half the level the reader stands in, the swap no longer maps the level onto itself: the corner sits off-centre and the halves are unequal. Then the level's own levels do not repeat the parent's layout, and the nesting of R180 breaks.
 
-**So the central hypothesis follows from two things already held:** the corner as the fixed point of the swap (ordinary arithmetic), and R180, every octave holding the same sweep again. Candidate (c) amounts to a reader with no recursion.
+**So the central hypothesis follows from two things already held:** the corner as the fixed point of the swap (ordinary arithmetic), and R180, every level holding the same sweep again. Candidate (c) amounts to a reader with no recursion.
 
 **Consequence for testing.** Building readers in simulation cannot decide between the hypothesis and (c), since the builder chooses. Testing the hypothesis means testing R180: finding an independent fact, not built to fit, that only a nesting reader explains.
 
@@ -170,25 +177,25 @@ With a fixed h (candidate (c)), unless h happens to equal half the octave the re
 - An unchecked candidate is how people place numbers on a line: proportional for familiar numbers, compressed beyond them, with the switch point moving as the familiar range grows.
 
 **Standing after the shape and signal runs (5 October, afternoon; §6.4).** The recursion the hypothesis rests on now has support from shapes, in two forms:
-- depth held in nested octaves keeps a reader's error flat out to 128 h, where one sweep's grows 23-fold;
+- depth held in nested levels keeps a reader's error flat out to 128 h, where one sweep's grows 23-fold;
 - standpoints nested inside standpoints reach hidden sides that the same number of readers at one level never reaches.
 
 Neither tests the 2:
-- the nested octaves were laid as doublings from the start;
-- the nested standpoints used exact distances and no octaves;
+- the nested levels were laid as doublings from the start;
+- the nested standpoints used exact distances and no levels;
 - on signals every reader held the same h, and the hand-offs followed the signal's crest spacing.
 
-Nesting itself cannot single out 2: an address scheme built on tripling round-trips as exactly and nests as well. **The 2 comes from the corner sitting at the middle of the octave under the swap, so a test of it has to look at where the corner falls, not at whether nesting works.**
+Nesting itself cannot single out 2: an address scheme built on tripling round-trips as exactly and nests as well. **The 2 comes from the corner sitting at the middle of the level under the swap, so a test of it has to look at where the corner falls, not at whether nesting works.**
 
 *Corrected* (6 October, the audit of Part I, `plans/part-one-audit.md`; Claude's reading, unruled). The derivation above
 does not single out 2 either. Its steps 1–4 never use "an octave from a to 2a": they show that the corner is the fixed
-point of the swap in the place f, so f = ½, and that holds for an octave of any ratio r between rungs. For an octave
+point of the swap in the place f, so f = ½, and that holds for a level of any ratio r between rungs. For a level
 with two facings from c/r to rc, the one projective map sending 1/r, 1 and r to 0, 1 and ∞ is ρ = (rs − 1)/(r − s); it is
 fair to the facings (ρ(1/s) = 1/ρ(s)) and puts the corner at g = ½ for r = 2, 3, φ and 10 alike. So the hypothesis holds
 two claims of different standing:
 
-- **The corner divides the reader's octave in half**: h is the octave's front half, "2h" its two halves. Proved, on
-  R162 (it is Proposition 3.2(b) in the octave's place), for every ratio between rungs. No run needs to test it.
+- **The corner divides the reader's level in half**: h is the level's front half, "2h" its two halves. Proved, on
+  R162 (it is Proposition 3.2(b) in the level's place), for every ratio between rungs. No run needs to test it.
 - **A reader's ratio between rungs is 2.** Not derived. §3.3 says the same: "The doubling is the reader's ratio between
   rungs, not the geometry's" (*The Radix* §5; R176). This is the part the runs above and below ask about, and the open
   question is sharper put as: *what fixes a reader's ratio between rungs?*
@@ -213,9 +220,9 @@ rule. The 3d bench's finding that the best ratio follows the scene points the sa
 
 | candidate | what it conflicts with |
 |---|---|
-| (a) h is the whole octave, with the corner at an edge | Leaves no inverted side inside the octave. That conflicts with near and far being one geometry, read from either side of the corner (§3.2). |
+| (a) h is the whole level, with the corner at an edge | Leaves no inverted side inside the level. That conflicts with near and far being one geometry, read from either side of the corner (§3.2). |
 | (b) h is only the corner, a mark with no extent | Loses the count. "Corner one h, horizon beyond any count" (1 Oct) needs h to have a size. |
-| (c) h is a fixed capacity of the reader, the same wherever it stands | Differs from the hypothesis testably. Under the hypothesis, a reader's h changes with the octave it stands in; under (c) it does not. This is the candidate a test should aim at. |
+| (c) h is a fixed capacity of the reader, the same wherever it stands | Differs from the hypothesis testably. Under the hypothesis, a reader's h changes with the level it stands in; under (c) it does not. This is the candidate a test should aim at. |
 
 What h is not: a special kind of quantity. It is the side whose breadth the reader knows (1 October), privileged by its role.
 
@@ -263,15 +270,15 @@ home. Past the corner, a value is in terms of v's unknown breadth, so in plain p
 anything done with it. What is defined there is logarithmic in h, a count of doublings, and within each doubling the
 reading is plain proportion again. (*Revised, 6 October:* the paper's octave is now the level of 2h, corners one
 doubling apart, 1, 2, 4, …; see "Units" at the opening. The rest of this paragraph is R172's earlier unit.) A situated reader stands in one octave with two facings, ½h to 2h, the corner in its
-middle; at its edges, ½h and 2h, its own reading starts at 0 and runs without end. Every octave is such a sweep, with its corner in
-its middle, the next corners at ¼h and 4h, and the octaves run on in halvings toward home and doublings toward the
+middle; at its edges, ½h and 2h, its own reading starts at 0 and runs without end. Every level is such a sweep, with its corner in
+its middle, the next corners at ¼h and 4h, and the levels run on in halvings toward home and doublings toward the
 mathematical horizon: side by side they add, and each divides into octaves again, without end (§3.3, R163, R172). The back side, a run
-of such octaves, is the long tail. In an evenly spread world exactly half the readings fall on each side. The near half fills the front side
+of such levels, is the long tail. In an evenly spread world exactly half the readings fall on each side. The near half fills the front side
 almost evenly; the far half is the long tail, which has no average in proportion (the Cauchy's missing mean) and is
 orderly in doublings, halving with each one. Each register holds the half where the other fails. Since a reader cannot
 read the unknown breadth, only relations between readings past the corner can be free of it, and those are of two kinds
-(Proposition 3.4): differences, which make the register a logarithm, the count of octaves; and ratios, which make it a
-power, bounded only as the share h/v. The back side holds both, the count across octaves and the share within one.
+(Proposition 3.4): differences, which make the register a logarithm, the count of levels; and ratios, which make it a
+power, bounded only as the share h/v. The back side holds both, the count across levels and the share within one.
 The share of each reading, v as a share of h before the corner, ends at the corner (Corollary 3.5); past it, read the
 other way, it is h as a share of v, so that over the whole reading the share is the smaller part over the larger
 (Corollary 3.5(b)). g, a placeholder until now, is the sweep itself: the quarter turn written on [0, 1], 0 at pure
@@ -427,7 +434,7 @@ equal or not; with v not known, 3 or 4, as the reader stands outside or inside; 
   is every relation, summed"; "The parallel reader's bell"). Its measure, θ/sin θ, approaches the line, 1, from
   above.
 - **4. Serial, inside.** A reader inside, one part among others, taking the rest one point at a time. Its view is
-  the fisheye, the running total of the same bell: the corner the ring halfway out, the octaves crowding toward the
+  the fisheye, the running total of the same bell: the corner the ring halfway out, the levels crowding toward the
   rim ("The situated reader's fisheye"). Its measure, sin θ/θ, approaches 1 from below, toward 2/π at the limb.
 
 What 3 and 4 share, and 1 and 2 do not: **a horizon** (the line approached from either side, never reached: "The
@@ -442,19 +449,19 @@ proportional. in situation 1 and 2, it is proportional on both sides of the corn
 |---|---|---|---|---|
 | 1 | proportional | proportional, from the known far wall | none: the shape is the circle | none |
 | 2 | proportional | proportional, from the known far wall | the shape's difference from the circle | holds the depth, level by level, and stops where none is left |
-| 3, 4 | proportional | octaves, counted by doublings toward the horizon | none: the shape is not known | past the corner only: forced by the horizon, without end, every level the same plain sweep. Before the corner, none: the reader sees the front side and reads it in one proportional piece |
+| 3, 4 | proportional | levels, counted by doublings toward the horizon | none: the shape is not known | past the corner only: forced by the horizon, without end, every level the same plain sweep. Before the corner, none: the reader sees the front side and reads it in one proportional piece |
 
 One fact decides the two sides: whether v's far end is known. Before the corner v is counted in h's, so every
 situation reads in proportion. Past it, in 1 and 2, v is known and the back side has a far wall, read in proportion from
 that wall (R184: "situation 1 and 2 would be proportional, all the way through the octave", "not fractal"). In 3 and 4
-it has no end, and the only count toward the horizon is by doublings: the octaves, the logarithm and the spiral (R150,
+it has no end, and the only count toward the horizon is by doublings: the levels, the logarithm and the spiral (R150,
 the hybrid; R176). So depth and recursion come apart: depth is *what* is held, the difference from the circle, and
-needs the shape known; recursion is *how* a reading is held, octave by octave. In 2 recursion holds depth; in 3 and 4 it
+needs the shape known; recursion is *how* a reading is held, level by level. In 2 recursion holds depth; in 3 and 4 it
 holds none, which may be why no rung is preferred there (Claude's reading, unruled). The world a situated reader
 faces is itself a shape, so its arrivals carry depth; a reader that knows only h cannot tell it from scale (open).
 
 **The circle needs no recursion** (Tom, 6 October: "the circle does not need recursion. its handled in the first
-octave."). The circle is held whole in the first octave; nothing is left for a second level to hold. So the 129 sweeps
+octave."). The circle is held whole in the first level; nothing is left for a second level to hold. So the 129 sweeps
 reported for the library circle (§3.3, "Recursion, after the corner", point 4) cannot come from the circle's own shape.
 *Checked* (Claude, 6 October, by running the drawing tool's lab, `draw.html?lab=dwn`, from the draw repository; the
 format paper's "Entering only where needed"): the 129 reproduces (10, 36, 60 and 129 sweeps at τ = 10⁻³ … 10⁻⁶). The
@@ -521,7 +528,7 @@ reccursion."
 *Revised, 6 October* (Tom, later the same day: "this is situation 1 and 2. recursion is not limited to situations 3 and
 4", of the project's findings on recursion over shapes). Situations 1 and 2 recurse too. The nested readers over a known
 shape hold, level by level, the residual the levels above left: one sweep for the shape's departure from the reader's
-unit circle, and then an octave entered only where something is left (the nested fisheye lab, NST; v-and-h item 387;
+unit circle, and then a level entered only where something is left (the nested fisheye lab, NST; v-and-h item 387;
 the format paper's depth, §2.8; the strange tier, STR). That is recursion with the shape known. What situations 1 and 2
 lack is the horizon, and so the recursion a horizon forces. A reading from Claude, unruled: two causes of the same
 recursion. **On a known shape (1, 2), depth follows the shape's detail and stops where nothing is left. Facing a horizon
@@ -531,7 +538,7 @@ and 4 is recursion without depth ("Proportion, depth and recursion, by situation
 "The circle, k = 0" above describes how the reading grows per turn, not whether it recurses.
 
 *Angles, and where they belong* (Tom, 6 October: "probably better to not explain the sweep in terms of angles"; "however situation 1 and 2 can be explained in terms of angles though, and i think 90 degrees is meaningful in 1 and 2.") In the paragraphs that follow, written the same day, the sweep of the situated
-readers (3 and 4) is often given in angles: the corner at 45°, an octave as a quarter turn, rings in degrees. For 3 and
+readers (3 and 4) is often given in angles: the corner at 45°, a level as a quarter turn, rings in degrees. For 3 and
 4, read each angle as a share of the sweep: g = angle/(π/2), so 45° is g = ½, the corner, and "a quarter turn" is one
 whole sweep, 0 to 1. Nothing turns in a situated observation. In 1 and 2, with the whole held, the angle is meaningful
 as it stands: v and h are held as two breadths at right angles, and 90° is the angle between them. The fisheye and the
@@ -563,7 +570,7 @@ situations of their own, outside and inside. The paper's own text was converted 
 rulings of Appendix A keep their own numbers; read them through this table.
 
 **The core, in four terms.** *The sweep*: any two points A and B, from 0 to π/2 as a turn (with the radial turn) or
-from 0 to 1 as pure distance. *The 90° turn*: one sweep is one quarter turn. *The octave*: a sweep; every octave the
+from 0 to 1 as pure distance. *The 90° turn*: one sweep is one quarter turn. *The level*: a sweep; every level the
 same sweep again (Proposition 3.12). *The logarithmic spiral*: sweeps composed one after another (Proposition 3.13).
 Larger shapes compose from these and are not needed to understand the situations.
 
@@ -632,8 +639,8 @@ Halve the sweep and each half turns less, so its arc and its line come closer; h
 | 8 | 11.25° | 1.0065 | 0.9936 | ×4.05 |
 | 64 | 1.41° | 1.0001 | 0.9999 | ×4.00 |
 
-Each level of the recursion, one more octave in, brings both measures four times closer to the line, and no level
-reaches it. So the octaves are the steps by which a situated reader closes on the breadth it cannot hold, and the line,
+Each level of the recursion, one more level in, brings both measures four times closer to the line, and no level
+reaches it. So the levels are the steps by which a situated reader closes on the breadth it cannot hold, and the line,
 1, is the limit they head for: the horizon. Situations 1 and 2 hold the line; 3 and 4 approach it, recursively.
 
 This is Archimedes' method for π (*Measurement of a Circle*), described differently: a polygon inside the circle from
@@ -660,18 +667,18 @@ Measured against the line (1), the sweep with its radial turn gives two numbers,
 **π/2 is every relation, summed** (Tom, 6 October: "PI/2 is also the sum of all the ways v and h can be related.").
 Every relation v/h is a ratio s on [0, ∞), and each takes a share of the turn, ds/(1 + s²); summed over all of them,
 ∫₀^∞ ds/(1 + s²) = π/2. The share is the same for s and for 1/s, so the corner halves the total exactly: π/4 for the
-front side (Leibniz's 1 − ⅓ + ⅕ − …, §3.2) and π/4 for the back side, whose octaves give 18.4°, 12.5°, 6.9°, 3.6°, … and
+front side (Leibniz's 1 − ⅓ + ⅕ − …, §3.2) and π/4 for the back side, whose levels give 18.4°, 12.5°, 6.9°, 3.6°, … and
 sum to 45°. Counting the hemisphere at once, the parallel reader counts every relation at once: π/2.
 
-**The first octave is half the distance** (Tom, 6 October: "first octive is 1/2 the distance, which is the same as
+**The first level is half the distance** (Tom, 6 October: "first octive is 1/2 the distance, which is the same as
 saying v/h=1"; and "octives and logrithmic spirals are the same thing"). Read the sweep from A to B as distance: a point
 a share t of the way splits it into v = t and h = 1 − t, so v/h = t/(1 − t). At t = ½, v = h: the corner, 45°, and the
 one point within the sweep where the share of distance and the share of turn agree (both ½). Halving again toward
 either end, t = ¼, ⅛, 1/16, …, gives v/h = 1/3, 1/7, 1/15, …: each step doubles the whole over the part, (v + h)/v = 2,
-4, 8, 16, …, so each is an octave. The two measures part from the second octave on, and the share of distance over the
+4, 8, 16, …, so each is a level. The two measures part from the second level on, and the share of distance over the
 share of turn climbs from 1 toward π/2 without arriving (checked; `plans/spiral/approach.py` has the like tables):
 
-| octave | share of distance t | v/h | (v + h)/v | turn | share of turn g | t/g |
+| level | share of distance t | v/h | (v + h)/v | turn | share of turn g | t/g |
 |---|---|---|---|---|---|---|
 | 1 | ½ | 1 | 2 | 45° | 0.500 | 1 |
 | 2 | ¼ | 0.333 | 4 | 18.4° | 0.205 | 1.22 |
@@ -681,19 +688,19 @@ share of turn climbs from 1 toward π/2 without arriving (checked; `plans/spiral
 | 8 | 1/256 | 0.004 | 256 | 0.2° | 0.0025 | 1.56 |
 | deeper | → 0 | | | | | → π/2 |
 
-Read as the whole sweep, the octaves get less and less of the turn. Read each as a sweep of its own, as §3.3 does
+Read as the whole sweep, the levels get less and less of the turn. Read each as a sweep of its own, as §3.3 does
 (Proposition 3.11), each gets one quarter turn, and the distance halves at every quarter: t = 2⁻ⁿ at Θ = n·π/2. That is a
-logarithmic spiral, here with q = 2 and k = ln 2/(π/2) ≈ 0.441. So the octave and the logarithmic spiral are one thing:
-an octave is a quarter turn of the spiral, and the spiral is the octaves drawn (Proposition 3.13). The ratio per octave
+logarithmic spiral, here with q = 2 and k = ln 2/(π/2) ≈ 0.441. So the level and the logarithmic spiral are one thing:
+a level is a quarter turn of the spiral, and the spiral is the levels drawn (Proposition 3.13). The ratio per level
 sets the pitch; the quarter turn is the same for every ratio (Proposition 3.12).
 
 **One continuous sweep** (Tom, 6 October: "they don't need to spiral, it could be just one continuous sweep, one
-octave leading into the next continuously"). The spiral is a drawing, not the structure: it wraps the turn round a
+level leading into the next continuously"). The spiral is a drawing, not the structure: it wraps the turn round a
 centre and draws the reading as the radius. Unwrapped, the turn Θ simply runs on, and the reading is one sweep against
-ln s, every quarter turn an octave, with no break at the joins. Checked for the projective octaves of Proposition 3.12
+ln s, every quarter turn a level, with no break at the joins. Checked for the projective levels of Proposition 3.12
 (r = 2, 3 and φ): the turn is continuous across every join, and so is its rate per unit of ln s, which is lowest at the
 join, r/(r² − 1) on both sides (⅔ for r = 2), and highest at each corner, (r + 1)/(2(r − 1)) (1.5 for r = 2). So
-one octave leads into the next without a jump or a kink; the projective sweep only runs faster through its corners and
+one level leads into the next without a jump or a kink; the projective sweep only runs faster through its corners and
 slower through its joins, which is the wobble W of Proposition 3.13. The logarithmic reading runs at one even rate
 throughout, (π/2)/ln q.
 
@@ -726,7 +733,7 @@ distance, ds/(1 + s)². Summed, ∫₀^∞ ds/(1 + s)² = 1. Along the sweep the
 
 At the ends, where one breadth dominates, the sweep and the line agree. At the corner they are furthest apart: the arc
 stands furthest off the line there, and the sweep runs twice the line's rate. The excess lies mostly about the corner,
-54% of it within the octave from ½ to 2 and 97% within 1/10 to 10. So the corner is where a relation is most a turn
+54% of it within the level from ½ to 2 and 97% within 1/10 to 10. So the corner is where a relation is most a turn
 and least a distance. By symmetry, half the turn still meets half the line there; their shares part most off the
 corner, by 0.045 of the whole near 17° and near 73°.
 
@@ -735,12 +742,12 @@ logarithms"). Three steps, each from v and h alone (checked):
 
 1. *Relations chain by multiplying.* Through any middle breadth m, v/h = (v/m)·(m/h). A measure of relations in which
    chained relations add, f(ab) = f(a) + f(b), and which grows with the relation, can only be f = k·ln: Cauchy's
-   equation. So every doubling adds the same amount, which makes the octaves equal. The turn is not such a measure: atan(ab) is
-   not atan a + atan b, so the bounded sweep gives the octaves unequal shares, as the table above shows.
+   equation. So every doubling adds the same amount, which makes the levels equal. The turn is not such a measure: atan(ab) is
+   not atan a + atan b, so the bounded sweep gives the levels unequal shares, as the table above shows.
 2. *Two ways to hold a relation, two sweeps.* Draw the relation as the point (h, v) and measure it by twice the area its
    ray sweeps from the corner. Hold the whole, v² + h² = 1 (the circle), and the sweep is the turn: bounded, π/2 in all.
    Hold the corner, v·h = 1 (the hyperbola, through (1, 1)), and the sweep is ln(v/h): unbounded both ways, a horizon on
-   each side, and every octave sweeps the same area, ln 2. Scaling the relation by c, (h, v) ↦ (h/√c, √c·v), slides
+   each side, and every level sweeps the same area, ln 2. Scaling the relation by c, (h, v) ↦ (h/√c, √c·v), slides
    along the hyperbola and keeps areas, so no rung is preferred, (R) exactly. The logarithm was first found this way, as
    the area under the hyperbola (Saint-Vincent 1647). The circle gives π/2 (Archimedes); the hyperbola gives the
    logarithm.
@@ -748,11 +755,11 @@ logarithms"). Three steps, each from v and h alone (checked):
    Gudermannian, gd(x) = atan(sinh x). It carries the whole unbounded logarithm into the one quarter turn, near-even at
    the corner and squeezed without end toward the edges: the same squeeze as Mercator's map toward the poles. So the
    bounded sweep is the logarithm seen whole from one side, and the logarithm is the sweep unbounded. Far from the
-   corner the squeeze becomes a plain halving: the turn per octave falls 18.4°, 12.5°, 6.9°, 3.5°, 1.8°, …, by a ratio
+   corner the squeeze becomes a plain halving: the turn per level falls 18.4°, 12.5°, 6.9°, 3.5°, 1.8°, …, by a ratio
    that tends to 2, and the sweep's excess over the line falls by a ratio that tends to 4, Archimedes' ratio.
 
 In short: with the whole held, the relation gives the circle and π/2 (situations 1 and 2). With only the corner held,
-and no rung preferred, it gives the hyperbola and the logarithm, and so the octaves and the spiral (situations 3 and 4).
+and no rung preferred, it gives the hyperbola and the logarithm, and so the levels and the spiral (situations 3 and 4).
 That last pairing is Claude's reading, unruled.
 
 **The situated reader's fisheye** (Tom, 6 October: "the situated reader does not need to bother, he just has his
@@ -761,9 +768,9 @@ situated"). The reader computes no logarithm, because its view does the squeeze.
 radius is the turn, r = θ, with straight ahead at the centre, 0, and the horizon at the rim, π/2. This is the
 *equidistant* fisheye. A pinhole view puts a direction at r = tan θ = v/h, which runs to infinity at the horizon. The
 fisheye folds that plane into the disk by r = atan(v/h) = π/4 + ½·gd(ln v/h), so the logarithm comes with the view.
-Where the octaves of v/h fall (checked):
+Where the levels of v/h fall (checked):
 
-| v/h | ring | width of the octave's ring |
+| v/h | ring | width of the level's ring |
 |---|---|---|
 | 1/32 | 1.8° | |
 | 1/16 | 3.6° | 1.8° |
@@ -778,9 +785,9 @@ Where the octaves of v/h fall (checked):
 | 32 | 88.2° | 1.8° |
 
 - **The corner is the ring halfway out**, and the flip mirrors the disk about it, θ ↔ π/2 − θ.
-- **Inside the corner ring the view is proportional.** Near the centre r ≈ v/h, and the octave rings halve toward the
+- **Inside the corner ring the view is proportional.** Near the centre r ≈ v/h, and the level rings halve toward the
   middle.
-- **Outside it the view is logarithmic.** The octave rings crowd toward the rim, each half as wide as the last, and never
+- **Outside it the view is logarithmic.** The level rings crowd toward the rim, each half as wide as the last, and never
   reach it. That is the horizon.
 - **Both readers are situated**, parallel (3) and serial (4), and **the serial reader is the fisheye** (Tom, 6 October:
   "the serial reader is the fisheye. the parallel reader is the normal curve?"). The outside view of a hemisphere, from
@@ -788,7 +795,7 @@ Where the octaves of v/h fall (checked):
   the rim. Its reciprocal, sin θ/θ, falls to 2/π, the inside measure.
 
 **The parallel reader's bell.** The parallel reader counts every relation at once, each with its share of the turn.
-On the octave axis, x = ln(v/h), the shares make a bell centred on the corner:
+On the log axis, x = ln(v/h), the shares make a bell centred on the corner:
 
   ½·sech x = 1/(v/h + h/v),  with total area ∫ ½·sech x dx = π/2,
 
@@ -798,9 +805,9 @@ fisheye's radius there, ∫ ½·sech = π/4 + ½·gd(x) = atan(v/h), because the
 The serial reader, ray by ray, has the running total, which is the fisheye. The parallel reader, all at once, has every
 share, which is the bell (checked).
 
-It is not the normal curve, and the octaves show the difference. With the same peak and area:
+It is not the normal curve, and the levels show the difference. With the same peak and area:
 
-| octave from the corner | the bell, ½·sech | ratio to the last | the normal curve | ratio to the last |
+| level from the corner | the bell, ½·sech | ratio to the last | the normal curve | ratio to the last |
 |---|---|---|---|---|
 | 0, the corner | 0.500 | | 0.500 | |
 | 1 | 0.400 | 1.25 | 0.429 | 1.17 |
@@ -810,8 +817,8 @@ It is not the normal curve, and the octaves show the difference. With the same p
 | 6 | 0.0156 | 2.00 | 0.0020 | 5.38 |
 | 8 | 0.0039 | 2.00 | 0.00003 | 9.91 |
 
-Near the corner they look alike. Far out, the sech bell halves every octave, the logarithmic halving, and keeps a share
-in every octave without end. The normal curve falls ever faster, and its far octaves vanish. So the normal curve has no
+Near the corner they look alike. Far out, the sech bell halves every level, the logarithmic halving, and keeps a share
+in every level without end. The normal curve falls ever faster, and its far levels vanish. So the normal curve has no
 horizon, and the parallel reader's bell does.
 
 **g is the sweep of v over a held h** (Tom, 6 October: "g … is the sweep of V over a held h. because it has two
@@ -830,7 +837,7 @@ is held:
 So "g = π/2, v fully expressed; g = 0, v unexpressed" holds exactly with the whole held. With h held it holds as the
 two limits, home and horizon. This is the circle and the hyperbola of "The relation forces the logarithm" once more.
 g is the turn, not the share of distance along the line from A to B: the two agree only at 0, at the corner and at
-the end (a quarter of the distance is 0.205 of the turn; "The first octave is half the distance").
+the end (a quarter of the distance is 0.205 of the turn; "The first level is half the distance").
 
 *Revised the same evening* (Tom: no turning within an observation; the sweep better not explained in angles, except in
 1 and 2; "Angles, and where they belong", above). With h held, nothing turns: g is the share from 0 to 1, with the
@@ -903,7 +910,7 @@ written in terms of the others.
   situation 0's unknown on the v side only.
 - *Situation 2 from 1:* every shape Cₖ whose v breadth is 2ᵏ times its h breadth is the unit circle of situation 1 once
   v is counted in a unit of 2ᵏh; only C₀ is the circle without a change of unit, and the count k is the price (§3.5).
-- *Situation 3 or 4, known approximately:* §2.3's one unknown, the offset in doublings, is a count of octaves together with a share
+- *Situation 3 or 4, known approximately:* §2.3's one unknown, the offset in doublings, is a count of levels together with a share
   within one (§3.5); it is situation 3 or 4 with that count known within bounds.
 - *Situation 0 from 3 or 4:* situation 3 or 4 with h's breadth lost too, so that nothing is left to count in.
 
@@ -1190,7 +1197,7 @@ mathematics does not change at the corner; what is measured against changes, fro
 same structure is read the other way round. Expressed in the reader's own unit, h, the inverted reading is the count of
 doublings of §3.3–§3.4.
 
-### 3.3 Proportion before the corner, octaves past it
+### 3.3 Proportion before the corner, levels past it
 
 **R158.** The front side is held in plain proportion in h: v as a share of h, 0 at home to 1 at the corner. Past the
 corner a value is in terms of v's unknown breadth, so in plain proportion it is undefined, and so is any operation on
@@ -1217,40 +1224,40 @@ circle's opening (§2.4).
 fails. The marks "2h, 4h, 8h" on the back side are marks of the logarithmic count, not lengths of h laid end to end.
 
 **Within each doubling, proportion again** (R163). *Tom, 2 October: "within each doubling of the far side, things become
-proportional again" (11:09); "seems to me that the near field is just the first proportional octave." (11:10); "yes, so
-the corner is nothing special or extrodinary, its just the start of the next octave." (11:12).* What v's unknown breadth
+proportional again" (11:09); "seems to me that the near field is just the first proportional level." (11:10); "yes, so
+the corner is nothing special or extrodinary, its just the start of the next level." (11:12).* What v's unknown breadth
 takes away past the corner is only which doubling a reading is in; within a doubling the whole is known once the
 doubling is known, and the reading is a share of it again. The logarithm of R158 is in the count of doublings, not
 inside one.
 
 **One octave, two facings** (R167). *Tom, 2 October: "the corner also works the other way, with halvings, we have a
 corner above us and below us." (12:37); "lets let the math tell us what is going on. a situated observer is situated
-one particular octave." (12:41); "so what is the proportonal space between octaves. its another [0,1]." (12:44).* Three
-things fix the octaves, and the share inside each:
+one particular level." (12:41); "so what is the proportonal space between levels. its another [0,1]." (12:44).* Three
+things fix the levels, and the share inside each:
 
-1. *Each octave is another [0, 1].* Between one octave edge and the next, a reading's place is a share t on [0, 1]
-   (§1), and the whole reading is the octave's count together with t.
+1. *Each level is another [0, 1].* Between one level edge and the next, a reading's place is a share t on [0, 1]
+   (§1), and the whole reading is the level's count together with t.
 2. *The reading treats the two facings alike* (R162). The flip carries every reading past the corner onto one before it,
-   so it must carry each octave onto an octave and each share onto a share. A share taken in s on both sides fails
-   this, since the flip of what is even in s is uneven in s. R161's reading passes it exactly: in an octave before the
-   corner the share is of v in its whole (v in terms of h); in an octave past it, of h in its whole (h in terms of v).
-   (So R167 first had it. Under R175, below, each octave past the reader's own has a front and a back of its own.)
-3. *A situated reader is situated in one octave* (R167). Its octave is v from half of h to all of h, read v in terms of
-   h; read from the other facing, h in terms of v, the same relations are v from h to 2h. These are one octave, not two:
+   so it must carry each level onto a level and each share onto a share. A share taken in s on both sides fails
+   this, since the flip of what is even in s is uneven in s. R161's reading passes it exactly: in a level before the
+   corner the share is of v in its whole (v in terms of h); in a level past it, of h in its whole (h in terms of v).
+   (So R167 first had it. Under R175, below, each level past the reader's own has a front and a back of its own.)
+3. *A situated reader is situated in one level* (R167). Its level is v from half of h to all of h, read v in terms of
+   h; read from the other facing, h in terms of v, the same relations are v from h to 2h. These are one level, not two:
    the flip carries each reading of the one onto the reading of the other with the same share.
 
-So the octaves are counted from the corner outward on both sides, by the share of the reading (§3.5): octave k is the
+So the levels are counted from the corner outward on both sides, by the share of the reading (§3.5): level k is the
 share from 2⁻⁽ᵏ⁺¹⁾ to 2⁻ᵏ, and within it
 
     t = 2ᵏ⁺¹ · share − 1,    the share = v/h before the corner, h/v past it,
 
-which runs from 0 at the octave's outer edge to 1 at its inner edge. Before the corner octave k is v from 2⁻⁽ᵏ⁺¹⁾h to
-2⁻ᵏh; past it, v from 2ᵏh to 2ᵏ⁺¹h. A reading is then (its side, its octave k, its share t), and the flip changes only
+which runs from 0 at the level's outer edge to 1 at its inner edge. Before the corner level k is v from 2⁻⁽ᵏ⁺¹⁾h to
+2⁻ᵏh; past it, v from 2ᵏh to 2ᵏ⁺¹h. A reading is then (its side, its level k, its share t), and the flip changes only
 the side.
 
 *The doublings as R167 first read them (places unchanged; facings revised by R175, below):*
 
-| octave k (by the share) | the share | before the corner: v from … to | past the corner: v from … to | share of readings on each side (evenly spread world) |
+| level k (by the share) | the share | before the corner: v from … to | past the corner: v from … to | share of readings on each side (evenly spread world) |
 |---|---|---|---|---|
 | 0, the reader's own | ½ to 1 | ½h to h | h to 2h | 0.2048 |
 | 1 | ¼ to ½ | ¼h to ½h | 2h to 4h | 0.1392 |
@@ -1258,25 +1265,25 @@ the side.
 | 3 | ¹⁄₁₆ to ⅛ | ¹⁄₁₆h to ⅛h | 8h to 16h | 0.0394 |
 | 4 | ¹⁄₃₂ to ¹⁄₁₆ | ¹⁄₃₂h to ¹⁄₁₆h | 16h to 32h | 0.0198 |
 
-The same octaves laid out along the sweep, the corner in the middle:
+The same levels laid out along the sweep, the corner in the middle:
 
 ```
- octave:   2         1         0    |    0         1         2
+ level:   2         1         0    |    0         1         2
  v:     ⅛h–¼h     ¼h–½h     ½h–h    |   h–2h     2h–4h     4h–8h
  share: ⅛–¼       ¼–½       ½–1     1   1–½      ½–¼       ¼–⅛
         ← toward home (pure horizontal)  corner  toward the mathematical horizon (pure vertical) →
-                 the flip swaps the two sides; the carry moves outward one octave
+                 the flip swaps the two sides; the carry moves outward one level
 ```
 
 Octave 0 is one octave with two facings: ½h to h read v in terms of h, and h to 2h read h in terms of v. Where a table
-counts octave 0 over both facings (as in "The shape emerges" below), it runs from ½h to 2h.
+counts level 0 over both facings (as in "The shape emerges" below), it runs from ½h to 2h.
 
 **Every sweep has its own corner** (R175). *Tom, 4 October 05:01: "recursion is the same thing all the way down, so each
 sweep would have its own corner by definition."* This settles the second priority item of §14 for R172. Past the near
 horizon there is not one corner but one in every octave, at 4ⁿh, and the facing turns at each. The doublings above keep
-their places, and every count measured on them stands. What changes is how the halves of the outer octaves are read:
+their places, and every count measured on them stands. What changes is how the halves of the outer levels are read:
 
-| octave n | its corner | front half: v in terms of the corner | back half: the corner in terms of v | share of readings (evenly spread world) |
+| level n | its corner | front half: v in terms of the corner | back half: the corner in terms of v | share of readings (evenly spread world) |
 |---|---|---|---|---|
 | −2 | ¹⁄₁₆h | ¹⁄₃₂h to ¹⁄₁₆h | ¹⁄₁₆h to ⅛h | 0.0592 |
 | −1 | ¼h | ⅛h to ¼h | ¼h to ½h | 0.2160 |
@@ -1285,33 +1292,33 @@ their places, and every count measured on them stands. What changes is how the h
 | 2 | 16h | 8h to 16h | 16h to 32h | 0.0592 |
 
 ```
- octave n:        −1                  0                  1
+ level n:        −1                  0                  1
  its corner:      ¼h                  h                  4h
  v:         ⅛h–¼h | ¼h–½h      ½h–h | h–2h       2h–4h | 4h–8h
  facing:    front | back       front | back      front | back
 ```
 
 Within each half the reading is a share: in the front half v/c, from ½ to 1, and in the back half c/v, from 1 to ½,
-with c the octave's corner. A reading is then (its octave n, its half, its share). The flip sends n to −n and swaps
-front and back: 2h–4h, the front of octave 1, goes to ¼h–½h, the back of octave −1. The octave's own sweep (ρ,
-"Every octave is a sweep", below) addresses each octave within 0.011 of the share. R158 still holds for the far side as
-a whole: v's breadth is unknown, so which octave a reading is in has to be counted. Once the octave is found, each half
-reads as a share of that octave's corner, a known multiple of h, as R163 allowed within a doubling. The measurement
+with c the level's corner. A reading is then (its level n, its half, its share). The flip sends n to −n and swaps
+front and back: 2h–4h, the front of level 1, goes to ¼h–½h, the back of level −1. The level's own sweep (ρ,
+"Every octave is a sweep", below) addresses each level within 0.011 of the share. R158 still holds for the far side as
+a whole: v's breadth is unknown, so which level a reading is in has to be counted. Once the level is found, each half
+reads as a share of that level's corner, a known multiple of h, as R163 allowed within a doubling. The measurement
 "The shape emerges" (below) was counted by doublings, so its counts stand. Its labels of facing past the reader's own
-octave are R167's.
+level are R167's.
 
 The corner is where the facing turns, the middle of the reader's octave with two facings. Its edges, ½h and 2h, are
 swapped by the flip; R167 first called them corners below and above, and R172 makes them edges, the next corners
 being at ¼h and 4h (below). From there the ladder runs on in halvings toward home and doublings toward the mathematical horizon,
-endlessly both ways, so that home and the mathematical horizon are equally far, each beyond every count of octaves (R77's two
+endlessly both ways, so that home and the mathematical horizon are equally far, each beyond every count of levels (R77's two
 infinities, matched). R163's "first proportional octave" is the reader's own, the one next to the corner; and the corner
-is where that octave, seen from the other facing, starts. Nothing at the corner is extraordinary (R164): it is the
-edge of one octave, and the one edge the flip leaves in place, since it is where the facing turns.
+is where that level, seen from the other facing, starts. Nothing at the corner is extraordinary (R164): it is the
+edge of one level, and the one edge the flip leaves in place, since it is where the facing turns.
 
-*What this revises.* On 2 October at 11:10–11:14 this section first took the front side as one octave from home to the
+*What this revises.* On 2 October at 11:10–11:14 this section first took the front side as one level from home to the
 corner, read in plain proportion in s, and the share past the corner as a share in s, t = (s − 2ᵏ⁻¹)/2ᵏ⁻¹. Neither treats
 the two facings alike: an octave edged at the corner and running to home is flipped onto no octave, and a share in s
-past the corner differs from the facing-fair share h/v by up to 0.17 of the octave (h to 2h). R167, with R162, gives the
+past the corner differs from the facing-fair share h/v by up to 0.17 of the level (h to 2h). R167, with R162, gives the
 reading above. A reader may still read its whole front side in plain proportion, since v there is a share of the known
 h; that reading is coarse near home, losing what is finer than h/n for n addresses, and is not fair to both facings.
 
@@ -1319,7 +1326,7 @@ h; that reading is coarse near home, losing what is finer than h/n for n address
 breadth is additive, density is recursive": "my previous comments were just speculative exploration. I think the current
 insight is closer to the truth."* This revises R167's corners at ½h and 2h, and states in full what R163's "proportional
 again" approximated. Situation 3 or 4 only: situations 1 and 2 have no home, division or horizon of any kind (R131, R139); their corner is
-computed from the known breadths and arrived at exactly, with no octaves past it to nest (Tom, 6 October: 1 and 2 "have a corner, … you can arrive at the corner, it is algorithmic, they have no horizon however, h and v are known").
+computed from the known breadths and arrived at exactly, with no levels past it to nest (Tom, 6 October: 1 and 2 "have a corner, … you can arrive at the corner, it is algorithmic, they have no horizon however, h and v are known").
 
 - *The unit is the octave with two facings*, ½c to 2c round a corner c: its front half reads v in terms of c, its back
   half c in terms of v. The reader's own is ½h to 2h, round the corner. ½h and 2h are its edges, where its own reading
@@ -1327,27 +1334,27 @@ computed from the known breadths and arrived at exactly, with no octaves past it
   edge (2·4ⁿh = ½·4ⁿ⁺¹h). The doublings of the table above are the halves of these units, their facings: the facing
   turns at every corner, every second doubling. ("Octave" in this paragraph means the octave with two facings, ×4; a
   doubling is one of its halves.) *Superseded as the paper's unit, 6 October* (Tom, 6 October, choosing between the two spacings: "the first is simpler, go with that."): the octave is the level of
-  2h, with corners one doubling apart (1, 2, 4, …), as "The octave as 2h, in place" lays it and "Units" at the opening
+  2h, with corners one doubling apart (1, 2, 4, …), as "The level as 2h, in place" lays it and "Units" at the opening
   defines it. This paragraph is kept as R172's unit.
-- *Each octave is a sweep.* With s = v/c, the one projective map that sends the octave's edges and corner to 0, 1 and ∞
-  is ρ = 2(s − ½)/(2 − s), and back s = (2ρ + 1)/(ρ + 2); the octave's sweep is g = (2/π)·atan ρ (the shortcut, R148),
+- *Each level is a sweep.* With s = v/c, the one projective map that sends the level's edges and corner to 0, 1 and ∞
+  is ρ = 2(s − ½)/(2 − s), and back s = (2ρ + 1)/(ρ + 2); the level's sweep is g = (2/π)·atan ρ (the shortcut, R148),
   its corner at g = ½. Nothing more is chosen once the reading is required to be projective. It is fair to the facings
   without being told to be: s ↦ 1/s sends ρ ↦ 1/ρ exactly, so g ↦ 1 − g, Proposition 3.2(b)'s condition.
-- *Breadth adds.* A value's place on the whole line is n + g, n counting octaves: continuous (the top of octave n is the
-  bottom of octave n + 1), every octave the same width, open both ways, related by difference across octaves:
-  Proposition 3.4(a)'s logarithm, stepped. It is never more than 0.053 of an octave from the smooth log₄ s + ½ (at
-  s ≈ 1.43 of each octave's corner).
-- *Nesting.* ρ is itself a reading on [0, ∞), with its own corner and octaves (ρ from ½ to 2, then 2 to 8 and ⅛ to ½,
-  …), each a sweep again, crowding toward the octave's edges, without end. A value's address is (n; j₁, j₂, …): which
+- *Breadth adds.* A value's place on the whole line is n + g, n counting levels: continuous (the top of level n is the
+  bottom of level n + 1), every level the same width, open both ways, related by difference across levels:
+  Proposition 3.4(a)'s logarithm, stepped. It is never more than 0.053 of a level from the smooth log₄ s + ½ (at
+  s ≈ 1.43 of each level's corner).
+- *Nesting.* ρ is itself a reading on [0, ∞), with its own corner and levels (ρ from ½ to 2, then 2 to 8 and ⅛ to ½,
+  …), each a sweep again, crowding toward the level's edges, without end. A value's address is (n; j₁, j₂, …): which
   octave, then which octave within it at each level; 1.37h is (0; 1, −1, 0, 1), *The Radix*'s digit levels again. Each
   level is a full ladder in its own right, so breadth and nesting are not two axes: one rule applied to its own result.
   This is what R122's "infinite density" names; the word stays in Tom's quotes (30 September rule), and the operation is
   called nesting.
 - *Where proportion lives.* Proportion is where the nesting stops, at the reader's step (*The Radix* §3.3; R176): the share
-  within the last octave entered. Laid out by the share (the back half even in h/v) and by g, an octave agrees exactly at
+  within the last level entered. Laid out by the share (the back half even in h/v) and by g, a level agrees exactly at
   its edges and its corner and never differs by more than 0.011 between (at s ≈ 1.53, mirrored at s ≈ 0.65 by the flip),
-  about 1% of an octave: proportional in the share, a sweep in the address. That is why R163's "within each doubling,
-  proportion again" held: within one octave the sweep is almost exactly proportion.
+  about 1% of a level: proportional in the share, a sweep in the address. That is why R163's "within each doubling,
+  proportion again" held: within one level the sweep is almost exactly proportion.
 - *The arc and the square.* From the pivot, a direction meets the arc h² + v² = 1, where its place is g (the turn), and
   the unit square's outer edges, max(h, v) = 1: up the right edge on the front (v plain proportion), along the top on the
   back (h/v plain proportion), the two meeting at the square's corner (1, 1), v = h. The square's boundary is the share,
@@ -1358,14 +1365,14 @@ Checked numerically: the map sends ½c, c, 2c to 0, 1, ∞; ρ(1/s)·ρ(s) = 1 t
 exactly (about 10⁻¹⁶), always increasing; the address of 1.37h as given. (Pages: `demos/breadth-and-density.html` and
 `demos/octave-browser.html` in the calendar repository.)
 
-**The octaves as a spiral** (6 October; `plans/horizon-recursion.md`, checks and figure in `plans/spiral/`; Claude's,
+**The levels as a spiral** (6 October; `plans/horizon-recursion.md`, checks and figure in `plans/spiral/`; Claude's,
 unruled). *Tom, 6 October: "the most exciting potentially impactful idea here in my opinion is that each octive is
 equivalent to the 0 to PI/2. so that means each octavie is a 90 degree turn. situation 1 and 2, is uniform, no horizon,
 no reccursion. situation 3 has a horizon and has recursion"; "yes, lograthimic spiral maps on to this framing very
 nicely."* What follows states that as three propositions, numbered after 3.10 so that no number cited elsewhere moves.
 
 The setting: the reader holds its reading s on (0, ∞) as a turn Θ(s), increasing, counted in quarter turns,
-Θ = (π/2)(n + g), n the pieces (octaves) and g the share of a quarter turn within one. The premises, named so that each
+Θ = (π/2)(n + g), n the pieces (levels) and g the share of a quarter turn within one. The premises, named so that each
 result says which it uses: **(H)** the horizon: Θ is defined on all of (0, ∞) (situation 3 or 4; R174); **(B)** bounded
 pieces: within a piece the reading turns at most a quarter turn (26 September); **(R)** no rung preferred, in the
 address: for some ratio q > 1, Θ(q s) = Θ(s) + π/2 (R172 and R175 written as an equation, the address-level form of
@@ -1381,7 +1388,7 @@ cover (0, ∞) without overlap as n runs over the integers, and by (H) Θ is def
 the reader's own moved by n quarter turns. By (B) none holds more than a quarter turn. ∎
 
 The horizon alone does not force pieces: one bounded sweep, Θ = atan s, holds the whole unbounded reading in a single
-quarter turn and satisfies (H) and (B). It fails (R): the octaves out from the corner get 36.9°, 19.4°, 5.3°, 1.3°,
+quarter turn and satisfies (H) and (B). It fails (R): the levels out from the corner get 36.9°, 19.4°, 5.3°, 1.3°,
 0.34°, 0.08° of turn, so the rung at the corner is preferred and the far ones are crushed. The chain is *the horizon and
 no preferred rung, therefore recursion*. Situations 1 and 2 fail the first: nothing is divided, and there is no horizon
 (R131).
@@ -1392,30 +1399,30 @@ proportional piece, home to corner (R176's lay; §2.1, "Proportion, depth and re
 (R) applies past the corner, the iteration runs over n ≥ 0, and the proof gives pieces without end toward the horizon
 and none toward home.
 
-**The octave as 2h, in place** (Tom, 6 October: "if we define situation 3 a size of 2h an octave, then the front half
-has a size of 1, and a back half size of 1"). Measure place f across the reader's octave, from home (0) through the
+**The level as 2h, in place** (Tom, 6 October: "if we define situation 3 a size of 2h a level, then the front half
+has a size of 1, and a back half size of 1"). Measure place f across the reader's level, from home (0) through the
 corner (½) to the far wall (1). The front half, one h, counts v in h's: s = 2f, proportional, seen. The back half, one
 h, is read against the far wall: s = ½/(1 − f), the flip of the front, holding everything from the corner to the
 horizon.
 
-| place in the octave f | 0 | ¼ | ½ | ¾ | ⅞ | 15/16 | → 1 |
+| place in the level f | 0 | ¼ | ½ | ¾ | ⅞ | 15/16 | → 1 |
 |---|---|---|---|---|---|---|---|
 | v/h | 0 | ½ | 1, the corner | 2 | 4 | 8 | → ∞ |
 
-The recursion appears in the back half only. Read it as the same octave again at half the size, and again: each halving
+The recursion appears in the back half only. Read it as the same level again at half the size, and again: each halving
 of place toward the far wall is one doubling of v/h (corner to ¾ is 1 to 2; ¾ to ⅞ is 2 to 4; ⅞ to 15/16 is 4 to 8). So
-the front half is one proportional piece, with no recursion; the octaves begin at the corner, 1–2, 2–4, 4–8, …; and each
-is half the place left, a step toward the far wall that never arrives (Archimedes' halving; §2.1, "The first octave is
-half the distance"). This is the central result (the corner bisects the octave) read in place, and it is the layout of
+the front half is one proportional piece, with no recursion; the levels begin at the corner, 1–2, 2–4, 4–8, …; and each
+is half the place left, a step toward the far wall that never arrives (Archimedes' halving; §2.1, "The first level is
+half the distance"). This is the central result (the corner bisects the level) read in place, and it is the layout of
 `wander/depth/nest.py` (front ρ = f/½, back ρ = ½/(1 − f)). The halves are equal in place although the back holds all of
 1 to ∞.
 
-*Nested, not side by side* (checked). The next octave is the parent's back half read as an octave of its own, its home
+*Nested, not side by side* (checked). The next level is the parent's back half read as a level of its own, its home
 at the parent's corner and its own corner at the parent's v/h = 2. Its reading s′ against the parent's s is exact on
 both halves: past its corner s′ = s/2, the parent's reading scaled by one doubling, which is (R) with q = 2, holding
-exactly; before its corner s′ = 2 − 2/s, taking the parent's 1 to 2 onto 0 to 1. So the octaves nest, each inside the
+exactly; before its corner s′ = 2 − 2/s, taking the parent's 1 to 2 onto 0 to 1. So the levels nest, each inside the
 last one's back half, with corners at v/h = 1, 2, 4, 8, …; their front halves, 0–1, 1–2, 2–4, …, are the pieces that lie
-side by side. Propositions 3.11 and 3.12 lay octaves side by side, each round its own corner (1/r to r); here the
+side by side. Propositions 3.11 and 3.12 lay levels side by side, each round its own corner (1/r to r); here the
 side-by-side pieces are front halves, each ending at a corner. They agree on one doubling per level only when 3.12 is
 taken with r = √2 (q = 2); with r = 2, as R172's octave, its pieces span two doublings and its corners fall at 4ⁿ.
 The paper's unit is the nested level (Tom, 6 October: "the first is simpler"; "Units", at the opening).
@@ -1426,7 +1433,7 @@ is 76° at the reader's level, 63° at the next (its own v/h, 2), and the corner
 address, one sweep per level (the nesting address of "Nesting" above), and Θ = n·π/2 + θ in Propositions 3.11 and 3.13
 is a way of drawing the levels in one figure, not something a reader does. The spiral is that drawing.
 
-**Proposition 3.12 (each octave is one quarter turn, for every ratio).** Add (F) and (P). The reader's own piece runs
+**Proposition 3.12 (each level is one quarter turn, for every ratio).** Add (F) and (P). The reader's own piece runs
 from 1/r to r round the corner, and on it ρ = (rs − 1)/(r − s) and Θ = atan ρ, uniquely: the edges at 0° and 90°, the
 corner at 45°, for every ratio r > 1.
 
@@ -1434,13 +1441,13 @@ corner at 45°, for every ratio r > 1.
 itself; with (R) its edges are 1/r and r. Three points fix a projective map, so (P) gives ρ = (rs − 1)/(r − s). Then
 ρ(1/s) = 1/ρ(s), so Θ(1/s) = π/2 − Θ(s): (F) holds without being imposed. ∎
 
-For r = 2 this is ρ = 2(s − ½)/(2 − s) above, with the octave's corner c = 1. One octave out turns exactly 90° (checked
+For r = 2 this is ρ = 2(s − ½)/(2 − s) above, with the level's corner c = 1. One level out turns exactly 90° (checked
 to 10⁻¹⁵ for r = 2, 3 and φ). *Recursion without end:* ρ is itself a reading on [0, ∞) with its own horizon, so 3.11
 and 3.12 apply to it, and so on: the nesting above, each level existing because the level above has a horizon.
 *Revised, 6 October:* this is the recursion a horizon forces. Recursion over a known shape's residual, in situations 1
 and 2, needs no horizon (§2.1, after the situations table).
 
-**Proposition 3.13 (the reading is a logarithmic spiral, up to a wobble that repeats each octave).** Draw the reading
+**Proposition 3.13 (the reading is a logarithmic spiral, up to a wobble that repeats each level).** Draw the reading
 with the turn Θ as the angle and s as the radius. Under (R), and only then, the curve is carried onto itself by turning a
 quarter and scaling by q, and it is
 
@@ -1457,13 +1464,13 @@ What follows from it:
 
 - *Situation 3 or 4 is a spiral; situations 1 and 2 are the circle, the spiral with k = 0* (§2). For r = 2 the reading grows
   ×4 each quarter turn and ×256 each full turn (k = 0.8825); for r = 3, ×9 and ×6561.
-- *The pitch is the ratio between rungs*, k = 2 ln r/(π/2). The geometry fixes the turn per octave, a quarter; it does
+- *The pitch is the ratio between rungs*, k = 2 ln r/(π/2). The geometry fixes the turn per level, a quarter; it does
   not fix how much the reading grows in it. The question the audit left open, what fixes a reader's ratio between rungs,
   is the question what fixes the spiral's pitch (§14).
-- *Two readings make a quarter turn per octave, and they differ by under 5°.* Proposition 3.12's reading (each octave a
-  relation) leaves the exact spiral by a wobble that repeats each octave and vanishes at every corner and edge: at most
-  4.74° for r = 2 (the 0.053 of an octave above), 5.69° for r = 3, 4.40° for φ. The exact spiral is the logarithmic
-  reading g = log_q s + ½ within the octave, also fair to the facings, but not projective.
+- *Two readings make a quarter turn per level, and they differ by under 5°.* Proposition 3.12's reading (each level a
+  relation) leaves the exact spiral by a wobble that repeats each level and vanishes at every corner and edge: at most
+  4.74° for r = 2 (the 0.053 of a level above), 5.69° for r = 3, 4.40° for φ. The exact spiral is the logarithmic
+  reading g = log_q s + ½ within the level, also fair to the facings, but not projective.
 - *Equiangular.* A logarithmic spiral crosses every ray from its centre at one angle, arccot k: 48.6° for r = 2, 35.6°
   for r = 3. It meets every direction alike at every scale, the curve's form of no rung preferred (Bernoulli's *spira
   mirabilis*, "eadem mutata resurgo").
@@ -1522,7 +1529,7 @@ And, the same day: "this is situation 1 and 2. recursion is not limited to situa
 *Read against 3.11–3.13 and §2.1* (Claude's, unruled, except where Tom's ruling is quoted):
 
 - *The circle needs no recursion* (Tom, 6 October: "the circle does not need recursion. its handled in the first
-  octave."). Point 4's "the circle needs 129" must then count something other than the circle's own shape: most likely
+  level."). Point 4's "the circle needs 129" must then count something other than the circle's own shape: most likely
   the library circle's departure from the reader's unit circle, or the way the sweeps were counted (§2.1, "The five,
   in brief"). Not checked here.
 
@@ -1536,11 +1543,11 @@ And, the same day: "this is situation 1 and 2. recursion is not limited to situa
   (`plans/resolution-recursion.md`); the residual says where.
 - *Hiding is the hemisphere.* A sweep covers one side, 0 to π/2, out to the limb (§2.1). Point 5's count of times the
   way in turns out of sight is a count of limbs passed, one more level for each.
-- *The walls.* Across a join between octaves the turn has no step, and its rate is the same on both sides (§2.1, "One
+- *The walls.* Across a join between levels the turn has no step, and its rate is the same on both sides (§2.1, "One
   continuous sweep"). So the step on a wall should come from the residual held on one side and not the other, not from
-  the octave map. Untested.
+  the level map. Untested.
 - *Amplification adding.* Adding across levels is what a logarithmic measure does: chained relations add only under
-  the logarithm (§2.1, "The relation forces the logarithm"). If amplification is counted in octaves or logarithms, that
+  the logarithm (§2.1, "The relation forces the logarithm"). If amplification is counted in levels or logarithms, that
   derives the adding. If it is a plain ratio and still adds, it is something else, and worth finding out which.
 
 **Rungs, and the ratio between them** (*The Radix*; R176). The doubling is the reader's ratio between rungs, not the geometry's. *The Radix* §5: the lens
@@ -1560,64 +1567,64 @@ ladder (R163) and the address's ladder are both a count of levels with proportio
 equals the address's base, one rung is one level (*The Radix* §2–§3, §11).
 
 Floating-point numbers are laid this way (*The Radix* §7 measured it inside a double: a step of 1 up to 2⁵³, then 2,
-then 4, even within each doubling and doubling between). The exponent counts octaves and the significand is a plain share
-within the octave, below 1 as above it: halvings below 1 just as doublings above, down to a floor, the smallest normal
+then 4, even within each doubling and doubling between). The exponent counts levels and the significand is a plain share
+within the level, below 1 as above it: halvings below 1 just as doublings above, down to a floor, the smallest normal
 number, below which the subnormals (Kahan's gradual underflow) lay one stretch in plain proportion from zero with the
-step of the octave above them. So a float has its octaves on both sides of 1, as a situated reader has them on both
+step of the level above them. So a float has its levels on both sides of 1, as a situated reader has them on both
 sides of the corner, and a floor that the reader's ladder does not have. (Floats read the share in s on both sides, not
 h as a share of v past 1, so they are not fair to both facings in the sense of R162; their ladder is the same, their
-share past 1 is the one this section set aside.) Read as one number, the count of octaves plus the share within the
-current one is the logarithm laid straight between octaves: exact at every octave edge, and never more than 0.086 of an
-octave from the smooth logarithm (at t = 0.443). The register a situated reader can hold is this stepped one; the smooth
-count of octaves is its idealisation.
+share past 1 is the one this section set aside.) Read as one number, the count of levels plus the share within the
+current one is the logarithm laid straight between levels: exact at every level edge, and never more than 0.086 of an
+level from the smooth logarithm (at t = 0.443). The register a situated reader can hold is this stepped one; the smooth
+count of levels is its idealisation.
 
-A caution. The proportion is in the addresses within an octave, not in how evenly payloads fill it. In an evenly
+A caution. The proportion is in the addresses within a level, not in how evenly payloads fill it. In an evenly
 spread world, the share on each side has its probability density in proportion to 1/(1 + share²), the same on both sides (the
-reciprocal of a Cauchy reading is a Cauchy reading): the fill falls toward the corner by 1.6 to 1 across octave 0, by
-1.18 across octave 1, by 1.05 across octave 2, and the octaves farther out are filled almost evenly.
+reciprocal of a Cauchy reading is a Cauchy reading): the fill falls toward the corner by 1.6 to 1 across level 0, by
+1.18 across level 1, by 1.05 across level 2, and the levels farther out are filled almost evenly.
 
 **Two operations: the flip and the carry.** The paper uses two operations on a reading, and they are easy to run
 together.
 
 | operation | what it does | what it leaves in place | what it produces |
 |---|---|---|---|
-| **the flip**, s ↦ 1/s | reads the pair the other way round, h in terms of v | the corner, s = 1; and every reading's octave and share, changing only its side | the back side carried onto the front side, point for point |
-| **the carry** | halves the share's whole: the reading moves from one octave to the next, away from the corner on its side | the form of the reading, a share within an octave (the share itself starts again on the next octave's [0, 1]) | the count of octaves, and so the logarithm |
+| **the flip**, s ↦ 1/s | reads the pair the other way round, h in terms of v | the corner, s = 1; and every reading's level and share, changing only its side | the back side carried onto the front side, point for point |
+| **the carry** | halves the share's whole: the reading moves from one level to the next, away from the corner on its side | the form of the reading, a share within a level (the share itself starts again on the next level's [0, 1]) | the count of levels, and so the logarithm |
 
-The flip does not move a reading to another octave: it keeps the octave and the share and changes only the side, octave
-k past the corner going to octave k before it; done twice it returns the reading unchanged (Proposition 3.1), so it
+The flip does not move a reading to another level: it keeps the level and the share and changes only the side, level
+k past the corner going to level k before it; done twice it returns the reading unchanged (Proposition 3.1), so it
 counts nothing. The carry is *The Radix*'s carry, "the act of re-entering the level above"; repeated, it is
 the count of doublings of R158. §3.2 is about the flip, and why the corner is where it is taken (Propositions 3.1–3.2,
-R162). §3.3 is about the carry. In one line: **proportion is local to an octave; the logarithm is the accounting of
-octaves.**
+R162). §3.3 is about the carry. In one line: **proportion is local to a level; the logarithm is the accounting of
+levels.**
 
-**Within an octave, and between octaves.** *Tom, 2 October 11:34: "so within an octave, everything is nice and
-proportional and intutive, every reader exists within a propotional space. its when they consider the octave relative
-to another octave where things get confusing."* (Not ruled.) Within an octave a reading is a share of a known whole:
-steps add, a difference means what it looks like, and an average stays inside the octave and is defined, the interval
-being bounded. Every reader stands in such a space, its own octave (R167). Between octaves the operation changes:
+**Within a level, and between levels.** *Tom, 2 October 11:34: "so within a level, everything is nice and
+proportional and intutive, every reader exists within a propotional space. its when they consider the level relative
+to another level where things get confusing."* (Not ruled.) Within a level a reading is a share of a known whole:
+steps add, a difference means what it looks like, and an average stays inside the level and is defined, the interval
+being bounded. Every reader stands in such a space, its own level (R167). Between levels the operation changes:
 within one, readings add; from one to the next, wholes multiply. The same step of 0.1 in t is a step of 0.05 in the share
-in octave 0 and of 0.003 in octave 4. Comparing across octaves means carrying the count of doublings with the proportion, and the confusion
-is a within-octave operation carried across octaves without it. Averaged across octaves, the highest captures the
-result (the Cauchy's missing mean, though the average within any one octave is well defined); added across octaves,
+in level 0 and of 0.003 in level 4. Comparing across levels means carrying the count of doublings with the proportion, and the confusion
+is a within-level operation carried across levels without it. Averaged across levels, the highest captures the
+result (the Cauchy's missing mean, though the average within any one level is well defined); added across levels,
 far lengths are misjudged in the far field's way. These are §3.2's failures of a reader that did not invert, seen from
-inside: that reader treats every octave as its own. Human number placement shows the same split: across a wide range
+inside: that reader treats every level as its own. Human number placement shows the same split: across a wide range
 (0 to 1,000) children place numbers roughly logarithmically and move to linear placement as the range becomes familiar
 (Siegler and Opfer 2003), and adults without schooling in a counting system keep the logarithmic placement (Dehaene et
-al. 2008). In these terms a familiar range is read as one proportional octave, and an unfamiliar span is compressed
+al. 2008). In these terms a familiar range is read as one proportional level, and an unfamiliar span is compressed
 by doublings; Weber's law says the same of the senses. The caution above stands: the proportion is in where things are
-within an octave, not in how evenly they fill it.
+within a level, not in how evenly they fill it.
 
-**The shape emerges, octave by octave and within each octave** (measured; not ruled). *Tom, 2 October: "as we add
-octaves, the full shape emerges." (11:23); "what I know is that as we add octives, the shape emerges. the details of the
+**The shape emerges, level by level and within each level** (measured; not ruled). *Tom, 2 October: "as we add
+levels, the full shape emerges." (11:23); "what I know is that as we add octives, the shape emerges. the details of the
 shape are expressed." (13:23); "each octive also has its own [0,1] proportional space." (13:24).* The 73 single-outline
 shapes of the library, each laid evenly along its outline and read from its centroid (as in §2.4), were read in the
-octaves of this section, counted by the share outward from the corner on both sides, the two sides kept apart
+levels of this section, counted by the share outward from the corner on both sides, the two sides kept apart
 (`octaves2.py`, `octaves3.py`).
 
-*Octave by octave.* Octave 0 (v from ½h to 2h) and each further octave added in turn:
+*Level by level.* Level 0 (v from ½h to 2h) and each further level added in turn:
 
-| octave | readings in it (circle) | median share of a shape's difference from the circle in it | that, per reading | cumulative difference seen | pairs of shapes told apart |
+| level | readings in it (circle) | median share of a shape's difference from the circle in it | that, per reading | cumulative difference seen | pairs of shapes told apart |
 |---|---|---|---|---|---|
 | 0 | 0.410 | 0.262 | 0.64 | 0.26 | 0.794 |
 | 1 | 0.278 | 0.245 | 0.88 | 0.54 | 0.929 |
@@ -1627,17 +1634,17 @@ octaves of this section, counted by the share outward from the corner on both si
 | 5 | 0.020 | 0.031 | 1.58 | 0.96 | 0.957 |
 | 6–8 | 0.017 | 0.028 | 1.5–1.7 | 0.98 → 0.996 | 0.957 |
 
-The shape emerges: from octave 2 on, each added octave about halves the difference from the circle still unseen. And the
-details are in the outer octaves: octave 0, around the corner, holds 41% of the readings but 26% of what tells a shape
+The shape emerges: from level 2 on, each added level about halves the difference from the circle still unseen. And the
+details are in the outer levels: level 0, around the corner, holds 41% of the readings but 26% of what tells a shape
 from the circle, and each reading carries more of the shape going out toward home and the mathematical horizon, about 1.5 times its
-share from octave 4 on. Near the corner every shape looks most like the circle; shapes show themselves at their two ends
-(§2.4). Each added octave is a factor of two finer at the ends, a binary digit of the shape's detail.
+share from level 4 on. Near the corner every shape looks most like the circle; shapes show themselves at their two ends
+(§2.4). Each added level is a factor of two finer at the ends, a binary digit of the shape's detail.
 
-*Within each octave.* Each octave's [0, 1] (R167) was split into equal bins of its share t:
+*Within each level.* Each level's [0, 1] (R167) was split into equal bins of its share t:
 
-| octaves read | bins of t per octave | pairs told apart | median difference from the circle seen (against 12 octaves × 64 bins) |
+| levels read | bins of t per level | pairs told apart | median difference from the circle seen (against 12 levels × 64 bins) |
 |---|---|---|---|
-| 2 | 1 (octave counts only) | 0.957 | 0.88 |
+| 2 | 1 (level counts only) | 0.957 | 0.88 |
 | 2 | 4 | 0.962 | 0.95 |
 | 2 | 16 | 0.962 | 0.96 |
 | 8 | 1 | 0.957 | 0.92 |
@@ -1645,10 +1652,10 @@ share from octave 4 on. Near the corner every shape looks most like the circle; 
 | 8 | 16 | 0.967 | 0.98 |
 | 12 | 64 | 0.969 | (reference) |
 
-(Readings past the last octave read are lumped into one bin here, so the figures differ a little from the table above.)
-The share inside each octave carries detail of its own: octave counts alone leave about 8% of a shape's difference from
-the circle unseen even with eight octaves, and the share read at 16 bins brings that under 2%. The two work together:
-adding octaves expresses the detail toward the ends, and the share inside an octave the detail within it, at whatever
+(Readings past the last level read are lumped into one bin here, so the figures differ a little from the table above.)
+The share inside each level carries detail of its own: level counts alone leave about 8% of a shape's difference from
+the circle unseen even with eight levels, and the share read at 16 bins brings that under 2%. The two work together:
+adding levels expresses the detail toward the ends, and the share inside a level the detail within it, at whatever
 fineness it is read.
 
 *The limit.* Readings alone tell 96.9% of the pairs apart at the finest reading; 82 of 2,628 pairs stay together, mostly
@@ -1656,9 +1663,9 @@ the circle against the regular polygons, the egg, the Reuleaux triangle and the 
 in how their readings spread. Their difference is in the magnitudes, the payloads, not the addresses (§4.3).
 
 Placing this against §2.3: an unknown breadth b slides the count of doublings by log₂ b. Only when b is a power of two
-does it leave every place within an octave unchanged; otherwise it also moves where readings sit inside their octaves.
-This is Proposition 3.4's two kinds of relation at work: the count of octaves takes the unknown as a shift, and the
-share within an octave as a factor.
+does it leave every place within a level unchanged; otherwise it also moves where readings sit inside their levels.
+This is Proposition 3.4's two kinds of relation at work: the count of levels takes the unknown as a shift, and the
+share within a level as a factor.
 
 **Naming.** In the lived sense, the near field is the front side. In physics, "near field" means close to a source,
 which in §3.2's glowing disc is past the corner. Where the two could be confused this paper says front side.
@@ -1706,10 +1713,10 @@ h/v that (b) concludes; the proof uses only monotonicity.)
 
 So the unknown breadth enters a register in one of two ways, as a **shift** (a) or as a **factor** (b), and nothing in
 the geometry chooses between them: it depends on how the reader relates its readings. The back side holds both. Across
-octaves the reader counts, and a count is related by difference: the count of octaves is the logarithm, with v's breadth
-one shift in it, the offset in doublings of §2.3. Within an octave the reader reads a share, and a share is related by
+levels the reader counts, and a count is related by difference: the count of levels is the logarithm, with v's breadth
+one shift in it, the offset in doublings of §2.3. Within a level the reader reads a share, and a share is related by
 ratio: the share is h/v, with v's breadth one factor in it. This is why R163's reading has the form it has: proportion is
-local to an octave and the logarithm is the accounting of octaves, because those are the two ways a relation can be free
+local to a level and the logarithm is the accounting of levels, because those are the two ways a relation can be free
 of the unknown.
 
 Plain proportion in s itself, v as a count of h's past the corner, is case (b) with k = 1: free of b in its ratios, but
@@ -1769,8 +1776,8 @@ doubling; R161 and R162 supply it.
 What follows. The share is defined everywhere and needs no breadth: it always divides by the larger part, the rule §3.2
 says a reader that does not invert breaks. It does not say which side a reading is on, since the flip leaves it
 unchanged; the side is a separate fact, which facing, as v and h are magnitudes on [0, 1] and direction comes only from
-how the pair is read (Tom, 25 September). The full reading is (side, share). The octaves of §3.3 are the share's, and
-(k, t) is the share written as a count of octaves and a share within one, its floating-point form. The share is not
+how the pair is read (Tom, 25 September). The full reading is (side, share). The levels of §3.3 are the share's, and
+(k, t) is the share written as a count of levels and a share within one, its floating-point form. The share is not
 Proposition 3.2(b)'s s/(1 + s): that is a reading that tells the sides apart, with the corner at ½; the share is the
 magnitude, with the corner at 1.
 
@@ -1788,7 +1795,7 @@ reader evaluates. Going back from s to g is arctan, the shortcut (R148); the swe
 
 **Depth as the recursion** (R180, 4 Oct; situation 3 or 4 only). *Revised, 6 October* (Tom, 6 October: "depth is difference between the shape and the unit circle"; "situation 2 has depth. situation 1,3,4 do not."): "depth" now means
 the difference between a shape and the unit circle, which only situation 2 has. What this paragraph calls depth, the
-count of octaves between a reader and a thing, is its **octave count** (a range, not a shape); the rest of the
+count of levels between a reader and a thing, is its **level count** (a range, not a shape); the rest of the
 paragraph is read that way. As written: Depth is how many octaves in a thing is: the count of nested sweeps between a reader and it, each octave holding the same sweep again with its own corner (R172, R175). It is not a direction at right angles to breadth. Shown in the game *Launch from Somewhere*, and with shapes on 5 October: depth held in nested octaves (SIT) and readers nested inside readers (NST, STR), §6.4.
 
 **Sweeping and indexing** (R179, 4 Oct). The view from nowhere indexes: it is the x, y grid, its breadth known and divided evenly, every place reached by an index, with no home or horizon, and its corner computed rather than found; the uniform unit circle is the same view held as h relative to v. The view from somewhere sweeps: breadth and depth, from home, step by step. A grid point and a sweep record are the same point, turned one into the other by the bar's own h and v (LIN); they part only where depth folds (OCC).
@@ -1811,9 +1818,9 @@ What follows.
   Proposition 3.2(b)'s form, with its middle at the corner. The share and g are complements: the share is the magnitude,
   1 at the corner, with the side held apart; g runs straight through, 0, ½, 1, with the side in it (g < ½ the front
   side, g > ½ the back). The one gives the other: the share is tan(π/2 · min(g, 1 − g)).
-- **In g an evenly spread world is even.** Each octave's width in g is its share of the readings: the reader's own
-  octave spans g from 0.295 to ½ on the front side and from ½ to 0.705 on the back, 0.2048 of the sweep each; the next,
-  0.1392; and so on. g is the coordinate the even lay is laid in. Reading octaves outward from the corner (§3.3, "The
+- **In g an evenly spread world is even.** Each level's width in g is its share of the readings: the reader's own
+  level spans g from 0.295 to ½ on the front side and from ½ to 0.705 on the back, 0.2048 of the sweep each; the next,
+  0.1392; and so on. g is the coordinate the even lay is laid in. Reading levels outward from the corner (§3.3, "The
   shape emerges") widens the window of g from ½ toward 0 and 1, and the shape's details, which lie toward the ends,
   emerge as it widens.
 - **Breadth expressed is breadth met.** With the range of addresses laid first (R155), g is the share of the reader's
@@ -1831,7 +1838,7 @@ What follows.
   (head and tail 0.636 = 2/π).
 - **With the periodicity, a full turn is a count of quarters and a g.** Closure is four quarter sweeps (the sweeping
   bar, 22 September). A full turn is then which quarter, the facing, together with g within it: the same form as a
-  reading's (octave count, share) and a float's (exponent, significand), and the rule of 25 September that v and h are
+  reading's (level count, share) and a float's (exponent, significand), and the rule of 25 September that v and h are
   magnitudes on [0, 1] and direction comes only from how the pair is read.
 
 *What this supersedes.* R157 ("g is the sweep between 1 and 2, but not to the far horizon, but the near horizon, the
@@ -1842,7 +1849,7 @@ expressed, g = 1 the breadth fully expressed. R140's mix between the circle and 
 the mix, m (§2.1); it is a weight between two whole shapes, not a place on the sweep. On the afternoon of 2 October this
 section also briefly read g as g = b − 1 and then as R140's mix toward the world; both are withdrawn.
 
-**The breadth ratio, written in octaves.** b itself can be written as octaves with a share within one, b = 2ᵏ(1 + u),
+**The breadth ratio, written in levels.** b itself can be written as levels with a share within one, b = 2ᵏ(1 + u),
 the same form as a reading's (k, t). Let Cₖ be the shape whose v breadth is 2ᵏ times its h breadth. Counted with v in a
 unit of 2ᵏh, Cₖ has equal breadths: it is the unit circle in that unit (R134). Only C₀ is the unit circle without a
 change of unit, the one shape whose breadths are equal in a unit h and v share (situation 1); every other Cₖ is a circle
@@ -1877,12 +1884,12 @@ ends.
 in general, is a boundary between a front side and a back side. Three meet a situated reader (R174):
 - **The mathematical horizon** is the reading's infinity, h = 0 and v/h without end, at the reader's sides (R77): the
   boundary between the hemisphere it faces and the one behind it. No reader reaches it.
-- **The far horizon** is where the reader's count of octaves runs out (R176), well before h = 0. A reader reaches it.
-  Past the corner the reader carries at every octave edge, its reading starting again at home in the next octave, and it
-  counts octaves (the carry of §3.3; a float raising its exponent; *Wander*'s distance ladder taking up the beat where
+- **The far horizon** is where the reader's count of levels runs out (R176), well before h = 0. A reader reaches it.
+  Past the corner the reader carries at every level edge, its reading starting again at home in the next level, and it
+  counts levels (the carry of §3.3; a float raising its exponent; *Wander*'s distance ladder taking up the beat where
   parallax runs out). So it meets no limit until the count ends, as a float overflows only when its exponent runs out.
-  The cost of carrying is that each octave is resolved to the same proportion, so absolute precision falls octave by
-  octave. (A reader that lays one bounded sweep instead has its last address near v/h = 4N/π, Proposition 3.8's table,
+  The cost of carrying is that each level is resolved to the same proportion, so absolute precision falls level by
+  level. (A reader that lays one bounded sweep instead has its last address near v/h = 4N/π, Proposition 3.8's table,
   and its step outgrows the reading near 4N/(3π). That layout is not the reader's; R176.)
 - **The near horizon** is the corner, v = h, between the front side and the back side of its reading (Proposition 3.1).
   It is known. *Revised* (Tom, 6 October): known exactly only where both breadths are known (situations 1 and 2); a
@@ -1916,8 +1923,8 @@ circle is what the sweep traces, the reader its centre), with §4.3 (addresses a
 reader points, it is not pointed to), and with Proposition 3.6 (a reader cannot read its own rung).
 
 R172 makes ½h and 2h the edges of the reader's octave with two facings: at one its own reading ρ starts at 0, and at
-the other it runs without end. Every octave edge is then where the reading of the octave below runs without end and
-where the reading of the octave above starts, in their address ρ; that holds by construction of ρ. Whether the edges
+the other it runs without end. Every level edge is then where the reading of the level below runs without end and
+where the reading of the level above starts, in their address ρ; that holds by construction of ρ. Whether the edges
 mark anything in the reader's reading s, as the corner does, where none of the corner's particular
 properties holds at them, stays open (§14).
 
@@ -1958,11 +1965,11 @@ receive the same readings, address for address.
 So nothing in a reader's readings tells it where on the ladder it stands; a world and its scaled copy are told apart only
 by a reader that holds one extent of the world's own, which is a payload, not geometry.
 
-**Proposition 3.7 (every rung has the same structure).** Home, the corner, the front and back sides, the octaves of §3.3,
+**Proposition 3.7 (every rung has the same structure).** Home, the corner, the front and back sides, the levels of §3.3,
 the inversion and its levels (§3.2), and Propositions 3.1–3.3 are the same for a reader with unit h and one with unit λh,
 for every λ > 0.
 
-*Proof.* Each is defined from the reading s alone: home s = 0, the corner s = 1, the sides s < 1 and s > 1, the octaves
+*Proof.* Each is defined from the reading s alone: home s = 0, the corner s = 1, the sides s < 1 and s > 1, the levels
 by s's doublings, the inversion as s ↦ 1/s, and the three propositions as statements about s. None mentions h except
 through s. ∎
 
@@ -1972,16 +1979,16 @@ of unit slides the ladder and cannot re-space it.
 
 **Proposition 3.8 (one reader's back side is another's front side; the slide).** Let two readers read one world, with
 units h and 2ᵐh, m ≥ 1. (a) The upper reader's front side, [0, 2ᵐh], is the lower reader's front side together with its
-octaves 0 to m − 1 past the corner: what the lower holds facing back, h as a share of v, the upper holds facing
-forward, v as a share of its own unit. (b) If each reader lays the same number of addresses per octave and the same
-number of octaves on each side, the upper reader's ladder is the lower's slid m octaves toward the lower's mathematical horizon: it
-reaches m octaves farther that way and m octaves less far toward home. Neither holds more in total.
+levels 0 to m − 1 past the corner: what the lower holds facing back, h as a share of v, the upper holds facing
+forward, v as a share of its own unit. (b) If each reader lays the same number of addresses per level and the same
+number of levels on each side, the upper reader's ladder is the lower's slid m levels toward the lower's mathematical horizon: it
+reaches m levels farther that way and m levels less far toward home. Neither holds more in total.
 
 *Proof.* (a) For the upper reader s′ = v/(2ᵐh) = s/2ᵐ, so its front side s′ < 1 is s < 2ᵐ: the lower reader's front side
-and its octaves past the corner up to 2ᵐh (§3.3). (b) The upper reader's octave edges are at 2ᵐ⁺ʲh for every whole j, the
-lower's at 2ʲh: the same edges, the upper's counted from 2ᵐh. Its corner is the lower's octave edge m doublings out, so
-each of its octaves is the lower's octave m places toward the lower's mathematical horizon, and with the same count of octaves on
-each side its outermost octaves are m beyond the lower's that way and m short of them toward home. ∎
+and its levels past the corner up to 2ᵐh (§3.3). (b) The upper reader's level edges are at 2ᵐ⁺ʲh for every whole j, the
+lower's at 2ʲh: the same edges, the upper's counted from 2ᵐh. Its corner is the lower's level edge m doublings out, so
+each of its levels is the lower's level m places toward the lower's mathematical horizon, and with the same count of levels on
+each side its outermost levels are m beyond the lower's that way and m short of them toward home. ∎
 
 *On R175's octaves* (6 October, the audit). The proof counts doublings (R167). On R175's octaves (×4, corners at 4ⁿh,
 edges at 2·4ⁿh) the same holds for even m, the ladder sliding m/2 octaves. For odd m it does not: a reader at 2h has its
@@ -1989,18 +1996,18 @@ corners at 2·4ⁿh, exactly where the lower reader's edges are, and its edges w
 in unit swaps corners and edges.
 
 In an evenly spread world, the share of readings a reader holds facing forward grows with its rung relative to the
-world's scale exactly as the octaves added in §3.3's measurement: 0.5000, 0.7048, 0.8440, 0.9208, 0.9603, 0.9801 for
-m = 0 to 5. Adding octaves outward and moving up the ladder are one operation, paid for at the home end.
+world's scale exactly as the levels added in §3.3's measurement: 0.5000, 0.7048, 0.8440, 0.9208, 0.9603, 0.9801 for
+m = 0 to 5. Adding levels outward and moving up the ladder are one operation, paid for at the home end.
 
 *The slide's budget is a premise, not a result* (2 October, 19:57, on a reading offered by Gemini that Proposition 3.8
-makes observation zero-sum). Proposition 3.8(b) assumes that each reader lays the same number of addresses per octave
-and the same number of octaves on each side; under that condition neither holds more. Nothing in the geometry fixes the
+makes observation zero-sum). Proposition 3.8(b) assumes that each reader lays the same number of addresses per level
+and the same number of levels on each side; under that condition neither holds more. Nothing in the geometry fixes the
 number: the quarter turn can be laid as finely as a reader likes (R95). What a finite number of addresses does fix is
-the reach. Laid evenly in turn, each octave out from the corner holds about half the addresses of the one inside it
-(§3.3), so N addresses hold about log₂ N octaves on each side, and doubling N buys one more octave on each side
-(`reach.py`; octaves holding at least 8 addresses):
+the reach. Laid evenly in turn, each level out from the corner holds about half the addresses of the one inside it
+(§3.3), so N addresses hold about log₂ N levels on each side, and doubling N buys one more level on each side
+(`reach.py`; levels holding at least 8 addresses):
 
-| N | octaves held on each side | last address, v/h |
+| N | levels held on each side | last address, v/h |
 |---|---|---|
 | 100 | 4 | 127 |
 | 1,000 | 7 | 1,273 |
@@ -2008,8 +2015,8 @@ the reach. Laid evenly in turn, each octave out from the corner holds about half
 | 100,000 | 14 | 127,324 |
 
 The last address sits at about v/h = 4N/π, the far horizon (R174); the gaps between addresses grow without bound toward the mathematical horizon in v/h, and
-in octaves the reach grows by one per doubling. (The audit, 6 October, counting doublings past the corner that hold at
-least 8 addresses, gets one fewer octave on every row, 3, 6, 9 and 13, with the same last addresses: a counting
+in levels the reach grows by one per doubling. (The audit, 6 October, counting doublings past the corner that hold at
+least 8 addresses, gets one fewer level on every row, 3, 6, 9 and 13, with the same last addresses: a counting
 convention, to be settled against `reach.py`.) So the slide's trade is between rungs at a fixed count of addresses; a
 reader that lays more addresses reaches farther both ways at once. Laying on arrival with N unknown is Proposition 5.4's
 case.
@@ -2060,7 +2067,7 @@ Measured on seven shapes:
    where each feature separates).
 2. R* is the corner of a derived relation, step against swing, a reading about readings, not of the shape's own v/h;
    each statement should say which reading's corner it means.
-3. Which reading's octave also needs saying. In R's own reading, halving the step is one doubling outward on the back
+3. Which reading's level also needs saying. In R's own reading, halving the step is one doubling outward on the back
    side: breadth, the count n of R172, half an octave with two facings. For the shape it is finer detail within its
    swing: nesting.
 
@@ -2107,7 +2114,7 @@ came out at +0.067, and a smooth egg came out negative. What sets the sign is op
 
 **A bounded grammar, a world of any variety** (3 October; from an exchange Tom relayed with ChatGPT, corrected here; not
 ruled). The payloads a reader meets may vary without limit; the reader's way of addressing them is bounded: the pair,
-the reading v/h, the corner, the facings, the sweep, and the sweep again within each octave. The geometry need not
+the reading v/h, the corner, the facings, the sweep, and the sweep again within each level. The geometry need not
 resemble what it addresses (*The Reader and the List*). Proposition 3.10 is that grammar with nothing yet from the world
 in it: at the coarsest step every shape is held as home's reach in every direction, drawn as the chart's unit curve, and
 each is then written as departures from it. Three corrections to how this is easily overstated:
@@ -2167,7 +2174,7 @@ payload arrives. The mathematical horizon itself is never laid (R77, R174), and 
 parallel reader keeps as a magnitude, not where the range runs.
 
 *Recast by R177 (4 Oct).* The range is not something the reader lays or calculates: breadth and depth, each a sweep from
-home with proportion to its corner and octaves past it, are the gift of geometry. The reader finds itself in that range,
+home with proportion to its corner and levels past it, are the gift of geometry. The reader finds itself in that range,
 holds its unit and a count, and reads. What R155's "falls out" below says of the range stands; what it says of the reader
 laying it is to be read as the geometry's.
 
@@ -2218,7 +2225,7 @@ evaluated on demand, can be other readers."* By R155 the range of addresses is l
 address exists before its payload does, and nothing requires the payload to exist until the address is read: a payload
 can be a function of its address, evaluated when it is asked for. Three things in this paper read that way. g (§3.5) is
 how far the sweep has gone, and so how much has been evaluated; the world's breadth is always fully expressed (R124), and what
-a reader holds is what it has asked for. The shape emerges octave by octave and within each octave (§3.3), each level
+a reader holds is what it has asked for. The shape emerges level by level and within each level (§3.3), each one
 evaluated as it is needed, none held in advance. And *The Radix* (§10) already built one: a road whose land was
 generated from the address's own prefixes as each stretch came into view, so that "the address is the pyramid". Its
 limit holds here too: that land was made from the address, so it shows that a payload can be evaluated on demand, not
@@ -2363,8 +2370,8 @@ under every lay.
 Depth had only nearness. Depth is the second degree of freedom (R177): like breadth it is a sweep from home, given by the
 geometry and not laid or calculated by the reader, and it is not at right angles to breadth or reached by an index. Its
 corner is the reader's unit D1. By R176, from home to D1 it runs in plain proportion, a step of D1/N; past D1 it runs in
-octaves, each like the last, carried at every edge and counted; toward home the limit is the step, and outward the count
-of octaves. *Until 4 October this section laid depth as d = D1 · tan ψ, which reaches a depth by index (the arctan shortcut
+levels, each like the last, carried at every edge and counted; toward home the limit is the step, and outward the count
+of levels. *Until 4 October this section laid depth as d = D1 · tan ψ, which reaches a depth by index (the arctan shortcut
 run backwards); R177 does not permit that in a sweep. The results that do not depend on it stand below; those that do are
 kept for the record and marked.*
 
@@ -2381,31 +2388,31 @@ the reading nearness is clipped from.
 The forward reading has a corner of its own, at the reader's unit D1 (R87): near things are on one side of it and far
 things on the other, and nearness keeps the far side, read from its far end.
 
-**The forward reading has the octaves of §3.3.** With D1 as the unit, d/D1 is a reading like s, so what §3.3 built on s
-carries over without a new step: the flip is d ↦ D1²/d; the share is min(d/D1, D1/d); octaves are counted from D1 outward,
-the reader's own octave being d from ½D1 to 2D1, every octave with its own corner (R175); and nearness is the share on the
+**The forward reading has the levels of §3.3.** With D1 as the unit, d/D1 is a reading like s, so what §3.3 built on s
+carries over without a new step: the flip is d ↦ D1²/d; the share is min(d/D1, D1/d); levels are counted from D1 outward,
+the reader's own level being d from ½D1 to 2D1, every level with its own corner (R175); and nearness is the share on the
 far side, clipped to 1 on the near side.
 
-On R176's sweep the front side holds N addresses at one step D1/N, and every octave past D1 holds the same N. A depth past
-D1 is therefore held to the same share of itself in every octave, and its absolute step grows four times per octave (as CAR
+On R176's sweep the front side holds N addresses at one step D1/N, and every level past D1 holds the same N. A depth past
+D1 is therefore held to the same share of itself in every level, and its absolute step grows four times per level (as CAR
 measured for breadth, §9.9). Before D1 the absolute step is the same everywhere and the share it makes of the depth grows
 toward home, until near the reader a step is as large as the depth itself. That is R158's two registers: proportion before
-the corner, a count of octaves past it. **What is not shown** is Proposition 3.4's premise for depth: that past D1 there is
+the corner, a count of levels past it. **What is not shown** is Proposition 3.4's premise for depth: that past D1 there is
 an unknown extent, as b was for v, so that only relations free of it can be held. If that is granted, Proposition 3.4
 applies unchanged and nearness, D1/d, is its k = −1 power. It is left to rule (§14).
 
-*For the record, on the former lay d = D1 · tan ψ (item 440; not R177's sweep).* The reader's octave held 41% of the depth
-addresses and each octave past it about half the one inside, the same on both sides (20.5%, 13.9%, 7.7%, 3.9%, 2.0% per
-side for octaves 0–4). On R176's sweep the shares differ: each octave past D1 holds as many addresses as the whole front
+*For the record, on the former lay d = D1 · tan ψ (item 440; not R177's sweep).* The reader's level held 41% of the depth
+addresses and each level past it about half the one inside, the same on both sides (20.5%, 13.9%, 7.7%, 3.9%, 2.0% per
+side for levels 0–4). On R176's sweep the shares differ: each level past D1 holds as many addresses as the whole front
 side.
 
 **Proposition 5.3 (the fisheye in depth), on R176's sweep.** Past D1 the step relative to the depth is the same in every
-octave (and, as CAR measured for breadth, least at each octave's own corner); before D1 it is (D1/N)/d, least at the corner. The flip d ↦ D1²/d carries
+level (and, as CAR measured for breadth, least at each level's own corner); before D1 it is (D1/N)/d, least at the corner. The flip d ↦ D1²/d carries
 each octave past D1 to the octave of halvings toward home with the same shape (R172), though the front side's addresses
 are in proportion, not in halvings (R176).
 
-*Proof.* The front side is proportion, so its step is D1/N everywhere. Past D1 each octave is laid like the last, so the
-step scales with the octave's corner and its share of the depth repeats octave by octave. ∎
+*Proof.* The front side is proportion, so its step is D1/N everywhere. Past D1 each level is laid like the last, so the
+step scales with the level's corner and its share of the depth repeats level by level. ∎
 
 *For the record, on the former lay* (Proposition 5.3 as first stated): the relative depth step was 2Δψ / sin 2ψ, least at
 d = D1 and the same at d and D1²/d. Measured with 1,000 depth addresses on that lay and two others (item 216):
@@ -2471,8 +2478,8 @@ two things assumed: re-laying everything at each arrival, so that addresses move
 span, which is even at every power of two and never moved but loses the list's order. ∎
 
 So a reader that keeps order and place, and does not know how many will come, takes addresses by a fixed step counted
-out from home. On the front side the steps are plain proportion, n/C to the corner; past it, by R176, they run in octaves, each like the
-last, carried and counted, and the far horizon is where the count of octaves runs out (first written here as addresses
+out from home. On the front side the steps are plain proportion, n/C to the corner; past it, by R176, they run in levels, each like the
+last, carried and counted, and the far horizon is where the count of levels runs out (first written here as addresses
 crowding toward a far horizon where they end, the bounded sweep's picture). The record (§2.5 there) gives this lay as procedures, written with the
 arctan shortcut.
 
@@ -2520,10 +2527,10 @@ which does not saturate but needs the reader to move (item 176).
 
 §6.3's hollow is read only through its mouth. The runs of 5 October ask what it takes when hidden sides nest: curls nearly closed, spirals of more than one turn, and shapes with pockets inside pockets. **The known outline is the answer key** (Tom, 5 Oct: "the advantage of full shape is that you know the answer, you compare the known shape with what the reader learns about it"). A part of the outline counts as **seen** when some reader's ray towards it meets it first. Notes and scripts: `wander/patho` (SIT.md, OCC.md, NST.md, STR.md, SIG.md); the sheets in svg.html (Appendix B).
 
-**Depth held by nested octaves (SIT).**
+**Depth held by nested levels (SIT).**
 - **Set-up.**
   - The reader has its own h and nothing about the shape. v is withheld: it learns only how many of its own h's along each direction the meeting falls, held in one of 1,024 depth addresses.
-  - The addresses are laid either as one sweep, or nested: 16 octaves of 64 leaves, each octave its own sweep, with walls held at their own address.
+  - The addresses are laid either as one sweep, or nested: 16 levels of 64 leaves, each level its own sweep, with walls held at their own address.
 - **Result.**
   - The nested reader's depth error stays at about 0.7% from 4 h to 128 h; the one sweep's grows 23-fold.
   - At 128 h the one sweep misplaces the shape by 2.4 of its own sizes, the nested reader by 0.19.
@@ -2582,10 +2589,10 @@ A reader in the hollow completes every curl. Spirals past a full turn stay hidde
 | a chirp | 7 |
 | a sine of period 4 h | 9 |
 
-- **The hand-offs follow the signal's crest spacing**, not the reader: 17 h for the 16 h sine, 4.9 h for the 4 h sine, 1.9 h for rough 1/f noise. No octave of the reader shows here, nor could one, since every reader held the same h.
+- **The hand-offs follow the signal's crest spacing**, not the reader: 17 h for the 16 h sine, 4.9 h for the 4 h sine, 1.9 h for rough 1/f noise. No level of the reader shows here, nor could one, since every reader held the same h.
 
 **What it shows (R186).** "The more difficult to see from given situated view, the further it is pushed into recursion" (Tom, 5 Oct). A part hidden behind material sits as many readers deep as there are turns out of sight between it and the start. Each reader stands where the one before saw furthest, so a hidden region is reached by a chain of standpoints, not by more of them at one level. The recursion of R180 has two forms in shapes:
-- octaves nested in a reader's depth addresses (SIT);
+- levels nested in a reader's depth addresses (SIT);
 - readers nested in readers' standpoints (NST, STR).
 
 Neither decides the 2 of the central hypothesis; see there.
@@ -3068,18 +3075,18 @@ notes hold every run.
 | ONE (preliminary) | one quantum at a time; which way and erasure | fringes from clicks (visibility 1.008 ± 0.012), the wavelength given the geometry; a mark takes them from the screen alone, erasure brings them back in company; an overall phase moves no click | §11.4 (an overall phase); §14 |
 | TWO (preliminary) | Hong, Ou and Mandel | identical quanta leave together; the dip's width on the readers' own clocks; identity the world's, found by counting, not earned by following (contrast TRK) | assumption 2, §12; §14 |
 | RNG | not a physical result: §4.2's range laid first | against a rival with only the addresses its arrivals made: the breadth ratio and the dark read only against a range laid first; laying on arrival keeps two of order, place and evenness (Proposition 5.4) | §4.2; §5.6 |
-| CAR | not a physical result: R176's lay, against one bounded sweep | the reader's own lay (proportion to the corner, step h/N, then octaves carried and counted) beside a single bounded sweep, N = 1000, 40,000 readings | R176's lay held every prediction in two runs: within half a step before the corner, within 3π/(8N) past it in every octave, absolute error ×3.7–4.4 per octave, failing only past its count; no seam at the corner (×1.18). Killed on the bounded sweep's small-gap formula, which reads x/(1+x) where the step nears the reading | §3.3; §3.7; R176 |
+| CAR | not a physical result: R176's lay, against one bounded sweep | the reader's own lay (proportion to the corner, step h/N, then levels carried and counted) beside a single bounded sweep, N = 1000, 40,000 readings | R176's lay held every prediction in two runs: within half a step before the corner, within 3π/(8N) past it in every level, absolute error ×3.7–4.4 per level, failing only past its count; no seam at the corner (×1.18). Killed on the bounded sweep's small-gap formula, which reads x/(1+x) where the step nears the reading | §3.3; §3.7; R176 |
 | NWH | not a physical result: one breadth from nowhere and from somewhere (R176–R178) | the view from nowhere, knowing the breadth and dividing it evenly, beside the situated reader holding h and the table laid by us, on a straight line of things, breadths 1/64 to 262,144 | the two read alike exactly at one breadth, the reader's own h; below h the view from nowhere is finer, above it the reader holds N + (N/2)log₂B addresses, finer near home, to a fixed share far out, never told the breadth, up to its count and nothing past it. Killed on one sub-check's wording (a tie at the step near home) | §3.5; R178 |
 | LIN | not a physical result: a perturbed line in situations 2, 3 and 4 (R177, R178; Tom: "two ways of representing the same thing") | a line at h with four small bumps, held by the view from nowhere (even division of a known breadth) and by the reader (its table and the depth at each address) | the same shape point for point, by the bar's own h and v, to 4 × 10⁻¹⁶; on the straight line depth × h = 1 (no free depth), so the bumps are carried in depth; they differ only in where their points fall | §3.5; R178 |
-| OCC | not a physical result: where situations 2, 3 and 4 part, as LIN's bumps grow (R177, R178) | the first meeting along the bar at each address, against the view from nowhere's whole shape | depth folds where place × slope = height: worked out before the run as 0.451 (a bump away from the reader) and 0.215 (toward), the same in every octave, and found within 0.12%; below it the two hold the same shape, past it part of the shape is behind another and the reader holds only the front; its own depths show an edge from 0.83–0.98 of the onset. Killed on a prediction neglecting neighbouring tails just past the onset and on windows too short for the largest spans (both mine) | §3.5; R178 |
+| OCC | not a physical result: where situations 2, 3 and 4 part, as LIN's bumps grow (R177, R178) | the first meeting along the bar at each address, against the view from nowhere's whole shape | depth folds where place × slope = height: worked out before the run as 0.451 (a bump away from the reader) and 0.215 (toward), the same in every level, and found within 0.12%; below it the two hold the same shape, past it part of the shape is behind another and the reader holds only the front; its own depths show an edge from 0.83–0.98 of the onset. Killed on a prediction neglecting neighbouring tails just past the onset and on windows too short for the largest spans (both mine) | §3.5; R178 |
 | DEP | not a physical result: total depth recovered by turning (Tom, 12:34–12:38: nowhere's depth is the shape less its unit sphere; somewhere's is the Cauchy less the unit sphere) | a reader at a pivot holding a depth at each address of two breadths (R176's lay, n = 64) on a unit sphere perturbed outward, turned 2000 times evenly; its unit sphere taken as the farthest depth at addresses met every turn, its total as front volume over the share in front | the reader finds its unit sphere (0.06%) and the centre of gravity (3 × 10⁻¹⁰) from its own records; its depth is nowhere's stretched toward its edges (median ratio 1.04 inside, 2.86 at the outer tenth). Killed on the totals: 24.5% short for thin bumps, 56% for the page's, a one-axis spin 6% short rather than over. Cause, the prediction: depth on bars grazing the shape outside the unit sphere, at the reader's own edge, where it holds only an entry depth; the shortfall shrinks slowly as the bumps thin | `plans/depth-plan.md` |
 | ARE | not a physical result: a bump's area on a line, from nowhere and from somewhere (Tom, 12:58) | the reader's area Σ ½(d² − d₁²)·Δa/(1 + a²) with its unit line d₁ = √(1 + a²), on R176's lay (n = 1000), against nowhere's ∫(y − 1) dx | equal within 2.5 × 10⁻⁶ below the onset, away and toward, from the reader's addresses, depths and h alone; per address d − d₁ = (y − 1)√(1 + a²) to 10⁻¹⁵ (stretched by the bar, equal only in total). Past the onset the reader's signed area is less than nowhere's (−2.6% away; 8.6% more negative toward). Killed on the toward case by the prediction's wording (mine: "smaller in size" for "less") | `plans/bump-area-plan.md` |
 | WIN | not a physical result: the line's idea on a circle and a sphere (Tom, 13:15) | the reader finds its unit circle (sphere) and centre from its own records (farthest depth at addresses met every turn), reads the perturbation about that centre in a middle window of 30°, and averages over even turns, dividing by the window's share | measured against the reader's own unit circle, the totals agree with nowhere's: circle 3 × 10⁻⁴ and 3 × 10⁻⁵ (360 even turns), sphere +0.4% (0.2 SE, 4000 random turns); the whole front falls 16–57% short; one-axis turning +56%. Killed on 1–3 by the set-up (mine): the bumps never reach zero, so the reader's unit circle is the largest the shape always contains, R0 raised by the tails (+0.055%, +0.49%), and the raw totals differ by the ring or shell between; and the sphere's 1% bound was below its scatter (1.6%) | `plans/window-plan.md` |
-| OCT | not a physical result: recovering depth on the recursive octaves, with depth held at the reader's own steps (Tom, 13:41–13:42: "thats probably how readers actually do it") | WIN's procedure with the object wholly past the corner (addresses 2–7, octave addresses); bumps that end (cos², zero past s₀); and each depth rounded to the nearest step of the depth lay (proportion to h, then octaves) | on the octaves the unit and centre are found exactly and totals agree: circle −9 × 10⁻⁴ and −1 × 10⁻⁴, sphere −0.7% (0.36 SE). With depth held at the lay: line within 6 × 10⁻⁴ at N = 250, circle +0.9% at N = 256, both 0.3–4% of the worst-case bound (rounding errors cancel). Killed on one sub-part: for ε = 0.1 the line's error at N = 4000 is 0.34 of N = 250's, not ≤ 0.25 (the remainder does not follow the step; prediction, mine) | `plans/octave-plan.md` |
-| ADD | not a physical result: recovering depth by counting and adding only (Tom, 13:50: "a reader does not use trig or advanced math… only simple recursive addition") | the reader holds its lay with two tables (Δθ per address; W = ½d² per depth step, built by recursive addition), records the depth step at each address, measures its unit (bare record on a line; farthest step over turns on a circle), sums Δθ·(W[unit] − W[shape]); on the circle a counted middle-third window and a share counted from arrival times | line: within 4 × 10⁻⁴ for four bumps, across the corner and into the octaves, with no root, trig or fit. Circle killed: the counted share overstated the true one by 29% and 7% (arrival is the first step of a long tail, at different moments at the two ends), totals −17% and −21%; with the true share the counted sums give +0.7% at n = 1024 | `plans/addition-plan.md` |
-| LIB | not a physical result: the window method on figures not built for it (Tom, 14:01: "could we use the shapes library to test this?") | 73 single-loop figures from svg.html's library, classed before the run by nowhere's geometry (R clean 30, F folds 26, U unit too small 2, N not radial 15); the unit is the largest circle about the centroid the figure always contains; WIN's way and ADD's way, on the octaves | killed on 1, 2, 3. WIN's way: 20 of 30 clean figures within 1% (most 0.2%); 7 fail with the unit misfound where it touches only at corners (square +3%, hinge4 +16%), 2 low from window turns dropped (rectangle −3.6%), circle has almost no depth to find. ADD's way: 28 of 30 outside 2%, mostly short. F: 24 of 26 read over nowhere's as predicted; banner and knife under, from dropped turns. Causes tentative. **Run 2** (two reader-side rules: fit the unit to the middle half of the met addresses; halve the window until it fits every turn): R within 0.5% on 29 of 30, 26 within 0.2%; killed on hinge4 and hinge5, whose unit touches only at inward corners (r̂ +1.9%, −0.4%; hinge5 total −2.2%), and on four F figures that now read nowhere's total rather than more (fold outside the narrowed window). Knife −31% → +0.05%. ADD's way at n = 1024: within 2% only for small perturbations | `plans/library-plan.md` |
+| OCT | not a physical result: recovering depth on the recursive levels, with depth held at the reader's own steps (Tom, 13:41–13:42: "thats probably how readers actually do it") | WIN's procedure with the object wholly past the corner (addresses 2–7, level addresses); bumps that end (cos², zero past s₀); and each depth rounded to the nearest step of the depth lay (proportion to h, then levels) | on the levels the unit and centre are found exactly and totals agree: circle −9 × 10⁻⁴ and −1 × 10⁻⁴, sphere −0.7% (0.36 SE). With depth held at the lay: line within 6 × 10⁻⁴ at N = 250, circle +0.9% at N = 256, both 0.3–4% of the worst-case bound (rounding errors cancel). Killed on one sub-part: for ε = 0.1 the line's error at N = 4000 is 0.34 of N = 250's, not ≤ 0.25 (the remainder does not follow the step; prediction, mine) | `plans/octave-plan.md` |
+| ADD | not a physical result: recovering depth by counting and adding only (Tom, 13:50: "a reader does not use trig or advanced math… only simple recursive addition") | the reader holds its lay with two tables (Δθ per address; W = ½d² per depth step, built by recursive addition), records the depth step at each address, measures its unit (bare record on a line; farthest step over turns on a circle), sums Δθ·(W[unit] − W[shape]); on the circle a counted middle-third window and a share counted from arrival times | line: within 4 × 10⁻⁴ for four bumps, across the corner and into the levels, with no root, trig or fit. Circle killed: the counted share overstated the true one by 29% and 7% (arrival is the first step of a long tail, at different moments at the two ends), totals −17% and −21%; with the true share the counted sums give +0.7% at n = 1024 | `plans/addition-plan.md` |
+| LIB | not a physical result: the window method on figures not built for it (Tom, 14:01: "could we use the shapes library to test this?") | 73 single-loop figures from svg.html's library, classed before the run by nowhere's geometry (R clean 30, F folds 26, U unit too small 2, N not radial 15); the unit is the largest circle about the centroid the figure always contains; WIN's way and ADD's way, on the levels | killed on 1, 2, 3. WIN's way: 20 of 30 clean figures within 1% (most 0.2%); 7 fail with the unit misfound where it touches only at corners (square +3%, hinge4 +16%), 2 low from window turns dropped (rectangle −3.6%), circle has almost no depth to find. ADD's way: 28 of 30 outside 2%, mostly short. F: 24 of 26 read over nowhere's as predicted; banner and knife under, from dropped turns. Causes tentative. **Run 2** (two reader-side rules: fit the unit to the middle half of the met addresses; halve the window until it fits every turn): R within 0.5% on 29 of 30, 26 within 0.2%; killed on hinge4 and hinge5, whose unit touches only at inward corners (r̂ +1.9%, −0.4%; hinge5 total −2.2%), and on four F figures that now read nowhere's total rather than more (fold outside the narrowed window). Knife −31% → +0.05%. ADD's way at n = 1024: within 2% only for small perturbations | `plans/library-plan.md` |
 
-**Milestone, 4 October (ARE, DEP, WIN, OCT, ADD).** A situated reader holding only its h, its lay (R176, the recursive octaves past the corner) and its record recovers the total depth nowhere computes. On a line it does this by counting and adding alone, to 4 × 10⁻⁴. On a circle and a sphere it turns the object, finds its unit and the centre from its own record, and reads only the middle of its view: 10⁻³ on the circle, within scatter on the sphere. The parts differ (the reader's depth is nowhere's stretched along the bar) and the totals agree. Scope: these are consistency results in simulated geometry, several of them identities the runs confirm. They show the reader's record is sufficient; they are not yet a test against the world. They do give a concrete procedure with numbers (the √(1 + a²) stretch, the edge loss, the one-axis bias, the cost of holding depth at the reader's steps) that a planned measurement could check. Open: a counting-only way to the window's share of the turns. LIB (the shape library, 73 figures drawn for a shape tool): with two rules the reader applies to its own record, the total is within 0.5% on 29 of 30 clean figures; the unit is misfound only where it touches the outline at isolated inward corners.
+**Milestone, 4 October (ARE, DEP, WIN, OCT, ADD).** A situated reader holding only its h, its lay (R176, the recursive levels past the corner) and its record recovers the total depth nowhere computes. On a line it does this by counting and adding alone, to 4 × 10⁻⁴. On a circle and a sphere it turns the object, finds its unit and the centre from its own record, and reads only the middle of its view: 10⁻³ on the circle, within scatter on the sphere. The parts differ (the reader's depth is nowhere's stretched along the bar) and the totals agree. Scope: these are consistency results in simulated geometry, several of them identities the runs confirm. They show the reader's record is sufficient; they are not yet a test against the world. They do give a concrete procedure with numbers (the √(1 + a²) stretch, the edge loss, the one-axis bias, the cost of holding depth at the reader's steps) that a planned measurement could check. Open: a counting-only way to the window's share of the turns. LIB (the shape library, 73 figures drawn for a shape tool): with two rules the reader applies to its own record, the total is within 0.5% on 29 of 30 clean figures; the unit is misfound only where it touches the outline at isolated inward corners.
 
 Twenty-eight of the thirty-two are not killed in their latest run (WOB's fourth run and EQV's third, 3 October, closed them); ELV is open, its cause known in
 outline and not against the conjecture of §11.4. CAR (4 October) is killed by its last allowed run on the bounded sweep's formula, not on R176's lay, which held every prediction. NWH (4 October) is killed on one sub-check's wording, a tie where both readers meet the step near home; everything it predicted of the two readings held. OCC (4 October) is killed on its own prediction's neglect of neighbouring tails and on windows too short (both mine); its onsets held to 0.12%.
@@ -3560,8 +3567,8 @@ candidate, not ruled: **the far horizon is where a reader's step becomes as larg
   both ways, reaching the size of the reading near v/h = 4N/π, which is where the last address sits. So senses 1 and 3
   meet there; by the flip, the same holds near π/(4N) toward home.
 - A front side laid in plain proportion has a constant step in s, h/C, which overwhelms the reading near home.
-- A carrying reader keeps its step in proportion to the reading inside every octave, so it never reaches that place
-  until its count of octaves runs out.
+- A carrying reader keeps its step in proportion to the reading inside every level, so it never reaches that place
+  until its count of levels runs out.
 
 Proposal, not ruled: retire "grain" as a framework term, as "density" was, and say **the step**, **the ratio between
 rungs** and **the count of addresses** instead. Tom (04:52): "readers grain is confusing to so i'm not ready to rule on
@@ -3575,18 +3582,18 @@ likely."* Shown on the page *Step and Reading* (`wander/step-and-reading.html`),
 corner, then carrying past it.
 - **Front side.** One step, h/N, as a float's subnormals have one fixed step up from zero. Toward home the step
   becomes as large as the reading near the first addresses, about 1/N to 2/N.
-- **Past the corner.** Octaves, each laid like the last, as a float's significand is in every doubling, so the step stays
-  the same share of the reading. There is no far limit except the count of octaves, as a float overflows only when its
+- **Past the corner.** Levels, each laid like the last, as a float's significand is in every doubling, so the step stays
+  the same share of the reading. There is no far limit except the count of levels, as a float overflows only when its
   exponent runs out.
 - **Where it differs from a float.** A float hands over from proportion to counting at the bottom of its range (the
   smallest normal number), and nothing turns at 1. Here the hand-over is at the corner, where the facing turns (R175).
 - **On grain.** A float names the three senses apart: the unit in the last place (the step), the base (the ratio
   between rungs), and the exponent's range (the count). This view would do the same.
-- **On the far horizon.** For this layout, the far horizon is where the count of octaves runs out, not where a step
+- **On the far horizon.** For this layout, the far horizon is where the count of levels runs out, not where a step
   outgrows the reading. 4N/(3π) and 4N/π belong only to the bounded sweep.
 
 **RESOLVED by R175 (Tom, 4 Oct 05:01: "recursion is the same thing all the way down, so each sweep would have its own
-corner by definition"): many; every octave has its own corner (§3.3). Flagged as a priority at 04:59: one corner past the
+corner by definition"): many; every level has its own corner (§3.3). Flagged as a priority at 04:59: one corner past the
 near horizon, or many (R167 against R172).** Both rulings agree on the reader's own octave, ½h to 2h around h. Past it they part.
 - **R167** (with R163): the ladder runs in doublings, and every doubling past the corner reads h in terms of v. The
   facing turns once, at h.
@@ -3605,14 +3612,14 @@ near horizon, or many (R167 against R172).** Both rulings agree on the reader's 
 
 Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facing forward, under R172.
 - **What they share.** Both treat the facings alike (R162), so the flip cannot decide between them. Both place every
-  reading within 0.011 of an octave of the other, and exactly at octave edges.
+  reading within 0.011 of a level of the other, and exactly at level edges.
 - **Where they differ.** Under R167 the corner is unique and the far side is counted. Under R172 corners recur, and each
   octave out is a whole sweep. Tom's remarks lean to R172 ("each octave itself is another 0 to π/2 sweep"; 04:52, "far
-  horizon is recursive octave"), but this is not ruled.
+  horizon is recursive level"), but this is not ruled.
 - **What waits on it:**
-  - §3.3's main table, octave by octave with the share h/v past the corner, which is built on R167;
+  - §3.3's main table, level by level with the share h/v past the corner, which is built on R167;
   - the octave with two facings and nesting of R172, written in as Tom's view;
-  - how R158's "past the corner, undefined in proportion" reads once each octave has its own front.
+  - how R158's "past the corner, undefined in proportion" reads once each level has its own front.
 
 - Every result is from simulated worlds, and is held to the standard of §12. A claim about real observers needs a planned
   test.
@@ -3625,22 +3632,22 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
   - *Additivity*: that a share adds. It is what makes the share of a reading exactly v/h before the corner (§3.5). By
     Proposition 3.4(b) a share free of the unknown is a power: s^(−k) past the corner and, by the flip, sᵏ before it;
     boundedness and fairness to the facings allow any k > 0, and additivity is the choice k = 1. Left open by Tom (2 Oct, 15:51: "leave it as a open question").
-  - *Each octave edge a horizon* (Tom, 2 Oct 11:20, offered as a possibility, not ruled; item 410): answered in the
+  - *Each level edge a horizon* (Tom, 2 Oct 11:20, offered as a possibility, not ruled; item 410): answered in the
     address by R172. At each edge the reading ρ of the octave below runs without end and that of the octave above starts
     at 0, by construction. Open in the reading s: whether the edges mark anything there, as the corner does (§3.7).
   - *R149, the front side: resolved by R176 (4 Oct 05:43); recorded here as it stood* (Tom, 4 Oct 04:52: "r149 is ongoing research, seem to me the near horizon
-    is propertional and far horizon is recursive octave. readers grain is confusing to so i'm not ready to rule on
-    that."). Not ruled. Tom's current view: proportion up to the near horizon (the corner); recursive octaves toward the
+    is propertional and far horizon is recursive level. readers grain is confusing to so i'm not ready to rule on
+    that."). Not ruled. Tom's current view: proportion up to the near horizon (the corner); recursive levels toward the
     far horizon. Open: how this sits with R172's octaves of halvings on the front side, and what the reader's grain is.
   - *Changes of form at the edges* (R172): with octaves nesting without end, "changes happen at marks" cannot fail;
-    held to the reader's own octave, ½ ≤ s ≤ 2 (the window of the pre-registered corner test, §3.2), it can. A test
+    held to the reader's own level, ½ ≤ s ≤ 2 (the window of the pre-registered corner test, §3.2), it can. A test
     pre-registered on changes of form, in labs not yet built, at the corner and at the two edges, would decide it. CRY's
     fold at s = ½ sits at an edge; that was noticed after the fact and counts for nothing until then. *Tried* (4 October, FRM, `plans/form-change-plan.md`): a blind reader listed 24 classical situations; 13 were meetings and four needed a wave field or diffusion Wander lacks, leaving 7 cases against the 10 the rule needed, so FRM stopped undecided, nothing measured. The listing suggests the claim sits close to two plain facts, that many changes of form are defined as meetings and the rest cross where a formula's own small numbers put them, and no chance baseline was found that separates the corner from that arithmetic without being chosen after seeing.
   - *Which range a reader lays* (R172, §4.2): the bounded sweep g, whose addresses end at the far horizon, or the open ladder n + g, which carries there (R174). RNG laid the
-    first. *Settled by R176* (4 Oct): the reader lays proportion to the corner, then octaves, carrying; CAR laid that beside one bounded sweep and R176's lay held every prediction (§9.9). Against it so far: none of the properties particular to v = h holds at those edges
+    first. *Settled by R176* (4 Oct): the reader lays proportion to the corner, then levels, carrying; CAR laid that beside one bounded sweep and R176's lay held every prediction (§9.9). Against it so far: none of the properties particular to v = h holds at those edges
     (the flip's fixed point, the middle of an even spread, the reach of the series in s, independence of the grain).
-  - *The forward reading*: the octaves of §3.3 carry over exactly (§5.3, item 440: the same map, the flip d ↦ D1²/d,
-    the reader's octave ½D1–2D1 holding 41% of addresses, each further octave about half the one inside). Still to rule:
+  - *The forward reading*: the levels of §3.3 carry over exactly (§5.3, item 440: the same map, the flip d ↦ D1²/d,
+    the reader's level ½D1–2D1 holding 41% of addresses, each further level about half the one inside). Still to rule:
     whether depth past D1 carries an unknown extent, which is Proposition 3.4's premise.
   - *R146's wording*: "v had as a count of h's" holds up to the corner; past it v is had as doublings (R158).
 - **Demos to relabel.** *The Fisheye Sweep*, *Learning a Room* and *A Fight from Somewhere* mark the back side "2h,
@@ -3724,7 +3731,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
     absent; telling them apart would take a second test, that a convention can be chosen freely and an absent value
     cannot be assigned. One built-in lab is not enough to change the conjecture's wording.
 - **From the shapes (§6.4).**
-  - *The 2 of the central hypothesis*: readers that take their own h from their parent's record, on signals built on ratios of 2, 3 and the golden ratio. Does the ratio of parent's to child's h settle at 2, or follow the signal? *Run 6 October (HRT): did not reach the question* (central hypothesis). *Restated* (the audit): the corner's place in the octave is proved for every ratio; what stays open is **what fixes a reader's ratio between rungs**, which is the same question as *what fixes the pitch of the reading's spiral* (Proposition 3.13, k = 2 ln r/(π/2)): the reader's choice (*The Radix*), the step of its lay (R176's floating point, whose base 2 is a hardware choice), or the world's payloads (Corollary 3.9). No simulation that builds the reader can settle it.
+  - *The 2 of the central hypothesis*: readers that take their own h from their parent's record, on signals built on ratios of 2, 3 and the golden ratio. Does the ratio of parent's to child's h settle at 2, or follow the signal? *Run 6 October (HRT): did not reach the question* (central hypothesis). *Restated* (the audit): the corner's place in the level is proved for every ratio; what stays open is **what fixes a reader's ratio between rungs**, which is the same question as *what fixes the pitch of the reading's spiral* (Proposition 3.13, k = 2 ln r/(π/2)): the reader's choice (*The Radix*), the step of its lay (R176's floating point, whose base 2 is a hardware choice), or the world's payloads (Corollary 3.9). No simulation that builds the reader can settle it.
   - *Number lines in people* (`plans/nle-plan.md`, 6 October; the candidate "independent fact" of the central hypothesis). A corner model (proportion up to h, a count of doublings past it) against a straight line, a logarithm and proportion judgment, per child, with the prediction and the instrument's calibration fixed before any data. On Chan and Mazzocco's 104 kindergartners (2024; 0–100 lines, Time 1), **killed**: proportion judgment beats the corner for 40 of the 75 children who depart from a straight line (53%), and more clearly after training (61%) and on 0–20 lines (77–84%); the corner beats a plain logarithm for 8%. One dataset, one age, half the lines with a labelled midpoint; the parts tying h to the familiar range untested. A fairer test: older children, 0–1000 lines without a midpoint, each child's counting range.
   - *Which near/far laws are fair to the facings* (the audit). Of the powers of s/√(1 + s²), only the square (the disc); the dipole's electric field has only a symmetric bracket; the coil favours a facing (§3.2). A classification of classical near/far laws by these three kinds would replace "physics has the same structure" with a count. *Done* (6 October, `plans/near-far-classification.md`; Claude's, unruled): a law is fair to the facings exactly when it is the share of a two-part split whose parts the flip exchanges, f = A(s)/(A(s) + A(1/s)) (in the angle, the disc is sin²θ and its fairness is Pythagoras). Of twelve classical laws, the eight that are shares of a split (the disc, a dipole's magnetic near share, a filter's power, Michaelis–Menten, two-state occupancy, a voltage divider, Hill, a subtended angle) are fair; the four single components (the coil, a filter's amplitude, a ring's potential, a disc's field) are not, with their middles at 30°, 52.5° and 60° of turn. The same filter is fair in power and not in amplitude: fairness belongs to the quantity read.
   - *Crossing open space*: the child rule stands only where something was met, so a chain from inside a winding shape stops at the mouth. Is that a limit of a situated reader, or of the rule? Any rule that steps into the open seems to need something the record does not hold.
@@ -3944,8 +3951,8 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 | `sphere-sweep.html` (pre-R131: its homes, horizons and radius g predate the four situations; eight facings: the ball; drag turns it under a fixed view, pinch or slider for g; a near-even (Fibonacci) lay; each half read from its own home by two readings, (g/2) · r (1 + r²)^(−3/2), median √3) | 2 | 255 |
 | `breadth-sweep.html` (situation 1 since 1 October: no home, horizon, corner, division or Cauchy, and its g, the mix m (§2.1), only rescales, R131, R140; first built as breadth in place of N: 1, 2, 4 or 8 facings, one breadth each, known or unknown; g on [0, 1] is the radius from 1, the unit circle, to B, fully expressed; the turn points to the place, x = r · turn/(π/2); the Cauchy's share to the reading is x/r) | 2 | 303 |
 | `fisheye-sweep.html` (the breadth sweep's twin with the breadth unknown: 1 or 2 facings; addresses laid from home by a step of 1/n; the marks concentrated at h: the front side, v/h below the corner, crowding toward home without end; the back side, above it, logarithmic, n steps per factor of 10 in v/h; the place and its mirror across the corner; the Cauchy split half and half at the corner) | 2 | 314 |
-| *Pivot and Sweep* (`pivot-and-sweep.html`, artifact 41DyvdvscoogkUgFLbeudB: the reader as the pivot of a bar swept from home to the horizon; g as the sweep with the corner at ½; the octaves on both sides, each another [0, 1]; the flip and the carry; drag, or sweep from home in equal steps; touch) | 3 | 439 |
-| `reach.py` (N addresses laid evenly in turn: octaves held on each side of the corner, about log₂ N; the last address at about 4N/π) | 3.8 | – |
+| *Pivot and Sweep* (`pivot-and-sweep.html`, artifact 41DyvdvscoogkUgFLbeudB: the reader as the pivot of a bar swept from home to the horizon; g as the sweep with the corner at ½; the levels on both sides, each another [0, 1]; the flip and the carry; drag, or sweep from home in equal steps; touch) | 3 | 439 |
+| `reach.py` (N addresses laid evenly in turn: levels held on each side of the corner, about log₂ N; the last address at about 4N/π) | 3.8 | – |
 | `corner.py` (ellipses with v's breadth b times h's, three lays: the share before the corner (2/π)·arctan(1/b) and the middle at v/h = b under the even-share lay; a reader reading b from its arrivals; the placeholder γ against the cross ratio) | 2 | 328 |
 | `unclose.py` (the 73 single-outline library shapes opened into the fisheye: corner share, middle, head and tail, against the same-b ellipse; laid along the outline and, as control, in direction) | 2 | 331 |
 | *The Fisheye Sweep* (`fisheye-sweep.html`, rebuilt on R149: no angle; h out to home, v counted up the line through home; the front side in C equal steps to the corner, then one step per doubling; swept from home; its back-side marks "2h, 4h…" are the logarithmic count, R158) | 3 | 364 |
