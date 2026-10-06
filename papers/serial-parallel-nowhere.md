@@ -696,6 +696,26 @@ projection apart: projecting (1, s) toward the centre gives the circle's point, 
 sin θ/θ. Normalized by its own unit, a system gives the number line; normalized by the whole, the circle. Which a
 reader can do is its situation.
 
+**Depth, read against the sweep** (Tom, 6 October: "when we normalize depth is the difference between g=0 and g=1";
+"isn't depth just calculus, the total area between the unit line of g=0 and the fully expressed line of g=1"; "The unit
+line or sweep is the complete set of all possible v vs h. Depth is read against that base line.")
+
+- **The baseline is the sweep.** The unit line is every possible relation v/h at once, each with its share ds/(1 + s²),
+  all of them summing to π/2 (to 1 as g). That is g = 0: the unit, with nothing expressed.
+- **A shape is read against it, address by address.** At each relation the shape returns its magnitude; at g it is
+  unit + g·depth, so at g = 1 it is fully expressed, and depth is the difference between the two, at every address.
+- **As one number, depth is an area**: the area between the baseline and the fully expressed shape, taken along the
+  sweep, so that each relation counts by its share. Integrated this way the total stays finite out to the horizon,
+  where the line itself would run on. The area at any g is g times the whole.
+- **Sign.** Where a shape bulges out in some places and in at others, a signed area can cancel, and for a closed shape
+  normalized by its mean radius it cancels almost exactly by construction. Depth as how much a shape departs is the area
+  of the absolute difference (or of its square); the signed area measures where the unit was put.
+- **Measured.** The labs of 4 October did this (§9.9): ARE takes a bump's area on a line both unsituated and by a
+  situated reader, whose area is Σ ½(d² − d₁²)·Δa/(1 + a²), each address weighted by its share; DEP recovers total
+  depth by turning, "the shape less its unit sphere". The milestone of that day: a situated reader holding only its h
+  recovers the total depth the unsituated view computes. Read against the sweep, depth comes out the same as the area
+  the whole view holds.
+
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
 
 > "3 and 4 can approach the corner but never arrive there. both have horizons, one from the outside 0 to PI/2 and from
