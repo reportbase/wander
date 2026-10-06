@@ -357,6 +357,17 @@ from 0 to 1 as pure distance. *The 90° turn*: one sweep is one quarter turn. *T
 same sweep again (Proposition 3.12). *The logarithmic spiral*: sweeps composed one after another (Proposition 3.13).
 Larger shapes compose from these and are not needed to understand the situations.
 
+**Known breadths, and the corner** (Tom, 6 October):
+
+> "when v and h are known, it is situation 1 or 2, depending on if they are equal or not. there is a corner here, but
+> its 45 degrees and known algrothimcally, if v is not know, it is either situation 3 or 4."
+
+So the first cut is whether v is known. Known (with h): situation 1 if the breadths are equal, 2 if not. Not known:
+3 or 4. **Situations 1 and 2 do have a corner**, at 45°, but it is computed from the known breadths, not found by a
+reader; in 3 and 4 the reader finds it with h alone (Proposition 3.1). This revises the earlier "no home, corner, sweep
+or horizon of any kind" for situations 1 and 2 (R131; the paragraph on situation 1 above) as to the corner; they still
+have no horizon.
+
 **π/2 and 2/π, with 1 between them** (Tom, 6 October):
 
 > "parallel is pi/2 and serial is 2/PI. serial*parallel = 1. parallel 1.5, line = 1, serial = 0.633"
