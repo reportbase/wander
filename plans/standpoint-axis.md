@@ -1,5 +1,7 @@
 # A second axis: the standpoint
 
+*Superseded the same day by Tom's own list (SPN §2.1, "The situations restated, on the sweep alone"): 0 nothing known; 1 the circle; 2 shapes; 3 parallel, one hemisphere counted (outside); 4 serial, one point projected at a time (inside); 3 and 4 possibly known approximately; and "keep it simple to the octave and the sweep and the 90 turn and the logarithmic spiral only". Kept as the exploration that led there; its outside/inside geometry is not part of the paper.*
+
 *6 October 2026, by Claude, from Tom's three ways to observe ("the entire system, or one hemisphere of the system, or
 as someone exists as a member of a system, where you exist within it": an array or an equation; an object held in the
 hand; a molecule of an apple), his "the hemisphere observer is not fully captured by our 5 situated observers", and

@@ -51,7 +51,14 @@ Google Fonts load from outside:
   and hearing scales already have of it (much), and what the situated view adds.
   `standpoint-axis.md` (+ `standpoint/`): a second axis, the standpoint (nowhere,
   outside, inside) beside the breadths known; the hemisphere observer as outside with
-  the breadths known. Exploratory, four questions open for Tom.
+  the breadths known. Superseded by Tom's situations list 0–4 (SPN §2.1).
+
+SPN's situations, since 6 Oct 2026 (Tom): 0 nothing known; 1 the circle; 2 shapes;
+3 parallel, one hemisphere counted (outside); 4 serial, one point at a time
+(inside); 3 and 4 possibly approximate. Older text uses the old numbers (its
+"situation 3" is 3 and 4); SPN §2.1 has the mapping. Keep to the core: the sweep
+(any two points; 0 to π/2 as a turn, 0 to 1 as distance), the 90° turn, the
+octave, the logarithmic spiral.
 
 The repo is public, so the papers can be read on GitHub; the owner is fine with
 that for now (6 Oct 2026) and will decide later where they live. They are still

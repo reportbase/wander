@@ -10,7 +10,7 @@
 > Near and far are one geometry, read from either side.
 
 *Tom Brinkman, with Claude. Working paper. Rewritten 1 October 2026 around the rulings of that evening (R153–R158); revised 2 October to foreground the inversion at the corner as the main contribution (§3.2, R161), and again that
-morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 has a horizon and recursion where situations 1 and 2 have neither.*
+morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the situations restated on the sweep alone (§2.1, Tom's list 0–4) and the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 has a horizon and recursion where situations 1 and 2 have neither.*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -327,6 +327,39 @@ the angle and the reading as the radius, situation 3's reading is a logarithmic 
 quarter turn, and situations 1 and 2 are the circle, the spiral that does not grow (k = 0): no horizon, and nothing to
 recurse on. Tom, 6 October: "situation 1 and 2, is uniform, no horizon, no recursion. situation 3 has a horizon and has
 reccursion."
+
+**The situations restated, on the sweep alone** (Tom, 6 October; recorded here as given, and read against the table
+above, which is kept as written).
+
+> "0 - no equation or information is known. 1 - syemtrical equation is known (circle). 2- asymetrical equation is
+> known (shapes). 3. parallel sitution you can count one hemispher (outside). 4. serial situation. you can project one
+> point a time (inside). both 3 and 4 can be known approximately"
+>
+> "lets keep it simple to the octave and the sweep and the 90 turn and the logrithmic spiral only. those all compose
+> to larger shapes, but its not needed to understand the situation. the sweep is from 0 to PI/2 if you include the
+> radial turn, or 1 if its just the pure distance. So any two points A and B can be regarded as a sweep."
+
+| now | what is known | the table above |
+|---|---|---|
+| 0 | nothing: no equation, no information | situation 4 (impossible) |
+| 1 | a symmetric equation: the circle | situation 1 |
+| 2 | an asymmetric equation: shapes | situation 2 |
+| 3 | parallel: one hemisphere counted at once (outside) | situation 3, its parallel reader |
+| 4 | serial: one point projected at a time (inside) | situation 3, its serial reader |
+| 3 or 4, approximately | either, known only within bounds | situation 5 |
+
+This supersedes R152's "it would be situation 3, along with serial": parallel and serial readers now stand in
+situations of their own, outside and inside. Text written before 6 October keeps the old numbers; read it through this
+table (its "situation 3" is 3 and 4 here, and Propositions 3.11–3.13's "situation 3" likewise).
+
+**The core, in four terms.** *The sweep*: any two points A and B, from 0 to π/2 as a turn (with the radial turn) or
+from 0 to 1 as pure distance. *The 90° turn*: one sweep is one quarter turn. *The octave*: a sweep; every octave the
+same sweep again (Proposition 3.12). *The logarithmic spiral*: sweeps composed one after another (Proposition 3.13).
+Larger shapes compose from these and are not needed to understand the situations.
+
+*A reading* (Claude's, unruled): the radial turn needs a pivot to turn about, a standpoint, and pure distance does not.
+So the sweep as a turn (0 to π/2) is the situated reader's (3, 4), and the sweep as distance (0 to 1) is the line the
+equations of 1 and 2 hold whole.
 
 **Situation 4, impossible.** Neither breadth known: nothing to count in and no home to lay from (R137). Impossible for a
 reader as defined here, which needs a known side to take its ratio from; it is not a claim about what else might be
