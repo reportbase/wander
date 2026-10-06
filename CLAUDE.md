@@ -28,9 +28,6 @@ Google Fonts load from outside:
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
   standing); `v-and-h.md` gathers every idea about v and h, by item.
-  `five-ways-to-observe.md` is a note on the situations 0 to 4, gathered in one place
-  from SPN §2.1 (what each knows, how it reads, its standpoint, horizon and recursion), and
-  how the 3d repo's `situations.html` draws each; a reading, not a ruling.
   `serial-parallel-nowhere-record.md` is SPN as written 29 Sep – 1 Oct, before the
   rewrite: **a frozen record, never edited.** Section and proposition numbers cited
   in the corpus before the rewrite are the record's; SPN's opening note maps them to
@@ -58,16 +55,16 @@ Google Fonts load from outside:
   `resolution-recursion.md` (+ `spiral/resolution.py`): a reader of finite resolution
   facing a horizon must zoom without end, and far out every zoom is alike ((R) from the
   fisheye's tail); the quarter turn per level is still a premise. Unruled.
-  `five-ways-to-observe.md`: Tom's situations 0–4 gathered in one note (from SPN §2.1),
-  with a check against SPN at its foot; the 3d repo draws them as a slideshow.
   `standpoint-axis.md` (+ `standpoint/`): a second axis, the standpoint (nowhere,
   outside, inside) beside the breadths known; the hemisphere observer as outside with
   the breadths known. Superseded by Tom's situations list 0–4 (SPN §2.1).
 
 SPN's situations, since 6 Oct 2026 (Tom): 0 nothing known; 1 the circle; 2 shapes;
 3 parallel, one hemisphere counted (outside); 4 serial, one point at a time
-(inside); 3 and 4 possibly approximate. Older text uses the old numbers (its
-"situation 3" is 3 and 4); SPN §2.1 has the mapping. Keep to the core: the sweep
+(inside); 3 and 4 possibly approximate. SPN uses these numbers throughout
+(converted 6 Oct), except in quotations, Appendix A's rulings and the earlier table in
+§2.1, which keep the old ones (old 3 = 3 and 4, old 4 = 0, old 5 = 3 or 4 approximately).
+SPN §2.1 opens with "The five, in brief". Keep to the core: the sweep
 (any two points; 0 to π/2 as a turn, 0 to 1 as distance), the 90° turn, the
 octave, the logarithmic spiral.
 
