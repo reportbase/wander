@@ -9,6 +9,10 @@ Claude Code: changes go on a branch, as a PR, and the owner merges. Merging to
 ## Files
 - `index.html`: **the whole thing and the file to edit.** One self-contained page
   with no build step; only Google Fonts load from outside.
+- `labs.html`: a page that explains the labs and runs them. It holds no lab of its
+  own: it reads each lab's note (`#labPane`) and `LAB_REGISTER` out of `index.html`
+  and runs a lab via `index.html?lab=CODE` in a hidden iframe. Keep those (and the
+  "KILLED"/"not killed" status wording) as they are and it needs no edits.
 
 ## Read this first: THE LAB GUIDE
 The labs have their own rules, written in the page itself. Read two comments
@@ -28,7 +32,8 @@ In short:
 ## Testing
 - `npm test` runs `tests/smoke.mjs` in headless Chromium:
   1. **Fly:** presses Fly, looks around, flies and taps a body.
-  2. **Labs:** runs `?lab=all` (about 40 seconds).
+  2. **Labs:** runs `?lab=all` (a few minutes; TMP and TRK are the slow ones).
+  3. **labs.html:** a card per lab, and BAL run from its button.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

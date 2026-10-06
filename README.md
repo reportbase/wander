@@ -28,6 +28,7 @@ for this repo; see Publishing below)
 | File | What it is |
 | --- | --- |
 | `index.html` | The whole thing: one self-contained page. This is the file to edit. **THE LAB GUIDE**, a comment at the top of the lab section, explains how the labs work and how to add one. |
+| `labs.html` | The lab, explained: what the labs are, how to read a verdict, and a card per lab with a run button. It reads each lab's note and register line from `index.html` and runs a lab by loading `index.html?lab=CODE` in a hidden frame, so it needs no change when a lab is added. `labs.html?run=all` runs every lab on load. |
 | `tests/smoke.mjs` | The smoke test (see below). |
 
 Only the fonts (Google Fonts) load from outside. Without them the page still
@@ -45,7 +46,8 @@ python3 -m http.server 8000
 Every pull request runs `tests/smoke.mjs` in GitHub Actions, in two parts:
 
 1. **Fly:** opens the page, presses Fly, looks around and flies for a few seconds.
-2. **Labs:** opens `?lab=all`, which runs every lab (about 40 seconds), and reads the summary.
+2. **Labs:** opens `?lab=all`, which runs every lab, and reads the summary.
+3. **labs.html:** checks there is a card for every lab and runs one (BAL) from its button.
 
 It fails on any uncaught error, and on any lab that comes back "error" or with
 no verdict. A lab that comes back "killed" is a recorded open question, not a

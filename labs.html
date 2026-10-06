@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Wander's lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    labs.html: run Wander's labs and read what each one is for.
+
+    It holds no lab of its own. On load it reads index.html (beside it) for each lab's note (the <p>s of its group in
+    #labPane) and its register line (LAB_REGISTER), so a lab added, rerun or reworded there shows here with no change to
+    this file. A lab runs by loading index.html?lab=CODE in a hidden frame and reading back #labTitle, #labBody and
+    #labStatus, the verdict taken as labAll takes it: the last "KILLED" or "not killed" in the status. It needs to be
+    served (GitHub Pages, or python3 -m http.server); opened as a file, the browser will not let it read index.html.
+    ?run=all runs every lab on load; ?run=CODE runs one.
+    -->
+    <style>
+    :root {
+        color-scheme: dark;
+        --ground: #0c0c11;
+        --panel: #14141b;
+        --panel2: #1a1a23;
+        --line: rgba(255, 255, 255, 0.09);
+        --ink: #c8c8d0;
+        --dim: #8a8a96;
+        --bright: #e6e4ee;
+        --gold: #d4a052;
+        --teal: #8ce6cd;
+        --red: #d96e5b;
+    }
+
+    * { box-sizing: border-box }
+
+    html { scroll-padding-top: 16px }
+
+    body {
+        margin: 0;
+        background: var(--ground);
+        color: var(--ink);
+        font-family: 'DM Mono', ui-monospace, Menlo, Consolas, monospace;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    main {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 28px 16px 64px;
+    }
+
+    a { color: var(--gold) }
+
+    h1, h2 {
+        font-family: 'DM Serif Display', Georgia, serif;
+        font-weight: 400;
+        color: var(--bright);
+        letter-spacing: 0.01em;
+    }
+
+    h1 { font-size: 40px; margin: 6px 0 8px; line-height: 1.1 }
+    h2 { font-size: 24px; margin: 40px 0 10px }
+
+    .back { font-size: 12px; text-decoration: none }
+    .back:hover { text-decoration: underline }
+
+    .lede { font-size: 14px; color: var(--bright); max-width: 62ch }
+
+    p, li { max-width: 72ch }
+    b { color: var(--bright); font-weight: 500 }
+
+    .dim { color: var(--dim) }
+
+    .rules { padding-left: 20px }
+    .rules li { margin-bottom: 6px }
+
+    dl.words { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0 }
+    dl.words dt { color: var(--bright) }
+    dl.words dd { margin: 0 }
+    @media (max-width: 560px) {
+        dl.words { grid-template-columns: 1fr }
+        dl.words dd { margin-bottom: 8px }
+    }
+
+    .key { display: inline-block; padding: 0 6px; border-radius: 4px; border: 1px solid currentColor; font-size: 11px }
+    .teal { color: var(--teal) }
+    .gold { color: var(--gold) }
+    .red { color: var(--red) }
+
+    button {
+        font: inherit;
+        color: var(--ink);
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 7px 14px;
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+    button:hover:not(:disabled) { border-color: var(--gold); color: var(--gold) }
+    button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px }
+    button:disabled { opacity: 0.45; cursor: default }
+    button.go { border-color: var(--teal); color: var(--teal) }
+
+    .bar {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 14px;
+        padding: 12px 0;
+        background: var(--ground);
+        border-bottom: 1px solid var(--line);
+    }
+    .bar .progress { flex: 1 1 220px; color: var(--dim) }
+    .tally { display: flex; gap: 10px; flex-wrap: wrap }
+
+    .labs { display: flex; flex-direction: column; gap: 14px; margin-top: 18px }
+
+    article.lab {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 14px 16px;
+        min-width: 0;
+        scroll-margin-top: 130px;
+    }
+    article.lab.running { border-color: var(--gold) }
+
+    .lab-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap }
+    .lab-head .code { color: var(--gold); font-weight: 500; letter-spacing: 0.06em }
+    .lab-head h3 { margin: 0; font-size: 15px; font-weight: 500; color: var(--bright); flex: 1 1 200px }
+
+    .verdict { font-size: 11px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--dim); white-space: nowrap }
+    .verdict.ok { color: var(--teal); border-color: var(--teal) }
+    .verdict.killed { color: var(--gold); border-color: var(--gold) }
+    .verdict.bad { color: var(--red); border-color: var(--red) }
+
+    dl.reg { margin: 10px 0 0; display: grid; grid-template-columns: 11em 1fr; gap: 4px 14px }
+    dl.reg dt { color: var(--dim) }
+    dl.reg dd { margin: 0; min-width: 0; overflow-wrap: anywhere }
+    @media (max-width: 560px) {
+        dl.reg { grid-template-columns: 1fr }
+        dl.reg dt { margin-top: 6px }
+    }
+
+    .actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 12px }
+    .actions a { font-size: 12px }
+
+    details.note { margin-top: 10px }
+    details.note summary { cursor: pointer; color: var(--dim); font-size: 12px }
+    details.note summary:hover { color: var(--gold) }
+    details.note .body { margin-top: 8px; padding: 10px 12px; background: var(--panel2); border-radius: 8px; overflow-wrap: anywhere }
+    details.note .body p { margin: 0 0 10px }
+
+    .result { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 10px; min-width: 0 }
+    .result .title { color: var(--bright); margin: 0 0 6px }
+    .result .status { margin: 8px 0 0 }
+    .result .meta { color: var(--dim); font-size: 11px; margin: 6px 0 0 }
+
+    table.lab { border-collapse: collapse; font-size: 12px; margin: 4px 0; font-variant-numeric: tabular-nums }
+    table.lab th, table.lab td { padding: 3px 8px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap }
+    table.lab th { color: var(--dim); font-weight: 400 }
+    table.lab td.v2 { color: var(--teal) }
+    table.lab td.v1 { color: var(--gold) }
+    table.lab td.v0 { color: var(--red) }
+
+    .notice { padding: 12px 14px; border: 1px solid var(--red); border-radius: 8px; color: var(--bright) }
+
+    iframe#runner {
+        position: fixed;
+        left: -10000px;
+        top: 0;
+        width: 800px;
+        height: 600px;
+        border: 0;
+        visibility: hidden;
+    }
+    </style>
+</head>
+<body>
+<main>
+    <a class="back" href="./">← back to Wander</a>
+    <h1>the lab</h1>
+    <p class="lede">
+        Experiments that ask one question again and again: can someone inside the world, holding only what has reached
+        them, work out what physics says the world is doing? Each lab answers it for one known result. You can run any of
+        them here, in your browser, and read what each one is for.
+    </p>
+
+    <h2>What Wander is</h2>
+    <p>
+        Wander is a world of stars, planets and travellers moving under gravity, and a <b>reader</b> flying among them. The
+        reader holds nothing of the world except what has reached it. Every system ticks on its own clock and, at each
+        tick, sends out a <b>signal</b> carrying where its bodies are and the time of that tick (its <b>tag</b>). Signals
+        travel at 20 lengths a second, so the reader always sees each body where it <i>was</i> when its latest signal
+        left, never where it is now.
+    </p>
+    <p>
+        From those arrivals, its own path and its own clock, the reader works out what it can: distances, sizes, masses,
+        the signals' own speed. Physics textbooks state their laws <b>from nowhere</b>, with the whole world laid out at
+        once. Wander's reader is always <b>somewhere</b>.
+    </p>
+
+    <h2>What a lab is</h2>
+    <p>
+        Each lab takes one result that physics established from nowhere (Kepler's laws, the Doppler shift, Rømer's
+        measurement of the speed of light, the dark night sky, and so on) and asks whether the reader, from somewhere,
+        recovers it. The lab builds a small world out of Wander's own pieces, runs it without drawing anything, and lays the
+        reader's reading beside the known law in a table. They are <b>correspondences, not claims</b>: a lab shows that a
+        reading lines up with a law in Wander's world, not that our universe works this way.
+    </p>
+    <p>The labs keep to a few rules, which is what makes their verdicts worth anything:</p>
+    <ol class="rules">
+        <li>A lab's <b>prediction</b> and its <b>kill condition</b> (how far off would count as failure) are written into
+            its note <i>before</i> it is run.</li>
+        <li>A run that is <b>killed</b> stays recorded as killed, with its numbers. A fix is a new run with its own
+            prediction written first; an old prediction is never edited to fit.</li>
+        <li>When a run is killed, the note says whose fault it was: the world's, the reader's reading, or the lab's own
+            set-up.</li>
+    </ol>
+
+    <h2>Reading a result</h2>
+    <p>Each run ends with a verdict:</p>
+    <dl class="words">
+        <dt><span class="key teal">not killed</span></dt>
+        <dd>The reader's reading landed where the prediction said it would, inside the kill line.</dd>
+        <dt><span class="key gold">killed</span></dt>
+        <dd>The reading missed by more than the kill line allows. This is a <b>recorded result</b>, not a crash: an open
+            question written up in the lab's note.</dd>
+        <dt><span class="key red">error</span></dt>
+        <dd>The lab threw an error or gave no verdict. That means something in the code is broken.</dd>
+    </dl>
+    <p>
+        In the result tables, a <span class="teal">teal</span> number is within half the kill line,
+        <span class="gold">gold</span> is within it, and <span class="red">red</span> is beyond it. Each note says
+        exactly what its colours mean.
+    </p>
+
+    <h2>What it all adds up to</h2>
+    <p>
+        Behind the labs is a conjecture: <b>all known physics is recoverable from the view from somewhere</b>. Everything
+        measurable can be had from what a reader holds; what cannot is <b>convention</b>, a choice such as the unit of
+        length, or which mass counts as the standard. To stop "convention" becoming an excuse, there is a test: a thing
+        is a convention only if changing it leaves every reader's reading of every arrival unchanged. Each lab's line
+        "What it adds" says where it leaves the conjecture: recovered, recovered up to a convention, open, or against.
+    </p>
+
+    <h2>Words the notes use</h2>
+    <dl class="words">
+        <dt>the reader</dt><dd>The one inside the world, flying, who holds only arrivals, its own path and its own clock.</dd>
+        <dt>arrival</dt><dd>A signal reaching the reader. The reader takes, for each body, the latest signal that has had time to cover the distance.</dd>
+        <dt>tag</dt><dd>The time stamped on a signal when it left.</dd>
+        <dt>own lengths</dt><dd>Distances in the reader's own unit, which it has to earn from its travel and the signals' speed.</dd>
+        <dt>softened gravity</dt><dd>Wander's pull is eased at very short range so bodies never fling apart; from far off it reads as a mass spread out a little.</dd>
+        <dt>medium / none</dt><dd>Two settings of "the rest switch". <b>medium</b>: signals travel through a world at rest, with one shared clock (Wander's own). <b>none</b>: no preferred rest, as in special relativity.</dd>
+        <dt>run 1, run 2…</dt><dd>Each attempt at a lab, recorded in its note in order, with its own prediction and outcome.</dd>
+    </dl>
+
+    <h2>The labs</h2>
+    <p class="dim">
+        Each lab runs in a hidden copy of Wander (the same as opening <code>index.html?lab=CODE</code>). Most take a
+        second or less; TMP and TRK take about a minute each, and the page stops responding while a lab runs. Running
+        every lab takes three or four minutes.
+    </p>
+    <div class="bar">
+        <button class="go" id="runAll" type="button" disabled>run every lab</button>
+        <button id="stop" type="button" hidden>stop after this one</button>
+        <span class="progress" id="progress">reading the labs…</span>
+        <span class="tally" id="tally"></span>
+    </div>
+    <div class="labs" id="labs"></div>
+</main>
+<iframe id="runner" title="lab runner" aria-hidden="true" tabindex="-1"></iframe>
+
+<script>
+(() => {
+    const SRC = 'index.html',
+        TIMEOUT_MS = 5 * 60 * 1000;
+    const $ = id => document.getElementById(id);
+    const el = (tag, cls, text) => {
+        const e = document.createElement(tag);
+        if (cls) e.className = cls;
+        if (text != null) e.textContent = text;
+        return e;
+    };
+    let labs = [],
+        busy = false,
+        stopping = false;
+
+    // ── reading the labs out of index.html ──
+    // LAB_REGISTER is a literal array of strings in the page's script: [code, from nowhere, the reader holds, adds].
+    function parseRegister(text) {
+        const m = text.match(/const LAB_REGISTER = \[([\s\S]*?)\n\s*\];/);
+        if (!m) return [];
+        try {
+            const r = Function('"use strict"; return [' + m[1] + '\n];')();
+            return Array.isArray(r) ? r.filter(x => Array.isArray(x) && typeof x[0] === 'string') : [];
+        } catch (_) {
+            return [];
+        }
+    }
+
+    function parseNotes(doc) {
+        const notes = {};
+        for (const g of doc.querySelectorAll('#labPane .lab-group')) {
+            const b = g.querySelector('button[data-code]');
+            if (!b) continue;
+            const h3 = g.querySelector('h3'),
+                tag = h3 && h3.querySelector('.lab-code');
+            const title = h3 ? [...h3.childNodes].filter(n => n !== tag).map(n => n.textContent).join(' ').replace(/\s+/g, ' ').trim() : '';
+            notes[b.dataset.code] = {
+                title: title || b.dataset.code,
+                paras: [...g.children].filter(n => n.tagName === 'P')
+            };
+        }
+        return notes;
+    }
+
+    async function load() {
+        let text;
+        try {
+            const r = await fetch(SRC, { cache: 'no-cache' });
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            text = await r.text();
+        } catch (e) {
+            const n = el('p', 'notice');
+            n.textContent = 'Could not read the labs from ' + SRC + ' (' + e.message + '). This page reads them from Wander itself, '
+                + 'so it has to be served: open it on GitHub Pages, or run "python3 -m http.server" in the repo and open '
+                + 'http://localhost:8000/labs.html. Opened straight from a file, the browser will not let it read ' + SRC + '.';
+            $('labs').append(n);
+            $('progress').textContent = '';
+            return;
+        }
+        const doc = new DOMParser().parseFromString(text, 'text/html'),
+            notes = parseNotes(doc),
+            reg = parseRegister(text);
+        const order = reg.map(r => r[0]).filter(c => notes[c]);
+        for (const c of Object.keys(notes)) if (!order.includes(c)) order.push(c);
+        labs = order.map(code => ({ code, ...notes[code], reg: reg.find(r => r[0] === code) || null }));
+        labs.forEach(render);
+        $('runAll').disabled = false;
+        $('progress').textContent = labs.length + ' labs. Run one, or every lab in turn.';
+        start();
+    }
+
+    // ── a card per lab ──
+    function render(lab) {
+        const a = el('article', 'lab');
+        a.id = lab.code;
+        const head = el('div', 'lab-head');
+        head.append(el('span', 'code', lab.code.toUpperCase()), el('h3', null, lab.title));
+        lab.chip = el('span', 'verdict', 'not run');
+        head.append(lab.chip);
+        a.append(head);
+
+        if (lab.reg) {
+            const dl = el('dl', 'reg');
+            [['From nowhere', lab.reg[1]], ['The reader holds', lab.reg[2]], ['What it adds', lab.reg[3]]].forEach(([k, v]) => {
+                if (!v) return;
+                dl.append(el('dt', null, k), el('dd', null, v));
+            });
+            a.append(dl);
+        }
+
+        const act = el('div', 'actions');
+        lab.btn = el('button', null, 'run ' + lab.code.toUpperCase());
+        lab.btn.type = 'button';
+        lab.btn.addEventListener('click', () => runOne(lab));
+        const open = el('a', null, 'open in Wander');
+        open.href = SRC + '?lab=' + encodeURIComponent(lab.code);
+        act.append(lab.btn, open);
+        a.append(act);
+
+        if (lab.paras.length) {
+            const d = el('details', 'note');
+            d.append(el('summary', null, 'the full note: set-up, prediction, kill, and every run so far'));
+            const body = el('div', 'body');
+            lab.paras.forEach(p => body.append(document.importNode(p, true)));
+            d.append(body);
+            a.append(d);
+        }
+
+        lab.result = el('div', 'result');
+        lab.result.hidden = true;
+        a.append(lab.result);
+        lab.card = a;
+        $('labs').append(a);
+    }
+
+    // ── running: load index.html?lab=CODE in the hidden frame and wait for its report ──
+    function runInFrame(code) {
+        return new Promise(resolve => {
+            const f = el('iframe');
+            f.id = 'runner';
+            f.title = 'lab runner';
+            f.setAttribute('aria-hidden', 'true');
+            f.tabIndex = -1;
+            $('runner').replaceWith(f);
+            const t0 = performance.now();
+            let poll = 0, timer = 0, pageError = null, done = false;
+            const finish = r => {
+                if (done) return;
+                done = true;
+                clearInterval(poll);
+                clearTimeout(timer);
+                r.secs = (performance.now() - t0) / 1000;
+                resolve(r);
+            };
+            timer = setTimeout(() => finish({ verdict: 'error', status: 'No verdict after ' + TIMEOUT_MS / 60000 + ' minutes.' }), TIMEOUT_MS);
+            f.addEventListener('load', () => {
+                try {
+                    f.contentWindow.addEventListener('error', e => { pageError = e.message || 'an error in the page'; });
+                } catch (_) {}
+                poll = setInterval(() => {
+                    let d;
+                    try { d = f.contentDocument; } catch (_) { d = null; }
+                    if (!d) return finish({ verdict: 'error', status: 'Could not read the lab\'s page.' });
+                    const rep = d.getElementById('labReport'),
+                        st = d.getElementById('labStatus');
+                    if (!rep || !st) return finish({ verdict: 'error', status: 'The page has no lab report.' });
+                    const s = st.textContent.trim();
+                    if (rep.hidden || !s) {
+                        if (pageError) finish({ verdict: 'error', status: pageError });
+                        return;
+                    }
+                    const body = d.getElementById('labBody'),
+                        title = d.getElementById('labTitle');
+                    const r = { status: s, title: title ? title.textContent.trim() : '', body: body ? body.innerHTML : '' };
+                    const m = [...s.matchAll(/(KILLED|[Nn]ot killed)/g)];
+                    if (s.startsWith(code.toUpperCase() + ' failed:')) r.verdict = 'error';
+                    else r.verdict = m.length ? m[m.length - 1][1].toLowerCase() : 'no verdict';
+                    finish(r);
+                }, 150);
+            }, { once: true });
+            f.src = SRC + '?lab=' + encodeURIComponent(code);
+        });
+    }
+
+    function setChip(lab, v) {
+        lab.verdict = v;
+        lab.chip.textContent = v;
+        lab.chip.className = 'verdict ' + (v === 'not killed' ? 'ok' : v === 'killed' ? 'killed' : v === 'running…' || v === 'not run' ? '' : 'bad');
+    }
+
+    function show(lab, r) {
+        setChip(lab, r.verdict);
+        const box = lab.result;
+        box.replaceChildren();
+        if (r.title) box.append(el('p', 'title', r.title));
+        if (r.body) {
+            const t = el('div');
+            t.innerHTML = r.body;
+            box.append(t);
+        }
+        box.append(el('p', 'status', r.status));
+        box.append(el('p', 'meta', 'ran ' + new Date().toLocaleTimeString() + ', ' + r.secs.toFixed(1) + ' s with the page\'s own load'));
+        box.hidden = false;
+    }
+
+    function setBusy(on) {
+        busy = on;
+        $('runAll').disabled = on;
+        labs.forEach(l => { l.btn.disabled = on; });
+    }
+
+    async function exec(lab) {
+        lab.card.classList.add('running');
+        setChip(lab, 'running…');
+        lab.btn.textContent = 'running…';
+        const r = await runInFrame(lab.code);
+        lab.card.classList.remove('running');
+        lab.btn.textContent = 'run ' + lab.code.toUpperCase() + ' again';
+        show(lab, r);
+        tally();
+        return r;
+    }
+
+    async function runOne(lab) {
+        if (busy) return;
+        setBusy(true);
+        $('progress').textContent = 'running ' + lab.code.toUpperCase() + '…';
+        const r = await exec(lab);
+        $('progress').textContent = lab.code.toUpperCase() + ': ' + r.verdict + '.';
+        blank();
+        setBusy(false);
+    }
+
+    async function runAll() {
+        if (busy) return;
+        setBusy(true);
+        stopping = false;
+        $('stop').hidden = false;
+        $('stop').disabled = false;
+        let i = 0;
+        for (const lab of labs) {
+            if (stopping) break;
+            i++;
+            $('progress').textContent = 'running ' + lab.code.toUpperCase() + ' (' + i + ' of ' + labs.length + ')…';
+            await exec(lab);
+        }
+        $('stop').hidden = true;
+        const ok = labs.filter(l => l.verdict === 'not killed').length,
+            ran = labs.filter(l => l.verdict && l.verdict !== 'not run').length;
+        $('progress').textContent = (stopping ? 'Stopped. ' : '') + ok + ' of ' + ran + ' labs not killed in their latest run. '
+            + 'A killed run is an open question recorded in that lab\'s note, not a fault.';
+        blank();
+        setBusy(false);
+    }
+
+    function tally() {
+        const n = v => labs.filter(l => l.verdict === v).length,
+            bad = labs.filter(l => l.verdict && !['not killed', 'killed', 'not run', 'running…'].includes(l.verdict)).length;
+        const t = $('tally');
+        t.replaceChildren();
+        if (n('not killed')) t.append(el('span', 'key teal', n('not killed') + ' not killed'));
+        if (n('killed')) t.append(el('span', 'key gold', n('killed') + ' killed'));
+        if (bad) t.append(el('span', 'key red', bad + ' error'));
+    }
+
+    // free the last lab's world once nothing is running
+    function blank() {
+        const f = $('runner');
+        if (f) f.src = 'about:blank';
+    }
+
+    // ?run=all or ?run=CODE starts a run on load; #CODE just scrolls to it
+    function start() {
+        let run = null;
+        try { run = new URLSearchParams(location.search).get('run'); } catch (_) {}
+        if (!run) {
+            const h = location.hash.slice(1).toLowerCase();
+            if (h && $(h)) $(h).scrollIntoView();
+            return;
+        }
+        run = run.toLowerCase();
+        if (run === 'all') return void runAll();
+        const lab = labs.find(l => l.code === run);
+        if (lab) {
+            lab.card.scrollIntoView();
+            runOne(lab);
+        }
+    }
+
+    $('runAll').addEventListener('click', runAll);
+    $('stop').addEventListener('click', () => {
+        stopping = true;
+        $('stop').disabled = true;
+    });
+    load();
+})();
+</script>
+</body>
+</html>
