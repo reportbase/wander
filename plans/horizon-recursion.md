@@ -69,6 +69,10 @@ to ρ gives pieces within the piece, each a quarter turn again, and so on withou
 SPN §3.3 ("Nesting"), 1.37h = (0; 1, −1, 0, 1). **Every level of the recursion exists because the level above has a
 horizon.** Situations 1 and 2, with no horizon at the top, have none to recurse on.
 
+*Revised, 6 October* (Tom: "recursion is not limited to situations 3 and 4"): what situations 1 and 2 lack is
+recursion *forced by a horizon*. They recurse on a known shape's residual, octave by octave where detail is left (NST;
+SPN §2.1, revised).
+
 ## Proposition C. The reading is a logarithmic spiral, up to a wobble that repeats each octave
 
 Draw the reading as a curve: the turn Θ as the angle, the reading s as the radius.

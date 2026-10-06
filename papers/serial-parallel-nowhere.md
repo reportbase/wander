@@ -328,6 +328,16 @@ quarter turn, and situations 1 and 2 are the circle, the spiral that does not gr
 recurse on. Tom, 6 October: "situation 1 and 2, is uniform, no horizon, no recursion. situation 3 has a horizon and has
 reccursion."
 
+*Revised, 6 October* (Tom, later the same day: "this is situation 1 and 2. recursion is not limited to situations 3 and
+4", of the project's findings on recursion over shapes). Situations 1 and 2 recurse too. The nested readers over a known
+shape hold, level by level, the residual the levels above left: one sweep for the shape's departure from the reader's
+unit circle, and then an octave entered only where something is left (the nested fisheye lab, NST; v-and-h item 387;
+the format paper's depth, §2.8; the strange tier, STR). That is recursion with the shape known. What situations 1 and 2
+lack is the horizon, and so the recursion a horizon forces. A reading from Claude, unruled: two causes of the same
+recursion. **On a known shape (1, 2), depth follows the shape's detail and stops where nothing is left. Facing a horizon
+(3, 4), depth is forced, and never stops.** Either way each level is the same sweep, with its own home, corner and wall.
+"The circle, k = 0" above describes how the reading grows per turn, not whether it recurses.
+
 **The situations restated, on the sweep alone** (Tom, 6 October; recorded here as given, and read against the table
 above, which is kept as written).
 
@@ -400,6 +410,9 @@ approached but never found; only in 1 and 2, with both breadths known, is it cal
 > proof. just described differently."
 
 (The bracket is Claude's: the message reads "2 and 3", and the sense is the situated readers.)
+
+This is the recursion a horizon forces. Situations 1 and 2 recurse on a known shape's residual instead (revised above,
+after the situations table).
 
 Halve the sweep and each half turns less, so its arc and its line come closer; halve again and closer still
 (`plans/spiral/approach.py`):
@@ -1148,6 +1161,8 @@ itself; with (R) its edges are 1/r and r. Three points fix a projective map, so 
 For r = 2 this is ρ = 2(s − ½)/(2 − s) above, with the octave's corner c = 1. One octave out turns exactly 90° (checked
 to 10⁻¹⁵ for r = 2, 3 and φ). *Recursion without end:* ρ is itself a reading on [0, ∞) with its own horizon, so 3.11
 and 3.12 apply to it, and so on: the nesting above, each level existing because the level above has a horizon.
+*Revised, 6 October:* this is the recursion a horizon forces. Recursion over a known shape's residual, in situations 1
+and 2, needs no horizon (§2.1, after the situations table).
 
 **Proposition 3.13 (the reading is a logarithmic spiral, up to a wobble that repeats each octave).** Draw the reading
 with the turn Θ as the angle and s as the radius. Under (R), and only then, the curve is carried onto itself by turning a

@@ -18,7 +18,8 @@ A reading, not a ruling. Checks: `python3 plans/wavelets/checks.py`.*
 | the pitch k | the ratio between rungs | the dilation factor of a wavelet frame |
 
 One object (the quarter turn), one mark (the corner), one parameter (k). **Uniform sweep, k = 0**: both breadths known,
-no horizon, no recursion (situations 1 and 2, not situated). **Non-uniform sweep, k > 0**: one breadth known, a horizon,
+no horizon, no recursion forced (situations 1 and 2, not situated; they can still recurse on a known shape's residual,
+SPN §2.1, revised 6 October). **Non-uniform sweep, k > 0**: one breadth known, a horizon,
 recursion (situation 3, situated).
 
 ## What filters and wavelets already have (each checked)

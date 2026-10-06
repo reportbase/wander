@@ -49,8 +49,9 @@ differ by 18%.
 
 Any finite δ leaves infinitely many octaves in the sliver at the rim, because the horizon is never reached. Every zoom
 resolves finitely many more and leaves the rest in a new sliver. So a finite reader facing a horizon must zoom again
-and again, without end. In situations 1 and 2 nothing lies past the rim, since the whole is held, so there is nothing to
-zoom into.
+and again, without end. In situations 1 and 2 nothing lies past the rim, since the whole is held, so no zoom is
+*forced*. They still recurse, on a known shape's residual (Tom, 6 October: "recursion is not limited to situations 3
+and 4"; SPN §2.1, revised): there depth follows the shape's detail and stops where nothing is left.
 
 The chain is: **a horizon and a finite resolution ⇒ endless zooms; far from the corner, every zoom alike.**
 
@@ -73,7 +74,10 @@ The chain is: **a horizon and a finite resolution ⇒ endless zooms; far from th
   cot δ, and the ratio between rungs is r = cot δ: set by the reader's resolution. SPN's octave, r = 2, would be a reader
   resolving 26.6°, the angle of the ring at v/h = ½. This would answer the open question of what fixes the ratio between
   rungs (SPN §14; the spiral's pitch, Proposition 3.13), but only if re-centring by the whole window is right. A reader
-  could as well zoom by 2 each time. Unruled.
+  could as well zoom by 2 each time. Unruled. *Weakened, 6 October:* the project's measured recursion is adaptive,
+  an octave entered only where something is left (79 to 244 sweeps instead of 518 over the library shapes; Tom's
+  summary of the recursion findings). So cot δ could at most cap how far one look reaches, not set the spacing of the
+  levels.
 
 ## Where this leaves the question
 
@@ -83,4 +87,5 @@ The chain is: **a horizon and a finite resolution ⇒ endless zooms; far from th
 | that it is needed at all, and without end | finite resolution and the horizon (§3 here) |
 | every level alike, far from the corner | the fisheye's tail, magnified (§2 here) |
 | each level a full quarter turn, with its own corner | still a premise: re-centring, (P) |
-| the ratio between rungs | open; resolution suggests r = cot δ (§4 here) |
+| the ratio between rungs | open; resolution would at most cap one look's reach, cot δ (§4 here) |
+| why the reader re-centres, and where | the residual: a level holds only what the levels above left (NST; Tom's summary) |
