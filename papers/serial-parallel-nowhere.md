@@ -407,10 +407,11 @@ horizon of a situated reader"); **a corner approached, never found**; and **recu
 end, each level the same sweep, Archimedes' halving ("Why the recursion"; Propositions 3.11–3.13). In 1 and 2 recursion,
 where there is any, follows the shape and stops.
 
-*Unsettled:* whether the circle needs recursion. "Nothing left past the first level, because the circle has no detail"
-(`plans/five-ways-to-observe.md`) against "the circle needs 129" sweeps to hold within one millionth (§3.3, "Recursion,
-after the corner", point 4). The 129 may be the library circle's departure from the reader's unit circle (placed or
-sized differently); not checked here.
+**The circle needs no recursion** (Tom, 6 October: "the circle does not need recursion. its handled in the first
+octave."). The circle is held whole in the first octave; nothing is left for a second level to hold. So the 129 sweeps
+reported for the library circle (§3.3, "Recursion, after the corner", point 4) cannot come from the circle's own shape:
+most likely from the library circle's departure from the reader's unit circle (placed or sized differently), or from
+how the sweeps were counted. Not checked here; the measurement is not in this repository.
 
 *The situations as numbered before 6 October* (kept as written; read through the mapping in "The situations restated,
 on the sweep alone", below: the earlier 3 is 3 and 4 now, the earlier 4 is 0, the earlier 5 is 3 or 4 approximately):
@@ -1377,7 +1378,12 @@ the format paper; the strange tier, STR, §6.4).
 
 And, the same day: "this is situation 1 and 2. recursion is not limited to situations 3 and 4" (§2.1, revised).
 
-*Read against 3.11–3.13 and §2.1* (Claude's, unruled):
+*Read against 3.11–3.13 and §2.1* (Claude's, unruled, except where Tom's ruling is quoted):
+
+- *The circle needs no recursion* (Tom, 6 October: "the circle does not need recursion. its handled in the first
+  octave."). Point 4's "the circle needs 129" must then count something other than the circle's own shape: most likely
+  the library circle's departure from the reader's unit circle, or the way the sweeps were counted (§2.1, "The five,
+  in brief"). Not checked here.
 
 - *Two causes of one recursion.* These findings are over known shapes, situations 1 and 2: depth follows the shape's
   detail and stops where nothing is left. Propositions 3.11–3.13 are the recursion a horizon forces, situations 3 and 4,
