@@ -121,6 +121,7 @@ open: what fixes the ratio between rungs (the 2), which is the spiral's pitch
 | the relation | the reading, the flip, the corner; the corner bisects every level; each level one quarter turn, for every ratio; the spiral form | **proved** (§3; Propositions 3.2(b), 3.12, 3.13), on the premises named |
 | the situated reader | one breadth known gives the horizon, the fisheye and the bell; the corner approached, never found | **proved** as mathematics (§2.1); that a reader *is* such a thing is the paper's proposal |
 | recursion | the same sweep at every level; depth beats breadth; cost follows the shape | **ruled** where it rests on (R) (R172, R175, R180); **measured** on shapes (NST, the 3d bench, "Recursion, after the corner"); forced, far out, for a finite reader facing a horizon (`plans/resolution-recursion.md`, unruled) |
+| fairness to the facings | the reading treats v/h and h/v alike, f(1/s) = 1 − f(s); the corner's place and the inversion are forced only given it | **ruled** (R162, Tom, 2 October), not derived from the bare relation. Open: why a physical reader would satisfy it |
 | the ratio between rungs | why 2 | **open**: not derived; the runs so far found it set by the builder's rule or by the scene (below) |
 | physics | the labs (§9.9, §11.4) | **a correspondence**, not a proof: a passing lab adds standing to the conjecture, a failing one bears on the correspondence, not on the geometry |
 
@@ -643,7 +644,8 @@ Each level of the recursion, one more level in, brings both measures four times 
 reaches it. So the levels are the steps by which a situated reader closes on the breadth it cannot hold, and the line,
 1, is the limit they head for: the horizon. Situations 1 and 2 hold the line; 3 and 4 approach it, recursively.
 
-This is Archimedes' method for π (*Measurement of a Circle*), described differently: a polygon inside the circle from
+This is the structure of Archimedes' method for π (*Measurement of a Circle*), read as a situated reader's approach to
+a breadth it cannot hold; the convergence itself is ordinary geometry, and nothing here is a new proof of it. His method: a polygon inside the circle from
 below and one outside it from above, the sides doubled at each step, 6, 12, 24, 48, 96, π squeezed between 3.1410 and
 3.1427 and never reached. Inside from below, outside from above, doubling as the recursion, the true value a horizon.
 (His outer polygon goes as tan θ/θ, the outside measure here as θ/sin θ; both lie above 1 and close at the same rate.)
