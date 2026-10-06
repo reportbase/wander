@@ -477,6 +477,17 @@ one octave leads into the next without a jump or a kink; the projective sweep on
 slower through its joins, which is the wobble W of Proposition 3.13. The logarithmic reading runs at one even rate
 throughout, (π/2)/ln q.
 
+**A sweep is one hemisphere, not the whole** (Tom, 6 October: "a sweep does not sweep the full system, it sweeps 0 to
+π/2, which is the outside hemisphere view"). Measured from the point facing the reader, the angle across a thing runs
+from 0 there to π/2 at its edge, the limb. So 0 to π/2 covers the half that faces the reader and stops at the limb. The
+whole would run on to π, and the half past the limb is never swept. Every relation v/h on [0, ∞) fits in this one
+quarter turn, and their sum is π/2, as above. So "every relation" means every relation that can be seen from one side.
+This is where the outside measure comes from. The arc from the facing point to angle θ is θ, while the reader sees its
+projection, sin θ. Arc over projection, θ/sin θ, rises from 1 at the facing point to π/2 at the limb: the visible
+quarter's arc, π/2, over its projected half-width, 1. The inside measure is the reciprocal, sin θ/θ, which falls to 2/π.
+So π/2 is the whole visible hemisphere, foreshortened; it is not the whole system. Situations 1 and 2, holding the
+equation, have the whole. Situations 3 and 4 have one sweep, one side.
+
 The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
 the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
 from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 between them.
