@@ -532,6 +532,12 @@ or horizon of any kind" for situations 1 and 2 (R131; the paragraph on situation
 have no horizon. Tom again, the same evening: "1 and 2 have a corner, that you can arrive at the corner, it is algorithmic, they have
 no horizon however, h and v are known." The other places in the paper that said 1 and 2 have no corner now say they have one.
 
+**In 3 and 4 the corner is simply h** (Tom, 6 October: "yes, so 3 and 4's corners is simply h"). Both statements hold,
+for two corners. The reader's own corner is where v has reached one h: it knows h, so it finds that corner exactly,
+with h alone (Proposition 3.1). The true corner, where v's breadth equals h's, needs v's breadth, which 3 and 4 do not
+have; they approach it, from outside or inside, and never reach it ("The horizon of a situated reader"). In 1 and 2,
+with both breadths known, the two corners are one, computed exactly.
+
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
 
 > "3 and 4 can approach the corner but never arrive there. both have horizons, one from the outside 0 to PI/2 and from
