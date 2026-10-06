@@ -36,8 +36,8 @@ block only puts them in order.*
 |---|---|---|
 | relation | two breadths, v and h, and nothing else: no scale, no frame | §1 |
 | reading | s = v/h on [0, ∞). The flip s ↔ 1/s reads the same relation from the other facing | §1, §3.2 |
-| corner | s = 1, v = h: the flip's one fixed point, 45° | §3 |
-| sweep | the reading as a turn: θ = atan s from 0 to π/2, or g = (2/π)θ from 0 to 1 (R170, "g is the sweep"). One sweep covers one side, out to the limb, and every relation on it; summed, the relations come to π/2 | §2.1, §3.5 |
+| corner | s = 1, v = h: the flip's one fixed point; g = ½ (in 1 and 2, 45°) | §3 |
+| sweep | the running share g of the relations, from 0 (v unexpressed) to 1 (v fully expressed). Each relation s takes the share ds/(1 + s²); their total is π/2, and g is the running share over that total (R170, "g is the sweep"). The flip sends g to 1 − g. In situations 1 and 2, with both breadths held, the same g is an angle, θ = (π/2)·g, and 90° is meaningful there; in 3 and 4 nothing turns, and g is a share | §2.1, §3.5 |
 | octave | a sweep entered again, with its own home, corner and far wall. In place, 2h: a front half of one h, proportional, and a back half of one h holding the rest, in which the next octave nests (§3.3, "The octave as 2h, in place"). Laid side by side round its own corner, 1/r to r, it is one quarter turn, whatever the ratio r (Proposition 3.12) | §3.3, Proposition 3.12 |
 | recursion | octaves within octaves: each level the same sweep again | §3.3, Proposition 3.11; "Recursion, after the corner" |
 | depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
@@ -513,6 +513,13 @@ recursion. **On a known shape (1, 2), depth follows the shape's detail and stops
 and 4 is recursion without depth ("Proportion, depth and recursion, by situation", above).
 "The circle, k = 0" above describes how the reading grows per turn, not whether it recurses.
 
+*Angles, and where they belong* (Tom, 6 October: "probably better to not explain the sweep in terms of angles"; "however situation 1 and 2 can be explained in terms of angles though, and i think 90 degrees is meaningful in 1 and 2.") In the paragraphs that follow, written the same day, the sweep of the situated
+readers (3 and 4) is often given in angles: the corner at 45°, an octave as a quarter turn, rings in degrees. For 3 and
+4, read each angle as a share of the sweep: g = angle/(π/2), so 45° is g = ½, the corner, and "a quarter turn" is one
+whole sweep, 0 to 1. Nothing turns in a situated observation. In 1 and 2, with the whole held, the angle is meaningful
+as it stands: v and h are held as two breadths at right angles, and 90° is the angle between them. The fisheye and the
+hemisphere are drawings of a view and keep their degrees as drawings.
+
 **The situations restated, on the sweep alone** (Tom, 6 October; recorded here as given, and read against the table
 above, which is kept as written).
 
@@ -807,6 +814,11 @@ So "g = π/2, v fully expressed; g = 0, v unexpressed" holds exactly with the wh
 two limits, home and horizon. This is the circle and the hyperbola of "The relation forces the logarithm" once more.
 g is the turn, not the share of distance along the line from A to B: the two agree only at 0, at the corner and at
 the end (a quarter of the distance is 0.205 of the turn; "The first octave is half the distance").
+
+*Revised the same evening* (Tom: no turning within an observation; the sweep better not explained in angles, except in
+1 and 2; "Angles, and where they belong", above). With h held, nothing turns: g is the share from 0 to 1, with the
+corner at ½, home and horizon its two unreached ends, and π/2 the total of the shares, not a quarter turn. With the
+whole held, the angle stands: θ from 0 to 90°, and 90° is the right angle between the two held breadths.
 
 The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
 the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
@@ -1437,7 +1449,9 @@ What follows from it:
   mirabilis*, "eadem mutata resurgo").
 
 *Read with "No turning within an observation" (below, 6 October):* Θ here counts levels and the sweep within one; no
-observation sweeps more than 0 to π/2.
+observation sweeps more than 0 to π/2. For the situated readers the angles in 3.11–3.13 are a drawing: read Θ/(π/2) as
+levels passed plus the share g within the last; a quarter turn is one whole sweep (§2.1, "Angles, and where they
+belong").
 
 What rests on what: 3.11–3.13 are proved on the premises named. (R) carries the weight, and it is a ruling (R172, R175),
 not a theorem: Proposition 3.6 says a reader cannot read its rung, which motivates (R) but does not by itself require
