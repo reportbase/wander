@@ -44,6 +44,9 @@ Google Fonts load from outside:
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far
   laws are fair to the facings (shares of a two-part split are; components are not).
+  `horizon-recursion.md` (+ `spiral/`): the horizon with no preferred rung forces
+  recursion; each octave a quarter turn for any ratio; the reading a logarithmic
+  spiral (situations 1–2 the circle, k = 0). Propositions for review, not yet in SPN.
 
 The repo is public, so the papers can be read on GitHub; the owner is fine with
 that for now (6 Oct 2026) and will decide later where they live. They are still
