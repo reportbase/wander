@@ -677,6 +677,25 @@ the last stretch of both without arriving: the horizon, the same on both layouts
 two situated readers are the two ways of comparing the layouts, line over circle (π/2) and circle over line (2/π), with
 1 between them. This agrees with "Angles, and where they belong" (above).
 
+**Two normalizations, the two layings** (Tom, 6 October: "So if we took any system of h and v, normalize it, divide
+both by h."). Dividing both by h sends any system (h, v) to (1, v/h): a point on the number line held upright at h = 1.
+Every system, whatever its scale, lands on that one line, at its relation s = v/h; the scale is gone and h is the 1,
+the focus. There are two ways to normalize, and they are the two layings above:
+
+| divide both by | the system lands at | lies on | needs |
+|---|---|---|---|
+| h | (1, v/h) | the number line, unbounded | h only |
+| the whole, √(h² + v²) | (h, v)/√(h² + v²) = (cos θ, sin θ) | the quarter circle, bounded | h and v both |
+
+A situated reader (3, 4) can only divide by h: it knows h and not v's breadth, so it cannot form the whole. Its
+systems land on the unbounded number line, read through the unit line, with a horizon at the far end; this is R146's
+"the reader divides, and only here", drawn. An unsituated view (1, 2) can divide by the whole: holding both breadths,
+every system lands on the quarter circle, bounded, the corner computed at 45°, no horizon; 1 when the system is the
+circle, 2 when each direction has its own breadth and the departure from the circle is the depth. The two are one
+projection apart: projecting (1, s) toward the centre gives the circle's point, and comparing the two gives θ/sin θ and
+sin θ/θ. Normalized by its own unit, a system gives the number line; normalized by the whole, the circle. Which a
+reader can do is its situation.
+
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
 
 > "3 and 4 can approach the corner but never arrive there. both have horizons, one from the outside 0 to PI/2 and from
