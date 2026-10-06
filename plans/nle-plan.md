@@ -80,12 +80,31 @@ graders (osf.io/74fzn); Chan and Mazzocco's materials on OSF; the Macquarie data
 
     python3 plans/nle/nle.py data.csv --max 100 [--participant ... --target ... --estimate ... --age ... --count ...]
 
+## For Chan and Mazzocco's data (osf.io/kqe2w), fixed before seeing it
+
+*Added 6 October from the paper (Chan and Mazzocco 2024, J. Exp. Child Psych. 245, 105965), before any of its data was
+seen.* 104 U.S. kindergartners (mean age 5.9), tested at Time 1 and, after six weeks of training, at Time 2. Lines 0–20
+and 0–100, each with and without a labelled midpoint, eight trials a type; the line runs on past its upper end, and one
+or two targets a type lie beyond it (105, 120; 22, 24, 31, 33).
+
+- **Which trials.** The 0–100 lines, both kinds (with and without the midpoint) pooled within a time: 14 targets
+  inside 0–100 per child per time. Targets beyond 100 are left out, as PWR1 has no reading past the line's end. The
+  labelled midpoint invites anchoring, which favours PWR1: a bias against the corner, accepted.
+- **Which time decides.** **Time 1** (before training) carries the kill; Time 2 is reported beside it.
+- **The 0–20 lines** are run the same way and reported, not part of the kill (kindergartners count to about 20, so
+  most will be straight there).
+- **Ages** are given only as a group (SD 0.34 years); P2 and P3 are not tested on this dataset.
+- If the file holds only error scores (PAE, sequence errors) and not each estimate, it cannot be used, and this is
+  recorded as such.
+
 ## References
 
 - Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
   shift. *Developmental Science* 14, 125–135.
 - Hollands, J. G. and Dyre, B. P. (2000). Bias in proportion judgments: the cyclical power model. *Psychological Review*
   107, 500–524.
+- Chan, J. Y.-C. and Mazzocco, M. M. M. (2024). New measures of number line estimation performance reveal children's
+  ordinal understanding of numbers. *Journal of Experimental Child Psychology* 245, 105965. Data: osf.io/kqe2w.
 - Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation: evidence for multiple
   representations of numerical quantity. *Psychological Science* 14, 237–243.
 
