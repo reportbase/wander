@@ -28,6 +28,9 @@ Google Fonts load from outside:
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
   standing); `v-and-h.md` gathers every idea about v and h, by item.
+  `five-ways-to-observe.md` is a note on the situations 0 to 4, gathered in one place
+  from SPN §2.1 (what each knows, how it reads, its standpoint, horizon and recursion), and
+  how the 3d repo's `situations.html` draws each; a reading, not a ruling.
   `serial-parallel-nowhere-record.md` is SPN as written 29 Sep – 1 Oct, before the
   rewrite: **a frozen record, never edited.** Section and proposition numbers cited
   in the corpus before the rewrite are the record's; SPN's opening note maps them to
