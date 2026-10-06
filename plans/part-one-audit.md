@@ -2,9 +2,9 @@
 
 *6 October 2026, by Claude, asked by Tom to stay with the math and geometry. Every proposition and corollary of Part I
 (1.1, 2.1, 3.1–3.10, Corollaries 3.5 and 3.9) read with its proof, the central hypothesis's derivation read beside them,
-and every number in §3.2–§3.3 and §3.8 recomputed. A review, not a ruling. Applied to SPN the same day at Tom's word ("proceed with edits to papers"), each change marked *Corrected* or *the audit* where it stands, and the open question added to* v-and-h *§9.*
-*
-Checks: `python3 plans/audit/part_one_checks.py`.*
+and every number in §3.2–§3.3 and §3.8 recomputed. A review, not a ruling. Applied to SPN the same day at Tom's word
+("proceed with edits to papers"), each change marked* Corrected *or* the audit *where it stands, and the open question
+added to* v and h *§9. Checks: `python3 plans/audit/part_one_checks.py`.*
 
 ## In short
 
