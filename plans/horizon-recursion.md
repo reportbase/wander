@@ -110,8 +110,7 @@ What it gives:
 - Not settled: the pitch (the ratio between rungs), and whether a reader holds the projective octave or the exact
   spiral. The second is a small, sharp question: they differ by at most 4.74°, a wobble with a known shape.
 
-## For SPN, if Tom agrees
+## For SPN (done, 6 October, at Tom's "Yes, proceed")
 
-A new short section after §3.3's "Every octave is a sweep" (or in §3.8, beside Propositions 3.6–3.7): Propositions A, B
-and C with the figure; the spiral's pitch added to §14's open question on the ratio between rungs; and in §2's
+Added to §3.3 after "Every octave is a sweep" as Propositions 3.11 (A), 3.12 (B) and 3.13 (C), with the figure; the spiral's pitch added to §14's open question on the ratio between rungs; and in §2's
 situations table, "the circle" for situations 1–2 read as the spiral with k = 0.

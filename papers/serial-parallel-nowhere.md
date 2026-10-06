@@ -10,7 +10,7 @@
 > Near and far are one geometry, read from either side.
 
 *Tom Brinkman, with Claude. Working paper. Rewritten 1 October 2026 around the rulings of that evening (R153–R158); revised 2 October to foreground the inversion at the corner as the main contribution (§3.2, R161), and again that
-morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C).*
+morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 has a horizon and recursion where situations 1 and 2 have neither.*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -321,6 +321,12 @@ reader divides, and only here. It cannot be normalised, since one side is unknow
 somewhere (R139) and the only situation with a reader in it; serial and parallel readers are both here (R152).
 Everything particular to it follows from that one difference (R146): the division, the three landmarks, the two sides,
 the Cauchy (once the lay is even in direction), no normalising, and g, its sweep. §3 is about what that difference does at the corner.
+
+*Situations 1 and 2 against 3, drawn* (6 October; §3.3, Proposition 3.13; Claude's, unruled). Drawn with the turn as
+the angle and the reading as the radius, situation 3's reading is a logarithmic spiral, growing by the same factor each
+quarter turn, and situations 1 and 2 are the circle, the spiral that does not grow (k = 0): no horizon, and nothing to
+recurse on. Tom, 6 October: "situation 1 and 2, is uniform, no horizon, no recursion. situation 3 has a horizon and has
+reccursion."
 
 **Situation 4, impossible.** Neither breadth known: nothing to count in and no home to lay from (R137). Impossible for a
 reader as defined here, which needs a known side to take its ratio from; it is not a claim about what else might be
@@ -822,6 +828,78 @@ again" approximated. Situation 3 only: situations 1 and 2 have no home, corner, 
 Checked numerically: the map sends ½c, c, 2c to 0, 1, ∞; ρ(1/s)·ρ(s) = 1 to 2×10⁻¹⁵; n + g converts to the value and back
 exactly (about 10⁻¹⁶), always increasing; the address of 1.37h as given. (Pages: `demos/breadth-and-density.html` and
 `demos/octave-browser.html` in the calendar repository.)
+
+**The octaves as a spiral** (6 October; `plans/horizon-recursion.md`, checks and figure in `plans/spiral/`; Claude's,
+unruled). *Tom, 6 October: "the most exciting potentially impactful idea here in my opinion is that each octive is
+equivalent to the 0 to PI/2. so that means each octavie is a 90 degree turn. situation 1 and 2, is uniform, no horizon,
+no reccursion. situation 3 has a horizon and has recursion"; "yes, lograthimic spiral maps on to this framing very
+nicely."* What follows states that as three propositions, numbered after 3.10 so that no number cited elsewhere moves.
+
+The setting: the reader holds its reading s on (0, ∞) as a turn Θ(s), increasing, counted in quarter turns,
+Θ = (π/2)(n + g), n the pieces (octaves) and g the share of a quarter turn within one. The premises, named so that each
+result says which it uses: **(H)** the horizon: Θ is defined on all of (0, ∞) (situation 3; R174); **(B)** bounded
+pieces: within a piece the reading turns at most a quarter turn (26 September); **(R)** no rung preferred, in the
+address: for some ratio q > 1, Θ(q s) = Θ(s) + π/2 (R172 and R175 written as an equation, the address-level form of
+Proposition 3.7; q = r², r the ratio between rungs); **(F)** fair to the facings: Θ(1/s) = π/2 − Θ(s) on the reader's own
+piece (R162); **(P)** each piece read as a relation: a projective map of the piece onto [0, ∞], then the turn (as above).
+
+**Proposition 3.11 (the horizon, with no rung preferred, forces endless pieces, all alike).** Under (H), (B) and (R) the
+pieces are infinitely many toward home and toward the horizon, and each is the reader's own piece scaled by a power of
+q and read the same way.
+
+*Proof.* Iterating (R), Θ(qⁿs) = Θ(s) + nπ/2 for every whole n. The images qⁿ·[s₀, q s₀) of the reader's own piece
+cover (0, ∞) without overlap as n runs over the integers, and by (H) Θ is defined on all of it; on the n-th image Θ is
+the reader's own moved by n quarter turns. By (B) none holds more than a quarter turn. ∎
+
+The horizon alone does not force pieces: one bounded sweep, Θ = atan s, holds the whole unbounded reading in a single
+quarter turn and satisfies (H) and (B). It fails (R): the octaves out from the corner get 36.9°, 19.4°, 5.3°, 1.3°,
+0.34°, 0.08° of turn, so the rung at the corner is preferred and the far ones are crushed. The chain is *the horizon and
+no preferred rung, therefore recursion*. Situations 1 and 2 fail the first: nothing is divided, and there is no horizon
+(R131).
+
+**Proposition 3.12 (each octave is one quarter turn, for every ratio).** Add (F) and (P). The reader's own piece runs
+from 1/r to r round the corner, and on it ρ = (rs − 1)/(r − s) and Θ = atan ρ, uniquely: the edges at 0° and 90°, the
+corner at 45°, for every ratio r > 1.
+
+*Proof.* (F) puts the corner, the flip's fixed point, in the middle of the reader's piece and carries the piece onto
+itself; with (R) its edges are 1/r and r. Three points fix a projective map, so (P) gives ρ = (rs − 1)/(r − s). Then
+ρ(1/s) = 1/ρ(s), so Θ(1/s) = π/2 − Θ(s): (F) holds without being imposed. ∎
+
+For r = 2 this is ρ = 2(s − ½)/(2 − s) above, with the octave's corner c = 1. One octave out turns exactly 90° (checked
+to 10⁻¹⁵ for r = 2, 3 and φ). *Recursion without end:* ρ is itself a reading on [0, ∞) with its own horizon, so 3.11
+and 3.12 apply to it, and so on: the nesting above, each level existing because the level above has a horizon.
+
+**Proposition 3.13 (the reading is a logarithmic spiral, up to a wobble that repeats each octave).** Draw the reading
+with the turn Θ as the angle and s as the radius. Under (R), and only then, the curve is carried onto itself by turning a
+quarter and scaling by q, and it is
+
+    ln s = k·Θ + c + W(Θ),    k = ln q / (π/2),    W periodic with period one quarter turn;
+
+an exact logarithmic spiral if and only if W is constant.
+
+*Proof.* Θ increases, so s is a function of Θ; with u(Θ) = ln s, (R) says u(Θ + π/2) = u(Θ) + ln q, which holds if and
+only if u(Θ) − kΘ has period π/2. ∎
+
+![The reading as a spiral](../plans/spiral/spiral.svg)
+
+What follows from it:
+
+- *Situation 3 is a spiral; situations 1 and 2 are the circle, the spiral with k = 0* (§2). For r = 2 the reading grows
+  ×4 each quarter turn and ×256 each full turn (k = 0.8825); for r = 3, ×9 and ×6561.
+- *The pitch is the ratio between rungs*, k = 2 ln r/(π/2). The geometry fixes the turn per octave, a quarter; it does
+  not fix how much the reading grows in it. The question the audit left open, what fixes a reader's ratio between rungs,
+  is the question what fixes the spiral's pitch (§14).
+- *Two readings make a quarter turn per octave, and they differ by under 5°.* Proposition 3.12's reading (each octave a
+  relation) leaves the exact spiral by a wobble that repeats each octave and vanishes at every corner and edge: at most
+  4.74° for r = 2 (the 0.053 of an octave above), 5.69° for r = 3, 4.40° for φ. The exact spiral is the logarithmic
+  reading g = log_q s + ½ within the octave, also fair to the facings, but not projective.
+- *Equiangular.* A logarithmic spiral crosses every ray from its centre at one angle, arccot k: 48.6° for r = 2, 35.6°
+  for r = 3. It meets every direction alike at every scale, the curve's form of no rung preferred (Bernoulli's *spira
+  mirabilis*, "eadem mutata resurgo").
+
+What rests on what: 3.11–3.13 are proved on the premises named. (R) carries the weight, and it is a ruling (R172, R175),
+not a theorem: Proposition 3.6 says a reader cannot read its rung, which motivates (R) but does not by itself require
+the address to be the same at every rung. Proposition 3.11 shows what (R) buys.
 
 **Rungs, and the ratio between them** (*The Radix*; R176). The doubling is the reader's ratio between rungs, not the geometry's. *The Radix* §5: the lens
 forces the ladder past the corner to be a ladder of ratios, since a change of radius slides a ladder and can re-space
@@ -2997,7 +3075,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
     absent; telling them apart would take a second test, that a convention can be chosen freely and an absent value
     cannot be assigned. One built-in lab is not enough to change the conjecture's wording.
 - **From the shapes (§6.4).**
-  - *The 2 of the central hypothesis*: readers that take their own h from their parent's record, on signals built on ratios of 2, 3 and the golden ratio. Does the ratio of parent's to child's h settle at 2, or follow the signal? *Run 6 October (HRT): did not reach the question* (central hypothesis). *Restated* (the audit): the corner's place in the octave is proved for every ratio; what stays open is **what fixes a reader's ratio between rungs**: the reader's choice (*The Radix*), the step of its lay (R176's floating point, whose base 2 is a hardware choice), or the world's payloads (Corollary 3.9). No simulation that builds the reader can settle it.
+  - *The 2 of the central hypothesis*: readers that take their own h from their parent's record, on signals built on ratios of 2, 3 and the golden ratio. Does the ratio of parent's to child's h settle at 2, or follow the signal? *Run 6 October (HRT): did not reach the question* (central hypothesis). *Restated* (the audit): the corner's place in the octave is proved for every ratio; what stays open is **what fixes a reader's ratio between rungs**, which is the same question as *what fixes the pitch of the reading's spiral* (Proposition 3.13, k = 2 ln r/(π/2)): the reader's choice (*The Radix*), the step of its lay (R176's floating point, whose base 2 is a hardware choice), or the world's payloads (Corollary 3.9). No simulation that builds the reader can settle it.
   - *Number lines in people* (`plans/nle-plan.md`, 6 October; the candidate "independent fact" of the central hypothesis). A corner model (proportion up to h, a count of doublings past it) against a straight line, a logarithm and proportion judgment, per child, with the prediction and the instrument's calibration fixed before any data. On Chan and Mazzocco's 104 kindergartners (2024; 0–100 lines, Time 1), **killed**: proportion judgment beats the corner for 40 of the 75 children who depart from a straight line (53%), and more clearly after training (61%) and on 0–20 lines (77–84%); the corner beats a plain logarithm for 8%. One dataset, one age, half the lines with a labelled midpoint; the parts tying h to the familiar range untested. A fairer test: older children, 0–1000 lines without a midpoint, each child's counting range.
   - *Which near/far laws are fair to the facings* (the audit). Of the powers of s/√(1 + s²), only the square (the disc); the dipole's electric field has only a symmetric bracket; the coil favours a facing (§3.2). A classification of classical near/far laws by these three kinds would replace "physics has the same structure" with a count. *Done* (6 October, `plans/near-far-classification.md`; Claude's, unruled): a law is fair to the facings exactly when it is the share of a two-part split whose parts the flip exchanges, f = A(s)/(A(s) + A(1/s)) (in the angle, the disc is sin²θ and its fairness is Pythagoras). Of twelve classical laws, the eight that are shares of a split (the disc, a dipole's magnetic near share, a filter's power, Michaelis–Menten, two-state occupancy, a voltage divider, Hill, a subtended angle) are fair; the four single components (the coil, a filter's amplitude, a ring's potential, a disc's field) are not, with their middles at 30°, 52.5° and 60° of turn. The same filter is fair in power and not in amplitude: fairness belongs to the quantity read.
   - *Crossing open space*: the child rule stands only where something was met, so a chain from inside a winding shape stops at the mouth. Is that a limit of a situated reader, or of the rule? Any rule that steps into the open seems to need something the record does not hold.

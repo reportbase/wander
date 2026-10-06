@@ -46,7 +46,7 @@ Google Fonts load from outside:
   laws are fair to the facings (shares of a two-part split are; components are not).
   `horizon-recursion.md` (+ `spiral/`): the horizon with no preferred rung forces
   recursion; each octave a quarter turn for any ratio; the reading a logarithmic
-  spiral (situations 1–2 the circle, k = 0). Propositions for review, not yet in SPN.
+  spiral (situations 1–2 the circle, k = 0). In SPN §3.3 as Propositions 3.11–3.13.
 
 The repo is public, so the papers can be read on GitHub; the owner is fine with
 that for now (6 Oct 2026) and will decide later where they live. They are still
