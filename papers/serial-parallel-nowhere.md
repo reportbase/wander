@@ -393,6 +393,34 @@ pure distance, held only where the breadths are known. **That is the situated re
 situated reader measures by turning, its v is never the line's v: **in situations 3 and 4 the true corner, v = h, is
 approached but never found; only in 1 and 2, with both breadths known, is it calculated exactly.**
 
+**Why the recursion: the approach to the line** (Tom, 6 October):
+
+> "so 1 and 2 observe the line, the actual breadth, situations [3 and 4] are forced to approach the line, but never get
+> there, thats where the recursion and the octals come in." Then, on Archimedes: "yes, it does seem like archimedes
+> proof. just described differently."
+
+(The bracket is Claude's: the message reads "2 and 3", and the sense is the situated readers.)
+
+Halve the sweep and each half turns less, so its arc and its line come closer; halve again and closer still
+(`plans/spiral/approach.py`):
+
+| pieces | each turns | outside, θ/sin θ | inside, sin θ/θ | gap from 1 shrinks |
+|---|---|---|---|---|
+| 1 | 90° | 1.5708 | 0.6366 | |
+| 2 | 45° | 1.1107 | 0.9003 | ×5.2 |
+| 4 | 22.5° | 1.0262 | 0.9745 | ×4.2 |
+| 8 | 11.25° | 1.0065 | 0.9936 | ×4.05 |
+| 64 | 1.41° | 1.0001 | 0.9999 | ×4.00 |
+
+Each level of the recursion, one more octave in, brings both measures four times closer to the line, and no level
+reaches it. So the octaves are the steps by which a situated reader closes on the breadth it cannot hold, and the line,
+1, is the limit they head for: the horizon. Situations 1 and 2 hold the line; 3 and 4 approach it, recursively.
+
+This is Archimedes' method for π (*Measurement of a Circle*), described differently: a polygon inside the circle from
+below and one outside it from above, the sides doubled at each step, 6, 12, 24, 48, 96, π squeezed between 3.1410 and
+3.1427 and never reached. Inside from below, outside from above, doubling as the recursion, the true value a horizon.
+(His outer polygon goes as tan θ/θ, the outside measure here as θ/sin θ; both lie above 1 and close at the same rate.)
+
 **π/2 and 2/π, with 1 between them** (Tom, 6 October):
 
 > "parallel is pi/2 and serial is 2/PI. serial*parallel = 1. parallel 1.5, line = 1, serial = 0.633"
@@ -3508,6 +3536,7 @@ From 6 October (the audit of Part I, the run for the 2 and number lines; `plans/
 Abelson, H. and diSessa, A. (1980). *Turtle Geometry*. MIT Press.
 Adelson, E. H. and Bergen, J. R. (1991). The plenoptic function and the elements of early vision. In M. Landy and
 J. A. Movshon (eds), *Computational Models of Visual Processing*, 3–20. MIT Press.
+Archimedes (c. 250 BC). *Measurement of a Circle*.
 Bradley, J. (1729). An account of a new discovered motion of the fix'd stars. *Philosophical Transactions of the Royal Society* 35, 637–661.
 Cavendish, H. (1798). Experiments to determine the density of the Earth. *Philosophical Transactions of the Royal
 Society* 88, 469–526.
