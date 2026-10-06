@@ -510,6 +510,31 @@ stands furthest off the line there, and the sweep runs twice the line's rate. Th
 and least a distance. By symmetry, half the turn still meets half the line there; their shares part most off the
 corner, by 0.045 of the whole near 17° and near 73°.
 
+**The relation forces the logarithm** (Tom, 6 October: "it would be nice if the v and h relation shows the forcing of the
+logarithms"). Three steps, each from v and h alone (checked):
+
+1. *Relations chain by multiplying.* Through any middle breadth m, v/h = (v/m)·(m/h). A measure of relations in which
+   chained relations add, f(ab) = f(a) + f(b), and which grows with the relation, can only be f = k·ln: Cauchy's
+   equation. So every doubling adds the same amount, which makes the octaves equal. The turn is not such a measure: atan(ab) is
+   not atan a + atan b, so the bounded sweep gives the octaves unequal shares, as the table above shows.
+2. *Two ways to hold a relation, two sweeps.* Draw the relation as the point (h, v) and measure it by twice the area its
+   ray sweeps from the corner. Hold the whole, v² + h² = 1 (the circle), and the sweep is the turn: bounded, π/2 in all.
+   Hold the corner, v·h = 1 (the hyperbola, through (1, 1)), and the sweep is ln(v/h): unbounded both ways, a horizon on
+   each side, and every octave sweeps the same area, ln 2. Scaling the relation by c, (h, v) ↦ (h/√c, √c·v), slides
+   along the hyperbola and keeps areas, so no rung is preferred, (R) exactly. The logarithm was first found this way, as
+   the area under the hyperbola (Saint-Vincent 1647). The circle gives π/2 (Archimedes); the hyperbola gives the
+   logarithm.
+3. *The two sweeps are one sweep, squeezed.* The turn read against ln s is atan s = π/4 + ½·gd(ln s), with gd the
+   Gudermannian, gd(x) = atan(sinh x). It carries the whole unbounded logarithm into the one quarter turn, near-even at
+   the corner and squeezed without end toward the edges: the same squeeze as Mercator's map toward the poles. So the
+   bounded sweep is the logarithm seen whole from one side, and the logarithm is the sweep unbounded. Far from the
+   corner the squeeze becomes a plain halving: the turn per octave falls 18.4°, 12.5°, 6.9°, 3.5°, 1.8°, …, by a ratio
+   that tends to 2, and the sweep's excess over the line falls by a ratio that tends to 4, Archimedes' ratio.
+
+In short: with the whole held, the relation gives the circle and π/2 (situations 1 and 2). With only the corner held,
+and no rung preferred, it gives the hyperbola and the logarithm, and so the octaves and the spiral (situations 3 and 4).
+That last pairing is Claude's reading, unruled.
+
 The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
 the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
 from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 between them.
@@ -3649,6 +3674,7 @@ Newton, I. (1687). *Philosophiæ Naturalis Principia Mathematica*.
 Nyquist, H. (1928). Certain topics in telegraph transmission theory. *Transactions of the AIEE* 47, 617–644.
 Olbers, H. W. M. (1823). Über die Durchsichtigkeit des Weltraums. *Astronomisches Jahrbuch für das Jahr 1826*, 110–121.
 Rømer, O. (1676). Démonstration touchant le mouvement de la lumière. *Journal des Sçavans*, 233–236.
+Saint-Vincent, G. de (1647). *Opus geometricum quadraturae circuli et sectionum coni*. Antwerp.
 Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation: evidence for multiple representations of
 numerical quantity. *Psychological Science* 14(3), 237–243.
 Snellius, W. (1617). *Eratosthenes Batavus*. Leiden.
