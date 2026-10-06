@@ -425,7 +425,7 @@ proportional. in situation 1 and 2, it is proportional on both sides of the corn
 |---|---|---|---|---|
 | 1 | proportional | proportional, from the known far wall | none: the shape is the circle | none |
 | 2 | proportional | proportional, from the known far wall | the shape's difference from the circle | holds the depth, level by level, and stops where none is left |
-| 3, 4 | proportional | octaves, counted by doublings toward the horizon | none: the shape is not known | forced by the horizon, without end; every level the same plain sweep |
+| 3, 4 | proportional | octaves, counted by doublings toward the horizon | none: the shape is not known | past the corner only: forced by the horizon, without end, every level the same plain sweep. Before the corner, none: the reader sees the front side and reads it in one proportional piece |
 
 One fact decides the two sides: whether v's far end is known. Before the corner v is counted in h's, so every
 situation reads in proportion. Past it, in 1 and 2, v is known and the back side has a far wall, read in proportion from
@@ -1354,6 +1354,13 @@ quarter turn and satisfies (H) and (B). It fails (R): the octaves out from the c
 0.34°, 0.08° of turn, so the rung at the corner is preferred and the far ones are crushed. The chain is *the horizon and
 no preferred rung, therefore recursion*. Situations 1 and 2 fail the first: nothing is divided, and there is no horizon
 (R131).
+
+*Revised, 6 October* (Tom, 6 October: "i dont think before the corner in situation 3 and 4 is recursive though, because you only see the front side.") The proposition's pieces "toward home" come from holding (H) and (R) on all of
+(0, ∞). By Tom's ruling recursion is past the corner only: before it the reader sees the front side and reads it in one
+proportional piece, home to corner (R176's lay; §2.1, "Proportion, depth and recursion, by situation"). Held there,
+(R) applies past the corner, the iteration runs over n ≥ 0, and the proof gives pieces without end toward the horizon
+and none toward home. Open: Proposition 3.12's octave runs from 1/r to r round its own corner, so it straddles a
+corner; how that octave sits with a front side read in one piece, home to the reader's corner, is not yet worked out.
 
 **Proposition 3.12 (each octave is one quarter turn, for every ratio).** Add (F) and (P). The reader's own piece runs
 from 1/r to r round the corner, and on it ρ = (rs − 1)/(r − s) and Θ = atan ρ, uniquely: the edges at 0° and 90°, the
