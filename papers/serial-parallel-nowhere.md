@@ -10,7 +10,7 @@
 > Near and far are one geometry, read from either side.
 
 *Tom Brinkman, with Claude. Working paper. Rewritten 1 October 2026 around the rulings of that evening (R153–R158); revised 2 October to foreground the inversion at the corner as the main contribution (§3.2, R161), and again that
-morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C.*
+morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -70,9 +70,34 @@ Neither tests the 2:
 
 Nesting itself cannot single out 2: an address scheme built on tripling round-trips as exactly and nests as well. **The 2 comes from the corner sitting at the middle of the octave under the swap, so a test of it has to look at where the corner falls, not at whether nesting works.**
 
+*Corrected* (6 October, the audit of Part I, `plans/part-one-audit.md`; Claude's reading, unruled). The derivation above
+does not single out 2 either. Its steps 1–4 never use "an octave from a to 2a": they show that the corner is the fixed
+point of the swap in the place f, so f = ½, and that holds for an octave of any ratio r between rungs. For an octave
+with two facings from c/r to rc, the one projective map sending 1/r, 1 and r to 0, 1 and ∞ is ρ = (rs − 1)/(r − s); it is
+fair to the facings (ρ(1/s) = 1/ρ(s)) and puts the corner at g = ½ for r = 2, 3, φ and 10 alike. So the hypothesis holds
+two claims of different standing:
+
+- **The corner divides the reader's octave in half**: h is the octave's front half, "2h" its two halves. Proved, on
+  R162 (it is Proposition 3.2(b) in the octave's place), for every ratio between rungs. No run needs to test it.
+- **A reader's ratio between rungs is 2.** Not derived. §3.3 says the same: "The doubling is the reader's ratio between
+  rungs, not the geometry's" (*The Radix* §5; R176). This is the part the runs above and below ask about, and the open
+  question is sharper put as: *what fixes a reader's ratio between rungs?*
+
+The sentence in bold above joins the two; read with this correction, a test of the 2 asks what fixes the ratio, not
+where the corner falls (which is proved).
+
 The run that could show it, or fail to: readers that take their own h from their parent's record, reading signals built on ratios of 2, 3 and the golden ratio. If the ratio between parent's and child's h settles at 2 whatever the signal is built on, the 2 belongs to the reader, as R183 says. If it follows the signal's own ratio, the 2 belongs to what is read. Exploratory, results reported as they fall (R187).
 
 **After the 3d bench (6 October; *v and h* items 389–391).** Measured, not ruled, and not the run above. On two scenes not built on any ratio, depth held as nested sweeps beat breadth alone in 32 of 32 views. Holding at a fixed ratio between rungs did not single out 2: √2 held the harbour best (5× below 2 at the median, with the base held equal) and 2 the valley. The best ratio there followed the scene. The run above, where the reader takes its h from its parent's record, is still the one that asks where the 2 belongs.
+
+**The run above, run (6 October, HRT; `plans/hrt-plan.md`; Claude's set-up, each run predicted first).** It did not reach
+the question. Landscapes built on ratios 2, 3 and φ; a child's h taken from the stretch its parent could not see.
+Run 1: the chains climbed (children larger than parents), so nothing nested. Run 2: run 1's apparent 2 (the longest
+hidden stretch about 2h) was the landscape's, moving from 0.29 h to 15 h with the landscape's height against the eye's.
+Run 3: two child rules that nest found 1–5 nesting hand-offs a signal, since on a landscape what a reader cannot see is
+almost never shorter than its h. Stopped there: a fourth rule chosen after three misses would be tuning. With the
+correction above, the reason is plain: whatever rule places the children fixes the ratio, and the builder chooses the
+rule. The 3d bench's finding that the best ratio follows the scene points the same way.
 
 **If h is not this, the candidates are few:**
 
@@ -466,7 +491,7 @@ the corner. How much of that is proved is set out after Proposition 3.2.
 **Proposition 3.2 (the corner holds every bounded reading).** (a) Let a reader hold its reading s ∈ [0, ∞) in two
 registers, s itself where s ≤ a and 1/s where s > a, for some a > 0. Both registers stay within [0, 1] if and only if
 a = 1, and then each is the other's mirror under the swap, meeting only at the corner. (b) Let f carry [0, ∞) into
-[0, 1], increasing, and treat the two facings alike: f(1/s) = 1 − f(s). Then f(1) = ½, f takes the front side below ½
+[0, 1], strictly increasing, and treat the two facings alike: f(1/s) = 1 − f(s). Then f(1) = ½, f takes the front side below ½
 and the back side above it, and past the corner f(s) = 1 − f(1/s): the back side is held as the front side's reading of
 the inverted pair.
 
@@ -496,6 +521,14 @@ contains it.
 
 Neither the definition nor the ruling is about the corner: one defines a relation, the other a fair reading of one. The corner and the
 inversion follow from them.
+
+*On what "forced" means* (6 October, the audit; Claude's reading, unruled). In (a) the registers are s and 1/s in the
+reader's unit h; registers s/a and a/s would stay on [0, 1] for every a. So (a) says: invert at your unit, which is what
+R164 says the corner is. In (b) the ruling R162 is itself the symmetry under the swap; what (b) adds is where the
+reading's middle falls (f(1) = ½) and that each side keeps to its half. On the ruling, the corner is forced as the
+inversion's middle. (The audit also tightened (b) to *strictly* increasing: a reading that sat at ½ over a stretch round
+the corner would satisfy the ruling without telling the sides apart there. At s = 0 the ruling reads as the limit
+f(0) + f(∞) = 1.)
 
 So inversion is what keeps every relation a share, on [0, 1], with the whole hemisphere held in two bounded halves
 ("Bounded means the relations being restricted to [0,1]", Tom, 26 Sep), and the corner is the only place it can be
@@ -557,10 +590,14 @@ shortfall 1/(1 + s²) about 1/s², a quarter as much with each doubling of s. At
 photometrist's rule of thumb, that inverse-square holds to 1% beyond five diameters, is s = 0.1, a point well inside the
 front side chosen by the error tolerated; the boundary itself is at the corner. And the near law is the far law read
 through the inversion: with f(s) = s²/(1 + s²), f(1/s) = 1 − f(s). Inverse-square and saturation are one expression seen
-from either side of the corner. The on-axis field of a circular coil, s³/(1 + s²)^(3/2), has the same form (about 0.35 of
-its most at the corner): both are powers of s/√(1 + s²), the v of the circle's representative pair (Proposition 2.1).
-These are cases whose near and far laws take the form of Proposition 3.2(b); they illustrate the result and do not show
-that physical near/far boundaries in general fall at the corner.
+from either side of the corner. The on-axis field of a circular coil, s³/(1 + s²)^(3/2), is the next power of the same
+quantity: both are powers of s/√(1 + s²), the v of the circle's representative pair (Proposition 2.1). But the coil does
+not take Proposition 3.2(b)'s form: f(s) + f(1/s) is 0.71 at the corner and 0.81 at s = ½ and 2, not 1; it is about 0.35
+of its most at the corner and reaches half at s ≈ 1.30. Like s/(2 + s), it favours one facing. Of the powers of
+s/√(1 + s²), only the square is fair to the facings. The disc is a case whose near and far laws take the form of
+Proposition 3.2(b); it illustrates the result and does not show that physical near/far boundaries in general fall at the
+corner, and the coil is a classical near/far law whose middle is not at the corner. (*Corrected* 6 October: this
+passage first had the coil as a second case of the form.)
 
 *Measured from somewhere, against controls* (3 October; *Wander*'s COR lab, `plans/corner-in-physics-plan.md`). Six
 cases, each with v, h and the far side predicted before the run, two of them predicted to show no corner:
@@ -931,17 +968,21 @@ definition of situation 3 (R137, §2.1), and by R158 anything in terms of it is 
 so no single value past the corner is held. What can be held is a relation between two readings, and a reader relates
 two values in one of two ways: it takes their difference, or their ratio.
 
-**Proposition 3.4 (the two registers free of the unknown).** Let F be a register on the back side, increasing and
-positive, with every reading multiplied by the same unknown b > 0.
+**Proposition 3.4 (the two registers free of the unknown).** Let F be a register on the back side, monotone and
+positive, with every reading multiplied by the same unknown b > 0 (F taken on all s > 0, or b ≥ 1, so that b·s stays
+where F is defined).
 (a) If the difference of any two values is free of b, F(b s₁) − F(b s₂) = F(s₁) − F(s₂), then F(s) = k · log s + c.
 (b) If the ratio of any two values is free of b, F(b s₁) / F(b s₂) = F(s₁) / F(s₂), then F(s) = c · sᵏ; bounded on
 [0, 1] past the corner only with k ≤ 0, a share meeting 1 at the corner only for k < 0, and with k = −1 and F = 1 at the corner it is the share h/v (Corollary 3.5(b)).
 
 *Proof.* (a) Put s₂ = 1: F(b s) = F(s) + F(b) − F(1); with G(s) = F(s) − F(1), G(b s) = G(b) + G(s); written in x = log s,
-G(eˣ) is additive and increasing, so linear by Cauchy's functional equation, and G = k · log s. (b) Put s₂ = 1: F(b s) = F(s)
+G(eˣ) is additive and monotone, so linear by Cauchy's functional equation, and G = k · log s. (b) Put s₂ = 1: F(b s) = F(s)
 F(b) / F(1); with H = F/F(1), H(b s) = H(b) H(s), and log H(eˣ) is additive and monotone, so H = sᵏ. Past the corner
 s > 1, so sᵏ stays within [0, 1] only for k ≤ 0, and is a share meeting 1 at the corner for k < 0; k = −1 gives
 1/s = h/v. ∎
+
+(*Corrected* 6 October, the audit: the premise first read "increasing", which would rule out k < 0 and with it the share
+h/v that (b) concludes; the proof uses only monotonicity.)
 
 So the unknown breadth enters a register in one of two ways, as a **shift** (a) or as a **factor** (b), and nothing in
 the geometry chooses between them: it depends on how the reader relates its readings. The back side holds both. Across
@@ -986,7 +1027,8 @@ v/h. A competitor such as v/(v + h), which does reach the mathematical horizon, 
 Past the corner v as a share of h is undefined (R158). Read the other way, it is not:
 
 **Corollary 3.5(b) (the share past the corner).** Let the share past the corner be on [0, 1] and meet the front side's
-share there, with the value 1. If the reading treats the two facings alike (R162) and the share is v/h before the corner,
+share there, with the value 1. If the reading treats the two facings alike (for the share, R161's rule: share(1/s) =
+share(s); R162's form f(1/s) = 1 − f(s) is for readings that tell the sides apart) and the share is v/h before the corner,
 it is h/v past it. Over the whole reading,
 
     share = min(v, h) / max(v, h),
@@ -1217,6 +1259,11 @@ lower's at 2ʲh: the same edges, the upper's counted from 2ᵐh. Its corner is t
 each of its octaves is the lower's octave m places toward the lower's mathematical horizon, and with the same count of octaves on
 each side its outermost octaves are m beyond the lower's that way and m short of them toward home. ∎
 
+*On R175's octaves* (6 October, the audit). The proof counts doublings (R167). On R175's octaves (×4, corners at 4ⁿh,
+edges at 2·4ⁿh) the same holds for even m, the ladder sliding m/2 octaves. For odd m it does not: a reader at 2h has its
+corners at 2·4ⁿh, exactly where the lower reader's edges are, and its edges where the lower's corners are. A factor of 2
+in unit swaps corners and edges.
+
 In an evenly spread world, the share of readings a reader holds facing forward grows with its rung relative to the
 world's scale exactly as the octaves added in §3.3's measurement: 0.5000, 0.7048, 0.8440, 0.9208, 0.9603, 0.9801 for
 m = 0 to 5. Adding octaves outward and moving up the ladder are one operation, paid for at the home end.
@@ -1237,7 +1284,9 @@ the reach. Laid evenly in turn, each octave out from the corner holds about half
 | 100,000 | 14 | 127,324 |
 
 The last address sits at about v/h = 4N/π, the far horizon (R174); the gaps between addresses grow without bound toward the mathematical horizon in v/h, and
-in octaves the reach grows by one per doubling. So the slide's trade is between rungs at a fixed count of addresses; a
+in octaves the reach grows by one per doubling. (The audit, 6 October, counting doublings past the corner that hold at
+least 8 addresses, gets one fewer octave on every row, 3, 6, 9 and 13, with the same last addresses: a counting
+convention, to be settled against `reach.py`.) So the slide's trade is between rungs at a fixed count of addresses; a
 reader that lays more addresses reaches farther both ways at once. Laying on arrival with N unknown is Proposition 5.4's
 case.
 
@@ -2948,7 +2997,9 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
     absent; telling them apart would take a second test, that a convention can be chosen freely and an absent value
     cannot be assigned. One built-in lab is not enough to change the conjecture's wording.
 - **From the shapes (§6.4).**
-  - *The 2 of the central hypothesis*: readers that take their own h from their parent's record, on signals built on ratios of 2, 3 and the golden ratio. Does the ratio of parent's to child's h settle at 2, or follow the signal?
+  - *The 2 of the central hypothesis*: readers that take their own h from their parent's record, on signals built on ratios of 2, 3 and the golden ratio. Does the ratio of parent's to child's h settle at 2, or follow the signal? *Run 6 October (HRT): did not reach the question* (central hypothesis). *Restated* (the audit): the corner's place in the octave is proved for every ratio; what stays open is **what fixes a reader's ratio between rungs**: the reader's choice (*The Radix*), the step of its lay (R176's floating point, whose base 2 is a hardware choice), or the world's payloads (Corollary 3.9). No simulation that builds the reader can settle it.
+  - *Number lines in people* (`plans/nle-plan.md`, 6 October; the candidate "independent fact" of the central hypothesis). A corner model (proportion up to h, a count of doublings past it) against a straight line, a logarithm and proportion judgment, per child, with the prediction and the instrument's calibration fixed before any data. On Chan and Mazzocco's 104 kindergartners (2024; 0–100 lines, Time 1), **killed**: proportion judgment beats the corner for 40 of the 75 children who depart from a straight line (53%), and more clearly after training (61%) and on 0–20 lines (77–84%); the corner beats a plain logarithm for 8%. One dataset, one age, half the lines with a labelled midpoint; the parts tying h to the familiar range untested. A fairer test: older children, 0–1000 lines without a midpoint, each child's counting range.
+  - *Which near/far laws are fair to the facings* (the audit). Of the powers of s/√(1 + s²), only the square (the disc); the dipole's electric field has only a symmetric bracket; the coil favours a facing (§3.2). A classification of classical near/far laws by these three kinds would replace "physics has the same structure" with a count.
   - *Crossing open space*: the child rule stands only where something was met, so a chain from inside a winding shape stops at the mouth. Is that a limit of a situated reader, or of the rule? Any rule that steps into the open seems to need something the record does not hold.
   - *A better child rule*: fewer readers wasted along outer walls, with the levels needed unchanged.
   - *Holding depth along the chain*: the nesting runs used exact distances. The joined test is the chain of NST with each reader holding its meetings in nested depth addresses (SIT).
@@ -3265,6 +3316,18 @@ From 6 October (the 3d depth bench; plans, runs and results in `3d/bench/depth/`
 
 - *Ratio 2 holds the scenes best* (DEP-D D1). Killed: best in 7 of 32 views, √2 in 13 and φ in 9. Rerun with the base share equal (DEP-G): √2 still 5× below 2 on the harbour, 2 best on the valley. Not a test of R183's 2 as the reader's; see the central hypothesis.
 - *Nested sweeps beat one sweep on a part's surface patterns* (DEP-D D4). Killed: worse on all seven; the patterns' detail is even, so depth has nowhere to go. *Nesting costs nothing on smooth profiles* (D6). Killed by tanh(4(h − 0.3)): 2 × 10⁻⁶ against one sweep's roundoff.
+
+From 6 October (the audit of Part I, the run for the 2 and number lines; `plans/`):
+
+- *The derivation of the central hypothesis singles out 2* (as written 5 October). Corrected: it holds for every ratio
+  between rungs; the 2 is not derived (central hypothesis).
+- *The coil's on-axis field takes Proposition 3.2(b)'s form* (§3.2). Corrected: it favours one facing, half at s ≈ 1.30.
+- *A child that takes its h from the stretch its parent could not see nests* (HRT run 1). Killed by its set-up: the
+  chains climbed. *The longest hidden stretch is the reader's 2h* (noticed in run 1, predicted in run 2 to be the
+  landscape's): the landscape's, as predicted. *Rules that nest find hand-offs to read* (HRT run 3): killed by its set-up,
+  1–5 a signal.
+- *The corner describes number-line placement better than proportion judgment* (NLE P1, Chan and Mazzocco, Time 1).
+  Killed: 53% for proportion judgment; *a front side in proportion shows* (P1b) failed too, 8%.
 
 ## References
 

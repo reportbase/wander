@@ -25,9 +25,16 @@ Claude Code: changes go on a branch, as a PR, and the owner merges. Merging to
   keeps `papers/` and `plans/` off the Pages site.
 - `plans/`: working notes, reviews and lab plans, as the corpus cites them
   (`plans/…`). `what-deserves-attention.md` is a review of what to take up next
-  (6 Oct 2026): a reading, not a ruling.
+  (6 Oct 2026): a reading, not a ruling. `hrt-plan.md` (the run for the 2: three
+  runs, stopped) and `nle-plan.md` (number lines in people: run 1 on
+  Chan and Mazzocco's kindergartners killed the corner's prediction) follow the lab rules: prediction first, runs recorded as they
+  came out, nothing above a plan's "Runs" line edited afterwards.
+  `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
+  with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
 
-The repo is private (since 6 Oct 2026); the papers are not for the public site.
+The repo is public, so the papers can be read on GitHub; the owner is fine with
+that for now (6 Oct 2026) and will decide later where they live. They are still
+kept off the Pages site. Don't move or remove them without asking.
 
 ## Read this first: THE LAB GUIDE
 The labs have their own rules, written in the page itself. Read two comments
