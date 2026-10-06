@@ -639,6 +639,40 @@ sweep of v over a held h", above), with v the depth (the perturbation, or the sh
 the unit (the number line's 1, or the unit circle's radius); the unit line is the sweep on which it is laid. How far the sweep has gone is how much of the depth is expressed. The LIN
 lab already holds this picture: a line at h with four small bumps, held unsituated and by a situated reader (§9.9).
 
+**The number line laid twice: the five situations from one construction** (Tom, 6 October: "H = the unit 1. Lay the
+complete number line down onto the 0 to π/2 unit line and then the quarter circle. Compare them. That explains
+situations 1, 2, 3 and 4.") Hold the number line upright at h = 1, so the number x is the point (1, x). Lay it down
+twice. Onto the **quarter circle** of radius h, by projecting each number toward the centre: x lands at
+(1, x)/√(1 + x²), height sin θ and width cos θ, θ = atan x; the whole unbounded line fits on a quarter of the circle.
+Onto the **unit line**, the same quarter arc unrolled straight, length π/2: x lands at θ, the sweep, with nothing curved.
+Where the same numbers land (checked):
+
+| number x | on the unit line, θ | on the circle, height sin θ | unit line ÷ circle | circle ÷ unit line |
+|---|---|---|---|---|
+| 0 | 0 | 0 | 1 | 1 |
+| ½ | 0.464 | 0.447 | 1.037 | 0.965 |
+| 1 | 0.785, the middle | 0.707, 45° | 1.111 | 0.900 |
+| 2 | 1.107 | 0.894 | 1.238 | 0.808 |
+| 4 | 1.326 | 0.970 | 1.367 | 0.732 |
+| 10 | 1.471 | 0.995 | 1.479 | 0.676 |
+| → ∞ | → π/2 | → 1 | → π/2 | → 2/π |
+
+- **1, the quarter circle itself.** The number line lands on a closed, known curve, v² + h² = 1: both breadths held, the
+  corner at 1 computed at 45°, the angle meaningful, no horizon (the top of the circle is a point on it).
+- **2, a shape in place of the circle.** Each number lands at the shape's radius in its direction; how far that is
+  from the quarter circle is the shape's depth.
+- **3, parallel, outside.** It holds the laid numbers at once and reads the unit line against the circle, unit line ÷
+  circle, θ/sin θ: from 1 toward π/2, approaching the line from above, never arriving.
+- **4, serial, inside.** It takes one number at a time, projected onto the circle, and reads circle ÷ unit line,
+  sin θ/θ: from 1 toward 2/π, approaching from below. Its view is the unit line laid out as the fisheye.
+- **0.** No unit: nothing to lay.
+
+Past 1 every number lands closer to the circle's top and the line's end, and the numbers out to infinity crowd into
+the last stretch of both without arriving: the horizon, the same on both layouts. So one construction gives the five:
+1 and 2 are the quarter circle, with angles and the whole held; 3 and 4 live on the unit line, without angles, and the
+two situated readers are the two ways of comparing the layouts, line over circle (π/2) and circle over line (2/π), with
+1 between them. This agrees with "Angles, and where they belong" (above).
+
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
 
 > "3 and 4 can approach the corner but never arrive there. both have horizons, one from the outside 0 to PI/2 and from
