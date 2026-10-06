@@ -40,6 +40,7 @@ block only puts them in order.*
 | sweep | the running share g of the relations, from 0 (v unexpressed) to 1 (v fully expressed). Each relation s takes the share ds/(1 + s²); their total is π/2, and g is the running share over that total (R170, "g is the sweep"). The flip sends g to 1 − g. In situations 1 and 2, with both breadths held, the same g is an angle, θ = (π/2)·g, and 90° is meaningful there; in 3 and 4 nothing turns, and g is a share | §2.1, §3.5 |
 | level | a sweep entered again, with its own home, corner and far wall. In place, 2h: a front half of one h, proportional, and a back half of one h holding the rest, in which the next level nests (§3.3, "The level as 2h, in place"). Laid side by side round its own corner, 1/r to r, it is one quarter turn, whatever the ratio r (Proposition 3.12) | §3.3, Proposition 3.12 |
 | recursion | levels within levels: each level the same sweep again | §3.3, Proposition 3.11; "Recursion, after the corner" |
+| unit line | the number line as we know it: continuous, unit 1, size unknown; to a line what the unit circle is to a shape, g = 0 (Tom, 6 October) | §2.1, "The unit line" |
 | depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
 | continuous sweep, spiral | the levels drawn. Unwrapped, one turn running on, level into level with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
 
@@ -613,6 +614,25 @@ x = x′ = f, object at 2f and image at 2f, magnification exactly 1, the one pla
 horizon is the object at the focus, x = 0, whose image goes to infinity. The two sides of the lens read each other in
 reciprocal. This is standard optics, and here a correspondence, not a proof: a lens behaves as a reader whose h is its
 focal length. A lab could make it one.
+
+**The unit line** (Tom, 6 October: "The number line is g=0, it is the unit line. Any perturbation is fully expressed at
+g=1"; "All the intuition for the unit circle also applies to the number line, or also now called the unit line.") The
+number line as we know it is **the unit line**: continuous, its unit 1 known, its size unknown. It is to a line what the
+unit circle is to a closed shape, and everything said here of the unit circle carries over to it:
+
+- **The unit line is g = 0**, the line with nothing expressed on it: the line's situation 1, with no depth.
+- **A perturbation of it is v; the unit line is h.** The reading v/h is the perturbation counted in the line's own unit,
+  and the perturbation is the line's depth, its difference from the unit line, as a shape's depth is its difference from
+  the unit circle ("Proportion, depth and recursion, by situation"). A perturbed line is the line's situation 2.
+- **g runs from 0, the bare unit line, to 1, the perturbation fully expressed.** When the perturbation's size is not
+  known, full expression is the horizon, approached and never reached.
+
+**One g, not two.** This joins two meanings g has carried. R140 wrote the mix between the circle and a shape,
+r(θ) = (1 − m)·1 + m·B(θ), as g, when g was a placeholder ("g = 0 is the unit circle, g = 1 the fully expressed …",
+Tom, 1 October 13:44); R170 then found g to be the sweep. They are the same g: the sweep of v over a held h ("g is the
+sweep of v over a held h", above), with v the depth (the perturbation, or the shape's difference from the circle) and h
+the unit (the unit line, or the unit circle). How far the sweep has gone is how much of the depth is expressed. The LIN
+lab already holds this picture: a line at h with four small bumps, held unsituated and by a situated reader (§9.9).
 
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
 
