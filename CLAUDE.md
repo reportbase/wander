@@ -55,6 +55,8 @@ Google Fonts load from outside:
   `resolution-recursion.md` (+ `spiral/resolution.py`): a reader of finite resolution
   facing a horizon must zoom without end, and far out every zoom is alike ((R) from the
   fisheye's tail); the quarter turn per level is still a premise. Unruled.
+  `five-ways-to-observe.md`: Tom's situations 0–4 gathered in one note (from SPN §2.1),
+  with a check against SPN at its foot; the 3d repo draws them as a slideshow.
   `standpoint-axis.md` (+ `standpoint/`): a second axis, the standpoint (nowhere,
   outside, inside) beside the breadths known; the hemisphere observer as outside with
   the breadths known. Superseded by Tom's situations list 0–4 (SPN §2.1).
