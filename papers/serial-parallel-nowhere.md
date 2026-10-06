@@ -409,9 +409,14 @@ where there is any, follows the shape and stops.
 
 **The circle needs no recursion** (Tom, 6 October: "the circle does not need recursion. its handled in the first
 octave."). The circle is held whole in the first octave; nothing is left for a second level to hold. So the 129 sweeps
-reported for the library circle (§3.3, "Recursion, after the corner", point 4) cannot come from the circle's own shape:
-most likely from the library circle's departure from the reader's unit circle (placed or sized differently), or from
-how the sweeps were counted. Not checked here; the measurement is not in this repository.
+reported for the library circle (§3.3, "Recursion, after the corner", point 4) cannot come from the circle's own shape.
+*Checked* (Claude, 6 October, by running the drawing tool's lab, `draw.html?lab=dwn`, from the draw repository; the
+format paper's "Entering only where needed"): the 129 reproduces (10, 36, 60 and 129 sweeps at τ = 10⁻³ … 10⁻⁶). The
+library circle is a 160-point ring, fitted as a curve and read from a standpoint on it, and its measured departure is
+not zero: p − 1 ≈ 0.0073/s, 54% at the first address (s = 1/64), 0.7% at the corner, about 0.01% far out, with small
+wiggles. A true circle read this way gives p = 1 exactly ("the bare circle … holds no depth", in the same tool). So
+the 129 sweeps hold an error of the reading set-up, not the circle; and since the tolerance is τ of the shape's own
+departure, that error is held to a millionth of itself. Its cause in the tool is not yet found.
 
 *The situations as numbered before 6 October* (kept as written; read through the mapping in "The situations restated,
 on the sweep alone", below: the earlier 3 is 3 and 4 now, the earlier 4 is 0, the earlier 5 is 3 or 4 approximately):

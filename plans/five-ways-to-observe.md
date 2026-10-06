@@ -111,6 +111,7 @@ settle:
   millionth, against 244 for the egg. Either the library circle departs from the reader's unit circle (placed or sized
   differently, so it has a departure to hold), or the sentence is wrong. Not checked; the measurement is not in this
   repo. *Settled, 6 October* (Tom: "the circle does not need recursion. its handled in the first octave."): the
-  sentence stands; the 129 must come from the library circle's placing or from the count, not from the circle.
+  sentence stands. Checked the same day (SPN §2.1, "The circle needs no recursion"): the 129 sweeps hold an error of
+  the drawing tool's reading set-up, p − 1 ≈ 0.0073/s on its library circle, not the circle.
 - **"Each half lies four times closer to the line"** is the limit. The first halving closes the gap 5.2-fold, then 4.2,
   then 4.05 (SPN §2.1, the halving table).
