@@ -24,7 +24,98 @@ likely within listed assumptions, not proven.*
 
 ---
 
-## Central hypothesis (promoted 5 October 2026; R183)
+## The terms, and how they depend on each other (6 October)
+
+*Added at Tom's "all three", after a review of the 6 October text: "the sweep" was doing too many jobs, and the parts'
+dependence had to be pieced together. Nothing here is new. Each term is used as defined in the section named; this
+block only puts them in order.*
+
+**The terms, in order.** Each is built from the one above it.
+
+| term | what it is | where |
+|---|---|---|
+| relation | two breadths, v and h, and nothing else: no scale, no frame | §1 |
+| reading | s = v/h on [0, ∞). The flip s ↔ 1/s reads the same relation from the other facing | §1, §3.2 |
+| corner | s = 1, v = h: the flip's one fixed point, 45° | §3 |
+| sweep | the reading as a turn: θ = atan s from 0 to π/2, or g = (2/π)θ from 0 to 1 (R170, "g is the sweep"). One sweep covers one side, out to the limb, and every relation on it; summed, the relations come to π/2 | §2.1, §3.5 |
+| octave | a sweep entered again over one window of ratios, 1/r to r round its own corner, with its own home, corner and far wall. One quarter turn, whatever the ratio r | §3.3, Proposition 3.12 |
+| recursion | octaves within octaves: each level the same sweep again | §3.3, Proposition 3.11; "Recursion, after the corner" |
+| continuous sweep, spiral | the octaves drawn. Unwrapped, one turn running on, octave into octave with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
+
+Two measures of one sweep, for the situated readers (§2.1):
+
+- **the fisheye**, the running total of the turn, r = θ (the serial reader);
+- **the bell**, every relation's share at once, ½·sech(ln s) on the octave axis (the parallel reader).
+
+The running area under the bell is the fisheye's radius. That identity is standard mathematics, since the Gudermannian
+is the running integral of sech. What is new is the reading: which reader holds which.
+
+Where older text says "sweep" without qualification, it means the row above: the reading as a turn, one side, 0 to π/2.
+"Each octave is a sweep" means each octave is that same object again, over its own window.
+
+**How the parts depend on each other.**
+
+```
+two breadths, v and h
+        │  divide
+        ▼
+the reading, s = v/h  ── the flip, s ↔ 1/s: the two facings
+        │
+        ▼
+the corner, s = 1: the flip's fixed point, 45°
+        │
+        ▼
+the sweep: s as a turn, 0 to π/2; one side, out to the limb
+        │
+   ┌────┴──────────────────────────────┐
+   ▼                                   ▼
+both breadths known (situations 1, 2)  one breadth known (3, 4): situated
+the view from nowhere; classical       the corner approached from either
+geometry, unchanged; the corner        side, never found; a horizon
+computed exactly                       the fisheye (serial), the bell (parallel)
+   │                                   │
+   ▼                                   ▼
+recursion on the residual: depth       recursion forced by the horizon:
+follows the shape's detail and         without end; far out, every level
+stops where nothing is left            alike
+   │                                   │
+   └─────────────────┬─────────────────┘
+                     ▼
+each level the same sweep, with its own home, corner and wall
+                     │
+                     ▼
+the octaves drawn: one continuous sweep; wrapped, a logarithmic spiral
+                     │
+                     ▼
+open: what fixes the ratio between rungs (the 2), which is the spiral's pitch
+```
+
+**The standing of each part.**
+
+| level | what | standing |
+|---|---|---|
+| the relation | the reading, the flip, the corner; the corner bisects every octave; each octave one quarter turn, for every ratio; the spiral form | **proved** (§3; Propositions 3.2(b), 3.12, 3.13), on the premises named |
+| the situated reader | one breadth known gives the horizon, the fisheye and the bell; the corner approached, never found | **proved** as mathematics (§2.1); that a reader *is* such a thing is the paper's proposal |
+| recursion | the same sweep at every level; depth beats breadth; cost follows the shape | **ruled** where it rests on (R) (R172, R175, R180); **measured** on shapes (NST, the 3d bench, "Recursion, after the corner"); forced, far out, for a finite reader facing a horizon (`plans/resolution-recursion.md`, unruled) |
+| the ratio between rungs | why 2 | **open**: not derived; the runs so far found it set by the builder's rule or by the scene (below) |
+| physics | the labs (§9.9, §11.4) | **a correspondence**, not a proof: a passing lab adds standing to the conjecture, a failing one bears on the correspondence, not on the geometry |
+
+---
+
+## Central result, and the open question (the central hypothesis, promoted 5 October 2026, R183; split 6 October)
+
+*Split, 6 October* (Tom: "all three", taking a review's advice). The hypothesis as promoted holds two claims of
+different standing, as the correction below found. They are now stated apart:
+
+> **Central result.** h is the front, proportional half of the reader's octave: the corner divides the octave exactly
+> in half, for every ratio between rungs. Proved, on R162 (Proposition 3.2(b) in the octave's place); no run needs to
+> test it.
+>
+> **Central open question.** What fixes a reader's ratio between rungs? The hypothesis says 2, so that the octave is 2h.
+> Nothing has derived it. The runs so far (HRT; the 3d bench) found the ratio set by the builder's rule or by the
+> scene. A test must find what fixes it without the builder choosing it and without the shape's own scales choosing it.
+
+The hypothesis as promoted, with its history, is kept below as written.
 
 > **h is the invariant that builds a reader's geometry, and it is specific to that reader: h is the front, proportional half of the reader's octave. The octave is 2h, and the corner divides it exactly in half.**
 >

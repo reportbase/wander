@@ -31,7 +31,10 @@ Google Fonts load from outside:
   `serial-parallel-nowhere-record.md` is SPN as written 29 Sep – 1 Oct, before the
   rewrite: **a frozen record, never edited.** Section and proposition numbers cited
   in the corpus before the rewrite are the record's; SPN's opening note maps them to
-  the current ones. The papers cite others not in this repo (*Reader Geometry as
+  the current ones. SPN opens with the terms in order (relation, reading, corner, sweep,
+  octave, recursion, spiral), a map of how the parts depend, and the standing of each;
+  then the central result and the open question (what fixes the ratio between rungs).
+  The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.
 - `plans/`: working notes, reviews and lab plans, as the corpus cites them
