@@ -13,6 +13,15 @@ Claude Code: changes go on a branch, as a PR, and the owner merges. Merging to
   own: it reads each lab's note (`#labPane`) and `LAB_REGISTER` out of `index.html`
   and runs a lab via `index.html?lab=CODE` in a hidden iframe. Keep those (and the
   "KILLED"/"not killed" status wording) as they are and it needs no edits.
+- `papers/`: **the master copies of the owner's papers**, edited here from now on
+  (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
+  paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
+  standing); `v-and-h.md` gathers every idea about v and h, by item. They cite
+  other papers and files not in this repo (the SPN record, *Reader Geometry as
+  Addressing*, `plans/…`): leave those references as they are. `_config.yml`
+  keeps `papers/` off the Pages site.
+
+The repo is private (since 6 Oct 2026); the papers are not for the public site.
 
 ## Read this first: THE LAB GUIDE
 The labs have their own rules, written in the page itself. Read two comments

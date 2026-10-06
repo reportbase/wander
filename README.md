@@ -29,6 +29,7 @@ for this repo; see Publishing below)
 | --- | --- |
 | `index.html` | The whole thing: one self-contained page. This is the file to edit. **THE LAB GUIDE**, a comment at the top of the lab section, explains how the labs work and how to add one. |
 | `labs.html` | The lab, explained: what the labs are, how to read a verdict, and a card per lab with a run button. It reads each lab's note and register line from `index.html` and runs a lab by loading `index.html?lab=CODE` in a hidden frame, so it needs no change when a lab is added. `labs.html?run=all` runs every lab on load. |
+| `papers/` | The master copies of the papers: `serial-parallel-nowhere.md`, the paper the labs come from, and `v-and-h.md`, every idea about v and h in one place. Edited here; kept off the Pages site by `_config.yml`. |
 | `tests/smoke.mjs` | The smoke test (see below). |
 
 Only the fonts (Google Fonts) load from outside. Without them the page still

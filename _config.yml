@@ -1,0 +1,3 @@
+# GitHub Pages builds the site with Jekyll. The papers are the repository's, not the site's: keep them off it.
+exclude:
+  - papers
