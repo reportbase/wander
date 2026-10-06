@@ -2,9 +2,10 @@
 //
 //   1. Fly: open the page, press Fly, look around with the mouse and fly with the
 //      wheel and keys for a few seconds.
-//   2. The labs: open ?lab=all, which runs every lab in turn (THE LAB GUIDE in
-//      index.html asks for exactly this after every change), and wait for the
-//      summary table.
+//   2. The labs: open labs.html?lab=all, which runs every lab in turn (THE LAB
+//      GUIDE in labs.html asks for exactly this after every change), and wait
+//      for the summary table. The labs run on world.js, which the flying page
+//      loads too.
 //
 // Fails on any uncaught error, and on any lab whose latest run comes back
 // "error" or with no verdict. A lab that comes back "killed" is a recorded
@@ -73,7 +74,7 @@ try {
   // ── 2. Every lab ──
   current = 'labs';
   const before = failures.length;
-  await page.goto(new URL('index.html?lab=all', base).href, { waitUntil: 'load' });
+  await page.goto(new URL('labs.html?lab=all', base).href, { waitUntil: 'load' });
   await page.waitForFunction(() => /labs not killed/.test(document.getElementById('labStatus').textContent),
                              null, { timeout: LAB_TIMEOUT_MS, polling: 500 });
   const rows = await page.evaluate(() => [...document.querySelectorAll('#labBody table tr')].slice(1)
@@ -88,7 +89,7 @@ try {
   console.log((await page.textContent('#labStatus')).split('.')[0] + '.');
   if (failures.length !== before) console.log('FAIL labs');
 
-  // ── 3. labs.html: every lab has a card, and one runs through the hidden frame ──
+  // ── 3. labs.html: every lab has a card, one runs from its button, and index.html?lab= forwards here ──
   current = 'labs.html';
   const before3 = failures.length;
   await page.goto(new URL('labs.html', base).href, { waitUntil: 'load' });
@@ -100,7 +101,10 @@ try {
                              null, { timeout: 120000, polling: 250 });
   const v = await page.textContent('#bal .verdict');
   if (!/^(not killed|killed)$/.test(v)) failures.push(`[labs.html] BAL came back: ${v}`);
-  console.log(`${failures.length === before3 ? 'ok  ' : 'FAIL'} labs.html (${cards.length} cards; BAL ${v})`);
+  await page.goto(new URL('index.html?lab=bal', base).href, { waitUntil: 'load' });
+  await page.waitForURL(/labs\.html\?lab=bal/, { timeout: 15000 });
+  await page.waitForFunction(() => /(KILLED|[Nn]ot killed)/.test(document.getElementById('labStatus').textContent), null, { timeout: 120000 });
+  console.log(`${failures.length === before3 ? 'ok  ' : 'FAIL'} labs.html (${cards.length} cards; BAL ${v}; index.html?lab= forwards)`);
 } catch (e){
   failures.push(`[${current}] ${e.message.split('\n')[0]}`);
 }

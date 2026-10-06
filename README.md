@@ -19,16 +19,18 @@ for this repo; see Publishing below)
 
 | Add to the link | What it does |
 | --- | --- |
-| `?lab=all` | Runs every lab and lists each one's latest verdict |
-| `?lab=DOP` (or any lab code) | Runs that one lab |
-| `?lab=0` | Hides the lab button |
+| `labs.html?lab=all` | Runs every lab and lists each one's latest verdict |
+| `labs.html?lab=DOP` (or any lab code) | Runs that one lab and shows its full report |
+| `index.html?lab=…` | Forwards to the same on `labs.html` |
+| `index.html?lab=0` | Hides the lab button |
 
 ## Files
 
 | File | What it is |
 | --- | --- |
-| `index.html` | The whole thing: one self-contained page. This is the file to edit. **THE LAB GUIDE**, a comment at the top of the lab section, explains how the labs work and how to add one. |
-| `labs.html` | The lab, explained: what the labs are, how to read a verdict, and a card per lab with a run button. It reads each lab's note and register line from `index.html` and runs a lab by loading `index.html?lab=CODE` in a hidden frame, so it needs no change when a lab is added. `labs.html?run=all` runs every lab on load. |
+| `world.js` | Wander's world, shared by both pages: the constants, the solids, the systems and their ticks, the signals and their arrival, and the readings the live readout shares with the labs. A change here changes the labs' world too. |
+| `index.html` | The flying page: the world drawn, the controls and the readout. Its "lab" button opens `labs.html`. |
+| `labs.html` | The lab: what the labs are and how to read a verdict, a card per lab with a run button, the lab notes, and every lab's code. **THE LAB GUIDE**, a comment at the top of its script, explains how the labs work and how to add one. |
 | `papers/` | The master copies of the papers: `serial-parallel-nowhere.md`, the paper the labs come from, `v-and-h.md`, every idea about v and h in one place, and `serial-parallel-nowhere-record.md`, SPN as first written (29 Sep – 1 Oct), kept unchanged as the record. Edited here (except the record); kept off the Pages site by `_config.yml`. |
 | `plans/` | Working notes and reviews: `what-deserves-attention.md`, which ideas to take up next. Kept off the Pages site by `_config.yml`. |
 | `tests/smoke.mjs` | The smoke test (see below). |
@@ -48,8 +50,8 @@ python3 -m http.server 8000
 Every pull request runs `tests/smoke.mjs` in GitHub Actions, in two parts:
 
 1. **Fly:** opens the page, presses Fly, looks around and flies for a few seconds.
-2. **Labs:** opens `?lab=all`, which runs every lab, and reads the summary.
-3. **labs.html:** checks there is a card for every lab and runs one (BAL) from its button.
+2. **Labs:** opens `labs.html?lab=all`, which runs every lab, and reads the summary.
+3. **labs.html:** checks there is a card for every lab, runs one (BAL) from its button, and checks that `index.html?lab=` forwards to `labs.html`.
 
 It fails on any uncaught error, and on any lab that comes back "error" or with
 no verdict. A lab that comes back "killed" is a recorded open question, not a
