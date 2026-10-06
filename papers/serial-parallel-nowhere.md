@@ -1359,8 +1359,25 @@ no preferred rung, therefore recursion*. Situations 1 and 2 fail the first: noth
 (0, ∞). By Tom's ruling recursion is past the corner only: before it the reader sees the front side and reads it in one
 proportional piece, home to corner (R176's lay; §2.1, "Proportion, depth and recursion, by situation"). Held there,
 (R) applies past the corner, the iteration runs over n ≥ 0, and the proof gives pieces without end toward the horizon
-and none toward home. Open: Proposition 3.12's octave runs from 1/r to r round its own corner, so it straddles a
-corner; how that octave sits with a front side read in one piece, home to the reader's corner, is not yet worked out.
+and none toward home.
+
+**The octave as 2h, in place** (Tom, 6 October: "if we define situation 3 a size of 2h an octave, then the front half
+has a size of 1, and a back half size of 1"). Measure place f across the reader's octave, from home (0) through the
+corner (½) to the far wall (1). The front half, one h, counts v in h's: s = 2f, proportional, seen. The back half, one
+h, is read against the far wall: s = ½/(1 − f), the flip of the front, holding everything from the corner to the
+horizon.
+
+| place in the octave f | 0 | ¼ | ½ | ¾ | ⅞ | 15/16 | → 1 |
+|---|---|---|---|---|---|---|---|
+| v/h | 0 | ½ | 1, the corner | 2 | 4 | 8 | → ∞ |
+
+The recursion appears in the back half only. Read it as the same octave again at half the size, and again: each halving
+of place toward the far wall is one doubling of v/h (corner to ¾ is 1 to 2; ¾ to ⅞ is 2 to 4; ⅞ to 15/16 is 4 to 8). So
+the front half is one proportional piece, with no recursion; the octaves begin at the corner, 1–2, 2–4, 4–8, …; and each
+is half the place left, a step toward the far wall that never arrives (Archimedes' halving; §2.1, "The first octave is
+half the distance"). This is the central result (the corner bisects the octave) read in place, and it is the layout of
+`wander/depth/nest.py` (front ρ = f/½, back ρ = ½/(1 − f)). The halves are equal in place although the back holds all of
+1 to ∞; Proposition 3.12's map still gives each nested octave its quarter turn.
 
 **Proposition 3.12 (each octave is one quarter turn, for every ratio).** Add (F) and (P). The reader's own piece runs
 from 1/r to r round the corner, and on it ρ = (rs − 1)/(r − s) and Θ = atan ρ, uniquely: the edges at 0° and 90°, the
