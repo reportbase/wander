@@ -49,6 +49,9 @@ Google Fonts load from outside:
   spiral (situations 1–2 the circle, k = 0). In SPN §3.3 as Propositions 3.11–3.13.
   `wavelets.md` (+ `wavelets/`): the system on one page, and what filters, wavelets
   and hearing scales already have of it (much), and what the situated view adds.
+  `resolution-recursion.md` (+ `spiral/resolution.py`): a reader of finite resolution
+  facing a horizon must zoom without end, and far out every zoom is alike ((R) from the
+  fisheye's tail); the quarter turn per level is still a premise. Unruled.
   `standpoint-axis.md` (+ `standpoint/`): a second axis, the standpoint (nowhere,
   outside, inside) beside the breadths known; the hemisphere observer as outside with
   the breadths known. Superseded by Tom's situations list 0–4 (SPN §2.1).
