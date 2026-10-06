@@ -65,8 +65,12 @@ SPN's situations, since 6 Oct 2026 (Tom): 0 nothing known; 1 the circle; 2 shape
 (converted 6 Oct), except in quotations, Appendix A's rulings and the earlier table in
 §2.1, which keep the old ones (old 3 = 3 and 4, old 4 = 0, old 5 = 3 or 4 approximately).
 SPN §2.1 opens with "The five, in brief". Keep to the core: the sweep
-(any two points; 0 to π/2 as a turn, 0 to 1 as distance), the 90° turn, the
-octave, the logarithmic spiral.
+(any two points; g from 0 to 1, the corner at ½; an angle, 0 to 90°, only in 1 and 2,
+where nothing is situated), the level (home, corner, far wall; 2h in place; the next
+level nests in the back half), dyadic levels (one doubling apart: the layout's rule,
+not derived), and the logarithmic spiral as a drawing of the levels. Since 6 Oct
+(Tom) SPN says "level" and "dyadic", not "octave", except in quotations, the musical
+octave and R172's "octave with two facings".
 
 The repo is public, so the papers can be read on GitHub; the owner is fine with
 that for now (6 Oct 2026) and will decide later where they live. They are still
