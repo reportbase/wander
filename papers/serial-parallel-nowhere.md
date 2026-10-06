@@ -40,6 +40,7 @@ block only puts them in order.*
 | sweep | the reading as a turn: θ = atan s from 0 to π/2, or g = (2/π)θ from 0 to 1 (R170, "g is the sweep"). One sweep covers one side, out to the limb, and every relation on it; summed, the relations come to π/2 | §2.1, §3.5 |
 | octave | a sweep entered again over one window of ratios, 1/r to r round its own corner, with its own home, corner and far wall. One quarter turn, whatever the ratio r | §3.3, Proposition 3.12 |
 | recursion | octaves within octaves: each level the same sweep again | §3.3, Proposition 3.11; "Recursion, after the corner" |
+| depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
 | continuous sweep, spiral | the octaves drawn. Unwrapped, one turn running on, octave into octave with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
 
 Two measures of one sweep, for the situated readers (§2.1):
@@ -75,9 +76,11 @@ geometry, unchanged; the corner        side, never found; a horizon
 computed exactly                       the fisheye (serial), the bell (parallel)
    │                                   │
    ▼                                   ▼
-recursion on the residual: depth       recursion forced by the horizon:
-follows the shape's detail and         without end; far out, every level
-stops where nothing is left            alike
+proportional on both sides of the      proportional before the corner,
+corner. 1: no depth. 2: depth, the     octaves past it: recursion forced by
+shape's difference from the circle,    the horizon, without end, every level
+held level by level, stopping where    alike; no depth, since the shape is
+nothing is left                        not known
    │                                   │
    └─────────────────┬─────────────────┘
                      ▼
@@ -412,8 +415,26 @@ equal or not; with v not known, 3 or 4, as the reader stands outside or inside; 
 
 What 3 and 4 share, and 1 and 2 do not: **a horizon** (the line approached from either side, never reached: "The
 horizon of a situated reader"); **a corner approached, never found**; and **recursion forced** by the horizon, without
-end, each level the same sweep, Archimedes' halving ("Why the recursion"; Propositions 3.11–3.13). In 1 and 2 recursion,
-where there is any, follows the shape and stops.
+end, each level the same sweep, Archimedes' halving ("Why the recursion"; Propositions 3.11–3.13). In 2 recursion
+follows the shape and stops; 1 has none.
+
+**Proportion, depth and recursion, by situation** (Tom, 6 October: "depth is difference between the shape and the unit circle"; "situation 2 has depth. situation 1,3,4 do not.") And: "in situation 3 and 4, before the corner, it is
+proportional. in situation 1 and 2, it is proportional on both sides of the corner."
+
+| | before the corner | past the corner | depth | recursion |
+|---|---|---|---|---|
+| 1 | proportional | proportional, from the known far wall | none: the shape is the circle | none |
+| 2 | proportional | proportional, from the known far wall | the shape's difference from the circle | holds the depth, level by level, and stops where none is left |
+| 3, 4 | proportional | octaves, counted by doublings toward the horizon | none: the shape is not known | forced by the horizon, without end; every level the same plain sweep |
+
+One fact decides the two sides: whether v's far end is known. Before the corner v is counted in h's, so every
+situation reads in proportion. Past it, in 1 and 2, v is known and the back side has a far wall, read in proportion from
+that wall (R184: "situation 1 and 2 would be proportional, all the way through the octave", "not fractal"). In 3 and 4
+it has no end, and the only count toward the horizon is by doublings: the octaves, the logarithm and the spiral (R150,
+the hybrid; R176). So depth and recursion come apart: depth is *what* is held, the difference from the circle, and
+needs the shape known; recursion is *how* a reading is held, octave by octave. In 2 recursion holds depth; in 3 and 4 it
+holds none, which may be why no rung is preferred there (Claude's reading, unruled). The world a situated reader
+faces is itself a shape, so its arrivals carry depth; a reader that knows only h cannot tell it from scale (open).
 
 **The circle needs no recursion** (Tom, 6 October: "the circle does not need recursion. its handled in the first
 octave."). The circle is held whole in the first octave; nothing is left for a second level to hold. So the 129 sweeps
@@ -488,6 +509,8 @@ the format paper's depth, §2.8; the strange tier, STR). That is recursion with 
 lack is the horizon, and so the recursion a horizon forces. A reading from Claude, unruled: two causes of the same
 recursion. **On a known shape (1, 2), depth follows the shape's detail and stops where nothing is left. Facing a horizon
 (3, 4), depth is forced, and never stops.** Either way each level is the same sweep, with its own home, corner and wall.
+*Revised the same day* (Tom, 6 October: "depth is difference between the shape and the unit circle"; "situation 2 has depth. situation 1,3,4 do not."): the shapes that recurse are situation 2's (1 has none), and what a horizon forces in 3
+and 4 is recursion without depth ("Proportion, depth and recursion, by situation", above).
 "The circle, k = 0" above describes how the reading grows per turn, not whether it recurses.
 
 **The situations restated, on the sweep alone** (Tom, 6 October; recorded here as given, and read against the table
@@ -1427,9 +1450,10 @@ And, the same day: "this is situation 1 and 2. recursion is not limited to situa
   the library circle's departure from the reader's unit circle, or the way the sweeps were counted (§2.1, "The five,
   in brief"). Not checked here.
 
-- *Two causes of one recursion.* These findings are over known shapes, situations 1 and 2: depth follows the shape's
+- *Two causes of one recursion.* These findings are over known shapes, situation 2: depth follows the shape's
   detail and stops where nothing is left. Propositions 3.11–3.13 are the recursion a horizon forces, situations 3 and 4,
-  which never stops. Each level is the same sweep either way.
+  which never stops and holds no depth. Each level is the same sweep either way. *Revised, 6 October* (Tom, 6 October: "depth is difference between the shape and the unit circle"; "situation 2 has depth. situation 1,3,4 do not.") (§2.1,
+  "Proportion, depth and recursion, by situation").
 - *Why a level re-centres.* 3.11 rests on (R), and 3.12 on (P), each level read as a sweep of its own. Points 1 and 2
   give (P) a measurement and a reason: the child is a whole sweep with its own home, corner and wall, and its home is
   where the parent stopped explaining. A finite reader facing a horizon must look again past its resolution
@@ -1686,7 +1710,10 @@ circle is read evenly (R126), a reading's g is its share of the sweep, and the r
 the turn, s = tan(π g / 2): the tangent is "the name of what the reader receives" (*The Radix* §9), not something the
 reader evaluates. Going back from s to g is arctan, the shortcut (R148); the sweep itself only counts its steps.
 
-**Depth as the recursion** (R180, 4 Oct; situation 3 or 4 only). Depth is how many octaves in a thing is: the count of nested sweeps between a reader and it, each octave holding the same sweep again with its own corner (R172, R175). It is not a direction at right angles to breadth. Shown in the game *Launch from Somewhere*, and with shapes on 5 October: depth held in nested octaves (SIT) and readers nested inside readers (NST, STR), §6.4.
+**Depth as the recursion** (R180, 4 Oct; situation 3 or 4 only). *Revised, 6 October* (Tom, 6 October: "depth is difference between the shape and the unit circle"; "situation 2 has depth. situation 1,3,4 do not."): "depth" now means
+the difference between a shape and the unit circle, which only situation 2 has. What this paragraph calls depth, the
+count of octaves between a reader and a thing, is its **octave count** (a range, not a shape); the rest of the
+paragraph is read that way. As written: Depth is how many octaves in a thing is: the count of nested sweeps between a reader and it, each octave holding the same sweep again with its own corner (R172, R175). It is not a direction at right angles to breadth. Shown in the game *Launch from Somewhere*, and with shapes on 5 October: depth held in nested octaves (SIT) and readers nested inside readers (NST, STR), §6.4.
 
 **Sweeping and indexing** (R179, 4 Oct). The view from nowhere indexes: it is the x, y grid, its breadth known and divided evenly, every place reached by an index, with no home or horizon, and its corner computed rather than found; the uniform unit circle is the same view held as h relative to v. The view from somewhere sweeps: breadth and depth, from home, step by step. A grid point and a sweep record are the same point, turned one into the other by the bar's own h and v (LIN); they part only where depth folds (OCC).
 
