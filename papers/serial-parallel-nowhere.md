@@ -598,6 +598,22 @@ with h alone (Proposition 3.1). The true corner, where v's breadth equals h's, n
 have; they approach it, from outside or inside, and never reach it ("The horizon of a situated reader"). In 1 and 2,
 with both breadths known, the two corners are one, computed exactly.
 
+**h as the focus** (Tom, 6 October, on a reading of h as the reader's focus: "Add it, even if its wrong, it gives good
+intuition for what it might be." An intuition, unruled.) h is not one of the things a reading sweeps; it is what the
+sweep is relative to, the reader's focus. s = v/h asks where v lies against the focus, which is why scale drops out.
+The corner, v = h, is the thing read sitting at the focus. Before it, v is a fraction of the focus; past it, the focus
+is a fraction of v, and the flip, v/h ↔ h/v, is the read thing crossing the focus while the focus stays put. Changing
+the focus rescales every reading and slides the ladder, and nothing in the world changes (§8). "Focus" here means the
+reader's reference, the magnitude it measures against; it does not mean a place in the world that rays come from.
+
+*A correspondence: the focal length of a lens.* For a thin lens of focal length f, object and image distances u and v
+satisfy 1/u + 1/v = 1/f. Measured from each focal point, x = u − f and x′ = v − f, it is Newton's form,
+x · x′ = f², so x′/f = f/x: the object's reading and the image's, in units of f, are each other's flip. The corner is
+x = x′ = f, object at 2f and image at 2f, magnification exactly 1, the one place the two sides are the same size. The
+horizon is the object at the focus, x = 0, whose image goes to infinity. The two sides of the lens read each other in
+reciprocal. This is standard optics, and here a correspondence, not a proof: a lens behaves as a reader whose h is its
+focal length. A lab could make it one.
+
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
 
 > "3 and 4 can approach the corner but never arrive there. both have horizons, one from the outside 0 to PI/2 and from
