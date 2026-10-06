@@ -31,6 +31,8 @@ Claude Code: changes go on a branch, as a PR, and the owner merges. Merging to
   came out, nothing above a plan's "Runs" line edited afterwards.
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
+  `near-far-classification.md` answers one of its open questions: which near/far
+  laws are fair to the facings (shares of a two-part split are; components are not).
 
 The repo is public, so the papers can be read on GitHub; the owner is fine with
 that for now (6 Oct 2026) and will decide later where they live. They are still
