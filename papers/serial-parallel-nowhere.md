@@ -1386,7 +1386,13 @@ exactly; before its corner s′ = 2 − 2/s, taking the parent's 1 to 2 onto 0 t
 last one's back half, with corners at v/h = 1, 2, 4, 8, …; their front halves, 0–1, 1–2, 2–4, …, are the pieces that lie
 side by side. Propositions 3.11 and 3.12 lay octaves side by side, each round its own corner (1/r to r); here the
 side-by-side pieces are front halves, each ending at a corner. Both give one doubling per level, exactly scaled past
-the corner; how 3.12's quarter turn is shared between a nested octave's two halves is left for a later pass.
+the corner.
+
+**No turning within an observation** (Tom, 6 October: "I don't think its turning, 90deg means a 0 to PI/2 sweep, there is no turning in a given observation.") "90°" names the extent of one sweep, 0 to π/2, not an amount turned. Each
+level is its own observation, one sweep from 0 to π/2 in its own terms, and the levels are listed, not added: v/h = 4
+is 76° at the reader's level, 63° at the next (its own v/h, 2), and the corner, 45°, at the third. So a reading is an
+address, one sweep per level (the nesting address of "Nesting" above), and Θ = n·π/2 + θ in Propositions 3.11 and 3.13
+is a way of drawing the levels in one figure, not something a reader does. The spiral is that drawing.
 
 **Proposition 3.12 (each octave is one quarter turn, for every ratio).** Add (F) and (P). The reader's own piece runs
 from 1/r to r round the corner, and on it ρ = (rs − 1)/(r − s) and Θ = atan ρ, uniquely: the edges at 0° and 90°, the
@@ -1429,6 +1435,9 @@ What follows from it:
 - *Equiangular.* A logarithmic spiral crosses every ray from its centre at one angle, arccot k: 48.6° for r = 2, 35.6°
   for r = 3. It meets every direction alike at every scale, the curve's form of no rung preferred (Bernoulli's *spira
   mirabilis*, "eadem mutata resurgo").
+
+*Read with "No turning within an observation" (below, 6 October):* Θ here counts levels and the sweep within one; no
+observation sweeps more than 0 to π/2.
 
 What rests on what: 3.11–3.13 are proved on the premises named. (R) carries the weight, and it is a ruling (R172, R175),
 not a theorem: Proposition 3.6 says a reader cannot read its rung, which motivates (R) but does not by itself require
