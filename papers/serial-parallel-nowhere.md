@@ -368,6 +368,31 @@ reader; in 3 and 4 the reader finds it with h alone (Proposition 3.1). This revi
 or horizon of any kind" for situations 1 and 2 (R131; the paragraph on situation 1 above) as to the corner; they still
 have no horizon.
 
+**The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
+
+> "3 and 4 can approach the corner but never arrive there. both have horizons, one from the outside 0 to PI/2 and from
+> the inside at 0 to 2/PI." Asked which, "lets let the math tell us whats going on here", and then: "good, yes, outside
+> means approaching 1 from above, inside means approaching 1 from below, neither ever get there, that is the horizon.
+> corner is important because v and h, in situation 1 and 2, its can be calculated exactly. but in situations 3 and 4,
+> because inside and outside never arraive, they never find the true corner."
+
+What the math gives (`plans/spiral/approach.py`). A sweep turned through θ has two situated measures against the
+line: outside counts the turn, arc ÷ line = θ/sin θ; inside projects it, line ÷ arc = sin θ/θ.
+
+| turned through | outside, θ/sin θ | inside, sin θ/θ | product |
+|---|---|---|---|
+| almost 0° | 1.0000 | 1.0000 | 1 |
+| 15° | 1.0115 | 0.9886 | 1 |
+| 45° | 1.1107 | 0.9003 | 1 |
+| 75° | 1.3552 | 0.7379 | 1 |
+| 90° | 1.5708 = π/2 | 0.6366 = 2/π | 1 |
+
+The two are reciprocal at every turn, not only at the end. Outside lies above 1 and rises to π/2; inside lies below 1
+and falls to 2/π. Both tend to 1 as the turn shrinks, and neither reaches it while there is any turn: 1 is the line,
+pure distance, held only where the breadths are known. **That is the situated reader's horizon.** And since a
+situated reader measures by turning, its v is never the line's v: **in situations 3 and 4 the true corner, v = h, is
+approached but never found; only in 1 and 2, with both breadths known, is it calculated exactly.**
+
 **π/2 and 2/π, with 1 between them** (Tom, 6 October):
 
 > "parallel is pi/2 and serial is 2/PI. serial*parallel = 1. parallel 1.5, line = 1, serial = 0.633"
@@ -541,6 +566,12 @@ side, point for point, and back. (3) s = 1/s with s > 0 gives s² = 1, so s = 1:
 fixes. (4) A sweep from home grows continuously from 0, so it reaches 1 before it can pass it; every sweep from home to
 the mathematical horizon passes through the corner. (5) s = 1 is v = h, a direct comparison of v with the known h: it needs neither
 v's breadth nor an outside unit, and scaling v and h together leaves it where it is. ∎
+
+*Revised* (Tom, 6 October; §2.1, "The horizon of a situated reader"). The proposition holds of the relation: the corner
+is the swap's one fixed point, and s passes through 1. What a reader can do with it depends on the situation. With both
+breadths known (situations 1 and 2) the corner is calculated exactly. A situated reader (3 and 4) measures by turning,
+outside from above 1 and inside from below, and never reaches the line, so it approaches the true corner and never finds
+it: "found with h alone" holds as a limit, not exactly.
 
 On the front side v is a proper part of the known whole (v < h); on the back side the unknown side is the larger
 (v > h). "Proper and improper fractions" is this proposition's reading of the two sides (the naming is Claude's,
@@ -1304,7 +1335,8 @@ in general, is a boundary between a front side and a back side. Three meet a sit
   octave. (A reader that lays one bounded sweep instead has its last address near v/h = 4N/π, Proposition 3.8's table,
   and its step outgrows the reading near 4N/(3π). That layout is not the reader's; R176.)
 - **The near horizon** is the corner, v = h, between the front side and the back side of its reading (Proposition 3.1).
-  It is known. R149's working horizon is this one.
+  It is known. *Revised* (Tom, 6 October): known exactly only where both breadths are known (situations 1 and 2); a
+  situated reader (3 and 4) approaches it from one side and never arrives (§2.1). R149's working horizon is this one.
 
 Every octave is a sweep (R172), so the three recur at every level: at each octave's edges its own reading starts at 0
 and runs without end, and leaving an octave is a change of level, not a wall. Toward home the front side is laid in plain proportion, one step h/N (R176),
