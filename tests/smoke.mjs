@@ -87,6 +87,20 @@ try {
   if (!rows.length) failures.push('[labs] the summary table had no rows');
   console.log((await page.textContent('#labStatus')).split('.')[0] + '.');
   if (failures.length !== before) console.log('FAIL labs');
+
+  // ── 3. labs.html: every lab has a card, and one runs through the hidden frame ──
+  current = 'labs.html';
+  const before3 = failures.length;
+  await page.goto(new URL('labs.html', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => !document.getElementById('runAll').disabled, null, { timeout: 30000 });
+  const cards = await page.$$eval('article.lab', a => a.map(x => x.id));
+  if (cards.length !== rows.length) failures.push(`[labs.html] ${cards.length} cards, but ?lab=all ran ${rows.length} labs`);
+  await page.click('#bal button');
+  await page.waitForFunction(() => !/^(not run|running…)$/.test(document.querySelector('#bal .verdict').textContent),
+                             null, { timeout: 120000, polling: 250 });
+  const v = await page.textContent('#bal .verdict');
+  if (!/^(not killed|killed)$/.test(v)) failures.push(`[labs.html] BAL came back: ${v}`);
+  console.log(`${failures.length === before3 ? 'ok  ' : 'FAIL'} labs.html (${cards.length} cards; BAL ${v})`);
 } catch (e){
   failures.push(`[${current}] ${e.message.split('\n')[0]}`);
 }
