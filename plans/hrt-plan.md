@@ -61,4 +61,46 @@ does not, that is the rule's number, not the reader's, and counts for nothing.
 
 ## Runs
 
-*(none yet)*
+### Run 1 (6 October; `python3 plans/hrt/hrt.py`, 38 s)
+
+Median of h(parent)/h(child) over every hand-off past the first, three seeds pooled; IQR in brackets.
+
+| c | signal | pairs | median (IQR) | nearest 2ᵐ, off | nearest rᵐ, off |
+|---|---|---|---|---|---|
+| 1 | r = 2 | 31 | 0.221 (0.128–0.398) | ¼, 11.4% | ¼, 11.4% |
+| 1 | r = 3 | 139 | 0.538 (0.392–0.839) | ½, 7.5% | ⅓, 61.3% |
+| 1 | r = φ | 87 | 0.435 (0.242–0.766) | ½, 12.9% | φ⁻², 14.0% |
+| ½ | r = 2 | 4,611 | 1.000 (0.985–1.027) | 1, 0.0% | 1, 0.0% |
+| ½ | r = 3 | 5,555 | 0.999 (0.895–1.129) | 1, 0.1% | 1, 0.1% |
+| ½ | r = φ | 1,348 | 0.880 (0.593–1.199) | 1, 12.0% | 1, 12.0% |
+| 2 | r = 2 | 39 | 0.206 (0.140–0.315) | ¼, 17.8% | ¼, 17.8% |
+| 2 | r = 3 | 45 | 0.390 (0.346–0.911) | ½, 21.9% | ⅓, 17.1% |
+| 2 | r = φ | 1,663 | 0.092 (0.045–0.828) | ⅛, 26.1% | φ⁻⁵, 2.5% |
+
+**Not killed by the letter** (no median within 10% of 2), **but killed by its own set-up.** Every median is at or below 1:
+a child's h came out as large as its parent's or larger, so the chains climbed outward, not inward into the signal's finer
+levels, and stopped at the 4P ceiling. The question assumed nesting; this rule does not nest. The prediction that the
+ratio follows the signal is not borne out either: at c = 1, r = 3 sits nearer ½ (7.5%) than ⅓ (61%). So run 1 says
+nothing about R183. Whose fault: the lab's, the child rule (h = c × the hidden stretch), which takes the *longest*
+stretches, and those are long.
+
+**Not predicted, and worth a run of its own.** Under c = ½ the chain holds its h level (ratio 1.000 for r = 2, 0.999 for
+r = 3, IQR within about 10%; 0.88 for φ). With child h = L/2 = h, that says **the longest stretch a reader cannot see is
+about twice its own h**, on two of the three signals, tightly. The c = 1 medians (about ½) say the same from the other
+side. Whether that 2 is the reader's or the landscape's is not known from this run: the landscape's height (A = 8) and
+the roots' heights (P/5 to P/2) are of a size, so it may be the landscape. Noticed after the run, so it counts for
+nothing until a run predicts it first (run 2).
+
+### Run 2: is the hidden stretch's 2 the reader's or the landscape's?
+
+*Prediction and kill written 6 October, after run 1 and before run 2.*
+
+**Set-up.** No chains: single readers. On each signal (three seeds), readers at 20 places, with eye heights h from P/16
+to P (five, evenly in the logarithm), on landscapes of height A = 4, 8 and 16. For each reader, its longest hidden
+stretch L (same hand-off rule, J = 1.5) over its h. Reported: the median of L/h for each A and h.
+
+**Prediction (Claude's).** The 2 is the landscape's: L/h moves with the landscape's height against the eye's, A/h. Across
+the grid of A and h, the median L/h ranges over more than a factor 1.5 on each signal.
+
+**Kill.** The prediction is killed, and the 2 is the reader's, if on all three signals the median L/h stays within 10%
+of 2 for every A and h in the grid. Between the two (some cells near 2, others not), undecided; say which cells.
