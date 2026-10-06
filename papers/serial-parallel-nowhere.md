@@ -43,6 +43,12 @@ block only puts them in order.*
 | depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
 | continuous sweep, spiral | the levels drawn. Unwrapped, one turn running on, level into level with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
 
+**Situated and unsituated** (Tom, 6 October, agreeing to drop "view from nowhere" and "view from somewhere"). A
+**situated reader** (3, 4) has a standpoint: one breadth known, a horizon. An **unsituated view** (1, 2) has none: both
+breadths held whole, as an equation or an array, with no reader dividing. The earlier names, "the view from nowhere"
+(a phrase of Nagel's, 1986, used here only for the state of knowing both breadths) and "the view from somewhere",
+remain in quotations and in the titles of works. "Nowhere" in the paper's title means the unsituated view.
+
 **Units: a doubling, a level, and dyadic** (Tom, 6 October: "the first is simpler, go with that"; "we don't need to
 use octave, its just a place holder"; "level and dyadic, go ahead").
 
@@ -92,7 +98,7 @@ the sweep: s as a turn, 0 to π/2; one side, out to the limb
    ┌────┴──────────────────────────────┐
    ▼                                   ▼
 both breadths known (situations 1, 2)  one breadth known (3, 4): situated
-the view from nowhere; classical       the corner approached from either
+the unsituated view; classical       the corner approached from either
 geometry, unchanged; the corner        side, never found; a horizon
 computed exactly                       the fisheye (serial), the bell (parallel)
    │                                   │
@@ -252,12 +258,12 @@ took would be captured by its nearest neighbour; it would have to crop its view 
 stop at the corner, held there by singularities one h from home (Proposition 3.3). Physics has the same structure, as a
 correspondence and not a proof: the light reaching a reader from a glowing disc goes as s²/(1 + s²), inverse-square on
 the front side, saturating past the corner, half its maximum at the corner, and the near law is the far law read
-through the inversion. The expectation of continuity is the view from nowhere's, carried into a view from somewhere.
+through the inversion. The expectation of continuity is the unsituated view's, carried into a situated view.
 
 **Where a reader can stand** (§2). What a reader knows of the two breadths sets its situation. Both known and equal:
 the circle (situation 1), read evenly, with no standpoint. Both known and unequal: every other shape (2), also with no
 standpoint. Those
-two are the view from nowhere, a name for what is known (both breadths), not a place any observer stands. h's breadth known and v's not: the only view from somewhere,
+two are the unsituated view, a name for what is known (both breadths), not a place any observer stands. h's breadth known and v's not: the only situated view,
 in two situations with a reader in them: 3, parallel, one hemisphere counted at once from outside; and 4, serial, one point
 at a time from inside, whose view is the fisheye. Neither known: situation 0, impossible for a reader as defined here.
 3 and 4 can each be known approximately, v within bounds. (Tom's numbering of 6 October; before then 3 and 4 were
@@ -296,7 +302,7 @@ reading per direction, its corner at the median); what
 one reader holds (best what faces it; two kinds of depth); what passes between readers (relations among readings, not
 addresses or nearness); a ladder of what fixes what, ending in a unit that only agreement supplies; time and the serial
 reader, including a reader that only receives signals and recovers size, weight, prediction, the signals' own speed and
-a body's shape in the round; known physics retraced from somewhere in thirty-two labs, each with its prediction and
+a body's shape in the round; known physics retraced by a situated reader in thirty-two labs, each with its prediction and
 kill written first (§9.9); relays and records; and a balance in which every measured weakness of one reader is
 covered by a strength of another. A conjecture closes it: serial and parallel readers, in company, recover everything of
 the world's geometry that some standpoint reads at some moment, up to a scale and to the grain; and a wider one, tested
@@ -348,7 +354,7 @@ shares, each of its own all, are unitless, and neither knows the other's all. Th
 fraction of a day gone; the share of a push that is vertical and the share that is horizontal; the part of a road
 behind and the part ahead. Drawn geometrically the two shares are **h** (horizontal) and **v** (vertical), magnitudes on
 [0, 1]. For a situated reader they are never signed: direction comes from how the pair is read, its facing, not from
-a negative v or h (R37, R173). In the views from nowhere (situations 1 and 2, §2.1), which have no standpoint and so no
+a negative v or h (R37, R173). In the unsituated views (situations 1 and 2, §2.1), which have no standpoint and so no
 facing, the pair may be signed, and its signs are the quarters of the full turn (R173).
 
 A situated reader reads the pair as v over h, the **reading** s = v/h, which runs over [0, ∞). It has three marks:
@@ -370,13 +376,13 @@ Two infinities are kept apart (R77). The **mathematical horizon** is the reading
 its sides. The **vanishing point** is where distance collapses, straight ahead; it sits at home. A thing infinitely far
 ahead reads 0, not ∞.
 
-The reading, its marks and the division that makes it belong to the situated reader only. The view from nowhere does
+The reading, its marks and the division that makes it belong to the situated reader only. The unsituated view does
 not divide: there h and v are each read relative to the other, and there is no home or horizon of any kind (R131). It
 does have a corner, v = h at 45°, computed from the known breadths and arrived at exactly, not found by a reader
 (Tom, 6 October: 1 and 2 "have a corner, … you can arrive at the corner, it is algorithmic, they have no horizon however, h and v are known").
 
-**What observation from somewhere consists of** (R125). The view from nowhere has x, y and z, three orthogonal
-dimensions, any of which a rotation turns into another. Observation from somewhere is not built that way and is not a
+**What situated observation consists of** (R125). The unsituated view has x, y and z, three orthogonal
+dimensions, any of which a rotation turns into another. Situated observation is not built that way and is not a
 number of anything; it consists of:
 
 - **relations**: v over h, the turn from horizontal to vertical;
@@ -412,8 +418,8 @@ side at once; 4 inside an endless apple, the others arriving one at a time, near
 | | what is known | how it is read | standpoint | example (Tom's) |
 |---|---|---|---|---|
 | **0** | nothing: no equation, no information | — | — | — |
-| **1** | a symmetric equation: the circle | all at once | nowhere | an equation |
-| **2** | an asymmetric equation: every other shape | all at once | nowhere | an array |
+| **1** | a symmetric equation: the circle | all at once | none: unsituated | an equation |
+| **2** | an asymmetric equation: every other shape | all at once | none: unsituated | an array |
 | **3** | one hemisphere, counted together | parallel | outside | an apple held in the hand |
 | **4** | one point at a time, projected | serial | inside | a molecule of an apple |
 
@@ -477,13 +483,13 @@ on the sweep alone", below: the earlier 3 is 3 and 4 now, the earlier 4 is 0, th
 
 | | the breadths | name | standpoint |
 |---|---|---|---|
-| 1 | known, the same in every direction | **the circle** (symmetric) | none: a view from nowhere |
-| 2 | known, varying with direction | **every other shape** (asymmetric) | none: a view from nowhere |
-| 3 | h's known, v's not | **the fisheye** (neither) | the only view from somewhere |
+| 1 | known, the same in every direction | **the circle** (symmetric) | none: an unsituated view |
+| 2 | known, varying with direction | **every other shape** (asymmetric) | none: an unsituated view |
+| 3 | h's known, v's not | **the fisheye** (neither) | the only situated view |
 | 4 | neither known | **impossible** (no reader in this sense) | nothing to count in, no home to lay from |
 | 5 | h's known, v's known within bounds | **v approximately known** | as situation 3, with one number bounded |
 
-(R126–R143, R146, R151.) "The view from nowhere" names a state of what is known, both breadths, not a standpoint an
+(R126–R143, R146, R151.) "The unsituated view" (before 6 October, "the view from nowhere") names a state of what is known, both breadths, not a standpoint an
 observer could occupy; that is why it has no standpoint in the table. From 1 to 2 the shared unit is lost; from 2 to 3, v's baseline. The list is not exhaustive
 (R146).
 
@@ -498,14 +504,14 @@ reader (R127).
 *Proof.* (a) For relation s ∈ [0, ∞) the pair (1, s) scaled by 1/√(1 + s²) is the only multiple on h² + v² = 1 with
 both entries non-negative; for s = ∞ it is (0, 1). (b) The facing's signs place it in its quadrant, and each point of
 the circle arises from exactly one direction. (Situation 1 has no standpoint and so no facing of a reader's; the signs
-here are the quarters of the full turn, which the view from nowhere holds all at once, R173.) (c) As (a), with (1, s₁, s₂)/√(1 + s₁² + s₂²) and the octant's signs. ∎
+here are the quarters of the full turn, which the unsituated view holds all at once, R173.) (c) As (a), with (1, s₁, s₂)/√(1 + s₁² + s₂²) and the octant's signs. ∎
 
 "Unit" is not a length here. The 1 is the normalisation of two breadths known and equal, which is why the circle has no
 size of its own and no N (Sep 11), and why it is an addressing scheme, not data: a system is laid onto it, never read out
 of it (R97).
 
 **Situation 2, every other shape.** The breadths are known but vary with direction, B(θ); each direction's breadth can
-be made a share of itself, but no single 1 serves both h and v (R137). A shape is also a view from nowhere, with no
+be made a share of itself, but no single 1 serves both h and v (R137). A shape is also an unsituated view, with no
 front or back (R139). The mix between the circle and the shape (R140) is
 
     r(θ) = (1 − m) · 1 + m · B(θ),        0 the circle, 1 the shape, between them parts of both.
@@ -514,8 +520,7 @@ front or back (R139). The mix between the circle and the shape (R140) is
 
 **Situations 3 and 4, the situated readers** (the earlier table's "fisheye"; since 6 October the fisheye is the serial reader's view, 4). h's breadth is known; v's exists but is not known (R137). **h is the known side by
 definition** (R146). v arrives, but has no baseline of its own, so it is had only in terms of h (R132, R136): the
-reader divides, and only here. It cannot be normalised, since one side is unknown (R135). It is the only view from
-somewhere (R139), and the only situations with a reader in them: the parallel reader outside (3), the serial reader
+reader divides, and only here. It cannot be normalised, since one side is unknown (R135). It is the only situated view (R139), and the only situations with a reader in them: the parallel reader outside (3), the serial reader
 inside (4) (Tom, 6 October; R152 had both in one situation).
 Everything particular to it follows from that one difference (R146): the division, the three landmarks, the two sides,
 the Cauchy (once the lay is even in direction), no normalising, and g, its sweep. §3 is about what that difference does at the corner.
@@ -985,7 +990,7 @@ equals 1, and everything this section says of it follows from plain facts about 
 - In an evenly spread world the turn from home to the mathematical horizon is split equally at 45°, where v = h, so half the
   readings fall on each side.
 
-The corner is not a feature of the world. The view from nowhere has none (R131), and it is not a point in space: it is
+The corner is not a feature of the world. The unsituated view has none (R131), and it is not a point in space: it is
 where v equals whatever the reader counts as one, and it goes wherever the unit goes. Nothing here is claimed for it
 beyond what that arithmetic gives.
 
@@ -1139,7 +1144,7 @@ Proposition 3.2(b); it illustrates the result and does not show that physical ne
 corner, and the coil is a classical near/far law whose middle is not at the corner. (*Corrected* 6 October: this
 passage first had the coil as a second case of the form.)
 
-*Measured from somewhere, against controls* (3 October; *Wander*'s COR lab, `plans/corner-in-physics-plan.md`). Six
+*Measured by a situated reader, against controls* (3 October; *Wander*'s COR lab, `plans/corner-in-physics-plan.md`). Six
 cases, each with v, h and the far side predicted before the run, two of them predicted to show no corner:
 - **Two loops** (a body's loop seen from the reader's own, as planets from a planet): the swing of the direction about
   its mean turning reads sin = min(s, 1/s), to 0.001 on both sides; below s = 1 the turning follows the reader's own loop,
@@ -1191,10 +1196,8 @@ by case, and the 2π in the first comes from counting the turn in radians. And t
 not a proof that every wave's near/far boundary sits at the corner: large openings and antennas of finite size bring
 sizes of their own and are not checked.
 
-**Why it looks like a different mathematics.** The expectation that the far field continues the near is the view from
-nowhere's: with both breadths known the corner is computed, not met as an inversion, and one geometry runs on
-unchanged. Carried into a view from
-somewhere, where the unit is known on one side only, that expectation meets the inversion and reads it as a break. The
+**Why it looks like a different mathematics.** The expectation that the far field continues the near is the unsituated view's: with both breadths known the corner is computed, not met as an inversion, and one geometry runs on
+unchanged. Carried into a situated view, where the unit is known on one side only, that expectation meets the inversion and reads it as a break. The
 mathematics does not change at the corner; what is measured against changes, from the known h to the unknown v, and the
 same structure is read the other way round. Expressed in the reader's own unit, h, the inverted reading is the count of
 doublings of §3.3–§3.4.
@@ -1800,18 +1803,18 @@ the difference between a shape and the unit circle, which only situation 2 has. 
 count of levels between a reader and a thing, is its **level count** (a range, not a shape); the rest of the
 paragraph is read that way. As written: Depth is how many octaves in a thing is: the count of nested sweeps between a reader and it, each octave holding the same sweep again with its own corner (R172, R175). It is not a direction at right angles to breadth. Shown in the game *Launch from Somewhere*, and with shapes on 5 October: depth held in nested octaves (SIT) and readers nested inside readers (NST, STR), §6.4.
 
-**Sweeping and indexing** (R179, 4 Oct). The view from nowhere indexes: it is the x, y grid, its breadth known and divided evenly, every place reached by an index, with no home or horizon, and its corner computed rather than found; the uniform unit circle is the same view held as h relative to v. The view from somewhere sweeps: breadth and depth, from home, step by step. A grid point and a sweep record are the same point, turned one into the other by the bar's own h and v (LIN); they part only where depth folds (OCC).
+**Sweeping and indexing** (R179, 4 Oct). The unsituated view indexes: it is the x, y grid, its breadth known and divided evenly, every place reached by an index, with no home or horizon, and its corner computed rather than found; the uniform unit circle is the same view held as h relative to v. The situated view sweeps: breadth and depth, from home, step by step. A grid point and a sweep record are the same point, turned one into the other by the bar's own h and v (LIN); they part only where depth folds (OCC).
 
 **The chord and the arc** (R178, 4 Oct). Take two points and the chord between them, of length 1. The chord joins them
 directly: all of it is there at once, fully expressed, with no turn, so on the sweep it is g = 0 and g = 1 together. That
-is the view from nowhere, which has no g (R140). The semicircle on that chord joins the same two points a second way, by
+is the unsituated view, which has no g (R140). The semicircle on that chord joins the same two points a second way, by
 the sweep. The reader is the pivot, at one end of the chord (R169). Its bar meets the arc at a point P; h runs from the
 reader to P along the bar, v from P to the chord's far end, and by Thales they meet at a right angle, so h² + v² = 1: the
 sweep shares the chord out between h and v. Along the chord the bar is home (v = 0); half-way through its turn P is at the
 top of the arc and h = v, the corner; along the tangent at the reader P runs back into the pivot, h = 0, the mathematical
 horizon. v/h is the reading. Because the angle at the pivot is half the arc's angle, even steps of the bar are even steps
 along the arc: the sweep is walking the arc, and nothing is calculated (R177). The open sweep, 0 < g < 1, belongs to the
-standpoint; the chord, both ends at once, to nowhere. This is the semicircle of the three registers: the fisheye, the
+standpoint; the chord, both ends at once, to the unsituated view. This is the semicircle of the three registers: the fisheye, the
 Cauchy.
 
 What follows.
@@ -1866,7 +1869,7 @@ A sweep is swept: step by step from home, and what is held is where the sweeping
 place a step would land without sweeping to it; it is an engineering convenience that makes a sweep act like an index,
 and it obscures the geometry, so it is avoided where it can be ("arctan can be useful, it makes sweeps act more like
 indexes. but it obfiscates the actual geomtery", Tom, 12:32). Its 2/π divides by the whole quarter turn out to the
-mathematical horizon, a known end that only a view from nowhere has.
+mathematical horizon, a known end that only an unsituated view has.
 
 The corner removes the need for it. In situation 3 or 4 the corner is known although v's breadth is not (R149): it is where v
 reaches one h. So the sweep from home to the corner has two known ends, and a step along it is a plain proportion of the
@@ -1956,7 +1959,7 @@ of it the geometry proves, and the part it leaves to the world.
 **Setting.** Here h is a reader's known breadth, the unit it counts in (situation 3 or 4: v is had as a count of h's, R146),
 and a reading is s = v/h for an extent v of the world. A reader's **rung**, against another reader, is m = log₂(h′/h): how
 many doublings its unit is from the other's. The rung is relative. No reader has one alone, and two readers have one only
-in the view from nowhere, which scores them, or by agreement, which is where any shared unit comes from (§8.4). Scaling a
+in the unsituated view, which scores them, or by agreement, which is where any shared unit comes from (§8.4). Scaling a
 world W by λ > 0, written λW, multiplies every extent in it by λ and changes nothing else.
 
 **Proposition 3.6 (a reader cannot read its rung).** A reader with unit h reading W and a reader with unit λh reading λW
@@ -2155,7 +2158,7 @@ and, since 6 October, in where they stand: the parallel reader outside, the seri
 - **The serial reader** works inside that range, one address at a time in an order of its own, holding ratios over
   time. Past the corner what it holds is the count of doublings.
 
-A third view, **the view from nowhere**, has no standpoint (R127): the circle and every other shape, read uniformly, with
+A third view, **the unsituated view**, has no standpoint (R127): the circle and every other shape, read uniformly, with
 no home, division or horizon of any kind (R131) and no front or back (R139); its corner is computed from the known
 breadths, arrived at exactly (Tom, 6 October: 1 and 2 "have a corner, … you can arrive at the corner, it is algorithmic, they have no horizon however, h and v are known"). It holds what lies behind a situated reader and
 what blocking withholds (R90). The simulations need one to run at all, a game loop holding positions (R83); the readers
@@ -2641,7 +2644,7 @@ sweeps carry the picture, which can be painted; the forward sweep carries nearne
 
 *In the split: shape recovered from payloads. Each rung says how much comes back, and from what.*
 
-The classical hierarchy of geometries (projective, affine, similarity, rigid) appears from somewhere as a ladder, and each
+The classical hierarchy of geometries (projective, affine, similarity, rigid) appears to a situated reader as a ladder, and each
 rung comes from a different kind of thing (R86).
 
 ### 8.1 Relations give the projective rung; a second reader is needed off the plane
@@ -2713,8 +2716,8 @@ Any thing all the readers can read, agreed to be 1, serves; readers who can read
 same agreement in disguise: a signal's speed and a beat, both shared. The last rung of the ladder ("+ one length") was
 never information about the world; it was agreement with a unit someone chose. Ruled (R89): **"the unit … only comes
 from aggreement. it is not geometric."** And: **"a solo reader would have no need for a unit, because that is how you
-communicate with other readers. if you only need to communicate with yourself, a unit can just be you."** The geometry
-from somewhere ends at the shape up to a scale; the unit is a matter of communication laid over it.
+communicate with other readers. if you only need to communicate with yourself, a unit can just be you."** The situated
+geometry ends at the shape up to a scale; the unit is a matter of communication laid over it.
 
 The reader's own D1 is that solo unit. Nearness = D1/d is a ratio of two lengths, so any agreed unit cancels in nearness itself. What
 D1 does is place the reader's corner: it decides which things are in contact (d ≤ D1) and scales every nearness by one factor.
@@ -2819,7 +2822,7 @@ and it fails: with 1 s sweeps 18–57 steps off, with ½ s sweeps 4.3–20.3 aga
 
 ### 9.5 A reader that only receives
 
-Everything above ran on a game loop, and the loop carries the view from nowhere inside it: one shared now (every system
+Everything above ran on a game loop, and the loop carries the unsituated view inside it: one shared now (every system
 stepped together), a snapshot every frame (the whole world read at one instant), pulling rather than receiving (the
 picture goes to where the world is stored), the frame swallowing serial (every read finished inside it), and the engine
 holding everything. *Wander* (items 270–271) was rebuilt without those. It is a world of the rung editor's solids, each a
@@ -2908,7 +2911,7 @@ d₀ / sin(π − α₁) = |b| / sin(α₁ − α₀). Two lines that are not pa
 
 The right side is addresses alone. The left is a relation, v the world's magnitude and h the reader's own travel: the
 magnitude the division took out (§1; met, not swept, R116) comes back, not held, but addressed, through a v/h whose h
-is the reader's own step (Tom, 30 Sep, 09:11: "it also gives you an address back to the original magnitudes. can we prove that with our framework? seems to me, that is what 3d is."). Like any reading from somewhere it has a home and a mathematical horizon: as the
+is the reader's own step (Tom, 30 Sep, 09:11: "it also gives you an address back to the original magnitudes. can we prove that with our framework? seems to me, that is what 3d is."). Like any situated reading it has a home and a mathematical horizon: as the
 parallax closes, d₀/|b| runs to ∞, and turned it is the forward lay of §5.3, d = D1 · tan ψ, with D1 = |b|; the corner of
 Proposition 5.2, "the reader's own unit", is the distance equal to the reader's own step. What it cannot give is the unit's
 reach past the reader (Proposition 8.1, R89: ratios of two depths are unit-free, the depth itself is in the reader's own
@@ -2944,7 +2947,7 @@ Everything is in the reader's own lengths and seconds, and every figure below wa
 
 Two things come out of this that the table does not show. The reader's first Kepler check (§9.6) used ratios only, as
 Kepler did; with the reader's own lengths it becomes a weight, as Newton made it, and agreement on that weight is what
-says which bodies belong together. And the signals' speed, which the view from nowhere puts in first, comes out last
+says which bodies belong together. And the signals' speed, which the unsituated view puts in first, comes out last
 here, from the reader's own lengths and the body's own ticks, as Rømer found it from Io's eclipses (§13).
 
 ### 9.8 The shape in the round: what the address points to, and what arrives
@@ -3016,7 +3019,7 @@ Limits:
 - While going round a moving body the reader shares its motion, so a distance from its own travel reads long there
   (14.5 against 7.1), and the scale is then withheld.
 
-**What the two panels show.** Side by side, they are the two ways a view from somewhere holds a thing. By address, it
+**What the two panels show.** Side by side, they are the two ways a situated view holds a thing. By address, it
 holds the whole thing at once, as the system has it, every side: the parallel reader's hold, by pointer, with no
 reading of the thing itself. By arrival, it holds what has reached it, named point by named point, up to a scale, and
 only from the sides it has faced: the serial reader's hold. What lies behind the reader, which no single standpoint has (§6.3), is on the left
@@ -3030,7 +3033,7 @@ body begins (item 293). Of the addresses so found, 87–100% were A's, and the s
 about 2–3%, spinning ones 10–13%, their rates found). What names alone give is the left panel: the whole shape, every side,
 at once.
 
-### 9.9 Known physics from somewhere: the labs
+### 9.9 Known physics, read situated: the labs
 
 *Tom, 3 October: "My first priority is remove the friction for future claude to continue iterate over known physics, to
 establish corresondance between between established theories that been established a view from nowhere and show that
@@ -3038,16 +3041,16 @@ they also work from the assumptions of the view from somewhere." And: "my intuit
 recoverable, from the the view from somewhere perspective."*
 
 §9.6–§9.7 retraced Kepler, Newton and Rømer inside *Wander*'s readout. On 3 October the retracing became a set of labs
-in *Wander*'s lab pane. Each takes one result established from the view from nowhere and says, in its note and before
+in *Wander*'s lab pane. Each takes one result established from the unsituated view and says, in its note and before
 it runs, what a reader holding only arrivals, its own path and its own clock should recover, and what would kill the
 claim. A killed run stays in the note; a fix is a new run with its own prediction; each kill is placed with the world,
 the reading, or the lab's own setup. A link (`?lab=all`) runs every lab and tables each latest verdict. Labs that read a
 crowd (heat, identity) are first tried over draws they will not be tested on, so their kill thresholds come from their
-own scatter (assumption 8 of §12). Each lab is a correspondence, not a claim: a result established from nowhere also
-comes out from somewhere, in *Wander*; it does not say the world is like *Wander*. The full register, with every figure, is the working paper *What a Reader Recovers*; the lab
+own scatter (assumption 8 of §12). Each lab is a correspondence, not a claim: a result established unsituated also
+comes out for a situated reader, in *Wander*; it does not say the world is like *Wander*. The full register, with every figure, is the working paper *What a Reader Recovers*; the lab
 notes hold every run.
 
-| lab | established from nowhere | what came out from somewhere | here |
+| lab | established unsituated | what came out situated | here |
 |---|---|---|---|
 | DOP | Doppler | arrivals against ticks on the classical forms to 0.021%; which one moves matters | §9.6, first row |
 | BAL | the inverse square | a ball's share of the reader's addresses, s²/π far off (s the ball's radius over its distance), to 0.10%: the front side, inverse-square, of §3.2's correspondence. Run 1 is geometry (size and distance given). Run 2 is a reading: from its own travel and its count of filled addresses, the reader reads the ball's radius, its distance and the contact ahead, with nothing about the ball given | §3.2 (the disc) |
@@ -3078,17 +3081,17 @@ notes hold every run.
 | TWO (preliminary) | Hong, Ou and Mandel | identical quanta leave together; the dip's width on the readers' own clocks; identity the world's, found by counting, not earned by following (contrast TRK) | assumption 2, §12; §14 |
 | RNG | not a physical result: §4.2's range laid first | against a rival with only the addresses its arrivals made: the breadth ratio and the dark read only against a range laid first; laying on arrival keeps two of order, place and evenness (Proposition 5.4) | §4.2; §5.6 |
 | CAR | not a physical result: R176's lay, against one bounded sweep | the reader's own lay (proportion to the corner, step h/N, then levels carried and counted) beside a single bounded sweep, N = 1000, 40,000 readings | R176's lay held every prediction in two runs: within half a step before the corner, within 3π/(8N) past it in every level, absolute error ×3.7–4.4 per level, failing only past its count; no seam at the corner (×1.18). Killed on the bounded sweep's small-gap formula, which reads x/(1+x) where the step nears the reading | §3.3; §3.7; R176 |
-| NWH | not a physical result: one breadth from nowhere and from somewhere (R176–R178) | the view from nowhere, knowing the breadth and dividing it evenly, beside the situated reader holding h and the table laid by us, on a straight line of things, breadths 1/64 to 262,144 | the two read alike exactly at one breadth, the reader's own h; below h the view from nowhere is finer, above it the reader holds N + (N/2)log₂B addresses, finer near home, to a fixed share far out, never told the breadth, up to its count and nothing past it. Killed on one sub-check's wording (a tie at the step near home) | §3.5; R178 |
-| LIN | not a physical result: a perturbed line in situations 2, 3 and 4 (R177, R178; Tom: "two ways of representing the same thing") | a line at h with four small bumps, held by the view from nowhere (even division of a known breadth) and by the reader (its table and the depth at each address) | the same shape point for point, by the bar's own h and v, to 4 × 10⁻¹⁶; on the straight line depth × h = 1 (no free depth), so the bumps are carried in depth; they differ only in where their points fall | §3.5; R178 |
-| OCC | not a physical result: where situations 2, 3 and 4 part, as LIN's bumps grow (R177, R178) | the first meeting along the bar at each address, against the view from nowhere's whole shape | depth folds where place × slope = height: worked out before the run as 0.451 (a bump away from the reader) and 0.215 (toward), the same in every level, and found within 0.12%; below it the two hold the same shape, past it part of the shape is behind another and the reader holds only the front; its own depths show an edge from 0.83–0.98 of the onset. Killed on a prediction neglecting neighbouring tails just past the onset and on windows too short for the largest spans (both mine) | §3.5; R178 |
-| DEP | not a physical result: total depth recovered by turning (Tom, 12:34–12:38: nowhere's depth is the shape less its unit sphere; somewhere's is the Cauchy less the unit sphere) | a reader at a pivot holding a depth at each address of two breadths (R176's lay, n = 64) on a unit sphere perturbed outward, turned 2000 times evenly; its unit sphere taken as the farthest depth at addresses met every turn, its total as front volume over the share in front | the reader finds its unit sphere (0.06%) and the centre of gravity (3 × 10⁻¹⁰) from its own records; its depth is nowhere's stretched toward its edges (median ratio 1.04 inside, 2.86 at the outer tenth). Killed on the totals: 24.5% short for thin bumps, 56% for the page's, a one-axis spin 6% short rather than over. Cause, the prediction: depth on bars grazing the shape outside the unit sphere, at the reader's own edge, where it holds only an entry depth; the shortfall shrinks slowly as the bumps thin | `plans/depth-plan.md` |
-| ARE | not a physical result: a bump's area on a line, from nowhere and from somewhere (Tom, 12:58) | the reader's area Σ ½(d² − d₁²)·Δa/(1 + a²) with its unit line d₁ = √(1 + a²), on R176's lay (n = 1000), against nowhere's ∫(y − 1) dx | equal within 2.5 × 10⁻⁶ below the onset, away and toward, from the reader's addresses, depths and h alone; per address d − d₁ = (y − 1)√(1 + a²) to 10⁻¹⁵ (stretched by the bar, equal only in total). Past the onset the reader's signed area is less than nowhere's (−2.6% away; 8.6% more negative toward). Killed on the toward case by the prediction's wording (mine: "smaller in size" for "less") | `plans/bump-area-plan.md` |
+| NWH | not a physical result: one breadth, unsituated and situated (R176–R178) | the unsituated view, knowing the breadth and dividing it evenly, beside the situated reader holding h and the table laid by us, on a straight line of things, breadths 1/64 to 262,144 | the two read alike exactly at one breadth, the reader's own h; below h the unsituated view is finer, above it the reader holds N + (N/2)log₂B addresses, finer near home, to a fixed share far out, never told the breadth, up to its count and nothing past it. Killed on one sub-check's wording (a tie at the step near home) | §3.5; R178 |
+| LIN | not a physical result: a perturbed line in situations 2, 3 and 4 (R177, R178; Tom: "two ways of representing the same thing") | a line at h with four small bumps, held by the unsituated view (even division of a known breadth) and by the reader (its table and the depth at each address) | the same shape point for point, by the bar's own h and v, to 4 × 10⁻¹⁶; on the straight line depth × h = 1 (no free depth), so the bumps are carried in depth; they differ only in where their points fall | §3.5; R178 |
+| OCC | not a physical result: where situations 2, 3 and 4 part, as LIN's bumps grow (R177, R178) | the first meeting along the bar at each address, against the unsituated view's whole shape | depth folds where place × slope = height: worked out before the run as 0.451 (a bump away from the reader) and 0.215 (toward), the same in every level, and found within 0.12%; below it the two hold the same shape, past it part of the shape is behind another and the reader holds only the front; its own depths show an edge from 0.83–0.98 of the onset. Killed on a prediction neglecting neighbouring tails just past the onset and on windows too short for the largest spans (both mine) | §3.5; R178 |
+| DEP | not a physical result: total depth recovered by turning (Tom, 12:34–12:38: the unsituated view's depth is the shape less its unit sphere; the situated reader's is the Cauchy less the unit sphere) | a reader at a pivot holding a depth at each address of two breadths (R176's lay, n = 64) on a unit sphere perturbed outward, turned 2000 times evenly; its unit sphere taken as the farthest depth at addresses met every turn, its total as front volume over the share in front | the reader finds its unit sphere (0.06%) and the centre of gravity (3 × 10⁻¹⁰) from its own records; its depth is nowhere's stretched toward its edges (median ratio 1.04 inside, 2.86 at the outer tenth). Killed on the totals: 24.5% short for thin bumps, 56% for the page's, a one-axis spin 6% short rather than over. Cause, the prediction: depth on bars grazing the shape outside the unit sphere, at the reader's own edge, where it holds only an entry depth; the shortfall shrinks slowly as the bumps thin | `plans/depth-plan.md` |
+| ARE | not a physical result: a bump's area on a line, unsituated and situated (Tom, 12:58) | the reader's area Σ ½(d² − d₁²)·Δa/(1 + a²) with its unit line d₁ = √(1 + a²), on R176's lay (n = 1000), against nowhere's ∫(y − 1) dx | equal within 2.5 × 10⁻⁶ below the onset, away and toward, from the reader's addresses, depths and h alone; per address d − d₁ = (y − 1)√(1 + a²) to 10⁻¹⁵ (stretched by the bar, equal only in total). Past the onset the reader's signed area is less than nowhere's (−2.6% away; 8.6% more negative toward). Killed on the toward case by the prediction's wording (mine: "smaller in size" for "less") | `plans/bump-area-plan.md` |
 | WIN | not a physical result: the line's idea on a circle and a sphere (Tom, 13:15) | the reader finds its unit circle (sphere) and centre from its own records (farthest depth at addresses met every turn), reads the perturbation about that centre in a middle window of 30°, and averages over even turns, dividing by the window's share | measured against the reader's own unit circle, the totals agree with nowhere's: circle 3 × 10⁻⁴ and 3 × 10⁻⁵ (360 even turns), sphere +0.4% (0.2 SE, 4000 random turns); the whole front falls 16–57% short; one-axis turning +56%. Killed on 1–3 by the set-up (mine): the bumps never reach zero, so the reader's unit circle is the largest the shape always contains, R0 raised by the tails (+0.055%, +0.49%), and the raw totals differ by the ring or shell between; and the sphere's 1% bound was below its scatter (1.6%) | `plans/window-plan.md` |
 | OCT | not a physical result: recovering depth on the recursive levels, with depth held at the reader's own steps (Tom, 13:41–13:42: "thats probably how readers actually do it") | WIN's procedure with the object wholly past the corner (addresses 2–7, level addresses); bumps that end (cos², zero past s₀); and each depth rounded to the nearest step of the depth lay (proportion to h, then levels) | on the levels the unit and centre are found exactly and totals agree: circle −9 × 10⁻⁴ and −1 × 10⁻⁴, sphere −0.7% (0.36 SE). With depth held at the lay: line within 6 × 10⁻⁴ at N = 250, circle +0.9% at N = 256, both 0.3–4% of the worst-case bound (rounding errors cancel). Killed on one sub-part: for ε = 0.1 the line's error at N = 4000 is 0.34 of N = 250's, not ≤ 0.25 (the remainder does not follow the step; prediction, mine) | `plans/octave-plan.md` |
 | ADD | not a physical result: recovering depth by counting and adding only (Tom, 13:50: "a reader does not use trig or advanced math… only simple recursive addition") | the reader holds its lay with two tables (Δθ per address; W = ½d² per depth step, built by recursive addition), records the depth step at each address, measures its unit (bare record on a line; farthest step over turns on a circle), sums Δθ·(W[unit] − W[shape]); on the circle a counted middle-third window and a share counted from arrival times | line: within 4 × 10⁻⁴ for four bumps, across the corner and into the levels, with no root, trig or fit. Circle killed: the counted share overstated the true one by 29% and 7% (arrival is the first step of a long tail, at different moments at the two ends), totals −17% and −21%; with the true share the counted sums give +0.7% at n = 1024 | `plans/addition-plan.md` |
 | LIB | not a physical result: the window method on figures not built for it (Tom, 14:01: "could we use the shapes library to test this?") | 73 single-loop figures from svg.html's library, classed before the run by nowhere's geometry (R clean 30, F folds 26, U unit too small 2, N not radial 15); the unit is the largest circle about the centroid the figure always contains; WIN's way and ADD's way, on the levels | killed on 1, 2, 3. WIN's way: 20 of 30 clean figures within 1% (most 0.2%); 7 fail with the unit misfound where it touches only at corners (square +3%, hinge4 +16%), 2 low from window turns dropped (rectangle −3.6%), circle has almost no depth to find. ADD's way: 28 of 30 outside 2%, mostly short. F: 24 of 26 read over nowhere's as predicted; banner and knife under, from dropped turns. Causes tentative. **Run 2** (two reader-side rules: fit the unit to the middle half of the met addresses; halve the window until it fits every turn): R within 0.5% on 29 of 30, 26 within 0.2%; killed on hinge4 and hinge5, whose unit touches only at inward corners (r̂ +1.9%, −0.4%; hinge5 total −2.2%), and on four F figures that now read nowhere's total rather than more (fold outside the narrowed window). Knife −31% → +0.05%. ADD's way at n = 1024: within 2% only for small perturbations | `plans/library-plan.md` |
 
-**Milestone, 4 October (ARE, DEP, WIN, OCT, ADD).** A situated reader holding only its h, its lay (R176, the recursive levels past the corner) and its record recovers the total depth nowhere computes. On a line it does this by counting and adding alone, to 4 × 10⁻⁴. On a circle and a sphere it turns the object, finds its unit and the centre from its own record, and reads only the middle of its view: 10⁻³ on the circle, within scatter on the sphere. The parts differ (the reader's depth is nowhere's stretched along the bar) and the totals agree. Scope: these are consistency results in simulated geometry, several of them identities the runs confirm. They show the reader's record is sufficient; they are not yet a test against the world. They do give a concrete procedure with numbers (the √(1 + a²) stretch, the edge loss, the one-axis bias, the cost of holding depth at the reader's steps) that a planned measurement could check. Open: a counting-only way to the window's share of the turns. LIB (the shape library, 73 figures drawn for a shape tool): with two rules the reader applies to its own record, the total is within 0.5% on 29 of 30 clean figures; the unit is misfound only where it touches the outline at isolated inward corners.
+**Milestone, 4 October (ARE, DEP, WIN, OCT, ADD).** A situated reader holding only its h, its lay (R176, the recursive levels past the corner) and its record recovers the total depth the unsituated view computes. On a line it does this by counting and adding alone, to 4 × 10⁻⁴. On a circle and a sphere it turns the object, finds its unit and the centre from its own record, and reads only the middle of its view: 10⁻³ on the circle, within scatter on the sphere. The parts differ (the reader's depth is nowhere's stretched along the bar) and the totals agree. Scope: these are consistency results in simulated geometry, several of them identities the runs confirm. They show the reader's record is sufficient; they are not yet a test against the world. They do give a concrete procedure with numbers (the √(1 + a²) stretch, the edge loss, the one-axis bias, the cost of holding depth at the reader's steps) that a planned measurement could check. Open: a counting-only way to the window's share of the turns. LIB (the shape library, 73 figures drawn for a shape tool): with two rules the reader applies to its own record, the total is within 0.5% on 29 of 30 clean figures; the unit is misfound only where it touches the outline at isolated inward corners.
 
 Twenty-eight of the thirty-two are not killed in their latest run (WOB's fourth run and EQV's third, 3 October, closed them); ELV is open, its cause known in
 outline and not against the conjecture of §11.4. CAR (4 October) is killed by its last allowed run on the bounded sweep's formula, not on R176's lay, which held every prediction. NWH (4 October) is killed on one sub-check's wording, a tie where both readers meet the step near home; everything it predicted of the two readings held. OCC (4 October) is killed on its own prediction's neglect of neighbouring tails and on windows too short (both mine); its onsets held to 0.12%.
@@ -3102,7 +3105,7 @@ widths were given; read from flashes and from the addresses filled, its far rung
 world is now said in each row above: true places (ELV and EQV), the system's travel
 in some of RMR's rows, KEP's choice of its face-on loops by the world's plan (found in
 Stage 2; choosing them by roundness was tried and killed by its threshold, the widest face-on loop being 6% out of round), TMP's labels for "kept apart" (the reader's own tracks give the same
-to one ball). BAL and OLB, first geometry with true distances, now also have readings from somewhere beside the geometry. CAV, which first joined two runs (KEP's star and MOM's touched body), has been rebuilt as one world. The register
+to one ball). BAL and OLB, first geometry with true distances, now also have situated readings beside the geometry. CAV, which first joined two runs (KEP's star and MOM's touched body), has been rebuilt as one world. The register
 had said more than its readings held in these places; the results stand, but those rows claim less. KEP's and UNT's
 "own lengths" is bookkeeping, converted once by λ, with no world quantity entering the reading.
 
@@ -3231,9 +3234,9 @@ and what is left. Condensed:
 | its frame is a carry, and drifts | serial | a reading of something far; closing a loop | 7.7° → 0.05°; map 2.9 → 1.2 (203) |
 | the sway needs motion | serial | nearness beyond D1 | (175) |
 | no number of readers climbs a rung | company | the reader's own lay or nearness; a far reading | R86 |
-| no standpoint (no home or horizon, the corner computed; shapes differ from the circle by the mix, R140) | view from nowhere | readers supply the standpoint | R127, R140 |
-| its *now* does not exist in reality | view from nowhere | a beat read off a shared moving landmark | (169) |
-| its unit is chosen | view from nowhere | readers agree on something all read | 34% → 0.85% (214) |
+| no standpoint (no home or horizon, the corner computed; shapes differ from the circle by the mix, R140) | unsituated view | readers supply the standpoint | R127, R140 |
+| its *now* does not exist in reality | unsituated view | a beat read off a shared moving landmark | (169) |
+| its unit is chosen | unsituated view | readers agree on something all read | 34% → 0.85% (214) |
 
 ### 11.2 Complementarity
 
@@ -3244,7 +3247,7 @@ and what is left. Condensed:
 | supplies the other | scale, a far fixed frame, order beyond D1, nearness against a painter | *now* for straight motion, near order, the back, the hollow |
 | its depth | nearness, the forward sweep | the sway |
 
-Each lacks exactly what the other holds. And every holding of the view from nowhere is rebuilt by readers **as something
+Each lacks exactly what the other holds. And every holding of the unsituated view is rebuilt by readers **as something
 shared**: positions as relations among readings; a fixed frame as a reading of something far; its *now* as a shared beat;
 its unit as an agreement; which thing is in front, as the higher nearness or, without nearness, as outline shape and place; where a
 hidden thing is, as its outline.
@@ -3261,14 +3264,14 @@ remain:
 3. **the grain**: every figure here is to the grain of its addresses.
 
 The first two have a name: they are **the backside** (R90), read since R139 as what lies behind a situated reader or
-is blocked: what the view from nowhere holds, without having a back, and no standpoint does. A
+is blocked: what the unsituated view holds, without having a back, and no standpoint does. A
 reader reaches it only in part: by turning, later, or through a company, from elsewhere.
 
 ### 11.4 The conjecture
 
 > **Serial and parallel readers, in company, recover everything of the world's geometry that some standpoint reads at some
 > moment, up to a scale and to the grain. The unit is not geometric and comes only from agreement. What lies beyond is
-> what lies behind a situated reader or is blocked, which the view from nowhere holds without having a back.**
+> what lies behind a situated reader or is blocked, which the unsituated view holds without having a back.**
 
 Residuals 1 and 2 are, by their statement, what no standpoint reads in time, so they do not count against it; residual 3
 is the readers' own grain. **What would kill it:** a quantity some standpoint reads that no combination of serial,
@@ -3477,7 +3480,7 @@ reach had it needed a shared clock; it did not). Every miss on the way was mende
 loosening one. But *Wander*'s world was built with Newton's gravity and a fixed signal speed, and the reader recovered what
 was put in; a classical observer recovers the same. Agreement with known results does not tell the framework from the
 classical account. What would go further: *necessity* (dropping an assumption makes a result unreachable, not only
-keeping them makes it reachable); a result the view from somewhere gives that the view from nowhere does not contain,
+keeping them makes it reachable); a result the situated view gives that the unsituated view does not contain,
 shown with shapes and then, if it holds, in a planned test; and the demo's remaining world-side steps moved to the reader
 (§14).
 
@@ -3530,7 +3533,7 @@ corpus's own name for it is *Reader Geometry as Addressing*.
 What is ours is, first, **near and far as one geometry, inverted at the corner** (§3.2): the near field read as the far
 field through an inversion of perspective taken there and nowhere else, the corner forced and the inversion contained in
 every reading a situated reader can hold (Propositions 3.1–3.3; R162), the long-noticed difference between near and far explained rather than only observed. With it, **the corner
-as the point a view from somewhere is organised around** (§3), ordinary in itself, the reading at which v/h is 1 (R164): the one point that separates the
+as the point a situated view is organised around** (§3), ordinary in itself, the reading at which v/h is 1 (R164): the one point that separates the
 two sides of a situated reading, found with the known side alone (Proposition 3.1); plain proportion before it and a
 count of doublings past it, the change of register coming exactly where the unknown breadth begins (R158), with the
 Cauchy's missing mean as its statistical face, and the two registers free of the unknown, the count by difference and the share by
@@ -3541,10 +3544,10 @@ Cauchy's functional equation. What is ours is reading them as one structure, set
 breadths. Around it: **the situations** (§2), in which what a reader knows, not the world, sets where it stands, only
 situation 3 or 4 having a standpoint at all, and situation 3 or 4 explained by the others; **the corner as a measuring point**
 (R142, item 328), the middle of a lay only when the breadths are equal; **the reader's best move**, laying its range
-before reading (R155); **observation from somewhere as not dimensional** (§1); and **the classical Cauchy as situation 3 or 4
-with its far end assumed** (§2.2, Claude's reading). Then the route and the accounting: an address space laid from
-somewhere, nearness in the reader's own unit, and a measured account of which shape-facts come back from which source.
-Every step here is a situated reader, its addresses and its payloads; the view from nowhere is used to make readings and
+before reading (R155); **situated observation as not dimensional** (§1); and **the classical Cauchy as situation 3 or 4
+with its far end assumed** (§2.2, Claude's reading). Then the route and the accounting: an address space laid by a
+situated reader, nearness in the reader's own unit, and a measured account of which shape-facts come back from which source.
+Every step here is a situated reader, its addresses and its payloads; the unsituated view is used to make readings and
 to score, and is otherwise defined by what the readers lack. Whether this route is better or worse than the classical
 ones is an engineering question and not our concern; what the geometry holds and requires is.
 
