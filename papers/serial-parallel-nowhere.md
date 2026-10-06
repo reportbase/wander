@@ -437,6 +437,12 @@ Measured against the line (1), the sweep with its radial turn gives two numbers,
 - **1, the line, between them**: their product is 1, so on the logarithmic scale, the sweep's own measure, 1 is exactly
   their middle (ln π/2 = +0.452, ln 2/π = −0.452). It is the flip s ↦ 1/s once more, parallel and serial its two facings.
 
+**π/2 is every relation, summed** (Tom, 6 October: "PI/2 is also the sum of all the ways v and h can be related.").
+Every relation v/h is a ratio s on [0, ∞), and each takes a share of the turn, ds/(1 + s²); summed over all of them,
+∫₀^∞ ds/(1 + s²) = π/2. The share is the same for s and for 1/s, so the corner halves the total exactly: π/4 for the
+front side (Leibniz's 1 − ⅓ + ⅕ − …, §3.2) and π/4 for the back side, whose octaves give 18.4°, 12.5°, 6.9°, 3.6°, … and
+sum to 45°. Counting the hemisphere at once, the parallel reader counts every relation at once: π/2.
+
 The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
 the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
 from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 between them.
