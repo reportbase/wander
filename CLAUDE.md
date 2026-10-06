@@ -49,6 +49,9 @@ Google Fonts load from outside:
   spiral (situations 1–2 the circle, k = 0). In SPN §3.3 as Propositions 3.11–3.13.
   `wavelets.md` (+ `wavelets/`): the system on one page, and what filters, wavelets
   and hearing scales already have of it (much), and what the situated view adds.
+  `standpoint-axis.md` (+ `standpoint/`): a second axis, the standpoint (nowhere,
+  outside, inside) beside the breadths known; the hemisphere observer as outside with
+  the breadths known. Exploratory, four questions open for Tom.
 
 The repo is public, so the papers can be read on GitHub; the owner is fine with
 that for now (6 Oct 2026) and will decide later where they live. They are still
