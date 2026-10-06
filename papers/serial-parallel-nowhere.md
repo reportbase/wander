@@ -369,6 +369,58 @@ The situations are set by what the reader knows of the breadths, not by the worl
 direction: how far a thing reaches that way ("breadth means extent, not quantity", Sep 24). The world is breadth, always
 fully expressed whoever observes it (R124).
 
+**The five, in brief** (6 October; Tom's list, gathered from the paragraphs below; `plans/five-ways-to-observe.md`
+gives the same at more length). The numbering here is Tom's of 6 October. The table after this one is the earlier
+numbering, kept as written.
+
+| | what is known | how it is read | standpoint | example (Tom's) |
+|---|---|---|---|---|
+| **0** | nothing: no equation, no information | — | — | — |
+| **1** | a symmetric equation: the circle | all at once | nowhere | an equation |
+| **2** | an asymmetric equation: every other shape | all at once | nowhere | an array |
+| **3** | one hemisphere, counted together | parallel | outside | an apple held in the hand |
+| **4** | one point at a time, projected | serial | inside | a molecule of an apple |
+
+3 and 4 can each be known approximately, with one number known only within bounds (the earlier situation 5): a
+variant of 3 and 4, not a sixth way. The first cut is whether v is known: with v and h known it is 1 or 2, as they are
+equal or not; with v not known, 3 or 4, as the reader stands outside or inside; with neither, 0.
+
+- **0. Nothing.** Nothing to count in and no home to lay from. There is no reader here in this paper's sense, which
+  needs a known side to take its ratio from ("Situation 4, impossible", below, in the earlier numbering).
+- **1. The circle.** Both breadths known and equal, held whole as an equation, h² + v² = 1, from no standpoint. The
+  corner is computed, 45°; the line is held; there is no horizon ("Known breadths, and the corner").
+- **2. Every other shape.** Both breadths known but varying with direction, held whole as an array: the breadth in
+  every direction, known together. The corner is still computed and there is no horizon. A known shape can still be
+  read in nested levels: each holds what the levels above left, and depth follows the shape's detail and stops where
+  nothing is left (the *Revised* note after the earlier table; §3.3, "Recursion, after the corner").
+- **3. Parallel, outside.** A reader outside a thing, facing it, counting the facing side at once; the far side is
+  turned away. A sweep is that one hemisphere, 0 at the facing point to π/2 at the limb ("A sweep is one hemisphere,
+  not the whole"). It counts every relation at once: their shares make a bell, ½·sech(ln v/h), whose total is π/2 ("π/2
+  is every relation, summed"; "The parallel reader's bell"). Its measure, θ/sin θ, approaches the line, 1, from
+  above.
+- **4. Serial, inside.** A reader inside, one part among others, taking the rest one point at a time. Its view is
+  the fisheye, the running total of the same bell: the corner the ring halfway out, the octaves crowding toward the
+  rim ("The situated reader's fisheye"). Its measure, sin θ/θ, approaches 1 from below, toward 2/π at the limb.
+
+What 3 and 4 share, and 1 and 2 do not: **a horizon** (the line approached from either side, never reached: "The
+horizon of a situated reader"); **a corner approached, never found**; and **recursion forced** by the horizon, without
+end, each level the same sweep, Archimedes' halving ("Why the recursion"; Propositions 3.11–3.13). In 1 and 2 recursion,
+where there is any, follows the shape and stops.
+
+**The circle needs no recursion** (Tom, 6 October: "the circle does not need recursion. its handled in the first
+octave."). The circle is held whole in the first octave; nothing is left for a second level to hold. So the 129 sweeps
+reported for the library circle (§3.3, "Recursion, after the corner", point 4) cannot come from the circle's own shape.
+*Checked* (Claude, 6 October, by running the drawing tool's lab, `draw.html?lab=dwn`, from the draw repository; the
+format paper's "Entering only where needed"): the 129 reproduces (10, 36, 60 and 129 sweeps at τ = 10⁻³ … 10⁻⁶). The
+library circle is a 160-point ring, fitted as a curve and read from a standpoint on it, and its measured departure is
+not zero: p − 1 ≈ 0.0073/s, 54% at the first address (s = 1/64), 0.7% at the corner, about 0.01% far out, with small
+wiggles. A true circle read this way gives p = 1 exactly ("the bare circle … holds no depth", in the same tool). So
+the 129 sweeps hold an error of the reading set-up, not the circle; and since the tolerance is τ of the shape's own
+departure, that error is held to a millionth of itself. Its cause in the tool is not yet found.
+
+*The situations as numbered before 6 October* (kept as written; read through the mapping in "The situations restated,
+on the sweep alone", below: the earlier 3 is 3 and 4 now, the earlier 4 is 0, the earlier 5 is 3 or 4 approximately):
+
 | | the breadths | name | standpoint |
 |---|---|---|---|
 | 1 | known, the same in every direction | **the circle** (symmetric) | none: a view from nowhere |
@@ -698,6 +750,24 @@ Near the corner they look alike. Far out, the sech bell halves every octave, the
 in every octave without end. The normal curve falls ever faster, and its far octaves vanish. So the normal curve has no
 horizon, and the parallel reader's bell does.
 
+**g is the sweep of v over a held h** (Tom, 6 October: "g … is the sweep of V over a held h. because it has two
+relations, it must be radial between 0 and PI/2. g=PI/2, then v is fully expressed. if g = 0, v is unexpressed?").
+This is §3.5's "g is the sweep" (R170) counted in radians: g = θ = atan(v/h) on [0, π/2], the corner at π/4. The
+share form, (2/π)·g on [0, 1], is the same sweep. It must be a turn because v/h and h/v are one relation from its two
+facings, and the one measure fair to both is an angle mirrored about the corner. What its ends mean depends on what
+is held:
+
+- **h held** (situations 3 and 4). With h fixed at 1, v climbs a vertical line from it and the ray to (1, v) turns.
+  g = 0 is v = 0: v unexpressed, home. g = π/4 is v = h, the corner. g = π/2 needs v unbounded: v fully expressed
+  only at the horizon, approached and never reached. Home is a limit too, so with h held both ends are approached.
+- **The whole held** (situations 1 and 2). With v² + h² = 1 the point runs round the circle. g = 0 is v = 0 and h = 1:
+  v unexpressed. g = π/2 is v = 1 and h = 0: v fully expressed. Both ends are reached.
+
+So "g = π/2, v fully expressed; g = 0, v unexpressed" holds exactly with the whole held. With h held it holds as the
+two limits, home and horizon. This is the circle and the hyperbola of "The relation forces the logarithm" once more.
+g is the turn, not the share of distance along the line from A to B: the two agree only at 0, at the corner and at
+the end (a quarter of the distance is 0.205 of the turn; "The first octave is half the distance").
+
 The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
 the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
 from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 between them.
@@ -706,15 +776,17 @@ from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 
 So the sweep as a turn (0 to π/2) is the situated reader's (3, 4), and the sweep as distance (0 to 1) is the line the
 equations of 1 and 2 hold whole.
 
-**Situation 4, impossible.** Neither breadth known: nothing to count in and no home to lay from (R137). Impossible for a
+**Situation 4, impossible** (earlier numbering; 0 now). Neither breadth known: nothing to count in and no home to lay from (R137). Impossible for a
 reader as defined here, which needs a known side to take its ratio from; it is not a claim about what else might be
 learned with neither breadth known.
 
-**Situation 5, v approximately known.** As situation 3, except that v's breadth is known within bounds (R151). By
+**Situation 5, v approximately known** (earlier numbering; 3 or 4 known approximately now). As situation 3, except that v's breadth is known within bounds (R151). By
 §2.3 the unknown breadth enters the reading as one number, an offset counted in doublings; situation 2 knows it,
 situation 3 does not, situation 5 knows it within bounds (the bounds form is Claude's reading).
 
 ### 2.2 Situation 3 in terms of the others
+
+*Earlier numbering: "situation 3" here is 3 and 4 now, and "situation 4" is 0 (§2.1, "The five, in brief").*
 
 **Situation 3 is a shape of situation 2, read through situation 1's assumption, with situation 4's unknown on the v
 side** (R143). The world is a shape like any other, with some breadth ratio b. What is missing is situation 4 on one side
@@ -1329,7 +1401,12 @@ the format paper; the strange tier, STR, §6.4).
 
 And, the same day: "this is situation 1 and 2. recursion is not limited to situations 3 and 4" (§2.1, revised).
 
-*Read against 3.11–3.13 and §2.1* (Claude's, unruled):
+*Read against 3.11–3.13 and §2.1* (Claude's, unruled, except where Tom's ruling is quoted):
+
+- *The circle needs no recursion* (Tom, 6 October: "the circle does not need recursion. its handled in the first
+  octave."). Point 4's "the circle needs 129" must then count something other than the circle's own shape: most likely
+  the library circle's departure from the reader's unit circle, or the way the sweeps were counted (§2.1, "The five,
+  in brief"). Not checked here.
 
 - *Two causes of one recursion.* These findings are over known shapes, situations 1 and 2: depth follows the shape's
   detail and stops where nothing is left. Propositions 3.11–3.13 are the recursion a horizon forces, situations 3 and 4,
