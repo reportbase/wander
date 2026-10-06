@@ -636,7 +636,7 @@ unknown system we lay on the unit sweep.")
 r(θ) = (1 − m)·1 + m·B(θ), as g, when g was a placeholder ("g = 0 is the unit circle, g = 1 the fully expressed …",
 Tom, 1 October 13:44); R170 then found g to be the sweep. They are the same g: the sweep of v over a held h ("g is the
 sweep of v over a held h", above), with v the depth (the perturbation, or the shape's difference from the circle) and h
-the unit (the unit line, or the unit circle). How far the sweep has gone is how much of the depth is expressed. The LIN
+the unit (the number line's 1, or the unit circle's radius); the unit line is the sweep on which it is laid. How far the sweep has gone is how much of the depth is expressed. The LIN
 lab already holds this picture: a line at h with four small bumps, held unsituated and by a situated reader (§9.9).
 
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
