@@ -2418,6 +2418,21 @@ Neither half helps alone; together they cut the error by a factor of four, as in
      - Past the level that holds a feature, each level cuts the miss 11–250×. Unlike DTL's self-similar thing, a shape runs out of detail.
      - Scale is free: the shape at twice the size reads identically.
 
+## 8m. Oct 6: holding by octaves in the 3d bench (DEP-D, DEP-G)
+
+*Measured in the 3d studio's depth bench (`3d/bench/depth/`, reportbase/3d#31), on content not built on any ratio: two scenes made by the studio and by Claude (a harbour village, a valley), each read along 32 sight lines as a depth reading in eye heights, and the studio's seven surface patterns read up a part's height. Each run's plan, with predictions and kills, was committed before its code, and the code before its one counted run (`D-PLAN.md`, `D-RESULTS.md`, `G-PLAN.md`, `G-RESULTS.md`). Not ruled. These test how well readings are **held**, at a fixed ratio between rungs. They are not the run of SPN's central hypothesis, readers taking their h from their parent's record.*
+
+389. **Depth earns its leaves on scenes** (DEP-D D3, held). The bench's holder lays a sweep in every octave of the reading, then enters nested sweeps by content: an octave, an octave of that octave's own sweep, and one more level. Against the same leaves spent on whole octaves only (breadth), it was better in all 32 views, by about 7× (harbour) and 10× (valley) at the median. This is item 384's DVZ on content not built for it.
+390. **The 2 is not singled out by holding** (DEP-D D1, killed; DEP-G, both predictions held).
+     - The same holder with the ratio between rungs at √2, φ, 2, 3 and 4, at equal leaves. 2 was best in 7 of 32 views (√2 in 13, φ in 9). The ratio matters: the worst was at least 1.5× the best in 29 views.
+     - DEP-G held the base share fixed (every ratio 14 nodes and a base of 96 to 128 leaves), since a smaller ratio had also meant a larger base. √2's lead on the harbour stayed (its median 0.21 of 2's); on the valley 2 became best (9 of 16 views).
+     - So the best ratio follows the scene, not the reader: √2 for a village on a slope with its content in many octaves near the reader, 2 for a long valley floor. 3 and 4 were worst on both.
+     - What it does not test: whether a reader's h settles at 2 when taken from its parent's record. The 2 of R183 comes from the corner sitting at the middle of the octave under the swap; this bench fixes that and varies only the ratio between nested octaves.
+391. **On a part's height, depth does not pay where detail is even** (DEP-D D4 and D6, killed; D5, held). A part's height axis held at 48 leaves: one flattened sweep (the studio's `'flat'` kernel, a sweep with its corner at the middle), or a sweep of 16 plus four nested sweeps of 8 entered by content.
+     - On all seven patterns the nested holder was worse than one sweep (1.04× to 5.8×): a pattern's detail is spread evenly up a wall, so there is nowhere deeper to go. Item 388's "a shape is held as deep as it has detail", read the other way.
+     - On a smooth profile with a steep middle (tanh), the base of 16 left 10⁻⁶ where one sweep of 48 is at roundoff.
+     - But where leaves were spent in regions, the sweep's children (doublings crowding toward both walls, each with its corner at its middle, item 381) beat plain halves on every pattern (0.44 to 0.82 of the error).
+
 ## 9. Open
 
 - ~~**The sign**: are v and h magnitudes or signed?~~ **Ruled (RGA R37): magnitudes**, each on [0, 1]; direction comes from which freedom is read and which facing the reader stands in, never from a negative v or h. (The earlier note here, "an unmade ruling", *The Boundary* B324–B325, predates R37.)
