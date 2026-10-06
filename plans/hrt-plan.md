@@ -162,3 +162,27 @@ r = φ neither rule's median is within 10% of 2.
 
 **Kill.** Killed, and the 2 shows without being built in, if for one rule the median is within 10% of 2 on both r = 3
 and r = φ. Undecided if only one signal is.
+
+**Run 3 (6 October; `python3 plans/hrt/hrt.py run3`, 3 s).**
+
+| rule | signal | pairs | median (IQR) | nearest 2ᵐ, off | nearest rᵐ, off |
+|---|---|---|---|---|---|
+| S and C alike | r = 2 | 3 | 1.128 (1.099–1.213) | 1, 12.8% | 1, 12.8% |
+| | r = 3 | 1 | 1.203 | 1, 20.3% | 1, 20.3% |
+| | r = φ | 5 | 1.675 (1.354–2.439) | 2, 16.2% | φ, 3.5% |
+
+**Killed by its set-up: too few hand-offs to read.** Of 45 chains a signal, 1 to 5 nesting hand-offs in all; no chain went
+past its second level. The two rules gave the same pairs because there was almost nothing to choose between. Not within
+10% of 2 anywhere, but on one to five pairs that means nothing. Whose fault: the lab's. In these landscapes a stretch a
+reader cannot see is almost never shorter than its own h (run 2's L/h, mostly above 1, says the same), so a rule that
+nests on hidden stretches has nothing to nest into.
+
+### Where HRT stops
+
+Three runs, none of them a test of R183: run 1 climbed, run 2 placed run 1's 2 in the landscape, run 3 found almost
+nothing to nest into. What they show is about the set-up SPN proposed, not about h: **on a landscape, what a reader
+cannot see is mostly longer than its own h, so readers that take their h from what their parent could not see relay
+outward or sideways (as SIG's did), and do not nest.** A run that nests needs children placed by something other than
+hidden stretches, which the builder chooses, and SPN's caution applies to it in full. Not chased further: a fourth rule
+chosen after three misses would be tuning after seeing. The outside test is next (`plans/what-deserves-attention.md`,
+item 4).
