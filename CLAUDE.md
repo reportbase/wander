@@ -16,8 +16,11 @@ Claude Code: changes go on a branch, as a PR, and the owner merges. Merging to
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
-  standing); `v-and-h.md` gathers every idea about v and h, by item. They cite
-  other papers and files not in this repo (the SPN record, *Reader Geometry as
+  standing); `v-and-h.md` gathers every idea about v and h, by item.
+  `serial-parallel-nowhere-record.md` is SPN as written 29 Sep – 1 Oct, before the
+  rewrite: **a frozen record, never edited.** Section and proposition numbers cited
+  in the corpus before the rewrite are the record's; SPN's opening note maps them to
+  the current ones. The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
   keeps `papers/` off the Pages site.
 
