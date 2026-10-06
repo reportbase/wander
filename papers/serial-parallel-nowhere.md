@@ -488,6 +488,28 @@ quarter's arc, π/2, over its projected half-width, 1. The inside measure is the
 So π/2 is the whole visible hemisphere, foreshortened; it is not the whole system. Situations 1 and 2, holding the
 equation, have the whole. Situations 3 and 4 have one sweep, one side.
 
+**The sweep is furthest from the line at the corner** (Tom, 6 October: "the sweep sweeps over every possible way h and v
+can relate to one another and that sums to 1.57. When is that sweep furthest from the line?"). The line is the straight
+chord from A to B. Along it the split v/h also runs through every relation, from 0 to ∞, and each takes a share of the
+distance, ds/(1 + s)². Summed, ∫₀^∞ ds/(1 + s)² = 1. Along the sweep the same relations sum to π/2. The excess, π/2 − 1 ≈
+0.571, is what turning adds to going straight. Where it lies (checked):
+
+| angle | the arc's distance off the line | the sweep's rate over the line's, (1 + s)²/(1 + s²) |
+|---|---|---|
+| 0° (h alone) | 0 | 1 |
+| 15° | 0.159 | 1.5 |
+| 30° | 0.259 | 1.87 |
+| 45° (v = h) | 1 − 1/√2 ≈ 0.293 | 2 |
+| 60° | 0.259 | 1.87 |
+| 75° | 0.159 | 1.5 |
+| 90° (v alone) | 0 | 1 |
+
+At the ends, where one breadth dominates, the sweep and the line agree. At the corner they are furthest apart: the arc
+stands furthest off the line there, and the sweep runs twice the line's rate. The excess lies mostly about the corner,
+54% of it within the octave from ½ to 2 and 97% within 1/10 to 10. So the corner is where a relation is most a turn
+and least a distance. By symmetry, half the turn still meets half the line there; their shares part most off the
+corner, by 0.045 of the whole near 17° and near 73°.
+
 The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
 the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
 from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 between them.
