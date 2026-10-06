@@ -43,6 +43,22 @@ block only puts them in order.*
 | depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
 | continuous sweep, spiral | the octaves drawn. Unwrapped, one turn running on, octave into octave with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
 
+**Units: a doubling, a level, and the ratio between levels** (Tom, 6 October, choosing between the two spacings: "the first is simpler, go with that.")
+
+- **A doubling** is v/h × 2.
+- **A level, the octave**, is one octave of 2h in place (§3.3, "The octave as 2h, in place"): home, corner, far wall. Its
+  front half, one h, is proportional and seen; its back half, one h, holds the rest, and the next level nests there.
+  Successive corners are **one doubling apart**: v/h = 1, 2, 4, 8, …; each level's front half past the reader's
+  corner is one doubling (1–2, 2–4, …).
+- **The ratio between levels** is therefore 2 in this layout. Whether 2 is forced, or set by what is read, is the open
+  question (below, "Central result, and the open question").
+
+This replaces R172's octave with two facings, ½c to 2c round a corner c (×4, corners at 4ⁿh), as the paper's unit.
+Where §3.3–§3.8 and §14 speak of that octave, its edges ½h and 2h, or corners at 4ⁿh, read them through this block: the
+stretch from ½h to 2h is the end of the reader's proportional front and the first level past its corner, and the
+corners are at 2ⁿh. Laid side by side round their corners (Proposition 3.12), the paper's levels are pieces with
+r = √2, so that q = r² = 2.
+
 Two measures of one sweep, for the situated readers (§2.1):
 
 - **the fisheye**, the running total of the turn, r = θ (the serial reader);
@@ -245,7 +261,8 @@ it with h alone (Proposition 3.1). Before the corner, v is a part of the known w
 proportion in h: the front side, the side we live on, where railroad tracks recede gently toward
 home. Past the corner, a value is in terms of v's unknown breadth, so in plain proportion it is undefined, and so is
 anything done with it. What is defined there is logarithmic in h, a count of doublings, and within each doubling the
-reading is plain proportion again. A situated reader stands in one octave with two facings, ½h to 2h, the corner in its
+reading is plain proportion again. (*Revised, 6 October:* the paper's octave is now the level of 2h, corners one
+doubling apart, 1, 2, 4, …; see "Units" at the opening. The rest of this paragraph is R172's earlier unit.) A situated reader stands in one octave with two facings, ½h to 2h, the corner in its
 middle; at its edges, ½h and 2h, its own reading starts at 0 and runs without end. Every octave is such a sweep, with its corner in
 its middle, the next corners at ¼h and 4h, and the octaves run on in halvings toward home and doublings toward the
 mathematical horizon: side by side they add, and each divides into octaves again, without end (§3.3, R163, R172). The back side, a run
@@ -1309,7 +1326,9 @@ computed from the known breadths and arrived at exactly, with no octaves past it
   starts at 0 and runs without end, not corners. The next corners are at ¼h and 4h, in general at 4ⁿh, and the units meet edge to
   edge (2·4ⁿh = ½·4ⁿ⁺¹h). The doublings of the table above are the halves of these units, their facings: the facing
   turns at every corner, every second doubling. ("Octave" in this paragraph means the octave with two facings, ×4; a
-  doubling is one of its halves.)
+  doubling is one of its halves.) *Superseded as the paper's unit, 6 October* (Tom, 6 October, choosing between the two spacings: "the first is simpler, go with that."): the octave is the level of
+  2h, with corners one doubling apart (1, 2, 4, …), as "The octave as 2h, in place" lays it and "Units" at the opening
+  defines it. This paragraph is kept as R172's unit.
 - *Each octave is a sweep.* With s = v/c, the one projective map that sends the octave's edges and corner to 0, 1 and ∞
   is ρ = 2(s − ½)/(2 − s), and back s = (2ρ + 1)/(ρ + 2); the octave's sweep is g = (2/π)·atan ρ (the shortcut, R148),
   its corner at g = ½. Nothing more is chosen once the reading is required to be projective. It is fair to the facings
@@ -1397,8 +1416,9 @@ both halves: past its corner s′ = s/2, the parent's reading scaled by one doub
 exactly; before its corner s′ = 2 − 2/s, taking the parent's 1 to 2 onto 0 to 1. So the octaves nest, each inside the
 last one's back half, with corners at v/h = 1, 2, 4, 8, …; their front halves, 0–1, 1–2, 2–4, …, are the pieces that lie
 side by side. Propositions 3.11 and 3.12 lay octaves side by side, each round its own corner (1/r to r); here the
-side-by-side pieces are front halves, each ending at a corner. Both give one doubling per level, exactly scaled past
-the corner.
+side-by-side pieces are front halves, each ending at a corner. They agree on one doubling per level only when 3.12 is
+taken with r = √2 (q = 2); with r = 2, as R172's octave, its pieces span two doublings and its corners fall at 4ⁿ.
+The paper's unit is the nested level (Tom, 6 October: "the first is simpler"; "Units", at the opening).
 
 **No turning within an observation** (Tom, 6 October: "I don't think its turning, 90deg means a 0 to PI/2 sweep, there is no turning in a given observation.") "90°" names the extent of one sweep, 0 to π/2, not an amount turned. Each
 level is its own observation, one sweep from 0 to π/2 in its own terms, and the levels are listed, not added: v/h = 4
@@ -3570,7 +3590,8 @@ corner by definition"): many; every octave has its own corner (§3.3). Flagged a
 near horizon, or many (R167 against R172).** Both rulings agree on the reader's own octave, ½h to 2h around h. Past it they part.
 - **R167** (with R163): the ladder runs in doublings, and every doubling past the corner reads h in terms of v. The
   facing turns once, at h.
-- **R172**: the ladder runs in octaves with two facings (×4), with corners at 4ⁿh. Each octave's front half reads v in
+- **R172**: *(superseded as the paper's unit, 6 October: the octave is the level of 2h, corners at 2ⁿh; "Units", at
+  the opening)* the ladder runs in octaves with two facings (×4), with corners at 4ⁿh. Each octave's front half reads v in
   terms of its corner and its back half reads its corner in terms of v, so the facing turns at every corner, every second
   doubling.
 
