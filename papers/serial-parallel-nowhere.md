@@ -443,6 +443,30 @@ Every relation v/h is a ratio s on [0, ∞), and each takes a share of the turn,
 front side (Leibniz's 1 − ⅓ + ⅕ − …, §3.2) and π/4 for the back side, whose octaves give 18.4°, 12.5°, 6.9°, 3.6°, … and
 sum to 45°. Counting the hemisphere at once, the parallel reader counts every relation at once: π/2.
 
+**The first octave is half the distance** (Tom, 6 October: "first octive is 1/2 the distance, which is the same as
+saying v/h=1"; and "octives and logrithmic spirals are the same thing"). Read the sweep from A to B as distance: a point
+a share t of the way splits it into v = t and h = 1 − t, so v/h = t/(1 − t). At t = ½, v = h: the corner, 45°, and the
+one point within the sweep where the share of distance and the share of turn agree (both ½). Halving again toward
+either end, t = ¼, ⅛, 1/16, …, gives v/h = 1/3, 1/7, 1/15, …: each step doubles the whole over the part, (v + h)/v = 2,
+4, 8, 16, …, so each is an octave. The two measures part from the second octave on, and the share of distance over the
+share of turn climbs from 1 toward π/2 without arriving (checked; `plans/spiral/approach.py` has the like tables):
+
+| octave | share of distance t | v/h | (v + h)/v | turn | share of turn g | t/g |
+|---|---|---|---|---|---|---|
+| 1 | ½ | 1 | 2 | 45° | 0.500 | 1 |
+| 2 | ¼ | 0.333 | 4 | 18.4° | 0.205 | 1.22 |
+| 3 | ⅛ | 0.143 | 8 | 8.1° | 0.090 | 1.38 |
+| 4 | 1/16 | 0.067 | 16 | 3.8° | 0.042 | 1.47 |
+| 6 | 1/64 | 0.016 | 64 | 0.9° | 0.010 | 1.55 |
+| 8 | 1/256 | 0.004 | 256 | 0.2° | 0.0025 | 1.56 |
+| deeper | → 0 | | | | | → π/2 |
+
+Read as the whole sweep, the octaves get less and less of the turn. Read each as a sweep of its own, as §3.3 does
+(Proposition 3.11), each gets one quarter turn, and the distance halves at every quarter: t = 2⁻ⁿ at Θ = n·π/2. That is a
+logarithmic spiral, here with q = 2 and k = ln 2/(π/2) ≈ 0.441. So the octave and the logarithmic spiral are one thing:
+an octave is a quarter turn of the spiral, and the spiral is the octaves drawn (Proposition 3.13). The ratio per octave
+sets the pitch; the quarter turn is the same for every ratio (Proposition 3.12).
+
 The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
 the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
 from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 between them.
