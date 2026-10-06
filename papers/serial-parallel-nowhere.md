@@ -467,6 +467,16 @@ logarithmic spiral, here with q = 2 and k = ln 2/(π/2) ≈ 0.441. So the octave
 an octave is a quarter turn of the spiral, and the spiral is the octaves drawn (Proposition 3.13). The ratio per octave
 sets the pitch; the quarter turn is the same for every ratio (Proposition 3.12).
 
+**One continuous sweep** (Tom, 6 October: "they don't need to spiral, it could be just one continuous sweep, one
+octave leading into the next continuously"). The spiral is a drawing, not the structure: it wraps the turn round a
+centre and draws the reading as the radius. Unwrapped, the turn Θ simply runs on, and the reading is one sweep against
+ln s, every quarter turn an octave, with no break at the joins. Checked for the projective octaves of Proposition 3.12
+(r = 2, 3 and φ): the turn is continuous across every join, and so is its rate per unit of ln s, which is lowest at the
+join, r/(r² − 1) on both sides (⅔ for r = 2), and highest at each corner, (r + 1)/(2(r − 1)) (1.5 for r = 2). So
+one octave leads into the next without a jump or a kink; the projective sweep only runs faster through its corners and
+slower through its joins, which is the wobble W of Proposition 3.13. The logarithmic reading runs at one even rate
+throughout, (π/2)/ln q.
+
 The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
 the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
 from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 between them.
