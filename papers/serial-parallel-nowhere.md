@@ -562,10 +562,37 @@ Where the octaves of v/h fall (checked):
   middle.
 - **Outside it the view is logarithmic.** The octave rings crowd toward the rim, each half as wide as the last, and never
   reach it. That is the horizon.
-- **Both situated readers have this fisheye**, parallel (3) and serial (4). The outside view of a hemisphere, from far
-  off, is the *orthographic* r = sin θ. The fisheye over it is θ/sin θ, the outside measure: 1 at the centre, π/2 at the
-  rim. Its reciprocal, sin θ/θ, falls to 2/π, the inside measure. One reading, Claude's and unruled: the parallel reader
-  takes the disk at once (outside, π/2), and the serial reader takes it one ray at a time (inside, 2/π).
+- **Both readers are situated**, parallel (3) and serial (4), and **the serial reader is the fisheye** (Tom, 6 October:
+  "the serial reader is the fisheye. the parallel reader is the normal curve?"). The outside view of a hemisphere, from
+  far off, is the *orthographic* r = sin θ. The fisheye over it is θ/sin θ, the outside measure: 1 at the centre, π/2 at
+  the rim. Its reciprocal, sin θ/θ, falls to 2/π, the inside measure.
+
+**The parallel reader's bell.** The parallel reader counts every relation at once, each with its share of the turn.
+On the octave axis, x = ln(v/h), the shares make a bell centred on the corner:
+
+  ½·sech x = 1/(v/h + h/v),  with total area ∫ ½·sech x dx = π/2,
+
+which is every relation summed, as above. On the plain axis s = v/h the same bell is 1/(1 + s²): Cauchy's curve, the
+witch of Agnesi. **The bell and the fisheye are one function.** The area under the bell up to a relation is the
+fisheye's radius there, ∫ ½·sech = π/4 + ½·gd(x) = atan(v/h), because the Gudermannian is the running area under sech.
+The serial reader, ray by ray, has the running total, which is the fisheye. The parallel reader, all at once, has every
+share, which is the bell (checked).
+
+It is not the normal curve, and the octaves show the difference. With the same peak and area:
+
+| octave from the corner | the bell, ½·sech | ratio to the last | the normal curve | ratio to the last |
+|---|---|---|---|---|
+| 0, the corner | 0.500 | | 0.500 | |
+| 1 | 0.400 | 1.25 | 0.429 | 1.17 |
+| 2 | 0.235 | 1.70 | 0.271 | 1.58 |
+| 3 | 0.123 | 1.91 | 0.126 | 2.15 |
+| 4 | 0.062 | 1.98 | 0.043 | 2.92 |
+| 6 | 0.0156 | 2.00 | 0.0020 | 5.38 |
+| 8 | 0.0039 | 2.00 | 0.00003 | 9.91 |
+
+Near the corner they look alike. Far out, the sech bell halves every octave, the logarithmic halving, and keeps a share
+in every octave without end. The normal curve falls ever faster, and its far octaves vanish. So the normal curve has no
+horizon, and the parallel reader's bell does.
 
 The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
 the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
