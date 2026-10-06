@@ -1196,6 +1196,66 @@ What rests on what: 3.11–3.13 are proved on the premises named. (R) carries th
 not a theorem: Proposition 3.6 says a reader cannot read its rung, which motivates (R) but does not by itself require
 the address to be the same at every rung. Proposition 3.11 shows what (R) buys.
 
+**Recursion, after the corner** (Tom, 6 October, a summary of what the project found; recorded as given. "Here" and
+"today" are the summary's own; the sources named are the corpus's: the nested fisheye lab, NST, and v-and-h item 387;
+the format paper; the strange tier, STR, §6.4).
+
+> The corner taught that a single sweep can read a shape's breadth: where the corner falls among a reader's arrivals
+> gives back how much the shape is stretched. The next question was what a reader holds once its reading needs more
+> than one sweep. The answer is recursion, and it is a different thing from breadth. Packing more leaves into one sweep
+> is breadth. Depth is the same sweep again, entered over one octave of the reading, with its own home, corner and far
+> wall, and so on down.
+>
+> 1. Every level is the same sweep. Seen from its parent, a child's sweep lies exactly proportioned in each half of its
+>    octave: fully clear at its home, half as clear at its corner, fully clear again at its wall. Every child lies the
+>    same way at every level (the nested fisheye lab).
+> 2. A level holds only what the levels above left. For a shape, the reader's own sweep holds the shape's departure from
+>    the reader's unit circle, and each octave entered holds the residual inside that octave only. Nothing has to be
+>    stored twice, and the format needed no new syntax: one ordinary document per sweep, each with its address.
+> 3. Depth beats breadth. For the same number of values, depth beat breadth alone on 24 of 24 library shapes, by 18× to
+>    about 5×10⁴ (format paper, §2.8). For a reader learning a shape at a distance, the nested reader's error stayed flat
+>    at 0.7% from 4 to 128 steps away, while a single sweep's error grew 23-fold. That second result is recorded in the
+>    lab notes from an earlier Python run, not re-measured here.
+> 4. The cost follows the shape, not the range. Measured here today, entering an octave only where it has something to
+>    hold keeps every library shape within one millionth of its departure using 79 to 244 sweeps instead of 518: the
+>    circle needs 129, the egg 244. Recursion goes where the detail is.
+> 5. For complex shapes, recursion counts hiding, not complexity. When a child reader stands where its parent saw
+>    furthest, the levels needed count how many times the way in turns out of sight, not how intricate the outline is
+>    (the "strange tier" in the editor's readers-within-readers lab). Curls are recovered by a reader inside them.
+>    Spirals past a full turn stay hidden from a single standpoint outside or inside. A chain of readers works its way
+>    out to the mouth and no further.
+>
+> What remains open:
+>
+> - The walls between octaves. Where one side of a wall is entered and the other is not, the surface steps there. A
+>   reading taken exactly on a wall stops short: 1.9% on today's example, where points just beside it miss by a few
+>   millionths.
+> - How amplification grows with depth. It appears to add across levels rather than multiply. The measurements are
+>   consistent with that, but it has not been derived.
+>
+> The short form: a bounded reader holds a complex shape not by looking harder but by looking again, as the same sweep,
+> wherever the last look left something unexplained, and only there.
+
+And, the same day: "this is situation 1 and 2. recursion is not limited to situations 3 and 4" (§2.1, revised).
+
+*Read against 3.11–3.13 and §2.1* (Claude's, unruled):
+
+- *Two causes of one recursion.* These findings are over known shapes, situations 1 and 2: depth follows the shape's
+  detail and stops where nothing is left. Propositions 3.11–3.13 are the recursion a horizon forces, situations 3 and 4,
+  which never stops. Each level is the same sweep either way.
+- *Why a level re-centres.* 3.11 rests on (R), and 3.12 on (P), each level read as a sweep of its own. Points 1 and 2
+  give (P) a measurement and a reason: the child is a whole sweep with its own home, corner and wall, and its home is
+  where the parent stopped explaining. A finite reader facing a horizon must look again past its resolution
+  (`plans/resolution-recursion.md`); the residual says where.
+- *Hiding is the hemisphere.* A sweep covers one side, 0 to π/2, out to the limb (§2.1). Point 5's count of times the
+  way in turns out of sight is a count of limbs passed, one more level for each.
+- *The walls.* Across a join between octaves the turn has no step, and its rate is the same on both sides (§2.1, "One
+  continuous sweep"). So the step on a wall should come from the residual held on one side and not the other, not from
+  the octave map. Untested.
+- *Amplification adding.* Adding across levels is what a logarithmic measure does: chained relations add only under
+  the logarithm (§2.1, "The relation forces the logarithm"). If amplification is counted in octaves or logarithms, that
+  derives the adding. If it is a plain ratio and still adds, it is something else, and worth finding out which.
+
 **Rungs, and the ratio between them** (*The Radix*; R176). The doubling is the reader's ratio between rungs, not the geometry's. *The Radix* §5: the lens
 forces the ladder past the corner to be a ladder of ratios, since a change of radius slides a ladder and can re-space
 only one whose steps are ratios; but it does not fix which ratio. The doublings come from a reader whose ratio between rungs
