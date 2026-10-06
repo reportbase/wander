@@ -603,7 +603,7 @@ intuition for what it might be." An intuition, unruled.) h is not one of the thi
 sweep is relative to, the reader's focus. s = v/h asks where v lies against the focus, which is why scale drops out.
 The corner, v = h, is the thing read sitting at the focus. Before it, v is a fraction of the focus; past it, the focus
 is a fraction of v, and the flip, v/h ↔ h/v, is the read thing crossing the focus while the focus stays put. Changing
-the focus rescales every reading and slides the ladder, and nothing in the world changes (§8). "Focus" here means the
+the focus rescales every reading and slides the ladder, and nothing in the world changes (§3.8). "Focus" here means the
 reader's reference, the magnitude it measures against; it does not mean a place in the world that rays come from.
 
 *A correspondence: the focal length of a lens.* For a thin lens of focal length f, object and image distances u and v
