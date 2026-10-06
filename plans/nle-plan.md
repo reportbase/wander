@@ -112,4 +112,37 @@ or two targets a type lie beyond it (105, 120; 22, 24, 31, 33).
 
 ## Runs
 
-*(none yet: waiting on data)*
+### Run 1: Chan and Mazzocco (2024), 104 kindergartners (6 October)
+
+Data: `NLE_OSF_Public.xlsx` from osf.io/kqe2w (supplied by Tom; not committed here). Converted by
+`python3 plans/nle/chan_mazzocco.py NLE_OSF_Public.xlsx OUT` as fixed above (0–100 lines of both kinds pooled, 14
+in-range targets a child a time; 0–20 likewise, 12), then `python3 plans/nle/nle.py OUT/pre_100.csv --max 100` and the
+same for the others.
+
+| line, time | best by BIC: LIN | LOG | PWR1 | CNR | depart | CNR beats PWR1 | PWR1 beats CNR | CNR beats LOG | median h (IQR) |
+|---|---|---|---|---|---|---|---|---|---|
+| **0–100, Time 1 (the kill)** | 28 | 35 | 37 | 4 | 75 | 35 (47%) | **40 (53%)** | 6 (8%) | 26.8 (3.6–70.4) |
+| 0–100, Time 2 | 28 | 31 | 44 | 1 | 72 | 28 (39%) | 44 (61%) | 5 (7%) | 33.8 (3.3–65.2) |
+| 0–20, Time 1 | 36 | 17 | 51 | 0 | 57 | 9 (16%) | 48 (84%) | 8 (14%) | 11.2 (7.5–19.0) |
+| 0–20, Time 2 | 31 | 22 | 50 | 1 | 65 | 15 (23%) | 50 (77%) | 6 (9%) | 9.3 (4.1–19.0) |
+
+**P1: KILLED.** At Time 1 on 0–100, proportion judgment beats the corner for 40 of the 75 children who depart from a
+straight line. Narrowly (53%), but by the rule fixed before the data. Every other row goes the same way, and more
+clearly: 61% at Time 2, 77–84% on 0–20.
+
+**P1b fails too.** The corner beats a plain logarithm for only 6 of 75 (8%). BIC's charge for the third parameter leans
+against it (the calibration gave 55 of 200 made-up corner children to LOG), but not by this much: where these children's
+placements are compressed, the data shows no front side in proportion, only compression from the start.
+
+**Whose fault.** Not the instrument's, as far as the calibration reaches: it was fair between CNR and PWR1, and its
+leftover bias (straight placers slipping into the head-to-head, and the labelled midpoint inviting anchoring) runs
+against the corner, as declared. Those two biases may account for the narrow margin at Time 1; they do not account for
+P1b, or for the 0–20 rows. Nor the world's: this is a reading of real data. So the candidate fact does not support the
+hypothesis on this dataset: kindergartners' number-line placements are better described by proportion judgment, or by
+a plain logarithm, than by proportion up to a corner and doublings past it.
+
+**What it does not settle.** One dataset, one age (kindergarten), lines with a labelled midpoint on half the trials and
+lines that run on past their end. P2 and P3, the parts that would tie h to the familiar range, could not be tested here
+(no ages per child, no counting ranges). A fairer test of the corner would use lines without a labelled midpoint, older
+children whose familiar range sits inside the line (0–1000 at grades 2–5), and each child's counting range; its
+prediction would be a new run's, written first.

@@ -26,8 +26,8 @@ Claude Code: changes go on a branch, as a PR, and the owner merges. Merging to
 - `plans/`: working notes, reviews and lab plans, as the corpus cites them
   (`plans/…`). `what-deserves-attention.md` is a review of what to take up next
   (6 Oct 2026): a reading, not a ruling. `hrt-plan.md` (the run for the 2: three
-  runs, stopped) and `nle-plan.md` (number lines in people: prediction fixed,
-  waiting on data) follow the lab rules: prediction first, runs recorded as they
+  runs, stopped) and `nle-plan.md` (number lines in people: run 1 on
+  Chan and Mazzocco's kindergartners killed the corner's prediction) follow the lab rules: prediction first, runs recorded as they
   came out, nothing above a plan's "Runs" line edited afterwards.
 
 The repo is public, so the papers can be read on GitHub; the owner is fine with
