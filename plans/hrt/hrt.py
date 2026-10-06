@@ -8,8 +8,10 @@ rays jump outward by more than J, the first grazed a crest and the next landed b
 the reader could not see. A child stands on that crest with h = c * (the stretch's length). The reading is the ratio
 h(parent) / h(child) for every hand-off past the first.
 
-    python3 plans/hrt/hrt.py
+    python3 plans/hrt/hrt.py         run 1: chains of readers, the parent-to-child ratio
+    python3 plans/hrt/hrt.py run2    run 2: single readers, the longest hidden stretch over h, across A and h
 """
+import sys
 import math
 import numpy as np
 
@@ -24,7 +26,7 @@ ROOT_H = [P / 2, P / 3, P / 5]
 CS = [1.0, 0.5, 2.0]
 
 
-def landscape(r, K, seed):
+def landscape(r, K, seed, A=A):
     finest = P / r ** (K - 1)
     dx = finest / 16
     span = HORIZON * 4 * P + 600
@@ -120,5 +122,27 @@ def main():
             print(f'{"":>7} ln(ratio)/ln(r) in half-level bins from 0: {" ".join(str(int(v)) for v in hist)}')
 
 
+def run2():
+    places = np.linspace(-1500, 1500, 20)
+    hs = [P / 16 * 16 ** (i / 4) for i in range(5)]
+    print('Run 2: median of L/h, L the longest stretch a reader cannot see (J = 1.5); rows A, columns h')
+    for name, r, K in SIGNALS:
+        print(f'\nsignal r = {name}')
+        print(f'{"A":>5} ' + ' '.join(f'{"h=" + format(h, "g"):>9}' for h in hs))
+        for amp in (4.0, 8.0, 16.0):
+            cells = []
+            for h in hs:
+                vals = []
+                for seed in SEEDS:
+                    x, y, dx, _ = landscape(r, K, seed, amp)
+                    for px in places:
+                        st = hidden_stretches(read(x, y, dx, int(np.searchsorted(x, px)), h), h)
+                        if st:
+                            vals.append(st[0][0] / h)
+                cells.append(f'{np.median(vals):6.2f}/{len(vals):<2d}' if vals else f'{"none":>9}')
+            print(f'{amp:5g} ' + ' '.join(f'{c:>9}' for c in cells))
+    print('\n(each cell: median L/h / readers with a hidden stretch, of 60)')
+
+
 if __name__ == '__main__':
-    main()
+    run2() if sys.argv[1:] == ['run2'] else main()

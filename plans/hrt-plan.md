@@ -104,3 +104,38 @@ the grid of A and h, the median L/h ranges over more than a factor 1.5 on each s
 
 **Kill.** The prediction is killed, and the 2 is the reader's, if on all three signals the median L/h stays within 10%
 of 2 for every A and h in the grid. Between the two (some cells near 2, others not), undecided; say which cells.
+
+**Run 2 (6 October; `python3 plans/hrt/hrt.py run2`, 21 s).** Median L/h; three seeds × 20 places = 60 readers a cell.
+
+| signal | A | h = 4 | 8 | 16 | 32 | 64 |
+|---|---|---|---|---|---|---|
+| r = 2 | 4 | 2.91 | 6.49 | 3.28 | 0.00 | 0.00 |
+| | 8 | 2.18 | 1.45 | 3.23 | 1.62 | 0.00 |
+| | 16 | 1.86 | 0.96 | 0.73 | 1.73 | 0.81 |
+| r = 3 | 4 | 1.41 | 5.76 | 2.17 | 0.00 | 0.00 |
+| | 8 | 2.69 | 0.58 | 2.74 | 1.07 | 0.00 |
+| | 16 | 1.86 | 1.32 | 0.29 | 1.35 | 0.54 |
+| r = φ | 4 | 2.66 | 15.03 | 4.05 | 0.00 | 0.00 |
+| | 8 | 1.99 | 1.33 | 7.48 | 2.01 | 0.00 |
+| | 16 | 2.16 | 0.99 | 0.73 | 3.73 | 1.00 |
+
+**Not killed: the 2 is the landscape's.** Leaving out the 0.00 cells, the median L/h runs from 0.73 to 6.49 (r = 2), 0.29
+to 5.76 (r = 3) and 0.73 to 15.0 (r = φ): more than a factor 1.5 on every signal, and near 2 only in some cells (A = 8,
+h = 4 on all three). Run 1's roots sat in that corner of the grid, which is where its 2 came from.
+
+**A fault in the set-up, found in this run.** The 0.00 cells are not readings: where the eye is high over a low landscape
+nothing is hidden, and the only "jumps" left are rays near the reader's feet, whose meetings fall one and two ground steps
+away, a factor 2 apart by the grid's spacing alone. The hand-off rule should have asked for a stretch longer than a few
+ground steps. It does not change run 2's verdict (the other cells decide it) and did not touch run 1's chains (only the
+longest stretches were handed off, and a child below the finest period was dropped), but a further run should fix it
+first.
+
+### Where HRT leaves the 2
+
+- R183 is untouched. Neither run tested it: run 1's rule did not nest, and run 2's 2 was the landscape's.
+- The caution written before run 1 stands, and is sharper now. A child rule that hands off what its parent could not
+  see climbs rather than nests, because what a reader cannot see is mostly far and long. A rule that nests has to choose
+  something smaller than the parent (the shortest stretch, or the finest crest spacing), and whatever it chooses sets the
+  ratio. **Which stretch a child takes is a ruling, not a measurement**, and it is Tom's to make before a run 3.
+- The test SPN's own logic asks for, "an independent fact, not built to fit", is outside simulation: the number-line data
+  of `plans/what-deserves-attention.md`, item 4.
