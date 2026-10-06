@@ -47,6 +47,8 @@ Google Fonts load from outside:
   `horizon-recursion.md` (+ `spiral/`): the horizon with no preferred rung forces
   recursion; each octave a quarter turn for any ratio; the reading a logarithmic
   spiral (situations 1–2 the circle, k = 0). In SPN §3.3 as Propositions 3.11–3.13.
+  `wavelets.md` (+ `wavelets/`): the system on one page, and what filters, wavelets
+  and hearing scales already have of it (much), and what the situated view adds.
 
 The repo is public, so the papers can be read on GitHub; the owner is fine with
 that for now (6 Oct 2026) and will decide later where they live. They are still
