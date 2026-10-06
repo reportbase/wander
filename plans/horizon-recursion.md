@@ -47,6 +47,10 @@ and there is no horizon to run on to (R131).
 
 ## Proposition B. Each piece is exactly one quarter turn, the same for every ratio
 
+*Note, 6 October:* SPN §3.3 now also lays the octave in place, as 2h (Tom): a proportional front half, one h, and a
+back half in which the next octave nests, its corners at v/h = 1, 2, 4, …, with no recursion before the reader's own
+corner. The pieces below are laid side by side round their corners instead; see SPN, "The octave as 2h, in place".
+
 *Add (F) and (P). Then the reader's own piece runs from 1/r to r round the corner 1, and on it*
 
   ρ = (r s − 1)/(r − s),    Θ = atan ρ,

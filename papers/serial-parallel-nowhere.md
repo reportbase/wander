@@ -38,7 +38,7 @@ block only puts them in order.*
 | reading | s = v/h on [0, ∞). The flip s ↔ 1/s reads the same relation from the other facing | §1, §3.2 |
 | corner | s = 1, v = h: the flip's one fixed point, 45° | §3 |
 | sweep | the reading as a turn: θ = atan s from 0 to π/2, or g = (2/π)θ from 0 to 1 (R170, "g is the sweep"). One sweep covers one side, out to the limb, and every relation on it; summed, the relations come to π/2 | §2.1, §3.5 |
-| octave | a sweep entered again over one window of ratios, 1/r to r round its own corner, with its own home, corner and far wall. One quarter turn, whatever the ratio r | §3.3, Proposition 3.12 |
+| octave | a sweep entered again, with its own home, corner and far wall. In place, 2h: a front half of one h, proportional, and a back half of one h holding the rest, in which the next octave nests (§3.3, "The octave as 2h, in place"). Laid side by side round its own corner, 1/r to r, it is one quarter turn, whatever the ratio r (Proposition 3.12) | §3.3, Proposition 3.12 |
 | recursion | octaves within octaves: each level the same sweep again | §3.3, Proposition 3.11; "Recursion, after the corner" |
 | depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
 | continuous sweep, spiral | the octaves drawn. Unwrapped, one turn running on, octave into octave with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
@@ -1377,7 +1377,16 @@ the front half is one proportional piece, with no recursion; the octaves begin a
 is half the place left, a step toward the far wall that never arrives (Archimedes' halving; §2.1, "The first octave is
 half the distance"). This is the central result (the corner bisects the octave) read in place, and it is the layout of
 `wander/depth/nest.py` (front ρ = f/½, back ρ = ½/(1 − f)). The halves are equal in place although the back holds all of
-1 to ∞; Proposition 3.12's map still gives each nested octave its quarter turn.
+1 to ∞.
+
+*Nested, not side by side* (checked). The next octave is the parent's back half read as an octave of its own, its home
+at the parent's corner and its own corner at the parent's v/h = 2. Its reading s′ against the parent's s is exact on
+both halves: past its corner s′ = s/2, the parent's reading scaled by one doubling, which is (R) with q = 2, holding
+exactly; before its corner s′ = 2 − 2/s, taking the parent's 1 to 2 onto 0 to 1. So the octaves nest, each inside the
+last one's back half, with corners at v/h = 1, 2, 4, 8, …; their front halves, 0–1, 1–2, 2–4, …, are the pieces that lie
+side by side. Propositions 3.11 and 3.12 lay octaves side by side, each round its own corner (1/r to r); here the
+side-by-side pieces are front halves, each ending at a corner. Both give one doubling per level, exactly scaled past
+the corner; how 3.12's quarter turn is shared between a nested octave's two halves is left for a later pass.
 
 **Proposition 3.12 (each octave is one quarter turn, for every ratio).** Add (F) and (P). The reader's own piece runs
 from 1/r to r round the corner, and on it ρ = (rs − 1)/(r − s) and Θ = atan ρ, uniquely: the edges at 0° and 90°, the
