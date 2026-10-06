@@ -22,7 +22,10 @@ Claude Code: changes go on a branch, as a PR, and the owner merges. Merging to
   in the corpus before the rewrite are the record's; SPN's opening note maps them to
   the current ones. The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
-  keeps `papers/` off the Pages site.
+  keeps `papers/` and `plans/` off the Pages site.
+- `plans/`: working notes, reviews and lab plans, as the corpus cites them
+  (`plans/…`). `what-deserves-attention.md` is a review of what to take up next
+  (6 Oct 2026): a reading, not a ruling.
 
 The repo is private (since 6 Oct 2026); the papers are not for the public site.
 
