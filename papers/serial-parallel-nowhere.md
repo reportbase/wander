@@ -343,7 +343,9 @@ its sides. The **vanishing point** is where distance collapses, straight ahead; 
 ahead reads 0, not ∞.
 
 The reading, its marks and the division that makes it belong to the situated reader only. The view from nowhere does
-not divide: there h and v are each read relative to the other, and there is no home, corner or horizon of any kind (R131).
+not divide: there h and v are each read relative to the other, and there is no home or horizon of any kind (R131). It
+does have a corner, v = h at 45°, computed from the known breadths and arrived at exactly, not found by a reader
+(Tom, 6 October: 1 and 2 "have a corner, … you can arrive at the corner, it is algorithmic, they have no horizon however, h and v are known").
 
 **What observation from somewhere consists of** (R125). The view from nowhere has x, y and z, three orthogonal
 dimensions, any of which a rotation turns into another. Observation from somewhere is not built that way and is not a
@@ -527,7 +529,9 @@ So the first cut is whether v is known. Known (with h): situation 1 if the bread
 3 or 4. **Situations 1 and 2 do have a corner**, at 45°, but it is computed from the known breadths, not found by a
 reader; in 3 and 4 the reader finds it with h alone (Proposition 3.1). This revises the earlier "no home, corner, sweep
 or horizon of any kind" for situations 1 and 2 (R131; the paragraph on situation 1 above) as to the corner; they still
-have no horizon.
+have no horizon. Tom again, the same evening: "1 and 2 have a corner, that you can arrive at the corner, it is algorithmic, they have
+no horizon however, h and v are known." The places in the paper that said otherwise now say so (§1, §3.2, §3.3, §3.5,
+Part II).
 
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
 
@@ -1122,7 +1126,8 @@ not a proof that every wave's near/far boundary sits at the corner: large openin
 sizes of their own and are not checked.
 
 **Why it looks like a different mathematics.** The expectation that the far field continues the near is the view from
-nowhere's: with both breadths known there is no corner, and one geometry runs on unchanged. Carried into a view from
+nowhere's: with both breadths known the corner is computed, not met as an inversion, and one geometry runs on
+unchanged. Carried into a view from
 somewhere, where the unit is known on one side only, that expectation meets the inversion and reads it as a break. The
 mathematics does not change at the corner; what is measured against changes, from the known h to the unknown v, and the
 same structure is read the other way round. Expressed in the reader's own unit, h, the inverted reading is the count of
@@ -1256,7 +1261,8 @@ h; that reading is coarse near home, losing what is finer than h/n for n address
 **Every octave is a sweep** (R172). *Tom, 3 October 20:20, on a note from another session, "Every octave is a sweep:
 breadth is additive, density is recursive": "my previous comments were just speculative exploration. I think the current
 insight is closer to the truth."* This revises R167's corners at ½h and 2h, and states in full what R163's "proportional
-again" approximated. Situation 3 or 4 only: situations 1 and 2 have no home, corner, division or horizon of any kind (R131, R139).
+again" approximated. Situation 3 or 4 only: situations 1 and 2 have no home, division or horizon of any kind (R131, R139); their corner is
+computed from the known breadths and arrived at exactly, with no octaves past it to nest (Tom, 6 October: 1 and 2 "have a corner, … you can arrive at the corner, it is algorithmic, they have no horizon however, h and v are known").
 
 - *The unit is the octave with two facings*, ½c to 2c round a corner c: its front half reads v in terms of c, its back
   half c in terms of v. The reader's own is ½h to 2h, round the corner. ½h and 2h are its edges, where its own reading
@@ -1677,7 +1683,7 @@ reader evaluates. Going back from s to g is arctan, the shortcut (R148); the swe
 
 **Depth as the recursion** (R180, 4 Oct; situation 3 or 4 only). Depth is how many octaves in a thing is: the count of nested sweeps between a reader and it, each octave holding the same sweep again with its own corner (R172, R175). It is not a direction at right angles to breadth. Shown in the game *Launch from Somewhere*, and with shapes on 5 October: depth held in nested octaves (SIT) and readers nested inside readers (NST, STR), §6.4.
 
-**Sweeping and indexing** (R179, 4 Oct). The view from nowhere indexes: it is the x, y grid, its breadth known and divided evenly, every place reached by an index, with no home, corner or horizon; the uniform unit circle is the same view held as h relative to v. The view from somewhere sweeps: breadth and depth, from home, step by step. A grid point and a sweep record are the same point, turned one into the other by the bar's own h and v (LIN); they part only where depth folds (OCC).
+**Sweeping and indexing** (R179, 4 Oct). The view from nowhere indexes: it is the x, y grid, its breadth known and divided evenly, every place reached by an index, with no home or horizon, and its corner computed rather than found; the uniform unit circle is the same view held as h relative to v. The view from somewhere sweeps: breadth and depth, from home, step by step. A grid point and a sweep record are the same point, turned one into the other by the bar's own h and v (LIN); they part only where depth folds (OCC).
 
 **The chord and the arc** (R178, 4 Oct). Take two points and the chord between them, of length 1. The chord joins them
 directly: all of it is there at once, fully expressed, with no turn, so on the sweep it is g = 0 and g = 1 together. That
@@ -1754,7 +1760,7 @@ the front side is the span actually swept and seen, with the corner at its edge.
 
 So situation 3 or 4 is a **hybrid** (R150): before the corner it behaves like situation 2, a span with two known ends read in
 plain proportion; past the corner it adds what situation 2 has not, a back side with no end, counted by doublings.
-Situation 2 itself still has no home, corner or sides (R139); "like situation 2" says only that the front side has known
+Situation 2 itself still has no home or sides (R139), and its corner is computed, not found (§2.1); "like situation 2" says only that the front side has known
 ends.
 
 ### 3.7 The corner is the near horizon
@@ -2033,7 +2039,8 @@ and, since 6 October, in where they stand: the parallel reader outside, the seri
   time. Past the corner what it holds is the count of doublings.
 
 A third view, **the view from nowhere**, has no standpoint (R127): the circle and every other shape, read uniformly, with
-no home, corner, division or horizon of any kind (R131) and no front or back (R139). It holds what lies behind a situated reader and
+no home, division or horizon of any kind (R131) and no front or back (R139); its corner is computed from the known
+breadths, arrived at exactly (Tom, 6 October: 1 and 2 "have a corner, … you can arrive at the corner, it is algorithmic, they have no horizon however, h and v are known"). It holds what lies behind a situated reader and
 what blocking withholds (R90). The simulations need one to run at all, a game loop holding positions (R83); the readers
 never use it, the scoring does, and §9.5 builds a reader without it. The phrase is Nagel's (1986); here it names a
 geometric role.
@@ -2143,7 +2150,7 @@ the map), and classical single-camera mapping has the same single-factor ambigui
 ### 4.5 Closure has no landmarks
 
 **R154.** Closure, a horizontal bar of 1 sweeping to a vertical bar of 1 and on round, four sweeps, has both breadths
-known and equal: situation 1, with no home, corner, division or landmarks. Landmarks belong to situation 3 or 4 only. In
+known and equal: situation 1, with no home, division or landmarks, and a corner computed rather than found. Landmarks belong to situation 3 or 4 only. In
 situation 3 or 4 the same single sweep, from home to the corner, is the front side.
 
 ### 4.6 What the older papers give the corner
@@ -3107,7 +3114,7 @@ and what is left. Condensed:
 | its frame is a carry, and drifts | serial | a reading of something far; closing a loop | 7.7° → 0.05°; map 2.9 → 1.2 (203) |
 | the sway needs motion | serial | nearness beyond D1 | (175) |
 | no number of readers climbs a rung | company | the reader's own lay or nearness; a far reading | R86 |
-| no standpoint (no home, corner or sweep; shapes differ from the circle by the mix, R140) | view from nowhere | readers supply the standpoint | R127, R140 |
+| no standpoint (no home or horizon, the corner computed; shapes differ from the circle by the mix, R140) | view from nowhere | readers supply the standpoint | R127, R140 |
 | its *now* does not exist in reality | view from nowhere | a beat read off a shared moving landmark | (169) |
 | its unit is chosen | view from nowhere | readers agree on something all read | 34% → 0.85% (214) |
 
