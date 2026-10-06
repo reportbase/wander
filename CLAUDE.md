@@ -44,6 +44,24 @@ Google Fonts load from outside:
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far
   laws are fair to the facings (shares of a two-part split are; components are not).
+  `horizon-recursion.md` (+ `spiral/`): the horizon with no preferred rung forces
+  recursion; each octave a quarter turn for any ratio; the reading a logarithmic
+  spiral (situations 1–2 the circle, k = 0). In SPN §3.3 as Propositions 3.11–3.13.
+  `wavelets.md` (+ `wavelets/`): the system on one page, and what filters, wavelets
+  and hearing scales already have of it (much), and what the situated view adds.
+  `resolution-recursion.md` (+ `spiral/resolution.py`): a reader of finite resolution
+  facing a horizon must zoom without end, and far out every zoom is alike ((R) from the
+  fisheye's tail); the quarter turn per level is still a premise. Unruled.
+  `standpoint-axis.md` (+ `standpoint/`): a second axis, the standpoint (nowhere,
+  outside, inside) beside the breadths known; the hemisphere observer as outside with
+  the breadths known. Superseded by Tom's situations list 0–4 (SPN §2.1).
+
+SPN's situations, since 6 Oct 2026 (Tom): 0 nothing known; 1 the circle; 2 shapes;
+3 parallel, one hemisphere counted (outside); 4 serial, one point at a time
+(inside); 3 and 4 possibly approximate. Older text uses the old numbers (its
+"situation 3" is 3 and 4); SPN §2.1 has the mapping. Keep to the core: the sweep
+(any two points; 0 to π/2 as a turn, 0 to 1 as distance), the 90° turn, the
+octave, the logarithmic spiral.
 
 The repo is public, so the papers can be read on GitHub; the owner is fine with
 that for now (6 Oct 2026) and will decide later where they live. They are still

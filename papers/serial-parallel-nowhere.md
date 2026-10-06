@@ -10,7 +10,7 @@
 > Near and far are one geometry, read from either side.
 
 *Tom Brinkman, with Claude. Working paper. Rewritten 1 October 2026 around the rulings of that evening (R153–R158); revised 2 October to foreground the inversion at the corner as the main contribution (§3.2, R161), and again that
-morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C).*
+morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the situations restated on the sweep alone (§2.1, Tom's list 0–4) and the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 has a horizon and recursion where situations 1 and 2 have neither.*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -322,6 +322,299 @@ somewhere (R139) and the only situation with a reader in it; serial and parallel
 Everything particular to it follows from that one difference (R146): the division, the three landmarks, the two sides,
 the Cauchy (once the lay is even in direction), no normalising, and g, its sweep. §3 is about what that difference does at the corner.
 
+*Situations 1 and 2 against 3, drawn* (6 October; §3.3, Proposition 3.13; Claude's, unruled). Drawn with the turn as
+the angle and the reading as the radius, situation 3's reading is a logarithmic spiral, growing by the same factor each
+quarter turn, and situations 1 and 2 are the circle, the spiral that does not grow (k = 0): no horizon, and nothing to
+recurse on. Tom, 6 October: "situation 1 and 2, is uniform, no horizon, no recursion. situation 3 has a horizon and has
+reccursion."
+
+*Revised, 6 October* (Tom, later the same day: "this is situation 1 and 2. recursion is not limited to situations 3 and
+4", of the project's findings on recursion over shapes). Situations 1 and 2 recurse too. The nested readers over a known
+shape hold, level by level, the residual the levels above left: one sweep for the shape's departure from the reader's
+unit circle, and then an octave entered only where something is left (the nested fisheye lab, NST; v-and-h item 387;
+the format paper's depth, §2.8; the strange tier, STR). That is recursion with the shape known. What situations 1 and 2
+lack is the horizon, and so the recursion a horizon forces. A reading from Claude, unruled: two causes of the same
+recursion. **On a known shape (1, 2), depth follows the shape's detail and stops where nothing is left. Facing a horizon
+(3, 4), depth is forced, and never stops.** Either way each level is the same sweep, with its own home, corner and wall.
+"The circle, k = 0" above describes how the reading grows per turn, not whether it recurses.
+
+**The situations restated, on the sweep alone** (Tom, 6 October; recorded here as given, and read against the table
+above, which is kept as written).
+
+> "0 - no equation or information is known. 1 - syemtrical equation is known (circle). 2- asymetrical equation is
+> known (shapes). 3. parallel sitution you can count one hemispher (outside). 4. serial situation. you can project one
+> point a time (inside). both 3 and 4 can be known approximately"
+>
+> "lets keep it simple to the octave and the sweep and the 90 turn and the logrithmic spiral only. those all compose
+> to larger shapes, but its not needed to understand the situation. the sweep is from 0 to PI/2 if you include the
+> radial turn, or 1 if its just the pure distance. So any two points A and B can be regarded as a sweep."
+
+| now | what is known | the table above |
+|---|---|---|
+| 0 | nothing: no equation, no information | situation 4 (impossible) |
+| 1 | a symmetric equation: the circle | situation 1 |
+| 2 | an asymmetric equation: shapes | situation 2 |
+| 3 | parallel: one hemisphere counted at once (outside) | situation 3, its parallel reader |
+| 4 | serial: one point projected at a time (inside) | situation 3, its serial reader |
+| 3 or 4, approximately | either, known only within bounds | situation 5 |
+
+This supersedes R152's "it would be situation 3, along with serial": parallel and serial readers now stand in
+situations of their own, outside and inside. Text written before 6 October keeps the old numbers; read it through this
+table (its "situation 3" is 3 and 4 here, and Propositions 3.11–3.13's "situation 3" likewise).
+
+**The core, in four terms.** *The sweep*: any two points A and B, from 0 to π/2 as a turn (with the radial turn) or
+from 0 to 1 as pure distance. *The 90° turn*: one sweep is one quarter turn. *The octave*: a sweep; every octave the
+same sweep again (Proposition 3.12). *The logarithmic spiral*: sweeps composed one after another (Proposition 3.13).
+Larger shapes compose from these and are not needed to understand the situations.
+
+**Known breadths, and the corner** (Tom, 6 October):
+
+> "when v and h are known, it is situation 1 or 2, depending on if they are equal or not. there is a corner here, but
+> its 45 degrees and known algrothimcally, if v is not know, it is either situation 3 or 4."
+
+So the first cut is whether v is known. Known (with h): situation 1 if the breadths are equal, 2 if not. Not known:
+3 or 4. **Situations 1 and 2 do have a corner**, at 45°, but it is computed from the known breadths, not found by a
+reader; in 3 and 4 the reader finds it with h alone (Proposition 3.1). This revises the earlier "no home, corner, sweep
+or horizon of any kind" for situations 1 and 2 (R131; the paragraph on situation 1 above) as to the corner; they still
+have no horizon.
+
+**The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
+
+> "3 and 4 can approach the corner but never arrive there. both have horizons, one from the outside 0 to PI/2 and from
+> the inside at 0 to 2/PI." Asked which, "lets let the math tell us whats going on here", and then: "good, yes, outside
+> means approaching 1 from above, inside means approaching 1 from below, neither ever get there, that is the horizon.
+> corner is important because v and h, in situation 1 and 2, its can be calculated exactly. but in situations 3 and 4,
+> because inside and outside never arraive, they never find the true corner."
+
+What the math gives (`plans/spiral/approach.py`). A sweep turned through θ has two situated measures against the
+line: outside counts the turn, arc ÷ line = θ/sin θ; inside projects it, line ÷ arc = sin θ/θ.
+
+| turned through | outside, θ/sin θ | inside, sin θ/θ | product |
+|---|---|---|---|
+| almost 0° | 1.0000 | 1.0000 | 1 |
+| 15° | 1.0115 | 0.9886 | 1 |
+| 45° | 1.1107 | 0.9003 | 1 |
+| 75° | 1.3552 | 0.7379 | 1 |
+| 90° | 1.5708 = π/2 | 0.6366 = 2/π | 1 |
+
+The two are reciprocal at every turn, not only at the end. Outside lies above 1 and rises to π/2; inside lies below 1
+and falls to 2/π. Both tend to 1 as the turn shrinks, and neither reaches it while there is any turn: 1 is the line,
+pure distance, held only where the breadths are known. **That is the situated reader's horizon.** And since a
+situated reader measures by turning, its v is never the line's v: **in situations 3 and 4 the true corner, v = h, is
+approached but never found; only in 1 and 2, with both breadths known, is it calculated exactly.**
+
+**Why the recursion: the approach to the line** (Tom, 6 October):
+
+> "so 1 and 2 observe the line, the actual breadth, situations [3 and 4] are forced to approach the line, but never get
+> there, thats where the recursion and the octals come in." Then, on Archimedes: "yes, it does seem like archimedes
+> proof. just described differently."
+
+(The bracket is Claude's: the message reads "2 and 3", and the sense is the situated readers.)
+
+This is the recursion a horizon forces. Situations 1 and 2 recurse on a known shape's residual instead (revised above,
+after the situations table).
+
+Halve the sweep and each half turns less, so its arc and its line come closer; halve again and closer still
+(`plans/spiral/approach.py`):
+
+| pieces | each turns | outside, θ/sin θ | inside, sin θ/θ | gap from 1 shrinks |
+|---|---|---|---|---|
+| 1 | 90° | 1.5708 | 0.6366 | |
+| 2 | 45° | 1.1107 | 0.9003 | ×5.2 |
+| 4 | 22.5° | 1.0262 | 0.9745 | ×4.2 |
+| 8 | 11.25° | 1.0065 | 0.9936 | ×4.05 |
+| 64 | 1.41° | 1.0001 | 0.9999 | ×4.00 |
+
+Each level of the recursion, one more octave in, brings both measures four times closer to the line, and no level
+reaches it. So the octaves are the steps by which a situated reader closes on the breadth it cannot hold, and the line,
+1, is the limit they head for: the horizon. Situations 1 and 2 hold the line; 3 and 4 approach it, recursively.
+
+This is Archimedes' method for π (*Measurement of a Circle*), described differently: a polygon inside the circle from
+below and one outside it from above, the sides doubled at each step, 6, 12, 24, 48, 96, π squeezed between 3.1410 and
+3.1427 and never reached. Inside from below, outside from above, doubling as the recursion, the true value a horizon.
+(His outer polygon goes as tan θ/θ, the outside measure here as θ/sin θ; both lie above 1 and close at the same rate.)
+
+**π/2 and 2/π, with 1 between them** (Tom, 6 October):
+
+> "parallel is pi/2 and serial is 2/PI. serial*parallel = 1. parallel 1.5, line = 1, serial = 0.633"
+>
+> "lets include 2/PI and pi/2 in this simplified framing. notice that this includes the radial turn. and 1 is
+> midpoint between them. the corner is also 1, where v = h. so a relation between two things automatically shoots you
+> into a radial system of measurement."
+
+Measured against the line (1), the sweep with its radial turn gives two numbers, each the other's reciprocal:
+
+- **π/2 = 1.5708, parallel**: the quarter turn's arc against the line, the sweep counted whole.
+- **2/π = 0.6366, serial**: the arc projected onto the line one point at a time, the mean of sin θ over the quarter
+  turn (Buffon's needle; the Cauchy–Crofton formula).
+- **1, the line, between them**: their product is 1, so on the logarithmic scale, the sweep's own measure, 1 is exactly
+  their middle (ln π/2 = +0.452, ln 2/π = −0.452). It is the flip s ↦ 1/s once more, parallel and serial its two facings.
+
+**π/2 is every relation, summed** (Tom, 6 October: "PI/2 is also the sum of all the ways v and h can be related.").
+Every relation v/h is a ratio s on [0, ∞), and each takes a share of the turn, ds/(1 + s²); summed over all of them,
+∫₀^∞ ds/(1 + s²) = π/2. The share is the same for s and for 1/s, so the corner halves the total exactly: π/4 for the
+front side (Leibniz's 1 − ⅓ + ⅕ − …, §3.2) and π/4 for the back side, whose octaves give 18.4°, 12.5°, 6.9°, 3.6°, … and
+sum to 45°. Counting the hemisphere at once, the parallel reader counts every relation at once: π/2.
+
+**The first octave is half the distance** (Tom, 6 October: "first octive is 1/2 the distance, which is the same as
+saying v/h=1"; and "octives and logrithmic spirals are the same thing"). Read the sweep from A to B as distance: a point
+a share t of the way splits it into v = t and h = 1 − t, so v/h = t/(1 − t). At t = ½, v = h: the corner, 45°, and the
+one point within the sweep where the share of distance and the share of turn agree (both ½). Halving again toward
+either end, t = ¼, ⅛, 1/16, …, gives v/h = 1/3, 1/7, 1/15, …: each step doubles the whole over the part, (v + h)/v = 2,
+4, 8, 16, …, so each is an octave. The two measures part from the second octave on, and the share of distance over the
+share of turn climbs from 1 toward π/2 without arriving (checked; `plans/spiral/approach.py` has the like tables):
+
+| octave | share of distance t | v/h | (v + h)/v | turn | share of turn g | t/g |
+|---|---|---|---|---|---|---|
+| 1 | ½ | 1 | 2 | 45° | 0.500 | 1 |
+| 2 | ¼ | 0.333 | 4 | 18.4° | 0.205 | 1.22 |
+| 3 | ⅛ | 0.143 | 8 | 8.1° | 0.090 | 1.38 |
+| 4 | 1/16 | 0.067 | 16 | 3.8° | 0.042 | 1.47 |
+| 6 | 1/64 | 0.016 | 64 | 0.9° | 0.010 | 1.55 |
+| 8 | 1/256 | 0.004 | 256 | 0.2° | 0.0025 | 1.56 |
+| deeper | → 0 | | | | | → π/2 |
+
+Read as the whole sweep, the octaves get less and less of the turn. Read each as a sweep of its own, as §3.3 does
+(Proposition 3.11), each gets one quarter turn, and the distance halves at every quarter: t = 2⁻ⁿ at Θ = n·π/2. That is a
+logarithmic spiral, here with q = 2 and k = ln 2/(π/2) ≈ 0.441. So the octave and the logarithmic spiral are one thing:
+an octave is a quarter turn of the spiral, and the spiral is the octaves drawn (Proposition 3.13). The ratio per octave
+sets the pitch; the quarter turn is the same for every ratio (Proposition 3.12).
+
+**One continuous sweep** (Tom, 6 October: "they don't need to spiral, it could be just one continuous sweep, one
+octave leading into the next continuously"). The spiral is a drawing, not the structure: it wraps the turn round a
+centre and draws the reading as the radius. Unwrapped, the turn Θ simply runs on, and the reading is one sweep against
+ln s, every quarter turn an octave, with no break at the joins. Checked for the projective octaves of Proposition 3.12
+(r = 2, 3 and φ): the turn is continuous across every join, and so is its rate per unit of ln s, which is lowest at the
+join, r/(r² − 1) on both sides (⅔ for r = 2), and highest at each corner, (r + 1)/(2(r − 1)) (1.5 for r = 2). So
+one octave leads into the next without a jump or a kink; the projective sweep only runs faster through its corners and
+slower through its joins, which is the wobble W of Proposition 3.13. The logarithmic reading runs at one even rate
+throughout, (π/2)/ln q.
+
+**A sweep is one hemisphere, not the whole** (Tom, 6 October: "a sweep does not sweep the full system, it sweeps 0 to
+π/2, which is the outside hemisphere view"). Measured from the point facing the reader, the angle across a thing runs
+from 0 there to π/2 at its edge, the limb. So 0 to π/2 covers the half that faces the reader and stops at the limb. The
+whole would run on to π, and the half past the limb is never swept. Every relation v/h on [0, ∞) fits in this one
+quarter turn, and their sum is π/2, as above. So "every relation" means every relation that can be seen from one side.
+This is where the outside measure comes from. The arc from the facing point to angle θ is θ, while the reader sees its
+projection, sin θ. Arc over projection, θ/sin θ, rises from 1 at the facing point to π/2 at the limb: the visible
+quarter's arc, π/2, over its projected half-width, 1. The inside measure is the reciprocal, sin θ/θ, which falls to 2/π.
+So π/2 is the whole visible hemisphere, foreshortened; it is not the whole system. Situations 1 and 2, holding the
+equation, have the whole. Situations 3 and 4 have one sweep, one side.
+
+**The sweep is furthest from the line at the corner** (Tom, 6 October: "the sweep sweeps over every possible way h and v
+can relate to one another and that sums to 1.57. When is that sweep furthest from the line?"). The line is the straight
+chord from A to B. Along it the split v/h also runs through every relation, from 0 to ∞, and each takes a share of the
+distance, ds/(1 + s)². Summed, ∫₀^∞ ds/(1 + s)² = 1. Along the sweep the same relations sum to π/2. The excess, π/2 − 1 ≈
+0.571, is what turning adds to going straight. Where it lies (checked):
+
+| angle | the arc's distance off the line | the sweep's rate over the line's, (1 + s)²/(1 + s²) |
+|---|---|---|
+| 0° (h alone) | 0 | 1 |
+| 15° | 0.159 | 1.5 |
+| 30° | 0.259 | 1.87 |
+| 45° (v = h) | 1 − 1/√2 ≈ 0.293 | 2 |
+| 60° | 0.259 | 1.87 |
+| 75° | 0.159 | 1.5 |
+| 90° (v alone) | 0 | 1 |
+
+At the ends, where one breadth dominates, the sweep and the line agree. At the corner they are furthest apart: the arc
+stands furthest off the line there, and the sweep runs twice the line's rate. The excess lies mostly about the corner,
+54% of it within the octave from ½ to 2 and 97% within 1/10 to 10. So the corner is where a relation is most a turn
+and least a distance. By symmetry, half the turn still meets half the line there; their shares part most off the
+corner, by 0.045 of the whole near 17° and near 73°.
+
+**The relation forces the logarithm** (Tom, 6 October: "it would be nice if the v and h relation shows the forcing of the
+logarithms"). Three steps, each from v and h alone (checked):
+
+1. *Relations chain by multiplying.* Through any middle breadth m, v/h = (v/m)·(m/h). A measure of relations in which
+   chained relations add, f(ab) = f(a) + f(b), and which grows with the relation, can only be f = k·ln: Cauchy's
+   equation. So every doubling adds the same amount, which makes the octaves equal. The turn is not such a measure: atan(ab) is
+   not atan a + atan b, so the bounded sweep gives the octaves unequal shares, as the table above shows.
+2. *Two ways to hold a relation, two sweeps.* Draw the relation as the point (h, v) and measure it by twice the area its
+   ray sweeps from the corner. Hold the whole, v² + h² = 1 (the circle), and the sweep is the turn: bounded, π/2 in all.
+   Hold the corner, v·h = 1 (the hyperbola, through (1, 1)), and the sweep is ln(v/h): unbounded both ways, a horizon on
+   each side, and every octave sweeps the same area, ln 2. Scaling the relation by c, (h, v) ↦ (h/√c, √c·v), slides
+   along the hyperbola and keeps areas, so no rung is preferred, (R) exactly. The logarithm was first found this way, as
+   the area under the hyperbola (Saint-Vincent 1647). The circle gives π/2 (Archimedes); the hyperbola gives the
+   logarithm.
+3. *The two sweeps are one sweep, squeezed.* The turn read against ln s is atan s = π/4 + ½·gd(ln s), with gd the
+   Gudermannian, gd(x) = atan(sinh x). It carries the whole unbounded logarithm into the one quarter turn, near-even at
+   the corner and squeezed without end toward the edges: the same squeeze as Mercator's map toward the poles. So the
+   bounded sweep is the logarithm seen whole from one side, and the logarithm is the sweep unbounded. Far from the
+   corner the squeeze becomes a plain halving: the turn per octave falls 18.4°, 12.5°, 6.9°, 3.5°, 1.8°, …, by a ratio
+   that tends to 2, and the sweep's excess over the line falls by a ratio that tends to 4, Archimedes' ratio.
+
+In short: with the whole held, the relation gives the circle and π/2 (situations 1 and 2). With only the corner held,
+and no rung preferred, it gives the hyperbola and the logarithm, and so the octaves and the spiral (situations 3 and 4).
+That last pairing is Claude's reading, unruled.
+
+**The situated reader's fisheye** (Tom, 6 October: "the situated reader does not need to bother, he just has his
+fisheye view of the system. What is the shape of the fisheye?"; and "both the parallel and serial readers are
+situated"). The reader computes no logarithm, because its view does the squeeze. The fisheye is the sweep: a disk whose
+radius is the turn, r = θ, with straight ahead at the centre, 0, and the horizon at the rim, π/2. This is the
+*equidistant* fisheye. A pinhole view puts a direction at r = tan θ = v/h, which runs to infinity at the horizon. The
+fisheye folds that plane into the disk by r = atan(v/h) = π/4 + ½·gd(ln v/h), so the logarithm comes with the view.
+Where the octaves of v/h fall (checked):
+
+| v/h | ring | width of the octave's ring |
+|---|---|---|
+| 1/32 | 1.8° | |
+| 1/16 | 3.6° | 1.8° |
+| 1/8 | 7.1° | 3.6° |
+| 1/4 | 14.0° | 6.9° |
+| 1/2 | 26.6° | 12.5° |
+| 1, the corner | 45°, halfway out | 18.4° |
+| 2 | 63.4° | 18.4° |
+| 4 | 76.0° | 12.5° |
+| 8 | 82.9° | 6.9° |
+| 16 | 86.4° | 3.6° |
+| 32 | 88.2° | 1.8° |
+
+- **The corner is the ring halfway out**, and the flip mirrors the disk about it, θ ↔ π/2 − θ.
+- **Inside the corner ring the view is proportional.** Near the centre r ≈ v/h, and the octave rings halve toward the
+  middle.
+- **Outside it the view is logarithmic.** The octave rings crowd toward the rim, each half as wide as the last, and never
+  reach it. That is the horizon.
+- **Both readers are situated**, parallel (3) and serial (4), and **the serial reader is the fisheye** (Tom, 6 October:
+  "the serial reader is the fisheye. the parallel reader is the normal curve?"). The outside view of a hemisphere, from
+  far off, is the *orthographic* r = sin θ. The fisheye over it is θ/sin θ, the outside measure: 1 at the centre, π/2 at
+  the rim. Its reciprocal, sin θ/θ, falls to 2/π, the inside measure.
+
+**The parallel reader's bell.** The parallel reader counts every relation at once, each with its share of the turn.
+On the octave axis, x = ln(v/h), the shares make a bell centred on the corner:
+
+  ½·sech x = 1/(v/h + h/v),  with total area ∫ ½·sech x dx = π/2,
+
+which is every relation summed, as above. On the plain axis s = v/h the same bell is 1/(1 + s²): Cauchy's curve, the
+witch of Agnesi. **The bell and the fisheye are one function.** The area under the bell up to a relation is the
+fisheye's radius there, ∫ ½·sech = π/4 + ½·gd(x) = atan(v/h), because the Gudermannian is the running area under sech.
+The serial reader, ray by ray, has the running total, which is the fisheye. The parallel reader, all at once, has every
+share, which is the bell (checked).
+
+It is not the normal curve, and the octaves show the difference. With the same peak and area:
+
+| octave from the corner | the bell, ½·sech | ratio to the last | the normal curve | ratio to the last |
+|---|---|---|---|---|
+| 0, the corner | 0.500 | | 0.500 | |
+| 1 | 0.400 | 1.25 | 0.429 | 1.17 |
+| 2 | 0.235 | 1.70 | 0.271 | 1.58 |
+| 3 | 0.123 | 1.91 | 0.126 | 2.15 |
+| 4 | 0.062 | 1.98 | 0.043 | 2.92 |
+| 6 | 0.0156 | 2.00 | 0.0020 | 5.38 |
+| 8 | 0.0039 | 2.00 | 0.00003 | 9.91 |
+
+Near the corner they look alike. Far out, the sech bell halves every octave, the logarithmic halving, and keeps a share
+in every octave without end. The normal curve falls ever faster, and its far octaves vanish. So the normal curve has no
+horizon, and the parallel reader's bell does.
+
+The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
+the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
+from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 between them.
+
+*A reading* (Claude's, unruled): the radial turn needs a pivot to turn about, a standpoint, and pure distance does not.
+So the sweep as a turn (0 to π/2) is the situated reader's (3, 4), and the sweep as distance (0 to 1) is the line the
+equations of 1 and 2 hold whole.
+
 **Situation 4, impossible.** Neither breadth known: nothing to count in and no home to lay from (R137). Impossible for a
 reader as defined here, which needs a known side to take its ratio from; it is not a claim about what else might be
 learned with neither breadth known.
@@ -471,6 +764,12 @@ side, point for point, and back. (3) s = 1/s with s > 0 gives s² = 1, so s = 1:
 fixes. (4) A sweep from home grows continuously from 0, so it reaches 1 before it can pass it; every sweep from home to
 the mathematical horizon passes through the corner. (5) s = 1 is v = h, a direct comparison of v with the known h: it needs neither
 v's breadth nor an outside unit, and scaling v and h together leaves it where it is. ∎
+
+*Revised* (Tom, 6 October; §2.1, "The horizon of a situated reader"). The proposition holds of the relation: the corner
+is the swap's one fixed point, and s passes through 1. What a reader can do with it depends on the situation. With both
+breadths known (situations 1 and 2) the corner is calculated exactly. A situated reader (3 and 4) measures by turning,
+outside from above 1 and inside from below, and never reaches the line, so it approaches the true corner and never finds
+it: "found with h alone" holds as a limit, not exactly.
 
 On the front side v is a proper part of the known whole (v < h); on the back side the unknown side is the larger
 (v > h). "Proper and improper fractions" is this proposition's reading of the two sides (the naming is Claude's,
@@ -823,6 +1122,140 @@ Checked numerically: the map sends ½c, c, 2c to 0, 1, ∞; ρ(1/s)·ρ(s) = 1 t
 exactly (about 10⁻¹⁶), always increasing; the address of 1.37h as given. (Pages: `demos/breadth-and-density.html` and
 `demos/octave-browser.html` in the calendar repository.)
 
+**The octaves as a spiral** (6 October; `plans/horizon-recursion.md`, checks and figure in `plans/spiral/`; Claude's,
+unruled). *Tom, 6 October: "the most exciting potentially impactful idea here in my opinion is that each octive is
+equivalent to the 0 to PI/2. so that means each octavie is a 90 degree turn. situation 1 and 2, is uniform, no horizon,
+no reccursion. situation 3 has a horizon and has recursion"; "yes, lograthimic spiral maps on to this framing very
+nicely."* What follows states that as three propositions, numbered after 3.10 so that no number cited elsewhere moves.
+
+The setting: the reader holds its reading s on (0, ∞) as a turn Θ(s), increasing, counted in quarter turns,
+Θ = (π/2)(n + g), n the pieces (octaves) and g the share of a quarter turn within one. The premises, named so that each
+result says which it uses: **(H)** the horizon: Θ is defined on all of (0, ∞) (situation 3; R174); **(B)** bounded
+pieces: within a piece the reading turns at most a quarter turn (26 September); **(R)** no rung preferred, in the
+address: for some ratio q > 1, Θ(q s) = Θ(s) + π/2 (R172 and R175 written as an equation, the address-level form of
+Proposition 3.7; q = r², r the ratio between rungs); **(F)** fair to the facings: Θ(1/s) = π/2 − Θ(s) on the reader's own
+piece (R162); **(P)** each piece read as a relation: a projective map of the piece onto [0, ∞], then the turn (as above).
+
+**Proposition 3.11 (the horizon, with no rung preferred, forces endless pieces, all alike).** Under (H), (B) and (R) the
+pieces are infinitely many toward home and toward the horizon, and each is the reader's own piece scaled by a power of
+q and read the same way.
+
+*Proof.* Iterating (R), Θ(qⁿs) = Θ(s) + nπ/2 for every whole n. The images qⁿ·[s₀, q s₀) of the reader's own piece
+cover (0, ∞) without overlap as n runs over the integers, and by (H) Θ is defined on all of it; on the n-th image Θ is
+the reader's own moved by n quarter turns. By (B) none holds more than a quarter turn. ∎
+
+The horizon alone does not force pieces: one bounded sweep, Θ = atan s, holds the whole unbounded reading in a single
+quarter turn and satisfies (H) and (B). It fails (R): the octaves out from the corner get 36.9°, 19.4°, 5.3°, 1.3°,
+0.34°, 0.08° of turn, so the rung at the corner is preferred and the far ones are crushed. The chain is *the horizon and
+no preferred rung, therefore recursion*. Situations 1 and 2 fail the first: nothing is divided, and there is no horizon
+(R131).
+
+**Proposition 3.12 (each octave is one quarter turn, for every ratio).** Add (F) and (P). The reader's own piece runs
+from 1/r to r round the corner, and on it ρ = (rs − 1)/(r − s) and Θ = atan ρ, uniquely: the edges at 0° and 90°, the
+corner at 45°, for every ratio r > 1.
+
+*Proof.* (F) puts the corner, the flip's fixed point, in the middle of the reader's piece and carries the piece onto
+itself; with (R) its edges are 1/r and r. Three points fix a projective map, so (P) gives ρ = (rs − 1)/(r − s). Then
+ρ(1/s) = 1/ρ(s), so Θ(1/s) = π/2 − Θ(s): (F) holds without being imposed. ∎
+
+For r = 2 this is ρ = 2(s − ½)/(2 − s) above, with the octave's corner c = 1. One octave out turns exactly 90° (checked
+to 10⁻¹⁵ for r = 2, 3 and φ). *Recursion without end:* ρ is itself a reading on [0, ∞) with its own horizon, so 3.11
+and 3.12 apply to it, and so on: the nesting above, each level existing because the level above has a horizon.
+*Revised, 6 October:* this is the recursion a horizon forces. Recursion over a known shape's residual, in situations 1
+and 2, needs no horizon (§2.1, after the situations table).
+
+**Proposition 3.13 (the reading is a logarithmic spiral, up to a wobble that repeats each octave).** Draw the reading
+with the turn Θ as the angle and s as the radius. Under (R), and only then, the curve is carried onto itself by turning a
+quarter and scaling by q, and it is
+
+    ln s = k·Θ + c + W(Θ),    k = ln q / (π/2),    W periodic with period one quarter turn;
+
+an exact logarithmic spiral if and only if W is constant.
+
+*Proof.* Θ increases, so s is a function of Θ; with u(Θ) = ln s, (R) says u(Θ + π/2) = u(Θ) + ln q, which holds if and
+only if u(Θ) − kΘ has period π/2. ∎
+
+![The reading as a spiral](../plans/spiral/spiral.svg)
+
+What follows from it:
+
+- *Situation 3 is a spiral; situations 1 and 2 are the circle, the spiral with k = 0* (§2). For r = 2 the reading grows
+  ×4 each quarter turn and ×256 each full turn (k = 0.8825); for r = 3, ×9 and ×6561.
+- *The pitch is the ratio between rungs*, k = 2 ln r/(π/2). The geometry fixes the turn per octave, a quarter; it does
+  not fix how much the reading grows in it. The question the audit left open, what fixes a reader's ratio between rungs,
+  is the question what fixes the spiral's pitch (§14).
+- *Two readings make a quarter turn per octave, and they differ by under 5°.* Proposition 3.12's reading (each octave a
+  relation) leaves the exact spiral by a wobble that repeats each octave and vanishes at every corner and edge: at most
+  4.74° for r = 2 (the 0.053 of an octave above), 5.69° for r = 3, 4.40° for φ. The exact spiral is the logarithmic
+  reading g = log_q s + ½ within the octave, also fair to the facings, but not projective.
+- *Equiangular.* A logarithmic spiral crosses every ray from its centre at one angle, arccot k: 48.6° for r = 2, 35.6°
+  for r = 3. It meets every direction alike at every scale, the curve's form of no rung preferred (Bernoulli's *spira
+  mirabilis*, "eadem mutata resurgo").
+
+What rests on what: 3.11–3.13 are proved on the premises named. (R) carries the weight, and it is a ruling (R172, R175),
+not a theorem: Proposition 3.6 says a reader cannot read its rung, which motivates (R) but does not by itself require
+the address to be the same at every rung. Proposition 3.11 shows what (R) buys.
+
+**Recursion, after the corner** (Tom, 6 October, a summary of what the project found; recorded as given. "Here" and
+"today" are the summary's own; the sources named are the corpus's: the nested fisheye lab, NST, and v-and-h item 387;
+the format paper; the strange tier, STR, §6.4).
+
+> The corner taught that a single sweep can read a shape's breadth: where the corner falls among a reader's arrivals
+> gives back how much the shape is stretched. The next question was what a reader holds once its reading needs more
+> than one sweep. The answer is recursion, and it is a different thing from breadth. Packing more leaves into one sweep
+> is breadth. Depth is the same sweep again, entered over one octave of the reading, with its own home, corner and far
+> wall, and so on down.
+>
+> 1. Every level is the same sweep. Seen from its parent, a child's sweep lies exactly proportioned in each half of its
+>    octave: fully clear at its home, half as clear at its corner, fully clear again at its wall. Every child lies the
+>    same way at every level (the nested fisheye lab).
+> 2. A level holds only what the levels above left. For a shape, the reader's own sweep holds the shape's departure from
+>    the reader's unit circle, and each octave entered holds the residual inside that octave only. Nothing has to be
+>    stored twice, and the format needed no new syntax: one ordinary document per sweep, each with its address.
+> 3. Depth beats breadth. For the same number of values, depth beat breadth alone on 24 of 24 library shapes, by 18× to
+>    about 5×10⁴ (format paper, §2.8). For a reader learning a shape at a distance, the nested reader's error stayed flat
+>    at 0.7% from 4 to 128 steps away, while a single sweep's error grew 23-fold. That second result is recorded in the
+>    lab notes from an earlier Python run, not re-measured here.
+> 4. The cost follows the shape, not the range. Measured here today, entering an octave only where it has something to
+>    hold keeps every library shape within one millionth of its departure using 79 to 244 sweeps instead of 518: the
+>    circle needs 129, the egg 244. Recursion goes where the detail is.
+> 5. For complex shapes, recursion counts hiding, not complexity. When a child reader stands where its parent saw
+>    furthest, the levels needed count how many times the way in turns out of sight, not how intricate the outline is
+>    (the "strange tier" in the editor's readers-within-readers lab). Curls are recovered by a reader inside them.
+>    Spirals past a full turn stay hidden from a single standpoint outside or inside. A chain of readers works its way
+>    out to the mouth and no further.
+>
+> What remains open:
+>
+> - The walls between octaves. Where one side of a wall is entered and the other is not, the surface steps there. A
+>   reading taken exactly on a wall stops short: 1.9% on today's example, where points just beside it miss by a few
+>   millionths.
+> - How amplification grows with depth. It appears to add across levels rather than multiply. The measurements are
+>   consistent with that, but it has not been derived.
+>
+> The short form: a bounded reader holds a complex shape not by looking harder but by looking again, as the same sweep,
+> wherever the last look left something unexplained, and only there.
+
+And, the same day: "this is situation 1 and 2. recursion is not limited to situations 3 and 4" (§2.1, revised).
+
+*Read against 3.11–3.13 and §2.1* (Claude's, unruled):
+
+- *Two causes of one recursion.* These findings are over known shapes, situations 1 and 2: depth follows the shape's
+  detail and stops where nothing is left. Propositions 3.11–3.13 are the recursion a horizon forces, situations 3 and 4,
+  which never stops. Each level is the same sweep either way.
+- *Why a level re-centres.* 3.11 rests on (R), and 3.12 on (P), each level read as a sweep of its own. Points 1 and 2
+  give (P) a measurement and a reason: the child is a whole sweep with its own home, corner and wall, and its home is
+  where the parent stopped explaining. A finite reader facing a horizon must look again past its resolution
+  (`plans/resolution-recursion.md`); the residual says where.
+- *Hiding is the hemisphere.* A sweep covers one side, 0 to π/2, out to the limb (§2.1). Point 5's count of times the
+  way in turns out of sight is a count of limbs passed, one more level for each.
+- *The walls.* Across a join between octaves the turn has no step, and its rate is the same on both sides (§2.1, "One
+  continuous sweep"). So the step on a wall should come from the residual held on one side and not the other, not from
+  the octave map. Untested.
+- *Amplification adding.* Adding across levels is what a logarithmic measure does: chained relations add only under
+  the logarithm (§2.1, "The relation forces the logarithm"). If amplification is counted in octaves or logarithms, that
+  derives the adding. If it is a plain ratio and still adds, it is something else, and worth finding out which.
+
 **Rungs, and the ratio between them** (*The Radix*; R176). The doubling is the reader's ratio between rungs, not the geometry's. *The Radix* §5: the lens
 forces the ladder past the corner to be a ladder of ratios, since a change of radius slides a ladder and can re-space
 only one whose steps are ratios; but it does not fix which ratio. The doublings come from a reader whose ratio between rungs
@@ -1162,7 +1595,8 @@ in general, is a boundary between a front side and a back side. Three meet a sit
   octave. (A reader that lays one bounded sweep instead has its last address near v/h = 4N/π, Proposition 3.8's table,
   and its step outgrows the reading near 4N/(3π). That layout is not the reader's; R176.)
 - **The near horizon** is the corner, v = h, between the front side and the back side of its reading (Proposition 3.1).
-  It is known. R149's working horizon is this one.
+  It is known. *Revised* (Tom, 6 October): known exactly only where both breadths are known (situations 1 and 2); a
+  situated reader (3 and 4) approaches it from one side and never arrives (§2.1). R149's working horizon is this one.
 
 Every octave is a sweep (R172), so the three recur at every level: at each octave's edges its own reading starts at 0
 and runs without end, and leaving an octave is a change of level, not a wall. Toward home the front side is laid in plain proportion, one step h/N (R176),
@@ -2997,7 +3431,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
     absent; telling them apart would take a second test, that a convention can be chosen freely and an absent value
     cannot be assigned. One built-in lab is not enough to change the conjecture's wording.
 - **From the shapes (§6.4).**
-  - *The 2 of the central hypothesis*: readers that take their own h from their parent's record, on signals built on ratios of 2, 3 and the golden ratio. Does the ratio of parent's to child's h settle at 2, or follow the signal? *Run 6 October (HRT): did not reach the question* (central hypothesis). *Restated* (the audit): the corner's place in the octave is proved for every ratio; what stays open is **what fixes a reader's ratio between rungs**: the reader's choice (*The Radix*), the step of its lay (R176's floating point, whose base 2 is a hardware choice), or the world's payloads (Corollary 3.9). No simulation that builds the reader can settle it.
+  - *The 2 of the central hypothesis*: readers that take their own h from their parent's record, on signals built on ratios of 2, 3 and the golden ratio. Does the ratio of parent's to child's h settle at 2, or follow the signal? *Run 6 October (HRT): did not reach the question* (central hypothesis). *Restated* (the audit): the corner's place in the octave is proved for every ratio; what stays open is **what fixes a reader's ratio between rungs**, which is the same question as *what fixes the pitch of the reading's spiral* (Proposition 3.13, k = 2 ln r/(π/2)): the reader's choice (*The Radix*), the step of its lay (R176's floating point, whose base 2 is a hardware choice), or the world's payloads (Corollary 3.9). No simulation that builds the reader can settle it.
   - *Number lines in people* (`plans/nle-plan.md`, 6 October; the candidate "independent fact" of the central hypothesis). A corner model (proportion up to h, a count of doublings past it) against a straight line, a logarithm and proportion judgment, per child, with the prediction and the instrument's calibration fixed before any data. On Chan and Mazzocco's 104 kindergartners (2024; 0–100 lines, Time 1), **killed**: proportion judgment beats the corner for 40 of the 75 children who depart from a straight line (53%), and more clearly after training (61%) and on 0–20 lines (77–84%); the corner beats a plain logarithm for 8%. One dataset, one age, half the lines with a labelled midpoint; the parts tying h to the familiar range untested. A fairer test: older children, 0–1000 lines without a midpoint, each child's counting range.
   - *Which near/far laws are fair to the facings* (the audit). Of the powers of s/√(1 + s²), only the square (the disc); the dipole's electric field has only a symmetric bracket; the coil favours a facing (§3.2). A classification of classical near/far laws by these three kinds would replace "physics has the same structure" with a count. *Done* (6 October, `plans/near-far-classification.md`; Claude's, unruled): a law is fair to the facings exactly when it is the share of a two-part split whose parts the flip exchanges, f = A(s)/(A(s) + A(1/s)) (in the angle, the disc is sin²θ and its fairness is Pythagoras). Of twelve classical laws, the eight that are shares of a split (the disc, a dipole's magnetic near share, a filter's power, Michaelis–Menten, two-state occupancy, a voltage divider, Hill, a subtended angle) are fair; the four single components (the coil, a filter's amplitude, a ring's potential, a disc's field) are not, with their middles at 30°, 52.5° and 60° of turn. The same filter is fair in power and not in amplitude: fairness belongs to the quantity read.
   - *Crossing open space*: the child rule stands only where something was met, so a chain from inside a winding shape stops at the mouth. Is that a limit of a situated reader, or of the rule? Any rule that steps into the open seems to need something the record does not hold.
@@ -3334,6 +3768,7 @@ From 6 October (the audit of Part I, the run for the 2 and number lines; `plans/
 Abelson, H. and diSessa, A. (1980). *Turtle Geometry*. MIT Press.
 Adelson, E. H. and Bergen, J. R. (1991). The plenoptic function and the elements of early vision. In M. Landy and
 J. A. Movshon (eds), *Computational Models of Visual Processing*, 3–20. MIT Press.
+Archimedes (c. 250 BC). *Measurement of a Circle*.
 Bradley, J. (1729). An account of a new discovered motion of the fix'd stars. *Philosophical Transactions of the Royal Society* 35, 637–661.
 Cavendish, H. (1798). Experiments to determine the density of the Earth. *Philosophical Transactions of the Royal
 Society* 88, 469–526.
@@ -3373,6 +3808,7 @@ Newton, I. (1687). *Philosophiæ Naturalis Principia Mathematica*.
 Nyquist, H. (1928). Certain topics in telegraph transmission theory. *Transactions of the AIEE* 47, 617–644.
 Olbers, H. W. M. (1823). Über die Durchsichtigkeit des Weltraums. *Astronomisches Jahrbuch für das Jahr 1826*, 110–121.
 Rømer, O. (1676). Démonstration touchant le mouvement de la lumière. *Journal des Sçavans*, 233–236.
+Saint-Vincent, G. de (1647). *Opus geometricum quadraturae circuli et sectionum coni*. Antwerp.
 Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation: evidence for multiple representations of
 numerical quantity. *Psychological Science* 14(3), 237–243.
 Snellius, W. (1617). *Eratosthenes Batavus*. Leiden.
