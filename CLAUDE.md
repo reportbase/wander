@@ -1,18 +1,29 @@
 # wander: notes for Claude
 
 A world of solids you fly through, with a "lab" of experiments comparing what a
-reader can recover from arriving signals against known physics. One page, served
-by GitHub Pages at https://reportbase.github.io/wander/. The owner works through
+reader can recover from arriving signals against known physics. Two pages and the
+world they share, served by GitHub Pages at https://reportbase.github.io/wander/. The owner works through
 Claude Code: changes go on a branch, as a PR, and the owner merges. Merging to
 `main` publishes.
 
 ## Files
-- `index.html`: **the whole thing and the file to edit.** One self-contained page
-  with no build step; only Google Fonts load from outside.
-- `labs.html`: a page that explains the labs and runs them. It holds no lab of its
-  own: it reads each lab's note (`#labPane`) and `LAB_REGISTER` out of `index.html`
-  and runs a lab via `index.html?lab=CODE` in a hidden iframe. Keep those (and the
-  "KILLED"/"not killed" status wording) as they are and it needs no edits.
+Since 6 Oct 2026 (Tom's choice) the site is three files, no build step; only
+Google Fonts load from outside:
+- `world.js`: **Wander's world, shared by both pages**: the constants, the solids,
+  the systems and their ticks (`tickSystem`), the signals' speed and arrival
+  pieces, the readout's distance step, and the reading functions the live readout
+  shares with the labs (`plxTwoPart`, `twoAt`, …). A classic script whose top-level
+  names both pages' scripts see (that is how both can assign `starsNow`). Moved
+  out of the old single page line for line. **A change here changes the labs'
+  world: run every lab after it.**
+- `index.html`: the flying page (the world drawn, the controls, the readout, the
+  live-view test hooks). Its "lab" button opens `labs.html`; `?lab=CODE` and
+  `?lab=all` forward there; `?lab=0` hides the button.
+- `labs.html`: **the lab, and the file to edit for any lab.** The explainer and a
+  card per lab on top; then THE LAB BUDGET comment, the lab notes (`#labPane`,
+  hidden, the cards are built from it), and the script with THE LAB GUIDE and every
+  lab's code. `?lab=all` / `?lab=CODE` run outright and show the full report (the
+  smoke test reads it); `?run=…` does the same on the cards.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
@@ -39,7 +50,7 @@ that for now (6 Oct 2026) and will decide later where they live. They are still
 kept off the Pages site. Don't move or remove them without asking.
 
 ## Read this first: THE LAB GUIDE
-The labs have their own rules, written in the page itself. Read two comments
+The labs have their own rules, written in `labs.html`. Read two comments
 before touching anything lab-related:
 - **THE LAB GUIDE**, at the top of the lab section of the script
 - **THE LAB BUDGET** comment, before `#labPane`
@@ -49,15 +60,16 @@ In short:
   runs.
 - A killed run stays recorded as killed. A fix is a new run with its own
   prediction; never edit an old prediction to fit.
-- After every change, run `?lab=all` (also the lab pane's "run every lab"). A
+- After every change, run `labs.html?lab=all` (or its "run every lab"). A
   lab going from "not killed" to "killed" or "error" means something broke; fix
   that before adding anything.
 
 ## Testing
 - `npm test` runs `tests/smoke.mjs` in headless Chromium:
   1. **Fly:** presses Fly, looks around, flies and taps a body.
-  2. **Labs:** runs `?lab=all` (a few minutes; TMP and TRK are the slow ones).
-  3. **labs.html:** a card per lab, and BAL run from its button.
+  2. **Labs:** runs `labs.html?lab=all` (a few minutes; TMP and TRK are the slow ones).
+  3. **labs.html:** a card per lab, BAL run from its button, and `index.html?lab=`
+     forwarding to `labs.html`.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
