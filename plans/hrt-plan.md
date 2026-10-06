@@ -139,3 +139,26 @@ first.
   ratio. **Which stretch a child takes is a ruling, not a measurement**, and it is Tom's to make before a run 3.
 - The test SPN's own logic asks for, "an independent fact, not built to fit", is outside simulation: the number-line data
   of `plans/what-deserves-attention.md`, item 4.
+
+### Run 3: two rules that nest
+
+*Prediction and kill written 6 October, before run 3. Tom: "no preference, try both, proceed": the child rules below
+are Claude's choice, not a ruling.*
+
+**Set-up.** As run 1 (same signals, seeds, roots, A = 8, c = 1), with two changes.
+- **The fault fixed.** A hidden stretch counts only if it is longer than 8 ground steps (finest period / 2), so the
+  grid's own jumps near the reader's feet are not hand-offs.
+- **Two rules that nest.** Each parent hands off up to three stretches, chosen
+  - **(S) shortest**: its three shortest hidden stretches, the finest things it could not see;
+  - **(C) nearest its corner**: the three whose crest falls nearest one h along the ground (its corner, v = h; a part
+    of the hypothesis's structure, though not its 2).
+
+  A child's h is still the stretch's length; only hand-offs that nest (child's h below its parent's) go on, and a chain
+  stops below the finest period or at six levels.
+
+**Prediction (Claude's).** Each rule nests, and the ratio is set by the rule and the signal together, not by the reader:
+the two rules' medians differ from each other by more than 10% on at least two of the three signals; and for r = 3 and
+r = φ neither rule's median is within 10% of 2.
+
+**Kill.** Killed, and the 2 shows without being built in, if for one rule the median is within 10% of 2 on both r = 3
+and r = φ. Undecided if only one signal is.
