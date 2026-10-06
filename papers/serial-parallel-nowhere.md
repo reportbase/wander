@@ -535,6 +535,38 @@ In short: with the whole held, the relation gives the circle and π/2 (situation
 and no rung preferred, it gives the hyperbola and the logarithm, and so the octaves and the spiral (situations 3 and 4).
 That last pairing is Claude's reading, unruled.
 
+**The situated reader's fisheye** (Tom, 6 October: "the situated reader does not need to bother, he just has his
+fisheye view of the system. What is the shape of the fisheye?"; and "both the parallel and serial readers are
+situated"). The reader computes no logarithm, because its view does the squeeze. The fisheye is the sweep: a disk whose
+radius is the turn, r = θ, with straight ahead at the centre, 0, and the horizon at the rim, π/2. This is the
+*equidistant* fisheye. A pinhole view puts a direction at r = tan θ = v/h, which runs to infinity at the horizon. The
+fisheye folds that plane into the disk by r = atan(v/h) = π/4 + ½·gd(ln v/h), so the logarithm comes with the view.
+Where the octaves of v/h fall (checked):
+
+| v/h | ring | width of the octave's ring |
+|---|---|---|
+| 1/32 | 1.8° | |
+| 1/16 | 3.6° | 1.8° |
+| 1/8 | 7.1° | 3.6° |
+| 1/4 | 14.0° | 6.9° |
+| 1/2 | 26.6° | 12.5° |
+| 1, the corner | 45°, halfway out | 18.4° |
+| 2 | 63.4° | 18.4° |
+| 4 | 76.0° | 12.5° |
+| 8 | 82.9° | 6.9° |
+| 16 | 86.4° | 3.6° |
+| 32 | 88.2° | 1.8° |
+
+- **The corner is the ring halfway out**, and the flip mirrors the disk about it, θ ↔ π/2 − θ.
+- **Inside the corner ring the view is proportional.** Near the centre r ≈ v/h, and the octave rings halve toward the
+  middle.
+- **Outside it the view is logarithmic.** The octave rings crowd toward the rim, each half as wide as the last, and never
+  reach it. That is the horizon.
+- **Both situated readers have this fisheye**, parallel (3) and serial (4). The outside view of a hemisphere, from far
+  off, is the *orthographic* r = sin θ. The fisheye over it is θ/sin θ, the outside measure: 1 at the centre, π/2 at the
+  rim. Its reciprocal, sin θ/θ, falls to 2/π, the inside measure. One reading, Claude's and unruled: the parallel reader
+  takes the disk at once (outside, π/2), and the serial reader takes it one ray at a time (inside, 2/π).
+
 The corner is the same 1: v = h, the relation equal to one, 45° of the turn. So **a relation between two things puts
 the reader into a radial measure**: dividing one by the other leaves a ratio with no scale, which is a direction, a turn
 from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 between them.
