@@ -2473,6 +2473,8 @@ Neither half helps alone; together they cut the error by a factor of four, as in
 - ~~**Which octaves a reader enters**~~ **Ruled: Tom, 5 Oct 05:04: "it should not matter."** Every octave is the same sweep, so the choice of which to enter is not part of the geometry. (Was: item 384: Tom answered "no" to both rules offered (every octave to a fixed level; only where the parent misses); DTL used the chain holding a point looked at, flagged as Claude's choice.)
 - ~~**"depth must only be a 3d concept"** (Tom, Oct 4, 12:14), against R177 and R180~~ **Set aside.** Tom, 5 Oct 05:02: "3d is normally how people talk about these things, but observation is not dimensional, it is sweeps. don't worry about the 3d comments, they are not helpful." Depth is the recursion of the sweep (R180).
 
+- **What fixes a reader's ratio between rungs** (6 Oct; the audit of SPN Part I, `plans/part-one-audit.md`; Claude's reading, unruled). The central assumption's derivation (h the front half, the octave 2h) holds for an octave of any ratio: the corner is mid-octave for 2, 3, φ and 10 alike. So "the corner divides the octave in half" is proved on R162, and "the ratio is 2" is not derived (SPN §3.3: "the doubling is the reader's ratio between rungs, not the geometry's"). Open: whether the reader's choice (*The Radix*), the step of its lay (R176), or the world's payloads (SPN Corollary 3.9) fix it. HRT (6 Oct) did not reach it; the 3d bench found the best ratio following the scene (items 389–391).
+
 ---
 
 ## Appendix: the names
