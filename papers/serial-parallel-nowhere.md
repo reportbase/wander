@@ -530,7 +530,7 @@ So the first cut is whether v is known. Known (with h): situation 1 if the bread
 reader; in 3 and 4 the reader finds it with h alone (Proposition 3.1). This revises the earlier "no home, corner, sweep
 or horizon of any kind" for situations 1 and 2 (R131; the paragraph on situation 1 above) as to the corner; they still
 have no horizon. Tom again, the same evening: "1 and 2 have a corner, that you can arrive at the corner, it is algorithmic, they have
-no horizon however, h and v are known." The other places in the paper that said 1 and 2 have no corner now say so.
+no horizon however, h and v are known." The other places in the paper that said 1 and 2 have no corner now say they have one.
 
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
 
