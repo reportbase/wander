@@ -72,6 +72,8 @@ Nesting itself cannot single out 2: an address scheme built on tripling round-tr
 
 The run that could show it, or fail to: readers that take their own h from their parent's record, reading signals built on ratios of 2, 3 and the golden ratio. If the ratio between parent's and child's h settles at 2 whatever the signal is built on, the 2 belongs to the reader, as R183 says. If it follows the signal's own ratio, the 2 belongs to what is read. Exploratory, results reported as they fall (R187).
 
+**After the 3d bench (6 October; *v and h* items 389–391).** Measured, not ruled, and not the run above. On two scenes not built on any ratio, depth held as nested sweeps beat breadth alone in 32 of 32 views. Holding at a fixed ratio between rungs did not single out 2: √2 held the harbour best (5× below 2 at the median, with the base held equal) and 2 the valley. The best ratio there followed the scene. The run above, where the reader takes its h from its parent's record, is still the one that asks where the 2 belongs.
+
 **If h is not this, the candidates are few:**
 
 | candidate | what it conflicts with |
@@ -3174,6 +3176,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 | *Grow or Slide* (`grow-or-slide.html`: two things with the same outline over time; following the address back to the complete picture shows one grew in place and the other moved, growing at its back) | 11.5 | 244, 394 |
 | *Wander*'s labs (`wander.html`, artifact TnRv8p1qx44X4ARgHqvcAW, `?lab=all` runs every one; THE LAB GUIDE in its script: the rules, the recipe, the register, the rest switch, the lessons) and the working paper *What a Reader Recovers* (`what-a-reader-recovers.md`) | 9.9, 11.4, 12 | lab notes, 3 Oct |
 | `twolearners/` (PLAN.md, engine.mjs, run.mjs, run2.mjs, diag.mjs: two learners with different steps; one scale crosses, equal to the step ratio; registered tests and their results) | 4.4 | 383 |
+| 3d's depth bench (`3d/bench/depth/`: `ratio.mjs`, `share.mjs`, `nest.mjs`, DEP-D and DEP-G: two studio scenes held in nested sweeps at ratios √2, φ, 2, 3, 4; a part's height held nested against one sweep and halving; plans and results beside them) | central hypothesis, 3.3 | *v and h* 389–391 |
 
 The five sweeps (`*-sweep.html`) are in the bundle's `demos/` folder; the rest are in `game/`.
 
@@ -3257,6 +3260,11 @@ From 5 October (the shapes and signals; every run is kept in its note in `wander
 - *Channel shapes need more levels than hook shapes* (STR, S2). Killed: coral and the hooked comb (4) need more than spiral of spirals (3). Strange is not deep.
 - Construction faults found before scoring, not kills: the first strange-tier curls closed into rings and filled in; coral's first rebuild sealed a gap between two branches (fixed and rerun before coral was scored).
 - Rule changes on the way in SIG (exploratory, R187): NST's peak rule found almost nothing on a landscape, where meeting distance only rises; the first jump rule spawned children on flat ground from the leaves' own spacing far out, until jumps were measured against flat ground.
+
+From 6 October (the 3d depth bench; plans, runs and results in `3d/bench/depth/`):
+
+- *Ratio 2 holds the scenes best* (DEP-D D1). Killed: best in 7 of 32 views, √2 in 13 and φ in 9. Rerun with the base share equal (DEP-G): √2 still 5× below 2 on the harbour, 2 best on the valley. Not a test of R183's 2 as the reader's; see the central hypothesis.
+- *Nested sweeps beat one sweep on a part's surface patterns* (DEP-D D4). Killed: worse on all seven; the patterns' detail is even, so depth has nowhere to go. *Nesting costs nothing on smooth profiles* (D6). Killed by tanh(4(h − 0.3)): 2 × 10⁻⁶ against one sweep's roundoff.
 
 ## References
 
