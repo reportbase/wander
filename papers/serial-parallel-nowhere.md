@@ -933,6 +933,30 @@ the unit sweep.") Each larger whole is copies of the unit sweep, one copy per co
   sweep device (`sweep.html`) takes pairs and lays them on the unit sweep, the one place they fit; triples would need
   a two-way device.
 
+**How a reader tells 1, 2, 4 and 8 facings apart: it counts the signs** (Tom, 7 October: "the nature of the signal
+creates the shape of how we perceive it. a continuous signal with no radial expression is a line, a continuous signal
+with radial expression is read as a circle or a sphere. whats interesting how does the reader diferentiates a signal
+with 1 facing, 2 facings, 4 facings or 8 facings."). The table above, read from the reader's side, answers it:
+
+  facings = 2^(independent signs per datum): 0 signs, 1 facing; 1, 2; 2, 4; 3, 8.
+
+Every facing is the same unit sweep, and the signs only say which copy a reading falls in. So the reader asks of its
+signal how many of its parts ever change sign independently. Each such part doubles the facings. For a situated
+reader a sign is which way a signal comes from (ahead or behind, left or right, above or below), and the magnitude is
+its relation (R37, R173). A continuous signal with no radial expression has no signs, so it lies on one sweep. That is
+the line, and the unit sweep is the unit line ("The unit line is the sweep itself"), so Tom's line and the one-facing case are one thing.
+
+- **Counting returns does not tell the circle from the sphere.** One might count the quarter sweeps before the signal
+  comes back to where it started: four for the circle. But four quarter turns about one axis also come back on the
+  sphere, so that count gives 4 for both, and cannot say why the sphere has 8 and not 4 or 16. Counting signs does: 8
+  is three independent signs, 2³. And it needs no turning, which situations 3 and 4 do not have within an observation
+  ("A sweep is one hemisphere, not the whole"). A sign is read off a datum, not reached by turning.
+- **The count is inferred, like "static".** A sign shows only when both of its values have been seen. A signal whose h
+  has always been positive may have one facing, or two with the reader not yet having seen behind. So the count can
+  rise when a new sign appears, and the reader adapts as it does when its system changes kind ("A system can change
+  kind"). Reading more signs than the signal carries invents a relation; reading fewer loses one. That is "the data
+  picks the whole", from the reader's side.
+
 **The first level is half the distance** (Tom, 6 October: "first octive is 1/2 the distance, which is the same as
 saying v/h=1"; and "octives and logrithmic spirals are the same thing"). Read the sweep from A to B as distance: a point
 a share t of the way splits it into v = t and h = 1 − t, so v/h = t/(1 − t). At t = ½, v = h: the corner, 45°, and the
