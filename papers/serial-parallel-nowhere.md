@@ -696,6 +696,40 @@ projection apart: projecting (1, s) toward the centre gives the circle's point, 
 sin θ/θ. Normalized by its own unit, a system gives the number line; normalized by the whole, the circle. Which a
 reader can do is its situation.
 
+**Mercator's map, framed in v and h** (Tom, 7 October: "the Mercator map could benefit from a clean framing with
+just v and h"). On the globe at latitude φ, let v = sin φ, the height above the equator, and h = cos φ, the radius of
+the circle of latitude; then v/h = tan φ. The globe is the quarter circle, v² + h² = 1: both breadths held, the angle
+meaningful (situations 1 and 2). Mercator's map stretches each circle of latitude by 1/h so that all are drawn the same
+width, and the vertical equally, to keep shapes; summed from the equator, the height on the map is
+
+  y = asinh(v/h)
+
+(the textbook ln tan(π/4 + φ/2), written as one relation; checked at 60°, both 1.3170).
+
+| latitude | v/h | map height y | ln(2·v/h) | stretch 1/h |
+|---|---|---|---|---|
+| 0°, the equator (home) | 0 | 0 | | 1 |
+| 26.6° | ½ | 0.481 | | 1.118 |
+| 45°, the corner (v = h) | 1 | 0.881 | | 1.414 |
+| 63.4° | 2 | 1.444 | 1.386 | 2.236 |
+| 80° | 5.67 | 2.436 | 2.429 | 5.76 |
+| 89° | 57.3 | 4.741 | 4.741 | 57.3 |
+| the pole | → ∞ | → ∞ | | → ∞ |
+
+- **Before the corner the map is proportional**: y ≈ v/h near the equator.
+- **Past it the map is logarithmic**: y → ln(2·v/h). Each doubling of v/h adds the same height, toward ln 2 (0.562,
+  0.651, 0.682, 0.690, 0.692 for the doublings from 1 to 32): far from the equator the levels are evenly spaced and
+  dyadic.
+- **The pole is the horizon**: h → 0, v/h → ∞, and the map runs on without end, which is why a Mercator map is cut off
+  short of the poles.
+- **The globe and the map are the two normalizations** ("Two normalizations, the two layings", above): the globe divided
+  by the whole, latitude bounded at 90°; the map divided by h, unbounded. The Gudermannian of "The relation forces the
+  logarithm" turns one into the other, latitude = gd(y). What was offered there as an analogy for the fisheye is here
+  the same construction.
+
+So Mercator's map is the globe divided by h: proportional up to 45°, logarithmic past it, the pole a horizon it never
+reaches. It is the oldest instance found of the situated reading (Mercator, 1569; `plans/neighbours.md`).
+
 **Depth, read against the sweep** (Tom, 6 October: "when we normalize depth is the difference between g=0 and g=1";
 "isn't depth just calculus, the total area between the unit line of g=0 and the fully expressed line of g=1"; "The unit
 line or sweep is the complete set of all possible v vs h. Depth is read against that base line.")
