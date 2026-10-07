@@ -24,6 +24,14 @@ Google Fonts load from outside:
   hidden, the cards are built from it), and the script with THE LAB GUIDE and every
   lab's code. `?lab=all` / `?lab=CODE` run outright and show the full report (the
   smoke test reads it); `?run=…` does the same on the cards.
+- `res/`: the suns, planets and moons, as `.tvf3d` fields (the 3d studio's and the games
+  page's format: radius and colour as series in cos(nπh) and cos/sin(mθ)), written by
+  `node res/make-bodies.mjs` (seeded, so it writes the same files; add a body there and
+  list it in `BODY_FILES` in `index.html`). The flying page fetches them in the background
+  (`fieldGrid` folds each onto the solids' grid) and dresses each system's star as a sun, its
+  planets, moons and belt, chosen by the body's key; they are lit by their own star
+  (`lightOf`, the 8th vec4 of a body's record), and suns give light. Looks only: motion,
+  reading and the labs are unchanged, and `world.js` is not touched. Until they load, plain balls.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
