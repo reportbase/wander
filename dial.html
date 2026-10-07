@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The h dial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    dial.html: the h dial (7 October 2026, at Tom's "this is worth a demo. create a html canvas demo of the idea that H
+    could be optimized. what happens if the reader adjust his unit."). A standalone page, like sweep.html: not part of
+    the world (world.js) or the labs (labs.html). It shows plans/grn-plan.md runs 3-5 on one screen.
+
+    A system of two point stars, one apart, is read by a reader whose pixels are h wide, at a random offset on every look.
+    The reader has no model: it counts lit pixels. s = 1/h is the system's size against the reader's grain.
+      below the corner (s < 1): "two" shows by chance, probability s a look; about 1/s looks (serial);
+      at and past it (s >= 1): "two" every look, about 1 + s pixels lit (parallel);
+      the slider: halving h after every look without "two" reaches the corner in about log2(1/s) looks;
+      the dial's cost: one unit per pixel the system spans per look; a sure "two" costs (1 + s)·max(1, 1/s),
+      least (2) at the corner, the same at s and 1/s.
+    Links: ?s=0.3 sets the dial. Test hook: window.__dial.
+    -->
+    <style>
+    :root {
+        color-scheme: dark;
+        --ground: #0c0c11;
+        --panel: #14141b;
+        --line: rgba(255, 255, 255, 0.09);
+        --ink: #c8c8d0;
+        --dim: #8a8a96;
+        --bright: #e6e4ee;
+        --gold: #d4a052;
+        --teal: #8ce6cd;
+        --red: #d96e5b;
+    }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 18px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    .lede { color: var(--dim); margin: 0 0 18px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+    label { color: var(--dim) }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 260px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #readout { white-space: pre-wrap; color: var(--bright); min-height: 6.5em; overflow-x: auto }
+    .note { color: var(--dim); font-size: 12.5px }
+    .gold { color: var(--gold) } .teal { color: var(--teal) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The h dial</h1>
+    <p class="lede">A reader with no model of what it sees, only its own pixels, h wide. The system is two points, one
+    apart. <span class="gold">s = 1/h</span> is the system against the reader's grain. Turn the dial and look: below the
+    corner, "two" comes only by chance; past it, every time. The cheapest setting is the corner.</p>
+
+    <div class="panel">
+        <div class="row">
+            <label for="dial">dial h</label>
+            <input id="dial" type="range" min="-3" max="3" step="0.01" value="0">
+            <span id="sval" class="gold"></span>
+        </div>
+        <canvas id="scene" height="150"></canvas>
+        <div class="row" style="margin-top:10px">
+            <button id="look">look once</button>
+            <button id="until">look until two</button>
+            <button id="slide">slide h (halve until two)</button>
+            <button id="approach">approach from afar</button>
+            <button id="measure">measure 500 sure reads</button>
+            <button id="clear">clear</button>
+        </div>
+        <div id="readout" style="margin-top:10px"></div>
+    </div>
+
+    <div class="grid">
+        <div class="panel">
+            <h2>Chance of "two" in one look</h2>
+            <canvas id="chance" height="230"></canvas>
+            <p class="note">Line: min(s, 1). Dots: what your looks gave, by s. Below the corner it is a chance, s; from
+            the corner on it is certain.</p>
+        </div>
+        <div class="panel">
+            <h2>What a sure "two" costs</h2>
+            <canvas id="cost" height="230"></canvas>
+            <p class="note">One unit for each pixel the system spans, on each look, until "two". Line: (1 + s)·max(1, 1/s),
+            least at the corner and the same at s and 1/s. Dots: measured means.</p>
+        </div>
+    </div>
+
+    <p class="note">From <code>plans/grn-plan.md</code>, runs 3 to 5 (synthetic, each predicted before it ran). Runs 1 and 2
+    gave the reader the shape ("two equal stars"); such a reader reads below its grain, and the corner blurs. This page is
+    the reader without a model. See also <a href="sweep.html">the sweep device</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    const S_MIN = 0.05, S_MAX = 20;
+    const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+    const C = { line: 'rgba(255,255,255,0.09)', dim: css('--dim'), ink: css('--ink'), gold: css('--gold'), teal: css('--teal'),
+        red: css('--red'), bright: css('--bright'), panel: '#1b1b24' };
+
+    // the reader: pixels h wide, offset at random each look; the system: points at -1/2 and +1/2
+    const state = { h: 1, off: 0, last: null, looks: 0, grains: 0, history: [], measured: [], busy: false, log: '' };
+    const s = () => 1 / state.h;
+    const pixOf = (x, h, off) => Math.floor((x + off) / h);
+    function look(h = state.h) {
+        const off = Math.random() * h;
+        const a = pixOf(-0.5, h, off), b = pixOf(0.5, h, off);
+        return { off, a, b, lit: b - a + 1, two: a !== b, h };
+    }
+    const costOf = x => (1 + x) * Math.max(1, 1 / x);
+
+    // canvases sized to their box, sharp on any screen
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = +cv.getAttribute('height');
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, h];
+    }
+
+    function drawScene() {
+        const [g, W, H] = fit($('scene'));
+        g.fillStyle = C.panel; g.fillRect(0, 0, W, H);
+        const h = state.h, L = Math.max(4, 3 * h), k = W / L, X = x => W / 2 + x * k;   // L: the span shown, in system units
+        const off = state.last ? state.last.off : 0, y0 = 46, ph = 54;
+        // the reader's pixels
+        const first = Math.floor((-L / 2 + off) / h) - 1, last = Math.ceil((L / 2 + off) / h) + 1;
+        for (let i = first; i <= last && i - first < 600; i++) {
+            const x0 = i * h - off, lit = state.last && (i === state.last.a || i === state.last.b);
+            g.fillStyle = lit ? 'rgba(212,160,82,0.55)' : 'rgba(255,255,255,0.03)';
+            g.fillRect(X(x0) + 0.5, y0, Math.max(1, h * k - 1), ph);
+            g.strokeStyle = C.line; g.strokeRect(X(x0) + 0.5, y0, Math.max(1, h * k - 1), ph);
+        }
+        // the system, as it is (the reader does not see this)
+        g.fillStyle = C.teal;
+        for (const x of [-0.5, 0.5]) { g.beginPath(); g.arc(X(x), y0 + ph / 2, 4, 0, 7); g.fill(); }
+        g.strokeStyle = 'rgba(140,230,205,0.5)'; g.beginPath(); g.moveTo(X(-0.5), y0 + ph + 12); g.lineTo(X(0.5), y0 + ph + 12); g.stroke();
+        g.font = '12px DM Mono, monospace'; g.textAlign = 'center';
+        g.fillStyle = C.teal; g.fillText('the system: two points, 1 apart', X(0), y0 + ph + 28);
+        g.fillStyle = C.gold;
+        const msg = !state.last ? 'press "look": the reader gets only its pixels'
+            : state.last.two ? `the reader sees TWO: ${state.last.lit} pixels lit` : 'the reader sees ONE: both points in one pixel';
+        g.fillText(msg, W / 2, 26);
+        g.textAlign = 'left'; g.fillStyle = C.dim; g.fillText(`pixel h = ${h < 0.1 ? h.toFixed(3) : h.toFixed(2)}`, 8, H - 8);
+    }
+
+    const LX = (x, W, pad) => pad + (Math.log(x / S_MIN) / Math.log(S_MAX / S_MIN)) * (W - 2 * pad);
+    function axes(g, W, H, pad, yLabel) {
+        g.fillStyle = C.panel; g.fillRect(0, 0, W, H);
+        g.strokeStyle = C.line; g.font = '11px DM Mono, monospace'; g.fillStyle = C.dim; g.textAlign = 'center';
+        for (const t of [0.1, 0.25, 0.5, 1, 2, 4, 10]) {
+            const x = LX(t, W, pad); g.beginPath(); g.moveTo(x, 12); g.lineTo(x, H - 22); g.stroke();
+            g.fillText(String(t), x, H - 8);
+        }
+        const xc = LX(1, W, pad); g.strokeStyle = 'rgba(212,160,82,0.6)'; g.setLineDash([4, 4]);
+        g.beginPath(); g.moveTo(xc, 12); g.lineTo(xc, H - 22); g.stroke(); g.setLineDash([]);
+        g.fillStyle = C.gold; g.fillText('corner', xc, 10 + 0);
+        g.textAlign = 'left'; g.fillStyle = C.dim; g.fillText(yLabel, pad, H - 26 > 30 ? 26 : 22);
+    }
+
+    function drawChance() {
+        const [g, W, H] = fit($('chance')), pad = 24, Y = p => (H - 28) - p * (H - 50);
+        axes(g, W, H, pad, '');
+        g.strokeStyle = C.teal; g.lineWidth = 2; g.beginPath();
+        for (let i = 0; i <= 200; i++) { const x = S_MIN * Math.pow(S_MAX / S_MIN, i / 200), px = LX(x, W, pad);
+            i ? g.lineTo(px, Y(Math.min(x, 1))) : g.moveTo(px, Y(Math.min(x, 1))); }
+        g.stroke(); g.lineWidth = 1;
+        // the looks, binned by s
+        const bins = new Map();
+        for (const r of state.history) { const b = Math.round(Math.log(r.s) / Math.log(S_MAX / S_MIN) * 24);
+            const e = bins.get(b) || { n: 0, two: 0, s: 0 }; e.n++; e.two += r.two; e.s += r.s; bins.set(b, e); }
+        for (const e of bins.values()) { g.fillStyle = C.gold; g.beginPath();
+            g.arc(LX(e.s / e.n, W, pad), Y(e.two / e.n), 2 + Math.min(5, Math.sqrt(e.n)), 0, 7); g.fill(); }
+        g.fillStyle = C.dim; g.textAlign = 'right'; g.fillText('1', pad - 4, Y(1) + 4); g.fillText('0', pad - 4, Y(0) + 4);
+        const cx = LX(s(), W, pad); g.strokeStyle = C.bright; g.beginPath(); g.moveTo(cx, 14); g.lineTo(cx, H - 22); g.stroke();
+    }
+
+    function drawCost() {
+        const [g, W, H] = fit($('cost')), pad = 24, top = 22, lo = Math.log(2), hi = Math.log(costOf(S_MIN));
+        const Y = c => (H - 28) - (Math.log(c) - lo) / (hi - lo) * (H - 28 - top);
+        axes(g, W, H, pad, '');
+        g.strokeStyle = C.teal; g.lineWidth = 2; g.beginPath();
+        for (let i = 0; i <= 200; i++) { const x = S_MIN * Math.pow(S_MAX / S_MIN, i / 200), px = LX(x, W, pad);
+            i ? g.lineTo(px, Y(costOf(x))) : g.moveTo(px, Y(costOf(x))); }
+        g.stroke(); g.lineWidth = 1;
+        for (const m of state.measured) { g.fillStyle = C.gold; g.beginPath(); g.arc(LX(m.s, W, pad), Y(m.mean), 4, 0, 7); g.fill(); }
+        const cx = LX(s(), W, pad); g.fillStyle = C.bright; g.beginPath(); g.arc(cx, Y(costOf(s())), 5, 0, 7); g.fill();
+        g.fillStyle = C.dim; g.textAlign = 'right';
+        for (const c of [2, 5, 10, 20]) g.fillText(String(c), pad - 4, Y(c) + 4);
+    }
+
+    function readout() {
+        const x = s(), where = x < 0.97 ? 'below the corner: serial' : x > 1.03 ? 'past the corner: parallel' : 'at the corner';
+        const lines = [
+            `s = ${x.toFixed(3)}   (${where})`,
+            x < 1 ? `each look shows "two" with chance ${x.toFixed(2)}; expect about ${(1 / x).toFixed(1)} looks, each 1 pixel`
+                  : `every look shows "two", about ${(1 + x).toFixed(1)} pixels lit`,
+            `a sure "two" costs about ${costOf(x).toFixed(2)} pixel-looks${Math.abs(x - 1) < 0.03 ? '  <- the least there is' : ''}`,
+            `this session: ${state.looks} looks, ${state.grains} pixels read`,
+        ];
+        if (state.log) lines.push(state.log);
+        $('readout').textContent = lines.join('\n');
+        $('sval').textContent = `s = ${x.toFixed(2)}`;
+    }
+
+    function draw() { drawScene(); drawChance(); drawCost(); readout(); }
+
+    function setS(x, keepLast) {
+        x = Math.max(S_MIN, Math.min(S_MAX, x));
+        state.h = 1 / x; $('dial').value = (-Math.log2(x) / Math.log2(S_MAX) * 3).toFixed(3);
+        if (!keepLast) state.last = null;
+    }
+    const dialToS = v => Math.pow(S_MAX, -v / 3);
+    $('dial').addEventListener('input', e => { state.h = 1 / dialToS(+e.target.value); state.last = null; state.log = ''; draw(); });
+
+    function doLook(h) {
+        const r = look(h); state.last = r; state.looks++; state.grains += r.lit;
+        state.history.push({ s: 1 / r.h, two: r.two ? 1 : 0 }); return r;
+    }
+    const sleep = ms => new Promise(r => setTimeout(r, ms));
+    async function run(fn, btn) {
+        if (state.busy) return; state.busy = true; btn.classList.add('on');
+        try { await fn(); } finally { state.busy = false; btn.classList.remove('on'); draw(); }
+    }
+
+    $('look').onclick = () => { if (state.busy) return; const r = doLook(); state.log = r.two ? 'two.' : 'one.'; draw(); };
+    $('until').onclick = () => run(async () => {
+        let n = 0, px = 0, r;
+        do { r = doLook(); n++; px += r.lit; draw(); await sleep(Math.max(30, 250 - n * 10)); } while (!r.two && n < 400);
+        state.log = `looked ${n} times, read ${px} pixels, for one sure "two" (expected about ${costOf(s()).toFixed(1)})`;
+    }, $('until'));
+    $('slide').onclick = () => run(async () => {
+        setS(S_MIN); let n = 0, px = 0, r;
+        for (;;) { r = doLook(); n++; px += r.lit; draw(); await sleep(450); if (r.two) break; setS(s() * 2, false); }
+        state.log = `the slider: ${n} looks (a fixed dial at s = ${S_MIN} would expect ${(1 / S_MIN).toFixed(0)}); stopped at s = ${s().toFixed(2)}, at its corner or sooner`;
+    }, $('slide'));
+    $('approach').onclick = () => run(async () => {
+        for (let i = 0; i <= 160; i++) { setS(S_MIN * Math.pow(6 / S_MIN, i / 160), true); doLook(); draw(); await sleep(70); }
+        state.log = 'coming closer: "two" by chance, more and more often, then certain from the corner on';
+    }, $('approach'));
+    $('measure').onclick = () => {
+        if (state.busy) return; let tot = 0;
+        for (let k = 0; k < 500; k++) { let c = 0, r; do { r = look(); c += r.lit; } while (!r.two); tot += c; }
+        state.measured.push({ s: s(), mean: tot / 500 });
+        state.log = `500 sure reads at s = ${s().toFixed(2)}: mean cost ${(tot / 500).toFixed(2)} (line: ${costOf(s()).toFixed(2)})`;
+        draw();
+    };
+    $('clear').onclick = () => { if (state.busy) return; Object.assign(state, { last: null, looks: 0, grains: 0, history: [], measured: [], log: '' }); draw(); };
+
+    const q = new URLSearchParams(location.search);
+    setS(q.has('s') ? +q.get('s') || 1 : 0.3);
+    window.addEventListener('resize', draw);
+    draw();
+    window.__dial = { state, look, costOf, setS, s,
+        meanCost: (x, n = 2000) => { setS(x); let tot = 0; for (let k = 0; k < n; k++) { let c = 0, r; do { r = look(); c += r.lit; } while (!r.two); tot += c; } return tot / n; } };
+})();
+</script>
+</body>
+</html>

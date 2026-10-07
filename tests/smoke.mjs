@@ -188,6 +188,16 @@ try {
   }
   await page.click('#play'); await page.waitForTimeout(1500);
   console.log(`${failures.length === before4 ? 'ok  ' : 'FAIL'} sweep.html (${laid.join(', ')})`);
+
+  // ── 5. dial.html: the h dial; a sure "two" costs (1 + s)·max(1, 1/s), least at the corner ──
+  current = 'dial.html';
+  const before5 = failures.length;
+  await page.goto(new URL('dial.html?s=0.5', base).href, { waitUntil: 'load' });
+  const dc = await page.evaluate(() => [0.5, 1, 2].map(x => __dial.meanCost(x, 4000)));
+  if (!(Math.abs(dc[1] - 2) < 1e-9 && Math.abs(dc[0] - 3) < 0.3 && Math.abs(dc[2] - 3) < 1e-9 && dc[1] < dc[0]))
+    failures.push(`[dial.html] costs at s = 0.5, 1, 2: ${dc.map(c => c.toFixed(2)).join(', ')} (want about 3, 2, 3)`);
+  await page.click('#look'); await page.click('#measure');
+  console.log(`${failures.length === before5 ? 'ok  ' : 'FAIL'} dial.html (cost ${dc.map(c => c.toFixed(2)).join(' / ')} at s = 0.5 / 1 / 2)`);
 } catch (e){
   failures.push(`[${current}] ${e.message.split('\n')[0]}`);
 }

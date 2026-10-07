@@ -40,6 +40,10 @@ Google Fonts load from outside:
   g = (2/π)·atan(v/h) and read by a cursor, serially (4) or all at once (3), with the
   quarter circle (divided by the whole) beside it. `?ex=planets|shape|spread|line`,
   `?mode=parallel`. Not linked from index.html yet.
+- `dial.html`: **the h dial** (7 Oct 2026), a standalone page like `sweep.html`: GRN runs 3–5
+  (`plans/grn-plan.md`) on one screen. A model-free reader with pixels h wide reads two points one apart;
+  turn the dial, look, slide h, approach from afar; charts of P("two") = min(s, 1) and of the cost of a sure
+  "two", (1 + s)·max(1, 1/s), least at the corner. `?s=` sets the dial; test hook `window.__dial`.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
@@ -136,6 +140,7 @@ In short:
   3. **labs.html:** a card per lab, BAL run from its button, and `index.html?lab=`
      forwarding to `labs.html`.
   4. **sweep.html:** every example lays on the sweep, and the cursor sweeps.
+  5. **dial.html:** a sure "two" costs about 3, 2 and 3 at s = 0.5, 1 and 2 (least at the corner).
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
