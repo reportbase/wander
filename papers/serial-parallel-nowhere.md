@@ -847,6 +847,33 @@ Every relation v/h is a ratio s on [0, ∞), and each takes a share of the turn,
 front side (Leibniz's 1 − ⅓ + ⅕ − …, §3.2) and π/4 for the back side, whose levels give 18.4°, 12.5°, 6.9°, 3.6°, … and
 sum to 45°. Counting the hemisphere at once, the parallel reader counts every relation at once: π/2.
 
+**The unit sweep, repeated: the data picks the whole** (Tom, 7 October: "when we move up from the unit sweep of 0 to
+π/2 up to the semicircle, circle and sphere, it just repeats the unit sweep, 1, 2, 4, 8 unit sweeps respectively";
+"the data itself must match the shape. A linear array, for example, can't be mapped to a sphere; it must be mapped to
+the unit sweep.") Each larger whole is copies of the unit sweep, one copy per combination of signs:
+
+| the data | relations per datum | signs | the whole | copies of the unit sweep | total |
+|---|---|---|---|---|---|
+| pairs (v, h), magnitudes | 1 | none | the quarter circle, the unit sweep | 1 | π/2 |
+| pairs, h signed | 1 | 1 | the semicircle | 2 | π |
+| pairs, both signed | 1 | 2 | the circle | 4 | 2π |
+| triples (h, v, w), all signed | 2 | 3 | the sphere | 8 | 4π |
+
+- **Each copy is the same sweep.** Inside a quadrant or an octant the reading uses magnitudes only, |v|/|h|, from home
+  through the corner to the horizon; the signs say only which copy (R37, R173: magnitudes, with direction from the
+  facing; signed v and h only where the whole is held, situations 1 and 2).
+- **On the sphere each copy is still π/2.** An octant reads two relations at once, v/h and w/h, a two-way sweep and not
+  a line, and its total is π/2 again: the octant's solid angle, 4π/8, which is every pair of relations summed,
+  ∬ ds₁ ds₂/(1 + s₁² + s₂²)^{3/2} = π/2 (checked). So "π/2 is every relation, summed" holds for two relations as for
+  one. A hemisphere, one parallel reader's reach, is four octants.
+- **The counts double, 1, 2, 4, 8**: each step adds one sign, one facing.
+- **The data picks the whole, by two counts: how many relations each datum carries** (its breadths besides h) **and
+  whether it has signs.** Pairs carry one relation and belong on the unit sweep; triples carry two and need the
+  octant. Laying a linear array on a sphere would invent a relation the data does not have, and any structure read off
+  the sphere would be made; laying sphere data on the unit sweep would lose one, folding two directions into one. The
+  sweep device (`sweep.html`) takes pairs and lays them on the unit sweep, the one place they fit; triples would need
+  a two-way device.
+
 **The first level is half the distance** (Tom, 6 October: "first octive is 1/2 the distance, which is the same as
 saying v/h=1"; and "octives and logrithmic spirals are the same thing"). Read the sweep from A to B as distance: a point
 a share t of the way splits it into v = t and h = 1 − t, so v/h = t/(1 − t). At t = ½, v = h: the corner, 45°, and the
