@@ -485,6 +485,34 @@ It is not a matter of dimension. Static is not "3D" and dynamic is not "3D plus 
 π/2, one laid across at once and one walked. A reading by dimension is what the situations replaced. A correspondence,
 in the paper's sense: it explains the split and proves nothing new.
 
+**A system can change kind, and the reader must adapt** (Tom, 7 October: "a dynamic system could stablise into a
+static system, and observation of that system would then need to adapt." And: "the reverse is true, static system
+becoming dynamic."). The paper already has one case of a system settling. *The Order of Limits*' growing list (§4.6) is
+dynamic, a 4. Once its new entries fall below what the reader resolves, past n ≈ c/ε, "the growing list looks
+finished": static to the reader. And a list whose length becomes known is a 2 (R143). So settling can go 4 → 3 → 2:
+
+| stage | the system, to the reader | read |
+|---|---|---|
+| dynamic | changing or arriving | serial: walk the sweep, re-unit level by level |
+| settled | holds still for a whole look | parallel: lay the sweep across it at once |
+| known whole | its breadths in hand | unsituated: held as an array, the corner computed |
+
+- **The reader infers the change; it does not see it.** Static means "holds still for my look", and a system changing
+  more slowly than the look, or more finely than the reader resolves, looks the same. That is §4.6's warning: the list
+  *looks* finished. Switching is a judgment with a risk. Switch too early and the reader loses n; too late and it is only
+  slow.
+- **Settling: the serial reader's levels become the parallel reader's addresses.** The parallel reader's best move is
+  R155's, to lay down addresses over its hemisphere first. A serial reader that sees its system settle already holds the
+  levels it walked, and they can be that layout. It need not start again.
+- **Unsettling, the reverse: the parallel reader must re-read to notice.** A static system can start to change (the
+  apple rots, a star flares). A parallel reader that only lays its sweep once keeps a stale picture. Only reading again,
+  and comparing, shows the change, and that is reading over time, serial. So a reader that may face either kind keeps
+  some serial check running even while it reads in parallel.
+
+Neither direction is measured here. A *Wander* lab could test the first, under the lab rules. It would predict, before
+running, that a serial reader switching to parallel when arrivals fall below ε keeps n within ε, and that one switching
+earlier loses it.
+
 **Proportion, depth and recursion, by situation** (Tom, 6 October: "depth is difference between the shape and the unit circle"; "situation 2 has depth. situation 1,3,4 do not.") And: "in situation 3 and 4, before the corner, it is
 proportional. in situation 1 and 2, it is proportional on both sides of the corner."
 
