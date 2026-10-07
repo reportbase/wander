@@ -499,6 +499,61 @@
 
         const SOLID_NAMES = Object.keys(SOLIDS),
             PICK = SOLID_NAMES.filter(n => n !== 'ball');
+        // ── SUNS, PLANETS AND MOONS (Oct 7: "make 3d objects of moons, suns, planets, create a variety of them, make them
+        //    look great. use them in the wander program."). Each is a .tvf3d field in res/, written by res/make-bodies.mjs:
+        //    a radius r(θ, h) and a colour, each as a series in cos(nπh) and cos/sin(mθ), the format the 3d studio and the
+        //    games page use. A system's star wears a sun, its planets planets, their moons moons, and a belt asteroids; which
+        //    one is fixed by the body's own key, so a cell is built the same way every time. Bodies of no system and clusters
+        //    keep the rung editor's solids. Only the look comes from the file: each body still moves, turns and is read as
+        //    before, and its shape (a ball with relief, or a lumpy rock) is read on the same grid as every solid.
+        //    The files load once, in the background. Until they are in (or if they cannot be), these bodies are plain balls.
+        const BODY_FILES = {
+            sun: ['sun-yellow', 'sun-orange', 'sun-red', 'sun-blue', 'sun-white'],
+            planet: ['planet-terra', 'planet-ocean', 'planet-mars', 'planet-jupiter', 'planet-saturn', 'planet-neptune', 'planet-uranus', 'planet-venus', 'planet-lava', 'planet-alien'],
+            moon: ['moon-luna', 'moon-ice', 'moon-io', 'moon-callisto', 'moon-rust'],
+            rock: ['asteroid-grey', 'asteroid-dark']
+        };
+        const BODY_NAMES = Object.values(BODY_FILES).flat(),
+            NSOLID = SOLID_NAMES.length,
+            BODIES = { g: [], col: [], mx: [], ready: false, failed: null };
+        const keyHash = k => { let h = 2166136261; for (let i = 0; i < k.length; i++) h = Math.imul(h ^ k.charCodeAt(i), 16777619) >>> 0; return h; };
+        const bodyOf = (look, key) => { const L = BODY_FILES[look]; return BODY_NAMES.indexOf(L[keyHash(key + look) % L.length]); };
+        function parseTVF3D(text) {
+            const lines = text.replace(/\r/g, '').split('\n'), hp = lines[0].split(/\s+/), NH = +hp[1], MT = +hp[2], R = {};
+            if (hp[0] !== 'TVF3D' || !(NH > 0 && MT > 0)) throw new Error('not a .tvf3d field');
+            for (const l of lines.slice(1)) { const w = l.trim().split(/\s+/); if (/^(Aa|Ab|C[rgb][ab])$/.test(w[0])) (R[w[0]] = R[w[0]] || []).push(Float64Array.from(w.slice(1), Number)); }
+            for (const k of ['Aa', 'Ab', 'Cra', 'Crb', 'Cga', 'Cgb', 'Cba', 'Cbb']) if (!R[k] || R[k].length !== NH) throw new Error('rows of ' + k + ' do not match the header');
+            return { NH, MT, R };
+        }
+        // the field on wander's own grid, θ_j = 2πj/GT and h_i = (i + ½)/GH: its radius (in the body's size; the file's is in
+        // its height, and a body is HS of its size tall) and its colour. The series are folded in h ring by ring, then summed in θ.
+        function fieldGrid(F) {
+            const g = new Float32Array(GT * GH), col = new Uint8Array(GT * GH * 4), M = F.MT, cs = new Float64Array(M * GT), sn = new Float64Array(M * GT);
+            for (let m = 0; m < M; m++) for (let j = 0; j < GT; j++) { cs[m * GT + j] = Math.cos(m * TAU * j / GT); sn[m * GT + j] = Math.sin(m * TAU * j / GT); }
+            const pairs = [['Aa', 'Ab'], ['Cra', 'Crb'], ['Cga', 'Cgb'], ['Cba', 'Cbb']], A = pairs.map(() => new Float64Array(M)), B = pairs.map(() => new Float64Array(M));
+            let mx = 0;
+            for (let i = 0; i < GH; i++) {
+                const h = (i + 0.5) / GH;
+                pairs.forEach(([a, b], c) => { A[c].fill(0); B[c].fill(0);
+                    for (let n = 0; n < F.NH; n++) { const k = Math.cos(n * PI * h), RA = F.R[a][n], RB = F.R[b][n]; for (let m = 0; m < M; m++) { A[c][m] += k * RA[m]; B[c][m] += k * RB[m]; } } });
+                for (let j = 0; j < GT; j++) {
+                    const v = pairs.map((_, c) => { let s = 0; for (let m = 0; m < M; m++) s += A[c][m] * cs[m * GT + j] + B[c][m] * sn[m * GT + j]; return s; });
+                    const r = Math.max(0.004, v[0] * HS), q = i * GT + j;
+                    g[q] = r; if (r > mx) mx = r;
+                    for (let c = 0; c < 3; c++) col[q * 4 + c] = Math.round(255 * Math.max(0, Math.min(1, v[c + 1])));
+                    col[q * 4 + 3] = 255;
+                }
+            }
+            return { g, col, mx };
+        }
+        // a body takes its look once the files are in; its drawn copy (o.app) takes it too
+        function wearBody(o) {
+            if (o.body == null || !BODIES.ready) return;
+            const i = o.body;
+            Object.assign(o, { g: BODIES.g[i], mx: BODIES.mx[i], si: NSOLID + i, name: BODY_NAMES[i] });
+            setSize(o, o.S);
+            if (o.app) Object.assign(o.app, { g: o.g, si: o.si, mx: o.mx, name: o.name });
+        }
         const rAt = (g, th, h) => {
             let x = th / TAU * GT;
             x -= Math.floor(x / GT) * GT;
@@ -620,10 +675,11 @@
             if (!gl)
                 return null;
             const COMMON = `precision highp float; precision highp int; precision highp sampler2D;
-      uniform sampler2D uShapes; const float TAU = 6.283185307179586, PI = 3.141592653589793, HS = 1.1, FAR = 400.0;
+      uniform sampler2D uShapes; uniform sampler2D uBodyR; const float TAU = 6.283185307179586, PI = 3.141592653589793, HS = 1.1, FAR = 400.0;
+      const int NSOLID = ${NSOLID}, NBODY = ${BODY_NAMES.length};
       const int GT = ${
             GT}, GH = ${GH};
-      float tx(int x, int y){ return texelFetch(uShapes, ivec2(x, y), 0).r; }
+      float tx(int x, int y){ return y < NSOLID * GH ? texelFetch(uShapes, ivec2(x, y), 0).r : texelFetch(uBodyR, ivec2(x, y - NSOLID * GH), 0).r; }   // a body's shape (index NSOLID and up) is in its own atlas
       float rAt(float th, float h, int sh){ float x = th / TAU * float(GT); x -= floor(x / float(GT)) * float(GT);
         int j0 = int(floor(x)) % GT, j1 = (j0 + 1) % GT; float fx = fract(x);
         float y = clamp(h * float(GH) - 0.5, 0.0, float(GH - 1)); int i0 = int(floor(y)), i1 = min(GH - 1, i0 + 1); float fy = y - float(i0); int b = sh * GH;
@@ -698,8 +754,9 @@
             const FS2 = `#version 300 es
       ${COMMON}
       precision highp usampler2D;
-      uniform usampler2D uRange; uniform sampler2D uSys; uniform vec4 uView; uniform float uCy; uniform vec3 uL1; uniform vec3 uL2;
+      uniform usampler2D uRange; uniform sampler2D uSys; uniform sampler2D uBodyC; uniform vec4 uView; uniform float uCy; uniform vec3 uL1; uniform vec3 uL2;
       out vec4 outColor;
+      vec3 bodyCol(int b, float th, float h){ return texture(uBodyC, vec2(th / TAU, (float(b * GH) + clamp(h * float(GH), 0.5, float(GH) - 0.5)) / float(GH * NBODY))).rgb; }
       vec4 sys(int id, int t){ return texelFetch(uSys, ivec2(t, id), 0); }
       void main(){
         uvec4 ref = texelFetch(uRange, ivec2(gl_FragCoord.xy), 0);
@@ -716,6 +773,15 @@
         vec3 N = normalize(n.x * E1.xyz + n.y * U.xyz + n.z * E2.xyz);
         float x = gl_FragCoord.x / uView.x, y = uView.z - gl_FragCoord.y / uView.x, k = uView.w, phi = (x - uView.y * 0.5) / k, s = (uCy - y) / k;
         vec3 D = vec3(cos(s) * sin(phi), sin(s), cos(s) * cos(phi)); if (dot(N, D) > 0.0) N = -N;
+        int sh = int(E2.w); vec4 Ls = sys(id, 7);
+        if (sh >= NSOLID && Ls.w > 0.5) {
+          // a sun, a planet or a moon, in its own colours. A sun gives light: brightest at its middle, darker and redder
+          // toward its edge; the rest are lit by their own star, a day side and a night side, the terminator softened
+          vec3 c = bodyCol(sh - NSOLID, th, h); float mu = max(0.0, dot(N, -D));
+          if (Ls.w > 1.5) { outColor = vec4(min(vec3(1.0), c * (0.5 + 0.48 * pow(mu, 0.6)) * vec3(1.0, 0.9 + 0.1 * mu, 0.78 + 0.22 * mu)), 1.0); return; }
+          float day = smoothstep(-0.08, 0.35, dot(N, Ls.xyz)), lit = 0.09 + 1.1 * day * max(0.0, dot(N, Ls.xyz) + 0.08) / 1.08 + 0.06 * max(0.0, dot(N, uL2));
+          float rim = pow(1.0 - mu, 3.0) * day * 0.25;   // a thin brightening at the lit edge, as an atmosphere would give
+          outColor = vec4(c * lit + vec3(rim) * c + vec3(0.12) * day * pow(max(0.0, dot(N, normalize(Ls.xyz - D))), 30.0), 1.0); return; }
         float lit = 0.42 + 0.75 * max(0.0, dot(N, uL1)) + 0.28 * max(0.0, dot(N, uL2));
         outColor = vec4(Col.rgb * lit + vec3(0.18) * pow(max(0.0, dot(N, normalize(uL1 - D))), 24.0), 1.0); }`
 
@@ -807,7 +873,7 @@
                 gl.bindBuffer(gl.ARRAY_BUFFER, ib);
                 for (let a = 1; a <= 7; a++) {
                     gl.enableVertexAttribArray(a);
-                    gl.vertexAttribPointer(a, 4, gl.FLOAT, false, 112, (a - 1) * 16);
+                    gl.vertexAttribPointer(a, 4, gl.FLOAT, false, 128, (a - 1) * 16);   // 8 vec4s a body; the 8th (its light) is read only from uSys
                     gl.vertexAttribDivisor(a, 1);
                 }
                 gl.bindVertexArray(null);
@@ -850,13 +916,35 @@
             };
             const U = (p, n) => gl.getUniformLocation(p, n);
             const pack = list => {
-                const b = new Float32Array(list.length * 28);
-                list.forEach((r, i) => b.set(r, i * 28));
+                const b = new Float32Array(list.length * 32);
+                list.forEach((r, i) => b.set(r, i * 32));
                 return b;
             };
+            // the bodies' atlases: their radius grids (as uShapes), and their colours, filtered so a near planet is smooth
+            const bodyR = gl.createTexture(), bodyC = gl.createTexture();
+            for (const [t, f] of [[bodyR, gl.NEAREST], [bodyC, gl.LINEAR]]) {
+                gl.bindTexture(gl.TEXTURE_2D, t);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, f);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, f);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, t === bodyC ? gl.REPEAT : gl.CLAMP_TO_EDGE);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+            }
+            gl.bindTexture(gl.TEXTURE_2D, bodyR);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.R32F, 1, 1, 0, gl.RED, gl.FLOAT, new Float32Array([0.5]));
+            gl.bindTexture(gl.TEXTURE_2D, bodyC);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA8, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([200, 200, 200, 255]));
             let dpr = 1,
                 lastH = 0;
             return {
+                setBodies(B) {
+                    const n = B.g.length, R = new Float32Array(GT * GH * n), C = new Uint8Array(GT * GH * 4 * n);
+                    B.g.forEach((g, i) => R.set(g, i * GT * GH));
+                    B.col.forEach((c, i) => C.set(c, i * GT * GH * 4));
+                    gl.bindTexture(gl.TEXTURE_2D, bodyR);
+                    gl.texImage2D(gl.TEXTURE_2D, 0, gl.R32F, GT, GH * n, 0, gl.RED, gl.FLOAT, R);
+                    gl.bindTexture(gl.TEXTURE_2D, bodyC);
+                    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA8, GT, GH * n, 0, gl.RGBA, gl.UNSIGNED_BYTE, C);
+                },
                 draw(fine, mid, coarse, all, W, H, k, cy, vy0, vy1, L1, L2) {
                     const d = dpr = Math.min(2, window.devicePixelRatio || 1),
                         w = Math.round(W * d),
@@ -882,6 +970,10 @@
                     gl.activeTexture(gl.TEXTURE0);
                     gl.bindTexture(gl.TEXTURE_2D, tex);
                     gl.uniform1i(U(P1, 'uShapes'), 0);
+                    gl.activeTexture(gl.TEXTURE3);
+                    gl.bindTexture(gl.TEXTURE_2D, bodyR);
+                    gl.uniform1i(U(P1, 'uBodyR'), 3);
+                    gl.activeTexture(gl.TEXTURE0);
                     gl.uniform4f(U(P1, 'uView'), d, W, H, k);
                     gl.uniform1f(U(P1, 'uCy'), cy);
                     for (const [M, list] of [[FINE, fine], [MID, mid], [COARSE, coarse]]) {
@@ -942,7 +1034,7 @@
                     gl.viewport(0, 0, w, h);
                     const n = Math.max(1, all.length);
                     gl.bindTexture(gl.TEXTURE_2D, sysTex);
-                    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA32F, 7, n, 0, gl.RGBA, gl.FLOAT, all.length ? pack(all) : new Float32Array(28));
+                    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA32F, 8, n, 0, gl.RGBA, gl.FLOAT, all.length ? pack(all) : new Float32Array(32));
                     gl.useProgram(P2);
                     gl.bindVertexArray(empty);
                     gl.activeTexture(gl.TEXTURE0);
@@ -954,6 +1046,12 @@
                     gl.activeTexture(gl.TEXTURE2);
                     gl.bindTexture(gl.TEXTURE_2D, sysTex);
                     gl.uniform1i(U(P2, 'uSys'), 2);
+                    gl.activeTexture(gl.TEXTURE3);
+                    gl.bindTexture(gl.TEXTURE_2D, bodyR);
+                    gl.uniform1i(U(P2, 'uBodyR'), 3);
+                    gl.activeTexture(gl.TEXTURE4);
+                    gl.bindTexture(gl.TEXTURE_2D, bodyC);
+                    gl.uniform1i(U(P2, 'uBodyC'), 4);
                     gl.uniform4f(U(P2, 'uView'), d, W, H, k);
                     gl.uniform1f(U(P2, 'uCy'), cy);
                     gl.uniform3fv(U(P2, 'uL1'), L1);
@@ -2786,6 +2884,22 @@
                 };
             const vy0 = SCAN,
                 vy1 = SCAN + vh;
+            // where a sun, planet or moon takes its light from, in your frame: its own star (the nearer of two), where that
+            // star is seen now; w 2 for a star itself, 1 for one it lights, 0 for everything else, lit as before
+            const lightOf = o => {
+                const s = o.src || o;
+                if (s.body == null || o.si < NSOLID)
+                    return [0, 0, 0, 0];
+                if (s.star)
+                    return [0, 0, 0, 2];
+                let best = null, bd = Infinity;
+                for (const st of s.suns || []) {
+                    const a = st.app || st, dd = (a.x - o.x) ** 2 + (a.yo - o.yo) ** 2 + (a.z - o.z) ** 2;
+                    if (dd < bd) { bd = dd; best = a; }
+                }
+                const v = toCam(best ? [best.x - o.x, best.yo - o.yo, best.z - o.z] : [0.6, 1, 0.4]), l = Math.hypot(v[0], v[1], v[2]) || 1;
+                return [v[0] / l, v[1] / l, v[2] / l, 1];
+            };
             inRange.forEach((o, id) => {
                 const Cc = toCam([o.x - px, o.yo - camY, o.z - pz]),
                     x0 = 0,
@@ -2803,7 +2917,7 @@
                     lv = o.lod == null ? (g > 0.25 ? 2 : g > 160 / NF ? 1 : 0) : o.lod;
                 o.lod = sel ? 2 : lv === 2 ? (g < 0.18 ? 1 : 2) : lv === 1 ? (g > 0.32 ? 2 : g < 120 / NF ? 0 : 1) : (g > 200 / NF ? 1 : 0);
                 (o.lod === 2 ? fine : o.lod === 1 ? mid : coarse).push([x0 / W * 2 - 1, 1 - y1 / H * 2, x1 / W * 2 - 1, 1 - y0 / H * 2, Cc[0], Cc[1], Cc[2], o.S, e1[0], e1[1], e1[2], o.mx, u[0], u[1], u[2], o.spin,
-                e2[0], e2[1], e2[2], o.si, C[0] / 255, C[1] / 255, C[2] / 255, id, o.si2 || 0, o.mix || 0, o.star ? 1 : 0, (noNames ? (o.dTrk || (o.gRaw > 0 ? 3 / Math.sqrt(o.gRaw * NF) / EPSr : 0)) : o.dSize) || 0]);
+                e2[0], e2[1], e2[2], o.si, C[0] / 255, C[1] / 255, C[2] / 255, id, o.si2 || 0, o.mix || 0, o.star ? 1 : 0, (noNames ? (o.dTrk || (o.gRaw > 0 ? 3 / Math.sqrt(o.gRaw * NF) / EPSr : 0)) : o.dSize) || 0, ...lightOf(o)]);
             });
             const nrm = v => {
                 const l = Math.hypot(v[0], v[1], v[2]);
@@ -4707,6 +4821,16 @@
                         o.mx = Math.max(o.mx, SOLIDS[n2].mx);
                         setSize(o, S);
                     }
+                    // a sun, planet, moon or asteroid: a plain ball until its file is in; it turns slowly and keeps its shape
+                    // (no breathing or morphing). Its look and spin come from its key, so nothing here draws on the cell's
+                    // generator and the rest of the cell is laid out as before.
+                    if (o.look) {
+                        const kh = keyHash(key);
+                        Object.assign(o, { body: bodyOf(o.look, key), name: 'ball', si: SOLID_NAMES.indexOf('ball'), g: SOLIDS.ball.g, mx: SOLIDS.ball.mx, si2: 0, g2: undefined, mix: 0, beh: 'spin', S: S });
+                        o.yw = (kh & 1 ? 1 : -1) * (o.star ? 0.04 + 0.06 * ((kh >>> 1) % 100) / 100 : 0.12 + 0.35 * ((kh >>> 1) % 100) / 100);
+                        setSize(o, S);
+                        wearBody(o);
+                    }
                     if (inSys)
                         o.sys = sysKey;
                     if (gone.has(key) || live.has(key))
@@ -4748,12 +4872,14 @@
                     let M,
                         R0,
                         center = c;
+                    const suns = [];   // the system's stars, which light its planets and moons
                     if (type < 0.72) {
                         const S = R(6, 9.5);
-                        make(c, S, {
+                        suns.push(make(c, S, {
                             star: true,
-                            kind: 'ahead'
-                        }, true);
+                            kind: 'ahead',
+                            look: 'sun'
+                        }, true));
                         M = S * S * S;
                         R0 = S * 0.55 + 2;
                     }
@@ -4767,18 +4893,20 @@
                         M = m1 + m2;
                         const a = R(0, TAU),
                             sp = Math.sqrt(G * M / d);
-                        make(add3(c, [Math.cos(a) * q1[0] + Math.sin(a) * q2[0], Math.cos(a) * q1[1] + Math.sin(a) * q2[1], Math.cos(a) * q1[2] + Math.sin(a) * q2[2]], d * m2 / M), S1,
+                        suns.push(make(add3(c, [Math.cos(a) * q1[0] + Math.sin(a) * q2[0], Math.cos(a) * q1[1] + Math.sin(a) * q2[1], Math.cos(a) * q1[2] + Math.sin(a) * q2[2]], d * m2 / M), S1,
                         {
                             star: true,
                             kind: 'ahead',
+                            look: 'sun',
                             v: add3([0, 0, 0], [-Math.sin(a) * q1[0] + Math.cos(a) * q2[0], -Math.sin(a) * q1[1] + Math.cos(a) * q2[1], -Math.sin(a) * q1[2] + Math.cos(a) * q2[2]], dir * sp * m2 / M)
-                        }, true);
-                        make(add3(c, [Math.cos(a) * q1[0] + Math.sin(a) * q2[0], Math.cos(a) * q1[1] + Math.sin(a) * q2[1], Math.cos(a) * q1[2] + Math.sin(a) * q2[2]], -d * m1 / M), S2,
+                        }, true));
+                        suns.push(make(add3(c, [Math.cos(a) * q1[0] + Math.sin(a) * q2[0], Math.cos(a) * q1[1] + Math.sin(a) * q2[1], Math.cos(a) * q1[2] + Math.sin(a) * q2[2]], -d * m1 / M), S2,
                         {
                             star: true,
                             kind: 'ahead',
+                            look: 'sun',
                             v: add3([0, 0, 0], [-Math.sin(a) * q1[0] + Math.cos(a) * q2[0], -Math.sin(a) * q1[1] + Math.cos(a) * q2[1], -Math.sin(a) * q1[2] + Math.cos(a) * q2[2]], -dir * sp * m1 / M)
-                        }, true);
+                        }, true));
                         R0 = d * 2.2;
                     }
                     // planets, each farther out than the last; some with moons
@@ -4790,7 +4918,9 @@
                             m = 0.02 * S ** 3,
                             o = circ(center, [0, 0, 0], M, r, p1, p2, R(0, TAU), dir);
                         make(o.p, S, {
-                            v: o.v.slice()
+                            v: o.v.slice(),
+                            look: 'planet',
+                            suns
                         }, true);
                         const hill = r * Math.cbrt(m / (3 * M)),
                             nm = Math.random() < 0.3 ? 1 + Math.floor(Math.random() * 2) : 0;
@@ -4801,7 +4931,9 @@
                             const [m1, m2] = plane(),
                                 mo = circ(o.p, o.v, m, rm, m1, m2, R(0, TAU), sgn());
                             make(mo.p, R(0.5, 0.9), {
-                                v: mo.v
+                                v: mo.v,
+                                look: 'moon',
+                                suns
                             }, true);
                         }
                         r += R(3, 6);
@@ -4813,7 +4945,9 @@
                         for (let k = 0; k < 14; k++) {
                             const o = circ(center, [0, 0, 0], M, rb + R(-0.6, 0.6), p1, p2, k * TAU / 14 + R(-0.1, 0.1), dir);
                             make(o.p, R(0.45, 0.8), {
-                                v: o.v
+                                v: o.v,
+                                look: 'rock',
+                                suns
                             }, true);
                         }
                     }
@@ -5458,6 +5592,20 @@
             $('labOpen').addEventListener('click', () => {
                 location.href = 'labs.html';
             });
+        // the suns, planets and moons, fetched once in the background (see BODY_FILES); live bodies take their looks as they come in
+        (async () => {
+            try {
+                const texts = await Promise.all(BODY_NAMES.map(n => fetch('res/' + n + '.tvf3d').then(r => { if (!r.ok) throw new Error(n + '.tvf3d: HTTP ' + r.status); return r.text(); })));
+                texts.forEach((t, i) => { const f = fieldGrid(parseTVF3D(t)); BODIES.g[i] = f.g; BODIES.col[i] = f.col; BODIES.mx[i] = f.mx; });
+                if (GLX) GLX.setBodies(BODIES);
+                BODIES.ready = true;
+                for (const o of live.values()) wearBody(o);
+            } catch (e) {
+                BODIES.failed = e.message;
+                console.log('[bodies] ' + e.message + ' (drawn as plain balls)');
+            }
+        })();
+        window.__bodies = { BODIES, BODY_NAMES, NSOLID, bodies: () => [...live.values()].filter(o => o.body != null).map(o => ({ key: o.key, name: o.name, si: o.si, star: !!o.star, look: o.look, suns: (o.suns || []).length })) };
         // test hooks for the live view (flights; THE LAB GUIDE's TESTING, in labs.html). The labs' own are on labs.html.
         window.__wanderLab = {
             inView: () => [...new Set(lastRange.map(a => a && a.src).filter(Boolean))].map((o, i) => ({

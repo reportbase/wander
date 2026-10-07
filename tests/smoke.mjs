@@ -71,6 +71,27 @@ try {
   await page.waitForTimeout(2000);
   console.log(`${failures.length ? 'FAIL' : 'ok  '} fly`);
 
+  // ── 1b. the suns, planets and moons from res/*.tvf3d: they load, every system's star wears a sun and its planets
+  //       planets lit by that star, and their shapes and colours reach the card ──
+  current = 'bodies';
+  const beforeB = failures.length;
+  await page.waitForFunction(() => window.__bodies && (window.__bodies.BODIES.ready || window.__bodies.BODIES.failed), null, { timeout: 60000 });
+  const bd = await page.evaluate(() => { const B = window.__bodies, L = B.bodies();
+    return { failed: B.BODIES.failed, files: B.BODY_NAMES.length, loaded: B.BODIES.g.filter(Boolean).length,
+             mx: Math.max(...B.BODIES.mx), coloured: B.BODIES.col.every(c => c.some((v, i) => i % 4 < 3 && v > 0)),
+             n: L.length, worn: L.filter(o => o.si >= B.NSOLID).length,
+             suns: L.filter(o => o.star && /^sun-/.test(o.name)).length, starsPlain: L.filter(o => o.star && !/^sun-/.test(o.name)).length,
+             lit: L.filter(o => o.look === 'planet' && o.suns > 0).length, planets: L.filter(o => o.look === 'planet').length }; });
+  if (bd.failed) failures.push(`[bodies] did not load: ${bd.failed}`);
+  if (bd.loaded !== bd.files) failures.push(`[bodies] ${bd.loaded} of ${bd.files} files read`);
+  if (!bd.coloured) failures.push('[bodies] a body came out with no colour');
+  if (!(bd.mx > 0.4 && bd.mx < 1)) failures.push(`[bodies] radius ${bd.mx}: not a body about half its height across`);
+  if (!bd.n || bd.worn !== bd.n) failures.push(`[bodies] ${bd.worn} of ${bd.n} bodies wear their file`);
+  if (!bd.suns || bd.starsPlain) failures.push(`[bodies] ${bd.suns} stars wear a sun, ${bd.starsPlain} do not`);
+  if (!bd.planets || bd.lit !== bd.planets) failures.push(`[bodies] ${bd.lit} of ${bd.planets} planets know their star`);
+  await page.waitForTimeout(500);
+  console.log(`${failures.length === beforeB ? 'ok  ' : 'FAIL'} bodies (${bd.files} files; ${bd.n} bodies held, ${bd.suns} suns, ${bd.planets} planets)`);
+
   // ── 2. Every lab ──
   current = 'labs';
   const before = failures.length;
