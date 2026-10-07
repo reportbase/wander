@@ -42,6 +42,7 @@ ruled.*
 - 7 October, twentieth: §1 corrected: the number line is not a situation but a ruler, notches on a stick (Tom); §2 table and Background updated.
 - 7 October, twenty-first: §1, what the ruler is for: readers talking to each other (Tom).
 - 7 October, twenty-second: §1, back into the reader's own relation space; s_B = s_A·(h_A/h_B) (Tom).
+- 7 October, twenty-third: §1, the ruler fits only the near field; far-field rulers count levels (Tom).
 
 ## Background from SPN
 
@@ -217,6 +218,31 @@ readers' units; where they are equal, the reading passes unchanged.
   depth everywhere: it must be at least as fine as anything two readers need to exchange.
 - **The ruler is a bridge, not a place.** Readings live in relation spaces, and the ruler is how they travel between
   them: a medium, not a viewpoint, which is why it is no situation.
+
+**The ruler fits only one side of the corner** (Tom, 7 October: "but when you lay a ruler across both the near field
+and far field, it is problematic. laying a ruler down in the near field is fine, the near field is a proportional ruler
+itself.").
+- **In the near field it fits.** Below the corner a reader reads in plain proportion, so the near field already is a
+  ruler, and laying notches over it changes nothing.
+- **In the far field it does not.** Past the corner the reader reads in levels, each doubling one step (1 to 2 counts
+  the same as 1,000 to 2,000). A uniform ruler laid there spends nearly all its notches where the reader needs fewest:
+  from 0 to 1,000, 999 of its notches lie past the corner, where the reader holds about 10 levels. And it hides the
+  flip: taking a far-field reading back into the reader's space is not a rescaling but passes through 1/s. The ruler
+  treats the far field as more near field, as if there were no corner.
+- **People already switch rulers for the far field.** Decibels, the Richter scale, star magnitudes and pH are shared
+  rulers whose notches are levels: each notch a fixed ratio, not a fixed difference. Scientific notation, 3.2 × 10⁶,
+  is the whole of it in one number: a near-field ruler inside a level (3.2) and a count of levels past the corner (6).
+  It is a reader's own line made public, and it is the float's mantissa and exponent.
+
+| field | the shared ruler that fits | examples |
+|---|---|---|
+| near (below the corner) | equal notches: a plain ruler | a tape measure, a kitchen scale |
+| far (past the corner) | notches at equal ratios: counting levels | decibels, star magnitudes, Richter, pH |
+| both, in one number | a plain ruler inside a level count | scientific notation, floating point |
+
+So the ordinary number line is the near-field ruler stretched across the corner. That is why it serves well close in
+and badly over wide ranges, and why the logarithm is not a way of drawing (§4, "Laid out in space") but the far field's
+own ruler.
 
 **The ordinary line has no corner** (Tom, 7 October: "the number line is the near field and the far field combined,
 with no corner."). The ordinary number line is laid out the same everywhere: 0.5 to 1 looks exactly like 1 to 1.5.
