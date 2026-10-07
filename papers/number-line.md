@@ -40,6 +40,7 @@ ruled.*
 - 7 October, eighteenth: §1, the circle, proportional everywhere with a corner where v and h hand over (Tom); three-way table.
 - 7 October, nineteenth: §1, the unit square, where the corner gets its name; the unit line bent at the corner; the unit is the system's own breadth (Tom).
 - 7 October, twentieth: §1 corrected: the number line is not a situation but a ruler, notches on a stick (Tom); §2 table and Background updated.
+- 7 October, twenty-first: §1, what the ruler is for: readers talking to each other (Tom).
 
 ## Background from SPN
 
@@ -175,6 +176,27 @@ side of the line is those inward levels.
 - **Depth everywhere.** The notches sit at one spacing all along: the finest notch is the ruler's grain, applied
   everywhere, needed or not.
 - **A recursive line** would be a stick notched only where something needs measuring, more finely where the detail is.
+
+**What the ruler is for: readers talking to each other** (Tom, 7 October: "the ruler is needed when two readers need to
+communicate. they agree on what the ruler represents, and build out from there."). Each situated reader has its own
+unit and its own corner, so readings made by different readers do not line up: s = v/h means something different where
+h differs. To share a reading they need something neither of them owns. The ruler is that: an agreement on what one
+notch stands for, built out from there.
+- **No corner, because it must be neutral.** A built-in corner would be one reader's unit and would favour that reader.
+  A uniform stick favours none.
+- **Depth everywhere, because it cannot know who will read it.** It must serve whatever detail any reader needs. That is
+  the price of being shared, and it changes how §4's comparison should be read: the ordinary line's spending on empty
+  levels is not a flaw but the cost of neutrality.
+- **It puts back the scale division took out.** A reader divides by its own h and keeps only the relation. To tell
+  another, it must put a scale back: v in agreed units, s_A·h_A = s_B·h_B, read off the common ruler. This is SPN's "how
+  the depth comes back after division", between readers: the address points back to a magnitude both sides agree on.
+- **It is how units came about.** The foot, the cubit and at last the metre were each one reader's body or object,
+  made into a public notch that everyone agreed to use.
+
+| | for | a corner? | depth |
+|---|---|---|---|
+| a reader's own line (recursive) | reading | yes: its own unit | where needed |
+| the ruler (the ordinary number line) | communicating | no: it is neutral | everywhere: the price of being shared |
 
 **The ordinary line has no corner** (Tom, 7 October: "the number line is the near field and the far field combined,
 with no corner."). The ordinary number line is laid out the same everywhere: 0.5 to 1 looks exactly like 1 to 1.5.
