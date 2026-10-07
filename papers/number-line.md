@@ -14,6 +14,8 @@ ruled.*
   all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
   plain explanation of the corner (below; the corner itself is SPN's), named the two sides front and back, near and far, in place of "breadth" and
   "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
+- 7 October, fifth: §4, "depth everywhere, and depth where needed" (Tom: the number line has depth everywhere, as its
+  decimals; a situated reader recurses only into perturbations it has found). Lay of the land, no ruling.
 - 7 October, fourth: §4 rebuilt on the draw repository's depth labs (Tom: "we have already explored depth in draw
   repository in the labs. lets build on that in the number line paper"); the third draft's "depth is the digits"
   corrected: digits are precision, depth is a new sweep over a level.
@@ -178,6 +180,26 @@ digits". The draw repository's distinction between precision and depth shows tha
 finer; depth enters a new level. The halving question it raised (SPN nests the next level only in the back half, a
 binary expansion halves wherever the remainder falls) is answered by the same distinction: halving within a level is
 precision; entering the next level is depth.
+
+**Depth everywhere, and depth where needed** (Tom, 7 October: "for the real number line, depth is just the number of
+decimals"; then "no ruling, just creating the lay of the land, what we know to be true. situated observers only recurse
+into known perturbations. there is no point to having depth everywhere, which what the number line does."). Laid side
+by side, with no ruling on the word:
+
+| | the number line | a situated reader |
+|---|---|---|
+| outward levels | the digits before the point: ones, tens, hundreds… | its window's reach past the corner |
+| inward levels | the decimals: tenths, hundredths…, the same number of them for every number | entered only where the level above left something the reader can see |
+| depth | everywhere: 3.000000 carries six inward levels that hold nothing | where needed, and only there |
+| in the draw labs | the file that enters every level: 518 sweeps a shape | the file that enters a level only where something is left: 79 to 244 sweeps, with no loss |
+
+- **The decimals are a grain.** Writing a number to n decimals reads it with a grain of 10⁻ⁿ: the number line's depth
+  is its reader's dial, set once and applied everywhere.
+- **A situated reader cannot know a perturbation before it sees it.** "Known" here means found: a remainder the
+  current level left that the reader can detect. It then recurses there and nowhere else (draw: "recursion goes where
+  the detail is").
+- **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
+  other is a held thing's remainder, entered where found. They are not ruled the same or different.
 
 **Still open.**
 
