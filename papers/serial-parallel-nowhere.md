@@ -151,7 +151,7 @@ what follows from them.
 | the relation | the reading, the flip, the corner; the corner bisects every level; each level one quarter turn, for every ratio; the spiral form | **proved** (§3; Propositions 3.2(b), 3.12, 3.13), on the premises named |
 | the situated reader | one breadth known gives the horizon, the fisheye and the bell; the corner approached, never found | **proved** as mathematics (§2.1); that a reader *is* such a thing is the paper's proposal |
 | recursion | the same sweep at every level; depth beats breadth; cost follows the shape | **ruled** where it rests on (R) (R172, R175, R180); **measured** on shapes (NST, the 3d bench, "Recursion, after the corner"); forced, far out, for a finite reader facing a horizon (`plans/resolution-recursion.md`, unruled) |
-| fairness to the facings | the reading treats v/h and h/v alike, f(1/s) = 1 − f(s); the corner's place and the inversion are forced only given it | **ruled** (R162, Tom, 2 October), not derived from the bare relation. *7 October:* it is the circle's swap symmetry carried into the reading, so it holds for any reading on the circle ("The circle inverts v and h at 45°", §2.1). Open: why a physical reader would read on the circle |
+| fairness to the facings | the reading treats v/h and h/v alike, f(1/s) = 1 − f(s); the corner's place and the inversion are forced only given it | **ruled** (R162, Tom, 2 October), not derived from the bare relation. *7 October:* it is the circle's swap symmetry carried into the reading, so it holds for any reading on the circle ("The circle inverts v and h at 45°", §2.1). Open: why a physical reader would read on the circle. Answered for one physical reader, the lens: light is reversible ("h as the focus", §2.1); open for readers in general |
 | the ratio between rungs | why 2 | **open**: not derived; the runs so far found it set by the builder's rule or by the scene (below) |
 | physics | the labs (§9.9, §11.4) | **a correspondence**, not a proof: a passing lab adds standing to the conjecture, a failing one bears on the correspondence, not on the geometry |
 
@@ -686,7 +686,7 @@ have; they approach it, from outside or inside, and never reach it ("The horizon
 with both breadths known, the two corners are one, computed exactly.
 
 **h as the focus** (Tom, 6 October, on a reading of h as the reader's focus: "Add it, even if its wrong, it gives good
-intuition for what it might be." An intuition, unruled.) h is not one of the things a reading sweeps; it is what the
+intuition for what it might be." An intuition, unruled; since 7 October a structural correspondence, below.) h is not one of the things a reading sweeps; it is what the
 sweep is relative to, the reader's focus. s = v/h asks where v lies against the focus, which is why scale drops out.
 The corner, v = h, is the thing read sitting at the focus. Before it, v is a fraction of the focus; past it, the focus
 is a fraction of v, and the flip, v/h ↔ h/v, is the read thing crossing the focus while the focus stays put. Changing
@@ -700,6 +700,16 @@ x = x′ = f, object at 2f and image at 2f, magnification exactly 1, the one pla
 horizon is the object at the focus, x = 0, whose image goes to infinity. The two sides of the lens read each other in
 reciprocal. This is standard optics, and here a correspondence, not a proof: a lens behaves as a reader whose h is its
 focal length. A lab could make it one.
+
+*Promoted to a structural correspondence, 7 October* (Tom: "that means the physics correspondance is promoted"; how
+far, as follows). The reciprocal above was already here. What is new is a symmetry the lens shares with the circle
+("The circle inverts v and h at 45°"). The circle's equation is unchanged when v and h are swapped, and that is the
+fairness, R162. The lens equation, x · x′ = f² (or 1/u + 1/v = 1/f), is unchanged when object and image are swapped,
+because light paths are reversible: put the object where the image was and the image forms where the object was. So
+the lens is fair to its two sides for a physical reason, and its fixed point, x = x′ = f, is the corner. h as the focus
+moves from an intuition to a structural correspondence, with a physical source for its symmetry. It is still not a
+derivation. It does not show that readers in general are lenses, or that every physical reader is reversible (many
+processes are not), and the labs' standing (§9.9, §11.4) is unchanged: that moves only by runs.
 
 **The unit line, and the number line laid on it** (Tom, 6 October: "The number line is g=0, it is the unit line. Any
 perturbation is fully expressed at g=1"; "All the intuition for the unit circle also applies to the number line, or
