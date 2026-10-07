@@ -716,6 +716,16 @@ line or sweep is the complete set of all possible v vs h. Depth is read against 
   recovers the total depth the unsituated view computes. Read against the sweep, depth comes out the same as the area
   the whole view holds.
 
+**How the shape comes back after division** (Tom, 7 October: "this explains how the shape is recovered after division
+removes the scale. the address created by the division points to the payload."). Dividing by h removes the scale and
+leaves a relation, s = v/h; the relation is an address, a place on the sweep, the same whatever the scale. At each
+address the world returns what is there, the payload: the unit plus the depth at that address. Gathered over every
+address, the payloads are the shape's depth read against the sweep, so the shape comes back, up to a scale (§8.2). The
+scale itself is what the division took away; it does not come back from the addresses, only from a unit agreed with
+others (§8.4). So the division does not lose the shape: it turns the shape into addresses, and the payload at each
+address returns it (§4.3, "Addresses and payload"; R159: a situated observer "constructs an addressing scheme from
+relations available at its standpoint, and uses those addresses to encounter the world's magnitudes").
+
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
 
 > "3 and 4 can approach the corner but never arrive there. both have horizons, one from the outside 0 to PI/2 and from
