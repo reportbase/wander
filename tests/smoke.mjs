@@ -102,6 +102,45 @@ try {
   await page.waitForTimeout(500);
   console.log(`${failures.length === beforeB ? 'ok  ' : 'FAIL'} bodies (${bd.files} files; ${bd.n} bodies held, ${bd.suns} suns, ${bd.planets} planets)`);
 
+  // ── 1c. moving about (Oct 7: "i can't move to planets"): holding W gathers speed, letting go glides; a tap beside a small
+  //       planet takes it; going round it brings it in to about 40° across, and zooming in brings it nearer still ──
+  current = 'moving';
+  const beforeM = failures.length;
+  await page.keyboard.press('Escape');
+  const w0 = await page.evaluate(() => __wanderLab.where());
+  await page.keyboard.down('w');
+  await page.waitForFunction(t0 => __wanderLab.where().t > t0 + 2.6, w0.t, { timeout: 120000, polling: 100 });
+  const w1 = await page.evaluate(() => __wanderLab.where());
+  await page.waitForFunction(t1 => __wanderLab.where().t > t1 + 0.4, w1.t, { timeout: 60000, polling: 100 });
+  const w2 = await page.evaluate(() => __wanderLab.where());
+  await page.keyboard.up('w');
+  const fast = Math.hypot(w2.x - w1.x, w2.y - w1.y, w2.z - w1.z) / (w2.t - w1.t);
+  if (!(fast > 20)) failures.push(`[moving] after 2.6 s held, flying at ${fast.toFixed(1)} a second (it starts at 5 and should reach 30)`);
+  await page.waitForFunction(t2 => __wanderLab.where().t > t2 + 0.3, w2.t, { timeout: 60000, polling: 100 });
+  const w3 = await page.evaluate(() => __wanderLab.where()), glide = Math.hypot(w3.x - w2.x, w3.y - w2.y, w3.z - w2.z);
+  if (!(glide > 0.5)) failures.push(`[moving] letting go stopped dead (moved ${glide.toFixed(2)} after)`);
+  await page.waitForTimeout(800);
+  const tgt = await page.evaluate(() => __wanderLab.drawn().filter(o => !o.star && o.r > 2 && o.r < 10 && o.y > 80 && o.y < 650 && o.x > 100 && o.x < 1180).sort((a, b) => b.r - a.r)[0]);
+  if (!tgt) failures.push('[moving] no small body in view to tap');
+  else {
+    await page.mouse.click(tgt.x + tgt.r + 10, tgt.y);   // beside it, not on it
+    await page.waitForTimeout(300);
+    const o = await page.evaluate(() => __wanderLab.where());
+    if (!o.orbit || o.name !== tgt.name) failures.push(`[moving] a tap beside ${tgt.name} took ${o.orbit ? o.name : 'nothing'}`);
+    else {
+      await page.waitForFunction(t => __wanderLab.where().t > t + 5, o.t, { timeout: 180000, polling: 200 });
+      const s1 = (await page.evaluate(() => __wanderLab.where())).span;
+      if (!(s1 > 0.5)) failures.push(`[moving] five seconds after tapping, ${tgt.name} spans only ${s1.toFixed(2)} (it should come in to about 0.7)`);
+      for (let i = 0; i < 10; i++){ await page.mouse.wheel(0, -200); await page.waitForTimeout(60); }
+      const z0 = (await page.evaluate(() => __wanderLab.where())).t;
+      await page.waitForFunction(t => __wanderLab.where().t > t + 3, z0, { timeout: 180000, polling: 200 });
+      const s2 = (await page.evaluate(() => __wanderLab.where())).span;
+      if (!(s2 > s1 * 1.3 && s2 > 0.9)) failures.push(`[moving] zooming in took ${tgt.name} only from ${s1.toFixed(2)} to ${s2.toFixed(2)} across`);
+    }
+  }
+  await page.keyboard.press('Escape');
+  console.log(`${failures.length === beforeM ? 'ok  ' : 'FAIL'} moving (${fast.toFixed(0)} a second held${tgt ? ', a tap beside ' + tgt.name : ''})`);
+
   // ── 2. Every lab ──
   current = 'labs';
   const before = failures.length;

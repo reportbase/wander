@@ -115,7 +115,10 @@ In short:
 
 ## Testing
 - `npm test` runs `tests/smoke.mjs` in headless Chromium:
-  1. **Fly:** presses Fly, looks around, flies and taps a body.
+  1. **Fly:** presses Fly, looks around, flies and taps a body. Then the bodies load and wear
+     their files, and moving about works: holding W gathers speed (5 to 30 a second) and
+     letting go glides; a tap beside a small planet takes it, going round brings it to about
+     40° across, and zooming brings it nearer (never closer than 1.35 of its radius).
   2. **Labs:** runs `labs.html?lab=all` (a few minutes; TMP and TRK are the slow ones).
   3. **labs.html:** a card per lab, BAL run from its button, and `index.html?lab=`
      forwarding to `labs.html`.
