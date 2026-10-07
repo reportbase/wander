@@ -37,6 +37,7 @@ ruled.*
 - 7 October, fifteenth: §7, the open questions brought up to date.
 - 7 October, sixteenth: §4, laid out in space; logarithms removed as a distortion, kept as a count (Tom).
 - 7 October, seventeenth: §1, the ordinary line has no corner; the corner is the reader's (Tom); §1 and §2 tables corrected.
+- 7 October, eighteenth: §1, the circle, proportional everywhere with a corner where v and h hand over (Tom); three-way table.
 
 ## Background from SPN
 
@@ -174,6 +175,28 @@ the near field and the far field into one uniform ruler, and 1 is only another t
   space"). Both are costs of a line without a corner.
 - **A recursive line has a corner at every branch.** Each branch is proportional up to its corner and opens a new level
   past it, which is why it lays out only what it needs.
+
+**The circle: proportional everywhere, with a corner** (Tom, 7 October: "notice that a circle is another thing, it is
+proportional, like the number line, but rotates proportionality between the v and h at the corner"). The circle is
+proportional all the way round, as the line is: equal arcs, equal turns, no levels. Unlike the line, it has a corner,
+where the proportionality changes hands.
+- **Before 45°** v is what changes: v = sin θ ≈ θ grows in step with the angle, while h stays near 1.
+- **After 45°** h is what changes: h = cos θ ≈ 90° − θ (in radians) shrinks in step with the angle left, while v stays
+  near 1.
+- **At 45°** they hand over. Swapping v and h reflects the circle across its 45° line (SPN §2.1, "The circle inverts v
+  and h at 45°"), so the halves are the same size, and the same proportionality runs with the roles exchanged.
+
+| | proportional? | a corner? | what happens at it |
+|---|---|---|---|
+| **the ordinary number line** | everywhere | none | nothing: 1 is only another tick |
+| **the circle** (situations 1, 2) | everywhere, by angle | yes, at 45° | proportionality passes from v to h: a mirror, equal halves |
+| **a situated reader** (3, 4) | only before its corner | yes, at its own unit | proportion gives way to levels: s ↔ 1/s, a squeeze |
+
+- **Where each corner lives.** The line has none. The circle's is built in by its symmetry, the same for everyone. A
+  situated reader's is its own, set by the unit it holds.
+- **Why only the reader needs levels.** On the circle the swap at the corner keeps the halves equal. For a reader holding
+  h the swap is s ↔ 1/s, which squeezes everything from 1 to infinity into a back side no wider than the front. The levels
+  count that squeeze.
 
 The tables in this section and in §2 have been corrected to match. Earlier they put the corner at 1 on the line itself,
 where it belongs to the reader holding the line's unit.
