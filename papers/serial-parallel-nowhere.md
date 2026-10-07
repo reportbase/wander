@@ -50,6 +50,16 @@ breadths held whole, as an equation or an array, with no reader dividing. The ea
 (a phrase of Nagel's, 1986, used here only for the state of knowing both breadths) and "the view from somewhere",
 remain in quotations and in the titles of works. "Nowhere" in the paper's title means the unsituated view.
 
+*By the corner* (Tom, 7 October: "that is a nice way to explain the difference between the situated and the unsituated
+readers. there relationship to the corner."). The unsituated view contains the corner, one point of the relation it
+holds, computed exactly. A situated reader approaches the corner and never reaches it, and if it did it would no longer
+be situated: to be at the corner is to know v = h, and so to know v ("Reaching the corner ends being situated", §3.1).
+
+| | the corner is | follows from that |
+|---|---|---|
+| unsituated (1, 2) | contained, computed | no horizon; proportional on both sides; a mirror at 45° |
+| situated (3, 4) | approached, never reached | a horizon; proportional before it, levels past it; the reciprocal squeeze |
+
 **Units: a doubling, a level, and dyadic** (Tom, 6 October: "the first is simpler, go with that"; "we don't need to
 use octave, its just a place holder"; "level and dyadic, go ahead").
 
