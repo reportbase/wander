@@ -9,7 +9,25 @@ ruled.*
 **Iterations**
 
 - 7 October: first draft, from two of Tom's notes: the number line's two infinities (§1), and "maybe the way humans
-  access the number line can best be understood as situation 3, the parallel situated perspective" (§3).
+  access the number line can best be understood as situation 3, the parallel situated perspective" (§4).
+- 7 October, second: the aim stated (Tom: "my hope is that we can map these concepts onto the number line itself. so
+  all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
+  statement of the corner (below), named the two sides front and back, near and far, in place of "breadth" and
+  "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
+
+## The corner, in one sentence
+
+Tom, 7 October, a first attempt: "the corner separates the frontside from the back side, the near field from the far
+field, it separates where the signal is less than your h unit from where the signal is greater than your h unit." And:
+"we need a nice short statement about the corner, what it actually is."
+
+**Draft (for Tom to refine):** *The corner is where the signal equals your unit: below it, the signal is a part of your
+unit; above it, your unit is a part of the signal.*
+
+On the number line the corner is 1. Below 1 a number is a fraction of the unit (½ is half of one); above 1 the unit is a
+fraction of the number (1 is half of 2). The part and the whole change places there, and nowhere else. Everything else
+follows from that: the two sides (near and far, front and back), the flip that swaps them (s ↔ 1/s), and why it is
+yours (it is set by your unit, not by the line).
 
 ## 1. The number line has two infinities, and they are one
 
@@ -23,9 +41,9 @@ and both are a situated reader's unreached ends (SPN, "By the corner", the three
 
 | | the number line | in SPN |
 |---|---|---|
-| out without end: 1, 2, 4, … → ∞ | breadth | the horizon, approached |
-| in without end: 1, ½, ¼, … → 0 | fineness (see the note on words) | home, approached |
+| in without end: 1, ½, ¼, … → 0 | less than the unit | the front side, the near field; home, approached |
 | 1 | the unit, h | the corner |
+| out without end: 1, 2, 4, … → ∞ | greater than the unit | the back side, the far field; the horizon, approached |
 
 That is why neither is fully expressed. **The number line is a situated object:** it holds its unit exactly, it has
 two ends it never reaches, and it cannot be held whole. Laid on the sweep, g = (2/π)·atan(s), the whole line fits in g
@@ -33,19 +51,48 @@ from 0 to 1, and the ends are still only approached (g → 0, g → 1). The swee
 The levels run both ways: R172 already has halvings toward home as well as doublings toward the horizon, and the inward
 side of the line is those inward levels.
 
-*A note on words (open; Tom to decide).* Tom's "depth" here is how finely the line divides. In SPN, **depth** is a
-shape's difference from the circle, which only situation 2 has (Tom, 6 October). Unless the two are meant to be the
-same, which would be a larger claim, this paper says **fineness** for the inward side, to keep the two apart.
+*On words* (second iteration). Tom's first note said "breadth" and "depth". The corner names the two sides already:
+the inward side is the **front side, the near field**, where the signal is less than the unit; the outward side is the
+**back side, the far field**, where it is greater (Tom: "the near field from the far field"; SPN §3.1, R165). "Depth"
+stays SPN's word for a shape's difference from the circle (situation 2 only).
 
-## 2. Is the number line ever "fully expressed"?
+## 2. SPN's ideas on the number line
+
+The aim (Tom): "map these concepts onto the number line itself. so all the ideas of the serial-parallel paper even apply
+to the most basic thing we take for granted." A first map; each row is a reading until checked.
+
+| SPN | on the number line |
+|---|---|
+| h, the unit held | 1 |
+| the reading, s = v/h | a number, read in units of 1 |
+| the corner | 1: the signal equals the unit |
+| home | 0, approached from the near side |
+| the horizon | ∞, approached from the far side |
+| front side, near field | (0, 1): proper fractions |
+| back side, far field | (1, ∞) |
+| the flip, s ↔ 1/s | the reciprocal, which swaps the two sides and fixes only 1 |
+| proportional before the corner | below 1, equal steps are equal parts of the unit |
+| levels past the corner, dyadic | 1, 2, 4, 8, …: each doubling one level; by the flip, ½, ¼, … toward home |
+| the sweep, g = (2/π)·atan(s) | the whole positive line laid on 0 to 1, the corner at ½, both ends approached |
+| facings, 2^(signs) | positive numbers: 1; with negatives: 2; the complex plane (signs of the real and imaginary parts): 4 |
+| situated, not unsituated | the line holds its unit but cannot be held whole (§1) |
+| static and dynamic; 3 and 4 | seen at once as a stretch, or counted one at a time (§4) |
+| depth, situation 2 only | none: the line is not a shape held against the circle |
+
+*Checked so far:* the corner, the flip and its one fixed point, the sides, and the levels are ordinary arithmetic. The
+facings row is a reading: the complex plane's four quadrants are four copies of the unit sweep by the signs of the
+real and imaginary parts, as SPN's "unit sweep, repeated" counts them; whether anything more of SPN carries to complex
+numbers is not looked at here.
+
+## 3. Is the number line ever "fully expressed"?
 
 On SPN's unit line, a perturbation is "fully expressed at g = 1" (Tom, 6 October). The number line as people know it
-looks fully expressed, every size and every fineness there at once. But by §1 it holds neither end, only the approach
+looks fully expressed, every size, large and small, there at once. But by §1 it holds neither end, only the approach
 to both. What people hold is the unit and the rule for going on (add one, halve again), not the line. *Open:* whether
 "fully expressed" should be kept for a held whole (situations 1, 2) and the number line called "fully specified" (its
 rule known) instead.
 
-## 3. People meet the number line as situation 3, within a window
+## 4. People meet the number line as situation 3, within a window
 
 Tom, 7 October: "maybe the way humans access the number line can best be understood as situation 3, the parallel
 situated perspective."
@@ -86,7 +133,7 @@ situated perspective."
 | a bounded line, 0 to N given | the whole held | the endpoints and the midpoint |
 | far past the window | 4 again, by levels | orders of magnitude |
 
-## 4. What would test it
+## 5. What would test it
 
 The table predicts a split. **Open-ended estimates** (no upper bound given: "how far is 1000 from 0, if this is 10?")
 should centre on the person's unit and compress past it, the corner model's shape. **Bounded-line estimates** should
@@ -94,15 +141,14 @@ centre on the midpoint, proportion judgment's shape. The same people should show
 this would be a new run with its own prediction and kill condition, written before any data is seen; run 1's kill
 stays on the record. Not planned yet.
 
-## 5. Open
+## 6. Open
 
 - **The window's size.** Is it fixed (a span of levels, set by resolution) or does it grow with familiarity, as the
   switch point does in development?
 - **Fractions.** The inward side, below 1, is the proportional front side in SPN, yet fractions are notoriously hard
   for children (Siegler and others, 2011). Is the inward side read as a second window, with its own unit (½, a tenth)?
 - **Zero and the negatives.** Is 0 home, approached, or a point people hold exactly? Are the negatives the turned-away
-  facing, met only by turning (serial), as §3 suggests?
-- **The word for the inward side** (§1).
+  facing, met only by turning (serial), as §4 suggests?
 
 ## Sources
 
