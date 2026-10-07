@@ -71,17 +71,19 @@ const BODIES = {
   // suns: their own light; granulation, spots and the darker, redder limb are the renderer's
   'sun-yellow': seed => { const N = noiseOf(seed); const spots = Array.from({ length: 7 }, () => sph((N.rnd() * 2 - 1) * 0.5, N.rnd() * TAU));
     return p => { const g = N.fbm(p, 18, 3), f = N.fbm(p, 5, 4); let c = mixc(rgb('#ffcf5a'), rgb('#fff4c8'), sstep(-0.25, 0.35, g + 0.4 * f));
-      for (const s of spots){ const d = angle(p, s); c = mixc(c, rgb('#7a3a10'), sstep(0.09, 0.03, d)); c = mixc(c, rgb('#c8701c'), sstep(0.14, 0.09, d) * 0.6); }
-      return [0, c]; }; },
+      let rel = 0.006 * g;
+      for (const s of spots){ const d = angle(p, s); c = mixc(c, rgb('#7a3a10'), sstep(0.09, 0.03, d)); c = mixc(c, rgb('#c8701c'), sstep(0.14, 0.09, d) * 0.6); rel -= 0.012 * sstep(0.1, 0.03, d); }
+      return [rel, c]; }; },
   'sun-orange': seed => { const N = noiseOf(seed); const spots = Array.from({ length: 10 }, () => sph((N.rnd() * 2 - 1) * 0.6, N.rnd() * TAU));
     return p => { const g = N.fbm(p, 14, 3), f = N.fbm(p, 4, 4); let c = mixc(rgb('#ff8a1e'), rgb('#ffd27a'), sstep(-0.3, 0.4, g + 0.5 * f));
-      for (const s of spots){ const d = angle(p, s); c = mixc(c, rgb('#5a1c08'), sstep(0.07, 0.02, d)); c = mixc(c, rgb('#b04a10'), sstep(0.12, 0.07, d) * 0.6); }
-      return [0, c]; }; },
+      let rel = 0.006 * g;
+      for (const s of spots){ const d = angle(p, s); c = mixc(c, rgb('#5a1c08'), sstep(0.07, 0.02, d)); c = mixc(c, rgb('#b04a10'), sstep(0.12, 0.07, d) * 0.6); rel -= 0.012 * sstep(0.08, 0.02, d); }
+      return [rel, c]; }; },
   'sun-red': seed => { const N = noiseOf(seed);
-    return p => { const g = N.fbm(p, 6, 4), f = N.fbm(p, 2.5, 3); return [0, mixc(rgb('#b8240c'), rgb('#ff7a30'), sstep(-0.35, 0.45, g + 0.6 * f))]; }; },
+    return p => { const g = N.fbm(p, 6, 4), f = N.fbm(p, 2.5, 3); return [0.01 * g, mixc(rgb('#b8240c'), rgb('#ff7a30'), sstep(-0.35, 0.45, g + 0.6 * f))]; }; },
   'sun-blue': seed => { const N = noiseOf(seed);
     return p => { const g = N.fbm(p, 20, 3), lat = Math.asin(p[1]); let c = mixc(rgb('#8fb4ff'), rgb('#eaf2ff'), sstep(-0.3, 0.35, g + 0.25 * Math.cos(6 * lat)));
-      return [0, c]; }; },
+      return [0.005 * g, c]; }; },
   'sun-white': seed => { const N = noiseOf(seed);
     return p => [0, mixc(rgb('#bccdf6'), rgb('#f2f6ff'), sstep(-0.35, 0.35, N.fbm(p, 10, 3) + 0.3 * N.fbm(p, 3, 3)))]; },
 
@@ -95,20 +97,20 @@ const BODIES = {
       const ground = mixc(mixc(rgb('#3f7a32'), rgb('#b59a5a'), dry), mixc(rgb('#7a6650'), rgb('#f2f2f2'), sstep(0.32, 0.42, e)), mtn);
       c = mixc(c, ground, land); c = mixc(c, rgb('#f4f8fb'), ice);
       const cl = sstep(0.08, 0.38, N.fbm([w[0] * 1.3, w[1] * 2.2, w[2] * 1.3], 2.5, 5)); c = mixc(c, rgb('#ffffff'), cl * 0.85);
-      return [land * 0.02 * Math.max(0, e), c]; }; },
+      return [land * (0.07 * Math.max(0, e) + 0.006 * N.ridged(p, 9, 4)), c]; }; },
   'planet-ocean': seed => { const N = noiseOf(seed);
     return p => { const e = N.fbm(p, 3, 6) - 0.28, land = sstep(0, 0.02, e);
       let c = mixc(rgb('#06244a'), rgb('#1a7fa8'), sstep(-0.35, 0, e)); c = mixc(c, mixc(rgb('#d9c48a'), rgb('#3f8a3c'), sstep(0.02, 0.06, e)), land);
       const w = [p[0] + 0.5 * N.fbm(p, 1.5, 3), p[1] * 2.5, p[2] + 0.5 * N.fbm(p, 1.7, 3)], cl = sstep(0.1, 0.4, N.fbm(w, 2, 5));
       c = mixc(c, rgb('#ffffff'), cl * 0.9); c = mixc(c, rgb('#eef6fb'), sstep(0.85, 0.92, Math.abs(p[1])));
-      return [0, c]; }; },
+      return [land * 0.05 * Math.max(0, e), c]; }; },
   'planet-mars': seed => { const N = noiseOf(seed), cr = craters(N, 60, 0.02, 0.16, 0.6);
     return p => { const [rel, br] = cr(p), dark = sstep(0.0, 0.25, N.fbm(p, 2, 5)), lat = Math.asin(p[1]);
       let c = mixc(rgb('#c1653a'), rgb('#6e3a26'), dark * 0.8); c = mixc(c, rgb('#e0a070'), sstep(0.1, 0.4, N.fbm(p, 6, 4)) * 0.4);
       const canyon = sstep(0.06, 0.0, Math.abs(lat - 0.1 * N.fbm(p, 3, 3) + 0.05)) * sstep(0.2, 0.6, Math.cos(Math.atan2(p[2], p[0]) - 1));
       c = mixc(c, rgb('#4a2418'), canyon * 0.8); c = c.map(v => clamp(v * (1 + br)));
       c = mixc(c, rgb('#f6f2ee'), sstep(0.88, 0.94, Math.abs(p[1]) + 0.05 * N.fbm(p, 8, 3)));
-      return [rel - canyon * 0.02, c]; }; },
+      return [rel - canyon * 0.04 + 0.012 * N.fbm(p, 5, 5), c]; }; },
   'planet-jupiter': seed => { const N = noiseOf(seed), spot = sph(-0.38, 1.2);
     const BANDS = ['#e9dcc2', '#c99b6a', '#f2e8d4', '#a8714a', '#e6cfa8', '#8e5b3a', '#f0e2c6', '#b98256', '#e9dcc2'].map(rgb);
     return p => { let lat = Math.asin(p[1]); const lon = Math.atan2(p[2], p[0]);
@@ -119,40 +121,40 @@ const BODIES = {
       c = mixc(c, rgb('#fff6e6'), sstep(0.25, 0.5, N.fbm([p[0] * 4, p[1], p[2] * 4], 6, 4)) * 0.25);
       const oval = Math.hypot((lon - 1.2) / 0.28, (Math.asin(p[1]) + 0.38) / 0.13);
       c = mixc(c, rgb('#c2563a'), sstep(1.0, 0.55, oval)); c = mixc(c, rgb('#e8a080'), sstep(0.5, 0.0, oval) * 0.4);
-      return [0, c]; }; },
+      return [0.003 * N.fbm(p, 7, 3), c]; }; },
   'planet-saturn': seed => { const N = noiseOf(seed);
     const BANDS = ['#f3e2b8', '#dcc08a', '#f6ead0', '#cfae78', '#efdcb0', '#e2c792'].map(rgb);
     return p => { const lat = Math.asin(p[1]) + 0.025 * N.fbm([p[0] * 3, p[1] * 0.5, p[2] * 3], 3, 4);
       const t = (Math.sin(lat * 9) * 0.5 + 0.5) * (BANDS.length - 1), i = Math.floor(t);
       let c = mixc(BANDS[i], BANDS[Math.min(BANDS.length - 1, i + 1)], t - i);
       c = mixc(c, rgb('#9fb4c8'), sstep(0.75, 0.95, p[1]) * 0.6);                 // a blue-grey northern cap
-      return [0, c]; }; },
+      return [0.003 * N.fbm(p, 7, 3), c]; }; },
   'planet-neptune': seed => { const N = noiseOf(seed), spot = sph(-0.35, 2.4);
     return p => { const lat = Math.asin(p[1]) + 0.04 * N.fbm(p, 3, 4);
       let c = mixc(rgb('#2a4fd0'), rgb('#3f74e8'), Math.sin(lat * 6) * 0.5 + 0.5);
       c = mixc(c, rgb('#1a2c8a'), sstep(0.2, 0.08, angle(p, spot)));
       const streak = sstep(0.55, 0.8, N.fbm([p[0] * 5, p[1] * 0.5, p[2] * 5], 3, 4)) * sstep(0.35, 0.15, Math.abs(Math.asin(p[1]) + 0.25));
       c = mixc(c, rgb('#f0f6ff'), streak * 0.9);
-      return [0, c]; }; },
+      return [0.003 * N.fbm(p, 7, 3), c]; }; },
   'planet-uranus': seed => { const N = noiseOf(seed);
     return p => { const lat = Math.asin(p[1]); let c = mixc(rgb('#9fd7df'), rgb('#c4eef0'), sstep(0.4, 1.2, lat) + 0.08 * Math.sin(lat * 10));
       c = mixc(c, rgb('#b7e5ea'), sstep(-0.1, 0.3, N.fbm([p[0] * 2, p[1] * 0.3, p[2] * 2], 3, 3)) * 0.3);
-      return [0, c]; }; },
+      return [0.003 * N.fbm(p, 7, 3), c]; }; },
   'planet-venus': seed => { const N = noiseOf(seed);
     return p => { const lon = Math.atan2(p[2], p[0]), lat = Math.asin(p[1]);
       const v = N.fbm([Math.cos(lon + 1.6 * Math.abs(lat)), p[1] * 3, Math.sin(lon + 1.6 * Math.abs(lat))], 2.5, 5);   // swept into a V by the winds
-      return [0, mixc(rgb('#c9a35a'), rgb('#f6e7b8'), sstep(-0.3, 0.35, v))]; }; },
+      return [0.004 * N.fbm(p, 6, 3), mixc(rgb('#c9a35a'), rgb('#f6e7b8'), sstep(-0.3, 0.35, v))]; }; },
   'planet-lava': seed => { const N = noiseOf(seed);
     return p => { const r = N.ridged(p, 2.2, 5), crack = sstep(0.78, 0.92, r);
       let c = mixc(rgb('#1c1414'), rgb('#3a2a24'), sstep(-0.3, 0.4, N.fbm(p, 4, 4)));
       c = mixc(c, rgb('#ff7a1a'), crack); c = mixc(c, rgb('#ffd060'), sstep(0.9, 0.97, r));
-      return [-crack * 0.01 + 0.01 * N.fbm(p, 5, 4), c]; }; },
+      return [-crack * 0.025 + 0.02 * N.fbm(p, 4, 5), c]; }; },
   'planet-alien': seed => { const N = noiseOf(seed);
     return p => { const e = N.fbm(p, 1.8, 6), land = sstep(0.0, 0.03, e);
       let c = mixc(rgb('#0e5a5a'), rgb('#20a0a0'), sstep(-0.3, 0, e));
       c = mixc(c, mixc(rgb('#6a2a8a'), rgb('#d07ad0'), sstep(0.05, 0.3, N.fbm(p, 5, 4) + e)), land);
       c = mixc(c, rgb('#ffe6ff'), sstep(0.12, 0.42, N.fbm([p[0], p[1] * 3, p[2]], 2.5, 5)) * 0.6);
-      return [land * 0.015 * e, c]; }; },
+      return [land * (0.06 * Math.max(0, e) + 0.005 * N.ridged(p, 8, 4)), c]; }; },
 
   // moons and smaller bodies
   'moon-luna': seed => { const N = noiseOf(seed), cr = craters(N, 140, 0.015, 0.2, 0.7);
@@ -162,12 +164,13 @@ const BODIES = {
   'moon-ice': seed => { const N = noiseOf(seed);
     return p => { const l1 = sstep(0.9, 0.97, N.ridged(p, 2.5, 4)), l2 = sstep(0.92, 0.98, N.ridged(p, 5, 3));
       let c = mixc(rgb('#efe6d6'), rgb('#d9c8b0'), sstep(-0.2, 0.4, N.fbm(p, 3, 4)));
-      c = mixc(c, rgb('#9a5a3a'), Math.max(l1, l2 * 0.7)); return [l1 * 0.004, c]; }; },
+      c = mixc(c, rgb('#9a5a3a'), Math.max(l1, l2 * 0.7)); return [l1 * 0.012 + l2 * 0.006 + 0.004 * N.fbm(p, 10, 3), c]; }; },
   'moon-io': seed => { const N = noiseOf(seed); const vents = Array.from({ length: 22 }, () => [sph(Math.asin(N.rnd() * 2 - 1), N.rnd() * TAU), 0.03 + N.rnd() * 0.07]);
     return p => { let c = mixc(rgb('#e8d25a'), rgb('#f2e9a8'), sstep(-0.2, 0.4, N.fbm(p, 4, 4)));
       c = mixc(c, rgb('#c88a3a'), sstep(0.1, 0.35, N.fbm(p, 2.5, 4)) * 0.6);
-      for (const [v, r] of vents){ const d = angle(p, v) / r; c = mixc(c, rgb('#d8642a'), sstep(2.6, 1.4, d) * 0.7); c = mixc(c, rgb('#20160e'), sstep(1, 0.5, d)); }
-      c = mixc(c, rgb('#a8784a'), sstep(0.8, 0.95, Math.abs(p[1])) * 0.6); return [0, c]; }; },
+      let rel = 0.006 * N.fbm(p, 6, 4);
+      for (const [v, r] of vents){ const d = angle(p, v) / r; c = mixc(c, rgb('#d8642a'), sstep(2.6, 1.4, d) * 0.7); c = mixc(c, rgb('#20160e'), sstep(1, 0.5, d)); rel += r * 0.5 * Math.exp(-d * d / 3) - r * 0.4 * Math.exp(-d * d / 0.3); }
+      c = mixc(c, rgb('#a8784a'), sstep(0.8, 0.95, Math.abs(p[1])) * 0.6); return [rel, c]; }; },
   'moon-callisto': seed => { const N = noiseOf(seed), cr = craters(N, 180, 0.012, 0.12, 0.6);
     return p => { const [rel, br] = cr(p); const c = mixc(rgb('#4c4038'), rgb('#7a6a5a'), sstep(-0.3, 0.4, N.fbm(p, 3, 4)));
       return [rel, c.map(v => clamp(v * (1 + 2.2 * br)))]; }; },

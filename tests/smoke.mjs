@@ -81,7 +81,14 @@ try {
              mx: Math.max(...B.BODIES.mx), coloured: B.BODIES.col.every(c => c.some((v, i) => i % 4 < 3 && v > 0)),
              n: L.length, worn: L.filter(o => o.si >= B.NSOLID).length,
              suns: L.filter(o => o.star && /^sun-/.test(o.name)).length, starsPlain: L.filter(o => o.star && !/^sun-/.test(o.name)).length,
-             lit: L.filter(o => o.look === 'planet' && o.suns > 0).length, planets: L.filter(o => o.look === 'planet').length }; });
+             lit: L.filter(o => o.look === 'planet' && o.suns > 0).length, planets: L.filter(o => o.look === 'planet').length,
+             // near and far: the ball plus its three relief bands give the whole radius back, the ball is round, and the
+             // cratered moon has fine relief to show up close
+             split: (() => { let worst = 0, round = 0; B.BODIES.bands.forEach((q, b) => { const g = B.BODIES.g[b];
+                 for (let i = 0; i < g.length; i++){ const r = Math.max(0.004, q[4 * i] + q[4 * i + 1] + q[4 * i + 2] + q[4 * i + 3]); worst = Math.max(worst, Math.abs(r - g[i])); }
+                 for (let i = 0; i < g.length; i += 192) round = Math.max(round, Math.abs(q[4 * i] - q[4 * (i + 96)])); });
+               const luna = B.BODIES.bands[B.BODY_NAMES.indexOf('moon-luna')]; let fine = 0; for (let i = 3; i < luna.length; i += 4) fine = Math.max(fine, Math.abs(luna[i]));
+               return { worst, round, fine }; })() }; });
   if (bd.failed) failures.push(`[bodies] did not load: ${bd.failed}`);
   if (bd.loaded !== bd.files) failures.push(`[bodies] ${bd.loaded} of ${bd.files} files read`);
   if (!bd.coloured) failures.push('[bodies] a body came out with no colour');
@@ -89,6 +96,9 @@ try {
   if (!bd.n || bd.worn !== bd.n) failures.push(`[bodies] ${bd.worn} of ${bd.n} bodies wear their file`);
   if (!bd.suns || bd.starsPlain) failures.push(`[bodies] ${bd.suns} stars wear a sun, ${bd.starsPlain} do not`);
   if (!bd.planets || bd.lit !== bd.planets) failures.push(`[bodies] ${bd.lit} of ${bd.planets} planets know their star`);
+  if (bd.split.worst > 1e-5) failures.push(`[bodies] the ball and its bands miss the radius by ${bd.split.worst}`);
+  if (bd.split.round > 1e-6) failures.push(`[bodies] the ball under the relief is not round (${bd.split.round})`);
+  if (!(bd.split.fine > 0.003)) failures.push(`[bodies] the moon has no fine relief to show up close (${bd.split.fine})`);
   await page.waitForTimeout(500);
   console.log(`${failures.length === beforeB ? 'ok  ' : 'FAIL'} bodies (${bd.files} files; ${bd.n} bodies held, ${bd.suns} suns, ${bd.planets} planets)`);
 
