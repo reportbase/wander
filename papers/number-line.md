@@ -38,6 +38,7 @@ ruled.*
 - 7 October, sixteenth: §4, laid out in space; logarithms removed as a distortion, kept as a count (Tom).
 - 7 October, seventeenth: §1, the ordinary line has no corner; the corner is the reader's (Tom); §1 and §2 tables corrected.
 - 7 October, eighteenth: §1, the circle, proportional everywhere with a corner where v and h hand over (Tom); three-way table.
+- 7 October, nineteenth: §1, the unit square, where the corner gets its name; the unit line bent at the corner; the unit is the system's own breadth (Tom).
 
 ## Background from SPN
 
@@ -197,6 +198,40 @@ where the proportionality changes hands.
 - **Why only the reader needs levels.** On the circle the swap at the corner keeps the halves equal. For a reader holding
   h the swap is s ↔ 1/s, which squeezes everything from 1 to infinity into a back side no wider than the front. The levels
   count that squeeze.
+
+**The unit square: where the corner gets its name** (Tom, 7 October: "notice that the unit line extends
+perpendicularly from the corner in two directions, parallel with the near field and the far field"; and: "its where the
+name 'corner' comes from, the corner of the unit square. the unit line 1 is the true breadth of the system, it is the
+normalized value. and when all other values in the system are normalized, the system has been normalized in the unit
+system. unit line of 1 is the true system breadth. the breadths of the near field and far field intersect at the
+corner.").
+
+Put the corner at (1, 1), where v = h = 1. Two perpendicular arms of the unit line leave it:
+- **down to (1, 0):** h held at 1, v from 1 to 0. The near field, read as s = v/h, from 0 at home to 1 at the corner;
+- **left to (0, 1):** v held at 1, h from 1 to 0. The far field, read as h/v = 1/s, from 1 at the corner to 0 at the far
+  wall.
+
+A ray from the origin at angle θ meets the vertical arm at height tan θ when θ ≤ 45°, and the horizontal arm at cot θ
+when θ ≥ 45°. So every relation lands on exactly one arm, and the unit line, bent at the corner, holds the whole
+relation, from home through the corner to the far wall, in a finite length of 2.
+- **The name.** The corner is the corner of the unit square, where the unit line turns, and where the breadths of the
+  near field and the far field meet.
+- **It is a level, "2h in place"** (SPN): a front half one h long and a back half one h long.
+- **It is SPN Proposition 3.2(a), drawn.** A reader can hold s directly before the corner and 1/s past it, both within
+  [0, 1], only if the switch is at s = 1. The two arms are those two registers.
+- **The horizon becomes a point.** s → ∞ lands at the far wall, (0, 1), a finite point on the drawing. The squeeze of
+  s ↔ 1/s is the 90° turn.
+- **Each arm is plainly proportional.** Spacing is even along each arm, as on the number line; all the bending is at
+  the one point where they meet.
+- **The unit is the system's own breadth** (Tom). 1 is the system's breadth, its normalized value. Dividing every other
+  value in the system by it puts the whole system in the unit system: everything then reads against 1, on the two arms.
+
+| picture | at the corner |
+|---|---|
+| the ordinary number line | nothing: no corner |
+| the circle | a smooth handover of proportionality from v to h |
+| the unit line bent at the corner (the unit square) | a right-angle turn: s on one arm, 1/s on the other |
+| the sweep, g | the midpoint, ½, of one bounded scale |
 
 The tables in this section and in §2 have been corrected to match. Earlier they put the corner at 1 on the line itself,
 where it belongs to the reader holding the line's unit.
