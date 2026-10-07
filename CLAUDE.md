@@ -63,6 +63,9 @@ Google Fonts load from outside:
   `normalizations.md` (+ `normalizations/`): one relation divided by h (odds), by v + h
   (probability) and by the whole (the circle); two bells with dyadic tails; dividing by a noisy h
   gives a Cauchy tail. A reading.
+  `neighbours.md`: who else works near this (a first search, 7 Oct): Gilinsky's perceived
+  distance is the normalization by the sum, Schwartz's V1 map proportion-then-log; Barth and
+  Paladino's proportion judgment bears on NLE.
   `standpoint-axis.md` (+ `standpoint/`): a second axis, the standpoint (nowhere,
   outside, inside) beside the breadths known; the hemisphere observer as outside with
   the breadths known. Superseded by Tom's situations list 0–4 (SPN §2.1).
