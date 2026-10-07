@@ -32,6 +32,11 @@ Google Fonts load from outside:
   planets, moons and belt, chosen by the body's key; they are lit by their own star
   (`lightOf`, the 8th vec4 of a body's record), and suns give light. Looks only: motion,
   reading and the labs are unchanged, and `world.js` is not touched. Until they load, plain balls.
+- `sweep.html`: **the sweep device** (7 Oct 2026), a standalone page outside the world
+  and the labs: an array of pairs (v, h) divided by its own h, laid on the unit sweep
+  g = (2/π)·atan(v/h) and read by a cursor, serially (4) or all at once (3), with the
+  quarter circle (divided by the whole) beside it. `?ex=planets|shape|spread|line`,
+  `?mode=parallel`. Not linked from index.html yet.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
@@ -66,6 +71,9 @@ Google Fonts load from outside:
   `normalizations.md` (+ `normalizations/`): one relation divided by h (odds), by v + h
   (probability) and by the whole (the circle); two bells with dyadic tails; dividing by a noisy h
   gives a Cauchy tail. A reading.
+  `neighbours.md`: who else works near this (a first search, 7 Oct): Gilinsky's perceived
+  distance is the normalization by the sum, Schwartz's V1 map proportion-then-log; Barth and
+  Paladino's proportion judgment bears on NLE.
   `standpoint-axis.md` (+ `standpoint/`): a second axis, the standpoint (nowhere,
   outside, inside) beside the breadths known; the hemisphere observer as outside with
   the breadths known. Superseded by Tom's situations list 0–4 (SPN §2.1).
@@ -108,6 +116,7 @@ In short:
   2. **Labs:** runs `labs.html?lab=all` (a few minutes; TMP and TRK are the slow ones).
   3. **labs.html:** a card per lab, BAL run from its button, and `index.html?lab=`
      forwarding to `labs.html`.
+  4. **sweep.html:** every example lays on the sweep, and the cursor sweeps.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

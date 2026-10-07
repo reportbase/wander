@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The sweep device</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    sweep.html: the sweep device (7 October 2026, at Tom's "you could sweep the array like a device"). A standalone page,
+    not part of the world (world.js) or the labs (labs.html). An array of pairs (v, h), in any units, is normalized by
+    each pair's own h, laid on the unit sweep g = (2/π)·atan(v/h) from 0 to 1 (home 0, corner ½, horizon 1; SPN §2.1,
+    "The unit line, and the number line laid on it"; "Two normalizations, the two layings"), then read by a cursor.
+    Serial: the cursor runs from 0 to 1 and reads one address at a time. Parallel: every address at once, against the
+    bell. The quarter circle beside it is the same array laid the other way, by the whole (situations 1 and 2).
+    Links: ?ex=planets|shape|spread|line picks an example; ?mode=parallel starts in parallel.
+    -->
+    <style>
+    :root {
+        color-scheme: dark;
+        --ground: #0c0c11;
+        --panel: #14141b;
+        --line: rgba(255, 255, 255, 0.09);
+        --ink: #c8c8d0;
+        --dim: #8a8a96;
+        --bright: #e6e4ee;
+        --gold: #d4a052;
+        --teal: #8ce6cd;
+        --red: #d96e5b;
+    }
+    * { box-sizing: border-box }
+    body {
+        margin: 0; background: var(--ground); color: var(--ink);
+        font: 14px/1.5 'DM Mono', ui-monospace, monospace;
+    }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 18px; max-width: 70ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+    select { min-width: 0; flex: 1 1 220px }
+    #readout { overflow-x: auto }
+    code { word-break: break-all }
+    label { color: var(--dim) }
+    select, button, textarea { max-width: 100%;
+        font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px;
+    }
+    button { cursor: pointer }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    textarea { width: 100%; min-height: 110px; resize: vertical; margin-top: 10px }
+    svg { width: 100%; height: auto; display: block }
+    .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 14px; align-items: start }
+    #circle { max-width: 300px; margin: 0 auto }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #readout { white-space: pre-wrap; color: var(--bright); min-height: 6.5em }
+    .note { color: var(--dim); font-size: 12.5px }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The sweep device</h1>
+    <p class="lede">Any array of pairs (v, h), in any units, divided by its own h: every pair becomes a relation v/h and
+        an address on the one unit sweep, g from 0 (home) through 1/2 (the corner, v = h) toward 1 (the horizon). A cursor
+        then reads the array as a device would: serially, one address at a time, or in parallel, all at once.</p>
+
+    <div class="panel">
+        <div class="row">
+            <label for="ex">example</label>
+            <select id="ex">
+                <option value="planets">planets: orbit radius, h = Earth's</option>
+                <option value="shape">a shape: an egg's radii, h = its mean radius</option>
+                <option value="spread">a wide spread of ratios</option>
+                <option value="line">a perturbed line: h = the unit line</option>
+                <option value="own">my own (edit below)</option>
+            </select>
+            <button id="serial" class="on">serial (4)</button>
+            <button id="parallel">parallel (3)</button>
+            <button id="play">sweep</button>
+        </div>
+        <textarea id="data" spellcheck="false" aria-label="pairs: label, v, h per line"></textarea>
+        <div class="note">One pair per line: <code>label, v, h</code> (or <code>v h</code>). Nothing else is assumed: no
+            units, no scale.</div>
+    </div>
+
+    <div class="grid">
+        <div class="panel"><svg id="sweep" viewBox="0 0 640 210" role="img" aria-label="the unit sweep"></svg></div>
+        <div class="panel"><svg id="circle" viewBox="0 0 260 260" role="img" aria-label="the quarter circle"></svg></div>
+    </div>
+    <div class="panel"><div id="readout"></div></div>
+    <p class="note">The unit sweep is the number line laid on the unit line; the quarter circle is the same array divided
+        by the whole instead (SPN §2.1: "The number line laid twice", "Two normalizations"). Front of the corner, v is
+        counted in h's; past it, h is counted in v's, and each doubling past the corner is one dyadic level.</p>
+</main>
+<script>
+'use strict';
+const EX = {
+    planets: [['Mercury',0.387,1],['Venus',0.723,1],['Earth',1,1],['Mars',1.524,1],['Jupiter',5.203,1],
+              ['Saturn',9.537,1],['Uranus',19.19,1],['Neptune',30.07,1]],
+    shape: Array.from({length: 16}, (_, i) => {
+        const t = i / 16 * 2 * Math.PI, r = 1 + 0.25 * Math.cos(t) + 0.06 * Math.cos(2 * t);
+        return [(i * 22.5) + '°', +r.toFixed(4), 1];
+    }),
+    spread: [['a',0.01,1],['b',0.05,1],['c',0.2,1],['d',0.6,1],['e',1,1],['f',1.7,1],['g',5,1],['h',20,1],['i',100,1],['j',1000,1]],
+    line: Array.from({length: 24}, (_, i) => {
+        const x = i / 23, bump = 0.12 * Math.exp(-(((x - 0.3) / 0.06) ** 2)) - 0.08 * Math.exp(-(((x - 0.72) / 0.05) ** 2));
+        return ['x=' + x.toFixed(2), +(1 + bump).toFixed(4), 1];
+    })
+};
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const el = (n, a, txt) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; return e; };
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+let mode = 'serial', cursor = null, raf = 0, items = [];
+
+function parse(text) {
+    const out = [];
+    for (const raw of text.split('\n')) {
+        const line = raw.trim(); if (!line) continue;
+        const parts = line.split(/[,\s]+/).filter(Boolean);
+        const nums = parts.map(Number);
+        let label, v, h;
+        if (parts.length >= 3 && isNaN(nums[0])) { label = parts[0]; v = nums[1]; h = nums[2]; }
+        else if (parts.length >= 2) { label = '#' + (out.length + 1); v = nums[0]; h = nums[1]; }
+        else continue;
+        if (!(v >= 0) || !(h > 0)) continue;                  // a relation needs a known, nonzero h
+        const s = v / h, g = Math.atan(s) / (Math.PI / 2);
+        out.push({label, v, h, s, g});
+    }
+    return out.sort((a, b) => a.g - b.g);
+}
+const G = s => Math.atan(s) / (Math.PI / 2);
+function describe(it) {
+    if (!it) return '';
+    const side = Math.abs(it.s - 1) < 1e-9 ? 'at the corner (v = h)'
+        : it.s < 1 ? `front of the corner: v is ${it.s.toPrecision(3)} of h`
+        : `past the corner: h is ${(1 / it.s).toPrecision(3)} of v; dyadic level ${Math.floor(Math.log2(it.s)) + 1} past the corner`;
+    return `${it.label}   v = ${it.v}   h = ${it.h}\n` +
+           `relation v/h = ${it.s.toPrecision(4)}   address g = ${it.g.toFixed(4)}   flip: g(h/v) = ${(1 - it.g).toFixed(4)}\n${side}`;
+}
+
+function drawSweep() {
+    const svg = $('sweep'); svg.replaceChildren();
+    const X0 = 40, X1 = 600, Y = 150, x = g => X0 + g * (X1 - X0);
+    const ink = css('--ink'), dim = css('--dim'), gold = css('--gold'), teal = css('--teal'), red = css('--red');
+    // the bell: share per unit of g is uniform; show the relation density on the log axis as a guide instead:
+    // ½·sech(ln s) mapped to g; drawn faint above the bar
+    let d = '';
+    for (let i = 1; i < 400; i++) {
+        const g = i / 400, s = Math.tan(g * Math.PI / 2), y = Y - 110 * (1 / Math.cosh(Math.log(s)));
+        d += (i === 1 ? 'M' : 'L') + x(g).toFixed(1) + ' ' + y.toFixed(1);
+    }
+    svg.append(el('path', {d, fill: 'none', stroke: dim, 'stroke-opacity': 0.35, 'stroke-width': 1}));
+    svg.append(el('line', {x1: X0, y1: Y, x2: X1, y2: Y, stroke: ink, 'stroke-width': 2}));
+    // dyadic marks
+    for (let k = -4; k <= 4; k++) {
+        const s = 2 ** k, gx = x(G(s));
+        svg.append(el('line', {x1: gx, y1: Y - 6, x2: gx, y2: Y + 6, stroke: k === 0 ? gold : dim}));
+        if (Math.abs(k) <= 3) svg.append(el('text', {x: gx, y: Y + 22, fill: k === 0 ? gold : dim, 'font-size': 11, 'text-anchor': 'middle'},
+            k === 0 ? '1' : k > 0 ? String(s) : '1/' + 2 ** -k));
+    }
+    svg.append(el('text', {x: X0 - 30, y: Y + 40, fill: dim, 'font-size': 11, 'text-anchor': 'start'}, 'home, g = 0'));
+    svg.append(el('text', {x: x(0.5), y: Y + 40, fill: gold, 'font-size': 11, 'text-anchor': 'middle'}, 'corner, g = 1/2'));
+    svg.append(el('text', {x: X1 + 30, y: Y + 40, fill: dim, 'font-size': 11, 'text-anchor': 'end'}, 'horizon, g → 1'));
+    // entries
+    items.forEach(it => {
+        const seen = mode === 'parallel' || (cursor != null && it.g <= cursor);
+        const gx = x(it.g);
+        svg.append(el('line', {x1: gx, y1: Y, x2: gx, y2: Y - 20 - 50 * Math.min(1, Math.abs(Math.log(it.s)) / 3),
+            stroke: seen ? (it.s < 1 ? teal : it.s > 1 ? red : gold) : dim, 'stroke-opacity': seen ? 0.9 : 0.25, 'stroke-width': 2}));
+        svg.append(el('circle', {cx: gx, cy: Y, r: 3.5, fill: seen ? css('--bright') : dim, 'fill-opacity': seen ? 1 : 0.35}));
+    });
+    if (mode === 'serial' && cursor != null) {
+        const cx = x(cursor);
+        svg.append(el('line', {x1: cx, y1: 20, x2: cx, y2: Y + 8, stroke: gold, 'stroke-width': 1.5}));
+    }
+    svg.append(el('text', {x: X0, y: 18, fill: dim, 'font-size': 11}, 'the unit sweep: every address g, the faint curve the bell of shares'));
+}
+
+function drawCircle() {
+    const svg = $('circle'); svg.replaceChildren();
+    const O = 30, R = 200, dim = css('--dim'), ink = css('--ink'), gold = css('--gold');
+    const P = th => [O + R * Math.cos(th), 230 - R * Math.sin(th)];
+    let d = ''; for (let i = 0; i <= 90; i++) { const [px, py] = P(i * Math.PI / 180); d += (i ? 'L' : 'M') + px.toFixed(1) + ' ' + py.toFixed(1); }
+    svg.append(el('path', {d, fill: 'none', stroke: ink, 'stroke-width': 1.5}));
+    const [cx, cy] = P(Math.PI / 4);
+    svg.append(el('line', {x1: O, y1: 230, x2: cx, y2: cy, stroke: gold, 'stroke-opacity': 0.5}));
+    items.forEach(it => {
+        const seen = mode === 'parallel' || (cursor != null && it.g <= cursor);
+        const [px, py] = P(Math.atan(it.s));
+        svg.append(el('circle', {cx: px, cy: py, r: 3.5, fill: seen ? css('--bright') : dim, 'fill-opacity': seen ? 1 : 0.35}));
+    });
+    svg.append(el('text', {x: O, y: 18, fill: dim, 'font-size': 11}, 'by the whole: the circle'));
+}
+
+function nearest(g) { let best = null; for (const it of items) if (it.g <= g + 1e-12) best = it; return best; }
+function render() {
+    drawSweep(); drawCircle();
+    let text;
+    if (mode === 'parallel') {
+        const front = items.filter(i => i.s < 1).length, back = items.filter(i => i.s > 1).length, at = items.length - front - back;
+        text = `parallel (3): all ${items.length} addresses at once\nfront of the corner ${front}   at it ${at}   past it ${back}\n` +
+            items.map(i => `${i.label.padEnd(10)} g = ${i.g.toFixed(3)}   v/h = ${i.s.toPrecision(3)}`).join('\n');
+    } else {
+        const it = cursor == null ? null : nearest(cursor);
+        text = cursor == null ? 'serial (4): press sweep. The cursor runs from home to the horizon and reads one address at a time.'
+            : `serial (4): cursor at g = ${cursor.toFixed(3)}, ${items.filter(i => i.g <= cursor).length} of ${items.length} read\n` + (it ? describe(it) : 'nothing read yet');
+    }
+    $('readout').textContent = text;
+}
+function load(name) {
+    if (name !== 'own') $('data').value = EX[name].map(r => r.join(', ')).join('\n');
+    items = parse($('data').value); cursor = null; cancelAnimationFrame(raf); render();
+}
+function play() {
+    mode = 'serial'; $('serial').classList.add('on'); $('parallel').classList.remove('on');
+    cancelAnimationFrame(raf); const t0 = performance.now(), T = 6000;
+    const step = t => { cursor = Math.min(0.999, (t - t0) / T); render(); if (cursor < 0.999) raf = requestAnimationFrame(step); };
+    raf = requestAnimationFrame(step);
+}
+$('ex').onchange = e => load(e.target.value);
+$('data').oninput = () => { $('ex').value = 'own'; items = parse($('data').value); render(); };
+$('serial').onclick = () => { mode = 'serial'; $('serial').classList.add('on'); $('parallel').classList.remove('on'); render(); };
+$('parallel').onclick = () => { mode = 'parallel'; cancelAnimationFrame(raf); $('parallel').classList.add('on'); $('serial').classList.remove('on'); render(); };
+$('play').onclick = play;
+$('sweep').onclick = ev => {                                       // tap the bar to place the cursor
+    const r = $('sweep').getBoundingClientRect(), g = ((ev.clientX - r.left) / r.width * 640 - 40) / 560;
+    if (g >= 0 && g <= 1) { mode = 'serial'; $('serial').classList.add('on'); $('parallel').classList.remove('on'); cancelAnimationFrame(raf); cursor = g; render(); }
+};
+const q = new URLSearchParams(location.search);
+if (EX[q.get('ex')]) $('ex').value = q.get('ex');
+if (q.get('mode') === 'parallel') { mode = 'parallel'; $('parallel').classList.add('on'); $('serial').classList.remove('on'); }
+load($('ex').value);
+window.sweepItems = () => items;                                   // test hook
+</script>
+</body>
+</html>
