@@ -64,8 +64,8 @@ fixed point of a flip, or a horizon past it.
 
 Added 7 October. On the globe at latitude φ, v = sin φ and h = cos φ; Mercator's map divides each circle of latitude by
 its h, and its height is y = asinh(v/h) = ln tan(π/4 + φ/2): proportional near the equator, logarithmic past 45°, each
-doubling of v/h a near-equal step of ln 2, and the pole a horizon the map never reaches. It is the globe divided by h,
-the situated normalization, four centuries before the rest of this list (SPN §2.1, "Mercator's map, framed in v and h").
+doubling of v/h a near-equal step of ln 2, and the pole a horizon the map never reaches. It is the globe's relation v/h scaled locally by 1/h and accumulated (dividing by h alone is the central cylindrical
+projection, y = v/h), the situated normalization, four centuries before the rest of this list (SPN §2.1, "Mercator's map, framed in v and h").
 
 ### 5. Geometry of visual space: Luneburg (1947), Heelan (1983)
 
