@@ -454,6 +454,65 @@ horizon of a situated reader"); **a corner approached, never found**; and **recu
 end, each level the same sweep, Archimedes' halving ("Why the recursion"; Propositions 3.11–3.13). In 2 recursion
 follows the shape and stops; 1 has none.
 
+**Static and dynamic: why a situated reader is parallel or serial** (Tom, 7 October: "another way observation could
+be described as there are static and dynamic systems. static systems are stable, we observe their front hemisphere.
+and dynamic systems are experienced over time, we observe their inner hemisphere."). Tom's own examples already part
+this way: 3 is the apple held in the hand, there whole while it is faced; 4 is the molecule inside an endless apple,
+the others arriving one at a time. Parallel and serial say how a reader reads; static and dynamic say why it reads
+that way.
+
+Three points keep this within the paper's terms:
+
+- **Both are situated.** Static and dynamic part 3 from 4, not situated from unsituated. 1 and 2, the equation and the
+  array, are held whole with no reader standing anywhere.
+- **Static or dynamic is measured against the reader's look, not the system alone.** A system is static to a reader if
+  it holds still for the whole look, and dynamic if it changes or arrives during it. Taken as a property of the system
+  alone, the split fails both ways. A building that does not move is read serially by someone walking through it, and
+  a moving flock is read in parallel by a photograph. Measured against the look, the split is about access, and it is
+  situated: it depends on the reader's own timing.
+- **Arrival makes a reading dynamic as change does.** In *Wander* the stars hardly move, yet their signals reach the
+  reader one at a time at a finite speed: 4's "nearest first". A system can be static and still be read serially
+  because news of it comes over time.
+
+| | the system, to this reader | read |
+|---|---|---|
+| 0 | nothing given | — |
+| 1, 2 | static, held whole (an equation, an array) | unsituated, all at once |
+| 3 | static, faced from outside | parallel: the front hemisphere |
+| 4 | dynamic: changing or arriving during the look | serial: from inside |
+
+It is not a matter of dimension. Static is not "3D" and dynamic is not "3D plus time": both read the same sweep, 0 to
+π/2, one laid across at once and one walked. A reading by dimension is what the situations replaced. A correspondence,
+in the paper's sense: it explains the split and proves nothing new.
+
+**A system can change kind, and the reader must adapt** (Tom, 7 October: "a dynamic system could stablise into a
+static system, and observation of that system would then need to adapt." And: "the reverse is true, static system
+becoming dynamic."). The paper already has one case of a system settling. *The Order of Limits*' growing list (§4.6) is
+dynamic, a 4. Once its new entries fall below what the reader resolves, past n ≈ c/ε, "the growing list looks
+finished": static to the reader. And a list whose length becomes known is a 2 (R143). So settling can go 4 → 3 → 2:
+
+| stage | the system, to the reader | read |
+|---|---|---|
+| dynamic | changing or arriving | serial: walk the sweep, re-unit level by level |
+| settled | holds still for a whole look | parallel: lay the sweep across it at once |
+| known whole | its breadths in hand | unsituated: held as an array, the corner computed |
+
+- **The reader infers the change; it does not see it.** Static means "holds still for my look", and a system changing
+  more slowly than the look, or more finely than the reader resolves, looks the same. That is §4.6's warning: the list
+  *looks* finished. Switching is a judgment with a risk. Switch too early and the reader loses n; too late and it is only
+  slow.
+- **Settling: the serial reader's levels become the parallel reader's addresses.** The parallel reader's best move is
+  R155's, to lay down addresses over its hemisphere first. A serial reader that sees its system settle already holds the
+  levels it walked, and they can be that layout. It need not start again.
+- **Unsettling, the reverse: the parallel reader must re-read to notice.** A static system can start to change (the
+  apple rots, a star flares). A parallel reader that only lays its sweep once keeps a stale picture. Only reading again,
+  and comparing, shows the change, and that is reading over time, serial. So a reader that may face either kind keeps
+  some serial check running even while it reads in parallel.
+
+Neither direction is measured here. A *Wander* lab could test the first, under the lab rules. It would predict, before
+running, that a serial reader switching to parallel when arrivals fall below ε keeps n within ε, and that one switching
+earlier loses it.
+
 **Proportion, depth and recursion, by situation** (Tom, 6 October: "depth is difference between the shape and the unit circle"; "situation 2 has depth. situation 1,3,4 do not.") And: "in situation 3 and 4, before the corner, it is
 proportional. in situation 1 and 2, it is proportional on both sides of the corner."
 
@@ -846,6 +905,57 @@ Every relation v/h is a ratio s on [0, ∞), and each takes a share of the turn,
 ∫₀^∞ ds/(1 + s²) = π/2. The share is the same for s and for 1/s, so the corner halves the total exactly: π/4 for the
 front side (Leibniz's 1 − ⅓ + ⅕ − …, §3.2) and π/4 for the back side, whose levels give 18.4°, 12.5°, 6.9°, 3.6°, … and
 sum to 45°. Counting the hemisphere at once, the parallel reader counts every relation at once: π/2.
+
+**The unit sweep, repeated: the data picks the whole** (Tom, 7 October: "when we move up from the unit sweep of 0 to
+π/2 up to the semicircle, circle and sphere, it just repeats the unit sweep, 1, 2, 4, 8 unit sweeps respectively";
+"the data itself must match the shape. A linear array, for example, can't be mapped to a sphere; it must be mapped to
+the unit sweep.") Each larger whole is copies of the unit sweep, one copy per combination of signs:
+
+| the data | relations per datum | signs | the whole | copies of the unit sweep | total |
+|---|---|---|---|---|---|
+| pairs (v, h), magnitudes | 1 | none | the quarter circle, the unit sweep | 1 | π/2 |
+| pairs, h signed | 1 | 1 | the semicircle | 2 | π |
+| pairs, both signed | 1 | 2 | the circle | 4 | 2π |
+| triples (h, v, w), all signed | 2 | 3 | the sphere | 8 | 4π |
+
+- **Each copy is the same sweep.** Inside a quadrant or an octant the reading uses magnitudes only, |v|/|h|, from home
+  through the corner to the horizon; the signs say only which copy (R37, R173: magnitudes, with direction from the
+  facing; signed v and h only where the whole is held, situations 1 and 2).
+- **On the sphere each copy is still π/2.** An octant reads two relations at once, v/h and w/h, a two-way sweep and not
+  a line, and its total is π/2 again: the octant's solid angle, 4π/8, which is every pair of relations summed,
+  ∬ ds₁ ds₂/(1 + s₁² + s₂²)^{3/2} = π/2 (checked). So "π/2 is every relation, summed" holds for two relations as for
+  one. A hemisphere, one parallel reader's reach, is four octants.
+- **The counts double, 1, 2, 4, 8**: each step adds one sign, one facing.
+- **The data picks the whole, by two counts: how many relations each datum carries** (its breadths besides h) **and
+  whether it has signs.** Pairs carry one relation and belong on the unit sweep; triples carry two and need the
+  octant. Laying a linear array on a sphere would invent a relation the data does not have, and any structure read off
+  the sphere would be made; laying sphere data on the unit sweep would lose one, folding two directions into one. The
+  sweep device (`sweep.html`) takes pairs and lays them on the unit sweep, the one place they fit; triples would need
+  a two-way device.
+
+**How a reader tells 1, 2, 4 and 8 facings apart: it counts the signs** (Tom, 7 October: "the nature of the signal
+creates the shape of how we perceive it. a continuous signal with no radial expression is a line, a continuous signal
+with radial expression is read as a circle or a sphere. whats interesting how does the reader diferentiates a signal
+with 1 facing, 2 facings, 4 facings or 8 facings."). The table above, read from the reader's side, answers it:
+
+  facings = 2^(independent signs per datum): 0 signs, 1 facing; 1, 2; 2, 4; 3, 8.
+
+Every facing is the same unit sweep, and the signs only say which copy a reading falls in. So the reader asks of its
+signal how many of its parts ever change sign independently. Each such part doubles the facings. For a situated
+reader a sign is which way a signal comes from (ahead or behind, left or right, above or below), and the magnitude is
+its relation (R37, R173). A continuous signal with no radial expression has no signs, so it lies on one sweep. That is
+the line, and the unit sweep is the unit line ("The unit line is the sweep itself"), so Tom's line and the one-facing case are one thing.
+
+- **Counting returns does not tell the circle from the sphere.** One might count the quarter sweeps before the signal
+  comes back to where it started: four for the circle. But four quarter turns about one axis also come back on the
+  sphere, so that count gives 4 for both, and cannot say why the sphere has 8 and not 4 or 16. Counting signs does: 8
+  is three independent signs, 2³. And it needs no turning, which situations 3 and 4 do not have within an observation
+  ("A sweep is one hemisphere, not the whole"). A sign is read off a datum, not reached by turning.
+- **The count is inferred, like "static".** A sign shows only when both of its values have been seen. A signal whose h
+  has always been positive may have one facing, or two with the reader not yet having seen behind. So the count can
+  rise when a new sign appears, and the reader adapts as it does when its system changes kind ("A system can change
+  kind"). Reading more signs than the signal carries invents a relation; reading fewer loses one. That is "the data
+  picks the whole", from the reader's side.
 
 **The first level is half the distance** (Tom, 6 October: "first octive is 1/2 the distance, which is the same as
 saying v/h=1"; and "octives and logrithmic spirals are the same thing"). Read the sweep from A to B as distance: a point
