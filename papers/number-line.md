@@ -41,6 +41,7 @@ ruled.*
 - 7 October, nineteenth: §1, the unit square, where the corner gets its name; the unit line bent at the corner; the unit is the system's own breadth (Tom).
 - 7 October, twentieth: §1 corrected: the number line is not a situation but a ruler, notches on a stick (Tom); §2 table and Background updated.
 - 7 October, twenty-first: §1, what the ruler is for: readers talking to each other (Tom).
+- 7 October, twenty-second: §1, back into the reader's own relation space; s_B = s_A·(h_A/h_B) (Tom).
 
 ## Background from SPN
 
@@ -197,6 +198,25 @@ notch stands for, built out from there.
 |---|---|---|---|
 | a reader's own line (recursive) | reading | yes: its own unit | where needed |
 | the ruler (the ordinary number line) | communicating | no: it is neutral | everywhere: the price of being shared |
+
+**Back into the reader's own relation space** (Tom, 7 October: "a ruler is then translated back into the readers own
+relation space."). Nobody reads on the ruler. It is the stage a reading passes through, from one relation space to
+another:
+
+1. **A reads in its own space:** s_A = v/h_A, against its own unit and corner.
+2. **A puts it on the ruler:** v = s_A·h_A, in agreed notches.
+3. **B takes it off into its own space:** s_B = v/h_B, against its own unit and corner.
+
+The trip as a whole is one factor: **s_B = s_A·(h_A/h_B)**. What the ruler carries is the relation between the two
+readers' units; where they are equal, the reading passes unchanged.
+- **The same magnitude can land on different sides of different corners.** Five metres is far field for an ant and near
+  field for a mountain. The ruler carries the magnitude; near or far, which level, which side of the corner, each
+  receiver decides again.
+- **Depth cannot cross finer than the notches.** A may hold a reading deeper than the ruler's grain, but only what the
+  notches express gets across. The ruler's grain caps the depth readers can share, which is one more reason for its
+  depth everywhere: it must be at least as fine as anything two readers need to exchange.
+- **The ruler is a bridge, not a place.** Readings live in relation spaces, and the ruler is how they travel between
+  them: a medium, not a viewpoint, which is why it is no situation.
 
 **The ordinary line has no corner** (Tom, 7 October: "the number line is the near field and the far field combined,
 with no corner."). The ordinary number line is laid out the same everywhere: 0.5 to 1 looks exactly like 1 to 1.5.
