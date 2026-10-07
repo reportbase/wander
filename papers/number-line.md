@@ -14,6 +14,7 @@ ruled.*
   all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
   plain explanation of the corner (below; the corner itself is SPN's), named the two sides front and back, near and far, in place of "breadth" and
   "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
+- 7 October, eleventh: §4, irrational and transcendental numbers on a recursing line.
 - 7 October, tenth: §4, observation costs calories (`plans/cal-plan.md`, run 1: logarithm of worth where detail
   fades fast; killed where it fades slowly).
 - 7 October, ninth: §4, ARB run, the arithmetic baseline (`plans/arb-plan.md`).
@@ -264,7 +265,7 @@ somewhere in [3.14, 3.15)). A number that has concluded (3, ½, 0.25) is exact, 
 None of the operations is new. What is new is reading them as one situated reader's arithmetic, with the corner as
 where it cannot finish.
 
-**A baseline to compare the two lines, planned, not yet run.**
+**A baseline to compare the two lines** (planned first, then run as ARB, below).
 - **The referee:** exact arithmetic (fractions, never rounded).
 - **The contenders, given the same job** (the answer to the same requested depth):
   - the ordinary line: 53-digit floating point as computers use it, and separately a fixed depth set by the worst case;
@@ -301,6 +302,41 @@ level is not worth its calories. It holds even where the thing never concludes. 
   by a fixed number of levels per doubling of V/c, within 4% of 1/log₂(1/r): depth is the logarithm of worth.
 - **Where detail fades slowly** (r = 0.7), it was killed. The reader prices the next level from two noisy looks,
   underprices slow-fading detail, and quits early, below even "recurse everywhere". A better estimate would be a new run.
+
+### Irrational and transcendental numbers on a recursing line
+
+Tom, 7 October: "what would this mean for irrational and transcendental numbers, a recursive number line?" On a line
+that recurses as needed every number is held the same way: a cell, and a rule for going deeper when asked. What sets
+the kinds apart is what the rule is, and whether there is one.
+
+| kind | its digits | its rule | on the recursing line |
+|---|---|---|---|
+| integers, and fractions that end (3, ¼) | conclude | none needed | exact, at a finite depth |
+| other fractions (⅓, 1/7) | repeat for ever | the repeating block | after one period, every level is the same sweep again |
+| algebraic irrationals (√2) | never conclude, never repeat | a short equation (x² = 2) | digits on demand, without end |
+| computable transcendentals (π, e) | never conclude, never repeat | a series or an algorithm | digits on demand, without end |
+| non-computable reals | no pattern that can be written | none | cannot be held at all |
+
+- **Irrational numbers are not perturbations.** A perturbation concludes (above). An irrational never concludes, in any
+  base: a fact about the number, unlike ⅓, which ends in base 3. A situated reader meets √2 or π as a rule, a finite
+  description of infinite depth, unfolded only as far as asked.
+- **Price sets how deep anyone goes.** By CAL's rule a reader stops where the next digit is not worth its calories. A
+  carpenter uses π ≈ 3.14; spacecraft navigation uses about 15 digits; about 40 would give the circumference of the
+  observable universe to within an atom. Every use of π stops at a priced, finite depth; π does not.
+- **Equality can stay open.** e^(π√163) = 262537412640768743.99999999999925… agrees with an integer through 12
+  decimals and is not one: a recursing line comparing the two stays undecided to depth 12 and parts at 13. Numbers
+  that are equal and never conclude would never part (above, "Equality may never finish").
+- **Most of the real line cannot be held.** Numbers with a finite rule can be counted, so they are vanishingly few among
+  the reals. The rest, almost all of the continuum, have no rule, and no reader can produce their digits. The ordinary
+  line's depth everywhere assumes them all; on a recursing line they do not appear. It holds exactly the numbers some
+  reader could use.
+- *A reading, not shown in general:* the best-known irrationals come from the unsituated whole. √2 is the diagonal at
+  the corner (v = h = 1) and π the circle's half-turn. The circle (situation 1) holds them exactly, as a length and an
+  angle, and a situated reader on the number line only approaches them, digit by digit: contained, and approached, as
+  with the three landmarks. True of √2 and π; e does not fit as plainly.
+
+The first four rest on standard mathematics: irrationality in every base, CAL's stopping rule, a known near-integer,
+and the countability of computable numbers.
 
 ## 5. People meet the number line as situation 3, within a window
 
