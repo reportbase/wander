@@ -45,6 +45,7 @@ ruled.*
 - 7 October, twenty-third: §1, the ruler fits only the near field; far-field rulers count levels (Tom).
 - 7 October, twenty-fourth: situations 1 and 2 have only the near field (Tom); Background, the circle's table, the unit square and the ruler updated.
 - 7 October, twenty-fifth: §8, the sphere: three breadths, the octant, six chambers and a triple corner, the unit cube, depth as relief (Tom).
+- 7 October, twenty-sixth: §8, a demo: `sphere.html` (Tom: "create a demo for the sphere, that brings it all together").
 
 ## Background from SPN
 
@@ -793,6 +794,10 @@ three bands (broad, middle, fine), each band drawn only once its features cover 
 Far off a planet is a plain ball, depth unread; close up its craters show. That is GRN's grain (§5) built into the page:
 depth entered only where it is above the reader's grain, and a situated reader recursing only into the perturbations
 it can see (§4).
+
+**The demo.** `sphere.html` puts this section on one screen: breadths and a scale k, the address that k does not move,
+the octant coloured by chamber, by face, as a held whole or for a reader holding h, the octant laid flat as seen from the
+corner, and a body whose relief bands show by its size in the reader's pixels.
 
 **To test, not yet planned.** GRN in two directions: one reader, one grain, a system of three points, to see whether the
 switch from serial to parallel happens per direction, near in one and far in another.

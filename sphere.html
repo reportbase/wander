@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The sphere</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    sphere.html: the sphere (7 October 2026, at Tom's "create a demo for the sphere, that brings it all together"). A
+    standalone page, like sweep.html and dial.html: not part of the world (world.js) or the labs (labs.html). It draws
+    papers/number-line.md §8 on one screen.
+
+    Three breadths (v, h, f) in [0, 1]³, times a scale k. Dividing out the scale leaves two relations and an address on
+    the unit sphere's first octant; k changes nothing there (the scale is lost).
+      the octant: area π/2, cut by three corner arcs (v = h, h = f, v = f) into six chambers, one per ordering; the arcs
+        meet at v = h = f, the corner proper;
+      the unit cube: a ray meets the face of its largest breadth; the three faces meeting at (1, 1, 1) have area 3
+        (the plane's bent unit line has length 2);
+      a held whole (situations 1, 2): near field throughout, the chambers mirrors;
+      a reader holding h (situations 3, 4): two corners, v/h = 1 and f/h = 1; near both, far in one, far in both;
+      depth: a body, ball plus relief in three bands (cos(nπ·lat) times cos/sin(m·lon), as the res/ bodies), each band
+        shown once its features cover 2 to 5 pixels (bandW in index.html); the address points back to the body's point,
+        r times a whole whose size is not known.
+    Links: ?v=&h=&f=&k=&P=&map=chambers|faces|reader|whole. Test hook: window.__sphere.
+    -->
+    <style>
+    :root {
+        color-scheme: dark;
+        --ground: #0c0c11;
+        --panel: #14141b;
+        --line: rgba(255, 255, 255, 0.09);
+        --ink: #c8c8d0;
+        --dim: #8a8a96;
+        --bright: #e6e4ee;
+        --gold: #d4a052;
+        --teal: #8ce6cd;
+        --red: #d96e5b;
+        --violet: #a99be8;
+    }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 18px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    .lede { color: var(--dim); margin: 0 0 18px; max-width: 76ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin: 0 0 14px; min-width: 0 }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+    .sl { display: grid; grid-template-columns: 7ch 1fr 6ch; gap: 8px; align-items: center; margin: 2px 0 }
+    label { color: var(--dim) }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 5px 9px; cursor: pointer }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { width: 100%; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; touch-action: none }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    #readout { white-space: pre-wrap; color: var(--bright); overflow-x: auto; font-size: 13px }
+    .note { color: var(--dim); font-size: 12.5px }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .red { color: var(--red) } .violet { color: var(--violet) }
+    table { border-collapse: collapse; width: 100%; font-size: 12.5px }
+    td, th { border-bottom: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top }
+    th { color: var(--dim); font-weight: 400 }
+    .scroll { overflow-x: auto }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The sphere</h1>
+    <p class="lede">Three breadths, <span class="teal">v</span>, <span class="gold">h</span> and <span class="violet">f</span>.
+    Divide out their scale and two relations are left: an address on the sphere's first octant. The address points back
+    to the shape, but only as a relation; the scale is lost for good. Change <span class="bright">k</span> and nothing
+    on the octant moves.</p>
+
+    <div class="grid">
+        <div class="panel">
+            <h2>Breadths and scale</h2>
+            <div class="sl"><label for="v" class="teal">v</label><input id="v" type="range" min="0" max="1" step="0.005"><span id="vv"></span></div>
+            <div class="sl"><label for="h" class="gold">h</label><input id="h" type="range" min="0" max="1" step="0.005"><span id="hv"></span></div>
+            <div class="sl"><label for="f" class="violet">f</label><input id="f" type="range" min="0" max="1" step="0.005"><span id="fv"></span></div>
+            <div class="sl"><label for="k">scale k</label><input id="k" type="range" min="0.05" max="1" step="0.005"><span id="kv"></span></div>
+            <div class="row" style="margin:8px 0">
+                <button data-p="1,1,1">the corner</button>
+                <button data-p="0.6,0.6,0.25">on an arc (v = h)</button>
+                <button data-p="0.35,0.8,0.5">near both</button>
+                <button data-p="0.9,0.3,0.2">far in one</button>
+                <button data-p="0.9,0.25,0.7">far in both</button>
+                <button id="pulse">sweep k</button>
+            </div>
+            <div class="row" style="margin:0 0 8px">
+                <label>colour the octant by</label>
+                <button data-m="chambers">chambers</button>
+                <button data-m="faces">faces</button>
+                <button data-m="whole">held whole (1, 2)</button>
+                <button data-m="reader">reader holding h (3, 4)</button>
+            </div>
+            <div id="readout"></div>
+        </div>
+        <div class="panel">
+            <h2>Octant and unit cube</h2>
+            <canvas id="space" height="380"></canvas>
+            <p class="note">Drag to turn. The octant of the unit sphere, its three corner arcs meeting at v = h = f; the unit
+            cube's three faces at (1, 1, 1). The ray carries the breadths (k times them, the open dot) through the address
+            on the sphere (white) to the face of the largest breadth (square).</p>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="panel">
+            <h2>The relation set, flat</h2>
+            <canvas id="map" height="330"></canvas>
+            <p class="note">The octant seen from the corner (each direction divided by v + h + f): its three vertices are
+            the three breadths alone, its centre the corner. Straight lines here are the sphere's great arcs; areas are
+            not to scale.</p>
+        </div>
+        <div class="panel">
+            <h2>The shape, and its depth</h2>
+            <div class="sl"><label for="P">size</label><input id="P" type="range" min="0" max="1" step="0.001"><span id="Pv"></span></div>
+            <canvas id="body" height="300"></canvas>
+            <p class="note">A body: ball plus relief in three bands (broad, middle, fine), as the bodies in <code>res/</code>.
+            Depth is the relief, r − 1. Its diameter in the reader's pixels sets which bands show (2 to 5 pixels a
+            feature, as <code>bandW</code> on the flying page): far off it is a plain ball. The cross is the address,
+            pointing back to the body.</p>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>The plane and the sphere</h2>
+        <div class="scroll"><table>
+            <tr><th></th><th>two breadths (v, h): the circle</th><th>three breadths (v, h, f): the sphere</th></tr>
+            <tr><td>relations left</td><td>1: v/h</td><td>2: v/h, f/h</td></tr>
+            <tr><td>lost</td><td>the scale</td><td>the scale</td></tr>
+            <tr><td>relation set</td><td>quarter circle, length π/2</td><td>octant, area π/2 (four breadths: π²/8)</td></tr>
+            <tr><td>corner</td><td>a point, v = h</td><td>three arcs, meeting at v = h = f</td></tr>
+            <tr><td>fairness to the facings</td><td>one mirror, two halves</td><td>three mirrors, six chambers</td></tr>
+            <tr><td>the bent unit</td><td>two arms of the unit square, length 2</td><td>three faces of the unit cube, area 3</td></tr>
+            <tr><td>held whole (1, 2)</td><td>near field only, two mirrored halves</td><td>near field only, six mirrored chambers</td></tr>
+            <tr><td>reader holding h (3, 4)</td><td>near, or far</td><td>near in both, far in one, far in both</td></tr>
+            <tr><td>depth</td><td>r(θ) − 1</td><td>r(θ, φ) − 1: relief</td></tr>
+        </table></div>
+        <p class="note">From <code>papers/number-line.md</code> §8 (a working paper: a reading, not a ruling). See also
+        <a href="dial.html">the h dial</a> and <a href="sweep.html">the sweep device</a>.</p>
+    </div>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+    const C = { line: 'rgba(255,255,255,0.09)', dim: css('--dim'), ink: css('--ink'), gold: css('--gold'), teal: css('--teal'),
+        red: css('--red'), violet: css('--violet'), bright: css('--bright'), panel: '#1b1b24' };
+    const AX = ['v', 'h', 'f'], AXC = [C.teal, C.gold, C.violet];
+    const RGB = { v: [140, 230, 205], h: [212, 160, 82], f: [169, 155, 232] };
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = +cv.getAttribute('height');
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, h];
+    }
+
+    // ── the relation: breadths → address, chamber, face, the reader's corners ──
+    const norm = p => { const l = Math.hypot(p[0], p[1], p[2]) || 1; return [p[0] / l, p[1] / l, p[2] / l]; };
+    const address = (v, h, f) => norm([v, h, f]);
+    const order = p => [0, 1, 2].sort((a, b) => p[a] - p[b]);
+    const chamber = p => order(p).map(i => AX[i]).join(' < ');
+    const face = p => AX[order(p)[2]];
+    const onCube = p => { const m = Math.max(p[0], p[1], p[2]) || 1; return [p[0] / m, p[1] / m, p[2] / m]; };
+    function reader(p) {   // a reader holding h: two corners, v/h = 1 and f/h = 1
+        const fv = p[0] > p[1], ff = p[2] > p[1];
+        return fv && ff ? 'far in both' : fv ? 'far in v' : ff ? 'far in f' : 'near in both';
+    }
+    // the six chambers' colours: the largest breadth's colour, lighter or darker by the middle one
+    function chamberRGB(p) {
+        const o = order(p), c = RGB[AX[o[2]]], t = o[1] === (o[2] + 1) % 3 ? 1.0 : 0.62;
+        return c.map(x => Math.round(x * t));
+    }
+    function regionRGB(p, mode) {
+        if (mode === 'chambers') return chamberRGB(p);
+        if (mode === 'faces') return RGB[face(p)];
+        if (mode === 'whole') return [120, 150, 140];
+        const r = reader(p);
+        return r === 'near in both' ? [212, 160, 82] : r === 'far in both' ? [217, 110, 91] : r === 'far in v' ? [140, 230, 205] : [169, 155, 232];
+    }
+
+    // ── the body: ball plus relief in three bands, as the res/ bodies ──
+    function rng(seed) { let s = seed >>> 0; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296); }
+    const BANDS = [{ lo: 1, hi: 5, n: 7, amp: 0.07, div: 6 }, { lo: 6, hi: 15, n: 10, amp: 0.022, div: 16 }, { lo: 16, hi: 35, n: 14, amp: 0.008, div: 36 }];
+    const TERMS = (() => { const r = rng(7), out = [];
+        BANDS.forEach((b, i) => { for (let j = 0; j < b.n; j++) {
+            const n = b.lo + Math.floor(r() * (b.hi - b.lo + 1)), m = Math.floor(r() * (b.hi + 1));
+            out.push({ band: i, n, m, a: (r() * 2 - 1) * b.amp, c: r() * 2 - 1, s: r() * 2 - 1 }); } });
+        return out; })();
+    const smooth = (a, b, x) => { const t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+    const bandW = P => BANDS.map(b => smooth(2, 5, Math.PI * P / b.div));   // bandW in index.html: a feature over 2 to 5 pixels
+    function radius(d, w) {   // d a unit direction (v, h, f); w the bands' weights
+        const lat = Math.acos(Math.max(-1, Math.min(1, d[2]))) / Math.PI, lon = Math.atan2(d[1], d[0]);
+        let r = 1;
+        for (const t of TERMS) { if (!w[t.band]) continue;
+            r += w[t.band] * t.a * Math.cos(t.n * Math.PI * lat) * (t.c * Math.cos(t.m * lon) + t.s * Math.sin(t.m * lon)); }
+        return r;
+    }
+
+    // ── state ──
+    const st = { v: 0.35, h: 0.8, f: 0.5, k: 0.7, P: 120, mode: 'reader', yaw: -2.05, pitch: -0.45, busy: false };
+    const p = () => [st.v, st.h, st.f];
+    const Pof = x => Math.round(2 * Math.pow(300, x));     // the size slider: 2 to 600 pixels across
+    const xOfP = P => Math.log(P / 2) / Math.log(300);
+
+    // ── the view: f up, turned by yaw and pitch ──
+    function view(q) {
+        const [x, y, z] = [q[0] - 0.35, q[1] - 0.35, q[2] - 0.35];
+        const cy = Math.cos(st.yaw), sy = Math.sin(st.yaw), cp = Math.cos(st.pitch), sp = Math.sin(st.pitch);
+        const x1 = cy * x - sy * y, y1 = sy * x + cy * y;
+        return [x1, -(cp * z - sp * y1), sp * z + cp * y1];   // screen x, screen y (down), depth (toward the viewer: smaller)
+    }
+    function drawSpace() {
+        const [g, W, H] = fit($('space')), S = Math.min(W, H) * 0.62, O = [W / 2, H / 2 + 10];
+        const pr = q => { const v = view(q); return [O[0] + v[0] * S, O[1] + v[1] * S, v[2]]; };
+        g.fillStyle = C.panel; g.fillRect(0, 0, W, H);
+        const polys = [];
+        // the cube's three far faces, at v = 1, h = 1, f = 1
+        for (let a = 0; a < 3; a++) {
+            const b = (a + 1) % 3, c = (a + 2) % 3, corner = (i, j) => { const q = [0, 0, 0]; q[a] = 1; q[b] = i; q[c] = j; return q; };
+            const pts = [corner(0, 0), corner(1, 0), corner(1, 1), corner(0, 1)].map(pr);
+            polys.push({ pts, z: pts.reduce((s, q) => s + q[2], 0) / 4 + 0.05, fill: `rgba(${RGB[AX[a]].join(',')},0.10)`, stroke: `rgba(${RGB[AX[a]].join(',')},0.45)` });
+        }
+        // the octant, as a mesh coloured by the mode
+        const N = 18;
+        for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+            const th = (i + 0.5) / N * Math.PI / 2, d = j / N * Math.PI / 2, e = (j + 1) / N * Math.PI / 2, t0 = i / N * Math.PI / 2, t1 = (i + 1) / N * Math.PI / 2;
+            const P = (t, ph) => [Math.sin(t) * Math.cos(ph), Math.sin(t) * Math.sin(ph), Math.cos(t)];
+            const pts = [P(t0, d), P(t1, d), P(t1, e), P(t0, e)].map(pr);
+            const col = regionRGB(P(th, (d + e) / 2), st.mode);
+            polys.push({ pts, z: pts.reduce((s, q) => s + q[2], 0) / 4, fill: `rgba(${col.join(',')},0.55)`, stroke: `rgba(${col.join(',')},0.7)` });
+        }
+        polys.sort((a, b) => b.z - a.z);
+        for (const q of polys) {
+            g.beginPath(); q.pts.forEach((x, i) => i ? g.lineTo(x[0], x[1]) : g.moveTo(x[0], x[1])); g.closePath();
+            g.fillStyle = q.fill; g.fill(); g.strokeStyle = q.stroke; g.lineWidth = 0.6; g.stroke();
+        }
+        g.lineWidth = 1;
+        // cube edges from the origin, and the axes
+        for (let a = 0; a < 3; a++) {
+            const q = [0, 0, 0]; q[a] = 1.25; const [x0, y0] = pr([0, 0, 0]), [x1, y1] = pr(q);
+            g.strokeStyle = AXC[a]; g.beginPath(); g.moveTo(x0, y0); g.lineTo(x1, y1); g.stroke();
+            g.fillStyle = AXC[a]; g.font = '13px DM Mono, monospace'; g.fillText(AX[a], x1 + 4, y1 + 4);
+        }
+        // the corner arcs: the great circles through each axis and (1,1,1)
+        const arc = (a, b) => { const c = 3 - a - b; g.beginPath();
+            for (let i = 0; i <= 40; i++) { const t = i / 40, q = [0, 0, 0]; q[a] = q[b] = t; q[c] = 1 - t; const s = pr(norm(q));
+                i ? g.lineTo(s[0], s[1]) : g.moveTo(s[0], s[1]); } g.stroke(); };
+        g.strokeStyle = C.bright; g.lineWidth = 1.4; g.setLineDash([5, 4]); arc(0, 1); arc(1, 2); arc(0, 2); g.setLineDash([]); g.lineWidth = 1;
+        const cc = pr(norm([1, 1, 1])); g.fillStyle = C.bright; g.beginPath(); g.arc(cc[0], cc[1], 4, 0, 7); g.fill();
+        const cub = pr([1, 1, 1]); g.strokeStyle = C.bright; g.strokeRect(cub[0] - 3, cub[1] - 3, 6, 6);
+        g.font = '11px DM Mono, monospace'; g.fillStyle = C.dim; g.fillText('(1,1,1)', cub[0] + 6, cub[1] - 4);
+        // the ray: origin → k·breadths → address → the cube's face
+        const pp = p(), kp = pp.map(x => x * st.k), ad = address(...pp), cu = onCube(pp);
+        const o = pr([0, 0, 0]), far = pr(cu.map(x => x * 1.08));
+        g.strokeStyle = 'rgba(230,228,238,0.7)'; g.beginPath(); g.moveTo(o[0], o[1]); g.lineTo(far[0], far[1]); g.stroke();
+        const a = pr(ad), b = pr(kp), c = pr(cu);
+        g.strokeStyle = C.bright; g.beginPath(); g.arc(b[0], b[1], 5, 0, 7); g.stroke();
+        g.fillStyle = C.bright; g.beginPath(); g.arc(a[0], a[1], 5, 0, 7); g.fill();
+        g.fillStyle = AXC[AX.indexOf(face(pp))]; g.fillRect(c[0] - 5, c[1] - 5, 10, 10);
+        g.fillStyle = C.dim; g.fillText('k·breadths', b[0] + 8, b[1] + 12);
+    }
+
+    // ── the flat map: barycentric (v, h, f)/(v + h + f) ──
+    function mapFrame(W, H) {
+        const s = Math.min(W - 60, (H - 56) / 0.866), cx = W / 2, top = 30;
+        const V = [[cx - s / 2, top + s * 0.866], [cx + s / 2, top + s * 0.866], [cx, top]];   // v bottom left, h bottom right, f top
+        return { V, to: q => { const t = q[0] + q[1] + q[2] || 1;
+            return [(q[0] * V[0][0] + q[1] * V[1][0] + q[2] * V[2][0]) / t, (q[0] * V[0][1] + q[1] * V[1][1] + q[2] * V[2][1]) / t]; } };
+    }
+    function drawMap() {
+        const cv = $('map'), [g, W, H] = fit(cv), { V, to } = mapFrame(W, H);
+        g.fillStyle = C.panel; g.fillRect(0, 0, W, H);
+        // fill by sampling: each pixel's barycentric weights are a direction
+        const dpr = cv.width / W, img = g.getImageData(0, 0, cv.width, cv.height), D = img.data;
+        const [A, B, Cc] = V, det = (B[1] - Cc[1]) * (A[0] - Cc[0]) + (Cc[0] - B[0]) * (A[1] - Cc[1]);
+        for (let y = 0; y < cv.height; y++) for (let x = 0; x < cv.width; x++) {
+            const X = x / dpr, Y = y / dpr;
+            const l0 = ((B[1] - Cc[1]) * (X - Cc[0]) + (Cc[0] - B[0]) * (Y - Cc[1])) / det;
+            const l1 = ((Cc[1] - A[1]) * (X - Cc[0]) + (A[0] - Cc[0]) * (Y - Cc[1])) / det, l2 = 1 - l0 - l1;
+            if (l0 < 0 || l1 < 0 || l2 < 0) continue;
+            const col = regionRGB([l0, l1, l2], st.mode), i = 4 * (y * cv.width + x);
+            D[i] = col[0] * 0.6 + 27 * 0.4; D[i + 1] = col[1] * 0.6 + 27 * 0.4; D[i + 2] = col[2] * 0.6 + 36 * 0.4; D[i + 3] = 255;
+        }
+        g.putImageData(img, 0, 0);
+        const line = (q0, q1, dash) => { const a = to(q0), b = to(q1); g.setLineDash(dash || []); g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke(); g.setLineDash([]); };
+        g.strokeStyle = C.bright; g.lineWidth = 1.3;
+        line([1, 1, 0], [0, 0, 1], [5, 4]); line([0, 1, 1], [1, 0, 0], [5, 4]); line([1, 0, 1], [0, 1, 0], [5, 4]);
+        g.lineWidth = 1; g.strokeStyle = C.dim; g.beginPath(); V.forEach((q, i) => i ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1])); g.closePath(); g.stroke();
+        g.font = '13px DM Mono, monospace';
+        V.forEach((q, i) => { g.fillStyle = AXC[i]; g.fillText(`${AX[i]} alone`, q[0] + (i === 0 ? -14 : i === 1 ? -50 : 8), q[1] + (i === 2 ? 10 : 16)); });
+        const cc = to([1, 1, 1]); g.fillStyle = C.bright; g.beginPath(); g.arc(cc[0], cc[1], 4, 0, 7); g.fill();
+        g.font = '11px DM Mono, monospace'; g.fillText('v = h = f', cc[0] + 7, cc[1] - 6);
+        const lb = (q, t) => { const a = to(q); g.fillStyle = C.bright; g.fillText(t, a[0] + 4, a[1] + 12); };
+        lb([1, 1, 0.12], 'v = h'); lb([0.12, 1, 1], 'h = f'); lb([1, 0.12, 1], 'v = f');
+        const a = to(p()); g.strokeStyle = C.bright; g.lineWidth = 2;
+        g.beginPath(); g.arc(a[0], a[1], 6, 0, 7); g.stroke(); g.lineWidth = 1;
+        g.fillStyle = C.dim;
+        const key = { chambers: 'six chambers, one per ordering', faces: 'three faces: the largest breadth',
+            whole: 'held whole: near field throughout, mirrors only', reader: 'holding h: gold near both, red far in both' }[st.mode];
+        g.fillText(key, 8, 14);
+    }
+
+    // ── the body, at its size in the reader's pixels ──
+    const off = document.createElement('canvas');
+    function drawBody() {
+        const [g, W, H] = fit($('body')), w = bandW(st.P), N = Math.max(2, Math.min(220, st.P));
+        off.width = off.height = N; const o = off.getContext('2d'), img = o.createImageData(N, N), D = img.data;
+        const cy = Math.cos(st.yaw), sy = Math.sin(st.yaw), cp = Math.cos(st.pitch), sp = Math.sin(st.pitch);
+        const toWorld = (sx, sy_, sz) => {   // inverse of view(): screen (x right, y down, z toward the viewer is −) to (v, h, f)
+            const z = -cp * sy_ + sp * sz, y1 = sp * sy_ + cp * sz;
+            return [cy * sx + sy * y1, -sy * sx + cy * y1, z];
+        };
+        const L = norm([-0.5, -0.7, -0.6]), eps = 0.02, R0 = 0.88;
+        for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+            const X = ((x + 0.5) / N * 2 - 1) / R0, Y = ((y + 0.5) / N * 2 - 1) / R0, q = X * X + Y * Y, i = 4 * (y * N + x);
+            if (q > 1) { D[i] = 27; D[i + 1] = 27; D[i + 2] = 36; D[i + 3] = 255; continue; }
+            const Z = -Math.sqrt(1 - q), n = [X, Y, Z], d = toWorld(X, Y, Z), r = radius(d, w);
+            const nl = Math.max(0, n[0] * L[0] + n[1] * L[1] + n[2] * L[2]);   // L points toward the light
+            const dl = toWorld(...norm([X + L[0] * eps, Y + L[1] * eps, Z + L[2] * eps])), bump = (radius(dl, w) - r) / eps;
+            const sh = Math.max(0.05, Math.min(1.4, (0.18 + 0.82 * nl) * (1 - 0.9 * bump)));   // rising toward the light: turned away
+            const dep = Math.max(-1, Math.min(1, (r - 1) / 0.08));
+            const base = dep > 0 ? [150 + 60 * dep, 140 + 10 * dep, 120 - 30 * dep] : [150 + 40 * dep, 140 - 10 * dep, 120 - 40 * dep];
+            D[i] = Math.min(255, base[0] * sh); D[i + 1] = Math.min(255, base[1] * sh); D[i + 2] = Math.min(255, base[2] * sh); D[i + 3] = 255;
+        }
+        o.putImageData(img, 0, 0);
+        g.fillStyle = C.panel; g.fillRect(0, 0, W, H);
+        const side = Math.min(W, H) - 20, x0 = (W - side) / 2, y0 = 10;
+        g.imageSmoothingEnabled = N > 160; g.drawImage(off, x0, y0, side, side);
+        // the address on the body, if it faces us
+        const ad = address(...p()), v = view(ad.map(x => x + 0.35));   // view() shifts by 0.35; undo it for a direction
+        if (v[2] < 0) {
+            const sx = x0 + side / 2 + v[0] * R0 * side / 2, sy2 = y0 + side / 2 + v[1] * R0 * side / 2;
+            g.strokeStyle = C.bright; g.lineWidth = 2; g.beginPath();
+            g.moveTo(sx - 7, sy2); g.lineTo(sx + 7, sy2); g.moveTo(sx, sy2 - 7); g.lineTo(sx, sy2 + 7); g.stroke(); g.lineWidth = 1;
+        }
+        g.fillStyle = C.dim; g.font = '11px DM Mono, monospace';
+        g.fillText(`bands shown: broad ${w[0].toFixed(2)}, middle ${w[1].toFixed(2)}, fine ${w[2].toFixed(2)}`, 8, H - 8);
+        if (v[2] >= 0) { g.textAlign = 'right'; g.fillText('address on the far side', W - 8, 16); g.textAlign = 'left'; }
+    }
+
+    // ── the readout ──
+    const fmt = x => x.toFixed(3), lv = x => Math.log2(x).toFixed(2);
+    function readout() {
+        const pp = p(), ad = address(...pp), cu = onCube(pp), w = bandW(st.P), rFull = radius(ad, [1, 1, 1]), rSeen = radius(ad, w);
+        const lat = Math.acos(ad[2]) * 180 / Math.PI, lon = Math.atan2(ad[1], ad[0]) * 180 / Math.PI;
+        const r = reader(pp), sv = st.v / st.h, sf = st.f / st.h;
+        const side = (s, n) => s < 1 ? `${n}/h = ${fmt(s)}: near` : `${n}/h = ${fmt(s)}: far, ${lv(s)} levels past the corner`;
+        const lines = [
+            `breadths   k·(v, h, f) = (${pp.map(x => fmt(x * st.k)).join(', ')})`,
+            `relations  v/h = ${st.h ? fmt(sv) : '∞'}, f/h = ${st.h ? fmt(sf) : '∞'}   (the same for every k)`,
+            `address    (${ad.map(fmt).join(', ')}), ${lat.toFixed(1)}° from f, ${lon.toFixed(1)}° from v toward h`,
+            `chamber    ${chamber(pp)}`,
+            `cube face  ${face(pp)} = 1, at (${cu.map(fmt).join(', ')})`,
+            st.mode === 'reader' || st.mode === 'chambers' || st.mode === 'faces'
+                ? `holding h  ${r}:\n           ${st.h ? side(sv, 'v') : 'h = 0: nothing held'}\n           ${st.h ? side(sf, 'f') : ''}`
+                : `held whole near field throughout: the chambers are mirrors, not squeezes`,
+            `the shape  r = ${rFull.toFixed(4)} at this address, depth ${(rFull - 1 >= 0 ? '+' : '') + (rFull - 1).toFixed(4)};`,
+            `           at ${st.P} pixels across the reader sees ${(rSeen - 1 >= 0 ? '+' : '') + (rSeen - 1).toFixed(4)}`,
+            `           the point is r × (the whole's size), and that size is lost`,
+        ];
+        $('readout').textContent = lines.join('\n');
+        $('vv').textContent = fmt(st.v); $('hv').textContent = fmt(st.h); $('fv').textContent = fmt(st.f);
+        $('kv').textContent = fmt(st.k); $('Pv').textContent = `${st.P}px`;
+        document.querySelectorAll('[data-m]').forEach(b => b.classList.toggle('on', b.dataset.m === st.mode));
+    }
+
+    let raf = 0;
+    function draw() { if (raf) return; raf = requestAnimationFrame(() => { raf = 0; drawSpace(); drawMap(); drawBody(); readout(); }); }
+    function sync() { $('v').value = st.v; $('h').value = st.h; $('f').value = st.f; $('k').value = st.k; $('P').value = xOfP(st.P); }
+
+    ['v', 'h', 'f', 'k'].forEach(id => $(id).addEventListener('input', e => { st[id] = +e.target.value; draw(); }));
+    $('P').addEventListener('input', e => { st.P = Pof(+e.target.value); draw(); });
+    document.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { [st.v, st.h, st.f] = b.dataset.p.split(',').map(Number); sync(); draw(); });
+    document.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { st.mode = b.dataset.m; draw(); });
+    $('pulse').onclick = async () => {
+        if (st.busy) return; st.busy = true; $('pulse').classList.add('on');
+        for (let i = 0; i <= 120; i++) { st.k = 0.05 + 0.95 * (0.5 - 0.5 * Math.cos(i / 120 * 2 * Math.PI)); sync(); draw(); await new Promise(r => setTimeout(r, 30)); }
+        st.busy = false; $('pulse').classList.remove('on');
+    };
+    // drag to turn, on the octant and on the body
+    for (const id of ['space', 'body']) {
+        let drag = null; const cv = $(id);
+        cv.addEventListener('pointerdown', e => { drag = [e.clientX, e.clientY]; cv.setPointerCapture(e.pointerId); });
+        cv.addEventListener('pointermove', e => { if (!drag) return;
+            st.yaw += (e.clientX - drag[0]) * 0.01; st.pitch = Math.max(-1.4, Math.min(1.2, st.pitch - (e.clientY - drag[1]) * 0.01));
+            drag = [e.clientX, e.clientY]; draw(); });
+        cv.addEventListener('pointerup', () => { drag = null; });
+    }
+
+    const q = new URLSearchParams(location.search), num = (k, d) => q.has(k) && isFinite(+q.get(k)) ? +q.get(k) : d;
+    st.v = Math.max(0, Math.min(1, num('v', st.v))); st.h = Math.max(0, Math.min(1, num('h', st.h)));
+    st.f = Math.max(0, Math.min(1, num('f', st.f))); st.k = Math.max(0.05, Math.min(1, num('k', st.k)));
+    st.P = Math.max(2, Math.min(600, Math.round(num('P', st.P))));
+    if (['chambers', 'faces', 'whole', 'reader'].includes(q.get('map'))) st.mode = q.get('map');
+    sync(); window.addEventListener('resize', draw); draw();
+
+    // the octant's area, from the same mesh the page draws (finer): should be π/2
+    function octantArea(N = 200) {
+        let A = 0;
+        for (let i = 0; i < N; i++) { const t0 = i / N * Math.PI / 2, t1 = (i + 1) / N * Math.PI / 2; A += (Math.cos(t0) - Math.cos(t1)) * Math.PI / 2; }
+        return A;
+    }
+    window.__sphere = { state: st, address, chamber, face, onCube, reader, radius, bandW, octantArea, draw, sync };
+})();
+</script>
+</body>
+</html>

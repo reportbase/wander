@@ -198,6 +198,20 @@ try {
     failures.push(`[dial.html] costs at s = 0.5, 1, 2: ${dc.map(c => c.toFixed(2)).join(', ')} (want about 3, 2, 3)`);
   await page.click('#look'); await page.click('#measure');
   console.log(`${failures.length === before5 ? 'ok  ' : 'FAIL'} dial.html (cost ${dc.map(c => c.toFixed(2)).join(' / ')} at s = 0.5 / 1 / 2)`);
+
+  // ── 6. sphere.html: the address loses the scale; the octant's area is π/2; far off the body is a plain ball ──
+  current = 'sphere.html';
+  const before6 = failures.length;
+  await page.goto(new URL('sphere.html?map=reader', base).href, { waitUntil: 'load' });
+  const sp = await page.evaluate(() => { const s = __sphere, a = s.address(0.2, 0.4, 0.6), b = s.address(0.02, 0.04, 0.06);
+    return { same: a.every((x, i) => Math.abs(x - b[i]) < 1e-12), area: s.octantArea(), ch: s.chamber([0.2, 0.4, 0.6]),
+      face: s.face([0.9, 0.2, 0.3]), rd: s.reader([0.9, 0.3, 0.7]), far: s.bandW(2), near: s.bandW(600) }; });
+  if (!sp.same) failures.push('[sphere.html] the address changes with the scale');
+  if (Math.abs(sp.area - Math.PI / 2) > 1e-3) failures.push(`[sphere.html] octant area ${sp.area} (want π/2)`);
+  if (sp.ch !== 'v < h < f' || sp.face !== 'v' || sp.rd !== 'far in both') failures.push(`[sphere.html] ${sp.ch} / ${sp.face} / ${sp.rd}`);
+  if (sp.far.some(w => w > 0) || sp.near.some(w => w < 1)) failures.push(`[sphere.html] bands far ${sp.far}, near ${sp.near}`);
+  await page.click('[data-m="chambers"]'); await page.click('[data-p="1,1,1"]'); await page.waitForTimeout(300);
+  console.log(`${failures.length === before6 ? 'ok  ' : 'FAIL'} sphere.html (octant area ${sp.area.toFixed(4)}, scale lost, bands off far and on near)`);
 } catch (e){
   failures.push(`[${current}] ${e.message.split('\n')[0]}`);
 }
