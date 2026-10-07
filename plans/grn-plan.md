@@ -252,3 +252,32 @@ corner. Finer, and it pays for grains it does not need; coarser, and it pays in 
 same whichever way it misses. So the corner is not only where serial turns parallel (runs 3 and 4); it is the cheapest
 place to read from, and the cost of reading is fair to the facings. Under other costs (field, light, an optical floor,
 not modelled) the best setting would move.
+
+### Run 6: steering by its own pixels, from any start (prediction written before run 6)
+
+Tom, after run 5: "we don't actually know where the corner [is], so sliding the h between what two values, is not based
+on a known corner position, its rather speculative." Right: the reader cannot aim at its corner, since knowing it would
+mean knowing v. Run 6 asks whether it can *steer* to it using only what it sees: its own count of lit pixels.
+
+**The system** is now a span one unit long (not two points), so that far past the corner many pixels light. s = 1/h.
+
+**The reader** starts at any h and turns its dial by its own count, after every look:
+- one pixel lit: probably below the corner, so make h finer (halve it);
+- four or more lit: well past it, so make h coarser (double it);
+- two or three lit: count one confirmation; after k in a row, stop. Any turn resets the count.
+
+It is never told s or v.
+
+**Prediction** (k = 3; starts s₀ = 0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30, 100; 20,000 trials each):
+- **P1 (the kill): the cost is logarithmic in how far off it starts.** The mean looks to stop are at most
+  |log₂ s₀| + k + 2 at every start. Killed if over at any start.
+- **P2 (the kill): it stops within a doubling or so of the corner.** The final s lies in [0.5, 3] for at least 90% of
+  trials at every start. Killed if under at any start.
+- **P3 (reported): luck against confirmation.** The same with k = 1: how often it stops below 0.5 by a lucky "two",
+  against k = 3.
+- **P4 (reported): against an arbitrary fixed h.** The pixels the steering reader reads, against the cost of one sure
+  "two" at its fixed starting h (run 5's (1 + s₀)·max(1, 1/s₀)).
+
+**What it would mean.** The reader cannot locate its corner, but its own pixels tell it which way to turn. From any
+start it brackets the corner, within a doubling or so, at a cost growing with the logarithm of how far off it began.
+Confirmation (k) buys protection against luck, with looks.
