@@ -50,6 +50,31 @@ breadths held whole, as an equation or an array, with no reader dividing. The ea
 (a phrase of Nagel's, 1986, used here only for the state of knowing both breadths) and "the view from somewhere",
 remain in quotations and in the titles of works. "Nowhere" in the paper's title means the unsituated view.
 
+*By the corner* (Tom, 7 October: "that is a nice way to explain the difference between the situated and the unsituated
+readers. there relationship to the corner."). The unsituated view contains the corner, one point of the relation it
+holds, computed exactly. A situated reader approaches the corner and never locates it, and if it did it would no longer
+be situated: to be at the corner is to know v = h, and so to know v ("Reaching the corner ends being situated", §3.1).
+
+| | the corner is | follows from that |
+|---|---|---|
+| unsituated (1, 2) | contained, computed | no horizon; proportional on both sides; a mirror at 45° |
+| situated (3, 4) | approached, never located | a horizon; proportional before it, levels past it; the reciprocal squeeze |
+
+The same holds for all three of Proposition 1.1's landmarks (Tom, 7 October, agreeing). The unsituated view contains
+each of them; the situated reader approaches each:
+
+| landmark | unsituated (1, 2) | situated (3, 4) |
+|---|---|---|
+| home, v = 0 | contained: (h, v) = (1, 0) on the circle | approached |
+| the corner, v = h | contained: 45°, computed | passed through, never located: knowing v = h would mean knowing v |
+| the horizon, h negligible against v | contained: (0, 1) on the circle, 90° | approached, never reached |
+
+The situated sweep does pass through the corner, 0 < s < 1, then s = 1, then s > 1 (Proposition 3.2(4)). What the
+reader cannot do is identify the moment s = 1. So the corner's difference is a matter of knowledge, not of where it
+lies. Home and the horizon are limits, reached only with v zero or unbounded. The corner is a finite landmark: nothing
+about size keeps the reader from it, only what it knows. That is why it marks the line between situated and
+unsituated most cleanly.
+
 **Units: a doubling, a level, and dyadic** (Tom, 6 October: "the first is simpler, go with that"; "we don't need to
 use octave, its just a place holder"; "level and dyadic, go ahead").
 
@@ -121,6 +146,29 @@ the levels drawn: one continuous sweep; wrapped, a logarithmic spiral
 open: what fixes the ratio between rungs (the 2), which is the spiral's pitch
 ```
 
+**Observation, decomposed: one operation, three conditions** (Tom, 7 October: "observation is not one thing but it
+simplifies nicely into principled categories"; he agreed to this form of it). Every reader does the same thing. What
+differs between readers is three conditions, and the rest follows from those:
+
+| | what | values |
+|---|---|---|
+| **the operation**, the same for every reader | hold h, divide v by it, lay the relation on the unit sweep, and point to a magnitude ("What situated observation consists of", §1) | — |
+| **condition 1: what is known** | is v known; if so, are v and h equal | 0 (nothing); 1 (equal); 2 (unequal); or situated, 3 or 4 |
+| **condition 2: access in time** | static or dynamic, measured against the reader's look ("Static and dynamic", §2.1) | parallel, 3 (outside); serial, 4 (inside) |
+| **condition 3: signs carried** | independent signs per datum ("How a reader tells 1, 2, 4 and 8 facings apart", §2.1) | 1, 2, 4 or 8 facings |
+| **results**, derived | the horizon; the corner found or computed; recursion forced (3, 4), following the shape (2) or absent (1); depth (2 only) | follow from conditions 1–3 |
+| **limits** | parallel access confirms at most a hemisphere's 4 facings; 1 and 2 hold every sign at once | — |
+
+Two things this form avoids:
+
+- **Counting a cause and its effect as two axes.** Static or dynamic is why a reader is parallel or serial, so the two
+  are one condition, not two.
+- **Calling the conditions independent.** They interact, and the limits row lists how. Whether three conditions are
+  enough is open.
+
+So "observation" is not one primitive, and not many kinds of observer: it is one fixed operation, three conditions, and
+what follows from them.
+
 **The standing of each part.**
 
 | level | what | standing |
@@ -128,7 +176,7 @@ open: what fixes the ratio between rungs (the 2), which is the spiral's pitch
 | the relation | the reading, the flip, the corner; the corner bisects every level; each level one quarter turn, for every ratio; the spiral form | **proved** (§3; Propositions 3.2(b), 3.12, 3.13), on the premises named |
 | the situated reader | one breadth known gives the horizon, the fisheye and the bell; the corner approached, never found | **proved** as mathematics (§2.1); that a reader *is* such a thing is the paper's proposal |
 | recursion | the same sweep at every level; depth beats breadth; cost follows the shape | **ruled** where it rests on (R) (R172, R175, R180); **measured** on shapes (NST, the 3d bench, "Recursion, after the corner"); forced, far out, for a finite reader facing a horizon (`plans/resolution-recursion.md`, unruled) |
-| fairness to the facings | the reading treats v/h and h/v alike, f(1/s) = 1 − f(s); the corner's place and the inversion are forced only given it | **ruled** (R162, Tom, 2 October), not derived from the bare relation. Open: why a physical reader would satisfy it |
+| fairness to the facings | the reading treats v/h and h/v alike, f(1/s) = 1 − f(s); the corner's place and the inversion are forced only given it | **ruled** (R162, Tom, 2 October), not derived from the bare relation. *7 October:* it is the circle's swap symmetry carried into the reading, so it holds for any reading on the circle ("The circle inverts v and h at 45°", §2.1). Open: why a physical reader would read on the circle. Answered for one physical reader, the lens: light is reversible ("h as the focus", §2.1); open for readers in general |
 | the ratio between rungs | why 2 | **open**: not derived; the runs so far found it set by the builder's rule or by the scene (below) |
 | physics | the labs (§9.9, §11.4) | **a correspondence**, not a proof: a passing lab adds standing to the conjecture, a failing one bears on the correspondence, not on the geometry |
 
@@ -663,7 +711,7 @@ have; they approach it, from outside or inside, and never reach it ("The horizon
 with both breadths known, the two corners are one, computed exactly.
 
 **h as the focus** (Tom, 6 October, on a reading of h as the reader's focus: "Add it, even if its wrong, it gives good
-intuition for what it might be." An intuition, unruled.) h is not one of the things a reading sweeps; it is what the
+intuition for what it might be." An intuition, unruled; since 7 October a structural correspondence, below.) h is not one of the things a reading sweeps; it is what the
 sweep is relative to, the reader's focus. s = v/h asks where v lies against the focus, which is why scale drops out.
 The corner, v = h, is the thing read sitting at the focus. Before it, v is a fraction of the focus; past it, the focus
 is a fraction of v, and the flip, v/h ↔ h/v, is the read thing crossing the focus while the focus stays put. Changing
@@ -676,7 +724,20 @@ x · x′ = f², so x′/f = f/x: the object's reading and the image's, in units
 x = x′ = f, object at 2f and image at 2f, magnification exactly 1, the one place the two sides are the same size. The
 horizon is the object at the focus, x = 0, whose image goes to infinity. The two sides of the lens read each other in
 reciprocal. This is standard optics, and here a correspondence, not a proof: a lens behaves as a reader whose h is its
-focal length. A lab could make it one.
+focal length. A lab could make it one. *Corrected, 7 October* ("Reaching the corner ends being situated", §3.1): a real
+object can sit exactly at 2f, so the lens reaches its corner, and its equation maps every object at once. So the lens
+corresponds to a whole, the circle's kind, with its corner contained, not to a situated reader. A situated reader would
+be something looking through the lens, approaching its 2f point.
+
+*Promoted to a structural correspondence, 7 October* (Tom: "that means the physics correspondance is promoted"; how
+far, as follows). The reciprocal above was already here. What is new is a symmetry the lens shares with the circle
+("The circle inverts v and h at 45°"). The circle's equation is unchanged when v and h are swapped, and that is the
+fairness, R162. The lens equation, x · x′ = f² (or 1/u + 1/v = 1/f), is unchanged when object and image are swapped,
+because light paths are reversible: put the object where the image was and the image forms where the object was. So
+the lens is fair to its two sides for a physical reason, and its fixed point, x = x′ = f, is the corner. h as the focus
+moves from an intuition to a structural correspondence, with a physical source for its symmetry. It is still not a
+derivation. It does not show that readers in general are lenses, or that every physical reader is reversible (many
+processes are not), and the labs' standing (§9.9, §11.4) is unchanged: that moves only by runs.
 
 **The unit line, and the number line laid on it** (Tom, 6 October: "The number line is g=0, it is the unit line. Any
 perturbation is fully expressed at g=1"; "All the intuition for the unit circle also applies to the number line, or
@@ -943,8 +1004,8 @@ with 1 facing, 2 facings, 4 facings or 8 facings."). The table above, read from 
 Every facing is the same unit sweep, and the signs only say which copy a reading falls in. So the reader asks of its
 signal how many of its parts ever change sign independently. Each such part doubles the facings. For a situated
 reader a sign is which way a signal comes from (ahead or behind, left or right, above or below), and the magnitude is
-its relation (R37, R173). A continuous signal with no radial expression has no signs, so it lies on one sweep. That is
-the line, and the unit sweep is the unit line ("The unit line is the sweep itself"), so Tom's line and the one-facing case are one thing.
+its relation (R37, R173). A continuous signal with no radial expression *carries* no signs, so it lies on one sweep;
+a reader that has *seen* none cannot yet tell it from one whose other side has not arrived (below). That is the line, and the unit sweep is the unit line ("The unit line is the sweep itself"), so Tom's line and the one-facing case are one thing.
 
 - **Counting returns does not tell the circle from the sphere.** One might count the quarter sweeps before the signal
   comes back to where it started: four for the circle. But four quarter turns about one axis also come back on the
@@ -956,6 +1017,18 @@ the line, and the unit sweep is the unit line ("The unit line is the sweep itsel
   rise when a new sign appears, and the reader adapts as it does when its system changes kind ("A system can change
   kind"). Reading more signs than the signal carries invents a relation; reading fewer loses one. That is "the data
   picks the whole", from the reader's side.
+- **Access limits the facings a reader can confirm** (a review Tom passed on, 7 October, put access and facings as two
+  axes; they are two questions, but not independent). How the signal arrives (static or dynamic, "Static and dynamic")
+  and how many signs it carries are different questions. But a parallel reader outside a sphere faces one hemisphere,
+  four octants ("On the sphere each copy is still π/2"), and the other four are turned away. So a static sphere seen from
+  outside shows at most 4 of its 8 facings in one look. The third sign, front or back, shows only if the reader moves or
+  the system turns, and that is reading over time: serial. A serial reader inside, with signals arriving from every
+  side, can in time confirm all 8. Situations 1 and 2 hold all of them at once, since there the whole is held, signed v
+  and h included (R37, R173). So not every pairing of access and facings is open: parallel access caps the confirmed
+  facings at the hemisphere's four.
+
+In short (the review's line): **the signal determines the possible geometry; observation discovers how much of it is
+present.**
 
 **The first level is half the distance** (Tom, 6 October: "first octive is 1/2 the distance, which is the same as
 saying v/h=1"; and "octives and logrithmic spirals are the same thing"). Read the sweep from A to B as distance: a point
@@ -1139,6 +1212,42 @@ from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 
 So the sweep as a turn (0 to π/2) is the situated reader's (3, 4), and the sweep as distance (0 to 1) is the line the
 equations of 1 and 2 hold whole.
 
+**The circle inverts v and h at 45°, and that is where fairness comes from** (Tom, 7 October: "one thing to note is
+that the circle itself, inverts the v and h at 45deg"; then "how does the circle force the inversion at 45deg."). The
+circle does nothing at 45°. Its symmetry makes 45° the fixed point, in three steps:
+
+1. **The circle cannot tell v from h.** Its equation, h² + v² = 1, is unchanged when v and h are swapped. So the swap,
+   (h, v) ↦ (v, h), maps the circle onto itself. In the plane it is the reflection across v = h, the 45° line.
+2. **A mirror of the quarter arc can stay still only at its middle.** The reflection sends θ to 90° − θ. It reverses the
+   arc, and as a reflection it keeps lengths. A length-keeping reversal of an arc fixes exactly its midpoint, θ = 45°,
+   where cos θ = sin θ and v = h. The two sides are mirror images of equal size, which is why 1 and 2 are proportional
+   on both sides of the corner ("Proportion, depth and recursion, by situation").
+3. **A reading that respects the symmetry reads the back side as h/v.** Mapping a point and its mirror image to g and
+   1 − g is f(1/s) = 1 − f(s), Proposition 3.2(b)'s fairness, R162. So R162 is the circle's swap symmetry carried into
+   the reading. A reader takes it on by reading on the circle, which the sweep, g = atan(v/h), does.
+
+How the same swap looks off the circle:
+
+| where the swap acts | what it is | the two sides of the corner |
+|---|---|---|
+| on the circle (1, 2) | a mirror, θ ↔ 90° − θ | equal: arcs keep their length |
+| on the number line, h held (3, 4) | s ↔ 1/s | unequal: [0, 1] in front, [1, ∞) behind; the squeeze is what the levels count |
+| on the sweep | g ↔ 1 − g | equal again: the number line laid on the circle |
+
+Two cautions:
+
+- **Taken alone, "which leg is longer" does not need the circle.** That v/h < 1 before the diagonal and > 1 after holds
+  for any two positive numbers. What only a symmetric whole gives is that the swap maps the whole onto itself, with
+  equal halves.
+- **The circle is not the only whole with this mirror.** Any whole that treats v and h alike has it at 45°: the diamond
+  |v| + |h| = 1, the square max(|v|, |h|) = 1. What forces the 45° is the symmetry in v and h. The circle adds that
+  turning it changes nothing, so arc length is the angle and g = θ is fair all along, not only at the corner. A shape
+  generally loses the mirror. On an ellipse with a ≠ b the direction v = h is still at 45°, but the swap no longer maps
+  the shape onto itself. That loss is part of a shape's depth, its difference from the circle, though not all of it,
+  since the diamond keeps the mirror and still differs.
+
+What stays open moves: not "why fair?" but "why would a physical reader read on the circle?"
+
 **Situation 0, impossible** (situation 4 before 6 October). Neither breadth known: nothing to count in and no home to lay from (R137). Impossible for a
 reader as defined here, which needs a known side to take its ratio from; it is not a claim about what else might be
 learned with neither breadth known.
@@ -1296,6 +1405,15 @@ is the swap's one fixed point, and s passes through 1. What a reader can do with
 breadths known (situations 1 and 2) the corner is calculated exactly. A situated reader (3 and 4) measures by turning,
 outside from above 1 and inside from below, and never reaches the line, so it approaches the true corner and never finds
 it: "found with h alone" holds as a limit, not exactly.
+
+**Reaching the corner ends being situated** (Tom, 7 October: "the situated reader never reaches the corner, he only
+approaches the corner. if he actually reached the corner than he is no longer a situated reader."). The paper's first
+cut, whether v is known, makes this exact. To be at the corner is to know v = h exactly. To know v = h exactly is to
+know v's breadth. A reader that knows both breadths, and knows them equal, is situation 1, the circle. So a situated
+reader at the corner is not a situated reader any more: being situated and being at the corner exclude each other, which
+is stronger than "it cannot get there". Finite resolution says the same from the other side: within δ of the corner a
+finite reader cannot tell s = 1 from its neighbours, so all it ever has is an approach. The unsituated view contains
+the corner, as one point of the relation it holds, computed exactly; it does not sit at it.
 
 On the front side v is a proper part of the known whole (v < h); on the back side the unknown side is the larger
 (v > h). "Proper and improper fractions" is this proposition's reading of the two sides (the naming is Claude's,
