@@ -439,6 +439,7 @@
                 <div class="row">
                     <button class="go" id="watch" type="button">Fly</button>
                     <button id="labOpen" type="button">lab</button>
+                    <button id="demosOpen" type="button">demos</button>
                 </div>
             </div>
         </div>
@@ -5639,6 +5640,10 @@
             $('labOpen').addEventListener('click', () => {
                 location.href = 'labs.html';
             });
+        // the demos button opens demos.html: every page, with a line on each (7 October 2026)
+        $('demosOpen').addEventListener('click', () => {
+            location.href = 'demos.html';
+        });
         // the suns, planets and moons, fetched once in the background (see BODY_FILES); live bodies take their looks as they come in
         (async () => {
             try {
