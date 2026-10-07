@@ -52,13 +52,28 @@ remain in quotations and in the titles of works. "Nowhere" in the paper's title 
 
 *By the corner* (Tom, 7 October: "that is a nice way to explain the difference between the situated and the unsituated
 readers. there relationship to the corner."). The unsituated view contains the corner, one point of the relation it
-holds, computed exactly. A situated reader approaches the corner and never reaches it, and if it did it would no longer
+holds, computed exactly. A situated reader approaches the corner and never locates it, and if it did it would no longer
 be situated: to be at the corner is to know v = h, and so to know v ("Reaching the corner ends being situated", §3.1).
 
 | | the corner is | follows from that |
 |---|---|---|
 | unsituated (1, 2) | contained, computed | no horizon; proportional on both sides; a mirror at 45° |
-| situated (3, 4) | approached, never reached | a horizon; proportional before it, levels past it; the reciprocal squeeze |
+| situated (3, 4) | approached, never located | a horizon; proportional before it, levels past it; the reciprocal squeeze |
+
+The same holds for all three of Proposition 1.1's landmarks (Tom, 7 October, agreeing). The unsituated view contains
+each of them; the situated reader approaches each:
+
+| landmark | unsituated (1, 2) | situated (3, 4) |
+|---|---|---|
+| home, v = 0 | contained: (h, v) = (1, 0) on the circle | approached |
+| the corner, v = h | contained: 45°, computed | passed through, never located: knowing v = h would mean knowing v |
+| the horizon, h negligible against v | contained: (0, 1) on the circle, 90° | approached, never reached |
+
+The situated sweep does pass through the corner, 0 < s < 1, then s = 1, then s > 1 (Proposition 3.2(4)). What the
+reader cannot do is identify the moment s = 1. So the corner's difference is a matter of knowledge, not of where it
+lies. Home and the horizon are limits, reached only with v zero or unbounded. The corner is a finite landmark: nothing
+about size keeps the reader from it, only what it knows. That is why it marks the line between situated and
+unsituated most cleanly.
 
 **Units: a doubling, a level, and dyadic** (Tom, 6 October: "the first is simpler, go with that"; "we don't need to
 use octave, its just a place holder"; "level and dyadic, go ahead").
