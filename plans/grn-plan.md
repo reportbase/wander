@@ -115,3 +115,32 @@ up, not whether it was foreseen.
   signal against noise, not a fixed line at s = 1.
 - **A next run, if wanted:** the same at several light levels. That would predict, before running, how the knee moves
   with signal-to-noise, for example as a power of it.
+
+### Run 3: the pixel is the reader's (prediction and kill written before run 3)
+
+Tom, after run 2: "well, if we are getting one pixel of data, then all of a sudden we are getting two pixels of data,
+something happened. the pixel is ours, not theirs."
+
+**What runs 1 and 2 borrowed.** Their parallel reader had pixels a quarter of its grain, and it fitted a model it was
+given ("two equal stars"). Knowing the shape beforehand is situation 2's knowledge, a held whole, not a situated
+reader's. That is what let it read below its grain. Run 3 takes both away: the reader's pixel *is* its grain, and it
+has no model. It only counts how many pixels are lit.
+
+**The reader.** Pixels 1 grain wide, with the grid's offset random against the system. Two point stars, apparent
+separation s, each lighting the pixel it falls in, with pixel noise. A pixel counts as lit if its light passes a
+threshold set well above the noise. The reader reports one thing or two by whether one pixel or more is lit.
+
+**Prediction.**
+- **P1 (the kill): two pixels are certain from the corner on.** For s ≥ 1 the two stars are never in the same pixel, so
+  the reader sees two for every trial. Below the corner it sees two only when the grid happens to fall between them,
+  with probability s. Predicted: P(two) = s for s < 1, and 1 for s ≥ 1, within sampling error (3 standard errors) at
+  every s tested.
+- **P2:** no sub-grain separation is read. The reader reports a count, never a separation smaller than one pixel.
+  Built in, and checked.
+
+**What this would mean.** It is geometry, so it holds almost by construction; that is the point. For a reader with no
+model, the corner s = 1 is exactly where "two" becomes certain: the smallest size that cannot fit in one of its own
+pixels. Below it, "two" is a matter of where the reader's grid happens to fall, the reader's accident, not the
+system's.
+
+**Kill.** P1 killed if P(two) differs from min(s, 1) by more than 3 standard errors at any tested s.
