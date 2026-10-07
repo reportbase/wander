@@ -454,6 +454,37 @@ horizon of a situated reader"); **a corner approached, never found**; and **recu
 end, each level the same sweep, Archimedes' halving ("Why the recursion"; Propositions 3.11–3.13). In 2 recursion
 follows the shape and stops; 1 has none.
 
+**Static and dynamic: why a situated reader is parallel or serial** (Tom, 7 October: "another way observation could
+be described as there are static and dynamic systems. static systems are stable, we observe their front hemisphere.
+and dynamic systems are experienced over time, we observe their inner hemisphere."). Tom's own examples already part
+this way: 3 is the apple held in the hand, there whole while it is faced; 4 is the molecule inside an endless apple,
+the others arriving one at a time. Parallel and serial say how a reader reads; static and dynamic say why it reads
+that way.
+
+Three points keep this within the paper's terms:
+
+- **Both are situated.** Static and dynamic part 3 from 4, not situated from unsituated. 1 and 2, the equation and the
+  array, are held whole with no reader standing anywhere.
+- **Static or dynamic is measured against the reader's look, not the system alone.** A system is static to a reader if
+  it holds still for the whole look, and dynamic if it changes or arrives during it. Taken as a property of the system
+  alone, the split fails both ways. A building that does not move is read serially by someone walking through it, and
+  a moving flock is read in parallel by a photograph. Measured against the look, the split is about access, and it is
+  situated: it depends on the reader's own timing.
+- **Arrival makes a reading dynamic as change does.** In *Wander* the stars hardly move, yet their signals reach the
+  reader one at a time at a finite speed: 4's "nearest first". A system can be static and still be read serially
+  because news of it comes over time.
+
+| | the system, to this reader | read |
+|---|---|---|
+| 0 | nothing given | — |
+| 1, 2 | static, held whole (an equation, an array) | unsituated, all at once |
+| 3 | static, faced from outside | parallel: the front hemisphere |
+| 4 | dynamic: changing or arriving during the look | serial: from inside |
+
+It is not a matter of dimension. Static is not "3D" and dynamic is not "3D plus time": both read the same sweep, 0 to
+π/2, one laid across at once and one walked. A reading by dimension is what the situations replaced. A correspondence,
+in the paper's sense: it explains the split and proves nothing new.
+
 **Proportion, depth and recursion, by situation** (Tom, 6 October: "depth is difference between the shape and the unit circle"; "situation 2 has depth. situation 1,3,4 do not.") And: "in situation 3 and 4, before the corner, it is
 proportional. in situation 1 and 2, it is proportional on both sides of the corner."
 
