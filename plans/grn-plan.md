@@ -75,3 +75,17 @@ the same error to within the sampling noise.
   largest and smallest of 15 such values can easily differ by 13%. The serial error shows no trend with s. The fault was
   in the kill condition, not the reader.
 - A fix is a new run with its own prediction, below.
+
+### Run 2: prediction and kill (written before run 2; informed by run 1, see below)
+
+**Not blind.** Run 1's table already holds the parallel reader's *absolute* error, the relative error times s. Read off
+it, that error is about 0.02 of a grain from s = 5 down to about 1 and rises below. So this prediction was written after
+seeing those numbers. It runs on a new seed with 1,000 trials at each s. A pass here tests whether run 1's pattern holds
+up, not whether it was foreseen.
+
+- **P1′ (the kill): the knee in absolute error is at the corner.** The parallel reader's RMS error in θ, in grains, is
+  flat for large s, the plateau being its mean over s ≥ 2. The knee is the largest s at which it reaches twice the
+  plateau. Predicted between s = 0.5 and 2. Killed if outside.
+- **P2′: the serial reader shows no trend with s.** Fitted against log s, its log error has a slope between −0.03 and
+  0.03. Killed if not.
+- **Reported:** where the parallel reader first beats the serial one, as in run 1.
