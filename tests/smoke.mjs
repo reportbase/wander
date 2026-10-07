@@ -120,7 +120,11 @@ try {
   const w3 = await page.evaluate(() => __wanderLab.where()), glide = Math.hypot(w3.x - w2.x, w3.y - w2.y, w3.z - w2.z);
   if (!(glide > 0.5)) failures.push(`[moving] letting go stopped dead (moved ${glide.toFixed(2)} after)`);
   await page.waitForTimeout(800);
-  const tgt = await page.evaluate(() => __wanderLab.drawn().filter(o => !o.star && o.r > 2 && o.r < 10 && o.y > 80 && o.y < 650 && o.x > 100 && o.x < 1180).sort((a, b) => b.r - a.r)[0]);
+  // the tap lands 10 px beside the target: pick one with no other drawn body near that point, so the tap is its alone
+  const tgt = await page.evaluate(() => { const all = __wanderLab.drawn();
+    return all.filter(o => !o.star && o.r > 2 && o.r < 10 && o.y > 80 && o.y < 650 && o.x > 100 && o.x < 1180)
+      .sort((a, b) => b.r - a.r)
+      .find(o => all.every(b => b === o || Math.hypot(b.x - (o.x + o.r + 10), b.y - o.y) > b.r + 25)); });
   if (!tgt) failures.push('[moving] no small body in view to tap');
   else {
     await page.mouse.click(tgt.x + tgt.r + 10, tgt.y);   // beside it, not on it
@@ -128,9 +132,10 @@ try {
     const o = await page.evaluate(() => __wanderLab.where());
     if (!o.orbit || o.name !== tgt.name) failures.push(`[moving] a tap beside ${tgt.name} took ${o.orbit ? o.name : 'nothing'}`);
     else {
-      await page.waitForFunction(t => __wanderLab.where().t > t + 5, o.t, { timeout: 180000, polling: 200 });
-      const s1 = (await page.evaluate(() => __wanderLab.where())).span;
-      if (!(s1 > 0.5)) failures.push(`[moving] five seconds after tapping, ${tgt.name} spans only ${s1.toFixed(2)} (it should come in to about 0.7)`);
+      // it comes in at a capped rate, read from arrivals that lag: allow up to 15 s of the world's clock, not a fixed 5
+      await page.waitForFunction(t => { const w = __wanderLab.where(); return w.span > 0.6 || w.t > t + 15; }, o.t, { timeout: 300000, polling: 200 });
+      const w5 = await page.evaluate(() => __wanderLab.where()), s1 = w5.span;
+      if (!(s1 > 0.5)) failures.push(`[moving] ${(w5.t - o.t).toFixed(1)} s after tapping, ${tgt.name} spans only ${s1.toFixed(2)} (it should come in to about 0.7)`);
       for (let i = 0; i < 10; i++){ await page.mouse.wheel(0, -200); await page.waitForTimeout(60); }
       const z0 = (await page.evaluate(() => __wanderLab.where())).t;
       await page.waitForFunction(t => __wanderLab.where().t > t + 3, z0, { timeout: 180000, polling: 200 });
@@ -188,6 +193,30 @@ try {
   }
   await page.click('#play'); await page.waitForTimeout(1500);
   console.log(`${failures.length === before4 ? 'ok  ' : 'FAIL'} sweep.html (${laid.join(', ')})`);
+
+  // ── 5. dial.html: the h dial; a sure "two" costs (1 + s)·max(1, 1/s), least at the corner ──
+  current = 'dial.html';
+  const before5 = failures.length;
+  await page.goto(new URL('dial.html?s=0.5', base).href, { waitUntil: 'load' });
+  const dc = await page.evaluate(() => [0.5, 1, 2].map(x => __dial.meanCost(x, 4000)));
+  if (!(Math.abs(dc[1] - 2) < 1e-9 && Math.abs(dc[0] - 3) < 0.3 && Math.abs(dc[2] - 3) < 1e-9 && dc[1] < dc[0]))
+    failures.push(`[dial.html] costs at s = 0.5, 1, 2: ${dc.map(c => c.toFixed(2)).join(', ')} (want about 3, 2, 3)`);
+  await page.click('#look'); await page.click('#measure');
+  console.log(`${failures.length === before5 ? 'ok  ' : 'FAIL'} dial.html (cost ${dc.map(c => c.toFixed(2)).join(' / ')} at s = 0.5 / 1 / 2)`);
+
+  // ── 6. sphere.html: the address loses the scale; the octant's area is π/2; far off the body is a plain ball ──
+  current = 'sphere.html';
+  const before6 = failures.length;
+  await page.goto(new URL('sphere.html?map=reader', base).href, { waitUntil: 'load' });
+  const sp = await page.evaluate(() => { const s = __sphere, a = s.address(0.2, 0.4, 0.6), b = s.address(0.02, 0.04, 0.06);
+    return { same: a.every((x, i) => Math.abs(x - b[i]) < 1e-12), area: s.octantArea(), ch: s.chamber([0.2, 0.4, 0.6]),
+      face: s.face([0.9, 0.2, 0.3]), rd: s.reader([0.9, 0.3, 0.7]), far: s.bandW(2), near: s.bandW(600) }; });
+  if (!sp.same) failures.push('[sphere.html] the address changes with the scale');
+  if (Math.abs(sp.area - Math.PI / 2) > 1e-3) failures.push(`[sphere.html] octant area ${sp.area} (want π/2)`);
+  if (sp.ch !== 'v < h < f' || sp.face !== 'v' || sp.rd !== 'far in both') failures.push(`[sphere.html] ${sp.ch} / ${sp.face} / ${sp.rd}`);
+  if (sp.far.some(w => w > 0) || sp.near.some(w => w < 1)) failures.push(`[sphere.html] bands far ${sp.far}, near ${sp.near}`);
+  await page.click('[data-m="chambers"]'); await page.click('[data-p="1,1,1"]'); await page.waitForTimeout(300);
+  console.log(`${failures.length === before6 ? 'ok  ' : 'FAIL'} sphere.html (octant area ${sp.area.toFixed(4)}, scale lost, bands off far and on near)`);
 } catch (e){
   failures.push(`[${current}] ${e.message.split('\n')[0]}`);
 }

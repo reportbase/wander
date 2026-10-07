@@ -40,10 +40,21 @@ Google Fonts load from outside:
   g = (2/π)·atan(v/h) and read by a cursor, serially (4) or all at once (3), with the
   quarter circle (divided by the whole) beside it. `?ex=planets|shape|spread|line`,
   `?mode=parallel`. Not linked from index.html yet.
+- `dial.html`: **the h dial** (7 Oct 2026), a standalone page like `sweep.html`: GRN runs 3–5
+  (`plans/grn-plan.md`) on one screen. A model-free reader with pixels h wide reads two points one apart;
+  turn the dial, look, slide h, approach from afar; charts of P("two") = min(s, 1) and of the cost of a sure
+  "two", (1 + s)·max(1, 1/s), least at the corner. `?s=` sets the dial; test hook `window.__dial`.
+- `sphere.html`: **the sphere** (7 Oct 2026), a standalone page like `dial.html`: `number-line.md` §8 on one screen.
+  Three breadths and a scale k; the address on the octant (k changes nothing there); six chambers and the triple corner;
+  the unit cube's faces; near and far for a reader holding h; a body with relief in three bands shown by its size in
+  pixels (as `bandW`). `?v=&h=&f=&k=&P=&map=chambers|faces|reader|whole`; test hook `window.__sphere`.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
   standing); `v-and-h.md` gathers every idea about v and h, by item.
+  `number-line.md` (7 Oct 2026) is a working paper Tom iterates on: how people meet the
+  number line (its two infinities one under the flip; situation 3 within a window, 4 before
+  and past it, a bounded line held whole). A reading; parts go to SPN only once tested or ruled.
   `serial-parallel-nowhere-record.md` is SPN as written 29 Sep – 1 Oct, before the
   rewrite: **a frozen record, never edited.** Section and proposition numbers cited
   in the corpus before the rewrite are the record's; SPN's opening note maps them to
@@ -59,6 +70,34 @@ Google Fonts load from outside:
   runs, stopped) and `nle-plan.md` (number lines in people: run 1 on
   Chan and Mazzocco's kindergartners killed the corner's prediction) follow the lab rules: prediction first, runs recorded as they
   came out, nothing above a plan's "Runs" line edited afterwards.
+  `nls-plan.md` (+ `nle/nls.py`, 7 Oct): the number-line split on synthetic readers (Tom: synthetic
+  tests are fine for persuading each other); the switch is detectable at noise sd 8, the corner against a
+  plain log is the fragile part.
+  `grn-plan.md` (+ `grn/grn.py`, 7 Oct): serial or parallel set by the reader's grain (Tom: "serial and
+  parallel is just our perspective"), on a synthetic binary. The reading depends only on size/grain (by
+  construction); serial gives way to parallel near s ≈ 0.7; the knee at the corner was killed twice (runs 1, 2),
+  a reader given the shape reading below its grain. Run 3, the pixel the reader's and no model: "two" is certain
+  exactly from s = 1, and below it has probability s (not killed). Run 4: below the corner 1/s looks, past it s
+  pixels a look; a reader sliding its h by halvings needs about log₂(1/s) looks (not killed). Run 5, h as a
+  dial: paying per grain read, a sure reading costs (1+s)·max(1,1/s), least at the corner, same at s and 1/s.
+  Run 6, steering by its own pixel count from any start (it cannot know its corner): about one look per
+  doubling (P1 not killed); within [0.5, 3] killed at one start (luck at the last level below the corner); the
+  gain is one-sided, large from below, none from above for a single answer.
+  Run 7, the edge moved by light (reader given the shape): resolution limit ∝ light^(−0.499), knee steady
+  (not killed).
+  `anl-plan.md` (+ `anl/anl.py`, 7 Oct): a number line that recurses as needed against the ordinary line's
+  depth everywhere. One close pair anywhere sets every number's depth on the ordinary line; with 5 twins the
+  recursing line costs 0.375 of it, rising to 1 as detail spreads. Run 1's clustered prediction killed.
+  `arb-plan.md` (+ `arb/arb.py`, 7 Oct): arithmetic baseline, an exact referee against float, fixed depth and
+  a recursing line of cells: half the storage on mixed depths, 1.25 on the control; the fixed line overclaims
+  by ~10⁶; √2·√2 = 2 undecided at every depth (nothing killed).
+  `cal-plan.md` (+ `cal/cal.py`, 7 Oct): observation costs calories; a reader enters a level only if worth its
+  price. Detail fading fast: depth is the log of worth (within 4%). Fading slowly (r = 0.7): killed, the reader
+  prices from two noisy looks and quits early. Run 2 (running estimate): the log-of-worth slope holds within 3% at
+  every r; the net still falls short at r = 0.7 (killed).
+  `why2-plan.md` (+ `why2/why2.py`, 7 Oct): why the levels might be doublings (SPN's open question). A reader
+  stepping its grain by ρ, paying per grain: content with a first sighting, no preferred step (run 1 killed);
+  needing a sure reading (3 looks), cheapest ρ ≈ 2 on average and at worst (run 2). Broad valley; one cost model.
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far
@@ -123,6 +162,9 @@ In short:
   3. **labs.html:** a card per lab, BAL run from its button, and `index.html?lab=`
      forwarding to `labs.html`.
   4. **sweep.html:** every example lays on the sweep, and the cursor sweeps.
+  5. **dial.html:** a sure "two" costs about 3, 2 and 3 at s = 0.5, 1 and 2 (least at the corner).
+  6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
+     away and on close up.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
