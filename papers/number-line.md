@@ -14,6 +14,7 @@ ruled.*
   all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
   plain explanation of the corner (below; the corner itself is SPN's), named the two sides front and back, near and far, in place of "breadth" and
   "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
+- 7 October, sixth: §4, the number line's depth is infinite, a perturbation's finite (Tom: "they conclude").
 - 7 October, fifth: §4, "depth everywhere, and depth where needed" (Tom: the number line has depth everywhere, as its
   decimals; a situated reader recurses only into perturbations it has found). Lay of the land, no ruling.
 - 7 October, fourth: §4 rebuilt on the draw repository's depth labs (Tom: "we have already explored depth in draw
@@ -198,6 +199,13 @@ by side, with no ruling on the word:
 - **A situated reader cannot know a perturbation before it sees it.** "Known" here means found: a remainder the
   current level left that the reader can detect. It then recurses there and nowhere else (draw: "recursion goes where
   the detail is").
+- **The number line's depth is infinite; a perturbation's is finite** (Tom: "the number line has infinite depth, even
+  though, perturbations are finite, they conclude"). The decimals never end, for every number. A perturbation ends: in
+  the draw labs every shape's recursion stopped where nothing was left above the tolerance, 79 to 244 sweeps, not
+  without end. So a situated reader's depth is finite because what it reads concludes, not because its levels run out.
+  One nuance: whether digits end can depend on the reader's levels, not the thing. ⅓ never ends in decimals and is 0.1
+  in base 3. A perturbation concluding is a fact about the thing; digits running on can be a fact about the levels used
+  to write it.
 - **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
   other is a held thing's remainder, entered where found. They are not ruled the same or different.
 
