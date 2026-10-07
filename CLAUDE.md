@@ -55,6 +55,9 @@ Google Fonts load from outside:
   `resolution-recursion.md` (+ `spiral/resolution.py`): a reader of finite resolution
   facing a horizon must zoom without end, and far out every zoom is alike ((R) from the
   fisheye's tail); the quarter turn per level is still a premise. Unruled.
+  `normalizations.md` (+ `normalizations/`): one relation divided by h (odds), by v + h
+  (probability) and by the whole (the circle); two bells with dyadic tails; dividing by a noisy h
+  gives a Cauchy tail. A reading.
   `standpoint-axis.md` (+ `standpoint/`): a second axis, the standpoint (nowhere,
   outside, inside) beside the breadths known; the hemisphere observer as outside with
   the breadths known. Superseded by Tom's situations list 0–4 (SPN §2.1).

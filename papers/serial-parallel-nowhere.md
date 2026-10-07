@@ -40,6 +40,7 @@ block only puts them in order.*
 | sweep | the running share g of the relations, from 0 (v unexpressed) to 1 (v fully expressed). Each relation s takes the share ds/(1 + s²); their total is π/2, and g is the running share over that total (R170, "g is the sweep"). The flip sends g to 1 − g. In situations 1 and 2, with both breadths held, the same g is an angle, θ = (π/2)·g, and 90° is meaningful there; in 3 and 4 nothing turns, and g is a share | §2.1, §3.5 |
 | level | a sweep entered again, with its own home, corner and far wall. In place, 2h: a front half of one h, proportional, and a back half of one h holding the rest, in which the next level nests (§3.3, "The level as 2h, in place"). Laid side by side round its own corner, 1/r to r, it is one quarter turn, whatever the ratio r (Proposition 3.12) | §3.3, Proposition 3.12 |
 | recursion | levels within levels: each level the same sweep again | §3.3, Proposition 3.11; "Recursion, after the corner" |
+| unit line | the sweep itself, bounded and known (0 to π/2 in 1 and 2; g from 0 to 1 in 3 and 4); to a line what the unit circle is to a shape. The **number line**, continuous with unit 1 and size unknown, is the unknown system laid on it: 0 at home, 1 at the corner, its far end at the horizon (Tom, 6 October) | §2.1, "The unit line, and the number line laid on it" |
 | depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
 | continuous sweep, spiral | the levels drawn. Unwrapped, one turn running on, level into level with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
 
@@ -408,6 +409,10 @@ The situations are set by what the reader knows of the breadths, not by the worl
 direction: how far a thing reaches that way ("breadth means extent, not quantity", Sep 24). The world is breadth, always
 fully expressed whoever observes it (R124).
 
+*The clearest single picture of the five is the number line itself, laid on the unit line and on the quarter circle
+and compared ("The number line laid twice", below; Tom, 6 October: "This our best explanation of the situation yet,
+the number line itself.").*
+
 **The five, in brief** (6 October; Tom's list, gathered from the paragraphs below). The numbering is Tom's of 6
 October, and the whole paper uses it, except in quotations and in the earlier table below, kept as written. Tom, of
 1 and 2: "1 and 2 are mathmatical views, can be an equation or an array or similar." The 3d repository draws the five
@@ -613,6 +618,114 @@ x = x′ = f, object at 2f and image at 2f, magnification exactly 1, the one pla
 horizon is the object at the focus, x = 0, whose image goes to infinity. The two sides of the lens read each other in
 reciprocal. This is standard optics, and here a correspondence, not a proof: a lens behaves as a reader whose h is its
 focal length. A lab could make it one.
+
+**The unit line, and the number line laid on it** (Tom, 6 October: "The number line is g=0, it is the unit line. Any
+perturbation is fully expressed at g=1"; "All the intuition for the unit circle also applies to the number line, or
+also now called the unit line"; and then, correcting: "the 0 to π/2 sweep is the unit line. The number line is the
+unknown system we lay on the unit sweep.")
+
+- **The unit line is the sweep itself**: bounded and known, 0 to π/2 as a turn in situations 1 and 2, g from 0 to 1
+  in 3 and 4. It is to a line what the unit circle is to a closed shape, and the unit circle's intuition carries over
+  to it.
+- **The number line is the unknown system laid on it**: continuous, its unit 1 known (h), its size unknown (v's
+  breadth). Laying it on the unit line puts 0 at home (g = 0), 1 at the corner (g = ½), and its unbounded far end at
+  the horizon, g → 1, approached and never reached. The two sides of 1 are the flip, x ↔ 1/x.
+- So the unit line is the address space and the number line is what is addressed: the addressing laid first, the
+  magnitudes the world's (§1).
+- **A perturbation is v over the unit h**, expressed from nothing (g = 0) to fully (g = 1), and its size, when not
+  known, makes full expression the horizon. The perturbation is the line's depth, its difference from the unit, as a
+  shape's depth is its difference from the unit circle ("Proportion, depth and recursion, by situation").
+
+**One g, not two.** This joins two meanings g has carried. R140 wrote the mix between the circle and a shape,
+r(θ) = (1 − m)·1 + m·B(θ), as g, when g was a placeholder ("g = 0 is the unit circle, g = 1 the fully expressed …",
+Tom, 1 October 13:44); R170 then found g to be the sweep. They are the same g: the sweep of v over a held h ("g is the
+sweep of v over a held h", above), with v the depth (the perturbation, or the shape's difference from the circle) and h
+the unit (the number line's 1, or the unit circle's radius); the unit line is the sweep on which it is laid. How far the sweep has gone is how much of the depth is expressed. The LIN
+lab already holds this picture: a line at h with four small bumps, held unsituated and by a situated reader (§9.9).
+
+**The number line laid twice: the five situations from one construction** (Tom, 6 October: "H = the unit 1. Lay the
+complete number line down onto the 0 to π/2 unit line and then the quarter circle. Compare them. That explains
+situations 1, 2, 3 and 4.") Hold the number line upright at h = 1, so the number x is the point (1, x). Lay it down
+twice. Onto the **quarter circle** of radius h, by projecting each number toward the centre: x lands at
+(1, x)/√(1 + x²), height sin θ and width cos θ, θ = atan x; the whole unbounded line fits on a quarter of the circle.
+Onto the **unit line**, the same quarter arc unrolled straight, length π/2: x lands at θ, the sweep, with nothing curved.
+Where the same numbers land (checked):
+
+| number x | on the unit line, θ | on the circle, height sin θ | unit line ÷ circle | circle ÷ unit line |
+|---|---|---|---|---|
+| 0 | 0 | 0 | 1 | 1 |
+| ½ | 0.464 | 0.447 | 1.037 | 0.965 |
+| 1 | 0.785, the middle | 0.707, 45° | 1.111 | 0.900 |
+| 2 | 1.107 | 0.894 | 1.238 | 0.808 |
+| 4 | 1.326 | 0.970 | 1.367 | 0.732 |
+| 10 | 1.471 | 0.995 | 1.479 | 0.676 |
+| → ∞ | → π/2 | → 1 | → π/2 | → 2/π |
+
+- **1, the quarter circle itself.** The number line lands on a closed, known curve, v² + h² = 1: both breadths held, the
+  corner at 1 computed at 45°, the angle meaningful, no horizon (the top of the circle is a point on it).
+- **2, a shape in place of the circle.** Each number lands at the shape's radius in its direction; how far that is
+  from the quarter circle is the shape's depth.
+- **3, parallel, outside.** It holds the laid numbers at once and reads the unit line against the circle, unit line ÷
+  circle, θ/sin θ: from 1 toward π/2, approaching the line from above, never arriving.
+- **4, serial, inside.** It takes one number at a time, projected onto the circle, and reads circle ÷ unit line,
+  sin θ/θ: from 1 toward 2/π, approaching from below. Its view is the unit line laid out as the fisheye.
+- **0.** No unit: nothing to lay.
+
+Past 1 every number lands closer to the circle's top and the line's end, and the numbers out to infinity crowd into
+the last stretch of both without arriving: the horizon, the same on both layouts. So one construction gives the five:
+1 and 2 are the quarter circle, with angles and the whole held; 3 and 4 live on the unit line, without angles, and the
+two situated readers are the two ways of comparing the layouts, line over circle (π/2) and circle over line (2/π), with
+1 between them. This agrees with "Angles, and where they belong" (above).
+
+**Two normalizations, the two layings** (Tom, 6 October: "So if we took any system of h and v, normalize it, divide
+both by h."). Dividing both by h sends any system (h, v) to (1, v/h): a point on the number line held upright at h = 1.
+Every system, whatever its scale, lands on that one line, at its relation s = v/h; the scale is gone and h is the 1,
+the focus. There are two ways to normalize, and they are the two layings above:
+
+| divide both by | the system lands at | lies on | needs |
+|---|---|---|---|
+| h | (1, v/h) | the number line, unbounded | h only |
+| the whole, √(h² + v²) | (h, v)/√(h² + v²) = (cos θ, sin θ) | the quarter circle, bounded | h and v both |
+
+A situated reader (3, 4) can only divide by h: it knows h and not v's breadth, so it cannot form the whole. Its
+systems land on the unbounded number line, read through the unit line, with a horizon at the far end; this is R146's
+"the reader divides, and only here", drawn. An unsituated view (1, 2) can divide by the whole: holding both breadths,
+every system lands on the quarter circle, bounded, the corner computed at 45°, no horizon; 1 when the system is the
+circle, 2 when each direction has its own breadth and the departure from the circle is the depth. The two are one
+projection apart: projecting (1, s) toward the centre gives the circle's point, and comparing the two gives θ/sin θ and
+sin θ/θ. Normalized by its own unit, a system gives the number line; normalized by the whole, the circle. Which a
+reader can do is its situation.
+
+**Depth, read against the sweep** (Tom, 6 October: "when we normalize depth is the difference between g=0 and g=1";
+"isn't depth just calculus, the total area between the unit line of g=0 and the fully expressed line of g=1"; "The unit
+line or sweep is the complete set of all possible v vs h. Depth is read against that base line.")
+
+- **The baseline is the sweep.** The unit line is every possible relation v/h at once, each with its share ds/(1 + s²),
+  all of them summing to π/2 (to 1 as g). That is g = 0: the unit, with nothing expressed.
+- **A shape is read against it, address by address.** At each relation the shape returns its magnitude; at g it is
+  unit + g·depth, so at g = 1 it is fully expressed, and depth is the difference between the two, at every address.
+- **As one number, depth is an area**: the area between the baseline and the fully expressed shape, taken along the
+  sweep, so that each relation counts by its share. Integrated this way the total stays finite out to the horizon,
+  where the line itself would run on. The area at any g is g times the whole.
+- **Sign.** Where a shape bulges out in some places and in at others, a signed area can cancel, and for a closed shape
+  normalized by its mean radius it cancels almost exactly by construction. Depth as how much a shape departs is the area
+  of the absolute difference (or of its square); the signed area measures where the unit was put.
+- **Measured.** The labs of 4 October did this (§9.9): ARE takes a bump's area on a line both unsituated and by a
+  situated reader, whose area is Σ ½(d² − d₁²)·Δa/(1 + a²), each address weighted by its share; DEP recovers total
+  depth by turning, "the shape less its unit sphere". The milestone of that day: a situated reader holding only its h
+  recovers the total depth the unsituated view computes. Read against the sweep, depth comes out the same as the area
+  the whole view holds.
+
+**How the depth comes back after division** (Tom, 7 October: "this explains how the perturbations or depth is
+recovered after division removes the scale. the address created by the division points to the payload."). Dividing by
+h removes the scale and leaves a relation, s = v/h; the relation is an address, a place on the sweep, the same whatever
+the scale. At each address the world returns what is there, the payload: the unit plus the perturbation, the depth, at
+that address. Gathered over every address, the payloads are the depth read against the sweep, so the perturbations come
+back, and with them the shape, up to a scale (§8.2). The scale itself is what the division took away; it does not come
+back from the addresses, only from a unit agreed with others (§8.4). So the division does not lose the depth: it turns
+it into addresses, and the payload at each address returns it (§4.3, "Addresses and payload"; R159: a situated observer
+"constructs an addressing scheme from relations available at its standpoint, and uses those addresses to encounter the
+world's magnitudes").
 
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
 
