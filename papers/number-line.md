@@ -12,14 +12,17 @@ ruled.*
   access the number line can best be understood as situation 3, the parallel situated perspective" (§4).
 - 7 October, second: the aim stated (Tom: "my hope is that we can map these concepts onto the number line itself. so
   all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
-  statement of the corner (below), named the two sides front and back, near and far, in place of "breadth" and
+  plain explanation of the corner (below; the corner itself is SPN's), named the two sides front and back, near and far, in place of "breadth" and
   "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
 
-## The corner, in one sentence
+## The corner, explained plainly
 
 Tom, 7 October, a first attempt: "the corner separates the frontside from the back side, the near field from the far
 field, it separates where the signal is less than your h unit from where the signal is greater than your h unit." And:
 "we need a nice short statement about the corner, what it actually is."
+
+The corner is already SPN's: v = h, the flip's one fixed point (SPN §3). This adds nothing to it; it says the same
+thing more plainly (Tom: "the corner is already known, we are just giving a more nuanced explanation of it").
 
 **Draft (for Tom to refine):** *The corner is where the signal equals your unit: below it, the signal is a part of your
 unit; above it, your unit is a part of the signal.*
