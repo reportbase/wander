@@ -33,6 +33,7 @@ ruled.*
 - 7 October, twelfth: planned tests completed: CAL run 2 (`plans/cal-plan.md`), GRN run 7 (`plans/grn-plan.md`).
 - 7 October, thirteenth: a background section, so the paper can be read without SPN (Tom: "add any background
   information … needed to allow the number line paper to be read alone").
+- 7 October, fourteenth: §5, why the levels might be doublings (`plans/why2-plan.md`, runs 1 and 2).
 
 ## Background from SPN
 
@@ -493,6 +494,15 @@ the reader move his h unit like a slider to get a better read on the situation")
   same at s and 1/s (run 5). The best setting of the dial puts the system at the reader's corner. Finer, the reader pays
   for grains it does not need; coarser, it pays in looks; and missing by a factor costs the same either way. That
   holds under this cost; field of view, light per grain and an optical floor would move it.
+- **Why the levels might be doublings** (`plans/why2-plan.md`; SPN's open question, the ratio between rungs). A reader
+  that cannot know its corner steps its grain by some ratio ρ each look, and pays for every grain of its field.
+  - *Content with a first sighting:* it has no preferred step. Finer is better (run 1, both predictions killed), since
+    sightings below the corner come by chance.
+  - *Needing a sure reading* (three looks in a row): its cheapest step is about 2, best on average and within 0.2% of
+    best at worst (run 2).
+
+  So, under this cost, doubling is what it costs least to be sure. The valley is broad: steps from 1.75 to 2.5 cost
+  within a few per cent. One cost model, synthetic, not ruled.
 
 ## 6. What would test it
 

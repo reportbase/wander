@@ -88,3 +88,34 @@ assumes, but still gets some luck. So the reasoning of the first prediction shou
 - **P2″ (reported, not a kill):** the ρ minimizing the average cost ratio, against e.
 - **Also reported:** the same reader with no luck at all, stopping only once the system is past its corner (it could
   not know this; a check on the classic case): worst-case best at 2, average best at e, by construction.
+
+### Run 2 (7 October, `why2.run2()`, seed 102): P1″ not killed
+
+| ρ | 1.25 | 1.5 | 1.75 | **2** | 2.25 | 2.5 | 3 | 4 | 8 |
+|---|---|---|---|---|---|---|---|---|---|
+| mean cost ratio | 6.20 | 5.06 | 4.75 | **4.68** | 4.70 | 4.79 | 5.06 | 5.62 | 8.08 |
+| worst cost ratio | 6.45 | 5.28 | **5.15** | 5.16 | 5.32 | 5.57 | 6.13 | 7.43 | 13.36 |
+| no luck: mean | 7.77 | 6.13 | 5.76 | **5.73** | 5.83 | 5.96 | 6.35 | 7.16 | 10.54 |
+| no luck: worst | 8.75 | **7.49** | 7.58 | 7.97 | 8.53 | 9.14 | 10.48 | 13.24 | 24.97 |
+
+The simulation matches the exact expectation to within its sampling (mean at ρ = 2: 4.681 simulated, 4.680 exact).
+
+- **P1″ not killed.** The worst case is cheapest at ρ = 1.75, with ρ = 2 next to it (5.15 and 5.16).
+- **P2″, reported:** the average is cheapest at **ρ = 2** (4.68), not near e. Between 1.75 and 2.5 the average varies by
+  under 3%.
+- **The "no luck" check did not come out as stated.** The plan said it would give 2 against the worst case and e on
+  average, by construction. It gave ρ = 1.5 against the worst case and **2** on average. The three confirming looks at
+  the final grain change the classic sums, so the construction claim was wrong. Recorded as it came out.
+
+**What WHY2 says, after two runs.**
+- **A reader satisfied with a first sighting** (run 1) has no preferred step; finer is better, a continuous zoom. A
+  first sighting below the corner comes by chance, and a slow creep pays for it at close to the ideal price.
+- **A reader that needs a sure reading** (run 2) has a best step: about 2. That is the cheapest on average (4.68) and
+  within 0.2% of the cheapest at worst (5.16 against 5.15 at 1.75).
+- **So, under this cost model, the doubling is what it costs least to be sure.** It is a candidate answer to SPN's open
+  question: levels one doubling apart are the cheapest way for a reader that cannot know its corner to reach a reading it
+  can rely on.
+- **The limits.** The minimum is shallow: steps between 1.75 and 2.5 cost within a few per cent of each other, so "2"
+  is the best of a broad, flat valley, not a sharp rule. It rests on one cost model (pay per grain of a fixed field)
+  and one confirmation rule (three looks). Other prices, or confirming by two looks or four, could move it. Not ruled;
+  synthetic.

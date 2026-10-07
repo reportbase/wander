@@ -91,6 +91,9 @@ Google Fonts load from outside:
   price. Detail fading fast: depth is the log of worth (within 4%). Fading slowly (r = 0.7): killed, the reader
   prices from two noisy looks and quits early. Run 2 (running estimate): the log-of-worth slope holds within 3% at
   every r; the net still falls short at r = 0.7 (killed).
+  `why2-plan.md` (+ `why2/why2.py`, 7 Oct): why the levels might be doublings (SPN's open question). A reader
+  stepping its grain by ρ, paying per grain: content with a first sighting, no preferred step (run 1 killed);
+  needing a sure reading (3 looks), cheapest ρ ≈ 2 on average and at worst (run 2). Broad valley; one cost model.
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far
