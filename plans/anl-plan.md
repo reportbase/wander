@@ -51,3 +51,35 @@ numbers and the wrong one for anything clustered. A situated reader's depth foll
 follows the worst case anywhere.
 
 ## Runs
+
+### Run 1 (7 October, `python3 plans/anl/anl.py`, seed 71): P1 killed; P2 and P3 not killed
+
+| set | depth everywhere | depth where needed (digits + splits) | mean depth | ratio |
+|---|---|---|---|---|
+| E, evenly spaced | 10,000 (10 a number) | 9,976 + 999 = 10,975 | 10.0 | **1.10** |
+| U, uniform random | 22,000 (22 a number) | 11,357 + 1,457 = 12,814 | 11.4 | **0.58** |
+| C, clustered | 36,000 (36 a number) | 25,470 + 2,222 = 27,692 | 25.5 | **0.77** |
+
+- **P1 killed.** C's ratio is 0.77, not under 0.3.
+- **P2 not killed.** U's ratio is 0.58: the ordinary line pays 22 digits a number for its single closest pair, while
+  the recursing line pays 11.4 on average.
+- **P3 not killed.** E's ratio is 1.10: no gain, and a small loss to the split marks, as predicted.
+
+**Why P1 failed, read after the run (the kill stands).** The plan built C with *every* number inside a cluster 10⁻⁶
+wide. So every number lives in fine detail and needs about 25 digits to stand alone; the recursing line saves only the
+difference between each number's own neighbourhood and the single worst one (36). That is not "detail in a few
+places". It is detail everywhere, at a finer scale. The design did not test what the plan said it would. A fix is a new
+run with its own prediction, below.
+
+### Run 2: a few perturbations in a plain line (prediction written before run 2)
+
+**The set, P.** 1,000 numbers evenly spaced as in E, then 5 of them each given a twin 10⁻⁹ away (1,005 numbers in all).
+Fine detail in 5 places; elsewhere the line is plain.
+
+- **P1′ (the kill).** P's ratio is under 0.45. The ordinary line must pay about 30 digits for every number because of
+  the 5 twins. The recursing line pays about 10 for most numbers and about 30 only for the 10 near the twins.
+- **Reported:** how the ratio changes with 1, 5, 50 and 500 perturbed places. Predicted to rise toward E's 1.1 as the
+  perturbations spread everywhere.
+
+**Informed by run 1, and said so.** It was written after seeing run 1's numbers, so it tests the idea the plan meant to
+test, not whether it was foreseen.
