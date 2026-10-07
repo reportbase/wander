@@ -215,3 +215,22 @@ wide, the grid's offset random on every look, and the reader counting lit pixels
   through the corner; what changes there is certainty.
 - **A reader that can move its h** trades the reciprocal cost for a logarithmic one, about one look per doubling, by
   sliding its corner toward the system. Here the logarithm is the cost of moving the corner, not an assumption.
+
+### Run 5: h as a dial, and what a sure reading costs (prediction written before run 5)
+
+Tom, after run 4: "that would be an important insight. H as a dial would be very interesting idea in itself." Same
+model-free reader. Now each look is charged for what it reads: one unit for every grain the system spans on that look
+(1 below the corner when it is not seen as two, and on average 1 + s once it spans more). The reader looks until it
+sees "two" for the first time, and the cost of that sure reading is the total charged.
+
+- **P1 (the kill): the cost is (1 + s)·max(1, 1/s).** Below the corner it takes 1/s looks on average, the last of them
+  spanning 2 grains, so (1 + s)/s. Past it, one look of 1 + s. Predicted within 3 standard errors at every s tested,
+  0.1 to 10.
+- **P2: the cheapest setting of the dial is the corner.** The cost is least, 2, at s = 1. It is the same at s and 1/s
+  (for s > 1, (1 + 1/s)·s = 1 + s), so the cost is fair to both facings. Checked on the grid.
+- **What it would mean.** If a reader pays for each grain it reads, the best way to set its dial h is so that the
+  system sits at its corner: any finer and it pays for grains it does not need, any coarser and it pays in looks. And
+  the penalty for missing the corner is the same, setting by setting, in either direction.
+- **What it does not cover.** Other costs (a fixed number of pixels and so a narrower field as h shrinks, less light
+  per grain, an optical floor) would move the best setting, and are not modelled here. "Pay per grain read" is a
+  choice of cost, stated as such.
