@@ -89,3 +89,29 @@ up, not whether it was foreseen.
 - **P2′: the serial reader shows no trend with s.** Fitted against log s, its log error has a slope between −0.03 and
   0.03. Killed if not.
 - **Reported:** where the parallel reader first beats the serial one, as in run 1.
+
+### Run 2 (7 October, `grn.run2()`, seed 23, 1,000 trials at each s): P1′ killed, P2′ not killed
+
+| s | 0.10 | 0.18 | 0.23 | 0.31 | 0.40 | 0.54 | 0.71 | 0.94 | 1.24 | 1.64 | 2.16 | 2.86 | 3.78 | 5.00 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| parallel, RMS error in θ (grains) | 0.100 | 0.104 | 0.096 | 0.069 | 0.052 | 0.038 | 0.032 | 0.025 | 0.023 | 0.023 | 0.024 | 0.026 | 0.027 | 0.027 |
+| serial, RMS relative error | 0.050 | 0.049 | 0.051 | 0.051 | 0.050 | 0.049 | 0.051 | 0.053 | 0.050 | 0.051 | 0.049 | 0.051 | 0.049 | 0.050 |
+
+- **P1′ killed.** The plateau (s ≥ 2) is 0.026 of a grain, and the largest s at which the error reaches twice that is
+  0.31 (0.40 gives 0.0516, just under the 0.0522 needed). The knee lies below the corner, outside 0.5 to 2.
+- **P2′ not killed.** The serial reader's log error against log s has a slope of +0.003.
+- **Reported:** the parallel reader first beats the serial one at s = 0.71, as in run 1 (0.54 to 0.71).
+- Below s ≈ 0.2 the parallel error is about s itself: it reads the two stars as one (separation about 0).
+
+**What the two runs say.**
+- **Supported, by construction:** the reading depends on the system only through s, its size against the grain.
+  Systems of size 0.1, 1 and 10 at the same s read alike. In this exact sense, serial or parallel is the reader's
+  perspective, not the system's.
+- **Supported, measured:** as the system comes closer, the reading that works changes from serial to parallel. Here the
+  change falls at s ≈ 0.7, and it would move with the noise given to each reader.
+- **Not supported:** that the change sits at the corner, s = 1, set by the grain alone. With this much light, the
+  parallel reader resolves the pair down to about 0.3 to 0.4 of a grain. How far below the grain an image still
+  resolves depends on how much light there is, not on the grain alone. The corner of resolution is a soft edge, moved by
+  signal against noise, not a fixed line at s = 1.
+- **A next run, if wanted:** the same at several light levels. That would predict, before running, how the knee moves
+  with signal-to-noise, for example as a power of it.

@@ -96,3 +96,20 @@ if __name__ == '__main__':
     print(f'serial error across s: {min(ser):.4f} to {max(ser):.4f} (spread {100 * (max(ser) / min(ser) - 1):.1f}%)')
     print(f'switch: parallel first wins between s = {cross[0]:.3f} and {cross[1]:.3f}' if cross else 'no switch')
     print('sanity, s = 0.8, a = 0.1, 1, 10: ' + ', '.join(f'{x:.4f}' for x in sanity()))
+
+
+def run2(seed=23, trials=1000):
+    """Run 2 (plans/grn-plan.md): the parallel reader's absolute error in theta, in grains; the serial reader's trend."""
+    rng = np.random.default_rng(seed)
+    rows = []
+    for s in S_GRID:
+        pe = np.array([parallel(s, rng) for _ in range(trials)])
+        se = np.array([serial(1.0, rng) for _ in range(trials)])
+        rows.append((s, float(np.sqrt(np.mean((pe - s) ** 2))), rms_rel(se, 1.0), rms_rel(pe, s)))
+    plateau = float(np.mean([a for s, a, _, _ in rows if s >= 2]))
+    knee = max((s for s, a, _, _ in rows if a >= 2 * plateau), default=None)
+    ls = np.log([r[0] for r in rows])
+    lq = np.log([r[2] for r in rows])
+    slope = float(np.polyfit(ls, lq, 1)[0])
+    cross = next((r[0] for r in rows if r[3] < r[2]), None)
+    return rows, plateau, knee, slope, cross
