@@ -36,6 +36,7 @@ ruled.*
 - 7 October, fourteenth: §5, why the levels might be doublings (`plans/why2-plan.md`, runs 1 and 2).
 - 7 October, fifteenth: §7, the open questions brought up to date.
 - 7 October, sixteenth: §4, laid out in space; logarithms removed as a distortion, kept as a count (Tom).
+- 7 October, seventeenth: §1, the ordinary line has no corner; the corner is the reader's (Tom); §1 and §2 tables corrected.
 
 ## Background from SPN
 
@@ -133,7 +134,8 @@ thing more plainly (Tom: "the corner is already known, we are just giving a more
 **Draft (for Tom to refine):** *The corner is where the signal equals your unit: below it, the signal is a part of your
 unit; above it, your unit is a part of the signal.*
 
-On the number line the corner is 1. Below 1 a number is a fraction of the unit (½ is half of one); above 1 the unit is a
+For a reader holding the number line's own unit, the corner falls at 1; the line itself marks no corner (§1, "The
+ordinary line has no corner"). Below 1 a number is a fraction of the unit (½ is half of one); above 1 the unit is a
 fraction of the number (1 is half of 2). The part and the whole change places there, and nowhere else. Everything else
 follows from that: the two sides (near and far, front and back), the flip that swaps them (s ↔ 1/s), and why it is
 yours (it is set by your unit, not by the line).
@@ -151,7 +153,7 @@ and both are a situated reader's unreached ends (SPN, "By the corner", the three
 | | the number line | in SPN |
 |---|---|---|
 | in without end: 1, ½, ¼, … → 0 | less than the unit | the front side, the near field; home, approached |
-| 1 | the unit, h | the corner |
+| 1 | the unit, h | where a reader holding this unit has its corner; the line itself marks none |
 | out without end: 1, 2, 4, … → ∞ | greater than the unit | the back side, the far field; the horizon, approached |
 
 That is why neither is fully expressed. **The number line is a situated object:** it holds its unit exactly, it has
@@ -159,6 +161,22 @@ two ends it never reaches, and it cannot be held whole. Laid on the sweep, g = (
 from 0 to 1, and the ends are still only approached (g → 0, g → 1). The sweep bounds the line without completing it.
 The levels run both ways: R172 already has halvings toward home as well as doublings toward the horizon, and the inward
 side of the line is those inward levels.
+
+**The ordinary line has no corner** (Tom, 7 October: "the number line is the near field and the far field combined,
+with no corner."). The ordinary number line is laid out the same everywhere: 0.5 to 1 looks exactly like 1 to 1.5.
+Nothing changes at 1: no flip, no switch from proportion to levels, no boundary between near and far. The line joins
+the near field and the far field into one uniform ruler, and 1 is only another tick.
+- **The corner belongs to the reader.** It appears only when someone holds a unit and reads against it. It is not on
+  the line; it is where a reader's unit falls on the line. This is the synthetic runs' finding too: "the pixel is ours,
+  not theirs" (`plans/grn-plan.md`), and the corner is set by the reader's unit, not by the line.
+- **Its other features follow from having no corner.** Being proportional everywhere, the line must give every number
+  the same depth (depth everywhere, §4), and it must be drawn logarithmically to fit wide ranges (§4, "Laid out in
+  space"). Both are costs of a line without a corner.
+- **A recursive line has a corner at every branch.** Each branch is proportional up to its corner and opens a new level
+  past it, which is why it lays out only what it needs.
+
+The tables in this section and in §2 have been corrected to match. Earlier they put the corner at 1 on the line itself,
+where it belongs to the reader holding the line's unit.
 
 *On words* (second iteration). Tom's first note said "breadth" and "depth". The corner names the two sides already:
 the inward side is the **front side, the near field**, where the signal is less than the unit; the outward side is the
@@ -174,7 +192,7 @@ to the most basic thing we take for granted." A first map; each row is a reading
 |---|---|
 | h, the unit held | 1 |
 | the reading, s = v/h | a number, read in units of 1 |
-| the corner | 1: the signal equals the unit |
+| the corner | none on the line itself; 1 is where a reader holding the line's unit has its corner (§1) |
 | home | 0, approached from the near side |
 | the horizon | ∞, approached from the far side |
 | front side, near field | (0, 1): proper fractions |
