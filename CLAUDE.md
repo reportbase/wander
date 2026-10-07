@@ -69,7 +69,8 @@ Google Fonts load from outside:
   parallel is just our perspective"), on a synthetic binary. The reading depends only on size/grain (by
   construction); serial gives way to parallel near s ≈ 0.7; the knee at the corner was killed twice (runs 1, 2),
   a reader given the shape reading below its grain. Run 3, the pixel the reader's and no model: "two" is certain
-  exactly from s = 1, and below it has probability s (not killed).
+  exactly from s = 1, and below it has probability s (not killed). Run 4: below the corner 1/s looks, past it s
+  pixels a look; a reader sliding its h by halvings needs about log₂(1/s) looks (not killed).
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far

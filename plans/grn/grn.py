@@ -136,3 +136,43 @@ def run3(seed=31, trials=4000, flux=100.0, noise=1.0, thresh=10.0):
         se = math.sqrt(max(exp * (1 - exp), 1e-12) / trials)
         out.append((s, p, exp, (p - exp) / se if exp < 1 else (0.0 if p == 1 else float('inf'))))
     return sorted(out)
+
+
+def look(s, rng, h=1.0):
+    """One look by the model-free reader: two point stars s apart, a pixel grid of width h at a random offset.
+    Returns how many pixels are lit (noise far below the threshold, as in run 3)."""
+    off = rng.uniform(0, h)
+    return len(set(np.floor((np.array([0.0, s]) + off) / h).astype(int)))
+
+
+def span_pixels(s, rng, h=1.0):
+    """Pixels lit by a continuous span of length s (for P2: the mean is 1 + s)."""
+    off = rng.uniform(0, h)
+    return int(math.floor((s + off) / h)) + 1
+
+
+def run4(seed=41, trials=20000):
+    rng = np.random.default_rng(seed)
+    below, past, slider = [], [], []
+    for s in [0.05, 0.1, 0.2, 0.3, 0.5, 0.7, 0.9]:
+        n = []
+        for _ in range(trials):
+            k = 1
+            while look(s, rng) < 2:
+                k += 1
+            n.append(k)
+        n = np.array(n, float)
+        below.append((s, n.mean(), 1 / s, (n.mean() - 1 / s) / (n.std(ddof=1) / math.sqrt(trials))))
+        m, stop = [], []
+        for _ in range(trials):
+            h, k = 1.0, 1
+            while look(s, rng, h) < 2:
+                h, k = h / 2, k + 1
+            m.append(k)
+            stop.append(s / h)
+        slider.append((s, float(np.mean(m)), math.log2(1 / s) + 2, float(np.min(stop)), float(np.max(stop))))
+    for s in [1.0, 1.5, 2.0, 3.3, 5.0, 8.0]:
+        px = np.array([span_pixels(s, rng) for _ in range(trials)], float)
+        two = np.mean([look(s, rng) >= 2 for _ in range(trials)])
+        past.append((s, px.mean(), 1 + s, (px.mean() - 1 - s) / max(px.std(ddof=1) / math.sqrt(trials), 1e-12), two))
+    return below, past, slider

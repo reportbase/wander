@@ -229,6 +229,23 @@ situated perspective."
 | a bounded line, 0 to N given | the whole held | the endpoints and the midpoint |
 | far past the window | 4 again, by levels | orders of magnitude |
 
+**Serial becomes parallel at the reader's grain, and the reader can move it** (Tom, 7 October: "a serial signal becomes
+a parallel signal … the pixel is ours, not theirs"; "the geometry should tell us what to expect from signals"; "could
+the reader move his h unit like a slider to get a better read on the situation"). Measured on synthetic readers in
+`plans/grn-plan.md`. Let h be the reader's grain and s the system's size against it:
+
+- **Below the corner (s < 1)** structure comes as a chance per look, with probability s, and costs about 1/s looks:
+  serial (runs 3 and 4).
+- **At the corner** "two" becomes certain: the smallest size that cannot fit in one of the reader's grains (run 3).
+- **Past it** structure comes in every look, about s grains at once: parallel (run 4). The average grows smoothly
+  through the corner; what changes there is certainty.
+- **The cost below and the yield past are each other's flip:** looks 1/s, grains s.
+- **A reader that can slide its h** reaches its corner in about one look per doubling, about log₂(1/s) looks instead of
+  1/s (run 4). On the number line that is the window moved by levels, the last row of the table above: the logarithm is
+  the cost of moving the corner.
+- **A reader given the shape** can read below its grain (runs 1 and 2). That knowledge is situation 2's, borrowed, and it
+  blurs the corner rather than moving it.
+
 ## 6. What would test it
 
 The table predicts a split. **Open-ended estimates** (no upper bound given: "how far is 1000 from 0, if this is 10?")

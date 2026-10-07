@@ -183,3 +183,35 @@ wide, the grid's offset random on every look, and the reader counting lit pixels
 - **What it would mean.** Below its corner a reader buys structure with time, at 1/s looks. Past it, structure comes
   in each look, s pixels at once. A reader that can move its h trades that reciprocal cost for a logarithmic one, by
   sliding its corner to the system, one doubling at a time.
+
+### Run 4 (7 October, `grn.run4()`, seed 41, 20,000 trials at each s): not killed
+
+| s | 0.05 | 0.1 | 0.2 | 0.3 | 0.5 | 0.7 | 0.9 |
+|---|---|---|---|---|---|---|---|
+| fixed grain: mean looks to "two" | 20.2 | 10.1 | 4.96 | 3.29 | 2.02 | 1.42 | 1.11 |
+| predicted, 1/s | 20 | 10 | 5 | 3.33 | 2 | 1.43 | 1.11 |
+| slider: mean looks | 3.97 | 3.14 | 2.37 | 1.98 | 1.50 | 1.31 | 1.10 |
+| bound, log₂(1/s) + 2 | 6.32 | 5.32 | 4.32 | 3.74 | 3 | 2.51 | 2.15 |
+
+| s | 1 | 1.5 | 2 | 3.3 | 5 | 8 |
+|---|---|---|---|---|---|---|
+| mean lit pixels | 2.000 | 2.494 | 3.000 | 4.299 | 6.000 | 9.000 |
+| predicted, 1 + s | 2 | 2.5 | 3 | 4.3 | 6 | 9 |
+| P(two), two points | 1 | 1 | 1 | 1 | 1 | 1 |
+
+- **P1 not killed.** The mean looks follow 1/s at every s; the largest departure is 2.4 standard errors (s = 0.3).
+- **P2 not killed.** The mean lit pixels follow 1 + s (largest departure 1.8 standard errors), and two points are seen
+  as two in every look from s = 1 on.
+- **P3 (check) holds.** The slider needs about one more look per halving of s, about 4 looks at s = 0.05 against 20.
+- **Reported, and not as written.** The slider was predicted to stop between s = 1 and 2. It never stops past 2 (the
+  largest is 1.8), but it often stops *before* its corner, as low as s itself. On any look below the corner it sees
+  "two" by chance, with probability s, and then has no need to zoom further. So the slider stops at its corner or
+  sooner, never later.
+
+**What run 4 says.** For a model-free reader, the geometry alone sets what a signal will give:
+- **Below the corner,** structure arrives as a chance per look (probability s), and costs about 1/s looks: serial.
+- **Past the corner,** it arrives with certainty, about s pixels in each look: parallel.
+- **The two are each other's flip:** looks needed below, 1/s, and pixels given past, s. The average grows smoothly
+  through the corner; what changes there is certainty.
+- **A reader that can move its h** trades the reciprocal cost for a logarithmic one, about one look per doubling, by
+  sliding its corner toward the system. Here the logarithm is the cost of moving the corner, not an assumption.
