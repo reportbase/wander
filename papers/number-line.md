@@ -35,6 +35,7 @@ ruled.*
   information … needed to allow the number line paper to be read alone").
 - 7 October, fourteenth: §5, why the levels might be doublings (`plans/why2-plan.md`, runs 1 and 2).
 - 7 October, fifteenth: §7, the open questions brought up to date.
+- 7 October, sixteenth: §4, laid out in space; logarithms removed as a distortion, kept as a count (Tom).
 
 ## Background from SPN
 
@@ -322,6 +323,34 @@ by side, with no ruling on the word:
   system can change kind") would start to hold depth. When, and how much?
 - **The walls between levels.** Read exactly at a doubling, the draw files miss by 1.9% of the departure, against a few
   millionths just off it (`draw/papers/tvf.md`, still open there).
+
+### Laid out in space
+
+Tom, 7 October: "a number line has to be represented spatially. representing numbers across wide ranges, say over
+millions, is complicated because those numbers in between need to be represented. in a recursive number line, only the
+numbers needed for each recursive branch are needed." And: "maybe recursive number lines remove the need for
+logarithms."
+
+- **The ordinary line spends space on everything in between.** Laying out 0 to 1,000,000 to the nearest whole number
+  takes a million positions, used or not. Showing 12 and 873,401 on one ruler means laying out every number between
+  them. That is why wide-range number lines are drawn compressed, logarithmically: the linear layout does not fit.
+- **A recursive line spends space only along branches that hold something.** Each number is a path: which level, then
+  which half, then which half again. Only the branches leading to numbers in use are laid out. Ten numbers scattered
+  between 1 and a million, each to the nearest whole number, need about 10 × 20 = 200 branch points (20 halvings reach a
+  million), against a million positions. Web maps work the same way: tiles only where someone looks, at the zoom where
+  there is detail.
+- **What it gives up: the ruler.** On the ordinary line equal distances mean equal differences everywhere, so a
+  difference can be read off the page. Between branches of a recursive line, space no longer measures difference.
+- **What it keeps:** order, nesting, and proportion within each branch. Each branch is a small proportional line, the
+  front side laid in plain proportion to its corner, with the next level past it. A recursive line laid out in space is
+  SPN's layout: proportional within a level, levels past the corner, branches only where needed.
+- **Logarithms: removed as a distortion, kept as a count.** A log scale squeezes a wide range onto one ruler, at the
+  price of uneven spacing. A recursive line needs no squeeze, since it never lays out the empty stretches, and inside
+  each branch spacing stays plain. The logarithm does not vanish, though. Reaching a number takes as many levels as
+  there are doublings from the grain to the number, about log₂(range/grain). It becomes the path length, a whole
+  number of branch points (as a float's exponent is), not a stretching of the page. That is where the synthetic runs
+  found it too: as the cost of sliding the dial (GRN run 4) and as the depth a priced reader chooses (CAL), both counts
+  of levels. So recursive lines remove the need to *draw* logarithmically; they turn the logarithm into counting.
 
 ### Arithmetic on a line that recurses as needed
 
