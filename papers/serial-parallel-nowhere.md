@@ -121,6 +121,29 @@ the levels drawn: one continuous sweep; wrapped, a logarithmic spiral
 open: what fixes the ratio between rungs (the 2), which is the spiral's pitch
 ```
 
+**Observation, decomposed: one operation, three conditions** (Tom, 7 October: "observation is not one thing but it
+simplifies nicely into principled categories"; he agreed to this form of it). Every reader does the same thing. What
+differs between readers is three conditions, and the rest follows from those:
+
+| | what | values |
+|---|---|---|
+| **the operation**, the same for every reader | hold h, divide v by it, lay the relation on the unit sweep, and point to a magnitude ("What situated observation consists of", §1) | — |
+| **condition 1: what is known** | is v known; if so, are v and h equal | 0 (nothing); 1 (equal); 2 (unequal); or situated, 3 or 4 |
+| **condition 2: access in time** | static or dynamic, measured against the reader's look ("Static and dynamic", §2.1) | parallel, 3 (outside); serial, 4 (inside) |
+| **condition 3: signs carried** | independent signs per datum ("How a reader tells 1, 2, 4 and 8 facings apart", §2.1) | 1, 2, 4 or 8 facings |
+| **results**, derived | the horizon; the corner found or computed; recursion forced (3, 4), following the shape (2) or absent (1); depth (2 only) | follow from conditions 1–3 |
+| **limits** | parallel access confirms at most a hemisphere's 4 facings; 1 and 2 hold every sign at once | — |
+
+Two things this form avoids:
+
+- **Counting a cause and its effect as two axes.** Static or dynamic is why a reader is parallel or serial, so the two
+  are one condition, not two.
+- **Calling the conditions independent.** They interact, and the limits row lists how. Whether three conditions are
+  enough is open.
+
+So "observation" is not one primitive, and not many kinds of observer: it is one fixed operation, three conditions, and
+what follows from them.
+
 **The standing of each part.**
 
 | level | what | standing |
