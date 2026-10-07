@@ -52,3 +52,39 @@ That would make the 2 a choice of guarantee over gamble, not a fact of geometry.
 open question, under one cost model, stated as such.
 
 ## Runs
+
+### Run 1 (7 October, `python3 plans/why2/why2.py`, seed 101): P1 and P2 killed
+
+| ρ | 1.25 | 1.5 | 1.75 | 2 | 2.5 | 3 | 4 | 6 | 8 |
+|---|---|---|---|---|---|---|---|---|---|
+| mean cost ratio | **1.000** | 1.004 | 1.018 | 1.036 | 1.091 | 1.155 | 1.290 | 1.568 | 1.835 |
+| worst cost ratio | 1.061 | **1.043** | 1.067 | 1.083 | 1.187 | 1.285 | 1.503 | 1.968 | 2.470 |
+
+The simulation matches the exact expectation to within its sampling (e.g. mean at ρ = 2: 1.036 simulated, 1.036 exact).
+
+- **P1 killed.** The worst case is cheapest at ρ = 1.5, not in 1.75 to 2.5.
+- **P2 killed.** The average is cheapest at ρ = 1.25, the smallest step tested, not near e.
+
+**Why, read after the run (the kills stand).** The reasoning assumed that a look below the corner gives nothing, as in
+the classic doubling search. But a model-free reader's look below the corner shows "two" by chance, with probability
+s₀ρⁱ. A reader creeping in small steps takes many cheap looks, each with a growing chance, and tends to stop by luck
+about when its looks have cost about 1/s₀ in all, near the ideal, whatever the step. So in this model the cheapest dial
+has no preferred step, and finer is better: a continuous zoom.
+
+That stop is the lucky "two" run 6 warned of, though: it is not a sure reading. So the run measured the cost of a
+first, possibly lucky, sighting, not of a sure one. A fix is a new run with its own prediction, below.
+
+### Run 2: the cost of a sure reading (prediction written before run 2)
+
+Everything is as in run 1, except that the reader must confirm. After a look shows "two", it looks twice more at the same
+grain, each look again costing ρⁱ. It stops only if all three show "two"; otherwise it steps finer and goes on. A lucky
+"two" below the corner now survives the confirmation with probability (s₀ρⁱ)² only.
+
+**Informed by run 1, and said so.** A reader that confirms pays for its steps below the corner, as the classic search
+assumes, but still gets some luck. So the reasoning of the first prediction should now nearly hold.
+
+- **P1″ (the kill): against the worst case, the best step is near 2.** The ρ minimizing the worst mean cost ratio lies
+  between 1.5 and 2.5.
+- **P2″ (reported, not a kill):** the ρ minimizing the average cost ratio, against e.
+- **Also reported:** the same reader with no luck at all, stopping only once the system is past its corner (it could
+  not know this; a check on the classic case): worst-case best at 2, average best at e, by construction.
