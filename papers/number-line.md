@@ -34,6 +34,7 @@ ruled.*
 - 7 October, thirteenth: a background section, so the paper can be read without SPN (Tom: "add any background
   information … needed to allow the number line paper to be read alone").
 - 7 October, fourteenth: §5, why the levels might be doublings (`plans/why2-plan.md`, runs 1 and 2).
+- 7 October, fifteenth: §7, the open questions brought up to date.
 
 ## Background from SPN
 
@@ -525,6 +526,17 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   for children (Siegler and others, 2011). Is the inward side read as a second window, with its own unit (½, a tenth)?
 - **Zero and the negatives.** Is 0 home, approached, or a point people hold exactly? Are the negatives the turned-away
   facing, met only by turning (serial), as §5 suggests?
+- **Is the 2 robust?** WHY2 found doubling cheapest for a reader that needs a sure reading, under one cost model and one
+  confirmation rule (three looks), with a broad valley from 1.75 to 2.5. Does the best step stay near 2 with two or
+  four confirming looks, or with other prices? (§5)
+- **Pricing slow-fading detail.** A reader pricing each level from its own noisy looks stops early where detail fades
+  slowly (CAL runs 1 and 2, killed at r = 0.7). What estimate, if any, prices it well? (§4)
+- **Equality and the corner.** Is "equality of numbers that never conclude cannot be decided" the same fact as "a
+  situated reader approaches its corner and never locates it"? A correspondence, not shown. (§4)
+- **The two senses of depth.** The number line's inward levels, uniform, and a held thing's remainder, entered where
+  found: one idea or two? Laid side by side, not ruled. (§4)
+- **People, not synthetic readers.** The switch between a held whole and a unit (§6) is ready to test on real
+  number-line data, open-ended against bounded. It waits on a dataset.
 
 ## Sources
 
