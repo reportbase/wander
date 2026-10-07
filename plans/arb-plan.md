@@ -54,3 +54,34 @@ The recursing line wins where depth is uneven, and where float hides what it has
 more. It is not a better line everywhere. It is the line whose answers say how much they know.
 
 ## Runs
+
+### Run 1 (7 October, `python3 plans/arb/arb.py`, seeds 81 and 82): nothing killed
+
+| task | float | fixed (depth everywhere) | recursing (depth where needed) |
+|---|---|---|---|
+| 1, mixed-depth column: truth inside the answer | n/a; error beyond its implied half-unit in **200 of 200** | claims 6 decimals; actual error a median **1.06 million** times that | interval holds the truth in **200 of 200** |
+| 1, storage, against fixed | (16 digits a number) | 1 | **0.50** |
+| 2, (10¹⁶ + 1) − 10¹⁶ | **0** | 1 | 1 |
+| 3, control, storage against fixed | (16 digits a number) | 1 | **1.25** (holds the truth) |
+| 4a, 0.1 + 0.2 = 0.3? | **false** | true | true |
+| 4b, √2 · √2 = 2? | **false** (2.0000000000000004) | depends on its depth | **undecided at every depth 1 to 50** |
+
+- **P1 not killed.** The recursing interval holds the truth in all 200 columns. Float's error exceeds its implied
+  uncertainty in all 200.
+- **P2 not killed.** Storage is 0.50 of fixed on the mixed column, and 1.25 on the control, where the depth tags cost
+  without any saving.
+- **P3 and P4 not killed.** Every answer is as predicted.
+
+**What holds by construction, and what is measured.**
+- *By construction:* that the recursing interval holds the truth (each measurement is rounded to nearest, so every cell
+  holds its true value), and the float behaviour in tasks 2 and 4, which is well known.
+- *Measured:*
+  - the storage ratios, half on uneven depth and a quarter more on the control;
+  - how far the ordinary line overclaims on the mixed column, writing 6 decimals for numbers known to 1 or 2.
+    Its sum is then off by about a million times what those 6 decimals claim.
+
+**What ARB says.** The line that recurses as needed is not better everywhere. Where depth is uneven it stores half as
+much, and its answers say how much they know. Where depth is even it costs a quarter more, for tags that tell nothing
+new. The ordinary line's real fault is not its cost. It is that it writes the same depth for every number and so claims
+knowledge it does not have, by six orders of magnitude in task 1. And √2 · √2 = 2 stays undecided at every depth: the
+recursing line cannot finish it, and says so. That is the correspondence with the corner, shown, not proved.

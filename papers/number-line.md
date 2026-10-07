@@ -14,6 +14,7 @@ ruled.*
   all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
   plain explanation of the corner (below; the corner itself is SPN's), named the two sides front and back, near and far, in place of "breadth" and
   "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
+- 7 October, ninth: §4, ARB run, the arithmetic baseline (`plans/arb-plan.md`).
 - 7 October, eighth: §4, arithmetic on a line that recurses as needed, and a planned baseline (Tom: "how would we do
   basic math…"; "how would we create a baseline to compare these two").
 - 7 October, seventh: §4, a number line that recurses as needed, against the ordinary line (`plans/anl-plan.md`, runs 1 and 2).
@@ -276,6 +277,18 @@ where it cannot finish.
   answer say how much it knows).
 - **The prediction to fix before running:** the recursing line wins only where depth is uneven or where floating point
   hides a loss, and ties or loses a little on the control.
+
+**Run (ARB, `plans/arb-plan.md`; predictions first, nothing killed).**
+- **A column of 1,000 measurements at mixed depths:** the recursing line stored half as much (0.50) and its interval
+  held the truth in 200 of 200 columns. Floating point's error exceeded what its digits imply in 200 of 200. The fixed
+  line wrote 6 decimals for numbers known to 1 or 2, and its sum was off by about a million times what those decimals
+  claim.
+- **The control, all at one depth:** the recursing line cost a quarter more (1.25), for tags that told nothing new.
+- **Cancellation, (10¹⁶ + 1) − 10¹⁶:** floating point gave 0; the other two gave 1.
+- **Equality:** 0.1 + 0.2 = 0.3 is false in floating point and true exactly. √2 · √2 = 2 is false in floating point
+  (2.0000000000000004) and undecided on the recursing line at every depth from 1 to 50.
+- **So:** the recursing line is not better everywhere; it is the line whose answers say how much they know. The
+  ordinary line's fault is less its cost than its claim.
 
 ## 5. People meet the number line as situation 3, within a window
 

@@ -82,6 +82,9 @@ Google Fonts load from outside:
   `anl-plan.md` (+ `anl/anl.py`, 7 Oct): a number line that recurses as needed against the ordinary line's
   depth everywhere. One close pair anywhere sets every number's depth on the ordinary line; with 5 twins the
   recursing line costs 0.375 of it, rising to 1 as detail spreads. Run 1's clustered prediction killed.
+  `arb-plan.md` (+ `arb/arb.py`, 7 Oct): arithmetic baseline, an exact referee against float, fixed depth and
+  a recursing line of cells: half the storage on mixed depths, 1.25 on the control; the fixed line overclaims
+  by ~10⁶; √2·√2 = 2 undecided at every depth (nothing killed).
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far
