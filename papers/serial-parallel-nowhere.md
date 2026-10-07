@@ -943,8 +943,8 @@ with 1 facing, 2 facings, 4 facings or 8 facings."). The table above, read from 
 Every facing is the same unit sweep, and the signs only say which copy a reading falls in. So the reader asks of its
 signal how many of its parts ever change sign independently. Each such part doubles the facings. For a situated
 reader a sign is which way a signal comes from (ahead or behind, left or right, above or below), and the magnitude is
-its relation (R37, R173). A continuous signal with no radial expression has no signs, so it lies on one sweep. That is
-the line, and the unit sweep is the unit line ("The unit line is the sweep itself"), so Tom's line and the one-facing case are one thing.
+its relation (R37, R173). A continuous signal with no radial expression *carries* no signs, so it lies on one sweep;
+a reader that has *seen* none cannot yet tell it from one whose other side has not arrived (below). That is the line, and the unit sweep is the unit line ("The unit line is the sweep itself"), so Tom's line and the one-facing case are one thing.
 
 - **Counting returns does not tell the circle from the sphere.** One might count the quarter sweeps before the signal
   comes back to where it started: four for the circle. But four quarter turns about one axis also come back on the
@@ -956,6 +956,18 @@ the line, and the unit sweep is the unit line ("The unit line is the sweep itsel
   rise when a new sign appears, and the reader adapts as it does when its system changes kind ("A system can change
   kind"). Reading more signs than the signal carries invents a relation; reading fewer loses one. That is "the data
   picks the whole", from the reader's side.
+- **Access limits the facings a reader can confirm** (a review Tom passed on, 7 October, put access and facings as two
+  axes; they are two questions, but not independent). How the signal arrives (static or dynamic, "Static and dynamic")
+  and how many signs it carries are different questions. But a parallel reader outside a sphere faces one hemisphere,
+  four octants ("On the sphere each copy is still π/2"), and the other four are turned away. So a static sphere seen from
+  outside shows at most 4 of its 8 facings in one look. The third sign, front or back, shows only if the reader moves or
+  the system turns, and that is reading over time: serial. A serial reader inside, with signals arriving from every
+  side, can in time confirm all 8. Situations 1 and 2 hold all of them at once, since there the whole is held, signed v
+  and h included (R37, R173). So not every pairing of access and facings is open: parallel access caps the confirmed
+  facings at the hemisphere's four.
+
+In short (the review's line): **the signal determines the possible geometry; observation discovers how much of it is
+present.**
 
 **The first level is half the distance** (Tom, 6 October: "first octive is 1/2 the distance, which is the same as
 saying v/h=1"; and "octives and logrithmic spirals are the same thing"). Read the sweep from A to B as distance: a point
