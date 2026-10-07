@@ -62,6 +62,9 @@ Google Fonts load from outside:
   runs, stopped) and `nle-plan.md` (number lines in people: run 1 on
   Chan and Mazzocco's kindergartners killed the corner's prediction) follow the lab rules: prediction first, runs recorded as they
   came out, nothing above a plan's "Runs" line edited afterwards.
+  `nls-plan.md` (+ `nle/nls.py`, 7 Oct): the number-line split on synthetic readers (Tom: synthetic
+  tests are fine for persuading each other); the switch is detectable at noise sd 8, the corner against a
+  plain log is the fragile part.
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far

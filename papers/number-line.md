@@ -237,6 +237,11 @@ centre on the midpoint, proportion judgment's shape. The same people should show
 this would be a new run with its own prediction and kill condition, written before any data is seen; run 1's kill
 stays on the record. Not planned yet.
 
+*On synthetic readers (7 October, `plans/nls-plan.md`).* Three kinds built to differ (situated throughout, whole where
+given, switching) are told apart by NLE's instrument at noise sd 8 (58%, 82% and 64% of each kind; nothing killed). The
+switch, whole on the bounded line and compressed on the open one, is the robust signal; telling the corner from a
+plain logarithm is the fragile one and is lost at sd 12. So a real-data run should test the switch first.
+
 ## 7. Open
 
 - **The window's size.** Is it fixed (a span of levels, set by resolution) or does it grow with familiarity, as the

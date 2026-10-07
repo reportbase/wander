@@ -51,3 +51,25 @@ LIN, LOG, PWR1 and CNR on the bounded line; LIN, LOG and CNR on the open line (P
 The same at noise sd 4 and 12, to show how the recovery depends on noise.
 
 ## Runs
+
+### Run 1 (7 October, `python3 plans/nle/nls.py`, seed 11, 200 readers a kind)
+
+| noise sd | S: CNR/CNR | W: PWR1/LIN | C: PWR1/CNR | open h within ×2 (S, C) |
+|---|---|---|---|---|
+| **8 (the run)** | **116 (58%)** | **164 (82%)** | **127 (64%)** | 176, 179 of 200 |
+| 4 | 184 (92%) | 182 (91%) | 183 (92%) | 197, 195 |
+| 12 | 53 (26%) | 163 (82%) | 74 (37%) | 149, 153 |
+
+- **P1 not killed:** C's split is recovered for 127 of 200 (64%).
+- **P2 not killed** for any kind: S 58%, W 82%, C 64%. S is the weakest, as expected.
+- **P3:** the open line's h is within a factor 2 of the true h for 176 (S) and 179 (C) of 200.
+- **Where the losses go.** Almost all of them are the corner read as a plain logarithm. At sd 8: S gives CNR/LOG 32,
+  LOG/CNR 29, LOG/LOG 20; C gives PWR1/LOG 44. The *switch* itself, from the whole on the bounded line to a compressed
+  reading on the open line, is kept far better than the corner is: C reads as PWR1 then CNR or LOG for 171 of 200 at
+  sd 8, and 164 of 200 even at sd 12.
+- **At sd 12 the corner is lost** (S 26%, C 37%), mostly to LOG; W, which has no corner, holds at 82%.
+
+**What it says.** Built to differ, the three kinds can be told apart by this instrument at noise sd 8 or less. The task
+split (whole when given, compressed when not) is the robust signal. Telling a corner from a plain logarithm is the
+fragile one, and needs low noise or more trials per person. So a real-data run 2 should test the switch first and the
+corner second, and report how noisy its people are before reading anything into CNR against LOG.
