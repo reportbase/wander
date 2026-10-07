@@ -722,13 +722,20 @@ width, and the vertical equally, to keep shapes; summed from the equator, the he
   dyadic.
 - **The pole is the horizon**: h → 0, v/h → ∞, and the map runs on without end, which is why a Mercator map is cut off
   short of the poles.
-- **The globe and the map are the two normalizations** ("Two normalizations, the two layings", above): the globe divided
-  by the whole, latitude bounded at 90°; the map divided by h, unbounded. The Gudermannian of "The relation forces the
-  logarithm" turns one into the other, latitude = gd(y). What was offered there as an analogy for the fisheye is here
-  the same construction.
+- **Three maps of one relation.** The globe holds latitude bounded, the whole held. The central cylindrical projection,
+  which projects each point from the globe's centre onto a cylinder, has height exactly y = v/h (tan φ): that is the
+  division by h itself, the number line, unbounded, proportional throughout. Mercator's map keeps the division's local
+  scale, 1/h at each latitude, but accumulates it, so its height is y = asinh(v/h): the same relation, laid
+  proportionally before the corner and logarithmically past it. (At 30°, 60° and 80°: v/h is 0.577, 1.732, 5.671;
+  Mercator's y is 0.549, 1.317, 2.436.) The Gudermannian of "The relation forces the logarithm" turns latitude into
+  Mercator's height and back, latitude = gd(y). What was offered there as an analogy for the fisheye is here the same
+  construction.
 
-So Mercator's map is the globe divided by h: proportional up to 45°, logarithmic past it, the pole a horizon it never
-reaches. It is the oldest instance found of the situated reading (Mercator, 1569; `plans/neighbours.md`).
+So Mercator's map is not simply the globe divided by h (that is the central cylindrical projection): it is the
+globe's relation v/h, scaled locally by 1/h and accumulated, giving asinh(v/h): proportional up to 45°, logarithmic
+past it, the pole a horizon it never reaches. *Corrected, 7 October,* after a review: an earlier wording here said
+"the globe divided by h". It is the oldest instance found of the situated reading laid out (Mercator, 1569;
+`plans/neighbours.md`).
 
 **Depth, read against the sweep** (Tom, 6 October: "when we normalize depth is the difference between g=0 and g=1";
 "isn't depth just calculus, the total area between the unit line of g=0 and the fully expressed line of g=1"; "The unit
