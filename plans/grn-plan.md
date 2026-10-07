@@ -281,3 +281,34 @@ It is never told s or v.
 **What it would mean.** The reader cannot locate its corner, but its own pixels tell it which way to turn. From any
 start it brackets the corner, within a doubling or so, at a cost growing with the logarithm of how far off it began.
 Confirmation (k) buys protection against luck, with looks.
+
+### Run 6 (7 October, `grn.run6()`, seed 61, 20,000 trials at each start): P1 not killed, P2 killed
+
+| start s₀ | 0.01 | 0.03 | 0.1 | 0.3 | 1 | 3 | 10 | 30 | 100 |
+|---|---|---|---|---|---|---|---|---|---|
+| k = 3: mean looks | 10.9 | 9.0 | 7.5 | 5.6 | 3.0 | 4.0 | 6.4 | 7.0 | 9.0 |
+| bound, \|log₂ s₀\| + 5 | 11.6 | 10.1 | 8.3 | 6.7 | 5.0 | 6.6 | 8.3 | 9.9 | 11.6 |
+| k = 3: final s in [0.5, 3] | 96.1% | **87.3%** | 92.8% | 97.3% | 100% | 100% | 100% | 100% | 100% |
+| k = 1: stopped below 0.5 by luck | 51% | 69% | 57% | 30% | 0 | 0 | 0 | 0 | 0 |
+| k = 3: pixels read | 15.7 | 13.4 | 12.5 | 9.9 | 6.0 | 11.5 | 29.0 | 68.9 | 211 |
+| a fixed h at s₀: one sure "two" | 101 | 34.3 | 11.0 | 4.3 | 2.0 | 4.0 | 11.0 | 31.0 | 101 |
+
+- **P1 not killed.** From every start the mean looks stay under |log₂ s₀| + 5: about one look per doubling it starts
+  away, plus the k confirmations.
+- **P2 killed.** From s₀ = 0.03 only 87.3% of stops fall in [0.5, 3], under the 90% required. Its doublings run 0.03,
+  0.06, 0.12, 0.24, 0.48, and at 0.48, just under the corner, three lucky "two"s in a row come with chance 0.48³ = 11%.
+  The kill stands. What it shows is real: k = 3 still leaves about s³ of luck at the last level below the corner.
+- **P3, luck against confirmation.** With k = 1, between 30% and 69% of starts below the corner stop early by luck;
+  with k = 3, 3% to 13%. Confirmation buys protection against luck, with looks.
+- **P4, against an arbitrary fixed h: one-sided.**
+  - *From below the corner*, steering is far cheaper than staying put: about 16 pixels against 101 from s₀ = 0.01.
+  - *From above*, it costs more: 211 against 101 from s₀ = 100. Far past the corner, the first look already gives a
+    sure "two"; coarsening down to the corner reads many pixels on the way.
+  - So steering pays on the serial side. On the parallel side it pays only for a reader that will keep looking, where
+    each later look at the corner costs about 2 pixels instead of 1 + s₀.
+
+**What run 6 says.** A reader cannot locate its corner, but its own pixel count tells it which way to turn. From any
+start it gets within a doubling or so of the corner in about one look per doubling. Two things it cannot escape:
+- some luck, which only more looks reduce;
+- a cost that runs one way. Steering rescues a reader that is below its corner, and is wasted on one already past it
+  that needs only one answer.

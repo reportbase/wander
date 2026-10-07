@@ -195,3 +195,35 @@ def run5(seed=53, trials=20000):
         pred = (1 + s) * max(1.0, 1 / s)
         out.append((s, costs.mean(), pred, (costs.mean() - pred) / (costs.std(ddof=1) / math.sqrt(trials))))
     return out
+
+
+def steer(s0, rng, k=3, cap=10000):
+    """Run 6: start at s0, turn h by the lit-pixel count of a unit span; return (looks, pixels read, final s)."""
+    s, ok, looks, px = s0, 0, 0, 0
+    while looks < cap:
+        n = span_pixels(s, rng)
+        looks += 1
+        px += n
+        if n == 1:
+            s, ok = s * 2, 0
+        elif n >= 4:
+            s, ok = s / 2, 0
+        else:
+            ok += 1
+            if ok == k:
+                return looks, px, s
+    return looks, px, s
+
+
+def run6(seed=61, trials=20000):
+    rng = np.random.default_rng(seed)
+    out = []
+    for s0 in [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30, 100]:
+        row = {'s0': s0, 'bound': abs(math.log2(s0)) + 5, 'fixed': (1 + s0) * max(1, 1 / s0)}
+        for k in (3, 1):
+            r = np.array([steer(s0, rng, k) for _ in range(trials)], float)
+            fs = r[:, 2]
+            row[k] = {'looks': r[:, 0].mean(), 'px': r[:, 1].mean(), 'in': np.mean((fs >= 0.5) & (fs <= 3)),
+                      'low': np.mean(fs < 0.5)}
+        out.append(row)
+    return out

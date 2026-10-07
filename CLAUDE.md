@@ -76,6 +76,9 @@ Google Fonts load from outside:
   exactly from s = 1, and below it has probability s (not killed). Run 4: below the corner 1/s looks, past it s
   pixels a look; a reader sliding its h by halvings needs about log₂(1/s) looks (not killed). Run 5, h as a
   dial: paying per grain read, a sure reading costs (1+s)·max(1,1/s), least at the corner, same at s and 1/s.
+  Run 6, steering by its own pixel count from any start (it cannot know its corner): about one look per
+  doubling (P1 not killed); within [0.5, 3] killed at one start (luck at the last level below the corner); the
+  gain is one-sided, large from below, none from above for a single answer.
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far
