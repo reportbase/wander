@@ -24,6 +24,11 @@ Google Fonts load from outside:
   hidden, the cards are built from it), and the script with THE LAB GUIDE and every
   lab's code. `?lab=all` / `?lab=CODE` run outright and show the full report (the
   smoke test reads it); `?run=…` does the same on the cards.
+- `sweep.html`: **the sweep device** (7 Oct 2026), a standalone page outside the world
+  and the labs: an array of pairs (v, h) divided by its own h, laid on the unit sweep
+  g = (2/π)·atan(v/h) and read by a cursor, serially (4) or all at once (3), with the
+  quarter circle (divided by the whole) beside it. `?ex=planets|shape|spread|line`,
+  `?mode=parallel`. Not linked from index.html yet.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
@@ -100,6 +105,7 @@ In short:
   2. **Labs:** runs `labs.html?lab=all` (a few minutes; TMP and TRK are the slow ones).
   3. **labs.html:** a card per lab, BAL run from its button, and `index.html?lab=`
      forwarding to `labs.html`.
+  4. **sweep.html:** every example lays on the sweep, and the cursor sweeps.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

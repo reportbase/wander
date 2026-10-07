@@ -105,6 +105,19 @@ try {
   await page.waitForURL(/labs\.html\?lab=bal/, { timeout: 15000 });
   await page.waitForFunction(() => /(KILLED|[Nn]ot killed)/.test(document.getElementById('labStatus').textContent), null, { timeout: 120000 });
   console.log(`${failures.length === before3 ? 'ok  ' : 'FAIL'} labs.html (${cards.length} cards; BAL ${v}; index.html?lab= forwards)`);
+
+  // ── 4. sweep.html: the sweep device loads, lays every example, and sweeps ──
+  current = 'sweep.html';
+  const before4 = failures.length;
+  const laid = [];
+  for (const ex of ['planets', 'shape', 'spread', 'line']){
+    await page.goto(new URL('sweep.html?ex=' + ex, base).href, { waitUntil: 'load' });
+    const n = await page.evaluate(() => window.sweepItems().filter(i => i.g >= 0 && i.g <= 1).length);
+    if (!n) failures.push(`[sweep.html] ${ex}: nothing laid on the sweep`);
+    laid.push(`${ex} ${n}`);
+  }
+  await page.click('#play'); await page.waitForTimeout(1500);
+  console.log(`${failures.length === before4 ? 'ok  ' : 'FAIL'} sweep.html (${laid.join(', ')})`);
 } catch (e){
   failures.push(`[${current}] ${e.message.split('\n')[0]}`);
 }
