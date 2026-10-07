@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Wander demos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    demos.html: every page of wander, with a line on what each shows (7 October 2026, at Tom's "can you create a html
+    page that has links to all the demos in wanderer and a description"). A plain list, no script. Add a card here
+    when a page is added.
+    -->
+    <style>
+    :root {
+        color-scheme: dark;
+        --ground: #0c0c11;
+        --panel: #14141b;
+        --line: rgba(255, 255, 255, 0.09);
+        --ink: #c8c8d0;
+        --dim: #8a8a96;
+        --bright: #e6e4ee;
+        --gold: #d4a052;
+        --teal: #8ce6cd;
+    }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.6 'DM Mono', ui-monospace, monospace }
+    main { max-width: 860px; margin: 0 auto; padding: 28px 16px 48px }
+    h1 { font: 400 34px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    h2 { font: 400 22px/1.2 'DM Serif Display', Georgia, serif; margin: 0 0 6px }
+    h2 a { color: var(--bright); text-decoration: none }
+    h2 a:hover { color: var(--gold) }
+    .lede { color: var(--dim); margin: 0 0 22px; max-width: 70ch }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin: 0 0 14px }
+    .card p { margin: 0 0 8px }
+    .tag { color: var(--gold); font-size: 12px; margin: 0 0 6px }
+    .try { color: var(--dim); font-size: 12.5px; margin: 0 }
+    .try a { color: var(--teal); margin-right: 10px; white-space: nowrap }
+    .open { display: inline-block; margin-top: 4px; color: var(--teal) }
+    footer { color: var(--dim); font-size: 12.5px; margin-top: 22px }
+    footer a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Wander demos</h1>
+    <p class="lede">Wander is a world of solids you fly through, and a lab that compares what a reader can recover from
+    arriving signals against known physics. These are its pages: the world, the lab, and three small demos of one idea
+    each.</p>
+
+    <section class="card" id="world">
+        <div class="tag">the world</div>
+        <h2><a href="index.html">Fly</a></h2>
+        <p>The world itself: suns, planets, moons and belts, drawn only from the signals that reach you, with a readout
+        of what can be recovered from them. Hold W to gather speed and let go to glide; tap beside a planet to go round
+        it, scroll to come in close. Far off a body is a plain ball; close up its craters and mountains show.</p>
+        <p class="try">Try: <a href="index.html">fly</a><a href="index.html?lab=0">without the lab button</a></p>
+    </section>
+
+    <section class="card" id="labs">
+        <div class="tag">the lab</div>
+        <h2><a href="labs.html">The lab</a></h2>
+        <p>Every experiment, one card each. Each lab writes down its prediction and what would kill it before it runs,
+        and keeps the result, killed or not. Run one from its card, or all of them at once and read the full report.</p>
+        <p class="try">Try: <a href="labs.html">the cards</a><a href="labs.html?lab=all">run every lab</a><a href="labs.html?lab=BAL">run BAL</a></p>
+    </section>
+
+    <section class="card" id="sweep">
+        <div class="tag">a demo: the sweep</div>
+        <h2><a href="sweep.html">The sweep device</a></h2>
+        <p>Pairs (v, h), each divided by its own h, laid on the unit sweep g = (2/π)·atan(v/h): from 0 at home through
+        ½ at the corner toward 1 at the horizon. A cursor reads them one at a time (serial) or all at once (parallel),
+        with the quarter circle, divided by the whole, beside it.</p>
+        <p class="try">Try: <a href="sweep.html?ex=planets">planets</a><a href="sweep.html?ex=shape">a shape</a><a href="sweep.html?ex=spread">a spread</a><a href="sweep.html?ex=line">the number line</a><a href="sweep.html?mode=parallel">parallel</a></p>
+    </section>
+
+    <section class="card" id="dial">
+        <div class="tag">a demo: the reader's grain</div>
+        <h2><a href="dial.html">The h dial</a></h2>
+        <p>A reader with no model, only its own pixels h wide, looks at two points one apart. Below its corner it sees
+        "two" only by chance; from the corner on, every time. Turn the dial, look, slide h, or approach from afar. The
+        cheapest sure reading is at the corner, and costs the same at s and 1/s.</p>
+        <p class="try">Try: <a href="dial.html?s=0.3">below the corner</a><a href="dial.html?s=1">at the corner</a><a href="dial.html?s=3">past it</a></p>
+    </section>
+
+    <section class="card" id="sphere">
+        <div class="tag">a demo: three breadths</div>
+        <h2><a href="sphere.html">The sphere</a></h2>
+        <p>Three breadths (v, h, f) and a scale. Divide out the scale and an address on the sphere's first octant is
+        left; the scale is lost for good. The octant splits into six chambers that meet at the corner v = h = f; a
+        reader holding h can be near in one direction and far in another. Beside it, a body whose relief (its depth)
+        shows only once it covers enough of the reader's pixels.</p>
+        <p class="try">Try: <a href="sphere.html?v=1&amp;h=1&amp;f=1&amp;map=chambers">the corner</a><a href="sphere.html?v=0.9&amp;h=0.25&amp;f=0.7&amp;map=reader">far in both</a><a href="sphere.html?map=whole">a held whole</a><a href="sphere.html?P=8">far off</a><a href="sphere.html?P=600">close up</a></p>
+    </section>
+
+    <footer>The papers behind these pages are in the
+    <a href="https://github.com/reportbase/wander">repository</a> (<code>papers/</code>), not on the site.</footer>
+</main>
+</body>
+</html>

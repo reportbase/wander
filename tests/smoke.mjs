@@ -217,6 +217,19 @@ try {
   if (sp.far.some(w => w > 0) || sp.near.some(w => w < 1)) failures.push(`[sphere.html] bands far ${sp.far}, near ${sp.near}`);
   await page.click('[data-m="chambers"]'); await page.click('[data-p="1,1,1"]'); await page.waitForTimeout(300);
   console.log(`${failures.length === before6 ? 'ok  ' : 'FAIL'} sphere.html (octant area ${sp.area.toFixed(4)}, scale lost, bands off far and on near)`);
+
+  // ── 7. demos.html: every page it links to is there ──
+  current = 'demos.html';
+  const before7 = failures.length;
+  await page.goto(new URL('demos.html', base).href, { waitUntil: 'load' });
+  const links = await page.evaluate(() => [...document.querySelectorAll('main a')].map(a => a.href).filter(h => h.startsWith(location.origin)));
+  const pages = [...new Set(links.map(h => new URL(h).pathname))];
+  for (const pth of pages) {
+    const r = await page.request.get(new URL(pth, base).href);
+    if (!r.ok()) failures.push(`[demos.html] ${pth} answers ${r.status()}`);
+  }
+  if (pages.length < 5) failures.push(`[demos.html] links to only ${pages.length} pages`);
+  console.log(`${failures.length === before7 ? 'ok  ' : 'FAIL'} demos.html (${pages.length} pages, ${links.length} links)`);
 } catch (e){
   failures.push(`[${current}] ${e.message.split('\n')[0]}`);
 }
