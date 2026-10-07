@@ -113,3 +113,26 @@ def run2(seed=23, trials=1000):
     slope = float(np.polyfit(ls, lq, 1)[0])
     cross = next((r[0] for r in rows if r[3] < r[2]), None)
     return rows, plateau, knee, slope, cross
+
+
+def run3(seed=31, trials=4000, flux=100.0, noise=1.0, thresh=10.0):
+    """Run 3 (plans/grn-plan.md): pixels one grain wide, random grid offset, no model; count the lit pixels."""
+    rng = np.random.default_rng(seed)
+    out = []
+    for s in list(S_GRID) + [0.25, 0.5, 0.75, 0.9, 1.0, 1.1]:
+        two = 0
+        for _ in range(trials):
+            off = rng.uniform(0, 1)
+            xs = np.array([-s / 2, s / 2]) + off
+            pix = np.floor(xs).astype(int)
+            lo = pix.min() - 1
+            img = np.zeros(pix.max() - lo + 2)
+            for p in pix:
+                img[p - lo] += flux
+            img += rng.normal(0, noise, img.size)
+            two += int((img > thresh).sum() >= 2)
+        p = two / trials
+        exp = min(s, 1.0)
+        se = math.sqrt(max(exp * (1 - exp), 1e-12) / trials)
+        out.append((s, p, exp, (p - exp) / se if exp < 1 else (0.0 if p == 1 else float('inf'))))
+    return sorted(out)

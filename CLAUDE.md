@@ -67,7 +67,9 @@ Google Fonts load from outside:
   plain log is the fragile part.
   `grn-plan.md` (+ `grn/grn.py`, 7 Oct): serial or parallel set by the reader's grain (Tom: "serial and
   parallel is just our perspective"), on a synthetic binary. The reading depends only on size/grain (by
-  construction); serial gives way to parallel near s ≈ 0.7; the knee at the corner was killed twice (runs 1, 2).
+  construction); serial gives way to parallel near s ≈ 0.7; the knee at the corner was killed twice (runs 1, 2),
+  a reader given the shape reading below its grain. Run 3, the pixel the reader's and no model: "two" is certain
+  exactly from s = 1, and below it has probability s (not killed).
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far

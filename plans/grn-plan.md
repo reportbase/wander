@@ -144,3 +144,20 @@ pixels. Below it, "two" is a matter of where the reader's grid happens to fall, 
 system's.
 
 **Kill.** P1 killed if P(two) differs from min(s, 1) by more than 3 standard errors at any tested s.
+
+### Run 3 (7 October, `grn.run3()`, seed 31, 4,000 trials at each s): not killed
+
+| s | 0.10 | 0.18 | 0.25 | 0.31 | 0.40 | 0.50 | 0.71 | 0.90 | 0.94 | 1.00 | 1.10 | 1.24 | 2.16 | 5.00 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| P(two), measured | 0.097 | 0.159 | 0.258 | 0.297 | 0.395 | 0.498 | 0.708 | 0.903 | 0.938 | 1 | 1 | 1 | 1 | 1 |
+| min(s, 1), predicted | 0.100 | 0.175 | 0.250 | 0.306 | 0.404 | 0.500 | 0.707 | 0.900 | 0.935 | 1 | 1 | 1 | 1 | 1 |
+
+- **P1 not killed.** P(two) follows min(s, 1) at all 21 values of s tested. The largest departure is 2.7 standard
+  errors (at s = 0.175), under the 3 allowed. From s = 1 on, two pixels are lit in every trial.
+- **P2 holds by construction.** The reader reports a count, never a sub-pixel separation.
+
+**What the three runs say together.** A reader that is given the system's shape (runs 1 and 2) can read below its
+grain. That borrowed knowledge is situation 2's, the held whole. A reader with only its own pixels (run 3) cannot. For
+that reader the corner is exact: s = 1 is the smallest size that cannot fit in one of its pixels, where "two" becomes
+certain. Below it, "two" depends only on where the reader's grid happens to fall, with probability s: the reader's
+accident, not the system's. In Tom's words, the pixel is ours, not theirs.
