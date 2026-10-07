@@ -53,3 +53,25 @@ the same error to within the sampling noise.
 - **P2 killed** if the serial reader's error varies by more than 10% across s. (It should not; that would be a bug.)
 
 ## Runs
+
+### Run 1 (7 October, `python3 plans/grn/grn.py`, seed 5, 300 trials at each s): P1 and P2 killed
+
+| s | 0.10 | 0.18 | 0.31 | 0.40 | 0.54 | 0.71 | 0.94 | 1.24 | 1.64 | 2.16 | 2.86 | 3.78 | 5.00 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| parallel, RMS relative error | 0.967 | 0.585 | 0.227 | 0.116 | 0.073 | 0.042 | 0.027 | 0.018 | 0.014 | 0.011 | 0.009 | 0.007 | 0.0054 |
+| serial | 0.049 | 0.049 | 0.050 | 0.051 | 0.051 | 0.051 | 0.047 | 0.050 | 0.053 | 0.050 | 0.048 | 0.051 | 0.053 |
+
+- **P1 killed.** The parallel reader's error reaches twice its s = 5 value at s = 2.28, outside 0.5 to 2.
+- **P2 killed.** The serial reader's error spans 0.0470 to 0.0534 across s, a spread of 13.6%, over the 10% allowed.
+- **Reported:** the parallel reader first beats the serial one between s = 0.54 and 0.71. Sanity check passed: at
+  s = 0.8, systems of size 0.1, 1 and 10 give 0.035, 0.035, 0.034.
+
+**Why, read after the run (not a rescue: both kills stand).**
+- *P1's measure could not see a knee.* Once the stars are resolved, the parallel reader's error in the separation is
+  a fixed angle, so its relative error falls as 1/s, halving with every doubling of s, all the way out. "Twice the value
+  at s = 5" therefore lands near s = 2.5 whatever the grain does. The measure tracked that tail, not the corner. The
+  fault was in the plan.
+- *P2's tolerance ignored sampling noise.* With 300 trials an RMS error is itself uncertain by about 4%, and the
+  largest and smallest of 15 such values can easily differ by 13%. The serial error shows no trend with s. The fault was
+  in the kill condition, not the reader.
+- A fix is a new run with its own prediction, below.
