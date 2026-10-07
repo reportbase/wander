@@ -699,7 +699,10 @@ x · x′ = f², so x′/f = f/x: the object's reading and the image's, in units
 x = x′ = f, object at 2f and image at 2f, magnification exactly 1, the one place the two sides are the same size. The
 horizon is the object at the focus, x = 0, whose image goes to infinity. The two sides of the lens read each other in
 reciprocal. This is standard optics, and here a correspondence, not a proof: a lens behaves as a reader whose h is its
-focal length. A lab could make it one.
+focal length. A lab could make it one. *Corrected, 7 October* ("Reaching the corner ends being situated", §3.1): a real
+object can sit exactly at 2f, so the lens reaches its corner, and its equation maps every object at once. So the lens
+corresponds to a whole, the circle's kind, with its corner contained, not to a situated reader. A situated reader would
+be something looking through the lens, approaching its 2f point.
 
 *Promoted to a structural correspondence, 7 October* (Tom: "that means the physics correspondance is promoted"; how
 far, as follows). The reciprocal above was already here. What is new is a symmetry the lens shares with the circle
@@ -1377,6 +1380,15 @@ is the swap's one fixed point, and s passes through 1. What a reader can do with
 breadths known (situations 1 and 2) the corner is calculated exactly. A situated reader (3 and 4) measures by turning,
 outside from above 1 and inside from below, and never reaches the line, so it approaches the true corner and never finds
 it: "found with h alone" holds as a limit, not exactly.
+
+**Reaching the corner ends being situated** (Tom, 7 October: "the situated reader never reaches the corner, he only
+approaches the corner. if he actually reached the corner than he is no longer a situated reader."). The paper's first
+cut, whether v is known, makes this exact. To be at the corner is to know v = h exactly. To know v = h exactly is to
+know v's breadth. A reader that knows both breadths, and knows them equal, is situation 1, the circle. So a situated
+reader at the corner is not a situated reader any more: being situated and being at the corner exclude each other, which
+is stronger than "it cannot get there". Finite resolution says the same from the other side: within δ of the corner a
+finite reader cannot tell s = 1 from its neighbours, so all it ever has is an approach. The unsituated view contains
+the corner, as one point of the relation it holds, computed exactly; it does not sit at it.
 
 On the front side v is a proper part of the known whole (v < h); on the back side the unknown side is the larger
 (v > h). "Proper and improper fractions" is this proposition's reading of the two sides (the naming is Claude's,
