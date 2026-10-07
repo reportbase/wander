@@ -14,6 +14,8 @@ ruled.*
   all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
   plain explanation of the corner (below; the corner itself is SPN's), named the two sides front and back, near and far, in place of "breadth" and
   "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
+- 7 October, eighth: §4, arithmetic on a line that recurses as needed, and a planned baseline (Tom: "how would we do
+  basic math…"; "how would we create a baseline to compare these two").
 - 7 October, seventh: §4, a number line that recurses as needed, against the ordinary line (`plans/anl-plan.md`, runs 1 and 2).
 - 7 October, sixth: §4, the number line's depth is infinite, a perturbation's finite (Tom: "they conclude").
 - 7 October, fifth: §4, "depth everywhere, and depth where needed" (Tom: the number line has depth everywhere, as its
@@ -227,6 +229,53 @@ by side, with no ruling on the word:
   system can change kind") would start to hold depth. When, and how much?
 - **The walls between levels.** Read exactly at a doubling, the draw files miss by 1.9% of the departure, against a few
   millionths just off it (`draw/papers/tvf.md`, still open there).
+
+### Arithmetic on a line that recurses as needed
+
+Tom, 7 October: "how would we do basic math with a number line that only recursed as needed?" A reading, not a result.
+On such a line a number is a **cell, not a point**: an interval as wide as its depth (3.14 held to two decimals is
+somewhere in [3.14, 3.15)). A number that has concluded (3, ½, 0.25) is exact, a cell of no width.
+
+- **Adding and subtracting: the coarser number sets the depth.** Widths add, so a sum is known only as deep as its
+  shallowest part: 3.14159 + 2.1 is 5.2, not 5.24159. Scientists' significant-figures rule is this, by hand.
+- **Multiplying and dividing: work in levels.** Write each number as a level and a place on it (a float's exponent and
+  mantissa). Multiplying adds the levels and multiplies the places; dividing subtracts the levels; a reciprocal is the
+  flip across the corner. Relative widths add, so a product is known to the significant digits of its least-known factor.
+  Multiplication is native here, since it works on the levels, which are the logarithm.
+- **A result that does not conclude is not expanded.** 1 ÷ 3 is kept as a rule and gives more digits only when more
+  depth is asked for: digits on demand (exact, or lazy, real arithmetic).
+- **Comparing: recurse until the cells part.** a < b is decided at the coarsest level first, going deeper only while the
+  cells overlap; the cost is the depth at which they differ (the trie of `plans/anl-plan.md`).
+- **Equality may never finish.** If a = b and neither concludes, the cells never part, and no finite recursion confirms
+  it. For computable reals, equality is known to be undecidable. Asking whether a = b is asking whether a/b = 1, and a
+  situated reader approaches its corner and never locates it. *A correspondence, to be checked, not a result:* the two
+  may be one fact seen from two sides.
+
+| practice | in these terms |
+|---|---|
+| significant figures | depth where needed, by hand, for + and × |
+| floating point | levels and places, at a fixed depth everywhere |
+| interval arithmetic | cells, with their widths carried through |
+| exact real arithmetic | digits on demand; equality undecidable |
+
+None of the operations is new. What is new is reading them as one situated reader's arithmetic, with the corner as
+where it cannot finish.
+
+**A baseline to compare the two lines, planned, not yet run.**
+- **The referee:** exact arithmetic (fractions, never rounded).
+- **The contenders, given the same job** (the answer to the same requested depth):
+  - the ordinary line: 53-digit floating point as computers use it, and separately a fixed depth set by the worst case;
+  - the recursing line: cells with their own depth, exact numbers kept exact, digits on demand.
+- **Tasks pulling different ways:**
+  - a column of measurements at mixed depths;
+  - cancellation, (10¹⁶ + 1) − 10¹⁶;
+  - sorting numbers mostly far apart with a few close pairs;
+  - a column of evenly spread numbers, the control, where no gain is expected;
+  - ⅓ × 3 = 1.
+- **Measures:** cost (digits stored and processed), correctness (is the truth inside the answer), and honesty (does the
+  answer say how much it knows).
+- **The prediction to fix before running:** the recursing line wins only where depth is uneven or where floating point
+  hides a loss, and ties or loses a little on the control.
 
 ## 5. People meet the number line as situation 3, within a window
 
