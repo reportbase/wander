@@ -151,7 +151,7 @@ what follows from them.
 | the relation | the reading, the flip, the corner; the corner bisects every level; each level one quarter turn, for every ratio; the spiral form | **proved** (§3; Propositions 3.2(b), 3.12, 3.13), on the premises named |
 | the situated reader | one breadth known gives the horizon, the fisheye and the bell; the corner approached, never found | **proved** as mathematics (§2.1); that a reader *is* such a thing is the paper's proposal |
 | recursion | the same sweep at every level; depth beats breadth; cost follows the shape | **ruled** where it rests on (R) (R172, R175, R180); **measured** on shapes (NST, the 3d bench, "Recursion, after the corner"); forced, far out, for a finite reader facing a horizon (`plans/resolution-recursion.md`, unruled) |
-| fairness to the facings | the reading treats v/h and h/v alike, f(1/s) = 1 − f(s); the corner's place and the inversion are forced only given it | **ruled** (R162, Tom, 2 October), not derived from the bare relation. Open: why a physical reader would satisfy it |
+| fairness to the facings | the reading treats v/h and h/v alike, f(1/s) = 1 − f(s); the corner's place and the inversion are forced only given it | **ruled** (R162, Tom, 2 October), not derived from the bare relation. *7 October:* it is the circle's swap symmetry carried into the reading, so it holds for any reading on the circle ("The circle inverts v and h at 45°", §2.1). Open: why a physical reader would read on the circle |
 | the ratio between rungs | why 2 | **open**: not derived; the runs so far found it set by the builder's rule or by the scene (below) |
 | physics | the labs (§9.9, §11.4) | **a correspondence**, not a proof: a passing lab adds standing to the conjecture, a failing one bears on the correspondence, not on the geometry |
 
@@ -1173,6 +1173,42 @@ from the pivot, and the turn brings π/2 and 2/π with it, with the corner at 1 
 *A reading* (Claude's, unruled): the radial turn needs a pivot to turn about, a standpoint, and pure distance does not.
 So the sweep as a turn (0 to π/2) is the situated reader's (3, 4), and the sweep as distance (0 to 1) is the line the
 equations of 1 and 2 hold whole.
+
+**The circle inverts v and h at 45°, and that is where fairness comes from** (Tom, 7 October: "one thing to note is
+that the circle itself, inverts the v and h at 45deg"; then "how does the circle force the inversion at 45deg."). The
+circle does nothing at 45°. Its symmetry makes 45° the fixed point, in three steps:
+
+1. **The circle cannot tell v from h.** Its equation, h² + v² = 1, is unchanged when v and h are swapped. So the swap,
+   (h, v) ↦ (v, h), maps the circle onto itself. In the plane it is the reflection across v = h, the 45° line.
+2. **A mirror of the quarter arc can stay still only at its middle.** The reflection sends θ to 90° − θ. It reverses the
+   arc, and as a reflection it keeps lengths. A length-keeping reversal of an arc fixes exactly its midpoint, θ = 45°,
+   where cos θ = sin θ and v = h. The two sides are mirror images of equal size, which is why 1 and 2 are proportional
+   on both sides of the corner ("Proportion, depth and recursion, by situation").
+3. **A reading that respects the symmetry reads the back side as h/v.** Mapping a point and its mirror image to g and
+   1 − g is f(1/s) = 1 − f(s), Proposition 3.2(b)'s fairness, R162. So R162 is the circle's swap symmetry carried into
+   the reading. A reader takes it on by reading on the circle, which the sweep, g = atan(v/h), does.
+
+How the same swap looks off the circle:
+
+| where the swap acts | what it is | the two sides of the corner |
+|---|---|---|
+| on the circle (1, 2) | a mirror, θ ↔ 90° − θ | equal: arcs keep their length |
+| on the number line, h held (3, 4) | s ↔ 1/s | unequal: [0, 1] in front, [1, ∞) behind; the squeeze is what the levels count |
+| on the sweep | g ↔ 1 − g | equal again: the number line laid on the circle |
+
+Two cautions:
+
+- **Taken alone, "which leg is longer" does not need the circle.** That v/h < 1 before the diagonal and > 1 after holds
+  for any two positive numbers. What only a symmetric whole gives is that the swap maps the whole onto itself, with
+  equal halves.
+- **The circle is not the only whole with this mirror.** Any whole that treats v and h alike has it at 45°: the diamond
+  |v| + |h| = 1, the square max(|v|, |h|) = 1. What forces the 45° is the symmetry in v and h. The circle adds that
+  turning it changes nothing, so arc length is the angle and g = θ is fair all along, not only at the corner. A shape
+  generally loses the mirror. On an ellipse with a ≠ b the direction v = h is still at 45°, but the swap no longer maps
+  the shape onto itself. That loss is part of a shape's depth, its difference from the circle, though not all of it,
+  since the diamond keeps the mirror and still differs.
+
+What stays open moves: not "why fair?" but "why would a physical reader read on the circle?"
 
 **Situation 0, impossible** (situation 4 before 6 October). Neither breadth known: nothing to count in and no home to lay from (R137). Impossible for a
 reader as defined here, which needs a known side to take its ratio from; it is not a claim about what else might be
