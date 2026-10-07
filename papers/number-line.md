@@ -44,6 +44,7 @@ ruled.*
 - 7 October, twenty-second: §1, back into the reader's own relation space; s_B = s_A·(h_A/h_B) (Tom).
 - 7 October, twenty-third: §1, the ruler fits only the near field; far-field rulers count levels (Tom).
 - 7 October, twenty-fourth: situations 1 and 2 have only the near field (Tom); Background, the circle's table, the unit square and the ruler updated.
+- 7 October, twenty-fifth: §8, the sphere: three breadths, the octant, six chambers and a triple corner, the unit cube, depth as relief (Tom).
 
 ## Background from SPN
 
@@ -736,8 +737,65 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   situated reader approaches its corner and never locates it"? A correspondence, not shown. (§4)
 - **The two senses of depth.** The number line's inward levels, uniform, and a held thing's remainder, entered where
   found: one idea or two? Laid side by side, not ruled. (§4)
+- **The sphere's two corners.** Does a reader near in one direction and far in another read the two independently, or
+  does the far direction set the cost of the whole? (§8)
 - **People, not synthetic readers.** The switch between a held whole and a unit (§6) is ready to test on real
   number-line data, open-ended against bounded. It waits on a dataset.
+
+## 8. The sphere
+
+Tom, 7 October: "v and h [0,1][0,1]->[0,inf) creates a relations set from 0 to PI/2. the base line is v=h. shapes that
+pertibuate create depth as they push away from the sweep of the unit line. depth is the difference between pertibations
+and the baseline. dividing h and v, removes their scale, but gives you their relation and the address on the unit
+circle. you can use that address to point back to the address on the shape, but only as a relation, the scale is lost
+forever. the same is also true for spheres. v,h,f [0,1][0,1][0,1]->[0,inf). lets explore the sphere."
+
+**The plane, restated.** Two breadths in [0, 1]² give one relation, s = v/h in [0, ∞), or the angle θ in [0, π/2]: the
+quarter circle, length π/2. v = h is the corner. Dividing removes the scale and leaves the relation, an address on the
+unit circle. The address points back to the shape's point in that direction, r(θ), so the shape is recovered against
+its own whole; the whole's size is gone, since (v, h) and (kv, kh) have the same address. Depth is measured against the
+circle, the sweep of the unit line: r(θ) − 1 (Background, SPN's sense). The words kept apart here: the **baseline** for
+depth is the circle (or sphere); the **corner** is v = h.
+
+**One scale lost, always.** Three breadths (v, h, f) in [0, 1]³ leave two relations once the scale is divided out, say
+v/h and f/h in [0, ∞)², or two angles. In general n breadths leave n − 1 relations, and exactly one thing is lost: the
+scale. The address is still recovered, the size never.
+
+**The relation set is the first octant of the unit sphere.** A spherical triangle with three right angles; its area is
+4π/8 = **π/2**, the same number as the quarter circle's length (2π/4). The match is a coincidence of two and three
+breadths: with four, the set measures 2π²/16 = π²/8.
+
+**The corner becomes a point with three mirror lines.**
+- Each of the three swaps (v↔h, h↔f, v↔f) is fixed along an arc across the octant: three corner arcs.
+- They meet at **v = h = f**, the octant's centre, fixed under all six orderings: the corner proper.
+- They cut the octant into **six equal chambers**, one per ordering (v < h < f, …).
+- In the plane, fairness to the facings is one mirror and two halves (SPN R162). On the sphere it is six chambers, all
+  alike.
+
+**The unit square becomes the unit cube.** The corner at (1, 1, 1), and three faces meeting there in place of two arms.
+- A ray from the origin meets exactly one face: the face of its largest breadth. Dividing by the largest breadth lays
+  every relation on that bent surface, as dividing by the larger of v and h laid it on the bent unit line (§1).
+- The bent surface has area **3**, where the bent unit line had length **2** ("2h in place"): a level is n units in
+  place, for n breadths.
+- In the plane the two arms are "h largest" and "v largest". On the cube there are three faces, one per breadth.
+
+**Near and far, with two corners.** A situated reader holding h has two corners, v/h = 1 and f/h = 1.
+- Its near field is the h face: both below 1.
+- Its far field comes in three parts: v exceeds h; f exceeds h; both do.
+- So it can be near in one direction and far in another at once. The plane has nothing like this: there a reading is
+  near or far.
+- Situations 1 and 2 still have only the near field (§1): a held sphere is one level, its six chambers mirrors, not
+  squeezes.
+
+**Depth is relief, and the flying page already does it.** On the sphere depth is r(θ, φ) − 1: a ball plus its relief.
+That is what the bodies in `res/` are: radius as a series in cos(nπh) and cos/sin(mθ), held as a ball plus relief in
+three bands (broad, middle, fine), each band drawn only once its features cover a few pixels (`bandW` in `index.html`).
+Far off a planet is a plain ball, depth unread; close up its craters show. That is GRN's grain (§5) built into the page:
+depth entered only where it is above the reader's grain, and a situated reader recursing only into the perturbations
+it can see (§4).
+
+**To test, not yet planned.** GRN in two directions: one reader, one grain, a system of three points, to see whether the
+switch from serial to parallel happens per direction, near in one and far in another.
 
 ## Sources
 
