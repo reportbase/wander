@@ -2,8 +2,8 @@
 
 *Started 7 October 2026, at Tom's word: "put this in a new paper because i want to iterate over this." A working paper:
 a reading, to be revised as it is worked over, not a ruling. It leans on SPN (`papers/serial-parallel-nowhere.md`) for
-its terms (the situations 0–4, the corner, home, the horizon, the sweep, levels) and states nothing SPN does not
-already hold except where it says so. Nothing here is in SPN yet; a part goes there only after it has been tested or
+its terms, and the section "Background from SPN" below gives what is needed to read it alone. It states nothing SPN
+does not already hold except where it says so. Nothing here is in SPN yet; a part goes there only after it has been tested or
 ruled.*
 
 **Iterations**
@@ -14,23 +14,109 @@ ruled.*
   all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
   plain explanation of the corner (below; the corner itself is SPN's), named the two sides front and back, near and far, in place of "breadth" and
   "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
-- 7 October, twelfth: planned tests completed: CAL run 2 (`plans/cal-plan.md`), GRN run 7 (`plans/grn-plan.md`).
-- 7 October, eleventh: §4, irrational and transcendental numbers on a recursing line.
-- 7 October, tenth: §4, observation costs calories (`plans/cal-plan.md`, run 1: logarithm of worth where detail
-  fades fast; killed where it fades slowly).
-- 7 October, ninth: §4, ARB run, the arithmetic baseline (`plans/arb-plan.md`).
-- 7 October, eighth: §4, arithmetic on a line that recurses as needed, and a planned baseline (Tom: "how would we do
-  basic math…"; "how would we create a baseline to compare these two").
-- 7 October, seventh: §4, a number line that recurses as needed, against the ordinary line (`plans/anl-plan.md`, runs 1 and 2).
-- 7 October, sixth: §4, the number line's depth is infinite, a perturbation's finite (Tom: "they conclude").
-- 7 October, fifth: §4, "depth everywhere, and depth where needed" (Tom: the number line has depth everywhere, as its
-  decimals; a situated reader recurses only into perturbations it has found). Lay of the land, no ruling.
-- 7 October, fourth: §4 rebuilt on the draw repository's depth labs (Tom: "we have already explored depth in draw
-  repository in the labs. lets build on that in the number line paper"); the third draft's "depth is the digits"
-  corrected: digits are precision, depth is a new sweep over a level.
 - 7 October, third: depth (§4), from Tom: "I think depth is the least understood idea. my current working hypothesis is
   the world is what it is, something like 3d, … however, observation is different, it is breadth, depth and the sweep";
   and "lets iterate over the idea of depth in the number-line paper."
+- 7 October, fourth: §4 rebuilt on the draw repository's depth labs (Tom: "we have already explored depth in draw
+  repository in the labs. lets build on that in the number line paper"); the third draft's "depth is the digits"
+  corrected: digits are precision, depth is a new sweep over a level.
+- 7 October, fifth: §4, "depth everywhere, and depth where needed" (Tom: the number line has depth everywhere, as its
+  decimals; a situated reader recurses only into perturbations it has found). Lay of the land, no ruling.
+- 7 October, sixth: §4, the number line's depth is infinite, a perturbation's finite (Tom: "they conclude").
+- 7 October, seventh: §4, a number line that recurses as needed, against the ordinary line (`plans/anl-plan.md`, runs 1 and 2).
+- 7 October, eighth: §4, arithmetic on a line that recurses as needed, and a planned baseline (Tom: "how would we do
+  basic math…"; "how would we create a baseline to compare these two").
+- 7 October, ninth: §4, ARB run, the arithmetic baseline (`plans/arb-plan.md`).
+- 7 October, tenth: §4, observation costs calories (`plans/cal-plan.md`, run 1: logarithm of worth where detail
+  fades fast; killed where it fades slowly).
+- 7 October, eleventh: §4, irrational and transcendental numbers on a recursing line.
+- 7 October, twelfth: planned tests completed: CAL run 2 (`plans/cal-plan.md`), GRN run 7 (`plans/grn-plan.md`).
+- 7 October, thirteenth: a background section, so the paper can be read without SPN (Tom: "add any background
+  information … needed to allow the number line paper to be read alone").
+
+## Background from SPN
+
+What this paper borrows from *Serial, Parallel and Nowhere* (SPN), in brief. Section numbers point to SPN for the full
+account; nothing below is new. R-numbers are Tom's rulings, listed with their dates in SPN's Appendix A.
+
+**The two breadths and the reading.** A reader compares two magnitudes: **h**, the one it holds as its unit, and
+**v**, the one it reads. Its reading is the relation **s = v/h**. Dividing removes the common scale and leaves only the
+relation, which is why a reading carries no units.
+
+**The flip and the corner.** Reading the same pair the other way round, h against v, sends s to 1/s: **the flip**, the
+swap of the two **facings**. It has one fixed point, s = 1, where v = h: **the corner**. In plain words: below the
+corner the signal is a part of the reader's unit; above it the unit is a part of the signal.
+
+**The landmarks and the two sides.** Three landmarks (SPN Proposition 1.1):
+- **home**, s = 0: nothing of v;
+- **the corner**, s = 1;
+- **the horizon**, s → ∞: h negligible against v.
+
+The **front side** or **near field** is 0 < s < 1, the signal smaller than the unit. The **back side** or **far field**
+is s > 1. The corner separates them (R165). The flip carries each side onto the other, point for point.
+
+**The sweep.** The relation laid on a bounded scale: **g = (2/π)·atan(s)**. It runs from 0 (home) through ½ (the corner)
+toward 1 (the horizon). The flip becomes g ↔ 1 − g, so the sweep treats both facings alike. SPN's R162 takes that
+fairness as a ruling; it is the circle's own symmetry, since swapping v and h reflects the circle across its 45° line.
+The sweep is also called **the unit line**: the bounded line on which an unbounded one is laid.
+
+**Levels.** Past the corner the reading is held in **levels**, each one doubling wide (1 to 2, 2 to 4, 4 to 8, …).
+Each level is the same sweep again, with its own home, corner and far wall. By the flip, levels also run inward toward
+home (½, ¼, …; R172). That they are doublings (**dyadic**) is the layout's rule, not derived. *Why 2* is SPN's central
+open question. Entering a further level is **recursion**.
+
+**The five situations** (SPN §2.1). What a reader knows of the two breadths sets its situation.
+
+| | what is known | how it is read | standpoint |
+|---|---|---|---|
+| 0 | nothing | — | — |
+| 1 | both breadths, equal: the circle | all at once | none: unsituated |
+| 2 | both breadths, varying: any other shape | all at once | none: unsituated |
+| 3 | one breadth, h; one hemisphere counted together | parallel | outside: situated |
+| 4 | one breadth, h; one point at a time | serial | inside: situated |
+
+- **Unsituated views (1, 2)** hold the whole as an equation or an array. They *contain* home, the corner and the horizon
+  exactly: on the circle the corner is 45° and the horizon 90°.
+- **Situated readers (3, 4)** hold only their unit. They *approach* all three landmarks and never locate them.
+- **The corner is the clearest line between the two.** To locate it is to know v = h, and so to know v: a situated
+  reader that reached its corner would be unsituated (SPN §3.1).
+
+**Parallel and serial; static and dynamic** (SPN §2.1).
+- A **parallel** reader (3) counts a whole hemisphere at once, from outside.
+- A **serial** reader (4) takes one point at a time, from inside.
+- What decides which is the system *against the reader's look*: a system that holds still for the whole look is
+  **static** and read in parallel; one that changes or arrives during it is **dynamic** and read serially.
+- A parallel reader's best move is to lay its addresses over its whole hemisphere first, then fill them (R155).
+- **The parallel reader's bell.** Counting every relation at once, a parallel reader's shares, plotted against ln s, form
+  a bell, ½·sech(ln s). It peaks at the corner and halves with every doubling away from it, and its total is π/2. The
+  serial reader's view is the running total of the same bell: a fisheye, with the corner the ring halfway out.
+
+**Facings and signs** (SPN §2.1). Each copy of the sweep is the same 0 to π/2. A signal carrying k independent signs has
+2ᵏ copies of it, its **facings**: 1 for magnitudes alone, 2 with one sign (a semicircle), 4 with two (a circle), 8 with
+three (a sphere).
+
+**What observation consists of** (R125). Not interchangeable dimensions, as x, y and z are, but parts reached in order:
+- relations;
+- addresses (a relation laid from a home);
+- the sweep;
+- the share;
+- magnitudes (what an address points to).
+
+**Depth, in SPN's sense.** A shape's difference from the unit circle: only situation 2 has it (Tom, 6 October). It is
+held by recursion: each level holds only what the levels above it left. When an address points back to a magnitude,
+that magnitude is the depth the division took out (SPN §2.1, "How the depth comes back after division"). §4 below sets
+this beside the number line's own sense of depth.
+
+**The labs and their rules.** SPN's claims are tested in "labs", run on synthetic or real data. The rules:
+- a lab's prediction and kill condition are written down before it runs;
+- a killed prediction stays recorded as killed;
+- a fix is a new run with its own prediction.
+
+The synthetic runs this paper cites (NLS, GRN, ANL, ARB, CAL) are in `plans/` and follow these rules. One lab used real
+data: **NLE** (`plans/nle-plan.md`) fitted a corner model, among others, to kindergartners' number-line estimates. Its
+run 1 was killed: on bounded lines, proportion judgment fitted better than the corner. **The draw
+repository** is the owner's drawing tool. Its labs measured depth on 24 library shapes, read by a reader standing on
+each outline.
 
 ## The corner, explained plainly
 
