@@ -30,7 +30,10 @@ Google Fonts load from outside:
   list it in `BODY_FILES` in `index.html`). The flying page fetches them in the background
   (`fieldGrid` folds each onto the solids' grid) and dresses each system's star as a sun, its
   planets, moons and belt, chosen by the body's key; they are lit by their own star
-  (`lightOf`, the 8th vec4 of a body's record), and suns give light. Looks only: motion,
+  (`lightOf`, the 8th vec4 of a body's record), and suns give light. Each body's radius is held as
+  its ball plus relief in three bands (broad, middle, fine, by max(n, m); `fieldGrid`), and
+  the shaders add each band only once its features cover a few pixels (`bandW`): far off a
+  body is a plain ball, close up its craters and mountains show. Looks only: motion,
   reading and the labs are unchanged, and `world.js` is not touched. Until they load, plain balls.
 - `sweep.html`: **the sweep device** (7 Oct 2026), a standalone page outside the world
   and the labs: an array of pairs (v, h) divided by its own h, laid on the unit sweep
