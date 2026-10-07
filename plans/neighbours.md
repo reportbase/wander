@@ -60,6 +60,13 @@ not of the reading by a unit h. Worth a look before any second NLE run, under th
 All three hold "magnitude read against the reader's own reference", SPN's h as the focus. None has the corner as a
 fixed point of a flip, or a horizon past it.
 
+### 0. The oldest: Mercator's map (1569)
+
+Added 7 October. On the globe at latitude φ, v = sin φ and h = cos φ; Mercator's map divides each circle of latitude by
+its h, and its height is y = asinh(v/h) = ln tan(π/4 + φ/2): proportional near the equator, logarithmic past 45°, each
+doubling of v/h a near-equal step of ln 2, and the pole a horizon the map never reaches. It is the globe divided by h,
+the situated normalization, four centuries before the rest of this list (SPN §2.1, "Mercator's map, framed in v and h").
+
 ### 5. Geometry of visual space: Luneburg (1947), Heelan (1983)
 
 Luneburg argued binocular visual space is hyperbolic, the infinite rendered as a dome; Heelan, a philosopher of
