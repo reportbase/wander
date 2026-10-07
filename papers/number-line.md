@@ -14,6 +14,9 @@ ruled.*
   all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
   plain explanation of the corner (below; the corner itself is SPN's), named the two sides front and back, near and far, in place of "breadth" and
   "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
+- 7 October, fourth: §4 rebuilt on the draw repository's depth labs (Tom: "we have already explored depth in draw
+  repository in the labs. lets build on that in the number line paper"); the third draft's "depth is the digits"
+  corrected: digits are precision, depth is a new sweep over a level.
 - 7 October, third: depth (§4), from Tom: "I think depth is the least understood idea. my current working hypothesis is
   the world is what it is, something like 3d, … however, observation is different, it is breadth, depth and the sweep";
   and "lets iterate over the idea of depth in the number-line paper."
@@ -83,7 +86,7 @@ to the most basic thing we take for granted." A first map; each row is a reading
 | facings, 2^(signs) | positive numbers: 1; with negatives: 2; the complex plane (signs of the real and imaginary parts): 4 |
 | situated, not unsituated | the line holds its unit but cannot be held whole (§1) |
 | static and dynamic; 3 and 4 | seen at once as a stretch, or counted one at a time (§5) |
-| depth | a candidate: the digits past the ones read, the remainder at finer levels (§4; a reading) |
+| depth | none in the bare line: depth is what a held thing puts into the line's levels, as new sweeps (§4) |
 
 *Checked so far:* the corner, the flip and its one fixed point, the sides, and the levels are ordinary arithmetic. The
 facings row is a reading: the complex plane's four quadrants are four copies of the unit sweep by the signs of the
@@ -112,47 +115,78 @@ of situated observation ("not a number of anything"):
 |---|---|---|
 | **breadth** | the unit held, h: the scale | nothing; the reader starts from it |
 | **sweep** | the relation v/h laid on 0 to π/2: scale removed | dividing by the breadth |
-| **depth** | what the breadth and the sweep leave unaccounted for | the address the sweep gives |
+| **depth** | what the breadth and the sweep leave unaccounted for, entered as a new sweep over its own level | the address the sweep gives |
 
 That both count three is probably a coincidence; observation is not claimed to be "3d".
 
-**A candidate: depth is the remainder.** SPN uses "depth" in two places: a shape's difference from the circle (situation
-2 only; Tom, 6 October), and what an address points back to after the division took the scale out (the payload; SPN
-§2.1, "How the depth comes back after division"). Both are what is left once the breadth is divided out and the relation laid on the
-sweep. So: *depth is whatever the breadth and the sweep do not account for.* By situation:
+**Depth is the remainder, entered as a new sweep.** SPN uses "depth" for a shape's difference from the circle
+(situation 2 only; Tom, 6 October) and for what an address points back to once the division has taken the scale out
+(SPN §2.1, "How the depth comes back after division"). Both are what is left once the breadth is divided out and the
+relation laid on the sweep. The draw repository's labs (October 5–7; `draw/papers/tvf.md`, "Breadth and depth" and
+§2.8) sharpen this into a definition, and measure it:
 
-- **1, the circle:** nothing is left, since the circle is the sweep. No depth.
-- **2, a shape:** something is left, held and computable. Depth.
-- **3 and 4:** no held whole to subtract from, so no depth can be read. The world has detail there; the reader cannot
-  hold it as depth. This agrees with Tom's ruling that 1, 3 and 4 have none, read as "none readable".
+- **Depth is not more breadth.** "Packing leaves tighter is more breadth, not depth."
+- **Depth is not precision.** "Cascade levels are precision: residuals of one breadth, over the same leaves. They are
+  not depth."
+- **Depth is the remainder, held by a new sweep over its own level.** "Every octave of a reader's reading held by a
+  whole sweep of its own, the same sweep again with its own home, corner and far wall." And "a level holds only what the
+  levels above left": nothing is stored twice.
 
-**On the number line, depth is the digits.** Write a number in a base and read it from the left:
+So the earlier worry, that "remainder" is too broad because noise is a remainder too, has its answer there. A remainder
+kept in place, at the same level, is precision. A remainder entered as a new sweep over its own level is depth.
 
-| | on the number line, π = 3.14159… in base 10 | |
+**What the draw labs measured** (24 library shapes, read from a standpoint on each outline; the unit circle is the
+shape's mean radius; `draw/papers/tvf.md`, "What the recursion found"):
+
+| finding | measured |
+|---|---|
+| every level is the same sweep | each child sweep lies the same way in its level, at every level (the nested-fisheye lab) |
+| depth beats breadth | at an equal count of values, better on 24 of 24 shapes, by 18× to about 5×10⁴ |
+| depth holds at a distance | the nested reader's error flat at 0.7% from 4 to 128 steps away; one sweep's grew 23-fold (an earlier run, not re-measured) |
+| the cost follows the shape | entering a level only where something is left: 79 to 244 sweeps instead of 518, to about a millionth of the departure |
+| recursion counts hiding, not intricacy | the levels needed count how often the way in turns out of sight; the deepest library spiral needs six |
+
+One caution from this paper's own record: the circle needed 129 sweeps there, where by the definition it should need
+none. That was traced (SPN §2.1, "The circle needs no recursion") to the drawing tool's reading set-up for its circle, which departs from a true circle by about
+0.0073/s; the 129 sweeps hold that artifact, not depth.
+
+By situation, then: **1, the circle:** nothing is left, since the circle is the sweep; no depth. **2, a shape:** a
+remainder, held, entered level by level where something is left; depth. **3 and 4:** no held whole to subtract from,
+so no depth can be read. The world has detail there; the reader cannot hold it as depth (Tom's "1, 3 and 4 do not",
+read as "none readable").
+
+**On the number line: levels, precision and depth.** The draw repository's levels are levels of the number line itself:
+an address in level k lies between the doublings 2^(k−1) and 2^k, read over 2⁻⁶ to 2⁶. A floating-point number holds
+two of observation's three and not the third:
+
+| | a floating-point number | in observation |
 |---|---|---|
-| breadth | the unit, and which level: 3 units | the leading digit, the level's place |
-| sweep | where it lies within the level | the next digit |
-| depth | 0.04159…, what the first two digits leave | the digits past the ones read |
+| the exponent: which doubling | the level; the rung (draw's rung is the IEEE 754 exponent of a row) | breadth, at that level |
+| the mantissa: where within the doubling | the place on that level's sweep | the sweep |
+| more mantissa digits | the same level, read finer | **precision, not depth** |
+| a further sweep entered over a level, holding what the level above left | not in a float | **depth** |
 
-Each digit is the remainder of the one before, read again at the next level down, so depth is the recursion seen from
-the number's side: "a level holds only what the levels above left" (SPN's summary of the recursion). By this reading
-an integer has no depth at its own level, a fraction like ⅓ has depth that repeats, and π has depth without end. All of
-it is relative to the reader's unit and base: change the unit, and what counts as breadth and what as depth moves.
+So the digits of a number are precision, not depth: π = 3.14159… read to more digits is the same breadth read finer. A
+bare number has levels and a place on them, but no depth, because there is nothing for it to depart from. Depth
+appears only when a number line holds something that departs from its unit (a shape against its circle, a payload
+against its address), and then it is held by entering the line's levels again, as whole sweeps, where the departure is
+left. This agrees with §2's map: the number line by itself has the levels, and depth is what a held thing puts into
+them.
 
-**In base 2 the digits are the corners.** With dyadic levels, a binary digit says at each level whether the remainder
-lies in the level's front half or its back half: before or after that level's corner. So a binary expansion is a
-reading of a number corner by corner, one level at a time. SPN's nested level differs in one way: there the next level
-nests only in the back half, and the front half is read in plain proportion; a binary expansion nests in whichever
-half the remainder falls. *Open:* whether that difference matters, or whether SPN's front-half proportion is the
-same thing read without recursion.
+*Corrected, third iteration, same day.* An earlier draft of this section said "on the number line, depth is the
+digits". The draw repository's distinction between precision and depth shows that was wrong: digits read one level
+finer; depth enters a new level. The halving question it raised (SPN nests the next level only in the back half, a
+binary expansion halves wherever the remainder falls) is answered by the same distinction: halving within a level is
+precision; entering the next level is depth.
 
-**Where this is weak.**
+**Still open.**
 
-- **"Remainder" may be too broad.** Noise is a remainder too, and it is not depth. Depth may need to be the
-  *structured* remainder: the part that has its own sweep at the next level.
-- **"No depth" in 3 and 4 needs care.** It means none readable, not that the world there is flat.
-- **The digits are a model of depth, not a proof.** They show depth as remainder on the most familiar object; whether
-  the same holds of shapes, the payload and the labs' readings is to be checked, case by case.
+- **Why the draw labs' levels are octaves.** They are laid as doublings, as SPN's are: the layout's rule, not derived
+  (SPN's open question, the ratio between rungs).
+- **Depth in 3 and 4.** "None readable" assumes no held whole; a situated reader that builds one over time (SPN §2.1, "A
+  system can change kind") would start to hold depth. When, and how much?
+- **The walls between levels.** Read exactly at a doubling, the draw files miss by 1.9% of the departure, against a few
+  millionths just off it (`draw/papers/tvf.md`, still open there).
 
 ## 5. People meet the number line as situation 3, within a window
 
