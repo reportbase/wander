@@ -79,3 +79,19 @@ exactly where depth is most worth having. Where detail fades fast (r = 0.3, 0.5)
 - **Not supported in general:** a reader that prices each level from its own two last looks fails on slowly fading
   detail. A fix (pricing from a running estimate over all the levels seen, not just the last two) would be a new run with
   its own prediction.
+
+### Run 2: pricing from a running estimate (prediction written before run 2)
+
+Tom: "do complete any tests that are planned." Run 1's fix, as a new run. Everything is as in run 1 except the adaptive
+reader's estimate of r. Instead of the ratio of its last two looks, it fits a straight line to log oₖ against k over
+all the levels it has seen, and takes r̂ from the slope (r̂ = ½ before it has two looks). Noise then averages out as it
+goes deeper.
+
+- **P1″ (the kill): the slope recovers.** The depth slope per doubling of V/c is within 20% of 1/log₂(1/r) for all
+  three r, including r = 0.7, where run 1 fell 24% short.
+- **P2″ (the kill): the net recovers.** At every V/c and r the adaptive net is at least 90% of the oracle's, and above
+  both "everywhere" and "never".
+- **Expected trouble:** at V/c = 10 and r = 0.7 the reader has seen only one or two levels when it decides, so the
+  running estimate is no better than run 1's there. This is the setting most likely to fall under 90%.
+
+**Informed by run 1, and said so.** The fix was chosen after seeing why run 1 failed.
