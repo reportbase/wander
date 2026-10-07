@@ -245,6 +245,11 @@ the reader move his h unit like a slider to get a better read on the situation")
   the cost of moving the corner.
 - **A reader given the shape** can read below its grain (runs 1 and 2). That knowledge is situation 2's, borrowed, and it
   blurs the corner rather than moving it.
+- **h as a dial** (Tom: "H as a dial would be very interesting idea in itself"). Charge the reader one unit for each
+  grain the system spans on each look. Then one sure reading costs (1 + s)·max(1, 1/s): least, 2, at s = 1, and the
+  same at s and 1/s (run 5). The best setting of the dial puts the system at the reader's corner. Finer, the reader pays
+  for grains it does not need; coarser, it pays in looks; and missing by a factor costs the same either way. That
+  holds under this cost; field of view, light per grain and an optical floor would move it.
 
 ## 6. What would test it
 

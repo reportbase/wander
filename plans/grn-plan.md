@@ -234,3 +234,21 @@ sees "two" for the first time, and the cost of that sure reading is the total ch
 - **What it does not cover.** Other costs (a fixed number of pixels and so a narrower field as h shrinks, less light
   per grain, an optical floor) would move the best setting, and are not modelled here. "Pay per grain read" is a
   choice of cost, stated as such.
+
+### Run 5 (7 October, `grn.run5()`, seed 53, 20,000 trials at each s): not killed
+
+| s | 0.1 | 0.2 | 0.3 | 0.5 | 0.7 | 0.85 | **1** | 1.2 | 1.5 | 2 | 3 | 5 | 10 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| cost of one sure "two", measured | 11.09 | 5.95 | 4.31 | 3.00 | 2.43 | 2.18 | **2.00** | 2.20 | 2.50 | 3.00 | 4.00 | 6.00 | 11.00 |
+| (1 + s)·max(1, 1/s) | 11 | 6 | 4.33 | 3 | 2.43 | 2.18 | **2** | 2.2 | 2.5 | 3 | 4 | 6 | 11 |
+
+- **P1 not killed.** The measured cost follows (1 + s)·max(1, 1/s) at every s; the largest departure is 1.4 standard
+  errors. (At s = 1 and at whole numbers past it the cost has no spread at all, and matches exactly.)
+- **P2 holds.** The cheapest setting on the grid is s = 1, at cost 2. Flip pairs cost the same: s = 0.1 and 10 give
+  11.09 and 11.00; 0.2 and 5 give 5.95 and 6.00; 0.5 and 2 give 3.00 and 3.00.
+
+**What it says.** If a reader pays for each grain it reads, the best setting of its dial h puts the system at its
+corner. Finer, and it pays for grains it does not need; coarser, and it pays in looks. Missing by a factor costs the
+same whichever way it misses. So the corner is not only where serial turns parallel (runs 3 and 4); it is the cheapest
+place to read from, and the cost of reading is fair to the facings. Under other costs (field, light, an optical floor,
+not modelled) the best setting would move.

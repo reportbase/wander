@@ -176,3 +176,22 @@ def run4(seed=41, trials=20000):
         two = np.mean([look(s, rng) >= 2 for _ in range(trials)])
         past.append((s, px.mean(), 1 + s, (px.mean() - 1 - s) / max(px.std(ddof=1) / math.sqrt(trials), 1e-12), two))
     return below, past, slider
+
+
+def run5(seed=53, trials=20000):
+    """Run 5 (plans/grn-plan.md): each look charged one unit per grain the system spans; cost of the first sure "two"."""
+    rng = np.random.default_rng(seed)
+    out = []
+    for s in [0.1, 0.2, 0.3, 0.5, 0.7, 0.85, 1.0, 1.2, 1.5, 2.0, 3.0, 5.0, 10.0]:
+        costs = np.empty(trials)
+        for i in range(trials):
+            c = 0
+            while True:
+                n = span_pixels(s, rng)
+                c += n
+                if n >= 2:
+                    break
+            costs[i] = c
+        pred = (1 + s) * max(1.0, 1 / s)
+        out.append((s, costs.mean(), pred, (costs.mean() - pred) / (costs.std(ddof=1) / math.sqrt(trials))))
+    return out
