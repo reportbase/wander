@@ -95,3 +95,28 @@ goes deeper.
   running estimate is no better than run 1's there. This is the setting most likely to fall under 90%.
 
 **Informed by run 1, and said so.** The fix was chosen after seeing why run 1 failed.
+
+### Run 2 (7 October, `cal.run2()`, seed 92, 5,000 trials at each setting): P1″ not killed; P2″ killed, at r = 0.7
+
+| r | depth slope (predicted) | adaptive net / oracle's, V/c 10 … 10⁶ | below "everywhere"? |
+|---|---|---|---|
+| 0.3 | 0.595 (0.576, +3%) | 1.000 at every V/c | never |
+| 0.5 | 1.000 (1.000, 0%) | 0.988 to 1.000 | never |
+| 0.7 | 2.006 (1.943, +3%) | **0.890**, 0.922, 0.942, 1.000, 1.000, 1.000 | **at V/c = 1,000** (924 against 970), and by 0.01 at 10⁵ |
+
+- **P1″ not killed.** With the running estimate the slope is within 3% of 1/log₂(1/r) for all three r, including
+  r = 0.7, where run 1 fell 24% short.
+- **P2″ killed** at r = 0.7.
+  - At V/c = 10 the net is 0.890 of the oracle's, the trouble predicted: the reader has seen one or two levels when it
+    decides.
+  - At V/c = 1,000 its mean depth is close to the best (15.2 against 16), but noisy early stops on some trials pull the
+    mean net below "everywhere" (924 against 970).
+  - At V/c = 10⁵ it trails "everywhere" by 0.01 of 99,968. There "everywhere"'s fixed 30 levels happen to sit next to
+    the best depth, 29, so this is a tie in all but name. It still counts.
+- **Fast-fading detail** (r = 0.3, 0.5): the adaptive reader is at the oracle, within 1.2%, at every V/c.
+
+**What CAL says, after two runs.** Depth is the logarithm of worth: with an estimate that averages its looks, each
+doubling of V/c buys 1/log₂(1/r) levels, within 3%, at every rate of fading. Even so, a reader pricing by its own noisy
+looks pays for slow-fading detail. It lands near the best depth on average, but sometimes stops early, and where
+detail fades slowly that costs it against a reader that recurses everywhere. Depth where needed beats depth everywhere
+cleanly only where detail fades fast enough for the reader to see it fading.

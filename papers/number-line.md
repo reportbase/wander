@@ -302,6 +302,10 @@ level is not worth its calories. It holds even where the thing never concludes. 
   by a fixed number of levels per doubling of V/c, within 4% of 1/log₂(1/r): depth is the logarithm of worth.
 - **Where detail fades slowly** (r = 0.7), it was killed. The reader prices the next level from two noisy looks,
   underprices slow-fading detail, and quits early, below even "recurse everywhere". A better estimate would be a new run.
+- **Run 2, the better estimate** (r from a straight-line fit over every level seen): the slope recovers at every rate
+  of fading, within 3%, so depth is the logarithm of worth throughout. But where detail fades slowly the reader still
+  sometimes stops early, and it falls under 90% of the best at V/c = 10 and under "recurse everywhere" at V/c = 1,000
+  (killed). Depth where needed beats depth everywhere cleanly only where detail fades fast enough to be seen fading.
 
 ### Irrational and transcendental numbers on a recursing line
 

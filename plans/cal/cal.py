@@ -53,3 +53,34 @@ if __name__ == '__main__':
         for _, vc, d, na, no, K, ne, nn in sub:
             print(f'   V/c {vc:>9.0f}: adaptive depth {d:5.2f} net {na:10.2f} | oracle K*={K:2d} net {no:10.2f} '
                   f'(adaptive/oracle {na / no:.3f}) | everywhere {ne:10.2f} | never {nn:.0f}')
+
+
+def adaptive2(V, c, r, rng):
+    """Run 2: r estimated from a straight-line fit of log o_k against k over every level seen."""
+    logs = [rng.normal(0, SIG)]               # log o_0 (a0 = 1)
+    k = 0
+    while k < KMAX:
+        if len(logs) < 2:
+            rh = 0.5
+        else:
+            ks = np.arange(len(logs))
+            rh = min(max(math.exp(np.polyfit(ks, logs, 1)[0]), 1e-6), 0.999)
+        o = math.exp(logs[-1])
+        if V * o * (1 - rh) <= c:
+            break
+        k += 1
+        logs.append(k * math.log(r) + rng.normal(0, SIG))
+    return k
+
+
+def run2(seed=92, trials=5000):
+    rng = np.random.default_rng(seed)
+    rows = []
+    for r in RS:
+        for vc in VCS:
+            V, c = vc, 1.0
+            ks = np.array([adaptive2(V, c, r, rng) for _ in range(trials)])
+            K = oracle(V, c, r)
+            rows.append((r, vc, ks.mean(), float(np.mean(V * (1 - r ** ks) - c * ks)), net(V, c, r, K), K,
+                         net(V, c, r, 30), 0.0))
+    return rows
