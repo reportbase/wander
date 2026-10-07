@@ -120,7 +120,11 @@ try {
   const w3 = await page.evaluate(() => __wanderLab.where()), glide = Math.hypot(w3.x - w2.x, w3.y - w2.y, w3.z - w2.z);
   if (!(glide > 0.5)) failures.push(`[moving] letting go stopped dead (moved ${glide.toFixed(2)} after)`);
   await page.waitForTimeout(800);
-  const tgt = await page.evaluate(() => __wanderLab.drawn().filter(o => !o.star && o.r > 2 && o.r < 10 && o.y > 80 && o.y < 650 && o.x > 100 && o.x < 1180).sort((a, b) => b.r - a.r)[0]);
+  // the tap lands 10 px beside the target: pick one with no other drawn body near that point, so the tap is its alone
+  const tgt = await page.evaluate(() => { const all = __wanderLab.drawn();
+    return all.filter(o => !o.star && o.r > 2 && o.r < 10 && o.y > 80 && o.y < 650 && o.x > 100 && o.x < 1180)
+      .sort((a, b) => b.r - a.r)
+      .find(o => all.every(b => b === o || Math.hypot(b.x - (o.x + o.r + 10), b.y - o.y) > b.r + 25)); });
   if (!tgt) failures.push('[moving] no small body in view to tap');
   else {
     await page.mouse.click(tgt.x + tgt.r + 10, tgt.y);   // beside it, not on it
@@ -128,9 +132,10 @@ try {
     const o = await page.evaluate(() => __wanderLab.where());
     if (!o.orbit || o.name !== tgt.name) failures.push(`[moving] a tap beside ${tgt.name} took ${o.orbit ? o.name : 'nothing'}`);
     else {
-      await page.waitForFunction(t => __wanderLab.where().t > t + 5, o.t, { timeout: 180000, polling: 200 });
-      const s1 = (await page.evaluate(() => __wanderLab.where())).span;
-      if (!(s1 > 0.5)) failures.push(`[moving] five seconds after tapping, ${tgt.name} spans only ${s1.toFixed(2)} (it should come in to about 0.7)`);
+      // it comes in at a capped rate, read from arrivals that lag: allow up to 15 s of the world's clock, not a fixed 5
+      await page.waitForFunction(t => { const w = __wanderLab.where(); return w.span > 0.6 || w.t > t + 15; }, o.t, { timeout: 300000, polling: 200 });
+      const w5 = await page.evaluate(() => __wanderLab.where()), s1 = w5.span;
+      if (!(s1 > 0.5)) failures.push(`[moving] ${(w5.t - o.t).toFixed(1)} s after tapping, ${tgt.name} spans only ${s1.toFixed(2)} (it should come in to about 0.7)`);
       for (let i = 0; i < 10; i++){ await page.mouse.wheel(0, -200); await page.waitForTimeout(60); }
       const z0 = (await page.evaluate(() => __wanderLab.where())).t;
       await page.waitForFunction(t => __wanderLab.where().t > t + 3, z0, { timeout: 180000, polling: 200 });
