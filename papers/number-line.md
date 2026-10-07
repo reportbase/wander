@@ -9,11 +9,14 @@ ruled.*
 **Iterations**
 
 - 7 October: first draft, from two of Tom's notes: the number line's two infinities (§1), and "maybe the way humans
-  access the number line can best be understood as situation 3, the parallel situated perspective" (§4).
+  access the number line can best be understood as situation 3, the parallel situated perspective" (§5).
 - 7 October, second: the aim stated (Tom: "my hope is that we can map these concepts onto the number line itself. so
   all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
   plain explanation of the corner (below; the corner itself is SPN's), named the two sides front and back, near and far, in place of "breadth" and
   "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
+- 7 October, third: depth (§4), from Tom: "I think depth is the least understood idea. my current working hypothesis is
+  the world is what it is, something like 3d, … however, observation is different, it is breadth, depth and the sweep";
+  and "lets iterate over the idea of depth in the number-line paper."
 
 ## The corner, explained plainly
 
@@ -79,8 +82,8 @@ to the most basic thing we take for granted." A first map; each row is a reading
 | the sweep, g = (2/π)·atan(s) | the whole positive line laid on 0 to 1, the corner at ½, both ends approached |
 | facings, 2^(signs) | positive numbers: 1; with negatives: 2; the complex plane (signs of the real and imaginary parts): 4 |
 | situated, not unsituated | the line holds its unit but cannot be held whole (§1) |
-| static and dynamic; 3 and 4 | seen at once as a stretch, or counted one at a time (§4) |
-| depth, situation 2 only | none: the line is not a shape held against the circle |
+| static and dynamic; 3 and 4 | seen at once as a stretch, or counted one at a time (§5) |
+| depth | a candidate: the digits past the ones read, the remainder at finer levels (§4; a reading) |
 
 *Checked so far:* the corner, the flip and its one fixed point, the sides, and the levels are ordinary arithmetic. The
 facings row is a reading: the complex plane's four quadrants are four copies of the unit sweep by the signs of the
@@ -95,7 +98,63 @@ to both. What people hold is the unit and the rule for going on (add one, halve 
 "fully expressed" should be kept for a held whole (situations 1, 2) and the number line called "fully specified" (its
 rule known) instead.
 
-## 4. People meet the number line as situation 3, within a window
+## 4. Depth: breadth, sweep and depth
+
+Tom, 7 October: "I think depth is the least understood idea. my current working hypothesis is the world is what it is,
+something like 3d, or maybe something different, but 3d is a good working model of reality. however, observation is
+different, it is breadth, depth and the sweep."
+
+**The world's three and observation's three are not alike.** The world's x, y and z are interchangeable: a rotation
+turns any one into another. Observation's three are reached in order, each through the one before, as SPN's R125 says
+of situated observation ("not a number of anything"):
+
+| | what it is | reached through |
+|---|---|---|
+| **breadth** | the unit held, h: the scale | nothing; the reader starts from it |
+| **sweep** | the relation v/h laid on 0 to π/2: scale removed | dividing by the breadth |
+| **depth** | what the breadth and the sweep leave unaccounted for | the address the sweep gives |
+
+That both count three is probably a coincidence; observation is not claimed to be "3d".
+
+**A candidate: depth is the remainder.** SPN uses "depth" in two places: a shape's difference from the circle (situation
+2 only; Tom, 6 October), and what an address points back to after the division took the scale out (the payload; SPN
+§2.1, "How the depth comes back after division"). Both are what is left once the breadth is divided out and the relation laid on the
+sweep. So: *depth is whatever the breadth and the sweep do not account for.* By situation:
+
+- **1, the circle:** nothing is left, since the circle is the sweep. No depth.
+- **2, a shape:** something is left, held and computable. Depth.
+- **3 and 4:** no held whole to subtract from, so no depth can be read. The world has detail there; the reader cannot
+  hold it as depth. This agrees with Tom's ruling that 1, 3 and 4 have none, read as "none readable".
+
+**On the number line, depth is the digits.** Write a number in a base and read it from the left:
+
+| | on the number line, π = 3.14159… in base 10 | |
+|---|---|---|
+| breadth | the unit, and which level: 3 units | the leading digit, the level's place |
+| sweep | where it lies within the level | the next digit |
+| depth | 0.04159…, what the first two digits leave | the digits past the ones read |
+
+Each digit is the remainder of the one before, read again at the next level down, so depth is the recursion seen from
+the number's side: "a level holds only what the levels above left" (SPN's summary of the recursion). By this reading
+an integer has no depth at its own level, a fraction like ⅓ has depth that repeats, and π has depth without end. All of
+it is relative to the reader's unit and base: change the unit, and what counts as breadth and what as depth moves.
+
+**In base 2 the digits are the corners.** With dyadic levels, a binary digit says at each level whether the remainder
+lies in the level's front half or its back half: before or after that level's corner. So a binary expansion is a
+reading of a number corner by corner, one level at a time. SPN's nested level differs in one way: there the next level
+nests only in the back half, and the front half is read in plain proportion; a binary expansion nests in whichever
+half the remainder falls. *Open:* whether that difference matters, or whether SPN's front-half proportion is the
+same thing read without recursion.
+
+**Where this is weak.**
+
+- **"Remainder" may be too broad.** Noise is a remainder too, and it is not depth. Depth may need to be the
+  *structured* remainder: the part that has its own sweep at the next level.
+- **"No depth" in 3 and 4 needs care.** It means none readable, not that the world there is flat.
+- **The digits are a model of depth, not a proof.** They show depth as remainder on the most familiar object; whether
+  the same holds of shapes, the payload and the labs' readings is to be checked, case by case.
+
+## 5. People meet the number line as situation 3, within a window
 
 Tom, 7 October: "maybe the way humans access the number line can best be understood as situation 3, the parallel
 situated perspective."
@@ -136,7 +195,7 @@ situated perspective."
 | a bounded line, 0 to N given | the whole held | the endpoints and the midpoint |
 | far past the window | 4 again, by levels | orders of magnitude |
 
-## 5. What would test it
+## 6. What would test it
 
 The table predicts a split. **Open-ended estimates** (no upper bound given: "how far is 1000 from 0, if this is 10?")
 should centre on the person's unit and compress past it, the corner model's shape. **Bounded-line estimates** should
@@ -144,14 +203,14 @@ centre on the midpoint, proportion judgment's shape. The same people should show
 this would be a new run with its own prediction and kill condition, written before any data is seen; run 1's kill
 stays on the record. Not planned yet.
 
-## 6. Open
+## 7. Open
 
 - **The window's size.** Is it fixed (a span of levels, set by resolution) or does it grow with familiarity, as the
   switch point does in development?
 - **Fractions.** The inward side, below 1, is the proportional front side in SPN, yet fractions are notoriously hard
   for children (Siegler and others, 2011). Is the inward side read as a second window, with its own unit (½, a tenth)?
 - **Zero and the negatives.** Is 0 home, approached, or a point people hold exactly? Are the negatives the turned-away
-  facing, met only by turning (serial), as §4 suggests?
+  facing, met only by turning (serial), as §5 suggests?
 
 ## Sources
 
