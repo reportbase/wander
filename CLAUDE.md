@@ -44,6 +44,9 @@ Google Fonts load from outside:
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
   standing); `v-and-h.md` gathers every idea about v and h, by item.
+  `number-line.md` (7 Oct 2026) is a working paper Tom iterates on: how people meet the
+  number line (its two infinities one under the flip; situation 3 within a window, 4 before
+  and past it, a bounded line held whole). A reading; parts go to SPN only once tested or ruled.
   `serial-parallel-nowhere-record.md` is SPN as written 29 Sep – 1 Oct, before the
   rewrite: **a frozen record, never edited.** Section and proposition numbers cited
   in the corpus before the rewrite are the record's; SPN's opening note maps them to
