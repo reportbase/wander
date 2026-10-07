@@ -312,3 +312,25 @@ start it gets within a doubling or so of the corner in about one look per doubli
 - some luck, which only more looks reduce;
 - a cost that runs one way. Steering rescues a reader that is below its corner, and is wasted on one already past it
   that needs only one answer.
+
+### Run 7: the edge moved by light (prediction written before run 7)
+
+Run 2 proposed it: "the same at several light levels … predict, before running, how the knee moves with signal-to-noise".
+Tom: "do complete any tests that are planned." The parallel reader of runs 1 and 2 (given the shape, pixels a quarter
+of its grain) at four light levels: 25, 100, 400 and 1,600 per star, with noise 1 per pixel. 400 trials at each s, on
+a finer grid down to s = 0.02.
+
+**Reasoning, before running.** For two stars much closer than the spot width, the image changes only as θ², so what
+an image tells about θ grows as θ. Its error in θ then goes about as 1/(θ·light). Far apart, the error goes as
+1/light. Two measures follow, and they behave differently:
+- *Run 2's knee* (where the error is twice its far-apart plateau): both sides scale as 1/light, so the knee should
+  hardly move.
+- *The resolution limit* (where the error reaches half of θ itself, so the reader no longer knows θ to a factor of
+  two): there 1/(θ·light) ∝ θ, so θ ∝ light^(−1/2). It should move, falling by half for every fourfold more light.
+
+- **P1 (the kill): the resolution limit falls as light^(−1/2).** On log-log axes, its slope against light is
+  −0.5 ± 0.15.
+- **P2 (the kill): the knee stays put.** Across the 64-fold range of light it varies by less than a factor of 1.5.
+- **What it would mean.** For a reader given the shape, how far below its grain it can read is set by its light, as a
+  square root. The grain sets where reading below it becomes hard, and the light sets how far past that it can still
+  go. For the model-free reader of runs 3 to 6, light changes nothing: its corner is s = 1 at any light.
