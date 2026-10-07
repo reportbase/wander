@@ -161,3 +161,25 @@ grain. That borrowed knowledge is situation 2's, the held whole. A reader with o
 that reader the corner is exact: s = 1 is the smallest size that cannot fit in one of its pixels, where "two" becomes
 certain. Below it, "two" depends only on where the reader's grid happens to fall, with probability s: the reader's
 accident, not the system's. In Tom's words, the pixel is ours, not theirs.
+
+### Run 4: below the corner a chance, past it a certainty; and the slider (prediction written before run 4)
+
+Tom: "the geometry should tell us what to expect from signals"; and "maybe the corner is adjustable, could the reader
+move his h unit like a slider to get a better read on the situation." Same model-free reader as run 3: pixels one grain
+wide, the grid's offset random on every look, and the reader counting lit pixels.
+
+- **P1 (the kill), below the corner.** With the grain fixed at 1 and s < 1, each look shows "two" with probability s,
+  independently. The looks needed until the first "two" average 1/s. Predicted within 3 standard errors at every s
+  tested, from 0.05 to 0.9.
+- **P2 (the kill), past the corner.** For s ≥ 1, every look shows at least two pixels, and the mean number of lit
+  pixels is 1 + s. That is exact geometry: a span of s crosses s grid lines on average, at any s. Predicted within 3
+  standard errors at every s tested, from 1 to 8. So the average grows smoothly through the corner, and what changes
+  there is certainty, not the mean.
+- **P3, the slider.** A reader that halves its grain after every look without "two" (h = 1, ½, ¼, …; s doubles each
+  time) reaches its corner in about log₂(1/s) looks. Its mean looks are at most log₂(1/s) + 2 at every s, against 1/s
+  for the fixed grain. The bound holds by construction (by look ⌈log₂(1/s)⌉ + 1, s has passed 1), so it is a check, not
+  a test. Reported: the mean looks, and the s at which the slider stops, predicted to lie between 1 and 2. The slider
+  reads just past its own corner, no finer.
+- **What it would mean.** Below its corner a reader buys structure with time, at 1/s looks. Past it, structure comes
+  in each look, s pixels at once. A reader that can move its h trades that reciprocal cost for a logarithmic one, by
+  sliding its corner to the system, one doubling at a time.
