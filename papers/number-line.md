@@ -39,6 +39,7 @@ ruled.*
 - 7 October, seventeenth: §1, the ordinary line has no corner; the corner is the reader's (Tom); §1 and §2 tables corrected.
 - 7 October, eighteenth: §1, the circle, proportional everywhere with a corner where v and h hand over (Tom); three-way table.
 - 7 October, nineteenth: §1, the unit square, where the corner gets its name; the unit line bent at the corner; the unit is the system's own breadth (Tom).
+- 7 October, twentieth: §1 corrected: the number line is not a situation but a ruler, notches on a stick (Tom); §2 table and Background updated.
 
 ## Background from SPN
 
@@ -71,7 +72,8 @@ Each level is the same sweep again, with its own home, corner and far wall. By t
 home (½, ¼, …; R172). That they are doublings (**dyadic**) is the layout's rule, not derived. *Why 2* is SPN's central
 open question. Entering a further level is **recursion**.
 
-**The five situations** (SPN §2.1). What a reader knows of the two breadths sets its situation.
+**The five situations** (SPN §2.1). What a reader knows of the two breadths sets its situation. Situations belong to
+readers, not to the things read: the number line itself is in none of them (§1).
 
 | | what is known | how it is read | standpoint |
 |---|---|---|---|
@@ -158,11 +160,21 @@ and both are a situated reader's unreached ends (SPN, "By the corner", the three
 | 1 | the unit, h | where a reader holding this unit has its corner; the line itself marks none |
 | out without end: 1, 2, 4, … → ∞ | greater than the unit | the back side, the far field; the horizon, approached |
 
-That is why neither is fully expressed. **The number line is a situated object:** it holds its unit exactly, it has
-two ends it never reaches, and it cannot be held whole. Laid on the sweep, g = (2/π)·atan(s), the whole line fits in g
+That is why neither is fully expressed. *Corrected, 7 October (Tom: "so what situation is the number line? … my answer
+is none. it's not a situation at all"; "maybe it's a ruler. just notches on a stick").* An earlier draft called the
+number line "a situated object". It is not a situation at all: it is not a reader, and has no standpoint and no corner.
+It is a **ruler**, notches on a stick. Its two ends are never reached by any situated reader who reads along it, and the
+whole of it cannot be held; but those are the reader's limits, and the reader's situation is the one §5 describes. Laid on the sweep, g = (2/π)·atan(s), the whole line fits in g
 from 0 to 1, and the ends are still only approached (g → 0, g → 1). The sweep bounds the line without completing it.
 The levels run both ways: R172 already has halvings toward home as well as doublings toward the horizon, and the inward
 side of the line is those inward levels.
+
+**A ruler: notches on a stick** (Tom). The ordinary number line is a ruler.
+- **No reader, so no situation.** A ruler reads nothing; someone reads with it.
+- **No corner.** Every notch is like every other; nothing happens at the one marked 1.
+- **Depth everywhere.** The notches sit at one spacing all along: the finest notch is the ruler's grain, applied
+  everywhere, needed or not.
+- **A recursive line** would be a stick notched only where something needs measuring, more finely where the detail is.
 
 **The ordinary line has no corner** (Tom, 7 October: "the number line is the near field and the far field combined,
 with no corner."). The ordinary number line is laid out the same everywhere: 0.5 to 1 looks exactly like 1 to 1.5.
@@ -260,7 +272,7 @@ to the most basic thing we take for granted." A first map; each row is a reading
 | levels past the corner, dyadic | 1, 2, 4, 8, …: each doubling one level; by the flip, ½, ¼, … toward home |
 | the sweep, g = (2/π)·atan(s) | the whole positive line laid on 0 to 1, the corner at ½, both ends approached |
 | facings, 2^(signs) | positive numbers: 1; with negatives: 2; the complex plane (signs of the real and imaginary parts): 4 |
-| situated, not unsituated | the line holds its unit but cannot be held whole (§1) |
+| a situation | none: the line is not a reader but a ruler, notches on a stick; situations belong to whoever reads it (§1, §5) |
 | static and dynamic; 3 and 4 | seen at once as a stretch, or counted one at a time (§5) |
 | depth | none in the bare line: depth is what a held thing puts into the line's levels, as new sweeps (§4) |
 
