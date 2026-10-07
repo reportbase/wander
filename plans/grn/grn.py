@@ -227,3 +227,32 @@ def run6(seed=61, trials=20000):
                       'low': np.mean(fs < 0.5)}
         out.append(row)
     return out
+
+
+def parallel_flux(theta, rng, flux):
+    img = flux * spots(theta) + rng.normal(0, PIX_SD, PIX.size)
+    f = (TEMPL @ img) / TT
+    rss = (img * img).sum() - f * (TEMPL @ img)
+    return THETAS[int(np.argmin(rss))]
+
+
+def run7(seed=77, trials=400):
+    """Run 7 (plans/grn-plan.md): the parallel reader of runs 1-2 at four light levels."""
+    rng = np.random.default_rng(seed)
+    grid = np.exp(np.linspace(math.log(0.02), math.log(5), 28))
+    out = {}
+    for flux in (25.0, 100.0, 400.0, 1600.0):
+        rows = []
+        for s in grid:
+            pe = np.array([parallel_flux(s, rng, flux) for _ in range(trials)])
+            rows.append((s, float(np.sqrt(np.mean((pe - s) ** 2)))))
+        plateau = float(np.mean([a for s, a in rows if s >= 2]))
+        knee = max((s for s, a in rows if a >= 2 * plateau), default=None)
+        # resolution limit: the smallest s from which on the error stays under s/2, log-interpolated at the crossing
+        res = None
+        for (s0, a0), (s1, a1) in zip(rows[:-1], rows[1:]):
+            if a0 >= s0 / 2 and a1 < s1 / 2:
+                f0, f1 = math.log(a0 / (s0 / 2)), math.log(a1 / (s1 / 2))
+                res = math.exp(math.log(s0) + f0 / (f0 - f1) * (math.log(s1) - math.log(s0)))
+        out[flux] = (plateau, knee, res)
+    return out

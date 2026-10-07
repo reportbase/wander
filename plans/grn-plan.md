@@ -334,3 +334,23 @@ an image tells about θ grows as θ. Its error in θ then goes about as 1/(θ·l
 - **What it would mean.** For a reader given the shape, how far below its grain it can read is set by its light, as a
   square root. The grain sets where reading below it becomes hard, and the light sets how far past that it can still
   go. For the model-free reader of runs 3 to 6, light changes nothing: its corner is s = 1 at any light.
+
+### Run 7 (7 October, `grn.run7()`, seed 77, 400 trials at each s): not killed
+
+| light per star | far-apart error (grains) | knee | resolution limit (error = s/2) |
+|---|---|---|---|
+| 25 | 0.106 | 0.350 | 0.415 |
+| 100 | 0.026 | 0.350 | 0.204 |
+| 400 | 0.0065 | 0.350 | 0.104 |
+| 1,600 | 0.0018 | 0.285 | 0.052 |
+
+- **P1 not killed.** The resolution limit falls as light to the power −0.499, against the −0.5 ± 0.15 predicted: half
+  for every fourfold more light.
+- **P2 not killed.** The knee stays between 0.285 and 0.350, a factor of 1.23 across 64-fold more light, under the 1.5
+  allowed.
+
+**What it says.** For a reader given the shape, the grain sets where reading starts to get hard (the knee, near a third
+of a grain at any light). Its light sets how far past that it can still read: with 64 times the light it resolves 8
+times finer, down to a twentieth of its grain. That is why runs 1 and 2 found no fixed edge at s = 1: the edge is the
+grain's, its reach is the light's. The model-free reader of runs 3 to 6 has no such reach, and its corner stays at
+s = 1 at any light.

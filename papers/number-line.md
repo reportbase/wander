@@ -14,6 +14,7 @@ ruled.*
   all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
   plain explanation of the corner (below; the corner itself is SPN's), named the two sides front and back, near and far, in place of "breadth" and
   "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
+- 7 October, twelfth: planned tests completed: CAL run 2 (`plans/cal-plan.md`), GRN run 7 (`plans/grn-plan.md`).
 - 7 October, eleventh: §4, irrational and transcendental numbers on a recursing line.
 - 7 October, tenth: §4, observation costs calories (`plans/cal-plan.md`, run 1: logarithm of worth where detail
   fades fast; killed where it fades slowly).
@@ -399,6 +400,8 @@ the reader move his h unit like a slider to get a better read on the situation")
   the cost of moving the corner.
 - **A reader given the shape** can read below its grain (runs 1 and 2). That knowledge is situation 2's, borrowed, and it
   blurs the corner rather than moving it.
+  How far below depends on light, not on the grain (run 7): the resolution limit falls as light^(−½), to a twentieth
+  of the grain at 64 times the light, while the knee where reading gets hard stays near a third of a grain.
 - **h as a dial** (Tom: "H as a dial would be very interesting idea in itself"). Charge the reader one unit for each
   grain the system spans on each look. Then one sure reading costs (1 + s)·max(1, 1/s): least, 2, at s = 1, and the
   same at s and 1/s (run 5). The best setting of the dial puts the system at the reader's corner. Finer, the reader pays
