@@ -43,6 +43,7 @@ ruled.*
 - 7 October, twenty-first: §1, what the ruler is for: readers talking to each other (Tom).
 - 7 October, twenty-second: §1, back into the reader's own relation space; s_B = s_A·(h_A/h_B) (Tom).
 - 7 October, twenty-third: §1, the ruler fits only the near field; far-field rulers count levels (Tom).
+- 7 October, twenty-fourth: situations 1 and 2 have only the near field (Tom); Background, the circle's table, the unit square and the ruler updated.
 
 ## Background from SPN
 
@@ -64,6 +65,13 @@ corner the signal is a part of the reader's unit; above it the unit is a part of
 
 The **front side** or **near field** is 0 < s < 1, the signal smaller than the unit. The **back side** or **far field**
 is s > 1. The corner separates them (R165). The flip carries each side onto the other, point for point.
+
+**Only a situated reader has both** (Tom, 7 October: "just as a point of clarification, situations 1 and 2, dont have
+both the near and far fields, only the near field."). In situations 3 and 4 the reader holds a unit and the signal can
+exceed it without bound, toward a horizon. In situations 1 and 2 the whole is held: neither breadth exceeds it, there is
+no horizon, and all of it is near field. Past 45° the circle is still near field, read with v and h exchanged. With both
+breadths known the corner is computed, not met as an inversion (SPN §3.2); the near field is the first proportional
+level (R163), and situations 1 and 2 are that one level and nothing past it.
 
 **The sweep.** The relation laid on a bounded scale: **g = (2/π)·atan(s)**. It runs from 0 (home) through ½ (the corner)
 toward 1 (the horizon). The flip becomes g ↔ 1 − g, so the sweep treats both facings alike. SPN's R162 takes that
@@ -244,6 +252,10 @@ So the ordinary number line is the near-field ruler stretched across the corner.
 and badly over wide ranges, and why the logarithm is not a way of drawing (§4, "Laid out in space") but the far field's
 own ruler.
 
+**Who needs which ruler.** The circle's near field and the plain ruler are both proportional, so a plain ruler serves
+situations 1 and 2 completely: with the whole held, there is no far field to lay it across. Only situated readers (3, 4)
+have a far field, and only they need rulers that count levels.
+
 **The ordinary line has no corner** (Tom, 7 October: "the number line is the near field and the far field combined,
 with no corner."). The ordinary number line is laid out the same everywhere: 0.5 to 1 looks exactly like 1 to 1.5.
 Nothing changes at 1: no flip, no switch from proportion to levels, no boundary between near and far. The line joins
@@ -267,11 +279,11 @@ where the proportionality changes hands.
 - **At 45°** they hand over. Swapping v and h reflects the circle across its 45° line (SPN §2.1, "The circle inverts v
   and h at 45°"), so the halves are the same size, and the same proportionality runs with the roles exchanged.
 
-| | proportional? | a corner? | what happens at it |
-|---|---|---|---|
-| **the ordinary number line** | everywhere | none | nothing: 1 is only another tick |
-| **the circle** (situations 1, 2) | everywhere, by angle | yes, at 45° | proportionality passes from v to h: a mirror, equal halves |
-| **a situated reader** (3, 4) | only before its corner | yes, at its own unit | proportion gives way to levels: s ↔ 1/s, a squeeze |
+| | proportional? | a corner? | what happens at it | fields |
+|---|---|---|---|---|
+| **the ordinary number line** | everywhere | none | nothing: 1 is only another tick | near and far, joined |
+| **the circle** (situations 1, 2) | everywhere, by angle | yes, at 45° | proportionality passes from v to h: a mirror, equal halves | near only, in two mirrored halves |
+| **a situated reader** (3, 4) | only before its corner | yes, at its own unit | proportion gives way to levels: s ↔ 1/s, a squeeze | near, then far |
 
 - **Where each corner lives.** The line has none. The circle's is built in by its symmetry, the same for everyone. A
   situated reader's is its own, set by the unit it holds.
@@ -288,8 +300,9 @@ corner.").
 
 Put the corner at (1, 1), where v = h = 1. Two perpendicular arms of the unit line leave it:
 - **down to (1, 0):** h held at 1, v from 1 to 0. The near field, read as s = v/h, from 0 at home to 1 at the corner;
-- **left to (0, 1):** v held at 1, h from 1 to 0. The far field, read as h/v = 1/s, from 1 at the corner to 0 at the far
-  wall.
+- **left to (0, 1):** v held at 1, h from 1 to 0. For a situated reader, the far field, read as h/v = 1/s, from 1 at the
+  corner to 0 at the far wall. For the circle (situations 1, 2) the same arm is the near field mirrored, v and h
+  exchanged: there is no far field to put on it.
 
 A ray from the origin at angle θ meets the vertical arm at height tan θ when θ ≤ 45°, and the horizontal arm at cot θ
 when θ ≥ 45°. So every relation lands on exactly one arm, and the unit line, bent at the corner, holds the whole
@@ -303,6 +316,9 @@ relation, from home through the corner to the far wall, in a finite length of 2.
   s ↔ 1/s is the 90° turn.
 - **Each arm is plainly proportional.** Spacing is even along each arm, as on the number line; all the bending is at
   the one point where they meet.
+- **Where the situations part.** The bent line is the same for every reader; what differs is how the left arm is read.
+  Read as the first arm mirrored, it is one level, near field throughout (situations 1, 2). Read as 1/s of a signal
+  that can grow without bound, it is a level and its squeeze, near then far (3, 4).
 - **The unit is the system's own breadth** (Tom). 1 is the system's breadth, its normalized value. Dividing every other
   value in the system by it puts the whole system in the unit system: everything then reads against 1, on the two arms.
 
