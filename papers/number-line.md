@@ -14,6 +14,8 @@ ruled.*
   all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
   plain explanation of the corner (below; the corner itself is SPN's), named the two sides front and back, near and far, in place of "breadth" and
   "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
+- 7 October, tenth: §4, observation costs calories (`plans/cal-plan.md`, run 1: logarithm of worth where detail
+  fades fast; killed where it fades slowly).
 - 7 October, ninth: §4, ARB run, the arithmetic baseline (`plans/arb-plan.md`).
 - 7 October, eighth: §4, arithmetic on a line that recurses as needed, and a planned baseline (Tom: "how would we do
   basic math…"; "how would we create a baseline to compare these two").
@@ -289,6 +291,16 @@ where it cannot finish.
   (2.0000000000000004) and undecided on the recursing line at every depth from 1 to 50.
 - **So:** the recursing line is not better everywhere; it is the line whose answers say how much they know. The
   ordinary line's fault is less its cost than its claim.
+
+**Observation costs calories** (Tom, 7 October: "but math is free, but real observation requires calories. how can we
+add a cost calculation"; `plans/cal-plan.md`). Price each level a reader enters at c, value what it removes of the
+unread remainder at V, and let detail fade by r per level. Then a reader enters a level only if it is worth its price.
+That gives a third reason depth is finite, besides a thing that concludes and a grain that stops the reader: the next
+level is not worth its calories. It holds even where the thing never concludes. In CAL run 1:
+- **Where detail fades fast** (r = 0.3, 0.5), the priced reader stops at the best depth or next to it. Its depth grows
+  by a fixed number of levels per doubling of V/c, within 4% of 1/log₂(1/r): depth is the logarithm of worth.
+- **Where detail fades slowly** (r = 0.7), it was killed. The reader prices the next level from two noisy looks,
+  underprices slow-fading detail, and quits early, below even "recurse everywhere". A better estimate would be a new run.
 
 ## 5. People meet the number line as situation 3, within a window
 
