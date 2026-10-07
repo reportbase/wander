@@ -83,3 +83,28 @@ Fine detail in 5 places; elsewhere the line is plain.
 
 **Informed by run 1, and said so.** It was written after seeing run 1's numbers, so it tests the idea the plan meant to
 test, not whether it was foreseen.
+
+### Run 2 (7 October, `anl.run2()`, seed 72): P1′ not killed
+
+| perturbed places | numbers | depth everywhere | depth where needed | ratio |
+|---|---|---|---|---|
+| 1 | 1,001 | 30,030 (30 a number) | 11,033 | 0.367 |
+| **5** | **1,005** | **30,150** | **11,301** | **0.375** |
+| 50 | 1,050 | 31,500 | 14,310 | 0.454 |
+| 500 | 1,500 | 45,000 | 44,372 | 0.986 |
+
+- **P1′ not killed.** With 5 perturbed places the ratio is 0.375, under 0.45.
+- **Reported, as predicted:** the ratio rises toward 1 as the perturbations spread, from 0.37 with one perturbed place
+  to 0.99 with half the line perturbed.
+- **The floor.** Even with a single perturbation the ratio does not fall below about 0.37. That floor is the plain
+  line's own 10 digits a number plus its split marks, against the ordinary line's 30. One twin 10⁻⁹ away forces the
+  ordinary line to write 30 digits for all 1,001 numbers; the recursing line writes them only for the pair.
+
+**What ANL says.** The ordinary number line pays for its finest detail everywhere: one close pair anywhere sets the
+depth of every number. A line that recurses as needed pays for detail where it is. The gain is exactly as large as the
+detail is uneven:
+- one perturbation: about a third of the cost;
+- detail spread everywhere (E, or half the line perturbed): none, and the split marks cost a little extra;
+- every number in fine detail (run 1's C): little.
+
+This is the draw labs' result (518 sweeps against 79 to 244) on the number line itself.

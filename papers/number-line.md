@@ -14,6 +14,7 @@ ruled.*
   all the ideas of the serial-parallel paper even apply to the most basic thing we take for granted"). Added a short
   plain explanation of the corner (below; the corner itself is SPN's), named the two sides front and back, near and far, in place of "breadth" and
   "fineness" (§1), and added the map of SPN's ideas onto the number line (§2).
+- 7 October, seventh: §4, a number line that recurses as needed, against the ordinary line (`plans/anl-plan.md`, runs 1 and 2).
 - 7 October, sixth: §4, the number line's depth is infinite, a perturbation's finite (Tom: "they conclude").
 - 7 October, fifth: §4, "depth everywhere, and depth where needed" (Tom: the number line has depth everywhere, as its
   decimals; a situated reader recurses only into perturbations it has found). Lay of the land, no ruling.
@@ -206,6 +207,15 @@ by side, with no ruling on the word:
   One nuance: whether digits end can depend on the reader's levels, not the thing. ⅓ never ends in decimals and is 0.1
   in base 3. A perturbation concluding is a fact about the thing; digits running on can be a fact about the levels used
   to write it.
+- **A thought experiment: a number line that recurses as needed** (Tom: "lets create a number line that recurses as
+  needed compared to just allowing an infinite number of decimals"; `plans/anl-plan.md`). Hold 1,000 numbers in binary.
+  The ordinary line gives every number the digits its closest pair needs. The recursing line splits a cell only when it
+  holds two or more, and pays for each split. With 5 numbers given a twin 10⁻⁹ away in an otherwise even line, the
+  ordinary line writes 30 digits for every number. The recursing line writes about 10 for most and 30 only near the
+  twins, a third of the cost (ratio 0.375). The gain shrinks as detail spreads: 0.45 with 50 perturbed places, 0.99
+  with 500, and none for an evenly spaced line (1.10). For a set with every number inside a tight cluster it is small
+  (0.77; the first run's prediction, under 0.3, was killed, because such a set is detail everywhere at a finer scale).
+  So the ordinary line pays for its finest detail everywhere; a situated reader pays for it where it is.
 - **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
   other is a held thing's remainder, entered where found. They are not ruled the same or different.
 

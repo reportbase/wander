@@ -79,6 +79,9 @@ Google Fonts load from outside:
   Run 6, steering by its own pixel count from any start (it cannot know its corner): about one look per
   doubling (P1 not killed); within [0.5, 3] killed at one start (luck at the last level below the corner); the
   gain is one-sided, large from below, none from above for a single answer.
+  `anl-plan.md` (+ `anl/anl.py`, 7 Oct): a number line that recurses as needed against the ordinary line's
+  depth everywhere. One close pair anywhere sets every number's depth on the ordinary line; with 5 twins the
+  recursing line costs 0.375 of it, rising to 1 as detail spreads. Run 1's clustered prediction killed.
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far

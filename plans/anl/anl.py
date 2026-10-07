@@ -49,3 +49,21 @@ if __name__ == '__main__':
         cost_n = dig + spl
         print(f'{name}: everywhere {cost_e} digits ({b} a number); where needed {dig} digits + {spl} splits = {cost_n} '
               f'(mean depth {dig / len(x):.1f}, deepest {deep}); ratio {cost_n / cost_e:.3f}')
+
+
+def perturbed(m, eps=1e-9, seed=72):
+    """Run 2: E plus a twin eps away at m randomly chosen places."""
+    rng = np.random.default_rng(seed)
+    E = (np.arange(N) + 0.5) / N
+    at = rng.choice(N, m, replace=False)
+    return np.sort(np.concatenate([E, E[at] + eps]))
+
+
+def run2():
+    out = []
+    for m in (5, 1, 50, 500):
+        x = perturbed(m)
+        cost_e, b = everywhere(x)
+        dig, spl, deep = where_needed(x)
+        out.append((m, len(x), cost_e, b, dig + spl, (dig + spl) / cost_e))
+    return out
