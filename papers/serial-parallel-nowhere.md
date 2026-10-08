@@ -2116,6 +2116,21 @@ detail**. Why:
   per doubling (Proposition 3.4: within a level a share, across levels a count, and the count is the logarithm). So what
   the earlier text called recursion is the far field of one sweep, the sweep over the level of detail. With it the
   derivation of 2 was demoted (the central open question; Appendix D): on a logarithmic sweep the base is the unit.
+- **The eye** (Tom, 8 October: "doesnt optics say that eyeball the image upside on the back of the eyeball", and "yes" to bringing the eye in).
+  The eye is a sweep device with the level of detail built in (Claude's reading of established optics and physiology;
+  unruled). (1) *The inverted image is not the flip.* A lens turns the image half a turn through its nodal point (left
+  to right, top to bottom); the flip swaps the facings, s ↔ 1/s. Inversion relabels the addresses and leaves every
+  relation as it was, which is why nothing has to turn it back: "up" is a name given to an address. (2) *The projection is
+  the reading.* A point off by v at distance h images at f · (v/h) on a flat sensor, f the eye's focal length, its own unit
+  (V = H); on a curved retina, nearly a hemisphere, place goes roughly with the angle atan(v/h). A flat sensor lays s,
+  unbounded; the curved retina lays the bounded sweep, g up to the factor π/2. (3) *Vision lays the level of detail as
+  proportion, then logarithm.* Resolution is finest at the fovea and falls with eccentricity, and primary visual cortex
+  maps the retina with a magnification of about M = 17.3/(E + 0.75) mm of cortex per degree at eccentricity E (Horton and
+  Hoyt 1991; other fits differ in the constants). Its integral, cortical distance 17.3 · ln(1 + E/0.75) mm, is
+  proportional for E well below 0.75° and logarithmic well above: Schwartz's complex-log map (1977, 1980;
+  `plans/neighbours.md`). With s = E/0.75 it is ln(1 + s), proportional below s = 1 and logarithmic above. The constant
+  plays the corner's part, but it is a fitted constant of the eye's optics and receptor spacing, not shown to be a
+  reader's own h; whether it scales with the reader's grain is the test that would make it the corner.
 - **What stays.** The propositions and results that use the word keep it (renaming them would break what the corpus
   cites); read "recursion" there as the self-similar levels a reader picks from, and "recursing" as "picking a finer
   level". Graphics already works this way: a mipmap's levels are precomputed once, and the level used is picked per

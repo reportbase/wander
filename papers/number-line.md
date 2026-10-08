@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, forty-sixth: §4, the eye: inversion a relabelling, the curved retina the bounded sweep, V1 the level of detail as proportion then logarithm (Tom).
 - 8 October, forty-fifth: §4, the reader sweeps its level of detail, proportional then logarithmic; SPN's derivation of 2 demoted (Tom).
 - 8 October, forty-fourth: §4, recursion considered and rejected for level of detail (Tom).
 - 8 October, forty-third: §4, a level of detail is a doubling, so the request is a count k and can be precomputed (Tom).
@@ -585,6 +586,11 @@ by side, with no ruling on the word:
   of detail: proportionally up to the corner, logarithmically past it, one level per doubling. This is the number-line
   split of §5 (proportional for the familiar, compressed beyond) read as a sweep over the level of detail. SPN's derivation
   of 2 is demoted to its Appendix D: on a logarithmic sweep the ratio is the unit of the count.
+- **The eye** (Tom, 8 October: "doesnt optics say that eyeball the image upside on the back of the eyeball", and "yes" to bringing the eye in; SPN §3.3, "The eye"). The inverted image on the retina relabels addresses (a half turn), not the
+  flip. The curved retina lays the bounded sweep (the angle), a flat sensor the unbounded s. And the visual cortex lays
+  the level of detail as proportion, then logarithm: magnification about 17.3/(E + 0.75) mm per degree (Horton and Hoyt
+  1991), so cortical distance 17.3 · ln(1 + E/0.75), linear near the fovea and logarithmic beyond about 0.75°. The
+  constant plays the corner's part; whether it is a reader's own h is untested.
 - **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
   other is a held thing's remainder, entered where found. They are not ruled the same or different.
 

@@ -41,6 +41,11 @@ field as a complex number; the cortical magnification is about k/(r + a) at ecce
 R176's lay, measured in anatomy. What SPN adds: the flip (the log-polar map has no reciprocal facing), and the reading
 of a as a reader's own unit rather than a fitted constant.
 
+*Added 8 October.* A human fit: magnification M = 17.3/(E + 0.75) mm per degree (Horton and Hoyt 1991, *Arch.
+Ophthalmol.* 109:816–824), so cortical distance 17.3 · ln(1 + E/0.75) mm, with a ≈ 0.75°; other fits differ (Engel et al.
+1997). Its integral is ln(1 + s) in s = E/a, proportional below s = 1 and logarithmic above: SPN's sweep over the level of
+detail (SPN §3.3, "The eye").
+
 ### 3. Number lines as proportion judgment: Barth and Paladino (2011)
 
 Children's number-line placements, long read as a shift from logarithmic to linear (Siegler; Dehaene), are fitted
