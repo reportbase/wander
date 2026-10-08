@@ -29,6 +29,10 @@
 > nothing of the payload. And the request is a count of doublings, k, fixed before anything arrives, so the descent
 > is a loop of fixed length: only the payload's values are runtime (Tom: "just pick how many doublings of detail you
 > want. that can be pre-computed").
+>
+> *Then, recursion rejected for level of detail* (Tom, 8 October: "its not recursion at all, its level of detail"). The
+> reader does not recurse: it picks a level of detail, k, and reads level k directly. The geometry is compile time;
+> picking the level of detail is runtime; nothing recurses (§3.3, "Recursion considered and rejected").
 
 *Tom Brinkman, with Claude. Working paper. Rewritten 1 October 2026 around the rulings of that evening (R153–R158); revised 2 October to foreground the inversion at the corner as the main contribution (§3.2, R161), and again that
 morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the situations restated on the sweep alone (§2.1, Tom's list 0–4) and the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 or 4 has a horizon and recursion where situations 1 and 2 have neither. Revised 8 October with
@@ -40,7 +44,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (the central open question), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (the central open question); then recursion considered and rejected for level of detail (the terms; §3.3), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -69,7 +73,8 @@ block only puts them in order.*
 | corner | s = 1, v = h: the flip's one fixed point; g = ½ (in 1 and 2, 45°) | §3 |
 | sweep | the running share g of the relations, from 0 (v unexpressed) to 1 (v fully expressed). Each relation s takes the share ds/(1 + s²); their total is π/2, and g is the running share over that total (R170, "g is the sweep"). The flip sends g to 1 − g. In situations 1 and 2, with both breadths held, the same g is an angle, θ = (π/2)·g, and 90° is meaningful there; in 3 and 4 nothing turns, and g is a share | §2.1, §3.5 |
 | level | a sweep entered again, with its own home, corner and far wall. In place, 2h: a front half of one h, proportional, and a back half of one h holding the rest, in which the next level nests (§3.3, "The level as 2h, in place"). Laid side by side round its own corner, 1/r to r, it is one quarter turn, whatever the ratio r (Proposition 3.12) | §3.3, Proposition 3.12 |
-| recursion | levels within levels: each level the same sweep again | §3.3, Proposition 3.11; "Recursion, after the corner" |
+| recursion | levels within levels: each level the same sweep again. **Considered and rejected (8 October) for level of detail**: the levels exist whole and the reader picks one; nothing recurses. Kept as a word where earlier text uses it, read as the levels | §3.3, Proposition 3.11; "Recursion, after the corner"; §3.3, "Recursion considered and rejected" |
+| level of detail | the level a reader picks: an integer k, how many doublings, read directly as 2ᵏh. Picking is runtime and owes nothing to the payload; the levels picked from are geometry, compile time | §3.3, "Recursion considered and rejected"; the central open question, "Corollary" |
 | unit line | the sweep itself, bounded and known (0 to π/2 in 1 and 2; g from 0 to 1 in 3 and 4); to a line what the unit circle is to a shape. The **number line**, continuous with unit 1 and size unknown, is the unknown system laid on it: 0 at home, 1 at the corner, its far end at the horizon (Tom, 6 October) | §2.1, "The unit line, and the number line laid on it" |
 | depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
 | continuous sweep, spiral | the levels drawn. Unwrapped, one turn running on, level into level with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
@@ -364,7 +369,8 @@ question, the step is one bit per cell, which side of the corner, the one questi
 bit halves the cell. So a level of detail is a doubling of the previous one, and to request a level of detail is to pick
 which doubling: an integer k. The request is made before payload too, from the same inventory (step 1 applied to it), so
 it cannot say "a third of h": that needs a measure or a chosen number. With k fixed, the descent is a loop of fixed length,
-which can be unrolled in advance, a branch that depends on no data. So the levels and where to stop are both known before
+which can be unrolled in advance, a branch that depends on no data; and then not even a loop, since level k is read
+directly, 2ᵏh (recursion rejected for level of detail, §3.3). So the levels and where to stop are both known before
 anything arrives; only the values met there are runtime. This follows from the proof and is not evidence for it: using
 "levels of detail double" to argue for the 2 would be circular. Mipmap levels, a map's zoom levels and a float's mantissa
 bits are counted the same way. Graphics also blends two mip levels by a fractional weight (trilinear filtering); that
@@ -2182,7 +2188,32 @@ And, the same day: "this is situation 1 and 2. recursion is not limited to situa
   the logarithm (§2.1, "The relation forces the logarithm"). If amplification is counted in levels or logarithms, that
   derives the adding. If it is a plain ratio and still adds, it is something else, and worth finding out which.
 
-**Recursion is an identity; the exit is the reader's** (Tom, 8 October: "recursion is regarded as algorithmic by computer scientists. it computer science language, recursive systems recurse until the exit condition. Lots of logical comparisons to test for the exit. In geometry, it is not algorithmic, it is an identity, it computer science language it is precomputed. think of geomtery as the pre-computation of a system prior to the dyanamic runtime logic." And: "this is very important because geometry is not actually recursive the way computer science regards it. every level of recursion does not require an exit from the recursion. the levels are precomputed by geomtery itself, prior to the universe. that may be a good argument for the forcing of 2.").
+**Recursion considered and rejected: level of detail** (Tom, 8 October: "but this solves a major propblem, that its no really recursion, its picking the level of detail. which is runtime, but the geometry is still compile time."; "yes, its not recursion at all, its level of detail. say in the paper we considered recursion but rejected it for the concept of level of detail. explain why.") This paper described the levels as a recursion
+(situations 3 and 4 "have a horizon and recursion"; Propositions 3.11–3.13; "Recursion, after the corner"), and on
+8 October worked through what that would mean (the entry below, kept as the record). It rejects recursion for **level of
+detail**. Why:
+- **Recursion builds each level from the last; here every level already exists.** A recursive procedure makes level k+1
+  by calling itself on level k, so the levels exist only as the calls run. The levels here are geometry: every one is
+  there before anything arrives, the same sweep, its corner at 2ᵏh (the proof in three steps, step 1). Nothing has to be
+  built, so there is nothing for a recursion to do.
+- **A recursion needs an exit, and none is available.** Each call must test whether to stop. The world offers no stop:
+  there is always something smaller and something larger (Tom), so depth never runs out, and the horizon has no last
+  level (§2.1, "Why the recursion"). A recursion on the world's depth would never halt. Tom's first account, "every level
+  of recursion does not require an exit", was corrected by him the same day: "there must be somekind of runtime logic".
+- **Level of detail puts that logic in one place.** The reader picks the level it wants, an integer k, how many doublings
+  of detail (each level of detail a doubling of the last, "Corollary" under the central open question), and reads level k
+  directly, 2ᵏh, as a float's exponent is read from its bits. There is no descent, no loop and no exit test: one choice,
+  made at the observation, owing nothing to the payload. Where a reading lands is direct too: its level is ⌊log₂(v/h)⌋.
+- **So the split is clean.** The geometry is compile time: every level, the ratio between them, the corner. Picking the
+  level of detail is runtime, one index. The payload's values are met at the address picked. What looked like recursion
+  was the levels' self-similarity (each the same sweep), which is a fact about the geometry, not a process.
+- **What stays.** The propositions and results that use the word keep it (renaming them would break what the corpus
+  cites); read "recursion" there as the self-similar levels a reader picks from, and "recursing" as "picking a finer
+  level". Graphics already works this way: a mipmap's levels are precomputed once, and the level used is picked per
+  pixel; a map's zoom level is picked by the viewer.
+
+**Recursion is an identity; the exit is the reader's** (the record of the reasoning that led to the rejection above;
+Tom, 8 October: "recursion is regarded as algorithmic by computer scientists. it computer science language, recursive systems recurse until the exit condition. Lots of logical comparisons to test for the exit. In geometry, it is not algorithmic, it is an identity, it computer science language it is precomputed. think of geomtery as the pre-computation of a system prior to the dyanamic runtime logic." And: "this is very important because geometry is not actually recursive the way computer science regards it. every level of recursion does not require an exit from the recursion. the levels are precomputed by geomtery itself, prior to the universe. that may be a good argument for the forcing of 2.").
 *Corrected by Tom, same day* (Tom, 8 October: "the exit condition is the depth, no need to recurse beyond the depth, so there is runtime logic."; "geometry can't know the depth without the payload."; "my earlier statement is false, there must be somekind of runtime logic. also LOD works this way no need to recurse further if your at the LOD of that observation."). "Every level of recursion does not require an exit" is false as said, in
 Tom's words: the levels need no exit, but the descent does, and its exit is runtime logic. Kept as said; the bullets below
 read with this correction.

@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, forty-fourth: §4, recursion considered and rejected for level of detail (Tom).
 - 8 October, forty-third: §4, a level of detail is a doubling, so the request is a count k and can be precomputed (Tom).
 - 8 October, forty-second: §4, the exit is the level of detail the reader requests, not the payload's depth, which never runs out (Tom).
 - 8 October, forty-first: §4, the exit is runtime logic, set by the depth and the level of detail; Tom's earlier "no exit" corrected (Tom).
@@ -575,6 +576,11 @@ by side, with no ruling on the word:
   question). Each step of detail is the next level, the last one halved, one bit: which side of the corner. So a request
   is an integer k, how many doublings, and the descent to it can be precomputed: writing a number to k binary digits. It
   follows from the dyadic levels and is not a separate argument for them.
+- **Not recursion: level of detail** (Tom, 8 October: "but this solves a major propblem, that its no really recursion, its picking the level of detail. which is runtime, but the geometry is still compile time."; "yes, its not recursion at all, its level of detail. say in the paper we considered recursion but rejected it for the concept of level of detail. explain why."; SPN §3.3, "Recursion considered and rejected"). The "recursing line" of
+  this section does not recurse. Its levels exist whole, the geometry; the reader picks the level of detail it wants and
+  reads it directly, as a float's exponent is read, with no descent and no exit test. A recursion would need an exit,
+  and the world offers none, since there is always something smaller and larger. The name "recursing line" is kept as
+  the record; read it as a line with levels of detail picked as needed.
 - **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
   other is a held thing's remainder, entered where found. They are not ruled the same or different.
 

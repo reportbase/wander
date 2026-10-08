@@ -61,7 +61,8 @@ Google Fonts load from outside:
   rewrite: **a frozen record, never edited.** Section and proposition numbers cited
   in the corpus before the rewrite are the record's; SPN's opening note maps them to
   the current ones. SPN opens with the terms in order (relation, reading, corner, sweep,
-  octave, recursion, spiral), a map of how the parts depend, and the standing of each;
+  octave, recursion, spiral; since 8 Oct recursion is considered and rejected for
+  level of detail: the levels exist whole, the reader picks one, k doublings, and nothing recurses), a map of how the parts depend, and the standing of each;
   then the central result and the open question (what fixes the ratio between rungs).
   The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
