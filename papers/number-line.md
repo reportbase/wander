@@ -49,6 +49,7 @@ ruled.*
 - 8 October, twenty-seventh: §5 and §7, WHY2 run 3: the 2 holds for every confirmation rule in one dimension, and not in two or three.
 - 8 October, twenty-eighth: Background and §8, the breadths and the angle; in the situated view V = H (Tom).
 - 8 October, twenty-ninth: §8, the sphere's clean statement, beside the plane's (Tom: "whats clean statement for a sphere").
+- 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 
 ## Background from SPN
 
@@ -92,7 +93,9 @@ level (R163), and situations 1 and 2 are that one level and nothing past it.
 **The sweep.** The relation laid on a bounded scale: **g = (2/π)·atan(s)**. It runs from 0 (home) through ½ (the corner)
 toward 1 (the horizon). The flip becomes g ↔ 1 − g, so the sweep treats both facings alike. SPN's R162 takes that
 fairness as a ruling; it is the circle's own symmetry, since swapping v and h reflects the circle across its 45° line.
-The sweep is also called **the unit line**: the bounded line on which an unbounded one is laid.
+The sweep is also called **the unit line**: the bounded line on which an unbounded one is laid. The circle is one
+drawing of the relation; the primitive is the wedge between the two axes, each pair a ray into it (§8, "The wedge is
+the primitive").
 
 **Levels.** Past the corner the reading is held in **levels**, each one doubling wide (1 to 2, 2 to 4, 4 to 8, …).
 Each level is the same sweep again, with its own home, corner and far wall. By the flip, levels also run inward toward
@@ -770,6 +773,42 @@ and the baseline. dividing h and v, removes their scale, but gives you their rel
 circle. you can use that address to point back to the address on the shape, but only as a relation, the scale is lost
 forever. the same is also true for spheres. v,h,f [0,1][0,1][0,1]->[0,inf). lets explore the sphere."
 
+**The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't need
+to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all the
+ways the three systems relate to one another. and in this case it is the wedge."). Every triple of breadths is a ray from
+the origin into the wedge between the three axes; the ray is the relation, and the length along it is the scale that is
+lost.
+- **No facing.** The wedge favours no breadth. A facing is a choice of breadth to divide by (h, say, giving v/h and f/h
+  in [0, ∞)²), and it breaks the symmetry.
+- **The drawings are cuts.** The sphere, the cube and the flat triangle are cuts of the wedge, each a normalization
+  (`plans/normalizations.md`): by length, by the largest breadth, by the sum. Their numbers belong to the cuts, not to the
+  wedge.
+
+| cut the wedge by | you get | normalized by |
+|---|---|---|
+| length = 1 | the sphere's octant (the circle's quarter arc), area π/2 | the whole length |
+| largest = 1 | the unit cube's three faces (the square's two arms), area 3 | the largest breadth |
+| sum = 1 | a flat triangle (`sphere.html`, "the relation set, flat"), area √3/2 | the sum, as in probability |
+| h = 1 | the odds plane, v/h and f/h | one breadth: a facing |
+
+- **The corner is a ray.** v = h = f is the wedge's central ray; each pairwise corner (v = h, …) is a plane through it,
+  and the six chambers are six sub-wedges.
+- **The apex is situation 0:** the origin, where no ray starts.
+- **Angles name rays.** Any pair of angles is a way of naming the rays, not the primitive, which is why each pair picked
+  a pole and favoured a breadth (below).
+- **The plane is the same.** The quarter-plane between the v- and h-axes is the wedge of two breadths; the quarter
+  circle is one drawing of it.
+
+**How many wedges** (Tom, 8 October: "how many wedges in a sphere?"). The axes cut space into one wedge per choice of
+signs: 2 on a line, 4 in a plane, **8** in space, 2ⁿ for n breadths.
+- **Breadths fill one.** A breadth is never negative, so every relation of three systems lies in the (+, +, +) wedge.
+  The other seven are reached only by signed quantities: toward or away, in front or behind.
+- **The wedges are the facings by signs.** SPN §2.1: a reader tells 1, 2, 4 and 8 facings apart by counting the signs.
+  Those are the wedge counts for 0, 1, 2 and 3 signed breadths; each sign doubles them. A sign flip is a mirror, so the
+  wedges are copies of one another.
+- **Finer.** Within each wedge the corner planes make six chambers: 8 × 6 = 48 in all, the cube's symmetries (in the
+  plane, 4 × 2 = 8).
+
 **The plane, restated.** Two breadths in [0, 1]² give one relation, s = v/h in [0, ∞), or the angle θ in [0, π/2]: the
 quarter circle, length π/2. v = h is the corner. Dividing removes the scale and leaves the relation, an address on the
 unit circle. The address points back to the shape's point in that direction, r(θ), so the shape is recovered against
@@ -806,7 +845,7 @@ V = H = F. As two angles: φ = atan(v/h), the turn in the v–h plane, and θ = 
 | corner | 45° | the octant's centre: φ = 45°, θ ≈ 35.3° |
 | no address | the origin | the origin, and a pole for any pair of angles |
 
-**The relation set is the first octant of the unit sphere.** A spherical triangle with three right angles; its area is
+**The wedge, drawn as the first octant of the unit sphere.** A spherical triangle with three right angles; its area is
 4π/8 = **π/2**, the same number as the quarter circle's length (2π/4). The match is a coincidence of two and three
 breadths: with four, the set measures 2π²/16 = π²/8.
 
