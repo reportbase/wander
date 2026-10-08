@@ -18,7 +18,7 @@ fixes the 2 (the central open question, Appendix C). Then: the wedge is made at 
 the picture of all possible wedges from nowhere, not built from them (§1, §2.1). Then, with *The Cauchy* (22 August) and
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
-geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question).*
+geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -3213,6 +3213,25 @@ serial reader and every relation between readers once the painter gives each rea
 the others. It cannot counterfeit **nearness**, because nearness is where the forward sweep actually stops (painted things read 58–87
 thousandths where the real ones read 8–15), and it cannot counterfeit **contact** (items 179–186). The left and right
 sweeps carry the picture, which can be painted; the forward sweep carries nearness, which cannot.
+
+**A unit agreed: the number line** (Tom, 7–8 October; worked out in `papers/number-line.md` §1). Geometry passes
+relations between readers, never a unit, as above. People pass magnitudes anyway, and the number line is how: a unit
+agreed socially, not given by any standpoint, so that two relational, situated readers can talk (Tom: "the ruler is
+needed when two readers need to communicate. they agree on what the ruler represents, and build out from there."). It is
+not a situation; it is a ruler, notches on a stick (Tom: "maybe its a ruler. just notches on a stick."). Its form follows
+from its job:
+- **no corner**, because a corner would be one reader's unit and would favour that reader;
+- **the same depth everywhere**, because it cannot know who will read it or what detail they need;
+- **the scale put back** that each reader's division took out: a reading passes as v in agreed units,
+  s_A·h_A = s_B·h_B, and each reader translates it back into its own relation space (Tom: "a ruler is then translated
+  back into the readers own relation space").
+
+It fits the near field, which is proportional already; past the corner people switch to rulers that count levels
+(decibels, star magnitudes, pH), and scientific notation joins the two. Nothing in this is a fault of the line: it is
+the shared interface between readers, not the structure of observation, and readers who must talk need one (Tom, 8
+October: "the point of the number-line paper is not criticize the number line, just correctly explain what it is
+abstractly … it or something like it is needed."). The chain is reality, observation, relation, address, and then the
+number line, agreed on afterwards between readers.
 
 ## 8. The ladder: what fixes what
 
