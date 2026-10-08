@@ -48,6 +48,7 @@ ruled.*
 - 7 October, twenty-sixth: §8, a demo: `sphere.html` (Tom: "create a demo for the sphere, that brings it all together").
 - 8 October, twenty-seventh: §5 and §7, WHY2 run 3: the 2 holds for every confirmation rule in one dimension, and not in two or three.
 - 8 October, twenty-eighth: Background and §8, the breadths and the angle; in the situated view V = H (Tom).
+- 8 October, twenty-ninth: §8, the sphere's clean statement, beside the plane's (Tom: "whats clean statement for a sphere").
 
 ## Background from SPN
 
@@ -784,6 +785,26 @@ scale. The address is still recovered, the size never.
 ratio of its own whole: v of V, h of H, f of F. A situated reader holds one unit, so V = H = F, and the triple corner is
 at v_raw = h_raw = f_raw. A reader that knows three different wholes finds its triple corner moved, to where each raw
 breadth is in proportion to its own whole.
+
+**The sphere's clean statement** (Tom, 8 October, asking for one beside the plane's). v, h, f ∈ [0, 1] → the first
+octant of the unit sphere, area π/2. H, V and F are the three breadths, v, h and f ratios of them; in the situated view
+V = H = F. As two angles: φ = atan(v/h), the turn in the v–h plane, and θ = atan(f/√(v² + h²)), the rise toward f, so
+(v, h, f) → (φ, θ) ∈ [0, π/2] × [0, π/2].
+- **The angles favour one breadth.** They take f as "up", which the sphere does not. The fair statement is the address
+  itself, (v, h, f) divided by its length: a point on the octant that treats the three alike. The angles name it.
+- **A pole.** In the plane only v = h = 0 had no angle. Here the f-axis (v = h = 0, f > 0) has a rise of 90° and no
+  turn; which axis is the pole depends on which breadth is called up. The origin, all three zero, is still situation 0.
+- **The triple corner is not at 45°, 45°.** v = h = f is at φ = 45°, θ = atan(1/√2) ≈ 35.3°. It is the octant's centre,
+  but the angle square is stretched (area π²/4, not π/2), so its middle is not the octant's.
+
+| | the circle | the sphere |
+|---|---|---|
+| breadths | v, h ∈ [0, 1] | v, h, f ∈ [0, 1] |
+| maps to | [0, π/2], length π/2 | the octant, area π/2 (as angles, [0, π/2]²) |
+| wholes | V, H | V, H, F |
+| situated view | V = H | V = H = F |
+| corner | 45° | the octant's centre: φ = 45°, θ ≈ 35.3° |
+| no address | the origin | the origin, and a pole for any pair of angles |
 
 **The relation set is the first octant of the unit sphere.** A spherical triangle with three right angles; its area is
 4π/8 = **π/2**, the same number as the quarter circle's length (2π/4). The match is a coincidence of two and three
