@@ -61,8 +61,10 @@ Google Fonts load from outside:
   rewrite: **a frozen record, never edited.** Section and proposition numbers cited
   in the corpus before the rewrite are the record's; SPN's opening note maps them to
   the current ones. SPN opens with the terms in order (relation, reading, corner, sweep,
-  octave, recursion, spiral), a map of how the parts depend, and the standing of each;
-  then the central result and the open question (what fixes the ratio between rungs).
+  octave, recursion, spiral; since 8 Oct recursion is considered and rejected for
+  level of detail: the levels exist whole, the reader picks one, k doublings, and nothing recurses), a map of how the parts depend, and the standing of each;
+  then the central result and the open question (what fixes the ratio between rungs; demoted 8 Oct: the reader
+  sweeps its level of detail, proportional then logarithmic, and the derivation of 2 is in Appendix D).
   The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.
@@ -106,7 +108,9 @@ Google Fonts load from outside:
   must show that every other number is not pre-computable"). From the flip, its fixed point and nesting only powers of 2
   (P1 not killed); a chosen number, a root, arithmetic or 2/π each opens others. Bookkeeping for SPN's "A route to forcing
   2", not a proof; run 1's arithmetic row was capped (my set-up). Run 2 (exact fractions, no cap): base only powers of 2
-  again; arithmetic opens a factor of 3 (P2a not killed).
+  again; arithmetic opens a factor of 3 (P2a not killed). Run 3 (Tom: "does 2 allow us to do recursion without runtime
+  logic"): on a level (identity and flip) only a split in 2 has every part of one kind, on the full turn every split does;
+  a theorem (⌈b/2⌉ kinds), resting on the premise that a level's only symmetries are the identity and the flip.
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far
