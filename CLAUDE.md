@@ -90,6 +90,8 @@ Google Fonts load from outside:
   gain is one-sided, large from below, none from above for a single answer.
   Run 7, the edge moved by light (reader given the shape): resolution limit ∝ light^(−0.499), knee steady
   (not killed).
+  Run 8 (8 Oct), a pair receding under the inverse-square law: the reader given the shape loses it at
+  v* ∝ a^0.51 F₀^0.25 (predicted ½, ¼); the model-free reader at one grain across, at any light (not killed).
   `anl-plan.md` (+ `anl/anl.py`, 7 Oct): a number line that recurses as needed against the ordinary line's
   depth everywhere. One close pair anywhere sets every number's depth on the ordinary line; with 5 twins the
   recursing line costs 0.375 of it, rising to 1 as detail spreads. Run 1's clustered prediction killed.

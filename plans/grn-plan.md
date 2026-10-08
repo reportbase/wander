@@ -354,3 +354,68 @@ of a grain at any light). Its light sets how far past that it can still read: wi
 times finer, down to a twentieth of its grain. That is why runs 1 and 2 found no fixed edge at s = 1: the edge is the
 grain's, its reach is the light's. The model-free reader of runs 3 to 6 has no such reach, and its corner stays at
 s = 1 at any light.
+
+### Run 8: a pair receding under the inverse-square law (prediction written 8 October, before run 8)
+
+Tom, 8 October: "the inverse square law does not account for the corner?", then "yes" to a run before anything goes near
+SPN's central result. SPN §3.3 ("The same signal, a smaller share") reads the corner as the reader's: the law of thinning
+is scale-free, and the reader's grain puts one switch into it. This run joins run 7's light-limited reader to the
+inverse-square law and asks how far a fixed pair can recede before it is lost.
+
+**The set-up.** A pair of equal stars, separation a (in grains at distance 1), each sending F₀ (the light per star a
+reader at distance 1 receives). At distance v the reader sees s = a/v and receives F = F₀/v² per star (inverse square;
+nothing in between). Two readers, both from earlier runs, unchanged:
+- *the reader given the shape* (runs 1, 2, 7; `parallel_flux`): the pair is resolved at v while its error in s is under
+  s/2 (run 7's resolution limit); v* is where that stops, log-interpolated on a grid of v, 300 trials a point;
+- *the model-free reader* (run 3: pixels one grain wide, a random offset, a lit pixel above 10 with noise 1): "two" is
+  seen with probability P; v₉₅ is the farthest v at which P ≥ 0.95, 4,000 trials a point.
+
+Light F₀ ∈ {625, 2,500, 10⁴, 4·10⁴, 1.6·10⁵} at a = 1; separation a ∈ {0.5, 1, 2, 4} at F₀ = 10⁴. These keep the
+received light at the loss within run 7's range (about 25 to 1,600).
+
+**Reasoning, before running.** Run 7: the given-shape reader's limit is c · F^(−1/2), c ≈ 2 (0.204 at F = 100). With
+F = F₀/v² the limit grows as c · v/√F₀ while the pair shrinks as a/v; they meet at v*² = a√F₀/c, so v* ∝ a^(1/2) F₀^(1/4).
+Size alone, at fixed light, would give v* ∝ a. The model-free reader has no reach below its grain: P = min(s, 1) (run 3)
+while both stars stay lit, so v₉₅ = a/0.95 whatever the light. The law brings no scale; the corner is the grain's.
+
+- **P1 (the kill): v* ∝ F₀^(1/4).** Log-log slope of v* against F₀, at a = 1: 0.25 ± 0.08.
+- **P2 (the kill): v* ∝ a^(1/2).** Log-log slope against a, at F₀ = 10⁴: 0.50 ± 0.12 (size alone would give 1).
+- **P3 (the kill): the model-free reader's corner does not move with light.** v₉₅ within 5% of a/0.95 at every F₀ (a = 1),
+  and its log-log slope against F₀ within ±0.03.
+- **Reported, not a kill:** v* against the closed form √(a√F₀/c) with run 7's c; the margin s/limit, which should fall as
+  1/v² past the corner.
+- **What it would mean.** For a reader with reach below its grain (given the shape), distance costs twice past the corner:
+  the pair shrinks and its light thins, so it is lost sooner than size alone says, at v* ∝ (a²F₀)^(1/4). For a reader
+  with no reach, the corner is fixed by the grain at any light. Either way the inverse-square law brings no scale of its
+  own; the switch is the reader's.
+
+### Run 8 (8 October, `grn.run8()`, seed 88): P1, P2 and P3 not killed
+
+| light F₀ (a = 1) | v*, given the shape | closed form √(a√F₀/c) | v₉₅, model-free |
+|---|---|---|---|
+| 625 | 3.48 | 3.50 | 1.050 |
+| 2,500 | 5.04 | 4.95 | 1.053 |
+| 10⁴ | 7.05 | 7.00 | 1.056 |
+| 4·10⁴ | 10.11 | 9.90 | 1.049 |
+| 1.6·10⁵ | 14.02 | 14.00 | 1.052 |
+
+| separation a (F₀ = 10⁴) | v*, given the shape | closed form |
+|---|---|---|
+| 0.5 | 4.93 | 4.95 |
+| 1 | 7.11 | 7.00 |
+| 2 | 10.22 | 9.90 |
+| 4 | 14.18 | 14.00 |
+
+- **P1 not killed.** v* against F₀: log-log slope 0.251, against 0.25 ± 0.08.
+- **P2 not killed.** v* against a: slope 0.510, against 0.50 ± 0.12. Size alone would have given 1.
+- **P3 not killed.** The model-free reader's v₉₅ lies between 1.049 and 1.056 at every light, against a/0.95 = 1.053
+  (within 0.4%), with slope against F₀ of −0.000005.
+- **Reported.** The closed form with run 7's c = 2.04 matches v* within 3% everywhere. The margin s/limit was not computed
+  separately; its 1/v² fall past the corner follows from P1 and P2 with run 7's law.
+
+**What it says.** Joined to the inverse-square law, a reader with reach below its grain loses a receding pair at
+v* ∝ (a²F₀)^(1/4): distance costs twice past the corner, in size and in light, so the pair is lost sooner than its size
+alone would say. A reader with no reach loses certainty exactly where the pair is one grain across, at any light. The law
+contributes no scale of its own in either case: the switch is set by the reader's grain, and moved only by the light the
+reader has to read with. Synthetic, Claude's set-up; the two readers and the law are standard, and the inverse-square law
+itself is put in, not tested.

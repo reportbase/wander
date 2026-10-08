@@ -256,3 +256,66 @@ def run7(seed=77, trials=400):
                 res = math.exp(math.log(s0) + f0 / (f0 - f1) * (math.log(s1) - math.log(s0)))
         out[flux] = (plateau, knee, res)
     return out
+
+
+def lost_at(a, F0, rng, trials=300, vgrid=None):
+    """Run 8: the given-shape reader; the distance v* at which a pair (separation a, light F0 at distance 1) is lost."""
+    if vgrid is None:
+        vgrid = np.exp(np.linspace(math.log(0.5), math.log(60), 40))
+    rows = []
+    for v in vgrid:
+        s, F = a / v, F0 / v ** 2
+        if s > 6:
+            continue
+        pe = np.array([parallel_flux(s, rng, F) for _ in range(trials)])
+        rows.append((v, s, float(np.sqrt(np.mean((pe - s) ** 2)))))
+    vstar = None
+    for (v0, s0, e0), (v1, s1, e1) in zip(rows[:-1], rows[1:]):
+        if e0 < s0 / 2 and e1 >= s1 / 2:
+            f0, f1 = math.log(e0 / (s0 / 2)), math.log(e1 / (s1 / 2))
+            vstar = math.exp(math.log(v0) + f0 / (f0 - f1) * (math.log(v1) - math.log(v0)))
+            break
+    return vstar, rows
+
+
+def p_two(s, flux, rng, trials=4000, noise=1.0, thresh=10.0):
+    """Run 3's model-free reader at a given light per star."""
+    two = 0
+    for _ in range(trials):
+        off = rng.uniform(0, 1)
+        pix = np.floor(np.array([-s / 2, s / 2]) + off).astype(int)
+        lo = pix.min() - 1
+        img = np.zeros(pix.max() - lo + 2)
+        for p in pix:
+            img[p - lo] += flux
+        img += rng.normal(0, noise, img.size)
+        two += int((img > thresh).sum() >= 2)
+    return two / trials
+
+
+def v95(a, F0, rng):
+    """Run 8: the model-free reader; the farthest v at which P('two') >= 0.95, log-interpolated."""
+    vg = np.exp(np.linspace(math.log(0.8 * a), math.log(1.4 * a), 25))
+    ps = [p_two(a / v, F0 / v ** 2, rng) for v in vg]
+    for (v0, p0), (v1, p1) in zip(zip(vg[:-1], ps[:-1]), zip(vg[1:], ps[1:])):
+        if p0 >= 0.95 and p1 < 0.95:
+            return float(v0 + (p0 - 0.95) / (p0 - p1) * (v1 - v0))
+    return None
+
+
+def run8(seed=88):
+    """Run 8 (plans/grn-plan.md): a pair receding under the inverse-square law."""
+    rng = np.random.default_rng(seed)
+    c = 0.204 * math.sqrt(100.0)  # run 7's limit at F = 100, as c * F^(-1/2)
+    lights = [625.0, 2500.0, 1e4, 4e4, 1.6e5]
+    seps = [0.5, 1.0, 2.0, 4.0]
+    by_light = [(F0, lost_at(1.0, F0, rng)[0]) for F0 in lights]
+    by_sep = [(a, lost_at(a, 1e4, rng)[0]) for a in seps]
+    mf = [(F0, v95(1.0, F0, rng)) for F0 in lights]
+    sl_F = float(np.polyfit(np.log(lights), np.log([v for _, v in by_light]), 1)[0])
+    sl_a = float(np.polyfit(np.log(seps), np.log([v for _, v in by_sep]), 1)[0])
+    sl_mf = float(np.polyfit(np.log(lights), np.log([v for _, v in mf]), 1)[0])
+    closed = lambda a, F0: math.sqrt(a * math.sqrt(F0) / c)
+    return dict(by_light=by_light, by_sep=by_sep, mf=mf, sl_F=sl_F, sl_a=sl_a, sl_mf=sl_mf,
+                closed_light=[closed(1.0, F) for F in lights], closed_sep=[closed(a, 1e4) for a in seps], c=c)
+
