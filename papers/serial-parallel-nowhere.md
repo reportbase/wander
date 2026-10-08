@@ -14,7 +14,8 @@ morning after a review: the levels of what is proved, Proposition 3.2(b), the th
 Tom's remarks of 7–8 October, worked out first in `papers/number-line.md`: each breadth a ratio of its own whole, the
 angle, and the situated reader's V = H making a unit circle that is not situation 1 (§1); the wedge as the primitive,
 with the circle and the sphere as drawings of it (§1); the facings as wedges (§2.1); and WHY2, synthetic runs on what
-fixes the 2 (the central open question, Appendix C).*
+fixes the 2 (the central open question, Appendix C). Then: the wedge is made at every observation, and the sphere is
+the picture of all possible wedges from nowhere, not built from them (§1, §2.1).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -481,6 +482,10 @@ need to be visualized as a circle. the primative is a single sweep of the three 
 the ways the three systems relate to one another. and in this case it is the wedge."). Every pair of shares is a ray
 from the origin into the wedge between the axes: a quarter-plane for two breadths, a solid wedge between three axes for
 three. The ray is the relation; the length along it is the scale the division takes out.
+- **The wedge is made at every observation** (Tom, 8 October: "the question how do the 8 wedges compose into a unit sphere. the answer they dont, that is just visualization of the complete system. the wedge is created at every observation."). A reading of breadths builds its own wedge, there and
+  then: the addressing scheme of R159, built from the relations at one standpoint. The order runs observation, wedge,
+  relations, normalization, picture. The sphere is not built from wedges; it is the picture of all the wedges that could
+  be built, seen from nowhere.
 - **No facing.** The wedge favours no breadth. A facing is a choice of the breadth to divide by: s = v/h is the wedge
   read facing h, and it breaks the symmetry the wedge has.
 - **The drawings are cuts.** The quarter circle, the sphere's octant, the unit square's arms, the cube's faces and the
@@ -1080,10 +1085,13 @@ reader a sign is which way a signal comes from (ahead or behind, left or right, 
 its relation (R37, R173). A continuous signal with no radial expression *carries* no signs, so it lies on one sweep;
 a reader that has *seen* none cannot yet tell it from one whose other side has not arrived (below). That is the line, and the unit sweep is the unit line ("The unit line is the sweep itself"), so Tom's line and the one-facing case are one thing.
 
-**The facings are the wedges** (Tom, 8 October: "how many wedges in a sphere?"). The axes cut space into one wedge per
-choice of signs: 2 on a line, 4 in a plane, 8 in space, 2ⁿ for n breadths, which are the facings counted above. A share
-is never negative, so every relation of n breadths lies in the one all-positive wedge (§1, "The wedge is the
-primitive"); the others are the same wedge reached by signs, each a mirror of it. Within a wedge the corner planes make
+**The facings are the wedges** (Tom, 8 October: "how many wedges in a sphere?", and then: "they dont [compose into a
+unit sphere], that is just visualization of the complete system. the wedge is created at every observation."). Every
+observation makes one wedge, all-positive within itself (a share is never negative, §1, "The wedge is the primitive").
+The facing it was made in, ahead or behind, left or right, above or below, is its sign. Drawn together from nowhere, the
+wedges of all possible facings fall into one per choice of signs: 2 on a line, 4 in a plane, 8 in space, 2ⁿ for n
+breadths. Those are the facings counted above, each a mirror of the others. They are not pieces that compose a sphere:
+the sphere is the picture of the complete system, and each wedge is made by an observation of its own. Within a wedge the corner planes make
 n! chambers: 2 in the plane and 6 in space, so 8 and 48 in all, the square's and the cube's symmetries.
 
 - **Counting returns does not tell the circle from the sphere.** One might count the quarter sweeps before the signal
