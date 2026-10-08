@@ -2158,6 +2158,10 @@ detail**. Why:
   covers. So the level of detail belongs to the address, never to the payload (§4.3, "addresses, not payloads"). Physics
   agrees on this point: with nothing in between, the brightness per unit of view of an extended object is the same at any
   distance; farther, it covers fewer grains, each as bright as before.
+  So smaller means less is **captured**, not less sent (Tom, 8 October: "yes, we are capturing less information about it. smaller means less detail is captured about it."). Counted: each doubling of distance lowers the level of
+  detail by one and divides the grains the thing covers by 2 in one direction of reading, by 4 in two (v and v₂, one level
+  splitting a cell into four, §1), so the information captured about it falls in the same proportion; the object's own
+  information is unchanged.
 - **Depth, the slider and the level of detail** (Tom, 8 October: "we have describe g as the slider between the unit circle and the shape."; "so depth is the difference between situation 2 and situation 1."; "but it seems to be [0,1] in unsituated view and [0,PI/2] in situated view."). Depth is B(θ) − 1, the shape less the unit circle:
   situation 2 less situation 1. The slider between them is R140's (written g then; m since R170, §2.1): r = 1 + m · (B − 1),
   m = 0 the circle, m = 1 the shape (R121: "the radius from 1 to the breadth"). With the whole held (unsituated), m is a
