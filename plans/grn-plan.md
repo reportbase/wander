@@ -388,3 +388,34 @@ while both stars stay lit, so v₉₅ = a/0.95 whatever the light. The law bring
   the pair shrinks and its light thins, so it is lost sooner than size alone says, at v* ∝ (a²F₀)^(1/4). For a reader
   with no reach, the corner is fixed by the grain at any light. Either way the inverse-square law brings no scale of its
   own; the switch is the reader's.
+
+### Run 8 (8 October, `grn.run8()`, seed 88): P1, P2 and P3 not killed
+
+| light F₀ (a = 1) | v*, given the shape | closed form √(a√F₀/c) | v₉₅, model-free |
+|---|---|---|---|
+| 625 | 3.48 | 3.50 | 1.050 |
+| 2,500 | 5.04 | 4.95 | 1.053 |
+| 10⁴ | 7.05 | 7.00 | 1.056 |
+| 4·10⁴ | 10.11 | 9.90 | 1.049 |
+| 1.6·10⁵ | 14.02 | 14.00 | 1.052 |
+
+| separation a (F₀ = 10⁴) | v*, given the shape | closed form |
+|---|---|---|
+| 0.5 | 4.93 | 4.95 |
+| 1 | 7.11 | 7.00 |
+| 2 | 10.22 | 9.90 |
+| 4 | 14.18 | 14.00 |
+
+- **P1 not killed.** v* against F₀: log-log slope 0.251, against 0.25 ± 0.08.
+- **P2 not killed.** v* against a: slope 0.510, against 0.50 ± 0.12. Size alone would have given 1.
+- **P3 not killed.** The model-free reader's v₉₅ lies between 1.049 and 1.056 at every light, against a/0.95 = 1.053
+  (within 0.4%), with slope against F₀ of −0.000005.
+- **Reported.** The closed form with run 7's c = 2.04 matches v* within 3% everywhere. The margin s/limit was not computed
+  separately; its 1/v² fall past the corner follows from P1 and P2 with run 7's law.
+
+**What it says.** Joined to the inverse-square law, a reader with reach below its grain loses a receding pair at
+v* ∝ (a²F₀)^(1/4): distance costs twice past the corner, in size and in light, so the pair is lost sooner than its size
+alone would say. A reader with no reach loses certainty exactly where the pair is one grain across, at any light. The law
+contributes no scale of its own in either case: the switch is set by the reader's grain, and moved only by the light the
+reader has to read with. Synthetic, Claude's set-up; the two readers and the law are standard, and the inverse-square law
+itself is put in, not tested.
