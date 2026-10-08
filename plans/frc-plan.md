@@ -114,3 +114,25 @@ adjacent levels: ⅓ is named, but so is ¼, which cuts the part [0, ⅓]. The p
 1) and in exact fractions (run 2). Each further operation brings in a number the base does not: a chosen cut, a root,
 counting (a factor of 3 within two rounds), or the sweep's 2/π. Still bookkeeping: whether the geometry supplies only the
 base operations is the premise, untouched by either run.
+
+### Run 3: is 2 the only split with no case analysis? (prediction written 8 October, before run 3; Tom: "yes")
+
+Tom: "computer science has a concept of pre-compute. that is the proof technique. does 2 allow us to do recursion without
+runtime logic. is 2 unique in that ability or do other number provide this capbiality as well?" A closed form for the
+level exists for every ratio, and in SPN's place coordinate the corner bisects a level of any ratio, so neither singles out
+2. The test here is stricter: a recursion has no runtime logic when **every child is the same child**, so one precomputed
+structure is reused and nothing asks "which kind of child is this?". Split a level into b equal parts, and sort the parts
+into kinds under the level's own symmetries: two parts are of one kind when a symmetry carries one to the other.
+
+- **The level** (an open run, home and far wall of different kinds): symmetries {identity, flip} (R162), the flip sending
+  part i to part b − 1 − i.
+- **The full turn** (situation 1, nothing situated): symmetries the rotations by whole parts and the flip.
+
+b = 2 to 6, one split each.
+
+- **P1 (the kill).** On the level, b = 2 is the only split with one kind of part; every b ≥ 3 has at least two kinds (the
+  flip pairs outer parts and fixes a middle one, or pairs parts that are not all alike). Killed if some b ≥ 3 has one kind.
+- **P2.** On the full turn every b has one kind: the circle prefers no ratio.
+- **P3 (reported).** For odd b the parent's corner lies inside the middle part, which is why that part is of its own kind;
+  for even b it lies on a cut. b = 4 in one step has two kinds; as two halvings, each step has one: compound dyadic splits
+  are uniform level by level, which is the sense in which 4, 8, … are "the same 2".

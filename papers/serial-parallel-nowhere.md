@@ -321,6 +321,17 @@ moves (3), an unequal split that favours a facing (φ), or a root (√2), each a
 - **The premise, in compile-time terms:** the primitive geometry contains no numerical choice from which another branching
   factor could be compiled. If that can be made rigorous, 2 is a structural fact about the compile-time geometry, not a
   number it computes.
+- **Unique: every child the same child** (Tom, 8 October: "computer science has a concept of pre-compute. that is the proof technique. does 2 allow us to do recursion without runtime logic. is 2 unique in that ability or do other number provide this capbiality as well?"). Every ratio has a closed form for its level, and in the place
+  coordinate the corner bisects a level of any ratio, so neither singles out 2; nor does efficiency (the classic radix
+  economy is best at e, and at 3 among whole numbers). The test that does is "no case analysis": a recursion runs with no
+  runtime logic when every child is the same child, one precomputed structure reused. Split a level into b equal parts.
+  Its symmetries are the identity and the flip (R162), and the flip sends part i to part b − 1 − i. At b = 2 the two
+  halves are mirror images, the corner lies on the cut, and one structure with one bit, the facing, describes both. At
+  any b ≥ 3 the parts fall into at least two kinds (for odd b the middle part holds the parent's corner), so the descent
+  must ask which kind it is in: a runtime "if". So 2 is the only split in which every child is the parent's image under
+  the level's own symmetry. It rests on the level being an open run, home and far wall of different kinds (*The Cauchy*
+  §2): on the full turn, where rotations are symmetries too, b equal arcs are alike for every b, so the unsituated circle
+  prefers no ratio, and the 2 belongs to the situated reader. Checked by FRC run 3 (`plans/frc-plan.md`).
 - **Premises a proof must defend:** that only fixed points are named for free; R162 (ruled, not derived); and that the next
   level nests in a named part.
 - **Kill:** a ratio other than 2ᵏ whose levels can be laid from the flip, its fixed point and nesting alone.
