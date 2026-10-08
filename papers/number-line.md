@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, forty-third: §4, a level of detail is a doubling, so the request is a count k and can be precomputed (Tom).
 - 8 October, forty-second: §4, the exit is the level of detail the reader requests, not the payload's depth, which never runs out (Tom).
 - 8 October, forty-first: §4, the exit is runtime logic, set by the depth and the level of detail; Tom's earlier "no exit" corrected (Tom).
 - 8 October, fortieth: §4, the levels known everywhere, laid only where there is depth; none on the unit circle (Tom).
@@ -570,6 +571,10 @@ by side, with no ruling on the word:
   level is chosen, and the descent stops there; the request is the reader's, not the payload's. Three times, then: the
   geometry's levels, the reader's request, the payload's values. On this paper's line, a number written to a requested
   number of digits is the plain case; the ordinary line, laying every level, is the line with no request.
+- **A level of detail is a doubling; the request is a count** (Tom, 8 October: "maybe we can show the LOD is inherintly doubles and halvings. just pick how many doublings of detail you want. that can be pre-computed."; "but LOD can be shown to be doubling of the previous level. so you need to pick the doubling that you want, which is what LOD is."; SPN, "Corollary", under the central open
+  question). Each step of detail is the next level, the last one halved, one bit: which side of the corner. So a request
+  is an integer k, how many doublings, and the descent to it can be precomputed: writing a number to k binary digits. It
+  follows from the dyadic levels and is not a separate argument for them.
 - **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
   other is a held thing's remainder, entered where found. They are not ruled the same or different.
 

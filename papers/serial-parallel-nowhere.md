@@ -26,7 +26,9 @@
 > and cannot be the exit. The reader requests a level of detail, and that is the exit: the reader's, not the payload's.
 > So there are three times, not two: compile time, the geometry (the levels); the request, the reader (how far to
 > descend, its level of detail); runtime, the payload (the values met there). The "if" is the request's, and it asks
-> nothing of the payload.
+> nothing of the payload. And the request is a count of doublings, k, fixed before anything arrives, so the descent
+> is a loop of fixed length: only the payload's values are runtime (Tom: "just pick how many doublings of detail you
+> want. that can be pre-computed").
 
 *Tom Brinkman, with Claude. Working paper. Rewritten 1 October 2026 around the rulings of that evening (R153–R158); revised 2 October to foreground the inversion at the corner as the main contribution (§3.2, R161), and again that
 morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the situations restated on the sweep alone (§2.1, Tom's list 0–4) and the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 or 4 has a horizon and recursion where situations 1 and 2 have neither. Revised 8 October with
@@ -38,7 +40,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (the central open question), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -355,6 +357,18 @@ no other primitive could generate another ratio; it claims that SPN's do not.
    v/h = 1, 2, 4, 8, …, and the recursion needs no new number at any level. A ratio of 3, φ or 2/π needs a cut that only
    a measure or a chosen number supplies, and step 2 says neither is there before payload. So the existing primitives
    generate only 2.
+
+*Corollary: a level of detail is a doubling, and the request is a count* (Tom, 8 October: "maybe we can show the LOD is inherintly doubles and halvings. just pick how many doublings of detail you want. that can be pre-computed."; "but LOD can be shown to be doubling of the previous level. so you need to pick the doubling that you want, which is what LOD is."; Claude's wording, unruled). A
+level of detail is a level: one step of detail is the next level, and by step 3 that is the parent halved. Read as a
+question, the step is one bit per cell, which side of the corner, the one question a level can ask with no measure; one
+bit halves the cell. So a level of detail is a doubling of the previous one, and to request a level of detail is to pick
+which doubling: an integer k. The request is made before payload too, from the same inventory (step 1 applied to it), so
+it cannot say "a third of h": that needs a measure or a chosen number. With k fixed, the descent is a loop of fixed length,
+which can be unrolled in advance, a branch that depends on no data. So the levels and where to stop are both known before
+anything arrives; only the values met there are runtime. This follows from the proof and is not evidence for it: using
+"levels of detail double" to argue for the 2 would be circular. Mipmap levels, a map's zoom levels and a float's mantissa
+bits are counted the same way. Graphics also blends two mip levels by a fractional weight (trilinear filtering); that
+weight is computed from the scene, a measure at runtime, as step 2 says it must be.
 
 What this changes: "the next level is exactly the parent's back half", written at the opening ("Units") as the layout's
 rule and not a theorem, becomes step 3, conditional on step 2. What follows in this entry (the first sketch, the count of
@@ -2188,7 +2202,9 @@ not that.
   detail, and the descent stops there: no need to recurse past it. The request is the reader's and has nothing to do with
   the payload, so the earlier "geometry cannot know the depth without the payload" is true but moot: the exit is not set
   by the depth. In SPN's terms the request is the reader's grain, the h it holds (GRN, `plans/grn-plan.md`), which is in
-  the inventory before anything arrives. "Always something there" is Tom's premise about the world, the payload, not
+  the inventory before anything arrives. And the request is a count: a level of detail is a doubling of the previous one,
+  so to request one is to pick which doubling, k (Tom; "Corollary: a level of detail is a doubling", under the central
+  open question). With k fixed the descent is a loop of fixed length, precomputable. "Always something there" is Tom's premise about the world, the payload, not
   derived; it agrees with the horizon having no last level (§2.1, "Why the recursion"; `plans/resolution-recursion.md`). Graphics does the same with a mipmap: the pyramid of halved
   images is precomputed once, and the level used is chosen per pixel at draw time, by how much of the image the pixel
   covers. The flying page's relief bands are this rule (`bandW`). Mipmaps are halved by convention, so they illustrate the
