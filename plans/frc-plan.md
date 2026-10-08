@@ -79,3 +79,19 @@ non-dyadic point, and the sketch's step "the only free cut is at the corner" is 
 dyadic and nothing else; each other ratio enters with an operation the sketch says is supplied at runtime (a chosen number,
 a root, counting, a constant). It is a check of the sketch's arithmetic, not a proof: the premise that the geometry
 supplies only the flip, its fixed point and nesting is what a proof must defend, and the run cannot.
+
+### Run 2: the arithmetic row without the cap (prediction written 8 October, before run 2; Tom: "yes, run frc")
+
+Run 1 capped each level at 400 named points, keeping the smallest, which cut off points near 1 (my set-up). Run 2 drops
+the cap and bounds the work another way: points are kept as exact fractions, arithmetic runs two rounds, and a point whose
+denominator exceeds 64 is dropped. Ratios are kept as exact fractions, and their prime factors reported. The base and the
+other rows are rerun with exact fractions where they can be (the root and 2/π rows stay in floating point).
+
+**Informed by run 1, and said so.** Run 1's P2 said 3 itself would appear with arithmetic. It cannot appear between
+adjacent levels: ⅓ is named, but so is ¼, which cuts the part [0, ⅓]. The prediction is restated as a factor.
+
+- **P1 (the kill, again).** The base alone gives only powers of 2, now checked with exact fractions, to depth 6.
+- **P2a (a kill for my account of arithmetic).** With arithmetic, ratios with a prime factor other than 2 appear, and 3
+  is among those factors. Killed if no ratio has a factor of 3: then arithmetic on named points does not open the ratios I
+  said it does.
+- **P2b (reported).** Which primes appear with arithmetic; and, for the root row, which forms √2 takes among the ratios.
