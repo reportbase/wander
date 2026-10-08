@@ -12,7 +12,8 @@ shared ruler (§1), and readers who must talk to each other need one. This paper
 and what it is not built for, in SPN's terms. Saying where a tool fits is not a complaint against it. In one line, the
 chain it follows: reality → observation → relation → address → number line. The line is a public abstraction made from a
 way of relating to magnitude, as the sphere is a picture made from wedges (§8); it is not the structure of observation
-itself, and it does not need to be.
+itself, and it does not need to be. In SPN's terms (Tom, 8 October: "geometry is not runtime, it is compile time"): the
+geometry is compile time, the readings are runtime, and the ruler is agreed on after both, between readers.
 
 **Iterations**
 
@@ -60,6 +61,7 @@ itself, and it does not need to be.
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, thirty-seventh: the purpose, with geometry as compile time and the ruler agreed after it (Tom).
 - 8 October, thirty-sixth: §7, a route to forcing 2 and FRC run 1 (only powers of 2 from the flip, its fixed point and nesting).
 - 8 October, thirty-fifth: §4, the recursing line's levels are geometry (precomputed, an identity) and "as needed" is the reader's runtime exit; what that says for the 2 (Tom).
 - 8 October, thirty-fourth: the paper's purpose stated at the top (explain, not criticize); §1, the ruler and the rules (since cut to an illustration: the mystery may be in the ruler); wording that read as fault-finding recast as what the line is built for (Tom).
