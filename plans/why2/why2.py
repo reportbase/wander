@@ -90,3 +90,52 @@ def run2(seed=102):
         nl = np.array([exact_confirm(rho, s, luck=False) for s in S0])
         out.append((rho, sim.mean(), sim.max(), ex.mean(), ex.max(), nl.mean(), nl.max()))
     return out
+
+
+def exact_confirm_d(rho, s0, k=3, d=1):
+    """Run 3: as exact_confirm, but a look at grain i reads a d-dimensional field, costing rho**(d*i); ratio against s0**-d."""
+    total, reach, i = 0.0, 1.0, 0
+    while reach > 1e-15:
+        p = min(s0 * rho ** i, 1.0)
+        total += reach * sum(p ** j for j in range(k)) * rho ** (d * i)
+        reach *= 1 - p ** k
+        i += 1
+    return total * s0 ** d
+
+
+RHOS3 = [round(1.1 + 0.05 * j, 2) for j in range(59)] + [5, 6, 8]
+
+
+def run3_cell(k, d):
+    rows = []
+    for rho in RHOS3:
+        r = np.array([exact_confirm_d(rho, s, k, d) for s in S0])
+        rows.append((rho, r.mean(), r.max()))
+    bm = min(rows, key=lambda x: x[1])
+    bw = min(rows, key=lambda x: x[2])
+    flat = [x[0] for x in rows if x[1] <= bm[1] * 1.03]
+    return {'best_mean': bm[0], 'mean': bm[1], 'best_worst': bw[0], 'worst': bw[2], 'flat': (min(flat), max(flat)),
+            'at2': next(x for x in rows if x[0] == 2.0)[1:]}
+
+
+def simulate_confirm_d(rho, s0, rng, k=3, d=1):
+    cost = np.zeros(TRIALS)
+    alive = np.ones(TRIALS, bool)
+    i = 0
+    while alive.any():
+        p = min(s0 * rho ** i, 1.0)
+        ok = alive.copy()
+        for _ in range(k):
+            cost[ok] += rho ** (d * i)
+            ok &= rng.random(TRIALS) < p
+        alive &= ~ok
+        i += 1
+    return float(np.mean(cost * s0 ** d))
+
+
+def run3(seed=103):
+    out = {(k, d): run3_cell(k, d) for d in (1, 2, 3) for k in (2, 3, 4, 5)}
+    rng = np.random.default_rng(seed)
+    s = S0[100]
+    check = (simulate_confirm_d(1.5, s, rng, 3, 2), exact_confirm_d(1.5, s, 3, 2))
+    return out, check

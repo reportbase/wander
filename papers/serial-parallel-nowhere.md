@@ -10,7 +10,11 @@
 > Near and far are one geometry, read from either side.
 
 *Tom Brinkman, with Claude. Working paper. Rewritten 1 October 2026 around the rulings of that evening (R153–R158); revised 2 October to foreground the inversion at the corner as the main contribution (§3.2, R161), and again that
-morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the situations restated on the sweep alone (§2.1, Tom's list 0–4) and the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 or 4 has a horizon and recursion where situations 1 and 2 have neither.*
+morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the situations restated on the sweep alone (§2.1, Tom's list 0–4) and the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 or 4 has a horizon and recursion where situations 1 and 2 have neither. Revised 8 October with
+Tom's remarks of 7–8 October, worked out first in `papers/number-line.md`: each breadth a ratio of its own whole, the
+angle, and the situated reader's V = H making a unit circle that is not situation 1 (§1); the wedge as the primitive,
+with the circle and the sphere as drawings of it (§1); the facings as wedges (§2.1); and WHY2, synthetic runs on what
+fixes the 2 (the central open question, Appendix C).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -272,6 +276,23 @@ almost never shorter than its h. Stopped there: a fourth rule chosen after three
 correction above, the reason is plain: whatever rule places the children fixes the ratio, and the builder chooses the
 rule. The 3d bench's finding that the best ratio follows the scene points the same way.
 
+**After WHY2 (7–8 October; `plans/why2-plan.md`; synthetic, Claude's set-up, each run predicted first; Tom: "synthetic
+test are fine").** Unlike HRT, no rule places a child: the reader chooses its own step. A reader that cannot know where
+its corner is looks at a system far below it, stepping its grain finer by a ratio ρ each look and paying for every grain
+it reads; the question is which ρ costs least.
+- **Content with a first sighting** (run 1): no preferred step; finer is better, both predictions killed. Below the corner a
+  "two" comes by chance, and a slow creep finds it near the ideal price.
+- **Needing a sure reading** (run 2, three looks at the grain where "two" first shows): the cheapest step is about 2, best
+  on average (4.68 times the ideal) and within 0.2% of the best at worst.
+- **Robust to the confirmation rule, but one-dimensional** (run 3, 8 October): with two to five looks the cheapest step
+  on average stays at 2. If a look costs a whole image or volume while the "two" lies along one direction, it falls to
+  about 1.25–1.35 or toward 1.1: luck below the corner is cheap there.
+
+So, under this cost, levels one doubling apart are what it costs least to be sure, for a reader that pays for what lies
+along the direction it resolves. That is a candidate answer to the open question, not a ruling: the valley is broad
+(1.65 to 2.5 within 3%), the price is one model, and which price is a reader's is now the open part. The builder chose
+the cost model, not the ratio.
+
 **If h is not this, the candidates are few:**
 
 | candidate | what it conflicts with |
@@ -429,6 +450,58 @@ The reading, its marks and the division that makes it belong to the situated rea
 not divide: there h and v are each read relative to the other, and there is no home or horizon of any kind (R131). It
 does have a corner, v = h at 45°, computed from the known breadths and arrived at exactly, not found by a reader
 (Tom, 6 October: 1 and 2 "have a corner, … you can arrive at the corner, it is algorithmic, they have no horizon however, h and v are known").
+
+**The wholes and the angle** (Tom, 8 October: "h = [0,1] v = [0,1] -> [0,PI/2]. H = breadth of h, V = breadth of view.
+h is a ratio of H. v is a ratio of V. in the situated view V = H."). Each share is a ratio of its own whole: v of V, h of
+H. The pair maps to an angle θ = atan(v/h) in [0, π/2], and g is that angle as a share of the quarter turn,
+θ/(π/2) (§3.5). Written with the raw breadths, θ = atan((v_raw/h_raw)·(H/V)), so the 45° corner falls where
+v_raw/h_raw = V/H.
+- **Unsituated (1, 2).** Both wholes are known, and may differ; the corner is computed at V/H, as above.
+- **Situated (3, 4): V = H creates the unit circle, not situation 1** (Tom, 8 October: "in the situated view, we are
+  setting v = h or v = h = f. we are creating situation 1", then: "right, not actually situation 1, v is still unknown,
+  but we are creating the unit circle by doing this"). A situated reader holds one unit and no whole of the system, so
+  it takes that unit as the whole in every direction, V = H. That creates a unit circle, with its corner at s = 1 and
+  its sweep: this is why g, the quarter turn, applies to a situated reader at all. It is not situation 1. v is still
+  unknown, and the circle's radius is the reader's unit, not the system's breadth. Situation 1 has only the near field
+  (Tom, 7 October: "situations 1 and 2, dont have both the near and far fields, only the near field"): past 45° its
+  circle is the near field mirrored. The reader's unit circle holds the far field there, from the corner to the
+  horizon squeezed into levels (§3.3).
+
+| | situation 1 | a situated reader's unit circle |
+|---|---|---|
+| the whole | the system's breadth, known | the reader's own unit, V = H |
+| 0° to 45° | near field | near field |
+| 45° to 90° | near field, mirrored | far field, squeezed into levels |
+| the corner | computed | approached, never found (§3.1) |
+
+- **The origin.** v = h = 0 has no angle: nothing of either, situation 0.
+
+**The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't
+need to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all
+the ways the three systems relate to one another. and in this case it is the wedge."). Every pair of shares is a ray
+from the origin into the wedge between the axes: a quarter-plane for two breadths, a solid wedge between three axes for
+three. The ray is the relation; the length along it is the scale the division takes out.
+- **No facing.** The wedge favours no breadth. A facing is a choice of the breadth to divide by: s = v/h is the wedge
+  read facing h, and it breaks the symmetry the wedge has.
+- **The drawings are cuts.** The quarter circle, the sphere's octant, the unit square's arms, the cube's faces and the
+  flat triangle are each the wedge cut one way, and each cut is a normalization (`plans/normalizations.md`). Their
+  numbers belong to the cut, not to the wedge: the quarter arc and the octant both measure π/2, a property of the cut by
+  length, not of relations.
+
+| cut the wedge by | two breadths | three breadths | normalized by |
+|---|---|---|---|
+| length = 1 | the quarter circle, π/2 | the sphere's octant, area π/2 | the whole length |
+| largest = 1 | the unit square's two arms, 2 ("2h in place") | the unit cube's three faces, area 3 | the largest breadth |
+| sum = 1 | a segment, √2 | a flat triangle, √3/2 | the sum, as a probability |
+| one breadth = 1 | the reading s = v/h on [0, ∞) | the odds plane, v/h and f/h | one breadth: a facing |
+
+- **The corner is a ray.** v = h, or v = h = f, is the wedge's central ray. With three breadths each pairwise corner
+  (v = h, h = f, v = f) is a plane through it, and the three cut the wedge into six chambers, one per ordering.
+- **Three breadths, as angles.** v, h, f in [0, 1] map to the wedge; drawn on the sphere, to the first octant. As two
+  angles, φ = atan(v/h) and θ = atan(f/√(v² + h²)), each in [0, π/2]. Any pair of angles favours one breadth and has a
+  pole (here the f-axis has no φ), so the angles name the rays and are not the primitive. The central ray sits at
+  φ = 45°, θ = atan(1/√2) ≈ 35.3°. A situated reader with three directions has V = H = F.
+- The same is drawn in `sphere.html` and worked through in `papers/number-line.md` §8.
 
 **What situated observation consists of** (R125). The unsituated view has x, y and z, three orthogonal
 dimensions, any of which a rotation turns into another. Situated observation is not built that way and is not a
@@ -1006,6 +1079,12 @@ signal how many of its parts ever change sign independently. Each such part doub
 reader a sign is which way a signal comes from (ahead or behind, left or right, above or below), and the magnitude is
 its relation (R37, R173). A continuous signal with no radial expression *carries* no signs, so it lies on one sweep;
 a reader that has *seen* none cannot yet tell it from one whose other side has not arrived (below). That is the line, and the unit sweep is the unit line ("The unit line is the sweep itself"), so Tom's line and the one-facing case are one thing.
+
+**The facings are the wedges** (Tom, 8 October: "how many wedges in a sphere?"). The axes cut space into one wedge per
+choice of signs: 2 on a line, 4 in a plane, 8 in space, 2ⁿ for n breadths, which are the facings counted above. A share
+is never negative, so every relation of n breadths lies in the one all-positive wedge (§1, "The wedge is the
+primitive"); the others are the same wedge reached by signs, each a mirror of it. Within a wedge the corner planes make
+n! chambers: 2 in the plane and 6 in space, so 8 and 48 in all, the square's and the cube's symmetries.
 
 - **Counting returns does not tell the circle from the sphere.** One might count the quarter sweeps before the signal
   comes back to where it started: four for the circle. But four quarter turns about one axis also come back on the
@@ -4465,6 +4544,15 @@ From 6 October (the audit of Part I, the run for the 2 and number lines; `plans/
   1–5 a signal.
 - *The corner describes number-line placement better than proportion judgment* (NLE P1, Chan and Mazzocco, Time 1).
   Killed: 53% for proportion judgment; *a front side in proportion shows* (P1b) failed too, 8%.
+
+From 7–8 October (WHY2, what fixes the 2; `plans/why2-plan.md`):
+
+- *Against the worst case the best step is 2; on average about e* (run 1, P1 and P2). Both killed: with a first, possibly
+  lucky, sighting the best step was the finest tested (1.25 on average, 1.5 at worst).
+- *A reader that never gets lucky gives 2 at worst and e on average, by construction* (run 2, a check). Wrong: 1.5 at
+  worst, 2 on average; the confirming looks change the classic sums.
+- *In an image the cost of a look doubles, not the grain* (run 3, P2). Not killed by its range (the best step, 1.25, sat on
+  its edge), but its reason failed: the cost stepped by about 1.56.
 
 ## References
 

@@ -46,6 +46,11 @@ ruled.*
 - 7 October, twenty-fourth: situations 1 and 2 have only the near field (Tom); Background, the circle's table, the unit square and the ruler updated.
 - 7 October, twenty-fifth: §8, the sphere: three breadths, the octant, six chambers and a triple corner, the unit cube, depth as relief (Tom).
 - 7 October, twenty-sixth: §8, a demo: `sphere.html` (Tom: "create a demo for the sphere, that brings it all together").
+- 8 October, twenty-seventh: §5 and §7, WHY2 run 3: the 2 holds for every confirmation rule in one dimension, and not in two or three.
+- 8 October, twenty-eighth: Background and §8, the breadths and the angle; in the situated view V = H (Tom).
+- 8 October, twenty-ninth: §8, the sphere's clean statement, beside the plane's (Tom: "whats clean statement for a sphere").
+- 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
+- 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 
 ## Background from SPN
 
@@ -55,6 +60,30 @@ account; nothing below is new. R-numbers are Tom's rulings, listed with their da
 **The two breadths and the reading.** A reader compares two magnitudes: **h**, the one it holds as its unit, and
 **v**, the one it reads. Its reading is the relation **s = v/h**. Dividing removes the common scale and leaves only the
 relation, which is why a reading carries no units.
+
+**The breadths and the angle** (Tom, 8 October: "h = [0,1] v = [0,1] -> [0,PI/2]. H = breadth of h, V = breadth of
+view. h is a ratio of H. v is a ratio of V. in the situated view V = H."). Each breadth is taken as a ratio of its own
+whole: v = v_raw/V, h = h_raw/H, both in [0, 1]. The pair maps to an angle θ = atan(v/h) in [0, π/2], and the sweep is
+that angle rescaled, g = θ/(π/2).
+- **Where the corner falls.** In general θ = atan((v_raw/h_raw)·(H/V)), so the 45° corner falls at v_raw/h_raw = V/H.
+- **The situated view.** A situated reader holds one unit, so V = H is forced, not chosen, and its corner is at s = 1:
+  the angle depends on the relation alone, with no breadth in it.
+- **Setting V = H creates the unit circle, not situation 1** (Tom, 8 October: "note that in the situated view, we are
+  setting v = h or v = h = f. we are creating situation 1." and, on reflection: "right, not actually situation 1, v is
+  still unknown, but we are creating the unit circle by doing this."). With no whole of the system to hold, the situated
+  reader takes its own unit as the whole in every direction, V = H (= F). That creates a unit circle, with its corner at
+  s = 1 and its sweep, which is why the sweep applies to a situated reader at all. It is not situation 1: v is still
+  unknown, and the circle's radius is the reader's unit, not the system's breadth.
+
+  | | situation 1 | the situated reader's unit circle |
+  |---|---|---|
+  | the whole | the system's breadth, known | the reader's own unit, V = H |
+  | the front half, 0° to 45° | near field | near field |
+  | the back half, 45° to 90° | near field, mirrored | far field, squeezed into levels |
+  | the corner | known | approached: where the signal equals the unit |
+- **The unsituated view.** A reader in situations 1 or 2 knows both breadths, which may differ (a frame wider than it is
+  tall), and its corner sits at s = V/H.
+- **The origin.** v = h = 0 has no angle: nothing of either breadth, situation 0.
 
 **The flip and the corner.** Reading the same pair the other way round, h against v, sends s to 1/s: **the flip**, the
 swap of the two **facings**. It has one fixed point, s = 1, where v = h: **the corner**. In plain words: below the
@@ -78,7 +107,9 @@ level (R163), and situations 1 and 2 are that one level and nothing past it.
 **The sweep.** The relation laid on a bounded scale: **g = (2/π)·atan(s)**. It runs from 0 (home) through ½ (the corner)
 toward 1 (the horizon). The flip becomes g ↔ 1 − g, so the sweep treats both facings alike. SPN's R162 takes that
 fairness as a ruling; it is the circle's own symmetry, since swapping v and h reflects the circle across its 45° line.
-The sweep is also called **the unit line**: the bounded line on which an unbounded one is laid.
+The sweep is also called **the unit line**: the bounded line on which an unbounded one is laid. The circle is one
+drawing of the relation; the primitive is the wedge between the two axes, each pair a ray into it (§8, "The wedge is
+the primitive").
 
 **Levels.** Past the corner the reading is held in **levels**, each one doubling wide (1 to 2, 2 to 4, 4 to 8, …).
 Each level is the same sweep again, with its own home, corner and far wall. By the flip, levels also run inward toward
@@ -707,6 +738,11 @@ the reader move his h unit like a slider to get a better read on the situation")
 
   So, under this cost, doubling is what it costs least to be sure. The valley is broad: steps from 1.75 to 2.5 cost
   within a few per cent. One cost model, synthetic, not ruled.
+  - *Robust to the confirmation rule* (run 3): with two to five looks in all, the cheapest step on average stays at 2
+    (2.05 with two), and at worst 1.65 to 1.85.
+  - *But one-dimensional* (run 3): if a look costs a whole image or volume while the "two" is found along one direction,
+    the best step falls to about 1.25 to 1.35 (an image) or toward 1.1 (a volume). Luck below the corner is cheap there.
+    So the doubling belongs to a reader that pays for what lies along the direction it resolves.
 
 ## 6. What would test it
 
@@ -729,9 +765,9 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   for children (Siegler and others, 2011). Is the inward side read as a second window, with its own unit (½, a tenth)?
 - **Zero and the negatives.** Is 0 home, approached, or a point people hold exactly? Are the negatives the turned-away
   facing, met only by turning (serial), as §5 suggests?
-- **Is the 2 robust?** WHY2 found doubling cheapest for a reader that needs a sure reading, under one cost model and one
-  confirmation rule (three looks), with a broad valley from 1.75 to 2.5. Does the best step stay near 2 with two or
-  four confirming looks, or with other prices? (§5)
+- **What price fixes the 2?** WHY2 run 3: the cheapest step stays at 2 for every confirmation rule in one dimension,
+  but falls below 2 when a look costs a whole image or volume. Which price is a reader's: the direction it resolves, or
+  the whole field it looks at? (§5)
 - **Pricing slow-fading detail.** A reader pricing each level from its own noisy looks stops early where detail fades
   slowly (CAL runs 1 and 2, killed at r = 0.7). What estimate, if any, prices it well? (§4)
 - **Equality and the corner.** Is "equality of numbers that never conclude cannot be decided" the same fact as "a
@@ -751,6 +787,42 @@ and the baseline. dividing h and v, removes their scale, but gives you their rel
 circle. you can use that address to point back to the address on the shape, but only as a relation, the scale is lost
 forever. the same is also true for spheres. v,h,f [0,1][0,1][0,1]->[0,inf). lets explore the sphere."
 
+**The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't need
+to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all the
+ways the three systems relate to one another. and in this case it is the wedge."). Every triple of breadths is a ray from
+the origin into the wedge between the three axes; the ray is the relation, and the length along it is the scale that is
+lost.
+- **No facing.** The wedge favours no breadth. A facing is a choice of breadth to divide by (h, say, giving v/h and f/h
+  in [0, ∞)²), and it breaks the symmetry.
+- **The drawings are cuts.** The sphere, the cube and the flat triangle are cuts of the wedge, each a normalization
+  (`plans/normalizations.md`): by length, by the largest breadth, by the sum. Their numbers belong to the cuts, not to the
+  wedge.
+
+| cut the wedge by | you get | normalized by |
+|---|---|---|
+| length = 1 | the sphere's octant (the circle's quarter arc), area π/2 | the whole length |
+| largest = 1 | the unit cube's three faces (the square's two arms), area 3 | the largest breadth |
+| sum = 1 | a flat triangle (`sphere.html`, "the relation set, flat"), area √3/2 | the sum, as in probability |
+| h = 1 | the odds plane, v/h and f/h | one breadth: a facing |
+
+- **The corner is a ray.** v = h = f is the wedge's central ray; each pairwise corner (v = h, …) is a plane through it,
+  and the six chambers are six sub-wedges.
+- **The apex is situation 0:** the origin, where no ray starts.
+- **Angles name rays.** Any pair of angles is a way of naming the rays, not the primitive, which is why each pair picked
+  a pole and favoured a breadth (below).
+- **The plane is the same.** The quarter-plane between the v- and h-axes is the wedge of two breadths; the quarter
+  circle is one drawing of it.
+
+**How many wedges** (Tom, 8 October: "how many wedges in a sphere?"). The axes cut space into one wedge per choice of
+signs: 2 on a line, 4 in a plane, **8** in space, 2ⁿ for n breadths.
+- **Breadths fill one.** A breadth is never negative, so every relation of three systems lies in the (+, +, +) wedge.
+  The other seven are reached only by signed quantities: toward or away, in front or behind.
+- **The wedges are the facings by signs.** SPN §2.1: a reader tells 1, 2, 4 and 8 facings apart by counting the signs.
+  Those are the wedge counts for 0, 1, 2 and 3 signed breadths; each sign doubles them. A sign flip is a mirror, so the
+  wedges are copies of one another.
+- **Finer.** Within each wedge the corner planes make six chambers: 8 × 6 = 48 in all, the cube's symmetries (in the
+  plane, 4 × 2 = 8).
+
 **The plane, restated.** Two breadths in [0, 1]² give one relation, s = v/h in [0, ∞), or the angle θ in [0, π/2]: the
 quarter circle, length π/2. v = h is the corner. Dividing removes the scale and leaves the relation, an address on the
 unit circle. The address points back to the shape's point in that direction, r(θ), so the shape is recovered against
@@ -762,7 +834,32 @@ depth is the circle (or sphere); the **corner** is v = h.
 v/h and f/h in [0, ∞)², or two angles. In general n breadths leave n − 1 relations, and exactly one thing is lost: the
 scale. The address is still recovered, the size never.
 
-**The relation set is the first octant of the unit sphere.** A spherical triangle with three right angles; its area is
+**Three breadths and three wholes.** As in the plane (Background, "The breadths and the angle"), each breadth is a
+ratio of its own whole: v of V, h of H, f of F. A situated reader holds one unit, so V = H = F, and the triple corner is
+at v_raw = h_raw = f_raw. A reader that knows three different wholes finds its triple corner moved, to where each raw
+breadth is in proportion to its own whole.
+
+**The sphere's clean statement** (Tom, 8 October, asking for one beside the plane's). v, h, f ∈ [0, 1] → the first
+octant of the unit sphere, area π/2. H, V and F are the three breadths, v, h and f ratios of them; in the situated view
+V = H = F. As two angles: φ = atan(v/h), the turn in the v–h plane, and θ = atan(f/√(v² + h²)), the rise toward f, so
+(v, h, f) → (φ, θ) ∈ [0, π/2] × [0, π/2].
+- **The angles favour one breadth.** They take f as "up", which the sphere does not. The fair statement is the address
+  itself, (v, h, f) divided by its length: a point on the octant that treats the three alike. The angles name it.
+- **A pole.** In the plane only v = h = 0 had no angle. Here the f-axis (v = h = 0, f > 0) has a rise of 90° and no
+  turn; which axis is the pole depends on which breadth is called up. The origin, all three zero, is still situation 0.
+- **The triple corner is not at 45°, 45°.** v = h = f is at φ = 45°, θ = atan(1/√2) ≈ 35.3°. It is the octant's centre,
+  but the angle square is stretched (area π²/4, not π/2), so its middle is not the octant's.
+
+| | the circle | the sphere |
+|---|---|---|
+| breadths | v, h ∈ [0, 1] | v, h, f ∈ [0, 1] |
+| maps to | [0, π/2], length π/2 | the octant, area π/2 (as angles, [0, π/2]²) |
+| wholes | V, H | V, H, F |
+| situated view | V = H | V = H = F |
+| corner | 45° | the octant's centre: φ = 45°, θ ≈ 35.3° |
+| no address | the origin | the origin, and a pole for any pair of angles |
+
+**The wedge, drawn as the first octant of the unit sphere.** A spherical triangle with three right angles; its area is
 4π/8 = **π/2**, the same number as the quarter circle's length (2π/4). The match is a coincidence of two and three
 breadths: with four, the set measures 2π²/16 = π²/8.
 
