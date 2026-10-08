@@ -50,6 +50,7 @@ ruled.*
 - 8 October, twenty-eighth: Background and §8, the breadths and the angle; in the situated view V = H (Tom).
 - 8 October, twenty-ninth: §8, the sphere's clean statement, beside the plane's (Tom: "whats clean statement for a sphere").
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
+- 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 
 ## Background from SPN
 
@@ -67,6 +68,19 @@ that angle rescaled, g = θ/(π/2).
 - **Where the corner falls.** In general θ = atan((v_raw/h_raw)·(H/V)), so the 45° corner falls at v_raw/h_raw = V/H.
 - **The situated view.** A situated reader holds one unit, so V = H is forced, not chosen, and its corner is at s = 1:
   the angle depends on the relation alone, with no breadth in it.
+- **Setting V = H creates the unit circle, not situation 1** (Tom, 8 October: "note that in the situated view, we are
+  setting v = h or v = h = f. we are creating situation 1." and, on reflection: "right, not actually situation 1, v is
+  still unknown, but we are creating the unit circle by doing this."). With no whole of the system to hold, the situated
+  reader takes its own unit as the whole in every direction, V = H (= F). That creates a unit circle, with its corner at
+  s = 1 and its sweep, which is why the sweep applies to a situated reader at all. It is not situation 1: v is still
+  unknown, and the circle's radius is the reader's unit, not the system's breadth.
+
+  | | situation 1 | the situated reader's unit circle |
+  |---|---|---|
+  | the whole | the system's breadth, known | the reader's own unit, V = H |
+  | the front half, 0° to 45° | near field | near field |
+  | the back half, 45° to 90° | near field, mirrored | far field, squeezed into levels |
+  | the corner | known | approached: where the signal equals the unit |
 - **The unsituated view.** A reader in situations 1 or 2 knows both breadths, which may differ (a frame wider than it is
   tall), and its corner sits at s = V/H.
 - **The origin.** v = h = 0 has no angle: nothing of either breadth, situation 0.
