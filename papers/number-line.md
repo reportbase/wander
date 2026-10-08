@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, forty-seventh: §8, f is v₂, a second v read against the same h; the sphere is a reader with one unit reading in two directions (Tom).
 - 8 October, forty-sixth: §4, the eye: inversion a relabelling, the curved retina the bounded sweep, V1 the level of detail as proportion then logarithm (Tom).
 - 8 October, forty-fifth: §4, the reader sweeps its level of detail, proportional then logarithmic; SPN's derivation of 2 demoted (Tom).
 - 8 October, forty-fourth: §4, recursion considered and rejected for level of detail (Tom).
@@ -870,6 +871,19 @@ pertibuate create depth as they push away from the sweep of the unit line. depth
 and the baseline. dividing h and v, removes their scale, but gives you their relation and the address on the unit
 circle. you can use that address to point back to the address on the shape, but only as a relation, the scale is lost
 forever. the same is also true for spheres. v,h,f [0,1][0,1][0,1]->[0,inf). lets explore the sphere."
+
+**f is v₂, a second v** (Tom, 8 October: "so what is f. in v,h,f?"; "is f needed to define a sphere"; "thats weird that f is so unclear, we know f is needed, but what is it exactly?"; "ok, so it is v2"). The third breadth came in by symmetry, as a coordinate, and a coordinate has no
+role; v and h are clear because each has one: h is what the reader holds (its unit, V = H), v what it reads against it.
+A sphere needs a third quantity (its surface takes two relations, and two relations take three breadths up to the
+scale), and the third can take only one of the two roles. A second held unit is the unsituated view (situations 1 and 2,
+everything held); a situated reader has one unit. So for a situated reader f is **v₂**: a second thing read against the
+same h. The plane is one direction of reading, v/h; the sphere is two, v/h and v₂/h; the third relation, v/v₂, is their
+quotient and adds nothing. The triple corner v = h = v₂ is both readings at the unit. The eye fits: it holds its line of
+sight and reads two offsets across it, up and sideways, which is why its image is two-dimensional and its address on a
+hemisphere. An earlier answer to the same question took the third quantity as one of another kind, "relation, density
+and magnitude" (R106, R107; R107 withdrawn by R125); this one takes it as a second of the same kind. Open: whether v and
+v₂ are alike, or differ as the flat and upright hand do. The text below and §8's figures keep the letter f; read it as
+v₂ (and `sphere.html` keeps `?f=`).
 
 **The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't need
 to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all the

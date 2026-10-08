@@ -525,6 +525,19 @@ v_raw/h_raw = V/H.
 
 - **The origin.** v = h = 0 has no angle: nothing of either, situation 0.
 
+**f is v₂, a second v** (Tom, 8 October: "so what is f. in v,h,f?"; "is f needed to define a sphere"; "thats weird that f is so unclear, we know f is needed, but what is it exactly?"; "ok, so it is v2"). The third breadth came in by symmetry, as a coordinate, and a coordinate has no
+role; v and h are clear because each has one: h is what the reader holds (its unit, V = H), v what it reads against it.
+A sphere needs a third quantity (its surface takes two relations, and two relations take three breadths up to the
+scale), and the third can take only one of the two roles. A second held unit is the unsituated view (situations 1 and 2,
+everything held); a situated reader has one unit. So for a situated reader f is **v₂**: a second thing read against the
+same h. The plane is one direction of reading, v/h; the sphere is two, v/h and v₂/h; the third relation, v/v₂, is their
+quotient and adds nothing. The triple corner v = h = v₂ is both readings at the unit. The eye fits: it holds its line of
+sight and reads two offsets across it, up and sideways, which is why its image is two-dimensional and its address on a
+hemisphere. An earlier answer to the same question took the third quantity as one of another kind, "relation, density
+and magnitude" (R106, R107; R107 withdrawn by R125); this one takes it as a second of the same kind. Open: whether v and
+v₂ are alike, or differ as the flat and upright hand do. The text below and `number-line.md` §8 keep the letter f; read it as
+v₂ (and `sphere.html` keeps `?f=`).
+
 **The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't
 need to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all
 the ways the three systems relate to one another. and in this case it is the wedge."). Every pair of shares is a ray
@@ -2121,7 +2134,7 @@ detail**. Why:
   unruled). (1) *The inverted image is not the flip.* A lens turns the image half a turn through its nodal point (left
   to right, top to bottom); the flip swaps the facings, s ↔ 1/s. Inversion relabels the addresses and leaves every
   relation as it was, which is why nothing has to turn it back: "up" is a name given to an address. (2) *The projection is
-  the reading.* A point off by v at distance h images at f · (v/h) on a flat sensor, f the eye's focal length, its own unit
+  the reading.* A point off by v at distance h images at the focal length times v/h on a flat sensor, the focal length the eye's own unit
   (V = H); on a curved retina, nearly a hemisphere, place goes roughly with the angle atan(v/h). A flat sensor lays s,
   unbounded; the curved retina lays the bounded sweep, g up to the factor π/2. (3) *Vision lays the level of detail as
   proportion, then logarithm.* Resolution is finest at the fovea and falls with eccentricity, and primary visual cortex
