@@ -91,3 +91,69 @@ if __name__ == '__main__':
         print(f'{name}: {interior} interior named points; adjacent ratios [{a}]; {ntot} ratios in all; '
               f'{len(nond)} not a power of 2' + (f', e.g. {", ".join(f"{r:.6g}" for r in nond[:6])}' if nond else ''))
     print('no symmetry at all: every point is fixed, so every point is named and every ratio is available (by definition)')
+
+
+# ---- run 2: exact fractions, no cap; arithmetic two rounds, denominators to 64 ----
+from fractions import Fraction as F
+
+MAXDEN = 64
+
+
+def name_exact(arith):
+    pts = {F(0), F(1), F(1, 2)}
+    pts |= {1 - p for p in pts}
+    if arith:
+        for _ in range(2):
+            ps = sorted(pts)
+            new = set(pts)
+            for a in ps:
+                for b in ps:
+                    for v in (a + b, a - b, a * b) + ((a / b,) if b else ()):
+                        if 0 < v < 1 and v.denominator <= MAXDEN:
+                            new.add(v)
+            new |= {1 - p for p in new}            # the flip, still
+            pts = new
+    return sorted(pts)
+
+
+def ratios_exact(arith, depth):
+    pts = name_exact(arith)
+    parts = [b - a for a, b in zip(pts[:-1], pts[1:])]
+    adjacent = {1 / p for p in parts}
+    total, frontier = set(adjacent), list(parts)
+    for _ in range(depth - 1):
+        frontier = sorted({L * p for L in frontier for p in parts})[:20000]
+        total |= {1 / x for x in frontier}
+    return pts, adjacent, total
+
+
+def primes_of(n):
+    out, d = set(), 2
+    while d * d <= n:
+        while n % d == 0:
+            out.add(d)
+            n //= d
+        d += 1
+    if n > 1:
+        out.add(n)
+    return out
+
+
+def run2():
+    res = {}
+    for name, arith, depth in (('base', False, 6), ('arithmetic', True, 2)):
+        pts, adj, tot = ratios_exact(arith, depth)
+        primes = set()
+        for r in tot:
+            primes |= primes_of(r.numerator) | primes_of(r.denominator)
+        nond = [r for r in tot if not (r.denominator == 1 and r.numerator & (r.numerator - 1) == 0)]
+        res[name] = {'interior': len(pts) - 2, 'adjacent': sorted(adj)[:10], 'n': len(tot), 'nondyadic': len(nond),
+                     'primes': sorted(primes), 'has3': any(3 in primes_of(r.numerator) | primes_of(r.denominator) for r in tot),
+                     'exact3': F(3) in tot}
+    # the root row, in floating point: which forms of sqrt(2) appear among the ratios
+    _, _, tot = ratios({'root'}, 'fair', 3)
+    s2 = math.sqrt(2)
+    forms = {'sqrt2': s2, '2+sqrt2': 2 + s2, '2+2sqrt2': 2 + 2 * s2, '2sqrt2': 2 * s2, '4+2sqrt2': 4 + 2 * s2,
+             '4+4sqrt2': 4 + 4 * s2, '1+sqrt2': 1 + s2}
+    res['root forms'] = sorted(k_ for k_, v in forms.items() if any(abs(r - v) < 1e-6 for r in tot))
+    return res

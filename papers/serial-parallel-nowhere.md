@@ -329,6 +329,9 @@ moves (3), an unequal split that favours a facing (φ), or a root (√2), each a
   A chosen number, a root, arithmetic or the constant 2/π each opens ratios that are not powers of 2; without fairness no
   interior point is named, and nothing nests. The premise that the geometry supplies only these operations is untouched
   by the run.
+- **FRC run 2 (8 October, exact fractions, no cap): not killed.** The base again gives only 2, 4, … 64. Arithmetic on named
+  points, uncapped, opens ratios with a factor of 3 (12, 24) within two rounds, as predicted; 3 itself is not a ratio,
+  since ¼ cuts the part [0, ⅓]. Run 1's arithmetic row had been capped by my set-up.
 
 **If h is not this, the candidates are few:**
 

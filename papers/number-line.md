@@ -806,7 +806,8 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   them; then which number does the geometry itself name, and is 2 the only one? SPN's central open question sketches a
   route (only the corner is fixed by a level's symmetries, so only halving is free) and FRC (`plans/frc-plan.md`) checks
   its bookkeeping: run 1 found only powers of 2 from the base operations, and each added operation (a chosen number, a
-  root, arithmetic, 2/π) opening others. Which price is a reader's: the direction it resolves, or
+  root, arithmetic, 2/π) opening others; run 2, in exact fractions without run 1's cap, found the same, arithmetic
+  bringing in a factor of 3. Which price is a reader's: the direction it resolves, or
   the whole field it looks at? (§5)
 - **Pricing slow-fading detail.** A reader pricing each level from its own noisy looks stops early where detail fades
   slowly (CAL runs 1 and 2, killed at r = 0.7). What estimate, if any, prices it well? (§4)

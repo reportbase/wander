@@ -95,3 +95,22 @@ adjacent levels: ⅓ is named, but so is ¼, which cuts the part [0, ⅓]. The p
   is among those factors. Killed if no ratio has a factor of 3: then arithmetic on named points does not open the ratios I
   said it does.
 - **P2b (reported).** Which primes appear with arithmetic; and, for the root row, which forms √2 takes among the ratios.
+
+### Run 2 (8 October, `frc.run2()`, exact fractions): P1 not killed; P2a not killed
+
+| operations | interior points named | ratios between adjacent levels | ratios in all | not a power of 2 | primes in the ratios |
+|---|---|---|---|---|---|
+| **base**, depth 6 | 1 (½) | **2** | 6 | **0** | **2** |
+| + arithmetic (two rounds, denominators to 64), depth 2 | 15 | 12, 16, 24 | 9 | 7 | 2, **3** |
+
+- **P1 not killed**, now in exact fractions: the base gives only 2, 4, … 64.
+- **P2a not killed.** Without the cap, arithmetic on named points opens ratios with a factor of 3 (12 = 3 · 4, 24 = 3 · 8).
+  3 itself is not a ratio, as the restated prediction said: ¼ cuts the part [0, ⅓].
+- **P2b, reported.** In two rounds the only primes are 2 and 3; 5 and 7 need more rounds or larger denominators, so "every
+  rational ratio" is still not shown, only that arithmetic opens primes other than 2. In the root row, √2 appears among
+  the ratios only as 2 + 2√2 (of the forms checked: √2, 2√2, 1 + √2, 2 + √2, 2 + 2√2, 4 + 2√2, 4 + 4√2).
+
+**What the two runs say.** The flip, its fixed point and nesting give powers of 2 and nothing else, in floating point (run
+1) and in exact fractions (run 2). Each further operation brings in a number the base does not: a chosen cut, a root,
+counting (a factor of 3 within two rounds), or the sweep's 2/π. Still bookkeeping: whether the geometry supplies only the
+base operations is the premise, untouched by either run.
