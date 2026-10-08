@@ -51,7 +51,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -2162,6 +2162,18 @@ detail**. Why:
   detail by one and divides the grains the thing covers by 2 in one direction of reading, by 4 in two (v and v₂, one level
   splitting a cell into four, §1), so the information captured about it falls in the same proportion; the object's own
   information is unchanged.
+- **The same signal, a smaller share: the cost of being situated** (Tom, 8 October: "you see the mystery right? object sends same signal, reader gets a signal that corresponds to how big it is. those two things don't line up."; "yes, that seems correct. object sends same signal, regardless, but as that signal propogates away, the signal thins to cover the greater space covered."; the reading is Claude's, unruled; the physics
+  is standard). The object sends the same signal at any distance, and the reader gets a signal that goes with the
+  object's size. They line up in two steps. *Per grain nothing changes*: with nothing in between, the brightness per unit
+  of view is the same at any distance; only the number of grains the object covers falls. *The rest thins over more
+  room*: as the signal travels it spreads over the sphere of standpoints at that distance, whose area grows as v², and
+  each standpoint captures about 1/v² of the object's grains (two directions of reading, §1); summed over every
+  standpoint, v² · 1/v² is constant (the inverse-square law; conservation of flux through spheres). Nothing is lost; the
+  signal is divided among more addresses, and one reader holds one address's share. In the paper's terms the object sends
+  unsituated, to every direction alike (the full turn, as in situations 1 and 2), and the reader receives situated, one
+  standpoint and one h. For one reader the two do not line up because it is somewhere and the signal was sent to nowhere in
+  particular; summed over every standpoint, which only the view from nowhere can do, they do. The gap is the cost of being
+  situated.
 - **Depth, the slider and the level of detail** (Tom, 8 October: "we have describe g as the slider between the unit circle and the shape."; "so depth is the difference between situation 2 and situation 1."; "but it seems to be [0,1] in unsituated view and [0,PI/2] in situated view."). Depth is B(θ) − 1, the shape less the unit circle:
   situation 2 less situation 1. The slider between them is R140's (written g then; m since R170, §2.1): r = 1 + m · (B − 1),
   m = 0 the circle, m = 1 the shape (R121: "the radius from 1 to the breadth"). With the whole held (unsituated), m is a
