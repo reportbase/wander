@@ -102,6 +102,10 @@ Google Fonts load from outside:
   needing a sure reading (3 looks), cheapest ρ ≈ 2 on average and at worst (run 2). Broad valley. Run 3 (8 Oct): the 2
   holds for 2 to 5 confirming looks in one dimension (P1 not killed); when a look costs a whole image or volume, luck
   pulls the best step to ~1.25–1.35 or ~1.1 (P2 not killed, on its edge).
+  `frc-plan.md` (+ `frc/frc.py`, 8 Oct): which ratios between levels are precomputable (Tom: "to prove 2 is forced, we
+  must show that every other number is not pre-computable"). From the flip, its fixed point and nesting only powers of 2
+  (P1 not killed); a chosen number, a root, arithmetic or 2/π each opens others. Bookkeeping for SPN's "A route to forcing
+  2", not a proof; run 1's arithmetic row was capped (my set-up).
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far

@@ -52,3 +52,30 @@ it, to depth 6.
 non-dyadic point, and the sketch's step "the only free cut is at the corner" is wrong.
 
 ## Runs
+
+### Run 1 (8 October, `python3 plans/frc/frc.py`): P1 not killed
+
+| operations | interior points named on a level | ratios between adjacent levels | ratios, level to descendant | not a power of 2 |
+|---|---|---|---|---|
+| **base** (flip, its fixed point, nesting), depth 6 | 1 (the corner, ½) | **2** | 6 (2 to 64) | **0** |
+| + a free number (c = 0.37), depth 3 | 3 | 2.70, 7.69 | 9 | 9 |
+| + a root, depth 3 | 7 | 4.83, 6.03, 6.29, … | 120 | 120 |
+| + arithmetic, depth 2 | 25 (capped) | 16, 24, 32, 48, … | 28 | 19 |
+| + the sweep's constant (2/π), depth 3 | 3 | 2.75, 7.32 | 9 | 9 |
+| no fairness (no flip), depth 6 | 0 | none: nothing to nest in | none | — |
+
+- **P1 not killed.** From the flip, its fixed point and nesting alone, the only interior point a level names is its
+  corner; adjacent levels stand in ratio 2, and every ratio to a descendant is a power of 2.
+- **P2, reported.** Each added operation opens ratios that are not powers of 2, and dropping fairness leaves no interior
+  point to nest in, as predicted. Two of P2's specific figures did not appear as stated:
+  - *a root*: √2 itself is not among the ratios. √½ is named, but further roots name points between it and its
+    neighbours, so the part it bounds is subdivided; the ratios carry √2 in other forms (4.83 = 2 + 2√2).
+  - *arithmetic*: 3 itself is not among the ratios, though ratios with a factor 3 are (24 = 3 · 8, 48). The script capped
+    the named points at 400, keeping the smallest, a fault of my set-up that cut off points near 1; the arithmetic row is
+    incomplete, and "every rational ratio" is not shown. A fix would be a new run with its own prediction.
+- **No symmetry at all** was not run: with every point fixed, every point is named by definition.
+
+**What it says.** The bookkeeping holds: with the operations the sketch says the geometry supplies, the levels come out
+dyadic and nothing else; each other ratio enters with an operation the sketch says is supplied at runtime (a chosen number,
+a root, counting, a constant). It is a check of the sketch's arithmetic, not a proof: the premise that the geometry
+supplies only the flip, its fixed point and nesting is what a proof must defend, and the run cannot.

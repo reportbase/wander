@@ -312,6 +312,11 @@ moves (3), an unequal split that favours a facing (φ), or a root (√2), each a
 - **Premises a proof must defend:** that only fixed points are named for free; R162 (ruled, not derived); and that the next
   level nests in a named part.
 - **Kill:** a ratio other than 2ᵏ whose levels can be laid from the flip, its fixed point and nesting alone.
+- **FRC run 1 (8 October; bookkeeping, not evidence): not killed.** From the flip, its fixed point and nesting, the only
+  interior point named is the corner, adjacent levels stand in ratio 2, and every ratio to a descendant is 2ᵏ (to depth 6).
+  A chosen number, a root, arithmetic or the constant 2/π each opens ratios that are not powers of 2; without fairness no
+  interior point is named, and nothing nests. The premise that the geometry supplies only these operations is untouched
+  by the run.
 
 **If h is not this, the candidates are few:**
 
