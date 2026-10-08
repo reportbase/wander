@@ -148,3 +148,51 @@ for a volume. If so, what doubles is not the grain but what a look costs.
 
 **Kill.** P1 is killed if any of the six best steps (three k, mean and worst) falls outside its range. P2 is killed if the
 best ρ for d = 2 is outside 1.25 to 1.75.
+
+### Run 3 (8 October, `why2.run3()`, exact; one cell simulated, seed 103): P1 not killed; P2 not killed, on its edge
+
+The check: at ρ = 1.5, k = 3, d = 2 and the middle s₀, simulated 3.539 against exact 3.561 (0.6%, within sampling).
+
+Best step ρ, by mean and by worst cost ratio; "within 3%" is the range of ρ whose mean ratio is within 3% of the best.
+
+| d | k | best ρ, mean | best ρ, worst | within 3% | mean ratio at the best | at ρ = 2 |
+|---|---|---|---|---|---|---|
+| 1 | 2 | **2.05** | **1.85** | 1.65 to 2.55 | 2.90 | 2.90 |
+| 1 | 3 | **2.00** | **1.80** | 1.70 to 2.50 | 4.68 | 4.68 |
+| 1 | 4 | **2.00** | **1.75** | 1.65 to 2.45 | 6.39 | 6.39 |
+| 1 | 5 | 2.00 | 1.65 | 1.60 to 2.40 | 8.05 | 8.05 |
+| 2 | 2 | 1.10* | 1.10* | 1.10 | 1.38 | 2.36 |
+| 2 | 3 | **1.25** | 1.25 | 1.20 to 1.40 | 3.39 | 4.42 |
+| 2 | 4 | 1.35 | 1.30 | 1.25 to 1.50 | 5.20 | 6.56 |
+| 2 | 5 | 1.35 | 1.30 | 1.25 to 1.50 | 6.97 | 8.72 |
+| 3 | 2 | 1.10* | 1.10* | 1.10 | 0.55 | 2.55 |
+| 3 | 3 | 1.10* | 1.10* | 1.10 | 1.94 | 5.19 |
+| 3 | 4 | 1.10* | 1.10* | 1.10 to 1.15 | 3.80 | 8.07 |
+| 3 | 5 | 1.15 | 1.15 | 1.10 to 1.25 | 5.70 | 11.08 |
+
+\* the smallest step tested: the best may lie lower.
+
+- **P1 not killed.** In one dimension the best step on average is 2 (2.05 with k = 2) for every confirmation rule tried,
+  k = 2 to 5. Against the worst case it is 1.65 to 1.85, drifting down as k grows. The valley within 3% runs from about
+  1.65 to 2.5 throughout.
+- **P2 not killed, on its edge.** In an image (d = 2, k = 3) the best step is 1.25, the bottom of the predicted 1.25 to
+  1.75. So ρ² ≈ 1.56: the cost a look steps by is below 2, under the predicted 1.6 to 3. The prediction's reason, that
+  the cost would step by about 2, does not hold well.
+- **P3, reported.** In a volume (d = 3) the best step runs to the smallest tested, 1.1, for k up to 4. With k = 2 the
+  mean ratio falls below 1 (0.55), cheaper than the ideal single look at the corner.
+
+**Why, read after the run (the results stand as recorded).** It is run 1's luck coming back. The chance of "two" grows
+along one direction (s₀ρⁱ) while what a look costs grows as ρᵈⁱ. In more dimensions the looks below the corner are much
+cheaper than the ideal look (s₀⁻ᵈ), so a lucky "two" there, even confirmed, costs less than the ideal does, and fine
+creeping pays. Asking more confirmations (larger k) takes luck away and moves the best step back up (d = 2: 1.10, 1.25,
+1.35, 1.35 for k = 2 to 5). The ideal used for the ratio is then not a floor, which is why a ratio can fall below 1.
+
+**What WHY2 says, after three runs.**
+- **In one dimension the 2 is robust.** For a reader that needs a sure reading, the cheapest step is 2 on average for
+  every confirmation rule from two looks to five, with a valley from about 1.65 to 2.5. Against the worst case it is a
+  little lower, 1.65 to 1.85.
+- **It is one-dimensional.** When a look costs the whole of a two- or three-dimensional field but the "two" is found
+  along one direction, the best step falls well below 2 (about 1.25 to 1.35 in an image, toward 1.1 in a volume): luck
+  below the corner is cheap there. So the doubling belongs to a reader that pays for what lies along the direction it
+  resolves, not for a whole field. Whether that is the right price for a reader is the open part.
+- Synthetic, one cost model family; not ruled.
