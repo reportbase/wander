@@ -229,6 +229,8 @@ try {
     if (!r.ok()) failures.push(`[demos.html] ${pth} answers ${r.status()}`);
   }
   if (pages.length < 5) failures.push(`[demos.html] links to only ${pages.length} pages`);
+  await page.goto(new URL('index.html', base).href, { waitUntil: 'load' });
+  await Promise.all([page.waitForURL(/demos\.html/, { timeout: 15000 }), page.click('#demosOpen')]);
   console.log(`${failures.length === before7 ? 'ok  ' : 'FAIL'} demos.html (${pages.length} pages, ${links.length} links)`);
 } catch (e){
   failures.push(`[${current}] ${e.message.split('\n')[0]}`);
