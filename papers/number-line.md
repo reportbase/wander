@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, forty-first: §4, the exit is runtime logic, set by the depth and the level of detail; Tom's earlier "no exit" corrected (Tom).
 - 8 October, fortieth: §4, the levels known everywhere, laid only where there is depth; none on the unit circle (Tom).
 - 8 October, thirty-ninth: §7, SPN's proof of the 2 in three steps: the levels are laid before any payload; before payload there is no measure; the one named point, the corner, forces halving (Tom: "first we need to show that the recursive levels are fully known prior to any payload").
 - 8 October, thirty-eighth: §7, FRC runs 2 and 3: only a split in 2 makes every child the same child on a level (Tom: "does 2 allow us to do recursion without runtime logic").
@@ -559,6 +560,10 @@ by side, with no ruling on the word:
   read; a reader lays one only where a reading has depth, past a corner. The ordinary line lays depth everywhere; a reader
   lays it where depth is, which is what the recursing line does and why it costs 0.375 of the ordinary line in the run
   above. The unit circle, and situations 1 and 2, have only the near field and need no level laid.
+- **The exit is runtime logic** (Tom, 8 October: "the exit condition is the depth, no need to recurse beyond the depth, so there is runtime logic."; "geometry can't know the depth without the payload."; "my earlier statement is false, there must be somekind of runtime logic. also LOD works this way no need to recurse further if your at the LOD of that observation."; SPN §3.3, corrected). The levels have no "if"; the descent has one, go on or
+  stop, and it stops where the depth stops or at the observation's level of detail, as a mipmap is chosen per pixel from a
+  precomputed pyramid. Geometry cannot know the depth before the payload. The ordinary line, laying every level, is the
+  line with no exit.
 - **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
   other is a held thing's remainder, entered where found. They are not ruled the same or different.
 
