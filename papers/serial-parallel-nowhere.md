@@ -45,7 +45,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 demoted to Appendix D (Appendix D), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye (§3.3); f in (v, h, f) is v₂, a second v read against the same h (§1); depth, the slider m and the level of detail (§3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -77,7 +77,7 @@ block only puts them in order.*
 | recursion | levels within levels: each level the same sweep again. **Considered and rejected (8 October) for level of detail**: the levels exist whole and the reader picks one; nothing recurses. Kept as a word where earlier text uses it, read as the levels | §3.3, Proposition 3.11; "Recursion, after the corner"; §3.3, "Recursion considered and rejected" |
 | level of detail | what the reader sweeps (Tom, 8 October): proportional in the near field, logarithmic in the far. A level picked is an integer k, how many doublings, read directly as 2ᵏh. Picking is runtime and owes nothing to the payload; the levels picked from are geometry, compile time | §3.3, "Recursion considered and rejected"; Appendix D, "Corollary" |
 | unit line | the sweep itself, bounded and known (0 to π/2 in 1 and 2; g from 0 to 1 in 3 and 4); to a line what the unit circle is to a shape. The **number line**, continuous with unit 1 and size unknown, is the unknown system laid on it: 0 at home, 1 at the corner, its far end at the horizon (Tom, 6 October) | §2.1, "The unit line, and the number line laid on it" |
-| depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
+| depth | the difference between a shape and the unit circle (Tom, 6 October; again 8 October: "so depth is the difference between situation 2 and situation 1"). The slider m adds it (§3.3, "Depth, the slider and the level of detail"); since 8 October level of detail, not recursion, is how it is shown. Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
 | continuous sweep, spiral | the levels drawn. Unwrapped, one turn running on, level into level with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
 
 **Situated and unsituated** (Tom, 6 October, agreeing to drop "view from nowhere" and "view from somewhere"). A
@@ -2129,6 +2129,14 @@ detail**. Why:
   per doubling (Proposition 3.4: within a level a share, across levels a count, and the count is the logarithm). So what
   the earlier text called recursion is the far field of one sweep, the sweep over the level of detail. With it the
   derivation of 2 was demoted (the central open question; Appendix D): on a logarithmic sweep the base is the unit.
+- **Depth, the slider and the level of detail** (Tom, 8 October: "we have describe g as the slider between the unit circle and the shape."; "so depth is the difference between situation 2 and situation 1."; "but it seems to be [0,1] in unsituated view and [0,PI/2] in situated view."). Depth is B(θ) − 1, the shape less the unit circle:
+  situation 2 less situation 1. The slider between them is R140's (written g then; m since R170, §2.1): r = 1 + m · (B − 1),
+  m = 0 the circle, m = 1 the shape (R121: "the radius from 1 to the breadth"). With the whole held (unsituated), m is a
+  plain fraction on [0, 1]. With it unknown (situated), depth relative to the unit runs to ∞ and must be swept (R121's
+  "1 + g/(1 − g), no top"); Tom's [0, π/2] is that sweep written as an angle, [0, 1] in the paper's own notation (§3.5).
+  The level of detail decides how much depth shows: the coarsest level is the circle (a plain ball), and each finer level
+  adds the next band of depth, broad, middle, fine, as the flying page's `bandW` does. So m is what a level of detail
+  shows, one band per level; m and g stay separate letters (m the mix, g the sweep, R170).
 - **The eye** (Tom, 8 October: "doesnt optics say that eyeball the image upside on the back of the eyeball", and "yes" to bringing the eye in).
   The eye is a sweep device with the level of detail built in (Claude's reading of established optics and physiology;
   unruled). (1) *The inverted image is not the flip.* A lens turns the image half a turn through its nodal point (left
@@ -2370,6 +2378,15 @@ ratio between rungs (*The Radix*, §3.3; R176).
 that the unknown must enter as a shift. The premise is case (a); it is neither forced nor needed.
 
 ### 3.5 The share, and g
+
+*Trig used sparingly* (Tom, 8 October: "I would prefer to not use any trig."; "trig is fine, but I never use it to figure things out. but we can use sparingly."). The paper reasons in ratios. The sweep has a statement with no trig, "The level as
+2h, in place" (§3.3): f = s/2 before the corner, f = 1 − 1/(2s) past it. It runs from 0 to 1 with the corner at ½, is fair
+to the facings (f(1/s) = 1 − f(s)), has slope ½ on both sides of the corner, and past it halves what is left exactly at
+each doubling (¾, ⅞, 15/16, …), so the level of detail is k = log₂(1/(2(1 − f))) with no error. g = (2/π) · atan(v/h),
+below, is the same sweep laid evenly in angle, under the Cauchy's share; it agrees with the in-place sweep at home, the
+corner and the far wall, and far out halves what is left only approximately. It is kept where a result is about angles
+(the share ds/(1 + s²), Propositions 3.12–3.13); elsewhere the ratio is enough (*Reader Geometry as Addressing* §2.2: the
+arctan "is the point of contact, and it is engineering").
 
 *Tom, 2 October: "g = 0 is the unit circle g=1 the fully expressed octave" (13:05); "g=1 means the breadth is fully
 expressed" (13:20) (R168); "so back to g, g=0 just means the start of the sweep. g=1 means the end of sweep. which

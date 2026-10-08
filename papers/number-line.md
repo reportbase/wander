@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, forty-eighth: SPN §3.3 and §3.5 (depth the slider m adds, shown by the level of detail; trig used sparingly, the in-place sweep the trig-free one), noted here (Tom).
 - 8 October, forty-seventh: §8, f is v₂, a second v read against the same h; the sphere is a reader with one unit reading in two directions (Tom).
 - 8 October, forty-sixth: §4, the eye: inversion a relabelling, the curved retina the bounded sweep, V1 the level of detail as proportion then logarithm (Tom).
 - 8 October, forty-fifth: §4, the reader sweeps its level of detail, proportional then logarithmic; SPN's derivation of 2 demoted (Tom).
