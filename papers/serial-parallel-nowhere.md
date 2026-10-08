@@ -27,7 +27,7 @@ fixes the 2 (the central open question, Appendix C). Then: the wedge is made at 
 the picture of all possible wedges from nowhere, not built from them (§1, §2.1). Then, with *The Cauchy* (22 August) and
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
-geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels laid before any payload, no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
+geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -320,9 +320,12 @@ to show that the recursive levels are fully known prior to any payload."; Claude
 ChatGPT's review, Tom passing it on; unruled). What it claims: **given the primitives the reader holds before anything
 arrives, the levels they generate are dyadic, with no further primitive and no runtime parameter.** It does not claim that
 no other primitive could generate another ratio; it claims that SPN's do not.
-1. **The levels are laid before any payload** (from the address distinction, §4.2–§4.3). A level is an address: it says
-   where a reading goes. An address is laid before what it addresses arrives (R155, recast by R177: the range is the gift
-   of geometry, and an address is taken from it when a payload arrives). If a level's ends depended on v, the reader would
+1. **The levels are known before any payload, and laid only where there is depth** (from the address distinction,
+   §4.2–§4.3; Tom, 8 October: "probably the user only lays the precomputed addreess where ever there is depth, no need to lay it on a unit circle for example.") A level is an address: it says where a reading goes. The range of addresses is known before
+   what it addresses arrives (R155, recast by R177: the range is the gift of geometry, and an address is taken from it when
+   a payload arrives). Known is not laid: the whole stack is known, compile time, but a level is laid only where a reading
+   goes past a corner, which is the reader's runtime exit (§3.3, "Recursion is an identity"). The proof needs only the
+   known half. If a level's ends depended on v, the reader would
    have to read v to know how to read v. So whatever fixes a level is held before anything arrives. The layout passes: in
    place the stack is f ↦ 2f on the front half and ½/(1 − f) on the back ("The level as 2h, in place", §3.3), which
    mentions home, the far wall, the flip and nothing else; h only sets the units, so every reader's stack is the same. The
@@ -2800,6 +2803,12 @@ parallel reader keeps as a magnitude, not where the range runs.
 home with proportion to its corner and levels past it, are the gift of geometry. The reader finds itself in that range,
 holds its unit and a count, and reads. What R155's "falls out" below says of the range stands; what it says of the reader
 laying it is to be read as the geometry's.
+
+*Known whole, laid where there is depth* (Tom, 8 October: "probably the user only lays the precomputed addreess where ever there is depth, no need to lay it on a unit circle for example.") The range is known whole, but a reader lays a level only where
+there is depth: where a reading goes past a corner. The unit circle a situated reader makes with V = H (§1) is one level's
+near field, proportion from home to the corner, and needs no level laid; nor do situations 1 and 2, which have only the
+near field. So R155's "individual addresses are not laid in advance" holds for whole levels too. The relief bands of the
+flying page are the same rule: every band is defined, and a band is drawn only where its features cover a few pixels.
 
 What falls out:
 
