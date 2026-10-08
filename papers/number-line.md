@@ -52,6 +52,7 @@ ruled.*
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, thirty-third: Background and §8, the hand (fingers addresses, rings payload) to explain the situations; the Cauchy consists of addresses, not payloads; the reader's unit circle is a quarter in one facing (Tom, with *The Cauchy* and *Reader Geometry as Addressing*).
 
 ## Background from SPN
 
@@ -74,7 +75,10 @@ that angle rescaled, g = θ/(π/2).
   still unknown, but we are creating the unit circle by doing this."). With no whole of the system to hold, the situated
   reader takes its own unit as the whole in every direction, V = H (= F). That creates a unit circle, with its corner at
   s = 1 and its sweep, which is why the sweep applies to a situated reader at all. It is not situation 1: v is still
-  unknown, and the circle's radius is the reader's unit, not the system's breadth.
+  unknown, and the circle's radius is the reader's unit, not the system's breadth. In one facing the reader holds a
+  quarter of it, home to horizon, open at the horizon (*The Cauchy* §2, §11: the reader has "an open run — home at one end, the horizon at the other"); the closed circle
+  needs every facing (§8, "The hand"). In the hand: "H and V share a denominator: your hand" (*Reader Geometry as
+  Addressing*, R39).
 
   | | situation 1 | the situated reader's unit circle |
   |---|---|---|
@@ -818,6 +822,28 @@ lost.
 - **The plane is the same.** The quarter-plane between the v- and h-axes is the wedge of two breadths; the quarter
   circle is one drawing of it.
 
+**The hand** (*Reader Geometry as Addressing* §0.0, R39, R51, R52, R78; Tom, 8 October: "add the hand / finger
+metapher to explain the situation."; set out in full in SPN §4.3). Hold your hand out flat: h, home. Turn it upright: v,
+toward the horizon. The turn between is the sweep, fair to both because h and v share a denominator, the hand: the
+situated reader's V = H. Each finger is an address, a ray of the wedge; the rings on the fingers are the payload, the
+magnitudes. Turning the hand changes no ring; changing the rings changes no finger.
+- **The situations:** 0, no hand; 1 and 2, the rings held whole from nowhere, alike (the circle) or not (a shape); 3, one
+  hand facing a thing, all fingers at once; 4, inside, one finger at a time.
+- **The wedge and the sphere:** a hand in one facing spans a quarter, flat to upright, open at the top; the circle needs
+  every facing; the sphere is every way a hand could face, drawn from nowhere. With three breadths the fingers fill the
+  solid wedge.
+- **Said first.** *Reader Geometry as Addressing* §0.0 already has the rays ("many pairs are the same relation … they lie
+  on one ray") and the cuts ("the path the sweep takes is a choice": the arc, the line h + v = 1, the square's edges).
+
+**The Cauchy consists of addresses, not payloads** (Tom, 8 October, of *The Cauchy*: "it consists of addresses not
+payloads"; *Reader Geometry as Addressing* R47: "The Cauchy is not the payload; it is the address to the payload").
+Spread the fingers evenly by turn and read each as v over h: the readings are the Cauchy. The reach cancels in every
+reading, so "the readings do not distinguish points; they distinguish rays" (*The Cauchy* §11). The median is a finger,
+the corner (of five fingers spread evenly, the middle one, at 45°); the missing mean is a question about rings asked of
+fingers; more looking buys more fingers, "precision about where and when, and never about what" (*The Cauchy* §14d). In
+the wedge's terms: the Cauchy is the cut by length, measured evenly, stated in a facing (the cut h = 1). With three
+breadths it is the two-variable Cauchy, density proportional to (1 + |x|²)^(−3/2), on one wedge (SPN §5.1).
+
 **How many wedges** (Tom, 8 October: "how many wedges in a sphere?", and then: "they dont [compose into a unit
 sphere], that is just visualization of the complete system. the wedge is created at every observation."). Every
 observation makes one wedge, all-positive within itself. The facing it was made in is its sign. Drawn together from
@@ -910,6 +936,9 @@ corner, and a body whose relief bands show by its size in the reader's pixels.
 switch from serial to parallel happens per direction, near in one and far in another.
 
 ## Sources
+
+- *The Cauchy* (working paper, 22 August 2026, Tom Brinkman; not in this repository).
+- *Reader Geometry as Addressing* (working paper, 25 September 2026, Tom Brinkman; not in this repository).
 
 - Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
   shift. *Developmental Science* 14.

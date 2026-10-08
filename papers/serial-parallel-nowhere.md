@@ -15,7 +15,9 @@ Tom's remarks of 7–8 October, worked out first in `papers/number-line.md`: eac
 angle, and the situated reader's V = H making a unit circle that is not situation 1 (§1); the wedge as the primitive,
 with the circle and the sphere as drawings of it (§1); the facings as wedges (§2.1); and WHY2, synthetic runs on what
 fixes the 2 (the central open question, Appendix C). Then: the wedge is made at every observation, and the sphere is
-the picture of all possible wedges from nowhere, not built from them (§1, §2.1).*
+the picture of all possible wedges from nowhere, not built from them (§1, §2.1). Then, with *The Cauchy* (22 August) and
+*Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
+payloads (§4.3); the reader's unit circle, a quarter in one facing (§1).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -458,7 +460,7 @@ H. The pair maps to an angle θ = atan(v/h) in [0, π/2], and g is that angle as
 θ/(π/2) (§3.5). Written with the raw breadths, θ = atan((v_raw/h_raw)·(H/V)), so the 45° corner falls where
 v_raw/h_raw = V/H.
 - **Unsituated (1, 2).** Both wholes are known, and may differ; the corner is computed at V/H, as above.
-- **Situated (3, 4): V = H creates the unit circle, not situation 1** (Tom, 8 October: "in the situated view, we are
+- **Situated (3, 4): V = H creates the reader's unit circle, not situation 1** (Tom, 8 October: "in the situated view, we are
   setting v = h or v = h = f. we are creating situation 1", then: "right, not actually situation 1, v is still unknown,
   but we are creating the unit circle by doing this"). A situated reader holds one unit and no whole of the system, so
   it takes that unit as the whole in every direction, V = H. That creates a unit circle, with its corner at s = 1 and
@@ -466,7 +468,9 @@ v_raw/h_raw = V/H.
   unknown, and the circle's radius is the reader's unit, not the system's breadth. Situation 1 has only the near field
   (Tom, 7 October: "situations 1 and 2, dont have both the near and far fields, only the near field"): past 45° its
   circle is the near field mirrored. The reader's unit circle holds the far field there, from the corner to the
-  horizon squeezed into levels (§3.3).
+  horizon squeezed into levels (§3.3). In one facing the reader holds a quarter of it, home to horizon and open at the
+  horizon; the closed circle needs every facing (*The Cauchy* (22 August) §2; *Reader Geometry as Addressing* §5.3; the hand, §4.3, where V = H is
+  "H and V share a denominator: your hand").
 
 | | situation 1 | a situated reader's unit circle |
 |---|---|---|
@@ -488,6 +492,9 @@ three. The ray is the relation; the length along it is the scale the division ta
   be built, seen from nowhere.
 - **No facing.** The wedge favours no breadth. A facing is a choice of the breadth to divide by: s = v/h is the wedge
   read facing h, and it breaks the symmetry the wedge has.
+- **Said first in *Reader Geometry as Addressing* §0.0.** "Many pairs are the same relation … and they lie on one ray from the
+  origin"; "the path the sweep takes is a choice" (the arc, the line h + v = 1, the square's edges); "the corner is one
+  ray; where it lands depends on the path." The cuts below restate that, with three breadths added.
 - **The drawings are cuts.** The quarter circle, the sphere's octant, the unit square's arms, the cube's faces and the
   flat triangle are each the wedge cut one way, and each cut is a normalization (`plans/normalizations.md`). Their
   numbers belong to the cut, not to the wedge: the quarter arc and the octant both measure π/2, a property of the cut by
@@ -1085,7 +1092,8 @@ reader a sign is which way a signal comes from (ahead or behind, left or right, 
 its relation (R37, R173). A continuous signal with no radial expression *carries* no signs, so it lies on one sweep;
 a reader that has *seen* none cannot yet tell it from one whose other side has not arrived (below). That is the line, and the unit sweep is the unit line ("The unit line is the sweep itself"), so Tom's line and the one-facing case are one thing.
 
-**The facings are the wedges** (Tom, 8 October: "how many wedges in a sphere?", and then: "they dont [compose into a
+**The facings are the wedges** (in the hand, §4.3: each facing is the hand turned to face another way; *Reader Geometry as Addressing*
+§5.3, R121: "one facing is the quarter circle, two the semicircle, four the circle, and eight the sphere"; Tom, 8 October: "how many wedges in a sphere?", and then: "they dont [compose into a
 unit sphere], that is just visualization of the complete system. the wedge is created at every observation."). Every
 observation makes one wedge, all-positive within itself (a share is never negative, §1, "The wedge is the primitive").
 The facing it was made in, ahead or behind, left or right, above or below, is its sign. Drawn together from nowhere, the
@@ -2702,9 +2710,46 @@ border**, and with it every hidden thing in this paper: the blocked and the hidd
 meets; a transparent world would have neither. So do contact (two nearnesses equal on one address) and nearness.
 **Shape** is neither: it is recovered from payloads through the addresses, as far as the ladder allows (§8).
 
-(As a metaphor only: the open hand is the sweep from h to v, the fingers are addresses, the rings on them are payload.
-Change the rings and the hand does not change; two rings on one finger, looking along it, show only the nearer, and the
-ring behind is the backside. The hand hid nothing; the rings did.)
+**The hand: addresses, payload and the situations in one picture** (*Reader Geometry as Addressing* §0.0, R39,
+R51, R52, R78; Tom, 8 October: "add the hand / finger metapher to explain the situation."). Hold your hand out flat:
+that is h, home. Turn it until it points straight up: that is v, toward the horizon. The motion between is the sweep, and
+it treats the two alike because "H and V share a denominator: your hand" (R39): the situated reader's V = H (§1, "The
+wholes and the angle") is its own hand. Spread the fingers between flat and upright: each finger is an address, one ray
+of the wedge (§1). "Now put rings on your fingers. The rings are the payload. Each finger is an address; the ring on it is
+what that address holds. Turning the hand does not change the rings. Now replace those rings with other rings. The sweep
+from flat to upright is the same sweep, and each finger is the same address" (R39, R51, R52).
+- **What the hand says.** The geometry is the hand, not the rings. Dividing v by h keeps the finger and drops the ring.
+  The serial reader is the hand and its fingers; the parallel reader holds the rings (R78). Two rings on one finger,
+  looking along it, show only the nearer: the ring behind is the backside. The hand hid nothing; the rings did.
+- **The situations, in the hand.**
+  - *0:* no hand: nothing to point with and nothing pointed at.
+  - *1 and 2:* the rings held whole, all at once, with no hand needed to reach them: the equation and the array, from
+    nowhere. In 1 every ring is alike (the circle); in 2 they differ.
+  - *3:* one hand facing a thing from outside, all its fingers at once, each reaching the ring on the facing side.
+  - *4:* inside, one finger at a time, each ring arriving in turn.
+  - *The unit circle:* the hand's own arc. In one facing it is a quarter, flat to upright, open at the top, since no
+    finger is ever the horizon (*The Cauchy* (22 August) §2, §11: the reader has "an open run — home at one end, the
+    horizon at the other, and nothing joining them"). The closed circle comes from turning the hand through its facings, or from nowhere,
+    drawing every facing at once (*Reader Geometry as Addressing* §5.3: "The unit circle is not the reader: read uniformly with no
+    situated observer, it is the view from nowhere", R127). The sphere is every way a hand could face, drawn from
+    nowhere; no hand holds it (§2.1, "The facings are the wedges").
+
+**The Cauchy consists of addresses, not payloads** (Tom, 8 October: "it consists of addresses not payloads", of
+*The Cauchy* (22 August); *Reader Geometry as Addressing* §7.5, R47: "The Cauchy is not the payload; it is the address to the payload"). In the
+hand: spread the fingers evenly by turn and read each as v over h, and the readings are the Cauchy (§5.1; *Reader Geometry as Addressing*
+Proposition 7a). Nothing of the rings is in it. Each reading is the reach times sin over the reach times cos, and the reach
+cancels in every single reading, not on average: "the readings do not distinguish points; they distinguish rays" (*The Cauchy* (22 August)
+§11).
+- **The median is a finger.** The corner is where the fingers divide in half: of five fingers spread evenly from flat to
+  upright, the middle one, at 45°. Order, ranks, quartiles and the corner are address statistics; they ignore the rings
+  (*Reader Geometry as Addressing* Proposition 14).
+- **The missing mean asks the fingers about the rings.** A mean is a sum of sizes, a payload question; the Cauchy's
+  readings carry no size, so it has no answer (Proposition 14(e): an address law "supports order, not sums"; *The Cauchy* (22 August)
+  §6). The median, the address question, is always there.
+- **More fingers, not bigger rings.** A finer grain lays more addresses: "precision about where and when, and never about
+  what" (*The Cauchy* (22 August) §14d). What is at the addresses comes only from rings held beside them.
+- **Three breadths.** The same hand in space: the fingers fill the solid wedge, and spread evenly they give the two-variable
+  Cauchy of §5.1, density proportional to (1 + |x|²)^(−3/2), on one wedge.
 
 **The boundary.** Occlusion, contact, the cross ratio passing between standpoints and the ladder's projective rung use
 more than "a magnitude at each address": that the sweep is a straight line and the payload is the first thing it meets
