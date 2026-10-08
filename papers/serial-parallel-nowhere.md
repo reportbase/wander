@@ -45,7 +45,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (the central open question); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 demoted to Appendix D (the central open question), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 demoted to Appendix D (Appendix D), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -75,7 +75,7 @@ block only puts them in order.*
 | sweep | the running share g of the relations, from 0 (v unexpressed) to 1 (v fully expressed). Each relation s takes the share ds/(1 + s²); their total is π/2, and g is the running share over that total (R170, "g is the sweep"). The flip sends g to 1 − g. In situations 1 and 2, with both breadths held, the same g is an angle, θ = (π/2)·g, and 90° is meaningful there; in 3 and 4 nothing turns, and g is a share | §2.1, §3.5 |
 | level | a sweep entered again, with its own home, corner and far wall. In place, 2h: a front half of one h, proportional, and a back half of one h holding the rest, in which the next level nests (§3.3, "The level as 2h, in place"). Laid side by side round its own corner, 1/r to r, it is one quarter turn, whatever the ratio r (Proposition 3.12) | §3.3, Proposition 3.12 |
 | recursion | levels within levels: each level the same sweep again. **Considered and rejected (8 October) for level of detail**: the levels exist whole and the reader picks one; nothing recurses. Kept as a word where earlier text uses it, read as the levels | §3.3, Proposition 3.11; "Recursion, after the corner"; §3.3, "Recursion considered and rejected" |
-| level of detail | what the reader sweeps (Tom, 8 October): proportional in the near field, logarithmic in the far. A level picked is an integer k, how many doublings, read directly as 2ᵏh. Picking is runtime and owes nothing to the payload; the levels picked from are geometry, compile time | §3.3, "Recursion considered and rejected"; the central open question, "Corollary" |
+| level of detail | what the reader sweeps (Tom, 8 October): proportional in the near field, logarithmic in the far. A level picked is an integer k, how many doublings, read directly as 2ᵏh. Picking is runtime and owes nothing to the payload; the levels picked from are geometry, compile time | §3.3, "Recursion considered and rejected"; Appendix D, "Corollary" |
 | unit line | the sweep itself, bounded and known (0 to π/2 in 1 and 2; g from 0 to 1 in 3 and 4); to a line what the unit circle is to a shape. The **number line**, continuous with unit 1 and size unknown, is the unknown system laid on it: 0 at home, 1 at the corner, its far end at the horizon (Tom, 6 October) | §2.1, "The unit line, and the number line laid on it" |
 | depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
 | continuous sweep, spiral | the levels drawn. Unwrapped, one turn running on, level into level with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
@@ -121,7 +121,7 @@ use octave, its just a place holder"; "level and dyadic, go ahead").
 - **The ratio between levels** is set by one rule of nesting: *the next level is exactly the parent's back half*.
   The corner bisecting the level is proved (the halves are equal); that the next level fills the whole back half is
   the layout's rule, not a theorem (since 8 October, step 3 of a proposed proof, conditional on there being no measure
-  before payload: "A route to forcing 2"). With that rule the corners fall one doubling apart, v/h = 1, 2, 4, 8, …, and the
+  before payload: "A route to forcing 2", Appendix D; demoted). With that rule the corners fall one doubling apart, v/h = 1, 2, 4, 8, …, and the
   levels are **dyadic**. A next level filling another share of the back half would give another ratio.
 - **The open question** is whether a reader's levels are dyadic: whether a reader uses that rule of its own, or
   whether what it reads sets the ratio ("Central result, and the open question", below). Laid side by side round their
@@ -2105,7 +2105,7 @@ detail**. Why:
   level (§2.1, "Why the recursion"). A recursion on the world's depth would never halt. Tom's first account, "every level
   of recursion does not require an exit", was corrected by him the same day: "there must be somekind of runtime logic".
 - **Level of detail puts that logic in one place.** The reader picks the level it wants, an integer k, how many doublings
-  of detail (each level of detail a doubling of the last, "Corollary" under the central open question), and reads level k
+  of detail (each level of detail a doubling of the last, "Corollary", Appendix D), and reads level k
   directly, 2ᵏh, as a float's exponent is read from its bits. There is no descent, no loop and no exit test: one choice,
   made at the observation, owing nothing to the payload. Where a reading lands is direct too: its level is ⌊log₂(v/h)⌋.
 - **So the split is clean.** The geometry is compile time: every level, the ratio between them, the corner. Picking the
@@ -2143,8 +2143,7 @@ not that.
   the payload, so the earlier "geometry cannot know the depth without the payload" is true but moot: the exit is not set
   by the depth. In SPN's terms the request is the reader's grain, the h it holds (GRN, `plans/grn-plan.md`), which is in
   the inventory before anything arrives. And the request is a count: a level of detail is a doubling of the previous one,
-  so to request one is to pick which doubling, k (Tom; "Corollary: a level of detail is a doubling", under the central
-  open question). With k fixed the descent is a loop of fixed length, precomputable. "Always something there" is Tom's premise about the world, the payload, not
+  so to request one is to pick which doubling, k (Tom; "Corollary: a level of detail is a doubling", Appendix D). With k fixed the descent is a loop of fixed length, precomputable. "Always something there" is Tom's premise about the world, the payload, not
   derived; it agrees with the horizon having no last level (§2.1, "Why the recursion"; `plans/resolution-recursion.md`). Graphics does the same with a mipmap: the pyramid of halved
   images is precomputed once, and the level used is chosen per pixel at draw time, by how much of the image the pixel
   covers. The flying page's relief bands are this rule (`bandW`). Mipmaps are halved by convention, so they illustrate the

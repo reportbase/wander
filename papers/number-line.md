@@ -573,8 +573,7 @@ by side, with no ruling on the word:
   level is chosen, and the descent stops there; the request is the reader's, not the payload's. Three times, then: the
   geometry's levels, the reader's request, the payload's values. On this paper's line, a number written to a requested
   number of digits is the plain case; the ordinary line, laying every level, is the line with no request.
-- **A level of detail is a doubling; the request is a count** (Tom, 8 October: "maybe we can show the LOD is inherintly doubles and halvings. just pick how many doublings of detail you want. that can be pre-computed."; "but LOD can be shown to be doubling of the previous level. so you need to pick the doubling that you want, which is what LOD is."; SPN, "Corollary", under the central open
-  question). Each step of detail is the next level, the last one halved, one bit: which side of the corner. So a request
+- **A level of detail is a doubling; the request is a count** (Tom, 8 October: "maybe we can show the LOD is inherintly doubles and halvings. just pick how many doublings of detail you want. that can be pre-computed."; "but LOD can be shown to be doubling of the previous level. so you need to pick the doubling that you want, which is what LOD is."; SPN, "Corollary", Appendix D). Each step of detail is the next level, the last one halved, one bit: which side of the corner. So a request
   is an integer k, how many doublings, and the descent to it can be precomputed: writing a number to k binary digits. It
   follows from the dyadic levels and is not a separate argument for them.
 - **Not recursion: level of detail** (Tom, 8 October: "but this solves a major propblem, that its no really recursion, its picking the level of detail. which is runtime, but the geometry is still compile time."; "yes, its not recursion at all, its level of detail. say in the paper we considered recursion but rejected it for the concept of level of detail. explain why."; SPN §3.3, "Recursion considered and rejected"). The "recursing line" of
@@ -843,7 +842,7 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   root, arithmetic, 2/π) opening others; run 2, in exact fractions without run 1's cap, found the same, arithmetic
   bringing in a factor of 3. Run 3 asked the stricter question, whether a recursion needs no case analysis: on a level
   (two different ends, so only the flip) only a split in 2 makes every part the same kind; on the full circle every split
-  does. So the 2 belongs to the situated reader's open run (SPN, "Unique: every child the same child"). Since then SPN states the proof in three steps ("A route to forcing 2"): the levels are addresses, laid before any
+  does. So the 2 belongs to the situated reader's open run (SPN, "Unique: every child the same child"). Since then SPN states the proof in three steps ("A route to forcing 2", now demoted to its Appendix D): the levels are addresses, laid before any
   payload; before payload the reader holds no measure, which is the hinge; so the only named interior point is the
   corner, and every level is half the last. Which price is a reader's: the direction it resolves, or
   the whole field it looks at? (§5)
