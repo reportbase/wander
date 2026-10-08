@@ -318,8 +318,9 @@ just looking for hidden meaning in something we invented, not hidden meaning in 
   it does not (*The Cauchy* §5); addresses are what survive every change of payload (SPN §4.3).
 - **The careful conclusion.** Some of what is found in the numbers belongs to the ruler, and some survives every ruler and
   belongs to the rules. Whether the rules belong to the world is open (§7). One hint that they are not only invention:
-  the spacing of the zeta zeros matches the energy levels of heavy nuclei and of chaotic quantum systems (Montgomery,
-  Dyson; random-matrix theory).
+  the spacing of the zeta zeros follows random-matrix statistics, the kind found in the energy levels of chaotic quantum
+  systems and first met in heavy nuclei (Montgomery, Dyson). Strictly, the zeros follow the unitary ensemble, while
+  most nuclear spectra follow the orthogonal one: the same family, not the same law.
 
 **The ordinary line has no corner** (Tom, 7 October: "the number line is the near field and the far field combined,
 with no corner."). The ordinary number line is laid out the same everywhere: 0.5 to 1 looks exactly like 1 to 1.5.
@@ -811,7 +812,7 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   does the far direction set the cost of the whole? (§8)
 - **Are the rules invented or found?** Properties that survive every change of ruler belong to the rules, not the drawing
   (§1, "The ruler and the rules"). Whether the rules are themselves a human invention, or something the world also obeys,
-  this paper does not settle. The zeta zeros' match with nuclear energy levels points one way; a test would need a
+  this paper does not settle. The zeta zeros' random-matrix statistics, shared with quantum energy levels, point one way; a test would need a
   property of the rules found in the world before mathematics predicted it.
 - **People, not synthetic readers.** The switch between a held whole and a unit (§6) is ready to test on real
   number-line data, open-ended against bounded. It waits on a dataset.
