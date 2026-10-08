@@ -329,12 +329,31 @@ moves (3), an unequal split that favours a facing (φ), or a root (√2), each a
   halves are mirror images, the corner lies on the cut, and one structure with one bit, the facing, describes both. At
   any b ≥ 3 the parts fall into at least two kinds (for odd b the middle part holds the parent's corner), so the descent
   must ask which kind it is in: a runtime "if". So 2 is the only split in which every child is the parent's image under
-  the level's own symmetry. It rests on the level being an open run, home and far wall of different kinds (*The Cauchy*
+  the level's own symmetry. It rests on the level being an open run, its ends never joined, since they are of different kinds and nothing carries
+  one to the other except the flip, which exchanges them as facings (*The Cauchy*
   §2): on the full turn, where rotations are symmetries too, b equal arcs are alike for every b, so the unsituated circle
   prefers no ratio, and the 2 belongs to the situated reader. Checked by FRC run 3 (`plans/frc-plan.md`): on the level
   only b = 2 has one kind of part, on the full turn every b does. The count is a theorem, not a measurement (the flip sorts
   b parts into ⌈b/2⌉ kinds, one exactly when b ≤ 2); what carries the weight is the premise that a level's symmetries are
   only the identity and the flip, and the reading of "no runtime logic" as "every child the same child".
+- **What a level has before anything arrives** (the premise, argued; Claude's reading, unruled). At compile time a
+  level holds: its two ends, home and the far wall, never joined (the run is open, so there is no rotation); its order,
+  from home outward; the flip, which exchanges the ends as facings (R162); and the flip's fixed point, the corner. What it
+  does not hold is a measure. Evenness in the turn is calculated, and "geometrically only the dyadic places are laid
+  evenly" (*Reader Geometry as Addressing* §6.2, §2.7); its arctan "is the point of contact, and it is engineering" (§2.2).
+  - **The π/2 test.** If the sweep's measure were compile time, 2/π would be a named cut, and FRC run 1 showed it opens
+    other ratios. On the argument above it is not: the quarter turn's measure is computed when a reading is laid, so 2/π
+    is runtime, as is every cut the measure would supply.
+  - **What the inventory names.** The maps that keep the ends, the order and the flip are every order-keeping map of the
+    level that commutes with the flip. They move any point other than the ends and the corner to any other point on the
+    same side, so the only interior point named is the corner, and with nesting every named point is dyadic.
+  - **Why only 2 is even definable.** With no measure, "b equal parts" has no meaning unless the inventory supplies the
+    cuts. The flip supplies exactly one, at the corner, so halves are defined and thirds are not. If a measure were granted
+    after all, thirds would be defined, and run 3's count applies: only halves make every part the same kind. Either way
+    the split is 2.
+  - **What would break it.** A compile-time measure on the level beyond the flip (then the second branch, run 3, carries
+    it); a joining of the ends, which would bring rotations and with them every b (the full turn, situation 1); or a reading
+    of "named for free" wider than "fixed by every symmetry".
 - **Premises a proof must defend:** that only fixed points are named for free; R162 (ruled, not derived); and that the next
   level nests in a named part.
 - **Kill:** a ratio other than 2ᵏ whose levels can be laid from the flip, its fixed point and nesting alone.
