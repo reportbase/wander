@@ -119,3 +119,32 @@ The simulation matches the exact expectation to within its sampling (mean at ρ 
   is the best of a broad, flat valley, not a sharp rule. It rests on one cost model (pay per grain of a fixed field)
   and one confirmation rule (three looks). Other prices, or confirming by two looks or four, could move it. Not ruled;
   synthetic.
+
+### Run 3: is the 2 robust? (prediction written 8 October, before run 3; Tom: "yes", to running it)
+
+Run 2 found the best step near 2 under one confirmation rule (three looks in all) and one price (a look reads every grain
+of a one-dimensional field). Run 3 varies both. Everything else is as in run 2.
+
+- **Confirming looks:** k = 2, 3, 4 and 5 looks in all at the grain where "two" first shows (run 2 was k = 3). A lucky
+  "two" below the corner survives with probability (s₀ρⁱ)ᵏ⁻¹ after the first.
+- **The field's dimension d:** a look reads every grain of a field of d dimensions, so look i costs ρᵈⁱ; the ideal (one
+  look at the corner) costs s₀⁻ᵈ, and the cost ratio is taken against that. The chance of "two" is unchanged, min(s₀ρⁱ, 1):
+  the two points lie along one direction. d = 1 is runs 1 and 2; d = 2 is an image; d = 3 a volume.
+- **The steps:** ρ from 1.1 to 4 in steps of 0.05, and 5, 6, 8. Computed exactly (the expectation, as in run 2, which the
+  simulation matched); one cell simulated as a check.
+
+**Reasoning, before running.** With d = 1 the classic sums put the best step near 2 to e, and run 2's confirmation pulled
+it to 2. Changing k changes how much the last level costs (k looks there) and how much luck survives; it should move the
+best step a little, not out of the valley. With d > 1 what a step multiplies is the cost, by ρᵈ, and the classic sums are
+in that: so the cost should still step by about 2, which puts the grain's step near 2^(1/d): about 1.41 for an image, 1.26
+for a volume. If so, what doubles is not the grain but what a look costs.
+
+- **P1 (the kill): for d = 1 the 2 is robust to the confirmation rule.** For each of k = 2, 3 and 4, the ρ minimizing the
+  mean cost ratio lies in 1.75 to 2.5, and the ρ minimizing the worst lies in 1.5 to 2.5.
+- **P2 (the kill): in an image the cost doubles, not the grain.** For d = 2 and k = 3, the ρ minimizing the mean cost ratio
+  lies in 1.25 to 1.75 (ρ² in about 1.6 to 3).
+- **P3 (reported):** d = 3 (predicted 1.1 to 1.5); k = 5; and how flat the valley is in each case (the range of ρ within 3%
+  of the best).
+
+**Kill.** P1 is killed if any of the six best steps (three k, mean and worst) falls outside its range. P2 is killed if the
+best ρ for d = 2 is outside 1.25 to 1.75.
