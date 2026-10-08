@@ -45,7 +45,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail (§3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail (§3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -2137,6 +2137,15 @@ detail**. Why:
   per doubling (Proposition 3.4: within a level a share, across levels a count, and the count is the logarithm). So what
   the earlier text called recursion is the far field of one sweep, the sweep over the level of detail. With it the
   derivation of 2 was demoted (the central open question; Appendix D): on a logarithmic sweep the base is the unit.
+- **Smaller drives less detailed** (Tom, 8 October: "so two things happen when we sweep to the horizon, things get proportionally smaller and have proportionally less detail,is that the same thing?"; "they do seem to be the same thing. smaller size drives the lower level of detail."). Toward the horizon a thing of fixed size Δ at v is read as Δ/v units of h:
+  each doubling of v halves it. The detail that shows is how many of the reader's grains fit across it, and the grain is h
+  (GRN: pixels h wide), so that is Δ/v grains too: one division, read twice. Size is the cause and level of detail the
+  effect: k = log₂(Δ/v) up to a constant, one level lost per doubling, which is the in-place sweep's halving past the
+  corner (¾, ⅞, 15/16). They coincide because one h is both the reader's ruler and its grain, the single unit that also
+  forces V = H. They would part only if the grain changed without the unit (finer resolution at the same h; zooming in
+  SPN changes h, so both move together) or if the thing had a finest detail (ruled out by Tom's premise, always something
+  smaller). So the logarithm past the corner counts halvings of size, and each is a level of detail. The reader's request
+  (the level of detail it wants) is then its grain, h: given h, size sets the level.
 - **Depth, the slider and the level of detail** (Tom, 8 October: "we have describe g as the slider between the unit circle and the shape."; "so depth is the difference between situation 2 and situation 1."; "but it seems to be [0,1] in unsituated view and [0,PI/2] in situated view."). Depth is B(θ) − 1, the shape less the unit circle:
   situation 2 less situation 1. The slider between them is R140's (written g then; m since R170, §2.1): r = 1 + m · (B − 1),
   m = 0 the circle, m = 1 the shape (R121: "the radius from 1 to the breadth"). With the whole held (unsituated), m is a
