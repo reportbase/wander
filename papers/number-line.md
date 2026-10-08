@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, forty-second: §4, the exit is the level of detail the reader requests, not the payload's depth, which never runs out (Tom).
 - 8 October, forty-first: §4, the exit is runtime logic, set by the depth and the level of detail; Tom's earlier "no exit" corrected (Tom).
 - 8 October, fortieth: §4, the levels known everywhere, laid only where there is depth; none on the unit circle (Tom).
 - 8 October, thirty-ninth: §7, SPN's proof of the 2 in three steps: the levels are laid before any payload; before payload there is no measure; the one named point, the corner, forces halving (Tom: "first we need to show that the recursive levels are fully known prior to any payload").
@@ -564,6 +565,11 @@ by side, with no ruling on the word:
   stop, and it stops where the depth stops or at the observation's level of detail, as a mipmap is chosen per pixel from a
   precomputed pyramid. Geometry cannot know the depth before the payload. The ordinary line, laying every level, is the
   line with no exit.
+- **The exit is the level of detail requested** (Tom, 8 October: "but there is always something there, something smaller, something larger, you can always zoom further in both directions."; "yes, that problem is nicely solved is the user requests a level of detail, that is the exit condition, and that has nothing to do with the payload."; SPN §3.3). There is always something smaller and larger,
+  in both directions, so depth never stops and cannot be the exit. The reader requests a level of detail, as a map's zoom
+  level is chosen, and the descent stops there; the request is the reader's, not the payload's. Three times, then: the
+  geometry's levels, the reader's request, the payload's values. On this paper's line, a number written to a requested
+  number of digits is the plain case; the ordinary line, laying every level, is the line with no request.
 - **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
   other is a held thing's remainder, entered where found. They are not ruled the same or different.
 

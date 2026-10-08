@@ -21,6 +21,12 @@
 > *Corrected, same day* (Tom, 8 October: "the exit condition is the depth, no need to recurse beyond the depth, so there is runtime logic."; "geometry can't know the depth without the payload."; "my earlier statement is false, there must be somekind of runtime logic. also LOD works this way no need to recurse further if your at the LOD of that observation."). The descent has one "if": its exit, stop where the depth stops or at the
 > observation's level of detail. Geometry cannot know either before the payload, so the exit is runtime. What has no "if"
 > is the structure: what a level is, its corner, the ratio to the next.
+>
+> *Then, the exit placed* (Tom, 8 October: "but there is always something there, something smaller, something larger, you can always zoom further in both directions."; "yes, that problem is nicely solved is the user requests a level of detail, that is the exit condition, and that has nothing to do with the payload."). There is always something smaller and something larger, so depth never runs out
+> and cannot be the exit. The reader requests a level of detail, and that is the exit: the reader's, not the payload's.
+> So there are three times, not two: compile time, the geometry (the levels); the request, the reader (how far to
+> descend, its level of detail); runtime, the payload (the values met there). The "if" is the request's, and it asks
+> nothing of the payload.
 
 *Tom Brinkman, with Claude. Working paper. Rewritten 1 October 2026 around the rulings of that evening (R153–R158); revised 2 October to foreground the inversion at the corner as the main contribution (§3.2, R161), and again that
 morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the situations restated on the sweep alone (§2.1, Tom's list 0–4) and the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 or 4 has a horizon and recursion where situations 1 and 2 have neither. Revised 8 October with
@@ -31,7 +37,8 @@ fixes the 2 (the central open question, Appendix C). Then: the wedge is made at 
 the picture of all possible wedges from nowhere, not built from them (§1, §2.1). Then, with *The Cauchy* (22 August) and
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
-geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as runtime logic, set by the depth and the observation's level of detail (the opening, §3.3), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
+geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
+there is always something smaller and something larger (the opening, §3.3), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -333,8 +340,8 @@ no other primitive could generate another ratio; it claims that SPN's do not.
    have to read v to know how to read v. So whatever fixes a level is held before anything arrives. The layout passes: in
    place the stack is f ↦ 2f on the front half and ½/(1 − f) on the back ("The level as 2h, in place", §3.3), which
    mentions home, the far wall, the flip and nothing else; h only sets the units, so every reader's stack is the same. The
-   payload decides where a reading lands and how deep the levels go (the exit, runtime: geometry cannot know the depth
-   without the payload), never what they are.
+   payload decides where a reading lands, never what the levels are; how deep they are laid is the level of detail the
+   reader requests, which owes nothing to the payload either.
 2. **Before payload, there is no measure** (the hinge; Claude's reading, unruled). Before anything arrives the reader holds
    its unit (V = H), home, the far wall, their order and the flip. Not a measure: a measure assigns a spread to payload over
    a range that already exists (evenness in the turn is calculated, *Reader Geometry as Addressing* §6.2, §2.7), so it
@@ -365,9 +372,9 @@ moves (3), an unequal split that favours a facing (φ), or a root (√2), each a
 - **Unique: every child the same child** (Tom, 8 October: "computer science has a concept of pre-compute. that is the proof technique. does 2 allow us to do recursion without runtime logic. is 2 unique in that ability or do other number provide this capbiality as well?"). Every ratio has a closed form for its level, and in the place
   coordinate the corner bisects a level of any ratio, so neither singles out 2; nor does efficiency (the classic radix
   economy is best at e, and at 3 among whole numbers). The test that does is "no case analysis": a recursion has no runtime
-  logic about its structure when every child is the same child, one precomputed structure reused. (It has one runtime
-  test, the exit, set by the depth, which only the payload knows; §3.3, "Recursion is an identity". So 2 is the split
-  where the exit is the only "if".) Split a level into b equal parts.
+  logic about its structure when every child is the same child, one precomputed structure reused. (It has one test,
+  the exit, set by the level of detail the reader requests, not by the payload; §3.3, "Recursion is an identity". So 2 is
+  the split where the exit is the only "if".) Split a level into b equal parts.
   Its symmetries are the identity and the flip (R162), and the flip sends part i to part b − 1 − i. At b = 2 the two
   halves are mirror images, the corner lies on the cut, and one structure with one bit, the facing, describes both. At
   any b ≥ 3 the parts fall into at least two kinds (for odd b the middle part holds the parent's corner), so the descent
@@ -2176,12 +2183,18 @@ not that.
   (GRN, `plans/grn-plan.md`), its price (CAL, `plans/cal-plan.md`) and whether anything is left to read (the draw
   labs). None of these is in the geometry, and none can be: geometry cannot know the depth without the payload. So
   there is runtime logic, exactly one test, go on or stop.
-- **Two exits, both runtime: the payload's depth and the observation's level of detail** (Tom: "also LOD works this way").
-  A reader stops where the payload has no more depth, or sooner, where finer levels no longer show at its grain: no need
-  to recurse past the level of detail of that observation. Graphics does the same with a mipmap: the pyramid of halved
+- **One exit: the level of detail the reader requests** (Tom: "also LOD works this way"; then Tom, 8 October: "but there is always something there, something smaller, something larger, you can always zoom further in both directions."; "yes, that problem is nicely solved is the user requests a level of detail, that is the exit condition, and that has nothing to do with the payload."). The world's
+  depth never runs out, in either direction, so "where the depth stops" never fires. The reader requests a level of
+  detail, and the descent stops there: no need to recurse past it. The request is the reader's and has nothing to do with
+  the payload, so the earlier "geometry cannot know the depth without the payload" is true but moot: the exit is not set
+  by the depth. In SPN's terms the request is the reader's grain, the h it holds (GRN, `plans/grn-plan.md`), which is in
+  the inventory before anything arrives. "Always something there" is Tom's premise about the world, the payload, not
+  derived; it agrees with the horizon having no last level (§2.1, "Why the recursion"; `plans/resolution-recursion.md`). Graphics does the same with a mipmap: the pyramid of halved
   images is precomputed once, and the level used is chosen per pixel at draw time, by how much of the image the pixel
   covers. The flying page's relief bands are this rule (`bandW`). Mipmaps are halved by convention, so they illustrate the
-  split between precomputed levels and a runtime exit, not the 2.
+  split between precomputed levels and an exit outside them, not the 2. They are not quite the request either: a mipmap's
+  level is computed from the pixel's footprint on the scene, while a map's zoom level, chosen by the viewer, is the
+  request in the plainest form.
 - **It extends R155 and R171 from addresses to levels.** The range of addresses is laid before anything arrives, and
   payloads can be evaluated on demand (§4.2, §4.3). So is the ladder of levels: laid in advance as one identity, with only
   the descent run. Geometry is compile time; observation is the runtime (the opening, "Geometry is compile time").
