@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, fifty-eighth: §4, GRN run 8 and the corner as where the resolved becomes the unresolved (SPN, the central result).
 - 8 October, fifty-seventh: §4, the law has no corner; the corner is the reader's grain (Tom).
 - 8 October, fifty-sixth: §4, the inverse-square law, the situated reader one more place it shows up (Tom).
 - 8 October, fifty-fifth: §4, the signal thins over more room; one reader holds one share; the cost of being situated (Tom).
@@ -614,6 +615,9 @@ by side, with no ruling on the word:
   It is the inverse-square law (Tom, 8 October: "is this the inverse square law?"; "yes, the situated reader is just another place this law shows up."): 1/v in each of two directions, grains lost while the object is resolved, brightness
   lost once it is under one grain, the switch at the reader's corner. The situated reader is one more place the law shows up.
   The law itself has no corner (Tom, 8 October: "but the inverse square law does not account for the corner?"): 1/v² is the same at every scale. The corner comes from the reader's grain, h.
+  GRN run 8 (`plans/grn-plan.md`): a reader with no reach below its grain loses a receding pair at one grain across at
+  any light; one given the shape loses it at v* ∝ (a²F₀)^(1/4). In SPN at the central result: the corner is where the
+  resolved becomes the unresolved.
 - **The eye is engineering, not geometry** (Tom, 8 October: "our paper is about h and v. not about the human eye. the human eye is engineering more than fundemental geometry."). The paper is about h and v. A lens, a retina and a visual cortex
   are one reader's engineering of them, and are kept out of the argument; what they share with it (projection as v/h,
   resolution laid proportionally then logarithmically, a fitted switch point near the fovea) is recorded as a neighbour in

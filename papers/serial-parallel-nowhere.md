@@ -51,7 +51,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -243,6 +243,17 @@ different standing, as the correction below found. They are now stated apart:
 > *Demoted, 8 October* (Tom: "demote the derivation of 2"). The reader sweeps its level of detail, proportional in the
 > near field and logarithmic in the far; the ratio is the unit the far field is counted in, which the geometry leaves
 > free (Proposition 3.4(a)). The question is kept but no longer central ("Demoted: the derivation of 2", below; Appendix D).
+
+**The corner is where the resolved becomes the unresolved** (Tom, 8 October: "this seems important, explains alot.", and "yes" to running it first and then raising it here; Claude's reading of standard physics, unruled; one
+synthetic run). A signal thins as it travels (the inverse-square law), and the law has no scale: 1/v² looks the same at
+every distance. The one scale is the reader's grain, h, and it puts one switch into the law: the distance at which a thing
+is one grain across. Before it, distance costs grains (the thing is smaller, each grain as bright); past it, distance
+costs light (the thing is under one grain, and that grain dims). That is the corner, s = 1, read physically, and it is why
+the corner is the reader's and not the world's (§3.3, "The same signal, a smaller share"). GRN run 8 (`plans/grn-plan.md`)
+joined the law to two readers: one with no reach below its grain loses a receding pair at one grain across at any light
+(within 0.4%); one given the shape reads below its grain by its light and loses the pair at v* ∝ (a²F₀)^(1/4) (slopes
+0.51 and 0.25 against ½ and ¼ predicted), distance costing twice past the corner. The law is put in, not tested; what the
+run shows is that the switch is the reader's in both.
 
 The hypothesis as promoted, with its history, is kept below as written.
 
