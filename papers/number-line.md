@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, forty-ninth: §8, h, v, v₂, then the sweep: the situated address on the unit square, one level of detail splitting into four (Tom).
 - 8 October, forty-eighth: SPN §3.3 and §3.5 (depth the slider m adds, shown by the level of detail; trig used sparingly, the in-place sweep the trig-free one), noted here (Tom).
 - 8 October, forty-seventh: §8, f is v₂, a second v read against the same h; the sphere is a reader with one unit reading in two directions (Tom).
 - 8 October, forty-sixth: §4, the eye: inversion a relabelling, the curved retina the bounded sweep, V1 the level of detail as proportion then logarithm (Tom).
@@ -885,6 +886,18 @@ hemisphere. An earlier answer to the same question took the third quantity as on
 and magnitude" (R106, R107; R107 withdrawn by R125); this one takes it as a second of the same kind. Open: whether v and
 v₂ are alike, or differ as the flat and upright hand do. The text below and §8's figures keep the letter f; read it as
 v₂ (and `sphere.html` keeps `?f=`).
+
+**h, v, v₂, then the sweep** (Tom, 8 October: "so really we have h,v,v2. and then sweep over them", and "yes"; Claude's wording, unruled). The situated reader holds h and reads v and v₂ against it:
+two relations, v/h and v₂/h, each swept on its own by the in-place sweep (§3.5: f = s/2 before the corner, 1 − 1/(2s)
+past it). Its address is a pair (f₁, f₂) in the **unit square** [0, 1] × [0, 1], not the octant: home at (0, 0), the
+corner of each direction at ½, the triple corner v = h = v₂ at the centre (½, ½), the far walls the edges f = 1. The third
+relation, v/v₂, is their quotient and is not swept. (`sphere.html` shows this square as the unit cube's face seen from h.)
+One h means one grain, so one level of detail serves both directions: each level halves a cell both ways, into four, a
+quadtree, as mipmaps halve an image in both directions. The square is not symmetric under rotation, as the octant is;
+that is right for a situated reader, whose h is special and whose two directions are its own axes (the flat hand and the
+upright hand). The octant, all three held alike, stays the unsituated picture. Open: whether v and v₂ always share one
+level of detail (the eye resolves alike in every direction at the fovea, but its field is not round), and how the square
+relates to the hemisphere an eye covers (they agree at the corner and along the axes, not between).
 
 **The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't need
 to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all the

@@ -45,7 +45,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye (§3.3); f in (v, h, f) is v₂, a second v read against the same h (§1); depth, the slider m and the level of detail (§3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye (§3.3); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail (§3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -537,6 +537,18 @@ hemisphere. An earlier answer to the same question took the third quantity as on
 and magnitude" (R106, R107; R107 withdrawn by R125); this one takes it as a second of the same kind. Open: whether v and
 v₂ are alike, or differ as the flat and upright hand do. The text below and `number-line.md` §8 keep the letter f; read it as
 v₂ (and `sphere.html` keeps `?f=`).
+
+**h, v, v₂, then the sweep** (Tom, 8 October: "so really we have h,v,v2. and then sweep over them", and "yes"; Claude's wording, unruled). The situated reader holds h and reads v and v₂ against it:
+two relations, v/h and v₂/h, each swept on its own by the in-place sweep (§3.5: f = s/2 before the corner, 1 − 1/(2s)
+past it). Its address is a pair (f₁, f₂) in the **unit square** [0, 1] × [0, 1], not the octant: home at (0, 0), the
+corner of each direction at ½, the triple corner v = h = v₂ at the centre (½, ½), the far walls the edges f = 1. The third
+relation, v/v₂, is their quotient and is not swept. (`sphere.html` shows this square as the unit cube's face seen from h.)
+One h means one grain, so one level of detail serves both directions: each level halves a cell both ways, into four, a
+quadtree, as mipmaps halve an image in both directions. The square is not symmetric under rotation, as the octant is;
+that is right for a situated reader, whose h is special and whose two directions are its own axes (the flat hand and the
+upright hand). The octant, all three held alike, stays the unsituated picture. Open: whether v and v₂ always share one
+level of detail (the eye resolves alike in every direction at the fovea, but its field is not round), and how the square
+relates to the hemisphere an eye covers (they agree at the corner and along the axes, not between).
 
 **The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't
 need to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all
