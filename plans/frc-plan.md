@@ -136,3 +136,23 @@ b = 2 to 6, one split each.
 - **P3 (reported).** For odd b the parent's corner lies inside the middle part, which is why that part is of its own kind;
   for even b it lies on a cut. b = 4 in one step has two kinds; as two halvings, each step has one: compound dyadic splits
   are uniform level by level, which is the sense in which 4, 8, … are "the same 2".
+
+### Run 3 (8 October, `frc.run3()`): P1 and P2 not killed; P3 as stated
+
+| b | kinds of part on the level | kinds on the full turn | the parent's corner |
+|---|---|---|---|
+| **2** | **1** ({0, 1}) | 1 | on the cut |
+| 3 | 2 ({0, 2}, {1}) | 1 | inside part 1 |
+| 4 | 2 ({0, 3}, {1, 2}) | 1 | on a cut |
+| 5 | 3 | 1 | inside part 2 |
+| 6 | 3 | 1 | on a cut |
+
+- **P1 not killed.** On the level only b = 2 has one kind of part.
+- **P2 not killed.** On the full turn every b has one kind.
+- **P3 as stated.** For odd b the corner lies inside the middle part; b = 4 in one step has two kinds, and as two halvings
+  one kind at each step.
+
+**A note on standing.** The run only counts; the result is a theorem, not a measurement. The flip pairs part i with
+part b − 1 − i, so it sorts b parts into ⌈b/2⌉ kinds, which is one exactly when b ≤ 2; and rotations make every arc alike.
+What the theorem rests on is the premise, not the count: that a level's only symmetries are the identity and the flip
+(home and far wall of different kinds, with R162), and that "no runtime logic" means "every child the same child".

@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, thirty-eighth: §7, FRC runs 2 and 3: only a split in 2 makes every child the same child on a level (Tom: "does 2 allow us to do recursion without runtime logic").
 - 8 October, thirty-seventh: the purpose, with geometry as compile time and the ruler agreed after it (Tom).
 - 8 October, thirty-sixth: §7, a route to forcing 2 and FRC run 1 (only powers of 2 from the flip, its fixed point and nesting).
 - 8 October, thirty-fifth: §4, the recursing line's levels are geometry (precomputed, an identity) and "as needed" is the reader's runtime exit; what that says for the 2 (Tom).
@@ -807,7 +808,9 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   route (only the corner is fixed by a level's symmetries, so only halving is free) and FRC (`plans/frc-plan.md`) checks
   its bookkeeping: run 1 found only powers of 2 from the base operations, and each added operation (a chosen number, a
   root, arithmetic, 2/π) opening others; run 2, in exact fractions without run 1's cap, found the same, arithmetic
-  bringing in a factor of 3. Which price is a reader's: the direction it resolves, or
+  bringing in a factor of 3. Run 3 asked the stricter question, whether a recursion needs no case analysis: on a level
+  (two different ends, so only the flip) only a split in 2 makes every part the same kind; on the full circle every split
+  does. So the 2 belongs to the situated reader's open run (SPN, "Unique: every child the same child"). Which price is a reader's: the direction it resolves, or
   the whole field it looks at? (§5)
 - **Pricing slow-fading detail.** A reader pricing each level from its own noisy looks stops early where detail fades
   slowly (CAL runs 1 and 2, killed at r = 0.7). What estimate, if any, prices it well? (§4)

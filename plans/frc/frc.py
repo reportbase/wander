@@ -157,3 +157,42 @@ def run2():
              '4+4sqrt2': 4 + 4 * s2, '1+sqrt2': 1 + s2}
     res['root forms'] = sorted(k_ for k_, v in forms.items() if any(abs(r - v) < 1e-6 for r in tot))
     return res
+
+
+# ---- run 3: kinds of part under the level's symmetries (no case analysis) ----
+
+def kinds(b, group):
+    """Orbits of the b equal parts under the given symmetries: 'level' = {id, flip}; 'turn' = rotations and flip."""
+    gens = [lambda i: b - 1 - i]
+    if group == 'turn':
+        gens.append(lambda i: (i + 1) % b)
+    seen, orbits = set(), []
+    for start in range(b):
+        if start in seen:
+            continue
+        orb, todo = {start}, [start]
+        while todo:
+            i = todo.pop()
+            for g in gens:
+                j = g(i)
+                if j not in orb:
+                    orb.add(j)
+                    todo.append(j)
+        seen |= orb
+        orbits.append(sorted(orb))
+    return orbits
+
+
+def corner_part(b):
+    """Where the parent's corner (1/2) falls among b equal parts: inside part k, or on a cut."""
+    x = b / 2
+    return 'on a cut' if x == int(x) else f'inside part {int(x)}'
+
+
+def run3():
+    rows = []
+    for b in range(2, 7):
+        rows.append((b, kinds(b, 'level'), kinds(b, 'turn'), corner_part(b)))
+    # b = 4 as two halvings: each step is a split in 2
+    two_step = [kinds(2, 'level'), kinds(2, 'level')]
+    return rows, two_step

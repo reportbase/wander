@@ -331,7 +331,10 @@ moves (3), an unequal split that favours a facing (φ), or a root (√2), each a
   must ask which kind it is in: a runtime "if". So 2 is the only split in which every child is the parent's image under
   the level's own symmetry. It rests on the level being an open run, home and far wall of different kinds (*The Cauchy*
   §2): on the full turn, where rotations are symmetries too, b equal arcs are alike for every b, so the unsituated circle
-  prefers no ratio, and the 2 belongs to the situated reader. Checked by FRC run 3 (`plans/frc-plan.md`).
+  prefers no ratio, and the 2 belongs to the situated reader. Checked by FRC run 3 (`plans/frc-plan.md`): on the level
+  only b = 2 has one kind of part, on the full turn every b does. The count is a theorem, not a measurement (the flip sorts
+  b parts into ⌈b/2⌉ kinds, one exactly when b ≤ 2); what carries the weight is the premise that a level's symmetries are
+  only the identity and the flip, and the reading of "no runtime logic" as "every child the same child".
 - **Premises a proof must defend:** that only fixed points are named for free; R162 (ruled, not derived); and that the next
   level nests in a named part.
 - **Kill:** a ratio other than 2ᵏ whose levels can be laid from the flip, its fixed point and nesting alone.
