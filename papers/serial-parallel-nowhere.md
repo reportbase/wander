@@ -2182,6 +2182,11 @@ detail**. Why:
   1/v², the law in its textbook form. The switch is where the object is one grain wide, size over grain = 1, GRN's corner
   (`plans/grn-plan.md`): before it distance costs grains, past it brightness. (Claude's reading of standard physics,
   unruled.)
+  *The law has no corner* (Tom, 8 October: "but the inverse square law does not account for the corner?"). 1/v² has the same form at every distance; nothing in it marks one scale. The corner is
+  the reader's: it comes from the grain, h, the one scale the reader brings. The law with no reader is scale-free; a reader
+  with a finite grain puts one switch into it, at the distance where the object is one grain wide. Physics keeps that
+  switch outside the law too, in the instrument (resolved against point source, the resolution limit). So the corner is
+  not in what is sent; it is in who receives it, as the paper holds throughout (the corner is the reader's, §3).
 - **Depth, the slider and the level of detail** (Tom, 8 October: "we have describe g as the slider between the unit circle and the shape."; "so depth is the difference between situation 2 and situation 1."; "but it seems to be [0,1] in unsituated view and [0,PI/2] in situated view."). Depth is B(θ) − 1, the shape less the unit circle:
   situation 2 less situation 1. The slider between them is R140's (written g then; m since R170, §2.1): r = 1 + m · (B − 1),
   m = 0 the circle, m = 1 the shape (R121: "the radius from 1 to the breadth"). With the whole held (unsituated), m is a
