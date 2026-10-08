@@ -47,6 +47,7 @@ ruled.*
 - 7 October, twenty-fifth: §8, the sphere: three breadths, the octant, six chambers and a triple corner, the unit cube, depth as relief (Tom).
 - 7 October, twenty-sixth: §8, a demo: `sphere.html` (Tom: "create a demo for the sphere, that brings it all together").
 - 8 October, twenty-seventh: §5 and §7, WHY2 run 3: the 2 holds for every confirmation rule in one dimension, and not in two or three.
+- 8 October, twenty-eighth: Background and §8, the breadths and the angle; in the situated view V = H (Tom).
 
 ## Background from SPN
 
@@ -56,6 +57,17 @@ account; nothing below is new. R-numbers are Tom's rulings, listed with their da
 **The two breadths and the reading.** A reader compares two magnitudes: **h**, the one it holds as its unit, and
 **v**, the one it reads. Its reading is the relation **s = v/h**. Dividing removes the common scale and leaves only the
 relation, which is why a reading carries no units.
+
+**The breadths and the angle** (Tom, 8 October: "h = [0,1] v = [0,1] -> [0,PI/2]. H = breadth of h, V = breadth of
+view. h is a ratio of H. v is a ratio of V. in the situated view V = H."). Each breadth is taken as a ratio of its own
+whole: v = v_raw/V, h = h_raw/H, both in [0, 1]. The pair maps to an angle θ = atan(v/h) in [0, π/2], and the sweep is
+that angle rescaled, g = θ/(π/2).
+- **Where the corner falls.** In general θ = atan((v_raw/h_raw)·(H/V)), so the 45° corner falls at v_raw/h_raw = V/H.
+- **The situated view.** A situated reader holds one unit, so V = H is forced, not chosen, and its corner is at s = 1:
+  the angle depends on the relation alone, with no breadth in it.
+- **The unsituated view.** A reader in situations 1 or 2 knows both breadths, which may differ (a frame wider than it is
+  tall), and its corner sits at s = V/H.
+- **The origin.** v = h = 0 has no angle: nothing of either breadth, situation 0.
 
 **The flip and the corner.** Reading the same pair the other way round, h against v, sends s to 1/s: **the flip**, the
 swap of the two **facings**. It has one fixed point, s = 1, where v = h: **the corner**. In plain words: below the
@@ -767,6 +779,11 @@ depth is the circle (or sphere); the **corner** is v = h.
 **One scale lost, always.** Three breadths (v, h, f) in [0, 1]³ leave two relations once the scale is divided out, say
 v/h and f/h in [0, ∞)², or two angles. In general n breadths leave n − 1 relations, and exactly one thing is lost: the
 scale. The address is still recovered, the size never.
+
+**Three breadths and three wholes.** As in the plane (Background, "The breadths and the angle"), each breadth is a
+ratio of its own whole: v of V, h of H, f of F. A situated reader holds one unit, so V = H = F, and the triple corner is
+at v_raw = h_raw = f_raw. A reader that knows three different wholes finds its triple corner moved, to where each raw
+breadth is in proportion to its own whole.
 
 **The relation set is the first octant of the unit sphere.** A spherical triangle with three right angles; its area is
 4π/8 = **π/2**, the same number as the quarter circle's length (2π/4). The match is a coincidence of two and three
