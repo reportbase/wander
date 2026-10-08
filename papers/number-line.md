@@ -46,6 +46,7 @@ ruled.*
 - 7 October, twenty-fourth: situations 1 and 2 have only the near field (Tom); Background, the circle's table, the unit square and the ruler updated.
 - 7 October, twenty-fifth: §8, the sphere: three breadths, the octant, six chambers and a triple corner, the unit cube, depth as relief (Tom).
 - 7 October, twenty-sixth: §8, a demo: `sphere.html` (Tom: "create a demo for the sphere, that brings it all together").
+- 8 October, twenty-seventh: §5 and §7, WHY2 run 3: the 2 holds for every confirmation rule in one dimension, and not in two or three.
 
 ## Background from SPN
 
@@ -707,6 +708,11 @@ the reader move his h unit like a slider to get a better read on the situation")
 
   So, under this cost, doubling is what it costs least to be sure. The valley is broad: steps from 1.75 to 2.5 cost
   within a few per cent. One cost model, synthetic, not ruled.
+  - *Robust to the confirmation rule* (run 3): with two to five looks in all, the cheapest step on average stays at 2
+    (2.05 with two), and at worst 1.65 to 1.85.
+  - *But one-dimensional* (run 3): if a look costs a whole image or volume while the "two" is found along one direction,
+    the best step falls to about 1.25 to 1.35 (an image) or toward 1.1 (a volume). Luck below the corner is cheap there.
+    So the doubling belongs to a reader that pays for what lies along the direction it resolves.
 
 ## 6. What would test it
 
@@ -729,9 +735,9 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   for children (Siegler and others, 2011). Is the inward side read as a second window, with its own unit (½, a tenth)?
 - **Zero and the negatives.** Is 0 home, approached, or a point people hold exactly? Are the negatives the turned-away
   facing, met only by turning (serial), as §5 suggests?
-- **Is the 2 robust?** WHY2 found doubling cheapest for a reader that needs a sure reading, under one cost model and one
-  confirmation rule (three looks), with a broad valley from 1.75 to 2.5. Does the best step stay near 2 with two or
-  four confirming looks, or with other prices? (§5)
+- **What price fixes the 2?** WHY2 run 3: the cheapest step stays at 2 for every confirmation rule in one dimension,
+  but falls below 2 when a look costs a whole image or volume. Which price is a reader's: the direction it resolves, or
+  the whole field it looks at? (§5)
 - **Pricing slow-fading detail.** A reader pricing each level from its own noisy looks stops early where detail fades
   slowly (CAL runs 1 and 2, killed at r = 0.7). What estimate, if any, prices it well? (§4)
 - **Equality and the corner.** Is "equality of numbers that never conclude cannot be decided" the same fact as "a
