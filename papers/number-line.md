@@ -60,6 +60,7 @@ itself, and it does not need to be.
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, thirty-fifth: §4, the recursing line's levels are geometry (precomputed, an identity) and "as needed" is the reader's runtime exit; what that says for the 2 (Tom).
 - 8 October, thirty-fourth: the paper's purpose stated at the top (explain, not criticize); §1, the ruler and the rules (since cut to an illustration: the mystery may be in the ruler); wording that read as fault-finding recast as what the line is built for (Tom).
 - 8 October, thirty-third: Background and §8, the hand (fingers addresses, rings payload) to explain the situations; the Cauchy consists of addresses, not payloads; the reader's unit circle is a quarter in one facing (Tom, with *The Cauchy* and *Reader Geometry as Addressing*).
 
@@ -540,6 +541,14 @@ by side, with no ruling on the word:
   with 500, and none for an evenly spaced line (1.10). For a set with every number inside a tight cluster it is small
   (0.77; the first run's prediction, under 0.3, was killed, because such a set is detail everywhere at a finer scale).
   So the ordinary line pays for its finest detail everywhere; a situated reader pays for it where it is.
+- **The recursing line's levels are geometry; "as needed" is the reader's** (Tom, 8 October: "recursion is regarded as algorithmic by computer scientists. it computer science language, recursive systems recurse until the exit condition. Lots of logical comparisons to test for the exit. In geometry, it is not algorithmic, it is an identity, it computer science language it is precomputed. think of geomtery as the pre-computation of a system prior to the dyanamic runtime logic." And: "this is very important because geometry is not actually recursive the way computer science regards it. every level of recursion does not require an exit from the recursion. the levels are precomputed by geomtery itself, prior to the universe. that may be a good argument for the forcing of 2.";
+  SPN §3.3, "Recursion is an identity"). The levels are not a procedure with an exit tested at each call: they hold as an
+  identity, at every level at once, laid before anything is read (a float's exponent is read from its bits, with no
+  loop). What runs is the descent, and its exit is the reader's: its grain, its price, whether anything is left. The
+  ordinary line is all geometry and no runtime: with no reader's exit built in, it lays out every level. If the levels are
+  precomputed, their ratio cannot be set by what arrives, which narrows it to numbers the geometry itself names, 2 the
+  plain one (Tom: "that may be a good argument for the forcing of 2"); that every ratio also has its identity is the gap
+  (SPN §3.3).
 - **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
   other is a held thing's remainder, entered where found. They are not ruled the same or different.
 
@@ -790,7 +799,8 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
 - **Zero and the negatives.** Is 0 home, approached, or a point people hold exactly? Are the negatives the turned-away
   facing, met only by turning (serial), as §5 suggests?
 - **What price fixes the 2?** WHY2 run 3: the cheapest step stays at 2 for every confirmation rule in one dimension,
-  but falls below 2 when a look costs a whole image or volume. Which price is a reader's: the direction it resolves, or
+  but falls below 2 when a look costs a whole image or volume. If the levels are precomputed (§4), no price should set
+  them; then which number does the geometry itself name, and is 2 the only one? Which price is a reader's: the direction it resolves, or
   the whole field it looks at? (§5)
 - **Pricing slow-fading detail.** A reader pricing each level from its own noisy looks stops early where detail fades
   slowly (CAL runs 1 and 2, killed at r = 0.7). What estimate, if any, prices it well? (§4)

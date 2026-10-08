@@ -17,7 +17,8 @@ with the circle and the sphere as drawings of it (§1); the facings as wedges (�
 fixes the 2 (the central open question, Appendix C). Then: the wedge is made at every observation, and the sphere is
 the picture of all possible wedges from nowhere, not built from them (§1, §2.1). Then, with *The Cauchy* (22 August) and
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
-payloads (§4.3); the reader's unit circle, a quarter in one facing (§1).*
+payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
+geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -295,6 +296,11 @@ So, under this cost, levels one doubling apart are what it costs least to be sur
 along the direction it resolves. That is a candidate answer to the open question, not a ruling: the valley is broad
 (1.65 to 2.5 within 3%), the price is one model, and which price is a reader's is now the open part. The builder chose
 the cost model, not the ratio.
+
+**Precomputed levels (8 October; §3.3, "Recursion is an identity").** Tom: the levels are "precomputed by geomtery
+itself", so "that may be a good argument for the forcing of 2." If so, the ratio cannot be set by anything that arrives,
+which fits HRT and the 3d bench: where the scene or a builder's rule set the ratio, it was not the reader's. It narrows the
+ratio to numbers the addressing itself names, of which 2 is the plain one; it does not yet exclude the others.
 
 **If h is not this, the candidates are few:**
 
@@ -2047,6 +2053,28 @@ And, the same day: "this is situation 1 and 2. recursion is not limited to situa
 - *Amplification adding.* Adding across levels is what a logarithmic measure does: chained relations add only under
   the logarithm (§2.1, "The relation forces the logarithm"). If amplification is counted in levels or logarithms, that
   derives the adding. If it is a plain ratio and still adds, it is something else, and worth finding out which.
+
+**Recursion is an identity; the exit is the reader's** (Tom, 8 October: "recursion is regarded as algorithmic by computer scientists. it computer science language, recursive systems recurse until the exit condition. Lots of logical comparisons to test for the exit. In geometry, it is not algorithmic, it is an identity, it computer science language it is precomputed. think of geomtery as the pre-computation of a system prior to the dyanamic runtime logic." And: "this is very important because geometry is not actually recursive the way computer science regards it. every level of recursion does not require an exit from the recursion. the levels are precomputed by geomtery itself, prior to the universe. that may be a good argument for the forcing of 2.").
+In computing, recursion is a procedure: each level is a call, and each call tests an exit condition. Geometry's levels are
+not that.
+- **No exit is needed, so none is tested.** The horizon's recursion has no exit (§2.1, "Why the recursion"). As a
+  procedure it would never halt; it holds as an identity, at every level at once and at no cost: the flip, each level the
+  same sweep, and a reading's level read off directly. (A floating-point number does the same: its exponent, the level,
+  is read from the bits, with no loop and no halving.) The levels are precomputed: laid before anything arrives.
+- **What runs is the descent, and its exit is the reader's.** How deep to go is decided at runtime, by the reader's grain
+  (GRN, `plans/grn-plan.md`), its price (CAL, `plans/cal-plan.md`) and whether anything is left to read (the draw
+  labs). None of these is in the geometry.
+- **It extends R155 and R171 from addresses to levels.** The range of addresses is laid before anything arrives, and
+  payloads can be evaluated on demand (§4.2, §4.3). So is the ladder of levels: laid in advance as one identity, with only
+  the descent run. Geometry is the precomputation; observation is the runtime.
+- **An argument for the 2, and its gap** (Tom: "that may be a good argument for the forcing of 2"; Claude's reading,
+  unruled). If the levels are precomputed, their ratio cannot depend on anything that arrives: not the scene (the 3d bench
+  found the best ratio following the scene), not a builder's rule (HRT), not a price (WHY2). It must come from the
+  addressing alone. The addressing names one number of its own: two, the halves the corner makes of a level (the central
+  result, "2h in place"), and the order of the flip, which undone by itself returns every reading. That is the case for
+  2. The gap: an identity exists for every ratio. The level map with ratio r is as self-consistent as with 2, and the
+  corner bisects a level of any ratio (the central result's correction). So precomputation rules out a ratio set at
+  runtime, and narrows the ratio to numbers the geometry itself names; it does not yet show that 2 is the only one.
 
 **Rungs, and the ratio between them** (*The Radix*; R176). The doubling is the reader's ratio between rungs, not the geometry's. *The Radix* §5: the lens
 forces the ladder past the corner to be a ladder of ratios, since a change of radius slides a ladder and can re-space
