@@ -9,6 +9,15 @@
 > Its scheme inverts at the corner, where v reaches one h: before it, v is read in terms of h; past it, h in terms of v.
 > Near and far are one geometry, read from either side.
 
+> **Geometry is compile time** (Tom, 8 October: "geometry is not runtime, it is compile time. geometry is not
+> algorithmic, there is no if/then logic. geometry was known before the physices filled it up with stuff."). The
+> addressing (the sweep, the corner, the flip, the levels) is laid before anything arrives (R155): identities, with no
+> branches and no exit tests (§3.3, "Recursion is an identity"). The payload is runtime: values met at the addresses,
+> and every "if" belongs there, including which side of the corner a reading falls on, since that depends on its value.
+> "Known before" in the sense that the relational structure does not depend on the magnitudes that fill it: geometry
+> supplies the places, physics the contents. Scope: this is reader geometry, the addressing; the geometry of spacetime in
+> general relativity, which matter shapes, is not claimed.
+
 *Tom Brinkman, with Claude. Working paper. Rewritten 1 October 2026 around the rulings of that evening (R153–R158); revised 2 October to foreground the inversion at the corner as the main contribution (§3.2, R161), and again that
 morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the situations restated on the sweep alone (§2.1, Tom's list 0–4) and the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 or 4 has a horizon and recursion where situations 1 and 2 have neither. Revised 8 October with
 Tom's remarks of 7–8 October, worked out first in `papers/number-line.md`: each breadth a ratio of its own whole, the
@@ -17,7 +26,8 @@ with the circle and the sphere as drawings of it (§1); the facings as wedges (�
 fixes the 2 (the central open question, Appendix C). Then: the wedge is made at every observation, and the sphere is
 the picture of all possible wedges from nowhere, not built from them (§1, §2.1). Then, with *The Cauchy* (22 August) and
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
-payloads (§4.3); the reader's unit circle, a quarter in one facing (§1).*
+payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
+geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -295,6 +305,33 @@ So, under this cost, levels one doubling apart are what it costs least to be sur
 along the direction it resolves. That is a candidate answer to the open question, not a ruling: the valley is broad
 (1.65 to 2.5 within 3%), the price is one model, and which price is a reader's is now the open part. The builder chose
 the cost model, not the ratio.
+
+**Precomputed levels (8 October; §3.3, "Recursion is an identity").** Tom: the levels are "precomputed by geomtery
+itself", so "that may be a good argument for the forcing of 2." If so, the ratio cannot be set by anything that arrives,
+which fits HRT and the 3d bench: where the scene or a builder's rule set the ratio, it was not the reader's. It narrows the
+ratio to numbers the addressing itself names, of which 2 is the plain one; it does not yet exclude the others.
+
+**A route to forcing 2** (Tom, 8 October: "to prove 2 is forced, we must show that every other number is not
+pre-computable"; Claude's sketch, unruled; checked by FRC, `plans/frc-plan.md`). A point of a level is precomputable if the
+level names it with no number chosen from outside: if every symmetry of the level fixes it. Given fairness to the facings
+(R162), a level's symmetries are the identity and the flip, whose one fixed point is the corner. So the only free cut is
+at the corner, into halves. Nesting the next level in a named part then gives a ratio of 2, and every ratio reachable is
+2ᵏ (*Reader Geometry as Addressing* §2.7: "only the dyadic places are laid evenly"). Every other ratio needs a cut the flip
+moves (3), an unequal split that favours a facing (φ), or a root (√2), each a number supplied at runtime.
+- **The premise, in compile-time terms:** the primitive geometry contains no numerical choice from which another branching
+  factor could be compiled. If that can be made rigorous, 2 is a structural fact about the compile-time geometry, not a
+  number it computes.
+- **Premises a proof must defend:** that only fixed points are named for free; R162 (ruled, not derived); and that the next
+  level nests in a named part.
+- **Kill:** a ratio other than 2ᵏ whose levels can be laid from the flip, its fixed point and nesting alone.
+- **FRC run 1 (8 October; bookkeeping, not evidence): not killed.** From the flip, its fixed point and nesting, the only
+  interior point named is the corner, adjacent levels stand in ratio 2, and every ratio to a descendant is 2ᵏ (to depth 6).
+  A chosen number, a root, arithmetic or the constant 2/π each opens ratios that are not powers of 2; without fairness no
+  interior point is named, and nothing nests. The premise that the geometry supplies only these operations is untouched
+  by the run.
+- **FRC run 2 (8 October, exact fractions, no cap): not killed.** The base again gives only 2, 4, … 64. Arithmetic on named
+  points, uncapped, opens ratios with a factor of 3 (12, 24) within two rounds, as predicted; 3 itself is not a ratio,
+  since ¼ cuts the part [0, ⅓]. Run 1's arithmetic row had been capped by my set-up.
 
 **If h is not this, the candidates are few:**
 
@@ -2048,6 +2085,28 @@ And, the same day: "this is situation 1 and 2. recursion is not limited to situa
   the logarithm (§2.1, "The relation forces the logarithm"). If amplification is counted in levels or logarithms, that
   derives the adding. If it is a plain ratio and still adds, it is something else, and worth finding out which.
 
+**Recursion is an identity; the exit is the reader's** (Tom, 8 October: "recursion is regarded as algorithmic by computer scientists. it computer science language, recursive systems recurse until the exit condition. Lots of logical comparisons to test for the exit. In geometry, it is not algorithmic, it is an identity, it computer science language it is precomputed. think of geomtery as the pre-computation of a system prior to the dyanamic runtime logic." And: "this is very important because geometry is not actually recursive the way computer science regards it. every level of recursion does not require an exit from the recursion. the levels are precomputed by geomtery itself, prior to the universe. that may be a good argument for the forcing of 2.").
+In computing, recursion is a procedure: each level is a call, and each call tests an exit condition. Geometry's levels are
+not that.
+- **No exit is needed, so none is tested.** The horizon's recursion has no exit (§2.1, "Why the recursion"). As a
+  procedure it would never halt; it holds as an identity, at every level at once and at no cost: the flip, each level the
+  same sweep, and a reading's level read off directly. (A floating-point number does the same: its exponent, the level,
+  is read from the bits, with no loop and no halving.) The levels are compile time: laid before anything arrives, and nothing about them is computed at runtime.
+- **What runs is the descent, and its exit is the reader's.** How deep to go is decided at runtime, by the reader's grain
+  (GRN, `plans/grn-plan.md`), its price (CAL, `plans/cal-plan.md`) and whether anything is left to read (the draw
+  labs). None of these is in the geometry.
+- **It extends R155 and R171 from addresses to levels.** The range of addresses is laid before anything arrives, and
+  payloads can be evaluated on demand (§4.2, §4.3). So is the ladder of levels: laid in advance as one identity, with only
+  the descent run. Geometry is compile time; observation is the runtime (the opening, "Geometry is compile time").
+- **An argument for the 2, and its gap** (Tom: "that may be a good argument for the forcing of 2"; Claude's reading,
+  unruled). If the levels are precomputed, their ratio cannot depend on anything that arrives: not the scene (the 3d bench
+  found the best ratio following the scene), not a builder's rule (HRT), not a price (WHY2). It must come from the
+  addressing alone. The addressing names one number of its own: two, the halves the corner makes of a level (the central
+  result, "2h in place"), and the order of the flip, which undone by itself returns every reading. That is the case for
+  2. The gap: an identity exists for every ratio. The level map with ratio r is as self-consistent as with 2, and the
+  corner bisects a level of any ratio (the central result's correction). So precomputation rules out a ratio set at
+  runtime, and narrows the ratio to numbers the geometry itself names; it does not yet show that 2 is the only one.
+
 **Rungs, and the ratio between them** (*The Radix*; R176). The doubling is the reader's ratio between rungs, not the geometry's. *The Radix* §5: the lens
 forces the ladder past the corner to be a ladder of ratios, since a change of radius slides a ladder and can re-space
 only one whose steps are ratios; but it does not fix which ratio. The doublings come from a reader whose ratio between rungs
@@ -3169,6 +3228,25 @@ serial reader and every relation between readers once the painter gives each rea
 the others. It cannot counterfeit **nearness**, because nearness is where the forward sweep actually stops (painted things read 58–87
 thousandths where the real ones read 8–15), and it cannot counterfeit **contact** (items 179–186). The left and right
 sweeps carry the picture, which can be painted; the forward sweep carries nearness, which cannot.
+
+**A unit agreed: the number line** (Tom, 7–8 October; worked out in `papers/number-line.md` §1). Geometry passes
+relations between readers, never a unit, as above. People pass magnitudes anyway, and the number line is how: a unit
+agreed socially, not given by any standpoint, so that two relational, situated readers can talk (Tom: "the ruler is
+needed when two readers need to communicate. they agree on what the ruler represents, and build out from there."). It is
+not a situation; it is a ruler, notches on a stick (Tom: "maybe its a ruler. just notches on a stick."). Its form follows
+from its job:
+- **no corner**, because a corner would be one reader's unit and would favour that reader;
+- **the same depth everywhere**, because it cannot know who will read it or what detail they need;
+- **the scale put back** that each reader's division took out: a reading passes as v in agreed units,
+  s_A·h_A = s_B·h_B, and each reader translates it back into its own relation space (Tom: "a ruler is then translated
+  back into the readers own relation space").
+
+It fits the near field, which is proportional already; past the corner people switch to rulers that count levels
+(decibels, star magnitudes, pH), and scientific notation joins the two. Nothing in this is a fault of the line: it is
+the shared interface between readers, not the structure of observation, and readers who must talk need one (Tom, 8
+October: "the point of the number-line paper is not criticize the number line, just correctly explain what it is
+abstractly … it or something like it is needed."). The chain is reality, observation, relation, address, and then the
+number line, agreed on afterwards between readers.
 
 ## 8. The ladder: what fixes what
 

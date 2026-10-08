@@ -12,7 +12,8 @@ shared ruler (§1), and readers who must talk to each other need one. This paper
 and what it is not built for, in SPN's terms. Saying where a tool fits is not a complaint against it. In one line, the
 chain it follows: reality → observation → relation → address → number line. The line is a public abstraction made from a
 way of relating to magnitude, as the sphere is a picture made from wedges (§8); it is not the structure of observation
-itself, and it does not need to be.
+itself, and it does not need to be. In SPN's terms (Tom, 8 October: "geometry is not runtime, it is compile time"): the
+geometry is compile time, the readings are runtime, and the ruler is agreed on after both, between readers.
 
 **Iterations**
 
@@ -60,7 +61,10 @@ itself, and it does not need to be.
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
-- 8 October, thirty-fourth: the paper's purpose stated at the top (explain, not criticize); §1, the ruler and the rules; §7, are the rules invented or found; wording that read as fault-finding recast as what the line is built for (Tom).
+- 8 October, thirty-seventh: the purpose, with geometry as compile time and the ruler agreed after it (Tom).
+- 8 October, thirty-sixth: §7, a route to forcing 2 and FRC run 1 (only powers of 2 from the flip, its fixed point and nesting).
+- 8 October, thirty-fifth: §4, the recursing line's levels are geometry (precomputed, an identity) and "as needed" is the reader's runtime exit; what that says for the 2 (Tom).
+- 8 October, thirty-fourth: the paper's purpose stated at the top (explain, not criticize); §1, the ruler and the rules (since cut to an illustration: the mystery may be in the ruler); wording that read as fault-finding recast as what the line is built for (Tom).
 - 8 October, thirty-third: Background and §8, the hand (fingers addresses, rings payload) to explain the situations; the Cauchy consists of addresses, not payloads; the reader's unit circle is a quarter in one facing (Tom, with *The Cauchy* and *Reader Geometry as Addressing*).
 
 ## Background from SPN
@@ -303,24 +307,14 @@ is built for close in; wide ranges call for its companion, the level count. The 
 situations 1 and 2 completely: with the whole held, there is no far field to lay it across. Only situated readers (3, 4)
 have a far field, and only they need rulers that count levels.
 
-**The ruler and the rules** (Tom, 8 October: "mathmeticians love to explore the numberline for its quirks, like the
-reinman hypotheisis for example. looking for hidden meaning in the numbers themselves. but is interesting that we might
-just looking for hidden meaning in something we invented, not hidden meaning in reality."). Two things share the name.
-- **The drawing:** equal notches, a base, digits, the same depth everywhere, no corner. That is a convention, agreed so
-  that readers can talk.
-- **The rules it carries:** counting, adding, multiplying. The rules are chosen, but what follows from them is not:
-  nobody decided which numbers would be prime.
-- **The test: does a property survive a change of ruler?** Another base, a logarithmic layout, a recursing line (§4).
-  Digit patterns do not survive it (that 1/7 repeats with period 6 is a fact of base 10); they belong to the drawing,
-  and meaning sought in them is sought in something made. The primes, the zeta zeros and the Riemann hypothesis do
-  survive it, unchanged in every base and layout; they belong to the rules, not the drawing.
-- **The same test as SPN's.** A quantity belongs to the pair when it survives every restatement, and to the account when
-  it does not (*The Cauchy* §5); addresses are what survive every change of payload (SPN §4.3).
-- **The careful conclusion.** Some of what is found in the numbers belongs to the ruler, and some survives every ruler and
-  belongs to the rules. Whether the rules belong to the world is open (§7). One hint that they are not only invention:
-  the spacing of the zeta zeros follows random-matrix statistics, the kind found in the energy levels of chaotic quantum
-  systems and first met in heavy nuclei (Montgomery, Dyson). Strictly, the zeros follow the unitary ensemble, while
-  most nuclear spectra follow the orthogonal one: the same family, not the same law.
+**The mystery may be in the ruler** (Tom, 8 October: "mathmeticians love to explore the numberline for its quirks,
+like the reinman hypotheisis for example. looking for hidden meaning in the numbers themselves. but is interesting that
+we might just looking for hidden meaning in something we invented, not hidden meaning in reality." And: "the debate about
+reinman is irrelevent to this paper, just an illustration that maybe the ruler is mystery not underlying reality.").
+The ruler, here, is the whole agreed system: the notches and the rules of counting that come with them. It can hold deep
+structure of its own, studied for its own sake and rightly. That structure need not be the structure of what is
+measured. Mathematics can find a real mystery in the ruler without it being a mystery about the world the ruler is laid
+on. The Riemann hypothesis stands here only as an example of the kind; this paper takes no view on it.
 
 **The ordinary line has no corner** (Tom, 7 October: "the number line is the near field and the far field combined,
 with no corner."). The ordinary number line is laid out the same everywhere: 0.5 to 1 looks exactly like 1 to 1.5.
@@ -550,6 +544,14 @@ by side, with no ruling on the word:
   with 500, and none for an evenly spaced line (1.10). For a set with every number inside a tight cluster it is small
   (0.77; the first run's prediction, under 0.3, was killed, because such a set is detail everywhere at a finer scale).
   So the ordinary line pays for its finest detail everywhere; a situated reader pays for it where it is.
+- **The recursing line's levels are geometry; "as needed" is the reader's** (Tom, 8 October: "recursion is regarded as algorithmic by computer scientists. it computer science language, recursive systems recurse until the exit condition. Lots of logical comparisons to test for the exit. In geometry, it is not algorithmic, it is an identity, it computer science language it is precomputed. think of geomtery as the pre-computation of a system prior to the dyanamic runtime logic." And: "this is very important because geometry is not actually recursive the way computer science regards it. every level of recursion does not require an exit from the recursion. the levels are precomputed by geomtery itself, prior to the universe. that may be a good argument for the forcing of 2.";
+  SPN §3.3, "Recursion is an identity"). The levels are not a procedure with an exit tested at each call: they hold as an
+  identity, at every level at once, laid before anything is read (a float's exponent is read from its bits, with no
+  loop). What runs is the descent, and its exit is the reader's: its grain, its price, whether anything is left. The
+  ordinary line is all geometry and no runtime: with no reader's exit built in, it lays out every level. If the levels are
+  precomputed, their ratio cannot be set by what arrives, which narrows it to numbers the geometry itself names, 2 the
+  plain one (Tom: "that may be a good argument for the forcing of 2"); that every ratio also has its identity is the gap
+  (SPN §3.3).
 - **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
   other is a held thing's remainder, entered where found. They are not ruled the same or different.
 
@@ -800,7 +802,12 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
 - **Zero and the negatives.** Is 0 home, approached, or a point people hold exactly? Are the negatives the turned-away
   facing, met only by turning (serial), as §5 suggests?
 - **What price fixes the 2?** WHY2 run 3: the cheapest step stays at 2 for every confirmation rule in one dimension,
-  but falls below 2 when a look costs a whole image or volume. Which price is a reader's: the direction it resolves, or
+  but falls below 2 when a look costs a whole image or volume. If the levels are precomputed (§4), no price should set
+  them; then which number does the geometry itself name, and is 2 the only one? SPN's central open question sketches a
+  route (only the corner is fixed by a level's symmetries, so only halving is free) and FRC (`plans/frc-plan.md`) checks
+  its bookkeeping: run 1 found only powers of 2 from the base operations, and each added operation (a chosen number, a
+  root, arithmetic, 2/π) opening others; run 2, in exact fractions without run 1's cap, found the same, arithmetic
+  bringing in a factor of 3. Which price is a reader's: the direction it resolves, or
   the whole field it looks at? (§5)
 - **Pricing slow-fading detail.** A reader pricing each level from its own noisy looks stops early where detail fades
   slowly (CAL runs 1 and 2, killed at r = 0.7). What estimate, if any, prices it well? (§4)
@@ -810,10 +817,6 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   found: one idea or two? Laid side by side, not ruled. (§4)
 - **The sphere's two corners.** Does a reader near in one direction and far in another read the two independently, or
   does the far direction set the cost of the whole? (§8)
-- **Are the rules invented or found?** Properties that survive every change of ruler belong to the rules, not the drawing
-  (§1, "The ruler and the rules"). Whether the rules are themselves a human invention, or something the world also obeys,
-  this paper does not settle. The zeta zeros' random-matrix statistics, shared with quantum energy levels, point one way; a test would need a
-  property of the rules found in the world before mathematics predicted it.
 - **People, not synthetic readers.** The switch between a held whole and a unit (§6) is ready to test on real
   number-line data, open-ended against bounded. It waits on a dataset.
 
@@ -970,8 +973,6 @@ switch from serial to parallel happens per direction, near in one and far in ano
 
 ## Sources
 
-- Montgomery, H. L. (1973). The pair correlation of zeros of the zeta function. *Analytic Number Theory*, Proc. Symp.
-  Pure Math. 24, 181–193 (with Dyson's observation that it matches random-matrix eigenvalue statistics).
 
 - *The Cauchy* (working paper, 22 August 2026, Tom Brinkman; not in this repository).
 - *Reader Geometry as Addressing* (working paper, 25 September 2026, Tom Brinkman; not in this repository).
