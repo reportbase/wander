@@ -63,7 +63,8 @@ Google Fonts load from outside:
   the current ones. SPN opens with the terms in order (relation, reading, corner, sweep,
   octave, recursion, spiral; since 8 Oct recursion is considered and rejected for
   level of detail: the levels exist whole, the reader picks one, k doublings, and nothing recurses), a map of how the parts depend, and the standing of each;
-  then the central result and the open question (what fixes the ratio between rungs).
+  then the central result and the open question (what fixes the ratio between rungs; demoted 8 Oct: the reader
+  sweeps its level of detail, proportional then logarithmic, and the derivation of 2 is in Appendix D).
   The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.

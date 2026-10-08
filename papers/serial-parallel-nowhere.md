@@ -32,7 +32,8 @@
 >
 > *Then, recursion rejected for level of detail* (Tom, 8 October: "its not recursion at all, its level of detail"). The
 > reader does not recurse: it picks a level of detail, k, and reads level k directly. The geometry is compile time;
-> picking the level of detail is runtime; nothing recurses (§3.3, "Recursion considered and rejected").
+> picking the level of detail is runtime; nothing recurses (§3.3, "Recursion considered and rejected"). The reader
+> sweeps its level of detail, proportional in the near field and logarithmic in the far (Tom: "its a sweep over the LOD").
 
 *Tom Brinkman, with Claude. Working paper. Rewritten 1 October 2026 around the rulings of that evening (R153–R158); revised 2 October to foreground the inversion at the corner as the main contribution (§3.2, R161), and again that
 morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the situations restated on the sweep alone (§2.1, Tom's list 0–4) and the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 or 4 has a horizon and recursion where situations 1 and 2 have neither. Revised 8 October with
@@ -44,7 +45,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (the central open question); then recursion considered and rejected for level of detail (the terms; §3.3), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (the central open question); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 demoted to Appendix D (the central open question), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -74,7 +75,7 @@ block only puts them in order.*
 | sweep | the running share g of the relations, from 0 (v unexpressed) to 1 (v fully expressed). Each relation s takes the share ds/(1 + s²); their total is π/2, and g is the running share over that total (R170, "g is the sweep"). The flip sends g to 1 − g. In situations 1 and 2, with both breadths held, the same g is an angle, θ = (π/2)·g, and 90° is meaningful there; in 3 and 4 nothing turns, and g is a share | §2.1, §3.5 |
 | level | a sweep entered again, with its own home, corner and far wall. In place, 2h: a front half of one h, proportional, and a back half of one h holding the rest, in which the next level nests (§3.3, "The level as 2h, in place"). Laid side by side round its own corner, 1/r to r, it is one quarter turn, whatever the ratio r (Proposition 3.12) | §3.3, Proposition 3.12 |
 | recursion | levels within levels: each level the same sweep again. **Considered and rejected (8 October) for level of detail**: the levels exist whole and the reader picks one; nothing recurses. Kept as a word where earlier text uses it, read as the levels | §3.3, Proposition 3.11; "Recursion, after the corner"; §3.3, "Recursion considered and rejected" |
-| level of detail | the level a reader picks: an integer k, how many doublings, read directly as 2ᵏh. Picking is runtime and owes nothing to the payload; the levels picked from are geometry, compile time | §3.3, "Recursion considered and rejected"; the central open question, "Corollary" |
+| level of detail | what the reader sweeps (Tom, 8 October): proportional in the near field, logarithmic in the far. A level picked is an integer k, how many doublings, read directly as 2ᵏh. Picking is runtime and owes nothing to the payload; the levels picked from are geometry, compile time | §3.3, "Recursion considered and rejected"; the central open question, "Corollary" |
 | unit line | the sweep itself, bounded and known (0 to π/2 in 1 and 2; g from 0 to 1 in 3 and 4); to a line what the unit circle is to a shape. The **number line**, continuous with unit 1 and size unknown, is the unknown system laid on it: 0 at home, 1 at the corner, its far end at the horizon (Tom, 6 October) | §2.1, "The unit line, and the number line laid on it" |
 | depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
 | continuous sweep, spiral | the levels drawn. Unwrapped, one turn running on, level into level with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
@@ -213,7 +214,7 @@ what follows from them.
 | the situated reader | one breadth known gives the horizon, the fisheye and the bell; the corner approached, never found | **proved** as mathematics (§2.1); that a reader *is* such a thing is the paper's proposal |
 | recursion | the same sweep at every level; depth beats breadth; cost follows the shape | **ruled** where it rests on (R) (R172, R175, R180); **measured** on shapes (NST, the 3d bench, "Recursion, after the corner"); forced, far out, for a finite reader facing a horizon (`plans/resolution-recursion.md`, unruled) |
 | fairness to the facings | the reading treats v/h and h/v alike, f(1/s) = 1 − f(s); the corner's place and the inversion are forced only given it | **ruled** (R162, Tom, 2 October), not derived from the bare relation. *7 October:* it is the circle's swap symmetry carried into the reading, so it holds for any reading on the circle ("The circle inverts v and h at 45°", §2.1). Open: why a physical reader would read on the circle. Answered for one physical reader, the lens: light is reversible ("h as the focus", §2.1); open for readers in general |
-| the ratio between rungs | why 2 | **open**: not derived; the runs so far found it set by the builder's rule or by the scene (below) |
+| the ratio between rungs | why 2 | **demoted** (8 October): the reader sweeps its level of detail, logarithmic past the corner, and the ratio is the unit of the count (Proposition 3.4(a), k free). A derivation from the flip is kept in Appendix D, unruled; the runs found the ratio set by the builder's rule or by the scene (below) |
 | physics | the labs (§9.9, §11.4) | **a correspondence**, not a proof: a passing lab adds standing to the conjecture, a failing one bears on the correspondence, not on the geometry |
 
 ---
@@ -232,6 +233,10 @@ different standing, as the correction below found. They are now stated apart:
 > which is the rule that each level nests in the whole back half of the last ("Units", at the opening). Nothing has
 > derived that rule. The runs so far (HRT; the 3d bench) found the ratio set by the builder's rule or by the
 > scene. A test must find what fixes it without the builder choosing it and without the shape's own scales choosing it.
+>
+> *Demoted, 8 October* (Tom: "demote the derivation of 2"). The reader sweeps its level of detail, proportional in the
+> near field and logarithmic in the far; the ratio is the unit the far field is counted in, which the geometry leaves
+> free (Proposition 3.4(a)). The question is kept but no longer central ("Demoted: the derivation of 2", below; Appendix D).
 
 The hypothesis as promoted, with its history, is kept below as written.
 
@@ -325,116 +330,15 @@ along the direction it resolves. That is a candidate answer to the open question
 (1.65 to 2.5 within 3%), the price is one model, and which price is a reader's is now the open part. The builder chose
 the cost model, not the ratio.
 
-**Precomputed levels (8 October; §3.3, "Recursion is an identity").** Tom: the levels are "precomputed by geomtery
-itself", so "that may be a good argument for the forcing of 2." If so, the ratio cannot be set by anything that arrives,
-which fits HRT and the 3d bench: where the scene or a builder's rule set the ratio, it was not the reader's. It narrows the
-ratio to numbers the addressing itself names, of which 2 is the plain one; it does not yet exclude the others.
-
-**A route to forcing 2** (Tom, 8 October: "to prove 2 is forced, we must show that every other number is not
-pre-computable").
-
-*The proof in three steps* (Tom, 8 October: "we are making the proof more complicated than it needs to be. first we need
-to show that the recursive levels are fully known prior to any payload."; Claude's wording, with two amendments from
-ChatGPT's review, Tom passing it on; unruled). What it claims: **given the primitives the reader holds before anything
-arrives, the levels they generate are dyadic, with no further primitive and no runtime parameter.** It does not claim that
-no other primitive could generate another ratio; it claims that SPN's do not.
-1. **The levels are known before any payload, and laid only where there is depth** (from the address distinction,
-   §4.2–§4.3; Tom, 8 October: "probably the user only lays the precomputed addreess where ever there is depth, no need to lay it on a unit circle for example.") A level is an address: it says where a reading goes. The range of addresses is known before
-   what it addresses arrives (R155, recast by R177: the range is the gift of geometry, and an address is taken from it when
-   a payload arrives). Known is not laid: the whole stack is known, compile time, but a level is laid only where a reading
-   goes past a corner, which is the reader's runtime exit (§3.3, "Recursion is an identity"). The proof needs only the
-   known half. If a level's ends depended on v, the reader would
-   have to read v to know how to read v. So whatever fixes a level is held before anything arrives. The layout passes: in
-   place the stack is f ↦ 2f on the front half and ½/(1 − f) on the back ("The level as 2h, in place", §3.3), which
-   mentions home, the far wall, the flip and nothing else; h only sets the units, so every reader's stack is the same. The
-   payload decides where a reading lands, never what the levels are; how deep they are laid is the level of detail the
-   reader requests, which owes nothing to the payload either.
-2. **Before payload, there is no measure** (the hinge; Claude's reading, unruled). Before anything arrives the reader holds
-   its unit (V = H), home, the far wall, their order and the flip. Not a measure: a measure assigns a spread to payload over
-   a range that already exists (evenness in the turn is calculated, *Reader Geometry as Addressing* §6.2, §2.7), so it
-   cannot be used to build the range unless a measure is admitted as a primitive before payload. Stated as a dependency:
-   the range comes first, the measure is laid on it. **What would break it:** a reader born with an expectation of how
-   arrivals spread, a measure held before anything arrives.
-3. **The named points force the nesting** (conditional on step 2). The only interior point the inventory names is the one
-   the flip leaves in place, the corner (the maps that keep the ends, the order and the flip move every other interior
-   point; "What a level has before anything arrives", below). A nested level's ends must be named points, so its parts
-   are the two halves, corner to far wall or home to corner; either is half the parent. Repeated, the corners fall at
-   v/h = 1, 2, 4, 8, …, and the recursion needs no new number at any level. A ratio of 3, φ or 2/π needs a cut that only
-   a measure or a chosen number supplies, and step 2 says neither is there before payload. So the existing primitives
-   generate only 2.
-
-*Corollary: a level of detail is a doubling, and the request is a count* (Tom, 8 October: "maybe we can show the LOD is inherintly doubles and halvings. just pick how many doublings of detail you want. that can be pre-computed."; "but LOD can be shown to be doubling of the previous level. so you need to pick the doubling that you want, which is what LOD is."; Claude's wording, unruled). A
-level of detail is a level: one step of detail is the next level, and by step 3 that is the parent halved. Read as a
-question, the step is one bit per cell, which side of the corner, the one question a level can ask with no measure; one
-bit halves the cell. So a level of detail is a doubling of the previous one, and to request a level of detail is to pick
-which doubling: an integer k. The request is made before payload too, from the same inventory (step 1 applied to it), so
-it cannot say "a third of h": that needs a measure or a chosen number. With k fixed, the descent is a loop of fixed length,
-which can be unrolled in advance, a branch that depends on no data; and then not even a loop, since level k is read
-directly, 2ᵏh (recursion rejected for level of detail, §3.3). So the levels and where to stop are both known before
-anything arrives; only the values met there are runtime. This follows from the proof and is not evidence for it: using
-"levels of detail double" to argue for the 2 would be circular. Mipmap levels, a map's zoom levels and a float's mantissa
-bits are counted the same way. Graphics also blends two mip levels by a fractional weight (trilinear filtering); that
-weight is computed from the scene, a measure at runtime, as step 2 says it must be.
-
-What this changes: "the next level is exactly the parent's back half", written at the opening ("Units") as the layout's
-rule and not a theorem, becomes step 3, conditional on step 2. What follows in this entry (the first sketch, the count of
-kinds, the inventory, FRC runs 1–3) is support and checks, not the proof.
-
-*The first sketch* (Claude's, unruled; checked by FRC, `plans/frc-plan.md`). A point of a level is precomputable if the
-level names it with no number chosen from outside: if every symmetry of the level fixes it. Given fairness to the facings
-(R162), a level's symmetries are the identity and the flip, whose one fixed point is the corner. So the only free cut is
-at the corner, into halves. Nesting the next level in a named part then gives a ratio of 2, and every ratio reachable is
-2ᵏ (*Reader Geometry as Addressing* §2.7: "only the dyadic places are laid evenly"). Every other ratio needs a cut the flip
-moves (3), an unequal split that favours a facing (φ), or a root (√2), each a number supplied at runtime.
-- **The premise, in compile-time terms:** the primitive geometry contains no numerical choice from which another branching
-  factor could be compiled. If that can be made rigorous, 2 is a structural fact about the compile-time geometry, not a
-  number it computes.
-- **Unique: every child the same child** (Tom, 8 October: "computer science has a concept of pre-compute. that is the proof technique. does 2 allow us to do recursion without runtime logic. is 2 unique in that ability or do other number provide this capbiality as well?"). Every ratio has a closed form for its level, and in the place
-  coordinate the corner bisects a level of any ratio, so neither singles out 2; nor does efficiency (the classic radix
-  economy is best at e, and at 3 among whole numbers). The test that does is "no case analysis": a recursion has no runtime
-  logic about its structure when every child is the same child, one precomputed structure reused. (It has one test,
-  the exit, set by the level of detail the reader requests, not by the payload; §3.3, "Recursion is an identity". So 2 is
-  the split where the exit is the only "if".) Split a level into b equal parts.
-  Its symmetries are the identity and the flip (R162), and the flip sends part i to part b − 1 − i. At b = 2 the two
-  halves are mirror images, the corner lies on the cut, and one structure with one bit, the facing, describes both. At
-  any b ≥ 3 the parts fall into at least two kinds (for odd b the middle part holds the parent's corner), so the descent
-  must ask which kind it is in: a runtime "if". So 2 is the only split in which every child is the parent's image under
-  the level's own symmetry. It rests on the level being an open run, its ends never joined, since they are of different kinds and nothing carries
-  one to the other except the flip, which exchanges them as facings (*The Cauchy*
-  §2): on the full turn, where rotations are symmetries too, b equal arcs are alike for every b, so the unsituated circle
-  prefers no ratio, and the 2 belongs to the situated reader. Checked by FRC run 3 (`plans/frc-plan.md`): on the level
-  only b = 2 has one kind of part, on the full turn every b does. The count is a theorem, not a measurement (the flip sorts
-  b parts into ⌈b/2⌉ kinds, one exactly when b ≤ 2); what carries the weight is the premise that a level's symmetries are
-  only the identity and the flip, and the reading of "no runtime logic" as "every child the same child".
-- **What a level has before anything arrives** (the premise, argued; Claude's reading, unruled). At compile time a
-  level holds: its two ends, home and the far wall, never joined (the run is open, so there is no rotation); its order,
-  from home outward; the flip, which exchanges the ends as facings (R162); and the flip's fixed point, the corner. What it
-  does not hold is a measure. Evenness in the turn is calculated, and "geometrically only the dyadic places are laid
-  evenly" (*Reader Geometry as Addressing* §6.2, §2.7); its arctan "is the point of contact, and it is engineering" (§2.2).
-  - **The π/2 test.** If the sweep's measure were compile time, 2/π would be a named cut, and FRC run 1 showed it opens
-    other ratios. On the argument above it is not: the quarter turn's measure is computed when a reading is laid, so 2/π
-    is runtime, as is every cut the measure would supply.
-  - **What the inventory names.** The maps that keep the ends, the order and the flip are every order-keeping map of the
-    level that commutes with the flip. They move any point other than the ends and the corner to any other point on the
-    same side, so the only interior point named is the corner, and with nesting every named point is dyadic.
-  - **Why only 2 is even definable.** With no measure, "b equal parts" has no meaning unless the inventory supplies the
-    cuts. The flip supplies exactly one, at the corner, so halves are defined and thirds are not. If a measure were granted
-    after all, thirds would be defined, and run 3's count applies: only halves make every part the same kind. Either way
-    the split is 2.
-  - **What would break it.** A compile-time measure on the level beyond the flip (then the second branch, run 3, carries
-    it); a joining of the ends, which would bring rotations and with them every b (the full turn, situation 1); or a reading
-    of "named for free" wider than "fixed by every symmetry".
-- **Premises a proof must defend:** that only fixed points are named for free; R162 (ruled, not derived); and that the next
-  level nests in a named part.
-- **Kill:** a ratio other than 2ᵏ whose levels can be laid from the flip, its fixed point and nesting alone.
-- **FRC run 1 (8 October; bookkeeping, not evidence): not killed.** From the flip, its fixed point and nesting, the only
-  interior point named is the corner, adjacent levels stand in ratio 2, and every ratio to a descendant is 2ᵏ (to depth 6).
-  A chosen number, a root, arithmetic or the constant 2/π each opens ratios that are not powers of 2; without fairness no
-  interior point is named, and nothing nests. The premise that the geometry supplies only these operations is untouched
-  by the run.
-- **FRC run 2 (8 October, exact fractions, no cap): not killed.** The base again gives only 2, 4, … 64. Arithmetic on named
-  points, uncapped, opens ratios with a factor of 3 (12, 24) within two rounds, as predicted; 3 itself is not a ratio,
-  since ¼ cuts the part [0, ⅓]. Run 1's arithmetic row had been capped by my set-up.
+**Demoted: the derivation of 2** (Tom, 8 October: "demote the derivation of 2. reader sweeps their level of detail. In the near field, it proportional, far field its logrithmic. there is no recursion at all, its a sweep over the LOD.") The reader sweeps its level of detail: in the near field, before the
+corner, the sweep is proportional; in the far field, past it, it is logarithmic. Nothing recurses (§3.3, "Recursion
+considered and rejected"). On a logarithmic sweep the ratio between levels is the unit the sweep is counted in, not
+something the reading depends on: Proposition 3.4(a) gives the far field's register as k · log s + c with k free, so the
+geometry of the far field fixes no base, and Proposition 3.12 gives each level one quarter turn whatever the ratio. So
+"what fixes the 2" is no longer the question the paper turns on. The 2 is the unit the flip names (the corner, and the
+halving it gives), the natural way to count levels of detail, and that is all the paper needs of it. The derivation worked
+out on 8 October (precomputed levels, the proof in three steps, its corollary, the sketch, the count of kinds, FRC runs
+1–3) is kept, demoted, in Appendix D.
 
 **If h is not this, the candidates are few:**
 
@@ -2207,6 +2111,11 @@ detail**. Why:
 - **So the split is clean.** The geometry is compile time: every level, the ratio between them, the corner. Picking the
   level of detail is runtime, one index. The payload's values are met at the address picked. What looked like recursion
   was the levels' self-similarity (each the same sweep), which is a fact about the geometry, not a process.
+- **A sweep over the level of detail** (Tom, 8 October: "demote the derivation of 2. reader sweeps their level of detail. In the near field, it proportional, far field its logrithmic. there is no recursion at all, its a sweep over the LOD.") The reader sweeps its level of detail as it sweeps anything: in the
+  near field, home to the corner, proportionally; in the far field, past the corner, logarithmically, one level of detail
+  per doubling (Proposition 3.4: within a level a share, across levels a count, and the count is the logarithm). So what
+  the earlier text called recursion is the far field of one sweep, the sweep over the level of detail. With it the
+  derivation of 2 was demoted (the central open question; Appendix D): on a logarithmic sweep the base is the unit.
 - **What stays.** The propositions and results that use the word keep it (renaming them would break what the corpus
   cites); read "recursion" there as the self-similar levels a reader picks from, and "recursing" as "picking a finer
   level". Graphics already works this way: a mipmap's levels are precomputed once, and the level used is picked per
@@ -4837,6 +4746,124 @@ From 7–8 October (WHY2, what fixes the 2; `plans/why2-plan.md`):
   worst, 2 on average; the confirming looks change the classic sums.
 - *In an image the cost of a look doubles, not the grain* (run 3, P2). Not killed by its range (the best step, 1.25, sat on
   its edge), but its reason failed: the cost stepped by about 1.56.
+
+## Appendix D. The derivation of 2 (demoted 8 October)
+
+*Demoted from the central open question on Tom's word (Tom, 8 October: "demote the derivation of 2. reader sweeps their level of detail. In the near field, it proportional, far field its logrithmic. there is no recursion at all, its a sweep over the LOD.") Kept as written, as the record of the argument; its
+standing is unchanged (unruled, Claude's wording where marked), but the paper no longer turns on it: with the reader
+sweeping its level of detail, logarithmic past the corner, the ratio between levels is the unit of the count (the central
+open question, "Demoted: the derivation of 2").*
+
+**Precomputed levels (8 October; §3.3, "Recursion is an identity").** Tom: the levels are "precomputed by geomtery
+itself", so "that may be a good argument for the forcing of 2." If so, the ratio cannot be set by anything that arrives,
+which fits HRT and the 3d bench: where the scene or a builder's rule set the ratio, it was not the reader's. It narrows the
+ratio to numbers the addressing itself names, of which 2 is the plain one; it does not yet exclude the others.
+
+**A route to forcing 2** (Tom, 8 October: "to prove 2 is forced, we must show that every other number is not
+pre-computable").
+
+*The proof in three steps* (Tom, 8 October: "we are making the proof more complicated than it needs to be. first we need
+to show that the recursive levels are fully known prior to any payload."; Claude's wording, with two amendments from
+ChatGPT's review, Tom passing it on; unruled). What it claims: **given the primitives the reader holds before anything
+arrives, the levels they generate are dyadic, with no further primitive and no runtime parameter.** It does not claim that
+no other primitive could generate another ratio; it claims that SPN's do not.
+1. **The levels are known before any payload, and laid only where there is depth** (from the address distinction,
+   §4.2–§4.3; Tom, 8 October: "probably the user only lays the precomputed addreess where ever there is depth, no need to lay it on a unit circle for example.") A level is an address: it says where a reading goes. The range of addresses is known before
+   what it addresses arrives (R155, recast by R177: the range is the gift of geometry, and an address is taken from it when
+   a payload arrives). Known is not laid: the whole stack is known, compile time, but a level is laid only where a reading
+   goes past a corner, which is the reader's runtime exit (§3.3, "Recursion is an identity"). The proof needs only the
+   known half. If a level's ends depended on v, the reader would
+   have to read v to know how to read v. So whatever fixes a level is held before anything arrives. The layout passes: in
+   place the stack is f ↦ 2f on the front half and ½/(1 − f) on the back ("The level as 2h, in place", §3.3), which
+   mentions home, the far wall, the flip and nothing else; h only sets the units, so every reader's stack is the same. The
+   payload decides where a reading lands, never what the levels are; how deep they are laid is the level of detail the
+   reader requests, which owes nothing to the payload either.
+2. **Before payload, there is no measure** (the hinge; Claude's reading, unruled). Before anything arrives the reader holds
+   its unit (V = H), home, the far wall, their order and the flip. Not a measure: a measure assigns a spread to payload over
+   a range that already exists (evenness in the turn is calculated, *Reader Geometry as Addressing* §6.2, §2.7), so it
+   cannot be used to build the range unless a measure is admitted as a primitive before payload. Stated as a dependency:
+   the range comes first, the measure is laid on it. **What would break it:** a reader born with an expectation of how
+   arrivals spread, a measure held before anything arrives.
+3. **The named points force the nesting** (conditional on step 2). The only interior point the inventory names is the one
+   the flip leaves in place, the corner (the maps that keep the ends, the order and the flip move every other interior
+   point; "What a level has before anything arrives", below). A nested level's ends must be named points, so its parts
+   are the two halves, corner to far wall or home to corner; either is half the parent. Repeated, the corners fall at
+   v/h = 1, 2, 4, 8, …, and the recursion needs no new number at any level. A ratio of 3, φ or 2/π needs a cut that only
+   a measure or a chosen number supplies, and step 2 says neither is there before payload. So the existing primitives
+   generate only 2.
+
+*Corollary: a level of detail is a doubling, and the request is a count* (Tom, 8 October: "maybe we can show the LOD is inherintly doubles and halvings. just pick how many doublings of detail you want. that can be pre-computed."; "but LOD can be shown to be doubling of the previous level. so you need to pick the doubling that you want, which is what LOD is."; Claude's wording, unruled). A
+level of detail is a level: one step of detail is the next level, and by step 3 that is the parent halved. Read as a
+question, the step is one bit per cell, which side of the corner, the one question a level can ask with no measure; one
+bit halves the cell. So a level of detail is a doubling of the previous one, and to request a level of detail is to pick
+which doubling: an integer k. The request is made before payload too, from the same inventory (step 1 applied to it), so
+it cannot say "a third of h": that needs a measure or a chosen number. With k fixed, the descent is a loop of fixed length,
+which can be unrolled in advance, a branch that depends on no data; and then not even a loop, since level k is read
+directly, 2ᵏh (recursion rejected for level of detail, §3.3). So the levels and where to stop are both known before
+anything arrives; only the values met there are runtime. This follows from the proof and is not evidence for it: using
+"levels of detail double" to argue for the 2 would be circular. Mipmap levels, a map's zoom levels and a float's mantissa
+bits are counted the same way. Graphics also blends two mip levels by a fractional weight (trilinear filtering); that
+weight is computed from the scene, a measure at runtime, as step 2 says it must be.
+
+What this changes: "the next level is exactly the parent's back half", written at the opening ("Units") as the layout's
+rule and not a theorem, becomes step 3, conditional on step 2. What follows in this entry (the first sketch, the count of
+kinds, the inventory, FRC runs 1–3) is support and checks, not the proof.
+
+*The first sketch* (Claude's, unruled; checked by FRC, `plans/frc-plan.md`). A point of a level is precomputable if the
+level names it with no number chosen from outside: if every symmetry of the level fixes it. Given fairness to the facings
+(R162), a level's symmetries are the identity and the flip, whose one fixed point is the corner. So the only free cut is
+at the corner, into halves. Nesting the next level in a named part then gives a ratio of 2, and every ratio reachable is
+2ᵏ (*Reader Geometry as Addressing* §2.7: "only the dyadic places are laid evenly"). Every other ratio needs a cut the flip
+moves (3), an unequal split that favours a facing (φ), or a root (√2), each a number supplied at runtime.
+- **The premise, in compile-time terms:** the primitive geometry contains no numerical choice from which another branching
+  factor could be compiled. If that can be made rigorous, 2 is a structural fact about the compile-time geometry, not a
+  number it computes.
+- **Unique: every child the same child** (Tom, 8 October: "computer science has a concept of pre-compute. that is the proof technique. does 2 allow us to do recursion without runtime logic. is 2 unique in that ability or do other number provide this capbiality as well?"). Every ratio has a closed form for its level, and in the place
+  coordinate the corner bisects a level of any ratio, so neither singles out 2; nor does efficiency (the classic radix
+  economy is best at e, and at 3 among whole numbers). The test that does is "no case analysis": a recursion has no runtime
+  logic about its structure when every child is the same child, one precomputed structure reused. (It has one test,
+  the exit, set by the level of detail the reader requests, not by the payload; §3.3, "Recursion is an identity". So 2 is
+  the split where the exit is the only "if".) Split a level into b equal parts.
+  Its symmetries are the identity and the flip (R162), and the flip sends part i to part b − 1 − i. At b = 2 the two
+  halves are mirror images, the corner lies on the cut, and one structure with one bit, the facing, describes both. At
+  any b ≥ 3 the parts fall into at least two kinds (for odd b the middle part holds the parent's corner), so the descent
+  must ask which kind it is in: a runtime "if". So 2 is the only split in which every child is the parent's image under
+  the level's own symmetry. It rests on the level being an open run, its ends never joined, since they are of different kinds and nothing carries
+  one to the other except the flip, which exchanges them as facings (*The Cauchy*
+  §2): on the full turn, where rotations are symmetries too, b equal arcs are alike for every b, so the unsituated circle
+  prefers no ratio, and the 2 belongs to the situated reader. Checked by FRC run 3 (`plans/frc-plan.md`): on the level
+  only b = 2 has one kind of part, on the full turn every b does. The count is a theorem, not a measurement (the flip sorts
+  b parts into ⌈b/2⌉ kinds, one exactly when b ≤ 2); what carries the weight is the premise that a level's symmetries are
+  only the identity and the flip, and the reading of "no runtime logic" as "every child the same child".
+- **What a level has before anything arrives** (the premise, argued; Claude's reading, unruled). At compile time a
+  level holds: its two ends, home and the far wall, never joined (the run is open, so there is no rotation); its order,
+  from home outward; the flip, which exchanges the ends as facings (R162); and the flip's fixed point, the corner. What it
+  does not hold is a measure. Evenness in the turn is calculated, and "geometrically only the dyadic places are laid
+  evenly" (*Reader Geometry as Addressing* §6.2, §2.7); its arctan "is the point of contact, and it is engineering" (§2.2).
+  - **The π/2 test.** If the sweep's measure were compile time, 2/π would be a named cut, and FRC run 1 showed it opens
+    other ratios. On the argument above it is not: the quarter turn's measure is computed when a reading is laid, so 2/π
+    is runtime, as is every cut the measure would supply.
+  - **What the inventory names.** The maps that keep the ends, the order and the flip are every order-keeping map of the
+    level that commutes with the flip. They move any point other than the ends and the corner to any other point on the
+    same side, so the only interior point named is the corner, and with nesting every named point is dyadic.
+  - **Why only 2 is even definable.** With no measure, "b equal parts" has no meaning unless the inventory supplies the
+    cuts. The flip supplies exactly one, at the corner, so halves are defined and thirds are not. If a measure were granted
+    after all, thirds would be defined, and run 3's count applies: only halves make every part the same kind. Either way
+    the split is 2.
+  - **What would break it.** A compile-time measure on the level beyond the flip (then the second branch, run 3, carries
+    it); a joining of the ends, which would bring rotations and with them every b (the full turn, situation 1); or a reading
+    of "named for free" wider than "fixed by every symmetry".
+- **Premises a proof must defend:** that only fixed points are named for free; R162 (ruled, not derived); and that the next
+  level nests in a named part.
+- **Kill:** a ratio other than 2ᵏ whose levels can be laid from the flip, its fixed point and nesting alone.
+- **FRC run 1 (8 October; bookkeeping, not evidence): not killed.** From the flip, its fixed point and nesting, the only
+  interior point named is the corner, adjacent levels stand in ratio 2, and every ratio to a descendant is 2ᵏ (to depth 6).
+  A chosen number, a root, arithmetic or the constant 2/π each opens ratios that are not powers of 2; without fairness no
+  interior point is named, and nothing nests. The premise that the geometry supplies only these operations is untouched
+  by the run.
+- **FRC run 2 (8 October, exact fractions, no cap): not killed.** The base again gives only 2, 4, … 64. Arithmetic on named
+  points, uncapped, opens ratios with a factor of 3 (12, 24) within two rounds, as predicted; 3 itself is not a ratio,
+  since ¼ cuts the part [0, ⅓]. Run 1's arithmetic row had been capped by my set-up.
 
 ## References
 

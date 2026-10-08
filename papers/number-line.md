@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, forty-fifth: §4, the reader sweeps its level of detail, proportional then logarithmic; SPN's derivation of 2 demoted (Tom).
 - 8 October, forty-fourth: §4, recursion considered and rejected for level of detail (Tom).
 - 8 October, forty-third: §4, a level of detail is a doubling, so the request is a count k and can be precomputed (Tom).
 - 8 October, forty-second: §4, the exit is the level of detail the reader requests, not the payload's depth, which never runs out (Tom).
@@ -581,6 +582,10 @@ by side, with no ruling on the word:
   reads it directly, as a float's exponent is read, with no descent and no exit test. A recursion would need an exit,
   and the world offers none, since there is always something smaller and larger. The name "recursing line" is kept as
   the record; read it as a line with levels of detail picked as needed.
+- **A sweep over the level of detail** (Tom, 8 October: "demote the derivation of 2. reader sweeps their level of detail. In the near field, it proportional, far field its logrithmic. there is no recursion at all, its a sweep over the LOD."; SPN §3.3 and the central open question). The reader sweeps its level
+  of detail: proportionally up to the corner, logarithmically past it, one level per doubling. This is the number-line
+  split of §5 (proportional for the familiar, compressed beyond) read as a sweep over the level of detail. SPN's derivation
+  of 2 is demoted to its Appendix D: on a logarithmic sweep the ratio is the unit of the count.
 - **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
   other is a held thing's remainder, entered where found. They are not ruled the same or different.
 
