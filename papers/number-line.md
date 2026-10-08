@@ -800,7 +800,9 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   facing, met only by turning (serial), as §5 suggests?
 - **What price fixes the 2?** WHY2 run 3: the cheapest step stays at 2 for every confirmation rule in one dimension,
   but falls below 2 when a look costs a whole image or volume. If the levels are precomputed (§4), no price should set
-  them; then which number does the geometry itself name, and is 2 the only one? Which price is a reader's: the direction it resolves, or
+  them; then which number does the geometry itself name, and is 2 the only one? SPN's central open question sketches a
+  route (only the corner is fixed by a level's symmetries, so only halving is free) and FRC (`plans/frc-plan.md`) checks
+  its bookkeeping. Which price is a reader's: the direction it resolves, or
   the whole field it looks at? (§5)
 - **Pricing slow-fading detail.** A reader pricing each level from its own noisy looks stops early where detail fades
   slowly (CAL runs 1 and 2, killed at r = 0.7). What estimate, if any, prices it well? (§4)

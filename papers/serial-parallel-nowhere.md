@@ -302,6 +302,17 @@ itself", so "that may be a good argument for the forcing of 2." If so, the ratio
 which fits HRT and the 3d bench: where the scene or a builder's rule set the ratio, it was not the reader's. It narrows the
 ratio to numbers the addressing itself names, of which 2 is the plain one; it does not yet exclude the others.
 
+**A route to forcing 2** (Tom, 8 October: "to prove 2 is forced, we must show that every other number is not
+pre-computable"; Claude's sketch, unruled; checked by FRC, `plans/frc-plan.md`). A point of a level is precomputable if the
+level names it with no number chosen from outside: if every symmetry of the level fixes it. Given fairness to the facings
+(R162), a level's symmetries are the identity and the flip, whose one fixed point is the corner. So the only free cut is
+at the corner, into halves. Nesting the next level in a named part then gives a ratio of 2, and every ratio reachable is
+2ᵏ (*Reader Geometry as Addressing* §2.7: "only the dyadic places are laid evenly"). Every other ratio needs a cut the flip
+moves (3), an unequal split that favours a facing (φ), or a root (√2), each a number supplied at runtime.
+- **Premises a proof must defend:** that only fixed points are named for free; R162 (ruled, not derived); and that the next
+  level nests in a named part.
+- **Kill:** a ratio other than 2ᵏ whose levels can be laid from the flip, its fixed point and nesting alone.
+
 **If h is not this, the candidates are few:**
 
 | candidate | what it conflicts with |
