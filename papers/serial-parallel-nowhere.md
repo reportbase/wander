@@ -27,7 +27,7 @@ fixes the 2 (the central open question, Appendix C). Then: the wedge is made at 
 the picture of all possible wedges from nowhere, not built from them (§1, §2.1). Then, with *The Cauchy* (22 August) and
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
-geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening).*
+geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels laid before any payload, no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -101,7 +101,8 @@ use octave, its just a place holder"; "level and dyadic, go ahead").
   the rest, in which the next level nests. The word says nothing about the ratio between levels.
 - **The ratio between levels** is set by one rule of nesting: *the next level is exactly the parent's back half*.
   The corner bisecting the level is proved (the halves are equal); that the next level fills the whole back half is
-  the layout's rule, not a theorem. With that rule the corners fall one doubling apart, v/h = 1, 2, 4, 8, …, and the
+  the layout's rule, not a theorem (since 8 October, step 3 of a proposed proof, conditional on there being no measure
+  before payload: "A route to forcing 2"). With that rule the corners fall one doubling apart, v/h = 1, 2, 4, 8, …, and the
   levels are **dyadic**. A next level filling another share of the back half would give another ratio.
 - **The open question** is whether a reader's levels are dyadic: whether a reader uses that rule of its own, or
   whether what it reads sets the ratio ("Central result, and the open question", below). Laid side by side round their
@@ -312,7 +313,39 @@ which fits HRT and the 3d bench: where the scene or a builder's rule set the rat
 ratio to numbers the addressing itself names, of which 2 is the plain one; it does not yet exclude the others.
 
 **A route to forcing 2** (Tom, 8 October: "to prove 2 is forced, we must show that every other number is not
-pre-computable"; Claude's sketch, unruled; checked by FRC, `plans/frc-plan.md`). A point of a level is precomputable if the
+pre-computable").
+
+*The proof in three steps* (Tom, 8 October: "we are making the proof more complicated than it needs to be. first we need
+to show that the recursive levels are fully known prior to any payload."; Claude's wording, with two amendments from
+ChatGPT's review, Tom passing it on; unruled). What it claims: **given the primitives the reader holds before anything
+arrives, the levels they generate are dyadic, with no further primitive and no runtime parameter.** It does not claim that
+no other primitive could generate another ratio; it claims that SPN's do not.
+1. **The levels are laid before any payload** (from the address distinction, §4.2–§4.3). A level is an address: it says
+   where a reading goes. An address is laid before what it addresses arrives (R155, recast by R177: the range is the gift
+   of geometry, and an address is taken from it when a payload arrives). If a level's ends depended on v, the reader would
+   have to read v to know how to read v. So whatever fixes a level is held before anything arrives. The layout passes: in
+   place the stack is f ↦ 2f on the front half and ½/(1 − f) on the back ("The level as 2h, in place", §3.3), which
+   mentions home, the far wall, the flip and nothing else; h only sets the units, so every reader's stack is the same. The
+   payload decides where a reading lands, not what addresses exist.
+2. **Before payload, there is no measure** (the hinge; Claude's reading, unruled). Before anything arrives the reader holds
+   its unit (V = H), home, the far wall, their order and the flip. Not a measure: a measure assigns a spread to payload over
+   a range that already exists (evenness in the turn is calculated, *Reader Geometry as Addressing* §6.2, §2.7), so it
+   cannot be used to build the range unless a measure is admitted as a primitive before payload. Stated as a dependency:
+   the range comes first, the measure is laid on it. **What would break it:** a reader born with an expectation of how
+   arrivals spread, a measure held before anything arrives.
+3. **The named points force the nesting** (conditional on step 2). The only interior point the inventory names is the one
+   the flip leaves in place, the corner (the maps that keep the ends, the order and the flip move every other interior
+   point; "What a level has before anything arrives", below). A nested level's ends must be named points, so its parts
+   are the two halves, corner to far wall or home to corner; either is half the parent. Repeated, the corners fall at
+   v/h = 1, 2, 4, 8, …, and the recursion needs no new number at any level. A ratio of 3, φ or 2/π needs a cut that only
+   a measure or a chosen number supplies, and step 2 says neither is there before payload. So the existing primitives
+   generate only 2.
+
+What this changes: "the next level is exactly the parent's back half", written at the opening ("Units") as the layout's
+rule and not a theorem, becomes step 3, conditional on step 2. What follows in this entry (the first sketch, the count of
+kinds, the inventory, FRC runs 1–3) is support and checks, not the proof.
+
+*The first sketch* (Claude's, unruled; checked by FRC, `plans/frc-plan.md`). A point of a level is precomputable if the
 level names it with no number chosen from outside: if every symmetry of the level fixes it. Given fairness to the facings
 (R162), a level's symmetries are the identity and the flip, whose one fixed point is the corner. So the only free cut is
 at the corner, into halves. Nesting the next level in a named part then gives a ratio of 2, and every ratio reachable is

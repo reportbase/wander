@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, thirty-ninth: §7, SPN's proof of the 2 in three steps: the levels are laid before any payload; before payload there is no measure; the one named point, the corner, forces halving (Tom: "first we need to show that the recursive levels are fully known prior to any payload").
 - 8 October, thirty-eighth: §7, FRC runs 2 and 3: only a split in 2 makes every child the same child on a level (Tom: "does 2 allow us to do recursion without runtime logic").
 - 8 October, thirty-seventh: the purpose, with geometry as compile time and the ruler agreed after it (Tom).
 - 8 October, thirty-sixth: §7, a route to forcing 2 and FRC run 1 (only powers of 2 from the flip, its fixed point and nesting).
@@ -810,7 +811,9 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   root, arithmetic, 2/π) opening others; run 2, in exact fractions without run 1's cap, found the same, arithmetic
   bringing in a factor of 3. Run 3 asked the stricter question, whether a recursion needs no case analysis: on a level
   (two different ends, so only the flip) only a split in 2 makes every part the same kind; on the full circle every split
-  does. So the 2 belongs to the situated reader's open run (SPN, "Unique: every child the same child"). Which price is a reader's: the direction it resolves, or
+  does. So the 2 belongs to the situated reader's open run (SPN, "Unique: every child the same child"). Since then SPN states the proof in three steps ("A route to forcing 2"): the levels are addresses, laid before any
+  payload; before payload the reader holds no measure, which is the hinge; so the only named interior point is the
+  corner, and every level is half the last. Which price is a reader's: the direction it resolves, or
   the whole field it looks at? (§5)
 - **Pricing slow-fading detail.** A reader pricing each level from its own noisy looks stops early where detail fades
   slowly (CAL runs 1 and 2, killed at r = 0.7). What estimate, if any, prices it well? (§4)
