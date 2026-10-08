@@ -60,7 +60,7 @@ itself, and it does not need to be.
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
-- 8 October, thirty-fourth: the paper's purpose stated at the top (explain, not criticize); §1, the ruler and the rules; §7, are the rules invented or found; wording that read as fault-finding recast as what the line is built for (Tom).
+- 8 October, thirty-fourth: the paper's purpose stated at the top (explain, not criticize); §1, the ruler and the rules (since cut to an illustration: the mystery may be in the ruler); wording that read as fault-finding recast as what the line is built for (Tom).
 - 8 October, thirty-third: Background and §8, the hand (fingers addresses, rings payload) to explain the situations; the Cauchy consists of addresses, not payloads; the reader's unit circle is a quarter in one facing (Tom, with *The Cauchy* and *Reader Geometry as Addressing*).
 
 ## Background from SPN
@@ -303,24 +303,14 @@ is built for close in; wide ranges call for its companion, the level count. The 
 situations 1 and 2 completely: with the whole held, there is no far field to lay it across. Only situated readers (3, 4)
 have a far field, and only they need rulers that count levels.
 
-**The ruler and the rules** (Tom, 8 October: "mathmeticians love to explore the numberline for its quirks, like the
-reinman hypotheisis for example. looking for hidden meaning in the numbers themselves. but is interesting that we might
-just looking for hidden meaning in something we invented, not hidden meaning in reality."). Two things share the name.
-- **The drawing:** equal notches, a base, digits, the same depth everywhere, no corner. That is a convention, agreed so
-  that readers can talk.
-- **The rules it carries:** counting, adding, multiplying. The rules are chosen, but what follows from them is not:
-  nobody decided which numbers would be prime.
-- **The test: does a property survive a change of ruler?** Another base, a logarithmic layout, a recursing line (§4).
-  Digit patterns do not survive it (that 1/7 repeats with period 6 is a fact of base 10); they belong to the drawing,
-  and meaning sought in them is sought in something made. The primes, the zeta zeros and the Riemann hypothesis do
-  survive it, unchanged in every base and layout; they belong to the rules, not the drawing.
-- **The same test as SPN's.** A quantity belongs to the pair when it survives every restatement, and to the account when
-  it does not (*The Cauchy* §5); addresses are what survive every change of payload (SPN §4.3).
-- **The careful conclusion.** Some of what is found in the numbers belongs to the ruler, and some survives every ruler and
-  belongs to the rules. Whether the rules belong to the world is open (§7). One hint that they are not only invention:
-  the spacing of the zeta zeros follows random-matrix statistics, the kind found in the energy levels of chaotic quantum
-  systems and first met in heavy nuclei (Montgomery, Dyson). Strictly, the zeros follow the unitary ensemble, while
-  most nuclear spectra follow the orthogonal one: the same family, not the same law.
+**The mystery may be in the ruler** (Tom, 8 October: "mathmeticians love to explore the numberline for its quirks,
+like the reinman hypotheisis for example. looking for hidden meaning in the numbers themselves. but is interesting that
+we might just looking for hidden meaning in something we invented, not hidden meaning in reality." And: "the debate about
+reinman is irrelevent to this paper, just an illustration that maybe the ruler is mystery not underlying reality.").
+The ruler, here, is the whole agreed system: the notches and the rules of counting that come with them. It can hold deep
+structure of its own, studied for its own sake and rightly. That structure need not be the structure of what is
+measured. Mathematics can find a real mystery in the ruler without it being a mystery about the world the ruler is laid
+on. The Riemann hypothesis stands here only as an example of the kind; this paper takes no view on it.
 
 **The ordinary line has no corner** (Tom, 7 October: "the number line is the near field and the far field combined,
 with no corner."). The ordinary number line is laid out the same everywhere: 0.5 to 1 looks exactly like 1 to 1.5.
@@ -810,10 +800,6 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   found: one idea or two? Laid side by side, not ruled. (§4)
 - **The sphere's two corners.** Does a reader near in one direction and far in another read the two independently, or
   does the far direction set the cost of the whole? (§8)
-- **Are the rules invented or found?** Properties that survive every change of ruler belong to the rules, not the drawing
-  (§1, "The ruler and the rules"). Whether the rules are themselves a human invention, or something the world also obeys,
-  this paper does not settle. The zeta zeros' random-matrix statistics, shared with quantum energy levels, point one way; a test would need a
-  property of the rules found in the world before mathematics predicted it.
 - **People, not synthetic readers.** The switch between a held whole and a unit (§6) is ready to test on real
   number-line data, open-ended against bounded. It waits on a dataset.
 
@@ -970,8 +956,6 @@ switch from serial to parallel happens per direction, near in one and far in ano
 
 ## Sources
 
-- Montgomery, H. L. (1973). The pair correlation of zeros of the zeta function. *Analytic Number Theory*, Proc. Symp.
-  Pure Math. 24, 181–193 (with Dyson's observation that it matches random-matrix eigenvalue statistics).
 
 - *The Cauchy* (working paper, 22 August 2026, Tom Brinkman; not in this repository).
 - *Reader Geometry as Addressing* (working paper, 25 September 2026, Tom Brinkman; not in this repository).
