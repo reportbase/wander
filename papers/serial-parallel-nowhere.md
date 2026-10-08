@@ -45,7 +45,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye (§3.3); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail (§3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail (§3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -531,9 +531,7 @@ A sphere needs a third quantity (its surface takes two relations, and two relati
 scale), and the third can take only one of the two roles. A second held unit is the unsituated view (situations 1 and 2,
 everything held); a situated reader has one unit. So for a situated reader f is **v₂**: a second thing read against the
 same h. The plane is one direction of reading, v/h; the sphere is two, v/h and v₂/h; the third relation, v/v₂, is their
-quotient and adds nothing. The triple corner v = h = v₂ is both readings at the unit. The eye fits: it holds its line of
-sight and reads two offsets across it, up and sideways, which is why its image is two-dimensional and its address on a
-hemisphere. An earlier answer to the same question took the third quantity as one of another kind, "relation, density
+quotient and adds nothing. The triple corner v = h = v₂ is both readings at the unit. An earlier answer to the same question took the third quantity as one of another kind, "relation, density
 and magnitude" (R106, R107; R107 withdrawn by R125); this one takes it as a second of the same kind. Open: whether v and
 v₂ are alike, or differ as the flat and upright hand do. The text below and `number-line.md` §8 keep the letter f; read it as
 v₂ (and `sphere.html` keeps `?f=`).
@@ -546,9 +544,7 @@ relation, v/v₂, is their quotient and is not swept. (`sphere.html` shows this 
 One h means one grain, so one level of detail serves both directions: each level halves a cell both ways, into four, a
 quadtree, as mipmaps halve an image in both directions. The square is not symmetric under rotation, as the octant is;
 that is right for a situated reader, whose h is special and whose two directions are its own axes (the flat hand and the
-upright hand). The octant, all three held alike, stays the unsituated picture. Open: whether v and v₂ always share one
-level of detail (the eye resolves alike in every direction at the fovea, but its field is not round), and how the square
-relates to the hemisphere an eye covers (they agree at the corner and along the axes, not between).
+upright hand). The octant, all three held alike, stays the unsituated picture. Open: whether v and v₂ always share one level of detail.
 
 **The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't
 need to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all
@@ -2149,21 +2145,10 @@ detail**. Why:
   The level of detail decides how much depth shows: the coarsest level is the circle (a plain ball), and each finer level
   adds the next band of depth, broad, middle, fine, as the flying page's `bandW` does. So m is what a level of detail
   shows, one band per level; m and g stay separate letters (m the mix, g the sweep, R170).
-- **The eye** (Tom, 8 October: "doesnt optics say that eyeball the image upside on the back of the eyeball", and "yes" to bringing the eye in).
-  The eye is a sweep device with the level of detail built in (Claude's reading of established optics and physiology;
-  unruled). (1) *The inverted image is not the flip.* A lens turns the image half a turn through its nodal point (left
-  to right, top to bottom); the flip swaps the facings, s ↔ 1/s. Inversion relabels the addresses and leaves every
-  relation as it was, which is why nothing has to turn it back: "up" is a name given to an address. (2) *The projection is
-  the reading.* A point off by v at distance h images at the focal length times v/h on a flat sensor, the focal length the eye's own unit
-  (V = H); on a curved retina, nearly a hemisphere, place goes roughly with the angle atan(v/h). A flat sensor lays s,
-  unbounded; the curved retina lays the bounded sweep, g up to the factor π/2. (3) *Vision lays the level of detail as
-  proportion, then logarithm.* Resolution is finest at the fovea and falls with eccentricity, and primary visual cortex
-  maps the retina with a magnification of about M = 17.3/(E + 0.75) mm of cortex per degree at eccentricity E (Horton and
-  Hoyt 1991; other fits differ in the constants). Its integral, cortical distance 17.3 · ln(1 + E/0.75) mm, is
-  proportional for E well below 0.75° and logarithmic well above: Schwartz's complex-log map (1977, 1980;
-  `plans/neighbours.md`). With s = E/0.75 it is ln(1 + s), proportional below s = 1 and logarithmic above. The constant
-  plays the corner's part, but it is a fitted constant of the eye's optics and receptor spacing, not shown to be a
-  reader's own h; whether it scales with the reader's grain is the test that would make it the corner.
+- **The eye is engineering, not geometry** (Tom, 8 October: "our paper is about h and v. not about the human eye. the human eye is engineering more than fundemental geometry."). The paper is about h and v. A lens, a retina and a visual cortex
+  are one reader's engineering of them, and are kept out of the argument; what they share with it (projection as v/h,
+  resolution laid proportionally then logarithmically, a fitted switch point near the fovea) is recorded as a neighbour in
+  `plans/neighbours.md`, under Schwartz, not as evidence.
 - **What stays.** The propositions and results that use the word keep it (renaming them would break what the corpus
   cites); read "recursion" there as the self-similar levels a reader picks from, and "recursing" as "picking a finer
   level". Graphics already works this way: a mipmap's levels are precomputed once, and the level used is picked per

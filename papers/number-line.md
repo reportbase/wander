@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, fiftieth: §4 and §8, the eye moved out: engineering, not geometry; recorded in `plans/neighbours.md` (Tom).
 - 8 October, forty-ninth: §8, h, v, v₂, then the sweep: the situated address on the unit square, one level of detail splitting into four (Tom).
 - 8 October, forty-eighth: SPN §3.3 and §3.5 (depth the slider m adds, shown by the level of detail; trig used sparingly, the in-place sweep the trig-free one), noted here (Tom).
 - 8 October, forty-seventh: §8, f is v₂, a second v read against the same h; the sphere is a reader with one unit reading in two directions (Tom).
@@ -589,11 +590,10 @@ by side, with no ruling on the word:
   of detail: proportionally up to the corner, logarithmically past it, one level per doubling. This is the number-line
   split of §5 (proportional for the familiar, compressed beyond) read as a sweep over the level of detail. SPN's derivation
   of 2 is demoted to its Appendix D: on a logarithmic sweep the ratio is the unit of the count.
-- **The eye** (Tom, 8 October: "doesnt optics say that eyeball the image upside on the back of the eyeball", and "yes" to bringing the eye in; SPN §3.3, "The eye"). The inverted image on the retina relabels addresses (a half turn), not the
-  flip. The curved retina lays the bounded sweep (the angle), a flat sensor the unbounded s. And the visual cortex lays
-  the level of detail as proportion, then logarithm: magnification about 17.3/(E + 0.75) mm per degree (Horton and Hoyt
-  1991), so cortical distance 17.3 · ln(1 + E/0.75), linear near the fovea and logarithmic beyond about 0.75°. The
-  constant plays the corner's part; whether it is a reader's own h is untested.
+- **The eye is engineering, not geometry** (Tom, 8 October: "our paper is about h and v. not about the human eye. the human eye is engineering more than fundemental geometry."). The paper is about h and v. A lens, a retina and a visual cortex
+  are one reader's engineering of them, and are kept out of the argument; what they share with it (projection as v/h,
+  resolution laid proportionally then logarithmically, a fitted switch point near the fovea) is recorded as a neighbour in
+  `plans/neighbours.md`, under Schwartz, not as evidence.
 - **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
   other is a held thing's remainder, entered where found. They are not ruled the same or different.
 
@@ -880,9 +880,7 @@ A sphere needs a third quantity (its surface takes two relations, and two relati
 scale), and the third can take only one of the two roles. A second held unit is the unsituated view (situations 1 and 2,
 everything held); a situated reader has one unit. So for a situated reader f is **v₂**: a second thing read against the
 same h. The plane is one direction of reading, v/h; the sphere is two, v/h and v₂/h; the third relation, v/v₂, is their
-quotient and adds nothing. The triple corner v = h = v₂ is both readings at the unit. The eye fits: it holds its line of
-sight and reads two offsets across it, up and sideways, which is why its image is two-dimensional and its address on a
-hemisphere. An earlier answer to the same question took the third quantity as one of another kind, "relation, density
+quotient and adds nothing. The triple corner v = h = v₂ is both readings at the unit. An earlier answer to the same question took the third quantity as one of another kind, "relation, density
 and magnitude" (R106, R107; R107 withdrawn by R125); this one takes it as a second of the same kind. Open: whether v and
 v₂ are alike, or differ as the flat and upright hand do. The text below and §8's figures keep the letter f; read it as
 v₂ (and `sphere.html` keeps `?f=`).
@@ -895,9 +893,7 @@ relation, v/v₂, is their quotient and is not swept. (`sphere.html` shows this 
 One h means one grain, so one level of detail serves both directions: each level halves a cell both ways, into four, a
 quadtree, as mipmaps halve an image in both directions. The square is not symmetric under rotation, as the octant is;
 that is right for a situated reader, whose h is special and whose two directions are its own axes (the flat hand and the
-upright hand). The octant, all three held alike, stays the unsituated picture. Open: whether v and v₂ always share one
-level of detail (the eye resolves alike in every direction at the fovea, but its field is not round), and how the square
-relates to the hemisphere an eye covers (they agree at the corner and along the axes, not between).
+upright hand). The octant, all three held alike, stays the unsituated picture. Open: whether v and v₂ always share one level of detail.
 
 **The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't need
 to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all the
