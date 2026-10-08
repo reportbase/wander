@@ -62,7 +62,8 @@ Google Fonts load from outside:
   in the corpus before the rewrite are the record's; SPN's opening note maps them to
   the current ones. SPN opens with the terms in order (relation, reading, corner, sweep,
   octave, recursion, spiral; since 8 Oct recursion is considered and rejected for
-  level of detail: the levels exist whole, the reader picks one, k doublings, and nothing recurses), a map of how the parts depend, and the standing of each;
+  level of detail: the levels exist whole, a thing's level is set by its size (smaller things have
+  less detail; not a request), and nothing recurses), a map of how the parts depend, and the standing of each;
   then the central result and the open question (what fixes the ratio between rungs; demoted 8 Oct: the reader
   sweeps its level of detail, proportional then logarithmic, and the derivation of 2 is in Appendix D).
   The papers cite others not in this repo (*Reader Geometry as

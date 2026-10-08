@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, fifty-second: §4, the level of detail is not a request: smaller things have less detail (Tom).
 - 8 October, fifty-first: §4, smaller drives less detailed: one division by v, since h is both ruler and grain (Tom).
 - 8 October, fiftieth: §4 and §8, the eye moved out: engineering, not geometry; recorded in `plans/neighbours.md` (Tom).
 - 8 October, forty-ninth: §8, h, v, v₂, then the sweep: the situated address on the unit square, one level of detail splitting into four (Tom).
@@ -595,6 +596,9 @@ by side, with no ruling on the word:
   Δ/v grains, since the grain is h: one division read twice. Each doubling of distance halves the size and takes one level
   of detail; size is the cause. On the number line: a number's digits past the reader's window are fewer as it is read
   smaller, one binary digit per doubling.
+- **Not a request** (Tom, 8 October: "its not a request, it just the fact all things being equal, smaller things have less detail."). Earlier entries in this section speak of a level of detail requested or picked (forty-second
+  to forty-fourth iterations); read them with this: nothing is picked. All things being equal, a smaller thing has less
+  detail, and its level is set by its size.
 - **The eye is engineering, not geometry** (Tom, 8 October: "our paper is about h and v. not about the human eye. the human eye is engineering more than fundemental geometry."). The paper is about h and v. A lens, a retina and a visual cortex
   are one reader's engineering of them, and are kept out of the argument; what they share with it (projection as v/h,
   resolution laid proportionally then logarithmically, a fitted switch point near the fovea) is recorded as a neighbour in
