@@ -6,6 +6,14 @@ its terms, and the section "Background from SPN" below gives what is needed to r
 does not already hold except where it says so. Nothing here is in SPN yet; a part goes there only after it has been tested or
 ruled.*
 
+**What this paper is for** (Tom, 8 October: "the point of the number-line paper is not criticize the number line, just
+correctly explain what it is abstractly … despite its flaws, it or something like it is needed."). The number line is a
+shared ruler (§1), and readers who must talk to each other need one. This paper says what it is, what it is built for
+and what it is not built for, in SPN's terms. Saying where a tool fits is not a complaint against it. In one line, the
+chain it follows: reality → observation → relation → address → number line. The line is a public abstraction made from a
+way of relating to magnitude, as the sphere is a picture made from wedges (§8); it is not the structure of observation
+itself, and it does not need to be.
+
 **Iterations**
 
 - 7 October: first draft, from two of Tom's notes: the number line's two infinities (§1), and "maybe the way humans
@@ -52,6 +60,7 @@ ruled.*
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, thirty-fourth: the paper's purpose stated at the top (explain, not criticize); §1, the ruler and the rules; §7, are the rules invented or found; wording that read as fault-finding recast as what the line is built for (Tom).
 - 8 October, thirty-third: Background and §8, the hand (fingers addresses, rings payload) to explain the situations; the Cauchy consists of addresses, not payloads; the reader's unit circle is a quarter in one facing (Tom, with *The Cauchy* and *Reader Geometry as Addressing*).
 
 ## Background from SPN
@@ -234,7 +243,7 @@ notch stands for, built out from there.
   A uniform stick favours none.
 - **Depth everywhere, because it cannot know who will read it.** It must serve whatever detail any reader needs. That is
   the price of being shared, and it changes how §4's comparison should be read: the ordinary line's spending on empty
-  levels is not a flaw but the cost of neutrality.
+  levels is not a flaw: it is what neutrality takes.
 - **It puts back the scale division took out.** A reader divides by its own h and keeps only the relation. To tell
   another, it must put a scale back: v in agreed units, s_A·h_A = s_B·h_B, read off the common ruler. This is SPN's "how
   the depth comes back after division", between readers: the address points back to a magnitude both sides agree on.
@@ -270,7 +279,7 @@ and far field, it is problematic. laying a ruler down in the near field is fine,
 itself.").
 - **In the near field it fits.** Below the corner a reader reads in plain proportion, so the near field already is a
   ruler, and laying notches over it changes nothing.
-- **In the far field it does not.** Past the corner the reader reads in levels, each doubling one step (1 to 2 counts
+- **In the far field it is not the tool for the job.** Past the corner the reader reads in levels, each doubling one step (1 to 2 counts
   the same as 1,000 to 2,000). A uniform ruler laid there spends nearly all its notches where the reader needs fewest:
   from 0 to 1,000, 999 of its notches lie past the corner, where the reader holds about 10 levels. And it hides the
   flip: taking a far-field reading back into the reader's space is not a rescaling but passes through 1/s. The ruler
@@ -286,13 +295,32 @@ itself.").
 | far (past the corner) | notches at equal ratios: counting levels | decibels, star magnitudes, Richter, pH |
 | both, in one number | a plain ruler inside a level count | scientific notation, floating point |
 
-So the ordinary number line is the near-field ruler stretched across the corner. That is why it serves well close in
-and badly over wide ranges, and why the logarithm is not a way of drawing (§4, "Laid out in space") but the far field's
-own ruler.
+So the ordinary number line is the near-field ruler, extended across the corner so that every reader can share it. It
+is built for close in; wide ranges call for its companion, the level count. The logarithm is not a way of drawing (§4,
+"Laid out in space") but the far field's own ruler.
 
 **Who needs which ruler.** The circle's near field and the plain ruler are both proportional, so a plain ruler serves
 situations 1 and 2 completely: with the whole held, there is no far field to lay it across. Only situated readers (3, 4)
 have a far field, and only they need rulers that count levels.
+
+**The ruler and the rules** (Tom, 8 October: "mathmeticians love to explore the numberline for its quirks, like the
+reinman hypotheisis for example. looking for hidden meaning in the numbers themselves. but is interesting that we might
+just looking for hidden meaning in something we invented, not hidden meaning in reality."). Two things share the name.
+- **The drawing:** equal notches, a base, digits, the same depth everywhere, no corner. That is a convention, agreed so
+  that readers can talk.
+- **The rules it carries:** counting, adding, multiplying. The rules are chosen, but what follows from them is not:
+  nobody decided which numbers would be prime.
+- **The test: does a property survive a change of ruler?** Another base, a logarithmic layout, a recursing line (§4).
+  Digit patterns do not survive it (that 1/7 repeats with period 6 is a fact of base 10); they belong to the drawing,
+  and meaning sought in them is sought in something made. The primes, the zeta zeros and the Riemann hypothesis do
+  survive it, unchanged in every base and layout; they belong to the rules, not the drawing.
+- **The same test as SPN's.** A quantity belongs to the pair when it survives every restatement, and to the account when
+  it does not (*The Cauchy* §5); addresses are what survive every change of payload (SPN §4.3).
+- **The careful conclusion.** Some of what is found in the numbers belongs to the ruler, and some survives every ruler and
+  belongs to the rules. Whether the rules belong to the world is open (§7). One hint that they are not only invention:
+  the spacing of the zeta zeros follows random-matrix statistics, the kind found in the energy levels of chaotic quantum
+  systems and first met in heavy nuclei (Montgomery, Dyson). Strictly, the zeros follow the unitary ensemble, while
+  most nuclear spectra follow the orthogonal one: the same family, not the same law.
 
 **The ordinary line has no corner** (Tom, 7 October: "the number line is the near field and the far field combined,
 with no corner."). The ordinary number line is laid out the same everywhere: 0.5 to 1 looks exactly like 1 to 1.5.
@@ -303,7 +331,7 @@ the near field and the far field into one uniform ruler, and 1 is only another t
   not theirs" (`plans/grn-plan.md`), and the corner is set by the reader's unit, not by the line.
 - **Its other features follow from having no corner.** Being proportional everywhere, the line must give every number
   the same depth (depth everywhere, §4), and it must be drawn logarithmically to fit wide ranges (§4, "Laid out in
-  space"). Both are costs of a line without a corner.
+  space"). Both follow from its job: a line shared by every reader can favour none.
 - **A recursive line has a corner at every branch.** Each branch is proportional up to its corner and opens a new level
   past it, which is why it lays out only what it needs.
 
@@ -619,7 +647,8 @@ where it cannot finish.
 - **Equality:** 0.1 + 0.2 = 0.3 is false in floating point and true exactly. √2 · √2 = 2 is false in floating point
   (2.0000000000000004) and undecided on the recursing line at every depth from 1 to 50.
 - **So:** the recursing line is not better everywhere; it is the line whose answers say how much they know. The
-  ordinary line's fault is less its cost than its claim.
+  ordinary line is built to state a value, not how much of it is known; a line that also states its depth is a
+  different tool.
 
 **Observation costs calories** (Tom, 7 October: "but math is free, but real observation requires calories. how can we
 add a cost calculation"; `plans/cal-plan.md`). Price each level a reader enters at c, value what it removes of the
@@ -781,6 +810,10 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
   found: one idea or two? Laid side by side, not ruled. (§4)
 - **The sphere's two corners.** Does a reader near in one direction and far in another read the two independently, or
   does the far direction set the cost of the whole? (§8)
+- **Are the rules invented or found?** Properties that survive every change of ruler belong to the rules, not the drawing
+  (§1, "The ruler and the rules"). Whether the rules are themselves a human invention, or something the world also obeys,
+  this paper does not settle. The zeta zeros' random-matrix statistics, shared with quantum energy levels, point one way; a test would need a
+  property of the rules found in the world before mathematics predicted it.
 - **People, not synthetic readers.** The switch between a held whole and a unit (§6) is ready to test on real
   number-line data, open-ended against bounded. It waits on a dataset.
 
@@ -936,6 +969,9 @@ corner, and a body whose relief bands show by its size in the reader's pixels.
 switch from serial to parallel happens per direction, near in one and far in another.
 
 ## Sources
+
+- Montgomery, H. L. (1973). The pair correlation of zeros of the zeta function. *Analytic Number Theory*, Proc. Symp.
+  Pure Math. 24, 181–193 (with Dyson's observation that it matches random-matrix eigenvalue statistics).
 
 - *The Cauchy* (working paper, 22 August 2026, Tom Brinkman; not in this repository).
 - *Reader Geometry as Addressing* (working paper, 25 September 2026, Tom Brinkman; not in this repository).
