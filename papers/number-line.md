@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, fifty-sixth: §4, the inverse-square law, the situated reader one more place it shows up (Tom).
 - 8 October, fifty-fifth: §4, the signal thins over more room; one reader holds one share; the cost of being situated (Tom).
 - 8 October, fifty-fourth: §4, smaller means less is captured, not less sent (Tom).
 - 8 October, fifty-third: §4, the object is the same near or far; the level of detail is the address's, not the payload's (Tom).
@@ -609,6 +610,8 @@ by side, with no ruling on the word:
 - **The signal thins; the reader holds one share** (Tom, 8 October: "you see the mystery right? object sends same signal, reader gets a signal that corresponds to how big it is. those two things don't line up."; "yes, that seems correct. object sends same signal, regardless, but as that signal propogates away, the signal thins to cover the greater space covered."; SPN §3.3). Sent from nowhere, to every direction, the signal
   spreads over a sphere of standpoints growing as v²; each holds about 1/v² of it, and the sum is constant. The gap
   between what is sent and what one reader gets is the cost of being situated.
+  It is the inverse-square law (Tom, 8 October: "is this the inverse square law?"; "yes, the situated reader is just another place this law shows up."): 1/v in each of two directions, grains lost while the object is resolved, brightness
+  lost once it is under one grain, the switch at the reader's corner. The situated reader is one more place the law shows up.
 - **The eye is engineering, not geometry** (Tom, 8 October: "our paper is about h and v. not about the human eye. the human eye is engineering more than fundemental geometry."). The paper is about h and v. A lens, a retina and a visual cortex
   are one reader's engineering of them, and are kept out of the argument; what they share with it (projection as v/h,
   resolution laid proportionally then logarithmically, a fitted switch point near the fovea) is recorded as a neighbour in

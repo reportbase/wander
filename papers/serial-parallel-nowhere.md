@@ -2174,6 +2174,14 @@ detail**. Why:
   standpoint and one h. For one reader the two do not line up because it is somewhere and the signal was sent to nowhere in
   particular; summed over every standpoint, which only the view from nowhere can do, they do. The gap is the cost of being
   situated.
+  *It is the inverse-square law* (Tom, 8 October: "is this the inverse square law?"; "yes, the situated reader is just another place this law shows up."). The law is not derived here; the situated reader is one more place it shows up.
+  Read in the paper's terms: a size falls as 1/v in each direction read, so 1/v² in two (v and v₂, §1), and the exponent is
+  the number of directions, the dimension of the sphere the signal thins over. It shows two ways, with the reader's corner
+  between them: while the object covers many grains (resolved), each grain is as bright as ever and the number of grains
+  falls as 1/v²; once it is under one grain (unresolved), all its signal lands in one grain, whose brightness falls as
+  1/v², the law in its textbook form. The switch is where the object is one grain wide, size over grain = 1, GRN's corner
+  (`plans/grn-plan.md`): before it distance costs grains, past it brightness. (Claude's reading of standard physics,
+  unruled.)
 - **Depth, the slider and the level of detail** (Tom, 8 October: "we have describe g as the slider between the unit circle and the shape."; "so depth is the difference between situation 2 and situation 1."; "but it seems to be [0,1] in unsituated view and [0,PI/2] in situated view."). Depth is B(θ) − 1, the shape less the unit circle:
   situation 2 less situation 1. The slider between them is R140's (written g then; m since R170, §2.1): r = 1 + m · (B − 1),
   m = 0 the circle, m = 1 the shape (R121: "the radius from 1 to the breadth"). With the whole held (unsituated), m is a
