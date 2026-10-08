@@ -41,6 +41,24 @@ field as a complex number; the cortical magnification is about k/(r + a) at ecce
 R176's lay, measured in anatomy. What SPN adds: the flip (the log-polar map has no reciprocal facing), and the reading
 of a as a reader's own unit rather than a fitted constant.
 
+*Added 8 October.* A human fit: magnification M = 17.3/(E + 0.75) mm per degree (Horton and Hoyt 1991, *Arch.
+Ophthalmol.* 109:816–824), so cortical distance 17.3 · ln(1 + E/0.75) mm, with a ≈ 0.75°; other fits differ (Engel et al.
+1997). Its integral is ln(1 + s) in s = E/a, proportional below s = 1 and logarithmic above: SPN's sweep over the level of
+detail (SPN §3.3).
+
+*The eye as a neighbour, not evidence* (8 October; Tom: "our paper is about h and v. not about the human eye. the human
+eye is engineering more than fundemental geometry."). Moved here from SPN. Where the eye's engineering meets the paper:
+- the inverted image is a half turn, a relabelling of addresses, not the flip s ↔ 1/s;
+- projection images an offset v at distance h at (focal length) · v/h: a flat sensor lays s, a curved retina roughly the
+  angle, the bounded sweep;
+- resolution is laid proportionally near the fovea and logarithmically beyond (the magnification above);
+- one fixation is read at once and saccades go in turn, as situations 3 and 4;
+- depth needs a second view or motion, as SPN's second reader off the plane (§8.1).
+Where it does not: vision states everything in degrees of visual angle (v/h already swept, a fixed unit, the reader's own
+h absent) and in polar coordinates round the fovea; it has no flip; its switch point (about 0.75° for cortex, 1–3° in
+acuity fits) is fitted, not shown to be a reader's h; and it is not alike in every direction (horizontal beats vertical,
+lower beats upper: Himmelberg, Winawer and Carrasco, eLife 2021).
+
 ### 3. Number lines as proportion judgment: Barth and Paladino (2011)
 
 Children's number-line placements, long read as a shift from logarithmic to linear (Siegler; Dehaene), are fitted

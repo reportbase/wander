@@ -34,6 +34,12 @@
 > reader does not recurse: it picks a level of detail, k, and reads level k directly. The geometry is compile time;
 > picking the level of detail is runtime; nothing recurses (§3.3, "Recursion considered and rejected"). The reader
 > sweeps its level of detail, proportional in the near field and logarithmic in the far (Tom: "its a sweep over the LOD").
+>
+> *Corrected: not a request* (Tom, 8 October: "its not a request, it just the fact all things being equal, smaller things have less detail."). Nothing is requested or picked. All things being equal, a smaller thing has less
+> detail: past the corner a thing is read as Δ/v units of h, and with h the reader's grain too, its level of detail is
+> log₂(Δ/v), set by its size (§3.3, "Smaller drives less detailed"). The notes above that speak of a request, a count
+> picked or a level chosen are kept as the record and read with this correction: there is no runtime choice of level; the
+> geometry gives the levels, size gives the level a thing shows, and the payload is what is there.
 
 *Tom Brinkman, with Claude. Working paper. Rewritten 1 October 2026 around the rulings of that evening (R153–R158); revised 2 October to foreground the inversion at the corner as the main contribution (§3.2, R161), and again that
 morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the situations restated on the sweep alone (§2.1, Tom's list 0–4) and the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 or 4 has a horizon and recursion where situations 1 and 2 have neither. Revised 8 October with
@@ -45,7 +51,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 demoted to Appendix D (Appendix D), no measure before payload, and the named points forcing the nesting (the central open question, "A route to forcing 2").*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -74,10 +80,10 @@ block only puts them in order.*
 | corner | s = 1, v = h: the flip's one fixed point; g = ½ (in 1 and 2, 45°) | §3 |
 | sweep | the running share g of the relations, from 0 (v unexpressed) to 1 (v fully expressed). Each relation s takes the share ds/(1 + s²); their total is π/2, and g is the running share over that total (R170, "g is the sweep"). The flip sends g to 1 − g. In situations 1 and 2, with both breadths held, the same g is an angle, θ = (π/2)·g, and 90° is meaningful there; in 3 and 4 nothing turns, and g is a share | §2.1, §3.5 |
 | level | a sweep entered again, with its own home, corner and far wall. In place, 2h: a front half of one h, proportional, and a back half of one h holding the rest, in which the next level nests (§3.3, "The level as 2h, in place"). Laid side by side round its own corner, 1/r to r, it is one quarter turn, whatever the ratio r (Proposition 3.12) | §3.3, Proposition 3.12 |
-| recursion | levels within levels: each level the same sweep again. **Considered and rejected (8 October) for level of detail**: the levels exist whole and the reader picks one; nothing recurses. Kept as a word where earlier text uses it, read as the levels | §3.3, Proposition 3.11; "Recursion, after the corner"; §3.3, "Recursion considered and rejected" |
-| level of detail | what the reader sweeps (Tom, 8 October): proportional in the near field, logarithmic in the far. A level picked is an integer k, how many doublings, read directly as 2ᵏh. Picking is runtime and owes nothing to the payload; the levels picked from are geometry, compile time | §3.3, "Recursion considered and rejected"; Appendix D, "Corollary" |
+| recursion | levels within levels: each level the same sweep again. **Considered and rejected (8 October) for level of detail**: the levels exist whole, and the level a thing shows is set by its size (Tom: "its not a request"); nothing recurses. Kept as a word where earlier text uses it, read as the levels | §3.3, Proposition 3.11; "Recursion, after the corner"; §3.3, "Recursion considered and rejected" |
+| level of detail | what the reader sweeps (Tom, 8 October): proportional in the near field, logarithmic in the far. A thing's level is set by its size: all things being equal, smaller things have less detail, k = log₂(Δ/v), one level per doubling of distance (Tom, 8 October: "its not a request"). The levels are geometry; nothing is picked | §3.3, "Recursion considered and rejected"; Appendix D, "Corollary" |
 | unit line | the sweep itself, bounded and known (0 to π/2 in 1 and 2; g from 0 to 1 in 3 and 4); to a line what the unit circle is to a shape. The **number line**, continuous with unit 1 and size unknown, is the unknown system laid on it: 0 at home, 1 at the corner, its far end at the horizon (Tom, 6 October) | §2.1, "The unit line, and the number line laid on it" |
-| depth | the difference between a shape and the unit circle (Tom, 6 October). Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
+| depth | the difference between a shape and the unit circle (Tom, 6 October; again 8 October: "so depth is the difference between situation 2 and situation 1"). The slider m adds it (§3.3, "Depth, the slider and the level of detail"); since 8 October level of detail, not recursion, is how it is shown. Only situation 2 has it; recursion is how it is held | §2.1, "Proportion, depth and recursion" |
 | continuous sweep, spiral | the levels drawn. Unwrapped, one turn running on, level into level with no break; wrapped round a centre, a logarithmic spiral of pitch k = ln q/(π/2) | §2.1, Proposition 3.13 |
 
 **Situated and unsituated** (Tom, 6 October, agreeing to drop "view from nowhere" and "view from somewhere"). A
@@ -524,6 +530,27 @@ v_raw/h_raw = V/H.
 | the corner | computed | approached, never found (§3.1) |
 
 - **The origin.** v = h = 0 has no angle: nothing of either, situation 0.
+
+**f is v₂, a second v** (Tom, 8 October: "so what is f. in v,h,f?"; "is f needed to define a sphere"; "thats weird that f is so unclear, we know f is needed, but what is it exactly?"; "ok, so it is v2"). The third breadth came in by symmetry, as a coordinate, and a coordinate has no
+role; v and h are clear because each has one: h is what the reader holds (its unit, V = H), v what it reads against it.
+A sphere needs a third quantity (its surface takes two relations, and two relations take three breadths up to the
+scale), and the third can take only one of the two roles. A second held unit is the unsituated view (situations 1 and 2,
+everything held); a situated reader has one unit. So for a situated reader f is **v₂**: a second thing read against the
+same h. The plane is one direction of reading, v/h; the sphere is two, v/h and v₂/h; the third relation, v/v₂, is their
+quotient and adds nothing. The triple corner v = h = v₂ is both readings at the unit. An earlier answer to the same question took the third quantity as one of another kind, "relation, density
+and magnitude" (R106, R107; R107 withdrawn by R125); this one takes it as a second of the same kind. Open: whether v and
+v₂ are alike, or differ as the flat and upright hand do. The text below and `number-line.md` §8 keep the letter f; read it as
+v₂ (and `sphere.html` keeps `?f=`).
+
+**h, v, v₂, then the sweep** (Tom, 8 October: "so really we have h,v,v2. and then sweep over them", and "yes"; Claude's wording, unruled). The situated reader holds h and reads v and v₂ against it:
+two relations, v/h and v₂/h, each swept on its own by the in-place sweep (§3.5: f = s/2 before the corner, 1 − 1/(2s)
+past it). Its address is a pair (f₁, f₂) in the **unit square** [0, 1] × [0, 1], not the octant: home at (0, 0), the
+corner of each direction at ½, the triple corner v = h = v₂ at the centre (½, ½), the far walls the edges f = 1. The third
+relation, v/v₂, is their quotient and is not swept. (`sphere.html` shows this square as the unit cube's face seen from h.)
+One h means one grain, so one level of detail serves both directions: each level halves a cell both ways, into four, a
+quadtree, as mipmaps halve an image in both directions. The square is not symmetric under rotation, as the octant is;
+that is right for a situated reader, whose h is special and whose two directions are its own axes (the flat hand and the
+upright hand). The octant, all three held alike, stays the unsituated picture. Open: whether v and v₂ always share one level of detail.
 
 **The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't
 need to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all
@@ -2104,7 +2131,8 @@ detail**. Why:
   there is always something smaller and something larger (Tom), so depth never runs out, and the horizon has no last
   level (§2.1, "Why the recursion"). A recursion on the world's depth would never halt. Tom's first account, "every level
   of recursion does not require an exit", was corrected by him the same day: "there must be somekind of runtime logic".
-- **Level of detail puts that logic in one place.** The reader picks the level it wants, an integer k, how many doublings
+- **Level of detail puts that logic in one place** (*corrected, same day*: not a pick but a fact of size, below, "Smaller
+  drives less detailed"). The reader picks the level it wants, an integer k, how many doublings
   of detail (each level of detail a doubling of the last, "Corollary", Appendix D), and reads level k
   directly, 2ᵏh, as a float's exponent is read from its bits. There is no descent, no loop and no exit test: one choice,
   made at the observation, owing nothing to the payload. Where a reading lands is direct too: its level is ⌊log₂(v/h)⌋.
@@ -2116,6 +2144,61 @@ detail**. Why:
   per doubling (Proposition 3.4: within a level a share, across levels a count, and the count is the logarithm). So what
   the earlier text called recursion is the far field of one sweep, the sweep over the level of detail. With it the
   derivation of 2 was demoted (the central open question; Appendix D): on a logarithmic sweep the base is the unit.
+- **Smaller drives less detailed** (Tom, 8 October: "so two things happen when we sweep to the horizon, things get proportionally smaller and have proportionally less detail,is that the same thing?"; "they do seem to be the same thing. smaller size drives the lower level of detail."). Toward the horizon a thing of fixed size Δ at v is read as Δ/v units of h:
+  each doubling of v halves it. The detail that shows is how many of the reader's grains fit across it, and the grain is h
+  (GRN: pixels h wide), so that is Δ/v grains too: one division, read twice. Size is the cause and level of detail the
+  effect: k = log₂(Δ/v) up to a constant, one level lost per doubling, which is the in-place sweep's halving past the
+  corner (¾, ⅞, 15/16). They coincide because one h is both the reader's ruler and its grain, the single unit that also
+  forces V = H. They would part only if the grain changed without the unit (finer resolution at the same h; zooming in
+  SPN changes h, so both move together) or if the thing had a finest detail (ruled out by Tom's premise, always something
+  smaller). So the logarithm past the corner counts halvings of size, and each is a level of detail. It is not a request (Tom, 8 October: "its not a request, it just the fact all things being equal, smaller things have less detail."):
+  nothing is chosen; all things being equal, smaller things have less detail.
+  The object does not change (Tom, 8 October: "on object is the same, regardless if its far away or near. it sends the same signal regardless, you don't ask the object for a certain level of detail."): near or far it is the same thing sending the same signal, and nothing asks it
+  for a level of detail. What changes is where the signal lands in the reader's sweep: how many of the reader's grains it
+  covers. So the level of detail belongs to the address, never to the payload (§4.3, "addresses, not payloads"). Physics
+  agrees on this point: with nothing in between, the brightness per unit of view of an extended object is the same at any
+  distance; farther, it covers fewer grains, each as bright as before.
+  So smaller means less is **captured**, not less sent (Tom, 8 October: "yes, we are capturing less information about it. smaller means less detail is captured about it."). Counted: each doubling of distance lowers the level of
+  detail by one and divides the grains the thing covers by 2 in one direction of reading, by 4 in two (v and v₂, one level
+  splitting a cell into four, §1), so the information captured about it falls in the same proportion; the object's own
+  information is unchanged.
+- **The same signal, a smaller share: the cost of being situated** (Tom, 8 October: "you see the mystery right? object sends same signal, reader gets a signal that corresponds to how big it is. those two things don't line up."; "yes, that seems correct. object sends same signal, regardless, but as that signal propogates away, the signal thins to cover the greater space covered."; the reading is Claude's, unruled; the physics
+  is standard). The object sends the same signal at any distance, and the reader gets a signal that goes with the
+  object's size. They line up in two steps. *Per grain nothing changes*: with nothing in between, the brightness per unit
+  of view is the same at any distance; only the number of grains the object covers falls. *The rest thins over more
+  room*: as the signal travels it spreads over the sphere of standpoints at that distance, whose area grows as v², and
+  each standpoint captures about 1/v² of the object's grains (two directions of reading, §1); summed over every
+  standpoint, v² · 1/v² is constant (the inverse-square law; conservation of flux through spheres). Nothing is lost; the
+  signal is divided among more addresses, and one reader holds one address's share. In the paper's terms the object sends
+  unsituated, to every direction alike (the full turn, as in situations 1 and 2), and the reader receives situated, one
+  standpoint and one h. For one reader the two do not line up because it is somewhere and the signal was sent to nowhere in
+  particular; summed over every standpoint, which only the view from nowhere can do, they do. The gap is the cost of being
+  situated.
+  *It is the inverse-square law* (Tom, 8 October: "is this the inverse square law?"; "yes, the situated reader is just another place this law shows up."). The law is not derived here; the situated reader is one more place it shows up.
+  Read in the paper's terms: a size falls as 1/v in each direction read, so 1/v² in two (v and v₂, §1), and the exponent is
+  the number of directions, the dimension of the sphere the signal thins over. It shows two ways, with the reader's corner
+  between them: while the object covers many grains (resolved), each grain is as bright as ever and the number of grains
+  falls as 1/v²; once it is under one grain (unresolved), all its signal lands in one grain, whose brightness falls as
+  1/v², the law in its textbook form. The switch is where the object is one grain wide, size over grain = 1, GRN's corner
+  (`plans/grn-plan.md`): before it distance costs grains, past it brightness. (Claude's reading of standard physics,
+  unruled.)
+  *The law has no corner* (Tom, 8 October: "but the inverse square law does not account for the corner?"). 1/v² has the same form at every distance; nothing in it marks one scale. The corner is
+  the reader's: it comes from the grain, h, the one scale the reader brings. The law with no reader is scale-free; a reader
+  with a finite grain puts one switch into it, at the distance where the object is one grain wide. Physics keeps that
+  switch outside the law too, in the instrument (resolved against point source, the resolution limit). So the corner is
+  not in what is sent; it is in who receives it, as the paper holds throughout (the corner is the reader's, §3).
+- **Depth, the slider and the level of detail** (Tom, 8 October: "we have describe g as the slider between the unit circle and the shape."; "so depth is the difference between situation 2 and situation 1."; "but it seems to be [0,1] in unsituated view and [0,PI/2] in situated view."). Depth is B(θ) − 1, the shape less the unit circle:
+  situation 2 less situation 1. The slider between them is R140's (written g then; m since R170, §2.1): r = 1 + m · (B − 1),
+  m = 0 the circle, m = 1 the shape (R121: "the radius from 1 to the breadth"). With the whole held (unsituated), m is a
+  plain fraction on [0, 1]. With it unknown (situated), depth relative to the unit runs to ∞ and must be swept (R121's
+  "1 + g/(1 − g), no top"); Tom's [0, π/2] is that sweep written as an angle, [0, 1] in the paper's own notation (§3.5).
+  The level of detail decides how much depth shows: the coarsest level is the circle (a plain ball), and each finer level
+  adds the next band of depth, broad, middle, fine, as the flying page's `bandW` does. So m is what a level of detail
+  shows, one band per level; m and g stay separate letters (m the mix, g the sweep, R170).
+- **The eye is engineering, not geometry** (Tom, 8 October: "our paper is about h and v. not about the human eye. the human eye is engineering more than fundemental geometry."). The paper is about h and v. A lens, a retina and a visual cortex
+  are one reader's engineering of them, and are kept out of the argument; what they share with it (projection as v/h,
+  resolution laid proportionally then logarithmically, a fitted switch point near the fovea) is recorded as a neighbour in
+  `plans/neighbours.md`, under Schwartz, not as evidence.
 - **What stays.** The propositions and results that use the word keep it (renaming them would break what the corpus
   cites); read "recursion" there as the self-similar levels a reader picks from, and "recursing" as "picking a finer
   level". Graphics already works this way: a mipmap's levels are precomputed once, and the level used is picked per
@@ -2137,7 +2220,7 @@ not that.
   (GRN, `plans/grn-plan.md`), its price (CAL, `plans/cal-plan.md`) and whether anything is left to read (the draw
   labs). None of these is in the geometry, and none can be: geometry cannot know the depth without the payload. So
   there is runtime logic, exactly one test, go on or stop.
-- **One exit: the level of detail the reader requests** (Tom: "also LOD works this way"; then Tom, 8 October: "but there is always something there, something smaller, something larger, you can always zoom further in both directions."; "yes, that problem is nicely solved is the user requests a level of detail, that is the exit condition, and that has nothing to do with the payload."). The world's
+- **One exit: the level of detail the reader requests** (*corrected, same day*: not a request; the level is set by size, "Smaller drives less detailed", below; Tom: "also LOD works this way"; then Tom, 8 October: "but there is always something there, something smaller, something larger, you can always zoom further in both directions."; "yes, that problem is nicely solved is the user requests a level of detail, that is the exit condition, and that has nothing to do with the payload."). The world's
   depth never runs out, in either direction, so "where the depth stops" never fires. The reader requests a level of
   detail, and the descent stops there: no need to recurse past it. The request is the reader's and has nothing to do with
   the payload, so the earlier "geometry cannot know the depth without the payload" is true but moot: the exit is not set
@@ -2342,6 +2425,15 @@ ratio between rungs (*The Radix*, §3.3; R176).
 that the unknown must enter as a shift. The premise is case (a); it is neither forced nor needed.
 
 ### 3.5 The share, and g
+
+*Trig used sparingly* (Tom, 8 October: "I would prefer to not use any trig."; "trig is fine, but I never use it to figure things out. but we can use sparingly."). The paper reasons in ratios. The sweep has a statement with no trig, "The level as
+2h, in place" (§3.3): f = s/2 before the corner, f = 1 − 1/(2s) past it. It runs from 0 to 1 with the corner at ½, is fair
+to the facings (f(1/s) = 1 − f(s)), has slope ½ on both sides of the corner, and past it halves what is left exactly at
+each doubling (¾, ⅞, 15/16, …), so the level of detail is k = log₂(1/(2(1 − f))) with no error. g = (2/π) · atan(v/h),
+below, is the same sweep laid evenly in angle, under the Cauchy's share; it agrees with the in-place sweep at home, the
+corner and the far wall, and far out halves what is left only approximately. It is kept where a result is about angles
+(the share ds/(1 + s²), Propositions 3.12–3.13); elsewhere the ratio is enough (*Reader Geometry as Addressing* §2.2: the
+arctan "is the point of contact, and it is engineering").
 
 *Tom, 2 October: "g = 0 is the unit circle g=1 the fully expressed octave" (13:05); "g=1 means the breadth is fully
 expressed" (13:20) (R168); "so back to g, g=0 just means the start of the sweep. g=1 means the end of sweep. which

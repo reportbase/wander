@@ -61,6 +61,18 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 8 October, fifty-seventh: §4, the law has no corner; the corner is the reader's grain (Tom).
+- 8 October, fifty-sixth: §4, the inverse-square law, the situated reader one more place it shows up (Tom).
+- 8 October, fifty-fifth: §4, the signal thins over more room; one reader holds one share; the cost of being situated (Tom).
+- 8 October, fifty-fourth: §4, smaller means less is captured, not less sent (Tom).
+- 8 October, fifty-third: §4, the object is the same near or far; the level of detail is the address's, not the payload's (Tom).
+- 8 October, fifty-second: §4, the level of detail is not a request: smaller things have less detail (Tom).
+- 8 October, fifty-first: §4, smaller drives less detailed: one division by v, since h is both ruler and grain (Tom).
+- 8 October, fiftieth: §4 and §8, the eye moved out: engineering, not geometry; recorded in `plans/neighbours.md` (Tom).
+- 8 October, forty-ninth: §8, h, v, v₂, then the sweep: the situated address on the unit square, one level of detail splitting into four (Tom).
+- 8 October, forty-eighth: SPN §3.3 and §3.5 (depth the slider m adds, shown by the level of detail; trig used sparingly, the in-place sweep the trig-free one), noted here (Tom).
+- 8 October, forty-seventh: §8, f is v₂, a second v read against the same h; the sphere is a reader with one unit reading in two directions (Tom).
+- 8 October, forty-sixth: §4, the eye: inversion a relabelling, the curved retina the bounded sweep, V1 the level of detail as proportion then logarithm (Tom).
 - 8 October, forty-fifth: §4, the reader sweeps its level of detail, proportional then logarithmic; SPN's derivation of 2 demoted (Tom).
 - 8 October, forty-fourth: §4, recursion considered and rejected for level of detail (Tom).
 - 8 October, forty-third: §4, a level of detail is a doubling, so the request is a count k and can be precomputed (Tom).
@@ -585,6 +597,27 @@ by side, with no ruling on the word:
   of detail: proportionally up to the corner, logarithmically past it, one level per doubling. This is the number-line
   split of §5 (proportional for the familiar, compressed beyond) read as a sweep over the level of detail. SPN's derivation
   of 2 is demoted to its Appendix D: on a logarithmic sweep the ratio is the unit of the count.
+- **Smaller drives less detailed** (Tom, 8 October: "so two things happen when we sweep to the horizon, things get proportionally smaller and have proportionally less detail,is that the same thing?"; "they do seem to be the same thing. smaller size drives the lower level of detail."; SPN §3.3). Past the corner a thing is read as Δ/v units of h and resolved as
+  Δ/v grains, since the grain is h: one division read twice. Each doubling of distance halves the size and takes one level
+  of detail; size is the cause. On the number line: a number's digits past the reader's window are fewer as it is read
+  smaller, one binary digit per doubling.
+- **Not a request** (Tom, 8 October: "its not a request, it just the fact all things being equal, smaller things have less detail."). Earlier entries in this section speak of a level of detail requested or picked (forty-second
+  to forty-fourth iterations); read them with this: nothing is picked. All things being equal, a smaller thing has less
+  detail, and its level is set by its size.
+- **The object is the same near or far** (Tom, 8 October: "on object is the same, regardless if its far away or near. it sends the same signal regardless, you don't ask the object for a certain level of detail."). It sends the same signal; the level of detail is where that signal lands
+  in the reader's sweep, how many grains it covers: the address, not the payload. A number is the same number however
+  far down the line it sits; only how many of its digits fall within the reader's window changes.
+  Smaller means less is captured, not less sent (Tom, 8 October: "yes, we are capturing less information about it. smaller means less detail is captured about it."): one digit fewer per doubling.
+- **The signal thins; the reader holds one share** (Tom, 8 October: "you see the mystery right? object sends same signal, reader gets a signal that corresponds to how big it is. those two things don't line up."; "yes, that seems correct. object sends same signal, regardless, but as that signal propogates away, the signal thins to cover the greater space covered."; SPN §3.3). Sent from nowhere, to every direction, the signal
+  spreads over a sphere of standpoints growing as v²; each holds about 1/v² of it, and the sum is constant. The gap
+  between what is sent and what one reader gets is the cost of being situated.
+  It is the inverse-square law (Tom, 8 October: "is this the inverse square law?"; "yes, the situated reader is just another place this law shows up."): 1/v in each of two directions, grains lost while the object is resolved, brightness
+  lost once it is under one grain, the switch at the reader's corner. The situated reader is one more place the law shows up.
+  The law itself has no corner (Tom, 8 October: "but the inverse square law does not account for the corner?"): 1/v² is the same at every scale. The corner comes from the reader's grain, h.
+- **The eye is engineering, not geometry** (Tom, 8 October: "our paper is about h and v. not about the human eye. the human eye is engineering more than fundemental geometry."). The paper is about h and v. A lens, a retina and a visual cortex
+  are one reader's engineering of them, and are kept out of the argument; what they share with it (projection as v/h,
+  resolution laid proportionally then logarithmically, a fitted switch point near the fovea) is recorded as a neighbour in
+  `plans/neighbours.md`, under Schwartz, not as evidence.
 - **The two senses of "depth" in this paper sit in this table.** One is the number line's inward levels, uniform. The
   other is a held thing's remainder, entered where found. They are not ruled the same or different.
 
@@ -864,6 +897,27 @@ pertibuate create depth as they push away from the sweep of the unit line. depth
 and the baseline. dividing h and v, removes their scale, but gives you their relation and the address on the unit
 circle. you can use that address to point back to the address on the shape, but only as a relation, the scale is lost
 forever. the same is also true for spheres. v,h,f [0,1][0,1][0,1]->[0,inf). lets explore the sphere."
+
+**f is v₂, a second v** (Tom, 8 October: "so what is f. in v,h,f?"; "is f needed to define a sphere"; "thats weird that f is so unclear, we know f is needed, but what is it exactly?"; "ok, so it is v2"). The third breadth came in by symmetry, as a coordinate, and a coordinate has no
+role; v and h are clear because each has one: h is what the reader holds (its unit, V = H), v what it reads against it.
+A sphere needs a third quantity (its surface takes two relations, and two relations take three breadths up to the
+scale), and the third can take only one of the two roles. A second held unit is the unsituated view (situations 1 and 2,
+everything held); a situated reader has one unit. So for a situated reader f is **v₂**: a second thing read against the
+same h. The plane is one direction of reading, v/h; the sphere is two, v/h and v₂/h; the third relation, v/v₂, is their
+quotient and adds nothing. The triple corner v = h = v₂ is both readings at the unit. An earlier answer to the same question took the third quantity as one of another kind, "relation, density
+and magnitude" (R106, R107; R107 withdrawn by R125); this one takes it as a second of the same kind. Open: whether v and
+v₂ are alike, or differ as the flat and upright hand do. The text below and §8's figures keep the letter f; read it as
+v₂ (and `sphere.html` keeps `?f=`).
+
+**h, v, v₂, then the sweep** (Tom, 8 October: "so really we have h,v,v2. and then sweep over them", and "yes"; Claude's wording, unruled). The situated reader holds h and reads v and v₂ against it:
+two relations, v/h and v₂/h, each swept on its own by the in-place sweep (§3.5: f = s/2 before the corner, 1 − 1/(2s)
+past it). Its address is a pair (f₁, f₂) in the **unit square** [0, 1] × [0, 1], not the octant: home at (0, 0), the
+corner of each direction at ½, the triple corner v = h = v₂ at the centre (½, ½), the far walls the edges f = 1. The third
+relation, v/v₂, is their quotient and is not swept. (`sphere.html` shows this square as the unit cube's face seen from h.)
+One h means one grain, so one level of detail serves both directions: each level halves a cell both ways, into four, a
+quadtree, as mipmaps halve an image in both directions. The square is not symmetric under rotation, as the octant is;
+that is right for a situated reader, whose h is special and whose two directions are its own axes (the flat hand and the
+upright hand). The octant, all three held alike, stays the unsituated picture. Open: whether v and v₂ always share one level of detail.
 
 **The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't need
 to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all the
