@@ -51,6 +51,7 @@ ruled.*
 - 8 October, twenty-ninth: §8, the sphere's clean statement, beside the plane's (Tom: "whats clean statement for a sphere").
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
+- 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
 
 ## Background from SPN
 
@@ -792,6 +793,10 @@ to be visualized as a circle. the primative is a single sweep of the three with 
 ways the three systems relate to one another. and in this case it is the wedge."). Every triple of breadths is a ray from
 the origin into the wedge between the three axes; the ray is the relation, and the length along it is the scale that is
 lost.
+- **The wedge is made at every observation** (Tom, 8 October: "the question how do the 8 wedges compose into a unit sphere. the answer they dont, that is just visualization of the complete system. the wedge is created at every observation."). A reading of breadths builds its own wedge, there and
+  then: SPN's addressing scheme (R159), built from the relations at one standpoint. The order runs observation, wedge,
+  relations, normalization, picture. The sphere is not built from wedges; it is the picture of all the wedges that could
+  be built, seen from nowhere.
 - **No facing.** The wedge favours no breadth. A facing is a choice of breadth to divide by (h, say, giving v/h and f/h
   in [0, ∞)²), and it breaks the symmetry.
 - **The drawings are cuts.** The sphere, the cube and the flat triangle are cuts of the wedge, each a normalization
@@ -813,10 +818,15 @@ lost.
 - **The plane is the same.** The quarter-plane between the v- and h-axes is the wedge of two breadths; the quarter
   circle is one drawing of it.
 
-**How many wedges** (Tom, 8 October: "how many wedges in a sphere?"). The axes cut space into one wedge per choice of
-signs: 2 on a line, 4 in a plane, **8** in space, 2ⁿ for n breadths.
-- **Breadths fill one.** A breadth is never negative, so every relation of three systems lies in the (+, +, +) wedge.
-  The other seven are reached only by signed quantities: toward or away, in front or behind.
+**How many wedges** (Tom, 8 October: "how many wedges in a sphere?", and then: "they dont [compose into a unit
+sphere], that is just visualization of the complete system. the wedge is created at every observation."). Every
+observation makes one wedge, all-positive within itself. The facing it was made in is its sign. Drawn together from
+nowhere, the wedges of all possible facings fall into one per choice of signs: 2 on a line, 4 in a plane, **8** in space,
+2ⁿ for n breadths. They are not pieces that compose a sphere: the sphere is the picture of the complete system, and each
+wedge is made by an observation of its own.
+- **Each wedge is all-positive.** A breadth is never negative, so within any one observation every relation of three
+  systems lies in its (+, +, +) wedge. The other seven are the wedges other observations make, facing other ways: toward
+  or away, in front or behind.
 - **The wedges are the facings by signs.** SPN §2.1: a reader tells 1, 2, 4 and 8 facings apart by counting the signs.
   Those are the wedge counts for 0, 1, 2 and 3 signed breadths; each sign doubles them. A sign flip is a mirror, so the
   wedges are copies of one another.
