@@ -62,6 +62,8 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
 - 9 October, sixty-second: SPN's pass at a review: binary branching is proved, the ratio of 2 rests on the in-place lay (deferred); one account of level of detail, k = log₂(Δ/(v·ε)); compile time stated exactly; the five situations by what is known.
+- 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
+- 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-first: geometry → sweep → reading: the level of detail is what the sweep over the field yields, k = log₂(Δ/v) (SPN, the opening; Tom).
 - 9 October, sixtieth: SPN Appendix D, Proposition D.1: the halving is the only subdivision a level without a measure supplies (noted).
 - 9 October, fifty-ninth: §4, what the demos of 9 October left open: light's corner in quanta, a grain that is not square (SPN §14).
@@ -97,9 +99,11 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 What this paper borrows from *Serial, Parallel and Nowhere* (SPN), in brief. Section numbers point to SPN for the full
 account; nothing below is new. R-numbers are Tom's rulings, listed with their dates in SPN's Appendix A.
 
-**The two breadths and the reading.** A reader compares two magnitudes: **h**, the one it holds as its unit, and
-**v**, the one it reads. Its reading is the relation **s = v/h**. Dividing removes the common scale and leaves only the
-relation, which is why a reading carries no units.
+**The two breadths and the reading.** A reader relates two parties: **H**, the breadth it holds as its unit, and **V**,
+the other's breadth. **h** and **v** are how much of each, fill levels from 0 to 1, and its reading is the relation
+**s = v/h**. The relation has no scale, which is why a reading carries no units. (*Corrected 9 October*: this paragraph
+read "h, the one it holds as its unit, and v, the one it reads", which is the conflation SPN now warns against: SPN's
+opening and §1, "H and h kept apart". Keep the case: h and v are geometry, H and V physics.)
 
 **The breadths and the angle** (Tom, 8 October: "h = [0,1] v = [0,1] -> [0,PI/2]. H = breadth of h, V = breadth of
 view. h is a ratio of H. v is a ratio of V. in the situated view V = H."). Each breadth is taken as a ratio of its own
@@ -117,13 +121,19 @@ that angle rescaled, g = θ/(π/2).
   quarter of it, home to horizon, open at the horizon (*The Cauchy* §2, §11: the reader has "an open run — home at one end, the horizon at the other"); the closed circle
   needs every facing (§8, "The hand"). In the hand: "H and V share a denominator: your hand" (*Reader Geometry as
   Addressing*, R39).
+  *Same address space, one facing* (Tom, 9 October: "set V = H creates situation 1, so the situated readers address space
+  is the same as situation 1, effectively."; "the situated reader's is situation 1, but with only a single sweep/facing.").
+  The addresses are situation 1's exactly; what differs is their standing (V = H set, not known) and the facing (one, not
+  four). One facing of situation 1, seen from the standpoint, is the fisheye (read serially), the bell (counted at once),
+  the Cauchy (on v/h). "Not actually situation 1" is about what is known; "the same address space" about the addresses.
+  SPN §1, "Situation 1's address space, one facing: the fisheye".
 
   | | situation 1 | the situated reader's unit circle |
   |---|---|---|
   | the whole | the system's breadth, known | the reader's own unit, V = H |
   | the front half, 0° to 45° | near field | near field |
   | the back half, 45° to 90° | near field, mirrored | far field, squeezed into levels |
-  | the corner | known | approached: where the signal equals the unit |
+  | the corner | known | found, h = v (*corrected 9 October*: "approached" withdrawn; SPN §1, "The corner is found") |
 - **The unsituated view.** A reader in situations 1 or 2 knows both breadths, which may differ (a frame wider than it is
   tall), and its corner sits at s = V/H.
 - **The origin.** v = h = 0 has no angle: nothing of either breadth, situation 0.
@@ -174,7 +184,9 @@ readers, not to the things read: the number line itself is in none of them (§1)
   exactly: on the circle the corner is 45° and the horizon 90°.
 - **Situated readers (3, 4)** hold only their unit. They *approach* all three landmarks and never locate them.
 - **The corner is the clearest line between the two.** To locate it is to know v = h, and so to know v: a situated
-  reader that reached its corner would be unsituated (SPN §3.1).
+  reader that reached its corner would be unsituated (SPN §3.1). *Corrected 9 October* (SPN §1, "The corner is found"):
+  every reader finds the corner, h = v, a question of fill levels; what a situated reader lacks is V, the amounts. The
+  three landmarks exist for every reader; in 1 and 2 they are ordinary, in 3 and 4 they have consequences (SPN §4.5).
 
 **Parallel and serial; static and dynamic** (SPN §2.1).
 - A **parallel** reader (3) counts a whole hemisphere at once, from outside.
@@ -244,7 +256,7 @@ and both are a situated reader's unreached ends (SPN, "By the corner", the three
 | | the number line | in SPN |
 |---|---|---|
 | in without end: 1, ½, ¼, … → 0 | less than the unit | the front side, the near field; home, approached |
-| 1 | the unit, h | where a reader holding this unit has its corner; the line itself marks none |
+| 1 | the unit, H | where a reader holding this unit has its corner; the line itself marks none |
 | out without end: 1, 2, 4, … → ∞ | greater than the unit | the back side, the far field; the horizon, approached |
 
 That is why neither is fully expressed. *Corrected, 7 October (Tom: "so what situation is the number line? … my answer
@@ -273,7 +285,7 @@ notch stands for, built out from there.
 - **Depth everywhere, because it cannot know who will read it.** It must serve whatever detail any reader needs. That is
   the price of being shared, and it changes how §4's comparison should be read: the ordinary line's spending on empty
   levels is not a flaw: it is what neutrality takes.
-- **It puts back the scale division took out.** A reader divides by its own h and keeps only the relation. To tell
+- **It puts back the scale division took out.** A reader divides by its own H and keeps only the relation. To tell
   another, it must put a scale back: v in agreed units, s_A·h_A = s_B·h_B, read off the common ruler. This is SPN's "how
   the depth comes back after division", between readers: the address points back to a magnitude both sides agree on.
 - **It is how units came about.** The foot, the cubit and at last the metre were each one reader's body or object,
@@ -616,9 +628,9 @@ by side, with no ruling on the word:
 - **The signal thins; the reader holds one share** (Tom, 8 October: "you see the mystery right? object sends same signal, reader gets a signal that corresponds to how big it is. those two things don't line up."; "yes, that seems correct. object sends same signal, regardless, but as that signal propogates away, the signal thins to cover the greater space covered."; SPN §3.3). Sent from nowhere, to every direction, the signal
   spreads over a sphere of standpoints growing as v²; each holds about 1/v² of it, and the sum is constant. The gap
   between what is sent and what one reader gets is the cost of being situated.
-  It is the inverse-square law (Tom, 8 October: "is this the inverse square law?"; "yes, the situated reader is just another place this law shows up."): 1/v in each of two directions, grains lost while the object is resolved, brightness
-  lost once it is under one grain, the switch at the reader's corner. The situated reader is one more place the law shows up.
-  The law itself has no corner (Tom, 8 October: "but the inverse square law does not account for the corner?"): 1/v² is the same at every scale. The corner comes from the reader's grain, h.
+  It is the inverse-square law (Tom, 8 October: "is this the inverse square law?"; "yes, the situated reader is just another place this law shows up."): 1/d in each of two directions, grains lost while the object is resolved, brightness
+  lost once it is under one grain, the switch at one grain across (the resolution limit, the corner of the size-against-step pair, not of the reader's sweep of the other: SPN §1). The situated reader is one more place the law shows up.
+  The law itself has no corner (Tom, 8 October: "but the inverse square law does not account for the corner?"): 1/d² is the same at every scale. The scale comes from the reader's grain, H (the resolution limit; "the corner" until 9 October).
   GRN run 8 (`plans/grn-plan.md`): a reader with no reach below its grain loses a receding pair at one grain across at
   any light; one given the shape loses it at v* ∝ (a²F₀)^(1/4). In SPN at the central result: the corner is where the
   resolved becomes the unresolved.
@@ -690,7 +702,8 @@ somewhere in [3.14, 3.15)). A number that has concluded (3, ½, 0.25) is exact, 
 - **Equality may never finish.** If a = b and neither concludes, the cells never part, and no finite recursion confirms
   it. For computable reals, equality is known to be undecidable. Asking whether a = b is asking whether a/b = 1, and a
   situated reader approaches its corner and never locates it. *A correspondence, to be checked, not a result:* the two
-  may be one fact seen from two sides.
+  may be one fact seen from two sides. (*Corrected 9 October*: the corner, h = v, is found by every reader; what a situated
+  reader cannot settle is V against H, an amount (SPN §1). If the correspondence holds, it is with that, not the corner.)
 
 | practice | in these terms |
 |---|---|
@@ -795,7 +808,7 @@ situated perspective."
 - **One facing at a time.** A parallel reader confirms only its own hemisphere, and the other side is turned away (SPN
   §2.1, "Access limits the facings a reader can confirm"). On the number line the turned-away side is the negatives,
   which children meet years after counting.
-- **The parallel reader's bell is centred on the unit.** ½·sech(ln s) is sharpest at 1, the unit h, and falls by half
+- **The parallel reader's bell is centred on the unit.** ½·sech(ln s) is sharpest at 1, the unit H, and falls by half
   every doubling away from it. That matches the familiar compression of large numbers (Dehaene 2003) and the sharp
   grasp of small ones.
 
@@ -817,7 +830,7 @@ situated perspective."
 | how the line is met | situation | the reference used |
 |---|---|---|
 | counting | 4, serial | each next number |
-| an open line, a stretch seen at once | 3, parallel | the unit, h; compressed past it |
+| an open line, a stretch seen at once | 3, parallel | the unit, H; compressed past it |
 | a bounded line, 0 to N given | the whole held | the endpoints and the midpoint |
 | far past the window | 4 again, by levels | orders of magnitude |
 
@@ -832,16 +845,16 @@ the reader move his h unit like a slider to get a better read on the situation")
 - **Past it** structure comes in every look, about s grains at once: parallel (run 4). The average grows smoothly
   through the corner; what changes there is certainty.
 - **The cost below and the yield past are each other's flip:** looks 1/s, grains s.
-- **A reader that can slide its h** reaches its corner in about one look per doubling, about log₂(1/s) looks instead of
+- **A reader that can slide its H** reaches its corner in about one look per doubling, about log₂(1/s) looks instead of
   1/s (run 4). On the number line that is the window moved by levels, the last row of the table above: the logarithm is
   the cost of moving the corner.
 - **A reader given the shape** can read below its grain (runs 1 and 2). That knowledge is situation 2's, borrowed, and it
   blurs the corner rather than moving it.
   How far below depends on light, not on the grain (run 7): the resolution limit falls as light^(−½), to a twentieth
   of the grain at 64 times the light, while the knee where reading gets hard stays near a third of a grain.
-- **h as a dial** (Tom: "H as a dial would be very interesting idea in itself"). Charge the reader one unit for each
+- **H as a dial** (Tom: "H as a dial would be very interesting idea in itself"). Charge the reader one unit for each
   grain the system spans on each look. Then one sure reading costs (1 + s)·max(1, 1/s): least, 2, at s = 1, and the
-  same at s and 1/s (run 5). The best setting of the dial puts the system at the reader's corner. Finer, the reader pays
+  same at s and 1/s (run 5). The best setting of the dial puts the system at one grain across (the size-against-step corner, the resolution limit). Finer, the reader pays
   for grains it does not need; coarser, it pays in looks; and missing by a factor costs the same either way. That
   holds under this cost; field of view, light per grain and an optical floor would move it.
 - **Why the levels might be doublings** (`plans/why2-plan.md`; SPN's open question, the ratio between rungs). A reader
@@ -895,7 +908,9 @@ plain logarithm is the fragile one and is lost at sd 12. So a real-data run shou
 - **Pricing slow-fading detail.** A reader pricing each level from its own noisy looks stops early where detail fades
   slowly (CAL runs 1 and 2, killed at r = 0.7). What estimate, if any, prices it well? (§4)
 - **Equality and the corner.** Is "equality of numbers that never conclude cannot be decided" the same fact as "a
-  situated reader approaches its corner and never locates it"? A correspondence, not shown. (§4)
+  situated reader approaches its corner and never locates it"? A correspondence, not shown. (§4) *Restated 9 October*: the
+  corner is found; the question is now whether undecidable equality is the same fact as a situated reader's not settling V
+  against H.
 - **The two senses of depth.** The number line's inward levels, uniform, and a held thing's remainder, entered where
   found: one idea or two? Laid side by side, not ruled. (§4)
 - **The sphere's two corners.** Does a reader near in one direction and far in another read the two independently, or
@@ -912,7 +927,7 @@ circle. you can use that address to point back to the address on the shape, but 
 forever. the same is also true for spheres. v,h,f [0,1][0,1][0,1]->[0,inf). lets explore the sphere."
 
 **f is v₂, a second v** (Tom, 8 October: "so what is f. in v,h,f?"; "is f needed to define a sphere"; "thats weird that f is so unclear, we know f is needed, but what is it exactly?"; "ok, so it is v2"). The third breadth came in by symmetry, as a coordinate, and a coordinate has no
-role; v and h are clear because each has one: h is what the reader holds (its unit, V = H), v what it reads against it.
+role; v and h are clear because each has one: H is what the reader holds (its unit; V = H set as a placeholder: SPN §1), and h and v are how full each is.
 A sphere needs a third quantity (its surface takes two relations, and two relations take three breadths up to the
 scale), and the third can take only one of the two roles. A second held unit is the unsituated view (situations 1 and 2,
 everything held); a situated reader has one unit. So for a situated reader f is **v₂**: a second thing read against the
@@ -922,7 +937,7 @@ and magnitude" (R106, R107; R107 withdrawn by R125); this one takes it as a seco
 v₂ are alike, or differ as the flat and upright hand do. The text below and §8's figures keep the letter f; read it as
 v₂ (and `sphere.html` keeps `?f=`).
 
-**h, v, v₂, then the sweep** (Tom, 8 October: "so really we have h,v,v2. and then sweep over them", and "yes"; Claude's wording, unruled). The situated reader holds h and reads v and v₂ against it:
+**h, v, v₂, then the sweep** (Tom, 8 October: "so really we have h,v,v2. and then sweep over them", and "yes"; Claude's wording, unruled). The situated reader holds H and reads v and v₂ against it:
 two relations, v/h and v₂/h, each swept on its own by the in-place sweep (§3.5: f = s/2 before the corner, 1 − 1/(2s)
 past it). Its address is a pair (f₁, f₂) in the **unit square** [0, 1] × [0, 1], not the octant: home at (0, 0), the
 corner of each direction at ½, the triple corner v = h = v₂ at the centre (½, ½), the far walls the edges f = 1. The third
@@ -1053,7 +1068,7 @@ breadths: with four, the set measures 2π²/16 = π²/8.
   place, for n breadths.
 - In the plane the two arms are "h largest" and "v largest". On the cube there are three faces, one per breadth.
 
-**Near and far, with two corners.** A situated reader holding h has two corners, v/h = 1 and f/h = 1.
+**Near and far, with two corners.** A situated reader holding H has two corners, v/h = 1 and f/h = 1.
 - Its near field is the h face: both below 1.
 - Its far field comes in three parts: v exceeds h; f exceeds h; both do.
 - So it can be near in one direction and far in another at once. The plane has nothing like this: there a reading is
@@ -1069,7 +1084,7 @@ depth entered only where it is above the reader's grain, and a situated reader r
 it can see (§4).
 
 **The demo.** `sphere.html` puts this section on one screen: breadths and a scale k, the address that k does not move,
-the octant coloured by chamber, by face, as a held whole or for a reader holding h, the octant laid flat as seen from the
+the octant coloured by chamber, by face, as a held whole or for a reader holding H, the octant laid flat as seen from the
 corner, and a body whose relief bands show by its size in the reader's pixels.
 
 **To test, not yet planned.** GRN in two directions: one reader, one grain, a system of three points, to see whether the
