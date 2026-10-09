@@ -140,7 +140,9 @@ try {
       const z0 = (await page.evaluate(() => __wanderLab.where())).t;
       await page.waitForFunction(t => __wanderLab.where().t > t + 3, z0, { timeout: 180000, polling: 200 });
       const s2 = (await page.evaluate(() => __wanderLab.where())).span;
-      if (!(s2 > s1 * 1.3 && s2 > 0.9)) failures.push(`[moving] zooming in took ${tgt.name} only from ${s1.toFixed(2)} to ${s2.toFixed(2)} across`);
+      // zoom comes in at a capped rate, so 3 s of it adds about a fixed amount, not a fixed factor: a later start (a slower
+      // runner, s1 already 0.73) leaves less room under the closest approach; ask for a clear gain and a span past 0.9
+      if (!(s2 > s1 + 0.15 && s2 > 0.9)) failures.push(`[moving] zooming in took ${tgt.name} only from ${s1.toFixed(2)} to ${s2.toFixed(2)} across`);
     }
   }
   await page.keyboard.press('Escape');

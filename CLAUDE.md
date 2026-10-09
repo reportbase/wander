@@ -78,7 +78,9 @@ Google Fonts load from outside:
   level of detail: the levels exist whole, a thing's level is set by its size (smaller things have
   less detail; not a request), and nothing recurses), a map of how the parts depend, and the standing of each;
   then the central result and the open question (what fixes the ratio between rungs; demoted 8 Oct: the reader
-  sweeps its level of detail, proportional then logarithmic, and the derivation of 2 is in Appendix D).
+  sweeps its level of detail, proportional then logarithmic, and the derivation of 2 is in Appendix D, with
+  Proposition D.1 since 9 Oct: on a level with only its ends, order and flip, the halving is the only subdivision supplied;
+  other branching factors need an added measure).
   The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.
