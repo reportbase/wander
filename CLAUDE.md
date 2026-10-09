@@ -53,6 +53,11 @@ Google Fonts load from outside:
   for a second degree of freedom"), a standalone page like `dial.html`. One sweep from A to B in fill levels: the facing
   2θ turns from toward B through square to the line (the corner, θ = 45°) to toward A; beside it the quarter arc off the
   line h + v = 1, most (1 − 1/√2) at the corner. `?t=` (θ in degrees); test hook `window.__facing`.
+- `levels.html`: **the levels** (9 Oct 2026, Tom: "a demo that shows the circle in the middle of the page and the logritmic
+  circles that halve outside the circle … until they can't be seen anymore"), a standalone page like `facing.html`. The unit
+  circle holds the near field in proportion (radius s); past it each ring is one doubling of s, half as wide as the last
+  (radius 2 − 1/s, the in-place lay), toward the horizon at radius 2. A ring narrower than one grain is not drawn (the
+  resolution limit), so about log₂(R ÷ grain) show. `?g=&s=`; test hook `window.__levels`.
 - `thin.html`, `ladder.html`, `sky.html`: **the physics correspondence** (9 Oct 2026, Tom: "create multiple demos that
   explain the physics correspndance"), standalone pages like `dial.html`. `thin.html`: the same signal, a smaller share
   (the inverse square; near, distance costs grains, far, light; the switch at one grain is the resolution limit;
@@ -65,7 +70,7 @@ Google Fonts load from outside:
   (dim by 1/d², vanish, or a full-bright pixel; hook `__points`); events on approach (point, resolved, shape, terrain,
   surface; `__resolve`); distances earned rung by rung (parallax, then width and light per kind; `__navigator`); the sky
   filling as light arrives, the count a clock (`__skyfill`). Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the four demos (sweep, dial, sphere, facing) and the three on the physics correspondence, each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the five demos (sweep, dial, sphere, facing, levels) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -229,6 +234,8 @@ In short:
   11. **Gameplay sketches:** each page's one mechanic through its hook (dimming, stages, the ladder's locks and light, the
       sky's count read back as time).
   12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
+  13. **levels.html:** the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
+      and one level fewer seen per doubling of the grain.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

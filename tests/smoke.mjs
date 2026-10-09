@@ -279,6 +279,18 @@ try {
     failures.push(`[facing.html] ${JSON.stringify(fc)}`);
   console.log(`${failures.length === before12 ? 'ok  ' : 'FAIL'} facing.html (facing 90° at the corner, 0° at A, 180° at B; off the line ${fc.c.offLine.toFixed(3)} there)`);
 
+  // ── 13. levels.html: the near field in proportion, each doubling past the corner in half the room, rings seen to one grain ──
+  current = 'levels.html';
+  const before13 = failures.length;
+  await page.goto(new URL('levels.html', base).href, { waitUntil: 'load' });
+  const lv = await page.evaluate(() => { const L = __levels, R = L.R();
+    return { R, half: L.radius(0.5), c: L.radius(1), w: [0, 1, 2, 3].map(k => L.level(k).width), r8: L.radius(8), back: L.reading(L.radius(8)),
+      v1: L.visible(R, 1), v2: L.visible(R, 2), v1k: L.visible(1024, 1) }; });
+  if (lv.half !== 0.5 || lv.c !== 1 || lv.w.some((w, k) => Math.abs(w - 2 ** (-k - 1)) > 1e-12) || Math.abs(lv.r8 - 1.875) > 1e-12 ||
+      Math.abs(lv.back - 8) > 1e-9 || lv.v1 - lv.v2 !== 1 || lv.v1k !== 10 || Math.abs(lv.v1 - Math.log2(lv.R)) > 1)
+    failures.push(`[levels.html] ${JSON.stringify(lv)}`);
+  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html (each level half the last; ${lv.v1} seen at a one-pixel grain, one fewer at two)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
@@ -289,7 +301,7 @@ try {
     const r = await page.request.get(new URL(pth, base).href);
     if (!r.ok()) failures.push(`[demos.html] ${pth} answers ${r.status()}`);
   }
-  if (pages.length < 13) failures.push(`[demos.html] links to only ${pages.length} pages`);
+  if (pages.length < 14) failures.push(`[demos.html] links to only ${pages.length} pages`);
   await page.goto(new URL('index.html', base).href, { waitUntil: 'load' });
   await Promise.all([page.waitForURL(/demos\.html/, { timeout: 15000 }), page.click('#demosOpen')]);
   console.log(`${failures.length === before7 ? 'ok  ' : 'FAIL'} demos.html (${pages.length} pages, ${links.length} links)`);

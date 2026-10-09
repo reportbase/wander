@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The levels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    levels.html: the circle and its levels (9 October 2026; Tom: "create a demo that shows the circle in the middle of the
+    page and the logritmic circles that halve outside the circle where they split by 2 in distance until they can't be
+    seen anymore"). A standalone page like facing.html.
+
+    Geometry only (keep the case: s = v/h, the relation; no H, V or distance in the drawing). The unit circle holds the
+    near field, s from 0 (the centre, home) to 1 (its rim, the corner), laid in proportion: radius s. Past it each level is
+    one doubling of s (1 to 2, 2 to 4, …) and is laid in half the width of the one before: level k runs from radius
+    2 − 2^(−k) to 2 − 2^(−k−1), so a reading s ≥ 1 sits at 2 − 1/s (SPN's in-place lay, "2h in place": the far field
+    nests in the back half, and the horizon, s → ∞, is the circle of radius 2, never reached). A ring is drawn while it is
+    at least one grain wide; past that it cannot be seen, which is the resolution limit (physics: a ring's width against
+    the reader's grain), not the corner. Levels seen ≈ log₂(R / grain), R the unit circle's radius in pixels.
+    Links: ?g= (the grain in pixels), ?s= (a thing's reading). Test hook: window.__levels.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center }
+    .row label { color: var(--dim) }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 200px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The levels</h1>
+    <p class="lede">The circle in the middle holds everything up to the corner, laid in proportion. Outside it, each ring
+    is one doubling (1 to 2, 2 to 4, 4 to 8, …), and each is drawn half as wide as the one before. The rings crowd toward
+    an edge they never reach, and once a ring is narrower than one grain it can no longer be seen.</p>
+    <div class="panel">
+        <div class="row">
+            <button id="play">send a thing out</button>
+            <label for="grain">grain</label>
+            <input id="grain" type="range" min="0.5" max="16" step="0.5" value="1">
+            <span id="gv" style="color:var(--bright)"></span>
+        </div>
+        <div style="margin-top:10px"><canvas id="cv" height="860"></canvas></div>
+        <div id="hud"></div>
+    </div>
+    <p class="note">The reading s = v/h is laid at radius s inside the circle and at 2 − 1/s past it (the unit circle has
+    radius 1), so a doubling past the corner always takes half the room the last one took and the edge, radius 2, is the
+    horizon. Coarsen the grain and the outer levels drop out one per doubling of the grain; how many show is about
+    log₂(radius ÷ grain). Tap or drag on the picture to read a place. Behind it: <i>Serial, Parallel and Nowhere</i>, the
+    level ("2h in place"; the next level nests in the back half). Other demos: <a href="facing.html">the facing</a>,
+    <a href="sweep.html">the sweep device</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    // where a reading s sits, as a share of the unit circle's radius: proportional up to the corner, then 2 − 1/s
+    const radius = s => s <= 1 ? Math.max(0, s) : 2 - 1 / s;
+    // the reading at a radius r (0 to 2)
+    const reading = r => r <= 1 ? Math.max(0, r) : (r >= 2 ? Infinity : 1 / (2 - r));
+    // level k (k = 0: 1 to 2, k = 1: 2 to 4, …): its inner and outer radius and its width, as shares of R
+    const level = k => ({ k, from: 2 ** k, to: 2 ** (k + 1), inner: 2 - 2 ** -k, outer: 2 - 2 ** (-k - 1), width: 2 ** (-k - 1) });
+    // how many levels are at least one grain wide, for a unit circle R pixels across its radius
+    const visible = (R, grain) => { let n = 0; while (level(n).width * R >= grain && n < 60) n++; return n; };
+
+    let thing = null, pick = null, playing = false, last = null;
+    const q = new URLSearchParams(location.search);
+    if (q.has('g')) $('grain').value = Math.min(16, Math.max(0.5, +q.get('g') || 1));
+    if (q.has('s')) thing = Math.max(0, +q.get('s') || 0);
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = Math.min(+cv.getAttribute('height'), Math.round(w));
+        cv.style.height = h + 'px';
+        if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, h, dpr];
+    }
+    function geom() {
+        const cv = $('cv'), w = cv.clientWidth, h = parseFloat(cv.style.height) || cv.clientHeight;
+        return { cx: w / 2, cy: h / 2, R: (Math.min(w, h) / 2 - 12) / 2 };
+    }
+    function draw() {
+        const [g, W, H, dpr] = fit($('cv')), grain = +$('grain').value, { cx, cy, R } = geom();
+        $('gv').textContent = `${grain} px`;
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        // the horizon: radius 2, never reached
+        g.strokeStyle = 'rgba(217,110,91,0.55)'; g.setLineDash([3, 5]); g.lineWidth = 1;
+        g.beginPath(); g.arc(cx, cy, 2 * R, 0, 2 * Math.PI); g.stroke(); g.setLineDash([]);
+        // the levels, each a doubling, each half the width of the last, while at least one grain wide
+        const n = visible(R, grain);
+        for (let k = n - 1; k >= 0; k--) {
+            const L = level(k), t = k / Math.max(1, n - 1);
+            g.fillStyle = k % 2 ? `rgba(181,156,240,${0.10 + 0.10 * t})` : `rgba(140,230,205,${0.10 + 0.10 * t})`;
+            g.beginPath(); g.arc(cx, cy, L.outer * R, 0, 2 * Math.PI); g.arc(cx, cy, L.inner * R, 0, 2 * Math.PI, true); g.fill();
+            g.strokeStyle = 'rgba(230,228,238,0.45)'; g.lineWidth = 1 / dpr;
+            g.beginPath(); g.arc(cx, cy, L.outer * R, 0, 2 * Math.PI); g.stroke();
+        }
+        // the unit circle: the near field, in proportion (faint quarter rings), its rim the corner
+        g.fillStyle = 'rgba(212,160,82,0.10)'; g.beginPath(); g.arc(cx, cy, R, 0, 2 * Math.PI); g.fill();
+        g.strokeStyle = 'rgba(212,160,82,0.25)'; g.lineWidth = 1;
+        for (const f of [0.25, 0.5, 0.75]) { g.beginPath(); g.arc(cx, cy, f * R, 0, 2 * Math.PI); g.stroke(); }
+        g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.arc(cx, cy, R, 0, 2 * Math.PI); g.stroke();
+        g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(cx, cy, 3, 0, 2 * Math.PI); g.fill();
+        // labels along a ray to the upper right, while there is room
+        g.font = '11px DM Mono, monospace'; g.textBaseline = 'middle';
+        const ang = -Math.PI / 4, lab = (r, txt, col) => { g.fillStyle = col; g.fillText(txt, cx + r * R * Math.cos(ang) + 6, cy + r * R * Math.sin(ang)); };
+        lab(0.5, 'near field: 0 to 1', 'rgba(212,160,82,0.9)');
+        for (let k = 0; k < n && level(k).width * R >= 13; k++) { const L = level(k); lab((L.inner + L.outer) / 2, `${L.from}–${L.to}`, 'rgba(230,228,238,0.8)'); }
+        g.fillStyle = 'rgba(217,110,91,0.85)'; g.fillText('the horizon (never reached)', cx - 2 * R * Math.SQRT1_2 - 4, cy + 2 * R * Math.SQRT1_2 + 12);
+        // a thing sent out, and a picked place
+        const mark = (s, col) => {
+            const r = radius(s) * R, a = Math.PI * 0.18;
+            g.fillStyle = col; g.beginPath(); g.arc(cx + r * Math.cos(a), cy + r * Math.sin(a), 5, 0, 2 * Math.PI); g.fill();
+        };
+        if (thing !== null) mark(thing, '#e6e4ee');
+        if (pick) { g.strokeStyle = '#8ce6cd'; g.lineWidth = 1.5; g.beginPath(); g.arc(cx, cy, pick.r * R, 0, 2 * Math.PI); g.stroke(); }
+        // the readout
+        const lastL = n ? level(n - 1) : null;
+        let txt = `unit circle radius ${R.toFixed(0)} px, grain ${grain} px: ${n} level${n === 1 ? '' : 's'} seen past the corner` +
+            (lastL ? ` (the last, ${fmt(lastL.from)} to ${fmt(lastL.to)}, ${(lastL.width * R).toFixed(1)} px wide)` : '') +
+            `\nabout log₂(${R.toFixed(0)} ÷ ${grain}) = ${Math.log2(R / grain).toFixed(1)}; everything past ${lastL ? fmt(lastL.to) : 1} is in rings too thin to see`;
+        if (thing !== null) txt += `\nthe thing: s = ${fmt(thing)}, at radius ${radius(thing).toFixed(4)} (${thing <= 1 ? 'near field' : `level ${Math.floor(Math.log2(thing))}, ${fmt(2 ** Math.floor(Math.log2(thing)))} to ${fmt(2 ** (Math.floor(Math.log2(thing)) + 1))}`})`;
+        if (pick) txt += `\npicked: radius ${pick.r.toFixed(4)}, s = ${isFinite(pick.s) ? fmt(pick.s) : '∞ (the horizon)'}`;
+        $('hud').textContent = txt;
+    }
+    const fmt = x => x >= 1e6 ? x.toExponential(2) : x >= 100 ? Math.round(x).toLocaleString('en') : +x.toPrecision(3) + '';
+
+    function pickAt(e) {
+        const b = $('cv').getBoundingClientRect(), { cx, cy, R } = geom();
+        const r = Math.hypot(e.clientX - b.left - cx, e.clientY - b.top - cy) / R;
+        pick = { r: Math.min(r, 2), s: reading(Math.min(r, 2)) }; draw();
+    }
+    let down = false;
+    $('cv').addEventListener('pointerdown', e => { down = true; pickAt(e); });
+    $('cv').addEventListener('pointermove', e => { if (down) pickAt(e); });
+    window.addEventListener('pointerup', () => { down = false; });
+
+    // sent out: s doubles once a second, so it crosses one level a second, each in half the room of the last
+    function tick(now) {
+        if (playing) {
+            const dt = last === null ? 0 : (now - last) / 1000;
+            thing = thing === null || thing <= 0 ? 0.05 : thing * 2 ** dt;
+            if (thing > 2 ** 30) { thing = 0.05; }
+            draw();
+        }
+        last = now; requestAnimationFrame(tick);
+    }
+    $('play').addEventListener('click', () => {
+        playing = !playing; $('play').textContent = playing ? 'stop' : 'send a thing out'; $('play').classList.toggle('on', playing);
+        if (playing && (thing === null || thing > 2 ** 20)) thing = 0.05;
+    });
+    $('grain').addEventListener('input', draw);
+    window.addEventListener('resize', draw);
+    draw(); requestAnimationFrame(tick);
+
+    window.__levels = { radius, reading, level, visible, R: () => geom().R };
+})();
+</script>
+</body>
+</html>
