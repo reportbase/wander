@@ -1,0 +1,52 @@
+baseline error, P1 nesting: 0.0e+00  P3 nesting: 6.1e-01
+
+P1 (fixed frames, own band): A(j -> k)
+  flat   j=0: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+  flat   j=1: 0.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+  flat   j=2: 0.0000 0.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+  flat   j=3: 0.0000 0.0000 0.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+  flat   j=4: 0.0000 0.0000 0.0000 0.0000 1.0000 1.0000 1.0000 1.0000
+  flat   j=5: 0.0000 0.0000 0.0000 0.0000 0.0000 1.0000 1.0000 1.0000
+  flat   j=6: 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 1.0000 1.0000
+  sloped j=0: 0.4999 0.7500 0.8750 0.9375 0.9687 0.9844 0.9922 1.0000
+  sloped j=1: 0.0000 0.4999 0.7500 0.8750 0.9375 0.9687 0.9844 1.0000
+  sloped j=2: 0.0000 0.0000 0.4999 0.7500 0.8750 0.9375 0.9687 1.0000
+  sloped j=3: 0.0000 0.0000 0.0000 0.4999 0.7500 0.8750 0.9375 1.0000
+  sloped j=4: 0.0000 0.0000 0.0000 0.0000 0.4999 0.7500 0.8750 1.0000
+  sloped j=5: 0.0000 0.0000 0.0000 0.0000 0.0000 0.4999 0.7500 1.0000
+  sloped j=6: 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.4999 0.9999
+  flat at j = 1, 3, 5 together, region 7: 3.0000 delta
+P1 NOT KILLED
+
+P2 (frames from the parent's reading): frame shift of level k in its own x, per delta at level j
+  model a j=0: shifts 2.000 2.000 2.000 2.000 2.000 2.000 2.000  growth/level 1.000 1.000 1.000 1.000 1.000 1.000
+  model a j=1: shifts 2.000 2.000 2.000 2.000 2.000 2.000  growth/level 1.000 1.000 1.000 1.000 1.000
+  model a j=2: shifts 2.000 2.000 2.000 2.000 2.000  growth/level 1.000 1.000 1.000 1.000
+  model a j=3: shifts 2.000 2.000 2.000 2.000  growth/level 1.000 1.000 1.000
+  model a j=4: shifts 2.000 2.000 2.000  growth/level 1.000 1.000
+  model a j=5: shifts 2.000 2.000  growth/level 1.000
+P2 model a KILLED
+  model b j=0: shifts 2.000 4.000 8.000 16.000 32.000 64.000 128.000  growth/level 2.000 2.000 2.000 2.000 2.000 2.000
+  model b j=1: shifts 2.000 4.000 8.000 16.000 32.000 64.000  growth/level 2.000 2.000 2.000 2.000 2.000
+  model b j=2: shifts 2.000 4.000 8.000 16.000 32.000  growth/level 2.000 2.000 2.000 2.000
+  model b j=3: shifts 2.000 4.000 8.000 16.000  growth/level 2.000 2.000 2.000
+  model b j=4: shifts 2.000 4.000 8.000  growth/level 2.000 2.000
+  model b j=5: shifts 2.000 4.000  growth/level 2.000
+P2 model b NOT KILLED
+
+P3 (the child re-reads the leftover): A(j -> k), and the sloped leftover beside each child's walls
+  flat   j=0: A below j max 4.44e-13;  A(j->j) 1.0000
+  flat   j=1: A below j max 4.44e-13;  A(j->j) -1.0000
+  flat   j=2: A below j max 0.00e+00;  A(j->j) 1.0000
+  flat   j=3: A below j max 0.00e+00;  A(j->j) -0.8269
+  flat   j=4: A below j max 0.00e+00;  A(j->j) -1.0000
+  flat   j=5: A below j max 0.00e+00;  A(j->j) 1.0000
+  flat   j=6: A below j max 0.00e+00;  A(j->j) -1.0000
+  sloped j=0: A below j max 0.0063; beside walls min 0.450;  A(j->j) 0.4999
+  sloped j=1: A below j max 0.0001; beside walls min 0.450;  A(j->j) -0.0001
+  sloped j=2: A below j max 0.0063; beside walls min 0.450;  A(j->j) 0.4999
+  sloped j=3: A below j max 0.0001; beside walls min 0.450;  A(j->j) -0.0001
+  sloped j=4: A below j max 0.0063; beside walls min 0.450;  A(j->j) -0.4999
+  sloped j=5: A below j max 0.0000; beside walls min 0.450;  A(j->j) 0.0001
+  sloped j=6: A below j max 0.0063; beside walls min 0.506;  A(j->j) -0.4999
+P3 KILLED

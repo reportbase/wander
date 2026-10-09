@@ -1,0 +1,20 @@
+baseline error 4.9e-15
+  flat   j=0: A(j->j) 1.0000; below max 2.2e-13
+  flat   j=1: A(j->j) 1.0000; below max 0.0e+00
+  flat   j=2: A(j->j) 1.0000; below max 2.2e-13
+  flat   j=3: A(j->j) 1.0000; below max 2.2e-13
+  flat   j=4: A(j->j) 1.0000; below max 2.2e-13
+  flat   j=5: A(j->j) 1.0000; below max 0.0e+00
+  flat   j=6: A(j->j) 1.0000; below max 0.0e+00
+  sloped j=0: A(j->j) 0.4999; below max 4.54e-03; next to home min 0.036  per child 0.39 0.50 0.46 0.48 0.41 0.14 0.04
+  sloped j=1: A(j->j) 0.4999; below max 4.54e-03; next to home min 0.036  per child 0.39 0.50 0.46 0.48 0.41 0.04
+  sloped j=2: A(j->j) 0.4999; below max 4.54e-03; next to home min 0.036  per child 0.39 0.50 0.46 0.48 0.04
+  sloped j=3: A(j->j) 0.4999; below max 4.54e-03; next to home min 0.036  per child 0.39 0.50 0.46 0.04
+  sloped j=4: A(j->j) 0.4999; below max 4.54e-03; next to home min 0.041  per child 0.39 0.50 0.04
+  sloped j=5: A(j->j) 0.4999; below max 4.54e-03; next to home min 0.104  per child 0.39 0.10
+  sloped j=6: A(j->j) 0.4999; below max 6.26e-03; next to home min 0.253  per child 0.25
+P3'a held
+P3'b held
+P3'c held
+P3'd FAILED
+P3 run 2 KILLED
