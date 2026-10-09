@@ -931,6 +931,8 @@
                      (written before the run): near distances within 0.5% as before; the rule's power q within 1% of 1.2 and k within 3% of 1000; every far distance by light within 1%, the two under one address included; by width (rung two as before), within ε·D/(2a)&nbsp;+&nbsp;1% at 6,000 and 25,000, and at 100,000 and 400,000, under one address, no reading (no address filled) or off by more than 30%. The width rung gives out at the reader's corner for widths; the light rung does not, because the inverse square goes on as dimming where the body is under one address.
                     <b>Kill</b>
                     : any of these not so.
+                    <i>Run</i>
+                     (9 Oct): <b>not killed</b>. Near distances by parallax to 0.19% as before; the light sent read from them 435.3 to 5774.3 against the world's 435.3 to 5762.5; the rule read as L&nbsp;=&nbsp;999.48·P<sup>1.2008</sup> (power off 0.07%, k off 0.05%). Far, size 5: by light 6002.8, 25011.6, 100043.8 and 400187.6 against 6,000, 25,000, 100,000 and 400,000 (0.05%, 0.05%, 0.04%, 0.05%); by width 5748.3 and 24880.2 (4.20% and 0.48%, inside their lines of 13% and 51%), then, under one address, 52178.0 at 100,000 (47.8% off: one address filled, so it reads 50,000 whatever the distance) and no reading at 400,000 (no address filled). Light in Wander arrives exact, so the light rung's error is the rule's, carried up from rung one; a reader's light would carry noise as well. <b>What it adds</b>: the two rungs past parallax are the two halves of the inverse square. The width rung is its resolved half and gives out where a body is one address across, the reader's corner; the light rung is its other half and goes on past the corner, where the law shows as dimming. Brightness was put into the world for this run (world.js, <code>lightAt</code>), and the inverse square with it; the run shows what a reader earns from it, not the law.
                 </p>
                 <button id="labLAD" data-code="lad" type="button">run the distance ladder</button>
             </div>
@@ -5205,7 +5207,7 @@
                 sh: share(2 * ds, 4 * ds),
                 pred: Math.exp(-(2 * ds - rmin) / lam) - Math.exp(-(4 * ds - rmin) / lam)
             };
-            const shells = [[0.25, 0.5], [0.5, 1], [1, 2], [2, 3], [3, 4.5]].map(([u, v]) => {
+            const shellsOf = offCaps => [[0.25, 0.5], [0.5, 1], [1, 2], [2, 3], [3, 4.5]].map(([u, v]) => {
                 let nB = 0,
                     seen = 0,
                     cells = 0,
@@ -5215,6 +5217,8 @@
                     const x = bodies[b][3] / ds;
                     if (x < u || x >= v)
                         continue;
+                    if (offCaps && Math.abs(bodies[b][2] / bodies[b][3]) > 0.9)
+                        continue; /* run 5: away from the polar caps, where the cells are near-square */
                     nB++;
                     pS += Math.min(1, 1 / (x * x));
                     aS += 1 / (x * x); /* the disc's area in cells */
@@ -5239,7 +5243,8 @@
                 ds,
                 reach,
                 past,
-                shells
+                shells: shellsOf(false),
+                shells5: shellsOf(true)
             };
         }
         function runOLB() {
@@ -5417,15 +5422,15 @@
             if (pOff > 0.006)
                 bad++;
             // the size check at d*/4 to d*/2: cells per body against the mean (d*/d)², computed from the bodies themselves
-            const sz = P4.shells.map(z => '<td>' + f(z.u, 2) + '–' + f(z.v, 2) + ' d*</td><td>' + z.nB + '</td><td>' + f(z.seen, 4) + '</td><td>' + (z.u >= 2 ? f(z.pSeen, 4) : (z.v <= 0.5 ? '≥ 0.99' : '—')) + '</td><td>' + f(z.cells, 3) + '</td><td>' + (z.u >= 2 ? '1.00–1.05' : (z.v <= 0.5 ? f(z.size, 3) : '—')) + '</td>');
-            P4.shells.forEach(z => {
+            const szOf = sh => sh.map(z => '<td>' + f(z.u, 2) + '–' + f(z.v, 2) + ' d*</td><td>' + z.nB + '</td><td>' + f(z.seen, 4) + '</td><td>' + (z.u >= 2 ? f(z.pSeen, 4) : (z.v <= 0.5 ? '≥ 0.99 (run 5: 0.995)' : '—')) + '</td><td>' + f(z.cells, 3) + '</td><td>' + (z.u >= 2 ? '1.00–1.05' : (z.v <= 0.5 ? f(z.size, 3) : '—')) + '</td>');
+            P4.shells5.forEach(z => {
                 if (z.u >= 2) {
                     if (Math.abs(z.seen / z.pSeen - 1) > 0.05)
                         bad++, f4.push('seen ' + f(z.u, 0) + 'd*');
                     if (z.cells < 1 || z.cells > 1.05)
                         bad++, f4.push('cells ' + f(z.u, 0) + 'd*');
                 }
-                if (z.v <= 0.5 && z.seen < 0.99)
+                if (z.v <= 0.5 && z.seen < 0.995)
                     bad++, f4.push('seen near');
                 if (z.v <= 0.5 && Math.abs(z.cells / z.size - 1) > 0.05)
                     bad++, f4.push('size');
@@ -5433,11 +5438,13 @@
             const h4 = '<p class="dim">Fourth run (9 Oct): past the reader\'s corner. ' + P4.N + ' bodies of radius 0.5 out to 400, λ = 1000; ' + P4.cells + ' cells; one body is one cell in area at d* = ' + f(P4.ds, 1) + '. The share filled to each reach, against 1 − e^−(L−5)/λ; past 2d* alone (every body under a quarter cell): ' + f(P4.past.sh, 4) + ' against ' + f(P4.past.pred, 4) + '.</p>'
                 + labTable(['reach', 'L', 'share filled', 'predicted'], r4)
                 + '<p class="dim">Each body alone, by shell: how many, the share seen at all (filling at least one cell), predicted; the cells a seen body fills, predicted.</p>'
-                + labTable(['shell', 'bodies', 'seen', 'predicted', 'cells per seen body', 'predicted'], sz);
+                + labTable(['shell', 'bodies', 'seen', 'predicted', 'cells per seen body', 'predicted'], szOf(P4.shells))
+                + '<p class="dim">Fifth run (9 Oct): the same, the shells counted away from the polar caps (|cos θ| ≤ 0.9), where the cells are near-square (the fourth run was killed by the caps, the set-up\'s); between d*/4 and d*/2 every body seen (at least 99.5%).</p>'
+                + labTable(['shell', 'bodies', 'seen', 'predicted', 'cells per seen body', 'predicted'], szOf(P4.shells5));
             $('labTitle').textContent = 'the dark sky';
             $('labBody').innerHTML = '<p class="dim">First run: the geometry (layer 1, true distances; no signals).</p><p class="dim">' + R.N + ' bodies; ' + R.cells + ' address cells. Counted 5 to 25 off: ' + R.cnt + ' bodies, so λ read ' + R.lamRead.toFixed(2) + ' (the world\'s 20).</p>'
             + labTable(['reach past 5', 'age T', 'share filled', 'predicted', 'age read', 'the world\'s'], rows) + rdH + h4;
-            $('labStatus').textContent = 'Shares ' + R.rows.map(r => f(r.sh)).join(', ') + ' against ' + R.rows.map(r => f(r.pred)).join(', ') + '. The reading, no distances: λ read ' + f(D.lamR, 2) + ', the empty edge ' + f(D.r0R, 2) + '; the second reader\'s ages off by ' + D.looks.map(z => (Math.abs(z.Tr - z.T) / z.sT).toFixed(1) + 'σ').join(', ') + ' of its own error bar. Fourth run, past the corner: shares ' + P4.reach.map(z => f(z.sh, 4)).join(', ') + ' against ' + P4.reach.map(z => f(z.pred, 4)).join(', ') + '; past 2d* seen ' + P4.shells.filter(z => z.u >= 2).map(z => f(z.seen, 3) + ' (' + f(z.pSeen, 3) + ')').join(', ') + ', one cell each (' + P4.shells.filter(z => z.u >= 2).map(z => f(z.cells, 3)).join(', ') + ')' + (f4.length ? '; off: ' + f4.join(', ') : '') + '. ' + labVerdict(bad > 0) + ' '
+            $('labStatus').textContent = 'Shares ' + R.rows.map(r => f(r.sh)).join(', ') + ' against ' + R.rows.map(r => f(r.pred)).join(', ') + '. The reading, no distances: λ read ' + f(D.lamR, 2) + ', the empty edge ' + f(D.r0R, 2) + '; the second reader\'s ages off by ' + D.looks.map(z => (Math.abs(z.Tr - z.T) / z.sT).toFixed(1) + 'σ').join(', ') + ' of its own error bar. Fifth run, past the corner: shares ' + P4.reach.map(z => f(z.sh, 4)).join(', ') + ' against ' + P4.reach.map(z => f(z.pred, 4)).join(', ') + '; off the caps, d*/4 to d*/2 seen ' + f(P4.shells5[0].seen, 4) + '; past 2d* seen ' + P4.shells5.filter(z => z.u >= 2).map(z => f(z.seen, 3) + ' (' + f(z.pSeen, 3) + ')').join(', ') + ', one cell each (' + P4.shells5.filter(z => z.u >= 2).map(z => f(z.cells, 3)).join(', ') + ')' + (f4.length ? '; off: ' + f4.join(', ') : '') + '. ' + labVerdict(bad > 0) + ' '
             + 'The sky fills as the edge of what has arrived reaches out; the dark between the bodies reads how long they have been sending. A correspondence, not a claim.';
             $('labPane').hidden = true;
             $('intro').hidden = true;
