@@ -85,7 +85,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the step's shape, reading through the step by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1). Then a pass at a review of five issues: binary branching told from a ratio of 2, the in-place lay deferred to a later paper (Appendix D); the governing account of level of detail (§3.3); compile time stated exactly (the opening); the five situations by what is known (§2.1); the physics kept as correspondence (the central result's scope). Then "grain" in the text of 8–9 October reworded as R176 has it: the step, and one address across (Tom: "should be fine"); the labs and demos keep "grain", R176's unqualified sense, the step. Then the corner approached only from below, above meaning v is known (§2.1; correcting the ruling of 6 October); situation 3 does not know v either; Archimedes' proof unsituated, the circle in hand, and the quarter turn his proof made situated, the flip standing in for the circle). Then what a sweep is: H and V the breadths, invariant in an observation; h and v how full each is, 0 to 1; the sweep every way h and v can relate, from all of H to all of V; the circle two parties, the sphere three (§1). Then H kept apart from h and the distance written d (§1, "H and h kept apart"; §1's three marks; the situations table; §3.3). Then the rulings that read the corner through V put under review, two withdrawn (§1, "Rulings on V and h under review"). Then geometry is v and h, physics V and H (§1); a warning to AI readers at the head of the paper, and the rule for checking an argument (§1). Then the physics correspondences reworded under that rule: the point where a thing is one step across is the resolution limit, not the corner (the central result, §3.3, §14; `plans/physics-vh-audit.md`). Then the Cauchy and the case: scale 1 in fill levels with no assumption, scale V/H in amounts, and γ = 1 there assumes V = H, situation 1 (§2.2). Then V = H forced as a placeholder: the situated reader must set it to work in amounts; the conflation is forgetting it was set (§1; the situations table). Then sharpened: two parties for a relation, no unit for the geometry, one known unit for the physics (§1). Then the corner is found: h = v is geometry, every reader has it; "approached, never found" withdrawn throughout (§1). Then R158 resolved: beyond the corner is in terms of H standing in for V; H = 1, V = 10⁶ shows the geometry untouched and every amount off by one factor on both sides; Proposition 3.4's premise re-sourced (§3.3, §3.4). Then powerless in one observation, physics the remedy: the second half of the paper is how a reader fills in the gaps the geometry leaves (§1). Then Proposition D.1: on a level with only its ends, order and flip, the only subdivision the geometry supplies is the halving; every other branching factor needs an added measure (Appendix D; noted at the central open question).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the step's shape, reading through the step by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1). Then a pass at a review of five issues: binary branching told from a ratio of 2, the in-place lay deferred to a later paper (Appendix D); the governing account of level of detail (§3.3); compile time stated exactly (the opening); the five situations by what is known (§2.1); the physics kept as correspondence (the central result's scope). Then "grain" in the text of 8–9 October reworded as R176 has it: the step, and one address across (Tom: "should be fine"); the labs and demos keep "grain", R176's unqualified sense, the step. Then the corner approached only from below, above meaning v is known (§2.1; correcting the ruling of 6 October); situation 3 does not know v either; Archimedes' proof unsituated, the circle in hand, and the quarter turn his proof made situated, the flip standing in for the circle). Then what a sweep is: H and V the breadths, invariant in an observation; h and v how full each is, 0 to 1; the sweep every way h and v can relate, from all of H to all of V; the circle two parties, the sphere three (§1). Then H kept apart from h and the distance written d (§1, "H and h kept apart"; §1's three marks; the situations table; §3.3). Then the rulings that read the corner through V put under review, two withdrawn (§1, "Rulings on V and h under review"). Then geometry is v and h, physics V and H (§1); a warning to AI readers at the head of the paper, and the rule for checking an argument (§1). Then the physics correspondences reworded under that rule: the point where a thing is one step across is the resolution limit, not the corner (the central result, §3.3, §14; `plans/physics-vh-audit.md`). Then the Cauchy and the case: scale 1 in fill levels with no assumption, scale V/H in amounts, and γ = 1 there assumes V = H, situation 1 (§2.2). Then V = H forced as a placeholder: the situated reader must set it to work in amounts; the conflation is forgetting it was set (§1; the situations table). Then sharpened: two parties for a relation, no unit for the geometry, one known unit for the physics (§1). Then the corner is found: h = v is geometry, every reader has it; "approached, never found" withdrawn throughout (§1). Then R158 resolved: beyond the corner is in terms of H standing in for V; H = 1, V = 10⁶ shows the geometry untouched and every amount off by one factor on both sides; Proposition 3.4's premise re-sourced (§3.3, §3.4). Then powerless in one observation, physics the remedy: the second half of the paper is how a reader fills in the gaps the geometry leaves (§1). Then Part II retitled "Filling the gaps: what physics gives a reader", with an opening and a gap-and-remedy line for each of §§5–10. Then Proposition D.1: on a level with only its ends, order and flip, the only subdivision the geometry supplies is the halving; every other branching factor needs an added measure (Appendix D; noted at the central open question).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -3354,9 +3354,19 @@ paper's own wording stays in it, under its notes of that date):
 
 ---
 
-# Part II. Consequences
+# Part II. Filling the gaps: what physics gives a reader
+
+*Retitled 9 October (until then "Part II. Consequences"; Tom: "that gives real purpose to the second half of the paper.
+It seems likely that a reader would find ways fill in the gaps left by geometry.", and "Yes" to this outline).* Part I's
+geometry gives the relation complete without V: h and v, the corner, the levels. A situated reader is powerless about V
+in one observation and sets V = H (§1, "V = H, forced as a placeholder"; "Powerless in one observation; physics is the
+remedy"). Each section below is one kind of remedy: a bridge across observations, standpoints or time that supplies an
+amount relative to H. §5 comes first as the ground every remedy reads through; it is geometry, and fills no gap itself.
+Each section's *Gap and remedy* line says which gap it fills and with what.
 
 ## 5. Laying the addresses
+
+*Gap and remedy: none yet. Addresses alone, whatever the payload: geometry, the ground every remedy reads through.*
 
 *In the split: addresses alone. Every result in this section holds whatever the payload.*
 
@@ -3546,6 +3556,8 @@ arctan shortcut.
 
 ## 6. What one reader holds
 
+*Gap and remedy: what one standpoint cannot hold (the back, the hidden sides, depth); the reader's own facing and nearness, the most one observation gives, and where it stops.*
+
 *In the split: payload through one reader's addresses. What faces the sweep is held; what the payload hides is not.*
 
 ### 6.1 Every standpoint holds best what faces it
@@ -3665,6 +3677,8 @@ Neither decides the 2 of the central hypothesis; see there.
 
 ## 7. What passes between readers
 
+*Gap and remedy: no shared address, nearness or unit; relations among things both readers read, a shared fact.*
+
 *In the split: addresses do not cross standpoints, and neither does nearness; relations among payloads do.*
 
 Readers standing apart share no address, no nearness and no unit. What passes is **relations among readings of things both
@@ -3716,6 +3730,8 @@ abstractly … it or something like it is needed."). The chain is reality, obser
 number line, agreed on afterwards between readers.
 
 ## 8. The ladder: what fixes what
+
+*Gap and remedy: the shape, the scale, the rotation, the count, the place; one remedy per rung (§8.5's table). §8.4, "The unit is not geometric", is the core: the amount comes only from agreement.*
 
 *In the split: shape recovered from payloads. Each rung says how much comes back, and from what.*
 
@@ -3825,6 +3841,8 @@ Beside the reading itself, three kinds of thing appear: a **carry**, which keeps
 **relay** (§10), which passes some of what it met on; and an **agreement**, which is communication, not geometry.
 
 ## 9. Time: the serial reader
+
+*Gap and remedy: a single observation; a history (returns in time, the reader's own travel, carrying to the present). §9.9's labs are known physics used as remedies.*
 
 *In the split: the order in which addresses are read is itself a lay, in time, while the payload moves.*
 
@@ -4230,6 +4248,8 @@ What they add to this paper:
    yet a reader that lays them at depth and reads faster than they touch keeps every one apart (TRK).
 
 ## 10. Relays and records
+
+*Gap and remedy: what is not in front of the reader now; an address whose payload is another address (a relay), or payload kept (a record).*
 
 *In the split: a relay is an address whose payload is another address; a record is payload kept.*
 
