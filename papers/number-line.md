@@ -64,6 +64,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-second: SPN's pass at a review: binary branching is proved, the ratio of 2 rests on the in-place lay (deferred); one account of level of detail, k = log₂(Δ/(v·ε)); compile time stated exactly; the five situations by what is known.
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
+- 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
 - 9 October, sixty-first: geometry → sweep → reading: the level of detail is what the sweep over the field yields, k = log₂(Δ/v) (SPN, the opening; Tom).
 - 9 October, sixtieth: SPN Appendix D, Proposition D.1: the halving is the only subdivision a level without a measure supplies (noted).
 - 9 October, fifty-ninth: §4, what the demos of 9 October left open: light's corner in quanta, a grain that is not square (SPN §14).
@@ -126,7 +127,10 @@ that angle rescaled, g = θ/(π/2).
   The addresses are situation 1's exactly; what differs is their standing (V = H set, not known) and the facing (one, not
   four). One facing of situation 1, seen from the standpoint, is the fisheye (read serially), the bell (counted at once),
   the Cauchy (on v/h). "Not actually situation 1" is about what is known; "the same address space" about the addresses.
-  SPN §1, "Situation 1's address space, one facing: the fisheye".
+  SPN §1, "The fisheye: one facing of the sweep; V = H its calibration". *Corrected the same day* (after a review): the
+  address space is situation 1's whatever V is (v needs no V); V = H does not make it or the fisheye, it calibrates the
+  amounts read there. The fisheye is the sweep in one facing (geometry); read in amounts with V = H it is the situated
+  fisheye reading, off by V/H.
 
   | | situation 1 | the situated reader's unit circle |
   |---|---|---|
