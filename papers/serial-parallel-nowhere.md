@@ -609,6 +609,15 @@ that the corner of one pair was read as the corner of another. So: one step acro
 sweep, which physics calls the resolution limit; the glowing disc's s = a/d = 1 is the corner of the radius-against-
 distance sweep (§3.2); GRN's s = 1 is the size-against-step corner; BAL's "contact" is the radius-against-distance corner.
 
+*There and back* (Tom, 9 October: "so point a full present at point a, and point b is full present at point b, the sweep
+between the is the same sweep we are talking about in the paper. if the sweep is from point a to point b, it is the
+quarter circle, back again its the semi-circle."; and "yes"). At a, a is fully present; at b, b is. The sweep from a to b,
+every way the two relate, with the corner where they are equally present, is the quarter circle: one facing, a's. Back
+from b to a is the same relation read from b's side, the other facing (the flip, Proposition 3.2); the two together are
+the semicircle. The full circle needs all four facings, signed, which only the unsituated view holds (R173). Open: how
+this semicircle stands to Thales' (R169), where the reader's bar turns a quarter while its point runs over a semicircle
+of the arc.
+
 **H and h kept apart** (Tom, 9 October: "Yes, this problem is pervasiv. we have been both conflating H with h."; "yes, this
 is a major problem, but it explains why we sometimes get confused. we conflate H with h and V with v."). Before
 9 October the paper, its rulings and the corpus wrote h both for the reader's breadth, its unit, and for the fill level in
@@ -2043,7 +2052,7 @@ cases, each with v, h and the far side predicted before the run, two of them pre
 - **Parallax against the grain**: it gives out first at s = 1, a shift of one address.
 - **A filling sky** (control): no corner, f(1) = 0.638, f(2) + f(½) = 1.269.
 
-*The pairs named, 9 October* (§1, "Every pair has its own sweep"): each case's s is a ratio of two amounts in one unit, so each corner below is the corner of that pair's sweep (two loops' radii; binding and launch; the disc's radius and distance; a shift and an address), not of the reader's sweep of the other. The finding stands as a finding about sweeps.
+*The pairs named, 9 October* (§1, "Every pair has its own sweep"): each case's s is a ratio of two amounts in one unit, so each corner below is the corner of that pair's sweep (two loops' radii; binding and launch; the disc's radius and distance; a shift and an address), not of the reader's sweep of the other. Then there and back: a to b the quarter circle, one facing; back the other facing; together the semicircle (§1). The finding stands as a finding about sweeps.
 
 So the corner, with its inversion, appears where a reader's own quantity meets the world's in two loops, at escape and
 for a disc; sampling turns there but folds; a filling sky does not turn. Each case is an exact consequence of known
