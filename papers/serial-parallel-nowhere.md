@@ -85,7 +85,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the step's shape, reading through the step by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1). Then a pass at a review of five issues: binary branching told from a ratio of 2, the in-place lay deferred to a later paper (Appendix D); the governing account of level of detail (§3.3); compile time stated exactly (the opening); the five situations by what is known (§2.1); the physics kept as correspondence (the central result's scope). Then "grain" in the text of 8–9 October reworded as R176 has it: the step, and one address across (Tom: "should be fine"); the labs and demos keep "grain", R176's unqualified sense, the step. Then the corner approached only from below, above meaning v is known (§2.1; correcting the ruling of 6 October); situation 3 does not know v either; Archimedes' proof unsituated, the circle in hand, and the quarter turn his proof made situated, the flip standing in for the circle). Then what a sweep is: H and V the breadths, invariant in an observation; h and v how full each is, 0 to 1; the sweep every way h and v can relate, from all of H to all of V; the circle two parties, the sphere three (§1). Then H kept apart from h and the distance written d (§1, "H and h kept apart"; §1's three marks; the situations table; §3.3). Then the rulings that read the corner through V put under review, two withdrawn (§1, "Rulings on V and h under review"). Then geometry is v and h, physics V and H (§1); a warning to AI readers at the head of the paper, and the rule for checking an argument (§1). Then the physics correspondences reworded under that rule: the point where a thing is one step across is the resolution limit, not the corner (the central result, §3.3, §14; `plans/physics-vh-audit.md`). Then the Cauchy and the case: scale 1 in fill levels with no assumption, scale V/H in amounts, and γ = 1 there assumes V = H, situation 1 (§2.2). Then V = H forced as a placeholder: the situated reader must set it to work in amounts; the conflation is forgetting it was set (§1; the situations table). Then Proposition D.1: on a level with only its ends, order and flip, the only subdivision the geometry supplies is the halving; every other branching factor needs an added measure (Appendix D; noted at the central open question).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the step's shape, reading through the step by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1). Then a pass at a review of five issues: binary branching told from a ratio of 2, the in-place lay deferred to a later paper (Appendix D); the governing account of level of detail (§3.3); compile time stated exactly (the opening); the five situations by what is known (§2.1); the physics kept as correspondence (the central result's scope). Then "grain" in the text of 8–9 October reworded as R176 has it: the step, and one address across (Tom: "should be fine"); the labs and demos keep "grain", R176's unqualified sense, the step. Then the corner approached only from below, above meaning v is known (§2.1; correcting the ruling of 6 October); situation 3 does not know v either; Archimedes' proof unsituated, the circle in hand, and the quarter turn his proof made situated, the flip standing in for the circle). Then what a sweep is: H and V the breadths, invariant in an observation; h and v how full each is, 0 to 1; the sweep every way h and v can relate, from all of H to all of V; the circle two parties, the sphere three (§1). Then H kept apart from h and the distance written d (§1, "H and h kept apart"; §1's three marks; the situations table; §3.3). Then the rulings that read the corner through V put under review, two withdrawn (§1, "Rulings on V and h under review"). Then geometry is v and h, physics V and H (§1); a warning to AI readers at the head of the paper, and the rule for checking an argument (§1). Then the physics correspondences reworded under that rule: the point where a thing is one step across is the resolution limit, not the corner (the central result, §3.3, §14; `plans/physics-vh-audit.md`). Then the Cauchy and the case: scale 1 in fill levels with no assumption, scale V/H in amounts, and γ = 1 there assumes V = H, situation 1 (§2.2). Then V = H forced as a placeholder: the situated reader must set it to work in amounts; the conflation is forgetting it was set (§1; the situations table). Then sharpened: two parties for a relation, no unit for the geometry, one known unit for the physics (§1). Then the corner is found: h = v is geometry, every reader has it; "approached, never found" withdrawn throughout (§1). Then R158 resolved: beyond the corner is in terms of H standing in for V; H = 1, V = 10⁶ shows the geometry untouched and every amount off by one factor on both sides; Proposition 3.4's premise re-sourced (§3.3, §3.4). Then powerless in one observation, physics the remedy: the second half of the paper is how a reader fills in the gaps the geometry leaves (§1). Then Part II retitled "Filling the gaps: what physics gives a reader", with an opening and a gap-and-remedy line for each of §§5–10. Then the situations by V: 1 and 2 differ in amounts, V against H, and 3 and 4 assign V = H; the sweep the same in all (§2.1). Then why the conflation is easy: under V = H the scale is 1 and amounts equal fill levels (§1); and the landmarks exist in every situation, ordinary in 1 and 2, consequential in 3 and 4 (§4.5, R154). Then why h sweeps at all: not to learn H, but because the cap at 1 lets the relation pass the corner only by h emptying; the sweep laid, an encounter one address (§1). Then template and filling: geometry the exact template, physics the amounts, the imperfection in the reader's access (§1). Then Proposition D.1: on a level with only its ends, order and flip, the only subdivision the geometry supplies is the halving; every other branching factor needs an added measure (Appendix D; noted at the central open question).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -126,7 +126,7 @@ breadths held whole, as an equation or an array, with no reader dividing. The ea
 (a phrase of Nagel's, 1986, used here only for the state of knowing both breadths) and "the view from somewhere",
 remain in quotations and in the titles of works. "Nowhere" in the paper's title means the unsituated view.
 
-*Under review, 9 October* (§1, "Rulings on V and h under review"): it rests on the withdrawn "The corner is approached only from below" or on reading the corner through V. Kept as written until ruled.
+*Withdrawn, 9 October* (§1, "The corner is found"): every reader finds the corner, h = v; the views differ in the amounts, not the corner. Kept as the record.
 
 *By the corner* (Tom, 7 October: "that is a nice way to explain the difference between the situated and the unsituated
 readers. there relationship to the corner."). The unsituated view contains the corner, one point of the relation it
@@ -136,7 +136,7 @@ be situated: to be at the corner is to know v = h, and so to know v ("Reaching t
 | | the corner is | follows from that |
 |---|---|---|
 | unsituated (1, 2) | contained, computed | no horizon; proportional on both sides; a mirror at 45° |
-| situated (3, 4) | approached, never located | a horizon; proportional before it, levels past it; the reciprocal squeeze |
+| situated (3, 4) | approached, never located (*withdrawn 9 October*: found, h = v) | a horizon; proportional before it, levels past it; the reciprocal squeeze |
 
 The same holds for all three of Proposition 1.1's landmarks (Tom, 7 October, agreeing). The unsituated view contains
 each of them; the situated reader approaches each:
@@ -144,7 +144,7 @@ each of them; the situated reader approaches each:
 | landmark | unsituated (1, 2) | situated (3, 4) |
 |---|---|---|
 | home, v = 0 | contained: (h, v) = (1, 0) on the circle | approached |
-| the corner, v = h | contained: 45°, computed | passed through, never located: knowing v = h would mean knowing v |
+| the corner, v = h | contained: 45°, computed | passed through, never located: knowing v = h would mean knowing v (*withdrawn 9 October*: passed through and found; v = h is geometry and needs no V) |
 | the horizon, h negligible against v | contained: (0, 1) on the circle, 90° | approached, never reached |
 
 The situated sweep does pass through the corner, 0 < s < 1, then s = 1, then s > 1 (Proposition 3.2(4)). What the
@@ -203,8 +203,8 @@ the sweep: s as a turn, 0 to π/2; one side, out to the limb
    ┌────┴──────────────────────────────┐
    ▼                                   ▼
 both breadths known (situations 1, 2)  one breadth known (3, 4): situated
-the unsituated view; classical       the corner approached from either
-geometry, unchanged; the corner        side, never found; a horizon
+the unsituated view; classical       the corner found (h = v; corrected
+geometry, unchanged; the corner        9 October, §1); a horizon
 computed exactly                       the fisheye (serial), the bell (parallel)
    │                                   │
    ▼                                   ▼
@@ -253,7 +253,7 @@ what follows from them.
 | level | what | standing |
 |---|---|---|
 | the relation | the reading, the flip, the corner; the corner bisects every level; each level one quarter turn, for every ratio; the spiral form | **proved** (§3; Propositions 3.2(b), 3.12, 3.13), on the premises named |
-| the situated reader | one breadth known gives the horizon, the fisheye and the bell; the corner approached, never found | **proved** as mathematics (§2.1); that a reader *is* such a thing is the paper's proposal |
+| the situated reader | one breadth known gives the horizon, the fisheye and the bell; the corner found, h = v (*corrected 9 October*: "approached, never found" withdrawn, §1) | **proved** as mathematics (§2.1); that a reader *is* such a thing is the paper's proposal |
 | recursion | the same sweep at every level; depth beats breadth; cost follows the shape | **ruled** where it rests on (R) (R172, R175, R180); **measured** on shapes (NST, the 3d bench, "Recursion, after the corner"); forced, far out, for a finite reader facing a horizon (`plans/resolution-recursion.md`, unruled) |
 | fairness to the facings | the reading treats v/h and h/v alike, f(1/s) = 1 − f(s); the corner's place and the inversion are forced only given it | **ruled** (R162, Tom, 2 October), not derived from the bare relation. *7 October:* it is the circle's swap symmetry carried into the reading, so it holds for any reading on the circle ("The circle inverts v and h at 45°", §2.1). Open: why a physical reader would read on the circle. Answered for one physical reader, the lens: light is reversible ("h as the focus", §2.1); open for readers in general |
 | the ratio between rungs | why 2 | **demoted** (8 October): the reader sweeps its level of detail, logarithmic past the corner, and the ratio is the unit of the count (Proposition 3.4(a), k free). A derivation from the flip is kept in Appendix D, unruled, with Proposition D.1 (9 October: the halving is the only subdivision a level without a measure supplies; proved, the premise of no measure open); the runs found the ratio set by the builder's rule or by the scene (below) |
@@ -566,11 +566,36 @@ H is always H.").
 - *What follows.* Distance is neither H nor V, so moving away does not change the sweep. What changes is the reading of
   it, the level of detail, which lies outside the sweep (§3.3, "The governing account of level of detail"). All of H is
   always held; all of V only where V is known. A situated reader therefore has its own end of the sweep and never the far
-  one, and meets the corner from below (§2.1, "The corner is approached only from below"). Earlier senses of "sweep" (the
+  one, and meets the corner from below (§2.1, "The corner is approached only from below"; *withdrawn 9 October*: it finds the corner, §1, "The corner is found"). Earlier senses of "sweep" (the
   turn, the arc, one hemisphere, the sweep from home, the swept area, the fisheye, the sweep over level of detail) are
   drawings of this sweep or ways of going along it, and are read with this entry. Where one of them uses v as a distance
   (the sweep over level of detail, 8 October), it describes the reading, not the sweep.
 - *Open:* whether a fourth party adds anything new or only repeats the pattern.
+
+**Why h sweeps at all** (Tom, 9 October: "why does the oberver need to sweep his H with h at all, he already knows his H.
+sweeping his h over H does not give him any information he does not already have?"; then passing on a review that agreed
+and asked that the mechanism be shown, not told; Claude's wording).
+- *Nothing about H.* Sweeping h tells the reader nothing about H. H is the reader's breadth; h is a fill level of the
+  relation. They are not the same thing ("H and h kept apart", below).
+- *The cap at 1 makes h move.* Neither h nor v can exceed its own whole. The first leg carries the relation toward the
+  corner by increasing v against a full h. Once v reaches 1 the relation cannot pass the corner by increasing v further;
+  the second leg carries it onward by decreasing h against a full v. Together the two legs express the whole relation,
+  ratios above 1 included:
+
+  | leg | what moves | v/h | the half |
+  |---|---|---|---|
+  | home → corner | v fills, h held full | 0 → 1 | front: v counted in h, proportional |
+  | corner → far end | h empties, v held full | 1 → ∞ | back: h counted in v, the flip |
+
+  On the unit square of (h, v) this is the right edge up to (1, 1), then the top edge to (0, 1): the in-place lay. Each
+  ratio is a ray from (0, 0); the two legs meet each ray once. Points inside the square repeat a ratio at smaller fills,
+  so "held full" names the leg's reference, not a claim that every pair on the ray has it. The corner is where the moving
+  part switches from v to h. So h's sweep carries the relation's far side, the reader's share shrinking against an other
+  that is now the larger; without it a reader would have only the front half, with no levels past the corner and no horizon.
+- *Laid, not run.* The sweep is laid by geometry before any payload arrives. An encounter fixes one address in that
+  already-laid sweep; the sweep is not built or run anew for each observation (the three layers, the opening). R148's
+  "sweeps must be swept, starting from home" is kept, read as the situated reader's path along the sweep, not the sweep's
+  construction.
 
 **H and h kept apart** (Tom, 9 October: "Yes, this problem is pervasiv. we have been both conflating H with h."; "yes, this
 is a major problem, but it explains why we sometimes get confused. we conflate H with h and V with v."). Before
@@ -602,6 +627,17 @@ still has the relation and its corner, h = v. Not knowing V withholds nothing in
 fill level back into an amount of V. The review (`plans/vh-rulings-review.md`) had asked whether a situated reader can
 form v without V: it can.
 
+*The corner is found* (Tom, 9 October: "yes, v can be equal h. v and h are geometry, so its a geometric question, not a physics question. yes v and h sweep over each other."). The corner is h = v, a question about fill levels, so it is geometric, not physical,
+and every reader has it: h and v sweep over each other, and v reaches h. A situated reader passes through the corner and
+finds it, as the unsituated view does. What a situated reader lacks is V, so the amounts there, not the corner. So every
+passage saying the corner is "approached, never found" or "never located", or that knowing v = h means knowing V, is
+withdrawn: the opening's "By the corner" and its tables, the dependency diagram, the standing table, §1's and §2.1's
+tables, §2.1's "What 3 and 4 share", the 6 October horizon ruling as it concerns the corner, §3.1's *Revised* and §3.7's
+near horizon. Each is marked where it stands and kept as the record. What survives of the 6 October horizon ruling is
+geometry about arc and chord: θ/sin θ and sin θ/θ, their product 1, and the closing by four per halving, which tend to 1
+(the straight line) as the turn shrinks toward home, not toward the corner. The situated and the unsituated are told
+apart by the amounts (§1, "Geometry is v and h; physics is V and H"), not by the corner.
+
 *Geometry is v and h; physics is V and H* (Tom, 9 October: "yes, geometry is v and h. physics is V and H.", agreeing to
 the two points below, Claude's wording). Two consequences:
 - *The sweep is known before V.* Its whole structure (the empty end and the full end, the corner h = v, the halvings ½,
@@ -623,6 +659,52 @@ needs a breadth for V, and a situated reader holds only H. So it must set V = H.
 as if in situation 1, the circle. This is a placeholder, not knowledge of V. What the reader computes in amounts under it
 is right relative to H, and wrong about V by the factor V/H, which the reader cannot know. The conflation is not setting
 V = H; it is forgetting that it was set.
+*Why the conflation is easy* (Tom, 9 October: "its confusing because V/H becomes v/h, it removes the scale. when V is
+unknown, we assign it H."). With V = H the scale V/H is 1, so the amounts (v·V)/(h·H) equal the fill levels v/h. Under
+the placeholder, physics and geometry are the same numbers, and nothing on the page says which a symbol stands for. They
+come apart only where V is known and differs from H: situation 2, or a bridge that reveals V. There, an argument written
+under V = H fails by the factor V/H (H = 1, V = 10⁶: R158, §3.3). This is why the case must be kept even when the numbers
+agree (the opening warning; "Checking an argument").
+*Sharpened* (Tom, 9 October, passing on a review that ended "the reader needs two parties to establish a relation, but it
+needs only one known unit to construct its geometry", then "yes" to Claude's correction of its last step: the geometry
+needs no unit). A situated reader relates two parties while holding the breadth of only one. The relation needs no breadth:
+h and v are fill levels, and the corner, h = v, is given. To turn the relation into amounts it needs a breadth for each
+party, and it cannot use the other's, which it does not know. So it uses its own as the common reference: V = H, imposed by
+the reader's unit convention, not discovered in the world. This completes the physics of its reading, in amounts relative
+to H, without revealing the other's physical magnitude. The reader needs two parties to have a relation, no unit to have
+its geometry, and one known unit to have its physics.
+
+*Powerless in one observation; physics is the remedy* (Tom, 9 October: "as i see it, there is nothing the reader can do,
+he is powerless here. V could be 10^2 or 10^16. but a relation requires two parties, and he does not know if the other
+party is small,big or massive."; "maybe this is where physics steps in. gives tools to remedy the situation."; and "Yes.
+that gives real purpose to the second half of the paper. It seems likely that a reader would find ways fill in the gaps
+left by geometry."). Within one observation nothing in the relation distinguishes V = 10² from V = 10¹⁶. The relation needs
+a second party and is scale-free about it, so the reader must set V = H, and nothing it reads in that observation can
+correct it. This is where physics enters. Geometry gives the relation, complete without V. Physics gives the tools that
+supply the amount geometry leaves open, each a bridge across observations that turns a fill level into an amount relative
+to H:
+- the reader's own travel (parallax, then width);
+- a law with a known constant (the inverse square with a known brightness; LAD run 3);
+- a known kind of thing;
+- a shared fact with another reader (§8).
+
+The distance ladder is these remedies in order, each rung carrying the amount further. None of them changes the geometry;
+each fills in what the geometry, by having no scale, could not. This is the purpose of the paper's second half (Part II,
+§§5–10: laying the addresses, what one reader holds, what passes between readers, the ladder, time, relays and records,
+with the labs of §9.9): how a reader fills in the gaps the geometry leaves.
+
+*Template and filling* (Tom, 9 October: "right, geometry provides template, physics fills them, but imperfectly."; then
+passing on a review that asked that the imperfection be placed in the reader's access, not in physics; and "yes").
+Geometry provides the complete template of possible relations, exact and scale-free. Physics supplies the amounts that
+occupy it, and the world's amounts are what they are. The imperfection is in the situated reader's access to them. The
+geometry gives it v/h; the amounts need V/H as well, since (v·V)/(h·H) = (v/h)·(V/H), and V is not held. So the reader:
+- locates an encounter exactly in the template;
+- fills the amounts first with the placeholder V = H, wrong by V/H;
+- then refines them through remedies, each within its own limit (the resolution limit, the photon limit), each rung's
+  error carried up the ladder.
+
+An incomplete physical reading does not make the geometry incomplete: the address can be exact while what occupies it is
+known only approximately.
 
 *Checking an argument* (from a review passed on by Tom, 9 October, and his "yes"). Each symbol keeps its case. h and v
 are fill levels (geometry); H, V, d, Δ and ε are amounts (physics). An argument that crosses from one to the other names its
@@ -682,7 +764,7 @@ v_raw/h_raw = V/H.
 | the whole | the system's breadth, known | the reader's own unit, V = H |
 | 0° to 45° | near field | near field |
 | 45° to 90° | near field, mirrored | far field, squeezed into levels |
-| the corner | computed | approached, never found (§3.1) |
+| the corner | computed | found, h = v (*corrected 9 October*; "approached, never found" withdrawn, §1) |
 
 - **The origin.** v = h = 0 has no angle: nothing of either, situation 0.
 
@@ -797,16 +879,25 @@ how it looks; Tom, 9 October, passing on a review of five remaining issues, then
 | **0** | not known | known (H is always H) | none | none: no h, no relation | none | — |
 | **1** | known | known, equal to V | none | held whole, an angle 0 to 90° | computed: a known equality, 45° | nothing |
 | **2** | known, varying with direction | known | none | held whole | computed in each direction | nothing; depth follows the shape and stops |
-| **3** | not known (or within bounds); V = H set as a placeholder (§1) | known: the reader's unit | outside | proportional to the corner, levels past it | approached from below only, never located | the corner and the horizon |
-| **4** | not known (or within bounds); V = H set as a placeholder (§1) | known: the reader's unit | inside | as 3, met one point at a time | approached from below only, never located | the corner and the horizon |
+| **3** | not known (or within bounds); V = H set as a placeholder (§1) | known: the reader's unit | outside | proportional to the corner, levels past it | found, h = v (§1, "The corner is found") | the horizon |
+| **4** | not known (or within bounds); V = H set as a placeholder (§1) | known: the reader's unit | inside | as 3, met one point at a time | found, h = v (§1, "The corner is found") | the horizon |
 
 3 and 4 can each be known approximately, with one number known only within bounds (the earlier situation 5): a
 variant of 3 and 4, not a sixth way. The first cut is whether v is known: with v and h known it is 1 or 2, as they are
 equal or not; with v not known, 3 or 4, as the reader stands outside or inside; with neither, 0.
 
+*The situations by V, the sweep the same in all* (Tom, 9 October: "h relates H. v relates V. V is either known or
+unknown. When V is unknown, assign it H. so now v relates H. then we sweep h and v, the sweep is all possible values of h
+relative to v."). The situations differ in what is known of V, an amount, compared with H, an amount: V known and equal
+to H (1), V known and differing, by direction or from H (2), V unknown, so assigned H (3 and 4, which then work in amounts
+as 1 does: §1, "V = H, forced as a placeholder"). Comparing two amounts is physics, and allowed where both are known or one
+is assigned. The sweep is not compared and does not differ: in every situation it is all possible values of h relative to
+v, each 0 to 1, with the corner h = v found (§1, "The corner is found"). So "v and h known … equal or not" in the sentence
+above, and "both breadths known and equal" below, are read as V and H, amounts, not as the fill levels h and v.
+
 - **0. Nothing.** Nothing to count in and no home to lay from. There is no reader here in this paper's sense, which
   needs a known side to take its ratio from ("Situation 0, impossible", below).
-- **1. The circle.** Both breadths known and equal, held whole as an equation, h² + v² = 1, from no standpoint. The
+- **1. The circle.** Both breadths known and equal (V = H, amounts; the sweep is the same in every situation, above), held whole as an equation, h² + v² = 1, from no standpoint. The
   corner is computed, 45°; the line is held; there is no horizon ("Known breadths, and the corner").
 - **2. Every other shape.** Both breadths known but varying with direction, held whole as an array: the breadth in
   every direction, known together. The corner is still computed and there is no horizon. A known shape can still be
@@ -822,7 +913,7 @@ equal or not; with v not known, 3 or 4, as the reader stands outside or inside; 
   rim ("The situated reader's fisheye"). Its measure, sin θ/θ, approaches 1 from below, toward 2/π at the limb.
 
 What 3 and 4 share, and 1 and 2 do not: **a horizon** (the line approached from either side, never reached: "The
-horizon of a situated reader"); **a corner approached, never found**; and **recursion forced** by the horizon, without
+horizon of a situated reader"); **a corner approached, never found** (*withdrawn 9 October*: every reader finds it, §1); and **recursion forced** by the horizon, without
 end, each level the same sweep, Archimedes' halving ("Why the recursion"; Propositions 3.11–3.13). In 2 recursion
 follows the shape and stops; 1 has none. ("Recursion" here and in what follows names the levels the sweep meets, not a
 process that makes them: §3.3, "Recursion considered and rejected".)
@@ -930,7 +1021,7 @@ on the sweep alone", below: the earlier 3 is 3 and 4 now, the earlier 4 is 0, th
 observer could occupy; that is why it has no standpoint in the table. From 1 to 2 the shared unit is lost; from 2 to 3, v's baseline. The list is not exhaustive
 (R146).
 
-**Situation 1, the circle.** Both breadths known and equal, so both can be normalised to 1 (R134). Nothing is divided:
+**Situation 1, the circle.** Both breadths known and equal, so both can be normalised to 1 (R134; *read 9 October*: each fill level is normalised by its own breadth, so equality is not what allows it; what makes the circle is V = H, amounts, "The situations by V", above). Nothing is divided:
 h and v are read relative to each other (R131). The circle is read uniformly across its whole address space, with no
 situated observer (R126–R127): no home, corner, sweep or horizon of any kind, and so no g (R140, R170), no front or back (R139). The unit circle is not the
 reader (R127).
@@ -1213,7 +1304,7 @@ it into addresses, and the payload at each address returns it (§4.3, "Addresses
 "constructs an addressing scheme from relations available at its standpoint, and uses those addresses to encounter the
 world's magnitudes").
 
-*Under review, 9 October* (§1, "Rulings on V and h under review"): it rests on the withdrawn "The corner is approached only from below" or on reading the corner through V. Kept as written until ruled.
+*Withdrawn as it concerns the corner, 9 October* (§1, "The corner is found"): the corner is found by every reader; the measures below tend to 1, the straight line, toward home, not to the corner. The arc-and-chord facts stand. Kept as the record.
 
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
 
@@ -1238,7 +1329,7 @@ The two are reciprocal at every turn, not only at the end. Outside lies above 1 
 and falls to 2/π. Both tend to 1 as the turn shrinks, and neither reaches it while there is any turn: 1 is the line,
 pure distance, held only where the breadths are known. **That is the situated reader's horizon.** And since a
 situated reader measures by turning, its v is never the line's v: **in situations 3 and 4 the true corner, v = h, is
-approached but never found; only in 1 and 2, with both breadths known, is it calculated exactly.**
+approached but never found; only in 1 and 2, with both breadths known, is it calculated exactly.** *Corrected, 9 October*: the corner is found ("The corner is found", §1). the measures above tend to 1, the straight line, as the turn shrinks toward home; that 1 is not the corner, s = 1, which sits at 45° where they read 1.11 and 0.90.
 
 *Withdrawn, 9 October* (Tom, 9 October: "Yes, that is where i noticed the problem. That ruling is now incorrect. we have to rethink all rulings related to V and h."): it takes the corner to need V, but the corner is h = v, two fill levels, and the relation has no scale; H and V do not enter it (§1, "What a sweep is"; "Rulings on V and h under review"). Kept as the record.
 
@@ -1290,7 +1381,7 @@ below and one outside it from above, the sides doubled at each step, 6, 12, 24, 
 3.1427 and never reached. Inside from below, outside from above, doubling as the recursion, the true value a horizon.
 (His outer polygon goes as tan θ/θ, the outside measure here as θ/sin θ; both lie above 1 and close at the same rate.)
 
-*Under review, 9 October* (§1, "Rulings on V and h under review"): it rests on the withdrawn "The corner is approached only from below" or on reading the corner through V. Kept as written until ruled.
+*Corrected, 9 October* (§1, "The corner is found"): "the line, 1 (the corner)" below conflates two 1s; the line is approached as the turn shrinks toward home, and the corner is found. What stands: the inscribed polygon is sin θ/θ exactly, halving the turn is his doubling of sides, and the flip supplies π/2. Kept as the record.
 
 **The quarter turn is Archimedes' proof made situated** (Tom, 9 October: "our PI/2 2/PI proof, is the same as archmedies
 but from the situated perspective."; "archimedes held the circle in his hand, it is unsituated."). Archimedes' proof is
@@ -1786,7 +1877,7 @@ v's breadth nor an outside unit, and scaling v and h together leaves it where it
 *Revised* (Tom, 6 October; §2.1, "The horizon of a situated reader"). The proposition holds of the relation: the corner
 is the swap's one fixed point, and s passes through 1. What a reader can do with it depends on the situation. With both
 breadths known (situations 1 and 2) the corner is calculated exactly. A situated reader (3 and 4) measures by turning,
-outside from above 1 and inside from below (*corrected, 9 October*: only from below, unless v is held; §2.1, "The corner is approached only from below"), and never reaches the line, so it approaches the true corner and never finds
+outside from above 1 and inside from below (*corrected, 9 October*: the corner is found, §1, "The corner is found"; earlier the same day: only from below, unless v is held; §2.1, "The corner is approached only from below"), and never reaches the line, so it approaches the true corner and never finds
 it: "found with h alone" holds as a limit, not exactly.
 
 *Withdrawn, 9 October* (Tom, 9 October: "Yes, that is where i noticed the problem. That ruling is now incorrect. we have to rethink all rulings related to V and h."): it takes the corner to need V, but the corner is h = v, two fill levels, and the relation has no scale; H and V do not enter it (§1, "What a sweep is"; "Rulings on V and h under review"). Kept as the record.
@@ -1991,6 +2082,19 @@ doublings of §3.3–§3.4.
 corner a value is in terms of v's unknown breadth, so in plain proportion it is undefined, and so is any operation on
 it. What is defined there is logarithmic in h: a count of doublings past the corner, which add. **The back side is the
 long tail.** The corner is where the register changes.
+
+*Resolved, 9 October* (Tom: "v is ratio of V. in situated observation, V is unknown. So we assign it H. that creates the
+unit circle of observation. so the beyond the corner is based on H."; "we just need to consider an absurd situation and
+what happens. H = 1, V = 1000000; V is unknown however. we assign V = H = 1, when it is actually 1000000. that is a
+massive disparity."; and "Yes"). Beyond the corner, values are in terms of H standing in for V, not V (§1, "V = H, forced
+as a placeholder"). Take H = 1 and V = 10⁶, with the reader setting V = H = 1:
+- The geometry is untouched: the fill levels, the corner and the levels.
+- Every amount involving V is wrong by 10⁶, on both sides of the corner alike.
+- The reader cannot see it, since a constant factor drops out of a scale-free relation.
+- In levels it is an offset of log₂ 10⁶ ≈ 20 in the count, with every difference right.
+
+So the placeholder supplies Proposition 3.4's unknown factor b = V/H but not its "past the corner". The change of
+register at the corner is the flip's, geometry (Proposition 3.2(a)).
 
 *Why it holds, in an evenly spread world.* Read directions laid evenly as v over h: the Cauchy of scale 1, the
 circle's opening (§2.4).
@@ -2647,6 +2751,10 @@ definition of situation 3 or 4 (R137, §2.1), and by R158 anything in terms of i
 so no single value past the corner is held. What can be held is a relation between two readings, and a reader relates
 two values in one of two ways: it takes their difference, or their ratio.
 
+*Premise re-sourced, 9 October* (R158, *Resolved*, §3.3): the unknown factor is b = V/H, the error of the placeholder
+V = H (§1), the same on both sides of the corner; that the back side is read in its own register comes from the flip at
+the corner (Proposition 3.2(a)), geometry, not from V. The proposition below is unchanged.
+
 **Proposition 3.4 (the two registers free of the unknown).** Let F be a register on the back side, monotone and
 positive, with every reading multiplied by the same unknown b > 0 (F taken on all s > 0, or b ≥ 1, so that b·s stays
 where F is defined).
@@ -2854,7 +2962,9 @@ in general, is a boundary between a front side and a back side. Three meet a sit
   and its step outgrows the reading near 4N/(3π). That layout is not the reader's; R176.)
 - **The near horizon** is the corner, v = h, between the front side and the back side of its reading (Proposition 3.1).
   It is known. *Revised* (Tom, 6 October): known exactly only where both breadths are known (situations 1 and 2); a
-  situated reader (3 and 4) approaches it from one side and never arrives (§2.1). R149's working horizon is this one.
+  situated reader (3 and 4) approaches it from one side and never arrives (§2.1). *Withdrawn, 9 October*: it is known
+  exactly to every reader, h = v (§1, "The corner is found"), as R149 says: "although the breadth of V is not known, you
+  do know the corner". R149's working horizon is this one.
 
 Every octave is a sweep (R172), so the three recur at every level: at each octave's edges its own reading starts at 0
 and runs without end, and leaving an octave is a change of level, not a wall. Toward home the front side is laid in plain proportion, one step h/N (R176),
@@ -3272,6 +3382,14 @@ the map), and classical single-camera mapping has the same single-factor ambigui
 known and equal: situation 1, with no home, division or landmarks, and a corner computed rather than found. Landmarks belong to situation 3 or 4 only. In
 situation 3 or 4 the same single sweep, from home to the corner, is the front side.
 
+*Corrected, 9 October* (Tom: "they landmarks exist in all situations, but they are ordinary in situations 1 and 2. they
+have consequences in situations 3 and 4."). Home, the corner and the horizon (v empty, h = v, v full) are points of the
+sweep, so every situation that has h has them; the corner is found in all ("The corner is found", §1). In 1 and 2 they
+are ordinary: everything is held whole, and nothing turns on them. In 3 and 4 they have consequences, because they are the
+only fixed points a reader has while V is unknown: home is where its sweep starts (all of H, always held), the corner is
+where its reading changes register (proportion before, levels past; the flip, Proposition 3.2(a)), and the horizon is the
+far end it never holds (all of V). R154's "only found in situation 3" is read as "only consequential in 3 and 4".
+
 ### 4.6 What the older papers give the corner
 
 Results of the earlier papers that give the rulings above a construction or a proof (gathered on 1 October; each
@@ -3297,9 +3415,19 @@ paper's own wording stays in it, under its notes of that date):
 
 ---
 
-# Part II. Consequences
+# Part II. Filling the gaps: what physics gives a reader
+
+*Retitled 9 October (until then "Part II. Consequences"; Tom: "that gives real purpose to the second half of the paper.
+It seems likely that a reader would find ways fill in the gaps left by geometry.", and "Yes" to this outline).* Part I's
+geometry gives the relation complete without V: h and v, the corner, the levels. A situated reader is powerless about V
+in one observation and sets V = H (§1, "V = H, forced as a placeholder"; "Powerless in one observation; physics is the
+remedy"). Each section below is one kind of remedy: a bridge across observations, standpoints or time that supplies an
+amount relative to H. §5 comes first as the ground every remedy reads through; it is geometry, and fills no gap itself.
+Each section's *Gap and remedy* line says which gap it fills and with what.
 
 ## 5. Laying the addresses
+
+*Gap and remedy: none yet. Addresses alone, whatever the payload: geometry, the ground every remedy reads through.*
 
 *In the split: addresses alone. Every result in this section holds whatever the payload.*
 
@@ -3489,6 +3617,8 @@ arctan shortcut.
 
 ## 6. What one reader holds
 
+*Gap and remedy: what one standpoint cannot hold (the back, the hidden sides, depth); the reader's own facing and nearness, the most one observation gives, and where it stops.*
+
 *In the split: payload through one reader's addresses. What faces the sweep is held; what the payload hides is not.*
 
 ### 6.1 Every standpoint holds best what faces it
@@ -3608,6 +3738,8 @@ Neither decides the 2 of the central hypothesis; see there.
 
 ## 7. What passes between readers
 
+*Gap and remedy: no shared address, nearness or unit; relations among things both readers read, a shared fact.*
+
 *In the split: addresses do not cross standpoints, and neither does nearness; relations among payloads do.*
 
 Readers standing apart share no address, no nearness and no unit. What passes is **relations among readings of things both
@@ -3659,6 +3791,8 @@ abstractly … it or something like it is needed."). The chain is reality, obser
 number line, agreed on afterwards between readers.
 
 ## 8. The ladder: what fixes what
+
+*Gap and remedy: the shape, the scale, the rotation, the count, the place; one remedy per rung (§8.5's table). §8.4, "The unit is not geometric", is the core: the amount comes only from agreement.*
 
 *In the split: shape recovered from payloads. Each rung says how much comes back, and from what.*
 
@@ -3768,6 +3902,8 @@ Beside the reading itself, three kinds of thing appear: a **carry**, which keeps
 **relay** (§10), which passes some of what it met on; and an **agreement**, which is communication, not geometry.
 
 ## 9. Time: the serial reader
+
+*Gap and remedy: a single observation; a history (returns in time, the reader's own travel, carrying to the present). §9.9's labs are known physics used as remedies.*
 
 *In the split: the order in which addresses are read is itself a lay, in time, while the payload moves.*
 
@@ -4173,6 +4309,8 @@ What they add to this paper:
    yet a reader that lays them at depth and reads faster than they touch keeps every one apart (TRK).
 
 ## 10. Relays and records
+
+*Gap and remedy: what is not in front of the reader now; an address whose payload is another address (a relay), or payload kept (a record).*
 
 *In the split: a relay is an address whose payload is another address; a record is payload kept.*
 
@@ -4935,11 +5073,11 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 - **R151** (1 Oct, 12:54–12:55): "things started to click for me when i realized that there actually was four distinct situations or even a fifth one where V is approximately known." / "yes, add the fifth situation, for completeness." Written up in the record's §2.4 and its Definition S5: v approximately known, the rung offset known within bounds; otherwise as situation 3.
 - **R152** (1 Oct, 14:14): "it would be situation 3, along with serial.     the only situation with a situated reader is situation 3." Written up in §2.4: serial and parallel are both situation 3; it is the only situation with a situated reader. Refined 14:20: "it would have to be the frontside before the corner."
 - **R153** (1 Oct, 15:37): "yes, its logical that the stitch would be at the corner." Written up in §2.4: the two readers' stitch is at the corner, not the mathematical horizon.
-- **R154** (1 Oct, 15:37): "No, there are no landmarks in closure, they are only found in situation 3, with unknown breadth." Written up in §2.4: closure (situation 1) has no landmarks; they belong to situation 3.
+- **R154** (1 Oct, 15:37): "No, there are no landmarks in closure, they are only found in situation 3, with unknown breadth." Written up in §2.4: closure (situation 1) has no landmarks; they belong to situation 3. *Corrected 9 October* (§4.5): landmarks exist in every situation; ordinary in 1 and 2, consequential in 3 and 4.
 - **R155** (1 Oct, 20:07–20:09): "seems to me that the parallel reader could just read the entire hemispere, not actually read it but lay down the addresses to it.    if I was a parallel reader,  thats your best move." / "yes, we have to think like what would be optimal, given this geometry, than watch what falls out.     this is an example.   the best move for a situated reader would be to lay down addresses to his hemisphere first." Written up in §2.4: a situated reader lays the range of its addresses over its whole open hemisphere first (refined 20:11: "no, not all the address the range of addresses."); payloads take addresses from it; R152 limits magnitudes, not addresses.
 - **R156** (1 Oct, 20:09): the method, same quote: what would be optimal given this geometry, then watch what falls out.
 - **R157** *("g ends at the corner" is now the share's, Corollary 3.5; R170; the record's Proposition 2.4 is Proposition 3.1 here)* (1 Oct, 20:24–20:30): "g is the sweep between 1 and 2, but not to the far horizon, but the near horizon, the corner.    I would love to be able to prove that." / "a simpler proof  may be simply proving that the corner seperates the frontside from the backside." / "yes." Proposition 2.4 in §2.4: the corner is the one point separating the front side from the back side symmetrically (the fixed point of the swap s ↦ 1/s), found with h alone; corollary: g ends at the corner.
-- **R158** *(the missing mean is the change's statistical face; its reason is Proposition 3.4)* (1 Oct, 21:38–21:49): "values beyond the corner are in terms of the unknown breadth of V, not the known breadth of H.       so right there we have a huge problem." (21:38) / "its like it becomes imaginary at that point." (21:39) / "no, it just means its undefined, when something is undefined, any operation on it is undifined." (21:42) / "well, actually its logrithmic in terms of h." (21:44) / "past the corner is the long tail." (21:47) / "that is very clean.   it must be true." (21:49) Written up in §2.4: front side plain proportion in h; past the corner values are in v's unknown breadth, undefined in proportion, defined as doublings (logarithmic in h); the back side is the long tail; the Cauchy's missing mean is the reason.
+- **R158** *(the missing mean is the change's statistical face; its reason is Proposition 3.4)* (1 Oct, 21:38–21:49): "values beyond the corner are in terms of the unknown breadth of V, not the known breadth of H.       so right there we have a huge problem." (21:38) / "its like it becomes imaginary at that point." (21:39) / "no, it just means its undefined, when something is undefined, any operation on it is undifined." (21:42) / "well, actually its logrithmic in terms of h." (21:44) / "past the corner is the long tail." (21:47) / "that is very clean.   it must be true." (21:49) Written up in §2.4: front side plain proportion in h; past the corner values are in v's unknown breadth, undefined in proportion, defined as doublings (logarithmic in h); the back side is the long tail; the Cauchy's missing mean is the reason. *Resolved 9 October* (§3.3, R158): beyond the corner is in terms of H standing in for V; the placeholder's factor V/H is the same on both sides, and the change of register is the flip's.
 - **R159** (1 Oct, 22:09, 22:11 "yes" to placing it first): "A situated observer does not possess a coordinate system for the world; it constructs an addressing scheme from relations available at its standpoint, and uses those addresses to encounter the world's magnitudes." The paper's opening statement.
 - **R160** (1 Oct, 22:26–22:27): "A bounded observer must construct an addressing scheme that classical geometry does not itself contain, because the observer does not possess the world's breadth as its own baseline. The corner is where that construction changes regime." (Tom, 1 Oct 22:26, through the ChatGPT exchange; 22:27: "If you agree, you can add it.") Placed at the head of §3.
 - **R161** (2 Oct, 09:06–09:21): "what is counter intuitive is that there would be a difference. human expectation is that there is no difference, the far field would just be a continuation of the near field. A shift to completely different mathmatic is what is weird, but your right, people have notice that." / "yes, that makes sense. its not different mathmatics, its just the inversion of perspective, and it is forced. explore what would happen if situated readers did not do that." / "Yes. foreground this idea as the main contribution of this paper." The main contribution, §3.2: near and far are one geometry; the inversion at the corner is forced.
