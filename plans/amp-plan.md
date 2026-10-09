@@ -157,3 +157,15 @@ line closely but not exactly, and miss most where the rows are flat, at the chil
   region next to the child's home.
 
 *Kill:* any of P3′a–d failed.
+
+*Run 2 as it came out (`plans/amp/amp2.py`, output `plans/amp/amp-run2.txt`): **killed, on P3′d only.***
+- P3′a held: baseline error 4.9×10⁻¹⁵. The fix worked.
+- P3′b held: a flat error stays once in its own region (A(j → j) = 1.0000) and is masked below (at most 2.2×10⁻¹³).
+- P3′c held: a sloped error is masked below to at most 0.0045 (0.0063 into the last level).
+- P3′d killed: the sloped leftover is not gathered next to each child's home. The tenth of the region next to home holds
+  4–50% of it (median about 40%), and the last child, fitted over its whole support, 4–25%.
+
+**What runs 1 and 2 say together.** Re-reading masks every error from above that a child's rows can hold (flat
+exactly; a slope to under 1% of δ), and leaves each region with its own term. The prediction about where a slope's
+small leftover sits was killed twice, at the walls (run 1) and next to home (run 2): it is spread along the region,
+not held at an end. So the wall slope of §3.3 sets how much survives, not where.
