@@ -63,6 +63,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
 - 9 October, sixty-second: SPN's pass at a review: binary branching is proved, the ratio of 2 rests on the in-place lay (deferred); one account of level of detail, k = log₂(Δ/(v·ε)); compile time stated exactly; the five situations by what is known.
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
+- 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-first: geometry → sweep → reading: the level of detail is what the sweep over the field yields, k = log₂(Δ/v) (SPN, the opening; Tom).
 - 9 October, sixtieth: SPN Appendix D, Proposition D.1: the halving is the only subdivision a level without a measure supplies (noted).
 - 9 October, fifty-ninth: §4, what the demos of 9 October left open: light's corner in quanta, a grain that is not square (SPN §14).
@@ -120,6 +121,12 @@ that angle rescaled, g = θ/(π/2).
   quarter of it, home to horizon, open at the horizon (*The Cauchy* §2, §11: the reader has "an open run — home at one end, the horizon at the other"); the closed circle
   needs every facing (§8, "The hand"). In the hand: "H and V share a denominator: your hand" (*Reader Geometry as
   Addressing*, R39).
+  *Same address space, one facing* (Tom, 9 October: "set V = H creates situation 1, so the situated readers address space
+  is the same as situation 1, effectively."; "the situated reader's is situation 1, but with only a single sweep/facing.").
+  The addresses are situation 1's exactly; what differs is their standing (V = H set, not known) and the facing (one, not
+  four). One facing of situation 1, seen from the standpoint, is the fisheye (read serially), the bell (counted at once),
+  the Cauchy (on v/h). "Not actually situation 1" is about what is known; "the same address space" about the addresses.
+  SPN §1, "Situation 1's address space, one facing: the fisheye".
 
   | | situation 1 | the situated reader's unit circle |
   |---|---|---|
