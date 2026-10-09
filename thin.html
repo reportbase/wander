@@ -9,16 +9,16 @@
     <!--
     thin.html: the same signal, a smaller share (9 October 2026, at Tom's "create multiple demos that explain the physics
     correspndance"). A standalone page like dial.html, outside the world and the labs. SPN §3.3, "The same signal, a
-    smaller share", and the central result's "The corner is where the resolved becomes the unresolved", on one screen.
+    smaller share", and the central result on where the resolved becomes the unresolved, on one screen.
 
-    A ball of radius a = 1, as bright per unit of view as any surface (B = 1), at distance v; a reader whose grains are
-    ε = 0.02 across. The ball covers A = π·(a/v)²/ε² grains:
+    A ball of radius a = 1, as bright per unit of view as any surface (B = 1), at distance d; a reader whose grains are
+    ε = 0.02 across. The ball covers A = π·(a/d)²/ε² grains:
       resolved (A >= 1, near): it lights about A grains, each as bright as ever; distance costs grains;
       unresolved (A < 1, far): it lights one grain, at brightness A; distance costs light.
-    The light caught is A either way (grains lit × brightest grain), falling as 1/v²: the inverse square, which has no
-    corner of its own; the switch, at A = 1 (v = d* = a·√π/ε ≈ 88.6), is the reader's grain.
-    Summed over every standpoint at v (4π·v² of them, each an aperture of 1), the light caught is the same at every v.
-    Links: ?v=30. Test hook: window.__thin.
+    The light caught is A either way (grains lit × brightest grain), falling as 1/d²: the inverse square, which has no
+    scale of its own; the switch, at A = 1 (d = d* = a·√π/ε ≈ 88.6), is the reader's grain: the resolution limit.
+    Summed over every standpoint at d (4π·d² of them, each an aperture of 1), the light caught is the same at every d.
+    (Distance is d in the text; the link and the code still call it v.) Links: ?v=30. Test hook: window.__thin.
     -->
     <style>
     :root {
@@ -60,18 +60,18 @@
     <p class="lede">A ball sends the same light whether you are near it or far. What changes is how much of it you catch:
     the light thins as it spreads over a bigger sphere, the inverse square. Your grain decides how the loss shows. Near,
     the ball covers many grains, each as bright as ever, and distance costs <span class="gold">grains</span>. Far, it is
-    under one grain, and distance costs <span class="teal">light</span>. The switch is your corner: the ball one grain
-    across. The law itself has no corner.</p>
+    under one grain, and distance costs <span class="teal">light</span>. The switch is your resolution limit: the ball one grain
+    across. The law itself has no scale.</p>
 
     <div class="panel">
         <div class="row">
-            <label for="dist">distance v</label>
+            <label for="dist">distance d</label>
             <input id="dist" type="range" min="0.3" max="4" step="0.005" value="1.48">
             <span id="vval" class="gold"></span>
         </div>
         <div class="row" style="margin-top:8px">
             <button data-v="10">near (10)</button>
-            <button data-v="88.6">at the corner (88.6)</button>
+            <button data-v="88.6">one grain across (88.6)</button>
             <button data-v="400">far (400)</button>
             <button data-v="3000">very far (3000)</button>
         </div>
@@ -92,20 +92,20 @@
             <h2>Grains lit and how bright</h2>
             <canvas id="chart" height="260"></canvas>
             <p class="note"><span class="gold">Gold</span>: grains lit (never fewer than one). <span class="teal">Teal</span>:
-            the brightest grain. <span style="color:var(--bright)">White, dotted</span>: the light caught, their product, 1/v² all
-            the way. The dashed line is the corner, where the ball is one grain across. Log scales.</p>
+            the brightest grain. <span style="color:var(--bright)">White, dotted</span>: the light caught, their product, 1/d² all
+            the way. The dashed line is the resolution limit, where the ball is one grain across. Log scales.</p>
         </div>
         <div class="panel">
             <h2>Where the rest goes</h2>
             <canvas id="sphere" height="260"></canvas>
-            <p class="note">The ball sends to every direction alike. At distance v its light is spread over a sphere of
-            4πv² standpoints (each an aperture of 1). Each catches 1/(4πv²) of it; all of them together catch it all, at
-            every v. One reader holds one share: the cost of being situated.</p>
+            <p class="note">The ball sends to every direction alike. At distance d its light is spread over a sphere of
+            4πd² standpoints (each an aperture of 1). Each catches 1/(4πd²) of it; all of them together catch it all, at
+            every d. One reader holds one share: the cost of being situated.</p>
         </div>
     </div>
 
     <p class="note">From <i>Serial, Parallel and Nowhere</i>, §3.3 ("The same signal, a smaller share") and the central
-    result ("The corner is where the resolved becomes the unresolved"); GRN run 8 (<code>plans/grn-plan.md</code>) and
+    result (where the resolved becomes the unresolved: the resolution limit); GRN run 8 (<code>plans/grn-plan.md</code>) and
     the labs' OLB runs 4–5 and LAD run 3 (<a href="labs.html?lab=OLB">the dark sky</a>,
     <a href="labs.html?lab=LAD">the distance ladder</a>). See also <a href="ladder.html">the ladder</a> and
     <a href="sky.html">the dark sky</a>.</p>
@@ -188,7 +188,7 @@
         g.setLineDash([2, 3]); curve(u => at(u).total, C.bright, 1.5); g.setLineDash([]);
         g.setLineDash([4, 4]); g.strokeStyle = C.red; g.lineWidth = 1;
         g.beginPath(); g.moveTo(X(Math.log10(DSTAR)), T); g.lineTo(X(Math.log10(DSTAR)), H - B); g.stroke(); g.setLineDash([]);
-        g.fillStyle = C.red; g.fillText('corner', X(Math.log10(DSTAR)) + 4, T + 12);
+        g.fillStyle = C.red; g.fillText('one grain', X(Math.log10(DSTAR)) + 4, T + 12);
         g.strokeStyle = C.bright; g.lineWidth = 1; g.beginPath(); g.moveTo(X(Math.log10(v)), T); g.lineTo(X(Math.log10(v)), H - B); g.stroke();
     }
 
@@ -206,8 +206,8 @@
         }
         g.strokeStyle = 'rgba(212,160,82,0.25)'; g.beginPath(); g.arc(cx, cy, r, 0, 2 * Math.PI); g.stroke();
         g.fillStyle = C.dim; g.font = '11px DM Mono, monospace';
-        g.fillText('standpoints at v: 4πv² = ' + fmt(4 * Math.PI * v * v), 8, 16);
-        g.fillText('each catches 1/(4πv²) = ' + fmt(1 / (4 * Math.PI * v * v)), 8, 32);
+        g.fillText('standpoints at d: 4πd² = ' + fmt(4 * Math.PI * v * v), 8, 16);
+        g.fillText('each catches 1/(4πd²) = ' + fmt(1 / (4 * Math.PI * v * v)), 8, 32);
         g.fillText('all together: ' + sphereSum(v).toFixed(3) + ' of the light', 8, 48);
         g.fillStyle = C.teal; g.fillText('you', cx + r + 6, cy + 4);
     }
@@ -215,17 +215,17 @@
     const fmt = x => x >= 1e4 || x < 1e-3 ? x.toExponential(2) : x >= 100 ? x.toFixed(0) : x.toFixed(3);
     function readout(v) {
         const o = at(v);
-        $('vval').textContent = 'v = ' + fmt(v) + (o.resolved ? '  (near: resolved)' : '  (far: under one grain)');
+        $('vval').textContent = 'd = ' + fmt(v) + (o.resolved ? '  (near: resolved)' : '  (far: under one grain)');
         $('readout').innerHTML =
             'the ball across:      ' + fmt(2 * alpha(v) / EPS) + ' grains\n' +
             'its area:             ' + fmt(o.A) + ' grains\n' +
             'grains lit:           <span class="gold">' + fmt(o.lit) + '</span>\n' +
-            'brightest grain:      <span class="teal">' + fmt(o.peak) + '</span>' + (o.resolved ? '  (as bright as up close)' : '  (dimmer by 1/v²)') + '\n' +
-            'light caught:         ' + fmt(o.total) + '  (1/v², always)\n\n' +
+            'brightest grain:      <span class="teal">' + fmt(o.peak) + '</span>' + (o.resolved ? '  (as bright as up close)' : '  (dimmer by 1/d²)') + '\n' +
+            'light caught:         ' + fmt(o.total) + '  (1/d², always)\n\n' +
             (o.resolved
                 ? '<span class="gold">Distance costs grains.</span> Each grain\nis as bright as ever; fewer are lit.'
                 : '<span class="teal">Distance costs light.</span> One grain\nholds the ball, and it dims.') +
-            '\n\nThe corner, one grain across: v = ' + DSTAR.toFixed(1) + '.\nIt is your grain\'s, not the law\'s.';
+            '\n\nThe resolution limit, one grain across: d = ' + DSTAR.toFixed(1) + '.\nIt is your grain\'s, not the law\'s.';
     }
 
     function draw() {

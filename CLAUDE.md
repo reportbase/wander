@@ -16,7 +16,7 @@ Google Fonts load from outside:
   names both pages' scripts see (that is how both can assign `starsNow`). Moved
   out of the old single page line for line. **A change here changes the labs'
   world: run every lab after it.** Since 9 Oct it also holds brightness (`lightAt`, L·A/(4πd²), the
-  inverse square), read only by LAD's third run (the standard-candle rung past the reader's corner).
+  inverse square), read only by LAD's third run (the standard-candle rung past the resolution limit).
 - `index.html`: the flying page (the world drawn, the controls, the readout, the
   live-view test hooks). Its "lab" button opens `labs.html` and its "demos" button `demos.html`; `?lab=CODE` and
   `?lab=all` forward there; `?lab=0` hides the button.
@@ -41,18 +41,18 @@ Google Fonts load from outside:
   g = (2/π)·atan(v/h) and read by a cursor, serially (4) or all at once (3), with the
   quarter circle (divided by the whole) beside it. `?ex=planets|shape|spread|line`,
   `?mode=parallel`. Not linked from index.html yet.
-- `dial.html`: **the h dial** (7 Oct 2026), a standalone page like `sweep.html`: GRN runs 3–5
-  (`plans/grn-plan.md`) on one screen. A model-free reader with pixels h wide reads two points one apart;
+- `dial.html`: **the H dial** (7 Oct 2026), a standalone page like `sweep.html`: GRN runs 3–5
+  (`plans/grn-plan.md`) on one screen. A model-free reader with pixels H wide reads two points one apart;
   turn the dial, look, slide h, approach from afar; charts of P("two") = min(s, 1) and of the cost of a sure
-  "two", (1 + s)·max(1, 1/s), least at the corner. `?s=` sets the dial; test hook `window.__dial`.
+  "two", (1 + s)·max(1, 1/s), least at one pixel across (GRN's "corner", s = 1, is the resolution limit). `?s=` sets the dial; test hook `window.__dial`.
 - `sphere.html`: **the sphere** (7 Oct 2026), a standalone page like `dial.html`: `number-line.md` §8 on one screen.
-  Three breadths and a scale k; the address on the octant (k changes nothing there); six chambers and the triple corner;
-  the unit cube's faces; near and far for a reader holding h; a body with relief in three bands shown by its size in
+  Three fill levels and a scale k; the address on the octant (k changes nothing there); six chambers and the triple corner;
+  the unit cube's faces; near and far for a reader holding H; a body with relief in three bands shown by its size in
   pixels (as `bandW`). `?v=&h=&f=&k=&P=&map=chambers|faces|reader|whole`; test hook `window.__sphere`.
 - `thin.html`, `ladder.html`, `sky.html`: **the physics correspondence** (9 Oct 2026, Tom: "create multiple demos that
   explain the physics correspndance"), standalone pages like `dial.html`. `thin.html`: the same signal, a smaller share
-  (the inverse square; near, distance costs grains, far, light; the switch at one grain is the reader's corner;
-  `?v=`, hook `window.__thin`). `ladder.html`: parallax, width and light, each giving out at its own corner (LAD;
+  (the inverse square; near, distance costs grains, far, light; the switch at one grain is the resolution limit;
+  `?v=`, hook `window.__thin`). `ladder.html`: parallax, width and light, each giving out at its own limit (LAD;
   `?D=&photons=1`, hook `window.__ladder`). `sky.html`: Olbers' dark sky, the lit share 1 − e^(−L/λ) and every shell
   giving the same light (OLB; `?L=&always=1`, hook `window.__sky`).
 - `play-points.html`, `play-resolve.html`, `play-ladder.html`, `play-sky.html`: **gameplay sketches** (9 Oct 2026, Tom:
@@ -99,7 +99,7 @@ Google Fonts load from outside:
   a reader given the shape reading below its grain. Run 3, the pixel the reader's and no model: "two" is certain
   exactly from s = 1, and below it has probability s (not killed). Run 4: below the corner 1/s looks, past it s
   pixels a look; a reader sliding its h by halvings needs about log₂(1/s) looks (not killed). Run 5, h as a
-  dial: paying per grain read, a sure reading costs (1+s)·max(1,1/s), least at the corner, same at s and 1/s.
+  dial: paying per grain read, a sure reading costs (1+s)·max(1,1/s), least at one pixel across, same at s and 1/s.
   Run 6, steering by its own pixel count from any start (it cannot know its corner): about one look per
   doubling (P1 not killed); within [0.5, 3] killed at one start (luck at the last level below the corner); the
   gain is one-sided, large from below, none from above for a single answer.
@@ -168,6 +168,16 @@ The repo is public, so the papers can be read on GitHub; the owner is fine with
 that for now (6 Oct 2026) and will decide later where they live. They are still
 kept off the Pages site. Don't move or remove them without asking.
 
+## Read this first: keep the case of h, v, H, V
+Since 9 Oct 2026 (Tom): lowercase **h, v** are fill levels, 0 to 1 (how much of H, how much of V): the geometry, scale-free.
+Uppercase **H, V** are breadths, amounts (H the reader's, V the other's); with the distance **d**, a size **Δ** and the
+reader's step **ε**, the physics. Never read v as V or v/h as V/H ((v·V)/(h·H) = (v/h)·(V/H)); the only bridge is a fill
+level times its breadth, where that breadth is known. Before verifying, editing or summarising any paper, plan or lab,
+check each symbol's case and domain, and name the bridge for any conclusion that crosses from geometry to physics. Text
+before 9 Oct often conflates them (SPN's opening warning and §1, "H and h kept apart"; `plans/vh-rulings-review.md`,
+`plans/physics-vh-audit.md`). "The corner" is h = v, which has no scale; a point set by amounts (one step across, a photon
+count) is physics (the resolution limit), not the corner.
+
 ## Read this first: THE LAB GUIDE
 The labs have their own rules, written in `labs.html`. Read two comments
 before touching anything lab-related:
@@ -193,7 +203,7 @@ In short:
   3. **labs.html:** a card per lab, BAL run from its button, and `index.html?lab=`
      forwarding to `labs.html`.
   4. **sweep.html:** every example lays on the sweep, and the cursor sweeps.
-  5. **dial.html:** a sure "two" costs about 3, 2 and 3 at s = 0.5, 1 and 2 (least at the corner).
+  5. **dial.html:** a sure "two" costs about 3, 2 and 3 at s = 0.5, 1 and 2 (least at one pixel across).
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it.

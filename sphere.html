@@ -11,14 +11,14 @@
     standalone page, like sweep.html and dial.html: not part of the world (world.js) or the labs (labs.html). It draws
     papers/number-line.md §8 on one screen.
 
-    Three breadths (v, h, f) in [0, 1]³, times a scale k. Dividing out the scale leaves two relations and an address on
+    Three fill levels (v, h, f) in [0, 1]³, times a scale k (k·(v, h, f) are the amounts). Dividing out the scale leaves two relations and an address on
     the unit sphere's first octant; k changes nothing there (the scale is lost).
       the octant: area π/2, cut by three corner arcs (v = h, h = f, v = f) into six chambers, one per ordering; the arcs
         meet at v = h = f, the corner proper;
-      the unit cube: a ray meets the face of its largest breadth; the three faces meeting at (1, 1, 1) have area 3
+      the unit cube: a ray meets the face of its largest fill level; the three faces meeting at (1, 1, 1) have area 3
         (the plane's bent unit line has length 2);
       a held whole (situations 1, 2): near field throughout, the chambers mirrors;
-      a reader holding h (situations 3, 4): two corners, v/h = 1 and f/h = 1; near both, far in one, far in both;
+      a reader holding H (situations 3, 4): two corners, v/h = 1 and f/h = 1; near both, far in one, far in both;
       depth: a body, ball plus relief in three bands (cos(nπ·lat) times cos/sin(m·lon), as the res/ bodies), each band
         shown once its features cover 2 to 5 pixels (bandW in index.html); the address points back to the body's point,
         r times a whole whose size is not known.
@@ -68,7 +68,7 @@
 <body>
 <main>
     <h1>The sphere</h1>
-    <p class="lede">Three breadths, <span class="teal">v</span>, <span class="gold">h</span> and <span class="violet">f</span>.
+    <p class="lede">Three fill levels, each from 0 to 1, <span class="teal">v</span>, <span class="gold">h</span> and <span class="violet">f</span>.
     Each triple is a ray into the wedge between three axes, and the sphere's first octant is one drawing of that wedge.
     Divide out their scale and two relations are left: an address on the octant. The address points back
     to the shape, but only as a relation; the scale is lost for good. Change <span class="bright">k</span> and nothing
@@ -76,7 +76,7 @@
 
     <div class="grid">
         <div class="panel">
-            <h2>Breadths and scale</h2>
+            <h2>Fill levels and scale</h2>
             <div class="sl"><label for="v" class="teal">v</label><input id="v" type="range" min="0" max="1" step="0.005"><span id="vv"></span></div>
             <div class="sl"><label for="h" class="gold">h</label><input id="h" type="range" min="0" max="1" step="0.005"><span id="hv"></span></div>
             <div class="sl"><label for="f" class="violet">f</label><input id="f" type="range" min="0" max="1" step="0.005"><span id="fv"></span></div>
@@ -94,7 +94,7 @@
                 <button data-m="chambers">chambers</button>
                 <button data-m="faces">faces</button>
                 <button data-m="whole">held whole (1, 2)</button>
-                <button data-m="reader">reader holding h (3, 4)</button>
+                <button data-m="reader">reader holding H (3, 4)</button>
             </div>
             <div id="readout"></div>
         </div>
@@ -102,8 +102,8 @@
             <h2>Octant and unit cube</h2>
             <canvas id="space" height="380"></canvas>
             <p class="note">Drag to turn. The octant of the unit sphere, its three corner arcs meeting at v = h = f; the unit
-            cube's three faces at (1, 1, 1). The ray carries the breadths (k times them, the open dot) through the address
-            on the sphere (white) to the face of the largest breadth (square).</p>
+            cube's three faces at (1, 1, 1). The ray carries the fill levels (k times them, the open dot) through the address
+            on the sphere (white) to the face of the largest (square).</p>
         </div>
     </div>
 
@@ -112,7 +112,7 @@
             <h2>The relation set, flat</h2>
             <canvas id="map" height="330"></canvas>
             <p class="note">The octant seen from the corner (each direction divided by v + h + f): its three vertices are
-            the three breadths alone, its centre the corner. Straight lines here are the sphere's great arcs; areas are
+            the three fill levels alone, its centre the corner. Straight lines here are the sphere's great arcs; areas are
             not to scale.</p>
         </div>
         <div class="panel">
@@ -129,15 +129,15 @@
     <div class="panel">
         <h2>The plane and the sphere</h2>
         <div class="scroll"><table>
-            <tr><th></th><th>two breadths (v, h): the circle</th><th>three breadths (v, h, f): the sphere</th></tr>
+            <tr><th></th><th>two fill levels (v, h): the circle</th><th>three fill levels (v, h, f): the sphere</th></tr>
             <tr><td>relations left</td><td>1: v/h</td><td>2: v/h, f/h</td></tr>
             <tr><td>lost</td><td>the scale</td><td>the scale</td></tr>
-            <tr><td>relation set</td><td>quarter circle, length π/2</td><td>octant, area π/2 (four breadths: π²/8)</td></tr>
+            <tr><td>relation set</td><td>quarter circle, length π/2</td><td>octant, area π/2 (four fill levels: π²/8)</td></tr>
             <tr><td>corner</td><td>a point, v = h</td><td>three arcs, meeting at v = h = f</td></tr>
             <tr><td>fairness to the facings</td><td>one mirror, two halves</td><td>three mirrors, six chambers</td></tr>
             <tr><td>the bent unit</td><td>two arms of the unit square, length 2</td><td>three faces of the unit cube, area 3</td></tr>
             <tr><td>held whole (1, 2)</td><td>near field only, two mirrored halves</td><td>near field only, six mirrored chambers</td></tr>
-            <tr><td>reader holding h (3, 4)</td><td>near, or far</td><td>near in both, far in one, far in both</td></tr>
+            <tr><td>reader holding H (3, 4)</td><td>near, or far</td><td>near in both, far in one, far in both</td></tr>
             <tr><td>depth</td><td>r(θ) − 1</td><td>r(θ, φ) − 1: relief</td></tr>
         </table></div>
         <p class="note">From <code>papers/number-line.md</code> §8 (a working paper: a reading, not a ruling). See also
@@ -159,18 +159,18 @@
         const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, h];
     }
 
-    // ── the relation: breadths → address, chamber, face, the reader's corners ──
+    // ── the relation: fill levels → address, chamber, face, the reader's corners ──
     const norm = p => { const l = Math.hypot(p[0], p[1], p[2]) || 1; return [p[0] / l, p[1] / l, p[2] / l]; };
     const address = (v, h, f) => norm([v, h, f]);
     const order = p => [0, 1, 2].sort((a, b) => p[a] - p[b]);
     const chamber = p => order(p).map(i => AX[i]).join(' < ');
     const face = p => AX[order(p)[2]];
     const onCube = p => { const m = Math.max(p[0], p[1], p[2]) || 1; return [p[0] / m, p[1] / m, p[2] / m]; };
-    function reader(p) {   // a reader holding h: two corners, v/h = 1 and f/h = 1
+    function reader(p) {   // a reader holding H: two corners, v/h = 1 and f/h = 1
         const fv = p[0] > p[1], ff = p[2] > p[1];
         return fv && ff ? 'far in both' : fv ? 'far in v' : ff ? 'far in f' : 'near in both';
     }
-    // the six chambers' colours: the largest breadth's colour, lighter or darker by the middle one
+    // the six chambers' colours: the largest fill level's colour, lighter or darker by the middle one
     function chamberRGB(p) {
         const o = order(p), c = RGB[AX[o[2]]], t = o[1] === (o[2] + 1) % 3 ? 1.0 : 0.62;
         return c.map(x => Math.round(x * t));
@@ -254,7 +254,7 @@
         const cc = pr(norm([1, 1, 1])); g.fillStyle = C.bright; g.beginPath(); g.arc(cc[0], cc[1], 4, 0, 7); g.fill();
         const cub = pr([1, 1, 1]); g.strokeStyle = C.bright; g.strokeRect(cub[0] - 3, cub[1] - 3, 6, 6);
         g.font = '11px DM Mono, monospace'; g.fillStyle = C.dim; g.fillText('(1,1,1)', cub[0] + 6, cub[1] - 4);
-        // the ray: origin → k·breadths → address → the cube's face
+        // the ray: origin → k·(v, h, f) → address → the cube's face
         const pp = p(), kp = pp.map(x => x * st.k), ad = address(...pp), cu = onCube(pp);
         const o = pr([0, 0, 0]), far = pr(cu.map(x => x * 1.08));
         g.strokeStyle = 'rgba(230,228,238,0.7)'; g.beginPath(); g.moveTo(o[0], o[1]); g.lineTo(far[0], far[1]); g.stroke();
@@ -262,7 +262,7 @@
         g.strokeStyle = C.bright; g.beginPath(); g.arc(b[0], b[1], 5, 0, 7); g.stroke();
         g.fillStyle = C.bright; g.beginPath(); g.arc(a[0], a[1], 5, 0, 7); g.fill();
         g.fillStyle = AXC[AX.indexOf(face(pp))]; g.fillRect(c[0] - 5, c[1] - 5, 10, 10);
-        g.fillStyle = C.dim; g.fillText('k·breadths', b[0] + 8, b[1] + 12);
+        g.fillStyle = C.dim; g.fillText('k·(v, h, f)', b[0] + 8, b[1] + 12);
     }
 
     // ── the flat map: barycentric (v, h, f)/(v + h + f) ──
@@ -300,8 +300,8 @@
         const a = to(p()); g.strokeStyle = C.bright; g.lineWidth = 2;
         g.beginPath(); g.arc(a[0], a[1], 6, 0, 7); g.stroke(); g.lineWidth = 1;
         g.fillStyle = C.dim;
-        const key = { chambers: 'six chambers, one per ordering', faces: 'three faces: the largest breadth',
-            whole: 'held whole: near field throughout, mirrors only', reader: 'holding h: gold near both, red far in both' }[st.mode];
+        const key = { chambers: 'six chambers, one per ordering', faces: 'three faces: the largest fill level',
+            whole: 'held whole: near field throughout, mirrors only', reader: 'holding H: gold near both, red far in both' }[st.mode];
         g.fillText(key, 8, 14);
     }
 
@@ -351,13 +351,13 @@
         const r = reader(pp), sv = st.v / st.h, sf = st.f / st.h;
         const side = (s, n) => s < 1 ? `${n}/h = ${fmt(s)}: near` : `${n}/h = ${fmt(s)}: far, ${lv(s)} levels past the corner`;
         const lines = [
-            `breadths   k·(v, h, f) = (${pp.map(x => fmt(x * st.k)).join(', ')})`,
+            `amounts    k·(v, h, f) = (${pp.map(x => fmt(x * st.k)).join(', ')})`,
             `relations  v/h = ${st.h ? fmt(sv) : '∞'}, f/h = ${st.h ? fmt(sf) : '∞'}   (the same for every k)`,
             `address    (${ad.map(fmt).join(', ')}), ${lat.toFixed(1)}° from f, ${lon.toFixed(1)}° from v toward h`,
             `chamber    ${chamber(pp)}`,
             `cube face  ${face(pp)} = 1, at (${cu.map(fmt).join(', ')})`,
             st.mode === 'reader' || st.mode === 'chambers' || st.mode === 'faces'
-                ? `holding h  ${r}:\n           ${st.h ? side(sv, 'v') : 'h = 0: nothing held'}\n           ${st.h ? side(sf, 'f') : ''}`
+                ? `holding H  ${r}:\n           ${st.h ? side(sv, 'v') : 'h = 0: nothing held'}\n           ${st.h ? side(sf, 'f') : ''}`
                 : `held whole near field throughout: the chambers are mirrors, not squeezes`,
             `the shape  r = ${rFull.toFixed(4)} at this address, depth ${(rFull - 1 >= 0 ? '+' : '') + (rFull - 1).toFixed(4)};`,
             `           at ${st.P} pixels across the reader sees ${(rSeen - 1 >= 0 ? '+' : '') + (rSeen - 1).toFixed(4)}`,

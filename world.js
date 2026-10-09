@@ -227,8 +227,8 @@ let starsNow = [];
 // ── brightness (9 Oct 2026; Tom: "yes, do all of them", after SPN's "the same signal, a smaller share"). A body sending
 //    light L spreads it over the sphere about it; a reader at d holding an aperture A (its own unit) receives L·A/(4π·d²)
 //    of it, whether the body covers many of the reader's addresses or under one: the inverse square, with nothing in
-//    between. The law has no corner of its own; the reader's grain puts one in. Read only by LAD's third run so far:
-//    no other lab, and nothing the flying page draws, uses it. ──
+//    between. The law has no scale of its own; the reader's grain brings one (the resolution limit). Read only by
+//    LAD's third run so far: no other lab, and nothing the flying page draws, uses it. ──
 const lightAt = (L, d, A = 1) => L * A / (4 * PI * d * d);
 // the reader's own path, so that the bodies that heed it (curious, shy) also get only what has reached them
 const RH = {
