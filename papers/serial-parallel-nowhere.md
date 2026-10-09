@@ -51,7 +51,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the grain's shape, reading through the grain by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -566,6 +566,8 @@ One h means one grain, so one level of detail serves both directions: each level
 quadtree, as mipmaps halve an image in both directions. The square is not symmetric under rotation, as the octant is;
 that is right for a situated reader, whose h is special and whose two directions are its own axes (the flat hand and the
 upright hand). The octant, all three held alike, stays the unsituated picture. Open: whether v and v₂ always share one level of detail.
+(9 October: they share it only if the grain is alike in both directions; OLB's fourth run, killed by cells thin near the
+poles, showed a grain that is not square giving each direction its own corner; §14.)
 
 **The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't
 need to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all
@@ -2220,6 +2222,8 @@ detail**. Why:
   with a finite grain puts one switch into it, at the distance where the object is one grain wide. Physics keeps that
   switch outside the law too, in the instrument (resolved against point source, the resolution limit). So the corner is
   not in what is sent; it is in who receives it, as the paper holds throughout (the corner is the reader's, §3).
+  *Qualified, 9 October*: the law has no corner, but light arrives in quanta, and a reading by light gives out where too
+  few arrive: a corner on the signal's side, not the reader's (§14, "From the demos and labs of 9 October").
 - **Depth, the slider and the level of detail** (Tom, 8 October: "we have describe g as the slider between the unit circle and the shape."; "so depth is the difference between situation 2 and situation 1."; "but it seems to be [0,1] in unsituated view and [0,PI/2] in situated view."). Depth is B(θ) − 1, the shape less the unit circle:
   situation 2 less situation 1. The slider between them is R140's (written g then; m since R170, §2.1): r = 1 + m · (B − 1),
   m = 0 the circle, m = 1 the shape (R121: "the radius from 1 to the breadth"). With the whole held (unsituated), m is a
@@ -4546,6 +4550,27 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
   - *Crossing open space*: the child rule stands only where something was met, so a chain from inside a winding shape stops at the mouth. Is that a limit of a situated reader, or of the rule? Any rule that steps into the open seems to need something the record does not hold.
   - *A better child rule*: fewer readers wasted along outer walls, with the levels needed unchanged.
   - *Holding depth along the chain*: the nesting runs used exact distances. The joined test is the chain of NST with each reader holding its meetings in nested depth addresses (SIT).
+- **From the demos and labs of 9 October** (Tom, 9 October: "what did you learn from doing these demos?", then "proceed with paper updates"; `thin.html`, `ladder.html`, `sky.html`, the four `play-*.html`
+  sketches; OLB runs 4–5, LAD run 3; Claude's readings, unruled).
+  - *A grain on the sender's side: light has a corner too.* The inverse-square law has no corner (§3.3, "The law has no
+    corner"), but light arrives in quanta. A reading by light holds past the reader's corner only while enough photons
+    arrive; where fewer than a few do, it gives out (`ladder.html`, "count photons": error 1/(2√N)). That corner is not the
+    reader's grain but the signal's. Open: whether the paper's "the corner is the reader's" should read "the corner is the
+    grain's", wherever the grain sits, in the reader or in what it receives; and how the two corners combine when both are
+    present (the reader's at one grain across, the signal's at a few quanta).
+  - *The grain's shape, not only its size.* OLB's fourth run was killed by cells equal in area but long and thin near the
+    poles: there "one grain across" meant different widths in different directions, and small bodies slipped between rows.
+    A grain that is not square gives each direction of reading its own corner. Open: this is the question left at §1
+    ("h, v, v₂, then the sweep"), whether v and v₂ share one level of detail, now with a mechanism: they share it only if
+    the grain is alike in both directions.
+  - *The corner is where reading stops being easy, not where it stops.* A reader that moves reads through its grain: LAD's
+    parallax, with the reader's own travel shifting its held addresses back and forth (dither), read distances where the
+    whole shift was under two addresses, which a reading rounded to whole addresses (`ladder.html`) cannot. And a reader
+    given the shape reads below its grain by its light (GRN runs 7–8). Open: whether the corner is better stated as the
+    point past which a reading costs more (looks, travel, light) than as a limit.
+  - *Most of a sky is past the corner.* In a field of bodies strewn evenly, the far ones outnumber the near, so most of
+    what a reader sees is unresolved points (`play-points.html`): how the unresolved are read, as chance in Wander until
+    9 October (OLB run 5) or as dimming with brightness (LAD run 3), decides what the sky is.
 - The older corpus questions this work did not touch remain in *Reader Geometry as Addressing* §14.
 
 ---
