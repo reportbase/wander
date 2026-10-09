@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Far lights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    play-points.html: far lights (9 October 2026, at Tom's "explore game play possibilites in demos, each demo should
+    focus on a narrow features. so they can be explored and iterated seperately"). A gameplay sketch, standalone, one
+    feature: how a body far off is drawn once it is under one pixel.
+
+    3,000 bodies in a cube 6000 across, radii 0.5 to 10, every surface equally bright (so a body's light goes as its area).
+    You fly through them. Each frame a body's radius in pixels is p = f·r/d (f the focal length in pixels).
+      p >= 0.5: drawn as a disc of radius p, full brightness (resolved);
+      p < 0.5, three ways to choose from:
+        dim     a point whose brightness is its area in pixels, π·p²/(π·0.5²): the inverse square, as the eye sees it;
+        vanish  not drawn (what a renderer does that forgets the point);
+        pixel   a full-bright point (the usual game shortcut: far things never smaller than a pixel, so too bright).
+    Links: ?mode=dim|vanish|pixel. Test hook: window.__points.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Far lights</h1>
+    <p class="lede">One feature: how a body is drawn once it is smaller than a pixel. Fly through 3,000 bodies. Near ones
+    are discs. Far ones fall under a pixel, and then there is a choice: let them <b>dim</b> by the inverse square, as
+    light does; let them <b>vanish</b>; or keep them a full-bright <b>pixel</b>, the usual shortcut. Compare the skies.</p>
+    <div class="panel">
+        <div class="row">
+            <button data-mode="dim" class="on">dim (inverse square)</button>
+            <button data-mode="vanish">vanish under a pixel</button>
+            <button data-mode="pixel">never under a pixel</button>
+            <button id="fly">fly: on</button>
+        </div>
+        <canvas id="view" height="420" style="margin-top:10px"></canvas>
+        <div id="hud"></div>
+        <p class="note">Drag to look around. Bodies are coloured by kind; every surface is equally bright, so a far body
+        that dims keeps its colour and loses only its light.</p>
+    </div>
+    <p class="note">Behind it: <a href="thin.html">the same signal, a smaller share</a> (the corner at one pixel across)
+    and the labs' LAD run 3. Other sketches: <a href="play-resolve.html">resolving</a>,
+    <a href="play-ladder.html">the navigator's ladder</a>, <a href="play-sky.html">the sky fills</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    const N = 3000, BOX = 6000, KINDS = [[255, 214, 160], [150, 200, 255], [255, 150, 120], [190, 255, 210]];
+    let seed = 7;
+    const rnd = () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
+    const bodies = Array.from({ length: N }, () => ({ p: [(rnd() - 0.5) * BOX, (rnd() - 0.5) * BOX, (rnd() - 0.5) * BOX],
+        r: 0.5 + 9.5 * rnd() ** 2, k: Math.floor(rnd() * 4) }));
+    const cam = { p: [0, 0, -BOX / 2], yaw: 0, pitch: 0 };
+    let mode = new URLSearchParams(location.search).get('mode') || 'dim', flying = true, stats = {};
+
+    // a body's radius in pixels, and the light its pixel catches when it is under one pixel
+    const pixR = (r, d, f) => f * r / d;
+    function shade(p) {
+        if (p >= 0.5) return { kind: 'disc', alpha: 1 };
+        if (mode === 'vanish') return { kind: 'none', alpha: 0 };
+        if (mode === 'pixel') return { kind: 'point', alpha: 1 };
+        return { kind: 'point', alpha: (p * p) / 0.25 }; /* area in pixels over a pixel's: the inverse square */
+    }
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = +cv.getAttribute('height');
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+        return [cv.getContext('2d'), cv.width, cv.height];
+    }
+    function frame() {
+        const cv = $('view'), [g, W, H] = fit(cv), f = 0.9 * W;
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        const cy = Math.cos(cam.yaw), sy = Math.sin(cam.yaw), cp = Math.cos(cam.pitch), sp = Math.sin(cam.pitch);
+        const fwd = [sy * cp, sp, cy * cp];
+        if (flying) for (let i = 0; i < 3; i++) { cam.p[i] += fwd[i] * 6; if (cam.p[i] > BOX / 2) cam.p[i] -= BOX; if (cam.p[i] < -BOX / 2) cam.p[i] += BOX; }
+        let discs = 0, points = 0, hidden = 0, light = 0;
+        const draw = [];
+        for (const b of bodies) {
+            let x = b.p[0] - cam.p[0], y = b.p[1] - cam.p[1], z = b.p[2] - cam.p[2];
+            x -= BOX * Math.round(x / BOX); y -= BOX * Math.round(y / BOX); z -= BOX * Math.round(z / BOX); /* the cube wraps */
+            const xr = cy * x - sy * z, zr0 = sy * x + cy * z, yr = cp * y - sp * zr0, zr = sp * y + cp * zr0;
+            if (zr <= 1) continue;
+            const d = Math.hypot(x, y, z), sx = W / 2 + f * xr / zr, syy = H / 2 - f * yr / zr, p = pixR(b.r, d, f), s = shade(p);
+            if (sx < -50 || sx > W + 50 || syy < -50 || syy > H + 50) continue;
+            if (s.kind === 'disc') discs++; else if (s.kind === 'point') points++; else hidden++;
+            light += s.kind === 'disc' ? Math.PI * p * p : s.kind === 'point' ? s.alpha * Math.PI * 0.25 : 0;
+            draw.push({ zr, sx, syy, p, s, c: KINDS[b.k] });
+        }
+        draw.sort((a, b) => b.zr - a.zr);
+        for (const o of draw) {
+            const [r, gg, bb] = o.c;
+            if (o.s.kind === 'disc') { g.fillStyle = `rgb(${r},${gg},${bb})`; g.beginPath(); g.arc(o.sx, o.syy, o.p, 0, 2 * Math.PI); g.fill(); }
+            else if (o.s.kind === 'point') { g.fillStyle = `rgba(${r},${gg},${bb},${Math.max(0.004, o.s.alpha).toFixed(4)})`; g.fillRect(o.sx - 0.5, o.syy - 0.5, 1.5, 1.5); }
+        }
+        stats = { discs, points, hidden, light };
+        $('hud').textContent = `mode: ${mode}   discs (resolved): ${discs}   points: ${points}   not drawn: ${hidden}\n` +
+            `light on screen: ${light.toFixed(0)} pixel-units` + (mode === 'pixel' ? '  (too bright: far points count as a whole pixel each)' : mode === 'vanish' ? '  (too dark: far bodies lost)' : '  (as light falls: 1/d²)');
+        requestAnimationFrame(frame);
+    }
+
+    // look by dragging (mouse or touch)
+    let drag = null;
+    $('view').addEventListener('pointerdown', e => { drag = [e.clientX, e.clientY]; $('view').setPointerCapture(e.pointerId); });
+    $('view').addEventListener('pointermove', e => { if (!drag) return; cam.yaw += (e.clientX - drag[0]) * 0.005; cam.pitch = Math.max(-1.4, Math.min(1.4, cam.pitch - (e.clientY - drag[1]) * 0.005)); drag = [e.clientX, e.clientY]; });
+    $('view').addEventListener('pointerup', () => { drag = null; });
+    document.querySelectorAll('[data-mode]').forEach(b => { b.classList.toggle('on', b.dataset.mode === mode);
+        b.addEventListener('click', () => { mode = b.dataset.mode; document.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('on', x === b)); }); });
+    $('fly').addEventListener('click', () => { flying = !flying; $('fly').textContent = 'fly: ' + (flying ? 'on' : 'off'); });
+    requestAnimationFrame(frame);
+
+    window.__points = { pixR, shade: (p, m) => { const keep = mode; mode = m; const s = shade(p); mode = keep; return s; }, stats: () => stats };
+})();
+</script>
+</body>
+</html>

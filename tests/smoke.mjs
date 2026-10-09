@@ -248,6 +248,25 @@ try {
   await page.click('#always'); await page.waitForTimeout(100);
   console.log(`${failures.length === before10 ? 'ok  ' : 'FAIL'} sky.html (share within ${Math.max(...sk.r.map(Math.abs)).toFixed(4)} of 1 − e^(−L/λ); always been, all lit)`);
 
+  // ── 11. gameplay sketches: each page's one mechanic, through its hook ──
+  current = 'play-*.html';
+  const before11 = failures.length;
+  await page.goto(new URL('play-points.html', base).href, { waitUntil: 'load' });
+  const pp = await page.evaluate(() => ({ dim: __points.shade(0.25, 'dim').alpha, van: __points.shade(0.25, 'vanish').kind, pix: __points.shade(0.25, 'pixel').alpha, disc: __points.shade(2, 'dim').kind }));
+  if (Math.abs(pp.dim - 0.25) > 1e-9 || pp.van !== 'none' || pp.pix !== 1 || pp.disc !== 'disc') failures.push(`[play-points.html] ${JSON.stringify(pp)}`);
+  await page.goto(new URL('play-resolve.html', base).href, { waitUntil: 'load' });
+  const pr = await page.evaluate(() => [0.2, 0.6, 7, 30, 100].map(p => __resolve.stageOf(p)));
+  if (pr.join() !== '0,1,2,3,4') failures.push(`[play-resolve.html] stages ${pr}`);
+  await page.goto(new URL('play-ladder.html', base).href, { waitUntil: 'load' });
+  const pl = await page.evaluate(() => { const g = __navigator, a = g.measure(0, 'parallax'), far = g.measure(8, 'parallax'), lockd = g.measure(8, 'light');
+    g.use(0, 'parallax'); g.log(0); const lit = g.measure(8, 'light'), wid = g.measure(8, 'width');
+    return { a: a.D, far: far.D, lockd: lockd.D, lit: lit.D, wid: wid.D, learned: !!g.learned().A }; });
+  if (!(pl.a > 0) || pl.far !== null || pl.lockd !== null || !pl.learned || !(Math.abs(pl.lit / 800000 - 1) < 0.25) || pl.wid !== null) failures.push(`[play-ladder.html] ${JSON.stringify(pl)}`);
+  await page.goto(new URL('play-sky.html', base).href, { waitUntil: 'load' });
+  const ps = await page.evaluate(() => { const s = __skyfill, k = s.arrived(10); return { k, exp: s.expected(10), back: s.timeFromCount(k), none: s.arrived(0.1), all: s.arrived(1000) }; });
+  if (Math.abs(ps.k - ps.exp) > 3 * Math.sqrt(ps.exp) || Math.abs(ps.back / 10 - 1) > 0.1 || ps.none !== 0 || ps.all !== 1500) failures.push(`[play-sky.html] ${JSON.stringify(ps)}`);
+  console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
@@ -258,7 +277,7 @@ try {
     const r = await page.request.get(new URL(pth, base).href);
     if (!r.ok()) failures.push(`[demos.html] ${pth} answers ${r.status()}`);
   }
-  if (pages.length < 8) failures.push(`[demos.html] links to only ${pages.length} pages`);
+  if (pages.length < 12) failures.push(`[demos.html] links to only ${pages.length} pages`);
   await page.goto(new URL('index.html', base).href, { waitUntil: 'load' });
   await Promise.all([page.waitForURL(/demos\.html/, { timeout: 15000 }), page.click('#demosOpen')]);
   console.log(`${failures.length === before7 ? 'ok  ' : 'FAIL'} demos.html (${pages.length} pages, ${links.length} links)`);

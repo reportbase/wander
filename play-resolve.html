@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Resolving</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    play-resolve.html: resolving (9 October 2026, at Tom's "explore game play possibilites in demos, each demo should focus
+    on a narrow features"). A gameplay sketch, standalone, one feature: the moments a body changes as you approach it.
+
+    A planet of radius 1 at distance d; its radius in pixels p = f/d (f = 600). The stages, each an event the first time
+    it is crossed:
+      a point       p < 0.5: under one pixel; it dims as 1/d² (its light only);
+      resolved      p >= 0.5: one pixel across, a disc (the reader's corner: its size is now readable);
+      shape         p >= 6: the broad relief shows (the outline is not round);
+      terrain       p >= 24: the middle band (ridges, basins);
+      surface       p >= 80: the fine band (craters).
+    Each band fades in over a factor of 2.5 in p, as the flying page's bandW does. Smaller things have less detail: the
+    planet is the same at every distance; what you catch of it grows with its size in pixels.
+    Links: ?d=50. Test hook: window.__resolve.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 260px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 3fr 2fr; gap: 14px; align-items: start }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #log { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; min-height: 9em }
+    .note { color: var(--dim); font-size: 12.5px }
+    .gold { color: var(--gold) } .teal { color: var(--teal) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Resolving</h1>
+    <p class="lede">One feature: the moments a body changes as you come in. It is the same planet all the way; what you
+    catch of it grows with its size in pixels. A dimming point; then one pixel across, a disc (now you can read its size);
+    then its shape, its terrain, its surface. Each first crossing is an event, the kind a game can reward.</p>
+    <div class="panel">
+        <div class="row">
+            <label for="dist" style="color:var(--dim)">distance</label>
+            <input id="dist" type="range" min="0.5" max="5" step="0.002" value="4.5">
+            <span id="dval" class="gold"></span>
+        </div>
+        <div class="row" style="margin-top:8px">
+            <button id="approach">approach</button>
+            <button id="reset">start far off</button>
+        </div>
+        <div class="grid" style="margin-top:10px">
+            <canvas id="view" height="380"></canvas>
+            <div><div id="stage" class="teal" style="font-size:18px"></div><div id="log"></div></div>
+        </div>
+        <p class="note">Bands fade in over a factor of 2.5 in size, as the flying page's do (<code>bandW</code>), so nothing
+        pops. Under one pixel the point's brightness is its area in pixels: the inverse square.</p>
+    </div>
+    <p class="note">Behind it: <a href="thin.html">the same signal, a smaller share</a> (the corner at one pixel) and
+    <i>Serial, Parallel and Nowhere</i> §3.3 ("Smaller drives less detailed"). Other sketches:
+    <a href="play-points.html">far lights</a>, <a href="play-ladder.html">the navigator's ladder</a>,
+    <a href="play-sky.html">the sky fills</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    const F = 600;
+    const STAGES = [['a point', 0], ['resolved: a disc', 0.5], ['shape: the broad relief', 6], ['terrain: the middle band', 24], ['surface: the fine band', 80]];
+    const smooth = (a, b, x) => { const t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+    const bandW = p => [smooth(6, 15, p), smooth(24, 60, p), smooth(80, 200, p)];
+    const stageOf = p => { let k = 0; STAGES.forEach(([, at], i) => { if (p >= at) k = i; }); return k; };
+    let seen = new Set(), log = [], auto = false, last = null;
+
+    // the planet's relief, three bands of a few sines each (seeded, the same every visit)
+    let seed = 11;
+    const rnd = () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
+    const band = (n0, n1, amp, k) => Array.from({ length: k }, () => ({ n: n0 + Math.floor(rnd() * (n1 - n0)), a: amp * (0.5 + rnd()), ph: rnd() * 6.283 }));
+    const B = [band(2, 4, 0.06, 3), band(8, 14, 0.02, 4), band(30, 55, 0.006, 6)];
+    const craters = Array.from({ length: 40 }, () => ({ r: Math.sqrt(rnd()) * 0.85, t: rnd() * 6.283, s: 0.02 + 0.06 * rnd() }));
+    const radiusAt = (th, w) => 1 + B.reduce((s, bd, i) => s + w[i] * bd.reduce((q, c) => q + c.a * Math.sin(c.n * th + c.ph), 0), 0);
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = +cv.getAttribute('height');
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, h];
+    }
+    function draw() {
+        const d = 10 ** +$('dist').value, p = F / d, [g, W, H] = fit($('view')), cx = W / 2, cy = H / 2, w = bandW(p), k = stageOf(p);
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        if (p < 0.5) {
+            g.fillStyle = `rgba(214,190,150,${Math.max(0.01, p * p / 0.25).toFixed(4)})`; g.fillRect(cx - 0.75, cy - 0.75, 1.5, 1.5);
+        } else {
+            const R = Math.min(p, 4 * H), steps = Math.min(720, Math.max(24, Math.round(R * 2)));
+            g.beginPath();
+            for (let i = 0; i <= steps; i++) { const th = 6.283 * i / steps, r = R * radiusAt(th, w); i ? g.lineTo(cx + r * Math.cos(th), cy + r * Math.sin(th)) : g.moveTo(cx + r * Math.cos(th), cy + r * Math.sin(th)); }
+            const grd = g.createRadialGradient(cx - R * 0.35, cy - R * 0.35, R * 0.1, cx, cy, R * 1.1);
+            grd.addColorStop(0, 'rgb(226,204,166)'); grd.addColorStop(1, 'rgb(96,78,60)');
+            g.fillStyle = grd; g.fill();
+            if (w[1] > 0) { g.save(); g.clip(); g.globalAlpha = 0.35 * w[1]; g.strokeStyle = 'rgb(70,55,40)'; g.lineWidth = Math.max(1, R * 0.02);
+                for (let j = 0; j < 6; j++) { g.beginPath(); g.ellipse(cx, cy, R * (0.3 + 0.1 * j), R * (0.12 + 0.05 * j), j * 0.7, 0, 6.283); g.stroke(); } g.restore(); }
+            if (w[2] > 0) { g.save(); g.globalAlpha = 0.6 * w[2];
+                for (const c of craters) { g.strokeStyle = 'rgb(60,48,36)'; g.lineWidth = Math.max(0.5, R * 0.006); g.beginPath(); g.arc(cx + R * c.r * Math.cos(c.t), cy + R * c.r * Math.sin(c.t), R * c.s, 0, 6.283); g.stroke(); } g.restore(); }
+        }
+        // events: the first time each stage is crossed
+        if (!seen.has(k) && (last === null || k > last)) {
+            for (let i = 0; i <= k; i++) if (!seen.has(i)) { seen.add(i); log.push(`${STAGES[i][0]}\n   at d ${d.toFixed(0)}, ${(2 * p).toFixed(1)} px across`); }
+        }
+        last = k;
+        $('dval').textContent = `d = ${d.toFixed(1)}   ${(2 * p).toFixed(2)} px across`;
+        $('stage').textContent = STAGES[k][0];
+        $('log').textContent = 'first seen:\n' + log.join('\n');
+    }
+    function tick() { if (auto) { const v = +$('dist').value; if (v > 0.6) { $('dist').value = (v - 0.006).toFixed(4); draw(); } else { auto = false; $('approach').classList.remove('on'); } } requestAnimationFrame(tick); }
+    $('dist').addEventListener('input', draw);
+    $('approach').addEventListener('click', () => { auto = !auto; $('approach').classList.toggle('on', auto); });
+    $('reset').addEventListener('click', () => { $('dist').value = 4.5; seen = new Set(); log = []; last = null; auto = false; $('approach').classList.remove('on'); draw(); });
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search);
+    if (q.has('d')) $('dist').value = Math.log10(Math.min(1e5, Math.max(3.2, +q.get('d') || 3e4)));
+    draw(); requestAnimationFrame(tick);
+
+    window.__resolve = { focal: F, stages: STAGES.map(s => s[0]), stageOf, bandW, log: () => log.slice() };
+})();
+</script>
+</body>
+</html>
