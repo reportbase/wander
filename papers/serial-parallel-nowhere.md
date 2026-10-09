@@ -36,8 +36,8 @@
 > sweeps its level of detail, proportional in the near field and logarithmic in the far (Tom: "its a sweep over the LOD").
 >
 > *Corrected: not a request* (Tom, 8 October: "its not a request, it just the fact all things being equal, smaller things have less detail."). Nothing is requested or picked. All things being equal, a smaller thing has less
-> detail: past the corner a thing is read as Δ/v units of h, and with h the reader's step too, its level of detail is
-> log₂(Δ/v), set by its size (§3.3, "Smaller drives less detailed"). The notes above that speak of a request, a count
+> detail: past the corner a thing is read as Δ/d units of H, and with H the reader's step too, its level of detail is
+> log₂(Δ/d), set by its size (§3.3, "Smaller drives less detailed"). The notes above that speak of a request, a count
 > picked or a level chosen are kept as the record and read with this correction: there is no runtime choice of level; the
 > geometry gives the levels, size gives the level a thing shows, and the payload is what is there.
 >
@@ -45,7 +45,7 @@
 > of addresses and its levels before anything arrives; the sweep traverses that field; the reading is what the sweep
 > meets. The level of detail is not chosen, requested or selected: it is what the sweep over the field yields. The rule
 > connecting the sweep to the resolution, which the review asked for, is the one already stated (§3.3, "Smaller drives
-> less detailed"): a thing of size Δ met at v is read in Δ/v units of h, so it is resolved to k = log₂(Δ/v) levels past
+> less detailed"): a thing of size Δ met at distance d is read in Δ/d units of H, so it is resolved to k = log₂(Δ/d) levels past
 > the corner, one fewer per doubling of distance. It depends on where the thing lands in the field, its size in the
 > reader's units, not on what it sends (§3.3, "The same signal, a smaller share"). And the field's branching is the
 > geometry's too: the only subdivision a level supplies is the halving (Appendix D, Proposition D.1), so the sweep reads a
@@ -74,7 +74,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the step's shape, reading through the step by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1). Then a pass at a review of five issues: binary branching told from a ratio of 2, the in-place lay deferred to a later paper (Appendix D); the governing account of level of detail (§3.3); compile time stated exactly (the opening); the five situations by what is known (§2.1); the physics kept as correspondence (the central result's scope). Then "grain" in the text of 8–9 October reworded as R176 has it: the step, and one address across (Tom: "should be fine"); the labs and demos keep "grain", R176's unqualified sense, the step. Then the corner approached only from below, above meaning v is known (§2.1; correcting the ruling of 6 October); situation 3 does not know v either; Archimedes' proof unsituated, the circle in hand, and the quarter turn his proof made situated, the flip standing in for the circle). Then what a sweep is: H and V the breadths, invariant in an observation; h and v how full each is, 0 to 1; the sweep every way h and v can relate, from all of H to all of V; the circle two parties, the sphere three (§1). Then Proposition D.1: on a level with only its ends, order and flip, the only subdivision the geometry supplies is the halving; every other branching factor needs an added measure (Appendix D; noted at the central open question).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the step's shape, reading through the step by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1). Then a pass at a review of five issues: binary branching told from a ratio of 2, the in-place lay deferred to a later paper (Appendix D); the governing account of level of detail (§3.3); compile time stated exactly (the opening); the five situations by what is known (§2.1); the physics kept as correspondence (the central result's scope). Then "grain" in the text of 8–9 October reworded as R176 has it: the step, and one address across (Tom: "should be fine"); the labs and demos keep "grain", R176's unqualified sense, the step. Then the corner approached only from below, above meaning v is known (§2.1; correcting the ruling of 6 October); situation 3 does not know v either; Archimedes' proof unsituated, the circle in hand, and the quarter turn his proof made situated, the flip standing in for the circle). Then what a sweep is: H and V the breadths, invariant in an observation; h and v how full each is, 0 to 1; the sweep every way h and v can relate, from all of H to all of V; the circle two parties, the sphere three (§1). Then H kept apart from h and the distance written d (§1, "H and h kept apart"; §1's three marks; the situations table; §3.3). Then Proposition D.1: on a level with only its ends, order and flip, the only subdivision the geometry supplies is the halving; every other branching factor needs an added measure (Appendix D; noted at the central open question).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -273,13 +273,13 @@ different standing, as the correction below found. They are now stated apart:
 > forced is deferred to a later paper.
 
 **The corner is where the resolved becomes the unresolved** (Tom, 8 October: "this seems important, explains alot.", and "yes" to running it first and then raising it here; Claude's reading of standard physics, unruled; one
-synthetic run). A signal thins as it travels (the inverse-square law), and the law has no scale: 1/v² looks the same at
-every distance. The one scale is the reader's step, h (R176; the labs' grain, a pixel), and it puts one switch into the law: the distance at which a thing
+synthetic run). A signal thins as it travels (the inverse-square law), and the law has no scale: 1/d² looks the same at
+every distance (d the distance). The one scale is the reader's step, H (R176; the labs' grain, a pixel), and it puts one switch into the law: the distance at which a thing
 is one address across. Before it, distance costs addresses (the thing is smaller, each address as bright); past it, distance
 costs light (the thing is under one address, and that address dims). That is the corner, s = 1, read physically, and it is why
 the corner is the reader's and not the world's (§3.3, "The same signal, a smaller share"). GRN run 8 (`plans/grn-plan.md`)
 joined the law to two readers: one with no reach below its step loses a receding pair at one address across at any light
-(within 0.4%); one given the shape reads below its step by its light and loses the pair at v* ∝ (a²F₀)^(1/4) (slopes
+(within 0.4%); one given the shape reads below its step by its light and loses the pair at d* ∝ (a²F₀)^(1/4) (slopes
 0.51 and 0.25 against ½ and ¼ predicted), distance costing twice past the corner. The law is put in, not tested; what the
 run shows is that the switch is the reader's in both. In Wander's labs (9 October; `labs.html`): OLB's fifth run finds that without
 brightness the law goes on past the corner as a chance, a body seen whole in one address with chance (d*/d)² or not at
@@ -557,11 +557,22 @@ H is always H.").
   (the sweep over level of detail, 8 October), it describes the reading, not the sweep.
 - *Open:* whether a fourth party adds anything new or only repeats the pattern.
 
-A situated reader reads the pair as v over h, the **reading** s = v/h, which runs over [0, ∞). It has three marks:
+**H and h kept apart** (Tom, 9 October: "Yes, this problem is pervasiv. we have been both conflating H with h."). Before
+9 October the paper, its rulings and the corpus wrote h both for the reader's breadth, its unit, and for the fill level in
+the relation. From here on H is the reader's breadth (its unit, its step, its ruler) and h only how much of H (0 to 1); V
+is the other's breadth and v how much of V; the distance is d. Where earlier text says "its h", "one h", "its own h",
+"in h's", "2h in place" or "h/N", it means H. Where it writes "V = H" for the reader's unit alike in both directions, it
+means H in both directions, not the other's breadth. Where it writes v for a distance, it means d. Quotations and the
+rulings' records keep their own wording; the current text is converted as it is revised (begun 9 October: §1's three
+marks, the situations table, the level of detail and the inverse square).
 
-- **home**, s = 0: no v at all against h, pure horizontal, where every sweep starts;
-- **the corner**, s = 1: v equal to h;
-- **the mathematical horizon**, s → ∞: v without end against h, pure vertical, never reached (R174).
+A situated reader reads the pair as v over h, the **reading** s = v/h, a ratio of two fill levels, which runs over
+[0, ∞). It has three marks:
+
+- **home**, s = 0: v empty, all of H, where every sweep starts;
+- **the corner**, s = 1: h and v equally full;
+- **the mathematical horizon**, s → ∞: all of V, h empty; held where V is known, never reached by a situated reader
+  (R174).
 
 The three are places on the sweep, not the reader's place: the reader is the pivot the sweep turns about, and points to
 them (§3.7, R169). "Home" names the start of the sweep, not where the reader is.
@@ -714,13 +725,13 @@ side at once; 4 inside an endless apple, the others arriving one at a time, near
 *By what is known of the breadths* (9 October, at a review asking that each situation be defined by what is known, not by
 how it looks; Tom, 9 October, passing on a review of five remaining issues, then "a). difficult proofs can be deferred to future papers."). One geometry throughout; the five are five relations to it.
 
-| | v's breadth | h's breadth | standpoint | the reading | the corner | what the sweep can only approach |
+| | V, the other's breadth | H, the reader's breadth | standpoint | the reading | the corner | what the sweep can only approach |
 |---|---|---|---|---|---|---|
-| **0** | not known | not known | none | none | none | — |
-| **1** | known | known, equal to v's | none | held whole, an angle 0 to 90° | computed: a known equality, 45° | nothing |
+| **0** | not known | known (H is always H) | none | none: no h, no relation | none | — |
+| **1** | known | known, equal to V | none | held whole, an angle 0 to 90° | computed: a known equality, 45° | nothing |
 | **2** | known, varying with direction | known | none | held whole | computed in each direction | nothing; depth follows the shape and stops |
-| **3** | not known (or within bounds) | known: the reader's unit, V = H | outside | proportional to the corner, levels past it | approached from below only, never located | the corner and the horizon |
-| **4** | not known (or within bounds) | known: the reader's unit, V = H | inside | as 3, met one point at a time | approached from below only, never located | the corner and the horizon |
+| **3** | not known (or within bounds) | known: the reader's unit | outside | proportional to the corner, levels past it | approached from below only, never located | the corner and the horizon |
+| **4** | not known (or within bounds) | known: the reader's unit | inside | as 3, met one point at a time | approached from below only, never located | the corner and the horizon |
 
 3 and 4 can each be known approximately, with one number known only within bounds (the earlier situation 5): a
 variant of 3 and 4, not a sixth way. The first cut is whether v is known: with v and h known it is 1 or 2, as they are
@@ -2275,9 +2286,10 @@ detail**. Why:
   was the levels' self-similarity (each the same sweep), which is a fact about the geometry, not a process.
 - **The governing account of level of detail** (Tom, 9 October, passing on a review of five remaining issues, then "a). difficult proofs can be deferred to future papers."; it governs every earlier passage in this paper that speaks
   of choosing, requesting or recursing to a level, which are kept as the record). *Terms.* The reader's step ε is the
-  spacing of its addresses, one address across (R176's "the step"; the labs and demos call it the grain, a pixel); in a situated reader it is its unit h, so ruler and step are one. A
-  thing of breadth Δ met at distance v spans Δ/v of the reader's view (for small Δ/v), so it covers n = Δ/(v·ε) addresses
-  across. *The rule.* Its level of detail is k = log₂ n: resolved from k = 0, at the corner, where it is one address
+  spacing of its addresses, one address across (R176's "the step"; the labs and demos call it the grain, a pixel); in a situated reader it is its unit H, so ruler and step are one. A
+  thing of breadth Δ met at distance d spans Δ/d of the reader's view (for small Δ/d), so it covers n = Δ/(d·ε) addresses
+  across (d is the distance, written v in the passages of 8 October; d since 9 October, because v is a fill level, §1,
+  "What a sweep is"). *The rule.* Its level of detail is k = log₂ n: resolved from k = 0, at the corner, where it is one address
   across (n = 1), one level more per halving of distance; under one address (n < 1) it is unresolved, met as a chance of an
   address or as dimming, as the signal allows (§3.3, "The same signal, a smaller share"). *Layers.* The geometry holds
   the levels and their relations; the sweep traverses them; the resolution is set by size against step; a reading
@@ -2288,13 +2300,13 @@ detail**. Why:
   per doubling (Proposition 3.4: within a level a share, across levels a count, and the count is the logarithm). So what
   the earlier text called recursion is the far field of one sweep, the sweep over the level of detail. With it the
   derivation of 2 was demoted (the central open question; Appendix D): on a logarithmic sweep the base is the unit.
-- **Smaller drives less detailed** (Tom, 8 October: "so two things happen when we sweep to the horizon, things get proportionally smaller and have proportionally less detail,is that the same thing?"; "they do seem to be the same thing. smaller size drives the lower level of detail."). Toward the horizon a thing of fixed size Δ at v is read as Δ/v units of h:
-  each doubling of v halves it. The detail that shows is how many of the reader's addresses fit across it, and the step is h
-  (GRN: pixels h wide), so that is Δ/v addresses too: one division, read twice. Size is the cause and level of detail the
-  effect: k = log₂(Δ/v) up to a constant, one level lost per doubling, which is the in-place sweep's halving past the
-  corner (¾, ⅞, 15/16). They coincide because one h is both the reader's ruler and its step, the single unit that also
-  forces V = H. They would part only if the step changed without the unit (finer resolution at the same h; zooming in
-  SPN changes h, so both move together) or if the thing had a finest detail (ruled out by Tom's premise, always something
+- **Smaller drives less detailed** (Tom, 8 October: "so two things happen when we sweep to the horizon, things get proportionally smaller and have proportionally less detail,is that the same thing?"; "they do seem to be the same thing. smaller size drives the lower level of detail."). Toward the horizon a thing of fixed size Δ at distance d is read as Δ/d units of H:
+  each doubling of d halves it. The detail that shows is how many of the reader's addresses fit across it, and the step is H
+  (GRN: pixels h wide), so that is Δ/d addresses too: one division, read twice. Size is the cause and level of detail the
+  effect: k = log₂(Δ/d) up to a constant, one level lost per doubling, which is the in-place sweep's halving past the
+  corner (¾, ⅞, 15/16). They coincide because one H is both the reader's ruler and its step, the single unit that also
+  forces V = H. They would part only if the step changed without the unit (finer resolution at the same H; zooming in
+  SPN changes H, so both move together) or if the thing had a finest detail (ruled out by Tom's premise, always something
   smaller). So the logarithm past the corner counts halvings of size, and each is a level of detail. It is not a request (Tom, 8 October: "its not a request, it just the fact all things being equal, smaller things have less detail."):
   nothing is chosen; all things being equal, smaller things have less detail.
   The object does not change (Tom, 8 October: "on object is the same, regardless if its far away or near. it sends the same signal regardless, you don't ask the object for a certain level of detail."): near or far it is the same thing sending the same signal, and nothing asks it
@@ -2310,24 +2322,25 @@ detail**. Why:
   is standard). The object sends the same signal at any distance, and the reader gets a signal that goes with the
   object's size. They line up in two steps. *Per address nothing changes*: with nothing in between, the brightness per unit
   of view is the same at any distance; only the number of addresses the object covers falls. *The rest thins over more
-  room*: as the signal travels it spreads over the sphere of standpoints at that distance, whose area grows as v², and
-  each standpoint captures about 1/v² of the object's addresses (two directions of reading, §1); summed over every
-  standpoint, v² · 1/v² is constant (the inverse-square law; conservation of flux through spheres). Nothing is lost; the
+  room*: as the signal travels it spreads over the sphere of standpoints at that distance, whose area grows as d², and
+  each standpoint captures about 1/d² of the object's addresses (two directions of reading, §1); summed over every
+  standpoint, d² · 1/d² is constant (the inverse-square law; conservation of flux through spheres). Nothing is lost; the
   signal is divided among more addresses, and one reader holds one address's share. In the paper's terms the object sends
   unsituated, to every direction alike (the full turn, as in situations 1 and 2), and the reader receives situated, one
-  standpoint and one h. For one reader the two do not line up because it is somewhere and the signal was sent to nowhere in
+  standpoint and one H. For one reader the two do not line up because it is somewhere and the signal was sent to nowhere in
   particular; summed over every standpoint, which only the view from nowhere can do, they do. The gap is the cost of being
   situated.
   *It is the inverse-square law* (Tom, 8 October: "is this the inverse square law?"; "yes, the situated reader is just another place this law shows up."). The law is not derived here; the situated reader is one more place it shows up.
-  Read in the paper's terms: a size falls as 1/v in each direction read, so 1/v² in two (v and v₂, §1), and the exponent is
-  the number of directions, the dimension of the sphere the signal thins over. It shows two ways, with the reader's corner
+  Read in the paper's terms: a size falls as 1/d in each direction read, so 1/d² in two: the sphere's two parties besides H,
+  V and V₂ (§1, "What a sweep is"). The exponent is the number of those parties, the dimension of the sphere the signal
+  thins over (Claude's reading, unruled). It shows two ways, with the reader's corner
   between them: while the object covers many addresses (resolved), each address is as bright as ever and the number of addresses
-  falls as 1/v²; once it is under one address (unresolved), all its signal lands in one address, whose brightness falls as
-  1/v², the law in its textbook form. The switch is where the object is one address wide, size over step = 1, GRN's corner
+  falls as 1/d²; once it is under one address (unresolved), all its signal lands in one address, whose brightness falls as
+  1/d², the law in its textbook form. The switch is where the object is one address wide, size over step = 1, GRN's corner
   (`plans/grn-plan.md`): before it distance costs addresses, past it brightness. (Claude's reading of standard physics,
   unruled.)
-  *The law has no corner* (Tom, 8 October: "but the inverse square law does not account for the corner?"). 1/v² has the same form at every distance; nothing in it marks one scale. The corner is
-  the reader's: it comes from the step, h, the one scale the reader brings. The law with no reader is scale-free; a reader
+  *The law has no corner* (Tom, 8 October: "but the inverse square law does not account for the corner?"). 1/d² has the same form at every distance; nothing in it marks one scale. The corner is
+  the reader's: it comes from the step, H, the one scale the reader brings. The law with no reader is scale-free; a reader
   with a finite step puts one switch into it, at the distance where the object is one address wide. Physics keeps that
   switch outside the law too, in the instrument (resolved against point source, the resolution limit). So the corner is
   not in what is sent; it is in who receives it, as the paper holds throughout (the corner is the reader's, §3).
