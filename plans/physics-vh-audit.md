@@ -110,3 +110,9 @@ All rewordings are **suggestions**. Lab rules apply. Predictions and recorded ru
 - l. 106, 108 (thin card): "The switch, at one grain across, is your corner; the law has none". Type 3, *suggest* "is your resolution limit; the law has no scale". Try link "at the corner".
 - l. 114–116 (ladder card): "each one breadth read against another" (type 4); "give out at their corner" (type 3).
 - l. 71 (sweep card): "Pairs (v, h), each divided by its own h". Not physics. Under the new terms the division is by H, or the pair is already fill levels. Leave it for the sweep review.
+
+*Note, 9 October, after the audit was applied* (Tom: "in a way, any two points can have a sweep between the. sweeping from
+point a to point b is itself a sweep."; SPN §1, "Every pair has its own sweep: name the pair"). Where this audit says a
+point set by amounts is "not the corner", read: it is the corner of its own pair's sweep (a size against a step, a radius
+against a distance), not the corner of the reader's sweep of the other. The error was the unnamed pair. The renamings
+stand ("the resolution limit" is the physical name of the size-against-step corner).
