@@ -74,7 +74,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the step's shape, reading through the step by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1). Then a pass at a review of five issues: binary branching told from a ratio of 2, the in-place lay deferred to a later paper (Appendix D); the governing account of level of detail (§3.3); compile time stated exactly (the opening); the five situations by what is known (§2.1); the physics kept as correspondence (the central result's scope). Then "grain" in the text of 8–9 October reworded as R176 has it: the step, and one address across (Tom: "should be fine"); the labs and demos keep "grain", R176's unqualified sense, the step. Then the corner approached only from below, above meaning v is known (§2.1; correcting the ruling of 6 October); situation 3 does not know v either; Archimedes' proof unsituated, the circle in hand, and the quarter turn his proof made situated, the flip standing in for the circle). Then what a sweep is: H and V the breadths, invariant in an observation; h and v how full each is, 0 to 1; the sweep every way h and v can relate, from all of H to all of V; the circle two parties, the sphere three (§1). Then H kept apart from h and the distance written d (§1, "H and h kept apart"; §1's three marks; the situations table; §3.3). Then Proposition D.1: on a level with only its ends, order and flip, the only subdivision the geometry supplies is the halving; every other branching factor needs an added measure (Appendix D; noted at the central open question).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the step's shape, reading through the step by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1). Then a pass at a review of five issues: binary branching told from a ratio of 2, the in-place lay deferred to a later paper (Appendix D); the governing account of level of detail (§3.3); compile time stated exactly (the opening); the five situations by what is known (§2.1); the physics kept as correspondence (the central result's scope). Then "grain" in the text of 8–9 October reworded as R176 has it: the step, and one address across (Tom: "should be fine"); the labs and demos keep "grain", R176's unqualified sense, the step. Then the corner approached only from below, above meaning v is known (§2.1; correcting the ruling of 6 October); situation 3 does not know v either; Archimedes' proof unsituated, the circle in hand, and the quarter turn his proof made situated, the flip standing in for the circle). Then what a sweep is: H and V the breadths, invariant in an observation; h and v how full each is, 0 to 1; the sweep every way h and v can relate, from all of H to all of V; the circle two parties, the sphere three (§1). Then H kept apart from h and the distance written d (§1, "H and h kept apart"; §1's three marks; the situations table; §3.3). Then the rulings that read the corner through V put under review, two withdrawn (§1, "Rulings on V and h under review"). Then Proposition D.1: on a level with only its ends, order and flip, the only subdivision the geometry supplies is the halving; every other branching factor needs an added measure (Appendix D; noted at the central open question).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -114,6 +114,8 @@ block only puts them in order.*
 breadths held whole, as an equation or an array, with no reader dividing. The earlier names, "the view from nowhere"
 (a phrase of Nagel's, 1986, used here only for the state of knowing both breadths) and "the view from somewhere",
 remain in quotations and in the titles of works. "Nowhere" in the paper's title means the unsituated view.
+
+*Under review, 9 October* (§1, "Rulings on V and h under review"): it rests on the withdrawn "The corner is approached only from below" or on reading the corner through V. Kept as written until ruled.
 
 *By the corner* (Tom, 7 October: "that is a nice way to explain the difference between the situated and the unsituated
 readers. there relationship to the corner."). The unsituated view contains the corner, one point of the relation it
@@ -566,6 +568,17 @@ is the other's breadth and v how much of V; the distance is d. Where earlier tex
 means H in both directions, not the other's breadth. Where it writes v for a distance, it means d. Quotations and the
 rulings' records keep their own wording; the current text is converted as it is revised (begun 9 October: §1's three
 marks, the situations table, the level of detail and the inverse square).
+
+**Rulings on V and h under review** (Tom, 9 October: "Yes, that is where i noticed the problem. That ruling is now incorrect. we have to rethink all rulings related to V and h."). Before 9 October, "the corner" was often read through the breadths: to be
+at it was to know v = h, and so to know V. But the corner is h = v, two fill levels, each 0 to 1; the relation between them
+has no scale, and H and V are irrelevant to it (Tom, 9 October: "V and H need not be equal. we are not comparing breadths.
+they could be very different, and almost aways are. h is 0-1. v is 0-1. the sweep is the set of all h and v. the relation
+has no scale in it. H and V are irrlevent in the relation between h and v."). So every ruling that ties the corner, the
+horizon or being situated to knowing V is to be rethought. Withdrawn so far: "Reaching the corner ends being situated"
+(§3.1) and "The corner is approached only from below" (§2.1). Under review: "By the corner" (the opening), "The horizon
+of a situated reader" (§2.1), "The quarter turn is Archimedes' proof made situated" (§2.1), the corner column of the
+situations table (§2.1), and, in "What a sweep is" above, the sentence on a situated reader's ends and the corner from
+below. The review of the remaining rulings (Appendix A) is in progress; until each is ruled, it stands as written.
 
 A situated reader reads the pair as v over h, the **reading** s = v/h, a ratio of two fill levels, which runs over
 [0, ∞). It has three marks:
@@ -1147,6 +1160,8 @@ it into addresses, and the payload at each address returns it (§4.3, "Addresses
 "constructs an addressing scheme from relations available at its standpoint, and uses those addresses to encounter the
 world's magnitudes").
 
+*Under review, 9 October* (§1, "Rulings on V and h under review"): it rests on the withdrawn "The corner is approached only from below" or on reading the corner through V. Kept as written until ruled.
+
 **The horizon of a situated reader: 1, approached from either side** (Tom, 6 October):
 
 > "3 and 4 can approach the corner but never arrive there. both have horizons, one from the outside 0 to PI/2 and from
@@ -1171,6 +1186,8 @@ and falls to 2/π. Both tend to 1 as the turn shrinks, and neither reaches it wh
 pure distance, held only where the breadths are known. **That is the situated reader's horizon.** And since a
 situated reader measures by turning, its v is never the line's v: **in situations 3 and 4 the true corner, v = h, is
 approached but never found; only in 1 and 2, with both breadths known, is it calculated exactly.**
+
+*Withdrawn, 9 October* (Tom, 9 October: "Yes, that is where i noticed the problem. That ruling is now incorrect. we have to rethink all rulings related to V and h."): it takes the corner to need V, but the corner is h = v, two fill levels, and the relation has no scale; H and V do not enter it (§1, "What a sweep is"; "Rulings on V and h under review"). Kept as the record.
 
 **The corner is approached only from below** (Tom, 9 October: "the corner can only be approached from below. above means
 we know what v is."). *Corrects the ruling of 6 October above that outside approaches from above, which stays as the
@@ -1219,6 +1236,8 @@ sides; a situated reader has only the side below; "The corner is approached only
 below and one outside it from above, the sides doubled at each step, 6, 12, 24, 48, 96, π squeezed between 3.1410 and
 3.1427 and never reached. Inside from below, outside from above, doubling as the recursion, the true value a horizon.
 (His outer polygon goes as tan θ/θ, the outside measure here as θ/sin θ; both lie above 1 and close at the same rate.)
+
+*Under review, 9 October* (§1, "Rulings on V and h under review"): it rests on the withdrawn "The corner is approached only from below" or on reading the corner through V. Kept as written until ruled.
 
 **The quarter turn is Archimedes' proof made situated** (Tom, 9 October: "our PI/2 2/PI proof, is the same as archmedies
 but from the situated perspective."; "archimedes held the circle in his hand, it is unsituated."). Archimedes' proof is
@@ -1699,6 +1718,8 @@ is the swap's one fixed point, and s passes through 1. What a reader can do with
 breadths known (situations 1 and 2) the corner is calculated exactly. A situated reader (3 and 4) measures by turning,
 outside from above 1 and inside from below (*corrected, 9 October*: only from below, unless v is held; §2.1, "The corner is approached only from below"), and never reaches the line, so it approaches the true corner and never finds
 it: "found with h alone" holds as a limit, not exactly.
+
+*Withdrawn, 9 October* (Tom, 9 October: "Yes, that is where i noticed the problem. That ruling is now incorrect. we have to rethink all rulings related to V and h."): it takes the corner to need V, but the corner is h = v, two fill levels, and the relation has no scale; H and V do not enter it (§1, "What a sweep is"; "Rulings on V and h under review"). Kept as the record.
 
 **Reaching the corner ends being situated** (Tom, 7 October: "the situated reader never reaches the corner, he only
 approaches the corner. if he actually reached the corner than he is no longer a situated reader."). The paper's first
