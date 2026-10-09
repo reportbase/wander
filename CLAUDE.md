@@ -168,6 +168,16 @@ The repo is public, so the papers can be read on GitHub; the owner is fine with
 that for now (6 Oct 2026) and will decide later where they live. They are still
 kept off the Pages site. Don't move or remove them without asking.
 
+## Read this first: keep the case of h, v, H, V
+Since 9 Oct 2026 (Tom): lowercase **h, v** are fill levels, 0 to 1 (how much of H, how much of V): the geometry, scale-free.
+Uppercase **H, V** are breadths, amounts (H the reader's, V the other's); with the distance **d**, a size **Δ** and the
+reader's step **ε**, the physics. Never read v as V or v/h as V/H ((v·V)/(h·H) = (v/h)·(V/H)); the only bridge is a fill
+level times its breadth, where that breadth is known. Before verifying, editing or summarising any paper, plan or lab,
+check each symbol's case and domain, and name the bridge for any conclusion that crosses from geometry to physics. Text
+before 9 Oct often conflates them (SPN's opening warning and §1, "H and h kept apart"; `plans/vh-rulings-review.md`,
+`plans/physics-vh-audit.md`). "The corner" is h = v, which has no scale; a point set by amounts (one step across, a photon
+count) is physics (the resolution limit), not the corner.
+
 ## Read this first: THE LAB GUIDE
 The labs have their own rules, written in `labs.html`. Read two comments
 before touching anything lab-related:
