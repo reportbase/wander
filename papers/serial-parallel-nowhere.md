@@ -253,7 +253,11 @@ the corner is the reader's and not the world's (§3.3, "The same signal, a small
 joined the law to two readers: one with no reach below its grain loses a receding pair at one grain across at any light
 (within 0.4%); one given the shape reads below its grain by its light and loses the pair at v* ∝ (a²F₀)^(1/4) (slopes
 0.51 and 0.25 against ½ and ¼ predicted), distance costing twice past the corner. The law is put in, not tested; what the
-run shows is that the switch is the reader's in both.
+run shows is that the switch is the reader's in both. In Wander's labs (9 October; `labs.html`): OLB's fifth run finds that without
+brightness the law goes on past the corner as a chance, a body seen whole in one address with chance (d*/d)² or not at
+all, its size gone, the sky's filled share still right; LAD's third run, with brightness added to the world, finds the
+distance ladder's two rungs past parallax are the law's two halves, width giving out at the corner and light going on
+past it (to 0.05% at an eighth of an address across).
 
 The hypothesis as promoted, with its history, is kept below as written.
 

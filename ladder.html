@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The distance ladder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    ladder.html: the distance ladder (9 October 2026, at Tom's "create multiple demos that explain the physics
+    correspndance"). A standalone page like dial.html, outside the world and the labs. The labs' LAD (runs 1-3) on one
+    screen: three ways a reader holding only its own grain finds how far a body is, each a reading of one breadth
+    against another, and each giving out at its own corner.
+
+    The reader's grain ε = 2×10⁻⁴ (its addresses' spacing); a body of radius a = 5 sending light L; distance D.
+      parallax: its own travel (a loop of reach b = 0.25) against D: the shift 2b/(D·ε) in addresses, read to a whole
+        address; gives out under one address (D past 2b/ε = 2500, a little more with rounding);
+      width: the body's own size against D: 2a/(D·ε) addresses, read to a whole address (its size from its beat, as
+        Leavitt's law gives it); gives out under one address (D past 2a/ε = 50,000);
+      light: the inverse square, F = L/(4π·D²) on an aperture of 1 (its light from its beat): D = √(L/(4πF)). It has no
+        grain's corner; with "count photons" on, it gives out where fewer than a few photons arrive (N = 10¹²/D² here).
+    The labs read parallax better than this page does (the reader's travel dithers its addresses, and the fit reads
+    through the grain); this page rounds, to show the corner plainly.
+    Links: ?D=30000. Test hook: window.__ladder.
+    -->
+    <style>
+    :root {
+        color-scheme: dark;
+        --ground: #0c0c11;
+        --panel: #14141b;
+        --line: rgba(255, 255, 255, 0.09);
+        --ink: #c8c8d0;
+        --dim: #8a8a96;
+        --bright: #e6e4ee;
+        --gold: #d4a052;
+        --teal: #8ce6cd;
+        --red: #d96e5b;
+        --violet: #b59cf0;
+    }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 18px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    .lede { color: var(--dim); margin: 0 0 18px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+    label { color: var(--dim) }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 260px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px }
+    .rungs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px }
+    @media (max-width: 720px) { .rungs { grid-template-columns: 1fr } }
+    .rung { border: 1px solid var(--line); border-radius: 8px; padding: 10px; min-width: 0 }
+    .rung h3 { margin: 0 0 6px; font: 500 14px 'DM Mono', monospace }
+    .rung .v { font-size: 20px; color: var(--bright) }
+    .rung.out { opacity: 0.55 }
+    .note { color: var(--dim); font-size: 12.5px }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .red { color: var(--red) } .violet { color: var(--violet) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The distance ladder</h1>
+    <p class="lede">How far is a body? A reader holding only its own grain has three ways, each one breadth read against
+    another. Its own <span class="violet">travel</span> against the distance (parallax); the body's own
+    <span class="gold">width</span> against the distance; and its <span class="teal">light</span>, thinning as the inverse
+    square. Each rung gives out at its own corner: parallax and width where what they read falls under one address; light
+    goes on past both, because the inverse square keeps going as dimming.</p>
+
+    <div class="panel">
+        <div class="row">
+            <label for="dist">distance D</label>
+            <input id="dist" type="range" min="1" max="7" step="0.005" value="3">
+            <span id="dval" class="gold"></span>
+        </div>
+        <div class="row" style="margin-top:8px">
+            <button data-d="100">100</button>
+            <button data-d="2000">2,000</button>
+            <button data-d="30000">30,000</button>
+            <button data-d="400000">400,000</button>
+            <button data-d="5000000">5,000,000</button>
+            <button id="photons">count photons: off</button>
+        </div>
+        <div class="rungs" style="margin-top:12px">
+            <div class="rung" id="r-plx"><h3 class="violet">parallax: your travel</h3><div class="v"></div><div class="s note"></div></div>
+            <div class="rung" id="r-wid"><h3 class="gold">width: its size</h3><div class="v"></div><div class="s note"></div></div>
+            <div class="rung" id="r-lit"><h3 class="teal">light: the inverse square</h3><div class="v"></div><div class="s note"></div></div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>How far off each rung reads, by distance</h2>
+        <canvas id="chart" height="280"></canvas>
+        <p class="note">Lines: the most each rung can be off (log scales). Parallax and width read a whole number of
+        addresses, so they can be off by half an address over the addresses read, which grows as that number falls; they
+        stop where it reaches zero, the dashed lines, their corners. Dots: this distance's readings. Light reads exactly here; with photons counted, its error grows as
+        1/(2√N) and it too gives out, where fewer than a few photons arrive.</p>
+    </div>
+
+    <p class="note">From the labs' LAD (<a href="labs.html?lab=LAD">the distance ladder</a>): runs 1–2 (parallax, then
+    width by Leavitt's beat), run 3 (light, the standard-candle rung, past the reader's corner); and <i>Serial, Parallel
+    and Nowhere</i>, the central result ("The corner is where the resolved becomes the unresolved"). See also
+    <a href="thin.html">the same signal, a smaller share</a> and <a href="sky.html">the dark sky</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+    const C = { line: 'rgba(255,255,255,0.09)', dim: css('--dim'), gold: css('--gold'), teal: css('--teal'), red: css('--red'),
+        violet: css('--violet'), bright: css('--bright'), panel: '#1b1b24' };
+    const EPS = 2e-4, B = 0.25, A = 5, NK = 1e12; /* grain; travel's reach; body's radius; photons at D = 1 */
+    let photons = false;
+
+    // a fixed, repeatable draw per distance, so the photon noise does not flicker as the slider moves
+    const gauss = D => { let s = Math.floor(Math.log10(D) * 997) >>> 0; const r = () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296;
+        const u = Math.max(1e-12, r()), v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
+
+    function at(D, withPhotons = photons) {
+        const sp = 2 * B / (D * EPS), np = Math.round(sp),
+            sw = 2 * A / (D * EPS), nw = Math.round(sw),
+            N = NK / (D * D), sig = 1 / (2 * Math.sqrt(N)),
+            out = N < 4;
+        const plx = np ? 2 * B / (np * EPS) : null,
+            wid = nw ? 2 * A / (nw * EPS) : null,
+            lit = withPhotons ? (out ? null : D * (1 + sig * gauss(D))) : D;
+        const off = x => x === null ? null : Math.abs(x / D - 1);
+        return {
+            plx: { addr: sp, read: plx, off: off(plx) },
+            wid: { addr: sw, read: wid, off: off(wid) },
+            lit: { photons: N, read: lit, off: withPhotons ? (lit === null ? null : sig) : 0 }
+        };
+    }
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = +cv.getAttribute('height');
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, h];
+    }
+
+    const D0 = 1, D1 = 7, Y0 = -6, Y1 = 0.5;
+    function drawChart(D) {
+        const [g, W, H] = fit($('chart')), L = 40, R = 10, T = 10, Bm = 26;
+        g.fillStyle = C.panel; g.fillRect(0, 0, W, H);
+        const X = ld => L + (ld - D0) / (D1 - D0) * (W - L - R), Y = ly => T + (Y1 - ly) / (Y1 - Y0) * (H - T - Bm);
+        g.font = '11px DM Mono, monospace';
+        for (let k = Y0; k <= 0; k++) { g.strokeStyle = C.line; g.beginPath(); g.moveTo(L, Y(k)); g.lineTo(W - R, Y(k)); g.stroke(); g.fillStyle = C.dim; g.fillText(k === 0 ? '100%' : k === -2 ? '1%' : k === -4 ? '0.01%' : '', 2, Y(k) + 4); }
+        for (let k = D0; k <= D1; k++) { g.strokeStyle = C.line; g.beginPath(); g.moveTo(X(k), T); g.lineTo(X(k), H - Bm); g.stroke(); g.fillStyle = C.dim; g.fillText('1e' + k, X(k) - 10, H - 8); }
+        const curve = (pick, col) => {
+            g.strokeStyle = col; g.lineWidth = 1.6; let pen = false; g.beginPath();
+            for (let i = 0; i <= 700; i++) {
+                const ld = D0 + (D1 - D0) * i / 700, e = pick(at(10 ** ld));
+                if (e === null) { pen = false; continue; }
+                const y = Y(Math.max(Y0, Math.log10(Math.max(1e-9, e))));
+                pen ? g.lineTo(X(ld), y) : g.moveTo(X(ld), y); pen = true;
+            }
+            g.stroke();
+        };
+        /* the most a whole-address reading can be off: half an address over the addresses read */
+        curve(o => o.plx.addr >= 0.5 ? 0.5 / o.plx.addr : null, C.violet);
+        curve(o => o.wid.addr >= 0.5 ? 0.5 / o.wid.addr : null, C.gold);
+        if (photons) curve(o => o.lit.off, C.teal);
+        else { g.strokeStyle = C.teal; g.lineWidth = 1.6; g.beginPath(); g.moveTo(X(D0), Y(Y0) - 2); g.lineTo(X(D1), Y(Y0) - 2); g.stroke(); }
+        const mark = (ld, col, txt) => { g.setLineDash([4, 4]); g.strokeStyle = col; g.lineWidth = 1; g.beginPath(); g.moveTo(X(ld), T); g.lineTo(X(ld), H - Bm); g.stroke(); g.setLineDash([]); g.fillStyle = col; g.fillText(txt, X(ld) + 3, T + 12); };
+        mark(Math.log10(4 * B / EPS), C.violet, 'parallax');
+        mark(Math.log10(4 * A / EPS), C.gold, 'width');
+        if (photons) mark(Math.log10(Math.sqrt(NK / 4)), C.teal, 'light');
+        g.strokeStyle = C.bright; g.lineWidth = 1; g.beginPath(); g.moveTo(X(Math.log10(D)), T); g.lineTo(X(Math.log10(D)), H - Bm); g.stroke();
+        const o = at(D), dot = (e, col) => { if (e === null) return; g.fillStyle = col; g.beginPath(); g.arc(X(Math.log10(D)), Y(Math.max(Y0, Math.log10(Math.max(1e-9, e)))), 4, 0, 2 * Math.PI); g.fill(); };
+        dot(o.plx.off, C.violet); dot(o.wid.off, C.gold); dot(photons ? o.lit.off : 1e-9, C.teal);
+    }
+
+    const fmt = x => x >= 1e5 ? x.toExponential(2) : x >= 100 ? x.toFixed(0) : x.toFixed(2);
+    const pct = x => x === 0 ? '0 (exact)' : (100 * x < 0.01 ? (100 * x).toExponential(1) : (100 * x).toFixed(2)) + '%';
+    function rung(id, read, off, status) {
+        const el = $(id);
+        el.classList.toggle('out', read === null);
+        el.querySelector('.v').textContent = read === null ? 'no reading' : fmt(read);
+        el.querySelector('.s').innerHTML = (read === null ? '' : 'off by ' + pct(off) + '<br>') + status;
+    }
+    function draw() {
+        const D = 10 ** +$('dist').value, o = at(D);
+        $('dval').textContent = 'D = ' + fmt(D);
+        rung('r-plx', o.plx.read, o.plx.off, 'shift over your travel: ' + o.plx.addr.toFixed(2) + ' addresses' + (o.plx.read === null ? ' (under one: its corner)' : ''));
+        rung('r-wid', o.wid.read, o.wid.off, 'its width: ' + o.wid.addr.toFixed(2) + ' addresses' + (o.wid.read === null ? ' (under one: its corner)' : ''));
+        rung('r-lit', o.lit.read, o.lit.off, photons
+            ? 'photons caught: ' + (o.lit.photons >= 1e5 ? o.lit.photons.toExponential(2) : o.lit.photons.toFixed(1)) + (o.lit.read === null ? ' (too few: light\'s own corner)' : ', error 1/(2√N)')
+            : 'light arriving: L/(4πD²), exact; past both corners it still reads');
+        drawChart(D);
+    }
+    $('dist').addEventListener('input', draw);
+    document.querySelectorAll('[data-d]').forEach(b => b.addEventListener('click', () => { $('dist').value = Math.log10(+b.dataset.d); draw(); }));
+    $('photons').addEventListener('click', () => { photons = !photons; $('photons').textContent = 'count photons: ' + (photons ? 'on' : 'off'); $('photons').classList.toggle('on', photons); draw(); });
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search);
+    if (q.has('D')) $('dist').value = Math.log10(Math.min(1e7, Math.max(10, +q.get('D') || 1000)));
+    if (q.get('photons') === '1') { photons = true; $('photons').textContent = 'count photons: on'; $('photons').classList.add('on'); }
+    draw();
+
+    window.__ladder = { eps: EPS, b: B, a: A, at, corners: { parallax: 4 * B / EPS, width: 4 * A / EPS, light: Math.sqrt(NK / 4) } };
+})();
+</script>
+</body>
+</html>

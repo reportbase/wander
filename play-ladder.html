@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The navigator's ladder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    play-ladder.html: the navigator's ladder (9 October 2026, at Tom's "explore game play possibilites in demos, each demo
+    should focus on a narrow features"). A gameplay sketch, standalone, one feature: distances earned, rung by rung, as
+    the labs' LAD and ladder.html lay them out.
+
+    Ten bodies of two kinds, at distances from 30 to 2,000,000, not told. Your grain ε = 0.001 (a pixel). Three tools:
+      parallax  step 1 sideways and read the shift, 1/(D·ε) pixels, to a whole pixel; nothing under one pixel.
+                Always open.
+      width     read its width, 2a/(D·ε) pixels, to a whole pixel; needs the kind's size a, which you learn from any
+                body of that kind whose distance you have logged (size = width × distance). Nothing under one pixel.
+      light     read the light arriving, F = L/(4π·D²), counted as photons (N = 10⁹·F, so the error is 1/(2√N));
+                needs the kind's light L, learned the same way (L = 4π·D²·F). Reads at any distance.
+    A reading is logged as your distance; a logged distance within 10% scores. Each tool use is one turn.
+    Links: none. Test hook: window.__navigator.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px; overflow-x: auto }
+    button { font: inherit; font-size: 12.5px; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 4px 8px; cursor: pointer; touch-action: manipulation }
+    button:disabled { opacity: 0.35; cursor: default }
+    table { border-collapse: collapse; width: 100%; font-size: 12.5px }
+    td, th { padding: 6px 6px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap }
+    th { color: var(--dim); font-weight: 400 }
+    #status { color: var(--bright); white-space: pre-wrap; margin-bottom: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .red { color: var(--red) } .violet { color: var(--violet) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The navigator's ladder</h1>
+    <p class="lede">One feature: distances you earn. Ten bodies of two kinds, at distances you are not told. Start with
+    <span class="violet">parallax</span>: it works only for the near ones. Log a distance and you learn that kind's size,
+    which opens <span class="gold">width</span> for its kind, out to where it is under a pixel; and its light, which opens
+    <span class="teal">light</span>, which reads at any distance, though fewer photons arrive the farther you look.</p>
+    <div class="panel">
+        <div id="status"></div>
+        <table><thead><tr><th>body</th><th>kind</th><th>parallax</th><th>width</th><th>light</th><th>your reading</th><th></th><th>logged</th></tr></thead><tbody id="rows"></tbody></table>
+        <p class="note">Each tool use is a turn. A reading shows its own error bar. "Log" keeps it as your distance and
+        reveals whether it was within 10%. Logging a body teaches its kind's size and light, from your logged distance:
+        log a bad one and the error is carried up the ladder.</p>
+        <button id="restart">start over</button>
+    </div>
+    <p class="note">Behind it: <a href="ladder.html">the ladder</a> and the labs' LAD (<a href="labs.html?lab=LAD">the
+    distance ladder</a>). Other sketches: <a href="play-points.html">far lights</a>, <a href="play-resolve.html">resolving</a>,
+    <a href="play-sky.html">the sky fills</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    const EPS = 1e-3, KIND = { A: { a: 2, L: 1e6, col: 'gold' }, B: { a: 6, L: 2e7, col: 'teal' } };
+    const SET = [['A', 30], ['B', 80], ['A', 300], ['B', 900], ['A', 4000], ['B', 12000], ['A', 60000], ['B', 150000], ['A', 800000], ['B', 2000000]];
+    let S;
+    function start() {
+        let seed = 42;
+        S = { turns: 0, rnd: () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296,
+            bodies: SET.map(([k, D], i) => ({ i, k, D, read: null, logged: null })), learned: { A: null, B: null } };
+        render();
+    }
+    const gauss = () => { const u = Math.max(1e-12, S.rnd()), v = S.rnd(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283 * v); };
+
+    // the three tools, each as the reader would have it
+    function measure(i, tool) {
+        const b = S.bodies[i], K = KIND[b.k], L = S.learned[b.k];
+        if (tool === 'parallax') {
+            const n = Math.round(1 / (b.D * EPS));
+            return n ? { D: 1 / (n * EPS), err: 0.5 / n, how: n + ' px shift' } : { D: null, how: 'under one pixel' };
+        }
+        if (tool === 'width') {
+            if (!L) return { D: null, how: 'kind not learned' };
+            const n = Math.round(2 * K.a / (b.D * EPS));
+            return n ? { D: 2 * L.a / (n * EPS), err: 0.5 / n, how: n + ' px wide' } : { D: null, how: 'under one pixel' };
+        }
+        if (!L) return { D: null, how: 'kind not learned' };
+        const F = K.L / (4 * Math.PI * b.D * b.D), N = 1e9 * F, Fm = F * (1 + gauss() / Math.sqrt(N));
+        return { D: Math.sqrt(L.L / (4 * Math.PI * Math.max(1e-30, Fm))), err: 1 / (2 * Math.sqrt(N)), how: N >= 1e5 ? N.toExponential(1) + ' photons' : Math.round(N) + ' photons', F: Fm };
+    }
+    function use(i, tool) {
+        S.turns++;
+        const r = measure(i, tool);
+        S.bodies[i].read = { ...r, tool };
+        render();
+    }
+    function log(i) {
+        const b = S.bodies[i];
+        if (!b.read || b.read.D === null) return;
+        b.logged = b.read.D;
+        if (!S.learned[b.k]) { /* learn the kind from your own logged distance: size from width, light from what arrives */
+            const K = KIND[b.k], n = Math.max(1, Math.round(2 * K.a / (b.D * EPS))), F = K.L / (4 * Math.PI * b.D * b.D);
+            S.learned[b.k] = { a: n * EPS * b.logged / 2, L: 4 * Math.PI * b.logged * b.logged * F }; /* its width read to a whole pixel */
+        }
+        render();
+    }
+    const fmt = x => x >= 1e5 ? x.toExponential(2) : x >= 100 ? x.toFixed(0) : x.toFixed(1);
+    function render() {
+        const rows = S.bodies.map(b => {
+            const lk = !S.learned[b.k], r = b.read, ok = b.logged !== null && Math.abs(b.logged / b.D - 1) <= 0.1;
+            return `<tr><td>${b.i + 1}</td><td class="${KIND[b.k].col}">${b.k}</td>` +
+                `<td><button data-i="${b.i}" data-t="parallax">parallax</button></td>` +
+                `<td><button data-i="${b.i}" data-t="width" ${lk ? 'disabled' : ''}>width</button></td>` +
+                `<td><button data-i="${b.i}" data-t="light" ${lk ? 'disabled' : ''}>light</button></td>` +
+                `<td>${r ? (r.D === null ? `<span class="red">${r.tool}: ${r.how}</span>` : `${r.tool}: ${fmt(r.D)} ± ${(100 * r.err).toFixed(1)}% <span style="color:var(--dim)">(${r.how})</span>`) : ''}</td>` +
+                `<td><button data-log="${b.i}" ${r && r.D !== null && b.logged === null ? '' : 'disabled'}>log</button></td>` +
+                `<td>${b.logged === null ? '' : `${fmt(b.logged)} <span class="${ok ? 'teal' : 'red'}">${ok ? '✓' : '✗'} (${fmt(b.D)})</span>`}</td></tr>`;
+        });
+        $('rows').innerHTML = rows.join('');
+        const score = S.bodies.filter(b => b.logged !== null && Math.abs(b.logged / b.D - 1) <= 0.1).length;
+        $('status').textContent = `turns: ${S.turns}   within 10%: ${score} of ${S.bodies.length}   ` +
+            `kinds learned: ${['A', 'B'].filter(k => S.learned[k]).join(', ') || 'none'}`;
+        document.querySelectorAll('[data-t]').forEach(x => x.addEventListener('click', () => use(+x.dataset.i, x.dataset.t)));
+        document.querySelectorAll('[data-log]').forEach(x => x.addEventListener('click', () => log(+x.dataset.log)));
+    }
+    $('restart').addEventListener('click', start);
+    start();
+
+    window.__navigator = { eps: EPS, bodies: () => S.bodies.map(b => ({ k: b.k, D: b.D, logged: b.logged })), measure, use, log,
+        learned: () => ({ ...S.learned }), restart: start };
+})();
+</script>
+</body>
+</html>

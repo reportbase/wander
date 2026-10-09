@@ -15,7 +15,8 @@ Google Fonts load from outside:
   shares with the labs (`plxTwoPart`, `twoAt`, …). A classic script whose top-level
   names both pages' scripts see (that is how both can assign `starsNow`). Moved
   out of the old single page line for line. **A change here changes the labs'
-  world: run every lab after it.**
+  world: run every lab after it.** Since 9 Oct it also holds brightness (`lightAt`, L·A/(4πd²), the
+  inverse square), read only by LAD's third run (the standard-candle rung past the reader's corner).
 - `index.html`: the flying page (the world drawn, the controls, the readout, the
   live-view test hooks). Its "lab" button opens `labs.html` and its "demos" button `demos.html`; `?lab=CODE` and
   `?lab=all` forward there; `?lab=0` hides the button.
@@ -48,7 +49,19 @@ Google Fonts load from outside:
   Three breadths and a scale k; the address on the octant (k changes nothing there); six chambers and the triple corner;
   the unit cube's faces; near and far for a reader holding h; a body with relief in three bands shown by its size in
   pixels (as `bandW`). `?v=&h=&f=&k=&P=&map=chambers|faces|reader|whole`; test hook `window.__sphere`.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the three demos (sweep, dial, sphere), each
+- `thin.html`, `ladder.html`, `sky.html`: **the physics correspondence** (9 Oct 2026, Tom: "create multiple demos that
+  explain the physics correspndance"), standalone pages like `dial.html`. `thin.html`: the same signal, a smaller share
+  (the inverse square; near, distance costs grains, far, light; the switch at one grain is the reader's corner;
+  `?v=`, hook `window.__thin`). `ladder.html`: parallax, width and light, each giving out at its own corner (LAD;
+  `?D=&photons=1`, hook `window.__ladder`). `sky.html`: Olbers' dark sky, the lit share 1 − e^(−L/λ) and every shell
+  giving the same light (OLB; `?L=&always=1`, hook `window.__sky`).
+- `play-points.html`, `play-resolve.html`, `play-ladder.html`, `play-sky.html`: **gameplay sketches** (9 Oct 2026, Tom:
+  "explore game play possibilites in demos, each demo should focus on a narrow features. so they can be explored and
+  iterated seperately"). Standalone, one mechanic each, nothing shared, so each can change alone: far bodies under a pixel
+  (dim by 1/d², vanish, or a full-bright pixel; hook `__points`); events on approach (point, resolved, shape, terrain,
+  surface; `__resolve`); distances earned rung by rung (parallax, then width and light per kind; `__navigator`); the sky
+  filling as light arrives, the count a clock (`__skyfill`). Not in the flying page.
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the three demos (sweep, dial, sphere) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -182,6 +195,11 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it.
+  8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
+  9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
+  10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
+  11. **Gameplay sketches:** each page's one mechanic through its hook (dimming, stages, the ladder's locks and light, the
+      sky's count read back as time).
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
