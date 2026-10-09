@@ -4765,7 +4765,8 @@
                 };
             };
             const near = [1.0, 1.4, 1.8, 2.2, 2.6, 3.0, 3.6, 4.2].map((a, k) => mk(a, [15, 18, 22, 26, 30, 33, 37, 40][k], k)),
-                far = [4, 4.5, 5.5, 6].map((a, k) => mk(a, [1500, 2500, 4000, 6000][k], k + 8));
+                far = (o.far || [[4, 1500], [4.5, 2500], [5.5, 4000], [6, 6000]]).map(([a, D], k) => mk(a, D, k + 8)),
+                lum = o.lum; /* run 3: the light each body sends, by its beat (the world's rule, not told to the reader) */
             const readBody = b => {
                 const fr = [],
                     ws = [];
@@ -4823,7 +4824,8 @@
                     last = ta;
                     nF++;
                 }
-                const Pread = (last - first) / (nF - 1);
+                const Pread = (last - first) / (nF - 1),
+                    Fread = lum ? fr.reduce((p, z) => p + lightAt(lum(Pw), z.d), 0) / fr.length : null; /* run 3: light arriving on the reader's aperture (A = 1) */
                 const two = plxTwoPart(fr),
                     width = ws.reduce((p, x) => p + x, 0) / ws.length * eps / 2; /* half the width across, in radians */
                 const Rm = [0, 1, 2].map(c => fr.reduce((p, z) => p + z.R[c], 0) / fr.length),
@@ -4835,7 +4837,8 @@
                     P: Pread,
                     Pw,
                     dPlx,
-                    width
+                    width,
+                    F: Fread
                 };
             };
             const N = near.map(readBody),
@@ -4860,6 +4863,35 @@
                 z.aRead = Math.pow(z.P / k, 1 / p);
                 z.dBeat = z.aRead / Math.sin(z.width);
             });
+            if (lum) { /* run 3: rung one's light sent, L = 4π·D²·F; the light–beat rule; rung two by light, D = √(L/(4πF)) */
+                N.forEach(z => {
+                    z.Lread = 4 * PI * z.dPlx * z.dPlx * z.F;
+                });
+                const xl = N.map(z => Math.log(z.P)),
+                    yl = N.map(z => Math.log(z.Lread)),
+                    ml = xl.reduce((p, x) => p + x, 0) / xl.length,
+                    nl = yl.reduce((p, y) => p + y, 0) / yl.length;
+                let sl = 0,
+                    sll = 0;
+                xl.forEach((x, i) => {
+                    sl += (x - ml) * (yl[i] - nl);
+                    sll += (x - ml) ** 2;
+                });
+                const q = sl / sll,
+                    kq = Math.exp(nl - q * ml);
+                F.forEach(z => {
+                    z.dLight = Math.sqrt(kq * Math.pow(z.P, q) / (4 * PI * z.F));
+                });
+                return {
+                    eps,
+                    N,
+                    F,
+                    p,
+                    k,
+                    q,
+                    kq
+                };
+            }
             return {
                 eps,
                 N,
@@ -4868,7 +4900,11 @@
                 k
             };
         }
-        function showLAD(R) {
+        const runLAD3 = () => runLAD({
+            far: [[5, 6000], [5, 25000], [5, 100000], [5, 400000]],
+            lum: P => 1000 * Math.pow(P, 1.2)
+        });
+        function showLAD(R, R3) {
             const f = (x, d=2) => x.toFixed(d),
                 pc = x => (100 * x).toFixed(2) + '%';
             let bad = 0;
@@ -4892,13 +4928,46 @@
                     bad++;
                 return '<td>' + f(z.D, 0) + '</td><td>' + f(z.P, 4) + '</td><td>' + f(z.aRead, 3) + ' (' + f(z.a, 1) + ')</td><td class="v' + (bOff < line / 2 ? 2 : bOff < line ? 1 : 0) + '">' + f(z.dBeat, 1) + '</td><td>' + pc(bOff) + '</td><td>' + pc(line) + '</td><td>' + f(z.dPlx, 1) + '</td><td>' + pc(pOffP) + '</td>';
             });
+            let h3 = '',
+                st3 = '';
+            if (R3) {
+                const n3 = R3.N.map(z => {
+                    const off = Math.abs(z.dPlx / z.D - 1);
+                    if (off > 0.005)
+                        bad++;
+                    return '<td>' + f(z.D) + '</td>' + labCell(z.dPlx, z.D, 0.005) + '<td>' + f(z.P, 4) + '</td><td>' + f(z.F, 4) + '</td><td>' + f(z.Lread, 1) + '</td><td>' + f(1000 * Math.pow(z.P, 1.2), 1) + '</td>';
+                });
+                const qOff = Math.abs(R3.q / 1.2 - 1),
+                    kqOff = Math.abs(R3.kq / 1000 - 1);
+                if (qOff > 0.01 || kqOff > 0.03)
+                    bad++;
+                let worstL = 0;
+                const f3 = R3.F.map(z => {
+                    const lOff = Math.abs(z.dLight / z.D - 1),
+                        under = 2 * z.a / z.D < R3.eps,
+                        wOff = isFinite(z.dBeat) ? Math.abs(z.dBeat / z.D - 1) : null,
+                        line = R3.eps * z.D / (2 * z.a) + 0.01;
+                    worstL = Math.max(worstL, lOff);
+                    if (lOff > 0.01)
+                        bad++;
+                    if (!under && !(wOff !== null && wOff <= line))
+                        bad++;
+                    if (under && !(wOff === null || wOff > 0.3))
+                        bad++;
+                    return '<td>' + f(z.D, 0) + '</td><td>' + (2 * z.a / z.D / R3.eps).toFixed(2) + '</td><td>' + z.F.toExponential(3) + '</td><td class="v' + (lOff < 0.005 ? 2 : lOff < 0.01 ? 1 : 0) + '">' + f(z.dLight, 1) + '</td><td>' + pc(lOff) + '</td><td>' + (wOff === null ? '— (no address filled)' : f(z.dBeat, 1)) + '</td><td>' + (wOff === null ? '—' : pc(wOff)) + '</td><td>' + (under ? 'under one address' : pc(line)) + '</td>';
+                });
+                h3 = '<p class="dim">Third run (9 Oct): brightness (world.js lightAt, L·A/(4π·d²), A = 1). Rung one: near distances by parallax, the light arriving F, so the light sent L = 4π·D²·F.</p>' + labTable(['distance', 'by parallax', 'beat', 'light arriving', 'light sent, read', 'the world\'s'], n3)
+                + '<p class="dim">The light–beat rule read from the near: L = ' + R3.kq.toFixed(2) + ' · P^' + R3.q.toFixed(4) + ' (the world\'s: 1000 · P^1.2).</p>'
+                + '<p class="dim">Rung two, size 5 at each distance: its width in addresses (2a/(D·ε)); by light; by width, as before.</p>' + labTable(['distance', 'width (addresses)', 'light arriving', 'by light', 'off', 'by width', 'off', 'width\'s line'], f3);
+                st3 = ' Third run, by light: the rule L = ' + R3.kq.toFixed(1) + '·P^' + R3.q.toFixed(4) + ' (power off ' + pc(qOff) + ', k off ' + pc(kqOff) + '); far distances by light to ' + pc(worstL) + ' at worst, the two under one address included; by width ' + R3.F.map(z => isFinite(z.dBeat) ? pc(Math.abs(z.dBeat / z.D - 1)) : 'none').join(', ') + '.';
+            }
             $('labTitle').textContent = 'the distance ladder';
             $('labBody').innerHTML = '<p class="dim">Second run. Rung one: the near bodies by parallax from a loop of reach 0.25, directions held to ε = ' + R.eps + '.</p>' + labTable(['distance', 'by parallax', 'size', 'size read', 'beat (tags)'], nRows)
             + '<p class="dim">The rule read from the near: P = ' + R.k.toFixed(4) + ' · a^' + R.p.toFixed(4) + ' (the world\'s: 0.5 · a^1.5).</p>'
-            + '<p class="dim">Rung two: the far bodies by their beat; and by parallax, for comparison.</p>' + labTable(['distance', 'beat', 'size read (world\'s)', 'by the beat', 'off', 'line', 'by parallax', 'off'], fRows);
+            + '<p class="dim">Rung two: the far bodies by their beat; and by parallax, for comparison.</p>' + labTable(['distance', 'beat', 'size read (world\'s)', 'by the beat', 'off', 'line', 'by parallax', 'off'], fRows) + h3;
             const worstB = Math.max(...R.F.map(z => Math.abs(z.dBeat / z.D - 1))),
                 worstN = Math.max(...R.N.map(z => Math.abs(z.dPlx / z.D - 1)));
-            $('labStatus').textContent = 'Rung one: near distances to ' + pc(worstN) + '. The rule read as P = ' + R.k.toFixed(3) + '·a^' + R.p.toFixed(3) + ' (power off ' + pc(pOff) + ', k off ' + pc(kOff) + '). Rung two: far distances by the beat to ' + pc(worstB) + ' at worst; parallax at the farthest off by ' + pc(Math.abs(R.F[R.F.length - 1].dPlx / R.F[R.F.length - 1].D - 1)) + '. ' + labVerdict(bad > 0) + ' '
+            $('labStatus').textContent = 'Rung one: near distances to ' + pc(worstN) + '. The rule read as P = ' + R.k.toFixed(3) + '·a^' + R.p.toFixed(3) + ' (power off ' + pc(pOff) + ', k off ' + pc(kOff) + '). Rung two: far distances by the beat to ' + pc(worstB) + ' at worst; parallax at the farthest off by ' + pc(Math.abs(R.F[R.F.length - 1].dPlx / R.F[R.F.length - 1].D - 1)) + '.' + st3 + ' ' + labVerdict(bad > 0) + ' '
             + 'Distance beyond your own travel, from a rule the reader found itself among the near bodies and carried outward on trust. A correspondence, not a claim.';
             $('labPane').hidden = true;
             $('intro').hidden = true;
@@ -5019,18 +5088,19 @@
         }
         // ── OLB: the dark sky. Random still bodies (size a) in a ball; the reader at the middle; each address cell keeps the
         //    distance of the nearest body filling it; the filled share for a reach L is the share of cells with that distance ≤ L. ──
-        function olbWorld(seed0) {
+        function olbWorld(seed0, o={}) {
             const a = 0.5,
-                lam = 20,
+                lam = o.lam || 20,
                 n = 1 / (lam * PI * a * a),
-                Rb = 85,
+                Rb = o.Rb || 85,
                 rmin = 5,
                 N = Math.round(n * 4 / 3 * PI * (Rb ** 3 - rmin ** 3));
             let seed = seed0;
             const rnd = () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
-            const NZ = 700,
-                NP = 2200,
+            const NZ = o.NZ || 700,
+                NP = o.NP || 2200,
                 near = new Float32Array(NZ * NP).fill(Infinity),
+                own = new Uint16Array(N), /* run 4: the cells each body fills, alone */
                 dz = 2 / NZ,
                 dp = TAU / NP,
                 bodies = [];
@@ -5047,8 +5117,9 @@
                 } while (d > Rb || d < rmin);
                 bodies.push([x, y, z, d]);
             }
-            for (const [x, y, z, d] of bodies) {
-                const cz = z / d,
+            for (let b = 0; b < N; b++) {
+                const [x, y, z, d] = bodies[b],
+                    cz = z / d,
                     ph = Math.atan2(y, x),
                     ang = Math.asin(a / d),
                     ca = Math.cos(ang),
@@ -5073,6 +5144,7 @@
                             pc = (j + 0.5) * dp;
                         if (zc * cz + sc * sth * Math.cos(pc - ph) >= ca) {
                             const c = i * NP + j;
+                            own[b]++;
                             if (d < near[c])
                                 near[c] = d;
                         }
@@ -5087,7 +5159,79 @@
                 rmin,
                 N,
                 near,
-                bodies
+                bodies,
+                own,
+                NZ,
+                NP
+            };
+        }
+        // ── OLB, fourth run (9 Oct): past the reader's corner. A sparser world out to 400 on a coarser grid, so a body of radius
+        //    0.5 is one cell in area at d* = a·√(π/Ω); the share filled, and each body's own cells, shell by shell. ──
+        function olbPast() {
+            const W = olbWorld(20261009, {
+                    lam: 1000,
+                    Rb: 400,
+                    NZ: 200,
+                    NP: 628
+                }),
+                {a, lam, rmin, near, bodies, own} = W,
+                Om = (2 / W.NZ) * (TAU / W.NP),
+                ds = a * Math.sqrt(PI / Om);
+            const share = (L0, L1) => {
+                let f = 0;
+                for (let c = 0; c < near.length; c++)
+                    if (near[c] > L0 && near[c] <= L1)
+                        f++;
+                return f / near.length;
+            };
+            const reach = [0.5, 1, 2, 4].map(x => {
+                const L = x * ds;
+                return {
+                    x,
+                    L,
+                    sh: share(0, L),
+                    pred: 1 - Math.exp(-(L - rmin) / lam)
+                };
+            });
+            const past = {
+                sh: share(2 * ds, 4 * ds),
+                pred: Math.exp(-(2 * ds - rmin) / lam) - Math.exp(-(4 * ds - rmin) / lam)
+            };
+            const shells = [[0.25, 0.5], [0.5, 1], [1, 2], [2, 3], [3, 4.5]].map(([u, v]) => {
+                let nB = 0,
+                    seen = 0,
+                    cells = 0,
+                    pS = 0,
+                    aS = 0;
+                for (let b = 0; b < bodies.length; b++) {
+                    const x = bodies[b][3] / ds;
+                    if (x < u || x >= v)
+                        continue;
+                    nB++;
+                    pS += Math.min(1, 1 / (x * x));
+                    aS += 1 / (x * x); /* the disc's area in cells */
+                    if (own[b] > 0) {
+                        seen++;
+                        cells += own[b];
+                    }
+                }
+                return {
+                    u,
+                    v,
+                    nB,
+                    seen: seen / nB,
+                    pSeen: pS / nB,
+                    size: aS / nB,
+                    cells: cells / seen
+                };
+            });
+            return {
+                N: W.N,
+                cells: near.length,
+                ds,
+                reach,
+                past,
+                shells
             };
         }
         function runOLB() {
@@ -5122,7 +5266,8 @@
                 lamRead,
                 cnt,
                 rows,
-                rd: olbRead(W)
+                rd: olbRead(W),
+                p4: olbPast()
             };
         }
         // ── OLB, second run (plans/bal-olb-readings.md): a reading, no distances. Reader 1 at the middle watches its addresses
@@ -5252,10 +5397,39 @@
             });
             const rdH = '<p class="dim">The reading (runs 2 and 3; run 3 adds each reader\'s own error bar), no distances. Reader 1 watched its addresses fill on its own clock (' + D.nPts + ' looks with shares 0.05 to 0.9) and fitted the curve: λ read ' + f(D.lamR, 3) + ' ± ' + f(D.sLam, 3) + ' (the world\'s 20), its empty edge ' + f(D.r0R, 3) + ' ± ' + f(D.sR0, 3) + ' (the world\'s 5); each ± from the spread over its own 8 sectors. Reader 2, in a second world drawn by the same rule, looked once at each age and read it from the share, with what reader 1 passed it.</p>'
             + labTable(['age past the edge', 'share filled (± its 8 sectors)', 'formula', 'age read', 'the world\'s', 'off'], lk);
+            const P4 = R.p4,
+                f4 = [];
+            const r4 = P4.reach.map(z => {
+                const off = Math.abs(z.sh - z.pred);
+                if (off > 0.006)
+                    bad++;
+                return '<td>' + f(z.x, 2) + ' d*</td><td>' + f(z.L, 1) + '</td><td class="v' + (off < 0.003 ? 2 : off < 0.006 ? 1 : 0) + '">' + f(z.sh, 4) + '</td><td>' + f(z.pred, 4) + '</td>';
+            });
+            const pOff = Math.abs(P4.past.sh - P4.past.pred);
+            if (pOff > 0.006)
+                bad++;
+            // the size check at d*/4 to d*/2: cells per body against the mean (d*/d)², computed from the bodies themselves
+            const sz = P4.shells.map(z => '<td>' + f(z.u, 2) + '–' + f(z.v, 2) + ' d*</td><td>' + z.nB + '</td><td>' + f(z.seen, 4) + '</td><td>' + (z.u >= 2 ? f(z.pSeen, 4) : (z.v <= 0.5 ? '≥ 0.99' : '—')) + '</td><td>' + f(z.cells, 3) + '</td><td>' + (z.u >= 2 ? '1.00–1.05' : (z.v <= 0.5 ? f(z.size, 3) : '—')) + '</td>');
+            P4.shells.forEach(z => {
+                if (z.u >= 2) {
+                    if (Math.abs(z.seen / z.pSeen - 1) > 0.05)
+                        bad++, f4.push('seen ' + f(z.u, 0) + 'd*');
+                    if (z.cells < 1 || z.cells > 1.05)
+                        bad++, f4.push('cells ' + f(z.u, 0) + 'd*');
+                }
+                if (z.v <= 0.5 && z.seen < 0.99)
+                    bad++, f4.push('seen near');
+                if (z.v <= 0.5 && Math.abs(z.cells / z.size - 1) > 0.05)
+                    bad++, f4.push('size');
+            });
+            const h4 = '<p class="dim">Fourth run (9 Oct): past the reader\'s corner. ' + P4.N + ' bodies of radius 0.5 out to 400, λ = 1000; ' + P4.cells + ' cells; one body is one cell in area at d* = ' + f(P4.ds, 1) + '. The share filled to each reach, against 1 − e^−(L−5)/λ; past 2d* alone (every body under a quarter cell): ' + f(P4.past.sh, 4) + ' against ' + f(P4.past.pred, 4) + '.</p>'
+                + labTable(['reach', 'L', 'share filled', 'predicted'], r4)
+                + '<p class="dim">Each body alone, by shell: how many, the share seen at all (filling at least one cell), predicted; the cells a seen body fills, predicted.</p>'
+                + labTable(['shell', 'bodies', 'seen', 'predicted', 'cells per seen body', 'predicted'], sz);
             $('labTitle').textContent = 'the dark sky';
             $('labBody').innerHTML = '<p class="dim">First run: the geometry (layer 1, true distances; no signals).</p><p class="dim">' + R.N + ' bodies; ' + R.cells + ' address cells. Counted 5 to 25 off: ' + R.cnt + ' bodies, so λ read ' + R.lamRead.toFixed(2) + ' (the world\'s 20).</p>'
-            + labTable(['reach past 5', 'age T', 'share filled', 'predicted', 'age read', 'the world\'s'], rows) + rdH;
-            $('labStatus').textContent = 'Shares ' + R.rows.map(r => f(r.sh)).join(', ') + ' against ' + R.rows.map(r => f(r.pred)).join(', ') + '. The reading, no distances: λ read ' + f(D.lamR, 2) + ', the empty edge ' + f(D.r0R, 2) + '; the second reader\'s ages off by ' + D.looks.map(z => (Math.abs(z.Tr - z.T) / z.sT).toFixed(1) + 'σ').join(', ') + ' of its own error bar. ' + labVerdict(bad > 0) + ' '
+            + labTable(['reach past 5', 'age T', 'share filled', 'predicted', 'age read', 'the world\'s'], rows) + rdH + h4;
+            $('labStatus').textContent = 'Shares ' + R.rows.map(r => f(r.sh)).join(', ') + ' against ' + R.rows.map(r => f(r.pred)).join(', ') + '. The reading, no distances: λ read ' + f(D.lamR, 2) + ', the empty edge ' + f(D.r0R, 2) + '; the second reader\'s ages off by ' + D.looks.map(z => (Math.abs(z.Tr - z.T) / z.sT).toFixed(1) + 'σ').join(', ') + ' of its own error bar. Fourth run, past the corner: shares ' + P4.reach.map(z => f(z.sh, 4)).join(', ') + ' against ' + P4.reach.map(z => f(z.pred, 4)).join(', ') + '; past 2d* seen ' + P4.shells.filter(z => z.u >= 2).map(z => f(z.seen, 3) + ' (' + f(z.pSeen, 3) + ')').join(', ') + ', one cell each (' + P4.shells.filter(z => z.u >= 2).map(z => f(z.cells, 3)).join(', ') + ')' + (f4.length ? '; off: ' + f4.join(', ') : '') + '. ' + labVerdict(bad > 0) + ' '
             + 'The sky fills as the edge of what has arrived reaches out; the dark between the bodies reads how long they have been sending. A correspondence, not a claim.';
             $('labPane').hidden = true;
             $('intro').hidden = true;
@@ -7386,7 +7560,7 @@
             sim: () => showSIM(runSIM()),
             elv: () => showELV(runELV()),
             eqv: () => showEQV(runEQV()),
-            lad: () => showLAD(runLAD()),
+            lad: () => showLAD(runLAD(), runLAD3()),
             hub: () => showHUB(runHUB()),
             olb: () => showOLB(runOLB()),
             esc: () => showESC(runESC()),
