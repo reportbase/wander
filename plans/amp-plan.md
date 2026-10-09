@@ -136,3 +136,24 @@ compound by 2 a level, but only if both ends of each frame come from readings (P
 geometry's, a misread home stays 2δ at every depth (P2 (a)). A child that re-reads what its parents left masks their
 errors (P3's masking, held), but where its flat-ended rows cannot hold a slope the leftover is spread along the
 support, not gathered at the walls (P3's wall prediction, killed). Not yet placed in SPN.
+
+### Run 2: P3 with a set-up that reconstructs (prediction written 9 October, before the run; Tom: "both")
+
+*The fix.* Run 1's re-reading level fitted its leftover over its whole support and so took up deeper levels' detail.
+Here each level fits its leftover **only on its own region** (the front half of its support, x from 0 to ½), with the
+same 16 rows; its rows still extend over its back half, and the child, re-reading there, takes up whatever they put
+there. Since the deeper bands are zero on a level's own region, the baseline should reconstruct exactly. Same target,
+same δ, same metric (largest |R − T| per region; here the baseline is exact, so differences of maxima are clean).
+
+*Reasoning.* A flat error at level j is held exactly by every child's row n = 0 on its region, so regions below j are
+clean, and region j keeps it once. A ramp δ·x_j is linear in each child's x too; 16 cosine rows fitted on [0, ½] hold a
+line closely but not exactly, and miss most where the rows are flat, at the child's home (x = 0).
+
+*Prediction (the kill):*
+- **P3′a:** baseline error below 10⁻⁹.
+- **P3′b:** flat: A(j → j) = 1 within 1%, A(j → k) below 10⁻⁹ for k > j.
+- **P3′c:** sloped: A(j → k) below 0.01 for k > j.
+- **P3′d:** sloped: in each child's region, at least half of what is left (by its sum of |·|) lies in the tenth of the
+  region next to the child's home.
+
+*Kill:* any of P3′a–d failed.
