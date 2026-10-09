@@ -13,7 +13,7 @@
     A planet of radius 1 at distance d; its radius in pixels p = f/d (f = 600). The stages, each an event the first time
     it is crossed:
       a point       p < 0.5: under one pixel; it dims as 1/d² (its light only);
-      resolved      p >= 0.5: one pixel across, a disc (the reader's corner: its size is now readable);
+      resolved      p >= 0.5: one pixel across, a disc (the resolution limit: its size is now readable);
       shape         p >= 6: the broad relief shows (the outline is not round);
       terrain       p >= 24: the middle band (ridges, basins);
       surface       p >= 80: the fine band (craters).
@@ -67,7 +67,7 @@
         <p class="note">Bands fade in over a factor of 2.5 in size, as the flying page's do (<code>bandW</code>), so nothing
         pops. Under one pixel the point's brightness is its area in pixels: the inverse square.</p>
     </div>
-    <p class="note">Behind it: <a href="thin.html">the same signal, a smaller share</a> (the corner at one pixel) and
+    <p class="note">Behind it: <a href="thin.html">the same signal, a smaller share</a> (the resolution limit, one pixel across) and
     <i>Serial, Parallel and Nowhere</i> §3.3 ("Smaller drives less detailed"). Other sketches:
     <a href="play-points.html">far lights</a>, <a href="play-ladder.html">the navigator's ladder</a>,
     <a href="play-sky.html">the sky fills</a>.</p>

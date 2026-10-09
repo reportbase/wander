@@ -5,6 +5,9 @@ not a survey: the closest neighbours found, what each already has, and where SPN
 were read only through search summaries (several publisher sites are blocked from this environment), and those are
 marked.*
 
+*9 October 2026: a few lines reworded for the case of h, v, H, V (`plans/physics-vh-audit.md`): a reader's unit is H,
+a distance d, and a scale such as Gilinsky's v_d or Schwartz's a is a switch scale, not SPN's corner h = v.*
+
 ## Short answer
 
 Nobody found here puts the pieces together as SPN does: one relation v/h, read according to what the reader knows,
@@ -22,11 +25,13 @@ z_v against physical distance z_p is
 
 with v_d the finite vanishing distance, inferred at about 30 m or more (search summary of Erkelens 2017).
 
-**This is SPN's normalization by the sum**, v/(v + h) (`plans/normalizations.md`), with h = v_d. Divide by v_d:
-z_v/v_d = s/(1 + s), s = z_p/v_d. So perceived distance is proportional near the eye, reaches half the horizon when
-the object is at v_d (the corner), and approaches the vanishing distance without arriving (the horizon). Gilinsky's
-vanishing distance plays the part of the reader's h, and it is fitted from data, not chosen. This is the strongest
-empirical neighbour found: a measured human reading of distance with SPN's corner and horizon in it.
+**This is SPN's normalization by the sum**, v/(v + h) (`plans/normalizations.md`), in form, with v_d as the unit. Divide by v_d:
+z_v/v_d = s/(1 + s), s = z_p/v_d. So perceived distance is proportional near the eye, reaches half the horizon at
+z_p = v_d (where the normalised reading is ½), and approaches the vanishing distance without arriving (the horizon).
+Gilinsky's vanishing distance v_d plays the part of a reader's unit H (a distance, a scale), and it is fitted from data,
+not chosen. This is the strongest empirical neighbour found: a measured human reading of distance with the sum's
+normalization and a horizon in it. (Since 9 October: z_p = v_d is a scale, so it is not SPN's corner h = v, which has
+none.)
 
 What SPN adds: the reason (a reader knowing one breadth, dividing by it), the flip, the levels past the corner, and
 the comparison with the circle's normalization.
@@ -37,7 +42,7 @@ The map from the visual field to primary visual cortex is fitted by w = log(z + 
 field as a complex number; the cortical magnification is about k/(r + a) at eccentricity r. Near the centre of gaze
 (r much less than a) it is close to linear; far out, logarithmic; a is the switch.
 
-**This is SPN's "proportional before the corner, logarithmic past it"**, built into eyes, with a as the corner. It is
+**This is SPN's "proportional before the corner, logarithmic past it"**, built into eyes, with a as the switch scale. It is
 R176's lay, measured in anatomy. What SPN adds: the flip (the log-polar map has no reciprocal facing), and the reading
 of a as a reader's own unit rather than a fitted constant.
 
@@ -49,14 +54,14 @@ detail (SPN §3.3).
 *The eye as a neighbour, not evidence* (8 October; Tom: "our paper is about h and v. not about the human eye. the human
 eye is engineering more than fundemental geometry."). Moved here from SPN. Where the eye's engineering meets the paper:
 - the inverted image is a half turn, a relabelling of addresses, not the flip s ↔ 1/s;
-- projection images an offset v at distance h at (focal length) · v/h: a flat sensor lays s, a curved retina roughly the
-  angle, the bounded sweep;
+- projection images an offset x at distance d at f·x/d (f the focal length): a flat sensor lays x/d, a curved retina
+  roughly the angle;
 - resolution is laid proportionally near the fovea and logarithmically beyond (the magnification above);
 - one fixation is read at once and saccades go in turn, as situations 3 and 4;
 - depth needs a second view or motion, as SPN's second reader off the plane (§8.1).
-Where it does not: vision states everything in degrees of visual angle (v/h already swept, a fixed unit, the reader's own
-h absent) and in polar coordinates round the fovea; it has no flip; its switch point (about 0.75° for cortex, 1–3° in
-acuity fits) is fitted, not shown to be a reader's h; and it is not alike in every direction (horizontal beats vertical,
+Where it does not: vision states everything in degrees of visual angle (x/d already taken as an angle, a fixed unit, the
+reader's own H absent) and in polar coordinates round the fovea; it has no flip; its switch point (about 0.75° for cortex, 1–3° in
+acuity fits) is fitted, not shown to be a reader's H; and it is not alike in every direction (horizontal beats vertical,
 lower beats upper: Himmelberg, Winawer and Carrasco, eLife 2021).
 
 ### 3. Number lines as proportion judgment: Barth and Paladino (2011)
@@ -66,7 +71,7 @@ better by cyclic power models of proportion judgment: placement relative to refe
 half, accurate there and biased between (search summaries). This bears directly on NLE (`plans/nle-plan.md`), whose
 run 1 on Chan and Mazzocco's kindergartners killed the corner's prediction: the proportion account says the
 midpoint, ½ of the line, is a reference point, which is the corner of the normalization by the whole line (the sum),
-not of the reading by a unit h. Worth a look before any second NLE run, under the lab rules.
+not of the reading by a unit H. Worth a look before any second NLE run, under the lab rules.
 
 ### 4. Magnitude as a ratio to the reader's own reference
 
@@ -75,7 +80,7 @@ not of the reading by a unit h. Worth a look before any second NLE run, under th
 - **Petzschner, Glasauer and Stephan (2015)**: a Bayesian account of magnitude estimation, biased toward a prior; one
   framework across loudness, distance and time.
 
-All three hold "magnitude read against the reader's own reference", SPN's h as the focus. None has the corner as a
+All three hold "magnitude read against the reader's own reference", SPN's H as the focus. None has the corner as a
 fixed point of a flip, or a horizon past it.
 
 ### 0. The oldest: Mercator's map (1569)

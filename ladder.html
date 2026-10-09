@@ -9,8 +9,8 @@
     <!--
     ladder.html: the distance ladder (9 October 2026, at Tom's "create multiple demos that explain the physics
     correspndance"). A standalone page like dial.html, outside the world and the labs. The labs' LAD (runs 1-3) on one
-    screen: three ways a reader holding only its own grain finds how far a body is, each a reading of one breadth
-    against another, and each giving out at its own corner.
+    screen: three ways a reader holding only its own grain finds how far a body is, each a reading of one length
+    against another, and each giving out at its own limit.
 
     The reader's grain ε = 2×10⁻⁴ (its addresses' spacing); a body of radius a = 5 sending light L; distance D.
       parallax: its own travel (a loop of reach b = 0.25) against D: the shift 2b/(D·ε) in addresses, read to a whole
@@ -18,10 +18,10 @@
       width: the body's own size against D: 2a/(D·ε) addresses, read to a whole address (its size from its beat, as
         Leavitt's law gives it); gives out under one address (D past 2a/ε = 50,000);
       light: the inverse square, F = L/(4π·D²) on an aperture of 1 (its light from its beat): D = √(L/(4πF)). It has no
-        grain's corner; with "count photons" on, it gives out where fewer than a few photons arrive (N = 10¹²/D² here).
+        resolution limit; with "count photons" on, it gives out (the photon limit) where fewer than a few photons arrive (N = 10¹²/D² here).
     The labs read parallax better than this page does (the reader's travel dithers its addresses, and the fit reads
-    through the grain); this page rounds, to show the corner plainly.
-    Links: ?D=30000. Test hook: window.__ladder.
+    through the grain); this page rounds, to show the resolution limit plainly.
+    Links: ?D=30000. Test hook: window.__ladder (its key `corners` keeps its old name: the limits).
     -->
     <style>
     :root {
@@ -65,10 +65,10 @@
 <body>
 <main>
     <h1>The distance ladder</h1>
-    <p class="lede">How far is a body? A reader holding only its own grain has three ways, each one breadth read against
+    <p class="lede">How far is a body? A reader holding only its own grain has three ways, each one length read against
     another. Its own <span class="violet">travel</span> against the distance (parallax); the body's own
     <span class="gold">width</span> against the distance; and its <span class="teal">light</span>, thinning as the inverse
-    square. Each rung gives out at its own corner: parallax and width where what they read falls under one address; light
+    square. Each rung gives out at its own limit: parallax and width at the resolution limit, where what they read falls under one address; light
     goes on past both, because the inverse square keeps going as dimming.</p>
 
     <div class="panel">
@@ -97,13 +97,13 @@
         <canvas id="chart" height="280"></canvas>
         <p class="note">Lines: the most each rung can be off (log scales). Parallax and width read a whole number of
         addresses, so they can be off by half an address over the addresses read, which grows as that number falls; they
-        stop where it reaches zero, the dashed lines, their corners. Dots: this distance's readings. Light reads exactly here; with photons counted, its error grows as
-        1/(2√N) and it too gives out, where fewer than a few photons arrive.</p>
+        stop where it reaches zero, the dashed lines, their resolution limits. Dots: this distance's readings. Light reads exactly here; with photons counted, its error grows as
+        1/(2√N) and it too gives out, where fewer than a few photons arrive: the photon limit.</p>
     </div>
 
     <p class="note">From the labs' LAD (<a href="labs.html?lab=LAD">the distance ladder</a>): runs 1–2 (parallax, then
-    width by Leavitt's beat), run 3 (light, the standard-candle rung, past the reader's corner); and <i>Serial, Parallel
-    and Nowhere</i>, the central result ("The corner is where the resolved becomes the unresolved"). See also
+    width by Leavitt's beat), run 3 (light, the standard-candle rung, past the resolution limit); and <i>Serial, Parallel
+    and Nowhere</i>, the central result (where the resolved becomes the unresolved: the resolution limit). See also
     <a href="thin.html">the same signal, a smaller share</a> and <a href="sky.html">the dark sky</a>.</p>
 </main>
 <script>
@@ -184,11 +184,11 @@
     function draw() {
         const D = 10 ** +$('dist').value, o = at(D);
         $('dval').textContent = 'D = ' + fmt(D);
-        rung('r-plx', o.plx.read, o.plx.off, 'shift over your travel: ' + o.plx.addr.toFixed(2) + ' addresses' + (o.plx.read === null ? ' (under one: its corner)' : ''));
-        rung('r-wid', o.wid.read, o.wid.off, 'its width: ' + o.wid.addr.toFixed(2) + ' addresses' + (o.wid.read === null ? ' (under one: its corner)' : ''));
+        rung('r-plx', o.plx.read, o.plx.off, 'shift over your travel: ' + o.plx.addr.toFixed(2) + ' addresses' + (o.plx.read === null ? ' (under one: its resolution limit)' : ''));
+        rung('r-wid', o.wid.read, o.wid.off, 'its width: ' + o.wid.addr.toFixed(2) + ' addresses' + (o.wid.read === null ? ' (under one: its resolution limit)' : ''));
         rung('r-lit', o.lit.read, o.lit.off, photons
-            ? 'photons caught: ' + (o.lit.photons >= 1e5 ? o.lit.photons.toExponential(2) : o.lit.photons.toFixed(1)) + (o.lit.read === null ? ' (too few: light\'s own corner)' : ', error 1/(2√N)')
-            : 'light arriving: L/(4πD²), exact; past both corners it still reads');
+            ? 'photons caught: ' + (o.lit.photons >= 1e5 ? o.lit.photons.toExponential(2) : o.lit.photons.toFixed(1)) + (o.lit.read === null ? ' (too few: the photon limit)' : ', error 1/(2√N)')
+            : 'light arriving: L/(4πD²), exact; past both limits it still reads');
         drawChart(D);
     }
     $('dist').addEventListener('input', draw);

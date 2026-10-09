@@ -11,8 +11,8 @@
     A standalone page like dial.html, outside the world and the labs. The labs' OLB (runs 1-5) on one screen.
 
     Olbers (1823), and before him Kepler and Halley: if bodies filled an endless world that had always been, every line
-    of sight would end on one, and the sky would be as bright as a sun's face. Each shell of bodies is fainter by 1/v²
-    and more numerous by v², so every shell gives the same light: the inverse-square sum, nothing lost, only spread. A
+    of sight would end on one, and the sky would be as bright as a sun's face. Each shell of bodies is fainter by 1/d²
+    and more numerous by d², so every shell gives the same light: the inverse-square sum, nothing lost, only spread. A
     reader's sky holds only what has arrived: if the bodies began sending a time T ago, only lines of sight ending within
     the reach C·T are lit. A line of sight meets a body after a distance drawn from e^(−r/λ) (λ = 1/(n·π·a²), the mean
     free path), so the lit share is 1 − e^(−(L − r₀)/λ), here with r₀ = 0.
@@ -88,13 +88,13 @@
         <h2>Why every shell gives the same light</h2>
         <canvas id="shells" height="220"></canvas>
         <p class="note">Shells of equal thickness, out from you. <span class="gold">Gold</span>: how many bodies, growing as
-        v². <span class="teal">Teal</span>: the light you catch from each, falling as 1/v². White: their product, the
+        d². <span class="teal">Teal</span>: the light you catch from each, falling as 1/d². White: their product, the
         shell's light, the same for every shell (before nearer bodies hide farther ones). The inverse square loses nothing;
         it spreads the same light over more room.</p>
     </div>
 
     <p class="note">From the labs' OLB (<a href="labs.html?lab=OLB">the dark sky</a>): runs 1–3 read the world's age from
-    the dark, run 5 goes past the reader's corner, where a far body is seen whole in one cell by chance, or not at all.
+    the dark, run 5 goes past the resolution limit (one cell across), where a far body is seen whole in one cell by chance, or not at all.
     And <i>Serial, Parallel and Nowhere</i> §3.3, "The same signal, a smaller share". See also
     <a href="thin.html">the same signal, a smaller share</a> and <a href="ladder.html">the ladder</a>.</p>
 </main>

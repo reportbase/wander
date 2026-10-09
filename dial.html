@@ -3,21 +3,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <title>The h dial</title>
+    <title>The H dial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
     <!--
-    dial.html: the h dial (7 October 2026, at Tom's "this is worth a demo. create a html canvas demo of the idea that H
+    dial.html: the H dial (7 October 2026, at Tom's "this is worth a demo. create a html canvas demo of the idea that H
     could be optimized. what happens if the reader adjust his unit."). A standalone page, like sweep.html: not part of
     the world (world.js) or the labs (labs.html). It shows plans/grn-plan.md runs 3-5 on one screen.
 
-    A system of two point stars, one apart, is read by a reader whose pixels are h wide, at a random offset on every look.
-    The reader has no model: it counts lit pixels. s = 1/h is the system's size against the reader's grain.
-      below the corner (s < 1): "two" shows by chance, probability s a look; about 1/s looks (serial);
+    A system of two point stars, one apart, is read by a reader whose pixels are H wide, at a random offset on every look.
+    The reader has no model: it counts lit pixels. s = 1/H is the system's size against the reader's grain
+    (an amount: s = 1 is one pixel across, the resolution limit; not SPN's corner h = v, which has no scale).
+      below one pixel across (s < 1): "two" shows by chance, probability s a look; about 1/s looks (serial);
       at and past it (s >= 1): "two" every look, about 1 + s pixels lit (parallel);
-      the slider: halving h after every look without "two" reaches the corner in about log2(1/s) looks;
+      the slider: halving H after every look without "two" reaches one pixel across in about log2(1/s) looks;
       the dial's cost: one unit per pixel the system spans per look; a sure "two" costs (1 + s)·max(1, 1/s),
-      least (2) at the corner, the same at s and 1/s.
+      least (2) at one pixel across, the same at s and 1/s.
+    (state.h in the code is the pixel width, H.)
     Links: ?s=0.3 sets the dial. Test hook: window.__dial.
     -->
     <style>
@@ -57,14 +59,14 @@
 </head>
 <body>
 <main>
-    <h1>The h dial</h1>
-    <p class="lede">A reader with no model of what it sees, only its own pixels, h wide. The system is two points, one
-    apart. <span class="gold">s = 1/h</span> is the system against the reader's grain. Turn the dial and look: below the
-    corner, "two" comes only by chance; past it, every time. The cheapest setting is the corner.</p>
+    <h1>The H dial</h1>
+    <p class="lede">A reader with no model of what it sees, only its own pixels, H wide. The system is two points, one
+    apart. <span class="gold">s = 1/H</span> is the system against the reader's grain. Turn the dial and look: below one
+    pixel across, "two" comes only by chance; past it, every time. The cheapest setting is one pixel across.</p>
 
     <div class="panel">
         <div class="row">
-            <label for="dial">dial h</label>
+            <label for="dial">dial H</label>
             <input id="dial" type="range" min="-3" max="3" step="0.01" value="0">
             <span id="sval" class="gold"></span>
         </div>
@@ -72,7 +74,7 @@
         <div class="row" style="margin-top:10px">
             <button id="look">look once</button>
             <button id="until">look until two</button>
-            <button id="slide">slide h (halve until two)</button>
+            <button id="slide">slide H (halve until two)</button>
             <button id="approach">approach from afar</button>
             <button id="measure">measure 500 sure reads</button>
             <button id="clear">clear</button>
@@ -84,19 +86,19 @@
         <div class="panel">
             <h2>Chance of "two" in one look</h2>
             <canvas id="chance" height="230"></canvas>
-            <p class="note">Line: min(s, 1). Dots: what your looks gave, by s. Below the corner it is a chance, s; from
-            the corner on it is certain.</p>
+            <p class="note">Line: min(s, 1). Dots: what your looks gave, by s. Below one pixel across it is a chance, s; from
+            one pixel across on it is certain.</p>
         </div>
         <div class="panel">
             <h2>What a sure "two" costs</h2>
             <canvas id="cost" height="230"></canvas>
             <p class="note">One unit for each pixel the system spans, on each look, until "two". Line: (1 + s)·max(1, 1/s),
-            least at the corner and the same at s and 1/s. Dots: measured means.</p>
+            least at one pixel across and the same at s and 1/s. Dots: measured means.</p>
         </div>
     </div>
 
     <p class="note">From <code>plans/grn-plan.md</code>, runs 3 to 5 (synthetic, each predicted before it ran). Runs 1 and 2
-    gave the reader the shape ("two equal stars"); such a reader reads below its grain, and the corner blurs. This page is
+    gave the reader the shape ("two equal stars"); such a reader reads below its grain, and the resolution limit blurs. This page is
     the reader without a model. See also <a href="sweep.html">the sweep device</a>.</p>
 </main>
 <script>
@@ -107,7 +109,7 @@
     const C = { line: 'rgba(255,255,255,0.09)', dim: css('--dim'), ink: css('--ink'), gold: css('--gold'), teal: css('--teal'),
         red: css('--red'), bright: css('--bright'), panel: '#1b1b24' };
 
-    // the reader: pixels h wide, offset at random each look; the system: points at -1/2 and +1/2
+    // the reader: pixels H wide (state.h), offset at random each look; the system: points at -1/2 and +1/2
     const state = { h: 1, off: 0, last: null, looks: 0, grains: 0, history: [], measured: [], busy: false, log: '' };
     const s = () => 1 / state.h;
     const pixOf = (x, h, off) => Math.floor((x + off) / h);
@@ -148,7 +150,7 @@
         const msg = !state.last ? 'press "look": the reader gets only its pixels'
             : state.last.two ? `the reader sees TWO: ${state.last.lit} pixels lit` : 'the reader sees ONE: both points in one pixel';
         g.fillText(msg, W / 2, 26);
-        g.textAlign = 'left'; g.fillStyle = C.dim; g.fillText(`pixel h = ${h < 0.1 ? h.toFixed(3) : h.toFixed(2)}`, 8, H - 8);
+        g.textAlign = 'left'; g.fillStyle = C.dim; g.fillText(`pixel H = ${h < 0.1 ? h.toFixed(3) : h.toFixed(2)}`, 8, H - 8);
     }
 
     const LX = (x, W, pad) => pad + (Math.log(x / S_MIN) / Math.log(S_MAX / S_MIN)) * (W - 2 * pad);
@@ -161,7 +163,7 @@
         }
         const xc = LX(1, W, pad); g.strokeStyle = 'rgba(212,160,82,0.6)'; g.setLineDash([4, 4]);
         g.beginPath(); g.moveTo(xc, 12); g.lineTo(xc, H - 22); g.stroke(); g.setLineDash([]);
-        g.fillStyle = C.gold; g.fillText('corner', xc, 10 + 0);
+        g.fillStyle = C.gold; g.fillText('one pixel', xc, 10 + 0);
         g.textAlign = 'left'; g.fillStyle = C.dim; g.fillText(yLabel, pad, H - 26 > 30 ? 26 : 22);
     }
 
@@ -197,7 +199,7 @@
     }
 
     function readout() {
-        const x = s(), where = x < 0.97 ? 'below the corner: serial' : x > 1.03 ? 'past the corner: parallel' : 'at the corner';
+        const x = s(), where = x < 0.97 ? 'below one pixel across: serial' : x > 1.03 ? 'past one pixel across: parallel' : 'at one pixel across';
         const lines = [
             `s = ${x.toFixed(3)}   (${where})`,
             x < 1 ? `each look shows "two" with chance ${x.toFixed(2)}; expect about ${(1 / x).toFixed(1)} looks, each 1 pixel`
@@ -239,11 +241,11 @@
     $('slide').onclick = () => run(async () => {
         setS(S_MIN); let n = 0, px = 0, r;
         for (;;) { r = doLook(); n++; px += r.lit; draw(); await sleep(450); if (r.two) break; setS(s() * 2, false); }
-        state.log = `the slider: ${n} looks (a fixed dial at s = ${S_MIN} would expect ${(1 / S_MIN).toFixed(0)}); stopped at s = ${s().toFixed(2)}, at its corner or sooner`;
+        state.log = `the slider: ${n} looks (a fixed dial at s = ${S_MIN} would expect ${(1 / S_MIN).toFixed(0)}); stopped at s = ${s().toFixed(2)}, at one pixel across or sooner`;
     }, $('slide'));
     $('approach').onclick = () => run(async () => {
         for (let i = 0; i <= 160; i++) { setS(S_MIN * Math.pow(6 / S_MIN, i / 160), true); doLook(); draw(); await sleep(70); }
-        state.log = 'coming closer: "two" by chance, more and more often, then certain from the corner on';
+        state.log = 'coming closer: "two" by chance, more and more often, then certain from one pixel across on';
     }, $('approach'));
     $('measure').onclick = () => {
         if (state.busy) return; let tot = 0;

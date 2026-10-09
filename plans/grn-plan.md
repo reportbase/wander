@@ -7,6 +7,13 @@ it. i just described how a serial signal becomes a parallel signal"; and "the id
 our perspective, not the system's." Synthetic, as Tom asked ("with synthetic data, we can precisely model the situation
 quickly"). The lab rules hold: nothing above the "Runs" line is edited after the run.*
 
+*Terminology, 9 October 2026, a note added after the runs; nothing below it is changed (Tom: "geometry is v and h.
+physics is V and H."; SPN §1, "H and h kept apart"; `plans/physics-vh-audit.md`). In this plan h is the reader's step
+(H, or ε), v a size over its distance (Δ/d), and s = v/h is size against step, Δ/(d·ε): amounts, physics. "The corner,
+s = 1" throughout means one step across, the resolution limit, not SPN's corner h = v (two fill levels, no scale). In
+run 8, v is the distance d. Tom's own words are kept as he wrote them (his "H as a dial" in run 5 already has H). The
+runs are kept as recorded.*
+
 ## The claim, in SPN's terms
 
 Let the reader's grain be h (its resolution, an angle) and the system's apparent size v (its extent over its distance).
