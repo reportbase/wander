@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 9 October, sixty-second: SPN's pass at a review: binary branching is proved, the ratio of 2 rests on the in-place lay (deferred); one account of level of detail, k = log₂(Δ/(v·ε)); compile time stated exactly; the five situations by what is known.
 - 9 October, sixty-first: geometry → sweep → reading: the level of detail is what the sweep over the field yields, k = log₂(Δ/v) (SPN, the opening; Tom).
 - 9 October, sixtieth: SPN Appendix D, Proposition D.1: the halving is the only subdivision a level without a measure supplies (noted).
 - 9 October, fifty-ninth: §4, what the demos of 9 October left open: light's corner in quanta, a grain that is not square (SPN §14).

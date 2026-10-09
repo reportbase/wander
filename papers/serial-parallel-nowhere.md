@@ -50,6 +50,19 @@
 > reader's units, not on what it sends (§3.3, "The same signal, a smaller share"). And the field's branching is the
 > geometry's too: the only subdivision a level supplies is the halving (Appendix D, Proposition D.1), so the sweep reads a
 > binary structure that it does not choose either.
+>
+> *Compile time, stated exactly* (Tom, 9 October, passing on a review of five remaining issues, then "a). difficult proofs can be deferred to future papers."). "Geometry is compile time" does not say that nothing runs; it says the
+> structure is not an algorithm, though observing it is a process:
+>
+> | geometry | observation |
+> |---|---|
+> | defines the field and its levels | traverses the field |
+> | does not depend on what arrives | meets what arrives |
+> | has no exit condition | can stop where the resolution it has reached is enough |
+> | does not choose its branching | does not choose the geometry's structure |
+>
+> A particular reading can stop; the geometry has no termination. The claim that geometry is prior to any universe is
+> Tom's reading and is not part of what this paper proves.
 
 *Tom Brinkman, with Claude. Working paper. Rewritten 1 October 2026 around the rulings of that evening (R153–R158); revised 2 October to foreground the inversion at the corner as the main contribution (§3.2, R161), and again that
 morning after a review: the levels of what is proved, Proposition 3.2(b), the three Parts; R162 then made the inversion forced; R163 added the octaves (§3.3), placed against *The Radix*; R164 the corner stated as ordinary (§3); R165 the corner as the near horizon (§3.7); §3.8 no rung is preferred (Propositions 3.6–3.8); R167 one octave, two facings (§3.3); R168 g and the share told apart (§3.5); the shape emerging by octaves measured (§3.3); R169 the reader is the pivot (§3.7); R170 g is the sweep (§3.5); R171 the situations describe one another, payloads on demand and as readers (§2.2, §4.3). Revised 3 October with the *Wander* labs: known physics retraced from somewhere (§9.9), the weighing of §9.7 corrected, the conjecture widened with a test for convention (§11.4), and what the labs add to the standing of the claim (§12–§14). Revised again on 3 October after a second review: the three layers set apart (after the abstract), "forced" scoped to its premises, the Cauchy stated as what the lay induces (§2.2), and the reader's own travel named as a question of its own (§14). Revised 5 October, afternoon, with the shape and signal runs of that day: hidden sides and readers within readers (§6.4), the central hypothesis's standing after them, R186–R187, and the runs in Appendices B and C. Revised 6 October with an audit of Part I (`plans/part-one-audit.md`): the central hypothesis's two parts told apart, the coil corrected (§3.2), Propositions 3.2(b), 3.4 and 3.8 and Corollary 3.5(b) tightened; and with the run for the 2 (HRT) and number lines in people (NLE) recorded (§14, Appendix C); then the situations restated on the sweep alone (§2.1, Tom's list 0–4) and the octaves as a spiral (§3.3, Propositions 3.11–3.13), from Tom's remark that each octave is a quarter turn and that situation 3 or 4 has a horizon and recursion where situations 1 and 2 have neither. Revised 8 October with
@@ -61,7 +74,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the grain's shape, reading through the grain by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1). Then Proposition D.1: on a level with only its ends, order and flip, the only subdivision the geometry supplies is the halving; every other branching factor needs an added measure (Appendix D; noted at the central open question).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the grain's shape, reading through the grain by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1). Then a pass at a review of five issues: binary branching told from a ratio of 2, the in-place lay deferred to a later paper (Appendix D); the governing account of level of detail (§3.3); compile time stated exactly (the opening); the five situations by what is known (§2.1); the physics kept as correspondence (the central result's scope). Then Proposition D.1: on a level with only its ends, order and flip, the only subdivision the geometry supplies is the halving; every other branching factor needs an added measure (Appendix D; noted at the central open question).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -255,7 +268,9 @@ different standing, as the correction below found. They are now stated apart:
 > free (Proposition 3.4(a)). The question is kept but no longer central ("Demoted: the derivation of 2", below; Appendix D).
 > Since 9 October Appendix D holds Proposition D.1: on a level with only its ends, order and flip, the only subdivision
 > the geometry supplies is the halving, and every other branching factor needs an added measure (proved; the premise of
-> no measure is the open part).
+> no measure is the open part). The branching is binary either way; the ratio between levels is 2 only under the
+> in-place lay, the reader counting in its own h (Appendix D, "Binary branching is not yet a ratio of 2"); that the lay is
+> forced is deferred to a later paper.
 
 **The corner is where the resolved becomes the unresolved** (Tom, 8 October: "this seems important, explains alot.", and "yes" to running it first and then raising it here; Claude's reading of standard physics, unruled; one
 synthetic run). A signal thins as it travels (the inverse-square law), and the law has no scale: 1/v² looks the same at
@@ -271,6 +286,12 @@ brightness the law goes on past the corner as a chance, a body seen whole in one
 all, its size gone, the sky's filled share still right; LAD's third run, with brightness added to the world, finds the
 distance ladder's two rungs past parallax are the law's two halves, width giving out at the corner and light going on
 past it (to 0.05% at an eighth of an address across).
+
+*Scope* (Tom, 9 October, passing on a review of five remaining issues, then "a). difficult proofs can be deferred to future papers."). This paragraph and the entries it points to are correspondences with physics, not derivations of
+it. The physical assumptions stay visible: the signal goes out freely in every direction with nothing in between; its
+falloff with distance is the inverse-square law, taken from physics, not derived here; the reader's grain is the
+instrument's; light arrives in quanta (§14). What the paper shows is how a reader with a grain reads such a law: a
+corner appears in the reading where the law has none. The mathematical results of Part I do not depend on any of it.
 
 The hypothesis as promoted, with its history, is kept below as written.
 
@@ -662,6 +683,17 @@ side at once; 4 inside an endless apple, the others arriving one at a time, near
 | **3** | one hemisphere, counted together | parallel | outside | an apple held in the hand |
 | **4** | one point at a time, projected | serial | inside | a molecule of an apple |
 
+*By what is known of the breadths* (9 October, at a review asking that each situation be defined by what is known, not by
+how it looks; Tom, 9 October, passing on a review of five remaining issues, then "a). difficult proofs can be deferred to future papers."). One geometry throughout; the five are five relations to it.
+
+| | v's breadth | h's breadth | standpoint | the reading | the corner | what the sweep can only approach |
+|---|---|---|---|---|---|---|
+| **0** | not known | not known | none | none | none | — |
+| **1** | known | known, equal to v's | none | held whole, an angle 0 to 90° | computed: a known equality, 45° | nothing |
+| **2** | known, varying with direction | known | none | held whole | computed in each direction | nothing; depth follows the shape and stops |
+| **3** | not known (or within bounds) | known: the reader's unit, V = H | outside | proportional to the corner, levels past it | approached, never located as an equality | the corner and the horizon |
+| **4** | not known (or within bounds) | known: the reader's unit, V = H | inside | as 3, met one point at a time | approached, never located | the corner and the horizon |
+
 3 and 4 can each be known approximately, with one number known only within bounds (the earlier situation 5): a
 variant of 3 and 4, not a sixth way. The first cut is whether v is known: with v and h known it is 1 or 2, as they are
 equal or not; with v not known, 3 or 4, as the reader stands outside or inside; with neither, 0.
@@ -686,7 +718,8 @@ equal or not; with v not known, 3 or 4, as the reader stands outside or inside; 
 What 3 and 4 share, and 1 and 2 do not: **a horizon** (the line approached from either side, never reached: "The
 horizon of a situated reader"); **a corner approached, never found**; and **recursion forced** by the horizon, without
 end, each level the same sweep, Archimedes' halving ("Why the recursion"; Propositions 3.11–3.13). In 2 recursion
-follows the shape and stops; 1 has none.
+follows the shape and stops; 1 has none. ("Recursion" here and in what follows names the levels the sweep meets, not a
+process that makes them: §3.3, "Recursion considered and rejected".)
 
 **Static and dynamic: why a situated reader is parallel or serial** (Tom, 7 October: "another way observation could
 be described as there are static and dynamic systems. static systems are stable, we observe their front hemisphere.
@@ -2187,6 +2220,16 @@ detail**. Why:
 - **So the split is clean.** The geometry is compile time: every level, the ratio between them, the corner. Picking the
   level of detail is runtime, one index. The payload's values are met at the address picked. What looked like recursion
   was the levels' self-similarity (each the same sweep), which is a fact about the geometry, not a process.
+- **The governing account of level of detail** (Tom, 9 October, passing on a review of five remaining issues, then "a). difficult proofs can be deferred to future papers."; it governs every earlier passage in this paper that speaks
+  of choosing, requesting or recursing to a level, which are kept as the record). *Terms.* The reader's grain ε is the
+  spacing of its addresses, one address across; in a situated reader it is its unit h, so ruler and grain are one. A
+  thing of breadth Δ met at distance v spans Δ/v of the reader's view (for small Δ/v), so it covers n = Δ/(v·ε) grains
+  across. *The rule.* Its level of detail is k = log₂ n: resolved from k = 0, at the corner, where it is one grain
+  across (n = 1), one level more per halving of distance; under one grain (n < 1) it is unresolved, met as a chance of a
+  grain or as dimming, as the signal allows (§3.3, "The same signal, a smaller share"). *Layers.* The geometry holds
+  the levels and their relations; the sweep traverses them; the resolution is set by size against grain; a reading
+  may stop once it has the resolution it needs, but the reader neither selects nor creates the level, and the geometry
+  has no termination.
 - **A sweep over the level of detail** (Tom, 8 October: "demote the derivation of 2. reader sweeps their level of detail. In the near field, it proportional, far field its logrithmic. there is no recursion at all, its a sweep over the LOD.") The reader sweeps its level of detail as it sweeps anything: in the
   near field, home to the corner, proportionally; in the far field, past the corner, logarithmically, one level of detail
   per doubling (Proposition 3.4: within a level a share, across levels a count, and the count is the logarithm). So what
@@ -5047,6 +5090,27 @@ moves (3), an unequal split that favours a facing (φ), or a root (√2), each a
     a measure before anything arrives, which is step 2 of the proof in three steps above ("Before payload, there is no
     measure"). The claim for 2 reads: two is the only branching the level's own operations supply; any other branching
     factor is an added measure.
+  - **Binary branching is not yet a ratio of 2** (Tom, 9 October, passing on a review of five remaining issues, then "a). difficult proofs can be deferred to future papers."; Claude's reading, unruled). Proposition D.1 settles the
+    branching: a level splits in two at its corner. Where the next level's corner falls in v/h is a further question, and
+    the answer depends on how the level is laid, the map from a reading to a place. The next corner is the place ¾, the
+    middle of the back half:
+
+    | the lay | ¾ is v/h = | ratio between levels |
+    |---|---|---|
+    | in place: front proportional, f = s/2; back its flip, f = 1 − 1/(2s) (§3.5) | 2 | **2** |
+    | the sweep, g = (2/π) · atan(v/h) | tan(3π/8) ≈ 2.414 | 1 + √2 |
+    | the share by the sum, s/(1 + s) | 3 | 3 |
+
+    So the halving gives a ratio of 2 only under the in-place lay, which holds because the front half is read in
+    proportion, the reader counting v in its own h. That count is itself a measure, on the front half, and with it every
+    split is definable (the flip carries the front's measure onto the back), so the argument then rests on FRC run 3
+    (only the halving makes every child the same kind), not on Proposition D.1. The chain, then: without a measure only
+    the halving is definable (D.1, proved); with the reader's h as a measure every split is definable but only the halving
+    gives uniform children (FRC run 3, proved); either way the branching is binary; and the ratio is 2 if the level is
+    laid in place, proportional in h's up to the corner and its flip past it. **That the in-place lay is forced (that a
+    reader counting in its own unit is the only fair lay) is not proved here; it is deferred to a later paper** (Tom: "difficult
+    proofs can be deferred to future papers"). It agrees with Proposition 3.4(a), which leaves the base of the far field's
+    count free: the ratio is the unit the count is kept in.
   - **What would break it.** A compile-time measure on the level beyond the flip (then the second branch, run 3, carries
     it); a joining of the ends, which would bring rotations and with them every b (the full turn, situation 1); or a reading
     of "named for free" wider than "fixed by every symmetry".
