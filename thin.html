@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The same signal, a smaller share</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    thin.html: the same signal, a smaller share (9 October 2026, at Tom's "create multiple demos that explain the physics
+    correspndance"). A standalone page like dial.html, outside the world and the labs. SPN §3.3, "The same signal, a
+    smaller share", and the central result's "The corner is where the resolved becomes the unresolved", on one screen.
+
+    A ball of radius a = 1, as bright per unit of view as any surface (B = 1), at distance v; a reader whose grains are
+    ε = 0.02 across. The ball covers A = π·(a/v)²/ε² grains:
+      resolved (A >= 1, near): it lights about A grains, each as bright as ever; distance costs grains;
+      unresolved (A < 1, far): it lights one grain, at brightness A; distance costs light.
+    The light caught is A either way (grains lit × brightest grain), falling as 1/v²: the inverse square, which has no
+    corner of its own; the switch, at A = 1 (v = d* = a·√π/ε ≈ 88.6), is the reader's grain.
+    Summed over every standpoint at v (4π·v² of them, each an aperture of 1), the light caught is the same at every v.
+    Links: ?v=30. Test hook: window.__thin.
+    -->
+    <style>
+    :root {
+        color-scheme: dark;
+        --ground: #0c0c11;
+        --panel: #14141b;
+        --line: rgba(255, 255, 255, 0.09);
+        --ink: #c8c8d0;
+        --dim: #8a8a96;
+        --bright: #e6e4ee;
+        --gold: #d4a052;
+        --teal: #8ce6cd;
+        --red: #d96e5b;
+    }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 18px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    .lede { color: var(--dim); margin: 0 0 18px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+    label { color: var(--dim) }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer }
+    input[type=range] { flex: 1 1 260px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #readout { white-space: pre-wrap; color: var(--bright); overflow-x: auto }
+    .note { color: var(--dim); font-size: 12.5px }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .red { color: var(--red) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The same signal, a smaller share</h1>
+    <p class="lede">A ball sends the same light whether you are near it or far. What changes is how much of it you catch:
+    the light thins as it spreads over a bigger sphere, the inverse square. Your grain decides how the loss shows. Near,
+    the ball covers many grains, each as bright as ever, and distance costs <span class="gold">grains</span>. Far, it is
+    under one grain, and distance costs <span class="teal">light</span>. The switch is your corner: the ball one grain
+    across. The law itself has no corner.</p>
+
+    <div class="panel">
+        <div class="row">
+            <label for="dist">distance v</label>
+            <input id="dist" type="range" min="0.3" max="4" step="0.005" value="1.48">
+            <span id="vval" class="gold"></span>
+        </div>
+        <div class="row" style="margin-top:8px">
+            <button data-v="10">near (10)</button>
+            <button data-v="88.6">at the corner (88.6)</button>
+            <button data-v="400">far (400)</button>
+            <button data-v="3000">very far (3000)</button>
+        </div>
+        <div class="grid" style="margin-top:12px">
+            <div>
+                <canvas id="patch" height="300"></canvas>
+                <p class="note">What reaches you: 15 by 15 of your grains, each ε = 0.02 across, round the ball. A grain's
+                shade is the light it catches. The ring is the ball's true outline.</p>
+            </div>
+            <div>
+                <div id="readout"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="panel">
+            <h2>Grains lit and how bright</h2>
+            <canvas id="chart" height="260"></canvas>
+            <p class="note"><span class="gold">Gold</span>: grains lit (never fewer than one). <span class="teal">Teal</span>:
+            the brightest grain. <span style="color:var(--bright)">White, dotted</span>: the light caught, their product, 1/v² all
+            the way. The dashed line is the corner, where the ball is one grain across. Log scales.</p>
+        </div>
+        <div class="panel">
+            <h2>Where the rest goes</h2>
+            <canvas id="sphere" height="260"></canvas>
+            <p class="note">The ball sends to every direction alike. At distance v its light is spread over a sphere of
+            4πv² standpoints (each an aperture of 1). Each catches 1/(4πv²) of it; all of them together catch it all, at
+            every v. One reader holds one share: the cost of being situated.</p>
+        </div>
+    </div>
+
+    <p class="note">From <i>Serial, Parallel and Nowhere</i>, §3.3 ("The same signal, a smaller share") and the central
+    result ("The corner is where the resolved becomes the unresolved"); GRN run 8 (<code>plans/grn-plan.md</code>) and
+    the labs' OLB runs 4–5 and LAD run 3 (<a href="labs.html?lab=OLB">the dark sky</a>,
+    <a href="labs.html?lab=LAD">the distance ladder</a>). See also <a href="ladder.html">the ladder</a> and
+    <a href="sky.html">the dark sky</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+    const C = { line: 'rgba(255,255,255,0.09)', dim: css('--dim'), ink: css('--ink'), gold: css('--gold'), teal: css('--teal'),
+        red: css('--red'), bright: css('--bright'), panel: '#1b1b24' };
+    const A_BALL = 1, EPS = 0.02, DSTAR = A_BALL * Math.sqrt(Math.PI) / EPS, OFF = [0.31, 0.27], NP = 15;
+
+    // the ball's angular radius, its area in grains, and what the reader's grains catch
+    const alpha = v => Math.asin(Math.min(1, A_BALL / v));
+    const grainsOf = v => Math.PI * alpha(v) ** 2 / (EPS * EPS);
+    function at(v) {
+        const A = grainsOf(v), lit = Math.max(1, A), peak = Math.min(1, A);
+        return { A, lit, peak, total: lit * peak, resolved: A >= 1 };
+    }
+    const sphereSum = v => 4 * Math.PI * v * v / (4 * Math.PI * v * v); /* standpoints × share each: 1 at any v */
+
+    // each grain's light: the share of it the ball covers (16 × 16 samples), or, under a quarter grain, the whole ball
+    // in the grain that holds its centre
+    function patch(v) {
+        const a = alpha(v) / EPS, out = new Float64Array(NP * NP), c0 = (NP - 1) / 2;
+        if (a < 0.25) {
+            out[Math.floor(c0 + 0.5 + OFF[1]) * NP + Math.floor(c0 + 0.5 + OFF[0])] = Math.PI * a * a;
+            return out;
+        }
+        for (let j = 0; j < NP; j++)
+            for (let i = 0; i < NP; i++) {
+                let k = 0;
+                for (let q = 0; q < 16; q++)
+                    for (let p = 0; p < 16; p++) {
+                        const x = i - c0 - 0.5 + (p + 0.5) / 16 - OFF[0], y = j - c0 - 0.5 + (q + 0.5) / 16 - OFF[1];
+                        if (x * x + y * y <= a * a) k++;
+                    }
+                out[j * NP + i] = k / 256;
+            }
+        return out;
+    }
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = +cv.getAttribute('height');
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, h];
+    }
+
+    function drawPatch(v) {
+        const [g, W, H] = fit($('patch')), side = Math.min(W, H) - 10, cell = side / NP, x0 = (W - side) / 2, y0 = (H - side) / 2;
+        g.fillStyle = C.panel; g.fillRect(0, 0, W, H);
+        const P = patch(v);
+        for (let j = 0; j < NP; j++)
+            for (let i = 0; i < NP; i++) {
+                const b = P[j * NP + i], s = Math.pow(b, 0.45); /* shown with a gamma, so a dim grain still shows */
+                g.fillStyle = b > 0 ? `rgba(230,228,238,${(0.06 + 0.94 * s).toFixed(3)})` : 'rgba(255,255,255,0.025)';
+                g.fillRect(x0 + i * cell + 1, y0 + j * cell + 1, cell - 2, cell - 2);
+            }
+        const a = alpha(v) / EPS, cx = x0 + (NP / 2 + OFF[0]) * cell, cy = y0 + (NP / 2 + OFF[1]) * cell;
+        g.strokeStyle = C.gold; g.lineWidth = 1.5;
+        g.beginPath(); g.arc(cx, cy, Math.max(1.5, a * cell), 0, 2 * Math.PI); g.stroke();
+    }
+
+    // a log-log chart over v from 2 to 10000
+    const V0 = Math.log10(2), V1 = 4;
+    function drawChart(v) {
+        const [g, W, H] = fit($('chart')), L = 36, R = 10, T = 10, B = 26, Y0 = -7, Y1 = 4;
+        g.fillStyle = C.panel; g.fillRect(0, 0, W, H);
+        const X = lv => L + (lv - V0) / (V1 - V0) * (W - L - R), Y = ly => T + (Y1 - ly) / (Y1 - Y0) * (H - T - B);
+        g.strokeStyle = C.line; g.fillStyle = C.dim; g.font = '11px DM Mono, monospace';
+        for (let k = Math.ceil(Y0); k <= Y1; k++) { g.beginPath(); g.moveTo(L, Y(k)); g.lineTo(W - R, Y(k)); g.stroke(); if (k % 2 === 0) g.fillText('1e' + k, 2, Y(k) + 4); }
+        for (let k = 1; k <= 4; k++) { g.beginPath(); g.moveTo(X(k), T); g.lineTo(X(k), H - B); g.stroke(); g.fillText(String(10 ** k), Math.min(X(k) - 10, W - R - 7 * String(10 ** k).length), H - 8); }
+        const curve = (f, col, w = 2) => {
+            g.strokeStyle = col; g.lineWidth = w; g.beginPath();
+            for (let i = 0; i <= 200; i++) { const lv = V0 + (V1 - V0) * i / 200, y = Math.log10(f(10 ** lv)); i ? g.lineTo(X(lv), Y(y)) : g.moveTo(X(lv), Y(y)); }
+            g.stroke();
+        };
+        curve(u => at(u).lit, C.gold);
+        curve(u => at(u).peak, C.teal);
+        g.setLineDash([2, 3]); curve(u => at(u).total, C.bright, 1.5); g.setLineDash([]);
+        g.setLineDash([4, 4]); g.strokeStyle = C.red; g.lineWidth = 1;
+        g.beginPath(); g.moveTo(X(Math.log10(DSTAR)), T); g.lineTo(X(Math.log10(DSTAR)), H - B); g.stroke(); g.setLineDash([]);
+        g.fillStyle = C.red; g.fillText('corner', X(Math.log10(DSTAR)) + 4, T + 12);
+        g.strokeStyle = C.bright; g.lineWidth = 1; g.beginPath(); g.moveTo(X(Math.log10(v)), T); g.lineTo(X(Math.log10(v)), H - B); g.stroke();
+    }
+
+    // the sphere of standpoints: a ring of them at v; one is you
+    function drawSphere(v) {
+        const [g, W, H] = fit($('sphere'));
+        g.fillStyle = C.panel; g.fillRect(0, 0, W, H);
+        const cx = W / 2, cy = H / 2, Rm = Math.min(W, H) / 2 - 18, r = Rm * (Math.log10(v) - V0 + 0.15) / (V1 - V0 + 0.15);
+        g.fillStyle = C.gold; g.beginPath(); g.arc(cx, cy, 4, 0, 2 * Math.PI); g.fill();
+        const n = Math.max(6, Math.min(240, Math.round(6 * (v / 2) ** 0.45)));
+        for (let k = 0; k < n; k++) {
+            const t = 2 * Math.PI * k / n, x = cx + r * Math.cos(t), y = cy + r * Math.sin(t);
+            g.fillStyle = k === 0 ? C.teal : 'rgba(230,228,238,0.35)';
+            g.beginPath(); g.arc(x, y, k === 0 ? 4 : 1.8, 0, 2 * Math.PI); g.fill();
+        }
+        g.strokeStyle = 'rgba(212,160,82,0.25)'; g.beginPath(); g.arc(cx, cy, r, 0, 2 * Math.PI); g.stroke();
+        g.fillStyle = C.dim; g.font = '11px DM Mono, monospace';
+        g.fillText('standpoints at v: 4πv² = ' + fmt(4 * Math.PI * v * v), 8, 16);
+        g.fillText('each catches 1/(4πv²) = ' + fmt(1 / (4 * Math.PI * v * v)), 8, 32);
+        g.fillText('all together: ' + sphereSum(v).toFixed(3) + ' of the light', 8, 48);
+        g.fillStyle = C.teal; g.fillText('you', cx + r + 6, cy + 4);
+    }
+
+    const fmt = x => x >= 1e4 || x < 1e-3 ? x.toExponential(2) : x >= 100 ? x.toFixed(0) : x.toFixed(3);
+    function readout(v) {
+        const o = at(v);
+        $('vval').textContent = 'v = ' + fmt(v) + (o.resolved ? '  (near: resolved)' : '  (far: under one grain)');
+        $('readout').innerHTML =
+            'the ball across:      ' + fmt(2 * alpha(v) / EPS) + ' grains\n' +
+            'its area:             ' + fmt(o.A) + ' grains\n' +
+            'grains lit:           <span class="gold">' + fmt(o.lit) + '</span>\n' +
+            'brightest grain:      <span class="teal">' + fmt(o.peak) + '</span>' + (o.resolved ? '  (as bright as up close)' : '  (dimmer by 1/v²)') + '\n' +
+            'light caught:         ' + fmt(o.total) + '  (1/v², always)\n\n' +
+            (o.resolved
+                ? '<span class="gold">Distance costs grains.</span> Each grain\nis as bright as ever; fewer are lit.'
+                : '<span class="teal">Distance costs light.</span> One grain\nholds the ball, and it dims.') +
+            '\n\nThe corner, one grain across: v = ' + DSTAR.toFixed(1) + '.\nIt is your grain\'s, not the law\'s.';
+    }
+
+    function draw() {
+        const v = 10 ** +$('dist').value;
+        readout(v); drawPatch(v); drawChart(v); drawSphere(v);
+    }
+    $('dist').addEventListener('input', draw);
+    document.querySelectorAll('[data-v]').forEach(b => b.addEventListener('click', () => { $('dist').value = Math.log10(+b.dataset.v); draw(); }));
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search);
+    if (q.has('v')) $('dist').value = Math.log10(Math.min(1e4, Math.max(2, +q.get('v') || 30)));
+    draw();
+
+    window.__thin = { dstar: DSTAR, eps: EPS, at, sphereSum, patch: v => Array.from(patch(v)) };
+})();
+</script>
+</body>
+</html>

@@ -45,8 +45,8 @@
 <main>
     <h1>Wander demos</h1>
     <p class="lede">Wander is a world of solids you fly through, and a lab that compares what a reader can recover from
-    arriving signals against known physics. These are its pages: the world, the lab, and three small demos of one idea
-    each.</p>
+    arriving signals against known physics. These are its pages: the world, the lab, three small demos of one idea
+    each, and three on the physics correspondence.</p>
 
     <section class="card" id="world">
         <div class="tag">the world</div>
@@ -91,6 +91,40 @@
         reader holding h can be near in one direction and far in another. Beside it, a body whose relief (its depth)
         shows only once it covers enough of the reader's pixels.</p>
         <p class="try">Try: <a href="sphere.html?v=1&amp;h=1&amp;f=1&amp;map=chambers">the corner</a><a href="sphere.html?v=0.9&amp;h=0.25&amp;f=0.7&amp;map=reader">far in both</a><a href="sphere.html?map=whole">a held whole</a><a href="sphere.html?P=8">far off</a><a href="sphere.html?P=600">close up</a></p>
+    </section>
+
+    <h2 style="margin:26px 0 4px">The physics correspondence</h2>
+    <p class="lede">The labs take results known from the view from nowhere and show they also come out for a reader who
+    holds only what arrives. These three pages explain one line of that, the inverse square: the same signal, caught in a
+    smaller share, and the reader's grain deciding how the loss shows.</p>
+
+    <section class="card" id="thin">
+        <div class="tag">a demo: the inverse square</div>
+        <h2><a href="thin.html">The same signal, a smaller share</a></h2>
+        <p>A ball sends the same light near or far; you catch less of it as it spreads. Near, it covers many of your grains,
+        each as bright as ever: distance costs grains. Far, it is under one grain, and that grain dims: distance costs
+        light. The switch, at one grain across, is your corner; the law has none. All the standpoints together catch it
+        all, at every distance.</p>
+        <p class="try">Try: <a href="thin.html?v=10">near</a><a href="thin.html?v=88.6">at the corner</a><a href="thin.html?v=400">far</a><a href="thin.html?v=3000">very far</a></p>
+    </section>
+
+    <section class="card" id="ladder">
+        <div class="tag">a demo: the distance ladder</div>
+        <h2><a href="ladder.html">The ladder</a></h2>
+        <p>Three ways to find how far a body is, each one breadth read against another: your own travel (parallax), its
+        width, and its light. Parallax and width each give out at their corner, where what they read falls under one
+        address; light goes on past both, as the inverse square goes on as dimming, until too few photons arrive.</p>
+        <p class="try">Try: <a href="ladder.html?D=2000">parallax still reads</a><a href="ladder.html?D=30000">width, not parallax</a><a href="ladder.html?D=400000">light only</a><a href="ladder.html?D=400000&amp;photons=1">with photons</a></p>
+    </section>
+
+    <section class="card" id="sky">
+        <div class="tag">a demo: Olbers' dark sky</div>
+        <h2><a href="sky.html">The dark sky</a></h2>
+        <p>If bodies filled an endless world that had always been, the night sky would blaze: each farther shell is
+        fainter by the square of its distance and more numerous by the same, so every shell gives the same light. It is
+        dark because only what has arrived is seen. Slide the reach and the lit share follows 1 − e<sup>−L/λ</sup>; read it
+        backwards and the dark gives the age.</p>
+        <p class="try">Try: <a href="sky.html?L=0.25">a young sky</a><a href="sky.html?L=1">one free path</a><a href="sky.html?always=1">always been</a></p>
     </section>
 
     <footer>The papers behind these pages are in the
