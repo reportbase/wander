@@ -557,7 +557,8 @@ H is always H.").
   (the sweep over level of detail, 8 October), it describes the reading, not the sweep.
 - *Open:* whether a fourth party adds anything new or only repeats the pattern.
 
-**H and h kept apart** (Tom, 9 October: "Yes, this problem is pervasiv. we have been both conflating H with h."). Before
+**H and h kept apart** (Tom, 9 October: "Yes, this problem is pervasiv. we have been both conflating H with h."; "yes, this
+is a major problem, but it explains why we sometimes get confused. we conflate H with h and V with v."). Before
 9 October the paper, its rulings and the corpus wrote h both for the reader's breadth, its unit, and for the fill level in
 the relation. From here on H is the reader's breadth (its unit, its step, its ruler) and h only how much of H (0 to 1); V
 is the other's breadth and v how much of V; the distance is d. Where earlier text says "its h", "one h", "its own h",
