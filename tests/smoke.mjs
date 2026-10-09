@@ -269,6 +269,16 @@ try {
   if (Math.abs(ps.k - ps.exp) > 3 * Math.sqrt(ps.exp) || Math.abs(ps.back / 10 - 1) > 0.1 || ps.none !== 0 || ps.all !== 1500) failures.push(`[play-sky.html] ${JSON.stringify(ps)}`);
   console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills)`);
 
+  // ── 12. facing.html: the facing is 2θ, square to the line at the corner, the arc off the line most there ──
+  current = 'facing.html';
+  const before12 = failures.length;
+  await page.goto(new URL('facing.html?t=45', base).href, { waitUntil: 'load' });
+  const fc = await page.evaluate(() => { const f = __facing; return { c: f.at(45), a: f.at(0), b: f.at(90), q: f.at(30) }; });
+  if (Math.abs(fc.c.facing - 90) > 1e-9 || Math.abs(fc.c.ratio - 1) > 1e-9 || Math.abs(fc.c.share - 0.5) > 1e-9 ||
+      Math.abs(fc.c.offLine - (1 - Math.SQRT1_2)) > 1e-9 || fc.a.facing !== 0 || fc.b.facing !== 180 || !(fc.q.offLine < fc.c.offLine))
+    failures.push(`[facing.html] ${JSON.stringify(fc)}`);
+  console.log(`${failures.length === before12 ? 'ok  ' : 'FAIL'} facing.html (facing 90° at the corner, 0° at A, 180° at B; off the line ${fc.c.offLine.toFixed(3)} there)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
@@ -279,7 +289,7 @@ try {
     const r = await page.request.get(new URL(pth, base).href);
     if (!r.ok()) failures.push(`[demos.html] ${pth} answers ${r.status()}`);
   }
-  if (pages.length < 12) failures.push(`[demos.html] links to only ${pages.length} pages`);
+  if (pages.length < 13) failures.push(`[demos.html] links to only ${pages.length} pages`);
   await page.goto(new URL('index.html', base).href, { waitUntil: 'load' });
   await Promise.all([page.waitForURL(/demos\.html/, { timeout: 15000 }), page.click('#demosOpen')]);
   console.log(`${failures.length === before7 ? 'ok  ' : 'FAIL'} demos.html (${pages.length} pages, ${links.length} links)`);

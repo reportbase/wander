@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
     <!--
     sweep.html: the sweep device (7 October 2026, at Tom's "you could sweep the array like a device"). A standalone page,
-    not part of the world (world.js) or the labs (labs.html). An array of pairs (v, h), in any units, is normalized by
-    each pair's own h, laid on the unit sweep g = (2/π)·atan(v/h) from 0 to 1 (home 0, corner ½, horizon 1; SPN §2.1,
+    not part of the world (world.js) or the labs (labs.html). An array of pairs of amounts, in any units, each pair's two
+    amounts in one unit, is divided pair by pair (a ratio of two amounts in one unit is scale-free, and laid on a sweep it
+    is a v/h: SPN §1, "Every pair has its own sweep"; until 9 October this said "pairs (v, h) … normalized by each pair's
+    own h", which wrote amounts as fill levels), laid on the unit sweep g = (2/π)·atan(v/h) from 0 to 1 (home 0, corner ½, horizon 1; SPN §2.1,
     "The unit line, and the number line laid on it"; "Two normalizations, the two layings"), then read by a cursor.
     Serial: the cursor runs from 0 to 1 and reads one address at a time. Parallel: every address at once, against the
     bell. The quarter circle beside it is the same array laid the other way, by the whole (situations 1 and 2).
@@ -61,7 +63,7 @@
 <body>
 <main>
     <h1>The sweep device</h1>
-    <p class="lede">Any array of pairs (v, h), in any units, divided by its own h: every pair becomes a relation v/h and
+    <p class="lede">Any array of pairs of amounts, in any units, each pair divided by its own second amount: every pair becomes a relation v/h and
         an address on the one unit sweep, g from 0 (home) through 1/2 (the corner, v = h) toward 1 (the horizon). A cursor
         then reads the array as a device would: serially, one address at a time, or in parallel, all at once.</p>
 

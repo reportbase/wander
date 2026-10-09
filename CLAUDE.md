@@ -37,7 +37,7 @@ Google Fonts load from outside:
   body is a plain ball, close up its craters and mountains show. Looks only: motion,
   reading and the labs are unchanged, and `world.js` is not touched. Until they load, plain balls.
 - `sweep.html`: **the sweep device** (7 Oct 2026), a standalone page outside the world
-  and the labs: an array of pairs (v, h) divided by its own h, laid on the unit sweep
+  and the labs: an array of pairs of amounts, each divided by its own second amount, laid on the unit sweep
   g = (2/π)·atan(v/h) and read by a cursor, serially (4) or all at once (3), with the
   quarter circle (divided by the whole) beside it. `?ex=planets|shape|spread|line`,
   `?mode=parallel`. Not linked from index.html yet.
@@ -49,6 +49,10 @@ Google Fonts load from outside:
   Three fill levels and a scale k; the address on the octant (k changes nothing there); six chambers and the triple corner;
   the unit cube's faces; near and far for a reader holding H; a body with relief in three bands shown by its size in
   pixels (as `bandW`). `?v=&h=&f=&k=&P=&map=chambers|faces|reader|whole`; test hook `window.__sphere`.
+- `facing.html`: **the facing** (9 Oct 2026, after SPN §1, "The line, the arc and the facing"; Tom: "a line does not account
+  for a second degree of freedom"), a standalone page like `dial.html`. One sweep from A to B in fill levels: the facing
+  2θ turns from toward B through square to the line (the corner, θ = 45°) to toward A; beside it the quarter arc off the
+  line h + v = 1, most (1 − 1/√2) at the corner. `?t=` (θ in degrees); test hook `window.__facing`.
 - `thin.html`, `ladder.html`, `sky.html`: **the physics correspondence** (9 Oct 2026, Tom: "create multiple demos that
   explain the physics correspndance"), standalone pages like `dial.html`. `thin.html`: the same signal, a smaller share
   (the inverse square; near, distance costs grains, far, light; the switch at one grain is the resolution limit;
@@ -61,7 +65,7 @@ Google Fonts load from outside:
   (dim by 1/d², vanish, or a full-bright pixel; hook `__points`); events on approach (point, resolved, shape, terrain,
   surface; `__resolve`); distances earned rung by rung (parallax, then width and light per kind; `__navigator`); the sky
   filling as light arrives, the count a clock (`__skyfill`). Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the three demos (sweep, dial, sphere) and the three on the physics correspondence, each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the four demos (sweep, dial, sphere, facing) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -212,6 +216,7 @@ In short:
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
   11. **Gameplay sketches:** each page's one mechanic through its hook (dimming, stages, the ladder's locks and light, the
       sky's count read back as time).
+  12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
