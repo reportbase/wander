@@ -94,6 +94,45 @@ Also measured: δ put in at several levels at once (j = 1, 3, 5), to see whether
   size of the only error that survives, and the measured "adding" would be the sum of those wall terms.
 - Which of P1 and P3 the format paper's reader is, its definition will say; this plan does not decide it.
 
+*Clarified before the run, 9 October (Tom: "proceed"; Claude), two gaps the plan left, each with its prediction:*
+- *P2's child width.* The plan places a child's home at its parent's read corner but does not say where the child ends.
+  Two readings, both run: **(a)** the child runs from the read corner to the far wall, which the geometry fixes (g = 1);
+  **(b)** the child's width is the geometry's (half its parent's laid width), only its home taken from the reading.
+  Worked before running: under (a) a shift of δ at level j is 2δ in level j+1's coordinate and stays 2δ below (the
+  shift halves in g as the width does), so P2 should be **killed**; under (b) the shift keeps its size in g while each
+  width halves, so it doubles per level, and P2 should **hold**.
+- *P1's sloped error in the last region.* Region K−1 is level K−1's whole support, out to x = 1, so the ramp's largest
+  value there is 1, not 1 − 2⁻⁽ᴷ⁻ʲ⁾; the prediction is read with 1 for that region.
+
 ## Runs
 
-*(none yet)*
+### Run 1 (9 October; `plans/amp/amp.py`, output `plans/amp/amp-run1.txt`)
+
+- **P1 not killed, but nearly by construction.** Flat error: A(j → k) = 1.0000 for every k ≥ j and 0 above; δ at
+  j = 1, 3, 5 together gives 3.0000δ in region 7. Sloped: 0.4999, 0.7500, 0.8750, … as 1 − 2⁻⁽ᵏ⁻ʲ⁺¹⁾, and 1 in the last
+  region. This only confirms the set-up: with each level holding its own band and its frame fixed, nothing could carry
+  an error anywhere but down, once. The content is in the contrast with P2.
+- **P2: model (a) killed, model (b) not killed, both as worked before the run.** (a), the child running from its
+  parent's read corner to the far wall the geometry fixes: a shift of δ at level j is 2.000δ in level j+1's coordinate
+  and stays 2.000δ at every level below (growth 1.000 a level). (b), the child's home from the reading and its width the
+  geometry's: 2, 4, 8, … 128δ, growth 2.000 a level, exactly. So compounding needs both ends of a frame taken from
+  readings; one end fixed by the geometry (the far wall) holds the error at its first size.
+- **P3 killed, on the wall criterion only; and the set-up was flawed.**
+  - *Masking held:* a flat error left at most 4×10⁻¹³ below level j (bound 10⁻⁶); a sloped one at most 0.0063 (bound
+    0.1).
+  - *Killed:* the sloped leftover was not concentrated beside the walls: 45–51% within the outer tenth of each child's
+    support, against the 80% predicted. A cosine series fitting a ramp leaves its error spread along the support
+    (falling off as 1/n²), larger at the ends but not held there.
+  - *My set-up:* this nesting's baseline did not reconstruct the target (error 0.61, against 10⁻¹² predicted). A level
+    fitting what is left over its whole support also takes up the deeper levels' detail in its back half, and that leaks
+    into its front half, its own region, where no child corrects it. So the "A(j → j)" values in the output (±1, −0.83)
+    are differences of maxima on a nonzero baseline and mean nothing; the masking figures are clean (least squares is
+    linear, and they are taken as differences of the whole leftover). A fix is a new run with its own prediction (a
+    target each level can hold with its children, or a child that re-reads only its own region).
+
+**What run 1 says, so far.** The adding in SPN §3.3 follows from the levels being laid by the geometry: fixed frames
+pass an error down once and unscaled, and errors from several levels sum (P1). Frames taken from a reader's own readings
+compound by 2 a level, but only if both ends of each frame come from readings (P2 (b)); with the far wall the
+geometry's, a misread home stays 2δ at every depth (P2 (a)). A child that re-reads what its parents left masks their
+errors (P3's masking, held), but where its flat-ended rows cannot hold a slope the leftover is spread along the
+support, not gathered at the walls (P3's wall prediction, killed). Not yet placed in SPN.
