@@ -586,6 +586,21 @@ still has the relation and its corner, h = v. Not knowing V withholds nothing in
 fill level back into an amount of V. The review (`plans/vh-rulings-review.md`) had asked whether a situated reader can
 form v without V: it can.
 
+*Geometry is v and h; physics is V and H* (Tom, 9 October: "yes, geometry is v and h. physics is V and H.", agreeing to
+the two points below, Claude's wording). Two consequences:
+- *The sweep is known before V.* Its whole structure (the empty end and the full end, the corner h = v, the halvings ½,
+  ¼, ⅛, …, the levels) is 0 to 1 and needs no V, so a situated reader has all of it in advance. This is what "geometry is
+  compile time" means exactly: the sweep's structure is the compile-time part; V's amount is the payload. The levels are
+  halvings of 0 to 1, given without any breadth (Appendix D, Proposition D.1).
+- *The situated and the unsituated views share the sweep.* Both hold the same relation, the same corner and the same
+  levels. They differ only in turning a fill level back into an amount: the unsituated view, holding V as well as H, can
+  form v·V and h·H; the situated, holding H alone, can form h·H but not v·V. Not knowing V withholds nothing of the
+  geometry, only the physics.
+So whatever is stated in amounts (sizes, distances, the reader's step, light, photons) is physics, in H and V (and d), and
+is not a point of the sweep; whatever is stated in fill levels is geometry. The physics correspondences are to be revisited
+for the same conflations (Tom, 9 October: "the physics correspondance is a seperate issue. we need to revisit the physics
+to make sure that it is not making the same conflations of H and h and V and v.").
+
 A situated reader reads the pair as v over h, the **reading** s = v/h, a ratio of two fill levels, which runs over
 [0, ∞). It has three marks:
 
