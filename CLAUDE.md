@@ -181,6 +181,18 @@ check each symbol's case and domain, and name the bridge for any conclusion that
 before 9 Oct often conflates them (SPN's opening warning and §1, "H and h kept apart"; `plans/vh-rulings-review.md`,
 `plans/physics-vh-audit.md`). "The corner" is h = v, which has no scale; a point set by amounts (one step across, a photon
 count) is physics (the resolution limit), not the corner.
+Where things stand (SPN §1 opens with "The settled view, 9 October"; read it before working on the papers):
+- The sweep is every way h and v relate, from all of H to all of V; v fills against a full h up to the corner, then h
+  empties against a full v. Any two parties have a sweep: name the pair before saying "the corner".
+- The corner h = v is found by every reader (geometry). It is at 45° because the facing (the second degree of freedom a
+  straight line lacks) is square to the line there; facing = 2θ (`facing.html`).
+- V = H is a calibration a situated reader must set to read amounts, not part of the geometry; under it amounts equal fill
+  levels numerically, which is why the conflation is easy. Every amount is then off by V/H, the same on both sides of the
+  corner; physics' bridges (travel, a known constant, a known kind, a shared fact) remedy it (SPN Part II).
+- The fisheye is the sweep in one facing, seen from the standpoint (geometry, the same for every shape); with V = H it is
+  the situated fisheye reading.
+- Still open: the ratio 2 between levels (binary branching is proved; the in-place lay being forced is deferred, SPN
+  Appendix D); the weight on the sweep is a choice (SPN §14, "Burdens of proof").
 
 ## Read this first: THE LAB GUIDE
 The labs have their own rules, written in `labs.html`. Read two comments
