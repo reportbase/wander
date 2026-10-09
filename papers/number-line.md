@@ -61,6 +61,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 8 October, thirtieth: §8 and Background, the wedge is the primitive; the circle and the sphere are drawings of it; eight wedges in a sphere (Tom).
 - 8 October, thirty-first: Background, setting V = H creates the unit circle, though not situation 1: v is still unknown (Tom).
 - 8 October, thirty-second: §8, the wedge is made at every observation; the eight wedges do not compose the sphere, which is the picture of the complete system (Tom).
+- 9 October, fifty-ninth: §4, what the demos of 9 October left open: light's corner in quanta, a grain that is not square (SPN §14).
 - 8 October, fifty-eighth: §4, GRN run 8 and the corner as where the resolved becomes the unresolved (SPN, the central result).
 - 8 October, fifty-seventh: §4, the law has no corner; the corner is the reader's grain (Tom).
 - 8 October, fifty-sixth: §4, the inverse-square law, the situated reader one more place it shows up (Tom).
@@ -618,6 +619,11 @@ by side, with no ruling on the word:
   GRN run 8 (`plans/grn-plan.md`): a reader with no reach below its grain loses a receding pair at one grain across at
   any light; one given the shape loses it at v* ∝ (a²F₀)^(1/4). In SPN at the central result: the corner is where the
   resolved becomes the unresolved.
+- **What the demos of 9 October left open** (Tom, 9 October: "what did you learn from doing these demos?", then "proceed with paper updates"; SPN §14). Light has a corner of its own, in quanta: a reading
+  by light gives out where too few photons arrive, a corner on the signal's side. A grain that is not square gives each
+  direction its own corner, so v and v₂ share a level of detail only if the grain is alike in both. On the number line:
+  the window's digits are the reader's grain; a number given only to so many digits carries a grain of its own, a corner
+  on the sender's side.
 - **The eye is engineering, not geometry** (Tom, 8 October: "our paper is about h and v. not about the human eye. the human eye is engineering more than fundemental geometry."). The paper is about h and v. A lens, a retina and a visual cortex
   are one reader's engineering of them, and are kept out of the argument; what they share with it (projection as v/h,
   resolution laid proportionally then logarithmically, a fitted switch point near the fovea) is recorded as a neighbour in
