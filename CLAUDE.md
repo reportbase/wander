@@ -15,7 +15,8 @@ Google Fonts load from outside:
   shares with the labs (`plxTwoPart`, `twoAt`, …). A classic script whose top-level
   names both pages' scripts see (that is how both can assign `starsNow`). Moved
   out of the old single page line for line. **A change here changes the labs'
-  world: run every lab after it.**
+  world: run every lab after it.** Since 9 Oct it also holds brightness (`lightAt`, L·A/(4πd²), the
+  inverse square), read only by LAD's third run (the standard-candle rung past the reader's corner).
 - `index.html`: the flying page (the world drawn, the controls, the readout, the
   live-view test hooks). Its "lab" button opens `labs.html` and its "demos" button `demos.html`; `?lab=CODE` and
   `?lab=all` forward there; `?lab=0` hides the button.
