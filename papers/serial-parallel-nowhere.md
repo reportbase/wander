@@ -580,6 +580,12 @@ of a situated reader" (§2.1), "The quarter turn is Archimedes' proof made situa
 situations table (§2.1), and, in "What a sweep is" above, the sentence on a situated reader's ends and the corner from
 below. The review of the remaining rulings (Appendix A) is in progress; until each is ruled, it stands as written.
 
+*v needs no V* (Tom, 9 October: "the relation is 0-1. h = 0-1. v = 0-1. the relation is scale free. knowledge of H or V is
+not needed. so V is not needed to know that v is 0 to 1."). A reader that does not know V still has v, from 0 to 1, and so
+still has the relation and its corner, h = v. Not knowing V withholds nothing in the relation; it withholds only turning a
+fill level back into an amount of V. The review (`plans/vh-rulings-review.md`) had asked whether a situated reader can
+form v without V: it can.
+
 A situated reader reads the pair as v over h, the **reading** s = v/h, a ratio of two fill levels, which runs over
 [0, ∞). It has three marks:
 
