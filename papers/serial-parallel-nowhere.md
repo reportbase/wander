@@ -51,7 +51,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the grain's shape, reading through the grain by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4). Then what the demos and labs of 9 October left open: light's own corner in quanta, the grain's shape, reading through the grain by moving, most of a sky past the corner (§14; the law's corner qualified in §3.3; v and v₂ in §1). Then Proposition D.1: on a level with only its ends, order and flip, the only subdivision the geometry supplies is the halving; every other branching factor needs an added measure (Appendix D; noted at the central open question).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -220,7 +220,7 @@ what follows from them.
 | the situated reader | one breadth known gives the horizon, the fisheye and the bell; the corner approached, never found | **proved** as mathematics (§2.1); that a reader *is* such a thing is the paper's proposal |
 | recursion | the same sweep at every level; depth beats breadth; cost follows the shape | **ruled** where it rests on (R) (R172, R175, R180); **measured** on shapes (NST, the 3d bench, "Recursion, after the corner"); forced, far out, for a finite reader facing a horizon (`plans/resolution-recursion.md`, unruled) |
 | fairness to the facings | the reading treats v/h and h/v alike, f(1/s) = 1 − f(s); the corner's place and the inversion are forced only given it | **ruled** (R162, Tom, 2 October), not derived from the bare relation. *7 October:* it is the circle's swap symmetry carried into the reading, so it holds for any reading on the circle ("The circle inverts v and h at 45°", §2.1). Open: why a physical reader would read on the circle. Answered for one physical reader, the lens: light is reversible ("h as the focus", §2.1); open for readers in general |
-| the ratio between rungs | why 2 | **demoted** (8 October): the reader sweeps its level of detail, logarithmic past the corner, and the ratio is the unit of the count (Proposition 3.4(a), k free). A derivation from the flip is kept in Appendix D, unruled; the runs found the ratio set by the builder's rule or by the scene (below) |
+| the ratio between rungs | why 2 | **demoted** (8 October): the reader sweeps its level of detail, logarithmic past the corner, and the ratio is the unit of the count (Proposition 3.4(a), k free). A derivation from the flip is kept in Appendix D, unruled, with Proposition D.1 (9 October: the halving is the only subdivision a level without a measure supplies; proved, the premise of no measure open); the runs found the ratio set by the builder's rule or by the scene (below) |
 | physics | the labs (§9.9, §11.4) | **a correspondence**, not a proof: a passing lab adds standing to the conjecture, a failing one bears on the correspondence, not on the geometry |
 
 ---
@@ -243,6 +243,9 @@ different standing, as the correction below found. They are now stated apart:
 > *Demoted, 8 October* (Tom: "demote the derivation of 2"). The reader sweeps its level of detail, proportional in the
 > near field and logarithmic in the far; the ratio is the unit the far field is counted in, which the geometry leaves
 > free (Proposition 3.4(a)). The question is kept but no longer central ("Demoted: the derivation of 2", below; Appendix D).
+> Since 9 October Appendix D holds Proposition D.1: on a level with only its ends, order and flip, the only subdivision
+> the geometry supplies is the halving, and every other branching factor needs an added measure (proved; the premise of
+> no measure is the open part).
 
 **The corner is where the resolved becomes the unresolved** (Tom, 8 October: "this seems important, explains alot.", and "yes" to running it first and then raising it here; Claude's reading of standard physics, unruled; one
 synthetic run). A signal thins as it travels (the inverse-square law), and the law has no scale: 1/v² looks the same at
@@ -5005,10 +5008,35 @@ moves (3), an unequal split that favours a facing (φ), or a root (√2), each a
   - **What the inventory names.** The maps that keep the ends, the order and the flip are every order-keeping map of the
     level that commutes with the flip. They move any point other than the ends and the corner to any other point on the
     same side, so the only interior point named is the corner, and with nesting every named point is dyadic.
-  - **Why only 2 is even definable.** With no measure, "b equal parts" has no meaning unless the inventory supplies the
-    cuts. The flip supplies exactly one, at the corner, so halves are defined and thirds are not. If a measure were granted
-    after all, thirds would be defined, and run 3's count applies: only halves make every part the same kind. Either way
-    the split is 2.
+  - **Why only 2 is even definable** (*the informal form, 8 October; replaced by Proposition D.1 below*). With no
+    measure, "b equal parts" has no meaning unless the inventory supplies the cuts. The flip supplies exactly one, at the
+    corner, so halves are defined and thirds are not. If a measure were granted after all, thirds would be defined, and run
+    3's count applies: only halves make every part the same kind. Either way the split is 2.
+  - **Proposition D.1 (the only subdivision a level supplies is the halving)** (Tom, 9 October, passing on a review: "can you prove that every non-binary subdivision requires an added choice, rather than merely showing that the corner itself provides only two parts?", then "yes" to the proof; proved, on the premises
+    stated). *Premises.* (P1) A level is the interval from home to the far wall with its two ends, its order and the flip
+    f ↦ 1 − f, and nothing else: no measure. (P2) A point, or a set of cut points, is supplied by the geometry when every
+    symmetry of that structure keeps it, a symmetry being any order-keeping map of the level onto itself that commutes
+    with the flip (Klein's test: a geometry defines what all its symmetries preserve; anything else needs added
+    information to single it out). (P3) A nested level has its parent's structure. *Statement.* Under (P1)–(P3) the only
+    subdivision of a level the geometry supplies is the cut at the corner into two; every subdivision into b ≥ 3 parts
+    needs an added primitive. *Proof.* (1) Take an interior point x other than the corner, say 0 < x < ½. Take any
+    increasing map of [0, ½] onto itself fixing 0 and ½ and moving x, and extend it to [½, 1] through the flip,
+    g(f) = 1 − g(1 − f). It keeps the order and commutes with the flip, so it is a symmetry, and it moves x. So no interior
+    point but the corner is kept by every symmetry. (2) The same construction carries x to any point of (0, ½): the places
+    x can be moved to are the whole open half, infinitely many. (3) A subdivision into b parts is a set of b − 1 interior
+    cuts. Every symmetry carries a finite set onto itself only if each of its points can be moved to finitely many places;
+    by (2) only the corner can. So the only cut sets supplied are the empty set and {½}: one part or two. (4) By (P3) each
+    half is a level, and the argument repeats: the only subdivision supplied is repeated halving, and the levels are
+    dyadic. ∎ *Remarks.* (a) Not merely underdetermined: given only the corner and nesting, no ternary split is singled
+    out; any pair of cuts is carried by a symmetry onto another pair the structure cannot tell from it, so picking one is
+    the added choice. (b) Supplying ternary explicitly means adding a measure: with one, the symmetries shrink to the
+    identity and the flip, every equal split at k/b is kept, and every b is available; then FRC run 3's count applies
+    (b parts fall into ⌈b/2⌉ kinds, one only for b = 2), so even then only halving makes every child the same child.
+    (c) Splits of 4, 8, … are halving repeated and are supplied level by level. (d) The halves are equal with no measure:
+    the flip exchanges them. *Standing.* Airtight given (P1); the open question is now (P1) itself, whether a level holds
+    a measure before anything arrives, which is step 2 of the proof in three steps above ("Before payload, there is no
+    measure"). The claim for 2 reads: two is the only branching the level's own operations supply; any other branching
+    factor is an added measure.
   - **What would break it.** A compile-time measure on the level beyond the flip (then the second branch, run 3, carries
     it); a joining of the ends, which would bring rotations and with them every b (the full turn, situation 1); or a reading
     of "named for free" wider than "fixed by every symmetry".
