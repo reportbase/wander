@@ -51,7 +51,7 @@ the picture of all possible wedges from nowhere, not built from them (§1, §2.1
 *Reader Geometry as Addressing*: the hand as the picture of addresses, payload and the situations, and the Cauchy as addresses, not
 payloads (§4.3); the reader's unit circle, a quarter in one facing (§1). Then: recursion as an identity, precomputed by
 geometry, with the exit the reader's, and what that says for the 2 (§3.3; the central open question) Then: the number line as a unit agreed socially between readers (§7) Then: geometry is compile time (the opening). Then: the proof of the 2 in three steps, the levels known before any payload and laid only where there is depth (and §4.2), then the exit corrected as logic outside the geometry, and placed as the level of detail the reader requests, since
-there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result).*
+there is always something smaller and something larger (the opening, §3.3), and a level of detail as a doubling, the request a count (Appendix D); then recursion considered and rejected for level of detail (the terms; §3.3); then the reader sweeping its level of detail, and the derivation of 2 (the three steps: the levels known before any payload, no measure before payload, the named points forcing the nesting) demoted to Appendix D (the central open question); the eye recorded as engineering, not geometry (§3.3; `plans/neighbours.md`); f in (v, h, f) is v₂, a second v read against the same h, and h, v, v₂ swept to an address on the unit square (§1); depth, the slider m and the level of detail; smaller size driving less detail, not a request, the object the same near or far; the same signal, a smaller share, the cost of being situated (the opening, §3.3); trig used sparingly, the in-place sweep as the trig-free one (§3.5); the same signal, a smaller share, and the inverse-square law with no corner of its own (§3.3); the corner as where the resolved becomes the unresolved, with GRN run 8 (the central result). Then (9 October, in the drawing tool): the summary's unchecked points answered under "Recursion, after the corner" (§3.3: the circle's sweeps count the standpoint; the step on a wall is the residual's slope), and the ladder's top rungs shown in the plane (§8.4).*
 
 *This is the paper rewritten, not revised. The text of 29 September – 1 October, with the full quotations, the
 definitions it superseded, and the order in which things were found, is kept unchanged as the session record,*
@@ -2112,6 +2112,13 @@ And, the same day: "this is situation 1 and 2. recursion is not limited to situa
   level."). Point 4's "the circle needs 129" must then count something other than the circle's own shape: most likely
   the library circle's departure from the reader's unit circle, or the way the sweeps were counted (§2.1, "The five,
   in brief"). Not checked here.
+  *Checked, 9 October* (the drawing tool's library circle, read as DPT reads it): the first of these, and the departure
+  is the reader's, not the circle's. The circle's radius at the standpoint is right to 2×10⁻⁷, but the reader stands on
+  a ripple of the 256-leaf presentation (9×10⁻⁵ of the radius high) whose slope turns its facing 0.43° off square to the
+  radius. A turned facing reads s off by that turn near home, so p − 1 ≈ 0.0074/s: 0.7% at s = 1, 55% at s = 2⁻⁶. Squared
+  to the radius, the same reader's departure falls tenfold (0.54 to 0.056); the rest is the ripple itself, read close to
+  home. So the sweeps count the standpoint (the open question of where a reader should stand on an outline), and the
+  circle itself needs only the first level, as ruled.
 
 - *Two causes of one recursion.* These findings are over known shapes, situation 2: depth follows the shape's
   detail and stops where nothing is left. Propositions 3.11–3.13 are the recursion a horizon forces, situations 3 and 4,
@@ -2126,6 +2133,17 @@ And, the same day: "this is situation 1 and 2. recursion is not limited to situa
 - *The walls.* Across a join between levels the turn has no step, and its rate is the same on both sides (§2.1, "One
   continuous sweep"). So the step on a wall should come from the residual held on one side and not the other, not from
   the level map. Untested.
+  *Tested, 7 October* (format paper §2.8, "The walls"): from the residual, yes, but from its slope. A level's
+  presentation is the kernel mirrored about home, so it is flat at both its walls; the residual handed down generally
+  slopes across a wall, so no level holds it there, and the reading misses by percents in a band beside every wall at
+  every level (the full file reaches level 3 on 76% of the range). Rows chosen so the residual they leave is flat at the
+  next level's walls hold every library shape to 10⁻⁵ over the whole range. The wall points s = 2ᵏ themselves are left
+  open: there the address stops at the first level.
+- *Points 3 and 4, measured since* (format paper §2.8). Point 3's second result, re-measured on 7 October: the nested
+  reader 0.5–0.8% at every distance from 4 to 128 h, the one sweep 0.31% to 7.35%, 23-fold. Depth against breadth,
+  re-scored over the whole range: still 24 of 24 on the library (4× to 4,900×), but on a smooth formula with its detail
+  away from the reader one sweep wins; depth wins where the detail is near the reader. Point 4's "within one millionth"
+  held only where the third level is reached; over the whole range it takes the flat rows above, at 317 to 1,398 sweeps.
 - *Amplification adding.* Adding across levels is what a logarithmic measure does: chained relations add only under
   the logarithm (§2.1, "The relation forces the logarithm"). If amplification is counted in levels or logarithms, that
   derives the adding. If it is a plain ratio and still adds, it is something else, and worth finding out which.
@@ -3496,6 +3514,16 @@ D1 does is place the reader's corner: it decides which things are in contact (d 
 It does not touch a turn or any relation among turns, so no reading of shape depends on it. It is a property of the
 standpoint, not a magnitude of the world. The step of §5.6's open lay plays the same part: the corner falls where
 n · step = 1.
+
+*Shown in the drawing tool* (9 October; lab `udv`, *undoing the division*; gallery page *Recovered*). The ladder's
+top rungs in the plane, on outlines with exact readings. One reader's v/h of each place fixes a line through it and
+nothing more, so the census puts back the unit circle, missing the figures by 30% to 92% of their radius. Three readers
+who know their own triangle up to a scale, each passing only its v/h, cross their lines at every place two of them see:
+the shape comes back to 10⁻¹⁶ of its radius, at whatever size they took their triangle to be, and one length between
+two of them, agreed, gives the rest. Kept to d digits, each digit is a tenth off the miss; readers huddled together
+cross shallowly and lose about one digit. A place fewer than two readers see is not recovered (39 of 180 on a crescent
+read from inside its body). The page's readers are given which reading belongs to which place; finding that from the
+readings alone, as §8.1's readers find each other, is not shown there.
 
 ### 8.5 The ladder in one table
 
