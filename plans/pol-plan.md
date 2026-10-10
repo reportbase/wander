@@ -268,3 +268,44 @@ c = 10⁹ as a check. The slope of log₂ E against log₂ c is fitted by least 
 - **P11 (the check).** At c = 10⁹ both readers reproduce run 2: E < 1e-9.
 - *Measured, not predicted:* the share of contacts where the two balls of a pair judged contact at different substeps,
   at each c. Action and reaction no longer at one moment.
+
+Run 3 output (`node plans/pol/pol3.mjs`, in `plans/pol/pol-run3.txt`):
+
+```
+median over the ten heavy-ball breaks of E(c): the largest distance between the tables 0.05 s after the first contact
+  c = 25    naive 4.014e-1   carrying 1.048e-1   one-sided contact judgements: naive 98.1%, carrying 67.8%
+  c = 50    naive 3.350e-1   carrying 2.968e-2   one-sided contact judgements: naive 84.8%, carrying 33.1%
+  c = 100   naive 3.536e-1   carrying 1.989e-2   one-sided contact judgements: naive 74.5%, carrying 10.8%
+  c = 200   naive 3.645e-1   carrying 8.436e-5   one-sided contact judgements: naive 66.7%, carrying 3.2%
+  c = 400   naive 9.975e-2   carrying 3.671e-5   one-sided contact judgements: naive 33.3%, carrying 0.0%
+  c = 1000000000 naive 7.412e-9   carrying 1.346e-11   one-sided contact judgements: naive 0.0%, carrying 0.0%
+P9: KILLED. naive slope of log2 E against log2 c: -0.390
+P10: not killed. carrying at most a quarter of naive at c >= 50: 11.3x, 17.8x, 4321.4x, 2717.4x; carrying slope (measured) -3.142
+P11: KILLED. at c = 1e9: naive 7.41e-9, carrying 1.35e-11
+```
+
+- **P9 killed.** The naive reader's error does not fall one level per level of c over 25–400. Its slope there is
+  −0.39: E sits near 0.35 (about a ball's radius) from c = 25 to 200, then falls. Computed after the run, from c = 400
+  to 10⁹, the slope is −1.1, as the mechanism said. So the mechanism holds only once the error is small. While it is
+  large, the break plays out differently, and the error is the size of the game's own differences, not of the delay.
+- **P10 not killed.** The carrying reader is 11×, 18×, 4,321× and 2,717× closer than the naive reader at c = 50, 100,
+  200 and 400. *Measured:* its slope is −3.1, steeper than the −2 of the cloth alone, because its error collapses
+  between c = 100 and 200.
+- **P11 killed (my threshold).** At c = 10⁹ the carrying reader is 1.3e-11 off, but the naive reader is 7.4e-9 off,
+  past the bar of 1e-9. That is its 1/c error at c = 10⁹ (2.5e-9 from the c = 400 value scaled), and the bar was set
+  without working that out.
+- *Measured:* one-sided contact judgements, where one ball of a pair judged contact and the other not at that
+  substep. Naive: 98%, 85%, 75%, 67%, 33% at c = 25 to 400. Carrying: 68%, 33%, 11%, 3%, 0%. Late reading splits
+  action from reaction; carrying the image forward rejoins them.
+
+## Reading of run 3 (not ruled)
+
+- **Lateness is a reading too, and it has its own corner.** Computed after the run, the lateness at the contact
+  distance, (r_a + r_b)/c, is 8.6, 4.3, 2.2, 1.1 and 0.5 ticks of the table's clock at c = 25 to 400. The carrying
+  reader's error collapses (2.0e-2 to 8.4e-5) between 2.2 and 1.1 ticks. That suggests the pair (lateness, the tick)
+  has its corner at one tick: later than a tick, touches happen unseen within the lateness; earlier, nothing can
+  happen unseen. This is post hoc and needs its own run: hold c and change the tick.
+- **Carrying forward is the situated reader's remedy for time.** A late image carried along its own reported motion
+  reads nearly as if at once. What it cannot carry is what happened inside the lateness: a touch it has not yet seen.
+- **Delay sets no level of its own.** Its only number is u/c, the same at every distance. What gave the error a corner
+  was not the distance but the clock: the reader's tick.

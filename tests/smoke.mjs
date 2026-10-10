@@ -323,9 +323,11 @@ try {
   current = 'pool.html';
   const before15 = failures.length;
   await page.goto(new URL('pool.html', base).href, { waitUntil: 'load' });
-  const pq = await page.evaluate(() => { const r = __pool.run(4, { seconds: 3 }), e = __pool.run(4, { seconds: 3, heavy: false }), w = __pool.run(2, { seconds: 3, walls: 'inside' }); return { r, e, w }; });
+  const pq = await page.evaluate(() => { const r = __pool.run(4, { seconds: 3 }), e = __pool.run(4, { seconds: 3, heavy: false }), w = __pool.run(2, { seconds: 3, walls: 'inside' }),
+    ln = __pool.runLate(4, { c: 50, mode: 'naive', seconds: 1 }), lc = __pool.runLate(4, { c: 50, mode: 'carry', seconds: 1 }); return { r, e, w, ln, lc }; });
   if (pq.r.p1bad || pq.r.p2bad || pq.e.p3wrong || !(pq.r.p3wrong > 0) || !(pq.r.contacts > 5) || !(pq.r.diffAtFirst < 1e-9) || pq.r.diverge != null ||
-      pq.w.p6bad || pq.w.p7bad || !(pq.w.p6checks > 0) || pq.w.firstRail == null || !(pq.w.diffAtRail < 1e-9) || pq.w.diverge != null)
+      pq.w.p6bad || pq.w.p7bad || !(pq.w.p6checks > 0) || pq.w.firstRail == null || !(pq.w.diffAtRail < 1e-9) || pq.w.diverge != null ||
+      !(pq.lc.E < pq.ln.E / 4))
     failures.push(`[pool.html] ${JSON.stringify(pq)}`);
   console.log(`${failures.length === before15 ? 'ok  ' : 'FAIL'} pool.html (${pq.r.contacts} contacts, every one on h + v = 1; cushions read as the ball's own mirror image; from inside and from nowhere the same game)`);
 

@@ -62,6 +62,7 @@
             <button id="heavy" class="on">heavy ball</button>
             <button id="show">show: from inside</button>
             <button id="walls" class="on">cushions: from inside</button>
+            <select id="late" aria-label="signals"><option value="now">signals: at once</option><option value="naive">signals late (c = 50), taken as now</option><option value="carry">signals late (c = 50), carried forward</option></select>
         </div>
         <canvas id="table" height="340" style="margin-top:10px"></canvas>
         <p class="cap">The table played from inside. Tap a ball to stand on it: lines to the others, coloured by how many levels
@@ -202,6 +203,63 @@
     const stepRef = (B, log, onRail) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { ownAndWalls(B, h, onRail); refereePairs(B, log); } };
     const stepSit = (B, log, inside, wlog) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { inside ? ownAndWallsInside(B, h, wlog) : ownAndWalls(B, h); situatedPairs(B, log); } };
 
+    // ── run 3: time. Each ball reads the others late: as each was when its image left, the image travelling at c, so that
+    //    c·(t − t_e) is the distance then (the retarded image, from the other's past). The naive reader takes it as now;
+    //    the carrying reader carries it forward by its own lateness along the other's reported motion. Each decides alone;
+    //    the pair's size ratio (its ray, v/h = r_b/r_a) was told once, at the rack. Cushions as in run 2 (at once: named).
+    function lateImage(viewer, k, other, hist, tNow, c, carry) {
+        const live = { t: tNow, x: other.x, z: other.z, vx: other.vx, vz: other.vz, sunk: other.sunk };
+        let prev = live, fPrev = -Math.hypot(other.x - viewer.x, other.z - viewer.z), st = null;
+        for (let q = hist.length - 1; q >= 0; q--) {
+            const H = hist[q], cur = { t: H.t, x: H.x[k], z: H.z[k], vx: H.vx[k], vz: H.vz[k], sunk: H.sunk[k] };
+            const f = c * (tNow - cur.t) - Math.hypot(cur.x - viewer.x, cur.z - viewer.z);
+            if (f >= 0) {   // the image that reaches the viewer now left between cur and prev
+                const w = fPrev / (fPrev - f), L = (a, b) => a + (b - a) * w;
+                st = { t: L(prev.t, cur.t), x: L(prev.x, cur.x), z: L(prev.z, cur.z), vx: L(prev.vx, cur.vx), vz: L(prev.vz, cur.vz), sunk: w < 0.5 ? prev.sunk : cur.sunk };
+                break;
+            }
+            prev = cur; fPrev = f;
+        }
+        if (!st) st = prev;   // nothing old enough kept: the oldest
+        if (st.sunk) return null;
+        const late = tNow - st.t, x = carry ? st.x + st.vx * late : st.x, z = carry ? st.z + st.vz * late : st.z;
+        const dx = x - viewer.x, dz = z - viewer.z, d = Math.hypot(dx, dz);
+        return { n: [dx / d, dz / d], v: other.r / d, vel: [st.vx, st.vz], late };
+    }
+    function latePairs(B, hist, tNow, c, carry, tally) {
+        for (let i = 0; i < B.length; i++) for (let j = i + 1; j < B.length; j++) {
+            const A = B[i], Bb = B[j]; if (A.sunk || Bb.sunk) continue;
+            const ia = lateImage(A, j, Bb, hist, tNow, c, carry), ib = lateImage(Bb, i, A, hist, tNow, c, carry);
+            const ha = ia && ia.v * A.r / Bb.r, hb = ib && ib.v * Bb.r / A.r;   // each its own h, from the pair's ray
+            const ca = !!ia && ia.v + ha > 1, cb = !!ib && ib.v + hb > 1;
+            if (tally && (ca || cb)) { if (ca && cb) tally.both++; else tally.one++; }
+            const ra = ca ? respond(A, ia, { v: ha }, [ia.vel[0] / Bb.r, ia.vel[1] / Bb.r]) : null;
+            const rb = cb ? respond(Bb, ib, { v: hb }, [ib.vel[0] / A.r, ib.vel[1] / A.r]) : null;
+            if (ra) { A.x += ra.step[0] * A.r; A.z += ra.step[1] * A.r; A.vx += ra.du[0] * A.r; A.vz += ra.du[1] * A.r; }
+            if (rb) { Bb.x += rb.step[0] * Bb.r; Bb.z += rb.step[1] * Bb.r; Bb.vx += rb.du[0] * Bb.r; Bb.vz += rb.du[1] * Bb.r; }
+        }
+    }
+    const snapshot = (B, t) => ({ t, x: B.map(b => b.x), z: B.map(b => b.z), vx: B.map(b => b.vx), vz: B.map(b => b.vz), sunk: B.map(b => !!b.sunk) });
+    function stepLate(B, st, c, carry, tally) {
+        const h = FRAME / SUB;
+        for (let k = 0; k < SUB; k++) {
+            st.t += h; ownAndWallsInside(B, h); latePairs(B, st.hist, st.t, c, carry, tally);
+            st.hist.push(snapshot(B, st.t)); while (st.hist.length && st.t - st.hist[0].t > 2) st.hist.shift();
+        }
+    }
+    function runLate(i, opts = {}) {   // POL run 3's measure: the largest distance between the tables 0.05 s after the first contact
+        const c = opts.c, carry = opts.mode === 'carry', heavy = opts.heavy !== false;
+        const R = rack(heavy), S = rack(heavy); strike(R, i); strike(S, i);
+        const st = { t: 0, hist: [] }; for (let k = 480; k >= 1; k--) { const sn = snapshot(S, -k * FRAME / SUB); sn.vx = sn.vx.map(() => 0); sn.vz = sn.vz.map(() => 0); st.hist.push(sn); }
+        const tally = { one: 0, both: 0 }; let t = 0, first = null, E = null;
+        for (let f = 0; f < Math.round((opts.seconds || 1.2) / FRAME); f++) {
+            stepRef(R, (A, Bb, d, hit) => { if (hit && first == null) first = t; }); stepLate(S, st, c, carry, tally); t += FRAME;
+            if (first != null && E == null && t >= first + 0.05 - 1e-9)
+                E = Math.max(...R.map((b, k) => (b.sunk || S[k].sunk) ? 0 : Math.hypot(b.x - S[k].x, b.z - S[k].z)));
+        }
+        return { i, c, mode: opts.mode, first, E, oneSided: tally.one, both: tally.both };
+    }
+
     // ══ the plan's run: one break, both tables in lockstep, every measure of plans/pol-plan.md ══
     function run(i, opts = {}) {
         const heavy = opts.heavy !== false, T = opts.seconds || 8, frames = Math.round(T / FRAME), inside = opts.walls === 'inside';
@@ -252,7 +310,11 @@
     let REF = rack(heavyOn), SIT = rack(heavyOn), playing = true, chosen = 0, showSit = true, t = 0, lastDiff = 0, contacts = 0;
     for (let i = 0; i < 10; i++) { const o = document.createElement('option'); o.value = i; o.textContent = `break ${i} (${angleOf(i).toFixed(1)}°)`; $('which').appendChild(o); }
     $('which').value = which;
-    function reset(doStrike) { REF = rack(heavyOn); SIT = rack(heavyOn); t = 0; contacts = 0; if (doStrike) { strike(REF, which); strike(SIT, which); } }
+    let lateMode = 'now', LST = null;
+    function reset(doStrike) {
+        REF = rack(heavyOn); SIT = rack(heavyOn); t = 0; contacts = 0; if (doStrike) { strike(REF, which); strike(SIT, which); }
+        LST = { t: 0, hist: [] }; for (let k = 480; k >= 1; k--) { const sn = snapshot(SIT, -k * FRAME / SUB); sn.vx = sn.vx.map(() => 0); sn.vz = sn.vz.map(() => 0); LST.hist.push(sn); }
+    }
     function fit(cv) {
         const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +cv.getAttribute('height');
         if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
@@ -324,14 +386,15 @@
         if (me) for (const b of B) { if (b === me || b.sunk) continue; const L = Math.log2(Math.hypot(b.x - me.x, b.z - me.z) / (me.r + b.r)); near[Math.max(0, Math.min(5, Math.ceil(L)))]++; }
         $('hud').textContent =
             `t = ${t.toFixed(2)} s   ${showSit ? 'shown: the table played from inside' : 'shown: the referee, from nowhere'}   contacts so far ${contacts}\n` +
-            `the two tables differ by at most ${lastDiff.toExponential(2)} (rounding only: the same game, played from inside)\n` +
+            (lateMode === 'now' ? `the two tables differ by at most ${lastDiff.toExponential(2)} (rounding only: the same game, played from inside)\n`
+              : `the two tables differ by up to ${lastDiff.toFixed(3)}: each ball reads the others late (c = 50)${lateMode === 'carry' ? ', carrying each image forward' : ', taking the late image as now'}\n`) +
             (me ? `around ${me.cue ? 'the white' : me.n === 'H' ? 'the heavy ball' : 'ball ' + me.n}, by levels from touching: touching ${near[0]}, within 1 level ${near[1]}, 2 ${near[2]}, 3 ${near[3]}, 4 ${near[4]}, 5 ${near[5]}` : '');
     }
     let last = null;
     function tick(now) {
         if (playing) {
             const steps = last == null ? 1 : Math.min(4, Math.max(1, Math.round((now - last) / 1000 / FRAME)));
-            for (let k = 0; k < steps; k++) { stepRef(REF, (A, B, d, hit) => { if (hit) contacts++; }); stepSit(SIT, null, wallsInside); t += FRAME; }
+            for (let k = 0; k < steps; k++) { stepRef(REF, (A, B, d, hit) => { if (hit) contacts++; }); lateMode === 'now' ? stepSit(SIT, null, wallsInside) : stepLate(SIT, LST, 50, lateMode === 'carry'); t += FRAME; }
             lastDiff = Math.max(...REF.map((b, k) => (b.sunk || SIT[k].sunk) ? 0 : Math.hypot(b.x - SIT[k].x, b.z - SIT[k].z)));
             draw();
         }
@@ -345,6 +408,7 @@
     $('walls').classList.toggle('on', wallsInside); $('walls').textContent = 'cushions: ' + (wallsInside ? 'from inside' : 'the referee');
     $('walls').addEventListener('click', () => { wallsInside = !wallsInside; $('walls').classList.toggle('on', wallsInside);
         $('walls').textContent = 'cushions: ' + (wallsInside ? 'from inside' : 'the referee'); reset(true); });
+    $('late').addEventListener('change', () => { lateMode = $('late').value; reset(true); playing = true; $('play').textContent = 'pause'; });
     $('show').addEventListener('click', () => { showSit = !showSit; $('show').textContent = 'show: ' + (showSit ? 'from inside' : 'the referee'); draw(); });
     $('table').addEventListener('click', e => {
         if (!tableMap) return; const r = $('table').getBoundingClientRect(), x = (e.clientX - r.left - tableMap.ox) / tableMap.sc, z = (e.clientY - r.top - tableMap.oy) / tableMap.sc;
@@ -355,7 +419,7 @@
     $('heavy').classList.toggle('on', heavyOn);
     reset(true); draw(); requestAnimationFrame(tick);
 
-    window.__pool = { run, rack, strike, angleOf, image, respond, imageInCushion, imageOfPocket, R0, R_HEAVY };
+    window.__pool = { run, runLate, rack, strike, angleOf, image, respond, imageInCushion, imageOfPocket, R0, R_HEAVY };
 })();
 </script>
 </body>
