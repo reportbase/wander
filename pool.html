@@ -44,6 +44,10 @@
     #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
     .note { color: var(--dim); font-size: 12.5px }
     .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    .tag { color: var(--dim); font-size: 12.5px }
+    .legend { display: flex; flex-wrap: wrap; gap: 4px 18px; color: var(--dim); font-size: 12px; margin-top: 10px }
+    .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px }
+    .legend .dot { background: var(--gold) } .legend .ring { border: 1.5px solid var(--bright) }
     a { color: var(--teal) }
     </style>
 </head>
@@ -56,12 +60,15 @@
             <button id="brk">break</button>
             <select id="which" aria-label="which break"></select>
             <button id="heavy" class="on">heavy ball</button>
-            <button id="show">show: from inside</button>
-            <button id="walls" class="on">cushions: from inside</button>
-            <select id="late" aria-label="signals"><option value="now">signals: at once</option><option value="naive">signals late (c = 50), taken as now</option><option value="carry">signals late (c = 50), carried forward</option></select>
             <select id="tablesel" aria-label="table"><option value="rack">table: the rack</option><option value="field">table: four size levels (116 balls)</option></select>
+        </div>
+        <div class="row" style="margin-top:8px">
+            <span class="tag">from inside:</span>
+            <button id="walls" class="on">cushions: own mirror image</button>
+            <select id="late" aria-label="signals"><option value="now">signals: at once</option><option value="naive">signals late (c = 50), taken as now</option><option value="carry">signals late (c = 50), carried forward</option></select>
             <select id="ignore" aria-label="ignore"><option value="inf">each ball reads every ball</option><option value="1">ignore balls 1+ levels smaller</option><option value="2">ignore balls 2+ levels smaller</option><option value="3">ignore balls 3+ levels smaller</option></select>
         </div>
+        <div class="legend"><span><i class="dot"></i>from inside: each ball reads only the others' h and v</span><span><i class="ring"></i>the referee: positions from nowhere</span></div>
         <canvas id="table" height="340" data-aspect="0.55" style="margin-top:10px"></canvas>
         <div class="grid" style="margin-top:10px">
             <div><canvas id="pairs" height="320"></canvas></div>
@@ -334,7 +341,7 @@
 
     // ══ the page ══
     let heavyOn = new URLSearchParams(location.search).get('heavy') !== '0', which = +(new URLSearchParams(location.search).get('break') || 4);
-    let REF = rack(heavyOn), SIT = rack(heavyOn), playing = true, chosen = 0, showSit = true, t = 0, lastDiff = 0, contacts = 0;
+    let REF = rack(heavyOn), SIT = rack(heavyOn), playing = true, chosen = 0, t = 0, lastDiff = 0, contacts = 0;
     for (let i = 0; i < 10; i++) { const o = document.createElement('option'); o.value = i; o.textContent = `break ${i} (${angleOf(i).toFixed(1)}°)`; $('which').appendChild(o); }
     $('which').value = which;
     let lateMode = 'now', LST = null, tableMode = 'rack', ignoreK = Infinity;
@@ -354,7 +361,7 @@
     const levelCol = L => L <= 0 ? '#d4a052' : L < 1 ? '#8ce6cd' : L < 2 ? 'rgba(140,230,205,0.6)' : L < 3 ? 'rgba(181,156,240,0.45)' : 'rgba(181,156,240,0.18)';
     let tableMap = null;
     function draw() {
-        const B = showSit ? SIT : REF, me = B[chosen] && !B[chosen].sunk ? B[chosen] : B.find(b => !b.sunk);
+        const B = SIT, me = B[chosen] && !B[chosen].sunk ? B[chosen] : B.find(b => !b.sunk);   // the panels are the inside game's
         // ── the table, top down ──
         let [g, W, H] = fit($('table'));
         g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
@@ -375,6 +382,9 @@
             if (b.stripe) { g.save(); g.beginPath(); g.arc(x, y, rad, 0, TAU); g.clip(); g.fillStyle = b.col; g.fillRect(x - rad, y - rad * 0.45, 2 * rad, rad * 0.9); g.restore(); }
             if (b === me) { g.strokeStyle = '#e6e4ee'; g.lineWidth = 2; g.beginPath(); g.arc(x, y, rad + 3, 0, TAU); g.stroke(); }
         }
+        // the referee's game on the same cloth, as rings: on the balls while the two games agree, apart where they differ
+        g.strokeStyle = 'rgba(230,228,238,0.85)'; g.lineWidth = 1.2;
+        for (const b of REF) { if (b.sunk) continue; g.beginPath(); g.arc(...P(b.x, b.z), b.r * sc, 0, TAU); g.stroke(); }
         // ── the pairs as (h, v) ──
         [g, W, H] = fit($('pairs'));
         g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
@@ -413,7 +423,7 @@
             g.fillText(`seen from ${me.cue ? 'the white' : me.n === 'H' ? 'the heavy ball' : 'ball ' + me.n}`, cx, H - 12); g.textAlign = 'left';
         }
         // ── the readout ──
-        $('hud').textContent = `${t.toFixed(1)} s · ${contacts} contacts · ${showSit ? 'from inside' : 'referee'} · tables differ ${lastDiff < 1e-3 ? lastDiff.toExponential(0) : lastDiff.toFixed(2)}`;
+        $('hud').textContent = `${t.toFixed(1)} s · ${contacts} contacts · inside and referee ${lastDiff < 1e-3 ? 'agree (to ' + lastDiff.toExponential(0) + ')' : 'apart by ' + lastDiff.toFixed(2)}`;
     }
     let last = null;
     function tick(now) {
@@ -430,16 +440,16 @@
     $('which').addEventListener('change', () => { which = +$('which').value; reset(true); });
     $('heavy').addEventListener('click', () => { heavyOn = !heavyOn; $('heavy').classList.toggle('on', heavyOn); reset(true); });
     let wallsInside = new URLSearchParams(location.search).get('cushions') !== 'referee';
-    $('walls').classList.toggle('on', wallsInside); $('walls').textContent = 'cushions: ' + (wallsInside ? 'from inside' : 'the referee');
+    const wallsLabel = () => 'cushions: ' + (wallsInside ? 'own mirror image' : "the referee's rule");
+    $('walls').classList.toggle('on', wallsInside); $('walls').textContent = wallsLabel();
     $('walls').addEventListener('click', () => { wallsInside = !wallsInside; $('walls').classList.toggle('on', wallsInside);
-        $('walls').textContent = 'cushions: ' + (wallsInside ? 'from inside' : 'the referee'); reset(true); });
+        $('walls').textContent = wallsLabel(); reset(true); });
     $('tablesel').addEventListener('change', () => { tableMode = $('tablesel').value; chosen = 0; reset(true); playing = true; $('play').textContent = 'pause'; });
     $('ignore').addEventListener('change', () => { ignoreK = $('ignore').value === 'inf' ? Infinity : +$('ignore').value; reset(true); playing = true; $('play').textContent = 'pause'; });
     $('late').addEventListener('change', () => { lateMode = $('late').value; reset(true); playing = true; $('play').textContent = 'pause'; });
-    $('show').addEventListener('click', () => { showSit = !showSit; $('show').textContent = 'show: ' + (showSit ? 'from inside' : 'the referee'); draw(); });
     $('table').addEventListener('click', e => {
         if (!tableMap) return; const r = $('table').getBoundingClientRect(), x = (e.clientX - r.left - tableMap.ox) / tableMap.sc, z = (e.clientY - r.top - tableMap.oy) / tableMap.sc;
-        const B = showSit ? SIT : REF; let best = -1, bd = 1.2; B.forEach((b, k) => { if (b.sunk) return; const dd = Math.hypot(b.x - x, b.z - z); if (dd < bd) { bd = dd; best = k; } });
+        const B = SIT; let best = -1, bd = 1.2; B.forEach((b, k) => { if (b.sunk) return; const dd = Math.hypot(b.x - x, b.z - z); if (dd < bd) { bd = dd; best = k; } });
         if (best >= 0) { chosen = best; draw(); }
     });
     window.addEventListener('resize', draw);
