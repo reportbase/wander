@@ -98,6 +98,11 @@ Google Fonts load from outside:
   sweeps its level of detail, proportional then logarithmic, and the derivation of 2 is in Appendix D, with
   Proposition D.1 since 9 Oct: on a level with only its ends, order and flip, the halving is the only subdivision supplied;
   other branching factors need an added measure).
+  `physics.md` (10 Oct 2026, Tom: "lets create a new physics paper and iterate there") is the working paper for the physics
+  correspondences: the rules (real data or exact arithmetic, prediction first, keep the case, name the bridge), a
+  dictionary from SPN's geometry to physics, the results by standing (real data, exact arithmetic, Wander's world as
+  illustration only), the kills, and a queue of tests. New physics tests are planned in `plans/`, reported there, and
+  promoted to SPN only once ruled.
   The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.
