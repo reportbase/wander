@@ -194,7 +194,7 @@
             const N = c.x.length, X = new Float64Array(P), Y = new Float64Array(P);
             for (let i = 0; i < P; i++) { const ph = 2 * Math.PI * i / P; let x = 0, y = 0;
                 for (let k = 0; k < N; k++) { const w = kernel(ph - (k + 0.5) * 2 * Math.PI / N, N); x += w * c.x[k]; y += w * c.y[k]; }
-                X[i] = x; Y[i] = -y; }                                   // y down in the draw tool's page; up here
+                X[i] = x; Y[i] = y; }                                    // y up, as the draw tool keeps its leaves (its deep link and inspect.html read them so)
             let A = 0, cx = 0, cy = 0;
             for (let i = 0; i < P; i++) { const j = (i + 1) % P, q = X[i] * Y[j] - X[j] * Y[i]; A += q; cx += (X[i] + X[j]) * q; cy += (Y[i] + Y[j]) * q; }
             return { X, Y, A: A / 2, cx: cx / (3 * A), cy: cy / (3 * A), N, name: c.name };
