@@ -10,15 +10,19 @@ can be wire frame"; "show the corner and how it is uniform before the corner and
 own corner".
 
 Level flight at height v over a ground grid, wireframe. A ground line h ahead lands v/h below eye level (x/h across),
-so the corner, the ground line h = v, sits on the same screen row at every height (gold). The strip on the right is the
+so the corner, the ground line h = v, sits on the same screen row at every height. The strip on the right is the
 reading folded at the corner: home to corner as h/v (equal ground steps, equal ticks), corner onward as v/h (they crowd;
 2v, 4v, 8v each take half the room of the last).
 
 LOD (the chip, or L): none, 10 m everywhere; by metres, the engine's way, spacing doubling at 500 m, 1 km, 2 km ...;
 by v/h, grain v/8 out to √2·v, then doubling, each level's edges halfway (in doublings) between its corner and the next.
-A level's own corner is eight of its grains ahead (dim gold): by v/h at v, 2v, 4v ..., by metres at 80, 160, 320 m.
+A level's own corner is eight of its grains ahead (on the strip): by v/h at v, 2v, 4v ..., by metres at 80, 160, 320 m.
 By v/h every level past the corner holds the same 4√2 ≈ 5.7 lines, so the count past the corner is logarithmic, and climbing
 changes nothing on the screen but the speed; by metres the edges and the corners slide as you climb.
+The main view is the grid alone (no corner or edge lines; those are on the strip). Tom: "remove the non-gridlines on the
+main view. instead add pertiubated sphers in each octive": level k holds spheres of radius 2^k m, one in half the cells of a 40·2^k m grid,
+square, each with its own bumps (bands 1, 2 and 3 round, about a tenth of the radius), drawn while at least 2 px in radius, so
+every level reaches out to the same size on the screen: the levels stack outward, one per doubling of distance.
 Drag up or down (touch or mouse), wheel or arrow keys to change v.
 Links: ?v=  ?lod=none|metres|vh  ?still=1. Test hook: window.__flight.
 -->
@@ -123,7 +127,7 @@ function draw() {
 
   const hNear = Math.max(f * v / (H - cy) * 0.95, 0.01);
   const B = bands();
-  const far = new Path2D(), near = new Path2D(), edges = new Path2D();
+  const far = new Path2D(), near = new Path2D();
 
   // lines running ahead (constant x), band by band
   for (const { a, b, s } of B) {
@@ -135,7 +139,6 @@ function draw() {
       far.moveTo(px(x, lo), py(lo));
       far.lineTo(px(x, b), py(b));
     }
-    if (a > hNear) { const y = Math.round(py(a)) + 0.5; edges.moveTo(0, y); edges.lineTo(W, y); }
   }
   // lines running across (constant h)
   eachCross(B, hNear, (h) => {
@@ -147,34 +150,75 @@ function draw() {
   g.lineWidth = 1;
   g.strokeStyle = 'rgba(190,205,215,0.38)'; g.stroke(far);
   g.strokeStyle = 'rgba(110,190,230,0.75)'; g.stroke(near);
-  g.setLineDash([4, 5]);
-  g.strokeStyle = 'rgba(230,120,140,0.7)'; g.stroke(edges);
-  g.setLineDash([]);
 
-  // each level's own corner: eight of its grains ahead
-  if (mode > 0) {
-    g.strokeStyle = 'rgba(226,181,69,0.55)';
-    g.lineWidth = 1.5;
-    g.beginPath();
-    for (const { s } of B) {
-      const c = 8 * s;
-      if (c <= hNear || c >= FAR || Math.abs(c - v) < 1e-6) continue;
-      const y = Math.round(py(c)) + 0.5;
-      g.moveTo(0, y); g.lineTo(W, y);
-    }
-    g.stroke();
-  }
-
-  // the corner: the ground line h = v, as far ahead as the plane is high
-  const yc = Math.round(py(v)) + 0.5;
-  g.strokeStyle = '#e2b545';
-  g.lineWidth = 2;
-  g.beginPath(); g.moveTo(0, yc); g.lineTo(W, yc); g.stroke();
-  g.lineWidth = 1;
+  drawSpheres(hNear);
 
   drawReading(B);
 
   read.innerHTML = `v ${v < 10 ? v.toFixed(1) : Math.round(v)} m · <b>corner at h = v</b> · drag up / down to climb`;
+}
+
+// ── Perturbed spheres, one population per level ──
+// Level k: spheres of radius 2^k m on the ground, one in half the cells of a 40·2^k m grid, each with its own
+// bumps, r(dir) = 2^k·(1 + 0.12·(a₁ cos(2λ+φ₁) cos²β + a₂ cos(3λ+φ₂) cos³β + a₃ sin 2β cos(λ+φ₃))), λ round, β up.
+// A sphere is drawn while it is at least 2 px across in radius, so each level reaches out to the same size on the screen.
+const LEVELS = 11, CELL = 40, MINPX = 2;
+function hash(k, i, j, n) {
+  let x = (k * 73856093) ^ (i * 19349663) ^ (j * 83492791) ^ (n * 2654435761);
+  x = Math.imul(x ^ (x >>> 16), 0x45d9f3b); x = Math.imul(x ^ (x >>> 16), 0x45d9f3b); x ^= x >>> 16;
+  return (x >>> 0) / 4294967296;
+}
+// the wireframe of a unit sphere: 8 meridians and 5 parallels
+const WIRE = (() => {
+  const lines = [];
+  for (let m = 0; m < 8; m++) { const L = m * Math.PI / 4, pts = [];
+    for (let i = 0; i <= 12; i++) pts.push([L, -Math.PI / 2 + i * Math.PI / 12]); lines.push(pts); }
+  for (const B of [-60, -30, 0, 30, 60]) { const b = B * Math.PI / 180, pts = [];
+    for (let i = 0; i <= 24; i++) pts.push([i * Math.PI / 12, b]); lines.push(pts); }
+  return lines;
+})();
+let sphereCounts = [];
+function eachSphere(hNear, fn) {
+  sphereCounts = new Array(LEVELS).fill(0);
+  for (let k = 0; k < LEVELS; k++) {
+    const r = 2 ** k, c = CELL * r;
+    const hMax = Math.min(FAR, f * r / MINPX);
+    const z0 = travelled + Math.max(hNear, r), z1 = travelled + hMax;
+    for (let i = Math.floor(z0 / c); i * c <= z1; i++) {
+      const hRow = (i + 1) * c - travelled;
+      const xm = hRow * (cx + 2) / f + r;
+      for (let j = Math.floor(-xm / c); j * c <= xm; j++) {
+        if (hash(k, i, j, 0) < 0.5) continue;                 // half the cells empty
+        const Z = (i + 0.15 + 0.7 * hash(k, i, j, 1)) * c;
+        const X = (j + 0.15 + 0.7 * hash(k, i, j, 2)) * c;
+        const h = Z - travelled;
+        if (h - r < hNear || h > hMax || Math.abs(X) < 1.5 * r) continue;   // keep the flight lane clear
+        sphereCounts[k]++;
+        fn(k, r, X, h, [hash(k, i, j, 3), hash(k, i, j, 4), hash(k, i, j, 5), hash(k, i, j, 6), hash(k, i, j, 7), hash(k, i, j, 8)]);
+      }
+    }
+  }
+}
+function drawSpheres(hNear) {
+  const path = new Path2D();
+  eachSphere(hNear, (k, r, X, h, q) => {
+    const a1 = 2 * q[0] - 1, a2 = 2 * q[1] - 1, a3 = 2 * q[2] - 1, p1 = 6.283 * q[3], p2 = 6.283 * q[4], p3 = 6.283 * q[5];
+    const rad = (L, b) => { const cb = Math.cos(b);
+      return r * (1 + 0.12 * (a1 * Math.cos(2 * L + p1) * cb * cb + a2 * Math.cos(3 * L + p2) * cb * cb * cb + a3 * Math.sin(2 * b) * Math.cos(L + p3))); };
+    for (const line of WIRE) {
+      let pen = false;
+      for (const [L, b] of line) {
+        const R = rad(L, b), cb = Math.cos(b);
+        const x = X + R * cb * Math.sin(L), y = r + R * Math.sin(b), d = h + R * cb * Math.cos(L);
+        if (d < 1) { pen = false; continue; }
+        const sx = cx + f * x / d, sy = cy + f * (v - y) / d;
+        if (pen) path.lineTo(sx, sy); else { path.moveTo(sx, sy); pen = true; }
+      }
+    }
+  });
+  g.strokeStyle = 'rgba(140,230,205,0.75)';
+  g.lineWidth = 1;
+  g.stroke(path);
 }
 
 // The reading, folded at the corner.
@@ -260,6 +304,7 @@ window.__flight = {
   cornerRow: () => py(v) / H,
   edgeRows: () => bands().filter(b => b.a > 0 && b.a < FAR).map(b => py(b.a) / H),
   levelCorners: () => bands().map(b => 8 * b.s),
+  spheresPerLevel: () => { eachSphere(Math.max(f * v / (H - cy) * 0.95, 0.01), () => {}); return sphereCounts.slice(); },
   linesPerLevel: () => bands().filter(b => b.b < FAR).map(b => (b.b - b.a) / b.s),
 };
 
