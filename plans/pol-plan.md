@@ -720,3 +720,55 @@ a chain follows its planned geometry to rounding, and the first-order factor is 
 - *Kept from the game's checks:* the row of four still pots the 4, and the rack's first contact is still a full-ball hit.
 - *Measured, not predicted:* in the game's layouts, levels lost by depth, and the depth at which a 0.1° aim error passes
   3.6°: the horizon for the preview's fade.
+
+Run 9 output (`node plans/pol/pol9.mjs`, in `plans/pol/pol-run9.txt`; the measured part split by layout before recording):
+
+```
+60 chains (white and three, each struck from rest by the one before), power 20, aim turned by 1e-7 and 1e-8
+  one contact: measured/predicted factor, median 1.0000, 5%–95% 1.000–1.000; within 2%: 180 of 180
+  the chain: levels lost minus predicted, median 0.000, largest 0.000; within 0.05 levels: 60 of 60
+P22: not killed. 180 of 180 contacts within 2% of s/(2r cos φ) (95% needed)
+P23: not killed. 60 of 60 chains within 0.05 levels of the sum (95% needed)
+P24: not killed. 209 contacts in the layouts, 0 set down overlapping (the old push); the rest on h + v = 1 to 2.2e-16
+  (linear, as run 8's P21: 180 of 180 factors the same at 1e-8 within 1%; the row of four pots 4; the rack's first contact full-ball: true)
+
+measured, the game's layouts (scattered ×12, rack ×6, random aims, power 14): levels of aim error at each ball's first contact, by depth
+  scatter:
+    depth 1:  26 balls, median 3.06 levels
+    depth 2:  24 balls, median 4.62 levels
+    depth 3:  18 balls, median 6.81 levels
+    depth 4:  10 balls, median 8.60 levels
+    depth 5:   4 balls, median 8.35 levels
+    depth 6:   1 balls, median 12.52 levels
+    a 0.1° aim error passes 3.6° (5.17 levels) at depth 3
+  rack:
+    depth 1:   6 balls, median 3.35 levels
+    depth 2:  12 balls, median 1.13 levels
+    depth 3:  16 balls, median -6.94 levels
+    depth 4:  21 balls, median -8.43 levels
+    depth 5:  25 balls, median -15.09 levels
+    depth 6:   2 balls, median -17.89 levels
+    a 0.1° aim error passes 3.6° (5.17 levels) at depth > the deepest measured
+```
+
+- **P22 not killed.** All 180 contacts give s/(2r·cos φ) to four figures (5% to 95%: 1.000 to 1.000).
+- **P23 not killed.** All 60 chains lose Σ log₂ A_k levels to three decimals.
+- **P24 not killed.** Every contact in the layouts is on h + v = 1 to 2.2e-16; none was set down overlapping.
+- The game's own checks hold: the row of four pots the 4, the rack's first contact is a full-ball hit.
+- *Measured:*
+  - open table (scattered): a ball's aim error grows about 1.5 to 2 levels a contact (3.1, 4.6, 6.8, 8.6 levels at
+    depths 1 to 4). A 0.1° aim error passes 3.6° at depth 3.
+  - the rack: past the first two contacts, errors shrink (to −7 and −15 levels at depths 3 and 5). Balls in a cluster
+    are struck from a few hundredths away, where s ≪ 2r·cos φ and A ≪ 1.
+
+## Reading of run 9 (not ruled)
+
+- **A contact costs as many levels as the run before it spanned.** With contact exact, the sensitivity is the geometry's,
+  s/(2r·cos φ), to rounding; for a full hit 2^L − 1, L the levels the pair started from contact (h + v read from the
+  striker's start). Each contact turns the levels a pair was apart into levels of aim lost.
+- **So a situated player sees about three contacts deep on an open table**, with a tenth of a degree to spare at the
+  aim and a half-pocket at the end. Past that the outcome is not theirs to see. That is the preview's horizon.
+- **Clusters forgive.** Inside a rack the runs are shorter than the balls, and a contact gains levels: the cradle passes
+  the hit along and forgets the aim. The break's chaos comes from the open table after it, not from the rack itself.
+- **The fixed tick hid this.** Run 8's engine was cos²φ less sensitive at thin cuts. Finding the moment h + v = 1,
+  each ball in its own units, makes the game's physics the geometry's.

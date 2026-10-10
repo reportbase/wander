@@ -280,9 +280,10 @@ try {
     o.hv = s1.contacts.length > 0 && s1.contacts.every(c => c.hv >= 1 && c.hv < 1.05);
     const fin = s1.final, after = T.shootNow();
     o.plays = after.every((b, i) => b.n === 0 ? true : b.sunk === fin[i].sunk && (b.sunk || (b.x === fin[i].x && b.z === fin[i].z)));
-    T.setLayout('line'); o.combo = T.preview().sunk.map(p => p.n).join();
+    o.exact = s1.contacts.every(c => Math.abs(c.hvC - 1) < 1e-9);   // contact found exactly on h + v = 1 (POL run 9)
+    T.setLayout('line'); o.combo = T.preview().sunk.map(p => p.n).join(); o.sight = T.seen(3).join() + '/' + T.seen(4).join();
     const rt = T.roundTrip(3, -2); o.rt = Math.hypot(rt[0] - 3, rt[1] + 2) < 1e-9; return o; });
-  if (!pt.same || !pt.full || !pt.hv || !pt.plays || pt.combo !== '4' || !pt.rt) failures.push(`[play-trick.html] ${JSON.stringify(pt)}`);
+  if (!pt.same || !pt.full || !pt.hv || !pt.exact || !pt.plays || pt.combo !== '4' || pt.sight !== '/4' || !pt.rt) failures.push(`[play-trick.html] ${JSON.stringify(pt)}`);
   console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills, aiming from the cue ball, trick shots)`);
 
   // ── 12. facing.html: the facing is 2θ, square to the line at the corner, the arc off the line most there ──

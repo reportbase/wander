@@ -20,7 +20,10 @@
 
     Drag from anywhere on the cloth to aim; drag a ball to move it (set up any trick shot); the power slider, ◀ ▶ for fine
     aim (arrow keys; shift for whole degrees), space to shoot, z to undo.
-    Links: ?layout=rack|scatter|line, ?a= (aim in degrees), ?p= (power), ?paths=all|cue|off. Test hook: window.__trick.
+    How far ahead the preview sees (POL runs 8–9): "see" shows each ball's motion only while it is at most k contacts from
+    the cue (3 by default: on an open table a 0.1° aim error passes half a pocket by the third contact); past it a "?".
+    Contact is exact: each ball finds, in its own units, the moment the pair read h + v = 1, and responds there (run 9).
+    Links: ?layout=rack|scatter|line, ?a= (aim in degrees), ?p= (power), ?paths=all|cue|off, ?see=1..5|all. Test hook: window.__trick.
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --line: rgba(255,255,255,0.12); --ink: #c8c8d0; --dim: #8a8a96;
@@ -53,6 +56,7 @@
     <button id="right" aria-label="aim right">▶</button>
     <label>power <input id="power" type="range" min="2" max="24" step="0.5" value="14"></label>
     <button id="paths">paths: all</button>
+    <button id="see">see: 3 deep</button>
     <select id="layout" aria-label="layout"><option value="rack">rack</option><option value="scatter">scattered</option><option value="line">a row of four</option></select>
     <button id="full" aria-label="full screen">⛶</button>
 </div>
@@ -70,13 +74,22 @@
     // what arrives at a from b: b's direction and v = r_b/d
     function image(a, b) { const dx = b.x - a.x, dz = b.z - a.z, d = Math.hypot(dx, dz); return { n: [dx / d, dz / d], v: b.r / d }; }
     // what a does with it, in its own size: the other's motion converted by v/h, the mass ratio (h/v)³ (one material)
-    function respond(a, ia, ib, ub, e) {
+    function respond(a, ia, ib, ub, e, tick) {
         const v = ia.v, h = ib.v, n = ia.n, ua = [a.vx / a.r, a.vz / a.r];
         const over = (h + v - 1) / (2 * h), ubA = [ub[0] * v / h, ub[1] * v / h];
-        const vr = (ubA[0] - ua[0]) * n[0] + (ubA[1] - ua[1]) * n[1];
-        let du = [0, 0];
-        if (vr < 0) { const k = (1 + e) * vr / (1 + (h / v) ** 3); du = [k * n[0], k * n[1]]; }
-        return { step: [-over * n[0], -over * n[1]], du, hit: vr < 0 };
+        const w = [ubA[0] - ua[0], ubA[1] - ua[1]], vr = w[0] * n[0] + w[1] * n[1];
+        if (!(vr < 0)) return { step: [-over * n[0], -over * n[1]], du: [0, 0], hit: false, n, tau: 0 };
+        // exact contact (POL run 9): the reading passed h + v = 1 within this tick. How long ago was it exactly 1? In a's own
+        // radii the other is at n/h, the pair touches at 1 + v/h, and they close at w: solve |n/h − w·τ| = 1 + v/h, τ ≥ 0
+        const p = [n[0] / h, n[1] / h], c = 1 + v / h, ww = w[0] * w[0] + w[1] * w[1], pw = p[0] * w[0] + p[1] * w[1];
+        let tau = ww > 0 ? (pw + Math.sqrt(Math.max(0, pw * pw - ww * (p[0] * p[0] + p[1] * p[1] - c * c)))) / ww : NaN;
+        let m = n, step;
+        if (tau >= 0 && tau <= (tick || 0)) {   // the line of centres then; respond along it; since then it has moved with the new motion
+            const pc = [p[0] - w[0] * tau, p[1] - w[1] * tau], l = Math.hypot(...pc); m = [pc[0] / l, pc[1] / l];
+        } else tau = NaN;                        // overlapping from before this tick (a ball set down too close): the old push
+        const k = (1 + e) * (w[0] * m[0] + w[1] * m[1]) / (1 + (h / v) ** 3), du = [k * m[0], k * m[1]];
+        step = isNaN(tau) ? [-over * n[0], -over * n[1]] : [du[0] * tau, du[1] * tau];
+        return { step, du, hit: true, n: m, tau: isNaN(tau) ? 0 : tau, hvC: isNaN(tau) ? h + v : c / Math.hypot(p[0] - w[0] * tau, p[1] - w[1] * tau) };
     }
     function pairs(B, log) {
         for (let i = 0; i < B.length; i++) for (let j = i + 1; j < B.length; j++) {
@@ -86,8 +99,8 @@
             const ia = image(A, Bb), ib = image(Bb, A);
             if (!(ib.v + ia.v > 1)) continue;                 // contact is h + v = 1
             const uA = [A.vx / A.r, A.vz / A.r], uB = [Bb.vx / Bb.r, Bb.vz / Bb.r];
-            const ra = respond(A, ia, ib, uB, E_BALL), rb = respond(Bb, ib, ia, uA, E_BALL);
-            if (log && (ra.hit || rb.hit)) log(A, Bb, ia, ib);   // before either changes its motion
+            const ra = respond(A, ia, ib, uB, E_BALL, FRAME / SUB), rb = respond(Bb, ib, ia, uA, E_BALL, FRAME / SUB);
+            if (log && (ra.hit || rb.hit)) log(A, Bb, ia, ib, ra);   // before either changes its motion
             A.x += ra.step[0] * A.r; A.z += ra.step[1] * A.r; Bb.x += rb.step[0] * Bb.r; Bb.z += rb.step[1] * Bb.r;
             A.vx += ra.du[0] * A.r; A.vz += ra.du[1] * A.r; Bb.vx += rb.du[0] * Bb.r; Bb.vz += rb.du[1] * Bb.r;
         }
@@ -113,7 +126,9 @@
                 const u = [b.vx / b.r, b.vz / b.r], un = u[0] * im.n[0] + u[1] * im.n[1];
                 const r = respond(b, im, im, [u[0] - 2 * un * im.n[0], u[1] - 2 * un * im.n[1]], E_RAIL);
                 if (r.hit && onRail) onRail(b);
-                b.x += r.step[0] * b.r; b.z += r.step[1] * b.r; b.vx += r.du[0] * b.r; b.vz += r.du[1] * b.r;
+                // exact contact (POL run 9): its image read exactly ½ when the gap was r, (r − gap)/(its speed in) ago
+                const tau = un > 0 ? (1 - c[2](b) / b.r) / un : NaN, step = r.hit && tau >= 0 && tau <= h ? [r.du[0] * tau, r.du[1] * tau] : r.step;
+                b.x += step[0] * b.r; b.z += step[1] * b.r; b.vx += r.du[0] * b.r; b.vz += r.du[1] * b.r;
             }
         }
     }
@@ -137,12 +152,13 @@
         cue.vx = power * Math.cos(ang); cue.vz = power * Math.sin(ang);
         const snap = () => { const f = new Float32Array(2 * n); B.forEach((b, k) => { f[2 * k] = b.sunk ? NaN : b.x; f[2 * k + 1] = b.sunk ? NaN : b.z; }); return f; };
         const frames = [snap()], contacts = [], sunk = []; let first = null, rails = 0, t = 0;
-        const log = (A, Bb, ia, ib) => {
-            contacts.push({ t, x: A.x + ia.n[0] * A.r, z: A.z + ia.n[1] * A.r, hv: ia.v + ib.v, a: A.n, b: Bb.n, A, Bb });
+        const log = (A, Bb, ia, ib, ra) => {   // ra: A's response, with the line of centres (n) at the exact contact, τ before now
+            const ax = A.x - A.vx * ra.tau, az = A.z - A.vz * ra.tau;
+            contacts.push({ t: t - ra.tau, x: ax + ra.n[0] * A.r, z: az + ra.n[1] * A.r, hv: ia.v + ib.v, hvC: ra.hvC, a: A.n, b: Bb.n, A, Bb });
             if (!first && (A.cue || Bb.cue)) {   // the first ball the cue ball meets, read from the cue ball
-                const c = A.cue ? A : Bb, o = A.cue ? Bb : A, n_ = A.cue ? ia.n : ib.n, sp = Math.hypot(c.vx, c.vz) || 1;
+                const c = A.cue ? A : Bb, o = A.cue ? Bb : A, n_ = ra.n, sp = Math.hypot(c.vx, c.vz) || 1;
                 const sinPhi = Math.min(1, Math.abs((c.vx * n_[1] - c.vz * n_[0]) / sp));
-                first = { n: o.n, rails, overlap: 1 - sinPhi, cut: Math.asin(sinPhi) / D, ghost: [c.x, c.z] };
+                first = { n: o.n, rails, overlap: 1 - sinPhi, cut: Math.asin(sinPhi) / D, ghost: [c.x - c.vx * ra.tau, c.z - c.vz * ra.tau] };
             }
         };
         const onSink = (b, k) => sunk.push({ n: b.n, pocket: k, t });
@@ -157,6 +173,19 @@
             frames.push(snap());
         }
         return { frames, contacts, sunk, first, final: B };
+    }
+
+    // ══ how far ahead a player sees (POL runs 8–9): each contact costs about as many levels of aim as the run before it
+    //    spanned, so on an open table a 0.1° aim error passes half a pocket by the third contact. A ball's motion is in
+    //    sight while it is at most `k` contacts from the cue: each contact puts both balls one deeper than the deeper of
+    //    the two. Returns, per ball, the time its motion passes out of sight (Infinity if never).
+    function sightOf(s, k) {
+        const depth = { 0: 0 }, cut = {};
+        for (const c of s.contacts) {
+            const nd = Math.max(depth[c.a] ?? 0, depth[c.b] ?? 0) + 1;
+            for (const x of [c.a, c.b]) { depth[x] = nd; if (nd > k && cut[x] == null) cut[x] = c.t; }
+        }
+        return { cut: n => cut[n] ?? Infinity, inSight: c => Math.max(depth[c.a] ?? 0, depth[c.b] ?? 0) <= k };
     }
 
     // ══ layouts ══
@@ -190,6 +219,7 @@
     const q = new URLSearchParams(location.search);
     let balls = [], ang = 0, power = 14, sim = null, dirty = true, anim = null, potted = 0, shots = 0, history = [], layoutName = 'rack';
     let pathsMode = ['all', 'cue', 'off'].includes(q.get('paths')) ? q.get('paths') : 'all';
+    let see = q.get('see') === 'all' ? Infinity : [1, 2, 3, 4, 5].includes(+q.get('see')) ? +q.get('see') : 3;
     function setLayout(name) {
         layoutName = LAYOUTS[name] ? name : 'rack';
         const L = LAYOUTS[layoutName](); balls = L.B; ang = L.ang; power = L.power;
@@ -250,12 +280,12 @@
             pos = balls.map((b, i) => isNaN(fr[k][2 * i]) ? null : [fr[k][2 * i], fr[k][2 * i + 1]]);
             if (k >= fr.length - 1) finish();
         } else if (sim && pathsMode !== 'off') {
-            const fr = sim.frames;
-            balls.forEach((b, i) => {   // each ball's path to rest (or to its pocket)
+            const fr = sim.frames, sight = sightOf(sim, see);
+            balls.forEach((b, i) => {   // each ball's path to rest (or to its pocket), as far as it is in sight
                 if (b.sunk || (pathsMode === 'cue' && !b.cue)) return;
-                const x0 = fr[0][2 * i], z0 = fr[0][2 * i + 1]; let moved = false;
+                const x0 = fr[0][2 * i], z0 = fr[0][2 * i + 1], kEnd = Math.min(fr.length - 1, Math.ceil(sight.cut(b.n) * 60)); let moved = false;
                 g.beginPath(); g.moveTo(x0, z0);
-                for (let k = 1; k < fr.length; k++) {
+                for (let k = 1; k <= kEnd; k++) {
                     const x = fr[k][2 * i], z = fr[k][2 * i + 1]; if (isNaN(x)) break;
                     if (x !== x0 || z !== z0) moved = true; g.lineTo(x, z);
                 }
@@ -265,11 +295,12 @@
                 g.lineJoin = g.lineCap = 'round'; g.globalAlpha = b.cue ? 0.2 : 0.16; g.lineWidth = 2 * b.r; g.stroke();
                 g.globalAlpha = b.cue ? 1 : 0.9; g.lineWidth = (b.cue ? 2 : 2.5) * px; g.stroke();
                 g.globalAlpha = 1; g.lineJoin = 'miter'; g.lineCap = 'butt';
-                const last = fr[fr.length - 1];   // where it comes to rest: a ring
-                if (!isNaN(last[2 * i])) { g.strokeStyle = b.cue ? '#f2f0ea' : b.n === 8 ? '#9a9aa6' : b.col; g.lineWidth = 1.5 * px; g.beginPath(); g.arc(last[2 * i], last[2 * i + 1], b.r, 0, TAU); g.stroke(); }
+                const last = fr[fr.length - 1];   // where it comes to rest: a ring (if that is in sight); else a fading end
+                if (kEnd < fr.length - 1) { const e = fr[kEnd]; if (!isNaN(e[2 * i])) { g.fillStyle = 'rgba(242,240,234,0.55)'; g.font = `${0.7 * R * 2}px DM Mono, monospace`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('?', e[2 * i], e[2 * i + 1]); } }
+                else if (!isNaN(last[2 * i])) { g.strokeStyle = b.cue ? '#f2f0ea' : b.n === 8 ? '#9a9aa6' : b.col; g.lineWidth = 1.5 * px; g.beginPath(); g.arc(last[2 * i], last[2 * i + 1], b.r, 0, TAU); g.stroke(); }
             });
-            if (pathsMode === 'all') { g.fillStyle = 'rgba(255,255,255,0.75)'; for (const c of sim.contacts) { g.beginPath(); g.arc(c.x, c.z, 2.2 * px, 0, TAU); g.fill(); } }
-            for (const p of sim.sunk) { const [x, z] = POCKETS[p.pocket]; g.strokeStyle = '#d4a052'; g.lineWidth = 2 * px; g.beginPath(); g.arc(x, z, POCK + 4 * px, 0, TAU); g.stroke(); }
+            if (pathsMode === 'all') { g.fillStyle = 'rgba(255,255,255,0.75)'; for (const c of sim.contacts) { if (!sight.inSight(c)) continue; g.beginPath(); g.arc(c.x, c.z, 2.2 * px, 0, TAU); g.fill(); } }
+            for (const p of sim.sunk) { if (p.t > sight.cut(p.n)) continue; const [x, z] = POCKETS[p.pocket]; g.strokeStyle = '#d4a052'; g.lineWidth = 2 * px; g.beginPath(); g.arc(x, z, POCK + 4 * px, 0, TAU); g.stroke(); }
             if (sim.first) { g.strokeStyle = 'rgba(242,240,234,0.85)'; g.setLineDash([5 * px, 4 * px]); g.lineWidth = 1.5 * px; g.beginPath(); g.arc(sim.first.ghost[0], sim.first.ghost[1], R, 0, TAU); g.stroke(); g.setLineDash([]); }
         }
         if (!anim) {   // the cue: a line back from the white, opposite the shot, as long as the power
@@ -295,9 +326,10 @@
     function hud() {
         let s = `potted ${potted} of 15 · shot ${shots} <span class="dim">· aim ${(((ang / D) % 360) + 360) % 360 < 0.005 ? '0.00' : ((((ang / D) % 360) + 360) % 360).toFixed(2)}° · power ${power}</span>`;
         if (!anim && sim && pathsMode !== 'off') {
-            const f = sim.first, pots = sim.sunk.filter(p => p.n !== 0).map(p => p.n), scratch = sim.sunk.some(p => p.n === 0);
+            const f = sim.first, sight = sightOf(sim, see), seen = sim.sunk.filter(p => p.t <= sight.cut(p.n));
+            const pots = seen.filter(p => p.n !== 0).map(p => p.n), scratch = seen.some(p => p.n === 0), hidden = sim.contacts.filter(c => !sight.inSight(c)).length;
             s += `\n<span class="dim">${f ? `first: the ${f.n}${f.rails ? ` after ${f.rails} cushion${f.rails > 1 ? 's' : ''}` : ''}, ${frac(f.overlap)} hit (cut ${f.cut.toFixed(0)}°)` : 'no ball reached'}`
-              + ` · ${sim.contacts.length} contacts · ${pots.length ? 'pots ' + pots.join(', ') : 'pots none'}${scratch ? ' · the white goes in' : ''}</span>`;
+              + ` · ${pots.length ? 'pots ' + pots.join(', ') : 'pots none'}${scratch ? ' · the white goes in' : ''}${hidden ? ` · ${hidden} contacts past sight` : ''}</span>`;
         }
         $('hud').innerHTML = s;
     }
@@ -339,6 +371,9 @@
     $('power').addEventListener('input', () => { power = +$('power').value; dirty = true; });
     $('paths').addEventListener('click', () => { pathsMode = { all: 'cue', cue: 'off', off: 'all' }[pathsMode]; $('paths').textContent = 'paths: ' + pathsMode; dirty = true; });
     $('layout').addEventListener('change', () => setLayout($('layout').value));
+    const seeLabel = () => { $('see').textContent = 'see: ' + (see === Infinity ? 'all' : see + ' deep'); };
+    $('see').addEventListener('click', () => { see = see === Infinity ? 1 : see >= 5 ? Infinity : see + 1; seeLabel(); dirty = true; });
+    seeLabel();
     const fsOK = !!document.documentElement.requestFullscreen;
     if (!fsOK) $('full').style.display = 'none';
     $('full').addEventListener('click', () => { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(() => {}); });
@@ -355,7 +390,8 @@
     requestAnimationFrame(loop);
 
     window.__trick = {
-        simulate, layouts: LAYOUTS, setLayout, image,
+        simulate, layouts: LAYOUTS, setLayout, image, sightOf,
+        seen: k => { const s = simulate(balls, ang, power), sg = sightOf(s, k == null ? Infinity : k); return s.sunk.filter(p => p.t <= sg.cut(p.n)).map(p => p.n); },
         aim: deg => { ang = deg * D; dirty = true; }, power: p => { power = p; dirty = true; },
         preview: () => simulate(balls, ang, power),
         shootNow: () => { shoot(true); return balls.map(b => ({ n: b.n, x: b.x, z: b.z, sunk: b.sunk })); },

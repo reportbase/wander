@@ -1,0 +1,25 @@
+60 chains (white and three, each struck from rest by the one before), power 20, aim turned by 1e-7 and 1e-8
+  one contact: measured/predicted factor, median 1.0000, 5%–95% 1.000–1.000; within 2%: 180 of 180
+  the chain: levels lost minus predicted, median 0.000, largest 0.000; within 0.05 levels: 60 of 60
+P22: not killed. 180 of 180 contacts within 2% of s/(2r cos φ) (95% needed)
+P23: not killed. 60 of 60 chains within 0.05 levels of the sum (95% needed)
+P24: not killed. 209 contacts in the layouts, 0 set down overlapping (the old push); the rest on h + v = 1 to 2.2e-16
+  (linear, as run 8's P21: 180 of 180 factors the same at 1e-8 within 1%; the row of four pots 4; the rack's first contact full-ball: true)
+
+measured, the game's layouts (scattered ×12, rack ×6, random aims, power 14): levels of aim error at each ball's first contact, by depth
+  scatter:
+    depth 1:  26 balls, median 3.06 levels
+    depth 2:  24 balls, median 4.62 levels
+    depth 3:  18 balls, median 6.81 levels
+    depth 4:  10 balls, median 8.60 levels
+    depth 5:   4 balls, median 8.35 levels
+    depth 6:   1 balls, median 12.52 levels
+    a 0.1° aim error passes 3.6° (5.17 levels) at depth 3
+  rack:
+    depth 1:   6 balls, median 3.35 levels
+    depth 2:  12 balls, median 1.13 levels
+    depth 3:  16 balls, median -6.94 levels
+    depth 4:  21 balls, median -8.43 levels
+    depth 5:  25 balls, median -15.09 levels
+    depth 6:   2 balls, median -17.89 levels
+    a 0.1° aim error passes 3.6° (5.17 levels) at depth > the deepest measured
