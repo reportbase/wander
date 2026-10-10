@@ -91,8 +91,9 @@
     const POCKETS = [[-LX / 2, -LZ / 2], [0, -LZ / 2 - 0.2], [LX / 2, -LZ / 2], [-LX / 2, LZ / 2], [0, LZ / 2 + 0.2], [LX / 2, LZ / 2]];
     const COLS = { 1: '#e3c33b', 2: '#2f5fd0', 3: '#d23a2f', 4: '#6b3fa0', 5: '#e0782a', 6: '#2e8b57', 7: '#7a2f2a', 8: '#16161a' };
     for (let k = 9; k <= 15; k++) COLS[k] = COLS[k - 8];
-    const FRAME = 1 / 60, SUB = 4, SPEED = 14, angleOf = i => -1.8 + 0.4 * i;
+    const FRAME = 1 / 60, SPEED = 14, angleOf = i => -1.8 + 0.4 * i;
 
+    let SUB = 4;   // substeps a frame: the table's tick is 1/(60·SUB) s (POL run 4 changes it)
     function rack(heavy) {   // the white on the head spot, fifteen in five rows; one heavy ball (or, with heavy off, all alike)
         const B = [{ n: 0, x: HEAD[0], z: HEAD[1], vx: 0, vz: 0, r: R0, m: 1, col: '#f2f0ea', cue: true }];
         const apex = LX / 4, sp = 2 * R_HEAVY + 0.02; let k = 1;
@@ -248,16 +249,18 @@
         }
     }
     function runLate(i, opts = {}) {   // POL run 3's measure: the largest distance between the tables 0.05 s after the first contact
-        const c = opts.c, carry = opts.mode === 'carry', heavy = opts.heavy !== false;
+        const c = opts.c, carry = opts.mode === 'carry', heavy = opts.heavy !== false, keepSub = SUB; SUB = opts.sub || 4;
         const R = rack(heavy), S = rack(heavy); strike(R, i); strike(S, i);
-        const st = { t: 0, hist: [] }; for (let k = 480; k >= 1; k--) { const sn = snapshot(S, -k * FRAME / SUB); sn.vx = sn.vx.map(() => 0); sn.vz = sn.vz.map(() => 0); st.hist.push(sn); }
+        const st = { t: 0, hist: [] }; for (let k = Math.round(2 * 60 * SUB); k >= 1; k--) { const sn = snapshot(S, -k * FRAME / SUB); sn.vx = sn.vx.map(() => 0); sn.vz = sn.vz.map(() => 0); st.hist.push(sn); }
         const tally = { one: 0, both: 0 }; let t = 0, first = null, E = null;
         for (let f = 0; f < Math.round((opts.seconds || 1.2) / FRAME); f++) {
             stepRef(R, (A, Bb, d, hit) => { if (hit && first == null) first = t; }); stepLate(S, st, c, carry, tally); t += FRAME;
             if (first != null && E == null && t >= first + 0.05 - 1e-9)
                 E = Math.max(...R.map((b, k) => (b.sunk || S[k].sunk) ? 0 : Math.hypot(b.x - S[k].x, b.z - S[k].z)));
+            if (E != null && opts.stopAtE) break;
         }
-        return { i, c, mode: opts.mode, first, E, oneSided: tally.one, both: tally.both };
+        SUB = keepSub;
+        return { i, c, sub: opts.sub || 4, mode: opts.mode, first, E, oneSided: tally.one, both: tally.both };
     }
 
     // ══ the plan's run: one break, both tables in lockstep, every measure of plans/pol-plan.md ══

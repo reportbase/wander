@@ -206,7 +206,10 @@ Google Fonts load from outside:
   the corner h = v = ½; a pocket is entered when it fills the view, v = 1 (P6–P8 not killed); the whole game from inside
   equals the referee's to ~1e-15. Run 3, each ball reading the others late at speed c: the naive reader's error saturates
   at ~a ball's radius until c ≈ 400, then falls as 1/c (P9 killed); carrying the image forward is 11–4,300× better (P10);
-  its error collapses as the lateness at contact drops to about one tick (post hoc, to be tested). Level of detail next.
+  its error collapses as the lateness at contact drops to about one tick (post hoc). Run 4 tested it over c × tick (P12 not
+  killed): the error follows the lateness in ticks, small below ~1, a plateau (~2% of a radius) above 2, whatever c; a finer
+  tick at fixed c can be worse. Three corners of named pairs: contact, the cushion (reader and its flip), time (one tick).
+  Level of detail next.
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is

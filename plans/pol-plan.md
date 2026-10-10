@@ -330,3 +330,53 @@ ball. L runs from 0.135 to 17.3 ticks.
 - **The alternative, named so a kill can be read.** If the error is set by the lateness alone (touches happening
   unseen within d/c, whatever the tick), then E depends on c and not on SUB. P12 would then fail along the rows: a fine
   tick (large SUB) at large c would still be small.
+
+Run 4 output (`node plans/pol/pol4.mjs`, in `plans/pol/pol-run4.txt`):
+
+```
+carrying reader, E = largest distance between the tables 0.05 s after the first contact, median of breaks 0, 4, 9
+L = lateness at contact in ticks = 0.9·60·SUB/c; predicted: E < 1e-3 when L < 1.5, E > 1e-2 when L > 3
+  c  50  SUB  1  L   1.08  E 3.66e-4  (3.7e-4, 3.7e-4, 1.3e-3)  small
+  c  50  SUB  2  L   2.16  E 1.19e-2  (1.2e-2, 1.2e-2, 5.4e-2)  -
+  c  50  SUB  4  L   4.32  E 2.34e-2  (2.3e-2, 2.3e-2, 3.6e-2)  large
+  c  50  SUB  8  L   8.64  E 2.28e-2  (2.0e-2, 2.3e-2, 2.3e-2)  large
+  c  50  SUB 16  L  17.28  E 1.68e-2  (1.7e-2, 1.7e-2, 2.3e-2)  large
+  c 100  SUB  1  L   0.54  E 1.23e-4  (1.2e-4, 1.2e-4, 1.1e-3)  small
+  c 100  SUB  2  L   1.08  E 1.92e-4  (1.9e-4, 1.9e-4, 1.4e-3)  small
+  c 100  SUB  4  L   2.16  E 1.53e-2  (1.5e-2, 1.5e-2, 3.2e-2)  -
+  c 100  SUB  8  L   4.32  E 2.31e-2  (1.9e-2, 2.3e-2, 2.3e-2)  large
+  c 100  SUB 16  L   8.64  E 1.62e-2  (1.6e-2, 1.6e-2, 2.2e-2)  large
+  c 200  SUB  1  L   0.27  E 4.88e-5  (4.9e-5, 4.9e-5, 1.0e-3)  small
+  c 200  SUB  2  L   0.54  E 8.18e-5  (8.2e-5, 8.2e-5, 2.3e-4)  small
+  c 200  SUB  4  L   1.08  E 8.08e-5  (8.1e-5, 8.1e-5, 3.9e-4)  small
+  c 200  SUB  8  L   2.16  E 1.36e-2  (1.4e-2, 1.4e-2, 1.4e-2)  -
+  c 200  SUB 16  L   4.32  E 1.58e-2  (1.6e-2, 1.6e-2, 2.1e-2)  large
+  c 400  SUB  1  L   0.14  E 2.31e-5  (2.3e-5, 2.3e-5, 6.3e-4)  small
+  c 400  SUB  2  L   0.27  E 3.73e-5  (3.7e-5, 3.7e-5, 3.5e-4)  small
+  c 400  SUB  4  L   0.54  E 3.73e-5  (3.1e-5, 3.7e-5, 3.7e-5)  small
+  c 400  SUB  8  L   1.08  E 3.88e-5  (3.9e-5, 3.9e-5, 8.1e-4)  small
+  c 400  SUB 16  L   2.16  E 1.44e-2  (1.4e-2, 1.4e-2, 1.4e-2)  -
+check, run 3's cell c = 100, SUB = 4, break 4: E 3.167e-2
+P12: not killed (0 cells outside their band)
+```
+
+- **P12 not killed.** All 11 cells with L < 1.5 ticks have E below 1e-3 (2.3e-5 to 3.7e-4). All 5 cells with L > 3 have
+  E above 1e-2 (1.6e-2 to 2.3e-2). The four cells at L = 2.16, not predicted, sit at the plateau, 1.2e-2 to 1.5e-2.
+- **The alternative is killed.** E follows L, the lateness in ticks, and not c. At c = 400, the fastest signals, the
+  table with the finest tick (SUB = 16, L = 2.16) is 370× further off than the table with SUB = 8 (L = 1.08). At equal
+  L, c from 50 to 400 changes little.
+- The check: run 3's cell, c = 100, SUB = 4, break 4, gives 3.2e-2, one of the three values in its cell here.
+
+## Reading of run 4 (not ruled)
+
+- **The corner of time is the reader's own tick, not the signal's speed.** A reader whose images are older than one of
+  its own ticks judges contact out of step with the other ball: each pushes and turns at a different tick, and the
+  table settles on a plateau of error (about 2% of a ball's radius here) that no faster signal removes. Below one tick,
+  both judge from the same past tick, and the error is the small carrying error, falling with the lateness.
+- **A finer clock is not always better for a situated reader.** Refining the tick at a fixed signal speed moves the
+  lateness past the corner and makes things worse. The tick and the lateness are a pair (amounts, in seconds), and
+  their ratio is a reading like any other, with its corner at one.
+- **So the table has three corners, each of a named pair:**
+  - contact, h + v = 1, of the pair's two sizes against their distance;
+  - the cushion, the corner h = v, of a ball and its own reflection;
+  - time, at one tick, of the lateness against the reader's own tick.
