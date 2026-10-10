@@ -61,3 +61,38 @@ A circle of radius 1. A standpoint at distance 1 + e from its centre: on the out
 
 ## Runs
 
+### Run 1 (10 October 2026)
+
+`python3 plans/hzn/hzn.py` and `node plans/hzn/hzn-p5.mjs <draw>/gallery/levels.html`, output in
+`plans/hzn/hzn-run1.txt`:
+
+```
+P1: not killed. log-log slope of the chord against phi, phi in [2^-20, 2^-10]: 0.999999977
+P2: not killed. geometric mean of the chords 1.000000693 of the radius; the corner at 30.00002 deg from the tangent; the diameter 0.999999 levels past it
+P3: not killed. geometric mean on the ball 0.735759283 of the radius; 2/e = 0.735758882; its depression 21.5849 deg
+P4: not killed. max of |t/sqrt(2e) - 1| - e over e = 2^-1 .. 2^-30: -6.985e-10 (<= 0 holds); log-log slope over [2^-30, 2^-20]: 0.500000034
+P5: KILLED. draw's LEVELS on a 512-leaf circle from its outline: readings within 1.02e-3 of 2 sin(phi); walls met in 49.88% of directions; geometric mean 1.014247 of the radius
+```
+
+- **P1 to P4 not killed.** The geometry holds as predicted:
+  - the horizon is at home;
+  - the corner is the radius, at 30° from the tangent, with the diameter one level past it;
+  - on the ball the corner is 2/e of the radius;
+  - rising, the horizon moves half a level per doubling of the height.
+- **P5 killed.** Draw's levels page reads the circle's geometric mean 1.4% high. Its readings miss 2·sin φ by 1.02e−3,
+  just past the band. It stays killed.
+- **The cause, a reading after the run.** The page presents the circle as a 1,024-sided polygon and skips the segment
+  the reader stands on. So in the directions within about one segment of the tangent, the nearest wall it finds is the
+  next segment along, roughly a segment's length away, where the true chord goes to 0. Near home every reading is held
+  up at about one segment: a grain. The geometric mean, which weighs the smallest readings most, comes out high. This is
+  the resolution limit again: the page cannot read nearer home than one of its own segments.
+
+### Run 2 (10 October 2026): prediction, written before it ran
+
+If the cause above is right, the error belongs to the presentation's grain, not to the reading:
+- **P5b.** With the circle presented at P = 1024, 2048, 4096 and 8192 points (the same page code, 512 leaves), the
+  geometric mean's excess over the radius falls by a factor of 2 (between 1.5 and 2.5) per doubling of P.
+- **P5c.** The worst miss against 2·sin φ, over directions more than four segments from the tangent, stays under 1e−4 at
+  every P.
+
+*Killed* if any doubling's factor is outside [1.5, 2.5], or P5c's miss reaches 1e−4 at any P.

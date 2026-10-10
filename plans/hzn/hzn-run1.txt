@@ -1,0 +1,5 @@
+P1: not killed. log-log slope of the chord against phi, phi in [2^-20, 2^-10]: 0.999999977
+P2: not killed. geometric mean of the chords 1.000000693 of the radius; the corner at 30.00002 deg from the tangent; the diameter 0.999999 levels past it
+P3: not killed. geometric mean on the ball 0.735759283 of the radius; 2/e = 0.735758882; its depression 21.5849 deg
+P4: not killed. max of |t/sqrt(2e) - 1| - e over e = 2^-1 .. 2^-30: -6.985e-10 (<= 0 holds); log-log slope over [2^-30, 2^-20]: 0.500000034
+P5: KILLED. draw's LEVELS on a 512-leaf circle from its outline: readings within 1.02e-3 of 2 sin(phi); walls met in 49.88% of directions; geometric mean 1.014247 of the radius
