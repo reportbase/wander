@@ -94,3 +94,22 @@ P4: KILLED. in the plane 1.229
   the volume rises three, so number rises 1.5 per level of light, *if* the spread is even. The stars are not spread
   evenly at any brightness Hipparcos reaches. The departure from 1.5, about 0.3 levels of number per level of light, is
   the measure of that unevenness. It is physics' known non-uniformity, not a failure of the form.
+
+### Run 2 (10 October 2026): prediction, written before it ran (Tom: "yes")
+
+Run 1 counted by light, mixing kinds and distances. Run 2 counts one kind at a time by its distance (parallax), inside
+the volume where the kind is complete (MAG's ranges). For an even spread the number within d grows as d³: **3 levels of
+number per level of distance**, the same fact as run 1's 1.5 per level of light, since light falls 2 levels per level of
+distance. Past the disc's thickness the count grows as a slab's, toward 2. So within the disc's thickness the theory
+gives 3, and the disc shows first toward the poles.
+
+Same data and sha256; `dist`, `spect`, `ra`, `dec`; kinds parsed as in MAG; no variable stars. Slope of log₂ N(<d)
+against log₂ d, least squares on cumulative counts at 0.05-level steps of distance.
+- **P5 (G dwarfs, near).** G0–G5 dwarfs, 8 ≤ d ≤ 23 pc: the slope is 3 within 0.5. *Killed* if outside [2.5, 3.5].
+- **P6 (K0 giants, within their complete range).** All sky, 40 ≤ d ≤ 140 pc: the slope is 3 within 0.4. *Killed* if
+  outside [2.6, 3.4].
+- **P7 (the disc, by distance).** K0 giants, 40 ≤ d ≤ 140 pc: the slope toward the poles (|b| > 30°) is lower than in
+  the plane (|b| < 30°) by at least 0.15. *Killed* if not.
+- **P8 (the kind alone, by light).** K0 giants within their complete volume (d ≤ 140 pc, V ≤ 7.3), counted by light: the
+  slope is 1.5 within 0.25. The light slope is the distance slope halved, so a kind alone in its complete volume should
+  give the even spread's value that run 1's mix did not. *Killed* if outside [1.25, 1.75].
