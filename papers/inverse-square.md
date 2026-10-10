@@ -14,6 +14,8 @@ the case and name the bridge. A result goes into SPN only once it has been teste
 - 10 October, second: "Known already" added (§0), after Tom: "this is a very well studied idea, so it would actually be
   suprising if we find something genuinly new about the inverse square law." The paper is kept as a calibration case
   and a translation into SPN's terms, with no claim of novelty.
+- 10 October, third: "The law in SPN's words, in brief" added (Tom: "so we could at least explain the inverse square law
+  using our vocabulay?", then "yes"): eight steps, with conservation and the exponent named as the bridges from physics.
 
 **Standing marks.** Each claim carries one:
 - **[physics]**: established outside this corpus, quoted;
@@ -53,6 +55,48 @@ explanations are known exactly. That makes it the place to check that SPN's situ
 facing, the flip, the corner of a named pair, levels) reproduce what physics already has, before they are trusted where
 it has nothing. It is a translation into SPN's terms, not a discovery. A result here that looks new should first be
 looked for in radiometry and heat transfer.
+
+## The law in SPN's words, in brief
+
+Tom, 10 October: "so we could at least explain the inverse square law using our vocabulay?" Yes, as a reading of the
+law, with two bridges to physics named. [reading; each step's physics is in §1–§4]
+
+1. **The source sends unsituated; the reader receives situated.** The source sends to every direction alike, the full
+   turn, from nowhere in particular. The reader is somewhere: one standpoint, holding one step H of view per address.
+2. **Per address, nothing changes.** Wherever the reader stands, each address the source fills is as bright as ever (the
+   radiance theorem, §0). Distance changes only how many addresses the source fills.
+3. **Name the pair.** The pair is the source's size Δ and its distance d, and the reading is their ratio. Its corner is
+   where they are equal, d = Δ. That is the corner of this pair, a point set by amounts, not the reader's h = v.
+4. **Before that corner, near:** the source fills the view, and the reading is in proportion: stepping back costs
+   almost nothing.
+5. **Past that corner, far:** the reading is in levels. Each level of distance (a doubling) halves the source's size in
+   each of the two directions across the line of sight, so it loses two levels of light per level of distance. That is
+   the inverse square.
+6. **The flip joins the two sides.** Near and far are one expression read through the flip; for a disc, s²/(1 + s²).
+   It is half at the corner, symmetric about it, and a share of a two-part split, since both ends face each other
+   (§4, NRF).
+7. **The reader's own limit is a second pair:** the source's size against the reader's step.
+   - While the source spans many addresses, distance costs addresses.
+   - Once it is under one, distance costs brightness in that one.
+
+   The switch is the resolution limit, again a corner of a named pair (§3). The photon gives a third limit, on the
+   signal's side.
+8. **Nothing is lost, only divided.** Summed over every standpoint at that distance, the light is all there. One reader
+   holds one share. The inverse square is the cost of being situated (SPN §3.3).
+
+**What the vocabulary explains:**
+- where the switches are: at the corners of named pairs;
+- that the near and far sides are one law, read through the flip;
+- why levels are the natural bookkeeping past the corner;
+- the difference between the source's view from nowhere and the reader's from somewhere.
+
+**What physics supplies, the two bridges:**
+- **Conservation:** that nothing is lost on the way (steps 2 and 8).
+- **The exponent:** the 2 is the number of directions across the line of sight, which comes from space having three
+  dimensions (step 5). SPN once read it from the sweep's two parties and withdrew that on 9 October. The geometry says
+  how to read the fall-off, not how steep it is.
+
+So this is an explanation of the law in SPN's terms, not a derivation of it.
 
 ## 1. The law as physics holds it
 
@@ -196,6 +240,7 @@ ISQ (`plans/isq-plan.md`) [exact]:
 | the corner exact where the light counted is a share (projected solid angle) | exact cases; the rule a reading | NRF |
 | the lay's 1/s² is the flip's Jacobian | exact | ISQ |
 | the lay as angular size, light as its square | reading | ISQ |
+| the law in SPN's words: where its switches are, near and far as one law, levels past the corner | reading, with conservation and the exponent as bridges from physics | "In SPN's words" |
 | the 2 as the sweep's two parties | withdrawn 9 October | SPN §3.3 |
 
 ## 7. Open
