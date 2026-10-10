@@ -113,3 +113,34 @@ against log₂ d, least squares on cumulative counts at 0.05-level steps of dist
 - **P8 (the kind alone, by light).** K0 giants within their complete volume (d ≤ 140 pc, V ≤ 7.3), counted by light: the
   slope is 1.5 within 0.25. The light slope is the distance slope halved, so a kind alone in its complete volume should
   give the even spread's value that run 1's mix did not. *Killed* if outside [1.25, 1.75].
+
+Run 2 output (`python3 plans/cnt/cnt2.py`, in `plans/cnt/cnt-run2.txt`):
+
+```
+G dwarfs within 23 pc: 83; K0 giants within 140 pc: 535 (|b| < 30: 272, |b| > 30: 263; V <= 7.3: 432)
+P5: not killed. G dwarfs, 8-23 pc: 3.471 levels of number per level of distance; 3 for an even spread
+P6: KILLED. K0 giants, 40-140 pc, all sky: 2.583
+P7: KILLED. K0 giants, 40-140 pc: |b| < 30 2.617, |b| > 30 2.555, difference 0.062
+P8: KILLED. K0 giants within 140 pc and V <= 7.3, by light over V 3-7.3: 1.096 levels of number per level of light; 1.5 for an even spread
+```
+
+- **P5 not killed.** The G dwarfs within 23 pc give 3.47, inside [2.5, 3.5] but near its top; there are 83 stars.
+- **P6 killed, just.** The K0 giants from 40 to 140 pc give 2.58, under 2.6.
+- **P7 killed.** The plane and the poles differ by 0.06, under 0.15.
+- **P8 killed.** By light, the K0 giants within 140 pc give 1.10, not 1.5.
+- **A premise of this plan, and of MAG, is false.** Of the 535 K0 giants within 140 pc, 103 are fainter than V = 7.3,
+  past Hipparcos's completeness. The plans took 140 pc as complete for K0 giants, assuming none is fainter than absolute
+  V about +1.5. MAG's P4 already found the kind spread wider than that. So the volume is not complete. Its far part
+  loses the faint members of the kind, which flattens the count by distance (P6), and still more by light (P8). Whether
+  the disc shows (P7) cannot be read through that. MAG's P1 used the same range; its 1.93 may be flattened by the same
+  loss, which is the direction it sat from 2.
+
+### Run 3 (10 October 2026): prediction, written before it ran
+
+The range is set by completeness itself, read from the data without any slope or absolute magnitude. The **complete
+distance** of a kind is the largest d such that, among the kind's stars nearer than d, under 2% are fainter than V = 7.3.
+Counting stops at the complete distance, from a floor of a quarter of it (two levels of distance).
+- **P9.** For the K0 giants, the slope of log₂ N(<d) against log₂ d over that range is 3 within 0.4. *Killed* if outside
+  [2.6, 3.4], or the range holds fewer than 100 stars.
+- **P10.** Counted by light inside that complete sphere (V ≤ 7.3 and d under the complete distance), over its full range
+  of V, the slope is 1.5 within 0.3. *Killed* if outside [1.2, 1.8].
