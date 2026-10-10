@@ -158,6 +158,9 @@ Google Fonts load from outside:
   hundredth of a level of their corner, giants a tenth (P4, P5 not killed). Wander's bodies (P1–P3 killed): one asteroid's
   corner 1.3% off its ball; the Moon 0.25 levels (the real one 0.0165), Mars 0.135; the middle band, not the broad, holds
   most relief in twelve bodies. Scaling `res/` relief to real levels is Tom's call.
+  `mag-plan.md` (+ `mag/mag.py`, 10 Oct): on the Hipparcos stars (HYG v3.8 from GitHub, sha256 in the plan; parallax
+  distance, V and spectral type only), light falls two levels per level of distance: G dwarfs 2.02, K0 giants 1.93 where
+  complete (P1–P3 not killed), 1.61 past the limit; K0 III scatters 1.4 levels (P4 killed).
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far

@@ -1,0 +1,5 @@
+103016 Hipparcos stars with a distance and no variable flag; 5 magnitudes = 6.6439 levels of light
+P1: not killed. K0 giants, 20-140 pc: n = 533, slope -1.927 light levels per distance level, over 2.72 levels of distance
+P2: not killed. G0-G5 dwarfs within 23 pc: n = 83, slope -2.021, over 4.11 levels of distance, rms 0.639 levels
+P3: not killed. K0 giants out to 400 pc: n = 2983, slope -1.607
+P4: KILLED. rms residual about P1's fit: 1.413 levels of light (1.064 mag)

@@ -63,3 +63,39 @@ sha256.
 
 ## Runs
 
+### Run 1 (10 October 2026)
+
+`python3 plans/mag/mag.py` (data checked against the sha256 above), output in `plans/mag/mag-run1.txt`:
+
+```
+103016 Hipparcos stars with a distance and no variable flag; 5 magnitudes = 6.6439 levels of light
+P1: not killed. K0 giants, 20-140 pc: n = 533, slope -1.927 light levels per distance level, over 2.72 levels of distance
+P2: not killed. G0-G5 dwarfs within 23 pc: n = 83, slope -2.021, over 4.11 levels of distance, rms 0.639 levels
+P3: not killed. K0 giants out to 400 pc: n = 2983, slope -1.607
+P4: KILLED. rms residual about P1's fit: 1.413 levels of light (1.064 mag)
+```
+
+- **P1 not killed.** The 533 K0 giants between 20 and 140 pc lose 1.927 levels of light per level of distance, over 2.7
+  levels of distance.
+- **P2 not killed.** The 83 G0–G5 dwarfs within 23 pc lose 2.021 levels of light per level of distance, over 4.1 levels.
+- **P3 not killed.** Out to 400 pc, past the catalogue's completeness, the K0 giants' slope flattens to −1.607: only the
+  brighter of them are catalogued far off.
+- **P4 killed.** The giants' scatter about P1's fit is 1.41 levels of light (1.06 magnitudes), past the band's 1.0. The
+  plan took the kind's spread to be about ±0.4 magnitude. The spectral class K0 III is broader than that: it holds clump
+  giants and giants still climbing the branch, and spectral classification has its own errors of a subclass or a
+  luminosity class. The kill stands.
+
+## Reading (after the run; not ruled)
+
+- **On real stars, light falls two levels per level of distance.** The dwarfs give 2.02, and the giants, where complete,
+  1.93. Both are measured from geometric distances and spectra. This is the inverse square, read in levels, as ISQ's
+  reading said: the light of a thing of one kind is its angular size squared, two levels per level.
+- **The giants sit a little flatter than 2.** It is within the band. It is also the direction a 1-magnitude spread pushes
+  even inside the completeness limit: near that limit the faintest giants start to drop out. So the dwarfs, nearer and
+  narrower in kind, are the cleaner reading of the two.
+- **Past the limit, the catalogue reads only the bright: 1.61.** In light, this is the resolution limit of SPN and
+  `ladder.html`. A reader with a faint limit does not lose a kind all at once; it keeps only the brightest of the kind,
+  and the law looks flatter than it is.
+- **The kind's spread is the bridge's error.** "Of one kind" stands in for one luminosity, and K0 III is a loose kind,
+  ±1 magnitude, which is ±1.3 levels. Every distance read from such a kind by light alone carries that error. The
+  luminosity class in the spectrum is the known-kind bridge of Part II, and here it is measured to be about a level wide.

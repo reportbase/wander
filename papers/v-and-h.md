@@ -2528,6 +2528,10 @@ Neither half helps alone; together they cut the error by a factor of four, as in
 402. **The corner as the reference sphere** (Oct 10; REF, `plans/ref-plan.md`). Geodesy's heights against a world's own
     sphere are depth from the corner, in amounts. Real rocky worlds are within a hundredth of a level of it (Earth, relief
     and flattening, 0.0093), giants about a tenth; wander's Moon spans 0.25 levels, fifteen times the real one (SPN §1).
+403. **Two levels of light per level of distance, on real stars** (Oct 10; MAG, `plans/mag-plan.md`). On the Hipparcos stars,
+    distance from parallax and kind from the spectrum: G dwarfs lose 2.02 levels of light per level of distance, K0 giants
+    1.93 where complete, 1.61 past the catalogue's limit; K0 III's spread is 1.4 levels, the width of the known-kind bridge
+    (SPN §1).
 
 All in *Serial, Parallel and Nowhere* §1 and the opening warning; the rulings under review and the physics audit in
 `plans/vh-rulings-review.md` and `plans/physics-vh-audit.md`.
