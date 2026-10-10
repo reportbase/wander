@@ -285,11 +285,13 @@ try {
   await page.goto(new URL('levels.html', base).href, { waitUntil: 'load' });
   const lv = await page.evaluate(() => { const L = __levels, R = L.R();
     return { R, half: L.radius(0.5), c: L.radius(1), w: [0, 1, 2, 3].map(k => L.level(k).width), r8: L.radius(8), back: L.reading(L.radius(8)),
-      v1: L.visible(R, 1), v2: L.visible(R, 2), v1k: L.visible(1024, 1) }; });
+      v1: L.visible(R, 1), v2: L.visible(R, 2), v1k: L.visible(1024, 1),
+    lod3: L.lodRadius(3), cross: L.crossings(4), broad: L.crossings(4, L.BROAD) }; });
   if (lv.half !== 0.5 || lv.c !== 1 || lv.w.some((w, k) => Math.abs(w - 2 ** (-k - 1)) > 1e-12) || Math.abs(lv.r8 - 1.875) > 1e-12 ||
-      Math.abs(lv.back - 8) > 1e-9 || lv.v1 - lv.v2 !== 1 || lv.v1k !== 10 || Math.abs(lv.v1 - Math.log2(lv.R)) > 1)
+      Math.abs(lv.back - 8) > 1e-9 || lv.v1 - lv.v2 !== 1 || lv.v1k !== 10 || Math.abs(lv.v1 - Math.log2(lv.R)) > 1 ||
+      lv.lod3 !== 1.875 || !(lv.cross >= 6) || !(lv.broad < lv.cross))
     failures.push(`[levels.html] ${JSON.stringify(lv)}`);
-  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html (each level half the last; ${lv.v1} seen at a one-pixel grain, one fewer at two)`);
+  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html (each level half the last; ${lv.v1} seen at a one-pixel grain, one fewer at two; the shape crosses ${lv.cross} ring edges, its broad form ${lv.broad})`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';

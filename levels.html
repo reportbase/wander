@@ -18,7 +18,12 @@
     nests in the back half, and the horizon, s → ∞, is the circle of radius 2, never reached). A ring is drawn while it is
     at least one grain wide; past that it cannot be seen, which is the resolution limit (physics: a ring's width against
     the reader's grain), not the corner. Levels seen ≈ log₂(R / grain), R the unit circle's radius in pixels.
-    Links: ?g= (the grain in pixels), ?s= (a thing's reading). Test hook: window.__levels.
+    A shape (Tom: "add a pertibated circle that wrapped the circle that crossed the various levels. then add another
+    circle the represents the LOD of the user"): a perturbed circle around the unit circle, its reading in each direction
+    s(θ) = s₀·exp(Σ aₙ cos(nθ + φₙ)) (bumps of every size, n = 2 to 24, seeded), so its outline crosses several levels. The
+    reader's level of detail is a circle at the edge of level k (radius 2 − 2^(−k), s = 2^k): inside it the shape is drawn
+    with all its bumps; past it only its broad form (n ≤ 3) is kept, the true outline faint and dashed beside it.
+    Links: ?g= (the grain in pixels), ?s= (a thing's reading), ?shape= (s₀), ?lod= (k). Test hook: window.__levels.
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -54,13 +59,25 @@
             <input id="grain" type="range" min="0.5" max="16" step="0.5" value="1">
             <span id="gv" style="color:var(--bright)"></span>
         </div>
+        <div class="row" style="margin-top:6px">
+            <label for="size">the shape</label>
+            <input id="size" type="range" min="0" max="6" step="0.01" value="2">
+            <span id="sv" style="color:var(--bright)"></span>
+        </div>
+        <div class="row" style="margin-top:6px">
+            <label for="lod">your level of detail</label>
+            <input id="lod" type="range" min="0" max="10" step="1" value="2">
+            <span id="lv" style="color:var(--bright)"></span>
+        </div>
         <div style="margin-top:10px"><canvas id="cv" height="860"></canvas></div>
         <div id="hud"></div>
     </div>
     <p class="note">The reading s = v/h is laid at radius s inside the circle and at 2 − 1/s past it (the unit circle has
     radius 1), so a doubling past the corner always takes half the room the last one took and the edge, radius 2, is the
     horizon. Coarsen the grain and the outer levels drop out one per doubling of the grain; how many show is about
-    log₂(radius ÷ grain). Tap or drag on the picture to read a place. Behind it: <i>Serial, Parallel and Nowhere</i>, the
+    log₂(radius ÷ grain). The shape wraps the circle and crosses the levels; the
+    gold dashed circle is your level of detail: inside it you hold the shape's bumps, past it only its broad form (faint
+    dashes: what is there). Tap or drag on the picture to read a place. Behind it: <i>Serial, Parallel and Nowhere</i>, the
     level ("2h in place"; the next level nests in the back half). Other demos: <a href="facing.html">the facing</a>,
     <a href="sweep.html">the sweep device</a>, <a href="demos.html">all demos</a>.</p>
 </main>
@@ -76,10 +93,26 @@
     // how many levels are at least one grain wide, for a unit circle R pixels across its radius
     const visible = (R, grain) => { let n = 0; while (level(n).width * R >= grain && n < 60) n++; return n; };
 
+    // the shape: a perturbed circle, its reading in each direction (log-perturbed, so it swings across levels evenly)
+    const HARM = (() => { let x = 12345; const rnd = () => (x = (x * 1103515245 + 12345) % 2147483648) / 2147483648;
+        const h = []; for (let n = 2; n <= 24; n++) h.push({ n, a: 0.6 / n ** 0.9 * (0.6 + 0.8 * rnd()), p: 2 * Math.PI * rnd() }); return h; })();
+    const shape = (th, s0, nmax = Infinity) => s0 * Math.exp(HARM.reduce((z, c) => c.n <= nmax ? z + c.a * Math.cos(c.n * th + c.p) : z, 0));
+    const BROAD = 3;
+    // the reader's level of detail k: a circle at the outer edge of level k − 1, s = 2^k (k = 0: the corner)
+    const lodRadius = k => radius(2 ** k);
+    // how many ring edges (s = 1, 2, 4, …) the outline crosses, over 2048 directions
+    function crossings(s0, nmax = Infinity) {
+        let c = 0, N = 2048, prev = Math.floor(Math.log2(shape(0, s0, nmax)));
+        for (let i = 1; i <= N; i++) { const lv = Math.floor(Math.log2(shape(2 * Math.PI * i / N, s0, nmax))); c += Math.abs(lv - prev); prev = lv; }
+        return c;
+    }
+
     let thing = null, pick = null, playing = false, last = null;
     const q = new URLSearchParams(location.search);
     if (q.has('g')) $('grain').value = Math.min(16, Math.max(0.5, +q.get('g') || 1));
     if (q.has('s')) thing = Math.max(0, +q.get('s') || 0);
+    if (q.has('shape')) $('size').value = Math.min(6, Math.max(0, Math.log2(+q.get('shape') || 4)));
+    if (q.has('lod')) $('lod').value = Math.min(10, Math.max(0, Math.round(+q.get('lod') || 0)));
 
     function fit(cv) {
         const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = Math.min(+cv.getAttribute('height'), Math.round(w));
@@ -118,7 +151,38 @@
         const ang = -Math.PI / 4, lab = (r, txt, col) => { g.fillStyle = col; g.fillText(txt, cx + r * R * Math.cos(ang) + 6, cy + r * R * Math.sin(ang)); };
         lab(0.5, 'near field: 0 to 1', 'rgba(212,160,82,0.9)');
         for (let k = 0; k < n && level(k).width * R >= 13; k++) { const L = level(k); lab((L.inner + L.outer) / 2, `${L.from}–${L.to}`, 'rgba(230,228,238,0.8)'); }
-        g.fillStyle = 'rgba(217,110,91,0.85)'; g.fillText('the horizon (never reached)', cx - 2 * R * Math.SQRT1_2 - 4, cy + 2 * R * Math.SQRT1_2 + 12);
+        // the shape, and the reader's level of detail
+        const s0 = 2 ** +$('size').value, k = +$('lod').value, rL = lodRadius(k) * R;
+        $('sv').textContent = `s₀ = ${fmt(s0)}`; $('lv').textContent = `${k} level${k === 1 ? '' : 's'} past the corner (to s = ${fmt(2 ** k)})`;
+        const outline = (nmax, col, wid, dash) => {
+            g.strokeStyle = col; g.lineWidth = wid; g.setLineDash(dash || []); g.beginPath();
+            for (let i = 0; i <= 720; i++) { const th = 2 * Math.PI * i / 720, r = radius(shape(th, s0, nmax)) * R;
+                const x = cx + r * Math.cos(th), y = cy - r * Math.sin(th); i ? g.lineTo(x, y) : g.moveTo(x, y); }
+            g.stroke(); g.setLineDash([]);
+        };
+        outline(Infinity, 'rgba(230,228,238,0.35)', 1, [2, 3]);                 // what is there
+        g.save(); g.beginPath(); g.arc(cx, cy, rL, 0, 2 * Math.PI); g.clip();
+        outline(Infinity, '#e6e4ee', 2); g.restore();                            // within your level of detail: every bump
+        g.save(); g.beginPath(); g.rect(0, 0, W, H); g.arc(cx, cy, rL, 0, 2 * Math.PI, true); g.clip('evenodd');
+        outline(BROAD, '#e6e4ee', 2); g.restore();                               // past it: the broad form only
+        // where the outline crosses a ring edge
+        g.fillStyle = '#8ce6cd';
+        for (let i = 0, prev = null; i <= 2048; i++) {
+            const th = 2 * Math.PI * i / 2048, sv = shape(th, s0), lvl = Math.floor(Math.log2(sv));
+            if (prev !== null && lvl !== prev && Math.max(lvl, prev) <= n) {
+                const r = radius(2 ** Math.max(lvl, prev)) * R; g.beginPath(); g.arc(cx + r * Math.cos(th), cy - r * Math.sin(th), 2.5, 0, 2 * Math.PI); g.fill();
+            }
+            prev = lvl;
+        }
+        g.strokeStyle = '#d4a052'; g.lineWidth = 2.5; g.setLineDash([10, 6]);
+        g.beginPath(); g.arc(cx, cy, rL, 0, 2 * Math.PI); g.stroke(); g.setLineDash([]);
+        // the legend, top left
+        g.font = '11px DM Mono, monospace'; g.textBaseline = 'middle';
+        [['#d4a052', [10, 6], 'your level of detail'], ['#e6e4ee', [], 'the shape as you hold it'], ['rgba(230,228,238,0.5)', [2, 3], 'the shape as it is'],
+         ['rgba(217,110,91,0.8)', [3, 5], 'the horizon (never reached)']].forEach(([col, dash, txt], i) => {
+            const y = 14 + 16 * i; g.strokeStyle = col; g.lineWidth = 2; g.setLineDash(dash);
+            g.beginPath(); g.moveTo(10, y); g.lineTo(34, y); g.stroke(); g.setLineDash([]); g.fillStyle = col; g.fillText(txt, 40, y); });
+        g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(22, 14 + 64, 2.5, 0, 2 * Math.PI); g.fill(); g.fillText('crosses a ring edge', 40, 14 + 64);
         // a thing sent out, and a picked place
         const mark = (s, col) => {
             const r = radius(s) * R, a = Math.PI * 0.18;
@@ -131,6 +195,9 @@
         let txt = `unit circle radius ${R.toFixed(0)} px, grain ${grain} px: ${n} level${n === 1 ? '' : 's'} seen past the corner` +
             (lastL ? ` (the last, ${fmt(lastL.from)} to ${fmt(lastL.to)}, ${(lastL.width * R).toFixed(1)} px wide)` : '') +
             `\nabout log₂(${R.toFixed(0)} ÷ ${grain}) = ${Math.log2(R / grain).toFixed(1)}; everything past ${lastL ? fmt(lastL.to) : 1} is in rings too thin to see`;
+        let lo = Infinity, hi = 0; for (let i = 0; i < 720; i++) { const v = shape(2 * Math.PI * i / 720, s0); lo = Math.min(lo, v); hi = Math.max(hi, v); }
+        txt += `\nthe shape: s from ${fmt(lo)} to ${fmt(hi)}, levels ${lo < 1 ? 'near field' : Math.floor(Math.log2(lo))} to ${Math.floor(Math.log2(hi))}; it crosses a ring edge ${crossings(s0)} times` +
+            `\nyour level of detail: ${k} level${k === 1 ? '' : 's'}, to s = ${fmt(2 ** k)}; past it you keep the broad form, which crosses a ring edge ${crossings(s0, BROAD)} times`;
         if (thing !== null) txt += `\nthe thing: s = ${fmt(thing)}, at radius ${radius(thing).toFixed(4)} (${thing <= 1 ? 'near field' : `level ${Math.floor(Math.log2(thing))}, ${fmt(2 ** Math.floor(Math.log2(thing)))} to ${fmt(2 ** (Math.floor(Math.log2(thing)) + 1))}`})`;
         if (pick) txt += `\npicked: radius ${pick.r.toFixed(4)}, s = ${isFinite(pick.s) ? fmt(pick.s) : '∞ (the horizon)'}`;
         $('hud').textContent = txt;
@@ -162,10 +229,12 @@
         if (playing && (thing === null || thing > 2 ** 20)) thing = 0.05;
     });
     $('grain').addEventListener('input', draw);
+    $('size').addEventListener('input', draw);
+    $('lod').addEventListener('input', draw);
     window.addEventListener('resize', draw);
     draw(); requestAnimationFrame(tick);
 
-    window.__levels = { radius, reading, level, visible, R: () => geom().R };
+    window.__levels = { radius, reading, level, visible, R: () => geom().R, shape, lodRadius, crossings, BROAD };
 })();
 </script>
 </body>
