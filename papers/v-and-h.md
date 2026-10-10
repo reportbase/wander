@@ -2525,6 +2525,9 @@ Neither half helps alone; together they cut the error by a factor of four, as in
     readings are chords 2·sin φ: home is the horizon, read in proportion; the corner (the geometric mean) is the radius,
     30° below the horizon; on a ball, 2/e of it; rising by e radii moves the horizon to √(2e), half a level per
     doubling, the classical √(2·R·h) once R is given (SPN §1).
+402. **The corner as the reference sphere** (Oct 10; REF, `plans/ref-plan.md`). Geodesy's heights against a world's own
+    sphere are depth from the corner, in amounts. Real rocky worlds are within a hundredth of a level of it (Earth, relief
+    and flattening, 0.0093), giants about a tenth; wander's Moon spans 0.25 levels, fifteen times the real one (SPN §1).
 
 All in *Serial, Parallel and Nowhere* §1 and the opening warning; the rulings under review and the physics audit in
 `plans/vh-rulings-review.md` and `plans/physics-vh-audit.md`.
