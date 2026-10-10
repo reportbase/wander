@@ -50,10 +50,6 @@
 <body>
 <main>
     <h1>Pool from inside</h1>
-    <p class="lede">Each ball reads every other from where it is: the other's direction, and how much of its view the other
-    fills. Two balls touch when their two readings add to one, h + v = 1, the straight line of the facing; two equal balls
-    touch at the corner, each filling 60° of the other's view. The table below is played from inside, beside a referee that
-    plays it from nowhere.</p>
     <div class="panel">
         <div class="row">
             <button id="play">pause</button>
@@ -66,24 +62,13 @@
             <select id="tablesel" aria-label="table"><option value="rack">table: the rack</option><option value="field">table: four size levels (116 balls)</option></select>
             <select id="ignore" aria-label="ignore"><option value="inf">each ball reads every ball</option><option value="1">ignore balls 1+ levels smaller</option><option value="2">ignore balls 2+ levels smaller</option><option value="3">ignore balls 3+ levels smaller</option></select>
         </div>
-        <canvas id="table" height="340" style="margin-top:10px"></canvas>
-        <p class="cap">The table played from inside. Tap a ball to stand on it: lines to the others, coloured by how many levels
-        each is from touching it (gold: touching).</p>
+        <canvas id="table" height="340" data-aspect="0.55" style="margin-top:10px"></canvas>
         <div class="grid" style="margin-top:10px">
-            <div><canvas id="pairs" height="320"></canvas><p class="cap">The chosen ball's pairs as points (h, v): h how much of each
-            other's view it fills, v how much of its view the other fills. Each pair runs out along its own ray, set by the two
-            sizes; contact is the line h + v = 1. Equal balls touch at the corner.</p></div>
-            <div><canvas id="view" height="320"></canvas><p class="cap">What the chosen ball sees: round its whole turn, each other
-            ball as the arc it fills. A touching ball of equal size fills 60°.</p></div>
+            <div><canvas id="pairs" height="320"></canvas></div>
+            <div><canvas id="view" height="320"></canvas></div>
         </div>
         <div id="hud"></div>
     </div>
-    <p class="note">Keep the case: h and v are readings, ratios of a size to a distance, from 0 to 1; contact needs no unit.
-    Speeds and impulses are amounts, so each ball works in its own size, and the masses come from the sizes by one material
-    (the bridge). A straight cushion fills half the view at any distance, so it has no reading r/d; meeting it is meeting
-    your own mirror image, and contact is again at the corner, with you as both parties. A pocket takes a ball when it fills
-    the ball's whole view. Still played from nowhere, and named so: one clock, and no delay. Plan and runs: <code>plans/pol-plan.md</code>. Other
-    demos: <a href="facing.html">the facing</a>, <a href="walk.html">the walk</a>, <a href="demos.html">all demos</a>.</p>
 </main>
 <script>
 (() => {
@@ -355,8 +340,10 @@
         LST = { t: 0, hist: [] }; for (let k = 480; k >= 1; k--) { const sn = snapshot(SIT, -k * FRAME / SUB); sn.vx = sn.vx.map(() => 0); sn.vz = sn.vz.map(() => 0); LST.hist.push(sn); }
     }
     function fit(cv) {
-        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +cv.getAttribute('height');
-        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth;
+        if (cv.dataset.aspect) cv.setAttribute('height', Math.round(w * +cv.dataset.aspect));
+        const hh = +cv.getAttribute('height');
+        if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(hh * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
         const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, hh];
     }
     const levelCol = L => L <= 0 ? '#d4a052' : L < 1 ? '#8ce6cd' : L < 2 ? 'rgba(140,230,205,0.6)' : L < 3 ? 'rgba(181,156,240,0.45)' : 'rgba(181,156,240,0.18)';
@@ -421,13 +408,7 @@
             g.fillText(`seen from ${me.cue ? 'the white' : me.n === 'H' ? 'the heavy ball' : 'ball ' + me.n}`, cx, H - 12); g.textAlign = 'left';
         }
         // ── the readout ──
-        let near = [0, 0, 0, 0, 0, 0];
-        if (me) for (const b of B) { if (b === me || b.sunk) continue; const L = Math.log2(Math.hypot(b.x - me.x, b.z - me.z) / (me.r + b.r)); near[Math.max(0, Math.min(5, Math.ceil(L)))]++; }
-        $('hud').textContent =
-            `t = ${t.toFixed(2)} s   ${showSit ? 'shown: the table played from inside' : 'shown: the referee, from nowhere'}   contacts so far ${contacts}\n` +
-            (lateMode === 'now' ? `the two tables differ by at most ${lastDiff.toExponential(2)} ${lastDiff < 1e-6 ? '(rounding only: the same game, played from inside)' : '(rounding grown by the game\'s chaos: past its horizon, each table is one rounding of it)'}\n`
-              : `the two tables differ by up to ${lastDiff.toFixed(3)}: each ball reads the others late (c = 50)${lateMode === 'carry' ? ', carrying each image forward' : ', taking the late image as now'}\n`) +
-            (me ? `around ${me.cue ? 'the white' : me.n === 'H' ? 'the heavy ball' : 'ball ' + me.n}, by levels from touching: touching ${near[0]}, within 1 level ${near[1]}, 2 ${near[2]}, 3 ${near[3]}, 4 ${near[4]}, 5 ${near[5]}` : '');
+        $('hud').textContent = `${t.toFixed(1)} s · ${contacts} contacts · ${showSit ? 'from inside' : 'referee'} · tables differ ${lastDiff < 1e-3 ? lastDiff.toExponential(0) : lastDiff.toFixed(2)}`;
     }
     let last = null;
     function tick(now) {
