@@ -380,3 +380,35 @@ P12: not killed (0 cells outside their band)
   - contact, h + v = 1, of the pair's two sizes against their distance;
   - the cushion, the corner h = v, of a ball and its own reflection;
   - time, at one tick, of the lateness against the reader's own tick.
+
+### Run 5 (10 October 2026): prediction, written before it ran (Tom: "level of detail might be smaller and smaller pool balls. that where situated levels become interesting.")
+
+Level of detail as size. A table of balls in size levels: level k has radius 0.45/2^k, k = 0 to 3. Worked out before
+writing this:
+- **Rays at dyadic angles.** A pair's ray is v/h = r_b/r_a, so between levels it is 2^(k_a − k_b). Contact,
+  h + v = 1, falls nearer and nearer the larger ball's end of the line.
+- **Size and distance trade one for one in levels.** a reads v = r_b/d. In levels, log₂ v = −(size levels between
+  them) − (distance levels), plus a constant. So a ball one level smaller reads exactly as a ball of one's own size one
+  level farther: SPN's "a thing's level is set by its size".
+- **Attention is asymmetric, and so is the cost of ignoring.** Near contact, a ball k levels smaller fills little of
+  the larger's view, while the larger fills most of its own. One material: the smaller's mass is 8^(−k) of the larger's
+  (three levels of mass per level of size). If the larger ignores it, the larger misses a change of speed of that order;
+  the smaller, still reading, bounces correctly.
+
+**The field.** Seeded, five fields:
+- 4 balls of level 0 (the white among them), 12 of level 1, 36 of level 2, 64 of level 3;
+- placed at random, not overlapping, on the table's right three-quarters;
+- the white on the head spot, struck at speed 14 toward the field's middle.
+
+Run 2's physics throughout (cushions as one's own mirror image, signals at once).
+
+**The rule.** A ball ignores, does not respond to, any ball K or more levels smaller than itself, for K = 1, 2, 3
+and ∞. The smaller one still responds.
+
+- **P13 (the field from inside, with no ignoring).** With K = ∞, the field played from inside equals the referee
+  within 1e-9 at 1 s, in all five fields. *Killed* if any field misses.
+- **P14 (the cost of ignoring falls three levels per level).** Let E_K be the largest position error of the level-0
+  balls against the referee at 1 s, the median over the five fields. From K = 1 to 2 and from 2 to 3, E_K falls by a
+  factor between 4 and 16 each step (the mass ratio 8 per level). *Killed* if either step's factor is outside [4, 16].
+- *Measured, not predicted:* the share of contact responses skipped at each K; and E_K for every level, not only
+  level 0.
