@@ -176,6 +176,10 @@ Google Fonts load from outside:
   `grd-plan.md` (10 Oct, predictions only): the ratio between levels in a measured reader, the grid cells' modules.
   P1: a halving, √2 (area) or 2 (length), within 0.07; prior knowledge of the published means (~1.42, ~1.7) is stated in
   the plan, so it runs only on per-animal data not yet opened (Tom to supply; candidates listed there).
+  `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
+  Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
+  the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
+  log₂(81)/k for a share in s^k (P5 killed). The corner holds where the light counted is a share (projected solid angle).
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far

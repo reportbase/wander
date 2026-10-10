@@ -30,6 +30,27 @@ bodies are pictures. They are never evidence here.
   Hipparcos's stars brighter than V 7.3 are past 100 pc, mostly luminous kinds in a thin layer, seen through dust: a
   count past the layer's thickness turns from a sphere's 1.5 toward a slab's 1.0, which is the likely source of CNT's
   1.2 (§4). Mixing kinds alone does not flatten a count; an uneven spread does.
+- 10 October, sixth: how physics holds the inverse square (above §0), and NRF in exact arithmetic: the near field of an
+  extended source turns at the corner of the pair (size, distance), exactly and symmetrically, where the light counted is
+  a share (the projected solid angle); counted as an angle, it does not (§2.2, §3).
+
+## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
+
+- **Derived, not assumed.** A point source sends a fixed amount per second. With nothing lost on the way (conservation)
+  and nothing preferred in direction (isotropy), the same amount crosses every sphere about it, whose area is 4πd². In D
+  dimensions the law is 1/d^(D−1): in levels, D − 1 levels of light per level of distance, 2 in our space. Gauss's law
+  is its general form.
+- **Tested as a bound on the exponent.**
+  - Light: photometry on an optical bench, from Bouguer and Lambert on, to the percent, limited by how small and even the
+    source is.
+  - The electric force: Cavendish's null test, repeated by Williams, Faller and Hill (1971): no field inside a charged
+    shell, so the exponent is 2 within about 10⁻¹⁶. Equivalently, light has no mass, to fine limits.
+  - Gravity: planetary orbits and lunar laser ranging hold it to about 10⁻⁹ over the solar system, and torsion balances
+    (Eöt-Wash) down to about 50 µm. Below that it is open; theories with extra dimensions would bend it there.
+- **Exact only for a point.** A source of size a has a near field. NRF (`plans/nrf-plan.md`) measures where it turns
+  from near to far, in levels (§2.2).
+
+The law is not ours to test. MAG's 2.02 on real stars checks the bookkeeping in levels, not the law.
 
 ## 0. The rules
 
@@ -102,6 +123,16 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   - rising by e radii, the horizon is √(2e) radii off, half a level per doubling of height. With R given, that is
     √(2Rh).
 
+- **The near field turns at the corner of the pair (size, distance), where the light is a share** (NRF,
+  `plans/nrf-plan.md`). In levels the slope of a Lambertian disc's light on its axis is −2·s²/(1 + s²), s = d/a:
+  - halfway at s = 1 exactly, and flip-symmetric about it, σ(s) + σ(1/s) = −2;
+  - the same for a line on a flat patch, and for a sphere counted from its surface (halfway at a gap of one radius);
+  - a sphere counted from its centre has no near field;
+  - where an angle or an unprojected solid angle is counted instead (P3, P4), the switch is off s = 1 and not symmetric.
+
+  The projected solid angle, the standard measure of irradiance, makes the light a share of a two-part split, the form
+  `near-far-classification.md` calls fair to the facings.
+
 ### 2.3 In Wander's world (illustration, not evidence)
 
 These labs ran inside Wander's world before 10 October. They show what a reader could recover; they do not show that
@@ -132,6 +163,9 @@ They are kept as worked examples of the bridges (`labs.html`, `plans/grn-plan.md
   to 3.14 (P1) and the poles past the plane (P2, the wrong way round). By light, G and late M sat just past the 1.55
   ceiling (P3). Within 50 pc a fifth of the G and K colours are white dwarfs (P4): colour alone is not a kind; colour
   with the parallax's magnitude is.
+- **NRF P3–P5: not every count of light is fair to the corner.** The line counted from every direction, and an isotropic
+  emitter on a flat patch, switch off s = 1 (σ(1) = −1.64 and −1.21) and are not symmetric under the flip. And the width
+  of the switch is set by the power in the share, log₂(81)/k levels, not one band for all.
 - **HZN run 1's P5 and run 2: a page reads only to its grain.** Near home, draw's levels page cannot read nearer than one
   segment or one direction, whichever is coarser. Run 3, with both grains doubled together, was not killed.
 
