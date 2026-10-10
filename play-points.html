@@ -82,7 +82,7 @@
     }
 
     function fit(cv) {
-        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = +cv.getAttribute('height');
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
         if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
         return [cv.getContext('2d'), cv.width, cv.height];
     }
