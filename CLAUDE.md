@@ -146,6 +146,10 @@ Google Fonts load from outside:
   again; arithmetic opens a factor of 3 (P2a not killed). Run 3 (Tom: "does 2 allow us to do recursion without runtime
   logic"): on a level (identity and flip) only a split in 2 has every part of one kind, on the full turn every split does;
   a theorem (⌈b/2⌉ kinds), resting on the premise that a level's only symmetries are the identity and the flip.
+  `isq-plan.md` (+ `isq/isq.py`, 10 Oct): is the in-place lay the inverse square? Past the corner it is 2 − 1/s,
+  proportion in h/v, so its room per unit s is 1/s², the flip's Jacobian (all five predictions not killed); draw's piecewise
+  lay is 1/s² at each level's geometric middle. Read s as d/Δ: the lay is an angular size, its 1/s² that size's rate,
+  light's inverse square its square. A shared form with one origin, not a claim that the lay is light.
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far

@@ -2517,6 +2517,10 @@ Neither half helps alone; together they cut the error by a factor of four, as in
     = h, which exacly what this demo shows. which is also the baseline from which depth is calcualted."). Over every facing
     the corner h = v is the circle s = 1 between near and far; it is the unit circle a shape's depth is its difference
     from. With the size divided out, depth in each direction is log₂ s(θ), levels past the corner (SPN §1).
+400. **The in-place lay has the inverse square's form** (Oct 10; Tom: "yes, #1"; ISQ, `plans/isq-plan.md`, run 1, all five
+    not killed). Past the corner the lay is 2 − 1/s, proportion in h/v, so its room per unit s is 1/s², the flip's
+    Jacobian. Reading s as d/Δ (the bridge, amounts): the lay places a thing at its angular size; its 1/s² is how fast
+    that shrinks, light's 1/d² its square (SPN §1).
 
 All in *Serial, Parallel and Nowhere* §1 and the opening warning; the rulings under review and the physics audit in
 `plans/vh-rulings-review.md` and `plans/physics-vh-audit.md`.
