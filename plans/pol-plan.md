@@ -520,3 +520,41 @@ P14: KILLED. level-0 error falls by 3.81 (K 1 to 2) and 4.23 (K 2 to 3); band [4
   The difference grows about a hundredfold each half second, from rounding to the size of the table by 3 s. The rack
   of 16 never diverged in 8 s. Many small balls make the game chaotic. Past its horizon, the view from inside and the
   view from nowhere are each one rounding of the same chaotic game.
+
+### Run 7 (10 October 2026): prediction, written before it ran (Tom: "yes", to measuring the cost of ignoring per contact)
+
+Runs 5–6 left open why ignoring smaller balls costs about 4× less per level of size (3.81, 4.23), not the mass ratio's 8.
+The game's error at 1 s mixes three things: what one ignored contact costs, how many there are, and how the chaos of the
+field grows each one. This run takes them apart. It measures in the true game (K = ∞, nothing ignored, run 6's fields and
+seeds), at every contact a level-0 ball has with a ball j levels smaller, the response that ignoring would skip.
+
+Keep the case. The readings h, v are fill levels; the skipped change of speed, the closing speed and the times are amounts.
+The bridge from readings to masses is run 1's: one material, m_b/m_a = (v/h)³ = 8^(−j).
+
+**Worked out before writing this.** For one contact, the larger ball's change of speed is
+Δu = (1 + e)·w·m/(M + m) = (1 + e)·w/(1 + 8^j), with w the closing speed along the line of centres and e = 0.96. At a
+fixed closing speed this falls by 65/9 = 7.22 from j = 1 to 2, and 513/65 = 7.89 from j = 2 to 3: the "8" of P14. So a 4
+per level must come from the closing speed w growing as the balls get smaller, or from the number of contacts, or from
+the chaos.
+
+**The mechanism predicted: lighter balls are kicked faster.** A ball struck by a larger one leaves at up to
+(1 + e)·M/(M + m) of the striker's speed, about 1.74 to 1.96 times it. Smaller balls, struck in a cascade down the
+levels, therefore move faster and close faster on the level-0 balls. So the momentum a smaller ball carries, not its mass
+alone, sets what ignoring it costs.
+
+- **P15 (one contact, an identity).** Through the hook's `respond`, a level-0 ball met head-on by a ball j levels smaller
+  at closing speed 1 changes speed by (1 + e)/(1 + 8^j). The ratios from j = 1 to 2 and from 2 to 3 are 7.22 and 7.89,
+  within 1e-9. *Killed* if either misses. This checks the code, not the idea.
+- **P16 (smaller balls close faster).** Over 3 s of the true game, five fields, the median closing speed w at level-0
+  contacts with level-j balls rises by a factor between 1.4 and 2.5 from j = 1 to 2, and again from j = 2 to 3.
+  *Killed* if either step is outside the band. *Undecided*, not passed, if any j has fewer than 10 contacts.
+- **P17 (so one contact costs about 4 per level).** The median skipped change of speed per contact, |Δu|, falls by a
+  factor between 3.2 and 5.7 from j = 1 to 2, and again from 2 to 3 (8 over P16's band). *Killed* if either step is
+  outside. A fall near 7–8 would mean the closing speed does not depend on size, and the 4 lies elsewhere.
+- **P18 (the game's 4 is the summed impulse, before chaos).** For each level-0 ball, the drift that ignoring would leave
+  by 1 s if nothing else changed is D = |Σ Δu·(1 − t_c)|, summed over its contacts before 1 s with balls K or more levels
+  smaller (t_c the contact's time; the cloth's slowing ignored). Take the largest over the level-0 balls and the median
+  over the fields, as E_K in run 6. The ratios D₁/D₂ and D₂/D₃ are within a factor 1.5 of run 6's 3.81 and 4.23, that
+  is in [2.54, 5.72] and [2.82, 6.35]. *Killed* if either is outside. If not killed, the 4 per level is the first-order
+  cost of the skipped contacts, not the chaos's.
+- *Measured, not predicted:* the number of level-0 contacts with each level; D_K against run 6's E_K (the chaos's gain).
