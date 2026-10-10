@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The facing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    facing.html: the line, the arc and the facing (9 October 2026, after SPN §1, "The line, the arc and the facing"; Tom:
+    "a line does not account for a second degree of freedom … At the corner, the reader is facing perpindicular to the
+    line"; "thats why the 45 degrees is the corner, not 0 or 90 degrees."). A standalone page like dial.html.
+
+    Geometry only, in fill levels (keep the case: h, v are 0 to 1; no H, V or distance here). One sweep from A to B:
+      the sweep's angle θ from 0° (A, all h) to 90° (B, all v); the pair (h, v) = (cos θ, sin θ) on the quarter arc;
+      the ratio v/h = tan θ; the place on the straight line from A to B, the share by the sum v/(h + v);
+      the facing, the second degree of freedom the line lacks: 2θ, from 0° (toward B) through 90° (square to the line)
+      to 180° (toward A). The corner is where the facing is square: θ = 45°, v/h = 1, the share ½. There the arc stands
+      off the line by 1 − 1/√2 of the radius, its most, outward and square to the line, over the line's midpoint.
+    Links: ?t=45 (θ in degrees). Test hook: window.__facing.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 260px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The facing</h1>
+    <p class="lede">One sweep from A to B. The straight line holds only where you are between them; the reader also faces
+    the other, and that facing is a second degree of freedom. At A you face B; at B you face A; at the corner you face
+    square to the line, equally between them. That is why the corner is at 45°, not 0° or 90°.</p>
+    <div class="panel">
+        <div class="row">
+            <button id="play">play</button>
+            <label for="theta" style="color:var(--dim)">θ</label>
+            <input id="theta" type="range" min="0" max="90" step="0.1" value="20">
+            <button id="corner">the corner</button>
+        </div>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="line" height="300"></canvas><p class="cap">The line from A to B, and the facing (the arrow): toward B,
+            square, toward A.</p></div>
+            <div><canvas id="arc" height="300"></canvas><p class="cap">The quarter arc of (h, v) beside the straight line h + v = 1:
+            the arc stands off the line most at the corner.</p></div>
+        </div>
+        <div id="hud"></div>
+    </div>
+    <p class="note">Two angles, one sweep: the sweep's θ runs a quarter turn, the facing a half turn, facing = 2θ (the
+    inscribed angle, Thales). Geometry only, in fill levels: no breadth and no distance enters. Behind it: <i>Serial,
+    Parallel and Nowhere</i> §1, "The line, the arc and the facing". Other demos: <a href="sweep.html">the sweep
+    device</a>, <a href="sphere.html">the sphere</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), D = Math.PI / 180;
+    // one reading of the sweep at θ (degrees)
+    function at(t) {
+        const th = t * D, h = Math.cos(th), v = Math.sin(th);
+        const ratio = h > 1e-12 ? v / h : Infinity, share = v / (h + v);
+        // distance of (h, v) off the line h + v = 1, along its outward normal
+        const offLine = (h + v - 1) / Math.SQRT2;
+        return { theta: t, h, v, ratio, share, facing: 2 * t, offLine };
+    }
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +cv.getAttribute('height');
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, hh];
+    }
+    const arrow = (g, x, y, ang, len, col) => {
+        const ex = x + len * Math.cos(ang), ey = y - len * Math.sin(ang);
+        g.strokeStyle = col; g.fillStyle = col; g.lineWidth = 2.5;
+        g.beginPath(); g.moveTo(x, y); g.lineTo(ex, ey); g.stroke();
+        const a1 = ang + Math.PI * 0.85, a2 = ang - Math.PI * 0.85;
+        g.beginPath(); g.moveTo(ex, ey); g.lineTo(ex + 10 * Math.cos(a1), ey - 10 * Math.sin(a1));
+        g.lineTo(ex + 10 * Math.cos(a2), ey - 10 * Math.sin(a2)); g.closePath(); g.fill();
+    };
+    function draw() {
+        const t = +$('theta').value, r = at(t), atCorner = Math.abs(t - 45) < 0.6;
+        // the line: A left, B right, the reader at the share
+        let [g, W, H] = fit($('line'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        const y0 = H * 0.7, xa = 40, xb = W - 40, x = xa + (xb - xa) * r.share;
+        g.strokeStyle = 'rgba(255,255,255,0.35)'; g.lineWidth = 2; g.beginPath(); g.moveTo(xa, y0); g.lineTo(xb, y0); g.stroke();
+        g.fillStyle = '#e6e4ee'; g.font = '14px DM Mono, monospace';
+        g.fillText('A', xa - 6, y0 + 24); g.fillText('B', xb - 4, y0 + 24);
+        g.fillStyle = 'rgba(212,160,82,0.5)'; g.fillRect((xa + xb) / 2 - 1, y0 - 6, 2, 12);
+        // the facing: 0 toward B (right), 90 square (up), 180 toward A (left)
+        arrow(g, x, y0, r.facing * D, Math.min(110, H * 0.45), atCorner ? '#d4a052' : '#8ce6cd');
+        g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(x, y0, 5, 0, 2 * Math.PI); g.fill();
+        g.fillStyle = atCorner ? '#d4a052' : '#8a8a96'; g.font = '12px DM Mono, monospace';
+        g.fillText(atCorner ? 'the corner: square to the line, equally between A and B' : `facing ${r.facing.toFixed(1)}°`, 12, 20);
+        // the arc and the line h + v = 1
+        [g, W, H] = fit($('arc'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        const s = Math.min(W, H) - 60, ox = (W - s) / 2, oy = H - 30, P = (hh, vv) => [ox + hh * s, oy - vv * s];
+        g.strokeStyle = 'rgba(255,255,255,0.15)'; g.lineWidth = 1; g.beginPath(); g.moveTo(...P(0, 0)); g.lineTo(...P(1, 0)); g.moveTo(...P(0, 0)); g.lineTo(...P(0, 1)); g.stroke();
+        g.strokeStyle = 'rgba(255,255,255,0.4)'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(...P(1, 0)); g.lineTo(...P(0, 1)); g.stroke();
+        g.strokeStyle = '#b59cf0'; g.lineWidth = 2; g.beginPath();
+        for (let i = 0; i <= 90; i++) { const q = P(Math.cos(i * D), Math.sin(i * D)); i ? g.lineTo(...q) : g.moveTo(...q); } g.stroke();
+        // the point, its drop onto the line, the corner
+        const p = P(r.h, r.v), f = (1 - r.h - r.v) / 2, q = P(r.h + f, r.v + f);
+        g.strokeStyle = 'rgba(140,230,205,0.6)'; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(...P(0, 0)); g.lineTo(...p); g.stroke();
+        g.strokeStyle = 'rgba(212,160,82,0.8)'; g.beginPath(); g.moveTo(...p); g.lineTo(...q); g.stroke(); g.setLineDash([]);
+        g.fillStyle = atCorner ? '#d4a052' : '#8ce6cd'; g.beginPath(); g.arc(...p, 5, 0, 2 * Math.PI); g.fill();
+        g.fillStyle = '#8a8a96'; g.font = '12px DM Mono, monospace';
+        g.fillText('h', ...P(1.02, -0.06)); g.fillText('v', ...P(-0.07, 1.0)); g.fillText('A', ...P(1.03, 0.02)); g.fillText('B', ...P(0.02, 1.04));
+        $('hud').textContent =
+            `θ ${t.toFixed(1)}°   facing 2θ = ${r.facing.toFixed(1)}°   (h, v) = (${r.h.toFixed(3)}, ${r.v.toFixed(3)})   v/h = ${isFinite(r.ratio) ? r.ratio.toFixed(3) : '∞'}\n` +
+            `place on the line, v/(h + v) = ${r.share.toFixed(3)}   the arc off the line: ${r.offLine.toFixed(3)} (most, 1 − 1/√2 = 0.293, at the corner)`;
+    }
+    let playing = false, dir = 1, last = null;
+    function tick(now) {
+        if (playing) {
+            const dt = last === null ? 0 : (now - last) / 1000; let t = +$('theta').value + dir * 18 * dt;
+            if (t >= 90) { t = 90; dir = -1; } if (t <= 0) { t = 0; dir = 1; }
+            $('theta').value = t; draw();
+        }
+        last = now; requestAnimationFrame(tick);
+    }
+    $('play').addEventListener('click', () => { playing = !playing; $('play').textContent = playing ? 'pause' : 'play'; $('play').classList.toggle('on', playing); });
+    $('corner').addEventListener('click', () => { playing = false; $('play').textContent = 'play'; $('play').classList.remove('on'); $('theta').value = 45; draw(); });
+    $('theta').addEventListener('input', draw);
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search);
+    if (q.has('t')) $('theta').value = Math.min(90, Math.max(0, +q.get('t') || 0));
+    draw(); requestAnimationFrame(tick);
+
+    window.__facing = { at, cornerTheta: 45 };
+})();
+</script>
+</body>
+</html>

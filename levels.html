@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The levels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    levels.html: the circle and its levels (9 October 2026; Tom: "create a demo that shows the circle in the middle of the
+    page and the logritmic circles that halve outside the circle where they split by 2 in distance until they can't be
+    seen anymore"). A standalone page like facing.html.
+
+    Geometry only (keep the case: s = v/h, the relation; no H, V or distance in the drawing). The unit circle holds the
+    near field, s from 0 (the centre, home) to 1 (its rim, the corner), laid in proportion: radius s. Past it each level is
+    one doubling of s (1 to 2, 2 to 4, …) and is laid in half the width of the one before: level k runs from radius
+    2 − 2^(−k) to 2 − 2^(−k−1), so a reading s ≥ 1 sits at 2 − 1/s (SPN's in-place lay, "2h in place": the far field
+    nests in the back half, and the horizon, s → ∞, is the circle of radius 2, never reached). A ring is drawn while it is
+    at least one grain wide; past that it cannot be seen, which is the resolution limit (physics: a ring's width against
+    the reader's grain), not the corner. Levels seen ≈ log₂(R / grain), R the unit circle's radius in pixels.
+    A shape (Tom: "add a pertibated circle that wrapped the circle that crossed the various levels. then add another
+    circle the represents the LOD of the user"): a perturbed circle around the unit circle, its reading in each direction
+    s(θ) = s₀·exp(Σ aₙ cos(nθ + φₙ)) (bumps of every size, n = 2 to 24, seeded), so its outline crosses several levels. The
+    reader's level of detail is a circle at the edge of level k (radius 2 − 2^(−k), s = 2^k): inside it the shape is drawn
+    with all its bumps; past it only its broad form (n ≤ 3) is kept, the true outline faint and dashed beside it.
+    The corner is the baseline (Tom, 10 October: "the corner is v = h, which exacly what this demo shows. which is also the
+    baseline from which depth is calcualted"): drawn over every facing the corner is the circle s = 1, and "divide out the
+    size" moves the shape's middle (its geometric mean reading, s₀) onto it; what stands off the circle is the depth,
+    log₂ s(θ) levels in each direction, outward past the corner and inward by the flip, shaded in two colours.
+    Shapes from files (Tom, 10 October: "add the ablity load a tvf file. add a combo box let the user select the shape to
+    display"): the combo box holds the built-in perturbed circle and the suns, planets, moons and asteroids in res/; "load a
+    file…" reads a .tvf curve (the draw tool's format, draw.html parseTvfText: "TVF W H C" with C = 2, rows of x and y leaves
+    at (k + ½)·2π/W, presented by the periodic cardinal kernel; read from the curve's centroid, the nearest wall in each
+    direction, the largest curve of a file kept) or a .tvf3d (the 3d studio's format: r(θ, h) = Σₙ cos(nπh) Σₘ (Aaₙₘ cos mθ + Abₙₘ sin mθ)). A 3d field is cut at
+    a height h (½, the equator, by default), and its outline r(θ) becomes a reading s(θ) = s₀·(r(θ)/r̄)^k, r̄ its geometric
+    mean and k the relief (×1 is the file as it is; the planets' relief is a few thousandths, so turn it up to see it cross
+    levels). The broad form keeps m ≤ 3.
+    Links: ?g= (the grain in pixels), ?s= (a thing's reading), ?shape= (s₀), ?lod= (k), ?depth=1, ?body= (a name in res/),
+    ?relief=, ?cut= (h). Test hook: window.__levels.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center }
+    .row label { color: var(--dim) }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 200px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The levels</h1>
+    <p class="lede">The circle in the middle holds everything up to the corner, laid in proportion. Outside it, each ring
+    is one doubling (1 to 2, 2 to 4, 4 to 8, …), and each is drawn half as wide as the one before. The rings crowd toward
+    an edge they never reach, and once a ring is narrower than one grain it can no longer be seen.</p>
+    <div class="panel">
+        <div class="row">
+            <button id="play">send a thing out</button>
+            <label for="grain">grain</label>
+            <input id="grain" type="range" min="0.5" max="16" step="0.5" value="1">
+            <span id="gv" style="color:var(--bright)"></span>
+        </div>
+        <div class="row" style="margin-top:6px">
+            <label for="pick">shape</label>
+            <select id="pick" style="font:inherit;color:var(--bright);background:#1d1d27;border:1px solid var(--line);border-radius:6px;padding:5px 8px;max-width:100%">
+                <option value="builtin">a perturbed circle (built in)</option>
+            </select>
+            <input id="file" type="file" accept=".tvf,.tvf3d,.txt" style="display:none">
+            <span id="fv" class="note"></span>
+        </div>
+        <div class="row" style="margin-top:6px" id="fieldRow" hidden>
+            <label for="relief">relief ×</label>
+            <input id="relief" type="range" min="0" max="7" step="0.01" value="0">
+            <span id="rv" style="color:var(--bright)"></span>
+            <span id="cutBox" style="display:contents"><label for="cut">cut at h</label>
+            <input id="cut" type="range" min="0.02" max="0.98" step="0.01" value="0.5">
+            <span id="cv2" style="color:var(--bright)"></span></span>
+        </div>
+        <div class="row" style="margin-top:6px">
+            <label for="size">size</label>
+            <input id="size" type="range" min="0" max="6" step="0.01" value="2">
+            <span id="sv" style="color:var(--bright)"></span>
+        </div>
+        <div class="row" style="margin-top:6px">
+            <label for="lod">your level of detail</label>
+            <input id="lod" type="range" min="0" max="10" step="1" value="2">
+            <span id="lv" style="color:var(--bright)"></span>
+        </div>
+        <div class="row" style="margin-top:6px">
+            <button id="divide">divide out the size</button>
+            <span class="note">the corner is the baseline: what stands off it is depth</span>
+        </div>
+        <div style="margin-top:10px"><canvas id="cv" height="860"></canvas></div>
+        <div id="hud"></div>
+    </div>
+    <p class="note">The reading s = v/h is laid at radius s inside the circle and at 2 − 1/s past it (the unit circle has
+    radius 1), so a doubling past the corner always takes half the room the last one took and the edge, radius 2, is the
+    horizon. Coarsen the grain and the outer levels drop out one per doubling of the grain; how many show is about
+    log₂(radius ÷ grain). The shape wraps the circle and crosses the levels; the
+    gold dashed circle is your level of detail: inside it you hold the shape's bumps, past it only its broad form (faint
+    dashes: what is there). Tap or drag on the picture to read a place. Behind it: <i>Serial, Parallel and Nowhere</i>, the
+    level ("2h in place"; the next level nests in the back half). Other demos: <a href="facing.html">the facing</a>,
+    <a href="sweep.html">the sweep device</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    // where a reading s sits, as a share of the unit circle's radius: proportional up to the corner, then 2 − 1/s
+    const radius = s => s <= 1 ? Math.max(0, s) : 2 - 1 / s;
+    // the reading at a radius r (0 to 2)
+    const reading = r => r <= 1 ? Math.max(0, r) : (r >= 2 ? Infinity : 1 / (2 - r));
+    // level k (k = 0: 1 to 2, k = 1: 2 to 4, …): its inner and outer radius and its width, as shares of R
+    const level = k => ({ k, from: 2 ** k, to: 2 ** (k + 1), inner: 2 - 2 ** -k, outer: 2 - 2 ** (-k - 1), width: 2 ** (-k - 1) });
+    // how many levels are at least one grain wide, for a unit circle R pixels across its radius
+    const visible = (R, grain) => { let n = 0; while (level(n).width * R >= grain && n < 60) n++; return n; };
+
+    // the shape: a perturbed circle, its reading in each direction (log-perturbed, so it swings across levels evenly)
+    const HARM = (() => { let x = 12345; const rnd = () => (x = (x * 1103515245 + 12345) % 2147483648) / 2147483648;
+        const h = []; for (let n = 2; n <= 24; n++) h.push({ n, a: 0.6 / n ** 0.9 * (0.6 + 0.8 * rnd()), p: 2 * Math.PI * rnd() }); return h; })();
+    const BROAD = 3;
+    // the shape shown: the built-in one, or a field's outline (its a, b series in m at the cut height)
+    let SH = { kind: 'builtin', name: 'a perturbed circle', logMean: 0, relief: 1 };
+    function profile(th, nmax = Infinity) {
+        if (SH.kind === 'builtin') return Math.exp(HARM.reduce((z, c) => c.n <= nmax ? z + c.a * Math.cos(c.n * th + c.p) : z, 0));
+        let r = 0; const M = Math.min(SH.a.length - 1, nmax);
+        for (let m = 0; m <= M; m++) r += SH.a[m] * Math.cos(m * th) + SH.b[m] * Math.sin(m * th);
+        return Math.max(1e-6, r);
+    }
+    const shape = (th, s0, nmax = Infinity) => s0 * Math.exp(SH.relief * (Math.log(profile(th, nmax)) - SH.logMean));
+    // two formats: a .tvf3d field (the 3d studio's), or a .tvf curve (the draw tool's, draw.html parseTvfText)
+    function parseTVF(text) {
+        const lines = text.replace(/\r/g, '').split('\n'); let i = 0;
+        while (i < lines.length && (!lines[i].trim() || lines[i].trim().startsWith('#') && !lines[i].trim().startsWith('#meta'))) i++;
+        const first = (lines[i] || '').trim();
+        if (/^TVF3D\b/.test(first)) {
+            const R = {};
+            for (const l of lines.slice(i + 1)) { const w = l.trim().split(/\s+/); if (w[0] === 'Aa' || w[0] === 'Ab') (R[w[0]] = R[w[0]] || []).push(Float64Array.from(w.slice(1), Number)); }
+            if (!R.Aa || !R.Ab || R.Aa.length !== R.Ab.length) throw new Error('no radius series (Aa and Ab rows) in it');
+            return { NH: R.Aa.length, M: R.Aa[0].length, Aa: R.Aa, Ab: R.Ab };
+        }
+        if (/^TVF\s+\d+\s+\d+\s+\d+$/.test(first)) return curveField(parseCurves(lines.slice(i)));
+        throw new Error('not a .tvf file (expected "TVF W H C" or "TVF3D NH MT")');
+    }
+    // the draw tool's curves: blocks of "TVF W H C", #meta lines, then H × C rows "<rung> v₀ … v_{W−1}", the leaves of x and y
+    function parseCurves(lines) {
+        const out = []; let i = 0, blocks = 0;
+        while (i < lines.length) {
+            while (i < lines.length && (!lines[i].trim() || lines[i].trim().startsWith('#'))) i++;
+            if (i >= lines.length) break;
+            const m = lines[i].trim().match(/^TVF\s+(\d+)\s+(\d+)\s+(\d+)$/);
+            if (!m) { if (!blocks) throw new Error('not a TVF file'); break; }
+            i++; const W = +m[1], H = +m[2], C = +m[3], meta = {};
+            if (C !== 2) throw new Error(`a TVF signal with ${C} channel${C === 1 ? '' : 's'}, not a curve (a curve has 2, x and y)`);
+            while (i < lines.length && lines[i].trim().startsWith('#meta')) { const tag = lines[i].trim().slice(5).trim(), c = tag.indexOf(':'); if (c > 0) meta[tag.slice(0, c).trim()] = tag.slice(c + 1).trim(); i++; }
+            for (let row = 0; row < H; row++) {
+                const ch = [];
+                for (let k = 0; k < 2; k++) {
+                    while (i < lines.length && !lines[i].trim()) i++;
+                    const parts = (lines[i++] || '').trim().split(/\s+/);
+                    if (parts.length < W + 1) throw new Error(`block ${blocks + 1}: a row with ${parts.length - 1} values, not ${W}`);
+                    ch.push(Float64Array.from(parts.slice(1, W + 1), Number));
+                }
+                out.push({ x: ch[0], y: ch[1], name: meta.name || null });
+            }
+            blocks++;
+        }
+        if (!out.length) throw new Error('no curves in it');
+        return out;
+    }
+    // the kernel the draw tool presents leaves with: leaves at (k + ½)·2π/N, the periodic cardinal kernel (tvf-core.js)
+    function kernel(phi, N) {
+        phi = ((phi + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI;
+        if (Math.abs(phi) < 1e-12) return 1;
+        const d = N * ((N & 1) ? Math.sin(phi / 2) : Math.tan(phi / 2));
+        return Math.abs(d) < 1e-12 ? 1 : Math.sin(N * phi / 2) / d;
+    }
+    // a curve read from a standpoint at its centroid: in each of 1024 directions the nearest wall (what the standpoint
+    // faces; where a direction meets the outline more than once the shape is not star-shaped from there, SPN §6.4),
+    // then that r(θ) as a series in cos/sin(mθ), m ≤ 96, the same form as a field's cut
+    function curveField(curves) {
+        const P = 1024, dense = curves.map(c => {
+            const N = c.x.length, X = new Float64Array(P), Y = new Float64Array(P);
+            for (let i = 0; i < P; i++) { const ph = 2 * Math.PI * i / P; let x = 0, y = 0;
+                for (let k = 0; k < N; k++) { const w = kernel(ph - (k + 0.5) * 2 * Math.PI / N, N); x += w * c.x[k]; y += w * c.y[k]; }
+                X[i] = x; Y[i] = -y; }                                   // y down in the draw tool's page; up here
+            let A = 0, cx = 0, cy = 0;
+            for (let i = 0; i < P; i++) { const j = (i + 1) % P, q = X[i] * Y[j] - X[j] * Y[i]; A += q; cx += (X[i] + X[j]) * q; cy += (Y[i] + Y[j]) * q; }
+            return { X, Y, A: A / 2, cx: cx / (3 * A), cy: cy / (3 * A), N, name: c.name };
+        });
+        const pick = dense.reduce((b, d) => Math.abs(d.A) > Math.abs(b.A) ? d : b);
+        const J = 1024, r = new Float64Array(J); let multi = 0;
+        for (let j = 0; j < J; j++) {
+            const th = 2 * Math.PI * j / J, dx = Math.cos(th), dy = Math.sin(th); let best = Infinity, hits = 0;
+            for (let i = 0; i < P; i++) {
+                const k = (i + 1) % P, ax = pick.X[i] - pick.cx, ay = pick.Y[i] - pick.cy, ex = pick.X[k] - pick.X[i], ey = pick.Y[k] - pick.Y[i];
+                const den = dx * ey - dy * ex; if (Math.abs(den) < 1e-15) continue;
+                const t = (ax * ey - ay * ex) / den, u = (ax * dy - ay * dx) / den;
+                if (t > 0 && u >= 0 && u < 1) { hits++; if (t < best) best = t; }
+            }
+            if (hits > 1) multi++;
+            r[j] = isFinite(best) ? best : 0;
+        }
+        const MM = 96, a = new Float64Array(MM + 1), b = new Float64Array(MM + 1);
+        for (let m = 0; m <= MM; m++) { let sa = 0, sb = 0; for (let j = 0; j < J; j++) { const th = 2 * Math.PI * j / J; sa += r[j] * Math.cos(m * th); sb += r[j] * Math.sin(m * th); } a[m] = sa / J * (m ? 2 : 1); b[m] = sb / J * 2; }
+        return { NH: 1, M: MM + 1, Aa: [a], Ab: [b], curve: true, name: pick.name,
+            info: `a curve of ${pick.N} leaves${curves.length > 1 ? `, the largest of ${curves.length}` : ''}, read from its centroid` +
+                (multi ? `; not star-shaped from there: ${Math.round(100 * multi / J)}% of directions meet the outline more than once, the nearest wall kept` : '') };
+    }
+    // cut a field at height h: the outline's series in θ
+    function cutField(F, h) {
+        const a = new Float64Array(F.M), b = new Float64Array(F.M);
+        for (let n = 0; n < F.NH; n++) { const k = F.NH === 1 ? 1 : Math.cos(n * Math.PI * h); for (let m = 0; m < F.M; m++) { a[m] += k * F.Aa[n][m]; b[m] += k * (F.Ab[n][m] || 0); } }
+        return { a, b };
+    }
+    function useField(F, name) {
+        const h = +$('cut').value, { a, b } = cutField(F, h);
+        SH = { kind: 'field', name, F, a, b, logMean: 0, relief: 2 ** +$('relief').value };
+        let z = 0; for (let i = 0; i < 1024; i++) z += Math.log(profile(2 * Math.PI * i / 1024)); SH.logMean = z / 1024;
+        $('fieldRow').hidden = false; $('cutBox').style.display = F.NH === 1 ? 'none' : 'contents';
+    }
+    const BODY_LIST = { suns: ['sun-yellow', 'sun-orange', 'sun-red', 'sun-blue', 'sun-white'],
+        planets: ['planet-terra', 'planet-ocean', 'planet-mars', 'planet-jupiter', 'planet-saturn', 'planet-neptune', 'planet-uranus', 'planet-venus', 'planet-lava', 'planet-alien'],
+        moons: ['moon-luna', 'moon-ice', 'moon-io', 'moon-callisto', 'moon-rust'], asteroids: ['asteroid-grey', 'asteroid-dark'] };
+    const fileCache = {};
+    // the reader's level of detail k: a circle at the outer edge of level k − 1, s = 2^k (k = 0: the corner)
+    const lodRadius = k => radius(2 ** k);
+    // how many ring edges (s = 1, 2, 4, …) the outline crosses, over 2048 directions
+    function crossings(s0, nmax = Infinity) {
+        let c = 0, N = 2048, prev = Math.floor(Math.log2(shape(0, s0, nmax)));
+        for (let i = 1; i <= N; i++) { const lv = Math.floor(Math.log2(shape(2 * Math.PI * i / N, s0, nmax))); c += Math.abs(lv - prev); prev = lv; }
+        return c;
+    }
+
+    let moving = false, thing = null, pick = null, playing = false, last = null;
+    const q = new URLSearchParams(location.search);
+    if (q.has('g')) $('grain').value = Math.min(16, Math.max(0.5, +q.get('g') || 1));
+    if (q.has('s')) thing = Math.max(0, +q.get('s') || 0);
+    if (q.has('shape')) $('size').value = Math.min(6, Math.max(0, Math.log2(+q.get('shape') || 4)));
+    let div = q.get('depth') === '1' ? 1 : 0, divTo = div;     // 0: the shape at its size; 1: its size divided out
+    if (q.has('lod')) $('lod').value = Math.min(10, Math.max(0, Math.round(+q.get('lod') || 0)));
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = Math.min(+cv.getAttribute('height'), Math.round(w));
+        cv.style.height = h + 'px';
+        if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, h, dpr];
+    }
+    function geom() {
+        const cv = $('cv'), w = cv.clientWidth, h = parseFloat(cv.style.height) || cv.clientHeight;
+        return { cx: w / 2, cy: h / 2, R: (Math.min(w, h) / 2 - 12) / 2 };
+    }
+    function draw() {
+        const [g, W, H, dpr] = fit($('cv')), grain = +$('grain').value, { cx, cy, R } = geom();
+        $('gv').textContent = `${grain} px`;
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        // the horizon: radius 2, never reached
+        g.strokeStyle = 'rgba(217,110,91,0.55)'; g.setLineDash([3, 5]); g.lineWidth = 1;
+        g.beginPath(); g.arc(cx, cy, 2 * R, 0, 2 * Math.PI); g.stroke(); g.setLineDash([]);
+        // the levels, each a doubling, each half the width of the last, while at least one grain wide
+        const n = visible(R, grain);
+        for (let k = n - 1; k >= 0; k--) {
+            const L = level(k), t = k / Math.max(1, n - 1);
+            g.fillStyle = k % 2 ? `rgba(181,156,240,${0.10 + 0.10 * t})` : `rgba(140,230,205,${0.10 + 0.10 * t})`;
+            g.beginPath(); g.arc(cx, cy, L.outer * R, 0, 2 * Math.PI); g.arc(cx, cy, L.inner * R, 0, 2 * Math.PI, true); g.fill();
+            g.strokeStyle = 'rgba(230,228,238,0.45)'; g.lineWidth = 1 / dpr;
+            g.beginPath(); g.arc(cx, cy, L.outer * R, 0, 2 * Math.PI); g.stroke();
+        }
+        // the unit circle: the near field, in proportion (faint quarter rings), its rim the corner
+        g.fillStyle = 'rgba(212,160,82,0.10)'; g.beginPath(); g.arc(cx, cy, R, 0, 2 * Math.PI); g.fill();
+        g.strokeStyle = 'rgba(212,160,82,0.25)'; g.lineWidth = 1;
+        for (const f of [0.25, 0.5, 0.75]) { g.beginPath(); g.arc(cx, cy, f * R, 0, 2 * Math.PI); g.stroke(); }
+        g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.arc(cx, cy, R, 0, 2 * Math.PI); g.stroke();
+        g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(cx, cy, 3, 0, 2 * Math.PI); g.fill();
+        // labels along a ray to the upper right, while there is room
+        g.font = '11px DM Mono, monospace'; g.textBaseline = 'middle';
+        const ang = -Math.PI / 4, lab = (r, txt, col) => { g.fillStyle = col; g.fillText(txt, cx + r * R * Math.cos(ang) + 6, cy + r * R * Math.sin(ang)); };
+        lab(0.5, 'near field: 0 to 1', 'rgba(212,160,82,0.9)');
+        for (let k = 0; k < n && level(k).width * R >= 13; k++) { const L = level(k); lab((L.inner + L.outer) / 2, `${L.from}–${L.to}`, 'rgba(230,228,238,0.8)'); }
+        // the shape, and the reader's level of detail
+        const sSet = 2 ** +$('size').value, s0 = sSet ** (1 - div), k = +$('lod').value, rL = lodRadius(k) * R;
+        $('sv').textContent = `s₀ = ${fmt(sSet)}`; $('lv').textContent = `${k} level${k === 1 ? '' : 's'} past the corner (to s = ${fmt(2 ** k)})`;
+        const outline = (nmax, col, wid, dash) => {
+            g.strokeStyle = col; g.lineWidth = wid; g.setLineDash(dash || []); g.beginPath();
+            for (let i = 0; i <= 720; i++) { const th = 2 * Math.PI * i / 720, r = radius(shape(th, s0, nmax)) * R;
+                const x = cx + r * Math.cos(th), y = cy - r * Math.sin(th); i ? g.lineTo(x, y) : g.moveTo(x, y); }
+            g.stroke(); g.setLineDash([]);
+        };
+        // the depth: what stands off the corner's circle, outward and inward, once the size is divided out
+        if (div > 0) {
+            const region = () => { g.beginPath();
+                for (let i = 0; i <= 720; i++) { const th = 2 * Math.PI * i / 720, r = radius(shape(th, s0)) * R;
+                    const x = cx + r * Math.cos(th), y = cy - r * Math.sin(th); i ? g.lineTo(x, y) : g.moveTo(x, y); }
+                g.closePath(); g.moveTo(cx + R, cy); g.arc(cx, cy, R, 0, 2 * Math.PI, true); };
+            g.save(); g.beginPath(); g.rect(0, 0, W, H); g.arc(cx, cy, R, 0, 2 * Math.PI, true); g.clip('evenodd');
+            region(); g.fillStyle = `rgba(140,230,205,${0.45 * div})`; g.fill('evenodd'); g.restore();        // outward: past the corner
+            g.save(); g.beginPath(); g.arc(cx, cy, R, 0, 2 * Math.PI); g.clip();
+            region(); g.fillStyle = `rgba(217,110,91,${0.45 * div})`; g.fill('evenodd'); g.restore();         // inward: within it, by the flip
+        }
+        outline(Infinity, 'rgba(230,228,238,0.35)', 1, [2, 3]);                 // what is there
+        g.save(); g.beginPath(); g.arc(cx, cy, rL, 0, 2 * Math.PI); g.clip();
+        outline(Infinity, '#e6e4ee', 2); g.restore();                            // within your level of detail: every bump
+        g.save(); g.beginPath(); g.rect(0, 0, W, H); g.arc(cx, cy, rL, 0, 2 * Math.PI, true); g.clip('evenodd');
+        outline(BROAD, '#e6e4ee', 2); g.restore();                               // past it: the broad form only
+        // where the outline crosses a ring edge
+        g.fillStyle = '#8ce6cd';
+        for (let i = 0, prev = null; i <= 2048; i++) {
+            const th = 2 * Math.PI * i / 2048, sv = shape(th, s0), lvl = Math.floor(Math.log2(sv));
+            if (prev !== null && lvl !== prev && Math.max(lvl, prev) <= n) {
+                const r = radius(2 ** Math.max(lvl, prev)) * R; g.beginPath(); g.arc(cx + r * Math.cos(th), cy - r * Math.sin(th), 2.5, 0, 2 * Math.PI); g.fill();
+            }
+            prev = lvl;
+        }
+        g.strokeStyle = '#d4a052'; g.lineWidth = 2.5; g.setLineDash([10, 6]);
+        g.beginPath(); g.arc(cx, cy, rL, 0, 2 * Math.PI); g.stroke(); g.setLineDash([]);
+        // the legend, top left
+        g.font = '11px DM Mono, monospace'; g.textBaseline = 'middle';
+        [['#d4a052', [10, 6], 'your level of detail'], ['#e6e4ee', [], 'the shape as you hold it'], ['rgba(230,228,238,0.5)', [2, 3], 'the shape as it is'],
+         ['rgba(217,110,91,0.8)', [3, 5], 'the horizon (never reached)']].forEach(([col, dash, txt], i) => {
+            const y = 14 + 16 * i; g.strokeStyle = col; g.lineWidth = 2; g.setLineDash(dash);
+            g.beginPath(); g.moveTo(10, y); g.lineTo(34, y); g.stroke(); g.setLineDash([]); g.fillStyle = col; g.fillText(txt, 40, y); });
+        g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(22, 14 + 64, 2.5, 0, 2 * Math.PI); g.fill(); g.fillText('crosses a ring edge', 40, 14 + 64);
+        if (div > 0) [['rgba(140,230,205,0.6)', 'depth past the corner'], ['rgba(217,110,91,0.6)', 'depth within it']].forEach(([col, txt], i) => {
+            const y = 14 + 16 * (5 + i); g.fillStyle = col; g.fillRect(12, y - 5, 20, 10); g.fillText(txt, 40, y); });
+        // a thing sent out, and a picked place
+        const mark = (s, col) => {
+            const r = radius(s) * R, a = Math.PI * 0.18;
+            g.fillStyle = col; g.beginPath(); g.arc(cx + r * Math.cos(a), cy + r * Math.sin(a), 5, 0, 2 * Math.PI); g.fill();
+        };
+        if (thing !== null) mark(thing, '#e6e4ee');
+        if (pick) { g.strokeStyle = '#8ce6cd'; g.lineWidth = 1.5; g.beginPath(); g.arc(cx, cy, pick.r * R, 0, 2 * Math.PI); g.stroke(); }
+        // the readout
+        const lastL = n ? level(n - 1) : null;
+        let txt = `unit circle radius ${R.toFixed(0)} px, grain ${grain} px: ${n} level${n === 1 ? '' : 's'} seen past the corner` +
+            (lastL ? ` (the last, ${fmt(lastL.from)} to ${fmt(lastL.to)}, ${(lastL.width * R).toFixed(1)} px wide)` : '') +
+            `\nabout log₂(${R.toFixed(0)} ÷ ${grain}) = ${Math.log2(R / grain).toFixed(1)}; everything past ${lastL ? fmt(lastL.to) : 1} is in rings too thin to see`;
+        let lo = Infinity, hi = 0; for (let i = 0; i < 720; i++) { const v = shape(2 * Math.PI * i / 720, s0); lo = Math.min(lo, v); hi = Math.max(hi, v); }
+        txt += `\nthe shape (${SH.name}${SH.kind === 'field' ? `, relief ×${fmt(SH.relief)}${SH.F.NH > 1 ? `, cut at h = ${$('cut').value}` : ''}` : ''}): s from ${fmt(lo)} to ${fmt(hi)}, levels ${lo < 1 ? 'near field' : Math.floor(Math.log2(lo))} to ${Math.floor(Math.log2(hi))}; it crosses a ring edge ${crossings(s0)} times` +
+            `\nyour level of detail: ${k} level${k === 1 ? '' : 's'}, to s = ${fmt(2 ** k)}; past it you keep the broad form, which crosses a ring edge ${crossings(s0, BROAD)} times`;
+        if (thing !== null) txt += `\nthe thing: s = ${fmt(thing)}, at radius ${radius(thing).toFixed(4)} (${thing <= 1 ? 'near field' : `level ${Math.floor(Math.log2(thing))}, ${fmt(2 ** Math.floor(Math.log2(thing)))} to ${fmt(2 ** (Math.floor(Math.log2(thing)) + 1))}`})`;
+        if (div > 0) { const d = [...Array(720)].map((_, i) => Math.log2(shape(2 * Math.PI * i / 720, s0)));
+            txt += `\nsize divided out${div < 1 ? ' (moving)' : ''}: the shape's middle on the corner; its depth runs from ${Math.min(...d).toFixed(2)} to +${Math.max(...d).toFixed(2)} levels`; }
+        if (pick) txt += `\npicked: radius ${pick.r.toFixed(4)}, s = ${isFinite(pick.s) ? fmt(pick.s) : '∞ (the horizon)'}` +
+            `; the shape there: s = ${fmt(shape(pick.th, s0))}, ${Math.log2(shape(pick.th, s0)) >= 0 ? '+' : ''}${Math.log2(shape(pick.th, s0)).toFixed(2)} levels from the corner`;
+        $('hud').textContent = txt;
+    }
+    const fmt = x => x >= 1e6 ? x.toExponential(2) : x >= 100 ? Math.round(x).toLocaleString('en') : +x.toPrecision(3) + '';
+
+    function pickAt(e) {
+        const b = $('cv').getBoundingClientRect(), { cx, cy, R } = geom();
+        const dx = e.clientX - b.left - cx, dy = e.clientY - b.top - cy, r = Math.hypot(dx, dy) / R;
+        pick = { r: Math.min(r, 2), s: reading(Math.min(r, 2)), th: Math.atan2(-dy, dx) }; draw();
+    }
+    let down = false;
+    $('cv').addEventListener('pointerdown', e => { down = true; pickAt(e); });
+    $('cv').addEventListener('pointermove', e => { if (down) pickAt(e); });
+    window.addEventListener('pointerup', () => { down = false; });
+
+    // sent out: s doubles once a second, so it crosses one level a second, each in half the room of the last
+    function tick(now) {
+        if (playing) {
+            const dt = last === null ? 0 : (now - last) / 1000;
+            thing = thing === null || thing <= 0 ? 0.05 : thing * 2 ** dt;
+            if (thing > 2 ** 30) { thing = 0.05; }
+        }
+        if (div !== divTo) { div = divTo > div ? Math.min(divTo, div + 0.03) : Math.max(divTo, div - 0.03); }
+        if (playing || div !== divTo || moving) draw();
+        moving = div !== divTo;
+        last = now; requestAnimationFrame(tick);
+    }
+    $('play').addEventListener('click', () => {
+        playing = !playing; $('play').textContent = playing ? 'stop' : 'send a thing out'; $('play').classList.toggle('on', playing);
+        if (playing && (thing === null || thing > 2 ** 20)) thing = 0.05;
+    });
+    $('grain').addEventListener('input', draw);
+    // the shape picker: the built-in shape, the bodies in res/, and any .tvf3d file
+    for (const [group, names] of Object.entries(BODY_LIST)) {
+        const og = document.createElement('optgroup'); og.label = group;
+        for (const n of names) { const o = document.createElement('option'); o.value = 'res:' + n; o.textContent = n.replace(/-/g, ' '); og.appendChild(o); }
+        $('pick').appendChild(og);
+    }
+    const loadOpt = document.createElement('option'); loadOpt.value = 'load'; loadOpt.textContent = 'load a file…'; $('pick').appendChild(loadOpt);
+    let lastPick = 'builtin';
+    async function choose(v) {
+        $('fv').textContent = '';
+        if (v === 'builtin') { SH = { kind: 'builtin', name: 'a perturbed circle', logMean: 0, relief: 1 }; $('fieldRow').hidden = true; }
+        else if (v === 'load') { $('pick').value = lastPick; $('file').click(); return; }
+        else if (v.startsWith('res:')) {
+            const n = v.slice(4); $('fv').textContent = 'loading…';
+            try {
+                fileCache[v] = fileCache[v] || parseTVF(await fetch('res/' + n + '.tvf3d').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); }));
+                useField(fileCache[v], n.replace(/-/g, ' ')); $('fv').textContent = '';
+            } catch (e) { $('fv').textContent = `could not load ${n}: ${e.message}`; $('pick').value = lastPick; return; }
+        } else if (fileCache[v]) { const F = fileCache[v]; useField(F, F.name ? `${F.name} (${v.slice(5)})` : v.slice(5)); $('fv').textContent = F.info || ''; }
+        lastPick = v; $('pick').value = v; showField(); draw();
+    }
+    $('pick').addEventListener('change', e => choose(e.target.value));
+    $('file').addEventListener('change', async e => {
+        const f = e.target.files[0]; if (!f) return;
+        try {
+            const F = parseTVF(await f.text()), key = 'file:' + f.name;
+            fileCache[key] = F;
+            if (![...$('pick').options].some(o => o.value === key)) { const o = document.createElement('option'); o.value = key; o.textContent = 'file: ' + f.name; $('pick').insertBefore(o, loadOpt); }
+            await choose(key);
+        } catch (err) { $('fv').textContent = `${f.name}: ${err.message}`; }
+        e.target.value = '';
+    });
+    const showField = () => { $('rv').textContent = `${fmt(2 ** +$('relief').value)}`; $('cv2').textContent = $('cut').value; };
+    $('relief').addEventListener('input', () => { if (SH.kind === 'field') SH.relief = 2 ** +$('relief').value; showField(); draw(); });
+    $('cut').addEventListener('input', () => { if (SH.kind === 'field') useField(SH.F, SH.name); showField(); draw(); });
+    if (q.has('relief')) $('relief').value = Math.min(7, Math.max(0, Math.log2(+q.get('relief') || 1)));
+    if (q.has('cut')) $('cut').value = Math.min(0.98, Math.max(0.02, +q.get('cut') || 0.5));
+    showField();
+    if (q.has('body')) choose('res:' + q.get('body'));
+    const showDiv = () => { $('divide').classList.toggle('on', divTo === 1); $('divide').textContent = divTo ? 'put the size back' : 'divide out the size'; };
+    $('divide').addEventListener('click', () => { divTo = divTo ? 0 : 1; moving = true; showDiv(); });
+    showDiv();
+    $('size').addEventListener('input', draw);
+    $('lod').addEventListener('input', draw);
+    window.addEventListener('resize', draw);
+    draw(); requestAnimationFrame(tick);
+
+    window.__levels = { radius, reading, level, visible, R: () => geom().R, shape, lodRadius, crossings, BROAD,
+        depth: th => Math.log2(shape(th, 1)), divided: () => div,
+        choose, parseTVF, shapeName: () => SH.name, ready: () => $('fv').textContent !== 'loading…' };
+})();
+</script>
+</body>
+</html>

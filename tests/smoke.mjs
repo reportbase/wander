@@ -269,6 +269,43 @@ try {
   if (Math.abs(ps.k - ps.exp) > 3 * Math.sqrt(ps.exp) || Math.abs(ps.back / 10 - 1) > 0.1 || ps.none !== 0 || ps.all !== 1500) failures.push(`[play-sky.html] ${JSON.stringify(ps)}`);
   console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills)`);
 
+  // ── 12. facing.html: the facing is 2θ, square to the line at the corner, the arc off the line most there ──
+  current = 'facing.html';
+  const before12 = failures.length;
+  await page.goto(new URL('facing.html?t=45', base).href, { waitUntil: 'load' });
+  const fc = await page.evaluate(() => { const f = __facing; return { c: f.at(45), a: f.at(0), b: f.at(90), q: f.at(30) }; });
+  if (Math.abs(fc.c.facing - 90) > 1e-9 || Math.abs(fc.c.ratio - 1) > 1e-9 || Math.abs(fc.c.share - 0.5) > 1e-9 ||
+      Math.abs(fc.c.offLine - (1 - Math.SQRT1_2)) > 1e-9 || fc.a.facing !== 0 || fc.b.facing !== 180 || !(fc.q.offLine < fc.c.offLine))
+    failures.push(`[facing.html] ${JSON.stringify(fc)}`);
+  console.log(`${failures.length === before12 ? 'ok  ' : 'FAIL'} facing.html (facing 90° at the corner, 0° at A, 180° at B; off the line ${fc.c.offLine.toFixed(3)} there)`);
+
+  // ── 13. levels.html: the near field in proportion, each doubling past the corner in half the room, rings seen to one grain ──
+  current = 'levels.html';
+  const before13 = failures.length;
+  await page.goto(new URL('levels.html', base).href, { waitUntil: 'load' });
+  const lv = await page.evaluate(() => { const L = __levels, R = L.R();
+    return { R, half: L.radius(0.5), c: L.radius(1), w: [0, 1, 2, 3].map(k => L.level(k).width), r8: L.radius(8), back: L.reading(L.radius(8)),
+      v1: L.visible(R, 1), v2: L.visible(R, 2), v1k: L.visible(1024, 1),
+    lod3: L.lodRadius(3), cross: L.crossings(4), broad: L.crossings(4, L.BROAD),
+    meanDepth: [...Array(1000)].reduce((z, _, i) => z + L.depth(2 * Math.PI * i / 1000), 0) / 1000,
+    depthAt: L.depth(1) - Math.log2(L.shape(1, 4) / 4) }; });
+  if (lv.half !== 0.5 || lv.c !== 1 || lv.w.some((w, k) => Math.abs(w - 2 ** (-k - 1)) > 1e-12) || Math.abs(lv.r8 - 1.875) > 1e-12 ||
+      Math.abs(lv.back - 8) > 1e-9 || lv.v1 - lv.v2 !== 1 || lv.v1k !== 10 || Math.abs(lv.v1 - Math.log2(lv.R)) > 1 ||
+      lv.lod3 !== 1.875 || !(lv.cross >= 6) || !(lv.broad < lv.cross) || Math.abs(lv.meanDepth) > 1e-9 || Math.abs(lv.depthAt) > 1e-12)
+    failures.push(`[levels.html] ${JSON.stringify(lv)}`);
+  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html (each level half the last; ${lv.v1} seen at a one-pixel grain, one fewer at two; the shape crosses ${lv.cross} ring edges, its broad form ${lv.broad}; size divided out, the depth averages 0 on the corner)`);
+  // a body from res/ chosen in the combo box, and a file that is not a .tvf refused
+  const lb = await page.evaluate(async () => { const L = __levels; await L.choose('res:asteroid-grey');
+    let refused = false; try { L.parseTVF('hello'); } catch (e) { refused = true; }
+    let z = 0; for (let i = 0; i < 1000; i++) z += L.depth(2 * Math.PI * i / 1000);
+    const N = 64, X = [], Y = []; for (let k = 0; k < N; k++) { const p = (k + 0.5) * 2 * Math.PI / N, r = 100 * (1 + 0.45 * Math.cos(5 * p)); X.push(300 + r * Math.cos(p)); Y.push(300 - r * Math.sin(p)); }
+    const C = L.parseTVF(['TVF 64 1 2', '#meta name:star', '-1 ' + X.join(' '), '-1 ' + Y.join(' ')].join('\n'));
+    const at = th => C.Aa[0].reduce((z, a, m) => z + a * Math.cos(m * th) + C.Ab[0][m] * Math.sin(m * th), 0);
+    let oneCh = false; try { L.parseTVF('TVF 16 1 1\n-1 ' + Array(16).fill(0.5).join(' ')); } catch (e) { oneCh = true; }
+    return { name: L.shapeName(), cross: L.crossings(4), meanDepth: z / 1000, refused, curve: C.curve, tip: at(0), dip: at(Math.PI / 5), oneCh }; });
+  if (lb.name !== 'asteroid grey' || !(lb.cross > 0) || Math.abs(lb.meanDepth) > 1e-3 || !lb.refused || !lb.curve || Math.abs(lb.tip / lb.dip - 145 / 55) > 0.05 || !lb.oneCh) failures.push(`[levels.html, a body] ${JSON.stringify(lb)}`);
+  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html, a body from res/ (${lb.name}: crosses ${lb.cross} ring edges at s₀ = 4; a non-.tvf file refused; a draw .tvf curve read from its centroid, tip/dip ${(lb.tip / lb.dip).toFixed(3)} of 2.636)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
@@ -279,7 +316,7 @@ try {
     const r = await page.request.get(new URL(pth, base).href);
     if (!r.ok()) failures.push(`[demos.html] ${pth} answers ${r.status()}`);
   }
-  if (pages.length < 12) failures.push(`[demos.html] links to only ${pages.length} pages`);
+  if (pages.length < 14) failures.push(`[demos.html] links to only ${pages.length} pages`);
   await page.goto(new URL('index.html', base).href, { waitUntil: 'load' });
   await Promise.all([page.waitForURL(/demos\.html/, { timeout: 15000 }), page.click('#demosOpen')]);
   console.log(`${failures.length === before7 ? 'ok  ' : 'FAIL'} demos.html (${pages.length} pages, ${links.length} links)`);
