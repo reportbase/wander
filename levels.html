@@ -27,7 +27,14 @@
     baseline from which depth is calcualted"): drawn over every facing the corner is the circle s = 1, and "divide out the
     size" moves the shape's middle (its geometric mean reading, s₀) onto it; what stands off the circle is the depth,
     log₂ s(θ) levels in each direction, outward past the corner and inward by the flip, shaded in two colours.
-    Links: ?g= (the grain in pixels), ?s= (a thing's reading), ?shape= (s₀), ?lod= (k), ?depth=1. Test hook: window.__levels.
+    Shapes from files (Tom, 10 October: "add the ablity load a tvf file. add a combo box let the user select the shape to
+    display"): the combo box holds the built-in perturbed circle and the suns, planets, moons and asteroids in res/; "load a
+    file…" reads any .tvf3d (the 3d studio's format: r(θ, h) = Σₙ cos(nπh) Σₘ (Aaₙₘ cos mθ + Abₙₘ sin mθ)). A 3d field is cut at
+    a height h (½, the equator, by default), and its outline r(θ) becomes a reading s(θ) = s₀·(r(θ)/r̄)^k, r̄ its geometric
+    mean and k the relief (×1 is the file as it is; the planets' relief is a few thousandths, so turn it up to see it cross
+    levels). A file with one row of each series (NH = 1) is a 2d outline. The broad form keeps m ≤ 3.
+    Links: ?g= (the grain in pixels), ?s= (a thing's reading), ?shape= (s₀), ?lod= (k), ?depth=1, ?body= (a name in res/),
+    ?relief=, ?cut= (h). Test hook: window.__levels.
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -64,7 +71,23 @@
             <span id="gv" style="color:var(--bright)"></span>
         </div>
         <div class="row" style="margin-top:6px">
-            <label for="size">the shape</label>
+            <label for="pick">shape</label>
+            <select id="pick" style="font:inherit;color:var(--bright);background:#1d1d27;border:1px solid var(--line);border-radius:6px;padding:5px 8px;max-width:100%">
+                <option value="builtin">a perturbed circle (built in)</option>
+            </select>
+            <input id="file" type="file" accept=".tvf3d,.tvf,.txt" style="display:none">
+            <span id="fv" class="note"></span>
+        </div>
+        <div class="row" style="margin-top:6px" id="fieldRow" hidden>
+            <label for="relief">relief ×</label>
+            <input id="relief" type="range" min="0" max="7" step="0.01" value="0">
+            <span id="rv" style="color:var(--bright)"></span>
+            <label for="cut">cut at h</label>
+            <input id="cut" type="range" min="0.02" max="0.98" step="0.01" value="0.5">
+            <span id="cv2" style="color:var(--bright)"></span>
+        </div>
+        <div class="row" style="margin-top:6px">
+            <label for="size">size</label>
             <input id="size" type="range" min="0" max="6" step="0.01" value="2">
             <span id="sv" style="color:var(--bright)"></span>
         </div>
@@ -104,8 +127,39 @@
     // the shape: a perturbed circle, its reading in each direction (log-perturbed, so it swings across levels evenly)
     const HARM = (() => { let x = 12345; const rnd = () => (x = (x * 1103515245 + 12345) % 2147483648) / 2147483648;
         const h = []; for (let n = 2; n <= 24; n++) h.push({ n, a: 0.6 / n ** 0.9 * (0.6 + 0.8 * rnd()), p: 2 * Math.PI * rnd() }); return h; })();
-    const shape = (th, s0, nmax = Infinity) => s0 * Math.exp(HARM.reduce((z, c) => c.n <= nmax ? z + c.a * Math.cos(c.n * th + c.p) : z, 0));
     const BROAD = 3;
+    // the shape shown: the built-in one, or a field's outline (its a, b series in m at the cut height)
+    let SH = { kind: 'builtin', name: 'a perturbed circle', logMean: 0, relief: 1 };
+    function profile(th, nmax = Infinity) {
+        if (SH.kind === 'builtin') return Math.exp(HARM.reduce((z, c) => c.n <= nmax ? z + c.a * Math.cos(c.n * th + c.p) : z, 0));
+        let r = 0; const M = Math.min(SH.a.length - 1, nmax);
+        for (let m = 0; m <= M; m++) r += SH.a[m] * Math.cos(m * th) + SH.b[m] * Math.sin(m * th);
+        return Math.max(1e-6, r);
+    }
+    const shape = (th, s0, nmax = Infinity) => s0 * Math.exp(SH.relief * (Math.log(profile(th, nmax)) - SH.logMean));
+    function parseTVF(text) {
+        const lines = text.replace(/\r/g, '').split('\n'), hp = lines[0].trim().split(/\s+/), R = {};
+        if (!/^TVF/.test(hp[0])) throw new Error('not a .tvf file (its first word is ' + JSON.stringify(hp[0]) + ')');
+        for (const l of lines.slice(1)) { const w = l.trim().split(/\s+/); if (w[0] === 'Aa' || w[0] === 'Ab') (R[w[0]] = R[w[0]] || []).push(Float64Array.from(w.slice(1), Number)); }
+        if (!R.Aa || !R.Ab || R.Aa.length !== R.Ab.length) throw new Error('no radius series (Aa and Ab rows) in it');
+        return { NH: R.Aa.length, M: R.Aa[0].length, Aa: R.Aa, Ab: R.Ab };
+    }
+    // cut a field at height h: the outline's series in θ
+    function cutField(F, h) {
+        const a = new Float64Array(F.M), b = new Float64Array(F.M);
+        for (let n = 0; n < F.NH; n++) { const k = F.NH === 1 ? 1 : Math.cos(n * Math.PI * h); for (let m = 0; m < F.M; m++) { a[m] += k * F.Aa[n][m]; b[m] += k * (F.Ab[n][m] || 0); } }
+        return { a, b };
+    }
+    function useField(F, name) {
+        const h = +$('cut').value, { a, b } = cutField(F, h);
+        SH = { kind: 'field', name, F, a, b, logMean: 0, relief: 2 ** +$('relief').value };
+        let z = 0; for (let i = 0; i < 1024; i++) z += Math.log(profile(2 * Math.PI * i / 1024)); SH.logMean = z / 1024;
+        $('fieldRow').hidden = false; $('cut').disabled = F.NH === 1;
+    }
+    const BODY_LIST = { suns: ['sun-yellow', 'sun-orange', 'sun-red', 'sun-blue', 'sun-white'],
+        planets: ['planet-terra', 'planet-ocean', 'planet-mars', 'planet-jupiter', 'planet-saturn', 'planet-neptune', 'planet-uranus', 'planet-venus', 'planet-lava', 'planet-alien'],
+        moons: ['moon-luna', 'moon-ice', 'moon-io', 'moon-callisto', 'moon-rust'], asteroids: ['asteroid-grey', 'asteroid-dark'] };
+    const fileCache = {};
     // the reader's level of detail k: a circle at the outer edge of level k − 1, s = 2^k (k = 0: the corner)
     const lodRadius = k => radius(2 ** k);
     // how many ring edges (s = 1, 2, 4, …) the outline crosses, over 2048 directions
@@ -218,7 +272,7 @@
             (lastL ? ` (the last, ${fmt(lastL.from)} to ${fmt(lastL.to)}, ${(lastL.width * R).toFixed(1)} px wide)` : '') +
             `\nabout log₂(${R.toFixed(0)} ÷ ${grain}) = ${Math.log2(R / grain).toFixed(1)}; everything past ${lastL ? fmt(lastL.to) : 1} is in rings too thin to see`;
         let lo = Infinity, hi = 0; for (let i = 0; i < 720; i++) { const v = shape(2 * Math.PI * i / 720, s0); lo = Math.min(lo, v); hi = Math.max(hi, v); }
-        txt += `\nthe shape: s from ${fmt(lo)} to ${fmt(hi)}, levels ${lo < 1 ? 'near field' : Math.floor(Math.log2(lo))} to ${Math.floor(Math.log2(hi))}; it crosses a ring edge ${crossings(s0)} times` +
+        txt += `\nthe shape (${SH.name}${SH.kind === 'field' ? `, relief ×${fmt(SH.relief)}${SH.F.NH > 1 ? `, cut at h = ${$('cut').value}` : ''}` : ''}): s from ${fmt(lo)} to ${fmt(hi)}, levels ${lo < 1 ? 'near field' : Math.floor(Math.log2(lo))} to ${Math.floor(Math.log2(hi))}; it crosses a ring edge ${crossings(s0)} times` +
             `\nyour level of detail: ${k} level${k === 1 ? '' : 's'}, to s = ${fmt(2 ** k)}; past it you keep the broad form, which crosses a ring edge ${crossings(s0, BROAD)} times`;
         if (thing !== null) txt += `\nthe thing: s = ${fmt(thing)}, at radius ${radius(thing).toFixed(4)} (${thing <= 1 ? 'near field' : `level ${Math.floor(Math.log2(thing))}, ${fmt(2 ** Math.floor(Math.log2(thing)))} to ${fmt(2 ** (Math.floor(Math.log2(thing)) + 1))}`})`;
         if (div > 0) { const d = [...Array(720)].map((_, i) => Math.log2(shape(2 * Math.PI * i / 720, s0)));
@@ -256,6 +310,45 @@
         if (playing && (thing === null || thing > 2 ** 20)) thing = 0.05;
     });
     $('grain').addEventListener('input', draw);
+    // the shape picker: the built-in shape, the bodies in res/, and any .tvf3d file
+    for (const [group, names] of Object.entries(BODY_LIST)) {
+        const og = document.createElement('optgroup'); og.label = group;
+        for (const n of names) { const o = document.createElement('option'); o.value = 'res:' + n; o.textContent = n.replace(/-/g, ' '); og.appendChild(o); }
+        $('pick').appendChild(og);
+    }
+    const loadOpt = document.createElement('option'); loadOpt.value = 'load'; loadOpt.textContent = 'load a file…'; $('pick').appendChild(loadOpt);
+    let lastPick = 'builtin';
+    async function choose(v) {
+        $('fv').textContent = '';
+        if (v === 'builtin') { SH = { kind: 'builtin', name: 'a perturbed circle', logMean: 0, relief: 1 }; $('fieldRow').hidden = true; }
+        else if (v === 'load') { $('pick').value = lastPick; $('file').click(); return; }
+        else if (v.startsWith('res:')) {
+            const n = v.slice(4); $('fv').textContent = 'loading…';
+            try {
+                fileCache[v] = fileCache[v] || parseTVF(await fetch('res/' + n + '.tvf3d').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); }));
+                useField(fileCache[v], n.replace(/-/g, ' ')); $('fv').textContent = '';
+            } catch (e) { $('fv').textContent = `could not load ${n}: ${e.message}`; $('pick').value = lastPick; return; }
+        } else if (fileCache[v]) useField(fileCache[v], v.slice(5));
+        lastPick = v; $('pick').value = v; showField(); draw();
+    }
+    $('pick').addEventListener('change', e => choose(e.target.value));
+    $('file').addEventListener('change', async e => {
+        const f = e.target.files[0]; if (!f) return;
+        try {
+            const F = parseTVF(await f.text()), key = 'file:' + f.name;
+            fileCache[key] = F;
+            if (![...$('pick').options].some(o => o.value === key)) { const o = document.createElement('option'); o.value = key; o.textContent = 'file: ' + f.name; $('pick').insertBefore(o, loadOpt); }
+            await choose(key);
+        } catch (err) { $('fv').textContent = `${f.name}: ${err.message}`; }
+        e.target.value = '';
+    });
+    const showField = () => { $('rv').textContent = `${fmt(2 ** +$('relief').value)}`; $('cv2').textContent = $('cut').value; };
+    $('relief').addEventListener('input', () => { if (SH.kind === 'field') SH.relief = 2 ** +$('relief').value; showField(); draw(); });
+    $('cut').addEventListener('input', () => { if (SH.kind === 'field') useField(SH.F, SH.name); showField(); draw(); });
+    if (q.has('relief')) $('relief').value = Math.min(7, Math.max(0, Math.log2(+q.get('relief') || 1)));
+    if (q.has('cut')) $('cut').value = Math.min(0.98, Math.max(0.02, +q.get('cut') || 0.5));
+    showField();
+    if (q.has('body')) choose('res:' + q.get('body'));
     const showDiv = () => { $('divide').classList.toggle('on', divTo === 1); $('divide').textContent = divTo ? 'put the size back' : 'divide out the size'; };
     $('divide').addEventListener('click', () => { divTo = divTo ? 0 : 1; moving = true; showDiv(); });
     showDiv();
@@ -265,7 +358,8 @@
     draw(); requestAnimationFrame(tick);
 
     window.__levels = { radius, reading, level, visible, R: () => geom().R, shape, lodRadius, crossings, BROAD,
-        depth: th => Math.log2(shape(th, 1)), divided: () => div };
+        depth: th => Math.log2(shape(th, 1)), divided: () => div,
+        choose, parseTVF, shapeName: () => SH.name, ready: () => $('fv').textContent !== 'loading…' };
 })();
 </script>
 </body>

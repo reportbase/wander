@@ -62,7 +62,9 @@ Google Fonts load from outside:
   circle the represents the LOD of the user"): inside it the shape keeps every bump, past it only its broad form (n ≤ 3).
   "Divide out the size" (10 Oct, Tom: "the corner is v = h … which is also the baseline from which depth is calcualted")
   moves the shape's middle onto the corner's circle and shades the depth, log₂ s(θ) levels, outward and inward.
-  `?g=&s=&shape=&lod=&depth=1`; test hook `window.__levels`.
+  A combo box picks the shape (10 Oct, Tom: "add the ablity load a tvf file. add a combo box let the user select the shape"):
+  the built-in one, a body in res/, or any .tvf3d loaded from disk, cut at a height h (the equator by default), its outline
+  read as s(θ) = s₀·(r/r̄)^k with a relief slider k. `?g=&s=&shape=&lod=&depth=1&body=&relief=&cut=`; test hook `window.__levels`.
 - `thin.html`, `ladder.html`, `sky.html`: **the physics correspondence** (9 Oct 2026, Tom: "create multiple demos that
   explain the physics correspndance"), standalone pages like `dial.html`. `thin.html`: the same signal, a smaller share
   (the inverse square; near, distance costs grains, far, light; the switch at one grain is the resolution limit;
@@ -241,7 +243,7 @@ In short:
   12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
   13. **levels.html:** the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
       and one level fewer seen per doubling of the grain; the shape crosses ring edges, its broad form fewer; with the size divided out
-      the depth averages 0 on the corner.
+      the depth averages 0 on the corner; a body from res/ chosen in the combo box crosses ring edges, a non-.tvf file refused.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

@@ -294,6 +294,13 @@ try {
       lv.lod3 !== 1.875 || !(lv.cross >= 6) || !(lv.broad < lv.cross) || Math.abs(lv.meanDepth) > 1e-9 || Math.abs(lv.depthAt) > 1e-12)
     failures.push(`[levels.html] ${JSON.stringify(lv)}`);
   console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html (each level half the last; ${lv.v1} seen at a one-pixel grain, one fewer at two; the shape crosses ${lv.cross} ring edges, its broad form ${lv.broad}; size divided out, the depth averages 0 on the corner)`);
+  // a body from res/ chosen in the combo box, and a file that is not a .tvf refused
+  const lb = await page.evaluate(async () => { const L = __levels; await L.choose('res:asteroid-grey');
+    let refused = false; try { L.parseTVF('hello'); } catch (e) { refused = true; }
+    let z = 0; for (let i = 0; i < 1000; i++) z += L.depth(2 * Math.PI * i / 1000);
+    return { name: L.shapeName(), cross: L.crossings(4), meanDepth: z / 1000, refused }; });
+  if (lb.name !== 'asteroid grey' || !(lb.cross > 0) || Math.abs(lb.meanDepth) > 1e-3 || !lb.refused) failures.push(`[levels.html, a body] ${JSON.stringify(lb)}`);
+  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html, a body from res/ (${lb.name}: crosses ${lb.cross} ring edges at s₀ = 4; a non-.tvf file refused)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
