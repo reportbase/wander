@@ -103,6 +103,17 @@ Google Fonts load from outside:
   Contact is exact (POL run 9: each ball finds the moment h + v = 1 in its own units); "see" is the preview's horizon,
   each ball's motion shown while at most k contacts from the cue (3 by default, POL runs 8–9), a "?" past it.
   Not in the flying page.
+- `flight.html`: **the corner in flight** (10 Oct 2026, Tom: "you know how the transition from earth to the sky in flight
+  sim games is awkward? ... i wonder if its because of the corner"; "only the geometry", wireframe). Level flight at height v;
+  a ground line h ahead lands v/h below eye level, so the corner (h = v) keeps one screen row at every height. The main view is the grid alone (Tom: "remove the non-gridlines";
+  the corner and level edges are on the strip) plus one perturbed sphere (Tom: "we just need one peritubated sphere that starts in way in the far field and then we
+  stop when its in the near field. how can we show the LOD?"): radius 0.4v, from 32v in at v a second, stopping at 0.6v
+  ("again"/R). Its detail d (4·2^d meridians, bands 1..d of bumps) steps by v/h at 16v, 8v, 4v, 2v, v (a dot past 16v,
+  full inside the corner: once per doubling past it, never inside), by metres at 500 m … 8 km, none full. Strip:
+  the reading folded at the corner, h/v to home (even), v/h past it (2v, 4v … each half the room). LOD chip: none / by metres
+  (doubling at 500 m, 1 km …) / by v/h (grain v/8 to √2·v, then doubling; Tom: "each Level has its own corner", eight grains
+  ahead: v, 2v, 4v …). By v/h each level past the first holds 4√2 ≈ 5.7 lines, so the count past the corner is log₂(h/v), and climbing changes only
+  the speed; by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; strip chip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `detailAt(h/v)`, `place(h/v)`, `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
 - `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the seven demos (sweep, dial, sphere, facing, levels, walk, pool) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
@@ -352,6 +363,8 @@ In short:
   15. **pool.html:** a break played from inside: every contact on h + v = 1, one reading alone decides only with all balls alike, the game the referee's;
       with cushions read as the ball's mirror image and pockets as filling the view, still the referee's game; read late (c = 50),
       carrying the image forward beats taking it as now.
+  16. **flight.html:** the corner keeps its row from 50 m to 1.6 km; by v/h the level edges keep theirs, 4√2 lines a level,
+      level corners at v, 2v, 4v; by metres the edges slide; the sphere's detail by v/h is dot, 0, 1, 2, 3, 4 at 20v … 0.6v at any height, by metres not; the strip folded holds 0.1v–100v, h/v throughout runs off the top, v/h off the bottom.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

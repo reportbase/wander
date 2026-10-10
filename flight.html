@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!--
+flight.html: the corner in a flight sim (10 October 2026). Tom: "you know how the transition from earth to the sky in
+flight sim games is awkward? ... i wonder if its because of the corner"; "only the geometry i'm interested, so the demos
+can be wire frame"; "show the corner and how it is uniform before the corner and logrithmic after"; "each Level has its
+own corner".
+
+Level flight at height v over a ground grid, wireframe. A ground line h ahead lands v/h below eye level (x/h across),
+so the corner, the ground line h = v, sits on the same screen row at every height. The strip on the right is the
+reading folded at the corner: home to corner as h/v (equal ground steps, equal ticks), corner onward as v/h (they crowd;
+2v, 4v, 8v each take half the room of the last).
+
+LOD (the chip, or L): none, 10 m everywhere; by metres, the engine's way, spacing doubling at 500 m, 1 km, 2 km ...;
+by v/h, grain v/8 out to √2·v, then doubling, each level's edges halfway (in doublings) between its corner and the next.
+A level's own corner is eight of its grains ahead (on the strip): by v/h at v, 2v, 4v ..., by metres at 80, 160, 320 m.
+By v/h every level past the corner holds the same 4√2 ≈ 5.7 lines, so the count past the corner is logarithmic, and climbing
+changes nothing on the screen; by metres the edges and the corners slide as you climb.
+The main view is the grid alone (Tom: "remove the non-gridlines on the main view"; the corner and the level edges are on
+the strip) and one perturbed sphere (Tom: "we just need one peritubated sphere that starts in way in the far field and then
+we stop when its in the near field. how can we show the LOD?"). It starts at 32v, comes in at a ground speed of v a second
+and stops inside the corner at 0.6v ("again" or R runs it again). Its detail steps once per level: by v/h at 16v, 8v, 4v,
+2v and the corner, so past the corner it changes once per doubling and inside it not at all; by metres at fixed distances,
+unrelated to the corner; none, full detail all the way. A dot on the strip shows where it is.
+Drag up or down (touch or mouse), wheel or arrow keys to change v.
+The strip chip (or F) unfolds it (Tom: "what happens if we don't flip at the corner?"): h/v all the way keeps the near
+side and runs off the top past 2v (the far field never reaches v/h = 0: the uniform grid); v/h all the way keeps the far
+side and runs off the bottom inside v/2 (home never reached: the level main view). Folded, both ends are held.
+Links: ?v=  ?lod=none|metres|vh  ?strip=folded|h/v|v/h  ?still=1. Test hook: window.__flight.
+-->
+<title>The corner in flight</title>
+<style>
+  /* Layout: one full-screen canvas, one chip, one small readout. Single dark wireframe look. */
+  :root {
+    --bg: #07090b;
+    --ink: #9fb0bb;
+    --corner: #e2b545;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    color-scheme: dark;
+  }
+  html, body { height: 100%; margin: 0; background: var(--bg); overflow: hidden; }
+  canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: ns-resize; }
+  #read {
+    position: fixed; left: 16px; bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    font: 13px/1.4 var(--mono); color: var(--ink); pointer-events: none;
+    font-variant-numeric: tabular-nums;
+  }
+  #read b { color: var(--corner); font-weight: 500; }
+  #lod, #again, #flip {
+    position: fixed; left: 16px; top: calc(14px + env(safe-area-inset-top, 0px));
+    font: 13px/1 var(--mono); color: var(--ink); background: transparent;
+    border: 1px solid rgba(159,176,187,0.45); border-radius: 4px;
+    padding: 9px 12px; cursor: pointer; touch-action: manipulation;
+  }
+  #again { left: auto; right: 16px; }
+  #flip { top: calc(58px + env(safe-area-inset-top, 0px)); }
+  #lod:focus-visible, #again:focus-visible, #flip:focus-visible { outline: 2px solid var(--corner); outline-offset: 2px; }
+</style>
+
+<canvas id="c" aria-label="Wireframe ground seen from a plane in level flight"></canvas>
+<button id="lod" type="button">LOD</button>
+<button id="again" type="button">again</button>
+<button id="flip" type="button">strip</button>
+<div id="read"></div>
+
+<script>
+const cv = document.getElementById('c');
+const g = cv.getContext('2d');
+const read = document.getElementById('read');
+const lodBtn = document.getElementById('lod');
+const againBtn = document.getElementById('again');
+const flipBtn = document.getElementById('flip');
+
+const S = 10;          // finest ground grid spacing, metres
+const FAR = 20000;     // where the ground stops being drawn, metres
+const MODES = ['none', 'by metres', 'by v/h'];
+const Q = new URLSearchParams(location.search);
+let mode = Math.max(0, ['none', 'metres', 'vh'].indexOf(Q.get('lod')));
+let v = Math.min(5000, Math.max(2, +Q.get('v') || 120));
+const still = Q.get('still') === '1';  // v: height of the plane, metres
+let travelled = 0;
+let W, H, f, cx, cy, dpr;
+
+function size() {
+  dpr = Math.min(window.devicePixelRatio || 1, 2);
+  W = cv.clientWidth; H = cv.clientHeight;
+  cv.width = W * dpr; cv.height = H * dpr;
+  g.setTransform(dpr, 0, 0, dpr, 0, 0);
+  cx = W / 2;
+  cy = H * 0.35;              // eye level (camera is level)
+  f = H * 0.35;               // so the corner, v/h = 1, sits at cy + f
+}
+window.addEventListener('resize', size);
+size();
+
+// a ground point h ahead and x across, seen from height v
+const px = (x, h) => cx + f * x / h;
+const py = (h) => cy + f * v / h;
+
+// Bands of ground: from h = a to h = b, lines every s metres.
+function bands() {
+  const out = [];
+  if (mode === 0) {
+    out.push({ a: 0, b: FAR, s: S });
+  } else if (mode === 1) {
+    // engine style: spacing doubles at fixed distances 500 m, 1 km, 2 km ...
+    let a = 0, b = 500, s = S;
+    while (a < FAR) { out.push({ a, b: Math.min(b, FAR), s }); a = b; b *= 2; s *= 2; }
+  } else {
+    // by the reading: level k has grain 2^k v/8 and its own corner at 2^k v;
+    // its edges sit halfway (in doublings) between neighbouring corners
+    let a = 0, b = Math.SQRT2 * v, s = v / 8;
+    while (a < FAR) { out.push({ a, b: Math.min(b, FAR), s }); a = b; b *= 2; s *= 2; }
+  }
+  return out;
+}
+
+// cross lines anchored to the ground, so they stream past as we fly
+function eachCross(B, hMin, fn) {
+  for (const { a, b, s } of B) {
+    const lo = Math.max(a, hMin);
+    if (lo >= b) continue;
+    for (let k = Math.ceil((travelled + lo) / s); ; k++) {
+      const h = k * s - travelled;
+      if (h >= b) break;
+      fn(h, s);
+    }
+  }
+}
+
+function draw() {
+  g.fillStyle = '#07090b';
+  g.fillRect(0, 0, W, H);
+
+  const hNear = Math.max(f * v / (H - cy) * 0.95, 0.01);
+  const B = bands();
+  const far = new Path2D(), near = new Path2D();
+
+  // lines running ahead (constant x), band by band
+  for (const { a, b, s } of B) {
+    const lo = Math.max(a, hNear);
+    if (lo >= b) continue;
+    const xMax = b * (cx + 2) / f;
+    for (let k = Math.ceil(-xMax / s); k <= Math.floor(xMax / s); k++) {
+      const x = k * s;
+      far.moveTo(px(x, lo), py(lo));
+      far.lineTo(px(x, b), py(b));
+    }
+  }
+  // lines running across (constant h)
+  eachCross(B, hNear, (h) => {
+    const xs = h * (cx + 2) / f;
+    const p = h < v ? near : far;
+    p.moveTo(px(-xs, h), py(h)); p.lineTo(px(xs, h), py(h));
+  });
+
+  g.lineWidth = 1;
+  g.strokeStyle = 'rgba(190,205,215,0.38)'; g.stroke(far);
+  g.strokeStyle = 'rgba(110,190,230,0.75)'; g.stroke(near);
+
+  drawSphere();
+
+  drawReading(B);
+
+  read.innerHTML = `v ${v < 10 ? v.toFixed(1) : Math.round(v)} m · sphere at ${(sphereH() / v).toFixed(1)}v · detail ${sph.r > 0 ? (mode !== 0 && sphereLevel(sphereH()) >= 5 ? 'dot' : detailOf(sphereLevel(sphereH())) + ' of 4') : '–'}`;
+}
+
+// ── One perturbed sphere, coming in from the far field ──
+// Radius 0.4·v (taken when the run starts), on the ground straight ahead, starting at 32v and stopping inside the corner
+// at 0.6v. Its level of detail d (0 to 4) steps once per level:
+//   by v/h     steps at v, 2v, 4v, 8v, 16v (each level's corner): past 16v a dot; full detail from the corner in
+//   by metres  steps at 500 m, 1 km, 2 km, 4 km, 8 km, whatever v is
+//   none       full detail all the way
+// Detail d: 4·2^d meridians and 2^(d+1) − 1 parallels, and bumps in bands 1..d (broad, middle, fine, finest):
+//   r(λ, β) = r·(1 + Σ_{b ≤ d} A_b·cos(n_b λ + φ_b)·cos(n_b β + ψ_b)·cos β), n_b = 2, 5, 11, 23, A_b = 0.12, 0.06, 0.03, 0.015.
+const BANDS = [[2, 0.12, 0.7, 2.1], [5, 0.06, 4.0, 1.3], [11, 0.03, 2.6, 5.2], [23, 0.015, 0.9, 3.7]];
+let sph = { r: 0, Z: 0, running: false };
+function startRun() { sph = { r: 0.4 * v, Z: travelled + 32 * v, running: true }; }
+const sphereH = () => sph.Z - travelled;
+function sphereLevel(h) {             // L: 0 = full detail, 5+ = a dot
+  if (mode === 0) return 0;
+  if (mode === 2) return h <= v ? 0 : Math.ceil(Math.log2(h / v));
+  return h <= 500 ? 0 : Math.ceil(Math.log2(h / 500));
+}
+const detailOf = (L) => Math.max(0, 4 - L);   // L 0 (inside the corner) → 4, L 4 → 0; L ≥ 5 is a dot
+function drawSphere() {
+  const h = sphereH(), r = sph.r;
+  if (!(r > 0) || h - r < 1) return;
+  const L = sphereLevel(h);
+  g.strokeStyle = 'rgba(140,230,205,0.85)';
+  g.fillStyle = 'rgba(140,230,205,0.85)';
+  g.lineWidth = 1;
+  if (mode !== 0 && L >= 5) {          // past 16v (or 8 km): a dot
+    g.beginPath(); g.arc(cx, cy + f * (v - r) / h, 1.5, 0, 2 * Math.PI); g.fill();
+    return;
+  }
+  const d = detailOf(L);
+  const rad = (lam, bet) => {
+    let k = 1;
+    for (let b = 0; b < d; b++) { const [n, A, p, q] = BANDS[b]; k += A * Math.cos(n * lam + p) * Math.cos(n * bet + q) * Math.cos(bet); }
+    return r * k;
+  };
+  const path = new Path2D();
+  const put = (lam, bet, pen) => {
+    const R = rad(lam, bet), cb = Math.cos(bet);
+    const x = R * cb * Math.sin(lam), y = r + R * Math.sin(bet), z = h + R * cb * Math.cos(lam);
+    if (z < 1) return false;
+    const X = cx + f * x / z, Y = cy + f * (v - y) / z;
+    if (pen) path.lineTo(X, Y); else path.moveTo(X, Y);
+    return true;
+  };
+  const M = 4 * 2 ** d, P = 2 ** (d + 1) - 1, seg = 16 * 2 ** d;
+  for (let m = 0; m < M; m++) {                   // meridians
+    const lam = m * 2 * Math.PI / M; let pen = false;
+    for (let i = 0; i <= seg / 2; i++) pen = put(lam, -Math.PI / 2 + i * 2 * Math.PI / seg, pen);
+  }
+  for (let j = 1; j <= P; j++) {                  // parallels
+    const bet = -Math.PI / 2 + j * Math.PI / (P + 1); let pen = false;
+    for (let i = 0; i <= seg; i++) pen = put(i * 2 * Math.PI / seg, bet, pen);
+  }
+  g.stroke(path);
+}
+
+// The reading on the strip: folded at the corner (h/v, then v/h), or one ratio all the way (flip off).
+const FLIPS = ['folded', 'h/v', 'v/h'];
+let flip = Math.max(0, FLIPS.indexOf(new URLSearchParams(location.search).get('strip')));
+function stripY(h, top, mid, bot, half) {
+  if (flip === 1) return bot - (h / v) * half;                          // h/v throughout: 2v at the top, beyond off
+  if (flip === 2) return h >= v ? mid - (1 - v / h) * half              // v/h throughout: v/2 at the bottom, inside off
+                                : mid + (v / h - 1) * half;
+  return h <= v ? bot - (h / v) * half : mid - (1 - v / h) * half;      // folded at the corner
+}
+// Home to corner: h/v, from 0 to 1. Corner onward: v/h, from 1 back to 0.
+function drawReading(B) {
+  const top = H * 0.08, bot = H * 0.86;
+  const mid = (top + bot) / 2, half = (bot - top) / 2;
+  const x0 = W - 56, w = 22;
+  // folded: h/v to the corner, v/h past it. Unflipped, one ratio all the way: h/v runs off the top past 2v,
+  // v/h runs off the bottom inside v/2.
+  const yOf = (h) => stripY(h, top, mid, bot, half);
+
+  g.strokeStyle = 'rgba(190,205,215,0.25)';
+  g.strokeRect(x0 + 0.5, top + 0.5, w, bot - top);
+
+  g.save();
+  g.beginPath(); g.rect(x0 - 8, top, w + 16, bot - top); g.clip();
+  const nearT = new Path2D(), farT = new Path2D(), edgeT = new Path2D();
+  eachCross(B, 0.0001, (h) => {
+    const y = Math.round(yOf(h)) + 0.5;
+    const p = h < v ? nearT : farT;
+    p.moveTo(x0, y); p.lineTo(x0 + w, y);
+  });
+  for (const { a } of B) {
+    if (a <= 0) continue;
+    const y = Math.round(yOf(a)) + 0.5;
+    edgeT.moveTo(x0 - 2, y); edgeT.lineTo(x0 + w + 6, y);
+  }
+  g.strokeStyle = 'rgba(190,205,215,0.6)'; g.stroke(farT);
+  g.strokeStyle = 'rgba(110,190,230,0.9)'; g.stroke(nearT);
+  g.setLineDash([3, 3]);
+  g.strokeStyle = 'rgba(230,120,140,0.85)'; g.stroke(edgeT);
+  g.setLineDash([]);
+
+  if (mode > 0) {
+    g.strokeStyle = 'rgba(226,181,69,0.6)';
+    g.lineWidth = 1.5;
+    g.beginPath();
+    for (const { s } of B) {
+      const c = 8 * s;
+      if (c >= FAR || Math.abs(c - v) < 1e-6) continue;
+      const y = Math.round(yOf(c)) + 0.5;
+      g.moveTo(x0, y); g.lineTo(x0 + w + 4, y);
+    }
+    g.stroke();
+    g.lineWidth = 1;
+  }
+
+  // doublings past the corner: 2v, 4v, 8v ... each takes half the room of the last
+  g.restore();
+  g.font = '11px ui-monospace, Menlo, Consolas, monospace';
+  g.textAlign = 'right'; g.textBaseline = 'middle';
+  g.fillStyle = '#9fb0bb'; g.strokeStyle = '#9fb0bb';
+  let n = 2;
+  for (let k = 1; k <= 4; k++, n *= 2) {
+    const y = yOf(n * v);
+    if (y < top + 6 || y > bot) continue;
+    g.beginPath(); g.moveTo(x0 - 4, y); g.lineTo(x0, y); g.stroke();
+    g.fillText(n + 'v', x0 - 6, y);
+  }
+
+  g.strokeStyle = '#e2b545'; g.lineWidth = 2;
+  g.beginPath(); g.moveTo(x0 - 4, mid); g.lineTo(x0 + w + 4, mid); g.stroke();
+  g.lineWidth = 1;
+  g.fillStyle = '#e2b545'; g.fillText('corner', x0 - 6, mid);
+  g.fillStyle = '#9fb0bb';
+  g.fillText(flip === 2 ? 'v/h = 2' : 'home', x0 - 6, bot);
+  g.fillText(flip === 1 ? 'h/v = 2' : 'v/h → 0', x0 - 6, top);
+
+  // the sphere on the strip
+  const hs = sphereH();
+  if (sph.r > 0 && hs > 0) {
+    const y = yOf(hs), off = y < top || y > bot;          // off the strip: a ring held at the edge it ran off
+    g.fillStyle = g.strokeStyle = 'rgba(140,230,205,0.95)';
+    g.beginPath(); g.arc(x0 + w / 2, Math.min(bot, Math.max(top, y)), 4, 0, 2 * Math.PI);
+    if (off) g.stroke(); else g.fill();
+  }
+}
+
+let last = performance.now();
+function frame(now) {
+  const dt = Math.min((now - last) / 1000, 0.1); last = now;
+  if (sph.running && !still) {
+    travelled += v * dt;                        // ground speed v a second: the same at any height
+    if (sphereH() <= 0.6 * v) { travelled = sph.Z - 0.6 * v; sph.running = false; }
+  }
+  draw();
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+// LOD: tap or click the chip, or press L
+function cycle() { mode = (mode + 1) % 3; lodBtn.textContent = 'LOD: ' + MODES[mode]; }
+lodBtn.addEventListener('click', cycle);
+lodBtn.textContent = 'LOD: ' + MODES[mode];
+againBtn.addEventListener('click', startRun);
+function cycleFlip() { flip = (flip + 1) % 3; flipBtn.textContent = 'strip: ' + FLIPS[flip]; }
+flipBtn.addEventListener('click', cycleFlip);
+flipBtn.textContent = 'strip: ' + FLIPS[flip];
+startRun();
+
+// test hook: rows on the screen are fractions of its height, so they compare across sizes
+window.__flight = {
+  set(h, m) { v = h; mode = ['none', 'metres', 'vh'].indexOf(m); lodBtn.textContent = 'LOD: ' + MODES[mode]; },
+  cornerRow: () => py(v) / H,
+  edgeRows: () => bands().filter(b => b.a > 0 && b.a < FAR).map(b => py(b.a) / H),
+  levelCorners: () => bands().map(b => 8 * b.s),
+  detailAt: (hv) => { const L = sphereLevel(hv * v); return mode !== 0 && L >= 5 ? -1 : detailOf(L); },   // -1 = a dot
+  stripAt: (hv, m) => { const k = flip; flip = FLIPS.indexOf(m); const y = stripY(hv * v, 0, 0.5, 1, 0.5); flip = k; return 1 - y; },   // 0 bottom … 1 top
+  place: (hv) => { startRun(); sph.Z = travelled + hv * v; sph.running = false; },
+  linesPerLevel: () => bands().filter(b => b.b < FAR).map(b => (b.b - b.a) / b.s),
+};
+
+// climbing: drag (mouse or touch), wheel, arrow keys
+const clamp = (a) => Math.min(5000, Math.max(2, a));
+let dragY = null;
+cv.addEventListener('pointerdown', e => { dragY = e.clientY; cv.setPointerCapture(e.pointerId); });
+cv.addEventListener('pointermove', e => {
+  if (dragY === null) return;
+  v = clamp(v * Math.exp((dragY - e.clientY) * 0.01));
+  dragY = e.clientY;
+});
+const end = () => { dragY = null; };
+cv.addEventListener('pointerup', end);
+cv.addEventListener('pointercancel', end);
+cv.addEventListener('wheel', e => { e.preventDefault(); v = clamp(v * Math.exp(-e.deltaY * 0.002)); }, { passive: false });
+window.addEventListener('keydown', e => {
+  if (e.key === 'ArrowUp') v = clamp(v * 1.1);
+  if (e.key === 'ArrowDown') v = clamp(v / 1.1);
+  if (e.key === 'l' || e.key === 'L') cycle();
+  if (e.key === 'r' || e.key === 'R') startRun();
+  if (e.key === 'f' || e.key === 'F') cycleFlip();
+});
+</script>
+
+</html>
