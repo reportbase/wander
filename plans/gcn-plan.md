@@ -28,6 +28,22 @@ unresolved binaries, and leaves out giants, about five magnitudes above it, and 
 
 **Kinds**, by colour on the band: G (bp_rp 0.75–0.95), K (1.0–1.5), early M (2.0–2.5), late M (2.5–3.0).
 
+**The data as supplied** (10 October 2026, recorded before the run). Tom downloaded the GCNS main table from VizieR,
+J/A+A/649/A6/table1c (Gaia Collaboration, Smart et al. 2021, doi:10.26093/cds/vizier.36490006), as tab-separated values,
+whole sky, no row limit: 331,312 rows with the columns RA_ICRS, DE_ICRS, Plx, e_Plx, Gmag, BPmag, RPmag, RUWE and GCNSprob.
+The file is 26.2 MB, sha256 `73b63a058a7e2afce4b655290d030eb1daa101aeabe62730c007deeab3e67c6c`. It is not committed.
+GCNS is built on Gaia EDR3, whose astrometry and G, BP and RP photometry are the same as DR3's. The table has no l, b or
+bp_rp, so:
+- bp_rp = BPmag − RPmag; the 7,002 rows with no BP or RP have no colour and are dropped;
+- b is computed from RA and Dec by the standard J2000 rotation (ICRS and J2000 differ by far less than a degree's use here);
+- the plan's cuts are applied as written: parallax ≥ 10 mas, parallax/error ≥ 10, ruwe < 1.4, in every prediction,
+  P4 included. GCNSprob is not used.
+
+**Fits, where the plan is silent** (fixed now, before the run, as CNT fixed them): every slope is least squares on
+cumulative counts; by distance at steps of 0.05 levels of log₂ d, from 25 to 100 pc inclusive; by light at steps of 0.1
+magnitude, from G_max − 3 to G_max inclusive. In P3 a kind's members are those on the band in its colour range, and its
+1st percentile of M_G is taken over all of them within 100 pc.
+
 ## Predictions
 
 - **P1 (an even spread, by kind).** For each kind, the slope of log₂ N(<d) against log₂ d over 25 ≤ d ≤ 100 pc is 3
