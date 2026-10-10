@@ -103,6 +103,10 @@ Google Fonts load from outside:
   dictionary from SPN's geometry to physics, the results by standing (real data, exact arithmetic, Wander's world as
   illustration only), the kills, and a queue of tests. New physics tests are planned in `plans/`, reported there, and
   promoted to SPN only once ruled.
+  `inverse-square.md` (10 Oct 2026, Tom: "lets give the inverse square law its own paper to iterate on") gathers the law:
+  as physics holds it (derived from conservation and three dimensions; tested as a bound on the exponent), in levels
+  (2 of light, 3 of number per level of distance), the reader's two regimes, the near field (NRF: the pair's corner exact
+  where the light is a share), the lay's form (ISQ), each claim marked physics / exact / data / reading / illustration.
   The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.
