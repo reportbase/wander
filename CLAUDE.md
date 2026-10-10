@@ -169,6 +169,10 @@ Google Fonts load from outside:
   `cnt-plan.md` (+ `cnt/cnt.py`, 10 Oct): star counts in levels on Hipparcos to V 7.3: about 1.2 levels of number per
   level of light at every brightness, not the even spread's 1.5 (P1, P2 not killed at their bands' edges); plane and poles
   alike, 1.229 and 1.227 (P3, P4 killed).
+  `gcn-plan.md` (+ `gcn/gcn.py`, 10 Oct): star counts within 100 pc on the Gaia Catalogue of Nearby Stars (VizieR
+  J/A+A/649/A6 table1c, from Tom; sha256 in the plan), kinds by colour on the main sequence. All four killed: the RUWE cut
+  removes more near stars (steeper counts, poles past the plane), and a fifth of G/K colours within 50 pc are white dwarfs.
+  Read after the run without the cut: 2.93–3.00 levels of number per level of distance for every kind, plane = poles.
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far

@@ -21,6 +21,11 @@ bodies are pictures. They are never evidence here.
 - 10 October, third: CNT runs 2 and 3, by kind and distance: the near G dwarfs give 3.47 levels of number per level of
   distance (3 for an even spread); the K0 giants cannot be counted cleanly, since about one in ten labelled K0 III is
   something fainter, and the kind has no complete distance (§3).
+- 10 October, fourth: GCN, star counts within 100 pc on Gaia (the Catalogue of Nearby Stars, from Tom), by colour on
+  the main sequence. All four predictions killed: the RUWE cut removes more near stars than far ones and steepens the
+  counts, and the G and K colours hold the white dwarfs. Read without the cut, every kind gives 3 levels of number per
+  level of distance within 0.07, and by light the kinds average 1.5: the even spread holds within 100 pc, and CNT's 1.2
+  comes from mixing kinds and distances (§2.1, §3).
 
 ## 0. The rules
 
@@ -68,6 +73,14 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   than V = 7.3 give about 1.2 at every brightness: 1.33 for V 1–4, 1.22 for V 5–7.3. And they give it alike in the
   galactic plane (1.229) and toward the poles (1.227). The even-spread bridge gives out, and the disc's thinness alone
   does not say why.
+- **Within 100 pc, three levels of number per level of distance** (GCN, `plans/gcn-plan.md`, read after run 1). On the
+  Gaia Catalogue of Nearby Stars, main-sequence stars picked by colour on the band (G, K, early M, late M; about 125,000):
+  - by distance over 25–100 pc, 2.93 to 3.00 for each kind once no cut that depends on distance is used, against 3 for
+    an even spread; plane and poles alike (2.937, 2.924);
+  - by light, inside each kind's complete volume, 1.37 to 1.57, about 1.5 on average, against 1.5.
+
+  The run's own predictions were killed (§3); these are readings of the same data after it, not ruled. They say the even
+  spread holds within 100 pc, kind by kind, so CNT's 1.2 comes from mixing kinds and distances, not from the counting.
 - **Real worlds are their corner within a hundredth of a level** (REF, `plans/ref-plan.md`, P4 and P5). By published
   radii:
   - the rocky worlds' flattening: Earth 0.0048 levels, Mars 0.0085, the Moon 0.0017;
@@ -110,6 +123,11 @@ They are kept as worked examples of the bridges (`labs.html`, `plans/grn-plan.md
   and counting them by distance or light measures the label and the catalogue, not space. MAG's 140 pc "complete" range
   rested on the same false premise. Only the near G dwarfs counted cleanly: 3.47 levels of number per level of distance,
   against 3.
+- **GCN run 1, all four: a cut that depends on distance, and a colour that is not a kind.** The RUWE cut (< 1.4) removes
+  28% of stars at 25–35 pc and 18% at 70–100 pc, since near binaries wobble more in angle. It steepened the late M count
+  to 3.14 (P1) and the poles past the plane (P2, the wrong way round). By light, G and late M sat just past the 1.55
+  ceiling (P3). Within 50 pc a fifth of the G and K colours are white dwarfs (P4): colour alone is not a kind; colour
+  with the parallax's magnitude is.
 - **HZN run 1's P5 and run 2: a page reads only to its grain.** Near home, draw's levels page cannot read nearer than one
   segment or one direction, whichever is coarser. Run 3, with both grains doubled together, was not killed.
 
@@ -117,8 +135,9 @@ They are kept as worked examples of the bridges (`labs.html`, `plans/grn-plan.md
 
 Tests that could be run next, each on real data or exact arithmetic. Each would need its plan written first.
 
-- **Why the counts give 1.2 (still open).** Splitting by kind needs a cleaner kind than a spectral label (CNT runs 2–3):
-  a colour cut with the label, or a catalogue whose classes are checked against parallax, or Gaia (blocked here).
+- **Why the counts give 1.2.** GCN's reading (not ruled) puts it in the mix of kinds and distances past 100 pc. A test of
+  that needs a bright all-sky Gaia sample (G ≤ 10, with parallaxes) and a plan written before it is opened: whether the
+  mix of kinds at each brightness, counted as GCN counts, reproduces 1.2.
 - **Clusters as one kind at one distance.** The Hyades, Coma Berenices, the Pleiades and Praesepe each have their own
   distance, from their members' mean parallax. At a fixed colour their main sequences should step two levels of light
   per level of the clusters' distance. This needs membership lists. Hipparcos membership is published, but the archives

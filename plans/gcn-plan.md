@@ -71,3 +71,57 @@ magnitude, from G_max − 3 to G_max inclusive. In P3 a kind's members are those
 
 ## Runs
 
+### Run 1 (10 October 2026)
+
+`python3 -I plans/gcn/gcn.py <the TSV>` (data checked against the sha256 above), output in `plans/gcn/gcn-run1.txt`. The
+first pass printed the by-light slopes with the wrong sign: the script had not turned it, as the plan says and CNT's
+script does. That was fixed in the script, and nothing else changed, before this output was recorded:
+
+```
+331312 GCNS rows; 7005 with no G, BP, RP or RUWE dropped; parallax >= 10 mas and >= 10 sigma: 295010; ruwe < 1.4: 246150
+P1: KILLED. each kind, 25-100 pc, slope of log2 N(<d) in [2.85, 3.05] (3 for an even spread)
+P2: KILLED. four kinds, 25-100 pc: plane (|b| < 15) 2.934 (33369), poles (|b| > 45) 3.141 (34796), difference -0.207
+P3: KILLED. each kind, G_max - 3 to G_max, levels of number per level of light in [1.35, 1.55] (1.5 for an even spread)
+P4: KILLED. within 50 pc, under 3% of each colour range off the band
+  G        bp_rp 0.75-0.95: 10077 on the band within 100 pc (9921 past 25 pc); by distance 2.991; G_max 8.32 (1956 brighter), by light 1.552; within 50 pc 1706, off the band 20.28%
+  K        bp_rp 1.0-1.5: 14986 on the band within 100 pc (14703 past 25 pc); by distance 2.882; G_max 10.35 (4890 brighter), by light 1.482; within 50 pc 2715, off the band 23.61%
+  early M  bp_rp 2.0-2.5: 35480 on the band within 100 pc (34872 past 25 pc); by distance 2.984; G_max 13.26 (8969 brighter), by light 1.366; within 50 pc 4319, off the band 3.66%
+  late M   bp_rp 2.5-3.0: 64054 on the band within 100 pc (63211 past 25 pc); by distance 3.138; G_max 14.57 (14401 brighter), by light 1.573; within 50 pc 8085, off the band 4.13%
+```
+
+- **P1 killed, by one kind.** G 2.991, K 2.882 and early M 2.984 are inside [2.85, 3.05]. Late M gives 3.138, steeper
+  than 3 by more than the disc could allow.
+- **P2 killed, the wrong way round.** The poles count *steeper* than the plane, 3.141 against 2.934, not flatter.
+- **P3 killed, by two kinds at the edge.** K 1.482 and early M 1.366 are inside. G gives 1.552 and late M 1.573, past the
+  ceiling of 1.55.
+- **P4 killed, by every kind.** Within 50 pc, 20% of the G colour range and 24% of the K range lie off the band; early M
+  3.7% and late M 4.1%.
+
+## Reading (after the run; not ruled)
+
+Everything below was looked at after the run (`gcn_look.py`, kept in the session's scratchpad, not committed). None of it
+is a prediction, and a second run on this file could not be blind to it.
+
+- **The RUWE cut depends on distance, and that is what steepened P1 and turned P2.** Among the four kinds on the band,
+  the cut removes 28% of stars at 25–35 pc, 22% at 35–50, 19% at 50–70 and 18% at 70–100. A binary's wobble is larger in
+  angle when it is near, so near binaries are flagged more often. Removing more near stars than far ones makes the count
+  rise faster with distance. Without the cut, every kind gives 2.93 to 3.00 by distance (G 2.998, K 2.959, early M 2.933,
+  late M 2.928), and the plane and the poles give 2.937 and 2.924, a difference of 0.013. The plan took the RUWE cut to
+  keep "single, well-measured sources"; it does, and it does so unevenly in distance. The cut was the plan's, and the
+  kills stand.
+- **Without the cut, the disc does not show within 100 pc.** The plane–pole difference, 0.013, is under P2's floor of
+  0.03. A disc falling by e every 300 pc from the Sun's height would lower the polar slope over 25–100 pc by about 0.1
+  (the slope of N(<d) is about 3 − ¾·d/300 toward a pole), inside P2's band. The measured 0.013 says the stars' density
+  is nearly flat within 100 pc of the Sun, toward the poles as in the plane. That fits a disc that is flat at its middle
+  (as a sech² profile is) rather than one falling exponentially from it. It is a reading, not tested here.
+- **The colour ranges of G and K hold the white dwarfs.** Of the off-band stars within 50 pc, nearly all in the G and K
+  ranges sit 8 to 10 magnitudes below the band's line: white dwarfs, about 330 in the G range and 570 in the K range.
+  Cool white dwarfs have the colours of G and K dwarfs. The plan expected the band to separate them, and it does. But P4
+  asked whether colour alone is a clean kind, and for G and K it is not: about one star in five of those colours within
+  50 pc is a white dwarf. This is the same lesson as CNT run 3's "K0 III", at about twice the rate. Colour with the
+  parallax's magnitude (the band) is a clean kind; colour alone is not.
+- **What did hold: three levels of number per level of distance.** The four kinds count as an even spread does, within
+  0.15 of 3, over two levels of distance, on about 125,000 stars, once nothing that depends on distance is used to choose them.
+  By light, with the RUWE cut, the four kinds give 1.37 to 1.57, about 1.5 on average. That is the even spread's value,
+  which CNT's mixed Hipparcos sample (about 1.2) never reached. So the 1.2 of CNT run 1 comes from mixing kinds and
+  distances past 100 pc, not from the inverse square or the volume.
