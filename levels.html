@@ -252,7 +252,7 @@
     if (q.has('lod')) $('lod').value = Math.min(10, Math.max(0, Math.round(+q.get('lod') || 0)));
 
     function fit(cv) {
-        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = Math.min(+cv.getAttribute('height'), Math.round(w));
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w));
         cv.style.height = h + 'px';
         if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
         const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, h, dpr];

@@ -97,7 +97,7 @@
     const levelCost = k => V * 2 ** k;                          // steps to cross from d = V·2^(k+1) in to V·2^k
     const levelTheta = k => Math.atan(2 ** -k) / D;             // θ where d = V·2^k
     function fit(cv) {
-        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +cv.getAttribute('height');
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
         if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
         const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, hh];
     }

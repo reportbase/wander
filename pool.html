@@ -341,8 +341,9 @@
     }
     function fit(cv) {
         const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth;
-        if (cv.dataset.aspect) cv.setAttribute('height', Math.round(w * +cv.dataset.aspect));
-        const hh = +cv.getAttribute('height');
+        if (cv.dataset.aspect) cv.dataset.h = Math.round(w * +cv.dataset.aspect);
+        const hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
+        cv.style.height = hh + 'px';
         if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(hh * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
         const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, hh];
     }
