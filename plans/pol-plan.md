@@ -609,3 +609,166 @@ P18: KILLED. D falls by 3.70 (K 1 to 2; band [2.54, 5.72]) and 6.74 (K 2 to 3; b
 - **For a situated reader:** what it may ignore is set by the momentum the smaller things bring, not by their size
   alone. A small thing moving fast costs as much to ignore as a larger one moving slowly. Level of detail by size alone
   is right only where the smaller things are no faster.
+
+### Run 8 (10 October 2026): prediction, written before it ran (Tom: "yes", to a prediction horizon for the trick-shot game)
+
+`play-trick.html` previews a whole shot, but a player aims with some error, and every contact makes the outcome more
+sensitive to the aim. This run measures, contact by contact, how many levels of aim precision a contact costs. The answer
+sets how far ahead a situated player can see: the preview's level of detail, counted in contacts. The engine is the
+game's (`play-trick.html`, its `simulate` through the hook): pool.html's table from inside, cloth slowing 1.2. Evidence
+about the geometry and the computation, not the world.
+
+Keep the case. s (the run from a ball's start to its contact), r (the radius) and the angles are amounts. The pair's
+reading h + v = 2r/|SO|, from the striking ball's start S to the object's centre O, is a fill level. No bridge is needed:
+the result is a ratio of angles.
+
+**Worked out before writing this (and a correction).** In conversation I said a contact costs about log₂(2d/r) levels,
+3 to 5 here. Derived properly it is smaller.
+- The object ball leaves along the line of centres at contact, whatever the restitution: it is not reflected. Its
+  direction is the ghost ball's (the striker at contact) direction to its centre, on a circle of radius 2r.
+- Turn the striker's line by δψ about its start S. The object's offset from the line changes by (s + 2r·cos φ)·δψ, so
+  the cut changes by that over 2r·cos φ. The object's direction is the line's angle plus the cut, so it turns by
+  **A = s/(2r·cos φ)** times δψ (in magnitude; the +1 of the line's own turn cancels).
+- Read from S, with h + v = 2r/|SO| and α the small angle between the line and SO:
+  A = cos α/((h + v)·cos φ) − 1. For a full hit, **A = 2^L − 1, where L = log₂(1/(h + v)) is how many levels the pair
+  starts from contact** (run 1's P5 count). The aim error grows by about as many levels as the run spanned.
+- A ball struck from rest starts with no error in its place, only in its direction, so in a chain where each ball meets
+  the next from rest, the factors multiply exactly, to first order: the chain loses Σ log₂ A_k levels.
+- On this table, with s from 1 to 6 and 2r = 0.9, a full hit loses about 0.2 to 2.7 levels; a thin cut (cos φ small)
+  loses more; a run shorter than 2r·cos φ gains (A < 1).
+
+The engine detects contact a substep late, with the balls overlapping by up to a substep's travel (about 0.06 at speed
+14, 7% of 2r). That moves the effective ghost ball and the cut a little, so the predictions allow 15%.
+
+**The chains.** Seeded, 60 chains: the white and three object balls, each struck from rest by the one before, runs s
+drawn from 1.2 to 5, cuts from −45° to 45°, power 20, nothing else on the table. A chain is used only if its first three
+contacts are exactly white–1, 1–2, 2–3, in that order, and all four balls stay on the table. Each is run twice, the second
+with the aim turned by δ = 1e-7 rad (and once by 1e-8, to check the response is linear). A ball's direction is read from
+its frames between its start and its next contact.
+
+- **P19 (one contact).** For at least 90% of the contacts, the measured factor |e_k/e_(k−1)| is within 15% of
+  s_k/(2r·cos φ_k), from the chain's planned geometry (e_0 = δ, e_k the direction error of ball k). *Killed* if fewer.
+- **P20 (the chain).** For at least 90% of the chains, the levels lost over the chain, log₂(e_3/δ), equal Σ log₂ A_k
+  within 0.3 levels. *Killed* if fewer.
+- **P21 (linear).** The factors at δ = 1e-8 equal those at 1e-7 within 1% for at least 95% of contacts. *Killed* if fewer.
+- *Measured, not predicted:* levels lost per contact in the game's own layouts (the rack, scattered), and the depth in
+  contacts at which an aim error of 0.1° grows past 3.6° (half a pocket's width seen from 8 units away): the horizon the
+  preview's fade will use.
+
+Run 8 output (`node plans/pol/pol8.mjs`, in `plans/pol/pol-run8.txt`):
+
+```
+60 chains (white and three, each struck from rest by the one before), power 20, aim turned by 1e-7 and 1e-8
+  one contact: measured/predicted factor, median 0.9278, 5%–95% 0.208–1.324; within 15%: 92 of 180
+  the chain: levels lost minus predicted, median -0.499, largest 10.162; within 0.3 levels: 19 of 60
+P19: KILLED. 92 of 180 contacts within 15% of s/(2r cos φ) (90% needed)
+P20: KILLED. 19 of 60 chains within 0.3 levels of the sum (90% needed)
+P21: not killed. 180 of 180 factors the same at 1e-8 within 1% (95% needed)
+
+measured, the game's layouts (scattered ×12, rack ×6, random aims, power 14): levels of aim error at each ball's first contact, by depth
+  depth 1:  30 balls, median 3.32 levels
+  depth 2:  40 balls, median 2.37 levels
+  depth 3:  32 balls, median 1.54 levels
+  depth 4:  33 balls, median -3.60 levels
+  depth 5:  28 balls, median -9.64 levels
+  a 0.1° aim error passes 3.6° (5.17 levels) at depth > the deepest measured
+```
+
+- **P19 killed.** Only 92 of 180 contacts are within 15% of s/(2r·cos φ). The measured factor is 0.93 of it at the median,
+  but spreads from 0.21 to 1.32 (5% to 95%).
+- **P20 killed.** Only 19 of 60 chains are within 0.3 levels of the sum; the median chain loses half a level less than
+  predicted, the worst ten levels less.
+- **P21 not killed.** Every factor is the same at δ = 1e-8 as at 1e-7, within 1%: the response is linear. The kills are
+  not noise.
+- *Measured:* in the game's own layouts, a ball's aim error at its first contact falls with depth after depth 3 (3.3, 2.4,
+  1.5, then −3.6 and −9.6 levels at depths 4 and 5). Deep balls are mostly the rack's, struck from a few hundredths away,
+  where s < 2r·cos φ and a contact gains levels (A < 1). The 3.6° horizon was not reached in five contacts.
+
+## Reading of run 8 (not ruled)
+
+- **The engine is not the geometry at thin cuts.** Checked after the run (`plans/pol/pol8-posthoc.mjs`, output in
+  `pol-run8-posthoc.txt`): at near-full hits (|φ| < 15°) the measured factor is 1.03 of s/(2r·cos φ) at the median; at
+  thin cuts (|φ| > 30°) 0.67, about cos²φ. The engine finds contact at a fixed tick, with the balls already overlapping
+  (by 0.034 at the median, up to 0.077, against 2r = 0.9). The struck ball leaves along the line of centres *as found*,
+  with the striker a fixed distance down its line. Turning the aim then turns that line by D·cos φ/ρ (ρ the overlapped
+  distance between centres), not s/(2r·cos φ): a factor cos²φ less. This accounts for the median and for the thin cuts.
+  It is not the whole story: only 67 of 180 contacts match D·cos φ/ρ within 1% (111 within 15%).
+- **So the game's thin cuts are off by up to a few degrees at full power.** The preview and the shot agree (one engine),
+  but a ½-ball hit at power 20 can leave a degree or more from where exact contact sends it. The fixed tick also makes
+  the game less chaotic than the geometry at thin cuts.
+- **The fix is the situated one.** Find the moment the pair's reading is exactly h + v = 1 (each ball can, in its own
+  units, from the other's direction, its reading and its told motion), respond there, and carry on. That is a new run,
+  with its own predictions.
+
+### Run 9 (10 October 2026): prediction, written before it ran
+
+Run 8 again, after making the game's contact exact, in the situated way. When a pair's reading has passed h + v = 1
+within a tick, each ball works out, in its own units, how long ago the reading was exactly 1. It uses only what it has:
+the other's direction n and the pair's readings h and v (the other's place relative to it, n/h, in its own radii), and
+the other's told motion converted by v/h. It solves |n/h − w·τ| = 1 + v/h for τ ≥ 0 (w the relative motion), takes the
+line of centres at that moment, responds along it, and corrects its own place by its change of motion times τ (it has
+moved with the new motion since then). A cushion likewise: its image's reading was exactly ½ a time τ = (r − gap)/(its
+speed toward the cushion) ago. Run 8's chains, seeds and measure are kept, and `play-trick.html` is changed only there.
+
+Worked out before writing this: with contact exact, each struck ball leaves from rest along the true line of centres, so
+a chain follows its planned geometry to rounding, and the first-order factor is exactly s/(2r·cos φ).
+
+- **P22 (one contact).** At least 95% of the 180 contacts are within 2% of s/(2r·cos φ). *Killed* if fewer.
+- **P23 (the chain).** At least 95% of the 60 chains lose Σ log₂ A_k levels within 0.05. *Killed* if fewer.
+- **P24 (contact on the line).** At every corrected contact the pair's reading is h + v = 1 within 1e-9. *Killed* if
+  any is not.
+- *Kept from the game's checks:* the row of four still pots the 4, and the rack's first contact is still a full-ball hit.
+- *Measured, not predicted:* in the game's layouts, levels lost by depth, and the depth at which a 0.1° aim error passes
+  3.6°: the horizon for the preview's fade.
+
+Run 9 output (`node plans/pol/pol9.mjs`, in `plans/pol/pol-run9.txt`; the measured part split by layout before recording):
+
+```
+60 chains (white and three, each struck from rest by the one before), power 20, aim turned by 1e-7 and 1e-8
+  one contact: measured/predicted factor, median 1.0000, 5%–95% 1.000–1.000; within 2%: 180 of 180
+  the chain: levels lost minus predicted, median 0.000, largest 0.000; within 0.05 levels: 60 of 60
+P22: not killed. 180 of 180 contacts within 2% of s/(2r cos φ) (95% needed)
+P23: not killed. 60 of 60 chains within 0.05 levels of the sum (95% needed)
+P24: not killed. 209 contacts in the layouts, 0 set down overlapping (the old push); the rest on h + v = 1 to 2.2e-16
+  (linear, as run 8's P21: 180 of 180 factors the same at 1e-8 within 1%; the row of four pots 4; the rack's first contact full-ball: true)
+
+measured, the game's layouts (scattered ×12, rack ×6, random aims, power 14): levels of aim error at each ball's first contact, by depth
+  scatter:
+    depth 1:  26 balls, median 3.06 levels
+    depth 2:  24 balls, median 4.62 levels
+    depth 3:  18 balls, median 6.81 levels
+    depth 4:  10 balls, median 8.60 levels
+    depth 5:   4 balls, median 8.35 levels
+    depth 6:   1 balls, median 12.52 levels
+    a 0.1° aim error passes 3.6° (5.17 levels) at depth 3
+  rack:
+    depth 1:   6 balls, median 3.35 levels
+    depth 2:  12 balls, median 1.13 levels
+    depth 3:  16 balls, median -6.94 levels
+    depth 4:  21 balls, median -8.43 levels
+    depth 5:  25 balls, median -15.09 levels
+    depth 6:   2 balls, median -17.89 levels
+    a 0.1° aim error passes 3.6° (5.17 levels) at depth > the deepest measured
+```
+
+- **P22 not killed.** All 180 contacts give s/(2r·cos φ) to four figures (5% to 95%: 1.000 to 1.000).
+- **P23 not killed.** All 60 chains lose Σ log₂ A_k levels to three decimals.
+- **P24 not killed.** Every contact in the layouts is on h + v = 1 to 2.2e-16; none was set down overlapping.
+- The game's own checks hold: the row of four pots the 4, the rack's first contact is a full-ball hit.
+- *Measured:*
+  - open table (scattered): a ball's aim error grows about 1.5 to 2 levels a contact (3.1, 4.6, 6.8, 8.6 levels at
+    depths 1 to 4). A 0.1° aim error passes 3.6° at depth 3.
+  - the rack: past the first two contacts, errors shrink (to −7 and −15 levels at depths 3 and 5). Balls in a cluster
+    are struck from a few hundredths away, where s ≪ 2r·cos φ and A ≪ 1.
+
+## Reading of run 9 (not ruled)
+
+- **A contact costs as many levels as the run before it spanned.** With contact exact, the sensitivity is the geometry's,
+  s/(2r·cos φ), to rounding; for a full hit 2^L − 1, L the levels the pair started from contact (h + v read from the
+  striker's start). Each contact turns the levels a pair was apart into levels of aim lost.
+- **So a situated player sees about three contacts deep on an open table**, with a tenth of a degree to spare at the
+  aim and a half-pocket at the end. Past that the outcome is not theirs to see. That is the preview's horizon.
+- **Clusters forgive.** Inside a rack the runs are shorter than the balls, and a contact gains levels: the cradle passes
+  the hit along and forgets the aim. The break's chaos comes from the open table after it, not from the rack itself.
+- **The fixed tick hid this.** Run 8's engine was cos²φ less sensitive at thin cuts. Finding the moment h + v = 1,
+  each ball in its own units, makes the game's physics the geometry's.

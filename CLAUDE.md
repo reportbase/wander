@@ -99,7 +99,9 @@ Google Fonts load from outside:
   sin φ = f/2 at any distance (half-ball 30°, graze 90°: the ghost ball, h + v = 1; `__corner`). `play-trick.html` (10 Oct,
   Tom: "a fullscreen html canvas game … shows how that angle will propogate out, hitting all the other balls"): trick shots,
   full screen; the whole shot simulated ahead (pool.html's from-inside table, cloth MU 1.2) and drawn as paths, contacts
-  and pots, then played from the same frames; drag any ball, undo; `?layout=rack|scatter|line&a=&p=&paths=`; `__trick`.
+  and pots, then played from the same frames; drag any ball, undo; `?layout=rack|scatter|line&a=&p=&paths=&see=`; `__trick`.
+  Contact is exact (POL run 9: each ball finds the moment h + v = 1 in its own units); "see" is the preview's horizon,
+  each ball's motion shown while at most k contacts from the cue (3 by default, POL runs 8–9), a "?" past it.
   Not in the flying page.
 - `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the seven demos (sweep, dial, sphere, facing, levels, walk, pool) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
@@ -225,6 +227,11 @@ Google Fonts load from outside:
   (P15); smaller balls close only 1.2–1.6× faster per level (P16 killed), so one contact costs 5–6× less per level (P17
   killed at its first step); with their numbers, the first-order drift falls 3.70 then 6.74 (P18 killed narrowly), the
   chaos lifting the last to the game's 4.2. The 4 is the field's mix, not a law; what one may ignore is set by momentum.
+  Run 8, the prediction horizon on `play-trick.html`'s engine: a contact turns an aim error by s/(2r cos φ) (for a full hit
+  2^L − 1, L the levels the pair started apart); P19, P20 killed: the fixed-tick contact (balls overlapping up to 0.077)
+  made thin cuts cos²φ less sensitive. Run 9, contact made exact (each ball finds h + v = 1 in its own units): every
+  contact and chain to rounding (P22–P24 not killed). On an open table a contact costs 1.5–2 levels, a 0.1° aim error
+  passes half a pocket by the third contact (the preview's "see 3 deep"); inside a rack errors shrink (A ≪ 1).
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
@@ -334,7 +341,8 @@ In short:
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
   11. **Gameplay sketches:** each page's one mechanic through its hook (dimming, stages, the ladder's locks and light, the
-      sky's count read back as time, a half-ball cut 30° near and far; trick shots: the preview is the shot, contacts on h + v = 1).
+      sky's count read back as time, a half-ball cut 30° near and far; trick shots: the preview is the shot, contacts exactly on
+      h + v = 1, the row of four's pot out of sight at 3 deep and in sight at 4).
   12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
   13. **levels.html:** the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
       and one level fewer seen per doubling of the grain; the shape crosses ring edges, its broad form fewer; with the size divided out
