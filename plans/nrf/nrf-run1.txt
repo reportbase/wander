@@ -1,0 +1,34 @@
+Derivations (each from an integral over the source; L or lambda per unit area or length set to 1)
+  Lambertian disc, flat patch: pi*a**2/(a**2 + d**2)   plan: True
+  isotropic disc, flat patch: -2*pi*d/sqrt(a**2 + d**2) + 2*pi   = 2*pi*(1 - d/sqrt(d^2+a^2)): True
+  isotropic disc, every direction (small sphere): log((a**2/d**2 + 1)**pi)
+  isotropic line, every direction: 2*atan(1/d)/d   plan form (2/d)*atan(1/d): True
+  isotropic line, flat patch: 2/(d*sqrt(d**2 + 1))
+  Lambertian sphere from its centre: E = pi*L*(R/d)^2 for d >= R (standard; the sphere subtends sin^2 = (R/d)^2)
+
+P1 Lambertian disc: sigma(s) = -2*s**2/(s**2 + 1)
+   sigma(1) = -1.0 (halfway -1.0); sigma(s)+sigma(1/s) symbolic: -2; worst numeric miss from -2: 0.0
+   10%-90% from s = 0.333333 to 3.0: width 3.16993 levels
+P2 sphere from its centre: sigma = -2 at every d >= R
+P2 Lambertian sphere, from its surface (s = gap/R): sigma(s) = -2*s/(s + 1)
+   sigma(1) = -1.0 (halfway -1.0); sigma(s)+sigma(1/s) symbolic: -2; worst numeric miss from -2: 0.0
+   10%-90% from s = 0.111111 to 9.0: width 6.33985 levels
+P3 isotropic line, every direction (plan form): sigma(s) = (-s - (s**2 + 1)*atan(1/s))/((s**2 + 1)*atan(1/s))
+   sigma(1) = -1.63661977236758 (halfway -1.5); sigma(s)+sigma(1/s) symbolic: -((s + (s**2 + 1)*atan(1/s))*atan(s) + (s + (s**2 + 1)*atan(s))*atan(1/s))/((s**2 + 1)*atan(1/s)*atan(s)); worst numeric miss from -3: 0.224
+   10%-90% from s = 0.145642 to 2.40983: width 4.04843 levels
+P4 isotropic disc, flat patch (plan form): sigma(s) = s/((s - sqrt(s**2 + 1))*(s**2 + 1))
+   sigma(1) = -1.20710678118655 (halfway -1.0); sigma(s)+sigma(1/s) symbolic: s*(-s*(s - sqrt(s**2 + 1)) + sqrt(s**2 + 1) - 1)/((s - sqrt(s**2 + 1))*(s**2 + 1)*(sqrt(s**2 + 1) - 1)); worst numeric miss from -2: 0.342
+   10%-90% from s = 0.173369 to 2.56677: width 3.88804 levels
+information (not predictions):
+  isotropic line, flat patch: sigma(s) = (-2*s**2 - 1)/(s**2 + 1)
+   sigma(1) = -1.5 (halfway -1.5); sigma(s)+sigma(1/s) symbolic: -3; worst numeric miss from -3: 0.0
+   10%-90% from s = 0.333333 to 3.0: width 3.16993 levels
+  isotropic disc, every direction: sigma(s) = -2/((s**2 + 1)*log((s**2 + 1)/s**2))
+   sigma(1) = -1.44269504088896 (halfway -1.0); sigma(s)+sigma(1/s) symbolic: -log((((s**2 + 1)/s**2)**(s**2)*(s**2 + 1))**(2/((s**2 + 1)*log((s**2 + 1)/s**2)*log(s**2 + 1)))); worst numeric miss from -2: 0.787
+   10%-90% from s = 0.00673963 to 2.04418: width 8.24463 levels
+
+P1: not killed (disc: sigma(1) = -1 and the flip identity)
+P2: not killed (sphere: -2 from the centre; from the surface sigma(1) = -1 and the flip)
+P3: KILLED (line: sigma(1) = -1.63661977237, flip miss 0.224)
+P4: KILLED (solid-angle disc: sigma(1) = -1.20710678119, flip miss 0.342)
+P5: KILLED (widths 3.17, 6.34, 4.048, 3.888 levels)

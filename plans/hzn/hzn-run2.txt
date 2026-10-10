@@ -1,0 +1,6 @@
+P = 1024: geometric mean excess 1.425e-2, worst miss past four segments 1.80e-4
+P = 2048: geometric mean excess 6.428e-3, worst miss past four segments 1.30e-12
+P = 4096: geometric mean excess 3.732e-3, worst miss past four segments 1.24e-12
+P = 8192: geometric mean excess 3.732e-3, worst miss past four segments 1.22e-12
+P5b: KILLED. excess falls by 2.22, 1.72, 1.00 per doubling
+P5c: KILLED. worst miss past four segments under 1e-4 at every P: false

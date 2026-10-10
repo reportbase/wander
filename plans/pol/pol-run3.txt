@@ -1,0 +1,10 @@
+median over the ten heavy-ball breaks of E(c): the largest distance between the tables 0.05 s after the first contact
+  c = 25    naive 4.014e-1   carrying 1.048e-1   one-sided contact judgements: naive 98.1%, carrying 67.8%
+  c = 50    naive 3.350e-1   carrying 2.968e-2   one-sided contact judgements: naive 84.8%, carrying 33.1%
+  c = 100   naive 3.536e-1   carrying 1.989e-2   one-sided contact judgements: naive 74.5%, carrying 10.8%
+  c = 200   naive 3.645e-1   carrying 8.436e-5   one-sided contact judgements: naive 66.7%, carrying 3.2%
+  c = 400   naive 9.975e-2   carrying 3.671e-5   one-sided contact judgements: naive 33.3%, carrying 0.0%
+  c = 1000000000 naive 7.412e-9   carrying 1.346e-11   one-sided contact judgements: naive 0.0%, carrying 0.0%
+P9: KILLED. naive slope of log2 E against log2 c: -0.390
+P10: not killed. carrying at most a quarter of naive at c >= 50: 11.3x, 17.8x, 4321.4x, 2717.4x; carrying slope (measured) -3.142
+P11: KILLED. at c = 1e9: naive 7.41e-9, carrying 1.35e-11

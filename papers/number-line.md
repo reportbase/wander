@@ -65,6 +65,10 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
+- 10 October, seventy-first: §4, on the Hipparcos stars light falls two levels per level of distance (dwarfs 2.02, giants 1.93; past the catalogue's limit 1.61); a known kind is a bridge about a level wide (MAG, `plans/mag-plan.md`).
+- 10 October, seventieth: §8, the corner as the reference sphere: real rocky worlds within a hundredth of a level of it, giants a tenth; wander's bodies far rougher (REF, `plans/ref-plan.md`).
+- 10 October, sixty-ninth: §8, standing on the outline: a circle's corner is its radius, 30° below the horizon; a ball's 2/e of it; rising, the horizon half a level per doubling of height (HZN, `plans/hzn-plan.md`).
+- 10 October, sixty-eighth: §4, the in-place lay has the inverse square's form: room 1/s² per unit reading past the corner, the flip's Jacobian; read s as d/Δ, an angular size's rate, light's being its square (ISQ, `plans/isq-plan.md`; Tom: "yes, #1").
 - 10 October, sixty-seventh: §8, the baseline is the corner: the corner over every facing is the circle s = 1, and depth is measured from it, in levels, once the size is divided out (Tom, at `levels.html`).
 - 9 October, sixty-sixth: the case pass, equation by equation (`plans/papers-case-pass.md`; Tom: "yes"): h → H where a unit, grain or breadth is meant; v → d where a distance; the corner kept at v = h, with the pair named where a unit, a pixel or a photon count set it (the resolution limit); the ruler carries an amount, r = x/H; CAL's worth renamed W; §8's "breadths" read as fill levels, the in-place sweep value renamed g′, the triple corner never moved.
 - 9 October, sixty-first: geometry → sweep → reading: the level of detail is what the sweep over the field yields, k = log₂(Δ/v) (SPN, the opening; Tom).
@@ -659,6 +663,10 @@ by side, with no ruling on the word:
   between what is sent and what one reader gets is the cost of being situated.
   It is the inverse-square law (Tom, 8 October: "is this the inverse square law?"; "yes, the situated reader is just another place this law shows up."): 1/d in each of two directions, grains lost while the object is resolved, brightness
   lost once it is under one grain, the switch at one grain across (the resolution limit, the corner of the size-against-step pair, not of the reader's sweep of the other: SPN §1). The situated reader is one more place the law shows up.
+  *The lay has its form too* (10 October; ISQ, `plans/isq-plan.md`, run 1, not killed): past the corner the in-place lay is
+  2 − 1/s, proportion in h/v, so its room per unit s is 1/s², the flip's Jacobian, a quarter less per doubling. Keep the
+  case: s is geometry; reading s as d/Δ (amounts) makes 1/s an angular size, the lay's 1/s² the rate it shrinks (one
+  dimension) and light's 1/d² its square (two). A shared form with one origin, the flip; SPN §1.
   The law itself has no corner (Tom, 8 October: "but the inverse square law does not account for the corner?"): 1/d² is the same at every scale. The scale comes from the reader's grain, H (the resolution limit; "the corner" until 9 October).
   GRN run 8 (`plans/grn-plan.md`): a reader with no reach below its grain loses a receding pair at one grain across at
   any light; one given the shape loses it at d* ∝ (a²F₀)^(1/4) (a distance; GRN's plan writes v*). In SPN at the central result:
@@ -968,7 +976,8 @@ fill level. The table in "The sphere's clean statement" is corrected.
 **The baseline is the corner** (Tom, 10 October, at `levels.html`: "the corner is the circle between the near and far
 fields, or the yellow line … the corner is might also be the unit circle that pertibated line subtracts from to find the
 depth"; "wholyshit, the corner is v = h, which exacly what this demo shows. which is also the baseline from which depth is
-calcualted."). The quotation above, "the base line is v=h", read in a picture: drawn over every facing, with s = v/h as
+calcualted."). *And from the outline* (HZN, 10 October): read from a place on a circle, the corner is a chord equal to
+the radius, 30° below the horizon; on a ball, 2/e of the radius. The quotation above, "the base line is v=h", read in a picture: drawn over every facing, with s = v/h as
 the distance out, the corner is the circle s = 1 between near and far, and that circle is the unit circle a shape's depth
 is measured from. Divide out the shape's size (its middle moves onto the corner, and the scale is lost); what stands off
 the circle is its depth, in each direction log₂ s(θ), levels past the corner, negative inward by the flip. Geometry only:

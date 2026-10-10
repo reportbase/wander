@@ -1,0 +1,9 @@
+331312 GCNS rows; 7005 with no G, BP, RP or RUWE dropped; parallax >= 10 mas and >= 10 sigma: 295010; ruwe < 1.4: 246150
+P1: KILLED. each kind, 25-100 pc, slope of log2 N(<d) in [2.85, 3.05] (3 for an even spread)
+P2: KILLED. four kinds, 25-100 pc: plane (|b| < 15) 2.934 (33369), poles (|b| > 45) 3.141 (34796), difference -0.207
+P3: KILLED. each kind, G_max - 3 to G_max, levels of number per level of light in [1.35, 1.55] (1.5 for an even spread)
+P4: KILLED. within 50 pc, under 3% of each colour range off the band
+  G        bp_rp 0.75-0.95: 10077 on the band within 100 pc (9921 past 25 pc); by distance 2.991; G_max 8.32 (1956 brighter), by light 1.552; within 50 pc 1706, off the band 20.28%
+  K        bp_rp 1.0-1.5: 14986 on the band within 100 pc (14703 past 25 pc); by distance 2.882; G_max 10.35 (4890 brighter), by light 1.482; within 50 pc 2715, off the band 23.61%
+  early M  bp_rp 2.0-2.5: 35480 on the band within 100 pc (34872 past 25 pc); by distance 2.984; G_max 13.26 (8969 brighter), by light 1.366; within 50 pc 4319, off the band 3.66%
+  late M   bp_rp 2.5-3.0: 64054 on the band within 100 pc (63211 past 25 pc); by distance 3.138; G_max 14.57 (14401 brighter), by light 1.573; within 50 pc 8085, off the band 4.13%

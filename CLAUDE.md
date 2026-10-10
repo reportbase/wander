@@ -66,6 +66,22 @@ Google Fonts load from outside:
   the built-in one, a body in res/, or a file from disk: a .tvf curve (the draw tool's format, draw.html `parseTvfText`; read from
   its centroid, the nearest wall in each direction) or a .tvf3d cut at a height h (the equator by default); the outline
   read as s(θ) = s₀·(r/r̄)^k with a relief slider k. `?g=&s=&shape=&lod=&depth=1&body=&relief=&cut=`; test hook `window.__levels`.
+- `walk.html`: **the walk** (10 Oct 2026, Tom: "the sweep is a walk from me to you … far away, you are increasinly difficult
+  for me to get to you, and then acceleratingly difficult"; "You are vertical and I am horizontal. Show the sweep in terms of
+  the horizontal's walk to the vertical"), a standalone page like `facing.html`. Me on the ground (breadth H, one step), you a
+  vertical of height V = 10 steps, at distance d; the pair (V, d) is the bridge, s = V/d, v = min(1, s), h = min(1, 1/s). The
+  sweep's angle is the angle I look up at your top, θ = atan(V/d): 0° on my horizon, 45° at d = V, 90° at your foot. Steps
+  left V·h/v = V·cot θ; far, each level costs twice the next one in, the steps bunching toward the horizon (never reached);
+  near, in proportion. Panels: the ground, the sweep in fill levels, steps left against θ. `?d=&walk=1`; hook `window.__walk`.
+- `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
+  ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
+  one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
+  reads each other's direction and v = r_b/d, is told the other's reading h = r_a/d, touches at h + v = 1 (the line of
+  `facing.html`; equal balls at the corner, 60° across), and works in its own size (size ratio v/h, masses (v/h)³, one
+  material). Run 2: cushions read as the ball's own mirror image (v = r/(2·gap) = h, contact at the corner), pockets
+  entered when they fill the view (v > 1); only one integrator and the clock unsituated, named; `?cushions=referee`. Run 3:
+  a "signals" select reads the others late (c = 50), the late image taken as now or carried forward (`runLate`). Panels: the table, the chosen ball's pairs as (h, v), its
+  view round the turn. `?break=0..9&heavy=0`; hook `window.__pool` (`run(i, opts)`, the POL measures).
 - `thin.html`, `ladder.html`, `sky.html`: **the physics correspondence** (9 Oct 2026, Tom: "create multiple demos that
   explain the physics correspndance"), standalone pages like `dial.html`. `thin.html`: the same signal, a smaller share
   (the inverse square; near, distance costs grains, far, light; the switch at one grain is the resolution limit;
@@ -78,7 +94,7 @@ Google Fonts load from outside:
   (dim by 1/d², vanish, or a full-bright pixel; hook `__points`); events on approach (point, resolved, shape, terrain,
   surface; `__resolve`); distances earned rung by rung (parallax, then width and light per kind; `__navigator`); the sky
   filling as light arrives, the count a clock (`__skyfill`). Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the five demos (sweep, dial, sphere, facing, levels) and the three on the physics correspondence, each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the seven demos (sweep, dial, sphere, facing, levels, walk, pool) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -98,6 +114,15 @@ Google Fonts load from outside:
   sweeps its level of detail, proportional then logarithmic, and the derivation of 2 is in Appendix D, with
   Proposition D.1 since 9 Oct: on a level with only its ends, order and flip, the halving is the only subdivision supplied;
   other branching factors need an added measure).
+  `physics.md` (10 Oct 2026, Tom: "lets create a new physics paper and iterate there") is the working paper for the physics
+  correspondences: the rules (real data or exact arithmetic, prediction first, keep the case, name the bridge), a
+  dictionary from SPN's geometry to physics, the results by standing (real data, exact arithmetic, Wander's world as
+  illustration only), the kills, and a queue of tests. New physics tests are planned in `plans/`, reported there, and
+  promoted to SPN only once ruled.
+  `inverse-square.md` (10 Oct 2026, Tom: "lets give the inverse square law its own paper to iterate on") gathers the law:
+  as physics holds it (derived from conservation and three dimensions; tested as a bound on the exponent), in levels
+  (2 of light, 3 of number per level of distance), the reader's two regimes, the near field (NRF: the pair's corner exact
+  where the light is a share), the lay's form (ISQ), each claim marked physics / exact / data / reading / illustration.
   The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.
@@ -146,6 +171,46 @@ Google Fonts load from outside:
   again; arithmetic opens a factor of 3 (P2a not killed). Run 3 (Tom: "does 2 allow us to do recursion without runtime
   logic"): on a level (identity and flip) only a split in 2 has every part of one kind, on the full turn every split does;
   a theorem (⌈b/2⌉ kinds), resting on the premise that a level's only symmetries are the identity and the flip.
+  `isq-plan.md` (+ `isq/isq.py`, 10 Oct): is the in-place lay the inverse square? Past the corner it is 2 − 1/s,
+  proportion in h/v, so its room per unit s is 1/s², the flip's Jacobian (all five predictions not killed); draw's piecewise
+  lay is 1/s² at each level's geometric middle. Read s as d/Δ: the lay is an angular size, its 1/s² that size's rate,
+  light's inverse square its square. A shared form with one origin, not a claim that the lay is light.
+  `hzn-plan.md` (+ `hzn/`, 10 Oct): standing on the outline is standing on a world. From a place on a circle the readings
+  are chords 2·sin φ; the corner is the radius, 30° below the horizon (on a ball 2/e of it); rising by e radii, the horizon
+  is √(2e), half a level per doubling (P1–P4 not killed). Draw's levels page agrees to its grain: P5 and run 2 killed at a
+  fixed grain; run 3, both grains doubled together, not killed.
+  `ref-plan.md` (+ `ref/ref.mjs`, 10 Oct): the corner as the reference sphere. Published radii: rocky worlds within a
+  hundredth of a level of their corner, giants a tenth (P4, P5 not killed). Wander's bodies (P1–P3 killed): one asteroid's
+  corner 1.3% off its ball; the Moon 0.25 levels (the real one 0.0165), Mars 0.135; the middle band, not the broad, holds
+  most relief in twelve bodies. Scaling `res/` relief to real levels is Tom's call.
+  `mag-plan.md` (+ `mag/mag.py`, 10 Oct): on the Hipparcos stars (HYG v3.8 from GitHub, sha256 in the plan; parallax
+  distance, V and spectral type only), light falls two levels per level of distance: G dwarfs 2.02, K0 giants 1.93 where
+  complete (P1–P3 not killed), 1.61 past the limit; K0 III scatters 1.4 levels (P4 killed).
+  `cnt-plan.md` (+ `cnt/cnt.py`, 10 Oct): star counts in levels on Hipparcos to V 7.3: about 1.2 levels of number per
+  level of light at every brightness, not the even spread's 1.5 (P1, P2 not killed at their bands' edges); plane and poles
+  alike, 1.229 and 1.227 (P3, P4 killed).
+  `gcn-plan.md` (+ `gcn/gcn.py`, 10 Oct): star counts within 100 pc on the Gaia Catalogue of Nearby Stars (VizieR
+  J/A+A/649/A6 table1c, from Tom; sha256 in the plan), kinds by colour on the main sequence. All four killed: the RUWE cut
+  removes more near stars (steeper counts, poles past the plane), and a fifth of G/K colours within 50 pc are white dwarfs.
+  Read after the run without the cut: 2.93–3.00 levels of number per level of distance for every kind, plane = poles.
+  `grd-plan.md` (10 Oct, predictions only): the ratio between levels in a measured reader, the grid cells' modules.
+  P1: a halving, √2 (area) or 2 (length), within 0.07; prior knowledge of the published means (~1.42, ~1.7) is stated in
+  the plan, so it runs only on per-animal data not yet opened (Tom to supply; candidates listed there).
+  `grd-landscape.md` (10 Oct, a reading; Tom: "lets just establish the boundries, see how we might slot in"): the
+  measured ratios, the coding theories (economy √e, nested codes) and the mechanism (Kang 2019), and SPN's slot as the
+  measure-free baseline 2^(1/D), which the coding theories depart from by their added measure; told apart in 1D and 3D.
+  `pol-plan.md` (+ `pol/pol.mjs`, 10 Oct): pool from inside (`pool.html`). Contact is h + v = 1 on the pair's two readings
+  (P1, P2 identities, not killed); one ball's own reading decides contact only when all balls are alike, the calibration
+  V = H (P3 not killed); played from inside in each ball's own size, the game equals the referee's to rounding, never 1e-3
+  apart in 8 s (P4); each ball's world about 4.5 levels deep (P5). Run 2: a cushion is the reader's own flip, contact at
+  the corner h = v = ½; a pocket is entered when it fills the view, v = 1 (P6–P8 not killed); the whole game from inside
+  equals the referee's to ~1e-15. Run 3, each ball reading the others late at speed c: the naive reader's error saturates
+  at ~a ball's radius until c ≈ 400, then falls as 1/c (P9 killed); carrying the image forward is 11–4,300× better (P10);
+  its error collapses as the lateness at contact drops to about one tick (post hoc, to be tested). Level of detail next.
+  `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
+  Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
+  the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
+  log₂(81)/k for a share in s^k (P5 killed). The corner holds where the light counted is a share (projected solid angle).
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far
@@ -207,6 +272,17 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
 - Still open: the ratio 2 between levels (binary branching is proved; the in-place lay being forced is deferred, SPN
   Appendix D); the weight on the sweep is a choice (SPN §14, "Burdens of proof").
 
+## Read this first: the physics comes first
+Since 10 Oct 2026 (Tom: "wanderer priority was user experience, not physics. the physics then became unexpextedly
+interesting. we should do the correct physics testing, UI is secondary or even not needed"):
+- **Real data or exact mathematics, never wander's world, as evidence.** The flying page and its bodies (`res/`) were made
+  for looks; they illustrate, they do not test. A correspondence is tested on published measurements, or on arithmetic
+  checked to the last digit (`plans/ref-plan.md`, run 1, is the example of what not to count).
+- **Prediction first, from the theory alone**, with the bridge from fill levels to amounts named (see "keep the case").
+- **No page needed.** A test is a plan, a script and an entry in the papers; a demo only where it helps to see.
+- **Data.** This environment cannot reach the astronomy archives (VizieR, CDS, ESA: blocked); GitHub and PyPI are
+  reachable. Record each dataset's source, licence and sha256 in its plan, and do not commit large data.
+
 ## Read this first: THE LAB GUIDE
 The labs have their own rules, written in `labs.html`. Read two comments
 before touching anything lab-related:
@@ -246,6 +322,10 @@ In short:
       and one level fewer seen per doubling of the grain; the shape crosses ring edges, its broad form fewer; with the size divided out
       the depth averages 0 on the corner; a body from res/ chosen in the combo box crosses ring edges, a non-.tvf file refused; a draw .tvf curve read
       from its centroid (a 5-pointed star's tip over its dip as drawn).
+  14. **walk.html:** 45° at d = V; far, v fills against a full h, near, h empties; steps per level V, 2V, 4V, …; steps left V·cot θ.
+  15. **pool.html:** a break played from inside: every contact on h + v = 1, one reading alone decides only with all balls alike, the game the referee's;
+      with cushions read as the ball's mirror image and pockets as filling the view, still the referee's game; read late (c = 50),
+      carrying the image forward beats taking it as now.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

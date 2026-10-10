@@ -1,0 +1,21 @@
+20477 Hipparcos stars brighter than V 7.3 with a distance
+  10% are nearer than 48 pc
+  25% are nearer than 89 pc
+  50% are nearer than 152 pc
+  75% are nearer than 245 pc
+  90% are nearer than 385 pc
+  within 100 pc: 29.2%
+luminous (M_V < 0, all seen to V 7.3 out to 288 pc): 7269; density by shell, relative to 50-100 pc:
+  50-100 pc: 1.00  (|z| > 100 pc among them: 0)
+  100-150 pc: 1.20  (|z| > 100 pc among them: 60)
+  150-200 pc: 0.81  (|z| > 100 pc among them: 215)
+  200-250 pc: 0.66  (|z| > 100 pc among them: 403)
+  250-288 pc: 0.54  (|z| > 100 pc among them: 375)
+the same, split by height: luminous stars by shell, |z| < 50 pc (the disc middle) and |z| > 50 pc
+   |z| < 50 50-100: 118  100-150: 319  150-200: 318  200-250: 321  250-288: 299
+   |z| > 50 50-100: 56  100-150: 248  150-200: 426  200-250: 681  250-288: 591
+  M_V -9 to -2:  1227 stars (6%), seen to 724-18197 pc
+  M_V -2 to +0:  6042 stars (30%), seen to 288-724 pc
+  M_V +0 to +2:  9260 stars (45%), seen to 115-288 pc
+  M_V +2 to +4:  3280 stars (16%), seen to 46-115 pc
+  M_V +4 to +9:   668 stars (3%), seen to 5-46 pc

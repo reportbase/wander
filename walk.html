@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The walk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    walk.html: the sweep as a walk (10 October 2026; Tom: "the sweep is is a walk from me to you, if you are close to me, i
+    can get to you, far away, you are increasinly difficult for me to get to you, and then acceleratingly difficult", then
+    "create a new one, focusing on the walking theme. You are vertical and I am horizontal. Show the sweep in terms of the
+    horizontal's walk to the vertical."). A standalone page like facing.html.
+
+    Keep the case. The geometry is the sweep in fill levels, h and v, 0 to 1. The walk is physics: amounts in my steps.
+      - I am the horizontal: I stand on the ground and my breadth H is one step (the unit of every amount here).
+      - You are the vertical: a height V, an amount, here V = 10 of my steps.
+      - d is the distance between us, in steps.
+    The bridge is the pair (your height V, the distance d): its reading s = V/d. The fill levels are then
+      v = min(1, s), h = min(1, 1/s): far off, v fills against a full h; past the corner, h empties against a full v.
+    The sweep's angle θ = atan(v/h) = atan(V/d) is the angle at which I look up at your top: 0° when you sit on my
+    horizon, 45° at the corner (d = V: the corner of this pair, set by amounts), 90° when I am at your foot looking up.
+    The facing is 2θ (facing.html).
+    The walk left is d = V·h/v = V·cot θ steps:
+      - before the corner (far), each level (a doubling of d) costs twice the steps of the next one in, so the steps
+        double level by level out from the corner ("increasingly difficult"), and the steps per degree of the sweep go as
+        V/sin²θ, about V/θ² far out ("acceleratingly difficult"); the far end, θ = 0, is never reached;
+      - past the corner (near), h = d/V: the walk is in proportion, one step one step's worth of h.
+    Links: ?d=640 (steps), ?walk=1. Test hook: window.__walk.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 260px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The walk</h1>
+    <p class="lede">I am the horizontal, you are the vertical, and the sweep is my walk to you. Far off, you sit low on my
+    horizon and every level nearer costs twice the steps of the one after it; near, past the corner, the walk is in
+    proportion. The sweep's angle is the angle at which I look up at you: 0° on the horizon, 45° at the corner, where the
+    distance equals your height, 90° at your foot.</p>
+    <div class="panel">
+        <div class="row">
+            <button id="walk">walk</button>
+            <button id="fast">×10</button>
+            <button id="far">start far</button>
+            <button id="corner">the corner</button>
+            <label for="dist" style="color:var(--dim)">distance</label>
+            <input id="dist" type="range" min="-3" max="8" step="0.01" value="6">
+        </div>
+        <canvas id="scene" height="220" style="margin-top:10px"></canvas>
+        <p class="cap">The ground. Me (gold, horizontal, one step wide) and you (teal, vertical, V = 10 steps tall). The sight line
+        to your top makes the sweep's angle θ; the footprints are equal steps already walked.</p>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="sweep" height="300"></canvas><p class="cap">The sweep in fill levels. Far off, v fills against a full h
+            (up the right edge); past the corner, h empties against a full v (along the top). The ray is θ; the ticks are
+            the levels, one doubling of distance apart.</p></div>
+            <div><canvas id="cost" height="300"></canvas><p class="cap">Steps left, against the sweep (θ from 0° to 90°). Each dot
+            is five steps of walking: spread out near you, bunching faster and faster toward the horizon.</p></div>
+        </div>
+        <div id="hud"></div>
+    </div>
+    <p class="note">Keep the case: h and v are fill levels, the geometry, and they have no scale. "Close" and "far" are
+    amounts, my steps against your height; the pair (V, d) is the bridge, and its corner, d = V, is set by those amounts.
+    The far end is never reached: as d grows without end, θ only approaches 0. Behind it: <i>Serial, Parallel and
+    Nowhere</i> §1 (the sweep, the facing) and <i>The inverse square</i>, "The law in SPN's words". Other demos:
+    <a href="facing.html">the facing</a>, <a href="levels.html">the levels</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), D = Math.PI / 180, V = 10;
+    // one reading of the walk at distance d (steps)
+    function at(d) {
+        const s = V / d, v = Math.min(1, s), h = Math.min(1, 1 / s), theta = Math.atan(s) / D;
+        return { d, s, h, v, theta, facing: 2 * theta, level: Math.log2(d / V), stepsLeft: V * h / v, side: d > V ? 'far' : d < V ? 'near' : 'corner' };
+    }
+    const stepsLeftAt = t => V / Math.tan(t * D);              // V·cot θ
+    const levelCost = k => V * 2 ** k;                          // steps to cross from d = V·2^(k+1) in to V·2^k
+    const levelTheta = k => Math.atan(2 ** -k) / D;             // θ where d = V·2^k
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +cv.getAttribute('height');
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, hh];
+    }
+    let d = V * 2 ** 6, start = d;                              // where I am, and where this walk began
+    const dOf = () => V * 2 ** +$('dist').value;
+    function draw() {
+        const r = at(d), atCorner = Math.abs(r.level) < 0.02, K = 8;
+        // ── the scene: true distances, fitted to the canvas ──
+        let [g, W, H] = fit($('scene'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        const span = Math.max(start, d, 1.3 * V) + V * 0.3, px = Math.min((W - 60) / span, (H - 70) / V), gy = H - 34, youX = W - 30;
+        const meX = youX - d * px;
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(10, gy); g.lineTo(W - 10, gy); g.stroke();
+        // footprints: every 10 steps already walked, from where this walk began
+        g.fillStyle = 'rgba(212,160,82,0.45)';
+        for (let x = start; x > d + 1e-9; x -= 10) { const fx = youX - x * px; if (fx > 10) g.fillRect(fx - 1, gy + 4, 2, 4); }
+        // the corner on the ground: d = V
+        g.fillStyle = 'rgba(212,160,82,0.7)'; g.fillRect(youX - V * px - 1, gy - 4, 2, 14);
+        g.font = '11px DM Mono, monospace'; g.fillText('d = V', youX - V * px - 16, gy + 24);
+        // you: the vertical
+        const yh = Math.max(1.5, V * px);
+        g.strokeStyle = '#8ce6cd'; g.lineWidth = 3; g.beginPath(); g.moveTo(youX, gy); g.lineTo(youX, gy - yh); g.stroke();
+        // me: the horizontal, one step wide
+        g.strokeStyle = '#d4a052'; g.lineWidth = 4; g.beginPath(); g.moveTo(meX - Math.max(3, px), gy); g.lineTo(meX, gy); g.stroke();
+        // the sight line and θ
+        g.strokeStyle = atCorner ? '#d4a052' : 'rgba(181,156,240,0.8)'; g.lineWidth = 1.2; g.setLineDash([4, 4]);
+        g.beginPath(); g.moveTo(meX, gy); g.lineTo(youX, gy - yh); g.stroke(); g.setLineDash([]);
+        g.fillStyle = '#8a8a96';
+        g.fillText(`me (H)`, Math.max(12, meX - 30), gy + 24); g.fillText('you (V)', youX - 56, Math.max(14, gy - yh - 6));
+        g.fillText(yh < 4 ? 'you are a speck on my horizon' : '', 12, 16);
+        // ── the sweep: fill levels on the unit square ──
+        [g, W, H] = fit($('sweep'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        const S = Math.min(W, H) - 70, ox = (W - S) / 2 - 10, oy = H - 34, P = (hh, vv) => [ox + hh * S, oy - vv * S];
+        g.strokeStyle = 'rgba(255,255,255,0.15)'; g.lineWidth = 1;
+        g.beginPath(); g.moveTo(...P(0, 0)); g.lineTo(...P(1, 0)); g.moveTo(...P(0, 0)); g.lineTo(...P(0, 1)); g.stroke();
+        g.strokeStyle = 'rgba(181,156,240,0.35)'; g.beginPath();
+        for (let i = 0; i <= 90; i++) { const q = P(Math.cos(i * D), Math.sin(i * D)); i ? g.lineTo(...q) : g.moveTo(...q); } g.stroke();
+        // the sweep's path: up the right edge (far), along the top (near)
+        g.strokeStyle = 'rgba(255,255,255,0.45)'; g.lineWidth = 2;
+        g.beginPath(); g.moveTo(...P(1, 0)); g.lineTo(...P(1, 1)); g.lineTo(...P(0, 1)); g.stroke();
+        // level ticks on the far side: d = V·2^k, v = 2^-k
+        g.fillStyle = '#8a8a96'; g.font = '11px DM Mono, monospace';
+        for (let k = 1; k <= K; k++) { const [x, y] = P(1, 2 ** -k); g.fillRect(x - 5, y, 10, 1.5); if (k <= 3) g.fillText(`${2 ** k}V`, x + 8, y + 4); }
+        for (let k = 1; k <= 4; k++) { const [x, y] = P(2 ** -k, 1); g.fillRect(x, y - 5, 1.5, 10); }
+        g.fillStyle = '#d4a052'; g.beginPath(); g.arc(...P(1, 1), 4, 0, 2 * Math.PI); g.fill();
+        g.fillText('corner, d = V', ...P(0.62, 1.06));
+        // the ray at θ and the point (h, v)
+        g.strokeStyle = 'rgba(140,230,205,0.7)'; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(...P(0, 0)); g.lineTo(...P(r.h, r.v)); g.stroke(); g.setLineDash([]);
+        g.fillStyle = atCorner ? '#d4a052' : '#8ce6cd'; g.beginPath(); g.arc(...P(r.h, r.v), 5, 0, 2 * Math.PI); g.fill();
+        g.fillStyle = '#8a8a96';
+        g.fillText('h (me)', ...P(0.42, -0.07)); g.fillText('v (you)', ...P(-0.13, 0.5));
+        g.fillText('far: on my horizon →', ...P(0.3, 0.04)); g.fillText('arrived', ...P(-0.04, 1.06));
+        // ── the cost: steps left against θ ──
+        [g, W, H] = fit($('cost'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        const x0 = 40, x1 = W - 14, y0 = H - 30, y1 = 18, top = 16 * V;
+        const X = t => x0 + (x1 - x0) * t / 90, Y = n => y0 - (y0 - y1) * Math.min(n, top) / top;
+        g.strokeStyle = 'rgba(255,255,255,0.15)'; g.lineWidth = 1; g.beginPath(); g.moveTo(x0, y1); g.lineTo(x0, y0); g.lineTo(x1, y0); g.stroke();
+        g.fillStyle = '#8a8a96'; g.font = '11px DM Mono, monospace';
+        g.fillText('0°', x0 - 6, y0 + 16); g.fillText('45°', X(45) - 10, y0 + 16); g.fillText('90°', x1 - 22, y0 + 16);
+        g.fillText(`${top}`, 4, y1 + 4); g.fillText('0', 26, y0 + 4); g.fillText('steps left', x0 + 60, y1 + 4);
+        // the corner
+        g.strokeStyle = 'rgba(212,160,82,0.4)'; g.beginPath(); g.moveTo(X(45), y1); g.lineTo(X(45), y0); g.stroke();
+        // the curve V·cot θ
+        g.strokeStyle = '#b59cf0'; g.lineWidth = 2; g.beginPath(); let first = true;
+        for (let i = 0; i <= 600; i++) { const t = 0.2 + i * (89.8 / 600), n = stepsLeftAt(t); if (n > top) continue;
+            first ? g.moveTo(X(t), Y(n)) : g.lineTo(X(t), Y(n)); first = false; }
+        g.stroke();
+        // dots every five steps of walking, from 640 steps in
+        g.fillStyle = 'rgba(212,160,82,0.75)';
+        for (let n = 5; n <= 64 * V; n += 5) { const t = Math.atan(V / n) / D; g.fillRect(X(t) - 1, y0 - 6, 2, 6); }
+        // level ticks along θ
+        g.fillStyle = 'rgba(255,255,255,0.35)';
+        for (let k = 1; k <= 4; k++) { const t = levelTheta(k); g.fillRect(X(t), y0 - 12, 1, 6); }
+        // where I am
+        const ty = Y(r.stepsLeft);
+        g.fillStyle = atCorner ? '#d4a052' : '#8ce6cd'; g.beginPath(); g.arc(X(r.theta), ty, 5, 0, 2 * Math.PI); g.fill();
+        if (r.stepsLeft > top) { g.fillStyle = '#8ce6cd'; g.fillText('↑ off the chart', X(r.theta) + 60, y1 + 20); }
+        // the readout
+        const lvl = r.level > 0 ? `level ${Math.ceil(r.level - 1e-9)} out from the corner; crossing it costs ${levelCost(Math.ceil(r.level - 1e-9) - 1).toFixed(0)} steps, twice the next one in`
+            : r.level < 0 ? 'past the corner: the walk is in proportion, h = d/V' : 'at the corner';
+        $('hud').textContent =
+            `distance d = ${d.toFixed(1)} steps   your height V = ${V} steps   s = V/d = ${r.s.toFixed(3)}\n` +
+            `fill levels (h, v) = (${r.h.toFixed(3)}, ${r.v.toFixed(3)})   θ = ${r.theta.toFixed(2)}°   facing 2θ = ${r.facing.toFixed(1)}°   (${r.side})\n` +
+            `steps left V·h/v = V·cot θ = ${r.stepsLeft.toFixed(1)}   ${lvl}\n` +
+            `steps per level out from the corner: ${[0, 1, 2, 3, 4, 5].map(k => levelCost(k)).join(', ')}, …   the horizon, θ = 0, is never reached`;
+    }
+    let walking = false, speed = 20, last = null;
+    function tick(now) {
+        if (walking) {
+            const dt = last === null ? 0 : (now - last) / 1000;
+            d = Math.max(V * 2 ** -3, d - speed * dt);
+            if (d <= V * 2 ** -3 + 1e-9) setWalking(false);
+            $('dist').value = Math.log2(d / V); draw();
+        }
+        last = now; requestAnimationFrame(tick);
+    }
+    function setWalking(on) { walking = on; $('walk').textContent = on ? 'stop' : 'walk'; $('walk').classList.toggle('on', on); }
+    $('walk').addEventListener('click', () => { if (!walking && d <= V * 2 ** -3 + 1e-9) { d = start = V * 2 ** 6; } setWalking(!walking); });
+    $('fast').addEventListener('click', () => { speed = speed === 20 ? 200 : 20; $('fast').classList.toggle('on', speed === 200); });
+    $('far').addEventListener('click', () => { setWalking(false); d = start = V * 2 ** 6; $('dist').value = 6; draw(); });
+    $('corner').addEventListener('click', () => { setWalking(false); d = V; $('dist').value = 0; draw(); });
+    $('dist').addEventListener('input', () => { setWalking(false); d = dOf(); start = Math.max(start, d); draw(); });
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search);
+    if (q.has('d')) { d = start = Math.min(V * 2 ** 8, Math.max(V * 2 ** -3, +q.get('d') || V)); $('dist').value = Math.log2(d / V); }
+    draw(); requestAnimationFrame(tick);
+    if (q.get('walk') === '1') setWalking(true);
+
+    window.__walk = { at, stepsLeftAt, levelCost, levelTheta, V };
+})();
+</script>
+</body>
+</html>

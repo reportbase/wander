@@ -1,0 +1,48 @@
+main-sequence band, no RUWE cut: 207958 stars within 100 pc
+
+1. local slope of log2 N(<d) by distance, no RUWE cut (3 = even spread)
+  G        10-25: 3.00  25-35: 3.05  35-50: 3.06  50-70: 2.93  70-100: 2.96
+  K        10-25: 2.81  25-35: 2.90  35-50: 3.07  50-70: 2.95  70-100: 2.93
+  early M  10-25: 3.02  25-35: 2.75  35-50: 3.01  50-70: 2.93  70-100: 2.94
+  late M   10-25: 3.28  25-35: 2.94  35-50: 2.95  50-70: 2.91  70-100: 2.91
+
+2. by light, no RUWE cut, G_max - 3 to G_max (1.5 = even spread)
+  G        G_max 8.31: 1.460
+  K        G_max 10.12: 1.519
+  early M  G_max 13.05: 1.492
+  late M   G_max 14.44: 1.498
+
+3. density against height z, main-sequence band, cylinder R < 60 pc (stars per 1000 pc^3)
+  z  -80 to  -70:   47.71
+  z  -70 to  -60:   46.69
+  z  -60 to  -50:   48.29
+  z  -50 to  -40:   48.83
+  z  -40 to  -30:   50.93
+  z  -30 to  -20:   52.90
+  z  -20 to  -10:   54.32
+  z  -10 to   +0:   52.22
+  z   +0 to  +10:   52.64
+  z  +10 to  +20:   50.62
+  z  +20 to  +30:   51.11
+  z  +30 to  +40:   50.66
+  z  +40 to  +50:   49.69
+  z  +50 to  +60:   47.29
+  z  +60 to  +70:   47.01
+  z  +70 to  +80:   46.61
+  mean z of the stars in |z| < 80 (0 if the Sun sits at the middle): -0.20 pc
+  |z| <= 25 mean 52.30; |z| >= 55 mean 47.27
+    an exponential with scale 100 pc would give outer/inner 0.607
+    an exponential with scale 200 pc would give outer/inner 0.779
+    an exponential with scale 300 pc would give outer/inner 0.846
+    an exponential with scale 500 pc would give outer/inner 0.905
+    measured 0.904
+
+4. density in the plane slab |z| < 20, by distance in the plane R (stars per 1000 pc^3)
+  R   0- 20:   52.46
+  R  20- 40:   52.18
+  R  40- 60:   52.61
+  R  60- 80:   50.95
+  R  80- 98:   51.01
+   toward the Galactic centre and away (x > 0 is toward the centre), |z| < 20, 40 < R < 98:
+    toward: 52.02
+    away: 50.76

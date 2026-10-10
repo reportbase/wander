@@ -1,0 +1,5 @@
+G dwarfs within 23 pc: 83; K0 giants within 140 pc: 535 (|b| < 30: 272, |b| > 30: 263; V <= 7.3: 432)
+P5: not killed. G dwarfs, 8-23 pc: 3.471 levels of number per level of distance; 3 for an even spread
+P6: KILLED. K0 giants, 40-140 pc, all sky: 2.583
+P7: KILLED. K0 giants, 40-140 pc: |b| < 30 2.617, |b| > 30 2.555, difference 0.062
+P8: KILLED. K0 giants within 140 pc and V <= 7.3, by light over V 3-7.3: 1.096 levels of number per level of light; 1.5 for an even spread

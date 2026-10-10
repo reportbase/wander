@@ -2517,6 +2517,21 @@ Neither half helps alone; together they cut the error by a factor of four, as in
     = h, which exacly what this demo shows. which is also the baseline from which depth is calcualted."). Over every facing
     the corner h = v is the circle s = 1 between near and far; it is the unit circle a shape's depth is its difference
     from. With the size divided out, depth in each direction is log₂ s(θ), levels past the corner (SPN §1).
+400. **The in-place lay has the inverse square's form** (Oct 10; Tom: "yes, #1"; ISQ, `plans/isq-plan.md`, run 1, all five
+    not killed). Past the corner the lay is 2 − 1/s, proportion in h/v, so its room per unit s is 1/s², the flip's
+    Jacobian. Reading s as d/Δ (the bridge, amounts): the lay places a thing at its angular size; its 1/s² is how fast
+    that shrinks, light's 1/d² its square (SPN §1).
+401. **Standing on the outline is standing on a world** (Oct 10; HZN, `plans/hzn-plan.md`). From a place on a circle the
+    readings are chords 2·sin φ: home is the horizon, read in proportion; the corner (the geometric mean) is the radius,
+    30° below the horizon; on a ball, 2/e of it; rising by e radii moves the horizon to √(2e), half a level per
+    doubling, the classical √(2·R·h) once R is given (SPN §1).
+402. **The corner as the reference sphere** (Oct 10; REF, `plans/ref-plan.md`). Geodesy's heights against a world's own
+    sphere are depth from the corner, in amounts. Real rocky worlds are within a hundredth of a level of it (Earth, relief
+    and flattening, 0.0093), giants about a tenth; wander's Moon spans 0.25 levels, fifteen times the real one (SPN §1).
+403. **Two levels of light per level of distance, on real stars** (Oct 10; MAG, `plans/mag-plan.md`). On the Hipparcos stars,
+    distance from parallax and kind from the spectrum: G dwarfs lose 2.02 levels of light per level of distance, K0 giants
+    1.93 where complete, 1.61 past the catalogue's limit; K0 III's spread is 1.4 levels, the width of the known-kind bridge
+    (SPN §1).
 
 All in *Serial, Parallel and Nowhere* §1 and the opening warning; the rulings under review and the physics audit in
 `plans/vh-rulings-review.md` and `plans/physics-vh-audit.md`.

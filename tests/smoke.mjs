@@ -306,6 +306,31 @@ try {
   if (lb.name !== 'asteroid grey' || !(lb.cross > 0) || Math.abs(lb.meanDepth) > 1e-3 || !lb.refused || !lb.curve || Math.abs(lb.tip / lb.dip - 145 / 55) > 0.05 || !lb.oneCh) failures.push(`[levels.html, a body] ${JSON.stringify(lb)}`);
   console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html, a body from res/ (${lb.name}: crosses ${lb.cross} ring edges at s₀ = 4; a non-.tvf file refused; a draw .tvf curve read from its centroid, tip/dip ${(lb.tip / lb.dip).toFixed(3)} of 2.636)`);
 
+  // ── 14. walk.html: the sweep as my walk to you: 45° at d = V, levels doubling in steps, the near side in proportion ──
+  current = 'walk.html';
+  const before14 = failures.length;
+  await page.goto(new URL('walk.html?d=40', base).href, { waitUntil: 'load' });
+  const wk = await page.evaluate(() => { const w = __walk, V = w.V;
+    return { V, c: w.at(V), far: w.at(4 * V), near: w.at(V / 4), costs: [0, 1, 2, 3].map(w.levelCost),
+      cot: [10, 30, 45, 60, 80].map(t => w.stepsLeftAt(t) - V / Math.tan(t * Math.PI / 180)), lt: w.levelTheta(1) }; });
+  if (Math.abs(wk.c.theta - 45) > 1e-9 || wk.c.h !== 1 || wk.c.v !== 1 || wk.far.h !== 1 || Math.abs(wk.far.v - 0.25) > 1e-12 ||
+      wk.near.v !== 1 || Math.abs(wk.near.h - 0.25) > 1e-12 || Math.abs(wk.far.stepsLeft - 4 * wk.V) > 1e-9 ||
+      wk.costs.some((c, k) => c !== wk.V * 2 ** k) || wk.cot.some(x => Math.abs(x) > 1e-9) || Math.abs(wk.lt - Math.atan(0.5) * 180 / Math.PI) > 1e-9)
+    failures.push(`[walk.html] ${JSON.stringify(wk)}`);
+  console.log(`${failures.length === before14 ? 'ok  ' : 'FAIL'} walk.html (45° at d = V; far, v fills against a full h; near, h empties; steps per level ${wk.costs.join(', ')}; steps left V·cot θ)`);
+
+  // ── 15. pool.html: contact read from inside is h + v = 1, and the game from inside is the referee's ──
+  current = 'pool.html';
+  const before15 = failures.length;
+  await page.goto(new URL('pool.html', base).href, { waitUntil: 'load' });
+  const pq = await page.evaluate(() => { const r = __pool.run(4, { seconds: 3 }), e = __pool.run(4, { seconds: 3, heavy: false }), w = __pool.run(2, { seconds: 3, walls: 'inside' }),
+    ln = __pool.runLate(4, { c: 50, mode: 'naive', seconds: 1 }), lc = __pool.runLate(4, { c: 50, mode: 'carry', seconds: 1 }); return { r, e, w, ln, lc }; });
+  if (pq.r.p1bad || pq.r.p2bad || pq.e.p3wrong || !(pq.r.p3wrong > 0) || !(pq.r.contacts > 5) || !(pq.r.diffAtFirst < 1e-9) || pq.r.diverge != null ||
+      pq.w.p6bad || pq.w.p7bad || !(pq.w.p6checks > 0) || pq.w.firstRail == null || !(pq.w.diffAtRail < 1e-9) || pq.w.diverge != null ||
+      !(pq.lc.E < pq.ln.E / 4))
+    failures.push(`[pool.html] ${JSON.stringify(pq)}`);
+  console.log(`${failures.length === before15 ? 'ok  ' : 'FAIL'} pool.html (${pq.r.contacts} contacts, every one on h + v = 1; cushions read as the ball's own mirror image; from inside and from nowhere the same game)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
