@@ -78,7 +78,8 @@ Google Fonts load from outside:
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
   reads each other's direction and v = r_b/d, is told the other's reading h = r_a/d, touches at h + v = 1 (the line of
   `facing.html`; equal balls at the corner, 60° across), and works in its own size (size ratio v/h, masses (v/h)³, one
-  material). Cushions, pockets and the clock still unsituated, named. Panels: the table, the chosen ball's pairs as (h, v), its
+  material). Run 2: cushions read as the ball's own mirror image (v = r/(2·gap) = h, contact at the corner), pockets
+  entered when they fill the view (v > 1); only one integrator and the clock unsituated, named; `?cushions=referee`. Panels: the table, the chosen ball's pairs as (h, v), its
   view round the turn. `?break=0..9&heavy=0`; hook `window.__pool` (`run(i, opts)`, the POL measures).
 - `thin.html`, `ladder.html`, `sky.html`: **the physics correspondence** (9 Oct 2026, Tom: "create multiple demos that
   explain the physics correspndance"), standalone pages like `dial.html`. `thin.html`: the same signal, a smaller share
@@ -200,7 +201,9 @@ Google Fonts load from outside:
   `pol-plan.md` (+ `pol/pol.mjs`, 10 Oct): pool from inside (`pool.html`). Contact is h + v = 1 on the pair's two readings
   (P1, P2 identities, not killed); one ball's own reading decides contact only when all balls are alike, the calibration
   V = H (P3 not killed); played from inside in each ball's own size, the game equals the referee's to rounding, never 1e-3
-  apart in 8 s (P4); each ball's world about 4.5 levels deep (P5). Cushions, delay and level of detail are next.
+  apart in 8 s (P4); each ball's world about 4.5 levels deep (P5). Run 2: a cushion is the reader's own flip, contact at
+  the corner h = v = ½; a pocket is entered when it fills the view, v = 1 (P6–P8 not killed); the whole game from inside
+  equals the referee's to ~1e-15. Delay (each ball's own clock) and level of detail are next.
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
@@ -317,7 +320,8 @@ In short:
       the depth averages 0 on the corner; a body from res/ chosen in the combo box crosses ring edges, a non-.tvf file refused; a draw .tvf curve read
       from its centroid (a 5-pointed star's tip over its dip as drawn).
   14. **walk.html:** 45° at d = V; far, v fills against a full h, near, h empties; steps per level V, 2V, 4V, …; steps left V·cot θ.
-  15. **pool.html:** a break played from inside: every contact on h + v = 1, one reading alone decides only with all balls alike, the game the referee's.
+  15. **pool.html:** a break played from inside: every contact on h + v = 1, one reading alone decides only with all balls alike, the game the referee's;
+      with cushions read as the ball's mirror image and pockets as filling the view, still the referee's game.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

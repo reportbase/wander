@@ -1,0 +1,25 @@
+20 breaks, cushions and pockets read from inside: 2392224 cushion readings, 3588432 pocket readings
+P6: not killed. cushion: centre within r of the line against the image's h + v > 1 (h = v): 0 disagreements
+P7: not killed. pocket: d < POCK against v > 1: 0 disagreements
+P8: not killed. the whole game from inside against the referee:
+  heavy break 0: first cushion at 0.800 s, differ 8.95e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 1: first cushion at 0.800 s, differ 2.22e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 2: first cushion at 0.817 s, differ 4.44e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 3: first cushion at 0.817 s, differ 1.78e-15 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 4: first cushion at 0.833 s, differ 2.02e-15 then; past 1e-3 at never (8 s); sunk 0 / 0
+  heavy break 5: first cushion at 0.833 s, differ 2.02e-15 then; past 1e-3 at never (8 s); sunk 0 / 0
+  heavy break 6: first cushion at 0.817 s, differ 2.22e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 7: first cushion at 0.817 s, differ 4.44e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 8: first cushion at 0.800 s, differ 8.88e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 9: first cushion at 0.800 s, differ 8.95e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 0: first cushion at 0.800 s, differ 8.95e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 1: first cushion at 0.800 s, differ 2.22e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 2: first cushion at 0.817 s, differ 4.44e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 3: first cushion at 0.817 s, differ 1.78e-15 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 4: first cushion at 0.833 s, differ 2.02e-15 then; past 1e-3 at never (8 s); sunk 0 / 0
+  equal break 5: first cushion at 0.833 s, differ 2.02e-15 then; past 1e-3 at never (8 s); sunk 0 / 0
+  equal break 6: first cushion at 0.817 s, differ 2.22e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 7: first cushion at 0.817 s, differ 4.44e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 8: first cushion at 0.800 s, differ 2.22e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 9: first cushion at 0.800 s, differ 8.95e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  diverged past 1e-3: 0 of 20

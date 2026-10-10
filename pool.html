@@ -19,9 +19,11 @@
         h + v = 1, the straight line of facing.html; equal balls touch at the corner, h = v = ½ (60° across). Each ball
         works in its own size: the other's size is r_a·v/h, the other's own-units motion times v/h, the mass ratio (v/h)³
         (one material: the bridge). It moves itself by its own velocity.
-    Unsituated still, and named: the cushions and pockets (a straight cushion has no size, so no reading r/d), the
-    cloth's slowing applied by one integrator, one clock with no signal delay.
-    Links: ?break=0..9, ?heavy=0. Test hook: window.__pool (run(i, opts) → the plan's measures).
+    Run 2 (POL): the cushions and pockets read from inside too. A cushion has no size, so no reading r/d; meeting it is
+    meeting one's own mirror image (an equal ball, mirrored, at twice the gap), v = r/(2·gap) = h, contact at the corner.
+    A pocket takes a ball when it fills its whole view, v = POCK/d > 1. Unsituated still, and named: one integrator moving
+    each ball by its own velocity, one clock, no signal delay.
+    Links: ?break=0..9, ?heavy=0, ?cushions=referee. Test hook: window.__pool (run(i, opts) → the plan's measures).
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -59,6 +61,7 @@
             <select id="which" aria-label="which break"></select>
             <button id="heavy" class="on">heavy ball</button>
             <button id="show">show: from inside</button>
+            <button id="walls" class="on">cushions: from inside</button>
         </div>
         <canvas id="table" height="340" style="margin-top:10px"></canvas>
         <p class="cap">The table played from inside. Tap a ball to stand on it: lines to the others, coloured by how many levels
@@ -74,8 +77,9 @@
     </div>
     <p class="note">Keep the case: h and v are readings, ratios of a size to a distance, from 0 to 1; contact needs no unit.
     Speeds and impulses are amounts, so each ball works in its own size, and the masses come from the sizes by one material
-    (the bridge). Still played from nowhere, and named so: the cushions and pockets (a straight cushion fills half the view at
-    any distance, so it has no reading r/d), and one clock with no delay. Plan and runs: <code>plans/pol-plan.md</code>. Other
+    (the bridge). A straight cushion fills half the view at any distance, so it has no reading r/d; meeting it is meeting
+    your own mirror image, and contact is again at the corner, with you as both parties. A pocket takes a ball when it fills
+    the ball's whole view. Still played from nowhere, and named so: one clock, and no delay. Plan and runs: <code>plans/pol-plan.md</code>. Other
     demos: <a href="facing.html">the facing</a>, <a href="walk.html">the walk</a>, <a href="demos.html">all demos</a>.</p>
 </main>
 <script>
@@ -102,7 +106,7 @@
     const strike = (B, i) => { const a = angleOf(i) * D; B[0].vx = SPEED * Math.cos(a); B[0].vz = SPEED * Math.sin(a); };
 
     // ══ each ball's own motion, the cloth, and (unsituated, named) the pockets and cushions ══
-    function ownAndWalls(B, h) {
+    function ownAndWalls(B, h, onRail) {
         for (const b of B) {
             if (b.sunk) continue;
             const sp = Math.hypot(b.vx, b.vz);
@@ -110,6 +114,7 @@
             b.x += b.vx * h; b.z += b.vz * h;
             for (const [px, pz] of POCKETS) if (Math.hypot(b.x - px, b.z - pz) < POCK) b.sunk = true;
             if (b.sunk) continue;
+            if (onRail && (b.x < -LX / 2 + b.r || b.x > LX / 2 - b.r || b.z < -LZ / 2 + b.r || b.z > LZ / 2 - b.r)) onRail(b);
             if (b.x < -LX / 2 + b.r) { b.x = -LX / 2 + b.r; b.vx = -b.vx * E_RAIL; }
             if (b.x > LX / 2 - b.r) { b.x = LX / 2 - b.r; b.vx = -b.vx * E_RAIL; }
             if (b.z < -LZ / 2 + b.r) { b.z = -LZ / 2 + b.r; b.vz = -b.vz * E_RAIL; }
@@ -141,13 +146,13 @@
     function image(a, b) { const dx = b.x - a.x, dz = b.z - a.z, d = Math.hypot(dx, dz); return { n: [dx / d, dz / d], v: b.r / d }; }
     // What a does with it: everything in its own size (its radius, its H). Its own motion in its own units: u = vel / r.
     // The other reports its motion in its own units, and a converts it by the size ratio v/h.
-    function respond(a, ia, ib, ub) {   // ia: a's image of b; ib: b's image of a (b's reading h, told to a)
+    function respond(a, ia, ib, ub, e = E_BALL) {   // ia: a's image of b; ib: b's image of a (b's reading h, told to a)
         const v = ia.v, h = ib.v, n = ia.n, ua = [a.vx / a.r, a.vz / a.r];
         const over = (h + v - 1) / (2 * h);                   // half the overlap, in a's radii: d = 1/h, r_a + r_b = 1 + v/h
         const ubA = [ub[0] * v / h, ub[1] * v / h];           // the other's motion in a's units
         const vr = (ubA[0] - ua[0]) * n[0] + (ubA[1] - ua[1]) * n[1];
         let du = [0, 0];
-        if (vr < 0) { const k = (1 + E_BALL) * vr / (1 + (h / v) ** 3); du = [k * n[0], k * n[1]]; }   // mass ratio (h/v)³
+        if (vr < 0) { const k = (1 + e) * vr / (1 + (h / v) ** 3); du = [k * n[0], k * n[1]]; }   // mass ratio (h/v)³
         return { step: [-over * n[0], -over * n[1]], du, hit: vr < 0 };   // in a's own units: move back, change speed
     }
     function situatedPairs(B, log) {
@@ -164,15 +169,49 @@
             if (log && ra.hit) log(A, Bb, null, true, ia.v, ib.v);
         }
     }
-    const stepRef = (B, log) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { ownAndWalls(B, h); refereePairs(B, log); } };
-    const stepSit = (B, log) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { ownAndWalls(B, h); situatedPairs(B, log); } };
+    // ── run 2: the cushions and pockets, read from inside ──
+    // A cushion has no size, so no reading r/d; meeting it is meeting one's own mirror image, an equal ball moving
+    // mirrored at twice the gap. What arrives (the world's side): the image's direction and v = r/(2·gap). The image reads
+    // the ball the same, so h = v, and contact is h + v = 1 at the corner. A pocket arrives as v = POCK/d: the ball is in it
+    // when it fills the whole view.
+    const CUSHIONS = [[-1, 0, b => b.x + LX / 2], [1, 0, b => LX / 2 - b.x], [0, -1, b => b.z + LZ / 2], [0, 1, b => LZ / 2 - b.z]];
+    const imageInCushion = (b, c) => { const gap = c[2](b); return { n: [c[0], c[1]], v: gap > 0 ? b.r / (2 * gap) : Infinity }; };
+    const imageOfPocket = (b, p) => ({ v: POCK / Math.hypot(b.x - p[0], b.z - p[1]) });
+    function ownAndWallsInside(B, h, log) {
+        for (const b of B) {
+            if (b.sunk) continue;
+            const sp = Math.hypot(b.vx, b.vz);   // its own motion, slowed by the cloth
+            if (sp > 0) { const ns = Math.max(0, sp - MU * h); b.vx *= ns / sp; b.vz *= ns / sp; }
+            b.x += b.vx * h; b.z += b.vz * h;
+            for (const p of POCKETS) {
+                const iv = imageOfPocket(b, p);
+                if (log) log.pocket(Math.hypot(b.x - p[0], b.z - p[1]) < POCK, iv.v);
+                if (iv.v > 1) b.sunk = true;     // the pocket fills its whole view
+            }
+            if (b.sunk) continue;
+            for (const c of CUSHIONS) {
+                const im = imageInCushion(b, c), u = [b.vx / b.r, b.vz / b.r], un = u[0] * im.n[0] + u[1] * im.n[1];
+                if (log) log.cushion(c[2](b) < b.r, im.v);
+                if (!(im.v + im.v > 1)) continue;        // h + v = 1, with h = v: itself
+                const ui = [u[0] - 2 * un * im.n[0], u[1] - 2 * un * im.n[1]];   // its image moves mirrored
+                const r = respond(b, im, im, ui, E_RAIL);
+                b.x += r.step[0] * b.r; b.z += r.step[1] * b.r; b.vx += r.du[0] * b.r; b.vz += r.du[1] * b.r;
+            }
+        }
+    }
+    const stepRef = (B, log, onRail) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { ownAndWalls(B, h, onRail); refereePairs(B, log); } };
+    const stepSit = (B, log, inside, wlog) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { inside ? ownAndWallsInside(B, h, wlog) : ownAndWalls(B, h); situatedPairs(B, log); } };
 
     // ══ the plan's run: one break, both tables in lockstep, every measure of plans/pol-plan.md ══
     function run(i, opts = {}) {
-        const heavy = opts.heavy !== false, T = opts.seconds || 8, frames = Math.round(T / FRAME);
+        const heavy = opts.heavy !== false, T = opts.seconds || 8, frames = Math.round(T / FRAME), inside = opts.walls === 'inside';
         const R = rack(heavy), S = rack(heavy); strike(R, i); strike(S, i);
         const out = { i, heavy, p1bad: 0, p1near: 0, p2bad: 0, contacts: 0, p3wrong: 0, firstContact: null, diffAtFirst: null,
-            diffHalf: 0, diverge: null, maxLevelEq: 0, rackMedian: null, pairs: 0 };
+            diffHalf: 0, diverge: null, maxLevelEq: 0, rackMedian: null, pairs: 0,
+            inside, p6bad: 0, p6checks: 0, p7bad: 0, p7checks: 0, firstRail: null, diffAtRail: null, sunkRef: 0, sunkSit: 0 };
+        const wlog = { cushion: (touch, v) => { out.p6checks++; if (touch !== (v + v > 1) && Math.abs(2 * v - 1) > 1e-12) out.p6bad++; },
+            pocket: (inPocket, v) => { out.p7checks++; if (inPocket !== (v > 1) && Math.abs(v - 1) > 1e-12) out.p7bad++; } };
+        const onRail = () => { if (out.firstRail == null) out.firstRail = t; };
         // the rack's levels before the break
         const L0 = []; for (let a = 0; a < R.length; a++) for (let b = a + 1; b < R.length; b++) {
             const d = Math.hypot(R[a].x - R[b].x, R[a].z - R[b].z); L0.push(Math.log2(d / (R[a].r + R[b].r))); }
@@ -196,13 +235,15 @@
         };
         const diff = () => Math.max(...R.map((b, k) => (b.sunk || S[k].sunk) ? (b.sunk === S[k].sunk ? 0 : Infinity) : Math.hypot(b.x - S[k].x, b.z - S[k].z)));
         for (let f = 0; f < frames; f++) {
-            const firstBefore = out.firstContact;
-            stepRef(R, refLog); stepSit(S); t += FRAME; sub += SUB;
+            const firstBefore = out.firstContact, railBefore = out.firstRail;
+            stepRef(R, refLog, onRail); stepSit(S, null, inside, wlog); t += FRAME; sub += SUB;
             const dd = diff();
             if (firstBefore == null && out.firstContact != null) out.diffAtFirst = dd;
+            if (railBefore == null && out.firstRail != null) out.diffAtRail = dd;
             if (t <= 0.5 + 1e-9) out.diffHalf = Math.max(out.diffHalf, dd);
             if (out.diverge == null && dd > 1e-3) out.diverge = t;
         }
+        out.sunkRef = R.filter(b => b.sunk).length; out.sunkSit = S.filter(b => b.sunk).length;
         return out;
     }
 
@@ -284,13 +325,13 @@
         $('hud').textContent =
             `t = ${t.toFixed(2)} s   ${showSit ? 'shown: the table played from inside' : 'shown: the referee, from nowhere'}   contacts so far ${contacts}\n` +
             `the two tables differ by at most ${lastDiff.toExponential(2)} (rounding only: the same game, played from inside)\n` +
-            (me ? `around ${me.cue ? 'the white' : me.n === 'H' ? 'the heavy ball' : 'ball ' + me.n}, by levels from touching: touching ${near[0]}, within 1 level ${near[1]}, 2 ${near[2]}, 3 ${near[3]}, 4 ${near[4]}, more ${near[5]}` : '');
+            (me ? `around ${me.cue ? 'the white' : me.n === 'H' ? 'the heavy ball' : 'ball ' + me.n}, by levels from touching: touching ${near[0]}, within 1 level ${near[1]}, 2 ${near[2]}, 3 ${near[3]}, 4 ${near[4]}, 5 ${near[5]}` : '');
     }
     let last = null;
     function tick(now) {
         if (playing) {
             const steps = last == null ? 1 : Math.min(4, Math.max(1, Math.round((now - last) / 1000 / FRAME)));
-            for (let k = 0; k < steps; k++) { stepRef(REF, (A, B, d, hit) => { if (hit) contacts++; }); stepSit(SIT); t += FRAME; }
+            for (let k = 0; k < steps; k++) { stepRef(REF, (A, B, d, hit) => { if (hit) contacts++; }); stepSit(SIT, null, wallsInside); t += FRAME; }
             lastDiff = Math.max(...REF.map((b, k) => (b.sunk || SIT[k].sunk) ? 0 : Math.hypot(b.x - SIT[k].x, b.z - SIT[k].z)));
             draw();
         }
@@ -300,6 +341,10 @@
     $('brk').addEventListener('click', () => { which = +$('which').value; reset(true); playing = true; $('play').textContent = 'pause'; });
     $('which').addEventListener('change', () => { which = +$('which').value; reset(true); });
     $('heavy').addEventListener('click', () => { heavyOn = !heavyOn; $('heavy').classList.toggle('on', heavyOn); reset(true); });
+    let wallsInside = new URLSearchParams(location.search).get('cushions') !== 'referee';
+    $('walls').classList.toggle('on', wallsInside); $('walls').textContent = 'cushions: ' + (wallsInside ? 'from inside' : 'the referee');
+    $('walls').addEventListener('click', () => { wallsInside = !wallsInside; $('walls').classList.toggle('on', wallsInside);
+        $('walls').textContent = 'cushions: ' + (wallsInside ? 'from inside' : 'the referee'); reset(true); });
     $('show').addEventListener('click', () => { showSit = !showSit; $('show').textContent = 'show: ' + (showSit ? 'from inside' : 'the referee'); draw(); });
     $('table').addEventListener('click', e => {
         if (!tableMap) return; const r = $('table').getBoundingClientRect(), x = (e.clientX - r.left - tableMap.ox) / tableMap.sc, z = (e.clientY - r.top - tableMap.oy) / tableMap.sc;
@@ -310,7 +355,7 @@
     $('heavy').classList.toggle('on', heavyOn);
     reset(true); draw(); requestAnimationFrame(tick);
 
-    window.__pool = { run, rack, strike, angleOf, image, respond, R0, R_HEAVY };
+    window.__pool = { run, rack, strike, angleOf, image, respond, imageInCushion, imageOfPocket, R0, R_HEAVY };
 })();
 </script>
 </body>

@@ -182,3 +182,55 @@ own act) and the one clock.
   even if it is already moving away (as after a push from another ball); the image responds only when closing. I
   expect this to make at least one of the 20 breaks diverge. If any do, the cause is to be named from the run, not
   guessed.
+
+Run 2 output (`node plans/pol/pol2.mjs`, in `plans/pol/pol-run2.txt`):
+
+```
+20 breaks, cushions and pockets read from inside: 2392224 cushion readings, 3588432 pocket readings
+P6: not killed. cushion: centre within r of the line against the image's h + v > 1 (h = v): 0 disagreements
+P7: not killed. pocket: d < POCK against v > 1: 0 disagreements
+P8: not killed. the whole game from inside against the referee:
+  heavy break 0: first cushion at 0.800 s, differ 8.95e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 1: first cushion at 0.800 s, differ 2.22e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 2: first cushion at 0.817 s, differ 4.44e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 3: first cushion at 0.817 s, differ 1.78e-15 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 4: first cushion at 0.833 s, differ 2.02e-15 then; past 1e-3 at never (8 s); sunk 0 / 0
+  heavy break 5: first cushion at 0.833 s, differ 2.02e-15 then; past 1e-3 at never (8 s); sunk 0 / 0
+  heavy break 6: first cushion at 0.817 s, differ 2.22e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 7: first cushion at 0.817 s, differ 4.44e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 8: first cushion at 0.800 s, differ 8.88e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  heavy break 9: first cushion at 0.800 s, differ 8.95e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 0: first cushion at 0.800 s, differ 8.95e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 1: first cushion at 0.800 s, differ 2.22e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 2: first cushion at 0.817 s, differ 4.44e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 3: first cushion at 0.817 s, differ 1.78e-15 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 4: first cushion at 0.833 s, differ 2.02e-15 then; past 1e-3 at never (8 s); sunk 0 / 0
+  equal break 5: first cushion at 0.833 s, differ 2.02e-15 then; past 1e-3 at never (8 s); sunk 0 / 0
+  equal break 6: first cushion at 0.817 s, differ 2.22e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 7: first cushion at 0.817 s, differ 4.44e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 8: first cushion at 0.800 s, differ 2.22e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  equal break 9: first cushion at 0.800 s, differ 8.95e-16 then; past 1e-3 at never (8 s); sunk 1 / 1
+  diverged past 1e-3: 0 of 20
+```
+
+- **P6 not killed.** Over 2.39 million cushion readings, the referee's test and the mirror image's h + v > 1 never
+  disagree. Every cushion contact is at h = v, the corner, with the ball as both parties.
+- **P7 not killed.** Over 3.59 million pocket readings, d < POCK and v > 1 never disagree.
+- **P8 not killed.** At each break's first cushion contact (0.80–0.83 s), the two tables differ by at most 2e-15.
+  *The expectation was wrong.* No break came 1e-3 apart in 8 s. The known difference in the rules (the referee reversing
+  a ball already moving away from a cushion) never came into play. Every break sank the same balls on both tables.
+
+## Reading of run 2 (not ruled)
+
+- **An edge is where a reader meets itself.** A straight cushion has no size, so no reading r/d. But striking it is
+  meeting one's own mirror image, and that pair has a reading: v = r/(2·gap), the same both ways. So contact with an
+  edge is the corner, h = v = ½, with the reader as both parties. Of the three kinds of thing on the table:
+  - another ball is a pair on its own ray;
+  - an edge is the pair of a reader and its flip, always at the corner;
+  - a pocket is not a party at all. It is a place, entered when it fills the whole view, v = 1.
+- **The table now runs from inside entirely,** except one integrator moving each ball by its own velocity, and one
+  clock. Played so, it is the same game as the view from nowhere, to about 1e-15, over 20 breaks of 8 s. In this
+  simulation, the unsituated description is not needed to play pool. It serves as a referee.
+- **What is left names the next step: time.** Each ball should read the others late, by their distance, as "Pool from
+  Somewhere" does for its reader, and each ball should keep its own clock. A contact read late is a contact missed:
+  how far ahead a ball must read, in levels, is the question.
