@@ -29,10 +29,12 @@
     log₂ s(θ) levels in each direction, outward past the corner and inward by the flip, shaded in two colours.
     Shapes from files (Tom, 10 October: "add the ablity load a tvf file. add a combo box let the user select the shape to
     display"): the combo box holds the built-in perturbed circle and the suns, planets, moons and asteroids in res/; "load a
-    file…" reads any .tvf3d (the 3d studio's format: r(θ, h) = Σₙ cos(nπh) Σₘ (Aaₙₘ cos mθ + Abₙₘ sin mθ)). A 3d field is cut at
+    file…" reads a .tvf curve (the draw tool's format, draw.html parseTvfText: "TVF W H C" with C = 2, rows of x and y leaves
+    at (k + ½)·2π/W, presented by the periodic cardinal kernel; read from the curve's centroid, the nearest wall in each
+    direction, the largest curve of a file kept) or a .tvf3d (the 3d studio's format: r(θ, h) = Σₙ cos(nπh) Σₘ (Aaₙₘ cos mθ + Abₙₘ sin mθ)). A 3d field is cut at
     a height h (½, the equator, by default), and its outline r(θ) becomes a reading s(θ) = s₀·(r(θ)/r̄)^k, r̄ its geometric
     mean and k the relief (×1 is the file as it is; the planets' relief is a few thousandths, so turn it up to see it cross
-    levels). A file with one row of each series (NH = 1) is a 2d outline. The broad form keeps m ≤ 3.
+    levels). The broad form keeps m ≤ 3.
     Links: ?g= (the grain in pixels), ?s= (a thing's reading), ?shape= (s₀), ?lod= (k), ?depth=1, ?body= (a name in res/),
     ?relief=, ?cut= (h). Test hook: window.__levels.
     -->
@@ -75,16 +77,16 @@
             <select id="pick" style="font:inherit;color:var(--bright);background:#1d1d27;border:1px solid var(--line);border-radius:6px;padding:5px 8px;max-width:100%">
                 <option value="builtin">a perturbed circle (built in)</option>
             </select>
-            <input id="file" type="file" accept=".tvf3d,.tvf,.txt" style="display:none">
+            <input id="file" type="file" accept=".tvf,.tvf3d,.txt" style="display:none">
             <span id="fv" class="note"></span>
         </div>
         <div class="row" style="margin-top:6px" id="fieldRow" hidden>
             <label for="relief">relief ×</label>
             <input id="relief" type="range" min="0" max="7" step="0.01" value="0">
             <span id="rv" style="color:var(--bright)"></span>
-            <label for="cut">cut at h</label>
+            <span id="cutBox" style="display:contents"><label for="cut">cut at h</label>
             <input id="cut" type="range" min="0.02" max="0.98" step="0.01" value="0.5">
-            <span id="cv2" style="color:var(--bright)"></span>
+            <span id="cv2" style="color:var(--bright)"></span></span>
         </div>
         <div class="row" style="margin-top:6px">
             <label for="size">size</label>
@@ -137,12 +139,84 @@
         return Math.max(1e-6, r);
     }
     const shape = (th, s0, nmax = Infinity) => s0 * Math.exp(SH.relief * (Math.log(profile(th, nmax)) - SH.logMean));
+    // two formats: a .tvf3d field (the 3d studio's), or a .tvf curve (the draw tool's, draw.html parseTvfText)
     function parseTVF(text) {
-        const lines = text.replace(/\r/g, '').split('\n'), hp = lines[0].trim().split(/\s+/), R = {};
-        if (!/^TVF/.test(hp[0])) throw new Error('not a .tvf file (its first word is ' + JSON.stringify(hp[0]) + ')');
-        for (const l of lines.slice(1)) { const w = l.trim().split(/\s+/); if (w[0] === 'Aa' || w[0] === 'Ab') (R[w[0]] = R[w[0]] || []).push(Float64Array.from(w.slice(1), Number)); }
-        if (!R.Aa || !R.Ab || R.Aa.length !== R.Ab.length) throw new Error('no radius series (Aa and Ab rows) in it');
-        return { NH: R.Aa.length, M: R.Aa[0].length, Aa: R.Aa, Ab: R.Ab };
+        const lines = text.replace(/\r/g, '').split('\n'); let i = 0;
+        while (i < lines.length && (!lines[i].trim() || lines[i].trim().startsWith('#') && !lines[i].trim().startsWith('#meta'))) i++;
+        const first = (lines[i] || '').trim();
+        if (/^TVF3D\b/.test(first)) {
+            const R = {};
+            for (const l of lines.slice(i + 1)) { const w = l.trim().split(/\s+/); if (w[0] === 'Aa' || w[0] === 'Ab') (R[w[0]] = R[w[0]] || []).push(Float64Array.from(w.slice(1), Number)); }
+            if (!R.Aa || !R.Ab || R.Aa.length !== R.Ab.length) throw new Error('no radius series (Aa and Ab rows) in it');
+            return { NH: R.Aa.length, M: R.Aa[0].length, Aa: R.Aa, Ab: R.Ab };
+        }
+        if (/^TVF\s+\d+\s+\d+\s+\d+$/.test(first)) return curveField(parseCurves(lines.slice(i)));
+        throw new Error('not a .tvf file (expected "TVF W H C" or "TVF3D NH MT")');
+    }
+    // the draw tool's curves: blocks of "TVF W H C", #meta lines, then H × C rows "<rung> v₀ … v_{W−1}", the leaves of x and y
+    function parseCurves(lines) {
+        const out = []; let i = 0, blocks = 0;
+        while (i < lines.length) {
+            while (i < lines.length && (!lines[i].trim() || lines[i].trim().startsWith('#'))) i++;
+            if (i >= lines.length) break;
+            const m = lines[i].trim().match(/^TVF\s+(\d+)\s+(\d+)\s+(\d+)$/);
+            if (!m) { if (!blocks) throw new Error('not a TVF file'); break; }
+            i++; const W = +m[1], H = +m[2], C = +m[3], meta = {};
+            if (C !== 2) throw new Error(`a TVF signal with ${C} channel${C === 1 ? '' : 's'}, not a curve (a curve has 2, x and y)`);
+            while (i < lines.length && lines[i].trim().startsWith('#meta')) { const tag = lines[i].trim().slice(5).trim(), c = tag.indexOf(':'); if (c > 0) meta[tag.slice(0, c).trim()] = tag.slice(c + 1).trim(); i++; }
+            for (let row = 0; row < H; row++) {
+                const ch = [];
+                for (let k = 0; k < 2; k++) {
+                    while (i < lines.length && !lines[i].trim()) i++;
+                    const parts = (lines[i++] || '').trim().split(/\s+/);
+                    if (parts.length < W + 1) throw new Error(`block ${blocks + 1}: a row with ${parts.length - 1} values, not ${W}`);
+                    ch.push(Float64Array.from(parts.slice(1, W + 1), Number));
+                }
+                out.push({ x: ch[0], y: ch[1], name: meta.name || null });
+            }
+            blocks++;
+        }
+        if (!out.length) throw new Error('no curves in it');
+        return out;
+    }
+    // the kernel the draw tool presents leaves with: leaves at (k + ½)·2π/N, the periodic cardinal kernel (tvf-core.js)
+    function kernel(phi, N) {
+        phi = ((phi + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI;
+        if (Math.abs(phi) < 1e-12) return 1;
+        const d = N * ((N & 1) ? Math.sin(phi / 2) : Math.tan(phi / 2));
+        return Math.abs(d) < 1e-12 ? 1 : Math.sin(N * phi / 2) / d;
+    }
+    // a curve read from a standpoint at its centroid: in each of 1024 directions the nearest wall (what the standpoint
+    // faces; where a direction meets the outline more than once the shape is not star-shaped from there, SPN §6.4),
+    // then that r(θ) as a series in cos/sin(mθ), m ≤ 96, the same form as a field's cut
+    function curveField(curves) {
+        const P = 1024, dense = curves.map(c => {
+            const N = c.x.length, X = new Float64Array(P), Y = new Float64Array(P);
+            for (let i = 0; i < P; i++) { const ph = 2 * Math.PI * i / P; let x = 0, y = 0;
+                for (let k = 0; k < N; k++) { const w = kernel(ph - (k + 0.5) * 2 * Math.PI / N, N); x += w * c.x[k]; y += w * c.y[k]; }
+                X[i] = x; Y[i] = -y; }                                   // y down in the draw tool's page; up here
+            let A = 0, cx = 0, cy = 0;
+            for (let i = 0; i < P; i++) { const j = (i + 1) % P, q = X[i] * Y[j] - X[j] * Y[i]; A += q; cx += (X[i] + X[j]) * q; cy += (Y[i] + Y[j]) * q; }
+            return { X, Y, A: A / 2, cx: cx / (3 * A), cy: cy / (3 * A), N, name: c.name };
+        });
+        const pick = dense.reduce((b, d) => Math.abs(d.A) > Math.abs(b.A) ? d : b);
+        const J = 1024, r = new Float64Array(J); let multi = 0;
+        for (let j = 0; j < J; j++) {
+            const th = 2 * Math.PI * j / J, dx = Math.cos(th), dy = Math.sin(th); let best = Infinity, hits = 0;
+            for (let i = 0; i < P; i++) {
+                const k = (i + 1) % P, ax = pick.X[i] - pick.cx, ay = pick.Y[i] - pick.cy, ex = pick.X[k] - pick.X[i], ey = pick.Y[k] - pick.Y[i];
+                const den = dx * ey - dy * ex; if (Math.abs(den) < 1e-15) continue;
+                const t = (ax * ey - ay * ex) / den, u = (ax * dy - ay * dx) / den;
+                if (t > 0 && u >= 0 && u < 1) { hits++; if (t < best) best = t; }
+            }
+            if (hits > 1) multi++;
+            r[j] = isFinite(best) ? best : 0;
+        }
+        const MM = 96, a = new Float64Array(MM + 1), b = new Float64Array(MM + 1);
+        for (let m = 0; m <= MM; m++) { let sa = 0, sb = 0; for (let j = 0; j < J; j++) { const th = 2 * Math.PI * j / J; sa += r[j] * Math.cos(m * th); sb += r[j] * Math.sin(m * th); } a[m] = sa / J * (m ? 2 : 1); b[m] = sb / J * 2; }
+        return { NH: 1, M: MM + 1, Aa: [a], Ab: [b], curve: true, name: pick.name,
+            info: `a curve of ${pick.N} leaves${curves.length > 1 ? `, the largest of ${curves.length}` : ''}, read from its centroid` +
+                (multi ? `; not star-shaped from there: ${Math.round(100 * multi / J)}% of directions meet the outline more than once, the nearest wall kept` : '') };
     }
     // cut a field at height h: the outline's series in θ
     function cutField(F, h) {
@@ -154,7 +228,7 @@
         const h = +$('cut').value, { a, b } = cutField(F, h);
         SH = { kind: 'field', name, F, a, b, logMean: 0, relief: 2 ** +$('relief').value };
         let z = 0; for (let i = 0; i < 1024; i++) z += Math.log(profile(2 * Math.PI * i / 1024)); SH.logMean = z / 1024;
-        $('fieldRow').hidden = false; $('cut').disabled = F.NH === 1;
+        $('fieldRow').hidden = false; $('cutBox').style.display = F.NH === 1 ? 'none' : 'contents';
     }
     const BODY_LIST = { suns: ['sun-yellow', 'sun-orange', 'sun-red', 'sun-blue', 'sun-white'],
         planets: ['planet-terra', 'planet-ocean', 'planet-mars', 'planet-jupiter', 'planet-saturn', 'planet-neptune', 'planet-uranus', 'planet-venus', 'planet-lava', 'planet-alien'],
@@ -328,7 +402,7 @@
                 fileCache[v] = fileCache[v] || parseTVF(await fetch('res/' + n + '.tvf3d').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); }));
                 useField(fileCache[v], n.replace(/-/g, ' ')); $('fv').textContent = '';
             } catch (e) { $('fv').textContent = `could not load ${n}: ${e.message}`; $('pick').value = lastPick; return; }
-        } else if (fileCache[v]) useField(fileCache[v], v.slice(5));
+        } else if (fileCache[v]) { const F = fileCache[v]; useField(F, F.name ? `${F.name} (${v.slice(5)})` : v.slice(5)); $('fv').textContent = F.info || ''; }
         lastPick = v; $('pick').value = v; showField(); draw();
     }
     $('pick').addEventListener('change', e => choose(e.target.value));

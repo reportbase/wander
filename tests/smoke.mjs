@@ -298,9 +298,13 @@ try {
   const lb = await page.evaluate(async () => { const L = __levels; await L.choose('res:asteroid-grey');
     let refused = false; try { L.parseTVF('hello'); } catch (e) { refused = true; }
     let z = 0; for (let i = 0; i < 1000; i++) z += L.depth(2 * Math.PI * i / 1000);
-    return { name: L.shapeName(), cross: L.crossings(4), meanDepth: z / 1000, refused }; });
-  if (lb.name !== 'asteroid grey' || !(lb.cross > 0) || Math.abs(lb.meanDepth) > 1e-3 || !lb.refused) failures.push(`[levels.html, a body] ${JSON.stringify(lb)}`);
-  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html, a body from res/ (${lb.name}: crosses ${lb.cross} ring edges at s₀ = 4; a non-.tvf file refused)`);
+    const N = 64, X = [], Y = []; for (let k = 0; k < N; k++) { const p = (k + 0.5) * 2 * Math.PI / N, r = 100 * (1 + 0.45 * Math.cos(5 * p)); X.push(300 + r * Math.cos(p)); Y.push(300 - r * Math.sin(p)); }
+    const C = L.parseTVF(['TVF 64 1 2', '#meta name:star', '-1 ' + X.join(' '), '-1 ' + Y.join(' ')].join('\n'));
+    const at = th => C.Aa[0].reduce((z, a, m) => z + a * Math.cos(m * th) + C.Ab[0][m] * Math.sin(m * th), 0);
+    let oneCh = false; try { L.parseTVF('TVF 16 1 1\n-1 ' + Array(16).fill(0.5).join(' ')); } catch (e) { oneCh = true; }
+    return { name: L.shapeName(), cross: L.crossings(4), meanDepth: z / 1000, refused, curve: C.curve, tip: at(0), dip: at(Math.PI / 5), oneCh }; });
+  if (lb.name !== 'asteroid grey' || !(lb.cross > 0) || Math.abs(lb.meanDepth) > 1e-3 || !lb.refused || !lb.curve || Math.abs(lb.tip / lb.dip - 145 / 55) > 0.05 || !lb.oneCh) failures.push(`[levels.html, a body] ${JSON.stringify(lb)}`);
+  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html, a body from res/ (${lb.name}: crosses ${lb.cross} ring edges at s₀ = 4; a non-.tvf file refused; a draw .tvf curve read from its centroid, tip/dip ${(lb.tip / lb.dip).toFixed(3)} of 2.636)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
