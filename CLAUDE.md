@@ -166,6 +166,9 @@ Google Fonts load from outside:
   `mag-plan.md` (+ `mag/mag.py`, 10 Oct): on the Hipparcos stars (HYG v3.8 from GitHub, sha256 in the plan; parallax
   distance, V and spectral type only), light falls two levels per level of distance: G dwarfs 2.02, K0 giants 1.93 where
   complete (P1–P3 not killed), 1.61 past the limit; K0 III scatters 1.4 levels (P4 killed).
+  `cnt-plan.md` (+ `cnt/cnt.py`, 10 Oct): star counts in levels on Hipparcos to V 7.3: about 1.2 levels of number per
+  level of light at every brightness, not the even spread's 1.5 (P1, P2 not killed at their bands' edges); plane and poles
+  alike, 1.229 and 1.227 (P3, P4 killed).
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far

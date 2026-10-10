@@ -16,6 +16,8 @@ bodies are pictures. They are never evidence here.
 - 10 October, first: the paper started, from the four tests of the day (ISQ, HZN, REF, MAG) and the physics labs before
   them (BAL, LAD, OLB, GRN run 8); the rules (§0), the dictionary (§1), the results by standing (§2), the kills (§3) and
   the queue (§4).
+- 10 October, second: CNT, star counts in levels, on the Hipparcos stars (§2.1, §3); P1 and P2 at their bands' edges,
+  P3 and P4 killed: the counts rise about 1.2 levels per level of light, not 1.5, alike in the plane and toward the poles.
 
 ## 0. The rules
 
@@ -58,6 +60,11 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   - K0 giants where the catalogue is complete lose 1.93 (533 stars);
   - past the catalogue's limit the slope flattens to 1.61.
   This is the inverse square read in levels.
+- **Star counts rise 1.2 levels per level of light, not 1.5** (CNT, `plans/cnt-plan.md`). For an even spread the
+  inverse square and the cube of the volume give 1.5 levels of number per level of light. The Hipparcos stars brighter
+  than V = 7.3 give about 1.2 at every brightness: 1.33 for V 1–4, 1.22 for V 5–7.3. And they give it alike in the
+  galactic plane (1.229) and toward the poles (1.227). The even-spread bridge gives out, and the disc's thinness alone
+  does not say why.
 - **Real worlds are their corner within a hundredth of a level** (REF, `plans/ref-plan.md`, P4 and P5). By published
   radii:
   - the rocky worlds' flattening: Earth 0.0048 levels, Mars 0.0085, the Moon 0.0017;
@@ -92,6 +99,9 @@ They are kept as worked examples of the bridges (`labs.html`, `plans/grn-plan.md
   "Broad first" is the order in which bands are seen, not where the relief lies. Under §0 this was never evidence. It is
   kept as the example of what not to count.
 - **MAG P4: K0 III scatters 1.4 levels**, not under 1.0. A known kind is a bridge about a level wide.
+- **CNT P3 and P4: the plane and the poles count alike.** The disc was predicted to flatten the counts toward the poles
+  more than in the plane. It does not: both give 1.23. Dust in the plane and the clumping of young bright stars are the
+  likely offsets, untested.
 - **HZN run 1's P5 and run 2: a page reads only to its grain.** Near home, draw's levels page cannot read nearer than one
   segment or one direction, whichever is coarser. Run 3, with both grains doubled together, was not killed.
 
@@ -99,10 +109,9 @@ They are kept as worked examples of the bridges (`labs.html`, `plans/grn-plan.md
 
 Tests that could be run next, each on real data or exact arithmetic. Each would need its plan written first.
 
-- **Star counts, in levels.** For stars spread evenly in space, each level fainter brings 2^1.5 ≈ 2.83 times as many:
-  1.5 levels of number per level of light. This can be checked on the Hipparcos stars brighter than its completeness
-  limit, where the Galaxy's flatness should show as a shallower slope at the faint end. It is the counting form of the
-  inverse square, and it can be done now.
+- **Why the counts give 1.2.** Split CNT by kind (spectral class) and by distance. If old, faint-kind dwarfs alone give
+  nearer 1.5 at small distances, the young bright stars' clumping is the cause. This can be done now with MAG's
+  distances and spectra.
 - **Clusters as one kind at one distance.** The Hyades, Coma Berenices, the Pleiades and Praesepe each have their own
   distance, from their members' mean parallax. At a fixed colour their main sequences should step two levels of light
   per level of the clusters' distance. This needs membership lists. Hipparcos membership is published, but the archives

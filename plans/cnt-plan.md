@@ -52,3 +52,45 @@ The same file as MAG: HYG v3.8 (sha256 `9e914eb4544c1d8f4a87e1184bbc5322de1a7d1b
 
 ## Runs
 
+### Run 1 (10 October 2026)
+
+`python3 plans/cnt/cnt.py` (data checked against the sha256), output in `plans/cnt/cnt-run1.txt`:
+
+```
+117951 Hipparcos stars with V; brighter than 7.3: 21107 (plane 5608, poles 1883)
+P1: not killed. all sky, V 1-4: 1.325 levels of number per level of light (518 stars to V 4); 1.5 for an even spread
+P2: not killed. all sky, V 5-7.3: 1.216, shallower by 0.110
+P3: KILLED. V 4-7.3: plane (|b| < 10) 1.229, poles (|b| > 60) 1.227, difference 0.002
+P4: KILLED. in the plane 1.229
+  all sky, V 0-2: 1.165
+  all sky, V 2-3: 1.308
+  all sky, V 3-4: 1.191
+  all sky, V 4-5: 1.236
+  all sky, V 5-6: 1.221
+  all sky, V 6-7.3: 1.204
+```
+
+- **P1 not killed, at the band's edge.** The bright stars give 1.325 levels of number per level of light, against 1.5 for
+  an even spread; the band's floor was 1.3.
+- **P2 not killed, at the band's edge.** The fainter stars give 1.216, shallower by 0.110 (band: 0.1).
+- **P3 killed.** The plane and the poles give the same slope, 1.229 and 1.227. The poles were predicted flatter by at
+  least 0.1.
+- **P4 killed.** The plane gives 1.229, under the predicted 1.25.
+- **Across the range** the slope is near 1.2 throughout, from V = 0 to 7.3 (1.17 to 1.31 in single-magnitude steps),
+  never 1.5.
+
+## Reading (after the run; not ruled)
+
+- **The counts rise about 1.2 levels per level of light, not 1.5, everywhere.** The even-spread bridge gives out from the
+  brightest stars on, and it gives out the same way in the plane and toward the poles.
+- **The disc alone does not explain it.** The disc, the cause the plan named, should flatten the poles more than the
+  plane, and the run says it does not. Two things known to act in the plane could be offsetting it there:
+  - dust dims distant stars along the plane, flattening the count there too;
+  - the brightest stars are young, and young stars lie in a thin layer and in nearby groups (the Gould Belt), not spread
+    evenly even within the disc.
+  
+  Neither is tested here. Each would be a new run with its own prediction, and both need distances or extinctions.
+- **What holds.** Counting is the inverse square in its third form: light falls two levels per level of distance (MAG),
+  the volume rises three, so number rises 1.5 per level of light, *if* the spread is even. The stars are not spread
+  evenly at any brightness Hipparcos reaches. The departure from 1.5, about 0.3 levels of number per level of light, is
+  the measure of that unevenness. It is physics' known non-uniformity, not a failure of the form.
