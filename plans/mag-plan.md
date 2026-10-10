@@ -99,3 +99,10 @@ P4: KILLED. rms residual about P1's fit: 1.413 levels of light (1.064 mag)
 - **The kind's spread is the bridge's error.** "Of one kind" stands in for one luminosity, and K0 III is a loose kind,
   ±1 magnitude, which is ±1.3 levels. Every distance read from such a kind by light alone carries that error. The
   luminosity class in the spectrum is the known-kind bridge of Part II, and here it is measured to be about a level wide.
+
+### Note after CNT runs 2 and 3 (10 October 2026)
+
+P1's range, 20 to 140 pc, was taken as complete for K0 giants. CNT runs 2 and 3 (`plans/cnt-plan.md`) found that it is
+not: 19% of the stars labelled K0 III within 140 pc are fainter than V = 7.3, and about one in ten at any distance is
+too faint to be a giant. P1's 1.927 was measured on that mixed, incomplete sample. It stays not killed, as recorded, but
+the cleaner reading of the two is P2's dwarfs, 2.021.
