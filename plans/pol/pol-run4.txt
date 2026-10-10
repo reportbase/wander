@@ -1,0 +1,24 @@
+carrying reader, E = largest distance between the tables 0.05 s after the first contact, median of breaks 0, 4, 9
+L = lateness at contact in ticks = 0.9·60·SUB/c; predicted: E < 1e-3 when L < 1.5, E > 1e-2 when L > 3
+  c  50  SUB  1  L   1.08  E 3.66e-4  (3.7e-4, 3.7e-4, 1.3e-3)  small
+  c  50  SUB  2  L   2.16  E 1.19e-2  (1.2e-2, 1.2e-2, 5.4e-2)  -
+  c  50  SUB  4  L   4.32  E 2.34e-2  (2.3e-2, 2.3e-2, 3.6e-2)  large
+  c  50  SUB  8  L   8.64  E 2.28e-2  (2.0e-2, 2.3e-2, 2.3e-2)  large
+  c  50  SUB 16  L  17.28  E 1.68e-2  (1.7e-2, 1.7e-2, 2.3e-2)  large
+  c 100  SUB  1  L   0.54  E 1.23e-4  (1.2e-4, 1.2e-4, 1.1e-3)  small
+  c 100  SUB  2  L   1.08  E 1.92e-4  (1.9e-4, 1.9e-4, 1.4e-3)  small
+  c 100  SUB  4  L   2.16  E 1.53e-2  (1.5e-2, 1.5e-2, 3.2e-2)  -
+  c 100  SUB  8  L   4.32  E 2.31e-2  (1.9e-2, 2.3e-2, 2.3e-2)  large
+  c 100  SUB 16  L   8.64  E 1.62e-2  (1.6e-2, 1.6e-2, 2.2e-2)  large
+  c 200  SUB  1  L   0.27  E 4.88e-5  (4.9e-5, 4.9e-5, 1.0e-3)  small
+  c 200  SUB  2  L   0.54  E 8.18e-5  (8.2e-5, 8.2e-5, 2.3e-4)  small
+  c 200  SUB  4  L   1.08  E 8.08e-5  (8.1e-5, 8.1e-5, 3.9e-4)  small
+  c 200  SUB  8  L   2.16  E 1.36e-2  (1.4e-2, 1.4e-2, 1.4e-2)  -
+  c 200  SUB 16  L   4.32  E 1.58e-2  (1.6e-2, 1.6e-2, 2.1e-2)  large
+  c 400  SUB  1  L   0.14  E 2.31e-5  (2.3e-5, 2.3e-5, 6.3e-4)  small
+  c 400  SUB  2  L   0.27  E 3.73e-5  (3.7e-5, 3.7e-5, 3.5e-4)  small
+  c 400  SUB  4  L   0.54  E 3.73e-5  (3.1e-5, 3.7e-5, 3.7e-5)  small
+  c 400  SUB  8  L   1.08  E 3.88e-5  (3.9e-5, 3.9e-5, 8.1e-4)  small
+  c 400  SUB 16  L   2.16  E 1.44e-2  (1.4e-2, 1.4e-2, 1.4e-2)  -
+check, run 3's cell c = 100, SUB = 4, break 4: E 3.167e-2
+P12: not killed (0 cells outside their band)
