@@ -144,3 +144,38 @@ Counting stops at the complete distance, from a floor of a quarter of it (two le
   [2.6, 3.4], or the range holds fewer than 100 stars.
 - **P10.** Counted by light inside that complete sphere (V ≤ 7.3 and d under the complete distance), over its full range
   of V, the slope is 1.5 within 0.3. *Killed* if outside [1.2, 1.8].
+
+Run 3 output (`python3 plans/cnt/cnt3.py`): the script stopped before P9, because no distance met the rule. Measured after,
+the share of K0 giants fainter than V = 7.3, by distance:
+
+```
+within 30 pc: 7 K0 giants, 0 fainter than V 7.3 (0.0%)
+within 50 pc: 36 K0 giants, 4 fainter than V 7.3 (11.1%)
+within 70 pc: 96 K0 giants, 8 fainter than V 7.3 (8.3%)
+within 100 pc: 228 K0 giants, 23 fainter than V 7.3 (10.1%)
+within 140 pc: 535 K0 giants, 103 fainter than V 7.3 (19.3%)
+```
+
+- **P9 and P10 killed: the kind has no complete distance.** Already within 50 pc, 4 of 36 stars labelled K0 III are
+  fainter than V = 7.3, the nearest at 43.7 pc and V = 8.53. A real K0 giant at that distance would be about V = 4. From
+  50 to 100 pc the faint share stays near 10%, and by 140 pc it is 19%. Under the run's rule (under 2% faint) no range
+  qualifies.
+- **What the faint near ones are.** Most likely they are dwarfs labelled giants: a K0 dwarf at 43 pc is about V = 8.5.
+  They could also be giants behind dust, or wrong parallaxes. The spectral label "K0 III" is not one kind. About one
+  star in ten is something else, which also feeds the 1.4-level scatter MAG's P4 found.
+- **So the count cannot be made clean on this label.** Counting by kind needs a cleaner kind. The candidates:
+  - a cut on colour as well as the label;
+  - the red clump, picked by colour and parallax, though that edges toward using distance to choose;
+  - a catalogue with luminosity classes checked against parallax.
+
+  Each would be a new run with its own prediction. CNT stops here for now.
+
+## Reading of runs 2 and 3 (not ruled)
+
+- **The near G dwarfs count as an even spread does**: 3.47 levels of number per level of distance, against 3 (83 stars,
+  noisy, at its band's top).
+- **For the giants, the counting test could not be run cleanly.** The label mixes kinds and the catalogue's limit cuts
+  the far ones. The 2.58 by distance and the 1.10 by light measure the catalogue and its labels, not space.
+- **Run 1's 1.2 is still open.** Its cause is somewhere among the disc, the dust, the young stars' clumping and the
+  catalogue's own cut. Separating them needs cleaner kinds or a deeper catalogue (Gaia), and Gaia's archive is blocked
+  here.

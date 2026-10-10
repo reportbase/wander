@@ -18,6 +18,9 @@ bodies are pictures. They are never evidence here.
   the queue (§4).
 - 10 October, second: CNT, star counts in levels, on the Hipparcos stars (§2.1, §3); P1 and P2 at their bands' edges,
   P3 and P4 killed: the counts rise about 1.2 levels per level of light, not 1.5, alike in the plane and toward the poles.
+- 10 October, third: CNT runs 2 and 3, by kind and distance: the near G dwarfs give 3.47 levels of number per level of
+  distance (3 for an even spread); the K0 giants cannot be counted cleanly, since about one in ten labelled K0 III is
+  something fainter, and the kind has no complete distance (§3).
 
 ## 0. The rules
 
@@ -102,6 +105,11 @@ They are kept as worked examples of the bridges (`labs.html`, `plans/grn-plan.md
 - **CNT P3 and P4: the plane and the poles count alike.** The disc was predicted to flatten the counts toward the poles
   more than in the plane. It does not: both give 1.23. Dust in the plane and the clumping of young bright stars are the
   likely offsets, untested.
+- **CNT runs 2 and 3: "K0 III" is not one kind.** Within 50 pc, 4 of 36 stars so labelled are too faint to be giants:
+  about one in ten throughout, 19% by 140 pc. So the K0 giants have no distance within which Hipparcos holds them all,
+  and counting them by distance or light measures the label and the catalogue, not space. MAG's 140 pc "complete" range
+  rested on the same false premise. Only the near G dwarfs counted cleanly: 3.47 levels of number per level of distance,
+  against 3.
 - **HZN run 1's P5 and run 2: a page reads only to its grain.** Near home, draw's levels page cannot read nearer than one
   segment or one direction, whichever is coarser. Run 3, with both grains doubled together, was not killed.
 
@@ -109,9 +117,8 @@ They are kept as worked examples of the bridges (`labs.html`, `plans/grn-plan.md
 
 Tests that could be run next, each on real data or exact arithmetic. Each would need its plan written first.
 
-- **Why the counts give 1.2.** Split CNT by kind (spectral class) and by distance. If old, faint-kind dwarfs alone give
-  nearer 1.5 at small distances, the young bright stars' clumping is the cause. This can be done now with MAG's
-  distances and spectra.
+- **Why the counts give 1.2 (still open).** Splitting by kind needs a cleaner kind than a spectral label (CNT runs 2–3):
+  a colour cut with the label, or a catalogue whose classes are checked against parallax, or Gaia (blocked here).
 - **Clusters as one kind at one distance.** The Hyades, Coma Berenices, the Pleiades and Praesepe each have their own
   distance, from their members' mean parallax. At a fixed colour their main sequences should step two levels of light
   per level of the clusters' distance. This needs membership lists. Hipparcos membership is published, but the archives
