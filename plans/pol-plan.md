@@ -234,3 +234,37 @@ P8: not killed. the whole game from inside against the referee:
 - **What is left names the next step: time.** Each ball should read the others late, by their distance, as "Pool from
   Somewhere" does for its reader, and each ball should keep its own clock. A contact read late is a contact missed:
   how far ahead a ball must read, in levels, is the question.
+
+### Run 3 (10 October 2026): prediction, written before it ran (Tom: "yes, continue")
+
+Time. Runs 1–2 let every reading arrive at once. Now each ball sees each other as it was when its image left, the
+image travelling at a speed c: the **retarded** image, found from the other's past, where c·(t − t_e) equals the
+distance then. Worked out before writing this:
+- **Lateness is levelled like distance.** It is d/c, so it doubles with each level farther from contact.
+- **The relative uncertainty is the same at every level.** In its lateness, a ball moving at speed u can move u·d/c, the
+  fraction u/c of the distance, at any distance. So delay sets no preferred level, and its only number is u/c: the pair
+  (own speed, signal speed), whose corner u = c is the light cone. Here u ≤ 14, so u/c ≤ 0.56 at the slowest c used.
+- **Each ball now decides alone.** a reads b late and b reads a late, so the two may judge contact at different
+  moments. The pair's size ratio, its ray v/h = r_b/r_a, is told once, at the rack, and never changes, so each ball has
+  h = v·r_a/r_b from its own reading.
+
+**Two readers:**
+- *naive*: takes the late image as the other's place now;
+- *carrying*: carries the late image forward by its own lateness (t − t_e), along the other's reported motion at the
+  moment the image left (straight on, as if nothing touched it since).
+
+Cushions stay as in run 2, read at once. That is a named simplification: one's own reflection is late by 2·gap/c.
+
+**The measure:** for each break and c, E(c) is the largest distance between the two tables' balls 0.05 s after the
+referee's first contact, the median over the ten heavy-ball breaks. It is taken at c = 25, 50, 100, 200 and 400, plus
+c = 10⁹ as a check. The slope of log₂ E against log₂ c is fitted by least squares over the five finite values.
+
+- **P9 (naive: one level of error per level of c).** The naive reader's slope is between −1.3 and −0.7. Its error is the
+  closing speed times the lateness, (r_a + r_b)/c.
+- **P10 (carrying helps).** At every c ≥ 50, the carrying reader's E is at most a quarter of the naive reader's.
+  *Measured, not predicted:* the carrying reader's slope. Straight-line carrying misses only the cloth's slowing,
+  ½·0.6·τ², which would give −2, but it is blind to touches inside the lateness, which give −1. Which one dominates is
+  the question.
+- **P11 (the check).** At c = 10⁹ both readers reproduce run 2: E < 1e-9.
+- *Measured, not predicted:* the share of contacts where the two balls of a pair judged contact at different substeps,
+  at each c. Action and reaction no longer at one moment.
