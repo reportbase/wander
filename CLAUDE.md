@@ -66,6 +66,13 @@ Google Fonts load from outside:
   the built-in one, a body in res/, or a file from disk: a .tvf curve (the draw tool's format, draw.html `parseTvfText`; read from
   its centroid, the nearest wall in each direction) or a .tvf3d cut at a height h (the equator by default); the outline
   read as s(θ) = s₀·(r/r̄)^k with a relief slider k. `?g=&s=&shape=&lod=&depth=1&body=&relief=&cut=`; test hook `window.__levels`.
+- `walk.html`: **the walk** (10 Oct 2026, Tom: "the sweep is a walk from me to you … far away, you are increasinly difficult
+  for me to get to you, and then acceleratingly difficult"; "You are vertical and I am horizontal. Show the sweep in terms of
+  the horizontal's walk to the vertical"), a standalone page like `facing.html`. Me on the ground (breadth H, one step), you a
+  vertical of height V = 10 steps, at distance d; the pair (V, d) is the bridge, s = V/d, v = min(1, s), h = min(1, 1/s). The
+  sweep's angle is the angle I look up at your top, θ = atan(V/d): 0° on my horizon, 45° at d = V, 90° at your foot. Steps
+  left V·h/v = V·cot θ; far, each level costs twice the next one in, the steps bunching toward the horizon (never reached);
+  near, in proportion. Panels: the ground, the sweep in fill levels, steps left against θ. `?d=&walk=1`; hook `window.__walk`.
 - `thin.html`, `ladder.html`, `sky.html`: **the physics correspondence** (9 Oct 2026, Tom: "create multiple demos that
   explain the physics correspndance"), standalone pages like `dial.html`. `thin.html`: the same signal, a smaller share
   (the inverse square; near, distance costs grains, far, light; the switch at one grain is the resolution limit;
@@ -78,7 +85,7 @@ Google Fonts load from outside:
   (dim by 1/d², vanish, or a full-bright pixel; hook `__points`); events on approach (point, resolved, shape, terrain,
   surface; `__resolve`); distances earned rung by rung (parallax, then width and light per kind; `__navigator`); the sky
   filling as light arrives, the count a clock (`__skyfill`). Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the five demos (sweep, dial, sphere, facing, levels) and the three on the physics correspondence, each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the six demos (sweep, dial, sphere, facing, levels, walk) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -298,6 +305,7 @@ In short:
       and one level fewer seen per doubling of the grain; the shape crosses ring edges, its broad form fewer; with the size divided out
       the depth averages 0 on the corner; a body from res/ chosen in the combo box crosses ring edges, a non-.tvf file refused; a draw .tvf curve read
       from its centroid (a 5-pointed star's tip over its dip as drawn).
+  14. **walk.html:** 45° at d = V; far, v fills against a full h, near, h empties; steps per level V, 2V, 4V, …; steps left V·cot θ.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
