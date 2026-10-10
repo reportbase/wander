@@ -609,3 +609,47 @@ P18: KILLED. D falls by 3.70 (K 1 to 2; band [2.54, 5.72]) and 6.74 (K 2 to 3; b
 - **For a situated reader:** what it may ignore is set by the momentum the smaller things bring, not by their size
   alone. A small thing moving fast costs as much to ignore as a larger one moving slowly. Level of detail by size alone
   is right only where the smaller things are no faster.
+
+### Run 8 (10 October 2026): prediction, written before it ran (Tom: "yes", to a prediction horizon for the trick-shot game)
+
+`play-trick.html` previews a whole shot, but a player aims with some error, and every contact makes the outcome more
+sensitive to the aim. This run measures, contact by contact, how many levels of aim precision a contact costs. The answer
+sets how far ahead a situated player can see: the preview's level of detail, counted in contacts. The engine is the
+game's (`play-trick.html`, its `simulate` through the hook): pool.html's table from inside, cloth slowing 1.2. Evidence
+about the geometry and the computation, not the world.
+
+Keep the case. s (the run from a ball's start to its contact), r (the radius) and the angles are amounts. The pair's
+reading h + v = 2r/|SO|, from the striking ball's start S to the object's centre O, is a fill level. No bridge is needed:
+the result is a ratio of angles.
+
+**Worked out before writing this (and a correction).** In conversation I said a contact costs about log₂(2d/r) levels,
+3 to 5 here. Derived properly it is smaller.
+- The object ball leaves along the line of centres at contact, whatever the restitution: it is not reflected. Its
+  direction is the ghost ball's (the striker at contact) direction to its centre, on a circle of radius 2r.
+- Turn the striker's line by δψ about its start S. The object's offset from the line changes by (s + 2r·cos φ)·δψ, so
+  the cut changes by that over 2r·cos φ. The object's direction is the line's angle plus the cut, so it turns by
+  **A = s/(2r·cos φ)** times δψ (in magnitude; the +1 of the line's own turn cancels).
+- Read from S, with h + v = 2r/|SO| and α the small angle between the line and SO:
+  A = cos α/((h + v)·cos φ) − 1. For a full hit, **A = 2^L − 1, where L = log₂(1/(h + v)) is how many levels the pair
+  starts from contact** (run 1's P5 count). The aim error grows by about as many levels as the run spanned.
+- A ball struck from rest starts with no error in its place, only in its direction, so in a chain where each ball meets
+  the next from rest, the factors multiply exactly, to first order: the chain loses Σ log₂ A_k levels.
+- On this table, s from 1 to 6 balls' radii... in units: s from 1 to 6, 2r = 0.9: from −0.6 to 2.7 levels a contact.
+
+The engine detects contact a substep late, with the balls overlapping by up to a substep's travel (about 0.06 at speed
+14, 7% of 2r). That moves the effective ghost ball and the cut a little, so the predictions allow 15%.
+
+**The chains.** Seeded, 60 chains: the white and three object balls, each struck from rest by the one before, runs s
+drawn from 1.2 to 5, cuts from −45° to 45°, power 20, nothing else on the table. A chain is used only if its first three
+contacts are exactly white–1, 1–2, 2–3, in that order, and all four balls stay on the table. Each is run twice, the second
+with the aim turned by δ = 1e-7 rad (and once by 1e-8, to check the response is linear). A ball's direction is read from
+its frames between its start and its next contact.
+
+- **P19 (one contact).** For at least 90% of the contacts, the measured factor |e_k/e_(k−1)| is within 15% of
+  s_k/(2r·cos φ_k), from the chain's planned geometry (e_0 = δ, e_k the direction error of ball k). *Killed* if fewer.
+- **P20 (the chain).** For at least 90% of the chains, the levels lost over the chain, log₂(e_3/δ), equal Σ log₂ A_k
+  within 0.3 levels. *Killed* if fewer.
+- **P21 (linear).** The factors at δ = 1e-8 equal those at 1e-7 within 1% for at least 95% of contacts. *Killed* if fewer.
+- *Measured, not predicted:* levels lost per contact in the game's own layouts (the rack, scattered), and the depth in
+  contacts at which an aim error of 0.1° grows past 3.6° (half a pocket's width seen from 8 units away): the horizon the
+  preview's fade will use.
