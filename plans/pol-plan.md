@@ -468,3 +468,55 @@ Run 5 again with the bug fixed, the same field, seeds and measure. The predictio
 
 Run 5's outcome (P13 killed by field 2 and by balls sunk differently) is known now, so P13′ is not blind. It is kept
 as it was, not loosened.
+
+Run 6 output (`node plans/pol/pol5.mjs`, in `plans/pol/pol-run6.txt`):
+
+```
+fields of 116 balls (levels 0-3: 4, 12, 36, 64), white struck at 14; errors against the referee at 1 s
+  K = inf  E by level (median of 5): 2.12e-13, 2.15e-13, 6.23e-11, 1.10e-9   contact responses skipped 0 of 530 (0.0%)
+         per field, level 0: 2.12e-13, 2.59e-10, 6.00e-12, 3.83e-14, 3.08e-14
+  K = 1    E by level (median of 5): 2.32e+0, 2.06e+0, 8.53e+0, sunk differs   contact responses skipped 250 of 684 (36.5%)
+         per field, level 0: 2.32e+0, 5.07e+0, 3.22e+0, 2.08e+0, 6.09e-1
+  K = 2    E by level (median of 5): 6.09e-1, 1.56e+0, 1.44e+1, sunk differs   contact responses skipped 103 of 612 (16.8%)
+         per field, level 0: 2.17e-1, 1.95e-1, 1.15e+0, 8.22e-1, 6.09e-1
+  K = 3    E by level (median of 5): 1.44e-1, 7.95e-1, 5.98e+0, 8.86e+0   contact responses skipped 38 of 576 (6.6%)
+         per field, level 0: 1.09e-1, 1.27e-1, 1.00e+0, 2.38e-1, 1.44e-1
+P13: KILLED. K = inf against the referee: all levels within 1e-9 in all five fields
+P14: KILLED. level-0 error falls by 3.81 (K 1 to 2) and 4.23 (K 2 to 3); band [4, 16]
+```
+
+- **P13′ killed, narrowly.** With the bug fixed and nothing ignored, the field from inside matches the referee to
+  2e-13 (level 0), 2e-13 (level 1) and 6e-11 (level 2) at 1 s, median over the fields. The smallest balls' median is
+  1.1e-9, just past the bar of 1e-9, and no ball sinks differently. Run 5's large divergence was the bug, not the
+  field's chaos. Rounding grows a little among the smallest balls, but not to the size of a ball in a second.
+- **P14′ killed.** The level-0 error falls by 3.81 and 4.23 per step of K, exactly as in run 5 (the bug never touched
+  the large balls): about 4 per level, under the band's floor of 4 for the first step.
+- *Measured:* responses skipped are 36.5% at K = 1, 16.8% at K = 2 and 6.6% at K = 3. By level difference, that is
+  147 skipped at one level, 65 at two and 38 at three or more.
+
+## Reading of runs 5–6 (not ruled)
+
+- **The field from inside is still the referee's game.** With four size levels and 116 balls, the table played from
+  inside agrees with the view from nowhere to about 1e-9 at 1 s, once the cushion's reading is kept signed. "The edge
+  is behind me" is a reading too, negative.
+- **Ignoring smaller balls costs about two levels per level of size, not three.** Each skipped response is the mass
+  ratio, 8 per level, of the larger ball's motion: that is an identity. The game-level error at 1 s falls only about
+  4 per level. The skipped contacts become fewer per level of difference (147, 65, 38), so their number does not
+  explain the shortfall. Why the cost is a square and not a cube of the size is open. It needs its own run, measured
+  per contact and over time, with a prediction.
+- **Situated levels pay in work.** A ball that ignores everything one level smaller skips over a third of all contact
+  responses, while the smaller balls still bounce off it.
+- **The field has a chaos horizon of about two seconds** (measured after run 6, `runField` with nothing ignored, the
+  largest error over all balls at 0.5, 1, 1.5, 2 and 3 s, seeds 1–5):
+
+  ```
+  1.0e-14 1.4e-11 9.3e-8 6.8e-3 4.5e+0
+  7.4e-13 2.4e-9  1.8e-7 4.5e-4 (sunk differs)
+  1.5e-14 5.4e-9  5.2e-4 4.8e+0 (sunk differs)
+  7.2e-14 1.1e-9  2.3e-4 9.1e+0 (sunk differs)
+  1.1e-14 1.2e-10 1.9e-6 1.8e-3 3.1e+0
+  ```
+
+  The difference grows about a hundredfold each half second, from rounding to the size of the table by 3 s. The rack
+  of 16 never diverged in 8 s. Many small balls make the game chaotic. Past its horizon, the view from inside and the
+  view from nowhere are each one rounding of the same chaotic game.

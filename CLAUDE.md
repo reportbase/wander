@@ -80,7 +80,8 @@ Google Fonts load from outside:
   `facing.html`; equal balls at the corner, 60° across), and works in its own size (size ratio v/h, masses (v/h)³, one
   material). Run 2: cushions read as the ball's own mirror image (v = r/(2·gap) = h, contact at the corner), pockets
   entered when they fill the view (v > 1); only one integrator and the clock unsituated, named; `?cushions=referee`. Run 3:
-  a "signals" select reads the others late (c = 50), the late image taken as now or carried forward (`runLate`). Panels: the table, the chosen ball's pairs as (h, v), its
+  a "signals" select reads the others late (c = 50), the late image taken as now or carried forward (`runLate`). Runs 5–6:
+  a "table" select (the rack, or a field of four size levels, `rackField`) and an "ignore" select (`runField`). Panels: the table, the chosen ball's pairs as (h, v), its
   view round the turn. `?break=0..9&heavy=0`; hook `window.__pool` (`run(i, opts)`, the POL measures).
 - `thin.html`, `ladder.html`, `sky.html`: **the physics correspondence** (9 Oct 2026, Tom: "create multiple demos that
   explain the physics correspndance"), standalone pages like `dial.html`. `thin.html`: the same signal, a smaller share
@@ -209,7 +210,11 @@ Google Fonts load from outside:
   its error collapses as the lateness at contact drops to about one tick (post hoc). Run 4 tested it over c × tick (P12 not
   killed): the error follows the lateness in ticks, small below ~1, a plateau (~2% of a radius) above 2, whatever c; a finer
   tick at fixed c can be worse. Three corners of named pairs: contact, the cushion (reader and its flip), time (one tick).
-  Level of detail next.
+  Runs 5–6, level of detail as size (Tom: "smaller and smaller pool balls"): a field of 116 balls in four size levels
+  (radius 0.45/2^k); a ball ignores balls K+ levels smaller. Run 5 had a bug (a gap ≤ 0 gave NaN; the cushion's reading is
+  now signed, negative when the edge is behind), so run 6 repeated it: from inside still the referee's game to ~1e-9
+  (P13′ killed narrowly by the smallest level); ignoring costs ~4× less per level, not the mass ratio's 8 (P14′ killed);
+  skipping saves a third of contact responses at K = 1.
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is

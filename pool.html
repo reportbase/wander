@@ -425,7 +425,7 @@
         if (me) for (const b of B) { if (b === me || b.sunk) continue; const L = Math.log2(Math.hypot(b.x - me.x, b.z - me.z) / (me.r + b.r)); near[Math.max(0, Math.min(5, Math.ceil(L)))]++; }
         $('hud').textContent =
             `t = ${t.toFixed(2)} s   ${showSit ? 'shown: the table played from inside' : 'shown: the referee, from nowhere'}   contacts so far ${contacts}\n` +
-            (lateMode === 'now' ? `the two tables differ by at most ${lastDiff.toExponential(2)} (rounding only: the same game, played from inside)\n`
+            (lateMode === 'now' ? `the two tables differ by at most ${lastDiff.toExponential(2)} ${lastDiff < 1e-6 ? '(rounding only: the same game, played from inside)' : '(rounding grown by the game\'s chaos: past its horizon, each table is one rounding of it)'}\n`
               : `the two tables differ by up to ${lastDiff.toFixed(3)}: each ball reads the others late (c = 50)${lateMode === 'carry' ? ', carrying each image forward' : ', taking the late image as now'}\n`) +
             (me ? `around ${me.cue ? 'the white' : me.n === 'H' ? 'the heavy ball' : 'ball ' + me.n}, by levels from touching: touching ${near[0]}, within 1 level ${near[1]}, 2 ${near[2]}, 3 ${near[3]}, 4 ${near[4]}, 5 ${near[5]}` : '');
     }
