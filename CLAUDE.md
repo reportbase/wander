@@ -180,6 +180,9 @@ Google Fonts load from outside:
   `grd-plan.md` (10 Oct, predictions only): the ratio between levels in a measured reader, the grid cells' modules.
   P1: a halving, √2 (area) or 2 (length), within 0.07; prior knowledge of the published means (~1.42, ~1.7) is stated in
   the plan, so it runs only on per-animal data not yet opened (Tom to supply; candidates listed there).
+  `grd-landscape.md` (10 Oct, a reading; Tom: "lets just establish the boundries, see how we might slot in"): the
+  measured ratios, the coding theories (economy √e, nested codes) and the mechanism (Kang 2019), and SPN's slot as the
+  measure-free baseline 2^(1/D), which the coding theories depart from by their added measure; told apart in 1D and 3D.
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
