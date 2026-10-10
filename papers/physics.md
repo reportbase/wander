@@ -139,6 +139,11 @@ They are kept as worked examples of the bridges (`labs.html`, `plans/grn-plan.md
 
 Tests that could be run next, each on real data or exact arithmetic. Each would need its plan written first.
 
+- **The ratio between levels, in a measured reader** (GRD, `plans/grd-plan.md`, predictions written, data to be
+  supplied). Grid cells map place in discrete modules, each coarser than the last by a measured ratio no physics law
+  sets. D.1 allows only a halving without an added measure: 2 along a line, or √2 if a level doubles a map's area. The
+  plan names what was known beforehand (published means near 1.42 and 1.7; an optimal-coding theory's √e) and needs
+  per-animal data not yet opened.
 - **Why the counts give 1.2.** GCN's exploration (not a result) points to a thin layer of luminous stars seen through
   dust: 71% of the stars Hipparcos counts are past 100 pc, and even in the disc's middle the luminous ones stop rising
   with volume past about 125 pc. A test needs a bright all-sky Gaia sample (G ≤ 10) with parallaxes and extinctions, and

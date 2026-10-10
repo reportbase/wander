@@ -173,6 +173,9 @@ Google Fonts load from outside:
   J/A+A/649/A6 table1c, from Tom; sha256 in the plan), kinds by colour on the main sequence. All four killed: the RUWE cut
   removes more near stars (steeper counts, poles past the plane), and a fifth of G/K colours within 50 pc are white dwarfs.
   Read after the run without the cut: 2.93–3.00 levels of number per level of distance for every kind, plane = poles.
+  `grd-plan.md` (10 Oct, predictions only): the ratio between levels in a measured reader, the grid cells' modules.
+  P1: a halving, √2 (area) or 2 (length), within 0.07; prior knowledge of the published means (~1.42, ~1.7) is stated in
+  the plan, so it runs only on per-animal data not yet opened (Tom to supply; candidates listed there).
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far
