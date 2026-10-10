@@ -1,0 +1,27 @@
+asteroid-dark   R̄ 0.49351 (-1.30%) ✗  range 0.4917 levels  bands 85.6% / 13.6% / 0.7%
+asteroid-grey   R̄ 0.49782 (-0.44%)  range 0.4371 levels  bands 81.6% / 17.2% / 1.2%
+moon-callisto   R̄ 0.49968 (-0.06%)  range 0.0733 levels  bands 19.1% / 63.9% / 17.0% ✗
+moon-ice        R̄ 0.50010 (0.02%)  range 0.0107 levels  bands 26.4% / 52.1% / 21.5% ✗
+moon-io         R̄ 0.50086 (0.17%)  range 0.0504 levels  bands 88.3% / 10.9% / 0.8%
+moon-luna       R̄ 0.49859 (-0.28%)  range 0.2478 levels ✗  bands 48.9% / 46.4% / 4.7%
+moon-rust       R̄ 0.49947 (-0.11%)  range 0.1688 levels ✗  bands 36.7% / 58.2% / 5.1% ✗
+planet-alien    R̄ 0.50144 (0.29%)  range 0.0325 levels  bands 86.9% / 12.1% / 1.0%
+planet-jupiter  R̄ 0.50002 (0.00%)  range 0.0020 levels  bands 42.0% / 53.5% / 4.5% ✗
+planet-lava     R̄ 0.49832 (-0.34%)  range 0.0444 levels  bands 47.4% / 43.3% / 9.3%
+planet-mars     R̄ 0.49939 (-0.12%)  range 0.1354 levels ✗  bands 36.9% / 55.9% / 7.2% ✗
+planet-neptune  R̄ 0.50001 (0.00%)  range 0.0023 levels  bands 25.7% / 67.6% / 6.7% ✗
+planet-ocean    R̄ 0.50001 (0.00%)  range 0.0002 levels  bands 97.5% / 2.3% / 0.2%
+planet-saturn   R̄ 0.50001 (0.00%)  range 0.0013 levels  bands 49.6% / 49.4% / 0.9%
+planet-terra    R̄ 0.50271 (0.54%)  range 0.0424 levels  bands 91.2% / 7.9% / 0.9%
+planet-uranus   R̄ 0.50001 (0.00%)  range 0.0009 levels  bands 83.4% / 16.6% / 0.0%
+planet-venus    R̄ 0.50001 (0.00%)  range 0.0031 levels  bands 32.6% / 65.3% / 2.1% ✗
+sun-blue        R̄ 0.50001 (0.00%)  range 0.0010 levels  bands 38.1% / 57.0% / 4.8% ✗
+sun-orange      R̄ 0.50001 (0.00%)  range 0.0138 levels  bands 21.7% / 58.4% / 19.9% ✗
+sun-red         R̄ 0.50001 (0.00%)  range 0.0069 levels  bands 42.7% / 55.0% / 2.3% ✗
+sun-white       R̄ 0.50001 (0.00%)  range 0.0002 levels  bands 98.1% / 1.8% / 0.1%
+sun-yellow      R̄ 0.49993 (-0.01%)  range 0.0160 levels  bands 30.9% / 58.0% / 11.0% ✗
+P1: KILLED. every corner sphere within 1% of the ball, 1/2
+P2: KILLED. suns, planets, moons under 0.1 levels; asteroids over 0.3
+P3: KILLED. broad > middle > fine in every body
+P4: not killed. flattening in levels, log2(a/c): Earth 0.00483, Mars 0.00852, Moon 0.00174, Jupiter 0.09677, Saturn 0.14874
+P5: not killed. Earth's relief 0.00446 levels; with its flattening 0.00929

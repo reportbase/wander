@@ -71,3 +71,62 @@ references). These are given only as ratios, so only their levels matter.
 
 ## Runs
 
+### Run 1 (10 October 2026)
+
+`node plans/ref/ref.mjs res`, output in `plans/ref/ref-run1.txt` (✗ marks a body on the wrong side of a prediction):
+
+```
+asteroid-dark   R̄ 0.49351 (-1.30%) ✗  range 0.4917 levels  bands 85.6% / 13.6% / 0.7%
+asteroid-grey   R̄ 0.49782 (-0.44%)  range 0.4371 levels  bands 81.6% / 17.2% / 1.2%
+moon-callisto   R̄ 0.49968 (-0.06%)  range 0.0733 levels  bands 19.1% / 63.9% / 17.0% ✗
+moon-ice        R̄ 0.50010 (0.02%)  range 0.0107 levels  bands 26.4% / 52.1% / 21.5% ✗
+moon-io         R̄ 0.50086 (0.17%)  range 0.0504 levels  bands 88.3% / 10.9% / 0.8%
+moon-luna       R̄ 0.49859 (-0.28%)  range 0.2478 levels ✗  bands 48.9% / 46.4% / 4.7%
+moon-rust       R̄ 0.49947 (-0.11%)  range 0.1688 levels ✗  bands 36.7% / 58.2% / 5.1% ✗
+planet-alien    R̄ 0.50144 (0.29%)  range 0.0325 levels  bands 86.9% / 12.1% / 1.0%
+planet-jupiter  R̄ 0.50002 (0.00%)  range 0.0020 levels  bands 42.0% / 53.5% / 4.5% ✗
+planet-lava     R̄ 0.49832 (-0.34%)  range 0.0444 levels  bands 47.4% / 43.3% / 9.3%
+planet-mars     R̄ 0.49939 (-0.12%)  range 0.1354 levels ✗  bands 36.9% / 55.9% / 7.2% ✗
+planet-neptune  R̄ 0.50001 (0.00%)  range 0.0023 levels  bands 25.7% / 67.6% / 6.7% ✗
+planet-ocean    R̄ 0.50001 (0.00%)  range 0.0002 levels  bands 97.5% / 2.3% / 0.2%
+planet-saturn   R̄ 0.50001 (0.00%)  range 0.0013 levels  bands 49.6% / 49.4% / 0.9%
+planet-terra    R̄ 0.50271 (0.54%)  range 0.0424 levels  bands 91.2% / 7.9% / 0.9%
+planet-uranus   R̄ 0.50001 (0.00%)  range 0.0009 levels  bands 83.4% / 16.6% / 0.0%
+planet-venus    R̄ 0.50001 (0.00%)  range 0.0031 levels  bands 32.6% / 65.3% / 2.1% ✗
+sun-blue        R̄ 0.50001 (0.00%)  range 0.0010 levels  bands 38.1% / 57.0% / 4.8% ✗
+sun-orange      R̄ 0.50001 (0.00%)  range 0.0138 levels  bands 21.7% / 58.4% / 19.9% ✗
+sun-red         R̄ 0.50001 (0.00%)  range 0.0069 levels  bands 42.7% / 55.0% / 2.3% ✗
+sun-white       R̄ 0.50001 (0.00%)  range 0.0002 levels  bands 98.1% / 1.8% / 0.1%
+sun-yellow      R̄ 0.49993 (-0.01%)  range 0.0160 levels  bands 30.9% / 58.0% / 11.0% ✗
+P1: KILLED. every corner sphere within 1% of the ball, 1/2
+P2: KILLED. suns, planets, moons under 0.1 levels; asteroids over 0.3
+P3: KILLED. broad > middle > fine in every body
+P4: not killed. flattening in levels, log2(a/c): Earth 0.00483, Mars 0.00852, Moon 0.00174, Jupiter 0.09677, Saturn 0.14874
+P5: not killed. Earth's relief 0.00446 levels; with its flattening 0.00929
+```
+
+- **P1 killed, by one body.** Every corner sphere is within 1% of the ball except the dark asteroid's (−1.3%). A lumpy
+  rock's geometric mean is not its ball; every world's is, within 0.6%.
+- **P2 killed, by three bodies.** Wander's Moon spans 0.248 levels, its rust moon 0.169 and its Mars 0.135. The other
+  suns, planets and moons are under 0.1, most of them under 0.05. Both asteroids are over 0.3, as predicted.
+- **P3 killed, by twelve bodies.** In most of the cratered bodies and in several smooth ones (Jupiter, Neptune, Venus,
+  three suns), the middle band holds more of the depth than the broad. Broad first holds for the asteroids, Io, the alien
+  planet, the ocean planet, Terra, Uranus and the white sun.
+- **P4 and P5 not killed.** By their published radii, the rocky worlds' flattening is under a hundredth of a level and
+  the giants' about a tenth (Jupiter 0.097, Saturn 0.149). Earth's relief, from Challenger Deep to Everest, spans 0.0045
+  levels; with its flattening, the whole Earth is within 0.0093 levels of its corner.
+
+## Reading (after the run; not ruled)
+
+- **The physics side holds.** Measuring heights against a world's own reference sphere is the same operation as depth
+  from the corner, in amounts rather than levels. Read so:
+  - a real rocky world is its corner to within about a hundredth of a level;
+  - a spinning giant is its corner to within about a tenth;
+  - the real Moon's relief (+10.8 to −9.1 km about 1737 km) spans 0.0165 levels.
+- **Wander's bodies are rougher than real ones.** Wander's Moon (0.248 levels) is about fifteen times the real Moon's
+  span, and wander's Mars (0.135) about seven times the real Mars's (about 0.018 with its relief). They were made to look
+  good close up (`res/`, "looks only"), not to scale. If the world is to correspond, their relief is the thing to scale.
+  That is a change to `res/make-bodies.mjs`, for Tom to decide. The run changes nothing.
+- **"Broad first" is the order of seeing, not of the relief.** The shaders add the broad band first because its features
+  are the largest, so they cover a few pixels first. That order holds whatever share of the relief each band holds, and
+  in most of wander's bodies the craters (the middle band) hold most of it. P3 confused the two orders. The kill stands.
