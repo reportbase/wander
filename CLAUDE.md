@@ -94,7 +94,9 @@ Google Fonts load from outside:
   iterated seperately"). Standalone, one mechanic each, nothing shared, so each can change alone: far bodies under a pixel
   (dim by 1/d², vanish, or a full-bright pixel; hook `__points`); events on approach (point, resolved, shape, terrain,
   surface; `__resolve`); distances earned rung by rung (parallax, then width and light per kind; `__navigator`); the sky
-  filling as light arrives, the count a clock (`__skyfill`). Not in the flying page.
+  filling as light arrives, the count a clock (`__skyfill`). `play-corner.html` (10 Oct, Tom: "situated is much better at
+  certain things"): aiming a cut from the cue ball's view in the red's own size; f half-spans off its middle gives
+  sin φ = f/2 at any distance (half-ball 30°, graze 90°: the ghost ball, h + v = 1; `__corner`). Not in the flying page.
 - `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the seven demos (sweep, dial, sphere, facing, levels, walk, pool) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
@@ -328,7 +330,7 @@ In short:
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
   11. **Gameplay sketches:** each page's one mechanic through its hook (dimming, stages, the ladder's locks and light, the
-      sky's count read back as time).
+      sky's count read back as time, a half-ball cut 30° near and far).
   12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
   13. **levels.html:** the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
       and one level fewer seen per doubling of the grain; the shape crosses ring edges, its broad form fewer; with the size divided out

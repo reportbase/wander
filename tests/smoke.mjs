@@ -267,7 +267,12 @@ try {
   await page.goto(new URL('play-sky.html', base).href, { waitUntil: 'load' });
   const ps = await page.evaluate(() => { const s = __skyfill, k = s.arrived(10); return { k, exp: s.expected(10), back: s.timeFromCount(k), none: s.arrived(0.1), all: s.arrived(1000) }; });
   if (Math.abs(ps.k - ps.exp) > 3 * Math.sqrt(ps.exp) || Math.abs(ps.back / 10 - 1) > 0.1 || ps.none !== 0 || ps.all !== 1500) failures.push(`[play-sky.html] ${JSON.stringify(ps)}`);
-  console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills)`);
+  await page.goto(new URL('play-corner.html', base).href, { waitUntil: 'load' });
+  const pc = await page.evaluate(() => { const c = __corner, cut = (f, d) => Math.abs(c.cutOf(f, d));
+    const L = c.current(); c.aim(c.fFor(L.phi));
+    return { near: cut(1, 3), far: cut(1, 30), full: cut(0, 7), graze: cut(2 - 1e-9, 5), miss: c.cutOf(2.1, 5), res: c.shoot() }; });
+  if (Math.abs(pc.near - 30) > 1e-9 || Math.abs(pc.far - 30) > 1e-9 || pc.full !== 0 || Math.abs(pc.graze - 90) > 0.01 || pc.miss !== null || pc.res !== 'potted') failures.push(`[play-corner.html] ${JSON.stringify(pc)}`);
+  console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills, aiming from the cue ball)`);
 
   // ── 12. facing.html: the facing is 2θ, square to the line at the corner, the arc off the line most there ──
   current = 'facing.html';
