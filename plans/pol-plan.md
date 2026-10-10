@@ -699,3 +699,24 @@ measured, the game's layouts (scattered ×12, rack ×6, random aims, power 14): 
 - **The fix is the situated one.** Find the moment the pair's reading is exactly h + v = 1 (each ball can, in its own
   units, from the other's direction, its reading and its told motion), respond there, and carry on. That is a new run,
   with its own predictions.
+
+### Run 9 (10 October 2026): prediction, written before it ran
+
+Run 8 again, after making the game's contact exact, in the situated way. When a pair's reading has passed h + v = 1
+within a tick, each ball works out, in its own units, how long ago the reading was exactly 1. It uses only what it has:
+the other's direction n and the pair's readings h and v (the other's place relative to it, n/h, in its own radii), and
+the other's told motion converted by v/h. It solves |n/h − w·τ| = 1 + v/h for τ ≥ 0 (w the relative motion), takes the
+line of centres at that moment, responds along it, and corrects its own place by its change of motion times τ (it has
+moved with the new motion since then). A cushion likewise: its image's reading was exactly ½ a time τ = (r − gap)/(its
+speed toward the cushion) ago. Run 8's chains, seeds and measure are kept, and `play-trick.html` is changed only there.
+
+Worked out before writing this: with contact exact, each struck ball leaves from rest along the true line of centres, so
+a chain follows its planned geometry to rounding, and the first-order factor is exactly s/(2r·cos φ).
+
+- **P22 (one contact).** At least 95% of the 180 contacts are within 2% of s/(2r·cos φ). *Killed* if fewer.
+- **P23 (the chain).** At least 95% of the 60 chains lose Σ log₂ A_k levels within 0.05. *Killed* if fewer.
+- **P24 (contact on the line).** At every corrected contact the pair's reading is h + v = 1 within 1e-9. *Killed* if
+  any is not.
+- *Kept from the game's checks:* the row of four still pots the 4, and the rack's first contact is still a full-ball hit.
+- *Measured, not predicted:* in the game's layouts, levels lost by depth, and the depth at which a 0.1° aim error passes
+  3.6°: the horizon for the preview's fade.
