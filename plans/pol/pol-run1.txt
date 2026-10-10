@@ -1,0 +1,26 @@
+4362840 pair-substeps over 20 breaks (10 with the heavy ball, 10 all equal); 376 contacts
+P1: not killed. d < r_a + r_b against h + v > 1: 0 disagreements past 1e-12 (0 within 1e-12 of the line)
+P2: not killed. contacts off the corner (equal) or off the ray 4/3 (heavy): 0
+P3: not killed. one reading alone (v >= 1/2) against touching: all equal 0 wrong; with the heavy ball, per break 3169, 5905, 3564, 3537, 3551, 3562, 2010, 3647, 3512, 1720
+P4: not killed. inside against the referee:
+  break 0: first contact at 0.650 s, differ 1.73e-18 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 1: first contact at 0.650 s, differ 2.78e-17 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 2: first contact at 0.650 s, differ 2.78e-17 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 3: first contact at 0.650 s, differ 1.73e-18 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 4: first contact at 0.650 s, differ 0.00e+0 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 5: first contact at 0.650 s, differ 0.00e+0 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 6: first contact at 0.650 s, differ 1.73e-18 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 7: first contact at 0.650 s, differ 1.73e-18 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 8: first contact at 0.650 s, differ 2.78e-17 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 9: first contact at 0.650 s, differ 1.73e-18 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 0: differ 1.73e-18 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 1: differ 2.78e-17 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 2: differ 2.78e-17 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 3: differ 1.73e-18 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 4: differ 0.00e+0 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 5: differ 0.00e+0 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 6: differ 1.73e-18 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 7: differ 1.73e-18 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 8: differ 2.78e-17 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 9: differ 1.73e-18 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+P5: not killed. most levels from touching (equal balls) 4.459 (bound 4.63); rack medians 1.44, 1.44, 1.44, 1.44, 1.44, 1.44, 1.44, 1.44, 1.44, 1.44

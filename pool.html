@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Pool from inside</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    pool.html: pool from inside (10 October 2026; Tom, sharing "Pool from Somewhere": "each pool ball can explore its
+    situation"; "they lean heavily on unsituated math … Ours is most situated math, and could be all situated math"; "the
+    further we push, we will learn something more about the geometry of situated readers"). Plan: plans/pol-plan.md.
+
+    Two tables, one rack, one strike:
+      - the referee (unsituated): world positions and velocities, every pair checked by d < r_a + r_b, as the table of
+        "Pool from Somewhere";
+      - the situated table: no ball reads a world position. Each ball, for each other, reads the other's direction and
+        v = r_b/d (sine of the half-span the other fills), and is told the other's reading of it, h = r_a/d. Contact is
+        h + v = 1, the straight line of facing.html; equal balls touch at the corner, h = v = ½ (60° across). Each ball
+        works in its own size: the other's size is r_a·v/h, the other's own-units motion times v/h, the mass ratio (v/h)³
+        (one material: the bridge). It moves itself by its own velocity.
+    Unsituated still, and named: the cushions and pockets (a straight cushion has no size, so no reading r/d), the
+    cloth's slowing applied by one integrator, one clock with no signal delay.
+    Links: ?break=0..9, ?heavy=0. Test hook: window.__pool (run(i, opts) → the plan's measures).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 76ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button, select { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: manipulation }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Pool from inside</h1>
+    <p class="lede">Each ball reads every other from where it is: the other's direction, and how much of its view the other
+    fills. Two balls touch when their two readings add to one, h + v = 1, the straight line of the facing; two equal balls
+    touch at the corner, each filling 60° of the other's view. The table below is played from inside, beside a referee that
+    plays it from nowhere.</p>
+    <div class="panel">
+        <div class="row">
+            <button id="play">pause</button>
+            <button id="brk">break</button>
+            <select id="which" aria-label="which break"></select>
+            <button id="heavy" class="on">heavy ball</button>
+            <button id="show">show: from inside</button>
+        </div>
+        <canvas id="table" height="340" style="margin-top:10px"></canvas>
+        <p class="cap">The table played from inside. Tap a ball to stand on it: lines to the others, coloured by how many levels
+        each is from touching it (gold: touching).</p>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="pairs" height="320"></canvas><p class="cap">The chosen ball's pairs as points (h, v): h how much of each
+            other's view it fills, v how much of its view the other fills. Each pair runs out along its own ray, set by the two
+            sizes; contact is the line h + v = 1. Equal balls touch at the corner.</p></div>
+            <div><canvas id="view" height="320"></canvas><p class="cap">What the chosen ball sees: round its whole turn, each other
+            ball as the arc it fills. A touching ball of equal size fills 60°.</p></div>
+        </div>
+        <div id="hud"></div>
+    </div>
+    <p class="note">Keep the case: h and v are readings, ratios of a size to a distance, from 0 to 1; contact needs no unit.
+    Speeds and impulses are amounts, so each ball works in its own size, and the masses come from the sizes by one material
+    (the bridge). Still played from nowhere, and named so: the cushions and pockets (a straight cushion fills half the view at
+    any distance, so it has no reading r/d), and one clock with no delay. Plan and runs: <code>plans/pol-plan.md</code>. Other
+    demos: <a href="facing.html">the facing</a>, <a href="walk.html">the walk</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), TAU = 2 * Math.PI, D = Math.PI / 180;
+    // ══ the table's constants, as "Pool from Somewhere" ══
+    const LX = 20, LZ = 10, R0 = 0.45, R_HEAVY = 0.6, POCK = 0.85, MU = 0.6, E_BALL = 0.96, E_RAIL = 0.8, HEAD = [-LX / 4, 0];
+    const POCKETS = [[-LX / 2, -LZ / 2], [0, -LZ / 2 - 0.2], [LX / 2, -LZ / 2], [-LX / 2, LZ / 2], [0, LZ / 2 + 0.2], [LX / 2, LZ / 2]];
+    const COLS = { 1: '#e3c33b', 2: '#2f5fd0', 3: '#d23a2f', 4: '#6b3fa0', 5: '#e0782a', 6: '#2e8b57', 7: '#7a2f2a', 8: '#16161a' };
+    for (let k = 9; k <= 15; k++) COLS[k] = COLS[k - 8];
+    const FRAME = 1 / 60, SUB = 4, SPEED = 14, angleOf = i => -1.8 + 0.4 * i;
+
+    function rack(heavy) {   // the white on the head spot, fifteen in five rows; one heavy ball (or, with heavy off, all alike)
+        const B = [{ n: 0, x: HEAD[0], z: HEAD[1], vx: 0, vz: 0, r: R0, m: 1, col: '#f2f0ea', cue: true }];
+        const apex = LX / 4, sp = 2 * R_HEAVY + 0.02; let k = 1;
+        for (let row = 0; row < 5; row++) for (let j = 0; j <= row; j++) {
+            const isH = heavy && row === 3 && j === 1, r = isH ? R_HEAVY : R0;
+            B.push({ n: isH ? 'H' : k, x: apex + row * sp * 0.87, z: (j - row / 2) * sp, vx: 0, vz: 0, r, m: (r / R0) ** 3,
+                col: isH ? '#5a1414' : COLS[k] || '#888', stripe: !isH && k >= 9 });
+            if (!isH) k++;
+        }
+        return B;
+    }
+    const strike = (B, i) => { const a = angleOf(i) * D; B[0].vx = SPEED * Math.cos(a); B[0].vz = SPEED * Math.sin(a); };
+
+    // ══ each ball's own motion, the cloth, and (unsituated, named) the pockets and cushions ══
+    function ownAndWalls(B, h) {
+        for (const b of B) {
+            if (b.sunk) continue;
+            const sp = Math.hypot(b.vx, b.vz);
+            if (sp > 0) { const ns = Math.max(0, sp - MU * h); b.vx *= ns / sp; b.vz *= ns / sp; }
+            b.x += b.vx * h; b.z += b.vz * h;
+            for (const [px, pz] of POCKETS) if (Math.hypot(b.x - px, b.z - pz) < POCK) b.sunk = true;
+            if (b.sunk) continue;
+            if (b.x < -LX / 2 + b.r) { b.x = -LX / 2 + b.r; b.vx = -b.vx * E_RAIL; }
+            if (b.x > LX / 2 - b.r) { b.x = LX / 2 - b.r; b.vx = -b.vx * E_RAIL; }
+            if (b.z < -LZ / 2 + b.r) { b.z = -LZ / 2 + b.r; b.vz = -b.vz * E_RAIL; }
+            if (b.z > LZ / 2 - b.r) { b.z = LZ / 2 - b.r; b.vz = -b.vz * E_RAIL; }
+        }
+    }
+
+    // ══ the referee: from nowhere, as "Pool from Somewhere" ══
+    function refereePairs(B, log) {
+        for (let i = 0; i < B.length; i++) for (let j = i + 1; j < B.length; j++) {
+            const A = B[i], Bb = B[j]; if (A.sunk || Bb.sunk) continue;
+            const dx = Bb.x - A.x, dz = Bb.z - A.z, d = Math.hypot(dx, dz), rr = A.r + Bb.r;
+            if (log) log(A, Bb, d);
+            if (d >= rr || d === 0) continue;
+            const nx = dx / d, nz = dz / d, push = (rr - d) / 2;
+            A.x -= nx * push; A.z -= nz * push; Bb.x += nx * push; Bb.z += nz * push;
+            const vr = (Bb.vx - A.vx) * nx + (Bb.vz - A.vz) * nz;
+            if (vr < 0) {
+                const jj = (1 + E_BALL) * vr / (1 / A.m + 1 / Bb.m);
+                A.vx += jj / A.m * nx; A.vz += jj / A.m * nz; Bb.vx -= jj / Bb.m * nx; Bb.vz -= jj / Bb.m * nz;
+                if (log) log(A, Bb, d, true);
+            }
+        }
+    }
+
+    // ══ the situated table ══
+    // What arrives at a from b: b's direction (a unit vector in the plane: an address) and v = r_b/d. This function is the
+    // world's side, the image arriving; nothing else of b's place reaches a.
+    function image(a, b) { const dx = b.x - a.x, dz = b.z - a.z, d = Math.hypot(dx, dz); return { n: [dx / d, dz / d], v: b.r / d }; }
+    // What a does with it: everything in its own size (its radius, its H). Its own motion in its own units: u = vel / r.
+    // The other reports its motion in its own units, and a converts it by the size ratio v/h.
+    function respond(a, ia, ib, ub) {   // ia: a's image of b; ib: b's image of a (b's reading h, told to a)
+        const v = ia.v, h = ib.v, n = ia.n, ua = [a.vx / a.r, a.vz / a.r];
+        const over = (h + v - 1) / (2 * h);                   // half the overlap, in a's radii: d = 1/h, r_a + r_b = 1 + v/h
+        const ubA = [ub[0] * v / h, ub[1] * v / h];           // the other's motion in a's units
+        const vr = (ubA[0] - ua[0]) * n[0] + (ubA[1] - ua[1]) * n[1];
+        let du = [0, 0];
+        if (vr < 0) { const k = (1 + E_BALL) * vr / (1 + (h / v) ** 3); du = [k * n[0], k * n[1]]; }   // mass ratio (h/v)³
+        return { step: [-over * n[0], -over * n[1]], du, hit: vr < 0 };   // in a's own units: move back, change speed
+    }
+    function situatedPairs(B, log) {
+        for (let i = 0; i < B.length; i++) for (let j = i + 1; j < B.length; j++) {
+            const A = B[i], Bb = B[j]; if (A.sunk || Bb.sunk) continue;
+            const ia = image(A, Bb), ib = image(Bb, A);       // each reads the other; they tell each other their reading
+            if (log) log(A, Bb, null, false, ia.v, ib.v);
+            if (!(ib.v + ia.v > 1)) continue;                 // contact is h + v = 1
+            const uA = [A.vx / A.r, A.vz / A.r], uB = [Bb.vx / Bb.r, Bb.vz / Bb.r];   // each reports its own motion, own units
+            const ra = respond(A, ia, ib, uB), rb = respond(Bb, ib, ia, uA);
+            // each moves itself and changes its own speed, by its own units (its radius)
+            A.x += ra.step[0] * A.r; A.z += ra.step[1] * A.r; Bb.x += rb.step[0] * Bb.r; Bb.z += rb.step[1] * Bb.r;
+            A.vx += ra.du[0] * A.r; A.vz += ra.du[1] * A.r; Bb.vx += rb.du[0] * Bb.r; Bb.vz += rb.du[1] * Bb.r;
+            if (log && ra.hit) log(A, Bb, null, true, ia.v, ib.v);
+        }
+    }
+    const stepRef = (B, log) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { ownAndWalls(B, h); refereePairs(B, log); } };
+    const stepSit = (B, log) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { ownAndWalls(B, h); situatedPairs(B, log); } };
+
+    // ══ the plan's run: one break, both tables in lockstep, every measure of plans/pol-plan.md ══
+    function run(i, opts = {}) {
+        const heavy = opts.heavy !== false, T = opts.seconds || 8, frames = Math.round(T / FRAME);
+        const R = rack(heavy), S = rack(heavy); strike(R, i); strike(S, i);
+        const out = { i, heavy, p1bad: 0, p1near: 0, p2bad: 0, contacts: 0, p3wrong: 0, firstContact: null, diffAtFirst: null,
+            diffHalf: 0, diverge: null, maxLevelEq: 0, rackMedian: null, pairs: 0 };
+        // the rack's levels before the break
+        const L0 = []; for (let a = 0; a < R.length; a++) for (let b = a + 1; b < R.length; b++) {
+            const d = Math.hypot(R[a].x - R[b].x, R[a].z - R[b].z); L0.push(Math.log2(d / (R[a].r + R[b].r))); }
+        L0.sort((p, q) => p - q); out.rackMedian = L0[L0.length >> 1];
+        let t = 0, sub = 0;
+        const refLog = (A, Bb, d, hit) => {
+            const h = A.r / d, v = Bb.r / d;
+            if (!hit) {
+                out.pairs++;
+                const touch = d < A.r + Bb.r, sit = h + v > 1;
+                if (touch !== sit) { if (Math.abs(h + v - 1) > 1e-12) out.p1bad++; else out.p1near++; }
+                if (A.r === Bb.r && A.r === R0) out.maxLevelEq = Math.max(out.maxLevelEq, Math.log2(1 / (h + v)));
+                // P3: each ball's own reading alone, v ≥ ½, against touching (both views)
+                if ((v >= 0.5) !== touch) out.p3wrong++; if ((h >= 0.5) !== touch) out.p3wrong++;
+            } else {
+                out.contacts++;
+                if (out.firstContact == null) out.firstContact = t;
+                if (A.r === Bb.r) { if (Math.abs(h - v) >= 1e-12) out.p2bad++; }
+                else { const q = v / h; if (Math.abs(q - 4 / 3) >= 1e-12 && Math.abs(q - 3 / 4) >= 1e-12) out.p2bad++; }
+            }
+        };
+        const diff = () => Math.max(...R.map((b, k) => (b.sunk || S[k].sunk) ? (b.sunk === S[k].sunk ? 0 : Infinity) : Math.hypot(b.x - S[k].x, b.z - S[k].z)));
+        for (let f = 0; f < frames; f++) {
+            const firstBefore = out.firstContact;
+            stepRef(R, refLog); stepSit(S); t += FRAME; sub += SUB;
+            const dd = diff();
+            if (firstBefore == null && out.firstContact != null) out.diffAtFirst = dd;
+            if (t <= 0.5 + 1e-9) out.diffHalf = Math.max(out.diffHalf, dd);
+            if (out.diverge == null && dd > 1e-3) out.diverge = t;
+        }
+        return out;
+    }
+
+    // ══ the page ══
+    let heavyOn = new URLSearchParams(location.search).get('heavy') !== '0', which = +(new URLSearchParams(location.search).get('break') || 4);
+    let REF = rack(heavyOn), SIT = rack(heavyOn), playing = true, chosen = 0, showSit = true, t = 0, lastDiff = 0, contacts = 0;
+    for (let i = 0; i < 10; i++) { const o = document.createElement('option'); o.value = i; o.textContent = `break ${i} (${angleOf(i).toFixed(1)}°)`; $('which').appendChild(o); }
+    $('which').value = which;
+    function reset(doStrike) { REF = rack(heavyOn); SIT = rack(heavyOn); t = 0; contacts = 0; if (doStrike) { strike(REF, which); strike(SIT, which); } }
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +cv.getAttribute('height');
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, hh];
+    }
+    const levelCol = L => L <= 0 ? '#d4a052' : L < 1 ? '#8ce6cd' : L < 2 ? 'rgba(140,230,205,0.6)' : L < 3 ? 'rgba(181,156,240,0.45)' : 'rgba(181,156,240,0.18)';
+    let tableMap = null;
+    function draw() {
+        const B = showSit ? SIT : REF, me = B[chosen] && !B[chosen].sunk ? B[chosen] : B.find(b => !b.sunk);
+        // ── the table, top down ──
+        let [g, W, H] = fit($('table'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        const sc = Math.min((W - 30) / (LX + 2), (H - 30) / (LZ + 2)), ox = W / 2, oy = H / 2, P = (x, z) => [ox + x * sc, oy + z * sc];
+        tableMap = { sc, ox, oy };
+        g.fillStyle = '#2a1a12'; g.fillRect(ox - (LX / 2 + 0.8) * sc, oy - (LZ / 2 + 0.8) * sc, (LX + 1.6) * sc, (LZ + 1.6) * sc);
+        g.fillStyle = '#16513f'; g.fillRect(ox - LX / 2 * sc, oy - LZ / 2 * sc, LX * sc, LZ * sc);
+        g.fillStyle = '#060608'; for (const [px, pz] of POCKETS) { g.beginPath(); g.arc(...P(px, pz), POCK * sc, 0, TAU); g.fill(); }
+        if (me) for (const b of B) {   // the chosen ball's lines to the others, by level from touching
+            if (b === me || b.sunk) continue;
+            const d = Math.hypot(b.x - me.x, b.z - me.z), L = Math.log2(d / (me.r + b.r));
+            g.strokeStyle = levelCol(L); g.lineWidth = L <= 0 ? 3 : 1.2; g.beginPath(); g.moveTo(...P(me.x, me.z)); g.lineTo(...P(b.x, b.z)); g.stroke();
+        }
+        for (const b of B) {
+            if (b.sunk) continue;
+            const [x, y] = P(b.x, b.z), rad = b.r * sc;
+            g.fillStyle = b.stripe ? '#f2f0ea' : b.col; g.beginPath(); g.arc(x, y, rad, 0, TAU); g.fill();
+            if (b.stripe) { g.save(); g.beginPath(); g.arc(x, y, rad, 0, TAU); g.clip(); g.fillStyle = b.col; g.fillRect(x - rad, y - rad * 0.45, 2 * rad, rad * 0.9); g.restore(); }
+            if (b === me) { g.strokeStyle = '#e6e4ee'; g.lineWidth = 2; g.beginPath(); g.arc(x, y, rad + 3, 0, TAU); g.stroke(); }
+        }
+        // ── the pairs as (h, v) ──
+        [g, W, H] = fit($('pairs'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        const S = Math.min(W, H) - 60, sx = (W - S) / 2, sy = H - 30, Q = (h, v) => [sx + h * S, sy - v * S];
+        g.strokeStyle = 'rgba(255,255,255,0.15)'; g.lineWidth = 1; g.strokeRect(sx, sy - S, S, S);
+        g.strokeStyle = 'rgba(181,156,240,0.35)'; g.beginPath(); for (let k = 0; k <= 90; k++) { const q = Q(Math.cos(k * D), Math.sin(k * D)); k ? g.lineTo(...q) : g.moveTo(...q); } g.stroke();
+        for (let L = 1; L <= 4; L++) {   // the levels from touching: h + v = 2^-L
+            const c = 2 ** -L; g.strokeStyle = 'rgba(255,255,255,0.08)'; g.beginPath(); g.moveTo(...Q(c, 0)); g.lineTo(...Q(0, c)); g.stroke();
+        }
+        g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.moveTo(...Q(1, 0)); g.lineTo(...Q(0, 1)); g.stroke();
+        g.fillStyle = '#d4a052'; g.beginPath(); g.arc(...Q(0.5, 0.5), 4, 0, TAU); g.fill();
+        g.font = '11px DM Mono, monospace'; g.fillText('contact, h + v = 1', ...Q(0.72, 0.31));
+        g.fillStyle = '#8a8a96'; g.fillText('the corner', ...Q(0.53, 0.56)); g.fillText('h', ...Q(1.02, -0.04)); g.fillText('v', ...Q(-0.05, 1.0));
+        g.fillText('one level out', ...Q(0.27, 0.27));
+        if (me) for (const b of B) {
+            if (b === me || b.sunk) continue;
+            const d = Math.hypot(b.x - me.x, b.z - me.z), h = me.r / d, v = b.r / d;
+            g.strokeStyle = 'rgba(255,255,255,0.08)'; g.beginPath(); g.moveTo(...Q(0, 0)); g.lineTo(...Q(h / (h + v) * 1.2, v / (h + v) * 1.2)); g.stroke();
+            g.fillStyle = h + v >= 1 ? '#d4a052' : (b.stripe ? '#f2f0ea' : b.col); g.beginPath(); g.arc(...Q(Math.min(h, 1.05), Math.min(v, 1.05)), 4, 0, TAU); g.fill();
+        }
+        // ── what the chosen ball sees, round its whole turn ──
+        [g, W, H] = fit($('view'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        const cx = W / 2, cy = H / 2, R1 = Math.min(W, H) * 0.36;
+        g.strokeStyle = 'rgba(255,255,255,0.15)'; g.lineWidth = 1; g.beginPath(); g.arc(cx, cy, R1, 0, TAU); g.stroke();
+        if (me) {
+            g.fillStyle = me.stripe ? '#f2f0ea' : me.col; g.beginPath(); g.arc(cx, cy, 10, 0, TAU); g.fill();
+            for (const b of B) {
+                if (b === me || b.sunk) continue;
+                const dx = b.x - me.x, dz = b.z - me.z, d = Math.hypot(dx, dz), dir = Math.atan2(dz, dx), half = Math.asin(Math.min(1, b.r / d));
+                g.strokeStyle = b.stripe ? '#f2f0ea' : b.col; g.lineWidth = 14;
+                g.beginPath(); g.arc(cx, cy, R1, dir - half, dir + half); g.stroke();
+                if (b.r / d >= 0.5) { g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.arc(cx, cy, R1 + 12, dir - half, dir + half); g.stroke(); }
+            }
+            g.fillStyle = '#8a8a96'; g.font = '11px DM Mono, monospace'; g.textAlign = 'center';
+            g.fillText(`seen from ${me.cue ? 'the white' : me.n === 'H' ? 'the heavy ball' : 'ball ' + me.n}`, cx, H - 12); g.textAlign = 'left';
+        }
+        // ── the readout ──
+        let near = [0, 0, 0, 0, 0, 0];
+        if (me) for (const b of B) { if (b === me || b.sunk) continue; const L = Math.log2(Math.hypot(b.x - me.x, b.z - me.z) / (me.r + b.r)); near[Math.max(0, Math.min(5, Math.ceil(L)))]++; }
+        $('hud').textContent =
+            `t = ${t.toFixed(2)} s   ${showSit ? 'shown: the table played from inside' : 'shown: the referee, from nowhere'}   contacts so far ${contacts}\n` +
+            `the two tables differ by at most ${lastDiff.toExponential(2)} (rounding only: the same game, played from inside)\n` +
+            (me ? `around ${me.cue ? 'the white' : me.n === 'H' ? 'the heavy ball' : 'ball ' + me.n}, by levels from touching: touching ${near[0]}, within 1 level ${near[1]}, 2 ${near[2]}, 3 ${near[3]}, 4 ${near[4]}, more ${near[5]}` : '');
+    }
+    let last = null;
+    function tick(now) {
+        if (playing) {
+            const steps = last == null ? 1 : Math.min(4, Math.max(1, Math.round((now - last) / 1000 / FRAME)));
+            for (let k = 0; k < steps; k++) { stepRef(REF, (A, B, d, hit) => { if (hit) contacts++; }); stepSit(SIT); t += FRAME; }
+            lastDiff = Math.max(...REF.map((b, k) => (b.sunk || SIT[k].sunk) ? 0 : Math.hypot(b.x - SIT[k].x, b.z - SIT[k].z)));
+            draw();
+        }
+        last = now; requestAnimationFrame(tick);
+    }
+    $('play').addEventListener('click', () => { playing = !playing; $('play').textContent = playing ? 'pause' : 'play'; draw(); });
+    $('brk').addEventListener('click', () => { which = +$('which').value; reset(true); playing = true; $('play').textContent = 'pause'; });
+    $('which').addEventListener('change', () => { which = +$('which').value; reset(true); });
+    $('heavy').addEventListener('click', () => { heavyOn = !heavyOn; $('heavy').classList.toggle('on', heavyOn); reset(true); });
+    $('show').addEventListener('click', () => { showSit = !showSit; $('show').textContent = 'show: ' + (showSit ? 'from inside' : 'the referee'); draw(); });
+    $('table').addEventListener('click', e => {
+        if (!tableMap) return; const r = $('table').getBoundingClientRect(), x = (e.clientX - r.left - tableMap.ox) / tableMap.sc, z = (e.clientY - r.top - tableMap.oy) / tableMap.sc;
+        const B = showSit ? SIT : REF; let best = -1, bd = 1.2; B.forEach((b, k) => { if (b.sunk) return; const dd = Math.hypot(b.x - x, b.z - z); if (dd < bd) { bd = dd; best = k; } });
+        if (best >= 0) { chosen = best; draw(); }
+    });
+    window.addEventListener('resize', draw);
+    $('heavy').classList.toggle('on', heavyOn);
+    reset(true); draw(); requestAnimationFrame(tick);
+
+    window.__pool = { run, rack, strike, angleOf, image, respond, R0, R_HEAVY };
+})();
+</script>
+</body>
+</html>

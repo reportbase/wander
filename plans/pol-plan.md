@@ -88,3 +88,64 @@ geometry. P3–P5 are not identities.
 
 ## Runs
 
+### Run 1 (10 October 2026)
+
+`node plans/pol/pol.mjs` (through `pool.html`'s hook), output in `plans/pol/pol-run1.txt`:
+
+```
+4362840 pair-substeps over 20 breaks (10 with the heavy ball, 10 all equal); 376 contacts
+P1: not killed. d < r_a + r_b against h + v > 1: 0 disagreements past 1e-12 (0 within 1e-12 of the line)
+P2: not killed. contacts off the corner (equal) or off the ray 4/3 (heavy): 0
+P3: not killed. one reading alone (v >= 1/2) against touching: all equal 0 wrong; with the heavy ball, per break 3169, 5905, 3564, 3537, 3551, 3562, 2010, 3647, 3512, 1720
+P4: not killed. inside against the referee:
+  break 0: first contact at 0.650 s, differ 1.73e-18 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 1: first contact at 0.650 s, differ 2.78e-17 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 2: first contact at 0.650 s, differ 2.78e-17 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 3: first contact at 0.650 s, differ 1.73e-18 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 4: first contact at 0.650 s, differ 0.00e+0 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 5: first contact at 0.650 s, differ 0.00e+0 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 6: first contact at 0.650 s, differ 1.73e-18 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 7: first contact at 0.650 s, differ 1.73e-18 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 8: first contact at 0.650 s, differ 2.78e-17 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  break 9: first contact at 0.650 s, differ 1.73e-18 then; most in the first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 0: differ 1.73e-18 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 1: differ 2.78e-17 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 2: differ 2.78e-17 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 3: differ 1.73e-18 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 4: differ 0.00e+0 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 5: differ 0.00e+0 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 6: differ 1.73e-18 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 7: differ 1.73e-18 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 8: differ 2.78e-17 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+  all equal, break 9: differ 1.73e-18 at first contact; first 0.5 s 0.00e+0; past 1e-3 at never (8 s)
+P5: not killed. most levels from touching (equal balls) 4.459 (bound 4.63); rack medians 1.44, 1.44, 1.44, 1.44, 1.44, 1.44, 1.44, 1.44, 1.44, 1.44
+```
+
+- **P1 not killed.** Over 4.36 million pair-substeps, the referee's d < r_a + r_b and the two readings' h + v > 1 never
+  disagree, not even within 1e-12 of the line.
+- **P2 not killed.** All 376 contacts lie on the corner (equal balls) or on the heavy ball's ray, 4/3 or 3/4.
+- **P3 not killed.** With all balls alike, a ball's own reading alone (v ≥ ½) decides contact without error. With the
+  heavy ball, it mis-decides between 1,720 and 5,905 pair-substeps per break.
+- **P4 not killed.** At the first contact (0.65 s in every break) the two tables differ by at most 3e-17, and by nothing
+  in the first half second. *Measured:* they never came 1e-3 apart in 8 s, in any of the 20 breaks; the most seen on the
+  page is of order 1e-14. The chaos the plan expected did not show: about 19 contacts a break, slowed by the cloth, did
+  not amplify rounding that far.
+- **P5 not killed.** The farthest two equal balls ever were 4.46 levels from touching (bound 4.63). The rack's median
+  level is 1.44.
+
+## Reading (after the run; not ruled)
+
+- **Contact, read from inside, is the facing's straight line.** Each ball's reading of the other, sin of the half-span,
+  is a pure number. The pair's two readings, h and v, add to (r_a + r_b)/d, so contact is h + v = 1, the line from A to
+  B of `facing.html`. Equal balls touch at its middle, the corner. The geometry needs no unit and no coordinates.
+- **A pair's sweep is a ray, and distance is levels along it.** The sizes fix the ray's angle (v/h = r_b/r_a), and
+  approach moves the point out along it, one level for each halving of the gap's measure h + v. The pair's "facing" in
+  this space is set by what the two are, and its "distance" by where they are.
+- **One reader alone decides only under calibration.** A ball's own reading v ≥ ½ is contact exactly when every ball
+  is its own size: SPN's V = H, under which amounts equal fill levels. With one ball of another size, a single reading
+  errs thousands of times a break, and contact needs the other's reading: two parties for a relation.
+- **The whole game can be played from inside.** Each ball, in its own size, with the size ratio v/h and one material
+  for the masses, plays the same game as the view from nowhere, to rounding. In this simulation the separation is
+  robust: no world coordinate is read for any contact.
+- **What is still from nowhere** names the next questions. A straight cushion has no size, so no reading r/d. Signals
+  arrive at once. And every ball reads every other at every substep, with no level of detail.

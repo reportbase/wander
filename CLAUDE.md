@@ -73,6 +73,13 @@ Google Fonts load from outside:
   sweep's angle is the angle I look up at your top, θ = atan(V/d): 0° on my horizon, 45° at d = V, 90° at your foot. Steps
   left V·h/v = V·cot θ; far, each level costs twice the next one in, the steps bunching toward the horizon (never reached);
   near, in proportion. Panels: the ground, the sweep in fill levels, steps left against θ. `?d=&walk=1`; hook `window.__walk`.
+- `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
+  ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
+  one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
+  reads each other's direction and v = r_b/d, is told the other's reading h = r_a/d, touches at h + v = 1 (the line of
+  `facing.html`; equal balls at the corner, 60° across), and works in its own size (size ratio v/h, masses (v/h)³, one
+  material). Cushions, pockets and the clock still unsituated, named. Panels: the table, the chosen ball's pairs as (h, v), its
+  view round the turn. `?break=0..9&heavy=0`; hook `window.__pool` (`run(i, opts)`, the POL measures).
 - `thin.html`, `ladder.html`, `sky.html`: **the physics correspondence** (9 Oct 2026, Tom: "create multiple demos that
   explain the physics correspndance"), standalone pages like `dial.html`. `thin.html`: the same signal, a smaller share
   (the inverse square; near, distance costs grains, far, light; the switch at one grain is the resolution limit;
@@ -85,7 +92,7 @@ Google Fonts load from outside:
   (dim by 1/d², vanish, or a full-bright pixel; hook `__points`); events on approach (point, resolved, shape, terrain,
   surface; `__resolve`); distances earned rung by rung (parallax, then width and light per kind; `__navigator`); the sky
   filling as light arrives, the count a clock (`__skyfill`). Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the six demos (sweep, dial, sphere, facing, levels, walk) and the three on the physics correspondence, each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the seven demos (sweep, dial, sphere, facing, levels, walk, pool) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -190,6 +197,10 @@ Google Fonts load from outside:
   `grd-landscape.md` (10 Oct, a reading; Tom: "lets just establish the boundries, see how we might slot in"): the
   measured ratios, the coding theories (economy √e, nested codes) and the mechanism (Kang 2019), and SPN's slot as the
   measure-free baseline 2^(1/D), which the coding theories depart from by their added measure; told apart in 1D and 3D.
+  `pol-plan.md` (+ `pol/pol.mjs`, 10 Oct): pool from inside (`pool.html`). Contact is h + v = 1 on the pair's two readings
+  (P1, P2 identities, not killed); one ball's own reading decides contact only when all balls are alike, the calibration
+  V = H (P3 not killed); played from inside in each ball's own size, the game equals the referee's to rounding, never 1e-3
+  apart in 8 s (P4); each ball's world about 4.5 levels deep (P5). Cushions, delay and level of detail are next.
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
@@ -306,6 +317,7 @@ In short:
       the depth averages 0 on the corner; a body from res/ chosen in the combo box crosses ring edges, a non-.tvf file refused; a draw .tvf curve read
       from its centroid (a 5-pointed star's tip over its dip as drawn).
   14. **walk.html:** 45° at d = V; far, v fills against a full h, near, h empties; steps per level V, 2V, 4V, …; steps left V·cot θ.
+  15. **pool.html:** a break played from inside: every contact on h + v = 1, one reading alone decides only with all balls alike, the game the referee's.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

@@ -319,6 +319,15 @@ try {
     failures.push(`[walk.html] ${JSON.stringify(wk)}`);
   console.log(`${failures.length === before14 ? 'ok  ' : 'FAIL'} walk.html (45° at d = V; far, v fills against a full h; near, h empties; steps per level ${wk.costs.join(', ')}; steps left V·cot θ)`);
 
+  // ── 15. pool.html: contact read from inside is h + v = 1, and the game from inside is the referee's ──
+  current = 'pool.html';
+  const before15 = failures.length;
+  await page.goto(new URL('pool.html', base).href, { waitUntil: 'load' });
+  const pq = await page.evaluate(() => { const r = __pool.run(4, { seconds: 3 }), e = __pool.run(4, { seconds: 3, heavy: false }); return { r, e }; });
+  if (pq.r.p1bad || pq.r.p2bad || pq.e.p3wrong || !(pq.r.p3wrong > 0) || !(pq.r.contacts > 5) || !(pq.r.diffAtFirst < 1e-9) || pq.r.diverge != null)
+    failures.push(`[pool.html] ${JSON.stringify(pq)}`);
+  console.log(`${failures.length === before15 ? 'ok  ' : 'FAIL'} pool.html (${pq.r.contacts} contacts, every one on h + v = 1; from inside and from nowhere the same game)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
