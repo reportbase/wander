@@ -215,6 +215,10 @@ Google Fonts load from outside:
   now signed, negative when the edge is behind), so run 6 repeated it: from inside still the referee's game to ~1e-9
   (P13′ killed narrowly by the smallest level); ignoring costs ~4× less per level, not the mass ratio's 8 (P14′ killed);
   skipping saves a third of contact responses at K = 1.
+  Run 7, the cost per contact in the true game: one skipped contact is exactly (1+e)/(1+8^j) of the closing speed
+  (P15); smaller balls close only 1.2–1.6× faster per level (P16 killed), so one contact costs 5–6× less per level (P17
+  killed at its first step); with their numbers, the first-order drift falls 3.70 then 6.74 (P18 killed narrowly), the
+  chaos lifting the last to the game's 4.2. The 4 is the field's mix, not a law; what one may ignore is set by momentum.
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is

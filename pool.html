@@ -142,7 +142,7 @@
         const vr = (ubA[0] - ua[0]) * n[0] + (ubA[1] - ua[1]) * n[1];
         let du = [0, 0];
         if (vr < 0) { const k = (1 + e) * vr / (1 + (h / v) ** 3); du = [k * n[0], k * n[1]]; }   // mass ratio (h/v)³
-        return { step: [-over * n[0], -over * n[1]], du, hit: vr < 0 };   // in a's own units: move back, change speed
+        return { step: [-over * n[0], -over * n[1]], du, hit: vr < 0, vr };   // in a's own units: move back, change speed
     }
     function situatedPairs(B, log, K = Infinity, tally) {
         for (let i = 0; i < B.length; i++) for (let j = i + 1; j < B.length; j++) {
@@ -155,6 +155,7 @@
             // run 5: a ball ignores any ball K or more size levels smaller than itself; the smaller still responds
             const skipA = (Bb.lv || 0) - (A.lv || 0) >= K, skipB = (A.lv || 0) - (Bb.lv || 0) >= K;
             if (tally) { if (ra.hit) { tally.hits++; if (skipA) tally.skipped++; } if (rb.hit) { tally.hits++; if (skipB) tally.skipped++; } }
+            if (tally && tally.each) { if (ra.hit) tally.each(A, Bb, ra); if (rb.hit) tally.each(Bb, A, rb); }   // run 7: every response, before any skip
             if (skipA) { ra.step = [0, 0]; ra.du = [0, 0]; }
             if (skipB) { rb.step = [0, 0]; rb.du = [0, 0]; }
             // each moves itself and changes its own speed, by its own units (its radius)
@@ -197,7 +198,7 @@
         }
     }
     const stepRef = (B, log, onRail) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { ownAndWalls(B, h, onRail); refereePairs(B, log); } };
-    const stepSit = (B, log, inside, wlog, K, tally) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { inside ? ownAndWallsInside(B, h, wlog) : ownAndWalls(B, h); situatedPairs(B, log, K, tally); } };
+    const stepSit = (B, log, inside, wlog, K, tally) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { inside ? ownAndWallsInside(B, h, wlog) : ownAndWalls(B, h); if (tally && tally.t != null) tally.t += h; situatedPairs(B, log, K, tally); } };
     // ── run 5: level of detail as size. A field of balls in four size levels, radius 0.45/2^k, seeded. ──
     function rackField(seed) {
         let a = seed >>> 0; const rnd = () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; };
@@ -218,10 +219,13 @@
     function runField(seed, opts = {}) {
         const K = opts.K == null ? Infinity : opts.K, R = rackField(seed), S = rackField(seed), T = opts.seconds || 1;
         for (const B of [R, S]) { const dx = LX / 8 - HEAD[0], dz = 0; B[0].vx = SPEED; B[0].vz = 0; }
-        const tally = { hits: 0, skipped: 0 };
+        const tally = { hits: 0, skipped: 0 }, contacts = [];
+        // run 7: each response a level-0 ball makes to a smaller ball: when, how many levels smaller, the closing speed and the
+        // change of speed (amounts, from its own units times its radius), the change it would skip if it ignored that ball
+        if (opts.contacts) { tally.t = 0; tally.each = (a, b, r) => { if (a.lv === 0 && b.lv > 0) contacts.push({ t: tally.t, i: S.indexOf(a), j: b.lv, w: -r.vr * a.r, du: [r.du[0] * a.r, r.du[1] * a.r] }); }; }
         for (let f = 0; f < Math.round(T / FRAME); f++) { stepRef(R); stepSit(S, null, true, null, K, tally); }
         const E = [0, 1, 2, 3].map(k => Math.max(0, ...R.map((b, j) => b.lv !== k ? 0 : (b.sunk && S[j].sunk) ? 0 : (b.sunk || S[j].sunk) ? Infinity : Math.hypot(b.x - S[j].x, b.z - S[j].z))));
-        return { seed, K, E, hits: tally.hits, skipped: tally.skipped, n: R.length };
+        return { seed, K, E, hits: tally.hits, skipped: tally.skipped, n: R.length, contacts: opts.contacts ? contacts : undefined };
     }
 
     // ── run 3: time. Each ball reads the others late: as each was when its image left, the image travelling at c, so that
