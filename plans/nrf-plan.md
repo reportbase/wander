@@ -154,8 +154,8 @@ P5: KILLED (widths 3.17, 6.34, 4.048, 3.888 levels)
   its fairness is Pythagoras.
 - **Where it fails, an angle is counted instead of a share.** The line from every direction counts arctan(b/d), the
   angle it subtends. The isotropic emitter on a flat patch counts 1 − cos θ, its solid angle. Their slopes are not shares
-  of a split, and their switches are off s = 1: the line's halfway point is near s ≈ 0.67, the solid-angle disc's below
-  1. This is the classification's "components are not" fair, in light.
+  of a split, and their switches are off s = 1: the line's halfway point is at s = 0.719, the solid-angle disc's at
+  0.786 (computed after the run). This is the classification's "components are not" fair, in light.
 - **What decides it is the radiometry, not the source's shape.** The Lambertian emitter seen by a flat patch counts the
   *projected* solid angle (the cosine on both ends). That is the standard measure of irradiance, and it turns any source
   into a share. A disc and a line pass with it; the same disc and line fail with an angle or an unprojected solid angle.
