@@ -24,8 +24,12 @@ bodies are pictures. They are never evidence here.
 - 10 October, fourth: GCN, star counts within 100 pc on Gaia (the Catalogue of Nearby Stars, from Tom), by colour on
   the main sequence. All four predictions killed: the RUWE cut removes more near stars than far ones and steepens the
   counts, and the G and K colours hold the white dwarfs. Read without the cut, every kind gives 3 levels of number per
-  level of distance within 0.07, and by light the kinds average 1.5: the even spread holds within 100 pc, and CNT's 1.2
-  comes from mixing kinds and distances (§2.1, §3).
+  level of distance within 0.07, and by light the kinds average 1.5: the even spread holds within 100 pc (§2.1, §3).
+- 10 October, fifth: exploring the GCN data and Hipparcos freely (Tom: a quick test, not one to publish; nothing in it
+  is a result). Within 100 pc the stars thin about 10% from the disc's middle to 55–80 pc above and below. 71% of
+  Hipparcos's stars brighter than V 7.3 are past 100 pc, mostly luminous kinds in a thin layer, seen through dust: a
+  count past the layer's thickness turns from a sphere's 1.5 toward a slab's 1.0, which is the likely source of CNT's
+  1.2 (§4). Mixing kinds alone does not flatten a count; an uneven spread does.
 
 ## 0. The rules
 
@@ -80,7 +84,7 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   - by light, inside each kind's complete volume, 1.37 to 1.57, about 1.5 on average, against 1.5.
 
   The run's own predictions were killed (§3); these are readings of the same data after it, not ruled. They say the even
-  spread holds within 100 pc, kind by kind, so CNT's 1.2 comes from mixing kinds and distances, not from the counting.
+  spread holds within 100 pc, kind by kind, so CNT's 1.2 is not in the counting itself but in the spread past 100 pc.
 - **Real worlds are their corner within a hundredth of a level** (REF, `plans/ref-plan.md`, P4 and P5). By published
   radii:
   - the rocky worlds' flattening: Earth 0.0048 levels, Mars 0.0085, the Moon 0.0017;
@@ -135,9 +139,11 @@ They are kept as worked examples of the bridges (`labs.html`, `plans/grn-plan.md
 
 Tests that could be run next, each on real data or exact arithmetic. Each would need its plan written first.
 
-- **Why the counts give 1.2.** GCN's reading (not ruled) puts it in the mix of kinds and distances past 100 pc. A test of
-  that needs a bright all-sky Gaia sample (G ≤ 10, with parallaxes) and a plan written before it is opened: whether the
-  mix of kinds at each brightness, counted as GCN counts, reproduces 1.2.
+- **Why the counts give 1.2.** GCN's exploration (not a result) points to a thin layer of luminous stars seen through
+  dust: 71% of the stars Hipparcos counts are past 100 pc, and even in the disc's middle the luminous ones stop rising
+  with volume past about 125 pc. A test needs a bright all-sky Gaia sample (G ≤ 10) with parallaxes and extinctions, and
+  a plan written first: the count's slope by height above the plane, and whether correcting for dust moves 1.2 toward a
+  slab's 1.0 or a sphere's 1.5.
 - **Clusters as one kind at one distance.** The Hyades, Coma Berenices, the Pleiades and Praesepe each have their own
   distance, from their members' mean parallax. At a fixed colour their main sequences should step two levels of light
   per level of the clusters' distance. This needs membership lists. Hipparcos membership is published, but the archives

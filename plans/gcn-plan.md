@@ -125,3 +125,41 @@ is a prediction, and a second run on this file could not be blind to it.
   By light, with the RUWE cut, the four kinds give 1.37 to 1.57, about 1.5 on average. That is the even spread's value,
   which CNT's mixed Hipparcos sample (about 1.2) never reached. So the 1.2 of CNT run 1 comes from mixing kinds and
   distances past 100 pc, not from the inverse square or the volume.
+
+## Exploration after run 1 (10 October 2026; not predictions)
+
+Tom: "this is just a quick test, not a test that will be published. continue to test to see what the situation is." So
+what follows was looked at freely, with no predictions first. It is a map of the situation for planning the next real
+test, and nothing in it is a result. Scripts `plans/gcn/explore.py` (GCNS) and `plans/gcn/hip_explore.py` (HYG), outputs
+beside them.
+
+**A correction to the reading above.** It said CNT's 1.2 comes "from mixing kinds". That is wrong as stated: CNT's own
+plan notes that a mix of luminosities spread evenly still gives 1.5, since each kind alone does. A mix flattens the count
+only if the spread is uneven over the distances the kinds reach. The exploration below finds that it is.
+
+1. **Within 100 pc, an even spread, near enough.** Without the RUWE cut, the local slope of the count by distance is
+   between 2.75 and 3.07 for every kind in every range from 25 to 100 pc, mostly 2.9 to 3.0. By light the kinds give
+   1.46, 1.52, 1.49 and 1.50 (G, K, early M, late M), against 1.5.
+2. **The disc does show, as density against height.** In a cylinder 60 pc in radius about the Sun, the main-sequence
+   stars thin from about 52 per 1000 pc³ within 25 pc of the Sun's height to about 47 at 55–80 pc above and below: a
+   fall of 10%, what an exponential with a scale of about 500 pc would give over that range, or a disc flat at its
+   middle. It peaks a little below the Sun (z −20 to −10 pc), as expected if the Sun sits some 10–20 pc above the
+   middle. The count slopes hardly feel a 10% fall spread over 100 pc, which is why P2 could not see it.
+3. **In the plane, flat.** In the slab |z| < 20 pc the density is 51 to 53 out to 98 pc in the plane, a percent or two
+   higher toward the Galactic centre than away.
+4. **Hipparcos's bright stars are mostly far, and of a thin kind.** Of the 20,477 stars brighter than V 7.3 with a
+   distance, only 29% are within 100 pc; half are past 152 pc, a tenth past 385 pc. 81% have M_V brighter than +2, so
+   they are seen out to 115–724 pc. These are mostly A and B stars and giants, whose layer in the disc is thinner than
+   the M dwarfs' (tens of parsecs to about a hundred, against several hundred), and they are dimmed by dust in the plane.
+5. **Even in the disc's middle their density falls with distance.** Stars with M_V < 0, all brighter than V 7.3 out to
+   288 pc if there were no dust, counted within |z| < 50 pc: 319, 318, 321, 299 in the shells 100–150, 150–200, 200–250
+   and 250–288 pc. A slab spread evenly would give counts rising about 1.8 times from the first shell to the third. The
+   counts stay flat. Dust, the Gould Belt's clump at 100–150 pc, and Hipparcos's parallax errors at these distances
+   (about 25% at 250 pc) all act, and are not separated here.
+
+**The situation, as it now looks.** The inverse square and the volume give 1.5 by light and 3 by distance, and on Gaia's
+nearby stars, counted kind by kind within 100 pc, that is what is found. Hipparcos's 1.2 is a count of stars that are
+mostly past 100 pc, of kinds that lie in a thin layer, through dust: past the layer's thickness a count turns from a
+sphere's (1.5) toward a slab's (1.0), and dust flattens it further. 1.2 sits between. Under §0 none of this is a result
+until a test with its prediction written first measures it: the natural one is a bright Gaia sample with parallaxes and
+extinctions, counted by height above the plane.
