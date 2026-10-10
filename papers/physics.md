@@ -35,6 +35,9 @@ bodies are pictures. They are never evidence here.
   a share (the projected solid angle); counted as an angle, it does not (§2.2, §3).
 - 10 October, seventh: the inverse square given its own paper, `papers/inverse-square.md`, which gathers the law as
   physics holds it, in levels, the near field and the lay's form, each marked by its standing.
+- 10 October, eighth: the inverse square kept as a calibration case, not a research line (its §0, "Known already":
+  radiance theorem, view factors, reciprocity, Newton's cones, Le Sage). The effort goes where situated geometry commits
+  to a number that classical work leaves open: GRD first (grid cells, data from Tom).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 

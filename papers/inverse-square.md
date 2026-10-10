@@ -11,6 +11,9 @@ the case and name the bridge. A result goes into SPN only once it has been teste
 - 10 October, first: the paper started from the day's work. It covers the law as physics holds it (§1), the law in
   levels (§2), the two ways a reader meets it (§3), the near field (§4), the lay's form (§5), what stands on what (§6),
   and the questions open (§7).
+- 10 October, second: "Known already" added (§0), after Tom: "this is a very well studied idea, so it would actually be
+  suprising if we find something genuinly new about the inverse square law." The paper is kept as a calibration case
+  and a translation into SPN's terms, with no claim of novelty.
 
 **Standing marks.** Each claim carries one:
 - **[physics]**: established outside this corpus, quoted;
@@ -26,6 +29,30 @@ pair.
 
 **Two conventions for s.** SPN §3.2 writes s = a/d, size over distance; NRF writes s = d/a. The flip exchanges them. Every
 statement below holds either way, with s and 1/s exchanged; each passage says which it uses.
+
+## 0. Known already: what this paper is, and is not
+
+The inverse square has been studied for three centuries, unsituated and situated. Nearly everything below has a
+standing counterpart in physics:
+- **The radiance theorem** (radiometry). In empty space, radiance, the brightness per unit of view, is conserved along a
+  ray. Irradiance is radiance times the projected solid angle the source fills. This is SPN's "per address, nothing
+  changes" (§3), and it is already a situated account of the law: what one standpoint receives, from what it sees.
+- **The view factor** (heat transfer, radiometry). The share of one surface's view that another fills, counted with the
+  cosine at both ends, is tabulated for standard shapes. The disc's s²/(1 + s²) (§4) is a textbook view factor.
+- **Reciprocity of view factors**, A₁F₁₂ = A₂F₂₁: the standing symmetry between the two ends. It is the nearest known
+  counterpart of the flip's fairness in §4, though not the same statement.
+- **Newton's cones** (Principia, Book I, Proposition 70). From a point inside a shell, opposite thin cones cut patches
+  whose areas grow as the square of their distance while their pull falls as its inverse square, so they cancel. A proof
+  from a standpoint, and the ground of Cavendish's null test (§1).
+- **Le Sage's shadow gravity** (1700s), a caution. It derived the inverse square situatedly: each body shades the other
+  from a rain of particles, the shadow shrinking as the solid angle. It got 1/d² right and failed on everything else
+  (drag, heating). Reproducing a law from a standpoint does not show that the standpoint's picture is the physics.
+
+So this paper is a **calibration case**. It is one of the few places where both the unsituated and the situated
+explanations are known exactly. That makes it the place to check that SPN's situated terms (the reader's view, the
+facing, the flip, the corner of a named pair, levels) reproduce what physics already has, before they are trusted where
+it has nothing. It is a translation into SPN's terms, not a discovery. A result here that looks new should first be
+looked for in radiometry and heat transfer.
 
 ## 1. The law as physics holds it
 
@@ -173,7 +200,7 @@ ISQ (`plans/isq-plan.md`) [exact]:
 
 ## 7. Open
 
-- **Why the projected solid angle gives a share.** The cosine at both ends turns a disc's light into sin²θ, and a
+- **Why the projected solid angle gives a share** (check view factors and their reciprocity first, §0). The cosine at both ends turns a disc's light into sin²θ, and a
   share's fairness into Pythagoras. Is that general? Is every Lambertian source of any shape, seen by a flat patch, a
   share in some ratio of the pair? An exact test: sources of other shapes (an annulus, a square, an ellipse off axis),
   with predictions first.
