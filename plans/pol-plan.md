@@ -654,3 +654,48 @@ its frames between its start and its next contact.
 - *Measured, not predicted:* levels lost per contact in the game's own layouts (the rack, scattered), and the depth in
   contacts at which an aim error of 0.1° grows past 3.6° (half a pocket's width seen from 8 units away): the horizon the
   preview's fade will use.
+
+Run 8 output (`node plans/pol/pol8.mjs`, in `plans/pol/pol-run8.txt`):
+
+```
+60 chains (white and three, each struck from rest by the one before), power 20, aim turned by 1e-7 and 1e-8
+  one contact: measured/predicted factor, median 0.9278, 5%–95% 0.208–1.324; within 15%: 92 of 180
+  the chain: levels lost minus predicted, median -0.499, largest 10.162; within 0.3 levels: 19 of 60
+P19: KILLED. 92 of 180 contacts within 15% of s/(2r cos φ) (90% needed)
+P20: KILLED. 19 of 60 chains within 0.3 levels of the sum (90% needed)
+P21: not killed. 180 of 180 factors the same at 1e-8 within 1% (95% needed)
+
+measured, the game's layouts (scattered ×12, rack ×6, random aims, power 14): levels of aim error at each ball's first contact, by depth
+  depth 1:  30 balls, median 3.32 levels
+  depth 2:  40 balls, median 2.37 levels
+  depth 3:  32 balls, median 1.54 levels
+  depth 4:  33 balls, median -3.60 levels
+  depth 5:  28 balls, median -9.64 levels
+  a 0.1° aim error passes 3.6° (5.17 levels) at depth > the deepest measured
+```
+
+- **P19 killed.** Only 92 of 180 contacts are within 15% of s/(2r·cos φ). The measured factor is 0.93 of it at the median,
+  but spreads from 0.21 to 1.32 (5% to 95%).
+- **P20 killed.** Only 19 of 60 chains are within 0.3 levels of the sum; the median chain loses half a level less than
+  predicted, the worst ten levels less.
+- **P21 not killed.** Every factor is the same at δ = 1e-8 as at 1e-7, within 1%: the response is linear. The kills are
+  not noise.
+- *Measured:* in the game's own layouts, a ball's aim error at its first contact falls with depth after depth 3 (3.3, 2.4,
+  1.5, then −3.6 and −9.6 levels at depths 4 and 5). Deep balls are mostly the rack's, struck from a few hundredths away,
+  where s < 2r·cos φ and a contact gains levels (A < 1). The 3.6° horizon was not reached in five contacts.
+
+## Reading of run 8 (not ruled)
+
+- **The engine is not the geometry at thin cuts.** Checked after the run (`plans/pol/pol8-posthoc.mjs`, output in
+  `pol-run8-posthoc.txt`): at near-full hits (|φ| < 15°) the measured factor is 1.03 of s/(2r·cos φ) at the median; at
+  thin cuts (|φ| > 30°) 0.67, about cos²φ. The engine finds contact at a fixed tick, with the balls already overlapping
+  (by 0.034 at the median, up to 0.077, against 2r = 0.9). The struck ball leaves along the line of centres *as found*,
+  with the striker a fixed distance down its line. Turning the aim then turns that line by D·cos φ/ρ (ρ the overlapped
+  distance between centres), not s/(2r·cos φ): a factor cos²φ less. This accounts for the median and for the thin cuts.
+  It is not the whole story: only 67 of 180 contacts match D·cos φ/ρ within 1% (111 within 15%).
+- **So the game's thin cuts are off by up to a few degrees at full power.** The preview and the shot agree (one engine),
+  but a ½-ball hit at power 20 can leave a degree or more from where exact contact sends it. The fixed tick also makes
+  the game less chaotic than the geometry at thin cuts.
+- **The fix is the situated one.** Find the moment the pair's reading is exactly h + v = 1 (each ball can, in its own
+  units, from the other's direction, its reading and its told motion), respond there, and carry on. That is a new run,
+  with its own predictions.

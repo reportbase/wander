@@ -138,7 +138,7 @@
         const snap = () => { const f = new Float32Array(2 * n); B.forEach((b, k) => { f[2 * k] = b.sunk ? NaN : b.x; f[2 * k + 1] = b.sunk ? NaN : b.z; }); return f; };
         const frames = [snap()], contacts = [], sunk = []; let first = null, rails = 0, t = 0;
         const log = (A, Bb, ia, ib) => {
-            contacts.push({ t, x: A.x + ia.n[0] * A.r, z: A.z + ia.n[1] * A.r, hv: ia.v + ib.v });
+            contacts.push({ t, x: A.x + ia.n[0] * A.r, z: A.z + ia.n[1] * A.r, hv: ia.v + ib.v, a: A.n, b: Bb.n, A, Bb });
             if (!first && (A.cue || Bb.cue)) {   // the first ball the cue ball meets, read from the cue ball
                 const c = A.cue ? A : Bb, o = A.cue ? Bb : A, n_ = A.cue ? ia.n : ib.n, sp = Math.hypot(c.vx, c.vz) || 1;
                 const sinPhi = Math.min(1, Math.abs((c.vx * n_[1] - c.vz * n_[0]) / sp));
@@ -149,7 +149,11 @@
         const onRail = b => { if (b.cue && !first) rails++; };
         const moving = () => B.some(b => !b.sunk && (b.vx !== 0 || b.vz !== 0));
         for (let f = 0; f < 60 * 45 && moving(); f++) {
-            for (let s = 0; s < SUB; s++) { t += FRAME / SUB; own(B, FRAME / SUB, onSink, onRail); pairs(B, log); }
+            for (let s = 0; s < SUB; s++) {
+                t += FRAME / SUB; own(B, FRAME / SUB, onSink, onRail); const c0 = contacts.length; pairs(B, log);
+                for (let k = c0; k < contacts.length; k++) { const c = contacts[k];   // each ball's motion just after the contact (POL run 8)
+                    c.va = [c.A.vx, c.A.vz]; c.vb = [c.Bb.vx, c.Bb.vz]; delete c.A; delete c.Bb; }
+            }
             frames.push(snap());
         }
         return { frames, contacts, sunk, first, final: B };

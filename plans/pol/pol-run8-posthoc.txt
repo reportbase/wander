@@ -1,0 +1,4 @@
+180 contacts. measured/exact: median 0.9279, within 15% 92
+measured/engine (D cos φ'/ρ, the contact as detected): median 1.000000, within 1% 67, within 15% 111
+overlap at detection: median 0.034, largest 0.077 (2r = 0.9)
+measured/exact at |φ| < 15°: median 1.030 (70); at |φ| > 30°: 0.667 (52), cos² 30°–45° = 0.75–0.5
