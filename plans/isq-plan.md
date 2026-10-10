@@ -64,3 +64,51 @@ The flip is also measured: write the far field in the flipped reading u = 1/s, w
 
 ## Runs
 
+### Run 1 (10 October 2026)
+
+`python3 plans/isq/isq.py`, output in `plans/isq/isq-run1.txt`:
+
+```
+P1: not killed. max |s^2 W'(s) - 1| = 2.2e-16 (as written), 8.6e-02 (central difference on W); level rooms 2^-(k+1) exactly: True; room per unit s over level k = 1/2 * 4^-k, quartering per doubling exactly: True
+P2: not killed. max |W(1/u) + u - 2| = 2.2e-16 on u in (0, 1]: the far field is proportion in h/v, room 1 per unit u
+P3: not killed. s^2 D'(s) from 0.5017 to 1.9931; at the geometric middles misses 1 by at most 2.2e-16; D - W at the walls 0.0e+00
+P4: not killed. slopes: W -2.0000, D -1.9953, T (the sweep) -1.9961
+P5: not killed. max |rho'(s) - 1| below the corner: 0.0e+00 (W and D), 5.3e-10 (W, central difference)
+reading: the sweep T at s = 1 gives s^2 T' = 0.6366, at s = 2 1.0186, at 2^10 1.273238 (-> 4/pi = 1.273240)
+```
+
+- **All five not killed.** P1's kill was on ρ′ as written and on the exact level rooms; both hold to rounding.
+- **The 8.6e−2 is rounding, not the lay.** A second, numerical check on P1 (a central difference taken on W itself) reads
+  8.6e−2 at its worst. It is not part of the kill. It is floating-point cancellation: W is nearly 2 out there and the
+  step changes it by about 1e−6/s. Measured by range after the run, its worst miss is:
+
+  | s up to | worst miss |
+  |---|---|
+  | 2^5 | 3.4e−9 |
+  | 2^10 | 9.5e−8 |
+  | 2^15 | 3.2e−6 |
+  | 2^20 | 7.9e−5 |
+
+  It grows with s as rounding does. The exact level rooms, in fractions, are the check that does not round.
+- **The sweep T** (the control) has room 1/s² only far out. There s²·T′ → 4/π, the sweep's constant, not 1. At the corner
+  it is 2/π.
+
+## Reading (after the run; not ruled)
+
+- **The lay has the inverse square's form, and the form is the flip's.** Past the corner the in-place lay is plain
+  proportion in the flipped reading u = 1/s = h/v (P2). Its room per unit s is therefore the flip's Jacobian, 1/s² (P1).
+  Any lay that reaches a finite horizon smoothly in 1/s, the sweep included, ends with the same form far out (P4).
+- **Which inverse square.**
+  - Read s as a distance in units of a size, s = d/Δ (the bridge: amounts, needing Δ). Then 1/s is the angular size Δ/d,
+    and the lay places a thing at its angular size, counted down from the horizon: 2 − ρ = 1/s.
+  - The lay's 1/s² is then how fast an angular size shrinks with distance, |d(Δ/d)/dd| = Δ/d². That is an inverse square
+    in one dimension.
+  - Light's inverse square (`thin.html`) is the solid angle, (Δ/d)², the angular size squared: an inverse square in two
+    dimensions.
+  - Both come from the flip, s ↦ 1/s: one is the flipped reading's rate of change, the other its square. They are two
+    readings of one fact, not two facts that happen to share a form. That is a reading of the arithmetic above, not a
+    test of physics.
+- **The near field is not.** Below the corner the lay is proportion in s itself (P5), so the inverse-square form belongs to
+  the far field alone. That fits the paper's split: proportion before the corner, levels past it.
+- **Draw's piecewise lay** is the inverse square level by level, not pointwise (P3). It is exact at each level's
+  geometric middle and within a factor of 2 either side.

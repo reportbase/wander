@@ -1,0 +1,6 @@
+P1: not killed. max |s^2 W'(s) - 1| = 2.2e-16 (as written), 8.6e-02 (central difference on W); level rooms 2^-(k+1) exactly: True; room per unit s over level k = 1/2 * 4^-k, quartering per doubling exactly: True
+P2: not killed. max |W(1/u) + u - 2| = 2.2e-16 on u in (0, 1]: the far field is proportion in h/v, room 1 per unit u
+P3: not killed. s^2 D'(s) from 0.5017 to 1.9931; at the geometric middles misses 1 by at most 2.2e-16; D - W at the walls 0.0e+00
+P4: not killed. slopes: W -2.0000, D -1.9953, T (the sweep) -1.9961
+P5: not killed. max |rho'(s) - 1| below the corner: 0.0e+00 (W and D), 5.3e-10 (W, central difference)
+reading: the sweep T at s = 1 gives s^2 T' = 0.6366, at s = 2 1.0186, at 2^10 1.273238 (-> 4/pi = 1.273240)
