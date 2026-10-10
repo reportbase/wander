@@ -101,6 +101,13 @@ Google Fonts load from outside:
   full screen; the whole shot simulated ahead (pool.html's from-inside table, cloth MU 1.2) and drawn as paths, contacts
   and pots, then played from the same frames; drag any ball, undo; `?layout=rack|scatter|line&a=&p=&paths=`; `__trick`.
   Not in the flying page.
+- `flight.html`: **the corner in flight** (10 Oct 2026, Tom: "you know how the transition from earth to the sky in flight
+  sim games is awkward? ... i wonder if its because of the corner"; "only the geometry", wireframe). Level flight at height v;
+  a ground line h ahead lands v/h below eye level, so the corner (h = v, gold) keeps one screen row at every height. Strip:
+  the reading folded at the corner, h/v to home (even), v/h past it (2v, 4v … each half the room). LOD chip: none / by metres
+  (doubling at 500 m, 1 km …) / by v/h (grain v/8 to √2·v, then doubling; Tom: "each Level has its own corner", eight grains
+  ahead: v, 2v, 4v …). By v/h each level past the first holds 4√2 ≈ 5.7 lines, so the count past the corner is log₂(h/v), and climbing changes only
+  the speed; by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `window.__flight`. Not in the flying page.
 - `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the seven demos (sweep, dial, sphere, facing, levels, walk, pool) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on

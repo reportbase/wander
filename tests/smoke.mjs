@@ -348,6 +348,20 @@ try {
     failures.push(`[pool.html] ${JSON.stringify(pq)}`);
   console.log(`${failures.length === before15 ? 'ok  ' : 'FAIL'} pool.html (${pq.r.contacts} contacts, every one on h + v = 1; cushions read as the ball's own mirror image; from inside and from nowhere the same game)`);
 
+  // ── 16. flight.html: the corner keeps its row at any height; by v/h the levels keep theirs and hold equal counts ──
+  current = 'flight.html';
+  const before16 = failures.length;
+  await page.goto(new URL('flight.html?still=1', base).href, { waitUntil: 'load' });
+  const fl = await page.evaluate(() => { const f = __flight, out = {};
+    f.set(50, 'vh'); out.c1 = f.cornerRow(); out.e1 = f.edgeRows(); out.k1 = f.levelCorners().slice(0, 3); out.n = f.linesPerLevel();
+    f.set(1600, 'vh'); out.c2 = f.cornerRow(); out.e2 = f.edgeRows().slice(0, out.e1.length - 1);
+    f.set(50, 'metres'); out.m1 = f.edgeRows()[0]; f.set(1600, 'metres'); out.m2 = f.edgeRows()[0]; return out; });
+  if (Math.abs(fl.c1 - fl.c2) > 1e-9 || fl.e2.some((y, i) => Math.abs(y - fl.e1[i]) > 1e-9) ||
+      fl.k1.some((c, i) => Math.abs(c - 50 * 2 ** i) > 1e-9) || fl.n.slice(1).some(n => Math.abs(n - 4 * Math.SQRT2) > 1e-9) ||
+      !(Math.abs(fl.m1 - fl.m2) > 0.01))
+    failures.push(`[flight.html] ${JSON.stringify(fl)}`);
+  console.log(`${failures.length === before16 ? 'ok  ' : 'FAIL'} flight.html (corner row ${fl.c1.toFixed(3)} at 50 m and 1.6 km; by v/h ${fl.n[1].toFixed(2)} lines a level, edges fixed; by metres they slide)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
