@@ -1,0 +1,16 @@
+P15, one contact, closing speed 1, the larger ball at rest:
+  j = 1: |du| = 2.178e-1  (1+e)/(1+8^j) = 2.178e-1
+  j = 2: |du| = 3.015e-2  (1+e)/(1+8^j) = 3.015e-2
+  j = 3: |du| = 3.821e-3  (1+e)/(1+8^j) = 3.821e-3
+P15: not killed. ratios 7.222222222222 (65/9 = 7.222222222222), 7.892307692308 (513/65 = 7.892307692308)
+
+level-0 contacts with smaller balls, true game (nothing ignored), five fields, 3 s:
+  j = 1:   17 contacts (7 before 1 s); median closing speed 5.163, median |du| 1.124e+0, du/w 2.178e-1
+  j = 2:   69 contacts (20 before 1 s); median closing speed 5.978, median |du| 1.802e-1, du/w 3.015e-2
+  j = 3:  138 contacts (39 before 1 s); median closing speed 9.381, median |du| 3.584e-2, du/w 3.821e-3
+P16: KILLED. closing speed rises by 1.16 (j 1 to 2) and 1.57 (j 2 to 3); band [1.4, 2.5]
+P17: KILLED. per-contact |du| falls by 6.24 (j 1 to 2) and 5.03 (j 2 to 3); band [3.2, 5.7]
+
+first-order drift by 1 s (median of the five fields' largest): D1 1.867e+0, D2 5.044e-1, D3 7.489e-2
+  run 6's E at 1 s: 2.32, 0.609, 0.144; the chaos's gain E/D: 1.24, 1.21, 1.92
+P18: KILLED. D falls by 3.70 (K 1 to 2; band [2.54, 5.72]) and 6.74 (K 2 to 3; band [2.82, 6.35])

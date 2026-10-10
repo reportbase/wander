@@ -558,3 +558,54 @@ alone, sets what ignoring it costs.
   is in [2.54, 5.72] and [2.82, 6.35]. *Killed* if either is outside. If not killed, the 4 per level is the first-order
   cost of the skipped contacts, not the chaos's.
 - *Measured, not predicted:* the number of level-0 contacts with each level; D_K against run 6's E_K (the chaos's gain).
+
+Run 7 output (`node plans/pol/pol7.mjs`, in `plans/pol/pol-run7.txt`):
+
+```
+P15, one contact, closing speed 1, the larger ball at rest:
+  j = 1: |du| = 2.178e-1  (1+e)/(1+8^j) = 2.178e-1
+  j = 2: |du| = 3.015e-2  (1+e)/(1+8^j) = 3.015e-2
+  j = 3: |du| = 3.821e-3  (1+e)/(1+8^j) = 3.821e-3
+P15: not killed. ratios 7.222222222222 (65/9 = 7.222222222222), 7.892307692308 (513/65 = 7.892307692308)
+
+level-0 contacts with smaller balls, true game (nothing ignored), five fields, 3 s:
+  j = 1:   17 contacts (7 before 1 s); median closing speed 5.163, median |du| 1.124e+0, du/w 2.178e-1
+  j = 2:   69 contacts (20 before 1 s); median closing speed 5.978, median |du| 1.802e-1, du/w 3.015e-2
+  j = 3:  138 contacts (39 before 1 s); median closing speed 9.381, median |du| 3.584e-2, du/w 3.821e-3
+P16: KILLED. closing speed rises by 1.16 (j 1 to 2) and 1.57 (j 2 to 3); band [1.4, 2.5]
+P17: KILLED. per-contact |du| falls by 6.24 (j 1 to 2) and 5.03 (j 2 to 3); band [3.2, 5.7]
+
+first-order drift by 1 s (median of the five fields' largest): D1 1.867e+0, D2 5.044e-1, D3 7.489e-2
+  run 6's E at 1 s: 2.32, 0.609, 0.144; the chaos's gain E/D: 1.24, 1.21, 1.92
+P18: KILLED. D falls by 3.70 (K 1 to 2; band [2.54, 5.72]) and 6.74 (K 2 to 3; band [2.82, 6.35])
+```
+
+- **P15 not killed.** One contact skips (1 + e)/(1 + 8^j) of the closing speed, and the ratios are 65/9 and 513/65 to
+  twelve digits. The code does what the identity says.
+- **P16 killed.** Smaller balls do close faster on the level-0 balls, but by 1.16 from j = 1 to 2 and 1.57 from 2 to 3,
+  not the 1.4 to 2.5 of a cascade. The first step is under the band.
+- **P17 killed.** One skipped contact costs 6.24 times less from j = 1 to 2 (outside the band) and 5.03 times less from
+  2 to 3 (inside it). The faster closing takes the 7.2 and 7.9 down only part of the way to 4.
+- **P18 killed, narrowly.** The first-order drift D falls by 3.70 from K = 1 to 2, within the band and close to run 6's
+  3.81. From K = 2 to 3 it falls by 6.74, just past the band's 6.35, where the game's error fell by 4.23.
+- *Measured:*
+  - level-0 contacts with balls j levels smaller: 17, 69 and 138 over 3 s (7, 20 and 39 before 1 s). The smaller balls
+    are many more, so there are more such contacts per level;
+  - the chaos's gain at 1 s, E/D: 1.24, 1.21 and 1.92. At K = 1 and 2 the game's error is mostly the first-order drift
+    itself; at K = 3 the chaos about doubles it.
+
+## Reading of run 7 (not ruled)
+
+- **The 8 is real, per contact, at a given closing speed.** The skipped change of speed is exactly the mass ratio's
+  share of the closing speed (P15). Nothing about the situated reading changes that.
+- **Three things bring it down toward 4, none alone.** Smaller balls close a little faster, so one contact costs
+  about 5 to 6 times less per level, not 8. There are more of them, so the costs add up over more contacts. And at
+  K = 3, where the drift is smallest, the field's chaos doubles it. From K = 1 to 2 the first two account for the
+  game's 3.81 (D gives 3.70). From K = 2 to 3 they give 6.74, and the chaos brings it to 4.23.
+- **So the "4" is not a law of the levels.** It is this field's mix: its counts per level (3, 12, 36, 64 balls), the
+  speeds the break gives them, and its chaos horizon. A field with as many balls in each level should have fewer small
+  contacts and a cost per level nearer the per-contact 5 to 6 (untested; it would need its own run). What stays general is the identity (8 per level at a fixed
+  closing speed) and the decomposition: cost = per-contact share × closing speed × count, then the chaos's gain.
+- **For a situated reader:** what it may ignore is set by the momentum the smaller things bring, not by their size
+  alone. A small thing moving fast costs as much to ignore as a larger one moving slowly. Level of detail by size alone
+  is right only where the smaller things are no faster.
