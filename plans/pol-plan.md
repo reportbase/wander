@@ -309,3 +309,24 @@ P11: KILLED. at c = 1e9: naive 7.41e-9, carrying 1.35e-11
   reads nearly as if at once. What it cannot carry is what happened inside the lateness: a touch it has not yet seen.
 - **Delay sets no level of its own.** Its only number is u/c, the same at every distance. What gave the error a corner
   was not the distance but the clock: the reader's tick.
+
+### Run 4 (10 October 2026): prediction, written before it ran (Tom: "proceed")
+
+Run 3's reading, made after the run, was that the carrying reader's error collapses where its lateness at contact,
+(r_a + r_b)/c, falls below about one tick of the clock. Here that is tested with the tick changed as well as c. Both
+tables (the referee and the carrying reader) run with SUB substeps a frame, so one tick is 1/(60·SUB) s. The lateness
+at contact for two equal balls is then L = 0.9·60·SUB/c ticks.
+
+**The grid:** c ∈ {50, 100, 200, 400} × SUB ∈ {1, 2, 4, 8, 16}, the carrying reader only. E as in run 3 (the largest
+distance between the tables 0.05 s after the referee's first contact), median over breaks 0, 4 and 9 with the heavy
+ball. L runs from 0.135 to 17.3 ticks.
+
+- **P12 (the corner of lateness and tick at about one tick).**
+  - Every cell with L < 1.5 has E < 1e-3.
+  - Every cell with L > 3 has E > 1e-2.
+  - Cells with L between 1.5 and 3 are not predicted.
+
+  *Killed* by any cell outside its band.
+- **The alternative, named so a kill can be read.** If the error is set by the lateness alone (touches happening
+  unseen within d/c, whatever the tick), then E depends on c and not on SUB. P12 would then fail along the rows: a fine
+  tick (large SUB) at large c would still be small.
