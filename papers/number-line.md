@@ -65,6 +65,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
+- 10 October, sixty-ninth: §8, standing on the outline: a circle's corner is its radius, 30° below the horizon; a ball's 2/e of it; rising, the horizon half a level per doubling of height (HZN, `plans/hzn-plan.md`).
 - 10 October, sixty-eighth: §4, the in-place lay has the inverse square's form: room 1/s² per unit reading past the corner, the flip's Jacobian; read s as d/Δ, an angular size's rate, light's being its square (ISQ, `plans/isq-plan.md`; Tom: "yes, #1").
 - 10 October, sixty-seventh: §8, the baseline is the corner: the corner over every facing is the circle s = 1, and depth is measured from it, in levels, once the size is divided out (Tom, at `levels.html`).
 - 9 October, sixty-sixth: the case pass, equation by equation (`plans/papers-case-pass.md`; Tom: "yes"): h → H where a unit, grain or breadth is meant; v → d where a distance; the corner kept at v = h, with the pair named where a unit, a pixel or a photon count set it (the resolution limit); the ruler carries an amount, r = x/H; CAL's worth renamed W; §8's "breadths" read as fill levels, the in-place sweep value renamed g′, the triple corner never moved.
@@ -973,7 +974,8 @@ fill level. The table in "The sphere's clean statement" is corrected.
 **The baseline is the corner** (Tom, 10 October, at `levels.html`: "the corner is the circle between the near and far
 fields, or the yellow line … the corner is might also be the unit circle that pertibated line subtracts from to find the
 depth"; "wholyshit, the corner is v = h, which exacly what this demo shows. which is also the baseline from which depth is
-calcualted."). The quotation above, "the base line is v=h", read in a picture: drawn over every facing, with s = v/h as
+calcualted."). *And from the outline* (HZN, 10 October): read from a place on a circle, the corner is a chord equal to
+the radius, 30° below the horizon; on a ball, 2/e of the radius. The quotation above, "the base line is v=h", read in a picture: drawn over every facing, with s = v/h as
 the distance out, the corner is the circle s = 1 between near and far, and that circle is the unit circle a shape's depth
 is measured from. Divide out the shape's size (its middle moves onto the corner, and the scale is lost); what stands off
 the circle is its depth, in each direction log₂ s(θ), levels past the corner, negative inward by the flip. Geometry only:

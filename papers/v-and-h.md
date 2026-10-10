@@ -2521,6 +2521,10 @@ Neither half helps alone; together they cut the error by a factor of four, as in
     not killed). Past the corner the lay is 2 − 1/s, proportion in h/v, so its room per unit s is 1/s², the flip's
     Jacobian. Reading s as d/Δ (the bridge, amounts): the lay places a thing at its angular size; its 1/s² is how fast
     that shrinks, light's 1/d² its square (SPN §1).
+401. **Standing on the outline is standing on a world** (Oct 10; HZN, `plans/hzn-plan.md`). From a place on a circle the
+    readings are chords 2·sin φ: home is the horizon, read in proportion; the corner (the geometric mean) is the radius,
+    30° below the horizon; on a ball, 2/e of it; rising by e radii moves the horizon to √(2e), half a level per
+    doubling, the classical √(2·R·h) once R is given (SPN §1).
 
 All in *Serial, Parallel and Nowhere* §1 and the opening warning; the rulings under review and the physics audit in
 `plans/vh-rulings-review.md` and `plans/physics-vh-audit.md`.

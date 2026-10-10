@@ -96,3 +96,63 @@ If the cause above is right, the error belongs to the presentation's grain, not 
   every P.
 
 *Killed* if any doubling's factor is outside [1.5, 2.5], or P5c's miss reaches 1e−4 at any P.
+
+Run 2 output (`node plans/hzn/hzn-p5b.mjs <draw>/gallery/levels.html`, in `plans/hzn/hzn-run2.txt`):
+
+```
+P = 1024: geometric mean excess 1.425e-2, worst miss past four segments 1.80e-4
+P = 2048: geometric mean excess 6.428e-3, worst miss past four segments 1.30e-12
+P = 4096: geometric mean excess 3.732e-3, worst miss past four segments 1.24e-12
+P = 8192: geometric mean excess 3.732e-3, worst miss past four segments 1.22e-12
+P5b: KILLED. excess falls by 2.22, 1.72, 1.00 per doubling
+P5c: KILLED. worst miss past four segments under 1e-4 at every P: false
+```
+
+- **Both killed.** The excess fell by about 2 for one doubling, by 1.72 for the next, and not at all from 4,096 to
+  8,192 points. At 1,024 points the readings past four segments missed by 1.8e−4.
+- **A reading after the run.** The page has two grains: the presentation, P points, and the directions it reads, J =
+  4,096, fixed in the run. Once P passed J, the excess stopped falling at 3.73e−3. The directions were now the coarser
+  grain: no direction is nearer the tangent than one step of 2π/4096. So the excess is set by whichever grain is
+  coarser, which run 1's cause allowed for and run 2's prediction did not. The 1.8e−4 at 1,024 points is the same
+  polygon, read just past where run 2 drew its line.
+
+### Run 3 (10 October 2026): prediction, written before it ran
+
+Double both grains together, J = P, at P = 1024, 2048, 4096 and 8192:
+- **P5d.** The geometric mean's excess falls by a factor between 1.5 and 2.5 at every doubling.
+- **P5e.** The worst miss against 2·sin φ, more than four segments from the tangent, is under 1e−4 at every P (the band
+  of run 2, unchanged).
+
+*Killed* if any factor is outside [1.5, 2.5], or P5e reaches 1e−4 at any P.
+
+Run 3 output (`node plans/hzn/hzn-p5d.mjs <draw>/gallery/levels.html`, in `plans/hzn/hzn-run3.txt`):
+
+```
+P = 1024: geometric mean excess 1.228e-2, worst miss past four segments 4.76e-13
+P = 2048: geometric mean excess 6.502e-3, worst miss past four segments 1.30e-12
+P = 4096: geometric mean excess 3.732e-3, worst miss past four segments 1.24e-12
+P = 8192: geometric mean excess 1.904e-3, worst miss past four segments 1.22e-12
+P5d: not killed. excess falls by 1.89, 1.74, 1.96 per doubling
+P5e: not killed. worst miss past four segments under 1e-4 at every P: true
+```
+
+- **Both not killed.** With both grains doubled together the excess halves per doubling, and away from home the page's
+  readings are 2·sin φ to rounding. Draw's levels page agrees with the geometry. Its only error is the grain near home,
+  which shrinks as the grain does. Run 1's P5 and run 2 stay recorded as killed: at a fixed grain the page misses.
+- **A note on run 2's 1.8e−4.** Run 2's miss at 1,024 points does not recur here at the same P. Run 2 read 4,096
+  directions against 1,024 segments, and some of those directions, just past four segments, still fell where the
+  polygon's corners are. With J = P, they do not.
+
+## Reading (after the runs; not ruled)
+
+- **On a round world the reader's corner is the world's own radius.** A reader standing on a circle and dividing out
+  the size finds its corner exactly at a chord equal to the radius, 30° below its horizon. The deepest it can look, the
+  diameter, is one level past that. On a ball, weighting by solid angle, the corner is 2/e of the radius, about 21.6°
+  below the horizon. No amount enters: these are ratios of the radius, geometry.
+- **Home is the horizon, and the horizon is a resolution limit.** Toward the tangent the readings go to 0 in proportion,
+  one level per halving of the angle. Any reader with a grain stops there. Draw's page stops at one of its segments or
+  one of its directions, whichever is coarser (runs 1 to 3).
+- **Rising is half a level per doubling.** Above the surface the horizon is at √(2e) radii, half a level further per
+  doubling of the height. With a radius R given (the bridge, an amount), that is the classical √(2·R·h). It is old
+  physics; the levels page only shows where it sits: the horizon distance is the depth, in levels, that the height
+  buys.
