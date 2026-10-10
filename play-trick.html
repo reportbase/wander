@@ -387,6 +387,7 @@
     if (q.get('a') != null) ang = +q.get('a') * D;
     if (q.get('p') != null) { power = Math.max(2, Math.min(24, +q.get('p'))); $('power').value = power; }
     $('paths').textContent = 'paths: ' + pathsMode;
+    layoutView();   // the screen mapping from the start, so the hook can use it before the first frame
     requestAnimationFrame(loop);
 
     window.__trick = {
