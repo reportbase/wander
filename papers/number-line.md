@@ -65,6 +65,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
+- 10 October, sixty-seventh: §8, the baseline is the corner: the corner over every facing is the circle s = 1, and depth is measured from it, in levels, once the size is divided out (Tom, at `levels.html`).
 - 9 October, sixty-sixth: the case pass, equation by equation (`plans/papers-case-pass.md`; Tom: "yes"): h → H where a unit, grain or breadth is meant; v → d where a distance; the corner kept at v = h, with the pair named where a unit, a pixel or a photon count set it (the resolution limit); the ruler carries an amount, r = x/H; CAL's worth renamed W; §8's "breadths" read as fill levels, the in-place sweep value renamed g′, the triple corner never moved.
 - 9 October, sixty-first: geometry → sweep → reading: the level of detail is what the sweep over the field yields, k = log₂(Δ/v) (SPN, the opening; Tom).
 - 9 October, sixtieth: SPN Appendix D, Proposition D.1: the halving is the only subdivision a level without a measure supplies (noted).
@@ -963,6 +964,15 @@ forever. the same is also true for spheres. v,h,f [0,1][0,1][0,1]->[0,inf). lets
 ruling, calls v, h and f "breadths" throughout. Read them as fill levels, 0 to 1; the breadths are the amounts H, V and F.
 "The wedge of three breadths" is the wedge of three fill levels; "the face of its largest breadth" that of its largest
 fill level. The table in "The sphere's clean statement" is corrected.
+
+**The baseline is the corner** (Tom, 10 October, at `levels.html`: "the corner is the circle between the near and far
+fields, or the yellow line … the corner is might also be the unit circle that pertibated line subtracts from to find the
+depth"; "wholyshit, the corner is v = h, which exacly what this demo shows. which is also the baseline from which depth is
+calcualted."). The quotation above, "the base line is v=h", read in a picture: drawn over every facing, with s = v/h as
+the distance out, the corner is the circle s = 1 between near and far, and that circle is the unit circle a shape's depth
+is measured from. Divide out the shape's size (its middle moves onto the corner, and the scale is lost); what stands off
+the circle is its depth, in each direction log₂ s(θ), levels past the corner, negative inward by the flip. Geometry only:
+as an amount, a bump's height needs the size back. SPN §1, "The corner is the circle, and depth is measured from it".
 
 **f is v₂, a second v** (Tom, 8 October: "so what is f. in v,h,f?"; "is f needed to define a sphere"; "thats weird that f is so unclear, we know f is needed, but what is it exactly?"; "ok, so it is v2"). The third breadth came in by symmetry, as a coordinate, and a coordinate has no
 role; v and h are clear because each has one: H is what the reader holds (its unit; V = H set as a placeholder: SPN §1), and h and v are how full each is.

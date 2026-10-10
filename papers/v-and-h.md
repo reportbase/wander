@@ -2513,6 +2513,10 @@ Neither half helps alone; together they cut the error by a factor of four, as in
     392–397. Where an item uses h for H or v for V, places the corner at an amount (D1, a unit, a count), calls a coordinate
     ratio |y|/|x| or an offset over a distance "v/h", or uses v for a speed, a dated ⚠ **Oct 9** note follows it (45
     notes); the items themselves are kept as written.
+399. **The corner is the circle, and depth is measured from it** (Oct 10; Tom, at `levels.html`: "wholyshit, the corner is v
+    = h, which exacly what this demo shows. which is also the baseline from which depth is calcualted."). Over every facing
+    the corner h = v is the circle s = 1 between near and far; it is the unit circle a shape's depth is its difference
+    from. With the size divided out, depth in each direction is log₂ s(θ), levels past the corner (SPN §1).
 
 All in *Serial, Parallel and Nowhere* §1 and the opening warning; the rulings under review and the physics audit in
 `plans/vh-rulings-review.md` and `plans/physics-vh-audit.md`.

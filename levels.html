@@ -23,7 +23,11 @@
     s(θ) = s₀·exp(Σ aₙ cos(nθ + φₙ)) (bumps of every size, n = 2 to 24, seeded), so its outline crosses several levels. The
     reader's level of detail is a circle at the edge of level k (radius 2 − 2^(−k), s = 2^k): inside it the shape is drawn
     with all its bumps; past it only its broad form (n ≤ 3) is kept, the true outline faint and dashed beside it.
-    Links: ?g= (the grain in pixels), ?s= (a thing's reading), ?shape= (s₀), ?lod= (k). Test hook: window.__levels.
+    The corner is the baseline (Tom, 10 October: "the corner is v = h, which exacly what this demo shows. which is also the
+    baseline from which depth is calcualted"): drawn over every facing the corner is the circle s = 1, and "divide out the
+    size" moves the shape's middle (its geometric mean reading, s₀) onto it; what stands off the circle is the depth,
+    log₂ s(θ) levels in each direction, outward past the corner and inward by the flip, shaded in two colours.
+    Links: ?g= (the grain in pixels), ?s= (a thing's reading), ?shape= (s₀), ?lod= (k), ?depth=1. Test hook: window.__levels.
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -69,6 +73,10 @@
             <input id="lod" type="range" min="0" max="10" step="1" value="2">
             <span id="lv" style="color:var(--bright)"></span>
         </div>
+        <div class="row" style="margin-top:6px">
+            <button id="divide">divide out the size</button>
+            <span class="note">the corner is the baseline: what stands off it is depth</span>
+        </div>
         <div style="margin-top:10px"><canvas id="cv" height="860"></canvas></div>
         <div id="hud"></div>
     </div>
@@ -107,11 +115,12 @@
         return c;
     }
 
-    let thing = null, pick = null, playing = false, last = null;
+    let moving = false, thing = null, pick = null, playing = false, last = null;
     const q = new URLSearchParams(location.search);
     if (q.has('g')) $('grain').value = Math.min(16, Math.max(0.5, +q.get('g') || 1));
     if (q.has('s')) thing = Math.max(0, +q.get('s') || 0);
     if (q.has('shape')) $('size').value = Math.min(6, Math.max(0, Math.log2(+q.get('shape') || 4)));
+    let div = q.get('depth') === '1' ? 1 : 0, divTo = div;     // 0: the shape at its size; 1: its size divided out
     if (q.has('lod')) $('lod').value = Math.min(10, Math.max(0, Math.round(+q.get('lod') || 0)));
 
     function fit(cv) {
@@ -152,14 +161,25 @@
         lab(0.5, 'near field: 0 to 1', 'rgba(212,160,82,0.9)');
         for (let k = 0; k < n && level(k).width * R >= 13; k++) { const L = level(k); lab((L.inner + L.outer) / 2, `${L.from}–${L.to}`, 'rgba(230,228,238,0.8)'); }
         // the shape, and the reader's level of detail
-        const s0 = 2 ** +$('size').value, k = +$('lod').value, rL = lodRadius(k) * R;
-        $('sv').textContent = `s₀ = ${fmt(s0)}`; $('lv').textContent = `${k} level${k === 1 ? '' : 's'} past the corner (to s = ${fmt(2 ** k)})`;
+        const sSet = 2 ** +$('size').value, s0 = sSet ** (1 - div), k = +$('lod').value, rL = lodRadius(k) * R;
+        $('sv').textContent = `s₀ = ${fmt(sSet)}`; $('lv').textContent = `${k} level${k === 1 ? '' : 's'} past the corner (to s = ${fmt(2 ** k)})`;
         const outline = (nmax, col, wid, dash) => {
             g.strokeStyle = col; g.lineWidth = wid; g.setLineDash(dash || []); g.beginPath();
             for (let i = 0; i <= 720; i++) { const th = 2 * Math.PI * i / 720, r = radius(shape(th, s0, nmax)) * R;
                 const x = cx + r * Math.cos(th), y = cy - r * Math.sin(th); i ? g.lineTo(x, y) : g.moveTo(x, y); }
             g.stroke(); g.setLineDash([]);
         };
+        // the depth: what stands off the corner's circle, outward and inward, once the size is divided out
+        if (div > 0) {
+            const region = () => { g.beginPath();
+                for (let i = 0; i <= 720; i++) { const th = 2 * Math.PI * i / 720, r = radius(shape(th, s0)) * R;
+                    const x = cx + r * Math.cos(th), y = cy - r * Math.sin(th); i ? g.lineTo(x, y) : g.moveTo(x, y); }
+                g.closePath(); g.moveTo(cx + R, cy); g.arc(cx, cy, R, 0, 2 * Math.PI, true); };
+            g.save(); g.beginPath(); g.rect(0, 0, W, H); g.arc(cx, cy, R, 0, 2 * Math.PI, true); g.clip('evenodd');
+            region(); g.fillStyle = `rgba(140,230,205,${0.45 * div})`; g.fill('evenodd'); g.restore();        // outward: past the corner
+            g.save(); g.beginPath(); g.arc(cx, cy, R, 0, 2 * Math.PI); g.clip();
+            region(); g.fillStyle = `rgba(217,110,91,${0.45 * div})`; g.fill('evenodd'); g.restore();         // inward: within it, by the flip
+        }
         outline(Infinity, 'rgba(230,228,238,0.35)', 1, [2, 3]);                 // what is there
         g.save(); g.beginPath(); g.arc(cx, cy, rL, 0, 2 * Math.PI); g.clip();
         outline(Infinity, '#e6e4ee', 2); g.restore();                            // within your level of detail: every bump
@@ -183,6 +203,8 @@
             const y = 14 + 16 * i; g.strokeStyle = col; g.lineWidth = 2; g.setLineDash(dash);
             g.beginPath(); g.moveTo(10, y); g.lineTo(34, y); g.stroke(); g.setLineDash([]); g.fillStyle = col; g.fillText(txt, 40, y); });
         g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(22, 14 + 64, 2.5, 0, 2 * Math.PI); g.fill(); g.fillText('crosses a ring edge', 40, 14 + 64);
+        if (div > 0) [['rgba(140,230,205,0.6)', 'depth past the corner'], ['rgba(217,110,91,0.6)', 'depth within it']].forEach(([col, txt], i) => {
+            const y = 14 + 16 * (5 + i); g.fillStyle = col; g.fillRect(12, y - 5, 20, 10); g.fillText(txt, 40, y); });
         // a thing sent out, and a picked place
         const mark = (s, col) => {
             const r = radius(s) * R, a = Math.PI * 0.18;
@@ -199,15 +221,18 @@
         txt += `\nthe shape: s from ${fmt(lo)} to ${fmt(hi)}, levels ${lo < 1 ? 'near field' : Math.floor(Math.log2(lo))} to ${Math.floor(Math.log2(hi))}; it crosses a ring edge ${crossings(s0)} times` +
             `\nyour level of detail: ${k} level${k === 1 ? '' : 's'}, to s = ${fmt(2 ** k)}; past it you keep the broad form, which crosses a ring edge ${crossings(s0, BROAD)} times`;
         if (thing !== null) txt += `\nthe thing: s = ${fmt(thing)}, at radius ${radius(thing).toFixed(4)} (${thing <= 1 ? 'near field' : `level ${Math.floor(Math.log2(thing))}, ${fmt(2 ** Math.floor(Math.log2(thing)))} to ${fmt(2 ** (Math.floor(Math.log2(thing)) + 1))}`})`;
-        if (pick) txt += `\npicked: radius ${pick.r.toFixed(4)}, s = ${isFinite(pick.s) ? fmt(pick.s) : '∞ (the horizon)'}`;
+        if (div > 0) { const d = [...Array(720)].map((_, i) => Math.log2(shape(2 * Math.PI * i / 720, s0)));
+            txt += `\nsize divided out${div < 1 ? ' (moving)' : ''}: the shape's middle on the corner; its depth runs from ${Math.min(...d).toFixed(2)} to +${Math.max(...d).toFixed(2)} levels`; }
+        if (pick) txt += `\npicked: radius ${pick.r.toFixed(4)}, s = ${isFinite(pick.s) ? fmt(pick.s) : '∞ (the horizon)'}` +
+            `; the shape there: s = ${fmt(shape(pick.th, s0))}, ${Math.log2(shape(pick.th, s0)) >= 0 ? '+' : ''}${Math.log2(shape(pick.th, s0)).toFixed(2)} levels from the corner`;
         $('hud').textContent = txt;
     }
     const fmt = x => x >= 1e6 ? x.toExponential(2) : x >= 100 ? Math.round(x).toLocaleString('en') : +x.toPrecision(3) + '';
 
     function pickAt(e) {
         const b = $('cv').getBoundingClientRect(), { cx, cy, R } = geom();
-        const r = Math.hypot(e.clientX - b.left - cx, e.clientY - b.top - cy) / R;
-        pick = { r: Math.min(r, 2), s: reading(Math.min(r, 2)) }; draw();
+        const dx = e.clientX - b.left - cx, dy = e.clientY - b.top - cy, r = Math.hypot(dx, dy) / R;
+        pick = { r: Math.min(r, 2), s: reading(Math.min(r, 2)), th: Math.atan2(-dy, dx) }; draw();
     }
     let down = false;
     $('cv').addEventListener('pointerdown', e => { down = true; pickAt(e); });
@@ -220,8 +245,10 @@
             const dt = last === null ? 0 : (now - last) / 1000;
             thing = thing === null || thing <= 0 ? 0.05 : thing * 2 ** dt;
             if (thing > 2 ** 30) { thing = 0.05; }
-            draw();
         }
+        if (div !== divTo) { div = divTo > div ? Math.min(divTo, div + 0.03) : Math.max(divTo, div - 0.03); }
+        if (playing || div !== divTo || moving) draw();
+        moving = div !== divTo;
         last = now; requestAnimationFrame(tick);
     }
     $('play').addEventListener('click', () => {
@@ -229,12 +256,16 @@
         if (playing && (thing === null || thing > 2 ** 20)) thing = 0.05;
     });
     $('grain').addEventListener('input', draw);
+    const showDiv = () => { $('divide').classList.toggle('on', divTo === 1); $('divide').textContent = divTo ? 'put the size back' : 'divide out the size'; };
+    $('divide').addEventListener('click', () => { divTo = divTo ? 0 : 1; moving = true; showDiv(); });
+    showDiv();
     $('size').addEventListener('input', draw);
     $('lod').addEventListener('input', draw);
     window.addEventListener('resize', draw);
     draw(); requestAnimationFrame(tick);
 
-    window.__levels = { radius, reading, level, visible, R: () => geom().R, shape, lodRadius, crossings, BROAD };
+    window.__levels = { radius, reading, level, visible, R: () => geom().R, shape, lodRadius, crossings, BROAD,
+        depth: th => Math.log2(shape(th, 1)), divided: () => div };
 })();
 </script>
 </body>
