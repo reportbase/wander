@@ -149,3 +149,36 @@ P5: not killed. most levels from touching (equal balls) 4.459 (bound 4.63); rack
   robust: no world coordinate is read for any contact.
 - **What is still from nowhere** names the next questions. A straight cushion has no size, so no reading r/d. Signals
   arrive at once. And every ball reads every other at every substep, with no level of detail.
+
+### Run 2 (10 October 2026): prediction, written before it ran (Tom: "proceed")
+
+Run 1 left the cushions and pockets to the referee, since a straight cushion has no size and so no reading r/d. Worked
+out before writing this:
+- **A cushion is the reader's own flip.** Striking a cushion is the same as meeting one's own mirror image: an equal
+  ball, moving mirrored, at twice the gap. (This is the method of images, known in physics.)
+  - The image's reading of the ball is v = r/(2·gap), and the image reads the ball the same, so h = v.
+  - Contact with the cushion is h + v = 1 at h = v = ½: the corner, with the reader as both parties.
+  - The bounce is the ball-on-ball response with an equal mass, the image's motion mirrored, and the cushion's
+    restitution 0.8.
+- **A pocket is a place, not a party.** The ball is in it when the pocket fills its whole view, v = POCK/d ≥ 1 (with
+  the referee's strict test, v > 1).
+- **The world's side** supplies, as for balls, only the arriving image: the image's direction and v. No ball reads a
+  coordinate. How a reflection reaches a ball (an echo, a mirror) is physics; the bridge is travel, and it arrives at
+  once in this version.
+
+The table now runs from inside entirely, except the integrator that moves each ball by its own velocity (each ball's
+own act) and the one clock.
+
+- **P6 (the cushion at the corner).** At every substep, for every ball and cushion, the referee's test (the centre
+  closer to the cushion's line than r) and the image's h + v > 1 agree, and every cushion contact has h = v exactly.
+  *Killed* on any disagreement past 1e-12.
+- **P7 (the pocket fills the view).** The referee's d < POCK and v > 1 agree at every substep. *Killed* on any
+  disagreement past 1e-12.
+- **P8 (the whole game from inside).** With cushions and pockets read from inside as well, the table matches the
+  referee within 1e-9 through each break's first cushion contact. *Killed* if not.
+
+  *Measured, with an expectation stated:* whether the two ever differ by more than 1e-3 in 8 s. One difference in the
+  rules is known beforehand. The referee reverses a ball's motion at a cushion whenever the ball is past the line,
+  even if it is already moving away (as after a push from another ball); the image responds only when closing. I
+  expect this to make at least one of the 20 breaks diverge. If any do, the cause is to be named from the run, not
+  guessed.
