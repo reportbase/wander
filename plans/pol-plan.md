@@ -634,7 +634,8 @@ the result is a ratio of angles.
   starts from contact** (run 1's P5 count). The aim error grows by about as many levels as the run spanned.
 - A ball struck from rest starts with no error in its place, only in its direction, so in a chain where each ball meets
   the next from rest, the factors multiply exactly, to first order: the chain loses Σ log₂ A_k levels.
-- On this table, s from 1 to 6 balls' radii... in units: s from 1 to 6, 2r = 0.9: from −0.6 to 2.7 levels a contact.
+- On this table, with s from 1 to 6 and 2r = 0.9, a full hit loses about 0.2 to 2.7 levels; a thin cut (cos φ small)
+  loses more; a run shorter than 2r·cos φ gains (A < 1).
 
 The engine detects contact a substep late, with the balls overlapping by up to a substep's travel (about 0.06 at speed
 14, 7% of 2r). That moves the effective ghost ball and the cut a little, so the predictions allow 15%.
