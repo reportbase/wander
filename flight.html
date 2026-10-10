@@ -26,7 +26,10 @@ and stops inside the corner at 0.6v ("again" or R runs it again). Its detail ste
 2v and the corner, so past the corner it changes once per doubling and inside it not at all; by metres at fixed distances,
 unrelated to the corner; none, full detail all the way. A dot on the strip shows where it is.
 Drag up or down (touch or mouse), wheel or arrow keys to change v.
-Links: ?v=  ?lod=none|metres|vh  ?still=1. Test hook: window.__flight.
+The strip chip (or F) unfolds it (Tom: "what happens if we don't flip at the corner?"): h/v all the way keeps the near
+side and runs off the top past 2v (the far field never reaches v/h = 0: the uniform grid); v/h all the way keeps the far
+side and runs off the bottom inside v/2 (home never reached: the level main view). Folded, both ends are held.
+Links: ?v=  ?lod=none|metres|vh  ?strip=folded|h/v|v/h  ?still=1. Test hook: window.__flight.
 -->
 <title>The corner in flight</title>
 <style>
@@ -46,19 +49,21 @@ Links: ?v=  ?lod=none|metres|vh  ?still=1. Test hook: window.__flight.
     font-variant-numeric: tabular-nums;
   }
   #read b { color: var(--corner); font-weight: 500; }
-  #lod, #again {
+  #lod, #again, #flip {
     position: fixed; left: 16px; top: calc(14px + env(safe-area-inset-top, 0px));
     font: 13px/1 var(--mono); color: var(--ink); background: transparent;
     border: 1px solid rgba(159,176,187,0.45); border-radius: 4px;
     padding: 9px 12px; cursor: pointer; touch-action: manipulation;
   }
   #again { left: auto; right: 16px; }
-  #lod:focus-visible, #again:focus-visible { outline: 2px solid var(--corner); outline-offset: 2px; }
+  #flip { top: calc(58px + env(safe-area-inset-top, 0px)); }
+  #lod:focus-visible, #again:focus-visible, #flip:focus-visible { outline: 2px solid var(--corner); outline-offset: 2px; }
 </style>
 
 <canvas id="c" aria-label="Wireframe ground seen from a plane in level flight"></canvas>
 <button id="lod" type="button">LOD</button>
 <button id="again" type="button">again</button>
+<button id="flip" type="button">strip</button>
 <div id="read"></div>
 
 <script>
@@ -67,6 +72,7 @@ const g = cv.getContext('2d');
 const read = document.getElementById('read');
 const lodBtn = document.getElementById('lod');
 const againBtn = document.getElementById('again');
+const flipBtn = document.getElementById('flip');
 
 const S = 10;          // finest ground grid spacing, metres
 const FAR = 20000;     // where the ground stops being drawn, metres
@@ -218,18 +224,29 @@ function drawSphere() {
   g.stroke(path);
 }
 
-// The reading, folded at the corner.
+// The reading on the strip: folded at the corner (h/v, then v/h), or one ratio all the way (flip off).
+const FLIPS = ['folded', 'h/v', 'v/h'];
+let flip = Math.max(0, FLIPS.indexOf(new URLSearchParams(location.search).get('strip')));
+function stripY(h, top, mid, bot, half) {
+  if (flip === 1) return bot - (h / v) * half;                          // h/v throughout: 2v at the top, beyond off
+  if (flip === 2) return h >= v ? mid - (1 - v / h) * half              // v/h throughout: v/2 at the bottom, inside off
+                                : mid + (v / h - 1) * half;
+  return h <= v ? bot - (h / v) * half : mid - (1 - v / h) * half;      // folded at the corner
+}
 // Home to corner: h/v, from 0 to 1. Corner onward: v/h, from 1 back to 0.
 function drawReading(B) {
   const top = H * 0.08, bot = H * 0.86;
   const mid = (top + bot) / 2, half = (bot - top) / 2;
   const x0 = W - 56, w = 22;
-  const yOf = (h) => h <= v ? bot - (h / v) * half      // h/v, linear in ground
-                            : mid - (1 - v / h) * half;  // v/h, reciprocal in ground
+  // folded: h/v to the corner, v/h past it. Unflipped, one ratio all the way: h/v runs off the top past 2v,
+  // v/h runs off the bottom inside v/2.
+  const yOf = (h) => stripY(h, top, mid, bot, half);
 
   g.strokeStyle = 'rgba(190,205,215,0.25)';
   g.strokeRect(x0 + 0.5, top + 0.5, w, bot - top);
 
+  g.save();
+  g.beginPath(); g.rect(x0 - 8, top, w + 16, bot - top); g.clip();
   const nearT = new Path2D(), farT = new Path2D(), edgeT = new Path2D();
   eachCross(B, 0.0001, (h) => {
     const y = Math.round(yOf(h)) + 0.5;
@@ -262,12 +279,14 @@ function drawReading(B) {
   }
 
   // doublings past the corner: 2v, 4v, 8v ... each takes half the room of the last
+  g.restore();
   g.font = '11px ui-monospace, Menlo, Consolas, monospace';
   g.textAlign = 'right'; g.textBaseline = 'middle';
   g.fillStyle = '#9fb0bb'; g.strokeStyle = '#9fb0bb';
   let n = 2;
   for (let k = 1; k <= 4; k++, n *= 2) {
     const y = yOf(n * v);
+    if (y < top + 6 || y > bot) continue;
     g.beginPath(); g.moveTo(x0 - 4, y); g.lineTo(x0, y); g.stroke();
     g.fillText(n + 'v', x0 - 6, y);
   }
@@ -277,14 +296,16 @@ function drawReading(B) {
   g.lineWidth = 1;
   g.fillStyle = '#e2b545'; g.fillText('corner', x0 - 6, mid);
   g.fillStyle = '#9fb0bb';
-  g.fillText('home', x0 - 6, bot);
-  g.fillText('v/h → 0', x0 - 6, top);
+  g.fillText(flip === 2 ? 'v/h = 2' : 'home', x0 - 6, bot);
+  g.fillText(flip === 1 ? 'h/v = 2' : 'v/h → 0', x0 - 6, top);
 
   // the sphere on the strip
   const hs = sphereH();
   if (sph.r > 0 && hs > 0) {
-    g.fillStyle = 'rgba(140,230,205,0.95)';
-    g.beginPath(); g.arc(x0 + w / 2, yOf(hs), 4, 0, 2 * Math.PI); g.fill();
+    const y = yOf(hs), off = y < top || y > bot;          // off the strip: a ring held at the edge it ran off
+    g.fillStyle = g.strokeStyle = 'rgba(140,230,205,0.95)';
+    g.beginPath(); g.arc(x0 + w / 2, Math.min(bot, Math.max(top, y)), 4, 0, 2 * Math.PI);
+    if (off) g.stroke(); else g.fill();
   }
 }
 
@@ -305,6 +326,9 @@ function cycle() { mode = (mode + 1) % 3; lodBtn.textContent = 'LOD: ' + MODES[m
 lodBtn.addEventListener('click', cycle);
 lodBtn.textContent = 'LOD: ' + MODES[mode];
 againBtn.addEventListener('click', startRun);
+function cycleFlip() { flip = (flip + 1) % 3; flipBtn.textContent = 'strip: ' + FLIPS[flip]; }
+flipBtn.addEventListener('click', cycleFlip);
+flipBtn.textContent = 'strip: ' + FLIPS[flip];
 startRun();
 
 // test hook: rows on the screen are fractions of its height, so they compare across sizes
@@ -314,6 +338,7 @@ window.__flight = {
   edgeRows: () => bands().filter(b => b.a > 0 && b.a < FAR).map(b => py(b.a) / H),
   levelCorners: () => bands().map(b => 8 * b.s),
   detailAt: (hv) => { const L = sphereLevel(hv * v); return mode !== 0 && L >= 5 ? -1 : detailOf(L); },   // -1 = a dot
+  stripAt: (hv, m) => { const k = flip; flip = FLIPS.indexOf(m); const y = stripY(hv * v, 0, 0.5, 1, 0.5); flip = k; return 1 - y; },   // 0 bottom … 1 top
   place: (hv) => { startRun(); sph.Z = travelled + hv * v; sph.running = false; },
   linesPerLevel: () => bands().filter(b => b.b < FAR).map(b => (b.b - b.a) / b.s),
 };
@@ -336,6 +361,7 @@ window.addEventListener('keydown', e => {
   if (e.key === 'ArrowDown') v = clamp(v / 1.1);
   if (e.key === 'l' || e.key === 'L') cycle();
   if (e.key === 'r' || e.key === 'R') startRun();
+  if (e.key === 'f' || e.key === 'F') cycleFlip();
 });
 </script>
 

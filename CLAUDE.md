@@ -111,7 +111,7 @@ Google Fonts load from outside:
   the reading folded at the corner, h/v to home (even), v/h past it (2v, 4v … each half the room). LOD chip: none / by metres
   (doubling at 500 m, 1 km …) / by v/h (grain v/8 to √2·v, then doubling; Tom: "each Level has its own corner", eight grains
   ahead: v, 2v, 4v …). By v/h each level past the first holds 4√2 ≈ 5.7 lines, so the count past the corner is log₂(h/v), and climbing changes only
-  the speed; by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook also `detailAt(h/v)`, `place(h/v)`; hook `window.__flight`. Not in the flying page.
+  the speed; by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; strip chip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `detailAt(h/v)`, `place(h/v)`, `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
 - `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the seven demos (sweep, dial, sphere, facing, levels, walk, pool) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
@@ -356,7 +356,7 @@ In short:
       with cushions read as the ball's mirror image and pockets as filling the view, still the referee's game; read late (c = 50),
       carrying the image forward beats taking it as now.
   16. **flight.html:** the corner keeps its row from 50 m to 1.6 km; by v/h the level edges keep theirs, 4√2 lines a level,
-      level corners at v, 2v, 4v; by metres the edges slide; the sphere's detail by v/h is dot, 0, 1, 2, 3, 4 at 20v … 0.6v at any height, by metres not.
+      level corners at v, 2v, 4v; by metres the edges slide; the sphere's detail by v/h is dot, 0, 1, 2, 3, 4 at 20v … 0.6v at any height, by metres not; the strip folded holds 0.1v–100v, h/v throughout runs off the top, v/h off the bottom.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
