@@ -33,24 +33,15 @@ bodies are pictures. They are never evidence here.
 - 10 October, sixth: how physics holds the inverse square (above §0), and NRF in exact arithmetic: the near field of an
   extended source turns at the corner of the pair (size, distance), exactly and symmetrically, where the light counted is
   a share (the projected solid angle); counted as an angle, it does not (§2.2, §3).
+- 10 October, seventh: the inverse square given its own paper, `papers/inverse-square.md`, which gathers the law as
+  physics holds it, in levels, the near field and the lay's form, each marked by its standing.
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
-- **Derived, not assumed.** A point source sends a fixed amount per second. With nothing lost on the way (conservation)
-  and nothing preferred in direction (isotropy), the same amount crosses every sphere about it, whose area is 4πd². In D
-  dimensions the law is 1/d^(D−1): in levels, D − 1 levels of light per level of distance, 2 in our space. Gauss's law
-  is its general form.
-- **Tested as a bound on the exponent.**
-  - Light: photometry on an optical bench, from Bouguer and Lambert on, to the percent, limited by how small and even the
-    source is.
-  - The electric force: Cavendish's null test, repeated by Williams, Faller and Hill (1971): no field inside a charged
-    shell, so the exponent is 2 within about 10⁻¹⁶. Equivalently, light has no mass, to fine limits.
-  - Gravity: planetary orbits and lunar laser ranging hold it to about 10⁻⁹ over the solar system, and torsion balances
-    (Eöt-Wash) down to about 50 µm. Below that it is open; theories with extra dimensions would bend it there.
-- **Exact only for a point.** A source of size a has a near field. NRF (`plans/nrf-plan.md`) measures where it turns
-  from near to far, in levels (§2.2).
-
-The law is not ours to test. MAG's 2.02 on real stars checks the bookkeeping in levels, not the law.
+Moved to its own paper, `papers/inverse-square.md` (Tom, 10 October: "lets give the inverse square law its own paper to
+iterate on"). In brief: physics derives the law from conservation and three dimensions and tests its exponent (within
+about 10⁻¹⁶ of 2 for the electric force), so the law is not ours to test. What the corpus tests is its bookkeeping in
+levels (MAG, GCN) and where its geometry meets the law's edges: the near field (NRF) and the lay's form (ISQ).
 
 ## 0. The rules
 
