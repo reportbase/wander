@@ -1,0 +1,11 @@
+fields of 116 balls (levels 0-3: 4, 12, 36, 64), white struck at 14; errors against the referee at 1 s
+  K = inf  E by level (median of 5): 2.12e-13, 1.80e-10, 6.23e-11, sunk differs   contact responses skipped 0 of 492 (0.0%)
+         per field, level 0: 2.12e-13, 1.28e-1, 6.00e-12, 3.83e-14, 3.08e-14
+  K = 1    E by level (median of 5): 2.32e+0, 2.06e+0, 8.53e+0, sunk differs   contact responses skipped 225 of 616 (36.5%)
+         per field, level 0: 2.32e+0, 5.07e+0, 3.22e+0, 2.08e+0, 6.09e-1
+  K = 2    E by level (median of 5): 6.09e-1, 1.56e+0, 1.44e+1, sunk differs   contact responses skipped 102 of 588 (17.3%)
+         per field, level 0: 2.17e-1, 1.95e-1, 1.15e+0, 8.22e-1, 6.09e-1
+  K = 3    E by level (median of 5): 1.44e-1, 1.29e+0, sunk differs, sunk differs   contact responses skipped 37 of 518 (7.1%)
+         per field, level 0: 1.09e-1, 1.27e-1, 1.00e+0, 2.38e-1, 1.44e-1
+P13: KILLED. K = inf against the referee: all levels within 1e-9 in all five fields
+P14: KILLED. level-0 error falls by 3.81 (K 1 to 2) and 4.23 (K 2 to 3); band [4, 16]

@@ -412,3 +412,59 @@ and ∞. The smaller one still responds.
   factor between 4 and 16 each step (the mass ratio 8 per level). *Killed* if either step's factor is outside [4, 16].
 - *Measured, not predicted:* the share of contact responses skipped at each K; and E_K for every level, not only
   level 0.
+
+Run 5 output (`node plans/pol/pol5.mjs`, in `plans/pol/pol-run5.txt`):
+
+```
+fields of 116 balls (levels 0-3: 4, 12, 36, 64), white struck at 14; errors against the referee at 1 s
+  K = inf  E by level (median of 5): 2.12e-13, 1.80e-10, 6.23e-11, sunk differs   contact responses skipped 0 of 492 (0.0%)
+         per field, level 0: 2.12e-13, 1.28e-1, 6.00e-12, 3.83e-14, 3.08e-14
+  K = 1    E by level (median of 5): 2.32e+0, 2.06e+0, 8.53e+0, sunk differs   contact responses skipped 225 of 616 (36.5%)
+         per field, level 0: 2.32e+0, 5.07e+0, 3.22e+0, 2.08e+0, 6.09e-1
+  K = 2    E by level (median of 5): 6.09e-1, 1.56e+0, 1.44e+1, sunk differs   contact responses skipped 102 of 588 (17.3%)
+         per field, level 0: 2.17e-1, 1.95e-1, 1.15e+0, 8.22e-1, 6.09e-1
+  K = 3    E by level (median of 5): 1.44e-1, 1.29e+0, sunk differs, sunk differs   contact responses skipped 37 of 518 (7.1%)
+         per field, level 0: 1.09e-1, 1.27e-1, 1.00e+0, 2.38e-1, 1.44e-1
+P13: KILLED. K = inf against the referee: all levels within 1e-9 in all five fields
+P14: KILLED. level-0 error falls by 3.81 (K 1 to 2) and 4.23 (K 2 to 3); band [4, 16]
+```
+
+- **P13 killed.** With nothing ignored, four of the five fields match the referee within 1e-9 at 1 s, but field 2 does
+  not: its level-0 balls are 0.13 apart, and in every field some of the smallest balls fall into different pockets
+  ("sunk differs"). The rack of 16 never diverged in 8 s (runs 1–2). A field of 116 balls in four size levels
+  amplifies differences of rounding (about 1e-17 a contact) to the size of a ball within a second.
+- **P14 killed.** The level-0 balls' error at 1 s falls by 3.81 from K = 1 to 2, and by 4.23 from K = 2 to 3: about 4
+  per level, not the predicted 4 to 16 band's middle, and the first step just under its floor.
+- *Measured:*
+  - contact responses skipped: 36.5% at K = 1, 17.3% at K = 2, 7.1% at K = 3;
+  - the smaller levels' errors are of the size of the table (2 to 14), with balls sunk differently.
+
+## Reading of run 5 (not ruled)
+
+- **Many levels make the table chaotic, and that bounds "the same game".** With four size levels, the view from
+  inside and the view from nowhere agree only up to a horizon of about a second in one field of five. Past it, both
+  are one rounding each of a chaotic game, and neither is more correct. This is not a failure of the situated view:
+  it is the point past which no reader, situated or not, carries a game forward exactly.
+- **Ignoring smaller balls costs about 4× less per level, but chaos is in the measure.** Each skipped response is
+  exactly the mass ratio 8^(−k) of the larger ball's motion (that is an identity). What the run measures is that cost
+  spread through a chaotic game, and the 4 may belong to the chaos rather than to the levels. A clean test measures
+  before the chaos horizon, or per contact, with its own prediction.
+- **Ignoring is worth a lot of work.** A larger ball that ignores everything one level or more smaller skips more
+  than a third of all contact responses, and the smaller balls still bounce off it correctly.
+
+**A bug found in run 5, after it ran.** On the page, the field's readout showed NaN. The cause: a small, fast ball can
+cross a cushion's line within one tick, and the image's reading for a gap ≤ 0 was set to infinity. That turned the
+response's arithmetic into NaN, and such balls left the table's arithmetic altogether. Run 5's numbers for the situated
+table may therefore be partly the bug's. Run 5 stays recorded as it came out, kills and all, but it is not evidence.
+The fix keeps the reading signed: v = r/(2·gap) is negative once the edge is behind, which still counts as contact, and
+the push comes out exactly r − gap, as the referee's clamp. Runs 1 and 2 reproduce unchanged with the fix (their
+output re-run, identical).
+
+### Run 6 (10 October 2026): prediction, written before it ran
+
+Run 5 again with the bug fixed, the same field, seeds and measure. The predictions are run 5's, unchanged:
+- **P13′.** With K = ∞, the field from inside equals the referee within 1e-9 at 1 s in all five fields.
+- **P14′.** The level-0 error falls by a factor between 4 and 16 from K = 1 to 2, and from K = 2 to 3.
+
+Run 5's outcome (P13 killed by field 2 and by balls sunk differently) is known now, so P13′ is not blind. It is kept
+as it was, not loosened.

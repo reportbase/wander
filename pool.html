@@ -63,6 +63,8 @@
             <button id="show">show: from inside</button>
             <button id="walls" class="on">cushions: from inside</button>
             <select id="late" aria-label="signals"><option value="now">signals: at once</option><option value="naive">signals late (c = 50), taken as now</option><option value="carry">signals late (c = 50), carried forward</option></select>
+            <select id="tablesel" aria-label="table"><option value="rack">table: the rack</option><option value="field">table: four size levels (116 balls)</option></select>
+            <select id="ignore" aria-label="ignore"><option value="inf">each ball reads every ball</option><option value="1">ignore balls 1+ levels smaller</option><option value="2">ignore balls 2+ levels smaller</option><option value="3">ignore balls 3+ levels smaller</option></select>
         </div>
         <canvas id="table" height="340" style="margin-top:10px"></canvas>
         <p class="cap">The table played from inside. Tap a ball to stand on it: lines to the others, coloured by how many levels
@@ -157,7 +159,7 @@
         if (vr < 0) { const k = (1 + e) * vr / (1 + (h / v) ** 3); du = [k * n[0], k * n[1]]; }   // mass ratio (h/v)³
         return { step: [-over * n[0], -over * n[1]], du, hit: vr < 0 };   // in a's own units: move back, change speed
     }
-    function situatedPairs(B, log) {
+    function situatedPairs(B, log, K = Infinity, tally) {
         for (let i = 0; i < B.length; i++) for (let j = i + 1; j < B.length; j++) {
             const A = B[i], Bb = B[j]; if (A.sunk || Bb.sunk) continue;
             const ia = image(A, Bb), ib = image(Bb, A);       // each reads the other; they tell each other their reading
@@ -165,6 +167,11 @@
             if (!(ib.v + ia.v > 1)) continue;                 // contact is h + v = 1
             const uA = [A.vx / A.r, A.vz / A.r], uB = [Bb.vx / Bb.r, Bb.vz / Bb.r];   // each reports its own motion, own units
             const ra = respond(A, ia, ib, uB), rb = respond(Bb, ib, ia, uA);
+            // run 5: a ball ignores any ball K or more size levels smaller than itself; the smaller still responds
+            const skipA = (Bb.lv || 0) - (A.lv || 0) >= K, skipB = (A.lv || 0) - (Bb.lv || 0) >= K;
+            if (tally) { if (ra.hit) { tally.hits++; if (skipA) tally.skipped++; } if (rb.hit) { tally.hits++; if (skipB) tally.skipped++; } }
+            if (skipA) { ra.step = [0, 0]; ra.du = [0, 0]; }
+            if (skipB) { rb.step = [0, 0]; rb.du = [0, 0]; }
             // each moves itself and changes its own speed, by its own units (its radius)
             A.x += ra.step[0] * A.r; A.z += ra.step[1] * A.r; Bb.x += rb.step[0] * Bb.r; Bb.z += rb.step[1] * Bb.r;
             A.vx += ra.du[0] * A.r; A.vz += ra.du[1] * A.r; Bb.vx += rb.du[0] * Bb.r; Bb.vz += rb.du[1] * Bb.r;
@@ -177,7 +184,10 @@
     // the ball the same, so h = v, and contact is h + v = 1 at the corner. A pocket arrives as v = POCK/d: the ball is in it
     // when it fills the whole view.
     const CUSHIONS = [[-1, 0, b => b.x + LX / 2], [1, 0, b => LX / 2 - b.x], [0, -1, b => b.z + LZ / 2], [0, 1, b => LZ / 2 - b.z]];
-    const imageInCushion = (b, c) => { const gap = c[2](b); return { n: [c[0], c[1]], v: gap > 0 ? b.r / (2 * gap) : Infinity }; };
+    // The reading is signed: past the cushion's line (a small, fast ball can cross it within a tick) the image is behind,
+    // v < 0, and still contact. (Before run 6 a gap ≤ 0 gave v = Infinity and NaN arithmetic: the bug found in run 5.)
+    const imageInCushion = (b, c) => { const gap = c[2](b) || -1e-300; return { n: [c[0], c[1]], v: b.r / (2 * gap) }; };
+    const cushionContact = v => v + v > 1 || v < 0;   // h + v = 1 with h = v; or the edge already behind
     const imageOfPocket = (b, p) => ({ v: POCK / Math.hypot(b.x - p[0], b.z - p[1]) });
     function ownAndWallsInside(B, h, log) {
         for (const b of B) {
@@ -194,7 +204,7 @@
             for (const c of CUSHIONS) {
                 const im = imageInCushion(b, c), u = [b.vx / b.r, b.vz / b.r], un = u[0] * im.n[0] + u[1] * im.n[1];
                 if (log) log.cushion(c[2](b) < b.r, im.v);
-                if (!(im.v + im.v > 1)) continue;        // h + v = 1, with h = v: itself
+                if (!cushionContact(im.v)) continue;     // h + v = 1, with h = v: itself
                 const ui = [u[0] - 2 * un * im.n[0], u[1] - 2 * un * im.n[1]];   // its image moves mirrored
                 const r = respond(b, im, im, ui, E_RAIL);
                 b.x += r.step[0] * b.r; b.z += r.step[1] * b.r; b.vx += r.du[0] * b.r; b.vz += r.du[1] * b.r;
@@ -202,7 +212,32 @@
         }
     }
     const stepRef = (B, log, onRail) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { ownAndWalls(B, h, onRail); refereePairs(B, log); } };
-    const stepSit = (B, log, inside, wlog) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { inside ? ownAndWallsInside(B, h, wlog) : ownAndWalls(B, h); situatedPairs(B, log); } };
+    const stepSit = (B, log, inside, wlog, K, tally) => { const h = FRAME / SUB; for (let s = 0; s < SUB; s++) { inside ? ownAndWallsInside(B, h, wlog) : ownAndWalls(B, h); situatedPairs(B, log, K, tally); } };
+    // ── run 5: level of detail as size. A field of balls in four size levels, radius 0.45/2^k, seeded. ──
+    function rackField(seed) {
+        let a = seed >>> 0; const rnd = () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+        const B = [{ n: 0, x: HEAD[0], z: HEAD[1], vx: 0, vz: 0, r: R0, m: 1, lv: 0, col: '#f2f0ea', cue: true }];
+        const LVCOL = ['#d23a2f', '#e3c33b', '#2f5fd0', '#2e8b57'], COUNT = [3, 12, 36, 64];
+        for (let k = 0; k < 4; k++) for (let c = 0; c < COUNT[k]; c++) {
+            const r = R0 / 2 ** k;
+            for (let tries = 0; tries < 2000; tries++) {
+                const x = -LX / 4 + rnd() * (3 * LX / 4 - r) , z = -LZ / 2 + r + rnd() * (LZ - 2 * r);
+                if (x > LX / 2 - r) continue;
+                if (B.some(b => Math.hypot(b.x - x, b.z - z) < b.r + r + 0.02)) continue;
+                if (POCKETS.some(p => Math.hypot(p[0] - x, p[1] - z) < POCK + r)) continue;
+                B.push({ n: `${k}.${c}`, x, z, vx: 0, vz: 0, r, m: (r / R0) ** 3, lv: k, col: LVCOL[k] }); break;
+            }
+        }
+        return B;
+    }
+    function runField(seed, opts = {}) {
+        const K = opts.K == null ? Infinity : opts.K, R = rackField(seed), S = rackField(seed), T = opts.seconds || 1;
+        for (const B of [R, S]) { const dx = LX / 8 - HEAD[0], dz = 0; B[0].vx = SPEED; B[0].vz = 0; }
+        const tally = { hits: 0, skipped: 0 };
+        for (let f = 0; f < Math.round(T / FRAME); f++) { stepRef(R); stepSit(S, null, true, null, K, tally); }
+        const E = [0, 1, 2, 3].map(k => Math.max(0, ...R.map((b, j) => b.lv !== k ? 0 : (b.sunk && S[j].sunk) ? 0 : (b.sunk || S[j].sunk) ? Infinity : Math.hypot(b.x - S[j].x, b.z - S[j].z))));
+        return { seed, K, E, hits: tally.hits, skipped: tally.skipped, n: R.length };
+    }
 
     // ── run 3: time. Each ball reads the others late: as each was when its image left, the image travelling at c, so that
     //    c·(t − t_e) is the distance then (the retarded image, from the other's past). The naive reader takes it as now;
@@ -270,7 +305,7 @@
         const out = { i, heavy, p1bad: 0, p1near: 0, p2bad: 0, contacts: 0, p3wrong: 0, firstContact: null, diffAtFirst: null,
             diffHalf: 0, diverge: null, maxLevelEq: 0, rackMedian: null, pairs: 0,
             inside, p6bad: 0, p6checks: 0, p7bad: 0, p7checks: 0, firstRail: null, diffAtRail: null, sunkRef: 0, sunkSit: 0 };
-        const wlog = { cushion: (touch, v) => { out.p6checks++; if (touch !== (v + v > 1) && Math.abs(2 * v - 1) > 1e-12) out.p6bad++; },
+        const wlog = { cushion: (touch, v) => { out.p6checks++; if (touch !== cushionContact(v) && Math.abs(2 * v - 1) > 1e-12) out.p6bad++; },
             pocket: (inPocket, v) => { out.p7checks++; if (inPocket !== (v > 1) && Math.abs(v - 1) > 1e-12) out.p7bad++; } };
         const onRail = () => { if (out.firstRail == null) out.firstRail = t; };
         // the rack's levels before the break
@@ -313,9 +348,10 @@
     let REF = rack(heavyOn), SIT = rack(heavyOn), playing = true, chosen = 0, showSit = true, t = 0, lastDiff = 0, contacts = 0;
     for (let i = 0; i < 10; i++) { const o = document.createElement('option'); o.value = i; o.textContent = `break ${i} (${angleOf(i).toFixed(1)}°)`; $('which').appendChild(o); }
     $('which').value = which;
-    let lateMode = 'now', LST = null;
+    let lateMode = 'now', LST = null, tableMode = 'rack', ignoreK = Infinity;
     function reset(doStrike) {
-        REF = rack(heavyOn); SIT = rack(heavyOn); t = 0; contacts = 0; if (doStrike) { strike(REF, which); strike(SIT, which); }
+        if (tableMode === 'field') { REF = rackField(which + 1); SIT = rackField(which + 1); t = 0; contacts = 0; if (doStrike) for (const B of [REF, SIT]) { B[0].vx = SPEED; B[0].vz = 0; } }
+        else { REF = rack(heavyOn); SIT = rack(heavyOn); t = 0; contacts = 0; if (doStrike) { strike(REF, which); strike(SIT, which); } }
         LST = { t: 0, hist: [] }; for (let k = 480; k >= 1; k--) { const sn = snapshot(SIT, -k * FRAME / SUB); sn.vx = sn.vx.map(() => 0); sn.vz = sn.vz.map(() => 0); LST.hist.push(sn); }
     }
     function fit(cv) {
@@ -397,7 +433,7 @@
     function tick(now) {
         if (playing) {
             const steps = last == null ? 1 : Math.min(4, Math.max(1, Math.round((now - last) / 1000 / FRAME)));
-            for (let k = 0; k < steps; k++) { stepRef(REF, (A, B, d, hit) => { if (hit) contacts++; }); lateMode === 'now' ? stepSit(SIT, null, wallsInside) : stepLate(SIT, LST, 50, lateMode === 'carry'); t += FRAME; }
+            for (let k = 0; k < steps; k++) { stepRef(REF, (A, B, d, hit) => { if (hit) contacts++; }); lateMode === 'now' ? stepSit(SIT, null, wallsInside, null, ignoreK) : stepLate(SIT, LST, 50, lateMode === 'carry'); t += FRAME; }
             lastDiff = Math.max(...REF.map((b, k) => (b.sunk || SIT[k].sunk) ? 0 : Math.hypot(b.x - SIT[k].x, b.z - SIT[k].z)));
             draw();
         }
@@ -411,6 +447,8 @@
     $('walls').classList.toggle('on', wallsInside); $('walls').textContent = 'cushions: ' + (wallsInside ? 'from inside' : 'the referee');
     $('walls').addEventListener('click', () => { wallsInside = !wallsInside; $('walls').classList.toggle('on', wallsInside);
         $('walls').textContent = 'cushions: ' + (wallsInside ? 'from inside' : 'the referee'); reset(true); });
+    $('tablesel').addEventListener('change', () => { tableMode = $('tablesel').value; chosen = 0; reset(true); playing = true; $('play').textContent = 'pause'; });
+    $('ignore').addEventListener('change', () => { ignoreK = $('ignore').value === 'inf' ? Infinity : +$('ignore').value; reset(true); playing = true; $('play').textContent = 'pause'; });
     $('late').addEventListener('change', () => { lateMode = $('late').value; reset(true); playing = true; $('play').textContent = 'pause'; });
     $('show').addEventListener('click', () => { showSit = !showSit; $('show').textContent = 'show: ' + (showSit ? 'from inside' : 'the referee'); draw(); });
     $('table').addEventListener('click', e => {
@@ -422,7 +460,7 @@
     $('heavy').classList.toggle('on', heavyOn);
     reset(true); draw(); requestAnimationFrame(tick);
 
-    window.__pool = { run, runLate, rack, strike, angleOf, image, respond, imageInCushion, imageOfPocket, R0, R_HEAVY };
+    window.__pool = { run, runLate, runField, rackField, rack, strike, angleOf, image, respond, imageInCushion, imageOfPocket, R0, R_HEAVY };
 })();
 </script>
 </body>
