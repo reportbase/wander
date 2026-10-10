@@ -219,6 +219,17 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
 - Still open: the ratio 2 between levels (binary branching is proved; the in-place lay being forced is deferred, SPN
   Appendix D); the weight on the sweep is a choice (SPN §14, "Burdens of proof").
 
+## Read this first: the physics comes first
+Since 10 Oct 2026 (Tom: "wanderer priority was user experience, not physics. the physics then became unexpextedly
+interesting. we should do the correct physics testing, UI is secondary or even not needed"):
+- **Real data or exact mathematics, never wander's world, as evidence.** The flying page and its bodies (`res/`) were made
+  for looks; they illustrate, they do not test. A correspondence is tested on published measurements, or on arithmetic
+  checked to the last digit (`plans/ref-plan.md`, run 1, is the example of what not to count).
+- **Prediction first, from the theory alone**, with the bridge from fill levels to amounts named (see "keep the case").
+- **No page needed.** A test is a plan, a script and an entry in the papers; a demo only where it helps to see.
+- **Data.** This environment cannot reach the astronomy archives (VizieR, CDS, ESA: blocked); GitHub and PyPI are
+  reachable. Record each dataset's source, licence and sha256 in its plan, and do not commit large data.
+
 ## Read this first: THE LAB GUIDE
 The labs have their own rules, written in `labs.html`. Read two comments
 before touching anything lab-related:
