@@ -66,6 +66,13 @@ cells by log₂ λ, split wherever two neighbours differ by more than 0.25 level
 combined by their geometric mean (the mean of log₂ ratio), with a bootstrap 95% interval over animals (10,000
 resamples, seed 1).
 
+**Seen while looking for data (10 October 2026, before any data was opened).** A web search summary quoted, from
+arXiv 1405.0044 (which re-analyses the Sargolini et al. 2006 recordings), module spacings of about 46, 46 and 93 cm in
+one rat and about 31 cm in another. So that dataset is not blind for those two rats, and the run prefers the others.
+The same summary repeated Stensola's mean of about 1.42, already stated above. No other per-animal values were seen.
+The code repository of Gardner et al. 2022 (github.com/erikher/GridCellTorus) was cloned to check whether it holds
+data. It holds code and notebooks; the notebooks' outputs were not opened.
+
 ## Predictions
 
 - **P1 (a halving, in one dimension or two).** The pooled geometric-mean ratio between adjacent modules is within 0.07
