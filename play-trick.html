@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+    <title>Trick shots</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap">
+    <!--
+    play-trick.html: trick shots (10 October 2026; Tom: "create a fullscreen html canvas game like this. but instead of let
+    the player set the shot angle, and then shows how that angle will propogate out, hitting all the other balls. so they
+    can try trick shots from different angles and strategies"). A gameplay sketch, standalone, one mechanic: set an angle
+    and a power, and see the whole shot ahead of time, every ball it reaches, to rest.
+
+    The table is played from inside, as pool.html (POL runs 1–2): each ball reads each other's direction and v = r_b/d, is
+    told the other's reading h = r_a/d, and touches at h + v = 1; a cushion is read as the ball's own mirror image
+    (v = r/(2·gap), contact at the corner); a pocket takes a ball when it fills its view (v = POCK/d > 1). The preview is
+    the same simulation as the shot, run ahead, so the shot plays exactly as drawn. The first contact is read as the cue
+    ball reads it: the fraction of the object ball it covers, 1 − sin φ (a ½-ball hit is a 30° cut; play-corner.html).
+
+    Drag from anywhere on the cloth to aim; drag a ball to move it (set up any trick shot); the power slider, ◀ ▶ for fine
+    aim (arrow keys; shift for whole degrees), space to shoot, z to undo.
+    Links: ?layout=rack|scatter|line, ?a= (aim in degrees), ?p= (power), ?paths=all|cue|off. Test hook: window.__trick.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --line: rgba(255,255,255,0.12); --ink: #c8c8d0; --dim: #8a8a96;
+        --bright: #e6e4ee; --gold: #d4a052 }
+    * { box-sizing: border-box }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground); color: var(--ink);
+        font: 13px/1.4 'DM Mono', ui-monospace, monospace; overscroll-behavior: none }
+    canvas { position: fixed; inset: 0; display: block; touch-action: none }
+    #hud { position: fixed; left: 12px; top: 10px; right: 12px; pointer-events: none; color: var(--bright); white-space: pre-wrap;
+        text-shadow: 0 1px 2px #000 }
+    #hud .dim { color: var(--dim) }
+    @media (max-width: 520px), (max-height: 460px) { html, body { font-size: 11.5px } button, select { padding: 5px 8px } input[type=range] { width: 90px } }
+    #bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+        justify-content: center; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); background: rgba(12,12,17,0.88);
+        border-top: 1px solid var(--line) }
+    button, select { font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line); border-radius: 6px;
+        padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.go { border-color: var(--gold); color: var(--gold) }
+    label { display: flex; gap: 6px; align-items: center; color: var(--dim) }
+    input[type=range] { width: 120px; accent-color: #d4a052 }
+    </style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+<div id="hud"></div>
+<div id="bar">
+    <button id="shoot" class="go">shoot</button>
+    <button id="undo">undo</button>
+    <button id="left" aria-label="aim left">◀</button>
+    <button id="right" aria-label="aim right">▶</button>
+    <label>power <input id="power" type="range" min="2" max="24" step="0.5" value="14"></label>
+    <button id="paths">paths: all</button>
+    <select id="layout" aria-label="layout"><option value="rack">rack</option><option value="scatter">scattered</option><option value="line">a row of four</option></select>
+    <button id="full" aria-label="full screen">⛶</button>
+</div>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), TAU = 2 * Math.PI, D = Math.PI / 180;
+    // ══ the table (as pool.html; the cloth a little quicker, so a shot settles in seconds) ══
+    const LX = 20, LZ = 10, R = 0.45, POCK = 0.85, MU = 1.2, E_BALL = 0.96, E_RAIL = 0.8, FRAME = 1 / 60, SUB = 4, HEAD = [-LX / 4, 0];
+    const POCKETS = [[-LX / 2, -LZ / 2], [0, -LZ / 2 - 0.2], [LX / 2, -LZ / 2], [-LX / 2, LZ / 2], [0, LZ / 2 + 0.2], [LX / 2, LZ / 2]];
+    const COLS = { 1: '#e3c33b', 2: '#2f5fd0', 3: '#d23a2f', 4: '#6b3fa0', 5: '#e0782a', 6: '#2e8b57', 7: '#7a2f2a', 8: '#16161a' };
+    for (let k = 9; k <= 15; k++) COLS[k] = COLS[k - 8];
+    const ballOf = (n, x, z) => ({ n, x, z, vx: 0, vz: 0, r: R, m: 1, col: n === 0 ? '#f2f0ea' : COLS[n], stripe: n >= 9, cue: n === 0, sunk: false });
+
+    // ══ played from inside (pool.html, POL runs 1–2) ══
+    // what arrives at a from b: b's direction and v = r_b/d
+    function image(a, b) { const dx = b.x - a.x, dz = b.z - a.z, d = Math.hypot(dx, dz); return { n: [dx / d, dz / d], v: b.r / d }; }
+    // what a does with it, in its own size: the other's motion converted by v/h, the mass ratio (h/v)³ (one material)
+    function respond(a, ia, ib, ub, e) {
+        const v = ia.v, h = ib.v, n = ia.n, ua = [a.vx / a.r, a.vz / a.r];
+        const over = (h + v - 1) / (2 * h), ubA = [ub[0] * v / h, ub[1] * v / h];
+        const vr = (ubA[0] - ua[0]) * n[0] + (ubA[1] - ua[1]) * n[1];
+        let du = [0, 0];
+        if (vr < 0) { const k = (1 + e) * vr / (1 + (h / v) ** 3); du = [k * n[0], k * n[1]]; }
+        return { step: [-over * n[0], -over * n[1]], du, hit: vr < 0 };
+    }
+    function pairs(B, log) {
+        for (let i = 0; i < B.length; i++) for (let j = i + 1; j < B.length; j++) {
+            const A = B[i], Bb = B[j]; if (A.sunk || Bb.sunk) continue;
+            const ex = Bb.x - A.x, ez = Bb.z - A.z, d2 = ex * ex + ez * ez, rr = A.r + Bb.r;
+            if (!(rr * rr > d2) || d2 === 0) continue;   // the pair's h + v, squared, below 1: no root taken until it nears contact
+            const ia = image(A, Bb), ib = image(Bb, A);
+            if (!(ib.v + ia.v > 1)) continue;                 // contact is h + v = 1
+            const uA = [A.vx / A.r, A.vz / A.r], uB = [Bb.vx / Bb.r, Bb.vz / Bb.r];
+            const ra = respond(A, ia, ib, uB, E_BALL), rb = respond(Bb, ib, ia, uA, E_BALL);
+            if (log && (ra.hit || rb.hit)) log(A, Bb, ia, ib);   // before either changes its motion
+            A.x += ra.step[0] * A.r; A.z += ra.step[1] * A.r; Bb.x += rb.step[0] * Bb.r; Bb.z += rb.step[1] * Bb.r;
+            A.vx += ra.du[0] * A.r; A.vz += ra.du[1] * A.r; Bb.vx += rb.du[0] * Bb.r; Bb.vz += rb.du[1] * Bb.r;
+        }
+    }
+    // a cushion is met as one's own mirror image, v = r/(2·gap) = h, contact at the corner; signed once the edge is behind
+    const CUSHIONS = [[-1, 0, b => b.x + LX / 2], [1, 0, b => LX / 2 - b.x], [0, -1, b => b.z + LZ / 2], [0, 1, b => LZ / 2 - b.z]];
+    const imageInCushion = (b, c) => { const gap = c[2](b) || -1e-300; return { n: [c[0], c[1]], v: b.r / (2 * gap) }; };
+    function own(B, h, onSink, onRail) {
+        for (const b of B) {
+            if (b.sunk) continue;
+            const sp = Math.hypot(b.vx, b.vz);
+            if (sp > 0) { const ns = Math.max(0, sp - MU * h); b.vx *= ns / sp; b.vz *= ns / sp; }
+            b.x += b.vx * h; b.z += b.vz * h;
+            for (let k = 0; k < POCKETS.length; k++) {
+                const p = POCKETS[k], ex = b.x - p[0], ez = b.z - p[1];
+                if (POCK * POCK > ex * ex + ez * ez) { b.sunk = true; b.vx = b.vz = 0; onSink && onSink(b, k); break; }   // the pocket fills its view: v = POCK/d > 1, squared
+            }
+            if (b.sunk) continue;
+            for (const c of CUSHIONS) {
+                if (!(c[2](b) < b.r)) continue;            // its image fills under half its view: v < ½, no contact
+                const im = imageInCushion(b, c);
+                if (!(im.v + im.v > 1 || im.v < 0)) continue;
+                const u = [b.vx / b.r, b.vz / b.r], un = u[0] * im.n[0] + u[1] * im.n[1];
+                const r = respond(b, im, im, [u[0] - 2 * un * im.n[0], u[1] - 2 * un * im.n[1]], E_RAIL);
+                if (r.hit && onRail) onRail(b);
+                b.x += r.step[0] * b.r; b.z += r.step[1] * b.r; b.vx += r.du[0] * b.r; b.vz += r.du[1] * b.r;
+            }
+        }
+    }
+
+    // ══ the whole shot, ahead of time: every frame, every contact, every pot, to rest ══
+    function simulate(B0, ang, power) {
+        const B = B0.map(b => ({ ...b })), n = B.length, cue = B.find(b => b.cue && !b.sunk);
+        if (!cue) return null;
+        cue.vx = power * Math.cos(ang); cue.vz = power * Math.sin(ang);
+        const snap = () => { const f = new Float32Array(2 * n); B.forEach((b, k) => { f[2 * k] = b.sunk ? NaN : b.x; f[2 * k + 1] = b.sunk ? NaN : b.z; }); return f; };
+        const frames = [snap()], contacts = [], sunk = []; let first = null, rails = 0, t = 0;
+        const log = (A, Bb, ia, ib) => {
+            contacts.push({ t, x: A.x + ia.n[0] * A.r, z: A.z + ia.n[1] * A.r, hv: ia.v + ib.v });
+            if (!first && (A.cue || Bb.cue)) {   // the first ball the cue ball meets, read from the cue ball
+                const c = A.cue ? A : Bb, o = A.cue ? Bb : A, n_ = A.cue ? ia.n : ib.n, sp = Math.hypot(c.vx, c.vz) || 1;
+                const sinPhi = Math.min(1, Math.abs((c.vx * n_[1] - c.vz * n_[0]) / sp));
+                first = { n: o.n, rails, overlap: 1 - sinPhi, cut: Math.asin(sinPhi) / D, ghost: [c.x, c.z] };
+            }
+        };
+        const onSink = (b, k) => sunk.push({ n: b.n, pocket: k, t });
+        const onRail = b => { if (b.cue && !first) rails++; };
+        const moving = () => B.some(b => !b.sunk && (b.vx !== 0 || b.vz !== 0));
+        for (let f = 0; f < 60 * 45 && moving(); f++) {
+            for (let s = 0; s < SUB; s++) { t += FRAME / SUB; own(B, FRAME / SUB, onSink, onRail); pairs(B, log); }
+            frames.push(snap());
+        }
+        return { frames, contacts, sunk, first, final: B };
+    }
+
+    // ══ layouts ══
+    function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+    const free = (B, x, z, skip) => B.every(b => b === skip || b.sunk || Math.hypot(b.x - x, b.z - z) >= b.r + R + 0.01)
+        && Math.abs(x) <= LX / 2 - R && Math.abs(z) <= LZ / 2 - R && POCKETS.every(p => Math.hypot(p[0] - x, p[1] - z) > POCK + R * 0.2);
+    const LAYOUTS = {
+        rack() {   // the white on the head spot, fifteen in five rows
+            const B = [ballOf(0, ...HEAD)], order = [1, 9, 2, 10, 8, 3, 11, 4, 12, 5, 13, 6, 14, 7, 15], sp = 2 * R + 0.02; let k = 0;
+            for (let row = 0; row < 5; row++) for (let j = 0; j <= row; j++) B.push(ballOf(order[k++], LX / 4 + row * sp * 0.866, (j - row / 2) * sp));
+            return { B, ang: 0, power: 14 };
+        },
+        scatter(seed = 7) {
+            const rnd = rng(seed), B = [ballOf(0, ...HEAD)];
+            for (let n = 1; n <= 15; n++) for (let tries = 0; tries < 500; tries++) {
+                const x = -LX / 2 + 1 + rnd() * (LX - 2), z = -LZ / 2 + 1 + rnd() * (LZ - 2);
+                if (free(B, x, z)) { B.push(ballOf(n, x, z)); break; }
+            }
+            return { B, ang: 0, power: 10 };
+        },
+        line() {   // four in a row pointing at the corner pocket, straight in from the white; a few others about
+            const u = [LX / 2, LZ / 2], l = Math.hypot(...u), nn = [u[0] / l, u[1] / l], sp = 2 * R + 0.04;
+            const B = [ballOf(0, -5, -2.5)];
+            for (let k = 0; k < 4; k++) B.push(ballOf(k + 1, k * sp * nn[0], k * sp * nn[1]));
+            B.push(ballOf(5, 4, -3), ballOf(6, -2, -3.2), ballOf(8, 6, 1.2), ballOf(9, -6, 3), ballOf(11, 3, 3.6));
+            return { B, ang: Math.atan2(2.5, 5), power: 12 };
+        },
+    };
+
+    // ══ state ══
+    const q = new URLSearchParams(location.search);
+    let balls = [], ang = 0, power = 14, sim = null, dirty = true, anim = null, potted = 0, shots = 0, history = [], layoutName = 'rack';
+    let pathsMode = ['all', 'cue', 'off'].includes(q.get('paths')) ? q.get('paths') : 'all';
+    function setLayout(name) {
+        layoutName = LAYOUTS[name] ? name : 'rack';
+        const L = LAYOUTS[layoutName](); balls = L.B; ang = L.ang; power = L.power;
+        potted = 0; shots = 0; history = []; anim = null; dirty = true;
+        $('layout').value = layoutName; $('power').value = power;
+    }
+    function respot() {   // the white, if pocketed, back on the head spot (or the nearest free place behind it)
+        const c = balls.find(b => b.cue); if (!c.sunk) return;
+        for (let k = 0; k < 40; k++) { const x = HEAD[0] - k * 0.3; if (free(balls, x, 0, c)) { c.x = x; c.z = 0; break; } }
+        c.sunk = false; c.vx = c.vz = 0;
+    }
+    function shoot(instant) {
+        if (anim) return;
+        const s = simulate(balls, ang, power); if (!s) return;
+        history.push({ balls: balls.map(b => ({ ...b })), potted, shots });
+        shots++; anim = { s, t0: performance.now(), instant: !!instant };
+        if (instant) finish();
+    }
+    function finish() {
+        const s = anim.s; balls = s.final.map(b => ({ ...b, vx: 0, vz: 0 }));
+        potted += s.sunk.filter(p => p.n !== 0).length; respot(); anim = null; dirty = true;
+    }
+    function undo() { if (anim || !history.length) return; const h = history.pop(); balls = h.balls; potted = h.potted; shots = h.shots; dirty = true; }
+
+    // ══ drawing: the table fills the screen, turned upright on a tall screen ══
+    const cv = $('cv'); let view = null;
+    function layoutView() {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), W = window.innerWidth, H = window.innerHeight, bar = $('bar').offsetHeight;
+        cv.style.width = W + 'px'; cv.style.height = H + 'px';
+        if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
+        const top = $('hud').offsetHeight + 14, aw = W, ah = H - bar - top, tall = ah > aw;
+        const sc = tall ? Math.min(aw / (LZ + 2.2), ah / (LX + 2.2)) : Math.min(aw / (LX + 2.2), ah / (LZ + 2.2));
+        view = { dpr, W, H, sc, tall, cx: aw / 2, cy: top + ah / 2 };
+    }
+    const toScreen = (x, z) => view.tall ? [view.cx - z * view.sc, view.cy + x * view.sc] : [view.cx + x * view.sc, view.cy + z * view.sc];
+    const toWorld = (sx, sy) => view.tall ? [(sy - view.cy) / view.sc, -(sx - view.cx) / view.sc] : [(sx - view.cx) / view.sc, (sy - view.cy) / view.sc];
+    function worldTransform(g) {   // world units on the canvas: x along the table, z across
+        const { dpr, sc, cx, cy, tall } = view;
+        if (tall) g.setTransform(0, dpr * sc, -dpr * sc, 0, dpr * cx, dpr * cy); else g.setTransform(dpr * sc, 0, 0, dpr * sc, dpr * cx, dpr * cy);
+    }
+    function drawBall(g, b, x, z) {
+        g.fillStyle = b.stripe ? '#f2f0ea' : b.col; g.beginPath(); g.arc(x, z, b.r, 0, TAU); g.fill();
+        if (b.stripe) { g.save(); g.beginPath(); g.arc(x, z, b.r, 0, TAU); g.clip(); g.fillStyle = b.col; g.fillRect(x - b.r, z - b.r * 0.45, 2 * b.r, b.r * 0.9); g.restore(); }
+    }
+    function draw() {
+        layoutView();
+        const g = cv.getContext('2d'), px = 1 / view.sc;
+        g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = '#0c0c11'; g.fillRect(0, 0, cv.width, cv.height);
+        worldTransform(g);
+        g.fillStyle = '#2a1a12'; g.fillRect(-LX / 2 - 0.8, -LZ / 2 - 0.8, LX + 1.6, LZ + 1.6);
+        g.fillStyle = '#16513f'; g.fillRect(-LX / 2, -LZ / 2, LX, LZ);
+        g.strokeStyle = 'rgba(255,255,255,0.07)'; g.lineWidth = px; g.beginPath(); g.moveTo(HEAD[0], -LZ / 2); g.lineTo(HEAD[0], LZ / 2); g.stroke();
+        g.fillStyle = '#060608'; for (const [x, z] of POCKETS) { g.beginPath(); g.arc(x, z, POCK, 0, TAU); g.fill(); }
+
+        let pos = balls.map(b => b.sunk ? null : [b.x, b.z]);
+        if (anim) {   // the shot plays the preview's own frames
+            const fr = anim.s.frames, k = Math.min(fr.length - 1, Math.floor((performance.now() - anim.t0) / 1000 * 60));
+            pos = balls.map((b, i) => isNaN(fr[k][2 * i]) ? null : [fr[k][2 * i], fr[k][2 * i + 1]]);
+            if (k >= fr.length - 1) finish();
+        } else if (sim && pathsMode !== 'off') {
+            const fr = sim.frames;
+            balls.forEach((b, i) => {   // each ball's path to rest (or to its pocket)
+                if (b.sunk || (pathsMode === 'cue' && !b.cue)) return;
+                const x0 = fr[0][2 * i], z0 = fr[0][2 * i + 1]; let moved = false;
+                g.beginPath(); g.moveTo(x0, z0);
+                for (let k = 1; k < fr.length; k++) {
+                    const x = fr[k][2 * i], z = fr[k][2 * i + 1]; if (isNaN(x)) break;
+                    if (x !== x0 || z !== z0) moved = true; g.lineTo(x, z);
+                }
+                if (!moved) return;
+                g.strokeStyle = b.cue ? 'rgba(242,240,234,0.9)' : b.col; g.globalAlpha = b.cue ? 1 : 0.9; g.lineWidth = (b.cue ? 2 : 2.5) * px;
+                if (b.n === 8) { g.strokeStyle = '#9a9aa6'; }
+                g.stroke(); g.globalAlpha = 1;
+                const last = fr[fr.length - 1];   // where it comes to rest: a ring
+                if (!isNaN(last[2 * i])) { g.strokeStyle = b.cue ? '#f2f0ea' : b.n === 8 ? '#9a9aa6' : b.col; g.lineWidth = 1.5 * px; g.beginPath(); g.arc(last[2 * i], last[2 * i + 1], b.r, 0, TAU); g.stroke(); }
+            });
+            if (pathsMode === 'all') { g.fillStyle = 'rgba(255,255,255,0.75)'; for (const c of sim.contacts) { g.beginPath(); g.arc(c.x, c.z, 2.2 * px, 0, TAU); g.fill(); } }
+            for (const p of sim.sunk) { const [x, z] = POCKETS[p.pocket]; g.strokeStyle = '#d4a052'; g.lineWidth = 2 * px; g.beginPath(); g.arc(x, z, POCK + 4 * px, 0, TAU); g.stroke(); }
+            if (sim.first) { g.strokeStyle = 'rgba(242,240,234,0.85)'; g.setLineDash([5 * px, 4 * px]); g.lineWidth = 1.5 * px; g.beginPath(); g.arc(sim.first.ghost[0], sim.first.ghost[1], R, 0, TAU); g.stroke(); g.setLineDash([]); }
+        }
+        if (!anim) {   // the cue: a line back from the white, opposite the shot, as long as the power
+            const c = balls.find(b => b.cue && !b.sunk);
+            if (c) { const L = 0.6 + power * 0.18; g.strokeStyle = '#c9a36b'; g.lineWidth = 5 * px; g.lineCap = 'round';
+                g.beginPath(); g.moveTo(c.x - Math.cos(ang) * (R + 0.3), c.z - Math.sin(ang) * (R + 0.3)); g.lineTo(c.x - Math.cos(ang) * (R + 0.3 + L), c.z - Math.sin(ang) * (R + 0.3 + L)); g.stroke(); g.lineCap = 'butt';
+                if (pathsMode === 'off') { g.strokeStyle = 'rgba(242,240,234,0.5)'; g.lineWidth = px; g.setLineDash([4 * px, 4 * px]); g.beginPath(); g.moveTo(c.x, c.z); g.lineTo(c.x + Math.cos(ang) * 3, c.z + Math.sin(ang) * 3); g.stroke(); g.setLineDash([]); } }
+        }
+        balls.forEach((b, i) => { if (pos[i]) drawBall(g, b, pos[i][0], pos[i][1]); });
+        // the balls' numbers, upright on the screen
+        g.setTransform(view.dpr, 0, 0, view.dpr, 0, 0);
+        if (R * view.sc >= 8) { g.font = `${Math.round(R * view.sc * 0.9)}px DM Mono, monospace`; g.textAlign = 'center'; g.textBaseline = 'middle';
+            balls.forEach((b, i) => { if (!pos[i] || b.cue) return; const [sx, sy] = toScreen(...pos[i]); g.fillStyle = [2, 4, 7, 8, 10, 12, 15].includes(b.n) ? '#f2f0ea' : '#111'; g.fillText(b.n, sx, sy + 0.5); }); }
+        hud();
+    }
+    const frac = o => { const named = [[1, 'full'], [0.75, '¾'], [0.5, '½'], [0.25, '¼']].find(([v]) => Math.abs(o - v) < 0.03); return named ? (named[1] === 'full' ? 'full-ball' : named[1] + '-ball') : o.toFixed(2) + ' ball'; };
+    function hud() {
+        let s = `potted ${potted} of 15 · shot ${shots} <span class="dim">· aim ${(((ang / D) % 360) + 360) % 360 < 0.005 ? '0.00' : ((((ang / D) % 360) + 360) % 360).toFixed(2)}° · power ${power}</span>`;
+        if (!anim && sim && pathsMode !== 'off') {
+            const f = sim.first, pots = sim.sunk.filter(p => p.n !== 0).map(p => p.n), scratch = sim.sunk.some(p => p.n === 0);
+            s += `\n<span class="dim">${f ? `first: the ${f.n}${f.rails ? ` after ${f.rails} cushion${f.rails > 1 ? 's' : ''}` : ''}, ${frac(f.overlap)} hit (cut ${f.cut.toFixed(0)}°)` : 'no ball reached'}`
+              + ` · ${sim.contacts.length} contacts · ${pots.length ? 'pots ' + pots.join(', ') : 'pots none'}${scratch ? ' · the white goes in' : ''}</span>`;
+        }
+        $('hud').innerHTML = s;
+    }
+
+    // ══ input: drag a ball to move it; drag anywhere else to aim ══
+    let drag = null;
+    const worldAt = e => { const r = cv.getBoundingClientRect(); return toWorld(e.clientX - r.left, e.clientY - r.top); };
+    function aimAt(p) { const c = balls.find(b => b.cue && !b.sunk); if (!c) return; const a = Math.atan2(p[1] - c.z, p[0] - c.x); if (isFinite(a) && (p[0] !== c.x || p[1] !== c.z)) { ang = a; dirty = true; } }
+    cv.addEventListener('pointerdown', e => {
+        if (anim) { finish(); return; }   // a tap during the shot jumps to its end
+        const p = worldAt(e); cv.setPointerCapture(e.pointerId);
+        const hit = balls.filter(b => !b.sunk).find(b => Math.hypot(b.x - p[0], b.z - p[1]) < b.r * 1.15);
+        drag = hit ? { ball: hit, dx: hit.x - p[0], dz: hit.z - p[1] } : { aim: true };
+        if (!hit) aimAt(p);
+    });
+    cv.addEventListener('pointermove', e => {
+        if (!drag) return; const p = worldAt(e);
+        if (drag.aim) aimAt(p);
+        else { const x = p[0] + drag.dx, z = p[1] + drag.dz; if (free(balls, x, z, drag.ball)) { drag.ball.x = x; drag.ball.z = z; dirty = true; } }
+    });
+    const end = () => { drag = null; };
+    cv.addEventListener('pointerup', end); cv.addEventListener('pointercancel', end);
+    const nudge = d => { if (anim) return; ang += d * D; dirty = true; };
+    for (const [id, d] of [['left', -1], ['right', 1]]) {   // fine aim; hold to repeat
+        let timer = null, rep = null; const btn = $(id);
+        const stop = () => { clearTimeout(timer); clearInterval(rep); };
+        btn.addEventListener('pointerdown', () => { nudge(d * 0.05); timer = setTimeout(() => { rep = setInterval(() => nudge(d * 0.05), 50); }, 350); });
+        btn.addEventListener('pointerup', stop); btn.addEventListener('pointerleave', stop); btn.addEventListener('pointercancel', stop);
+    }
+    window.addEventListener('keydown', e => {
+        if (e.target.tagName === 'SELECT') return;
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { nudge((e.key === 'ArrowRight' ? 1 : -1) * (e.shiftKey ? 1 : 0.05)); e.preventDefault(); }
+        else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') { power = Math.max(2, Math.min(24, power + (e.key === 'ArrowUp' ? 0.5 : -0.5))); $('power').value = power; dirty = true; e.preventDefault(); }
+        else if (e.key === ' ' || e.key === 'Enter') { shoot(); e.preventDefault(); }
+        else if (e.key === 'z' || e.key === 'Z') undo();
+    });
+    $('shoot').addEventListener('click', () => shoot());
+    $('undo').addEventListener('click', undo);
+    $('power').addEventListener('input', () => { power = +$('power').value; dirty = true; });
+    $('paths').addEventListener('click', () => { pathsMode = { all: 'cue', cue: 'off', off: 'all' }[pathsMode]; $('paths').textContent = 'paths: ' + pathsMode; dirty = true; });
+    $('layout').addEventListener('change', () => setLayout($('layout').value));
+    const fsOK = !!document.documentElement.requestFullscreen;
+    if (!fsOK) $('full').style.display = 'none';
+    $('full').addEventListener('click', () => { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(() => {}); });
+    window.addEventListener('resize', () => { dirty = true; });
+
+    function loop() {
+        if (dirty && !anim) { sim = simulate(balls, ang, power); dirty = false; }
+        draw(); requestAnimationFrame(loop);
+    }
+    setLayout(q.get('layout') || 'rack');
+    if (q.get('a') != null) ang = +q.get('a') * D;
+    if (q.get('p') != null) { power = Math.max(2, Math.min(24, +q.get('p'))); $('power').value = power; }
+    $('paths').textContent = 'paths: ' + pathsMode;
+    requestAnimationFrame(loop);
+
+    window.__trick = {
+        simulate, layouts: LAYOUTS, setLayout, image,
+        aim: deg => { ang = deg * D; dirty = true; }, power: p => { power = p; dirty = true; },
+        preview: () => simulate(balls, ang, power),
+        shootNow: () => { shoot(true); return balls.map(b => ({ n: b.n, x: b.x, z: b.z, sunk: b.sunk })); },
+        state: () => ({ balls: balls.map(b => ({ n: b.n, x: b.x, z: b.z, sunk: b.sunk })), potted, shots, ang: ang / D, power }),
+        undo, roundTrip: (x, z) => toWorld(...toScreen(x, z)),
+    };
+})();
+</script>
+</body>
+</html>

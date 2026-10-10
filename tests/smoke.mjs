@@ -272,7 +272,18 @@ try {
     const L = c.current(); c.aim(c.fFor(L.phi));
     return { near: cut(1, 3), far: cut(1, 30), full: cut(0, 7), graze: cut(2 - 1e-9, 5), miss: c.cutOf(2.1, 5), res: c.shoot() }; });
   if (Math.abs(pc.near - 30) > 1e-9 || Math.abs(pc.far - 30) > 1e-9 || pc.full !== 0 || Math.abs(pc.graze - 90) > 0.01 || pc.miss !== null || pc.res !== 'potted') failures.push(`[play-corner.html] ${JSON.stringify(pc)}`);
-  console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills, aiming from the cue ball)`);
+  await page.goto(new URL('play-trick.html', base).href, { waitUntil: 'load' });
+  const pt = await page.evaluate(() => { const T = __trick, o = {};
+    T.setLayout('rack'); T.aim(0); const s1 = T.preview(), s2 = T.preview();
+    o.same = s1.frames.length === s2.frames.length && s1.frames.every((f, k) => f.every((x, i) => Object.is(x, s2.frames[k][i])));
+    o.full = s1.first && s1.first.n === 1 && s1.first.overlap > 0.999;
+    o.hv = s1.contacts.length > 0 && s1.contacts.every(c => c.hv >= 1 && c.hv < 1.05);
+    const fin = s1.final, after = T.shootNow();
+    o.plays = after.every((b, i) => b.n === 0 ? true : b.sunk === fin[i].sunk && (b.sunk || (b.x === fin[i].x && b.z === fin[i].z)));
+    T.setLayout('line'); o.combo = T.preview().sunk.map(p => p.n).join();
+    const rt = T.roundTrip(3, -2); o.rt = Math.hypot(rt[0] - 3, rt[1] + 2) < 1e-9; return o; });
+  if (!pt.same || !pt.full || !pt.hv || !pt.plays || pt.combo !== '4' || !pt.rt) failures.push(`[play-trick.html] ${JSON.stringify(pt)}`);
+  console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills, aiming from the cue ball, trick shots)`);
 
   // ── 12. facing.html: the facing is 2θ, square to the line at the corner, the arc off the line most there ──
   current = 'facing.html';
