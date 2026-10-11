@@ -2599,6 +2599,10 @@ an item supersedes one above, a dated ⚠ note is added there.
     homes approach the view from nowhere without standing in it; the logarithm holds all of it (about 88 doublings from a
     metre to the observable edge). With no MAX_INT the logarithm moves into the integer: a count of n takes about log₂ n
     digits, one per doubling.
+422. **The circle and the sphere, and their facings** (R190; Tom: "explain the equation of the circle as just any combination of v and h and its 4 possible facings forced by creating a symetry between V and H. 8 possible facings when you add a V2, which is the sphere."). With V = H the relation is one bar of
+    length 1, so every mix of h and v satisfies h² + v² = 1 (without V = H, an ellipse). One sweep is one facing; each
+    freedom has two facings, so 2 × 2 = 4, closure, the circle. With V₂ = H as well, h² + v² + v₂² = 1, the sphere,
+    2 × 2 × 2 = 8 octants, a triple corner in each. n freedoms give 2ⁿ facings (SPN Proposition 1.2).
 
 ## 9. Open
 

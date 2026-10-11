@@ -65,6 +65,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
+- 11 October, seventy-seventh: §8, the facings counted: with every breadth set to H the circle has 4 facings and the sphere 8, 2ⁿ for n freedoms (Tom; SPN Proposition 1.2).
 - 11 October, seventy-sixth: H is a zoom, not an escape: a very large H puts everything at true scale but spreads a finite level of detail so thin that the reader's own scale falls into the first address; no H holds every scale at once; the best H puts the thing read at the corner (Tom: "why not just choose a very large H?"; SPN Proposition 1.2).
 - 11 October, seventy-fifth: the count of addresses, in the near field's proportion and per doubling past the corner, is the level of detail, never known and not needed; the geometry gives only the forms (Tom; SPN Proposition 1.2).
 - 11 October, seventy-fourth: SPN Proposition 1.2 (R190): the unit circle by necessity; the corner and the flip forced by the cap; the logarithm forced past the corner, counting addresses; reality in 2H by length (the in-place lay, the reader's own), the same addresses by count (1 + ln s); two address spaces, proportional and logarithmic, around the corner (Tom). Notes at §4 and the level's description.
@@ -994,6 +995,12 @@ pertibuate create depth as they push away from the sweep of the unit line. depth
 and the baseline. dividing h and v, removes their scale, but gives you their relation and the address on the unit
 circle. you can use that address to point back to the address on the shape, but only as a relation, the scale is lost
 forever. the same is also true for spheres. v,h,f [0,1][0,1][0,1]->[0,inf). lets explore the sphere."
+
+*The facings, counted* (11 October; SPN Proposition 1.2, "The circle and the sphere, and their facings"; Tom: "explain the
+equation of the circle as just any combination of v and h and its 4 possible facings forced by creating a symetry
+between V and H. 8 possible facings when you add a V2, which is the sphere."). With every breadth set to the one chosen
+H, the relation is a bar of length 1: h² + v² = 1 over two freedoms, h² + v² + f² = 1 over three. Each freedom has two
+facings, so the circle has 4 and the sphere 8, the octants below; n freedoms give 2ⁿ.
 
 ⚠ *Read 9 October* (the case pass; CLAUDE.md and SPN §1, "keep the case"): this section, written before the case
 ruling, calls v, h and f "breadths" throughout. Read them as fill levels, 0 to 1; the breadths are the amounts H, V and F.
