@@ -31,9 +31,14 @@ called this the view from nowhere. It is the right view for many purposes, but i
 observes. An eye, an instrument or a person counting stands somewhere. It knows its own scale, its own breadth, and it
 does not know the breadth of what it reads.
 
-This paper asks what geometry such a reader has. The answer is not a new geometry of the world. It is a geometry of the
-reader's own *addresses*: the places where readings can be put, which exist before anything is read and do not depend
-on what is found there.
+This paper asks what geometry such a reader has. Our thesis is this:
+
+> A situated observer does not possess a coordinate system for the world; it constructs an addressing scheme from
+> relations available at its standpoint, and uses those addresses to encounter the world's magnitudes.
+
+The geometry that follows is therefore not a new geometry of the world. It is a geometry of the reader's own
+*addresses*: the places where readings can be put, which exist before anything is read and do not depend on what is
+found there.
 
 **A picture.** Hold your hand out flat, palm down, and turn it until it points straight up. The motion between is a
 sweep. Spread your fingers between flat and upright: each finger is a direction in which you can look, an address. Now
@@ -45,7 +50,7 @@ fingers.
 **Three vantages.** A figure can be held in three ways. The *completed* vantage holds every breadth at once from no
 standpoint; this is classical geometry, and its figure is the circle. A *situated* reader has a facing. Either it takes
 in a hemisphere at once, from outside (a parallel reader), or it sweeps the hemisphere from home, one direction at a
-time (a serial reader). The three read the same thing differently. Take a line of true breadth 1. Stand a half-turn on
+time (a serial reader). Their figures are the bell and the fisheye (§6.1). The three read the same thing differently. Take a line of true breadth 1. Stand a half-turn on
 it as its chord: the arc is π/2, and the hemisphere turned away from the reader reads π/2. Sweep a bar of length 1
 through a quarter turn and average its shadow on the line: (2/π)∫₀^{π/2} cos θ dθ = 2/π, and the hemisphere turned
 toward the reader reads 2/π. The product is 1. The true breadth is had only with both hemispheres in hand, which no
@@ -93,10 +98,27 @@ at v = h. After that the relation can continue only by h emptying against a full
 half and h/v on the second, each in [0, 1]. Exchanging the two parties, the *flip*, sends v/h to h/v. The limit
 v/h → ∞, where h empties, is the *horizon*; it is never reached.
 
-**Drawings.** The sweep fixes only the ratio v/h, so each pair (h, v) stands for a ray of pairs with that ratio. Three
-drawings of the rays are useful: the *square* (each share capped at 1, the larger one full), the *line* h + v = 1 and
-the *arc* h² + v² = 1. All three pass once through every ratio and meet the corner at v/h = 1. Statements about ratios
-hold in every drawing. Statements about lengths, angles or areas belong to one drawing, and we say which.
+**The wedge, and its drawings.** Every pair of shares is a ray from the origin into the quarter-plane between the two
+axes; with a third share v₂, read against the same h, it is a ray into the solid wedge between three axes. The ray is
+the relation. Position along the ray is how full the pair is, and that is what dividing one share by another removes.
+The wedge itself favours no share: a facing, in the sense below, is the choice of which share to divide by, and v/h is
+the wedge read facing h. The wedge is the primitive. It is made afresh at each observation, from the relations at one
+standpoint, and the sphere is not assembled from wedges: it is the picture, from nowhere, of all the wedges that could
+be made.
+
+The usual drawings are cuts of the wedge, each a different normalization:
+
+| cut the wedge where | two shares | three shares | normalized by |
+|---|---|---|---|
+| length = 1 | the quarter circle h² + v² = 1, length π/2 | the sphere's octant, area π/2 | the whole length |
+| largest = 1 | the unit square's two arms, length 2 | the unit cube's three faces, area 3 | the largest share |
+| sum = 1 | the line h + v = 1, length √2 | a flat triangle, area √3/2 | the sum |
+| one share = 1 | the reading v/h on [0, ∞) | the plane of v/h and v₂/h | one share: a facing |
+
+Every cut passes once through every ratio and meets the corner at v/h = 1. The numbers belong to the cut, not to the
+relations: the quarter arc and the octant both measure π/2 because they are cut by length. Statements about ratios hold
+in every drawing; statements about lengths, angles or areas belong to one, and we say which. We call the first three
+cuts the *arc*, the *square* and the *line*.
 
 **Readers.** What a reader knows of the two breadths sets its situation.
 
@@ -159,7 +181,9 @@ at B. At the corner, θ = 45° and the facing is 90°: square to AB, leaning tow
 farthest from the segment, by 1 − 1/√2.
 
 **Every pair has its own corner.** Any two parties have a sweep and a corner, and the corner of one pair is not the
-corner of another. A corner means nothing until its pair is named.
+corner of another. A corner means nothing until its pair is named. In the wedge the corner is the central ray. With
+three shares the three pairwise corners, v = h, h = v₂ and v = v₂, are planes through the central ray v = h = v₂, and
+they cut the wedge into six chambers, one for each ordering of the three shares.
 
 ## 4. The reader's circle
 
@@ -226,6 +250,24 @@ follows from (P1) and (P2), or must be added, is the first question of §9. Note
 through amounts, by way of V = H, and that the smooth join (c = 1) is a further condition rather than a consequence of
 the flip.
 
+**A second route, through ratios alone.** Relations chain by multiplying: through any middle fill level m,
+v/h = (v/m)·(m/h). A measure of relations under which chained relations add, f(ab) = f(a) + f(b), and which grows with
+the relation, can only be f = k·ln, by the same functional equation. Every doubling then adds the same amount. The turn
+is not such a measure, since arctan(ab) is not arctan a + arctan b, and so a bounded sweep gives the levels unequal
+shares. This route never leaves the fill levels, so it does not pass through amounts; what it assumes instead is that
+the measure of a chain is the sum of its links.
+
+Two ways of holding a relation make the contrast concrete. Measure a relation by twice the area its ray sweeps from the
+corner. Hold the whole, h² + v² = 1, and the swept area is the turn: bounded, π/2 in all (Archimedes). Hold only the
+corner, on the hyperbola xy = 1 drawn in coordinates that run without bound (with y/x = v/h; fill levels on [0, 1]
+meet this hyperbola only at the corner), and the swept area is ln(v/h): unbounded on both sides, every doubling the same
+area ln 2 (Saint-Vincent 1647). The rescaling (x, y) ↦ (x/√c, √c·y) slides along the hyperbola and keeps areas, so no
+rung is preferred. The two are one sweep, squeezed: read against ln(v/h), the turn is
+arctan(v/h) = π/4 + ½·gd(ln(v/h)), where gd(x) = arctan(sinh x) is the Gudermannian. It carries the whole unbounded
+logarithm into a quarter turn, nearly even at the corner and squeezed without end toward the edges, so that the turn
+per doubling past the corner falls 18.4°, 12.5°, 6.9°, 3.6°, 1.8°, …, by a ratio tending to 2. The bounded sweep is the
+logarithm seen whole from one side.
+
 **Two address spaces.** Inside the corner the addresses are proportional; past it they are logarithmic, each doubling
 receiving the same number. The corner is where one gives way to the other, without a kink. There is only one such
 corner. Past it the levels are plain doublings laid side by side, with no corners of their own and nothing nested inside
@@ -244,6 +286,23 @@ doubling, crowded toward radius 2; a reader with finitely many addresses runs ou
 | in-place lay | length | yes, radius 2 | radius 1 of 2 |
 | logarithmic lay | number of addresses | no | 1, where the even doublings start |
 
+**Why not proportion all the way out.** A reader that kept v/h itself, in proportion, past the corner would suffer in
+five ways. It could not lay its range, since its readings would run to infinity and no range fixed in advance would hold
+them. It would divide by the smaller part: past the corner h is the smaller share, and a small wobble in it swings the
+reading without bound. Inverting divides by the larger part instead, the rule numerical computing also follows when it
+pivots. Its averages would never settle, being dominated by the long tail of its nearest things (§6.6). It would have
+to crop: a picture kept in proportion out to the horizon would be infinitely large, and rectilinear cameras, which are
+such readers, crop at about the corner, while a fisheye lens holds the whole hemisphere by giving up proportion near
+its edge. And its expansions about home would fail past the corner (§3).
+
+**Three horizons.** A horizon is a boundary between a front side and a back side, and a situated reader meets three.
+The *near horizon* is the corner, v = h, between the two sides of its reading; every reader finds it. The *far horizon*
+is where the reader's count of addresses runs out, well short of h = 0; a reader can reach it, as a floating-point
+number overflows when its exponent runs out. The *mathematical horizon* is the reading's own infinity, h = 0 and v/h
+without end, at the reader's sides: the boundary between the hemisphere it faces and the one behind it, which no reader
+reaches. It is not the vanishing point. A thing infinitely far ahead reads 0, at home; the reading's infinity lies at
+the sides, in what is nearest.
+
 **Why halving.** If a level has nothing but its two ends, their order and the flip (P2), the only subdivision its
 symmetries preserve is the cut at the corner into two halves: any other interior point can be moved anywhere within its
 half by an order-preserving map that commutes with the flip. Applied again to each half, this gives repeated halvings.
@@ -255,6 +314,18 @@ significand is a plain share within the level; below the smallest normal number,
 proportion from zero. The count of levels plus the share within the current one is the logarithm laid straight between
 level edges, exact at every edge and never more than 0.086 of a level from the smooth logarithm. A float differs in
 having levels on both sides of 1 and a floor; the situated reader has proportion inside the corner and no floor.
+
+**An older instance: Mercator's map.** On a globe at latitude φ let v = sin φ, the height above the equator, and
+h = cos φ, the radius of the circle of latitude, so that v/h = tan φ and the globe's meridian is the quarter circle.
+Mercator's map (Mercator 1569) stretches each circle of latitude by 1/h so that all are drawn the same width, and stretches the
+vertical equally to keep shapes. Summed from the equator, the height on the map is y = asinh(v/h), the textbook
+ln tan(π/4 + φ/2) written as one relation. Near the equator y ≈ v/h, in proportion; past 45°, the corner, y approaches
+ln(2·v/h), and each doubling of v/h adds a height approaching ln 2 (0.562, 0.651, 0.682, 0.690, 0.692 for the doublings
+from 1 to 32). The pole is the horizon, h = 0, which is why the map is cut off short of it. The central cylindrical
+projection, whose height is v/h itself, is the plain division, proportional throughout and unbounded; Mercator's map
+keeps the division's local scale 1/h but accumulates it, and so lays the same relation in proportion before the corner
+and logarithmically past it. Latitude is the Gudermannian of the map's height, φ = gd(y). It is the oldest instance we
+know of the two address spaces laid out.
 
 **The proportion is in the addresses.** Within a doubling past the corner the addresses are even; how evenly they are
 filled is up to the world. If directions are spread evenly (§6), the far share h/v has density proportional to
@@ -283,6 +354,20 @@ itself. ∎
 
 In classical terms the readings are the tangent of a uniformly distributed angle: the gnomonic projection of a uniform
 direction.
+
+**The parallel reader's bell.** A parallel reader takes in every relation at once, each with its share of the turn. On
+the logarithmic axis x = ln(v/h) the shares form a bell centred on the corner,
+
+  ½·sech x = 1/(v/h + h/v),  with total area π/2, a quarter turn.
+
+On the plain axis the same shares are 1/(1 + (v/h)²), Cauchy's curve. The bell and the fisheye are one function: the
+area under the bell up to x is arctan(v/h) = π/4 + ½·gd(x), the fisheye's radius there, because the Gudermannian is
+the running area under sech. The serial reader, direction by direction, has the running total, which is the fisheye; the
+parallel reader, all at once, has every share, which is the bell. It is not the normal curve. With the same peak and
+area the two look alike near the corner, but one level out from it the bell stands at 0.400, then 0.235, 0.123, 0.062,
+halving with every further level and keeping a share in every level without end, while the normal curve falls ever
+faster and its far levels vanish (0.043 at the fourth level against the bell's 0.062, and 0.002 against 0.016 at the
+sixth). The bell has a horizon; the normal curve has none.
 
 ### 6.2 The main result
 
@@ -483,7 +568,8 @@ an added condition. And "no attitude preferred" still treats the sweep as the tu
 ### 9.2 Assumptions and open questions
 
 1. *The link in Proposition 4.* Does (S) follow from "any H will do", or is it scale invariance assumed under another
-   name?
+   name? The second route of §5 stays with ratios and assumes instead that the measure of a chain of relations is the
+   sum of its links. Is either assumption weaker than scale invariance stated outright?
 2. *Why Euclidean?* Is there a reason, from the reader's premises, that the sweep must be a turn rather than the
    square's or the line's path through the same ratios?
 3. *No measure on a level.* Is there a principled reason a level could not carry a measure before anything arrives?
@@ -548,12 +634,16 @@ large hierarchies. *Proceedings of CHI '95*, 401–408.
 
 McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *The Annals of Statistics* 24, 787–808.
 
+Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata*. Duisburg.
+
 Microsoft. Bing Maps Tile System (documentation).
 
 Nagel, T. (1986). *The View from Nowhere*. Oxford University Press.
 
 Pitman, E. J. G. and Williams, E. J. (1967). Cauchy-distributed functions of Cauchy variates. *Annals of Mathematical
 Statistics* 38(3), 916–918.
+
+Saint-Vincent, G. de (1647). *Opus geometricum quadraturae circuli et sectionum coni*. Antwerp.
 
 Schwartz, E. L. (1977). Spatial mapping in the primate sensory projection: analytic structure and relevance to
 perception. *Biological Cybernetics* 25, 181–194.
