@@ -1172,3 +1172,36 @@ P33: KILLED. from 2 units inward, the density is at most +75.0% from the referee
 - **The fix the two runs point to:** a window that loses no ball at its edge except through the cells' books. The band
   should be a mirror at its outer edge, its balls kept at the cells' count and warmth by putting in and taking out, never
   by flight. Run 13.
+
+### Run 13 (11 October 2026): prediction, written before it ran
+
+Run 12 with the band closed at its outer edge. Two changes, named; everything else is run 12's.
+- **The window's outer edge is a mirror.** A ball reaching it is turned back, as in the closed control. No ball leaves
+  the window by flight. Balls go in and out only through the band's keeping (one put at a free place, or one taken out,
+  when its part's count is more than half a ball from its target), charged to the cell beside, exactly. The band still
+  has its warmth redrawn from the cells', and the window's balls still meet the band's balls.
+- **Each part of the band reads three cells.** Its target and its warmth come from the cells beside it pooled: the
+  level-0 cell beside its stretch and the two either side of it along the edge (their counts, momenta, energies and
+  areas summed; a coarser cell counted once). What it puts in or takes out is still charged to the cell beside it.
+
+Worked out before writing this: a hard mirror in a gas of discs holds the density of centres at it at βp = n·Z = 1.39 n
+(the wall contact theorem, Henderson's Z), falling to n within about a diameter. So the band's outer unit should be
+denser than the referee, and its inner unit near n.
+
+- **P28″ (the books).** Over every run and pan: count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself.
+  *Killed* if any run misses.
+- **P30″ (the view sees the same gas).** Averaged over the 40 open runs, the view's density, kinetic energy per ball and
+  contacts per ball per second are each within 3% of the referee's. *Killed* if any is not.
+- **P31″ (open, not closed).** Within-run var/mean: the open view's within 15% of the referee's within-view value; the
+  closed control's at least 25% lower than the referee's. *Killed* if either fails.
+- **P32″ (the work).** The multiscale work per simulated second changes by less than 5% from L = 240 to L = 3,840.
+  *Killed* if it changes by 5% or more.
+- **P33′ (the band reaches no further than itself).** In the open runs, the density at each distance from the window's
+  edge, in 1-unit bands from 2 units inward, is within 5% of the referee's. *Killed* if any is off by more.
+- *Measured, not predicted:*
+  - the band's two units against the referee (the mirror's layering);
+  - the band's warmth;
+  - the cells beside the window;
+  - how many balls the band's keeping puts in and takes out;
+  - the view just after a pan;
+  - the work against run 11's window.
