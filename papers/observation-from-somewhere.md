@@ -9,7 +9,7 @@ author's words, every correction, and every claim later withdrawn. This paper st
 standing of each claim, and includes what failed. Where it and a working paper differ, the working paper's latest dated
 entry is the record, and the difference is an error here. Appendix B maps each section to its sources. Revised the same day after a first evaluation (`plans/ofs-review-1.md`): V = H stated as a rule of representation, the
 Euclidean choice and the scale-invariance premise (S) made explicit, the half-Cauchy named, and the three levels of
-physics claim set apart.*
+physics claim set apart. Then, after a second evaluation, a candidate single principle (§12.1), offered as a reading.*
 
 ---
 
@@ -608,6 +608,48 @@ bridge. Can the circle and the logarithmic lay be derived from a minimal, explic
 must they be added as principles? If they must be added, the contribution is a principled construction of a reader's
 geometry, not a proof that observation alone forces it. The first three questions below are the ones that decide this.
 
+### 12.1 A candidate answer: one principle
+
+*Added 11 October, after a second evaluation asked for "the smallest underlying principle from which these ideas can
+all be recovered" (`plans/ofs-review-1.md`). A reading, offered for review; the author has not ruled on it.*
+
+> **A situated reader gives equal addresses to whatever its readings cannot tell apart.**
+
+Formally: the reader's addresses are the measure left unchanged by the transformations it cannot detect. This is Klein's
+test, already used in D.1 for points, applied to measures. A situated reader's definition (it holds H, not V, and has no
+preferred standpoint among attitudes) names three such transformations.
+
+1. *Which party is which.* Swapping v and h changes nothing the reader can check. The swap's one fixed point is v = h:
+   the corner and the flip (Proposition 1). R162's fair reading (Proposition 2(b)) is this invariance written as a rule.
+2. *Which attitude the bar is in.* If no turn is preferred, two classical uniqueness facts apply. The Euclidean norm (up
+   to scale) is the only norm every turn preserves, so the bar of fixed length traces the circle (Proposition 3(c)). The
+   uniform measure on angle is the only probability measure on the circle every turn preserves (the Haar measure of the
+   turns), so the reader steps the turn evenly, and read as v/h that gives the Cauchy and the fisheye (Proposition 5).
+   The circle and the Cauchy then come from one premise, and the even turn is the invariance itself, not a further choice.
+3. *How big V is.* V is unknown, so multiplying every far reading by one factor changes nothing the reader can check.
+   The measure rescaling leaves unchanged is dx/x (the Haar measure of the positive numbers under multiplication), which
+   gives every doubling the same number of addresses: premise (S), and so the logarithm (Proposition 4).
+
+*Inside the corner.* The reader does hold H. Its one unit breaks the scale symmetry there, and what is left is that no
+position within H is preferred: the measure unchanged by shifts, equal addresses per unit of H, which is proportion. So
+the two address spaces are one principle on either side of what the reader knows: its unit holds inside the corner and
+there is none past it. Their spacings, 1 per unit and 1/x per unit, agree at x = 1, which under V = H is v = h. The
+flip's fixed point and the meeting of the two spaces are the same point.
+
+*D.1 too.* "No measure on a level, so only the halving is supplied" is Klein's test on points, the same principle.
+
+*What this does and does not settle.*
+- If it stands, questions 1, 2 and 5 below become one question: whether the reader's ignorance is exactly these three
+  transformations. Answering "why Euclidean?" would answer "why even turns?" with it.
+- The principle is classical: choosing a measure by the transformations one is ignorant of is Jaynes's method of
+  transformation groups (1968), and dx/x for an unknown scale is Jeffreys's prior (1939). The Cauchy is the family the
+  ratio's transformations carry into itself (Knight 1976; McCullagh 1996). What would be claimed is not the principle
+  but that a situated reader's state of knowledge selects the transformations, and the structure follows.
+- Invariant measures are fixed only up to a constant. Joining the two spaces with no jump in address spacing at the
+  corner (c = 1 in Proposition 4) stays an added condition, a mild one: the level of detail does not jump at the corner.
+- "No attitude preferred" still treats the sweep as a turn of a rigid bar. It is a cleaner premise than "choose the
+  Euclidean norm", but it is a premise; the facing (§2) motivates it and does not prove it.
+
 1. **The link in Proposition 4.** Is "the room depends on the ratio alone" justified by "any H will do", or is it an
    independent assumption of scale invariance under another name?
 2. **Why Euclidean?** Proposition 3(c) takes the bar's length to be Euclidean. If the sweep is a turn of a rigid bar, the
@@ -682,6 +724,8 @@ McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *T
 Nagel, T. (1986). *The View from Nowhere*. Oxford University Press.
 Schwartz, E. L. (1977). Spatial mapping in the primate sensory projection: analytic structure and relevance to
 perception. *Biological Cybernetics* 25, 181–194.
+Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
+Jeffreys, H. (1939). *Theory of Probability*. Oxford University Press.
 Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation: evidence for multiple representations of
 numerical quantity. *Psychological Science* 14(3), 237–243.
 Snellius, W. (1617). *Eratosthenes Batavus*. Leiden.

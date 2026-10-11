@@ -506,3 +506,43 @@ I would not regard that distinction as a defeat. It is the difference between ha
 
 Not changed: the working papers. Whether SPN's "forced" wording for V = H, the circle and the logarithm should be
 narrowed the same way is Tom's call.
+
+---
+
+## Follow-up comments (Tom shared them on 11 October, 07:52), kept as received
+
+> Yes. And I think that is the most interesting feature of what you have assembled.
+> The novelty may not lie in any single component. It may lie in the fact that ideas that previously appeared to be separate problems now look like different consequences of one underlying structure.
+> Looking at the synthesis, I see at least five connections that have become mutually reinforcing.
+>
+> * The reciprocal flip and the corner. The corner is no longer just a convenient 45° division. It is the fixed point of the operation that exchanges the two sides of the reading.
+> * The reader's boundedness and the address space. The reader does not need to possess the entire range of magnitudes to address it. This makes the distinction between the thing being read and the structure used to locate it central.
+> * The proportional and logarithmic regions. These are no longer merely two competing number-line conventions. They become two proposed ways of allocating addresses around the same corner: one preserving proportional distance, the other accommodating multiplicative range.
+> * The circle and the Cauchy. A geometric sweep, a ratio coordinate, and a familiar probability density become three descriptions of one mathematical relationship.
+> * The geometry and the physics. The framework offers a place to distinguish the structure of a measurement from the physical magnitudes and laws that populate it.
+>
+> The important feature is not simply that these connections can be made. It is that each connection constrains the others. The reciprocal corner gives the number line a distinguished point; the address-space problem motivates the logarithm; the circle provides a geometric interpretation of the ratio; and the ratio gives the angular sweep its Cauchy form.
+> That is what makes a synthesis potentially more valuable than a list of analogies.
+> What I would be careful about
+> There are two different senses in which independent ideas can click together.
+> One is unification by interpretation: familiar results turn out to have a common, coherent reading. That is already a worthwhile conceptual achievement.
+> The other is unification by derivation: a small set of premises forces those results, so that they are no longer independent choices. That is the stronger mathematical achievement, and it is what remains to be tested.
+> Your paper appears to have made meaningful progress toward the first. The open question is how much of the second it can establish.
+> I would not dismiss the synthesis just because the circle, logarithm, reciprocal map, and Cauchy distribution are already known. A new framework often contributes by identifying why established structures belong together. But the fact that they fit together does not, by itself, prove that they had to.
+> The test I find most revealing
+> Ask whether the connections are productive.
+> If the framework is genuinely unifying these ideas, then resolving one foundational question should settle something in another part of the paper. For example, a rigorous derivation of the address-invariance principle should not merely justify the logarithm in isolation; it should clarify what the reader's boundedness actually requires.
+> Likewise, if the circle is uniquely selected by the observer's premises, the Cauchy relationship becomes more than a familiar transformation attached to a chosen diagram: it becomes a consequence of the observer model.
+> My view is that this is the right stage to be at: not declaring a grand theory complete, but identifying the structure that seems to connect the pieces and testing whether the connections are necessary rather than merely compatible.
+> The most revealing question is no longer just "Are these ideas individually correct?" It is:
+> "What is the smallest underlying principle from which these ideas can all be recovered?"
+> If you can answer that rigorously, the synthesis becomes much more than a collection of interesting correspondences.
+
+## The answer offered (11 October, 09:21; Tom: "Yes, proceed")
+
+A candidate single principle, recorded as a reading in `observation-from-somewhere.md` §12.1, SPN Proposition 1.2 ("A
+candidate single principle"), `v-and-h.md` item 425 and `number-line.md`: **a situated reader gives equal addresses to
+whatever its readings cannot tell apart.** Swapping v and h gives the corner and the flip; no preferred turn gives the
+Euclidean circle and even turns (the Cauchy, the fisheye); V unknown gives dx/x, so the logarithm; H known inside the
+corner gives proportion; the spacings meet at v = h; D.1 is the same test on points. Classical in itself (Jaynes 1968,
+Jeffreys 1939); still added: the joining constant at the corner, and the sweep as a turn.

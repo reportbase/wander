@@ -2615,6 +2615,15 @@ an item supersedes one above, a dated ⚠ note is added there.
     V = H, held whole or swept from home. The even turn in 423 is not a weight added for the Cauchy: it is the circle's
     uniformity, so one choice, uniformity, stands behind both. The Cauchy has no mean: from inside, a reading at every
     distance and no census (SPN Proposition 1.2, (7); §14).
+425. **A candidate single principle** (Oct 11; Claude's reading, unruled; Tom: "Yes, proceed" to recording it; after an outside
+    evaluation asking for "the smallest underlying principle", `plans/ofs-review-1.md`). *A situated reader gives equal
+    addresses to whatever its readings cannot tell apart.* Swapping v and h: the corner and the flip. Turning the bar:
+    the Euclidean norm (the circle) and even turns (the Cauchy, the fisheye), the only norm and the only measure every
+    turn keeps. Rescaling the far readings (V unknown): dx/x, the same addresses per doubling, the logarithm. Inside the
+    corner H breaks the scale symmetry: equal addresses per unit of H, proportion; the two spacings agree at v = h.
+    D.1 is the same test on points. Classical in itself (Jaynes 1968, Jeffreys 1939, Knight 1976, McCullagh 1996); still
+    added: the joining constant at the corner, and the sweep as a turn (SPN Proposition 1.2, "A candidate single
+    principle").
 
 ## 9. Open
 
