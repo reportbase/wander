@@ -187,6 +187,12 @@ turn while the sweep runs a quarter. At the corner, θ = 45°, the facing is 90�
 leaning toward neither party. One sweep is a quarter by its angle and a half-turn by its facing angle (`facing.html`). The arc
 stands off the line's midpoint by 1 − 1/√2, its greatest distance, at the corner.
 
+**Comparing two readings without dividing** [proved; from the archived *The Relation Space* §25]. For two readings
+A = (h_A, v_A) and B = (h_B, v_B) let D(A, B) = v_A·h_B − v_B·h_A, the disagreement. With h_A, h_B > 0, D = 0 exactly
+when v_A/h_A = v_B/h_B (the same ratio), and D > 0 exactly when v_A/h_A > v_B/h_B (order). Comparing a reading with its
+own swap, D = v² − h², which is zero exactly at the corner. So sameness, order and the corner need no division; only
+the size of D needs more, since it changes when either reading is rescaled.
+
 **Every pair has its own sweep** [ruled]. Any two parties have a sweep and a corner. A corner means nothing until its
 pair is named. In particular, the point where a thing is one of the reader's steps across, Δ/(d·ε) = 1, is the corner
 of the (size, step) pair. It is set by amounts, so it is physics: the *resolution limit*. It is not the corner of the
@@ -234,7 +240,11 @@ and does not prove. Until that is settled the circle is the canonical drawing, n
 facings, the corner's two sides. That gives 2 × 2 = 4 facings: the bar sweeping horizontal, vertical, horizontal,
 vertical and back, which is the circle closed. Add a second v, v₂, read against the same h and also set to H: then
 h² + v² + v₂² = 1, the sphere, with 2 × 2 × 2 = 8 octants and a triple corner h = v = v₂ in each. In general, n
-freedoms each set to the one chosen H give 2ⁿ facings. The equation and the count come from the same act.
+freedoms each set to the one chosen H give 2ⁿ facings. The equation and the count come from the same act. *The count
+needs no angle* [proved; from the archived *Degrees of Freedom* §5.1]: each join between facings flips one freedom's
+side, and a closed walk must flip each side an even number of times to return, so the facings are the 2ⁿ corners of an
+n-cube walked as a Gray code. *What is borrowed:* that the 2ⁿ facings tile a circle or sphere in equal shares (a quarter
+turn each, π/2 of the sphere's area each) is the Euclidean measure of (c), not part of the count.
 
 (e) *The flip is forced, and V = H puts the corner where the amounts are equal.* The corner v = h and the flip there
 follow from the cap at 1 alone (§2); they are geometry and need no V. In general the amounts are equal, v·V = h·H, where
@@ -340,6 +350,11 @@ corners of their own, nothing nested in them and nothing read again inside them:
 working-paper readings that gave each level its own corner, or counted depth as nested sweeps, are superseded and kept
 in SPN as the record.
 
+*Which doubling* [proved; from the archived *One Reader* §2.1a and *The Order of Limits*]. Two operations are called
+doubling. The scale doubling sends v/h to 2·v/h. The angle doubling, the reading of twice the turn, sends v/h to
+2(v/h)/(1 − (v/h)²). Near home they agree (2(v/h)/(1 − (v/h)²) ≈ 2·v/h when v/h is small); at the corner they part, the
+angle doubling sending the corner to the mathematical horizon. The levels past the corner are scale doublings.
+
 | drawing of the same addresses | measured by | bounded? | corner at |
 |---|---|---|---|
 | the fisheye | steps of turn | yes, a quarter turn | the middle (half the turn) |
@@ -391,8 +406,10 @@ the straight line's share v/(v + h), and any weight fair to the two facings puts
 the corner is too heavy. Read so, from somewhere there is a reading at every distance, and no census of the whole. Its median and its symmetry under the flip are what survive.
 
 **Known already.** The Cauchy as the image of a uniform angle (the gnomonic image of uniform measure on a hemisphere),
-and its invariance under Möbius maps, are classical (Knight 1976; McCullagh 1996). What this paper adds is the reading:
-which reader, knowing what, gets which object.
+and its invariance under Möbius maps, are classical (Knight 1976; McCullagh 1996): a pinhole projecting evenly spread
+directions onto a line gives the Cauchy (Cuadras 2002), and Möbius maps of Cauchy variates are Cauchy (Pitman and
+Williams 1967). Its missing mean, long called a pathology, has its history in Stigler (1974). What this paper adds is
+the reading: which reader, knowing what, gets which object.
 
 ---
 
@@ -417,7 +434,12 @@ at the reader's own scale falls inside the first address beside home and is a po
 scale and the large logarithmically; a large H holds the large at true scale and loses the small. Since there is always
 something smaller than any H's first address, as there is always something larger past any corner, no H holds every
 scale at true scale with a finite level of detail. The best move is to set H to the scale of the thing being read, which
-puts that thing at the corner. An eye focusing and a telescope zooming do this.
+puts that thing at the corner. An eye focusing and a telescope zooming do this. (An earlier form, from the archived
+*Degrees of Freedom* §5.15: for a thing at x read from a standpoint at d, the kernel d/(x² + d²) is largest when d = x,
+v = h. Prior art for the count as the level of detail: the hyperbolic browser draws only nodes at least a pixel across,
+a bound independent of how many there are (Lamping, Rao and Pirolli 1995); mipmaps halve an image per level (Williams
+1983); and a web-map tile's key has one digit per level, "the length of a quadkey equals the level of detail"
+(Microsoft, Bing Maps Tile System).)
 
 **A cost model agrees** [synthetic, GRN runs 3–6, `plans/grn-plan.md`]. A model-free reader whose pixel is its step
 reads "two points" with probability min(r, 1), where r is the pair's separation in steps: certain from one step across,
@@ -592,7 +614,10 @@ in D.1; triangulation and two-view reconstruction; the radiance theorem, view fa
 inverse-square law itself. Near neighbours in measured perception: Gilinsky's perceived distance with a finite horizon
 (1951); Schwartz's log-polar map of visual cortex, proportional near the fovea and logarithmic beyond (1977); the
 number-line literature, from logarithmic-to-linear shifts (Siegler and Opfer 2003; Dehaene et al. 2008) to proportion
-judgment on bounded lines (Barth and Paladino 2011). The view from nowhere is Nagel's phrase (1986).
+judgment on bounded lines (Barth and Paladino 2011). The view from nowhere is Nagel's phrase (1986); Haraway (1988)
+called the ideal of seeing everything from nowhere "the god trick". What the completed view assumes can be stated
+exactly as an order of limits (from the archived *The Order of Limits*): classical work takes the reader's step to zero
+first and then lets the count grow without bound; a reader has a fixed step and an unknown count.
 
 **Claimed.** Not the pieces, which are classical, but reading them as one structure set by what a reader knows of the
 two breadths:
@@ -648,6 +673,14 @@ there is none past it. Their spacings, 1 per unit and 1/x per unit, agree at x =
 flip's fixed point and the meeting of the two spaces are the same point.
 
 *D.1 too.* "No measure on a level, so only the halving is supplied" is Klein's test on points, the same principle.
+
+*The three transformations make one group* [classical; from the archived *One Reader* §2.1a]. On the ratio v/h, a turn
+acts as a Möbius map, v/h ↦ ((v/h)·cos α + sin α)/(cos α − (v/h)·sin α), and a rescaling as v/h ↦ λ·v/h. Turns and
+rescalings together generate PSL(2,ℝ): every element factors as turn, rescaling, turn (the Cartan or KAK
+decomposition), and each register alone gives only half. Adding the swap v/h ↦ h/v, which reverses orientation, gives
+PGL(2,ℝ), the group that keeps cross ratios. The Cauchy family is the one family of laws this group carries into itself
+(Knight 1976; McCullagh 1996). So the reader's three undetectable transformations are not three separate premises but
+three parts of the one group of the ratio.
 
 *What this does and does not settle.*
 - If it stands, questions 1, 2 and 5 below become one question: whether the reader's ignorance is exactly these three
@@ -723,16 +756,24 @@ plans say where to get it.
 
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.
+Cuadras, C. M. (2002). Geometrical understanding of the Cauchy distribution. *Qüestiió* 26(1–2), 283–287.
 Dehaene, S., Izard, V., Spelke, E. and Pica, P. (2008). Log or linear? Distinct intuitions of the number scale in Western
 and Amazonian indigene cultures. *Science* 320, 1217–1220.
 Gilinsky, A. S. (1951). Perceived size and distance in visual space. *Psychological Review* 58, 460–482.
+Haraway, D. (1988). Situated knowledges: the science question in feminism and the privilege of partial perspective.
+*Feminist Studies* 14(3), 575–599.
 Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen* (the Erlangen programme).
 Knight, F. B. (1976). A characterization of the Cauchy type. *Proceedings of the American Mathematical Society* 55,
 130–135.
+Lamping, J., Rao, R. and Pirolli, P. (1995). A focus+context technique based on hyperbolic geometry for visualizing
+large hierarchies. *Proceedings of CHI '95*, 401–408.
 Longuet-Higgins, H. C. (1981). A computer algorithm for reconstructing a scene from two projections. *Nature* 293,
 133–135.
 McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *The Annals of Statistics* 24, 787–808.
+Microsoft. Bing Maps Tile System (documentation).
 Nagel, T. (1986). *The View from Nowhere*. Oxford University Press.
+Pitman, E. J. G. and Williams, E. J. (1967). Cauchy-distributed functions of Cauchy variates. *Annals of Mathematical
+Statistics* 38(3), 916–918.
 Schwartz, E. L. (1977). Spatial mapping in the primate sensory projection: analytic structure and relevance to
 perception. *Biological Cybernetics* 25, 181–194.
 Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
@@ -742,6 +783,9 @@ numerical quantity. *Psychological Science* 14(3), 237–243.
 Snellius, W. (1617). *Eratosthenes Batavus*. Leiden.
 Stensola, H., Stensola, T., Solstad, T., Frøland, K., Moser, M.-B. and Moser, E. I. (2012). The entorhinal grid map is
 discretized. *Nature* 492, 72–78.
+Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the Cauchy distribution. *Biometrika*
+61(2), 375–380.
+Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.
 
 Data: Hipparcos via the HYG database v3.8 (GitHub); the Gaia Catalogue of Nearby Stars (Gaia Collaboration, Smart et al.
 2021, *A&A* 649, A6). Sources, licences and checksums are in the plans.

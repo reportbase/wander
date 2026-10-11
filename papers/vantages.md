@@ -41,6 +41,10 @@ breadth. *Reading (Claude's, unruled):* this is the denominator family's exchang
 two private reads is the shared fact, and their ratio, π²/4 ≈ 2.47, is what each seat keeps to itself. The inner
 reading 2/π is also stage 1's share in `plans/omm-plan.md` (the average fill of h over one facing's sweep).
 
+**What the completed view assumes, exactly** (archived *The Order of Limits*): classical work takes the reader's step to
+zero first and then lets the count grow without bound; a reader has a fixed step and an unknown count. Haraway (1988)
+named the ideal "the god trick of seeing everything from nowhere".
+
 Two lines from the archived *The Relation Space* (§6, §17) name the completed vantage's cost: **"the equation is a
 third party"** (a page, a shared scale or an equation lends its terms to the answer, as a spring scale does; a balance's
 pull cancels and leaves nothing), and **"a symmetric account holds the figure and cannot state the rate; an asymmetric
@@ -392,6 +396,7 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
   paradoxes under one diagnosis, the private ruler as the reader's own H and the shared number line as the completed
   view's unit; the exchange already worked in `pool.html`. Simpson's paradox and the twin paradox moved up from the
   candidates.
+- 11 October, ninth: the order of limits and Haraway's "god trick", with the completed view.
 - 11 October, eighth: a reader can construct the classical view from multiple observations (Tom; SPN R196); the
   seventh iteration's "no reader occupies it" narrowed to one observation.
 - 11 October, seventh: no reader can hold both hemispheres, so the completed view is the view from nowhere (Tom; SPN

@@ -2624,6 +2624,16 @@ an item supersedes one above, a dated ⚠ note is added there.
     D.1 is the same test on points. Classical in itself (Jaynes 1968, Jeffreys 1939, Knight 1976, McCullagh 1996); still
     added: the joining constant at the corner, and the sweep as a turn (SPN Proposition 1.2, "A candidate single
     principle").
+426. **One group** (Oct 11; from the archived *One Reader*, pulled forward). On v/h a turn is a Möbius map and a rescaling
+    multiplies; together PSL(2,ℝ) (KAK), with the swap PGL(2,ℝ), keeping cross ratios; the Cauchy family is the one it
+    carries into itself. The single principle's three transformations are parts of one group (SPN Proposition 1.2,
+    "Five more from the archive").
+427. **Which doubling** (Oct 11; archived *One Reader*, *The Order of Limits*). Scale doubling 2·v/h; angle doubling
+    2(v/h)/(1 − (v/h)²); they agree near home and part at the corner. The levels past the corner are scale doublings.
+428. **The corner is the best place to stand** (Oct 11; archived *Degrees of Freedom* §5.15). The kernel d/(x² + d²) is
+    largest at d = x, v = h: an earlier form of "H is a zoom".
+429. **The disagreement** (Oct 11; archived *The Relation Space* §25). D(A, B) = v_A·h_B − v_B·h_A: zero for one ratio,
+    its sign the order, D(A, swapped A) = v² − h² zero at the corner; no division needed.
 
 ## 9. Open
 

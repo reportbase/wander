@@ -68,7 +68,7 @@ report position (Browsing L1008–1017); "an address is not supposed to have an 
 L963–975); "more points eventually means less seen", the ceiling about 1.12/ε (One Reader L896–909; Order of Limits
 L1754–1845).
 
-## Other gems, queued (not yet pulled)
+## Other gems (pulled forward 11 October, Tom: "yes"; see below)
 
 - **Two registers make one group.** Turning (angle) and rescaling (ratio) together generate exactly PSL(2,ℝ); each alone
   gives half (One Reader L384–443). This is the group behind the single principle's three transformations
@@ -96,6 +96,14 @@ L1754–1845).
 - **A coincidence to check**: the 2D Cauchy puts 1 − 1/√2 of its weight inside the corner circle (One Reader L538–542);
   `facing.html`'s arc stands off the line by 1 − 1/√2 at the corner. Same number, different objects; not yet shown to be
   more.
+
+**Where they went (11 October).** One group, which doubling, the corner as the best place to stand, 2ⁿ by parity and
+the disagreement: SPN Proposition 1.2, "Five more from the archive"; `v-and-h.md` items 426–429; the review paper (§2
+the disagreement, §3(d) the parity count, §4 which doubling, §6 the best place to stand, §12.1 the group). The order of
+limits: `vantages.md`, with the completed view, and the review paper §11. The literature: the review paper §1, §5, §6,
+§11 and its references (Cuadras, Pitman and Williams, Stigler, Lamping et al., Williams, the Bing Maps tile system,
+Haraway). Not pulled: the coincidence of 1 − 1/√2 (still to check), and the items marked new in the other lists above
+(why observation comes in steps; carried and laid marks; keeping the address until contact).
 
 ## Conflicts: settled by R192
 
