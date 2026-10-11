@@ -110,7 +110,12 @@ Google Fonts load from outside:
   off-centre push becoming spin: corners are draw/follow with side), past it a miscue; a bare tip turns the white
   sin φ = fx, no spin; side spin grips the rails. `spinChecks` reproduces the textbook results (rolls at once 2/5 up, a
   rolling white follows at 2/7 after a full hit, a stun stops, draw comes back, right English comes off the rail right).
-  Power 2–40; `?tip=fx,fy&chalk=0`; hook `strikeOf`, `tip`, `chalk`, `spinChecks`.
+  Throw, spin passed on, massé and jump (11 Oct, Tom: "push further on the three suggestions"): balls grip each other
+  weakly (MU_B 0.06): a cut throws the struck ball ~3° toward the white's travel, side spin ~3° the other way, and passes
+  opposite side spin; the cue can be raised (`cue ↑`, `?el=`): a tilted spin axis bends the path (massé), the press into
+  the slate throws the white up (jump); off the cloth a ball falls (G) and bounces (E_TABLE), and contacts read h + v
+  with the height included, so it can pass over a ball. Layouts `jump` (over the 1 to pot the 2) and `masse`.
+  Power 2–60; `?tip=fx,fy&chalk=0&el=`; hook `strikeOf`, `tip`, `chalk`, `elev`, `spinChecks`.
   Not in the flying page.
 - `flight.html`: **the corner in flight** (10 Oct 2026, Tom: "you know how the transition from earth to the sky in flight
   sim games is awkward? ... i wonder if its because of the corner"; "only the geometry", wireframe). Level flight at height v;
@@ -362,8 +367,8 @@ In short:
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
   11. **Gameplay sketches:** each page's one mechanic through its hook (dimming, stages, the ladder's locks and light, the
       sky's count read back as time, a half-ball cut 30° near and far; trick shots: the preview is the shot, contacts exactly on
-      h + v = 1, the row of four's pot out of sight at 3 deep and in sight at 4, a bare tip turning the white 30° at f = ½, spin's
-      textbook results).
+      h + v = 1 (but for a few in clusters, within 1%), the row of four's pot out of sight at 3 deep and in sight at 4, a bare tip
+      turning the white 30° at f = ½, spin's textbook results, throw both ways, spin passed on, a massé bending, a jump clearing a ball).
   12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
   13. **levels.html:** the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
       and one level fewer seen per doubling of the grain; the shape crosses ring edges, its broad form fewer; with the size divided out
