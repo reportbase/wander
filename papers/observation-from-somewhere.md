@@ -726,8 +726,8 @@ is in them.
 The sweep opens a closed shape out, with home in the middle of the opening and the two ends running toward the horizon
 in each facing. Opening divides out size, so each place on the opened line is an address pointing back to a point of the
 closed shape, which keeps its size. Laid evenly by direction, every shape opens into the same fisheye and the same
-Cauchy; the shape survives only in what arrives at each address, one breadth per direction. (We checked this on 73
-outlines.) The addresses are universal, and the shape is payload.
+Cauchy; the shape survives only in what arrives at each address, one breadth per direction, as Theorem 6(a)
+requires. The addresses are universal, and the shape is payload.
 
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the
@@ -811,18 +811,11 @@ same idea appears in the hyperbolic browser, which draws only nodes at least a p
 1995), in mipmaps, which halve an image at each level (Williams 1983), and in web-map tiles, whose key gains one digit
 per level of detail (Microsoft, Bing Maps Tile System).
 
-**A cost model agrees.** On simulated readers, a reader with no model of what it reads, whose pixel is its step, reads
-"two points" with probability min(r, 1), where r is the pair's separation in steps: certainly from one step across,
-by chance below it. Charged one unit per step spanned per look, a sure reading costs (1 + r)·max(1, 1/r): least, 2, at
-r = 1, and the same at r and at 1/r. A reader that slides its H by halvings reaches one step across in about log₂(1/r)
-looks instead of 1/r. This is one cost model on simulated readers, not a theorem.
-
 **More points, fewer told apart.** A parallel reader looks side-on at N points spaced evenly around a circle and reads
 each one's position across its view to a step ε, relative to the circle's radius. Neighbours at angle θ from the middle
 of the view are about (2π/N)·cos θ apart, so the reader separates those with cos θ ≥ εN/2π, which is
 R(N) = (N/π)·arccos(εN/2π) of them. This peaks at about 1.12/ε points, where εN/2π ≈ 0.65, and falls to none at
-N = 2π/ε: past the peak, more points mean fewer told apart. Brute-force checks at ε = 10⁻³ and 10⁻⁴ agree with the
-formula to within two points. The addresses never overflow; the resolution does.
+N = 2π/ε: past the peak, more points mean fewer told apart. The addresses never overflow; the resolution does.
 
 ## 9. What the geometry does not give: amounts
 
@@ -841,7 +834,7 @@ part closes by itself. Then H_B/H_A = |S_A|/|S_B|, and nothing more about the un
 *Proof.* Closure gives H_A·S_A + H_B·S_B = 0, so S_A and S_B are antiparallel and H_B/H_A = |S_A|/|S_B|. Scaling both
 units together leaves every count unchanged, so their common scale cannot be recovered. ∎
 
-On 2000 random polygons the ratio is recovered to 5 × 10⁻¹⁵. Between two private rulers, a shared fact buys exactly the
+Between two private rulers, a shared fact buys exactly the
 one factor that crosses.
 
 ## 10. A worked example: a mountain range
@@ -945,10 +938,6 @@ an added condition. And "no attitude preferred" still treats the sweep as the tu
 5. *Uniformity as the weight.* Does the argument of §7.5 remove the burden of the even turn, or only move it to "why the
    circle"?
 6. *V = H.* Is Proposition 3(a) more than a restatement of having one breadth?
-7. *A measured reader.* Grid cells in the entorhinal cortex map space in modules whose spacing ratios no physical law
-   sets. Without an added measure, §6 allows only halving: a ratio of 2 along a line, or √2 if a level doubles an area.
-   Published means lie near 1.42 (Stensola et al. 2012) and, in other studies, near 1.7. A test on per-animal data not
-   yet examined is planned, and suggestions for data are welcome.
 
 If the principle of §11.1 stands, questions 1, 2 and 5 become one: whether a situated reader's ignorance is exactly these
 three transformations.
@@ -960,30 +949,14 @@ three transformations.
   than the halving, since (P2) fails.
 - Plain proportion past the corner keeps true scale but cannot fit the far field on bounded addresses (§6).
 
-### 11.3 What did not work
-
-A framework that reports only its successes cannot be judged. These tests failed, and they stay recorded as failed.
-- *Number lines in people.* On children's placements of numbers on a bounded line (the kindergartners of Chan
-  and Mazzocco 2024), a model laid in proportion up to a fitted unit and logarithmically past it lost to proportion
-  judgment (for 40 of 75 children at the first time point, more clearly later), and beat a plain logarithm for only 6
-  of 75.
-- *A knee at one step across.* On simulated readers, a predicted knee in reading where a pair is one step across was
-  not found, twice: a reader given the shape reads below its step.
-- *Steering by its own count.* A reader steering by its own pixel count was predicted to stop with the pair 0.5 to 3
-  steps across in at least 90% of runs from every start; from one start it did so in 87.3%.
-- *A ratio between levels from nesting.* Readers taking their unit from what the reader above them could not see did
-  not settle on a ratio between levels; the runs were stopped after three.
-- *A preferred step.* A reader content with a first sighting has no preferred step: a finer step is always better. A
-  step near 2 appears only when the reader must be sure of its reading.
-
-### 11.4 Related work
+### 11.3 Related work
 
 The pieces are classical: the flip x ↦ 1/x, the Cauchy as the projection of a uniform angle and its Möbius invariance,
 Cauchy's functional equation, Klein's Erlangen programme (1872), and Jaynes's and Jeffreys's invariant priors. Near
 neighbours in measured perception include Gilinsky's perceived distance with a finite horizon (1951), Schwartz's
 log-polar map of visual cortex, proportional near the fovea and logarithmic beyond (1977), and the number-line
 literature, from logarithmic-to-linear shifts (Siegler and Opfer 2003; Dehaene et al. 2008) to proportion judgment on
-bounded lines (Barth and Paladino 2011); §11.3 reports one test of our own against such data. The view from nowhere is Nagel's phrase (1986); Haraway
+bounded lines (Barth and Paladino 2011). The view from nowhere is Nagel's phrase (1986); Haraway
 (1988) called the ideal of seeing everything from nowhere "the god trick". In terms of limits, classical work lets the
 reader's step go to zero first and then lets the count of things grow without bound; a situated reader has a fixed step
 and an unknown count.
@@ -1016,9 +989,6 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.
-
-Chan, J. Y.-C. and Mazzocco, M. M. M. (2024). New measures of number line estimation performance reveal children's
-ordinal understanding of numbers. *Journal of Experimental Child Psychology* 245, 105965.
 
 Cuadras, C. M. (2002). Geometrical understanding of the Cauchy distribution. *Qüestiió* 26(1–2), 283–287.
 
@@ -1060,9 +1030,6 @@ perception. *Biological Cybernetics* 25, 181–194.
 
 Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation: evidence for multiple representations of
 numerical quantity. *Psychological Science* 14(3), 237–243.
-
-Stensola, H., Stensola, T., Solstad, T., Frøland, K., Moser, M.-B. and Moser, E. I. (2012). The entorhinal grid map is
-discretized. *Nature* 492, 72–78.
 
 Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the Cauchy distribution. *Biometrika*
 61(2), 375–380.

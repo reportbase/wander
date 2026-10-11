@@ -194,7 +194,10 @@ Google Fonts load from outside:
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
   with proofs, discussion, references. No standing marks, ruling numbers, file paths, quotations of rulings or revision
-  history in it; the record (rulings, standings, kills, sources) stays in the working papers. **A geometry paper** (SPN
+  history in it, and no tests, failed or not (SPN R206, R207: "remove all failed tests, they are in other
+  papers"), and no numerical checks the main argument does not need (Tom: "only if they are helpful to main
+  arguments. dont just add tests just to add tests"); the record (rulings, standings, kills, sources) stays in the
+  working papers and plans. **A geometry paper** (SPN
   R201): no physics (bridges, the inverse square, the near field, worlds, the matter fraction are in `physics.md`,
   `inverse-square.md` and SPN Part II). **Its main result** (SPN R200: "it is the primary result"): the Cauchy is the
   reader's addresses, not its payload (R47; SPN §4.3; its Theorem 6: the reach of whatever arrives cancels from every
