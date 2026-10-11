@@ -447,6 +447,21 @@ try {
   if (!pi.books || !(Math.abs(pi.density - 1) < 0.2) || !(Math.abs(pi.work - 1) < 0.1) || !pi.capped || !(pi.wFar > pi.wNear)) failures.push(`[pool-infinite.html] ${JSON.stringify(pi)}`);
   console.log(`${failures.length === before17 ? 'ok  ' : 'FAIL'} pool-infinite.html (books balance through 2 s and a pan; the window at ${pi.density.toFixed(2)} of the world's density; work ×${pi.work.toFixed(3)} for a world 16 times wider; zoomed out the window stops at ${pi.wFar} cells)`);
 
+  // ── 18. mountain.html: the worked example (OFS §10): the ends at the corner, the reader's view unchanged by scale,
+  //    mountain equals thumb off by V/H, the walk of one thumb recovering the true distance and width ──
+  current = 'mountain.html';
+  const before18 = failures.length;
+  await page.goto(new URL('mountain.html', base).href, { waitUntil: 'load' });
+  const mt = await page.evaluate(() => { const m = __mountain, r = m.reading(20, 10), big = m.reading(20000, 10000), e = m.equalsThumb(20, 10), w = m.walk(20, 10);
+    m.set({ V: 20, d: 10, k: 1000, walk: true });
+    return { r, big, e, w, hud: document.getElementById('hud').textContent.length > 0, lay: [m.lay(0.5), m.lay(10)] }; });
+  if (Math.abs(mt.r.alpha - 45) > 1e-9 || mt.r.fingersOn !== 18 || Math.abs(mt.r.share - 0.5) > 1e-12 || !mt.r.atCorner ||
+      Math.abs(mt.big.alpha - mt.r.alpha) > 1e-9 || mt.big.fingersOn !== mt.r.fingersOn ||
+      mt.e.Vread !== 1 || Math.abs(mt.e.dRead - 0.5) > 1e-12 || mt.e.factor !== 20 || Math.abs(mt.e.doublings - Math.log2(20)) > 1e-12 ||
+      Math.abs(mt.w.d - 10) > 1e-9 || Math.abs(mt.w.V - 20) > 1e-9 || Math.abs(mt.lay[1] - (1 + Math.log(10))) > 1e-12 || mt.lay[0] !== 0.5 || !mt.hud)
+    failures.push(`[mountain.html] ${JSON.stringify(mt)}`);
+  console.log(`${failures.length === before18 ? 'ok  ' : 'FAIL'} mountain.html (ends at ${mt.r.alpha.toFixed(1)}°, ${mt.r.fingersOn} of 36 fingers on the range, the same at ×1000; mountain = thumb reads 1 mi at ${mt.e.dRead} mi, off by ${mt.e.factor}, ${mt.e.doublings.toFixed(2)} doublings; one thumb walked recovers d = ${mt.w.d.toFixed(3)}, V = ${mt.w.V.toFixed(3)})`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

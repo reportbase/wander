@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The mountain and the thumb</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    mountain.html: the worked example of observation-from-somewhere.md §10 (11 October 2026; Tom: "build a demo about the
+    worked example"; the metaphor, SPN R205: "H = thumb and V = mountain"). A standalone page like walk.html.
+
+    Keep the case. h and v are unit relations, the geometry; H, V and d are amounts, in miles:
+      - H, the thumb: the reader's breadth, its one measure (1 mile, as in the paper).
+      - V, the mountain: the range's width (20 miles).
+      - d, the distance from the reader to the range (10 miles).
+      - k scales the whole world (V and d together); the thumb stays 1.
+    The reader reads only directions: a point of the range at lateral x reads v/h = x/d, so the range's ends read
+    ±(V/2)/d. That is the pair (half-width, distance), named; with V = 20 and d = 10 it is at its corner, the ends at ±45°.
+    Every reading is a ratio of amounts, so multiplying V and d (and the ridge) by k changes none of them (paper, Theorem 6,
+    Proposition 8).
+    Mountain equals thumb (V = H): the reader takes the range as one thumb wide; the width-to-distance reading V/d then puts
+    it at H·d/V. Every amount is off by V/H, the number of thumbs the mountain really is: log2(V/H) doublings.
+    Walk one thumb: from d − H the half-width reads s2 = (V/2)/(d − H); with s1 = (V/2)/d, d = H·s2/(s2 − s1), V = 2·s1·d.
+    The lay of distances (in thumbs): x inside the corner (x ≤ 1), 1 + ln x past it.
+    Links: ?V=20&d=10&k=1&walk=1. Test hook: window.__mountain.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 19px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    .ctl { display: grid; grid-template-columns: auto 1fr auto; gap: 6px 10px; align-items: center; margin-top: 10px }
+    .ctl label { color: var(--dim) }
+    .ctl output { color: var(--bright); min-width: 9ch; text-align: right }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { width: 100%; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .violet { color: var(--violet) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The mountain and the thumb</h1>
+    <p class="lede">A reader looks at a mountain range, face on. Its thumb is its one measure, <span class="gold">H = 1 mile</span>.
+    From nowhere we also know the <span class="teal">mountain, V = 20 miles wide</span>, and its distance, 10 miles. The reader
+    knows only its thumb. Read from where it stands, the range's ends sit exactly at its corners; to say anything in miles it
+    must set the mountain equal to its thumb, and it is then off by twenty; one walk of a thumb's length gives it the truth.</p>
+    <div class="panel">
+        <div class="row">
+            <button id="paper">the paper's example</button>
+            <button id="walk">walk one thumb</button>
+            <button id="scale1000">scale the world ×1000</button>
+        </div>
+        <div class="ctl">
+            <label for="V">mountain, V</label><input id="V" type="range" min="0" max="2.3" step="0.001" value="1.30103"><output id="Vo"></output>
+            <label for="d">distance, d</label><input id="d" type="range" min="0.3" max="2.3" step="0.001" value="1"><output id="do"></output>
+            <label for="k">scale the world</label><input id="k" type="range" min="-3" max="3" step="0.01" value="0"><output id="ko"></output>
+        </div>
+        <div class="grid" style="margin-top:12px">
+            <div><h2>From nowhere</h2><canvas id="plan" height="300"></canvas>
+            <p class="cap">The blueprint, from above: the thumb (gold), the range (teal) and the sight lines to its ends. Every
+            amount is held, and the 45° guides are simply where the ends happen to be.</p></div>
+            <div><h2>From where the reader stands</h2><canvas id="view" height="300"></canvas>
+            <p class="cap">The reader's fingers, spread evenly over its half turn, with the corners at ±45°. Fingers that reach the
+            range carry a ring: the ridge's elevation. Scale the world and nothing here moves.</p></div>
+        </div>
+        <h2 style="margin-top:14px">Mountain equals thumb</h2>
+        <canvas id="lay" height="170"></canvas>
+        <p class="cap">The reader's lay of distances, in thumbs: proportional inside the corner (one thumb), one equal step per
+        doubling past it. Gold: where the reader puts the range when it sets the mountain equal to its thumb. Teal: where it
+        truly is. The gap is V/H, the number of thumbs the mountain really is.</p>
+        <div id="hud"></div>
+    </div>
+    <p class="note">Keep the case: h and v are unit relations, and the reader's view holds only their ratios, which have no
+    scale. H, V and d are amounts, in miles; the reader has only H. Each pair has its own corner: the range's ends sit at the
+    corner of the pair (half-width, distance), not of the reader's thumb against anything. The walk is where an amount
+    enters: the thumb used as a baseline. Behind it: <i>Observation from Somewhere</i> §10, Theorem 6 and Proposition 8.
+    Other demos: <a href="walk.html">the walk</a>, <a href="facing.html">the facing</a>, <a href="levels.html">the levels</a>,
+    <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), D = Math.PI / 180, H = 1, FINGERS = 36;
+    // ── the geometry, in plain functions (the test hook uses these) ──
+    // what the reader reads: directions only, ratios of amounts
+    function reading(V, d) {
+        const halfS = (V / 2) / d, alpha = Math.atan(halfS) / D;              // the ends: v/h = ±(V/2)/d
+        const on = fingers().filter(t => Math.abs(t) <= alpha + 1e-12).length;
+        return { endsVH: halfS, alpha, widthToDistance: V / d, fingersOn: on, fingers: FINGERS, share: alpha / 90,
+            atCorner: Math.abs(halfS - 1) < 1e-9 };
+    }
+    // mountain equals thumb: the reader sets V = H and reads the rest from its readings
+    function equalsThumb(V, d) {
+        const Vread = H, dRead = H * d / V, factor = V / H;
+        return { Vread, dRead, factor, doublings: Math.log2(factor), layRead: lay(dRead / H), layTrue: lay(d / H) };
+    }
+    // walk one thumb toward the range: a second standpoint at a known baseline
+    function walk(V, d) {
+        if (d <= 1.5 * H) return null;
+        const s1 = (V / 2) / d, s2 = (V / 2) / (d - H), dRec = H * s2 / (s2 - s1);
+        return { s1, s2, a1: Math.atan(s1) / D, a2: Math.atan(s2) / D, d: dRec, V: 2 * s1 * dRec };
+    }
+    const lay = x => x <= 1 ? x : 1 + Math.log(x);                              // proportion, then one step per doubling
+    const fingers = () => Array.from({ length: FINGERS }, (_, i) => -90 + 180 * (i + 0.5) / FINGERS);
+    // the ridge: heights as a share of the range's width, so it scales with the world
+    const ridge = u => 0.032 + 0.011 * Math.sin(5.1 * u + 0.4) + 0.007 * Math.sin(11.7 * u + 1.3) + 0.004 * Math.sin(23.3 * u + 2.1)
+        + 0.026 * Math.exp(-(((u - 0.18) / 0.12) ** 2));                           // u in [−1, 1] across the range: peaks near 1.5 mi on 20
+    function elevation(V, d, theta) {                                           // the ring on the finger at θ
+        const x = d * Math.tan(theta * D), u = x / (V / 2);
+        if (Math.abs(u) > 1) return null;
+        return Math.atan(V * ridge(u) / Math.hypot(d, x)) / D;
+    }
+
+    // ── state ──
+    let V = 20, d = 10, k = 1, walked = false;
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.font = '11px DM Mono, monospace'; return [g, w, hh];
+    }
+    const fmt = x => x >= 1e4 || x < 0.01 ? x.toExponential(2) : x >= 100 ? x.toFixed(0) : x.toFixed(2);
+
+    function draw() {
+        const Vt = V * k, dt = d * k, r = reading(Vt, dt), e = equalsThumb(Vt, dt), w = walked ? walk(Vt, dt) : null;
+        $('Vo').textContent = `${fmt(Vt)} mi`; $('do').textContent = `${fmt(dt)} mi`; $('ko').textContent = `×${fmt(k)}`;
+        // ── from nowhere: the blueprint ──
+        let [g, W, Hc] = fit($('plan'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, Hc);
+        const span = Math.max(Vt * 1.15, 4 * H), px = Math.min((W - 30) / span, (Hc - 60) / (dt * 1.15));
+        const ox = W / 2, oy = Hc - 26, ry = oy - dt * px;
+        g.strokeStyle = 'rgba(212,160,82,0.25)'; g.setLineDash([3, 4]); g.lineWidth = 1;   // 45° guides
+        g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox - (oy - 10), 10); g.moveTo(ox, oy); g.lineTo(ox + (oy - 10), 10); g.stroke(); g.setLineDash([]);
+        g.strokeStyle = 'rgba(181,156,240,0.8)'; g.lineWidth = 1.2;                        // sight lines to the ends
+        g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox - Vt / 2 * px, ry); g.moveTo(ox, oy); g.lineTo(ox + Vt / 2 * px, ry); g.stroke();
+        g.strokeStyle = '#8ce6cd'; g.lineWidth = 4; g.beginPath(); g.moveTo(ox - Vt / 2 * px, ry); g.lineTo(ox + Vt / 2 * px, ry); g.stroke();
+        const tw = Math.max(H * px, 3);
+        g.strokeStyle = '#d4a052'; g.lineWidth = 4; g.beginPath(); g.moveTo(ox - tw / 2, oy); g.lineTo(ox + tw / 2, oy); g.stroke();
+        if (w) {                                                                          // the second standpoint
+            const oy2 = oy - H * px;
+            g.strokeStyle = 'rgba(212,160,82,0.75)'; g.setLineDash([2, 3]);
+            g.beginPath(); g.moveTo(ox, oy2); g.lineTo(ox - Vt / 2 * px, ry); g.moveTo(ox, oy2); g.lineTo(ox + Vt / 2 * px, ry); g.stroke(); g.setLineDash([]);
+            g.fillStyle = '#d4a052'; g.beginPath(); g.arc(ox, oy2, 3, 0, 2 * Math.PI); g.fill();
+        }
+        g.fillStyle = '#8a8a96';
+        g.fillText(`mountain V = ${fmt(Vt)} mi`, Math.max(6, ox - Vt / 2 * px), Math.max(14, ry - 8));
+        g.fillText(`d = ${fmt(dt)} mi`, ox + 8, (oy + ry) / 2);
+        g.fillText(H * px < 3 ? 'thumb H = 1 mi (a speck at this scale)' : 'thumb H = 1 mi', ox + 10, oy + 16);
+        g.fillText(`ends at ${r.alpha.toFixed(1)}°`, 8, 16);
+        // ── from where the reader stands: fingers and rings ──
+        [g, W, Hc] = fit($('view'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, Hc);
+        const x0 = 18, x1 = W - 18, base = Hc - 40, top = 22, X = t => x0 + (x1 - x0) * (t + 90) / 180;
+        const maxEl = 10, Y = el => base - (base - top) * Math.min(el, maxEl) / maxEl;
+        g.strokeStyle = 'rgba(255,255,255,0.18)'; g.lineWidth = 1; g.beginPath(); g.moveTo(x0, base); g.lineTo(x1, base); g.stroke();
+        g.strokeStyle = 'rgba(212,160,82,0.55)'; g.setLineDash([4, 4]);
+        [-45, 45].forEach(t => { g.beginPath(); g.moveTo(X(t), top - 6); g.lineTo(X(t), base + 6); g.stroke(); }); g.setLineDash([]);
+        // the skyline: the payload, ring by ring
+        g.fillStyle = 'rgba(140,230,205,0.18)'; g.strokeStyle = '#8ce6cd'; g.lineWidth = 1.5; g.beginPath(); let started = false, lastT = null;
+        for (let i = 0; i <= 720; i++) { const t = -90 + i * 0.25, el = elevation(Vt, dt, t);
+            if (el === null) continue; if (!started) { g.moveTo(X(t), base); started = true; } g.lineTo(X(t), Y(el)); lastT = t; }
+        if (started) { g.lineTo(X(lastT), base); g.closePath(); g.fill(); g.stroke(); }
+        // the fingers: evenly by turn
+        fingers().forEach(t => { const el = elevation(Vt, dt, t);
+            g.fillStyle = el === null ? 'rgba(255,255,255,0.28)' : '#d4a052'; g.fillRect(X(t) - 1, base + 4, 2, 12);
+            if (el !== null) { g.beginPath(); g.arc(X(t), Y(el), 2.5, 0, 2 * Math.PI); g.fill(); } });
+        g.fillStyle = '#8a8a96';
+        g.fillText('−90°', x0 - 4, base + 30); g.fillText('home, 0°', X(0) - 26, base + 30); g.fillText('90°', x1 - 18, base + 30);
+        g.fillStyle = '#d4a052'; g.fillText('corner', X(-45) + 4, top + 6); g.fillText('corner', X(45) + 4, top + 6);
+        g.fillStyle = '#8a8a96'; g.fillText(`${r.fingersOn} of ${FINGERS} fingers carry a ring`, x0, 14);
+        // ── mountain equals thumb: the lay ──
+        [g, W, Hc] = fit($('lay'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, Hc);
+        const RMAX = lay(1024), L0 = 20, L1 = W - 20, ly = 84, LX = rr => L0 + (L1 - L0) * Math.min(rr, RMAX) / RMAX;
+        const tw2 = t => g.measureText(t).width, clampX = (x, t) => Math.min(W - 6 - tw2(t), Math.max(6, x));
+        g.fillStyle = 'rgba(212,160,82,0.12)'; g.fillRect(LX(0), ly - 12, LX(1) - LX(0), 24);
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(L0, ly); g.lineTo(L1, ly); g.stroke();
+        g.fillStyle = '#8a8a96';
+        const nearT = 'near: in proportion', farT = 'far: one step per doubling →';
+        g.fillText(nearT, L0, 18);
+        const farX = Math.max(LX(1.5), L0 + tw2(nearT) + 14);
+        if (farX + tw2(farT) < W - 6) g.fillText(farT, farX, 18); else g.fillText(farT, clampX(LX(1.5), farT), 32);
+        let lastLab = -1e9;                                                              // tick labels, never crowded
+        [0.5, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512].forEach(x => { const xx = LX(lay(x)); g.fillRect(xx, ly - 5, 1, 10);
+            if (x === 0.5) return; const t = x === 1 ? (W > 600 ? '1 thumb' : '1') : `${x}`;
+            if (xx - tw2(t) / 2 > lastLab + 6) { g.fillText(t, xx - tw2(t) / 2, ly + 22); lastLab = xx + tw2(t) / 2; } });
+        const xr = LX(e.layRead), xt = LX(e.layTrue);
+        g.strokeStyle = 'rgba(181,156,240,0.7)'; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(xr, ly + 30); g.lineTo(xt, ly + 30); g.stroke(); g.setLineDash([]);
+        g.fillStyle = '#d4a052'; g.beginPath(); g.arc(xr, ly, 6, 0, 2 * Math.PI); g.fill();
+        const readT = 'read: mountain = thumb'; g.fillText(readT, clampX(xr - 20, readT), ly + 46);
+        g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath(); g.arc(xt, ly, 6, 0, 2 * Math.PI); g.stroke();
+        if (w) { g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(LX(lay(w.d / H)), ly, 3.5, 0, 2 * Math.PI); g.fill(); }
+        const trueT = e.layTrue > RMAX ? 'true → (off the lay)' : (w ? 'true, recovered by the walk' : 'true (known from nowhere)');
+        g.fillStyle = '#8ce6cd'; g.fillText(trueT, clampX(xt - tw2(trueT) / 2, trueT), ly - 20);
+        const facT = `× ${fmt(e.factor)} = ${e.doublings.toFixed(2)} doublings`;
+        g.fillStyle = '#b59cf0'; g.fillText(facT, clampX((xr + xt) / 2 - tw2(facT) / 2, facT), ly + 64);
+        // ── the readout ──
+        const lines = [
+            `from nowhere: thumb H = 1 mi, mountain V = ${fmt(Vt)} mi, distance d = ${fmt(dt)} mi`,
+            `  pairs: half-width/distance ${r.endsVH.toFixed(3)}${r.atCorner ? ' (at its corner)' : ''}; width/distance ${r.widthToDistance.toFixed(3)}; distance/thumb ${fmt(dt / H)} (${Math.log2(dt / H).toFixed(2)} doublings); mountain/thumb ${fmt(Vt / H)} (${e.doublings.toFixed(2)} doublings)`,
+            `from the reader: ends at v/h = ±${r.endsVH.toFixed(3)} (±${r.alpha.toFixed(1)}°); ${r.fingersOn} of ${FINGERS} fingers on the range, share ${r.share.toFixed(3)}; the same at every scale`,
+            `mountain equals thumb: read ${e.Vread} mi wide at ${fmt(e.dRead)} mi; truly ${fmt(Vt)} at ${fmt(dt)}: off by V/H = ${fmt(e.factor)}, ${e.doublings.toFixed(2)} doublings, the same on both sides of the corner`,
+            w ? `walked one thumb: half-angle ${w.a1.toFixed(1)}° → ${w.a2.toFixed(1)}°, s ${w.s1.toFixed(3)} → ${w.s2.toFixed(3)}; d = H·s₂/(s₂ − s₁) = ${fmt(w.d)} mi, V = 2·s₁·d = ${fmt(w.V)} mi`
+              : (walked ? 'too near to walk a whole thumb toward it' : 'walk one thumb toward the range to construct the true distance and width')];
+        $('hud').textContent = lines.join('\n');
+    }
+
+    function sync() { $('V').value = Math.log10(V); $('d').value = Math.log10(d); $('k').value = Math.log10(k); $('walk').classList.toggle('on', walked); }
+    $('V').addEventListener('input', () => { V = 10 ** +$('V').value; walked = false; sync(); draw(); });
+    $('d').addEventListener('input', () => { d = 10 ** +$('d').value; walked = false; sync(); draw(); });
+    $('k').addEventListener('input', () => { k = 10 ** +$('k').value; walked = false; sync(); draw(); });
+    $('paper').addEventListener('click', () => { V = 20; d = 10; k = 1; walked = false; sync(); draw(); });
+    $('walk').addEventListener('click', () => { walked = !walked; sync(); draw(); });
+    $('scale1000').addEventListener('click', () => { k = k === 1000 ? 1 : 1000; walked = false; sync(); draw(); });
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search);
+    if (q.has('V')) V = Math.min(200, Math.max(1, +q.get('V') || 20));
+    if (q.has('d')) d = Math.min(200, Math.max(2, +q.get('d') || 10));
+    if (q.has('k')) k = Math.min(1000, Math.max(0.001, +q.get('k') || 1));
+    walked = q.get('walk') === '1';
+    sync(); draw();
+
+    window.__mountain = { reading, equalsThumb, walk, lay, elevation, fingers, H,
+        state: () => ({ V: V * k, d: d * k, k, walked }),
+        set: o => { if (o.V) V = o.V; if (o.d) d = o.d; if (o.k) k = o.k; walked = !!o.walk; sync(); draw(); } };
+})();
+</script>
+</body>
+</html>
