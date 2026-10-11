@@ -1453,3 +1453,46 @@ P33‴: not killed. from 2 units inward, the density is at most +4.0% from the r
   level, each cell at the level where it reads at the corner. The balls it does not hold are not lost: the books say how
   many there are, how they move and how warm they are, to rounding. When it looks, the balls it unfolds come out of
   those books.
+
+### Run 16 (11 October 2026): prediction, written before it ran (Tom: "proceed", to a disturbance from far away)
+
+Run 15's world was in equilibrium, where the cells need only hold their totals. This run sends a disturbance in from far
+away and asks whether the cells can carry it to the window in time. The disturbance is a pressure pulse. In a referee
+state warmed as before, the balls within 10 units of a point 60 units from the window's middle have their velocities
+scaled by √2. Their warmth doubles at the same density, so their pressure doubles, and the gas sends the excess out as
+sound. The multiscale world starts from the same state, so the pulse's energy is in its cells, summed at whatever level
+holds that place (a cell 60 units away is about level 3, 60 units wide).
+
+**Two far fields, named:**
+- **Diffusion,** run 15's: neighbouring cells exchange balls, momentum and energy at D = 4.04.
+- **A fluid:** the cells run the gas's own equations. Their totals per area are the conserved densities of mass,
+  momentum and energy. Between neighbouring cells a flux passes each frame: Euler's, with the hard-disc pressure
+  p = n·σ²·Z(φ) (σ² the warmth per ball, m = 1). It is Rusanov's (local Lax–Friedrichs) first-order flux, with the
+  fastest signal |u| + c, where c is the adiabatic speed of sound below. Each flux is taken from one cell and given to the
+  other, so the books balance exactly. The window's face is a wall to the cells' fluid (no flux across it). The window
+  hears the cells only through the band, which reads the ring's density and warmth as before. Everything else is run 15's.
+
+**Worked out before writing this.** The adiabatic speed of sound of the hard-disc gas, from Henderson's equation of state
+(c_v = k per ball in two dimensions):
+c² = σ²·[(Z + φ·Z′) + Z²] = 25 × (1.8856 + 1.9265), so c = 9.76 units a second (an ideal gas in two dimensions would have
+σ·√2 = 7.07). The pulse's front leaves the hot disc's edge, 10 units out. It reaches the view's near edge (45 from the
+source) after (45 − 10)/c = 3.6 s, and the view's middle (60) by about 60/c = 6.1 s. Diffusion over the same 35 to 60 units
+takes x²/(4D), 75 to 220 s.
+
+**The measure.** The window's middle is at (120, 120) in the referee's world of 240 (wrapped); the source is at (180, 120);
+the view is the 30 × 30 square about the window's middle. In 20 warmed states, for 12 s, every 0.05 s: the view's mean
+kinetic energy per ball. That is averaged over the 20 states, in bins of 0.25 s, less its own mean over the first 0.5 s.
+The rise's half-maximum arrival is the first bin at which the rise passes half its largest value within the 12 s.
+
+- **P34 (the referee carries the pulse as sound).** The referee's half-maximum arrival is between 3.6 s (the front at the
+  view's near edge) and 6.1 s (at its middle). *Killed* if outside.
+- **P35 (the fluid carries it in time).** With the fluid far field, the half-maximum arrival is within 25% of the
+  referee's. *Killed* if not.
+- **P36 (diffusion cannot).** With the diffusion far field, the largest rise within 12 s is less than a quarter of the
+  referee's. *Killed* if not.
+- **P37 (the fluid keeps the books).** With the fluid far field, the world's count, momentum and energy hold over every
+  run as in run 15 (1e-6, 1e-6, 1e-9 of itself). *Killed* if any run misses.
+- *Measured, not predicted:*
+  - the fluid far field's largest rise against the referee's (smeared by the coarse cell that holds the pulse and by
+    Rusanov's numerical diffusion; doubled for a moment where the wave meets the window's wall);
+  - the view's count against time in each.
