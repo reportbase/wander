@@ -3650,6 +3650,10 @@ from flat to upright is the same sweep, and each finger is the same address" (R3
 - **What the hand says.** The geometry is the hand, not the rings. Dividing v by h keeps the finger and drops the ring.
   The serial reader is the hand and its fingers; the parallel reader holds the rings (R78). Two rings on one finger,
   looking along it, show only the nearer: the ring behind is the backside. The hand hid nothing; the rings did.
+- **The far field's doublings are the fingers** (Tom, 10 October: "the far field logrithims are the fingers."). Past the
+  one corner the levels are logarithmic doublings (R188, R189), and they are addresses, laid before anything arrives: the
+  fingers. What lands on them is the rings. The fingers sit side by side on one hand, not one inside another: no depth,
+  no recursion. A pointer, not a construction.
 - **The situations, in the hand.**
   - *0:* no hand: nothing to point with and nothing pointed at.
   - *1 and 2:* the rings held whole, all at once, with no hand needed to reach them: the equation and the array, from
