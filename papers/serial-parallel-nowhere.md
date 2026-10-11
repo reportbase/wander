@@ -653,6 +653,13 @@ is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessi
   in-place lay the near field fills radius 0 to 1 and the whole far field the second unit, 1 to 2). (d) Past the corner the
   levels are that unit doubled, one doubling per binary choice of side (by (P2), the halving is the only subdivision the
   flip supplies, Proposition D.1), laid by (P3).
+  (e) The reader's own level is the unit circle, and the doubling is its radius becoming its diameter (Tom, 11 October:
+  "then the diameter of the unit circle is also 2. which is the diameter of the first octive, where the reader actually
+  exists."). The first level runs from home to the corner in every facing: radius 1, diameter 2, the near field at true
+  scale, where the reader is. The second level runs from the corner at 1 out to 2, so its outer edge lies at the first
+  level's diameter; level k ends at 2^k, the diameter of the circle of radius 2^(k−1). The 2 across the reader's own level
+  (two facings) and the 2 between levels (the next level outward) are the same 2, the corner's two sides. (This replaces,
+  for the reader's own level, §3.3's "octave 0 … from ½h to 2h", R172, already superseded by R188.)
 - *So:* the one act of choosing an H, any H, and setting V = H, gives the unit circle, its radius 1, its diameter 2 and the levels
   beyond it, with no number put in by hand.
 - *Escapes* (where the conclusion does not follow): a reader that keeps two independent breadths at once, choosing
@@ -5526,7 +5533,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 - **R187** (5 Oct, 12:40), over the proposed signal test of the central hypothesis: "no kill condiitons, just report the results. lets look at various synthetic signals so happens to the resurcsion." **Exploratory runs report their results as they fall, without registered predictions or kill conditions.** Synthetic signals, like shapes, are generated, not real-world data (the 26 Sep rule on planned real-world tests still applies to recordings).
 - **R188** (10 Oct, 18:38–18:43), over `wander/flight.html`: "I don't think there are corners in the far field. there is only one corner that splits far field from the near field, which is just the split between the first and second octive." / "also, there is no depth or recursion because we create the unit circle when we assign V to H." / "its plain doublings, ordinary math. but now we know why, its a consequence of setting V = H, which creates the unit circle." Supersedes R175 and R180; restores the 8 October reading of V = H (§2.1) over the 9 October corrections. §1, "The settled view, 10 October".
 - **R189** (10 Oct, 19:02–19:06), on R188's "left to rule": "v does not need V. v = [0,1]. h = [0,1], they are invariant." / "one circle. yes, the open question than disolves. its just logrithimic doublings. this paper does. not need to prove the logrithm, it is fundemental." One circle: its shape from the invariant fill levels, its unit from V = H. The central open question (the 2; Appendix D) dissolves. §1, "The settled view, 10 October".
-- **R190** (11 Oct, 04:44–04:46): "1 falls out of setting V = H." / "so the choice is to set V = H, not 1" / "thats a pretty solid proof, kind of a proof of necessity." / (04:49) "Why can't use reader choose is H? reader can actually choose H, any H is fine, he just needs to choose one." Proposition 1.2.
+- **R190** (11 Oct, 04:44–04:46): "1 falls out of setting V = H." / "so the choice is to set V = H, not 1" / "thats a pretty solid proof, kind of a proof of necessity." / (04:49) "Why can't use reader choose is H? reader can actually choose H, any H is fine, he just needs to choose one." / (04:53) "then the diameter of the unit circle is also 2. which is the diameter of the first octive, where the reader actually exists." Proposition 1.2.
 
 ## Appendix B. Demos and computations
 
