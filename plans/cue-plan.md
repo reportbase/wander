@@ -166,3 +166,28 @@ P8: not killed. ball–ball restitution 0.95 against 0.96 (within 0.03)
 - **What this run can and cannot say.** It tests the engine against laws as a careful open-source simulator states
   them, with their sources named. Two steps remain between that and the game as measured: the fits' own agreement with
   their data, and which of several published models a real table follows. Both need the papers' tables.
+
+### Run 2 (11 October 2026): prediction, written before it ran
+
+**The change.** The engine's grip between balls, the constant MU_B = 0.06, becomes the fit run 1 read:
+μ = 9.951×10⁻³ + 0.108·e^(−1.088·v_rel), v_rel the contact points' relative sliding speed in m/s, which the engine
+already computes in its own units (the slide (s, sv) it grips against) and converts at 0.0635 m/s per unit. Nothing
+else changes; `spinChecks` still turns the grip off for the textbook results.
+
+**Worked out before the run** (the closed form, as run 1's reference computes it, at the engine's restitution 0.96): a
+stun half-ball cut at the smoke test's speed (10 units/s, 0.64 m/s) meets the fit's grip 0.087, above the cap 0.084
+that stops the sliding, so it throws atan(0.084) = 4.8°, past the smoke test's bound of 4.5° (set when the grip was
+0.06). A full stun hit with the smoke test's right English (wy = 12) slides at 0.34 m/s, grip 0.084, where the cap
+binds again: about 4.5°, on the smoke test's bound.
+
+- **P9, the engine is the fit.** Its throws, read as in run 1 (`plans/cue/engine.mjs`), match the reference's closed
+  form within 0.15° at all 30 points (stun and rolling, three speeds, five cuts). *Killed* if any differs by 0.15° or
+  more.
+- **P10, the smoke test's throw bounds were the old constant's.** The cut throw at the smoke test's shot is 4.8 ± 0.2°
+  and the side-spin throw −4.5 ± 0.2°. *Killed* if either is outside. (If not killed, the smoke test's bounds move to
+  the fit's values with a margin, and say why.)
+- **P11, the textbook results are untouched.** `spinChecks`' results 2–4 (follow, stun, draw), which run with the grip
+  off, are the same to the last digit. *Killed* if any differs.
+- **P12, the challenges.** Every challenge is still missed as set up and solved by its reference shot. *Killed* if any
+  reference shot no longer solves it. (Uncertain: a degree of throw moves a pot over a few table lengths. If killed, the
+  challenge's reference shot is searched again on the new engine, as it was first found, and its par recomputed.)
