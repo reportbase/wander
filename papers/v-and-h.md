@@ -1,6 +1,6 @@
 # v and h: all the ideas in one place
 
-*Sep 24 2026; Oct 9 the case kept (the note below, §8n); brought up to date Sep 27 (new §8h, the open list and the names table) and Sep 28 (new §8i, from building Horizon Defender, Two Standpoints, Blind, Two Strips, Spotter, Landmarks, The Plane, Two Lines and The g Question, Own Time, Common Beat, The Unseen, The Back, Near Order, The Ladder, The Set, The Even Sky, Near Order Tilted and The Ladder in 3d, the rulings R83–R84, and five open items; earlier items are left as
+*Sep 24 2026; Oct 9 the case kept (the note below, §8n); Oct 10–11 one corner, one circle and Proposition 1.2 (new §8o, ⚠ **Oct 10**/**Oct 11** where they change items above); brought up to date Sep 27 (new §8h, the open list and the names table) and Sep 28 (new §8i, from building Horizon Defender, Two Standpoints, Blind, Two Strips, Spotter, Landmarks, The Plane, Two Lines and The g Question, Own Time, Common Beat, The Unseen, The Back, Near Order, The Ladder, The Set, The Even Sky, Near Order Tilted and The Ladder in 3d, the rulings R83–R84, and five open items; earlier items are left as
 they were, with ⚠ where Sep 27 changes them); and Oct 1 (new §8j: the five situations, the corner and the working horizon, arctan as the shortcut; ⚠ **Oct 1** where they change items above); and Oct 4 (new §8k: every octave a sweep, the level of detail, the ruling check, signs by situation, the three horizons, every octave its own corner, and the priority item on grain; ⚠ **Oct 4** where they change items above); and Oct 5 (new §8l: the lay and the retirement of "grain", breadth and depth as the gift of geometry, depth as the recursion, g as the expression of breadth, and the central assumption that h is the reader; ⚠ **Oct 5** where they change items above). Every idea in the corpus that is about v and h, gathered in one file, from the continuous observer
 outward. One idea per item; the source follows each. Nothing here is new. Items marked (record) are quoted from the
 session records of papers not in this folder; check them against the papers before citing. The Relation Space items
@@ -2371,7 +2371,7 @@ Neither half helps alone; together they cut the error by a factor of four, as in
      - The **near horizon** is the corner, and the working horizon is the same thing.
      - The octave edges are described without the word: where an octave's own reading starts at 0 and runs without end.
      - SPN was gone through accordingly.
-368. ⚠ **Oct 5: every sweep still has its own corner, but under R183 each doubling is a whole sweep with its corner at its middle, not a corner at every 4ⁿh (item 381).** **Every octave has its own corner** (R175; Oct 4, 05:01: "recursion is the same thing all the way down, so each sweep would have its own corner by definition.").
+368. ⚠ **Oct 10: superseded by R188, one corner (item 405).** ⚠ **Oct 5: every sweep still has its own corner, but under R183 each doubling is a whole sweep with its corner at its middle, not a corner at every 4ⁿh (item 381).** **Every octave has its own corner** (R175; Oct 4, 05:01: "recursion is the same thing all the way down, so each sweep would have its own corner by definition.").
      - This settles R167 against R172 in favour of R172.
      - Past the near horizon there is a corner at every 4ⁿh, with a front half (v in terms of the corner) and a back half (the corner in terms of v). The facing turns at every corner, which is every second doubling. For example, v = 3h reads v/(4h) = ¾, facing forward.
      - The doublings keep their places and counts.
@@ -2413,7 +2413,7 @@ Neither half helps alone; together they cut the error by a factor of four, as in
      - The view from nowhere is the x, y grid: breadth known, every place reached by an index, no home, corner or horizon. The uniform unit circle is the same view held as h relative to v.
      - The view from somewhere is the breadth–depth sweep, swept from home.
      - LIN measured one shape held both ways; OCC measured where they part, where depth folds.
-376. **Depth is the recursion** (R180; Oct 4, 20:07: "this is depth. its the recursion. and this demo shows how.", over *Launch from Somewhere*).
+376. ⚠ **Oct 10: superseded by R188, no depth or recursion (item 406).** **Depth is the recursion** (R180; Oct 4, 20:07: "this is depth. its the recursion. and this demo shows how.", over *Launch from Somewhere*).
      - Depth is how many sweeps sit inside one another: the count of nested sweeps between a reader and a thing. It is not a further axis.
      - The Tangent Bridge Theorem is the sweep of one octave ("this theorem draws lines for one active, not recursively for all octaves").
      - 20:32: "tvf is for breadth, as it stands, packing leaves tighter is not depth, its breadth." The theorem's "depth d" is breadth.
@@ -2517,10 +2517,14 @@ Neither half helps alone; together they cut the error by a factor of four, as in
     = h, which exacly what this demo shows. which is also the baseline from which depth is calcualted."). Over every facing
     the corner h = v is the circle s = 1 between near and far; it is the unit circle a shape's depth is its difference
     from. With the size divided out, depth in each direction is log₂ s(θ), levels past the corner (SPN §1).
+    ⚠ **Oct 10, later** (R188, item 406): the corner as the circle stands; the name "depth" is withdrawn (no depth, no
+    recursion). The count of levels off the corner stands.
 400. **The in-place lay has the inverse square's form** (Oct 10; Tom: "yes, #1"; ISQ, `plans/isq-plan.md`, run 1, all five
     not killed). Past the corner the lay is 2 − 1/s, proportion in h/v, so its room per unit s is 1/s², the flip's
     Jacobian. Reading s as d/Δ (the bridge, amounts): the lay places a thing at its angular size; its 1/s² is how fast
     that shrinks, light's 1/d² its square (SPN §1).
+    ⚠ **Oct 11** (R190, item 417): the in-place lay is reality drawn by length, the reader's own; the logarithm counts its
+    addresses. The form stands.
 401. **Standing on the outline is standing on a world** (Oct 10; HZN, `plans/hzn-plan.md`). From a place on a circle the
     readings are chords 2·sin φ: home is the horizon, read in proportion; the corner (the geometric mean) is the radius,
     30° below the horizon; on a ball, 2/e of it; rising by e radii moves the horizon to √(2e), half a level per
@@ -2535,6 +2539,66 @@ Neither half helps alone; together they cut the error by a factor of four, as in
 
 All in *Serial, Parallel and Nowhere* §1 and the opening warning; the rulings under review and the physics audit in
 `plans/vh-rulings-review.md` and `plans/physics-vh-audit.md`.
+
+## 8o. Oct 10–11: one corner, one circle, Proposition 1.2
+
+From the session at `flight.html` and after (SPN R188–R190, §1 "The settled view, 10 October" and Proposition 1.2). Where
+an item supersedes one above, a dated ⚠ note is added there.
+
+404. **Reality is perfect at home, gently distorted to the corner, accelerating past it** (Oct 10, Tom: "reality is perfect
+    represented at home, no distortion. away from home distortion of reality is gentle until the corner, and than
+    accerlating distortion until the horizon."; "two things are needed, assign V=H and swap v/h with h/v at the corner.").
+    Laying part of the world on the addresses looks like a Mercator map (Tom: "it will look like the mercator map"):
+    true at home, squeezed toward the edge (`flight.html`'s lay).
+405. **One corner** (R188; Tom: "I don't think there are corners in the far field. there is only one corner that splits far
+    field from the near field, which is just the split between the first and second octive."). The later splits are
+    level edges. Supersedes R175 (item 368).
+406. **No depth, no recursion** (R188; Tom: "there is no depth or recursion because we create the unit circle when we assign
+    V to H"; "its plain doublings, ordinary math."). The levels past the corner sit side by side. Supersedes R180.
+407. **One circle** (R189; Tom: "v does not need V. v = [0,1]. h = [0,1], they are invariant."; "one circle"). Its shape
+    from the fill levels, its unit from V = H.
+408. **The 2 dissolves; the logarithm is fundamental** (R189; Tom: "its just logrithimic doublings. this paper does. not
+    need to prove the logrithm, it is fundemental.").
+409. **The far field's doublings are the fingers** (Oct 10, Tom: "the far field logrithims are the fingers."): addresses,
+    laid side by side before anything arrives; what lands on them is the rings (SPN §4.3).
+410. **The choice is V = H, not 1** (R190; Tom: "1 falls out of setting V = H."; "so the choice is to set V = H, not 1").
+    The radius is H measured in H, H/H.
+411. **Any H, but one** (R190; Tom: "reader can actually choose H, any H is fine, he just needs to choose one."). Which H is
+    a convention; that there is exactly one is forced.
+412. **The relation forces the assignment** (R190; Tom: "its because of our intial assumption of a 2 party relation, and you
+    can't have a relation if both V and H are not assigned breadths."). Assigned is not known: v needs no V, but v must be
+    a share of something.
+413. **The reader lives in the circle its choice creates** (R190; Tom: "the reader exists in the unit circle that is created
+    by this chain of logic. His choice of H, forces he assignment of V."). In, not is: R127 stands; it reads the circle
+    as the fisheye.
+414. **The corner and the flip are forced by the cap; V = H puts the corner at equal amounts** (R190; Tom: "its v=h. not
+    V=H."; "V=H. forces v=h as the corner."). v fills to v = h, both full, and can go on only by h emptying. Equal
+    amounts fall at v/h = H/V in general, at v = h under V = H.
+415. **The diameter is 2, the reader's own level; the doubling is radius to diameter** (R190; Tom: "then the diameter of
+    the unit circle is also 2. which is the diameter of the first octive, where the reader actually exists."). Level k
+    ends at 2^k, the diameter of the circle before it.
+416. **The logarithm past the corner, derived** (R190; Tom: "so then logrightms are forced beyond the cornder."). With any H
+    allowed and no measure on a level, the room between far readings depends on their ratio alone; Cauchy's functional
+    equation leaves r = 1 + c·ln s (SPN Proposition 1.2 (g)).
+417. **Reality in 2H by length; the logarithm by count** (R190; Tom: "reality = 2H. You literally force by this chain of
+    logic to stuff reality into the 2nd H, because you were forced to assign V to H."; "same length, not addresses").
+    The near field fills the first H, the whole far field the second; the in-place lay (2 − 1/s) draws it by length,
+    the logarithmic lay (1 + ln s) the same addresses by count.
+418. **Two address spaces** (R190; Tom: "this chain of logic creates two address spaces, proportional and logrithmic around
+    the corner.").
+419. **The count is the level of detail** (R190; Tom: "the near field is proportional, but to know the proportion, we need to
+    know the number of things to divide the length by. but we could never actually know that number and its not needed.
+    Its just the LOD."). The geometry gives the forms; the LOD gives the count in both spaces.
+420. **H is a zoom, not an escape** (Oct 11; Tom: "why not just choose a very large H?", then "add this important insight to
+    the papers"; Claude's reasoning). A large H puts everything at true scale but spreads a finite level of detail so
+    thin that the reader's own scale falls into the first address; no H holds every scale; the best H puts the thing
+    read at the corner (GRN run 5).
+421. **No distortion costs the whole** (Oct 11, Tom's thought experiment of an AI that will not accept distortion; Claude's
+    reasoning). It can have no distortion, the whole universe, or finite addresses, but not all three: proportion holds
+    a sphere undistorted (a one-metre map of the observable universe needs about as many cells as it has atoms); many
+    homes approach the view from nowhere without standing in it; the logarithm holds all of it (about 88 doublings from a
+    metre to the observable edge). With no MAX_INT the logarithm moves into the integer: a count of n takes about log₂ n
+    digits, one per doubling.
 
 ## 9. Open
 
@@ -2565,7 +2629,7 @@ All in *Serial, Parallel and Nowhere* §1 and the opening warning; the rulings u
 - **Formal names for the sides** (item 363): unruled.
 - **The turn, demoted and needed**: the Cauchy needs counting laid on the turn (*One Reader* §9, item 11). *Evidence (items 193–194): the turn is what carries the affine and similarity rungs; readers passing only cross ratios, which do not depend on the turn, stop at the projective rung.*
 - ~~**PRIORITY: what "grain" is, and where the far horizon is**~~ **Ruled (R176): "grain" retired; the step, the ratio between rungs and the count; the far horizon is where the count of octaves runs out** (item 372).
-- ~~**One corner past the near horizon, or many**~~ **Ruled (R175): many; every octave has its own corner** (item 368).
+- ~~**One corner past the near horizon, or many**~~ **Ruled (R175): many; every octave has its own corner** (item 368). ⚠ **Oct 10: superseded by R188: one corner** (item 405).
 - ~~**R149, the front side**~~ **Resolved (R176): proportion to the corner, octaves past it** (item 372).
 - ~~**A bounded sweep against carrying**~~ **Run (CAR): R176's lay held every prediction** (item 372).
 - ~~**Consequence 3 of the central assumption**~~ **Tested (C3): within its own sweep a reader needs nothing from above; to place its reading in its parent's world it needs its home and one bit, its facing (R161). A wrong bit costs up to 0.17 of the octave** (item 379).
@@ -2576,7 +2640,7 @@ All in *Serial, Parallel and Nowhere* §1 and the opening warning; the rulings u
 - ~~**Which octaves a reader enters**~~ **Ruled: Tom, 5 Oct 05:04: "it should not matter."** Every octave is the same sweep, so the choice of which to enter is not part of the geometry. (Was: item 384: Tom answered "no" to both rules offered (every octave to a fixed level; only where the parent misses); DTL used the chain holding a point looked at, flagged as Claude's choice.)
 - ~~**"depth must only be a 3d concept"** (Tom, Oct 4, 12:14), against R177 and R180~~ **Set aside.** Tom, 5 Oct 05:02: "3d is normally how people talk about these things, but observation is not dimensional, it is sweeps. don't worry about the 3d comments, they are not helpful." Depth is the recursion of the sweep (R180).
 
-- **What fixes a reader's ratio between rungs** (6 Oct; the audit of SPN Part I, `plans/part-one-audit.md`; Claude's reading, unruled). The central assumption's derivation (h the front half, the octave 2h) holds for an octave of any ratio: the corner is mid-octave for 2, 3, φ and 10 alike. So "the corner divides the octave in half" is proved on R162, and "the ratio is 2" is not derived (SPN §3.3: "the doubling is the reader's ratio between rungs, not the geometry's"). Open: whether the reader's choice (*The Radix*), the step of its lay (R176), or the world's payloads (SPN Corollary 3.9) fix it. HRT (6 Oct) did not reach it; the 3d bench found the best ratio following the scene (items 389–391).
+- ~~**What fixes a reader's ratio between rungs**~~ **Dissolved (R189, item 408); its reason, SPN Proposition 1.2 (R190, items 410–416).** (6 Oct; the audit of SPN Part I, `plans/part-one-audit.md`; Claude's reading, unruled). The central assumption's derivation (h the front half, the octave 2h) holds for an octave of any ratio: the corner is mid-octave for 2, 3, φ and 10 alike. So "the corner divides the octave in half" is proved on R162, and "the ratio is 2" is not derived (SPN §3.3: "the doubling is the reader's ratio between rungs, not the geometry's"). Open: whether the reader's choice (*The Radix*), the step of its lay (R176), or the world's payloads (SPN Corollary 3.9) fix it. HRT (6 Oct) did not reach it; the 3d bench found the best ratio following the scene (items 389–391).
 
 ---
 
@@ -2604,7 +2668,7 @@ to keep is Tom's to rule.*
 | the reader that divides | holds v/h; sweeps left and right (R79); ⚠ Oct 5: "the fisheye is just another term for the sweep" | serial (the name to use, R45); inside (dropped); serial; Cauchy; fisheye; the unit rule; the flashlight; ~~pointing~~ (withdrawn Sep 25: a reader can't point) |
 | the reader that does not | keeps magnitudes; sweeps forward, the depth (R79) | parallel (the name to use, R45); outside (dropped); parallel; arcsine; Chebyshev; reverse fisheye (provisional); the kept frame; counting |
 | the reader with no limits | holds v and h with size | the view from nowhere (Sep 25; formerly the view from everywhere, god's eye); classical; the writer |
-| the depth | ⚠ Oct 5: the count of nested sweeps (R180); g is how much breadth is expressed (R182), not the depth | g (proposed Sep 27; withdrawn as depth by R182); the expression; ~~the density~~ (dropped, R124); the grain (proposed Sep 19); the forward sweep (R79) |
+| the depth | ⚠ Oct 10: withdrawn, no depth or recursion (R188, item 406). ⚠ Oct 5: the count of nested sweeps (R180); g is how much breadth is expressed (R182), not the depth | g (proposed Sep 27; withdrawn as depth by R182); the expression; ~~the density~~ (dropped, R124); the grain (proposed Sep 19); the forward sweep (R79) |
 | the situations | what the reader knows of h's and v's breadths | situations 1–5 (R137, R151): the circle, every other shape, the fisheye, impossible, v approximately known |
 | the front side | home to the corner, v/h < 1 | the front side; **the working horizon** (R149); the proportional side; proper fractions (item 363) |
 | the back side | past the corner, v/h > 1 | the back side; the logarithmic side; the doublings; improper fractions (item 363); ⚠ *The Unit Rule* §7 uses "back side" for the directions behind the reader |
