@@ -94,6 +94,13 @@ of v. A reader *is* H, its own breadth. h is not the reader but the reader's sid
 | 3 | known | not known | a parallel reader: one hemisphere taken in at once |
 | 4 | known | not known | a serial reader: one point at a time |
 
+**The core claim: three vantages** [ruled, R191]. Classical mathematics and physics assume a completed perspective,
+best known as the equation or the drawing on the page. There are three vantages: the completed one (situations 1 and 2),
+the outer hemisphere (situation 3, parallel) and the inner hemisphere (situation 4, serial). Each has its own geometry:
+the circle, the bell, and the fisheye (the Cauchy). They are easily conflated, and many paradoxes come from reading one
+vantage's geometry as another's. Those collected so far, each marked by its standing and by what was already known, are
+in the working paper `vantages.md`.
+
 Situations 1 and 2 are the *view from nowhere*, the classical setting with all breadths in hand. They name a state of
 knowledge, not a place anyone stands. Situations 3 and 4 are the *view from somewhere* and are what this paper is about.
 Neither the serial nor the parallel reader knows how many things there are (N), and both meet horizons.

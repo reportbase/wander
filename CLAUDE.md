@@ -159,6 +159,10 @@ Google Fonts load from outside:
   reviewers. It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
   Its first external evaluation and the changes it led to are in `plans/ofs-review-1.md` (V = H as representation; the
   Euclidean norm, the premise (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on).
+  `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
+  perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
+  those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry
+  with its vantages, the reading, what was already known, and its standing (worked / reading / candidate). It grows.
   The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.
