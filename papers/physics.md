@@ -7,7 +7,7 @@ before its run. A result goes into SPN only once it has been tested and ruled.*
 
 **What this paper is for** (Tom, 10 October: "wanderer priority was user experience, not physics. the physics then
 became unexpextedly interesting. we should do the correct physics testing, UI is secondary or even not needed"). SPN is
-geometry: fill levels, the sweep, the corner, the levels. Physics is amounts: distances, sizes, light, radii. This paper
+geometry: unit relations, the sweep, the corner, the levels. Physics is amounts: distances, sizes, light, radii. This paper
 collects where the two meet, and tests each meeting on real measurements or on exact arithmetic. The flying page and its
 bodies are pictures. They are never evidence here.
 
@@ -61,7 +61,7 @@ levels (MAG, GCN) and where its geometry meets the law's edges: the near field (
   *is* so.
 - **Prediction first, from the theory alone.** The plan is committed before the data is opened for anything but its
   column names. A killed prediction stays killed, and a fix is a new run with its own prediction.
-- **Keep the case, and name the bridge.** h and v are fill levels, scale-free: geometry. H, V, d, Δ, L and R are
+- **Keep the case, and name the bridge.** h and v are unit relations, scale-free: geometry. H, V, d, Δ, L and R are
   amounts: physics. A result crosses from one to the other only by a named bridge, an amount supplied from outside: a
   size, a radius, a kind (SPN Part II).
 - **Data.** Each dataset's source, licence and sha256 go in its plan, and large data is not committed. In this
@@ -144,7 +144,7 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   - skipping a contact with a ball j levels smaller (radius halved per level) leaves out (1 + e)/(1 + 8^j) of the
     closing speed (run 7).
 
-  These are classical mechanics of hard balls, read in fill levels. They are not new physics; what they give is the
+  These are classical mechanics of hard balls, read in unit relations. They are not new physics; what they give is the
   count of levels, which the situated reader can use directly (a preview about three contacts deep on an open table).
 
 ### 2.3 In Wander's world (illustration, not evidence)
