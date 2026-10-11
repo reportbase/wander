@@ -15,7 +15,7 @@ a question about the payload asked of addresses, not a census the horizon withho
 remove the physical correspondance … This is a geometry paper") the physics taken out: the bridges, the inverse
 square, the near field of a source, standing on a world, the matter fraction and the physics kills. They are kept in
 `physics.md`, `inverse-square.md` and SPN Part II. And the hand, the working papers' picture of addresses and payload,
-given in full (§1, §5).*
+given in full, with the other pictures of the same split (§1, §4, §5).*
 
 ---
 
@@ -174,7 +174,8 @@ Neither the serial nor the parallel reader knows how many things there are (N), 
 
 **Terms used throughout.**
 - *Situated*: holding one breadth (H) and not the other's (V); situations 3 and 4.
-- *Address*: a place in the reader's layout where a reading can be put, laid before anything arrives.
+- *Address*: a place in the reader's layout where a reading can be put. The range of addresses is the geometry's,
+  known whole before anything arrives; an address is taken from it when a payload arrives (R155, R177).
 - *Payload*: what arrives at an address.
 - *The hand*: the working papers' picture of the two, used throughout: the fingers are addresses, the rings on them
   the payload (below).
@@ -228,6 +229,29 @@ reading or address of its own, but it can be what lies along another reader's ad
 in its own unit, which the first reader does not share; a shared fact buys the ratio of the two units and nothing
 more (§7). So reader and world are roles in a relation, not kinds of thing: a reader is the pivot of its own
 addressing, and a payload, evaluated on demand, in another's.
+
+**Other pictures of the same split** [each as marked].
+- *The circle is an addressing scheme* [ruled, R97]. "They are just an addressing schemes that you can lay any system
+  of any size onto them" (the author, 29 September, of the unit circle and sphere). A system is laid onto the circle,
+  never read out of it; the circle has no size of its own and no count of things.
+- *The unit line and the number line* [reading; SPN §2.1]. The unit line is the sweep itself, bounded and known, from
+  home to the horizon. The number line is the unknown system laid on it: 0 at home, 1 at the corner, its unbounded end
+  toward the horizon, the two sides of 1 the flip. The unit line is the address space and the number line is what is
+  addressed: the addressing laid first, the magnitudes the world's.
+- *Division makes addresses* [reading; the author, 7 October: "the address created by the division points to the
+  payload"]. Dividing by H removes the scale; what is left, v/h, is an address, a place on the sweep, the same at any
+  scale. At each address the world returns what is there. So the division loses nothing that is there: it turns it
+  into addresses, and the payload at each address returns it. Only the scale does not come back, since no address
+  holds it (§7).
+- *A relay is an address whose payload is another address; a record is payload kept* [reading; SPN §10.1]. An address
+  that meets a mirror goes on, a live relay that holds nothing of its own. An address that meets a painting of exactly
+  what the mirror showed stops there, a stored relay: from the painter's standpoint the two are the same, address for
+  address, and they part as soon as the reader moves.
+- *The end of the universe has an address* [reading; SPN §3.3, "The endless track"]. Stand between straight rails and
+  read each tie as half the gauge over its distance; the pair is (half-gauge, distance), named so its corner is not
+  confused with any other. With ties 0.6 apart and half the gauge 0.7, every tie past the first reads below 1: infinitely many ties, all between that pair's corner
+  and home, and the end of the track, however far, has an address, home, which no tie reaches. However long the track,
+  the addresses for it are bounded.
 
 ---
 
@@ -451,6 +475,22 @@ read in terms of h. Past it they are logarithmic: the far field, h read in terms
 addresses. The corner is where one gives way to the other, with no kink. Neither space is chosen: the cap forces the
 corner and the flip, and no preferred rung forces the logarithm.
 
+*A familiar instance: the floating-point number* [ruled, R176: "the approach that mirrors the floating point standard
+is the most likely"; SPN §3.3]. A float lays its addresses the same way. The exponent counts levels and the
+significand is a plain share within the level, even within each doubling and doubling between; below the smallest
+normal number the subnormals (gradual underflow) lay one stretch in plain proportion from zero. The count of levels
+plus the share within the current one is the logarithm laid straight between level edges: exact at every edge, never
+more than 0.086 of a level from the smooth logarithm. (A float has levels on both sides of 1 and a floor, where the
+reader has proportion inside the corner and no floor; and a float reads the share as v/h on both sides, not h/v past
+the corner, so it is not fair to both facings in the sense of R162.)
+
+*The proportion is in the addresses, not in the payload* [exact; SPN §3.3]. Within each doubling past the corner the
+share h/v has even addresses; how evenly payloads fill them is the world's. With directions spread evenly (Proposition
+5), the share has density in proportion to 1/(1 + (h/v)²), as v/h has before the corner (the flip of a Cauchy reading
+is a Cauchy reading). So the fill falls toward the corner by 1.6 to 1 across the first doubling past it, 1.18 across
+the second and 1.05 across the third, and the doublings farther out fill almost evenly. That unevenness is the
+payload's spread, not the addresses'.
+
 **One corner, plain doublings** [ruled, R188–R189]. "One corner" means one corner intrinsic to the relation, the one
 fixed point of the flip; it does not rule out other thresholds a particular reader's layout might have. There is only
 one such corner, the split between the first level (home
@@ -544,11 +584,24 @@ rays" (*The Cauchy*, 22 August, §11, an earlier paper of the author's quoted in
   what" (*The Cauchy*, §14d). What is at the addresses comes only from rings held beside them, from outside the
   geometry (§7).
 - *Three breadths.* The same hand in space: the fingers fill the solid wedge of three breadths, and spread evenly they
-  give the two-variable Cauchy, density proportional to (1 + |x|²)^(−3/2), on one wedge (SPN §5.1).
+  give the two-variable Cauchy, density proportional to (1 + |x|²)^(−3/2), on one wedge (SPN §5.1). There the corner
+  is no longer the median: only 1 − 1/√2 ≈ 0.29 of the addresses lie within it, and the median |x| is √3 (SPN
+  Proposition 5.1, proved). The median is still an address, a finger, but not the corner's.
 
-**Where it holds** [open beyond it]. Proposition 6(a) takes the payload to be something met along one ray, a value at
-an address. Occlusion and contact use more than that: that the sweep is a straight line and the payload is the first
-thing it meets (SPN §4.3, "The boundary"). For those, the addressing results are untested.
+**The Cauchy is the circle opened** [ruled, R144, R145; corrected 9 October]. "So the cauchy is just the unrolled scale
+free version of the shape with the addresses pointing back to the rolled up scaled version of the shape" (the author,
+1 October). The sweep opens a closed shape out, home at the middle of the opening, the two ends running without end on
+each facing. Opening divides out the size, so the opened line holds only ratios, and each place on it is an address
+pointing back to a point of the closed shape, which keeps its size. Laid evenly by direction, every shape opens into
+the same fisheye and the same Cauchy; the shape is only in what arrives at each address, a breadth per direction (SPN
+§2.4, tested on 73 shapes). So the addresses are universal, and the shape is payload.
+
+**Where it holds** [the condition stated; open beyond it]. Proposition 6(a) takes the payload to be something met
+along one ray, a value at an address. The addresses with their payloads give back a shape one-to-one, up to its size,
+exactly when the shape is star-shaped from the standpoint: each direction meets the outline once (SPN §14, burden 2).
+Where it is not, a direction meets the outline more than once, and the sides behind are hidden: the rings on one finger
+of §1. Occlusion and contact use more than a value at an address: that the sweep is a straight line and the payload is
+the first thing it meets (SPN §4.3, "The boundary"). For those, the addressing results are untested.
 
 **Situated is the Cauchy; unsituated is the circle** [derived as stated; the reading is ruled]. Unsituated, nobody
 stands anywhere: the bar is held whole, all four facings at once, and its end traces h² + v² = 1. Every point is like
@@ -802,11 +855,11 @@ three parts of the one group of the ratio.
 
 | here | working papers | plans and pages |
 |---|---|---|
-| §1 | SPN §1 ("What a sweep is"), §2.1, §4.3 (the hand; payloads on demand, R171), R91; `number-line.md` Background, §8 | — |
+| §1 | SPN §1 ("What a sweep is"), §2.1 (the unit line), §3.3 (the endless track), §4.2–§4.3 (R155, R177; the hand; payloads on demand, R171), §10.1 (relays), R91, R97; `number-line.md` Background, §8 | — |
 | §2 | SPN §1 ("The line, the arc and the facing"), Propositions 3.1–3.3, R162 | `facing.html` |
 | §3 | SPN Proposition 1.2 (a)–(f), Appendix D (D.1), R188–R190; `v-and-h.md` §8o | `levels.html`, `sphere.html` |
-| §4 | SPN Proposition 1.2 (g), "Reality in 2H", "Two address spaces" | `levels.html` |
-| §5 | SPN Proposition 1.2, "The Cauchy and the fisheye, derived" (1)–(7); SPN §4.3, "The Cauchy consists of addresses, not payloads", R47, R200; §14 burdens; `number-line.md` §8; `v-and-h.md` 423–424; archived *Reader Geometry as Addressing* §7.5 (Proposition 14) | — |
+| §4 | SPN Proposition 1.2 (g), "Reality in 2H", "Two address spaces"; §3.3 (the float, R176; proportion in the addresses) | `levels.html` |
+| §5 | SPN Proposition 1.2, "The Cauchy and the fisheye, derived" (1)–(7); SPN §4.3, "The Cauchy consists of addresses, not payloads", R47, R200; §14 burdens; `number-line.md` §8; `v-and-h.md` 423–424; SPN §2.4 (R144, R145), Proposition 5.1, §14 burden 2; archived *Reader Geometry as Addressing* §7.5 (Proposition 14) | — |
 | §6 | SPN Proposition 1.2 ("The count", "H is a zoom"), §3.3; `number-line.md` §5 | `grn-plan.md` |
 | §7 | SPN §1 ("Powerless in one observation"); `denominator-paradox.md` | `tgt-plan.md` |
 | §8 | SPN Appendix C | the plans named |
