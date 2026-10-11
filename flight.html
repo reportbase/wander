@@ -14,7 +14,7 @@ so the corner, the ground line h = v, sits on the same screen row at every heigh
 reading folded at the corner: home to corner as h/v (equal ground steps, equal ticks), corner onward as v/h (they crowd;
 2v, 4v, 8v each take half the room of the last).
 
-LOD (the chip, or L): none, 10 m everywhere; by metres, the engine's way, spacing doubling at 500 m, 1 km, 2 km ...;
+LOD (set by ?lod=; the chips were removed at Tom's "remove the buttons in the upper left"): none, 10 m everywhere; by metres, the engine's way, spacing doubling at 500 m, 1 km, 2 km ...;
 by v/h, levels split at v, 2v, 4v ...: the first from home to the corner, the second from the corner to 2v, each after
 twice as long with twice the grain (v/8 in the first two), so every level holds 8 lines. There is one corner, the split
 between the first level and the second (Tom, superseding "each Level has its own corner": "I don't think there are corners
@@ -44,7 +44,7 @@ laptop screen; there a one-pixel difference places it badly, and past it only th
 resolution limit, a pair of amounts (the travel and the pixel), physics; inside a few v the places come back to within
 about ten per cent.
 Drag up or down (touch or mouse), wheel or arrow keys to change v.
-The strip chip (or F) unfolds it (Tom: "what happens if we don't flip at the corner?"): h/v all the way keeps the near
+The strip (set by ?strip=) unfolds it (Tom: "what happens if we don't flip at the corner?"): h/v all the way keeps the near
 side and runs off the top past 2v (the far field never reaches v/h = 0: the uniform grid); v/h all the way keeps the far
 side and runs off the bottom inside v/2 (home never reached: the level main view). Folded, both ends are held.
 Links: ?v=  ?lod=none|metres|vh  ?strip=folded|h/v|v/h  ?still=1. Test hook: window.__flight (recoverAt).
@@ -67,27 +67,15 @@ Links: ?v=  ?lod=none|metres|vh  ?strip=folded|h/v|v/h  ?still=1. Test hook: win
     font-variant-numeric: tabular-nums;
   }
   #read b { color: var(--corner); font-weight: 500; }
-  #lod, #flip {
-    position: fixed; left: 16px; top: calc(14px + env(safe-area-inset-top, 0px));
-    font: 13px/1 var(--mono); color: var(--ink); background: transparent;
-    border: 1px solid rgba(159,176,187,0.45); border-radius: 4px;
-    padding: 9px 12px; cursor: pointer; touch-action: manipulation;
-  }
-  #flip { top: calc(58px + env(safe-area-inset-top, 0px)); }
-  #lod:focus-visible, #flip:focus-visible { outline: 2px solid var(--corner); outline-offset: 2px; }
 </style>
 
 <canvas id="c" aria-label="Wireframe ground seen from a plane in level flight"></canvas>
-<button id="lod" type="button">LOD</button>
-<button id="flip" type="button">strip</button>
 <div id="read"></div>
 
 <script>
 const cv = document.getElementById('c');
 const g = cv.getContext('2d');
 const read = document.getElementById('read');
-const lodBtn = document.getElementById('lod');
-const flipBtn = document.getElementById('flip');
 
 const S = 10;          // finest ground grid spacing, metres
 const FAR = 20000;     // where the ground stops being drawn, metres
@@ -362,16 +350,10 @@ function frame(now) {
 requestAnimationFrame(frame);
 
 // LOD: tap or click the chip, or press L
-function cycle() { mode = (mode + 1) % 3; lodBtn.textContent = 'LOD: ' + MODES[mode]; }
-lodBtn.addEventListener('click', cycle);
-lodBtn.textContent = 'LOD: ' + MODES[mode];
-function cycleFlip() { flip = (flip + 1) % 3; flipBtn.textContent = 'strip: ' + FLIPS[flip]; }
-flipBtn.addEventListener('click', cycleFlip);
-flipBtn.textContent = 'strip: ' + FLIPS[flip];
 
 // test hook: rows on the screen are fractions of its height, so they compare across sizes
 window.__flight = {
-  set(h, m) { v = h; mode = ['none', 'metres', 'vh'].indexOf(m); lodBtn.textContent = 'LOD: ' + MODES[mode]; },
+  set(h, m) { v = h; mode = ['none', 'metres', 'vh'].indexOf(m); },
   cornerRow: () => py(v) / H,
   edgeRows: () => bands().filter(b => b.a > 0 && b.a < FAR).map(b => py(b.a) / H),
   // a point hv ahead, xv across, yv up (all in v), read from now and from one v back, each reading to `grain` steps per
@@ -403,8 +385,6 @@ cv.addEventListener('wheel', e => { e.preventDefault(); v = clamp(v * Math.exp(-
 window.addEventListener('keydown', e => {
   if (e.key === 'ArrowUp') v = clamp(v * 1.1);
   if (e.key === 'ArrowDown') v = clamp(v / 1.1);
-  if (e.key === 'l' || e.key === 'L') cycle();
-  if (e.key === 'f' || e.key === 'F') cycleFlip();
 });
 </script>
 
