@@ -2608,6 +2608,13 @@ an item supersedes one above, a dated ⚠ note is added there.
     gives 1/(1 + (v/h)²), the Cauchy (2/π over one facing, 1/π over two signed), the corner its median and the flip its
     symmetry. Placing each reading at its turn step gives the fisheye. The same addresses by length are the in-place lay,
     by count the logarithmic lay; the turn is the weight, still a choice (SPN Proposition 1.2).
+424. **Situated is the Cauchy, unsituated is the circle** (R190; Tom: "so situated geometry is cauchy, unsituated geometry is the circle"; then
+    "yes, although that same constraint applices to the circle, it is uniformity itself."). Unsituated, the bar is held whole, all four facings, h² + v² = 1, every point
+    alike: no home, no corner set apart, no horizon (the view from nowhere). Situated, one reader at home sweeps one facing
+    and reads v/h: the Cauchy counted, the fisheye drawn; home, corner and horizon come with the standpoint. One bar under
+    V = H, held whole or swept from home. The even turn in 423 is not a weight added for the Cauchy: it is the circle's
+    uniformity, so one choice, uniformity, stands behind both. The Cauchy has no mean: from inside, a reading at every
+    distance and no census (SPN Proposition 1.2, (7); §14).
 
 ## 9. Open
 
