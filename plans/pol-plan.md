@@ -906,3 +906,83 @@ near head-on, fast pairs still read 7% low, because one tick is about a tenth of
   low, because the tick is a tenth of their time to contact. Time has a grain, as space does: run 4 found the same for
   lateness, which mattered once it passed about one tick. A reader that ranges by looming must look more often than its
   nearest τ.
+
+### Run 11 (11 October 2026): prediction, written before it ran (Tom: "we could scale it up to infinite number of balls, but then zoom in to just see a small percentage of them, and only have to draw or calcualate the visible balls"; "yes")
+
+Can a reader hold a world of any size and compute only what it can see? Runs 5–7 and 10 found that a reader may ignore
+balls far below its own size, and that a ball's level alone tells it which. Distance trades one for one with size in
+levels (run 5), so the same rule says: hold far balls as totals, not as balls. This run builds that and tests it against
+a referee that computes every ball.
+
+**The system (keep the case).** To keep a world alive without a driver we would have to choose, the table loses
+nothing: no cloth, no cushions, and contacts perfectly elastic (e = 1). The balls are then a gas of hard discs, whose
+equal-time statistics kinetic theory gives. The amounts: radius r = 0.45, area fraction φ = 0.15 (so the number density
+is n = φ/(πr²) = 0.2358 balls per unit area), each velocity component spread with σ = 5 units a second, mass 1, tick
+1/240 s. Contact is read from inside as before: each ball reads the other's v = r/d and is told h = r/d; equal balls touch
+at h = v = ½, the corner, found exactly within the tick (run 9's method).
+
+**The multiscale world.** The world is cut into world-fixed cells in dyadic levels: level 0 cells are 7.5 units wide,
+level k cells 7.5·2^k. Around the reader:
+- **The window:** a block of 6 × 6 level-0 cells (45 × 45 units) holds balls, one by one.
+- **The view:** the middle 30 × 30 units of the window, leaving a margin of 7.5 units, about three mean free paths
+  (λ = ⟨|u|⟩/ν = 2.58 units at the rates below).
+- **Everything else is totals:** each other cell holds its count, momentum and kinetic energy, and nothing else. A cell is
+  kept whole at the level where it reads at the corner from the reader, size/distance ≤ 1, and split while it reads
+  larger. So the number of cells grows with the log of the world's size, one ring of cells per level.
+- **The exchange:** a ball whose centre leaves the window is folded into the cell it enters (its count, momentum and
+  energy added there). Balls enter the window from each neighbouring level-0 cell at that cell's one-way flux across a
+  line, n·σ/√(2π) per unit length per second (exact for any fluid in equilibrium, since velocities do not depend on
+  positions there). An entering ball is placed on the window's edge, moving in, with the flux's velocities (inward
+  speed Rayleigh in σ, along the edge normal in σ, plus the cell's mean motion). Its count, momentum and energy are taken
+  from the cell. If the place is occupied, another place along the edge is tried (a named approximation: entering
+  balls avoid crowded spots of the edge; the margin is there to keep that from the view).
+- **The cells among themselves:** neighbouring cells exchange count, momentum and energy by diffusion with the gas's
+  kinetic coefficient D = λ⟨|u|⟩/2. This is a chosen model of the far field. It is not tested here: this run keeps the
+  world in equilibrium.
+- **Moving the reader** (panning or zooming) folds the window's cells that leave it into totals, and unfolds the cells
+  that enter it into balls: as many balls as the cell holds, placed at random without overlap, seeded by the cell's
+  place, with velocities from its σ shifted and scaled so that the balls carry exactly its momentum and energy. A
+  fraction of a ball left over stays with a neighbouring cell's totals.
+
+**The referee** computes every ball in a world of side L = 240 (32 × 32 level-0 cells, 13,581 balls), wrapped round at
+its edges so that it has no edge at all. Every run starts from a referee state warmed up for 3 s (about seven contacts
+a ball) from random placement. The multiscale world starts from the same state: the window's balls copied, everything
+outside summed into cells. Measures are taken every 0.05 s for 60 s: in the referee, in each of the 64 views of
+30 × 30 that tile its world; in the multiscale world, in its one view. Runs: 4 warmed states, 10 reader places each.
+
+**Worked out before writing this (kinetic theory of hard discs).**
+- **Contacts per ball per second** (Enskog, with Henderson's contact value of the pair distribution for discs,
+  g = (1 − 7φ/16)/(1 − φ)² = 1.2933): ν = n·(2r)·σ·√π·g = 2.432.
+- **Speeds:** Rayleigh in σ.
+- **The count in a view fluctuates** with variance over mean equal to S(0) = 1/(∂(βp)/∂n) for a large open region,
+  from Henderson's equation of state βp/n = (1 + φ²/8)/(1 − φ)². At φ = 0.15, S(0) = 0.530. A 30 × 30 square adds about
+  +0.015 at its edge (the excluded discs near it), and the finite world takes off its share (1 − 900/57,600). So
+  var/mean ≈ 0.54.
+- **A closed window keeps its own count**, so its view's count fluctuates less: by the share of the window the view is
+  not, 1 − 900/2025 = 0.56, so about 0.30.
+
+**The control.** The same multiscale windows, closed: a ball reaching the window's edge is turned back (a mirror), and
+nothing enters or leaves.
+
+- **P28 (the books balance).** Over every 60 s run, and over a pan of ten window widths and back, the world's totals
+  (the window's balls plus every cell) stay: the count within 1e-6, the momentum within 1e-6, the energy within 1e-9 of
+  itself. *Killed* if any run misses. This checks the folding and unfolding, not the idea.
+- **P29 (the engine is a gas of hard discs).** In the referee:
+  - contacts per ball per second within 5% of 2.432;
+  - the speeds' largest gap from Rayleigh (with σ read from the state's energy, σ² = E/N) below 0.01;
+  - the view count's var/mean in [0.49, 0.61].
+
+  *Killed* if any misses.
+- **P30 (the view sees the same gas).** Averaged over the 40 multiscale runs, the view's density, its kinetic energy per
+  ball and its contacts per ball per second are each within 3% of the referee's. *Killed* if any is not.
+- **P31 (open, not closed).** The multiscale view's count var/mean is within 15% of the referee's, and the closed
+  control's is at least 25% lower than the referee's. *Killed* if either fails.
+- **P32 (the work is set by the view).** The multiscale world's work per simulated second (balls moved, pairs looked at,
+  balls entering tried, cells updated) changes by less than 5% when the world grows from L = 240 to L = 3,840: 256 times
+  the balls, four more levels of cells. *Killed* if it changes by 5% or more.
+- *Measured, not predicted:*
+  - the referee's work from L = 240 to 480;
+  - the density across the window, from its edge inward: how far the entering balls' placement reaches;
+  - the level-0 cells next to the window: how far their density drifts;
+  - the view with no margin (a view as big as the window);
+  - the view's density and energy just after a pan, when its balls have just been unfolded.
