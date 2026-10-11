@@ -248,6 +248,51 @@ different geometric representation". Claude's reading, from SPN; unruled.*
   near the fovea; Gilinsky's perceived distance with a finite horizon.
 - *Standing*: **reading**.
 
+## F. The denominator family
+
+*From `papers/denominator-paradox.md` ("Each Sees the Other Smaller", a companion to an interactive demo; Tom shared it on
+11 October). It gathers eleven standard paradoxes under one diagnosis and states that none is resolved differently, only
+uniformly. This section maps that diagnosis onto the three vantages; the paper itself is the source for each entry.*
+
+**The diagnosis, in the vantages' terms.** "A denominator paradox is what you get when measurements made against
+different private rulers are compared as if they shared one ruler." Each private ruler is a situated reader's own H; the
+one ruler the measurements are silently put on is the completed view's single unit, the number line. So the denominator
+family is the vantage conflation in its plainest form: two situated readings written into the completed view without
+the bridge that would license it.
+
+**The two-part resolution, in the vantages' terms.**
+- *Dissolve*: keep each claim at its own vantage ("smaller than my ruler"). This is the catalogue's reading step.
+- *Purchase*: buy a shared denominator. Each of the paper's purchases is one of SPN's bridges: exchanging the reads is a
+  shared fact; reuniting the clocks brings two readers to one standpoint; standardising a patient mix or geometric-meaning
+  two baskets is an agreed unit (SPN §8.4: the unit is not geometric, and only agreement supplies it); closing a loop is
+  a third reader. The number line is legitimate as a ruler agreed between readers (`number-line.md`, "a shared ruler");
+  it is counterfeit when it is assumed instead.
+
+**The exchange is already worked in the corpus.** The paper's two reads are, in amounts, r_A = (S_B/S_A)·(d₀/d) and
+r_B = (S_A/S_B)·(d₀/d); their ratio gives the size ratio, √(r_A/r_B) = S_B/S_A, and their product the distance,
+√(r_A·r_B) = d₀/d. In `pool.html` each ball reads v = r_b/d of the other and is told the other's reading h = r_a/d: the
+exchange. Then v/h = r_b/r_a is the size ratio with the distance cancelled, and contact is h + v = 1 (`plans/pol-plan.md`,
+P1–P4, not killed: the game played from inside equals the referee's). Keep the case: r_A, r_B, S, d are amounts, and
+their corners are corners of named pairs.
+
+| | paradox | the claim that sounds absolute | its private denominator | the purchase | standing |
+|---|---|---|---|---|---|
+| F1 | each sees the other smaller (perspective) | "B is smaller than me" | my own apparent size | exchange the reads | **worked** (`pool.html`, POL) |
+| F2 | each sees the other's clock run slow | "B's clock is slow" | my own clock | exchange; reunite | **reading**; illustrated (SPN §9.9, CMV) |
+| F3 | the twin paradox | "who is older now?" | my own clock, and "now" across a distance | reunion at one event | **reading**, resting on special relativity |
+| F4 | the ladder and the barn | "it fits" | "at the same time" at two places: one frame's now | name which frame's now | **reading**, resting on special relativity |
+| F5 | Bell's spaceships | "identical accelerations" | the launch frame's simultaneity | re-certify in the ships' frames | **reading**, resting on special relativity |
+| F6 | Thomas precession | "every leg was unrotated" | one leg's frame | close the loop, read the residue | **reading** |
+| F7 | Simpson's paradox (kidney stones, Charig et al. 1986) | "B succeeds more overall" | each treatment's own patient mix | stratify, or one standard mix | **reading**, resting on the standard resolution |
+| F8 | the prosecutor's fallacy | "one in a million he is innocent" | P(evidence given innocence) for P(innocence given evidence) | Bayes, with the base rate | **reading**, resting on the standard resolution |
+| F9 | −50% then +50% | "back to even" | each percentage's own "of what" | keep the ratios as ratios | **reading** |
+| F10 | price indices (Fisher 1922) | "prices rose 8%" | each year's own basket | the geometric mean of the two | **reading**; the √ is the exchange's |
+| F11 | currency arbitrage | "each rate looks fine" | each pair's own ratio | a third party closing the loop | **reading** |
+
+*What the family adds to the catalogue.* A cleaner test of a vantage conflation: find the private denominator, and ask
+whether the comparison was bought or assumed. *What it does not add:* every entry already has its standard resolution;
+the claim is uniformity, as the paper itself says.
+
 ## E. Candidates, not yet examined
 
 Named because a vantage reading looks possible. Each needs its vantages shown in its own terms before it is moved up.
@@ -256,9 +301,6 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
 - **The moon illusion.** The moon looks larger near the horizon (Kaufman and Rock 1962), a perceptual paradox with no
   settled explanation.
 - **Monty Hall.** The host acts from a completed view of the doors; the player reads the act from its own.
-- **Simpson's paradox.** A trend in every group reverses in the total: the groups' readings against the completed
-  aggregate.
-- **The twin paradox.** Each twin reads the other's clock as slow; the resolution is in who changes frame.
 - **The liar and self-reference.** A reader reading itself (the corpus's "readers as payloads").
 - **Zeno's arrow.** Motion at an instant: the completed view's snapshot against the serial reader's arrivals.
 - **Quantum measurement.** Speculative, and flagged as such: whether the observer-dependence of quantum outcomes is a
@@ -271,6 +313,10 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
   (D1–D6), plus eight candidates.
 - 11 October, second: "From situated to completed: what memory and synthesis do", after a comment Tom shared: synthesis
   transforms (sweep to index), recovers the shape up to a scale, and leaves three gaps (scale, step, motion).
+- 11 October, third: the denominator family (§F), from `papers/denominator-paradox.md`, which Tom shared: eleven
+  paradoxes under one diagnosis, the private ruler as the reader's own H and the shared number line as the completed
+  view's unit; the exchange already worked in `pool.html`. Simpson's paradox and the twin paradox moved up from the
+  candidates.
 
 ## Sources
 
