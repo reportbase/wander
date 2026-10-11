@@ -49,6 +49,17 @@ The question: what share of the whole does one reading hold, and is it 1/π?
   clustering: D6's matter). On the lay, the addresses fill the whole disc; the payload sits at points on it.
 - *Ruling needed:* does that reading stand? If it does, condition (c) below (dark energy clusters) is a direct test of it:
   addresses cannot cluster.
+- **Worked both ways instead of ruled** (Tom, 10 October: "lets not rule, but try it both ways"). *Added before stage 2
+  was worked.* Two readings: **X**, the candidate above (matter the payload, dark energy the addresses), and **Y**, its
+  swap (matter the addresses, dark energy the payload). Each is held against what physics measures of the two, stated
+  here first, as settled behaviour, not numbers:
+  - **B1, clustering.** Matter clusters (galaxies, clusters, the cosmic web); dark energy shows no clustering.
+  - **B2, dilution.** Matter's amount per volume falls as the universe expands, as (1+z)³ back in time; dark energy's
+    stays constant (w = −1 within current errors).
+  - **B3, the same everywhere.** Dark energy is the same in every direction; matter is not.
+  - **B4, the share today.** Matter is the smaller share now, about a third; dark energy the larger.
+  - **B5, the share changes with epoch.** Measured back in time, matter's share grows (it dominated before z ≈ 0.3).
+  *Kill (a reading):* it contradicts any of B1–B3 outright. B4 and B5 are reported, since they bear on stage 3.
 
 ## Stage 3: the comparison with data (only after stages 1 and 2 stand)
 
@@ -93,3 +104,20 @@ falls out." So neither ruling was made; both weights and both readings of ψ₂ 
   today's terms, without the archived paper (not killed). With the in-place lay and one facing it is 0.323897, 1.8% above
   1/π: D6's number does not follow (killed for that weight). The quarter readings give half of each.
 - No data has been opened. Stage 2 (what matter and dark energy are on the lay) is not yet worked, so stage 3 is not run.
+
+**Stage 2, run 1 (10 October 2026; worked by argument, no data).**
+
+| | X: matter = payload, dark energy = addresses | Y: matter = addresses, dark energy = payload |
+|---|---|---|
+| **B1, clustering** | Payload is met at places, so it can gather; addresses are laid everywhere before any arrives, so they cannot. Consistent. | Addresses would have to cluster, and they are laid evenly before anything arrives. Contradicts. |
+| **B2, dilution** | Payload is in the world, so it thins as the world's volume grows. Addresses are the reader's, laid per observation; the world's growth does not thin them. Constant, as w = −1 needs. Consistent. | Addresses would have to thin with the world's volume, and they are not in the world. Contradicts. |
+| **B3, the same everywhere** | Addresses are the same in every facing. Consistent. | Payload would have to be the same in every direction. Contradicts. |
+| **B4, the share today** | Payload 1/π ≈ 0.32 under the turn and one facing (stage 1): the smaller share. Consistent. | — |
+| **B5, the share with epoch** | **Open, and sharp.** If the share is fixed per observation, every reader at its own home reads 1/π; but Friedmann's dilution, which D6 used for z_eq and z_acc, makes matter's share grow back in time, and a reader at z = 1 would read about 0.77. D6 applied 1/π only today. Why today is physics' "coincidence problem" (why the two shares are comparable now), a thing known but not understood. Under X it becomes a definite question: whether 1/π is every reader's own-epoch share, which Friedmann forbids, or only the share of a reader for whom the addresses span its whole past, which needs working out. | — |
+
+- **Y is killed** on B1, B2 and B3. **X is not killed** on B1–B3 and agrees with B4.
+- **B5 must be settled before stage 3:** X as it stands does not say whether the share belongs to every epoch's home or
+  to one reader's whole lay. Stage 3 compares one number today; it cannot settle B5, and agreement there would not.
+- **The arithmetic link, to be ruled:** stage 1's 1/π is the share of the bar that falls on h, the reader's own breadth,
+  in one facing. For X to carry that number, the payload must be what lands on the reader's h. That identification is
+  stated here, not shown.
