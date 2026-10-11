@@ -31,7 +31,9 @@ those papers only once it has been worked and ruled.*
 
 π/2 · 2/π = 1: the two situated readings, multiplied, give back the completed one. And the classical breadth needs both
 (Tom, R194: "the "classical" breadth is 1, it requieres knonw the inside and outside hemispheres in your hand."): it is not a third reading beside the other two, but what is held when both hemispheres are in
-hand at once. A reader holding one hemisphere has its own reading, π/2 or 2/π, and not the line's breadth. This is the 22 September "everywhere
+hand at once. A reader holding one hemisphere has its own reading, π/2 or 2/π, and not the line's breadth. And no reader
+can hold both (Tom, R195: "which you can't actually do, hense its the view from nowhere."): to have one hemisphere is to stand where the other is turned away or turned toward.
+The completed breadth is held from no standpoint, which is what "the view from nowhere" means. This is the 22 September "everywhere
 equation" (archived *The Order of Limits*: "The god's eye view is defined as π/2 · 2/π = 1"), now read as the three
 vantages. Each situated reading is right from its vantage; a paradox follows whenever either is quoted as the line's
 breadth. *Reading (Claude's, unruled):* this is the denominator family's exchange (§F) on one line: the product of the
@@ -84,8 +86,11 @@ different geometric representation". Claude's reading, from SPN; unruled.*
 - *Both hemispheres* (R194): the classical breadth needs "the inside and outside hemispheres in your hand". Memory
   joins one reader's readings across a turn; the completed view needs the two hemispheres, the one turned away and the
   one turned toward, held together.
-- *So:* the completed view is legitimate. It is what integration builds once the three gaps are filled. A paradox of
-  this catalogue is, typically, the completed view used as if the gaps were already filled.
+- *No reader holds it* (R195): no reader can hold both hemispheres at once, so the completed view is held from no
+  standpoint: the view from nowhere. Integration builds a representation of it, the equation or the drawing on the page,
+  and the page is not a reader.
+- *So:* the completed view is legitimate as a description, the equation or the drawing, and no reader occupies it. A
+  paradox of this catalogue is, typically, the completed view used as if some reader stood in it.
 
 ---
 
@@ -384,6 +389,8 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
   paradoxes under one diagnosis, the private ruler as the reader's own H and the shared number line as the completed
   view's unit; the exchange already worked in `pool.html`. Simpson's paradox and the twin paradox moved up from the
   candidates.
+- 11 October, seventh: no reader can hold both hemispheres, so the completed view is the view from nowhere (Tom; SPN
+  R195). "From situated to completed" corrected: the completed view is a description no reader occupies.
 - 11 October, sixth: the classical breadth needs both hemispheres in hand (Tom; SPN R194).
 - 11 October, fifth: one line, three readings (Tom; SPN R193): 1 completed, π/2 outer, 2/π inner, product 1. Archived
   papers defer to papers that are not archived (R192), which settles the three conflicts listed in `plans/archive-gems.md`.
