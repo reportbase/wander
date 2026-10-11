@@ -307,10 +307,10 @@ of a Circle*). A polygon inscribed in the circle falls short of it and one circu
 their sides from 6 to 96 squeezed π between 223/71 and 22/7. Both polygons need the circle in hand: the inscribed one's
 corners lie on it and the circumscribed one's sides touch it. His proof is the completed view, both sides held at once.
 
-The inner hemisphere's measure is his inscribed polygon exactly. An inscribed polygon of n sides has perimeter
-n·sin(π/n) against the circle's π (both for a diameter of 1), and with θ = π/n that ratio is sin θ/θ. So the quarter
-turn, 90°, is the polygon of 2 sides, 2/π; 45° is the square, 0.9003; and halving the turn is his doubling of the sides,
-each step bringing the reading about four times closer to 1:
+The inner hemisphere's measure equals his inscribed polygon in number. An inscribed polygon of n sides has perimeter
+n·sin(π/n) against the circle's π (both for a diameter of 1), and with θ = π/n that ratio is sin θ/θ. So the reading at
+the quarter turn, 90°, is the polygon of 2 sides, 2/π; at 45° it is the square, 0.9003; and halving the turn matches his
+doubling of the sides, each step bringing the reading about four times closer to 1:
 
 | sides | turn θ | inscribed, sin θ/θ | short of 1 by |
 |---|---|---|---|
@@ -319,12 +319,15 @@ each step bringing the reading about four times closer to 1:
 | 8 | 22.5° | 0.9745 | 0.0255 |
 | 16 | 11.25° | 0.9936 | 0.0064 |
 
-A situated reader cannot draw the outer polygon, because it does not hold the circle. It has only its own turn: the
-inner side. The other side reaches it through the flip instead, θ/sin θ = 1/(sin θ/θ), so it knows π/2 at the limb
-without standing outside, and π/2 · 2/π = 1 stands in for the circle it does not hold. (Archimedes' outer polygon goes
-as tan θ/θ rather than θ/sin θ; both lie above 1 and close on it at the same rate.) Archimedes squeezed π from both sides
-because he held the whole; a situated reader has the same number from one side and the flip. The convergence is
-ordinary geometry; what the vantages add is which reader holds which side.
+A situated reader draws neither polygon. Both need the circle in hand, and it does not hold the circle: the inscribed
+polygon's corners lie on the circle just as the outer polygon's sides touch it. What the reader has is its own turn,
+swept step by step from home. Its reading sin θ/θ is a reading of that turn, not a polygon laid on a circle; it equals
+the inscribed polygon's share in number, but the reader never holds the polygon. The outer side reaches it the same way,
+as a number, through the flip, θ/sin θ = 1/(sin θ/θ): so it knows π/2 at the limb without standing outside, and
+π/2 · 2/π = 1 stands in for the circle it does not hold. (Archimedes' outer polygon goes as tan θ/θ rather than
+θ/sin θ; both lie above 1 and close on it at the same rate.) Archimedes squeezed π between two polygons because he held
+the whole; a situated reader holds neither polygon and has the same numbers from its own turn and the flip. The
+convergence is ordinary geometry; what the vantages add is what each reader holds.
 
 **From the vantages to the view from nowhere.** The argument runs in seven steps, each resting on the one before.
 1. A line has a true breadth, 1. That is what the completed view reads.

@@ -1969,6 +1969,13 @@ own turn, counted in h, and it approaches the line, 1 (the corner), from below. 
 needs the circle in hand. The other side comes to it by the flip instead, since θ/sin θ = 1/(sin θ/θ): it knows the
 number π/2 without standing above the corner. π/2 · 2/π = 1 stands in for the circle it does not hold.
 
+*Corrected, 11 October* (R209; Tom: "situated reader does not hold the inner polygon either."): the situated reader draws
+neither polygon. The inscribed polygon's corners lie on the circle, so it too needs the circle in hand. "The inside
+measure, sin θ/θ, is his inscribed polygon exactly" holds in number only: sin θ/θ is the reader's reading of its own turn,
+equal to the inscribed polygon's share, not a polygon the reader holds; and "has only the side below" (above) is read the
+same way, a reading from below, not the inscribed polygon. Both sides reach the reader as numbers: the inner from its own
+turn, the outer by the flip. `observation-from-somewhere.md` §3.4 says so.
+
 **π/2 and 2/π, with 1 between them** (Tom, 6 October):
 
 > "parallel is pi/2 and serial is 2/PI. serial*parallel = 1. parallel 1.5, line = 1, serial = 0.633"
@@ -5884,6 +5891,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 - **R206** (11 Oct, about 13:55): "why did you include failed tests, they seem rather contrived." **`observation-from-somewhere.md` has no section of failed tests.** The tests it listed (number lines in people, a knee at one step across, steering by its own count, a ratio from nesting, a preferred step) test side claims, not the geometry; their record stays in their plans and in Appendix C here.
 - **R207** (11 Oct, about 13:58), to "should those come out too?" (the cost model on simulated readers and the grid-cell test): "remove all failed tests, they are in other papers." **`observation-from-somewhere.md` reports no tests**: the cost model (GRN runs 3–5) and the proposed grid-cell test (`plans/grd-plan.md`) are removed with the failed ones; they stay in their plans.
 - **R208** (11 Oct, about 14:10): "only if they are helpful to main arguments. dont just add tests just to add tests." / "we can add tests if they are specifically helpful to the core themes of the paper." **R207 refined: `observation-from-somewhere.md` may report a test where it specifically helps a core theme**; failed tests stay in their plans, and results that already have proofs need no checks.
+- **R209** (11 Oct, about 17:00): "situated reader does not hold the inner polygon either." **A situated reader draws neither of Archimedes' polygons**: both need the circle in hand. Its inner measure, sin θ/θ, equals the inscribed polygon's share in number and is a reading of its own turn; the outer side comes by the flip (§2.1, "The quarter turn is Archimedes' proof made situated", corrected).
 
 ## Appendix B. Demos and computations
 
