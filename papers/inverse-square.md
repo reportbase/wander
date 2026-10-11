@@ -16,6 +16,9 @@ the case and name the bridge. A result goes into SPN only once it has been teste
   and a translation into SPN's terms, with no claim of novelty.
 - 10 October, third: "The law in SPN's words, in brief" added (Tom: "so we could at least explain the inverse square law
   using our vocabulay?", then "yes"): eight steps, with conservation and the exponent named as the bridges from physics.
+- 11 October: SPN Proposition 1.2 (R190; Tom: "reality = 2H", "same length, not addresses"): the in-place lay is reality
+  drawn by length, the near field in the first H and the whole far field in the second, and it is the reader's own;
+  the logarithm counts its addresses, the same number per doubling. The lay's 1/s² form (ISQ) is the reader's.
 
 **Standing marks.** Each claim carries one:
 - **[physics]**: established outside this corpus, quoted;
@@ -221,6 +224,10 @@ These show the bookkeeping; they do not test it.
 ISQ (`plans/isq-plan.md`) [exact]:
 - Past the corner the in-place lay places a reading s at 2 − 1/s. Its room per unit s is 1/s², the flip's Jacobian
   exactly, and each level gets 2^−(k+1) of the room.
+- *Whose lay* (11 October; SPN Proposition 1.2, "Reality in 2H"). The in-place lay is reality drawn by length: the near
+  field in the first H, the whole far field in the second. It is the reader's own. Its room per unit s, 1/s², is room by
+  length; by address count each doubling gets the same number, the logarithm (Proposition 1.2 (g)), so the addresses
+  crowd toward the horizon. The law's form belongs to the length.
 - **Read with a bridge** [reading]. Read s as d/Δ, a distance in units of a size, the bridge being the size Δ. Then the
   lay places a thing at its angular size counted down from the horizon. Its 1/s² is how fast that angular size shrinks:
   an inverse square in one dimension. Light's inverse square is the angular size squared, the solid angle, in two.

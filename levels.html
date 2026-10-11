@@ -13,7 +13,14 @@
 
     Geometry only (keep the case: s = v/h, the relation; no H, V or distance in the drawing). The unit circle holds the
     near field, s from 0 (the centre, home) to 1 (its rim, the corner), laid in proportion: radius s. Past it each level is
-    one doubling of s (1 to 2, 2 to 4, …) and is laid in half the width of the one before: level k runs from radius
+    one doubling of s (1 to 2, 2 to 4, …).
+    The reader's lay (11 October; SPN Proposition 1.2 (g), Tom: "so then logrightms are forced beyond the cornder"; "update
+    levels.html"): past the corner a reading s sits at 1 + ln s, every level the same width, ln 2, with no horizon on the
+    lay; the page draws six levels and they go on. It is now the default: two address spaces, proportional inside the
+    corner and logarithmic past it (Tom: "this chain of logic creates two address spaces, proportional and logrithmic
+    around the corner"). The same addresses drawn by length are the first lay, kept at ?lay=inplace (Tom: "reality = 2H";
+    "same length, not addresses"): reality in two H's, the near field in the first and the far field in the second. It
+    gives each level half the width of the one before: level k runs from radius
     2 − 2^(−k) to 2 − 2^(−k−1), so a reading s ≥ 1 sits at 2 − 1/s (SPN's in-place lay, "2h in place": the far field
     nests in the back half, and the horizon, s → ∞, is the circle of radius 2, never reached). A ring is drawn while it is
     at least one grain wide; past that it cannot be seen, which is the resolution limit (physics: a ring's width against
@@ -27,6 +34,8 @@
     baseline from which depth is calcualted"): drawn over every facing the corner is the circle s = 1, and "divide out the
     size" moves the shape's middle (its geometric mean reading, s₀) onto it; what stands off the circle is the depth,
     log₂ s(θ) levels in each direction, outward past the corner and inward by the flip, shaded in two colours.
+    (*10 October, later*, SPN R188: "there is no depth or recursion"; the count of levels off the corner stands, its name
+    "depth" is withdrawn. The hook and link keep the old name.)
     Shapes from files (Tom, 10 October: "add the ablity load a tvf file. add a combo box let the user select the shape to
     display"): the combo box holds the built-in perturbed circle and the suns, planets, moons and asteroids in res/; "load a
     file…" reads a .tvf curve (the draw tool's format, draw.html parseTvfText: "TVF W H C" with C = 2, rows of x and y leaves
@@ -35,7 +44,7 @@
     a height h (½, the equator, by default), and its outline r(θ) becomes a reading s(θ) = s₀·(r(θ)/r̄)^k, r̄ its geometric
     mean and k the relief (×1 is the file as it is; the planets' relief is a few thousandths, so turn it up to see it cross
     levels). The broad form keeps m ≤ 3.
-    Links: ?g= (the grain in pixels), ?s= (a thing's reading), ?shape= (s₀), ?lod= (k), ?depth=1, ?body= (a name in res/),
+    Links: ?lay=inplace (the in-place lay), ?g= (the grain in pixels), ?s= (a thing's reading), ?shape= (s₀), ?lod= (k), ?depth=1, ?body= (a name in res/),
     ?relief=, ?cut= (h). Test hook: window.__levels.
     -->
     <style>
@@ -100,15 +109,17 @@
         </div>
         <div class="row" style="margin-top:6px">
             <button id="divide">divide out the size</button>
-            <span class="note">the corner is the baseline: what stands off it is depth</span>
+            <span class="note">the corner is the baseline: what stands off it is counted in levels from the corner</span>
         </div>
         <div style="margin-top:10px"><canvas id="cv" height="860"></canvas></div>
         <div id="hud"></div>
     </div>
-    <p class="note">The reading s = v/h is laid at radius s inside the circle and at 2 − 1/s past it (the unit circle has
-    radius 1), so a doubling past the corner always takes half the room the last one took and the edge, radius 2, is the
-    horizon. Coarsen the grain and the outer levels drop out one per doubling of the grain; how many show is about
-    log₂(radius ÷ grain). The shape wraps the circle and crosses the levels; the
+    <p class="note">The reading s = v/h is laid at radius s inside the circle and at 1 + ln s past it (the unit circle has
+    radius 1): the reader's lay, every doubling past the corner the same width, ln 2, and no edge; the drawing stops at six
+    levels, and they go on. The in-place lay, <a href="levels.html?lay=inplace">2 − 1/s</a>, gives each doubling half the
+    room of the last, with the horizon at radius 2: reality in two H's by length, the same addresses as this drawing,
+    which shows them by count (<i>Serial, Parallel and Nowhere</i>, Proposition 1.2, "Reality in 2H"). On it, coarsen the grain and the outer levels drop out one
+    per doubling of the grain, about log₂(radius ÷ grain) of them. The shape wraps the circle and crosses the levels; the
     gold dashed circle is your level of detail: inside it you hold the shape's bumps, past it only its broad form (faint
     dashes: what is there). Tap or drag on the picture to read a place. Behind it: <i>Serial, Parallel and Nowhere</i>, the
     level ("2h in place"; the next level nests in the back half). Other demos: <a href="facing.html">the facing</a>,
@@ -117,14 +128,23 @@
 <script>
 (() => {
     const $ = id => document.getElementById(id);
-    // where a reading s sits, as a share of the unit circle's radius: proportional up to the corner, then 2 − 1/s
-    const radius = s => s <= 1 ? Math.max(0, s) : 2 - 1 / s;
-    // the reading at a radius r (0 to 2)
-    const reading = r => r <= 1 ? Math.max(0, r) : (r >= 2 ? Infinity : 1 / (2 - r));
+    // The lay (11 October; SPN Proposition 1.2). By count (default): proportional up to the corner, then 1 + ln s, every
+    // doubling the same number of addresses, drawn ln 2 wide, with no edge. By length (?lay=inplace): 2 − 1/s, reality in
+    // two H's, each doubling half the length of the last, the horizon at radius 2. The same addresses, two drawings.
+    const LAY = new URLSearchParams(location.search).get('lay') === 'inplace' ? 'inplace' : 'log';
+    const LN2 = Math.LN2, KLOG = 6;                    // the reader's lay is drawn out to six levels past the corner
+    const EDGE = LAY === 'log' ? 1 + KLOG * LN2 : 2;   // the drawn edge, in units of the unit circle's radius
+    // where a reading s sits, as a share of the unit circle's radius
+    const radius = s => s <= 1 ? Math.max(0, s) : LAY === 'log' ? 1 + Math.log(s) : 2 - 1 / s;
+    // the reading at a radius r
+    const reading = r => r <= 1 ? Math.max(0, r) : LAY === 'log' ? Math.exp(r - 1) : (r >= 2 ? Infinity : 1 / (2 - r));
     // level k (k = 0: 1 to 2, k = 1: 2 to 4, …): its inner and outer radius and its width, as shares of R
-    const level = k => ({ k, from: 2 ** k, to: 2 ** (k + 1), inner: 2 - 2 ** -k, outer: 2 - 2 ** (-k - 1), width: 2 ** (-k - 1) });
-    // how many levels are at least one grain wide, for a unit circle R pixels across its radius
-    const visible = (R, grain) => { let n = 0; while (level(n).width * R >= grain && n < 60) n++; return n; };
+    const level = k => LAY === 'log'
+        ? { k, from: 2 ** k, to: 2 ** (k + 1), inner: 1 + k * LN2, outer: 1 + (k + 1) * LN2, width: LN2 }
+        : { k, from: 2 ** k, to: 2 ** (k + 1), inner: 2 - 2 ** -k, outer: 2 - 2 ** (-k - 1), width: 2 ** (-k - 1) };
+    // how many levels are drawn: on the reader's lay every level is the same width, so the drawn edge sets the count; on
+    // the in-place lay, those at least one grain wide
+    const visible = (R, grain) => { let n = 0; while (level(n).width * R >= grain && level(n).outer <= EDGE + 1e-9 && n < 60) n++; return n; };
 
     // the shape: a perturbed circle, its reading in each direction (log-perturbed, so it swings across levels evenly)
     const HARM = (() => { let x = 12345; const rnd = () => (x = (x * 1103515245 + 12345) % 2147483648) / 2147483648;
@@ -259,16 +279,17 @@
     }
     function geom() {
         const cv = $('cv'), w = cv.clientWidth, h = parseFloat(cv.style.height) || cv.clientHeight;
-        return { cx: w / 2, cy: h / 2, R: (Math.min(w, h) / 2 - 12) / 2 };
+        return { cx: w / 2, cy: h / 2, R: (Math.min(w, h) / 2 - 12) / EDGE };
     }
     function draw() {
         const [g, W, H, dpr] = fit($('cv')), grain = +$('grain').value, { cx, cy, R } = geom();
         $('gv').textContent = `${grain} px`;
         g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
-        // the horizon: radius 2, never reached
+        // the edge: on the in-place lay the horizon, radius 2, never reached; on the reader's lay only where the drawing
+        // stops, the levels going on past it
         g.strokeStyle = 'rgba(217,110,91,0.55)'; g.setLineDash([3, 5]); g.lineWidth = 1;
-        g.beginPath(); g.arc(cx, cy, 2 * R, 0, 2 * Math.PI); g.stroke(); g.setLineDash([]);
-        // the levels, each a doubling, each half the width of the last, while at least one grain wide
+        g.beginPath(); g.arc(cx, cy, EDGE * R, 0, 2 * Math.PI); g.stroke(); g.setLineDash([]);
+        // the levels, each a doubling: the same width on the reader's lay, half the last on the in-place lay
         const n = visible(R, grain);
         for (let k = n - 1; k >= 0; k--) {
             const L = level(k), t = k / Math.max(1, n - 1);
@@ -327,7 +348,7 @@
         // the legend, top left
         g.font = '11px DM Mono, monospace'; g.textBaseline = 'middle';
         [['#d4a052', [10, 6], 'your level of detail'], ['#e6e4ee', [], 'the shape as you hold it'], ['rgba(230,228,238,0.5)', [2, 3], 'the shape as it is'],
-         ['rgba(217,110,91,0.8)', [3, 5], 'the horizon (never reached)']].forEach(([col, dash, txt], i) => {
+         ['rgba(217,110,91,0.8)', [3, 5], LAY === 'log' ? 'the drawing stops; the levels go on' : 'the horizon (never reached)']].forEach(([col, dash, txt], i) => {
             const y = 14 + 16 * i; g.strokeStyle = col; g.lineWidth = 2; g.setLineDash(dash);
             g.beginPath(); g.moveTo(10, y); g.lineTo(34, y); g.stroke(); g.setLineDash([]); g.fillStyle = col; g.fillText(txt, 40, y); });
         g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(22, 14 + 64, 2.5, 0, 2 * Math.PI); g.fill(); g.fillText('crosses a ring edge', 40, 14 + 64);
@@ -360,7 +381,7 @@
     function pickAt(e) {
         const b = $('cv').getBoundingClientRect(), { cx, cy, R } = geom();
         const dx = e.clientX - b.left - cx, dy = e.clientY - b.top - cy, r = Math.hypot(dx, dy) / R;
-        pick = { r: Math.min(r, 2), s: reading(Math.min(r, 2)), th: Math.atan2(-dy, dx) }; draw();
+        pick = { r: Math.min(r, EDGE), s: reading(Math.min(r, EDGE)), th: Math.atan2(-dy, dx) }; draw();
     }
     let down = false;
     $('cv').addEventListener('pointerdown', e => { down = true; pickAt(e); });
@@ -431,7 +452,7 @@
     window.addEventListener('resize', draw);
     draw(); requestAnimationFrame(tick);
 
-    window.__levels = { radius, reading, level, visible, R: () => geom().R, shape, lodRadius, crossings, BROAD,
+    window.__levels = { lay: LAY, radius, reading, level, visible, R: () => geom().R, shape, lodRadius, crossings, BROAD,
         depth: th => Math.log2(shape(th, 1)), divided: () => div,
         choose, parseTVF, shapeName: () => SH.name, ready: () => $('fv').textContent !== 'loading…' };
 })();

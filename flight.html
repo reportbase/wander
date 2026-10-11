@@ -14,22 +14,49 @@ so the corner, the ground line h = v, sits on the same screen row at every heigh
 reading folded at the corner: home to corner as h/v (equal ground steps, equal ticks), corner onward as v/h (they crowd;
 2v, 4v, 8v each take half the room of the last).
 
-LOD (the chip, or L): none, 10 m everywhere; by metres, the engine's way, spacing doubling at 500 m, 1 km, 2 km ...;
-by v/h, grain v/8 out to √2·v, then doubling, each level's edges halfway (in doublings) between its corner and the next.
-A level's own corner is eight of its grains ahead (on the strip): by v/h at v, 2v, 4v ..., by metres at 80, 160, 320 m.
-By v/h every level past the corner holds the same 4√2 ≈ 5.7 lines, so the count past the corner is logarithmic, and climbing
-changes nothing on the screen; by metres the edges and the corners slide as you climb.
+LOD (set by ?lod=; the chips were removed at Tom's "remove the buttons in the upper left"): none, 10 m everywhere; by metres, the engine's way, spacing doubling at 500 m, 1 km, 2 km ...;
+by v/h, levels split at v, 2v, 4v ...: the first from home to the corner, the second from the corner to 2v, each after
+twice as long with twice the grain (v/8 in the first two), so every level holds 8 lines. There is one corner, the split
+between the first level and the second (Tom, superseding "each Level has its own corner": "I don't think there are corners
+in the far field. there is only one corner that splits far field from the near field, which is just the split between the
+first and second octive"). By v/h the count past the corner is 8 lines a level, logarithmic, and climbing changes nothing
+on the screen; by metres the edges slide as you climb. The doublings are plain, ordinary arithmetic, with no depth and no
+recursion between them (Tom: "there is no depth or recursion because we create the unit circle when we assign V to H";
+"its plain doublings, ordinary math. but now we know why, its a consequence of setting V = H, which creates the unit
+circle"; SPN R188). Here V = H is set by measuring v and h in the same unit, metres.
 The main view is the grid alone (Tom: "remove the non-gridlines on the main view"; the corner and the level edges are on
-the strip) and one perturbed sphere (Tom: "we just need one peritubated sphere that starts in way in the far field and then
-we stop when its in the near field. how can we show the LOD?"). It starts at 32v, comes in at a ground speed of v a second
-and stops inside the corner at 0.6v ("again" or R runs it again). Its detail steps once per level: by v/h at 16v, 8v, 4v,
-2v and the corner, so past the corner it changes once per doubling and inside it not at all; by metres at fixed distances,
-unrelated to the corner; none, full detail all the way. A dot on the strip shows where it is.
+the strip) and a few posts standing on the ground. The perturbed sphere is gone (Tom: "remove the pertibuated circle,
+focus on recovering the universe with a sweep"; "a circle is not needed. only the sweep is needed"; "we don't need to
+point to everyting in the universe just a few things, just to illustrate the point").
+Recovering the world from the sweep (after draw.html's UDV lab, with one reader moving instead of three standing): the
+reader holds, for the top and the foot of each post, only its reading, how far down from eye level and how far across,
+each against the distance ahead, to the nearest pixel (the screen's step). It keeps its readings from a second ago, when
+it stood one second of travel back (v a second, so one v) and, if it climbed, at its own earlier height. The two
+standpoints' lines cross at the place: ahead and across from the down readings and the across readings, the height from
+either. Its own travel is the one length, so places come out in units of v. No circle, no census. Where the two down
+readings fall on the same pixel the lines do not cross on the screen's step and the place is unresolved: only its
+bearing is known. Posts come in from about 24v and are replaced once passed.
+The panel at bottom left is the lay: the ground laid on the reader's addresses, centred on home, the plane flying up the
+page (Tom: "the corner is the unit circle itself, by setting V = H. we create the corner circle"; "that unit circle
+contains the address space to the entire universe. not part of it, all of it. however, the corner circle has a radius of
+H"; "think of the corner circle expanding logrithmically, but reality itself does not expand logrithmically just our
+representation of it"; "it will look like the mercator map"; and before: "reality is perfect represented at home, no
+distortion"; "two things are needed, assign V=H and swap v/h with h/v at the corner"; "the sweep creates the addresses to
+the complete universe, addresses, not the universe. so for illustration purposes, we can lay a portion of the universe
+onto the sweep itself, like the ring metaphore"). A ground point ρ from home is laid at its own direction and radius
+ρ/v inside the corner circle (gold, radius one H), 1 + ln(ρ/v) past it: the world at its own scale out to the corner,
+then every doubling the same width (the dashed rings at 2v, 4v, …), out to 64v here and without end. White rings are
+the posts, teal dots where the reader places them, a faint ray a bearing alone.
+How far the reader can place things is set by its step, not by the corner: one v of travel moves a post's down reading
+by about f·v/h² pixels (f the screen's focal length in pixels), so placing gives out near h = √f·v, about 16v on a
+laptop screen; there a one-pixel difference places it badly, and past it only the bearing is left. That is the
+resolution limit, a pair of amounts (the travel and the pixel), physics; inside a few v the places come back to within
+about ten per cent.
 Drag up or down (touch or mouse), wheel or arrow keys to change v.
-The strip chip (or F) unfolds it (Tom: "what happens if we don't flip at the corner?"): h/v all the way keeps the near
+The strip (set by ?strip=) unfolds it (Tom: "what happens if we don't flip at the corner?"): h/v all the way keeps the near
 side and runs off the top past 2v (the far field never reaches v/h = 0: the uniform grid); v/h all the way keeps the far
 side and runs off the bottom inside v/2 (home never reached: the level main view). Folded, both ends are held.
-Links: ?v=  ?lod=none|metres|vh  ?strip=folded|h/v|v/h  ?still=1. Test hook: window.__flight.
+Links: ?v=  ?lod=none|metres|vh  ?strip=folded|h/v|v/h  ?still=1. Test hook: window.__flight (recoverAt).
 -->
 <title>The corner in flight</title>
 <style>
@@ -49,30 +76,15 @@ Links: ?v=  ?lod=none|metres|vh  ?strip=folded|h/v|v/h  ?still=1. Test hook: win
     font-variant-numeric: tabular-nums;
   }
   #read b { color: var(--corner); font-weight: 500; }
-  #lod, #again, #flip {
-    position: fixed; left: 16px; top: calc(14px + env(safe-area-inset-top, 0px));
-    font: 13px/1 var(--mono); color: var(--ink); background: transparent;
-    border: 1px solid rgba(159,176,187,0.45); border-radius: 4px;
-    padding: 9px 12px; cursor: pointer; touch-action: manipulation;
-  }
-  #again { left: auto; right: 16px; }
-  #flip { top: calc(58px + env(safe-area-inset-top, 0px)); }
-  #lod:focus-visible, #again:focus-visible, #flip:focus-visible { outline: 2px solid var(--corner); outline-offset: 2px; }
 </style>
 
 <canvas id="c" aria-label="Wireframe ground seen from a plane in level flight"></canvas>
-<button id="lod" type="button">LOD</button>
-<button id="again" type="button">again</button>
-<button id="flip" type="button">strip</button>
 <div id="read"></div>
 
 <script>
 const cv = document.getElementById('c');
 const g = cv.getContext('2d');
 const read = document.getElementById('read');
-const lodBtn = document.getElementById('lod');
-const againBtn = document.getElementById('again');
-const flipBtn = document.getElementById('flip');
 
 const S = 10;          // finest ground grid spacing, metres
 const FAR = 20000;     // where the ground stops being drawn, metres
@@ -110,9 +122,11 @@ function bands() {
     let a = 0, b = 500, s = S;
     while (a < FAR) { out.push({ a, b: Math.min(b, FAR), s }); a = b; b *= 2; s *= 2; }
   } else {
-    // by the reading: level k has grain 2^k v/8 and its own corner at 2^k v;
-    // its edges sit halfway (in doublings) between neighbouring corners
-    let a = 0, b = Math.SQRT2 * v, s = v / 8;
+    // by the reading (Tom: "there is only one corner that splits far field from the near field, which is just the split
+    // between the first and second octive"): the first level runs from home to the corner, h = v, the next from v to 2v,
+    // then 2v to 4v ...; one grain, v/8, in the first two, then doubling, so every level holds 8 lines
+    out.push({ a: 0, b: v, s: v / 8 });
+    let a = v, b = 2 * v, s = v / 8;
     while (a < FAR) { out.push({ a, b: Math.min(b, FAR), s }); a = b; b *= 2; s *= 2; }
   }
   return out;
@@ -161,67 +175,140 @@ function draw() {
   g.strokeStyle = 'rgba(190,205,215,0.38)'; g.stroke(far);
   g.strokeStyle = 'rgba(110,190,230,0.75)'; g.stroke(near);
 
-  drawSphere();
+  drawPosts(hNear);
+  drawPlan();
 
   drawReading(B);
 
-  read.innerHTML = `v ${v < 10 ? v.toFixed(1) : Math.round(v)} m · sphere at ${(sphereH() / v).toFixed(1)}v · detail ${sph.r > 0 ? (mode !== 0 && sphereLevel(sphereH()) >= 5 ? 'dot' : detailOf(sphereLevel(sphereH())) + ' of 4') : '–'}`;
+  read.innerHTML = `v ${v < 10 ? v.toFixed(1) : Math.round(v)} m · ${recovered} of ${NPOST} placed from one v of travel · drag to climb`;
 }
 
-// ── One perturbed sphere, coming in from the far field ──
-// Radius 0.4·v (taken when the run starts), on the ground straight ahead, starting at 32v and stopping inside the corner
-// at 0.6v. Its level of detail d (0 to 4) steps once per level:
-//   by v/h     steps at v, 2v, 4v, 8v, 16v (each level's corner): past 16v a dot; full detail from the corner in
-//   by metres  steps at 500 m, 1 km, 2 km, 4 km, 8 km, whatever v is
-//   none       full detail all the way
-// Detail d: 4·2^d meridians and 2^(d+1) − 1 parallels, and bumps in bands 1..d (broad, middle, fine, finest):
-//   r(λ, β) = r·(1 + Σ_{b ≤ d} A_b·cos(n_b λ + φ_b)·cos(n_b β + ψ_b)·cos β), n_b = 2, 5, 11, 23, A_b = 0.12, 0.06, 0.03, 0.015.
-const BANDS = [[2, 0.12, 0.7, 2.1], [5, 0.06, 4.0, 1.3], [11, 0.03, 2.6, 5.2], [23, 0.015, 0.9, 3.7]];
-let sph = { r: 0, Z: 0, running: false };
-function startRun() { sph = { r: 0.4 * v, Z: travelled + 32 * v, running: true }; }
-const sphereH = () => sph.Z - travelled;
-function sphereLevel(h) {             // L: 0 = full detail, 5+ = a dot
-  if (mode === 0) return 0;
-  if (mode === 2) return h <= v ? 0 : Math.ceil(Math.log2(h / v));
-  return h <= 500 ? 0 : Math.ceil(Math.log2(h / 500));
+// ── A few posts, and recovering them from the sweep ──
+// A post stands at Z (along the flight, world), X (across), from the ground to height T. The reader reads, for its top and
+// its foot, a = across/ahead and s = down-from-eye/ahead, each to the nearest pixel (step 1/f). Two standpoints: now, and a
+// second ago (z1, v1). Crossing the down readings: v1 − y = s1(Z − z1), v2 − y = s2(Z − z2), so
+// Z = (v1 − v2 + s1·z1 − s2·z2)/(s1 − s2), y = v2 − s2(Z − z2), X = a2(Z − z2). Same pixel twice: unresolved, bearing a only.
+const NPOST = 6, BACK = 1;                  // six posts; the second standpoint one second (one v of travel) back
+let seed = 7;
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const posts = [];
+function newPost(far) {
+  const h = far ? v * (16 + 16 * rnd()) : v * Math.pow(2, 0.3 + 4.3 * rnd());     // ahead: 1.2v … 24v at the start
+  return { Z: travelled + h, X: (rnd() - 0.5) * 0.9 * h, T: v * (0.3 + 1.2 * rnd()), hist: [] };
 }
-const detailOf = (L) => Math.max(0, 4 - L);   // L 0 (inside the corner) → 4, L 4 → 0; L ≥ 5 is a dot
-function drawSphere() {
-  const h = sphereH(), r = sph.r;
-  if (!(r > 0) || h - r < 1) return;
-  const L = sphereLevel(h);
-  g.strokeStyle = 'rgba(140,230,205,0.85)';
-  g.fillStyle = 'rgba(140,230,205,0.85)';
-  g.lineWidth = 1;
-  if (mode !== 0 && L >= 5) {          // past 16v (or 8 km): a dot
-    g.beginPath(); g.arc(cx, cy + f * (v - r) / h, 1.5, 0, 2 * Math.PI); g.fill();
-    return;
+for (let i = 0; i < NPOST; i++) posts.push(newPost(false));
+
+let clock = 0;
+const pix = (r, grain) => grain > 0 ? Math.round(r * grain) / grain : r;   // a reading to the nearest pixel
+function readPoint(Z, X, y, z, vv, grain) {
+  const d = Z - z;
+  return { a: pix(X / d, grain), s: pix((vv - y) / d, grain) };
+}
+function cross(p1, p2) {                    // p: { z, v, a, s } from two standpoints; returns place or bearing
+  if (p1.s === p2.s) return { bearing: p2.a };
+  const Z = (p1.v - p2.v + p1.s * p1.z - p2.s * p2.z) / (p1.s - p2.s);
+  const d = Z - p2.z;
+  if (!(d > 0)) return { bearing: p2.a };
+  return { Z, X: p2.a * d, y: p2.v - p2.s * d };
+}
+function recoverPost(P) {
+  if (!P.hist.length) return null;
+  let old = null;
+  for (const e of P.hist) if (clock - e.t >= BACK) old = e;
+  if (!old) return null;
+  const now = P.hist[P.hist.length - 1];
+  const foot = cross(old.foot, now.foot), top = cross(old.top, now.top);
+  return { foot, top, z: now.foot.z, v: now.foot.v };
+}
+function sensePosts() {
+  for (let i = 0; i < NPOST; i++) {
+    const P = posts[i];
+    if (P.Z - travelled < 0.5 * v) { posts[i] = newPost(true); continue; }
+    const fo = readPoint(P.Z, P.X, 0, travelled, v, f), to = readPoint(P.Z, P.X, P.T, travelled, v, f);
+    P.hist.push({ t: clock, foot: { z: travelled, v, ...fo }, top: { z: travelled, v, ...to } });
+    while (P.hist.length > 2 && clock - P.hist[1].t >= BACK) P.hist.shift();
   }
-  const d = detailOf(L);
-  const rad = (lam, bet) => {
-    let k = 1;
-    for (let b = 0; b < d; b++) { const [n, A, p, q] = BANDS[b]; k += A * Math.cos(n * lam + p) * Math.cos(n * bet + q) * Math.cos(bet); }
-    return r * k;
-  };
-  const path = new Path2D();
-  const put = (lam, bet, pen) => {
-    const R = rad(lam, bet), cb = Math.cos(bet);
-    const x = R * cb * Math.sin(lam), y = r + R * Math.sin(bet), z = h + R * cb * Math.cos(lam);
-    if (z < 1) return false;
-    const X = cx + f * x / z, Y = cy + f * (v - y) / z;
-    if (pen) path.lineTo(X, Y); else path.moveTo(X, Y);
-    return true;
-  };
-  const M = 4 * 2 ** d, P = 2 ** (d + 1) - 1, seg = 16 * 2 ** d;
-  for (let m = 0; m < M; m++) {                   // meridians
-    const lam = m * 2 * Math.PI / M; let pen = false;
-    for (let i = 0; i <= seg / 2; i++) pen = put(lam, -Math.PI / 2 + i * 2 * Math.PI / seg, pen);
+}
+function drawPosts(hNear) {
+  g.strokeStyle = 'rgba(235,240,245,0.9)'; g.lineWidth = 1.5;
+  g.beginPath();
+  for (const P of posts) {
+    const d = P.Z - travelled;
+    if (d < hNear) continue;
+    const X = cx + f * P.X / d;
+    g.moveTo(X, cy + f * v / d); g.lineTo(X, cy + f * (v - P.T) / d);
   }
-  for (let j = 1; j <= P; j++) {                  // parallels
-    const bet = -Math.PI / 2 + j * Math.PI / (P + 1); let pen = false;
-    for (let i = 0; i <= seg; i++) pen = put(i * 2 * Math.PI / seg, bet, pen);
+  g.stroke(); g.lineWidth = 1;
+}
+// ── The lay: the world laid on the reader's addresses, centred on home ──
+// Tom, 10 Oct: "the corner is the unit circle itself, by setting V = H. we create the corner circle"; "that unit circle
+// contains the address space to the entire universe. not part of it, all of it. however, the corner circle has a radius
+// of H"; "think of the corner circle expanding logrithmically, but reality itself does not expand logrithmically just our
+// representation of it"; "it will look like the mercator map".
+// A ground point at distance ρ from home, in direction φ, is laid at direction φ and radius r(ρ): ρ/v inside the corner
+// (the world at its own scale; perfect at home), 1 + ln(ρ/v) past it, so every doubling gets the same width, ln 2, and the
+// slope meets the near field's at the corner with no kink. The plane flies up the page; home is the centre.
+const LAY_OUT = 64;                              // laid out to 64v
+const layR = (rho) => rho <= v ? rho / v : 1 + Math.log(rho / v);
+let recovered = 0;
+function drawPlan() {
+  const sz = Math.min(W * 0.46, H * 0.62, 420), x0 = 16, y1 = H - 40, y0 = y1 - sz;
+  const ox = x0 + sz / 2, oy = y0 + sz / 2;
+  const k = (sz / 2 - 4) / layR(LAY_OUT * v);
+  const at = (X, dZ) => { const rho = Math.hypot(X, dZ); if (rho === 0) return [ox, oy];
+    const r = layR(rho) * k; return [ox + r * X / rho, oy - r * dZ / rho]; };
+  g.fillStyle = 'rgba(7,9,11,0.9)'; g.fillRect(x0, y0, sz, sz);
+  g.strokeStyle = 'rgba(190,205,215,0.3)'; g.strokeRect(x0 + 0.5, y0 + 0.5, sz, sz);
+  g.save(); g.beginPath(); g.rect(x0, y0, sz, sz); g.clip();
+
+  // the ground grid, world-anchored, coarser by the doubling so each level holds about the same number of lines
+  const grid = new Path2D();
+  const levels = [[0, v, v / 4]];
+  for (let a = v, s = v / 4; a < LAY_OUT * v; a *= 2, s *= 2) levels.push([a, 2 * a, s]);
+  for (const [a, b, s] of levels) {
+    const n = Math.ceil(b / s), step = s / 3;
+    const inBand = (X, dZ) => { const r = Math.hypot(X, dZ); return r >= a && r < b; };
+    const line = (P) => { let pen = false;
+      for (let u = -b; u <= b; u += step) { const [X, dZ] = P(u), [X2, dZ2] = P(u + step);
+        if (inBand((X + X2) / 2, (dZ + dZ2) / 2)) { const p1 = at(X, dZ), p2 = at(X2, dZ2);
+          if (!pen) grid.moveTo(p1[0], p1[1]); grid.lineTo(p2[0], p2[1]); pen = true; } else pen = false; } };
+    const z0 = travelled % s;                        // across lines move with the flight
+    for (let i = -n; i <= n; i++) {
+      const X = i * s, dZ = i * s - z0;
+      line(u => [X, u]);                             // along the flight
+      line(u => [u, dZ]);                            // across it
+    }
   }
-  g.stroke(path);
+  g.strokeStyle = 'rgba(190,205,215,0.28)'; g.lineWidth = 1; g.stroke(grid);
+
+  // the level edges past the corner (each one doubling, the same width), and the corner circle itself
+  g.strokeStyle = 'rgba(230,120,140,0.5)'; g.setLineDash([3, 4]);
+  for (let a = 2 * v; a < LAY_OUT * v; a *= 2) { g.beginPath(); g.arc(ox, oy, layR(a) * k, 0, 2 * Math.PI); g.stroke(); }
+  g.setLineDash([]);
+  g.strokeStyle = 'rgba(226,181,69,0.9)'; g.lineWidth = 1.5;
+  g.beginPath(); g.arc(ox, oy, k, 0, 2 * Math.PI); g.stroke(); g.lineWidth = 1;
+
+  // the posts: rings where they are, teal where the reader places them, a faint ray for a bearing alone
+  recovered = 0;
+  for (const P of posts) {
+    const dZ = P.Z - travelled, [tx, ty] = at(P.X, dZ);
+    g.strokeStyle = 'rgba(235,240,245,0.85)';
+    g.beginPath(); g.arc(tx, ty, 4, 0, 2 * Math.PI); g.stroke();
+    const r = recoverPost(P);
+    if (!r) continue;
+    if (r.foot.bearing !== undefined) {
+      const [bx, by] = at(r.foot.bearing * LAY_OUT * v, LAY_OUT * v);
+      g.strokeStyle = 'rgba(140,230,205,0.35)';
+      g.beginPath(); g.moveTo(ox, oy); g.lineTo(bx, by); g.stroke();
+    } else {
+      recovered++;
+      const [rx, ry] = at(r.foot.X, r.foot.Z - r.z);
+      g.fillStyle = 'rgba(140,230,205,0.95)';
+      g.beginPath(); g.arc(rx, ry, 2.5, 0, 2 * Math.PI); g.fill();
+    }
+  }
+  g.fillStyle = '#e8eef2'; g.beginPath(); g.moveTo(ox, oy - 6); g.lineTo(ox - 4, oy + 3); g.lineTo(ox + 4, oy + 3); g.fill();
+  g.restore();
 }
 
 // The reading on the strip: folded at the corner (h/v, then v/h), or one ratio all the way (flip off).
@@ -264,20 +351,6 @@ function drawReading(B) {
   g.strokeStyle = 'rgba(230,120,140,0.85)'; g.stroke(edgeT);
   g.setLineDash([]);
 
-  if (mode > 0) {
-    g.strokeStyle = 'rgba(226,181,69,0.6)';
-    g.lineWidth = 1.5;
-    g.beginPath();
-    for (const { s } of B) {
-      const c = 8 * s;
-      if (c >= FAR || Math.abs(c - v) < 1e-6) continue;
-      const y = Math.round(yOf(c)) + 0.5;
-      g.moveTo(x0, y); g.lineTo(x0 + w + 4, y);
-    }
-    g.stroke();
-    g.lineWidth = 1;
-  }
-
   // doublings past the corner: 2v, 4v, 8v ... each takes half the room of the last
   g.restore();
   g.font = '11px ui-monospace, Menlo, Consolas, monospace';
@@ -299,22 +372,23 @@ function drawReading(B) {
   g.fillText(flip === 2 ? 'v/h = 2' : 'home', x0 - 6, bot);
   g.fillText(flip === 1 ? 'h/v = 2' : 'v/h → 0', x0 - 6, top);
 
-  // the sphere on the strip
-  const hs = sphereH();
-  if (sph.r > 0 && hs > 0) {
-    const y = yOf(hs), off = y < top || y > bot;          // off the strip: a ring held at the edge it ran off
+  // the posts on the strip: filled where the reader has placed one, a ring where it holds a bearing only
+  for (const P of posts) {
+    const hs = P.Z - travelled; if (!(hs > 0)) continue;
+    const y = yOf(hs), off = y < top || y > bot, r = recoverPost(P);
     g.fillStyle = g.strokeStyle = 'rgba(140,230,205,0.95)';
-    g.beginPath(); g.arc(x0 + w / 2, Math.min(bot, Math.max(top, y)), 4, 0, 2 * Math.PI);
-    if (off) g.stroke(); else g.fill();
+    g.beginPath(); g.arc(x0 + w / 2, Math.min(bot, Math.max(top, y)), 3.5, 0, 2 * Math.PI);
+    if (!off && r && r.foot.bearing === undefined) g.fill(); else g.stroke();
   }
 }
 
 let last = performance.now();
 function frame(now) {
   const dt = Math.min((now - last) / 1000, 0.1); last = now;
-  if (sph.running && !still) {
+  if (!still) {
     travelled += v * dt;                        // ground speed v a second: the same at any height
-    if (sphereH() <= 0.6 * v) { travelled = sph.Z - 0.6 * v; sph.running = false; }
+    clock += dt;
+    sensePosts();
   }
   draw();
   requestAnimationFrame(frame);
@@ -322,24 +396,23 @@ function frame(now) {
 requestAnimationFrame(frame);
 
 // LOD: tap or click the chip, or press L
-function cycle() { mode = (mode + 1) % 3; lodBtn.textContent = 'LOD: ' + MODES[mode]; }
-lodBtn.addEventListener('click', cycle);
-lodBtn.textContent = 'LOD: ' + MODES[mode];
-againBtn.addEventListener('click', startRun);
-function cycleFlip() { flip = (flip + 1) % 3; flipBtn.textContent = 'strip: ' + FLIPS[flip]; }
-flipBtn.addEventListener('click', cycleFlip);
-flipBtn.textContent = 'strip: ' + FLIPS[flip];
-startRun();
 
 // test hook: rows on the screen are fractions of its height, so they compare across sizes
 window.__flight = {
-  set(h, m) { v = h; mode = ['none', 'metres', 'vh'].indexOf(m); lodBtn.textContent = 'LOD: ' + MODES[mode]; },
+  set(h, m) { v = h; mode = ['none', 'metres', 'vh'].indexOf(m); },
   cornerRow: () => py(v) / H,
   edgeRows: () => bands().filter(b => b.a > 0 && b.a < FAR).map(b => py(b.a) / H),
-  levelCorners: () => bands().map(b => 8 * b.s),
-  detailAt: (hv) => { const L = sphereLevel(hv * v); return mode !== 0 && L >= 5 ? -1 : detailOf(L); },   // -1 = a dot
+  // a point hv ahead, xv across, yv up (all in v), read from now and from one v back, each reading to `grain` steps per
+  // unit (0: exact); returns the recovered place in v, or { bearing } when the two down readings match
+  recoverAt: (hv, xv, yv, grain) => {
+    const V = 1, Z = hv, z1 = -1, z2 = 0;
+    const r1 = readPoint(Z, xv, yv, z1, V, grain), r2 = readPoint(Z, xv, yv, z2, V, grain);
+    const c = cross({ z: z1, v: V, ...r1 }, { z: z2, v: V, ...r2 });
+    return c.bearing !== undefined ? c : { h: c.Z - z2, x: c.X, y: c.y };
+  },
+  focal: () => f,
+  layR: (hv) => layR(hv * v),
   stripAt: (hv, m) => { const k = flip; flip = FLIPS.indexOf(m); const y = stripY(hv * v, 0, 0.5, 1, 0.5); flip = k; return 1 - y; },   // 0 bottom … 1 top
-  place: (hv) => { startRun(); sph.Z = travelled + hv * v; sph.running = false; },
   linesPerLevel: () => bands().filter(b => b.b < FAR).map(b => (b.b - b.a) / b.s),
 };
 
@@ -359,9 +432,6 @@ cv.addEventListener('wheel', e => { e.preventDefault(); v = clamp(v * Math.exp(-
 window.addEventListener('keydown', e => {
   if (e.key === 'ArrowUp') v = clamp(v * 1.1);
   if (e.key === 'ArrowDown') v = clamp(v / 1.1);
-  if (e.key === 'l' || e.key === 'L') cycle();
-  if (e.key === 'r' || e.key === 'R') startRun();
-  if (e.key === 'f' || e.key === 'F') cycleFlip();
 });
 </script>
 

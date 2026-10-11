@@ -318,7 +318,15 @@ try {
   // ── 13. levels.html: the near field in proportion, each doubling past the corner in half the room, rings seen to one grain ──
   current = 'levels.html';
   const before13 = failures.length;
+  // the reader's lay (default since 11 Oct, SPN Prop 1.2 (g)): every doubling past the corner ln 2 wide, no edge
   await page.goto(new URL('levels.html', base).href, { waitUntil: 'load' });
+  const lg = await page.evaluate(() => { const L = __levels; return { lay: L.lay, c: L.radius(1), w: [0, 1, 2, 3].map(k => L.level(k).width),
+    r8: L.radius(8), back: L.reading(L.radius(8)), n: L.visible(L.R(), 1) }; });
+  if (lg.lay !== 'log' || lg.c !== 1 || lg.w.some(w => Math.abs(w - Math.LN2) > 1e-12) || Math.abs(lg.r8 - (1 + Math.log(8))) > 1e-12 ||
+      Math.abs(lg.back - 8) > 1e-9 || lg.n !== 6) failures.push(`[levels.html, the reader's lay] ${JSON.stringify(lg)}`);
+  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html, the reader's lay (every doubling ${lg.w[0].toFixed(4)} wide; s = 8 at ${lg.r8.toFixed(4)}; ${lg.n} levels drawn)`);
+  // the in-place lay, kept at ?lay=inplace: each doubling half the last, the horizon at 2
+  await page.goto(new URL('levels.html?lay=inplace', base).href, { waitUntil: 'load' });
   const lv = await page.evaluate(() => { const L = __levels, R = L.R();
     return { R, half: L.radius(0.5), c: L.radius(1), w: [0, 1, 2, 3].map(k => L.level(k).width), r8: L.radius(8), back: L.reading(L.radius(8)),
       v1: L.visible(R, 1), v2: L.visible(R, 2), v1k: L.visible(1024, 1),
@@ -329,7 +337,7 @@ try {
       Math.abs(lv.back - 8) > 1e-9 || lv.v1 - lv.v2 !== 1 || lv.v1k !== 10 || Math.abs(lv.v1 - Math.log2(lv.R)) > 1 ||
       lv.lod3 !== 1.875 || !(lv.cross >= 6) || !(lv.broad < lv.cross) || Math.abs(lv.meanDepth) > 1e-9 || Math.abs(lv.depthAt) > 1e-12)
     failures.push(`[levels.html] ${JSON.stringify(lv)}`);
-  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html (each level half the last; ${lv.v1} seen at a one-pixel grain, one fewer at two; the shape crosses ${lv.cross} ring edges, its broad form ${lv.broad}; size divided out, the depth averages 0 on the corner)`);
+  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html?lay=inplace (each level half the last; ${lv.v1} seen at a one-pixel grain, one fewer at two; the shape crosses ${lv.cross} ring edges, its broad form ${lv.broad}; size divided out, the depth averages 0 on the corner)`);
   // a body from res/ chosen in the combo box, and a file that is not a .tvf refused
   const lb = await page.evaluate(async () => { const L = __levels; await L.choose('res:asteroid-grey');
     let refused = false; try { L.parseTVF('hello'); } catch (e) { refused = true; }
@@ -373,19 +381,22 @@ try {
   const before16 = failures.length;
   await page.goto(new URL('flight.html?still=1', base).href, { waitUntil: 'load' });
   const fl = await page.evaluate(() => { const f = __flight, out = {};
-    f.set(50, 'vh'); out.c1 = f.cornerRow(); out.e1 = f.edgeRows(); out.k1 = f.levelCorners().slice(0, 3); out.n = f.linesPerLevel();
+    f.set(50, 'vh'); out.c1 = f.cornerRow(); out.e1 = f.edgeRows(); out.n = f.linesPerLevel();
     f.set(1600, 'vh'); out.c2 = f.cornerRow(); out.e2 = f.edgeRows().slice(0, out.e1.length - 1);
     f.set(50, 'metres'); out.m1 = f.edgeRows()[0]; f.set(1600, 'metres'); out.m2 = f.edgeRows()[0];
-    const dets = (vv, m) => { f.set(vv, m); return [20, 12, 6, 3, 1.5, 0.6].map(x => f.detailAt(x)); };
-    out.d50 = dets(50, 'vh'); out.d1600 = dets(1600, 'vh'); out.m50 = dets(50, 'metres'); out.m1600 = dets(1600, 'metres');
+    const F = f.focal(), rec = (h) => f.recoverAt(h, 0.3 * h, 0.8, F);
+    out.exact = f.recoverAt(5, 1.2, 0.7, 0); out.near = rec(2); out.mid = rec(8); out.far = rec(400);
+    out.lay = [0.5, 1, 2, 4, 8].map(x => f.layR(x));
     const at = (m) => [0.1, 0.5, 1, 2, 100].map(x => f.stripAt(x, m)); out.sf = at('folded'); out.sh = at('h/v'); out.sv = at('v/h'); return out; });
   if (Math.abs(fl.c1 - fl.c2) > 1e-9 || fl.e2.some((y, i) => Math.abs(y - fl.e1[i]) > 1e-9) ||
-      fl.k1.some((c, i) => Math.abs(c - 50 * 2 ** i) > 1e-9) || fl.n.slice(1).some(n => Math.abs(n - 4 * Math.SQRT2) > 1e-9) ||
+      fl.n.some(n => Math.abs(n - 8) > 1e-9) || Math.abs(fl.e1[0] - fl.c1) > 1e-9 ||
       !(Math.abs(fl.m1 - fl.m2) > 0.01) ||
-      fl.d50.join() !== '-1,0,1,2,3,4' || fl.d1600.join() !== fl.d50.join() || fl.m50.join() === fl.m1600.join() ||
+      Math.abs(fl.exact.h - 5) > 1e-9 || Math.abs(fl.exact.x - 1.2) > 1e-9 || Math.abs(fl.exact.y - 0.7) > 1e-9 ||
+      !(Math.abs(fl.near.h - 2) < 0.2) || !(Math.abs(fl.mid.h - 8) > Math.abs(fl.near.h - 2)) || fl.far.bearing === undefined ||
+      Math.abs(fl.lay[0] - 0.5) > 1e-12 || fl.lay[1] !== 1 || Math.abs((fl.lay[3] - fl.lay[2]) - (fl.lay[4] - fl.lay[3])) > 1e-12 ||
       fl.sf.some(y => y < 0 || y > 1) || Math.abs(fl.sf[2] - 0.5) > 1e-9 || !(fl.sh[4] > 1) || !(fl.sh[0] >= 0) || !(fl.sv[0] < 0) || !(fl.sv[4] <= 1))
     failures.push(`[flight.html] ${JSON.stringify(fl)}`);
-  console.log(`${failures.length === before16 ? 'ok  ' : 'FAIL'} flight.html (corner row ${fl.c1.toFixed(3)} at 50 m and 1.6 km; by v/h ${fl.n[1].toFixed(2)} lines a level, edges fixed; by metres they slide; the sphere's detail by v/h ${fl.d50.join(' ')} at 20v … 0.6v, at any height; strip folded holds 0.1v–100v, h/v runs off the top, v/h off the bottom)`);
+  console.log(`${failures.length === before16 ? 'ok  ' : 'FAIL'} flight.html (corner row ${fl.c1.toFixed(3)} at 50 m and 1.6 km; by v/h ${fl.n[1]} lines a level, the first edge the corner, edges fixed; by metres they slide; a post recovered exactly with no step, ${fl.near.h.toFixed(3)} for 2v and ${fl.mid.h === undefined ? 'a bearing' : fl.mid.h.toFixed(2)} for 8v at a pixel step, a bearing only at 400v; the lay true to the corner, each doubling past it ${(fl.lay[3] - fl.lay[2]).toFixed(3)} wide; strip folded holds 0.1v–100v, h/v runs off the top, v/h off the bottom)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';

@@ -65,7 +65,11 @@ Google Fonts load from outside:
   A combo box picks the shape (10 Oct, Tom: "add the ablity load a tvf file. add a combo box let the user select the shape"):
   the built-in one, a body in res/, or a file from disk: a .tvf curve (the draw tool's format, draw.html `parseTvfText`; read from
   its centroid, the nearest wall in each direction) or a .tvf3d cut at a height h (the equator by default); the outline
-  read as s(θ) = s₀·(r/r̄)^k with a relief slider k. `?g=&s=&shape=&lod=&depth=1&body=&relief=&cut=`; test hook `window.__levels`.
+  read as s(θ) = s₀·(r/r̄)^k with a relief slider k. Since 11 Oct (SPN Prop 1.2 (g); Tom: "update levels.html") the default is
+  the reader's lay, 1 + ln s past the corner, every level ln 2 wide, six drawn, no horizon on the lay; the in-place lay
+  (2 − 1/s, horizon at 2) is kept at `?lay=inplace`: the same addresses by length, reality in 2H (Tom: "reality = 2H";
+  "same length, not addresses"). "Depth" relabelled per R188.
+  `?lay=inplace&g=&s=&shape=&lod=&depth=1&body=&relief=&cut=`; test hook `window.__levels` (now with `lay`).
 - `walk.html`: **the walk** (10 Oct 2026, Tom: "the sweep is a walk from me to you … far away, you are increasinly difficult
   for me to get to you, and then acceleratingly difficult"; "You are vertical and I am horizontal. Show the sweep in terms of
   the horizontal's walk to the vertical"), a standalone page like `facing.html`. Me on the ground (breadth H, one step), you a
@@ -130,14 +134,22 @@ Google Fonts load from outside:
 - `flight.html`: **the corner in flight** (10 Oct 2026, Tom: "you know how the transition from earth to the sky in flight
   sim games is awkward? ... i wonder if its because of the corner"; "only the geometry", wireframe). Level flight at height v;
   a ground line h ahead lands v/h below eye level, so the corner (h = v) keeps one screen row at every height. The main view is the grid alone (Tom: "remove the non-gridlines";
-  the corner and level edges are on the strip) plus one perturbed sphere (Tom: "we just need one peritubated sphere that starts in way in the far field and then we
-  stop when its in the near field. how can we show the LOD?"): radius 0.4v, from 32v in at v a second, stopping at 0.6v
-  ("again"/R). Its detail d (4·2^d meridians, bands 1..d of bumps) steps by v/h at 16v, 8v, 4v, 2v, v (a dot past 16v,
-  full inside the corner: once per doubling past it, never inside), by metres at 500 m … 8 km, none full. Strip:
-  the reading folded at the corner, h/v to home (even), v/h past it (2v, 4v … each half the room). LOD chip: none / by metres
-  (doubling at 500 m, 1 km …) / by v/h (grain v/8 to √2·v, then doubling; Tom: "each Level has its own corner", eight grains
-  ahead: v, 2v, 4v …). By v/h each level past the first holds 4√2 ≈ 5.7 lines, so the count past the corner is log₂(h/v), and climbing changes only
-  the speed; by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; strip chip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `detailAt(h/v)`, `place(h/v)`, `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
+  the corner and level edges are on the strip) plus a few posts recovered from the sweep (Tom: "remove the pertibuated circle, focus on recovering the universe with a
+  sweep"; "a circle is not needed. only the sweep is needed"; after draw's UDV lab, one reader moving instead of three
+  standing): each post's foot and top read as (across, down) against the distance ahead, to a pixel; the readings from one
+  v of travel back cross with today's at the place, the travel the one length, so places in v; same pixel twice leaves a
+  bearing. The lay at bottom left (Tom: "the corner is the unit circle itself, by setting V = H"; "that unit circle contains
+  the address space to the entire universe"; "think of the corner circle expanding logrithmically, but reality itself does
+  not"; "it will look like the mercator map"): the ground laid on the addresses around home, radius ρ/v inside the corner
+  circle (radius H), 1 + ln(ρ/v) past it, each doubling ln 2 wide; posts true (white), recovered (teal), bearings (rays). Placing gives out near
+  h = √f·v (the step: physics, not the corner). Strip:
+  the reading folded at the corner, h/v to home (even), v/h past it (2v, 4v … each half the room). LOD (`?lod=`; the chips removed, Tom: "remove the buttons in the upper left"): none / by metres
+  (doubling at 500 m, 1 km …) / by v/h (levels split at v, 2v, 4v …, grain v/8 in the first two then doubling, 8 lines a level, so the count past the
+  corner is log₂(h/v) and climbing changes nothing on the screen). One corner only (Tom, 10 Oct, superseding "each Level has
+  its own corner": "there is only one corner that splits far field from the near field, which is just the split between the
+  first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
+  why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
+  9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
 - `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the seven demos (sweep, dial, sphere, facing, levels, walk, pool) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
@@ -277,6 +289,11 @@ Google Fonts load from outside:
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
   log₂(81)/k for a share in s^k (P5 killed). The corner holds where the light counted is a share (projected solid angle).
+  `omm-plan.md` (10 Oct, plan only, nothing worked): taking D6 forward (Tom's 23 Sep status note, Ω_m = ψ₁ψ₂ = 1/π, not
+  in this repo; Tom: "it was set aside because we had gone as far we could at the time"). Stage 1 rederives the share in
+  current terms (ψ₁ = 2/π as the sweep's average fill of h, ψ₂ = ½ as one facing; rulings needed); stage 2 rules what
+  matter and dark energy are on the lay (candidate: payload and addresses); stage 3 compares with Planck and DESI DR2
+  only after both stand. The archived ψ₁ paper is not used.
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far
@@ -331,12 +348,23 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
 - The corner h = v is found by every reader (geometry). It is at 45° because the facing (the second degree of freedom a
   straight line lacks) is square to the line there; facing = 2θ (`facing.html`).
 - V = H is a calibration a situated reader must set to read amounts, not part of the geometry; under it amounts equal fill
-  levels numerically, which is why the conflation is easy. Every amount is then off by V/H, the same on both sides of the
+  levels numerically, which is why the conflation is easy. (*10 October*, R188: Tom restores 8 October's reading, V = H
+  creates the unit circle, and that is why the levels are plain doublings; R189: "v needs no V" stands, v and h on [0, 1]
+  invariant, and there is one circle, its shape from the fill levels, its unit from V = H; SPN §1, "The settled view,
+  10 October".) Every amount is then off by V/H, the same on both sides of the
   corner; physics' bridges (travel, a known constant, a known kind, a shared fact) remedy it (SPN Part II).
 - The fisheye is the sweep in one facing, seen from the standpoint (geometry, the same for every shape); with V = H it is
   the situated fisheye reading.
-- Still open: the ratio 2 between levels (binary branching is proved; the in-place lay being forced is deferred, SPN
-  Appendix D); the weight on the sweep is a choice (SPN §14, "Burdens of proof").
+- One corner (10 October, R188): the split between the first level (home to the corner, the near field) and the second;
+  past it the levels are plain doublings with no corner of their own, and there is no depth and no recursion. R175 and
+  R180 are superseded; the superseded passages stay in SPN as the record with dated notes.
+- The ratio 2 between levels: dissolved (10 October, R189; Tom: "its just logrithimic doublings. this paper does. not need
+  to prove the logrithm, it is fundemental"); Appendix D and the open question are kept as the record.
+- Proposition 1.2 (11 October, R190): from the two-party relation and one chosen H, V = H is forced; the corner and the
+  flip follow from the cap at 1; the logarithm past the corner follows when no rung is preferred, so the reader's lay is
+  1 + ln s by address count; by length reality is 2H (the in-place lay, 2 − 1/s, the reader's own); two address spaces, proportional and logarithmic,
+  around the corner. Still assumed: no measure on a level.
+- Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof").
 
 ## Read this first: the physics comes first
 Since 10 Oct 2026 (Tom: "wanderer priority was user experience, not physics. the physics then became unexpextedly
@@ -388,7 +416,8 @@ In short:
       backspin passed and follow lessened by the grip, a ball jumped off the table; every challenge missed as set up and
       solved by its reference shot, a missed try put back and a solved one counted).
   12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
-  13. **levels.html:** the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
+  13. **levels.html:** by default the reader's lay, every level past the corner ln 2 wide, s = 8 at 1 + ln 8, six drawn; at
+      `?lay=inplace` the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
       and one level fewer seen per doubling of the grain; the shape crosses ring edges, its broad form fewer; with the size divided out
       the depth averages 0 on the corner; a body from res/ chosen in the combo box crosses ring edges, a non-.tvf file refused; a draw .tvf curve read
       from its centroid (a 5-pointed star's tip over its dip as drawn).
@@ -396,8 +425,8 @@ In short:
   15. **pool.html:** a break played from inside: every contact on h + v = 1, one reading alone decides only with all balls alike, the game the referee's;
       with cushions read as the ball's mirror image and pockets as filling the view, still the referee's game; read late (c = 50),
       carrying the image forward beats taking it as now.
-  16. **flight.html:** the corner keeps its row from 50 m to 1.6 km; by v/h the level edges keep theirs, 4√2 lines a level,
-      level corners at v, 2v, 4v; by metres the edges slide; the sphere's detail by v/h is dot, 0, 1, 2, 3, 4 at 20v … 0.6v at any height, by metres not; the strip folded holds 0.1v–100v, h/v throughout runs off the top, v/h off the bottom.
+  16. **flight.html:** the corner keeps its row from 50 m to 1.6 km; by v/h the level edges keep theirs, the first edge the corner,
+      8 lines a level; by metres the edges slide; a post is recovered exactly with no step, within 10% at 2v at a pixel step, worse at 8v, a bearing only at 400v; the lay true to the corner, each doubling past it ln 2 wide; the strip folded holds 0.1v–100v, h/v throughout runs off the top, v/h off the bottom.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

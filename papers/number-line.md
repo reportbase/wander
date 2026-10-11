@@ -65,6 +65,10 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
+- 11 October, seventy-fifth: the count of addresses, in the near field's proportion and per doubling past the corner, is the level of detail, never known and not needed; the geometry gives only the forms (Tom; SPN Proposition 1.2).
+- 11 October, seventy-fourth: SPN Proposition 1.2 (R190): the unit circle by necessity; the corner and the flip forced by the cap; the logarithm forced past the corner, counting addresses; reality in 2H by length (the in-place lay, the reader's own), the same addresses by count (1 + ln s); two address spaces, proportional and logarithmic, around the corner (Tom). Notes at §4 and the level's description.
+- 10 October, seventy-third: one circle, "v needs no V" standing (v and h on [0, 1], invariant); the levels logarithmic doublings, the logarithm fundamental; the open question of the 2 dissolves (Tom; SPN R189).
+- 10 October, seventy-second: one corner, plain doublings, no depth or recursion; V = H creates the unit circle, 8 October's reading restored (Tom, at `flight.html`; SPN R188, §1 "The settled view, 10 October"). Dated notes in Background, §4 and §8.
 - 10 October, seventy-first: §4, on the Hipparcos stars light falls two levels per level of distance (dwarfs 2.02, giants 1.93; past the catalogue's limit 1.61); a known kind is a bridge about a level wide (MAG, `plans/mag-plan.md`).
 - 10 October, seventieth: §8, the corner as the reference sphere: real rocky worlds within a hundredth of a level of it, giants a tenth; wander's bodies far rougher (REF, `plans/ref-plan.md`).
 - 10 October, sixty-ninth: §8, standing on the outline: a circle's corner is its radius, 30° below the horizon; a ball's 2/e of it; rising, the horizon half a level per doubling of height (HZN, `plans/hzn-plan.md`).
@@ -139,6 +143,11 @@ that angle rescaled, g = θ/(π/2).
   address space is situation 1's whatever V is (v needs no V); V = H does not make it or the fisheye, it calibrates the
   amounts read there. The fisheye is the sweep in one facing (geometry); read in amounts with V = H it is the situated
   fisheye reading, off by V/H.
+  *Restored 10 October* (Tom: "its a consequence of setting V = H, which creates the unit circle"; SPN R188): V = H
+  creates the unit circle, as on 8 October; the 9 October corrections above are withdrawn as to that. Left to rule in
+  SPN: how this stands with "v needs no V". *Ruled the same evening* (SPN R189; Tom: "v does not need V. v = [0,1].
+  h = [0,1], they are invariant."; "one circle"): one circle, its shape from the invariant fill levels, its unit from
+  V = H; the levels are logarithmic doublings, and the logarithm is fundamental.
 
   | | situation 1 | the situated reader's unit circle |
   |---|---|---|
@@ -436,7 +445,11 @@ when θ ≥ 45°. So every relation lands on exactly one arm, and the unit line,
 relation, from home through the corner to the far wall, in a finite length of 2.
 - **The name.** The corner is the corner of the unit square, where the unit line turns, and where the breadths of the
   near field and the far field meet.
-- **It is a level, "2h in place"** (SPN): a front half one h long and a back half one h long.
+- **It is a level, "2h in place"** (SPN): a front half one h long and a back half one h long. (*11 October*, SPN
+  Proposition 1.2: reality is two H's by length, the near field in the first and the whole far field in the second,
+  which is this level; past the corner each doubling gets the same number of addresses, so they crowd toward the
+  horizon. Tom: "this chain of logic creates two address spaces, proportional and logrithmic around the corner";
+  "reality = 2H"; "same length, not addresses.")
 - **It is SPN Proposition 3.2(a), drawn.** A reader can hold s directly before the corner and 1/s past it, both within
   [0, 1], only if the switch is at s = 1. The two arms are those two registers.
 - **The horizon becomes a point.** s → ∞ lands at the far wall, (0, 1), a finite point on the drawing. The squeeze of
@@ -502,6 +515,11 @@ to both. What people hold is the unit and the rule for going on (add one, halve 
 rule known) instead.
 
 ## 4. Depth: breadth, sweep and depth
+
+*Superseded 10 October* (Tom: "there is no depth or recursion because we create the unit circle when we assign V to H";
+"its plain doublings, ordinary math"; SPN R188). There is no depth and no recursion: past the one corner the levels are
+plain doublings, side by side. This section, the recursing line included, is kept as the record of how the idea was
+worked; read its "depth" and "recursion" as superseded.
 
 Tom, 7 October: "I think depth is the least understood idea. my current working hypothesis is the world is what it is,
 something like 3d, or maybe something different, but 3d is a good working model of reality. however, observation is
@@ -663,7 +681,9 @@ by side, with no ruling on the word:
   between what is sent and what one reader gets is the cost of being situated.
   It is the inverse-square law (Tom, 8 October: "is this the inverse square law?"; "yes, the situated reader is just another place this law shows up."): 1/d in each of two directions, grains lost while the object is resolved, brightness
   lost once it is under one grain, the switch at one grain across (the resolution limit, the corner of the size-against-step pair, not of the reader's sweep of the other: SPN §1). The situated reader is one more place the law shows up.
-  *The lay has its form too* (10 October; ISQ, `plans/isq-plan.md`, run 1, not killed): past the corner the in-place lay is
+  *The lay has its form too* (10 October; ISQ, `plans/isq-plan.md`, run 1, not killed; *11 October*: SPN Proposition 1.2,
+  "Reality in 2H": the in-place lay is reality drawn by length, the reader's own; the logarithm counts its addresses):
+  past the corner the in-place lay is
   2 − 1/s, proportion in h/v, so its room per unit s is 1/s², the flip's Jacobian, a quarter less per doubling. Keep the
   case: s is geometry; reading s as d/Δ (amounts) makes 1/s an angular size, the lay's 1/s² the rate it shrinks (one
   dimension) and light's 1/d² its square (two). A shared form with one origin, the flip; SPN §1.
@@ -981,7 +1001,8 @@ the radius, 30° below the horizon; on a ball, 2/e of the radius. The quotation 
 the distance out, the corner is the circle s = 1 between near and far, and that circle is the unit circle a shape's depth
 is measured from. Divide out the shape's size (its middle moves onto the corner, and the scale is lost); what stands off
 the circle is its depth, in each direction log₂ s(θ), levels past the corner, negative inward by the flip. Geometry only:
-as an amount, a bump's height needs the size back. SPN §1, "The corner is the circle, and depth is measured from it".
+as an amount, a bump's height needs the size back. SPN §1, "The corner is the circle, and depth is measured from it". *10 October, later* (SPN R188): the corner as the
+circle stands; depth measured from it is withdrawn.
 
 **f is v₂, a second v** (Tom, 8 October: "so what is f. in v,h,f?"; "is f needed to define a sphere"; "thats weird that f is so unclear, we know f is needed, but what is it exactly?"; "ok, so it is v2"). The third breadth came in by symmetry, as a coordinate, and a coordinate has no
 role; v and h are clear because each has one: H is what the reader holds (its unit; V = H set as a placeholder: SPN §1), and h and v are how full each is.
