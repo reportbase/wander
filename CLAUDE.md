@@ -326,7 +326,8 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
 - Proposition 1.2 (11 October, R190): from the two-party relation and one chosen H, V = H is forced; the corner and the
   flip follow from the cap at 1; the logarithm past the corner follows when no rung is preferred, so the reader's lay is
   1 + ln s by address count; by length reality is 2H (the in-place lay, 2 − 1/s, the reader's own); two address spaces, proportional and logarithmic,
-  around the corner. Still assumed: no measure on a level.
+  around the corner; the count is the LOD; H is a zoom, not an escape (a large H loses the small below one address; the
+  best H puts the thing read at the corner). Still assumed: no measure on a level.
 - Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof").
 
 ## Read this first: the physics comes first

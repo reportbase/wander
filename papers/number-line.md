@@ -65,6 +65,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
+- 11 October, seventy-sixth: H is a zoom, not an escape: a very large H puts everything at true scale but spreads a finite level of detail so thin that the reader's own scale falls into the first address; no H holds every scale at once; the best H puts the thing read at the corner (Tom: "why not just choose a very large H?"; SPN Proposition 1.2).
 - 11 October, seventy-fifth: the count of addresses, in the near field's proportion and per doubling past the corner, is the level of detail, never known and not needed; the geometry gives only the forms (Tom; SPN Proposition 1.2).
 - 11 October, seventy-fourth: SPN Proposition 1.2 (R190): the unit circle by necessity; the corner and the flip forced by the cap; the logarithm forced past the corner, counting addresses; reality in 2H by length (the in-place lay, the reader's own), the same addresses by count (1 + ln s); two address spaces, proportional and logarithmic, around the corner (Tom). Notes at §4 and the level's description.
 - 10 October, seventy-third: one circle, "v needs no V" standing (v and h on [0, 1], invariant); the levels logarithmic doublings, the logarithm fundamental; the open question of the 2 dissolves (Tom; SPN R189).
@@ -856,6 +857,12 @@ and the countability of computable numbers.
 
 Tom, 7 October: "maybe the way humans access the number line can best be understood as situation 3, the parallel
 situated perspective."
+
+*H is a zoom* (11 October; SPN Proposition 1.2, "H is a zoom, not an escape"; Tom: "why not just choose a very large H?").
+The window people read the number line through is a choice of H. Any H gives the same line, but a finite level of detail
+spread over a large H turns everyday numbers into a point beside zero, and over a small one sends large numbers past the
+corner into doublings. Zooming the window, a ruler for lengths and powers of ten for distances, is setting H to the scale
+of what is being read.
 
 **Why 3 fits.**
 
