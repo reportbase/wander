@@ -21,6 +21,11 @@ those papers only once it has been worked and ruled.*
 | **outer hemisphere** (parallel, situation 3): one hemisphere taken in at once | H, not V | one facing, counted at once: the bell, sharpest at the corner and halving per doubling away | the corner as the middle of what is seen |
 | **inner hemisphere** (serial, situation 4): one point at a time | H, not V | one facing, swept from home: the fisheye; counted, the Cauchy | home at true scale, the corner, the mathematical horizon never reached |
 
+Two lines from the archived *The Relation Space* (§6, §17) name the completed vantage's cost: **"the equation is a
+third party"** (a page, a shared scale or an equation lends its terms to the answer, as a spring scale does; a balance's
+pull cancels and leaves nothing), and **"a symmetric account holds the figure and cannot state the rate; an asymmetric
+one states the rate and cannot hold the figure."**
+
 The outer hemisphere is not the completed view: it sees a whole hemisphere but holds only one breadth, and does not know
 N (the 22 September ruling). Neither situated vantage knows N, and both meet horizons. The same addresses can be drawn
 from either situated vantage; the completed view is the one that holds the world's breadths as well.
@@ -260,6 +265,11 @@ one ruler the measurements are silently put on is the completed view's single un
 family is the vantage conflation in its plainest form: two situated readings written into the completed view without
 the bridge that would license it.
 
+**Why the ruler is private** (archived *Browsing the Fisheye* L62–66): "the reader's capacity is the only unit in the
+room"; H is the denominator because it is the one held when V arrives, and swapping them takes another experiment, not a
+change of notation. *The Relation Space* §9 has the same in a picture: the bucket and the water, "whichever is greater
+must be divided"; past the corner the reader cannot hand over the unit, so it keeps itself as the unit and counts.
+
 **The two-part resolution, in the vantages' terms.**
 - *Dissolve*: keep each claim at its own vantage ("smaller than my ruler"). This is the catalogue's reading step.
 - *Purchase*: buy a shared denominator. Each of the paper's purchases is one of SPN's bridges: exchanging the reads is a
@@ -273,7 +283,10 @@ r_B = (S_A/S_B)·(d₀/d); their ratio gives the size ratio, √(r_A/r_B) = S_B/
 √(r_A·r_B) = d₀/d. In `pool.html` each ball reads v = r_b/d of the other and is told the other's reading h = r_a/d: the
 exchange. Then v/h = r_b/r_a is the size ratio with the distance cancelled, and contact is h + v = 1 (`plans/pol-plan.md`,
 P1–P4, not killed: the game played from inside equals the referee's). Keep the case: r_A, r_B, S, d are amounts, and
-their corners are corners of named pairs.
+their corners are corners of named pairs. The archive has the exchange twice more: as arithmetic ("dividing the reads
+cancels what the seats share; multiplying cancels what is private to each", *Degrees of Freedom* §4.1, L718–766) and
+measured, as the two-group tower, where closure between two readers with different holds recovers the one factor that
+crosses, the ratio of the holds (*The Order of Limits* L2494–2530; SPN Proposition 1.2, "The tower").
 
 | | paradox | the claim that sounds absolute | its private denominator | the purchase | standing |
 |---|---|---|---|---|---|
@@ -292,6 +305,40 @@ their corners are corners of named pairs.
 *What the family adds to the catalogue.* A cleaner test of a vantage conflation: find the private denominator, and ask
 whether the comparison was bought or assumed. *What it does not add:* every entry already has its standard resolution;
 the claim is uniformity, as the paper itself says.
+
+## G. From the archived papers
+
+*Pulled forward on 11 October from `papers/archive/` (`plans/archive-gems.md`). Each was worked in its paper in the
+terms of its day; the readings below restate it in the three vantages. Standing: **reading** unless marked.*
+
+**G1. A growing list looks finished** (*The Order of Limits* L279–362). A reader of fixed fidelity watches a list grow;
+past a size set by its fidelity the part not yet arrived falls below one step, the frontier cannot be told from the
+horizon, and the list looks complete. *Vantages:* "finished" is the completed view's object; the serial reader at fixed
+step meets it only as the far horizon closing over the frontier. In the classical order (the step taken to zero first)
+the frontier stays visible for ever. *Already known:* none as such; it is the order of limits met in a list.
+
+**G2. A hemisphere's count quoted as the whole's** (*The Order of Limits* L1027–1103). Four counts, M ≤ V_ε ≤ V ≤ N:
+what is met, what is resolved, what the hemisphere holds, what there is. Quoting one as another is safe only on the
+circle, where nothing varies with direction. *Vantages:* N is the completed view's; V and V_ε are the outer and inner
+hemispheres'. A ready source of conflations.
+
+**G3. The median survives, the mean does not** (archived *Reader Geometry as Addressing*, Proposition 14, L884–946).
+Statistics of order (ranks, the median, the corner) are unchanged by any increasing change of the payload; statistics of
+amount (the mean, every sum) are not, and re-timing the arrivals of a five-lobed star moved the mean over arrivals 27%
+while the address statistics stayed fixed. *Vantages:* order is what the situated reader holds; sums need the completed
+view's amounts. The Cauchy (A2) is the extreme case: "an address is not supposed to have an average" (archived *One
+Reader* L501–514). *Already known:* the robustness of order statistics; Jensen's inequality for the mean.
+
+**G4. A uniform address space cannot report position** (*Browsing the Fisheye* L1008–1017). A list whose every entry
+holds the same thing gives the same view at every address: from inside, travelling is indistinguishable from standing
+still. *Vantages:* the completed view knows where it is by the index; the situated reader knows only by what stands at
+the addresses. "What makes a list browsable is not that its addresses are distinct but that what stands at them is."
+
+**G5. More points, less seen** (archived *One Reader* L896–909; *The Order of Limits* L1754–1845). A parallel reader of
+angular step ε seeing N evenly spaced points round a circle resolves R(N) = (N/π)·arccos(εN/2π) of them, which peaks at
+R_max ≈ 1.1222/ε and then falls: past a point, more points mean fewer told apart. *Vantages:* the completed view's N
+against what one standpoint resolves. **exact** (the peak checked: x·arccos x is largest at x ≈ 0.6522, giving 0.5611,
+so 2 × 0.5611 = 1.1222).
 
 ## E. Candidates, not yet examined
 
@@ -317,6 +364,9 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
   paradoxes under one diagnosis, the private ruler as the reader's own H and the shared number line as the completed
   view's unit; the exchange already worked in `pool.html`. Simpson's paradox and the twin paradox moved up from the
   candidates.
+- 11 October, fourth: from the archived papers (`papers/archive/`, `plans/archive-gems.md`): the equation as a third
+  party and figure against rate (the three vantages), the private ruler's reason and the two-group tower (§F), and five
+  entries G1–G5.
 
 ## Sources
 

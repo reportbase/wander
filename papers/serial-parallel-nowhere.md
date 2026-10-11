@@ -792,6 +792,26 @@ is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessi
   keep, Knight 1976, McCullagh 1996); what would be new is that a situated reader's knowledge selects the
   transformations. Still added: the constant joining the two spaces (c = 1, no jump in spacing at the corner), and that
   the sweep is a turn of a rigid bar.
+- *The tower: the levels as an address* (11 October; pulled forward from the archived papers, `plans/archive-gems.md`;
+  Tom: "here are some older papers where we have thought about the denominator. they have been archived but off many gems we should pull forward, for example the 'tower'"; a reading, unruled). Past the corner the levels are plain doublings, and the count is the level of
+  detail. The archive built that as a tower: an address written at a fixed pitch per level, so that each level is a
+  digit and an address never moves when the list grows (*Browsing the Fisheye* L772–797, the calendar tower; positional
+  notation). A reader whose own step is a doubling steps exactly one level per rung when the address is in base two:
+  measured, nine rungs gave nine steps of one, where base ten gave four uneven changes (*The Radix* §2); a step at level
+  b moves the address by exactly 2^b and returns exactly, and a carry is the address's own event (§3). The exponent is
+  the level and the mantissa the reading, which is floating point; "the length of a quadkey equals the level of detail"
+  (*The Order of Limits* L803–805). Three points carry over to the current view. (1) *D.1's escape, priced:* a reader
+  with another step matches another base exactly, so a base other than the halving is a measure added, and "uniformity
+  can be free; variation has to be represented somewhere, in the reader's grain or in information handed to it" (*The
+  Radix* §11); a mixed address (the calendar's 100/12/31/24/60/60) costs a table, which a reader given nothing does not
+  have (§5–§6). (2) *The floor is the container's step:* an address held as a number inherits that number's grain (a
+  double's 2^53), held as digits it has none (§7); the level of detail runs out at the reader's step, at the list's
+  length, and at the step of whatever holds the address. (3) *The tower of holds is the denominator:* inside a group its
+  hold cancels, and between two groups exactly one factor survives, the ratio of their holds, recovered by closure (0.5,
+  2 and 3.7003 recovered as 0.5000, 2.0000 and 3.7003; *The Order of Limits* L2494–2530; *Degrees of Freedom* §5.10:
+  "neighbours cost nothing; strangers cost the depth"). That one factor is the exchange of `papers/denominator-paradox.md`.
+  Superseded in the archive and not carried over: recursive corners ("the K of the previous fisheye is the N of the
+  next"), depth as a coordinate, and arctan as the browse map (R188, R148).
 - *Two address spaces* (Tom, 11 October: "this chain of logic creates two address spaces, proportional and logrithmic
   around the corner."). Inside the corner the addresses are proportional: the near field at true scale, read v in terms
   of h, the unit circle the reader lives in. Past it they are logarithmic: the far field, read h in terms of v, every

@@ -166,8 +166,13 @@ Google Fonts load from outside:
   `denominator-paradox.md` ("Each Sees the Other Smaller", an older paper Tom wrote with Claude in an earlier session, added 11 Oct) is a first course in
   denominator paradoxes: private rulers compared on one number line; dissolve, then purchase a shared denominator (the
   exchange: ratio and product of the two reads). `vantages.md` §F maps it onto the three vantages.
-  The papers cite others not in this repo (*Reader Geometry as
-  Addressing*, `plans/…`): leave those references as they are. `_config.yml`
+  `papers/archive/` (11 Oct 2026, from Tom: "older papers … archived but off many gems we should pull forward"): seven
+  earlier papers kept as received, never edited: *Reader Geometry as Addressing* (rulings R1–R151 only; R152–R187 are
+  quoted in SPN Appendix A), *The Relation Space*, *Browsing the Fisheye*, *The Radix*, *The Order of Limits*, *One
+  Reader*, *Degrees of Freedom*. They predate 9 Oct: check every term (density, view from everywhere, inside/outside,
+  fulcrum, arctan, h and v as breadths, recursive corners, depth, old situation numbers) before pulling anything forward.
+  `plans/archive-gems.md` lists the gems, where each went, what is queued, and three conflicts for Tom to rule.
+  Other papers the corpus cites that are not in this repo (`plans/…` notes from other sessions): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.
 - `plans/`: working notes, reviews and lab plans, as the corpus cites them
   (`plans/…`). `what-deserves-attention.md` is a review of what to take up next
