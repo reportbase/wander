@@ -199,7 +199,8 @@ Google Fonts load from outside:
   `inverse-square.md` and SPN Part II). **Its main result** (SPN R200: "it is the primary result"): the Cauchy is the
   reader's addresses, not its payload (R47; SPN §4.3; its Theorem 6: the reach of whatever arrives cancels from every
   reading, order survives every change of payload, sums do not), introduced by the hand (fingers addresses, rings
-  payload). **The reader is explained in full** (SPN R203), its §3: the five situations, which division a reader can
+  payload; SPN R205: the thumb is H and the mountain V, known V the unsituated view, unknown V mountain equals thumb).
+  **The reader is explained in full** (SPN R203), its §3: the five situations, which division a reader can
   make, the number line laid twice, the three vantages and their seven-step chain, static and dynamic, what a reader holds
   and the reader as the pivot, the hand in full, and the one number a reader lacks; never fold these into a short table.
   §10 is a worked example (a mountain range). Before rewriting it, check the new text against the old for anything lost.

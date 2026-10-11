@@ -15,7 +15,8 @@ and the fisheye. The three read a line of true breadth 1 as 1, π/2 and 2/π; th
 or constructed from several observations, never observed from one. Any relation between two parties can be written as a pair of unit relations, h
 and v, each between 0 and 1, and the reader reads their ratio. Because neither unit relation can pass 1, every such sweep
 turns over at a single point, v = h, the *corner*, where reading v in terms of h gives way to reading h in terms of v.
-To read at all, the reader must use its own breadth as the unit for the other party. With that choice the corner lies at
+To read at all, the reader must use its own breadth as the unit for the other party: its thumb as the measure of
+the mountain. With that choice the corner lies at
 distance 1 whatever unit was chosen, and the relation, drawn as a bar of fixed length, traces a unit circle. Inside the
 corner the reader can lay out its readings in proportion; past it, if no scale is preferred, the only consistent layout
 is logarithmic. The reader therefore has two address spaces, proportional and logarithmic, joined at one corner.
@@ -54,6 +55,11 @@ change the rings, and swapping the rings for others does not change the fingers.
 mathematics of the fingers alone, and the main result is that one well-known distribution, the Cauchy, is entirely
 fingers.
 
+Your thumb is your own breadth, H: the one measure you hold up. The mountain you look at has a breadth of its own, V.
+If you know the mountain's size, you hold the view from nowhere, and the corner is where your thumb equals the mountain,
+a point you can compute. If you do not know it, your thumb is the only measure you have, so you set the mountain equal
+to your thumb, V = H, and read the mountain in thumbs.
+
 **Three vantages.** A figure can be held in three ways. The *completed* vantage holds every breadth at once from no
 standpoint; this is classical geometry, and its figure is the circle. A *situated* reader has a facing. Either it takes
 in a hemisphere at once, from outside (a parallel reader), or it sweeps the hemisphere from home, one direction at a
@@ -90,7 +96,8 @@ The paper is geometry only. It makes no claim about physics, perception or the s
 whole, none of it, all of it, or anything in between, such as the fraction of a tank filled, the fraction of a day gone,
 or the part of a road behind. A relation requires two unit relations, one for each party. Draw one horizontally and one
 vertically and call them h and v. They have no units, and neither knows the other's whole. The wholes they relate to are
-the *breadths* H and V, which are amounts. The reader is H, its own breadth; h is the reader's side of a relation. A
+the *breadths* H and V, which are amounts. The reader's breadth H is its thumb, the one measure it holds; the other's
+breadth V is the mountain it looks at. h is the reader's side of a relation. A
 circle has two unit relations, h and v; a sphere has three, h, v and v₂.
 
 **Unit relations are not amounts.** The amounts are h·H and v·V, so their ratio is (v·V)/(h·H) = (v/h)·(V/H). The ratio
@@ -156,6 +163,13 @@ if they are not. If it is not, the reader is situated: 3 if it stands outside a 
 4 if it stands inside and takes the rest one direction at a time. A reader with no h has nothing related to it at all,
 and that is situation 0. A V known only within bounds is a variant of 3 or 4, not a sixth situation.
 
+**Thumb and mountain.** Call the reader's breadth H its thumb and the other's breadth V the mountain. If the reader
+knows the mountain's size, it holds the unsituated view: thumb and mountain are both in hand, and the corner, where the
+thumb equals the mountain (v·V = h·H), is computed. If it does not know the mountain's size, it is situated, and the
+only measure it has to give the mountain is its thumb: it sets V = H, mountain equals thumb (§5), and reads the mountain
+in thumbs. The corner v = h is still found exactly, but the amounts there are the assignment's. The mountain's true
+size, V/H thumbs, is the one number the situated reader lacks (§3.8).
+
 - **0, nothing.** The reader has its breadth H, as it always does, but no h: nothing is related to it, so there is
   nothing to read and no home to lay from.
 - **1, the circle.** Both breadths known and equal, held whole as an equation, h² + v² = 1, from no standpoint. The
@@ -190,7 +204,8 @@ make is its situation.
 | H | (1, V/H) | the number line held upright at 1: unbounded | H only |
 | the whole, √(H² + V²) | (cos θ, sin θ) | the quarter circle: bounded | H and V |
 
-A situated reader knows H and not V, so it cannot form the whole; it can only divide by H. Every system it reads lands
+A situated reader knows H and not V, so it cannot form the whole; it can only divide by H, measuring everything in
+thumbs. Every system it reads lands
 on one unbounded line, at its ratio, with the scale gone and a horizon at the far end. An unsituated view holds both
 breadths and can divide by the whole: every system lands on the bounded quarter circle, with the corner computed at 45°
 and no horizon. The two are one projection apart: projecting (1, x) toward the centre gives the circle's point.
@@ -348,6 +363,8 @@ the situated reader's V = H (§5) is its own hand. Spread the fingers between fl
 address, one ray of the relation. Put a ring on each finger: the ring is what that address holds, the payload. Turning
 the hand does not change the rings. Replace the rings with others, and the sweep from flat to upright is the same sweep,
 each finger the same address.
+- *The thumb is H.* The hand's own measure is its thumb, the reader's breadth; the mountain it looks at is V. Setting
+  V = H is reading the mountain in thumbs.
 - *The geometry is the hand, not the rings.* Dividing v by h keeps the finger and drops the ring.
 - *The serial reader is the hand and its fingers; the parallel reader holds the rings.* One walks the addresses; the
   other keeps the magnitudes, all at once.
@@ -378,8 +395,8 @@ those for b = 1 slid up exactly one doubling, every doubling's share unchanged:
 | b = 1 | 0.139 | 0.205 | 0.205 | 0.139 | 0.077 |
 | b = 2 | 0.077 | 0.139 | 0.205 | 0.205 | 0.139 |
 
-So what a situated reader lacks is one number, and on the count of doublings it is an offset, log₂(V/H), not a change of
-pattern. Situation 2 knows the number; 3 and 4 do not; known within bounds, they know it within bounds. Assuming it
+So what a situated reader lacks is one number, how many thumbs the mountain is, V/H; on the count of doublings it is an
+offset, log₂(V/H), not a change of pattern. Situation 2 knows the number; 3 and 4 do not; known within bounds, they know it within bounds. Assuming it
 clarifies the reading; it does not simplify it.
 
 ## 4. The corner
@@ -457,8 +474,9 @@ walk through the facings must flip each freedom an even number of times, so the 
 n-cube, walked as a Gray code. ∎
 
 **What V = H means.** Setting V = H is a rule of representation: the reader uses its own breadth as the unit for the
-other party. It is not a claim that the other's breadth equals H. Where it does not, every amount the reader reads is
-off by the true V/H (§9). The rule constructs a relation calibrated in one unit and discovers nothing about the world.
+other party. It sets the mountain equal to its thumb because its thumb is the only measure it has. It is not a claim
+that the mountain is the size of a thumb. Where it is not, every amount the reader reads is off by the true V/H, the
+number of thumbs the mountain really is (§9). The rule constructs a relation calibrated in one unit and discovers nothing about the world.
 Step (a) is close to a definition; we claim only that a relation needs two assigned breadths and a situated reader has
 one. Under V = H the point where the two parties' amounts are equal, v·V = h·H, coincides with the geometric corner
 v = h, the edge of the unit circle.
@@ -809,8 +827,9 @@ formula to within two points. The addresses never overflow; the resolution does.
 ## 9. What the geometry does not give: amounts
 
 **The calibration error.** Under V = H the amounts equal the unit relations numerically, which is why the two are so easily
-confused. Where the true V differs from H, every amount is off by V/H, by the same factor on both sides of the corner.
-The addresses are exact; the amounts are not. Within one observation a reader cannot tell V = 10² from V = 10¹⁶. Amounts
+confused. Where the true V differs from H, every amount is off by V/H, by the same factor on both sides of the corner: the
+reader has read the mountain as one thumb, and it is V/H thumbs. The addresses are exact; the amounts are not. Within
+one observation a reader cannot tell a mountain of a hundred thumbs from one of 10¹⁶. Amounts
 can come only from outside the geometry, across observations, from something whose amount is already known. That is
 physics, and this paper does not treat it.
 
@@ -828,7 +847,8 @@ one factor that crosses.
 ## 10. A worked example: a mountain range
 
 A reader looks at a mountain range, face on, from opposite its middle. From nowhere we know three amounts: the reader's
-breadth H = 1 mile, the range's width V = 20 miles, and its distance d = 10 miles. The reader knows only H.
+thumb H = 1 mile (the thumb is whatever single measure the reader holds; here it is a mile), the mountain's width
+V = 20 miles, and its distance d = 10 miles. The reader knows only its thumb.
 
 **The pairs.** Each pair has its own corner, so we name them first.
 
@@ -836,16 +856,17 @@ breadth H = 1 mile, the range's width V = 20 miles, and its distance d = 10 mile
 |---|---|---|
 | half-width to distance, (V/2, d) = (10, 10) | 1 | at that pair's corner: each end of the range lies 45° off straight ahead |
 | width to distance, (V, d) = (20, 10) | 2 | one doubling past that pair's corner: the range is wider than it is far |
-| distance to the reader's breadth, (d, H) = (10, 1) | 10 | log₂ 10 ≈ 3.32 doublings past the reader's corner |
-| width to the reader's breadth, (V, H) = (20, 1) | 20 | log₂ 20 ≈ 4.32 doublings |
+| distance to the thumb, (d, H) = (10, 1) | 10 | log₂ 10 ≈ 3.32 doublings past the reader's corner |
+| mountain to thumb, (V, H) = (20, 1) | 20 | log₂ 20 ≈ 4.32 doublings: the mountain is 20 thumbs |
 
 The first two can be read from the view itself, as directions. The last two set H against amounts the reader does not
 have.
 
 **From nowhere.** The completed view holds 1, 20 and 10 in one unit, miles: the blueprint, with the range drawn 20
 miles wide and 10 miles out and its ends at ±45°. Every number in the table is available to it, and the 45° is simply
-where the ends are; nothing marks it. There is no home, no order of arrival and no horizon. It holds the true width,
-and no one stands anywhere in it.
+where the ends are; nothing marks it. Thumb and mountain are both in hand: the mountain is 20 thumbs, and the point
+where thumb equals mountain is computed, not found. There is no home, no order of arrival and no horizon. It holds the
+true width, and no one stands anywhere in it.
 
 **From where the reader stands.**
 1. *The addresses come first.* The reader's circle has radius 1 mile, with the corner at 1 mile: proportional addresses
@@ -858,8 +879,9 @@ and no one stands anywhere in it.
    reading, and together they give the range's skyline, up to scale. The far slopes are hidden, rings behind rings.
 3. *What it cannot read.* A range 20 miles wide at 10 miles, 2 miles wide at 1 or 2,000 miles wide at 1,000 gives the
    same fingers and the same rings. The reach cancels from every reading (Theorem 6).
-4. *Reading in miles means setting V = H.* The reader takes the range to be 1 mile wide, and the width-to-distance
-   reading of 2 then puts it half a mile away. Every amount is off by V/H = 20, by the same factor on both sides of the
+4. *Mountain equals thumb.* Not knowing the mountain's size, the reader sets V = H: it takes the range to be one thumb,
+   1 mile, wide, and the width-to-distance reading of 2 then puts it half a mile away. Every amount is off by V/H = 20,
+   the number of thumbs the mountain really is, by the same factor on both sides of the
    corner. In levels, the reader places the range at 0.5 H, inside its near field, when it is truly at 10 H, 3.3
    doublings out in the far field: a rigid shift of log₂ 20 ≈ 4.32 levels, with the pattern of readings untouched. This
    is the one number of §3.8.
@@ -977,7 +999,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | symbol | kind | meaning |
 |---|---|---|
 | h, v, v₂ | unit relations, from 0 to 1 | h relates to H, v to V, v₂ to V₂; a relation requires two, a circle has two, a sphere three |
-| H, V, V₂ | amounts | breadths: the reader's, the other's, a second other's |
+| H, V, V₂ | amounts | breadths: the reader's (its thumb), the other's (the mountain), a second other's |
 | v/h, h/v | geometry | the reading before and past the corner |
 | the corner | geometry | v = h |
 | home, the horizon | geometry | v/h = 0; v/h → ∞, never reached |
