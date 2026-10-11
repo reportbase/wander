@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+    <title>Infinite table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap">
+    <!--
+    pool-infinite.html: the infinite table (11 October 2026; Tom: "the advantage of this is that we could scale it up to
+    infinite number of balls, but then zoom in to just see a small percentage of them, and only have to draw or calcualate
+    the visible balls"; "yes"). POL runs 11–15 (plans/pol-plan.md) are its tests.
+
+    A world of balls of any size, held two ways. Round the reader, a window of balls, one by one, as pool.html plays them
+    from inside: each reads the other's v = r/d and is told h = r/d, and equal balls touch at h = v = ½, the corner, found
+    exactly within the tick (POL run 9). Everything else is totals: the world is cut into fixed square cells in dyadic
+    levels (level 0 is 7.5 units wide, level k 7.5·2^k), and each cell beyond the window holds only its count, momentum and
+    energy. A cell is held whole at the level where it reads at the corner from the reader (its size no more than its
+    distance) and split while it reads larger, so the cells number about a dozen per level: the work grows with the log of
+    the world, not with its balls. Moving or resizing the window unfolds the cells it takes in into balls (seeded by their
+    place, carrying exactly their momentum and energy) and folds those it leaves. The cells among themselves exchange by
+    diffusion (a chosen model of the far field, not tested).
+    Where the window meets the cells (POL runs 11–15 found what it needs): its edge is a mirror, and inside it a band 2 units
+    deep is held at the chemical potential of the ring of cells beside the window. Balls are put in at free places at the
+    gas's activity (Henderson's equation of state) and taken out at a steady rate; their warmth is redrawn from the ring's.
+    Every ball put in or taken out is charged to the ring, and every push of the mirror to the far field, so the world's
+    count, momentum and energy hold to rounding. Run 15: the view sees the referee's gas to 0.3%, and its count fluctuates
+    as an open region's does.
+
+    The table loses nothing (no cloth, no cushions, contacts elastic, e = 1), so the world stays alive without a driver
+    to choose: a gas of hard discs at area fraction 0.15, each velocity component spread σ = 5.
+
+    Drag to move, wheel or pinch (or − +) to zoom; the window follows the view while a ball is at least 6 pixels wide,
+    and past that stays as large as it was there: what is too small to see is held as totals. "strike" kicks the balls
+    near the middle of the view; the heat then flows out into the cells. "cells" shows the cells' outlines and levels.
+    Links: ?zoom= (pixels per unit), ?cells=0. Test hook: window.__infinite (the engine: makeGas, refereeStep, multiFromGas, multiUniform, multiStep,
+    setWindow, totals; the modes of runs 11–15 by opts.mode: edge, band, mirror, gc, ring (the page's)).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --line: rgba(255,255,255,0.12); --ink: #c8c8d0; --dim: #8a8a96;
+        --bright: #e6e4ee; --gold: #d4a052 }
+    * { box-sizing: border-box }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground); color: var(--ink);
+        font: 13px/1.4 'DM Mono', ui-monospace, monospace; overscroll-behavior: none }
+    canvas { position: fixed; inset: 0; display: block; touch-action: none }
+    #hud { position: fixed; left: 10px; top: 10px; max-width: calc(100% - 20px); pointer-events: none; color: var(--bright); white-space: pre-wrap;
+        background: rgba(12,12,17,0.82); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px }
+    #hud .dim { color: var(--dim) }
+    #bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+        justify-content: center; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); background: rgba(12,12,17,0.88);
+        border-top: 1px solid var(--line) }
+    button { font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line); border-radius: 6px;
+        padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.go { border-color: var(--gold); color: var(--gold) }
+    @media (max-width: 520px) { html, body { font-size: 11.5px } button { padding: 5px 8px } }
+    </style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+<div id="hud"></div>
+<div id="bar">
+    <button id="out" aria-label="zoom out">−</button>
+    <button id="in" aria-label="zoom in">+</button>
+    <button id="strike" class="go">strike</button>
+    <button id="cells">cells: on</button>
+    <button id="pause">pause</button>
+    <button id="full" aria-label="full screen">⛶</button>
+</div>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), TAU = 2 * Math.PI;
+
+    // ══ the gas (amounts): radius, area fraction, density, the spread of each velocity component, the tick ══
+    const R = 0.45, DIA = 2 * R, PHI = 0.15, N_DENS = PHI / (Math.PI * R * R), SIGMA = 5, TICK = 1 / 240, C0 = 7.5, G = 1.2;
+    // kinetic theory of hard discs (Enskog; Henderson's contact value and equation of state), for the far field's diffusion.
+    // NU is the rate as POL run 11's plan wrote it, n·(2r)·σ·√π·g = 2.43: the plan took the discs' cross-section as one
+    // diameter, but in two dimensions it is two (a centre within a diameter either side of the path), so Enskog's rate is
+    // NU_ENSKOG = 4.86 (found in a shakedown before the run; the plan's prediction is kept as written). The far field's
+    // diffusion D = λ⟨|u|⟩/2 is the plan's, from its λ = ⟨|u|⟩/NU.
+    const G_CONTACT = (1 - 7 * PHI / 16) / (1 - PHI) ** 2, NU = N_DENS * DIA * SIGMA * Math.sqrt(Math.PI) * G_CONTACT, NU_ENSKOG = 2 * NU;
+    const MEAN_SPEED = SIGMA * Math.sqrt(Math.PI / 2), LAMBDA = MEAN_SPEED / NU, DIFF = LAMBDA * MEAN_SPEED / 2;
+    // run 12: the far field's diffusion from the right rate (λ = 1.29, D = 4.04), and the band at the window's edge, 2 units
+    // deep, its balls held at the cells' density and warmth (each redrawn about as often as it would meet another ball)
+    const LAMBDA_ENSKOG = MEAN_SPEED / NU_ENSKOG, DIFF_ENSKOG = LAMBDA_ENSKOG * MEAN_SPEED / 2, BAND = 2;
+    // run 14: the band held at the cells' activity. Henderson's Z = (1 + φ²/8)/(1 − φ)² integrates in closed form to the
+    // excess chemical potential βμ_ex = (Z − 1) + (9/8)·φ/(1 − φ) − (7/8)·ln(1 − φ); the activity is z = n·e^βμ_ex (2.072 n at
+    // φ = 0.15). GAMMA: how often a band ball is put in or taken out, the gas's own contact rate.
+    const muEx = phi => { const Z = (1 + phi * phi / 8) / (1 - phi) ** 2; return (Z - 1) + 9 / 8 * phi / (1 - phi) - 7 / 8 * Math.log(1 - phi); };
+    const activity = n => n > 0 ? n * Math.exp(muEx(Math.min(0.7, n * Math.PI * R * R))) : 0, GAMMA = NU_ENSKOG;
+    const SQ2PI = Math.sqrt(2 * Math.PI);
+
+    function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+    const gauss = rnd => Math.sqrt(-2 * Math.log(1 - rnd())) * Math.cos(TAU * rnd());
+    const hash3 = (a, b, c) => { let h = Math.imul(a | 0, 0x9E3779B1) ^ Math.imul((b | 0) + 0x632BE5AB, 0x85EBCA77) ^ Math.imul((c | 0) + 0x5BD1E995, 0xC2B2AE3D); h ^= h >>> 15; h = Math.imul(h, 0x2C1B3C6D); h ^= h >>> 12; return h >>> 0; };
+    const mod = (a, m) => ((a % m) + m) % m;
+
+    // ══ balls, one by one: positions and velocities in typed arrays (a window's in its own local units) ══
+    function Balls(cap = 1024) { return { n: 0, x: new Float64Array(cap), y: new Float64Array(cap), vx: new Float64Array(cap), vy: new Float64Array(cap) }; }
+    function push(B, x, y, vx, vy) {
+        if (B.n === B.x.length) for (const k of ['x', 'y', 'vx', 'vy']) { const a = new Float64Array(2 * B.n); a.set(B[k]); B[k] = a; }
+        const i = B.n++; B.x[i] = x; B.y[i] = y; B.vx[i] = vx; B.vy[i] = vy; return i;
+    }
+    function removeAt(B, i) { const l = --B.n; B.x[i] = B.x[l]; B.y[i] = B.y[l]; B.vx[i] = B.vx[l]; B.vy[i] = B.vy[l]; }
+
+    // ══ contact read from inside. Each ball reads the other's v = r/d and is told its h = r/d; equal balls touch at
+    //    h + v = 1 (2r/d = 1, the corner). Found exactly (POL run 9): when the pair has passed h + v = 1 within this tick,
+    //    how long ago was it exactly 1? With p the other's place relative to it and w their relative motion, solve
+    //    |p − w·τ| = 2r for τ ≥ 0; respond along the line of centres then (equal masses, elastic: the normal parts swap),
+    //    and correct each place by its change of motion times τ. ══
+    function contact(B, i, j, px, py, dt, ops, onContact) {
+        const vx = B.vx, vy = B.vy, wx = vx[j] - vx[i], wy = vy[j] - vy[i], pw = px * wx + py * wy;
+        if (!(pw < 0)) return;                                   // drawing apart: no contact
+        const a = wx * wx + wy * wy, c = px * px + py * py - DIA * DIA;
+        let tau = (pw + Math.sqrt(Math.max(0, pw * pw - a * c))) / a, mx, my;
+        if (tau >= 0 && tau <= dt) { const qx = px - wx * tau, qy = py - wy * tau, l = Math.hypot(qx, qy); mx = qx / l; my = qy / l; }
+        else {                                                   // set down overlapping (a rare late find): push apart, respond now
+            tau = 0; const l = Math.hypot(px, py) || 1; mx = px / l; my = py / l; const s = (DIA - l) / 2;
+            B.x[i] -= mx * s; B.y[i] -= my * s; B.x[j] += mx * s; B.y[j] += my * s;
+        }
+        const wn = wx * mx + wy * my; if (!(wn < 0)) return;
+        vx[i] += wn * mx; vy[i] += wn * my; vx[j] -= wn * mx; vy[j] -= wn * my;
+        B.x[i] += wn * mx * tau; B.y[i] += wn * my * tau; B.x[j] -= wn * mx * tau; B.y[j] -= wn * my * tau;
+        ops.contacts++; if (onContact) onContact(i, j);
+    }
+    // every pair near enough to touch, through a grid of cells G wide over [0, W) × [0, H) (wrapped round if `wrap`)
+    function collide(B, W, H, wrap, dt, ops, onContact) {
+        const gw = Math.max(1, Math.floor(W / G)), gh = Math.max(1, Math.floor(H / G)), cw = W / gw, ch = H / gh, n = B.n;
+        const head = new Int32Array(gw * gh).fill(-1), next = new Int32Array(n), x = B.x, y = B.y;
+        for (let i = 0; i < n; i++) { let cx = Math.floor(x[i] / cw), cy = Math.floor(y[i] / ch); cx = cx < 0 ? 0 : cx >= gw ? gw - 1 : cx; cy = cy < 0 ? 0 : cy >= gh ? gh - 1 : cy; const c = cy * gw + cx; next[i] = head[c]; head[c] = i; }
+        const D2 = DIA * DIA, NB = [[1, 0], [-1, 1], [0, 1], [1, 1]];
+        for (let cy = 0; cy < gh; cy++) for (let cx = 0; cx < gw; cx++) {
+            for (let i = head[cy * gw + cx]; i >= 0; i = next[i]) {
+                for (let j = next[i]; j >= 0; j = next[j]) { ops.pairs++; const px = x[j] - x[i], py = y[j] - y[i]; if (px * px + py * py < D2) contact(B, i, j, px, py, dt, ops, onContact); }
+                for (const [dx, dy] of NB) {
+                    let nx = cx + dx, ny = cy + dy, sx = 0, sy = 0;
+                    if (wrap) { if (nx < 0) { nx += gw; sx = -W; } else if (nx >= gw) { nx -= gw; sx = W; } if (ny >= gh) { ny -= gh; sy = H; } }
+                    else if (nx < 0 || nx >= gw || ny >= gh) continue;
+                    for (let j = head[ny * gw + nx]; j >= 0; j = next[j]) {
+                        ops.pairs++; const px = x[j] + sx - x[i], py = y[j] + sy - y[i];
+                        if (px * px + py * py < D2) contact(B, i, j, px, py, dt, ops, onContact);
+                    }
+                }
+            }
+        }
+    }
+
+    // ══ the referee: every ball, a square world of side L wrapped round at its edges (no edge at all) ══
+    function makeGas(L, seed) {
+        const rnd = rng(seed), N = Math.round(N_DENS * L * L), B = Balls(N), gw = Math.floor(L / G), cell = L / gw, grid = new Map();
+        const key = (cx, cy) => mod(cy, gw) * gw + mod(cx, gw);
+        while (B.n < N) {   // random placement without overlap
+            const x = rnd() * L, y = rnd() * L, cx = Math.floor(x / cell), cy = Math.floor(y / cell); let ok = true;
+            for (let dy = -1; dy <= 1 && ok; dy++) for (let dx = -1; dx <= 1 && ok; dx++) for (const j of grid.get(key(cx + dx, cy + dy)) || []) {
+                let px = B.x[j] - x, py = B.y[j] - y; px -= L * Math.round(px / L); py -= L * Math.round(py / L);
+                if (px * px + py * py < DIA * DIA) { ok = false; break; }
+            }
+            if (!ok) continue;
+            const k = key(cx, cy); if (!grid.has(k)) grid.set(k, []); grid.get(k).push(push(B, x, y, SIGMA * gauss(rnd), SIGMA * gauss(rnd)));
+        }
+        let mx = 0, my = 0; for (let i = 0; i < N; i++) { mx += B.vx[i]; my += B.vy[i]; } mx /= N; my /= N;
+        for (let i = 0; i < N; i++) { B.vx[i] -= mx; B.vy[i] -= my; }   // the world at rest as a whole
+        return { B, L, t: 0, ops: { moves: 0, pairs: 0, contacts: 0 } };
+    }
+    function refereeStep(S, dt, onContact) {
+        const B = S.B, L = S.L, n = B.n;
+        for (let i = 0; i < n; i++) { let x = B.x[i] + B.vx[i] * dt, y = B.y[i] + B.vy[i] * dt; if (x < 0 || x >= L) x = mod(x, L); if (y < 0 || y >= L) y = mod(y, L); B.x[i] = x; B.y[i] = y; }
+        S.ops.moves += n; collide(B, L, L, true, dt, S.ops, onContact); S.t += dt;
+    }
+    const cloneGas = S => { const B = Balls(S.B.n); B.n = S.B.n; for (const k of ['x', 'y', 'vx', 'vy']) B[k].set(S.B[k].subarray(0, S.B.n)); return { B, L: S.L, t: S.t, ops: { moves: 0, pairs: 0, contacts: 0 } }; };
+
+    // ══ the multiscale world: a window of balls round the reader, and totals in dyadic cells beyond ══
+    // Cells are named by level k and index (i, j) in units of their own size (level 0 cells C0 wide); the world is 2^K
+    // level-0 cells a side, wrapped round. A cell's totals: N (count), Px, Py (momentum), E (kinetic energy); mass 1.
+    const keyOf = (k, i, j) => k + ':' + i + ':' + j;
+    // opts (run 15's by default): mode 'ring' (run 15: as 'gc', but the band reads and charges the whole ring of cells beside
+    // the window, is kept at the gentler opts.gamma, 1 a second, and the mirror's pushes are booked in the far field), 'gc' (run 14: the band held at the cells' activity, its outer edge a mirror whose push
+    // goes to the outside, its books spread over the cells it reads), 'mirror' (run 13: the band's count held, its outer edge a
+    // mirror), 'band' (run 12: the band open at its outer edge) or 'edge' (run 11: no band, balls enter at the edge at the
+    // cells' one-way flux); quiet: a cell's flow read only above its noise; D: the far field's diffusion
+    function Multi(K, w, oi, oj, seed = 1, opts = {}) {
+        return { K, S: 2 ** K, w, oi, oj, seed, far: opts.far || 'diffusion', mode: opts.mode || 'ring', gamma: opts.gamma ?? (opts.mode && opts.mode !== 'ring' ? GAMMA : 1), widom: { tries: 0, free: 0 }, quiet: opts.quiet !== false, D: opts.D ?? DIFF_ENSKOG,
+            leaves: new Map(), pairs: [], segs: [], B: Balls(1024), closed: false, t: 0, tick: 0,
+            ops: { moves: 0, pairs: 0, contacts: 0, tries: 0, cells: 0 }, residual: null, entered: 0, left: 0 };
+    }
+    const sizeOf = k => C0 * 2 ** k;
+    const readerOf = M => [M.oi + M.w / 2, M.oj + M.w / 2];   // in level-0 cell units
+    function wrapDist(a, b, S) { const d = mod(a - b, S); return Math.min(d, S - d); }
+    function overlap1(a0, alen, b0, blen, S) { return mod(b0 - a0, S) < alen || mod(a0 - b0, S) < blen; }
+    const inWindow = (M, i, j) => mod(i - M.oi, M.S) < M.w && mod(j - M.oj, M.S) < M.w;
+    // a cell is held whole while it reads no larger than the corner from the reader: its size no more than its distance
+    function needSplit(M, k, i, j) {
+        if (k === 0) return false;
+        const f = 2 ** k, [rx, ry] = readerOf(M);
+        if (overlap1(i * f, f, M.oi, M.w, M.S) && overlap1(j * f, f, M.oj, M.w, M.S)) return true;   // the window is in it
+        const dx = Math.max(0, wrapDist((i + 0.5) * f, rx, M.S) - f / 2), dy = Math.max(0, wrapDist((j + 0.5) * f, ry, M.S) - f / 2);
+        return f > Math.hypot(dx, dy);
+    }
+    // the totals of cell (k, i, j) from an older set of cells: its share of an older cell that holds it, or the sum of its parts
+    function totalsFrom(old, K, k, i, j) {
+        for (let kk = k; kk <= K; kk++) {
+            const f = 2 ** (kk - k), o = old.get(keyOf(kk, Math.floor(i / f), Math.floor(j / f)));
+            if (o) { const s = 1 / (f * f); return { N: o.N * s, Px: o.Px * s, Py: o.Py * s, E: o.E * s }; }
+        }
+        if (k === 0) return { N: 0, Px: 0, Py: 0, E: 0 };
+        const t = { N: 0, Px: 0, Py: 0, E: 0 };
+        for (let d = 0; d < 4; d++) { const c = totalsFrom(old, K, k - 1, 2 * i + (d & 1), 2 * j + (d >> 1)); t.N += c.N; t.Px += c.Px; t.Py += c.Py; t.E += c.E; }
+        return t;
+    }
+    // the cells for the present window and reader: one cover of the world outside the window, each cell read at the corner
+    function recover(M, old) {
+        const nl = new Map(), visit = (k, i, j) => {
+            if (needSplit(M, k, i, j)) { for (let d = 0; d < 4; d++) visit(k - 1, 2 * i + (d & 1), 2 * j + (d >> 1)); return; }
+            if (k === 0 && inWindow(M, i, j)) return;                 // a window cell: its balls are held one by one
+            nl.set(keyOf(k, i, j), { k, i, j, A: sizeOf(k) ** 2, ...totalsFrom(old, M.K, k, i, j) });
+        };
+        visit(M.K, 0, 0); M.leaves = nl; adjacency(M);
+    }
+    // the cell (or the window) holding level-0 cell (a, b)
+    function leafAt(M, a, b) {
+        a = mod(a, M.S); b = mod(b, M.S);
+        for (let k = 0; k <= M.K; k++) { const f = 2 ** k, l = M.leaves.get(keyOf(k, Math.floor(a / f), Math.floor(b / f))); if (l) return l; }
+        return null;
+    }
+    // which cells touch which (for the far field's diffusion), and which cell lies beyond each level-0 stretch of the window's edge
+    function adjacency(M) {
+        // each stretch of boundary between two cells, found once: from the cell on its left (or below), walking up its
+        // right (or top) side; a stretch beside the window (a level-0 cell holding balls) is not a pair of cells
+        const pairs = [];
+        for (const l of M.leaves.values()) {
+            const f = 2 ** l.k;
+            for (const right of [true, false]) {
+                for (let t = 0; t < f;) {
+                    const a = right ? (l.i + 1) * f : l.i * f + t, b = right ? l.j * f + t : (l.j + 1) * f, o = leafAt(M, a, b);
+                    let step = 1;
+                    if (o) { const g = 2 ** o.k; step = Math.min(f - t, g - mod(right ? b - o.j * g : a - o.i * g, M.S)); }
+                    if (o && o !== l) pairs.push({ a: l, b: o, len: step * C0, gap: (sizeOf(l.k) + sizeOf(o.k)) / 2, axis: right ? 0 : 1 });
+                    t += Math.max(1, step);
+                }
+            }
+        }
+        M.pairs = pairs;
+        const segs = [], w = M.w, W = w * C0;
+        for (let r = 0; r < w; r++) segs.push(
+            { cell: [M.oi - 1, M.oj + r], x: 0, y: r * C0, along: [0, 1], nrm: [1, 0] },
+            { cell: [M.oi + w, M.oj + r], x: W * (1 - 1e-12), y: r * C0, along: [0, 1], nrm: [-1, 0] },
+            { cell: [M.oi + r, M.oj - 1], x: r * C0, y: 0, along: [1, 0], nrm: [0, 1] },
+            { cell: [M.oi + r, M.oj + w], x: r * C0, y: W * (1 - 1e-12), along: [1, 0], nrm: [0, -1] });
+        for (const s of segs) {   // the cell beside each stretch, and (run 13) the three beside it pooled: it and its two along the edge
+            s.leaf = leafAt(M, ...s.cell);
+            s.pool = [...new Set([leafAt(M, s.cell[0] - s.along[0], s.cell[1] - s.along[1]), s.leaf, leafAt(M, s.cell[0] + s.along[0], s.cell[1] + s.along[1])])];
+        }
+        M.segs = segs;
+        // run 15: the whole ring of cells beside the window (corners included, a coarser cell once), the band's one reservoir;
+        // and the coarsest cells of the cover, where the mirror's pushes are booked
+        const ring = new Set(); for (const g of segs) ring.add(g.leaf);
+        for (const [a, b2] of [[M.oi - 1, M.oj - 1], [M.oi + w, M.oj - 1], [M.oi - 1, M.oj + w], [M.oi + w, M.oj + w]]) ring.add(leafAt(M, a, b2));
+        M.ring = [...ring];
+        let kmax = 0; for (const l of M.leaves.values()) kmax = Math.max(kmax, l.k);
+        M.farCells = [...M.leaves.values()].filter(l => l.k === kmax);   // (named farCells since run 17: as M.far it overwrote the far-field setting, run 16's bug)
+    }
+    // a cell's reading: its density, its flow, its spread (warmth). With `quiet` (run 12) the flow is taken only where it is
+    // more than three times its own noise, σ/√N; otherwise there is no flow and all the energy is warmth.
+    const stateOf = (l, quiet) => {
+        const N = l.N > 1e-12 ? l.N : 1e-12; let ux = l.Px / N, uy = l.Py / N, s2 = Math.max(0, l.E / N - 0.5 * (ux * ux + uy * uy));
+        if (quiet && Math.hypot(ux, uy) <= 3 * Math.sqrt(s2 / N)) { ux = 0; uy = 0; s2 = Math.max(0, l.E / N); }
+        return { n: l.N / l.A, ux, uy, sigma: Math.sqrt(s2) };
+    };
+    const addTo = (l, N, Px, Py, E) => { l.N += N; l.Px += Px; l.Py += Py; l.E += E; };
+
+    // unfold cell (i, j) (its totals t) into balls in the window: as many as it holds (the fraction left to the cells), placed
+    // at random without overlap (seeded by its place), with velocities carrying exactly its momentum and energy
+    function unfold(M, i, j, t, place) {
+        const k = Math.max(0, Math.round(t.N)), rnd = rng(hash3(mod(i, M.S), mod(j, M.S), M.seed));
+        const s = t.N > 0 ? k / t.N : 0, Px = t.Px * s, Py = t.Py * s, E = t.E * s;
+        M.residual.N += t.N - k; M.residual.Px += t.Px - Px; M.residual.Py += t.Py - Py; M.residual.E += t.E - E;
+        if (!k) return;
+        const x0 = mod(i - M.oi, M.S) * C0, y0 = mod(j - M.oj, M.S) * C0, idx = [];
+        for (let m = 0; m < k; m++) {
+            let x = 0, y = 0;
+            for (let tries = 0; tries < 200; tries++) { x = x0 + rnd() * C0; y = y0 + rnd() * C0; if (place.free(x, y)) break; }
+            idx.push(push(M.B, x, y, gauss(rnd), gauss(rnd))); place.add(x, y);
+        }
+        // shift to the cell's mean motion and scale to its energy, exactly
+        const B = M.B; let mx = 0, my = 0; for (const q of idx) { mx += B.vx[q]; my += B.vy[q]; } mx /= k; my /= k;
+        let th = 0; for (const q of idx) { const dx = B.vx[q] - mx, dy = B.vy[q] - my; th += 0.5 * (dx * dx + dy * dy); }
+        let bPx = Px, bPy = Py, bE = E;
+        if (M.mode === 'gc' || M.mode === 'ring') {   // runs 14–15: a cell no set of balls could be (less energy than its flow carries) keeps the books anyway
+            const flow = 0.5 * (Px * Px + Py * Py) / k;
+            if (!(E > 0)) { bPx = 0; bPy = 0; bE = 0; }
+            else if (flow > 0.99 * E) { const f = Math.sqrt(0.99 * E / flow); bPx = Px * f; bPy = Py * f; }
+            M.residual.Px += Px - bPx; M.residual.Py += Py - bPy; M.residual.E += E - bE;
+        }
+        const want = bE - 0.5 * (bPx * bPx + bPy * bPy) / k, sc = th > 0 && want > 0 ? Math.sqrt(want / th) : 0;
+        for (const q of idx) { B.vx[q] = bPx / k + (B.vx[q] - mx) * sc; B.vy[q] = bPy / k + (B.vy[q] - my) * sc; }
+    }
+    // a placing grid for unfolding without overlap
+    function placer(M) {
+        const W = M.w * C0, gw = Math.max(1, Math.floor(W / G)), cell = W / gw, grid = new Map(), key = (cx, cy) => cy * 1e6 + cx;
+        const add = (x, y) => { const k = key(Math.floor(x / cell), Math.floor(y / cell)); if (!grid.has(k)) grid.set(k, []); grid.get(k).push([x, y]); };
+        for (let q = 0; q < M.B.n; q++) add(M.B.x[q], M.B.y[q]);
+        const free = (x, y) => { const cx = Math.floor(x / cell), cy = Math.floor(y / cell);
+            for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) for (const [px, py] of grid.get(key(cx + dx, cy + dy)) || []) if ((px - x) ** 2 + (py - y) ** 2 < DIA * DIA) return false;
+            return true; };
+        return { add, free };
+    }
+    // move or resize the window: fold what it leaves, recut the cells for the new reader, unfold what it takes in
+    function setWindow(M, oi, oj, w) {
+        const old = M.leaves, B = M.B, S = M.S;
+        // fold the balls of window cells that the new window leaves out, into level-0 cells among the old ones
+        for (let q = B.n - 1; q >= 0; q--) {
+            const ci = M.oi + Math.floor(B.x[q] / C0), cj = M.oj + Math.floor(B.y[q] / C0);
+            if (mod(ci - oi, S) < w && mod(cj - oj, S) < w) continue;
+            // into the cell that holds its place, whatever its level (before run 12 a new level-0 entry, which a coarser
+            // cell holding the same place hid: the bug that lost a ball in run 11's pans)
+            let into = null;
+            for (let k = 0; k <= M.K && !into; k++) { const f = 2 ** k; into = old.get(keyOf(k, Math.floor(mod(ci, S) / f), Math.floor(mod(cj, S) / f))); }
+            if (!into) { into = { k: 0, i: mod(ci, S), j: mod(cj, S), A: C0 * C0, N: 0, Px: 0, Py: 0, E: 0 }; old.set(keyOf(0, into.i, into.j), into); }
+            addTo(into, 1, B.vx[q], B.vy[q], 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2)); removeAt(B, q);
+        }
+        // empty old window cells (no balls in them) still need a place in the old cover: give them zero totals
+        for (let a = 0; a < M.w; a++) for (let b = 0; b < M.w; b++) {
+            const ci = mod(M.oi + a, S), cj = mod(M.oj + b, S);
+            if (mod(ci - oi, S) < w && mod(cj - oj, S) < w) continue;
+            const key = keyOf(0, ci, cj); if (!old.has(key)) old.set(key, { k: 0, i: ci, j: cj, A: C0 * C0, N: 0, Px: 0, Py: 0, E: 0 });
+        }
+        // the balls kept, into the new window's local units
+        const sx = mod(M.oi - oi, S) <= S / 2 ? mod(M.oi - oi, S) : mod(M.oi - oi, S) - S, sy = mod(M.oj - oj, S) <= S / 2 ? mod(M.oj - oj, S) : mod(M.oj - oj, S) - S;
+        for (let q = 0; q < B.n; q++) { B.x[q] += sx * C0; B.y[q] += sy * C0; }
+        const prev = { oi: M.oi, oj: M.oj, w: M.w }; M.oi = mod(oi, S); M.oj = mod(oj, S); M.w = w;
+        M.residual = { N: 0, Px: 0, Py: 0, E: 0 };
+        const place = placer(M);
+        for (let a = 0; a < w; a++) for (let b = 0; b < w; b++) {
+            const i = mod(M.oi + a, S), j = mod(M.oj + b, S);
+            if (mod(i - prev.oi, S) < prev.w && mod(j - prev.oj, S) < prev.w) continue;   // was in the window: its balls are here
+            unfold(M, i, j, totalsFrom(old, M.K, 0, i, j), place);
+        }
+        recover(M, old);
+        const r = leafAt(M, M.oi - 1, M.oj); addTo(r, M.residual.N, M.residual.Px, M.residual.Py, M.residual.E); M.residual = null;
+    }
+    // a multiscale world from a referee's state: the window's balls copied, everything else summed into level-0 cells
+    function multiFromGas(gas, oi, oj, w, seed, opts) {
+        const K = Math.round(Math.log2(gas.L / C0)), M = Multi(K, w, oi, oj, seed, opts), B = gas.B, old = new Map(), S = M.S;
+        for (let q = 0; q < B.n; q++) {
+            const ci = Math.floor(B.x[q] / C0), cj = Math.floor(B.y[q] / C0);
+            if (inWindow(M, ci, cj)) { push(M.B, mod(B.x[q] - oi * C0, gas.L), mod(B.y[q] - oj * C0, gas.L), B.vx[q], B.vy[q]); continue; }
+            const key = keyOf(0, ci, cj); if (!old.has(key)) old.set(key, { k: 0, i: ci, j: cj, A: C0 * C0, N: 0, Px: 0, Py: 0, E: 0 });
+            addTo(old.get(key), 1, B.vx[q], B.vy[q], 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2));
+        }
+        for (let i = 0; i < S; i++) for (let j = 0; j < S; j++) { const key = keyOf(0, i, j); if (!inWindow(M, i, j) && !old.has(key)) old.set(key, { k: 0, i, j, A: C0 * C0, N: 0, Px: 0, Py: 0, E: 0 }); }
+        recover(M, old); return M;
+    }
+    // a multiscale world with nothing but totals to start from: the whole world one cell, uniform at the gas's density and spread
+    function multiUniform(K, w, oi, oj, seed, opts) {
+        const M = Multi(K, w, oi, oj, seed, opts), L = C0 * 2 ** K, N = N_DENS * L * L, old = new Map([[keyOf(K, 0, 0), { k: K, i: 0, j: 0, A: L * L, N, Px: 0, Py: 0, E: N * SIGMA * SIGMA }]]);
+        M.residual = { N: 0, Px: 0, Py: 0, E: 0 }; const place = placer(M);
+        for (let a = 0; a < w; a++) for (let b = 0; b < w; b++) { const i = mod(oi + a, M.S), j = mod(oj + b, M.S); unfold(M, i, j, totalsFrom(old, K, 0, i, j), place); }
+        recover(M, old); const r = leafAt(M, M.oi - 1, M.oj); addTo(r, M.residual.N, M.residual.Px, M.residual.Py, M.residual.E); M.residual = null;
+        return M;
+    }
+    function totals(M) {
+        const t = { N: M.B.n, Px: 0, Py: 0, E: 0 };
+        for (let q = 0; q < M.B.n; q++) { t.Px += M.B.vx[q]; t.Py += M.B.vy[q]; t.E += 0.5 * (M.B.vx[q] ** 2 + M.B.vy[q] ** 2); }
+        for (const l of M.leaves.values()) { t.N += l.N; t.Px += l.Px; t.Py += l.Py; t.E += l.E; }
+        return t;
+    }
+    // one tick of the multiscale world
+    function multiStep(M, dt, onContact, onEnter) {
+        const B = M.B, W = M.w * C0, ops = M.ops;
+        for (let q = 0; q < B.n; q++) { B.x[q] += B.vx[q] * dt; B.y[q] += B.vy[q] * dt; }
+        ops.moves += B.n;
+        if (M.closed || M.mode === 'mirror' || M.mode === 'gc' || M.mode === 'ring') {   // the control, and runs 13–15's band: the window's edge a mirror
+            // (run 14: the momentum the mirror takes is the outside's, charged to the cells beside that stretch; run 15: booked
+            // in the far field, the coarsest cells by area, where the pushes from opposite sides cancel)
+            const charge = !M.closed && M.mode === 'gc', far = !M.closed && M.mode === 'ring', r = a => Math.min(M.w - 1, Math.max(0, Math.floor(a / C0)));
+            const push2 = (g, px, py) => { if (charge) chargePool(M.segs[g].pool, 0, px, py, 0); else if (far) chargeArea(M.farCells, px, py); };
+            for (let q = 0; q < B.n; q++) {
+                if (B.x[q] < 0) { push2(4 * r(B.y[q]), 2 * B.vx[q], 0); B.x[q] = -B.x[q]; B.vx[q] = -B.vx[q]; }
+                else if (B.x[q] >= W) { push2(4 * r(B.y[q]) + 1, 2 * B.vx[q], 0); B.x[q] = 2 * W - B.x[q] - 1e-9; B.vx[q] = -B.vx[q]; }
+                if (B.y[q] < 0) { push2(4 * r(B.x[q]) + 2, 0, 2 * B.vy[q]); B.y[q] = -B.y[q]; B.vy[q] = -B.vy[q]; }
+                else if (B.y[q] >= W) { push2(4 * r(B.x[q]) + 3, 0, 2 * B.vy[q]); B.y[q] = 2 * W - B.y[q] - 1e-9; B.vy[q] = -B.vy[q]; }
+            }
+        } else {          // a ball whose centre has left the window is folded into the cell it entered
+            for (let q = B.n - 1; q >= 0; q--) {
+                const x = B.x[q], y = B.y[q]; if (x >= 0 && x < W && y >= 0 && y < W) continue;
+                const l = leafAt(M, M.oi + Math.floor(x / C0), M.oj + Math.floor(y / C0)); ops.cells++;
+                addTo(l, 1, B.vx[q], B.vy[q], 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2)); removeAt(B, q); M.left++;
+            }
+        }
+        collide(B, W, W, false, dt, ops, onContact);
+        if (!M.closed && (M.mode === 'band' || M.mode === 'mirror')) band(M, dt, onEnter);
+        if (!M.closed && (M.mode === 'gc' || M.mode === 'ring')) bandGC(M, dt, onEnter);
+        if (!M.closed && M.mode === 'edge') {  // run 11: balls enter from each neighbouring cell at its one-way flux across a line, n·σ/√(2π) per unit length
+            const rnd = M.rnd || (M.rnd = rng(hash3(M.seed, 7, 11)));
+            for (const s of M.segs) {
+                const l = s.leaf, st = stateOf(l, M.quiet), mu = st.n * st.sigma / SQ2PI * C0 * dt; ops.cells++;
+                let k = 0; for (let p = Math.exp(-mu), u = rnd(); u > p && k < 20; k++) { u -= p; p *= mu / (k + 1); }   // Poisson(mu)
+                for (let e = 0; e < k; e++) {
+                    if (l.N < 1) break;
+                    let px = 0, py = 0, ok = false;
+                    for (let tries = 0; tries < 10 && !ok; tries++) {
+                        const a = rnd() * C0; px = s.x + s.along[0] * a; py = s.y + s.along[1] * a; ok = true; ops.tries += B.n;
+                        for (let q = 0; q < B.n; q++) { const dx = B.x[q] - px, dy = B.y[q] - py; if (dx * dx + dy * dy < DIA * DIA) { ok = false; break; } }
+                    }
+                    if (!ok) continue;
+                    const vn = st.sigma * Math.sqrt(-2 * Math.log(1 - rnd())), vt = st.sigma * gauss(rnd);
+                    const vx = s.nrm[0] * vn + s.along[0] * vt + st.ux, vy = s.nrm[1] * vn + s.along[1] * vt + st.uy;
+                    push(B, px, py, vx, vy); addTo(l, -1, -vx, -vy, -0.5 * (vx * vx + vy * vy)); M.entered++;
+                    if (onEnter) onEnter(px, py);
+                }
+            }
+        }
+        if (++M.tick % 4 === 0) (M.far === 'fluid' || M.far === 'fluidwall' ? fluid : diffuse)(M, 4 * dt);   // the far field: diffusion (runs 11–15) or a fluid (runs 16–18)
+        M.t += dt;
+    }
+    // run 14: a charge spread over the cells pooled, in proportion to their counts (equally if none holds any)
+    function chargePool(ls, dN, dPx, dPy, dE) {
+        let tot = 0; for (const l of ls) tot += Math.max(0, l.N);
+        let left = [dN, dPx, dPy, dE];
+        ls.forEach((l, i) => {
+            if (i === ls.length - 1) { addTo(l, ...left); return; }
+            const f = tot > 0 ? Math.max(0, l.N) / tot : 1 / ls.length, part = [dN * f, dPx * f, dPy * f, dE * f];
+            addTo(l, ...part); left = left.map((x, k) => x - part[k]);
+        });
+    }
+    // run 14: the band held at the cells' activity (grand-canonical keeping), against the mirror at the window's edge. Each
+    // part tries Poisson(Γ·z·A·tick) balls at random places, keeping those that are free, and takes out each of its balls with
+    // chance Γ·tick; its warmth is redrawn as in run 12; every charge is spread over the three cells it reads.
+    function bandGC(M, dt, onEnter) {
+        const B = M.B, W = M.w * C0, ops = M.ops, rnd = M.rnd || (M.rnd = rng(hash3(M.seed, 7, 11))), lists = M.segs.map(() => []);
+        const segOf = (x, y) => {
+            const dl = x, dr = W - x, db = y, dt_ = W - y, d = Math.min(dl, dr, db, dt_); if (!(d < BAND)) return -1;
+            const side = d === dl ? 0 : d === dr ? 1 : d === db ? 2 : 3, along = side < 2 ? y : x;
+            return 4 * Math.min(M.w - 1, Math.max(0, Math.floor(along / C0))) + side;
+        };
+        for (let q = 0; q < B.n; q++) { const s = segOf(B.x[q], B.y[q]); if (s >= 0) lists[s].push(q); }
+        ops.moves += B.n;
+        const del = [], ringState = M.mode === 'ring' ? stateOf(pooled(M.ring), M.quiet) : null;
+        M.segs.forEach((g, s) => {
+            const pool = M.mode === 'ring' ? M.ring : g.pool;   // run 15: one reservoir, the whole ring
+            const st = M.mode === 'ring' ? ringState : stateOf(pooled(pool), M.quiet), r = s >> 2, end = r === 0 || r === M.w - 1, area = C0 * BAND - (end ? BAND * BAND / 2 : 0);
+            const mu = M.gamma * activity(st.n) * area * dt; ops.cells++;
+            let k = 0; for (let p = Math.exp(-mu), u = rnd(); u > p && k < 20; k++) { u -= p; p *= mu / (k + 1); }   // Poisson(mu)
+            for (let e = 0; e < k; e++) {
+                const a = r * C0 + rnd() * C0, b = rnd() * BAND, side = s & 3, x = side === 0 ? b : side === 1 ? W - b : a, y = side === 0 || side === 1 ? a : side === 2 ? b : W - b;
+                if (segOf(x, y) !== s) { e--; continue; }   // a place outside this part (a corner's other half): draw again
+                let ok = true; ops.tries += B.n; M.widom.tries++;
+                for (let q = 0; q < B.n && ok; q++) { const dx = B.x[q] - x, dy = B.y[q] - y; if (dx * dx + dy * dy < DIA * DIA) ok = false; }
+                if (!ok) continue;
+                M.widom.free++;
+                const vx = st.ux + st.sigma * gauss(rnd), vy = st.uy + st.sigma * gauss(rnd);
+                push(B, x, y, vx, vy); chargePool(pool, -1, -vx, -vy, -0.5 * (vx * vx + vy * vy)); M.entered++; if (onEnter) onEnter(x, y);
+            }
+            for (const q of lists[s]) {
+                if (rnd() < M.gamma * dt) { del.push([q, pool]); continue; }   // taken out
+                if (rnd() < NU_ENSKOG * dt) {                                    // its warmth redrawn
+                    const vx = st.ux + st.sigma * gauss(rnd), vy = st.uy + st.sigma * gauss(rnd);
+                    chargePool(pool, 0, B.vx[q] - vx, B.vy[q] - vy, 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2 - vx * vx - vy * vy)); B.vx[q] = vx; B.vy[q] = vy;
+                }
+            }
+        });
+        del.sort((a, b) => b[0] - a[0]);
+        for (const [q, pool] of del) { chargePool(pool, 1, B.vx[q], B.vy[q], 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2)); removeAt(B, q); M.left++; }
+    }
+    // run 15: a push booked over cells in proportion to their areas
+    function chargeArea(ls, dPx, dPy) {
+        let tot = 0; for (const l of ls) tot += l.A;
+        let lx = dPx, ly = dPy;
+        ls.forEach((l, i) => { if (i === ls.length - 1) { l.Px += lx; l.Py += ly; return; } const f = l.A / tot; l.Px += dPx * f; l.Py += dPy * f; lx -= dPx * f; ly -= dPy * f; });
+    }
+    const pooled = ls => { const t = { N: 0, Px: 0, Py: 0, E: 0, A: 0 }; for (const l of ls) { t.N += l.N; t.Px += l.Px; t.Py += l.Py; t.E += l.E; t.A += l.A; } return t; };
+    // run 12: the band. Each level-0 stretch of the window's edge has its part of the band (the points nearer that edge than
+    // any other, under BAND in), held at what the cell beside it says: its count within half a ball of n·area (a ball put at a
+    // free place, or one taken out), and each of its balls redrawn from the cell's spread with chance ν·tick. Every ball put
+    // in, taken out or redrawn is charged to that cell, exactly. Segments are in adjacency()'s order: for each stretch r,
+    // left, right, bottom, top.
+    function band(M, dt, onEnter) {
+        const B = M.B, W = M.w * C0, ops = M.ops, rnd = M.rnd || (M.rnd = rng(hash3(M.seed, 7, 11))), lists = M.segs.map(() => []);
+        const segOf = (x, y) => {
+            const dl = x, dr = W - x, db = y, dt_ = W - y, d = Math.min(dl, dr, db, dt_); if (!(d < BAND)) return -1;
+            const side = d === dl ? 0 : d === dr ? 1 : d === db ? 2 : 3, along = side < 2 ? y : x;
+            return 4 * Math.min(M.w - 1, Math.max(0, Math.floor(along / C0))) + side;
+        };
+        for (let q = 0; q < B.n; q++) { const s = segOf(B.x[q], B.y[q]); if (s >= 0) lists[s].push(q); }
+        ops.moves += B.n;
+        const del = [];
+        M.segs.forEach((g, s) => {
+            const l = g.leaf, st = M.mode === 'mirror' ? stateOf(pooled(g.pool), M.quiet) : stateOf(l, M.quiet), r = s >> 2, end = r === 0 || r === M.w - 1, area = C0 * BAND - (end ? BAND * BAND / 2 : 0);
+            const want = st.n * area, have = lists[s].length; ops.cells++;
+            if (have < want - 0.5 && l.N >= 1) {   // a ball put at a free place in this part of the band
+                for (let tries = 0; tries < 10; tries++) {
+                    const a = r * C0 + rnd() * C0, b = rnd() * BAND, side = s & 3, x = side === 0 ? b : side === 1 ? W - b : a, y = side === 0 || side === 1 ? a : side === 2 ? b : W - b;
+                    if (segOf(x, y) !== s) continue;
+                    let ok = true; ops.tries += B.n;
+                    for (let q = 0; q < B.n && ok; q++) { const dx = B.x[q] - x, dy = B.y[q] - y; if (dx * dx + dy * dy < DIA * DIA) ok = false; }
+                    if (!ok) continue;
+                    const vx = st.ux + st.sigma * gauss(rnd), vy = st.uy + st.sigma * gauss(rnd);
+                    push(B, x, y, vx, vy); addTo(l, -1, -vx, -vy, -0.5 * (vx * vx + vy * vy)); M.entered++; if (onEnter) onEnter(x, y);
+                    break;
+                }
+            } else if (have > want + 0.5) del.push([lists[s][Math.floor(rnd() * have)], l]);   // one of its balls taken out
+            for (const q of lists[s]) if (rnd() < NU_ENSKOG * dt) {   // redrawn from the cell's spread
+                const vx = st.ux + st.sigma * gauss(rnd), vy = st.uy + st.sigma * gauss(rnd);
+                addTo(l, 0, B.vx[q] - vx, B.vy[q] - vy, 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2 - vx * vx - vy * vy)); B.vx[q] = vx; B.vy[q] = vy;
+            }
+        });
+        del.sort((a, b) => b[0] - a[0]);
+        for (const [q, l] of del) { addTo(l, 1, B.vx[q], B.vy[q], 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2)); removeAt(B, q); M.left++; }
+    }
+    // run 16: the far field as the gas's own fluid. A cell's totals per area are the conserved densities of mass, momentum
+    // and energy; between neighbours a flux passes each frame, Euler's with the hard-disc pressure p = n·σ²·Z(φ) (σ² the warmth
+    // per ball, m = 1), by Rusanov's first-order flux with the fastest signal |u| + c, c the adiabatic speed of sound,
+    // c² = σ²·[(Z + φ·Z′) + Z²] (Henderson; c_v = k per ball in two dimensions). Each flux is taken from one cell and given
+    // to the other. The window's face is a wall to this fluid; the window hears it through the band.
+    const henZ = phi => (1 + phi * phi / 8) / (1 - phi) ** 2, henZp = phi => (phi / 4 * (1 - phi) + 2 * (1 + phi * phi / 8)) / (1 - phi) ** 3;
+    function fluidState(l) {
+        const N = l.N; if (!(N > 1e-9)) return null;
+        const ux = l.Px / N, uy = l.Py / N, s2 = l.E / N - 0.5 * (ux * ux + uy * uy); if (!(s2 > 0)) return null;
+        const n = N / l.A, phi = Math.min(0.6, n * Math.PI * R * R), Z = henZ(phi);
+        return { n, ux, uy, p: n * s2 * Z, c: Math.sqrt(s2 * (Z + phi * henZp(phi) + Z * Z)), U: [n, l.Px / l.A, l.Py / l.A, l.E / l.A] };
+    }
+    function fluid(M, dt) {
+        for (const pr of M.pairs) {
+            const a = fluidState(pr.a), b = fluidState(pr.b); M.ops.cells++;
+            if (!a || !b) continue;
+            const ua = pr.axis ? a.uy : a.ux, ub = pr.axis ? b.uy : b.ux;
+            const Fa = [a.U[0] * ua, a.U[1] * ua + (pr.axis ? 0 : a.p), a.U[2] * ua + (pr.axis ? a.p : 0), (a.U[3] + a.p) * ua];
+            const Fb = [b.U[0] * ub, b.U[1] * ub + (pr.axis ? 0 : b.p), b.U[2] * ub + (pr.axis ? b.p : 0), (b.U[3] + b.p) * ub];
+            const sMax = Math.max(Math.abs(ua) + a.c, Math.abs(ub) + b.c), m = pr.len * dt;
+            let amt = [0, 1, 2, 3].map(k => (0.5 * (Fa[k] + Fb[k]) - 0.5 * sMax * (b.U[k] - a.U[k])) * m);
+            // never more than a quarter of a cell's balls or energy in one frame (the frame is far inside the step's limit)
+            const lim = Math.max(amt[0] / (0.25 * pr.a.N), -amt[0] / (0.25 * pr.b.N), amt[3] / (0.25 * pr.a.E), -amt[3] / (0.25 * pr.b.E), 1);
+            if (lim > 1) amt = amt.map(x => x / lim);
+            addTo(pr.a, -amt[0], -amt[1], -amt[2], -amt[3]); addTo(pr.b, amt[0], amt[1], amt[2], amt[3]);
+        }
+        // run 18 ('fluidwall'): the window's face pushes back, as a wall does: each cell beside a stretch of the window's edge
+        // takes the momentum flux p·n̂ of its own gas, away from the window; the opposite push is booked in the far cells
+        if (M.far === 'fluidwall') for (let g = 0; g < M.segs.length; g++) {
+            const l = M.segs[g].leaf, st = fluidState(l); if (!st) continue;
+            const f = st.p * C0 * dt, side = g & 3, px = side === 0 ? -f : side === 1 ? f : 0, py = side === 2 ? -f : side === 3 ? f : 0;
+            l.Px += px; l.Py += py; chargeArea(M.farCells, -px, -py);
+        }
+    }
+    // the far field: neighbouring cells exchange balls (down the density's slope), momentum and energy, by diffusion
+    function diffuse(M, dt) {
+        for (const p of M.pairs) {
+            const a = p.a, b = p.b, k = M.D * p.len / p.gap * dt; M.ops.cells++;
+            if (a.N <= 0 || b.N <= 0) continue;
+            const na = a.N / a.A, nb = b.N / b.A, nbar = 0.5 * (na + nb);
+            let F = k * (na - nb); const d = F > 0 ? a : b; F = Math.max(-0.25 * b.N, Math.min(0.25 * a.N, F));
+            const per = 1 / d.N, mPx = d.Px * per, mPy = d.Py * per, mE = d.E * per, f = Math.abs(F), sg = Math.sign(F);
+            const ea = a.E / a.N, eb = b.E / b.N, H = k * nbar * (ea - eb), ux = k * nbar * (a.Px / a.N - b.Px / b.N), uy = k * nbar * (a.Py / a.N - b.Py / b.N);
+            const dN = sg * f, dPx = sg * f * mPx + ux, dPy = sg * f * mPy + uy, dE = sg * f * mE + H;
+            addTo(a, -dN, -dPx, -dPy, -dE); addTo(b, dN, dPx, dPy, dE);
+        }
+    }
+
+    // ══ the page: the window follows the view; the cells are drawn by density (and warmth) ══
+    const cv = $('cv'), q = new URLSearchParams(location.search);
+    const PAGE_K = 30, PAGE_W_MIN = 6, PAGE_W_MAX = 48, MIN_PX = 6;   // a ball narrower than MIN_PX pixels is held as totals
+    let M = null, cam = null, zoom = +q.get('zoom') || 24, showCells = q.get('cells') !== '0', paused = false, lastOps = 0, frameOps = 0, fps = 60;
+    function pageInit() {
+        const S = 2 ** PAGE_K, c = S / 2; cam = { x: c + 0.5, y: c + 0.5 };   // the reader, in level-0 cell units (the world's middle)
+        const w = windowFor(); M = multiUniform(PAGE_K, w, Math.round(cam.x - w / 2), Math.round(cam.y - w / 2), 1);
+    }
+    // the window wide enough for the view and a cell of margin each side, while a ball is at least MIN_PX pixels across;
+    // zoomed out past that, it stays as large as it was there: what is too small to see is held as totals
+    function windowFor() {
+        const span = Math.max(innerWidth, innerHeight), view = span / zoom / C0, atLimit = span / (MIN_PX / DIA) / C0;
+        return Math.max(PAGE_W_MIN, Math.min(PAGE_W_MAX, Math.ceil(Math.min(view, atLimit)) + 2));
+    }
+    function follow() {
+        const w = windowFor(), oi = Math.round(cam.x - w / 2), oj = Math.round(cam.y - w / 2);
+        if (w !== M.w || mod(oi - M.oi, M.S) !== 0 || mod(oj - M.oj, M.S) !== 0) setWindow(M, oi, oj, w);
+    }
+    function draw() {
+        const dpr = Math.min(2, devicePixelRatio || 1), W = innerWidth, H = innerHeight;
+        if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); cv.style.width = W + 'px'; cv.style.height = H + 'px'; }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.fillStyle = '#0c0c11'; g.fillRect(0, 0, W, H);
+        const S = M.S, toX = a => W / 2 + (wrapSigned(a - cam.x, S)) * C0 * zoom, toY = b => H / 2 + (wrapSigned(b - cam.y, S)) * C0 * zoom;
+        // the cells: brightness by density against the world's, hue by warmth (σ against the world's)
+        for (const l of M.leaves.values()) {
+            const f = 2 ** l.k, s = f * C0 * zoom, x0 = toX(l.i * f), y0 = toY(l.j * f);
+            if (x0 > W || y0 > H || x0 + s < 0 || y0 + s < 0) continue;
+            const cx0 = Math.max(-2, x0), cy0 = Math.max(-2, y0), cx1 = Math.min(W + 2, x0 + s), cy1 = Math.min(H + 2, y0 + s);
+            const st = stateOf(l, true), dn = Math.max(0, Math.min(2, st.n / N_DENS)), warm = Math.max(0, Math.min(1, (st.sigma / SIGMA - 1) * 1.5));
+            g.fillStyle = `rgba(${Math.round(70 + 150 * warm)},${Math.round(110 + 40 * warm)},${Math.round(150 - 90 * warm)},${0.10 + 0.22 * dn})`;
+            g.fillRect(cx0, cy0, cx1 - cx0 + 0.5, cy1 - cy0 + 0.5);
+            if (showCells && s > 6) { g.strokeStyle = 'rgba(255,255,255,0.10)'; g.lineWidth = 1; g.strokeRect(cx0 + 0.5, cy0 + 0.5, cx1 - cx0 - 1, cy1 - cy0 - 1);
+                if (s > 40 && x0 > -2 && y0 > -2) { g.fillStyle = 'rgba(255,255,255,0.28)'; g.font = '10px DM Mono, monospace'; g.fillText(l.k, x0 + 4, y0 + 12); } }
+        }
+        // the window's balls, one by one
+        const wx = toX(M.oi), wy = toY(M.oj), sc = zoom, rpx = R * sc, B = M.B;
+        g.fillStyle = '#e6e4ee';
+        if (rpx >= 1.5) { g.beginPath(); for (let q2 = 0; q2 < B.n; q2++) { const x = wx + B.x[q2] * sc, y = wy + B.y[q2] * sc; if (x < -rpx || y < -rpx || x > W + rpx || y > H + rpx) continue; g.moveTo(x + rpx, y); g.arc(x, y, rpx, 0, TAU); } g.fill(); }
+        else { const s = Math.max(1, 2 * rpx); for (let q2 = 0; q2 < B.n; q2++) { const x = wx + B.x[q2] * sc, y = wy + B.y[q2] * sc; if (x < 0 || y < 0 || x > W || y > H) continue; g.fillRect(x - s / 2, y - s / 2, s, s); } }
+        g.strokeStyle = 'rgba(212,160,82,0.7)'; g.setLineDash([5, 4]); g.lineWidth = 1; g.strokeRect(wx, wy, M.w * C0 * sc, M.w * C0 * sc); g.setLineDash([]);
+        hud();
+    }
+    const wrapSigned = (d, S) => { d = mod(d, S); return d > S / 2 ? d - S : d; };
+    const sci = x => { if (x < 1e6) return Math.round(x).toLocaleString('en'); const e = Math.floor(Math.log10(x)); return (x / 10 ** e).toFixed(2) + '×10' + String(e).split('').map(c => '⁰¹²³⁴⁵⁶⁷⁸⁹'[c]).join(''); };
+    function hud() {
+        const t = totals(M), levels = new Set([...M.leaves.values()].map(l => l.k)).size, L = C0 * M.S;
+        let vn = 0, vE = 0; const B = M.B, W = M.w * C0; for (let q2 = 0; q2 < B.n; q2++) { vE += 0.5 * (B.vx[q2] ** 2 + B.vy[q2] ** 2); } vn = B.n / (W * W);
+        $('hud').innerHTML = `a world ${sci(L)} units across, ${sci(t.N)} balls <span class="dim">· held as ${B.n.toLocaleString('en')} balls in the window and ${M.leaves.size} cells of totals in ${levels} levels</span>`
+            + `\n<span class="dim">work last frame ${frameOps.toLocaleString('en')} steps · a ball ${(2 * R * zoom).toFixed(1)} px · window ${M.w}×${M.w} cells (${W}×${W} units) · density ${(vn / N_DENS).toFixed(3)} and spread ${(Math.sqrt(vE / Math.max(1, B.n)) / SIGMA).toFixed(3)} of the world's · ${fps.toFixed(0)} fps</span>`;
+    }
+    let lastT = performance.now();
+    function loop(now) {
+        const dtw = Math.min(0.05, (now - lastT) / 1000); fps = 0.9 * fps + 0.1 / Math.max(1e-3, dtw); lastT = now;
+        if (!paused) { const o0 = opsOf(M); for (let s = 0; s < 4; s++) multiStep(M, TICK); frameOps = opsOf(M) - o0; }
+        draw(); requestAnimationFrame(loop);
+    }
+    const opsOf = M => M.ops.moves + M.ops.pairs + M.ops.cells;
+    // input: drag to move, wheel or pinch to zoom
+    const pts = new Map(); let pinch = null;
+    cv.addEventListener('pointerdown', e => { cv.setPointerCapture(e.pointerId); pts.set(e.pointerId, [e.clientX, e.clientY]); if (pts.size === 2) { const [a, b] = [...pts.values()]; pinch = { d: Math.hypot(a[0] - b[0], a[1] - b[1]), z: zoom }; } });
+    cv.addEventListener('pointermove', e => {
+        if (!pts.has(e.pointerId)) return; const p = pts.get(e.pointerId), dx = e.clientX - p[0], dy = e.clientY - p[1]; pts.set(e.pointerId, [e.clientX, e.clientY]);
+        if (pts.size === 2 && pinch) { const [a, b] = [...pts.values()]; setZoom(pinch.z * Math.hypot(a[0] - b[0], a[1] - b[1]) / pinch.d); }
+        else if (pts.size === 1) { cam.x -= dx / (C0 * zoom); cam.y -= dy / (C0 * zoom); follow(); }
+    });
+    const up = e => { pts.delete(e.pointerId); if (pts.size < 2) pinch = null; };
+    cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
+    cv.addEventListener('wheel', e => { e.preventDefault(); setZoom(zoom * Math.exp(-e.deltaY * 0.0015)); }, { passive: false });
+    function setZoom(z) { zoom = Math.max(0.05, Math.min(80, z)); follow(); }
+    $('in').addEventListener('click', () => setZoom(zoom * 1.5)); $('out').addEventListener('click', () => setZoom(zoom / 1.5));
+    $('cells').addEventListener('click', () => { showCells = !showCells; $('cells').textContent = 'cells: ' + (showCells ? 'on' : 'off'); });
+    $('cells').textContent = 'cells: ' + (showCells ? 'on' : 'off');
+    $('pause').addEventListener('click', () => { paused = !paused; $('pause').textContent = paused ? 'play' : 'pause'; });
+    function strike() {   // a kick outward to the balls near the middle of the view: heat, which then flows out
+        const B = M.B, cx = mod(cam.x - M.oi, M.S) * C0, cy = mod(cam.y - M.oj, M.S) * C0;
+        for (let q2 = 0; q2 < B.n; q2++) { const dx = B.x[q2] - cx, dy = B.y[q2] - cy, d = Math.hypot(dx, dy); if (d < 4 && d > 0) { B.vx[q2] += 40 * dx / d; B.vy[q2] += 40 * dy / d; } }
+    }
+    $('strike').addEventListener('click', strike);
+    if (!document.documentElement.requestFullscreen) $('full').style.display = 'none';
+    $('full').addEventListener('click', () => { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(() => {}); });
+    addEventListener('resize', follow);
+
+    pageInit(); requestAnimationFrame(loop);
+
+    window.__infinite = {
+        R, DIA, PHI, N_DENS, SIGMA, TICK, C0, henZ, henZp, G_CONTACT, NU, NU_ENSKOG, LAMBDA, DIFF, LAMBDA_ENSKOG, DIFF_ENSKOG, BAND, muEx, activity, GAMMA,
+        makeGas, refereeStep, cloneGas, Multi, multiFromGas, multiUniform, multiStep, setWindow, totals, stateOf, leafAt, rng, gauss,
+        page: () => ({ M, cam, zoom, frameOps, windowFor: windowFor() }), setZoom, strike, pause: on => { paused = !!on; },
+        moveTo: (x, y) => { cam.x = x; cam.y = y; follow(); },
+    };
+})();
+</script>
+</body>
+</html>

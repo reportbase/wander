@@ -1,0 +1,20 @@
+the referee (as run 11): 4 states of 13581 balls, 240 a side, wrapped; 60 s each, 64 views of 30 × 30 sampled every 0.05 s
+  view: density 0.2358, energy per ball 24.984, contacts per ball per second 4.860; count var/mean within each view 0.462
+
+the multiscale world, the band held at the cells' activity: the window 45 × 45, its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.2353 (-0.2%), energy per ball 24.962 (-0.1%), contacts per ball 4.844 (-0.3%), count var/mean within the run 0.406 (-12.1%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (+0.1%), contacts per ball 4.758 (-2.1%), count var/mean within the run 0.309 (-33.0%)
+  open: the band's density 0.2478 (+5.1%), energy per ball 25.020 (+0.1%); balls put in 205725, taken out or left 205390; the window held 474 at the start, 482 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first; the band is the first two):
+    1.104 0.996 0.997 0.999 0.999 0.999 0.999 1.000 0.999 1.000 1.000 1.000 1.002 0.999 0.997 0.999 0.996 0.995 0.992 0.993 0.981 0.986 0.960
+  the band's places free when tried: 51.1% of 402596 (Widom's e^(−βμ_ex) for the bulk: 48.3%)
+  level-0 cells beside the window, density over the world's: mean 0.992, lowest 0.388, highest 1.571
+  just after a pan, the view's density 0.2276 (-3.5%), energy per ball 24.976 (-0.0%)
+  the books: over the 40 open runs, count off by at most 3.1e-11, momentum 9.4e-12, energy 2.8e-15 of itself; over the pans 7.3e-12, 1.5e-12, 5.2e-16
+  work per simulated second: 240 a side 4.723e+5 (52 cells), 3,840 a side 4.645e+5 (100 cells), -1.6%; run 11's window (no band) 1.854e+5
+
+P28⁗: not killed. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself, over every run and pan
+P30⁗: not killed. the open view's density -0.2%, energy per ball -0.1%, contacts per ball -0.3% (each within 3%)
+P31⁗: not killed. within-run var/mean: open 0.406 (-12.1%; within 15%), closed 0.309 (-33.0%; at least 25% lower)
+P32⁗: not killed. the multiscale work changes by -1.6% for 256 times the balls (less than 5%)
+P33‴: not killed. from 2 units inward, the density is at most +4.0% from the referee's (within 5%)

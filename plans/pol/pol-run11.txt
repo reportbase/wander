@@ -1,0 +1,27 @@
+the referee: 4 states of 13581 balls, 240 a side, wrapped; 60 s each, the 64 views of 30 × 30 sampled every 0.05 s
+  contacts per ball per second 4.860 (the plan's 2.432; Enskog with the 2D cross-section, two diameters, 4.864)
+  speeds against Rayleigh (σ = 4.998 from the energy): largest gap 0.0004 over 3259440 speeds
+  view: density 0.2358 (n = 0.2358), energy per ball 24.984 (σ² = 24.983), count var/mean 0.526
+P29: KILLED. contacts 4.860 against 2.432 (within 5%: false); Rayleigh gap 0.0004 (< 0.01: true); var/mean 0.526 (in [0.49, 0.61]: true)
+
+the multiscale world: the window 45 × 45 (6 × 6 level-0 cells) and its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.0989 (-58.1%), energy per ball 8.746 (-65.0%), contacts per ball 1.273 (-73.8%), count var/mean 9.551 (1714.7%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (0.1%), contacts per ball 4.758 (-2.1%), count var/mean 0.508 (-3.4%)
+  open, the whole window as the view (no margin): density 0.1089 (-53.8%), count var/mean 15.225
+  open: balls entered 183871, left 195549 over 40 runs; the window held 474 balls at the start and 182 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first):
+    0.70 0.50 0.47 0.45 0.45 0.44 0.43 0.43 0.43 0.42 0.42 0.42 0.42 0.42 0.42 0.42 0.42 0.41 0.41 0.41 0.40 0.40 0.40
+  level-0 cells beside the window, density over the world's: mean 1.317, lowest 0.390, highest 2.408
+P30: KILLED. the open view's density, energy per ball and contacts per ball within 3% of the referee's: -58.1%, -65.0%, -73.8%
+P31: KILLED. var/mean open 9.551 (1714.7% of the referee's; within 15%), closed 0.508 (-3.4%; at least 25% lower)
+
+the books: over the 40 open runs, count off by at most 3.1e-11, momentum 1.8e-11, energy 2.1e-15 of itself
+           over the pans of ten window widths and back: 1.0e+0, 9.1e+0, 1.2e-4
+  just after a pan, the view's density 0.2179 (-7.6%), energy per ball 23.708
+P28: KILLED. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself
+
+the work per simulated second (balls moved, pairs looked at, balls entering tried, cells updated):
+  multiscale, a world 240 a side (1.358e+4 balls, 52 cells): 1.854e+5
+  multiscale, 3,840 a side (3.477e+6 balls, 100 cells): 1.923e+5 (3.7%)
+  the referee, 240 a side (13581 balls): 7.473e+6; 480 a side (54325 balls): 2.990e+7 (×4.00)
+P32: not killed. the multiscale work changes by 3.7% for 256 times the balls (less than 5%)
