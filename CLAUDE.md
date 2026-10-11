@@ -153,6 +153,16 @@ Google Fonts load from outside:
   as physics holds it (derived from conservation and three dimensions; tested as a bound on the exponent), in levels
   (2 of light, 3 of number per level of distance), the reader's two regimes, the near field (NRF: the pair's corner exact
   where the light is a share), the lay's form (ISQ), each claim marked physics / exact / data / reading / illustration.
+  `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
+  for external review") is the one self-contained paper for outside reviewers: the current view only, each claim marked
+  proved / derived / ruled / exact / data / synthetic / illustration / open, the kills in a table, and questions for
+  reviewers. It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
+  Its first external evaluation and the changes it led to are in `plans/ofs-review-1.md` (V = H as representation; the
+  Euclidean norm, the premise (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on).
+  `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
+  perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
+  those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry
+  with its vantages, the reading, what was already known, and its standing (worked / reading / candidate). It grows.
   The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.

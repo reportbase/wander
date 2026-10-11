@@ -65,6 +65,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
+- 11 October, eightieth: a candidate single principle, after an outside evaluation: equal addresses for whatever the reader cannot tell apart; proportional inside the unit, logarithmic past it, meeting at the unit (a reading; SPN Proposition 1.2).
 - 11 October, seventy-ninth: situated geometry is the Cauchy, unsituated the circle; the even turn is uniformity itself, behind both (Tom; SPN Proposition 1.2 (7), §14).
 - 11 October, seventy-eighth: the Cauchy and the fisheye derived in v and h: the bar swept in even steps of its turn moves v/h by 1 + (v/h)² a step; counting gives 1/(1 + (v/h)²), drawing gives the fisheye (Tom; SPN Proposition 1.2).
 - 11 October, seventy-seventh: §8, the facings counted: with every breadth set to H the circle has 4 facings and the sphere 8, 2ⁿ for n freedoms (Tom; SPN Proposition 1.2).
@@ -1093,6 +1094,11 @@ count and the drawing of one sweep.
 the same bar held whole, all four facings and no standpoint, is the circle h² + v² = 1; swept from home in one facing
 and read as v/h, it is the Cauchy. The even turn is the circle's uniformity, not a weight added for the Cauchy, so one
 choice, uniformity, stands behind both (SPN Proposition 1.2, (7)).
+*A candidate single principle, 11 October* (a reading, unruled; SPN Proposition 1.2): a situated reader gives equal
+addresses to whatever its readings cannot tell apart. On the number line: inside the unit, the reader holds H and no
+position is preferred, so the line is proportional; past it, the unit is unknown and no scale is preferred, so each
+doubling gets the same room, the logarithm; the two spacings agree at the unit. The two infinities of §1 are then the
+two invariances on either side of what the reader holds.
 
 **The Cauchy consists of addresses, not payloads** (Tom, 8 October, of *The Cauchy*: "it consists of addresses not
 payloads"; *Reader Geometry as Addressing* R47: "The Cauchy is not the payload; it is the address to the payload").
