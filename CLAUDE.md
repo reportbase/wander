@@ -77,6 +77,14 @@ Google Fonts load from outside:
   sweep's angle is the angle I look up at your top, θ = atan(V/d): 0° on my horizon, 45° at d = V, 90° at your foot. Steps
   left V·h/v = V·cot θ; far, each level costs twice the next one in, the steps bunching toward the horizon (never reached);
   near, in proportion. Panels: the ground, the sweep in unit relations, steps left against θ. `?d=&walk=1`; hook `window.__walk`.
+- `mountain.html`: **the mountain and the thumb** (11 Oct 2026, Tom: "build a demo about the worked example"), a standalone
+  page like `walk.html`: OFS §10 on one screen, H the thumb and V the mountain (SPN R205). Thumb H = 1 mi, a range V = 20 mi
+  wide at d = 10 mi. From nowhere, the blueprint from above; from the reader, 36 fingers spread evenly over the half turn,
+  the corners at ±45° (the range's ends, the pair (V/2, d) at its corner), the ridge's elevation the ring on each finger
+  that reaches it; "scale the world" (k multiplies V, d and the ridge) moves the blueprint and nothing in the reader's
+  view (OFS Theorem 6, Proposition 8); mountain equals thumb on the reader's lay of distances (x, then 1 + ln x), read at
+  0.5 H against the true 10 H, off by V/H = 20, 4.32 doublings; "walk one thumb" recovers d = H·s₂/(s₂ − s₁) and V.
+  `?V=&d=&k=&walk=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `lay`, `set`).
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -168,7 +176,7 @@ Google Fonts load from outside:
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, pool, the infinite table) and the three on the physics correspondence, each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, pool, the infinite table) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -520,6 +528,8 @@ In short:
       8 lines a level; by metres the edges slide; a post is recovered exactly with no step, within 10% at 2v at a pixel step, worse at 8v, a bearing only at 400v; the lay true to the corner, each doubling past it ln 2 wide; the strip folded holds 0.1v–100v, h/v throughout runs off the top, v/h off the bottom.
   17. **pool-infinite.html:** the books balance through 2 s and a pan, the window holds the world's density, the work for a world
       16 times wider within 10%, and zoomed out the window stops growing.
+  18. **mountain.html:** the range's ends at 45°, 18 of 36 fingers on it, the same at a thousand times the scale; mountain
+      equals thumb reads 1 mi at 0.5 mi, off by 20, log₂ 20 doublings; one thumb walked recovers d = 10 and V = 20.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
