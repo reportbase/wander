@@ -38,7 +38,8 @@ The completed breadth is held from no standpoint, which is what "the view from n
 Why no observation reads 1 (Tom, R197): "Correct, the actual breadth is 1, but you can't actually observe 1, because that assumes no facing, and a situated observer has a facing. Only the unsituated observer has no facing, and they can know the true breadth." Reading the true breadth means reading with no facing; every situated
 reading faces, away (π/2) or toward (2/π). A blueprint is the
 example (Tom, R198: "if you have a view from knowhere, you can know the true breadth. example of that is blueprint."): drawn from no standpoint, every line at its true length to one scale, with nothing
-turned toward or away from anyone, it holds the true breadth because it has no facing. The constructed view represents the breadth 1; it does not observe it. This is the 22 September "everywhere
+turned toward or away from anyone, it holds the true breadth because it has no facing. The two ways to the true breadth are therefore these: unsituated, it is held, as in a blueprint; situated, it must be
+constructed from multiple observations (Tom, R199: "if your situated, you need to construct the truth from multiple observations."). The constructed view represents the breadth 1; it does not observe it. This is the 22 September "everywhere
 equation" (archived *The Order of Limits*: "The god's eye view is defined as π/2 · 2/π = 1"), now read as the three
 vantages. Each situated reading is right from its vantage; a paradox follows whenever either is quoted as the line's
 breadth. *Reading (Claude's, unruled):* this is the denominator family's exchange (§F) on one line: the product of the
@@ -400,6 +401,7 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
   paradoxes under one diagnosis, the private ruler as the reader's own H and the shared number line as the completed
   view's unit; the exchange already worked in `pool.html`. Simpson's paradox and the twin paradox moved up from the
   candidates.
+- 11 October, twelfth: situated, the truth must be constructed from multiple observations (Tom; SPN R199).
 - 11 October, eleventh: the view from nowhere knows the true breadth; a blueprint is the example (Tom; SPN R198).
 - 11 October, tenth: the breadth 1 is a reading with no facing, which only the unsituated observer has (Tom; SPN R197).
 - 11 October, ninth: the order of limits and Haraway's "god trick", with the completed view.

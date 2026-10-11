@@ -44,7 +44,8 @@ situated reader can observe 1, because reading the true breadth assumes no facin
 hemisphere is turned away from it or toward it. Only the unsituated observer has no facing, and only it knows the true
 breadth (R197). A blueprint is the
 example (R198; Tom: "if you have a view from knowhere, you can know the true breadth. example of that is blueprint."): drawn from no standpoint, every line at its true length to one scale, with nothing
-turned toward or away from anyone, it holds the true breadth because it has no facing. The classical breadth needs both hemispheres in hand at once (R194), which no single observation can
+turned toward or away from anyone, it holds the true breadth because it has no facing. The two ways to the true breadth are therefore these: unsituated, it is held, as in a blueprint; situated, it must be
+constructed from multiple observations (R199; Tom: "if your situated, you need to construct the truth from multiple observations."). The classical breadth needs both hemispheres in hand at once (R194), which no single observation can
 do, and that is why it is the view from nowhere (R195). A reader can construct the classical view from multiple
 observations (R196); the construction represents the breadth 1, it does not observe it.
 
@@ -5861,6 +5862,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 - **R196** (11 Oct, 10:52): "A reader can construct the classical view from multiple observations." R195 holds of one observation; across several, a reader constructs the classical view (§1, "One line, three readings").
 - **R197** (11 Oct, 11:15): "Correct, the actual breadth is 1, but you can't actually observe 1, because that assumes no facing, and a situated observer has a facing. Only the unsituated observer has no facing, and they can know the true breadth." The breadth 1 is a reading with no facing; every situated reading has one, so the true breadth is known only unsituated, and a construction from several observations represents it without observing it (§1, "One line, three readings").
 - **R198** (11 Oct, 11:37): "if you have a view from knowhere, you can know the true breadth. example of that is blueprint." The view from nowhere knows the true breadth; a blueprint is the example (the head of the paper, "The core insight").
+- **R199** (11 Oct, 11:38): "if your situated, you need to construct the truth from multiple observations." R196 sharpened from "can" to "need to": a situated reader has the truth only by construction (the head of the paper, "The core insight").
 
 ## Appendix B. Demos and computations
 

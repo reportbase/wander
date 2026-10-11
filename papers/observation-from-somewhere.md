@@ -61,7 +61,8 @@ The line's actual breadth is 1, and π/2 · 2/π = 1. But no situated reader can
 assumes no facing, and a situated reader always has one, the hemisphere turned away from it or toward it. Only the
 unsituated observer has no facing, and only it knows the true breadth. A blueprint is the
 example [ruled, SPN R198]: drawn from no standpoint, every line at its true length to one scale, with nothing
-turned toward or away from anyone, it holds the true breadth because it has no facing. The classical breadth needs both hemispheres in
+turned toward or away from anyone, it holds the true breadth because it has no facing. The two ways to the true breadth are therefore these: unsituated, it is held, as in a blueprint; situated, it must be
+constructed from multiple observations [ruled, SPN R199]. The classical breadth needs both hemispheres in
 hand at once, which no single observation can do; that is why it is the view from nowhere. A reader can construct the
 classical view from multiple observations; the construction represents the breadth 1 without observing it.
 
