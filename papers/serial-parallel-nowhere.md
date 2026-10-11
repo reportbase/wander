@@ -646,8 +646,8 @@ is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessi
   assigned breadths."). Assigned is not known: by "v needs no V" the value of v on [0, 1] does not depend on how big V
   is, but v must be a share of something. (P1) A situated reader chooses one breadth, H, and holds no whole of the
   system (situations 3 and 4, §2.1). Any H will do; it must choose exactly one (Tom, 11 October: "reader can actually
-  choose H, any H is fine, he just needs to choose one."). (P2) The corner is h = v, and a level holds only its ends, their order and the flip that exchanges them (the
-  premise of Proposition D.1). (P3) The logarithm is fundamental (R189: taken as given, not proved here).
+  choose H, any H is fine, he just needs to choose one."). (P2) A level carries no measure: nothing on it but its ends, their order and the flip between them (the premise
+  of Proposition D.1; narrowed 11 October, since the corner and the flip themselves now follow, (f)). (P3) The logarithm is fundamental (R189: taken as given, not proved here).
 - *Claim.* (a) The reader must set V = H: by (P0) V must be assigned a breadth for there to be a relation at all, and by (P1) its
   chosen H is the only breadth it has to assign. Without the assignment there is no second party, only h. (b) The corner is then at
   radius 1, since it is one H from home measured in H, H/H, whichever H was chosen; no number is chosen, and the size of H never
@@ -664,6 +664,14 @@ is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessi
   level's diameter; level k ends at 2^k, the diameter of the circle of radius 2^(k−1). The 2 across the reader's own level
   (two facings) and the 2 between levels (the next level outward) are the same 2, the corner's two sides. (This replaces,
   for the reader's own level, §3.3's "octave 0 … from ½h to 2h", R172, already superseded by R188.)
+  (f) The corner and the flip are forced, and V = H puts the corner where the amounts are equal (Tom, 11 October,
+  correcting a conflation of his own: "oh wait, Ijust made a bad conflation, its v=h. not V=H."; then "V=H. forces v=h
+  as the corner."). Each fill level is a share of all or none of its whole, capped at 1 (P0). Coming out from home, v
+  fills against a full h until v = h, both full: the corner, geometry, with no V. The relation can go on only by h
+  emptying against a full v: the flip, forced at v = h by the cap alone (§1, "Why h sweeps at all"). V = H then makes
+  that corner also the place of equal amounts: in general equal amounts, v·V = h·H, fall where v/h = H/V; under V = H
+  they fall at v = h, one H from home. So the corner the reader finds in its own amounts is the geometric corner v = h,
+  and it is the edge of the unit circle.
 - *Where the reader lives* (Tom, 11 October: "the reader exists in the unit circle that is created by this chain of
   logic. His choice of H, forces he assignment of V."). The reader lives in the circle its own choice creates, at home at
   its centre. That is *in*, not *is*: R127 (1 October) stands, that the reader is not the unit circle (the uniform
@@ -678,7 +686,7 @@ is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessi
   logarithmic past the corner (not P3), such as proportion, which keeps true scale but does not fit the far field on
   bounded addresses (10 October, `flight.html`).
 - *Standing.* A derivation from stated premises. (P0) is the paper's first assumption, the two-party relation; (P1)
-  states the situated reader; (P3) is assumed. A route to deriving (P3) from §3.8 ("No rung is
+  states the situated reader; (P2), narrowed to "no measure on a level", and (P3), the logarithm, are assumed. A route to deriving (P3) from §3.8 ("No rung is
   preferred") is noted there.
 
 Everything below is built from one object: **a share of all of something, none of it, or anything in between**. Two such
@@ -5544,7 +5552,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 - **R187** (5 Oct, 12:40), over the proposed signal test of the central hypothesis: "no kill condiitons, just report the results. lets look at various synthetic signals so happens to the resurcsion." **Exploratory runs report their results as they fall, without registered predictions or kill conditions.** Synthetic signals, like shapes, are generated, not real-world data (the 26 Sep rule on planned real-world tests still applies to recordings).
 - **R188** (10 Oct, 18:38–18:43), over `wander/flight.html`: "I don't think there are corners in the far field. there is only one corner that splits far field from the near field, which is just the split between the first and second octive." / "also, there is no depth or recursion because we create the unit circle when we assign V to H." / "its plain doublings, ordinary math. but now we know why, its a consequence of setting V = H, which creates the unit circle." Supersedes R175 and R180; restores the 8 October reading of V = H (§2.1) over the 9 October corrections. §1, "The settled view, 10 October".
 - **R189** (10 Oct, 19:02–19:06), on R188's "left to rule": "v does not need V. v = [0,1]. h = [0,1], they are invariant." / "one circle. yes, the open question than disolves. its just logrithimic doublings. this paper does. not need to prove the logrithm, it is fundemental." One circle: its shape from the invariant fill levels, its unit from V = H. The central open question (the 2; Appendix D) dissolves. §1, "The settled view, 10 October".
-- **R190** (11 Oct, 04:44–04:46): "1 falls out of setting V = H." / "so the choice is to set V = H, not 1" / "thats a pretty solid proof, kind of a proof of necessity." / (04:49) "Why can't use reader choose is H? reader can actually choose H, any H is fine, he just needs to choose one." / (04:53) "then the diameter of the unit circle is also 2. which is the diameter of the first octive, where the reader actually exists." / (04:58) "right, its because of our intial assumption of a 2 party relation, and you can't have a relation if both V and H are not assigned breadths." / (05:00) "the reader exists in the unit circle that is created by this chain of logic. His choice of H, forces he assignment of V." Proposition 1.2.
+- **R190** (11 Oct, 04:44–04:46): "1 falls out of setting V = H." / "so the choice is to set V = H, not 1" / "thats a pretty solid proof, kind of a proof of necessity." / (04:49) "Why can't use reader choose is H? reader can actually choose H, any H is fine, he just needs to choose one." / (04:53) "then the diameter of the unit circle is also 2. which is the diameter of the first octive, where the reader actually exists." / (04:58) "right, its because of our intial assumption of a 2 party relation, and you can't have a relation if both V and H are not assigned breadths." / (05:00) "the reader exists in the unit circle that is created by this chain of logic. His choice of H, forces he assignment of V." / (05:03) "oh wait, Ijust made a bad conflation, its v=h. not V=H." / (05:04) "V=H. forces v=h as the corner." Proposition 1.2 (f); (P2) narrowed to "a level carries no measure".
 
 ## Appendix B. Demos and computations
 
