@@ -99,8 +99,9 @@ best known as the equation or the drawing on the page. There are three vantages:
 the outer hemisphere (situation 3, parallel) and the inner hemisphere (situation 4, serial). Each has its own geometry:
 the circle, the bell, and the fisheye (the Cauchy). One line of true breadth 1 shows it in three numbers [ruled, R193]:
 the outer hemisphere, turned away, reads π/2; the inner, turned toward, reads 2/π; and π/2 · 2/π = 1. The classical
-breadth, 1, is held only with both hemispheres in hand [ruled, R194], which no reader can do; that is why the completed
-view is the view from nowhere [ruled, R195]. They are easily conflated, and many paradoxes come from reading one
+breadth, 1, is held only with both hemispheres in hand [ruled, R194], which no reader can do in one observation; that is why the
+completed view is the view from nowhere [ruled, R195]. A reader can construct it from multiple observations [ruled,
+R196]. They are easily conflated, and many paradoxes come from reading one
 vantage's geometry as another's. Those collected so far, each marked by its standing and by what was already known, are
 in the working paper `vantages.md`.
 
