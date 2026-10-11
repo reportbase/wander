@@ -161,10 +161,11 @@
     // Cells are named by level k and index (i, j) in units of their own size (level 0 cells C0 wide); the world is 2^K
     // level-0 cells a side, wrapped round. A cell's totals: N (count), Px, Py (momentum), E (kinetic energy); mass 1.
     const keyOf = (k, i, j) => k + ':' + i + ':' + j;
-    // opts (run 12's by default): mode 'band' (the window's edge a band held at the cells' state) or 'edge' (run 11: balls
+    // opts (run 13's by default): mode 'mirror' (run 13: the band held at the cells' state, its outer edge a mirror, balls in
+    // and out only by the band's keeping), 'band' (run 12: the band open at its outer edge) or 'edge' (run 11: no band, balls
     // enter at the edge at the cells' one-way flux); quiet: a cell's flow read only above its noise; D: the far field's diffusion
     function Multi(K, w, oi, oj, seed = 1, opts = {}) {
-        return { K, S: 2 ** K, w, oi, oj, seed, mode: opts.mode || 'band', quiet: opts.quiet !== false, D: opts.D ?? DIFF_ENSKOG,
+        return { K, S: 2 ** K, w, oi, oj, seed, mode: opts.mode || 'mirror', quiet: opts.quiet !== false, D: opts.D ?? DIFF_ENSKOG,
             leaves: new Map(), pairs: [], segs: [], B: Balls(1024), closed: false, t: 0, tick: 0,
             ops: { moves: 0, pairs: 0, contacts: 0, tries: 0, cells: 0 }, residual: null, entered: 0, left: 0 };
     }
@@ -231,7 +232,10 @@
             { cell: [M.oi + w, M.oj + r], x: W * (1 - 1e-12), y: r * C0, along: [0, 1], nrm: [-1, 0] },
             { cell: [M.oi + r, M.oj - 1], x: r * C0, y: 0, along: [1, 0], nrm: [0, 1] },
             { cell: [M.oi + r, M.oj + w], x: r * C0, y: W * (1 - 1e-12), along: [1, 0], nrm: [0, -1] });
-        for (const s of segs) s.leaf = leafAt(M, ...s.cell);
+        for (const s of segs) {   // the cell beside each stretch, and (run 13) the three beside it pooled: it and its two along the edge
+            s.leaf = leafAt(M, ...s.cell);
+            s.pool = [...new Set([leafAt(M, s.cell[0] - s.along[0], s.cell[1] - s.along[1]), s.leaf, leafAt(M, s.cell[0] + s.along[0], s.cell[1] + s.along[1])])];
+        }
         M.segs = segs;
     }
     // a cell's reading: its density, its flow, its spread (warmth). With `quiet` (run 12) the flow is taken only where it is
@@ -337,7 +341,7 @@
         const B = M.B, W = M.w * C0, ops = M.ops;
         for (let q = 0; q < B.n; q++) { B.x[q] += B.vx[q] * dt; B.y[q] += B.vy[q] * dt; }
         ops.moves += B.n;
-        if (M.closed) {   // the control: the window's edge a mirror, nothing in or out
+        if (M.closed || M.mode === 'mirror') {   // the control, and run 13's band: the window's edge a mirror (the control: nothing in or out)
             for (let q = 0; q < B.n; q++) {
                 if (B.x[q] < 0) { B.x[q] = -B.x[q]; B.vx[q] = -B.vx[q]; } else if (B.x[q] >= W) { B.x[q] = 2 * W - B.x[q] - 1e-9; B.vx[q] = -B.vx[q]; }
                 if (B.y[q] < 0) { B.y[q] = -B.y[q]; B.vy[q] = -B.vy[q]; } else if (B.y[q] >= W) { B.y[q] = 2 * W - B.y[q] - 1e-9; B.vy[q] = -B.vy[q]; }
@@ -350,7 +354,7 @@
             }
         }
         collide(B, W, W, false, dt, ops, onContact);
-        if (!M.closed && M.mode === 'band') band(M, dt, onEnter);
+        if (!M.closed && (M.mode === 'band' || M.mode === 'mirror')) band(M, dt, onEnter);
         if (!M.closed && M.mode === 'edge') {  // run 11: balls enter from each neighbouring cell at its one-way flux across a line, n·σ/√(2π) per unit length
             const rnd = M.rnd || (M.rnd = rng(hash3(M.seed, 7, 11)));
             for (const s of M.segs) {
@@ -374,6 +378,7 @@
         if (++M.tick % 4 === 0) diffuse(M, 4 * dt);
         M.t += dt;
     }
+    const pooled = ls => { const t = { N: 0, Px: 0, Py: 0, E: 0, A: 0 }; for (const l of ls) { t.N += l.N; t.Px += l.Px; t.Py += l.Py; t.E += l.E; t.A += l.A; } return t; };
     // run 12: the band. Each level-0 stretch of the window's edge has its part of the band (the points nearer that edge than
     // any other, under BAND in), held at what the cell beside it says: its count within half a ball of n·area (a ball put at a
     // free place, or one taken out), and each of its balls redrawn from the cell's spread with chance ν·tick. Every ball put
@@ -390,7 +395,7 @@
         ops.moves += B.n;
         const del = [];
         M.segs.forEach((g, s) => {
-            const l = g.leaf, st = stateOf(l, M.quiet), r = s >> 2, end = r === 0 || r === M.w - 1, area = C0 * BAND - (end ? BAND * BAND / 2 : 0);
+            const l = g.leaf, st = M.mode === 'mirror' ? stateOf(pooled(g.pool), M.quiet) : stateOf(l, M.quiet), r = s >> 2, end = r === 0 || r === M.w - 1, area = C0 * BAND - (end ? BAND * BAND / 2 : 0);
             const want = st.n * area, have = lists[s].length; ops.cells++;
             if (have < want - 0.5 && l.N >= 1) {   // a ball put at a free place in this part of the band
                 for (let tries = 0; tries < 10; tries++) {

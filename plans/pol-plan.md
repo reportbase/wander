@@ -1205,3 +1205,68 @@ denser than the referee, and its inner unit near n.
   - how many balls the band's keeping puts in and takes out;
   - the view just after a pan;
   - the work against run 11's window.
+
+Run 13 output (`node plans/pol/pol13.mjs`, in `plans/pol/pol-run13.txt`; before it, a crash check only, 0.1 s of one window,
+no statistics read):
+
+```
+the referee (as run 11): 4 states of 13581 balls, 240 a side, wrapped; 60 s each, 64 views of 30 × 30 sampled every 0.05 s
+  view: density 0.2358, energy per ball 24.984, contacts per ball per second 4.860; count var/mean within each view 0.462
+
+the multiscale world, the band closed by a mirror: the window 45 × 45, its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.2219 (-5.9%), energy per ball 24.959 (-0.1%), contacts per ball 4.494 (-7.5%), count var/mean within the run 0.470 (+1.8%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (+0.1%), contacts per ball 4.758 (-2.1%), count var/mean within the run 0.309 (-33.0%)
+  open: the band's density 0.2392 (+1.4%), energy per ball 24.577 (-1.6%); balls put in 725431, taken out or left 726377; the window held 474 at the start, 450 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first; the band is the first two):
+    1.090 0.936 0.929 0.935 0.938 0.938 0.940 0.943 0.940 0.941 0.940 0.944 0.943 0.941 0.943 0.940 0.944 0.940 0.942 0.941 0.937 0.939 0.932
+  level-0 cells beside the window, density over the world's: mean 1.020, lowest 0.004, highest 2.681
+  just after a pan, the view's density 0.2325 (-1.4%), energy per ball 23.959 (-4.1%)
+  the books: over the 40 open runs, count off by at most 2.7e-11, momentum 9.8e+2, energy 2.4e-15 of itself; over the pans 3.6e-12, 6.7e+2, 9.1e-4
+  work per simulated second: 240 a side 6.790e+5 (52 cells), 3,840 a side 7.050e+5 (100 cells), +3.8%; run 11's window (no band) 1.854e+5
+
+P28″: KILLED. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself, over every run and pan
+P30″: KILLED. the open view's density -5.9%, energy per ball -0.1%, contacts per ball -7.5% (each within 3%)
+P31″: not killed. within-run var/mean: open 0.470 (+1.8%; within 15%), closed 0.309 (-33.0%; at least 25% lower)
+P32″: not killed. the multiscale work changes by +3.8% for 256 times the balls (less than 5%)
+P33′: KILLED. from 2 units inward, the density is at most +7.1% from the referee's (within 5%)
+```
+
+- **P30″ killed, narrowly for energy, not for density.** Energy per ball is right (−0.1%). The view's density is 5.9%
+  low and its contacts per ball 7.5% low, against 3%.
+- **P31″ not killed.** The open view's count fluctuates as the referee's does (+1.8%); the closed control's is 33% lower.
+  The window is open to the cells' count.
+- **P32″ not killed.** +3.8% for 256 times the balls. The band costs about 3.7 times run 11's window (0.68 against 0.19
+  million steps a simulated second).
+- **P33′ killed.** Inside the band, the density is a flat 6% to 7% low, from 2 units in to the middle.
+- **P28″ killed.**
+  - **Momentum: a design flaw.** A mirror turns a ball back, which changes its momentum, and nothing was charged for it.
+    In the gas, that push comes from the balls outside. Over a 60 s run, about 1,000 units of momentum (a ball's is ~5)
+    went uncounted.
+  - **Energy over the pans: also a flaw, found after the run.** Each operation of the band was charged to the one
+    level-0 cell beside its stretch, a dozen balls, about 17 times a second. That cell's totals wandered far from any
+    real state of a dozen balls: one cell held 0.4% of the world's density. When the window moved over such a cell, it
+    was asked to unfold into balls with less energy than its own flow carries. No set of balls can be in that state. The
+    unfold gave them the flow alone and created energy (up to 309 units at one step). Ticks and the folds keep energy to
+    4e-10.
+- *Measured:*
+  - the band: 1.09 of the referee's density in its outer unit (the mirror holds centres at βp = 1.39 n against itself,
+    falling within a diameter) and 0.94 in its inner;
+  - the band's balls are put in and taken out about 300 times a second per window (a third of run 12's churn);
+  - the cells beside the window: mean density 1.02 of the world's, but from 0.004 to 2.68;
+  - just after a pan: density −1.4%, energy per ball −4.1%.
+
+## Reading of run 13 (not ruled)
+
+- **Closed by a mirror, the band works as a reservoir for warmth and for fluctuations.** The window's energy per ball is
+  right to 0.1%, and its count fluctuates as an open region's does. What is left is a flat 6% shortfall of balls.
+- **A count is the wrong thing to hold.** Against a hard mirror, a gas of discs crowds: centres pile up at the mirror
+  (βp = 1.39 n at contact, by the wall contact theorem) and thin a little behind. The band's count was held at n times its
+  area, which takes no account of that crowding. So the band was underfilled for a gas at the world's density, and the
+  window settled to the density in balance with an underfilled band. What a reservoir fixes is not a count but a
+  chemical potential: how readily a ball is put in. The band should be held at the cells' activity, which the gas's
+  equation of state gives from their density.
+- **A dozen balls cannot keep the books for the band.** Charging each of the band's operations to one level-0 cell of a
+  dozen balls made that cell's totals wander out of any possible state. The band's operations should be charged across
+  the cells it reads, and an unfold must keep the books even for a cell whose totals no set of balls could have.
+- **The mirror pushes on the outside.** Each time it turns a ball back, the momentum it takes is the outside's. It must
+  be charged to the cells beside the window, as the gas's own push would be.
