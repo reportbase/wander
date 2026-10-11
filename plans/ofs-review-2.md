@@ -48,3 +48,57 @@ The draft is a high-quality piece of conceptual mathematics: honest about its pr
   reading belongs to which vantage (R193). Added to the review paper and SPN, marked that way.
 - **A small correction to the review:** with the swap, the three transformations generate PGL(2,ℝ), not PSL(2,ℝ); the
   swap reverses orientation. The paper already says so in §12.1.
+
+---
+
+## Follow-up from Grok: the telescope (11 October)
+
+Tom shared a second comment from Grok, on deep-space telescopes as an instance of the chain (SPN R193–R199):
+
+> That is a direct operational instance of the chain the paper states. A single pointing of a telescope is a situated
+> observation. The instrument has a facing (its optical axis and field of view), a finite angular step (its resolution
+> element), and access to only one side of any relation at a time. It therefore cannot hold the completed figure—the
+> true relative positions, the full flux distribution, the absence of facing—in one exposure. What it records is one
+> hemisphere of the available information, addressed relative to its own aperture and pointing.
+>
+> To recover a representation of the larger structure it must combine multiple observations: different pointings,
+> different epochs, different filters, different instruments. The mosaic, the co-add, the multi-wavelength stack, or the
+> parallax solution is exactly the construction the paper describes. It assembles a stand-in for the true breadth (the
+> completed sky patch, the source catalogue, the distance) that no single observation contained. The construction
+> represents the figure; it does not observe it in the sense the completed view would require.
+>
+> The paper's further claim is that this is not an engineering inconvenience but a consequence of the geometry available
+> to any situated reader. Because the reader (or instrument) holds only one breadth and always has a facing, the
+> addresses it lays are those of one sweep—proportional inside its corner, logarithmic outside—and the completed relation
+> appears only when several such sweeps are joined. The stitching is how the missing hemisphere is supplied.
+>
+> So the practice of deep-space telescopes already enacts the distinction: one observation yields a situated reading;
+> the survey yields the constructed completed view. The framework offers a reason, internal to the geometry of shares and
+> facings, why a single observation is structurally insufficient and why the multi-observation construction is the route
+> to the true breadth.
+
+### Response (11 October)
+
+- **Taken:** the telescope is a good plain example of step 6. A single exposure is a parallel reading (the outer
+  hemisphere, situation 3): one facing, one step ε, one standpoint. The survey is the construction. Added to step 6 of
+  the chain in SPN and the review paper, and to `vantages.md` ("From situated to completed"), as an illustration.
+- **Sharpened: not every combination constructs.** Grok lists the mosaic, the co-add, the stack and the parallax
+  solution as one thing. They are not, and the difference is what the chain needs:
+  - *a co-add* (the same pointing, again): same standpoint, same facing. It lowers the noise; it adds nothing toward the
+    missing breadth.
+  - *a mosaic* (same standpoint, other pointings): more facings, joined at their overlaps (a shared fact between tiles).
+    It gives the whole sky patch's shape up to one scale: directions, not distances (SPN Proposition 8.1; `vantages.md`,
+    "A full turn gives the whole shape, not its size").
+  - *a stack across filters or instruments*: the same places read by other readers; the overlap is again a shared fact,
+    and it buys exactly one factor between them (TGT, `plans/tgt-plan.md`).
+  - *parallax* (a second standpoint, six months later): the only one of the four that recovers a distance, and only
+    because the baseline is a known amount, the Earth's orbit (a bridge: travel; SPN §8.4).
+  So a construction needs more than several observations: other facings or standpoints, and, for any amount, a bridge.
+- **Corrected: standing.** "A reason, internal to the geometry ... why a single observation is structurally
+  insufficient" overstates it. That no single observation holds both hemispheres is ruled (R195), not derived, and
+  astronomy already knows and understands that one exposure is not the sky. What the example shows is that the chain
+  describes working practice correctly, and names which combinations build what. It is an illustration, not a test; it
+  adds no evidence.
+- **Corrected: the sweep.** "The addresses it lays are those of one sweep—proportional inside its corner, logarithmic
+  outside" holds for a reader that holds H and nothing else. A telescope's image is laid on its detector's grid, an
+  index; the two address spaces belong to the reader's reading, not to the instrument's pixels.

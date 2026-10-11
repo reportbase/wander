@@ -71,6 +71,11 @@ asked for this.)
 6. *So a situated reader must construct the truth from multiple observations* (SPN R196, SPN R199): the hemisphere turned
    away and the one turned toward, read in turn and joined. The construction represents the breadth 1; it does not
    observe it.
+   A telescope is the working example: one exposure is one facing from one standpoint; the survey is the construction.
+   Not every combination builds: re-exposing the same field lowers the noise and adds nothing; other pointings joined
+   at their overlaps give the shape up to a scale; only a second standpoint with a known baseline (parallax, the
+   Earth's orbit) gives a distance, because the baseline is a bridge (§7). An illustration, not a test
+   (`plans/ofs-review-2.md`).
 7. *There are therefore two ways to the true breadth, and only two:* held, unsituated, as in a blueprint; or
    constructed, situated, from several observations.
 
