@@ -97,7 +97,9 @@ of v. A reader *is* H, its own breadth. h is not the reader but the reader's sid
 **The core claim: three vantages** [ruled, R191]. Classical mathematics and physics assume a completed perspective,
 best known as the equation or the drawing on the page. There are three vantages: the completed one (situations 1 and 2),
 the outer hemisphere (situation 3, parallel) and the inner hemisphere (situation 4, serial). Each has its own geometry:
-the circle, the bell, and the fisheye (the Cauchy). They are easily conflated, and many paradoxes come from reading one
+the circle, the bell, and the fisheye (the Cauchy). One line of true breadth 1 shows it in three numbers [ruled, R193]:
+the completed view reads 1; the outer hemisphere, turned away, reads π/2; the inner, turned toward, reads 2/π; and
+π/2 · 2/π = 1. They are easily conflated, and many paradoxes come from reading one
 vantage's geometry as another's. Those collected so far, each marked by its standing and by what was already known, are
 in the working paper `vantages.md`.
 

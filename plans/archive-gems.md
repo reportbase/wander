@@ -97,7 +97,14 @@ L1754–1845).
   `facing.html`'s arc stands off the line by 1 − 1/√2 at the corner. Same number, different objects; not yet shown to be
   more.
 
-## Conflicts that need Tom's ruling
+## Conflicts: settled by R192
+
+Tom, 11 October: "Any conflicts of archived papers should defer to papers that are not archived." So each of the three below is settled for the paper that is not archived: the outer
+hemisphere is a situated vantage of its own and meets a horizon (`vantages.md`, R191); its reading is the current bell;
+and V = H is the reader's representation (R190), which is not a normalisation by a known V, so R135 does not conflict
+with it. The archive's versions stay in the archive as the record.
+
+*As first listed:*
 
 1. **Does the parallel reader meet a horizon, and is it situated?** `vantages.md` says both situated vantages meet
    horizons (the 22 September ruling). The archive's R41–R42 (RGA L1723–1729) overrode that: "the horizon belongs to the

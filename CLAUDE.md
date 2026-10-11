@@ -171,7 +171,8 @@ Google Fonts load from outside:
   quoted in SPN Appendix A), *The Relation Space*, *Browsing the Fisheye*, *The Radix*, *The Order of Limits*, *One
   Reader*, *Degrees of Freedom*. They predate 9 Oct: check every term (density, view from everywhere, inside/outside,
   fulcrum, arctan, h and v as breadths, recursive corners, depth, old situation numbers) before pulling anything forward.
-  `plans/archive-gems.md` lists the gems, where each went, what is queued, and three conflicts for Tom to rule.
+  `plans/archive-gems.md` lists the gems, where each went and what is queued. **Where an archived paper conflicts with
+  one that is not archived, the paper that is not archived stands** (Tom, 11 Oct; SPN R192).
   Other papers the corpus cites that are not in this repo (`plans/…` notes from other sessions): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.
 - `plans/`: working notes, reviews and lab plans, as the corpus cites them

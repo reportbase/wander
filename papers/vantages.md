@@ -21,6 +21,21 @@ those papers only once it has been worked and ruled.*
 | **outer hemisphere** (parallel, situation 3): one hemisphere taken in at once | H, not V | one facing, counted at once: the bell, sharpest at the corner and halving per doubling away | the corner as the middle of what is seen |
 | **inner hemisphere** (serial, situation 4): one point at a time | H, not V | one facing, swept from home: the fisheye; counted, the Cauchy | home at true scale, the corner, the mathematical horizon never reached |
 
+**One line, three readings** (Tom, 11 October; SPN R193): "The true breadth of the line is 1. The outer hemisphere's reading of that line is PI/2, the hemisphere turns away from the reader. The inner hemispheres reading of the line is 2/PI, the hemisphere turns towards them."
+
+| vantage | how the line faces the reader | its reading of a line of true breadth 1 |
+|---|---|---|
+| completed | held whole | **1** |
+| outer hemisphere | turns away: read as the arc over its chord | **π/2** ≈ 1.571, longer than the line |
+| inner hemisphere | turns toward: read as the average facing over the sweep | **2/π** ≈ 0.637, shorter than the line |
+
+π/2 · 2/π = 1: the two situated readings, multiplied, give back the completed one. This is the 22 September "everywhere
+equation" (archived *The Order of Limits*: "The god's eye view is defined as π/2 · 2/π = 1"), now read as the three
+vantages. Each situated reading is right from its vantage; a paradox follows whenever either is quoted as the line's
+breadth. *Reading (Claude's, unruled):* this is the denominator family's exchange (§F) on one line: the product of the
+two private reads is the shared fact, and their ratio, π²/4 ≈ 2.47, is what each seat keeps to itself. The inner
+reading 2/π is also stage 1's share in `plans/omm-plan.md` (the average fill of h over one facing's sweep).
+
 Two lines from the archived *The Relation Space* (§6, §17) name the completed vantage's cost: **"the equation is a
 third party"** (a page, a shared scale or an equation lends its terms to the answer, as a spring scale does; a balance's
 pull cancels and leaves nothing), and **"a symmetric account holds the figure and cannot state the rate; an asymmetric
@@ -364,6 +379,8 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
   paradoxes under one diagnosis, the private ruler as the reader's own H and the shared number line as the completed
   view's unit; the exchange already worked in `pool.html`. Simpson's paradox and the twin paradox moved up from the
   candidates.
+- 11 October, fifth: one line, three readings (Tom; SPN R193): 1 completed, π/2 outer, 2/π inner, product 1. Archived
+  papers defer to papers that are not archived (R192), which settles the three conflicts listed in `plans/archive-gems.md`.
 - 11 October, fourth: from the archived papers (`papers/archive/`, `plans/archive-gems.md`): the equation as a third
   party and figure against rate (the three vantages), the private ruler's reason and the two-group tower (§F), and five
   entries G1–G5.
