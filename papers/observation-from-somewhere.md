@@ -960,30 +960,14 @@ three transformations.
   than the halving, since (P2) fails.
 - Plain proportion past the corner keeps true scale but cannot fit the far field on bounded addresses (§6).
 
-### 11.3 What did not work
-
-A framework that reports only its successes cannot be judged. These tests failed, and they stay recorded as failed.
-- *Number lines in people.* On children's placements of numbers on a bounded line (the kindergartners of Chan
-  and Mazzocco 2024), a model laid in proportion up to a fitted unit and logarithmically past it lost to proportion
-  judgment (for 40 of 75 children at the first time point, more clearly later), and beat a plain logarithm for only 6
-  of 75.
-- *A knee at one step across.* On simulated readers, a predicted knee in reading where a pair is one step across was
-  not found, twice: a reader given the shape reads below its step.
-- *Steering by its own count.* A reader steering by its own pixel count was predicted to stop with the pair 0.5 to 3
-  steps across in at least 90% of runs from every start; from one start it did so in 87.3%.
-- *A ratio between levels from nesting.* Readers taking their unit from what the reader above them could not see did
-  not settle on a ratio between levels; the runs were stopped after three.
-- *A preferred step.* A reader content with a first sighting has no preferred step: a finer step is always better. A
-  step near 2 appears only when the reader must be sure of its reading.
-
-### 11.4 Related work
+### 11.3 Related work
 
 The pieces are classical: the flip x ↦ 1/x, the Cauchy as the projection of a uniform angle and its Möbius invariance,
 Cauchy's functional equation, Klein's Erlangen programme (1872), and Jaynes's and Jeffreys's invariant priors. Near
 neighbours in measured perception include Gilinsky's perceived distance with a finite horizon (1951), Schwartz's
 log-polar map of visual cortex, proportional near the fovea and logarithmic beyond (1977), and the number-line
 literature, from logarithmic-to-linear shifts (Siegler and Opfer 2003; Dehaene et al. 2008) to proportion judgment on
-bounded lines (Barth and Paladino 2011); §11.3 reports one test of our own against such data. The view from nowhere is Nagel's phrase (1986); Haraway
+bounded lines (Barth and Paladino 2011). The view from nowhere is Nagel's phrase (1986); Haraway
 (1988) called the ideal of seeing everything from nowhere "the god trick". In terms of limits, classical work lets the
 reader's step go to zero first and then lets the count of things grow without bound; a situated reader has a fixed step
 and an unknown count.
@@ -1016,9 +1000,6 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.
-
-Chan, J. Y.-C. and Mazzocco, M. M. M. (2024). New measures of number line estimation performance reveal children's
-ordinal understanding of numbers. *Journal of Experimental Child Psychology* 245, 105965.
 
 Cuadras, C. M. (2002). Geometrical understanding of the Cauchy distribution. *Qüestiió* 26(1–2), 283–287.
 
