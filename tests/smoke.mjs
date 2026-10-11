@@ -398,6 +398,24 @@ try {
     failures.push(`[flight.html] ${JSON.stringify(fl)}`);
   console.log(`${failures.length === before16 ? 'ok  ' : 'FAIL'} flight.html (corner row ${fl.c1.toFixed(3)} at 50 m and 1.6 km; by v/h ${fl.n[1]} lines a level, the first edge the corner, edges fixed; by metres they slide; a post recovered exactly with no step, ${fl.near.h.toFixed(3)} for 2v and ${fl.mid.h === undefined ? 'a bearing' : fl.mid.h.toFixed(2)} for 8v at a pixel step, a bearing only at 400v; the lay true to the corner, each doubling past it ${(fl.lay[3] - fl.lay[2]).toFixed(3)} wide; strip folded holds 0.1v–100v, h/v runs off the top, v/h off the bottom)`);
 
+  // ── 17. pool-infinite.html: a window of balls in a world of totals (POL runs 11–15): the books balance through steps and a
+  //    pan, the window holds the world's density, the work does not grow with the world, and zooming out stops the window ──
+  current = 'pool-infinite.html';
+  const before17 = failures.length;
+  await page.goto(new URL('pool-infinite.html', base).href, { waitUntil: 'load' });
+  const pi = await page.evaluate(() => { const I = __infinite, o = {}; I.pause(true);
+    const M = I.multiUniform(5, 6, 13, 13, 1), T0 = I.totals(M), ops = m => m.ops.moves + m.ops.pairs + m.ops.tries + m.ops.cells;
+    for (let k = 0; k < 480; k++) I.multiStep(M, I.TICK);
+    for (let st = 0; st < 16; st++) { I.setWindow(M, M.oi + (st < 8 ? 1 : -1), M.oj, 6); for (let k = 0; k < 4; k++) I.multiStep(M, I.TICK); }
+    const T1 = I.totals(M); o.books = Math.abs(T1.N - T0.N) < 1e-6 && Math.hypot(T1.Px - T0.Px, T1.Py - T0.Py) < 1e-6 && Math.abs(T1.E / T0.E - 1) < 1e-9;
+    o.density = M.B.n / (45 * 45) / I.N_DENS;
+    const work = K => { const m = I.multiUniform(K, 6, 2 ** (K - 1) - 3, 2 ** (K - 1) - 3, 2); for (let k = 0; k < 240; k++) I.multiStep(m, I.TICK); return ops(m); };
+    o.work = work(9) / work(5);
+    I.setZoom(24); const wNear = I.page().M.w; I.setZoom(0.2); const P = I.page(); o.wFar = P.M.w; o.wNear = wNear; o.capped = P.M.w === P.windowFor && P.M.w < 48;
+    return o; });
+  if (!pi.books || !(Math.abs(pi.density - 1) < 0.2) || !(Math.abs(pi.work - 1) < 0.1) || !pi.capped || !(pi.wFar > pi.wNear)) failures.push(`[pool-infinite.html] ${JSON.stringify(pi)}`);
+  console.log(`${failures.length === before17 ? 'ok  ' : 'FAIL'} pool-infinite.html (books balance through 2 s and a pan; the window at ${pi.density.toFixed(2)} of the world's density; work ×${pi.work.toFixed(3)} for a world 16 times wider; zoomed out the window stops at ${pi.wFar} cells)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

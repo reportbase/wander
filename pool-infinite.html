@@ -9,7 +9,7 @@
     <!--
     pool-infinite.html: the infinite table (11 October 2026; Tom: "the advantage of this is that we could scale it up to
     infinite number of balls, but then zoom in to just see a small percentage of them, and only have to draw or calcualate
-    the visible balls"; "yes"). POL run 11 (plans/pol-plan.md) is its test.
+    the visible balls"; "yes"). POL runs 11–15 (plans/pol-plan.md) are its tests.
 
     A world of balls of any size, held two ways. Round the reader, a window of balls, one by one, as pool.html plays them
     from inside: each reads the other's v = r/d and is told h = r/d, and equal balls touch at h = v = ½, the corner, found
@@ -17,18 +17,24 @@
     levels (level 0 is 7.5 units wide, level k 7.5·2^k), and each cell beyond the window holds only its count, momentum and
     energy. A cell is held whole at the level where it reads at the corner from the reader (its size no more than its
     distance) and split while it reads larger, so the cells number about a dozen per level: the work grows with the log of
-    the world, not with its balls. A ball leaving the window is folded into the cell it enters; balls enter from each
-    neighbouring cell at that cell's one-way flux across a line, n·σ/√(2π); moving or resizing the window unfolds the cells
-    it takes in into balls (seeded by their place, carrying exactly their momentum and energy) and folds those it leaves.
-    The cells among themselves exchange by diffusion (a chosen model of the far field, D = λ⟨|u|⟩/2, not tested).
+    the world, not with its balls. Moving or resizing the window unfolds the cells it takes in into balls (seeded by their
+    place, carrying exactly their momentum and energy) and folds those it leaves. The cells among themselves exchange by
+    diffusion (a chosen model of the far field, not tested).
+    Where the window meets the cells (POL runs 11–15 found what it needs): its edge is a mirror, and inside it a band 2 units
+    deep is held at the chemical potential of the ring of cells beside the window. Balls are put in at free places at the
+    gas's activity (Henderson's equation of state) and taken out at a steady rate; their warmth is redrawn from the ring's.
+    Every ball put in or taken out is charged to the ring, and every push of the mirror to the far field, so the world's
+    count, momentum and energy hold to rounding. Run 15: the view sees the referee's gas to 0.3%, and its count fluctuates
+    as an open region's does.
 
     The table loses nothing (no cloth, no cushions, contacts elastic, e = 1), so the world stays alive without a driver
     to choose: a gas of hard discs at area fraction 0.15, each velocity component spread σ = 5.
 
-    Drag to move, wheel or pinch (or − +) to zoom; the window follows the view while a ball is at least a few pixels
-    wide, and past that stays as large as it gets: what is too small to see is held as totals. "strike" kicks the balls
+    Drag to move, wheel or pinch (or − +) to zoom; the window follows the view while a ball is at least 6 pixels wide,
+    and past that stays as large as it was there: what is too small to see is held as totals. "strike" kicks the balls
     near the middle of the view; the heat then flows out into the cells. "cells" shows the cells' outlines and levels.
-    Links: ?zoom= (pixels per unit), ?cells=0. Test hook: window.__infinite (the engine: makeGas, referee, Multi; POL run 11).
+    Links: ?zoom= (pixels per unit), ?cells=0. Test hook: window.__infinite (the engine: makeGas, refereeStep, multiFromGas, multiUniform, multiStep,
+    setWindow, totals; the modes of runs 11–15 by opts.mode: edge, band, mirror, gc, ring (the page's)).
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --line: rgba(255,255,255,0.12); --ink: #c8c8d0; --dim: #8a8a96;
@@ -37,8 +43,8 @@
     html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground); color: var(--ink);
         font: 13px/1.4 'DM Mono', ui-monospace, monospace; overscroll-behavior: none }
     canvas { position: fixed; inset: 0; display: block; touch-action: none }
-    #hud { position: fixed; left: 12px; top: 10px; right: 12px; pointer-events: none; color: var(--bright); white-space: pre-wrap;
-        text-shadow: 0 1px 2px #000 }
+    #hud { position: fixed; left: 10px; top: 10px; max-width: calc(100% - 20px); pointer-events: none; color: var(--bright); white-space: pre-wrap;
+        background: rgba(12,12,17,0.82); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px }
     #hud .dim { color: var(--dim) }
     #bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
         justify-content: center; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); background: rgba(12,12,17,0.88);
@@ -516,16 +522,17 @@
 
     // ══ the page: the window follows the view; the cells are drawn by density (and warmth) ══
     const cv = $('cv'), q = new URLSearchParams(location.search);
-    const PAGE_K = 30, PAGE_W_MIN = 6, PAGE_W_MAX = 48;
+    const PAGE_K = 30, PAGE_W_MIN = 6, PAGE_W_MAX = 48, MIN_PX = 6;   // a ball narrower than MIN_PX pixels is held as totals
     let M = null, cam = null, zoom = +q.get('zoom') || 24, showCells = q.get('cells') !== '0', paused = false, lastOps = 0, frameOps = 0, fps = 60;
     function pageInit() {
         const S = 2 ** PAGE_K, c = S / 2; cam = { x: c + 0.5, y: c + 0.5 };   // the reader, in level-0 cell units (the world's middle)
         const w = windowFor(); M = multiUniform(PAGE_K, w, Math.round(cam.x - w / 2), Math.round(cam.y - w / 2), 1);
     }
-    // the window wide enough for the view and a cell of margin each side, while a ball is at least ~4 pixels across
+    // the window wide enough for the view and a cell of margin each side, while a ball is at least MIN_PX pixels across;
+    // zoomed out past that, it stays as large as it was there: what is too small to see is held as totals
     function windowFor() {
-        const W = innerWidth, H = innerHeight, view = Math.max(W, H) / zoom / C0;
-        return Math.max(PAGE_W_MIN, Math.min(PAGE_W_MAX, Math.ceil(view) + 2));
+        const span = Math.max(innerWidth, innerHeight), view = span / zoom / C0, atLimit = span / (MIN_PX / DIA) / C0;
+        return Math.max(PAGE_W_MIN, Math.min(PAGE_W_MAX, Math.ceil(Math.min(view, atLimit)) + 2));
     }
     function follow() {
         const w = windowFor(), oi = Math.round(cam.x - w / 2), oj = Math.round(cam.y - w / 2);
