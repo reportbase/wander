@@ -191,11 +191,17 @@ Google Fonts load from outside:
   (2 of light, 3 of number per level of distance), the reader's two regimes, the near field (NRF: the pair's corner exact
   where the light is a share), the lay's form (ISQ), each claim marked physics / exact / data / reading / illustration.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
-  for external review") is the one self-contained paper for outside reviewers: the current view only, each claim marked
-  proved / derived / ruled / exact / data / synthetic / illustration / open, the kills in a table, and questions for
-  reviewers. It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
-  Its first external evaluation and the changes it led to are in `plans/ofs-review-1.md` (V = H as representation; the
-  Euclidean norm, the premise (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on).
+  for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
+  (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
+  with proofs, discussion, references. No standing marks, ruling numbers, file paths, quotations of rulings or revision
+  history in it; the record (rulings, standings, kills, sources) stays in the working papers. **A geometry paper** (SPN
+  R201): no physics (bridges, the inverse square, the near field, worlds, the matter fraction are in `physics.md`,
+  `inverse-square.md` and SPN Part II). **Its main result** (SPN R200: "it is the primary result"): the Cauchy is the
+  reader's addresses, not its payload (R47; SPN §4.3; its Theorem 6: the reach of whatever arrives cancels from every
+  reading, order survives every change of payload, sums do not), introduced by the hand (fingers addresses, rings
+  payload). It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
+  Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
+  (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on).
   `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
   perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
   those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry
