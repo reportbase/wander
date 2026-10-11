@@ -119,6 +119,13 @@ Google Fonts load from outside:
   textbook checks run with it off); a ball in the air above the cushion's nose (1.27 R) flies off the table and is
   respotted. Tried and taken out: the cloth's grip during the slate press (at 0.195 it kinked massés instead of curving).
   Power 2–60; `?tip=fx,fy&chalk=0&el=`; hook `strikeOf`, `tip`, `chalk`, `elev`, `spinChecks`.
+  Challenges (11 Oct, Tom: "yes", to a challenges mode): thirteen puzzles in the layout menu, one mechanic each (½-ball,
+  bank, kick, jump, massé, a blind thin cut, stun, draw, follow, cannon, combination, the row of four, the break). Each
+  fixes "see" (0 shows only the white to the ghost ball; the later ones put the pot past sight); balls can't be moved; a
+  missed try puts them back and says why; par from the window of aim around a reference shot (`sol`, found by search on
+  this engine). Best per challenge in localStorage only. `?challenge=<id>`; hook `challenges`, `setChallenge`, `trial`,
+  `solve`, `check`, `challenge`. A challenge's layout or the engine changing can break its reference shot: the smoke test
+  plays every one.
   Not in the flying page.
 - `flight.html`: **the corner in flight** (10 Oct 2026, Tom: "you know how the transition from earth to the sky in flight
   sim games is awkward? ... i wonder if its because of the corner"; "only the geometry", wireframe). Level flight at height v;
@@ -372,7 +379,8 @@ In short:
       sky's count read back as time, a half-ball cut 30° near and far; trick shots: the preview is the shot, contacts exactly on
       h + v = 1 (but for a few in clusters, within 1%), the row of four's pot out of sight at 3 deep and in sight at 4, a bare tip
       turning the white 30° at f = ½, spin's textbook results, throw both ways, spin passed on, a massé bending, a jump clearing a ball,
-      backspin passed and follow lessened by the grip, a ball jumped off the table).
+      backspin passed and follow lessened by the grip, a ball jumped off the table; every challenge missed as set up and
+      solved by its reference shot, a missed try put back and a solved one counted).
   12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
   13. **levels.html:** the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
       and one level fewer seen per doubling of the grain; the shape crosses ring edges, its broad form fewer; with the size divided out

@@ -293,8 +293,16 @@ try {
     o.spin = { roll: sc.rollSlip < 1e-9, follow: Math.abs(sc.follow - sc.followPred) < 0.005, stun: Math.abs(sc.stun) < 0.05, draw: sc.draw < 0.5, english: sc.englishVx * sc.rightX > 0.3, miscue: !sc.miscue.grip && sc.miscue.turn < 0 && sc.miscue.turn > -44.5,
       cutThrow: sc.cutThrow > 0.5 && sc.cutThrow < 4.5, sideThrow: sc.sideThrow < -0.3 && sc.sideThrow > -4.5, passed: sc.passed < 0, masse: Math.abs(sc.masseBend) > 10, jump: sc.jumpCleared && sc.jumpPeak > 2 * 0.45,
       followGrip: sc.followGrip < sc.followPred - 0.01 && sc.followGrip > 0.15, backspinPassed: sc.backspinPassed > 0, offTable: sc.offTable };
-    o.spinOK = Object.values(o.spin).every(Boolean); return o; });
-  if (!pt.same || !pt.full || !pt.hv || !pt.exact || !pt.plays || pt.combo !== '4' || pt.sight !== '/4' || !pt.rt || !pt.strike || !pt.spinOK) failures.push(`[play-trick.html] ${JSON.stringify(pt)}`);
+    o.spinOK = Object.values(o.spin).every(Boolean);
+    // challenges: each missed as set up and solved by its reference shot (a layout or engine change can break one);
+    // a missed try puts the balls back and says why, a solved one is counted
+    o.chFail = T.challenges.map(c => { T.setChallenge(c.id); const start = T.check(); T.solve(); const sol = T.check();
+      return start !== null && sol === null ? null : `${c.id}: as set up ${start}, reference ${sol}`; }).filter(Boolean);
+    T.setChallenge('combo'); const b0 = JSON.stringify(T.challenge().balls); T.shootNow(); const miss = T.challenge();
+    T.solve(); T.shootNow(); const hit = T.challenge();
+    o.chTries = miss.tries === 1 && !!miss.lastWhy && JSON.stringify(miss.balls) === b0 && hit.tries === 2 && hit.solvedIn === 2 && hit.lastWhy === null && JSON.stringify(hit.balls) === b0;
+    T.setLayout('rack'); o.chOff = T.challenge() === null; return o; });
+  if (!pt.same || !pt.full || !pt.hv || !pt.exact || !pt.plays || pt.combo !== '4' || pt.sight !== '/4' || !pt.rt || !pt.strike || !pt.spinOK || pt.chFail.length || !pt.chTries || !pt.chOff) failures.push(`[play-trick.html] ${JSON.stringify(pt)}`);
   console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills, aiming from the cue ball, trick shots)`);
 
   // ── 12. facing.html: the facing is 2θ, square to the line at the corner, the arc off the line most there ──
