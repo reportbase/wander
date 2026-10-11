@@ -157,6 +157,8 @@ Google Fonts load from outside:
   for external review") is the one self-contained paper for outside reviewers: the current view only, each claim marked
   proved / derived / ruled / exact / data / synthetic / illustration / open, the kills in a table, and questions for
   reviewers. It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
+  Its first external evaluation and the changes it led to are in `plans/ofs-review-1.md` (V = H as representation; the
+  Euclidean norm, the premise (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on).
   The papers cite others not in this repo (*Reader Geometry as
   Addressing*, `plans/…`): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.
