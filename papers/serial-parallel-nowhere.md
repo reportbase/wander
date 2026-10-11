@@ -562,6 +562,13 @@ conjecture (§12), not to the proof.
 
 ## 1. [0, 1] and the reading
 
+**The core insight: three vantages** (Tom, 11 October; R191): "the core insight in our papers is that classical math and physics assume a completed perspective. A completed perspective is best known as the equation or the drawing on the page. However, there are actually three perspectives, completed "classical', outer-hemispherical and inner-hemispherical. Each has its own geometry, and they are easily conflated. Many of the paradoxes of math and science are easily explained by simple correctly identifying what your vantage is." The three are the
+completed view (situations 1 and 2: the equation, the drawing, every breadth held, the circle), the outer hemisphere
+(situation 3, parallel: one hemisphere taken in at once, the bell) and the inner hemisphere (situation 4, serial: one
+point at a time, the fisheye and the Cauchy). Each has its own geometry; the outer hemisphere is not the completed view
+(the 22 September ruling). The paradoxes that come from reading one vantage's geometry as another's are collected in
+`papers/vantages.md` (Tom: "yes, lets start collecting those paradoxes, its not a short list.").
+
 **The settled view, 9 October** (Claude's summary of the day's rulings, at Tom's "proceed"; each point cites the entry
 below that holds its ruling and its quotations. The entries themselves, with their corrections and withdrawals, are kept
 below as the record; where they differ from this summary, it is because a later ruling that day corrected them.)
@@ -714,6 +721,77 @@ is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessi
   what the count is. In both spaces the count is the level of detail, set by a thing's size (§3.3, "Smaller drives less
   detailed"), not by the geometry. The geometry gives the forms, proportional inside the corner and logarithmic past it;
   the level of detail gives the count.
+- *H is a zoom, not an escape* (Tom, 11 October, asking "why not just choose a very large H?", then "add this important
+  insight to the papers"; the reasoning is Claude's, at his question). Any H will do (P1), and every H gives the same
+  circle, corner, 1 and 2, so nothing in the geometry stops a reader choosing a very large H. It buys true scale out to
+  H: choose H the size of all a reader will ever look at and all of it is near field, undistorted, with no logarithm. It
+  costs the level of detail. The near field is read in proportion, so the reader's addresses are spread evenly across H,
+  and their count is its level of detail, finite; with H very large each address spans a great extent, and everything at
+  the reader's own scale falls inside the first address beside home and is a point. A small H holds the small at true
+  scale and the large logarithmically; a large H holds the large at true scale and loses the small below one address.
+  The rungs go both ways (Tom, 3 October), so there is always something smaller than any H's first address, as there is
+  always something larger past any corner: no H holds every scale at true scale with a finite level of detail. Nor does
+  choosing H change what arrives: readings come at the reader's step, from where it stands; H only lays them out. The
+  optimal move (Tom, 1 October: "think like what would be optimal, given this geometry, than watch what falls out") is
+  to set H to the scale of whatever is being read, putting that thing at the corner, where a sure reading costs least,
+  one step across, the same either way (GRN run 5, `plans/grn-plan.md`). An eye focusing and a telescope zooming do this.
+- *The circle and the sphere, and their facings* (Tom, 11 October: "explain the equation of the circle as just any combination of v and h and its 4 possible facings forced by creating a symetry between V and H. 8 possible facings when you add a V2, which is the sphere."). Every pair (h, v) is one way the two
+  can relate. With V = H the relation is one bar of length 1, all h lying flat, all v upright, every attitude between
+  one mix; since its length is 1 at every attitude, every mix satisfies h² + v² = 1: the circle, which is what one unit
+  for both means, put in by no hand (without V = H the curve is an ellipse, stretched by V/H). One sweep, flat to
+  upright, is one facing, a quarter (Tom, 22 September: "0 to π/2 is the full set of relations between a horizontal of 1
+  and a vertical of 1"). Once H and V share a unit nothing prefers one side of either freedom, and each freedom has two
+  facings, the corner's two sides (f): 2 × 2 = 4, the bar sweeping horizontal, vertical, horizontal, vertical and back,
+  closure, the circle whole (all four facings at once is the view from nowhere; a reader holds two, a sweep one). Add V₂,
+  a second v read against the same h (§1), set it to H too, and h² + v² + v₂² = 1: the sphere, three freedoms of two
+  facings, 2 × 2 × 2 = 8 octants, with the triple corner h = v = v₂ in each (`sphere.html`; *number-line.md* §8). In
+  general n freedoms, every breadth set to the one chosen H, give 2ⁿ facings: the equation and the count from the same
+  act.
+- *The Cauchy and the fisheye, derived* (Tom, 11 October: "using our vocabulary, what is the derivation of the cauchy and the fisheyee?"; then "don't use s, keep the v and h."). One sweep, read two ways.
+  (1) With V = H the relation is a bar of length 1; the reader sweeps it from home, flat (all h), to upright (all v), in
+  even steps of its turn, and at each step holds one reading, v/h. (2) Even steps in the turn give uneven readings: near
+  home a step barely changes v/h; at the corner, v = h, halfway through the turn; near upright each step changes v/h more
+  and more, without bound at the horizon, h → 0. When the bar turns a little, v/h changes by that turn times 1/h², and
+  since h² + v² = 1, 1/h² = (h² + v²)/h² = 1 + (v/h)². (3) The Cauchy is counting: steps per unit of v/h go as
+  1/(1 + (v/h)²); over one facing's quarter turn, 2/(π(1 + (v/h)²)); over the reader's two facings, v/h signed,
+  1/(π(1 + (v/h)²)). Half the steps fall before the corner (v < h) and half after (v > h), so the corner is the median;
+  swapping v and h, the flip, leaves it unchanged. It is forced by V = H, stepping the turn evenly from home, and reading
+  v/h. (4) The fisheye is drawing: each reading placed at its turn step, not at its value; near home the world at true
+  scale, gentle toward the corner, and past it, h emptying against a full v, more of the world in each step, the horizon
+  at the edge of the turn, never reached. The Cauchy counts readings per unit of world; the fisheye places the world per
+  unit of turn. (5) The same addresses three ways: by turn, the fisheye (bounded, the corner at the middle, g = ½); by
+  length, the in-place lay (reality in 2H, bounded, the corner at the middle); by count, the logarithmic lay (unbounded).
+  Both bounded drawings put the corner at the middle: the central result. (6) "Even steps in the turn" is the weight,
+  still a choice (§14); stepped evenly by length or by count the same sweep gives the other two drawings, not the Cauchy.
+  (*11 October*: the even turn is not a weight added for the Cauchy; it is the circle's own uniformity; see (7).)
+  (7) *Situated is the Cauchy, unsituated is the circle* (Tom, 11 October: "so situated geometry is cauchy, unsituated geometry is the circle"; then "yes, although that same constraint applices to the circle, it is uniformity itself.").
+  Unsituated, nobody stands anywhere: the bar is held whole, all four facings at once, its end tracing h² + v² = 1, every
+  point like every other, with no home, no corner set apart and no horizon (the view from nowhere, R126–R127; situations
+  1 and 2, where an angle means something). Situated, one reader at home sweeps one facing and reads v/h: counted, the
+  Cauchy; drawn, the fisheye. Home, the corner and the horizon appear because the reading is taken from somewhere. It is
+  the same bar under V = H, held whole or swept from home: the Cauchy is the circle's even turn received as a ratio. And
+  (6)'s choice is not the Cauchy's alone: stepping the turn evenly is what makes the circle uniform. One choice,
+  uniformity, stands behind both; the circle is uniformity held whole, the Cauchy uniformity read from home. What being
+  situated costs: the Cauchy has no mean, its tail past the corner too heavy; from inside there is a reading at every
+  distance but no census of the whole.
+- *A candidate single principle* (11 October; Claude's reading, unruled; Tom: "Yes, proceed" to recording it as a reading).
+  An outside evaluation of `observation-from-somewhere.md` asked for "the smallest underlying principle from which these
+  ideas can all be recovered" (`plans/ofs-review-1.md`). Candidate: **a situated reader gives equal addresses to
+  whatever its readings cannot tell apart**, the measure left unchanged by the transformations it cannot detect (Klein's
+  test, as in Proposition D.1, applied to measures). The reader's definition names three. (1) Which party is which: the
+  swap's one fixed point is v = h, the corner and the flip; R162 is this invariance as a rule. (2) Which attitude the
+  bar is in: if no turn is preferred, the Euclidean norm is the only one every turn keeps, so the bar traces the circle,
+  and even turns are the only measure on the circle every turn keeps, so read as v/h they give the Cauchy and the
+  fisheye; the even turn is then the invariance itself (the 11 October point (7) above, "it is uniformity itself").
+  (3) How big V is: rescaling the far readings changes nothing the reader can check, and the measure rescaling keeps,
+  dx/x, gives each doubling the same number of addresses, (g)'s link, so the logarithm. Inside the corner the reader's
+  one H breaks the scale symmetry, leaving no position within H preferred: equal addresses per unit of H, proportion.
+  The two spacings, 1 and 1/x per unit, agree at x = 1, v = h under V = H: the flip's fixed point is where the two
+  address spaces meet. D.1 ("no measure on a level") is the same test on points. *Standing:* the principle is classical
+  (Jaynes's transformation groups, 1968; Jeffreys's dx/x, 1939; the Cauchy as the family the ratio's transformations
+  keep, Knight 1976, McCullagh 1996); what would be new is that a situated reader's knowledge selects the
+  transformations. Still added: the constant joining the two spaces (c = 1, no jump in spacing at the corner), and that
+  the sweep is a turn of a rigid bar.
 - *Two address spaces* (Tom, 11 October: "this chain of logic creates two address spaces, proportional and logrithmic
   around the corner."). Inside the corner the addresses are proportional: the near field at true scale, read v in terms
   of h, the unit circle the reader lives in. Past it they are logarithmic: the far field, read h in terms of v, every
@@ -5471,6 +5549,9 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
      in-place lay. So the corner at the middle is derived; the weight is a choice of drawing, the turn coming from
      holding the relation on the circle (§3.3, "Two ways to hold a relation"), which the facing motivates (§1, "The line,
      the arc and the facing"). The same lay-dependence as Appendix D's "Binary branching is not yet a ratio of 2".
+     (*11 October*, R190: Tom, "yes, although that same constraint applices to the circle, it is uniformity itself." The turn is not a weight chosen for the Cauchy; it is the circle's own
+     uniformity, and the Cauchy is that uniformity read from home. The choice stays a choice, but it is one choice,
+     uniformity, behind both the circle and the Cauchy; Proposition 1.2, "The Cauchy and the fisheye, derived", (7).)
   4. *The ratio between levels: open, and kept visible.* (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental). Binary branching is proved (Proposition D.1); the ratio 2 rests
      on the in-place lay, whose being forced is deferred (Appendix D; the central open question).
   5. *The geometry–physics boundary: audited by pattern on 9 October* (`plans/vh-rulings-review.md`,
@@ -5673,7 +5754,8 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 - **R187** (5 Oct, 12:40), over the proposed signal test of the central hypothesis: "no kill condiitons, just report the results. lets look at various synthetic signals so happens to the resurcsion." **Exploratory runs report their results as they fall, without registered predictions or kill conditions.** Synthetic signals, like shapes, are generated, not real-world data (the 26 Sep rule on planned real-world tests still applies to recordings).
 - **R188** (10 Oct, 18:38–18:43), over `wander/flight.html`: "I don't think there are corners in the far field. there is only one corner that splits far field from the near field, which is just the split between the first and second octive." / "also, there is no depth or recursion because we create the unit circle when we assign V to H." / "its plain doublings, ordinary math. but now we know why, its a consequence of setting V = H, which creates the unit circle." Supersedes R175 and R180; restores the 8 October reading of V = H (§2.1) over the 9 October corrections. §1, "The settled view, 10 October".
 - **R189** (10 Oct, 19:02–19:06), on R188's "left to rule": "v does not need V. v = [0,1]. h = [0,1], they are invariant." / "one circle. yes, the open question than disolves. its just logrithimic doublings. this paper does. not need to prove the logrithm, it is fundemental." One circle: its shape from the invariant fill levels, its unit from V = H. The central open question (the 2; Appendix D) dissolves. §1, "The settled view, 10 October".
-- **R190** (11 Oct, 04:44–04:46): "1 falls out of setting V = H." / "so the choice is to set V = H, not 1" / "thats a pretty solid proof, kind of a proof of necessity." / (04:49) "Why can't use reader choose is H? reader can actually choose H, any H is fine, he just needs to choose one." / (04:53) "then the diameter of the unit circle is also 2. which is the diameter of the first octive, where the reader actually exists." / (04:58) "right, its because of our intial assumption of a 2 party relation, and you can't have a relation if both V and H are not assigned breadths." / (05:00) "the reader exists in the unit circle that is created by this chain of logic. His choice of H, forces he assignment of V." / (05:03) "oh wait, Ijust made a bad conflation, its v=h. not V=H." / (05:04) "V=H. forces v=h as the corner." / (05:06) "so then logrightms are forced beyond the cornder." / (05:12) "this chain of logic creates two address spaces, proportional and logrithmic around the corner." / (05:24) "reality = 2H. You literally force by this chain of logic to stuff reality into the 2nd H, because you were forced to assign V to H. the far field's H than has the same amount of address space as the near field H." / (05:27) "yes, same length, not addresses sorry." / (05:37) "the near field is proportional, but to know the proportion, we need to know the number of things to divide the length by. but we could never actually know that number and its not needed. Its just the LOD." Proposition 1.2 (f), (g), reality in 2H, the two address spaces; (P2) narrowed to "a level carries no measure".
+- **R190** (11 Oct, 04:44–04:46): "1 falls out of setting V = H." / "so the choice is to set V = H, not 1" / "thats a pretty solid proof, kind of a proof of necessity." / (04:49) "Why can't use reader choose is H? reader can actually choose H, any H is fine, he just needs to choose one." / (04:53) "then the diameter of the unit circle is also 2. which is the diameter of the first octive, where the reader actually exists." / (04:58) "right, its because of our intial assumption of a 2 party relation, and you can't have a relation if both V and H are not assigned breadths." / (05:00) "the reader exists in the unit circle that is created by this chain of logic. His choice of H, forces he assignment of V." / (05:03) "oh wait, Ijust made a bad conflation, its v=h. not V=H." / (05:04) "V=H. forces v=h as the corner." / (05:06) "so then logrightms are forced beyond the cornder." / (05:12) "this chain of logic creates two address spaces, proportional and logrithmic around the corner." / (05:24) "reality = 2H. You literally force by this chain of logic to stuff reality into the 2nd H, because you were forced to assign V to H. the far field's H than has the same amount of address space as the near field H." / (05:27) "yes, same length, not addresses sorry." / (05:37) "the near field is proportional, but to know the proportion, we need to know the number of things to divide the length by. but we could never actually know that number and its not needed. Its just the LOD." / (06:42) "why not just choose a very large H?" / (06:46) "add this important insight to the papers" (H is a zoom) / (07:03) "using our vocabulary, what is the derivation of the cauchy and the fisheyee?" / (07:07) "don't use s, keep the v and h." / (07:00) "explain the equation of the circle as just any combination of v and h and its 4 possible facings forced by creating a symetry between V and H. 8 possible facings when you add a V2, which is the sphere." / "so situated geometry is cauchy, unsituated geometry is the circle" / (07:22) "yes, although that same constraint applices to the circle, it is uniformity itself." / (09:21) "Yes, proceed" (to recording the candidate single principle as a reading) Proposition 1.2 (f), (g), reality in 2H, the two address spaces; (P2) narrowed to "a level carries no measure".
+- **R191** (11 Oct, 09:43): "the core insight in our papers is that classical math and physics assume a completed perspective. A completed perspective is best known as the equation or the drawing on the page. However, there are actually three perspectives, completed "classical', outer-hemispherical and inner-hemispherical. Each has its own geometry, and they are easily conflated. Many of the paradoxes of math and science are easily explained by simple correctly identifying what your vantage is." / (09:44) "yes, lets start collecting those paradoxes, its not a short list." The three vantages (completed, outer hemisphere, inner hemisphere) as the core insight; the paradoxes collected in `papers/vantages.md`; §1, "The core insight: three vantages".
 
 ## Appendix B. Demos and computations
 
