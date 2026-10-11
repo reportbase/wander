@@ -29,7 +29,9 @@ those papers only once it has been worked and ruled.*
 | outer hemisphere | turns away: read as the arc over its chord | **π/2** ≈ 1.571, longer than the line |
 | inner hemisphere | turns toward: read as the average facing over the sweep | **2/π** ≈ 0.637, shorter than the line |
 
-π/2 · 2/π = 1: the two situated readings, multiplied, give back the completed one. This is the 22 September "everywhere
+π/2 · 2/π = 1: the two situated readings, multiplied, give back the completed one. And the classical breadth needs both
+(Tom, R194: "the "classical" breadth is 1, it requieres knonw the inside and outside hemispheres in your hand."): it is not a third reading beside the other two, but what is held when both hemispheres are in
+hand at once. A reader holding one hemisphere has its own reading, π/2 or 2/π, and not the line's breadth. This is the 22 September "everywhere
 equation" (archived *The Order of Limits*: "The god's eye view is defined as π/2 · 2/π = 1"), now read as the three
 vantages. Each situated reading is right from its vantage; a paradox follows whenever either is quoted as the line's
 breadth. *Reading (Claude's, unruled):* this is the denominator family's exchange (§F) on one line: the product of the
@@ -79,6 +81,9 @@ different geometric representation". Claude's reading, from SPN; unruled.*
 - *Three gaps memory cannot close by itself.* The scale (only a bridge gives it: travel, a known constant, a known kind,
   a shared fact; SPN §8.4); what lies below the reader's step (lost at that step to every vantage); and motion (readings
   must be carried forward, with an error SPN Proposition 9.2 bounds). Hidden sides need further standpoints (SPN §6.4).
+- *Both hemispheres* (R194): the classical breadth needs "the inside and outside hemispheres in your hand". Memory
+  joins one reader's readings across a turn; the completed view needs the two hemispheres, the one turned away and the
+  one turned toward, held together.
 - *So:* the completed view is legitimate. It is what integration builds once the three gaps are filled. A paradox of
   this catalogue is, typically, the completed view used as if the gaps were already filled.
 
@@ -379,6 +384,7 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
   paradoxes under one diagnosis, the private ruler as the reader's own H and the shared number line as the completed
   view's unit; the exchange already worked in `pool.html`. Simpson's paradox and the twin paradox moved up from the
   candidates.
+- 11 October, sixth: the classical breadth needs both hemispheres in hand (Tom; SPN R194).
 - 11 October, fifth: one line, three readings (Tom; SPN R193): 1 completed, π/2 outer, 2/π inner, product 1. Archived
   papers defer to papers that are not archived (R192), which settles the three conflicts listed in `plans/archive-gems.md`.
 - 11 October, fourth: from the archived papers (`papers/archive/`, `plans/archive-gems.md`): the equation as a third
