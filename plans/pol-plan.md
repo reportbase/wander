@@ -986,3 +986,132 @@ nothing enters or leaves.
   - the level-0 cells next to the window: how far their density drifts;
   - the view with no margin (a view as big as the window);
   - the view's density and energy just after a pan, when its balls have just been unfolded.
+
+Run 11 output (`node plans/pol/pol11.mjs`, in `plans/pol/pol-run11.txt`; about 4 minutes):
+
+```
+the referee: 4 states of 13581 balls, 240 a side, wrapped; 60 s each, the 64 views of 30 × 30 sampled every 0.05 s
+  contacts per ball per second 4.860 (the plan's 2.432; Enskog with the 2D cross-section, two diameters, 4.864)
+  speeds against Rayleigh (σ = 4.998 from the energy): largest gap 0.0004 over 3259440 speeds
+  view: density 0.2358 (n = 0.2358), energy per ball 24.984 (σ² = 24.983), count var/mean 0.526
+P29: KILLED. contacts 4.860 against 2.432 (within 5%: false); Rayleigh gap 0.0004 (< 0.01: true); var/mean 0.526 (in [0.49, 0.61]: true)
+
+the multiscale world: the window 45 × 45 (6 × 6 level-0 cells) and its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.0989 (-58.1%), energy per ball 8.746 (-65.0%), contacts per ball 1.273 (-73.8%), count var/mean 9.551 (1714.7%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (0.1%), contacts per ball 4.758 (-2.1%), count var/mean 0.508 (-3.4%)
+  open, the whole window as the view (no margin): density 0.1089 (-53.8%), count var/mean 15.225
+  open: balls entered 183871, left 195549 over 40 runs; the window held 474 balls at the start and 182 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first):
+    0.70 0.50 0.47 0.45 0.45 0.44 0.43 0.43 0.43 0.42 0.42 0.42 0.42 0.42 0.42 0.42 0.42 0.41 0.41 0.41 0.40 0.40 0.40
+  level-0 cells beside the window, density over the world's: mean 1.317, lowest 0.390, highest 2.408
+P30: KILLED. the open view's density, energy per ball and contacts per ball within 3% of the referee's: -58.1%, -65.0%, -73.8%
+P31: KILLED. var/mean open 9.551 (1714.7% of the referee's; within 15%), closed 0.508 (-3.4%; at least 25% lower)
+
+the books: over the 40 open runs, count off by at most 3.1e-11, momentum 1.8e-11, energy 2.1e-15 of itself
+           over the pans of ten window widths and back: 1.0e+0, 9.1e+0, 1.2e-4
+  just after a pan, the view's density 0.2179 (-7.6%), energy per ball 23.708
+P28: KILLED. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself
+
+the work per simulated second (balls moved, pairs looked at, balls entering tried, cells updated):
+  multiscale, a world 240 a side (1.358e+4 balls, 52 cells): 1.854e+5
+  multiscale, 3,840 a side (3.477e+6 balls, 100 cells): 1.923e+5 (3.7%)
+  the referee, 240 a side (13581 balls): 7.473e+6; 480 a side (54325 balls): 2.990e+7 (×4.00)
+P32: not killed. the multiscale work changes by 3.7% for 256 times the balls (less than 5%)
+```
+
+**Disclosed: a shakedown before the run.** Before the run, a short check of the engine (1 s of the referee, 5 s of one
+open window) showed the referee at 4.83 contacts per ball per second and the open window losing balls. The run was
+kept as planned, predictions unchanged. The first run of the script crashed while printing (after the simulations); it
+was run again with the printing fixed, the simulations unchanged and seeded, so the output above is the run.
+
+- **P29 killed, by my derivation.** The referee makes 4.860 contacts per ball per second, against the plan's 2.432. The
+  plan took the discs' cross-section as one diameter. In two dimensions it is two: another centre within a diameter
+  either side of the path meets it. With that, Enskog with Henderson's contact value gives 4.864, and the referee is
+  within 0.1% of it. The plan's λ and the far field's D were both computed from the wrong rate. The real λ is 1.29, not
+  2.58, so the margin was about six mean free paths, not three. The other two parts held:
+  - the speeds are Rayleigh to 0.0004 (3.3 million speeds);
+  - the count in a 30 × 30 view has var/mean 0.526, against Henderson's S(0) = 0.530.
+- **P30 killed, and badly.** The open window drains. Its view holds 58% fewer balls than the referee's, 65% less energy
+  per ball and 74% fewer contacts per ball. Its density is low everywhere, not only near its edge: from 0.70 of the
+  referee's at the edge to 0.40 in the middle.
+- **P31 killed.** The open view's count fluctuates 18 times too much: the window empties and refills. The closed control
+  is only 3.4% below the referee's, not the 25% predicted. That part fails because of the measure, not the control. The
+  variance was pooled over the 40 runs, and each closed window starts with an equilibrium sample of its count, so the
+  pooled variance includes the open system's variation between windows. Within one run, a closed window's count is
+  fixed. The prediction needed the variance within each run.
+- **P28 killed, by a bug.** Without panning, the books balance to 1e-11 over all 40 runs. Over the pans they are off by
+  exactly one ball, with its momentum and energy. Found after the run: when the window moves, a ball that has just
+  stepped out of it (its centre past the edge, not yet folded) is folded into a new level-0 entry. If a coarser cell
+  already holds that place, the coarser cell's totals are taken and the ball's are dropped. It happened once, on one
+  pan across the world's wrap.
+- **P32 not killed.** The multiscale world's work changes by 3.7% for 256 times the balls (52 cells to 100), while the
+  referee's grows 4.00 times for 4 times the balls.
+- *Measured:*
+  - the window started with 474 balls on average and ended with 182;
+  - the level-0 cells beside it rose to 1.32 of the world's density on average (0.39 to 2.41);
+  - with no margin, the window as the view, the density is 54% low;
+  - just after a pan, the view's density is 7.6% low.
+  The bug touches only the pan's books, not these.
+
+## Reading of run 11 (not ruled)
+
+- **The idea's cost is right; its boundary is not.** Computing only the window costs the same in a world of 13,581
+  balls and one of 3.5 million, while the referee's cost grows with its balls. That is the point Tom made, and it holds.
+- **An open window needs the outside's push, not only its flux.** Run 11's window let balls in at the outside's one-way
+  flux, which is exact for the balls that cross a line. But in a dense gas, part of the pressure is carried by contacts, not by
+  balls crossing. At the window's edge, a contact between two balls inside sends one out and one in. The one sent out
+  is gone, and nothing outside pushes back. So the edge is a sink for balls and for energy, and the whole window drains
+  and cools: it keeps 38% of its balls and its energy per ball falls to a third. In the gas's terms, the window gets the
+  outside's kinetic pressure but not its virial pressure (Z − 1 = 0.39 of the kinetic at φ = 0.15, so contacts carry 28%
+  of the pressure).
+- **A cell of a dozen balls cannot read its own flow.** The level-0 cells' mean motion is mostly the noise of a dozen
+  velocities (σ/√13 ≈ 1.4 against σ = 5). Read as a flow, it takes about 1/13 off their spread, and it drives the balls
+  they send in. A cell's reading of its flow needs a noise floor.
+- **What a fix needs:** the outside's contacts at the window's edge. That means a band of balls there, held at what the
+  cells say (density and temperature), which the window's balls can meet. Run 12 adds it, with its own predictions.
+
+### Run 12 (11 October 2026): prediction, written before it ran
+
+Run 11 with the window's edge given the outside's contacts. Everything else is as in run 11 (the gas, the cells, the
+referee, the states, the places, the times), except four changes, named:
+
+- **The band.** The window's outermost 2 units (a little over two diameters) are a band whose balls are held at what
+  the cells beside the window say. Each level-0 stretch of the edge has its part of the band: the points nearer that
+  edge than any other, less than 2 units in, of area 7.5 × 2 (13 at the window's corners). Each tick, for each part:
+  - **Its count:** if it holds fewer balls than the cell beside it says, n·area, by more than half a ball, one ball is
+    put at a free place in it. If it holds more by more than half a ball, one of its balls is taken out.
+  - **Its warmth:** each of its balls has its velocity drawn afresh from the cell's spread, with chance ν·tick each tick
+    (ν = 4.86, the gas's own contact rate, so about as often as it would meet another ball).
+  - **Its books:** every ball put in, taken out or redrawn is charged to that cell, exactly.
+
+  A ball whose centre leaves the window is still folded into the cell it enters. No ball enters at the edge any more:
+  the band's count is kept instead. So the window's balls meet balls at its edge, at the outside's density and warmth,
+  and the outside's push comes with them.
+- **The cells read their flow above its noise.** A cell's mean motion is taken as a flow only where it is more than three
+  times its own noise, |P|/N > 3σ/√N. Otherwise the flow is taken as none, and all its energy is warmth.
+- **The far field's diffusion** uses the right λ = ⟨|u|⟩/ν = 1.29 (run 11's P29), so D = λ⟨|u|⟩/2 = 4.04. It is still a
+  chosen model, and still not tested.
+- **The fold bug** found after run 11 is fixed: a ball stepping out of the moving window is added to the cell that holds
+  its place, whatever that cell's level.
+
+The fluctuation measure is corrected. The count's variance over its mean is taken within each run, about that run's own
+mean, then averaged over the runs. For the referee it is taken within each view's own time series, then averaged over
+the views. The closed control keeps its window's count, so within a run its view's count should fluctuate less, by about
+the share of the window that the view is not, 1 − 900/2025 = 0.56.
+
+- **P28′ (run 11's P28, the bug fixed).** Over every run and every pan, the world's count stays within 1e-6, its
+  momentum within 1e-6 and its energy within 1e-9 of itself. *Killed* if any run misses. (The bug was found after run 11,
+  by looking for the lost ball, so this is not blind to it.)
+- **P30′ (run 11's P30, with the band).** Averaged over the 40 open runs, the view's density, its kinetic energy per ball
+  and its contacts per ball per second are each within 3% of the referee's. *Killed* if any is not.
+- **P31′ (the measure corrected).** The open view's within-run var/mean is within 15% of the referee's within-view
+  var/mean, and the closed control's is at least 25% lower than the referee's. *Killed* if either fails.
+- **P32′ (run 11's P32, with the band).** The multiscale work per simulated second changes by less than 5% from
+  L = 240 to L = 3,840. *Killed* if it changes by 5% or more.
+- **P33 (the band reaches no further than itself).** In the open runs, the density at each distance from the window's
+  edge, in 1-unit bands from 2 units inward, is within 5% of the referee's. *Killed* if any such band is off by more.
+- *Measured, not predicted:*
+  - the band's own density and energy per ball;
+  - the level-0 cells beside the window;
+  - the view just after a pan;
+  - the band's share of the work.
