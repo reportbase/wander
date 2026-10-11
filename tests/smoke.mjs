@@ -120,12 +120,15 @@ try {
   const w3 = await page.evaluate(() => __wanderLab.where()), glide = Math.hypot(w3.x - w2.x, w3.y - w2.y, w3.z - w2.z);
   if (!(glide > 0.5)) failures.push(`[moving] letting go stopped dead (moved ${glide.toFixed(2)} after)`);
   await page.waitForTimeout(800);
-  // the tap lands 10 px beside the target: pick one with no other drawn body near that point, so the tap is its alone
+  // the tap lands 10 px beside the target: pick one with no other drawn body near that point, so the tap is its alone.
+  // A planet, as the step says, not any small body: a solid's closest approach is read from its span, so a tall one (the
+  // knight) is already held there once its approach settles, and zooming has no room left to bring it in (measured:
+  // 1.94 settled, nearest 2.07 after zooming). Five to seven planets were in reach in every run measured.
   const tgt = await page.evaluate(() => { const all = __wanderLab.drawn();
-    return all.filter(o => !o.star && o.r > 2 && o.r < 10 && o.y > 80 && o.y < 650 && o.x > 100 && o.x < 1180)
+    return all.filter(o => !o.star && /^planet-/.test(o.name) && o.r > 2 && o.r < 10 && o.y > 80 && o.y < 650 && o.x > 100 && o.x < 1180)
       .sort((a, b) => b.r - a.r)
       .find(o => all.every(b => b === o || Math.hypot(b.x - (o.x + o.r + 10), b.y - o.y) > b.r + 25)); });
-  if (!tgt) failures.push('[moving] no small body in view to tap');
+  if (!tgt) failures.push('[moving] no small planet in view to tap');
   else {
     await page.mouse.click(tgt.x + tgt.r + 10, tgt.y);   // beside it, not on it
     await page.waitForTimeout(300);
@@ -136,13 +139,22 @@ try {
       await page.waitForFunction(t => { const w = __wanderLab.where(); return w.span > 0.6 || w.t > t + 15; }, o.t, { timeout: 300000, polling: 200 });
       const w5 = await page.evaluate(() => __wanderLab.where()), s1 = w5.span;
       if (!(s1 > 0.5)) failures.push(`[moving] ${(w5.t - o.t).toFixed(1)} s after tapping, ${tgt.name} spans only ${s1.toFixed(2)} (it should come in to about 0.7)`);
+      // zooming in brings it nearer. Read by its distance, not its span: a solid's span swings as it turns (the knight's
+      // read 1.48 and 1.92 once its approach had settled, then about 1.05 after zooming), and very near the span is not a
+      // steady reading at all (it spiked to 77).
+      // Let the approach settle first. It overshoots, passing the distance it holds (2.1 against 3.5, measured) and then
+      // backing out (it steers on arrivals, which lag), so a reading taken on the way in is no baseline (Oct 11: 0.85 to
+      // 0.94 across on CI, with the zoom working). The zoom overshoots in the same way, so take the nearest it comes in
+      // 3 s, not where it is at the end: measured on planets, 0.23 to 0.50 of the settled distance, at full speed and with
+      // the CPU 4 and 8 times slower.
+      await page.waitForFunction(t => __wanderLab.where().t > t + 4, w5.t, { timeout: 180000, polling: 200 });
+      const d0 = (await page.evaluate(() => __wanderLab.where())).dist;
       for (let i = 0; i < 10; i++){ await page.mouse.wheel(0, -200); await page.waitForTimeout(60); }
       const z0 = (await page.evaluate(() => __wanderLab.where())).t;
-      await page.waitForFunction(t => __wanderLab.where().t > t + 3, z0, { timeout: 180000, polling: 200 });
-      const s2 = (await page.evaluate(() => __wanderLab.where())).span;
-      // zoom comes in at a capped rate, so 3 s of it adds about a fixed amount, not a fixed factor: a later start (a slower
-      // runner, s1 already 0.73) leaves less room under the closest approach; ask for a clear gain and a span past 0.9
-      if (!(s2 > s1 + 0.15 && s2 > 0.9)) failures.push(`[moving] zooming in took ${tgt.name} only from ${s1.toFixed(2)} to ${s2.toFixed(2)} across`);
+      await page.evaluate(() => { window.__nearest = Infinity; });
+      await page.waitForFunction(t => { const w = __wanderLab.where(); if (w.dist != null) window.__nearest = Math.min(window.__nearest, w.dist); return w.t > t + 3; }, z0, { timeout: 180000, polling: 100 });
+      const dMin = await page.evaluate(() => window.__nearest);
+      if (!(d0 > 0 && dMin < 0.75 * d0)) failures.push(`[moving] zooming in took ${tgt.name} only from ${d0 == null ? '?' : d0.toFixed(2)} to ${dMin.toFixed(2)} away (settled, then nearest in 3 s)`);
     }
   }
   await page.keyboard.press('Escape');
