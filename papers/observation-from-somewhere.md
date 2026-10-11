@@ -7,7 +7,9 @@
 `papers/`. It also draws on the test plans in `plans/`. The working papers keep the full record: every ruling with the
 author's words, every correction, and every claim later withdrawn. This paper states only the current view, marks the
 standing of each claim, and includes what failed. Where it and a working paper differ, the working paper's latest dated
-entry is the record, and the difference is an error here. Appendix B maps each section to its sources.*
+entry is the record, and the difference is an error here. Appendix B maps each section to its sources. Revised the same day after a first evaluation (`plans/ofs-review-1.md`): V = H stated as a rule of representation, the
+Euclidean choice and the scale-invariance premise (S) made explicit, the half-Cauchy named, and the three levels of
+physics claim set apart.*
 
 ---
 
@@ -47,8 +49,9 @@ through it [proved].
 
 A situated reader has exactly one breadth, its own H. For a relation to exist the other side must be given a breadth
 too, and H is the only one the reader has, so it must set V = H [derived; close to definitional, §12]. With that one act
-the corner lies at radius H/H = 1 whatever H was chosen. Drawn as a bar of length 1 in that one unit, the relation's
-every attitude satisfies h² + v² = 1: a unit circle no one put a number into.
+the corner lies at radius H/H = 1 whatever H was chosen. Drawn as a rigid bar of Euclidean length 1 in that one unit, the
+relation's every attitude satisfies h² + v² = 1: a unit circle no one put a number into (the Euclidean choice is an
+assumption, §3).
 
 Inside the circle the reader reads in proportion, the near field at true scale. Past the corner, if no scale is
 preferred, Cauchy's functional equation leaves only one lay by address count, the logarithm: every doubling gets the
@@ -194,7 +197,11 @@ This section is the paper's central derivation (SPN Proposition 1.2, ruling R190
 **Proposition 3 (the unit circle by necessity)** [derived from P0–P2, with (c) a definition of the drawing and (f)'s single 2 a reading].
 
 (a) *The reader must set V = H.* By (P0) V must be assigned a breadth for there to be a relation. By (P1) the reader's
-H is the only breadth it has to assign. Without the assignment there is no second party, only h.
+H is the only breadth it has to assign. Without the assignment there is no second party, only h. *What this means:* V = H
+is a rule of representation, the reader's own breadth used as the unit for the other party. It is not a claim that the
+other's physical breadth equals H. The other has whatever breadth it has; where that differs from H, every amount the
+reader reads is off by the true V/H (§7). The rule constructs a relation calibrated in one unit; it discovers nothing
+about the world.
 
 (b) *The corner is at radius 1* (on the arc drawing, and at position 1 on either lay of §4). It lies one H from home, measured in H: H/H = 1, whichever H was chosen. No number is
 put in, and the size of H never enters. Which H is chosen is a free convention: a reader with unit λH reading a world
@@ -205,8 +212,12 @@ it which rung it stands on.
 length, 1: all h lying flat, all v upright, every attitude between them one mix. Its length is 1 at every attitude, so
 every mix satisfies h² + v² = 1. This is the arc drawing of §2, and taking h and v as the bar's two components is a
 definition, not a theorem. What V = H adds is that the drawing is a circle and not an ellipse: with two units the same
-bar would trace an ellipse stretched by V/H. The square and the line remain valid drawings of the same ratios; the
-circle is the one in which a fixed length means the same thing in both directions.
+bar would trace an ellipse stretched by V/H. The square and the line remain valid drawings of the same ratios. *An assumption made here:* one unit for both
+directions makes the axes commensurable, but a "fixed length" also needs a choice of norm. The square is the bar of
+fixed length under the largest-component norm and the line under the sum norm; the circle is the Euclidean choice. The
+circle follows if the attitudes are taken to be turns of one rigid bar, since the Euclidean norm (up to scale) is the
+only one left unchanged by every turn. That moves the burden to why the sweep is a turn, which the facing (§2) motivates
+and does not prove. Until that is settled the circle is the canonical drawing, not a forced one.
 
 (d) *The facings.* Once H and V share a unit, nothing prefers one side of either freedom, and each freedom has two
 facings, the corner's two sides. That gives 2 × 2 = 4 facings: the bar sweeping horizontal, vertical, horizontal,
@@ -275,13 +286,22 @@ the reading sits. Two reasons are offered:
   geometry to amounts, and its bridge is V = H.*
 - *by (P2).* No measure is carried past the corner, so nothing supplies a scale for the room to depend on.
 
-This is "no rung is preferred" applied to the lay. Either reason amounts to assuming the lay is unchanged by rescaling;
-whether that is an assumption or a consequence is question 1 in §12.
+This is "no rung is preferred" applied to the lay. Stated exactly, the premise is
+
+> **(S)** r(λx) − r(x) depends on λ alone, for all x, λ ≥ 1.
+
+Proposition 4 proves that (S) with monotonicity forces the logarithm. It does not prove that a situated reader must
+satisfy (S). Monotonicity, a fixed corner and a matched slope are not enough by themselves: r(x) = 1 + ln x + α(ln x)²,
+α > 0, meets all three and gives each doubling a different number of addresses. Such a lay would make the reader's
+address differences depend on which H it chose, which is what (P1) is offered to exclude. Whether (P1) and (P2) entail
+(S), or (S) is an added principle, is question 1 in §12.
 
 *The arithmetic.* Write g(λ) = r(λ) − 1. Then r(λ·μ) − r(μ) = g(λ) for all λ, μ ≥ 1, so g(λμ) = g(λ) + g(μ). That is
 Cauchy's functional equation in multiplicative form. With g increasing, its only solutions are g(λ) = c·ln λ. So
-r(v/h) = 1 + c·ln(v/h): equal room per doubling, c·ln 2. Joining the near field's slope with no kink at the corner gives
-c = 1 (inside the corner r = v/h, whose slope at 1 is 1, as is that of 1 + ln(v/h)).
+r(v/h) = 1 + c·ln(v/h): equal room per doubling, c·ln 2. A further condition, that the far lay join the near field's
+slope with no kink at the corner, gives c = 1 (inside the corner r = v/h, whose slope at 1 is 1, as is that of
+1 + ln(v/h)). The flip fixes where the two spaces meet; the smooth join is this added condition, not a consequence of
+the flip.
 
 *Room means addresses.* The room here is the number of addresses a doubling receives, not its length.
 
@@ -301,7 +321,9 @@ read in terms of h. Past it they are logarithmic: the far field, h read in terms
 addresses. The corner is where one gives way to the other, with no kink. Neither space is chosen: the cap forces the
 corner and the flip, and no preferred rung forces the logarithm.
 
-**One corner, plain doublings** [ruled, R188–R189]. There is only one corner, the split between the first level (home
+**One corner, plain doublings** [ruled, R188–R189]. "One corner" means one corner intrinsic to the relation, the one
+fixed point of the flip; it does not rule out other thresholds a particular reader's layout might have. There is only
+one such corner, the split between the first level (home
 to the corner, the near field) and the second. Past it the levels are plain doublings laid side by side. They have no
 corners of their own, nothing nested in them and nothing read again inside them: no depth and no recursion. Earlier
 working-paper readings that gave each level its own corner, or counted depth as nested sweeps, are superseded and kept
@@ -326,8 +348,10 @@ steps of its turn, and at each step holds one reading, v/h.
 2. When the bar turns a little, v/h changes by that turn times 1/h². Since h² + v² = 1,
    1/h² = (h² + v²)/h² = 1 + (v/h)².
 3. *Counting gives the Cauchy.* Steps per unit of v/h go as 1/(1 + (v/h)²). Over one facing's quarter turn that is
-   2/(π(1 + (v/h)²)) on [0, ∞). Over the reader's two facings, with v/h signed, it is 1/(π(1 + (v/h)²)). Half the steps
-   fall before the corner and half after, so the corner is the median, and the flip leaves the count unchanged.
+   2/(π(1 + (v/h)²)) on [0, ∞), the half-Cauchy. Half its steps fall before the corner and half after, so the corner is
+   the half-Cauchy's median, and the flip leaves the count unchanged. Over the reader's two facings, with v/h signed, it
+   is the standard Cauchy 1/(π(1 + (v/h)²)) on the whole line; its median is home (0), and the corners at ±1 are its
+   quartiles.
 4. *Drawing gives the fisheye.* Place each reading at its step of turn rather than at its value. Near home the world is
    at true scale; it compresses gently toward the corner, and past it more and more of the world falls into each step.
    The mathematical horizon sits at the edge of the turn and is never reached.
@@ -345,7 +369,10 @@ received as a ratio.
 
 **One uniformity behind both** [ruled]. Proposition 5 assumes the turn is stepped evenly. That is a choice of weight on
 the sweep. But it is not a weight chosen for the Cauchy: stepping the turn evenly is what makes the circle uniform in the
-first place. One choice, uniformity, lies behind the circle and the Cauchy alike. Other fair weights exist, for instance
+first place. One choice, uniformity, lies behind the circle and the Cauchy alike. Two things are distinct here: the circle's own
+symmetry under turning, and a reader's choice to sample it in even turns. The second respects the first but is not
+implied by it; a reader may sample unevenly. The claim is therefore that a reader who sweeps the Euclidean circle in
+even turns gets the Cauchy, and that this is the sampling that prefers no attitude. Other fair weights exist, for instance
 the straight line's share v/(v + h), and any weight fair to the two facings puts the corner at its middle (Proposition
 2(b)). They give other drawings, not the Cauchy.
 
@@ -416,6 +443,13 @@ included to show that the sweep's readings, with one bridge, are enough to place
 repository (`index.html`, `labs.html`, `res/`) was built for looks; it illustrates and never counts as evidence. The
 prediction is written before the data is opened. A killed prediction stays killed; a fix is a new run with its own
 prediction.
+
+**Three levels of claim, kept apart.** (1) *Correspondence*: a physical formula has the same form as a relation in the
+framework. (2) *Agreement*: measurements fit a prediction written before they were opened. (3) *Explanation*: the
+framework says why a law holds, or predicts what physics does not already supply. Everything in §8 is at level 1 or 2.
+Nothing here reaches level 3: the inverse-square law, the disc's near field and the planets' roundness are all already
+explained by physics. A correspondence recognised after seeing a formula is weak evidence; the tests that count are
+those that could have gone the other way, and the killed ones in §10 show that some did.
 
 ### 8.1 The inverse square as a calibration case
 
@@ -553,7 +587,7 @@ judgment on bounded lines (Barth and Paladino 2011). The view from nowhere is Na
 two breadths:
 1. near and far are one geometry, read through the flip at the corner, and the corner is forced (Propositions 1–2);
 2. a situated reader's one breadth forces V = H, which puts the corner at radius 1 with no number put in, and makes
-   the bar drawing a circle (Proposition 3);
+   the bar drawing, with Euclidean length, a circle (Proposition 3);
 3. past the corner the logarithm follows from no rung being preferred: two address spaces, proportional and
    logarithmic, one corner (Proposition 4); drawn by length, the far field fits in one more H;
 4. the circle and the Cauchy are one uniform turn, held whole or read from home (Proposition 5);
@@ -568,23 +602,32 @@ median but no mean.
 
 ## 12. Open problems, and questions for reviewers
 
+The questions come down to one. Five steps carry the structure, and each rests on its own premise: the corner on the
+flip; the circle on Euclidean length in one unit; the logarithm on (S); the Cauchy on even turns; every amount on a
+bridge. Can the circle and the logarithmic lay be derived from a minimal, explicit definition of a situated reader, or
+must they be added as principles? If they must be added, the contribution is a principled construction of a reader's
+geometry, not a proof that observation alone forces it. The first three questions below are the ones that decide this.
+
 1. **The link in Proposition 4.** Is "the room depends on the ratio alone" justified by "any H will do", or is it an
    independent assumption of scale invariance under another name?
-2. **(P2), no measure on a level.** D.1 is airtight given it. Is there a principled reason a level could not carry a
+2. **Why Euclidean?** Proposition 3(c) takes the bar's length to be Euclidean. If the sweep is a turn of a rigid bar, the
+   Euclidean norm is the only one every turn preserves. Is there a reason, from the reader's premises, that the sweep must
+   be a turn, rather than the square's or the line's path through the same ratios?
+3. **(P2), no measure on a level.** D.1 is airtight given it. Is there a principled reason a level could not carry a
    measure before anything arrives?
-3. **R162, the fair reading.** Proposition 2(b) needs the reading to treat the two sides alike although the reader's
+4. **R162, the fair reading.** Proposition 2(b) needs the reading to treat the two sides alike although the reader's
    knowledge does not. Is that defensible as more than a choice?
-4. **Uniformity as the weight.** §5 argues that the even turn is not an extra assumption for the Cauchy, since it is
+5. **Uniformity as the weight.** §5 argues that the even turn is not an extra assumption for the Cauchy, since it is
    what makes the circle uniform. Does that remove the burden, or only move it to "why the circle"?
-5. **Proposition 3(a).** Is "V = H is forced" more than a restatement of having only one breadth? Where would a reviewer
+6. **Proposition 3(a).** Is "V = H is forced" more than a restatement of having only one breadth? Where would a reviewer
    draw the line between a derivation and a definition here?
-6. **A measured reader.** Grid cells in the entorhinal cortex map space in modules whose spacing ratio no physics law
+7. **A measured reader.** Grid cells in the entorhinal cortex map space in modules whose spacing ratio no physics law
    sets. D.1 allows only binary branching without an added measure; if levels are doublings, that is 2 along a line, or
    √2 if a level doubles an area. Published means near 1.42 (Stensola et al. 2012) and others near 1.7 (listed in `plans/grd-landscape.md`) are known to the authors, so the plan (`plans/grd-plan.md`) runs only on per-animal data not yet
    opened. Suggestions for data are welcome.
-7. **The near field.** Is every Lambertian source of any shape, seen by a flat patch, a share in some ratio of the pair?
+8. **The near field.** Is every Lambertian source of any shape, seen by a flat patch, a share in some ratio of the pair?
    This is to be tested in exact arithmetic on other shapes.
-8. **The coincidence problem.** §9 leaves it restated, not answered. Is there anything in a reader's geometry that could
+9. **The coincidence problem.** §9 leaves it restated, not answered. Is there anything in a reader's geometry that could
    say why its home falls now?
 
 ---
