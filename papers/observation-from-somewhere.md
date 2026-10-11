@@ -302,6 +302,30 @@ outer hemisphere reads π/2 and the inner 2/π. (Equivalently: a half-turn stood
 arc π/2, and a bar of length 1 swept evenly through a quarter turn casts an average shadow of
 (2/π)∫₀^{π/2} cos θ dθ = 2/π.) The true breadth, 1, is read only with no turn at all.
 
+**Archimedes' proof, from nowhere and from somewhere.** Archimedes measured the circle from both sides (*Measurement
+of a Circle*). A polygon inscribed in the circle falls short of it and one circumscribed about it exceeds it; doubling
+their sides from 6 to 96 squeezed π between 223/71 and 22/7. Both polygons need the circle in hand: the inscribed one's
+corners lie on it and the circumscribed one's sides touch it. His proof is the completed view, both sides held at once.
+
+The inner hemisphere's measure is his inscribed polygon exactly. An inscribed polygon of n sides has perimeter
+n·sin(π/n) against the circle's π (both for a diameter of 1), and with θ = π/n that ratio is sin θ/θ. So the quarter
+turn, 90°, is the polygon of 2 sides, 2/π; 45° is the square, 0.9003; and halving the turn is his doubling of the sides,
+each step bringing the reading about four times closer to 1:
+
+| sides | turn θ | inscribed, sin θ/θ | short of 1 by |
+|---|---|---|---|
+| 2 | 90° | 0.6366 = 2/π | 0.3634 |
+| 4 | 45° | 0.9003 | 0.0997 |
+| 8 | 22.5° | 0.9745 | 0.0255 |
+| 16 | 11.25° | 0.9936 | 0.0064 |
+
+A situated reader cannot draw the outer polygon, because it does not hold the circle. It has only its own turn: the
+inner side. The other side reaches it through the flip instead, θ/sin θ = 1/(sin θ/θ), so it knows π/2 at the limb
+without standing outside, and π/2 · 2/π = 1 stands in for the circle it does not hold. (Archimedes' outer polygon goes
+as tan θ/θ rather than θ/sin θ; both lie above 1 and close on it at the same rate.) Archimedes squeezed π from both sides
+because he held the whole; a situated reader has the same number from one side and the flip. The convergence is
+ordinary geometry; what the vantages add is which reader holds which side.
+
 **From the vantages to the view from nowhere.** The argument runs in seven steps, each resting on the one before.
 1. A line has a true breadth, 1. That is what the completed view reads.
 2. Each situated vantage reads it through a facing: the hemisphere turned away reads π/2, the hemisphere turned toward
@@ -1114,6 +1138,8 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | logarithmic lay | geometry | position by number of addresses: v/h inside the corner, 1 + ln(v/h) past it |
 
 ## References
+
+Archimedes (c. 250 BC). *Measurement of a Circle*.
 
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.
