@@ -37,10 +37,33 @@ borrows. Earlier drafts of the working papers often blurred the two, and most of
 
 ---
 
+## The core insight: three vantages, one line
+
+*Foregrounded 11 October (Tom: "also forgeground into observation-from-somewhere"; SPN R191, R193–R197) [ruled].*
+
+Classical mathematics and physics assume a completed perspective, best known as the equation or the drawing on the
+page. There are three vantages, each with its own geometry, and they are easily conflated.
+
+| vantage | its geometry | its reading of a line of true breadth 1 |
+|---|---|---|
+| **completed** (classical; the view from nowhere) | the circle; every breadth held; no facing | **1** |
+| **outer hemisphere** (parallel; situated) | one facing, taken in at once; the hemisphere turns away from the reader | **π/2** |
+| **inner hemisphere** (serial; situated) | one facing, swept from home: the fisheye, the Cauchy; the hemisphere turns toward the reader | **2/π** |
+
+The line's actual breadth is 1, and π/2 · 2/π = 1. But no situated reader can observe 1: reading the true breadth
+assumes no facing, and a situated reader always has one, the hemisphere turned away from it or toward it. Only the
+unsituated observer has no facing, and only it knows the true breadth. The classical breadth needs both hemispheres in
+hand at once, which no single observation can do; that is why it is the view from nowhere. A reader can construct the
+classical view from multiple observations; the construction represents the breadth 1 without observing it.
+
+Each vantage's reading is right from where it stands. Many paradoxes come from reading one vantage's geometry as
+another's, most often the completed view used as if one observation held it (the working paper `vantages.md` collects
+them). The rest of this paper is the geometry of the two situated vantages and where it meets physics.
+
 ## Abstract
 
 A reader that stands somewhere knows its own breadth and not the breadth of what it reads. This paper works out what
-that one fact forces, and tests where the result meets physics.
+that one fact forces for the situated vantages, and tests where the result meets physics.
 
 The object throughout is a pair of shares, h of H and v of V, each on [0, 1]. Every way the two can relate, from all h
 to all v, is the *sweep*. Because neither share can pass 1, the sweep can go past the point v = h only by h emptying
