@@ -250,8 +250,8 @@ different geometric representation". Claude's reading, from SPN; unruled.*
 
 ## F. The denominator family
 
-*From `papers/denominator-paradox.md` ("Each Sees the Other Smaller", a companion to an interactive demo; Tom shared it on
-11 October). It gathers eleven standard paradoxes under one diagnosis and states that none is resolved differently, only
+*From `papers/denominator-paradox.md` ("Each Sees the Other Smaller", a companion to an interactive demo; an older paper
+of Tom's, written with Claude in an earlier session, added 11 October). It gathers eleven standard paradoxes under one diagnosis and states that none is resolved differently, only
 uniformly. This section maps that diagnosis onto the three vantages; the paper itself is the source for each entry.*
 
 **The diagnosis, in the vantages' terms.** "A denominator paradox is what you get when measurements made against
@@ -313,7 +313,7 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
   (D1–D6), plus eight candidates.
 - 11 October, second: "From situated to completed: what memory and synthesis do", after a comment Tom shared: synthesis
   transforms (sweep to index), recovers the shape up to a scale, and leaves three gaps (scale, step, motion).
-- 11 October, third: the denominator family (§F), from `papers/denominator-paradox.md`, which Tom shared: eleven
+- 11 October, third: the denominator family (§F), from `papers/denominator-paradox.md`, an older paper of Tom's: eleven
   paradoxes under one diagnosis, the private ruler as the reader's own H and the shared number line as the completed
   view's unit; the exchange already worked in `pool.html`. Simpson's paradox and the twin paradox moved up from the
   candidates.

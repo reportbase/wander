@@ -163,7 +163,7 @@ Google Fonts load from outside:
   perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
   those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry
   with its vantages, the reading, what was already known, and its standing (worked / reading / candidate). It grows.
-  `denominator-paradox.md` ("Each Sees the Other Smaller", shared by Tom 11 Oct, kept as received) is a first course in
+  `denominator-paradox.md` ("Each Sees the Other Smaller", an older paper Tom wrote with Claude in an earlier session, added 11 Oct) is a first course in
   denominator paradoxes: private rulers compared on one number line; dissolve, then purchase a shared denominator (the
   exchange: ratio and product of the two reads). `vantages.md` §F maps it onto the three vantages.
   The papers cite others not in this repo (*Reader Geometry as
