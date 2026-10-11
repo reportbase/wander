@@ -641,11 +641,15 @@ logarithm is fundamental: this paper takes it as given and does not prove it. Th
 
 **Proposition 1.2 (the unit circle by necessity; R190).** Tom, 11 October: "1 falls out of setting V = H."; "so the choice
 is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessity."
-- *Premises.* (P1) A situated reader chooses one breadth, H, and holds no whole of the system (situations 3 and 4, §2.1).
-  Any H will do; it must choose exactly one (Tom, 11 October: "reader can actually choose H, any H is fine, he just needs
-  to choose one."). (P2) The corner is h = v, and a level holds only its ends, their order and the flip that exchanges them (the
+- *Premises.* (P0) A relation has two parties, each a share of an assigned breadth: h of H, v of V (Tom, 11 October:
+  "its because of our intial assumption of a 2 party relation, and you can't have a relation if both V and H are not
+  assigned breadths."). Assigned is not known: by "v needs no V" the value of v on [0, 1] does not depend on how big V
+  is, but v must be a share of something. (P1) A situated reader chooses one breadth, H, and holds no whole of the
+  system (situations 3 and 4, §2.1). Any H will do; it must choose exactly one (Tom, 11 October: "reader can actually
+  choose H, any H is fine, he just needs to choose one."). (P2) The corner is h = v, and a level holds only its ends, their order and the flip that exchanges them (the
   premise of Proposition D.1). (P3) The logarithm is fundamental (R189: taken as given, not proved here).
-- *Claim.* (a) The reader must set V = H: by (P1) its chosen H is the only breadth it has to read V against. (b) The corner is then at
+- *Claim.* (a) The reader must set V = H: by (P0) V must be assigned a breadth for there to be a relation at all, and by (P1) its
+  chosen H is the only breadth it has to assign. Without the assignment there is no second party, only h. (b) The corner is then at
   radius 1, since it is one H from home measured in H, H/H, whichever H was chosen; no number is chosen, and the size of H never
   enters, so the choice of which H is free (a convention: §8.4, the unit is not geometric; §3.8, a different H only moves
   the reader's rung). (c) The
@@ -663,11 +667,12 @@ is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessi
 - *So:* the one act of choosing an H, any H, and setting V = H, gives the unit circle, its radius 1, its diameter 2 and the levels
   beyond it, with no number put in by hand.
 - *Escapes* (where the conclusion does not follow): a reader that keeps two independent breadths at once, choosing
-  neither (not P1); a level with
+  neither, has no relation (not P0), so it lies outside the framework rather than against it; a level with
   more structure than the flip, such as a measure (not P2), which allows other subdivisions; a lay that is not
   logarithmic past the corner (not P3), such as proportion, which keeps true scale but does not fit the far field on
   bounded addresses (10 October, `flight.html`).
-- *Standing.* A derivation from stated premises; (P3) is assumed. A route to deriving (P3) from §3.8 ("No rung is
+- *Standing.* A derivation from stated premises. (P0) is the paper's first assumption, the two-party relation; (P1)
+  states the situated reader; (P3) is assumed. A route to deriving (P3) from §3.8 ("No rung is
   preferred") is noted there.
 
 Everything below is built from one object: **a share of all of something, none of it, or anything in between**. Two such
@@ -5533,7 +5538,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 - **R187** (5 Oct, 12:40), over the proposed signal test of the central hypothesis: "no kill condiitons, just report the results. lets look at various synthetic signals so happens to the resurcsion." **Exploratory runs report their results as they fall, without registered predictions or kill conditions.** Synthetic signals, like shapes, are generated, not real-world data (the 26 Sep rule on planned real-world tests still applies to recordings).
 - **R188** (10 Oct, 18:38–18:43), over `wander/flight.html`: "I don't think there are corners in the far field. there is only one corner that splits far field from the near field, which is just the split between the first and second octive." / "also, there is no depth or recursion because we create the unit circle when we assign V to H." / "its plain doublings, ordinary math. but now we know why, its a consequence of setting V = H, which creates the unit circle." Supersedes R175 and R180; restores the 8 October reading of V = H (§2.1) over the 9 October corrections. §1, "The settled view, 10 October".
 - **R189** (10 Oct, 19:02–19:06), on R188's "left to rule": "v does not need V. v = [0,1]. h = [0,1], they are invariant." / "one circle. yes, the open question than disolves. its just logrithimic doublings. this paper does. not need to prove the logrithm, it is fundemental." One circle: its shape from the invariant fill levels, its unit from V = H. The central open question (the 2; Appendix D) dissolves. §1, "The settled view, 10 October".
-- **R190** (11 Oct, 04:44–04:46): "1 falls out of setting V = H." / "so the choice is to set V = H, not 1" / "thats a pretty solid proof, kind of a proof of necessity." / (04:49) "Why can't use reader choose is H? reader can actually choose H, any H is fine, he just needs to choose one." / (04:53) "then the diameter of the unit circle is also 2. which is the diameter of the first octive, where the reader actually exists." Proposition 1.2.
+- **R190** (11 Oct, 04:44–04:46): "1 falls out of setting V = H." / "so the choice is to set V = H, not 1" / "thats a pretty solid proof, kind of a proof of necessity." / (04:49) "Why can't use reader choose is H? reader can actually choose H, any H is fine, he just needs to choose one." / (04:53) "then the diameter of the unit circle is also 2. which is the diameter of the first octive, where the reader actually exists." / (04:58) "right, its because of our intial assumption of a 2 party relation, and you can't have a relation if both V and H are not assigned breadths." Proposition 1.2.
 
 ## Appendix B. Demos and computations
 
