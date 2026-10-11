@@ -16,9 +16,10 @@
     one doubling of s (1 to 2, 2 to 4, …).
     The reader's lay (11 October; SPN Proposition 1.2 (g), Tom: "so then logrightms are forced beyond the cornder"; "update
     levels.html"): past the corner a reading s sits at 1 + ln s, every level the same width, ln 2, with no horizon on the
-    lay; the page draws six levels and they go on. It is now the default: two address spaces, proportional inside the corner and logarithmic past it (Tom: "this chain of
-    logic creates two address spaces, proportional and logrithmic around the corner"). The first lay, kept at ?lay=inplace,
-    follows; it
+    lay; the page draws six levels and they go on. It is now the default: two address spaces, proportional inside the
+    corner and logarithmic past it (Tom: "this chain of logic creates two address spaces, proportional and logrithmic
+    around the corner"). The same addresses drawn by length are the first lay, kept at ?lay=inplace (Tom: "reality = 2H";
+    "same length, not addresses"): reality in two H's, the near field in the first and the far field in the second. It
     gives each level half the width of the one before: level k runs from radius
     2 − 2^(−k) to 2 − 2^(−k−1), so a reading s ≥ 1 sits at 2 − 1/s (SPN's in-place lay, "2h in place": the far field
     nests in the back half, and the horizon, s → ∞, is the circle of radius 2, never reached). A ring is drawn while it is
@@ -116,8 +117,8 @@
     <p class="note">The reading s = v/h is laid at radius s inside the circle and at 1 + ln s past it (the unit circle has
     radius 1): the reader's lay, every doubling past the corner the same width, ln 2, and no edge; the drawing stops at six
     levels, and they go on. The in-place lay, <a href="levels.html?lay=inplace">2 − 1/s</a>, gives each doubling half the
-    room of the last, with the horizon at radius 2: a lay, but one that prefers the corner's scale, so not the reader's
-    (<i>Serial, Parallel and Nowhere</i>, Proposition 1.2 (g)). On it, coarsen the grain and the outer levels drop out one
+    room of the last, with the horizon at radius 2: reality in two H's by length, the same addresses as this drawing,
+    which shows them by count (<i>Serial, Parallel and Nowhere</i>, Proposition 1.2, "Reality in 2H"). On it, coarsen the grain and the outer levels drop out one
     per doubling of the grain, about log₂(radius ÷ grain) of them. The shape wraps the circle and crosses the levels; the
     gold dashed circle is your level of detail: inside it you hold the shape's bumps, past it only its broad form (faint
     dashes: what is there). Tap or drag on the picture to read a place. Behind it: <i>Serial, Parallel and Nowhere</i>, the
@@ -127,10 +128,9 @@
 <script>
 (() => {
     const $ = id => document.getElementById(id);
-    // The lay (11 October; SPN Proposition 1.2 (g)). The reader's lay: proportional up to the corner, then 1 + ln s, every
-    // doubling the same width, ln 2, with no edge (the logarithm forced past the corner when no rung is preferred). The
-    // in-place lay, 2 − 1/s, each doubling half the last and the horizon at radius 2, is kept at ?lay=inplace: a lay, but
-    // not the reader's (it prefers the corner's scale).
+    // The lay (11 October; SPN Proposition 1.2). By count (default): proportional up to the corner, then 1 + ln s, every
+    // doubling the same number of addresses, drawn ln 2 wide, with no edge. By length (?lay=inplace): 2 − 1/s, reality in
+    // two H's, each doubling half the length of the last, the horizon at radius 2. The same addresses, two drawings.
     const LAY = new URLSearchParams(location.search).get('lay') === 'inplace' ? 'inplace' : 'log';
     const LN2 = Math.LN2, KLOG = 6;                    // the reader's lay is drawn out to six levels past the corner
     const EDGE = LAY === 'log' ? 1 + KLOG * LN2 : 2;   // the drawn edge, in units of the unit circle's radius

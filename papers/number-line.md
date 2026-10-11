@@ -65,7 +65,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
-- 11 October, seventy-fourth: SPN Proposition 1.2 (R190): the unit circle by necessity; the corner and the flip forced by the cap; the logarithm forced past the corner, so the reader's lay is 1 + ln s and the in-place lay is a lay but not the reader's; two address spaces, proportional and logarithmic, around the corner (Tom). Notes at §4 and the level's description.
+- 11 October, seventy-fourth: SPN Proposition 1.2 (R190): the unit circle by necessity; the corner and the flip forced by the cap; the logarithm forced past the corner, counting addresses; reality in 2H by length (the in-place lay, the reader's own), the same addresses by count (1 + ln s); two address spaces, proportional and logarithmic, around the corner (Tom). Notes at §4 and the level's description.
 - 10 October, seventy-third: one circle, "v needs no V" standing (v and h on [0, 1], invariant); the levels logarithmic doublings, the logarithm fundamental; the open question of the 2 dissolves (Tom; SPN R189).
 - 10 October, seventy-second: one corner, plain doublings, no depth or recursion; V = H creates the unit circle, 8 October's reading restored (Tom, at `flight.html`; SPN R188, §1 "The settled view, 10 October"). Dated notes in Background, §4 and §8.
 - 10 October, seventy-first: §4, on the Hipparcos stars light falls two levels per level of distance (dwarfs 2.02, giants 1.93; past the catalogue's limit 1.61); a known kind is a bridge about a level wide (MAG, `plans/mag-plan.md`).
@@ -445,9 +445,10 @@ relation, from home through the corner to the far wall, in a finite length of 2.
 - **The name.** The corner is the corner of the unit square, where the unit line turns, and where the breadths of the
   near field and the far field meet.
 - **It is a level, "2h in place"** (SPN): a front half one h long and a back half one h long. (*11 October*, SPN
-  Proposition 1.2 (g): the reader's own lay past the corner is logarithmic, 1 + ln s, every doubling the same room; the
-  in-place lay is a lay, not the reader's. Tom: "this chain of logic creates two address spaces, proportional and
-  logrithmic around the corner.")
+  Proposition 1.2: reality is two H's by length, the near field in the first and the whole far field in the second,
+  which is this level; past the corner each doubling gets the same number of addresses, so they crowd toward the
+  horizon. Tom: "this chain of logic creates two address spaces, proportional and logrithmic around the corner";
+  "reality = 2H"; "same length, not addresses.")
 - **It is SPN Proposition 3.2(a), drawn.** A reader can hold s directly before the corner and 1/s past it, both within
   [0, 1], only if the switch is at s = 1. The two arms are those two registers.
 - **The horizon becomes a point.** s → ∞ lands at the far wall, (0, 1), a finite point on the drawing. The squeeze of
@@ -679,8 +680,9 @@ by side, with no ruling on the word:
   between what is sent and what one reader gets is the cost of being situated.
   It is the inverse-square law (Tom, 8 October: "is this the inverse square law?"; "yes, the situated reader is just another place this law shows up."): 1/d in each of two directions, grains lost while the object is resolved, brightness
   lost once it is under one grain, the switch at one grain across (the resolution limit, the corner of the size-against-step pair, not of the reader's sweep of the other: SPN §1). The situated reader is one more place the law shows up.
-  *The lay has its form too* (10 October; ISQ, `plans/isq-plan.md`, run 1, not killed; *11 October*: the in-place lay's,
-  which SPN Proposition 1.2 (g) rules is not the reader's own lay, that being logarithmic): past the corner the in-place lay is
+  *The lay has its form too* (10 October; ISQ, `plans/isq-plan.md`, run 1, not killed; *11 October*: SPN Proposition 1.2,
+  "Reality in 2H": the in-place lay is reality drawn by length, the reader's own; the logarithm counts its addresses):
+  past the corner the in-place lay is
   2 − 1/s, proportion in h/v, so its room per unit s is 1/s², the flip's Jacobian, a quarter less per doubling. Keep the
   case: s is geometry; reading s as d/Δ (amounts) makes 1/s an angular size, the lay's 1/s² the rate it shrinks (one
   dimension) and light's 1/d² its square (two). A shared form with one origin, the flip; SPN §1.

@@ -67,7 +67,8 @@ Google Fonts load from outside:
   its centroid, the nearest wall in each direction) or a .tvf3d cut at a height h (the equator by default); the outline
   read as s(θ) = s₀·(r/r̄)^k with a relief slider k. Since 11 Oct (SPN Prop 1.2 (g); Tom: "update levels.html") the default is
   the reader's lay, 1 + ln s past the corner, every level ln 2 wide, six drawn, no horizon on the lay; the in-place lay
-  (2 − 1/s, horizon at 2) is kept at `?lay=inplace` (a lay, not the reader's). "Depth" relabelled per R188.
+  (2 − 1/s, horizon at 2) is kept at `?lay=inplace`: the same addresses by length, reality in 2H (Tom: "reality = 2H";
+  "same length, not addresses"). "Depth" relabelled per R188.
   `?lay=inplace&g=&s=&shape=&lod=&depth=1&body=&relief=&cut=`; test hook `window.__levels` (now with `lay`).
 - `walk.html`: **the walk** (10 Oct 2026, Tom: "the sweep is a walk from me to you … far away, you are increasinly difficult
   for me to get to you, and then acceleratingly difficult"; "You are vertical and I am horizontal. Show the sweep in terms of
@@ -324,7 +325,7 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   to prove the logrithm, it is fundemental"); Appendix D and the open question are kept as the record.
 - Proposition 1.2 (11 October, R190): from the two-party relation and one chosen H, V = H is forced; the corner and the
   flip follow from the cap at 1; the logarithm past the corner follows when no rung is preferred, so the reader's lay is
-  1 + ln s (the in-place lay, 2 − 1/s, is a lay but not the reader's); two address spaces, proportional and logarithmic,
+  1 + ln s by address count; by length reality is 2H (the in-place lay, 2 − 1/s, the reader's own); two address spaces, proportional and logarithmic,
   around the corner. Still assumed: no measure on a level.
 - Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof").
 

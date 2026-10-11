@@ -38,6 +38,9 @@ bodies are pictures. They are never evidence here.
 - 10 October, eighth: the inverse square kept as a calibration case, not a research line (its §0, "Known already":
   radiance theorem, view factors, reciprocity, Newton's cones, Le Sage). The effort goes where situated geometry commits
   to a number that classical work leaves open: GRD first (grid cells, data from Tom).
+- 11 October: SPN Proposition 1.2 (R190; Tom: "reality = 2H", "same length, not addresses"): the in-place lay is reality
+  drawn by length, the near field in the first H and the whole far field in the second, and it is the reader's own;
+  the logarithm counts its addresses, the same number per doubling. The lay's 1/s² form (ISQ) is the reader's.
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -69,7 +72,8 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | the reading s = v/h, a ratio | a distance in units of a size, d/Δ | the size Δ | ISQ (form only) |
 | levels: log₂ of a reading | log₂ of an amount ratio: magnitudes, decibels, octaves | a zero point, which drops out of every slope | MAG |
 | the corner, h = v | where an amount pair is equal: one step across (the resolution limit), a radius | the pair's two amounts | GRN run 8; HZN |
-| the in-place lay past the corner, 2 − 1/s | an angular size, Δ/d, counted down from the horizon | Δ | ISQ |
+| the in-place lay past the corner, 2 − 1/s: reality in 2H by length, the reader's own (SPN Prop 1.2) | an angular size, Δ/d, counted down from the horizon | Δ | ISQ |
+| the logarithmic lay past the corner, 1 + ln s: the same addresses by count, each doubling the same number (SPN Prop 1.2 (g)) | log₂ of an amount ratio: the level count of magnitudes, decibels, octaves | a zero point | MAG |
 | the lay's room per unit s, 1/s² | how fast an angular size shrinks with distance (one dimension); light's 1/d² is its square (two) | Δ | ISQ; MAG |
 | depth from the corner, log₂(r/r̄) | height above a world's own reference sphere | the size r̄ | REF |
 | reading from the outline, chords 2 sin φ | standing on a world: the horizon at home; the horizon's distance √(2Rh) | the radius R | HZN |
