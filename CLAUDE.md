@@ -196,6 +196,9 @@ Google Fonts load from outside:
   reviewers. It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
   Its first external evaluation and the changes it led to are in `plans/ofs-review-1.md` (V = H as representation; the
   Euclidean norm, the premise (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on).
+  **Its primary result** (Tom, 11 Oct, SPN R200: "it is the primary result"): the Cauchy consists of addresses, not
+  payload (R47; SPN §4.3; OFS Proposition 6, the reach of whatever arrives cancelling from every reading). It was left
+  out of the first version; keep it in the abstract, §5 and the claims.
   `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
   perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
   those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry

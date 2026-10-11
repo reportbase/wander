@@ -9,7 +9,10 @@ author's words, every correction, and every claim later withdrawn. This paper st
 standing of each claim, and includes what failed. Where it and a working paper differ, the working paper's latest dated
 entry is the record, and the difference is an error here. Appendix B maps each section to its sources. Revised the same day after a first evaluation (`plans/ofs-review-1.md`): V = H stated as a rule of representation, the
 Euclidean choice and the scale-invariance premise (S) made explicit, the half-Cauchy named, and the three levels of
-physics claim set apart. Then, after a second evaluation, a candidate single principle (§12.1), offered as a reading.*
+physics claim set apart. Then, after a second evaluation, a candidate single principle (§12.1), offered as a reading.
+Then, at the author's word that it is the primary result (SPN R200), the Cauchy as addresses, not payload (R47; SPN
+§4.3), stated in the abstract and §5 with its proof (Proposition 6), and the Cauchy's missing mean read as SPN reads it:
+a question about the payload asked of addresses, not a census the horizon withholds.*
 
 ---
 
@@ -119,6 +122,14 @@ Held whole, with no standpoint, the bar's even turn is the circle. Swept from ho
 counts out the Cauchy and draws the fisheye [derived, given the even turn]. One uniformity lies behind both. Situated
 geometry is the Cauchy; unsituated geometry is the circle.
 
+**The primary result: the Cauchy consists of addresses, not payload** [the cancelling and the statistics proved,
+Proposition 6; the reading ruled, R47 and SPN R200]. Whatever arrives along a ray, at whatever reach ℓ (an amount, in the reader's
+one unit), the reader reads (ℓ·v)/(ℓ·h) = v/h. The reach cancels in every single reading, not on average, so the readings tell rays apart, not
+points. The Cauchy is therefore laid before anything arrives and is the same whatever arrives: it is where the reader
+can put what arrives, never what arrives. Its order survives every change of payload, so it has a median, the corner. A
+mean is a sum of sizes, a question about the payload, and addresses carry no size, so it has none. That is why the
+Cauchy has a median but no mean.
+
 The physics correspondences are kept apart from the geometry and tested on published data or exact arithmetic. Light
 falls two levels per level of distance on nearby Hipparcos dwarfs, as the inverse-square law requires [data]. In the
 cases worked, the near field of an extended source turns exactly at the corner of the (size, distance) pair when the
@@ -170,6 +181,9 @@ Neither the serial nor the parallel reader knows how many things there are (N), 
 - *Situated*: holding one breadth (H) and not the other's (V); situations 3 and 4.
 - *Address*: a place in the reader's layout where a reading can be put, laid before anything arrives.
 - *Payload*: what arrives at an address.
+- *The hand* (the working papers' picture of the two): hold a hand flat (all h) and turn it upright (all v), the
+  fingers spread between. Each finger is an address; a ring on it is the payload. Turning the hand changes no ring, and
+  changing the rings changes no finger.
 - *Lay*: a rule placing each reading at a position r in a drawing; *room* is how much of the drawing a stretch of
   readings receives, measured either by length or by number of addresses (each use says which).
 - *Facing*: which way the relation's bar points, one of the corner's two sides in each freedom; a sweep from all h to
@@ -177,8 +191,8 @@ Neither the serial nor the parallel reader knows how many things there are (N), 
   sweep.)
 - *Level*: the first level runs from home to the corner; past it, each level is one doubling of the reading.
 
-**Geometry before payload.** The addresses a reader lays (the sweep, the corner, the levels) do not depend on what
-arrives at them. What arrives, the *payload*, is met at the addresses. Every "if" belongs to the payload, including which
+**Geometry before payload.** The addresses a reader lays (the sweep, the corner, the levels, and the Cauchy that
+counts them, §5) do not depend on what arrives at them. What arrives, the *payload*, is met at the addresses. Every "if" belongs to the payload, including which
 side of the corner a given reading falls on. This paper is about the addressing. It is not a theory of perception or of
 mind, and it makes no claim about the geometry of spacetime.
 
@@ -428,7 +442,7 @@ angle doubling sending the corner to the mathematical horizon. The levels past t
 
 ---
 
-## 5. Situated and unsituated: the circle and the Cauchy
+## 5. The circle and the Cauchy: addresses, not payload
 
 **Proposition 5 (the Cauchy and the fisheye from one sweep)** [derived, given the even turn on the arc drawing].
 
@@ -451,6 +465,56 @@ steps of its turn, and at each step holds one reading, v/h.
 working papers avoid the inverse tangent in a sweep, because a sweep is swept step by step from home; it is the
 shortcut that turns a sweep into an index.)
 
+**The primary result: the Cauchy consists of addresses, not payload** [Proposition 6 proved; that it makes the Cauchy
+the reader's addresses ruled: R47 (26 September), restated by the author on 8 October (SPN §4.3) and named the primary
+result on 11 October (SPN R200)].
+
+> **The Cauchy is not the payload; it is the address to the payload.** (R47)
+
+**Proposition 6 (address and payload)** [proved; (b)–(d) from the archived *Reader Geometry as Addressing*,
+Proposition 14]. Call a statistic of a set of readings an *address statistic* if it uses only their order (the ranks,
+the median, the quartiles, which side of the corner each falls), and a *payload statistic* if it uses their sizes (the
+mean, every sum).
+
+(a) *Nothing that arrives changes the Cauchy.* Let whatever arrives along the ray at each step of the turn sit at any
+   reach ℓ > 0, an amount, different on every ray and unknown to the reader. In the reader's one unit (V = H) its two
+   components are ℓ·h and ℓ·v, and the reading is (ℓ·v)/(ℓ·h) = v/h. The reach cancels in every single reading, not on
+   average. So the readings of Proposition 5, their count 2/(π(1 + (v/h)²)) and the fisheye are the same whatever
+   arrives, and are fixed before anything does: the readings tell rays apart, not points.
+
+(b) *Address statistics ignore the payload.* Let X be a finite set of readings and f any strictly increasing map of them
+   (any change of the sizes that keeps their order). The ranks of f(X) are the ranks of X, so every address statistic
+   picks the same reading: median f(X) = f(median X) for an odd count. Conversely, if two sets have the same ranks, some
+   strictly increasing f carries one onto the other, so the ranks keep exactly what survives every such change, and
+   nothing more.
+
+(c) *Payload statistics do not.* The mean commutes with f only where f is affine on the data; for a convex f,
+   mean f(X) ≥ f(mean X), with equality only when f is affine there or X is constant (Jensen).
+
+(d) *The Cauchy is an address law.* Over one facing its median is v/h = 1, the corner, and its quartiles are
+   √2 − 1 and √2 + 1, a flip pair; its mean diverges, since ∫₀^M x·2/(π(1 + x²)) dx = (1/π)·ln(1 + M²) grows without
+   bound. It supports order, not sums.
+
+*Proof.* (a) is the line above. (b) and (c) are immediate, the converse in (b) by interpolating monotonically between
+the matched readings. (d): the count over one facing has distribution (2/π)·atan(v/h), which is ½ at v/h = 1 and ¼, ¾ at
+tan(π/8) = √2 − 1 and tan(3π/8) = √2 + 1; the integral is elementary. ∎
+
+**What it means** [ruled; SPN §4.3]. The sweep counted evenly is the Cauchy, and each reading in it is a ray, an address,
+laid before anything arrives. What arrives is the payload, met at the addresses, and none of it is in the Cauchy. In the
+hand (§1): spread the fingers evenly by turn and read each as v over h, and the readings are the Cauchy; nothing of the
+rings is in it.
+- *The median is an address.* The corner is where the readings divide in half. Order, ranks, quartiles and the corner
+  are address statistics, and they ignore what arrives.
+- *The missing mean is a question about the payload asked of addresses.* A mean is a sum of sizes; the Cauchy's
+  readings carry no size, so it has no answer. The median, the address question, is always there.
+- *More looking buys more addresses, not more payload.* A finer sweep lays more readings: "precision about where and
+  when, and never about what" (*The Cauchy*, 22 August, §14d, an earlier paper of the author's quoted in SPN §4.3).
+  What is at the addresses comes only from a payload held beside them, through a bridge (§7).
+
+**Where it holds** [open beyond it]. Proposition 6(a) takes the payload to be something met along one ray, a value at
+an address. Occlusion and contact use more than that: that the sweep is a straight line and the payload is the first
+thing it meets (SPN §4.3, "The boundary"). For those, the addressing results are untested.
+
 **Situated is the Cauchy; unsituated is the circle** [derived as stated; the reading is ruled]. Unsituated, nobody
 stands anywhere: the bar is held whole, all four facings at once, and its end traces h² + v² = 1. Every point is like
 every other: there is no home, no corner set apart and no horizon. Situated, one reader at home sweeps one facing and
@@ -467,31 +531,26 @@ even turns gets the Cauchy, and that this is the sampling that prefers no attitu
 the straight line's share v/(v + h), and any weight fair to the two facings puts the corner at its middle (Proposition
 2(b)). They give other drawings, not the Cauchy.
 
-**What being situated costs** [the first sentence proved; the second a reading]. The Cauchy has no mean: its tail past
-the corner is too heavy. Read so, from somewhere there is a reading at every distance, and no census of the whole. Its median and its symmetry under the flip are what survive.
+**What being situated costs** [reading, on Proposition 6]. A situated reader keeps order and loses sums: from somewhere
+there is a reading at every distance, and no census of the whole. The Cauchy's median and its symmetry under the flip
+are what survive. The Cauchy is the extreme case, an order law with no sum.
 
-**Why the median survives and the mean does not** [proved; from the archived *Reader Geometry as Addressing*,
-Proposition 14]. Let X be a finite set of readings and f any strictly increasing map of them (any change of the
-amounts that keeps their order). (a) The ranks of f(X) are the ranks of X, so every order statistic picks the same
-reading: median f(X) = f(median X) for an odd count. (b) Conversely, if two sets have the same ranks, some strictly
-increasing f carries one onto the other, so the ranks keep exactly what survives every such change, and nothing more.
-(c) The mean commutes with f only where f is affine on the data; for a convex f, mean f(X) ≥ f(mean X), with equality
-only when f is affine there or X is constant (Jensen). *Proof.* (a) and (c) are immediate; (b) by interpolating
-monotonically between the matched readings. ∎ So order (the ranks, the median, the corner) is what a reader keeps
-when it does not hold the amounts, and sums are what it loses. The Cauchy is the extreme case: an order law with no
-sum.
-
-**Two absences, kept apart** [reading; after the archived *Browsing the Fisheye*]. Two different things are missing from
-a situated reading, and they are easily run together. The amounts, V and H, are missing from *every single reading*:
-v/h cancels them, and only a bridge (§7) restores them. The total of the whole is missing because the reader's set *has
-no end*: the mathematical horizon is never reached, so no census can be taken, and the Cauchy's divergent mean is that
-absence in arithmetic. The first is a fact about the ratio; the second a fact about delivery.
+**Two absences, kept apart** [reading; after the archived *Browsing the Fisheye*, read with SPN §4.3]. Two different
+things are missing from a situated reading, and they are easily run together. The amounts, V and H, are missing from
+*every single reading*: v/h cancels them, as it cancels the reach of whatever arrives (Proposition 6(a)), and only a
+bridge (§7) restores them. The total of the whole is missing because the reader's set *has no end*: the mathematical
+horizon is never reached, so no census can be taken. The first is a fact about the ratio; the second a fact about
+delivery. The Cauchy's missing mean belongs to the first, not the second: it is not a census that more delivery would
+complete. Over the reader's two facings the mean of n readings is distributed exactly as one reading, whatever n
+[classical], so averaging never settles. The readings are addresses, and a mean asks them for sizes they do not carry.
 
 **Known already.** The Cauchy as the image of a uniform angle (the gnomonic image of uniform measure on a hemisphere),
 and its invariance under Möbius maps, are classical (Knight 1976; McCullagh 1996): a pinhole projecting evenly spread
 directions onto a line gives the Cauchy (Cuadras 2002), and Möbius maps of Cauchy variates are Cauchy (Pitman and
-Williams 1967). Its missing mean, long called a pathology, has its history in Stigler (1974). What this paper adds is
-the reading: which reader, knowing what, gets which object.
+Williams 1967). Its missing mean, long called a pathology, has its history in Stigler (1974); that the mean of n Cauchy
+variates is again Cauchy, and that order statistics follow every increasing map, are textbook facts. What this paper
+adds is the reading: which reader, knowing what, gets which object, and that the object is the reader's addresses, not
+its payload.
 
 ---
 
@@ -731,12 +790,15 @@ two breadths:
 3. past the corner the logarithm follows from no rung being preferred: two address spaces, proportional and
    logarithmic, one corner (Proposition 4); drawn by length, the far field fits in one more H;
 4. the circle and the Cauchy are one uniform turn, held whole or read from home (Proposition 5);
-5. the level of detail is the count, set by size, and H is a zoom (§6).
+5. **the primary result:** the Cauchy consists of the reader's addresses, not its payload. The reach of whatever arrives
+   cancels from every reading, so the Cauchy is laid before anything arrives; it keeps order, its median the corner,
+   and has no sum (Proposition 6);
+6. the level of detail is the count, set by size, and H is a zoom (§6).
 
 Whether this is a better or worse way to compute anything is an engineering question and not this paper's concern. The
 aim is to explain things that are known but not well understood: why near and far fields seem to obey different
 mathematics, why logarithmic scales appear wherever a range is too wide to hold in proportion, and why the Cauchy has a
-median but no mean.
+median but no mean (it is addresses, and addresses have an order but no sum).
 
 ---
 
@@ -831,6 +893,7 @@ three parts of the one group of the ratio.
 | v/h, h/v | geometry | the reading before and past the corner (SPN writes s) |
 | the corner | geometry | v = h |
 | d, Δ, a, R, L | physics | distance, size, radius, radius, light |
+| ℓ | physics | the reach of what arrives along a ray (Proposition 6(a)); it cancels from every reading |
 | ε | physics | the reader's angular step |
 | Δ/(d·ε) | physics | addresses a thing spans; = 1 is the resolution limit |
 | level | geometry | home to corner (the first); one doubling of v/h past it |
@@ -845,7 +908,7 @@ three parts of the one group of the ratio.
 | §2 | SPN §1 ("The line, the arc and the facing"), Propositions 3.1–3.3, R162 | `facing.html` |
 | §3 | SPN Proposition 1.2 (a)–(f), Appendix D (D.1), R188–R190; `v-and-h.md` §8o | `levels.html`, `sphere.html` |
 | §4 | SPN Proposition 1.2 (g), "Reality in 2H", "Two address spaces" | `levels.html`, `flight.html`, `isq-plan.md` |
-| §5 | SPN Proposition 1.2, "The Cauchy and the fisheye, derived" (1)–(7); §14 burdens; `v-and-h.md` 423–424 | — |
+| §5 | SPN Proposition 1.2, "The Cauchy and the fisheye, derived" (1)–(7); SPN §4.3, "The Cauchy consists of addresses, not payloads", R47, R200; §14 burdens; `number-line.md` §8; `v-and-h.md` 423–424; archived *Reader Geometry as Addressing* §7.5 (Proposition 14) | — |
 | §6 | SPN Proposition 1.2 ("The count", "H is a zoom"), §3.3; `number-line.md` §5 | `grn-plan.md` |
 | §7 | SPN §1 ("Powerless in one observation"), Part II | `flight.html` |
 | §8 | `inverse-square.md`; `physics.md` §2 | `mag-`, `gcn-`, `cnt-`, `nrf-`, `isq-`, `hzn-`, `ref-plan.md` |
