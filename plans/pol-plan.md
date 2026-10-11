@@ -1562,3 +1562,87 @@ number, and P36′ not to diffusion's. They are kept as they were, not adjusted.
 - **P36′.** Diffusion's largest rise within 12 s is under a quarter of the referee's.
 - **P37′.** The fluid keeps the books (1e-6, 1e-6, 1e-9).
 - *Measured:* the fluid's largest rise against the referee's; the view's count.
+
+Run 17 output (`node plans/pol/pol17.mjs`, in `plans/pol/pol-run17.txt`; before it, a crash check and a check that the
+setting survives, no statistics):
+
+```
+a pulse: the balls within 10 of a point 60 from the window's middle twice as warm (on average 2042 units of energy added, against the world's ~339,000); 20 warmed states, 12 s
+the multiscale world holds the pulse's place in a level-3 cell (60 units wide)
+the view's mean kinetic energy per ball, less its first 0.5 s (baseline: referee 25.535, diffusion 25.553, fluid 25.557):
+    t (s)   referee   diffusion   fluid
+    0.38     0.015      0.033    0.037
+    0.88    -0.396     -0.173   -0.002
+    1.38    -0.292     -0.572   -0.099
+    1.88    -0.280     -0.528    0.715
+    2.38    -0.554     -0.540    1.770
+    2.88    -0.057     -0.014    3.170
+    3.38     0.599     -0.213    4.666
+    3.88     0.794     -0.489    6.485
+    4.38     1.416     -0.226    7.268
+    4.88     1.077     -0.047    8.343
+    5.38     0.722     -0.212    9.259
+    5.88     0.001     -0.489   10.389
+    6.38    -0.567     -0.358   11.088
+    6.88    -0.517      0.006   12.109
+    7.38    -0.413      0.129   12.543
+    7.88    -0.708     -0.126   13.648
+    8.38    -0.563      0.255   13.851
+    8.88    -0.341      0.340   14.811
+    9.38    -0.540      0.205   15.863
+    9.88    -0.385     -0.036   16.632
+   10.38    -0.014      0.068   17.540
+   10.88     0.305     -0.059   18.376
+   11.38    -0.114      0.116   18.126
+   11.88     0.293     -0.146   17.539
+largest rise: referee 1.416 at 4.38 s, diffusion 0.426 at 8.63 s, fluid 18.570 at 11.13 s
+half-maximum arrival: referee 3.88 s, diffusion 8.38 s, fluid 5.63 s
+the view's count at 0, 3, 6, 9, 12 s: referee 211.6, 211.4, 212.3, 209.3, 209.4; diffusion 211.6, 209.2, 206.9, 207.4, 210.5; fluid 211.6, 225.3, 260.3, 285.6, 304.4
+the fluid's books over the 20 runs: count off by at most 1.3e-11, momentum 5.3e-12, energy 8.9e-16 of itself
+
+P34′: not killed. the referee's half-maximum arrival 3.88 s (in [3.6, 6.1])
+P35′: KILLED. the fluid's arrival 5.63 s against the referee's 3.88 s (45.2%; within 25%)
+P36′: KILLED. diffusion's largest rise 0.426 against the referee's 1.416 (30%; under 25%)
+P37′: not killed. the fluid keeps the books (1e-6, 1e-6, 1e-9)
+```
+
+- **P34′ not killed** (as run 16: the referee's run is unchanged).
+- **P35′ killed.** The fluid's half-maximum arrival is 5.63 s, 45% after the referee's. But the fluid's curve is not a
+  pulse. The view's energy per ball starts rising at 1.4 s, before any sound from the source could arrive (its front
+  reaches the window's edge at 2.8 s), and climbs without stopping: +18.6 per ball (+73%) by 11 s. The view's count rises
+  from 212 to 304. The pulse is lost under a steady filling.
+- **P36′ killed** (as run 16: diffusion's run is unchanged).
+- **P37′ not killed.** The fluid keeps the books to 1e-11.
+
+## Reading of runs 16–17 (not ruled)
+
+- **The referee's gas carries the pulse as sound,** at the speed its equation of state gives: half-maximum at 3.9 s,
+  peak at 4.4 s, then the trailing rarefaction of a cylindrical wave. That is the target for any far field.
+- **Diffusion cannot carry it:** nothing above the noise in 12 s, as worked out (75 to 220 s at D = 4).
+- **The fluid's wall pushed nothing.** The window's face was made a wall to the cells' fluid by passing no flux across
+  it. But a wall still pushes back, with the gas's pressure. Without that push, each cell beside the window feels its
+  outer neighbour's pressure alone. It flows toward the window, nothing stops it, and it piles up against the window,
+  denser and warmer. The band reads that and fills the window. It is run 11's lesson again, in the fluid: a boundary has
+  to carry the pressure, not only the flow.
+- **Next:** the window's face given its wall push in the fluid (the momentum flux p·n̂ at each face, the opposite push
+  booked in the far cells, like the mirror's). Run 18.
+
+### Run 18 (11 October 2026): prediction, written before it ran
+
+Run 17 with the window's face pushing back in the fluid. One change, named: each frame, each cell beside a stretch of the
+window's edge is pushed away from the window by the pressure of its own gas, p·(7.5 units)·frame, as a wall pushes. That
+is the momentum flux of a reflecting wall in a finite-volume scheme. The opposite push is booked in the far cells, as the
+mirror's are, so the books still balance. Everything else is run 17's; the referee and diffusion runs are not repeated
+(they are deterministic and unchanged; their results are run 17's).
+
+- **P35″ (the fluid carries the pulse in time).** The fluid's half-maximum arrival is within 25% of the referee's 3.88 s.
+  *Killed* if not.
+- **P37″ (the books).** Count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself, over every run.
+  *Killed* if any misses.
+- **P38 (no filling before the pulse).** Over the first 2.5 s, before the sound could reach the window's edge (2.8 s), the
+  fluid's view curve stays within ±1.0 of its start (the referee's own swings there reach −0.55), and its count within
+  3% of its start. *Killed* if either is exceeded.
+- *Measured, not predicted:*
+  - the fluid's largest rise and its time, against the referee's 1.42 at 4.4 s (smeared by the 60-unit cell and by
+    Rusanov's numerical diffusion);
+  - whether a trailing rarefaction shows.
