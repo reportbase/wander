@@ -1646,3 +1646,70 @@ mirror's are, so the books still balance. Everything else is run 17's; the refer
   - the fluid's largest rise and its time, against the referee's 1.42 at 4.4 s (smeared by the 60-unit cell and by
     Rusanov's numerical diffusion);
   - whether a trailing rarefaction shows.
+
+Run 18 output (`node plans/pol/pol18.mjs`, in `plans/pol/pol-run18.txt`; the referee's column is run 17's recorded output;
+before it, a crash check only):
+
+```
+run 17's pulse and states; the fluid far field with the window's face pushing back; 20 warmed states, 12 s
+the multiscale world holds the pulse's place in a level-3 cell (60 units wide); fluid baseline 25.557
+    t (s)   referee (run 17)   fluid with its wall
+    0.38              0.015                0.037
+    0.88             -0.396                0.194
+    1.38             -0.292               -0.383
+    1.88             -0.280               -0.522
+    2.38             -0.554               -0.653
+    2.88             -0.057               -0.555
+    3.38              0.599               -0.343
+    3.88              0.794               -0.021
+    4.38              1.416                0.275
+    4.88              1.077                0.147
+    5.38              0.722                0.137
+    5.88              0.001               -0.488
+    6.38             -0.567               -0.452
+    6.88             -0.517               -0.412
+    7.38             -0.413               -0.636
+    7.88             -0.708               -0.701
+    8.38             -0.563               -0.590
+    8.88             -0.341               -0.608
+    9.38             -0.540               -1.000
+    9.88             -0.385               -1.090
+   10.38             -0.014               -1.428
+   10.88              0.305               -1.261
+   11.38             -0.114               -0.985
+   11.88              0.293               -0.617
+largest rise: referee 1.416 at 4.38 s (run 17), fluid 0.309 at 5.13 s; half-maximum arrival: referee 3.88 s, fluid 0.88 s
+the fluid's view count at 0, 1, 2, 2.5, 3, 6, 9, 12 s: 211.6, 210.0, 207.1, 206.9, 207.9, 214.2, 211.2, 209.6
+the fluid's books over the 20 runs: count off by at most 1.5e-11, momentum 3.9e-12, energy 1.3e-15 of itself
+
+P35″: KILLED. the fluid's arrival 0.88 s against the referee's 3.88 s (-77.4%; within 25%)
+P37″: not killed. the books (1e-6, 1e-6, 1e-9)
+P38: not killed. over the first 2.5 s the curve stays within 0.724 of its start (±1.0) and the count within 2.7% (3%)
+```
+
+- **P38 not killed.** With its wall push, the fluid no longer fills the window. Over the first 2.5 s, the view's curve
+  stays within 0.72 of its start and its count within 2.7%.
+- **P37″ not killed.** The books balance to 1e-11.
+- **P35″ killed: the pulse is lost.** The fluid's largest rise is 0.31 at 5.1 s, 22% of the referee's 1.42 at 4.4 s and
+  inside the noise of 20 states (the referee's own curve swings ±0.5 before the pulse). The "arrival" at 0.88 s is noise
+  passing half of a maximum that is itself noise.
+- *Measured:* no trailing rarefaction shows above the noise. From 9 to 11 s the view cools by 1.0 to 1.4 per ball (4% to 6%),
+  past the referee's swings. Its cause is not known; it is not looked into here.
+
+## Reading of runs 16–18 (not ruled)
+
+- **The referee says what must arrive:** a sound pulse at c = 9.76 from the hard-disc equation of state, sharp, half its
+  peak by 3.9 s, then a rarefaction.
+- **Totals by level lose it before it moves.** The pulse came from a disc 20 units across, 60 units from the reader. At
+  that distance the cells are level 3, 60 units wide, so the disc's energy was averaged over a cell nine times its area:
+  a pressure excess of about a tenth, spread over 60 units. A first-order fluid on such cells smears it further (its
+  numerical diffusion grows with the cell, about c·Δx/2, 300 units² a second at level 3, against the gas's 4). What
+  reaches the window is below the noise.
+- **The lesson for level of detail:** holding a place at the level of its distance is right for what stays where it is
+  and averages out by the time it matters, as run 15's equilibrium did. It is wrong for what travels toward the reader. A
+  wave from far away arrives as sharp as it left (thinned only as 1/√r in two dimensions), so its detail matters when it
+  arrives, not where it started. A reader's levels have to follow the signal, held at the signal's own size until it
+  arrives, not at the place's distance. That is what adaptive refinement does, by gradients. In this corpus's terms:
+  what is coming is near, whatever its distance. Level of detail by time to arrival, run 10's τ again, at a larger
+  scale.
+- **Not tested here:** refinement that follows the signal. It is the next run, if any.

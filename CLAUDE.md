@@ -96,7 +96,8 @@ Google Fonts load from outside:
   mirror, and a band 2 deep held at the ring of cells' chemical potential (grand-canonical keeping at the activity from
   Henderson's equation of state, Γ = 1/s), its books charged to the ring, the mirror's pushes to the far field. The window
   follows the view while a ball is 6 px or more, then stays; zoomed out the cells show by level. Modes by `opts.mode`:
-  edge (run 11), band (12), mirror (13), gc (14), ring (15, the page's). `?zoom=&cells=0`; hook `window.__infinite`.
+  edge (run 11), band (12), mirror (13), gc (14), ring (15, the page's); `opts.far` diffusion (the page's) | fluid | fluidwall
+  (runs 16–18). `?zoom=&cells=0`; hook `window.__infinite`.
 - `thin.html`, `ladder.html`, `sky.html`: **the physics correspondence** (9 Oct 2026, Tom: "create multiple demos that
   explain the physics correspndance"), standalone pages like `dial.html`. `thin.html`: the same signal, a smaller share
   (the inverse square; near, distance costs grains, far, light; the switch at one grain is the resolution limit;
@@ -304,7 +305,14 @@ Google Fonts load from outside:
   a count was underfilled against its mirror (13: −6%), pushes stored beside the window ran away (14), and run 15 (mirror,
   band at the ring's chemical potential, pushes booked in the far field) passes all five: the view's density, warmth and
   contacts within 0.3%, its count's fluctuation within 12% of the referee's (a closed window's 33% less), books to rounding.
-  The far field's own dynamics (diffusion) is still a choice, untested: the world was in equilibrium.
+  Runs 16–18, a pressure pulse from 60 units away (a hot disc): the referee carries it as sound at the hard-disc gas's
+  c = 9.76 (Henderson; half-maximum at 3.9 s, P34 not killed); diffusion cannot (nothing above the noise); a fluid far
+  field (Euler, hard-disc pressure, Rusanov) first never ran (run 16: the setting named `far` was overwritten by run 15's
+  list of coarsest cells, now `farCells`), then filled the window because its wall pushed nothing (run 17), then, with
+  the wall's push p·n̂ (run 18), kept the window steady but lost the pulse (22% of the referee's peak, in the noise): the
+  disc was averaged into a 60-unit level-3 cell before it moved. Level of detail by distance is right for what stays put,
+  wrong for what travels toward the reader: a signal must be held at its own size until it arrives (refinement by the
+  signal; untested). Modes: `opts.far` diffusion (default) | fluid | fluidwall.
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is

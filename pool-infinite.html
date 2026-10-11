@@ -409,7 +409,7 @@
                 }
             }
         }
-        if (++M.tick % 4 === 0) (M.far === 'fluid' ? fluid : diffuse)(M, 4 * dt);   // the far field: diffusion (runs 11–15) or a fluid (run 16)
+        if (++M.tick % 4 === 0) (M.far === 'fluid' || M.far === 'fluidwall' ? fluid : diffuse)(M, 4 * dt);   // the far field: diffusion (runs 11–15) or a fluid (runs 16–18)
         M.t += dt;
     }
     // run 14: a charge spread over the cells pooled, in proportion to their counts (equally if none holds any)
@@ -531,6 +531,13 @@
             const lim = Math.max(amt[0] / (0.25 * pr.a.N), -amt[0] / (0.25 * pr.b.N), amt[3] / (0.25 * pr.a.E), -amt[3] / (0.25 * pr.b.E), 1);
             if (lim > 1) amt = amt.map(x => x / lim);
             addTo(pr.a, -amt[0], -amt[1], -amt[2], -amt[3]); addTo(pr.b, amt[0], amt[1], amt[2], amt[3]);
+        }
+        // run 18 ('fluidwall'): the window's face pushes back, as a wall does: each cell beside a stretch of the window's edge
+        // takes the momentum flux p·n̂ of its own gas, away from the window; the opposite push is booked in the far cells
+        if (M.far === 'fluidwall') for (let g = 0; g < M.segs.length; g++) {
+            const l = M.segs[g].leaf, st = fluidState(l); if (!st) continue;
+            const f = st.p * C0 * dt, side = g & 3, px = side === 0 ? -f : side === 1 ? f : 0, py = side === 2 ? -f : side === 3 ? f : 0;
+            l.Px += px; l.Py += py; chargeArea(M.farCells, -px, -py);
         }
     }
     // the far field: neighbouring cells exchange balls (down the density's slope), momentum and energy, by diffusion
