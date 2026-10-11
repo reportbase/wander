@@ -666,7 +666,7 @@ is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessi
   for the reader's own level, §3.3's "octave 0 … from ½h to 2h", R172, already superseded by R188.)
 - *Where the reader lives* (Tom, 11 October: "the reader exists in the unit circle that is created by this chain of
   logic. His choice of H, forces he assignment of V."). The reader lives in the circle its own choice creates, at home at
-  its centre. That is *in*, not *is*: the 1 October ruling stands that the reader is not the unit circle (the uniform
+  its centre. That is *in*, not *is*: R127 (1 October) stands, that the reader is not the unit circle (the uniform
   circle, read evenly from no standpoint, is the view from nowhere; the situated reader is the fisheye). The circle is
   where the reader lives; the fisheye is how it reads from there, true scale at home, gentle to the corner, accelerating
   past it.
