@@ -1115,3 +1115,60 @@ the share of the window that the view is not, 1 − 900/2025 = 0.56.
   - the level-0 cells beside the window;
   - the view just after a pan;
   - the band's share of the work.
+
+Run 12 output (`node plans/pol/pol12.mjs`, in `plans/pol/pol-run12.txt`):
+
+```
+the referee (as run 11): 4 states of 13581 balls, 240 a side, wrapped; 60 s each, 64 views of 30 × 30 sampled every 0.05 s
+  view: density 0.2358, energy per ball 24.984, contacts per ball per second 4.860; count var/mean within each view 0.462
+
+the multiscale world, with the band: the window 45 × 45, its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.0622 (-73.6%), energy per ball 9.662 (-61.3%), contacts per ball 1.313 (-73.0%), count var/mean within the run 29.640 (+6319.5%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (+0.1%), contacts per ball 4.758 (-2.1%), count var/mean within the run 0.309 (-33.0%)
+  open: the band's density 0.3077 (+30.5%), energy per ball 21.384 (-14.4%); balls put in 1976157, taken out or left 1988829; the window held 474 at the start, 157 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first; the band is the first two):
+    1.559 1.039 0.294 0.281 0.277 0.270 0.266 0.264 0.264 0.262 0.263 0.261 0.264 0.264 0.264 0.263 0.263 0.267 0.268 0.266 0.265 0.262 0.250
+  level-0 cells beside the window, density over the world's: mean 1.413, lowest 0.383, highest 2.441
+  just after a pan, the view's density 0.2265 (-3.9%), energy per ball 23.498 (-5.9%)
+  the books: over the 40 open runs, count off by at most 2.2e-11, momentum 2.0e-11, energy 2.6e-15 of itself; over the pans 7.3e-12, 2.2e-12, 3.4e-16
+  work per simulated second: 240 a side 1.029e+6 (52 cells), 3,840 a side 9.998e+5 (100 cells), -2.8%; run 11's window (no band) 1.854e+5
+
+P28′: not killed. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself, over every run and pan
+P30′: KILLED. the open view's density -73.6%, energy per ball -61.3%, contacts per ball -73.0% (each within 3%)
+P31′: KILLED. within-run var/mean: open 29.640 (+6319.5%; within 15%), closed 0.309 (-33.0%; at least 25% lower)
+P32′: not killed. the multiscale work changes by -2.8% for 256 times the balls (less than 5%)
+P33: KILLED. from 2 units inward, the density is at most +75.0% from the referee's (within 5%)
+```
+
+- **P28′ not killed.** With the fold bug fixed, the books balance to 2e-11 over every run and every pan.
+- **P30′ killed, worse than run 11.** The open view holds 74% fewer balls than the referee's, with 61% less energy per
+  ball. Inside the band the window is drained to about a quarter of the referee's density (0.25 to 0.29, flat). The band
+  itself is full (1.56 of the referee's density in its outer unit, 1.04 in its inner), and so are the level-0 cells beside
+  the window (1.41 on average, 0.38 to 2.44).
+- **P31′ killed for the open window, not for the control.** The open view's count swings 64 times too much. The closed
+  control's within-run var/mean is 33% below the referee's (0.309 against 0.462), as predicted for a window that keeps its
+  count.
+- **P32′ not killed.** The work changes by −2.8% for 256 times the balls. The band costs: 1.03 million steps a simulated
+  second, against run 11's window's 0.19 million.
+- **P33 killed.** From 2 units inward the density is 71% to 75% below the referee's in every 1-unit band.
+- *Measured:*
+  - the band's balls churn: 1.98 million put in and 1.99 million taken out or gone over the 40 runs, about 820 a second
+    per window against the 85 or so the band holds;
+  - just after a pan, the view's density is 3.9% low and its energy per ball 5.9% low (now free of the fold bug).
+- Run 11's script, run again on run 12's engine with run 11's options, reproduces its output line for line, except
+  that the pans' books now balance (5.5e-12): the fix touched nothing else.
+
+## Reading of run 12 (not ruled)
+
+- **The band still opens onto nothing.** Its balls could still leave by the window's outer edge, and nothing outside sent
+  any back. Half of each new band ball's motion is outward, and it crosses 2 units in about 0.2 s, so the band emptied
+  outward about five times a second and was refilled from the cells. The window's own balls that drifted into the band
+  left the same way. The band gave the window's edge contacts, but it was itself an open edge, one step further out.
+- **The cells beside the window cannot hold the churn.** About 33 balls a second went in and out of each level-0 cell of
+  a dozen balls. Their totals swung from 0.4 to 2.4 of the world's density, and the band's target swung with them. A
+  reading of a dozen balls cannot serve as a reservoir for that.
+- **What the closed control shows:** a window that keeps its count fluctuates 33% less within a run, the share of the
+  window the view is not. So P31's measure can tell an open window from a closed one, once it is taken within each run.
+- **The fix the two runs point to:** a window that loses no ball at its edge except through the cells' books. The band
+  should be a mirror at its outer edge, its balls kept at the cells' count and warmth by putting in and taking out, never
+  by flight. Run 13.

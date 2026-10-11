@@ -1,5 +1,7 @@
 // POL run 11 (plans/pol-plan.md): a world of any size held as balls in a window round the reader and as totals in dyadic
 // cells beyond, against a referee that computes every ball. Usage: node plans/pol/pol11.mjs
+// Run 11's window: balls enter at the edge (mode 'edge'), cells read their flow as is, the plan's diffusion (I.DIFF).
+// Since run 12 the engine's fold bug is fixed, so the pans' books (P28) now balance; everything else is run 11's.
 import { chromium } from 'playwright';
 import { fileURLToPath } from 'url';
 import path from 'path';
@@ -28,8 +30,9 @@ await p.evaluate(() => {
     window['warm' + seed] = warm; return s;
   };
   // the multiscale world, open (or closed, the control), from a warmed referee state, the window at (oi, oj)
+  const RUN11 = { mode: 'edge', quiet: false, D: I.DIFF };
   window.multiRun = (seed, oi, oj, closed) => {
-    const M = I.multiFromGas(I.cloneGas(window['warm' + seed]), oi, oj, 6, 100 * seed + oi + 7 * oj); M.closed = closed;
+    const M = I.multiFromGas(I.cloneGas(window['warm' + seed]), oi, oj, 6, 100 * seed + oi + 7 * oj, RUN11); M.closed = closed;
     const T0 = I.totals(M), B = M.B, s = { c: 0, c2: 0, n: 0, ke: 0, contacts: 0, wc: 0, wc2: 0, prof: new Float64Array(23), nb: { sum: 0, n: 0, lo: Infinity, hi: -Infinity }, T0, start: M.B.n };
     const onC = (i, j) => { const x = (B.x[i] + B.x[j]) / 2, y = (B.y[i] + B.y[j]) / 2; if (x >= V0 && x < V1 && y >= V0 && y < V1) s.contacts++; };
     for (let k = 1; k <= TICKS; k++) {
@@ -48,7 +51,7 @@ await p.evaluate(() => {
   };
   // a pan of ten window widths and back; the view measured for 2 s at the far place, just after its balls were unfolded
   window.panRun = seed => {
-    const M = I.multiFromGas(I.cloneGas(window['warm' + seed]), 13, 13, 6, 900 + seed), T0 = I.totals(M), B = M.B;
+    const M = I.multiFromGas(I.cloneGas(window['warm' + seed]), 13, 13, 6, 900 + seed, RUN11), T0 = I.totals(M), B = M.B;
     for (let k = 0; k < 480; k++) I.multiStep(M, I.TICK);
     for (let st = 0; st < 60; st++) { I.setWindow(M, M.oi + 1, M.oj, 6); for (let k = 0; k < 4; k++) I.multiStep(M, I.TICK); }
     let c = 0, ke = 0, n = 0;
@@ -60,7 +63,7 @@ await p.evaluate(() => {
   // the work per simulated second
   window.workRun = () => {
     const ops = o => o.moves + o.pairs + (o.tries || 0) + (o.cells || 0), out = {};
-    for (const K of [5, 9]) { const M = I.multiUniform(K, 6, 2 ** (K - 1) - 3, 2 ** (K - 1) - 3, 5); for (let k = 0; k < 2400; k++) I.multiStep(M, I.TICK); out['multi' + K] = { perSecond: ops(M.ops) / 10, cells: M.leaves.size, balls: I.totals(M).N }; }
+    for (const K of [5, 9]) { const M = I.multiUniform(K, 6, 2 ** (K - 1) - 3, 2 ** (K - 1) - 3, 5, RUN11); for (let k = 0; k < 2400; k++) I.multiStep(M, I.TICK); out['multi' + K] = { perSecond: ops(M.ops) / 10, cells: M.leaves.size, balls: I.totals(M).N }; }
     for (const L of [240, 480]) { const g = I.makeGas(L, 9); for (let k = 0; k < 240; k++) I.refereeStep(g, I.TICK); out['ref' + L] = { perSecond: ops(g.ops), balls: g.B.n }; }
     return out;
   };

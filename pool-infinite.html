@@ -73,6 +73,9 @@
     // diffusion D = λ⟨|u|⟩/2 is the plan's, from its λ = ⟨|u|⟩/NU.
     const G_CONTACT = (1 - 7 * PHI / 16) / (1 - PHI) ** 2, NU = N_DENS * DIA * SIGMA * Math.sqrt(Math.PI) * G_CONTACT, NU_ENSKOG = 2 * NU;
     const MEAN_SPEED = SIGMA * Math.sqrt(Math.PI / 2), LAMBDA = MEAN_SPEED / NU, DIFF = LAMBDA * MEAN_SPEED / 2;
+    // run 12: the far field's diffusion from the right rate (λ = 1.29, D = 4.04), and the band at the window's edge, 2 units
+    // deep, its balls held at the cells' density and warmth (each redrawn about as often as it would meet another ball)
+    const LAMBDA_ENSKOG = MEAN_SPEED / NU_ENSKOG, DIFF_ENSKOG = LAMBDA_ENSKOG * MEAN_SPEED / 2, BAND = 2;
     const SQ2PI = Math.sqrt(2 * Math.PI);
 
     function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
@@ -158,8 +161,11 @@
     // Cells are named by level k and index (i, j) in units of their own size (level 0 cells C0 wide); the world is 2^K
     // level-0 cells a side, wrapped round. A cell's totals: N (count), Px, Py (momentum), E (kinetic energy); mass 1.
     const keyOf = (k, i, j) => k + ':' + i + ':' + j;
-    function Multi(K, w, oi, oj, seed = 1) {
-        return { K, S: 2 ** K, w, oi, oj, seed, leaves: new Map(), pairs: [], segs: [], B: Balls(1024), closed: false, t: 0, tick: 0,
+    // opts (run 12's by default): mode 'band' (the window's edge a band held at the cells' state) or 'edge' (run 11: balls
+    // enter at the edge at the cells' one-way flux); quiet: a cell's flow read only above its noise; D: the far field's diffusion
+    function Multi(K, w, oi, oj, seed = 1, opts = {}) {
+        return { K, S: 2 ** K, w, oi, oj, seed, mode: opts.mode || 'band', quiet: opts.quiet !== false, D: opts.D ?? DIFF_ENSKOG,
+            leaves: new Map(), pairs: [], segs: [], B: Balls(1024), closed: false, t: 0, tick: 0,
             ops: { moves: 0, pairs: 0, contacts: 0, tries: 0, cells: 0 }, residual: null, entered: 0, left: 0 };
     }
     const sizeOf = k => C0 * 2 ** k;
@@ -228,7 +234,13 @@
         for (const s of segs) s.leaf = leafAt(M, ...s.cell);
         M.segs = segs;
     }
-    const stateOf = l => { const N = l.N > 1e-12 ? l.N : 1e-12, ux = l.Px / N, uy = l.Py / N, s2 = Math.max(0, l.E / N - 0.5 * (ux * ux + uy * uy)); return { n: l.N / l.A, ux, uy, sigma: Math.sqrt(s2) }; };
+    // a cell's reading: its density, its flow, its spread (warmth). With `quiet` (run 12) the flow is taken only where it is
+    // more than three times its own noise, σ/√N; otherwise there is no flow and all the energy is warmth.
+    const stateOf = (l, quiet) => {
+        const N = l.N > 1e-12 ? l.N : 1e-12; let ux = l.Px / N, uy = l.Py / N, s2 = Math.max(0, l.E / N - 0.5 * (ux * ux + uy * uy));
+        if (quiet && Math.hypot(ux, uy) <= 3 * Math.sqrt(s2 / N)) { ux = 0; uy = 0; s2 = Math.max(0, l.E / N); }
+        return { n: l.N / l.A, ux, uy, sigma: Math.sqrt(s2) };
+    };
     const addTo = (l, N, Px, Py, E) => { l.N += N; l.Px += Px; l.Py += Py; l.E += E; };
 
     // unfold cell (i, j) (its totals t) into balls in the window: as many as it holds (the fraction left to the cells), placed
@@ -267,9 +279,12 @@
         for (let q = B.n - 1; q >= 0; q--) {
             const ci = M.oi + Math.floor(B.x[q] / C0), cj = M.oj + Math.floor(B.y[q] / C0);
             if (mod(ci - oi, S) < w && mod(cj - oj, S) < w) continue;
-            const key = keyOf(0, mod(ci, S), mod(cj, S));
-            if (!old.has(key)) old.set(key, { k: 0, i: mod(ci, S), j: mod(cj, S), A: C0 * C0, N: 0, Px: 0, Py: 0, E: 0 });
-            addTo(old.get(key), 1, B.vx[q], B.vy[q], 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2)); removeAt(B, q);
+            // into the cell that holds its place, whatever its level (before run 12 a new level-0 entry, which a coarser
+            // cell holding the same place hid: the bug that lost a ball in run 11's pans)
+            let into = null;
+            for (let k = 0; k <= M.K && !into; k++) { const f = 2 ** k; into = old.get(keyOf(k, Math.floor(mod(ci, S) / f), Math.floor(mod(cj, S) / f))); }
+            if (!into) { into = { k: 0, i: mod(ci, S), j: mod(cj, S), A: C0 * C0, N: 0, Px: 0, Py: 0, E: 0 }; old.set(keyOf(0, into.i, into.j), into); }
+            addTo(into, 1, B.vx[q], B.vy[q], 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2)); removeAt(B, q);
         }
         // empty old window cells (no balls in them) still need a place in the old cover: give them zero totals
         for (let a = 0; a < M.w; a++) for (let b = 0; b < M.w; b++) {
@@ -292,8 +307,8 @@
         const r = leafAt(M, M.oi - 1, M.oj); addTo(r, M.residual.N, M.residual.Px, M.residual.Py, M.residual.E); M.residual = null;
     }
     // a multiscale world from a referee's state: the window's balls copied, everything else summed into level-0 cells
-    function multiFromGas(gas, oi, oj, w, seed) {
-        const K = Math.round(Math.log2(gas.L / C0)), M = Multi(K, w, oi, oj, seed), B = gas.B, old = new Map(), S = M.S;
+    function multiFromGas(gas, oi, oj, w, seed, opts) {
+        const K = Math.round(Math.log2(gas.L / C0)), M = Multi(K, w, oi, oj, seed, opts), B = gas.B, old = new Map(), S = M.S;
         for (let q = 0; q < B.n; q++) {
             const ci = Math.floor(B.x[q] / C0), cj = Math.floor(B.y[q] / C0);
             if (inWindow(M, ci, cj)) { push(M.B, mod(B.x[q] - oi * C0, gas.L), mod(B.y[q] - oj * C0, gas.L), B.vx[q], B.vy[q]); continue; }
@@ -304,8 +319,8 @@
         recover(M, old); return M;
     }
     // a multiscale world with nothing but totals to start from: the whole world one cell, uniform at the gas's density and spread
-    function multiUniform(K, w, oi, oj, seed) {
-        const M = Multi(K, w, oi, oj, seed), L = C0 * 2 ** K, N = N_DENS * L * L, old = new Map([[keyOf(K, 0, 0), { k: K, i: 0, j: 0, A: L * L, N, Px: 0, Py: 0, E: N * SIGMA * SIGMA }]]);
+    function multiUniform(K, w, oi, oj, seed, opts) {
+        const M = Multi(K, w, oi, oj, seed, opts), L = C0 * 2 ** K, N = N_DENS * L * L, old = new Map([[keyOf(K, 0, 0), { k: K, i: 0, j: 0, A: L * L, N, Px: 0, Py: 0, E: N * SIGMA * SIGMA }]]);
         M.residual = { N: 0, Px: 0, Py: 0, E: 0 }; const place = placer(M);
         for (let a = 0; a < w; a++) for (let b = 0; b < w; b++) { const i = mod(oi + a, M.S), j = mod(oj + b, M.S); unfold(M, i, j, totalsFrom(old, K, 0, i, j), place); }
         recover(M, old); const r = leafAt(M, M.oi - 1, M.oj); addTo(r, M.residual.N, M.residual.Px, M.residual.Py, M.residual.E); M.residual = null;
@@ -335,10 +350,11 @@
             }
         }
         collide(B, W, W, false, dt, ops, onContact);
-        if (!M.closed) {  // balls enter from each neighbouring cell at its one-way flux across a line, n·σ/√(2π) per unit length
+        if (!M.closed && M.mode === 'band') band(M, dt, onEnter);
+        if (!M.closed && M.mode === 'edge') {  // run 11: balls enter from each neighbouring cell at its one-way flux across a line, n·σ/√(2π) per unit length
             const rnd = M.rnd || (M.rnd = rng(hash3(M.seed, 7, 11)));
             for (const s of M.segs) {
-                const l = s.leaf, st = stateOf(l), mu = st.n * st.sigma / SQ2PI * C0 * dt; ops.cells++;
+                const l = s.leaf, st = stateOf(l, M.quiet), mu = st.n * st.sigma / SQ2PI * C0 * dt; ops.cells++;
                 let k = 0; for (let p = Math.exp(-mu), u = rnd(); u > p && k < 20; k++) { u -= p; p *= mu / (k + 1); }   // Poisson(mu)
                 for (let e = 0; e < k; e++) {
                     if (l.N < 1) break;
@@ -358,10 +374,48 @@
         if (++M.tick % 4 === 0) diffuse(M, 4 * dt);
         M.t += dt;
     }
+    // run 12: the band. Each level-0 stretch of the window's edge has its part of the band (the points nearer that edge than
+    // any other, under BAND in), held at what the cell beside it says: its count within half a ball of n·area (a ball put at a
+    // free place, or one taken out), and each of its balls redrawn from the cell's spread with chance ν·tick. Every ball put
+    // in, taken out or redrawn is charged to that cell, exactly. Segments are in adjacency()'s order: for each stretch r,
+    // left, right, bottom, top.
+    function band(M, dt, onEnter) {
+        const B = M.B, W = M.w * C0, ops = M.ops, rnd = M.rnd || (M.rnd = rng(hash3(M.seed, 7, 11))), lists = M.segs.map(() => []);
+        const segOf = (x, y) => {
+            const dl = x, dr = W - x, db = y, dt_ = W - y, d = Math.min(dl, dr, db, dt_); if (!(d < BAND)) return -1;
+            const side = d === dl ? 0 : d === dr ? 1 : d === db ? 2 : 3, along = side < 2 ? y : x;
+            return 4 * Math.min(M.w - 1, Math.max(0, Math.floor(along / C0))) + side;
+        };
+        for (let q = 0; q < B.n; q++) { const s = segOf(B.x[q], B.y[q]); if (s >= 0) lists[s].push(q); }
+        ops.moves += B.n;
+        const del = [];
+        M.segs.forEach((g, s) => {
+            const l = g.leaf, st = stateOf(l, M.quiet), r = s >> 2, end = r === 0 || r === M.w - 1, area = C0 * BAND - (end ? BAND * BAND / 2 : 0);
+            const want = st.n * area, have = lists[s].length; ops.cells++;
+            if (have < want - 0.5 && l.N >= 1) {   // a ball put at a free place in this part of the band
+                for (let tries = 0; tries < 10; tries++) {
+                    const a = r * C0 + rnd() * C0, b = rnd() * BAND, side = s & 3, x = side === 0 ? b : side === 1 ? W - b : a, y = side === 0 || side === 1 ? a : side === 2 ? b : W - b;
+                    if (segOf(x, y) !== s) continue;
+                    let ok = true; ops.tries += B.n;
+                    for (let q = 0; q < B.n && ok; q++) { const dx = B.x[q] - x, dy = B.y[q] - y; if (dx * dx + dy * dy < DIA * DIA) ok = false; }
+                    if (!ok) continue;
+                    const vx = st.ux + st.sigma * gauss(rnd), vy = st.uy + st.sigma * gauss(rnd);
+                    push(B, x, y, vx, vy); addTo(l, -1, -vx, -vy, -0.5 * (vx * vx + vy * vy)); M.entered++; if (onEnter) onEnter(x, y);
+                    break;
+                }
+            } else if (have > want + 0.5) del.push([lists[s][Math.floor(rnd() * have)], l]);   // one of its balls taken out
+            for (const q of lists[s]) if (rnd() < NU_ENSKOG * dt) {   // redrawn from the cell's spread
+                const vx = st.ux + st.sigma * gauss(rnd), vy = st.uy + st.sigma * gauss(rnd);
+                addTo(l, 0, B.vx[q] - vx, B.vy[q] - vy, 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2 - vx * vx - vy * vy)); B.vx[q] = vx; B.vy[q] = vy;
+            }
+        });
+        del.sort((a, b) => b[0] - a[0]);
+        for (const [q, l] of del) { addTo(l, 1, B.vx[q], B.vy[q], 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2)); removeAt(B, q); M.left++; }
+    }
     // the far field: neighbouring cells exchange balls (down the density's slope), momentum and energy, by diffusion
     function diffuse(M, dt) {
         for (const p of M.pairs) {
-            const a = p.a, b = p.b, k = DIFF * p.len / p.gap * dt; M.ops.cells++;
+            const a = p.a, b = p.b, k = M.D * p.len / p.gap * dt; M.ops.cells++;
             if (a.N <= 0 || b.N <= 0) continue;
             const na = a.N / a.A, nb = b.N / b.A, nbar = 0.5 * (na + nb);
             let F = k * (na - nb); const d = F > 0 ? a : b; F = Math.max(-0.25 * b.N, Math.min(0.25 * a.N, F));
@@ -399,7 +453,7 @@
             const f = 2 ** l.k, s = f * C0 * zoom, x0 = toX(l.i * f), y0 = toY(l.j * f);
             if (x0 > W || y0 > H || x0 + s < 0 || y0 + s < 0) continue;
             const cx0 = Math.max(-2, x0), cy0 = Math.max(-2, y0), cx1 = Math.min(W + 2, x0 + s), cy1 = Math.min(H + 2, y0 + s);
-            const st = stateOf(l), dn = Math.max(0, Math.min(2, st.n / N_DENS)), warm = Math.max(0, Math.min(1, (st.sigma / SIGMA - 1) * 1.5));
+            const st = stateOf(l, true), dn = Math.max(0, Math.min(2, st.n / N_DENS)), warm = Math.max(0, Math.min(1, (st.sigma / SIGMA - 1) * 1.5));
             g.fillStyle = `rgba(${Math.round(70 + 150 * warm)},${Math.round(110 + 40 * warm)},${Math.round(150 - 90 * warm)},${0.10 + 0.22 * dn})`;
             g.fillRect(cx0, cy0, cx1 - cx0 + 0.5, cy1 - cy0 + 0.5);
             if (showCells && s > 6) { g.strokeStyle = 'rgba(255,255,255,0.10)'; g.lineWidth = 1; g.strokeRect(cx0 + 0.5, cy0 + 0.5, cx1 - cx0 - 1, cy1 - cy0 - 1);
@@ -456,7 +510,7 @@
     pageInit(); requestAnimationFrame(loop);
 
     window.__infinite = {
-        R, DIA, PHI, N_DENS, SIGMA, TICK, C0, G_CONTACT, NU, NU_ENSKOG, LAMBDA, DIFF,
+        R, DIA, PHI, N_DENS, SIGMA, TICK, C0, G_CONTACT, NU, NU_ENSKOG, LAMBDA, DIFF, LAMBDA_ENSKOG, DIFF_ENSKOG, BAND,
         makeGas, refereeStep, cloneGas, Multi, multiFromGas, multiUniform, multiStep, setWindow, totals, stateOf, leafAt, rng, gauss,
         page: () => ({ M, cam, zoom, frameOps, windowFor: windowFor() }), setZoom, strike, pause: on => { paused = !!on; },
         moveTo: (x, y) => { cam.x = x; cam.y = y; follow(); },
