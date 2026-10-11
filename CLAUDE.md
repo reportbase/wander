@@ -399,7 +399,9 @@ that for now (6 Oct 2026) and will decide later where they live. They are still
 kept off the Pages site. Don't move or remove them without asking.
 
 ## Read this first: keep the case of h, v, H, V
-Since 9 Oct 2026 (Tom): lowercase **h, v** are fill levels, 0 to 1 (how much of H, how much of V): the geometry, scale-free.
+Since 9 Oct 2026 (Tom): lowercase **h, v** are **unit relations**, 0 to 1 (h relates to H, v to V): the geometry,
+scale-free. A relation requires two unit relations; a circle has two, a sphere three (Tom, 11 Oct, SPN R204: "I don't
+like the term fill levels"). Text before 11 Oct calls them fill levels; write unit relations in new text.
 Uppercase **H, V** are breadths, amounts (H the reader's, V the other's); with the distance **d**, a size **Δ** and the
 reader's step **ε**, the physics. Never read v as V or v/h as V/H ((v·V)/(h·H) = (v/h)·(V/H)); the only bridge is a fill
 level times its breadth, where that breadth is known. Before verifying, editing or summarising any paper, plan or lab,

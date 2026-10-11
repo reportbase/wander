@@ -12,8 +12,8 @@ geometry that this one restriction leaves. We begin with the readers themselves.
 sets one of five situations, and these give three vantages: the completed view from nowhere, whose figure is the circle,
 and two situated readers, one taking in a hemisphere at once and one sweeping it from home, whose figures are the bell
 and the fisheye. The three read a line of true breadth 1 as 1, π/2 and 2/π; the true breadth is held only from nowhere,
-or constructed from several observations, never observed from one. Any relation between two parties can be written as a pair of fill levels, h
-and v, each between 0 and 1, and the reader reads their ratio. Because neither fill level can pass 1, every such sweep
+or constructed from several observations, never observed from one. Any relation between two parties can be written as a pair of unit relations, h
+and v, each between 0 and 1, and the reader reads their ratio. Because neither unit relation can pass 1, every such sweep
 turns over at a single point, v = h, the *corner*, where reading v in terms of h gives way to reading h in terms of v.
 To read at all, the reader must use its own breadth as the unit for the other party. With that choice the corner lies at
 distance 1 whatever unit was chosen, and the relation, drawn as a bar of fixed length, traces a unit circle. Inside the
@@ -86,38 +86,39 @@ The paper is geometry only. It makes no claim about physics, perception or the s
 
 ## 2. Setting
 
-**Shares.** Everything here is built from a share of something: all of it, none of it, or anything in between. Take two
-such shares, each of its own whole: the fraction of a tank filled and the fraction of a day gone, or the part of a road
-behind and the part ahead. Draw one horizontally and one vertically and call them h and v. They are *fill levels*,
-numbers in [0, 1] with no units. The wholes they are shares of are the *breadths* H and V, which are amounts. The reader
-is H, its own breadth; h is the reader's side of a relation.
+**Unit relations.** Everything here is built from the *unit relation*: a number from 0 to 1 relating a part to its
+whole, none of it, all of it, or anything in between, such as the fraction of a tank filled, the fraction of a day gone,
+or the part of a road behind. A relation requires two unit relations, one for each party. Draw one horizontally and one
+vertically and call them h and v. They have no units, and neither knows the other's whole. The wholes they relate to are
+the *breadths* H and V, which are amounts. The reader is H, its own breadth; h is the reader's side of a relation. A
+circle has two unit relations, h and v; a sphere has three, h, v and v₂.
 
-**Fill levels are not amounts.** The amounts are h·H and v·V, so their ratio is (v·V)/(h·H) = (v/h)·(V/H). The ratio of
-fill levels, v/h, is not the ratio of amounts, V/H. The only way from one to the other is to multiply by a breadth,
-which must be known. We keep lowercase letters for fill levels and uppercase for breadths throughout.
+**Unit relations are not amounts.** The amounts are h·H and v·V, so their ratio is (v·V)/(h·H) = (v/h)·(V/H). The ratio
+of the unit relations, v/h, is not the ratio of amounts, V/H. The only way from one to the other is to multiply by a
+breadth, which must be known. We keep lowercase letters for unit relations and uppercase for breadths throughout.
 
 **The sweep.** Within one observation neither breadth changes. The *sweep* is every way h and v can relate, from all of
-H (v = 0) to all of V (h = 0). Leaving *home* (v = 0), v fills against a full h. It can fill only until it too is full,
-at v = h. After that the relation can continue only by h emptying against a full v. The reader reads v/h on the first
+H (v = 0) to all of V (h = 0). Leaving *home* (v = 0), v rises against h held at 1. It can rise only until it too
+reaches 1, at v = h. After that the relation can continue only by h falling against v held at 1. The reader reads v/h on the first
 half and h/v on the second, each in [0, 1]. Exchanging the two parties, the *flip*, sends v/h to h/v. The limit
 v/h → ∞, where h empties, is the *horizon*; it is never reached.
 
-**The wedge, and its drawings.** Every pair of shares is a ray from the origin into the quarter-plane between the two
-axes; with a third share v₂, read against the same h, it is a ray into the solid wedge between three axes. The ray is
-the relation. Position along the ray is how full the pair is, and that is what dividing one share by another removes.
-The wedge itself favours no share: a facing, in the sense below, is the choice of which share to divide by, and v/h is
-the wedge read facing h. The wedge is the primitive. It is made afresh at each observation, from the relations at one
+**The wedge, and its drawings.** Every pair of unit relations is a ray from the origin into the quarter-plane between
+the two axes; with a third unit relation v₂, read against the same h, it is a ray into the solid wedge between three
+axes. The ray is the relation. Position along the ray is the pair's size, and that is what dividing one unit relation by
+another removes. The wedge itself favours neither unit relation: a facing, in the sense below, is the choice of which
+one to divide by, and v/h is the wedge read facing h. The wedge is the primitive. It is made afresh at each observation, from the relations at one
 standpoint, and the sphere is not assembled from wedges: it is the picture, from nowhere, of all the wedges that could
 be made.
 
 The usual drawings are cuts of the wedge, each a different normalization:
 
-| cut the wedge where | two shares | three shares | normalized by |
+| cut the wedge where | two unit relations | three unit relations | normalized by |
 |---|---|---|---|
 | length = 1 | the quarter circle h² + v² = 1, length π/2 | the sphere's octant, area π/2 | the whole length |
-| largest = 1 | the unit square's two arms, length 2 | the unit cube's three faces, area 3 | the largest share |
+| largest = 1 | the unit square's two arms, length 2 | the unit cube's three faces, area 3 | the largest unit relation |
 | sum = 1 | the line h + v = 1, length √2 | a flat triangle, area √3/2 | the sum |
-| one share = 1 | the reading v/h on [0, ∞) | the plane of v/h and v₂/h | one share: a facing |
+| one unit relation = 1 | the reading v/h on [0, ∞) | the plane of v/h and v₂/h | one unit relation: a facing |
 
 Every cut passes once through every ratio and meets the corner at v/h = 1. The numbers belong to the cut, not to the
 relations: the quarter arc and the octant both measure π/2 because they are cut by length. Statements about ratios hold
@@ -388,7 +389,7 @@ clarifies the reading; it does not simplify it.
 
 *Proof.* The flip is its own inverse and reverses order, so x < 1 exactly when 1/x > 1, and for x > 0, x = 1/x gives
 x = 1. A sweep from home grows continuously from 0, so it reaches 1 before it can pass it. Finally, x = 1 means v = h, a
-comparison of two fill levels, unchanged when both are scaled together. ∎
+comparison of two unit relations, unchanged when both are scaled together. ∎
 
 We call this point the *corner*. It is ordinary arithmetic, and nothing about it is special beyond what follows from
 that. Its importance is that it separates two ways of reading: before it, v is read in terms of h; past it, h in terms
@@ -424,14 +425,14 @@ farthest from the segment, by 1 − 1/√2.
 
 **Every pair has its own corner.** Any two parties have a sweep and a corner, and the corner of one pair is not the
 corner of another. A corner means nothing until its pair is named. In the wedge the corner is the central ray. With
-three shares the three pairwise corners, v = h, h = v₂ and v = v₂, are planes through the central ray v = h = v₂, and
-they cut the wedge into six chambers, one for each ordering of the three shares.
+three unit relations the three pairwise corners, v = h, h = v₂ and v = v₂, are planes through the central ray v = h = v₂, and
+they cut the wedge into six chambers, one for each ordering of the three unit relations.
 
 ## 5. The reader's circle
 
 We assume three things.
-- **(P0)** A relation has two parties, each a share of an assigned breadth: h of H, v of V. Assigned is not known: v
-  lies in [0, 1] however large V is, but it must be a share of something.
+- **(P0)** A relation requires two unit relations, one for each party, each relating it to an assigned breadth: h to
+  H, v to V. Assigned is not known: v lies in [0, 1] however large V is, but it must relate to something.
 - **(P1)** A situated reader chooses exactly one breadth, H, and holds no whole of the system. Any H will do.
 - **(P2)** A level carries no measure: nothing on it but its two ends, their order and the flip between them.
 
@@ -508,16 +509,16 @@ follows from (P1) and (P2), or must be added, is the first question of §11. Not
 through amounts, by way of V = H, and that the smooth join (c = 1) is a further condition rather than a consequence of
 the flip.
 
-**A second route, through ratios alone.** Relations chain by multiplying: through any middle fill level m,
+**A second route, through ratios alone.** Relations chain by multiplying: through any middle unit relation m,
 v/h = (v/m)·(m/h). A measure of relations under which chained relations add, f(ab) = f(a) + f(b), and which grows with
 the relation, can only be f = k·ln, by the same functional equation. Every doubling then adds the same amount. The turn
 is not such a measure, since arctan(ab) is not arctan a + arctan b, and so a bounded sweep gives the levels unequal
-shares. This route never leaves the fill levels, so it does not pass through amounts; what it assumes instead is that
+shares. This route never leaves the unit relations, so it does not pass through amounts; what it assumes instead is that
 the measure of a chain is the sum of its links.
 
 Two ways of holding a relation make the contrast concrete. Measure a relation by twice the area its ray sweeps from the
 corner. Hold the whole, h² + v² = 1, and the swept area is the turn: bounded, π/2 in all (Archimedes). Hold only the
-corner, on the hyperbola xy = 1 drawn in coordinates that run without bound (with y/x = v/h; fill levels on [0, 1]
+corner, on the hyperbola xy = 1 drawn in coordinates that run without bound (with y/x = v/h; unit relations on [0, 1]
 meet this hyperbola only at the corner), and the swept area is ln(v/h): unbounded on both sides, every doubling the same
 area ln 2 (Saint-Vincent 1647). The rescaling (x, y) ↦ (x/√c, √c·y) slides along the hyperbola and keeps areas, so no
 rung is preferred. The two are one sweep, squeezed: read against ln(v/h), the turn is
@@ -547,7 +548,7 @@ doubling, crowded toward radius 2; a reader with finitely many addresses runs ou
 
 **Why not proportion all the way out.** A reader that kept v/h itself, in proportion, past the corner would suffer in
 five ways. It could not lay its range, since its readings would run to infinity and no range fixed in advance would hold
-them. It would divide by the smaller part: past the corner h is the smaller share, and a small wobble in it swings the
+them. It would divide by the smaller part: past the corner h is the smaller unit relation, and a small wobble in it swings the
 reading without bound. Inverting divides by the larger part instead, the rule numerical computing also follows when it
 pivots. Its averages would never settle, being dominated by the long tail of its nearest things (§7.6). It would have
 to crop: a picture kept in proportion out to the horizon would be infinitely large, and rectilinear cameras, which are
@@ -807,7 +808,7 @@ formula to within two points. The addresses never overflow; the resolution does.
 
 ## 9. What the geometry does not give: amounts
 
-**The calibration error.** Under V = H the amounts equal the fill levels numerically, which is why the two are so easily
+**The calibration error.** Under V = H the amounts equal the unit relations numerically, which is why the two are so easily
 confused. Where the true V differs from H, every amount is off by V/H, by the same factor on both sides of the corner.
 The addresses are exact; the amounts are not. Within one observation a reader cannot tell V = 10² from V = 10¹⁶. Amounts
 can come only from outside the geometry, across observations, from something whose amount is already known. That is
@@ -975,7 +976,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 
 | symbol | kind | meaning |
 |---|---|---|
-| h, v, v₂ | fill levels, in [0, 1] | how much of H, V, V₂ |
+| h, v, v₂ | unit relations, from 0 to 1 | h relates to H, v to V, v₂ to V₂; a relation requires two, a circle has two, a sphere three |
 | H, V, V₂ | amounts | breadths: the reader's, the other's, a second other's |
 | v/h, h/v | geometry | the reading before and past the corner |
 | the corner | geometry | v = h |
