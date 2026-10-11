@@ -104,17 +104,19 @@ Google Fonts load from outside:
 - `flight.html`: **the corner in flight** (10 Oct 2026, Tom: "you know how the transition from earth to the sky in flight
   sim games is awkward? ... i wonder if its because of the corner"; "only the geometry", wireframe). Level flight at height v;
   a ground line h ahead lands v/h below eye level, so the corner (h = v) keeps one screen row at every height. The main view is the grid alone (Tom: "remove the non-gridlines";
-  the corner and level edges are on the strip) plus one perturbed sphere (Tom: "we just need one peritubated sphere that starts in way in the far field and then we
-  stop when its in the near field. how can we show the LOD?"): radius 0.4v, from 32v in at v a second, stopping at 0.6v
-  ("again"/R). Its detail d (4·2^d meridians, bands 1..d of bumps) steps by v/h at 16v, 8v, 4v, 2v, v (a dot past 16v,
-  full inside the corner: once per doubling past it, never inside), by metres at 500 m … 8 km, none full. Strip:
+  the corner and level edges are on the strip) plus a few posts recovered from the sweep (Tom: "remove the pertibuated circle, focus on recovering the universe with a
+  sweep"; "a circle is not needed. only the sweep is needed"; after draw's UDV lab, one reader moving instead of three
+  standing): each post's foot and top read as (across, down) against the distance ahead, to a pixel; the readings from one
+  v of travel back cross with today's at the place, the travel the one length, so places in v; same pixel twice leaves a
+  bearing. Plan panel at bottom left (rings true, teal dots recovered, the corner gold). Placing gives out near
+  h = √f·v (the step: physics, not the corner). Strip:
   the reading folded at the corner, h/v to home (even), v/h past it (2v, 4v … each half the room). LOD chip: none / by metres
   (doubling at 500 m, 1 km …) / by v/h (levels split at v, 2v, 4v …, grain v/8 in the first two then doubling, 8 lines a level, so the count past the
   corner is log₂(h/v) and climbing changes nothing on the screen). One corner only (Tom, 10 Oct, superseding "each Level has
   its own corner": "there is only one corner that splits far field from the near field, which is just the split between the
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
-  9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; strip chip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `detailAt(h/v)`, `place(h/v)`, `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
+  9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip chip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
 - `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the seven demos (sweep, dial, sphere, facing, levels, walk, pool) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
@@ -366,7 +368,7 @@ In short:
       with cushions read as the ball's mirror image and pockets as filling the view, still the referee's game; read late (c = 50),
       carrying the image forward beats taking it as now.
   16. **flight.html:** the corner keeps its row from 50 m to 1.6 km; by v/h the level edges keep theirs, the first edge the corner,
-      8 lines a level; by metres the edges slide; the sphere's detail by v/h is dot, 0, 1, 2, 3, 4 at 20v … 0.6v at any height, by metres not; the strip folded holds 0.1v–100v, h/v throughout runs off the top, v/h off the bottom.
+      8 lines a level; by metres the edges slide; a post is recovered exactly with no step, within 10% at 2v at a pixel step, worse at 8v, a bearing only at 400v; the strip folded holds 0.1v–100v, h/v throughout runs off the top, v/h off the bottom.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

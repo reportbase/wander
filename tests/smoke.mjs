@@ -356,16 +356,17 @@ try {
     f.set(50, 'vh'); out.c1 = f.cornerRow(); out.e1 = f.edgeRows(); out.n = f.linesPerLevel();
     f.set(1600, 'vh'); out.c2 = f.cornerRow(); out.e2 = f.edgeRows().slice(0, out.e1.length - 1);
     f.set(50, 'metres'); out.m1 = f.edgeRows()[0]; f.set(1600, 'metres'); out.m2 = f.edgeRows()[0];
-    const dets = (vv, m) => { f.set(vv, m); return [20, 12, 6, 3, 1.5, 0.6].map(x => f.detailAt(x)); };
-    out.d50 = dets(50, 'vh'); out.d1600 = dets(1600, 'vh'); out.m50 = dets(50, 'metres'); out.m1600 = dets(1600, 'metres');
+    const F = f.focal(), rec = (h) => f.recoverAt(h, 0.3 * h, 0.8, F);
+    out.exact = f.recoverAt(5, 1.2, 0.7, 0); out.near = rec(2); out.mid = rec(8); out.far = rec(400);
     const at = (m) => [0.1, 0.5, 1, 2, 100].map(x => f.stripAt(x, m)); out.sf = at('folded'); out.sh = at('h/v'); out.sv = at('v/h'); return out; });
   if (Math.abs(fl.c1 - fl.c2) > 1e-9 || fl.e2.some((y, i) => Math.abs(y - fl.e1[i]) > 1e-9) ||
       fl.n.some(n => Math.abs(n - 8) > 1e-9) || Math.abs(fl.e1[0] - fl.c1) > 1e-9 ||
       !(Math.abs(fl.m1 - fl.m2) > 0.01) ||
-      fl.d50.join() !== '-1,0,1,2,3,4' || fl.d1600.join() !== fl.d50.join() || fl.m50.join() === fl.m1600.join() ||
+      Math.abs(fl.exact.h - 5) > 1e-9 || Math.abs(fl.exact.x - 1.2) > 1e-9 || Math.abs(fl.exact.y - 0.7) > 1e-9 ||
+      !(Math.abs(fl.near.h - 2) < 0.2) || !(Math.abs(fl.mid.h - 8) > Math.abs(fl.near.h - 2)) || fl.far.bearing === undefined ||
       fl.sf.some(y => y < 0 || y > 1) || Math.abs(fl.sf[2] - 0.5) > 1e-9 || !(fl.sh[4] > 1) || !(fl.sh[0] >= 0) || !(fl.sv[0] < 0) || !(fl.sv[4] <= 1))
     failures.push(`[flight.html] ${JSON.stringify(fl)}`);
-  console.log(`${failures.length === before16 ? 'ok  ' : 'FAIL'} flight.html (corner row ${fl.c1.toFixed(3)} at 50 m and 1.6 km; by v/h ${fl.n[1]} lines a level, the first edge the corner, edges fixed; by metres they slide; the sphere's detail by v/h ${fl.d50.join(' ')} at 20v … 0.6v, at any height; strip folded holds 0.1v–100v, h/v runs off the top, v/h off the bottom)`);
+  console.log(`${failures.length === before16 ? 'ok  ' : 'FAIL'} flight.html (corner row ${fl.c1.toFixed(3)} at 50 m and 1.6 km; by v/h ${fl.n[1]} lines a level, the first edge the corner, edges fixed; by metres they slide; a post recovered exactly with no step, ${fl.near.h.toFixed(3)} for 2v and ${fl.mid.h === undefined ? 'a bearing' : fl.mid.h.toFixed(2)} for 8v at a pixel step, a bearing only at 400v; strip folded holds 0.1v–100v, h/v runs off the top, v/h off the bottom)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
