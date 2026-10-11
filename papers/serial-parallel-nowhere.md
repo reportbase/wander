@@ -33,6 +33,12 @@ page. There are three vantages, each with its own geometry, and they are easily 
 | **outer hemisphere** (parallel; situated) | one facing, taken in at once; the hemisphere turns away from the reader | **π/2** |
 | **inner hemisphere** (serial; situated) | one facing, swept from home: the fisheye, the Cauchy; the hemisphere turns toward the reader | **2/π** |
 
+*Where the two numbers come from* [derived on the arc drawing; which reading belongs to which vantage is ruled,
+R193]. Stand a half-turn on the line as its chord: a chord of 1 has radius ½, so the half-turn's arc is π·½ = π/2,
+and read as arc over chord, the hemisphere turned away gives π/2. Sweep a bar of 1 through a quarter turn and average
+its shadow on the line: the mean of the shadow over the turn is (2/π)·∫₀^{π/2} cos θ dθ = 2/π, and read as the
+average facing, the hemisphere turned toward gives 2/π. Their product is 1. (An outside evaluation asked for this; `plans/ofs-review-2.md`.)
+
 **The true breadth is a reading with no facing.** The line's actual breadth is 1, and π/2 · 2/π = 1 (R193). But no
 situated reader can observe 1, because reading the true breadth assumes no facing, and a situated reader has one: the
 hemisphere is turned away from it or toward it. Only the unsituated observer has no facing, and only it knows the true
