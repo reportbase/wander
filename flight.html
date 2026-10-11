@@ -15,10 +15,15 @@ reading folded at the corner: home to corner as h/v (equal ground steps, equal t
 2v, 4v, 8v each take half the room of the last).
 
 LOD (the chip, or L): none, 10 m everywhere; by metres, the engine's way, spacing doubling at 500 m, 1 km, 2 km ...;
-by v/h, grain v/8 out to √2·v, then doubling, each level's edges halfway (in doublings) between its corner and the next.
-A level's own corner is eight of its grains ahead (on the strip): by v/h at v, 2v, 4v ..., by metres at 80, 160, 320 m.
-By v/h every level past the corner holds the same 4√2 ≈ 5.7 lines, so the count past the corner is logarithmic, and climbing
-changes nothing on the screen; by metres the edges and the corners slide as you climb.
+by v/h, levels split at v, 2v, 4v ...: the first from home to the corner, the second from the corner to 2v, each after
+twice as long with twice the grain (v/8 in the first two), so every level holds 8 lines. There is one corner, the split
+between the first level and the second (Tom, superseding "each Level has its own corner": "I don't think there are corners
+in the far field. there is only one corner that splits far field from the near field, which is just the split between the
+first and second octive"). By v/h the count past the corner is 8 lines a level, logarithmic, and climbing changes nothing
+on the screen; by metres the edges slide as you climb. The doublings are plain, ordinary arithmetic, with no depth and no
+recursion between them (Tom: "there is no depth or recursion because we create the unit circle when we assign V to H";
+"its plain doublings, ordinary math. but now we know why, its a consequence of setting V = H, which creates the unit
+circle"). Here V = H is set by measuring v and h in the same unit, metres.
 The main view is the grid alone (Tom: "remove the non-gridlines on the main view"; the corner and the level edges are on
 the strip) and one perturbed sphere (Tom: "we just need one peritubated sphere that starts in way in the far field and then
 we stop when its in the near field. how can we show the LOD?"). It starts at 32v, comes in at a ground speed of v a second
@@ -110,9 +115,11 @@ function bands() {
     let a = 0, b = 500, s = S;
     while (a < FAR) { out.push({ a, b: Math.min(b, FAR), s }); a = b; b *= 2; s *= 2; }
   } else {
-    // by the reading: level k has grain 2^k v/8 and its own corner at 2^k v;
-    // its edges sit halfway (in doublings) between neighbouring corners
-    let a = 0, b = Math.SQRT2 * v, s = v / 8;
+    // by the reading (Tom: "there is only one corner that splits far field from the near field, which is just the split
+    // between the first and second octive"): the first level runs from home to the corner, h = v, the next from v to 2v,
+    // then 2v to 4v ...; one grain, v/8, in the first two, then doubling, so every level holds 8 lines
+    out.push({ a: 0, b: v, s: v / 8 });
+    let a = v, b = 2 * v, s = v / 8;
     while (a < FAR) { out.push({ a, b: Math.min(b, FAR), s }); a = b; b *= 2; s *= 2; }
   }
   return out;
@@ -264,20 +271,6 @@ function drawReading(B) {
   g.strokeStyle = 'rgba(230,120,140,0.85)'; g.stroke(edgeT);
   g.setLineDash([]);
 
-  if (mode > 0) {
-    g.strokeStyle = 'rgba(226,181,69,0.6)';
-    g.lineWidth = 1.5;
-    g.beginPath();
-    for (const { s } of B) {
-      const c = 8 * s;
-      if (c >= FAR || Math.abs(c - v) < 1e-6) continue;
-      const y = Math.round(yOf(c)) + 0.5;
-      g.moveTo(x0, y); g.lineTo(x0 + w + 4, y);
-    }
-    g.stroke();
-    g.lineWidth = 1;
-  }
-
   // doublings past the corner: 2v, 4v, 8v ... each takes half the room of the last
   g.restore();
   g.font = '11px ui-monospace, Menlo, Consolas, monospace';
@@ -336,7 +329,6 @@ window.__flight = {
   set(h, m) { v = h; mode = ['none', 'metres', 'vh'].indexOf(m); lodBtn.textContent = 'LOD: ' + MODES[mode]; },
   cornerRow: () => py(v) / H,
   edgeRows: () => bands().filter(b => b.a > 0 && b.a < FAR).map(b => py(b.a) / H),
-  levelCorners: () => bands().map(b => 8 * b.s),
   detailAt: (hv) => { const L = sphereLevel(hv * v); return mode !== 0 && L >= 5 ? -1 : detailOf(L); },   // -1 = a dot
   stripAt: (hv, m) => { const k = flip; flip = FLIPS.indexOf(m); const y = stripY(hv * v, 0, 0.5, 1, 0.5); flip = k; return 1 - y; },   // 0 bottom … 1 top
   place: (hv) => { startRun(); sph.Z = travelled + hv * v; sph.running = false; },
