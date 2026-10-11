@@ -786,6 +786,9 @@ Spread the fingers evenly by turn and read each one as v over h: the readings ar
 is in them.
 - *The median is a finger.* Of five fingers spread evenly from flat to upright, the middle one, at 45°, is the corner.
   Order, ranks, quartiles and the corner are address statistics, and they ignore the rings.
+- *The corners are the quartiles.* With the fingers spread over both facings, the corners at ±45° are the quartiles of
+  the standard Cauchy. So anything whose two ends sit at the reader's corners takes exactly the middle half of its
+  fingers, whatever its size and however far away: the mountain range of §10 is one.
 - *The missing mean asks the fingers about the rings.* A mean is a sum of sizes, a question about the payload. The
   readings carry no size, so the question has no answer. The median, a question about addresses, always has one.
 - *More fingers, not bigger rings.* Sweeping more finely lays more addresses. It buys precision about where, never
@@ -823,10 +826,15 @@ Shapes unchanged when h and v are exchanged keep the corner at the middle, as th
 ends; the astroid's cusps make its ends heavy, the square's flat sides make them light. The ellipse, which the exchange
 alters, moves its corner as well. Over 73 single-outline shapes from a drawing library the pattern is the same, with
 ends from 0.27 for a gear to about 3.1 for the astroid. The test would have failed had any shape laid by direction
-departed from the circle's numbers, or had a shape unchanged by the exchange moved its corner off the middle. For the
-circle alone the two lays coincide, which is why the circle and the Cauchy go together. The Cauchy is what an even lay
-by direction gives, whatever the shape; a lay taken from the outline brings the shape into the distribution. The
-Cauchy belongs to how the addresses are laid.
+departed from the circle's numbers, or had a shape unchanged by the exchange moved its corner off the middle. The
+Cauchy is what an even lay by direction gives, whatever the shape; a lay taken from the outline brings the shape into
+the distribution. The Cauchy belongs to how the addresses are laid.
+
+**Why the circle and the Cauchy go together.** The circle is the one shape whose two lays coincide: on a circle, equal
+steps along the outline are equal steps of turn. So for the circle alone, a lay taken from the shape and a lay that
+knows nothing of any shape are the same lay, and both give the Cauchy. Every other shape tells them apart. This is why
+the Cauchy is usually met through the circle, as the tangent of an angle spread evenly round it: it belongs to the even
+turn, and the circle is the one shape in which the even turn and the shape cannot be told apart.
 
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the
@@ -988,7 +996,7 @@ true width, and no one stands anywhere in it.
 2. *What it reads exactly.* Sweeping its directions, the reader finds home, v/h = 0, straight ahead at the middle of the
    range, and the range's ends at v/h = ±1: exactly at its corners. It knows that the ends sit at its corner, though
    not why. With fingers spread evenly over the half-turn, the range takes exactly the middle half of them, between the
-   Cauchy's quartiles, and the median finger points at its middle. On each finger the ring is the ridge's elevation
+   Cauchy's quartiles, which are its corners (§7.3), and the median finger points at its middle. On each finger the ring is the ridge's elevation
    reading, and together they give the range's skyline, up to scale. The far slopes are hidden, rings behind rings.
 3. *What it cannot read.* A range 20 miles wide at 10 miles, 2 miles wide at 1 or 2,000 miles wide at 1,000 gives the
    same fingers and the same rings. The reach cancels from every reading (Theorem 6).
