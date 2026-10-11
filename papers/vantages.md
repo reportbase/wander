@@ -38,6 +38,30 @@ from either situated vantage; the completed view is the one that holds the world
 the vantage claimed, in its own terms. Recognising a familiar resolution after the fact and renaming it is weak. Entries
 that a vantage reading predicted wrongly stay here, marked.
 
+## From situated to completed: what memory and synthesis do
+
+*Added 11 October, after a comment Tom shared (ChatGPT): a human can turn through 360° and, by memory and synthesis,
+build a completed perspective; so "the completed perspective is therefore not necessarily a single act of observation",
+and the question is whether synthesis "merely accumulate[s] information, or must it transform the observations into a
+different geometric representation". Claude's reading, from SPN; unruled.*
+
+- *A still world comes back whole.* If nothing moves, a serial reader's record equals a parallel reading, in any order
+  (SPN Proposition 9.1). Memory turns the inner hemisphere into the outer one at no cost.
+- *Joining the records is a change of geometry.* Each reading arrives swept from home, a fisheye in one facing; the
+  completed view indexes (the x, y grid, every place reached directly, no home or horizon). "The view from somewhere
+  sweeps, the view from nowhere indexes" (R179). To build the whole, the reader re-lays each swept reading as an index:
+  the inverse of the sweep, the shortcut that makes sweeps act like indexes. Synthesis transforms; it does not only
+  accumulate.
+- *A full turn gives the whole shape, not its size.* Turning through 360° with memory collects all four facings, the
+  circle's geometry, but the reader still holds only H: scaled about the reader, every reading is unchanged (SPN
+  Proposition 8.1). What comes back is the completed shape up to a scale. Turning in one place gives directions, not
+  distances; placing things needs a second standpoint, with the reader's own travel as the one length (`flight.html`).
+- *Three gaps memory cannot close by itself.* The scale (only a bridge gives it: travel, a known constant, a known kind,
+  a shared fact; SPN §8.4); what lies below the reader's step (lost at that step to every vantage); and motion (readings
+  must be carried forward, with an error SPN Proposition 9.2 bounds). Hidden sides need further standpoints (SPN §6.4).
+- *So:* the completed view is legitimate. It is what integration builds once the three gaps are filled. A paradox of
+  this catalogue is, typically, the completed view used as if the gaps were already filled.
+
 ---
 
 ## A. In the geometry of the corpus
@@ -245,6 +269,8 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
 - 11 October, first: started from Tom's statement (SPN R191), with the three vantages and nineteen entries: six in the
   corpus's geometry (A1–A6), four in mathematics (B1–B4), three in probability and decision (C1–C3) and six in physics
   (D1–D6), plus eight candidates.
+- 11 October, second: "From situated to completed: what memory and synthesis do", after a comment Tom shared: synthesis
+  transforms (sweep to index), recovers the shape up to a scale, and leaves three gaps (scale, step, motion).
 
 ## Sources
 

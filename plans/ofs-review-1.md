@@ -546,3 +546,18 @@ whatever its readings cannot tell apart.** Swapping v and h gives the corner and
 Euclidean circle and even turns (the Cauchy, the fisheye); V unknown gives dx/x, so the logarithm; H known inside the
 corner gives proportion; the spacings meet at v = h; D.1 is the same test on points. Classical in itself (Jaynes 1968,
 Jeffreys 1939); still added: the joining constant at the corner, and the sweep as a turn.
+
+## A further comment (Tom shared it on 11 October, 09:53; ChatGPT), in brief
+
+On Tom's point that a human turning through 360° can build a completed perspective by memory: the completed perspective
+"is therefore not necessarily a single act of observation. It can be the result of a sequence of observations joined
+by memory." Bounded observation, a sequence of observations, and integration across them are distinct; "the relevant
+question is not whether it is biologically simple, but whether its observation system can preserve and combine
+observations across time." It "does not make the classical view an illusion", and it asks: "does the synthesis of
+observations merely accumulate information, or must it transform the observations into a different geometric
+representation? If it is the latter, then the transition from situated geometry to classical geometry is itself a
+mathematical operation."
+
+Answered in `papers/vantages.md`, "From situated to completed: what memory and synthesis do" (Tom: "ok"): it transforms
+(the sweep re-laid as an index, R179); a still world comes back whole (SPN Proposition 9.1); a full turn gives the shape
+up to a scale (Proposition 8.1); three gaps remain: scale, step and motion.
