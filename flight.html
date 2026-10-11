@@ -35,9 +35,18 @@ it stood one second of travel back (v a second, so one v) and, if it climbed, at
 standpoints' lines cross at the place: ahead and across from the down readings and the across readings, the height from
 either. Its own travel is the one length, so places come out in units of v. No circle, no census. Where the two down
 readings fall on the same pixel the lines do not cross on the screen's step and the place is unresolved: only its
-bearing is known. The panel at bottom left is the recovered plan, ahead up, across sideways, in v: grey rings where the
-posts are, teal dots where the reader puts them, a faint line for a bearing alone; the gold line is the corner. Posts
-come in from about 24v and are replaced once passed.
+bearing is known. Posts come in from about 24v and are replaced once passed.
+The panel at bottom left is the lay: the ground laid on the reader's addresses, centred on home, the plane flying up the
+page (Tom: "the corner is the unit circle itself, by setting V = H. we create the corner circle"; "that unit circle
+contains the address space to the entire universe. not part of it, all of it. however, the corner circle has a radius of
+H"; "think of the corner circle expanding logrithmically, but reality itself does not expand logrithmically just our
+representation of it"; "it will look like the mercator map"; and before: "reality is perfect represented at home, no
+distortion"; "two things are needed, assign V=H and swap v/h with h/v at the corner"; "the sweep creates the addresses to
+the complete universe, addresses, not the universe. so for illustration purposes, we can lay a portion of the universe
+onto the sweep itself, like the ring metaphore"). A ground point ρ from home is laid at its own direction and radius
+ρ/v inside the corner circle (gold, radius one H), 1 + ln(ρ/v) past it: the world at its own scale out to the corner,
+then every doubling the same width (the dashed rings at 2v, 4v, …), out to 64v here and without end. White rings are
+the posts, teal dots where the reader places them, a faint ray a bearing alone.
 How far the reader can place things is set by its step, not by the corner: one v of travel moves a post's down reading
 by about f·v/h² pixels (f the screen's focal length in pixels), so placing gives out near h = √f·v, about 16v on a
 laptop screen; there a one-pixel difference places it badly, and past it only the bearing is left. That is the
@@ -231,37 +240,74 @@ function drawPosts(hNear) {
   }
   g.stroke(); g.lineWidth = 1;
 }
+// ── The lay: the world laid on the reader's addresses, centred on home ──
+// Tom, 10 Oct: "the corner is the unit circle itself, by setting V = H. we create the corner circle"; "that unit circle
+// contains the address space to the entire universe. not part of it, all of it. however, the corner circle has a radius
+// of H"; "think of the corner circle expanding logrithmically, but reality itself does not expand logrithmically just our
+// representation of it"; "it will look like the mercator map".
+// A ground point at distance ρ from home, in direction φ, is laid at direction φ and radius r(ρ): ρ/v inside the corner
+// (the world at its own scale; perfect at home), 1 + ln(ρ/v) past it, so every doubling gets the same width, ln 2, and the
+// slope meets the near field's at the corner with no kink. The plane flies up the page; home is the centre.
+const LAY_OUT = 64;                              // laid out to 64v
+const layR = (rho) => rho <= v ? rho / v : 1 + Math.log(rho / v);
 let recovered = 0;
 function drawPlan() {
-  const sz = Math.min(220, W * 0.42, H * 0.36), x0 = 16, y1 = H - 44, y0 = y1 - sz;
-  const R = 8;                                    // ahead 0 … 8v, across ±4v
-  const k = sz / R, ox = x0 + sz / 2;
-  const at = (xv, hv) => [ox + xv * k, y1 - hv * k];
-  g.fillStyle = 'rgba(7,9,11,0.85)'; g.fillRect(x0, y0, sz, sz);
+  const sz = Math.min(W * 0.46, H * 0.62, 420), x0 = 16, y1 = H - 40, y0 = y1 - sz;
+  const ox = x0 + sz / 2, oy = y0 + sz / 2;
+  const k = (sz / 2 - 4) / layR(LAY_OUT * v);
+  const at = (X, dZ) => { const rho = Math.hypot(X, dZ); if (rho === 0) return [ox, oy];
+    const r = layR(rho) * k; return [ox + r * X / rho, oy - r * dZ / rho]; };
+  g.fillStyle = 'rgba(7,9,11,0.9)'; g.fillRect(x0, y0, sz, sz);
   g.strokeStyle = 'rgba(190,205,215,0.3)'; g.strokeRect(x0 + 0.5, y0 + 0.5, sz, sz);
   g.save(); g.beginPath(); g.rect(x0, y0, sz, sz); g.clip();
-  g.strokeStyle = 'rgba(226,181,69,0.7)';           // the corner, one v ahead
-  g.beginPath(); g.moveTo(x0, y1 - k); g.lineTo(x0 + sz, y1 - k); g.stroke();
+
+  // the ground grid, world-anchored, coarser by the doubling so each level holds about the same number of lines
+  const grid = new Path2D();
+  const levels = [[0, v, v / 4]];
+  for (let a = v, s = v / 4; a < LAY_OUT * v; a *= 2, s *= 2) levels.push([a, 2 * a, s]);
+  for (const [a, b, s] of levels) {
+    const n = Math.ceil(b / s), step = s / 3;
+    const inBand = (X, dZ) => { const r = Math.hypot(X, dZ); return r >= a && r < b; };
+    const line = (P) => { let pen = false;
+      for (let u = -b; u <= b; u += step) { const [X, dZ] = P(u), [X2, dZ2] = P(u + step);
+        if (inBand((X + X2) / 2, (dZ + dZ2) / 2)) { const p1 = at(X, dZ), p2 = at(X2, dZ2);
+          if (!pen) grid.moveTo(p1[0], p1[1]); grid.lineTo(p2[0], p2[1]); pen = true; } else pen = false; } };
+    const z0 = travelled % s;                        // across lines move with the flight
+    for (let i = -n; i <= n; i++) {
+      const X = i * s, dZ = i * s - z0;
+      line(u => [X, u]);                             // along the flight
+      line(u => [u, dZ]);                            // across it
+    }
+  }
+  g.strokeStyle = 'rgba(190,205,215,0.28)'; g.lineWidth = 1; g.stroke(grid);
+
+  // the level edges past the corner (each one doubling, the same width), and the corner circle itself
+  g.strokeStyle = 'rgba(230,120,140,0.5)'; g.setLineDash([3, 4]);
+  for (let a = 2 * v; a < LAY_OUT * v; a *= 2) { g.beginPath(); g.arc(ox, oy, layR(a) * k, 0, 2 * Math.PI); g.stroke(); }
+  g.setLineDash([]);
+  g.strokeStyle = 'rgba(226,181,69,0.9)'; g.lineWidth = 1.5;
+  g.beginPath(); g.arc(ox, oy, k, 0, 2 * Math.PI); g.stroke(); g.lineWidth = 1;
+
+  // the posts: rings where they are, teal where the reader places them, a faint ray for a bearing alone
   recovered = 0;
   for (const P of posts) {
-    const d = P.Z - travelled;
-    const [tx, ty] = at(P.X / v, d / v);
-    g.strokeStyle = 'rgba(190,205,215,0.6)';
+    const dZ = P.Z - travelled, [tx, ty] = at(P.X, dZ);
+    g.strokeStyle = 'rgba(235,240,245,0.85)';
     g.beginPath(); g.arc(tx, ty, 4, 0, 2 * Math.PI); g.stroke();
     const r = recoverPost(P);
     if (!r) continue;
     if (r.foot.bearing !== undefined) {
+      const [bx, by] = at(r.foot.bearing * LAY_OUT * v, LAY_OUT * v);
       g.strokeStyle = 'rgba(140,230,205,0.35)';
-      const [bx, by] = at(r.foot.bearing * 2 * R, 2 * R);
-      g.beginPath(); g.moveTo(ox, y1); g.lineTo(bx, by); g.stroke();
+      g.beginPath(); g.moveTo(ox, oy); g.lineTo(bx, by); g.stroke();
     } else {
       recovered++;
-      const [rx, ry] = at(r.foot.X / v, (r.foot.Z - r.z) / v);
+      const [rx, ry] = at(r.foot.X, r.foot.Z - r.z);
       g.fillStyle = 'rgba(140,230,205,0.95)';
       g.beginPath(); g.arc(rx, ry, 2.5, 0, 2 * Math.PI); g.fill();
     }
   }
-  g.fillStyle = '#e8eef2'; g.beginPath(); g.moveTo(ox, y1 - 6); g.lineTo(ox - 4, y1); g.lineTo(ox + 4, y1); g.fill();
+  g.fillStyle = '#e8eef2'; g.beginPath(); g.moveTo(ox, oy - 6); g.lineTo(ox - 4, oy + 3); g.lineTo(ox + 4, oy + 3); g.fill();
   g.restore();
 }
 
@@ -365,6 +411,7 @@ window.__flight = {
     return c.bearing !== undefined ? c : { h: c.Z - z2, x: c.X, y: c.y };
   },
   focal: () => f,
+  layR: (hv) => layR(hv * v),
   stripAt: (hv, m) => { const k = flip; flip = FLIPS.indexOf(m); const y = stripY(hv * v, 0, 0.5, 1, 0.5); flip = k; return 1 - y; },   // 0 bottom … 1 top
   linesPerLevel: () => bands().filter(b => b.b < FAR).map(b => (b.b - b.a) / b.s),
 };

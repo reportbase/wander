@@ -108,7 +108,10 @@ Google Fonts load from outside:
   sweep"; "a circle is not needed. only the sweep is needed"; after draw's UDV lab, one reader moving instead of three
   standing): each post's foot and top read as (across, down) against the distance ahead, to a pixel; the readings from one
   v of travel back cross with today's at the place, the travel the one length, so places in v; same pixel twice leaves a
-  bearing. Plan panel at bottom left (rings true, teal dots recovered, the corner gold). Placing gives out near
+  bearing. The lay at bottom left (Tom: "the corner is the unit circle itself, by setting V = H"; "that unit circle contains
+  the address space to the entire universe"; "think of the corner circle expanding logrithmically, but reality itself does
+  not"; "it will look like the mercator map"): the ground laid on the addresses around home, radius ρ/v inside the corner
+  circle (radius H), 1 + ln(ρ/v) past it, each doubling ln 2 wide; posts true (white), recovered (teal), bearings (rays). Placing gives out near
   h = √f·v (the step: physics, not the corner). Strip:
   the reading folded at the corner, h/v to home (even), v/h past it (2v, 4v … each half the room). LOD (`?lod=`; the chips removed, Tom: "remove the buttons in the upper left"): none / by metres
   (doubling at 500 m, 1 km …) / by v/h (levels split at v, 2v, 4v …, grain v/8 in the first two then doubling, 8 lines a level, so the count past the
@@ -368,7 +371,7 @@ In short:
       with cushions read as the ball's mirror image and pockets as filling the view, still the referee's game; read late (c = 50),
       carrying the image forward beats taking it as now.
   16. **flight.html:** the corner keeps its row from 50 m to 1.6 km; by v/h the level edges keep theirs, the first edge the corner,
-      8 lines a level; by metres the edges slide; a post is recovered exactly with no step, within 10% at 2v at a pixel step, worse at 8v, a bearing only at 400v; the strip folded holds 0.1v–100v, h/v throughout runs off the top, v/h off the bottom.
+      8 lines a level; by metres the edges slide; a post is recovered exactly with no step, within 10% at 2v at a pixel step, worse at 8v, a bearing only at 400v; the lay true to the corner, each doubling past it ln 2 wide; the strip folded holds 0.1v–100v, h/v throughout runs off the top, v/h off the bottom.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
