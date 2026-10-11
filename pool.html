@@ -159,8 +159,10 @@
             if (!(ib.v + ia.v > 1)) continue;                 // contact is h + v = 1
             const uA = [A.vx / A.r, A.vz / A.r], uB = [Bb.vx / Bb.r, Bb.vz / Bb.r];   // each reports its own motion, own units
             const ra = respond(A, ia, ib, uB), rb = respond(Bb, ib, ia, uA);
-            // run 5: a ball ignores any ball K or more size levels smaller than itself; the smaller still responds
-            const skipA = (Bb.lv || 0) - (A.lv || 0) >= K, skipB = (A.lv || 0) - (Bb.lv || 0) >= K;
+            // run 5: a ball ignores any ball K or more size levels smaller than itself; the smaller still responds.
+            // Run 10: K may instead be a rule each ball applies from its own readings, rule(self, other, its image, the other's, its response)
+            const rule = typeof K === 'function';
+            const skipA = rule ? ra.hit && !!K(A, Bb, ia, ib, ra) : (Bb.lv || 0) - (A.lv || 0) >= K, skipB = rule ? rb.hit && !!K(Bb, A, ib, ia, rb) : (A.lv || 0) - (Bb.lv || 0) >= K;
             if (tally) { if (ra.hit) { tally.hits++; if (skipA) tally.skipped++; } if (rb.hit) { tally.hits++; if (skipB) tally.skipped++; } }
             if (tally && tally.each) { if (ra.hit) tally.each(A, Bb, ra); if (rb.hit) tally.each(Bb, A, rb); }   // run 7: every response, before any skip
             if (skipA) { ra.step = [0, 0]; ra.du = [0, 0]; }
@@ -229,8 +231,9 @@
         const tally = { hits: 0, skipped: 0 }, contacts = [];
         // run 7: each response a level-0 ball makes to a smaller ball: when, how many levels smaller, the closing speed and the
         // change of speed (amounts, from its own units times its radius), the change it would skip if it ignored that ball
+        if (opts.each) tally.each = opts.each;   // run 10: every response, before any skip
         if (opts.contacts) { tally.t = 0; tally.each = (a, b, r) => { if (a.lv === 0 && b.lv > 0) contacts.push({ t: tally.t, i: S.indexOf(a), j: b.lv, w: -r.vr * a.r, du: [r.du[0] * a.r, r.du[1] * a.r] }); }; }
-        for (let f = 0; f < Math.round(T / FRAME); f++) { stepRef(R); stepSit(S, null, true, null, K, tally); }
+        for (let f = 0; f < Math.round(T / FRAME); f++) { stepRef(R); stepSit(S, opts.log || null, true, null, K, tally); }   // run 10: opts.log sees every reading
         const E = [0, 1, 2, 3].map(k => Math.max(0, ...R.map((b, j) => b.lv !== k ? 0 : (b.sunk && S[j].sunk) ? 0 : (b.sunk || S[j].sunk) ? Infinity : Math.hypot(b.x - S[j].x, b.z - S[j].z))));
         return { seed, K, E, hits: tally.hits, skipped: tally.skipped, n: R.length, contacts: opts.contacts ? contacts : undefined };
     }
