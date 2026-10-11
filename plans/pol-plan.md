@@ -1270,3 +1270,42 @@ P33′: KILLED. from 2 units inward, the density is at most +7.1% from the refer
   the cells it reads, and an unfold must keep the books even for a cell whose totals no set of balls could have.
 - **The mirror pushes on the outside.** Each time it turns a ball back, the momentum it takes is the outside's. It must
   be charged to the cells beside the window, as the gas's own push would be.
+
+### Run 14 (11 October 2026): prediction, written before it ran
+
+Run 13 with the band held at the cells' chemical potential, and its books kept. Four changes, named; everything else is
+run 13's (the mirror, the three cells read, the warmth redrawn, the measures).
+- **The band is held at the cells' activity, not their count.** For hard discs, Henderson's equation of state
+  Z = (1 + φ²/8)/(1 − φ)² gives the excess chemical potential in closed form, worked out before writing this:
+  βμ_ex = (Z − 1) + (9/8)·φ/(1 − φ) − (7/8)·ln(1 − φ). At φ = 0.15 that is 0.7287, so the activity is z = n·e^0.7287 =
+  2.072 n. In Widom's terms, 48% of random places are free for a new ball. Each tick, each part of the band, of area A:
+  - tries Poisson(Γ·z·A·tick) new balls at random places in it, each kept only if free;
+  - takes out each of its balls with chance Γ·tick.
+
+  Here Γ = ν = 4.86 a second, so a band ball is replaced about as often as it would meet another. z comes from the
+  pooled cells' density. This is grand-canonical keeping: the band fills to whatever a gas at the cells' chemical
+  potential holds against the mirror, crowding included.
+- **The mirror's push is charged to the outside.** A ball turned back at the window's edge changes its momentum by
+  −2·v_n; the cells beside that stretch take +2·v_n.
+- **The band's books are spread over the cells it reads.** Every ball put in, taken out or redrawn, and every push of
+  the mirror, is charged to the three cells pooled, in proportion to their counts.
+- **An unfold keeps the books for any cell.** A cell whose totals no set of balls could have (less energy than its flow
+  carries) gives its balls the largest flow its energy allows (99% of it), and the rest of its momentum goes to the
+  neighbouring cell with the fraction of a ball. A cell with no energy unfolds at rest, its momentum and energy to the
+  neighbour.
+
+- **P28‴ (the books).** Over every run and pan: count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself.
+  *Killed* if any run misses.
+- **P30‴ (the view sees the same gas).** The open view's density, kinetic energy per ball and contacts per ball per
+  second, averaged over the 40 runs, each within 3% of the referee's. *Killed* if any is not.
+- **P31‴ (open, not closed).** Within-run var/mean: open within 15% of the referee's; the closed control at least 25%
+  lower. *Killed* if either fails.
+- **P32‴ (the work).** Changes by less than 5% from L = 240 to L = 3,840. *Killed* if 5% or more.
+- **P33″ (the band reaches no further than itself).** From 2 units inward, the density in each 1-unit band within 5%
+  of the referee's. *Killed* if any is off by more.
+- *Measured, not predicted:*
+  - the band's two units (the mirror's crowding);
+  - how often the band's places are free (Widom's 48% in the bulk);
+  - the cells beside the window;
+  - the view just after a pan;
+  - the work against run 11's window.
