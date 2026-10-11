@@ -65,6 +65,11 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
+- 11 October, eightieth: a candidate single principle, after an outside evaluation: equal addresses for whatever the reader cannot tell apart; proportional inside the unit, logarithmic past it, meeting at the unit (a reading; SPN Proposition 1.2).
+- 11 October, seventy-ninth: situated geometry is the Cauchy, unsituated the circle; the even turn is uniformity itself, behind both (Tom; SPN Proposition 1.2 (7), §14).
+- 11 October, seventy-eighth: the Cauchy and the fisheye derived in v and h: the bar swept in even steps of its turn moves v/h by 1 + (v/h)² a step; counting gives 1/(1 + (v/h)²), drawing gives the fisheye (Tom; SPN Proposition 1.2).
+- 11 October, seventy-seventh: §8, the facings counted: with every breadth set to H the circle has 4 facings and the sphere 8, 2ⁿ for n freedoms (Tom; SPN Proposition 1.2).
+- 11 October, seventy-sixth: H is a zoom, not an escape: a very large H puts everything at true scale but spreads a finite level of detail so thin that the reader's own scale falls into the first address; no H holds every scale at once; the best H puts the thing read at the corner (Tom: "why not just choose a very large H?"; SPN Proposition 1.2).
 - 11 October, seventy-fifth: the count of addresses, in the near field's proportion and per doubling past the corner, is the level of detail, never known and not needed; the geometry gives only the forms (Tom; SPN Proposition 1.2).
 - 11 October, seventy-fourth: SPN Proposition 1.2 (R190): the unit circle by necessity; the corner and the flip forced by the cap; the logarithm forced past the corner, counting addresses; reality in 2H by length (the in-place lay, the reader's own), the same addresses by count (1 + ln s); two address spaces, proportional and logarithmic, around the corner (Tom). Notes at §4 and the level's description.
 - 10 October, seventy-third: one circle, "v needs no V" standing (v and h on [0, 1], invariant); the levels logarithmic doublings, the logarithm fundamental; the open question of the 2 dissolves (Tom; SPN R189).
@@ -857,6 +862,12 @@ and the countability of computable numbers.
 Tom, 7 October: "maybe the way humans access the number line can best be understood as situation 3, the parallel
 situated perspective."
 
+*H is a zoom* (11 October; SPN Proposition 1.2, "H is a zoom, not an escape"; Tom: "why not just choose a very large H?").
+The window people read the number line through is a choice of H. Any H gives the same line, but a finite level of detail
+spread over a large H turns everyday numbers into a point beside zero, and over a small one sends large numbers past the
+corner into doublings. Zooming the window, a ruler for lengths and powers of ten for distances, is setting H to the scale
+of what is being read.
+
 **Why 3 fits.**
 
 - **The number line is static.** It does not change while it is looked at, and a static system is read in parallel
@@ -988,6 +999,12 @@ and the baseline. dividing h and v, removes their scale, but gives you their rel
 circle. you can use that address to point back to the address on the shape, but only as a relation, the scale is lost
 forever. the same is also true for spheres. v,h,f [0,1][0,1][0,1]->[0,inf). lets explore the sphere."
 
+*The facings, counted* (11 October; SPN Proposition 1.2, "The circle and the sphere, and their facings"; Tom: "explain the
+equation of the circle as just any combination of v and h and its 4 possible facings forced by creating a symetry
+between V and H. 8 possible facings when you add a V2, which is the sphere."). With every breadth set to the one chosen
+H, the relation is a bar of length 1: h² + v² = 1 over two freedoms, h² + v² + f² = 1 over three. Each freedom has two
+facings, so the circle has 4 and the sphere 8, the octants below; n freedoms give 2ⁿ.
+
 ⚠ *Read 9 October* (the case pass; CLAUDE.md and SPN §1, "keep the case"): this section, written before the case
 ruling, calls v, h and f "breadths" throughout. Read them as fill levels, 0 to 1; the breadths are the amounts H, V and F.
 "The wedge of three breadths" is the wedge of three fill levels; "the face of its largest breadth" that of its largest
@@ -1068,6 +1085,20 @@ magnitudes. Turning the hand changes no ring; changing the rings changes no fing
   solid wedge.
 - **Said first.** *Reader Geometry as Addressing* §0.0 already has the rays ("many pairs are the same relation … they lie
   on one ray") and the cuts ("the path the sweep takes is a choice": the arc, the line h + v = 1, the square's edges).
+
+*Derived, 11 October* (SPN Proposition 1.2, "The Cauchy and the fisheye, derived"): the bar of length 1 swept from home
+in even steps of its turn moves v/h by 1 + (v/h)² a step, since 1/h² = (h² + v²)/h²; counting the steps per unit of v/h
+gives 1/(1 + (v/h)²), the Cauchy, and placing each reading at its turn step gives the fisheye. Both are addresses: the
+count and the drawing of one sweep.
+*Situated and unsituated, 11 October* (Tom: "so situated geometry is cauchy, unsituated geometry is the circle"; then "yes, although that same constraint applices to the circle, it is uniformity itself."):
+the same bar held whole, all four facings and no standpoint, is the circle h² + v² = 1; swept from home in one facing
+and read as v/h, it is the Cauchy. The even turn is the circle's uniformity, not a weight added for the Cauchy, so one
+choice, uniformity, stands behind both (SPN Proposition 1.2, (7)).
+*A candidate single principle, 11 October* (a reading, unruled; SPN Proposition 1.2): a situated reader gives equal
+addresses to whatever its readings cannot tell apart. On the number line: inside the unit, the reader holds H and no
+position is preferred, so the line is proportional; past it, the unit is unknown and no scale is preferred, so each
+doubling gets the same room, the logarithm; the two spacings agree at the unit. The two infinities of §1 are then the
+two invariances on either side of what the reader holds.
 
 **The Cauchy consists of addresses, not payloads** (Tom, 8 October, of *The Cauchy*: "it consists of addresses not
 payloads"; *Reader Geometry as Addressing* R47: "The Cauchy is not the payload; it is the address to the payload").
