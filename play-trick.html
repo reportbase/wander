@@ -20,7 +20,39 @@
 
     Drag from anywhere on the cloth to aim; drag a ball to move it (set up any trick shot); the power slider, ◀ ▶ for fine
     aim (arrow keys; shift for whole degrees), space to shoot, z to undo.
-    Links: ?layout=rack|scatter|line, ?a= (aim in degrees), ?p= (power), ?paths=all|cue|off. Test hook: window.__trick.
+    How far ahead the preview sees (POL runs 8–9): "see" shows each ball's motion only while it is at most k contacts from
+    the cue (3 by default: on an open table a 0.1° aim error passes half a pocket by the third contact); past it a "?".
+    Contact is exact: each ball finds, in its own units, the moment the pair read h + v = 1, and responds there (run 9).
+    Two angles, as in pool (Tom: "you hit the white ball first. so you need to calculate two angles, where you want to hit
+    the white ball, and where you want the white ball to hit the first ball"): the cue's tip is a small ball (radius
+    R_TIP) and meets the white on h + v = 1 like any other contact, at a point on its face chosen in its own size (the
+    round inset, the white seen from behind the cue). Then where the white meets the first ball is the second cut.
+    Spin (11 Oct, Tom: "lets see how far we can push it"): every ball carries its spin. The point it stands on slips over
+    the cloth until the cloth's grip has made it roll; then only the cloth's drag acts. A chalked tip grips the white
+    inside its friction cone (tan φ ≤ 0.6, the dashed ring): the white leaves on the cue's line and the off-centre push
+    becomes spin, so the corners of the white are draw or follow with side. Low draws back, high follows, 2/5 up rolls at
+    once (the "7/10 height"); side spin grips the rails and turns the rebound. Past the ring the tip slides off (a miscue)
+    and the white turns. A bare tip has no grip: no spin, the white turns sin φ = fx. The cue's mass is told, not read
+    from its size (a different kind).
+    Throw, spin passed on, massé and jump (11 Oct, Tom: "push further on the three suggestions"): balls grip each other
+    weakly where they touch (MU_B), so a cut throws the struck ball a few degrees toward the white's travel, side spin
+    throws it the other way, and it takes some of the white's side spin, turning the other way. The cue can be raised
+    ("cue ↑"): the white's spin turns about a tilted axis and the cloth bends its path (massé), and the downward push
+    presses it into the slate, which throws it up (jump). Off the cloth a ball falls and bounces; meeting another, the
+    pair reads h + v with the height between them included, so a ball can pass over another.
+    (11 Oct, "proceed") The balls' grip acts on the whole slide where they touch, upright too: a rolling white leaves the
+    struck ball a little backspin and follows by less than the textbook 2/7. A ball in the air whose bottom clears the
+    cushion's nose flies over it and off the table (put back on the foot spot; the white on the head spot).
+    Challenges (11 Oct, Tom: "yes", to a challenges mode): thirteen trick-shot puzzles, each needing one mechanic (a ½-ball
+    cut, a bank, a kick, a jump, a massé, a thin cut, stun, draw, follow, a cannon, a combination, the row of four, the break),
+    chosen from the same menu as the layouts. Each fixes how far the preview sees, the situated horizon as the difficulty: the
+    first five are played in sight; "see 0" shows only the white to its first ball (the ghost ball, as at a real table), so a
+    cut or the white's run after contact must be judged; the last ones put the ball to pot past what can be seen. A try is a
+    shot; a missed try puts the balls back (the cue as left) and says why. Par is set from each one's window of aim around a
+    reference shot found on this engine (the smoke test plays every reference shot). The best is kept in this browser only.
+    Links: ?challenge=half|bank|kick|jump|masse|thin|stun|draw|follow|cannon|combo|row|break, ?layout=rack|scatter|line|jump|masse, ?a= (the cue's line, degrees), ?el= (the cue raised, degrees), ?p= (power, 2–60), ?tip=fx,fy (fx right, fy up, in the
+    white's half-width), ?chalk=0, ?paths=all|cue|off, ?see=0..5|all. Test hook: window.__trick (spinChecks: the textbook results; challenges, setChallenge,
+    trial, solve, check, challenge).
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --line: rgba(255,255,255,0.12); --ink: #c8c8d0; --dim: #8a8a96;
@@ -39,81 +71,195 @@
     button, select { font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line); border-radius: 6px;
         padding: 6px 10px; cursor: pointer; touch-action: manipulation }
     button.go { border-color: var(--gold); color: var(--gold) }
+    button:disabled { opacity: 0.4; cursor: default }
     label { display: flex; gap: 6px; align-items: center; color: var(--dim) }
     input[type=range] { width: 120px; accent-color: #d4a052 }
+    #tipview { position: fixed; inset: auto; right: 12px; width: 92px; height: 92px; touch-action: none; cursor: ew-resize; border-radius: 50%;
+        background: rgba(12,12,17,0.7) }
     </style>
 </head>
 <body>
 <canvas id="cv"></canvas>
 <div id="hud"></div>
+<canvas id="tipview" aria-label="where the tip meets the white"></canvas>
 <div id="bar">
     <button id="shoot" class="go">shoot</button>
     <button id="undo">undo</button>
     <button id="left" aria-label="aim left">◀</button>
     <button id="right" aria-label="aim right">▶</button>
-    <label>power <input id="power" type="range" min="2" max="24" step="0.5" value="14"></label>
+    <label>power <input id="power" type="range" min="2" max="60" step="0.5" value="14"></label>
+    <label id="elevl">cue ↑ 0° <input id="elev" type="range" min="0" max="80" step="1" value="0"></label>
     <button id="paths">paths: all</button>
-    <select id="layout" aria-label="layout"><option value="rack">rack</option><option value="scatter">scattered</option><option value="line">a row of four</option></select>
+    <button id="see">see: 3 deep</button>
+    <button id="chalk">tip: chalked</button>
+    <select id="layout" aria-label="layout or challenge"><optgroup label="free play"><option value="rack">rack</option><option value="scatter">scattered</option><option value="line">a row of four</option><option value="jump">jump</option><option value="masse">massé</option></optgroup><optgroup id="chgroup" label="challenges"></optgroup></select>
+    <button id="next" class="go" hidden>next ▸</button>
     <button id="full" aria-label="full screen">⛶</button>
 </div>
 <script>
 (() => {
     const $ = id => document.getElementById(id), TAU = 2 * Math.PI, D = Math.PI / 180;
     // ══ the table (as pool.html; the cloth a little quicker, so a shot settles in seconds) ══
-    const LX = 20, LZ = 10, R = 0.45, POCK = 0.85, MU = 1.2, E_BALL = 0.96, E_RAIL = 0.8, FRAME = 1 / 60, SUB = 4, HEAD = [-LX / 4, 0];
+    const R_TIP = 0.1, LX = 20, LZ = 10, R = 0.45, POCK = 0.85, MU = 1.2, E_BALL = 0.96, E_RAIL = 0.8, FRAME = 1 / 60, SUB = 4, HEAD = [-LX / 4, 0];
+    // spin: the cloth's grip on a sliding ball (MU_S), its drag on a rolling one (MU), on a ball's spin about the vertical
+    // (MU_SP, at its surface), the rail's grip on the ball's side (MU_C), and the chalked tip's grip on the white (MU_TIP).
+    // Real cloth grips a sliding ball about twenty times harder than it drags a rolling one; a chalked tip about 0.6.
+    const MU_S = 30, MU_SP = 4, MU_C = 0.2, MU_TIP = 0.6;
+    // between balls the grip is weak (MU_B: a polished ball on a polished ball), enough to throw a struck ball a few
+    // degrees and to pass it some of the white's side spin. Off the cloth a ball falls (G, the table's gravity in its own
+    // scale: 9.81 m/s² over a real ball's 2.86 cm radius, times this table's radius 0.45) and bounces on the slate (E_TABLE).
+    const MU_B = 0.06, G = 154, E_TABLE = 0.5;
+    // the cushion's nose stands 0.635 of a ball's height above the cloth: a ball in the air whose bottom is above it flies
+    // over the cushion, and off the table once wholly past it.
+    // (Tried and taken out, 11 Oct: the cloth gripping the white during the instant a raised cue presses it into the slate.
+    // At real cloth's grip, MU_S/G = 0.195, that stops the white's slip at once, so a massé's whole bend became a kink at
+    // the strike, though real massés curve: the ball sinks a little into the cloth, which this contact does not model.)
+    const CUSH_H = 1.27 * R;
+    let muB = MU_B;   // the balls' grip, set to 0 by spinChecks for the textbook results (which assume balls without it)
     const POCKETS = [[-LX / 2, -LZ / 2], [0, -LZ / 2 - 0.2], [LX / 2, -LZ / 2], [-LX / 2, LZ / 2], [0, LZ / 2 + 0.2], [LX / 2, LZ / 2]];
     const COLS = { 1: '#e3c33b', 2: '#2f5fd0', 3: '#d23a2f', 4: '#6b3fa0', 5: '#e0782a', 6: '#2e8b57', 7: '#7a2f2a', 8: '#16161a' };
     for (let k = 9; k <= 15; k++) COLS[k] = COLS[k - 8];
-    const ballOf = (n, x, z) => ({ n, x, z, vx: 0, vz: 0, r: R, m: 1, col: n === 0 ? '#f2f0ea' : COLS[n], stripe: n >= 9, cue: n === 0, sunk: false });
+    const ballOf = (n, x, z) => ({ n, x, z, y: 0, vx: 0, vz: 0, vy: 0, wx: 0, wy: 0, wz: 0, r: R, m: 1, col: n === 0 ? '#f2f0ea' : COLS[n], stripe: n >= 9, cue: n === 0, sunk: false });
 
     // ══ played from inside (pool.html, POL runs 1–2) ══
     // what arrives at a from b: b's direction and v = r_b/d
     function image(a, b) { const dx = b.x - a.x, dz = b.z - a.z, d = Math.hypot(dx, dz); return { n: [dx / d, dz / d], v: b.r / d }; }
     // what a does with it, in its own size: the other's motion converted by v/h, the mass ratio (h/v)³ (one material)
-    function respond(a, ia, ib, ub, e) {
+    function respond(a, ia, ib, ub, e, tick) {
         const v = ia.v, h = ib.v, n = ia.n, ua = [a.vx / a.r, a.vz / a.r];
         const over = (h + v - 1) / (2 * h), ubA = [ub[0] * v / h, ub[1] * v / h];
-        const vr = (ubA[0] - ua[0]) * n[0] + (ubA[1] - ua[1]) * n[1];
-        let du = [0, 0];
-        if (vr < 0) { const k = (1 + e) * vr / (1 + (h / v) ** 3); du = [k * n[0], k * n[1]]; }
-        return { step: [-over * n[0], -over * n[1]], du, hit: vr < 0 };
+        const w = [ubA[0] - ua[0], ubA[1] - ua[1]], vr = w[0] * n[0] + w[1] * n[1];
+        if (!(vr < 0)) return { step: [-over * n[0], -over * n[1]], du: [0, 0], hit: false, n, tau: 0 };
+        // exact contact (POL run 9): the reading passed h + v = 1 within this tick. How long ago was it exactly 1? In a's own
+        // radii the other is at n/h, the pair touches at 1 + v/h, and they close at w: solve |n/h − w·τ| = 1 + v/h, τ ≥ 0
+        const p = [n[0] / h, n[1] / h], c = 1 + v / h, ww = w[0] * w[0] + w[1] * w[1], pw = p[0] * w[0] + p[1] * w[1];
+        let tau = ww > 0 ? (pw + Math.sqrt(Math.max(0, pw * pw - ww * (p[0] * p[0] + p[1] * p[1] - c * c)))) / ww : NaN;
+        let m = n, step;
+        if (tau >= 0 && tau <= (tick || 0)) {   // the line of centres then; respond along it; since then it has moved with the new motion
+            const pc = [p[0] - w[0] * tau, p[1] - w[1] * tau], l = Math.hypot(...pc); m = [pc[0] / l, pc[1] / l];
+        } else tau = NaN;                        // overlapping from before this tick (a ball set down too close): the old push
+        const k = (1 + e) * (w[0] * m[0] + w[1] * m[1]) / (1 + (h / v) ** 3), du = [k * m[0], k * m[1]];
+        step = isNaN(tau) ? [-over * n[0], -over * n[1]] : [du[0] * tau, du[1] * tau];
+        return { step, du, hit: true, n: m, tau: isNaN(tau) ? 0 : tau, hvC: isNaN(tau) ? h + v : c / Math.hypot(p[0] - w[0] * tau, p[1] - w[1] * tau) };
     }
     function pairs(B, log) {
         for (let i = 0; i < B.length; i++) for (let j = i + 1; j < B.length; j++) {
             const A = B[i], Bb = B[j]; if (A.sunk || Bb.sunk) continue;
+            if (A.y > 0 || Bb.y > 0) { inAir(A, Bb, log); continue; }   // one of them off the cloth: the reading takes the height in
             const ex = Bb.x - A.x, ez = Bb.z - A.z, d2 = ex * ex + ez * ez, rr = A.r + Bb.r;
             if (!(rr * rr > d2) || d2 === 0) continue;   // the pair's h + v, squared, below 1: no root taken until it nears contact
             const ia = image(A, Bb), ib = image(Bb, A);
             if (!(ib.v + ia.v > 1)) continue;                 // contact is h + v = 1
             const uA = [A.vx / A.r, A.vz / A.r], uB = [Bb.vx / Bb.r, Bb.vz / Bb.r];
-            const ra = respond(A, ia, ib, uB, E_BALL), rb = respond(Bb, ib, ia, uA, E_BALL);
-            if (log && (ra.hit || rb.hit)) log(A, Bb, ia, ib);   // before either changes its motion
+            const ra = respond(A, ia, ib, uB, E_BALL, FRAME / SUB), rb = respond(Bb, ib, ia, uA, E_BALL, FRAME / SUB);
+            // the grip between them (throw, spin passed on): where they touch, their surfaces slide across each other at
+            // s, along the horizontal t = ŷ × n, from the motions across the line of centres and both side spins (each tells
+            // the other its side spin with its motion). Friction pulls against s, up to MU_B of the push, and stops the
+            // sliding if it can (each ball's share 7/2 per unit of mass: 1 from its motion, 5/2 from its spin).
+            // The slide has an upright part too, sv, from top and back spin (and any motion up or down): the grip pulls against
+            // the whole slide, (s, sv), up to MU_B of the push. The upright pull turns only the spins (the slate takes its
+            // push), 5/2 per unit of mass, so a rolling white leaves the struck ball a little backspin, gear-fashion.
+            let ft = null;
+            if (ra.hit) {
+                const n = ra.n, tx = n[1], tz = -n[0], s = (A.vx - Bb.vx) * tx + (A.vz - Bb.vz) * tz + A.r * A.wy + Bb.r * Bb.wy;
+                const sv = (A.vy - Bb.vy) + A.r * (A.wz * n[0] - A.wx * n[1]) + Bb.r * (Bb.wz * n[0] - Bb.wx * n[1]);   // (ω × n)·ŷ
+                const Jn = A.m * Math.hypot(ra.du[0], ra.du[1]) * A.r, ss = Math.hypot(s, sv), im = 1 / A.m + 1 / Bb.m;
+                if (ss > 1e-12) {
+                    const k = (3.5 * s * s + 2.5 * sv * sv) / (ss * ss), J = Math.min(muB * Jn, ss / (k * im)), Jt = J * s / ss, Jv = J * sv / ss;
+                    // the upright pull −Jv·ŷ on A at r_a·n, +Jv·ŷ on B at −r_b·n: each spin turns by −(5/2)·Jv/(m r) about n × ŷ
+                    const nxy = [-n[1], 0, n[0]];   // n × ŷ, n = (n0, 0, n1)
+                    ft = { ax: -Jt * tx / A.m, az: -Jt * tz / A.m, bx: Jt * tx / Bb.m, bz: Jt * tz / Bb.m,
+                           wa: -2.5 * Jt / (A.m * A.r), wb: -2.5 * Jt / (Bb.m * Bb.r),
+                           ua: nxy.map(x => -2.5 * Jv * x / (A.m * A.r)), ub: nxy.map(x => -2.5 * Jv * x / (Bb.m * Bb.r)) };
+                }
+            }
+            if (log && (ra.hit || rb.hit)) log(A, Bb, ia, ib, ra);   // before either changes its motion
             A.x += ra.step[0] * A.r; A.z += ra.step[1] * A.r; Bb.x += rb.step[0] * Bb.r; Bb.z += rb.step[1] * Bb.r;
             A.vx += ra.du[0] * A.r; A.vz += ra.du[1] * A.r; Bb.vx += rb.du[0] * Bb.r; Bb.vz += rb.du[1] * Bb.r;
+            if (ft) {
+                A.vx += ft.ax; A.vz += ft.az; Bb.vx += ft.bx; Bb.vz += ft.bz; A.wy += ft.wa; Bb.wy += ft.wb;
+                A.wx += ft.ua[0]; A.wz += ft.ua[2]; Bb.wx += ft.ub[0]; Bb.wz += ft.ub[2];
+                A.x += ft.ax * ra.tau; A.z += ft.az * ra.tau; Bb.x += ft.bx * rb.tau; Bb.z += ft.bz * rb.tau;   // moved with it since contact
+            }
         }
+    }
+    // ══ a contact with a ball off the cloth (a jump): the pair reads h + v = (r_a + r_b)/d with d through the air, height
+    //    included; they touch at h + v = 1 and push along the line of centres in three dimensions. A ball on the cloth takes
+    //    no downward push (the slate takes it). Found at the tick, not exactly as on the cloth (POL run 9): rare and brief. ══
+    function inAir(A, Bb, log) {
+        const dx = Bb.x - A.x, dy = Bb.y - A.y, dz = Bb.z - A.z, d = Math.hypot(dx, dy, dz), rr = A.r + Bb.r;
+        if (!(d < rr) || d === 0) return;
+        const n = [dx / d, dy / d, dz / d], vr = (Bb.vx - A.vx) * n[0] + (Bb.vy - A.vy) * n[1] + (Bb.vz - A.vz) * n[2];
+        const push = (rr - d) / 2;
+        A.x -= n[0] * push; A.z -= n[2] * push; Bb.x += n[0] * push; Bb.z += n[2] * push;
+        if (A.y > 0) A.y = Math.max(0, A.y - n[1] * push); if (Bb.y > 0) Bb.y = Math.max(0, Bb.y + n[1] * push);
+        if (!(vr < 0)) return;
+        const J = (1 + E_BALL) * vr / (1 / A.m + 1 / Bb.m), l2 = Math.hypot(n[0], n[2]) || 1;
+        if (log) log(A, Bb, { v: A.r / d }, { v: Bb.r / d }, { n: [n[0] / l2, n[2] / l2], tau: 0, hvC: rr / d });
+        A.vx += J / A.m * n[0]; A.vz += J / A.m * n[2]; Bb.vx -= J / Bb.m * n[0]; Bb.vz -= J / Bb.m * n[2];
+        const ay = J / A.m * n[1], by = -J / Bb.m * n[1];
+        if (A.y > 0 || ay > 0) A.vy += ay; if (Bb.y > 0 || by > 0) Bb.vy += by;
     }
     // a cushion is met as one's own mirror image, v = r/(2·gap) = h, contact at the corner; signed once the edge is behind
     const CUSHIONS = [[-1, 0, b => b.x + LX / 2], [1, 0, b => LX / 2 - b.x], [0, -1, b => b.z + LZ / 2], [0, 1, b => LZ / 2 - b.z]];
     const imageInCushion = (b, c) => { const gap = c[2](b) || -1e-300; return { n: [c[0], c[1]], v: b.r / (2 * gap) }; };
+    // ══ spin and the cloth. A ball's state is its motion (vx, vz) and its spin (wx, wy, wz; y up). The point it stands on
+    //    moves over the cloth at u = (vx + r·wz, vz − r·wx): its slip. While it slips the cloth grips it (MU_S, against u),
+    //    which slows or speeds the ball and turns its spin, until the slip is gone, after 2/7 of it has gone into the
+    //    motion and 5/7 into the spin: then it rolls, and only the cloth's drag (MU) slows it, its spin following its motion.
+    //    Spin about the vertical (side, "English") does not touch the slip; it wears off on its own (MU_SP). ══
+    const slipOf = b => [b.vx + b.r * b.wz, b.vz - b.r * b.wx];
+    function cloth(b, h) {
+        const [ux, uz] = slipOf(b), us = Math.hypot(ux, uz);
+        if (us > 1e-12) {
+            if (us <= 3.5 * MU_S * h) {   // the slip is gone within this tick: the impulse −(2/7)·u, exactly
+                b.vx -= 2 / 7 * ux; b.vz -= 2 / 7 * uz; b.wx += 5 / 7 * uz / b.r; b.wz -= 5 / 7 * ux / b.r;
+            } else {                       // sliding: the cloth pulls against the slip (torque about the centre from the foot)
+                const fx = -MU_S * ux / us, fz = -MU_S * uz / us;
+                b.vx += fx * h; b.vz += fz * h; b.wx -= 2.5 * fz * h / b.r; b.wz += 2.5 * fx * h / b.r;
+            }
+        } else {                           // rolling: the drag, and the spin that goes with rolling
+            const sp = Math.hypot(b.vx, b.vz);
+            if (sp > 0) { const ns = Math.max(0, sp - MU * h); b.vx *= ns / sp; b.vz *= ns / sp; }
+            b.wx = b.vz / b.r; b.wz = -b.vx / b.r;
+        }
+        if (b.wy) { const d = MU_SP * h / b.r; b.wy = Math.abs(b.wy) <= d ? 0 : b.wy - Math.sign(b.wy) * d; }
+    }
     function own(B, h, onSink, onRail) {
         for (const b of B) {
             if (b.sunk) continue;
-            const sp = Math.hypot(b.vx, b.vz);
-            if (sp > 0) { const ns = Math.max(0, sp - MU * h); b.vx *= ns / sp; b.vz *= ns / sp; }
+            if (b.y > 0 || b.vy > 0) {   // off the cloth: no grip, only the fall; on landing, a bounce off the slate (or it stays down)
+                b.vy -= G * h; b.y += b.vy * h;
+                if (b.y <= 0) { b.y = 0; b.vy = -b.vy * E_TABLE > 1.5 ? -b.vy * E_TABLE : 0; }
+            } else cloth(b, h);
             b.x += b.vx * h; b.z += b.vz * h;
-            for (let k = 0; k < POCKETS.length; k++) {
+            if (b.y < 0.3 * b.r) for (let k = 0; k < POCKETS.length; k++) {
                 const p = POCKETS[k], ex = b.x - p[0], ez = b.z - p[1];
-                if (POCK * POCK > ex * ex + ez * ez) { b.sunk = true; b.vx = b.vz = 0; onSink && onSink(b, k); break; }   // the pocket fills its view: v = POCK/d > 1, squared
+                if (POCK * POCK > ex * ex + ez * ez) { b.sunk = true; b.vx = b.vz = b.wx = b.wy = b.wz = 0; onSink && onSink(b, k); break; }   // the pocket fills its view: v = POCK/d > 1, squared
             }
             if (b.sunk) continue;
+            if (b.y > CUSH_H && CUSHIONS.some(c => c[2](b) < -b.r)) {   // over the cushion's nose and wholly past it: off the table
+                b.sunk = true; b.off = true; b.vx = b.vz = b.vy = b.wx = b.wy = b.wz = 0; onSink && onSink(b, -1); continue;
+            }
             for (const c of CUSHIONS) {
+                if (b.y > CUSH_H) continue;                 // its bottom above the cushion's nose: it passes over
                 if (!(c[2](b) < b.r)) continue;            // its image fills under half its view: v < ½, no contact
                 const im = imageInCushion(b, c);
                 if (!(im.v + im.v > 1 || im.v < 0)) continue;
                 const u = [b.vx / b.r, b.vz / b.r], un = u[0] * im.n[0] + u[1] * im.n[1];
                 const r = respond(b, im, im, [u[0] - 2 * un * im.n[0], u[1] - 2 * un * im.n[1]], E_RAIL);
                 if (r.hit && onRail) onRail(b);
-                b.x += r.step[0] * b.r; b.z += r.step[1] * b.r; b.vx += r.du[0] * b.r; b.vz += r.du[1] * b.r;
+                // exact contact (POL run 9): its image read exactly ½ when the gap was r, (r − gap)/(its speed in) ago
+                const tau = un > 0 ? (1 - c[2](b) / b.r) / un : NaN, step = r.hit && tau >= 0 && tau <= h ? [r.du[0] * tau, r.du[1] * tau] : r.step;
+                b.x += step[0] * b.r; b.z += step[1] * b.r; b.vx += r.du[0] * b.r; b.vz += r.du[1] * b.r;
+                if (r.hit) {   // the rail grips the ball's side (taken at its equator): side spin turns the rebound, up to MU_C of the push
+                    const n = im.n, Jn = (1 + E_RAIL) * un * b.r, vn = b.vx * n[0] + b.vz * n[1];
+                    const sx = b.vx - vn * n[0] + b.r * b.wy * n[1], sz = b.vz - vn * n[1] - b.r * b.wy * n[0], ss = Math.hypot(sx, sz);
+                    if (ss > 1e-12) {
+                        const Jt = Math.min(MU_C * Jn, 2 / 7 * ss), ex = sx / ss, ez = sz / ss;
+                        b.vx -= Jt * ex; b.vz -= Jt * ez; b.wy -= 2.5 * Jt * (n[1] * ex - n[0] * ez) / b.r;
+                    }
+                }
             }
         }
     }
@@ -131,28 +277,49 @@
     }
 
     // ══ the whole shot, ahead of time: every frame, every contact, every pot, to rest ══
-    function simulate(B0, ang, power) {
-        const B = B0.map(b => ({ ...b })), n = B.length, cue = B.find(b => b.cue && !b.sunk);
+    function simulate(B0, ang, power, w, vy) {   // w: the white's spin from the strike (none: pushed without spin); vy: its leap
+        const B = B0.map(b => ({ y: 0, vy: 0, wx: 0, wy: 0, wz: 0, ...b })), n = B.length, cue = B.find(b => b.cue && !b.sunk);
         if (!cue) return null;
         cue.vx = power * Math.cos(ang); cue.vz = power * Math.sin(ang);
+        [cue.wx, cue.wy, cue.wz] = w || [0, 0, 0]; cue.vy = vy || 0;
         const snap = () => { const f = new Float32Array(2 * n); B.forEach((b, k) => { f[2 * k] = b.sunk ? NaN : b.x; f[2 * k + 1] = b.sunk ? NaN : b.z; }); return f; };
-        const frames = [snap()], contacts = [], sunk = []; let first = null, rails = 0, t = 0;
-        const log = (A, Bb, ia, ib) => {
-            contacts.push({ t, x: A.x + ia.n[0] * A.r, z: A.z + ia.n[1] * A.r, hv: ia.v + ib.v });
+        const snapY = () => { const f = new Float32Array(n); B.forEach((b, k) => { f[k] = b.y; }); return f; };
+        const frames = [snap()], heights = [snapY()], contacts = [], sunk = []; let first = null, rails = 0, t = 0;
+        const log = (A, Bb, ia, ib, ra) => {   // ra: A's response, with the line of centres (n) at the exact contact, τ before now
+            const ax = A.x - A.vx * ra.tau, az = A.z - A.vz * ra.tau;
+            contacts.push({ t: t - ra.tau, x: ax + ra.n[0] * A.r, z: az + ra.n[1] * A.r, hv: ia.v + ib.v, hvC: ra.hvC, a: A.n, b: Bb.n, A, Bb });
             if (!first && (A.cue || Bb.cue)) {   // the first ball the cue ball meets, read from the cue ball
-                const c = A.cue ? A : Bb, o = A.cue ? Bb : A, n_ = A.cue ? ia.n : ib.n, sp = Math.hypot(c.vx, c.vz) || 1;
+                const c = A.cue ? A : Bb, o = A.cue ? Bb : A, n_ = ra.n, sp = Math.hypot(c.vx, c.vz) || 1;
                 const sinPhi = Math.min(1, Math.abs((c.vx * n_[1] - c.vz * n_[0]) / sp));
-                first = { n: o.n, rails, overlap: 1 - sinPhi, cut: Math.asin(sinPhi) / D, ghost: [c.x, c.z] };
+                first = { n: o.n, rails, overlap: 1 - sinPhi, cut: Math.asin(sinPhi) / D, ghost: [c.x - c.vx * ra.tau, c.z - c.vz * ra.tau] };
             }
         };
-        const onSink = (b, k) => sunk.push({ n: b.n, pocket: k, t });
-        const onRail = b => { if (b.cue && !first) rails++; };
-        const moving = () => B.some(b => !b.sunk && (b.vx !== 0 || b.vz !== 0));
+        const onSink = (b, k) => sunk.push({ n: b.n, pocket: k, t }), cushions = [];
+        const onRail = b => { cushions.push({ n: b.n, t }); if (b.cue && !first) rails++; };
+        const moving = () => B.some(b => { if (b.sunk) return false; if (b.vx !== 0 || b.vz !== 0 || b.y > 0 || b.vy !== 0) return true; const u = slipOf(b); return Math.abs(u[0]) + Math.abs(u[1]) > 1e-12; });
         for (let f = 0; f < 60 * 45 && moving(); f++) {
-            for (let s = 0; s < SUB; s++) { t += FRAME / SUB; own(B, FRAME / SUB, onSink, onRail); pairs(B, log); }
-            frames.push(snap());
+            for (let s = 0; s < SUB; s++) {
+                t += FRAME / SUB; own(B, FRAME / SUB, onSink, onRail); const c0 = contacts.length; pairs(B, log);
+                for (let k = c0; k < contacts.length; k++) { const c = contacts[k];   // each ball's motion just after the contact (POL run 8)
+                    c.va = [c.A.vx, c.A.vz]; c.vb = [c.Bb.vx, c.Bb.vz]; delete c.A; delete c.Bb; }
+            }
+            frames.push(snap()); heights.push(snapY());
         }
-        return { frames, contacts, sunk, first, final: B };
+        return { frames, heights, contacts, sunk, cushions, first, final: B };
+    }
+
+    // ══ how far ahead a player sees (POL runs 8–9): each contact costs about as many levels of aim as the run before it
+    //    spanned, so on an open table a 0.1° aim error passes half a pocket by the third contact. A ball's motion is in
+    //    sight while it is at most `k` contacts from the cue: each contact puts both balls one deeper than the deeper of
+    //    the two. Returns, per ball, the time its motion passes out of sight (Infinity if never).
+    //    With k = 0 only the white is in sight, up to the first ball it meets: the ghost ball, what a player at a real table sees.
+    function sightOf(s, k) {
+        const depth = { 0: 0 }, cut = {};
+        for (const c of s.contacts) {
+            const nd = Math.max(depth[c.a] ?? 0, depth[c.b] ?? 0) + 1;
+            for (const x of [c.a, c.b]) { depth[x] = nd; if (nd > k && cut[x] == null) cut[x] = c.t; }
+        }
+        return { cut: n => cut[n] ?? Infinity, inSight: c => Math.max(depth[c.a] ?? 0, depth[c.b] ?? 0) <= k };
     }
 
     // ══ layouts ══
@@ -180,35 +347,173 @@
             B.push(ballOf(5, 4, -3), ballOf(6, -2, -3.2), ballOf(8, 6, 1.2), ballOf(9, -6, 3), ballOf(11, 3, 3.6));
             return { B, ang: Math.atan2(2.5, 5), power: 12 };
         },
+        jump() {   // the 2 by the corner pocket, the 1 straight in the way: raise the cue and jump it
+            const T = [6, 2.6], P = [LX / 2, LZ / 2], l = Math.hypot(P[0] - T[0], P[1] - T[1]), nn = [(P[0] - T[0]) / l, (P[1] - T[1]) / l];
+            const Gh = [T[0] - 2 * R * nn[0], T[1] - 2 * R * nn[1]], W = [-5, -2], a = Math.atan2(Gh[1] - W[1], Gh[0] - W[0]);
+            const B = [ballOf(0, ...W), ballOf(1, W[0] + 3.2 * Math.cos(a), W[1] + 3.2 * Math.sin(a)), ballOf(2, ...T), ballOf(9, -2, 3.5), ballOf(5, 3, -3)];
+            return { B, ang: a, power: 60, elev: 50 };
+        },
+        masse() {   // the 1 between the white and the 2: raise the cue high, strike to one side, and curve round it
+            const B = [ballOf(0, -6, 0), ballOf(1, -2.5, 0), ballOf(2, 3, 1.5), ballOf(8, 6, -3)];
+            return { B, ang: -0.18, power: 22, elev: 72, tip: { x: 0.35, y: 0 } };
+        },
     };
+
+    // ══ challenges (11 Oct, Tom: "yes", to a challenges mode): a puzzle each, needing one mechanic. Each fixes how far ahead
+    //    the preview sees, the situated horizon as the difficulty: the first are played in sight, the later past it, where
+    //    the preview stops at the contacts you could follow and the rest must be judged. A try is a shot; a missed try puts
+    //    the balls back where they were (the cue as you left it). Par is the tries a player reading the table should need,
+    //    set from how wide each one's window of aim is (the reference shot `sol`, found on this engine, and the aim around it
+    //    that also solves it). The balls cannot be moved, and the white must stay on the table unless a challenge says. ══
+    const potOf = (s, n) => s.sunk.find(p => p.n === n && p.pocket >= 0);
+    const whiteOut = s => { const p = s.sunk.find(p => p.n === 0); return p ? (p.pocket < 0 ? 'the white left the table' : 'the white went in') : null; };
+    const met = (s, a, b) => s.contacts.filter(c => (c.a === a && c.b === b) || (c.a === b && c.b === a));
+    const touched = (s, n) => s.contacts.some(c => c.a === n || c.b === n);
+    const restOf = (s, n) => s.final.find(b => b.n === n);
+    // a straight or cut shot set up: the object ball at T, its pocket P; the white L back from the ghost ball, coming in
+    // `cut` degrees off the pocket's line (signed: positive turns the white's line clockwise on the landscape table)
+    function cutSetup(T, P, cut, L) {
+        const l = Math.hypot(P[0] - T[0], P[1] - T[1]), nn = [(P[0] - T[0]) / l, (P[1] - T[1]) / l];
+        const Gh = [T[0] - 2 * R * nn[0], T[1] - 2 * R * nn[1]], c = Math.cos(cut * D), s = Math.sin(cut * D), u = [nn[0] * c - nn[1] * s, nn[0] * s + nn[1] * c];
+        return { W: [Gh[0] - L * u[0], Gh[1] - L * u[1]], T, Gh, nn };
+    }
+    const HALF = cutSetup([5, -2.5], [LX / 2, -LZ / 2], -30, 7), THIN = cutSetup([6.6, 4.1], [LX / 2, LZ / 2], 55, 5);
+    const STUN = cutSetup([5, 2.2], [LX / 2, LZ / 2], 0, 5), DRAW = cutSetup([4, -2.4], [LX / 2, -LZ / 2], 0, 3), FOLLOW = cutSetup([-3.5, 1.2], [0, LZ / 2 + 0.2], 0, 4.5);
+    const along = (S, k) => [S.Gh[0] + k * S.nn[0], S.Gh[1] + k * S.nn[1]];
+    const potted1 = s => whiteOut(s) || (!potOf(s, 1) && 'the 1 stayed up');
+    const CHALLENGES = [   // in sight first (the preview shows the whole shot), then past it
+        { id: 'half', name: '½-ball', see: 1, par: 1, text: 'pot the 1. The preview follows it: aim until its path meets the pocket (a ½-ball hit, the white covering half the 1, is a 30° cut).',
+          B: () => [ballOf(0, ...HALF.W), ballOf(1, ...HALF.T), ballOf(8, -6, 3)], at: 1, power: 12,
+          goal: potted1, sol: { a: -56.75, p: 12 } },
+        { id: 'bank', name: 'bank', see: 1, par: 2, text: 'bank the 1: it must meet a cushion before it drops.',
+          B: () => [ballOf(0, 3, -4.2), ballOf(1, 5, -1.5), ballOf(5, -6, 2.5)], at: 1, power: 12,
+          goal: s => { const w = whiteOut(s); if (w) return w; const p = potOf(s, 1); if (!p) return 'the 1 stayed up';
+              return s.cushions.some(c => c.n === 1 && c.t < p.t) ? null : 'the 1 went straight in, off no cushion'; }, sol: { a: 54.6, p: 12 } },
+        { id: 'kick', name: 'kick', see: 1, par: 2, text: 'the 1 is hidden behind a wall: send the white off a cushion first, and pot the 1.',
+          B: () => [ballOf(0, -6, -2.5), ballOf(1, 7.5, -3.6), ballOf(2, 1, -4.1), ballOf(3, 1, -3.15), ballOf(4, 1, -2.2)], at: 1, power: 12, mark: { avoid: [2, 3, 4] },
+          goal: s => whiteOut(s) || (!s.first || s.first.n !== 1 ? `the white met the ${s.first ? s.first.n : 'no ball'} first` : !s.first.rails ? 'the white met the 1 before a cushion' : !potOf(s, 1) && 'the 1 stayed up'), sol: { a: 64, p: 22 } },
+        { id: 'jump', name: 'jump', see: 1, par: 3, text: 'pot the 2 without touching the 1: raise the cue (cue ↑) and jump it.',
+          B: () => LAYOUTS.jump().B, at: 2, power: 14, mark: { avoid: [1], target: [2] },
+          goal: s => whiteOut(s) || (touched(s, 1) ? 'the 1 was touched' : !potOf(s, 2) && 'the 2 stayed up'), sol: { a: 22.2, p: 60, el: 50 } },
+        { id: 'masse', name: 'massé', see: 1, par: 3, text: 'pot the 2 without touching the 1: raise the cue high, strike the white to one side (the round inset), and curve it round.',
+          B: () => LAYOUTS.masse().B, at: 2, power: 14, mark: { avoid: [1], target: [2] },
+          goal: s => whiteOut(s) || (touched(s, 1) ? 'the 1 was touched' : !potOf(s, 2) && 'the 2 stayed up'), sol: { a: 26.7, p: 26, el: 66, tip: [-0.3, 0] } },
+        { id: 'thin', name: 'blind cut', see: 0, par: 3, text: 'pot the 1, a thin cut. You see only the white, to the ghost ball, as at a real table: judge the cut.',
+          B: () => [ballOf(0, ...THIN.W), ballOf(1, ...THIN.T)], at: 1, power: 12,
+          goal: potted1, sol: { a: 70, p: 16 } },
+        { id: 'stun', name: 'stun', see: 0, par: 3, text: 'pot the 1 and stop the white dead in the ring, where it meets the 1 (strike below the middle, with pace).', zone: [...STUN.Gh, 0.6],
+          B: () => [ballOf(0, ...STUN.W), ballOf(1, ...STUN.T)], at: 1, power: 12,
+          goal: (s, c) => potted1(s) || inZone(s, c.zone), sol: { a: 29.25, p: 20, tip: [0, -0.5] } },
+        { id: 'draw', name: 'draw', see: 0, par: 3, text: 'pot the 1 and draw the white back into the ring.', zone: [...along(DRAW, -2.4), 1],
+          B: () => [ballOf(0, ...DRAW.W), ballOf(1, ...DRAW.T)], at: 1, power: 12,
+          goal: (s, c) => potted1(s) || inZone(s, c.zone), sol: { a: -23.43, p: 23, tip: [0, -0.4] } },
+        { id: 'follow', name: 'follow', see: 0, par: 3, text: 'pot the 1 and let the white follow it into the ring (not into the pocket).', zone: [...along(FOLLOW, 2.6), 0.7],
+          B: () => [ballOf(0, ...FOLLOW.W), ballOf(1, ...FOLLOW.T)], at: 1, power: 6,
+          goal: (s, c) => potted1(s) || inZone(s, c.zone), sol: { a: 49.19, p: 12, tip: [0, 0.2] } },
+        { id: 'cannon', name: 'cannon', see: 1, par: 3, text: 'a cannon: the white meets the 1, then the 2. The second contact is past what you can see.',
+          B: () => [ballOf(0, -6, 1), ballOf(1, 0, -1.5), ballOf(2, 6, 2.8)], at: 1, power: 12, mark: { target: [2] },
+          goal: s => { const w = whiteOut(s); if (w) return w; if (!s.first || s.first.n !== 1) return 'the white did not meet the 1 first';
+              return met(s, 0, 2).some(c => c.t > met(s, 0, 1)[0].t) ? null : 'the white missed the 2'; }, sol: { a: -19.1, p: 30 } },
+        { id: 'combo', name: 'combination', see: 1, par: 3, text: 'pot the 2 off the 1: the white meets the 1, the 1 meets the 2. The 2 is past what you can see.',
+          B: () => [ballOf(0, -3, -0.5), ballOf(1, 5.2, 1.9), ballOf(2, 8.2, 3.7), ballOf(6, 6, -3)], at: 1, power: 12, mark: { target: [2] },
+          goal: s => whiteOut(s) || (!s.first || s.first.n !== 1 ? 'the white did not meet the 1 first' : !potOf(s, 2) && 'the 2 stayed up'), sol: { a: 14.65, p: 12 } },
+        { id: 'row', name: 'row of four', see: 3, par: 2, text: 'pot the 4, at the end of the row: four contacts deep, one past what you can see.',
+          B: () => LAYOUTS.line().B, at: 1, off: -8, power: 12, mark: { target: [4] },
+          goal: s => whiteOut(s) || (!potOf(s, 4) && 'the 4 stayed up'), sol: { a: 24, p: 16 } },
+        { id: 'break', name: 'the break', see: 1, par: 4, text: 'break the rack: pot one or more and keep the white on the table. Past the first contact you are on your own.',
+          B: () => LAYOUTS.rack().B, at: null, power: 14,
+          goal: s => whiteOut(s) || (!s.sunk.some(p => p.n !== 0 && p.pocket >= 0) && 'none went in'), sol: { a: 7.5, p: 50 } },
+    ];
+    function inZone(s, z) { const w = restOf(s, 0); return Math.hypot(w.x - z[0], w.z - z[1]) <= z[2] ? null : 'the white stopped outside the ring'; }
 
     // ══ state ══
     const q = new URLSearchParams(location.search);
-    let balls = [], ang = 0, power = 14, sim = null, dirty = true, anim = null, potted = 0, shots = 0, history = [], layoutName = 'rack';
+    let balls = [], ang = 0, elev = 0, tip = { x: 0, y: 0 }, chalk = q.get('chalk') !== '0', power = 14, sim = null, dirty = true, anim = null, potted = 0, shots = 0, history = [], layoutName = 'rack';
     let pathsMode = ['all', 'cue', 'off'].includes(q.get('paths')) ? q.get('paths') : 'all';
+    let see = q.get('see') === 'all' ? Infinity : q.get('see') != null && [0, 1, 2, 3, 4, 5].includes(+q.get('see')) ? +q.get('see') : 3, seeFree = see;
+    let ch = null, chStart = null, tries = 0, solvedIn = 0, lastWhy = null, bests = {};   // the challenge played, its balls as set, tries, the try that solved it, the last miss
     function setLayout(name) {
-        layoutName = LAYOUTS[name] ? name : 'rack';
-        const L = LAYOUTS[layoutName](); balls = L.B; ang = L.ang; power = L.power;
-        potted = 0; shots = 0; history = []; anim = null; dirty = true;
-        $('layout').value = layoutName; $('power').value = power;
+        layoutName = LAYOUTS[name] ? name : 'rack'; ch = null; see = seeFree;
+        const L = LAYOUTS[layoutName](); balls = L.B; ang = L.ang; power = L.power; elev = L.elev || 0; if (L.tip) tip = { ...L.tip };
+        potted = 0; shots = 0; history = []; anim = null; dirty = true; syncControls();
     }
-    function respot() {   // the white, if pocketed, back on the head spot (or the nearest free place behind it)
+    function setChallenge(id) {
+        const c = CHALLENGES.find(c => c.id === id); if (!c) return false;
+        ch = c; balls = c.B(); chStart = balls.map(b => ({ ...b }));
+        const w = balls.find(b => b.cue), t = c.at != null ? balls.find(b => b.n === c.at) : null;
+        ang = (t ? Math.atan2(t.z - w.z, t.x - w.x) : 0) + (c.off || 0) * D; power = c.power; elev = 0; tip = { x: 0, y: 0 }; chalk = true; see = c.see;
+        tries = 0; solvedIn = 0; lastWhy = null; potted = 0; shots = 0; history = []; anim = null; dirty = true; syncControls();
+        return true;
+    }
+    // the best (fewest tries) for each challenge, kept in this browser only; the page works the same without it
+    const bestOf = () => { try { return JSON.parse(localStorage.getItem('wander.trick.best') || '{}') || {}; } catch (e) { return {}; } };
+    function saveBest(id, n) { try { const b = bestOf(); if (!b[id] || n < b[id]) { b[id] = n; localStorage.setItem('wander.trick.best', JSON.stringify(b)); } } catch (e) { /* not kept */ } }
+    function syncControls() {
+        const sel = $('layout'); bests = bestOf();
+        CHALLENGES.forEach((c, i) => { const o = sel.querySelector(`option[value="ch:${c.id}"]`); if (o) o.textContent = `${i + 1} · ${c.name}${bests[c.id] ? ' ✓' : ''}`; });
+        sel.value = ch ? 'ch:' + ch.id : layoutName; $('power').value = power; $('elev').value = elev; elevLabel();
+        $('chalk').textContent = 'tip: ' + (chalk ? 'chalked' : 'bare'); seeLabel();
+        $('see').disabled = $('undo').disabled = !!ch; $('next').hidden = !ch;
+        if (typeof drawTip === 'function') drawTip();
+    }
+    function respot() {   // the white, if pocketed or off the table, back on the head spot (or the nearest free place behind it);
+        //                      a ball off the table back on the foot spot (or the nearest free place behind it)
+        for (const b of balls) if (b.off && !b.cue) {
+            for (let k = 0; k < 40; k++) { const x = LX / 4 + k * 0.3; if (free(balls, x, 0, b)) { b.x = x; b.z = 0; break; } }
+            b.sunk = false; b.off = false; b.y = 0;
+        }
         const c = balls.find(b => b.cue); if (!c.sunk) return;
         for (let k = 0; k < 40; k++) { const x = HEAD[0] - k * 0.3; if (free(balls, x, 0, c)) { c.x = x; c.z = 0; break; } }
-        c.sunk = false; c.vx = c.vz = 0;
+        c.sunk = false; c.off = false; c.y = 0; c.vx = c.vz = 0;
     }
+    // ══ the strike: the cue's tip meets the white on h + v = 1, at a point on its face chosen in its own size: fx of its
+    //    half-width to the right, fy up, as seen from behind the cue (sin φ = √(fx² + fy²), φ between the cue's line and the
+    //    line of centres). A chalked tip grips while tan φ ≤ MU_TIP: the push goes along the cue, the white leaves on the
+    //    cue's line, and the off-centre push becomes spin, (point struck × push)/(2/5·R²). Past that the tip slides off the
+    //    edge of its grip (a miscue): the push leans from the line of centres toward the cue by MU_TIP, and the white turns.
+    //    A bare tip (MU 0) pushes along the line of centres alone: no spin, the white turns by φ (sin φ = fx at the equator).
+    //    The part of the push into the cloth is taken up by the table; the part upward (a low miscue) is left out. ══
+    // The cue may be raised by `el` (massé, jump): its line then points down into the white, and fx, fy are read on the
+    // white's face as seen along it. The downward part of the push presses the white into the slate, which throws it
+    // back up at E_TABLE of it (a small press is taken up by the cloth); the white's spin turns about a tilted axis, and
+    // the cloth's grip on it bends its path (massé).
+    function strikeOf(a, fx, fy, pw, mu = chalk ? MU_TIP : 0, el = elev * D) {
+        const f2 = fx * fx + fy * fy; if (f2 > 0.9) { const k = Math.sqrt(0.9 / f2); fx *= k; fy *= k; }
+        const ce = Math.cos(el), se = Math.sin(el), ca = Math.sqrt(1 - fx * fx - fy * fy);
+        const c = [ce * Math.cos(a), -se, ce * Math.sin(a)], sv = [-Math.sin(a), 0, Math.cos(a)];
+        const up = [sv[1] * c[2] - sv[2] * c[1], sv[2] * c[0] - sv[0] * c[2], sv[0] * c[1] - sv[1] * c[0]];   // up on the face, seen along the cue
+        const n = [0, 1, 2].map(k => ca * c[k] - fx * sv[k] - fy * up[k]);          // from the tip to the white's middle
+        const grip = Math.hypot(fx, fy) <= mu * ca + 1e-12;                          // tan φ ≤ mu
+        let J;
+        if (grip) J = c.map(x => pw * x);
+        else {
+            const cn = c[0] * n[0] + c[1] * n[1] + c[2] * n[2], t = [0, 1, 2].map(k => c[k] - cn * n[k]), tl = Math.hypot(...t) || 1;
+            J = [0, 1, 2].map(k => pw * ca * (n[k] + mu * t[k] / tl));
+        }
+        const r = [0, 1, 2].map(k => R * (-ca * c[k] + fx * sv[k] + fy * up[k]));   // from the middle to the point struck
+        const w = [r[1] * J[2] - r[2] * J[1], r[2] * J[0] - r[0] * J[2], r[0] * J[1] - r[1] * J[0]].map(x => 2.5 * x / (R * R));
+        const vx = J[0], vz = J[2], dir = Math.atan2(vz, vx), vy0 = J[1] < 0 ? -J[1] * E_TABLE : J[1], vy = vy0 > 1.5 ? vy0 : 0;
+        return { dir, speed: Math.hypot(vx, vz), w, vy, grip, turn: Math.atan2(Math.sin(dir - a), Math.cos(dir - a)) };
+    }
+    const shotNow = () => { const st = strikeOf(ang, tip.x, tip.y, power); return [st.dir, st.speed, st.w, st.vy]; };
     function shoot(instant) {
         if (anim) return;
-        const s = simulate(balls, ang, power); if (!s) return;
+        const s = simulate(balls, ...shotNow()); if (!s) return;
         history.push({ balls: balls.map(b => ({ ...b })), potted, shots });
         shots++; anim = { s, t0: performance.now(), instant: !!instant };
         if (instant) finish();
     }
     function finish() {
-        const s = anim.s; balls = s.final.map(b => ({ ...b, vx: 0, vz: 0 }));
-        potted += s.sunk.filter(p => p.n !== 0).length; respot(); anim = null; dirty = true;
+        const s = anim.s;
+        if (ch) {   // a try: judged on the shot just played, then the balls go back where they were set
+            lastWhy = ch.goal(s, ch) || null; tries++;
+            if (!lastWhy && !solvedIn) { solvedIn = tries; saveBest(ch.id, tries); syncControls(); }
+            balls = chStart.map(b => ({ ...b })); anim = null; dirty = true; return;
+        }
+        balls = s.final.map(b => ({ ...b, vx: 0, vz: 0 }));
+        potted += s.sunk.filter(p => p.n !== 0 && p.pocket >= 0).length; respot(); anim = null; dirty = true;
     }
-    function undo() { if (anim || !history.length) return; const h = history.pop(); balls = h.balls; potted = h.potted; shots = h.shots; dirty = true; }
+    function undo() { if (anim || ch || !history.length) return; const h = history.pop(); balls = h.balls; potted = h.potted; shots = h.shots; dirty = true; }
 
     // ══ drawing: the table fills the screen, turned upright on a tall screen ══
     const cv = $('cv'); let view = null;
@@ -217,6 +522,7 @@
         cv.style.width = W + 'px'; cv.style.height = H + 'px';
         if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
         const top = $('hud').offsetHeight + 14, aw = W, ah = H - bar - top, tall = ah > aw;
+        $('tipview').style.bottom = (bar + 10) + 'px';
         const sc = tall ? Math.min(aw / (LZ + 2.2), ah / (LX + 2.2)) : Math.min(aw / (LX + 2.2), ah / (LZ + 2.2));
         view = { dpr, W, H, sc, tall, cx: aw / 2, cy: top + ah / 2 };
     }
@@ -239,19 +545,23 @@
         g.fillStyle = '#16513f'; g.fillRect(-LX / 2, -LZ / 2, LX, LZ);
         g.strokeStyle = 'rgba(255,255,255,0.07)'; g.lineWidth = px; g.beginPath(); g.moveTo(HEAD[0], -LZ / 2); g.lineTo(HEAD[0], LZ / 2); g.stroke();
         g.fillStyle = '#060608'; for (const [x, z] of POCKETS) { g.beginPath(); g.arc(x, z, POCK, 0, TAU); g.fill(); }
+        if (ch && ch.zone) {   // where the white must stop
+            const [x, z, r] = ch.zone; g.fillStyle = 'rgba(212,160,82,0.12)'; g.beginPath(); g.arc(x, z, r, 0, TAU); g.fill();
+            g.strokeStyle = 'rgba(212,160,82,0.85)'; g.lineWidth = 1.5 * px; g.setLineDash([5 * px, 4 * px]); g.stroke(); g.setLineDash([]);
+        }
 
         let pos = balls.map(b => b.sunk ? null : [b.x, b.z]);
         if (anim) {   // the shot plays the preview's own frames
             const fr = anim.s.frames, k = Math.min(fr.length - 1, Math.floor((performance.now() - anim.t0) / 1000 * 60));
-            pos = balls.map((b, i) => isNaN(fr[k][2 * i]) ? null : [fr[k][2 * i], fr[k][2 * i + 1]]);
-            if (k >= fr.length - 1) finish();
+            pos = balls.map((b, i) => isNaN(fr[k][2 * i]) ? null : [fr[k][2 * i], fr[k][2 * i + 1], anim.s.heights[k][i]]);
+            if (k >= fr.length - 1 && (!ch || performance.now() - anim.t0 > (fr.length - 1) / 60 * 1000 + 900)) finish();   // a try's end held a moment
         } else if (sim && pathsMode !== 'off') {
-            const fr = sim.frames;
-            balls.forEach((b, i) => {   // each ball's path to rest (or to its pocket)
+            const fr = sim.frames, sight = sightOf(sim, see);
+            balls.forEach((b, i) => {   // each ball's path to rest (or to its pocket), as far as it is in sight
                 if (b.sunk || (pathsMode === 'cue' && !b.cue)) return;
-                const x0 = fr[0][2 * i], z0 = fr[0][2 * i + 1]; let moved = false;
+                const x0 = fr[0][2 * i], z0 = fr[0][2 * i + 1], kEnd = Math.min(fr.length - 1, Math.ceil(sight.cut(b.n) * 60)); let moved = false;
                 g.beginPath(); g.moveTo(x0, z0);
-                for (let k = 1; k < fr.length; k++) {
+                for (let k = 1; k <= kEnd; k++) {
                     const x = fr[k][2 * i], z = fr[k][2 * i + 1]; if (isNaN(x)) break;
                     if (x !== x0 || z !== z0) moved = true; g.lineTo(x, z);
                 }
@@ -261,26 +571,41 @@
                 g.lineJoin = g.lineCap = 'round'; g.globalAlpha = b.cue ? 0.2 : 0.16; g.lineWidth = 2 * b.r; g.stroke();
                 g.globalAlpha = b.cue ? 1 : 0.9; g.lineWidth = (b.cue ? 2 : 2.5) * px; g.stroke();
                 g.globalAlpha = 1; g.lineJoin = 'miter'; g.lineCap = 'butt';
-                const last = fr[fr.length - 1];   // where it comes to rest: a ring
-                if (!isNaN(last[2 * i])) { g.strokeStyle = b.cue ? '#f2f0ea' : b.n === 8 ? '#9a9aa6' : b.col; g.lineWidth = 1.5 * px; g.beginPath(); g.arc(last[2 * i], last[2 * i + 1], b.r, 0, TAU); g.stroke(); }
+                const last = fr[fr.length - 1];   // where it comes to rest: a ring (if that is in sight); else a fading end
+                if (kEnd < fr.length - 1) { const e = fr[kEnd]; if (!isNaN(e[2 * i])) { g.fillStyle = 'rgba(242,240,234,0.55)'; g.font = `${0.7 * R * 2}px DM Mono, monospace`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('?', e[2 * i], e[2 * i + 1]); } }
+                else if (!isNaN(last[2 * i])) { g.strokeStyle = b.cue ? '#f2f0ea' : b.n === 8 ? '#9a9aa6' : b.col; g.lineWidth = 1.5 * px; g.beginPath(); g.arc(last[2 * i], last[2 * i + 1], b.r, 0, TAU); g.stroke(); }
             });
-            if (pathsMode === 'all') { g.fillStyle = 'rgba(255,255,255,0.75)'; for (const c of sim.contacts) { g.beginPath(); g.arc(c.x, c.z, 2.2 * px, 0, TAU); g.fill(); } }
-            for (const p of sim.sunk) { const [x, z] = POCKETS[p.pocket]; g.strokeStyle = '#d4a052'; g.lineWidth = 2 * px; g.beginPath(); g.arc(x, z, POCK + 4 * px, 0, TAU); g.stroke(); }
+            if (pathsMode === 'all') { g.fillStyle = 'rgba(255,255,255,0.75)'; for (const c of sim.contacts) { if (!sight.inSight(c)) continue; g.beginPath(); g.arc(c.x, c.z, 2.2 * px, 0, TAU); g.fill(); } }
+            for (const p of sim.sunk) { if (p.t > sight.cut(p.n) || p.pocket < 0) continue; const [x, z] = POCKETS[p.pocket]; g.strokeStyle = '#d4a052'; g.lineWidth = 2 * px; g.beginPath(); g.arc(x, z, POCK + 4 * px, 0, TAU); g.stroke(); }
             if (sim.first) { g.strokeStyle = 'rgba(242,240,234,0.85)'; g.setLineDash([5 * px, 4 * px]); g.lineWidth = 1.5 * px; g.beginPath(); g.arc(sim.first.ghost[0], sim.first.ghost[1], R, 0, TAU); g.stroke(); g.setLineDash([]); }
         }
         if (!anim) {   // the cue: a line back from the white, opposite the shot, as long as the power
             const c = balls.find(b => b.cue && !b.sunk);
-            if (c) { const L = 0.6 + power * 0.18; g.strokeStyle = '#c9a36b'; g.lineWidth = 5 * px; g.lineCap = 'round';
-                g.beginPath(); g.moveTo(c.x - Math.cos(ang) * (R + 0.3), c.z - Math.sin(ang) * (R + 0.3)); g.lineTo(c.x - Math.cos(ang) * (R + 0.3 + L), c.z - Math.sin(ang) * (R + 0.3 + L)); g.stroke(); g.lineCap = 'butt';
+            if (c) {   // the stick on the cue's line, its tip touching the white where it will strike (the tip a little back, by the power)
+                const u = [Math.cos(ang), Math.sin(ang)], rt = [-u[1], u[0]], b = tip.x * (R + R_TIP), bv = tip.y * (R + R_TIP);
+                const back = Math.sqrt(Math.max(0, (R + R_TIP) ** 2 - b * b - bv * bv)) + 0.15 + power * 0.03;
+                const T = [c.x + rt[0] * b - u[0] * back, c.z + rt[1] * b - u[1] * back], L = 3.2 * Math.cos(elev * D);
+                g.strokeStyle = '#c9a36b'; g.lineWidth = 5 * px; g.lineCap = 'round';
+                g.beginPath(); g.moveTo(T[0] - u[0] * R_TIP, T[1] - u[1] * R_TIP); g.lineTo(T[0] - u[0] * (R_TIP + L), T[1] - u[1] * (R_TIP + L)); g.stroke(); g.lineCap = 'butt';
+                g.fillStyle = '#5b7fa8'; g.beginPath(); g.arc(T[0], T[1], R_TIP, 0, TAU); g.fill();   // the tip
+                const dirW = strikeOf(ang, tip.x, tip.y, power).dir;
                 if (pathsMode === 'off') {   // the aim alone: straight to the first ball or cushion the white would meet, and the ghost ball there
-                    const st = firstStop(c, ang), ex = c.x + Math.cos(ang) * st.t, ez = c.z + Math.sin(ang) * st.t;
+                    const st = firstStop(c, dirW), ex = c.x + Math.cos(dirW) * st.t, ez = c.z + Math.sin(dirW) * st.t;
                     g.strokeStyle = '#f2f0ea'; g.lineCap = 'round'; g.globalAlpha = 0.16; g.lineWidth = 2 * R; g.beginPath(); g.moveTo(c.x, c.z); g.lineTo(ex, ez); g.stroke();
                     g.globalAlpha = 0.6; g.lineWidth = px; g.setLineDash([4 * px, 4 * px]); g.beginPath(); g.moveTo(c.x, c.z); g.lineTo(ex, ez); g.stroke();
                     g.globalAlpha = 0.85; g.lineWidth = 1.5 * px; g.setLineDash([5 * px, 4 * px]); g.beginPath(); g.arc(ex, ez, R, 0, TAU); g.stroke();
                     g.setLineDash([]); g.globalAlpha = 1; g.lineCap = 'butt';
                 } }
         }
-        balls.forEach((b, i) => { if (pos[i]) drawBall(g, b, pos[i][0], pos[i][1]); });
+        balls.forEach((b, i) => {   // a ball in the air: its shadow on the cloth, and the ball drawn larger as it rises toward the eye
+            if (!pos[i]) return; const hgt = pos[i][2] || 0;
+            if (hgt > 0.01) { g.fillStyle = 'rgba(0,0,0,0.35)'; g.beginPath(); g.arc(pos[i][0], pos[i][1], b.r, 0, TAU); g.fill(); drawBall(g, { ...b, r: b.r * (1 + hgt / (4 * R)) }, pos[i][0], pos[i][1]); }
+            else drawBall(g, b, pos[i][0], pos[i][1]);
+        });
+        if (ch && ch.mark) for (const [list, col, dash] of [[ch.mark.target, '#d4a052', []], [ch.mark.avoid, '#d0574a', [3 * px, 3 * px]]]) for (const n of list || []) {
+            const i = balls.findIndex(b => b.n === n); if (i < 0 || !pos[i]) continue;   // the ball to pot (gold), the balls not to touch (red, dashed)
+            g.strokeStyle = col; g.lineWidth = 1.5 * px; g.setLineDash(dash); g.beginPath(); g.arc(pos[i][0], pos[i][1], R + 5 * px, 0, TAU); g.stroke(); g.setLineDash([]);
+        }
         // the balls' numbers, upright on the screen
         g.setTransform(view.dpr, 0, 0, view.dpr, 0, 0);
         if (R * view.sc >= 8) { g.font = `${Math.round(R * view.sc * 0.9)}px DM Mono, monospace`; g.textAlign = 'center'; g.textBaseline = 'middle';
@@ -289,12 +614,22 @@
     }
     const frac = o => { const named = [[1, 'full'], [0.75, '¾'], [0.5, '½'], [0.25, '¼']].find(([v]) => Math.abs(o - v) < 0.03); return named ? (named[1] === 'full' ? 'full-ball' : named[1] + '-ball') : o.toFixed(2) + ' ball'; };
     function hud() {
-        let s = `potted ${potted} of 15 · shot ${shots} <span class="dim">· aim ${(((ang / D) % 360) + 360) % 360 < 0.005 ? '0.00' : ((((ang / D) % 360) + 360) % 360).toFixed(2)}° · power ${power}</span>`;
+        const stH = strikeOf(ang, tip.x, tip.y, power), deg = a => { const x = (((a / D) % 360) + 360) % 360; return x < 0.005 || x > 359.995 ? '0.00' : x.toFixed(2); };
+        const where = [tip.y ? `${Math.abs(tip.y).toFixed(2)} ${tip.y > 0 ? 'high' : 'low'}` : '', tip.x ? `${Math.abs(tip.x).toFixed(2)} ${tip.x > 0 ? 'right' : 'left'}` : ''].filter(Boolean).join(', ') || 'centre';
+        const what = !chalk ? (stH.turn ? `, the white turns ${(Math.abs(stH.turn) / D).toFixed(1)}°` : '') : !stH.grip ? `, miscue: the white turns ${(Math.abs(stH.turn) / D).toFixed(1)}°` : '';
+        const ci = ch ? CHALLENGES.indexOf(ch) : -1, best = ch ? bests[ch.id] : 0;
+        const set = `cue ${deg(ang)}°${elev ? `, raised ${elev}°` : ''} · ${chalk ? 'chalked' : 'bare'} tip ${where}${what}${stH.vy ? ' · it jumps' : ''} · power ${power}`;
+        let s = ch ? `${ch.name} <span class="dim">(${ci + 1} of ${CHALLENGES.length}) · see ${see} deep ·</span> ${solvedIn ? `tries ${tries}` : `try ${tries + 1}`} <span class="dim">· par ${ch.par}${best ? ` · best ${best}` : ''}</span>\n<span class="dim">${ch.text}\n${set}</span>`
+                   : `potted ${potted} of 15 · shot ${shots} <span class="dim">· ${set}</span>`;
         if (!anim && sim && pathsMode !== 'off') {
-            const f = sim.first, pots = sim.sunk.filter(p => p.n !== 0).map(p => p.n), scratch = sim.sunk.some(p => p.n === 0);
+            const f = sim.first, sight = sightOf(sim, see), seen = sim.sunk.filter(p => p.t <= sight.cut(p.n));
+            const pots = seen.filter(p => p.n !== 0 && p.pocket >= 0).map(p => p.n), scratch = seen.some(p => p.n === 0), hidden = sim.contacts.filter(c => !sight.inSight(c)).length;
+            const offT = seen.filter(p => p.pocket < 0).map(p => p.n === 0 ? 'the white' : 'the ' + p.n);
             s += `\n<span class="dim">${f ? `first: the ${f.n}${f.rails ? ` after ${f.rails} cushion${f.rails > 1 ? 's' : ''}` : ''}, ${frac(f.overlap)} hit (cut ${f.cut.toFixed(0)}°)` : 'no ball reached'}`
-              + ` · ${sim.contacts.length} contacts · ${pots.length ? 'pots ' + pots.join(', ') : 'pots none'}${scratch ? ' · the white goes in' : ''}</span>`;
+              + ` · ${pots.length ? 'pots ' + pots.join(', ') : hidden ? 'no pot in sight' : 'pots none'}${scratch && !offT.includes('the white') ? ' · the white goes in' : ''}${offT.length ? ` · ${offT.join(', ')} off the table` : ''}${hidden ? ` · ${hidden} contact${hidden > 1 ? 's' : ''} past sight` : ''}</span>`;
         }
+        if (ch && (solvedIn || lastWhy)) s += '\n' + (solvedIn ? `<span style="color:var(--gold)">✓ solved in ${solvedIn} ${solvedIn === 1 ? 'try' : 'tries'}${solvedIn < ch.par ? ', under par' : solvedIn === ch.par ? ', on par' : ''}</span>` : '')
+            + (lastWhy ? `${solvedIn ? ' <span class="dim">· last try:</span> ' : ''}missed: ${lastWhy}` : '');
         $('hud').innerHTML = s;
     }
 
@@ -305,7 +640,7 @@
     cv.addEventListener('pointerdown', e => {
         if (anim) { finish(); return; }   // a tap during the shot jumps to its end
         const p = worldAt(e); cv.setPointerCapture(e.pointerId);
-        const hit = balls.filter(b => !b.sunk).find(b => Math.hypot(b.x - p[0], b.z - p[1]) < b.r * 1.15);
+        const hit = ch ? null : balls.filter(b => !b.sunk).find(b => Math.hypot(b.x - p[0], b.z - p[1]) < b.r * 1.15);   // in a challenge the balls stay put
         drag = hit ? { ball: hit, dx: hit.x - p[0], dz: hit.z - p[1] } : { aim: true };
         if (!hit) aimAt(p);
     });
@@ -326,37 +661,143 @@
     window.addEventListener('keydown', e => {
         if (e.target.tagName === 'SELECT') return;
         if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { nudge((e.key === 'ArrowRight' ? 1 : -1) * (e.shiftKey ? 1 : 0.05)); e.preventDefault(); }
-        else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') { power = Math.max(2, Math.min(24, power + (e.key === 'ArrowUp' ? 0.5 : -0.5))); $('power').value = power; dirty = true; e.preventDefault(); }
+        else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') { power = Math.max(2, Math.min(60, power + (e.key === 'ArrowUp' ? 0.5 : -0.5))); $('power').value = power; dirty = true; e.preventDefault(); }
         else if (e.key === ' ' || e.key === 'Enter') { shoot(); e.preventDefault(); }
         else if (e.key === 'z' || e.key === 'Z') undo();
+        else if (e.key === '[' || e.key === ']') { setTip(tip.x + (e.key === ']' ? 0.05 : -0.05), tip.y); e.preventDefault(); }
+        else if (e.key === ',' || e.key === '.') { elev = Math.max(0, Math.min(80, elev + (e.key === '.' ? 1 : -1))); $('elev').value = elev; elevLabel(); dirty = true; e.preventDefault(); }
+        else if (e.key === '-' || e.key === '=') { setTip(tip.x, tip.y + (e.key === '=' ? 0.05 : -0.05)); e.preventDefault(); }
     });
     $('shoot').addEventListener('click', () => shoot());
     $('undo').addEventListener('click', undo);
     $('power').addEventListener('input', () => { power = +$('power').value; dirty = true; });
+    function elevLabel() { $('elevl').firstChild.textContent = `cue ↑ ${elev}° `; }
+    $('elev').addEventListener('input', () => { elev = +$('elev').value; elevLabel(); dirty = true; });
     $('paths').addEventListener('click', () => { pathsMode = { all: 'cue', cue: 'off', off: 'all' }[pathsMode]; $('paths').textContent = 'paths: ' + pathsMode; dirty = true; });
-    $('layout').addEventListener('change', () => setLayout($('layout').value));
+    for (const [i, c] of CHALLENGES.entries()) { const o = document.createElement('option'); o.value = 'ch:' + c.id; o.textContent = `${i + 1} · ${c.name}`; $('chgroup').appendChild(o); }
+    $('layout').addEventListener('change', () => { const v = $('layout').value; if (v.startsWith('ch:')) setChallenge(v.slice(3)); else setLayout(v); $('layout').blur(); });
+    $('next').addEventListener('click', () => { if (ch) setChallenge(CHALLENGES[(CHALLENGES.indexOf(ch) + 1) % CHALLENGES.length].id); });
+    function seeLabel() { $('see').textContent = 'see: ' + (see === Infinity ? 'all' : see + ' deep'); }
+    $('see').addEventListener('click', () => { if (ch) return; see = seeFree = see === Infinity ? 0 : see >= 5 ? Infinity : see + 1; seeLabel(); dirty = true; });
+    seeLabel();
+    $('chalk').textContent = 'tip: ' + (chalk ? 'chalked' : 'bare');
+    $('chalk').addEventListener('click', () => { chalk = !chalk; $('chalk').textContent = 'tip: ' + (chalk ? 'chalked' : 'bare'); dirty = true; drawTip(); });
     const fsOK = !!document.documentElement.requestFullscreen;
     if (!fsOK) $('full').style.display = 'none';
     $('full').addEventListener('click', () => { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(() => {}); });
-    window.addEventListener('resize', () => { dirty = true; });
+    window.addEventListener('resize', () => { dirty = true; drawTip(); });
+
+    // ══ the white seen from behind the cue, in its own size: drag on it to choose where the tip meets it (corners too).
+    //    The dashed ring is the chalk's grip (tan φ = MU_TIP): inside it spin, outside a miscue; the tick 2/5 up is where
+    //    the white rolls at once (the "7/10 height"); below the middle it draws back, above it follows. ══
+    const TIPMAX = 0.9;
+    function setTip(fx, fy = 0) {
+        const l = Math.hypot(fx, fy); if (l > TIPMAX) { fx *= TIPMAX / l; fy *= TIPMAX / l; }
+        tip = l < 0.03 ? { x: 0, y: 0 } : { x: Math.round(fx * 100) / 100, y: Math.round(fy * 100) / 100 }; dirty = true; drawTip();
+    }
+    function drawTip() {
+        const cvT = $('tipview'), dpr = Math.min(2, window.devicePixelRatio || 1), W = cvT.clientWidth;
+        if (cvT.width !== Math.round(W * dpr)) { cvT.width = cvT.height = Math.round(W * dpr); }
+        const g = cvT.getContext('2d'), c = W / 2, rad = W * 0.36; g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, W);
+        g.fillStyle = '#f2f0ea'; g.beginPath(); g.arc(c, c, rad, 0, TAU); g.fill();
+        g.strokeStyle = 'rgba(0,0,0,0.25)'; g.lineWidth = 1; g.beginPath(); g.moveTo(c, c - rad); g.lineTo(c, c + rad); g.stroke();
+        for (const k of [-0.5, 0.5]) { g.beginPath(); g.moveTo(c + k * rad, c + rad * 0.75); g.lineTo(c + k * rad, c + rad * 0.95); g.stroke(); }
+        g.beginPath(); g.moveTo(c - rad, c); g.lineTo(c + rad, c); g.stroke();
+        if (chalk) { const gr = rad * MU_TIP / Math.hypot(1, MU_TIP); g.setLineDash([3, 3]); g.strokeStyle = 'rgba(91,127,168,0.8)'; g.beginPath(); g.arc(c, c, gr, 0, TAU); g.stroke(); g.setLineDash([]);
+            g.strokeStyle = 'rgba(212,160,82,0.9)'; g.beginPath(); g.moveTo(c - rad * 0.18, c - 0.4 * rad); g.lineTo(c + rad * 0.18, c - 0.4 * rad); g.stroke(); }
+        g.fillStyle = '#5b7fa8'; g.beginPath(); g.arc(c + tip.x * rad, c - tip.y * rad, rad * R_TIP / R, 0, TAU); g.fill();
+    }
+    const tipAt = e => { const r = $('tipview').getBoundingClientRect(); setTip((e.clientX - r.left - r.width / 2) / (r.width * 0.36), -(e.clientY - r.top - r.height / 2) / (r.width * 0.36)); };
+    let tipDrag = false;
+    $('tipview').addEventListener('pointerdown', e => { if (anim) return; tipDrag = true; $('tipview').setPointerCapture(e.pointerId); tipAt(e); });
+    $('tipview').addEventListener('pointermove', e => { if (tipDrag) tipAt(e); });
+    $('tipview').addEventListener('pointerup', () => { tipDrag = false; }); $('tipview').addEventListener('pointercancel', () => { tipDrag = false; });
+
+    // ══ the textbook results, run on this engine (smoke test step 11) ══
+    function spinChecks() {
+        const out = {}, h = FRAME / SUB, ball = (n, x, z) => ballOf(n, x, z);
+        const run = (B, until, max = 60 * 40 * SUB) => { for (let k = 0; k < max; k++) { own(B, h); pairs(B, null); if (until(B)) return k; } return -1; };
+        const rolling = b => Math.hypot(...slipOf(b)) < 1e-9;
+        // 1. struck 2/5 of its half-width above the middle (chalked), the white rolls at once: no slip
+        const s1 = strikeOf(0, 0, 0.4, 10, MU_TIP), w1 = ball(0, 0, 0); [w1.vx, w1.vz] = [s1.speed * Math.cos(s1.dir), s1.speed * Math.sin(s1.dir)]; [w1.wx, w1.wy, w1.wz] = s1.w;
+        out.rollSlip = Math.hypot(...slipOf(w1));
+        muB = 0;   // 2–4 are the textbook's, for balls without grip on each other
+        // 2. a rolling white meets a ball full: it stops (all but (1 − e)/2), then its roll takes it on at 2/7 of the rest
+        { const W = ball(0, 0, 0), O = ball(1, 3, 0); W.vx = 10; W.wz = -10 / R; const B = [W, O]; let vc = null, before = 10;
+          run(B, b => { if (vc == null && b[1].vx !== 0) vc = before; before = b[0].vx; return vc != null && rolling(b[0]) && b[0].vx > 0; });
+          out.follow = W.vx / vc;   // at the moment it rolls again (no drag while it slides), over its speed at contact
+          out.followPred = (1 - E_BALL) / 2 + 2 / 7 * (1 - (1 - E_BALL) / 2); }
+        // 3. a white sliding with no spin (a stun) meets a ball full: it stops dead
+        { const W = ball(0, 0, 0), O = ball(1, 0.92, 0); W.vx = 10; const B = [W, O]; run(B, b => !b.some(x => x.vx || x.vz || !rolling(x)));
+          out.stun = W.x - 0.02; }
+        // 4. struck low (chalked), the white draws back after a full hit
+        { const s = strikeOf(0, 0, -0.45, 12, MU_TIP), W = ball(0, 0, 0), O = ball(1, 2, 0); W.vx = s.speed; W.wx = s.w[0]; W.wy = s.w[1]; W.wz = s.w[2];
+          const B = [W, O]; run(B, b => O.vx !== 0 && !b.some(x => (x.vx || x.vz || !rolling(x)) && !x.sunk)); out.draw = W.x; }
+        muB = MU_B;
+        // 5. right English straight into a cushion: it comes back to the shooter's right
+        { const s = strikeOf(Math.PI / 2, 0.35, 0, 8, MU_TIP), W = ball(0, 4, 2); W.vx = s.speed * Math.cos(s.dir); W.vz = s.speed * Math.sin(s.dir); [W.wx, W.wy, W.wz] = s.w;
+          const B = [W]; run(B, b => b[0].vz < 0 && b[0].z < 4); out.englishVx = W.vx; out.rightX = -1; }   // just off the rail   // aiming down the table (+z), the shooter's right is −x
+        // 6. the strike: chalked inside the grip, the white stays on the cue's line; bare, it turns by sin φ = fx; a miscue turns part way
+        out.grip = strikeOf(0, 0.3, 0.2, 10, MU_TIP); out.bare = strikeOf(0, 0.5, 0, 10, 0); out.miscue = strikeOf(0, 0.7, 0, 10, MU_TIP);
+        for (const k of ['grip', 'bare', 'miscue']) out[k] = { turn: out[k].turn / D, w: out[k].w, grip: out[k].grip };
+        // 7. throw from a cut: a stun half-ball hit throws the struck ball a little toward the white's travel (cut less than 30°)
+        { const W = ball(0, 0, 0), O = ball(1, 0.5 + 0.9 * Math.cos(30 * D), 0.9 * Math.sin(30 * D)); W.vx = 10; const B = [W, O];
+          run(B, b => b[1].vx !== 0); out.cutThrow = 30 - Math.atan2(O.vz, O.vx) / D; }
+        // 8. throw from side spin, and spin passed on: right English, full and stun; the struck ball goes a little left, spinning the other way
+        { const W = ball(0, 0, 0), O = ball(1, 1.4, 0); W.vx = 10; W.wy = 12; const B = [W, O];
+          run(B, b => b[1].vx !== 0); out.sideThrow = Math.atan2(O.vz, O.vx) / D; out.passed = O.wy; }   // shooting +x the shooter's left is −z
+        // 9. massé: the cue raised 72°, struck right of the middle: the white's path bends
+        { const s = strikeOf(0, 0.35, 0, 22, MU_TIP, 72 * D), W = ball(0, -8, 0); W.vx = s.speed * Math.cos(s.dir); W.vz = s.speed * Math.sin(s.dir); [W.wx, W.wy, W.wz] = s.w;
+          const d0 = Math.atan2(W.vz, W.vx); run([W], b => Math.hypot(b[0].vx, b[0].vz) < 0.3 * s.speed || Math.abs(b[0].z) > 4);
+          out.masseBend = Math.atan2(Math.sin(Math.atan2(W.vz, W.vx) - d0), Math.cos(Math.atan2(W.vz, W.vx) - d0)) / D; }
+        // 11. a rolling white meets a ball full: the struck ball leaves with a little backspin (the gear between them)
+        { const W = ball(0, 0, 0), O = ball(1, 3, 0); W.vx = 10; W.wz = -10 / R; const B = [W, O]; run(B, b => b[1].vx !== 0); out.backspinPassed = O.wz; }
+        // 12. jumped hard at the cushion, the white flies over it and off the table
+        { const s = strikeOf(0, 0, 0, 60, MU_TIP, 55 * D), sim = simulate([ball(0, 6, 0)], s.dir, s.speed, s.w, s.vy); out.offTable = sim.sunk.some(p => p.n === 0 && p.pocket < 0); }
+        // 13. with the balls' grip, a rolling white follows a full hit by less than the textbook 2/7 (some of its roll goes into the other ball)
+        { const W = ball(0, 0, 0), O = ball(1, 3, 0); W.vx = 10; W.wz = -10 / R; const B = [W, O]; let vc = null, before = 10;
+          run(B, b => { if (vc == null && b[1].vx !== 0) vc = before; before = b[0].vx; return vc != null && rolling(b[0]) && b[0].vx > 0; });
+          out.followGrip = W.vx / vc; }
+        // 10. jump: the cue raised 50° at full power over a ball 3.2 ahead; the white clears it and lands beyond
+        { const s = strikeOf(0, 0, 0, 60, MU_TIP, 50 * D), sim = simulate([ball(0, -6, 0), ball(1, -2.8, 0)], s.dir, s.speed, s.w, s.vy);
+          const land = sim.heights.findIndex((f, k) => k > 0 && f[0] === 0 && sim.frames[k][0] > -2.8 + 2 * R);   // down again past the ball
+          out.jumpVy = s.vy; out.jumpLand = land; out.jumpPeak = Math.max(...sim.heights.map(f => f[0]));
+          out.jumpCleared = land > 0 && !sim.contacts.some(c => (c.a === 0 || c.b === 0) && c.t < land / 60); }
+        return out;
+    }
 
     function loop() {
-        if (dirty && !anim) { sim = simulate(balls, ang, power); dirty = false; }
+        if (dirty && !anim) { sim = simulate(balls, ...shotNow()); dirty = false; }
         draw(); requestAnimationFrame(loop);
     }
     setLayout(q.get('layout') || 'rack');
+    if (q.get('challenge')) setChallenge(q.get('challenge'));
     if (q.get('a') != null) ang = +q.get('a') * D;
-    if (q.get('p') != null) { power = Math.max(2, Math.min(24, +q.get('p'))); $('power').value = power; }
+    if (q.get('el') != null) { elev = Math.max(0, Math.min(80, +q.get('el'))); $('elev').value = elev; elevLabel(); }
+    if (q.get('tip') != null) { const [tx, ty] = q.get('tip').split(',').map(Number); setTip(tx || 0, ty || 0); }
+    drawTip();
+    if (q.get('p') != null) { power = Math.max(2, Math.min(60, +q.get('p'))); $('power').value = power; }
     $('paths').textContent = 'paths: ' + pathsMode;
+    layoutView();   // the screen mapping from the start, so the hook can use it before the first frame
     requestAnimationFrame(loop);
 
     window.__trick = {
-        simulate, layouts: LAYOUTS, setLayout, image,
-        aim: deg => { ang = deg * D; dirty = true; }, power: p => { power = p; dirty = true; },
-        preview: () => simulate(balls, ang, power),
+        simulate, layouts: LAYOUTS, setLayout, image, sightOf,
+        seen: k => { const s = simulate(balls, ...shotNow()), sg = sightOf(s, k == null ? Infinity : k); return s.sunk.filter(p => p.t <= sg.cut(p.n)).map(p => p.n); },
+        aim: deg => { ang = deg * D; dirty = true; }, power: p => { power = p; dirty = true; }, tip: (fx, fy = 0) => setTip(fx, fy),
+        chalk: on => { chalk = !!on; $('chalk').textContent = 'tip: ' + (chalk ? 'chalked' : 'bare'); dirty = true; drawTip(); },
+        strikeOf: (deg, fx, fy = 0, pw = 14, mu, elDeg = 0) => { const st = strikeOf(deg * D, fx, fy, pw, mu ?? (chalk ? MU_TIP : 0), elDeg * D); return { dir: st.dir / D, speed: st.speed, w: st.w, vy: st.vy, grip: st.grip, turn: st.turn / D }; },
+        elev: deg => { elev = deg; $('elev').value = elev; elevLabel(); dirty = true; },
+        R_TIP, MU_TIP, spinChecks,
+        preview: () => simulate(balls, ...shotNow()),
         shootNow: () => { shoot(true); return balls.map(b => ({ n: b.n, x: b.x, z: b.z, sunk: b.sunk })); },
         state: () => ({ balls: balls.map(b => ({ n: b.n, x: b.x, z: b.z, sunk: b.sunk })), potted, shots, ang: ang / D, power }),
-        undo, roundTrip: (x, z) => toWorld(...toScreen(x, z)), firstStop: deg => { const c = balls.find(b => b.cue && !b.sunk), s = firstStop(c, deg * D); return { t: s.t, n: s.ball ? s.ball.n : null }; },
+        undo, roundTrip: (x, z) => toWorld(...toScreen(x, z)),
+        challenges: CHALLENGES.map(c => ({ id: c.id, name: c.name, see: c.see, par: c.par, sol: c.sol })), setChallenge,
+        check: () => ch ? ch.goal(simulate(balls, ...shotNow()), ch) || null : undefined,   // what the shot set now would do to the challenge (null: solved)
+        trial: (deg, pw, fx = 0, fy = 0, elDeg = 0) => { const st = strikeOf(deg * D, fx, fy, pw, chalk ? MU_TIP : 0, elDeg * D); return ch.goal(simulate(balls, st.dir, st.speed, st.w, st.vy), ch) || null; },
+        solve: () => { if (!ch || !ch.sol) return false; const o = ch.sol; ang = o.a * D; power = o.p; elev = o.el || 0; setTip(...(o.tip || [0, 0])); syncControls(); dirty = true; return true; },
+        challenge: () => ch && { id: ch.id, tries, solvedIn, lastWhy, see, balls: balls.map(b => ({ n: b.n, x: b.x, z: b.z, sunk: b.sunk })) }, firstStop: deg => { const c = balls.find(b => b.cue && !b.sunk), s = firstStop(c, deg * D); return { t: s.t, n: s.ball ? s.ball.n : null }; },
     };
 })();
 </script>

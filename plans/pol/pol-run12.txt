@@ -1,0 +1,19 @@
+the referee (as run 11): 4 states of 13581 balls, 240 a side, wrapped; 60 s each, 64 views of 30 × 30 sampled every 0.05 s
+  view: density 0.2358, energy per ball 24.984, contacts per ball per second 4.860; count var/mean within each view 0.462
+
+the multiscale world, with the band: the window 45 × 45, its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.0622 (-73.6%), energy per ball 9.662 (-61.3%), contacts per ball 1.313 (-73.0%), count var/mean within the run 29.640 (+6319.5%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (+0.1%), contacts per ball 4.758 (-2.1%), count var/mean within the run 0.309 (-33.0%)
+  open: the band's density 0.3077 (+30.5%), energy per ball 21.384 (-14.4%); balls put in 1976157, taken out or left 1988829; the window held 474 at the start, 157 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first; the band is the first two):
+    1.559 1.039 0.294 0.281 0.277 0.270 0.266 0.264 0.264 0.262 0.263 0.261 0.264 0.264 0.264 0.263 0.263 0.267 0.268 0.266 0.265 0.262 0.250
+  level-0 cells beside the window, density over the world's: mean 1.413, lowest 0.383, highest 2.441
+  just after a pan, the view's density 0.2265 (-3.9%), energy per ball 23.498 (-5.9%)
+  the books: over the 40 open runs, count off by at most 2.2e-11, momentum 2.0e-11, energy 2.6e-15 of itself; over the pans 7.3e-12, 2.2e-12, 3.4e-16
+  work per simulated second: 240 a side 1.029e+6 (52 cells), 3,840 a side 9.998e+5 (100 cells), -2.8%; run 11's window (no band) 1.854e+5
+
+P28′: not killed. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself, over every run and pan
+P30′: KILLED. the open view's density -73.6%, energy per ball -61.3%, contacts per ball -73.0% (each within 3%)
+P31′: KILLED. within-run var/mean: open 29.640 (+6319.5%; within 15%), closed 0.309 (-33.0%; at least 25% lower)
+P32′: not killed. the multiscale work changes by -2.8% for 256 times the balls (less than 5%)
+P33: KILLED. from 2 units inward, the density is at most +75.0% from the referee's (within 5%)

@@ -87,6 +87,17 @@ Google Fonts load from outside:
   a "signals" select reads the others late (c = 50), the late image taken as now or carried forward (`runLate`). Runs 5–6:
   a "table" select (the rack, or a field of four size levels, `rackField`) and an "ignore" select (`runField`). Panels: the table, the chosen ball's pairs as (h, v), its
   view round the turn. `?break=0..9&heavy=0`; hook `window.__pool` (`run(i, opts)`, the POL measures).
+- `pool-infinite.html`: **the infinite table** (11 Oct 2026, Tom: "we could scale it up to infinite number of balls, but then
+  zoom in to just see a small percentage of them, and only have to draw or calcualate the visible balls"; "yes"), a
+  standalone page and POL runs 11–15's engine. A gas of hard discs (no cloth, e = 1, φ = 0.15, σ = 5) in a world 2^30 cells
+  of 7.5 a side (10^19 balls): a window of balls round the reader (exact contact from inside, run 9), totals (N, P, E) in
+  world-fixed dyadic cells beyond, each held at the level where it reads at the corner from the reader (a dozen a level);
+  moving or zooming folds and unfolds cells exactly (seeded by place). The window's edge (what runs 11–15 found it needs): a
+  mirror, and a band 2 deep held at the ring of cells' chemical potential (grand-canonical keeping at the activity from
+  Henderson's equation of state, Γ = 1/s), its books charged to the ring, the mirror's pushes to the far field. The window
+  follows the view while a ball is 6 px or more, then stays; zoomed out the cells show by level. Modes by `opts.mode`:
+  edge (run 11), band (12), mirror (13), gc (14), ring (15, the page's); `opts.far` diffusion (the page's) | fluid | fluidwall
+  (runs 16–18). `?zoom=&cells=0`; hook `window.__infinite`.
 - `thin.html`, `ladder.html`, `sky.html`: **the physics correspondence** (9 Oct 2026, Tom: "create multiple demos that
   explain the physics correspndance"), standalone pages like `dial.html`. `thin.html`: the same signal, a smaller share
   (the inverse square; near, distance costs grains, far, light; the switch at one grain is the resolution limit;
@@ -103,7 +114,33 @@ Google Fonts load from outside:
   sin φ = f/2 at any distance (half-ball 30°, graze 90°: the ghost ball, h + v = 1; `__corner`). `play-trick.html` (10 Oct,
   Tom: "a fullscreen html canvas game … shows how that angle will propogate out, hitting all the other balls"): trick shots,
   full screen; the whole shot simulated ahead (pool.html's from-inside table, cloth MU 1.2) and drawn as paths, contacts
-  and pots, then played from the same frames; drag any ball, undo; `?layout=rack|scatter|line&a=&p=&paths=`; `__trick`.
+  and pots, then played from the same frames; drag any ball, undo; `?layout=rack|scatter|line&a=&p=&paths=&see=`; `__trick`.
+  Contact is exact (POL run 9: each ball finds the moment h + v = 1 in its own units); "see" is the preview's horizon,
+  each ball's motion shown while at most k contacts from the cue (3 by default, POL runs 8–9), a "?" past it.
+  Two angles, as in pool (11 Oct, Tom: "you hit the white ball first … where you want to hit the white ball, and where you
+  want the white ball to hit the first ball"): the cue's tip is a small ball (R_TIP 0.1) meeting the white on h + v = 1;
+  where it meets the white is chosen on its face (the round inset, the white seen from behind the cue, in its own size).
+  Spin (11 Oct, Tom: "lets see how far we can push it"): each ball carries its spin; it slips over the cloth (grip MU_S)
+  until it rolls, then only the drag MU acts; a chalked tip grips inside tan φ ≤ 0.6 (the white on the cue's line, the
+  off-centre push becoming spin: corners are draw/follow with side), past it a miscue; a bare tip turns the white
+  sin φ = fx, no spin; side spin grips the rails. `spinChecks` reproduces the textbook results (rolls at once 2/5 up, a
+  rolling white follows at 2/7 after a full hit, a stun stops, draw comes back, right English comes off the rail right).
+  Throw, spin passed on, massé and jump (11 Oct, Tom: "push further on the three suggestions"): balls grip each other
+  weakly (MU_B 0.06): a cut throws the struck ball ~3° toward the white's travel, side spin ~3° the other way, and passes
+  opposite side spin; the cue can be raised (`cue ↑`, `?el=`): a tilted spin axis bends the path (massé), the press into
+  the slate throws the white up (jump); off the cloth a ball falls (G) and bounces (E_TABLE), and contacts read h + v
+  with the height included, so it can pass over a ball. Layouts `jump` (over the 1 to pot the 2) and `masse`.
+  The grip acts on the whole slide, upright too (a rolling white passes backspin and follows by less than 2/7; the
+  textbook checks run with it off); a ball in the air above the cushion's nose (1.27 R) flies off the table and is
+  respotted. Tried and taken out: the cloth's grip during the slate press (at 0.195 it kinked massés instead of curving).
+  Power 2–60; `?tip=fx,fy&chalk=0&el=`; hook `strikeOf`, `tip`, `chalk`, `elev`, `spinChecks`.
+  Challenges (11 Oct, Tom: "yes", to a challenges mode): thirteen puzzles in the layout menu, one mechanic each (½-ball,
+  bank, kick, jump, massé, a blind thin cut, stun, draw, follow, cannon, combination, the row of four, the break). Each
+  fixes "see" (0 shows only the white to the ghost ball; the later ones put the pot past sight); balls can't be moved; a
+  missed try puts them back and says why; par from the window of aim around a reference shot (`sol`, found by search on
+  this engine). Best per challenge in localStorage only. `?challenge=<id>`; hook `challenges`, `setChallenge`, `trial`,
+  `solve`, `check`, `challenge`. A challenge's layout or the engine changing can break its reference shot: the smoke test
+  plays every one.
   Not in the flying page.
 - `flight.html`: **the corner in flight** (10 Oct 2026, Tom: "you know how the transition from earth to the sky in flight
   sim games is awkward? ... i wonder if its because of the corner"; "only the geometry", wireframe). Level flight at height v;
@@ -124,7 +161,7 @@ Google Fonts load from outside:
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the seven demos (sweep, dial, sphere, facing, levels, walk, pool) and the three on the physics correspondence, each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, pool, the infinite table) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -147,7 +184,7 @@ Google Fonts load from outside:
   `physics.md` (10 Oct 2026, Tom: "lets create a new physics paper and iterate there") is the working paper for the physics
   correspondences: the rules (real data or exact arithmetic, prediction first, keep the case, name the bridge), a
   dictionary from SPN's geometry to physics, the results by standing (real data, exact arithmetic, Wander's world as
-  illustration only), the kills, and a queue of tests. New physics tests are planned in `plans/`, reported there, and
+  illustration only, simulations of our own checked against a full referee), the kills, and a queue of tests. New physics tests are planned in `plans/`, reported there, and
   promoted to SPN only once ruled.
   `inverse-square.md` (10 Oct 2026, Tom: "lets give the inverse square law its own paper to iterate on") gathers the law:
   as physics holds it (derived from conservation and three dimensions; tested as a bound on the exponent), in levels
@@ -267,6 +304,37 @@ Google Fonts load from outside:
   (P15); smaller balls close only 1.2–1.6× faster per level (P16 killed), so one contact costs 5–6× less per level (P17
   killed at its first step); with their numbers, the first-order drift falls 3.70 then 6.74 (P18 killed narrowly), the
   chaos lifting the last to the game's 4.2. The 4 is the field's mix, not a law; what one may ignore is set by momentum.
+  Run 8, the prediction horizon on `play-trick.html`'s engine: a contact turns an aim error by s/(2r cos φ) (for a full hit
+  2^L − 1, L the levels the pair started apart); P19, P20 killed: the fixed-tick contact (balls overlapping up to 0.077)
+  made thin cuts cos²φ less sensitive. Run 9, contact made exact (each ball finds h + v = 1 in its own units): every
+  contact and chain to rounding (P22–P24 not killed). On an open table a contact costs 1.5–2 levels, a 0.1° aim error
+  passes half a pocket by the third contact (the preview's "see 3 deep"); inside a rack errors shrink (A ≪ 1).
+  Run 10 (11 Oct), level of detail by time to contact: a ball reads the kick a smaller one would bring from v, h and two
+  looks, (1 + e)·ρ³/(1 + ρ³)/(h·τ), ρ = v/h, τ = v/v̇ (Lee's). Matched in work, ignoring by the kick picks the same
+  contacts as ignoring by size and plays the same game (P26 killed, factor 1.00): the share's 8 per level outweighs the
+  closing speeds, so here a ball's level alone reads its momentum. τ alone is 3.4× worse at K = 2 (P27 killed at K = 3,
+  a draw in the chaos). Two looks a tick apart read the kick 8% low (P25 killed; post hoc: the estimator divided by the
+  newer reading, and the tick is a tenth of a fast pair's τ).
+  Runs 11–15 (11 Oct, Tom: "scale it up to infinite number of balls … only calcualate the visible balls"; `pool-infinite.html`):
+  a window of balls in a world of totals by dyadic level against a referee computing all 13,581 (a hard-disc gas). The
+  referee is kinetic theory's gas (Enskog's 4.864 contacts per ball per second to 0.1%, once the 2D cross-section is two
+  diameters: P29 killed by my derivation; Rayleigh to 4e-4; S(0) 0.526 against Henderson's 0.530). The work is the
+  window's (+3.7%, −2.8%, +3.8%, +23.7% in the runaway, −1.6% for 256× the balls). The boundary took five runs: the open
+  edge drained (run 11: flux without contacts, the virial push missing), an open band drained outward (12), a band held at
+  a count was underfilled against its mirror (13: −6%), pushes stored beside the window ran away (14), and run 15 (mirror,
+  band at the ring's chemical potential, pushes booked in the far field) passes all five: the view's density, warmth and
+  contacts within 0.3%, its count's fluctuation within 12% of the referee's (a closed window's 33% less), books to rounding.
+  Runs 16–18, a pressure pulse from 60 units away (a hot disc): the referee carries it as sound at the hard-disc gas's
+  c = 9.76 (Henderson; half-maximum at 3.9 s, P34 not killed); diffusion cannot (nothing above the noise); a fluid far
+  field (Euler, hard-disc pressure, Rusanov) first never ran (run 16: the setting named `far` was overwritten by run 15's
+  list of coarsest cells, now `farCells`), then filled the window because its wall pushed nothing (run 17), then, with
+  the wall's push p·n̂ (run 18), kept the window steady but lost the pulse (22% of the referee's peak, in the noise): the
+  disc was averaged into a 60-unit level-3 cell before it moved. Level of detail by distance is right for what stays put,
+  wrong for what travels toward the reader: a signal must be held at its own size until it arrives (refinement by the
+  signal; untested). Modes: `opts.far` diffusion (default) | fluid | fluidwall.
+  Written up (11 Oct) as a reading, unruled: SPN §3.3, "Level of detail tried in a simulation" (size reads momentum where
+  the levels span more than the speeds; a reader that holds a world folds by distance only what arrives as totals, and
+  holds what is coming at its own size), SPN §14, "From the pool runs"; `physics.md` §2.2, §2.4, §3; `v-and-h.md` 426–429 (§8p).
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
@@ -398,7 +466,11 @@ In short:
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
   11. **Gameplay sketches:** each page's one mechanic through its hook (dimming, stages, the ladder's locks and light, the
-      sky's count read back as time, a half-ball cut 30° near and far; trick shots: the preview is the shot, contacts on h + v = 1).
+      sky's count read back as time, a half-ball cut 30° near and far; trick shots: the preview is the shot, contacts exactly on
+      h + v = 1 (but for a few in clusters, within 1%), the row of four's pot out of sight at 3 deep and in sight at 4, a bare tip
+      turning the white 30° at f = ½, spin's textbook results, throw both ways, spin passed on, a massé bending, a jump clearing a ball,
+      backspin passed and follow lessened by the grip, a ball jumped off the table; every challenge missed as set up and
+      solved by its reference shot, a missed try put back and a solved one counted).
   12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
   13. **levels.html:** by default the reader's lay, every level past the corner ln 2 wide, s = 8 at 1 + ln 8, six drawn; at
       `?lay=inplace` the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
@@ -411,6 +483,8 @@ In short:
       carrying the image forward beats taking it as now.
   16. **flight.html:** the corner keeps its row from 50 m to 1.6 km; by v/h the level edges keep theirs, the first edge the corner,
       8 lines a level; by metres the edges slide; a post is recovered exactly with no step, within 10% at 2v at a pixel step, worse at 8v, a bearing only at 400v; the lay true to the corner, each doubling past it ln 2 wide; the strip folded holds 0.1v–100v, h/v throughout runs off the top, v/h off the bottom.
+  17. **pool-infinite.html:** the books balance through 2 s and a pan, the window holds the world's density, the work for a world
+      16 times wider within 10%, and zoomed out the window stops growing.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

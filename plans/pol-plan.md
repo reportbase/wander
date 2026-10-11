@@ -609,3 +609,1114 @@ P18: KILLED. D falls by 3.70 (K 1 to 2; band [2.54, 5.72]) and 6.74 (K 2 to 3; b
 - **For a situated reader:** what it may ignore is set by the momentum the smaller things bring, not by their size
   alone. A small thing moving fast costs as much to ignore as a larger one moving slowly. Level of detail by size alone
   is right only where the smaller things are no faster.
+
+### Run 8 (10 October 2026): prediction, written before it ran (Tom: "yes", to a prediction horizon for the trick-shot game)
+
+`play-trick.html` previews a whole shot, but a player aims with some error, and every contact makes the outcome more
+sensitive to the aim. This run measures, contact by contact, how many levels of aim precision a contact costs. The answer
+sets how far ahead a situated player can see: the preview's level of detail, counted in contacts. The engine is the
+game's (`play-trick.html`, its `simulate` through the hook): pool.html's table from inside, cloth slowing 1.2. Evidence
+about the geometry and the computation, not the world.
+
+Keep the case. s (the run from a ball's start to its contact), r (the radius) and the angles are amounts. The pair's
+reading h + v = 2r/|SO|, from the striking ball's start S to the object's centre O, is a fill level. No bridge is needed:
+the result is a ratio of angles.
+
+**Worked out before writing this (and a correction).** In conversation I said a contact costs about log₂(2d/r) levels,
+3 to 5 here. Derived properly it is smaller.
+- The object ball leaves along the line of centres at contact, whatever the restitution: it is not reflected. Its
+  direction is the ghost ball's (the striker at contact) direction to its centre, on a circle of radius 2r.
+- Turn the striker's line by δψ about its start S. The object's offset from the line changes by (s + 2r·cos φ)·δψ, so
+  the cut changes by that over 2r·cos φ. The object's direction is the line's angle plus the cut, so it turns by
+  **A = s/(2r·cos φ)** times δψ (in magnitude; the +1 of the line's own turn cancels).
+- Read from S, with h + v = 2r/|SO| and α the small angle between the line and SO:
+  A = cos α/((h + v)·cos φ) − 1. For a full hit, **A = 2^L − 1, where L = log₂(1/(h + v)) is how many levels the pair
+  starts from contact** (run 1's P5 count). The aim error grows by about as many levels as the run spanned.
+- A ball struck from rest starts with no error in its place, only in its direction, so in a chain where each ball meets
+  the next from rest, the factors multiply exactly, to first order: the chain loses Σ log₂ A_k levels.
+- On this table, with s from 1 to 6 and 2r = 0.9, a full hit loses about 0.2 to 2.7 levels; a thin cut (cos φ small)
+  loses more; a run shorter than 2r·cos φ gains (A < 1).
+
+The engine detects contact a substep late, with the balls overlapping by up to a substep's travel (about 0.06 at speed
+14, 7% of 2r). That moves the effective ghost ball and the cut a little, so the predictions allow 15%.
+
+**The chains.** Seeded, 60 chains: the white and three object balls, each struck from rest by the one before, runs s
+drawn from 1.2 to 5, cuts from −45° to 45°, power 20, nothing else on the table. A chain is used only if its first three
+contacts are exactly white–1, 1–2, 2–3, in that order, and all four balls stay on the table. Each is run twice, the second
+with the aim turned by δ = 1e-7 rad (and once by 1e-8, to check the response is linear). A ball's direction is read from
+its frames between its start and its next contact.
+
+- **P19 (one contact).** For at least 90% of the contacts, the measured factor |e_k/e_(k−1)| is within 15% of
+  s_k/(2r·cos φ_k), from the chain's planned geometry (e_0 = δ, e_k the direction error of ball k). *Killed* if fewer.
+- **P20 (the chain).** For at least 90% of the chains, the levels lost over the chain, log₂(e_3/δ), equal Σ log₂ A_k
+  within 0.3 levels. *Killed* if fewer.
+- **P21 (linear).** The factors at δ = 1e-8 equal those at 1e-7 within 1% for at least 95% of contacts. *Killed* if fewer.
+- *Measured, not predicted:* levels lost per contact in the game's own layouts (the rack, scattered), and the depth in
+  contacts at which an aim error of 0.1° grows past 3.6° (half a pocket's width seen from 8 units away): the horizon the
+  preview's fade will use.
+
+Run 8 output (`node plans/pol/pol8.mjs`, in `plans/pol/pol-run8.txt`):
+
+```
+60 chains (white and three, each struck from rest by the one before), power 20, aim turned by 1e-7 and 1e-8
+  one contact: measured/predicted factor, median 0.9278, 5%–95% 0.208–1.324; within 15%: 92 of 180
+  the chain: levels lost minus predicted, median -0.499, largest 10.162; within 0.3 levels: 19 of 60
+P19: KILLED. 92 of 180 contacts within 15% of s/(2r cos φ) (90% needed)
+P20: KILLED. 19 of 60 chains within 0.3 levels of the sum (90% needed)
+P21: not killed. 180 of 180 factors the same at 1e-8 within 1% (95% needed)
+
+measured, the game's layouts (scattered ×12, rack ×6, random aims, power 14): levels of aim error at each ball's first contact, by depth
+  depth 1:  30 balls, median 3.32 levels
+  depth 2:  40 balls, median 2.37 levels
+  depth 3:  32 balls, median 1.54 levels
+  depth 4:  33 balls, median -3.60 levels
+  depth 5:  28 balls, median -9.64 levels
+  a 0.1° aim error passes 3.6° (5.17 levels) at depth > the deepest measured
+```
+
+- **P19 killed.** Only 92 of 180 contacts are within 15% of s/(2r·cos φ). The measured factor is 0.93 of it at the median,
+  but spreads from 0.21 to 1.32 (5% to 95%).
+- **P20 killed.** Only 19 of 60 chains are within 0.3 levels of the sum; the median chain loses half a level less than
+  predicted, the worst ten levels less.
+- **P21 not killed.** Every factor is the same at δ = 1e-8 as at 1e-7, within 1%: the response is linear. The kills are
+  not noise.
+- *Measured:* in the game's own layouts, a ball's aim error at its first contact falls with depth after depth 3 (3.3, 2.4,
+  1.5, then −3.6 and −9.6 levels at depths 4 and 5). Deep balls are mostly the rack's, struck from a few hundredths away,
+  where s < 2r·cos φ and a contact gains levels (A < 1). The 3.6° horizon was not reached in five contacts.
+
+## Reading of run 8 (not ruled)
+
+- **The engine is not the geometry at thin cuts.** Checked after the run (`plans/pol/pol8-posthoc.mjs`, output in
+  `pol-run8-posthoc.txt`): at near-full hits (|φ| < 15°) the measured factor is 1.03 of s/(2r·cos φ) at the median; at
+  thin cuts (|φ| > 30°) 0.67, about cos²φ. The engine finds contact at a fixed tick, with the balls already overlapping
+  (by 0.034 at the median, up to 0.077, against 2r = 0.9). The struck ball leaves along the line of centres *as found*,
+  with the striker a fixed distance down its line. Turning the aim then turns that line by D·cos φ/ρ (ρ the overlapped
+  distance between centres), not s/(2r·cos φ): a factor cos²φ less. This accounts for the median and for the thin cuts.
+  It is not the whole story: only 67 of 180 contacts match D·cos φ/ρ within 1% (111 within 15%).
+- **So the game's thin cuts are off by up to a few degrees at full power.** The preview and the shot agree (one engine),
+  but a ½-ball hit at power 20 can leave a degree or more from where exact contact sends it. The fixed tick also makes
+  the game less chaotic than the geometry at thin cuts.
+- **The fix is the situated one.** Find the moment the pair's reading is exactly h + v = 1 (each ball can, in its own
+  units, from the other's direction, its reading and its told motion), respond there, and carry on. That is a new run,
+  with its own predictions.
+
+### Run 9 (10 October 2026): prediction, written before it ran
+
+Run 8 again, after making the game's contact exact, in the situated way. When a pair's reading has passed h + v = 1
+within a tick, each ball works out, in its own units, how long ago the reading was exactly 1. It uses only what it has:
+the other's direction n and the pair's readings h and v (the other's place relative to it, n/h, in its own radii), and
+the other's told motion converted by v/h. It solves |n/h − w·τ| = 1 + v/h for τ ≥ 0 (w the relative motion), takes the
+line of centres at that moment, responds along it, and corrects its own place by its change of motion times τ (it has
+moved with the new motion since then). A cushion likewise: its image's reading was exactly ½ a time τ = (r − gap)/(its
+speed toward the cushion) ago. Run 8's chains, seeds and measure are kept, and `play-trick.html` is changed only there.
+
+Worked out before writing this: with contact exact, each struck ball leaves from rest along the true line of centres, so
+a chain follows its planned geometry to rounding, and the first-order factor is exactly s/(2r·cos φ).
+
+- **P22 (one contact).** At least 95% of the 180 contacts are within 2% of s/(2r·cos φ). *Killed* if fewer.
+- **P23 (the chain).** At least 95% of the 60 chains lose Σ log₂ A_k levels within 0.05. *Killed* if fewer.
+- **P24 (contact on the line).** At every corrected contact the pair's reading is h + v = 1 within 1e-9. *Killed* if
+  any is not.
+- *Kept from the game's checks:* the row of four still pots the 4, and the rack's first contact is still a full-ball hit.
+- *Measured, not predicted:* in the game's layouts, levels lost by depth, and the depth at which a 0.1° aim error passes
+  3.6°: the horizon for the preview's fade.
+
+Run 9 output (`node plans/pol/pol9.mjs`, in `plans/pol/pol-run9.txt`; the measured part split by layout before recording):
+
+```
+60 chains (white and three, each struck from rest by the one before), power 20, aim turned by 1e-7 and 1e-8
+  one contact: measured/predicted factor, median 1.0000, 5%–95% 1.000–1.000; within 2%: 180 of 180
+  the chain: levels lost minus predicted, median 0.000, largest 0.000; within 0.05 levels: 60 of 60
+P22: not killed. 180 of 180 contacts within 2% of s/(2r cos φ) (95% needed)
+P23: not killed. 60 of 60 chains within 0.05 levels of the sum (95% needed)
+P24: not killed. 209 contacts in the layouts, 0 set down overlapping (the old push); the rest on h + v = 1 to 2.2e-16
+  (linear, as run 8's P21: 180 of 180 factors the same at 1e-8 within 1%; the row of four pots 4; the rack's first contact full-ball: true)
+
+measured, the game's layouts (scattered ×12, rack ×6, random aims, power 14): levels of aim error at each ball's first contact, by depth
+  scatter:
+    depth 1:  26 balls, median 3.06 levels
+    depth 2:  24 balls, median 4.62 levels
+    depth 3:  18 balls, median 6.81 levels
+    depth 4:  10 balls, median 8.60 levels
+    depth 5:   4 balls, median 8.35 levels
+    depth 6:   1 balls, median 12.52 levels
+    a 0.1° aim error passes 3.6° (5.17 levels) at depth 3
+  rack:
+    depth 1:   6 balls, median 3.35 levels
+    depth 2:  12 balls, median 1.13 levels
+    depth 3:  16 balls, median -6.94 levels
+    depth 4:  21 balls, median -8.43 levels
+    depth 5:  25 balls, median -15.09 levels
+    depth 6:   2 balls, median -17.89 levels
+    a 0.1° aim error passes 3.6° (5.17 levels) at depth > the deepest measured
+```
+
+- **P22 not killed.** All 180 contacts give s/(2r·cos φ) to four figures (5% to 95%: 1.000 to 1.000).
+- **P23 not killed.** All 60 chains lose Σ log₂ A_k levels to three decimals.
+- **P24 not killed.** Every contact in the layouts is on h + v = 1 to 2.2e-16; none was set down overlapping.
+- The game's own checks hold: the row of four pots the 4, the rack's first contact is a full-ball hit.
+- *Measured:*
+  - open table (scattered): a ball's aim error grows about 1.5 to 2 levels a contact (3.1, 4.6, 6.8, 8.6 levels at
+    depths 1 to 4). A 0.1° aim error passes 3.6° at depth 3.
+  - the rack: past the first two contacts, errors shrink (to −7 and −15 levels at depths 3 and 5). Balls in a cluster
+    are struck from a few hundredths away, where s ≪ 2r·cos φ and A ≪ 1.
+
+## Reading of run 9 (not ruled)
+
+- **A contact costs as many levels as the run before it spanned.** With contact exact, the sensitivity is the geometry's,
+  s/(2r·cos φ), to rounding; for a full hit 2^L − 1, L the levels the pair started from contact (h + v read from the
+  striker's start). Each contact turns the levels a pair was apart into levels of aim lost.
+- **So a situated player sees about three contacts deep on an open table**, with a tenth of a degree to spare at the
+  aim and a half-pocket at the end. Past that the outcome is not theirs to see. That is the preview's horizon.
+- **Clusters forgive.** Inside a rack the runs are shorter than the balls, and a contact gains levels: the cradle passes
+  the hit along and forgets the aim. The break's chaos comes from the open table after it, not from the rack itself.
+- **The fixed tick hid this.** Run 8's engine was cos²φ less sensitive at thin cuts. Finding the moment h + v = 1,
+  each ball in its own units, makes the game's physics the geometry's.
+
+### Run 10 (11 October 2026): prediction, written before it ran (Tom: "proceed", to level of detail by time to contact)
+
+Run 7 found that what a larger ball may ignore is set by the momentum a smaller one brings, not by its size alone. This
+run asks whether a ball can choose what to ignore from its own readings by that momentum, and whether that beats choosing
+by size for the same work saved.
+
+**Worked out before writing this (keep the case).** a reads b at v = r_b/d and is told b's reading of it, h = r_a/d.
+- The size ratio is the reading v/h = r_b/r_a: one material, so b's share of the pair's mass is
+  ρ³/(1 + ρ³), with ρ = v/h (run 1's bridge, a known kind).
+- **The looming rate is a reading too.** As b nears, v grows: v̇/v = −ḋ/d. Its inverse, τ = v/v̇, is Lee's time to
+  contact (the time until d would reach 0 at the present closing speed), an amount in seconds on the one clock (the
+  tick, unsituated and named since run 2). a needs no distance and no speed to read it, only two looks at v.
+- **So is the kick.** The closing speed in a's own radii per second is −ḋ/r_a = (v̇/v)·(d/r_a) = 1/(h·τ). The change of
+  speed a would make (run 7, P15) is therefore, in a's own radii per second,
+
+  kick = (1 + e) · ρ³/(1 + ρ³) · 1/(h·τ).
+
+  Everything in it is a reading (v, h, and v's rate) and the one material. Size alone keeps only the factor ρ³/(1 + ρ³).
+  τ alone keeps only the factor 1/τ. The kick keeps both.
+- No ball may ignore its equal or a larger ball: an equal ball's kick is half the closing speed, and two equals each
+  ignoring the other would pass through each other. So every rule here ignores only a ball read as smaller, v < h.
+
+**The rules.** Run 6's five fields, seeds and measure (116 balls in four size levels, the white struck at 14, the level-0
+balls' largest position error against the referee at 1 s, median over the fields). Each ball decides for itself, at
+each contact response, from its own readings:
+- **S(K), size:** ignore a ball read K or more levels smaller, v/h ≤ 2^(−K) (run 6's rule; K = 2, 3).
+- **M(ε), the kick:** ignore a smaller ball when its kick, read as above from two looks, is below ε (in the reader's own
+  radii per second).
+- **T(τ\*), time alone:** ignore a smaller ball when its τ, read from two looks, is above τ\*.
+
+The looming rate is read from the reader's last two looks at v, one tick apart: v̇ ≈ (v_now − v_then)/tick.
+
+**Work matched.** At K = 1, S already ignores every smaller ball, so there is nothing for M or T to choose differently;
+the comparison is at K = 2 and 3. For each K, ε and τ\* are set (by bisection, the same value in all five fields) so that
+M and T skip as many contact responses in total over the five fields as S(K), within 2% or 2 responses,
+whichever is larger. If no value gets that close, the comparison at that K is *undecided*, not passed.
+
+- **P25 (the kick is read from two looks).** In the true game (nothing ignored), at the contact responses of a ball to a
+  smaller one, the kick read from v, h and two looks is within 10% of the response it would skip, at 90% or more of them.
+  *Killed* if fewer. The 10% allows for the tick: near contact the pair's distance curves within a tick when the pass is
+  oblique, about 6% at the field's speeds (u·tick/d ≈ 10 × 1/240 / 0.7), and a contact just after another sees the old
+  approach.
+- **P26 (the kick beats size).** At K = 2 and at K = 3, with the work matched, the level-0 error under M is lower than
+  under S(K) by a factor of at least 1.5. *Killed* if either factor is below 1.5. Reasoning: S skips every contact with a
+  far smaller ball, fast and head-on ones too; M skips the smallest kicks wherever they are, glancing and slow ones of
+  nearer sizes included, so the summed skipped kick, run 7's first-order cost, should be well below S's.
+- **P27 (time alone is not enough).** At K = 2 and 3, with the work matched, the level-0 error under T is higher than under
+  M. *Killed* if T's is lower or equal at either. Reasoning: run 7's per-contact cost falls by 5 to 6 per level of size
+  but its closing speed only 1.2 to 1.6; the share, which τ leaves out, is most of the cost.
+- *Measured, not predicted:* T against S; the summed skipped kick of the level-0 balls by 1 s for each rule (the
+  first-order cost); how many of M's skips are of balls 1, 2 and 3 levels smaller.
+
+Run 10 output (`node plans/pol/pol10.mjs`, in `plans/pol/pol-run10.txt`):
+
+```
+P25: the kick read from v, h and two looks over the response it would skip, 199 responses to smaller balls, five fields, 1 s, nothing ignored
+  ratio: median 0.9194, 5% 0.5739, 95% 1.1792; within 10%: 101 of 199 (50.8%)
+P25: KILLED. within 10% at 50.8% of responses (90% needed)
+
+fields of 116 balls, white struck at 14; level-0 error against the referee at 1 s (median of five); skips are contact responses, total over the five fields
+K = 1
+  S(1), size             skipped  250 of  684   E level 0 2.32e+0  (all levels 2.32e+0, 2.06e+0, 8.53e+0, sunk differs)   level-0 skipped kick 5.71e+0   skips by levels smaller 1/2/3: 135/62/53
+    per field, level 0: S 2.32e+0, 5.07e+0, 3.22e+0, 2.08e+0, 6.09e-1
+K = 2
+  S(2), size             skipped  103 of  612   E level 0 6.09e-1  (all levels 6.09e-1, 1.56e+0, 1.44e+1, sunk differs)   level-0 skipped kick 1.46e+0   skips by levels smaller 1/2/3: 0/58/45
+  M(ε = 2.01), kick      skipped  102 of  606   E level 0 6.09e-1  (all levels 6.09e-1, 1.69e+0, 1.44e+1, sunk differs)   level-0 skipped kick 2.10e+0   skips by levels smaller 1/2/3: 5/51/46
+  T(τ* = 0.0317 s), τ    skipped  103 of  622   E level 0 2.10e+0  (all levels 2.10e+0, 2.32e+0, sunk differs, sunk differs)   level-0 skipped kick 4.61e+0   skips by levels smaller 1/2/3: 26/38/39
+    per field, level 0: S 2.17e-1, 1.95e-1, 1.15e+0, 8.22e-1, 6.09e-1
+                        M 2.17e-1, 1.95e-1, 1.15e+0, 8.22e-1, 6.09e-1
+                        T 2.10e+0, 4.09e+0, 3.25e+0, 2.07e+0, 5.14e-1
+K = 3
+  S(3), size             skipped   38 of  576   E level 0 1.44e-1  (all levels 1.44e-1, 7.95e-1, 5.98e+0, 8.86e+0)   level-0 skipped kick 3.60e-1   skips by levels smaller 1/2/3: 0/0/38
+  M(ε = 0.191), kick     skipped   38 of  576   E level 0 1.44e-1  (all levels 1.44e-1, 7.95e-1, 5.98e+0, 8.86e+0)   level-0 skipped kick 3.34e-1   skips by levels smaller 1/2/3: 1/0/37
+  T(τ* = 0.0712 s), τ    skipped   38 of  536   E level 0 1.40e-1  (all levels 1.40e-1, 5.65e-1, 1.87e+0, 3.90e+0)   level-0 skipped kick 6.23e-1   skips by levels smaller 1/2/3: 18/9/11
+    per field, level 0: S 1.09e-1, 1.27e-1, 1.00e+0, 2.38e-1, 1.44e-1
+                        M 1.09e-1, 1.27e-1, 9.90e-1, 2.38e-1, 1.44e-1
+                        T 5.60e-1, 1.09e-1, 2.83e+0, 1.40e-1, 2.89e-2
+P26 at K = 2: KILLED. S/M level-0 error 1.00 (at least 1.5)
+P27 at K = 2: not killed. T 2.10e+0 against M 6.09e-1 (T higher)
+P26 at K = 3: KILLED. S/M level-0 error 1.00 (at least 1.5)
+P27 at K = 3: KILLED. T 1.40e-1 against M 1.44e-1 (T higher)
+```
+
+- **S reproduces run 6 exactly** (250, 103 and 38 responses skipped; level-0 errors 2.32, 0.609, 0.144, field by field).
+  The rule hook changes nothing when the rule is size.
+- **P25 killed.** The kick read from v, h and two looks is within 10% of the response at 50.8% of the 199 responses to
+  smaller balls (median ratio 0.92, 5% to 95%: 0.57 to 1.18), not the 90% predicted.
+- **P26 killed at both K.** With the work matched (102 against 103, 38 against 38), the kick rule's level-0 error equals
+  size's: the factor is 1.00 at K = 2 and at K = 3. The kick rule skipped almost the same contacts: by levels smaller
+  1/2/3, 5/51/46 against size's 0/58/45 at K = 2, and 1/0/37 against 0/0/38 at K = 3. Field by field the level-0 errors
+  are the same to three figures (one field at K = 3: 0.990 against 1.00).
+- **P27 not killed at K = 2, killed at K = 3.** At K = 2, τ alone leaves 3.4 times the error (2.10 against 0.609). At
+  K = 3 its median is a little lower (0.140 against 0.144), and its fields scatter widely (0.029 to 2.83, against the kick
+  rule's 0.109 to 0.990).
+- *Measured:*
+  - τ alone against size: 3.4 times worse at K = 2, the same at K = 3 (0.140 against 0.144).
+  - The level-0 balls' summed skipped kick (median of the fields): at K = 2 size 1.46, the kick rule 2.10, τ alone 4.61;
+    at K = 3 0.360, 0.334 and 0.623. A skipped response repeats while a pair stays overlapping, so this overcounts for
+    every rule alike.
+  - τ alone skips across the levels (26/38/39 at K = 2, 18/9/11 at K = 3): it ignores slow balls of nearer size.
+
+**After the run (post hoc, not a test): why P25 failed.** `node plans/pol/pol10-posthoc.mjs`, in
+`plans/pol/pol-run10-posthoc.txt`:
+
+```
+the kick read from two looks over the response, five fields, 1 s, nothing ignored (post hoc)
+  run 10 rate, (v1 − v0)/(tick·v1)   n 199  median 0.9194  5% 0.5739  95% 1.1792  within 10% 50.8%
+  log rate, ln(v1/v0)/tick           n 199  median 0.9690  5% 0.7491  95% 1.2610  within 10% 69.3%
+    log rate, near head-on (cos > 0.9) n  65  median 0.9320  5% 0.7253  95% 0.9827  within 10% 60.0%
+    log rate, oblique (cos ≤ 0.9)    n 134  median 0.9900  5% 0.8575  95% 1.3545  within 10% 73.9%
+```
+
+The rate in run 10 divided the change by the newer reading, (v_now − v_then)/(tick·v_now). That reads low by about
+u·tick/d, the share of the distance closed in one tick: 7% at u = 10 and d = 0.6, more for the white's fast hits. A
+difference of logs, ln(v_now/v_then)/tick, halves the bias (median 0.97, 69% within 10%). What is left is the tick itself:
+near head-on, fast pairs still read 7% low, because one tick is about a tenth of their τ (τ ≈ d/u ≈ 0.04 s, the tick
+1/240 s). Oblique passes scatter high, up to +35%, as P25's reasoning allowed. Neither was predicted, so P25 stays killed.
+
+## Reading of run 10 (not ruled)
+
+- **In this field, size already reads the kick.** The share falls by exactly ρ³/(1 + ρ³), about 8 per level. Closing
+  speeds rise only 1.2 to 1.6 per level (run 7), and their spread within a level rarely bridges the 8: the kick rule
+  swapped only 5 of 103 skips across a level. So ordering contacts by the kick is nearly ordering them by size. Matched in work, the two rules chose the same contacts and played the same game. Run 7's
+  principle stands (what one may ignore is the momentum it brings), but where the levels span far more than the speeds,
+  a ball's level alone is a sufficient reading of it. That supports SPN's "a thing's level is set by its size" as a rule
+  of attention, here. A field where small balls are much faster than their level suggests would tell the rules apart.
+  That is untested.
+- **Time alone is the wrong reading.** τ says when, not how much. Ignoring by it skips slow balls of nearer size, whose
+  share is large: 3.4 times the error at K = 2. At K = 3 the two are a draw inside the field's chaos.
+- **Reading τ needs looks closer together than τ.** Two looks one tick apart read the fast pairs' kick several percent
+  low, because the tick is a tenth of their time to contact. Time has a grain, as space does: run 4 found the same for
+  lateness, which mattered once it passed about one tick. A reader that ranges by looming must look more often than its
+  nearest τ.
+
+### Run 11 (11 October 2026): prediction, written before it ran (Tom: "we could scale it up to infinite number of balls, but then zoom in to just see a small percentage of them, and only have to draw or calcualate the visible balls"; "yes")
+
+Can a reader hold a world of any size and compute only what it can see? Runs 5–7 and 10 found that a reader may ignore
+balls far below its own size, and that a ball's level alone tells it which. Distance trades one for one with size in
+levels (run 5), so the same rule says: hold far balls as totals, not as balls. This run builds that and tests it against
+a referee that computes every ball.
+
+**The system (keep the case).** To keep a world alive without a driver we would have to choose, the table loses
+nothing: no cloth, no cushions, and contacts perfectly elastic (e = 1). The balls are then a gas of hard discs, whose
+equal-time statistics kinetic theory gives. The amounts: radius r = 0.45, area fraction φ = 0.15 (so the number density
+is n = φ/(πr²) = 0.2358 balls per unit area), each velocity component spread with σ = 5 units a second, mass 1, tick
+1/240 s. Contact is read from inside as before: each ball reads the other's v = r/d and is told h = r/d; equal balls touch
+at h = v = ½, the corner, found exactly within the tick (run 9's method).
+
+**The multiscale world.** The world is cut into world-fixed cells in dyadic levels: level 0 cells are 7.5 units wide,
+level k cells 7.5·2^k. Around the reader:
+- **The window:** a block of 6 × 6 level-0 cells (45 × 45 units) holds balls, one by one.
+- **The view:** the middle 30 × 30 units of the window, leaving a margin of 7.5 units, about three mean free paths
+  (λ = ⟨|u|⟩/ν = 2.58 units at the rates below).
+- **Everything else is totals:** each other cell holds its count, momentum and kinetic energy, and nothing else. A cell is
+  kept whole at the level where it reads at the corner from the reader, size/distance ≤ 1, and split while it reads
+  larger. So the number of cells grows with the log of the world's size, one ring of cells per level.
+- **The exchange:** a ball whose centre leaves the window is folded into the cell it enters (its count, momentum and
+  energy added there). Balls enter the window from each neighbouring level-0 cell at that cell's one-way flux across a
+  line, n·σ/√(2π) per unit length per second (exact for any fluid in equilibrium, since velocities do not depend on
+  positions there). An entering ball is placed on the window's edge, moving in, with the flux's velocities (inward
+  speed Rayleigh in σ, along the edge normal in σ, plus the cell's mean motion). Its count, momentum and energy are taken
+  from the cell. If the place is occupied, another place along the edge is tried (a named approximation: entering
+  balls avoid crowded spots of the edge; the margin is there to keep that from the view).
+- **The cells among themselves:** neighbouring cells exchange count, momentum and energy by diffusion with the gas's
+  kinetic coefficient D = λ⟨|u|⟩/2. This is a chosen model of the far field. It is not tested here: this run keeps the
+  world in equilibrium.
+- **Moving the reader** (panning or zooming) folds the window's cells that leave it into totals, and unfolds the cells
+  that enter it into balls: as many balls as the cell holds, placed at random without overlap, seeded by the cell's
+  place, with velocities from its σ shifted and scaled so that the balls carry exactly its momentum and energy. A
+  fraction of a ball left over stays with a neighbouring cell's totals.
+
+**The referee** computes every ball in a world of side L = 240 (32 × 32 level-0 cells, 13,581 balls), wrapped round at
+its edges so that it has no edge at all. Every run starts from a referee state warmed up for 3 s (about seven contacts
+a ball) from random placement. The multiscale world starts from the same state: the window's balls copied, everything
+outside summed into cells. Measures are taken every 0.05 s for 60 s: in the referee, in each of the 64 views of
+30 × 30 that tile its world; in the multiscale world, in its one view. Runs: 4 warmed states, 10 reader places each.
+
+**Worked out before writing this (kinetic theory of hard discs).**
+- **Contacts per ball per second** (Enskog, with Henderson's contact value of the pair distribution for discs,
+  g = (1 − 7φ/16)/(1 − φ)² = 1.2933): ν = n·(2r)·σ·√π·g = 2.432.
+- **Speeds:** Rayleigh in σ.
+- **The count in a view fluctuates** with variance over mean equal to S(0) = 1/(∂(βp)/∂n) for a large open region,
+  from Henderson's equation of state βp/n = (1 + φ²/8)/(1 − φ)². At φ = 0.15, S(0) = 0.530. A 30 × 30 square adds about
+  +0.015 at its edge (the excluded discs near it), and the finite world takes off its share (1 − 900/57,600). So
+  var/mean ≈ 0.54.
+- **A closed window keeps its own count**, so its view's count fluctuates less: by the share of the window the view is
+  not, 1 − 900/2025 = 0.56, so about 0.30.
+
+**The control.** The same multiscale windows, closed: a ball reaching the window's edge is turned back (a mirror), and
+nothing enters or leaves.
+
+- **P28 (the books balance).** Over every 60 s run, and over a pan of ten window widths and back, the world's totals
+  (the window's balls plus every cell) stay: the count within 1e-6, the momentum within 1e-6, the energy within 1e-9 of
+  itself. *Killed* if any run misses. This checks the folding and unfolding, not the idea.
+- **P29 (the engine is a gas of hard discs).** In the referee:
+  - contacts per ball per second within 5% of 2.432;
+  - the speeds' largest gap from Rayleigh (with σ read from the state's energy, σ² = E/N) below 0.01;
+  - the view count's var/mean in [0.49, 0.61].
+
+  *Killed* if any misses.
+- **P30 (the view sees the same gas).** Averaged over the 40 multiscale runs, the view's density, its kinetic energy per
+  ball and its contacts per ball per second are each within 3% of the referee's. *Killed* if any is not.
+- **P31 (open, not closed).** The multiscale view's count var/mean is within 15% of the referee's, and the closed
+  control's is at least 25% lower than the referee's. *Killed* if either fails.
+- **P32 (the work is set by the view).** The multiscale world's work per simulated second (balls moved, pairs looked at,
+  balls entering tried, cells updated) changes by less than 5% when the world grows from L = 240 to L = 3,840: 256 times
+  the balls, four more levels of cells. *Killed* if it changes by 5% or more.
+- *Measured, not predicted:*
+  - the referee's work from L = 240 to 480;
+  - the density across the window, from its edge inward: how far the entering balls' placement reaches;
+  - the level-0 cells next to the window: how far their density drifts;
+  - the view with no margin (a view as big as the window);
+  - the view's density and energy just after a pan, when its balls have just been unfolded.
+
+Run 11 output (`node plans/pol/pol11.mjs`, in `plans/pol/pol-run11.txt`; about 4 minutes):
+
+```
+the referee: 4 states of 13581 balls, 240 a side, wrapped; 60 s each, the 64 views of 30 × 30 sampled every 0.05 s
+  contacts per ball per second 4.860 (the plan's 2.432; Enskog with the 2D cross-section, two diameters, 4.864)
+  speeds against Rayleigh (σ = 4.998 from the energy): largest gap 0.0004 over 3259440 speeds
+  view: density 0.2358 (n = 0.2358), energy per ball 24.984 (σ² = 24.983), count var/mean 0.526
+P29: KILLED. contacts 4.860 against 2.432 (within 5%: false); Rayleigh gap 0.0004 (< 0.01: true); var/mean 0.526 (in [0.49, 0.61]: true)
+
+the multiscale world: the window 45 × 45 (6 × 6 level-0 cells) and its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.0989 (-58.1%), energy per ball 8.746 (-65.0%), contacts per ball 1.273 (-73.8%), count var/mean 9.551 (1714.7%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (0.1%), contacts per ball 4.758 (-2.1%), count var/mean 0.508 (-3.4%)
+  open, the whole window as the view (no margin): density 0.1089 (-53.8%), count var/mean 15.225
+  open: balls entered 183871, left 195549 over 40 runs; the window held 474 balls at the start and 182 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first):
+    0.70 0.50 0.47 0.45 0.45 0.44 0.43 0.43 0.43 0.42 0.42 0.42 0.42 0.42 0.42 0.42 0.42 0.41 0.41 0.41 0.40 0.40 0.40
+  level-0 cells beside the window, density over the world's: mean 1.317, lowest 0.390, highest 2.408
+P30: KILLED. the open view's density, energy per ball and contacts per ball within 3% of the referee's: -58.1%, -65.0%, -73.8%
+P31: KILLED. var/mean open 9.551 (1714.7% of the referee's; within 15%), closed 0.508 (-3.4%; at least 25% lower)
+
+the books: over the 40 open runs, count off by at most 3.1e-11, momentum 1.8e-11, energy 2.1e-15 of itself
+           over the pans of ten window widths and back: 1.0e+0, 9.1e+0, 1.2e-4
+  just after a pan, the view's density 0.2179 (-7.6%), energy per ball 23.708
+P28: KILLED. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself
+
+the work per simulated second (balls moved, pairs looked at, balls entering tried, cells updated):
+  multiscale, a world 240 a side (1.358e+4 balls, 52 cells): 1.854e+5
+  multiscale, 3,840 a side (3.477e+6 balls, 100 cells): 1.923e+5 (3.7%)
+  the referee, 240 a side (13581 balls): 7.473e+6; 480 a side (54325 balls): 2.990e+7 (×4.00)
+P32: not killed. the multiscale work changes by 3.7% for 256 times the balls (less than 5%)
+```
+
+**Disclosed: a shakedown before the run.** Before the run, a short check of the engine (1 s of the referee, 5 s of one
+open window) showed the referee at 4.83 contacts per ball per second and the open window losing balls. The run was
+kept as planned, predictions unchanged. The first run of the script crashed while printing (after the simulations); it
+was run again with the printing fixed, the simulations unchanged and seeded, so the output above is the run.
+
+- **P29 killed, by my derivation.** The referee makes 4.860 contacts per ball per second, against the plan's 2.432. The
+  plan took the discs' cross-section as one diameter. In two dimensions it is two: another centre within a diameter
+  either side of the path meets it. With that, Enskog with Henderson's contact value gives 4.864, and the referee is
+  within 0.1% of it. The plan's λ and the far field's D were both computed from the wrong rate. The real λ is 1.29, not
+  2.58, so the margin was about six mean free paths, not three. The other two parts held:
+  - the speeds are Rayleigh to 0.0004 (3.3 million speeds);
+  - the count in a 30 × 30 view has var/mean 0.526, against Henderson's S(0) = 0.530.
+- **P30 killed, and badly.** The open window drains. Its view holds 58% fewer balls than the referee's, 65% less energy
+  per ball and 74% fewer contacts per ball. Its density is low everywhere, not only near its edge: from 0.70 of the
+  referee's at the edge to 0.40 in the middle.
+- **P31 killed.** The open view's count fluctuates 18 times too much: the window empties and refills. The closed control
+  is only 3.4% below the referee's, not the 25% predicted. That part fails because of the measure, not the control. The
+  variance was pooled over the 40 runs, and each closed window starts with an equilibrium sample of its count, so the
+  pooled variance includes the open system's variation between windows. Within one run, a closed window's count is
+  fixed. The prediction needed the variance within each run.
+- **P28 killed, by a bug.** Without panning, the books balance to 1e-11 over all 40 runs. Over the pans they are off by
+  exactly one ball, with its momentum and energy. Found after the run: when the window moves, a ball that has just
+  stepped out of it (its centre past the edge, not yet folded) is folded into a new level-0 entry. If a coarser cell
+  already holds that place, the coarser cell's totals are taken and the ball's are dropped. It happened once, on one
+  pan across the world's wrap.
+- **P32 not killed.** The multiscale world's work changes by 3.7% for 256 times the balls (52 cells to 100), while the
+  referee's grows 4.00 times for 4 times the balls.
+- *Measured:*
+  - the window started with 474 balls on average and ended with 182;
+  - the level-0 cells beside it rose to 1.32 of the world's density on average (0.39 to 2.41);
+  - with no margin, the window as the view, the density is 54% low;
+  - just after a pan, the view's density is 7.6% low.
+  The bug touches only the pan's books, not these.
+
+## Reading of run 11 (not ruled)
+
+- **The idea's cost is right; its boundary is not.** Computing only the window costs the same in a world of 13,581
+  balls and one of 3.5 million, while the referee's cost grows with its balls. That is the point Tom made, and it holds.
+- **An open window needs the outside's push, not only its flux.** Run 11's window let balls in at the outside's one-way
+  flux, which is exact for the balls that cross a line. But in a dense gas, part of the pressure is carried by contacts, not by
+  balls crossing. At the window's edge, a contact between two balls inside sends one out and one in. The one sent out
+  is gone, and nothing outside pushes back. So the edge is a sink for balls and for energy, and the whole window drains
+  and cools: it keeps 38% of its balls and its energy per ball falls to a third. In the gas's terms, the window gets the
+  outside's kinetic pressure but not its virial pressure (Z − 1 = 0.39 of the kinetic at φ = 0.15, so contacts carry 28%
+  of the pressure).
+- **A cell of a dozen balls cannot read its own flow.** The level-0 cells' mean motion is mostly the noise of a dozen
+  velocities (σ/√13 ≈ 1.4 against σ = 5). Read as a flow, it takes about 1/13 off their spread, and it drives the balls
+  they send in. A cell's reading of its flow needs a noise floor.
+- **What a fix needs:** the outside's contacts at the window's edge. That means a band of balls there, held at what the
+  cells say (density and temperature), which the window's balls can meet. Run 12 adds it, with its own predictions.
+
+### Run 12 (11 October 2026): prediction, written before it ran
+
+Run 11 with the window's edge given the outside's contacts. Everything else is as in run 11 (the gas, the cells, the
+referee, the states, the places, the times), except four changes, named:
+
+- **The band.** The window's outermost 2 units (a little over two diameters) are a band whose balls are held at what
+  the cells beside the window say. Each level-0 stretch of the edge has its part of the band: the points nearer that
+  edge than any other, less than 2 units in, of area 7.5 × 2 (13 at the window's corners). Each tick, for each part:
+  - **Its count:** if it holds fewer balls than the cell beside it says, n·area, by more than half a ball, one ball is
+    put at a free place in it. If it holds more by more than half a ball, one of its balls is taken out.
+  - **Its warmth:** each of its balls has its velocity drawn afresh from the cell's spread, with chance ν·tick each tick
+    (ν = 4.86, the gas's own contact rate, so about as often as it would meet another ball).
+  - **Its books:** every ball put in, taken out or redrawn is charged to that cell, exactly.
+
+  A ball whose centre leaves the window is still folded into the cell it enters. No ball enters at the edge any more:
+  the band's count is kept instead. So the window's balls meet balls at its edge, at the outside's density and warmth,
+  and the outside's push comes with them.
+- **The cells read their flow above its noise.** A cell's mean motion is taken as a flow only where it is more than three
+  times its own noise, |P|/N > 3σ/√N. Otherwise the flow is taken as none, and all its energy is warmth.
+- **The far field's diffusion** uses the right λ = ⟨|u|⟩/ν = 1.29 (run 11's P29), so D = λ⟨|u|⟩/2 = 4.04. It is still a
+  chosen model, and still not tested.
+- **The fold bug** found after run 11 is fixed: a ball stepping out of the moving window is added to the cell that holds
+  its place, whatever that cell's level.
+
+The fluctuation measure is corrected. The count's variance over its mean is taken within each run, about that run's own
+mean, then averaged over the runs. For the referee it is taken within each view's own time series, then averaged over
+the views. The closed control keeps its window's count, so within a run its view's count should fluctuate less, by about
+the share of the window that the view is not, 1 − 900/2025 = 0.56.
+
+- **P28′ (run 11's P28, the bug fixed).** Over every run and every pan, the world's count stays within 1e-6, its
+  momentum within 1e-6 and its energy within 1e-9 of itself. *Killed* if any run misses. (The bug was found after run 11,
+  by looking for the lost ball, so this is not blind to it.)
+- **P30′ (run 11's P30, with the band).** Averaged over the 40 open runs, the view's density, its kinetic energy per ball
+  and its contacts per ball per second are each within 3% of the referee's. *Killed* if any is not.
+- **P31′ (the measure corrected).** The open view's within-run var/mean is within 15% of the referee's within-view
+  var/mean, and the closed control's is at least 25% lower than the referee's. *Killed* if either fails.
+- **P32′ (run 11's P32, with the band).** The multiscale work per simulated second changes by less than 5% from
+  L = 240 to L = 3,840. *Killed* if it changes by 5% or more.
+- **P33 (the band reaches no further than itself).** In the open runs, the density at each distance from the window's
+  edge, in 1-unit bands from 2 units inward, is within 5% of the referee's. *Killed* if any such band is off by more.
+- *Measured, not predicted:*
+  - the band's own density and energy per ball;
+  - the level-0 cells beside the window;
+  - the view just after a pan;
+  - the band's share of the work.
+
+Run 12 output (`node plans/pol/pol12.mjs`, in `plans/pol/pol-run12.txt`):
+
+```
+the referee (as run 11): 4 states of 13581 balls, 240 a side, wrapped; 60 s each, 64 views of 30 × 30 sampled every 0.05 s
+  view: density 0.2358, energy per ball 24.984, contacts per ball per second 4.860; count var/mean within each view 0.462
+
+the multiscale world, with the band: the window 45 × 45, its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.0622 (-73.6%), energy per ball 9.662 (-61.3%), contacts per ball 1.313 (-73.0%), count var/mean within the run 29.640 (+6319.5%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (+0.1%), contacts per ball 4.758 (-2.1%), count var/mean within the run 0.309 (-33.0%)
+  open: the band's density 0.3077 (+30.5%), energy per ball 21.384 (-14.4%); balls put in 1976157, taken out or left 1988829; the window held 474 at the start, 157 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first; the band is the first two):
+    1.559 1.039 0.294 0.281 0.277 0.270 0.266 0.264 0.264 0.262 0.263 0.261 0.264 0.264 0.264 0.263 0.263 0.267 0.268 0.266 0.265 0.262 0.250
+  level-0 cells beside the window, density over the world's: mean 1.413, lowest 0.383, highest 2.441
+  just after a pan, the view's density 0.2265 (-3.9%), energy per ball 23.498 (-5.9%)
+  the books: over the 40 open runs, count off by at most 2.2e-11, momentum 2.0e-11, energy 2.6e-15 of itself; over the pans 7.3e-12, 2.2e-12, 3.4e-16
+  work per simulated second: 240 a side 1.029e+6 (52 cells), 3,840 a side 9.998e+5 (100 cells), -2.8%; run 11's window (no band) 1.854e+5
+
+P28′: not killed. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself, over every run and pan
+P30′: KILLED. the open view's density -73.6%, energy per ball -61.3%, contacts per ball -73.0% (each within 3%)
+P31′: KILLED. within-run var/mean: open 29.640 (+6319.5%; within 15%), closed 0.309 (-33.0%; at least 25% lower)
+P32′: not killed. the multiscale work changes by -2.8% for 256 times the balls (less than 5%)
+P33: KILLED. from 2 units inward, the density is at most +75.0% from the referee's (within 5%)
+```
+
+- **P28′ not killed.** With the fold bug fixed, the books balance to 2e-11 over every run and every pan.
+- **P30′ killed, worse than run 11.** The open view holds 74% fewer balls than the referee's, with 61% less energy per
+  ball. Inside the band the window is drained to about a quarter of the referee's density (0.25 to 0.29, flat). The band
+  itself is full (1.56 of the referee's density in its outer unit, 1.04 in its inner), and so are the level-0 cells beside
+  the window (1.41 on average, 0.38 to 2.44).
+- **P31′ killed for the open window, not for the control.** The open view's count swings 64 times too much. The closed
+  control's within-run var/mean is 33% below the referee's (0.309 against 0.462), as predicted for a window that keeps its
+  count.
+- **P32′ not killed.** The work changes by −2.8% for 256 times the balls. The band costs: 1.03 million steps a simulated
+  second, against run 11's window's 0.19 million.
+- **P33 killed.** From 2 units inward the density is 71% to 75% below the referee's in every 1-unit band.
+- *Measured:*
+  - the band's balls churn: 1.98 million put in and 1.99 million taken out or gone over the 40 runs, about 820 a second
+    per window against the 85 or so the band holds;
+  - just after a pan, the view's density is 3.9% low and its energy per ball 5.9% low (now free of the fold bug).
+- Run 11's script, run again on run 12's engine with run 11's options, reproduces its output line for line, except
+  that the pans' books now balance (5.5e-12): the fix touched nothing else.
+
+## Reading of run 12 (not ruled)
+
+- **The band still opens onto nothing.** Its balls could still leave by the window's outer edge, and nothing outside sent
+  any back. Half of each new band ball's motion is outward, and it crosses 2 units in about 0.2 s, so the band emptied
+  outward about five times a second and was refilled from the cells. The window's own balls that drifted into the band
+  left the same way. The band gave the window's edge contacts, but it was itself an open edge, one step further out.
+- **The cells beside the window cannot hold the churn.** About 33 balls a second went in and out of each level-0 cell of
+  a dozen balls. Their totals swung from 0.4 to 2.4 of the world's density, and the band's target swung with them. A
+  reading of a dozen balls cannot serve as a reservoir for that.
+- **What the closed control shows:** a window that keeps its count fluctuates 33% less within a run, the share of the
+  window the view is not. So P31's measure can tell an open window from a closed one, once it is taken within each run.
+- **The fix the two runs point to:** a window that loses no ball at its edge except through the cells' books. The band
+  should be a mirror at its outer edge, its balls kept at the cells' count and warmth by putting in and taking out, never
+  by flight. Run 13.
+
+### Run 13 (11 October 2026): prediction, written before it ran
+
+Run 12 with the band closed at its outer edge. Two changes, named; everything else is run 12's.
+- **The window's outer edge is a mirror.** A ball reaching it is turned back, as in the closed control. No ball leaves
+  the window by flight. Balls go in and out only through the band's keeping (one put at a free place, or one taken out,
+  when its part's count is more than half a ball from its target), charged to the cell beside, exactly. The band still
+  has its warmth redrawn from the cells', and the window's balls still meet the band's balls.
+- **Each part of the band reads three cells.** Its target and its warmth come from the cells beside it pooled: the
+  level-0 cell beside its stretch and the two either side of it along the edge (their counts, momenta, energies and
+  areas summed; a coarser cell counted once). What it puts in or takes out is still charged to the cell beside it.
+
+Worked out before writing this: a hard mirror in a gas of discs holds the density of centres at it at βp = n·Z = 1.39 n
+(the wall contact theorem, Henderson's Z), falling to n within about a diameter. So the band's outer unit should be
+denser than the referee, and its inner unit near n.
+
+- **P28″ (the books).** Over every run and pan: count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself.
+  *Killed* if any run misses.
+- **P30″ (the view sees the same gas).** Averaged over the 40 open runs, the view's density, kinetic energy per ball and
+  contacts per ball per second are each within 3% of the referee's. *Killed* if any is not.
+- **P31″ (open, not closed).** Within-run var/mean: the open view's within 15% of the referee's within-view value; the
+  closed control's at least 25% lower than the referee's. *Killed* if either fails.
+- **P32″ (the work).** The multiscale work per simulated second changes by less than 5% from L = 240 to L = 3,840.
+  *Killed* if it changes by 5% or more.
+- **P33′ (the band reaches no further than itself).** In the open runs, the density at each distance from the window's
+  edge, in 1-unit bands from 2 units inward, is within 5% of the referee's. *Killed* if any is off by more.
+- *Measured, not predicted:*
+  - the band's two units against the referee (the mirror's layering);
+  - the band's warmth;
+  - the cells beside the window;
+  - how many balls the band's keeping puts in and takes out;
+  - the view just after a pan;
+  - the work against run 11's window.
+
+Run 13 output (`node plans/pol/pol13.mjs`, in `plans/pol/pol-run13.txt`; before it, a crash check only, 0.1 s of one window,
+no statistics read):
+
+```
+the referee (as run 11): 4 states of 13581 balls, 240 a side, wrapped; 60 s each, 64 views of 30 × 30 sampled every 0.05 s
+  view: density 0.2358, energy per ball 24.984, contacts per ball per second 4.860; count var/mean within each view 0.462
+
+the multiscale world, the band closed by a mirror: the window 45 × 45, its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.2219 (-5.9%), energy per ball 24.959 (-0.1%), contacts per ball 4.494 (-7.5%), count var/mean within the run 0.470 (+1.8%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (+0.1%), contacts per ball 4.758 (-2.1%), count var/mean within the run 0.309 (-33.0%)
+  open: the band's density 0.2392 (+1.4%), energy per ball 24.577 (-1.6%); balls put in 725431, taken out or left 726377; the window held 474 at the start, 450 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first; the band is the first two):
+    1.090 0.936 0.929 0.935 0.938 0.938 0.940 0.943 0.940 0.941 0.940 0.944 0.943 0.941 0.943 0.940 0.944 0.940 0.942 0.941 0.937 0.939 0.932
+  level-0 cells beside the window, density over the world's: mean 1.020, lowest 0.004, highest 2.681
+  just after a pan, the view's density 0.2325 (-1.4%), energy per ball 23.959 (-4.1%)
+  the books: over the 40 open runs, count off by at most 2.7e-11, momentum 9.8e+2, energy 2.4e-15 of itself; over the pans 3.6e-12, 6.7e+2, 9.1e-4
+  work per simulated second: 240 a side 6.790e+5 (52 cells), 3,840 a side 7.050e+5 (100 cells), +3.8%; run 11's window (no band) 1.854e+5
+
+P28″: KILLED. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself, over every run and pan
+P30″: KILLED. the open view's density -5.9%, energy per ball -0.1%, contacts per ball -7.5% (each within 3%)
+P31″: not killed. within-run var/mean: open 0.470 (+1.8%; within 15%), closed 0.309 (-33.0%; at least 25% lower)
+P32″: not killed. the multiscale work changes by +3.8% for 256 times the balls (less than 5%)
+P33′: KILLED. from 2 units inward, the density is at most +7.1% from the referee's (within 5%)
+```
+
+- **P30″ killed, narrowly for energy, not for density.** Energy per ball is right (−0.1%). The view's density is 5.9%
+  low and its contacts per ball 7.5% low, against 3%.
+- **P31″ not killed.** The open view's count fluctuates as the referee's does (+1.8%); the closed control's is 33% lower.
+  The window is open to the cells' count.
+- **P32″ not killed.** +3.8% for 256 times the balls. The band costs about 3.7 times run 11's window (0.68 against 0.19
+  million steps a simulated second).
+- **P33′ killed.** Inside the band, the density is a flat 6% to 7% low, from 2 units in to the middle.
+- **P28″ killed.**
+  - **Momentum: a design flaw.** A mirror turns a ball back, which changes its momentum, and nothing was charged for it.
+    In the gas, that push comes from the balls outside. Over a 60 s run, about 1,000 units of momentum (a ball's is ~5)
+    went uncounted.
+  - **Energy over the pans: also a flaw, found after the run.** Each operation of the band was charged to the one
+    level-0 cell beside its stretch, a dozen balls, about 17 times a second. That cell's totals wandered far from any
+    real state of a dozen balls: one cell held 0.4% of the world's density. When the window moved over such a cell, it
+    was asked to unfold into balls with less energy than its own flow carries. No set of balls can be in that state. The
+    unfold gave them the flow alone and created energy (up to 309 units at one step). Ticks and the folds keep energy to
+    4e-10.
+- *Measured:*
+  - the band: 1.09 of the referee's density in its outer unit (the mirror holds centres at βp = 1.39 n against itself,
+    falling within a diameter) and 0.94 in its inner;
+  - the band's balls are put in and taken out about 300 times a second per window (a third of run 12's churn);
+  - the cells beside the window: mean density 1.02 of the world's, but from 0.004 to 2.68;
+  - just after a pan: density −1.4%, energy per ball −4.1%.
+
+## Reading of run 13 (not ruled)
+
+- **Closed by a mirror, the band works as a reservoir for warmth and for fluctuations.** The window's energy per ball is
+  right to 0.1%, and its count fluctuates as an open region's does. What is left is a flat 6% shortfall of balls.
+- **A count is the wrong thing to hold.** Against a hard mirror, a gas of discs crowds: centres pile up at the mirror
+  (βp = 1.39 n at contact, by the wall contact theorem) and thin a little behind. The band's count was held at n times its
+  area, which takes no account of that crowding. So the band was underfilled for a gas at the world's density, and the
+  window settled to the density in balance with an underfilled band. What a reservoir fixes is not a count but a
+  chemical potential: how readily a ball is put in. The band should be held at the cells' activity, which the gas's
+  equation of state gives from their density.
+- **A dozen balls cannot keep the books for the band.** Charging each of the band's operations to one level-0 cell of a
+  dozen balls made that cell's totals wander out of any possible state. The band's operations should be charged across
+  the cells it reads, and an unfold must keep the books even for a cell whose totals no set of balls could have.
+- **The mirror pushes on the outside.** Each time it turns a ball back, the momentum it takes is the outside's. It must
+  be charged to the cells beside the window, as the gas's own push would be.
+
+### Run 14 (11 October 2026): prediction, written before it ran
+
+Run 13 with the band held at the cells' chemical potential, and its books kept. Four changes, named; everything else is
+run 13's (the mirror, the three cells read, the warmth redrawn, the measures).
+- **The band is held at the cells' activity, not their count.** For hard discs, Henderson's equation of state
+  Z = (1 + φ²/8)/(1 − φ)² gives the excess chemical potential in closed form, worked out before writing this:
+  βμ_ex = (Z − 1) + (9/8)·φ/(1 − φ) − (7/8)·ln(1 − φ). At φ = 0.15 that is 0.7287, so the activity is z = n·e^0.7287 =
+  2.072 n. In Widom's terms, 48% of random places are free for a new ball. Each tick, each part of the band, of area A:
+  - tries Poisson(Γ·z·A·tick) new balls at random places in it, each kept only if free;
+  - takes out each of its balls with chance Γ·tick.
+
+  Here Γ = ν = 4.86 a second, so a band ball is replaced about as often as it would meet another. z comes from the
+  pooled cells' density. This is grand-canonical keeping: the band fills to whatever a gas at the cells' chemical
+  potential holds against the mirror, crowding included.
+- **The mirror's push is charged to the outside.** A ball turned back at the window's edge changes its momentum by
+  −2·v_n; the cells beside that stretch take +2·v_n.
+- **The band's books are spread over the cells it reads.** Every ball put in, taken out or redrawn, and every push of
+  the mirror, is charged to the three cells pooled, in proportion to their counts.
+- **An unfold keeps the books for any cell.** A cell whose totals no set of balls could have (less energy than its flow
+  carries) gives its balls the largest flow its energy allows (99% of it), and the rest of its momentum goes to the
+  neighbouring cell with the fraction of a ball. A cell with no energy unfolds at rest, its momentum and energy to the
+  neighbour.
+
+- **P28‴ (the books).** Over every run and pan: count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself.
+  *Killed* if any run misses.
+- **P30‴ (the view sees the same gas).** The open view's density, kinetic energy per ball and contacts per ball per
+  second, averaged over the 40 runs, each within 3% of the referee's. *Killed* if any is not.
+- **P31‴ (open, not closed).** Within-run var/mean: open within 15% of the referee's; the closed control at least 25%
+  lower. *Killed* if either fails.
+- **P32‴ (the work).** Changes by less than 5% from L = 240 to L = 3,840. *Killed* if 5% or more.
+- **P33″ (the band reaches no further than itself).** From 2 units inward, the density in each 1-unit band within 5%
+  of the referee's. *Killed* if any is off by more.
+- *Measured, not predicted:*
+  - the band's two units (the mirror's crowding);
+  - how often the band's places are free (Widom's 48% in the bulk);
+  - the cells beside the window;
+  - the view just after a pan;
+  - the work against run 11's window.
+
+Run 14 output (`node plans/pol/pol14.mjs`, in `plans/pol/pol-run14.txt`; before it, a crash check only):
+
+```
+the referee (as run 11): 4 states of 13581 balls, 240 a side, wrapped; 60 s each, 64 views of 30 × 30 sampled every 0.05 s
+  view: density 0.2358, energy per ball 24.984, contacts per ball per second 4.860; count var/mean within each view 0.462
+
+the multiscale world, the band held at the cells' activity: the window 45 × 45, its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.0408 (-82.7%), energy per ball 178863.531 (+715826.4%), contacts per ball 12.956 (+166.6%), count var/mean within the run 148.932 (+32156.4%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (+0.1%), contacts per ball 4.758 (-2.1%), count var/mean within the run 0.309 (-33.0%)
+  open: the band's density 0.0566 (-76.0%), energy per ball NaN (NaN%); balls put in 758566, taken out or left 722396; the window held 474 at the start, 1378 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first; the band is the first two):
+    0.286 0.192 0.142 0.150 0.155 0.159 0.162 0.165 0.168 0.170 0.172 0.175 0.174 0.176 0.176 0.176 0.178 0.176 0.175 0.176 0.176 0.176 0.169
+  the band's places free when tried: 73.0% of 1038679 (Widom's e^(−βμ_ex) for the bulk: 48.3%)
+  level-0 cells beside the window, density over the world's: mean 0.238, lowest -0.054, highest 3.887
+  just after a pan, the view's density 0.2226 (-5.6%), energy per ball 23.944 (-4.2%)
+  the books: over the 40 open runs, count off by at most 2.5e-11, momentum NaN, energy NaN of itself; over the pans 5.5e-12, 2.8e-12, 3.4e-16
+  work per simulated second: 240 a side 1.141e+6 (52 cells), 3,840 a side 1.411e+6 (100 cells), +23.7%; run 11's window (no band) 1.854e+5
+
+P28‴: KILLED. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself, over every run and pan
+P30‴: KILLED. the open view's density -82.7%, energy per ball +715826.4%, contacts per ball +166.6% (each within 3%)
+P31‴: KILLED. within-run var/mean: open 148.932 (+32156.4%; within 15%), closed 0.309 (-33.0%; at least 25% lower)
+P32‴: KILLED. the multiscale work changes by +23.7% for 256 times the balls (less than 5%)
+P33″: KILLED. from 2 units inward, the density is at most +85.8% from the referee's (within 5%)
+```
+
+- **All five killed.** The open windows ran away: energy per ball in the view rose to 178,863 (σ² = 25), some cells'
+  counts went negative (−0.054 of the world's density), and the books went to NaN. The windows ended with 1,378 balls on
+  average against 474 at the start. The closed control, which does none of the new things, is run 13's to the digit.
+- *Measured:* the band's places were free 73% of the time it tried them, against Widom's 48% for the bulk: the band ran
+  thin before the runaway took it.
+
+## Reading of run 14 (not ruled)
+
+- **A push is not a thing to store.** The mirror's push on the outside is the outside's pressure. Charged to the cells
+  beside the window, it was a steady outward momentum, every stretch's cells pushed away from the window, with nothing in
+  the cells to push back: they have totals, not pressure. Their momentum grew without end. The band read it as a flow
+  (it was far above its noise), put balls in at that flow, and the energy ran away. Over the whole edge the pushes nearly
+  cancel (run 13 left about 1,000 units of momentum unbooked in a minute, a random walk of pushes about 12 each). They can
+  be booked where they cancel: in the far field, not beside the window.
+- **Three cells are still too few for the band's books.** Grand-canonical keeping replaces each band ball about five
+  times a second. Charged to three level-0 cells, that is about 17 charges a second to cells of a dozen balls, which
+  diffusion relaxes only over seconds. Their counts swing by about half. A reservoir has to be large next to what it
+  is asked to absorb, or its reading is its own noise.
+- **The grand-canonical keeping itself is untested here.** The runaway came from the books, not from the keeping, but
+  the band ran thin (73% free against 48%) before it blew up, and that is not explained.
+
+### Run 15 (11 October 2026): prediction, written before it ran
+
+Run 14 with the band's books kept where they can be kept. Three changes, named; everything else is run 14's
+(grand-canonical keeping at the activity from Henderson, the mirror, the warmth redrawn, the robust unfold, the measures).
+- **The mirror's push is booked in the far field.** The momentum each turn-back takes, +2·v_n, is charged to the
+  coarsest cells of the cover, in proportion to their areas. There the pushes from opposite sides cancel, and what is
+  left is small against cells of millions of balls.
+- **The band reads and charges the whole ring of cells beside the window.** Every part of the band reads the same
+  reservoir: all the cells next to the window's edge, corners included, pooled (a coarser cell counted once, about 370
+  balls in all). Every charge is spread over them in proportion to their counts.
+- **The band is kept more gently: Γ = 1 a second.** Each band ball is put in or taken out about once a second, not five
+  times, so the ring absorbs about 85 a second.
+
+- **P28⁗ (the books).** Over every run and pan: count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself.
+  *Killed* if any run misses.
+- **P30⁗ (the view sees the same gas).** The open view's density, kinetic energy per ball and contacts per ball per
+  second, averaged over the 40 runs, each within 3% of the referee's. *Killed* if any is not.
+- **P31⁗ (open, not closed).** Within-run var/mean: open within 15% of the referee's; the closed control at least 25%
+  lower. *Killed* if either fails.
+- **P32⁗ (the work).** Changes by less than 5% from L = 240 to L = 3,840. *Killed* if 5% or more.
+- **P33‴ (the band reaches no further than itself).** From 2 units inward, the density in each 1-unit band within 5%
+  of the referee's. *Killed* if any is off by more.
+- *Measured, not predicted:*
+  - the band's two units;
+  - how often its places are free (Widom's 48% in the bulk);
+  - the ring of cells;
+  - the view just after a pan;
+  - the work against run 11's window.
+
+Run 15 output (`node plans/pol/pol15.mjs`, in `plans/pol/pol-run15.txt`; before it, a crash check only):
+
+```
+the referee (as run 11): 4 states of 13581 balls, 240 a side, wrapped; 60 s each, 64 views of 30 × 30 sampled every 0.05 s
+  view: density 0.2358, energy per ball 24.984, contacts per ball per second 4.860; count var/mean within each view 0.462
+
+the multiscale world, the band held at the cells' activity: the window 45 × 45, its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.2353 (-0.2%), energy per ball 24.962 (-0.1%), contacts per ball 4.844 (-0.3%), count var/mean within the run 0.406 (-12.1%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (+0.1%), contacts per ball 4.758 (-2.1%), count var/mean within the run 0.309 (-33.0%)
+  open: the band's density 0.2478 (+5.1%), energy per ball 25.020 (+0.1%); balls put in 205725, taken out or left 205390; the window held 474 at the start, 482 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first; the band is the first two):
+    1.104 0.996 0.997 0.999 0.999 0.999 0.999 1.000 0.999 1.000 1.000 1.000 1.002 0.999 0.997 0.999 0.996 0.995 0.992 0.993 0.981 0.986 0.960
+  the band's places free when tried: 51.1% of 402596 (Widom's e^(−βμ_ex) for the bulk: 48.3%)
+  level-0 cells beside the window, density over the world's: mean 0.992, lowest 0.388, highest 1.571
+  just after a pan, the view's density 0.2276 (-3.5%), energy per ball 24.976 (-0.0%)
+  the books: over the 40 open runs, count off by at most 3.1e-11, momentum 9.4e-12, energy 2.8e-15 of itself; over the pans 7.3e-12, 1.5e-12, 5.2e-16
+  work per simulated second: 240 a side 4.723e+5 (52 cells), 3,840 a side 4.645e+5 (100 cells), -1.6%; run 11's window (no band) 1.854e+5
+
+P28⁗: not killed. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself, over every run and pan
+P30⁗: not killed. the open view's density -0.2%, energy per ball -0.1%, contacts per ball -0.3% (each within 3%)
+P31⁗: not killed. within-run var/mean: open 0.406 (-12.1%; within 15%), closed 0.309 (-33.0%; at least 25% lower)
+P32⁗: not killed. the multiscale work changes by -1.6% for 256 times the balls (less than 5%)
+P33‴: not killed. from 2 units inward, the density is at most +4.0% from the referee's (within 5%)
+```
+
+(P33‴'s line prints the largest gap with a "+" sign; the gap is the middle 1-unit square's 0.960, below the referee.)
+
+- **P28⁗ not killed.** The books balance to 3e-11 in count, 1e-11 in momentum and 3e-15 in energy, over every run and
+  every pan.
+- **P30⁗ not killed.** The open view's density is 0.2% below the referee's, its energy per ball 0.1%, its contacts per
+  ball 0.3%.
+- **P31⁗ not killed, near its edge.** Within a run, the open view's count fluctuates 12.1% less than the referee's
+  (0.406 against 0.462), inside the 15% allowed. The closed control's is 33% lower.
+- **P32⁗ not killed.** The work changes by −1.6% for 256 times the balls (52 cells to 100). The window with its band
+  costs 2.5 times run 11's bare window.
+- **P33‴ not killed.** From 2 units in, every 1-unit band is within 4% of the referee's density, and all but the last
+  three within 0.5% (0.996 to 1.002). The middle square of 1 unit is the 4% (0.960): it is 1 unit of area, so its count
+  is the noisiest.
+- *Measured:*
+  - the band: 1.10 of the referee's density in its outer unit (the mirror's crowding) and 0.996 in its inner;
+  - the band's places were free 51.1% of the time it tried them (Widom's 48.3% for the bulk; the mirror's side of the
+    band is less crowded a diameter in);
+  - the cells beside the window: 0.99 of the world's density on average (0.39 to 1.57);
+  - just after a pan, while the unfolded balls settle, the view's density is 3.5% low and its energy per ball right.
+
+## Reading of run 15 (not ruled)
+
+- **A window of balls in a world of totals sees the world's gas.** With the band held at the ring's chemical potential
+  and closed by a mirror, the view's density, warmth and contacts are the referee's to 0.3%, and its count fluctuates
+  as an open region's does. The work is the window's, whatever the world's size: Tom's point, now with the boundary that
+  makes it true.
+- **What the boundary needed, in order (runs 11–15):**
+  1. the outside's contacts, not only its flux (run 11's window drained through an edge that pushed nothing back);
+  2. no edge that opens onto nothing (run 12's band drained outward);
+  3. the outside's chemical potential, not its count (run 13's band, held at a count, was underfilled against the
+     mirror's crowding);
+  4. books kept where they can be kept: a push booked where pushes cancel (run 14's ran away), and a reservoir large next
+     to what it absorbs (three cells of a dozen balls could not be).
+
+  Each is a known piece of the physics of open systems (pressure is kinetic and virial; a reservoir fixes μ, not N),
+  found here from inside by watching the window fail.
+- **What is still a choice, and untested:** the far field's own dynamics (diffusion with D = 4.04). The world here was in
+  equilibrium, where the cells need only hold their totals. A disturbance coming in from the far field, a sound wave or a
+  hot spot, would test whether totals by level can carry it. That is the next run, if any.
+- **For the level of detail:** the reader holds balls where it can see them and totals elsewhere, one ring of cells per
+  level, each cell at the level where it reads at the corner. The balls it does not hold are not lost: the books say how
+  many there are, how they move and how warm they are, to rounding. When it looks, the balls it unfolds come out of
+  those books.
+
+### Run 16 (11 October 2026): prediction, written before it ran (Tom: "proceed", to a disturbance from far away)
+
+Run 15's world was in equilibrium, where the cells need only hold their totals. This run sends a disturbance in from far
+away and asks whether the cells can carry it to the window in time. The disturbance is a pressure pulse. In a referee
+state warmed as before, the balls within 10 units of a point 60 units from the window's middle have their velocities
+scaled by √2. Their warmth doubles at the same density, so their pressure doubles, and the gas sends the excess out as
+sound. The multiscale world starts from the same state, so the pulse's energy is in its cells, summed at whatever level
+holds that place (a cell 60 units away is about level 3, 60 units wide).
+
+**Two far fields, named:**
+- **Diffusion,** run 15's: neighbouring cells exchange balls, momentum and energy at D = 4.04.
+- **A fluid:** the cells run the gas's own equations. Their totals per area are the conserved densities of mass,
+  momentum and energy. Between neighbouring cells a flux passes each frame: Euler's, with the hard-disc pressure
+  p = n·σ²·Z(φ) (σ² the warmth per ball, m = 1). It is Rusanov's (local Lax–Friedrichs) first-order flux, with the
+  fastest signal |u| + c, where c is the adiabatic speed of sound below. Each flux is taken from one cell and given to the
+  other, so the books balance exactly. The window's face is a wall to the cells' fluid (no flux across it). The window
+  hears the cells only through the band, which reads the ring's density and warmth as before. Everything else is run 15's.
+
+**Worked out before writing this.** The adiabatic speed of sound of the hard-disc gas, from Henderson's equation of state
+(c_v = k per ball in two dimensions):
+c² = σ²·[(Z + φ·Z′) + Z²] = 25 × (1.8856 + 1.9265), so c = 9.76 units a second (an ideal gas in two dimensions would have
+σ·√2 = 7.07). The pulse's front leaves the hot disc's edge, 10 units out. It reaches the view's near edge (45 from the
+source) after (45 − 10)/c = 3.6 s, and the view's middle (60) by about 60/c = 6.1 s. Diffusion over the same 35 to 60 units
+takes x²/(4D), 75 to 220 s.
+
+**The measure.** The window's middle is at (120, 120) in the referee's world of 240 (wrapped); the source is at (180, 120);
+the view is the 30 × 30 square about the window's middle. In 20 warmed states, for 12 s, every 0.05 s: the view's mean
+kinetic energy per ball. That is averaged over the 20 states, in bins of 0.25 s, less its own mean over the first 0.5 s.
+The rise's half-maximum arrival is the first bin at which the rise passes half its largest value within the 12 s.
+
+- **P34 (the referee carries the pulse as sound).** The referee's half-maximum arrival is between 3.6 s (the front at the
+  view's near edge) and 6.1 s (at its middle). *Killed* if outside.
+- **P35 (the fluid carries it in time).** With the fluid far field, the half-maximum arrival is within 25% of the
+  referee's. *Killed* if not.
+- **P36 (diffusion cannot).** With the diffusion far field, the largest rise within 12 s is less than a quarter of the
+  referee's. *Killed* if not.
+- **P37 (the fluid keeps the books).** With the fluid far field, the world's count, momentum and energy hold over every
+  run as in run 15 (1e-6, 1e-6, 1e-9 of itself). *Killed* if any run misses.
+- *Measured, not predicted:*
+  - the fluid far field's largest rise against the referee's (smeared by the coarse cell that holds the pulse and by
+    Rusanov's numerical diffusion; doubled for a moment where the wave meets the window's wall);
+  - the view's count against time in each.
+
+Run 16 output (`node plans/pol/pol16.mjs`, in `plans/pol/pol-run16.txt`; before it, a crash check only):
+
+```
+a pulse: the balls within 10 of a point 60 from the window's middle twice as warm (on average 2042 units of energy added, against the world's ~339,000); 20 warmed states, 12 s
+the multiscale world holds the pulse's place in a level-3 cell (60 units wide)
+the view's mean kinetic energy per ball, less its first 0.5 s (baseline: referee 25.535, diffusion 25.553, fluid 25.553):
+    t (s)   referee   diffusion   fluid
+    0.38     0.015      0.033    0.033
+    0.88    -0.396     -0.173   -0.173
+    1.38    -0.292     -0.572   -0.572
+    1.88    -0.280     -0.528   -0.528
+    2.38    -0.554     -0.540   -0.540
+    2.88    -0.057     -0.014   -0.014
+    3.38     0.599     -0.213   -0.213
+    3.88     0.794     -0.489   -0.489
+    4.38     1.416     -0.226   -0.226
+    4.88     1.077     -0.047   -0.047
+    5.38     0.722     -0.212   -0.212
+    5.88     0.001     -0.489   -0.489
+    6.38    -0.567     -0.358   -0.358
+    6.88    -0.517      0.006    0.006
+    7.38    -0.413      0.129    0.129
+    7.88    -0.708     -0.126   -0.126
+    8.38    -0.563      0.255    0.255
+    8.88    -0.341      0.340    0.340
+    9.38    -0.540      0.205    0.205
+    9.88    -0.385     -0.036   -0.036
+   10.38    -0.014      0.068    0.068
+   10.88     0.305     -0.059   -0.059
+   11.38    -0.114      0.116    0.116
+   11.88     0.293     -0.146   -0.146
+largest rise: referee 1.416 at 4.38 s, diffusion 0.426 at 8.63 s, fluid 0.426 at 8.63 s
+half-maximum arrival: referee 3.88 s, diffusion 8.38 s, fluid 8.38 s
+the view's count at 0, 3, 6, 9, 12 s: referee 211.6, 211.4, 212.3, 209.3, 209.4; diffusion 211.6, 209.2, 206.9, 207.4, 210.5; fluid 211.6, 209.2, 206.9, 207.4, 210.5
+the fluid's books over the 20 runs: count off by at most 1.1e-11, momentum 4.1e-12, energy 1.2e-15 of itself
+
+P34: not killed. the referee's half-maximum arrival 3.88 s (in [3.6, 6.1])
+P35: KILLED. the fluid's arrival 8.38 s against the referee's 3.88 s (116.1%; within 25%)
+P36: KILLED. diffusion's largest rise 0.426 against the referee's 1.416 (30%; under 25%)
+P37: not killed. the fluid keeps the books (1e-6, 1e-6, 1e-9)
+```
+
+- **P34 not killed.** The referee carries the pulse as sound. The view's mean energy per ball rises past half its peak
+  at 3.88 s and peaks at 4.38 s, inside the 3.6 to 6.1 s that the sound speed gives. After the peak it falls below its
+  start (about −0.5 from 6 to 10 s): a cylindrical wave's trailing rarefaction.
+- **P35 and P36: the fluid never ran.** The diffusion and fluid columns are the same to the last digit. Found after the
+  run: the setting that chose the far field was named `far`, and run 15's list of the coarsest cells, where the mirror's
+  pushes are booked, was also stored as `far`. Each time the cells were recut, the list overwrote the setting, so both
+  runs used diffusion. P35's kill is the bug's. P36's kill stands as measured: diffusion's largest "rise", 0.43 at
+  8.6 s, is the noise of 20 states (the referee's own curve swings ±0.5 before the pulse arrives), and it is 30% of the
+  referee's peak, not under 25%. P37 holds for what ran (diffusion's books).
+- Fixed after the run: the coarsest cells are now `farCells`. Runs 11–15's code paths are unchanged by the rename.
+
+### Run 17 (11 October 2026): prediction, written before it ran
+
+Run 16 again, the bug fixed, so the fluid far field runs. Everything else is run 16's: the states, the pulse, the
+measure, the seeds. The predictions are run 16's, unchanged (P34′ to P37′). Run 16's outcome is known: the referee's
+half-maximum arrival was 3.88 s, and diffusion's curve stayed within the noise. So P35′ is not blind to the referee's
+number, and P36′ not to diffusion's. They are kept as they were, not adjusted.
+
+- **P34′.** The referee's half-maximum arrival is in [3.6, 6.1] s.
+- **P35′.** The fluid's half-maximum arrival is within 25% of the referee's.
+- **P36′.** Diffusion's largest rise within 12 s is under a quarter of the referee's.
+- **P37′.** The fluid keeps the books (1e-6, 1e-6, 1e-9).
+- *Measured:* the fluid's largest rise against the referee's; the view's count.
+
+Run 17 output (`node plans/pol/pol17.mjs`, in `plans/pol/pol-run17.txt`; before it, a crash check and a check that the
+setting survives, no statistics):
+
+```
+a pulse: the balls within 10 of a point 60 from the window's middle twice as warm (on average 2042 units of energy added, against the world's ~339,000); 20 warmed states, 12 s
+the multiscale world holds the pulse's place in a level-3 cell (60 units wide)
+the view's mean kinetic energy per ball, less its first 0.5 s (baseline: referee 25.535, diffusion 25.553, fluid 25.557):
+    t (s)   referee   diffusion   fluid
+    0.38     0.015      0.033    0.037
+    0.88    -0.396     -0.173   -0.002
+    1.38    -0.292     -0.572   -0.099
+    1.88    -0.280     -0.528    0.715
+    2.38    -0.554     -0.540    1.770
+    2.88    -0.057     -0.014    3.170
+    3.38     0.599     -0.213    4.666
+    3.88     0.794     -0.489    6.485
+    4.38     1.416     -0.226    7.268
+    4.88     1.077     -0.047    8.343
+    5.38     0.722     -0.212    9.259
+    5.88     0.001     -0.489   10.389
+    6.38    -0.567     -0.358   11.088
+    6.88    -0.517      0.006   12.109
+    7.38    -0.413      0.129   12.543
+    7.88    -0.708     -0.126   13.648
+    8.38    -0.563      0.255   13.851
+    8.88    -0.341      0.340   14.811
+    9.38    -0.540      0.205   15.863
+    9.88    -0.385     -0.036   16.632
+   10.38    -0.014      0.068   17.540
+   10.88     0.305     -0.059   18.376
+   11.38    -0.114      0.116   18.126
+   11.88     0.293     -0.146   17.539
+largest rise: referee 1.416 at 4.38 s, diffusion 0.426 at 8.63 s, fluid 18.570 at 11.13 s
+half-maximum arrival: referee 3.88 s, diffusion 8.38 s, fluid 5.63 s
+the view's count at 0, 3, 6, 9, 12 s: referee 211.6, 211.4, 212.3, 209.3, 209.4; diffusion 211.6, 209.2, 206.9, 207.4, 210.5; fluid 211.6, 225.3, 260.3, 285.6, 304.4
+the fluid's books over the 20 runs: count off by at most 1.3e-11, momentum 5.3e-12, energy 8.9e-16 of itself
+
+P34′: not killed. the referee's half-maximum arrival 3.88 s (in [3.6, 6.1])
+P35′: KILLED. the fluid's arrival 5.63 s against the referee's 3.88 s (45.2%; within 25%)
+P36′: KILLED. diffusion's largest rise 0.426 against the referee's 1.416 (30%; under 25%)
+P37′: not killed. the fluid keeps the books (1e-6, 1e-6, 1e-9)
+```
+
+- **P34′ not killed** (as run 16: the referee's run is unchanged).
+- **P35′ killed.** The fluid's half-maximum arrival is 5.63 s, 45% after the referee's. But the fluid's curve is not a
+  pulse. The view's energy per ball starts rising at 1.4 s, before any sound from the source could arrive (its front
+  reaches the window's edge at 2.8 s), and climbs without stopping: +18.6 per ball (+73%) by 11 s. The view's count rises
+  from 212 to 304. The pulse is lost under a steady filling.
+- **P36′ killed** (as run 16: diffusion's run is unchanged).
+- **P37′ not killed.** The fluid keeps the books to 1e-11.
+
+## Reading of runs 16–17 (not ruled)
+
+- **The referee's gas carries the pulse as sound,** at the speed its equation of state gives: half-maximum at 3.9 s,
+  peak at 4.4 s, then the trailing rarefaction of a cylindrical wave. That is the target for any far field.
+- **Diffusion cannot carry it:** nothing above the noise in 12 s, as worked out (75 to 220 s at D = 4).
+- **The fluid's wall pushed nothing.** The window's face was made a wall to the cells' fluid by passing no flux across
+  it. But a wall still pushes back, with the gas's pressure. Without that push, each cell beside the window feels its
+  outer neighbour's pressure alone. It flows toward the window, nothing stops it, and it piles up against the window,
+  denser and warmer. The band reads that and fills the window. It is run 11's lesson again, in the fluid: a boundary has
+  to carry the pressure, not only the flow.
+- **Next:** the window's face given its wall push in the fluid (the momentum flux p·n̂ at each face, the opposite push
+  booked in the far cells, like the mirror's). Run 18.
+
+### Run 18 (11 October 2026): prediction, written before it ran
+
+Run 17 with the window's face pushing back in the fluid. One change, named: each frame, each cell beside a stretch of the
+window's edge is pushed away from the window by the pressure of its own gas, p·(7.5 units)·frame, as a wall pushes. That
+is the momentum flux of a reflecting wall in a finite-volume scheme. The opposite push is booked in the far cells, as the
+mirror's are, so the books still balance. Everything else is run 17's; the referee and diffusion runs are not repeated
+(they are deterministic and unchanged; their results are run 17's).
+
+- **P35″ (the fluid carries the pulse in time).** The fluid's half-maximum arrival is within 25% of the referee's 3.88 s.
+  *Killed* if not.
+- **P37″ (the books).** Count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself, over every run.
+  *Killed* if any misses.
+- **P38 (no filling before the pulse).** Over the first 2.5 s, before the sound could reach the window's edge (2.8 s), the
+  fluid's view curve stays within ±1.0 of its start (the referee's own swings there reach −0.55), and its count within
+  3% of its start. *Killed* if either is exceeded.
+- *Measured, not predicted:*
+  - the fluid's largest rise and its time, against the referee's 1.42 at 4.4 s (smeared by the 60-unit cell and by
+    Rusanov's numerical diffusion);
+  - whether a trailing rarefaction shows.
+
+Run 18 output (`node plans/pol/pol18.mjs`, in `plans/pol/pol-run18.txt`; the referee's column is run 17's recorded output;
+before it, a crash check only):
+
+```
+run 17's pulse and states; the fluid far field with the window's face pushing back; 20 warmed states, 12 s
+the multiscale world holds the pulse's place in a level-3 cell (60 units wide); fluid baseline 25.557
+    t (s)   referee (run 17)   fluid with its wall
+    0.38              0.015                0.037
+    0.88             -0.396                0.194
+    1.38             -0.292               -0.383
+    1.88             -0.280               -0.522
+    2.38             -0.554               -0.653
+    2.88             -0.057               -0.555
+    3.38              0.599               -0.343
+    3.88              0.794               -0.021
+    4.38              1.416                0.275
+    4.88              1.077                0.147
+    5.38              0.722                0.137
+    5.88              0.001               -0.488
+    6.38             -0.567               -0.452
+    6.88             -0.517               -0.412
+    7.38             -0.413               -0.636
+    7.88             -0.708               -0.701
+    8.38             -0.563               -0.590
+    8.88             -0.341               -0.608
+    9.38             -0.540               -1.000
+    9.88             -0.385               -1.090
+   10.38             -0.014               -1.428
+   10.88              0.305               -1.261
+   11.38             -0.114               -0.985
+   11.88              0.293               -0.617
+largest rise: referee 1.416 at 4.38 s (run 17), fluid 0.309 at 5.13 s; half-maximum arrival: referee 3.88 s, fluid 0.88 s
+the fluid's view count at 0, 1, 2, 2.5, 3, 6, 9, 12 s: 211.6, 210.0, 207.1, 206.9, 207.9, 214.2, 211.2, 209.6
+the fluid's books over the 20 runs: count off by at most 1.5e-11, momentum 3.9e-12, energy 1.3e-15 of itself
+
+P35″: KILLED. the fluid's arrival 0.88 s against the referee's 3.88 s (-77.4%; within 25%)
+P37″: not killed. the books (1e-6, 1e-6, 1e-9)
+P38: not killed. over the first 2.5 s the curve stays within 0.724 of its start (±1.0) and the count within 2.7% (3%)
+```
+
+- **P38 not killed.** With its wall push, the fluid no longer fills the window. Over the first 2.5 s, the view's curve
+  stays within 0.72 of its start and its count within 2.7%.
+- **P37″ not killed.** The books balance to 1e-11.
+- **P35″ killed: the pulse is lost.** The fluid's largest rise is 0.31 at 5.1 s, 22% of the referee's 1.42 at 4.4 s and
+  inside the noise of 20 states (the referee's own curve swings ±0.5 before the pulse). The "arrival" at 0.88 s is noise
+  passing half of a maximum that is itself noise.
+- *Measured:* no trailing rarefaction shows above the noise. From 9 to 11 s the view cools by 1.0 to 1.4 per ball (4% to 6%),
+  past the referee's swings. Its cause is not known; it is not looked into here.
+
+## Reading of runs 16–18 (not ruled)
+
+- **The referee says what must arrive:** a sound pulse at c = 9.76 from the hard-disc equation of state, sharp, half its
+  peak by 3.9 s, then a rarefaction.
+- **Totals by level lose it before it moves.** The pulse came from a disc 20 units across, 60 units from the reader. At
+  that distance the cells are level 3, 60 units wide, so the disc's energy was averaged over a cell nine times its area:
+  a pressure excess of about a tenth, spread over 60 units. A first-order fluid on such cells smears it further (its
+  numerical diffusion grows with the cell, about c·Δx/2, 300 units² a second at level 3, against the gas's 4). What
+  reaches the window is below the noise.
+- **The lesson for level of detail:** holding a place at the level of its distance is right for what stays where it is
+  and averages out by the time it matters, as run 15's equilibrium did. It is wrong for what travels toward the reader. A
+  wave from far away arrives as sharp as it left (thinned only as 1/√r in two dimensions), so its detail matters when it
+  arrives, not where it started. A reader's levels have to follow the signal, held at the signal's own size until it
+  arrives, not at the place's distance. That is what adaptive refinement does, by gradients. In this corpus's terms:
+  what is coming is near, whatever its distance. Level of detail by time to arrival, run 10's τ again, at a larger
+  scale.
+- **Not tested here:** refinement that follows the signal. It is the next run, if any.
+
+## Written up (11 October 2026; Tom: "yes", to writing up what the pool runs say about level of detail)
+
+What runs 1–18 say about level of detail is in SPN §3.3, "Level of detail tried in a simulation: pool from inside", as
+Claude's reading for Tom to rule, with its open items in SPN §14, "From the pool runs". `papers/physics.md` places them
+by standing (the contact identities in §2.2, the infinite table in a new §2.4, the pulse in §3), and
+`papers/v-and-h.md` gathers them as items 426–429 (§8p; first numbered 404–407, renumbered when main's §8o took those numbers). Nothing above is changed.

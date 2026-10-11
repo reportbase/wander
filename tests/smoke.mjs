@@ -280,9 +280,29 @@ try {
     o.hv = s1.contacts.length > 0 && s1.contacts.every(c => c.hv >= 1 && c.hv < 1.05);
     const fin = s1.final, after = T.shootNow();
     o.plays = after.every((b, i) => b.n === 0 ? true : b.sunk === fin[i].sunk && (b.sunk || (b.x === fin[i].x && b.z === fin[i].z)));
-    T.setLayout('line'); o.combo = T.preview().sunk.map(p => p.n).join();
-    const rt = T.roundTrip(3, -2); o.rt = Math.hypot(rt[0] - 3, rt[1] + 2) < 1e-9; return o; });
-  if (!pt.same || !pt.full || !pt.hv || !pt.plays || pt.combo !== '4' || !pt.rt) failures.push(`[play-trick.html] ${JSON.stringify(pt)}`);
+    // contact found exactly on h + v = 1 (POL run 9), except where a cluster's pushes within one tick left a pair already
+    // overlapping (the old push): a few, and those within 1%
+    const off = s1.contacts.filter(c => Math.abs(c.hvC - 1) >= 1e-9);
+    o.exact = off.length <= 0.05 * s1.contacts.length && off.every(c => Math.abs(c.hvC - 1) < 0.01);
+    T.setLayout('line'); o.combo = T.preview().sunk.map(p => p.n).join(); o.sight = T.seen(3).join() + '/' + T.seen(4).join();
+    const rt = T.roundTrip(3, -2); o.rt = Math.hypot(rt[0] - 3, rt[1] + 2) < 1e-9;
+    // the strike: the tip meets the white on h + v = 1 where chosen on its face; bare, it turns the white sin φ = fx (30° at ½);
+    // chalked, inside the grip, the white stays on the cue's line and takes spin; the textbook results of spin on this engine
+    const b30 = T.strikeOf(0, 0.5, 0, 14, 0), bl = T.strikeOf(0, -0.5, 0, 14, 0), g = T.strikeOf(0, 0.3, 0.2, 14, T.MU_TIP), sc = T.spinChecks();
+    o.strike = T.strikeOf(0, 0, 0).dir === 0 && Math.abs(b30.turn + 30) < 1e-9 && Math.abs(bl.turn - 30) < 1e-9 && b30.w.every(x => Math.abs(x) < 1e-9) && g.grip && g.turn === 0 && g.w[1] > 0;
+    o.spin = { roll: sc.rollSlip < 1e-9, follow: Math.abs(sc.follow - sc.followPred) < 0.005, stun: Math.abs(sc.stun) < 0.05, draw: sc.draw < 0.5, english: sc.englishVx * sc.rightX > 0.3, miscue: !sc.miscue.grip && sc.miscue.turn < 0 && sc.miscue.turn > -44.5,
+      cutThrow: sc.cutThrow > 0.5 && sc.cutThrow < 4.5, sideThrow: sc.sideThrow < -0.3 && sc.sideThrow > -4.5, passed: sc.passed < 0, masse: Math.abs(sc.masseBend) > 10, jump: sc.jumpCleared && sc.jumpPeak > 2 * 0.45,
+      followGrip: sc.followGrip < sc.followPred - 0.01 && sc.followGrip > 0.15, backspinPassed: sc.backspinPassed > 0, offTable: sc.offTable };
+    o.spinOK = Object.values(o.spin).every(Boolean);
+    // challenges: each missed as set up and solved by its reference shot (a layout or engine change can break one);
+    // a missed try puts the balls back and says why, a solved one is counted
+    o.chFail = T.challenges.map(c => { T.setChallenge(c.id); const start = T.check(); T.solve(); const sol = T.check();
+      return start !== null && sol === null ? null : `${c.id}: as set up ${start}, reference ${sol}`; }).filter(Boolean);
+    T.setChallenge('combo'); const b0 = JSON.stringify(T.challenge().balls); T.shootNow(); const miss = T.challenge();
+    T.solve(); T.shootNow(); const hit = T.challenge();
+    o.chTries = miss.tries === 1 && !!miss.lastWhy && JSON.stringify(miss.balls) === b0 && hit.tries === 2 && hit.solvedIn === 2 && hit.lastWhy === null && JSON.stringify(hit.balls) === b0;
+    T.setLayout('rack'); o.chOff = T.challenge() === null; return o; });
+  if (!pt.same || !pt.full || !pt.hv || !pt.exact || !pt.plays || pt.combo !== '4' || pt.sight !== '/4' || !pt.rt || !pt.strike || !pt.spinOK || pt.chFail.length || !pt.chTries || !pt.chOff) failures.push(`[play-trick.html] ${JSON.stringify(pt)}`);
   console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills, aiming from the cue ball, trick shots)`);
 
   // ── 12. facing.html: the facing is 2θ, square to the line at the corner, the arc off the line most there ──
@@ -377,6 +397,24 @@ try {
       fl.sf.some(y => y < 0 || y > 1) || Math.abs(fl.sf[2] - 0.5) > 1e-9 || !(fl.sh[4] > 1) || !(fl.sh[0] >= 0) || !(fl.sv[0] < 0) || !(fl.sv[4] <= 1))
     failures.push(`[flight.html] ${JSON.stringify(fl)}`);
   console.log(`${failures.length === before16 ? 'ok  ' : 'FAIL'} flight.html (corner row ${fl.c1.toFixed(3)} at 50 m and 1.6 km; by v/h ${fl.n[1]} lines a level, the first edge the corner, edges fixed; by metres they slide; a post recovered exactly with no step, ${fl.near.h.toFixed(3)} for 2v and ${fl.mid.h === undefined ? 'a bearing' : fl.mid.h.toFixed(2)} for 8v at a pixel step, a bearing only at 400v; the lay true to the corner, each doubling past it ${(fl.lay[3] - fl.lay[2]).toFixed(3)} wide; strip folded holds 0.1v–100v, h/v runs off the top, v/h off the bottom)`);
+
+  // ── 17. pool-infinite.html: a window of balls in a world of totals (POL runs 11–15): the books balance through steps and a
+  //    pan, the window holds the world's density, the work does not grow with the world, and zooming out stops the window ──
+  current = 'pool-infinite.html';
+  const before17 = failures.length;
+  await page.goto(new URL('pool-infinite.html', base).href, { waitUntil: 'load' });
+  const pi = await page.evaluate(() => { const I = __infinite, o = {}; I.pause(true);
+    const M = I.multiUniform(5, 6, 13, 13, 1), T0 = I.totals(M), ops = m => m.ops.moves + m.ops.pairs + m.ops.tries + m.ops.cells;
+    for (let k = 0; k < 480; k++) I.multiStep(M, I.TICK);
+    for (let st = 0; st < 16; st++) { I.setWindow(M, M.oi + (st < 8 ? 1 : -1), M.oj, 6); for (let k = 0; k < 4; k++) I.multiStep(M, I.TICK); }
+    const T1 = I.totals(M); o.books = Math.abs(T1.N - T0.N) < 1e-6 && Math.hypot(T1.Px - T0.Px, T1.Py - T0.Py) < 1e-6 && Math.abs(T1.E / T0.E - 1) < 1e-9;
+    o.density = M.B.n / (45 * 45) / I.N_DENS;
+    const work = K => { const m = I.multiUniform(K, 6, 2 ** (K - 1) - 3, 2 ** (K - 1) - 3, 2); for (let k = 0; k < 240; k++) I.multiStep(m, I.TICK); return ops(m); };
+    o.work = work(9) / work(5);
+    I.setZoom(24); const wNear = I.page().M.w; I.setZoom(0.2); const P = I.page(); o.wFar = P.M.w; o.wNear = wNear; o.capped = P.M.w === P.windowFor && P.M.w < 48;
+    return o; });
+  if (!pi.books || !(Math.abs(pi.density - 1) < 0.2) || !(Math.abs(pi.work - 1) < 0.1) || !pi.capped || !(pi.wFar > pi.wNear)) failures.push(`[pool-infinite.html] ${JSON.stringify(pi)}`);
+  console.log(`${failures.length === before17 ? 'ok  ' : 'FAIL'} pool-infinite.html (books balance through 2 s and a pan; the window at ${pi.density.toFixed(2)} of the world's density; work ×${pi.work.toFixed(3)} for a world 16 times wider; zoomed out the window stops at ${pi.wFar} cells)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
