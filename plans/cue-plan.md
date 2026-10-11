@@ -100,3 +100,69 @@ A kill names a constant or a law the engine should change. Changing it is a new 
 challenges' reference shots are then played again (the smoke test does), since a change of physics can move a solution.
 
 ## Runs
+
+### Run 1 (11 October 2026)
+
+The reference opened after the plan was pushed (commit 5a0de07): `pooltool/physics/resolve/ball_ball/friction.py`,
+`ball_ball/frictional_inelastic`, `ball_cushion/han_2005/{model,properties}.py`, `objects/ball/params.py`,
+`objects/table/specs.py` and `physics/resolve/resolver.py`, read as text. What they say:
+
+- The ball–ball friction of pooltool's default resolver is the fit u_b = a + b·e^(−c·v_rel) "used in David Alciatore's
+  TP A-14", a = 9.951×10⁻³, b = 0.108, c = 1.088, v_rel the balls' relative surface speed at contact in m/s. The
+  collision model around it (frictional inelastic) is the one the engine already uses: the engine reproduces its own
+  throws from the closed form to 0.02° (stun 10°: 1.48 both), so the throw predictions test the friction law alone.
+- The constants, "taken from or based off of" Alciatore's physical-properties page: sliding 0.2, rolling 0.01, ball–ball
+  restitution 0.95, cushion restitution 0.85, cushion friction 0.2, the cushion's nose at 0.64 of the ball's height.
+- The cushion: pooltool's default is a compliant contact (Stronge's, with a frequency ratio of 1.8), not computed here.
+  Han (2005), one of the two models the plan named, is computed, as pooltool states it (its eqs 14–23), with the
+  constant e = 0.85 its properties.py returns (citing van Balen's thesis). After that `return`, properties.py also holds
+  a speed-dependent restitution, max(0.40, 0.50 + 0.257·v_n − 0.044·v_n²), which never runs; it is reported below,
+  marked as such. Mathavan et al. (2010), the plan's other named cushion model, is a numerical integration (780 lines)
+  and was not computed in this run.
+
+`plans/cue/reference.mjs` re-implements these and prints the verdicts; output in `plans/cue/cue-run1.txt`:
+
+```
+throw (degrees) at cuts 10 20 30 45 60, the reference beside the engine
+  stun    slow   (0.44 m/s)  ref 1.48  3.05  4.84  4.95  4.63   engine 1.5  3.06  3.43  3.44  3.44
+  stun    medium (1.33 m/s)  ref 1.48  3.05  3.56  2.79  2.33   engine 1.48  3.04  3.43  3.43  3.43
+  stun    fast   (3.11 m/s)  ref 1.48  2.51  1.71  1.13  0.90   engine 1.47  3.04  3.43  3.43  3.43
+  rolling slow   (0.44 m/s)  ref 0.76  1.50  2.19  3.10  3.79   engine 0.61  1.21  1.77  2.5  3.05
+  rolling medium (1.33 m/s)  ref 0.35  0.69  1.01  1.43  1.75   engine 0.6  1.19  1.73  2.45  3
+  rolling fast   (3.11 m/s)  ref 0.14  0.27  0.39  0.55  0.68   engine 0.6  1.18  1.72  2.44  2.99
+  (the reference's friction at half-ball, stun: slow 0.0948, medium 0.0622, fast 0.0298; rolling: slow 0.0765, medium 0.0353, fast 0.0136)
+cushion, a rolling ball, Han 2005 (e 0.85, mu 0.2): out angle and eN, the reference beside the engine
+  slow   15°: ref 12.4° 0.801  engine 17.8° 0.618 | 30°: ref 26.8° 0.791  engine 35.6° 0.599 | 45°: ref 44.0° 0.775  engine 53.4° 0.556 | 60°: ref 62.1° 0.755  engine 72.2° 0.459
+  medium 15°: ref 12.4° 0.801  engine 14.7° 0.740 | 30°: ref 26.8° 0.791  engine 29.7° 0.733 | 45°: ref 44.0° 0.775  engine 45.3° 0.719 | 60°: ref 62.1° 0.755  engine 63.7° 0.687
+  fast   15°: ref 12.4° 0.801  engine 13.9° 0.774 | 30°: ref 26.8° 0.791  engine (not read) | 45°: ref 44.0° 0.775  engine (not read) | 60°: ref 62.1° 0.755  engine 61.4° 0.752
+  (with the speed-dependent restitution left unused in properties.py, at 15°: slow e 0.602 eN 0.560, medium e 0.758 eN 0.711, fast e 0.875 eN 0.825)
+
+P1: KILLED. stun half-ball slow: reference 4.84° against the engine's 3.43° (within 1°)
+P2: KILLED. stun half-ball fast: reference 1.71° against 3.43° (within 1°)
+P3: KILLED. the reference's stun half-ball throw changes 3.13° from slow to fast (less than 1°)
+P4: not killed. rolling half-ball medium: reference 1.01° against 1.73° (within 1°)
+P5: not killed. cushion, medium, 30° in: reference out 26.8° (engine 29.7°, within 5°), eN 0.791 (engine 0.733, within 0.1)
+P6: KILLED. cushion eN at 15°: v7 reference 0.801 engine 0.618, v21 reference 0.801 engine 0.74, v49 reference 0.801 engine 0.774 (each within 0.1)
+P7: not killed. cloth: sliding 0.2 against 0.195 (within 0.05), rolling 0.01 against 0.0078 (within a factor of 2)
+P8: not killed. ball–ball restitution 0.95 against 0.96 (within 0.03)
+```
+
+## Reading of run 1 (not ruled)
+
+- **The grip between balls is the engine's largest departure from the published game.** The fitted grip falls threefold
+  from a slow to a fast meeting (0.095 to 0.030 at a half-ball stun), and the engine's is one number, 0.06, right only
+  near a medium hit. So a slow cut throws the struck ball about 1.4° more than the engine says, and a fast or thin one
+  about 2° less; for rolling hits the engine is too much at medium and fast speeds (1.7° against 1.0° and 0.4° at
+  half-ball). Over a table's length 2° is most of a pocket. P1–P3 name the change: the engine's MU_B as the fit's
+  μ(v_rel). That is a new run with its own predictions (run 2), and the challenges' reference shots must be played
+  again with it.
+- **The cushion agrees at medium speed and parts at slow speed.** At medium and fast speeds the engine's rebound is
+  within a few degrees and a few hundredths of Han's with e = 0.85 (P5). At a slow speed the engine's bounce is weaker
+  (eN 0.46–0.62 against 0.76–0.80) and leaves wider (17.8° against 12.4° at 15° in). Noticed after the run, and so not
+  a result: the engine's slow-to-fast rise (0.62, 0.74, 0.77 at 15°) is close to the speed-dependent restitution that
+  pooltool keeps but does not use (0.56, 0.71, 0.83). Which is right for a real cushion is a question for measured data
+  (Han's paper, Mathavan's), not for either implementation; the cushion is left as it is until those can be read.
+- **The cloth and the balls' own constants agree** (P7, P8), within the plan's margins.
+- **What this run can and cannot say.** It tests the engine against laws as a careful open-source simulator states
+  them, with their sources named. Two steps remain between that and the game as measured: the fits' own agreement with
+  their data, and which of several published models a real table follows. Both need the papers' tables.
