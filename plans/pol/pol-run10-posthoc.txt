@@ -1,0 +1,5 @@
+the kick read from two looks over the response, five fields, 1 s, nothing ignored (post hoc)
+  run 10 rate, (v1 − v0)/(tick·v1)   n 199  median 0.9194  5% 0.5739  95% 1.1792  within 10% 50.8%
+  log rate, ln(v1/v0)/tick           n 199  median 0.9690  5% 0.7491  95% 1.2610  within 10% 69.3%
+    log rate, near head-on (cos > 0.9) n  65  median 0.9320  5% 0.7253  95% 0.9827  within 10% 60.0%
+    log rate, oblique (cos ≤ 0.9)    n 134  median 0.9900  5% 0.8575  95% 1.3545  within 10% 73.9%

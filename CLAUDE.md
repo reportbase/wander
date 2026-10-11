@@ -267,6 +267,12 @@ Google Fonts load from outside:
   made thin cuts cos²φ less sensitive. Run 9, contact made exact (each ball finds h + v = 1 in its own units): every
   contact and chain to rounding (P22–P24 not killed). On an open table a contact costs 1.5–2 levels, a 0.1° aim error
   passes half a pocket by the third contact (the preview's "see 3 deep"); inside a rack errors shrink (A ≪ 1).
+  Run 10 (11 Oct), level of detail by time to contact: a ball reads the kick a smaller one would bring from v, h and two
+  looks, (1 + e)·ρ³/(1 + ρ³)/(h·τ), ρ = v/h, τ = v/v̇ (Lee's). Matched in work, ignoring by the kick picks the same
+  contacts as ignoring by size and plays the same game (P26 killed, factor 1.00): the share's 8 per level outweighs the
+  closing speeds, so here a ball's level alone reads its momentum. τ alone is 3.4× worse at K = 2 (P27 killed at K = 3,
+  a draw in the chaos). Two looks a tick apart read the kick 8% low (P25 killed; post hoc: the estimator divided by the
+  newer reading, and the tick is a tenth of a fast pair's τ).
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
