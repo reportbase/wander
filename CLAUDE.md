@@ -65,7 +65,10 @@ Google Fonts load from outside:
   A combo box picks the shape (10 Oct, Tom: "add the ablity load a tvf file. add a combo box let the user select the shape"):
   the built-in one, a body in res/, or a file from disk: a .tvf curve (the draw tool's format, draw.html `parseTvfText`; read from
   its centroid, the nearest wall in each direction) or a .tvf3d cut at a height h (the equator by default); the outline
-  read as s(θ) = s₀·(r/r̄)^k with a relief slider k. `?g=&s=&shape=&lod=&depth=1&body=&relief=&cut=`; test hook `window.__levels`.
+  read as s(θ) = s₀·(r/r̄)^k with a relief slider k. Since 11 Oct (SPN Prop 1.2 (g); Tom: "update levels.html") the default is
+  the reader's lay, 1 + ln s past the corner, every level ln 2 wide, six drawn, no horizon on the lay; the in-place lay
+  (2 − 1/s, horizon at 2) is kept at `?lay=inplace` (a lay, not the reader's). "Depth" relabelled per R188.
+  `?lay=inplace&g=&s=&shape=&lod=&depth=1&body=&relief=&cut=`; test hook `window.__levels` (now with `lay`).
 - `walk.html`: **the walk** (10 Oct 2026, Tom: "the sweep is a walk from me to you … far away, you are increasinly difficult
   for me to get to you, and then acceleratingly difficult"; "You are vertical and I am horizontal. Show the sweep in terms of
   the horizontal's walk to the vertical"), a standalone page like `facing.html`. Me on the ground (breadth H, one step), you a
@@ -319,6 +322,10 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   R180 are superseded; the superseded passages stay in SPN as the record with dated notes.
 - The ratio 2 between levels: dissolved (10 October, R189; Tom: "its just logrithimic doublings. this paper does. not need
   to prove the logrithm, it is fundemental"); Appendix D and the open question are kept as the record.
+- Proposition 1.2 (11 October, R190): from the two-party relation and one chosen H, V = H is forced; the corner and the
+  flip follow from the cap at 1; the logarithm past the corner follows when no rung is preferred, so the reader's lay is
+  1 + ln s (the in-place lay, 2 − 1/s, is a lay but not the reader's); two address spaces, proportional and logarithmic,
+  around the corner. Still assumed: no measure on a level.
 - Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof").
 
 ## Read this first: the physics comes first
@@ -367,7 +374,8 @@ In short:
   11. **Gameplay sketches:** each page's one mechanic through its hook (dimming, stages, the ladder's locks and light, the
       sky's count read back as time, a half-ball cut 30° near and far; trick shots: the preview is the shot, contacts on h + v = 1).
   12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
-  13. **levels.html:** the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
+  13. **levels.html:** by default the reader's lay, every level past the corner ln 2 wide, s = 8 at 1 + ln 8, six drawn; at
+      `?lay=inplace` the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
       and one level fewer seen per doubling of the grain; the shape crosses ring edges, its broad form fewer; with the size divided out
       the depth averages 0 on the corner; a body from res/ chosen in the combo box crosses ring edges, a non-.tvf file refused; a draw .tvf curve read
       from its centroid (a 5-pointed star's tip over its dip as drawn).

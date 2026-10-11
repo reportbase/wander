@@ -298,7 +298,15 @@ try {
   // ── 13. levels.html: the near field in proportion, each doubling past the corner in half the room, rings seen to one grain ──
   current = 'levels.html';
   const before13 = failures.length;
+  // the reader's lay (default since 11 Oct, SPN Prop 1.2 (g)): every doubling past the corner ln 2 wide, no edge
   await page.goto(new URL('levels.html', base).href, { waitUntil: 'load' });
+  const lg = await page.evaluate(() => { const L = __levels; return { lay: L.lay, c: L.radius(1), w: [0, 1, 2, 3].map(k => L.level(k).width),
+    r8: L.radius(8), back: L.reading(L.radius(8)), n: L.visible(L.R(), 1) }; });
+  if (lg.lay !== 'log' || lg.c !== 1 || lg.w.some(w => Math.abs(w - Math.LN2) > 1e-12) || Math.abs(lg.r8 - (1 + Math.log(8))) > 1e-12 ||
+      Math.abs(lg.back - 8) > 1e-9 || lg.n !== 6) failures.push(`[levels.html, the reader's lay] ${JSON.stringify(lg)}`);
+  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html, the reader's lay (every doubling ${lg.w[0].toFixed(4)} wide; s = 8 at ${lg.r8.toFixed(4)}; ${lg.n} levels drawn)`);
+  // the in-place lay, kept at ?lay=inplace: each doubling half the last, the horizon at 2
+  await page.goto(new URL('levels.html?lay=inplace', base).href, { waitUntil: 'load' });
   const lv = await page.evaluate(() => { const L = __levels, R = L.R();
     return { R, half: L.radius(0.5), c: L.radius(1), w: [0, 1, 2, 3].map(k => L.level(k).width), r8: L.radius(8), back: L.reading(L.radius(8)),
       v1: L.visible(R, 1), v2: L.visible(R, 2), v1k: L.visible(1024, 1),
@@ -309,7 +317,7 @@ try {
       Math.abs(lv.back - 8) > 1e-9 || lv.v1 - lv.v2 !== 1 || lv.v1k !== 10 || Math.abs(lv.v1 - Math.log2(lv.R)) > 1 ||
       lv.lod3 !== 1.875 || !(lv.cross >= 6) || !(lv.broad < lv.cross) || Math.abs(lv.meanDepth) > 1e-9 || Math.abs(lv.depthAt) > 1e-12)
     failures.push(`[levels.html] ${JSON.stringify(lv)}`);
-  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html (each level half the last; ${lv.v1} seen at a one-pixel grain, one fewer at two; the shape crosses ${lv.cross} ring edges, its broad form ${lv.broad}; size divided out, the depth averages 0 on the corner)`);
+  console.log(`${failures.length === before13 ? 'ok  ' : 'FAIL'} levels.html?lay=inplace (each level half the last; ${lv.v1} seen at a one-pixel grain, one fewer at two; the shape crosses ${lv.cross} ring edges, its broad form ${lv.broad}; size divided out, the depth averages 0 on the corner)`);
   // a body from res/ chosen in the combo box, and a file that is not a .tvf refused
   const lb = await page.evaluate(async () => { const L = __levels; await L.choose('res:asteroid-grey');
     let refused = false; try { L.parseTVF('hello'); } catch (e) { refused = true; }
