@@ -34,7 +34,9 @@ those papers only once it has been worked and ruled.*
 hand at once. A reader holding one hemisphere has its own reading, π/2 or 2/π, and not the line's breadth. And no reader
 can hold both (Tom, R195: "which you can't actually do, hense its the view from nowhere."): to have one hemisphere is to stand where the other is turned away or turned toward.
 The completed breadth is held from no standpoint, which is what "the view from nowhere" means. But a reader can build it
-(Tom, R196: "A reader can construct the classical view from multiple observations."): what no single observation holds, several joined can construct. This is the 22 September "everywhere
+(Tom, R196: "A reader can construct the classical view from multiple observations."): what no single observation holds, several joined can construct.
+Why no observation reads 1 (Tom, R197): "Correct, the actual breadth is 1, but you can't actually observe 1, because that assumes no facing, and a situated observer has a facing. Only the unsituated observer has no facing, and they can know the true breadth." Reading the true breadth means reading with no facing; every situated
+reading faces, away (π/2) or toward (2/π). The constructed view represents the breadth 1; it does not observe it. This is the 22 September "everywhere
 equation" (archived *The Order of Limits*: "The god's eye view is defined as π/2 · 2/π = 1"), now read as the three
 vantages. Each situated reading is right from its vantage; a paradox follows whenever either is quoted as the line's
 breadth. *Reading (Claude's, unruled):* this is the denominator family's exchange (§F) on one line: the product of the
@@ -396,6 +398,7 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
   paradoxes under one diagnosis, the private ruler as the reader's own H and the shared number line as the completed
   view's unit; the exchange already worked in `pool.html`. Simpson's paradox and the twin paradox moved up from the
   candidates.
+- 11 October, tenth: the breadth 1 is a reading with no facing, which only the unsituated observer has (Tom; SPN R197).
 - 11 October, ninth: the order of limits and Haraway's "god trick", with the completed view.
 - 11 October, eighth: a reader can construct the classical view from multiple observations (Tom; SPN R196); the
   seventh iteration's "no reader occupies it" narrowed to one observation.
