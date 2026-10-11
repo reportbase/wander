@@ -1713,3 +1713,10 @@ P38: not killed. over the first 2.5 s the curve stays within 0.724 of its start 
   what is coming is near, whatever its distance. Level of detail by time to arrival, run 10's τ again, at a larger
   scale.
 - **Not tested here:** refinement that follows the signal. It is the next run, if any.
+
+## Written up (11 October 2026; Tom: "yes", to writing up what the pool runs say about level of detail)
+
+What runs 1–18 say about level of detail is in SPN §3.3, "Level of detail tried in a simulation: pool from inside", as
+Claude's reading for Tom to rule, with its open items in SPN §14, "From the pool runs". `papers/physics.md` places them
+by standing (the contact identities in §2.2, the infinite table in a new §2.4, the pulse in §3), and
+`papers/v-and-h.md` gathers them as items 404–407. Nothing above is changed.

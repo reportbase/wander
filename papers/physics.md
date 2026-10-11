@@ -41,6 +41,10 @@ bodies are pictures. They are never evidence here.
 - 11 October: SPN Proposition 1.2 (R190; Tom: "reality = 2H", "same length, not addresses"): the in-place lay is reality
   drawn by length, the near field in the first H and the whole far field in the second, and it is the reader's own;
   the logarithm counts its addresses, the same number per doubling. The lay's 1/s² form (ISQ) is the reader's.
+- 11 October, second: the pool runs (POL 1–18, `plans/pol-plan.md`) placed by standing. Contact read from inside and
+  what a contact costs are exact (§2.2). The infinite table is a simulation of our own, its referee checked against
+  kinetic theory (§2.4, new): it says how a world can be held by level of detail, not that the world is so. The pulse a
+  world held by distance lost is in §3. In SPN as a reading, unruled (§3.3, "Level of detail tried in a simulation").
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -130,6 +134,18 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 
   The projected solid angle, the standard measure of irradiance, makes the light a share of a two-part split, the form
   `near-far-classification.md` calls fair to the facings.
+- **Contact read from inside, and what a contact costs** (POL, `plans/pol-plan.md`, runs 1, 2 and 9). Each ball reads
+  another as v = r_b/d and is told its reading h = r_a/d: radii over the distance between centres, one unit, so fill
+  levels with no bridge. Then:
+  - contact is h + v = 1, an identity; equal balls touch at the corner, h = v = ½;
+  - a cushion is a ball meeting its own mirror image, v = h, so always at the corner; a pocket is entered at v = 1;
+  - a contact turns an aim error by s/(2r·cos φ), and for a full hit by 2^L − 1, where h + v = 2^−L at the start: the
+    levels a pair was apart become levels of aim lost, to rounding once the moment h + v = 1 is found exactly;
+  - skipping a contact with a ball j levels smaller (radius halved per level) leaves out (1 + e)/(1 + 8^j) of the
+    closing speed (run 7).
+
+  These are classical mechanics of hard balls, read in fill levels. They are not new physics; what they give is the
+  count of levels, which the situated reader can use directly (a preview about three contacts deep on an open table).
 
 ### 2.3 In Wander's world (illustration, not evidence)
 
@@ -141,6 +157,26 @@ the world is so:
 - GRN run 8, a pair receding under the inverse square, lost at one grain across.
 
 They are kept as worked examples of the bridges (`labs.html`, `plans/grn-plan.md`).
+
+### 2.4 In simulations of our own (checked against known physics)
+
+A simulation is not evidence about the world. But where its referee computes the whole of a known physics, a scheme
+that holds less of it can be tested against the referee exactly. That is evidence about the scheme.
+
+- **The referee is a hard-disc gas** (POL runs 11–18, `pool-infinite.html`). At area fraction 0.15 it makes Enskog's
+  4.864 contacts per ball per second to 0.1% (with Henderson's contact value; in two dimensions the cross-section is
+  two diameters wide), its speeds are Rayleigh's to 4e-4, its count fluctuates as Henderson's equation of state gives
+  (0.526 against 0.530), and a pulse travels at that equation's sound speed (c = 9.76; half-maximum at 3.88 s, within
+  the range predicted).
+- **A world held by distance sees the gas** (runs 11–15). A window of balls round the reader, and beyond it totals in
+  dyadic cells, each split while its breadth exceeds its distance from the reader. The view's density, warmth and
+  contacts are the referee's within 0.3%, and the work is the window's for a world 256 times larger. It needed what the
+  physics of open systems already says: the outside's pressure (kinetic and virial), a reservoir that fixes the chemical
+  potential, not the count (the band's places free 51.1% of the time, Widom's 48.3% for the bulk), and books kept where
+  pushes balance.
+- **A world held by distance loses a signal on its way** (runs 16–18; §3). Level of detail by distance holds for what
+  stays put and averages out; what travels toward the reader must be held at its own size until it arrives. Adaptive
+  mesh refinement already does this, by gradients. In SPN's terms: what is coming is near, whatever its distance.
 
 ## 3. What was killed, and what it taught
 
@@ -166,6 +202,13 @@ They are kept as worked examples of the bridges (`labs.html`, `plans/grn-plan.md
   of the switch is set by the power in the share, log₂(81)/k levels, not one band for all.
 - **HZN run 1's P5 and run 2: a page reads only to its grain.** Near home, draw's levels page cannot read nearer than one
   segment or one direction, whichever is coarser. Run 3, with both grains doubled together, was not killed.
+- **POL P35, three times (runs 16–18): totals by distance cannot carry a pulse toward the reader.** A hot disc 20 units
+  across, 60 units off, was averaged into a level-3 cell 60 units wide before it moved. Diffusion cannot carry sound;
+  a fluid on the cells first never ran (a setting overwritten), then filled the window (its wall pushed nothing back),
+  then, with the wall's push, kept the window steady but delivered 22% of the peak, inside the noise. What it taught: a
+  signal must be held at its own size until it arrives.
+- **POL P29: a derivation, not the gas.** The plan took a disc's cross-section in two dimensions as one diameter; it is
+  two, and the referee matched Enskog once that was right.
 
 ## 4. The queue
 

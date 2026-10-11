@@ -184,7 +184,7 @@ Google Fonts load from outside:
   `physics.md` (10 Oct 2026, Tom: "lets create a new physics paper and iterate there") is the working paper for the physics
   correspondences: the rules (real data or exact arithmetic, prediction first, keep the case, name the bridge), a
   dictionary from SPN's geometry to physics, the results by standing (real data, exact arithmetic, Wander's world as
-  illustration only), the kills, and a queue of tests. New physics tests are planned in `plans/`, reported there, and
+  illustration only, simulations of our own checked against a full referee), the kills, and a queue of tests. New physics tests are planned in `plans/`, reported there, and
   promoted to SPN only once ruled.
   `inverse-square.md` (10 Oct 2026, Tom: "lets give the inverse square law its own paper to iterate on") gathers the law:
   as physics holds it (derived from conservation and three dimensions; tested as a bound on the exponent), in levels
@@ -313,6 +313,9 @@ Google Fonts load from outside:
   disc was averaged into a 60-unit level-3 cell before it moved. Level of detail by distance is right for what stays put,
   wrong for what travels toward the reader: a signal must be held at its own size until it arrives (refinement by the
   signal; untested). Modes: `opts.far` diffusion (default) | fluid | fluidwall.
+  Written up (11 Oct) as a reading, unruled: SPN §3.3, "Level of detail tried in a simulation" (size reads momentum where
+  the levels span more than the speeds; a reader that holds a world folds by distance only what arrives as totals, and
+  holds what is coming at its own size), SPN §14, "From the pool runs"; `physics.md` §2.2, §2.4, §3; `v-and-h.md` 404–407.
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
