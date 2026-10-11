@@ -101,6 +101,11 @@ different geometric representation". Claude's reading, from SPN; unruled.*
   from multiple observations": the hemisphere turned away and the one turned toward, read in turn and joined, with the
   three gaps filled. What it builds is the equation or the drawing on the page, held as a construction, not seen from
   where it stands.
+- *The telescope* (an illustration; Grok, shared by Tom, `plans/ofs-review-2.md`): one exposure is a parallel reading,
+  one facing from one standpoint at one step; the survey is the construction. What each combination builds: re-exposing
+  the same field, nothing new (less noise); other pointings joined at overlaps, the shape up to a scale; other filters or
+  instruments, one factor between readers (TGT); a second standpoint with a known baseline (parallax), a distance, the
+  baseline being the bridge.
 - *So:* the completed view is legitimate and constructible, and no single observation is it. A paradox of this catalogue
   is, typically, the completed view used as if one observation held it, or as if its gaps were already filled.
 
@@ -401,6 +406,8 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
   paradoxes under one diagnosis, the private ruler as the reader's own H and the shared number line as the completed
   view's unit; the exchange already worked in `pool.html`. Simpson's paradox and the twin paradox moved up from the
   candidates.
+- 11 October, thirteenth: the telescope as the working example of construction, and what each kind of combination
+  builds (Grok, shared by Tom).
 - 11 October, twelfth: situated, the truth must be constructed from multiple observations (Tom; SPN R199).
 - 11 October, eleventh: the view from nowhere knows the true breadth; a blueprint is the example (Tom; SPN R198).
 - 11 October, tenth: the breadth 1 is a reading with no facing, which only the unsituated observer has (Tom; SPN R197).
