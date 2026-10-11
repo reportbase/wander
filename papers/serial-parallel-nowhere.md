@@ -276,6 +276,9 @@ what follows from them.
 *The open question dissolved, 10 October* (R189; Tom: "one circle. yes, the open question than disolves. its just logrithimic doublings. this paper does. not need to prove the logrithm, it is fundemental."). Past the one corner the levels are
 logarithmic doublings of the unit V = H gives the reader's circle, and the logarithm is fundamental, taken as given and
 not proved here. What follows on the open question is kept as the record; the central result is unchanged.
+*The reason, 11 October* (R190): Proposition 1.2 (§1). Choose one H, set V = H, and the corner is H/H = 1; a level holds
+only its two ends and the flip, so the only subdivision it supplies is the halving (Proposition D.1), and the levels past
+the corner are doublings. The 2 is the corner's two sides.
 
 *Split, 6 October* (Tom: "all three", taking a review's advice). The hypothesis as promoted holds two claims of
 different standing, as the correction below found. They are now stated apart:
@@ -5679,7 +5682,8 @@ From 7–8 October (WHY2, what fixes the 2; `plans/why2-plan.md`):
 ## Appendix D. The derivation of 2 (demoted 8 October)
 
 *Dissolved 10 October* (R189): the question this appendix works on no longer stands. The levels are logarithmic doublings
-and the logarithm is fundamental ("The settled view, 10 October"). Kept as the record.
+and the logarithm is fundamental ("The settled view, 10 October"). Kept as the record. The reason the 2 needed no
+separate proof is Proposition 1.2 (§1; R190): the corner's two sides, given one chosen H and the flip alone.
 
 *Demoted from the central open question on Tom's word (Tom, 8 October: "demote the derivation of 2. reader sweeps their level of detail. In the near field, it proportional, far field its logrithmic. there is no recursion at all, its a sweep over the LOD.") Kept as written, as the record of the argument; its
 standing is unchanged (unruled, Claude's wording where marked), but the paper no longer turns on it: with the reader
