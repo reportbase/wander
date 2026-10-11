@@ -76,6 +76,11 @@
     // run 12: the far field's diffusion from the right rate (λ = 1.29, D = 4.04), and the band at the window's edge, 2 units
     // deep, its balls held at the cells' density and warmth (each redrawn about as often as it would meet another ball)
     const LAMBDA_ENSKOG = MEAN_SPEED / NU_ENSKOG, DIFF_ENSKOG = LAMBDA_ENSKOG * MEAN_SPEED / 2, BAND = 2;
+    // run 14: the band held at the cells' activity. Henderson's Z = (1 + φ²/8)/(1 − φ)² integrates in closed form to the
+    // excess chemical potential βμ_ex = (Z − 1) + (9/8)·φ/(1 − φ) − (7/8)·ln(1 − φ); the activity is z = n·e^βμ_ex (2.072 n at
+    // φ = 0.15). GAMMA: how often a band ball is put in or taken out, the gas's own contact rate.
+    const muEx = phi => { const Z = (1 + phi * phi / 8) / (1 - phi) ** 2; return (Z - 1) + 9 / 8 * phi / (1 - phi) - 7 / 8 * Math.log(1 - phi); };
+    const activity = n => n > 0 ? n * Math.exp(muEx(Math.min(0.7, n * Math.PI * R * R))) : 0, GAMMA = NU_ENSKOG;
     const SQ2PI = Math.sqrt(2 * Math.PI);
 
     function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
@@ -161,11 +166,12 @@
     // Cells are named by level k and index (i, j) in units of their own size (level 0 cells C0 wide); the world is 2^K
     // level-0 cells a side, wrapped round. A cell's totals: N (count), Px, Py (momentum), E (kinetic energy); mass 1.
     const keyOf = (k, i, j) => k + ':' + i + ':' + j;
-    // opts (run 13's by default): mode 'mirror' (run 13: the band held at the cells' state, its outer edge a mirror, balls in
-    // and out only by the band's keeping), 'band' (run 12: the band open at its outer edge) or 'edge' (run 11: no band, balls
-    // enter at the edge at the cells' one-way flux); quiet: a cell's flow read only above its noise; D: the far field's diffusion
+    // opts (run 14's by default): mode 'gc' (run 14: the band held at the cells' activity, its outer edge a mirror whose push
+    // goes to the outside, its books spread over the cells it reads), 'mirror' (run 13: the band's count held, its outer edge a
+    // mirror), 'band' (run 12: the band open at its outer edge) or 'edge' (run 11: no band, balls enter at the edge at the
+    // cells' one-way flux); quiet: a cell's flow read only above its noise; D: the far field's diffusion
     function Multi(K, w, oi, oj, seed = 1, opts = {}) {
-        return { K, S: 2 ** K, w, oi, oj, seed, mode: opts.mode || 'mirror', quiet: opts.quiet !== false, D: opts.D ?? DIFF_ENSKOG,
+        return { K, S: 2 ** K, w, oi, oj, seed, mode: opts.mode || 'gc', widom: { tries: 0, free: 0 }, quiet: opts.quiet !== false, D: opts.D ?? DIFF_ENSKOG,
             leaves: new Map(), pairs: [], segs: [], B: Balls(1024), closed: false, t: 0, tick: 0,
             ops: { moves: 0, pairs: 0, contacts: 0, tries: 0, cells: 0 }, residual: null, entered: 0, left: 0 };
     }
@@ -263,8 +269,15 @@
         // shift to the cell's mean motion and scale to its energy, exactly
         const B = M.B; let mx = 0, my = 0; for (const q of idx) { mx += B.vx[q]; my += B.vy[q]; } mx /= k; my /= k;
         let th = 0; for (const q of idx) { const dx = B.vx[q] - mx, dy = B.vy[q] - my; th += 0.5 * (dx * dx + dy * dy); }
-        const want = E - 0.5 * (Px * Px + Py * Py) / k, sc = th > 0 && want > 0 ? Math.sqrt(want / th) : 0;
-        for (const q of idx) { B.vx[q] = Px / k + (B.vx[q] - mx) * sc; B.vy[q] = Py / k + (B.vy[q] - my) * sc; }
+        let bPx = Px, bPy = Py, bE = E;
+        if (M.mode === 'gc') {   // run 14: a cell no set of balls could be (less energy than its flow carries) keeps the books anyway
+            const flow = 0.5 * (Px * Px + Py * Py) / k;
+            if (!(E > 0)) { bPx = 0; bPy = 0; bE = 0; }
+            else if (flow > 0.99 * E) { const f = Math.sqrt(0.99 * E / flow); bPx = Px * f; bPy = Py * f; }
+            M.residual.Px += Px - bPx; M.residual.Py += Py - bPy; M.residual.E += E - bE;
+        }
+        const want = bE - 0.5 * (bPx * bPx + bPy * bPy) / k, sc = th > 0 && want > 0 ? Math.sqrt(want / th) : 0;
+        for (const q of idx) { B.vx[q] = bPx / k + (B.vx[q] - mx) * sc; B.vy[q] = bPy / k + (B.vy[q] - my) * sc; }
     }
     // a placing grid for unfolding without overlap
     function placer(M) {
@@ -341,10 +354,14 @@
         const B = M.B, W = M.w * C0, ops = M.ops;
         for (let q = 0; q < B.n; q++) { B.x[q] += B.vx[q] * dt; B.y[q] += B.vy[q] * dt; }
         ops.moves += B.n;
-        if (M.closed || M.mode === 'mirror') {   // the control, and run 13's band: the window's edge a mirror (the control: nothing in or out)
+        if (M.closed || M.mode === 'mirror' || M.mode === 'gc') {   // the control, and runs 13–14's band: the window's edge a mirror
+            // (run 14: the momentum the mirror takes is the outside's, charged to the cells beside that stretch)
+            const charge = !M.closed && M.mode === 'gc', r = a => Math.min(M.w - 1, Math.max(0, Math.floor(a / C0)));
             for (let q = 0; q < B.n; q++) {
-                if (B.x[q] < 0) { B.x[q] = -B.x[q]; B.vx[q] = -B.vx[q]; } else if (B.x[q] >= W) { B.x[q] = 2 * W - B.x[q] - 1e-9; B.vx[q] = -B.vx[q]; }
-                if (B.y[q] < 0) { B.y[q] = -B.y[q]; B.vy[q] = -B.vy[q]; } else if (B.y[q] >= W) { B.y[q] = 2 * W - B.y[q] - 1e-9; B.vy[q] = -B.vy[q]; }
+                if (B.x[q] < 0) { if (charge) chargePool(M.segs[4 * r(B.y[q])].pool, 0, 2 * B.vx[q], 0, 0); B.x[q] = -B.x[q]; B.vx[q] = -B.vx[q]; }
+                else if (B.x[q] >= W) { if (charge) chargePool(M.segs[4 * r(B.y[q]) + 1].pool, 0, 2 * B.vx[q], 0, 0); B.x[q] = 2 * W - B.x[q] - 1e-9; B.vx[q] = -B.vx[q]; }
+                if (B.y[q] < 0) { if (charge) chargePool(M.segs[4 * r(B.x[q]) + 2].pool, 0, 0, 2 * B.vy[q], 0); B.y[q] = -B.y[q]; B.vy[q] = -B.vy[q]; }
+                else if (B.y[q] >= W) { if (charge) chargePool(M.segs[4 * r(B.x[q]) + 3].pool, 0, 0, 2 * B.vy[q], 0); B.y[q] = 2 * W - B.y[q] - 1e-9; B.vy[q] = -B.vy[q]; }
             }
         } else {          // a ball whose centre has left the window is folded into the cell it entered
             for (let q = B.n - 1; q >= 0; q--) {
@@ -355,6 +372,7 @@
         }
         collide(B, W, W, false, dt, ops, onContact);
         if (!M.closed && (M.mode === 'band' || M.mode === 'mirror')) band(M, dt, onEnter);
+        if (!M.closed && M.mode === 'gc') bandGC(M, dt, onEnter);
         if (!M.closed && M.mode === 'edge') {  // run 11: balls enter from each neighbouring cell at its one-way flux across a line, n·σ/√(2π) per unit length
             const rnd = M.rnd || (M.rnd = rng(hash3(M.seed, 7, 11)));
             for (const s of M.segs) {
@@ -377,6 +395,54 @@
         }
         if (++M.tick % 4 === 0) diffuse(M, 4 * dt);
         M.t += dt;
+    }
+    // run 14: a charge spread over the cells pooled, in proportion to their counts (equally if none holds any)
+    function chargePool(ls, dN, dPx, dPy, dE) {
+        let tot = 0; for (const l of ls) tot += Math.max(0, l.N);
+        let left = [dN, dPx, dPy, dE];
+        ls.forEach((l, i) => {
+            if (i === ls.length - 1) { addTo(l, ...left); return; }
+            const f = tot > 0 ? Math.max(0, l.N) / tot : 1 / ls.length, part = [dN * f, dPx * f, dPy * f, dE * f];
+            addTo(l, ...part); left = left.map((x, k) => x - part[k]);
+        });
+    }
+    // run 14: the band held at the cells' activity (grand-canonical keeping), against the mirror at the window's edge. Each
+    // part tries Poisson(Γ·z·A·tick) balls at random places, keeping those that are free, and takes out each of its balls with
+    // chance Γ·tick; its warmth is redrawn as in run 12; every charge is spread over the three cells it reads.
+    function bandGC(M, dt, onEnter) {
+        const B = M.B, W = M.w * C0, ops = M.ops, rnd = M.rnd || (M.rnd = rng(hash3(M.seed, 7, 11))), lists = M.segs.map(() => []);
+        const segOf = (x, y) => {
+            const dl = x, dr = W - x, db = y, dt_ = W - y, d = Math.min(dl, dr, db, dt_); if (!(d < BAND)) return -1;
+            const side = d === dl ? 0 : d === dr ? 1 : d === db ? 2 : 3, along = side < 2 ? y : x;
+            return 4 * Math.min(M.w - 1, Math.max(0, Math.floor(along / C0))) + side;
+        };
+        for (let q = 0; q < B.n; q++) { const s = segOf(B.x[q], B.y[q]); if (s >= 0) lists[s].push(q); }
+        ops.moves += B.n;
+        const del = [];
+        M.segs.forEach((g, s) => {
+            const st = stateOf(pooled(g.pool), M.quiet), r = s >> 2, end = r === 0 || r === M.w - 1, area = C0 * BAND - (end ? BAND * BAND / 2 : 0);
+            const mu = GAMMA * activity(st.n) * area * dt; ops.cells++;
+            let k = 0; for (let p = Math.exp(-mu), u = rnd(); u > p && k < 20; k++) { u -= p; p *= mu / (k + 1); }   // Poisson(mu)
+            for (let e = 0; e < k; e++) {
+                const a = r * C0 + rnd() * C0, b = rnd() * BAND, side = s & 3, x = side === 0 ? b : side === 1 ? W - b : a, y = side === 0 || side === 1 ? a : side === 2 ? b : W - b;
+                if (segOf(x, y) !== s) { e--; continue; }   // a place outside this part (a corner's other half): draw again
+                let ok = true; ops.tries += B.n; M.widom.tries++;
+                for (let q = 0; q < B.n && ok; q++) { const dx = B.x[q] - x, dy = B.y[q] - y; if (dx * dx + dy * dy < DIA * DIA) ok = false; }
+                if (!ok) continue;
+                M.widom.free++;
+                const vx = st.ux + st.sigma * gauss(rnd), vy = st.uy + st.sigma * gauss(rnd);
+                push(B, x, y, vx, vy); chargePool(g.pool, -1, -vx, -vy, -0.5 * (vx * vx + vy * vy)); M.entered++; if (onEnter) onEnter(x, y);
+            }
+            for (const q of lists[s]) {
+                if (rnd() < GAMMA * dt) { del.push([q, g.pool]); continue; }   // taken out
+                if (rnd() < NU_ENSKOG * dt) {                                    // its warmth redrawn
+                    const vx = st.ux + st.sigma * gauss(rnd), vy = st.uy + st.sigma * gauss(rnd);
+                    chargePool(g.pool, 0, B.vx[q] - vx, B.vy[q] - vy, 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2 - vx * vx - vy * vy)); B.vx[q] = vx; B.vy[q] = vy;
+                }
+            }
+        });
+        del.sort((a, b) => b[0] - a[0]);
+        for (const [q, pool] of del) { chargePool(pool, 1, B.vx[q], B.vy[q], 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2)); removeAt(B, q); M.left++; }
     }
     const pooled = ls => { const t = { N: 0, Px: 0, Py: 0, E: 0, A: 0 }; for (const l of ls) { t.N += l.N; t.Px += l.Px; t.Py += l.Py; t.E += l.E; t.A += l.A; } return t; };
     // run 12: the band. Each level-0 stretch of the window's edge has its part of the band (the points nearer that edge than
@@ -515,7 +581,7 @@
     pageInit(); requestAnimationFrame(loop);
 
     window.__infinite = {
-        R, DIA, PHI, N_DENS, SIGMA, TICK, C0, G_CONTACT, NU, NU_ENSKOG, LAMBDA, DIFF, LAMBDA_ENSKOG, DIFF_ENSKOG, BAND,
+        R, DIA, PHI, N_DENS, SIGMA, TICK, C0, G_CONTACT, NU, NU_ENSKOG, LAMBDA, DIFF, LAMBDA_ENSKOG, DIFF_ENSKOG, BAND, muEx, activity, GAMMA,
         makeGas, refereeStep, cloneGas, Multi, multiFromGas, multiUniform, multiStep, setWindow, totals, stateOf, leafAt, rng, gauss,
         page: () => ({ M, cam, zoom, frameOps, windowFor: windowFor() }), setZoom, strike, pause: on => { paused = !!on; },
         moveTo: (x, y) => { cam.x = x; cam.y = y; follow(); },

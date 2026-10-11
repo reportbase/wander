@@ -1309,3 +1309,78 @@ run 13's (the mirror, the three cells read, the warmth redrawn, the measures).
   - the cells beside the window;
   - the view just after a pan;
   - the work against run 11's window.
+
+Run 14 output (`node plans/pol/pol14.mjs`, in `plans/pol/pol-run14.txt`; before it, a crash check only):
+
+```
+the referee (as run 11): 4 states of 13581 balls, 240 a side, wrapped; 60 s each, 64 views of 30 × 30 sampled every 0.05 s
+  view: density 0.2358, energy per ball 24.984, contacts per ball per second 4.860; count var/mean within each view 0.462
+
+the multiscale world, the band held at the cells' activity: the window 45 × 45, its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.0408 (-82.7%), energy per ball 178863.531 (+715826.4%), contacts per ball 12.956 (+166.6%), count var/mean within the run 148.932 (+32156.4%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (+0.1%), contacts per ball 4.758 (-2.1%), count var/mean within the run 0.309 (-33.0%)
+  open: the band's density 0.0566 (-76.0%), energy per ball NaN (NaN%); balls put in 758566, taken out or left 722396; the window held 474 at the start, 1378 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first; the band is the first two):
+    0.286 0.192 0.142 0.150 0.155 0.159 0.162 0.165 0.168 0.170 0.172 0.175 0.174 0.176 0.176 0.176 0.178 0.176 0.175 0.176 0.176 0.176 0.169
+  the band's places free when tried: 73.0% of 1038679 (Widom's e^(−βμ_ex) for the bulk: 48.3%)
+  level-0 cells beside the window, density over the world's: mean 0.238, lowest -0.054, highest 3.887
+  just after a pan, the view's density 0.2226 (-5.6%), energy per ball 23.944 (-4.2%)
+  the books: over the 40 open runs, count off by at most 2.5e-11, momentum NaN, energy NaN of itself; over the pans 5.5e-12, 2.8e-12, 3.4e-16
+  work per simulated second: 240 a side 1.141e+6 (52 cells), 3,840 a side 1.411e+6 (100 cells), +23.7%; run 11's window (no band) 1.854e+5
+
+P28‴: KILLED. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself, over every run and pan
+P30‴: KILLED. the open view's density -82.7%, energy per ball +715826.4%, contacts per ball +166.6% (each within 3%)
+P31‴: KILLED. within-run var/mean: open 148.932 (+32156.4%; within 15%), closed 0.309 (-33.0%; at least 25% lower)
+P32‴: KILLED. the multiscale work changes by +23.7% for 256 times the balls (less than 5%)
+P33″: KILLED. from 2 units inward, the density is at most +85.8% from the referee's (within 5%)
+```
+
+- **All five killed.** The open windows ran away: energy per ball in the view rose to 178,863 (σ² = 25), some cells'
+  counts went negative (−0.054 of the world's density), and the books went to NaN. The windows ended with 1,378 balls on
+  average against 474 at the start. The closed control, which does none of the new things, is run 13's to the digit.
+- *Measured:* the band's places were free 73% of the time it tried them, against Widom's 48% for the bulk: the band ran
+  thin before the runaway took it.
+
+## Reading of run 14 (not ruled)
+
+- **A push is not a thing to store.** The mirror's push on the outside is the outside's pressure. Charged to the cells
+  beside the window, it was a steady outward momentum, every stretch's cells pushed away from the window, with nothing in
+  the cells to push back: they have totals, not pressure. Their momentum grew without end. The band read it as a flow
+  (it was far above its noise), put balls in at that flow, and the energy ran away. Over the whole edge the pushes nearly
+  cancel (run 13 left about 1,000 units of momentum unbooked in a minute, a random walk of pushes about 12 each). They can
+  be booked where they cancel: in the far field, not beside the window.
+- **Three cells are still too few for the band's books.** Grand-canonical keeping replaces each band ball about five
+  times a second. Charged to three level-0 cells, that is about 17 charges a second to cells of a dozen balls, which
+  diffusion relaxes only over seconds. Their counts swing by about half. A reservoir has to be large next to what it
+  is asked to absorb, or its reading is its own noise.
+- **The grand-canonical keeping itself is untested here.** The runaway came from the books, not from the keeping, but
+  the band ran thin (73% free against 48%) before it blew up, and that is not explained.
+
+### Run 15 (11 October 2026): prediction, written before it ran
+
+Run 14 with the band's books kept where they can be kept. Three changes, named; everything else is run 14's
+(grand-canonical keeping at the activity from Henderson, the mirror, the warmth redrawn, the robust unfold, the measures).
+- **The mirror's push is booked in the far field.** The momentum each turn-back takes, +2·v_n, is charged to the
+  coarsest cells of the cover, in proportion to their areas. There the pushes from opposite sides cancel, and what is
+  left is small against cells of millions of balls.
+- **The band reads and charges the whole ring of cells beside the window.** Every part of the band reads the same
+  reservoir: all the cells next to the window's edge, corners included, pooled (a coarser cell counted once, about 370
+  balls in all). Every charge is spread over them in proportion to their counts.
+- **The band is kept more gently: Γ = 1 a second.** Each band ball is put in or taken out about once a second, not five
+  times, so the ring absorbs about 85 a second.
+
+- **P28⁗ (the books).** Over every run and pan: count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself.
+  *Killed* if any run misses.
+- **P30⁗ (the view sees the same gas).** The open view's density, kinetic energy per ball and contacts per ball per
+  second, averaged over the 40 runs, each within 3% of the referee's. *Killed* if any is not.
+- **P31⁗ (open, not closed).** Within-run var/mean: open within 15% of the referee's; the closed control at least 25%
+  lower. *Killed* if either fails.
+- **P32⁗ (the work).** Changes by less than 5% from L = 240 to L = 3,840. *Killed* if 5% or more.
+- **P33‴ (the band reaches no further than itself).** From 2 units inward, the density in each 1-unit band within 5%
+  of the referee's. *Killed* if any is off by more.
+- *Measured, not predicted:*
+  - the band's two units;
+  - how often its places are free (Widom's 48% in the bulk);
+  - the ring of cells;
+  - the view just after a pan;
+  - the work against run 11's window.
