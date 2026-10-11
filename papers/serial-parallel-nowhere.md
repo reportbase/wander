@@ -175,7 +175,7 @@ use octave, its just a place holder"; "level and dyadic, go ahead").
   the layout's rule, not a theorem (since 8 October, step 3 of a proposed proof, conditional on there being no measure
   before payload: "A route to forcing 2", Appendix D; demoted). With that rule the corners fall one doubling apart, v/h = 1, 2, 4, 8, …, and the
   levels are **dyadic**. A next level filling another share of the back half would give another ratio.
-- **The open question** is whether a reader's levels are dyadic: whether a reader uses that rule of its own, or
+- **The open question** (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental) is whether a reader's levels are dyadic: whether a reader uses that rule of its own, or
   whether what it reads sets the ratio ("Central result, and the open question", below). Laid side by side round their
   corners (Proposition 3.12), dyadic levels are pieces with r = √2, q = r² = 2.
 
@@ -232,7 +232,7 @@ each level the same sweep, with its own home, corner and wall
 the levels drawn: one continuous sweep; wrapped, a logarithmic spiral
                      │
                      ▼
-open: what fixes the ratio between rungs (the 2), which is the spiral's pitch
+open: what fixes the ratio between rungs (the 2) (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental), which is the spiral's pitch
 ```
 
 **Observation, decomposed: one operation, three conditions** (Tom, 7 October: "observation is not one thing but it
@@ -381,7 +381,7 @@ two claims of different standing:
   R162 (it is Proposition 3.2(b) in the level's place), for every ratio between rungs. No run needs to test it.
 - **A reader's ratio between rungs is 2.** Not derived. §3.3 says the same: "The doubling is the reader's ratio between
   rungs, not the geometry's" (*The Radix* §5; R176). This is the part the runs above and below ask about, and the open
-  question is sharper put as: *what fixes a reader's ratio between rungs?*
+  question is sharper put as: *what fixes a reader's ratio between rungs?* (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental)
 
 The sentence in bold above joins the two; read with this correction, a test of the 2 asks what fixes the ratio, not
 where the corner falls (which is proved).
@@ -412,11 +412,11 @@ it reads; the question is which ρ costs least.
   about 1.25–1.35 or toward 1.1: luck below one step across is cheap there.
 
 So, under this cost, levels one doubling apart are what it costs least to be sure, for a reader that pays for what lies
-along the direction it resolves. That is a candidate answer to the open question, not a ruling: the valley is broad
+along the direction it resolves. That is a candidate answer to the open question (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental), not a ruling: the valley is broad
 (1.65 to 2.5 within 3%), the price is one model, and which price is a reader's is now the open part. The builder chose
 the cost model, not the ratio.
 
-**Demoted: the derivation of 2** (Tom, 8 October: "demote the derivation of 2. reader sweeps their level of detail. In the near field, it proportional, far field its logrithmic. there is no recursion at all, its a sweep over the LOD.") The reader sweeps its level of detail: in the near field, before the
+**Demoted: the derivation of 2** (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental) (Tom, 8 October: "demote the derivation of 2. reader sweeps their level of detail. In the near field, it proportional, far field its logrithmic. there is no recursion at all, its a sweep over the LOD.") The reader sweeps its level of detail: in the near field, before the
 corner, the sweep is proportional; in the far field, past it, it is logarithmic. Nothing recurses (§3.3, "Recursion
 considered and rejected"). On a logarithmic sweep the ratio between levels is the unit the sweep is counted in, not
 something the reading depends on: Proposition 3.4(a) gives the far field's register as k · log s + c with k free, so the
@@ -2674,7 +2674,7 @@ What follows from it:
 - *Situation 3 or 4 is a spiral; situations 1 and 2 are the circle, the spiral with k = 0* (§2). For r = 2 the reading grows
   ×4 each quarter turn and ×256 each full turn (k = 0.8825); for r = 3, ×9 and ×6561.
 - *The pitch is the ratio between rungs*, k = 2 ln r/(π/2). The geometry fixes the turn per level, a quarter; it does
-  not fix how much the reading grows in it. The question the audit left open, what fixes a reader's ratio between rungs,
+  not fix how much the reading grows in it. The question the audit left open (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental), what fixes a reader's ratio between rungs,
   is the question what fixes the spiral's pitch (§14).
 - *Two readings make a quarter turn per level, and they differ by under 5°.* Proposition 3.12's reading (each level a
   relation) leaves the exact spiral by a wobble that repeats each level and vanishes at every corner and edge: at most
@@ -2940,7 +2940,7 @@ not that.
 - **It extends R155 and R171 from addresses to levels.** The range of addresses is laid before anything arrives, and
   payloads can be evaluated on demand (§4.2, §4.3). So is the ladder of levels: laid in advance as one identity, with only
   the descent run. Geometry is compile time; observation is the runtime (the opening, "Geometry is compile time").
-- **An argument for the 2, and its gap** (Tom: "that may be a good argument for the forcing of 2"; Claude's reading,
+- **An argument for the 2, and its gap** (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental) (Tom: "that may be a good argument for the forcing of 2"; Claude's reading,
   unruled). If the levels are precomputed, their ratio cannot depend on anything that arrives: not the scene (the 3d bench
   found the best ratio following the scene), not a builder's rule (HRT), not a price (WHY2). It must come from the
   addressing alone. The addressing names one number of its own: two, the halves the corner makes of a level (the central
@@ -2949,7 +2949,7 @@ not that.
   corner bisects a level of any ratio (the central result's correction). So precomputation rules out a ratio set at
   runtime, and narrows the ratio to numbers the geometry itself names; it does not yet show that 2 is the only one.
 
-**Rungs, and the ratio between them** (*The Radix*; R176). The doubling is the reader's ratio between rungs, not the geometry's. *The Radix* §5: the lens
+**Rungs, and the ratio between them** (*The Radix*; R176). (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental). The doubling is the reader's ratio between rungs, not the geometry's. *The Radix* §5: the lens
 forces the ladder past the corner to be a ladder of ratios, since a change of radius slides a ladder and can re-space
 only one whose steps are ratios; but it does not fix which ratio. The doublings come from a reader whose ratio between rungs
 is 2; a ratio of 3 gives a ladder in threes, 10 in tens. So R163 and R167 are stated in general for a ladder of ratio
@@ -4079,7 +4079,7 @@ A reader in the hollow completes every curl. Spirals past a full turn stay hidde
 - levels nested in a reader's depth addresses (SIT);
 - readers nested in readers' standpoints (NST, STR).
 
-Neither decides the 2 of the central hypothesis; see there.
+Neither decides the 2 of the central hypothesis; see there (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental).
 
 **Cautions.**
 - The nesting runs use exact meeting distances, so they show where standpoints must be, not how depth is held. Holding depth is SIT's subject.
@@ -5077,7 +5077,7 @@ offered as a theory of perception or of mind, and "a coherent system of observat
 R176. *Flagged as a priority at 04:57: what "grain" is, and where the far horizon is.* "Grain" has carried at least three senses in the corpus:
 1. **the step**, the gap between neighbouring addresses, the smallest difference a reader tells apart (*The Six Things*;
    the level-of-detail rung step σ; *Wander*'s Stage 2);
-2. **the ratio between rungs**, the base of the count, how far one carry moves (§3.3: "the doubling is the reader's
+2. **the ratio between rungs** (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental), the base of the count, how far one carry moves (§3.3: "the doubling is the reader's
    grain"; ln 2 gives doublings, ln 3 threes);
 3. **the count of addresses, N**, which gives a bounded sweep its last address, near v/h = 4N/π (Proposition 3.8's table).
 
@@ -5253,7 +5253,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
     absent; telling them apart would take a second test, that a convention can be chosen freely and an absent value
     cannot be assigned. One built-in lab is not enough to change the conjecture's wording.
 - **From the shapes (§6.4).**
-  - *The 2 of the central hypothesis*: readers that take their own H from their parent's record, on signals built on ratios of 2, 3 and the golden ratio. Does the ratio of parent's to child's H settle at 2, or follow the signal? *Run 6 October (HRT): did not reach the question* (central hypothesis). *Restated* (the audit): the corner's place in the level is proved for every ratio; what stays open is **what fixes a reader's ratio between rungs**, which is the same question as *what fixes the pitch of the reading's spiral* (Proposition 3.13, k = 2 ln r/(π/2)): the reader's choice (*The Radix*), the step of its lay (R176's floating point, whose base 2 is a hardware choice), or the world's payloads (Corollary 3.9). No simulation that builds the reader can settle it.
+  - *The 2 of the central hypothesis* (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental): readers that take their own H from their parent's record, on signals built on ratios of 2, 3 and the golden ratio. Does the ratio of parent's to child's H settle at 2, or follow the signal? *Run 6 October (HRT): did not reach the question* (central hypothesis). *Restated* (the audit): the corner's place in the level is proved for every ratio; what stays open is **what fixes a reader's ratio between rungs**, which is the same question as *what fixes the pitch of the reading's spiral* (Proposition 3.13, k = 2 ln r/(π/2)): the reader's choice (*The Radix*), the step of its lay (R176's floating point, whose base 2 is a hardware choice), or the world's payloads (Corollary 3.9). No simulation that builds the reader can settle it.
   - *Number lines in people* (`plans/nle-plan.md`, 6 October; the candidate "independent fact" of the central hypothesis). A corner model (proportion up to H, a count of doublings past it) against a straight line, a logarithm and proportion judgment, per child, with the prediction and the instrument's calibration fixed before any data. On Chan and Mazzocco's 104 kindergartners (2024; 0–100 lines, Time 1), **killed**: proportion judgment beats the corner for 40 of the 75 children who depart from a straight line (53%), and more clearly after training (61%) and on 0–20 lines (77–84%); the corner beats a plain logarithm for 8%. One dataset, one age, half the lines with a labelled midpoint; the parts tying H to the familiar range untested. A fairer test: older children, 0–1000 lines without a midpoint, each child's counting range.
   - *Which near/far laws are fair to the facings* (the audit). Of the powers of s/√(1 + s²) (s each law's own named pair, not the reader's v/h), only the square (the disc); the dipole's electric field has only a symmetric bracket; the coil favours a facing (§3.2). A classification of classical near/far laws by these three kinds would replace "physics has the same structure" with a count. *Done* (6 October, `plans/near-far-classification.md`; Claude's, unruled): a law is fair to the facings exactly when it is the share of a two-part split whose parts the flip exchanges, f = A(s)/(A(s) + A(1/s)) (in the angle, the disc is sin²θ and its fairness is Pythagoras). Of twelve classical laws, the eight that are shares of a split (the disc, a dipole's magnetic near share, a filter's power, Michaelis–Menten, two-state occupancy, a voltage divider, Hill, a subtended angle) are fair; the four single components (the coil, a filter's amplitude, a ring's potential, a disc's field) are not, with their middles at 30°, 52.5° and 60° of turn. The same filter is fair in power and not in amplitude: fairness belongs to the quantity read.
   - *Crossing open space*: the child rule stands only where something was met, so a chain from inside a winding shape stops at the mouth. Is that a limit of a situated reader, or of the rule? Any rule that steps into the open seems to need something the record does not hold.
@@ -5298,7 +5298,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
      in-place lay. So the corner at the middle is derived; the weight is a choice of drawing, the turn coming from
      holding the relation on the circle (§3.3, "Two ways to hold a relation"), which the facing motivates (§1, "The line,
      the arc and the facing"). The same lay-dependence as Appendix D's "Binary branching is not yet a ratio of 2".
-  4. *The ratio between levels: open, and kept visible.* Binary branching is proved (Proposition D.1); the ratio 2 rests
+  4. *The ratio between levels: open, and kept visible.* (*dissolved 10 October*, R189: logarithmic doublings, the logarithm fundamental). Binary branching is proved (Proposition D.1); the ratio 2 rests
      on the in-place lay, whose being forced is deferred (Appendix D; the central open question).
   5. *The geometry–physics boundary: audited by pattern on 9 October* (`plans/vh-rulings-review.md`,
      `plans/physics-vh-audit.md`; §1, "Checking an argument"). Logarithms of ratios such as log₂(Δ/(d·ε)) are ratios of
