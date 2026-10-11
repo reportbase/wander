@@ -48,6 +48,22 @@ world. It is a geometry of the reader's own
 *addresses*: the places where readings can be put, which exist before anything is read and do not depend on what is
 found there.
 
+**What is new, and what is not.** That coordinates depend on the observer is old: a coordinate system is a choice,
+and a change of coordinates changes every coordinate. What is new here is where the scheme comes from. A coordinate
+system is laid on a completed space. It presupposes the whole, with every length already in one scale, and a change of
+coordinates carries every amount along with it. A situated reader has no completed space to lay coordinates on. It has
+its own breadth and the relations it can form from where it stands, and from these alone it builds its places before
+anything is read. Three things then have to be kept apart:
+- the *object*, whatever exists independently of any reading of it;
+- the *address*, the place in the reader's scheme at which something can be met;
+- the *payload*, the magnitude met there.
+
+A change of coordinates moves addresses and payloads together. The separation here lets either change without the
+other. Changing what arrives leaves every address in place (Theorem 6), and changing the reader's sweep changes its
+addresses without touching the object. The contribution is a construction of a bounded observer's representation that
+does not presuppose the whole, together with an exact account of what that construction can recover and what it
+cannot. Classical geometry is not wrong; it begins where this paper ends, with the whole already in hand.
+
 **A picture.** Hold your hand out flat, palm down, and turn it until it points straight up. The motion between is a
 sweep. Spread your fingers between flat and upright: each finger is a direction in which you can look, an address. Now
 put a ring on each finger. The rings are what you find in each direction, the *payload*. Turning the hand does not
@@ -84,7 +100,8 @@ as if a single observation held it. Section 3 sets out the readers in full.
   addresses, not its payload. Whatever is met in each direction cancels from the reading. Order survives every change of
   payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
-- The geometry does not supply amounts; a fact shared between two readers supplies exactly one ratio (§9).
+- The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
+  outside fixes the scale, and a fact shared between two readers supplies exactly one ratio (§9).
 - A worked example, a mountain range read from nowhere and from where the reader stands, puts the pieces together (§10).
 
 Section 11 discusses a single principle that may underlie all of these, the assumptions they rest on, and related work.
@@ -158,10 +175,25 @@ what arrives.
 | 3 | known | not known | outside | parallel: one hemisphere at once | an apple held in the hand, its facing side seen at once |
 | 4 | known | not known | inside | serial: one direction at a time | a molecule inside an endless apple, the others arriving one at a time, nearest first |
 
-The first cut is whether V is known. If it is, the reader holds the whole: situation 1 if the two breadths are equal, 2
-if they are not. If it is not, the reader is situated: 3 if it stands outside a thing and takes its facing side at once,
-4 if it stands inside and takes the rest one direction at a time. A reader with no h has nothing related to it at all,
-and that is situation 0. A V known only within bounds is a variant of 3 or 4, not a sixth situation.
+**The rule.** Three questions place any reader in exactly one situation.
+1. Is anything related to the reader, so that it has an h? If not, it is in situation 0.
+2. Does the reader know V? If it does, it holds the whole: situation 1 if V equals H in every direction, situation 2
+   otherwise.
+3. If it does not, does the thing hold still for the reader's look, so that its facing side can be taken at once from
+   outside? If so, situation 3. If it changes or arrives during the look, so that it must be taken one direction at a
+   time from inside, situation 4.
+
+Each question has two answers, and each answer either ends the questioning or leads to the next question, so every
+reader lands in one situation and no reader lands in two: the five are exhaustive and do not overlap. Cases that look
+like a sixth reduce to these.
+- *V known only within bounds* is situation 3 or 4 with its one missing number known within bounds (§3.8).
+- *H unknown* leaves no reader at all: H is the reader's own breadth and is always held. Situation 0 is H with no h.
+- *A reader that reads in patches* is serial across the patches and parallel within each; every single look is 3 or 4.
+- *A system that changes kind* moves its reader from one situation to another over time (§3.5); at any one look the
+  reader is in one.
+- *Several readers* each have a situation of their own; what passes between them is the subject of §9.
+- *More than two breadths* put the questions to each further breadth in turn; with V and V₂ both unknown and both set
+  to H, the circle becomes the sphere (§5).
 
 **Thumb and mountain.** Call the reader's breadth H its thumb and the other's breadth V the mountain. If the reader
 knows the mountain's size, it holds the unsituated view: thumb and mountain are both in hand, and the corner, where the
@@ -288,6 +320,14 @@ arc π/2, and a bar of length 1 swept evenly through a quarter turn casts an ave
    a distance (§10 works one through).
 7. There are therefore two ways to the true breadth, and only two: held, unsituated, as in a blueprint; or constructed,
    situated, from several observations.
+
+**Why only two.** The limit in steps 3 to 6 is exact, not an intuition about perspective. Every reading a situated
+reader takes is a ratio of two amounts, so multiplying every amount in the scene by one factor leaves every reading
+unchanged. No collection of readings, from however many standpoints, can therefore fix the scale, and one amount
+supplied from outside the readings fixes it (Proposition 8, §9). "Only two" means this: the true breadth is either held,
+or an amount is brought in from beyond the single reading and the rest is constructed from it. Calibration against a
+standard, a baseline of known length and prior knowledge of a size are all ways of bringing that amount in. They belong
+to the second route; they are not a third.
 
 Each vantage's reading is right from where it stands. Many apparent paradoxes come from reading one vantage's geometry
 as if it were another's, most often from treating the completed view as if one observation held it.
@@ -440,6 +480,13 @@ angle of 2θ (the inscribed-angle theorem), so the facing turns twice as fast as
 at B. At the corner, θ = 45° and the facing is 90°: square to AB, leaning toward neither party. There the arc stands
 farthest from the segment, by 1 − 1/√2.
 
+**What the flip gives, and what it does not.** The flip proves that the corner is the one point it leaves fixed, that
+every sweep passes through it, that a reading kept within [0, 1] on both sides must change register there (Proposition
+2(a)), that a fair reading puts it at the middle (Proposition 2(b)), and that expansions about home stop there. It does
+not prove that the drawing is a circle, which needs Euclidean length (§5); how readings past the corner are laid out,
+which needs the premise that no scale is preferred (§6); or the weight with which the sweep is counted, which needs
+even steps of turn (§7). Each of these rests on its own premise, and we name it where it enters.
+
 **Every pair has its own corner.** Any two parties have a sweep and a corner, and the corner of one pair is not the
 corner of another. A corner means nothing until its pair is named. In the wedge the corner is the central ray. With
 three unit relations the three pairwise corners, v = h, h = v₂ and v = v₂, are planes through the central ray v = h = v₂, and
@@ -522,7 +569,20 @@ increasing solutions are g(λ) = c·ln λ. At x = 1 the near lay has slope 1 and
 Room here is the number of addresses a doubling receives, not its length.
 
 The premise (S) does the work. Monotonicity, a fixed corner and a matched slope are not enough by themselves:
-r(x) = 1 + ln x + α(ln x)² with α > 0 satisfies all three and gives successive doublings different room. Whether (S)
+r(x) = 1 + ln x + α(ln x)² with α > 0 satisfies all three and gives successive doublings different room.
+
+**Why (S) is the rule for a reader with no preferred scale.** Suppose a lay breaks (S): for some factor λ, the stretch
+from x to λx gets more room than the stretch from y to λy. Choosing the reader's unit differently would turn the
+readings x into y, since a change of H multiplies every far reading by one factor. The two stretches therefore differ
+only by a choice that, by Proposition 3(b), nothing in the readings can make: a reader with unit λH in a world scaled
+by λ receives exactly the same readings. A lay that breaks (S) builds into the addresses a scale the reader cannot
+have. Each natural alternative breaks it in just this way:
+- *proportion past the corner*, r(x) = x, gives the stretch from x to λx room (λ − 1)·x, which grows with x;
+- *a power*, r(x) = x^α, gives it room (λ^α − 1)·x^α, which also depends on x;
+- *a logarithm with a correction*, as above, gives room that depends on ln x.
+
+The logarithm alone gives room that depends on λ and not on x, and Proposition 4 shows it is the only increasing lay
+that does. Whether (S)
 follows from (P1) and (P2), or must be added, is the first question of §11. Note also that the argument for (S) passes
 through amounts, by way of V = H, and that the smooth join (c = 1) is a further condition rather than a consequence of
 the flip.
@@ -679,14 +739,17 @@ f(X) has the same ranks as X, so every address statistic picks out the same elem
 median f(X) = f(median X). Conversely, two sets with the same ranks are carried onto one another by some strictly
 increasing f, so the ranks keep exactly what survives every such change, and nothing more.
 
-(c) *Payload statistics do not.* The mean commutes with f only where f is affine on the data; for convex f,
-mean f(X) ≥ f(mean X), with equality only if f is affine there or X is constant.
+(c) *Payload statistics do not.* Only an affine f commutes with the mean on every set of readings: for any f that is not
+affine there is a set X with mean f(X) ≠ f(mean X). For convex f, mean f(X) ≥ f(mean X) on every X, with equality only
+if f is affine on the smallest interval containing X.
 
 (d) *The Cauchy is an address law.* Over one facing its median is v/h = 1, the corner, and its quartiles are √2 − 1 and
 √2 + 1, a flip pair. Its mean does not exist: ∫₀^M x·2/(π(1 + x²)) dx = (1/π)·ln(1 + M²), which grows without bound.
 
 *Proof.* (a) is the cancellation shown. (b) Strictly increasing maps preserve ranks; the converse follows by monotone
-interpolation between matched points. (c) is Jensen's inequality. (d) Over one facing the distribution function is
+interpolation between matched points. (c) A strictly increasing f that satisfies f((a + b)/2) = (f(a) + f(b))/2 for all a, b is affine,
+so a non-affine f fails it for some pair, and X = {a, b} is the set required; the inequality and its equality case are
+Jensen's. (d) Over one facing the distribution function is
 (2/π)·arctan(v/h), which is ½ at v/h = 1 and ¼ and ¾ at tan(π/8) = √2 − 1 and tan(3π/8) = √2 + 1; the integral is
 elementary. ∎
 
@@ -694,6 +757,18 @@ The theorem is elementary; its content is the reading. The Cauchy distribution i
 meets. It is the reader's own layout of directions, counted. What arrives in each direction cancels from every single
 reading, not merely on average, so the readings tell rays apart, not points. The Cauchy is where the reader can put what
 arrives, never what arrives.
+
+**What the result establishes, and what it does not.** The argument has three steps.
+1. The sweep is defined without any reference to what arrives: equal steps of turn, from home.
+2. Changing what arrives, while keeping the sweep, leaves the readings and their distribution exactly as they were
+   (Theorem 6(a)).
+3. So the Cauchy is a property of the sweep, the reader's addressing, and finding it is no evidence by itself that
+   anything in the world is distributed that way.
+
+Two things are not claimed. The theorem does not show that every real observer samples in equal turns; it shows what a
+reader that does so receives, and why equal turns is the sampling that prefers no attitude (§7.5). Nor does it show that
+every Cauchy distribution met in data has this origin; a Cauchy met as data may have others, and the next paragraph
+says what sets its scale when it is formed from a reading.
 
 **Where the usual confusion comes from.** Laid evenly by direction, the sweep is uniform and bounded, g from 0 to 1, with
 its middle at the corner: geometry, with nothing wild in it. Read on the axis v/h, the same lay is a Cauchy of scale 1,
@@ -731,7 +806,14 @@ requires. The addresses are universal, and the shape is payload.
 
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the
-parts behind are hidden: rings behind rings on one finger. Occlusion and contact need more than a value at each address
+parts behind are hidden: rings behind rings on one finger.
+
+Two examples show the reach and the limit. An ellipse with semi-axes 2 and 1, read from its centre, meets each
+direction θ once, at r(θ) = 2/√(cos²θ + 4·sin²θ). One value per address holds it completely, and doubling the ellipse
+doubles every value and moves no address. A ring between radii 1 and 2, read from its centre, is not star-shaped from
+there: every direction meets its inner edge and then its outer edge. One value per address keeps the inner edge, the
+first thing met, and loses the outer one, which lies behind it on the same address. What the representation keeps is
+the first meeting along each address; what it loses is everything behind that. Occlusion and contact need more than a value at each address
 (that sight runs straight and stops at the first thing it meets), and nothing here is claimed for them.
 
 ### 7.5 Situated and unsituated
@@ -834,8 +916,22 @@ part closes by itself. Then H_B/H_A = |S_A|/|S_B|, and nothing more about the un
 *Proof.* Closure gives H_A·S_A + H_B·S_B = 0, so S_A and S_B are antiparallel and H_B/H_A = |S_A|/|S_B|. Scaling both
 units together leaves every count unchanged, so their common scale cannot be recovered. ∎
 
-Between two private rulers, a shared fact buys exactly the
-one factor that crosses.
+Between two private rulers, a shared fact buys exactly the one factor that crosses.
+
+**Proposition 8 (scale cannot be read).** Let a reader's observations be any collection of readings, each a ratio of
+two amounts in the scene: sizes, distances, the separation between two of its standpoints. Then:
+
+(a) multiplying every amount in the scene by one factor λ > 0 leaves every observation unchanged, so no collection of
+such observations, from any number of standpoints, fixes the scale;
+
+(b) if one amount L₀ is supplied from outside the readings, every amount that the readings link to L₀ is fixed.
+
+*Proof.* (a) Each reading is a ratio a/b of amounts, and (λa)/(λb) = a/b. (b) If a reading links an amount a to L₀,
+directly as a/L₀ or through a chain of readings whose ratios multiply to a/L₀, then a = L₀ times that product; and λ = 1
+is the only factor that leaves L₀ fixed. ∎
+
+This is the exact form of §3.4's "only two". The worked example of §10 is (b) in use: the baseline is a walk of one
+known H, and it fixes the mountain's distance and width.
 
 ## 10. A worked example: a mountain range
 
