@@ -115,6 +115,9 @@ Google Fonts load from outside:
   opposite side spin; the cue can be raised (`cue ↑`, `?el=`): a tilted spin axis bends the path (massé), the press into
   the slate throws the white up (jump); off the cloth a ball falls (G) and bounces (E_TABLE), and contacts read h + v
   with the height included, so it can pass over a ball. Layouts `jump` (over the 1 to pot the 2) and `masse`.
+  The grip acts on the whole slide, upright too (a rolling white passes backspin and follows by less than 2/7; the
+  textbook checks run with it off); a ball in the air above the cushion's nose (1.27 R) flies off the table and is
+  respotted. Tried and taken out: the cloth's grip during the slate press (at 0.195 it kinked massés instead of curving).
   Power 2–60; `?tip=fx,fy&chalk=0&el=`; hook `strikeOf`, `tip`, `chalk`, `elev`, `spinChecks`.
   Not in the flying page.
 - `flight.html`: **the corner in flight** (10 Oct 2026, Tom: "you know how the transition from earth to the sky in flight
@@ -368,7 +371,8 @@ In short:
   11. **Gameplay sketches:** each page's one mechanic through its hook (dimming, stages, the ladder's locks and light, the
       sky's count read back as time, a half-ball cut 30° near and far; trick shots: the preview is the shot, contacts exactly on
       h + v = 1 (but for a few in clusters, within 1%), the row of four's pot out of sight at 3 deep and in sight at 4, a bare tip
-      turning the white 30° at f = ½, spin's textbook results, throw both ways, spin passed on, a massé bending, a jump clearing a ball).
+      turning the white 30° at f = ½, spin's textbook results, throw both ways, spin passed on, a massé bending, a jump clearing a ball,
+      backspin passed and follow lessened by the grip, a ball jumped off the table).
   12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
   13. **levels.html:** the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
       and one level fewer seen per doubling of the grain; the shape crosses ring edges, its broad form fewer; with the size divided out
