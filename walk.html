@@ -12,11 +12,11 @@
     "create a new one, focusing on the walking theme. You are vertical and I am horizontal. Show the sweep in terms of the
     horizontal's walk to the vertical."). A standalone page like facing.html.
 
-    Keep the case. The geometry is the sweep in fill levels, h and v, 0 to 1. The walk is physics: amounts in my steps.
+    Keep the case. The geometry is the sweep in unit relations, h and v, 0 to 1. The walk is physics: amounts in my steps.
       - I am the horizontal: I stand on the ground and my breadth H is one step (the unit of every amount here).
       - You are the vertical: a height V, an amount, here V = 10 of my steps.
       - d is the distance between us, in steps.
-    The bridge is the pair (your height V, the distance d): its reading s = V/d. The fill levels are then
+    The bridge is the pair (your height V, the distance d): its reading s = V/d. The unit relations are then
       v = min(1, s), h = min(1, 1/s): far off, v fills against a full h; past the corner, h empties against a full v.
     The sweep's angle θ = atan(v/h) = atan(V/d) is the angle at which I look up at your top: 0° when you sit on my
     horizon, 45° at the corner (d = V: the corner of this pair, set by amounts), 90° when I am at your foot looking up.
@@ -71,7 +71,7 @@
         <p class="cap">The ground. Me (gold, horizontal, one step wide) and you (teal, vertical, V = 10 steps tall). The sight line
         to your top makes the sweep's angle θ; the footprints are equal steps already walked.</p>
         <div class="grid" style="margin-top:10px">
-            <div><canvas id="sweep" height="300"></canvas><p class="cap">The sweep in fill levels. Far off, v fills against a full h
+            <div><canvas id="sweep" height="300"></canvas><p class="cap">The sweep in unit relations. Far off, v fills against a full h
             (up the right edge); past the corner, h empties against a full v (along the top). The ray is θ; the ticks are
             the levels, one doubling of distance apart.</p></div>
             <div><canvas id="cost" height="300"></canvas><p class="cap">Steps left, against the sweep (θ from 0° to 90°). Each dot
@@ -79,7 +79,7 @@
         </div>
         <div id="hud"></div>
     </div>
-    <p class="note">Keep the case: h and v are fill levels, the geometry, and they have no scale. "Close" and "far" are
+    <p class="note">Keep the case: h and v are unit relations, the geometry, and they have no scale. "Close" and "far" are
     amounts, my steps against your height; the pair (V, d) is the bridge, and its corner, d = V, is set by those amounts.
     The far end is never reached: as d grows without end, θ only approaches 0. Behind it: <i>Serial, Parallel and
     Nowhere</i> §1 (the sweep, the facing) and <i>The inverse square</i>, "The law in SPN's words". Other demos:
@@ -128,7 +128,7 @@
         g.fillStyle = '#8a8a96';
         g.fillText(`me (H)`, Math.max(12, meX - 30), gy + 24); g.fillText('you (V)', youX - 56, Math.max(14, gy - yh - 6));
         g.fillText(yh < 4 ? 'you are a speck on my horizon' : '', 12, 16);
-        // ── the sweep: fill levels on the unit square ──
+        // ── the sweep: unit relations on the unit square ──
         [g, W, H] = fit($('sweep'));
         g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
         const S = Math.min(W, H) - 70, ox = (W - S) / 2 - 10, oy = H - 34, P = (hh, vv) => [ox + hh * S, oy - vv * S];
@@ -182,7 +182,7 @@
             : r.level < 0 ? 'past the corner: the walk is in proportion, h = d/V' : 'at the corner';
         $('hud').textContent =
             `distance d = ${d.toFixed(1)} steps   your height V = ${V} steps   s = V/d = ${r.s.toFixed(3)}\n` +
-            `fill levels (h, v) = (${r.h.toFixed(3)}, ${r.v.toFixed(3)})   θ = ${r.theta.toFixed(2)}°   facing 2θ = ${r.facing.toFixed(1)}°   (${r.side})\n` +
+            `unit relations (h, v) = (${r.h.toFixed(3)}, ${r.v.toFixed(3)})   θ = ${r.theta.toFixed(2)}°   facing 2θ = ${r.facing.toFixed(1)}°   (${r.side})\n` +
             `steps left V·h/v = V·cot θ = ${r.stepsLeft.toFixed(1)}   ${lvl}\n` +
             `steps per level out from the corner: ${[0, 1, 2, 3, 4, 5].map(k => levelCost(k)).join(', ')}, …   the horizon, θ = 0, is never reached`;
     }

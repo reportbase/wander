@@ -46,11 +46,11 @@ Google Fonts load from outside:
   turn the dial, look, slide h, approach from afar; charts of P("two") = min(s, 1) and of the cost of a sure
   "two", (1 + s)·max(1, 1/s), least at one pixel across (GRN's "corner", s = 1, is the resolution limit). `?s=` sets the dial; test hook `window.__dial`.
 - `sphere.html`: **the sphere** (7 Oct 2026), a standalone page like `dial.html`: `number-line.md` §8 on one screen.
-  Three fill levels and a scale k; the address on the octant (k changes nothing there); six chambers and the triple corner;
+  Three unit relations and a scale k; the address on the octant (k changes nothing there); six chambers and the triple corner;
   the unit cube's faces; near and far for a reader holding H; a body with relief in three bands shown by its size in
   pixels (as `bandW`). `?v=&h=&f=&k=&P=&map=chambers|faces|reader|whole`; test hook `window.__sphere`.
 - `facing.html`: **the facing** (9 Oct 2026, after SPN §1, "The line, the arc and the facing"; Tom: "a line does not account
-  for a second degree of freedom"), a standalone page like `dial.html`. One sweep from A to B in fill levels: the facing
+  for a second degree of freedom"), a standalone page like `dial.html`. One sweep from A to B in unit relations: the facing
   2θ turns from toward B through square to the line (the corner, θ = 45°) to toward A; beside it the quarter arc off the
   line h + v = 1, most (1 − 1/√2) at the corner. `?t=` (θ in degrees); test hook `window.__facing`.
 - `levels.html`: **the levels** (9 Oct 2026, Tom: "a demo that shows the circle in the middle of the page and the logritmic
@@ -76,7 +76,7 @@ Google Fonts load from outside:
   vertical of height V = 10 steps, at distance d; the pair (V, d) is the bridge, s = V/d, v = min(1, s), h = min(1, 1/s). The
   sweep's angle is the angle I look up at your top, θ = atan(V/d): 0° on my horizon, 45° at d = V, 90° at your foot. Steps
   left V·h/v = V·cot θ; far, each level costs twice the next one in, the steps bunching toward the horizon (never reached);
-  near, in proportion. Panels: the ground, the sweep in fill levels, steps left against θ. `?d=&walk=1`; hook `window.__walk`.
+  near, in proportion. Panels: the ground, the sweep in unit relations, steps left against θ. `?d=&walk=1`; hook `window.__walk`.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -401,7 +401,7 @@ kept off the Pages site. Don't move or remove them without asking.
 ## Read this first: keep the case of h, v, H, V
 Since 9 Oct 2026 (Tom): lowercase **h, v** are **unit relations**, 0 to 1 (h relates to H, v to V): the geometry,
 scale-free. A relation requires two unit relations; a circle has two, a sphere three (Tom, 11 Oct, SPN R204: "I don't
-like the term fill levels"). Text before 11 Oct calls them fill levels; write unit relations in new text.
+like the term fill levels"). The papers, the pages and this file were converted on 11 Oct; the plans and the archive keep "fill level".
 Uppercase **H, V** are breadths, amounts (H the reader's, V the other's); with the distance **d**, a size **Δ** and the
 reader's step **ε**, the physics. Never read v as V or v/h as V/H ((v·V)/(h·H) = (v/h)·(V/H)); the only bridge is a fill
 level times its breadth, where that breadth is known. Before verifying, editing or summarising any paper, plan or lab,
@@ -417,7 +417,7 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
 - V = H is a calibration a situated reader must set to read amounts, not part of the geometry; under it amounts equal fill
   levels numerically, which is why the conflation is easy. (*10 October*, R188: Tom restores 8 October's reading, V = H
   creates the unit circle, and that is why the levels are plain doublings; R189: "v needs no V" stands, v and h on [0, 1]
-  invariant, and there is one circle, its shape from the fill levels, its unit from V = H; SPN §1, "The settled view,
+  invariant, and there is one circle, its shape from the unit relations, its unit from V = H; SPN §1, "The settled view,
   10 October".) Every amount is then off by V/H, the same on both sides of the
   corner; physics' bridges (travel, a known constant, a known kind, a shared fact) remedy it (SPN Part II).
 - The fisheye is the sweep in one facing, seen from the standpoint (geometry, the same for every shape); with V = H it is
@@ -440,7 +440,7 @@ interesting. we should do the correct physics testing, UI is secondary or even n
 - **Real data or exact mathematics, never wander's world, as evidence.** The flying page and its bodies (`res/`) were made
   for looks; they illustrate, they do not test. A correspondence is tested on published measurements, or on arithmetic
   checked to the last digit (`plans/ref-plan.md`, run 1, is the example of what not to count).
-- **Prediction first, from the theory alone**, with the bridge from fill levels to amounts named (see "keep the case").
+- **Prediction first, from the theory alone**, with the bridge from unit relations to amounts named (see "keep the case").
 - **No page needed.** A test is a plan, a script and an entry in the papers; a demo only where it helps to see.
 - **Data.** This environment cannot reach the astronomy archives (VizieR, CDS, ESA: blocked); GitHub and PyPI are
   reachable. Record each dataset's source, licence and sha256 in its plan, and do not commit large data.

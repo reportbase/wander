@@ -142,7 +142,7 @@ different geometric representation". Claude's reading, from SPN; unruled.*
 
 **A4. v/h read as V/H.**
 - *The paradox*: geometric results seem to predict physical amounts, then fail by a constant factor.
-- *Vantages*: v/h is the inner reader's ratio of fill levels; V/H is the completed view's ratio of breadths.
+- *Vantages*: v/h is the inner reader's ratio of unit relations; V/H is the completed view's ratio of breadths.
 - *Reading*: (v·V)/(h·H) = (v/h)·(V/H). Reading one as the other assumes the completed view's breadths. Under the
   calibration V = H they agree numerically, which is why the conflation is easy and why it fails by V/H.
 - *Already known*: dimensional analysis and calibration, in general.
@@ -150,7 +150,7 @@ different geometric representation". Claude's reading, from SPN; unruled.*
 
 **A5. The seam where the ground meets the sky in a flight simulator.**
 - *The paradox*: the transition from ground to sky looks wrong in flight simulators however finely the ground is drawn.
-- *Vantages*: the ground is modelled in the completed view's metres; the eye reads it in fill levels, h/v ahead.
+- *Vantages*: the ground is modelled in the completed view's metres; the eye reads it in unit relations, h/v ahead.
 - *Reading*: a ground line h ahead lands v/h below eye level, so the corner (h = v) keeps one screen row at every height.
   Levels of detail set by metres slide on the screen; set by h/v they stay put. The seam is where the two disagree.
 - *Already known*: level-of-detail schemes by screen-space error are standard in rendering.

@@ -258,7 +258,7 @@ ISQ (`plans/isq-plan.md`) [exact]:
   with predictions first.
 - **The Cauchy shape.** The disc's light against distance, 1/(1 + (d/a)²), is the Cauchy density's shape in d/a. SPN
   §2.2 and `plans/normalizations.md` have a Cauchy on v/h. Is it the same object, or a coincidence of form? This needs
-  the case kept: d/a is a ratio of amounts, v/h of fill levels.
+  the case kept: d/a is a ratio of amounts, v/h of unit relations.
 - **One dimension against two.** ISQ's reading has angular size falling one level per level of distance, and light two.
   Stars with measured angular diameters and parallaxes would test the one-level half directly, on data (`papers/physics.md`
   §4).
