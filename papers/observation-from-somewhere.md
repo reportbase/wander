@@ -726,8 +726,8 @@ is in them.
 The sweep opens a closed shape out, with home in the middle of the opening and the two ends running toward the horizon
 in each facing. Opening divides out size, so each place on the opened line is an address pointing back to a point of the
 closed shape, which keeps its size. Laid evenly by direction, every shape opens into the same fisheye and the same
-Cauchy; the shape survives only in what arrives at each address, one breadth per direction. (We checked this on 73
-outlines.) The addresses are universal, and the shape is payload.
+Cauchy; the shape survives only in what arrives at each address, one breadth per direction, as Theorem 6(a)
+requires. The addresses are universal, and the shape is payload.
 
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the
@@ -815,8 +815,7 @@ per level of detail (Microsoft, Bing Maps Tile System).
 each one's position across its view to a step ε, relative to the circle's radius. Neighbours at angle θ from the middle
 of the view are about (2π/N)·cos θ apart, so the reader separates those with cos θ ≥ εN/2π, which is
 R(N) = (N/π)·arccos(εN/2π) of them. This peaks at about 1.12/ε points, where εN/2π ≈ 0.65, and falls to none at
-N = 2π/ε: past the peak, more points mean fewer told apart. Brute-force checks at ε = 10⁻³ and 10⁻⁴ agree with the
-formula to within two points. The addresses never overflow; the resolution does.
+N = 2π/ε: past the peak, more points mean fewer told apart. The addresses never overflow; the resolution does.
 
 ## 9. What the geometry does not give: amounts
 
@@ -835,7 +834,7 @@ part closes by itself. Then H_B/H_A = |S_A|/|S_B|, and nothing more about the un
 *Proof.* Closure gives H_A·S_A + H_B·S_B = 0, so S_A and S_B are antiparallel and H_B/H_A = |S_A|/|S_B|. Scaling both
 units together leaves every count unchanged, so their common scale cannot be recovered. ∎
 
-On 2000 random polygons the ratio is recovered to 5 × 10⁻¹⁵. Between two private rulers, a shared fact buys exactly the
+Between two private rulers, a shared fact buys exactly the
 one factor that crosses.
 
 ## 10. A worked example: a mountain range
