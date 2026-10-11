@@ -5660,8 +5660,10 @@
         window.__bodies = { BODIES, BODY_NAMES, NSOLID, bodies: () => [...live.values()].filter(o => o.body != null).map(o => ({ key: o.key, name: o.name, si: o.si, star: !!o.star, look: o.look, suns: (o.suns || []).length })) };
         // test hooks for the live view (flights; THE LAB GUIDE's TESTING, in labs.html). The labs' own are on labs.html.
         window.__wanderLab = {
-            // where you are, and whether you are going round something, how big it spans (for the movement checks)
-            where: () => ({ t: clock, x: me.x, y: me.y, z: me.z, orbit: !!orbit, name: orbit && orbit.o ? orbit.o.name : null, span: orbit ? orbit.s || 0 : 0 }),
+            // where you are, and whether you are going round something, how big it spans and how far it is, to where it is seen
+            // (for the movement checks; a solid's span swings as it turns, its distance does not)
+            where: () => ({ t: clock, x: me.x, y: me.y, z: me.z, orbit: !!orbit, name: orbit && orbit.o ? orbit.o.name : null, span: orbit ? orbit.s || 0 : 0,
+                dist: orbit && orbit.o && orbit.o.app ? Math.hypot(orbit.o.app.x - me.x, orbit.o.app.yo - me.y, orbit.o.app.z - me.z) : null }),
             // the bodies drawn now, where on the page and how large, as a tap would find them
             drawn: () => { const k = K(), cy = cyV(), dpr = Math.min(2, window.devicePixelRatio || 1);
                 return lastRange.filter(a => a && a.src && a.rel != null).map(a => ({ name: a.src.name, star: !!a.src.star, x: W / 2 + a.rel * k, y: cy - a.up * k, r: 0.5 * Math.sqrt(Math.max(0, a.gRaw || 0) * 80 * 52) / dpr })); },
