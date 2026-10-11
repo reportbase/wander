@@ -2,17 +2,20 @@
 
 *Tom Brinkman, with Claude. Prepared 11 October 2026 for external review.*
 
-*This paper gathers the key ideas of five working papers into one self-contained account. Those papers are
-`serial-parallel-nowhere.md` (SPN), `number-line.md`, `v-and-h.md`, `inverse-square.md` and `physics.md`, all in
-`papers/`. It also draws on the test plans in `plans/`. The working papers keep the full record: every ruling with the
+*This paper gathers the key ideas of three working papers into one self-contained account. Those papers are
+`serial-parallel-nowhere.md` (SPN), `number-line.md` and `v-and-h.md`, all in `papers/`. It also draws on the test plans in `plans/`. The working papers keep the full record: every ruling with the
 author's words, every correction, and every claim later withdrawn. This paper states only the current view, marks the
 standing of each claim, and includes what failed. Where it and a working paper differ, the working paper's latest dated
 entry is the record, and the difference is an error here. Appendix B maps each section to its sources. Revised the same day after a first evaluation (`plans/ofs-review-1.md`): V = H stated as a rule of representation, the
 Euclidean choice and the scale-invariance premise (S) made explicit, the half-Cauchy named, and the three levels of
-physics claim set apart. Then, after a second evaluation, a candidate single principle (§12.1), offered as a reading.
+physics claim set apart. Then, after a second evaluation, a candidate single principle (§10.1), offered as a reading.
 Then, at the author's word that it is the primary result (SPN R200), the Cauchy as addresses, not payload (R47; SPN
 §4.3), stated in the abstract and §5 with its proof (Proposition 6), and the Cauchy's missing mean read as SPN reads it:
-a question about the payload asked of addresses, not a census the horizon withholds.*
+a question about the payload asked of addresses, not a census the horizon withholds. Then (SPN R201: "completely
+remove the physical correspondance … This is a geometry paper") the physics taken out: the bridges, the inverse
+square, the near field of a source, standing on a world, the matter fraction and the physics kills. They are kept in
+`physics.md`, `inverse-square.md` and SPN Part II. And the hand, the working papers' picture of addresses and payload,
+given in full (§1, §5).*
 
 ---
 
@@ -26,17 +29,15 @@ Every claim carries one of these marks.
 | **[derived]** | a proof from named premises; the premises are listed and are where to push |
 | **[ruled]** | a choice or reading the author has made, stated so the reader can reject it |
 | **[exact]** | exact arithmetic, checked in a plan |
-| **[data]** | measured on published data, prediction written before the data was opened |
 | **[synthetic]** | measured on simulated readers built for the purpose |
 | **[illustration]** | shown in a demo page; shows a thing is possible, tests nothing |
 | **[open]** | not settled |
 
 **Keep the case.** Lowercase **h** and **v** are *fill levels*, numbers from 0 (empty) to 1 (full). They are the
-geometry and have no scale. Uppercase **H** and **V** are *breadths*, amounts. The same holds for a distance d, a size
-Δ, a radius a or R, a light L and the reader's angular step ε: these are physics. The amounts are (v·V) and (h·H), so
+geometry and have no scale. Uppercase **H** and **V** are *breadths*, amounts. The amounts are (v·V) and (h·H), so
 (v·V)/(h·H) = (v/h)·(V/H). So **v/h is not V/H**. The only way from the geometry to an amount is a fill level times its
-breadth, and that needs the breadth. Every conclusion below that passes from geometry to physics names the amount it
-borrows. Earlier drafts of the working papers often blurred the two, and most of their corrections are of that kind.
+breadth, and that needs the breadth. This paper is about h and v; the breadths enter only through the one act a
+situated reader must perform, V = H (§3), and through what that act leaves unknown (§7). Earlier drafts of the working papers often blurred the two, and most of their corrections are of that kind.
 
 ---
 
@@ -77,14 +78,14 @@ asked for this.)
    A telescope is the working example: one exposure is one facing from one standpoint; the survey is the construction.
    Not every combination builds: re-exposing the same field lowers the noise and adds nothing; other pointings joined
    at their overlaps give the shape up to a scale; only a second standpoint with a known baseline (parallax, the
-   Earth's orbit) gives a distance, because the baseline is a bridge (§7). An illustration, not a test
+   Earth's orbit) gives a distance, because the baseline is a known length, an amount the geometry does not supply (§7). An illustration, not a test
    (`plans/ofs-review-2.md`).
 7. *There are therefore two ways to the true breadth, and only two:* held, unsituated, as in a blueprint; or
    constructed, situated, from several observations.
 
 Each vantage's reading is right from where it stands. Many paradoxes come from reading one vantage's geometry as
 another's, most often the completed view used as if one observation held it (the working paper `vantages.md` collects
-them). The rest of this paper is the geometry of the two situated vantages and where it meets physics.
+them). The rest of this paper is the geometry of the two situated vantages.
 
 **What the completed view costs** [ruled; from the archived *The Relation Space* §6, §17]. Neither party to a relation
 performs the comparison; something else settles it. A balance settles two weights and its pull cancels from the
@@ -99,7 +100,7 @@ point of the completed drawing: the drawing displays no landmark there.
 ## Abstract
 
 A reader that stands somewhere knows its own breadth and not the breadth of what it reads. This paper works out what
-that one fact forces for the situated vantages, and tests where the result meets physics.
+that one fact forces for the situated vantages. It is a geometry paper and makes no physical claim.
 
 The object throughout is a pair of shares, h of H and v of V, each on [0, 1]. Every way the two can relate, from all h
 to all v, is the *sweep*. Because neither share can pass 1, the sweep can go past the point v = h only by h emptying
@@ -107,7 +108,7 @@ while v stays full. That point, the *corner*, is the one place the swap v/h ↔ 
 through it [proved].
 
 A situated reader has exactly one breadth, its own H. For a relation to exist the other side must be given a breadth
-too, and H is the only one the reader has, so it must set V = H [derived; close to definitional, §12]. With that one act
+too, and H is the only one the reader has, so it must set V = H [derived; close to definitional, §10]. With that one act
 the corner lies at radius H/H = 1 whatever H was chosen. Drawn as a rigid bar of Euclidean length 1 in that one unit, the
 relation's every attitude satisfies h² + v² = 1: a unit circle no one put a number into (the Euclidean choice is an
 assumption, §3).
@@ -129,12 +130,6 @@ points. The Cauchy is therefore laid before anything arrives and is the same wha
 can put what arrives, never what arrives. Its order survives every change of payload, so it has a median, the corner. A
 mean is a sum of sizes, a question about the payload, and addresses carry no size, so it has none. That is why the
 Cauchy has a median but no mean.
-
-The physics correspondences are kept apart from the geometry and tested on published data or exact arithmetic. Light
-falls two levels per level of distance on nearby Hipparcos dwarfs, as the inverse-square law requires [data]. In the
-cases worked, the near field of an extended source turns exactly at the corner of the (size, distance) pair when the
-light counted is a share, and off it when it is not [exact cases; the general rule is open]. Many predictions were
-killed, and they are listed.
 
 ---
 
@@ -181,9 +176,8 @@ Neither the serial nor the parallel reader knows how many things there are (N), 
 - *Situated*: holding one breadth (H) and not the other's (V); situations 3 and 4.
 - *Address*: a place in the reader's layout where a reading can be put, laid before anything arrives.
 - *Payload*: what arrives at an address.
-- *The hand* (the working papers' picture of the two): hold a hand flat (all h) and turn it upright (all v), the
-  fingers spread between. Each finger is an address; a ring on it is the payload. Turning the hand changes no ring, and
-  changing the rings changes no finger.
+- *The hand*: the working papers' picture of the two, used throughout: the fingers are addresses, the rings on them
+  the payload (below).
 - *Lay*: a rule placing each reading at a position r in a drawing; *room* is how much of the drawing a stretch of
   readings receives, measured either by length or by number of addresses (each use says which).
 - *Facing*: which way the relation's bar points, one of the corner's two sides in each freedom; a sweep from all h to
@@ -191,10 +185,49 @@ Neither the serial nor the parallel reader knows how many things there are (N), 
   sweep.)
 - *Level*: the first level runs from home to the corner; past it, each level is one doubling of the reading.
 
-**Geometry before payload.** The addresses a reader lays (the sweep, the corner, the levels, and the Cauchy that
-counts them, §5) do not depend on what arrives at them. What arrives, the *payload*, is met at the addresses. Every "if" belongs to the payload, including which
-side of the corner a given reading falls on. This paper is about the addressing. It is not a theory of perception or of
-mind, and it makes no claim about the geometry of spacetime.
+**Geometry before payload** [ruled, R91]. "The big, potentially paradigm changing idea here is that geometry is not
+shapes, it is the sweep of addresses that point to a magnitude. says nothing about what the magnitudes are" (the
+author, 29 September). The addresses a reader lays (the
+sweep, the corner, the levels, and the Cauchy that counts them, §5) do not depend on what arrives at them. What
+arrives, the *payload*, is met at the addresses. Every "if" belongs to the payload, including which side of the corner a
+given reading falls on. This paper is about the addressing, and it is geometry only: it makes no physical claim. It is
+not a theory of perception or of mind, and it makes no claim about the geometry of spacetime.
+
+**The hand: addresses and payload in one picture** [ruled: R39, R51, R52, R78; the author, 8 and 10 October; SPN §4.3].
+Hold your hand out flat: that is h, home. Turn it until it points straight up: that is v, toward the horizon. The
+motion between is the sweep, and it treats the two alike because "H and V share a denominator: your hand" (R39): the
+situated reader's V = H (§3) is its own hand. Spread the fingers between flat and upright: each finger is an address,
+one ray of the relation. "Now put rings on your fingers. The rings are the payload. Each finger is an address; the ring
+on it is what that address holds. Turning the hand does not change the rings. Now replace those rings with other rings.
+The sweep from flat to upright is the same sweep, and each finger is the same address" (R39, R51, R52).
+- *The geometry is the hand, not the rings.* Dividing v by h keeps the finger and drops the ring (§5). The serial
+  reader is the hand and its fingers; the parallel reader holds the rings (R78).
+- *The rings hide; the hand does not.* Two rings on one finger, looking along it, show only the nearer: the ring
+  behind is the backside. The hand hid nothing; the rings did ("the magnitudes are what create the backsides and the
+  hidden geometry", R91).
+- *The far field's doublings are fingers* (the author, 10 October: "the far field logrithims are the fingers").
+  Past the one corner the levels are doublings (§4), and they are addresses, laid before anything arrives: fingers. What
+  lands on them is rings. The fingers sit side by side on one hand, not one inside another: no depth, no recursion.
+- *The situations in the hand.* 0: no hand, nothing to point with and nothing pointed at. 1 and 2: the rings held
+  whole, all at once, with no hand needed to reach them, the equation and the array from nowhere; in 1 every ring is
+  alike (the circle), in 2 they differ. 3: one hand facing a thing from outside, all its fingers at once, each reaching
+  the ring on the facing side. 4: inside, one finger at a time, each ring arriving in turn.
+- *The unit circle is the hand's own arc.* In one facing it is a quarter, flat to upright, open at the top, since no
+  finger is ever the horizon. The closed circle comes from turning the hand through its facings (§3(d)), or from
+  nowhere, drawing every facing at once. The sphere is every way a hand could face, drawn from nowhere; no hand holds
+  it.
+
+**Payloads on demand, and readers as payloads** [ruled, R171; a reading]. The addresses are laid before anything
+arrives, so every address exists before its payload does, and nothing requires a payload to exist until its address is
+read: "the payloads can be lazy functions evaluated on demand, can be other readers" (the author, 2 October). A payload
+can be a function of its address, evaluated when it is asked for. An earlier paper of the author's, *The Radix*, built
+one: a road whose land was generated from the address's own prefixes as each stretch came into view, so that "the
+address is the pyramid". That land was made from the address, so it shows that a payload *can* be evaluated on demand,
+not that the world's are. A payload can also be another reader. A reader is the pivot of its own sweep and has no
+reading or address of its own, but it can be what lies along another reader's address. What it hands back is readings
+in its own unit, which the first reader does not share; a shared fact buys the ratio of the two units and nothing
+more (§7). So reader and world are roles in a relation, not kinds of thing: a reader is the pivot of its own
+addressing, and a payload, evaluated on demand, in another's.
 
 ---
 
@@ -241,9 +274,7 @@ x = 1 the condition reads f(1) = 1 − f(1). The rest is monotonicity and the co
 
 Part (b) rests on a ruling, **R162** [ruled]: a situated reader's reading treats the two sides alike. Its *knowledge*
 does not, since H is known and V is not; the ruling puts the symmetry in the reading. Without it a reading such as
-x/(2 + x) would be bounded with its middle at x = 2. Examples that satisfy it are v/(v + h) = x/(1 + x) and the glowing
-disc's share of its full light, x²/(1 + x²) with x its radius over its distance (§8.2 writes the same light with
-distance over radius, where it decreases).
+x/(2 + x) would be bounded with its middle at x = 2. Examples that satisfy it are the line's share v/(v + h) = x/(1 + x) and the arc's v²/(h² + v²) = x²/(1 + x²).
 
 **The series stop at the corner** [proved]. 1/(1 + x²) = 1 − x² + x⁴ − … converges for x < 1 and diverges for x > 1;
 past the corner the expansion in 1/x converges instead. The reason is that the kernel's singularities sit at x = ±i,
@@ -265,9 +296,8 @@ own swap, D = v² − h², which is zero exactly at the corner. So sameness, ord
 the size of D needs more, since it changes when either reading is rescaled.
 
 **Every pair has its own sweep** [ruled]. Any two parties have a sweep and a corner. A corner means nothing until its
-pair is named. In particular, the point where a thing is one of the reader's steps across, Δ/(d·ε) = 1, is the corner
-of the (size, step) pair. It is set by amounts, so it is physics: the *resolution limit*. It is not the corner of the
-reader's sweep of the other. Much of the working papers' early text conflated the two.
+pair is named, and the corner of one pair is not the corner of another. Much of the working papers' early text
+conflated them.
 
 ---
 
@@ -287,7 +317,7 @@ This section is the paper's central derivation (SPN Proposition 1.2, ruling R190
 (a) *The reader must set V = H.* By (P0) V must be assigned a breadth for there to be a relation. By (P1) the reader's
 H is the only breadth it has to assign. Without the assignment there is no second party, only h. *What this means:* V = H
 is a rule of representation, the reader's own breadth used as the unit for the other party. It is not a claim that the
-other's physical breadth equals H. The other has whatever breadth it has; where that differs from H, every amount the
+other's actual breadth equals H. The other has whatever breadth it has; where that differs from H, every amount the
 reader reads is off by the true V/H (§7). The rule constructs a relation calibrated in one unit; it discovers nothing
 about the world.
 
@@ -346,7 +376,7 @@ subdivisions supplied are repeated halvings. Supplying three parts needs an adde
 depends on how the readings are laid out. SPN's Appendix D records this caution (9 October). The current view (R189,
 R190) takes the levels as doublings of the reading v/h and the logarithm past the corner as fundamental, and §4 offers a
 derivation of the logarithm from "no rung is preferred". Whether that closes the gap is one of the questions put to
-reviewers (§12).
+reviewers (§10).
 
 *What another ratio costs* [reading; from the archived *The Radix* §5, §11]. A reader whose own step multiplies by r
 steps exactly one level per step when the levels are powers of r: a reader with r = 3 matches levels of three exactly,
@@ -383,7 +413,7 @@ the reading sits. Two reasons are offered:
   amounts: under the calibration V = H, a far thing at distance d is read as d/H, and choosing a different H multiplies
   every such reading by one factor. A lay whose room depended on where a reading sits, and not only on the ratio, would
   then depend on which H was chosen, which Proposition 3(b) says is a free convention. *This reason crosses from
-  geometry to amounts, and its bridge is V = H.*
+  geometry to amounts, and it crosses through V = H.*
 - *by (P2).* No measure is carried past the corner, so nothing supplies a scale for the room to depend on.
 
 This is "no rung is preferred" applied to the lay. Stated exactly, the premise is
@@ -394,7 +424,7 @@ Proposition 4 proves that (S) with monotonicity forces the logarithm. It does no
 satisfy (S). Monotonicity, a fixed corner and a matched slope are not enough by themselves: r(x) = 1 + ln x + α(ln x)²,
 α > 0, meets all three and gives each doubling a different number of addresses. Such a lay would make the reader's
 address differences depend on which H it chose, which is what (P1) is offered to exclude. Whether (P1) and (P2) entail
-(S), or (S) is an added principle, is question 1 in §12.
+(S), or (S) is an added principle, is question 1 in §10.
 
 *The arithmetic.* Write g(λ) = r(λ) − 1. Then r(λ·μ) − r(μ) = g(λ) for all λ, μ ≥ 1, so g(λμ) = g(λ) + g(μ). That is
 Cauchy's functional equation in multiplicative form. With g increasing, its only solutions are g(λ) = c·ln λ. So
@@ -499,17 +529,22 @@ mean, every sum).
 the matched readings. (d): the count over one facing has distribution (2/π)·atan(v/h), which is ½ at v/h = 1 and ¼, ¾ at
 tan(π/8) = √2 − 1 and tan(3π/8) = √2 + 1; the integral is elementary. ∎
 
-**What it means** [ruled; SPN §4.3]. The sweep counted evenly is the Cauchy, and each reading in it is a ray, an address,
-laid before anything arrives. What arrives is the payload, met at the addresses, and none of it is in the Cauchy. In the
-hand (§1): spread the fingers evenly by turn and read each as v over h, and the readings are the Cauchy; nothing of the
-rings is in it.
-- *The median is an address.* The corner is where the readings divide in half. Order, ranks, quartiles and the corner
-  are address statistics, and they ignore what arrives.
-- *The missing mean is a question about the payload asked of addresses.* A mean is a sum of sizes; the Cauchy's
-  readings carry no size, so it has no answer. The median, the address question, is always there.
-- *More looking buys more addresses, not more payload.* A finer sweep lays more readings: "precision about where and
-  when, and never about what" (*The Cauchy*, 22 August, §14d, an earlier paper of the author's quoted in SPN §4.3).
-  What is at the addresses comes only from a payload held beside them, through a bridge (§7).
+**What it means: the Cauchy is the fingers** [ruled; SPN §4.3]. The sweep counted evenly is the Cauchy, and each
+reading in it is a ray, an address, laid before anything arrives. What arrives is the payload, met at the addresses, and
+none of it is in the Cauchy. In the hand (§1): spread the fingers evenly by turn and read each as v over h, and the
+readings are the Cauchy. Nothing of the rings is in it: each reading is the reach times v over the reach times h, and
+the reach cancels in every single reading, not on average. "The readings do not distinguish points; they distinguish
+rays" (*The Cauchy*, 22 August, §11, an earlier paper of the author's quoted in SPN §4.3).
+- *The median is a finger.* The corner is where the fingers divide in half: of five fingers spread evenly from flat to
+  upright, the middle one, at 45°. Order, ranks, quartiles and the corner are address statistics; they ignore the
+  rings.
+- *The missing mean asks the fingers about the rings.* A mean is a sum of sizes, a question about the payload; the
+  Cauchy's readings carry no size, so it has no answer. The median, the address question, is always there.
+- *More fingers, not bigger rings.* A finer sweep lays more addresses: "precision about where and when, and never about
+  what" (*The Cauchy*, §14d). What is at the addresses comes only from rings held beside them, from outside the
+  geometry (§7).
+- *Three breadths.* The same hand in space: the fingers fill the solid wedge of three breadths, and spread evenly they
+  give the two-variable Cauchy, density proportional to (1 + |x|²)^(−3/2), on one wedge (SPN §5.1).
 
 **Where it holds** [open beyond it]. Proposition 6(a) takes the payload to be something met along one ray, a value at
 an address. Occlusion and contact use more than that: that the sweep is a straight line and the payload is the first
@@ -561,11 +596,10 @@ number of parts. The reader never knows that number, and the geometry does not u
 is forced is that each doubling gets the same count, not what the count is. In both spaces the count is the *level of
 detail*. The geometry gives the forms (proportional, logarithmic); the level of detail gives the count.
 
-**What sets it** [ruled; physics where amounts enter]. All else equal, a smaller thing shows less detail. A thing of size
-Δ met at distance d, read by a reader whose angular step is ε, spans Δ/(d·ε) addresses. Past one step across it is
-resolved to k = log₂(Δ/(d·ε)) levels, one fewer per doubling of distance. This is a ratio of amounts, so it is physics,
-and its switch at Δ/(d·ε) = 1 is the resolution limit, not the corner. Nothing is requested or chosen: the size and the
-distance set the level a thing shows.
+**What sets it** [ruled]. All else equal, a smaller thing shows less detail. A thing that spans n of the reader's
+addresses is resolved to log₂ n levels, one fewer each time the addresses it spans halve; when it spans one address it
+is a point. Nothing is requested or chosen: the addresses a thing spans set the level it shows. How many it spans is
+set by amounts, which the geometry does not supply (§7).
 
 **H is a zoom, not an escape** [a reading, worked out at the author's question; it assumes the reader's count of addresses is finite]. Any H will do, and every H gives the same circle,
 corner, 1 and 2. So nothing stops a reader choosing a very large H, which would put everything it will ever look at
@@ -591,8 +625,8 @@ instead of 1/r. These are one cost model on simulated readers.
 
 **More points, less seen** [exact, with one prediction killed; `plans/cei-plan.md`, after the archived *One Reader* and
 *The Order of Limits* §3.2]. A parallel reader looks side-on at N points spaced evenly round a circle of radius R and
-reads each one's position across its view to a step ε_len; only ε = ε_len/R enters (a ratio of amounts, its bridge the
-radius). Neighbours at angle θ from the middle of the view stand about (2π/N)·cos θ apart, which is at least ε while
+reads each one's position across its view to a step ε_len; only the step relative to the circle, ε = ε_len/R,
+enters. Neighbours at angle θ from the middle of the view stand about (2π/N)·cos θ apart, which is at least ε while
 cos θ ≥ εN/2π, so it resolves R(N) = (N/π)·arccos(εN/2π) of them. With x = εN/2π that is (2/ε)·x·arccos x, which peaks
 at x ≈ 0.6522 at about 1.1222/ε points and then falls to none at N = 2π/ε: past the peak, more points mean fewer told
 apart. Checked by brute force at ε = 10⁻³ and 10⁻⁴: the formula holds to within 2 points, the peak's height to 0.11%,
@@ -601,16 +635,13 @@ and came in 2.6% low at ε = 10⁻³, a narrow kill on a flat maximum, kept as r
 resolution does: the completed view's N against what one standpoint resolves.
 ---
 
-## 7. From addresses to amounts: what physics supplies
+## 7. What the geometry does not give: amounts
 
 **The calibration error** [derived]. Under V = H the amounts equal the fill levels numerically, which is why the two
 are so easily confused. Where the true V differs from H, every amount is off by the factor V/H, the same on both sides
 of the corner. The addresses are exact; the amounts are not. In one observation a reader cannot tell V = 10² from
-V = 10¹⁶.
-
-**Bridges** [ruled]. Physics supplies amounts across observations: the reader's own travel, a law with a known constant,
-a known kind (a standard candle), or a fact shared with another reader. Each is a named bridge from fill levels to
-amounts. Every physics result below names its bridge.
+V = 10¹⁶. Amounts come only from outside the geometry, across observations, from something whose amount is already
+known; the working papers call it a *bridge*. Bridges are physics, and this paper does not treat them.
 
 **A shared fact buys exactly one factor** [exact; `plans/tgt-plan.md`, after the archived *The Order of Limits* §4.4].
 Two readers share one closed figure. Reader A records its part as edges, each an exact direction and a length counted
@@ -623,124 +654,9 @@ random closed polygons the ratio comes back to 5×10⁻¹⁵; the archive's thre
 2×10⁻⁴. This is the denominator exchange (`denominator-paradox.md`) made exact: between two private rulers, the shared
 fact purchases the one factor that crosses.
 
-**Recovering places from the sweep** [illustration; the geometry is classical]. `flight.html` flies a reader at a height z
-over a flat ground (the page itself writes the height as v). For each of a few posts it holds only readings: how far down and how far across, each against the
-distance ahead, rounded to its pixel. It keeps the readings from one height's worth of travel back. The two standpoints' lines cross
-at the post; the reader's own travel is the one length, so places come out in units of that travel. With no rounding, recovery is
-exact. With a pixel step it holds to within 10% out to about twice the height ahead and gives out beyond, until only a bearing
-is left. This is triangulation on a baseline (Snellius 1617; the geometry of two views, Longuet-Higgins 1981). It is
-included to show that the sweep's readings, with one bridge, are enough to place things.
-
 ---
 
-## 8. Physics correspondences, tested
-
-**The rules** [ruled, 10 October]. Evidence is published measurement or exact arithmetic. The demo world in this
-repository (`index.html`, `labs.html`, `res/`) was built for looks; it illustrates and never counts as evidence. The
-prediction is written before the data is opened. A killed prediction stays killed; a fix is a new run with its own
-prediction.
-
-**Three levels of claim, kept apart.** (1) *Correspondence*: a physical formula has the same form as a relation in the
-framework. (2) *Agreement*: measurements fit a prediction written before they were opened. (3) *Explanation*: the
-framework says why a law holds, or predicts what physics does not already supply. Everything in §8 is at level 1 or 2.
-Nothing here reaches level 3: the inverse-square law, the disc's near field and the planets' roundness are all already
-explained by physics. A correspondence recognised after seeing a formula is weak evidence; the tests that count are
-those that could have gone the other way, and the killed ones in §10 show that some did.
-
-### 8.1 The inverse square as a calibration case
-
-The inverse-square law is derived in physics from conservation and three dimensions of space, and its exponent is bounded
-experimentally (within about 10⁻¹⁶ of 2 for the electric force). It is not this paper's to test. It is used as a
-calibration case: a law whose unsituated and situated accounts (the radiance theorem, view factors) are already exact,
-so that the paper's terms can be checked where the answer is known.
-
-**In levels** [exact, from the law]. Write light and distance as log₂. Each doubling of distance quarters the light:
-−2 levels of light per level of distance. For things spread evenly in three dimensions, number grows 3 levels per level
-of distance, so 1.5 levels of number per level of light.
-
-**On real stars** [data].
-- *MAG* (`plans/mag-plan.md`; Hipparcos, HYG v3.8, parallax distances): G0–G5 dwarfs within 23 pc lose 2.02 levels of
-  light per level of distance (83 stars). K0 giants gave 1.93, on a sample later found not to be complete.
-- *GCN* (`plans/gcn-plan.md`; Gaia Catalogue of Nearby Stars, about 125,000 main-sequence stars by colour): all four
-  predictions were killed, by a quality cut that depends on distance and by white dwarfs inside the colour bands. Read
-  afterwards without the cut, each kind gives 2.93–3.00 levels of number per level of distance within 100 pc, alike in
-  the plane and toward the poles, and about 1.5 by light. This reading is after the run and is not ruled.
-- *CNT* (`plans/cnt-plan.md`; Hipparcos to V = 7.3): about 1.2 levels of number per level of light, not 1.5, alike in
-  the plane (1.229) and toward the poles (1.227). The cause is open: the disc, dust, the clumping of young stars and the
-  catalogue's own cut are all candidates, and none is tested.
-
-These check the bookkeeping in levels, not the law.
-
-**The two regimes** [physics, read]. Per address, nothing changes with distance: radiance is conserved along a ray.
-While a source covers many addresses, distance costs addresses. Once it is under one, distance costs brightness in that
-one. The switch is the resolution limit, the corner of the (size, step) pair.
-
-### 8.2 The near field turns at the corner of the pair, where the light is a share
-
-**The disc** [exact; `plans/nrf-plan.md`]. Light on the axis of a Lambertian disc of radius a at distance d, received by
-a flat patch facing it, is proportional to a²/(a² + d²). Write x = d/a, the distance in radii, a ratio of two amounts
-(the pair's corner is x = 1, a = d). The light is f(x) = 1/(1 + x²) of its maximum: saturating near, inverse square far
-off, exactly half at x = 1, and f(1/x) = 1 − f(x). In levels the local slope is σ = −2x²/(1 + x²): −1 at x = 1, halfway between the near 0 and the far −2, with σ(x) + σ(1/x) = −2 exactly. The turn
-from 10% to 90% of the way takes log₂ 9 ≈ 3.17 levels of distance.
-
-**The rule** [exact in the cases worked; the general rule is a reading]. The switch sits exactly at the pair's corner, symmetric under the
-flip, when the light counted is a share of a two-part split, A(x)/(A(x) + A(1/x)). The projected solid angle, the
-standard measure of irradiance, gives such a share: for the disc it is sin²θ with θ the half-angle subtended, and its
-fairness under the flip is Pythagoras. A line seen by a flat patch and a sphere counted from its surface behave the
-same way. Counting an angle, or an unprojected solid angle, does not: the switch moves off x = 1 (to 0.719 and 0.786)
-and loses its symmetry (NRF P3, P4, killed). The width of the switch is not one band for all shares either: 3.17
-levels for the disc, 6.34 for the sphere counted from its surface (NRF P5, killed).
-
-**The lay has the law's form** [exact; `plans/isq-plan.md`]. Past the corner the in-place lay's room per unit of v/h is
-(h/v)², the flip's Jacobian. Read v/h as d/Δ, which needs two bridges: the calibration V = H, so that a ratio of
-fill levels can stand for a ratio of amounts, and the size Δ as the unit. Then the lay places a thing at its angular size counted
-down from the horizon, and its 1/(d/Δ)² is how fast that angular size shrinks: an inverse square in one direction
-across. Light's inverse square is that angular size squared. This is a shared form with one origin, the flip, not a
-claim that the lay is light. The one-direction half is untested.
-
-### 8.3 Standing on a world
-
-**From the outline** [exact; `plans/hzn-plan.md`]. From a place on a circle the readings to the rest of the circle are
-chords 2 sin φ, with φ measured from the tangent. Their geometric mean over the half-turn is exactly the radius,
-since ∫₀^π ln(2 sin φ) dφ = 0, and a chord equals the radius at φ = 30°. On a ball, weighting each direction by its solid
-angle (cos φ dφ over the half-turn of directions), the geometric mean is 2/e of the radius, since
-∫₀^{π/2} cos φ·ln(2 sin φ) dφ = ln 2 − 1. Taking the geometric mean as the reader's corner is a choice (the reading
-past the corner is laid in levels, so its middle is a geometric one); the integrals are exact.
-
-**Real worlds, in levels** [data; `plans/ref-plan.md`]. This restates a known fact, that planets are nearly round, in
-levels. The flattening log₂(a/c), equatorial against polar radius, is 0.0048 levels for Earth, 0.0085 for Mars and
-0.0017 for the Moon; Earth's relief from Challenger Deep to Everest spans 0.0045. The spinning giants' flattening is about
-a tenth of a level: Jupiter 0.097, Saturn 0.149. The same predictions made for the demo world's bodies were killed
-(P1–P3): one asteroid's mean sphere sat 1.3% off its ball, the Moon's relief spans 0.25 levels against the real 0.0165,
-and the relief sat in a different band than predicted. They are kept as the example of what not to count.
-
----
-
-## 9. Exploratory: the matter fraction
-
-*This section reports a plan in progress (`plans/omm-plan.md`). It claims no result about cosmology.*
-
-An earlier paper of the author's, set aside in September 2026, derived the matter fraction Ω_m = 1/π from the geometry
-of its day. The plan asks whether the current terms carry it, and works each step both ways rather than ruling.
-
-- **Stage 1, the share** [exact]. With the turn stepped evenly, the average share of the bar on h over one facing's sweep
-  is 2/π; one facing of the reader's two halves it, giving 1/π. Stepped evenly by length instead (the in-place lay), the
-  same share is (√2 − 1 + ln(1 + √2))/4 ≈ 0.3239, which is not 1/π.
-- **Stage 2, what matter and dark energy are** [argued, no data]. Matter as payload and dark energy as addresses (X)
-  fits the settled behaviour: matter clusters, thins with expansion, and differs by direction; dark energy does none of
-  these. The swap (Y) contradicts all three and is killed.
-- **The share with epoch** [exact, under the standard flat model]. If every epoch's own home read 1/π, dark energy would
-  have to thin like matter, which it does not: killed. If 1/π were the average over one reader's whole past, today's Ω_m
-  would have to be 0.0076, 0.0017 or nothing at all under three weights: killed. What survives is that 1/π is the share
-  at the reader's home now. That restates physics' coincidence problem (why the two shares are comparable now); it does
-  not answer it.
-
-The comparison with Planck and DESI (stage 3) has not been run. A number close to a measurement would show a number, not
-a reason, while the coincidence problem stays open.
-
----
-
-## 10. What was killed or withdrawn
+## 8. What was killed or withdrawn
 
 A framework that only reports successes cannot be judged. These failed, and stay recorded as failed.
 
@@ -752,29 +668,17 @@ A framework that only reports successes cannot be judged. These failed, and stay
 | GRN run 6 (P2): steering by its own pixel count, at least 90% of runs stop with the pair 0.5–3 steps across, from every start | killed at one start (87.3% from s₀ = 0.03) | `plans/grn-plan.md` |
 | HRT runs 1–3: readers taking their unit from what the parent could not see settle on a ratio between levels | stopped: run 1 did not nest, run 2's apparent 2 was the landscape's, run 3 found almost nothing to nest into | `plans/hrt-plan.md` |
 | WHY2 run 1: a preferred step for a reader content with a first sighting | killed: finer is always better | `plans/why2-plan.md` |
-| CNT P3–P4: the disc flattens counts toward the poles more than in the plane | killed: both give 1.23 | `plans/cnt-plan.md` |
-| CNT P6–P10: K0 giants count as an even spread | killed: the label mixes kinds and the catalogue cuts the far ones | `plans/cnt-plan.md` |
-| GCN P1–P4 | killed by a distance-dependent cut and by white dwarfs in the colour bands | `plans/gcn-plan.md` |
-| NRF P3–P4: an angle and an unprojected solid angle switch at the pair's corner | killed: they switch off it, unsymmetrically | `plans/nrf-plan.md` |
-| NRF P5: one width of switch for all shares | killed by the sphere counted from its surface | `plans/nrf-plan.md` |
-| HZN P5, P5b, P5c: the drawing tool's levels page agrees with the exact chords | killed: it reads only to its grain; with both grains doubled together (run 3), not killed | `plans/hzn-plan.md` |
-| MAG P4: a known kind is a bridge under a level wide | killed: K0 III scatters 1.4 levels | `plans/mag-plan.md` |
-| REF P1–P3: the demo world's bodies sit near their corner | killed; never evidence | `plans/ref-plan.md` |
-| OMM stage 1 under the in-place weight: the share is 1/π | killed for that weight (0.3239) | `plans/omm-plan.md` |
-| OMM B5 (i), (ii): 1/π at every epoch, or over one reader's past | killed | `plans/omm-plan.md` |
-| the 2 in the inverse square as "the sweep's two parties" | withdrawn: the 2 is the number of directions across the line of sight, physics | SPN §3.3, 9 Oct |
 | a corner for every level; depth as nested sweeps; recursion | withdrawn: one corner, plain doublings | R188 |
 | "the corner is approached, never found" | withdrawn: v = h is two fill levels, found by every reader | SPN §1, 9 Oct |
 | the in-place lay "is not the reader's own" | withdrawn: it is the reader's by length | R190 |
 
 ---
 
-## 11. What is classical, and what is claimed
+## 9. What is classical, and what is claimed
 
 **Classical.** The swap x ↦ 1/x; the Cauchy as the image of a uniform angle and its Möbius invariance (Knight 1976;
 McCullagh 1996); Cauchy's functional equation; Klein's test that a geometry is what its symmetries preserve (1872), used
-in D.1; triangulation and two-view reconstruction; the radiance theorem, view factors and their reciprocity; the
-inverse-square law itself. Near neighbours in measured perception: Gilinsky's perceived distance with a finite horizon
+in D.1. Near neighbours in measured perception: Gilinsky's perceived distance with a finite horizon
 (1951); Schwartz's log-polar map of visual cortex, proportional near the fovea and logarithmic beyond (1977); the
 number-line literature, from logarithmic-to-linear shifts (Siegler and Opfer 2003; Dehaene et al. 2008) to proportion
 judgment on bounded lines (Barth and Paladino 2011). The view from nowhere is Nagel's phrase (1986); Haraway (1988)
@@ -802,15 +706,14 @@ median but no mean (it is addresses, and addresses have an order but no sum).
 
 ---
 
-## 12. Open problems, and questions for reviewers
+## 10. Open problems, and questions for reviewers
 
-The questions come down to one. Five steps carry the structure, and each rests on its own premise: the corner on the
-flip; the circle on Euclidean length in one unit; the logarithm on (S); the Cauchy on even turns; every amount on a
-bridge. Can the circle and the logarithmic lay be derived from a minimal, explicit definition of a situated reader, or
+The questions come down to one. Four steps carry the structure, and each rests on its own premise: the corner on the
+flip; the circle on Euclidean length in one unit; the logarithm on (S); the Cauchy on even turns. Can the circle and the logarithmic lay be derived from a minimal, explicit definition of a situated reader, or
 must they be added as principles? If they must be added, the contribution is a principled construction of a reader's
 geometry, not a proof that observation alone forces it. The first three questions below are the ones that decide this.
 
-### 12.1 A candidate answer: one principle
+### 10.1 A candidate answer: one principle
 
 *Added 11 October, after a second evaluation asked for "the smallest underlying principle from which these ideas can
 all be recovered" (`plans/ofs-review-1.md`). A reading, offered for review; the author has not ruled on it.*
@@ -877,10 +780,6 @@ three parts of the one group of the ratio.
    sets. D.1 allows only binary branching without an added measure; if levels are doublings, that is 2 along a line, or
    √2 if a level doubles an area. Published means near 1.42 (Stensola et al. 2012) and others near 1.7 (listed in `plans/grd-landscape.md`) are known to the authors, so the plan (`plans/grd-plan.md`) runs only on per-animal data not yet
    opened. Suggestions for data are welcome.
-8. **The near field.** Is every Lambertian source of any shape, seen by a flat patch, a share in some ratio of the pair?
-   This is to be tested in exact arithmetic on other shapes.
-9. **The coincidence problem.** §9 leaves it restated, not answered. Is there anything in a reader's geometry that could
-   say why its home falls now?
 
 ---
 
@@ -889,13 +788,12 @@ three parts of the one group of the ratio.
 | symbol | domain | meaning |
 |---|---|---|
 | h, v, v₂ | geometry, [0, 1] | fill levels: how much of H, V, V₂ |
-| H, V, V₂ | physics, amounts | breadths: the reader's, the other's, a second other's |
+| H, V, V₂ | amounts | breadths: the reader's, the other's, a second other's |
 | v/h, h/v | geometry | the reading before and past the corner (SPN writes s) |
 | the corner | geometry | v = h |
-| d, Δ, a, R, L | physics | distance, size, radius, radius, light |
-| ℓ | physics | the reach of what arrives along a ray (Proposition 6(a)); it cancels from every reading |
-| ε | physics | the reader's angular step |
-| Δ/(d·ε) | physics | addresses a thing spans; = 1 is the resolution limit |
+| ℓ | an amount | the reach of what arrives along a ray (Proposition 6(a)); it cancels from every reading |
+| ε | a step | the reader's step relative to what it reads (§6) |
+| address, payload | geometry; what arrives | a place laid before anything arrives; what arrives there (the finger and the ring, §1) |
 | level | geometry | home to corner (the first); one doubling of v/h past it |
 | in-place lay | geometry | position by length: v/h inside, 2 − h/v past the corner |
 | logarithmic lay | geometry | position by address count: v/h inside, 1 + ln(v/h) past the corner |
@@ -904,20 +802,17 @@ three parts of the one group of the ratio.
 
 | here | working papers | plans and pages |
 |---|---|---|
-| §1 | SPN §1 ("What a sweep is"), §2.1; `number-line.md` Background | — |
+| §1 | SPN §1 ("What a sweep is"), §2.1, §4.3 (the hand; payloads on demand, R171), R91; `number-line.md` Background, §8 | — |
 | §2 | SPN §1 ("The line, the arc and the facing"), Propositions 3.1–3.3, R162 | `facing.html` |
 | §3 | SPN Proposition 1.2 (a)–(f), Appendix D (D.1), R188–R190; `v-and-h.md` §8o | `levels.html`, `sphere.html` |
-| §4 | SPN Proposition 1.2 (g), "Reality in 2H", "Two address spaces" | `levels.html`, `flight.html`, `isq-plan.md` |
+| §4 | SPN Proposition 1.2 (g), "Reality in 2H", "Two address spaces" | `levels.html` |
 | §5 | SPN Proposition 1.2, "The Cauchy and the fisheye, derived" (1)–(7); SPN §4.3, "The Cauchy consists of addresses, not payloads", R47, R200; §14 burdens; `number-line.md` §8; `v-and-h.md` 423–424; archived *Reader Geometry as Addressing* §7.5 (Proposition 14) | — |
 | §6 | SPN Proposition 1.2 ("The count", "H is a zoom"), §3.3; `number-line.md` §5 | `grn-plan.md` |
-| §7 | SPN §1 ("Powerless in one observation"), Part II | `flight.html` |
-| §8 | `inverse-square.md`; `physics.md` §2 | `mag-`, `gcn-`, `cnt-`, `nrf-`, `isq-`, `hzn-`, `ref-plan.md` |
-| §9 | — | `omm-plan.md`, `omm/` |
-| §10 | SPN Appendix C; `physics.md` §3 | the plans named |
+| §7 | SPN §1 ("Powerless in one observation"); `denominator-paradox.md` | `tgt-plan.md` |
+| §8 | SPN Appendix C | the plans named |
 
-**Reproducing.** Each plan in `plans/` names its script (Python or Node), its data source with sha256, and its runs in
-the order they came out. `npm test` runs the demo pages' checks in headless Chromium. Large data is not committed; the
-plans say where to get it.
+**Reproducing.** Each plan in `plans/` names its script (Python or Node) and its runs in the order they came out.
+`npm test` runs the demo pages' checks in headless Chromium.
 
 ## References
 
@@ -934,8 +829,6 @@ Knight, F. B. (1976). A characterization of the Cauchy type. *Proceedings of the
 130–135.
 Lamping, J., Rao, R. and Pirolli, P. (1995). A focus+context technique based on hyperbolic geometry for visualizing
 large hierarchies. *Proceedings of CHI '95*, 401–408.
-Longuet-Higgins, H. C. (1981). A computer algorithm for reconstructing a scene from two projections. *Nature* 293,
-133–135.
 McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *The Annals of Statistics* 24, 787–808.
 Microsoft. Bing Maps Tile System (documentation).
 Nagel, T. (1986). *The View from Nowhere*. Oxford University Press.
@@ -947,12 +840,8 @@ Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science
 Jeffreys, H. (1939). *Theory of Probability*. Oxford University Press.
 Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation: evidence for multiple representations of
 numerical quantity. *Psychological Science* 14(3), 237–243.
-Snellius, W. (1617). *Eratosthenes Batavus*. Leiden.
 Stensola, H., Stensola, T., Solstad, T., Frøland, K., Moser, M.-B. and Moser, E. I. (2012). The entorhinal grid map is
 discretized. *Nature* 492, 72–78.
 Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the Cauchy distribution. *Biometrika*
 61(2), 375–380.
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.
-
-Data: Hipparcos via the HYG database v3.8 (GitHub); the Gaia Catalogue of Nearby Stars (Gaia Collaboration, Smart et al.
-2021, *A&A* 649, A6). Sources, licences and checksums are in the plans.

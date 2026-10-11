@@ -199,6 +199,9 @@ Google Fonts load from outside:
   **Its primary result** (Tom, 11 Oct, SPN R200: "it is the primary result"): the Cauchy consists of addresses, not
   payload (R47; SPN §4.3; OFS Proposition 6, the reach of whatever arrives cancelling from every reading). It was left
   out of the first version; keep it in the abstract, §5 and the claims.
+  **A geometry paper** (Tom, 11 Oct, SPN R201: "completely remove the physical correspondance … This is a geometry
+  paper"): no physics in it (bridges, the inverse square, the near field, worlds, the matter fraction are in `physics.md`,
+  `inverse-square.md` and SPN Part II); the hand (fingers addresses, rings payload) given in full in its §1 and §5.
   `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
   perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
   those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry
