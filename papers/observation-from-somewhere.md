@@ -110,8 +110,8 @@ The paper is geometry only. It makes no claim about physics, perception or the s
 ## 2. Setting
 
 **Unit relations.** Everything here is built from the *unit relation*: a number from 0 to 1 relating a part to its
-whole, none of it, all of it, or anything in between, such as the fraction of a tank filled, the fraction of a day gone,
-or the part of a road behind. A relation requires two unit relations, one for each party. Draw one horizontally and one
+whole, none of it, all of it, or anything in between, such as the fraction of a day gone or the part of a road
+behind. A relation requires two unit relations, one for each party. Draw one horizontally and one
 vertically and call them h and v. They have no units, and neither knows the other's whole. The wholes they relate to are
 the *breadths* H and V, which are amounts. The reader's breadth H is its thumb, the one measure it holds; the other's
 breadth V is the mountain it looks at. h is the reader's side of a relation. A
@@ -675,9 +675,9 @@ keeps the division's local scale 1/h but accumulates it, and so lays the same re
 and logarithmically past it. Latitude is the Gudermannian of the map's height, φ = gd(y). It is the oldest instance we
 know of the two address spaces laid out.
 
-**The proportion is in the addresses.** Within a doubling past the corner the addresses are even; how evenly they are
-filled is up to the world. If directions are spread evenly (§7), the far share h/v has density proportional to
-1/(1 + (h/v)²), so the fill falls toward the corner by 1.6 to 1 across the first doubling past it, 1.18 across the
+**The proportion is in the addresses.** Within a doubling past the corner the addresses are even; how evenly things
+arrive at them is up to the world. If directions are spread evenly (§7), the far share h/v has density proportional to
+1/(1 + (h/v)²), so the arrivals thin toward the corner by 1.6 to 1 across the first doubling past it, 1.18 across the
 second and 1.05 across the third. That unevenness belongs to the payload, not to the addresses.
 
 ## 7. The Cauchy distribution is the address, not the payload
@@ -792,7 +792,7 @@ is in them.
   about what. What is at the addresses comes only from payload held beside them.
 - *The rings hide; the hand does not.* Two rings on one finger, seen along it, show only the nearer. Every back side is
   made by the payload; the addresses hide nothing.
-- *Three breadths.* In space the fingers fill a solid wedge and, spread evenly, give the two-variable Cauchy, with
+- *Three breadths.* In space the fingers spread through a solid wedge and, spread evenly, give the two-variable Cauchy, with
   density proportional to (1 + |x|²)^(−3/2). Here the corner is no longer the median: only 1 − 1/√2 ≈ 0.29 of the
   addresses lie within it, and the median of |x| is √3. The median is still an address, though not the corner.
 
