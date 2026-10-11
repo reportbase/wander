@@ -121,3 +121,27 @@ falls out." So neither ruling was made; both weights and both readings of ψ₂ 
 - **The arithmetic link, to be ruled:** stage 1's 1/π is the share of the bar that falls on h, the reader's own breadth,
   in one facing. For X to carry that number, the payload must be what lands on the reader's h. That identification is
   stated here, not shown.
+
+**Stage 2, B5 worked both ways (10 October 2026; `omm/b5.py`; flat matter plus constant dark energy, radiation left out).**
+Two readings of where the share 1/π belongs, under reading X (matter the payload).
+
+- **(i) Every epoch's own home reads 1/π.** dΩ_m/dz = −3·Ω_m0(Ω_m0 − 1)(1 + z)²/(…)², which is zero for all z only when
+  Ω_m0 is 0 or 1. A share held at 1/π at every epoch would need dark energy to thin as (1 + z)³ (w = 0), against B2.
+  **Killed** (exact).
+- **(ii) 1/π is the share over one reader's whole lay** (Ω_m(z) averaged over the reader's past). Three weights:
+
+  | today's Ω_m | W1, even in look-back time | W2, even in comoving distance | W3, the lay: true scale to the corner, then even per doubling (corner at c/H₀, a candidate) |
+  |---|---|---|---|
+  | 0.01 | 0.332 | 0.722 | 0.410 |
+  | 0.10 | 0.522 | 0.797 | 0.643 |
+  | 0.30 | 0.692 | 0.868 | 0.805 |
+  | 1/π | 0.703 | 0.873 | 0.814 |
+
+  The past is matter's era, so every weight's average is far above today's share. For the average to be 1/π, today's
+  Ω_m would have to be 0.0076 (W1), 0.0017 (W3), or nothing at all (W2: no value in (0.001, 0.999) reaches it). Those are
+  far below any measured value. **Killed** under all three weights.
+- **What is left: (iii) 1/π is the share at the reader's home, now.** That is what D6 used. It is not killed, but it
+  explains nothing about why now: it is physics' coincidence problem restated, not answered. Under X the question becomes
+  why the reader's home falls at the epoch where the payload's share is 1/π.
+- **For stage 3:** only (iii) survives, so stage 3 compares today's Ω_m with 1/π, as planned. Agreement there would show a
+  number, not a reason; B5 stays open until something in the geometry says why the reader's home is now.
