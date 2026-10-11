@@ -60,6 +60,16 @@ Each vantage's reading is right from where it stands. Many paradoxes come from r
 another's, most often the completed view used as if one observation held it (the working paper `vantages.md` collects
 them). The rest of this paper is the geometry of the two situated vantages and where it meets physics.
 
+**What the completed view costs** [ruled; from the archived *The Relation Space* §6, §17]. Neither party to a relation
+performs the comparison; something else settles it. A balance settles two weights and its pull cancels from the
+answer. A page, a shared scale or an equation settles them too, but lends its own terms to the answer, as a spring
+scale's spring does. Written as h² + v² = 1, h and v are not related to each other: each is related to the equation,
+which supplies the common scale, the constant 1 and the equals sign. **The equation is a third party**, and the
+completed view is what that third party makes. Two consequences follow. A completed account holds the whole figure at
+once and cannot state a rate, since what is held all at once has no order of arrival; a situated account states the
+rate of arrival and cannot hold the figure. And the corner, which the situated reading turns on, is an unremarkable
+point of the completed drawing: the drawing displays no landmark there.
+
 ## Abstract
 
 A reader that stands somewhere knows its own breadth and not the breadth of what it reads. This paper works out what
@@ -301,6 +311,14 @@ R190) takes the levels as doublings of the reading v/h and the logarithm past th
 derivation of the logarithm from "no rung is preferred". Whether that closes the gap is one of the questions put to
 reviewers (§12).
 
+*What another ratio costs* [reading; from the archived *The Radix* §5, §11]. A reader whose own step multiplies by r
+steps exactly one level per step when the levels are powers of r: a reader with r = 3 matches levels of three exactly,
+as one with r = 2 matches doublings. So any ratio but the halving can be matched, and D.1 says what it costs: the
+reader's step is then a measure added to the level. A layout whose levels are uneven (a calendar's 100, 12, 31, 24,
+60, 60) matches no single step and costs a table of its levels, which a reader given nothing does not have. The Radix
+put it in one line: "uniformity can be free; variation has to be represented somewhere, in the reader's grain or in
+information handed to it." Its evidence was one synthetic instrument, so only the principle is carried here.
+
 **Escapes** (where the conclusion does not follow):
 - a reader that keeps two independent breadths and chooses neither has no relation (not P0). It lies outside the
   framework rather than against it;
@@ -429,6 +447,23 @@ the straight line's share v/(v + h), and any weight fair to the two facings puts
 **What being situated costs** [the first sentence proved; the second a reading]. The Cauchy has no mean: its tail past
 the corner is too heavy. Read so, from somewhere there is a reading at every distance, and no census of the whole. Its median and its symmetry under the flip are what survive.
 
+**Why the median survives and the mean does not** [proved; from the archived *Reader Geometry as Addressing*,
+Proposition 14]. Let X be a finite set of readings and f any strictly increasing map of them (any change of the
+amounts that keeps their order). (a) The ranks of f(X) are the ranks of X, so every order statistic picks the same
+reading: median f(X) = f(median X) for an odd count. (b) Conversely, if two sets have the same ranks, some strictly
+increasing f carries one onto the other, so the ranks keep exactly what survives every such change, and nothing more.
+(c) The mean commutes with f only where f is affine on the data; for a convex f, mean f(X) ≥ f(mean X), with equality
+only when f is affine there or X is constant (Jensen). *Proof.* (a) and (c) are immediate; (b) by interpolating
+monotonically between the matched readings. ∎ So order (the ranks, the median, the corner) is what a reader keeps
+when it does not hold the amounts, and sums are what it loses. The Cauchy is the extreme case: an order law with no
+sum.
+
+**Two absences, kept apart** [reading; after the archived *Browsing the Fisheye*]. Two different things are missing from
+a situated reading, and they are easily run together. The amounts, V and H, are missing from *every single reading*:
+v/h cancels them, and only a bridge (§7) restores them. The total of the whole is missing because the reader's set *has
+no end*: the mathematical horizon is never reached, so no census can be taken, and the Cauchy's divergent mean is that
+absence in arithmetic. The first is a fact about the ratio; the second a fact about delivery.
+
 **Known already.** The Cauchy as the image of a uniform angle (the gnomonic image of uniform measure on a hemisphere),
 and its invariance under Möbius maps, are classical (Knight 1976; McCullagh 1996): a pinhole projecting evenly spread
 directions onto a line gives the Cauchy (Cuadras 2002), and Möbius maps of Cauchy variates are Cauchy (Pitman and
@@ -471,6 +506,17 @@ by chance below it. Charged one unit per step spanned per look, a sure reading c
 r = 1, and the same at r and 1/r. A reader that slides its H by halvings reaches one step across in about log₂(1/r) looks
 instead of 1/r. These are one cost model on simulated readers.
 
+
+**More points, less seen** [exact, with one prediction killed; `plans/cei-plan.md`, after the archived *One Reader* and
+*The Order of Limits* §3.2]. A parallel reader looks side-on at N points spaced evenly round a circle of radius R and
+reads each one's position across its view to a step ε_len; only ε = ε_len/R enters (a ratio of amounts, its bridge the
+radius). Neighbours at angle θ from the middle of the view stand about (2π/N)·cos θ apart, which is at least ε while
+cos θ ≥ εN/2π, so it resolves R(N) = (N/π)·arccos(εN/2π) of them. With x = εN/2π that is (2/ε)·x·arccos x, which peaks
+at x ≈ 0.6522 at about 1.1222/ε points and then falls to none at N = 2π/ε: past the peak, more points mean fewer told
+apart. Checked by brute force at ε = 10⁻³ and 10⁻⁴: the formula holds to within 2 points, the peak's height to 0.11%,
+nothing is resolved past 2π/ε, and the share depends on εN alone. The peak's place was predicted within 2% of 4.098/ε
+and came in 2.6% low at ε = 10⁻³, a narrow kill on a flat maximum, kept as recorded. The address never overflows; the
+resolution does: the completed view's N against what one standpoint resolves.
 ---
 
 ## 7. From addresses to amounts: what physics supplies
@@ -483,6 +529,17 @@ V = 10¹⁶.
 **Bridges** [ruled]. Physics supplies amounts across observations: the reader's own travel, a law with a known constant,
 a known kind (a standard candle), or a fact shared with another reader. Each is a named bridge from fill levels to
 amounts. Every physics result below names its bridge.
+
+**A shared fact buys exactly one factor** [exact; `plans/tgt-plan.md`, after the archived *The Order of Limits* §4.4].
+Two readers share one closed figure. Reader A records its part as edges, each an exact direction and a length counted
+in its own hold H_A; reader B records the rest in its own hold H_B. Neither knows the other's hold. Closure, the one
+shared fact, gives H_A·S_A + H_B·S_B = 0, where S_A and S_B are the sums of each reader's counted edges; so the two sums
+are parallel and opposite, and **H_B/H_A = |S_A|/|S_B|**. Closure recovers the ratio of the holds and nothing more: both
+holds scaled together leave every count unchanged. It fails only when each part closes on its own. Checked: on 2000
+random closed polygons the ratio comes back to 5×10⁻¹⁵; the archive's three values, 0.5, 2 and 3.7, come back as
+0.5000, 2.0000 and 3.7000; rounding counts to a step of 10⁻¹ to 10⁻⁴ of the unit gives errors of 10⁻¹ falling to
+2×10⁻⁴. This is the denominator exchange (`denominator-paradox.md`) made exact: between two private rulers, the shared
+fact purchases the one factor that crosses.
 
 **Recovering places from the sweep** [illustration; the geometry is classical]. `flight.html` flies a reader at a height z
 over a flat ground (the page itself writes the height as v). For each of a few posts it holds only readings: how far down and how far across, each against the

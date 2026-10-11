@@ -37,3 +37,15 @@ factor leaves every count unchanged, so the absolute size is not recovered.
   with the step over three decades.
 
 ## Runs
+
+**Run 1 (11 October 2026; `tgt/tgt.py`, seed 11).**
+- **P1 not killed**: on 2000 random closed polygons (3–40 edges, ρ from 0.01 to 100, holds from 10⁻³ to 10³), the worst
+  relative error in the recovered ρ is 5.3×10⁻¹⁵.
+- **P2 not killed**: on a 4000-edge circle split in half, ρ = 0.5, 2 and 3.7 are recovered as 0.5000, 2.0000, 3.7000:
+  the archive's T3 values, now from the plain closure argument.
+- **P3 not killed**: scaling the figure and both holds by one factor (7.3) leaves every count unchanged, and the same ρ
+  comes back (2.5000): closure gives the ratio of the holds and nothing about either one.
+- **P4 not killed**: when each part closes on its own (two loops joined at a point), both sums vanish and the recovery
+  is flagged undefined.
+- **P5 not killed**: with counts rounded to whole steps, the relative error in ρ is 1.0×10⁻¹, 1.2×10⁻², 8.7×10⁻⁴ and
+  2.1×10⁻⁴ for steps of 10⁻¹ to 10⁻⁴ of the unit: it falls with the step (about tenfold per decade, then fourfold).

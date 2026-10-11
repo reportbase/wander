@@ -105,6 +105,12 @@ limits: `vantages.md`, with the completed view, and the review paper §11. The l
 Haraway). Not pulled: the coincidence of 1 − 1/√2 (still to check), and the items marked new in the other lists above
 (why observation comes in steps; carried and laid marks; keeping the address until contact).
 
+**Moved into `observation-from-somewhere.md` (11 October, Tom: "proceed according to your recommendation").** The equation
+as a third party (§1, "What the completed view costs"); why the median survives and the mean does not (§5, proved); two
+absences kept apart (§5, reading); what another ratio costs (§3, reading, after *The Radix*); more points, less seen
+(§6, checked as `plans/cei-plan.md`: exact, P2 narrowly killed); a shared fact buys exactly one factor (§7, checked as
+`plans/tgt-plan.md`: exact, nothing killed). Not moved: why observation comes in steps (lower priority).
+
 ## Conflicts: settled by R192
 
 Tom, 11 October: "Any conflicts of archived papers should defer to papers that are not archived." So each of the three below is settled for the paper that is not archived: the outer

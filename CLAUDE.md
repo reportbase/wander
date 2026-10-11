@@ -271,6 +271,11 @@ Google Fonts load from outside:
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
   log₂(81)/k for a share in s^k (P5 killed). The corner holds where the light counted is a share (projected solid angle).
+  `cei-plan.md` (+ `cei/cei.py`, 11 Oct, exact): more points, less seen, from the archive: a parallel reader of step ε
+  resolves (N/π)·arccos(εN/2π) of N points round a circle (within 2 points; P1, P3, P4 not killed), peak 1.1222/ε to
+  0.11%, its place 2.6% off at ε = 10⁻³ (P2 killed narrowly). `tgt-plan.md` (+ `tgt/tgt.py`, 11 Oct, exact): closure
+  between two readers' counted edges recovers the ratio of their holds, |S_A|/|S_B|, to 5×10⁻¹⁵, and nothing more
+  (P1–P5 not killed): the denominator exchange made exact.
   `omm-plan.md` (10 Oct, plan only, nothing worked): taking D6 forward (Tom's 23 Sep status note, Ω_m = ψ₁ψ₂ = 1/π, not
   in this repo; Tom: "it was set aside because we had gone as far we could at the time"). Stage 1 rederives the share in
   current terms (ψ₁ = 2/π as the sweep's average fill of h, ψ₂ = ½ as one facing; rulings needed); stage 2 rules what

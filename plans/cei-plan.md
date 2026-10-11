@@ -38,3 +38,24 @@ x* ≈ 0.6522, giving R_max = (2/ε)·x*·arccos x* ≈ 1.1222/ε, at N* = 2πx*
   *Killed* otherwise.
 
 ## Runs
+
+**Run 1 (11 October 2026; `cei/cei.py`).**
+
+| | ε = 10⁻³ | ε = 10⁻⁴ |
+|---|---|---|
+| worst |brute force − formula| over 400 values of N | 2.00 points | 2.00 points |
+| peak count (against 1.1222/ε) | 1121 (−0.11%) | 11221 (−0.01%) |
+| N at the peak (against 4.098/ε) | 3993 (−2.56%) | 40707 (−0.67%) |
+| count at and past N = 2π/ε | 0 | 0 |
+
+Share of all N resolved at the same εN, ε = 10⁻³ against 10⁻⁴: 0.4740/0.4746 (εN = 0.5), 0.4490/0.4491 (1),
+0.3965/0.3968 (2), 0.2802/0.2803 (4), 0.0958/0.0959 (6). (The archive's table gives about twice these, counting the
+visible half only.) The exact peak: x* = 0.652185, 2·x*·arccos x* = 1.122193.
+
+- **P1 not killed**: the formula holds to within 2 points everywhere.
+- **P2 killed** (narrowly): the peak's height is within 0.11%, but at ε = 10⁻³ its place is 2.56% below 4.098/ε, past
+  the 2% written. The count is flat across the peak (it moves by about one point over hundreds of N), so whole-point
+  steps decide where its first maximum falls; at ε = 10⁻⁴ the place is within 0.67%. A new run with a looser place
+  tolerance would be a new prediction; this one stays killed.
+- **P3 not killed**: nothing is resolved at or past N = 2π/ε.
+- **P4 not killed**: the share depends on εN alone, within 0.0006.
