@@ -1,0 +1,6 @@
+also: spin passed on -2.06 -> -2.66, backspin passed 3.18 -> 3.45, follow with the grip 0.2579 -> 0.2543
+
+P9: not killed. the engine's 30 throws against the reference's closed form: largest gap 0.128° (rolling v7 cut 60°: engine 3.92, reference 3.79) (under 0.15°)
+P10: KILLED. the smoke test's cut throw 3.51° (predicted 4.8 ± 0.2; before the change 2.53), side-spin throw -3.39° (predicted −4.5 ± 0.2; before -2.62)
+P11: not killed. textbook results with the grip off: follow 0.2998460749102105 (before 0.2998460749102105), stun 0.02301369047619067 (0.02301369047619067), draw 0.23631398809522597 (0.23631398809522597)
+P12: not killed. 13 of 13 challenges missed as set up and solved by their reference shot

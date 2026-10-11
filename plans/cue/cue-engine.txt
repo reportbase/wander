@@ -1,0 +1,9 @@
+throw stun v7      1.5  3.06  3.43  3.44  3.44
+throw stun v21     1.48  3.04  3.43  3.43  3.43
+throw stun v49     1.47  3.04  3.43  3.43  3.43
+throw rolling v7   0.61  1.21  1.77  2.5  3.05
+throw rolling v21  0.6  1.19  1.73  2.45  3
+throw rolling v49  0.6  1.18  1.72  2.44  2.99
+cushion v7 [{"in":15,"out":17.8,"eN":0.618,"speed":0.627},{"in":30,"out":35.6,"eN":0.599,"speed":0.638},{"in":45,"out":53.4,"eN":0.556,"speed":0.66},{"in":60,"out":72.2,"eN":0.459,"speed":0.752}]
+cushion v21 [{"in":15,"out":14.7,"eN":0.74,"speed":0.739},{"in":30,"out":29.7,"eN":0.733,"speed":0.731},{"in":45,"out":45.3,"eN":0.719,"speed":0.723},{"in":60,"out":63.7,"eN":0.687,"speed":0.776}]
+cushion v49 [{"in":15,"out":13.9,"eN":0.774,"speed":0.771},null,null,{"in":60,"out":61.4,"eN":0.752,"speed":0.786}]

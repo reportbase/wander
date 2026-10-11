@@ -126,7 +126,8 @@ Google Fonts load from outside:
   sin φ = fx, no spin; side spin grips the rails. `spinChecks` reproduces the textbook results (rolls at once 2/5 up, a
   rolling white follows at 2/7 after a full hit, a stun stops, draw comes back, right English comes off the rail right).
   Throw, spin passed on, massé and jump (11 Oct, Tom: "push further on the three suggestions"): balls grip each other
-  weakly (MU_B 0.06): a cut throws the struck ball ~3° toward the white's travel, side spin ~3° the other way, and passes
+  weakly (since CUE run 2, the published fit to measured throw, `gripOf`: 0.095 slow to 0.03 fast; it was MU_B 0.06): a
+  cut throws the struck ball 1–5° toward the white's travel (more slow), side spin ~3° the other way, and passes
   opposite side spin; the cue can be raised (`cue ↑`, `?el=`): a tilted spin axis bends the path (massé), the press into
   the slate throws the white up (jump); off the cloth a ball falls (G) and bounces (E_TABLE), and contacts read h + v
   with the height included, so it can pass over a ball. Layouts `jump` (over the 1 to pot the 2) and `masse`.
@@ -134,13 +135,19 @@ Google Fonts load from outside:
   textbook checks run with it off); a ball in the air above the cushion's nose (1.27 R) flies off the table and is
   respotted. Tried and taken out: the cloth's grip during the slate press (at 0.195 it kinked massés instead of curving).
   Power 2–60; `?tip=fx,fy&chalk=0&el=`; hook `strikeOf`, `tip`, `chalk`, `elev`, `spinChecks`.
-  Challenges (11 Oct, Tom: "yes", to a challenges mode): thirteen puzzles in the layout menu, one mechanic each (½-ball,
-  bank, kick, jump, massé, a blind thin cut, stun, draw, follow, cannon, combination, the row of four, the break). Each
+  Challenges (11 Oct, Tom: "yes", to a challenges mode): fifteen puzzles in the layout menu, one mechanic each (½-ball,
+  bank, kick, jump, massé, a blind thin cut, stun, draw, follow, two rails, cannon, combination, the throw, the row of
+  four, the break; two rails and the throw added with play and feel, Tom: "1,3": the throw is a frozen pair 8° off the
+  pocket that only a slow hit grips in, power 10–17 on this engine, almost none with the grip off). Each
   fixes "see" (0 shows only the white to the ghost ball; the later ones put the pot past sight); balls can't be moved; a
   missed try puts them back and says why; par from the window of aim around a reference shot (`sol`, found by search on
   this engine). Best per challenge in localStorage only. `?challenge=<id>`; hook `challenges`, `setChallenge`, `trial`,
   `solve`, `check`, `challenge`. A challenge's layout or the engine changing can break its reference shot: the smoke test
-  plays every one.
+  plays every one. Play and feel (11 Oct, Tom: "1,3"): sound made in the page (the cue's tap, ball on ball, the cushion,
+  the pocket, each as loud as its impact, played as the shot's own frames reach it; `sound: on/off`, kept in
+  localStorage); a strip at the side to pull down and let go (power by the pull; let go near the top and nothing is
+  shot); controls a finger can hit on touch screens. Hooks `heard`, `sound`, `playing`, `grip` (a number, or null for the
+  fit).
   Not in the flying page.
 - `flight.html`: **the corner in flight** (10 Oct 2026, Tom: "you know how the transition from earth to the sky in flight
   sim games is awkward? ... i wonder if its because of the corner"; "only the geometry", wireframe). Level flight at height v;
@@ -349,6 +356,14 @@ Google Fonts load from outside:
   Written up (11 Oct) as a reading, unruled: SPN §3.3, "Level of detail tried in a simulation" (size reads momentum where
   the levels span more than the speeds; a reader that holds a world folds by distance only what arrives as totals, and
   holds what is coming at its own size), SPN §14, "From the pool runs"; `physics.md` §2.2, §2.4, §3; `v-and-h.md` 426–429 (§8p).
+  `cue-plan.md` (+ `cue/`, 11 Oct, Tom: "1,3"): the trick-shot engine against the published laws of the game. The
+  measurements are blocked here, so the reference is pooltool 0.6.0 (PyPI, Apache-2.0, sha256 in the plan), whose models
+  name their sources, re-implemented from its source text. Run 1: the constant ball–ball grip killed (P1–P3: Alciatore's
+  fit falls 0.095 to 0.03 from slow to fast, so throw is 4.8° slow and 1.7° fast at half-ball against the engine's 3.4°);
+  the cushion agrees at medium speed (P5) and parts at slow (P6 killed: eN 0.62 against Han's 0.80 with e = 0.85); cloth
+  and ball constants agree (P7, P8). Run 2: the grip made the fit (`gripOf`); the engine matches it to 0.13° at 30
+  points (P9), textbook results and all 13 challenges unchanged (P11, P12); P10 killed by my set-up (the smoke test's
+  white rolls part way, so its throws are 3.5°, not a stun's 4.8°). The slow cushion waits for measured data.
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
@@ -486,7 +501,8 @@ In short:
       h + v = 1 (but for a few in clusters, within 1%), the row of four's pot out of sight at 3 deep and in sight at 4, a bare tip
       turning the white 30° at f = ½, spin's textbook results, throw both ways, spin passed on, a massé bending, a jump clearing a ball,
       backspin passed and follow lessened by the grip, a ball jumped off the table; every challenge missed as set up and
-      solved by its reference shot, a missed try put back and a solved one counted).
+      solved by its reference shot, a missed try put back and a solved one counted; the throw challenge missed with the
+      grip off; a shot played through heard, the cue's tap, a contact and a pocket; the pull strip shooting at middling power).
   12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
   13. **levels.html:** by default the reader's lay, every level past the corner ln 2 wide, s = 8 at 1 + ln 8, six drawn; at
       `?lay=inplace` the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),

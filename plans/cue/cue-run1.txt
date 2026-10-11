@@ -1,0 +1,22 @@
+throw (degrees) at cuts 10 20 30 45 60, the reference beside the engine
+  stun    slow   (0.44 m/s)  ref 1.48  3.05  4.84  4.95  4.63   engine 1.5  3.06  3.43  3.44  3.44
+  stun    medium (1.33 m/s)  ref 1.48  3.05  3.56  2.79  2.33   engine 1.48  3.04  3.43  3.43  3.43
+  stun    fast   (3.11 m/s)  ref 1.48  2.51  1.71  1.13  0.90   engine 1.47  3.04  3.43  3.43  3.43
+  rolling slow   (0.44 m/s)  ref 0.76  1.50  2.19  3.10  3.79   engine 0.61  1.21  1.77  2.5  3.05
+  rolling medium (1.33 m/s)  ref 0.35  0.69  1.01  1.43  1.75   engine 0.6  1.19  1.73  2.45  3
+  rolling fast   (3.11 m/s)  ref 0.14  0.27  0.39  0.55  0.68   engine 0.6  1.18  1.72  2.44  2.99
+  (the reference's friction at half-ball, stun: slow 0.0948, medium 0.0622, fast 0.0298; rolling: slow 0.0765, medium 0.0353, fast 0.0136)
+cushion, a rolling ball, Han 2005 (e 0.85, mu 0.2): out angle and eN, the reference beside the engine
+  slow   15°: ref 12.4° 0.801  engine 17.8° 0.618 | 30°: ref 26.8° 0.791  engine 35.6° 0.599 | 45°: ref 44.0° 0.775  engine 53.4° 0.556 | 60°: ref 62.1° 0.755  engine 72.2° 0.459
+  medium 15°: ref 12.4° 0.801  engine 14.7° 0.740 | 30°: ref 26.8° 0.791  engine 29.7° 0.733 | 45°: ref 44.0° 0.775  engine 45.3° 0.719 | 60°: ref 62.1° 0.755  engine 63.7° 0.687
+  fast   15°: ref 12.4° 0.801  engine 13.9° 0.774 | 30°: ref 26.8° 0.791  engine (not read) | 45°: ref 44.0° 0.775  engine (not read) | 60°: ref 62.1° 0.755  engine 61.4° 0.752
+  (with the speed-dependent restitution left unused in properties.py, at 15°: slow e 0.602 eN 0.560, medium e 0.758 eN 0.711, fast e 0.875 eN 0.825)
+
+P1: KILLED. stun half-ball slow: reference 4.84° against the engine's 3.43° (within 1°)
+P2: KILLED. stun half-ball fast: reference 1.71° against 3.43° (within 1°)
+P3: KILLED. the reference's stun half-ball throw changes 3.13° from slow to fast (less than 1°)
+P4: not killed. rolling half-ball medium: reference 1.01° against 1.73° (within 1°)
+P5: not killed. cushion, medium, 30° in: reference out 26.8° (engine 29.7°, within 5°), eN 0.791 (engine 0.733, within 0.1)
+P6: KILLED. cushion eN at 15°: v7 reference 0.801 engine 0.618, v21 reference 0.801 engine 0.74, v49 reference 0.801 engine 0.774 (each within 0.1)
+P7: not killed. cloth: sliding 0.2 against 0.195 (within 0.05), rolling 0.01 against 0.0078 (within a factor of 2)
+P8: not killed. ball–ball restitution 0.95 against 0.96 (within 0.03)

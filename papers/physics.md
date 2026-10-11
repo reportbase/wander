@@ -45,6 +45,10 @@ bodies are pictures. They are never evidence here.
   what a contact costs are exact (§2.2). The infinite table is a simulation of our own, its referee checked against
   kinetic theory (§2.4, new): it says how a world can be held by level of detail, not that the world is so. The pulse a
   world held by distance lost is in §3. In SPN as a reading, unruled (§3.3, "Level of detail tried in a simulation").
+- 11 October, third: CUE (`plans/cue-plan.md`), the trick-shot engine against the published laws of the game, through
+  pooltool's statement of them (the measurements themselves are blocked here). The engine's constant grip between balls
+  was killed (Alciatore's fit falls threefold from slow to fast) and replaced by the fit; the slow cushion is left for
+  measured data (§2.4, §3).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -174,6 +178,14 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   physics of open systems already says: the outside's pressure (kinetic and virial), a reservoir that fixes the chemical
   potential, not the count (the band's places free 51.1% of the time, Widom's 48.3% for the bulk), and books kept where
   pushes balance.
+- **The trick-shot engine against the published game** (CUE, `plans/cue-plan.md`). The measurements (Alciatore's
+  technical proofs, the journals) are blocked here; the reference is pooltool 0.6.0, an open-source simulator whose
+  models name their sources, re-implemented from its source text: a step below raw data. Cloth (sliding 0.2, rolling
+  0.01) and ball restitution agree. The grip between balls does not: the fit to measured throw falls from 0.095 to 0.03
+  between a slow and a fast half-ball stun, so the engine's constant 0.06 threw 1.4° too little slow and 1.7° too much
+  fast. Made the fit (run 2), the engine follows it to 0.13°, and the challenges still solve. The cushion agrees at
+  medium speed and parts at slow speed, where the engine's weaker bounce resembles a speed-dependent restitution that
+  pooltool keeps but does not use; measured data must decide.
 - **A world held by distance loses a signal on its way** (runs 16–18; §3). Level of detail by distance holds for what
   stays put and averages out; what travels toward the reader must be held at its own size until it arrives. Adaptive
   mesh refinement already does this, by gradients. In SPN's terms: what is coming is near, whatever its distance.
@@ -207,6 +219,10 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   a fluid on the cells first never ran (a setting overwritten), then filled the window (its wall pushed nothing back),
   then, with the wall's push, kept the window steady but delivered 22% of the peak, inside the noise. What it taught: a
   signal must be held at its own size until it arrives.
+- **CUE P1–P3: a constant grip between balls.** The published fit falls threefold from slow to fast; one number is right
+  only near a medium hit. Replaced by the fit in run 2. **CUE P6: the slow cushion** bounces 0.62 in the engine against
+  0.80 in Han's model with a constant restitution; which a real cushion does is for measured data. **CUE P10** was my
+  set-up: the smoke test's throws are not pure stuns.
 - **POL P29: a derivation, not the gas.** The plan took a disc's cross-section in two dimensions as one diameter; it is
   two, and the referee matched Enskog once that was right.
 
