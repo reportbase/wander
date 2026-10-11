@@ -298,16 +298,18 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   straight line lacks) is square to the line there; facing = 2θ (`facing.html`).
 - V = H is a calibration a situated reader must set to read amounts, not part of the geometry; under it amounts equal fill
   levels numerically, which is why the conflation is easy. (*10 October*, R188: Tom restores 8 October's reading, V = H
-  creates the unit circle, and that is why the levels are plain doublings; how this stands with "v needs no V" is left
-  to rule; SPN §1, "The settled view, 10 October".) Every amount is then off by V/H, the same on both sides of the
+  creates the unit circle, and that is why the levels are plain doublings; R189: "v needs no V" stands, v and h on [0, 1]
+  invariant, and there is one circle, its shape from the fill levels, its unit from V = H; SPN §1, "The settled view,
+  10 October".) Every amount is then off by V/H, the same on both sides of the
   corner; physics' bridges (travel, a known constant, a known kind, a shared fact) remedy it (SPN Part II).
 - The fisheye is the sweep in one facing, seen from the standpoint (geometry, the same for every shape); with V = H it is
   the situated fisheye reading.
 - One corner (10 October, R188): the split between the first level (home to the corner, the near field) and the second;
   past it the levels are plain doublings with no corner of their own, and there is no depth and no recursion. R175 and
   R180 are superseded; the superseded passages stay in SPN as the record with dated notes.
-- Still open: the ratio 2 between levels (binary branching is proved; the in-place lay being forced is deferred, SPN
-  Appendix D); the weight on the sweep is a choice (SPN §14, "Burdens of proof").
+- The ratio 2 between levels: dissolved (10 October, R189; Tom: "its just logrithimic doublings. this paper does. not need
+  to prove the logrithm, it is fundemental"); Appendix D and the open question are kept as the record.
+- Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof").
 
 ## Read this first: the physics comes first
 Since 10 Oct 2026 (Tom: "wanderer priority was user experience, not physics. the physics then became unexpextedly

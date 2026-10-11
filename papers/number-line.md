@@ -65,6 +65,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
+- 10 October, seventy-third: one circle, "v needs no V" standing (v and h on [0, 1], invariant); the levels logarithmic doublings, the logarithm fundamental; the open question of the 2 dissolves (Tom; SPN R189).
 - 10 October, seventy-second: one corner, plain doublings, no depth or recursion; V = H creates the unit circle, 8 October's reading restored (Tom, at `flight.html`; SPN R188, §1 "The settled view, 10 October"). Dated notes in Background, §4 and §8.
 - 10 October, seventy-first: §4, on the Hipparcos stars light falls two levels per level of distance (dwarfs 2.02, giants 1.93; past the catalogue's limit 1.61); a known kind is a bridge about a level wide (MAG, `plans/mag-plan.md`).
 - 10 October, seventieth: §8, the corner as the reference sphere: real rocky worlds within a hundredth of a level of it, giants a tenth; wander's bodies far rougher (REF, `plans/ref-plan.md`).
@@ -142,7 +143,9 @@ that angle rescaled, g = θ/(π/2).
   fisheye reading, off by V/H.
   *Restored 10 October* (Tom: "its a consequence of setting V = H, which creates the unit circle"; SPN R188): V = H
   creates the unit circle, as on 8 October; the 9 October corrections above are withdrawn as to that. Left to rule in
-  SPN: how this stands with "v needs no V".
+  SPN: how this stands with "v needs no V". *Ruled the same evening* (SPN R189; Tom: "v does not need V. v = [0,1].
+  h = [0,1], they are invariant."; "one circle"): one circle, its shape from the invariant fill levels, its unit from
+  V = H; the levels are logarithmic doublings, and the logarithm is fundamental.
 
   | | situation 1 | the situated reader's unit circle |
   |---|---|---|
