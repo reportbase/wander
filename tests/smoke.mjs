@@ -313,8 +313,27 @@ try {
     T.setChallenge('combo'); const b0 = JSON.stringify(T.challenge().balls); T.shootNow(); const miss = T.challenge();
     T.solve(); T.shootNow(); const hit = T.challenge();
     o.chTries = miss.tries === 1 && !!miss.lastWhy && JSON.stringify(miss.balls) === b0 && hit.tries === 2 && hit.solvedIn === 2 && hit.lastWhy === null && JSON.stringify(hit.balls) === b0;
+    // the throw challenge is the grip's (CUE run 2): with the balls' grip off, its reference shot misses
+    T.setChallenge('throw'); T.solve(); T.grip(0); o.throwNeedsGrip = T.check() !== null; T.grip(null); o.throwSolves = T.check() === null;
     T.setLayout('rack'); o.chOff = T.challenge() === null; return o; });
-  if (!pt.same || !pt.full || !pt.hv || !pt.exact || !pt.plays || pt.combo !== '4' || pt.sight !== '/4' || !pt.rt || !pt.strike || !pt.spinOK || pt.chFail.length || !pt.chTries || !pt.chOff) failures.push(`[play-trick.html] ${JSON.stringify(pt)}`);
+  if (!pt.same || !pt.full || !pt.hv || !pt.exact || !pt.plays || pt.combo !== '4' || pt.sight !== '/4' || !pt.rt || !pt.strike || !pt.spinOK || pt.chFail.length || !pt.chTries || !pt.chOff || !pt.throwNeedsGrip || !pt.throwSolves) failures.push(`[play-trick.html] ${JSON.stringify(pt)}`);
+  // play and feel: a shot played through (not jumped to its end) sounds the cue's tap, each ball on ball and each pocket;
+  // and pulling the strip down and letting go shoots
+  {
+    await page.evaluate(() => { const T = __trick; T.sound(true); T.setChallenge('half'); T.solve(); });
+    await page.click('#shoot');
+    await page.waitForFunction(() => !__trick.playing(), null, { timeout: 60000, polling: 100 });
+    const snd = await page.evaluate(() => __trick.heard());
+    if (!(snd.cue === 1 && snd.ball >= 1 && snd.pocket >= 1)) failures.push(`[play-trick.html] a shot played through was not heard: ${JSON.stringify(snd)}`);
+    await page.evaluate(() => { __trick.setLayout('rack'); });
+    const box = await page.locator('#pull').boundingBox(), s0 = await page.evaluate(() => __trick.state().shots);
+    await page.mouse.move(box.x + box.width / 2, box.y + 10); await page.mouse.down();
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height * 0.5, { steps: 6 });
+    const pw = await page.evaluate(() => __trick.state().power); await page.mouse.up();
+    const s1 = await page.evaluate(() => __trick.state().shots);
+    if (!(s1 === s0 + 1 && pw > 20 && pw < 40)) failures.push(`[play-trick.html] pulling the strip half way did not shoot at middling power (shots ${s0} to ${s1}, power ${pw})`);
+    await page.waitForFunction(() => !__trick.playing(), null, { timeout: 60000, polling: 100 });
+  }
   console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills, aiming from the cue ball, trick shots)`);
 
   // ── 12. facing.html: the facing is 2θ, square to the line at the corner, the arc off the line most there ──
