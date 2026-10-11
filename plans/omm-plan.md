@@ -79,4 +79,17 @@ evolution the l = 2 calculation, once done, cannot account for; (c) any detectio
 
 ## Runs
 
-*(nothing worked yet)*
+**Stage 1, run 1 (10 October 2026; `omm/omm.py`, exact, sympy).** Tom: "lets not rule, but try it both ways, see what
+falls out." So neither ruling was made; both weights and both readings of ψ₂ were worked.
+
+| | ψ₁, the average share on h | × one facing of two (½) | × one quarter of four (¼) |
+|---|---|---|---|
+| **A, the turn** (bar stepped evenly in its turn) | 2/π = 0.636620 | **1/π = 0.318310** | 1/(2π) = 0.159155 |
+| **B, the in-place lay** (reading stepped evenly each side of the corner) | (√2 − 1 + ln(1 + √2))/2 = 0.647794 | (√2 − 1 + ln(1 + √2))/4 = 0.323897 | (√2 − 1 + ln(1 + √2))/8 = 0.161948 |
+
+- Under weight B the two sides of the corner hold different shares: ln(1 + √2) = 0.881374 on the near side,
+  √2 − 1 = 0.414214 on the far side.
+- **Stage 1's kill, read both ways.** With the turn and one facing, the share is 1/π exactly: D6's number follows from
+  today's terms, without the archived paper (not killed). With the in-place lay and one facing it is 0.323897, 1.8% above
+  1/π: D6's number does not follow (killed for that weight). The quarter readings give half of each.
+- No data has been opened. Stage 2 (what matter and dark energy are on the lay) is not yet worked, so stage 3 is not run.
