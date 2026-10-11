@@ -191,3 +191,42 @@ binds again: about 4.5°, on the smoke test's bound.
 - **P12, the challenges.** Every challenge is still missed as set up and solved by its reference shot. *Killed* if any
   reference shot no longer solves it. (Uncertain: a degree of throw moves a pot over a few table lengths. If killed, the
   challenge's reference shot is searched again on the new engine, as it was first found, and its par recomputed.)
+
+The change, in `play-trick.html`: `gripOf(slide)`, the fit at the slide's speed converted to m/s, in place of MU_B, at
+the one line where the grip is applied; `spinChecks` sets the grip to 0 and back as before. The engine's side read again
+by `plans/cue/engine.mjs` (`cue-engine-run2.txt`); the textbook results and the challenges, before and after, by
+`plans/cue/checks.mjs` (`cue-checks-before.txt`, `cue-checks-after.txt`); the verdicts by `plans/cue/run2.mjs`
+(`cue-run2.txt`):
+
+```
+throw stun v7      1.5  3.06  4.84  4.99  4.67
+throw stun v21     1.48  3.04  3.57  2.8  2.34
+throw stun v49     1.47  2.52  1.71  1.14  0.9
+throw rolling v7   0.79  1.55  2.27  3.21  3.92
+throw rolling v21  0.35  0.69  1.02  1.44  1.76
+throw rolling v49  0.14  0.27  0.39  0.55  0.68
+(the cushion unchanged, as run 1)
+
+also: spin passed on -2.06 -> -2.66, backspin passed 3.18 -> 3.45, follow with the grip 0.2579 -> 0.2543
+
+P9: not killed. the engine's 30 throws against the reference's closed form: largest gap 0.128° (rolling v7 cut 60°: engine 3.92, reference 3.79) (under 0.15°)
+P10: KILLED. the smoke test's cut throw 3.51° (predicted 4.8 ± 0.2; before the change 2.53), side-spin throw -3.39° (predicted −4.5 ± 0.2; before -2.62)
+P11: not killed. textbook results with the grip off: follow 0.2998460749102105 (before 0.2998460749102105), stun 0.02301369047619067 (0.02301369047619067), draw 0.23631398809522597 (0.23631398809522597)
+P12: not killed. 13 of 13 challenges missed as set up and solved by their reference shot
+```
+
+## Reading of run 2 (not ruled)
+
+- **The engine's throw is now the published fit's,** to 0.13° at the worst of 30 points and 0.04° at every stun. The
+  gap that remains is largest for slow rolling hits at thin cuts and grows with the cut, which the closed form's
+  restitution (0.95 against the engine's 0.96) does not explain, since there the grip is not capped; it is left as
+  found.
+- **P10 was killed by my set-up, not by the engine.** The prediction took the smoke test's throws as pure stuns. They
+  are not: its white travels half a unit first and has begun to roll, so its throws lie between the stun's and the
+  rolling ball's (3.51° and 3.39°, against 2.53° and 2.62° before). Both are inside the smoke test's bounds, which
+  therefore stay as they are. The rule in the plan ("if not killed, the bounds move") did not come into play.
+- **The textbook results and the challenges are untouched** (P11, P12). A throw that moved by a degree did not move any
+  challenge's pot: their reference shots are full or near-full hits, or hits where the window of aim is wider than the
+  change.
+- **What is left from run 1:** the cushion at slow speed (P6), for measured data to decide between a constant
+  restitution and a speed-dependent one.

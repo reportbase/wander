@@ -1,0 +1,22 @@
+follow 0.2998460749102105
+followPred 0.3
+stun 0.02301369047619067
+draw 0.23631398809522597
+cutThrow 2.530175066121533
+sideThrow -2.621694807725641
+passed -2.056696770552182
+backspinPassed 3.1817333333333195
+followGrip 0.2578676244227809
+half: as set up missed, reference shot solves it
+bank: as set up missed, reference shot solves it
+kick: as set up missed, reference shot solves it
+jump: as set up missed, reference shot solves it
+masse: as set up missed, reference shot solves it
+thin: as set up missed, reference shot solves it
+stun: as set up missed, reference shot solves it
+draw: as set up missed, reference shot solves it
+follow: as set up missed, reference shot solves it
+cannon: as set up missed, reference shot solves it
+combo: as set up missed, reference shot solves it
+row: as set up missed, reference shot solves it
+break: as set up missed, reference shot solves it
