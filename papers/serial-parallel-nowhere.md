@@ -19,6 +19,32 @@
 > standpoint: geometry, with no V. Read in amounts with V = H set, it is the situated fisheye reading, off by V/H (§1,
 > "The fisheye: one facing of the sweep; V = H its calibration").
 
+## The core insight: three vantages, one line
+
+*Foregrounded 11 October (Tom: "forgeground this into the primary paper of the situated observer"; R191, R193–R197).
+Everything below is read against it.*
+
+**Classical mathematics and physics assume a completed perspective**, best known as the equation or the drawing on the
+page. There are three vantages, each with its own geometry, and they are easily conflated (R191):
+
+| vantage | its geometry | its reading of a line of true breadth 1 |
+|---|---|---|
+| **completed** (classical; the view from nowhere) | the circle; every breadth held; no facing | **1** |
+| **outer hemisphere** (parallel; situated) | one facing, taken in at once; the hemisphere turns away from the reader | **π/2** |
+| **inner hemisphere** (serial; situated) | one facing, swept from home: the fisheye, the Cauchy; the hemisphere turns toward the reader | **2/π** |
+
+**The true breadth is a reading with no facing.** The line's actual breadth is 1, and π/2 · 2/π = 1 (R193). But no
+situated reader can observe 1, because reading the true breadth assumes no facing, and a situated reader has one: the
+hemisphere is turned away from it or toward it. Only the unsituated observer has no facing, and only it knows the true
+breadth (R197). The classical breadth needs both hemispheres in hand at once (R194), which no single observation can
+do, and that is why it is the view from nowhere (R195). A reader can construct the classical view from multiple
+observations (R196); the construction represents the breadth 1, it does not observe it.
+
+**So:** each vantage's reading is right from where it stands. Many paradoxes of mathematics and science come from
+reading one vantage's geometry as another's, most often the completed view used as if one observation held it
+(`papers/vantages.md`, which collects them). The rest of this paper is the geometry of the two situated vantages: the
+sweep, the corner, the unit circle a situated reader's one breadth creates, and the two address spaces around the corner.
+
 ## A geometry of observation from somewhere, built on the corner
 
 > **A situated observer does not possess a coordinate system for the world; it constructs an addressing scheme from
@@ -442,6 +468,11 @@ What h is not: a special kind of quantity. It is how full the side is whose brea
 ---
 
 ## Abstract
+
+*First (11 October): the three vantages and the line's three readings, at the head of the paper ("The core insight").
+The classical breadth, 1, is a reading with no facing; the situated reader always faces, so it reads π/2 from the outer
+hemisphere or 2/π from the inner, and π/2 · 2/π = 1. Only the unsituated observer knows the true breadth; a situated
+reader can construct the classical view from several observations, never observe it in one.*
 
 A reader that stands somewhere knows one side of what it reads and not the other. It knows H, its own
 side, the one it counts in; it does not know V. The geometry of this paper (Part I) follows from that one
