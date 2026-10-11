@@ -291,7 +291,8 @@ try {
     const b30 = T.strikeOf(0, 0.5, 0, 14, 0), bl = T.strikeOf(0, -0.5, 0, 14, 0), g = T.strikeOf(0, 0.3, 0.2, 14, T.MU_TIP), sc = T.spinChecks();
     o.strike = T.strikeOf(0, 0, 0).dir === 0 && Math.abs(b30.turn + 30) < 1e-9 && Math.abs(bl.turn - 30) < 1e-9 && b30.w.every(x => Math.abs(x) < 1e-9) && g.grip && g.turn === 0 && g.w[1] > 0;
     o.spin = { roll: sc.rollSlip < 1e-9, follow: Math.abs(sc.follow - sc.followPred) < 0.005, stun: Math.abs(sc.stun) < 0.05, draw: sc.draw < 0.5, english: sc.englishVx * sc.rightX > 0.3, miscue: !sc.miscue.grip && sc.miscue.turn < 0 && sc.miscue.turn > -44.5,
-      cutThrow: sc.cutThrow > 0.5 && sc.cutThrow < 4.5, sideThrow: sc.sideThrow < -0.3 && sc.sideThrow > -4.5, passed: sc.passed < 0, masse: Math.abs(sc.masseBend) > 10, jump: sc.jumpCleared && sc.jumpPeak > 2 * 0.45 };
+      cutThrow: sc.cutThrow > 0.5 && sc.cutThrow < 4.5, sideThrow: sc.sideThrow < -0.3 && sc.sideThrow > -4.5, passed: sc.passed < 0, masse: Math.abs(sc.masseBend) > 10, jump: sc.jumpCleared && sc.jumpPeak > 2 * 0.45,
+      followGrip: sc.followGrip < sc.followPred - 0.01 && sc.followGrip > 0.15, backspinPassed: sc.backspinPassed > 0, offTable: sc.offTable };
     o.spinOK = Object.values(o.spin).every(Boolean); return o; });
   if (!pt.same || !pt.full || !pt.hv || !pt.exact || !pt.plays || pt.combo !== '4' || pt.sight !== '/4' || !pt.rt || !pt.strike || !pt.spinOK) failures.push(`[play-trick.html] ${JSON.stringify(pt)}`);
   console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills, aiming from the cue ball, trick shots)`);
