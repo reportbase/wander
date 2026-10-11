@@ -772,3 +772,55 @@ measured, the game's layouts (scattered ×12, rack ×6, random aims, power 14): 
   the hit along and forgets the aim. The break's chaos comes from the open table after it, not from the rack itself.
 - **The fixed tick hid this.** Run 8's engine was cos²φ less sensitive at thin cuts. Finding the moment h + v = 1,
   each ball in its own units, makes the game's physics the geometry's.
+
+### Run 10 (11 October 2026): prediction, written before it ran (Tom: "proceed", to level of detail by time to contact)
+
+Run 7 found that what a larger ball may ignore is set by the momentum a smaller one brings, not by its size alone. This
+run asks whether a ball can choose what to ignore from its own readings by that momentum, and whether that beats choosing
+by size for the same work saved.
+
+**Worked out before writing this (keep the case).** a reads b at v = r_b/d and is told b's reading of it, h = r_a/d.
+- The size ratio is the reading v/h = r_b/r_a: one material, so b's share of the pair's mass is
+  ρ³/(1 + ρ³), with ρ = v/h (run 1's bridge, a known kind).
+- **The looming rate is a reading too.** As b nears, v grows: v̇/v = −ḋ/d. Its inverse, τ = v/v̇, is Lee's time to
+  contact (the time until d would reach 0 at the present closing speed), an amount in seconds on the one clock (the
+  tick, unsituated and named since run 2). a needs no distance and no speed to read it, only two looks at v.
+- **So is the kick.** The closing speed in a's own radii per second is −ḋ/r_a = (v̇/v)·(d/r_a) = 1/(h·τ). The change of
+  speed a would make (run 7, P15) is therefore, in a's own radii per second,
+
+  kick = (1 + e) · ρ³/(1 + ρ³) · 1/(h·τ).
+
+  Everything in it is a reading (v, h, and v's rate) and the one material. Size alone keeps only the factor ρ³/(1 + ρ³).
+  τ alone keeps only the factor 1/τ. The kick keeps both.
+- No ball may ignore its equal or a larger ball: an equal ball's kick is half the closing speed, and two equals each
+  ignoring the other would pass through each other. So every rule here ignores only a ball read as smaller, v < h.
+
+**The rules.** Run 6's five fields, seeds and measure (116 balls in four size levels, the white struck at 14, the level-0
+balls' largest position error against the referee at 1 s, median over the fields). Each ball decides for itself, at
+each contact response, from its own readings:
+- **S(K), size:** ignore a ball read K or more levels smaller, v/h ≤ 2^(−K) (run 6's rule; K = 2, 3).
+- **M(ε), the kick:** ignore a smaller ball when its kick, read as above from two looks, is below ε (in the reader's own
+  radii per second).
+- **T(τ\*), time alone:** ignore a smaller ball when its τ, read from two looks, is above τ\*.
+
+The looming rate is read from the reader's last two looks at v, one tick apart: v̇ ≈ (v_now − v_then)/tick.
+
+**Work matched.** At K = 1, S already ignores every smaller ball, so there is nothing for M or T to choose differently;
+the comparison is at K = 2 and 3. For each K, ε and τ\* are set (by bisection, the same value in all five fields) so that
+M and T skip as many contact responses in total over the five fields as S(K), within 2% or 2 responses,
+whichever is larger. If no value gets that close, the comparison at that K is *undecided*, not passed.
+
+- **P25 (the kick is read from two looks).** In the true game (nothing ignored), at the contact responses of a ball to a
+  smaller one, the kick read from v, h and two looks is within 10% of the response it would skip, at 90% or more of them.
+  *Killed* if fewer. The 10% allows for the tick: near contact the pair's distance curves within a tick when the pass is
+  oblique, about 6% at the field's speeds (u·tick/d ≈ 10 × 1/240 / 0.7), and a contact just after another sees the old
+  approach.
+- **P26 (the kick beats size).** At K = 2 and at K = 3, with the work matched, the level-0 error under M is lower than
+  under S(K) by a factor of at least 1.5. *Killed* if either factor is below 1.5. Reasoning: S skips every contact with a
+  far smaller ball, fast and head-on ones too; M skips the smallest kicks wherever they are, glancing and slow ones of
+  nearer sizes included, so the summed skipped kick, run 7's first-order cost, should be well below S's.
+- **P27 (time alone is not enough).** At K = 2 and 3, with the work matched, the level-0 error under T is higher than under
+  M. *Killed* if T's is lower or equal at either. Reasoning: run 7's per-contact cost falls by 5 to 6 per level of size
+  but its closing speed only 1.2 to 1.6; the share, which τ leaves out, is most of the cost.
+- *Measured, not predicted:* T against S; the summed skipped kick of the level-0 balls by 1 s for each rule (the
+  first-order cost); how many of M's skips are of balls 1, 2 and 3 levels smaller.
