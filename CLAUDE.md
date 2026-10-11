@@ -248,6 +248,11 @@ Google Fonts load from outside:
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
   log₂(81)/k for a share in s^k (P5 killed). The corner holds where the light counted is a share (projected solid angle).
+  `omm-plan.md` (10 Oct, plan only, nothing worked): taking D6 forward (Tom's 23 Sep status note, Ω_m = ψ₁ψ₂ = 1/π, not
+  in this repo; Tom: "it was set aside because we had gone as far we could at the time"). Stage 1 rederives the share in
+  current terms (ψ₁ = 2/π as the sweep's average fill of h, ψ₂ = ½ as one facing; rulings needed); stage 2 rules what
+  matter and dark energy are on the lay (candidate: payload and addresses); stage 3 compares with Planck and DESI DR2
+  only after both stand. The archived ψ₁ paper is not used.
   `part-one-audit.md` checks SPN Part I's proofs and numbers (6 Oct 2026): sound,
   with six fixes, applied to SPN on 6 Oct (marked *Corrected* there).
   `near-far-classification.md` answers one of its open questions: which near/far
