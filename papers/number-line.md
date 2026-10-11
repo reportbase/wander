@@ -65,6 +65,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
+- 10 October, seventy-second: one corner, plain doublings, no depth or recursion; V = H creates the unit circle, 8 October's reading restored (Tom, at `flight.html`; SPN R188, §1 "The settled view, 10 October"). Dated notes in Background, §4 and §8.
 - 10 October, seventy-first: §4, on the Hipparcos stars light falls two levels per level of distance (dwarfs 2.02, giants 1.93; past the catalogue's limit 1.61); a known kind is a bridge about a level wide (MAG, `plans/mag-plan.md`).
 - 10 October, seventieth: §8, the corner as the reference sphere: real rocky worlds within a hundredth of a level of it, giants a tenth; wander's bodies far rougher (REF, `plans/ref-plan.md`).
 - 10 October, sixty-ninth: §8, standing on the outline: a circle's corner is its radius, 30° below the horizon; a ball's 2/e of it; rising, the horizon half a level per doubling of height (HZN, `plans/hzn-plan.md`).
@@ -139,6 +140,9 @@ that angle rescaled, g = θ/(π/2).
   address space is situation 1's whatever V is (v needs no V); V = H does not make it or the fisheye, it calibrates the
   amounts read there. The fisheye is the sweep in one facing (geometry); read in amounts with V = H it is the situated
   fisheye reading, off by V/H.
+  *Restored 10 October* (Tom: "its a consequence of setting V = H, which creates the unit circle"; SPN R188): V = H
+  creates the unit circle, as on 8 October; the 9 October corrections above are withdrawn as to that. Left to rule in
+  SPN: how this stands with "v needs no V".
 
   | | situation 1 | the situated reader's unit circle |
   |---|---|---|
@@ -502,6 +506,11 @@ to both. What people hold is the unit and the rule for going on (add one, halve 
 rule known) instead.
 
 ## 4. Depth: breadth, sweep and depth
+
+*Superseded 10 October* (Tom: "there is no depth or recursion because we create the unit circle when we assign V to H";
+"its plain doublings, ordinary math"; SPN R188). There is no depth and no recursion: past the one corner the levels are
+plain doublings, side by side. This section, the recursing line included, is kept as the record of how the idea was
+worked; read its "depth" and "recursion" as superseded.
 
 Tom, 7 October: "I think depth is the least understood idea. my current working hypothesis is the world is what it is,
 something like 3d, or maybe something different, but 3d is a good working model of reality. however, observation is
@@ -981,7 +990,8 @@ the radius, 30° below the horizon; on a ball, 2/e of the radius. The quotation 
 the distance out, the corner is the circle s = 1 between near and far, and that circle is the unit circle a shape's depth
 is measured from. Divide out the shape's size (its middle moves onto the corner, and the scale is lost); what stands off
 the circle is its depth, in each direction log₂ s(θ), levels past the corner, negative inward by the flip. Geometry only:
-as an amount, a bump's height needs the size back. SPN §1, "The corner is the circle, and depth is measured from it".
+as an amount, a bump's height needs the size back. SPN §1, "The corner is the circle, and depth is measured from it". *10 October, later* (SPN R188): the corner as the
+circle stands; depth measured from it is withdrawn.
 
 **f is v₂, a second v** (Tom, 8 October: "so what is f. in v,h,f?"; "is f needed to define a sphere"; "thats weird that f is so unclear, we know f is needed, but what is it exactly?"; "ok, so it is v2"). The third breadth came in by symmetry, as a coordinate, and a coordinate has no
 role; v and h are clear because each has one: H is what the reader holds (its unit; V = H set as a placeholder: SPN §1), and h and v are how full each is.

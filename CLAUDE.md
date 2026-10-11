@@ -113,8 +113,8 @@ Google Fonts load from outside:
   corner is log₂(h/v) and climbing changes nothing on the screen). One corner only (Tom, 10 Oct, superseding "each Level has
   its own corner": "there is only one corner that splits far field from the near field, which is just the split between the
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
-  why, its a consequence of setting V = H, which creates the unit circle"; SPN §2.1's 9 Oct correction says V = H does not
-  create the circle, only calibrates amounts: unreconciled); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; strip chip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `detailAt(h/v)`, `place(h/v)`, `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
+  why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
+  9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; strip chip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `detailAt(h/v)`, `place(h/v)`, `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
 - `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the seven demos (sweep, dial, sphere, facing, levels, walk, pool) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
@@ -297,10 +297,15 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
 - The corner h = v is found by every reader (geometry). It is at 45° because the facing (the second degree of freedom a
   straight line lacks) is square to the line there; facing = 2θ (`facing.html`).
 - V = H is a calibration a situated reader must set to read amounts, not part of the geometry; under it amounts equal fill
-  levels numerically, which is why the conflation is easy. Every amount is then off by V/H, the same on both sides of the
+  levels numerically, which is why the conflation is easy. (*10 October*, R188: Tom restores 8 October's reading, V = H
+  creates the unit circle, and that is why the levels are plain doublings; how this stands with "v needs no V" is left
+  to rule; SPN §1, "The settled view, 10 October".) Every amount is then off by V/H, the same on both sides of the
   corner; physics' bridges (travel, a known constant, a known kind, a shared fact) remedy it (SPN Part II).
 - The fisheye is the sweep in one facing, seen from the standpoint (geometry, the same for every shape); with V = H it is
   the situated fisheye reading.
+- One corner (10 October, R188): the split between the first level (home to the corner, the near field) and the second;
+  past it the levels are plain doublings with no corner of their own, and there is no depth and no recursion. R175 and
+  R180 are superseded; the superseded passages stay in SPN as the record with dated notes.
 - Still open: the ratio 2 between levels (binary branching is proved; the in-place lay being forced is deferred, SPN
   Appendix D); the weight on the sweep is a choice (SPN §14, "Burdens of proof").
 
