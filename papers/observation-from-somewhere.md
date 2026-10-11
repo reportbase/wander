@@ -811,12 +811,6 @@ same idea appears in the hyperbolic browser, which draws only nodes at least a p
 1995), in mipmaps, which halve an image at each level (Williams 1983), and in web-map tiles, whose key gains one digit
 per level of detail (Microsoft, Bing Maps Tile System).
 
-**A cost model agrees.** On simulated readers, a reader with no model of what it reads, whose pixel is its step, reads
-"two points" with probability min(r, 1), where r is the pair's separation in steps: certainly from one step across,
-by chance below it. Charged one unit per step spanned per look, a sure reading costs (1 + r)·max(1, 1/r): least, 2, at
-r = 1, and the same at r and at 1/r. A reader that slides its H by halvings reaches one step across in about log₂(1/r)
-looks instead of 1/r. This is one cost model on simulated readers, not a theorem.
-
 **More points, fewer told apart.** A parallel reader looks side-on at N points spaced evenly around a circle and reads
 each one's position across its view to a step ε, relative to the circle's radius. Neighbours at angle θ from the middle
 of the view are about (2π/N)·cos θ apart, so the reader separates those with cos θ ≥ εN/2π, which is
@@ -945,10 +939,6 @@ an added condition. And "no attitude preferred" still treats the sweep as the tu
 5. *Uniformity as the weight.* Does the argument of §7.5 remove the burden of the even turn, or only move it to "why the
    circle"?
 6. *V = H.* Is Proposition 3(a) more than a restatement of having one breadth?
-7. *A measured reader.* Grid cells in the entorhinal cortex map space in modules whose spacing ratios no physical law
-   sets. Without an added measure, §6 allows only halving: a ratio of 2 along a line, or √2 if a level doubles an area.
-   Published means lie near 1.42 (Stensola et al. 2012) and, in other studies, near 1.7. A test on per-animal data not
-   yet examined is planned, and suggestions for data are welcome.
 
 If the principle of §11.1 stands, questions 1, 2 and 5 become one: whether a situated reader's ignorance is exactly these
 three transformations.
@@ -1041,9 +1031,6 @@ perception. *Biological Cybernetics* 25, 181–194.
 
 Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation: evidence for multiple representations of
 numerical quantity. *Psychological Science* 14(3), 237–243.
-
-Stensola, H., Stensola, T., Solstad, T., Frøland, K., Moser, M.-B. and Moser, E. I. (2012). The entorhinal grid map is
-discretized. *Nature* 492, 72–78.
 
 Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the Cauchy distribution. *Biometrika*
 61(2), 375–380.
