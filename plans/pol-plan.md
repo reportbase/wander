@@ -1719,4 +1719,4 @@ P38: not killed. over the first 2.5 s the curve stays within 0.724 of its start 
 What runs 1–18 say about level of detail is in SPN §3.3, "Level of detail tried in a simulation: pool from inside", as
 Claude's reading for Tom to rule, with its open items in SPN §14, "From the pool runs". `papers/physics.md` places them
 by standing (the contact identities in §2.2, the infinite table in a new §2.4, the pulse in §3), and
-`papers/v-and-h.md` gathers them as items 404–407. Nothing above is changed.
+`papers/v-and-h.md` gathers them as items 426–429 (§8p; first numbered 404–407, renumbered when main's §8o took those numbers). Nothing above is changed.

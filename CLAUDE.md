@@ -325,7 +325,7 @@ Google Fonts load from outside:
   signal; untested). Modes: `opts.far` diffusion (default) | fluid | fluidwall.
   Written up (11 Oct) as a reading, unruled: SPN §3.3, "Level of detail tried in a simulation" (size reads momentum where
   the levels span more than the speeds; a reader that holds a world folds by distance only what arrives as totals, and
-  holds what is coming at its own size), SPN §14, "From the pool runs"; `physics.md` §2.2, §2.4, §3; `v-and-h.md` 404–407.
+  holds what is coming at its own size), SPN §14, "From the pool runs"; `physics.md` §2.2, §2.4, §3; `v-and-h.md` 426–429 (§8p).
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is

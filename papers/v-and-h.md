@@ -2540,31 +2540,6 @@ Neither half helps alone; together they cut the error by a factor of four, as in
 All in *Serial, Parallel and Nowhere* §1 and the opening warning; the rulings under review and the physics audit in
 `plans/vh-rulings-review.md` and `plans/physics-vh-audit.md`.
 
-## 8o. Oct 10–11: pool from inside (POL)
-
-*From POL runs 1–18 (`plans/pol-plan.md`; `pool.html`, `play-trick.html`, `pool-infinite.html`), each prediction written
-before its run. A simulation of our own, measured against a referee that computes all of it. Claude's readings, unruled;
-in SPN §3.3, "Level of detail tried in a simulation".*
-
-404. **Contact is h + v = 1** (Oct 10; Tom: "each pool ball can explore its situation"). A ball reads another as
-    v = r_b/d and is told h = r_a/d, fill levels with no bridge; they touch on the facing's line, equal balls at the
-    corner. A cushion is the ball and its mirror image, v = h, always at the corner; a pocket is a place, entered at
-    v = 1. One reading alone decides contact only when all balls are alike (V = H as calibration). Played from inside,
-    the game is the referee's to about 1e-15 (runs 1–2).
-405. **A contact costs as many levels as the pair started apart** (Oct 10, run 9). An aim error is turned by
-    s/(2r·cos φ), for a full hit 2^L − 1 with h + v = 2^−L at the start, to rounding once contact is found exactly in
-    each ball's units. About three contacts deep on an open table, a tenth of a degree passes half a pocket.
-406. **Size reads momentum where the levels span more than the speeds** (Oct 10–11, runs 5–7 and 10). Skipping a ball
-    j levels smaller leaves out exactly (1 + e)/(1 + 8^j) of the closing speed. What may be ignored is set by momentum;
-    in a field where the share falls 8 per level and speeds rise 1.2–1.6, ignoring by size and by the kick read from v,
-    h and τ choose the same contacts.
-407. **What is coming is near** (Oct 11, runs 11–18; Tom: "we could scale it up to infinite number of balls … only have
-    to draw or calcualate the visible balls"). A window of balls in a world of totals, each cell at the corner of the
-    pair (its breadth, its distance from the reader), sees the referee's gas within 0.3% at the window's work, once its
-    edge carries the outside's pressure and chemical potential. It loses a pulse sent from far away: averaged at the
-    level of its distance before it moved. A world held by the reader's level of detail must hold what travels toward
-    the reader at its own size until it arrives; the rule for reading (the level belongs to the address, not the
-    payload) is untouched.
 ## 8o. Oct 10–11: one corner, one circle, Proposition 1.2
 
 From the session at `flight.html` and after (SPN R188–R190, §1 "The settled view, 10 October" and Proposition 1.2). Where
@@ -2649,6 +2624,32 @@ an item supersedes one above, a dated ⚠ note is added there.
     D.1 is the same test on points. Classical in itself (Jaynes 1968, Jeffreys 1939, Knight 1976, McCullagh 1996); still
     added: the joining constant at the corner, and the sweep as a turn (SPN Proposition 1.2, "A candidate single
     principle").
+
+## 8p. Oct 10–11: pool from inside (POL)
+
+*From POL runs 1–18 (`plans/pol-plan.md`; `pool.html`, `play-trick.html`, `pool-infinite.html`), each prediction written
+before its run. A simulation of our own, measured against a referee that computes all of it. Claude's readings, unruled;
+in SPN §3.3, "Level of detail tried in a simulation".*
+
+426. **Contact is h + v = 1** (Oct 10; Tom: "each pool ball can explore its situation"). A ball reads another as
+    v = r_b/d and is told h = r_a/d, fill levels with no bridge; they touch on the facing's line, equal balls at the
+    corner. A cushion is the ball and its mirror image, v = h, always at the corner; a pocket is a place, entered at
+    v = 1. One reading alone decides contact only when all balls are alike (V = H as calibration). Played from inside,
+    the game is the referee's to about 1e-15 (runs 1–2).
+427. **A contact costs as many levels as the pair started apart** (Oct 10, run 9). An aim error is turned by
+    s/(2r·cos φ), for a full hit 2^L − 1 with h + v = 2^−L at the start, to rounding once contact is found exactly in
+    each ball's units. About three contacts deep on an open table, a tenth of a degree passes half a pocket.
+428. **Size reads momentum where the levels span more than the speeds** (Oct 10–11, runs 5–7 and 10). Skipping a ball
+    j levels smaller leaves out exactly (1 + e)/(1 + 8^j) of the closing speed. What may be ignored is set by momentum;
+    in a field where the share falls 8 per level and speeds rise 1.2–1.6, ignoring by size and by the kick read from v,
+    h and τ choose the same contacts.
+429. **What is coming is near** (Oct 11, runs 11–18; Tom: "we could scale it up to infinite number of balls … only have
+    to draw or calcualate the visible balls"). A window of balls in a world of totals, each cell at the corner of the
+    pair (its breadth, its distance from the reader), sees the referee's gas within 0.3% at the window's work, once its
+    edge carries the outside's pressure and chemical potential. It loses a pulse sent from far away: averaged at the
+    level of its distance before it moved. A world held by the reader's level of detail must hold what travels toward
+    the reader at its own size until it arrives; the rule for reading (the level belongs to the address, not the
+    payload) is untouched.
 
 ## 9. Open
 
