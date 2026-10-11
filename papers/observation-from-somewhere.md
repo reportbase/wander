@@ -39,7 +39,7 @@ borrows. Earlier drafts of the working papers often blurred the two, and most of
 
 ## The core insight: three vantages, one line
 
-*Foregrounded 11 October (Tom: "also forgeground into observation-from-somewhere"; SPN R191, R193–R197) [ruled].*
+*Foregrounded 11 October (Tom: "also forgeground into observation-from-somewhere"; SPN R191, R193–R199) [ruled].*
 
 Classical mathematics and physics assume a completed perspective, best known as the equation or the drawing on the
 page. There are three vantages, each with its own geometry, and they are easily conflated.
@@ -50,11 +50,29 @@ page. There are three vantages, each with its own geometry, and they are easily 
 | **outer hemisphere** (parallel; situated) | one facing, taken in at once; the hemisphere turns away from the reader | **π/2** |
 | **inner hemisphere** (serial; situated) | one facing, swept from home: the fisheye, the Cauchy; the hemisphere turns toward the reader | **2/π** |
 
-The line's actual breadth is 1, and π/2 · 2/π = 1. But no situated reader can observe 1: reading the true breadth
-assumes no facing, and a situated reader always has one, the hemisphere turned away from it or toward it. Only the
-unsituated observer has no facing, and only it knows the true breadth. The classical breadth needs both hemispheres in
-hand at once, which no single observation can do; that is why it is the view from nowhere. A reader can construct the
-classical view from multiple observations; the construction represents the breadth 1 without observing it.
+*Where the two numbers come from* [derived on the arc drawing; which reading belongs to which vantage is ruled,
+R193]. Stand a half-turn on the line as its chord: a chord of 1 has radius ½, so the half-turn's arc is π·½ = π/2,
+and read as arc over chord, the hemisphere turned away gives π/2. Sweep a bar of 1 through a quarter turn and average
+its shadow on the line: the mean of the shadow over the turn is (2/π)·∫₀^{π/2} cos θ dθ = 2/π, and read as the
+average facing, the hemisphere turned toward gives 2/π. Their product is 1. (Evaluation 2, `plans/ofs-review-2.md`,
+asked for this.)
+
+**The chain, step by step** (Tom, 11 October; SPN R193–SPN R199). Each step rests on the one before.
+
+1. *The line has a true breadth, 1.* That is the completed view's reading (SPN R193).
+2. *Each situated vantage reads it with a facing.* The outer hemisphere, turned away, reads π/2; the inner hemisphere,
+   turned toward, reads 2/π; and π/2 · 2/π = 1 (SPN R193; the numbers derived above).
+3. *Reading 1 assumes no facing.* The true breadth is what is read when nothing is turned toward or away from the
+   reader. A situated reader always has a facing, so no situated observation reads 1 (SPN R197).
+4. *Only the unsituated observer has no facing, so only it knows the true breadth.* A blueprint is the example: drawn
+   from no standpoint, every line at its true length to one scale, nothing turned toward or away from anyone (SPN R198).
+5. *To hold 1 is to hold both hemispheres in hand at once* (SPN R194), *which no single observation can do* (SPN R195).
+   That is what "the view from nowhere" means: the true breadth belongs to no standpoint.
+6. *So a situated reader must construct the truth from multiple observations* (SPN R196, SPN R199): the hemisphere turned
+   away and the one turned toward, read in turn and joined. The construction represents the breadth 1; it does not
+   observe it.
+7. *There are therefore two ways to the true breadth, and only two:* held, unsituated, as in a blueprint; or
+   constructed, situated, from several observations.
 
 Each vantage's reading is right from where it stands. Many paradoxes come from reading one vantage's geometry as
 another's, most often the completed view used as if one observation held it (the working paper `vantages.md` collects
