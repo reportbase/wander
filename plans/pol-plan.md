@@ -1496,3 +1496,69 @@ The rise's half-maximum arrival is the first bin at which the rise passes half i
   - the fluid far field's largest rise against the referee's (smeared by the coarse cell that holds the pulse and by
     Rusanov's numerical diffusion; doubled for a moment where the wave meets the window's wall);
   - the view's count against time in each.
+
+Run 16 output (`node plans/pol/pol16.mjs`, in `plans/pol/pol-run16.txt`; before it, a crash check only):
+
+```
+a pulse: the balls within 10 of a point 60 from the window's middle twice as warm (on average 2042 units of energy added, against the world's ~339,000); 20 warmed states, 12 s
+the multiscale world holds the pulse's place in a level-3 cell (60 units wide)
+the view's mean kinetic energy per ball, less its first 0.5 s (baseline: referee 25.535, diffusion 25.553, fluid 25.553):
+    t (s)   referee   diffusion   fluid
+    0.38     0.015      0.033    0.033
+    0.88    -0.396     -0.173   -0.173
+    1.38    -0.292     -0.572   -0.572
+    1.88    -0.280     -0.528   -0.528
+    2.38    -0.554     -0.540   -0.540
+    2.88    -0.057     -0.014   -0.014
+    3.38     0.599     -0.213   -0.213
+    3.88     0.794     -0.489   -0.489
+    4.38     1.416     -0.226   -0.226
+    4.88     1.077     -0.047   -0.047
+    5.38     0.722     -0.212   -0.212
+    5.88     0.001     -0.489   -0.489
+    6.38    -0.567     -0.358   -0.358
+    6.88    -0.517      0.006    0.006
+    7.38    -0.413      0.129    0.129
+    7.88    -0.708     -0.126   -0.126
+    8.38    -0.563      0.255    0.255
+    8.88    -0.341      0.340    0.340
+    9.38    -0.540      0.205    0.205
+    9.88    -0.385     -0.036   -0.036
+   10.38    -0.014      0.068    0.068
+   10.88     0.305     -0.059   -0.059
+   11.38    -0.114      0.116    0.116
+   11.88     0.293     -0.146   -0.146
+largest rise: referee 1.416 at 4.38 s, diffusion 0.426 at 8.63 s, fluid 0.426 at 8.63 s
+half-maximum arrival: referee 3.88 s, diffusion 8.38 s, fluid 8.38 s
+the view's count at 0, 3, 6, 9, 12 s: referee 211.6, 211.4, 212.3, 209.3, 209.4; diffusion 211.6, 209.2, 206.9, 207.4, 210.5; fluid 211.6, 209.2, 206.9, 207.4, 210.5
+the fluid's books over the 20 runs: count off by at most 1.1e-11, momentum 4.1e-12, energy 1.2e-15 of itself
+
+P34: not killed. the referee's half-maximum arrival 3.88 s (in [3.6, 6.1])
+P35: KILLED. the fluid's arrival 8.38 s against the referee's 3.88 s (116.1%; within 25%)
+P36: KILLED. diffusion's largest rise 0.426 against the referee's 1.416 (30%; under 25%)
+P37: not killed. the fluid keeps the books (1e-6, 1e-6, 1e-9)
+```
+
+- **P34 not killed.** The referee carries the pulse as sound. The view's mean energy per ball rises past half its peak
+  at 3.88 s and peaks at 4.38 s, inside the 3.6 to 6.1 s that the sound speed gives. After the peak it falls below its
+  start (about −0.5 from 6 to 10 s): a cylindrical wave's trailing rarefaction.
+- **P35 and P36: the fluid never ran.** The diffusion and fluid columns are the same to the last digit. Found after the
+  run: the setting that chose the far field was named `far`, and run 15's list of the coarsest cells, where the mirror's
+  pushes are booked, was also stored as `far`. Each time the cells were recut, the list overwrote the setting, so both
+  runs used diffusion. P35's kill is the bug's. P36's kill stands as measured: diffusion's largest "rise", 0.43 at
+  8.6 s, is the noise of 20 states (the referee's own curve swings ±0.5 before the pulse arrives), and it is 30% of the
+  referee's peak, not under 25%. P37 holds for what ran (diffusion's books).
+- Fixed after the run: the coarsest cells are now `farCells`. Runs 11–15's code paths are unchanged by the rename.
+
+### Run 17 (11 October 2026): prediction, written before it ran
+
+Run 16 again, the bug fixed, so the fluid far field runs. Everything else is run 16's: the states, the pulse, the
+measure, the seeds. The predictions are run 16's, unchanged (P34′ to P37′). Run 16's outcome is known: the referee's
+half-maximum arrival was 3.88 s, and diffusion's curve stayed within the noise. So P35′ is not blind to the referee's
+number, and P36′ not to diffusion's. They are kept as they were, not adjusted.
+
+- **P34′.** The referee's half-maximum arrival is in [3.6, 6.1] s.
+- **P35′.** The fluid's half-maximum arrival is within 25% of the referee's.
+- **P36′.** Diffusion's largest rise within 12 s is under a quarter of the referee's.
+- **P37′.** The fluid keeps the books (1e-6, 1e-6, 1e-9).
+- *Measured:* the fluid's largest rise against the referee's; the view's count.

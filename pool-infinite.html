@@ -178,7 +178,7 @@
     // mirror), 'band' (run 12: the band open at its outer edge) or 'edge' (run 11: no band, balls enter at the edge at the
     // cells' one-way flux); quiet: a cell's flow read only above its noise; D: the far field's diffusion
     function Multi(K, w, oi, oj, seed = 1, opts = {}) {
-        return { K, S: 2 ** K, w, oi, oj, seed, mode: opts.mode || 'ring', gamma: opts.gamma ?? (opts.mode && opts.mode !== 'ring' ? GAMMA : 1), widom: { tries: 0, free: 0 }, quiet: opts.quiet !== false, D: opts.D ?? DIFF_ENSKOG,
+        return { K, S: 2 ** K, w, oi, oj, seed, far: opts.far || 'diffusion', mode: opts.mode || 'ring', gamma: opts.gamma ?? (opts.mode && opts.mode !== 'ring' ? GAMMA : 1), widom: { tries: 0, free: 0 }, quiet: opts.quiet !== false, D: opts.D ?? DIFF_ENSKOG,
             leaves: new Map(), pairs: [], segs: [], B: Balls(1024), closed: false, t: 0, tick: 0,
             ops: { moves: 0, pairs: 0, contacts: 0, tries: 0, cells: 0 }, residual: null, entered: 0, left: 0 };
     }
@@ -233,7 +233,7 @@
                     const a = right ? (l.i + 1) * f : l.i * f + t, b = right ? l.j * f + t : (l.j + 1) * f, o = leafAt(M, a, b);
                     let step = 1;
                     if (o) { const g = 2 ** o.k; step = Math.min(f - t, g - mod(right ? b - o.j * g : a - o.i * g, M.S)); }
-                    if (o && o !== l) pairs.push({ a: l, b: o, len: step * C0, gap: (sizeOf(l.k) + sizeOf(o.k)) / 2 });
+                    if (o && o !== l) pairs.push({ a: l, b: o, len: step * C0, gap: (sizeOf(l.k) + sizeOf(o.k)) / 2, axis: right ? 0 : 1 });
                     t += Math.max(1, step);
                 }
             }
@@ -256,7 +256,7 @@
         for (const [a, b2] of [[M.oi - 1, M.oj - 1], [M.oi + w, M.oj - 1], [M.oi - 1, M.oj + w], [M.oi + w, M.oj + w]]) ring.add(leafAt(M, a, b2));
         M.ring = [...ring];
         let kmax = 0; for (const l of M.leaves.values()) kmax = Math.max(kmax, l.k);
-        M.far = [...M.leaves.values()].filter(l => l.k === kmax);
+        M.farCells = [...M.leaves.values()].filter(l => l.k === kmax);   // (named farCells since run 17: as M.far it overwrote the far-field setting, run 16's bug)
     }
     // a cell's reading: its density, its flow, its spread (warmth). With `quiet` (run 12) the flow is taken only where it is
     // more than three times its own noise, σ/√N; otherwise there is no flow and all the energy is warmth.
@@ -372,7 +372,7 @@
             // (run 14: the momentum the mirror takes is the outside's, charged to the cells beside that stretch; run 15: booked
             // in the far field, the coarsest cells by area, where the pushes from opposite sides cancel)
             const charge = !M.closed && M.mode === 'gc', far = !M.closed && M.mode === 'ring', r = a => Math.min(M.w - 1, Math.max(0, Math.floor(a / C0)));
-            const push2 = (g, px, py) => { if (charge) chargePool(M.segs[g].pool, 0, px, py, 0); else if (far) chargeArea(M.far, px, py); };
+            const push2 = (g, px, py) => { if (charge) chargePool(M.segs[g].pool, 0, px, py, 0); else if (far) chargeArea(M.farCells, px, py); };
             for (let q = 0; q < B.n; q++) {
                 if (B.x[q] < 0) { push2(4 * r(B.y[q]), 2 * B.vx[q], 0); B.x[q] = -B.x[q]; B.vx[q] = -B.vx[q]; }
                 else if (B.x[q] >= W) { push2(4 * r(B.y[q]) + 1, 2 * B.vx[q], 0); B.x[q] = 2 * W - B.x[q] - 1e-9; B.vx[q] = -B.vx[q]; }
@@ -409,7 +409,7 @@
                 }
             }
         }
-        if (++M.tick % 4 === 0) diffuse(M, 4 * dt);
+        if (++M.tick % 4 === 0) (M.far === 'fluid' ? fluid : diffuse)(M, 4 * dt);   // the far field: diffusion (runs 11–15) or a fluid (run 16)
         M.t += dt;
     }
     // run 14: a charge spread over the cells pooled, in proportion to their counts (equally if none holds any)
@@ -505,6 +505,33 @@
         });
         del.sort((a, b) => b[0] - a[0]);
         for (const [q, l] of del) { addTo(l, 1, B.vx[q], B.vy[q], 0.5 * (B.vx[q] ** 2 + B.vy[q] ** 2)); removeAt(B, q); M.left++; }
+    }
+    // run 16: the far field as the gas's own fluid. A cell's totals per area are the conserved densities of mass, momentum
+    // and energy; between neighbours a flux passes each frame, Euler's with the hard-disc pressure p = n·σ²·Z(φ) (σ² the warmth
+    // per ball, m = 1), by Rusanov's first-order flux with the fastest signal |u| + c, c the adiabatic speed of sound,
+    // c² = σ²·[(Z + φ·Z′) + Z²] (Henderson; c_v = k per ball in two dimensions). Each flux is taken from one cell and given
+    // to the other. The window's face is a wall to this fluid; the window hears it through the band.
+    const henZ = phi => (1 + phi * phi / 8) / (1 - phi) ** 2, henZp = phi => (phi / 4 * (1 - phi) + 2 * (1 + phi * phi / 8)) / (1 - phi) ** 3;
+    function fluidState(l) {
+        const N = l.N; if (!(N > 1e-9)) return null;
+        const ux = l.Px / N, uy = l.Py / N, s2 = l.E / N - 0.5 * (ux * ux + uy * uy); if (!(s2 > 0)) return null;
+        const n = N / l.A, phi = Math.min(0.6, n * Math.PI * R * R), Z = henZ(phi);
+        return { n, ux, uy, p: n * s2 * Z, c: Math.sqrt(s2 * (Z + phi * henZp(phi) + Z * Z)), U: [n, l.Px / l.A, l.Py / l.A, l.E / l.A] };
+    }
+    function fluid(M, dt) {
+        for (const pr of M.pairs) {
+            const a = fluidState(pr.a), b = fluidState(pr.b); M.ops.cells++;
+            if (!a || !b) continue;
+            const ua = pr.axis ? a.uy : a.ux, ub = pr.axis ? b.uy : b.ux;
+            const Fa = [a.U[0] * ua, a.U[1] * ua + (pr.axis ? 0 : a.p), a.U[2] * ua + (pr.axis ? a.p : 0), (a.U[3] + a.p) * ua];
+            const Fb = [b.U[0] * ub, b.U[1] * ub + (pr.axis ? 0 : b.p), b.U[2] * ub + (pr.axis ? b.p : 0), (b.U[3] + b.p) * ub];
+            const sMax = Math.max(Math.abs(ua) + a.c, Math.abs(ub) + b.c), m = pr.len * dt;
+            let amt = [0, 1, 2, 3].map(k => (0.5 * (Fa[k] + Fb[k]) - 0.5 * sMax * (b.U[k] - a.U[k])) * m);
+            // never more than a quarter of a cell's balls or energy in one frame (the frame is far inside the step's limit)
+            const lim = Math.max(amt[0] / (0.25 * pr.a.N), -amt[0] / (0.25 * pr.b.N), amt[3] / (0.25 * pr.a.E), -amt[3] / (0.25 * pr.b.E), 1);
+            if (lim > 1) amt = amt.map(x => x / lim);
+            addTo(pr.a, -amt[0], -amt[1], -amt[2], -amt[3]); addTo(pr.b, amt[0], amt[1], amt[2], amt[3]);
+        }
     }
     // the far field: neighbouring cells exchange balls (down the density's slope), momentum and energy, by diffusion
     function diffuse(M, dt) {
@@ -605,7 +632,7 @@
     pageInit(); requestAnimationFrame(loop);
 
     window.__infinite = {
-        R, DIA, PHI, N_DENS, SIGMA, TICK, C0, G_CONTACT, NU, NU_ENSKOG, LAMBDA, DIFF, LAMBDA_ENSKOG, DIFF_ENSKOG, BAND, muEx, activity, GAMMA,
+        R, DIA, PHI, N_DENS, SIGMA, TICK, C0, henZ, henZp, G_CONTACT, NU, NU_ENSKOG, LAMBDA, DIFF, LAMBDA_ENSKOG, DIFF_ENSKOG, BAND, muEx, activity, GAMMA,
         makeGas, refereeStep, cloneGas, Multi, multiFromGas, multiUniform, multiStep, setWindow, totals, stateOf, leafAt, rng, gauss,
         page: () => ({ M, cam, zoom, frameOps, windowFor: windowFor() }), setZoom, strike, pause: on => { paused = !!on; },
         moveTo: (x, y) => { cam.x = x; cam.y = y; follow(); },
