@@ -21,6 +21,37 @@ those papers only once it has been worked and ruled.*
 | **outer hemisphere** (parallel, situation 3): one hemisphere taken in at once | H, not V | one facing, counted at once: the bell, sharpest at the corner and halving per doubling away | the corner as the middle of what is seen |
 | **inner hemisphere** (serial, situation 4): one point at a time | H, not V | one facing, swept from home: the fisheye; counted, the Cauchy | home at true scale, the corner, the mathematical horizon never reached |
 
+**One line, three readings** (Tom, 11 October; SPN R193): "The true breadth of the line is 1. The outer hemisphere's reading of that line is PI/2, the hemisphere turns away from the reader. The inner hemispheres reading of the line is 2/PI, the hemisphere turns towards them."
+
+| vantage | how the line faces the reader | its reading of a line of true breadth 1 |
+|---|---|---|
+| completed | held whole | **1** |
+| outer hemisphere | turns away: read as the arc over its chord | **π/2** ≈ 1.571, longer than the line |
+| inner hemisphere | turns toward: read as the average facing over the sweep | **2/π** ≈ 0.637, shorter than the line |
+
+π/2 · 2/π = 1: the two situated readings, multiplied, give back the completed one. And the classical breadth needs both
+(Tom, R194: "the "classical" breadth is 1, it requieres knonw the inside and outside hemispheres in your hand."): it is not a third reading beside the other two, but what is held when both hemispheres are in
+hand at once. A reader holding one hemisphere has its own reading, π/2 or 2/π, and not the line's breadth. And no reader
+can hold both (Tom, R195: "which you can't actually do, hense its the view from nowhere."): to have one hemisphere is to stand where the other is turned away or turned toward.
+The completed breadth is held from no standpoint, which is what "the view from nowhere" means. But a reader can build it
+(Tom, R196: "A reader can construct the classical view from multiple observations."): what no single observation holds, several joined can construct.
+Why no observation reads 1 (Tom, R197): "Correct, the actual breadth is 1, but you can't actually observe 1, because that assumes no facing, and a situated observer has a facing. Only the unsituated observer has no facing, and they can know the true breadth." Reading the true breadth means reading with no facing; every situated
+reading faces, away (π/2) or toward (2/π). The constructed view represents the breadth 1; it does not observe it. This is the 22 September "everywhere
+equation" (archived *The Order of Limits*: "The god's eye view is defined as π/2 · 2/π = 1"), now read as the three
+vantages. Each situated reading is right from its vantage; a paradox follows whenever either is quoted as the line's
+breadth. *Reading (Claude's, unruled):* this is the denominator family's exchange (§F) on one line: the product of the
+two private reads is the shared fact, and their ratio, π²/4 ≈ 2.47, is what each seat keeps to itself. The inner
+reading 2/π is also stage 1's share in `plans/omm-plan.md` (the average fill of h over one facing's sweep).
+
+**What the completed view assumes, exactly** (archived *The Order of Limits*): classical work takes the reader's step to
+zero first and then lets the count grow without bound; a reader has a fixed step and an unknown count. Haraway (1988)
+named the ideal "the god trick of seeing everything from nowhere".
+
+Two lines from the archived *The Relation Space* (§6, §17) name the completed vantage's cost: **"the equation is a
+third party"** (a page, a shared scale or an equation lends its terms to the answer, as a spring scale does; a balance's
+pull cancels and leaves nothing), and **"a symmetric account holds the figure and cannot state the rate; an asymmetric
+one states the rate and cannot hold the figure."**
+
 The outer hemisphere is not the completed view: it sees a whole hemisphere but holds only one breadth, and does not know
 N (the 22 September ruling). Neither situated vantage knows N, and both meet horizons. The same addresses can be drawn
 from either situated vantage; the completed view is the one that holds the world's breadths as well.
@@ -59,8 +90,16 @@ different geometric representation". Claude's reading, from SPN; unruled.*
 - *Three gaps memory cannot close by itself.* The scale (only a bridge gives it: travel, a known constant, a known kind,
   a shared fact; SPN §8.4); what lies below the reader's step (lost at that step to every vantage); and motion (readings
   must be carried forward, with an error SPN Proposition 9.2 bounds). Hidden sides need further standpoints (SPN §6.4).
-- *So:* the completed view is legitimate. It is what integration builds once the three gaps are filled. A paradox of
-  this catalogue is, typically, the completed view used as if the gaps were already filled.
+- *Both hemispheres* (R194): the classical breadth needs "the inside and outside hemispheres in your hand". Memory
+  joins one reader's readings across a turn; the completed view needs the two hemispheres, the one turned away and the
+  one turned toward, held together.
+- *No observation holds it; several construct it* (R195, R196): no reader holds both hemispheres in one observation, so
+  the completed view is held from no standpoint, the view from nowhere. But "a reader can construct the classical view
+  from multiple observations": the hemisphere turned away and the one turned toward, read in turn and joined, with the
+  three gaps filled. What it builds is the equation or the drawing on the page, held as a construction, not seen from
+  where it stands.
+- *So:* the completed view is legitimate and constructible, and no single observation is it. A paradox of this catalogue
+  is, typically, the completed view used as if one observation held it, or as if its gaps were already filled.
 
 ---
 
@@ -248,6 +287,93 @@ different geometric representation". Claude's reading, from SPN; unruled.*
   near the fovea; Gilinsky's perceived distance with a finite horizon.
 - *Standing*: **reading**.
 
+## F. The denominator family
+
+*From `papers/denominator-paradox.md` ("Each Sees the Other Smaller", a companion to an interactive demo; an older paper
+of Tom's, written with Claude in an earlier session, added 11 October). It gathers eleven standard paradoxes under one diagnosis and states that none is resolved differently, only
+uniformly. This section maps that diagnosis onto the three vantages; the paper itself is the source for each entry.*
+
+**The diagnosis, in the vantages' terms.** "A denominator paradox is what you get when measurements made against
+different private rulers are compared as if they shared one ruler." Each private ruler is a situated reader's own H; the
+one ruler the measurements are silently put on is the completed view's single unit, the number line. So the denominator
+family is the vantage conflation in its plainest form: two situated readings written into the completed view without
+the bridge that would license it.
+
+**Why the ruler is private** (archived *Browsing the Fisheye* L62–66): "the reader's capacity is the only unit in the
+room"; H is the denominator because it is the one held when V arrives, and swapping them takes another experiment, not a
+change of notation. *The Relation Space* §9 has the same in a picture: the bucket and the water, "whichever is greater
+must be divided"; past the corner the reader cannot hand over the unit, so it keeps itself as the unit and counts.
+
+**The two-part resolution, in the vantages' terms.**
+- *Dissolve*: keep each claim at its own vantage ("smaller than my ruler"). This is the catalogue's reading step.
+- *Purchase*: buy a shared denominator. Each of the paper's purchases is one of SPN's bridges: exchanging the reads is a
+  shared fact; reuniting the clocks brings two readers to one standpoint; standardising a patient mix or geometric-meaning
+  two baskets is an agreed unit (SPN §8.4: the unit is not geometric, and only agreement supplies it); closing a loop is
+  a third reader. The number line is legitimate as a ruler agreed between readers (`number-line.md`, "a shared ruler");
+  it is counterfeit when it is assumed instead.
+
+**The exchange is already worked in the corpus.** The paper's two reads are, in amounts, r_A = (S_B/S_A)·(d₀/d) and
+r_B = (S_A/S_B)·(d₀/d); their ratio gives the size ratio, √(r_A/r_B) = S_B/S_A, and their product the distance,
+√(r_A·r_B) = d₀/d. In `pool.html` each ball reads v = r_b/d of the other and is told the other's reading h = r_a/d: the
+exchange. Then v/h = r_b/r_a is the size ratio with the distance cancelled, and contact is h + v = 1 (`plans/pol-plan.md`,
+P1–P4, not killed: the game played from inside equals the referee's). Keep the case: r_A, r_B, S, d are amounts, and
+their corners are corners of named pairs. The archive has the exchange twice more: as arithmetic ("dividing the reads
+cancels what the seats share; multiplying cancels what is private to each", *Degrees of Freedom* §4.1, L718–766) and
+measured, as the two-group tower, where closure between two readers with different holds recovers the one factor that
+crosses, the ratio of the holds (*The Order of Limits* L2494–2530; SPN Proposition 1.2, "The tower").
+
+| | paradox | the claim that sounds absolute | its private denominator | the purchase | standing |
+|---|---|---|---|---|---|
+| F1 | each sees the other smaller (perspective) | "B is smaller than me" | my own apparent size | exchange the reads | **worked** (`pool.html`, POL) |
+| F2 | each sees the other's clock run slow | "B's clock is slow" | my own clock | exchange; reunite | **reading**; illustrated (SPN §9.9, CMV) |
+| F3 | the twin paradox | "who is older now?" | my own clock, and "now" across a distance | reunion at one event | **reading**, resting on special relativity |
+| F4 | the ladder and the barn | "it fits" | "at the same time" at two places: one frame's now | name which frame's now | **reading**, resting on special relativity |
+| F5 | Bell's spaceships | "identical accelerations" | the launch frame's simultaneity | re-certify in the ships' frames | **reading**, resting on special relativity |
+| F6 | Thomas precession | "every leg was unrotated" | one leg's frame | close the loop, read the residue | **reading** |
+| F7 | Simpson's paradox (kidney stones, Charig et al. 1986) | "B succeeds more overall" | each treatment's own patient mix | stratify, or one standard mix | **reading**, resting on the standard resolution |
+| F8 | the prosecutor's fallacy | "one in a million he is innocent" | P(evidence given innocence) for P(innocence given evidence) | Bayes, with the base rate | **reading**, resting on the standard resolution |
+| F9 | −50% then +50% | "back to even" | each percentage's own "of what" | keep the ratios as ratios | **reading** |
+| F10 | price indices (Fisher 1922) | "prices rose 8%" | each year's own basket | the geometric mean of the two | **reading**; the √ is the exchange's |
+| F11 | currency arbitrage | "each rate looks fine" | each pair's own ratio | a third party closing the loop | **reading** |
+
+*What the family adds to the catalogue.* A cleaner test of a vantage conflation: find the private denominator, and ask
+whether the comparison was bought or assumed. *What it does not add:* every entry already has its standard resolution;
+the claim is uniformity, as the paper itself says.
+
+## G. From the archived papers
+
+*Pulled forward on 11 October from `papers/archive/` (`plans/archive-gems.md`). Each was worked in its paper in the
+terms of its day; the readings below restate it in the three vantages. Standing: **reading** unless marked.*
+
+**G1. A growing list looks finished** (*The Order of Limits* L279–362). A reader of fixed fidelity watches a list grow;
+past a size set by its fidelity the part not yet arrived falls below one step, the frontier cannot be told from the
+horizon, and the list looks complete. *Vantages:* "finished" is the completed view's object; the serial reader at fixed
+step meets it only as the far horizon closing over the frontier. In the classical order (the step taken to zero first)
+the frontier stays visible for ever. *Already known:* none as such; it is the order of limits met in a list.
+
+**G2. A hemisphere's count quoted as the whole's** (*The Order of Limits* L1027–1103). Four counts, M ≤ V_ε ≤ V ≤ N:
+what is met, what is resolved, what the hemisphere holds, what there is. Quoting one as another is safe only on the
+circle, where nothing varies with direction. *Vantages:* N is the completed view's; V and V_ε are the outer and inner
+hemispheres'. A ready source of conflations.
+
+**G3. The median survives, the mean does not** (archived *Reader Geometry as Addressing*, Proposition 14, L884–946).
+Statistics of order (ranks, the median, the corner) are unchanged by any increasing change of the payload; statistics of
+amount (the mean, every sum) are not, and re-timing the arrivals of a five-lobed star moved the mean over arrivals 27%
+while the address statistics stayed fixed. *Vantages:* order is what the situated reader holds; sums need the completed
+view's amounts. The Cauchy (A2) is the extreme case: "an address is not supposed to have an average" (archived *One
+Reader* L501–514). *Already known:* the robustness of order statistics; Jensen's inequality for the mean.
+
+**G4. A uniform address space cannot report position** (*Browsing the Fisheye* L1008–1017). A list whose every entry
+holds the same thing gives the same view at every address: from inside, travelling is indistinguishable from standing
+still. *Vantages:* the completed view knows where it is by the index; the situated reader knows only by what stands at
+the addresses. "What makes a list browsable is not that its addresses are distinct but that what stands at them is."
+
+**G5. More points, less seen** (archived *One Reader* L896–909; *The Order of Limits* L1754–1845). A parallel reader of
+angular step ε seeing N evenly spaced points round a circle resolves R(N) = (N/π)·arccos(εN/2π) of them, which peaks at
+R_max ≈ 1.1222/ε and then falls: past a point, more points mean fewer told apart. *Vantages:* the completed view's N
+against what one standpoint resolves. **exact** (the peak checked: x·arccos x is largest at x ≈ 0.6522, giving 0.5611,
+so 2 × 0.5611 = 1.1222).
+
 ## E. Candidates, not yet examined
 
 Named because a vantage reading looks possible. Each needs its vantages shown in its own terms before it is moved up.
@@ -256,9 +382,6 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
 - **The moon illusion.** The moon looks larger near the horizon (Kaufman and Rock 1962), a perceptual paradox with no
   settled explanation.
 - **Monty Hall.** The host acts from a completed view of the doors; the player reads the act from its own.
-- **Simpson's paradox.** A trend in every group reverses in the total: the groups' readings against the completed
-  aggregate.
-- **The twin paradox.** Each twin reads the other's clock as slow; the resolution is in who changes frame.
 - **The liar and self-reference.** A reader reading itself (the corpus's "readers as payloads").
 - **Zeno's arrow.** Motion at an instant: the completed view's snapshot against the serial reader's arrivals.
 - **Quantum measurement.** Speculative, and flagged as such: whether the observer-dependence of quantum outcomes is a
@@ -271,6 +394,22 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
   (D1–D6), plus eight candidates.
 - 11 October, second: "From situated to completed: what memory and synthesis do", after a comment Tom shared: synthesis
   transforms (sweep to index), recovers the shape up to a scale, and leaves three gaps (scale, step, motion).
+- 11 October, third: the denominator family (§F), from `papers/denominator-paradox.md`, an older paper of Tom's: eleven
+  paradoxes under one diagnosis, the private ruler as the reader's own H and the shared number line as the completed
+  view's unit; the exchange already worked in `pool.html`. Simpson's paradox and the twin paradox moved up from the
+  candidates.
+- 11 October, tenth: the breadth 1 is a reading with no facing, which only the unsituated observer has (Tom; SPN R197).
+- 11 October, ninth: the order of limits and Haraway's "god trick", with the completed view.
+- 11 October, eighth: a reader can construct the classical view from multiple observations (Tom; SPN R196); the
+  seventh iteration's "no reader occupies it" narrowed to one observation.
+- 11 October, seventh: no reader can hold both hemispheres, so the completed view is the view from nowhere (Tom; SPN
+  R195). "From situated to completed" corrected: the completed view is a description no reader occupies.
+- 11 October, sixth: the classical breadth needs both hemispheres in hand (Tom; SPN R194).
+- 11 October, fifth: one line, three readings (Tom; SPN R193): 1 completed, π/2 outer, 2/π inner, product 1. Archived
+  papers defer to papers that are not archived (R192), which settles the three conflicts listed in `plans/archive-gems.md`.
+- 11 October, fourth: from the archived papers (`papers/archive/`, `plans/archive-gems.md`): the equation as a third
+  party and figure against rate (the three vantages), the private ruler's reason and the two-group tower (§F), and five
+  entries G1–G5.
 
 ## Sources
 
