@@ -647,16 +647,18 @@ is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessi
   is, but v must be a share of something. (P1) A situated reader chooses one breadth, H, and holds no whole of the
   system (situations 3 and 4, §2.1). Any H will do; it must choose exactly one (Tom, 11 October: "reader can actually
   choose H, any H is fine, he just needs to choose one."). (P2) A level carries no measure: nothing on it but its ends, their order and the flip between them (the premise
-  of Proposition D.1; narrowed 11 October, since the corner and the flip themselves now follow, (f)). (P3) The logarithm is fundamental (R189: taken as given, not proved here).
+  of Proposition D.1; narrowed 11 October, since the corner and the flip themselves now follow, (f)). (P3) The logarithm is fundamental (R189: taken as given, not proved here). *Derived 11 October from (P1) and (P2), (g):
+  kept as a premise only if (g)'s link is not accepted.*
 - *Claim.* (a) The reader must set V = H: by (P0) V must be assigned a breadth for there to be a relation at all, and by (P1) its
   chosen H is the only breadth it has to assign. Without the assignment there is no second party, only h. (b) The corner is then at
   radius 1, since it is one H from home measured in H, H/H, whichever H was chosen; no number is chosen, and the size of H never
   enters, so the choice of which H is free (a convention: §8.4, the unit is not geometric; §3.8, a different H only moves
   the reader's rung). (c) The
-  diameter is 2: the corner has two sides and only two, by (P2), whether read as the two facings or as near and far (in the
-  in-place lay the near field fills radius 0 to 1 and the whole far field the second unit, 1 to 2). (d) Past the corner the
+  diameter is 2: the corner has two sides and only two, the two facings, home to the corner one way and the other.
+  (*11 October*: the reading as near and far by the in-place lay, near field 0 to 1 and far field folded into 1 to 2, is
+  withdrawn by (g), which rules that lay out as the reader's lay.) (d) Past the corner the
   levels are that unit doubled, one doubling per binary choice of side (by (P2), the halving is the only subdivision the
-  flip supplies, Proposition D.1), laid by (P3).
+  flip supplies, Proposition D.1), laid as (g) derives.
   (e) The reader's own level is the unit circle, and the doubling is its radius becoming its diameter (Tom, 11 October:
   "then the diameter of the unit circle is also 2. which is the diameter of the first octive, where the reader actually
   exists."). The first level runs from home to the corner in every facing: radius 1, diameter 2, the near field at true
@@ -672,6 +674,24 @@ is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessi
   that corner also the place of equal amounts: in general equal amounts, v·V = h·H, fall where v/h = H/V; under V = H
   they fall at v = h, one H from home. So the corner the reader finds in its own amounts is the geometric corner v = h,
   and it is the edge of the unit circle.
+  (g) The logarithm past the corner (Tom, 11 October: "so then logrightms are forced beyond the cornder."; then "yes" to
+  working it here). Past the corner the flip makes the reading the reciprocal, h/v on [0, 1] (f); the flip does not by
+  itself say how that reading is laid. Let a lay put a far reading s = v/h ≥ 1 at radius r(s), with farther laid farther
+  (r increasing) and the corner at the unit circle, r(1) = 1.
+  - *The link.* The room the lay gives between s and λs (λ ≥ 1) depends on λ alone, not on s. Two reasons, either enough:
+    by (P1) any H will do, and a change of H shifts every far reading by one factor, so a lay whose room depended on
+    where a reading sits, as well as on the ratio, would depend on which H was chosen, against (b); and by (P2) no
+    measure is carried past the corner, so nothing supplies a scale for the room to depend on. This is §3.8's "no rung
+    is preferred", applied to the lay. It is the step that carries the weight.
+  - *The arithmetic.* Write g(λ) = r(λ) − 1. Then r(λs) − r(s) = g(λ) for all s, λ ≥ 1, so g(λμ) = g(λ) + g(μ):
+    Cauchy's functional equation in its multiplicative form. With g increasing, its only solutions are g(λ) = c·ln λ.
+    So r(s) = 1 + c·ln s: equal room per doubling, c·ln 2. Joining the near field's true scale with no kink at the corner
+    gives c = 1, the lay `flight.html` draws; c is otherwise the unit the lay is drawn in.
+  - *What it rules out.* The in-place lay, r = 2 − 1/s (§3.3; `levels.html`), gives each doubling half the room of the
+    last: its room depends on where a reading sits, so it prefers the corner's scale and fails the link. It stays a
+    lay, bounded at 2, the one ISQ found has the inverse square's form, but not the reader's own lay under (P1) and (P2).
+  - *Inside the corner* nothing changes: the near field is read at true scale, and the link concerns only readings laid
+    by their ratio to one another past the corner.
 - *Where the reader lives* (Tom, 11 October: "the reader exists in the unit circle that is created by this chain of
   logic. His choice of H, forces he assignment of V."). The reader lives in the circle its own choice creates, at home at
   its centre. That is *in*, not *is*: R127 (1 October) stands, that the reader is not the unit circle (the uniform
@@ -686,7 +706,8 @@ is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessi
   logarithmic past the corner (not P3), such as proportion, which keeps true scale but does not fit the far field on
   bounded addresses (10 October, `flight.html`).
 - *Standing.* A derivation from stated premises. (P0) is the paper's first assumption, the two-party relation; (P1)
-  states the situated reader; (P2), narrowed to "no measure on a level", and (P3), the logarithm, are assumed. A route to deriving (P3) from §3.8 ("No rung is
+  states the situated reader; (P2), narrowed to "no measure on a level", is assumed; (P3), the logarithm, is derived in
+  (g) from (P1) and (P2), resting on (g)'s link, the step to scrutinise. A route to deriving (P3) from §3.8 ("No rung is
   preferred") is noted there.
 
 Everything below is built from one object: **a share of all of something, none of it, or anything in between**. Two such
@@ -3423,7 +3444,7 @@ particular leg of that ladder. there are many rungs of the ladder above and belo
 (11:27); "to the extent that we can make that idea rigourous, we should." (11:28).* Not a ruling; what follows is the part
 of it the geometry proves, and the part it leaves to the world.
 
-*A route to (P3) of Proposition 1.2 (11 October; Claude's note, not yet worked).* If no rung is preferred, a lay past the
+*A route to (P3) of Proposition 1.2 (11 October; worked the same morning as Proposition 1.2 (g)).* If no rung is preferred, a lay past the
 corner must give every doubling the same room: the room L between readings s and λs depends on λ alone, L(λμ) = L(λ) +
 L(μ). Cauchy's functional equation, with L monotone (farther is laid farther), has only the solutions L = c·log λ. So
 "no rung is preferred" would make the logarithm a consequence rather than a premise. What remains to check is whether the
@@ -5552,7 +5573,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 - **R187** (5 Oct, 12:40), over the proposed signal test of the central hypothesis: "no kill condiitons, just report the results. lets look at various synthetic signals so happens to the resurcsion." **Exploratory runs report their results as they fall, without registered predictions or kill conditions.** Synthetic signals, like shapes, are generated, not real-world data (the 26 Sep rule on planned real-world tests still applies to recordings).
 - **R188** (10 Oct, 18:38–18:43), over `wander/flight.html`: "I don't think there are corners in the far field. there is only one corner that splits far field from the near field, which is just the split between the first and second octive." / "also, there is no depth or recursion because we create the unit circle when we assign V to H." / "its plain doublings, ordinary math. but now we know why, its a consequence of setting V = H, which creates the unit circle." Supersedes R175 and R180; restores the 8 October reading of V = H (§2.1) over the 9 October corrections. §1, "The settled view, 10 October".
 - **R189** (10 Oct, 19:02–19:06), on R188's "left to rule": "v does not need V. v = [0,1]. h = [0,1], they are invariant." / "one circle. yes, the open question than disolves. its just logrithimic doublings. this paper does. not need to prove the logrithm, it is fundemental." One circle: its shape from the invariant fill levels, its unit from V = H. The central open question (the 2; Appendix D) dissolves. §1, "The settled view, 10 October".
-- **R190** (11 Oct, 04:44–04:46): "1 falls out of setting V = H." / "so the choice is to set V = H, not 1" / "thats a pretty solid proof, kind of a proof of necessity." / (04:49) "Why can't use reader choose is H? reader can actually choose H, any H is fine, he just needs to choose one." / (04:53) "then the diameter of the unit circle is also 2. which is the diameter of the first octive, where the reader actually exists." / (04:58) "right, its because of our intial assumption of a 2 party relation, and you can't have a relation if both V and H are not assigned breadths." / (05:00) "the reader exists in the unit circle that is created by this chain of logic. His choice of H, forces he assignment of V." / (05:03) "oh wait, Ijust made a bad conflation, its v=h. not V=H." / (05:04) "V=H. forces v=h as the corner." Proposition 1.2 (f); (P2) narrowed to "a level carries no measure".
+- **R190** (11 Oct, 04:44–04:46): "1 falls out of setting V = H." / "so the choice is to set V = H, not 1" / "thats a pretty solid proof, kind of a proof of necessity." / (04:49) "Why can't use reader choose is H? reader can actually choose H, any H is fine, he just needs to choose one." / (04:53) "then the diameter of the unit circle is also 2. which is the diameter of the first octive, where the reader actually exists." / (04:58) "right, its because of our intial assumption of a 2 party relation, and you can't have a relation if both V and H are not assigned breadths." / (05:00) "the reader exists in the unit circle that is created by this chain of logic. His choice of H, forces he assignment of V." / (05:03) "oh wait, Ijust made a bad conflation, its v=h. not V=H." / (05:04) "V=H. forces v=h as the corner." / (05:06) "so then logrightms are forced beyond the cornder." Proposition 1.2 (f), (g); (P2) narrowed to "a level carries no measure".
 
 ## Appendix B. Demos and computations
 
