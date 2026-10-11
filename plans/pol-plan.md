@@ -1384,3 +1384,72 @@ Run 14 with the band's books kept where they can be kept. Three changes, named; 
   - the ring of cells;
   - the view just after a pan;
   - the work against run 11's window.
+
+Run 15 output (`node plans/pol/pol15.mjs`, in `plans/pol/pol-run15.txt`; before it, a crash check only):
+
+```
+the referee (as run 11): 4 states of 13581 balls, 240 a side, wrapped; 60 s each, 64 views of 30 × 30 sampled every 0.05 s
+  view: density 0.2358, energy per ball 24.984, contacts per ball per second 4.860; count var/mean within each view 0.462
+
+the multiscale world, the band held at the cells' activity: the window 45 × 45, its middle 30 × 30 the view; 4 states × 10 places, 60 s each
+  open              view: density 0.2353 (-0.2%), energy per ball 24.962 (-0.1%), contacts per ball 4.844 (-0.3%), count var/mean within the run 0.406 (-12.1%)
+  closed (control)  view: density 0.2319 (-1.6%), energy per ball 25.003 (+0.1%), contacts per ball 4.758 (-2.1%), count var/mean within the run 0.309 (-33.0%)
+  open: the band's density 0.2478 (+5.1%), energy per ball 25.020 (+0.1%); balls put in 205725, taken out or left 205390; the window held 474 at the start, 482 at the end, on average
+  open, density against the referee's by distance from the window's edge (1-unit bands, edge first; the band is the first two):
+    1.104 0.996 0.997 0.999 0.999 0.999 0.999 1.000 0.999 1.000 1.000 1.000 1.002 0.999 0.997 0.999 0.996 0.995 0.992 0.993 0.981 0.986 0.960
+  the band's places free when tried: 51.1% of 402596 (Widom's e^(−βμ_ex) for the bulk: 48.3%)
+  level-0 cells beside the window, density over the world's: mean 0.992, lowest 0.388, highest 1.571
+  just after a pan, the view's density 0.2276 (-3.5%), energy per ball 24.976 (-0.0%)
+  the books: over the 40 open runs, count off by at most 3.1e-11, momentum 9.4e-12, energy 2.8e-15 of itself; over the pans 7.3e-12, 1.5e-12, 5.2e-16
+  work per simulated second: 240 a side 4.723e+5 (52 cells), 3,840 a side 4.645e+5 (100 cells), -1.6%; run 11's window (no band) 1.854e+5
+
+P28⁗: not killed. count within 1e-6, momentum within 1e-6, energy within 1e-9 of itself, over every run and pan
+P30⁗: not killed. the open view's density -0.2%, energy per ball -0.1%, contacts per ball -0.3% (each within 3%)
+P31⁗: not killed. within-run var/mean: open 0.406 (-12.1%; within 15%), closed 0.309 (-33.0%; at least 25% lower)
+P32⁗: not killed. the multiscale work changes by -1.6% for 256 times the balls (less than 5%)
+P33‴: not killed. from 2 units inward, the density is at most +4.0% from the referee's (within 5%)
+```
+
+(P33‴'s line prints the largest gap with a "+" sign; the gap is the middle 1-unit square's 0.960, below the referee.)
+
+- **P28⁗ not killed.** The books balance to 3e-11 in count, 1e-11 in momentum and 3e-15 in energy, over every run and
+  every pan.
+- **P30⁗ not killed.** The open view's density is 0.2% below the referee's, its energy per ball 0.1%, its contacts per
+  ball 0.3%.
+- **P31⁗ not killed, near its edge.** Within a run, the open view's count fluctuates 12.1% less than the referee's
+  (0.406 against 0.462), inside the 15% allowed. The closed control's is 33% lower.
+- **P32⁗ not killed.** The work changes by −1.6% for 256 times the balls (52 cells to 100). The window with its band
+  costs 2.5 times run 11's bare window.
+- **P33‴ not killed.** From 2 units in, every 1-unit band is within 4% of the referee's density, and all but the last
+  three within 0.5% (0.996 to 1.002). The middle square of 1 unit is the 4% (0.960): it is 1 unit of area, so its count
+  is the noisiest.
+- *Measured:*
+  - the band: 1.10 of the referee's density in its outer unit (the mirror's crowding) and 0.996 in its inner;
+  - the band's places were free 51.1% of the time it tried them (Widom's 48.3% for the bulk; the mirror's side of the
+    band is less crowded a diameter in);
+  - the cells beside the window: 0.99 of the world's density on average (0.39 to 1.57);
+  - just after a pan, while the unfolded balls settle, the view's density is 3.5% low and its energy per ball right.
+
+## Reading of run 15 (not ruled)
+
+- **A window of balls in a world of totals sees the world's gas.** With the band held at the ring's chemical potential
+  and closed by a mirror, the view's density, warmth and contacts are the referee's to 0.3%, and its count fluctuates
+  as an open region's does. The work is the window's, whatever the world's size: Tom's point, now with the boundary that
+  makes it true.
+- **What the boundary needed, in order (runs 11–15):**
+  1. the outside's contacts, not only its flux (run 11's window drained through an edge that pushed nothing back);
+  2. no edge that opens onto nothing (run 12's band drained outward);
+  3. the outside's chemical potential, not its count (run 13's band, held at a count, was underfilled against the
+     mirror's crowding);
+  4. books kept where they can be kept: a push booked where pushes cancel (run 14's ran away), and a reservoir large next
+     to what it absorbs (three cells of a dozen balls could not be).
+
+  Each is a known piece of the physics of open systems (pressure is kinetic and virial; a reservoir fixes μ, not N),
+  found here from inside by watching the window fail.
+- **What is still a choice, and untested:** the far field's own dynamics (diffusion with D = 4.04). The world here was in
+  equilibrium, where the cells need only hold their totals. A disturbance coming in from the far field, a sound wave or a
+  hot spot, would test whether totals by level can carry it. That is the next run, if any.
+- **For the level of detail:** the reader holds balls where it can see them and totals elsewhere, one ring of cells per
+  level, each cell at the level where it reads at the corner. The balls it does not hold are not lost: the books say how
+  many there are, how they move and how warm they are, to rounding. When it looks, the balls it unfolds come out of
+  those books.
