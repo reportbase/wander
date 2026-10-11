@@ -282,8 +282,11 @@ try {
     o.plays = after.every((b, i) => b.n === 0 ? true : b.sunk === fin[i].sunk && (b.sunk || (b.x === fin[i].x && b.z === fin[i].z)));
     o.exact = s1.contacts.every(c => Math.abs(c.hvC - 1) < 1e-9);   // contact found exactly on h + v = 1 (POL run 9)
     T.setLayout('line'); o.combo = T.preview().sunk.map(p => p.n).join(); o.sight = T.seen(3).join() + '/' + T.seen(4).join();
-    const rt = T.roundTrip(3, -2); o.rt = Math.hypot(rt[0] - 3, rt[1] + 2) < 1e-9; return o; });
-  if (!pt.same || !pt.full || !pt.hv || !pt.exact || !pt.plays || pt.combo !== '4' || pt.sight !== '/4' || !pt.rt) failures.push(`[play-trick.html] ${JSON.stringify(pt)}`);
+    const rt = T.roundTrip(3, -2); o.rt = Math.hypot(rt[0] - 3, rt[1] + 2) < 1e-9;
+    // the strike: the tip meets the white on h + v = 1; f of the white's half-width off its middle turns it sin φ = f·R/(R + R_TIP)
+    const c0 = T.strikeOf(0, 0), f30 = 0.5 * (0.45 + T.R_TIP) / 0.45, s30 = T.strikeOf(0, f30), sl = T.strikeOf(0, -f30);
+    o.strike = c0.dir === 0 && Math.abs(s30.phi - 30) < 1e-9 && Math.abs(s30.dir + 30) < 1e-9 && Math.abs(sl.dir - 30) < 1e-9; return o; });
+  if (!pt.same || !pt.full || !pt.hv || !pt.exact || !pt.plays || pt.combo !== '4' || pt.sight !== '/4' || !pt.rt || !pt.strike) failures.push(`[play-trick.html] ${JSON.stringify(pt)}`);
   console.log(`${failures.length === before11 ? 'ok  ' : 'FAIL'} gameplay sketches (far lights, resolving, the navigator's ladder, the sky fills, aiming from the cue ball, trick shots)`);
 
   // ── 12. facing.html: the facing is 2θ, square to the line at the corner, the arc off the line most there ──

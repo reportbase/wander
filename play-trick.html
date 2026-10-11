@@ -23,7 +23,15 @@
     How far ahead the preview sees (POL runs 8–9): "see" shows each ball's motion only while it is at most k contacts from
     the cue (3 by default: on an open table a 0.1° aim error passes half a pocket by the third contact); past it a "?".
     Contact is exact: each ball finds, in its own units, the moment the pair read h + v = 1, and responds there (run 9).
-    Links: ?layout=rack|scatter|line, ?a= (aim in degrees), ?p= (power), ?paths=all|cue|off, ?see=1..5|all. Test hook: window.__trick.
+    Two angles, as in pool (Tom: "you hit the white ball first. so you need to calculate two angles, where you want to hit
+    the white ball, and where you want the white ball to hit the first ball"): the cue's tip is a small ball (radius
+    R_TIP) and meets the white on h + v = 1 like any other contact. Where it meets the white, f of the white's half-width
+    off its middle as seen from behind the cue (the round inset), sends the white along the tip-to-white line of centres:
+    sin φ = f·v/(h + v) = f·R/(R + R_TIP) (play-corner's law for unequal balls), off the cue's line, away from the side
+    struck. The cue is a different kind from the balls, so its mass is told, not read from its size: the white leaves at
+    the power times cos φ. Then where the white meets the first ball is the second cut. f = 0 is a centre hit.
+    Links: ?layout=rack|scatter|line, ?a= (the cue's line, degrees), ?p= (power), ?tip= (f), ?paths=all|cue|off,
+    ?see=1..5|all. Test hook: window.__trick.
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --line: rgba(255,255,255,0.12); --ink: #c8c8d0; --dim: #8a8a96;
@@ -44,11 +52,14 @@
     button.go { border-color: var(--gold); color: var(--gold) }
     label { display: flex; gap: 6px; align-items: center; color: var(--dim) }
     input[type=range] { width: 120px; accent-color: #d4a052 }
+    #tipview { position: fixed; inset: auto; right: 12px; width: 92px; height: 92px; touch-action: none; cursor: ew-resize; border-radius: 50%;
+        background: rgba(12,12,17,0.7) }
     </style>
 </head>
 <body>
 <canvas id="cv"></canvas>
 <div id="hud"></div>
+<canvas id="tipview" aria-label="where the tip meets the white"></canvas>
 <div id="bar">
     <button id="shoot" class="go">shoot</button>
     <button id="undo">undo</button>
@@ -64,7 +75,7 @@
 (() => {
     const $ = id => document.getElementById(id), TAU = 2 * Math.PI, D = Math.PI / 180;
     // ══ the table (as pool.html; the cloth a little quicker, so a shot settles in seconds) ══
-    const LX = 20, LZ = 10, R = 0.45, POCK = 0.85, MU = 1.2, E_BALL = 0.96, E_RAIL = 0.8, FRAME = 1 / 60, SUB = 4, HEAD = [-LX / 4, 0];
+    const R_TIP = 0.1, LX = 20, LZ = 10, R = 0.45, POCK = 0.85, MU = 1.2, E_BALL = 0.96, E_RAIL = 0.8, FRAME = 1 / 60, SUB = 4, HEAD = [-LX / 4, 0];
     const POCKETS = [[-LX / 2, -LZ / 2], [0, -LZ / 2 - 0.2], [LX / 2, -LZ / 2], [-LX / 2, LZ / 2], [0, LZ / 2 + 0.2], [LX / 2, LZ / 2]];
     const COLS = { 1: '#e3c33b', 2: '#2f5fd0', 3: '#d23a2f', 4: '#6b3fa0', 5: '#e0782a', 6: '#2e8b57', 7: '#7a2f2a', 8: '#16161a' };
     for (let k = 9; k <= 15; k++) COLS[k] = COLS[k - 8];
@@ -217,7 +228,7 @@
 
     // ══ state ══
     const q = new URLSearchParams(location.search);
-    let balls = [], ang = 0, power = 14, sim = null, dirty = true, anim = null, potted = 0, shots = 0, history = [], layoutName = 'rack';
+    let balls = [], ang = 0, tip = 0, power = 14, sim = null, dirty = true, anim = null, potted = 0, shots = 0, history = [], layoutName = 'rack';
     let pathsMode = ['all', 'cue', 'off'].includes(q.get('paths')) ? q.get('paths') : 'all';
     let see = q.get('see') === 'all' ? Infinity : [1, 2, 3, 4, 5].includes(+q.get('see')) ? +q.get('see') : 3;
     function setLayout(name) {
@@ -231,9 +242,17 @@
         for (let k = 0; k < 40; k++) { const x = HEAD[0] - k * 0.3; if (free(balls, x, 0, c)) { c.x = x; c.z = 0; break; } }
         c.sunk = false; c.vx = c.vz = 0;
     }
+    // ══ the strike: the cue's tip meets the white on h + v = 1. From behind the cue its line passes f·R to the right of the
+    //    white's middle; tip and white touch with their centres R + R_TIP apart, so the line of centres is turned
+    //    sin φ = f·R/(R + R_TIP) from the cue's line, and the white leaves along it, away from the side struck. ══
+    function strikeOf(a, f, pw) {
+        const phi = Math.asin(Math.max(-1, Math.min(1, f * R / (R + R_TIP))));
+        return { dir: a - phi, speed: pw * Math.cos(phi), phi };
+    }
+    const shotNow = () => { const st = strikeOf(ang, tip, power); return [st.dir, st.speed]; };
     function shoot(instant) {
         if (anim) return;
-        const s = simulate(balls, ang, power); if (!s) return;
+        const s = simulate(balls, ...shotNow()); if (!s) return;
         history.push({ balls: balls.map(b => ({ ...b })), potted, shots });
         shots++; anim = { s, t0: performance.now(), instant: !!instant };
         if (instant) finish();
@@ -251,6 +270,7 @@
         cv.style.width = W + 'px'; cv.style.height = H + 'px';
         if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
         const top = $('hud').offsetHeight + 14, aw = W, ah = H - bar - top, tall = ah > aw;
+        $('tipview').style.bottom = (bar + 10) + 'px';
         const sc = tall ? Math.min(aw / (LZ + 2.2), ah / (LX + 2.2)) : Math.min(aw / (LX + 2.2), ah / (LZ + 2.2));
         view = { dpr, W, H, sc, tall, cx: aw / 2, cy: top + ah / 2 };
     }
@@ -305,10 +325,15 @@
         }
         if (!anim) {   // the cue: a line back from the white, opposite the shot, as long as the power
             const c = balls.find(b => b.cue && !b.sunk);
-            if (c) { const L = 0.6 + power * 0.18; g.strokeStyle = '#c9a36b'; g.lineWidth = 5 * px; g.lineCap = 'round';
-                g.beginPath(); g.moveTo(c.x - Math.cos(ang) * (R + 0.3), c.z - Math.sin(ang) * (R + 0.3)); g.lineTo(c.x - Math.cos(ang) * (R + 0.3 + L), c.z - Math.sin(ang) * (R + 0.3 + L)); g.stroke(); g.lineCap = 'butt';
+            if (c) {   // the stick on the cue's line, its tip touching the white where it will strike (the tip a little back, by the power)
+                const u = [Math.cos(ang), Math.sin(ang)], rt = [-u[1], u[0]], b = tip * R, back = Math.sqrt((R + R_TIP) ** 2 - b * b) + 0.15 + power * 0.03;
+                const T = [c.x + rt[0] * b - u[0] * back, c.z + rt[1] * b - u[1] * back], L = 3.2;
+                g.strokeStyle = '#c9a36b'; g.lineWidth = 5 * px; g.lineCap = 'round';
+                g.beginPath(); g.moveTo(T[0] - u[0] * R_TIP, T[1] - u[1] * R_TIP); g.lineTo(T[0] - u[0] * (R_TIP + L), T[1] - u[1] * (R_TIP + L)); g.stroke(); g.lineCap = 'butt';
+                g.fillStyle = '#5b7fa8'; g.beginPath(); g.arc(T[0], T[1], R_TIP, 0, TAU); g.fill();   // the tip
+                const dirW = strikeOf(ang, tip, power).dir;
                 if (pathsMode === 'off') {   // the aim alone: straight to the first ball or cushion the white would meet, and the ghost ball there
-                    const st = firstStop(c, ang), ex = c.x + Math.cos(ang) * st.t, ez = c.z + Math.sin(ang) * st.t;
+                    const st = firstStop(c, dirW), ex = c.x + Math.cos(dirW) * st.t, ez = c.z + Math.sin(dirW) * st.t;
                     g.strokeStyle = '#f2f0ea'; g.lineCap = 'round'; g.globalAlpha = 0.16; g.lineWidth = 2 * R; g.beginPath(); g.moveTo(c.x, c.z); g.lineTo(ex, ez); g.stroke();
                     g.globalAlpha = 0.6; g.lineWidth = px; g.setLineDash([4 * px, 4 * px]); g.beginPath(); g.moveTo(c.x, c.z); g.lineTo(ex, ez); g.stroke();
                     g.globalAlpha = 0.85; g.lineWidth = 1.5 * px; g.setLineDash([5 * px, 4 * px]); g.beginPath(); g.arc(ex, ez, R, 0, TAU); g.stroke();
@@ -324,7 +349,8 @@
     }
     const frac = o => { const named = [[1, 'full'], [0.75, '¾'], [0.5, '½'], [0.25, '¼']].find(([v]) => Math.abs(o - v) < 0.03); return named ? (named[1] === 'full' ? 'full-ball' : named[1] + '-ball') : o.toFixed(2) + ' ball'; };
     function hud() {
-        let s = `potted ${potted} of 15 · shot ${shots} <span class="dim">· aim ${(((ang / D) % 360) + 360) % 360 < 0.005 ? '0.00' : ((((ang / D) % 360) + 360) % 360).toFixed(2)}° · power ${power}</span>`;
+        const stH = strikeOf(ang, tip, power), deg = a => { const x = (((a / D) % 360) + 360) % 360; return x < 0.005 || x > 359.995 ? '0.00' : x.toFixed(2); };
+        let s = `potted ${potted} of 15 · shot ${shots} <span class="dim">· cue ${deg(ang)}° · tip ${tip === 0 ? 'centre' : Math.abs(tip).toFixed(2) + (tip > 0 ? ' right' : ' left')}${tip ? `, the white turns ${(Math.abs(stH.phi) / D).toFixed(1)}°` : ''} · power ${power}</span>`;
         if (!anim && sim && pathsMode !== 'off') {
             const f = sim.first, sight = sightOf(sim, see), seen = sim.sunk.filter(p => p.t <= sight.cut(p.n));
             const pots = seen.filter(p => p.n !== 0).map(p => p.n), scratch = seen.some(p => p.n === 0), hidden = sim.contacts.filter(c => !sight.inSight(c)).length;
@@ -365,6 +391,7 @@
         else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') { power = Math.max(2, Math.min(24, power + (e.key === 'ArrowUp' ? 0.5 : -0.5))); $('power').value = power; dirty = true; e.preventDefault(); }
         else if (e.key === ' ' || e.key === 'Enter') { shoot(); e.preventDefault(); }
         else if (e.key === 'z' || e.key === 'Z') undo();
+        else if (e.key === '[' || e.key === ']') { setTip(tip + (e.key === ']' ? 0.05 : -0.05)); e.preventDefault(); }
     });
     $('shoot').addEventListener('click', () => shoot());
     $('undo').addEventListener('click', undo);
@@ -377,14 +404,34 @@
     const fsOK = !!document.documentElement.requestFullscreen;
     if (!fsOK) $('full').style.display = 'none';
     $('full').addEventListener('click', () => { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(() => {}); });
-    window.addEventListener('resize', () => { dirty = true; });
+    window.addEventListener('resize', () => { dirty = true; drawTip(); });
+
+    // ══ the white seen from behind the cue, in its own size: drag across it to choose where the tip meets it ══
+    const TIPMAX = 0.95;
+    function setTip(f) { f = Math.max(-TIPMAX, Math.min(TIPMAX, f)); tip = Math.abs(f) < 0.03 ? 0 : Math.round(f * 100) / 100; dirty = true; drawTip(); }
+    function drawTip() {
+        const cvT = $('tipview'), dpr = Math.min(2, window.devicePixelRatio || 1), W = cvT.clientWidth;
+        if (cvT.width !== Math.round(W * dpr)) { cvT.width = cvT.height = Math.round(W * dpr); }
+        const g = cvT.getContext('2d'), c = W / 2, rad = W * 0.36; g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, W);
+        g.fillStyle = '#f2f0ea'; g.beginPath(); g.arc(c, c, rad, 0, TAU); g.fill();
+        g.strokeStyle = 'rgba(0,0,0,0.25)'; g.lineWidth = 1; g.beginPath(); g.moveTo(c, c - rad); g.lineTo(c, c + rad); g.stroke();
+        for (const k of [-0.5, 0.5]) { g.beginPath(); g.moveTo(c + k * rad, c + rad * 0.75); g.lineTo(c + k * rad, c + rad * 0.95); g.stroke(); }
+        g.fillStyle = '#5b7fa8'; g.beginPath(); g.arc(c + tip * rad, c, rad * R_TIP / R, 0, TAU); g.fill();
+    }
+    const tipAt = e => { const r = $('tipview').getBoundingClientRect(); setTip((e.clientX - r.left - r.width / 2) / (r.width * 0.36)); };
+    let tipDrag = false;
+    $('tipview').addEventListener('pointerdown', e => { if (anim) return; tipDrag = true; $('tipview').setPointerCapture(e.pointerId); tipAt(e); });
+    $('tipview').addEventListener('pointermove', e => { if (tipDrag) tipAt(e); });
+    $('tipview').addEventListener('pointerup', () => { tipDrag = false; }); $('tipview').addEventListener('pointercancel', () => { tipDrag = false; });
 
     function loop() {
-        if (dirty && !anim) { sim = simulate(balls, ang, power); dirty = false; }
+        if (dirty && !anim) { sim = simulate(balls, ...shotNow()); dirty = false; }
         draw(); requestAnimationFrame(loop);
     }
     setLayout(q.get('layout') || 'rack');
     if (q.get('a') != null) ang = +q.get('a') * D;
+    if (q.get('tip') != null) setTip(+q.get('tip'));
+    drawTip();
     if (q.get('p') != null) { power = Math.max(2, Math.min(24, +q.get('p'))); $('power').value = power; }
     $('paths').textContent = 'paths: ' + pathsMode;
     layoutView();   // the screen mapping from the start, so the hook can use it before the first frame
@@ -392,9 +439,10 @@
 
     window.__trick = {
         simulate, layouts: LAYOUTS, setLayout, image, sightOf,
-        seen: k => { const s = simulate(balls, ang, power), sg = sightOf(s, k == null ? Infinity : k); return s.sunk.filter(p => p.t <= sg.cut(p.n)).map(p => p.n); },
-        aim: deg => { ang = deg * D; dirty = true; }, power: p => { power = p; dirty = true; },
-        preview: () => simulate(balls, ang, power),
+        seen: k => { const s = simulate(balls, ...shotNow()), sg = sightOf(s, k == null ? Infinity : k); return s.sunk.filter(p => p.t <= sg.cut(p.n)).map(p => p.n); },
+        aim: deg => { ang = deg * D; dirty = true; }, power: p => { power = p; dirty = true; }, tip: f => setTip(f),
+        strikeOf: (deg, f, pw = 14) => { const st = strikeOf(deg * D, f, pw); return { dir: st.dir / D, speed: st.speed, phi: st.phi / D }; }, R_TIP,
+        preview: () => simulate(balls, ...shotNow()),
         shootNow: () => { shoot(true); return balls.map(b => ({ n: b.n, x: b.x, z: b.z, sunk: b.sunk })); },
         state: () => ({ balls: balls.map(b => ({ n: b.n, x: b.x, z: b.z, sunk: b.sunk })), potted, shots, ang: ang / D, power }),
         undo, roundTrip: (x, z) => toWorld(...toScreen(x, z)), firstStop: deg => { const c = balls.find(b => b.cue && !b.sunk), s = firstStop(c, deg * D); return { t: s.t, n: s.ball ? s.ball.n : null }; },

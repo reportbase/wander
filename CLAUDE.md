@@ -102,6 +102,11 @@ Google Fonts load from outside:
   and pots, then played from the same frames; drag any ball, undo; `?layout=rack|scatter|line&a=&p=&paths=&see=`; `__trick`.
   Contact is exact (POL run 9: each ball finds the moment h + v = 1 in its own units); "see" is the preview's horizon,
   each ball's motion shown while at most k contacts from the cue (3 by default, POL runs 8–9), a "?" past it.
+  Two angles, as in pool (11 Oct, Tom: "you hit the white ball first … where you want to hit the white ball, and where you
+  want the white ball to hit the first ball"): the cue's tip is a small ball (R_TIP 0.1) meeting the white on h + v = 1;
+  where it meets the white (the round inset, the white seen from behind the cue, f of its half-width) turns the white
+  sin φ = f·R/(R + R_TIP) off the cue's line, away from the side struck; the cue's mass is told (a different kind), so the
+  white leaves at the power × cos φ. `?tip=`; hook `strikeOf`, `tip`.
   Not in the flying page.
 - `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the seven demos (sweep, dial, sphere, facing, levels, walk, pool) and the three on the physics correspondence, each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
@@ -342,7 +347,7 @@ In short:
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
   11. **Gameplay sketches:** each page's one mechanic through its hook (dimming, stages, the ladder's locks and light, the
       sky's count read back as time, a half-ball cut 30° near and far; trick shots: the preview is the shot, contacts exactly on
-      h + v = 1, the row of four's pot out of sight at 3 deep and in sight at 4).
+      h + v = 1, the row of four's pot out of sight at 3 deep and in sight at 4, the tip's strike turning the white 30° at f = ½(R + R_TIP)/R).
   12. **facing.html:** the facing is 90° at the corner, 0° at A, 180° at B; the arc stands off the line 1 − 1/√2 there, its most.
   13. **levels.html:** the near field in proportion, each level past the corner half the width of the last (s = 8 at 1.875),
       and one level fewer seen per doubling of the grain; the shape crosses ring edges, its broad form fewer; with the size divided out
