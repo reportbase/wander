@@ -2603,6 +2603,11 @@ an item supersedes one above, a dated ⚠ note is added there.
     length 1, so every mix of h and v satisfies h² + v² = 1 (without V = H, an ellipse). One sweep is one facing; each
     freedom has two facings, so 2 × 2 = 4, closure, the circle. With V₂ = H as well, h² + v² + v₂² = 1, the sphere,
     2 × 2 × 2 = 8 octants, a triple corner in each. n freedoms give 2ⁿ facings (SPN Proposition 1.2).
+423. **The Cauchy and the fisheye, derived** (R190; Tom: "using our vocabulary, what is the derivation of the cauchy and the fisheyee?"; "don't use s, keep the v and h."). The bar of length 1, swept from home in
+    even steps of its turn: each step moves v/h by 1 + (v/h)², since 1/h² = (h² + v²)/h². Counting steps per unit of v/h
+    gives 1/(1 + (v/h)²), the Cauchy (2/π over one facing, 1/π over two signed), the corner its median and the flip its
+    symmetry. Placing each reading at its turn step gives the fisheye. The same addresses by length are the in-place lay,
+    by count the logarithmic lay; the turn is the weight, still a choice (SPN Proposition 1.2).
 
 ## 9. Open
 

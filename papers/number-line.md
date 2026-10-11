@@ -65,6 +65,7 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the fill levels, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
+- 11 October, seventy-eighth: the Cauchy and the fisheye derived in v and h: the bar swept in even steps of its turn moves v/h by 1 + (v/h)² a step; counting gives 1/(1 + (v/h)²), drawing gives the fisheye (Tom; SPN Proposition 1.2).
 - 11 October, seventy-seventh: §8, the facings counted: with every breadth set to H the circle has 4 facings and the sphere 8, 2ⁿ for n freedoms (Tom; SPN Proposition 1.2).
 - 11 October, seventy-sixth: H is a zoom, not an escape: a very large H puts everything at true scale but spreads a finite level of detail so thin that the reader's own scale falls into the first address; no H holds every scale at once; the best H puts the thing read at the corner (Tom: "why not just choose a very large H?"; SPN Proposition 1.2).
 - 11 October, seventy-fifth: the count of addresses, in the near field's proportion and per doubling past the corner, is the level of detail, never known and not needed; the geometry gives only the forms (Tom; SPN Proposition 1.2).
@@ -1082,6 +1083,11 @@ magnitudes. Turning the hand changes no ring; changing the rings changes no fing
   solid wedge.
 - **Said first.** *Reader Geometry as Addressing* §0.0 already has the rays ("many pairs are the same relation … they lie
   on one ray") and the cuts ("the path the sweep takes is a choice": the arc, the line h + v = 1, the square's edges).
+
+*Derived, 11 October* (SPN Proposition 1.2, "The Cauchy and the fisheye, derived"): the bar of length 1 swept from home
+in even steps of its turn moves v/h by 1 + (v/h)² a step, since 1/h² = (h² + v²)/h²; counting the steps per unit of v/h
+gives 1/(1 + (v/h)²), the Cauchy, and placing each reading at its turn step gives the fisheye. Both are addresses: the
+count and the drawing of one sweep.
 
 **The Cauchy consists of addresses, not payloads** (Tom, 8 October, of *The Cauchy*: "it consists of addresses not
 payloads"; *Reader Geometry as Addressing* R47: "The Cauchy is not the payload; it is the address to the payload").
