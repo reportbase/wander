@@ -804,6 +804,30 @@ closed shape, which keeps its size. Laid evenly by direction, every shape opens 
 Cauchy; the shape survives only in what arrives at each address, one breadth per direction, as Theorem 6(a)
 requires. The addresses are universal, and the shape is payload.
 
+**The lay, not the shape.** Laying the same shapes another way shows where the Cauchy comes from. Read each shape from
+its centre as v/h, and describe its opening by four numbers: the share of readings before the corner, their median, how
+they cross home (the share below e, divided by e, at e = 0.025) and how they cross toward the horizon (s times the share
+above s, at s = 40). Laid by direction, every shape gives the circle's four numbers, since the reading is the direction
+alone. Laid in equal steps along its own outline instead, a lay taken from the shape itself, each shape opens its own
+way:
+
+| shape | laid | before the corner | median | crossing home | crossing toward the horizon |
+|---|---|---|---|---|---|
+| any shape | by direction | 0.500 | 1.000 | 0.637 | 0.637 |
+| circle | along its outline | 0.500 | 1.000 | 0.637 | 0.637 |
+| square | along its outline | 0.500 | 1.000 | 0.500 | 0.500 |
+| astroid | along its outline | 0.500 | 1.000 | 3.15 | 3.15 |
+| ellipse, twice as tall as wide | along its outline | 0.373 | 1.479 | 0.413 | 0.826 |
+
+Shapes unchanged when h and v are exchanged keep the corner at the middle, as the flip requires, and differ only at the
+ends; the astroid's cusps make its ends heavy, the square's flat sides make them light. The ellipse, which the exchange
+alters, moves its corner as well. Over 73 single-outline shapes from a drawing library the pattern is the same, with
+ends from 0.27 for a gear to about 3.1 for the astroid. The test would have failed had any shape laid by direction
+departed from the circle's numbers, or had a shape unchanged by the exchange moved its corner off the middle. For the
+circle alone the two lays coincide, which is why the circle and the Cauchy go together. The Cauchy is what an even lay
+by direction gives, whatever the shape; a lay taken from the outline brings the shape into the distribution. The
+Cauchy belongs to how the addresses are laid.
+
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the
 parts behind are hidden: rings behind rings on one finger.

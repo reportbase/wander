@@ -373,6 +373,9 @@ Google Fonts load from outside:
   0.11%, its place 2.6% off at ε = 10⁻³ (P2 killed narrowly). `tgt-plan.md` (+ `tgt/tgt.py`, 11 Oct, exact): closure
   between two readers' counted edges recovers the ratio of their holds, |S_A|/|S_B|, to 5×10⁻¹⁵, and nothing more
   (P1–P5 not killed): the denominator exchange made exact.
+  `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
+  exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
+  shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
   `omm-plan.md` (10 Oct, plan only, nothing worked): taking D6 forward (Tom's 23 Sep status note, Ω_m = ψ₁ψ₂ = 1/π, not
   in this repo; Tom: "it was set aside because we had gone as far we could at the time"). Stage 1 rederives the share in
   current terms (ψ₁ = 2/π as the sweep's average fill of h, ψ₂ = ½ as one facing; rulings needed); stage 2 rules what
