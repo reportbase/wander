@@ -40,6 +40,15 @@ own breadth B as a baseline, the one length it holds.
   baselines. Killed if the worst error over a step differs from ε·d/(2B) by more than 10% of it for εd/B between 0.01
   and 0.2.
 
+- **P7. The baseline reads best at its corner** (added 11 October, after P1 to P6 were committed and before the script
+  was written). For the pair (B/2, d) the relative change in the distance read per unit of convergence is
+  |d ln d/dγ| = 1/sin γ: least, 1, at γ = 90°, where d = B/2 (the pair's corner), and the same at d and at its flip
+  (B/2)²/d. So a reader that can set its breadth reads a distance best with B = 2d, its baseline at the corner with the
+  thing: the claim that the best H puts the thing read at the corner (SPN Proposition 1.2), with the baseline as H.
+  Killed if, with ε = 10⁻⁴ radian, the distance whose worst rounded error is least is not within 1% of B/2; or if
+  |d ln d/dγ|·sin γ differs from 1 by more than 1e-12; or if the first-order errors at d and (B/2)²/d differ by more than
+  1e-12 of either.
+
 Known already, and not predictions: τ = θ/θ̇ is Lee's tau (Lee 1976), read from the turn of a small thing; its rate
 τ̇ = −1 at constant speed, and a braking that holds τ̇ at −½ stops at contact. Constant bearing, decreasing range is the
 navigators' collision rule. Stereo depth's error growing with distance squared over baseline is textbook. What is
