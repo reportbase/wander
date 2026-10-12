@@ -1,0 +1,81 @@
+# PAY: what arrives of the payload, serially and at once
+
+*11 October 2026. Tom: "the payloads can't be recovered from serial situated observation, but can be in parallel situated
+observation. basically, all we see is the motion of the center of gravity as situated observers of serial streams"; then
+"yes" to a run and to naming the two centres (SPN R210). Exact arithmetic, rationals where the numbers are rational, the
+complex step for rates. Predictions written before the script (`pay/pay.py`) exists.*
+
+## Set-up, with the case kept
+
+**Amounts:** a thing of half-size S at distance d; luminosities L, masses M, separations s, a source's radius R, a
+step (the point-spread width σ).
+
+**Readings:** x = S/d, read against the reader's own H. Ratios of readings taken at once share one denominator.
+
+**Two centres, kept apart** (R210):
+- the **median** of the addresses: an order statistic, at the corner, which exists where a mean does not;
+- the **centroid** of an unresolved payload: a weighted mean, which is what arrives when the payload is below the
+  step (the light-weighted photocentre; the total mass at the centre of mass).
+
+Fingers order; rings add.
+
+## Predictions
+
+- **P1. One stream does not tell approach from growth.**
+  - **The two worlds:** (a) a rigid thing approaching at speed u, x = S/(d₀ − ut); (b) a thing at rest growing as
+    S(t) = S·d₀/(d₀ − ut).
+  - **Predicted:** the streams are the same at every t, with the same time to contact x/ẋ. Neither S nor d can be read
+    from the stream. Any S(t), d(t) with the same ratio give the same stream.
+  - **Killed if:** the two streams differ by more than 1e-12 (relative) anywhere over 10³ random set-ups, or their x/ẋ do.
+- **P2. A second reading taken at once separates them, if it shares the denominator.**
+  - **The set-up:** a neighbour of half-size S₂ is read at the same moment.
+  - **At the thing's distance:** the ratio of the two readings, x₁/x₂ = S₁/S₂, is a ratio of payloads. The shared
+    distance cancels, so the observer's own motion cancels with it.
+  - **Predicted:** under approach the ratio stays constant (to 1e-12), and under growth it follows S₁(t)/S₁(0) exactly.
+  - **A neighbour at another distance** gives x₁/x₂ = (S₁/S₂)(d₂/d₁), and under approach that ratio drifts. Without a
+    shared denominator, reading at once does not separate approach from growth.
+  - **Killed if:** the same-depth ratio drifts under approach by more than 1e-12, or misses S₁(t)/S₁(0) under growth;
+    or the other-depth ratio stays constant within 1e-6 under approach.
+- **P3. Below the step, the payload arrives as its moments, the centroid first.**
+  - **The set-up:** two point sources with lights L₁, L₂ (light fraction β = L₂/(L₁ + L₂)), a separation s, each
+    blurred by a Gaussian step σ, and the blended image sampled finely.
+  - **Predicted:**
+    - (a) The image's first moment is the light-weighted mean of the two positions, the photocentre, at every
+      separation, resolved or not, to 1e-12 of σ.
+    - (b) Its second central moment is σ² + β(1 − β)s². The payload's internal structure arrives as a fraction
+      β(1 − β)(s/σ)² of the step's own spread, two levels down per level the separation shrinks.
+    - (c) With equal lights, the blend has a dip between the two (two maxima) exactly when s > 2σ, the Sparrow limit.
+      That is the step, an amount: physics, not the corner.
+    - (d) A binary orbiting its barycentre, unresolved, shows only the photocentre's orbit, of size a·|B − β| (B the
+      mass fraction of the second star). Any (B, β) with the same B − β gives the same photocentre stream. Resolved
+      against a shared background, the two components' orbits give B = a₂/a and the flux ratio gives β.
+  - **Killed if:** (a) or (b) misses by more than 1e-9 (relative) over 10³ random set-ups; or (c)'s change from one
+    maximum to two is not at s = 2σ within 1e-6 σ; or (d)'s photocentre streams differ by more than 1e-12 for equal
+    B − β, or the resolved recovery misses B or β by more than 1e-12.
+- **P4. From far off a body is its total mass at its centre of mass; its detail comes in level by level; the
+  expansion's two forms meet at the corner and are each other's flip.**
+  - **The set-up:** random point masses inside a sphere of radius R.
+  - **Predicted:**
+    - (a) About the centre of mass the first-order (dipole) term vanishes, so the monopole's relative error falls two
+      levels per level of distance. About any other centre it falls one. Measured as slopes in levels between 100 R and
+      1,000 R: −2 and −1, within 0.02.
+    - (b) For one mass at radius ρ, the exterior series Σ ρ^l/r^{l+1} P_l(cos γ) converges for r > ρ and fails for
+      r < ρ. Its terms along γ = 0 are all equal, 1/r, at r = ρ: the corner of the pair (ρ, r), where no order may be
+      dropped.
+    - (c) Kelvin's inversion, f ↦ (ρ/r)·f(ρ²/r), sends the interior series Σ r^l/ρ^{l+1} P_l onto the exterior one,
+      term by term. It is exact in rationals for rational cos γ, l ≤ 30. A source on the sphere r = ρ is its own image
+      (to 1e-12): the flip about the corner.
+    - (d) The number of orders needed to read the body to a relative precision ε at distance r never exceeds
+      ln(ε(1 − R/r))/ln(R/r) − 1. It grows without bound as r falls to R: level of detail by distance, with the corner
+      the place where none can be dropped.
+  - **Killed if:** (a)'s slopes miss; (b) converges inside or fails outside, over 10³ random cases at r/ρ = 0.9 and
+    1.1 with 200 terms; (c) is inexact; or (d)'s bound is broken in any of 10³ cases.
+
+Known already: the Sparrow criterion; photocentre and barycentre orbits of astrometric binaries (the photocentre's orbit
+a(B − β), van de Kamp's form); the multipole expansion and its convergence outside the source's sphere; Kelvin's
+inversion (1847); the centre of mass as the origin that removes the dipole; that a single image sequence cannot tell
+approach from expansion (the size–distance ambiguity of looming). What PAY adds is the reading: the addresses' centre is a
+median, the unresolved payload's a centroid. The payload arrives as its moments, each finer one further down by the
+reading, and the expansion's two forms are the flip about the corner.
+
+## Runs
