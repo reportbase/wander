@@ -157,6 +157,18 @@ Google Fonts load from outside:
   shot); controls a finger can hit on touch screens. Hooks `heard`, `sound`, `playing`, `grip` (a number, or null for the
   fit).
   Not in the flying page.
+- `play-marbles.html`: **a bowl of marbles** (12 Oct 2026, Tom: "a huge collection of marbles, say 500? would this be
+  helpful?", then "both", a physics test and a game). A gameplay sketch, standalone, and MRB part 2's engine (`MARBLES`,
+  driven by `plans/mrb/run3.mjs` through the hook): soft spheres that stay touching, each pair in contact while its
+  readings are past h + v = 1, pushed by the depth past the line, with a tangential spring of its own history capped by
+  friction (Cundall and Strack); containers a floor, square walls, periodic sides or a bowl (a sphere's cap on a table).
+  The game: 500 glass marbles poured into a shallow bowl (Rb 16, 2.5 deep, heaped above the rim); tap where to throw a
+  steelie (mass 6), how hard (slider, or the pull strip); the dashed arc is the throw seen ahead to its first contact;
+  ten throws, marbles landing on the felt count; "chains" draws each contact as bright as its push; sound made in the page
+  (glass, bowl, felt, the loudest few a frame). Softer contacts than the lab's (k 3000 against 10⁵), stepped only while
+  something moves, as many steps a frame as fit (slow motion on a slow device, the same throw). Best per marble count in
+  localStorage. `?n=&seed=&p=&chains=1` (and `?Rb=&depth=&steel=&vmax=`); hook `window.__marbles` (`world`, `game`,
+  `throwAt`, `arcOf`, `settleNow`, `chains`, `sound`, `heard`). Not in the flying page.
 - `flight.html`: **the corner in flight** (10 Oct 2026, Tom: "you know how the transition from earth to the sky in flight
   sim games is awkward? ... i wonder if its because of the corner"; "only the geometry", wireframe). Level flight at height v;
   a ground line h ahead lands v/h below eye level, so the corner (h = v) keeps one screen row at every height. The main view is the grid alone (Tom: "remove the non-gridlines";
@@ -176,7 +188,7 @@ Google Fonts load from outside:
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, pool, the infinite table) and the three on the physics correspondence, each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -530,6 +542,10 @@ In short:
       16 times wider within 10%, and zoomed out the window stops growing.
   18. **mountain.html:** the range's ends at 45°, 18 of 36 fingers on it, the same at a thousand times the scale; mountain
       equals thumb reads 1 mi at 0.5 mi, off by 20, log₂ 20 doublings; one thumb walked recovers d = 10 and V = 20.
+
+  19. **play-marbles.html:** the pour of 500 at rest in the bowl, the bowl and table carrying the weight within 1%; the arc seen
+      ahead ends at its first contact; a throw near the rim knocks marbles out and is heard (glass, bowl, felt); the pull
+      strip throws.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

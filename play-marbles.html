@@ -7,14 +7,78 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap">
     <!--
-    play-marbles.html: five hundred marbles (12 October 2026; Tom: "what about something a little different, a huge
-    collection of marbles, say 500? would this be helpful?", then "both", to a physics test and a game). The engine is
-    MRB part 2's (plans/mrb-plan.md): marbles that touch and stay touching, each pair in contact while its readings are
-    past the line h + v = 1, pushed apart by how far past it, with friction along the surface.
-    Test hook: window.__marbles (MARBLES: World, pour).
+    play-marbles.html: a bowl of five hundred marbles (12 October 2026; Tom: "what about something a little different, a huge
+    collection of marbles, say 500? would this be helpful?", then "both", to a physics test and a game). A gameplay sketch,
+    standalone, one mechanic: throw a steelie into a heaped bowl of glass marbles; ten throws, as many knocked out as you can.
+
+    The engine is MRB part 2's (plans/mrb-plan.md, run 3): marbles that touch and stay touching. Each pair is in contact
+    while its readings are past the line h + v = 1 (each reads the other as v = r_b/d and is told h = r_a/d), pushed apart
+    in proportion to how far past it, with a spring of its own history along the surface, capped by friction. So a heap
+    can stand: every marble at rest is held by its contacts (MRB run 3: about six of them without friction, fewer with).
+    The lab ran the engine with stiff contacts; the game uses softer ones (a spring of 3000 against 10⁵) to keep up,
+    and steps only while something moves, as many steps a frame as fit, so a slow device plays the same throw in slow motion.
+
+    Tap (or click) the bowl where to throw; set how hard (the slider, or pull the strip down and let go); the dashed arc is
+    the throw as far as it can be seen ahead, to its first contact; past that the heap answers all at once. Drag to walk
+    round the bowl, the wheel to come nearer. "chains" draws each contact as a line as bright as the push it carries: the
+    weight runs through the heap in chains. Marbles that land on the felt outside the bowl count. Best kept in this
+    browser only. Sound made here, as play-trick.html's.
+    Links: ?n= (marbles, 20–500), ?seed= (the pour), ?p= (power 0–1), ?chains=1; for trying other bowls ?Rb=&depth=&steel=&vmax=. Test hook: window.__marbles (MARBLES,
+    world, game, throwAt, arcOf, settleNow, chains, sound, heard).
     -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --line: rgba(255,255,255,0.12); --ink: #c8c8d0; --dim: #8a8a96;
+        --bright: #e6e4ee; --gold: #d4a052 }
+    * { box-sizing: border-box }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground); color: var(--ink);
+        font: 13px/1.4 'DM Mono', ui-monospace, monospace; overscroll-behavior: none }
+    canvas { position: fixed; inset: 0; display: block; touch-action: none }
+    #hud { position: fixed; left: 12px; top: 10px; right: 70px; pointer-events: none; color: var(--bright); white-space: pre-wrap;
+        text-shadow: 0 1px 2px #000 }
+    #hud .dim { color: var(--dim) }
+    #hud.done { color: var(--gold) }
+    #bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+        justify-content: center; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); background: rgba(12,12,17,0.88);
+        border-top: 1px solid var(--line) }
+    button { font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line); border-radius: 6px;
+        padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.go { border-color: var(--gold); color: var(--gold) }
+    button:disabled { opacity: 0.4; cursor: default }
+    label { display: flex; gap: 6px; align-items: center; color: var(--dim) }
+    input[type=range] { width: 120px; accent-color: #d4a052 }
+    #pull { position: fixed; right: 12px; top: 28%; height: 34%; width: 46px; border: 1px solid var(--line); border-radius: 23px;
+        background: rgba(12,12,17,0.55); touch-action: none; cursor: ns-resize; overflow: hidden; user-select: none }
+    #pull span { position: absolute; left: 0; right: 0; bottom: 8px; text-align: center; color: var(--dim); font-size: 12px; pointer-events: none }
+    #pullfill { position: absolute; left: 0; right: 0; top: 0; height: 0; background: linear-gradient(#d4a05233, #d4a052aa) }
+    @media (pointer: coarse) {
+        button { padding: 10px 14px; min-height: 44px }
+        input[type=range] { width: 150px; height: 32px }
+        #pull { width: 56px; border-radius: 28px }
+    }
+    @media (max-width: 760px) {
+        html, body { font-size: 11.5px }
+        #bar { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; scrollbar-width: none }
+        #bar::-webkit-scrollbar { display: none }
+        #bar > * { flex: none }
+        #pull { width: 34px; right: 3px; border-radius: 17px }
+        #pull span { font-size: 10px }
+    }
+    </style>
 </head>
 <body>
+<canvas id="cv"></canvas>
+<div id="hud"></div>
+<div id="bar">
+    <button id="throw" class="go">throw</button>
+    <label>how hard <input id="power" type="range" min="1" max="10" step="0.1" value="5.5"></label>
+    <button id="left" aria-label="walk left">◀</button>
+    <button id="right" aria-label="walk right">▶</button>
+    <button id="chains">chains: off</button>
+    <button id="again">new bowl</button>
+    <button id="sound" aria-label="sound on or off">sound: on</button>
+    <button id="full" aria-label="full screen">⛶</button>
+</div>
+<div id="pull" role="slider" aria-label="pull down and let go to throw" aria-valuemin="0" aria-valuemax="1"><div id="pullfill"></div><span>pull</span></div>
 <script>
 (() => {
     // ══ the engine: marbles that touch and stay touching (MRB part 2, plans/mrb-plan.md) ══
@@ -36,7 +100,7 @@
             const N = o.N, kn = o.kn, kt = 2 / 7 * kn, mu = o.mu, muW = o.muW ?? o.mu, muR = o.muR || 0, g = o.g ?? 1, box = o.box;
             const skin = o.skin ?? 0.2, per = box.kind === 'periodic', bowl = box.kind === 'bowl', silo = box.kind === 'silo';
             const L = per ? box.W : 0, W = box.W || 0, NS = bowl ? 2 : 5;
-            const cn = restCoef(o.e), cW = restCoef(o.eW ?? o.e);
+            let cn = restCoef(o.e), cW = restCoef(o.eW ?? o.e);
             const meff1 = 0.5, gam1 = cn * Math.sqrt(meff1 * kn), tc = Math.PI / Math.sqrt(kn / meff1 - SQ(gam1 / (2 * meff1))), dt = o.dt ?? tc / 25;
             const A = () => new Float64Array(N);
             const x = A(), y = A(), z = A(), vx = A(), vy = A(), vz = A(), wx = A(), wy = A(), wz = A();
@@ -142,7 +206,8 @@
                             const ex = rho > 1e-9 ? dx / rho * rim : rim, ey = rho > 1e-9 ? dy / rho * rim : 0, qx = dx - ex, qy = dy - ey, qz = z[i] - depth, q = Math.sqrt(qx * qx + qy * qy + qz * qz);
                             load.bowl += q < R && q > 1e-9 ? surf(i, 0, qx / q, qy / q, qz / q, R - q) : surf(i, 0, 0, 0, 1, -1);
                         }
-                        load.table += surf(i, 1, 0, 0, 1, rho > rim ? R - z[i] : -1);   // past the rim's circle, the table
+                        // the table, outside the bowl's sphere (a marble already below it is not pushed back up through it)
+                        load.table += surf(i, 1, 0, 0, 1, (d >= Rb || rho > rim) && z[i] > 0 ? R - z[i] : -1);
                     }
                     return;
                 }
@@ -193,7 +258,9 @@
                 get t() { return t; }, get steps() { return steps; }, get np() { return np; },
                 get events() { return events; }, set events(v) { events = v; },
                 step, stepN(n) { for (let k = 0; k < n; k++) step(); },
-                touch() { rebuild = true; },   // after moving marbles by hand
+                touch() { rebuild = true; },   // after moving marbles by hand, or turning one on or off
+                restitution(e, eW = e) { cn = restCoef(e); cW = restCoef(eW); },
+                pairs() { return { np, PI, PJ, FN }; },   // the neighbour list and each pair's push (for drawing the chains)
                 maxSpeed(touching = false) {
                     // touching: leave out the marbles that rest on the container alone, touching no other marble
                     let skip = null;
@@ -261,7 +328,294 @@
         return { World, pour, rng, R };
     })();
 
-    window.__marbles = { MARBLES };
+    // ══ the game: a bowl of marbles, a steelie thrown at it, ten throws ══
+    const $ = id => document.getElementById(id), TAU = 2 * Math.PI, D = Math.PI / 180;
+    const Q = new URLSearchParams(location.search);
+    const NM = Math.max(20, Math.min(500, +(Q.get('n') || 500))), THROWS = 10, SEED = +(Q.get('seed') || 1);
+    // the bowl (a sphere's cap, radius 16 diameters, 2.5 deep: heaped, the marbles stand above its rim) on a round table;
+    // glass marbles (restitution 0.85, grip 0.3); a steelie six times a marble's mass, thrown at up to 20√(gσ) (8 m/s)
+    // and a felt table that stops a rolling marble (rolling resistance 0.02). Contacts softer than the lab's (MRB run 3 used
+    // a spring of 10⁵; here 3000, deep enough under a steelie's hit to be seen only as a blink), so the page can keep up.
+    const BOWL = { kind: 'bowl', Rb: +(Q.get('Rb') || 16), depth: +(Q.get('depth') || 2.5) }, TABLE = 26, KN = 3000, E_GLASS = 0.85, STEEL = +(Q.get('steel') || 6), VMAX = +(Q.get('vmax') || 20);
+    const PAL = ['#2f7fd6', '#d23a2f', '#e3b93b', '#2e9b64', '#8a4fc0', '#e0782a', '#29a8b8', '#e8e4dc', '#c4466e', '#5aa02c'];
+    let W = null, game = null;
+
+    function newBowl() {
+        const o = { N: NM + THROWS, kn: KN, e: 0.5, eW: 0.5, mu: 0.3, muW: 0.3, muR: 0.02, skin: 0.3, box: BOWL, seed: SEED, pourWidth: 10, pourFrom: 1 };
+        o.dt = MARBLES.World(o).tc / 12;
+        W = MARBLES.pour(o);
+        const r = MARBLES.rng(SEED * 7 + 3);
+        const col = new Array(W.N), kind = new Array(W.N);
+        for (let i = 0; i < W.N; i++) { col[i] = PAL[Math.floor(r() * PAL.length)]; kind[i] = i < NM ? 'glass' : 'steel'; }
+        for (let i = NM; i < W.N; i++) { W.on[i] = 0; W.m[i] = STEEL; W.x[i] = 0; W.y[i] = 0; W.z[i] = -50; }   // in the hand
+        W.events = [];
+        game = { state: 'pour', col, kind, out: new Uint8Array(W.N), gone: new Uint8Array(W.N), throws: 0, outs: 0, thisThrow: 0, quiet: 0,
+            tThrow: 0, target: null, power: 0.5, log: [], best: bestOf() };
+        $('hud').classList.remove('done');
+    }
+    const bestOf = () => { try { return +(localStorage.getItem('wander.marbles.best.' + NM) || 0); } catch (e) { return 0; } };
+    function saveBest(n) { try { if (n > bestOf()) localStorage.setItem('wander.marbles.best.' + NM, String(n)); } catch (e) { /* kept for this visit only */ } }
+
+    // ── the throw: from the hand (between the eye and the bowl), a lob that passes through the target at the chosen speed ──
+    const hand = () => { const a = cam.az + 28 * D; return [Math.cos(a) * (W.rim + 6), Math.sin(a) * (W.rim + 6), 5]; };   // a little to the right, so the arc shows its curve
+    const speedOf = p => 3 + (VMAX - 3) * p;   // in √(gσ) (0.4 m/s for a 16 mm marble)
+    function launch(P, power) {
+        const H = hand(), dx = P[0] - H[0], dy = P[1] - H[1], dz = P[2] - H[2], Dh = Math.hypot(dx, dy), V = speedOf(power), g = 1;
+        const disc = V ** 4 - g * (g * Dh * Dh + 2 * dz * V * V);
+        const th = disc >= 0 ? Math.atan((V * V - Math.sqrt(disc)) / (g * Dh)) : 45 * D;   // the low arc, or as far as it goes
+        return { H, v: [V * Math.cos(th) * dx / Dh, V * Math.cos(th) * dy / Dh, V * Math.sin(th)], reach: disc >= 0 };
+    }
+    // what can be seen ahead: the arc, to the moment it first reads h + v = 1 with a marble, or meets the bowl or the table
+    function arcOf(P, power) {
+        const { H, v, reach } = launch(P, power), pts = [];
+        for (let k = 0; k <= 600; k++) {
+            const t = k * 0.02, p = [H[0] + v[0] * t, H[1] + v[1] * t, H[2] + v[2] * t - t * t / 2]; pts.push(p);
+            if (p[2] < 0.5) break;
+            let hit = false; for (let i = 0; i < NM && !hit; i++) if (W.on[i] && (p[0] - W.x[i]) ** 2 + (p[1] - W.y[i]) ** 2 + (p[2] - W.z[i]) ** 2 < 1) hit = true;
+            if (hit) break;
+            const d = Math.hypot(p[0], p[1], p[2] - BOWL.Rb); if (d > BOWL.Rb - 0.5 && d < BOWL.Rb + 0.5 && p[2] < BOWL.depth) break;
+        }
+        return { pts, reach };
+    }
+    function throwAt(P, power) {
+        if (game.state !== 'aim' || game.throws >= THROWS) return false;
+        const i = NM + game.throws, { H, v } = launch(P, power);
+        W.x[i] = H[0]; W.y[i] = H[1]; W.z[i] = H[2]; W.vx[i] = v[0]; W.vy[i] = v[1]; W.vz[i] = v[2]; W.wx[i] = 0; W.wy[i] = 0; W.wz[i] = 0;
+        W.on[i] = 1; W.touch(); W.restitution(E_GLASS, 0.5);
+        game.throws++; game.thisThrow = 0; game.state = 'live'; game.tThrow = W.t; game.quiet = 0; W.events.length = 0;
+        audio(); SOUND.toss(speedOf(power));
+        return true;
+    }
+
+    // ── stepping: only while something moves; as many steps a frame as fit in its budget, so a slow device plays the same
+    //    throw in slow motion (the steps are the same whatever the frame rate) ──
+    function advance(budgetMs, gameTime) {
+        if (game.state === 'aim' || game.state === 'done') return;
+        const t0 = performance.now(), want = W.t + gameTime;
+        while (W.t < want && performance.now() - t0 < budgetMs) {
+            for (let k = 0; k < 10; k++) W.step();
+            for (let i = 0; i < W.N; i++) {
+                if (!W.on[i]) continue;
+                const rho = Math.hypot(W.x[i], W.y[i]);
+                if (rho > TABLE || W.z[i] < -3) { W.on[i] = 0; game.gone[i] = 1; W.touch(); }   // off the table's edge
+                if (!game.out[i] && rho > W.rim + 0.3 && W.z[i] < 1.5) {
+                    game.out[i] = 1;
+                    if (game.state === 'live' && game.kind[i] === 'glass') { game.outs++; game.thisThrow++; }
+                }
+            }
+        }
+        // quiet: nothing faster than 0.03 for a whole unit of time (40 ms of the marbles' own), or 40 units since the throw
+        if (W.maxSpeed() < 0.03) game.quiet += gameTime; else game.quiet = 0;
+        const since = W.t - (game.state === 'pour' ? 0 : game.tThrow);
+        if (game.quiet > 1 || since > 40) {
+            if (game.state === 'pour') {
+                // marbles spilled by the pour are put away: the game starts with the bowl as it stands
+                for (let i = 0; i < NM; i++) if (game.out[i]) { W.on[i] = 0; game.gone[i] = 1; }
+                W.touch(); W.restitution(E_GLASS, 0.5);
+            } else game.log.push(game.thisThrow);
+            game.state = game.throws >= THROWS ? 'done' : 'aim';
+            if (game.state === 'done') { saveBest(game.outs); $('hud').classList.add('done'); }
+            dirty = true;
+        }
+    }
+
+    // ══ sound: made here, nothing loaded (as play-trick.html). Glass on glass a high tick, on the bowl a ringing tone, on the
+    //    felt a dull knock; each as loud as its closing speed, at most a few a frame (five hundred marbles can touch at once) ══
+    let soundOn = true; try { soundOn = localStorage.getItem('wander.marbles.sound') !== 'off'; } catch (e) { /* on */ }
+    let actx = null, noise = null; const heard = { glass: 0, bowl: 0, felt: 0, toss: 0 };
+    function audio() {
+        if (!soundOn) return null;
+        try {
+            if (!actx) { const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return null; actx = new AC();
+                noise = actx.createBuffer(1, Math.round(actx.sampleRate * 0.4), actx.sampleRate); const d = noise.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; }
+            if (actx.state === 'suspended') actx.resume();
+        } catch (e) { actx = null; }
+        return actx;
+    }
+    function knock(gain, { f, q, nd, tone, td, mix }, delay = 0) {
+        const a = audio(); if (!a || !(gain > 0.003)) return;
+        const t0 = a.currentTime + 0.005 + delay, out = a.createGain(); out.gain.value = Math.min(1, gain); out.connect(a.destination);
+        const src = a.createBufferSource(), bp = a.createBiquadFilter(), ng = a.createGain(); src.buffer = noise;
+        bp.type = 'bandpass'; bp.frequency.value = f; bp.Q.value = q;
+        ng.gain.setValueAtTime(1, t0); ng.gain.exponentialRampToValueAtTime(1e-4, t0 + nd);
+        src.connect(bp); bp.connect(ng); ng.connect(out); src.start(t0, Math.random() * 0.2); src.stop(t0 + nd + 0.02);
+        if (tone) { const o = a.createOscillator(), og = a.createGain(); o.frequency.value = tone * (0.94 + 0.12 * Math.random());
+            og.gain.setValueAtTime(mix, t0); og.gain.exponentialRampToValueAtTime(1e-4, t0 + td); o.connect(og); og.connect(out); o.start(t0); o.stop(t0 + td + 0.02); }
+    }
+    const loud = (w, full) => 0.8 * Math.pow(Math.min(1, w / full), 0.8);
+    const SOUND = {
+        glass: w => { heard.glass++; knock(loud(w, 6), { f: 5200, q: 4, nd: 0.015, tone: 3100, td: 0.05, mix: 0.3 }); },
+        bowl: w => { heard.bowl++; knock(0.8 * loud(w, 6), { f: 1800, q: 2, nd: 0.02, tone: 880, td: 0.25, mix: 0.25 }); },
+        felt: w => { heard.felt++; knock(0.6 * loud(w, 6), { f: 380, q: 0.8, nd: 0.05, tone: 140, td: 0.08, mix: 0.4 }); },
+        toss: w => { heard.toss++; knock(0.15 * loud(w, 12), { f: 700, q: 0.6, nd: 0.08 }); },
+    };
+    function soundsNow() {
+        const ev = W.events; if (!ev.length) return;
+        if (soundOn && actx) {
+            const loudest = ev.filter(e => e.w > 0.25).sort((a, b) => b.w - a.w).slice(0, 6);
+            for (const e of loudest) (e.j >= 0 ? SOUND.glass : e.j === -1 ? SOUND.bowl : SOUND.felt)(e.w);
+        } else for (const e of ev) if (e.w > 0.25) heard[e.j >= 0 ? 'glass' : e.j === -1 ? 'bowl' : 'felt']++;
+        ev.length = 0;
+    }
+
+    // ══ drawing: a camera round the bowl; each marble a glass sprite, nearest drawn last ══
+    const cv = $('cv'), ctx = cv.getContext('2d'); let view = null, dirty = true;
+    const cam = { az: -90 * D, el: 38 * D, dist: 34 };
+    function layoutView() {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), Wd = window.innerWidth, Hd = window.innerHeight, bar = $('bar').offsetHeight;
+        cv.style.width = Wd + 'px'; cv.style.height = Hd + 'px';
+        if (cv.width !== Math.round(Wd * dpr) || cv.height !== Math.round(Hd * dpr)) { cv.width = Math.round(Wd * dpr); cv.height = Math.round(Hd * dpr); }
+        const ah = Hd - bar, F = Math.min(Wd * 1.7, ah * 1.25);   // a tall screen: the bowl as wide as the screen
+        view = { dpr, Wd, Hd, cx: Wd / 2, cy: ah * 0.52, F };
+        dirty = true;
+    }
+    function basis() {
+        const T = [0, 0, 1.2], c = Math.cos(cam.el), C = [T[0] + cam.dist * c * Math.cos(cam.az), T[1] + cam.dist * c * Math.sin(cam.az), T[2] + cam.dist * Math.sin(cam.el)];
+        const f = [T[0] - C[0], T[1] - C[1], T[2] - C[2]], fl = Math.hypot(...f); f[0] /= fl; f[1] /= fl; f[2] /= fl;
+        const r = [f[1], -f[0], 0], rl = Math.hypot(...r); r[0] /= rl; r[1] /= rl;
+        const u = [r[1] * f[2] - r[2] * f[1], r[2] * f[0] - r[0] * f[2], r[0] * f[1] - r[1] * f[0]];
+        return { C, f, r, u };
+    }
+    let B = null;
+    function project(p) {
+        const q = [p[0] - B.C[0], p[1] - B.C[1], p[2] - B.C[2]], zc = q[0] * B.f[0] + q[1] * B.f[1] + q[2] * B.f[2];
+        return [view.cx + view.F * (q[0] * B.r[0] + q[1] * B.r[1] + q[2] * B.r[2]) / zc, view.cy - view.F * (q[0] * B.u[0] + q[1] * B.u[1] + q[2] * B.u[2]) / zc, zc];
+    }
+    // the pointer's ray, and what it meets first: a marble, the bowl from inside, or the table
+    function pick(sx, sy) {
+        const dx = (sx - view.cx) / view.F, dy = -(sy - view.cy) / view.F;
+        const d = [B.f[0] + dx * B.r[0] + dy * B.u[0], B.f[1] + dx * B.r[1] + dy * B.u[1], B.f[2] + dx * B.r[2] + dy * B.u[2]], l = Math.hypot(...d);
+        d[0] /= l; d[1] /= l; d[2] /= l;
+        let best = Infinity;
+        const sphere = (c, rad, inside) => { const o = [B.C[0] - c[0], B.C[1] - c[1], B.C[2] - c[2]], b = o[0] * d[0] + o[1] * d[1] + o[2] * d[2], cc = o[0] ** 2 + o[1] ** 2 + o[2] ** 2 - rad * rad, disc = b * b - cc;
+            if (disc < 0) return Infinity; const s = Math.sqrt(disc); return inside ? -b + s : (-b - s > 0 ? -b - s : Infinity); };
+        for (let i = 0; i < W.N; i++) if (W.on[i]) best = Math.min(best, sphere([W.x[i], W.y[i], W.z[i]], 0.5, false));
+        const tb = sphere([0, 0, BOWL.Rb], BOWL.Rb, true); if (tb < best && B.C[2] + d[2] * tb < BOWL.depth) best = tb;
+        if (d[2] < 0) { const tt = -B.C[2] / d[2], px = B.C[0] + d[0] * tt, py = B.C[1] + d[1] * tt; if (tt < best && Math.hypot(px, py) > W.rim && Math.hypot(px, py) < TABLE) best = tt; }
+        if (!isFinite(best)) return null;
+        return [B.C[0] + d[0] * best, B.C[1] + d[1] * best, B.C[2] + d[2] * best];
+    }
+    // the sprites: a glass marble lit from the upper left, in three shades (lower in the bowl, darker)
+    const SPR = new Map();
+    function sprite(colr, shade) {
+        const key = colr + shade; if (SPR.has(key)) return SPR.get(key);
+        const s = 64, c = document.createElement('canvas'); c.width = c.height = s; const g = c.getContext('2d');
+        const mix = (h, k) => { const n = parseInt(h.slice(1), 16), r = n >> 16, gg = n >> 8 & 255, b = n & 255; return `rgb(${Math.round(r * k)},${Math.round(gg * k)},${Math.round(b * k)})`; };
+        const k = [0.55, 0.78, 1][shade];
+        const gr = g.createRadialGradient(s * 0.38, s * 0.34, s * 0.04, s / 2, s / 2, s / 2);
+        if (colr === 'steel') { gr.addColorStop(0, '#ffffff'); gr.addColorStop(0.25, mix('#c9cdd6', k)); gr.addColorStop(0.7, mix('#6d7280', k)); gr.addColorStop(1, mix('#2a2d35', k)); }
+        else { gr.addColorStop(0, '#ffffff'); gr.addColorStop(0.18, mix(colr, Math.min(1.25, k * 1.25))); gr.addColorStop(0.75, mix(colr, k * 0.8)); gr.addColorStop(1, mix(colr, k * 0.35)); }
+        g.fillStyle = gr; g.beginPath(); g.arc(s / 2, s / 2, s / 2 - 0.5, 0, TAU); g.fill();
+        if (colr !== 'steel') { g.strokeStyle = 'rgba(255,255,255,0.35)'; g.lineWidth = s * 0.05; g.beginPath(); g.arc(s * 0.55, s * 0.58, s * 0.24, 0.4, 2.2); g.stroke(); }
+        SPR.set(key, c); return c;
+    }
+    let showChains = Q.get('chains') === '1';
+    function draw() {
+        const { dpr, Wd, Hd } = view; B = basis();
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.fillStyle = '#0c0c11'; ctx.fillRect(0, 0, Wd, Hd);
+        const ring = (rad, z, n = 72) => { const pts = []; for (let k = 0; k <= n; k++) { const a = k / n * TAU; pts.push(project([rad * Math.cos(a), rad * Math.sin(a), z])); } return pts; };
+        const path = pts => { ctx.beginPath(); pts.forEach(([x, y], k) => k ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); };
+        // the table (felt), the bowl's inside, its rim
+        path(ring(TABLE, 0)); ctx.fillStyle = '#16302a'; ctx.fill();
+        path(ring(W.rim, BOWL.depth)); ctx.fillStyle = '#d8d2c4'; ctx.fill();
+        for (const z of [0.4, 1.2, 2.3]) { const rr = Math.sqrt(BOWL.Rb ** 2 - (BOWL.Rb - z) ** 2); path(ring(rr, z)); ctx.strokeStyle = 'rgba(0,0,0,0.12)'; ctx.lineWidth = 1; ctx.stroke(); }
+        // the marbles, far first
+        const idx = [], P = new Array(W.N);
+        for (let i = 0; i < W.N; i++) { if (game.gone[i] || (!W.on[i] && i >= NM)) continue; P[i] = project([W.x[i], W.y[i], W.z[i]]); if (P[i][2] > 0.5) idx.push(i); }
+        idx.sort((a, b) => P[b][2] - P[a][2]);
+        ctx.globalAlpha = showChains ? 0.22 : 1;
+        for (const i of idx) {
+            const [sx, sy, zc] = P[i], r = view.F * 0.5 / zc, shade = W.z[i] < 1.2 ? 0 : W.z[i] < 2.6 ? 1 : 2;
+            ctx.drawImage(sprite(game.kind[i] === 'steel' ? 'steel' : game.col[i], shade), sx - r, sy - r, 2 * r, 2 * r);
+        }
+        ctx.globalAlpha = 1;
+        // the chains: each contact a line between the two centres, as bright and wide as its push over the mean
+        if (showChains) {
+            const { np, PI, PJ, FN } = W.pairs(); let s = 0, n = 0;
+            for (let k = 0; k < np; k++) if (FN[k] > 1e-200) { s += FN[k]; n++; }
+            const mean = n ? s / n : 1; ctx.lineCap = 'round';
+            for (let k = 0; k < np; k++) {
+                const f = FN[k] / mean; if (!(f > 0.6) || !P[PI[k]] || !P[PJ[k]]) continue;
+                const a = P[PI[k]], b = P[PJ[k]];
+                ctx.strokeStyle = `rgba(255,${Math.round(200 - 60 * Math.min(1, f / 4))},120,${Math.min(1, 0.25 + 0.2 * f)})`; ctx.lineWidth = Math.min(6, 0.6 + 0.9 * f) * view.F / 40 / ((a[2] + b[2]) / 2) * 1.2;
+                ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+            }
+        }
+        // the aim: the arc to its first contact (all that can be seen ahead), the target
+        if (game.state === 'aim' && game.target) {
+            const { pts, reach } = arcOf(game.target, game.power), q = pts.map(project).filter(p => p[2] > 0.5);
+            ctx.setLineDash([5, 6]); ctx.strokeStyle = reach ? 'rgba(212,160,82,0.9)' : 'rgba(200,90,80,0.9)'; ctx.lineWidth = 2; path(q); ctx.stroke(); ctx.setLineDash([]);
+            const [tx, ty, tz] = project(game.target); ctx.strokeStyle = '#d4a052'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(tx, ty, Math.max(6, view.F * 0.6 / tz), 0, TAU); ctx.stroke();
+            const h = project(hand()); ctx.drawImage(sprite('steel', 2), h[0] - view.F * 0.5 / h[2], h[1] - view.F * 0.5 / h[2], view.F / h[2], view.F / h[2]);
+        }
+        hud();
+    }
+    function hud() {
+        const left = THROWS - game.throws, inBowl = (() => { let n = 0; for (let i = 0; i < NM; i++) if (W.on[i] && !game.out[i]) n++; return n; })();
+        const head = game.state === 'pour' ? 'pouring the marbles…'
+            : game.state === 'done' ? `done: ${game.outs} knocked out in ${THROWS} throws` + (game.best ? `  (best ${Math.max(game.best, game.outs)})` : '')
+            : game.state === 'live' ? `throw ${game.throws}: ${game.thisThrow} out…`
+            : `throw ${game.throws + 1} of ${THROWS}` + (game.target ? '' : ': tap the bowl where to throw');
+        $('hud').innerHTML = `${head}\n<span class="dim">${inBowl} in the bowl · out ${game.outs}${game.log.length ? ' (' + game.log.join(' ') + ')' : ''}${game.best && game.state !== 'done' ? ' · best ' + game.best : ''}</span>`;
+        $('throw').disabled = game.state !== 'aim' || !game.target;
+    }
+
+    // ══ controls ══
+    let drag = null;
+    cv.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY, az: cam.az, el: cam.el, moved: false }; cv.setPointerCapture(e.pointerId); });
+    cv.addEventListener('pointermove', e => {
+        if (!drag) return; const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+        if (Math.hypot(dx, dy) > 6) drag.moved = true;
+        if (drag.moved) { cam.az = drag.az - dx * 0.008; cam.el = Math.max(12 * D, Math.min(80 * D, drag.el + dy * 0.006)); dirty = true; }
+    });
+    cv.addEventListener('pointerup', e => {
+        if (drag && !drag.moved && (game.state === 'aim')) { B = basis(); const p = pick(e.clientX, e.clientY); if (p) { game.target = p; dirty = true; } }
+        drag = null;
+    });
+    cv.addEventListener('wheel', e => { e.preventDefault(); cam.dist = Math.max(16, Math.min(70, cam.dist * Math.exp(e.deltaY * 0.001))); dirty = true; }, { passive: false });
+    $('throw').onclick = () => { audio(); if (game.target) throwAt(game.target, game.power); };
+    $('power').oninput = e => { game.power = (+e.target.value - 1) / 9; dirty = true; };
+    $('left').onclick = () => { cam.az -= 15 * D; dirty = true; };
+    $('right').onclick = () => { cam.az += 15 * D; dirty = true; };
+    $('chains').onclick = () => { showChains = !showChains; $('chains').textContent = 'chains: ' + (showChains ? 'on' : 'off'); dirty = true; };
+    $('again').onclick = () => { newBowl(); dirty = true; };
+    $('sound').onclick = () => { soundOn = !soundOn; try { localStorage.setItem('wander.marbles.sound', soundOn ? 'on' : 'off'); } catch (e) { /* this visit */ } $('sound').textContent = 'sound: ' + (soundOn ? 'on' : 'off'); if (soundOn) audio(); };
+    $('full').onclick = () => { const d = document.documentElement; if (!document.fullscreenElement && d.requestFullscreen) d.requestFullscreen().catch(() => {}); else if (document.exitFullscreen) document.exitFullscreen().catch(() => {}); };
+    window.addEventListener('keydown', e => {
+        if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); audio(); if (game.target) throwAt(game.target, game.power); }
+        else if (e.key === 'ArrowLeft') { cam.az -= 5 * D; dirty = true; } else if (e.key === 'ArrowRight') { cam.az += 5 * D; dirty = true; }
+        else if (e.key === 'c') $('chains').onclick();
+    });
+    // pull and let go (as play-trick.html): drag down the strip, as hard as far, and let go to throw at the target
+    { const pull = $('pull'), fill = $('pullfill'); let p0 = null;
+      const frac = e => { const r = pull.getBoundingClientRect(); return Math.max(0, Math.min(1, (e.clientY - r.top) / r.height)); };
+      pull.addEventListener('pointerdown', e => { if (game.state !== 'aim' || !game.target) return; audio(); p0 = game.power; pull.setPointerCapture(e.pointerId); const f = frac(e); fill.style.height = f * 100 + '%'; });
+      pull.addEventListener('pointermove', e => { if (p0 == null) return; const f = frac(e); fill.style.height = f * 100 + '%'; game.power = f; $('power').value = 1 + 9 * f; dirty = true; });
+      pull.addEventListener('pointerup', e => { if (p0 == null) return; const f = frac(e); fill.style.height = '0'; if (f > 0.05) { game.power = f; throwAt(game.target, f); } else game.power = p0; p0 = null; dirty = true; });
+    }
+
+    let lastT = performance.now();
+    function frame(now) {
+        const dt = Math.min(0.05, (now - lastT) / 1000); lastT = now;
+        if (game.state === 'pour' || game.state === 'live') { advance(12, dt / 0.04); soundsNow(); dirty = true; }
+        if (dirty) { draw(); dirty = false; }
+        requestAnimationFrame(frame);
+    }
+    window.addEventListener('resize', layoutView);
+    newBowl(); layoutView();
+    $('chains').textContent = 'chains: ' + (showChains ? 'on' : 'off'); $('sound').textContent = 'sound: ' + (soundOn ? 'on' : 'off');
+    if (Q.get('p')) { game.power = Math.max(0, Math.min(1, +Q.get('p'))); $('power').value = 1 + 9 * game.power; }
+    requestAnimationFrame(frame);
+
+    // test hook: the engine, and the game driven without the screen (step until quiet, throw at a point)
+    window.__marbles = {
+        MARBLES, get world() { return W; }, get game() { return game; }, heard, throwAt, arcOf, launch, NM, THROWS,
+        // run the bowl until it is quiet, as the page would, however long the steps take
+        settleNow(maxUnits = 200) { const t0 = W.t; while ((game.state === 'pour' || game.state === 'live') && W.t - t0 < maxUnits) { advance(1e9, 0.5); soundsNow(); } dirty = true; return game.state; },
+        chains(on) { showChains = on; dirty = true; },
+        sound(on) { if (on != null) { soundOn = on; } return soundOn; },
+    };
 })();
 </script>
 </body>
