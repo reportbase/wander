@@ -109,6 +109,9 @@ as if a single observation held it. Section 3 sets out the readers in full.
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
   outside fixes the scale, and a fact shared between two readers supplies exactly one ratio. The best breadth to assign
   the other party is the median of what the reader knows of it (§9).
+- A unit is an agreement between readers, needed only to pass amounts between them. The number line is such a unit:
+  a ruler that favours no reader's unit must be a power or a logarithm, with no corner, and the number line is the
+  power that keeps proportion on both sides of 1 (§9).
 - What reaches a reader of a payload depends on what it holds and what it resolves (§7.6, §9).
   - One stream fixes the course of a relation, not its parties: motion comes before the object.
   - Readings taken at once against one denominator give payloads relative to each other.
@@ -287,7 +290,8 @@ Past 1, every number lands closer to the circle's top and the line's end, and th
 last stretch of both without arriving: the horizon, the same on both layouts. One construction gives all five. 1 and 2
 are the quarter circle, held whole; 3 and 4 live on the unit line, and the two situated readers are the two ways of
 comparing the layouts, line over circle and circle over line, with 1 between them. The unit line is the address space,
-and the number line is what is addressed.
+and the number line is what is addressed. Why the number line itself, unlike any reader's lay, has no corner is taken
+up in §9.
 
 ### 3.4 Three vantages, and the true breadth
 
@@ -1186,6 +1190,70 @@ log₂(V*/cH) levels, and no address moves against another. A lay that keeps (S)
 the levels keep their widths. The structure was never wrong, only where it sat, and one amount from outside slides it
 into place.
 
+**What a unit is, and why readers share one.** Proposition 8(a) says more than that the scale is hidden. A reader whose
+world and own breadth are scaled together receives the same readings, so no reading contains a unit and none needs
+one. A reader alone has a unit anyway: its own breadth. It reads the mountain in thumbs, and since it compares its
+readings only with each other, the thumb serves. Nothing it does would change if its thumb were twice as long and the
+world with it.
+
+A unit is needed when amounts pass between readers. Two readers, each counting in its own breadth, give one amount x as
+x/H_A and x/H_B, and the factor between them, H_A/H_B, is read by neither alone. A shared fact supplies exactly that
+factor and nothing more (Proposition 7), and one amount supplied from outside fixes every amount the readings link to it
+(Proposition 8(b)). That is what a unit is: something both readers can read, agreed to count as 1. Any such thing
+serves: a body, a stick, one reader's thumb made public. A reader then sends an amount as a count of the agreed unit,
+x = r_A·H_A, and the other takes it back into its own breadth, r_B = x/H_B. The round trip is one factor,
+r_B = r_A·(H_A/H_B), and where the two breadths are equal the reading passes unchanged. The foot, the cubit and the
+metre each began as one body or one object made into a public notch.
+
+So three numbers are easily confused, and the geometry needs none of them:
+- the reader's own breadth H, which it chooses for itself and which only moves what sits at its corner (a zoom, §8);
+- the breadth it assigns the other party, V = cH, the one arbitrary number in the price of a geometry, best set at the
+  median of what it knows (Proposition 13);
+- the shared unit, which is neither a reading nor a guess but an agreement between readers, needed only for talking.
+
+**Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
+and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
+change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the
+ruler's own scale and origin, L is a power x^p with p ≠ 0, or the logarithm ln x. If the room between places may not be
+rescaled, a ≡ 1, only the logarithm remains.
+
+*Proof.* Applying the condition twice, L(λμx) = a(λ)a(μ)·L(x) + a(λ)b(μ) + b(λ), and the same with λ and μ exchanged.
+Since L is not constant, a(λμ) = a(λ)a(μ) and b(λ)·(a(μ) − 1) = b(μ)·(a(λ) − 1). If a ≡ 1, then L(λx) − L(x) = b(λ)
+depends on λ alone, and as in Proposition 4, L = k·ln x + m. Otherwise choose λ₀ with a(λ₀) ≠ 1 and set
+C = b(λ₀)/(a(λ₀) − 1). Then b(λ) = C·(a(λ) − 1) for every λ, so (L + C)(λx) = a(λ)·(L + C)(x). At x = 1 this reads
+(L + C)(λ) = a(λ)·(L + C)(1), and (L + C)(1) ≠ 0 because L is not constant. So a is continuous and multiplicative,
+a(λ) = λ^p with p ≠ 0, and L = K·x^p − C. ∎
+
+This is classical: it is the form Luce (1959) found for any law that carries a ratio scale to a ratio or interval scale.
+Neither kind of ruler has a corner, since no amount is laid differently from any other. The reader's own lay is
+neither. Proportional up to its corner and logarithmic past it (§6), it favours one amount, the one at its joint, and
+that amount is its own: its breadth H, under V = H.
+
+**The number line is a shared unit.** The ordinary number line is the clearest example of a unit agreed between readers.
+It is one notch agreed to stand for 1, built out by counting and dividing, and its form is the form a shared ruler
+must have.
+- *It has no corner.* Every stretch is laid like every other: 0.5 to 1 looks exactly like 1 to 1.5, and nothing turns
+  over at 1. A corner would sit at some reader's unit and favour that reader, and by Proposition 14 a ruler that
+  favours none has none. The corner belongs to the reader, where its unit falls on the line, not to the line.
+- *It is proportional on both sides of 1.* It is the power p = 1, the near field's plain proportion carried past the
+  corner. A shared ruler can do this because its notches are lengths, and everyone who uses it can relabel them together
+  when the unit changes. A reader's addresses are a count, which cannot be relabelled, and past its corner (S) leaves it
+  only the logarithm (Proposition 4). Where the range is wide, people share the other ruler Proposition 14 allows, one
+  whose notches are levels: decibels, stellar magnitudes, pH. Scientific notation, 3.2 × 10⁶, writes both at once, a
+  count of levels with a plain ruler inside one.
+- *It has the same grain everywhere.* It cannot know who will read it or how finely, so it is notched alike throughout,
+  whether or not a given reader needs the detail there.
+- *It is not a reader.* It reads nothing and has no standpoint, so it has no situation. A reading passes through it,
+  from one reader's relations to another's, and nobody reads on it.
+- *Its two infinities are its readers'.* Outward without end (1, 2, 4, …) and inward without end (1, ½, ¼, …) are
+  exchanged by the flip. They are the far and near sides of whatever unit a reader holds against the line (§3.3, §4),
+  not two separate properties of the line.
+
+So the number line is not the structure of observation, and it need not be. It is the interface readers agree on so
+that amounts can pass between them, made after the geometry and the readings, and its plainness, uniform and without a
+corner, is what lets it favour no one. In order: the world, a reading, a relation, an address and then, between
+readers, the number line.
+
 ## 10. A worked example: a mountain range
 
 A reader looks at a mountain range, face on, from opposite its middle. From nowhere we know three amounts: the reader's
@@ -1338,6 +1406,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; parallel, outside; serial, inside |
 | ℓ | an amount | the reach of what arrives along a ray (Theorem 6); it cancels from every reading |
 | ε | a step | the reader's step, relative to what it reads (§8) |
+| the shared unit | an agreement | something two readers can both read, agreed to count as 1 (§9); not a reading, and no part of the geometry |
 | level | geometry | home to the corner (the first); one doubling of v/h past it |
 | in-place lay | geometry | position by length: v/h inside the corner, 2 − h/v past it |
 | logarithmic lay | geometry | position by number of addresses: v/h inside the corner, 1 + ln(v/h) past it |
@@ -1378,6 +1447,8 @@ Knight, F. B. (1976). A characterization of the Cauchy type. *Proceedings of the
 
 Lamping, J., Rao, R. and Pirolli, P. (1995). A focus+context technique based on hyperbolic geometry for visualizing
 large hierarchies. *Proceedings of CHI '95*, 401–408.
+
+Luce, R. D. (1959). On the possible psychophysical laws. *Psychological Review* 66(2), 81–95.
 
 McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *The Annals of Statistics* 24, 787–808.
 

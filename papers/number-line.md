@@ -65,6 +65,10 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
 - 9 October, sixty-third: the case kept, after SPN: H and V the breadths, h and v the unit relations, d a distance; the background's "two breadths" corrected; the corner found, not approached; one grain across the resolution limit, the corner of its own pair (Tom: "update those two papers").
 - 9 October, sixty-fourth: the situated reader's address space is situation 1's, with one facing: the fisheye (Tom).
 - 9 October, sixty-fifth: the fisheye is the sweep in one facing; V = H only calibrates it (after a review).
+- 12 October, eighty-first: §1, why the ruler has no corner made exact in `observation-from-somewhere.md` §9
+  (Proposition 14, Luce 1959): a ruler that favours no unit is a power or a logarithm; the number line is the power 1,
+  the level rulers the logarithm, and a reader's own lay neither (Tom: "the number-line.m paper adds the number line
+  itself is an example of this, explain why").
 - 11 October, eightieth: a candidate single principle, after an outside evaluation: equal addresses for whatever the reader cannot tell apart; proportional inside the unit, logarithmic past it, meeting at the unit (a reading; SPN Proposition 1.2).
 - 11 October, seventy-ninth: situated geometry is the Cauchy, unsituated the circle; the even turn is uniformity itself, behind both (Tom; SPN Proposition 1.2 (7), §14).
 - 11 October, seventy-eighth: the Cauchy and the fisheye derived in v and h: the bar swept in even steps of its turn moves v/h by 1 + (v/h)² a step; counting gives 1/(1 + (v/h)²), drawing gives the fisheye (Tom; SPN Proposition 1.2).
@@ -319,7 +323,9 @@ H differs (*corrected 9 October*: was "h"; the fill reading v/h is scale-free, a
 each reader's H, that differ). To share a reading they need something neither of them owns. The ruler is that: an agreement on what one
 notch stands for, built out from there.
 - **No corner, because it must be neutral.** A built-in corner would be one reader's unit and would favour that reader.
-  A uniform stick favours none.
+  A uniform stick favours none. (*12 October*: made exact in `observation-from-somewhere.md` §9, Proposition 14, after
+  Luce 1959: a ruler that a change of unit alters only in its own scale and origin is a power or a logarithm, and
+  neither has a corner; the number line is the power 1, the level rulers of the table below the logarithm.)
 - **Depth everywhere, because it cannot know who will read it.** It must serve whatever detail any reader needs. That is
   the price of being shared, and it changes how §4's comparison should be read: the ordinary line's spending on empty
   levels is not a flaw: it is what neutrality takes.
@@ -1212,6 +1218,7 @@ switch from serial to parallel happens per direction, near in one and far in ano
 - Chan and Mazzocco (2024), the number-line data of NLE run 1 (osf.io/kqe2w; `plans/nle-plan.md`).
 - Dehaene, S. (2003). The neural basis of the Weber–Fechner law: a logarithmic mental number line. *Trends in Cognitive
   Sciences* 7.
+- Luce, R. D. (1959). On the possible psychophysical laws. *Psychological Review* 66.
 - Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation: evidence for multiple representations
   of numerical quantity. *Psychological Science* 14.
 - Siegler, R. S., Thompson, C. A. and Schneider, M. (2011). An integrated theory of whole number and fractions
