@@ -353,6 +353,17 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   the reading: two centres kept apart, the median of the addresses and the centroid of the payload; motion before the
   object; and the multipole expansion as level of detail by distance with the corner as its seam.
 
+  **Prior work** (Tom: "we have explore this in the draw.html repository in the labs"). Draw's labs had shown the shape
+  side first, rerun here at draw `ea07709`:
+  - one serial reader's readings carry the turn and not the size: Cauchy for every figure, and the census returns the
+    same unit circle (`rcc`);
+  - three standpoints give the figure up to its size, and one agreed length gives the size, to 2e-15 (`udv`);
+  - the median needs every arrival held at once, so a strictly serial reader marks against a held arrival instead: one
+    extra slot, grain-free on 58 of 58 shapes and scale-free on 88% (`ref`).
+
+  So the median is the parallel reader's centre of the addresses. Holding (serial or parallel) and resolving (above or
+  below the step) are two different axes.
+
 ### 2.3 In Wander's world (illustration, not evidence)
 
 These labs ran inside Wander's world before 10 October. They show what a reader could recover; they do not show that

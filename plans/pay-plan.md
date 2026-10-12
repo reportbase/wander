@@ -125,3 +125,46 @@ prediction's content holds; the index in it was wrong.
   flip about it.
 - **The two centres of R210.** The addresses' centre is a median, an order statistic. The unresolved payload's is a
   centroid, a sum. Fingers order; rings add.
+
+### Prior work in the drawing tool (found after run 1)
+
+Tom, 11 October: "we have explore this in the draw.html repository in the labs". Four of draw's labs had already run
+this ground on the shapes library. They were run again here at draw `ea07709` (9 October), headless, and their reports
+read back.
+- **`rcc`, the recovered circle.** One reader, one arrival at a time: dividing cancels the size, so the readings carry
+  the turn and nothing else. They are Cauchy for every figure, the quartiles at ±1 to 0.000, though the figures' radii
+  swing 5.7×. The census returns the same unit circle from all 4 of 4: "the radius that told them apart was never in the
+  readings."
+- **`udv`, undoing the division.**
+  - One reader with the census gets the unit circle, missing the figures by up to 140% of their radius.
+  - Three readers who know only the shape of their triangle get each figure exactly, up to its size (6 of 6, 2e-15).
+  - One agreed length between two of them gives the figure itself (6 of 6, 2e-15).
+  - "Another standpoint brings back the shape, one length the size."
+- **`ref`, reference tests: where a serial reader gets the equality it marks against.** Three references were tried:
+  - the median of the readings, which "requires every arrival to be held at once, and is therefore a parallel reference
+    smuggled into a serial account": scale 100%, grain 100%, 12.0 marks;
+  - the first arrival held and never updated (one slot): scale 88%, grain 100%, 10.9 marks;
+  - the reader's own held value (nothing extra): scale 76%, grain 3%, 38.4 marks.
+
+  "So the grain-free mark costs exactly one extra slot." The scale failures are 15 shapes that touch their reference
+  without crossing it.
+- **`rec`, record tests.** A serial reader's record (a tick per level crossed and a mark at each crossing of its
+  reference) behaves as follows:
+  - it is unchanged by rescaling (58 of 58);
+  - it marks the same arrivals at every grain (58 of 58);
+  - it reconstructs each address within half a level (58 of 58);
+  - two grains recover their ratio from tick counts only asymptotically, 2.7% fine and 37% coarse;
+  - a lost tick drifts the count until the next mark ends the drift: "the count leans on its history and the mark does
+    not."
+
+**What this changes in PAY's reading and R210.**
+- **P1 and P2 are the motion case of what `rcc` and `udv` showed for shape.** `rcc` and `udv` are the stronger
+  results: three standpoints give the whole figure up to its size, and one agreed length gives the size.
+- **R210's "the median of the addresses" is a parallel quantity.** `ref` shows the median needs every arrival held at
+  once. A strictly serial reader does not have it. What it can have is a held arrival, one extra slot, which does what
+  the median does for grain (100%) though not always for scale (88%, where the shape touches its reference).
+- **So the two axes in Tom's question are both real, and they are different.**
+  - *Holding*, serial against parallel: whether the reader has the whole stream at once. It decides the address
+    centre: the median (parallel) or a held arrival (serial, one slot).
+  - *Resolving*, above or below the step: whether two payloads sit at least one step apart. It decides whether the
+    payload arrives as components or only as its centroid.

@@ -413,8 +413,13 @@ Google Fonts load from outside:
   stream cannot tell approach from growth; a same-depth neighbour read at once separates them (payloads relative, never
   scale); below the step the payload arrives as its moments, the photocentre first (a binary's a·|B − β|); a body far off
   is its total mass at its centre of mass, order l down by (R/r)^l, the two expansions meeting at the corner r = R and
-  swapped by Kelvin's inversion (P1–P4 not killed; P3 (d)'s index my slip, recorded). Open: serial/parallel or
-  resolved/unresolved as the distinction.
+  swapped by Kelvin's inversion (P1–P4 not killed; P3 (d)'s index my slip, recorded). Prior work in draw's labs
+  (Tom: "we have explore this in the draw.html repository in the labs"; rerun at draw `ea07709`): `rcc` (one reader's
+  readings carry the turn, not the size), `udv` (three standpoints give the figure up to size, one agreed length the
+  size), `ref` (the median needs every arrival held at once, a parallel reference; a serial reader holds one arrival,
+  one extra slot), `rec` (a serial record: scale-free, grain-free marks). So the median is the parallel reader's centre;
+  holding (serial/parallel) and resolving (above/below the step) are two axes. **Before new work on readers, shapes or
+  recovery, check draw's labs** (`labs.html` in the draw repo lists them; run one with `draw.html?lab=CODE`).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
