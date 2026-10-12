@@ -24,9 +24,11 @@ is logarithmic. The reader therefore has two address spaces, proportional and lo
 Our main result concerns what a reader receives when it sweeps this circle evenly from where it stands. Its readings
 follow the Cauchy distribution, and we show that the distribution belongs entirely to the reader's addresses and not to
 anything that arrives at them: whatever is met in each direction cancels from the reading. This explains the Cauchy's
-best-known peculiarity. Its median exists and sits at the corner, because a median depends only on order, which is a
-property of addresses. Its mean does not exist, because a mean is a sum of sizes, a question about the payload, and
-addresses carry no size.
+best-known peculiarity. Mathematically, its median exists and sits at the corner, and its mean does not, because its
+tail past the corner is too heavy for the sum to converge. We read both facts as facts about addresses. A median depends
+only on order, which every way of writing the addresses keeps. A mean depends on how they are written: by turn, or as
+any fair share of the two unit relations, the same addresses have a mean, at the corner; written as the ratio v/h, laid
+in proportion past the corner as an amount would be, they have none.
 
 ## 1. Introduction
 
@@ -98,7 +100,8 @@ as if a single observation held it. Section 3 sets out the readers in full.
   logarithmic layout is consistent. The reader has two address spaces joined at one corner (§6).
 - **Main result.** Sweeping the circle evenly from home yields the Cauchy distribution, and the Cauchy is the reader's
   addresses, not its payload. Whatever is met in each direction cancels from the reading. Order survives every change of
-  payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7).
+  payload and sums do not. The Cauchy has a median, at the corner, in every way of writing its addresses; whether it has
+  a mean depends on the writing, and in the ratio v/h it has none (§7).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
   outside fixes the scale, and a fact shared between two readers supplies exactly one ratio (§9).
@@ -797,6 +800,26 @@ addresses, and the missing mean is what that costs: it comes from the unbounded 
 world. Where a Cauchy is met as data rather than laid as addresses, an amount has been formed from the reading by a
 known length, and the distribution's scale is that length, not 1 by assumption.
 
+**The missing mean: what is proved and what is read.** The mathematics is Theorem 6(d). Past the corner the density
+falls as 1/x², so the integral for the mean diverges. Calling the readings addresses does not prove that. The reading
+rests on one further fact, also exact.
+
+*Corollary.* Write the readings of Proposition 5, over one facing, through any fair reading f of Proposition 2(b): the
+sweep's progress g, the line's share v/(v + h), the arc's v²/(h² + v²). Then the mean of f exists and is ½, f's value
+at the corner, the same as its median.
+
+*Proof.* The map θ ↦ π/2 − θ keeps equal steps of turn equal and carries v/h to h/v. So the mean of f(v/h) equals the
+mean of f(h/v) = 1 − f(v/h), and it is ½. ∎
+
+So the addresses alone do not decide whether there is a mean. Written by turn or as a fair share, they have one, at the
+corner; written as v/h, they have none. What every one of these writings keeps is order (Theorem 6(b)), and in each the
+median is the corner. Writing an address as v/h lays it in proportion past the corner, as an amount would be laid, and
+under V = H it is numerically the amount ratio (§2). The missing mean is what asking the addresses for a sum costs in
+that writing. This is the sense of "a mean is a sum of sizes, and addresses carry no size". It does not say that v/h is
+not a number. It says that which numbers to sum is a choice the addresses do not make, and a sum that changes with the
+choice is not a property of the addresses. A size from outside, a magnitude or a calibration, fixes the choice; the
+geometry does not.
+
 ### 7.3 In the picture of the hand
 
 Spread the fingers evenly by turn and read each one as v over h: the readings are the Cauchy, and nothing of the rings
@@ -804,7 +827,8 @@ is in them.
 - *The median is a finger.* Of five fingers spread evenly from flat to upright, the middle one, at 45°, is the corner.
   Order, ranks, quartiles and the corner are address statistics, and they ignore the rings.
 - *The missing mean asks the fingers about the rings.* A mean is a sum of sizes, a question about the payload. The
-  readings carry no size, so the question has no answer. The median, a question about addresses, always has one.
+  fingers carry no size of their own: counted by turn they have a mean, at the corner, and written as v/h they have
+  none (§7.2), so the fingers alone cannot answer it. The median, a question about addresses, always has one.
 - *More fingers, not bigger rings.* Sweeping more finely lays more addresses. It buys precision about where, never
   about what. What is at the addresses comes only from payload held beside them.
 - *The rings hide; the hand does not.* Two rings on one finger, seen along it, show only the nearer. Every back side is
@@ -1061,6 +1085,13 @@ dx/x for an unknown scale is Jeffreys's prior (1939). The claim would therefore 
 situated reader's state of knowledge selects these three transformations, from which the structure follows. Two things
 remain outside it. Invariant measures are fixed only up to a constant, so the smooth join at the corner (c = 1) is still
 an added condition. And "no attitude preferred" still treats the sweep as the turning of a rigid bar.
+
+**What the conjecture does not yet do.** The three cases do not follow from it in the same way. The exchange fixes a
+point, the corner, and asks readings to be fair; it chooses no measure. The rescaling chooses dx/x, but only once (S)
+is granted as what "no scale preferred" means, and only up to a constant. The turn chooses equal steps of angle only
+once the sweep is the turning of a rigid bar under Euclidean length. So the principle unifies three choices; it does
+not derive them, and no result of §§4–10 rests on it. The question it names is whether a reader's bounded knowledge
+selects these three transformations, or whether some of them must be stipulated.
 
 ### 11.2 Assumptions and open questions
 

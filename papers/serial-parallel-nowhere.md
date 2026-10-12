@@ -2702,7 +2702,11 @@ circle's opening (§2.4).
 - **The other half are the long tail.** In plain proportion the tail thins so slowly that its share never adds to a
   finite average. That is why the Cauchy has no mean (*Browsing the Fisheye* §3: the largest of N readings stays about
   nine-tenths of their sum however large N grows). The mean is a plain-proportion operation, and it runs out along the
-  tail: the statistical face of "undefined in proportion past the corner".
+  tail: the statistical face of "undefined in proportion past the corner". (*12 October*, after an outside evaluation of
+  OFS, `plans/ofs-review-4.md`; exact: written through any reading fair to both facings (R162), such as g, v/(v + h) or
+  v²/(h² + v²), the even turn's readings over one facing have a mean, ½, at the corner, since θ ↦ π/2 − θ keeps the
+  turn even and flips v/h. The mean runs out only in plain proportion; the median is the corner in every writing.
+  OFS §7.2.)
 - **In doublings the tail is orderly.** Each doubling past the corner holds about half as many readings as the one
   before:
 

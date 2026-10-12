@@ -111,3 +111,83 @@ is already proved.
    - "a geometry of the reader, not of the world" (§1).
 
    The three claims of the review's §5 are §1's "What is new" in other words.
+
+---
+
+## Follow-up from ChatGPT (12 October)
+
+*Shared by Tom on 12 October, after the passage above was pushed. Kept verbatim as received.*
+
+---
+
+I’ve read the uploaded version. The important thing is that the paper now carries the connection between the five situations, the corner, and address versus payload all the way into its final discussion. That gives me a better basis for testing the architecture, rather than judging the new passage in isolation.
+My assessment: the unifying idea works as an organizing principle. The next challenge is making sure the principle explains the results without claiming more than the individual arguments establish.
+Where the architecture holds together
+1. The five situations classify what the reader can know.
+Section 3.1 gives the reader a concrete decision procedure: does a relation exist, is the other breadth known, and if not, does the thing hold still or arrive during the look? This makes the taxonomy more than a list of examples. The treatment of apparent sixth cases also helps a skeptical reader test its claimed exhaustiveness.
+2. The corner identifies what survives the reader’s ignorance.
+Section 4 proves that v/h=1v/h=1v/h=1 is the unique fixed point of the reciprocal flip. The corner does not depend on either absolute breadth. Crucially, the paper now states what this result does not establish: the circle, logarithmic spacing, and Cauchy weighting each require further premises.
+3. Address versus payload gives the distinction practical meaning.
+The hand and ring analogy makes the claim understandable before the formal results arrive. Sections 8–10 then show what it buys: the reader can preserve a layout and a pattern of readings while the actual breadth remains unknown. The mountain example brings the limitation and the recovery of scale together.
+These are genuinely related, but not interchangeable. The classification describes the reader; the corner is an invariant of a relation; the address/payload distinction describes the boundary between the reader’s representation and what it encounters. The paper is strongest when it preserves those separate roles.
+Does the principle help with the two address spaces and the Cauchy result?
+Yes, but in two different ways.
+The two address spaces (§6) follow from the difference between what the reader can measure and what it cannot. Inside the corner, the reader has a unit and uses proportion. Beyond it, the paper introduces scale invariance as premise (S), from which logarithmic spacing follows. The important intellectual move is that the corner alone does not prove the logarithm. The paper now says that plainly, and that improves its credibility.
+The Cauchy result (§7) gives the address/payload distinction its most striking mathematical consequence. Uniform angular steps induce the half-Cauchy density when readings are counted per unit of v/hv/hv/h. The same sweep, represented cumulatively, produces the fisheye. The paper also acknowledges that uniform angular sampling is a choice, not a consequence of the corner alone.
+There is one point I would still defend more carefully.
+The remaining pressure point: what exactly explains the missing mean?
+The abstract says the Cauchy has a median because order is a property of addresses, but no mean because a mean is a sum of sizes and addresses carry no size.
+That is a compelling interpretation of the result, but it needs to be distinguished from the mathematical explanation. A Cauchy random variable has no finite mean because its tails make the expectation integral fail to converge. Calling the values addresses does not itself establish that divergence.
+I would preserve your interpretation while making the two steps explicit:
+
+* Mathematical result: the induced Cauchy distribution has a median but no finite mean.
+* Framework interpretation: the median is preserved by increasing transformations of the address axis, whereas averaging requires a meaningful numerical structure and, for an expectation, appropriate integrability. The reader’s address scheme alone does not supply the missing physical magnitude or calibration.
+
+That distinction would strengthen the result rather than diminish it. It lets the reader see exactly where the mathematics ends and the framework’s interpretation begins.
+One further distinction in the unifying principle
+Section 11.1 proposes:
+A situated reader gives equal addresses to whatever its readings cannot tell apart.
+This is an excellent candidate principle, but the three cases do not yet follow in precisely the same way:
+
+* Exchanging vvv and hhh gives a fixed point at the corner.
+* No preferred scale motivates an invariant measure proportional to dx/xdx/xdx/x, given the stated scale-invariance condition.
+* No preferred attitude motivates uniform angular measure if the sweep is a rigid Euclidean turn.
+
+The paper itself acknowledges the extra assumptions. I would keep the principle as a conjecture that unifies the choices, not present it as a theorem from which all three results have already been derived. The distinction matters because it identifies the actual research question: does the reader’s bounded knowledge select these transformations, or does the framework need to stipulate some of them?
+Overall evaluation
+The paper’s strongest contribution is not simply that it obtains a Cauchy distribution or a logarithmic layout—those mathematical structures are classical. It is the proposed account of why those structures arise for a particular kind of reader, and what they describe.
+The readable examples, explicit assumptions, separate propositions, and worked mountain example make that claim much easier to evaluate than a dense exposition would. The paper also does something important for a skeptical reader: it marks several open questions instead of quietly treating them as settled.
+My verdict remains around 9/10 as a working paper and coherent research program, with proof completeness a separate measure. I would prioritize the interpretation of the missing mean and the exact status of the unifying principle. I would not restructure the paper again just to make the connection more prominent; it is already visible. The next improvement is to protect the distinction between what has been proved, what follows under a premise, and what the framework proposes those results mean.
+
+---
+
+### Response (12 October)
+
+Both taken. Nothing is restructured, and no test is added.
+
+1. **The missing mean, proved and read apart.** The review is right: calling the readings addresses does not prove the
+   divergence. The tail's 1/x² does (Theorem 6(d)). The paper had both pieces, but the abstract gave the reading as the
+   reason. Now:
+   - *Abstract and §1's results* state the mathematics first (the tail too heavy for the sum), then the reading.
+   - *§7.2, "The missing mean: what is proved and what is read"*, gives the reading one exact fact to stand on, a
+     corollary of Propositions 2(b) and 5. Written through any fair reading (g, v/(v + h), v²/(h² + v²)), the even
+     turn's readings over one facing have a mean, ½, at the corner, because θ ↦ π/2 − θ keeps the turn even and flips
+     v/h. So whether the addresses have a mean depends on how they are written, which the addresses do not choose.
+     Order, and with it the median at the corner, is the same in every writing (Theorem 6(b)). The v/h writing lays
+     them in proportion past the corner, as amounts are laid, and there the mean runs out. "Addresses carry no size"
+     is given that exact sense, and the paper says what it does not mean (that v/h is not a number). This makes exact
+     the review's "averaging requires a meaningful numerical structure".
+   - *§7.3's bullet* follows.
+   - *SPN gets a dated note* at its existing "the mean is a plain-proportion operation". OFS states no result the
+     working papers lack.
+   - Checked numerically, 200,000 even steps: g, the line's share and the arc's share each average 0.5000. The v/h
+     average capped at M is 2.10, 3.57 and 5.03 for M = 10, 100 and 1000, rising by (2/π)·ln 10 ≈ 1.47 per tenfold M,
+     without bound.
+2. **§11.1's standing.** It was already offered as a conjecture. A new paragraph, "What the conjecture does not yet do",
+   says the three cases follow differently:
+   - the exchange fixes a point and asks for fairness, and chooses no measure;
+   - the rescaling gives dx/x only once (S) is granted, and only up to a constant;
+   - the turn gives equal angles only for a rigid Euclidean bar.
+
+   So it unifies three choices and derives none of them, and no result of §§4–10 rests on it. The open question is
+   stated as the review puts it: does a reader's bounded knowledge select the three, or must some be stipulated?
