@@ -250,6 +250,10 @@ Google Fonts load from outside:
   answered there too: each proposed situation lands in the payload, the amounts or a power of the reading; edit G made
   (four more entries in §3.1's "Cases that look like a sixth"). A comment from Grok (an empirical defense from ordinary
   perception and instruments) is recorded there and not taken: real instruments use several weights.
+  `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
+  to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
+  for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
+  nearest prior reading; Leonard 2011 for §11.1; Drory 2015 against Jaynes, bearing on question 2), none yet cited.
   `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
   perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
   those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry
