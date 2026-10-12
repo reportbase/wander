@@ -317,8 +317,15 @@ arc π/2, and a bar of length 1 swept evenly through a quarter turn casts an ave
 (2/π)∫₀^{π/2} cos θ dθ = 2/π.) The average shadow is Buffon's needle (Buffon 1777): a needle as long as the gap
 between parallel lines, dropped at random, crosses one with probability 2/π. Crofton's formula, which measures a curve
 by the random lines that cross it, grew from the same problem (Crofton 1868). Buffon's number, like the inner reading,
-holds only when every angle of the turn is equally likely; weight the turn otherwise and it changes. The true breadth,
-1, is read only with no turn at all.
+holds only when every angle of the turn is equally likely; weight the turn otherwise and it changes.
+
+Both readings come from the same two integrals over the quarter turn: the turn itself, ∫₀^{π/2} dθ = π/2, and the
+shadow it casts on the line, ∫₀^{π/2} cos θ dθ = 1. The outer reading is the turn over the shadow, π/2; the inner is
+the shadow over the turn, 2/π. Taken to any turn θ, the same two give the table's θ/sin θ and sin θ/θ. The shadow is
+the line itself: the steps of the turn, each casting cos θ dθ, cover the breadth exactly once. Each reading sets it
+against the turn, one way up or the other, so their product is 1. Without angles the turn is ∫₀^∞ ds/(1 + s²) over
+every relation s = v/h, and the corner halves it, π/4 on each side. The true breadth, 1, is read only with no turn at
+all.
 
 **Archimedes' proof, from nowhere and from somewhere.** Archimedes measured the circle from both sides (*Measurement
 of a Circle*). A polygon inscribed in the circle falls short of it and one circumscribed about it exceeds it; doubling
@@ -346,6 +353,16 @@ as a number, through the flip, θ/sin θ = 1/(sin θ/θ): so it knows π/2 at th
 θ/sin θ; both lie above 1 and close on it at the same rate.) Archimedes squeezed π between two polygons because he held
 the whole; a situated reader holds neither polygon and has the same numbers from its own turn and the flip. The
 convergence is ordinary geometry; what the vantages add is what each reader holds.
+
+The reader's own turn gives the halvings without a polygon. Halving a turn takes out one cosine,
+sin 2θ/2θ = cos θ · sin θ/θ, so the inner reading at the quarter turn is a product with one factor per halving, the
+first at the corner:
+
+  2/π = cos 45° · cos 22.5° · cos 11.25° · … = (√2/2) · (√(2 + √2)/2) · (√(2 + √(2 + √2))/2) · …
+
+This is Viète's formula (Viète 1593). After n factors the product is 2/π divided by the share of the inscribed polygon
+of 2ⁿ⁺¹ sides, so it closes on 2/π at Archimedes' rate, about four times closer with each halving: 0.7071, 0.6533,
+0.6407, 0.6376, ….
 
 **From the vantages to the view from nowhere.** The argument runs in seven steps, each resting on the one before.
 1. A line has a true breadth, 1. That is what the completed view reads.
@@ -1386,5 +1403,7 @@ numerical quantity. *Psychological Science* 14(3), 237–243.
 
 Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the Cauchy distribution. *Biometrika*
 61(2), 375–380.
+
+Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII*. Tours.
 
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.
