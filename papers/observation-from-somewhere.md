@@ -15,16 +15,18 @@ and the fisheye. The three read a line of true breadth 1 as 1, π/2 and 2/π; th
 or constructed from several observations, never observed from one. Any relation between two parties can be written as a pair of unit relations, h
 and v, each between 0 and 1, and the reader reads their ratio. Because neither unit relation can pass 1, every such sweep
 turns over at a single point, v = h, the *corner*, where reading v in terms of h gives way to reading h in terms of v.
-To read at all, the reader must use its own breadth as the unit for the other party: its thumb as the measure of
-the mountain. With that choice the corner lies at
-distance 1 whatever unit was chosen, and the relation, drawn as a bar of fixed length, traces a unit circle. Inside the
+To read the other party in amounts, the reader must assign it a breadth, and its only measure is its own: the
+mountain in thumbs. Any such assignment leaves the geometry unchanged. The best, when nothing tells the reader whether
+the other is larger or smaller, is its own breadth itself, its thumb as the measure of the mountain; with more known, it
+is the median of what is known. With that choice the corner lies at distance 1 whatever unit was chosen, and the
+relation, drawn as a bar of fixed length, traces a unit circle. Inside the
 corner the reader can lay out its readings in proportion; past it, if no scale is preferred, the only consistent layout
 is logarithmic. The reader therefore has two address spaces, proportional and logarithmic, joined at one corner.
 
 Our main result concerns what a reader receives when it sweeps this circle evenly from where it stands. Its readings
-follow the Cauchy distribution, and we show that the distribution belongs entirely to the reader's addresses and not to
-anything that arrives at them: whatever is met in each direction cancels from the reading. This explains the Cauchy's
-best-known peculiarity. Its median exists and sits at the corner, because a median depends only on order, which is a
+follow the Cauchy distribution. When the evenness is the reader's own laying, we show that the distribution belongs
+entirely to the reader's addresses and not to anything that arrives at them: whatever is met in each direction cancels
+from every single reading. This gives a reason for the Cauchy's best-known peculiarity. Its median exists and sits at the corner, because a median depends only on order, which is a
 property of addresses. Its mean does not exist, because a mean is a sum of sizes, a question about the payload, and
 addresses carry no size. The same split decides what reaches a reader of a payload. One stream of readings fixes the
 course of a relation, not its parties. The median is had only by a reader that holds its readings at once. Payloads
@@ -94,8 +96,10 @@ as if a single observation held it. Section 3 sets out the readers in full.
   own breadth, and what it lacks is a single number (§3).
 - Every sweep between two parties turns over at one point, the corner v = h, the only point left fixed when the two
   parties are exchanged. Near and far are one geometry, read from either side of it (§4).
-- A reader that holds one breadth must use it as the unit for the other party. This puts the corner at distance 1
-  whatever unit is chosen and, with Euclidean length, makes the relation a unit circle (§5).
+- A reader that holds one breadth must assign the other party a breadth in its own unit. Any assignment leaves the
+  geometry unchanged. The best, when the reader knows nothing to make the other larger or smaller, is its own breadth
+  (§5, §9). This puts the corner at distance 1 whatever unit is chosen and, with Euclidean length, makes the relation a
+  unit circle (§5).
 - Inside the corner the reader can lay readings out in proportion; past it, if no scale is preferred, only a
   logarithmic layout is consistent. The reader has two address spaces joined at one corner (§6).
 - **Main result.** Sweeping the circle evenly from home yields the Cauchy distribution, and the Cauchy is the reader's
@@ -103,7 +107,8 @@ as if a single observation held it. Section 3 sets out the readers in full.
   payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
-  outside fixes the scale, and a fact shared between two readers supplies exactly one ratio (§9).
+  outside fixes the scale, and a fact shared between two readers supplies exactly one ratio. The best breadth to assign
+  the other party is the median of what the reader knows of it (§9).
 - What reaches a reader of a payload depends on what it holds and what it resolves (§7.6, §9).
   - One stream fixes the course of a relation, not its parties: motion comes before the object.
   - Readings taken at once against one denominator give payloads relative to each other.
@@ -207,7 +212,8 @@ like a sixth reduce to these.
 knows the mountain's size, it holds the unsituated view: thumb and mountain are both in hand, and the corner, where the
 thumb equals the mountain (v·V = h·H), is computed. If it does not know the mountain's size, it is situated, and the
 only measure it has to give the mountain is its thumb: it sets V = H, mountain equals thumb (§5), and reads the mountain
-in thumbs. The corner v = h is still found exactly, but the amounts there are the assignment's. The mountain's true
+in thumbs. It could give the mountain any number of thumbs without changing the geometry; one thumb is the best guess
+when nothing says bigger or smaller (Proposition 13, §9). The corner v = h is still found exactly, but the amounts there are the assignment's. The mountain's true
 size, V/H thumbs, is the one number the situated reader lacks (§3.8).
 
 - **0, nothing.** The reader has its breadth H, as it always does, but no h: nothing is related to it, so there is
@@ -347,7 +353,7 @@ convergence is ordinary geometry; what the vantages add is what each reader hold
    drawn from no standpoint, every line at its true length to one scale, nothing turned toward or away from anyone.
 5. To hold 1 is to hold both hemispheres in hand at once, which no single observation can do. That is what "the view
    from nowhere" means: the true breadth belongs to no standpoint.
-6. So a situated reader must construct the truth from several observations: the hemisphere turned away and the one
+6. So a situated reader that wants the true breadth can only construct it from several observations: the hemisphere turned away and the one
    turned toward, read in turn and joined. The construction represents the true breadth; it does not observe it. A
    telescope survey is the working example. One exposure is one facing from one standpoint, and the survey is the
    construction. Not every combination builds: exposing the same field again lowers the noise and adds nothing;
@@ -355,6 +361,9 @@ convergence is ordinary geometry; what the vantages add is what each reader hold
    a distance (§10 works one through).
 7. There are therefore two ways to the true breadth, and only two: held, unsituated, as in a blueprint; or constructed,
    situated, from several observations.
+
+The arithmetic of steps 1 and 2 is exact. Which vantage reads which measure, and steps 3 to 6, are a reading of that
+arithmetic, not a theorem. The "only two" of step 7 is exact, as the next paragraph shows.
 
 **Why only two.** The limit in steps 3 to 6 is exact, not an intuition about perspective. Every reading a situated
 reader takes is a ratio of two amounts, so multiplying every amount in the scene by one factor leaves every reading
@@ -537,9 +546,10 @@ We assume three things.
 
 **Proposition 3 (the reader's circle).** Under (P0) and (P1):
 
-(a) the reader must set V = H;
+(a) the reader must assign V in its own unit, V = cH for some c > 0, and no unit relation and no reading depends on
+c;
 
-(b) the corner then lies at distance 1 from home, whatever H was chosen;
+(b) with V = H, the corner lies at distance 1 from home, whatever H was chosen;
 
 (c) if the attitudes of the relation are turns of one rigid bar, the relation traces the unit circle h² + v² = 1;
 
@@ -547,7 +557,8 @@ We assume three things.
 h² + v² + v₂² = 1, where v₂ is a second v read against the same h.
 
 *Proof.* (a) By (P0) the other party must be assigned a breadth for there to be a relation, and by (P1) the reader's
-only breadth is H. (b) The corner is one H from home measured in H: H/H = 1. A reader with unit λH reading a world scaled
+only breadth is H, so the assignment is H times a number c. A unit relation v lies in [0, 1] however large V is, so no
+reading involves c; c multiplies only the amounts v·V. (b) The corner is one H from home measured in H: H/H = 1. A reader with unit λH reading a world scaled
 by λ receives exactly the same readings, so nothing in the readings fixes H. (c) With one unit, the relation is a bar of
 length 1 whose attitudes are mixes of all-h and all-v, so h² + v² = 1 when length is Euclidean, and the Euclidean norm
 is, up to scale, the only norm preserved by every turn. With two units the same bar would trace an ellipse stretched by
@@ -560,8 +571,13 @@ other party. It sets the mountain equal to its thumb because its thumb is the on
 that the mountain is the size of a thumb. Where it is not, every amount the reader reads is off by the true V/H, the
 number of thumbs the mountain really is (§9). The rule constructs a relation calibrated in one unit and discovers nothing about the world.
 Step (a) is close to a definition; we claim only that a relation needs two assigned breadths and a situated reader has
-one. Under V = H the point where the two parties' amounts are equal, v·V = h·H, coincides with the geometric corner
-v = h, the edge of the unit circle.
+one. Which breadth it assigns is a choice:
+- *What c changes.* Any c leaves the unit relations, the corner v = h and every reading as they are. It changes only
+  how amounts are drawn: with V = cH the bar traces, in amounts, an ellipse of axis ratio c, and the point of equal
+  amounts, v·V = h·H, slides log₂ c levels off the corner.
+- *What c = 1 does.* Under V = H that point coincides with the geometric corner v = h, the edge of the unit circle.
+- *Why c = 1.* V = H is not forced. It is the best assignment when nothing tells the reader whether the other is larger
+  or smaller, and in general the best assignment is the median of what the reader knows (Proposition 13, §9).
 
 **The Euclidean choice.** Part (c) is where an assumption enters. One unit makes the axes commensurable, but "a bar of
 fixed length" also needs a norm: under the largest-component norm the bar traces the square, under the sum norm the
@@ -617,8 +633,8 @@ have. Each natural alternative breaks it in just this way:
 - *a logarithm with a correction*, as above, gives room that depends on ln x.
 
 The logarithm alone gives room that depends on λ and not on x, and Proposition 4 shows it is the only increasing lay
-that does. Whether (S)
-follows from (P1) and (P2), or must be added, is the first question of §11. Note also that the argument for (S) passes
+that does. (S) does not follow from "any H will do", which only places the corner. It is scale invariance of the lay's
+increments, motivated by Proposition 3(b) and assumed, not derived (§11.2, question 1). Note also that the argument for (S) passes
 through amounts, by way of V = H, and that the smooth join (c = 1) is a further condition rather than a consequence of
 the flip.
 
@@ -804,6 +820,17 @@ Two things are not claimed. The theorem does not show that every real observer s
 reader that does so receives, and why equal turns is the sampling that prefers no attitude (§7.5). Nor does it show that
 every Cauchy distribution met in data has this origin; a Cauchy met as data may have others, and the next paragraph
 says what sets its scale when it is formed from a reading.
+
+Third, where the evenness comes from is a choice. If it comes from the world, as when sources are spread evenly in
+direction, the same Cauchy is a property of the world's directions, and "addresses" would be the wrong name for it.
+The address reading holds where the even sweep is the reader's own laying, as step 1 defines it. What does not depend
+on that choice:
+- the reach cancels from every single reading, not on average (Theorem 6(a));
+- order survives every change of payload (Theorem 6(b));
+- only an affine map commutes with the mean on every set (Theorem 6(c)).
+
+These give a reader a reason to prefer order whatever the evenness is: order is what survives a payload it does not
+know.
 
 **Where the usual confusion comes from.** Laid evenly by direction, the sweep is uniform and bounded, g from 0 to 1, with
 its middle at the corner: geometry, with nothing wild in it. Read on the axis v/h, the same lay is a Cauchy of scale 1,
@@ -1028,7 +1055,8 @@ This is the exact form of §3.4's "only two". The worked example of §10 is (b) 
 known H, and it fixes the mountain's distance and width.
 
 **What reaches a reader of a payload.** Proposition 8 speaks of every reading at once. Read over time from one
-standpoint, or at once from several, it has four sharper forms.
+standpoint, or at once from several, it has four sharper forms. Each is classical: ratio invariance, division,
+triangulation and the moments of a blur. What is ours is their placement, as what a reader of a payload is given.
 
 **Proposition 9 (one stream is one relation).** A reader at one standpoint receives readings x(t) = a(t)/b(t) of a pair
 of amounts. For any positive function λ(t), the pair λ(t)·a(t), λ(t)·b(t) gives the same readings.
@@ -1086,6 +1114,56 @@ So there are two centres, and they must not be confused:
   arrangement reaches the reader only through the spread, faintly, until its parts lie a step apart.
 
 Fingers order; rings add.
+
+**The best breadth to assign.** Proposition 3(a) requires the reader to assign the other party some breadth V = cH, and
+nothing in the geometry depends on c. Every amount it reads is then off by the factor V*/(cH), where V* is the true
+breadth. Which c is best depends on what the reader knows of V*.
+
+**Proposition 13 (the best assignment is the median).** Measure the error by |f(V*) − f(cH)| for an increasing f: in
+levels, f = log; in amounts, f the identity.
+
+(a) If the reader knows only that V₋ ≤ V* ≤ V₊, the assignment whose worst error in levels is least is
+cH = √(V₋·V₊), the corner of the pair of bounds. Its worst error is half the range, ½·log(V₊/V₋).
+
+(b) If the reader holds a distribution for V*, the assignment whose expected error is least is a median of that
+distribution. It is the same median for every increasing f. The mean, best under squared error in amounts, changes with
+f and need not exist.
+
+(c) If nothing the reader knows makes the other larger rather than smaller, so that V*/H and H/V* are alike, (a) and (b)
+both give V = H.
+
+*Proof.* (a) The worst error is the larger of |log V₊ − log cH| and |log V₋ − log cH|, least when log cH is midway
+between log V₋ and log V₊. (b) E|X − m| is least when m is a median of X. For X = f(V*) a median is f of a median of V*,
+since medians commute with increasing maps, as order does (Theorem 6(b)). (c) The bounds are then H/R and H·R, whose
+geometric mean is H, and log(V*/H) has median 0. ∎
+
+So V = H is the best assignment for a reader that knows nothing to make the other's breadth larger or smaller than its
+own, and the median of what it does know otherwise. It is not imposed. The result rests on measuring error by order or
+in levels, the same premise of no preferred scale as (S).
+
+**The price of a geometry.** Two acts are easily run together, and only one of them is a guess.
+- *Designating* the other party, as (P0) requires, gives the reader its geometry: the unit relations, the corner, the
+  sweep, and the Cauchy of §7. It asserts nothing about the world, since a unit relation lies in [0, 1] however large
+  the other breadth is, and it costs nothing. A reader that will not designate a second party has no relation and
+  nothing to read: situation 0 (§3.1).
+- *Sizing* the other party, V = cH, gives the reader amounts: the mountain in thumbs. That is the arbitrary part. By
+  Proposition 13 the reader's best size is the median of what it knows.
+
+So the geometry is free, and the amounts cost one arbitrary number. Sense is then made in three ways.
+1. *The addresses are exact while the scale is wrong.* Directions, the corner, order and every shape up to scale do not
+   depend on c (Theorem 6, Proposition 8(a)). In §10 the fingers and the corners are right while every mile is off by
+   a factor of twenty.
+2. *Several observations construct what one cannot hold.* A second standpoint at a known baseline, or a fact shared
+   with another reader, supplies the missing factor, and nothing within the readings does (Propositions 7, 8 and 11).
+3. *The size can be revised, and the unit can be moved; these are different acts.*
+   - A new fact moves the median, so the reader re-sizes the other party (Proposition 13).
+   - Changing H instead is a zoom (§8). It chooses what sits at the reader's corner, and corrects nothing about the
+     other's size.
+
+The correction is cheap, and in levels it is exact. When the true size arrives, every reading moves by the same
+log₂(V*/cH) levels, and no address moves against another. A lay that keeps (S) gives every doubling the same room, so
+the levels keep their widths. The structure was never wrong, only where it sat, and one amount from outside slides it
+into place.
 
 ## 10. A worked example: a mountain range
 
@@ -1175,11 +1253,17 @@ situated reader's state of knowledge selects these three transformations, from w
 remain outside it. Invariant measures are fixed only up to a constant, so the smooth join at the corner (c = 1) is still
 an added condition. And "no attitude preferred" still treats the sweep as the turning of a rigid bar.
 
+Which transformations a reader is ignorant of is chosen here, not derived. A reader ignorant of more or of fewer would
+be given other measures. Because the second of them presupposes turns, the principle cannot choose the circle over the
+square (§11.2, question 2).
+
 ### 11.2 Assumptions and open questions
 
-1. *The link in Proposition 4.* Does (S) follow from "any H will do", or is it scale invariance assumed under another
-   name? The second route of §6 stays with ratios and assumes instead that the measure of a chain of relations is the
-   sum of its links. Is either assumption weaker than scale invariance stated outright?
+1. *The link in Proposition 4.* (S) does not follow from "any H will do", which only places the corner. It is scale
+   invariance of the lay's increments, motivated by Proposition 3(b), since a lay that breaks it builds in a scale no
+   reading can fix, but assumed rather than derived. The second route of §6, an additive measure on chains of
+   relations, is equivalent to it, not weaker. Is there a premise about situated readers, thinner than scale
+   invariance, from which it follows?
 2. *Why Euclidean?* Is there a reason, from the reader's premises, that the sweep must be a turn rather than the
    square's or the line's path through the same ratios?
 3. *No measure on a level.* Is there a principled reason a level could not carry a measure before anything arrives?
@@ -1187,7 +1271,9 @@ an added condition. And "no attitude preferred" still treats the sweep as the tu
    Is that more than a choice?
 5. *Uniformity as the weight.* Does the argument of §7.5 remove the burden of the even turn, or only move it to "why the
    circle"?
-6. *V = H.* Is Proposition 3(a) more than a restatement of having one breadth?
+6. *V = H.* Proposition 3(a) says only that some breadth must be assigned. Which one is Proposition 13's answer: the
+   median of what the reader knows, and V = H when it knows nothing either way. What remains open is whether measuring
+   error by order or in levels is itself forced.
 
 If the principle of §11.1 stands, questions 1, 2 and 5 become one: whether a situated reader's ignorance is exactly these
 three transformations.
