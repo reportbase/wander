@@ -408,6 +408,13 @@ Google Fonts load from outside:
   E = pc the horizon; Newton's and the ultra-relativistic forms flips of each other, e_N(x) = e_U(1/x), both 6.07% high at
   pc = mc²; mass the light-cone pair's corner, fixed as a boost pans its levels (P1–P4 not killed; P2's quoted decimals
   my slip, recorded). Bertozzi's electrons queued (paper blocked).
+  `pay-plan.md` (+ `pay/pay.py`, 11 Oct, exact; Tom: "all we see is the motion of the center of gravity as situated observers
+  of serial streams"; SPN R210, two centres: the median of the addresses, the centroid of the unresolved payload): one
+  stream cannot tell approach from growth; a same-depth neighbour read at once separates them (payloads relative, never
+  scale); below the step the payload arrives as its moments, the photocentre first (a binary's a·|B − β|); a body far off
+  is its total mass at its centre of mass, order l down by (R/r)^l, the two expansions meeting at the corner r = R and
+  swapped by Kelvin's inversion (P1–P4 not killed; P3 (d)'s index my slip, recorded). Open: serial/parallel or
+  resolved/unresolved as the distinction.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

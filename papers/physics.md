@@ -76,6 +76,15 @@ bodies are pictures. They are never evidence here.
   and E = pc the horizon. Newton's form and the ultra-relativistic form are flips of each other, handing over at
   pc = mc², each 6.07% high there. Mass is the corner of the light-cone pair, fixed under every boost. Nothing was
   killed; Bertozzi's electrons are queued (§1, §2.2, §4).
+- 11 October, eighth: PAY (`plans/pay-plan.md`; Tom: "all we see is the motion of the center of gravity as situated
+  observers of serial streams"; SPN R210).
+  - **One stream:** approach and growth are the same stream.
+  - **Two readings at once** sharing a denominator separate them, giving payloads relative to each other.
+  - **Below the step** the payload arrives as its moments, centroid first: the binary's photocentre, a·|B − β|.
+  - **From far off** a body is its total mass at its centre of mass, its detail one order per power of R/r. The
+    expansion's two forms meet at the corner r = R and are each other's flip (Kelvin).
+
+  Nothing was killed (§1, §2.2).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -132,6 +141,9 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | home (v = 0) and the horizon (h = 0) | E = mc² and E = pc (light) | c | EMC P2 |
 | the near field and the far field as flips of each other, handing over at the corner | Newton's mc² + p²/2m and the ultra-relativistic pc + (mc²)²/2pc: e_N(x) = e_U(1/x), each 6.07% high at pc = mc² | c | EMC P3 |
 | a pair's corner as its level-midpoint, fixed under a pan | mass: the geometric mean of E + pc and E − pc, which a boost pans by ∓ln k | c | EMC P4 |
+| the median of the addresses (order) against the centroid of the payload (sums), R210 | below the step, the light-weighted photocentre and the total mass at the centre of mass; an unresolved binary's photocentre orbit a·\|B − β\| | the step σ; the masses and lights | PAY P3 |
+| level of detail by distance; the corner where none can be dropped; the flip | the multipole expansion: order l down by (R/r)^l, converging outside r = R; Kelvin's inversion r ↦ R²/r swapping the exterior and interior forms | the source's radius R | PAY P4 |
+| one stream against readings at once with a shared denominator | looming's size–distance ambiguity; a same-depth neighbour's ratio S₁/S₂ separates approach from growth | none | PAY P1, P2 |
 
 ## 2. Results, by standing
 
@@ -316,6 +328,30 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   adds is the organisation: one circle in one unit, home and horizon, the two limits as one approximation under the
   flip, and the invariant mass as a corner. What it does not give: c's value, or why a change of frame is a hyperbolic
   pan and not a rotation (the sign is the world's).
+- **What arrives of a payload, serially and at once** (PAY, `plans/pay-plan.md`; SPN R210). Exactly, or to rounding:
+  - **One stream is one ratio's trajectory.** A thing approaching and a thing growing at the matching rate give the
+    same stream and the same time to contact. Motion arrives before the object does.
+  - **A second reading taken at once,** of a neighbour at the same depth, separates them. The shared distance cancels
+    from the ratio x₁/x₂ = S₁/S₂, which stays fixed under approach and tracks the growth exactly. At another depth the
+    ratio drifts under approach (by at least 65% here), so what reading at once buys is a shared denominator.
+  - **Below the step, the payload arrives as its moments:**
+    - the first moment is the light-weighted photocentre, exactly, resolved or not;
+    - the second is σ² + β(1 − β)s², the payload's share falling two levels per level the separation shrinks;
+    - two maxima appear at s = 2σ (the Sparrow limit: the step, an amount);
+    - an unresolved binary's photocentre orbit is a·|B − β|, the same stream for any mass and light fractions with the
+      same difference; resolved against a shared background, they separate.
+  - **From far off, a body is its total mass at its centre of mass.**
+    - About the centre of mass the monopole's error falls two levels per level of distance (−1.9995), about any other
+      centre one (−1.0000).
+    - Order l arrives down by (R/r)^l. The orders needed to read a body to 1e-6 run from 5 at 10 R to 157 at 1.05 R,
+      within the bound ln(ε(1 − R/r))/ln(R/r) − 1.
+    - The exterior series converges outside the corner r = ρ and fails inside, every term equal at it. Kelvin's
+      inversion maps the interior form onto the exterior term by term, exactly, and a source on the sphere is its own
+      image: the flip about the corner.
+
+  All standard (looming's ambiguity, astrometric binaries, the Sparrow limit, multipoles, Kelvin 1847). What it adds is
+  the reading: two centres kept apart, the median of the addresses and the centroid of the payload; motion before the
+  object; and the multipole expansion as level of detail by distance with the corner as its seam.
 
 ### 2.3 In Wander's world (illustration, not evidence)
 

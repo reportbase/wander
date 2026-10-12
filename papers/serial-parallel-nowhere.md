@@ -4082,6 +4082,29 @@ received, a far body and each other's signals. In CMP and CMV the other reader i
 pings and echoes) and a reader in its own. Untested in the labs: laying the range before anything arrives, and payloads
 evaluated on demand; *Wander* hands each reader its range.
 
+**Two centres, and what arrives of a payload** (R210; Tom, 11 October: "the payloads can't be recovered from serial
+situated observation, but can be in parallel situated observation. basically, all we see is the motion of the center of
+gravity as situated observers of serial streams"). Two centres are kept apart:
+- **The median of the addresses.** The fingers have no centre of gravity, since a mean asks the fingers about the rings
+  (above). Their centre is the median, an order statistic, at the corner.
+- **The centroid of an unresolved payload.** Below the step what arrives is the payload's sums: first its centroid (the
+  light-weighted photocentre; from far off, the total mass at the centre of mass), then its finer moments, each further
+  down by the reading. Rings add, fingers order.
+
+Tested in exact arithmetic (`plans/pay-plan.md`, nothing killed):
+- **A serial stream gives motion before it gives an object.** A thing approaching and a thing growing at the matching
+  rate give one stream, and one time to contact.
+- **Two readings taken at once separate them when they share a denominator.** The common distance cancels from their
+  ratio, which leaves payloads relative to each other, never their scale.
+- **An unresolved binary shows only its photocentre's orbit, a·|B − β|,** whatever the mass fraction B and light
+  fraction β give the same difference.
+- **A body's far field is its total mass at its centre of mass,** with each finer order one more power of R/r down. The
+  exterior and interior expansions meet at the corner r = R, where no order may be dropped, and Kelvin's inversion
+  r ↦ R²/r is the flip about it.
+
+Open: whether serial against parallel, or resolved against unresolved, carries the distinction (GRN found the reading set
+by size over grain).
+
 ### 4.4 The stitch is at the corner, and one number crosses it
 
 **R153.** Where the serial and parallel accounts are joined, the seam is the corner: the parallel reader's front side ends
@@ -5892,6 +5915,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 - **R207** (11 Oct, about 13:58), to "should those come out too?" (the cost model on simulated readers and the grid-cell test): "remove all failed tests, they are in other papers." **`observation-from-somewhere.md` reports no tests**: the cost model (GRN runs 3–5) and the proposed grid-cell test (`plans/grd-plan.md`) are removed with the failed ones; they stay in their plans.
 - **R208** (11 Oct, about 14:10): "only if they are helpful to main arguments. dont just add tests just to add tests." / "we can add tests if they are specifically helpful to the core themes of the paper." **R207 refined: `observation-from-somewhere.md` may report a test where it specifically helps a core theme**; failed tests stay in their plans, and results that already have proofs need no checks.
 - **R209** (11 Oct, about 17:00): "situated reader does not hold the inner polygon either." **A situated reader draws neither of Archimedes' polygons**: both need the circle in hand. Its inner measure, sin θ/θ, equals the inscribed polygon's share in number and is a reading of its own turn; the outer side comes by the flip (§2.1, "The quarter turn is Archimedes' proof made situated", corrected).
+- **R210** (11 Oct, about 21:00): "the payloads can't be recovered from serial situated observation, but can be in parallel situated observation. basically, all we see is the motion of the center of gravity as situated observers of serial streams." Then "yes", to Claude's proposal to name the two centres apart and to test them. **Two centres, kept apart.** The reader's addresses have no centre of gravity: laid by an even turn they are Cauchy, with no mean, and their centre is the **median**, at the corner. What arrives of a payload below the step is its sums: first its **centroid** (the light-weighted photocentre; the total mass at the centre of mass), then its finer moments, each further down by the reading. A serial stream gives motion before it gives an object; two readings taken at once separate a change of payload from the reader's own motion when they share a denominator, and then give payloads relative to each other, never their scale (§4.3, "Two centres"; `plans/pay-plan.md`, not killed). Not ruled: whether serial against parallel, or resolved against unresolved (one step apart in one window), carries the distinction (GRN: "serial and parallel is just our perspective").
 
 ## Appendix B. Demos and computations
 

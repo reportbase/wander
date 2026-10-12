@@ -79,3 +79,49 @@ median, the unresolved payload's a centroid. The payload arrives as its moments,
 reading, and the expansion's two forms are the flip about the corner.
 
 ## Runs
+
+### Run 1 (11 October, `pay/pay.py`)
+
+Seed 17, four seconds. P4 (c) is in rationals; the rest are in floats, with rates by the complex step.
+
+| | prediction | result | |
+|---|---|---|---|
+| P1 | approach and growth give one stream, and one x/ẋ | streams apart by at most 4.4e-16, x/ẋ by 6.7e-16, over 10³ set-ups | not killed |
+| P2 | a same-depth neighbour read at once: the ratio is constant under approach and follows S₁(t)/S₁(0) under growth; another depth drifts | 4.4e-16 and 6.7e-16; another depth drifted at least 0.651 | not killed |
+| P3 | (a) centroid = photocentre; (b) second moment σ² + β(1 − β)s²; (c) two maxima from s = 2σ; (d) photocentre orbit a·\|B − β\|, degenerate in B − β, resolved recovery | 5.3e-15 σ; 1.1e-15; 2.0000002 σ; 3.3e-16 and 3.3e-16; recovery to 1.1e-16 | not killed (see the note) |
+| P4 | (a) slopes −2 and −1; (b) converges outside, fails inside, terms equal at the corner; (c) Kelvin exact, a source on the sphere its own image; (d) orders needed within the bound | −1.9995 and −1.0000; 1,000/1,000 and 1,000/1,000, yes; 0 of 9,300 inexact, 1.3e-15; 0 of 1,000 above the bound | not killed |
+
+**A slip in the plan, recorded and not edited.** P3 (d) says the resolved orbits give "B = a₂/a". With B = M₂/(M₁ + M₂),
+it is the first star's orbit about the barycentre that has size B·a, so B = a₁/a; the script recovers B that way. The
+prediction's content holds; the index in it was wrong.
+
+**Also from the run:**
+- **The payload's share of the second moment** at β = ½ is β(1 − β)(s/σ)²: 0.0025, 0.0625, 0.25, 1 and 4 at
+  s = 0.1, 0.5, 1, 2 and 4 σ. It falls two levels per level the separation shrinks.
+- **The orders needed to read a body to 1e-6 of its monopole** (at most, over the random bodies), against the bound:
+  - 157 against 345 at 1.05 R;
+  - 54 against 85 at 1.2 R;
+  - 24 against 36 at 1.5 R;
+  - 16 against 20 at 2 R;
+  - 8 against 9.2 at 4 R;
+  - 5 against 5.05 at 10 R.
+
+  Approaching the corner the count runs away; far off it is a handful.
+- **Bug fixed before the recorded run:** the first launch failed on a mis-written random depth in P2, 10**(−1) on
+  integers. The orders-needed loop now counts a body that never reaches 1e-6 as broken instead of zero; none did.
+
+**Reading.**
+- **A serial stream gives motion before it gives an object.** One stream carries the ratio's trajectory, and approach
+  and growth are the same stream.
+- **Two readings taken at once separate them when they share a denominator.** The common distance cancels from their
+  ratio, which is a ratio of payloads: what one reader at once recovers is payloads relative to each other, never their
+  scale.
+- **Below the step, what arrives is the payload's moments.**
+  - The first is its centroid, exact at any separation.
+  - Each finer moment is further down by the separation over the step.
+  - The binary's photocentre orbit holds only B − β; resolved against a shared background, B and β separate.
+- **From far off a body is its total mass at its centre of mass.** Its detail comes in one order per power of the reading
+  R/r. The two forms of the expansion meet at the corner, where no order may be dropped, and Kelvin's inversion is the
+  flip about it.
+- **The two centres of R210.** The addresses' centre is a median, an order statistic. The unresolved payload's is a
+  centroid, a sum. Fingers order; rings add.
