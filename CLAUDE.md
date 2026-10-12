@@ -528,7 +528,9 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
 - Proposition 1.2 (11 October, R190; refined 12 October, R212): from the two-party relation and one chosen H, some V = cH
   must be assigned, and nothing in the geometry depends on c (only amounts: an ellipse of axis ratio c, the point of equal
   amounts log₂ c levels off the corner); V = H is the best assignment, the median of what the reader knows of V (the corner
-  √(V₋V₊) of any bounds; V = H with nothing either way), not a forced one (OFS Proposition 13). The corner and the
+  √(V₋V₊) of any bounds; V = H with nothing either way), not a forced one (OFS Proposition 13). The price of a geometry
+  (R214): designating the other party is free and gives the geometry; sizing it is the one arbitrary number, corrected by
+  a pan in levels when an outside amount arrives; re-sizing is not zooming. The corner and the
   flip follow from the cap at 1; the logarithm past the corner follows when no rung is preferred, so the reader's lay is
   1 + ln s by address count; by length reality is 2H (the in-place lay, 2 − 1/s, the reader's own); two address spaces, proportional and logarithmic,
   around the corner; the count is the LOD; H is a zoom, not an escape (a large H loses the small below one address; the

@@ -1141,6 +1141,30 @@ So V = H is the best assignment for a reader that knows nothing to make the othe
 own, and the median of what it does know otherwise. It is not imposed. The result rests on measuring error by order or
 in levels, the same premise of no preferred scale as (S).
 
+**The price of a geometry.** Two acts are easily run together, and only one of them is a guess.
+- *Designating* the other party, as (P0) requires, gives the reader its geometry: the unit relations, the corner, the
+  sweep, and the Cauchy of §7. It asserts nothing about the world, since a unit relation lies in [0, 1] however large
+  the other breadth is, and it costs nothing. A reader that will not designate a second party has no relation and
+  nothing to read: situation 0 (§3.1).
+- *Sizing* the other party, V = cH, gives the reader amounts: the mountain in thumbs. That is the arbitrary part. By
+  Proposition 13 the reader's best size is the median of what it knows.
+
+So the geometry is free, and the amounts cost one arbitrary number. Sense is then made in three ways.
+1. *The addresses are exact while the scale is wrong.* Directions, the corner, order and every shape up to scale do not
+   depend on c (Theorem 6, Proposition 8(a)). In §10 the fingers and the corners are right while every mile is off by
+   a factor of twenty.
+2. *Several observations construct what one cannot hold.* A second standpoint at a known baseline, or a fact shared
+   with another reader, supplies the missing factor, and nothing within the readings does (Propositions 7, 8 and 11).
+3. *The size can be revised, and the unit can be moved; these are different acts.*
+   - A new fact moves the median, so the reader re-sizes the other party (Proposition 13).
+   - Changing H instead is a zoom (§8). It chooses what sits at the reader's corner, and corrects nothing about the
+     other's size.
+
+The correction is cheap, and in levels it is exact. When the true size arrives, every reading moves by the same
+log₂(V*/cH) levels, and no address moves against another. A lay that keeps (S) gives every doubling the same room, so
+the levels keep their widths. The structure was never wrong, only where it sat, and one amount from outside slides it
+into place.
+
 ## 10. A worked example: a mountain range
 
 A reader looks at a mountain range, face on, from opposite its middle. From nowhere we know three amounts: the reader's
