@@ -49,6 +49,11 @@ bodies are pictures. They are never evidence here.
   pooltool's statement of them (the measurements themselves are blocked here). The engine's constant grip between balls
   was killed (Alciatore's fit falls threefold from slow to fast) and replaced by the fit; the slow cushion is left for
   measured data (§2.4, §3).
+- 11 October, fourth: MOT (`plans/mot-plan.md`), motion and tracking from inside, in exact arithmetic (Tom: "maybe h
+  helps in object tracking and motion"). A reader with a clock and no lengths reads time to contact, how close a thing
+  will pass, and the levels of an approach exactly. A breadth of its own as a baseline reads distance best at the corner
+  of the pair (half-baseline, distance), and alike at a distance and its flip (§1, §2.2). The first-order stereo error
+  was killed past εd/B ≈ 0.18 (§3).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -88,6 +93,10 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | a ring thinner than a grain | a catalogue's or an instrument's limit: past it only the bright of a kind are read | the grain, an amount | MAG P3; HZN runs 1–3 |
 | a known kind | a standard candle; a spectral class | the kind's luminosity | MAG (the kind is about a level wide) |
 | V = H, the calibration | reading amounts with no unit of the other's | travel, a constant, a kind, a shared fact | LAD (in Wander's world) |
+| a reading over its own rate, x/ẋ (x = S/d, the pair's v/h) | time to contact, d/u (Lee's τ), exact at every distance; from the turn arctan x only far off | the reader's clock | MOT P1–P3 |
+| levels of an approach (the reading doubling) | each takes half the time to contact read at its start; infinitely many before contact | the reader's clock | MOT P4 |
+| ωτ, the reading of the pair (speed across, speed in); its corner | how close a thing will pass, as a share of its distance: ωτ/√(1 + (ωτ)²); 1/√2 at the corner; bearing still, a collision | none (the clock cancels) | MOT P5 |
+| the corner of the pair (half-baseline, distance) | where a baseline reads distance best (a right angle of convergence), alike at d and (B/2)²/d | the breadth B | MOT P6, P7 |
 
 ## 2. Results, by standing
 
@@ -150,6 +159,32 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 
   These are classical mechanics of hard balls, read in unit relations. They are not new physics; what they give is the
   count of levels, which the situated reader can use directly (a preview about three contacts deep on an open table).
+- **Motion read from inside** (MOT, `plans/mot-plan.md`). A thing of half-size S at distance d closes at speed u; the
+  reader reads x = S/d (the pair's v/h) and holds one amount, its clock. Then, to rounding or exactly:
+  - **time to contact is the reading over its rate**, x/ẋ = d/u, before and past the corner, with no S, d or u known;
+  - **read from the turn** arctan x instead, it is d/u times arctan(x)(1 + x²)/x: 1 far off, π/2 at the corner,
+    growing as (π/2)·x past it (for a flat thing face-on);
+  - **two looks a tick apart**: x₁/(x₂ − x₁) is τ at the second look exactly, and x₂/(x₂ − x₁) is τ one tick ago. This
+    accounts for POL run 10's kick reading 8% low: at τ = 10 ticks, one tick late is 9%;
+  - **holding the corner**: a reader that re-sets its unit to keep the thing at its corner turns it at d ln H/dt = 1/τ.
+    Each level of the approach takes half the τ read at its start, so infinitely many levels pass before contact, in the
+    finite time d₀/u (the walk's levels, in time);
+  - **how close it will pass**: with ω the bearing's rate, m/d = ωτ/√(1 + (ωτ)²). ωτ is the reading of the pair (speed
+    across, speed in), the clock cancelling, so this needs no bridge. At its corner the pass is 1/√2 of the present
+    distance; a bearing that holds still is a collision;
+  - **a breadth as a baseline**: two looks from the ends of a breadth B read the convergence γ, and d = (B/2)/tan(γ/2).
+    Per unit of γ, the distance moves 1/sin γ levels:
+    - least at γ = 90°, where d = B/2, the corner of the pair (half-baseline, distance);
+    - alike at d and its flip (B/2)²/d;
+    - with γ read to a step ε, a thing at a tenth of the corner's distance and one ten times past it are both read to 5
+      half-steps, at the corner to one;
+    - past the corner the error grows to x/(1 − x) on the far side (x = εd/2B), unbounded at d = 2B/ε, the baseline's
+      horizon (an amount, the step).
+
+  These are known as kinematics: Lee's τ, the navigators' constant bearing, stereo error, and surveying's right angle of
+  intersection. What the run settles is which reading carries each exactly. The ratio does at every distance, the turn
+  only far off, and the older of two looks. The corner is where a baseline reads best. That is SPN's "H is a zoom"
+  (Proposition 1.2): set H to the scale of the thing read, putting it at the corner. Here the baseline is H.
 
 ### 2.3 In Wander's world (illustration, not evidence)
 
@@ -223,6 +258,9 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   only near a medium hit. Replaced by the fit in run 2. **CUE P6: the slow cushion** bounces 0.62 in the engine against
   0.80 in Han's model with a constant restitution; which a real cushion does is for measured data. **CUE P10** was my
   set-up: the smoke test's throws are not pure stuns.
+- **MOT P6: the first-order stereo error.** The worst error per step was predicted as ε·d/(2B) within 10% up to
+  εd/B = 0.2. It is x/(1 − x) on the far side and x/(1 + x) on the near (x = εd/2B), past 10% from 0.183. The far side has
+  no bound at x = 1: the baseline's horizon.
 - **POL P29: a derivation, not the gas.** The plan took a disc's cross-section in two dimensions as one diameter; it is
   two, and the referee matched Enskog once that was right.
 
@@ -247,6 +285,10 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
 - **Real topography for REF.** The Moon (LOLA), Mars (MOLA) and Earth have spherical-harmonic shape models. With them:
   the depth spans in levels, and whether the relief's power falls by a fixed amount per level of wavenumber (Kaula-like).
   NASA's PDS is blocked here.
+- **The ratio or the turn, in a measured reader** (from MOT). x/ẋ gives time to contact at every distance; θ/θ̇
+  overstates it by π/2 at the corner and grows past it. Responses to looming that run on to large visual angles (half-angle
+  near 45° and past) would tell which a measured reader uses there. A published data set with the angles reached is
+  needed; none is chosen yet.
 - **One dimension against two.** ISQ's reading separates an angular size (falling one level per level of distance) from
   its square, the light (two levels). Stars with measured angular diameters (interferometry) and parallaxes would test
   the one-level half directly.
