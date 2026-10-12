@@ -30,7 +30,9 @@ follow the Cauchy distribution. When the evenness is the reader's own laying, we
 entirely to the reader's addresses and not to anything that arrives at them: whatever is met in each direction cancels
 from every single reading. This gives a reason for the Cauchy's best-known peculiarity. Its median exists and sits at the corner, because a median depends only on order, which is a
 property of addresses. Its mean does not exist, because a mean is a sum of sizes, a question about the payload, and
-addresses carry no size. The same split decides what reaches a reader of a payload. One stream of readings fixes the
+addresses carry no size. Neither property needs the circle or the even turn: any sweep that treats the two parties alike
+puts its median at the corner and, if it reaches the horizon, has no mean; the even turn gives the Cauchy's exact
+shape. The same split decides what reaches a reader of a payload. One stream of readings fixes the
 course of a relation, not its parties. The median is had only by a reader that holds its readings at once. Payloads
 closer together than the reader's step arrive as their centroid, a sum.
 
@@ -106,7 +108,9 @@ as if a single observation held it. Section 3 sets out the readers in full.
   logarithmic layout is consistent. The reader has two address spaces joined at one corner (§6).
 - **Main result.** Sweeping the circle evenly from home yields the Cauchy distribution, and the Cauchy is the reader's
   addresses, not its payload. Whatever is met in each direction cancels from the reading. Order survives every change of
-  payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7).
+  payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7). The median at the
+  corner and the missing mean need only that the sweep treat the two parties alike; the circle and the even turn give
+  the Cauchy's exact shape (§7.2).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
   outside fixes the scale, and a fact shared between two readers supplies exactly one ratio. The best estimate of the
@@ -122,7 +126,9 @@ as if a single observation held it. Section 3 sets out the readers in full.
   - The addresses' centre, the median, is had only by a reader holding its readings at once.
 - A worked example, a mountain range read from nowhere and from where the reader stands, puts the pieces together (§10).
 
-Section 11 discusses a single principle that may underlie all of these, the assumptions they rest on, and related work.
+Section 11 discusses a single principle that may underlie all of these. The geometry is claimed as necessary relative
+to a stated ignorance, not absolutely, and each relaxation of that ignorance gives a named alternative; the section also
+lists the assumptions and related work.
 The paper is geometry only. It makes no claim about physics, perception or the structure of spacetime.
 
 ## 2. Setting
@@ -204,7 +210,8 @@ what arrives.
 Each question has two answers, and each answer either ends the questioning or leads to the next question, so every
 reader lands in one situation and no reader lands in two: the five are exhaustive and do not overlap. Cases that look
 like a sixth reduce to these.
-- *V known only within bounds* is situation 3 or 4 with its one missing number known within bounds (§3.8).
+- *V known only within bounds, or as a distribution,* is situation 3 or 4 with its one missing number known that way
+  (§3.8). Its best estimate is then the corner of the bounds, or the median (Proposition 13).
 - *H unknown* leaves no reader at all: H is the reader's own breadth and is always held. Situation 0 is H with no h.
 - *A reader that reads in patches* is serial across the patches and parallel within each; every single look is 3 or 4.
 - *A system that changes kind* moves its reader from one situation to another over time (§3.5); at any one look the
@@ -212,6 +219,13 @@ like a sixth reduce to these.
 - *Several readers* each have a situation of their own; what passes between them is the subject of §9.
 - *More than two breadths* put the questions to each further breadth in turn; with V and V₂ both unknown and both set
   to H, the circle becomes the sphere (§5).
+- *Directions along which nothing can arrive* are addresses still laid, with nothing met at them. That is a matter of
+  payload, not of situation (Theorem 6(a)).
+- *A thumb that changes between looks* changes no reading, since every reading is a ratio of amounts in one unit and
+  the unit cancels (Proposition 8). Each look is then a reader of its own, joined to the others as several readers are
+  (§9). Within one look, a wavering thumb blurs the reader's step (§8).
+- *A reading of an area, or of any other power of the relation,* (v/h)^p with p > 0, keeps the order, the corner, the
+  flip and the median, and only rescales the levels by p.
 
 **Thumb and mountain.** Call the reader's breadth H its thumb and the other's breadth V the mountain. If the reader
 knows the mountain's size, it holds the unsituated view: thumb and mountain are both in hand, and the corner, where the
@@ -623,7 +637,10 @@ one. Which breadth it assigns is not free:
 **The Euclidean choice.** Part (c) is where an assumption enters. One unit makes the axes commensurable, but "a bar of
 fixed length" also needs a norm: under the largest-component norm the bar traces the square, under the sum norm the
 line. The circle follows if the sweep is the turning of a rigid bar. The facing of §4 motivates that; it does not prove
-it.
+it. Less rests on it than it seems. The readings are directions only (Theorem 6(a)), so the norm reaches them only
+through the measure on directions that "sweeping evenly" uses; laid by direction, every path gives the same readings
+(§7.4). Swept evenly along their own paths, the square and the line give other laws, with the same median at the corner
+and no mean (Theorem 6(e)). What the circle and the even turn add is the Cauchy's exact shape.
 
 **What the count of facings borrows.** The count 2ⁿ needs no angle. That the facings tile the circle or the sphere in
 equal shares, a quarter turn each or π/2 of the sphere's area each, is the Euclidean measure of (c), not part of the
@@ -859,12 +876,20 @@ if f is affine on the smallest interval containing X.
 (d) *The Cauchy is an address law.* Over one facing its median is v/h = 1, the corner, and its quartiles are √2 − 1 and
 √2 + 1, a flip pair. Its mean does not exist: ∫₀^M x·2/(π(1 + x²)) dx = (1/π)·ln(1 + M²), which grows without bound.
 
+(e) *The median and the missing mean need only fairness.* Let the sweep follow any path from all of h to all of v, with
+any weight, both unchanged by exchanging the two parties. Then the readings' law is unchanged by the flip and its
+median is the corner. If moreover the weight gives h a density bounded away from 0 near the horizon, the mean does not
+exist. The even turn on the circle is the case that gives the Cauchy of (d).
+
 *Proof.* (a) is the cancellation shown. (b) Strictly increasing maps preserve ranks; the converse follows by monotone
 interpolation between matched points. (c) A strictly increasing f that satisfies f((a + b)/2) = (f(a) + f(b))/2 for all a, b is affine,
 so a non-affine f fails it for some pair, and X = {a, b} is the set required; the inequality and its equality case are
 Jensen's. (d) Over one facing the distribution function is
 (2/π)·arctan(v/h), which is ½ at v/h = 1 and ¼ and ¾ at tan(π/8) = √2 − 1 and tan(3π/8) = √2 + 1; the integral is
-elementary. ∎
+elementary. (e) The exchange carries v/h to h/v and leaves path and weight unchanged, so v/h and 1/(v/h) have one law,
+F(1/x) = 1 − F(x), and by Proposition 2(b) F(1) = ½. Near the horizon v stays above some v₀ > 0, so
+P(v/h > r) ≥ P(h < v₀/r) ≥ κ·v₀/r for large r, where κ bounds the density of h there; then ∫ P(v/h > r) dr diverges, and
+so does the mean. ∎
 
 The theorem is elementary; its content is the reading. The Cauchy distribution is not a law of anything the reader
 meets. It is the reader's own layout of directions, counted. What arrives in each direction cancels from every single
@@ -889,7 +914,9 @@ The address reading holds where the even sweep is the reader's own laying, as st
 on that choice:
 - the reach cancels from every single reading, not on average (Theorem 6(a));
 - order survives every change of payload (Theorem 6(b));
-- only an affine map commutes with the mean on every set (Theorem 6(c)).
+- only an affine map commutes with the mean on every set (Theorem 6(c));
+- the median at the corner and the missing mean, for any weight that treats the two parties alike and does not vanish
+  at the horizon (Theorem 6(e)). Only the Cauchy's exact shape needs the even turn.
 
 These give a reader a reason to prefer order whatever the evenness is: order is what survives a payload it does not
 know.
@@ -945,16 +972,18 @@ way:
 | any shape | by direction | 0.500 | 1.000 | 0.637 | 0.637 |
 | circle | along its outline | 0.500 | 1.000 | 0.637 | 0.637 |
 | square | along its outline | 0.500 | 1.000 | 0.500 | 0.500 |
+| diamond, h + v = 1 | along its outline | 0.500 | 1.000 | 0.976 | 0.976 |
 | astroid | along its outline | 0.500 | 1.000 | 3.15 | 3.15 |
 | ellipse, twice as tall as wide | along its outline | 0.373 | 1.479 | 0.413 | 0.826 |
 
-Shapes unchanged when h and v are exchanged keep the corner at the middle, as the flip requires, and differ only at the
-ends; the astroid's cusps make its ends heavy, the square's flat sides make them light. The ellipse, which the exchange
-alters, moves its corner as well. Over 73 single-outline shapes from a drawing library the pattern is the same, with
-ends from 0.27 for a gear to about 3.1 for the astroid. The test would have failed had any shape laid by direction
-departed from the circle's numbers, or had a shape unchanged by the exchange moved its corner off the middle. The
-Cauchy is what an even lay by direction gives, whatever the shape; a lay taken from the outline brings the shape into
-the distribution. The Cauchy belongs to how the addresses are laid.
+Shapes unchanged when h and v are exchanged keep the corner at the middle, as the flip requires, and none of them has a
+mean, since each keeps a share of order 1/s or more beyond s (Theorem 6(e)). They differ only at the ends; the
+astroid's cusps make its ends heavy, the square's flat sides make them light. The ellipse, which the exchange alters,
+moves its corner as well. Over 73 single-outline shapes from a drawing library the pattern is the same, with ends from
+0.27 for a gear to about 3.1 for the astroid. The test would have failed had any shape laid by direction departed from
+the circle's numbers, or had a shape unchanged by the exchange moved its corner off the middle. The Cauchy is what an
+even lay by direction gives, whatever the shape; a lay taken from the outline brings the shape into the distribution.
+The Cauchy belongs to how the addresses are laid.
 
 **Why the circle and the Cauchy go together.** The circle is the one shape whose two lays coincide: on a circle, equal
 steps along the outline are equal steps of turn. So for the circle alone, a lay taken from the shape and a lay that
@@ -1389,26 +1418,42 @@ Which transformations a reader is ignorant of is chosen here, not derived. A rea
 be given other measures. Because the second of them presupposes turns, the principle cannot choose the circle over the
 square (§11.2, question 2).
 
+**What is claimed, then.** The geometry is necessary relative to a stated ignorance, not absolutely: a reader that does
+not know which party is which, which attitude the bar is in, or how large V is. From that premise come the corner and
+the median (the exchange), the even turn and, with V = H, the Cauchy (the turns, and Proposition 5(d)), and the
+logarithm past the corner (rescaling). Each relaxation gives a named alternative rather than no geometry:
+- a preferred party gives c ≠ 1, and an even turn then puts the Cauchy's median off the corner (Proposition 5(d));
+- a preferred direction gives the square's or the line's law, with the median at the corner and the missing mean
+  intact (Theorem 6(e));
+- a preferred scale gives a lay that stops there (§8, §11.2 question 1).
+
+The main result's core, order surviving and sums failing, with the median at the corner and no mean, needs only the
+first of the three.
+
 ### 11.2 Assumptions and open questions
 
 1. *The link in Proposition 4.* (S) does not follow from "any H will do", which only places the corner. It is scale
    invariance of the lay's increments, motivated by Proposition 3(b), since a lay that breaks it builds in a scale no
    reading can fix, but assumed rather than derived. The second route of §6, an additive measure on chains of
    relations, is equivalent to it, not weaker. Is there a premise about situated readers, thinner than scale
-   invariance, from which it follows?
-2. *Why Euclidean?* Is there a reason, from the reader's premises, that the sweep must be a turn rather than the
-   square's or the line's path through the same ratios?
+   invariance, from which it follows? Real readers do have preferred scales, their own step among them. Here a preferred
+   scale sets where the lay stops, the count of levels a reader resolves (§8), and (S) is claimed only for the lay's
+   form within that range.
+2. *Why Euclidean, and why the even turn?* The readings are directions only, so the norm enters only through the
+   measure on directions, and the two questions are one: is there a reason, from the reader's premises, that its weight
+   on directions is the one every turn leaves unchanged, rather than the square's or the line's? The median at the
+   corner and the missing mean do not depend on the answer (Theorem 6(e)); the Cauchy's exact shape does.
 3. *No measure on a level.* Is there a principled reason a level could not carry a measure before anything arrives?
 4. *Fairness.* Proposition 2(b) needs the reading to treat both sides alike although the reader's knowledge does not.
    Is that more than a choice?
-5. *Uniformity as the weight.* Does the argument of §7.5 remove the burden of the even turn, or only move it to "why the
-   circle"?
+5. *Uniformity as the weight.* Now part of question 2: the argument of §7.5 moves the burden of the even turn to "why
+   the circle", and the two are one question about the measure on directions.
 6. *V = H.* Answered: the drawing V = H is required, for the turn (Proposition 3(e)) and for the Cauchy, forward and
    working back from it (Proposition 5(d)). The estimate of the true size is Proposition 13's: the median of what the
    reader knows, and H when it knows nothing either way. What remains open is whether measuring that estimate's error
    by order or in levels is itself forced.
 
-If the principle of §11.1 stands, questions 1, 2 and 5 become one: whether a situated reader's ignorance is exactly these
+If the principle of §11.1 stands, questions 1 and 2 become one: whether a situated reader's ignorance is exactly these
 three transformations.
 
 **Where the conclusions do not follow.**
@@ -1417,6 +1462,9 @@ three transformations.
 - A level with more structure than its two ends, their order and the flip, such as a measure, allows other subdivisions
   than the halving, since (P2) fails.
 - Plain proportion past the corner keeps true scale but cannot fit the far field on bounded addresses (§6).
+- A reading that disturbs what it reads. Theorem 6(a) assumes that what arrives is the same whichever address meets it.
+  Where meeting a thing changes it, as a quantum measurement does, the addresses are still laid, but nothing here says
+  what then arrives at them.
 
 ### 11.3 Related work
 

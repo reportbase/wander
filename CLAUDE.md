@@ -240,7 +240,16 @@ Google Fonts load from outside:
   adversarial read, is in `plans/ofs-review-4.md`, with six edits taken (SPN R213): the paper's front now claims what its
   back proves (the address reading conditional on the even sweep being the reader's own; "a reason for" the missing mean,
   not "explains"; (S) scale invariance of the lay's increments, assumed; the vantages' assignment a reading; Propositions
-  9–12 classical). Keep its verbs to what is proved.
+  9–12 classical). Keep its verbs to what is proved. The fifth (Gemini, on the foundational axioms) is in
+  `plans/ofs-review-5.md` with a response: the main result's core (median at the corner, no mean) holds for every
+  exchange-symmetric path and weight (circle, square and line alike; only the Cauchy's exact shape needs the circle and
+  the even turn); the claim to make is necessity relative to a stated ignorance (§11.1). Edits A–F made (SPN R217):
+  Theorem 6(e) (the median and the missing mean need only fairness), the norm entering only through the measure on
+  directions, conditional necessity in §11.1, a disturbing reading out of scope, preferred scales setting where the lay
+  stops; the SI's constants in `physics.md`. Its second part ("more reader situations with yet more geometries") is
+  answered there too: each proposed situation lands in the payload, the amounts or a power of the reading; edit G made
+  (four more entries in §3.1's "Cases that look like a sixth"). A comment from Grok (an empirical defense from ordinary
+  perception and instruments) is recorded there and not taken: real instruments use several weights.
   `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
   perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
   those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry
@@ -548,7 +557,9 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   1 + ln s by address count; by length reality is 2H (the in-place lay, 2 − 1/s, the reader's own); two address spaces, proportional and logarithmic,
   around the corner; the count is the LOD; H is a zoom, not an escape (a large H loses the small below one address; the
   best H puts the thing read at the corner). Still assumed: no measure on a level.
-- Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof").
+- Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof"). Since R217 the main result's core does
+  not rest on it: any fair weight that does not vanish at the horizon puts the median at the corner and leaves no mean
+  (OFS Theorem 6(e)); only the Cauchy's exact shape is the even turn's.
 
 ## Read this first: the physics comes first
 Since 10 Oct 2026 (Tom: "wanderer priority was user experience, not physics. the physics then became unexpextedly

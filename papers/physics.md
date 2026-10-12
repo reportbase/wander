@@ -97,6 +97,12 @@ bodies are pictures. They are never evidence here.
   no single reading held: the figure improves with readings, the scale never does and is exactly as good as the outside
   amount, shared by every linked amount as one shift in levels, and carried up a ladder rung by rung. Statistical
   against systematic error is address against payload (§1, §2.4). P1 was killed by my estimator (§3).
+- 12 October, third: the constants as the outside amounts (`plans/ofs-review-5.md`, its fifth point, that the geometry
+  treats scale as a mere calibration error; Tom: "Yes, make the proposed edits"). The geometry's silence on scale does
+  not set physics' dimensional constants aside: they are what fixes it. Dimensional analysis already holds that only
+  dimensionless ratios are read, and since 2019 the SI fixes every base unit by an agreed value of a constant
+  (the caesium frequency, c, h, e, k_B, N_A and the luminous efficacy): the agreed outside amounts of OFS Proposition
+  8(b), and a unit agreed between readers as OFS §9 has it (§1).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -156,6 +162,7 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | the median of the addresses (order) against the centroid of the payload (sums), R210 | below the step, the light-weighted photocentre and the total mass at the centre of mass; an unresolved binary's photocentre orbit a·\|B − β\| | the step σ; the masses and lights | PAY P3 |
 | level of detail by distance; the corner where none can be dropped; the flip | the multipole expansion: order l down by (R/r)^l, converging outside r = R; Kelvin's inversion r ↦ R²/r swapping the exterior and interior forms | the source's radius R | PAY P4 |
 | one stream against readings at once with a shared denominator | looming's size–distance ambiguity; a same-depth neighbour's ratio S₁/S₂ separates approach from growth | none | PAY P1, P2 |
+| one amount from outside fixes every amount linked to it (OFS Proposition 8(b)); a unit agreed between readers (OFS §9) | dimensional analysis (only dimensionless ratios are read); the SI since 2019, every base unit fixed by an agreed value of a constant (Δν_Cs, c, h, e, k_B, N_A, K_cd) | the constants themselves, by agreement | OFS review 5, point 5 |
 | the addresses (directions, order, shape up to scale) exact while the scale is arbitrary; one amount from outside, a pan in levels | the completed view assembled from situated observations (parallax, triangulation, multi-epoch astrometry, the distance ladder); statistical error, which averages down, against systematic calibration error, which does not and is carried up the ladder | a baseline (travel), a shared length, a known kind | STC P1–P7 |
 
 ## 2. Results, by standing
