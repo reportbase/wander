@@ -129,3 +129,76 @@ at φ = 0.3. Computed from the formulas above before any run:
 - Collapse at e = 0.5 (if seen): the one-contact-at-a-time engine meeting a held contact. Part 2's subject.
 
 ## Runs
+
+### Run 1 (12 October 2026)
+
+`plans/mrb/hcs.mjs` (the plan pushed first, commit c2292d7); output in `plans/mrb/mrb-run1.txt`, 10 s for all 32 runs.
+Before it, an engine check that reads no predicted quantity: at e = 1, after 10,000 contacts, the energy kept to 1e-15,
+the momentum to 1e-14, and no pair closer than one diameter by more than 5e-15.
+
+```
+φ 0.05 e 0.9:  per contact 0.06324 (pred. 0.06310, +0.21%); clock 0.02425 (pred. 0.02431, −0.28%); form 1.001 0.997 0.996 0.978; R ≤ 2.93
+φ 0.1  e 0.95: per contact 0.03238 (pred. 0.03242, −0.12%); clock 0.02845 (pred. 0.02862, −0.61%); form 0.971 1.003 0.974 0.983; R ≤ 2.85
+φ 0.1  e 0.9:  per contact 0.06320 (pred. 0.06310, +0.15%); clock 0.05514 (pred. 0.05572, −1.04%); form 0.962 0.962 0.992 1.006; R ≤ 3.07
+φ 0.1  e 0.8:  per contact 0.11874 (pred. 0.11962, −0.74%); clock 0.10412 (pred. 0.10562, −1.42%); form 1.005 1.042 1.000 1.015; R ≤ 3.32
+φ 0.1  e 0.7:  per contact 0.16592 (pred. 0.17006, −2.43%); clock 0.14220 (pred. 0.15002, −5.21%); form 0.957 1.034 1.126 0.918; R ≤ 3.54
+φ 0.15 e 0.9:  per contact 0.06280 (pred. 0.06310, −0.48%); clock 0.09518 (pred. 0.09661, −1.48%); form 0.960 0.969 0.987 0.984; R ≤ 2.45
+φ 0.3  e 0.95: R at most 2.14, 2.18, 2.36, 1.54 (four seeds) to C 60; T/T₀ at C 60 within 3% of Haff per contact
+φ 0.3  e 0.5:  R past 20 at C 26.0, 22.8, 28.8, 21.3; at most 38, 47, 38, 33; no collapse to C 60; T/T₀ at C 60 about 1.5e-4,
+               against Haff's 2.5e-7: the cooling three decades behind
+melt (e = 1): contacts per marble per unit time over √T against Enskog–Carnahan–Starling: −0.26%, +0.64%, +0.18%, −0.56% at φ 0.05, 0.1, 0.15, 0.3
+
+P0: not killed. Each φ within 2%.
+P1: not killed. Per contact within 3% everywhere: +0.21, −0.12, +0.15, −0.74, −2.43, −0.48%.
+P2: KILLED. At e 0.7 the clock slope is 5.21% low and one seed's form 12.6% off; elsewhere within 1.5% and 4.2%.
+P3: not killed. Per-contact slopes at φ 0.05, 0.1, 0.15 within 0.69% of each other; the clock ratio 3.926 against n·χ's 3.973 (−1.2%).
+P4: not killed. φ 0.3: e 0.95, R at most 2.36; e 0.5, R past 20 before C 60 in all four seeds.
+P5: not killed. No collapse in the 28 predicted runs; none either in the four at e 0.5 (not predicted).
+```
+
+**Post hoc** (after P2's kill, not a prediction; `plans/mrb/posthoc1.mjs`, output `mrb-run1-posthoc.txt`): 16 seeds at
+φ = 0.1, to tell the seeds' noise from a bias, and the contacts per marble per unit time read against Enskog's at the
+current T (with a₂'s factor):
+
+```
+e 0.9: per contact −0.26% ± 0.17%; clock −0.72% ± 0.29%; contact rate over Enskog 0.993, 0.996, 0.997 by thirds; R 1.22, 1.22, 1.18
+e 0.7: per contact −2.48% ± 0.27%; clock −5.20% ± 0.51%; contact rate over Enskog 0.968, 0.973, 0.975 by thirds; R 2.04, 2.30, 2.29
+```
+
+## Reading of run 1 (not ruled)
+
+- **Haff's law holds counted in contacts, from e alone.** Over two decades of cooling, at three densities and four
+  restitutions, −d ln T/dC is (1 − e²)/3 with a₂'s correction to within 0.8% wherever the gas stays even (all but
+  e = 0.7), and the density, the diameter and the pair correlation drop out, as derived (P1, P3). A marble that counts
+  its own contacts needs nothing but e to know how fast its world cools: at e = 0.9 its temperature halves every 11
+  contacts, at any density.
+- **The clock needs the reach.** In the referee's time the same law needs n·χ·σ², and it carries Enskog's ratio between
+  densities to 1.2% (P3). It is also the first to go: at e = 0.7 the bias is real (16 seeds), −2.5% per contact and
+  −5.2% in the clock. The post-hoc reading shows why it is about double: the contacts themselves come 2.7–3.2% slower
+  than Enskog says at the measured T, while the box-scale flow R is twice e = 0.9's. Velocities near each other become
+  alike, so neighbours close more slowly than molecular chaos assumes (known physics of the cooling state: the
+  long-range velocity correlations of van Noije, Ernst and others, from memory). That lowers both the energy lost per
+  contact and the contacts per unit time. The count carries the first departure, the clock both.
+- **Where one total stops being enough** (P4). At φ = 0.3, with e = 0.5, the box's largest flow grows from the first
+  contacts, R past 20 by C ≈ 21–29, and the gas cools three decades slower than Haff per contact by C = 60: kinetic
+  energy is now held in the flow, which contacts barely dissipate. One number for the whole box no longer describes
+  it; the box's largest level holds structure of its own. At e = 0.95 the same box stays even.
+- **No collapse at 500 marbles**, even at e = 0.5 and φ = 0.3, to C = 60 (P5; e = 0.5 not predicted). The
+  one-contact-at-a-time engine was not where this gas broke; the homogeneous description was. Inelastic collapse is left
+  to part 2, where gravity forces contacts to last.
+
+### Run 2 (12 October 2026): prediction, written before it ran
+
+Run 1's post-hoc reading is that P2 failed at e = 0.7 because, at φ = 0.1, the gas is near its shear instability:
+L/L_c ≈ 0.79 by the plan's estimate. On that reading the bias should not belong to e = 0.7 as such. It should follow
+L/L_c, which the density moves at fixed e: L/ℓ₀ is 7.37, 11.69 and 15.32 at φ = 0.05, 0.1 and 0.15, against
+L_c/ℓ₀ ≈ 14.7, 14.8 and 15.4, so L/L_c ≈ 0.50, 0.79 and 1.00. Sixteen seeds at each, e = 0.7, the same fits as run 1
+(C from 5 to 32.09); the clock's prediction is 0.06546, 0.15002 and 0.26010.
+
+- **P6 (far from the instability, the law holds in both clocks).** At φ = 0.05: the per-contact slope within 1% of
+  0.17006, the clock slope within 1.5% of 0.06546, and R's mean over the last third below 1.5. *Killed* if any fails.
+- **P7 (at the threshold, more bias than at φ = 0.1).** At φ = 0.15: the per-contact deficit more than 2.5%, the clock
+  deficit more than 5.2% (run 1's post-hoc values at φ = 0.1), and R's mean over the last third above 2.3. *Killed* if
+  any fails.
+- **P8 (the count holds longer than the clock).** At φ = 0.1 and 0.15 the clock's deficit is at least 1.5 times the
+  per-contact deficit. *Killed* if either is less.
