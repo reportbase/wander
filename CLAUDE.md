@@ -441,7 +441,10 @@ Google Fonts load from outside:
   size), `ref` (the median needs every arrival held at once, a parallel reference; a serial reader holds one arrival,
   one extra slot), `rec` (a serial record: scale-free, grain-free marks). So the median is the parallel reader's centre;
   holding (serial/parallel) and resolving (above/below the step) are two axes. **Before new work on readers, shapes or
-  recovery, check draw's labs** (`labs.html` in the draw repo lists them; run one with `draw.html?lab=CODE`).
+  recovery, check draw's labs** (`labs.html` in the draw repo lists them; run one with `draw.html?lab=CODE`). The
+  geometry is in the main papers (SPN R211: "this is pure geometry not physics actually"): SPN §4.7 (with §2.1's "What 3
+  and 4 hold"), OFS §7.6 "Order needs holding", Propositions 9–12 in §9 and §8's "From far off"; `physics.md` keeps the
+  physical instances (looming, unresolved binaries, gravity from far off).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

@@ -26,7 +26,9 @@ follow the Cauchy distribution, and we show that the distribution belongs entire
 anything that arrives at them: whatever is met in each direction cancels from the reading. This explains the Cauchy's
 best-known peculiarity. Its median exists and sits at the corner, because a median depends only on order, which is a
 property of addresses. Its mean does not exist, because a mean is a sum of sizes, a question about the payload, and
-addresses carry no size.
+addresses carry no size. The same split decides what reaches a reader of a payload. One stream of readings fixes the
+course of a relation, not its parties. The median is had only by a reader that holds its readings at once. Payloads
+closer together than the reader's step arrive as their centroid, a sum.
 
 ## 1. Introduction
 
@@ -102,6 +104,12 @@ as if a single observation held it. Section 3 sets out the readers in full.
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
   outside fixes the scale, and a fact shared between two readers supplies exactly one ratio (§9).
+- What reaches a reader of a payload depends on what it holds and what it resolves (§7.6, §9).
+  - One stream fixes the course of a relation, not its parties: motion comes before the object.
+  - Readings taken at once against one denominator give payloads relative to each other.
+  - Further standpoints bring back a figure up to its scale.
+  - Payloads closer than a step arrive as their centroid.
+  - The addresses' centre, the median, is had only by a reader holding its readings at once.
 - A worked example, a mountain range read from nowhere and from where the reader stands, puts the pieces together (§10).
 
 Section 11 discusses a single principle that may underlie all of these, the assumptions they rest on, and related work.
@@ -898,6 +906,19 @@ the mean of n Cauchy readings is distributed exactly as a single reading, whatev
 The readings are addresses, and a mean asks them for sizes they do not carry. A situated reader keeps order and loses
 sums, and the Cauchy is the extreme case: an order law with no sum.
 
+**Order needs holding.** The median survives every change of what arrives (Theorem 6), but a reader has it only if it
+holds its readings. Finding the exact median of n arrivals taken one at a time needs storage that grows in proportion to
+n (Munro and Paterson 1980).
+- A parallel reader holds its hemisphere at once, and has the median.
+- A serial reader holds one arrival at a time, and does not. What it can keep, at the cost of one more slot, is one
+  arrival, held and left alone, against which every later arrival is higher or lower.
+  - That comparison is unchanged by any common rescaling.
+  - It needs no step, since it asks only which of two is larger, so readers who count in different steps mark the same
+    arrivals.
+
+  It does for the serial reader what the median does for the parallel one. A reference that moves with the reader's
+  own counts loses this: readers counting in different steps then mark different arrivals.
+
 ### 7.7 Other addresses and payloads
 
 The same split appears in familiar places.
@@ -938,6 +959,20 @@ the count is the *level of detail*: the geometry gives the forms, and the level 
 **Size sets the level.** A thing that spans n of the reader's addresses is resolved to about log₂ n levels, one fewer
 each time the number of addresses it spans halves; when it spans a single address it is a point. Nothing is requested:
 the span sets the level. How many addresses a thing spans depends on amounts, which the geometry does not supply.
+
+**From far off, a thing is its total at its centroid.** Take payloads w_i at points r_i about a centre, each at
+distance ρ_i from it, read from a standpoint at distance r with every ρ_i < r. The reciprocal of the distance to each
+expands in the reading ρ_i/r: 1/|r − r_i| = Σ_l (ρ_i^l / r^(l+1)) P_l(cos γ_i), with P_l the Legendre polynomials and
+γ_i the angle at the centre.
+- Weighted by the w_i and taken about their centroid, the first-order terms cancel. From far off the payloads read as
+  their total at their centroid, and each finer order of their arrangement arrives smaller by one more power of the
+  reading.
+- For a single payload the series converges outside the sphere of radius ρ and fails inside it. On that sphere, along
+  the line to the payload, every term is the same and none may be dropped: the corner of the pair (ρ, r).
+- Inversion in that sphere, r ↦ ρ²/r with the factor ρ/r, exchanges the outer series and the inner one term by term
+  (Kelvin's inversion; Kellogg 1929). It is the flip of §4, in space.
+
+This is level of detail by distance, with the corner as its seam.
 
 **H is a zoom, not an escape.** Any H gives the same circle and corner, so a reader could choose a very large H and hold
 everything it will ever look at in the near field, at true scale, with no logarithm. The cost is the level of detail.
@@ -991,6 +1026,66 @@ is the only factor that leaves L₀ fixed. ∎
 
 This is the exact form of §3.4's "only two". The worked example of §10 is (b) in use: the baseline is a walk of one
 known H, and it fixes the mountain's distance and width.
+
+**What reaches a reader of a payload.** Proposition 8 speaks of every reading at once. Read over time from one
+standpoint, or at once from several, it has four sharper forms.
+
+**Proposition 9 (one stream is one relation).** A reader at one standpoint receives readings x(t) = a(t)/b(t) of a pair
+of amounts. For any positive function λ(t), the pair λ(t)·a(t), λ(t)·b(t) gives the same readings.
+
+*Proof.* (λa)/(λb) = a/b at every t. ∎
+
+A single stream fixes the course of the relation, not its parties. A thing coming nearer and a thing at rest growing at
+the matching rate are the same stream, and so is every mixture of the two. What the stream does fix is the relation's
+own pace, the reading over its rate, x/ẋ; for a thing coming nearer at a steady rate it is the time left until contact.
+A serial reader is given motion before it is given an object.
+
+**Proposition 10 (one denominator, at once).** Two readings taken at the same moment, x₁ = a₁/b₁ and x₂ = a₂/b₂, have
+the ratio x₁/x₂ = (a₁/a₂)(b₂/b₁). When the two parties share the denominator, b₁ = b₂, the ratio is a₁/a₂, whatever the
+denominator is and however it changes.
+
+*Proof.* Division. ∎
+
+Reading at once recovers payloads relative to each other, and only where they share a denominator; by Proposition 8,
+never their scale. A neighbour at the same distance tells growth from approach: under approach the ratio of the two
+readings holds still, and under growth it follows the growth.
+
+**Proposition 11 (standpoints bring back the figure).** Each reader reads only directions: for each place on a figure,
+the turn at which it stands. Then:
+
+(a) one reader fixes, for each place, only a line through it;
+
+(b) two readers whose placement relative to each other is known up to scale fix every place both see, up to one common
+scale;
+
+(c) one agreed length between them fixes the scale.
+
+*Proof.* (a) A direction from a known point is a line. (b) Two lines from different points, if not parallel, meet in
+exactly one point, and moving both readers by a common similarity moves every meeting point by the same similarity.
+(c) By Proposition 8(b). ∎
+
+So one reader's readings, however many, fix no place. Laid out with nothing else, they return the circle of §5, the same
+from every figure. The figure comes back from a second standpoint, and its size from an agreed length. This is
+triangulation, read as a ladder of what each further standpoint buys.
+
+**Proposition 12 (below a step, the centroid first).** Payloads w₁, …, w_n > 0 at places x₁, …, x_n along a line are
+read through a step: a kernel K of total 1, mean 0 and spread σ². The reading f(x) = Σ w_i·K(x − x_i) has total
+W = Σ w_i, centroid c = Σ w_i·x_i / W, and spread σ² + Σ (w_i/W)(x_i − c)².
+
+*Proof.* Integrate the sum of shifted kernels: ∫ f = W; ∫ x f = Σ w_i x_i, since K has mean 0; and
+∫ (x − c)² f = Σ w_i (σ² + (x_i − c)²). ∎
+
+Payloads closer together than a step arrive as their total and their centroid, exactly, however close they are. Their
+arrangement enters only the spread, where it is smaller than the step's own by the square of the separation over the
+step: two payloads with shares β and 1 − β at separation s add β(1 − β)s² to σ².
+
+So there are two centres, and they must not be confused:
+- **The addresses' centre is the median,** an order statistic that a mean cannot replace (§7.6), had only by a reader
+  that holds its readings.
+- **The unresolved payload's centre is its centroid,** a weighted mean. It arrives first and exactly; the payload's
+  arrangement reaches the reader only through the spread, faintly, until its parts lie a step apart.
+
+Fingers order; rings add.
 
 ## 10. A worked example: a mountain range
 
@@ -1161,6 +1256,8 @@ Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science
 
 Jeffreys, H. (1939). *Theory of Probability*. Oxford University Press.
 
+Kellogg, O. D. (1929). *Foundations of Potential Theory*. Springer, Berlin.
+
 Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen* (the Erlangen programme).
 
 Knight, F. B. (1976). A characterization of the Cauchy type. *Proceedings of the American Mathematical Society* 55,
@@ -1174,6 +1271,9 @@ McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *T
 Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata*. Duisburg.
 
 Microsoft. Bing Maps Tile System (documentation).
+
+Munro, J. I. and Paterson, M. S. (1980). Selection and sorting with limited storage. *Theoretical Computer Science*
+12(3), 315–323.
 
 Nagel, T. (1986). *The View from Nowhere*. Oxford University Press.
 
