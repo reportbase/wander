@@ -253,3 +253,74 @@ pair stayed within 1e-13 (reducing the angle by whole turns would help it; the p
   the unit relation's is twice the angle's at one step. At one budget of addresses, the in-place lay reads best between
   0.52 b and 1.91 b (by π/2 at the corner); the even turn, the Cauchy's lay, reads best outside that (by 4/π far off
   and near home).
+
+### Run 3: predictions (11 October, written before `mot/mot3.py` exists)
+
+Tom: "yes", to special relativity in unit relations. The run follows the archived *Special Relativity, Through the
+Fisheye* (`papers/archive/sr-through-the-fisheye.md`) and its survey (`plans/archive-gems.md`).
+
+**Set-up, with the case kept.**
+- **Amounts:** the relative speed u, the constant c, a mass m, a momentum p, a proper acceleration a and the reader's
+  proper time τ.
+- **The bridge from u to a reading is c**, a known constant. β = u/c and 1/γ = √(1 − β²) are the unit relations v and
+  h, one unit for both, so v² + h² = 1 (`v-and-h.md` item 48). The reading v/h = γβ is the celerity w.
+- **The Doppler factor is k = √((1 + β)/(1 − β)).** It is a ratio of two of the reader's own intervals (sent and
+  received), so it needs no bridge. Its levels are ζ = ln k, the rapidity.
+
+**Predictions.**
+- **P13. Three pairs, three corners.** Each pair's swap is an involution on its reading with one fixed point.
+  - **(a) The Doppler pair (sent, received):** k ↔ 1/k is β ↔ −β (approach against recession). Its corner is k = 1,
+    rest.
+  - **(b) The pair (β, 1/γ), equivalently (pc, mc²):** the swap is w ↔ 1/w. Its corner is w = 1: β = 1/√2, momentum
+    energy equal to rest energy, k = 1 + √2, ζ = ln(1 + √2) = 0.881374.
+  - **(c) The sky's pair (fore, aft):** for a direction at θ from the motion, the reading is t = tan(θ/2), and the swap
+    is t ↔ 1/t (θ ↔ π − θ). Its corner is θ = 90°, the transverse plane.
+  - **Predicted:** the three corners are three different places, and a boost moves only (c)'s. The moving observer's
+    transverse plane is the rest frame's direction with tan(θ/2) = k exactly. At (b)'s corner, that is θ = 135°, and
+    the forward hemisphere is seen within 45°.
+  - **Killed if:** β → −β fails to give k → 1/k to 1e-12; or β = 1/√2 fails to give w = 1, k = 1 + √2 and those two
+    directions to 1e-12.
+- **P14. γ and γβ are the two kinds of corner of the Doppler pair.** Over 10⁴ random rational k in [1/1000, 1000],
+  exactly in rationals:
+  - γ = (k + 1/k)/2 is unchanged by the swap, so it is stationary at rest;
+  - γβ = (k − 1/k)/2 flips its sign under the swap, so it is zero at rest;
+  - k = γ + γβ and 1/k = γ − γβ: the Doppler factor's even and odd parts in levels;
+  - β = (k² − 1)/(k² + 1) and 1/γ = 2k/(1 + k²), the facing's sine, P12's form;
+  - β² + (1/γ)² = 1.
+
+  By complex step: dγ/dζ = 0 and d(γβ)/dζ = 1 at rest, to 1e-12.
+  **Killed on any inexact identity or either derivative missing.**
+- **P15. Rapidity is the reader's lay of celerity, smoothed.**
+  - **The reader's lay** of w is w inside the corner and 1 + ln w past it. Rapidity is ζ = asinh w.
+  - **Predicted:** both have slope 1 at home and slope 1/w far off. The gap (lay − rapidity) rises throughout, from 0
+    at home through 1 − ln(1 + √2) = 0.118626 at the corner, toward 1 − ln 2 = 0.306853 (nats) and never past it.
+  - **Killed if:** the gap is not increasing on 10⁻⁶ ≤ w ≤ 10⁶; or its value at the corner, or at w = 10⁶ against the
+    limit, misses by more than 1e-9.
+- **P16. Pseudorapidity is a direction's level, and a boost along the axis pans every level by ln k.**
+  - **Predicted:** η = −ln tan(θ/2) is the sky pair's reading in nats. Over 10⁴ random θ and β in (−0.99, 0.99), a
+    boost along the axis gives η′ − η = ln k. The swap fore ↔ aft is η ↔ −η. For a massless particle,
+    ½ ln((E + p_z)/(E − p_z)) = η.
+  - **Killed if:** any of these misses by more than 1e-12.
+- **P17. The relativistic regime switches at (b)'s corner, symmetrically for the energy and not for the kinetic
+  energy.**
+  - **For E** = √((pc)² + (mc²)²), with x = pc/mc² (the celerity): the level-slope d ln E/d ln x = x²/(1 + x²) = β².
+    This is a share of the circle: ½ at the corner, with s(x) + s(1/x) = 1.
+  - **For T** = E − mc²: its level-slope is x²/(√(1 + x²)(√(1 + x²) − 1)), which runs from 2 at home to 1 far off. At
+    the corner it is 1 + 1/√2, not 1.5, and s_T(x) + s_T(1/x) is not constant. This repeats NRF: the corner switch is
+    symmetric where the quantity is a share.
+  - **Killed if:** E's slope misses β², or its swap sum misses 1, by more than 1e-12; or T's corner slope misses
+    1 + 1/√2 by more than 1e-12; or T's swap sum is within 1e-6 of a constant over 10⁻³ ≤ x ≤ 10³.
+- **P18. Levels of motion, three ways.** A level is one doubling of the Doppler factor, k = 2ⁿ.
+  - **Predicted:** under uniform proper acceleration a from rest (ζ = aτ), each level takes exactly ln 2/a of the
+    traveller's proper time. In the launch frame's time t = sinh(aτ)/a, level n is reached at t_n = (2ⁿ − 2⁻ⁿ)/(2a),
+    and each level takes Δ_n = (2ⁿ + 2⁻ⁿ⁻¹)/(2a), its ratio to the last tending to 2. Set beside P4, where the levels
+    of an approach at constant speed each take half the last, the traveller's levels come evenly and the launch frame's
+    double.
+  - **Killed if:** the rationals for t_n and Δ_n (a = 1, n ≤ 40) differ from sinh(n ln 2) and its differences by more
+    than 1e-12 relative; or the ratio at n = 20 differs from 2 by more than 1e-9.
+
+Known already: Bondi's k-calculus (k, β = (k² − 1)/(k² + 1)); rapidity adds (Varićak 1910, Robb 1911); pseudorapidity
+equals rapidity for a massless particle; d ln E/d ln p = β² follows from dE/dp = u; the non-relativistic and
+ultra-relativistic regimes either side of pc ~ mc²; hyperbolic motion, t = sinh(aτ)/a; the headlight effect. What run 3
+adds is the reading: three named pairs, their corners and their kinds, and the regime switch symmetric only where the
+quantity is a share.
