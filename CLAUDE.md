@@ -232,10 +232,13 @@ Google Fonts load from outside:
   `denominator-paradox.md` ("Each Sees the Other Smaller", an older paper Tom wrote with Claude in an earlier session, added 11 Oct) is a first course in
   denominator paradoxes: private rulers compared on one number line; dissolve, then purchase a shared denominator (the
   exchange: ratio and product of the two reads). `vantages.md` §F maps it onto the three vantages.
-  `papers/archive/` (11 Oct 2026, from Tom: "older papers … archived but off many gems we should pull forward"): seven
-  earlier papers kept as received, never edited: *Reader Geometry as Addressing* (rulings R1–R151 only; R152–R187 are
+  `papers/archive/` (11 Oct 2026, from Tom: "older papers … archived but off many gems we should pull forward"): earlier
+  papers kept as received, never edited: *Reader Geometry as Addressing* (rulings R1–R151 only; R152–R187 are
   quoted in SPN Appendix A), *The Relation Space*, *Browsing the Fisheye*, *The Radix*, *The Order of Limits*, *One
-  Reader*, *Degrees of Freedom*. They predate 9 Oct: check every term (density, view from everywhere, inside/outside,
+  Reader*, *Degrees of Freedom*; and since 11 Oct an eighth, *Special Relativity, Through the Fisheye* (4 Sep; Tom: "here is
+  a earlier paper on SR"), its numbers rechecked in `srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
+  dimensions), its gems and one link to MOT run 2 (γ even, γβ odd in ln k; 1/γ = 2k/(1 + k²)) in `plans/archive-gems.md`.
+  They predate 9 Oct: check every term (density, view from everywhere, inside/outside,
   fulcrum, arctan, h and v as breadths, recursive corners, depth, old situation numbers) before pulling anything forward.
   `plans/archive-gems.md` lists the gems, where each went and what is queued. **Where an archived paper conflicts with
   one that is not archived, the paper that is not archived stands** (Tom, 11 Oct; SPN R192).
