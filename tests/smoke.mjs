@@ -462,6 +462,35 @@ try {
     failures.push(`[mountain.html] ${JSON.stringify(mt)}`);
   console.log(`${failures.length === before18 ? 'ok  ' : 'FAIL'} mountain.html (ends at ${mt.r.alpha.toFixed(1)}°, ${mt.r.fingersOn} of 36 fingers on the range, the same at ×1000; mountain = thumb reads 1 mi at ${mt.e.dRead} mi, off by ${mt.e.factor}, ${mt.e.doublings.toFixed(2)} doublings; one thumb walked recovers d = ${mt.w.d.toFixed(3)}, V = ${mt.w.V.toFixed(3)})`);
 
+  // ── 19. play-marbles.html: a bowl of 500 (MRB part 2's engine): the pour comes to rest in the bowl with the bowl and the
+  //    table carrying the weight; the arc seen ahead ends at its first contact; a throw near the rim knocks marbles out and
+  //    is heard; pulling the strip half way throws ──
+  current = 'play-marbles.html';
+  const before19 = failures.length;
+  await page.goto(new URL('play-marbles.html', base).href, { waitUntil: 'load' });
+  const mb = await page.evaluate(() => { const M = __marbles, g = M.game, w = M.world, o = {};
+    o.pour = M.settleNow(300); let n = 0; for (let i = 0; i < M.NM; i++) if (w.on[i] && !g.out[i]) n++; o.inBowl = n;
+    w.step(); o.held = (w.load.bowl + w.load.table) / w.weight();
+    // the throw: at the heap's top 6 diameters from the middle, toward the eye, as hard as it goes
+    const az = -Math.PI / 2, px = 6 * Math.cos(az), py = 6 * Math.sin(az); let zt = 0;
+    for (let i = 0; i < w.N; i++) if (w.on[i] && Math.hypot(w.x[i] - px, w.y[i] - py) < 0.6) zt = Math.max(zt, w.z[i] + 0.5);
+    const arc = M.arcOf([px, py, zt], 1), end = arc.pts[arc.pts.length - 1];
+    let dmin = Infinity; for (let i = 0; i < M.NM; i++) if (w.on[i]) dmin = Math.min(dmin, Math.hypot(end[0] - w.x[i], end[1] - w.y[i], end[2] - w.z[i]));
+    o.arcEnds = dmin < 1.05; o.reach = arc.reach;
+    g.target = [px, py, zt]; const h0 = { ...M.heard }; M.throwAt(g.target, 1); o.after = M.settleNow(300); o.out = g.outs; o.throws = g.throws;
+    o.heard = { glass: M.heard.glass - h0.glass, bowl: M.heard.bowl - h0.bowl, felt: M.heard.felt - h0.felt };
+    return o; });
+  if (mb.pour !== 'aim' || !(mb.inBowl >= 450) || !(Math.abs(mb.held - 1) < 0.01) || !mb.arcEnds || !mb.reach || mb.after !== 'aim' || !(mb.out >= 1) || mb.throws !== 1 || !(mb.heard.glass >= 1 && mb.heard.bowl >= 1 && mb.heard.felt >= 1))
+    failures.push(`[play-marbles.html] ${JSON.stringify(mb)}`);
+  { // the pull strip: half way down and let go throws the next one
+    const box = await page.locator('#pull').boundingBox();
+    await page.mouse.move(box.x + box.width / 2, box.y + 4); await page.mouse.down();
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height * 0.5, { steps: 6 }); await page.mouse.up();
+    const t2 = await page.evaluate(() => ({ throws: __marbles.game.throws, state: __marbles.game.state }));
+    if (t2.throws !== 2) failures.push(`[play-marbles.html] pulling the strip half way did not throw (${JSON.stringify(t2)})`);
+  }
+  console.log(`${failures.length === before19 ? 'ok  ' : 'FAIL'} play-marbles.html (${mb.inBowl} marbles poured and at rest, the bowl and table carrying ${(mb.held * 100).toFixed(2)}% of the weight; the arc seen ahead ends at its first contact; a throw near the rim knocked out ${mb.out}, heard ${mb.heard.glass} glass, ${mb.heard.bowl} bowl, ${mb.heard.felt} felt; the strip throws)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

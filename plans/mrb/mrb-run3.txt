@@ -1,0 +1,29 @@
+periodic W 7, μ 0, seed 1: at rest at t 143.7 (89 s); floor/weight 0.999995; top 8.50; bulk z 2.00–6.50: Z 6.112 over 259 (rattlers 9 of 268), φ 0.6375
+periodic W 7, μ 0, seed 2: at rest at t 101.9 (91 s); floor/weight 0.999993; top 8.59; bulk z 2.00–6.59: Z 6.188 over 277 (rattlers 4 of 281), φ 0.6451
+periodic W 7, μ 0, seed 3: at rest at t 79.4 (72 s); floor/weight 1.000001; top 8.56; bulk z 2.00–6.56: Z 6.197 over 269 (rattlers 7 of 276), φ 0.6426
+periodic W 7, μ 0, seed 4: at rest at t 103.9 (95 s); floor/weight 1.000003; top 8.45; bulk z 2.00–6.45: Z 6.154 over 267 (rattlers 5 of 272), φ 0.6441
+periodic W 7, μ 0.5, seed 1: at rest at t 20.0 (12 s); floor/weight 0.998969; top 9.33; bulk z 2.00–7.33: Z NaN over 0 (rattlers 293 of 293), φ 0.5862
+periodic W 7, μ 0.5, seed 2: NOT AT REST at t 600.0 (429 s); floor/weight 1.000000; top 9.39; bulk z 2.00–7.39: Z NaN over 0 (rattlers 300 of 300), φ 0.5961
+periodic W 7, μ 0.5, seed 3: at rest at t 24.6 (15 s); floor/weight 0.999969; top 9.36; bulk z 2.00–7.36: Z NaN over 0 (rattlers 299 of 299), φ 0.5886
+periodic W 7, μ 0.5, seed 4: NOT AT REST at t 600.0 (418 s); floor/weight 1.000000; top 9.45; bulk z 2.00–7.45: Z NaN over 0 (rattlers 299 of 299), φ 0.5850
+silo W 6, μ 0.5, μw 0.5, N 100, seed 1: at rest at t 43.9 (5 s); floor 0.9904 walls 0.0097 of the weight (sum 1.000102); top 3.12; ρ_b 0.9414
+silo W 6, μ 0.5, μw 0.5, N 100, seed 2: at rest at t 45.9 (5 s); floor 1.0017 walls -0.0022 of the weight (sum 0.999498); top 3.45; ρ_b 0.9624
+silo W 6, μ 0.5, μw 0.5, N 200, seed 1: NOT AT REST at t 600.0 (153 s); floor 1.0009 walls -0.0009 of the weight (sum 1.000000); top 6.00; ρ_b 0.9728, φ 0.5242
+silo W 6, μ 0.5, μw 0.5, N 200, seed 2: at rest at t 32.3 (7 s); floor 0.9590 walls 0.0410 of the weight (sum 1.000022); top 6.08; ρ_b 0.9833, φ 0.5279
+silo W 6, μ 0.5, μw 0.5, N 300, seed 1: at rest at t 29.7 (10 s); floor 0.9694 walls 0.0308 of the weight (sum 1.000206); top 9.16; ρ_b 0.9869, φ 0.5228
+silo W 6, μ 0.5, μw 0.5, N 300, seed 2: at rest at t 37.4 (14 s); floor 1.0286 walls -0.0286 of the weight (sum 0.999996); top 8.86; ρ_b 0.9753, φ 0.5199
+silo W 6, μ 0.5, μw 0.5, N 400, seed 1: at rest at t 336.9 (176 s); floor 0.9273 walls 0.0727 of the weight (sum 1.000033); top 11.46; ρ_b 0.9770, φ 0.5215
+silo W 6, μ 0.5, μw 0.5, N 400, seed 2: at rest at t 58.8 (30 s); floor 0.9235 walls 0.0765 of the weight (sum 0.999962); top 11.82; ρ_b 0.9913, φ 0.5234
+silo W 6, μ 0.5, μw 0.5, N 500, seed 1: NOT AT REST at t 600.0 (421 s); floor 0.7451 walls 0.2549 of the weight (sum 1.000000); top 15.32; ρ_b 0.9640, φ 0.5105
+silo W 6, μ 0.5, μw 0.5, N 500, seed 2: NOT AT REST at t 600.0 (420 s); floor 0.9297 walls 0.0703 of the weight (sum 1.000000); top 14.68; ρ_b 0.9790, φ 0.5187
+silo W 6, μ 0.5, μw 0, N 500, seed 1: at rest at t 32.1 (22 s); floor 0.999718 walls 0.000000
+Janssen fit: M∞ 1802.4 marbles; ρ_b 0.9715 per σ³ (the 500 fills); λ 51.53σ; K = W/(4 μ_w λ) 0.058
+  each fill against the fit: N 100 s1 1.82%, N 100 s2 2.97%, N 200 s1 5.75%, N 200 s2 1.32%, N 300 s1 5.23%, N 300 s2 11.66%, N 400 s1 3.40%, N 400 s2 2.97%, N 500 s1 -14.67%, N 500 s2 6.46%
+
+P9: KILLED. floor and walls against the weight, worst 0.1031% of 18 pours (within 0.1%); μ_w 0, floor alone 99.9718% (within 0.5%)
+P10: not killed. frictionless Z 6.163 (seeds 6.112, 6.188, 6.197, 6.154), within 0.25 of 6
+P11: KILLED. μ 0.5 Z NaN (seeds NaN, NaN, NaN, NaN), between 4 and 5.5 and at least 0.5 below 6.163
+P12: not killed. bulk φ frictionless 0.6423 (0.637 ± 0.015), μ 0.5 0.5890 (0.60 ± 0.02)
+P13: KILLED. every fill within 3% of the fit: worst 14.67%; K 0.058 (between 0.3 and 1.0)
+pours not at rest by t 600: 5 of 19
+(41.4 min)

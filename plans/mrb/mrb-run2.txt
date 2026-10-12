@@ -1,0 +1,7 @@
+φ 0.05 e 0.7, 16 seeds: per contact 0.17033 ± 0.00064 (pred. 0.17006, 0.16%); clock 0.06517 ± 0.00037 (pred. 0.06546, -0.43%); R last third 1.35; collapses 0
+φ 0.1 e 0.7, 16 seeds: per contact 0.16584 ± 0.00046 (pred. 0.17006, -2.48%); clock 0.14222 ± 0.00077 (pred. 0.15002, -5.20%); R last third 2.29; collapses 0
+φ 0.15 e 0.7, 16 seeds: per contact 0.16282 ± 0.00093 (pred. 0.17006, -4.25%); clock 0.23572 ± 0.00186 (pred. 0.26010, -9.37%); R last third 4.52; collapses 0
+
+P6: not killed. φ 0.05: per contact 0.16% (within 1%), clock -0.43% (within 1.5%), R 1.35 (below 1.5)
+P7: not killed. φ 0.15: per-contact deficit 4.25% (more than 2.5%), clock deficit 9.37% (more than 5.2%), R 4.52 (above 2.3)
+P8: not killed. clock deficit over per-contact deficit: φ 0.1 2.10, φ 0.15 2.20 (each at least 1.5)

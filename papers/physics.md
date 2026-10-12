@@ -85,6 +85,10 @@ bodies are pictures. They are never evidence here.
     expansion's two forms meet at the corner r = R and are each other's flip (Kelvin).
 
   Nothing was killed (§1, §2.2).
+- 12 October: MRB (`plans/mrb-plan.md`), five hundred marbles. Part 1, an inelastic gas against Haff's law: counted in
+  each marble's own contacts the cooling needs only e; the referee's clock needs the density and goes first near the
+  clustering instability (§2.4, §3). Part 2, a heap at rest (`play-marbles.html`'s engine): frictionless marbles held by
+  Maxwell's 2d = 6 contacts, frictional by 4.7, packings as measured; no Janssen saturation in pours left still (§3).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -403,6 +407,18 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   stays put and averages out; what travels toward the reader must be held at its own size until it arrives. Adaptive
   mesh refinement already does this, by gradients. In SPN's terms: what is coming is near, whatever its distance.
 
+- **Haff's law counted in contacts** (MRB part 1, runs 1–2; 500 smooth inelastic spheres, event-driven, contact found
+  at h + v = 1). Two decades of cooling at three densities and four restitutions: −d ln T per contact per marble is
+  (1 − e²)/3 (with the known a₂ correction) to 0.8% wherever the gas stays even. Density, diameter and pair correlation
+  cancel from the count; the clock needs them (Enskog's ratio between densities carried to 1.2%). Near the clustering
+  instability both drift, the clock about twice as far (2.1 and 2.2 times): neighbours' velocities grow alike, so each
+  contact loses less and contacts come less often, and the count carries only the first. Past the instability (φ 0.3,
+  e 0.5) the box's flow holds the energy and one total for the box stops describing it. No inelastic collapse at 500.
+- **A heap held at rest** (MRB part 2, runs 3–4; soft spheres with friction, each contact held past h + v = 1). Without
+  friction a marble at rest touches 6.18 others (Maxwell's isostatic 2d = 6); with friction 0.5, 4.74 (between d + 1
+  and 2d). Bulk packings 0.642 and 0.589 against the measured 0.637 (shaken dense) and 0.60 (poured loose), from memory.
+  The floor carries the weight to 10⁻⁵ read over a time unit.
+
 ## 3. What was killed, and what it taught
 
 - **REF P1–P3: wander's bodies** are far rougher than real worlds. The Moon spans 0.25 levels against the real 0.0165.
@@ -443,6 +459,12 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   with tan, were predicted to agree to 1e-12; they reached 1.9e-10 and 1.2e-12. Past the corner a double holds an angle
   in even steps and the ratio it stands for in steps growing as the ratio; the capped unit relation holds it to 1.5e-16
   at every size.
+- **MRB P2: the clock at e = 0.7.** Haff's law in the referee's time was 5.2% slow while per contact it was 2.5%: the
+  gas near its shear instability (run 2: the bias follows the box's size against L_c, at fixed e). **MRB P9 and P11 were
+  my protocol:** a pile read at rest at one instant can be breathing (0.1% off), and stripping marbles with fewer than
+  d + 1 contacts empties a frictional pile from its surface in; run 4, repaired, was not killed. **MRB P13: no Janssen.**
+  The walls of a silo poured and left still carried −3% to +26% of the weight, no saturating share: Janssen's law needs
+  the walls' friction mobilised, as the experiments do by moving a wall or the floor first.
 - **POL P29: a derivation, not the gas.** The plan took a disc's cross-section in two dimensions as one diameter; it is
   two, and the referee matched Enskog once that was right.
 

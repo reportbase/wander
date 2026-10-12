@@ -157,6 +157,18 @@ Google Fonts load from outside:
   shot); controls a finger can hit on touch screens. Hooks `heard`, `sound`, `playing`, `grip` (a number, or null for the
   fit).
   Not in the flying page.
+- `play-marbles.html`: **a bowl of marbles** (12 Oct 2026, Tom: "a huge collection of marbles, say 500? would this be
+  helpful?", then "both", a physics test and a game). A gameplay sketch, standalone, and MRB part 2's engine (`MARBLES`,
+  driven by `plans/mrb/run3.mjs` through the hook): soft spheres that stay touching, each pair in contact while its
+  readings are past h + v = 1, pushed by the depth past the line, with a tangential spring of its own history capped by
+  friction (Cundall and Strack); containers a floor, square walls, periodic sides or a bowl (a sphere's cap on a table).
+  The game: 500 glass marbles poured into a shallow bowl (Rb 16, 2.5 deep, heaped above the rim); tap where to throw a
+  steelie (mass 6), how hard (slider, or the pull strip); the dashed arc is the throw seen ahead to its first contact;
+  ten throws, marbles landing on the felt count; "chains" draws each contact as bright as its push; sound made in the page
+  (glass, bowl, felt, the loudest few a frame). Softer contacts than the lab's (k 3000 against 10⁵), stepped only while
+  something moves, as many steps a frame as fit (slow motion on a slow device, the same throw). Best per marble count in
+  localStorage. `?n=&seed=&p=&chains=1` (and `?Rb=&depth=&steel=&vmax=`); hook `window.__marbles` (`world`, `game`,
+  `throwAt`, `arcOf`, `settleNow`, `chains`, `sound`, `heard`). Not in the flying page.
 - `flight.html`: **the corner in flight** (10 Oct 2026, Tom: "you know how the transition from earth to the sky in flight
   sim games is awkward? ... i wonder if its because of the corner"; "only the geometry", wireframe). Level flight at height v;
   a ground line h ahead lands v/h below eye level, so the corner (h = v) keeps one screen row at every height. The main view is the grid alone (Tom: "remove the non-gridlines";
@@ -176,7 +188,7 @@ Google Fonts load from outside:
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, pool, the infinite table) and the three on the physics correspondence, each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -375,6 +387,16 @@ Google Fonts load from outside:
   and ball constants agree (P7, P8). Run 2: the grip made the fit (`gripOf`); the engine matches it to 0.13° at 30
   points (P9), textbook results and all 13 challenges unchanged (P11, P12); P10 killed by my set-up (the smoke test's
   white rolls part way, so its throws are 3.5°, not a stun's 4.8°). The slow cushion waits for measured data.
+  `mrb-plan.md` (+ `mrb/`, 12 Oct, Tom: "a huge collection of marbles, say 500? would this be helpful?"; "both"). Part 1
+  (`hcs.mjs`, event-driven, contact at h + v = 1): 500 smooth inelastic spheres cooling (Haff). Per contact −d ln T is
+  (1 − e²)/3 to 0.8% at three densities and four e (P1, P3 not killed): density cancels from the count. The clock was
+  killed at e = 0.7 (P2: −5.2%); run 2: the bias follows the box against the shear instability L_c ≈ 10.8ℓ₀/√(1 − e²)
+  (P6–P8 not killed), the clock about twice the count's. At φ 0.3, e 0.5 the box's flow grows (R past 20; P4); no
+  collapse (P5). Part 2 (`play-marbles.html`'s engine, `run3.mjs`, `run4.mjs`): a heap at rest, soft spheres with
+  friction. Frictionless Z 6.18 (Maxwell's 2d; P10, P15), frictional 4.74 (P16), packings 0.642 and 0.589 (P12, against
+  measured 0.637 and 0.60); killed: P9 and P11 (my protocol: an instant reading of a breathing pile; a rattler rule that
+  strips a frictional pile empty), P13 (no Janssen in silos poured and left still: −3% to +26% on the walls). Open: level
+  of detail carrying weight (the floor's reader, the pile above as a total).
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
@@ -569,6 +591,10 @@ In short:
       16 times wider within 10%, and zoomed out the window stops growing.
   18. **mountain.html:** the range's ends at 45°, 18 of 36 fingers on it, the same at a thousand times the scale; mountain
       equals thumb reads 1 mi at 0.5 mi, off by 20, log₂ 20 doublings; one thumb walked recovers d = 10 and V = 20.
+
+  19. **play-marbles.html:** the pour of 500 at rest in the bowl, the bowl and table carrying the weight within 1%; the arc seen
+      ahead ends at its first contact; a throw near the rim knocks marbles out and is heard (glass, bowl, felt); the pull
+      strip throws.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
