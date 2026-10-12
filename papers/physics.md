@@ -92,6 +92,11 @@ bodies are pictures. They are never evidence here.
   each marble's own contacts the cooling needs only e; the referee's clock needs the density and goes first near the
   clustering instability (§2.4, §3). Part 2, a heap at rest (`play-marbles.html`'s engine): frictionless marbles held by
   Maxwell's 2d = 6 contacts, frictional by 4.7, packings as measured; no Janssen saturation in pours left still (§3).
+- 12 October, second: STC (`plans/stc-plan.md`; Tom: "Physics already constructs the completed view from situated observations, and the framework supplies a geometric reason the construction can succeed."
+  Then "yes" to Claude's refinements and a test). Several situated readings and one amount from outside give a figure
+  no single reading held: the figure improves with readings, the scale never does and is exactly as good as the outside
+  amount, shared by every linked amount as one shift in levels, and carried up a ladder rung by rung. Statistical
+  against systematic error is address against payload (§1, §2.4). P1 was killed by my estimator (§3).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -151,6 +156,7 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | the median of the addresses (order) against the centroid of the payload (sums), R210 | below the step, the light-weighted photocentre and the total mass at the centre of mass; an unresolved binary's photocentre orbit a·\|B − β\| | the step σ; the masses and lights | PAY P3 |
 | level of detail by distance; the corner where none can be dropped; the flip | the multipole expansion: order l down by (R/r)^l, converging outside r = R; Kelvin's inversion r ↦ R²/r swapping the exterior and interior forms | the source's radius R | PAY P4 |
 | one stream against readings at once with a shared denominator | looming's size–distance ambiguity; a same-depth neighbour's ratio S₁/S₂ separates approach from growth | none | PAY P1, P2 |
+| the addresses (directions, order, shape up to scale) exact while the scale is arbitrary; one amount from outside, a pan in levels | the completed view assembled from situated observations (parallax, triangulation, multi-epoch astrometry, the distance ladder); statistical error, which averages down, against systematic calibration error, which does not and is carried up the ladder | a baseline (travel), a shared length, a known kind | STC P1–P7 |
 
 ## 2. Results, by standing
 
@@ -409,6 +415,28 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   and 2d). Bulk packings 0.642 and 0.589 against the measured 0.637 (shaken dense) and 0.60 (poured loose), from memory.
   The floor carries the weight to 10⁻⁵ read over a time unit.
 
+- **Why the construction from situated observations can succeed** (STC runs 1–2, `plans/stc-plan.md`; Tom, 12 October:
+  "Physics already constructs the completed view from situated observations, and the framework supplies a geometric reason the construction can succeed." "Several situated observations, plus one external amount that fixes scale, are assembled into a
+  representation that no individual observation held."). A single reading is situated and cannot hold the true breadth.
+  Parallax, triangulation, multi-epoch astrometry and the distance ladder assemble several readings and one amount from
+  outside into a figure. The reason it can work is classical (similarity invariance, triangulation); the framework names
+  it: the addresses are exact while the scale is arbitrary, and the outside amount moves every linked amount by one
+  common factor, a shift in levels that redraws nothing (V = H stays drawn). Stitching needs links: overlap, the
+  standpoints' placement known up to scale, a chain of readings to the outside amount. Co-adding exposures from one
+  standpoint is not construction but resolving: it adds no standpoint and no scale. Tested on a figure of 20 landmarks
+  read by 16 to 4,096 standpoints with bearing noise 10⁻³, one outside length with 1% error, and a standard-candle rung:
+  - **the figure improves with readings**: with a consistent (maximum-likelihood) construction the shape error falls as
+    N^(−0.49), from 0.013 to 0.0009;
+  - **the scale does not**: the common shift stays at the outside length's 1% from 16 readers to 4,096 (0.0105 to
+    0.0101), and by 4,096 the landmarks' errors are 99% correlated, one shift shared by all;
+  - **a ladder carries its calibration up**: the candle rung's error is √(0.01² + 0.0112²) = 0.0150, the same for a
+    hundred far members or ten thousand (0.0158, 0.0151), correlated 0.68 with the rung below;
+  - **the construction can have a systematic of its own**: least squares on noisy bearing lines left a shape floor of
+    0.0013 that more readings did not remove (run 1, §3).
+  Statistical against systematic error is address against payload: what more readings improve is the figure, and the
+  scale is exactly as good as the one amount from outside. All of this is known in metrology and astronomy; the reading
+  is the corpus's.
+
 ## 3. What was killed, and what it taught
 
 - **REF P1–P3: wander's bodies** are far rougher than real worlds. The Moon spans 0.25 levels against the real 0.0165.
@@ -457,6 +485,10 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   the walls' friction mobilised, as the experiments do by moving a wall or the floor first.
 - **POL P29: a derivation, not the gas.** The plan took a disc's cross-section in two dimensions as one diameter; it is
   two, and the referee matched Enskog once that was right.
+- **STC P1: my estimator, not the readings.** The shape error was predicted to fall as N^(−½); it flattened (slope
+  −0.394). Least squares on the bearing lines puts the noise into the lines (errors in the variables): a bias of 0.0013
+  per landmark, flat in N and four times smaller at half the noise (run 2, P5). Maximum likelihood removed it (slope
+  −0.491). A construction can carry a systematic of its own, which more readings do not remove.
 
 ## 4. The queue
 
@@ -488,6 +520,9 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
   about ln 2 of rapidity. That is a real-data look at the far field, though it tests special relativity, which is
   settled, rather than the corner. The paper is blocked here and teaching copies of its table will not be used; Tom to
   supply it if wanted.
+- **A calibration as one shift, on real data** (from STC). A published parallax zero-point, the instrument's own scale
+  error, should appear as one common shift in levels across a catalogue's distances, the same for every star linked to
+  it, and should not shrink with the number of stars. The archives that hold it (ESA, VizieR) are blocked here.
 - **One dimension against two.** ISQ's reading separates an angular size (falling one level per level of distance) from
   its square, the light (two levels). Stars with measured angular diameters (interferometry) and parallaxes would test
   the one-level half directly.

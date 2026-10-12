@@ -449,6 +449,13 @@ Google Fonts load from outside:
   geometry is in the main papers (SPN R211: "this is pure geometry not physics actually"): SPN §4.7 (with §2.1's "What 3
   and 4 hold"), OFS §7.6 "Order needs holding", Propositions 9–12 in §9 and §8's "From far off"; `physics.md` keeps the
   physical instances (looming, unresolved binaries, gravity from far off).
+  `stc-plan.md` (+ `stc/`, 12 Oct; Tom: "Physics already constructs the completed view from situated observations, and the
+  framework supplies a geometric reason the construction can succeed"; SPN R216): a simulation of our own against a
+  referee, a figure of 20 landmarks read by 16 to 4,096 standpoints plus one outside length (1% error) and a candle rung.
+  More readings improve the figure (shape error N^(−0.49) with maximum likelihood), never the scale (the common shift at
+  the outside length's 1% throughout, the landmarks' errors 99% correlated by 4,096); the rung carries 0.0150 whatever
+  the number of far members (P2–P7 not killed). P1 killed by my estimator: least squares on noisy bearing lines leaves a
+  floor more readings do not remove. Statistical against systematic error is address against payload.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
