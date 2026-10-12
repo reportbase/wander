@@ -518,6 +518,10 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   invariant, and there is one circle, its shape from the unit relations, its unit from V = H; SPN §1, "The settled view,
   10 October".) Every amount is then off by V/H, the same on both sides of the
   corner; physics' bridges (travel, a known constant, a known kind, a shared fact) remedy it (SPN Part II).
+  (*12 October*, R215: the drawing V = H is **required** in situated geometry: only with all of h and all of v drawn at
+  one length is the sweep a turn, the circle traced and the even turn one turn, and only then are the readings the
+  Cauchy with its median at the corner; proved forward and back from the known Cauchy, OFS Proposition 3(e) and 5(d).
+  What stays arbitrary is the estimate of the other's true size, a pan in levels.)
 - The fisheye is the sweep in one facing, seen from the standpoint (geometry, the same for every shape); with V = H it is
   the situated fisheye reading.
 - One corner (10 October, R188): the split between the first level (home to the corner, the near field) and the second;
@@ -525,12 +529,14 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   R180 are superseded; the superseded passages stay in SPN as the record with dated notes.
 - The ratio 2 between levels: dissolved (10 October, R189; Tom: "its just logrithimic doublings. this paper does. not need
   to prove the logrithm, it is fundemental"); Appendix D and the open question are kept as the record.
-- Proposition 1.2 (11 October, R190; refined 12 October, R212): from the two-party relation and one chosen H, some V = cH
-  must be assigned, and nothing in the geometry depends on c (only amounts: an ellipse of axis ratio c, the point of equal
-  amounts log₂ c levels off the corner); V = H is the best assignment, the median of what the reader knows of V (the corner
-  √(V₋V₊) of any bounds; V = H with nothing either way), not a forced one (OFS Proposition 13). The price of a geometry
-  (R214): designating the other party is free and gives the geometry; sizing it is the one arbitrary number, corrected by
-  a pan in levels when an outside amount arrives; re-sizing is not zooming. The corner and the
+- Proposition 1.2 (11 October, R190; refined 12 October, R212, R215): from the two-party relation and one chosen H, the
+  other party must be assigned a breadth, and the turn requires it drawn at H: V = H is required (R215, superseding
+  R212's "not forced"; with c ≠ 1 no turn, no circle, and "even" splits three ways, only one a Cauchy at the corner; OFS
+  Proposition 3(e), 5(d), "Working back from the Cauchy"). No unit relation and no single reading depends on c. What
+  stays arbitrary is the estimate of the other's true size, cH, best at the median of what the reader knows (the corner
+  √(V₋V₊) of any bounds; H with nothing either way; OFS Proposition 13, "the best estimate is the median"). The price of
+  a geometry (R214): designating the other party, drawn at V = H, is free and gives the geometry; sizing it is the one
+  arbitrary number, corrected by a pan in levels when an outside amount arrives; re-sizing is not zooming. The corner and the
   flip follow from the cap at 1; the logarithm past the corner follows when no rung is preferred, so the reader's lay is
   1 + ln s by address count; by length reality is 2H (the in-place lay, 2 − 1/s, the reader's own); two address spaces, proportional and logarithmic,
   around the corner; the count is the LOD; H is a zoom, not an escape (a large H loses the small below one address; the

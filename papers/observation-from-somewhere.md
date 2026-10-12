@@ -15,11 +15,13 @@ and the fisheye. The three read a line of true breadth 1 as 1, π/2 and 2/π; th
 or constructed from several observations, never observed from one. Any relation between two parties can be written as a pair of unit relations, h
 and v, each between 0 and 1, and the reader reads their ratio. Because neither unit relation can pass 1, every such sweep
 turns over at a single point, v = h, the *corner*, where reading v in terms of h gives way to reading h in terms of v.
-To read the other party in amounts, the reader must assign it a breadth, and its only measure is its own: the
-mountain in thumbs. Any such assignment leaves the geometry unchanged. The best, when nothing tells the reader whether
-the other is larger or smaller, is its own breadth itself, its thumb as the measure of the mountain; with more known, it
-is the median of what is known. With that choice the corner lies at distance 1 whatever unit was chosen, and the
-relation, drawn as a bar of fixed length, traces a unit circle. Inside the
+For there to be a relation, the reader must assign the other party a breadth, and its only measure is its own: it
+draws the mountain at the breadth of its thumb, V = H. This is required. Only then is the sweep from one party to the
+other the turn of one rigid bar, tracing a unit circle with the corner at distance 1 whatever unit was chosen, and only
+then is there a single even turn; working back from the Cauchy distribution, which is known, arrives at V = H and
+nowhere else. The drawing is not a claim about the mountain. Its true size is a separate number, which one observation
+does not give; the reader's best estimate of it is the median of what it knows, and correcting the estimate moves every
+amount by the same number of levels and redraws nothing. Inside the
 corner the reader can lay out its readings in proportion; past it, if no scale is preferred, the only consistent layout
 is logarithmic. The reader therefore has two address spaces, proportional and logarithmic, joined at one corner.
 
@@ -96,10 +98,10 @@ as if a single observation held it. Section 3 sets out the readers in full.
   own breadth, and what it lacks is a single number (§3).
 - Every sweep between two parties turns over at one point, the corner v = h, the only point left fixed when the two
   parties are exchanged. Near and far are one geometry, read from either side of it (§4).
-- A reader that holds one breadth must assign the other party a breadth in its own unit. Any assignment leaves the
-  geometry unchanged. The best, when the reader knows nothing to make the other larger or smaller, is its own breadth
-  (§5, §9). This puts the corner at distance 1 whatever unit is chosen and, with Euclidean length, makes the relation a
-  unit circle (§5).
+- A reader that holds one breadth must assign the other party a breadth in its own unit, and its geometry requires that
+  breadth to be its own, V = H. Only then is the sweep a turn, tracing a unit circle with the corner at distance 1
+  whatever unit is chosen, and only then is there one even turn. Working back from the Cauchy, which is known, arrives
+  at V = H (§5, §7.1). The other party's true size is a separate estimate (§9).
 - Inside the corner the reader can lay readings out in proportion; past it, if no scale is preferred, only a
   logarithmic layout is consistent. The reader has two address spaces joined at one corner (§6).
 - **Main result.** Sweeping the circle evenly from home yields the Cauchy distribution, and the Cauchy is the reader's
@@ -107,8 +109,8 @@ as if a single observation held it. Section 3 sets out the readers in full.
   payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
-  outside fixes the scale, and a fact shared between two readers supplies exactly one ratio. The best breadth to assign
-  the other party is the median of what the reader knows of it (§9).
+  outside fixes the scale, and a fact shared between two readers supplies exactly one ratio. The best estimate of the
+  other party's true size is the median of what the reader knows of it (§9).
 - A unit is an agreement between readers, needed only to pass amounts between them. The number line is such a unit:
   a ruler that favours no reader's unit must be a power or a logarithm, with no corner, and the number line is the
   power that keeps proportion on both sides of 1 (§9).
@@ -215,9 +217,11 @@ like a sixth reduce to these.
 knows the mountain's size, it holds the unsituated view: thumb and mountain are both in hand, and the corner, where the
 thumb equals the mountain (v·V = h·H), is computed. If it does not know the mountain's size, it is situated, and the
 only measure it has to give the mountain is its thumb: it sets V = H, mountain equals thumb (§5), and reads the mountain
-in thumbs. It could give the mountain any number of thumbs without changing the geometry; one thumb is the best guess
-when nothing says bigger or smaller (Proposition 13, §9). The corner v = h is still found exactly, but the amounts there are the assignment's. The mountain's true
-size, V/H thumbs, is the one number the situated reader lacks (§3.8).
+in thumbs. Drawing the mountain at one thumb is required: only then is the sweep a turn and its readings the Cauchy
+(§5, §7.1). How many thumbs the mountain really is, is a separate estimate. It changes no reading, only the amounts, and
+one thumb is the best estimate when nothing says bigger or smaller (Proposition 13, §9). The corner v = h is still found
+exactly, but the amounts there are the estimate's. The mountain's true size, V/H thumbs, is the one number the situated
+reader lacks (§3.8).
 
 - **0, nothing.** The reader has its breadth H, as it always does, but no h: nothing is related to it, so there is
   nothing to read and no home to lay from.
@@ -571,15 +575,18 @@ We assume three things.
 
 **Proposition 3 (the reader's circle).** Under (P0) and (P1):
 
-(a) the reader must assign V in its own unit, V = cH for some c > 0, and no unit relation and no reading depends on
-c;
+(a) the reader must assign V in its own unit, V = cH for some c > 0, and no unit relation and no single reading
+depends on c;
 
 (b) with V = H, the corner lies at distance 1 from home, whatever H was chosen;
 
 (c) if the attitudes of the relation are turns of one rigid bar, the relation traces the unit circle h² + v² = 1;
 
 (d) with n freedoms each set to H there are 2ⁿ facings: 4 for the circle, and 8 octants for the sphere
-h² + v² + v₂² = 1, where v₂ is a second v read against the same h.
+h² + v² + v₂² = 1, where v₂ is a second v read against the same h;
+
+(e) the attitudes are turns of one rigid bar only if V = H: with c ≠ 1 nothing turns all of h into all of v, and there
+is no circle.
 
 *Proof.* (a) By (P0) the other party must be assigned a breadth for there to be a relation, and by (P1) the reader's
 only breadth is H, so the assignment is H times a number c. A unit relation v lies in [0, 1] however large V is, so no
@@ -589,20 +596,29 @@ length 1 whose attitudes are mixes of all-h and all-v, so h² + v² = 1 when len
 is, up to scale, the only norm preserved by every turn. With two units the same bar would trace an ellipse stretched by
 V/H. (d) Once both parties share a unit nothing prefers one side of a freedom, so each freedom has two facings. A closed
 walk through the facings must flip each freedom an even number of times, so the facings are the 2ⁿ vertices of an
-n-cube, walked as a Gray code. ∎
+n-cube, walked as a Gray code. (e) A turn keeps the bar's length. All of h is the bar at length H and all of v the bar
+at length cH, so a turn carries one to the other only if c = 1. With c ≠ 1 the tip must stretch on its way, along the
+ellipse of (c) or some other path. ∎
 
 **What V = H means.** Setting V = H is a rule of representation: the reader uses its own breadth as the unit for the
 other party. It sets the mountain equal to its thumb because its thumb is the only measure it has. It is not a claim
 that the mountain is the size of a thumb. Where it is not, every amount the reader reads is off by the true V/H, the
 number of thumbs the mountain really is (§9). The rule constructs a relation calibrated in one unit and discovers nothing about the world.
 Step (a) is close to a definition; we claim only that a relation needs two assigned breadths and a situated reader has
-one. Which breadth it assigns is a choice:
-- *What c changes.* Any c leaves the unit relations, the corner v = h and every reading as they are. It changes only
-  how amounts are drawn: with V = cH the bar traces, in amounts, an ellipse of axis ratio c, and the point of equal
-  amounts, v·V = h·H, slides log₂ c levels off the corner.
-- *What c = 1 does.* Under V = H that point coincides with the geometric corner v = h, the edge of the unit circle.
-- *Why c = 1.* V = H is not forced. It is the best assignment when nothing tells the reader whether the other is larger
-  or smaller, and in general the best assignment is the median of what the reader knows (Proposition 13, §9).
+one. Which breadth it assigns is not free:
+- *What c would change.* No unit relation, no corner v = h and no single reading depends on c. But with c ≠ 1 all of h
+  and all of v are drawn at different lengths, so the sweep between them is not a turn (part (e)). The tip stretches
+  along an ellipse of axis ratio c, the point of equal amounts, v·V = h·H, slides log₂ c levels off the corner, and
+  "sweeping evenly" no longer names one sweep: even steps of direction, of the curve and of its parameter give three
+  different laws, and only one of them is the Cauchy with its median at the corner (Proposition 5(d)).
+- *Why c = 1.* With V = H the sweep is one rigid bar turning, it traces the unit circle, and the even turn is unique;
+  its readings are the Cauchy with nothing more chosen. Working back from the Cauchy, which is known, arrives at V = H
+  and nowhere else (Proposition 5(d)). So V = H is required for a situated geometry: it gives the reader a circle to
+  turn. Unit relations drawn on equal axes, each running from 0 to 1, are this drawing.
+- *What c = 1 does not do.* It does not say how large the mountain is. The mountain's true breadth is a separate number,
+  unknown within one observation. The reader may estimate it, and the best estimate is the median of what it knows
+  (Proposition 13, §9), but the estimate enters only the amounts, as a shift of every one of them by the same number of
+  levels. It never redraws the circle.
 
 **The Euclidean choice.** Part (c) is where an assumption enters. One unit makes the axes commensurable, but "a bar of
 fixed length" also needs a norm: under the largest-component norm the bar traces the square, under the sum norm the
@@ -773,13 +789,34 @@ median is the corner, and the flip leaves it unchanged. Over both facings, with 
 (c) Placing each reading at its step of turn, rather than at its value, gives the *fisheye*: true scale near home,
 compressed gently toward the corner and increasingly past it, with the horizon at the edge of the turn, never reached.
 
+(d) *Conversely, the Cauchy requires V = H.* Let the reader draw all of v at c times the length of all of h, V = cH, and
+sweep in equal steps of direction from home. Its readings v/h follow the law of (b), with its median at the corner and
+unchanged by the flip, if and only if c = 1.
+
 *Proof.* When the bar turns by a small angle, v/h changes by that angle times 1/h², and on the circle
 1/h² = (h² + v²)/h² = 1 + (v/h)². So the steps per unit of v/h go as 1/(1 + (v/h)²), and normalising over a quarter
 turn gives the factor 2/π. Half the turn lies on each side of 45°, and the substitution v/h ↦ h/v carries the density to
-itself. ∎
+itself. (d) A direction φ from home in the drawing has tan φ = c·(v/h). With φ even on [0, π/2],
+P(v/h ≤ r) = P(φ ≤ arctan(cr)) = (2/π)·arctan(cr): a half-Cauchy of scale 1/c, with median 1/c. The flip v/h ↦ h/v
+carries it to scale c. It is the law of (b), and unchanged by the flip, exactly when c = 1. ∎
 
 In classical terms the readings are the tangent of a uniformly distributed angle: the gnomonic projection of a uniform
 direction.
+
+**Working back from the Cauchy.** The Cauchy is known: it is the tangent of an angle turned evenly. Read backward, from
+the known law to what it needs, each step is forced by the one before.
+1. The readings follow the law of (b): distribution function (2/π)·arctan(v/h), median at the corner.
+2. Then the angle θ = arctan(v/h) is turned evenly, since P(θ ≤ t) = P(v/h ≤ tan t) = 2t/π.
+3. That angle is the direction the reader turns through only if both breadths are drawn at one length, V = H, by (d);
+   drawn at V = cH, an even turn of direction puts the median log₂ c levels off the corner. No other even rescues it.
+   Even steps along the stretched curve give no Cauchy at all: for c = 2 the quartiles of v/h are 0.316, 0.739 and
+   1.673, not a flip pair. Even steps of the ellipse's parameter do give the law of (b), but that parameter is the turn
+   of the circle drawn with V = H, stretched afterwards.
+4. With V = H the sweep is one rigid bar turning, and it traces the unit circle (Proposition 3(c), (e)).
+
+So V = H is not a convenience laid over the Cauchy. It is what the Cauchy requires, and, forward through Proposition 3
+and parts (a) to (c), it is also enough. Every link of the chain, from the reader's one breadth to the Cauchy and back,
+passes through V = H.
 
 **The parallel reader's bell.** A parallel reader takes in every relation at once, each with its share of the turn. On
 the logarithmic axis x = ln(v/h) the shares form a bell centred on the corner,
@@ -857,15 +894,17 @@ on that choice:
 These give a reader a reason to prefer order whatever the evenness is: order is what survives a payload it does not
 know.
 
-**Where the usual confusion comes from.** Laid evenly by direction, the sweep is uniform and bounded, g from 0 to 1, with
-its middle at the corner: geometry, with nothing wild in it. Read on the axis v/h, the same lay is a Cauchy of scale 1,
-and that needs no V, since h and v each run from 0 to 1. Read in amounts it is another Cauchy, of
-(v·V)/(h·H) = (v/h)·(V/H), with scale V/H. Writing it as the standard Cauchy, of scale 1, silently sets V = H: it turns a
-situated reader into situation 1, the circle, without knowing V. A situated reader must make that assignment (§5); the
-confusion is forgetting that it was made. Taking the mean of the readings then applies an operation on amounts to
-addresses, and the missing mean is what that costs: it comes from the unbounded axis of the reading, not from the
-world. Where a Cauchy is met as data rather than laid as addresses, an amount has been formed from the reading by a
-known length, and the distribution's scale is that length, not 1 by assumption.
+**Where the usual confusion comes from.** Laid evenly by direction, the sweep is uniform and bounded, g from 0 to 1,
+with its middle at the corner: geometry, with nothing wild in it. Read on the axis v/h, the same lay is a Cauchy of
+scale 1. That needs no knowledge of the true V, since h and v each run from 0 to 1; it needs only the drawing V = H,
+which the Cauchy requires (Proposition 5(d)). Read in amounts against the true breadth it is another Cauchy, of
+(v·V)/(h·H) = (v/h)·(V/H), with scale V/H. Writing that one as the standard Cauchy, of scale 1, silently takes the
+mountain's true breadth to be the drawn one: it turns a situated reader into situation 1, the circle, without knowing
+V. A situated reader must draw V = H (§5); the confusion is taking the drawing for a measurement. Taking the mean of
+the readings then applies an operation on amounts to addresses, and the missing mean is what that costs: it comes from
+the unbounded axis of the reading, not from the world. Where a Cauchy is met as data rather than laid as addresses, an
+amount has been formed from the reading by a known length, and the distribution's scale is that length, not 1 by
+assumption.
 
 ### 7.3 In the picture of the hand
 
@@ -1140,39 +1179,43 @@ So there are two centres, and they must not be confused:
 
 Fingers order; rings add.
 
-**The best breadth to assign.** Proposition 3(a) requires the reader to assign the other party some breadth V = cH, and
-nothing in the geometry depends on c. Every amount it reads is then off by the factor V*/(cH), where V* is the true
-breadth. Which c is best depends on what the reader knows of V*.
+**The best estimate of the true size.** The geometry requires the drawing V = H (Proposition 3(e), Proposition 5(d)),
+and the drawing says nothing about the world. To read amounts, the reader also needs an estimate of the other party's
+true breadth V*, some cH, by which it scales the amounts the drawing gives: the reading v/h becomes c·(v/h) thumbs. In
+levels that is a shift of log c, the same for every reading, and it leaves the circle and the turn alone. Every amount
+is then off by the factor V*/(cH). Which c is best depends on what the reader knows of V*.
 
-**Proposition 13 (the best assignment is the median).** Measure the error by |f(V*) − f(cH)| for an increasing f: in
+**Proposition 13 (the best estimate is the median).** Measure the error by |f(V*) − f(cH)| for an increasing f: in
 levels, f = log; in amounts, f the identity.
 
-(a) If the reader knows only that V₋ ≤ V* ≤ V₊, the assignment whose worst error in levels is least is
+(a) If the reader knows only that V₋ ≤ V* ≤ V₊, the estimate whose worst error in levels is least is
 cH = √(V₋·V₊), the corner of the pair of bounds. Its worst error is half the range, ½·log(V₊/V₋).
 
-(b) If the reader holds a distribution for V*, the assignment whose expected error is least is a median of that
+(b) If the reader holds a distribution for V*, the estimate whose expected error is least is a median of that
 distribution. It is the same median for every increasing f. The mean, best under squared error in amounts, changes with
 f and need not exist.
 
 (c) If nothing the reader knows makes the other larger rather than smaller, so that V*/H and H/V* are alike, (a) and (b)
-both give V = H.
+both give cH = H, the estimate equal to the drawing.
 
 *Proof.* (a) The worst error is the larger of |log V₊ − log cH| and |log V₋ − log cH|, least when log cH is midway
 between log V₋ and log V₊. (b) E|X − m| is least when m is a median of X. For X = f(V*) a median is f of a median of V*,
 since medians commute with increasing maps, as order does (Theorem 6(b)). (c) The bounds are then H/R and H·R, whose
 geometric mean is H, and log(V*/H) has median 0. ∎
 
-So V = H is the best assignment for a reader that knows nothing to make the other's breadth larger or smaller than its
-own, and the median of what it does know otherwise. It is not imposed. The result rests on measuring error by order or
-in levels, the same premise of no preferred scale as (S).
+So for a reader that knows nothing to make the other's breadth larger or smaller than its own, the best estimate of
+the true size is its own breadth, the same as the drawing; otherwise it is the median of what the reader knows. The
+drawing V = H is required; the estimate is chosen, and this is how to choose it. The result rests on measuring error by
+order or in levels, the same premise of no preferred scale as (S).
 
 **The price of a geometry.** Two acts are easily run together, and only one of them is a guess.
-- *Designating* the other party, as (P0) requires, gives the reader its geometry: the unit relations, the corner, the
-  sweep, and the Cauchy of §7. It asserts nothing about the world, since a unit relation lies in [0, 1] however large
-  the other breadth is, and it costs nothing. A reader that will not designate a second party has no relation and
-  nothing to read: situation 0 (§3.1).
-- *Sizing* the other party, V = cH, gives the reader amounts: the mountain in thumbs. That is the arbitrary part. By
-  Proposition 13 the reader's best size is the median of what it knows.
+- *Designating* the other party, as (P0) requires, and drawing it at the reader's own breadth, V = H, as the turn
+  requires (Proposition 3(e)), gives the reader its geometry: the unit relations, the corner, the circle, the sweep, and
+  the Cauchy of §7. It asserts nothing about the world, since a unit relation lies in [0, 1] however large the other
+  breadth is, and it costs nothing. A reader that will not designate a second party has no relation and nothing to
+  read: situation 0 (§3.1).
+- *Sizing* the other party, an estimate cH of its true breadth, gives the reader amounts: the mountain in thumbs. That
+  is the arbitrary part. By Proposition 13 the reader's best size is the median of what it knows.
 
 So the geometry is free, and the amounts cost one arbitrary number. Sense is then made in three ways.
 1. *The addresses are exact while the scale is wrong.* Directions, the corner, order and every shape up to scale do not
@@ -1207,8 +1250,8 @@ metre each began as one body or one object made into a public notch.
 
 So three numbers are easily confused, and the geometry needs none of them:
 - the reader's own breadth H, which it chooses for itself and which only moves what sits at its corner (a zoom, §8);
-- the breadth it assigns the other party, V = cH, the one arbitrary number in the price of a geometry, best set at the
-  median of what it knows (Proposition 13);
+- its estimate of the other party's true breadth, cH, the one arbitrary number in the price of a geometry, best set at
+  the median of what it knows (Proposition 13); the drawing itself, V = H, is required and is not a number to choose;
 - the shared unit, which is neither a reading nor a guess but an agreement between readers, needed only for talking.
 
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
@@ -1360,9 +1403,10 @@ square (§11.2, question 2).
    Is that more than a choice?
 5. *Uniformity as the weight.* Does the argument of §7.5 remove the burden of the even turn, or only move it to "why the
    circle"?
-6. *V = H.* Proposition 3(a) says only that some breadth must be assigned. Which one is Proposition 13's answer: the
-   median of what the reader knows, and V = H when it knows nothing either way. What remains open is whether measuring
-   error by order or in levels is itself forced.
+6. *V = H.* Answered: the drawing V = H is required, for the turn (Proposition 3(e)) and for the Cauchy, forward and
+   working back from it (Proposition 5(d)). The estimate of the true size is Proposition 13's: the median of what the
+   reader knows, and H when it knows nothing either way. What remains open is whether measuring that estimate's error
+   by order or in levels is itself forced.
 
 If the principle of §11.1 stands, questions 1, 2 and 5 become one: whether a situated reader's ignorance is exactly these
 three transformations.
