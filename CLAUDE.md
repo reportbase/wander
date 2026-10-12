@@ -240,7 +240,10 @@ Google Fonts load from outside:
   adversarial read, is in `plans/ofs-review-4.md`, with six edits taken (SPN R213): the paper's front now claims what its
   back proves (the address reading conditional on the even sweep being the reader's own; "a reason for" the missing mean,
   not "explains"; (S) scale invariance of the lay's increments, assumed; the vantages' assignment a reading; Propositions
-  9–12 classical). Keep its verbs to what is proved.
+  9–12 classical). Keep its verbs to what is proved. The fifth (Gemini, on the foundational axioms) is in
+  `plans/ofs-review-5.md` with a response: the main result's core (median at the corner, no mean) holds for every
+  exchange-symmetric path and weight (circle, square and line alike; only the Cauchy's exact shape needs the circle and
+  the even turn); the claim to make is necessity relative to a stated ignorance (§11.1); edits A–F proposed.
   `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
   perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
   those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry
