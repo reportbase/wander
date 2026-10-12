@@ -201,3 +201,37 @@ amounts, or a power of the reading. None of them changes the address geometry.
 - a reading of an area or another power of the relation.
 
 Each would get one line saying where it lands.
+
+---
+
+### Third part: a comment from Grok, shared the same day
+
+*Tom: "groc ai comments:", kept as received:*
+
+Other geometries are possible in principle: different norms, different weights, different invariance conditions. For the range of scales, resolutions, and knowledge states that ordinary human observers and ordinary instruments actually occupy, the paper’s choices—equal-scale assignment, Euclidean turns, scale-free far-field lay—are the ones that arise naturally. A reader whose native metric was $L^1$ or $L^\infty$, or whose sampling weight was something other than uniform angle, would be operating under constraints that do not appear in everyday perception or in standard measurement practice.
+The objection therefore retains its logical force (the construction is not exhaustive) while losing most of its empirical force for the domain the paper addresses. Within normal human and instrumental experience the circle-plus-Cauchy scheme is not an arbitrary selection among many equally available options; it is the scheme that the available choices produce. Exotic alternatives remain conceivable, but they lie outside the situations the paper sets out to treat and outside the experience it claims to organise.
+
+### Response to the third part (12 October, Claude; no edit proposed)
+
+**Grok's first half is what R217 adopted. Its second half is not the paper's ground, and it is weaker than it sounds.**
+- *Not the paper's ground.* OFS makes no claim about perception or physics (§1). Defending its choices by "everyday
+  perception and standard measurement practice" is an empirical claim, and the corpus's rule for those is real data and
+  a prediction first. None has been made for this one.
+- *Ordinary instruments do not sample in equal angle.* A flat-sensor camera's pixels are even in tan θ, which is even
+  in v/h within its field of view. That is a proportional window, the near field's lay, stopping well short of the
+  horizon. An equidistant fisheye lens is the even turn. The eye's cortical map is proportional near the fovea and
+  logarithmic beyond (Schwartz 1977, cited in OFS §11.3; about 17.3·ln(1 + E/0.75) mm in Horton and Hoyt's fit). Pixel
+  grids are L∞ in their own distances, and street grids L₁. So the circle-plus-Cauchy scheme is not "the scheme the
+  available choices produce": real readers use several weights.
+- *It understates V = H.* Since R215 the drawing V = H is required, not merely natural.
+
+**The better ground is R217's.** The geometry is necessary relative to a stated ignorance. The core, the median at the
+corner and no mean, holds for any fair weight that reaches the horizon (Theorem 6(e)). The variety among real
+instruments is then not an objection, because each is a different weight:
+- a flat camera is a window that never reaches the horizon (situation 3 within a window, `papers/number-line.md` §5);
+- a fisheye lens is the even turn;
+- an eye has two address spaces, proportional then logarithmic, though its switch is set by an amount (Schwartz's a,
+  about 0.75°), a resolution-limit kind of corner, not v = h (`plans/neighbours.md`).
+
+So the empirical defense is not needed, and making it would add a claim the paper cannot yet support. No edit is
+proposed from this part.
