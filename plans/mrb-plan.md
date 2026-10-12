@@ -293,3 +293,65 @@ the engine (Newton's balance, speed and time to rest only) showed the protocol a
 **Seen before the run, disclosed:** one settle test printed the floor's share of the weight in the silo (μ = μ_w = 0.5,
 seed 1): 0.91 with 200 marbles and 0.89 with 500. That is P13's quantity. P13 is not changed. Those two pours were run
 with the drift not yet removed; run 3's pours have it removed, so they are not the same pours.
+
+### Run 3 (12 October 2026)
+
+`plans/mrb/run3.mjs` on `play-marbles.html`'s engine as committed in b51c1fd (the amendments pushed first, 25e59b2);
+output in `plans/mrb/mrb-run3.txt`, 41 minutes. (Changes to the page after b51c1fd touch only the bowl, the table beside it
+and the game, none of which this run uses.)
+
+```
+periodic W 7, μ 0:   at rest t 144, 102, 79, 104; floor/weight 0.999995–1.000003; Z 6.112, 6.188, 6.197, 6.154 (rattlers 4–9 of ~275); φ 0.6375, 0.6451, 0.6426, 0.6441
+periodic W 7, μ 0.5: "at rest" t 20.0 and 24.6 (seeds 1, 3), not at rest by 600 (seeds 2, 4); floor/weight 0.998969, 1.000000, 0.999969, 1.000000;
+                     Z NaN in all four (every bulk marble dropped as a rattler); φ 0.5862, 0.5961, 0.5886, 0.5850
+silo W 6, μ = μ_w = 0.5, floor's share / walls' share of the weight:
+  N 100: 0.990 / 0.010, 1.002 / −0.002     N 200: 1.001 / −0.001 (not at rest), 0.959 / 0.041
+  N 300: 0.969 / 0.031, 1.029 / −0.029     N 400: 0.927 / 0.073, 0.924 / 0.077
+  N 500: 0.745 / 0.255 (not at rest), 0.930 / 0.070 (not at rest)
+silo, μ_w = 0, N 500: floor 0.999718, walls 0
+Janssen fit: M∞ 1802 marbles, λ 51.5σ, K 0.058; fills off the fit by −14.7% to +11.7%
+
+P9: KILLED. Worst of 18 pours 0.1031% (μ 0.5, seed 1, "at rest" at t 20); μ_w 0, floor alone 99.97%.
+P10: not killed. Frictionless Z 6.163 (6.112–6.197), within 0.25 of 6.
+P11: KILLED. μ 0.5: Z NaN, every bulk marble dropped by the rattler rule.
+P12: not killed. Bulk φ frictionless 0.6423 (0.637 ± 0.015); μ 0.5 0.5890 (0.60 ± 0.02).
+P13: KILLED. Worst fill 14.7% off the fit; K 0.058 (not between 0.3 and 1.0).
+Pours not at rest by t 600: 5 of 19 (all frictional).
+```
+
+## Reading of run 3 (not ruled)
+
+- **Held by 2d readings** (P10). Frictionless marbles at rest touch 6.16 neighbours on average, with 2–3% rattlers:
+  Maxwell's 2d = 6 for d = 3, plus the small excess a finite stiffness and gravity's load give. In the pair's terms, a
+  marble with no friction is held still by six readings sitting just past the line h + v = 1. The packings are the
+  measured ones (P12): 0.642 without friction against Scott and Kilgour's 0.637, and 0.589 with it against Scott's 0.60.
+- **Two kills are the protocol's, not the physics'.**
+  - P11: the rule "drop a marble with fewer than d + 1 contacts, until none is left" empties a frictional pile
+    completely. With friction, a marble can be held by three contacts and its weight. So no part of the pile has four
+    contacts everywhere: its 4-core is empty. The rule is right for frictionless packs and wrong for frictional ones.
+  - P9: a pile "at rest" by the instantaneous speed can be breathing. Two frictional pours passed the speed rule at t ≈ 20
+    while the floor's push was still 0.1% off the weight, caught at a turning point of the whole pile's oscillation.
+    The other three frictional pours never passed it at all: with no rolling resistance, marbles on top keep rocking.
+- **No Janssen** (P13). The walls carried anything from −3% to +26% of the weight, not a share that grows and saturates
+  with the fill. Janssen's law assumes the walls' friction fully mobilised, every wall contact slipping, upward. A pile
+  poured in and left still mobilises it only partly, and in either direction. That is why the experiments
+  that measure Janssen's saturation move a wall or the floor a little first (known, from memory). The engine poured, and
+  did not do that.
+
+### Run 4 (12 October 2026): prediction, written before it ran
+
+Run 3's two protocol kills repaired, as a new run with new seeds (5–8), periodic sides as condition (a), μ = 0 and 0.5:
+- **At rest, read over time.** The same speed rule, a limit of 300 time units, then the floor's push *averaged over
+  the next whole time unit* (about 350 steps), so a breathing pile is read at its mean.
+- **Rattlers, by load.** A marble with no contact with another marble is a rattler; the rest are counted, each with all
+  its contacts (h + v > 1), in the same bulk slab. No core is stripped. (Measured, not predicted: the largest k whose
+  k-core, the marbles left after stripping those with fewer than k, is not empty.)
+
+Disclosed: run 3 showed the frictional 4-core empty, so every frictional pile has marbles with three contacts or fewer
+throughout. No frictional contact count has been seen.
+
+- **P14 (Newton, averaged).** In all eight pours the floor's mean push is within 0.05% of the weight. *Killed* if any is
+  outside.
+- **P15 (held by 2d without friction, the same rule).** Frictionless Z within 0.25 of 6. *Killed* if outside.
+- **P16 (friction holds with fewer).** μ = 0.5: Z between 3.5 and 5.0, and at least 1 below the frictionless. The lower
+  bound is Maxwell's d + 1 = 4, relaxed by 0.5 because of what run 3 showed. *Killed* if either fails.
