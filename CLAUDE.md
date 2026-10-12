@@ -397,6 +397,12 @@ Google Fonts load from outside:
   capped unit relation and the angle are best at the corner, the plain ratio nowhere (P8); at one budget the in-place
   lay beats the even turn between 0.52 b and 1.91 b (P9). Ratio forms trig-free and exact; P10 killed in its angle
   clause (an angle holds a big ratio to ulp·(1 + x²)/x; the capped unit relation to 1.5e-16 at every size).
+  Run 3 (`mot/mot3.py`; special relativity, after the archived SR paper; Tom: "yes"): v = β, h = 1/γ (c the bridge);
+  three pairs, three corners (rest for the Doppler pair, β = 1/√2 for (β, 1/γ), the transverse plane for the sky; a
+  boost moves only the sky's, to tan(θ/2) = k); γ the even and γβ the odd part of k in levels, 1/γ = 2k/(1 + k²);
+  rapidity the reader's lay of celerity smoothed (within 1 − ln 2 nats); pseudorapidity a direction's level; the regime
+  switch at pc = mc², symmetric for E (β², a share) and lopsided for T; uniform acceleration one level per ln 2/a of
+  proper time (P13–P18 not killed).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

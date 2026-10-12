@@ -64,6 +64,13 @@ bodies are pictures. They are never evidence here.
   Ratio readers need no trig for time to contact, stereo, closest approach, collision or braking. The capped unit
   relation reads distance best at the corner, twice as well as the angle there. An angle holds a big ratio poorly even
   with a call, which killed P10's angle clause (§2.2, §3).
+- 11 October, sixth: MOT run 3, special relativity in unit relations, after the archived *Special Relativity, Through the
+  Fisheye* (Tom: "here is a earlier paper on SR", then "yes"). Nothing was killed.
+  - **Three pairs, three corners:** rest for the Doppler pair, β = 1/√2 for (β, 1/γ), the transverse plane for the sky.
+  - **The two kinds:** γ is the Doppler factor's even part in levels and γβ its odd part.
+  - **Rapidity** is the reader's lay of celerity, smoothed.
+  - **The regime switch** sits at pc = mc², symmetric for the energy (a share) and lopsided for the kinetic energy.
+  - **Levels under acceleration** come evenly in proper time (§1, §2.2).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -111,6 +118,11 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | a quantity unchanged when its pair swaps is stationary at the corner | a launch's longest range at 45° (complementary launches equal); all the energy passed at equal masses (as in maximum power transfer) | the pair's own amounts for the value, none for the corner | MOT P12 |
 | the facing's sine, 2k/(1 + k²) in the ratio | a launch's range, (U²/g)·sin(facing); a baseline's conditioning, sin γ | U and g; B | MOT P8, P12 |
 | the capped unit relation, min(k, 1/k), as a representation | trig-free and bounded: time to contact, stereo, closest approach, braking, steady turning | none | MOT P10 |
+| v = β, h = 1/γ, the reading v/h the celerity γβ; the corner v = h | β = 1/√2: momentum energy equal to rest energy, pc = mc²; the regime switch, E's level-slope β² halfway there and flip-symmetric | c (a known constant) | MOT P13, P17 |
+| the Doppler pair (sent, received), its reading k and levels ln k (the rapidity); its corner | rest; γ the even part of k, γβ the odd part (k = γ + γβ); 1/γ = 2k/(1 + k²), the facing's sine | none (two of the reader's own intervals) | MOT P13, P14 |
+| the sky's pair (fore, aft), reading tan(θ/2), levels −ln tan(θ/2); its corner | pseudorapidity; a boost along the axis pans every level by ln k; the transverse plane; the moving observer's transverse plane is the rest frame's tan(θ/2) = k | none | MOT P13, P16 |
+| the reader's lay (proportional, then logarithmic) of a reading | rapidity = asinh(celerity): the lay smoothed, never more than 1 − ln 2 nats from it | c | MOT P15 |
+| levels at an even pace of the reader's clock | uniform proper acceleration: one level per ln 2/a of proper time, each taking twice the last in the launch frame | a | MOT P18 |
 
 ## 2. Results, by standing
 
@@ -238,6 +250,37 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   rational trigonometry (spreads in place of angles). What the vocabulary adds is the account: which pair, which
   corner, which kind, and that the unit relation capped at the corner keeps both the ratio's algebra and the angle's
   best-conditioned middle.
+- **Special relativity in unit relations** (MOT run 3, `plans/mot-plan.md`; after the archived *Special Relativity,
+  Through the Fisheye*). With c as the bridge, v = β and h = 1/γ are unit relations, v² + h² = 1, and the reading v/h is
+  the celerity. The Doppler factor k is a ratio of two of the reader's own intervals and needs no bridge; its levels,
+  ln k, are the rapidity. Exactly, or to rounding:
+  - **Three pairs, three corners:**
+    - rest, for the Doppler pair (k ↔ 1/k is approach against recession);
+    - β = 1/√2, for (β, 1/γ), equivalently (pc, mc²): k = 1 + √2, rapidity asinh 1 = 0.881374;
+    - the transverse plane, for the sky's (fore, aft) (tan(θ/2) ↔ its reciprocal).
+
+    A boost moves only the sky's corner: the moving observer's transverse plane is the rest frame's direction with
+    tan(θ/2) = k. At the (β, 1/γ) corner that is 135°, and the forward hemisphere is seen within 45°.
+  - **The two kinds** (run 2), in the Doppler pair's levels: γ = (k + 1/k)/2 is the even part of k and γβ = (k − 1/k)/2
+    the odd part, so k = γ + γβ. Time dilation is unchanged when sender and receiver swap, and stationary at rest;
+    celerity changes sign there. 1/γ = 2k/(1 + k²) is the facing's sine, the form of a launch's range; with
+    k = tan(F/2), β = −cos F and 1/γ = sin F. This was exact in rationals for 10⁴ k.
+  - **Rapidity is the reader's lay of celerity, smoothed:** proportional at home, logarithmic far off, with the lay's
+    slopes at both ends, and never more than 1 − ln 2 nats (0.44 doublings) from it. The gap is 0.119 at the corner and
+    rises throughout.
+  - **A direction's level is its pseudorapidity.** A boost along the axis pans every level by ln k; fore and aft are the
+    flip; a massless particle's rapidity equals it.
+  - **The regime switch is the corner of (pc, mc²).** The energy's level-slope against momentum is β², a share of the
+    circle: ½ at the corner and s(x) + s(1/x) = 1. The kinetic energy's is not a share: 2 at home, 1 far off, 1 + 1/√2
+    at the corner, its swap sum running from 3 to 2 + √2. As NRF found for light, the switch is symmetric where the
+    quantity is a share.
+  - **Levels under acceleration:** with uniform proper acceleration a from rest, level n (k = 2ⁿ) comes at proper time
+    n·ln 2/a, evenly. In the launch frame each level takes twice the last, while an approach at constant speed (run 1,
+    P4) takes half.
+
+  Known: Bondi's k-calculus, rapidity's additivity, pseudorapidity, the two regimes either side of pc ~ mc², hyperbolic
+  motion. What the vocabulary adds is the account: three named pairs, their corners and kinds, the energy circle as the
+  reason the switch is symmetric, and rapidity as the reader's lay.
 
 ### 2.3 In Wander's world (illustration, not evidence)
 

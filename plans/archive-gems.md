@@ -189,4 +189,7 @@ odd (zero at rest, approach against recession): the two kinds of corner of `plan
 so (β, 1/γ) is the Doppler pair's facing: β = −cos F, 1/γ = sin F, with k = tan(F/2). The algebra is standard (Bondi's
 k, the tangent half-angle); the reading is ours. A MOT run 3 would put it to predictions first.
 
-**Where it went (11 October):** archived. Nothing moved into the papers yet.
+**Where it went (11 October):** archived. Then, at Tom's "yes", into MOT run 3 (`plans/mot-plan.md`; nothing killed) and
+`physics.md` §1 and §2.2: the three pairs and their corners (§4), pseudorapidity as a direction's level (§5), β below the
+corner and rapidity above it (§4, tested as rapidity being the reader's lay smoothed), and the link above. The fourth
+star, the Breit–Wigner line and the Rindler gearing are not moved.

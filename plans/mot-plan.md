@@ -324,3 +324,52 @@ equals rapidity for a massless particle; d ln E/d ln p = β² follows from dE/dp
 ultra-relativistic regimes either side of pc ~ mc²; hyperbolic motion, t = sinh(aτ)/a; the headlight effect. What run 3
 adds is the reading: three named pairs, their corners and their kinds, and the regime switch symmetric only where the
 quantity is a share.
+
+### Run 3 (11 October, `mot/mot3.py`)
+
+Seed 15, two seconds. P14 and P18 are in exact rationals; the rest are in floats, with rates by the complex step.
+
+| | prediction | result | |
+|---|---|---|---|
+| P13 | three pairs, three corners; a boost moves only the sky's; tan(θ/2) = k seen at 90°; at (b)'s corner 135°, the forward hemisphere within 45° | k(β)k(−β) = 1 to 2.2e-16; w = 1, k = 1 + √2, ζ = asinh 1 = 0.881374 to 2.2e-16; seen at 90° to 1.1e-15 rad; 135.000000000000° and 45.000000000000° | not killed |
+| P14 | γ even, γβ odd, k = γ + γβ, 1/k = γ − γβ, β and 1/γ = 2k/(1 + k²), β² + (1/γ)² = 1; dγ/dζ = 0, d(γβ)/dζ = 1 at rest | every identity exact for 10⁴ of 10⁴ rational k; 1e-60 and 1.000000000000000 | not killed |
+| P15 | the gap lay − asinh rises throughout, 0.118626 at the corner, toward 1 − ln 2 | slope positive everywhere on 10⁻⁶ to 10⁶; 0.118626; 0.306852819 at 10⁶ | not killed |
+| P16 | η′ − η = ln k; fore ↔ aft is η ↔ −η; a massless particle's rapidity is η | 1.8e-15, 5.8e-15, 2.2e-14 over 10⁴ draws, θ in 0.05 to π − 0.05 (my range: nearer the ends, 1 − cos θ loses digits in floats) | not killed |
+| P17 | E's level-slope β², ½ at the corner, s(x) + s(1/x) = 1; T's 1 + 1/√2 at the corner, its swap sum not constant | 3.3e-16; 0.500000000000000; 2.2e-16. T: 2.000000 at 10⁻³, 1.707106781186547 at the corner, 1.001000 at 10³; its swap sum runs from 3.000999 at the ends to 3.414214 (2 + √2) at the corner | not killed |
+| P18 | hyperbolic motion; level n at k = 2ⁿ; t_n and Δ_n exact; ratio → 2 | all exact for n ≤ 40 ((x + 1)² − t² = 1; k² = 4ⁿ); t_n against sinh 2.4e-15; launch-frame ratios 1.5000, 1.8333, 1.997076 at n = 1, 2, 5, and 1.999999999997 at 20; proper time per level ln 2 | not killed |
+
+**Reading.**
+- **Special relativity has three corners, one for each pair it holds:**
+  - rest, for the Doppler pair (sent, received);
+  - β = 1/√2, for (β, 1/γ), where momentum energy equals rest energy;
+  - the transverse plane, for the sky's (fore, aft).
+
+  Saying "the corner" in SR without naming the pair is ambiguous three ways (the archived paper's "three exchanges,
+  three fixed points").
+- **The pairs meet in two exact places:**
+  - the moving observer's transverse plane is the rest frame's direction with tan(θ/2) = k, so the sky's corner reads
+    off the Doppler pair's reading;
+  - at the (β, 1/γ) corner, that direction is 135°, and the whole forward hemisphere is seen within 45°.
+- **In the Doppler pair's levels, γ is the even part of k and γβ the odd part:** k = γ + γβ. These are run 2's two kinds
+  of corner:
+  - time dilation is stationary at rest, unchanged when sender and receiver swap;
+  - celerity changes sign there.
+
+  1/γ = 2k/(1 + k²) is the facing's sine of the Doppler pair, the same form as a launch's range and a baseline's
+  conditioning. β = −cos F and 1/γ = sin F, with k = tan(F/2).
+- **Rapidity is the reader's lay of celerity, smoothed.** It is proportional at home and logarithmic far off, with the
+  same slopes, and never more than 1 − ln 2 nats (0.44 doublings) from the lay. The gap is 0.119 nats at the corner.
+  Physics' additive speed is the reader's two address spaces joined smoothly.
+- **A direction's level is its pseudorapidity.** A boost along the axis pans every level by the same ln k, and fore and
+  aft are the flip.
+- **The regime switch is at the corner of (pc, mc²).**
+  - E's level-slope is β², a share of the circle: halfway at the corner and flip-symmetric, as NRF found for light where
+    the count is a share.
+  - T is not a share, and its switch is lopsided: 1 + 1/√2 at the corner, its swap sum running from 3 to 2 + √2.
+- **Levels of motion, three ways:**
+  - approaching at constant speed, each level takes half the time of the last (P4);
+  - under uniform proper acceleration the traveller's levels come evenly, one per ln 2/a;
+  - in the launch frame each takes twice the time of the last.
+
+All the physics here is standard (Bondi, Varićak and Robb, hyperbolic motion, the regimes either side of pc ~ mc²).
+What the run adds is the account: which pair, which corner, which kind, and where the switch is symmetric.
