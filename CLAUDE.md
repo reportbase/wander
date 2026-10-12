@@ -403,6 +403,11 @@ Google Fonts load from outside:
   rapidity the reader's lay of celerity smoothed (within 1 − ln 2 nats); pseudorapidity a direction's level; the regime
   switch at pc = mc², symmetric for E (β², a share) and lopsided for T; uniform acceleration one level per ln 2/a of
   proper time (P13–P18 not killed).
+  `emc-plan.md` (+ `emc/emc.py`, 11 Oct, exact; Tom: "how the corner helps understand the known equation"): E² = (pc)² +
+  (mc²)² is the unit circle of (pc, mc²) in the one unit E, v = β (from dE/dp), h = 1/γ (the clock's rate); E = mc² home,
+  E = pc the horizon; Newton's and the ultra-relativistic forms flips of each other, e_N(x) = e_U(1/x), both 6.07% high at
+  pc = mc²; mass the light-cone pair's corner, fixed as a boost pans its levels (P1–P4 not killed; P2's quoted decimals
+  my slip, recorded). Bertozzi's electrons queued (paper blocked).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

@@ -64,3 +64,40 @@ not the corner. The paper is not reachable from here (AIP and its copies are blo
 table will not be used. Tom to supply the table if wanted.
 
 ## Runs
+
+### Run 1 (11 October, `emc/emc.py`)
+
+Seed 16, two seconds. P1's identities and P4 are in exact rationals, from Pythagorean triples and rational Doppler
+factors. The rest is in floats, with the speed taken by complex step from E(p).
+
+| | prediction | result | |
+|---|---|---|---|
+| P1 | u/c = pc/E from dE/dp; v² + h² = 1 and √(1 − β²) = h exactly | 4.4e-16 over 0.001 ≤ x ≤ 1000 (electron mass, c in m/s); 0 of 10⁴ rational states failing | not killed |
+| P2 | home E = mc², horizon E = pc; at the corner β = 1/√2, E = √2·mc², T = (√2 − 1)·mc² | all hold; worst 1.1e-16 against the closed forms. The electron's corner is at T = 0.2116627 MeV, the proton's at 388.6450241 MeV | not killed (see the note) |
+| P3 | e_N(x) = e_U(1/x); Newton better exactly when x < 1; both √(9/8) − 1 at the corner | 8.3e-16; 0 of 6,000 points wrong; both 0.0606602 | not killed |
+| P4 | a boost pans the light-cone pair by ∓ln k_b, midpoint mc² fixed; composition by k₁k₂; E′ ≥ mc², least at k_b = (E + pc)/mc² | 0 of 10⁴ failing; none below mc²; the circle's share v moved in every boost but the identity (10⁴ of 10⁴ as predicted); all 1,000 boosts by (E + pc)/mc² land at rest | not killed |
+
+**A slip in the plan, recorded and not edited.** P2's two worked decimals were my mental arithmetic, and both are off in
+the sixth digit: 0.2116605 should be 0.2116627 MeV, and 388.6430 should be 388.6450 MeV. The kill condition was
+against the closed form, which holds, so P2 is not killed. The decimals are wrong as written.
+
+**P3's table, the two errors side by side** (e_N, e_U):
+- x = 0.1: +0.000012, +4.074690;
+- x = 0.5: +0.006231, +0.341641;
+- x = 1: +0.060660 for both;
+- x = 2: +0.341641, +0.006231;
+- x = 10: +4.074690, +0.000012.
+
+Newton at x is the ultra-relativistic form at 1/x, digit for digit.
+
+**Reading.**
+- **The relation is the unit circle of (pc, mc²), read in the one unit E.** Its two unit relations are β (the speed,
+  from dE/dp) and the moving clock's rate (the rest share).
+- **E = mc² is the statement of home and E = pc that of the horizon.** Massive things never reach the horizon, because
+  v is capped at 1. The corner, pc = mc², is where Newton's form and the ultra-relativistic form are equally wrong, each
+  6.07% high. Each is exactly as good on its own side as the other is at the flipped point: Newtonian mechanics is the
+  near field, the massless limit the far field, and they are one approximation under the flip.
+- **Mass is the corner of the other pair.** A boost pans the light-cone energies' levels by equal and opposite amounts,
+  so their midpoint, mc², stays where it is. The circle's shares move with every boost; the midpoint never does. That
+  is the reading of why mass is the same for every observer, and why rapidities add.
+- **All four are standard physics.** The run settles them exactly and in the corner's terms.

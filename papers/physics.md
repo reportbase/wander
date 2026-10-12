@@ -71,6 +71,11 @@ bodies are pictures. They are never evidence here.
   - **Rapidity** is the reader's lay of celerity, smoothed.
   - **The regime switch** sits at pc = mc², symmetric for the energy (a share) and lopsided for the kinetic energy.
   - **Levels under acceleration** come evenly in proper time (§1, §2.2).
+- 11 October, seventh: EMC (`plans/emc-plan.md`; Tom: "so lets talk about how the corner helps understand the known
+  equation", then "yes"). E² = (pc)² + (mc²)² is the unit circle of (pc, mc²) read in the one unit E. E = mc² is home
+  and E = pc the horizon. Newton's form and the ultra-relativistic form are flips of each other, handing over at
+  pc = mc², each 6.07% high there. Mass is the corner of the light-cone pair, fixed under every boost. Nothing was
+  killed; Bertozzi's electrons are queued (§1, §2.2, §4).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -123,6 +128,10 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | the sky's pair (fore, aft), reading tan(θ/2), levels −ln tan(θ/2); its corner | pseudorapidity; a boost along the axis pans every level by ln k; the transverse plane; the moving observer's transverse plane is the rest frame's tan(θ/2) = k | none | MOT P13, P16 |
 | the reader's lay (proportional, then logarithmic) of a reading | rapidity = asinh(celerity): the lay smoothed, never more than 1 − ln 2 nats from it | c | MOT P15 |
 | levels at an even pace of the reader's clock | uniform proper acceleration: one level per ln 2/a of proper time, each taking twice the last in the launch frame | a | MOT P18 |
+| the unit circle v² + h² = 1, both read in one unit | E² = (pc)² + (mc²)² divided by E: v = pc/E = β (the speed, dE/dp), h = mc²/E = 1/γ (the moving clock's rate) | c | EMC P1 |
+| home (v = 0) and the horizon (h = 0) | E = mc² and E = pc (light) | c | EMC P2 |
+| the near field and the far field as flips of each other, handing over at the corner | Newton's mc² + p²/2m and the ultra-relativistic pc + (mc²)²/2pc: e_N(x) = e_U(1/x), each 6.07% high at pc = mc² | c | EMC P3 |
+| a pair's corner as its level-midpoint, fixed under a pan | mass: the geometric mean of E + pc and E − pc, which a boost pans by ∓ln k | c | EMC P4 |
 
 ## 2. Results, by standing
 
@@ -281,6 +290,32 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   Known: Bondi's k-calculus, rapidity's additivity, pseudorapidity, the two regimes either side of pc ~ mc², hyperbolic
   motion. What the vocabulary adds is the account: three named pairs, their corners and kinds, the energy circle as the
   reason the switch is symmetric, and rapidity as the reader's lay.
+- **E² = (pc)² + (mc²)² through the corner** (EMC, `plans/emc-plan.md`). Dividing by E gives the unit circle of the
+  pair (pc, mc²), both read in the one unit E. Its unit relations are v = pc/E, which is β (the speed from dE/dp, to
+  4.4e-16), and h = mc²/E, which is 1/γ, the moving clock's rate; a clock runs at the rest share of its energy. Exactly,
+  in rationals from Pythagorean triples, or to rounding:
+  - **The landmarks:**
+    - home (v = 0) is E = mc²;
+    - the horizon (h = 0) is E = pc, light;
+    - the corner is pc = mc², with β = 1/√2, E = √2·mc² and T = (√2 − 1)·mc²: 0.2117 MeV for an electron, 388.6 MeV
+      for a proton.
+
+    The speed limit is the cap at 1 on v, which massive things never reach.
+  - **Newton and the massless limit are flips of each other.** E_N = mc² + p²/2m and E_U = pc + (mc²)²/2pc swap into
+    each other when pc and mc² swap, and their relative errors satisfy e_N(x) = e_U(1/x) exactly, with x = pc/mc².
+    Newton's form is the better exactly inside the corner. At the corner both are √(9/8) − 1 = 6.07% high. With MOT P17
+    (the energy's level-slope β², halfway there), this makes the corner the precise statement of "where relativity
+    starts to matter", and symmetric when posed in momentum.
+  - **Mass is the corner of the light-cone pair.** (E + pc)(E − pc) = (mc²)², so mc² is the pair's level-midpoint. A
+    boost with Doppler factor k sends E + pc to (E + pc)/k and E − pc to k(E − pc): a pan in levels, equal and
+    opposite. The midpoint does not move, which is why mass is the same for every observer; pans compose by
+    multiplying, which is why rapidities add. The circle's shares move with every boost (10⁴ of 10⁴); the midpoint
+    never does. The boost by (E + pc)/mc² lands at rest, the light-cone pair at its corner, in all 1,000 trials.
+
+  All standard (the energy–momentum relation, light-cone coordinates with p⁺p⁻ = m², the two limits). What the corner
+  adds is the organisation: one circle in one unit, home and horizon, the two limits as one approximation under the
+  flip, and the invariant mass as a corner. What it does not give: c's value, or why a change of frame is a hyperbolic
+  pan and not a rotation (the sign is the world's).
 
 ### 2.3 In Wander's world (illustration, not evidence)
 
@@ -389,6 +424,11 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
   overstates it by π/2 at the corner and grows past it. Responses to looming that run on to large visual angles (half-angle
   near 45° and past) would tell which a measured reader uses there. A published data set with the angles reached is
   needed; none is chosen yet.
+- **Bertozzi's electrons** (from EMC). Speed against calorimetric kinetic energy, 0.5 to 15 MeV (*Am. J. Phys.* 32, 551,
+  1964), all past the electron's corner (x from about 1.7 to 30). Read in levels, each doubling of momentum should add
+  about ln 2 of rapidity. That is a real-data look at the far field, though it tests special relativity, which is
+  settled, rather than the corner. The paper is blocked here and teaching copies of its table will not be used; Tom to
+  supply it if wanted.
 - **One dimension against two.** ISQ's reading separates an angular size (falling one level per level of distance) from
   its square, the light (two levels). Stars with measured angular diameters (interferometry) and parallaxes would test
   the one-level half directly.
