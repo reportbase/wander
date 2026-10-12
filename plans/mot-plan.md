@@ -103,3 +103,92 @@ Values from the run:
   intersection is the best-conditioned fix; read here, that is the corner. A reader that can choose its baseline (how far
   it moves between two looks) reads a distance best with its half-breadth equal to the distance, and as badly at d as at
   (B/2)²/d.
+
+### Run 2: predictions (11 October, written before `mot/mot2.py` exists)
+
+Tom: "connecting known kinematics to the corner may reveal a deeper geometric truth, but if all we can do is explain
+motion through our vocabulary, that might be useful, particularly using ratios instead of angles may simplify the
+math"; then "yes, even if we could just provide a fuller geometric explanation of motion using our corner insights, that
+would be a win."
+
+**Set-up.** b = B/2 is the half-baseline, d the distance, both amounts. Their pair's reading is k = b/d, and the unit
+relation, capped at 1, is u = min(k, 1/k) with one bit for the side. Other pairs are named where they are used. Each
+pair's corner is its own and needs no bridge; the amounts a result needs are named with it.
+
+**Two kinds of corner** (a derivation, which the predictions instance). Take a quantity f of a pair through its ratio k.
+- If swapping the pair leaves f unchanged, f(k) = f(1/k). Differentiating gives f′(k) = −f′(1/k)/k², so f′(1) = −f′(1),
+  and f′(1) = 0. **A swap-symmetric quantity is stationary at the corner.** In levels (ln k) it is even, and the corner
+  is its centre.
+- If swapping the pair flips f's sign, f is zero at the corner (by continuity). **A sign-odd quantity changes regime at
+  the corner.**
+
+**Predictions.**
+- **P8. Ranging by three readers of k, each reading to a step ε = 10⁻⁴.**
+  - **The readers:** (a) the angle φ = arctan k, even in φ; (b) the unit relation u, even in u on each side of the
+    corner; (c) the plain ratio k, even in k and uncapped.
+  - **To first order, the relative error in d per step** is (a) 2/sin 2φ, (b) 1/u, (c) 1/k = d/b.
+  - **Predicted:** (a) and (b) are least at the corner, and alike at d and b²/d. (c) has no interior least; its error
+    only grows with d.
+  - **Killed if:** for (a) or (b), the worst rounded error over 0.01 b ≤ d ≤ 100 b is least more than 1% from d = b, or
+    the first-order errors at d and b²/d differ by more than 1e-12 of either; or (c)'s worst rounded error ever falls as
+    d grows.
+- **P9. Equal budgets: the Cauchy's lay against the in-place lay.** N addresses cover every distance.
+  - **The two lays:** the even turn spreads N over φ in [0, 90°] (the lay that gives the Cauchy). The in-place lay puts
+    N/2 evenly in u on each side of the corner: proportion inside, 2 − 1/s past it. The plain ratio cannot cover every
+    distance with finite N.
+  - **Per address, the relative error** is π/(N sin 2φ) for the even turn and 2/(N u) for the in-place lay. Their
+    ratio, in-place over even turn, is 4cos²φ/π (for d ≥ b, the same at the flip).
+  - **Predicted:** at the corner the ratio is 2/π, so the in-place lay reads π/2 better. Far off and near home it
+    rises toward 4/π, where the even turn reads better. They are equal where cos²φ = π/4: u = √(4/π − 1) = 0.52272,
+    that is d = 1.91306 b and 0.52272 b.
+  - **Killed if:** the ratio from complex-step sensitivities misses 4cos²φ/π by more than 1e-12 anywhere on 10⁻³ b to
+    10³ b, or either crossing misses by more than 1e-4 of itself.
+- **P10. The ratio forms are trig-free and exact; the angle forms are not; turning is the exception.** Each problem has
+  a referee (world positions), a ratio reader and an angle reader.
+  - **The ratio reader** is given what a ratio reading gives: the size reading x = S/d, the bearing as a slope q
+    against its own axis, two looks or their rates.
+  - **The angle reader** is given the angular half-size θ = arctan x, the bearing angle β and their rates.
+  - **The problems:** (A) time to contact head-on, from two looks; (B) stereo with parallel axes: the place (X, Z)
+    from the two slopes, Z = 2b/(q_L − q_R); (C) closest approach, m/d = |r|/√(1 + r²), r = ωτ, with ω = q̇/(1 + q²)
+    and τ = x/ẋ; (D) the collision test, the bearing still.
+  - **Predicted for A–D:** each ratio form agrees with its referee to 1e-12 (relative) over 10³ random cases and calls
+    no transcendental function (√ is allowed; calls are counted). The angle forms of A, B and C agree only by calling at
+    least one (tan or sin). D needs no call in either form.
+  - **(F) Steady turning:**
+    - the angle advances by addition, with no call a step, but each place read costs cos and sin;
+    - the capped pair (the larger component set to 1, the other the unit relation) advances by a fixed rotation (two
+      constants computed once) and a division by its larger component, with no call a step. Each place read costs one √;
+    - **predicted:** both track the referee to 1e-9 over 10⁴ steps. The plain ratio's largest magnitude over a whole
+      turn is at least cot(ωΔt/2), unbounded as the step shrinks, while the capped pair never exceeds 1.
+  - **Killed on any failure.**
+  - Since I write the readers, the call counts show only that a trig-free exact form exists; the test is the agreement
+    with the referee.
+- **P11. Braking reads its corner.**
+  - **Derivation:** with closing speed u, deceleration a and stopping distance s = u²/(2a) (amounts), τ = d/u gives
+    τ̇ = −1 + d·a/u², so **τ̇ + 1 = d/(2s)**. Lee's critical τ̇ = −½ is therefore s = d: the pair (stopping distance,
+    distance) at its corner. τ̇ + ½ = (d − s)/(2s) is sign-odd: a thing stops short when s < d and overshoots when
+    s > d.
+  - **Predicted:** the ratio reader computes τ̇ = 1 − x·ẍ/ẋ² from its readings with no call.
+  - **Killed if:** over 10⁴ random states that τ̇ misses −1 + d/(2s) by more than 1e-12; or classifying by τ̇ ≷ −½
+    disagrees with the exact rational referee (s against d) in any state; or 10³ states built with s = d exactly read
+    τ̇ off −½ by more than 1e-12.
+- **P12. Swap-symmetric quantities in motion are stationary at the corner; the others are not.**
+  - **Three swap-symmetric quantities:**
+    - the range of a launch at fixed speed, against k = V_y/V_x: (2U²/g)·k/(1 + k²), since 2V_x·V_y/g is unchanged
+      when the speeds swap. Its corner is 45°; complementary launches go equally far. U and g are the amounts;
+    - the share of energy a head-on elastic collision passes to a ball at rest, against the mass ratio k: 4k/(1 + k)².
+      All of it passes at equal masses;
+    - the baseline's conditioning, sin γ = 2k/(1 + k²) with k = b/d (P7).
+  - **Two from the same launch that are not swap-symmetric:** the time of flight ∝ k/√(1 + k²) and the greatest
+    height ∝ k²/(1 + k²).
+  - **Predicted:** each symmetric one has f(k) = f(1/k) to 1e-12 on 10⁻³ ≤ k ≤ 10³, f′(1) = 0 to 1e-12 (complex
+    step), and its grid maximum at k = 1 (within the grid step), computed from k with no call. The two others are
+    strictly increasing, with f′(1) > 0.
+  - **Killed on any failure.**
+
+Known already: complementary launch angles give equal range; equal masses pass all the energy (the same form, 4k/(1+k)²,
+as the maximum power transfer theorem); Lee's τ̇ = −½; rectified stereo's Z = fB/disparity; Wildberger's rational
+trigonometry, which replaces angles by spreads (sin², bounded in [0, 1]) to make trigonometry algebraic; arctan
+computed by folding at 1, arctan x = π/2 − arctan(1/x). What run 2 adds is the reading: which corner each is, of which
+pair, of which kind, and that the capped unit relation keeps both the ratio's algebra and the angle's best-conditioned
+middle.
