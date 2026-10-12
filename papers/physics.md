@@ -85,6 +85,9 @@ bodies are pictures. They are never evidence here.
     expansion's two forms meet at the corner r = R and are each other's flip (Kelvin).
 
   Nothing was killed (§1, §2.2).
+- 11 October, ninth (R211; Tom: "this is pure geometry not physics actually. lets move this into the main papers").
+  PAY's geometry moved to SPN §4.7 and `observation-from-somewhere.md`; §2.2 here keeps its physical instances (looming,
+  unresolved binaries, gravity from far off).
 - 12 October: MRB (`plans/mrb-plan.md`), five hundred marbles. Part 1, an inelastic gas against Haff's law: counted in
   each marble's own contacts the cooling needs only e; the referee's clock needs the density and goes first near the
   clustering instability (§2.4, §3). Part 2, a heap at rest (`play-marbles.html`'s engine): frictionless marbles held by
@@ -332,41 +335,28 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   adds is the organisation: one circle in one unit, home and horizon, the two limits as one approximation under the
   flip, and the invariant mass as a corner. What it does not give: c's value, or why a change of frame is a hyperbolic
   pan and not a rotation (the sign is the world's).
-- **What arrives of a payload, serially and at once** (PAY, `plans/pay-plan.md`; SPN R210). Exactly, or to rounding:
-  - **One stream is one ratio's trajectory.** A thing approaching and a thing growing at the matching rate give the
-    same stream and the same time to contact. Motion arrives before the object does.
-  - **A second reading taken at once,** of a neighbour at the same depth, separates them. The shared distance cancels
-    from the ratio x₁/x₂ = S₁/S₂, which stays fixed under approach and tracks the growth exactly. At another depth the
-    ratio drifts under approach (by at least 65% here), so what reading at once buys is a shared denominator.
-  - **Below the step, the payload arrives as its moments:**
-    - the first moment is the light-weighted photocentre, exactly, resolved or not;
-    - the second is σ² + β(1 − β)s², the payload's share falling two levels per level the separation shrinks;
-    - two maxima appear at s = 2σ (the Sparrow limit: the step, an amount);
-    - an unresolved binary's photocentre orbit is a·|B − β|, the same stream for any mass and light fractions with the
-      same difference; resolved against a shared background, they separate.
-  - **From far off, a body is its total mass at its centre of mass.**
-    - About the centre of mass the monopole's error falls two levels per level of distance (−1.9995), about any other
-      centre one (−1.0000).
-    - Order l arrives down by (R/r)^l. The orders needed to read a body to 1e-6 run from 5 at 10 R to 157 at 1.05 R,
-      within the bound ln(ε(1 − R/r))/ln(R/r) − 1.
-    - The exterior series converges outside the corner r = ρ and fails inside, every term equal at it. Kelvin's
-      inversion maps the interior form onto the exterior term by term, exactly, and a source on the sphere is its own
-      image: the flip about the corner.
+- **Physical instances of what reaches a reader of a payload** (PAY, `plans/pay-plan.md`).
+  - **The geometry moved to the main papers** (R211; Tom: "this is pure geometry not physics actually. lets move this
+    into the main papers"): holding and resolving, the two centres (the median of the addresses, the centroid of an
+    unresolved payload), one stream as one relation's course, and standpoints bringing back the figure.
+  - **Where it went:** SPN §4.7, and `observation-from-somewhere.md` §7.6, Propositions 9–12 of §9 and §8's "From far
+    off". The drawing tool's labs had shown the shape side first.
 
-  All standard (looming's ambiguity, astrometric binaries, the Sparrow limit, multipoles, Kelvin 1847). What it adds is
-  the reading: two centres kept apart, the median of the addresses and the centroid of the payload; motion before the
-  object; and the multipole expansion as level of detail by distance with the corner as its seam.
+  Its physical instances, exactly or to rounding:
+  - **Looming:** one stream cannot tell a thing coming nearer from one growing at the matching rate; the time to contact
+    is the same. A neighbour at the same depth, read at once, separates them.
+  - **Unresolved binaries:**
+    - the light-weighted photocentre arrives exactly, resolved or not;
+    - its orbit is a·|B − β|, the same stream for any mass and light fractions with the same difference; resolved
+      against a shared background, the two separate;
+    - two equal Gaussian images part at s = 2σ, the Sparrow limit (the step, an amount).
+  - **Gravity from far off:** a body is its total mass at its centre of mass.
+    - About that centre the monopole's error falls two levels per level of distance (−1.9995); about any other, one
+      (−1.0000).
+    - The orders needed to read a body to 1e-6 run from 5 at 10 R to 157 at 1.05 R.
+    - The exterior series fails inside the corner sphere, and Kelvin's inversion swaps its two forms.
 
-  **Prior work** (Tom: "we have explore this in the draw.html repository in the labs"). Draw's labs had shown the shape
-  side first, rerun here at draw `ea07709`:
-  - one serial reader's readings carry the turn and not the size: Cauchy for every figure, and the census returns the
-    same unit circle (`rcc`);
-  - three standpoints give the figure up to its size, and one agreed length gives the size, to 2e-15 (`udv`);
-  - the median needs every arrival held at once, so a strictly serial reader marks against a held arrival instead: one
-    extra slot, grain-free on 58 of 58 shapes and scale-free on 88% (`ref`).
-
-  So the median is the parallel reader's centre of the addresses. Holding (serial or parallel) and resolving (above or
-  below the step) are two different axes.
+  All standard: looming's ambiguity, astrometric binaries, the Sparrow limit, multipoles, Kelvin's inversion.
 
 ### 2.3 In Wander's world (illustration, not evidence)
 

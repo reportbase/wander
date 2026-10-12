@@ -1460,6 +1460,14 @@ how it looks; Tom, 9 October, passing on a review of five remaining issues, then
 variant of 3 and 4, not a sixth way. The first cut is whether v is known: with v and h known it is 1 or 2, as they are
 equal or not; with v not known, 3 or 4, as the reader stands outside or inside; with neither, 0.
 
+*What 3 and 4 hold* (11 October, R210, R211; §4.7).
+- **3 holds its hemisphere at once.** It has the median of its readings, and payloads relative to each other where they
+  share a denominator.
+- **4 holds one arrival at a time.** It receives the course of a relation, not its parties, and its reference is an
+  arrival held at the cost of one slot.
+
+Neither has the scale.
+
 *The situations by V, the sweep the same in all* (Tom, 9 October: "h relates H. v relates V. V is either known or
 unknown. When V is unknown, assign it H. so now v relates H. then we sweep h and v, the sweep is all possible values of h
 relative to v."). The situations differ in what is known of V, an amount, compared with H, an amount: V known and equal
@@ -4086,31 +4094,12 @@ evaluated on demand; *Wander* hands each reader its range.
 situated observation, but can be in parallel situated observation. basically, all we see is the motion of the center of
 gravity as situated observers of serial streams"). Two centres are kept apart:
 - **The median of the addresses.** The fingers have no centre of gravity, since a mean asks the fingers about the rings
-  (above). Their centre is the median, an order statistic, at the corner. The median needs every arrival held at once, so
-  it is the parallel reader's. A strictly serial reader marks against a held arrival, one extra slot, which is as
-  grain-free as the median (draw's `ref` lab: 58 of 58 shapes) and as scale-free except where a shape only touches its
-  reference (88%).
-- **The centroid of an unresolved payload.** Below the step what arrives is the payload's sums: first its centroid (the
-  light-weighted photocentre; from far off, the total mass at the centre of mass), then its finer moments, each further
-  down by the reading. Rings add, fingers order.
+  (above). Their centre is the median, an order statistic, at the corner, and only a reader that holds its readings has
+  it.
+- **The centroid of an unresolved payload.** Below the step what arrives is the payload's sums: first its centroid, then
+  its finer moments, each further down by the reading. Rings add, fingers order.
 
-Tested in exact arithmetic (`plans/pay-plan.md`, nothing killed):
-- **A serial stream gives motion before it gives an object.** A thing approaching and a thing growing at the matching
-  rate give one stream, and one time to contact.
-- **Two readings taken at once separate them when they share a denominator.** The common distance cancels from their
-  ratio, which leaves payloads relative to each other, never their scale.
-- **An unresolved binary shows only its photocentre's orbit, a·|B − β|,** whatever the mass fraction B and light
-  fraction β give the same difference.
-- **A body's far field is its total mass at its centre of mass,** with each finer order one more power of R/r down. The
-  exterior and interior expansions meet at the corner r = R, where no order may be dropped, and Kelvin's inversion
-  r ↦ R²/r is the flip about it.
-
-Both distinctions are real and they are different (refined the same evening, after draw's labs). *Holding*, serial
-against parallel, decides the address centre: the median, or a held arrival. *Resolving*, above or below the step,
-decides whether a payload arrives as components or as its centroid. The drawing tool had shown the shape side first:
-- one reader's readings carry the turn and not the size, so the census returns the same unit circle from every figure
-  (lab `rcc`);
-- three standpoints give the figure up to its size, and one agreed length gives the size (lab `udv`, §8.4).
+What a reader recovers of a payload, serially and at once, is §4.7.
 
 ### 4.4 The stitch is at the corner, and one number crosses it
 
@@ -4161,6 +4150,72 @@ paper's own wording stays in it, under its notes of that date):
 - **What the fisheye withholds is V, v's baseline** (*Browsing the Fisheye* §2–§3). Every shape laid evenly by direction
   opens into the Cauchy; more looking buys a direction, not a magnitude; the clock is confounded with the shape. "Which
   magnitude was it?" is the missing baseline put as a question.
+
+### 4.7 Holding and resolving: what reaches a reader of a payload
+
+*11 October. R210; R211, Tom: "this is pure geometry not physics actually. lets move this into the main papers." In
+`observation-from-somewhere.md` as §7.6, "Order needs holding", Propositions 9–12 of §9, and §8's "From far off".*
+
+Two things decide what of a payload reaches a reader, and they are independent:
+- **holding:** how much of what arrives the reader has at once. Situation 3 holds its hemisphere; situation 4 holds one
+  arrival at a time, plus whatever it keeps.
+- **resolving:** whether two payloads lie at least one step apart in what it holds.
+
+Holding decides the addresses' centre; resolving decides whether a payload arrives as parts or as its centroid.
+
+1. **One stream is one relation's course.** A reader at one standpoint receives x(t) = a(t)/b(t), and every pair
+   λ(t)a, λ(t)b gives the same stream. A thing coming nearer and a thing growing at the matching rate are one stream, and
+   so is any mixture. The stream fixes the relation's own pace, x/ẋ, the time to contact for a steady approach (MOT P1),
+   before it fixes any party. *Motion before the object.* The drawing tool showed the shape side first: one reader's
+   readings carry the turn and not the size, Cauchy for every figure, and the census returns the same unit circle from
+   all of them (lab `rcc`).
+2. **The median is held, not read.** The exact median of n arrivals read one at a time needs storage growing with n
+   (Munro and Paterson 1980), so the median is the parallel reader's. A serial reader keeps one arrival, held and left
+   alone, at the cost of one slot, and marks each later arrival higher or lower. Draw's lab `ref` compared three
+   references on the shapes library:
+   - the median: scale-free and grain-free on every shape;
+   - a held arrival: grain-free on 58 of 58 shapes and scale-free on 88%, the rest shapes that only touch their
+     reference without crossing it;
+   - the reader's own moving held value: grain-free on only 3%, marking three times as often.
+
+   "The grain-free mark costs exactly one extra slot." A serial reader's record of ticks and marks is scale-free, its
+   marks the same at every grain, and the count leans on its history while the mark does not (lab `rec`).
+3. **At once, against one denominator, payloads relative to each other.** Two readings taken at one moment have the
+   ratio (a₁/a₂)(b₂/b₁). With a shared denominator it is a₁/a₂, free of the distance and of the reader's own motion. So
+   reading at once recovers payloads relative to each other where they share a denominator, never their scale (the one
+   number, §2.3). A neighbour at the same distance tells growth from approach (PAY P2).
+4. **Standpoints bring back the figure, one length its size** (the ladder, §8.4).
+   - One reader fixes only a line through each place; its census is the unit circle.
+   - Readers who know only the shape of their own triangle fix every place two of them see, up to scale.
+   - One agreed length fixes the scale.
+
+   In the drawing tool (lab `udv`): exact on 6 of 6 figures, to 2e-15.
+5. **Below one step, the payload arrives as its sums.** Payloads w_i at x_i, read through a step kernel of total 1, mean
+   0 and spread σ², give a reading with total Σ w_i, centroid Σ w_i·x_i/Σ w_i (exactly, at any separation) and spread
+   σ² + Σ (w_i/W)(x_i − c)².
+   - What stands out of payloads closer than a step is their total and centroid. Their arrangement enters only the
+     spread, down by (s/σ)²; for two payloads, β(1 − β)s².
+   - Where the step falls is an amount, so that is physics (the resolution limit; two equal Gaussian payloads part at
+     s = 2σ). That the centroid comes first is not.
+
+   The centroid is the payload's centre, a sum. The median (2) is the addresses' centre, an order (PAY P3).
+6. **Level of detail by distance, with the corner as its seam.**
+   - The reciprocal distance from r to a payload at ρ expands in the reading ρ/r, as 1/|r − r′| = Σ ρ^l/r^(l+1)·P_l(cos γ),
+     order l down by (ρ/r)^l.
+   - About a cluster's centroid the first order vanishes. From far off the cluster is its total at its centroid, the
+     next order falling two levels per level of distance (−1.9995 measured), and about any other point one (−1.0000).
+   - The series converges outside the sphere ρ = r and fails inside it; on the sphere every term along the line is 1/r
+     and no order may be dropped, the corner of the pair (ρ, r).
+   - Inversion in that sphere, f ↦ (ρ/r)·f(ρ²/r) (Kelvin; Kellogg 1929), carries the inner form onto the outer term by
+     term, and a payload on the sphere is its own image. It is the flip about the corner, in space (PAY P4).
+
+*Standing.*
+- **1, 3, 5 and 6 are proved,** each a line of algebra or a classical result, and checked to rounding
+  (`plans/pay-plan.md`, nothing killed).
+- **2 and 4 were measured in the drawing tool** on its shapes library (rerun at draw `ea07709`); 2's bound is
+  Munro–Paterson's.
+- **This is geometry, not physics (R211).** The physical instances, an unresolved binary's photocentre a·|B − β|, a
+  body's gravity from far off and looming's size–distance ambiguity, are in `physics.md`.
 
 ---
 
@@ -5923,6 +5978,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 - **R208** (11 Oct, about 14:10): "only if they are helpful to main arguments. dont just add tests just to add tests." / "we can add tests if they are specifically helpful to the core themes of the paper." **R207 refined: `observation-from-somewhere.md` may report a test where it specifically helps a core theme**; failed tests stay in their plans, and results that already have proofs need no checks.
 - **R209** (11 Oct, about 17:00): "situated reader does not hold the inner polygon either." **A situated reader draws neither of Archimedes' polygons**: both need the circle in hand. Its inner measure, sin θ/θ, equals the inscribed polygon's share in number and is a reading of its own turn; the outer side comes by the flip (§2.1, "The quarter turn is Archimedes' proof made situated", corrected).
 - **R210** (11 Oct, about 21:00): "the payloads can't be recovered from serial situated observation, but can be in parallel situated observation. basically, all we see is the motion of the center of gravity as situated observers of serial streams." Then "yes", to Claude's proposal to name the two centres apart and to test them. **Two centres, kept apart.** The reader's addresses have no centre of gravity: laid by an even turn they are Cauchy, with no mean, and their centre is the **median**, at the corner. What arrives of a payload below the step is its sums: first its **centroid** (the light-weighted photocentre; the total mass at the centre of mass), then its finer moments, each further down by the reading. A serial stream gives motion before it gives an object; two readings taken at once separate a change of payload from the reader's own motion when they share a denominator, and then give payloads relative to each other, never their scale (§4.3, "Two centres"; `plans/pay-plan.md`, not killed). Not ruled: whether serial against parallel, or resolved against unresolved (one step apart in one window), carries the distinction (GRN: "serial and parallel is just our perspective"). *Refined the same evening* (Tom: "we have explore this in the draw.html repository in the labs"): draw's `ref` lab had shown that the median needs every arrival held at once, "a parallel reference smuggled into a serial account"; a strictly serial reader marks instead against a held arrival, one extra slot (grain-free on all 58 shapes, scale-free on 88%). So the median is the parallel reader's centre of the addresses, and both axes are real and different: holding (serial or parallel) decides the address centre, resolving (above or below the step) decides whether a payload arrives as components or as its centroid. Draw's `rcc` and `udv` had shown P1 and P2's ground for shape: one reader's readings carry the turn and not the size; three standpoints give the figure up to its size; one agreed length gives the size.
+- **R211** (11 Oct, about 21:30): "this is pure geometry not physics actually. lets move this into the main papers." **Holding and resolving, the two centres, one stream as one relation's course, and standpoints bringing back the figure are geometry, not physics.** In SPN as §4.7 (with §2.1's "What 3 and 4 hold" and §4.3's two centres), and in `observation-from-somewhere.md` as §7.6, "Order needs holding", Propositions 9–12 of §9 and §8's "From far off". `physics.md` keeps only the physical instances.
 
 ## Appendix B. Demos and computations
 

@@ -168,3 +168,10 @@ read back.
     centre: the median (parallel) or a held arrival (serial, one slot).
   - *Resolving*, above or below the step: whether two payloads sit at least one step apart. It decides whether the
     payload arrives as components or only as its centroid.
+
+**Moved (11 October, SPN R211).** Tom: "this is pure geometry not physics actually. lets move this into the main
+papers." The geometry is now in:
+- SPN §4.7, "Holding and resolving: what reaches a reader of a payload", with §2.1's "What 3 and 4 hold";
+- `observation-from-somewhere.md`: §7.6, "Order needs holding"; Propositions 9–12 in §9; §8's "From far off".
+
+`physics.md` §2.2 keeps the physical instances.
