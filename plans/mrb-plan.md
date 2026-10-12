@@ -355,3 +355,45 @@ throughout. No frictional contact count has been seen.
 - **P15 (held by 2d without friction, the same rule).** Frictionless Z within 0.25 of 6. *Killed* if outside.
 - **P16 (friction holds with fewer).** μ = 0.5: Z between 3.5 and 5.0, and at least 1 below the frictionless. The lower
   bound is Maxwell's d + 1 = 4, relaxed by 0.5 because of what run 3 showed. *Killed* if either fails.
+
+### Run 4 (12 October 2026)
+
+`plans/mrb/run4.mjs` (the prediction pushed first, commit 17f4824); output in `plans/mrb/mrb-run4.txt`, 11 minutes:
+
+```
+μ 0:   at rest by t 126, 82, 93, 105; floor's mean push / weight 1.000000, 1.000000, 1.000000, 0.999999; Z 6.195, 6.158, 6.168, 6.214; no rattlers in the bulk
+μ 0.5: at rest by t 88, (not by 301), 26, 19; floor's mean push / weight 1.000000, 1.000000, 1.000013, 1.000005; Z 4.734, 4.833, 4.721, 4.668; no rattlers in the bulk
+k-cores (stripped over the whole pile, counted in the bulk): frictionless 4-core ~98% of the bulk, 5-core empty; frictional 3-core all of it, 4-core empty
+
+P14: not killed. Worst 0.0013% of 8 (within 0.05%).
+P15: not killed. Frictionless Z 6.184, within 0.25 of 6.
+P16: not killed. μ 0.5 Z 4.739, between 3.5 and 5.0 and 1.44 below the frictionless.
+```
+
+## Reading of runs 3–4 (not ruled)
+
+- **Held by 2d readings without friction, by fewer with it.** At rest a frictionless marble touches 6.2 others, Maxwell's
+  2d = 6 for three dimensions (each contact one constraint, shared by two; the small excess is the springs' finite
+  stiffness under gravity's load). With friction each contact also holds the surface, three constraints instead of one,
+  and 4.7 contacts suffice, between Maxwell's d + 1 = 4 for a rigid frictional pack and 2d. In the pair's terms: at rest
+  each contact is a pair of readings held just past the line h + v = 1, how far past it the load the contact carries;
+  a marble needs six such held readings with no friction, under five with it.
+- **The cores are a warning about counting.** Stripping marbles with fewer than k contacts, from the pile's surface
+  inward, leaves nothing at k = 5 without friction and at k = 4 with it, though the bulk's mean is 6.2 and 4.7. A pile's
+  surface and floor are under-held, and the stripping travels in from them. Run 3's rattler rule was this stripping at
+  k = 4, which is why it emptied every frictional pile.
+- **The breathing pile.** Read at one instant, a pile at rest by its speeds can be mid-oscillation (run 3's P9); read
+  over a time unit, the floor carries the weight to 10⁻⁵ (P14). The frictional piles still rock slowly at their top
+  for hundreds of time units with no rolling resistance (marbles on marbles roll freely); that changes no reading here.
+- **Standing.** The engine against exact counting (Maxwell's) and measured packings (Scott and Kilgour, from memory):
+  evidence that the engine holds contact as a state correctly, which is what the game and any later test of level of
+  detail on a heap rest on. Janssen's saturation needs walls whose friction is mobilised (a wall moved, the floor
+  lowered), not tested here.
+
+## What part 2 leaves open
+
+- **Level of detail carrying weight.** The floor's reader holding the marbles near it, and those above as a total: is
+  the total the weight above, or the stress across the plane (less the walls' share, Janssen's)? And does a floor feel
+  the chains above it, or only their total, past a few diameters? The question POL runs 11–18 asked of a gas, asked of a
+  static load. Not run.
+- **Janssen's silo** with the walls' friction mobilised.
