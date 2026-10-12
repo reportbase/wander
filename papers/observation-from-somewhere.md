@@ -314,7 +314,11 @@ projection, θ/sin θ; inside, projection over arc, sin θ/θ. The two are recip
 Both tend to 1 as the turn shrinks, and neither reaches it while there is any turn. At the limb, a quarter turn, the
 outer hemisphere reads π/2 and the inner 2/π. (Equivalently: a half-turn stood on a line of breadth 1 as its chord has
 arc π/2, and a bar of length 1 swept evenly through a quarter turn casts an average shadow of
-(2/π)∫₀^{π/2} cos θ dθ = 2/π.) The true breadth, 1, is read only with no turn at all.
+(2/π)∫₀^{π/2} cos θ dθ = 2/π.) The average shadow is Buffon's needle (Buffon 1777): a needle as long as the gap
+between parallel lines, dropped at random, crosses one with probability 2/π. Crofton's formula, which measures a curve
+by the random lines that cross it, grew from the same problem (Crofton 1868). Buffon's number, like the inner reading,
+holds only when every angle of the turn is equally likely; weight the turn otherwise and it changes. The true breadth,
+1, is read only with no turn at all.
 
 **Archimedes' proof, from nowhere and from somewhere.** Archimedes measured the circle from both sides (*Measurement
 of a Circle*). A polygon inscribed in the circle falls short of it and one circumscribed about it exceeds it; doubling
@@ -1327,6 +1331,12 @@ Archimedes (c. 250 BC). *Measurement of a Circle*.
 
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.
+
+Buffon, G.-L. Leclerc, comte de (1777). Essai d'arithmétique morale. In *Histoire naturelle, générale et particulière*,
+Supplément, tome 4. Imprimerie royale, Paris.
+
+Crofton, M. W. (1868). On the theory of local probability, applied to straight lines drawn at random in a plane.
+*Philosophical Transactions of the Royal Society of London* 158, 181–199.
 
 Cuadras, C. M. (2002). Geometrical understanding of the Cauchy distribution. *Qüestiió* 26(1–2), 283–287.
 
