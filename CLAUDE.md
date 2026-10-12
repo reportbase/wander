@@ -247,8 +247,9 @@ Google Fonts load from outside:
   Theorem 6(e) (the median and the missing mean need only fairness), the norm entering only through the measure on
   directions, conditional necessity in §11.1, a disturbing reading out of scope, preferred scales setting where the lay
   stops; the SI's constants in `physics.md`. Its second part ("more reader situations with yet more geometries") is
-  answered there too: each proposed situation lands in the payload, the amounts or a power of the reading; edit G (four
-  more entries in §3.1's "Cases that look like a sixth") proposed.
+  answered there too: each proposed situation lands in the payload, the amounts or a power of the reading; edit G made
+  (four more entries in §3.1's "Cases that look like a sixth"). A comment from Grok (an empirical defense from ordinary
+  perception and instruments) is recorded there and not taken: real instruments use several weights.
   `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
   perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
   those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry

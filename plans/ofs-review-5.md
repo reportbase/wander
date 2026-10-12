@@ -123,6 +123,9 @@ priors" into "the priors are the ignorance, stated once, and the core survives c
 - (D) §11.2, "Where the conclusions do not follow": a reading that disturbs what it reads.
 - (E) §11.2, question 1: a preferred scale sets where the lay stops, not its form within range.
 - (F) `papers/physics.md`: a dictionary row and an iteration note, the SI's constants as the agreed outside amounts.
+- (G) Made later the same day, at Tom's "yes" after the third part: §3.1's "Cases that look like a sixth" gains V known
+  as a distribution (with the first entry), directions along which nothing can arrive, a thumb that changes between
+  looks, and a reading of an area or other power of the relation.
 
 ---
 
@@ -152,7 +155,7 @@ Explicitly scope the paper to classical, commutative observation. Acknowledge in
 
 Which defensive posture feels more aligned with where you want to take the larger theory?
 
-### Response to the second part (12 October, Claude; edit G proposed, not yet made)
+### Response to the second part (12 October, Claude; edit G proposed, made later the same day)
 
 **The tree is exhaustive for what it asks, by construction:** three questions, each with two answers. The real pushback
 is whether other questions matter. Each of the four proposed lands in something the paper already has: the payload, the

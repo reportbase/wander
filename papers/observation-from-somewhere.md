@@ -210,7 +210,8 @@ what arrives.
 Each question has two answers, and each answer either ends the questioning or leads to the next question, so every
 reader lands in one situation and no reader lands in two: the five are exhaustive and do not overlap. Cases that look
 like a sixth reduce to these.
-- *V known only within bounds* is situation 3 or 4 with its one missing number known within bounds (§3.8).
+- *V known only within bounds, or as a distribution,* is situation 3 or 4 with its one missing number known that way
+  (§3.8). Its best estimate is then the corner of the bounds, or the median (Proposition 13).
 - *H unknown* leaves no reader at all: H is the reader's own breadth and is always held. Situation 0 is H with no h.
 - *A reader that reads in patches* is serial across the patches and parallel within each; every single look is 3 or 4.
 - *A system that changes kind* moves its reader from one situation to another over time (§3.5); at any one look the
@@ -218,6 +219,13 @@ like a sixth reduce to these.
 - *Several readers* each have a situation of their own; what passes between them is the subject of §9.
 - *More than two breadths* put the questions to each further breadth in turn; with V and V₂ both unknown and both set
   to H, the circle becomes the sphere (§5).
+- *Directions along which nothing can arrive* are addresses still laid, with nothing met at them. That is a matter of
+  payload, not of situation (Theorem 6(a)).
+- *A thumb that changes between looks* changes no reading, since every reading is a ratio of amounts in one unit and
+  the unit cancels (Proposition 8). Each look is then a reader of its own, joined to the others as several readers are
+  (§9). Within one look, a wavering thumb blurs the reader's step (§8).
+- *A reading of an area, or of any other power of the relation,* (v/h)^p with p > 0, keeps the order, the corner, the
+  flip and the median, and only rescales the levels by p.
 
 **Thumb and mountain.** Call the reader's breadth H its thumb and the other's breadth V the mountain. If the reader
 knows the mountain's size, it holds the unsituated view: thumb and mountain are both in hand, and the corner, where the
