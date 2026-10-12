@@ -192,3 +192,64 @@ trigonometry, which replaces angles by spreads (sin², bounded in [0, 1]) to mak
 computed by folding at 1, arctan x = π/2 − arctan(1/x). What run 2 adds is the reading: which corner each is, of which
 pair, of which kind, and that the capped unit relation keeps both the ratio's algebra and the angle's best-conditioned
 middle.
+
+### Run 2 (11 October, `mot/mot2.py`)
+
+Seed 13, two seconds. P11 is in exact rationals; the rest are in floats, with rates by the complex step. Each reader is
+handed a counting math namespace (√ free, every trig call counted).
+
+| | prediction | result | |
+|---|---|---|---|
+| P8 | angle and unit relation least at the corner, alike at d and b²/d; plain ratio has no interior least | both least at d = 0.99995 b (the grid point beside b; the far side's rounding is the larger); alike to 1.0e-14 and 4.4e-16; plain ratio rises throughout (and is 10⁴ off alike) | not killed |
+| P9 | in-place over even turn = 4/(π(1 + u²)): 2/π at the corner, toward 4/π, equal at 0.52272 b and 1.91306 b | worst 1.4e-13; 0.636620 at the corner; 1.273238 at 10³ b; equal at 0.522723 b and 1.913058 b | not killed |
+| P10 | ratio forms of A–C exact (1e-12) with no call; angle forms agree by calling; D none in either; F as stated | ratio forms 2.2e-13, 2.9e-13, 4.4e-16 with no call; D 0 wrong both ways with no call; F as predicted; **but the angle forms, with their calls, miss 1e-12: A 1.9e-10, B 1.2e-12** (C 4.4e-16) | **killed** (the angle clause) |
+| P11 | τ̇ + 1 = d/(2s); τ̇ ≷ −½ classifies; s = d reads −½ | 0 of 10⁴ off, 0 misclassified, 0 of 1,000 off −½, all exact | not killed |
+| P12 | the three swap-symmetric quantities: f(k) = f(1/k), f′(1) = 0, greatest at 1; the two others increasing; no call | 6.7e-16 at most; f′(1) = 0.0 each; greatest at k = 1.0000 each; flight and height increasing (f′(1) = 0.354, 0.500); 0 calls | not killed |
+
+Values from the run:
+- **P8, the worst error in half-steps at d = 0.01, 0.1, 0.5, 1, 2, 10, 100 b:**
+  - angle: 100.0, 10.1, 2.5, **2.0**, 2.5, 10.1, 100.5;
+  - unit relation: 100.0, 10.0, 2.0, **1.0**, 2.0, 10.0, 100.5;
+  - plain ratio: 0.01, 0.1, 0.5, 1.0, 2.0, 10.0, 100.5.
+
+  At one step, the unit relation is twice as good as the angle at the corner and as good or better everywhere. Past the
+  corner it is the plain ratio. Inside the corner the plain ratio is far better per step, but only by an unbounded range
+  of addresses: reading d = 0.01 b needs k = 100, a hundred times the unit relation's whole range. P9 makes that
+  budget explicit.
+- **P10 F, turning over 10⁴ steps of 0.1, 0.01 and 0.001:**
+  - the angle reader is within 1.6e-10, 1.4e-11 and 9.9e-13, making 208 calls for 104 place reads;
+  - the capped pair is within 7.2e-14, 7.0e-14 and 8.9e-14, making two calls in all (the constants). Its unit relation
+    peaked at 0.99928, 0.999985 and 0.999982;
+  - the plain ratio peaked at 80.7, 1,256 and 4,910, against cot(δ/2) = 20.0, 200 and 2,000.
+- **P10 A:** the angle reader with no call (θ₁/(θ₂ − θ₁), Lee's from two looks) was off by up to 9 × 10⁵ of τ.
+
+**What killed P10's angle clause** (post hoc). A double spaces the angle evenly near 90°, about 2.2e-16 apart. So the
+ratio read back through tan is held to ulp·(1 + x²)/x relative: 2.2e-16 at x = 1, 2.2e-15 at 10, 2.2e-13 at 1,000,
+2.2e-11 at 10⁵. That is P8's angle reader with its step one ulp: past the corner an angle holds a ratio worse in
+proportion to its size. The capped unit relation min(x, 1/x) is held to about 1.5e-16 at every x. Folding sends both ends
+of the range toward 0, where doubles are finest; the angle sends one end to 90°, where they are not. My prediction
+assumed that a call makes the angle forms exact. It does in arithmetic; in a reader with a step it does not, past the
+corner. The turning results agree: the angle reader, whose angle grows without bound, drifted 1.6e-10, while the capped
+pair stayed within 1e-13 (reducing the angle by whole turns would help it; the pair needs no reduction).
+
+**Not predictions:**
+- **Braking judged from θ/θ̇ with no call**, wrong in 1 of 2,000 states with S/d in [0.01, 0.1), 182 in [0.1, 1) and
+  996 in [1, 10) (s/d log-even in [0.1, 10]). Far off the angle's τ̇ is good. Toward the corner it starts to fail, and
+  past it it is a coin toss. The ratio's τ̇ is exact everywhere (P11).
+
+**Reading.**
+- **Corners in motion come in two kinds, as the derivation says.**
+  - *Stationary*: the range of a launch (45°), the energy one ball passes to another (equal masses), the baseline's
+    conditioning (half-baseline equal to the distance). Each is unchanged when its pair swaps.
+  - *Change of regime*: braking (stopping distance equal to the distance, Lee's τ̇ = −½). It changes sign when its
+    pair swaps.
+  - Quantities with no swap symmetry, such as a launch's time of flight and greatest height, have no corner.
+- **The range and the baseline's conditioning are one form, 2k/(1 + k²)**, the sine of the facing 2θ written in the
+  ratio (the tangent half-angle form). The range of a launch is (U²/g) times the sine of its facing.
+- **The ratio reader needs no trig for time to contact, stereo, closest approach, collision or braking.** The angle
+  reader needs a call to be exact, and even then holds big ratios poorly. Angles are simpler only for advancing a
+  steady turn. There the capped pair does as well with no call a step, and stays bounded.
+- **Of the three readers of one pair**, only the bounded ones (angle, unit relation) have a best place, the corner, and
+  the unit relation's is twice the angle's at one step. At one budget of addresses, the in-place lay reads best between
+  0.52 b and 1.91 b (by π/2 at the corner); the even turn, the Cauchy's lay, reads best outside that (by 4/π far off
+  and near home).

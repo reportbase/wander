@@ -54,6 +54,16 @@ bodies are pictures. They are never evidence here.
   will pass, and the levels of an approach exactly. A breadth of its own as a baseline reads distance best at the corner
   of the pair (half-baseline, distance), and alike at a distance and its flip (§1, §2.2). The first-order stereo error
   was killed past εd/B ≈ 0.18 (§3).
+- 11 October, fifth: MOT run 2 (Tom: "even if we could just provide a fuller geometric explanation of motion using our
+  corner insights, that would be a win"). The corners of motion fall into two kinds:
+  - stationary where a quantity is unchanged by swapping its pair: a launch's range, the energy one ball passes to
+    another, a baseline's conditioning;
+  - a change of regime where swapping flips its sign: braking, Lee's τ̇ = −½ read as stopping distance equal to the
+    distance.
+
+  Ratio readers need no trig for time to contact, stereo, closest approach, collision or braking. The capped unit
+  relation reads distance best at the corner, twice as well as the angle there. An angle holds a big ratio poorly even
+  with a call, which killed P10's angle clause (§2.2, §3).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -97,6 +107,10 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | levels of an approach (the reading doubling) | each takes half the time to contact read at its start; infinitely many before contact | the reader's clock | MOT P4 |
 | ωτ, the reading of the pair (speed across, speed in); its corner | how close a thing will pass, as a share of its distance: ωτ/√(1 + (ωτ)²); 1/√2 at the corner; bearing still, a collision | none (the clock cancels) | MOT P5 |
 | the corner of the pair (half-baseline, distance) | where a baseline reads distance best (a right angle of convergence), alike at d and (B/2)²/d | the breadth B | MOT P6, P7 |
+| the corner of the pair (stopping distance, distance); τ̇ + 1 = d/(2s) | stopping exactly at contact: Lee's τ̇ = −½ | none for the corner (the clock for τ̇) | MOT P11 |
+| a quantity unchanged when its pair swaps is stationary at the corner | a launch's longest range at 45° (complementary launches equal); all the energy passed at equal masses (as in maximum power transfer) | the pair's own amounts for the value, none for the corner | MOT P12 |
+| the facing's sine, 2k/(1 + k²) in the ratio | a launch's range, (U²/g)·sin(facing); a baseline's conditioning, sin γ | U and g; B | MOT P8, P12 |
+| the capped unit relation, min(k, 1/k), as a representation | trig-free and bounded: time to contact, stereo, closest approach, braking, steady turning | none | MOT P10 |
 
 ## 2. Results, by standing
 
@@ -185,6 +199,45 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   intersection. What the run settles is which reading carries each exactly. The ratio does at every distance, the turn
   only far off, and the older of two looks. The corner is where a baseline reads best. That is SPN's "H is a zoom"
   (Proposition 1.2): set H to the scale of the thing read, putting it at the corner. Here the baseline is H.
+- **Motion's corners, by kind** (MOT run 2, `plans/mot-plan.md`). Take a quantity of a pair through its ratio k:
+  - **Unchanged when the pair swaps** (f(k) = f(1/k)): then f′(1) = 0, so the quantity is stationary at the corner;
+    in levels it is even about it. Examples:
+    - the range of a launch at fixed speed, against V_y/V_x: (2U²/g)·k/(1 + k²), longest at 45°, complementary launches
+      equal;
+    - the energy a head-on elastic collision passes to a ball at rest, against the mass ratio: 4k/(1 + k)², all of it
+      at equal masses;
+    - a baseline's conditioning, sin γ = 2k/(1 + k²) with k = b/d, best when the half-baseline equals the distance.
+
+    The first and third are one form, the sine of the facing 2θ written in the ratio: a launch's range is (U²/g) times
+    the sine of its facing.
+  - **Sign flipped when the pair swaps:** then the quantity changes regime at the corner. Braking is the example. With
+    stopping distance s = u²/(2a), τ̇ + 1 = d/(2s) exactly, so Lee's critical τ̇ = −½ is s = d, the pair (stopping
+    distance, distance) at its corner. Below it the thing stops short, above it it overshoots. The ratio reader computes
+    τ̇ = 1 − x·ẍ/ẋ² with no call, exactly (in rationals, 10⁴ states, none wrong). Judged from the angle with no call
+    (θ/θ̇), the same test is right far off (1 wrong in 2,000), fails as the corner nears (182 in 2,000), and is a coin
+    toss past it (996).
+  - **Neither:** a launch's time of flight and greatest height rise with k throughout, with no corner.
+
+  Three readers of one pair (b, d), each to one step, all for the same quantity, distance:
+  - the angle is least wrong at the corner and alike at d and b²/d;
+  - the unit relation capped at 1 likewise, and twice as good at the corner;
+  - the plain uncapped ratio has no best place: it reads near home finely, but only over an unbounded range of
+    addresses.
+
+  At one budget of addresses covering every distance, the in-place lay (even in the unit relation on each side) reads
+  best between 0.52 b and 1.91 b, by π/2 at the corner. The even turn, the lay that gives the Cauchy, reads best
+  outside that, by 4/π far off. A ratio reader needs no trig for time to contact, stereo, closest approach, the
+  collision test or braking. An angle reader needs a call for each (the collision test aside), and even then holds a
+  big ratio poorly. A double spaces an angle evenly near 90°, so the ratio comes back held to ulp·(1 + x²)/x: 2e-13 at
+  x = 1,000. That is the same reader with its step one ulp. Folding sends both ends toward 0, where a double is
+  finest. Angles stay simplest only for advancing a steady turn. There the capped pair, rotated by two fixed constants
+  and divided by its larger part, does as well with no call a step, stays bounded, and held 1e-13 where the angle
+  drifted 1e-10.
+
+  All of these are known as physics: complementary launches, equal masses, Lee's −½, rectified stereo, and Wildberger's
+  rational trigonometry (spreads in place of angles). What the vocabulary adds is the account: which pair, which
+  corner, which kind, and that the unit relation capped at the corner keeps both the ratio's algebra and the angle's
+  best-conditioned middle.
 
 ### 2.3 In Wander's world (illustration, not evidence)
 
@@ -261,6 +314,10 @@ that holds less of it can be tested against the referee exactly. That is evidenc
 - **MOT P6: the first-order stereo error.** The worst error per step was predicted as ε·d/(2B) within 10% up to
   εd/B = 0.2. It is x/(1 − x) on the far side and x/(1 + x) on the near (x = εd/2B), past 10% from 0.183. The far side has
   no bound at x = 1: the baseline's horizon.
+- **MOT P10, its angle clause: a call does not make an angle exact.** The angle readers of time to contact and of stereo,
+  with tan, were predicted to agree to 1e-12; they reached 1.9e-10 and 1.2e-12. Past the corner a double holds an angle
+  in even steps and the ratio it stands for in steps growing as the ratio; the capped unit relation holds it to 1.5e-16
+  at every size.
 - **POL P29: a derivation, not the gas.** The plan took a disc's cross-section in two dimensions as one diameter; it is
   two, and the referee matched Enskog once that was right.
 
