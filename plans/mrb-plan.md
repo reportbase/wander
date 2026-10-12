@@ -174,7 +174,7 @@ e 0.7: per contact −2.48% ± 0.27%; clock −5.20% ± 0.51%; contact rate over
   contacts, at any density.
 - **The clock needs the reach.** In the referee's time the same law needs n·χ·σ², and it carries Enskog's ratio between
   densities to 1.2% (P3). It is also the first to go: at e = 0.7 the bias is real (16 seeds), −2.5% per contact and
-  −5.2% in the clock. The post-hoc reading shows why it is about double: the contacts themselves come 2.7–3.2% slower
+  −5.2% in the clock. The post-hoc reading shows why it is about double: the contacts themselves come 2.5–3.2% slower
   than Enskog says at the measured T, while the box-scale flow R is twice e = 0.9's. Velocities near each other become
   alike, so neighbours close more slowly than molecular chaos assumes (known physics of the cooling state: the
   long-range velocity correlations of van Noije, Ernst and others, from memory). That lowers both the energy lost per
@@ -202,3 +202,78 @@ L_c/ℓ₀ ≈ 14.7, 14.8 and 15.4, so L/L_c ≈ 0.50, 0.79 and 1.00. Sixteen se
   any fails.
 - **P8 (the count holds longer than the clock).** At φ = 0.1 and 0.15 the clock's deficit is at least 1.5 times the
   per-contact deficit. *Killed* if either is less.
+
+### Run 2 (12 October 2026)
+
+`plans/mrb/run2.mjs` (the prediction pushed first, commit 0f6ae73); output in `plans/mrb/mrb-run2.txt`:
+
+```
+φ 0.05 e 0.7, 16 seeds: per contact 0.17033 ± 0.00064 (pred. 0.17006, +0.16%); clock 0.06517 ± 0.00037 (pred. 0.06546, −0.43%); R last third 1.35
+φ 0.1  e 0.7, 16 seeds: per contact 0.16584 ± 0.00046 (pred. 0.17006, −2.48%); clock 0.14222 ± 0.00077 (pred. 0.15002, −5.20%); R last third 2.29
+φ 0.15 e 0.7, 16 seeds: per contact 0.16282 ± 0.00093 (pred. 0.17006, −4.25%); clock 0.23572 ± 0.00186 (pred. 0.26010, −9.37%); R last third 4.52
+
+P6: not killed. φ 0.05: per contact +0.16% (within 1%), clock −0.43% (within 1.5%), R 1.35 (below 1.5)
+P7: not killed. φ 0.15: per-contact deficit 4.25% (more than 2.5%), clock deficit 9.37% (more than 5.2%), R 4.52 (above 2.3)
+P8: not killed. clock deficit over per-contact deficit: φ 0.1 2.10, φ 0.15 2.20 (each at least 1.5)
+```
+
+(The φ = 0.1 line is run 1's post-hoc seeds again, the same seeds and code.)
+
+## Reading of runs 1–2 (not ruled)
+
+- e = 0.7 as such is not where Haff's law fails: at φ = 0.05 it holds per contact and in the clock. The bias follows the
+  box's size against the instability, L/L_c ≈ 0.50, 0.79, 1.00: 0.2, 2.5, 4.3% per contact; 0.4, 5.2, 9.4% in the clock.
+- **The count holds about twice as long as the clock** (2.1 and 2.2 times less bias). Counted in its own contacts, a
+  marble's reading of its cooling carries one departure from the even gas (less energy lost per contact, as neighbours'
+  velocities grow alike); the referee's clock carries that one and a second (fewer contacts per unit time).
+- Standing: a simulation of our own against exact kinetic theory (Haff, Enskog) and the known behaviour of the cooling
+  state. It says the count of one's own contacts is the better clock in this gas; it says nothing yet about any reader
+  but a marble.
+
+## Part 2: contacts that last
+
+Part 1's gas never collapsed: its contacts stayed brief. A heap at rest holds every contact: in the pair's readings,
+h + v sits on the line h + v = 1 and stays. A contact found one moment at a time cannot hold that, so part 2's engine
+holds contact as a state: soft spheres (discrete elements), each pair in contact while its readings are past the line,
+h + v > 1, pushed apart in proportion to how far past it, in the marble's own units the depth (h + v − 1)/h of its
+radius. At rest the load on a contact is read from inside as that depth.
+
+### Run 3 (12 October 2026): prediction, written before it ran (or before the engine existed)
+
+**The engine** (to be written in the game's page, `play-marbles.html`, and driven from `plans/mrb/` through its hook, as
+CUE drove `play-trick.html`'s). Units: the marble's diameter σ = 1, its mass m = 1, gravity g = 1, so time is in
+√(σ/g) (40 ms for a 16 mm marble). Normal contact a linear spring k_n = 10⁵ mg/σ with a dashpot set for restitution
+e = 0.5; tangential contact a spring of (2/7)k_n with its history (Cundall and Strack's), capped by Coulomb friction μ;
+rotation with I = (2/5)m(σ/2)²; no rolling resistance; symplectic Euler with Δt one 25th of the contact time. Walls are
+planes with the same contact law and their own friction μ_w. **Pouring:** 500 marbles start on a loose lattice
+(spacing 1.2σ, jittered by 0.1σ) in the container's whole cross-section above the floor, with small random velocities
+(0.1√(gσ)), and fall and settle; **at rest** when no marble moves faster than 10⁻⁴√(gσ). Four seeds per condition.
+
+**Counting.** A contact is a pair with h + v > 1 (an overlap). Rattlers are removed by the usual rule: a marble with
+fewer than d + 1 = 4 contacts is dropped, with its contacts, until none is left. Z is the mean number of contacts of the
+remaining marbles in the bulk: centres at least 2σ above the floor and 2σ below the highest centre. φ is the volume of
+the marbles (exact sphere slices) in that slab over its volume.
+
+**What is exact, and what was known (disclosed).** At rest, the floor and the walls carry the whole weight (Newton).
+For frictionless spheres in d dimensions, Maxwell's counting gives Z = 2d at the rigid limit: d freedoms per marble,
+one constraint per contact shared by two (isostatic, as O'Hern and others found at jamming, from memory). With friction
+each contact constrains 3 of a marble's 6 freedoms (translation and rotation), so a rigid frictional pack needs only
+Z ≥ d + 1 = 4, and is between 4 and 6. Measured random packings of equal spheres, from memory: about 0.637 shaken dense
+(Scott and Kilgour), about 0.60 poured loose (Scott). Janssen's silo: the floor of a column of width W carries an
+apparent mass M_app = M∞(1 − e^(−M/M∞)) of a filled mass M, with M∞ = ρ_b·W²·λ, λ = W/(4μ_w·K), K the ratio of
+horizontal to vertical stress; measured K for beads of order 0.4–0.8 (Vanel and Clément, from memory). Silbert and
+others' simulated packings (frictionless 0.64 and Z = 6; μ = 0.5 near 0.6 and Z near 4.5) are known to me only from
+memory and only as simulations, not data.
+
+**Conditions.** (a) Periodic sides, W = 7σ (about 8.9σ deep), μ = 0 and μ = 0.5. (b) A square silo, W = 6σ, walls of
+μ_w = 0.5, marbles μ = 0.5, filled with 100, 200, 300, 400 and 500 marbles (two seeds each), and once with μ_w = 0.
+
+- **P9 (Newton at rest).** In every settled pour the floor and walls carry the weight within 0.1%; with μ_w = 0 the floor
+  alone carries it within 0.5%. *Killed* if any is outside. (The engine's check.)
+- **P10 (held by 2d readings).** Frictionless, periodic sides: Z within 0.25 of 6. *Killed* if outside.
+- **P11 (friction holds with fewer).** μ = 0.5, periodic sides: 4 ≤ Z ≤ 5.5, and Z at least 0.5 below the frictionless.
+  *Killed* if either fails.
+- **P12 (the packings measured).** Bulk φ: frictionless 0.637 ± 0.015; μ = 0.5 poured 0.60 ± 0.02. *Killed* if either is
+  outside.
+- **P13 (Janssen's silo).** The floor's apparent mass over the five fills fits M∞(1 − e^(−M/M∞)) (one parameter) with
+  every fill within 3% of the fit, and the K it gives is between 0.3 and 1.0. *Killed* if either fails.
