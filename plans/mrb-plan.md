@@ -277,3 +277,19 @@ memory and only as simulations, not data.
   outside.
 - **P13 (Janssen's silo).** The floor's apparent mass over the five fills fits M∞(1 − e^(−M/M∞)) (one parameter) with
   every fill within 3% of the fit, and the K it gives is between 0.3 and 1.0. *Killed* if either fails.
+
+**Amendments before the run (12 October 2026), found while building the engine; P9–P13 unchanged.** Settle tests on
+the engine (Newton's balance, speed and time to rest only) showed the protocol as written could not finish:
+1. *Rattlers on the floor.* With no rolling resistance a marble resting on the floor alone, touching no other marble,
+   rolls in its cage for ever (seen at 10⁻³√(gσ) after 400 time units). The rule at rest is now: no marble moves faster
+   than 10⁻⁴√(gσ), leaving out those resting on the container alone. They carry their own weight on the floor and are
+   rattlers for the count anyway.
+2. *Drift.* The pour's random velocities are now taken with their mean removed. With frictionless marbles over a floor
+   layer that rolls like bearings, any net drift never dies (the whole pile was seen gliding at 5.8×10⁻³).
+3. *The frictionless floor.* In condition (a) with μ = 0 the floor is frictionless too (μ_w = 0), so nothing in that
+   pack has friction; with μ = 0.5 the floor has μ_w = 0.5.
+4. *A limit.* A pour not at rest by 600 time units is reported as not at rest, and its readings are kept but marked.
+
+**Seen before the run, disclosed:** one settle test printed the floor's share of the weight in the silo (μ = μ_w = 0.5,
+seed 1): 0.91 with 200 marbles and 0.89 with 500. That is P13's quantity. P13 is not changed. Those two pours were run
+with the drift not yet removed; run 3's pours have it removed, so they are not the same pours.
