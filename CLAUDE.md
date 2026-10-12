@@ -384,6 +384,16 @@ Google Fonts load from outside:
   and ball constants agree (P7, P8). Run 2: the grip made the fit (`gripOf`); the engine matches it to 0.13° at 30
   points (P9), textbook results and all 13 challenges unchanged (P11, P12); P10 killed by my set-up (the smoke test's
   white rolls part way, so its throws are 3.5°, not a stun's 4.8°). The slow cushion waits for measured data.
+  `mrb-plan.md` (+ `mrb/`, 12 Oct, Tom: "a huge collection of marbles, say 500? would this be helpful?"; "both"). Part 1
+  (`hcs.mjs`, event-driven, contact at h + v = 1): 500 smooth inelastic spheres cooling (Haff). Per contact −d ln T is
+  (1 − e²)/3 to 0.8% at three densities and four e (P1, P3 not killed): density cancels from the count. The clock was
+  killed at e = 0.7 (P2: −5.2%); run 2: the bias follows the box against the shear instability L_c ≈ 10.8ℓ₀/√(1 − e²)
+  (P6–P8 not killed), the clock about twice the count's. At φ 0.3, e 0.5 the box's flow grows (R past 20; P4); no
+  collapse (P5). Part 2 (`play-marbles.html`'s engine, `run3.mjs`, `run4.mjs`): a heap at rest, soft spheres with
+  friction. Frictionless Z 6.18 (Maxwell's 2d; P10, P15), frictional 4.74 (P16), packings 0.642 and 0.589 (P12, against
+  measured 0.637 and 0.60); killed: P9 and P11 (my protocol: an instant reading of a breathing pile; a rattler rule that
+  strips a frictional pile empty), P13 (no Janssen in silos poured and left still: −3% to +26% on the walls). Open: level
+  of detail carrying weight (the floor's reader, the pile above as a total).
   `nrf-plan.md` (+ `nrf/nrf.py`, 10 Oct, exact arithmetic): where an extended source turns from near to far, in levels.
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is

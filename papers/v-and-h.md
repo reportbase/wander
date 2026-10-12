@@ -2661,6 +2661,21 @@ in SPN §3.3, "Level of detail tried in a simulation".*
     the reader at its own size until it arrives; the rule for reading (the level belongs to the address, not the
     payload) is untouched.
 
+## 8q. Oct 12: five hundred marbles (MRB)
+
+*From MRB runs 1–4 (`plans/mrb-plan.md`; `play-marbles.html`), each prediction written before its run. A simulation of our
+own, against exact kinetic theory, Maxwell's counting and measured packings. Claude's readings, unruled.*
+
+430. **Counted in its own contacts, a reader's cooling needs only e** (Oct 12, runs 1–2; Tom: "a huge collection of
+    marbles, say 500? would this be helpful?"). Haff's law per contact, ln T falling (1 − e²)/3 a contact: one halving of
+    T every 11 contacts at e = 0.9, at any density. The referee's clock needs n, σ and the pair correlation, the reach,
+    and near the clustering instability drifts about twice as far as the count. The count is a pure number and needs no
+    bridge; the clock is an amount.
+431. **Held contact is a reading kept past the line** (Oct 12, runs 3–4). At rest each pair sits just past h + v = 1,
+    its depth past the line the load it carries. A marble is held by about 2d such readings without friction (6.18),
+    fewer with it (4.74), as Maxwell's counting says. Where a contact found one moment at a time (POL) crosses the line,
+    a heap holds it; inelastic collapse, the first trying to do the second, did not appear in the gas at 500.
+
 ## 9. Open
 
 - ~~**The sign**: are v and h magnitudes or signed?~~ **Ruled (RGA R37): magnitudes**, each on [0, 1]; direction comes from which freedom is read and which facing the reader stands in, never from a negative v or h. (The earlier note here, "an unmade ruling", *The Boundary* B324–B325, predates R37.)
