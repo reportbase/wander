@@ -129,3 +129,67 @@ with it. The archive's versions stay in the archive as the record.
 3. **Can the fisheye be normalised?** R135: "you cant noramlize the fisheye, it is asymetric." R190: V = H forced as the
    reader's representation. Probably compatible (V = H is a representation, not a normalisation by a known V), but worth
    saying so.
+
+## Special Relativity, Through the Fisheye (added 11 October)
+
+*Tom, 11 October: "here is a earlier paper on SR". Dated 4 September 2026, it is now
+`papers/archive/sr-through-the-fisheye.md` (sha256 b362ca06…6e8279), kept as received. It cites sr.md, The Fulcrum, The
+Bounded Observer in Motion, The Unit Circle, Reader-geometry and The Two Settings, none of which is in this repo. Its
+numbers were recomputed where they can be (`srf/check.py`). This survey is Claude's, a reading and not a ruling.*
+
+**Terms to convert before reusing anything.** Each of these predates 9 October; under R192 the papers that are not
+archived stand.
+- **"Fulcrum"** is the corner.
+- **"Rung"** is a level.
+- **"The lens", "the reader is a circle", "focus", "radius"** describe the reader's laying; here the boost is "the
+  lens", and "a lens is orthogonal to the data" is its governing claim. Current view: the fisheye is the sweep in one
+  facing seen from the standpoint (geometry), and the observer applies no lens (`v-and-h.md` item 107). Its "the boost
+  is a zoom" agrees with Proposition 1.2's "H is a zoom".
+- **The tilt θ with sin θ = β, cos θ = 1/γ, tan θ = γβ** is the angle shortcut (R148). In current terms, v = β and
+  h = 1/γ are the unit relations, the reading v/h is the celerity, and the hold v² + h² = 1 defines γ (`v-and-h.md`
+  item 48).
+- **§10's "k = h_now/h_then … holds ḧ/h and never h"** uses h for an amount: H, by the case rule.
+
+**What its numbers came to** (`srf/check.py`).
+- **Recomputed and agreeing:** C0 (half-angle aberration, to 2.5e-14); C2 (fore 0.577 and 0.229, aft 1.732 and 4.359;
+  the forward hemisphere within 60.0° and 25.8°; within exactly 45° at β = 1/√2, k = 1 + √2); C3 (the k-ladder 3/5,
+  15/17, 63/65, …; celerities 0.75, 1.875, 3.94, 7.97, 15.98, 31.99; rapidity in doublings minus log₂ celerity 1.093,
+  1.023, 1.006, 1.001, 1.0004); C4 (η′ − η = ln k = 0.693147180560 at all four directions); C8 (k = 10.8151 and a
+  Wigner rotation of 17.87°, by matrices and the closed form); C9 (quartiles 0.8000, 1.2000, median 1).
+- **C1 holds only for a circle sky (2+1 dimensions).** There the readings tan(θ/2) are standard Cauchy and a boost
+  scales them by 1/k: quartiles ±0.99998, ±0.57734 and ±0.22941. On the sphere (3+1) they are not Cauchy: tan(θ/2) has
+  CDF r²/(1 + r²) with median 1, and one signed coordinate's quartiles are ±1/√3. "The sky is a Cauchy" needs "in 2+1
+  dimensions".
+- **C10's 0.795** is a grid value; Cauchy half-widths add exactly, so it is 0.8.
+- **C8's bench match is to three digits, not four.** *Browsing the Fisheye* §7 prints "R/12 becomes R/10.8 at a third
+  of a radian". At a third of a radian (0.667 doubled) the composition gives 10.92; the SR paper's 0.35 rad and 10.815
+  come from the bench script, which is not in this repo. 10.8 is reached at 0.3523 rad.
+
+**Gems.**
+
+| gem | where | standing now | where it would go |
+|---|---|---|---|
+| Three exchanges, three fixed points: k ↔ 1/k fixes rest, slope ↔ 1/slope fixes β = 1/√2 (celerity 1), fore ↔ aft fixes the transverse plane | §4 | the current rule "name the pair before saying the corner", in SR: three pairs, three corners | `physics.md` motion dictionary (queued) |
+| β below the corner, rapidity above it; the k-ladder of rational speeds on doublings, rapidity and celerity one level apart in the tail | §4 | `v-and-h.md` item 102 (asinh: proportional below the corner, logarithmic above) already has it; checked | noted |
+| Pseudorapidity is a direction's level, −ln tan(θ/2); a boost along the axis shifts every one by ln k (a pan in levels); detectors segmented evenly in η are the logarithmic lay, built | §5 | known physics; a reading; checked | `physics.md` dictionary (queued) |
+| An even sky is a Cauchy and a boost is its scale; the scale is the account's, not the sky's | §2 | in 2+1 dimensions only (above); consistent with OFS Theorem 6 (the reach cancels from every reading) | corrected here; queued with the 2+1 qualifier |
+| The moving observer's sky is magnified aft and crowded fore (the headlight effect), correcting sr.md §9.2.1 | §3 | known physics; the correction is to a paper not in this repo | noted |
+| A pan between levels costs radius: the Wigner rotation | §6 | checked (17.87°); the bench match to three digits | noted |
+| The uniformly accelerated observer: horizon one radius 1/a behind; clocks on the Rindler ladder geared by radius; the forward cone's tangent halving every ln 2 of rapidity, so levels at even proper time | §7 | known physics (Rindler); a reading; compare MOT P4, where at constant speed the levels of an approach come ever faster | MOT (queued) |
+| Open and closed: the worldline open (its horizon holds the future); the sky closed (a seam at the fore point); the k-line closed (a seam at light) | §8 | a reading | noted |
+| The fourth star as audit: a boost leaves every cross ratio of four directions fixed (a Möbius map); light deflection by the Sun moves it (up to 6e-7, against 1e-15 under aberration) | §9, §14 | physics: the Lorentz group is the Möbius group of the sky; the deflection half is the claim, testable on astrometry of one field with the Sun near and far | `physics.md` §4 queue (data blocked here) |
+| β filed as a magnitude, rapidity the count; the Breit–Wigner line as an evenly spread phase, the energy an address into it (E_R the place, Γ/2 the scale, the Argand circle drawn) | §12 | consistent with OFS's main result (the Cauchy is addresses, not payload); the history ("physics missed it") is a reading, not a finding | `physics.md` dictionary (queued) |
+| The lead killed in its own run: overlapping resonances add their widths (a Cauchy sum), not nested readers | §12 | kept as the record's kill | noted |
+| Reader space is velocity space; the zoom-and-pan between two views is a hypercycle, not the geodesic, the gap being the Thomas precession | §13 | not rechecked here | noted |
+
+**One link to MOT run 2** (Claude's, checked in `srf/check.py`, not in the archived paper). In the Doppler pair's levels,
+ζ = ln k, γ = (k + 1/k)/2 = cosh ζ is even (stationary at rest, the pair's corner), and γβ = (k − 1/k)/2 = sinh ζ is
+odd (zero at rest, approach against recession): the two kinds of corner of `plans/mot-plan.md` run 2. And
+1/γ = 2k/(1 + k²) exactly, the facing's sine. That is the same form as a launch's range and a baseline's conditioning,
+so (β, 1/γ) is the Doppler pair's facing: β = −cos F, 1/γ = sin F, with k = tan(F/2). The algebra is standard (Bondi's
+k, the tangent half-angle); the reading is ours. A MOT run 3 would put it to predictions first.
+
+**Where it went (11 October):** archived. Then, at Tom's "yes", into MOT run 3 (`plans/mot-plan.md`; nothing killed) and
+`physics.md` §1 and §2.2: the three pairs and their corners (§4), pseudorapidity as a direction's level (§5), β below the
+corner and rapidity above it (§4, tested as rapidity being the reader's lay smoothed), and the link above. The fourth
+star, the Breit–Wigner line and the Rindler gearing are not moved.

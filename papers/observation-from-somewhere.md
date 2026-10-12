@@ -302,6 +302,33 @@ outer hemisphere reads π/2 and the inner 2/π. (Equivalently: a half-turn stood
 arc π/2, and a bar of length 1 swept evenly through a quarter turn casts an average shadow of
 (2/π)∫₀^{π/2} cos θ dθ = 2/π.) The true breadth, 1, is read only with no turn at all.
 
+**Archimedes' proof, from nowhere and from somewhere.** Archimedes measured the circle from both sides (*Measurement
+of a Circle*). A polygon inscribed in the circle falls short of it and one circumscribed about it exceeds it; doubling
+their sides from 6 to 96 squeezed π between 223/71 and 22/7. Both polygons need the circle in hand: the inscribed one's
+corners lie on it and the circumscribed one's sides touch it. His proof is the completed view, both sides held at once.
+
+The inner hemisphere's measure equals his inscribed polygon in number. An inscribed polygon of n sides has perimeter
+n·sin(π/n) against the circle's π (both for a diameter of 1), and with θ = π/n that ratio is sin θ/θ. So the reading at
+the quarter turn, 90°, is the polygon of 2 sides, 2/π; at 45° it is the square, 0.9003; and halving the turn matches his
+doubling of the sides, each step bringing the reading about four times closer to 1:
+
+| sides | turn θ | inscribed, sin θ/θ | short of 1 by |
+|---|---|---|---|
+| 2 | 90° | 0.6366 = 2/π | 0.3634 |
+| 4 | 45° | 0.9003 | 0.0997 |
+| 8 | 22.5° | 0.9745 | 0.0255 |
+| 16 | 11.25° | 0.9936 | 0.0064 |
+
+A situated reader draws neither polygon. Both need the circle in hand, and it does not hold the circle: the inscribed
+polygon's corners lie on the circle just as the outer polygon's sides touch it. What the reader has is its own turn,
+swept step by step from home. Its reading sin θ/θ is a reading of that turn, not a polygon laid on a circle; it equals
+the inscribed polygon's share in number, but the reader never holds the polygon. The outer side reaches it the same way,
+as a number, through the flip, θ/sin θ = 1/(sin θ/θ): so it knows π/2 at the limb without standing outside, and
+π/2 · 2/π = 1 stands in for the circle it does not hold. (Archimedes' outer polygon goes as tan θ/θ rather than
+θ/sin θ; both lie above 1 and close on it at the same rate.) Archimedes squeezed π between two polygons because he held
+the whole; a situated reader holds neither polygon and has the same numbers from its own turn and the flip. The
+convergence is ordinary geometry; what the vantages add is what each reader holds.
+
 **From the vantages to the view from nowhere.** The argument runs in seven steps, each resting on the one before.
 1. A line has a true breadth, 1. That is what the completed view reads.
 2. Each situated vantage reads it through a facing: the hemisphere turned away reads π/2, the hemisphere turned toward
@@ -786,6 +813,9 @@ Spread the fingers evenly by turn and read each one as v over h: the readings ar
 is in them.
 - *The median is a finger.* Of five fingers spread evenly from flat to upright, the middle one, at 45°, is the corner.
   Order, ranks, quartiles and the corner are address statistics, and they ignore the rings.
+- *The corners are the quartiles.* With the fingers spread over both facings, the corners at ±45° are the quartiles of
+  the standard Cauchy. So anything whose two ends sit at the reader's corners takes exactly the middle half of its
+  fingers, whatever its size and however far away: the mountain range of §10 is one.
 - *The missing mean asks the fingers about the rings.* A mean is a sum of sizes, a question about the payload. The
   readings carry no size, so the question has no answer. The median, a question about addresses, always has one.
 - *More fingers, not bigger rings.* Sweeping more finely lays more addresses. It buys precision about where, never
@@ -823,10 +853,15 @@ Shapes unchanged when h and v are exchanged keep the corner at the middle, as th
 ends; the astroid's cusps make its ends heavy, the square's flat sides make them light. The ellipse, which the exchange
 alters, moves its corner as well. Over 73 single-outline shapes from a drawing library the pattern is the same, with
 ends from 0.27 for a gear to about 3.1 for the astroid. The test would have failed had any shape laid by direction
-departed from the circle's numbers, or had a shape unchanged by the exchange moved its corner off the middle. For the
-circle alone the two lays coincide, which is why the circle and the Cauchy go together. The Cauchy is what an even lay
-by direction gives, whatever the shape; a lay taken from the outline brings the shape into the distribution. The
-Cauchy belongs to how the addresses are laid.
+departed from the circle's numbers, or had a shape unchanged by the exchange moved its corner off the middle. The
+Cauchy is what an even lay by direction gives, whatever the shape; a lay taken from the outline brings the shape into
+the distribution. The Cauchy belongs to how the addresses are laid.
+
+**Why the circle and the Cauchy go together.** The circle is the one shape whose two lays coincide: on a circle, equal
+steps along the outline are equal steps of turn. So for the circle alone, a lay taken from the shape and a lay that
+knows nothing of any shape are the same lay, and both give the Cauchy. Every other shape tells them apart. This is why
+the Cauchy is usually met through the circle, as the tangent of an angle spread evenly round it: it belongs to the even
+turn, and the circle is the one shape in which the even turn and the shape cannot be told apart.
 
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the
@@ -988,7 +1023,7 @@ true width, and no one stands anywhere in it.
 2. *What it reads exactly.* Sweeping its directions, the reader finds home, v/h = 0, straight ahead at the middle of the
    range, and the range's ends at v/h = ±1: exactly at its corners. It knows that the ends sit at its corner, though
    not why. With fingers spread evenly over the half-turn, the range takes exactly the middle half of them, between the
-   Cauchy's quartiles, and the median finger points at its middle. On each finger the ring is the ridge's elevation
+   Cauchy's quartiles, which are its corners (§7.3), and the median finger points at its middle. On each finger the ring is the ridge's elevation
    reading, and together they give the range's skyline, up to scale. The far slopes are hidden, rings behind rings.
 3. *What it cannot read.* A range 20 miles wide at 10 miles, 2 miles wide at 1 or 2,000 miles wide at 1,000 gives the
    same fingers and the same rings. The reach cancels from every reading (Theorem 6).
@@ -1106,6 +1141,8 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | logarithmic lay | geometry | position by number of addresses: v/h inside the corner, 1 + ln(v/h) past it |
 
 ## References
+
+Archimedes (c. 250 BC). *Measurement of a Circle*.
 
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.

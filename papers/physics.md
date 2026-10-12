@@ -49,6 +49,42 @@ bodies are pictures. They are never evidence here.
   pooltool's statement of them (the measurements themselves are blocked here). The engine's constant grip between balls
   was killed (Alciatore's fit falls threefold from slow to fast) and replaced by the fit; the slow cushion is left for
   measured data (§2.4, §3).
+- 11 October, fourth: MOT (`plans/mot-plan.md`), motion and tracking from inside, in exact arithmetic (Tom: "maybe h
+  helps in object tracking and motion"). A reader with a clock and no lengths reads time to contact, how close a thing
+  will pass, and the levels of an approach exactly. A breadth of its own as a baseline reads distance best at the corner
+  of the pair (half-baseline, distance), and alike at a distance and its flip (§1, §2.2). The first-order stereo error
+  was killed past εd/B ≈ 0.18 (§3).
+- 11 October, fifth: MOT run 2 (Tom: "even if we could just provide a fuller geometric explanation of motion using our
+  corner insights, that would be a win"). The corners of motion fall into two kinds:
+  - stationary where a quantity is unchanged by swapping its pair: a launch's range, the energy one ball passes to
+    another, a baseline's conditioning;
+  - a change of regime where swapping flips its sign: braking, Lee's τ̇ = −½ read as stopping distance equal to the
+    distance.
+
+  Ratio readers need no trig for time to contact, stereo, closest approach, collision or braking. The capped unit
+  relation reads distance best at the corner, twice as well as the angle there. An angle holds a big ratio poorly even
+  with a call, which killed P10's angle clause (§2.2, §3).
+- 11 October, sixth: MOT run 3, special relativity in unit relations, after the archived *Special Relativity, Through the
+  Fisheye* (Tom: "here is a earlier paper on SR", then "yes"). Nothing was killed.
+  - **Three pairs, three corners:** rest for the Doppler pair, β = 1/√2 for (β, 1/γ), the transverse plane for the sky.
+  - **The two kinds:** γ is the Doppler factor's even part in levels and γβ its odd part.
+  - **Rapidity** is the reader's lay of celerity, smoothed.
+  - **The regime switch** sits at pc = mc², symmetric for the energy (a share) and lopsided for the kinetic energy.
+  - **Levels under acceleration** come evenly in proper time (§1, §2.2).
+- 11 October, seventh: EMC (`plans/emc-plan.md`; Tom: "so lets talk about how the corner helps understand the known
+  equation", then "yes"). E² = (pc)² + (mc²)² is the unit circle of (pc, mc²) read in the one unit E. E = mc² is home
+  and E = pc the horizon. Newton's form and the ultra-relativistic form are flips of each other, handing over at
+  pc = mc², each 6.07% high there. Mass is the corner of the light-cone pair, fixed under every boost. Nothing was
+  killed; Bertozzi's electrons are queued (§1, §2.2, §4).
+- 11 October, eighth: PAY (`plans/pay-plan.md`; Tom: "all we see is the motion of the center of gravity as situated
+  observers of serial streams"; SPN R210).
+  - **One stream:** approach and growth are the same stream.
+  - **Two readings at once** sharing a denominator separate them, giving payloads relative to each other.
+  - **Below the step** the payload arrives as its moments, centroid first: the binary's photocentre, a·|B − β|.
+  - **From far off** a body is its total mass at its centre of mass, its detail one order per power of R/r. The
+    expansion's two forms meet at the corner r = R and are each other's flip (Kelvin).
+
+  Nothing was killed (§1, §2.2).
 - 12 October: MRB (`plans/mrb-plan.md`), five hundred marbles. Part 1, an inelastic gas against Haff's law: counted in
   each marble's own contacts the cooling needs only e; the referee's clock needs the density and goes first near the
   clustering instability (§2.4, §3). Part 2, a heap at rest (`play-marbles.html`'s engine): frictionless marbles held by
@@ -92,6 +128,26 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | a ring thinner than a grain | a catalogue's or an instrument's limit: past it only the bright of a kind are read | the grain, an amount | MAG P3; HZN runs 1–3 |
 | a known kind | a standard candle; a spectral class | the kind's luminosity | MAG (the kind is about a level wide) |
 | V = H, the calibration | reading amounts with no unit of the other's | travel, a constant, a kind, a shared fact | LAD (in Wander's world) |
+| a reading over its own rate, x/ẋ (x = S/d, the pair's v/h) | time to contact, d/u (Lee's τ), exact at every distance; from the turn arctan x only far off | the reader's clock | MOT P1–P3 |
+| levels of an approach (the reading doubling) | each takes half the time to contact read at its start; infinitely many before contact | the reader's clock | MOT P4 |
+| ωτ, the reading of the pair (speed across, speed in); its corner | how close a thing will pass, as a share of its distance: ωτ/√(1 + (ωτ)²); 1/√2 at the corner; bearing still, a collision | none (the clock cancels) | MOT P5 |
+| the corner of the pair (half-baseline, distance) | where a baseline reads distance best (a right angle of convergence), alike at d and (B/2)²/d | the breadth B | MOT P6, P7 |
+| the corner of the pair (stopping distance, distance); τ̇ + 1 = d/(2s) | stopping exactly at contact: Lee's τ̇ = −½ | none for the corner (the clock for τ̇) | MOT P11 |
+| a quantity unchanged when its pair swaps is stationary at the corner | a launch's longest range at 45° (complementary launches equal); all the energy passed at equal masses (as in maximum power transfer) | the pair's own amounts for the value, none for the corner | MOT P12 |
+| the facing's sine, 2k/(1 + k²) in the ratio | a launch's range, (U²/g)·sin(facing); a baseline's conditioning, sin γ | U and g; B | MOT P8, P12 |
+| the capped unit relation, min(k, 1/k), as a representation | trig-free and bounded: time to contact, stereo, closest approach, braking, steady turning | none | MOT P10 |
+| v = β, h = 1/γ, the reading v/h the celerity γβ; the corner v = h | β = 1/√2: momentum energy equal to rest energy, pc = mc²; the regime switch, E's level-slope β² halfway there and flip-symmetric | c (a known constant) | MOT P13, P17 |
+| the Doppler pair (sent, received), its reading k and levels ln k (the rapidity); its corner | rest; γ the even part of k, γβ the odd part (k = γ + γβ); 1/γ = 2k/(1 + k²), the facing's sine | none (two of the reader's own intervals) | MOT P13, P14 |
+| the sky's pair (fore, aft), reading tan(θ/2), levels −ln tan(θ/2); its corner | pseudorapidity; a boost along the axis pans every level by ln k; the transverse plane; the moving observer's transverse plane is the rest frame's tan(θ/2) = k | none | MOT P13, P16 |
+| the reader's lay (proportional, then logarithmic) of a reading | rapidity = asinh(celerity): the lay smoothed, never more than 1 − ln 2 nats from it | c | MOT P15 |
+| levels at an even pace of the reader's clock | uniform proper acceleration: one level per ln 2/a of proper time, each taking twice the last in the launch frame | a | MOT P18 |
+| the unit circle v² + h² = 1, both read in one unit | E² = (pc)² + (mc²)² divided by E: v = pc/E = β (the speed, dE/dp), h = mc²/E = 1/γ (the moving clock's rate) | c | EMC P1 |
+| home (v = 0) and the horizon (h = 0) | E = mc² and E = pc (light) | c | EMC P2 |
+| the near field and the far field as flips of each other, handing over at the corner | Newton's mc² + p²/2m and the ultra-relativistic pc + (mc²)²/2pc: e_N(x) = e_U(1/x), each 6.07% high at pc = mc² | c | EMC P3 |
+| a pair's corner as its level-midpoint, fixed under a pan | mass: the geometric mean of E + pc and E − pc, which a boost pans by ∓ln k | c | EMC P4 |
+| the median of the addresses (order) against the centroid of the payload (sums), R210 | below the step, the light-weighted photocentre and the total mass at the centre of mass; an unresolved binary's photocentre orbit a·\|B − β\| | the step σ; the masses and lights | PAY P3 |
+| level of detail by distance; the corner where none can be dropped; the flip | the multipole expansion: order l down by (R/r)^l, converging outside r = R; Kelvin's inversion r ↦ R²/r swapping the exterior and interior forms | the source's radius R | PAY P4 |
+| one stream against readings at once with a shared denominator | looming's size–distance ambiguity; a same-depth neighbour's ratio S₁/S₂ separates approach from growth | none | PAY P1, P2 |
 
 ## 2. Results, by standing
 
@@ -154,6 +210,163 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 
   These are classical mechanics of hard balls, read in unit relations. They are not new physics; what they give is the
   count of levels, which the situated reader can use directly (a preview about three contacts deep on an open table).
+- **Motion read from inside** (MOT, `plans/mot-plan.md`). A thing of half-size S at distance d closes at speed u; the
+  reader reads x = S/d (the pair's v/h) and holds one amount, its clock. Then, to rounding or exactly:
+  - **time to contact is the reading over its rate**, x/ẋ = d/u, before and past the corner, with no S, d or u known;
+  - **read from the turn** arctan x instead, it is d/u times arctan(x)(1 + x²)/x: 1 far off, π/2 at the corner,
+    growing as (π/2)·x past it (for a flat thing face-on);
+  - **two looks a tick apart**: x₁/(x₂ − x₁) is τ at the second look exactly, and x₂/(x₂ − x₁) is τ one tick ago. This
+    is POL run 10's kick reading 8% low: at τ = 10 ticks, one tick late reads it 9% low, before the cloth's slowing;
+  - **holding the corner**: a reader that re-sets its unit to keep the thing at its corner turns it at d ln H/dt = 1/τ.
+    Each level of the approach takes half the τ read at its start, so infinitely many levels pass before contact, in the
+    finite time d₀/u (the walk's levels, in time);
+  - **how close it will pass**: with ω the bearing's rate, m/d = ωτ/√(1 + (ωτ)²). ωτ is the reading of the pair (speed
+    across, speed in), the clock cancelling, so this needs no bridge. At its corner the pass is 1/√2 of the present
+    distance; a bearing that holds still is a collision;
+  - **a breadth as a baseline**: two looks from the ends of a breadth B read the convergence γ, and d = (B/2)/tan(γ/2).
+    Per unit of γ, ln d moves by 1/sin γ:
+    - least at γ = 90°, where d = B/2, the corner of the pair (half-baseline, distance);
+    - alike at d and its flip (B/2)²/d;
+    - with γ read to a step ε, a thing at a tenth of the corner's distance and one ten times past it both have five
+      times the corner's worst relative error;
+    - far past the corner the worst error is x/(1 − x) on the far side (x = εd/2B), unbounded at d = 2B/ε, the
+      baseline's horizon (an amount, the step).
+
+  These are known as kinematics: Lee's τ, the navigators' constant bearing, stereo error, and surveying's right angle of
+  intersection. What the run settles is which reading carries each exactly. The ratio does at every distance, the turn
+  only far off, and the older of two looks. The corner is where a baseline reads best. That is SPN's "H is a zoom"
+  (Proposition 1.2): set H to the scale of the thing read, putting it at the corner. Here the baseline is H.
+- **Motion's corners, by kind** (MOT run 2, `plans/mot-plan.md`). Take a quantity of a pair through its ratio k:
+  - **Unchanged when the pair swaps** (f(k) = f(1/k)): then f′(1) = 0, so the quantity is stationary at the corner;
+    in levels it is even about it. Examples:
+    - the range of a launch at fixed speed, against V_y/V_x: (2U²/g)·k/(1 + k²), longest at 45°, complementary launches
+      equal;
+    - the energy a head-on elastic collision passes to a ball at rest, against the mass ratio: 4k/(1 + k)², all of it
+      at equal masses;
+    - a baseline's conditioning, sin γ = 2k/(1 + k²) with k = b/d, best when the half-baseline equals the distance.
+
+    The first and third are one form, the sine of the facing 2θ written in the ratio: a launch's range is (U²/g) times
+    the sine of its facing.
+  - **Sign flipped when the pair swaps:** then the quantity changes regime at the corner. Braking is the example. With
+    stopping distance s = u²/(2a), τ̇ + 1 = d/(2s) exactly, so Lee's critical τ̇ = −½ is s = d, the pair (stopping
+    distance, distance) at its corner. Below it the thing stops short, above it it overshoots. The ratio reader computes
+    τ̇ = 1 − x·ẍ/ẋ² with no call, exactly (in rationals, 10⁴ states, none wrong). Judged from the angle with no call
+    (θ/θ̇), the same test is right far off (1 wrong in 2,000), fails as the corner nears (182 in 2,000), and is a coin
+    toss past it (996).
+  - **Neither:** a launch's time of flight and greatest height rise with k throughout, with no corner.
+
+  Three readers of one pair (b, d), each to one step, all for the same quantity, distance:
+  - the angle is least wrong at the corner and alike at d and b²/d;
+  - the unit relation capped at 1 likewise, and twice as good at the corner;
+  - the plain uncapped ratio has no best place: it reads near home finely, but only over an unbounded range of
+    addresses.
+
+  At one budget of addresses covering every distance, the in-place lay (even in the unit relation on each side) reads
+  best between 0.52 b and 1.91 b, by π/2 at the corner. The even turn, the lay that gives the Cauchy, reads best
+  outside that, by 4/π far off. A ratio reader needs no trig for time to contact, stereo, closest approach, the
+  collision test or braking. An angle reader needs a call for each (the collision test aside), and even then holds a
+  big ratio poorly. A double spaces an angle evenly near 90°, so the ratio comes back held to ulp·(1 + x²)/x: 2e-13 at
+  x = 1,000. That is the same reader with its step one ulp. Folding sends both ends toward 0, where a double is
+  finest. Angles stay simplest only for advancing a steady turn. There the capped pair, rotated by two fixed constants
+  and divided by its larger part, does as well with no call a step, stays bounded, and held 1e-13 where the angle
+  drifted 1e-10.
+
+  All of these are known as physics: complementary launches, equal masses, Lee's −½, rectified stereo, and Wildberger's
+  rational trigonometry (spreads in place of angles). What the vocabulary adds is the account: which pair, which
+  corner, which kind, and that the unit relation capped at the corner keeps both the ratio's algebra and the angle's
+  best-conditioned middle.
+- **Special relativity in unit relations** (MOT run 3, `plans/mot-plan.md`; after the archived *Special Relativity,
+  Through the Fisheye*). With c as the bridge, v = β and h = 1/γ are unit relations, v² + h² = 1, and the reading v/h is
+  the celerity. The Doppler factor k is a ratio of two of the reader's own intervals and needs no bridge; its levels,
+  ln k, are the rapidity. Exactly, or to rounding:
+  - **Three pairs, three corners:**
+    - rest, for the Doppler pair (k ↔ 1/k is approach against recession);
+    - β = 1/√2, for (β, 1/γ), equivalently (pc, mc²): k = 1 + √2, rapidity asinh 1 = 0.881374;
+    - the transverse plane, for the sky's (fore, aft) (tan(θ/2) ↔ its reciprocal).
+
+    A boost moves only the sky's corner: the moving observer's transverse plane is the rest frame's direction with
+    tan(θ/2) = k. At the (β, 1/γ) corner that is 135°, and the forward hemisphere is seen within 45°.
+  - **The two kinds** (run 2), in the Doppler pair's levels: γ = (k + 1/k)/2 is the even part of k and γβ = (k − 1/k)/2
+    the odd part, so k = γ + γβ. Time dilation is unchanged when sender and receiver swap, and stationary at rest;
+    celerity changes sign there. 1/γ = 2k/(1 + k²) is the facing's sine, the form of a launch's range; with
+    k = tan(F/2), β = −cos F and 1/γ = sin F. This was exact in rationals for 10⁴ k.
+  - **Rapidity is the reader's lay of celerity, smoothed:** proportional at home, logarithmic far off, with the lay's
+    slopes at both ends, and never more than 1 − ln 2 nats (0.44 doublings) from it. The gap is 0.119 at the corner and
+    rises throughout.
+  - **A direction's level is its pseudorapidity.** A boost along the axis pans every level by ln k; fore and aft are the
+    flip; a massless particle's rapidity equals it.
+  - **The regime switch is the corner of (pc, mc²).** The energy's level-slope against momentum is β², a share of the
+    circle: ½ at the corner and s(x) + s(1/x) = 1. The kinetic energy's is not a share: 2 at home, 1 far off, 1 + 1/√2
+    at the corner, its swap sum running from 3 to 2 + √2. As NRF found for light, the switch is symmetric where the
+    quantity is a share.
+  - **Levels under acceleration:** with uniform proper acceleration a from rest, level n (k = 2ⁿ) comes at proper time
+    n·ln 2/a, evenly. In the launch frame each level takes twice the last, while an approach at constant speed (run 1,
+    P4) takes half.
+
+  Known: Bondi's k-calculus, rapidity's additivity, pseudorapidity, the two regimes either side of pc ~ mc², hyperbolic
+  motion. What the vocabulary adds is the account: three named pairs, their corners and kinds, the energy circle as the
+  reason the switch is symmetric, and rapidity as the reader's lay.
+- **E² = (pc)² + (mc²)² through the corner** (EMC, `plans/emc-plan.md`). Dividing by E gives the unit circle of the
+  pair (pc, mc²), both read in the one unit E. Its unit relations are v = pc/E, which is β (the speed from dE/dp, to
+  4.4e-16), and h = mc²/E, which is 1/γ, the moving clock's rate; a clock runs at the rest share of its energy. Exactly,
+  in rationals from Pythagorean triples, or to rounding:
+  - **The landmarks:**
+    - home (v = 0) is E = mc²;
+    - the horizon (h = 0) is E = pc, light;
+    - the corner is pc = mc², with β = 1/√2, E = √2·mc² and T = (√2 − 1)·mc²: 0.2117 MeV for an electron, 388.6 MeV
+      for a proton.
+
+    The speed limit is the cap at 1 on v, which massive things never reach.
+  - **Newton and the massless limit are flips of each other.** E_N = mc² + p²/2m and E_U = pc + (mc²)²/2pc swap into
+    each other when pc and mc² swap, and their relative errors satisfy e_N(x) = e_U(1/x) exactly, with x = pc/mc².
+    Newton's form is the better exactly inside the corner. At the corner both are √(9/8) − 1 = 6.07% high. With MOT P17
+    (the energy's level-slope β², halfway there), this makes the corner the precise statement of "where relativity
+    starts to matter", and symmetric when posed in momentum.
+  - **Mass is the corner of the light-cone pair.** (E + pc)(E − pc) = (mc²)², so mc² is the pair's level-midpoint. A
+    boost with Doppler factor k sends E + pc to (E + pc)/k and E − pc to k(E − pc): a pan in levels, equal and
+    opposite. The midpoint does not move, which is why mass is the same for every observer; pans compose by
+    multiplying, which is why rapidities add. The circle's shares move with every boost (10⁴ of 10⁴); the midpoint
+    never does. The boost by (E + pc)/mc² lands at rest, the light-cone pair at its corner, in all 1,000 trials.
+
+  All standard (the energy–momentum relation, light-cone coordinates with p⁺p⁻ = m², the two limits). What the corner
+  adds is the organisation: one circle in one unit, home and horizon, the two limits as one approximation under the
+  flip, and the invariant mass as a corner. What it does not give: c's value, or why a change of frame is a hyperbolic
+  pan and not a rotation (the sign is the world's).
+- **What arrives of a payload, serially and at once** (PAY, `plans/pay-plan.md`; SPN R210). Exactly, or to rounding:
+  - **One stream is one ratio's trajectory.** A thing approaching and a thing growing at the matching rate give the
+    same stream and the same time to contact. Motion arrives before the object does.
+  - **A second reading taken at once,** of a neighbour at the same depth, separates them. The shared distance cancels
+    from the ratio x₁/x₂ = S₁/S₂, which stays fixed under approach and tracks the growth exactly. At another depth the
+    ratio drifts under approach (by at least 65% here), so what reading at once buys is a shared denominator.
+  - **Below the step, the payload arrives as its moments:**
+    - the first moment is the light-weighted photocentre, exactly, resolved or not;
+    - the second is σ² + β(1 − β)s², the payload's share falling two levels per level the separation shrinks;
+    - two maxima appear at s = 2σ (the Sparrow limit: the step, an amount);
+    - an unresolved binary's photocentre orbit is a·|B − β|, the same stream for any mass and light fractions with the
+      same difference; resolved against a shared background, they separate.
+  - **From far off, a body is its total mass at its centre of mass.**
+    - About the centre of mass the monopole's error falls two levels per level of distance (−1.9995), about any other
+      centre one (−1.0000).
+    - Order l arrives down by (R/r)^l. The orders needed to read a body to 1e-6 run from 5 at 10 R to 157 at 1.05 R,
+      within the bound ln(ε(1 − R/r))/ln(R/r) − 1.
+    - The exterior series converges outside the corner r = ρ and fails inside, every term equal at it. Kelvin's
+      inversion maps the interior form onto the exterior term by term, exactly, and a source on the sphere is its own
+      image: the flip about the corner.
+
+  All standard (looming's ambiguity, astrometric binaries, the Sparrow limit, multipoles, Kelvin 1847). What it adds is
+  the reading: two centres kept apart, the median of the addresses and the centroid of the payload; motion before the
+  object; and the multipole expansion as level of detail by distance with the corner as its seam.
+
+  **Prior work** (Tom: "we have explore this in the draw.html repository in the labs"). Draw's labs had shown the shape
+  side first, rerun here at draw `ea07709`:
+  - one serial reader's readings carry the turn and not the size: Cauchy for every figure, and the census returns the
+    same unit circle (`rcc`);
+  - three standpoints give the figure up to its size, and one agreed length gives the size, to 2e-15 (`udv`);
+  - the median needs every arrival held at once, so a strictly serial reader marks against a held arrival instead: one
+    extra slot, grain-free on 58 of 58 shapes and scale-free on 88% (`ref`).
+
+  So the median is the parallel reader's centre of the addresses. Holding (serial or parallel) and resolving (above or
+  below the step) are two different axes.
 
 ### 2.3 In Wander's world (illustration, not evidence)
 
@@ -239,6 +452,13 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   only near a medium hit. Replaced by the fit in run 2. **CUE P6: the slow cushion** bounces 0.62 in the engine against
   0.80 in Han's model with a constant restitution; which a real cushion does is for measured data. **CUE P10** was my
   set-up: the smoke test's throws are not pure stuns.
+- **MOT P6: the first-order stereo error.** The worst error per step was predicted as ε·d/(2B) within 10% up to
+  εd/B = 0.2. It is x/(1 − x) on the far side and x/(1 + x) on the near (x = εd/2B), past 10% from 0.183. The far side has
+  no bound at x = 1: the baseline's horizon.
+- **MOT P10, its angle clause: a call does not make an angle exact.** The angle readers of time to contact and of stereo,
+  with tan, were predicted to agree to 1e-12; they reached 1.9e-10 and 1.2e-12. Past the corner a double holds an angle
+  in even steps and the ratio it stands for in steps growing as the ratio; the capped unit relation holds it to 1.5e-16
+  at every size.
 - **MRB P2: the clock at e = 0.7.** Haff's law in the referee's time was 5.2% slow while per contact it was 2.5%: the
   gas near its shear instability (run 2: the bias follows the box's size against L_c, at fixed e). **MRB P9 and P11 were
   my protocol:** a pile read at rest at one instant can be breathing (0.1% off), and stripping marbles with fewer than
@@ -269,6 +489,15 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
 - **Real topography for REF.** The Moon (LOLA), Mars (MOLA) and Earth have spherical-harmonic shape models. With them:
   the depth spans in levels, and whether the relief's power falls by a fixed amount per level of wavenumber (Kaula-like).
   NASA's PDS is blocked here.
+- **The ratio or the turn, in a measured reader** (from MOT). x/ẋ gives time to contact at every distance; θ/θ̇
+  overstates it by π/2 at the corner and grows past it. Responses to looming that run on to large visual angles (half-angle
+  near 45° and past) would tell which a measured reader uses there. A published data set with the angles reached is
+  needed; none is chosen yet.
+- **Bertozzi's electrons** (from EMC). Speed against calorimetric kinetic energy, 0.5 to 15 MeV (*Am. J. Phys.* 32, 551,
+  1964), all past the electron's corner (x from about 1.7 to 30). Read in levels, each doubling of momentum should add
+  about ln 2 of rapidity. That is a real-data look at the far field, though it tests special relativity, which is
+  settled, rather than the corner. The paper is blocked here and teaching copies of its table will not be used; Tom to
+  supply it if wanted.
 - **One dimension against two.** ISQ's reading separates an angular size (falling one level per level of distance) from
   its square, the light (two levels). Stars with measured angular diameters (interferometry) and parallaxes would test
   the one-level half directly.

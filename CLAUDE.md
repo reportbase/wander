@@ -244,10 +244,13 @@ Google Fonts load from outside:
   `denominator-paradox.md` ("Each Sees the Other Smaller", an older paper Tom wrote with Claude in an earlier session, added 11 Oct) is a first course in
   denominator paradoxes: private rulers compared on one number line; dissolve, then purchase a shared denominator (the
   exchange: ratio and product of the two reads). `vantages.md` §F maps it onto the three vantages.
-  `papers/archive/` (11 Oct 2026, from Tom: "older papers … archived but off many gems we should pull forward"): seven
-  earlier papers kept as received, never edited: *Reader Geometry as Addressing* (rulings R1–R151 only; R152–R187 are
+  `papers/archive/` (11 Oct 2026, from Tom: "older papers … archived but off many gems we should pull forward"): earlier
+  papers kept as received, never edited: *Reader Geometry as Addressing* (rulings R1–R151 only; R152–R187 are
   quoted in SPN Appendix A), *The Relation Space*, *Browsing the Fisheye*, *The Radix*, *The Order of Limits*, *One
-  Reader*, *Degrees of Freedom*. They predate 9 Oct: check every term (density, view from everywhere, inside/outside,
+  Reader*, *Degrees of Freedom*; and since 11 Oct an eighth, *Special Relativity, Through the Fisheye* (4 Sep; Tom: "here is
+  a earlier paper on SR"), its numbers rechecked in `srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
+  dimensions), its gems and one link to MOT run 2 (γ even, γβ odd in ln k; 1/γ = 2k/(1 + k²)) in `plans/archive-gems.md`.
+  They predate 9 Oct: check every term (density, view from everywhere, inside/outside,
   fulcrum, arctan, h and v as breadths, recursive corners, depth, old situation numbers) before pulling anything forward.
   `plans/archive-gems.md` lists the gems, where each went and what is queued. **Where an archived paper conflicts with
   one that is not archived, the paper that is not archived stands** (Tom, 11 Oct; SPN R192).
@@ -403,6 +406,42 @@ Google Fonts load from outside:
   0.11%, its place 2.6% off at ε = 10⁻³ (P2 killed narrowly). `tgt-plan.md` (+ `tgt/tgt.py`, 11 Oct, exact): closure
   between two readers' counted edges recovers the ratio of their holds, |S_A|/|S_B|, to 5×10⁻¹⁵, and nothing more
   (P1–P5 not killed): the denominator exchange made exact.
+  `mot-plan.md` (+ `mot/mot.py`, 11 Oct, exact; Tom: "maybe h helps in object tracking and motion"): motion read from
+  inside, the clock the only amount. x/ẋ (x = S/d) is time to contact at every distance; from the turn arctan x it is off
+  by arctan(x)(1+x²)/x, π/2 at the corner; of two looks a tick apart the older gives τ now, the newer τ one tick ago (POL
+  run 10's 8%); each level of an approach takes half the τ read at its start; m/d = ωτ/√(1+(ωτ)²), no bridge (P1–P5 not
+  killed). A breadth B as a baseline reads distance best at the pair's corner, d = B/2, alike at d and (B/2)²/d (P7 not
+  killed); the first-order stereo error killed past εd/B ≈ 0.18 (P6: x/(1−x) on the far side, the horizon at d = 2B/ε).
+  Run 2 (`mot/mot2.py`; Tom: "a fuller geometric explanation of motion using our corner insights"): corners in motion
+  come in two kinds, stationary where a quantity is unchanged by swapping its pair (a launch's range at 45°, the energy
+  passed at equal masses, a baseline's conditioning; f(k) = f(1/k) gives f′(1) = 0) and a change of regime where swapping
+  flips its sign (braking: τ̇ + 1 = d/(2s), Lee's −½ is stopping distance = distance) (P11, P12 not killed). Ranging: the
+  capped unit relation and the angle are best at the corner, the plain ratio nowhere (P8); at one budget the in-place
+  lay beats the even turn between 0.52 b and 1.91 b (P9). Ratio forms trig-free and exact; P10 killed in its angle
+  clause (an angle holds a big ratio to ulp·(1 + x²)/x; the capped unit relation to 1.5e-16 at every size).
+  Run 3 (`mot/mot3.py`; special relativity, after the archived SR paper; Tom: "yes"): v = β, h = 1/γ (c the bridge);
+  three pairs, three corners (rest for the Doppler pair, β = 1/√2 for (β, 1/γ), the transverse plane for the sky; a
+  boost moves only the sky's, to tan(θ/2) = k); γ the even and γβ the odd part of k in levels, 1/γ = 2k/(1 + k²);
+  rapidity the reader's lay of celerity smoothed (within 1 − ln 2 nats); pseudorapidity a direction's level; the regime
+  switch at pc = mc², symmetric for E (β², a share) and lopsided for T; uniform acceleration one level per ln 2/a of
+  proper time (P13–P18 not killed).
+  `emc-plan.md` (+ `emc/emc.py`, 11 Oct, exact; Tom: "how the corner helps understand the known equation"): E² = (pc)² +
+  (mc²)² is the unit circle of (pc, mc²) in the one unit E, v = β (from dE/dp), h = 1/γ (the clock's rate); E = mc² home,
+  E = pc the horizon; Newton's and the ultra-relativistic forms flips of each other, e_N(x) = e_U(1/x), both 6.07% high at
+  pc = mc²; mass the light-cone pair's corner, fixed as a boost pans its levels (P1–P4 not killed; P2's quoted decimals
+  my slip, recorded). Bertozzi's electrons queued (paper blocked).
+  `pay-plan.md` (+ `pay/pay.py`, 11 Oct, exact; Tom: "all we see is the motion of the center of gravity as situated observers
+  of serial streams"; SPN R210, two centres: the median of the addresses, the centroid of the unresolved payload): one
+  stream cannot tell approach from growth; a same-depth neighbour read at once separates them (payloads relative, never
+  scale); below the step the payload arrives as its moments, the photocentre first (a binary's a·|B − β|); a body far off
+  is its total mass at its centre of mass, order l down by (R/r)^l, the two expansions meeting at the corner r = R and
+  swapped by Kelvin's inversion (P1–P4 not killed; P3 (d)'s index my slip, recorded). Prior work in draw's labs
+  (Tom: "we have explore this in the draw.html repository in the labs"; rerun at draw `ea07709`): `rcc` (one reader's
+  readings carry the turn, not the size), `udv` (three standpoints give the figure up to size, one agreed length the
+  size), `ref` (the median needs every arrival held at once, a parallel reference; a serial reader holds one arrival,
+  one extra slot), `rec` (a serial record: scale-free, grain-free marks). So the median is the parallel reader's centre;
+  holding (serial/parallel) and resolving (above/below the step) are two axes. **Before new work on readers, shapes or
+  recovery, check draw's labs** (`labs.html` in the draw repo lists them; run one with `draw.html?lab=CODE`).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

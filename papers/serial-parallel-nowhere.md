@@ -1969,6 +1969,13 @@ own turn, counted in h, and it approaches the line, 1 (the corner), from below. 
 needs the circle in hand. The other side comes to it by the flip instead, since θ/sin θ = 1/(sin θ/θ): it knows the
 number π/2 without standing above the corner. π/2 · 2/π = 1 stands in for the circle it does not hold.
 
+*Corrected, 11 October* (R209; Tom: "situated reader does not hold the inner polygon either."): the situated reader draws
+neither polygon. The inscribed polygon's corners lie on the circle, so it too needs the circle in hand. "The inside
+measure, sin θ/θ, is his inscribed polygon exactly" holds in number only: sin θ/θ is the reader's reading of its own turn,
+equal to the inscribed polygon's share, not a polygon the reader holds; and "has only the side below" (above) is read the
+same way, a reading from below, not the inscribed polygon. Both sides reach the reader as numbers: the inner from its own
+turn, the outer by the flip. `observation-from-somewhere.md` §3.4 says so.
+
 **π/2 and 2/π, with 1 between them** (Tom, 6 October):
 
 > "parallel is pi/2 and serial is 2/PI. serial*parallel = 1. parallel 1.5, line = 1, serial = 0.633"
@@ -4075,6 +4082,36 @@ received, a far body and each other's signals. In CMP and CMV the other reader i
 pings and echoes) and a reader in its own. Untested in the labs: laying the range before anything arrives, and payloads
 evaluated on demand; *Wander* hands each reader its range.
 
+**Two centres, and what arrives of a payload** (R210; Tom, 11 October: "the payloads can't be recovered from serial
+situated observation, but can be in parallel situated observation. basically, all we see is the motion of the center of
+gravity as situated observers of serial streams"). Two centres are kept apart:
+- **The median of the addresses.** The fingers have no centre of gravity, since a mean asks the fingers about the rings
+  (above). Their centre is the median, an order statistic, at the corner. The median needs every arrival held at once, so
+  it is the parallel reader's. A strictly serial reader marks against a held arrival, one extra slot, which is as
+  grain-free as the median (draw's `ref` lab: 58 of 58 shapes) and as scale-free except where a shape only touches its
+  reference (88%).
+- **The centroid of an unresolved payload.** Below the step what arrives is the payload's sums: first its centroid (the
+  light-weighted photocentre; from far off, the total mass at the centre of mass), then its finer moments, each further
+  down by the reading. Rings add, fingers order.
+
+Tested in exact arithmetic (`plans/pay-plan.md`, nothing killed):
+- **A serial stream gives motion before it gives an object.** A thing approaching and a thing growing at the matching
+  rate give one stream, and one time to contact.
+- **Two readings taken at once separate them when they share a denominator.** The common distance cancels from their
+  ratio, which leaves payloads relative to each other, never their scale.
+- **An unresolved binary shows only its photocentre's orbit, a·|B − β|,** whatever the mass fraction B and light
+  fraction β give the same difference.
+- **A body's far field is its total mass at its centre of mass,** with each finer order one more power of R/r down. The
+  exterior and interior expansions meet at the corner r = R, where no order may be dropped, and Kelvin's inversion
+  r ↦ R²/r is the flip about it.
+
+Both distinctions are real and they are different (refined the same evening, after draw's labs). *Holding*, serial
+against parallel, decides the address centre: the median, or a held arrival. *Resolving*, above or below the step,
+decides whether a payload arrives as components or as its centroid. The drawing tool had shown the shape side first:
+- one reader's readings carry the turn and not the size, so the census returns the same unit circle from every figure
+  (lab `rcc`);
+- three standpoints give the figure up to its size, and one agreed length gives the size (lab `udv`, §8.4).
+
 ### 4.4 The stitch is at the corner, and one number crosses it
 
 **R153.** Where the serial and parallel accounts are joined, the seam is the corner: the parallel reader's front side ends
@@ -5884,6 +5921,8 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 - **R206** (11 Oct, about 13:55): "why did you include failed tests, they seem rather contrived." **`observation-from-somewhere.md` has no section of failed tests.** The tests it listed (number lines in people, a knee at one step across, steering by its own count, a ratio from nesting, a preferred step) test side claims, not the geometry; their record stays in their plans and in Appendix C here.
 - **R207** (11 Oct, about 13:58), to "should those come out too?" (the cost model on simulated readers and the grid-cell test): "remove all failed tests, they are in other papers." **`observation-from-somewhere.md` reports no tests**: the cost model (GRN runs 3–5) and the proposed grid-cell test (`plans/grd-plan.md`) are removed with the failed ones; they stay in their plans.
 - **R208** (11 Oct, about 14:10): "only if they are helpful to main arguments. dont just add tests just to add tests." / "we can add tests if they are specifically helpful to the core themes of the paper." **R207 refined: `observation-from-somewhere.md` may report a test where it specifically helps a core theme**; failed tests stay in their plans, and results that already have proofs need no checks.
+- **R209** (11 Oct, about 17:00): "situated reader does not hold the inner polygon either." **A situated reader draws neither of Archimedes' polygons**: both need the circle in hand. Its inner measure, sin θ/θ, equals the inscribed polygon's share in number and is a reading of its own turn; the outer side comes by the flip (§2.1, "The quarter turn is Archimedes' proof made situated", corrected).
+- **R210** (11 Oct, about 21:00): "the payloads can't be recovered from serial situated observation, but can be in parallel situated observation. basically, all we see is the motion of the center of gravity as situated observers of serial streams." Then "yes", to Claude's proposal to name the two centres apart and to test them. **Two centres, kept apart.** The reader's addresses have no centre of gravity: laid by an even turn they are Cauchy, with no mean, and their centre is the **median**, at the corner. What arrives of a payload below the step is its sums: first its **centroid** (the light-weighted photocentre; the total mass at the centre of mass), then its finer moments, each further down by the reading. A serial stream gives motion before it gives an object; two readings taken at once separate a change of payload from the reader's own motion when they share a denominator, and then give payloads relative to each other, never their scale (§4.3, "Two centres"; `plans/pay-plan.md`, not killed). Not ruled: whether serial against parallel, or resolved against unresolved (one step apart in one window), carries the distinction (GRN: "serial and parallel is just our perspective"). *Refined the same evening* (Tom: "we have explore this in the draw.html repository in the labs"): draw's `ref` lab had shown that the median needs every arrival held at once, "a parallel reference smuggled into a serial account"; a strictly serial reader marks instead against a held arrival, one extra slot (grain-free on all 58 shapes, scale-free on 88%). So the median is the parallel reader's centre of the addresses, and both axes are real and different: holding (serial or parallel) decides the address centre, resolving (above or below the step) decides whether a payload arrives as components or as its centroid. Draw's `rcc` and `udv` had shown P1 and P2's ground for shape: one reader's readings carry the turn and not the size; three standpoints give the figure up to its size; one agreed length gives the size.
 
 ## Appendix B. Demos and computations
 
