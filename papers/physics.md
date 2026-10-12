@@ -165,7 +165,7 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   - **read from the turn** arctan x instead, it is d/u times arctan(x)(1 + x²)/x: 1 far off, π/2 at the corner,
     growing as (π/2)·x past it (for a flat thing face-on);
   - **two looks a tick apart**: x₁/(x₂ − x₁) is τ at the second look exactly, and x₂/(x₂ − x₁) is τ one tick ago. This
-    accounts for POL run 10's kick reading 8% low: at τ = 10 ticks, one tick late is 9%;
+    is POL run 10's kick reading 8% low: at τ = 10 ticks, one tick late reads it 9% low, before the cloth's slowing;
   - **holding the corner**: a reader that re-sets its unit to keep the thing at its corner turns it at d ln H/dt = 1/τ.
     Each level of the approach takes half the τ read at its start, so infinitely many levels pass before contact, in the
     finite time d₀/u (the walk's levels, in time);
@@ -173,13 +173,13 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
     across, speed in), the clock cancelling, so this needs no bridge. At its corner the pass is 1/√2 of the present
     distance; a bearing that holds still is a collision;
   - **a breadth as a baseline**: two looks from the ends of a breadth B read the convergence γ, and d = (B/2)/tan(γ/2).
-    Per unit of γ, the distance moves 1/sin γ levels:
+    Per unit of γ, ln d moves by 1/sin γ:
     - least at γ = 90°, where d = B/2, the corner of the pair (half-baseline, distance);
     - alike at d and its flip (B/2)²/d;
-    - with γ read to a step ε, a thing at a tenth of the corner's distance and one ten times past it are both read to 5
-      half-steps, at the corner to one;
-    - past the corner the error grows to x/(1 − x) on the far side (x = εd/2B), unbounded at d = 2B/ε, the baseline's
-      horizon (an amount, the step).
+    - with γ read to a step ε, a thing at a tenth of the corner's distance and one ten times past it both have five
+      times the corner's worst relative error;
+    - far past the corner the worst error is x/(1 − x) on the far side (x = εd/2B), unbounded at d = 2B/ε, the
+      baseline's horizon (an amount, the step).
 
   These are known as kinematics: Lee's τ, the navigators' constant bearing, stereo error, and surveying's right angle of
   intersection. What the run settles is which reading carries each exactly. The ratio does at every distance, the turn
