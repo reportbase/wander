@@ -1,0 +1,10 @@
+φ 0.1 e 0.9, 16 seeds, C 5 to 77.7:
+  per contact 0.06294 ± 0.00011 (predicted 0.06310, -0.26%)
+  clock 0.05532 ± 0.00016 (predicted 0.05572, -0.72%)
+  contact rate over Enskog's at the current T (with a₂), by thirds: 0.9929 ± 0.0033, 0.9958 ± 0.0029, 0.9967 ± 0.0025
+  box-scale flow R, mean by thirds: 1.22, 1.22, 1.18
+φ 0.1 e 0.7, 16 seeds, C 5 to 32.1:
+  per contact 0.16584 ± 0.00046 (predicted 0.17006, -2.48%)
+  clock 0.14222 ± 0.00077 (predicted 0.15002, -5.20%)
+  contact rate over Enskog's at the current T (with a₂), by thirds: 0.9684 ± 0.0048, 0.9727 ± 0.0054, 0.9748 ± 0.0054
+  box-scale flow R, mean by thirds: 2.04, 2.30, 2.29

@@ -1,0 +1,13 @@
+periodic W 7, μ 0, seed 5: at rest by t 126.3; floor's mean push / weight 1.000000; Z 6.195 over 277 (rattlers 0 of 277); k-cores in the bulk: 2: 277, 3: 277, 4: 274, 5: 0
+periodic W 7, μ 0, seed 6: at rest by t 82.2; floor's mean push / weight 1.000000; Z 6.158 over 265 (rattlers 0 of 265); k-cores in the bulk: 2: 265, 3: 265, 4: 262, 5: 0
+periodic W 7, μ 0, seed 7: at rest by t 92.7; floor's mean push / weight 1.000000; Z 6.168 over 274 (rattlers 0 of 274); k-cores in the bulk: 2: 274, 3: 274, 4: 270, 5: 0
+periodic W 7, μ 0, seed 8: at rest by t 105.4; floor's mean push / weight 0.999999; Z 6.214 over 271 (rattlers 0 of 271); k-cores in the bulk: 2: 271, 3: 271, 4: 269, 5: 0
+periodic W 7, μ 0.5, seed 5: at rest by t 87.8; floor's mean push / weight 1.000000; Z 4.734 over 301 (rattlers 0 of 301); k-cores in the bulk: 2: 301, 3: 301, 4: 0, 5: 0
+periodic W 7, μ 0.5, seed 6: not at rest by t 301.0; floor's mean push / weight 1.000000; Z 4.833 over 312 (rattlers 0 of 312); k-cores in the bulk: 2: 312, 3: 312, 4: 0, 5: 0
+periodic W 7, μ 0.5, seed 7: at rest by t 25.9; floor's mean push / weight 1.000013; Z 4.721 over 305 (rattlers 0 of 305); k-cores in the bulk: 2: 305, 3: 305, 4: 0, 5: 0
+periodic W 7, μ 0.5, seed 8: at rest by t 18.8; floor's mean push / weight 1.000005; Z 4.668 over 304 (rattlers 0 of 304); k-cores in the bulk: 2: 304, 3: 304, 4: 0, 5: 0
+
+P14: not killed. the floor's mean push against the weight, worst 0.0013% of 8 (within 0.05%)
+P15: not killed. frictionless Z 6.184 (6.195, 6.158, 6.168, 6.214), within 0.25 of 6
+P16: not killed. μ 0.5 Z 4.739 (4.734, 4.833, 4.721, 4.668), between 3.5 and 5.0 and at least 1 below 6.184
+(11.0 min)

@@ -1,0 +1,37 @@
+MRB run 1: 500 smooth inelastic marbles, periodic cube, no gravity; 4 seeds a condition
+per contact: −d ln T/dC over C from 5 to 5 + 3 ln(100)/(1 − e²); clock: d(T^−½)/dt over the same range; form: clock slope last third / first third
+φ 0.05 e 0.9: per contact 0.06324 (0.06299–0.06343) predicted 0.06310, 0.21%; clock 0.02425 (0.02418–0.02434) predicted 0.02431, -0.28%; form 1.001 0.997 0.996 0.978; C reached 77.50 of 77.71; R at most 2.93
+φ 0.1 e 0.95: per contact 0.03238 (0.03230–0.03252) predicted 0.03242, -0.12%; clock 0.02845 (0.02833–0.02862) predicted 0.02862, -0.61%; form 0.971 1.003 0.974 0.983; C reached 146.50 of 146.70; R at most 2.85
+φ 0.1 e 0.9: per contact 0.06320 (0.06282–0.06388) predicted 0.06310, 0.15%; clock 0.05514 (0.05436–0.05570) predicted 0.05572, -1.04%; form 0.962 0.962 0.992 1.006; C reached 77.50 of 77.71; R at most 3.07
+φ 0.1 e 0.8: per contact 0.11874 (0.11803–0.11978) predicted 0.11962, -0.74%; clock 0.10412 (0.10291–0.10551) predicted 0.10562, -1.42%; form 1.005 1.042 1.000 1.015; C reached 43.25 of 43.38; R at most 3.32
+φ 0.1 e 0.7: per contact 0.16592 (0.16326–0.16835) predicted 0.17006, -2.43%; clock 0.14220 (0.13736–0.14688) predicted 0.15002, -5.21%; form 0.957 1.034 1.126 0.918; C reached 32.00 of 32.09; R at most 3.54
+φ 0.15 e 0.9: per contact 0.06280 (0.06181–0.06352) predicted 0.06310, -0.48%; clock 0.09518 (0.09286–0.09665) predicted 0.09661, -1.48%; form 0.960 0.969 0.987 0.984; C reached 77.50 of 77.71; R at most 2.45
+φ 0.3 e 0.95 seed 1: R at most 2.14; C reached 60.00; T/T0 at the end 1.451e-1, Haff per contact 1.429e-1
+φ 0.3 e 0.95 seed 2: R at most 2.18; C reached 60.00; T/T0 at the end 1.474e-1, Haff per contact 1.429e-1
+φ 0.3 e 0.95 seed 3: R at most 2.36; C reached 60.00; T/T0 at the end 1.468e-1, Haff per contact 1.429e-1
+φ 0.3 e 0.95 seed 4: R at most 1.54; C reached 60.00; T/T0 at the end 1.430e-1, Haff per contact 1.429e-1
+   R along C (seed 1): 0:1.2 5:1.2 10:1.1 15:1.4 20:1.3 25:2.0 30:1.3 35:1.7 40:1.3 45:1.0 50:1.0 55:0.8 60:1.0
+   R along C (seed 2): 0:1.9 5:1.9 10:0.8 15:1.2 20:1.2 25:0.7 30:1.3 35:1.0 40:1.3 45:1.0 50:2.0 55:1.5 60:1.2
+   R along C (seed 3): 0:1.1 5:1.5 10:1.0 15:1.3 20:1.5 25:2.2 30:1.4 35:0.9 40:1.4 45:1.9 50:2.1 55:1.9 60:1.8
+   R along C (seed 4): 0:1.4 5:1.0 10:0.9 15:1.1 20:1.1 25:0.6 30:0.6 35:0.8 40:0.5 45:0.7 50:0.6 55:0.9 60:0.9
+φ 0.3 e 0.5 seed 1: R at most 38.22, past 20 at C 26.00; C reached 60.00; T/T0 at the end 1.642e-4, Haff per contact 2.511e-7
+φ 0.3 e 0.5 seed 2: R at most 46.58, past 20 at C 22.75; C reached 60.00; T/T0 at the end 1.943e-4, Haff per contact 2.511e-7
+φ 0.3 e 0.5 seed 3: R at most 37.52, past 20 at C 28.75; C reached 60.00; T/T0 at the end 1.118e-4, Haff per contact 2.511e-7
+φ 0.3 e 0.5 seed 4: R at most 32.85, past 20 at C 21.25; C reached 60.00; T/T0 at the end 1.313e-4, Haff per contact 2.511e-7
+   R along C (seed 1): 0:1.2 5:2.5 10:4.7 15:7.9 20:12.0 25:18.4 30:25.5 35:29.0 40:32.2 45:34.1 50:37.4 55:37.1 60:35.2
+   R along C (seed 2): 0:1.9 5:5.3 10:7.9 15:13.0 20:16.9 25:21.0 30:23.2 35:26.3 40:29.3 45:34.0 50:38.9 55:42.1 60:46.5
+   R along C (seed 3): 0:1.1 5:2.4 10:3.8 15:6.6 20:10.0 25:14.8 30:22.1 35:30.5 40:34.2 45:37.4 50:35.1 55:36.0 60:36.2
+   R along C (seed 4): 0:1.4 5:3.3 10:6.8 15:12.6 20:18.4 25:24.6 30:28.9 35:30.8 40:32.4 45:31.6 50:29.9 55:30.3 60:29.5
+melt (e = 1, C 5 to 20): contacts per marble per unit time over √T, against Enskog with Carnahan–Starling
+  φ 0.05: 0.7679 (0.75802–0.78181) Enskog 0.7699, -0.26%
+  φ 0.1: 1.7758 (1.75214–1.79513) Enskog 1.7645, 0.64%
+  φ 0.15: 3.0647 (3.00968–3.08889) Enskog 3.0592, 0.18%
+  φ 0.3: 10.0098 (9.97395–10.08029) Enskog 10.0666, -0.56%
+
+P0: not killed. melt contact rate against Enskog: φ 0.05 -0.26%, φ 0.1 0.64%, φ 0.15 0.18%, φ 0.3 -0.56% (each within 2%)
+P1: not killed. per-contact slope: φ 0.05 e 0.9 0.21%, φ 0.1 e 0.95 -0.12%, φ 0.1 e 0.9 0.15%, φ 0.1 e 0.8 -0.74%, φ 0.1 e 0.7 -2.43%, φ 0.15 e 0.9 -0.48% (each within 3%)
+P2: KILLED. clock slope and form: φ 0.05 e 0.9 -0.28%, form off ≤ 2.2%; φ 0.1 e 0.95 -0.61%, form off ≤ 2.9%; φ 0.1 e 0.9 -1.04%, form off ≤ 3.8%; φ 0.1 e 0.8 -1.42%, form off ≤ 4.2%; φ 0.1 e 0.7 -5.21%, form off ≤ 12.6%; φ 0.15 e 0.9 -1.48%, form off ≤ 4.0% (slope within 3%, form within 5%)
+P3: not killed. per-contact slopes at φ 0.05, 0.1, 0.15 spread 0.69% (within 3%); clock ratio 0.15/0.05 3.926 against n·χ's 3.973 (3.974 by the rounded table), -1.20% (within 5%)
+P4: not killed. φ 0.3: e 0.95 R at most 2.36 (below 4); e 0.5 R past 20 before C 60 in 4 of 4 seeds, collapsed first in 0 (not tested), short of 20 uncollapsed in 0
+P5: not killed. collapse guard tripped in 0 of the 28 predicted runs; the e 0.5 runs (not predicted): none collapsed
+(10 s)
