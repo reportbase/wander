@@ -224,7 +224,9 @@ Google Fonts load from outside:
   §10 is a worked example (a mountain range). Before rewriting it, check the new text against the old for anything lost.
   It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
   Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
-  (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on).
+  (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on). Later ones are
+  `plans/ofs-review-2.md` to `-4.md`, each kept as received with its response; the fourth (12 Oct, ChatGPT) gave §1
+  "One constraint, three consequences" (the situations, the corner and address/payload meet at V/H; not a theorem).
   `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
   perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
   those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry

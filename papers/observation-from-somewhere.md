@@ -104,8 +104,25 @@ as if a single observation held it. Section 3 sets out the readers in full.
   outside fixes the scale, and a fact shared between two readers supplies exactly one ratio (§9).
 - A worked example, a mountain range read from nowhere and from where the reader stands, puts the pieces together (§10).
 
-Section 11 discusses a single principle that may underlie all of these, the assumptions they rest on, and related work.
-The paper is geometry only. It makes no claim about physics, perception or the structure of spacetime.
+**One constraint, three consequences.** The five situations, the corner and the separation of address from payload are
+not three independent findings. They answer one question, what a reader can construct without the whole in hand, and
+they meet at one number, the mountain's size in thumbs, V/H. The five situations sort readers by that number: 1 and 2
+hold it, 3 and 4 lack it, and 0 has no relation for it to scale (§3.1). The corner is the one landmark of the relation
+that does not need it. Exchanging the parties leaves v = h fixed, and v = h depends on neither breadth (Proposition 1),
+so a situated reader finds the corner exactly; the view from nowhere computes it. The separation of address from
+payload says what finding it is worth. The address is exact, but the ratio of the amounts there is
+(v·V)/(h·H) = (v/h)·(V/H) (§2), and at the corner, where v/h = 1, that is V/H itself, the number the reader lacks (§3.8,
+§9). The reader knows where a reading belongs without knowing what is found there.
+
+The three are not interchangeable, and none proves another. The classification does not prove the corner, which is
+arithmetic on the flip; the corner does not determine the payload; and the separation of address from payload has its
+own proof (Theorem 6). What joins them is that each divides what a reader can establish from what it cannot assume.
+Nor does the construction make the object: the reader builds its addresses, not what is found at them. This is how the
+paper is organised, not a theorem.
+
+Section 11 takes up a conjecture of a different kind, a single principle from which the premises of §§4–7 might follow,
+together with the assumptions the results rest on and related work. The paper is geometry only. It makes no claim about
+physics, perception or the structure of spacetime.
 
 ## 2. Setting
 
