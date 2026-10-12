@@ -110,3 +110,94 @@ priors" into "the priors are the ignorance, stated once, and the core survives c
 - **(D) §11.2, "Where the conclusions do not follow":** a reading that disturbs what it reads is outside the framework.
 - **(E) §8 or §11.2 question 1:** a real reader's preferred scales set where its lay stops, not its form within range.
 - **(F) `physics.md`, not OFS:** the SI's constants as the agreed outside amounts of Proposition 8(b).
+
+### Made (12 October, SPN R217; Tom: "Yes, make the proposed edits")
+
+- (A) Theorem 6(e), "The median and the missing mean need only fairness", with its proof; the diamond added to §7.4's
+  table (0.500, 1.000, 0.976, 0.976, exact) and the means to its text; a bullet under "What does not depend on that
+  choice"; a sentence in the abstract and in the main result's bullet of the introduction.
+- (B) "The Euclidean choice" (§5): the norm reaches the readings only through the measure on directions. §11.2's
+  questions 2 and 5 made one.
+- (C) §11.1, "What is claimed, then": necessity relative to a stated ignorance, with each relaxation's alternative;
+  the introduction's last paragraph says so.
+- (D) §11.2, "Where the conclusions do not follow": a reading that disturbs what it reads.
+- (E) §11.2, question 1: a preferred scale sets where the lay stops, not its form within range.
+- (F) `papers/physics.md`: a dictionary row and an iteration note, the SI's constants as the agreed outside amounts.
+
+---
+
+### Second part, shared the same day
+
+*Tom: "essentially the pusback is that there maybe more reader situations with yet more geometries." Then Gemini's
+reply, kept as received (stray "MD" markers from the copy removed):*
+
+That is exactly the pressure point. By framing the five situations as an exhaustive binary tree—based on whether there is an h, whether V is known, and whether the system holds still—the paper invites critics to invent physical states that break those binaries, spawning new situations.
+
+If mathematicians and physicists can prove your decision tree is incomplete, they can introduce alternative geometries that don't inevitably lead to the Cauchy distribution or the circle. Here is where they will try to insert new situations:
+
+* The Superposed Situation (Quantum): You define knowledge of V as either held whole (Situation 1/2) or unknown (Situation 3/4). A quantum physicist will argue for a situation where knowledge of V is probabilistic, or where the reader is entangled with the payload. If measuring v fundamentally alters h, the geometry requires a non-commutative algebra, not a simple scalar ratio on a unit circle.
+
+* The Causally Disconnected Situation (Relativistic): Your serial reader sweeps from home to the horizon. A relativist will point out that light cones impose strict boundaries. What is the geometry of a reader when a section of the hemisphere isn't just "turned away" or waiting to be swept, but is fundamentally blocked by a causal horizon? This might require hyperbolic geometries beyond your logarithmic far-field.
+
+* The Fluctuating Thumb: Every situation in your framework assumes H (the thumb) is definitively held by the reader. Critics dealing with fundamental physical limits (like the Planck scale) will ask for the geometry of a reader whose own baseline is uncertain or fluctuating. If H is a distribution rather than a fixed scalar, setting V=H yields a different probability space entirely.
+
+* The N-Dimensional Holographic Situation: You model the sweep as a 1D relation (a turn) or a 2D sphere. If the fundamental bound of observation is a surface area (as in holographic bounds), physicists might argue the fundamental unit relation should be an area ratio, which alters how the Haar measure scales the addresses past the corner.
+
+To defend against the "infinite situations" critique, you essentially have two structural moves you can make before finalizing the draft:
+Option A: The Epistemological Shield
+Double down on the binary tree. You can argue that regardless of underlying physical weirdness (quantum superposition, relativistic frame-dragging), the act of a reader taking a measurement forces the data into one of these classical cognitive states. The geometry belongs to the address space of the reader's mind/instrument, not the universe, so the physical state of the universe cannot add new branches to the reader's logic tree.
+
+Option B: The Physical Scoping
+Explicitly scope the paper to classical, commutative observation. Acknowledge in Section 11.2 that relativistic causal bounds, quantum entanglement, and Planck-scale ruler fluctuations are valid states that break the binary tree, and position the derivation of their specific geometries as the next necessary expansion of the framework.
+
+Which defensive posture feels more aligned with where you want to take the larger theory?
+
+### Response to the second part (12 October, Claude; edit G proposed, not yet made)
+
+**The tree is exhaustive for what it asks, by construction:** three questions, each with two answers. The real pushback
+is whether other questions matter. Each of the four proposed lands in something the paper already has: the payload, the
+amounts, or a power of the reading. None of them changes the address geometry.
+
+1. **Superposed.**
+   - *Knowledge of V as a probability* is the one missing number known within bounds or as a distribution: situation 3
+     or 4, with Proposition 13 (§3.8).
+   - *Measuring that changes the object* is outside Theorem 6(a)'s premise, now said in §11.2 (edit D). It is a change
+     in what arrives, not in where it is laid.
+   - *Quantum states may be a case rather than a counterexample* (a reading, for `physics.md`). A real qubit's
+     amplitudes are a pair of unit relations on the circle: h² + v² = 1 is the normalisation, and the corner is the equal
+     superposition. Numbers from two million draws each:
+     - a Haar-random real qubit's amplitude ratio is the Cauchy (quartiles 0.414, 1.001, 2.410);
+     - a complex qubit's ratio of shares |b|²/|a|² follows the line's law (0.333, 0.998, 2.997; tail 1.02/r);
+     - its ratio of amplitudes |b|/|a| has a mean (tail as 1/r²), because its weight vanishes at the horizon, which is
+       Theorem 6(e)'s condition seen from the other side.
+2. **Causally disconnected.** A horizon that nothing crosses leaves its addresses laid and empty: payload. The
+   hyperbolic geometry of relativity is the levels' own. MOT run 3 showed rapidity is the reader's lay of celerity
+   smoothed and a boost a pan in levels, and §11.1's group is PSL(2,ℝ), the hyperbolic plane's.
+3. **The fluctuating thumb.**
+   - Readings are ratios of amounts in one unit, so H cancels from every reading (Proposition 8(a)), and "setting
+     V = H" does not change the readings' probability space.
+   - A thumb that changes between looks makes each look a reader of its own. Joining them is §9's shared unit, or
+     STC's outside amount.
+   - A thumb that wavers within a look blurs the step (§8).
+   - So it affects amounts, not the geometry.
+4. **Holographic: area ratios.** An area ratio is a power of the reading, (v/h)². Order, the corner (1² = 1), the flip
+   and the median are unchanged by any power, and the levels rescale by the exponent: two levels of area per level of
+   length, as light's two levels per level of distance (`plans/mag-plan.md`). There is no new geometry.
+
+**Posture: neither A nor B as stated.**
+- Option A's "classical cognitive states" and "the reader's mind" claim more than the paper proves, and invite the same
+  pushback one level down.
+- Option B concedes that relativity, Planck-scale fluctuation and higher dimensions break the tree, which the four
+  checks above say they do not.
+- The paper's own position is a third: the situations classify **what a reader knows of the two breadths and how it
+  holds its readings**, and are exhaustive for that. Physics changes what arrives (payload), the amounts, or the exponent
+  of a reading, and the address invariants (the corner, the flip, order, the median, no mean) survive each. One premise
+  has an honest edge, the disturbing reading, and is now scoped (edit D).
+
+**(G), proposed.** Extend §3.1's "Cases that look like a sixth reduce to these" with four entries:
+- V known as a distribution;
+- a horizon that nothing crosses;
+- a thumb that changes between looks;
+- a reading of an area or another power of the relation.
+
+Each would get one line saying where it lands.
