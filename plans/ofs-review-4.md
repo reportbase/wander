@@ -121,3 +121,21 @@ The fix is to bring the front of the paper into line with its back, not to chang
   holds for one reading as well as for a distribution.
 
 Neither makes the geometry forced; both make the address reading more than packaging.
+
+### Made (12 October, SPN R212, R213)
+
+Tom: "perhaps the reader could set V = H/2 or even just an arbitrary value, not sure that changes much"; then "if the
+reader must assign something to V, is there an optimal V assignment"; then "yes", to all of the following.
+- **(B), rewritten by that exchange:**
+  - Proposition 3(a) now requires only some assignment V = cH, and nothing in the geometry depends on c.
+  - The new Proposition 13 (§9) makes V = H the best assignment: the median of what the reader knows, √(V₋V₊) for bounds,
+    and V = H with nothing either way.
+  - The abstract, the introduction and "What V = H means" follow, along with a sentence in §3.1.
+- **(A):** the abstract and §7.2 now state the condition that the even sweep is the reader's own. "Explains" became "gives
+  a reason for", and the three parts of Theorem 6 that do not depend on the choice are listed.
+- **(C):** in §11.1, the transformations are chosen, not derived, and the principle cannot choose the circle over the
+  square.
+- **(D):** in §6 and §11.2 question 1, (S) is scale invariance of the lay's increments, assumed. §11.2 question 6 is
+  answered by Proposition 13.
+- **(E):** in §3.4, "can only construct, if it wants the true breadth", and the vantages' assignment is marked a reading.
+- **(F):** §9's new block says Propositions 9–12 are classical.

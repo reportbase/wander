@@ -236,7 +236,11 @@ Google Fonts load from outside:
   §10 is a worked example (a mountain range). Before rewriting it, check the new text against the old for anything lost.
   It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
   Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
-  (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on).
+  (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on). The fourth, an
+  adversarial read, is in `plans/ofs-review-4.md`, with six edits taken (SPN R213): the paper's front now claims what its
+  back proves (the address reading conditional on the even sweep being the reader's own; "a reason for" the missing mean,
+  not "explains"; (S) scale invariance of the lay's increments, assumed; the vantages' assignment a reading; Propositions
+  9–12 classical). Keep its verbs to what is proved.
   `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
   perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
   those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry
@@ -521,7 +525,10 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   R180 are superseded; the superseded passages stay in SPN as the record with dated notes.
 - The ratio 2 between levels: dissolved (10 October, R189; Tom: "its just logrithimic doublings. this paper does. not need
   to prove the logrithm, it is fundemental"); Appendix D and the open question are kept as the record.
-- Proposition 1.2 (11 October, R190): from the two-party relation and one chosen H, V = H is forced; the corner and the
+- Proposition 1.2 (11 October, R190; refined 12 October, R212): from the two-party relation and one chosen H, some V = cH
+  must be assigned, and nothing in the geometry depends on c (only amounts: an ellipse of axis ratio c, the point of equal
+  amounts log₂ c levels off the corner); V = H is the best assignment, the median of what the reader knows of V (the corner
+  √(V₋V₊) of any bounds; V = H with nothing either way), not a forced one (OFS Proposition 13). The corner and the
   flip follow from the cap at 1; the logarithm past the corner follows when no rung is preferred, so the reader's lay is
   1 + ln s by address count; by length reality is 2H (the in-place lay, 2 − 1/s, the reader's own); two address spaces, proportional and logarithmic,
   around the corner; the count is the LOD; H is a zoom, not an escape (a large H loses the small below one address; the
