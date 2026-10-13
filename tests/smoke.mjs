@@ -453,14 +453,17 @@ try {
   const before18 = failures.length;
   await page.goto(new URL('mountain.html', base).href, { waitUntil: 'load' });
   const mt = await page.evaluate(() => { const m = __mountain, r = m.reading(20, 10), big = m.reading(20000, 10000), e = m.equalsThumb(20, 10), w = m.walk(20, 10);
+    const vt = m.vantages(20, 10), vtBig = m.vantages(20000, 10000);
     m.set({ V: 20, d: 10, k: 1000, walk: true });
-    return { r, big, e, w, hud: document.getElementById('hud').textContent.length > 0, lay: [m.lay(0.5), m.lay(10)] }; });
+    return { r, big, e, w, vt, vtBig, hud: document.getElementById('hud').textContent.length > 0, lay: [m.lay(0.5), m.lay(10)] }; });
   if (Math.abs(mt.r.alpha - 45) > 1e-9 || mt.r.fingersOn !== 18 || Math.abs(mt.r.share - 0.5) > 1e-12 || !mt.r.atCorner ||
       Math.abs(mt.big.alpha - mt.r.alpha) > 1e-9 || mt.big.fingersOn !== mt.r.fingersOn ||
       mt.e.Vread !== 1 || Math.abs(mt.e.dRead - 0.5) > 1e-12 || mt.e.factor !== 20 || Math.abs(mt.e.doublings - Math.log2(20)) > 1e-12 ||
-      Math.abs(mt.w.d - 10) > 1e-9 || Math.abs(mt.w.V - 20) > 1e-9 || Math.abs(mt.lay[1] - (1 + Math.log(10))) > 1e-12 || mt.lay[0] !== 0.5 || !mt.hud)
+      Math.abs(mt.w.d - 10) > 1e-9 || Math.abs(mt.w.V - 20) > 1e-9 || Math.abs(mt.lay[1] - (1 + Math.log(10))) > 1e-12 || mt.lay[0] !== 0.5 || !mt.hud ||
+      Math.abs(mt.vt.limb.product - 1) > 1e-15 || Math.abs(mt.vt.limb.innerFingers - 2 / Math.PI) > 1e-3 ||
+      Math.abs(mt.vt.ends.outer - 1.1107207345) > 1e-9 || Math.abs(mt.vt.ends.product - 1) > 1e-15 || Math.abs(mt.vtBig.ends.outer - mt.vt.ends.outer) > 1e-12)
     failures.push(`[mountain.html] ${JSON.stringify(mt)}`);
-  console.log(`${failures.length === before18 ? 'ok  ' : 'FAIL'} mountain.html (ends at ${mt.r.alpha.toFixed(1)}°, ${mt.r.fingersOn} of 36 fingers on the range, the same at ×1000; mountain = thumb reads 1 mi at ${mt.e.dRead} mi, off by ${mt.e.factor}, ${mt.e.doublings.toFixed(2)} doublings; one thumb walked recovers d = ${mt.w.d.toFixed(3)}, V = ${mt.w.V.toFixed(3)})`);
+  console.log(`${failures.length === before18 ? 'ok  ' : 'FAIL'} mountain.html (ends at ${mt.r.alpha.toFixed(1)}°, ${mt.r.fingersOn} of 36 fingers on the range, the same at ×1000; mountain = thumb reads 1 mi at ${mt.e.dRead} mi, off by ${mt.e.factor}, ${mt.e.doublings.toFixed(2)} doublings; one thumb walked recovers d = ${mt.w.d.toFixed(3)}, V = ${mt.w.V.toFixed(3)}; the two vantages on the thumb π/2 × ${mt.vt.limb.innerFingers.toFixed(4)} (2/π for every direction) = 1, to the ends ${mt.vt.ends.outer.toFixed(4)} × ${mt.vt.ends.inner.toFixed(4)} = 1, the same at ×1000)`);
 
   // ── 19. play-marbles.html: a bowl of 500 (MRB part 2's engine): the pour comes to rest in the bowl with the bowl and the
   //    table carrying the weight; the arc seen ahead ends at its first contact; a throw near the rim knocks marbles out and
@@ -572,6 +575,30 @@ try {
       !/off by e\/H = 0\.250, 2\.00 levels/.test(sq.hud) || !(sq.frames > 0) || !sq.webgl)
     failures.push(`[sphere-cube.html] ${JSON.stringify({ ...sq, hud: sq.hud.slice(0, 200) })}`);
   console.log(`${failures.length === before22 ? 'ok  ' : 'FAIL'} sphere-cube.html (round trip ${sq.rt.toExponential(1)}, the address the same at every extent to ${sq.ad.toExponential(1)}, the face the largest component's; faces ${sq.faces.map(f => f.toFixed(3)).join(' ')}; a face's middle quarter ${(100 * sq.mid).toFixed(1)}% (exactly ${(100 * sq.pred).toFixed(1)}%); the wedge's faces ${sq.wedge.map(f => (100 * f).toFixed(1) + '%').join(', ')}; extent unknown, off by e/H)`);
+
+  // ── 23. paths.html: one sweep, three paths (plans/ofs-review-6.md; OFS §11.2, question 2): the share of the sweep
+  //    measured along each path matches its closed form; all three fair and ½ at the corner, parting between; the mean
+  //    climbs ρ(0)·ln 10 a tenfold on each; sin² 2θ keeps the median at the corner and has the mean 4/π; on the circle
+  //    outer × inner = 1, π/2 and 2/π at the horizon ──
+  current = 'paths.html';
+  const before23 = failures.length;
+  await page.goto(new URL('paths.html?path=line&t=22.5', base).href, { waitUntil: 'load' });
+  const pa = await page.evaluate(() => { const P = __paths, o = {};
+    o.meas = Math.max(...P.paths.flatMap(p => [5, 22.5, 45, 67.5, 85].map(t => Math.abs(P.measure(p, t) - P.b(p, t)))));
+    o.fair = Math.max(...P.paths.flatMap(p => Array.from({ length: 89 }, (_, i) => Math.abs(P.b(p, i + 1) + P.b(p, 89 - i) - 1))));
+    o.corner = P.paths.map(p => P.b(p, 45)); o.at = P.paths.map(p => P.b(p, 22.5));
+    o.dec = P.paths.map(p => P.perDecade(p, 1e8) / (P.rho0[p] * Math.LN10));
+    o.w = [P.bWeighted(45), P.tmeanWeighted(1e8) / (4 / Math.PI)];
+    const v = P.vantages(90); o.v = [v.outer, v.inner, v.product];
+    o.hud = P.hud(); P.set({ path: 'square', t: 90 }); o.hud90 = P.hud(); o.vant = P.vant(); return o; });
+  const pathsWant = [0.25, 1 - Math.SQRT1_2, (Math.SQRT2 - 1) / 2];
+  if (!(pa.meas < 1e-9) || !(pa.fair < 1e-12) || pa.corner.some(c => Math.abs(c - 0.5) > 1e-12) ||
+      pa.at.some((a, i) => Math.abs(a - pathsWant[i]) > 1e-12) || pa.dec.some(d => Math.abs(d - 1) > 1e-6) ||
+      Math.abs(pa.w[0] - 0.5) > 1e-12 || Math.abs(pa.w[1] - 1) > 1e-12 ||
+      Math.abs(pa.v[0] - Math.PI / 2) > 1e-12 || Math.abs(pa.v[1] - 2 / Math.PI) > 1e-12 || Math.abs(pa.v[2] - 1) > 1e-12 ||
+      !/line 0\.293/.test(pa.hud) || !/v\/h = ∞/.test(pa.hud90) || !/2\/π = 0\.6366/.test(pa.vant))
+    failures.push(`[paths.html] ${JSON.stringify({ ...pa, hud: pa.hud.slice(0, 160), hud90: pa.hud90.slice(0, 80) })}`);
+  console.log(`${failures.length === before23 ? 'ok  ' : 'FAIL'} paths.html (the share measured along each path its closed form to ${pa.meas.toExponential(1)}; fair, ½ at the corner on all three; at 22.5° ${pa.at.map(a => a.toFixed(3)).join(', ')}; the mean climbing ρ(0)·ln 10 a tenfold; sin² 2θ median at the corner, mean 4/π; π/2 and 2/π at the horizon)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';

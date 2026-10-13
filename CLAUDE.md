@@ -84,7 +84,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   that reaches it; "scale the world" (k multiplies V, d and the ridge) moves the blueprint and nothing in the reader's
   view (OFS Theorem 6, Proposition 8); mountain equals thumb on the reader's lay of distances (x, then 1 + ln x), read at
   0.5 H against the true 10 H, off by V/H = 20, 4.32 doublings; "walk one thumb" recovers d = H·s₂/(s₂ − s₁) and V.
-  `?V=&d=&k=&walk=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `lay`, `set`).
+  The two vantages (13 Oct, SPN R223; OFS §10 step 3): on the thumb's circle the outer reads π/2, the inner the fingers'
+  mean shadow 2/π, product 1, the thumb's true breadth; to the ends 1.1107 × 0.9003 = 1; the mountain never enters.
+  `?V=&d=&k=&walk=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `vantages`, `lay`, `set`).
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -121,6 +123,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   as a reading plane with the Cauchy shading and its middle quarter's share (38%). `?step=1..6&e=&known=0&t=&wedge=1&rays=0&turn=1`;
   hook `window.__sphereCube` (`address`, `point`, `faceOf`, `stats`, `turnBy`, `hud`, `set`, `state`, `frames`, `webgl`).
   Not in the flying page.
+- `paths.html`: **one sweep, three paths** (13 Oct 2026, Tom: "yes, proceed", to the visual from the ChatGPT exchange in
+  `plans/ofs-review-6.md`; SPN R224), a standalone page like `facing.html`. Geometry only, in unit relations. The circle,
+  the line h + v = 1 and the square's edges, each swept evenly along its own length; the reading v/h is the direction
+  alone, the same on all three; b, the share of the sweep done at θ (2θ/π, tan θ/(1 + tan θ), tan θ/2 then
+  1 − cot θ/2), agrees at home, the corner and the horizon and parts in between. Panels: the three paths with the chosen
+  one cut into 24 equal lengths and their directions; b against θ, with the circle weighted by sin² 2θ dashed; the turn
+  and its shadow on the circle (outer θ/sin θ, inner sin θ/θ, π/2 and 2/π at the horizon); the mean taking readings up to
+  S, climbing ρ(0)·ln 10 a tenfold on each path, settling at 4/π for sin² 2θ. `?path=circle|line|square&t=`; hook
+  `window.__paths` (`b`, `measure` (b along the path as chords, not the closed form), `bWeighted`, `tmean`,
+  `tmeanWeighted`, `perDecade`, `vantages`, `hud`, `set`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -224,7 +236,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -261,7 +273,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the across error is the direction's; the total least at √2·(B/2); on the circle round only at its top; off the bisector
   the radial error least inside the circle), the band and the baseline as a second zoom, the ladder, open questions. Each
   claim marked classical / exact / data / simulation / reading / illustration. It was OFS Proposition 11(d) for an
-  evening (R218) and was taken out; OFS keeps Proposition 11(a)–(c).
+  evening (R218) and was taken out; OFS keeps Proposition 11(a)–(c). Since 13 Oct its §6 works back from what parallax
+  already knows (Tom: "work backwards from known results of paralax and show the forced logical chain"; SPN R223): d =
+  a/tan p, the au measured outside and now agreed (IAU 2012), σ_d/d = σ_p/p (exactly γ/sin γ, the outer reading, π/2 on
+  the Thales circle), not inverting noisy parallaxes (Bailer-Jones 2015; Lutz and Kelker 1973), best when square; each
+  forces the next, down to one reading, two standpoints alike (the pair's V = H) and one outside amount. Its step 3 says
+  where the π/2 falls (Tom: "can parallax be used to illustrate PI/2 * 2/PI = 1"; SPN R224): the turn in γ/sin γ is the
+  pair's facing, twice its sweep angle, so π/2 comes at the pair's corner, where on OFS §10's thumb it comes at the
+  sweep's horizon; one identity on two angles, not to be conflated.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
@@ -282,29 +301,37 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
   Since 13 Oct (SPN R220, R221) it has the three-party wedge: Propositions 3(f) (the sphere only if V = V₂ = H) and 5(e)
   (the even wedge's readings the two-dimensional Cauchy, every pair at its corner, the near field a third, with its
-  converse), and "A sphere in a cube" after Proposition 8 (any size; the extent must be known for amounts).
+  converse), and "A sphere in a cube" after Proposition 8 (any size; the extent must be known for amounts). §10's step 3
+  (SPN R223) shows π/2 · 2/π = 1 on the thumb: the two vantages joined return only what the reader holds.
   Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
   (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on). The fourth, an
   adversarial read, is in `plans/ofs-review-4.md`, with six edits taken (SPN R213): the paper's front now claims what its
   back proves (the address reading conditional on the even sweep being the reader's own; "a reason for" the missing mean,
   not "explains"; (S) scale invariance of the lay's increments, assumed; the vantages' assignment a reading; Propositions
   9–12 classical). Keep its verbs to what is proved. The fifth (Gemini, on the foundational axioms) is in
-  `plans/ofs-review-5.md` with a response: the main result's core (median at the corner, no mean) holds for every
-  exchange-symmetric path and weight (circle, square and line alike; only the Cauchy's exact shape needs the circle and
+  `plans/ofs-review-5.md` with a response: the main result's core holds for every exchange-symmetric path and weight
+  (the median at the corner; no mean too where the weight does not vanish at the horizon) (circle, square and line alike; only the Cauchy's exact shape needs the circle and
   the even turn); the claim to make is necessity relative to a stated ignorance (§11.1). Edits A–F made (SPN R217):
-  Theorem 6(e) (the median and the missing mean need only fairness), the norm entering only through the measure on
+  Theorem 6(e) (the median needs only fairness, the missing mean also a weight that reaches the horizon), the norm entering only through the measure on
   directions, conditional necessity in §11.1, a disturbing reading out of scope, preferred scales setting where the lay
   stops; the SI's constants in `physics.md`. Its second part ("more reader situations with yet more geometries") is
   answered there too: each proposed situation lands in the payload, the amounts or a power of the reading; edit G made
   (four more entries in §3.1's "Cases that look like a sixth"). A comment from Grok (an empirical defense from ordinary
-  perception and instruments) is recorded there and not taken: real instruments use several weights.
+  perception and instruments) is recorded there and not taken: real instruments use several weights. The sixth (ChatGPT,
+  13 Oct, "one sweep, two readers") is in `plans/ofs-review-6.md` with responses (SPN R224): its bounded reader a change
+  of units unless the shadow is named, its corner the horizon, its question open question 2, answered by three paths;
+  it caught the dropped horizon condition. Made: the three-path table in OFS §11.2, question 2 (circle, line, square
+  agreeing at home, the corner and the horizon, parting between; none with a mean; sin² 2θ, fair but vanishing at the
+  horizon, with the mean 4/π), checked exactly in `ofs/paths.py` (Q1–Q5; run 1's Q3 killed by my set-up, run 2 not),
+  and `paths.html`.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
   nearest prior reading; Leonard 2011 for §11.1; Drory 2015 against Jaynes, bearing on question 2). Since 13 Oct (Tom:
   "ok, cite the prior work in OFS"; SPN R222) they are cited, each rechecked first (the plan's "Cited" table, with the
   corrections found): OFS §7.8 for Theorem 6 and Proposition 5, §9 for Propositions 8, 9, 11 and 14, §11.1, §11.3, and
-  Drory answered in §11.2 question 2 (the selection is a choice; the median at the corner and the missing mean survive it).
+  Drory answered in §11.2 question 2 (the selection is a choice; the median at the corner survives it, and the missing
+  mean too where the weight does not vanish at the horizon).
   `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
   perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
   those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry
@@ -530,7 +557,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   of sight the error is the direction's, falling with distance; the total least at d = √2·(B/2); on the circle the error
   round only at its top (aspect cot(φ/2)); off the bisector the radial error least inside the circle (P8–P10 not killed).
   Corrections recorded under run 2: "doubling per level" only far off; the stars' presets off by 2 (p = γ/2). Briefly
-  OFS Proposition 11(d) (SPN R218), then moved to `papers/parallax.md` (R219).
+  OFS Proposition 11(d) (SPN R218), then moved to `papers/parallax.md` (R219). Run 4 (exact; SPN R223), working back
+  from known results: γ(d) + γ(a²/d) = π (P11); (σ_d/d)/(σ_p/p) = γ/sin γ, π/2 at the corner, 1 far off (P12); the round
+  error at the corner needs σ₁ = σ₂, the depth's corner does not (P13); a noisy parallax's inverse has no mean and keeps
+  its median, 16% of readings at or below zero at the band's edge (P14); the two parsecs differ by a·ε/3 = 242 km (P15).
   `wdg-plan.md` (+ `wdg/wdg.py`, 13 Oct; Tom: "the unit sphere could point every address in the universe", then "but that
   is the unsituated readers sphere, he would have to know the size if the universe. the situated reader has to sweep and
   set V = V2 = H. and create the sweep wedge using the cauchy"; SPN R220, R221): exact (mpmath). The even wedge's readings
@@ -705,7 +735,9 @@ In short:
   17. **pool-infinite.html:** the books balance through 2 s and a pan, the window holds the world's density, the work for a world
       16 times wider within 10%, and zoomed out the window stops growing.
   18. **mountain.html:** the range's ends at 45°, 18 of 36 fingers on it, the same at a thousand times the scale; mountain
-      equals thumb reads 1 mi at 0.5 mi, off by 20, log₂ 20 doublings; one thumb walked recovers d = 10 and V = 20.
+      equals thumb reads 1 mi at 0.5 mi, off by 20, log₂ 20 doublings; one thumb walked recovers d = 10 and V = 20; the
+      two vantages on the thumb π/2 × 2/π = 1 (the 36 fingers' mean shadow within 0.001 of 2/π), to the ends at 45°
+      1.1107 × 0.9003 = 1, the same at a thousand times the scale.
 
   19. **play-marbles.html:** the pour of 500 at rest in the bowl, the bowl and table carrying the weight within 1%; the arc seen
       ahead ends at its first contact; a throw near the rim knocks marbles out and is heard (glass, bowl, felt); the pull
@@ -721,6 +753,9 @@ In short:
       e = 10⁻³, ½ and 1, the address the same at every extent, the face its largest component's; the even sphere gives each
       face a sixth, a face's middle quarter 38%, the wedge's faces a third each; with the extent unknown the readout says
       off by e/H; WebGL drew frames (three.js served from `node_modules` in place of the CDN).
+  23. **paths.html:** the share of the sweep measured along each path (as chords) is its closed form; all three fair and ½
+      at the corner, 0.250, 0.293, 0.207 at 22.5°; the mean climbing ρ(0)·ln 10 a tenfold on each; sin² 2θ with its
+      median at the corner and the mean 4/π; π/2 and 2/π at the horizon, product 1; v/h = ∞ at 90°.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

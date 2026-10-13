@@ -115,6 +115,11 @@ bodies are pictures. They are never evidence here.
   the depth is parallax's and has the corner; the error across the line of sight is the direction's and falls with
   distance; both together are least at d = √2·(B/2); on the circle the error is round only at its top; off the bisector
   the radial error is least inside the circle. Parallax is kept, like the inverse square, as a calibration case.
+- 13 October: parallax worked back from what it already knows (`papers/parallax.md` §6; PXC run 4; SPN R223). The
+  astronomers' rule that the relative distance error equals the relative parallax error is the far-field limit of the
+  exact ratio γ/sin γ, the outer reading of the parallax angle (π/2 on the Thales circle, parts in 10¹¹ off 1 at 1 pc);
+  the practice of inferring distances rather than inverting noisy parallaxes (Bailer-Jones 2015) is the flip's missing
+  mean with the median kept; the au, measured outside the parallaxes and now fixed by the IAU, is the one outside amount.
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -543,7 +548,7 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
 - **A calibration as one shift, on real data** (from STC). A published parallax zero-point, the instrument's own scale
   error, should appear as one common shift in levels across a catalogue's distances, the same for every star linked to
   it, and should not shrink with the number of stars. The archives that hold it (ESA, VizieR) are blocked here. (Also
-  `papers/parallax.md` §8.)
+  `papers/parallax.md` §9.)
 - **One dimension against two.** ISQ's reading separates an angular size (falling one level per level of distance) from
   its square, the light (two levels). Stars with measured angular diameters (interferometry) and parallaxes would test
   the one-level half directly.

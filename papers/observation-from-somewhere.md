@@ -112,8 +112,8 @@ as if a single observation held it. Section 3 sets out the readers in full.
 - **Main result.** Sweeping the circle evenly from home yields the Cauchy distribution, and the Cauchy is the reader's
   addresses, not its payload. Whatever is met in each direction cancels from the reading. Order survives every change of
   payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7). The median at the
-  corner and the missing mean need only that the sweep treat the two parties alike; the circle and the even turn give
-  the Cauchy's exact shape (§7.2).
+  corner needs only that the sweep treat the two parties alike, and the missing mean only that, besides, its weight not
+  vanish at the horizon; the circle and the even turn give the Cauchy's exact shape (§7.2).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
   outside fixes the scale, and a fact shared between two readers supplies exactly one ratio. The best estimate of the
@@ -910,7 +910,7 @@ if f is affine on the smallest interval containing X.
 (d) *The Cauchy is an address law.* Over one facing its median is v/h = 1, the corner, and its quartiles are √2 − 1 and
 √2 + 1, a flip pair. Its mean does not exist: ∫₀^M x·2/(π(1 + x²)) dx = (1/π)·ln(1 + M²), which grows without bound.
 
-(e) *The median and the missing mean need only fairness.* Let the sweep follow any path from all of h to all of v, with
+(e) *The median needs only fairness, and the missing mean a weight that reaches the horizon.* Let the sweep follow any path from all of h to all of v, with
 any weight, both unchanged by exchanging the two parties. Then the readings' law is unchanged by the flip and its
 median is the corner. If moreover the weight gives h a density bounded away from 0 near the horizon, the mean does not
 exist. The even turn on the circle is the case that gives the Cauchy of (d).
@@ -1430,22 +1430,32 @@ true width, and no one stands anywhere in it.
    not why. With fingers spread evenly over the half-turn, the range takes exactly the middle half of them, between the
    Cauchy's quartiles, which are its corners (§7.3), and the median finger points at its middle. On each finger the ring is the ridge's elevation
    reading, and together they give the range's skyline, up to scale. The far slopes are hidden, rings behind rings.
-3. *What it cannot read.* A range 20 miles wide at 10 miles, 2 miles wide at 1 or 2,000 miles wide at 1,000 gives the
+3. *The two vantages, on the thumb.* The one breadth the reader holds truly is its thumb, and the two situated vantages
+   of §3.4 read it from the reader's own turn. Each facing side of the half-turn is a quarter turn, from home to the
+   limb, where a finger runs parallel to the range and never meets it. On the thumb's circle that quarter turn is an arc
+   of π/2 thumbs, and its shadow on the line across the view is exactly 1 thumb. Taken in at once, the outer reading,
+   the turn over its shadow, is π/2. Swept one finger at a time, the inner reading, the shadow over the turn, is 2/π: the
+   fingers' mean shadow (0.6368 with 36 fingers). Their product is 1, the thumb's true breadth, which neither vantage
+   reads alone. Out to the range's ends, at 45°, the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, the
+   row of §3.4 at 45°, and their product is 1 again. None of this involves the mountain: a range 2 miles wide at 1 mile
+   gives the same fingers and the same products. Joined, the two vantages return the true breadth only of what the
+   reader holds; the mountain's must be constructed (step 6).
+4. *What it cannot read.* A range 20 miles wide at 10 miles, 2 miles wide at 1 or 2,000 miles wide at 1,000 gives the
    same fingers and the same rings. The reach cancels from every reading (Theorem 6).
-4. *Mountain equals thumb.* Not knowing the mountain's size, the reader sets V = H: it takes the range to be one thumb,
+5. *Mountain equals thumb.* Not knowing the mountain's size, the reader sets V = H: it takes the range to be one thumb,
    1 mile, wide, and the width-to-distance reading of 2 then puts it half a mile away. Every amount is off by V/H = 20,
    the number of thumbs the mountain really is, by the same factor on both sides of the
    corner. In levels, the reader places the range at 0.5 H, inside its near field, when it is truly at 10 H, 3.3
    doublings out in the far field: a rigid shift of log₂ 20 ≈ 4.32 levels, with the pattern of readings untouched. This
    is the one number of §3.8.
-5. *Constructing the truth.* A second standpoint at a known baseline closes the gap. Walk one H, a mile, toward the
+6. *Constructing the truth.* A second standpoint at a known baseline closes the gap. Walk one H, a mile, toward the
    range: its half-angle grows from 45° to 48.0°, the reading s from 1 to 10/9. Then d = H·s₂/(s₂ − s₁) = 10 miles and
    V = 2·s₁·d = 20 miles. The walk is where an amount enters: the reader's own breadth, used as a baseline. The true
    width is constructed from two standpoints and observed from neither. Once d is known, the range sits at
    1 + ln 10 ≈ 3.30 on the logarithmic lay and at 2 − 1/10 = 1.9 H on the in-place lay, inside the reader's 2H.
 
 What is the same for every reader, and exact: the fingers, the corner at the range's ends, the range's share of the
-Cauchy, and the skyline's shape. What belongs to the payload: the 10 and the 20. The view from nowhere has them and no
+Cauchy, the skyline's shape, and the two vantages' readings of the thumb, whose product is 1. What belongs to the payload: the 10 and the 20. The view from nowhere has them and no
 standpoint; the situated reader has them only by construction, and until then it is off by one factor, which is one
 shift in levels.
 
@@ -1501,8 +1511,8 @@ logarithm past the corner (rescaling). Each relaxation gives a named alternative
   intact (Theorem 6(e));
 - a preferred scale gives a lay that stops there (§8, §11.2 question 1).
 
-The main result's core, order surviving and sums failing, with the median at the corner and no mean, needs only the
-first of the three.
+The main result's core, order surviving and sums failing, with the median at the corner, needs only the first of the
+three; the missing mean needs besides that the weight not vanish at the horizon (Theorem 6(e)).
 
 ### 11.2 Assumptions and open questions
 
@@ -1521,7 +1531,26 @@ first of the three.
    turns, rescaling and shifts, can be imposed in different ways, and give different measures, depending on how the
    random selection is made. We grant it. Which selection the reader makes, the even turn, is a choice (§11.1), and
    symmetry alone does not make it. What the framework adds is that the core of the main result survives the choice:
-   any selection that treats the two parties alike puts the median at the corner and leaves no mean.
+   any selection that treats the two parties alike puts the median at the corner, and leaves no mean if its weight
+   does not vanish at the horizon (Theorem 6(e)).
+
+   Three paths from all of h to all of v show what that leaves free. Sweep each evenly along its own length, and write
+   b for the share of the sweep done when the direction θ is reached:
+
+   | path, swept evenly along its length | b | at 22.5° | at the corner, 45° | at 67.5° | the mean below s, per tenfold of s |
+   |---|---|---|---|---|---|
+   | the circle, h² + v² = 1 | 2θ/π | 1/4 | 1/2 | 3/4 | (2/π)·ln 10 ≈ 1.47 |
+   | the line, h + v = 1 | tan θ/(1 + tan θ) | 1 − 1/√2 ≈ 0.293 | 1/2 | 1/√2 ≈ 0.707 | ln 10 ≈ 2.30 |
+   | the square's edges, the larger of h and v at 1 | tan θ/2, then 1 − cot θ/2 | (√2 − 1)/2 ≈ 0.207 | 1/2 | (3 − √2)/2 ≈ 0.793 | (ln 10)/2 ≈ 1.15 |
+
+   Each has b(θ) + b(90° − θ) = 1. They agree at home (0), at the corner (½) and at the horizon (1), and part in
+   between. So the two ends, the flip and fairness fix the corner and the median, and leave the scale between them
+   free. Only the circle is even in the turn, and the even turn is what gives b = 2θ/π, the Cauchy's exact shape and
+   the factor 2/π: the premise selects the geometry, and classical geometry supplies the factor. None of the three has
+   a mean. The mean of the readings below s grows, far out, by a fixed amount each time s grows tenfold (the last
+   column), because each weight reaches the horizon. The horizon condition does real work: the circle weighted by
+   sin² 2θ also treats the two parties alike and keeps its median at the corner, but it vanishes at home and at the
+   horizon, and its readings have a mean, 4/π.
 3. *No measure on a level.* Is there a principled reason a level could not carry a measure before anything arrives?
 4. *Fairness.* Proposition 2(b) needs the reading to treat both sides alike although the reader's knowledge does not.
    Is that more than a choice?

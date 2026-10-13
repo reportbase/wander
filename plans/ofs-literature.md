@@ -197,5 +197,6 @@ beyond Knight and McCullagh, Koenderink 1984, Portugal and Svaiter 2011, Koenker
 Massimi, Gibson, Luneburg, Poincaré. They bear on the working papers more than on OFS's claims.
 
 Drory answered in OFS §11.2, question 2: the selection (the even turn) is a choice, and symmetry alone does not make it;
-the core of the main result, the median at the corner and no mean, survives any selection fair to the two parties
-(Theorem 6(e)).
+the median at the corner survives any selection fair to the two parties, and the missing mean any such selection whose
+weight does not vanish at the horizon (Theorem 6(e)). (*Corrected* 13 October: the first wording dropped the horizon
+condition.)
