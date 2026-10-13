@@ -23,6 +23,10 @@
     it at H·d/V. Every amount is off by V/H, the number of thumbs the mountain really is: log2(V/H) doublings.
     Walk one thumb: from d − H the half-width reads s2 = (V/2)/(d − H); with s1 = (V/2)/d, d = H·s2/(s2 − s1), V = 2·s1·d.
     The lay of distances (in thumbs): x inside the corner (x ≤ 1), 1 + ln x past it.
+    The two vantages (OFS §3.4, §10 step 3; Tom, 13 October: "how does the worlked example show the PI/2 * 2/PI = 1", then
+    "yes"): on the thumb's own circle a quarter turn is an arc of π/2 thumbs over a shadow of 1; outer (all fingers at
+    once) π/2, inner (one at a time, the fingers' mean shadow) 2/π, product 1, the thumb's true breadth. To the ends, at
+    45°, 1.1107 × 0.9003 = 1. The mountain never enters: the vantages joined return only what the reader holds.
     Links: ?V=20&d=10&k=1&walk=1. Test hook: window.__mountain.
     -->
     <style>
@@ -115,6 +119,15 @@
         const s1 = (V / 2) / d, s2 = (V / 2) / (d - H), dRec = H * s2 / (s2 - s1);
         return { s1, s2, a1: Math.atan(s1) / D, a2: Math.atan(s2) / D, d: dRec, V: 2 * s1 * dRec };
     }
+    // the two situated vantages of OFS §3.4, read on the thumb's own circle: the outer (all fingers at once) is the turn
+    // over its shadow, the inner (one finger at a time) the shadow over the turn; joined, the thumb's true breadth, 1
+    function vantages(V, d) {
+        const side = fingers().filter(t => t > 0), meanShadow = side.reduce((a, t) => a + Math.sin(t * D), 0) / side.length;
+        const th = Math.atan((V / 2) / d);                                       // the range's ends
+        return { limb: { outer: Math.PI / 2, inner: 2 / Math.PI, product: (Math.PI / 2) * (2 / Math.PI),
+                         innerFingers: meanShadow, fingers: side.length },
+                 ends: { deg: th / D, outer: th / Math.sin(th), inner: Math.sin(th) / th, product: (th / Math.sin(th)) * (Math.sin(th) / th) } };
+    }
     const lay = x => x <= 1 ? x : 1 + Math.log(x);                              // proportion, then one step per doubling
     const fingers = () => Array.from({ length: FINGERS }, (_, i) => -90 + 180 * (i + 0.5) / FINGERS);
     // the ridge: heights as a share of the range's width, so it scales with the world
@@ -136,7 +149,7 @@
     const fmt = x => x >= 1e4 || x < 0.01 ? x.toExponential(2) : x >= 100 ? x.toFixed(0) : x.toFixed(2);
 
     function draw() {
-        const Vt = V * k, dt = d * k, r = reading(Vt, dt), e = equalsThumb(Vt, dt), w = walked ? walk(Vt, dt) : null;
+        const Vt = V * k, dt = d * k, r = reading(Vt, dt), e = equalsThumb(Vt, dt), w = walked ? walk(Vt, dt) : null, vt = vantages(Vt, dt);
         $('Vo').textContent = `${fmt(Vt)} mi`; $('do').textContent = `${fmt(dt)} mi`; $('ko').textContent = `×${fmt(k)}`;
         // ── from nowhere: the blueprint ──
         let [g, W, Hc] = fit($('plan'));
@@ -213,6 +226,7 @@
             `from nowhere: thumb H = 1 mi, mountain V = ${fmt(Vt)} mi, distance d = ${fmt(dt)} mi`,
             `  pairs: half-width/distance ${r.endsVH.toFixed(3)}${r.atCorner ? ' (at its corner)' : ''}; width/distance ${r.widthToDistance.toFixed(3)}; distance/thumb ${fmt(dt / H)} (${Math.log2(dt / H).toFixed(2)} doublings); mountain/thumb ${fmt(Vt / H)} (${e.doublings.toFixed(2)} doublings)`,
             `from the reader: ends at v/h = ±${r.endsVH.toFixed(3)} (±${r.alpha.toFixed(1)}°); ${r.fingersOn} of ${FINGERS} fingers on the range, share ${r.share.toFixed(3)}; the same at every scale`,
+            `the two vantages, on the thumb: outer (all fingers at once) π/2 = ${vt.limb.outer.toFixed(4)}, inner (one at a time, the fingers' mean shadow) ${vt.limb.innerFingers.toFixed(4)} for ${2 * vt.limb.fingers} fingers (2/π = ${vt.limb.inner.toFixed(4)}): product 1, the thumb's true breadth; to the ends (${vt.ends.deg.toFixed(1)}°) ${vt.ends.outer.toFixed(4)} × ${vt.ends.inner.toFixed(4)} = 1; the mountain never enters`,
             `mountain equals thumb: read ${e.Vread} mi wide at ${fmt(e.dRead)} mi; truly ${fmt(Vt)} at ${fmt(dt)}: off by V/H = ${fmt(e.factor)}, ${e.doublings.toFixed(2)} doublings, the same on both sides of the corner`,
             w ? `walked one thumb: half-angle ${w.a1.toFixed(1)}° → ${w.a2.toFixed(1)}°, s ${w.s1.toFixed(3)} → ${w.s2.toFixed(3)}; d = H·s₂/(s₂ − s₁) = ${fmt(w.d)} mi, V = 2·s₁·d = ${fmt(w.V)} mi`
               : (walked ? 'too near to walk a whole thumb toward it' : 'walk one thumb toward the range to construct the true distance and width')];
@@ -234,7 +248,7 @@
     walked = q.get('walk') === '1';
     sync(); draw();
 
-    window.__mountain = { reading, equalsThumb, walk, lay, elevation, fingers, H,
+    window.__mountain = { reading, equalsThumb, walk, vantages, lay, elevation, fingers, H,
         state: () => ({ V: V * k, d: d * k, k, walked }),
         set: o => { if (o.V) V = o.V; if (o.d) d = o.d; if (o.k) k = o.k; walked = !!o.walk; sync(); draw(); } };
 })();

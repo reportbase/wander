@@ -1430,22 +1430,32 @@ true width, and no one stands anywhere in it.
    not why. With fingers spread evenly over the half-turn, the range takes exactly the middle half of them, between the
    Cauchy's quartiles, which are its corners (§7.3), and the median finger points at its middle. On each finger the ring is the ridge's elevation
    reading, and together they give the range's skyline, up to scale. The far slopes are hidden, rings behind rings.
-3. *What it cannot read.* A range 20 miles wide at 10 miles, 2 miles wide at 1 or 2,000 miles wide at 1,000 gives the
+3. *The two vantages, on the thumb.* The one breadth the reader holds truly is its thumb, and the two situated vantages
+   of §3.4 read it from the reader's own turn. Each facing side of the half-turn is a quarter turn, from home to the
+   limb, where a finger runs parallel to the range and never meets it. On the thumb's circle that quarter turn is an arc
+   of π/2 thumbs, and its shadow on the line across the view is exactly 1 thumb. Taken in at once, the outer reading,
+   the turn over its shadow, is π/2. Swept one finger at a time, the inner reading, the shadow over the turn, is 2/π: the
+   fingers' mean shadow (0.6368 with 36 fingers). Their product is 1, the thumb's true breadth, which neither vantage
+   reads alone. Out to the range's ends, at 45°, the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, the
+   row of §3.4 at 45°, and their product is 1 again. None of this involves the mountain: a range 2 miles wide at 1 mile
+   gives the same fingers and the same products. Joined, the two vantages return the true breadth only of what the
+   reader holds; the mountain's must be constructed (step 6).
+4. *What it cannot read.* A range 20 miles wide at 10 miles, 2 miles wide at 1 or 2,000 miles wide at 1,000 gives the
    same fingers and the same rings. The reach cancels from every reading (Theorem 6).
-4. *Mountain equals thumb.* Not knowing the mountain's size, the reader sets V = H: it takes the range to be one thumb,
+5. *Mountain equals thumb.* Not knowing the mountain's size, the reader sets V = H: it takes the range to be one thumb,
    1 mile, wide, and the width-to-distance reading of 2 then puts it half a mile away. Every amount is off by V/H = 20,
    the number of thumbs the mountain really is, by the same factor on both sides of the
    corner. In levels, the reader places the range at 0.5 H, inside its near field, when it is truly at 10 H, 3.3
    doublings out in the far field: a rigid shift of log₂ 20 ≈ 4.32 levels, with the pattern of readings untouched. This
    is the one number of §3.8.
-5. *Constructing the truth.* A second standpoint at a known baseline closes the gap. Walk one H, a mile, toward the
+6. *Constructing the truth.* A second standpoint at a known baseline closes the gap. Walk one H, a mile, toward the
    range: its half-angle grows from 45° to 48.0°, the reading s from 1 to 10/9. Then d = H·s₂/(s₂ − s₁) = 10 miles and
    V = 2·s₁·d = 20 miles. The walk is where an amount enters: the reader's own breadth, used as a baseline. The true
    width is constructed from two standpoints and observed from neither. Once d is known, the range sits at
    1 + ln 10 ≈ 3.30 on the logarithmic lay and at 2 − 1/10 = 1.9 H on the in-place lay, inside the reader's 2H.
 
 What is the same for every reader, and exact: the fingers, the corner at the range's ends, the range's share of the
-Cauchy, and the skyline's shape. What belongs to the payload: the 10 and the 20. The view from nowhere has them and no
+Cauchy, the skyline's shape, and the two vantages' readings of the thumb, whose product is 1. What belongs to the payload: the 10 and the 20. The view from nowhere has them and no
 standpoint; the situated reader has them only by construction, and until then it is off by one factor, which is one
 shift in levels.
 

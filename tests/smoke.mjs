@@ -453,14 +453,17 @@ try {
   const before18 = failures.length;
   await page.goto(new URL('mountain.html', base).href, { waitUntil: 'load' });
   const mt = await page.evaluate(() => { const m = __mountain, r = m.reading(20, 10), big = m.reading(20000, 10000), e = m.equalsThumb(20, 10), w = m.walk(20, 10);
+    const vt = m.vantages(20, 10), vtBig = m.vantages(20000, 10000);
     m.set({ V: 20, d: 10, k: 1000, walk: true });
-    return { r, big, e, w, hud: document.getElementById('hud').textContent.length > 0, lay: [m.lay(0.5), m.lay(10)] }; });
+    return { r, big, e, w, vt, vtBig, hud: document.getElementById('hud').textContent.length > 0, lay: [m.lay(0.5), m.lay(10)] }; });
   if (Math.abs(mt.r.alpha - 45) > 1e-9 || mt.r.fingersOn !== 18 || Math.abs(mt.r.share - 0.5) > 1e-12 || !mt.r.atCorner ||
       Math.abs(mt.big.alpha - mt.r.alpha) > 1e-9 || mt.big.fingersOn !== mt.r.fingersOn ||
       mt.e.Vread !== 1 || Math.abs(mt.e.dRead - 0.5) > 1e-12 || mt.e.factor !== 20 || Math.abs(mt.e.doublings - Math.log2(20)) > 1e-12 ||
-      Math.abs(mt.w.d - 10) > 1e-9 || Math.abs(mt.w.V - 20) > 1e-9 || Math.abs(mt.lay[1] - (1 + Math.log(10))) > 1e-12 || mt.lay[0] !== 0.5 || !mt.hud)
+      Math.abs(mt.w.d - 10) > 1e-9 || Math.abs(mt.w.V - 20) > 1e-9 || Math.abs(mt.lay[1] - (1 + Math.log(10))) > 1e-12 || mt.lay[0] !== 0.5 || !mt.hud ||
+      Math.abs(mt.vt.limb.product - 1) > 1e-15 || Math.abs(mt.vt.limb.innerFingers - 2 / Math.PI) > 1e-3 ||
+      Math.abs(mt.vt.ends.outer - 1.1107207345) > 1e-9 || Math.abs(mt.vt.ends.product - 1) > 1e-15 || Math.abs(mt.vtBig.ends.outer - mt.vt.ends.outer) > 1e-12)
     failures.push(`[mountain.html] ${JSON.stringify(mt)}`);
-  console.log(`${failures.length === before18 ? 'ok  ' : 'FAIL'} mountain.html (ends at ${mt.r.alpha.toFixed(1)}°, ${mt.r.fingersOn} of 36 fingers on the range, the same at ×1000; mountain = thumb reads 1 mi at ${mt.e.dRead} mi, off by ${mt.e.factor}, ${mt.e.doublings.toFixed(2)} doublings; one thumb walked recovers d = ${mt.w.d.toFixed(3)}, V = ${mt.w.V.toFixed(3)})`);
+  console.log(`${failures.length === before18 ? 'ok  ' : 'FAIL'} mountain.html (ends at ${mt.r.alpha.toFixed(1)}°, ${mt.r.fingersOn} of 36 fingers on the range, the same at ×1000; mountain = thumb reads 1 mi at ${mt.e.dRead} mi, off by ${mt.e.factor}, ${mt.e.doublings.toFixed(2)} doublings; one thumb walked recovers d = ${mt.w.d.toFixed(3)}, V = ${mt.w.V.toFixed(3)}; the two vantages on the thumb π/2 × ${mt.vt.limb.innerFingers.toFixed(4)} (2/π for every direction) = 1, to the ends ${mt.vt.ends.outer.toFixed(4)} × ${mt.vt.ends.inner.toFixed(4)} = 1, the same at ×1000)`);
 
   // ── 19. play-marbles.html: a bowl of 500 (MRB part 2's engine): the pour comes to rest in the bowl with the bowl and the
   //    table carrying the weight; the arc seen ahead ends at its first contact; a throw near the rim knocks marbles out and
