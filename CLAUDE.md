@@ -96,6 +96,15 @@ Google Fonts load from outside:
   εx²/H past it). Worlds: nested clusters at every decade, the numbers 1–100, 200 scattered sizes; click a size to put it
   at the corner. `?H=&n=&L=&lay=inplace&world=even|scatter`; hook `window.__zoom` (`lay`, `addr`, `held`, `perLevel`,
   `detail`, `read`, `set`). Not in the flying page.
+- `parallax.html`: **parallax from the corner** (13 Oct 2026, Tom: "show how parallax and situated observation are both needed. explore parallax from the perspecive of the corner."), a standalone page like
+  `zoom.html`, PXC on one screen. Two standpoints A and B a baseline apart, each reading directions only; the plane laid
+  as the reader lays it (by direction from the middle, distance in half-baselines, in proportion inside the corner circle
+  and 1 + ln past it, H at the half-baseline), so parallax's corner, the Thales circle, is the reader's corner circle.
+  Each target triangulated thirty times with directions off by the step ε: held (teal), stretched (gold), lost to a ray
+  past the band's far edge (red). Modes: A alone or B alone (rays from the standpoint, no distance), both with the
+  baseline. The bell: ε·cosh of the levels and the error's stretch d/(B/2), round at the corner. Presets for scale (two
+  eyes; Earth's orbit with Hipparcos's 1 mas or Gaia's 20 µas). `?mode=A|B|both&preset=eyes|hipparcos|gaia&eps=`; hook
+  `window.__parallax` (`relErr`, `aspect`, `band`, `farEdge`, `triangulate`, `counts`, `set`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -199,7 +208,7 @@ Google Fonts load from outside:
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, H is a zoom, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -480,6 +489,12 @@ Google Fonts load from outside:
   the outside length's 1% throughout, the landmarks' errors 99% correlated by 4,096); the rung carries 0.0150 whatever
   the number of far members (P2–P7 not killed). P1 killed by my estimator: least squares on noisy bearing lines leaves a
   floor more readings do not remove. Statistical against systematic error is address against payload.
+  `pxc-plan.md` (+ `pxc/`, 13 Oct; Tom: "show how parallax and situated observation are both needed. explore parallax
+  from the perspecive of the corner"): the pair (half-baseline, distance), its corner the Thales circle. Exact (mpmath,
+  50 digits): the relative error per unit angle cosh(ln k), sin γ = sech(ln k), the parallel reader's bell (P1, P2); the
+  band acosh(1/ε)/ln 2 levels each side, far edge d ≈ B/ε (P3). P4 killed by my measure (distance from the middle takes in
+  the error along the baseline); run 2: depth follows the bell, the error round at the corner and stretched by d/(B/2)
+  elsewhere (P5–P7 not killed). Past the band a point is a ray: parallax needs situated observation and returns to it.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -650,6 +665,9 @@ In short:
       n = 32, L = 12); doubling H shifts the levels exactly; addresses per level 4, 8, 16 inward, n·ln 2 past the corner,
       the in-place lay mirrored (4, 8, 16, 16, 8, 4); a cluster told apart at the corner and lost into home under a large
       H; detail absolute inside the corner, relative past it.
+  21. **parallax.html:** the error per step 1 at the corner and 2.125 two levels either side, the same at k and 1/k; the
+      band 10.966 levels each side at ε = 10⁻³; the error round at the corner, stretched by d/(B/2) elsewhere; one reader
+      alone holding only rays.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

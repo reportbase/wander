@@ -517,6 +517,24 @@ try {
     failures.push(`[zoom.html] ${JSON.stringify(zm)}`);
   console.log(`${failures.length === before20 ? 'ok  ' : 'FAIL'} zoom.html (held ${zm.widths[0][0]} levels on the reader's lay and ${zm.widths[0][1]} on the in-place lay at every H; doubling H shifts the levels exactly; addresses per level ${zm.reader.slice(0, 3).join(', ')} inward, ${zm.reader[3].toFixed(1)} a level past the corner, the in-place lay ${zm.inplace.join(', ')}; a cluster told apart at the corner and lost into home under H 100 times larger)`);
 
+  // ── 21. parallax.html: parallax from the corner (PXC): the error per step least and round at the corner, the same at k
+  //    and 1/k, the band acosh(1/ε)/ln 2 levels each side, the error stretched by d/(B/2) along the line of sight, one
+  //    reader alone holding only rays ──
+  current = 'parallax.html';
+  const before21 = failures.length;
+  await page.goto(new URL('parallax.html', base).href, { waitUntil: 'load' });
+  const px = await page.evaluate(() => { const p = __parallax, o = {};
+    o.r1 = p.relErr(1, 1e-3); o.r4 = [p.relErr(4, 1e-3), p.relErr(0.25, 1e-3)]; o.band = p.band(1e-3);
+    const c = p.triangulate(0, 1, 1e-6, 4000, 7), f = p.triangulate(0, 8, 1e-6, 4000, 8), nr = p.triangulate(0, 0.125, 1e-6, 4000, 9);
+    o.aspect = [c.sAlong / c.sAcross, f.sAlong / f.sAcross, nr.sAlong / nr.sAcross];
+    o.both = p.counts(); p.set({ mode: 'A' }); o.alone = p.counts(); p.set({ mode: 'both', preset: 'eyes' });
+    o.hud = document.getElementById('hud').textContent.length > 0; return o; });
+  if (Math.abs(px.r1 - 1e-3) > 1e-15 || Math.abs(px.r4[0] - 2.125e-3) > 1e-15 || px.r4[0] !== px.r4[1] ||
+      Math.abs(px.band - 10.965783924) > 1e-8 || Math.abs(px.aspect[0] - 1) > 0.1 || Math.abs(px.aspect[1] / 8 - 1) > 0.1 ||
+      Math.abs(px.aspect[2] / 0.125 - 1) > 0.1 || !(px.both.crisp > 0 && px.both.lost > 0) || px.alone.ray !== px.both.crisp + px.both.stretched + px.both.lost || !px.hud)
+    failures.push(`[parallax.html] ${JSON.stringify(px)}`);
+  console.log(`${failures.length === before21 ? 'ok  ' : 'FAIL'} parallax.html (error per step 1 at the corner, ×2.125 two levels either side; band ${px.band.toFixed(3)} levels each side at ε = 1e-3; the error round at the corner (${px.aspect[0].toFixed(2)}), stretched ${px.aspect[1].toFixed(1)} at 8 half-baselines and ${px.aspect[2].toFixed(3)} at an eighth; ${px.both.crisp} held, ${px.both.stretched} stretched, ${px.both.lost} lost to a ray; one reader alone, ${px.alone.ray} rays)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

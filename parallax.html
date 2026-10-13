@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Parallax from the corner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    parallax.html: parallax from the corner, and why parallax and situated observation are both needed (13 October 2026;
+    Tom: "show how parallax and situated observation are both needed. explore parallax from the perspecive of the
+    corner."). A standalone page like zoom.html; the exact results are PXC (plans/pxc-plan.md, runs 1-2).
+
+    Keep the case. B, d and ε are amounts: the baseline between two standpoints A and B, a target's distance from the
+    baseline's middle, and the step to which each standpoint reads a direction (radians). Each standpoint alone reads
+    directions only. The pair (half-baseline, distance) is named; its reading k = (B/2)/d, its corner d = B/2: the circle
+    with the baseline as diameter (Thales), where the baseline subtends a right angle.
+      - On the bisector, the relative error in distance per unit error in the parallax angle is 1/sin γ = cosh(ln k):
+        least at the corner, doubling with every level away on either side (sin γ = sech(ln k), the parallel reader's bell).
+      - The error is round at the corner and stretched elsewhere: σ along the line of sight over σ along the baseline is
+        d/(B/2). Outside the circle it stretches toward a ray; inside, along the baseline.
+      - With step ε, parallax holds acosh(1/ε)/ln 2 ≈ log₂(2/ε) levels on each side; its far edge is d ≈ B/ε, where the
+        shift is one step. Past it a triangulated point is a ray again: what one standpoint holds alone.
+    The plan is drawn on the reader's lay with H set to the half-baseline: by direction from the middle, distance laid as
+    d/(B/2) inside the corner and 1 + ln(d/(B/2)) past it, so parallax's corner is the reader's corner circle.
+    Presets give published precisions for scale, rounded: an illustration, not a test.
+    Links: ?mode=A|B|both&preset=eyes|hipparcos|gaia&eps=. Test hook: window.__parallax.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 19px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 74ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 6px }
+    .row .lab { color: var(--dim); min-width: 9ch }
+    .c { display: grid; grid-template-columns: 22ch 1fr 16ch; grid-template-areas: "l i o"; gap: 4px 10px; align-items: center; margin: 8px 0 4px }
+    .c label { grid-area: l; color: var(--dim) } .c input { grid-area: i } .c output { grid-area: o; color: var(--bright); text-align: right }
+    @media (max-width: 560px) { .c { grid-template-columns: 1fr auto; grid-template-areas: "l o" "i i" } }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { width: 100%; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 10px }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .violet { color: var(--violet) } .red { color: var(--red) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Parallax from the corner</h1>
+    <p class="lede">Two standpoints, a baseline B apart, each read only directions. <span class="violet">Alone</span>, each
+    holds a figure of rays: every direction, no distance, at any scale. <span class="teal">Together</span>, with the
+    baseline's length, the rays cross and the figure comes back with its size. Parallax has a corner of its own: the circle
+    with the baseline as its diameter, where the baseline subtends a right angle. There its error is least, and round. With
+    every level away the error doubles and stretches, along the line of sight outside the circle and along the baseline
+    inside, until, past a band set by the step, a point is <span class="red">a ray again</span>: what one standpoint holds
+    alone. Parallax needs situated observation, and returns to it.</p>
+    <div class="panel">
+        <div class="row"><span class="lab">readers</span>
+            <button id="mA">A alone</button><button id="mB">B alone</button><button id="mBoth" class="on">A and B, with the baseline</button></div>
+        <div class="row"><span class="lab">for scale</span>
+            <button id="pFree" class="on">in half-baselines</button><button id="pEyes">two eyes</button>
+            <button id="pHip">Earth's orbit, Hipparcos</button><button id="pGaia">Earth's orbit, Gaia</button></div>
+        <div class="c"><label for="eps">step, ε (radians)</label><input id="eps" type="range" min="-10.5" max="-1" step="0.05" value="-2"><output id="epso"></output></div>
+        <h2 style="margin-top:12px">The plane, laid as the reader lays it</h2>
+        <canvas id="plan" height="430"></canvas>
+        <p class="cap">By direction from the baseline's middle, and by distance in half-baselines, in proportion inside the
+        <span class="gold">corner circle</span> and one equal step per doubling past it (H set to half the baseline). The
+        corner circle is parallax's corner: the baseline seen at a right angle. Each target is triangulated thirty times with
+        directions off by the step: <span class="teal">teal</span> held to within 5%, <span class="gold">gold</span>
+        stretched, <span class="red">red</span> lost to a ray. White rings: the targets' true places.</p>
+        <h2>The bell: parallax's precision across levels</h2>
+        <canvas id="bell" height="230"></canvas>
+        <p class="cap">Across the levels of distance from the corner (half the baseline). <span class="gold">Gold</span>: the
+        relative error in distance, ε·cosh of the levels, least at the corner and doubling with each level away on either
+        side; it is the parallel reader's bell, upside down. <span class="violet">Violet</span>: how stretched the error is,
+        along the line of sight over along the baseline, round (0) at the corner. Shaded: the band where parallax gives a
+        distance at all.</p>
+        <div id="hud"></div>
+    </div>
+    <p class="note">Keep the case: B, d and the step are amounts; each standpoint holds only directions, which have no scale.
+    The pair (half-baseline, distance) is named, and its corner is the Thales circle; it is not the reader's own corner
+    against anything, though laying the plane with H at the half-baseline puts the two together. The exact results are
+    PXC: the relative error per unit angle cosh(ln k) to 50 digits, the error round at the corner and stretched by
+    d/(B/2) elsewhere, the band acosh(1/ε)/ln 2 levels each side. Behind it: <i>Observation from Somewhere</i>,
+    Propositions 8 and 11. Other demos: <a href="zoom.html">H is a zoom</a>, <a href="ladder.html">the ladder</a>,
+    <a href="mountain.html">the mountain and the thumb</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), LN2 = Math.LN2;
+    // ── the geometry, in half-baselines: A = (−1, 0), B = (1, 0); a target X = (x, y) with y > 0 ──
+    const relErr = (k, eps) => eps * Math.cosh(Math.log(k));                    // on the bisector, k = (B/2)/d
+    const aspect = d => d;                                                       // σ along the line of sight / σ along the baseline
+    const band = eps => Math.acosh(1 / eps) / LN2;                               // levels each side of the corner
+    const farEdge = eps => 1 / Math.exp(-Math.acosh(1 / eps));                   // d/(B/2) at the far edge (≈ 2/ε)
+    const lay = s => s <= 1 ? s : 1 + Math.log(s);
+    function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a;
+        t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+    const gauss = r => Math.sqrt(-2 * Math.log(1 - r())) * Math.cos(2 * Math.PI * r());
+    // triangulate X from both standpoints, each direction off by Gaussian ε/√2; K tries
+    function triangulate(x, y, eps, K, seed) {
+        const r = rng(seed), pts = []; let lost = 0, s2 = 0, sx2 = 0, sy2 = 0;
+        const ta0 = Math.atan2(y, x + 1), tb0 = Math.atan2(y, x - 1), D = Math.hypot(x, y);
+        const ux = x / D, uy = y / D;                                            // the line of sight from the middle
+        for (let i = 0; i < K; i++) {
+            const ta = ta0 + gauss(r) * eps / Math.SQRT2, tb = tb0 + gauss(r) * eps / Math.SQRT2;
+            const ca = Math.cos(ta), sa = Math.sin(ta), cb = Math.cos(tb), sb = Math.sin(tb), det = -ca * sb + sa * cb;
+            if (Math.abs(det) < 1e-15) { lost++; continue; }
+            const s = (2 * -sb) / det, t = (2 * -sa) / det;                       // along A's ray and B's ray
+            if (s <= 0 || t <= 0) { lost++; continue; }
+            const px = -1 + s * ca, py = s * sa, dx = px - x, dy = py - y;
+            pts.push([px, py]); s2 += (dx * dx + dy * dy) / (D * D);
+            const along = dx * ux + dy * uy, across = -dx * uy + dy * ux; sy2 += along * along; sx2 += across * across;
+        }
+        const n = pts.length;
+        return { pts, lost, rel: n ? Math.sqrt(s2 / n) : Infinity, sAlong: n ? Math.sqrt(sy2 / n) : NaN, sAcross: n ? Math.sqrt(sx2 / n) : NaN };
+    }
+
+    // ── presets: half a baseline in metres, a step in radians (published precisions, rounded, for scale) ──
+    const PRESETS = {
+        free: { half: null, eps: 1e-2, name: 'in half-baselines' },
+        eyes: { half: 0.0325, eps: 1e-4, name: 'two eyes, 6.5 cm apart, stereo acuity about 20″' },
+        hip: { half: 1.495978707e11, eps: 4.85e-9, name: "Earth's orbit, 2 AU across, Hipparcos's 1 mas" },
+        gaia: { half: 1.495978707e11, eps: 9.7e-11, name: "Earth's orbit, 2 AU across, Gaia's 20 µas" } };
+    const AU = 1.495978707e11, PC = 3.0856775814913673e16;
+    function amount(m) {
+        if (m < 1) return `${(m * 100).toPrecision(2)} cm`;
+        if (m < 1e4) return `${m < 10 ? m.toPrecision(2) : Math.round(m)} m`;
+        if (m < 0.01 * AU) return `${(m / 1000).toPrecision(2)} km`;
+        if (m < 0.1 * PC) return `${(m / AU).toPrecision(2)} AU`;
+        if (m < 1e6 * PC) return m < 1e3 * PC ? `${(m / PC).toPrecision(2)} pc` : `${(m / PC / 1e3).toPrecision(2)} kpc`;
+        return `${(m / PC / 1e6).toPrecision(2)} Mpc`;
+    }
+
+    // ── state ──
+    let mode = 'both', preset = 'free', lgEps = -2;
+    const DIRS = [15, 35, 60, 90, 120, 145, 165];
+    function levelsShown() { return Math.max(10, Math.min(36, Math.ceil(band(10 ** lgEps)) + 3)); }
+    function targets() {
+        const L = levelsShown(), step = Math.max(1, Math.ceil((L + 3) / 16)), out = [];
+        DIRS.forEach((phi, i) => { for (let j = -3; j <= L; j += step) { const s = 2 ** j, a = phi * Math.PI / 180;
+            out.push({ x: s * Math.cos(a), y: s * Math.sin(a), s, phi, seed: 1000 * i + j + 50 }); } });
+        return out;
+    }
+    function survey() {
+        const eps = 10 ** lgEps, T = targets();
+        return T.map(t => { const tr = triangulate(t.x, t.y, eps, 30, t.seed); const lost = tr.lost > 6 || !(tr.rel < 1);
+            return { ...t, tr, state: mode !== 'both' ? 'ray' : lost ? 'lost' : tr.rel < 0.05 ? 'crisp' : 'stretched' }; });
+    }
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.font = '11px DM Mono, monospace'; return [g, w, hh];
+    }
+    const GOLD = '#d4a052', TEAL = '#8ce6cd', RED = '#d96e5b', VIOLET = '#b59cf0', DIM = '#8a8a96';
+
+    function draw() {
+        const eps = 10 ** lgEps, P = PRESETS[preset], L = levelsShown(), S = survey();
+        $('epso').textContent = eps >= 1e-3 ? eps.toPrecision(2) : eps.toExponential(1);
+        // ── the plan, laid ──
+        let [g, W, Hc] = fit($('plan'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, Hc);
+        const Rmax = 1 + L * LN2, ox = W / 2, oy = Hc - 34, u = Math.min(W / 2 - 16, oy - 14) / Rmax;
+        const map = (x, y) => { const d = Math.hypot(x, y), r = lay(d) * u, a = Math.atan2(y, x); return [ox + r * Math.cos(a), oy - r * Math.sin(a)]; };
+        g.strokeStyle = 'rgba(255,255,255,0.08)'; g.lineWidth = 1;                 // level rings
+        for (let j = -3; j <= L; j++) { const r = lay(2 ** j) * u; if (r < 2) continue; g.beginPath(); g.arc(ox, oy, r, Math.PI, 2 * Math.PI); g.stroke(); }
+        g.strokeStyle = 'rgba(255,255,255,0.18)'; g.beginPath(); g.moveTo(ox - Rmax * u, oy); g.lineTo(ox + Rmax * u, oy); g.stroke();
+        // the band's far edge
+        const fe = farEdge(eps); if (fe < 2 ** L) { g.strokeStyle = 'rgba(217,110,91,0.5)'; g.setLineDash([2, 4]);
+            g.beginPath(); g.arc(ox, oy, lay(fe) * u, Math.PI, 2 * Math.PI); g.stroke(); g.setLineDash([]);
+            g.fillStyle = RED; g.fillText('far edge: the shift one step', ox + lay(fe) * u * 0.62, oy - lay(fe) * u * 0.8); }
+        // the corner circle: the baseline as diameter
+        g.strokeStyle = GOLD; g.lineWidth = 1.5; g.setLineDash([4, 3]); g.beginPath(); g.arc(ox, oy, u, Math.PI, 2 * Math.PI); g.stroke(); g.setLineDash([]);
+        g.fillStyle = GOLD; g.fillText('corner: the baseline at a right angle', ox + u + 6, oy - u - 4);
+        // the standpoints and the baseline
+        g.strokeStyle = GOLD; g.lineWidth = 3; g.beginPath(); g.moveTo(ox - u, oy); g.lineTo(ox + u, oy); g.stroke();
+        g.fillStyle = mode === 'B' ? DIM : VIOLET; g.beginPath(); g.arc(ox - u, oy, 4, 0, 2 * Math.PI); g.fill();
+        g.fillStyle = mode === 'A' ? DIM : VIOLET; g.beginPath(); g.arc(ox + u, oy, 4, 0, 2 * Math.PI); g.fill();
+        g.fillStyle = DIM; g.fillText('A', ox - u - 4, oy + 16); g.fillText('B', ox + u - 3, oy + 16);
+        // ring labels in amounts
+        if (P.half) { let last = -1e9; for (let j = 0; j <= L; j += Math.max(1, Math.ceil(L / 8))) { const r = lay(2 ** j) * u, t = amount(2 ** j * P.half);
+            if (ox + r - last > 70) { g.fillText(t, ox + r - g.measureText(t).width / 2, oy + 28); last = ox + r; } } }
+        // the targets; a lost direction is drawn once, as a ray from the band's far edge outward
+        const lostDirs = new Set();
+        S.forEach(t => { if (t.state === 'lost') lostDirs.add(t.phi); });
+        lostDirs.forEach(phi => { const a = phi * Math.PI / 180, r0 = Math.min(lay(fe), Rmax) * u, r1 = Rmax * u;
+            g.strokeStyle = 'rgba(217,110,91,0.55)'; g.lineWidth = 1; g.beginPath();
+            g.moveTo(ox + r0 * Math.cos(a), oy - r0 * Math.sin(a)); g.lineTo(ox + r1 * Math.cos(a), oy - r1 * Math.sin(a)); g.stroke(); });
+        S.forEach(t => {
+            const [tx, ty] = map(t.x, t.y);
+            if (t.state === 'ray') {                                             // one standpoint: a ray, no distance
+                const sx = mode === 'A' ? -1 : 1, dx = t.x - sx, dy = t.y, n = Math.hypot(dx, dy);
+                g.strokeStyle = 'rgba(181,156,240,0.28)'; g.lineWidth = 1; g.beginPath();
+                for (let i = 0; i <= 80; i++) { const tt = 0.02 * 2 ** (i * (L + 7) / 80); const [px, py] = map(sx + dx / n * tt, dy / n * tt); i ? g.lineTo(px, py) : g.moveTo(px, py); }
+                g.stroke();
+            } else if (t.state === 'lost') {
+                g.strokeStyle = RED; g.lineWidth = 1; g.beginPath(); g.arc(tx, ty, 3.4, 0, 2 * Math.PI); g.stroke(); return;
+            } else {
+                g.fillStyle = t.state === 'crisp' ? TEAL : GOLD;
+                t.tr.pts.forEach(([px, py]) => { const [qx, qy] = map(px, py); g.fillRect(qx - 0.8, qy - 0.8, 1.6, 1.6); });
+            }
+            g.strokeStyle = 'rgba(255,255,255,0.55)'; g.lineWidth = 1; g.beginPath(); g.arc(tx, ty, 2.4, 0, 2 * Math.PI); g.stroke();
+        });
+        g.fillStyle = DIM; g.fillText(`${L} levels past the corner`, 8, 14);
+
+        // ── the bell ──
+        [g, W, Hc] = fit($('bell'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, Hc);
+        const b0 = 40, b1 = W - 12, top = 14, base = Hc - 30, XR = Math.max(12, Math.ceil(band(eps)) + 3);
+        const ylo = Math.floor(Math.log2(eps)) - 1, yhi = Math.max(5, XR * 0.35);
+        const BX = x => b0 + (b1 - b0) * (x + XR) / (2 * XR), BY = y => top + (base - top) * (yhi - Math.max(ylo, Math.min(yhi, y))) / (yhi - ylo);
+        const bw = band(eps);
+        g.fillStyle = 'rgba(140,230,205,0.08)'; g.fillRect(BX(-bw), top, BX(bw) - BX(-bw), base - top);
+        g.strokeStyle = 'rgba(255,255,255,0.2)'; g.lineWidth = 1; g.beginPath(); g.moveTo(b0, BY(0)); g.lineTo(b1, BY(0)); g.stroke();
+        g.fillStyle = DIM; g.fillText('0: 100% / round', b0 + 4, BY(0) - 4);
+        g.lineWidth = 2; g.strokeStyle = GOLD; g.beginPath();
+        for (let i = 0; i <= 300; i++) { const x = -XR + 2 * XR * i / 300, y = Math.log2(eps * Math.cosh(x * LN2)); i ? g.lineTo(BX(x), BY(y)) : g.moveTo(BX(x), BY(y)); }
+        g.stroke();
+        g.strokeStyle = VIOLET; g.lineWidth = 1.5; g.setLineDash([4, 3]); g.beginPath(); g.moveTo(BX(-XR), BY(-XR)); g.lineTo(BX(XR), BY(XR)); g.stroke(); g.setLineDash([]);
+        g.strokeStyle = GOLD; g.lineWidth = 1; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(BX(0), top); g.lineTo(BX(0), base); g.stroke(); g.setLineDash([]);
+        g.fillStyle = GOLD; g.beginPath(); g.arc(BX(0), BY(Math.log2(eps)), 4, 0, 2 * Math.PI); g.fill();
+        g.fillText('corner: ε, round', BX(0) + 6, BY(Math.log2(eps)) + 14);
+        g.fillStyle = DIM; const tl = Math.max(2, Math.ceil(XR / 6));
+        for (let x = -XR; x <= XR; x += tl) { const xx = BX(x); g.fillRect(xx, base, 1, 4); g.fillText(`${x > 0 ? '+' : ''}${x}`, xx - 8, base + 16); }
+        g.fillText('levels of distance from the corner →', b1 - 250, base + 28 > Hc ? Hc - 2 : base + 28);
+        g.fillText('log₂', 4, top + 10); g.fillText('inside', BX(-XR) + 4, top + 22); g.fillText('outside', BX(XR) - 54, top + 22);
+
+        // ── the readout ──
+        const n = { crisp: 0, stretched: 0, lost: 0, ray: 0 }; S.forEach(t => n[t.state]++);
+        const half = P.half, fmtD = s => half ? amount(s * half) : `${s.toPrecision(3)} half-baselines`;
+        const lines = [
+            `${P.name}; step ε = ${eps.toExponential(2)} rad`,
+            `the corner: the circle on the baseline, d = B/2${half ? ` = ${amount(half)}` : ''}; there the relative error per step is 1 (ε in all), and the error is round`,
+            `the band: under 100% for ${bw.toFixed(2)} levels each side (≈ log₂(2/ε) = ${Math.log2(2 / eps).toFixed(2)}), from ${fmtD(1 / farEdge(eps))} out to ${fmtD(farEdge(eps))}, where the shift is one step`,
+            mode === 'both'
+                ? `${S.length} targets: ${n.crisp} held within 5%, ${n.stretched} stretched, ${n.lost} lost to a ray; outside the corner the error stretches along the line of sight by d/(B/2), inside along the baseline`
+                : `reader ${mode} alone: ${S.length} directions and no distance; scale the world and none of them moves (OFS Proposition 8). Mountain equals thumb is all it can say of size`,
+            mode === 'both'
+                ? `both are needed: parallax is two situated readings and one amount, B; past its band a point is a ray again, what one reader holds alone, and distances go on only by ratios against a kind calibrated inside it (the ladder)`
+                : `add the second standpoint and the baseline's length to cross the rays: A and B, with the baseline`];
+        $('hud').textContent = lines.join('\n');
+    }
+
+    function sync() {
+        $('eps').value = lgEps;
+        [['mA', 'A'], ['mB', 'B'], ['mBoth', 'both']].forEach(([id, m]) => $(id).classList.toggle('on', mode === m));
+        [['pFree', 'free'], ['pEyes', 'eyes'], ['pHip', 'hip'], ['pGaia', 'gaia']].forEach(([id, p]) => $(id).classList.toggle('on', preset === p));
+    }
+    const setPreset = p => { preset = p; lgEps = Math.log10(PRESETS[p].eps); };
+    $('eps').addEventListener('input', () => { lgEps = +$('eps').value; draw(); });
+    $('mA').addEventListener('click', () => { mode = 'A'; sync(); draw(); });
+    $('mB').addEventListener('click', () => { mode = 'B'; sync(); draw(); });
+    $('mBoth').addEventListener('click', () => { mode = 'both'; sync(); draw(); });
+    $('pFree').addEventListener('click', () => { setPreset('free'); sync(); draw(); });
+    $('pEyes').addEventListener('click', () => { setPreset('eyes'); sync(); draw(); });
+    $('pHip').addEventListener('click', () => { setPreset('hip'); sync(); draw(); });
+    $('pGaia').addEventListener('click', () => { setPreset('gaia'); sync(); draw(); });
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search);
+    if (['A', 'B', 'both'].includes(q.get('mode'))) mode = q.get('mode');
+    if ({ eyes: 'eyes', hipparcos: 'hip', gaia: 'gaia' }[q.get('preset')]) setPreset({ eyes: 'eyes', hipparcos: 'hip', gaia: 'gaia' }[q.get('preset')]);
+    if (q.has('eps')) lgEps = Math.max(-10.5, Math.min(-1, Math.log10(+q.get('eps') || 0.01)));
+    sync(); draw();
+
+    window.__parallax = { relErr, aspect, band, farEdge, lay, triangulate,
+        state: () => ({ mode, preset, eps: 10 ** lgEps }),
+        counts: () => { const n = { crisp: 0, stretched: 0, lost: 0, ray: 0 }; survey().forEach(t => n[t.state]++); return n; },
+        set: o => { if (o.mode) mode = o.mode; if (o.preset) setPreset(o.preset); if (o.eps) lgEps = Math.log10(o.eps); sync(); draw(); } };
+})();
+</script>
+</body>
+</html>

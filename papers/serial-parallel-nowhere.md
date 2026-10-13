@@ -4993,6 +4993,18 @@ address points to, to the reader's own travel. It needs a second standpoint, so 
 counts and serial reads motion as ratios (25 Sep). The distances in the reader's own lengths, the nearness ratios and
 the order of what overlaps (items 275–278) are this proposition applied to arrivals.
 
+**Parallax from the corner** (*13 October*; Tom: "show how parallax and situated observation are both needed. explore parallax from the perspecive of the corner." `plans/pxc-plan.md`, runs 1–2; Claude's reading, unruled).
+The pair is (half-baseline, distance), its reading k = (B/2)/d, its corner the circle with the baseline as diameter,
+where the baseline subtends a right angle (Thales). On the bisector the relative error in distance per unit error in
+the parallax angle is 1/sin γ = cosh(ln k), exactly (to 50 digits from 2⁻³⁰ to 2³⁰): least at the corner, the same at
+d and (B/2)²/d, and doubling with every level away, since sin γ = sech(ln k) is the parallel reader's bell. The error is
+round at the corner and elsewhere stretched by d/(B/2), along the line of sight outside the circle and along the
+baseline inside it (to 1.3%). With step ε parallax holds acosh(1/ε)/ln 2 ≈ log₂(2/ε) levels each side; its far edge,
+d ≈ B/ε, is COR's "shift of one address". Past it a triangulated point is a ray, what one standpoint holds alone: so
+parallax needs situated observation (the right side above is addresses alone) and one amount, B, and far past its band
+returns to situated observation. The baseline slides the band as H slides the reader's window (`zoom.html`). Shown in
+`parallax.html`.
+
 **Which is in front.** Not from whose arrivals continue unbroken, which is the world's own blocking read back, but from
 parallax: under the reader's own travel the nearer body's direction turns faster; a step one way and then the other
 cancels a body's own motion. Of 545 overlapping pairs decided, 508 were ordered right, all of them where one was half
