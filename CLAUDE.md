@@ -85,7 +85,7 @@ Google Fonts load from outside:
   view (OFS Theorem 6, Proposition 8); mountain equals thumb on the reader's lay of distances (x, then 1 + ln x), read at
   0.5 H against the true 10 H, off by V/H = 20, 4.32 doublings; "walk one thumb" recovers d = H·s₂/(s₂ − s₁) and V.
   `?V=&d=&k=&walk=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `lay`, `set`).
-- `zoom.html`: **H is a zoom** (13 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
+- `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
   reader's 1 + ln s (L levels) or the in-place 2 − 1/s (`lay=inplace`, the horizon's last address taking all s ≥ n);
@@ -96,7 +96,7 @@ Google Fonts load from outside:
   εx²/H past it). Worlds: nested clusters at every decade, the numbers 1–100, 200 scattered sizes; click a size to put it
   at the corner. `?H=&n=&L=&lay=inplace&world=even|scatter`; hook `window.__zoom` (`lay`, `addr`, `held`, `perLevel`,
   `detail`, `read`, `set`). Not in the flying page.
-- `parallax.html`: **parallax from the corner** (13 Oct 2026, Tom: "show how parallax and situated observation are both needed. explore parallax from the perspecive of the corner."), a standalone page like
+- `parallax.html`: **parallax from the corner** (12 Oct 2026, Tom: "show how parallax and situated observation are both needed. explore parallax from the perspecive of the corner."), a standalone page like
   `zoom.html`, PXC on one screen. Two standpoints A and B a baseline apart, each reading directions only; the plane laid
   as the reader lays it (by direction from the middle, distance in half-baselines, in proportion inside the corner circle
   and 1 + ln past it, H at the half-baseline), so parallax's corner, the Thales circle, is the reader's corner circle.
@@ -489,12 +489,13 @@ Google Fonts load from outside:
   the outside length's 1% throughout, the landmarks' errors 99% correlated by 4,096); the rung carries 0.0150 whatever
   the number of far members (P2–P7 not killed). P1 killed by my estimator: least squares on noisy bearing lines leaves a
   floor more readings do not remove. Statistical against systematic error is address against payload.
-  `pxc-plan.md` (+ `pxc/`, 13 Oct; Tom: "show how parallax and situated observation are both needed. explore parallax
+  `pxc-plan.md` (+ `pxc/`, 12 Oct; Tom: "show how parallax and situated observation are both needed. explore parallax
   from the perspecive of the corner"): the pair (half-baseline, distance), its corner the Thales circle. Exact (mpmath,
   50 digits): the relative error per unit angle cosh(ln k), sin γ = sech(ln k), the parallel reader's bell (P1, P2); the
   band acosh(1/ε)/ln 2 levels each side, far edge d ≈ B/ε (P3). P4 killed by my measure (distance from the middle takes in
   the error along the baseline); run 2: depth follows the bell, the error round at the corner and stretched by d/(B/2)
   elsewhere (P5–P7 not killed). Past the band a point is a ray: parallax needs situated observation and returns to it.
+  In OFS as Proposition 11(d) and "A baseline has a corner of its own" (SPN R218).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

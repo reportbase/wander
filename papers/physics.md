@@ -103,7 +103,7 @@ bodies are pictures. They are never evidence here.
   dimensionless ratios are read, and since 2019 the SI fixes every base unit by an agreed value of a constant
   (the caesium frequency, c, h, e, k_B, N_A and the luminous efficacy): the agreed outside amounts of OFS Proposition
   8(b), and a unit agreed between readers as OFS §9 has it (§1).
-- 13 October: PXC, parallax from the corner (`plans/pxc-plan.md`; Tom: "show how parallax and situated observation are both needed. explore parallax from the perspecive of the corner."). Exact (mpmath) and
+- 12 October, fourth: PXC, parallax from the corner (`plans/pxc-plan.md`; Tom: "show how parallax and situated observation are both needed. explore parallax from the perspecive of the corner."). Exact (mpmath) and
   Monte Carlo: the relative error per unit angle is cosh(ln k), k = (B/2)/d, the parallel reader's bell, least at the
   Thales circle; the error round there and stretched by d/(B/2) elsewhere; the band acosh(1/ε)/ln 2 levels each side.
   P4 killed by my measure (the distance from the middle takes in the error along the baseline, which inside the circle

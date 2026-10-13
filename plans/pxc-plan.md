@@ -1,6 +1,6 @@
 # PXC: parallax from the corner
 
-*13 October 2026. Tom: "show how parallax and situated observation are both needed. explore parallax from the perspective
+*12 October 2026. Tom: "show how parallax and situated observation are both needed. explore parallax from the perspective
 of the corner." Exact arithmetic and the complex step, with one Monte Carlo check of the first-order error. Predictions
 written before the script (`pxc/pxc.py`) exists. It builds on SPN Proposition 9.6 (parallax as two situated directions
 and the reader's own travel), MOT P6–P7 (`plans/mot-plan.md`: a baseline reads distance best at d = B/2, alike at d and
@@ -50,7 +50,7 @@ being a second zoom like H (`zoom.html`), sliding the band.
 
 ## Runs
 
-### Run 1 (13 October, `pxc/pxc.py`)
+### Run 1 (12 October, `pxc/pxc.py`)
 
 mpmath at 50 digits for P1–P3; seed 13 for P4; under a second.
 
@@ -76,7 +76,7 @@ depth along the line of sight, as P1 is stated, and tests the shape of the error
 out: the ellipse's aspect ratio σ_y/σ_x is d = 1/k, the reading's flip, so **the error is round exactly at the corner**,
 stretched along the line of sight outside the Thales circle and along the baseline inside it.
 
-### Run 2: predictions (13 October, written before `pxc/pxc2.py` exists)
+### Run 2: predictions (12 October, written before `pxc/pxc2.py` exists)
 
 Same set-up as P4 (ε = 10⁻⁶, 20,000 draws a point, k = 2^j for j from −8 to 8, each direction off by Gaussian ε/√2).
 - **P5. Depth along the line of sight follows the bell.** The rms of (y − d)/d over ε·cosh(ln k) lies within 3% of 1 at
@@ -88,7 +88,7 @@ Same set-up as P4 (ε = 10⁻⁶, 20,000 draws a point, k = 2^j for j from −8 
   √(σ_y² + 3σ_x⁴/(4d²))/d with σ_y = (1 + d²)ε/2 and σ_x = σ_y/d, lies within 3% of 1 at every k. **Killed if** any
   point is off by more than 3%.
 
-### Run 2 (13 October, `pxc/pxc2.py`)
+### Run 2 (12 October, `pxc/pxc2.py`)
 
 Seed 14, 20,000 draws at each of 17 points, a second.
 
