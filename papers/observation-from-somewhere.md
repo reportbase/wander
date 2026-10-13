@@ -104,6 +104,9 @@ as if a single observation held it. Section 3 sets out the readers in full.
   breadth to be its own, V = H. Only then is the sweep a turn, tracing a unit circle with the corner at distance 1
   whatever unit is chosen, and only then is there one even turn. Working back from the Cauchy, which is known, arrives
   at V = H (§5, §7.1). The other party's true size is a separate estimate (§9).
+- With two other parties the same holds once per party. Drawn at V = V₂ = H, the relation lies on one sphere, and the
+  reader sweeps one octant of it, a wedge. Swept evenly, its readings are the two-dimensional Cauchy: every pair keeps
+  its corner, and the reader is near in both readings for a third of them, not a half (§5, §7.1).
 - Inside the corner the reader can lay readings out in proportion; past it, if no scale is preferred, only a
   logarithmic layout is consistent. The reader has two address spaces joined at one corner (§6).
 - **Main result.** Sweeping the circle evenly from home yields the Cauchy distribution, and the Cauchy is the reader's
@@ -600,7 +603,10 @@ depends on c;
 h² + v² + v₂² = 1, where v₂ is a second v read against the same h;
 
 (e) the attitudes are turns of one rigid bar only if V = H: with c ≠ 1 nothing turns all of h into all of v, and there
-is no circle.
+is no circle;
+
+(f) with two other parties, assigned V and V₂, the attitudes are the directions of one rigid bar, the sphere
+h² + v² + v₂² = 1, only if V = V₂ = H.
 
 *Proof.* (a) By (P0) the other party must be assigned a breadth for there to be a relation, and by (P1) the reader's
 only breadth is H, so the assignment is H times a number c. A unit relation v lies in [0, 1] however large V is, so no
@@ -612,7 +618,8 @@ V/H. (d) Once both parties share a unit nothing prefers one side of a freedom, s
 walk through the facings must flip each freedom an even number of times, so the facings are the 2ⁿ vertices of an
 n-cube, walked as a Gray code. (e) A turn keeps the bar's length. All of h is the bar at length H and all of v the bar
 at length cH, so a turn carries one to the other only if c = 1. With c ≠ 1 the tip must stretch on its way, along the
-ellipse of (c) or some other path. ∎
+ellipse of (c) or some other path. (f) By (e) applied to each pair: all of v and all of v₂ must each be the bar at
+length H. ∎
 
 **What V = H means.** Setting V = H is a rule of representation: the reader uses its own breadth as the unit for the
 other party. It sets the mountain equal to its thumb because its thumb is the only measure it has. It is not a claim
@@ -817,8 +824,35 @@ itself. (d) A direction φ from home in the drawing has tan φ = c·(v/h). With 
 P(v/h ≤ r) = P(φ ≤ arctan(cr)) = (2/π)·arctan(cr): a half-Cauchy of scale 1/c, with median 1/c. The flip v/h ↦ h/v
 carries it to scale c. It is the law of (b), and unchanged by the flip, exactly when c = 1. ∎
 
+**Proposition 5, continued: two other parties.** (e) Let the reader assign two other parties V = V₂ = H, so that the
+relation lies on the sphere of Proposition 3(f), and sweep one facing of every freedom, the octant h, v, v₂ ≥ 0, evenly
+by area. Write a = v/h and b = v₂/h. Then:
+- the readings (a, b) have density 2/(π(1 + a² + b²)^(3/2)) on [0, ∞)², the two-dimensional half-Cauchy;
+- each of v/h, v₂/h and v/v₂ alone has the law of (b), with its median at its own corner and no mean;
+- the six orderings of h, v and v₂ are equally likely, so the reader is near in both readings (h the largest) for a
+  third of the octant, past in one for a third and past in both for a third;
+- drawn at V = c₁H and V₂ = c₂H and swept evenly by direction in the drawing, the medians of v/h, v₂/h and v/v₂ are 1/c₁,
+  1/c₂ and c₂/c₁. Every pair keeps its corner only if c₁ = c₂ = 1, and a pair keeps its own only if its two parties are
+  drawn at one length.
+
+*Proof.* The point of the octant in direction (1, a, b) is (1, a, b)/r with r² = 1 + a² + b². Projected from the centre
+onto the plane h = 1, an element da·db of the plane at distance r from the centre subtends dA = da·db·cos α/r² of the
+sphere, where α is the angle between the ray and the plane's normal, cos α = 1/r; so dA = da·db/r³. In polar
+coordinates on that plane, a = ρ cos ψ and b = ρ sin ψ, ∫₀^∞ ρ·dρ/(1 + ρ²)^(3/2) = 1, so the octant's area is π/2 and ψ
+is spread evenly over [0, π/2]; hence b/a = tan ψ, which is v₂/v, has the law of (b). Integrating b out, ∫₀^∞ db/(1 + a² + b²)^(3/2) = 1/(1 + a²), which gives the law of (b) for
+a, and likewise for b. Exchanging any two of h, v and v₂ is a symmetry of the sphere that keeps the octant, so the six
+orderings have equal areas; h is the largest in two of them. In the drawing an even direction is (1, c₁a, c₂b)
+normalised, so (c₁a, c₂b) has the law above and each median is divided by its c. ∎
+
+The wedge is made at each observation, not taken from a sphere the reader holds: the whole sphere, every facing drawn
+together, is the completed view. A sphere that placed every place by its direction and its distance would need every
+distance, which no situated reader has. The wedge needs no size: the readings are ratios, laid by the two-dimensional
+Cauchy. What it lacks is what the circle lacks, once per party: V/H and V₂/H. On the circle near and far were halves;
+with three parties the reader is near in both readings for a third of its addresses.
+
 In classical terms the readings are the tangent of a uniformly distributed angle: the gnomonic projection of a uniform
-direction.
+direction. For two other parties the gnomonic projection of a uniform direction on the sphere is the multivariate
+Cauchy (the multivariate t with one degree of freedom), whose marginals are Cauchy.
 
 **Working back from the Cauchy.** The Cauchy is known: it is the tangent of an angle turned evenly. Read backward, from
 the known law to what it needs, each step is forced by the one before.
@@ -1146,6 +1180,19 @@ is the only factor that leaves L₀ fixed. ∎
 
 This is the exact form of §3.4's "only two". The worked example of §10 is (b) in use: the baseline is a walk of one
 known H, and it fixes the mountain's distance and width.
+
+**A sphere in a cube.** Put a sphere, free to turn, at the centre of a cube of half-extent e. From the centre each
+point u of the sphere goes along its ray to one point of the cube's surface, u·e/‖u‖_∞, on the face of u's largest
+component; every point of the surface is reached once, at every e and after any turn of the sphere, since the ray from
+the centre through a surface point meets the sphere once. Sphere and cube here are the drawings of every facing together;
+one wedge of the sphere lands on the three faces that meet at one corner of the cube, the cut "largest = 1" of §2,
+scaled by e. Every point inside the cube but its centre is t times its surface point for exactly one t in (0, 1], a
+unit relation: the cube's interior is held in proportion. So the pair
+(u, t) addresses every point of the cube, and it is the same pair at every extent. The point itself, in amounts, is e
+times it. A reader that holds the addresses and not e has the cube up to scale, as Proposition 8(a) says it must; it
+draws the cube at its own breadth, which is V = H again, right as addresses and off as amounts by the true e/H. Each
+face is the plane of one facing, so a sphere swept evenly lays the Cauchy of Proposition 5(e) on it: a face's middle
+quarter by area takes 38% of the face's directions, and its centre is 3^(3/2) ≈ 5.2 times as dense as its corners.
 
 **What reaches a reader of a payload.** Proposition 8 speaks of every reading at once. Read over time from one
 standpoint, or at once from several, it has four sharper forms. Each is classical: ratio invariance, division,
