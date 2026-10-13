@@ -615,14 +615,19 @@ try {
     o.short = [L.held(th.home / 1.001, 'reader', 32).addresses, L.held(th.edge * 1.001, 'reader', 32).addresses, L.held(th.horizon * 1.001, 'inplace', 32).addresses];
     o.at1 = [L.held(1, 'reader', 32).addresses, L.held(1, 'inplace', 32).addresses];
     const b = L.bestPair(1, 2); o.best = [b.H, b.angle, L.pairAngle(1, 2, b.H), L.pairAngle(1, 2, b.H * 1.01), L.pairAngle(1, 2, 1e-8), L.pairAngle(1, 2, 1e8)];
+    const x = L.WORLD[20], D = x / 10, pk = L.objectPeak(x, D, 32);
+    o.obj = [L.objectSpan('reader', x, D, x / 100, 32), L.objectSpan('reader', x, D, x / 3, 32), 32 * Math.log(1.1), L.objectSpan('reader', x, D, 10 * x, 32), L.objectSpan('inplace', x, D, 10 * x, 32),
+      pk.H, Math.sqrt(x * (x + D)), L.objectSpan('inplace', x, D, pk.H, 32), pk.span, L.objectSpan('inplace', x, D, pk.H * 0.99, 32), L.objectSpan('inplace', x, D, pk.H * 1.01, 32)];
     L.set({ lg: 30, lay: 'reader' }); o.hudInf = L.hud(); L.set({ lg: -30, lay: 'inplace' }); o.hudZero = L.hud(); L.set({ lg: 0, lay: 'reader' }); return o; });
   if (hl.dev.some(d => d > 1e-12) || hl.mid.some(d => !(d > 1e-3)) || !hl.home.home || !hl.homeIn.home || hl.edge.addresses !== 0 || hl.edge.past !== 31 ||
       !hl.hor.horizon || hl.short.some(c => c < 1) || hl.short[0] === 1 || hl.short[2] === 1 || hl.at1[0] !== 24 || hl.at1[1] !== 17 ||
       Math.abs(hl.best[0] - Math.SQRT2) > 1e-12 || Math.abs(hl.best[1] - Math.asin(1 / 3)) > 1e-12 || Math.abs(hl.best[2] - hl.best[1]) > 1e-12 ||
       !(hl.best[3] < hl.best[2]) || hl.best[4] > 1e-6 || hl.best[5] > 1e-6 ||
+      Math.abs(hl.obj[0] - hl.obj[2]) > 1e-12 || Math.abs(hl.obj[1] - hl.obj[2]) > 1e-12 || Math.abs(hl.obj[3] - 0.32) > 1e-12 || Math.abs(hl.obj[4] - 0.32) > 1e-12 ||
+      Math.abs(hl.obj[5] - hl.obj[6]) > 1e-12 || Math.abs(hl.obj[7] - hl.obj[8]) > 1e-12 || !(hl.obj[9] < hl.obj[7] && hl.obj[10] < hl.obj[7]) ||
       !/number line/.test(hl.hudInf) || !/home's first address/.test(hl.hudInf) || !/reciprocal/.test(hl.hudZero) || !/horizon's last address/.test(hl.hudZero))
     failures.push(`[h-limits.html] ${JSON.stringify({ ...hl, hudInf: hl.hudInf.slice(0, 120), hudZero: hl.hudZero.slice(0, 120) })}`);
-  console.log(`${failures.length === before24 ? 'ok  ' : 'FAIL'} h-limits.html (past the world's ends the number line, the logarithm and the reciprocal exactly, a corner only with H inside; lost whole into home, past the edge, into the horizon at the thresholds; ${hl.at1[0]} and ${hl.at1[1]} addresses at H = 1; a pair best told apart at √(x₁x₂), ${(hl.best[1] * 180 / Math.PI).toFixed(2)}° for r = 2)`);
+  console.log(`${failures.length === before24 ? 'ok  ' : 'FAIL'} h-limits.html (past the world's ends the number line, the logarithm and the reciprocal exactly, a corner only with H inside; lost whole into home, past the edge, into the horizon at the thresholds; ${hl.at1[0]} and ${hl.at1[1]} addresses at H = 1; a pair best told apart at √(x₁x₂), ${(hl.best[1] * 180 / Math.PI).toFixed(2)}° for r = 2; one object's detail flat past the corner on the reader's lay, nΔ/H inside, most on the in-place lay at √(x(x + Δ)))`);
 
   // ── 25. h-chain.html: the chain from H (HKO; SPN R228; draw's rcc and udv): one reader's even sweep gives back the
   //    unit circle for every figure at every size; two standpoints 2H apart hold every point at the best H and none at

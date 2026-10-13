@@ -99,3 +99,68 @@ mpmath at 60 digits; under a second.
 
 Post hoc, from the numbers: the widest angle between two amounts is arcsin((r − 1)/(r + 1)) (19.47° at r = 2), the
 same as 2·arctan(√r) − 90°.
+
+### Run 2 (13 October; `hko/hko2.py`): detail per object
+
+*Tom, about 13:14: "small H gives good fidelity to nearby objects, large h gives good fidelity to far away objects.
+larger H moves the corner further away from the observer, which gives more proportional space. reader has fixed number
+of addresses, so more proportional space means each object is given less level of detail." Then, to Claude's
+per-object form, "Yes, and the OFS paper." Predictions written before the script.*
+
+**Set-up.** An object spans the amounts [d, d + Δ] (a distance and an extent, or any stretch of amounts); the reader
+has n addresses across its near field, so the number of addresses the object spans is n times the stretch of lay it
+covers: the room it is given, whose log₂ is its level of detail (OFS §8, "Size sets the level").
+
+- **P5. What a larger H gives and takes.** (a) Inside the corner (d + Δ ≤ H) the object spans nΔ/H: every doubling of
+  H takes one level of detail from it. (b) Past the corner (d ≥ H) it spans n·ln(1 + Δ/d) on the reader's lay, whatever
+  H is, and nΔH/(d(d + Δ)) on the in-place lay, which grows with H. (c) So, as H runs from 0 to ∞, the object's span
+  on the reader's lay is constant until H reaches d and falls after; on the in-place lay it rises until H reaches d and
+  falls after d + Δ, largest with the object at the corner (H in [d, d + Δ]), where it is within a factor 1 + Δ/d of
+  nΔ/d. **Killed if** the spans counted from the lays by mpmath (the lay's value at d + Δ minus at d, times n) miss the
+  closed forms of (a) and (b) by more than 1e-30 (relative) for d = 1, 10, 1000 and Δ/d = 10⁻³, 0.1, 1, at H spread
+  over 10⁻³d … 10³d; or the reader's-lay span varies by more than 1e-30 over H ≤ d; or the in-place span's largest value
+  over 2,001 values of H (log-spaced, plus d and d + Δ) is at an H outside [d, d + Δ], or misses nΔ/d by more than a
+  factor 1 + Δ/d.
+
+Result (mpmath at 60 digits; seconds):
+
+| | prediction | result | |
+|---|---|---|---|
+| P5 (a), (b) | the spans nΔ/H inside the corner; n·ln(1 + Δ/d) and nΔH/(d(d + Δ)) past it | to 2e-58 and 1e-55 | as predicted |
+| P5 (c) | the reader's lay flat over H ≤ d; the in-place largest with H in [d, d + Δ], within a factor 1 + Δ/d of nΔ/d | flat to 6e-59; largest at H/d = 1.001, 1.042, 1.413 for Δ/d = 0.001, 0.1, 1 (inside), but for Δ/d = 0.001 its value 0.031968032 equals the bound nΔ/(d + Δ) and failed the comparison | **killed** |
+
+**P5 killed by my set-up, not by the geometry.** The grid of 2,001 values of H steps by a factor 1.007 and so has no
+value inside [d, d + Δ] when Δ/d = 0.001 except the two ends I added; the largest it found was at H = d + Δ, where the
+span is exactly nΔ/(d + Δ), the lower bound I had set, and rounding decided the comparison. Post hoc, found after the
+run: with H inside [d, d + Δ] the in-place span is n·(2 − H/(d + Δ) − d/H), whose largest value is at
+H = √(d(d + Δ)), the geometric middle of the object's own ends, where it is 2n·(1 − √(d/(d + Δ))) (18.745 at
+Δ/d = 1, at H/d = √2; the grid found 18.745 at 1.4125). The reader's-lay span there is n·(1 + ln((d + Δ)/H) − d/H),
+falling for H ≥ d, so the reader's lay has no peak, only its flat run up to d.
+
+### Run 3 (13 October; `hko/hko3.py`): the peak found by search
+
+*Prediction written before the script, after run 2's diagnosis.*
+
+- **P5′. The in-place lay gives an object most detail at the corner of its own ends.** The in-place span is largest at
+  H = √(d(d + Δ)), where it is 2n·(1 − √(d/(d + Δ))) (→ nΔ/d as Δ/d → 0); it rises for H below that and falls above
+  it. On the reader's lay the span is n·ln(1 + Δ/d) for every H ≤ d and falls for every H > d. **Killed if**, for
+  d = 1, 10, 1000 and Δ/d = 10⁻³, 0.1, 1, the maximizer found by golden-section search in ln H over [10⁻³d, 10³d]
+  misses √(d(d + Δ)) by more than 1e-20 (relative), the largest span misses 2n·(1 − √(d/(d + Δ))) by more than 1e-30
+  (relative), or the in-place span fails to rise (or the reader's-lay span fails to fall) between successive values
+  of H on a log grid of 400 from 10⁻³d to the peak (or from d to 10³d).
+
+Result (mpmath at 60 digits; golden-section search, 260 steps; seconds):
+
+| | prediction | result | |
+|---|---|---|---|
+| P5′ | the in-place span largest at H = √(d(d + Δ)), value 2n(1 − √(d/(d + Δ))); rising before it; the reader's lay flat to d and falling after | the peak at H/d = √(1 + Δ/d) to 3.6e-31 (1.0004999, 1.0488088, 1.4142136); the value to 3.1e-58 (0.031976, 2.97839, 18.74517 at n = 32); both monotone as predicted | not killed |
+
+**Reading.**
+- **Inside the corner a larger H takes detail; past it, the lays part.** An object of extent Δ at d spans nΔ/H inside
+  the corner: more proportional room, the same count, less detail, one level per doubling of H (Tom's point). Past the
+  corner, on the reader's lay its detail is n·ln(1 + Δ/d), set by where it is and not by H; on the in-place lay it is
+  nΔH/(d(d + Δ)), which grows as H does. A small H reads the near finely; a large H reaches the far, finely on the
+  in-place lay and on the reader's lay by moving the held levels outward.
+- **The best H for an object is the corner of its own ends**, √(d(d + Δ)), on the in-place lay; for a thin object, its
+  distance. With P3 and P4: the best H for whatever is read is the geometric middle of it, whether a pair of amounts, a
+  range of distances for parallax, or one object's two ends.

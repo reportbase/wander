@@ -140,8 +140,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   H, the logarithm, or the reciprocal for the in-place lay), the middle one becoming the top at H past the world and the
   bottom below it, a corner only with H inside; the addresses a finite count holds for every H, the world lost whole
   into home, past the held edge or into the horizon; the angle between two tapped amounts against H, widest at their
-  geometric mean. `?h=<log10 H, 0, inf>&lay=inplace&n=8|32|128&pair=i,j`; hook `window.__hlimits` (`normLay`,
-  `deviation`, `held`, `thresholds`, `pairAngle`, `bestPair`, `hud`, `set`). Not in the flying page.
+  geometric mean. A fifth panel (13 Oct, SPN R229; Tom: "larger H moves the corner further away from the observer, which
+  gives more proportional space. reader has fixed number of addresses, so more proportional space means each object is
+  given less level of detail"): one object (the amount tapped last, a hundredth, a tenth or all of its distance across)
+  and its detail in levels against H on both lays, nΔ/H inside the corner, flat past it on the reader's lay, most at
+  √(x(x + Δ)) on the in-place lay. `?h=<log10 H, 0, inf>&lay=inplace&n=8|32|128&pair=i,j`; hook `window.__hlimits`
+  (`normLay`, `deviation`, `held`, `thresholds`, `pairAngle`, `bestPair`, `objectSpan`, `objectPeak`, `hud`, `set`).
+  Not in the flying page.
 - `h-chain.html`: **the chain from H** (13 Oct 2026, Tom: "lets build stand alone demos of H kicks of the entire chain of
   logic … we sweep the cauchy fisheye of it. the shape is constructed virtually, over many observations, which implies
   that it might have something to do with parallax"; SPN R228; after draw's labs rcc and udv), six steps with one H:
@@ -324,7 +329,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   readings 1/(n + 1)), and "A sphere in a cube" after Proposition 8 (any size; the extent must be known for amounts). §10's step 3
   (SPN R223) shows π/2 · 2/π = 1 on the thumb: the two vantages joined return only what the reader put in, H in H.
   Since R226, H is the value the reader chooses to start the system, not a measured size ((P1), §2, §8); V is the drawn
-  whole and V* the true breadth throughout; "What the geometry needs: a shape and one H" follows Proposition 3. §9
+  whole and V* the true breadth throughout; "What the geometry needs: a shape and one H" follows Proposition 3. §8 has
+  "What a larger H gives and takes" (R229: nΔ/H inside the corner, the lays parting past it, the best H the corner of
+  what is read) and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9
   opens with "Geometry first, then values" (R227): physics assigns the placeholders' values as multipliers on the
   amounts, never redrawing a whole, and the geometry is agnostic to that step.
   Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
@@ -607,7 +614,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   at H of ∞, the logarithm (reader's) or the reciprocal (in-place) at H of 0, a corner only with H inside (P1); a world
   lost whole three ways at H = n·b, a·e^(1 − L_max), a/n (P2); the best H for two amounts √(x₁x₂), widest angle
   arcsin((r − 1)/(r + 1)) (P3); parallax's error per step cosh(ln(d/H)), the best half-baseline over [a, b] √(ab) (P4).
-  Nothing killed. `h-limits.html` and `h-chain.html` show it.
+  Nothing killed. `h-limits.html` and `h-chain.html` show it. Runs 2–3 (`hko2.py`, `hko3.py`; SPN R229), detail per
+  object [d, d + Δ]: nΔ/H inside the corner; past it n·ln(1 + Δ/d) on the reader's lay whatever H is, nΔH/(d(d + Δ)) on
+  the in-place lay. Run 2's P5 killed by my set-up (a grid too coarse to land inside [d, d + Δ]; the endpoint equalled my
+  bound); run 3: the in-place peak at H = √(d(d + Δ)), the corner of the object's own ends (P5′ not killed).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -810,7 +820,8 @@ In short:
       median at the corner and the mean 4/π; π/2 and 2/π at the horizon, product 1; v/h = ∞ at 90°.
   24. **h-limits.html:** past the world's ends the number line, the logarithm and the reciprocal exactly, a corner only
       with H inside; the world lost whole into home, past the edge, into the horizon at the thresholds; 24 and 17
-      addresses at H = 1; a pair best told apart at √(x₁x₂), arcsin(1/3) for r = 2.
+      addresses at H = 1; a pair best told apart at √(x₁x₂), arcsin(1/3) for r = 2; one object's detail flat past the
+      corner on the reader's lay, nΔ/H inside, most on the in-place lay at √(x(x + Δ)).
   25. **h-chain.html:** one reader's even sweep gives back the unit circle for every figure and size; two standpoints 2H
       apart hold all 72 points at the best H and none at 10⁻³ or 10³; H of 0 or one standpoint, only rays; five parties,
       the near field 1/6; physics relabels and nothing moves.

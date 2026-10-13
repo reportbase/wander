@@ -94,6 +94,17 @@
             mean, the corner of the pair, where it is arcsin((r − 1)/(r + 1)), and falls to nothing at both ends. In
             levels they are ln r apart at every H: H decides how much of the turn they take, never their pattern.</p></div>
     </div>
+    <div class="panel"><h2>What a larger H gives and takes</h2>
+        <div class="row" style="margin-bottom:8px"><select id="ext" aria-label="the object's extent">
+            <option value="0.01">an object a hundredth of its distance across</option>
+            <option value="0.1" selected>an object a tenth of its distance across</option>
+            <option value="1">an object as wide as its distance</option></select></div>
+        <canvas id="detail" height="300"></canvas>
+        <p class="cap">One object, the amount you tapped last and a stretch past it, and the detail the reader gives it
+        (log₂ of the addresses it spans) for every H. Inside the corner, more H means more proportional room for the same
+        count: one level fewer per doubling. Past the corner the two lays part: the reader's lay gives the object what
+        its distance allows whatever H is, and reaches it only while it is within the held levels; the in-place lay gives
+        it more as H grows, most at the corner of the object's own ends, √(x(x + Δ)).</p></div>
     <p class="note">Geometry and its placing only: the amounts are given from nowhere, as physics would assign them;
     the reader's directions never change with H. The same corner, the geometric middle of what is read, is the best H
     for a pair here, the best half-baseline for parallax over a range, and the best estimate of a size within bounds.
@@ -115,7 +126,7 @@
         log: (x, a, b) => Math.log(x / a) / Math.log(b / a),
         recip: (x, a, b) => (1 / a - 1 / x) / (1 / a - 1 / b),
     };
-    let state = { lg: 0, lay: 'reader', n: 32, pair: [10, 20] };
+    let state = { lg: 0, lay: 'reader', n: 32, pair: [10, 20], ext: 0.1 };
     const H = () => 10 ** state.lg;
 
     // ── the arithmetic ──
@@ -147,6 +158,9 @@
     const thresholds = (n = state.n) => ({ home: n * B, edge: A * Math.exp(1 - LMAX), horizon: A / n });
     const pairAngle = (x1, x2, h) => theta(x2, h) - theta(x1, h);
     const bestPair = (x1, x2) => { const r = x2 / x1; return { H: Math.sqrt(x1 * x2), angle: Math.asin((r - 1) / (r + 1)) }; };
+    // the room one object [x, x + D] is given: n times the stretch of lay it covers (HKO runs 2, 3)
+    const objectSpan = (lay, x, D, h, n = state.n) => n * (LAYS[lay]((x + D) / h) - LAYS[lay](x / h));
+    const objectPeak = (x, D, n = state.n) => ({ H: Math.sqrt(x * (x + D)), span: 2 * n * (1 - Math.sqrt(x / (x + D))) });
 
     // ── drawing ──
     function fit(cv) {
@@ -250,6 +264,32 @@
         text(g, `${Math.log(r).toFixed(2)} apart in levels (ln r) at every H`, R, T + (W < 520 ? 48 : 34), '#8a8a96', 10.5, 'right');
     }
 
+    function drawDetail() {
+        const [g, W, Hc] = fit($('detail')), x = WORLD[state.pair[1]], D = x * state.ext, n = state.n;
+        const L = 40, R = W - 14, T = 22, Bm = 30, lo = -4, hi = 4, ylo = -14, yhi = Math.ceil(Math.log2(n * Math.max(1, state.ext))) + 2;
+        const X = r => L + (r - lo) / (hi - lo) * (R - L), Y = lv => Hc - Bm - (lv - ylo) / (yhi - ylo) * (Hc - Bm - T);
+        g.strokeStyle = 'rgba(255,255,255,0.08)'; g.lineWidth = 1; g.beginPath();
+        for (let k = lo; k <= hi; k++) { g.moveTo(X(k), Y(ylo)); g.lineTo(X(k), Y(yhi)); } for (let v = -12; v <= yhi; v += 4) { g.moveTo(X(lo), Y(v)); g.lineTo(X(hi), Y(v)); } g.stroke();
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(X(lo), Y(yhi)); g.lineTo(X(lo), Y(ylo)); g.lineTo(X(hi), Y(ylo)); g.stroke();
+        for (let k = lo; k <= hi; k += 2) text(g, k === 0 ? 'H = x' : `x·10${sup(k)}`, X(k), Hc - 12, '#8a8a96', 10.5, 'center');
+        for (let v = -12; v <= yhi; v += 4) text(g, String(v), L - 6, Y(v) + 4, '#8a8a96', 10.5, 'right');
+        g.strokeStyle = 'rgba(230,228,238,0.35)'; g.setLineDash([3, 4]); g.beginPath(); g.moveTo(X(lo), Y(0)); g.lineTo(X(hi), Y(0)); g.stroke(); g.setLineDash([]);
+        text(g, 'one address: a point', X(lo) + 6, Y(0) - 5, '#8a8a96', 10.5);
+        g.strokeStyle = 'rgba(212,160,82,0.6)'; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(X(0), Y(ylo)); g.lineTo(X(0), Y(yhi)); g.stroke(); g.setLineDash([]);
+        text(g, W < 520 ? 'inside →' : 'inside the corner →', X(0) + 6, Y(ylo) - 8, '#8a8a96', 10.5); text(g, W < 520 ? '← past' : '← past the corner', X(0) - 6, Y(ylo) - 8, '#8a8a96', 10.5, 'right');
+        for (const [lay, col] of [['reader', '#d4a052'], ['inplace', '#e0826c']]) {
+            const on = lay === state.lay; g.strokeStyle = on ? col : 'rgba(224,130,108,0.45)'; g.lineWidth = on ? 2.4 : 1.4; g.beginPath();
+            for (let i = 0; i <= 400; i++) { const r = lo + (hi - lo) * i / 400, q = [X(r), Y(Math.max(ylo, Math.log2(objectSpan(lay, x, D, x * 10 ** r))))]; i ? g.lineTo(...q) : g.moveTo(...q); } g.stroke();
+        }
+        const pk = objectPeak(x, D); dot(g, X(Math.log10(pk.H / x)), Y(Math.log2(pk.span)), 4.5, '#e0826c');
+        const cr = Math.log10(H() / x); if (cr > lo && cr < hi) { g.strokeStyle = 'rgba(140,230,205,0.8)'; g.lineWidth = 1; g.beginPath(); g.moveTo(X(cr), Y(ylo)); g.lineTo(X(cr), Y(yhi)); g.stroke(); }
+        const now = objectSpan(state.lay, x, D, H());
+        const lvl = now >= 1 ? Math.log2(now).toFixed(2) + ' levels' : W < 520 ? '< 1 address' : 'less than one address';
+        text(g, W < 520 ? `x ${fmtH(Math.log10(x))}, Δ ${fmtH(Math.log10(D))}: ${lvl}` : `x = ${fmtH(Math.log10(x))}, Δ = ${fmtH(Math.log10(D))}: at this H, ${lvl}`, L + 6, Y(yhi) + 14, '#e6e4ee', 11);
+        if (W < 520) { text(g, "reader's lay", L + 6, Y(yhi) + 29, '#d4a052', 11); text(g, 'in-place lay', L + 104, Y(yhi) + 29, '#e0826c', 11); }
+        else { text(g, "reader's lay", R, Y(yhi) + 14, '#d4a052', 11, 'right'); text(g, 'in-place lay', R, Y(yhi) + 28, '#e0826c', 11, 'right'); }
+    }
+
     function hud() {
         const h = H(), hd = held(h), th = thresholds(), d = deviation(h, state.lay), far = state.lay === 'reader' ? 'logarithm' : 'reciprocal';
         let where;
@@ -266,7 +306,7 @@
 
     function draw() {
         $('hv').textContent = fmtH(state.lg);
-        drawTurn(); drawRulers(); drawHeld(); drawPair();
+        drawTurn(); drawRulers(); drawHeld(); drawPair(); drawDetail();
         $('hud').textContent = hud();
     }
 
@@ -288,6 +328,7 @@
     $('play').addEventListener('click', () => { anim = null; playing = !playing; $('play').textContent = playing ? 'pause' : 'play'; $('play').classList.toggle('on', playing); });
     $('lay').addEventListener('change', () => { state.lay = $('lay').value; draw(); });
     $('n').addEventListener('change', () => { state.n = +$('n').value; draw(); });
+    $('ext').addEventListener('change', () => { state.ext = +$('ext').value; draw(); });
     $('turn').addEventListener('click', ev => {
         const r = $('turn').getBoundingClientRect(), x = ev.clientX - r.left, y = ev.clientY - r.top;
         let best = null, bd = 18; for (const [px, py, k] of dots) { const dd = Math.hypot(px - x, py - y); if (dd < bd) { bd = dd; best = k; } }
@@ -304,7 +345,7 @@
     draw(); requestAnimationFrame(tick);
 
     window.__hlimits = {
-        WORLD, LAYS, RULERS, LMAX, theta, normLay, deviation, held, thresholds, pairAngle, bestPair,
+        WORLD, LAYS, RULERS, LMAX, theta, normLay, deviation, held, thresholds, pairAngle, bestPair, objectSpan, objectPeak,
         hud, set(o = {}) { anim = null; stop(); if (o.lay) { state.lay = o.lay; $('lay').value = o.lay; } if (o.n) { state.n = o.n; $('n').value = String(o.n); }
             if (o.pair) state.pair = o.pair; if (o.lg !== undefined) setLg(o.lg); else draw(); return { ...state }; },
         state: () => ({ ...state, H: H() }),

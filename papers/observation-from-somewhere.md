@@ -124,6 +124,8 @@ as if a single observation held it. Section 3 sets out the readers in full.
   corner needs only that the sweep treat the two parties alike, and the missing mean only that, besides, its weight not
   vanish at the horizon; the circle and the even turn give the Cauchy's exact shape (§7.2).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
+  A larger H gives the near less detail and reaches the far; the best H is the corner of what is read. An H of 0 or
+  of ∞ leaves the reader one of the rulers that favour no amount, and no corner (§9).
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
   outside fixes the scale, and a fact shared between two readers supplies exactly one ratio. The best estimate of the
   other party's true size is the median of what the reader knows of it (§9).
@@ -1197,6 +1199,20 @@ same idea appears in the hyperbolic browser, which draws only nodes at least a p
 1995), in mipmaps, which halve an image at each level (Williams 1983), and in web-map tiles, whose key gains one digit
 per level of detail (Microsoft, Bing Maps Tile System).
 
+**What a larger H gives and takes.** Count the room the reader gives one object, the stretch of amounts from x to
+x + Δ, with n addresses across the near field: n times the stretch of lay the object covers. Inside the corner
+(x + Δ ≤ H) it spans nΔ/H addresses. A larger H moves the corner away and gives the proportional field more room, but
+the count is fixed, so every object inside the corner gets fewer addresses: one level of detail fewer for each
+doubling of H. Past the corner (x ≥ H) the two lays of §6 part. On the logarithmic lay the object spans
+n·ln(1 + Δ/x), whatever H is: its detail is set by where it is, and a larger H only moves the held levels outward,
+bringing farther things in. On the in-place lay it spans n·H·(1/x − 1/(x + Δ)) = nΔH/(x(x + Δ)), which grows with H,
+so there a larger H gives the far more detail as well. A small H reads the near finely; a large H reaches the far. On
+the in-place lay an object gets the most room when H = √(x(x + Δ)), the corner of its own two ends, where it spans
+2n·(1 − √(x/(x + Δ))), close to nΔ/x for a thin object; on the logarithmic lay it gets as much as it can have for
+every H up to x. Placed on the quarter turn at arctan(x/H), two amounts are set furthest apart, at the angle
+arcsin((r − 1)/(r + 1)) for a ratio r, when H is their geometric mean. The best H is the corner of what is read, as
+the best estimate of a size is the corner of what is known (Proposition 13).
+
 **More points, fewer told apart.** A parallel reader looks side-on at N points spaced evenly around a circle and reads
 each one's position across its view to a step ε, relative to the circle's radius. Neighbours at angle θ from the middle
 of the view are about (2π/N)·cos θ apart, so the reader separates those with cos θ ≥ εN/2π, which is
@@ -1414,6 +1430,13 @@ and the functional equations behind it were later treated in general by Aczél, 
 Neither kind of ruler has a corner, since no amount is laid differently from any other. The reader's own lay is
 neither. Proportional up to its corner and logarithmic past it (§6), it favours one amount, the one at its joint, and
 that amount is its own: its breadth H, under V = H.
+
+Taken to its ends, the reader's lay becomes the rulers that favour none. On any stretch [a, b] of amounts, once H lies
+past b the lay there is x/H, the number line, and once H lies below a it is 1 + ln(x/H), the logarithm; the in-place
+lay gives 2 − H/x there, the power −1. So an H of ∞ and an H of 0 are exactly the rulers of Proposition 14, and the
+corner, the one amount the lay favours, exists only for an H among the amounts read. At either end a reader with
+finitely many addresses loses what it reads: an endless H puts all of it in the first address, and a vanishing H sends
+all of it past the levels held, or, on the in-place lay, into the horizon's last address.
 
 **The number line is a shared unit.** The ordinary number line is the clearest example of a unit agreed between readers.
 It is one notch agreed to stand for 1, built out by counting and dividing, and its form is the form a shared ruler
