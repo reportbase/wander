@@ -85,7 +85,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   view (OFS Theorem 6, Proposition 8); mountain equals thumb on the reader's lay of distances (x, then 1 + ln x), read at
   0.5 H against the true 10 H, off by V/H = 20, 4.32 doublings; "walk one thumb" recovers d = H·s₂/(s₂ − s₁) and V.
   The two vantages (13 Oct, SPN R223; OFS §10 step 3): on the thumb's circle the outer reads π/2, the inner the fingers'
-  mean shadow 2/π, product 1, the thumb's true breadth; to the ends 1.1107 × 0.9003 = 1; the mountain never enters.
+  mean shadow 2/π, product 1, H in H, the starting value returned (R226; it said "the thumb's true breadth"); to the
+  ends 1.1107 × 0.9003 = 1; the mountain never enters.
   `?V=&d=&k=&walk=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `vantages`, `lay`, `set`).
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
@@ -133,6 +134,29 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   S, climbing ρ(0)·ln 10 a tenfold on each path, settling at 4/π for sin² 2θ. `?path=circle|line|square&t=`; hook
   `window.__paths` (`b`, `measure` (b along the path as chords, not the closed form), `bWeighted`, `tmean`,
   `tmeanWeighted`, `perDecade`, `vantages`, `hud`, `set`). Not in the flying page.
+- `h-limits.html`: **what is H?** (13 Oct 2026, Tom: "explore what H acutally is. what is H of 0. what is H of infinity.
+  Picking an H creates the unit relational space"; HKO; SPN R228), a standalone page like `zoom.html`. A world of 31
+  amounts (10⁻³ … 10³) placed by H on the quarter turn (arctan(x/H)); three rulers (the number line, the reader's lay at
+  H, the logarithm, or the reciprocal for the in-place lay), the middle one becoming the top at H past the world and the
+  bottom below it, a corner only with H inside; the addresses a finite count holds for every H, the world lost whole
+  into home, past the held edge or into the horizon; the angle between two tapped amounts against H, widest at their
+  geometric mean. A fifth panel (13 Oct, SPN R229; Tom: "larger H moves the corner further away from the observer, which
+  gives more proportional space. reader has fixed number of addresses, so more proportional space means each object is
+  given less level of detail"): one object (the amount tapped last, a hundredth, a tenth or all of its distance across)
+  and its detail in levels against H on both lays, nΔ/H inside the corner, flat past it on the reader's lay, most at
+  √(x(x + Δ)) on the in-place lay. `?h=<log10 H, 0, inf>&lay=inplace&n=8|32|128&pair=i,j`; hook `window.__hlimits`
+  (`normLay`, `deviation`, `held`, `thresholds`, `pairAngle`, `bestPair`, `objectSpan`, `objectPeak`, `hud`, `set`).
+  Not in the flying page.
+- `h-chain.html`: **the chain from H** (13 Oct 2026, Tom: "lets build stand alone demos of H kicks of the entire chain of
+  logic … we sweep the cauchy fisheye of it. the shape is constructed virtually, over many observations, which implies
+  that it might have something to do with parallax"; SPN R228; after draw's labs rcc and udv), six steps with one H:
+  pick an H (the unit relational space, the same at every H; a world placed by it); the number of V's sets the shape
+  (circle, sphere, a table to five); one observation sweeps the Cauchy fisheye of one facing (a reader at a figure's
+  centre, v/h = tan a, the census given back as the unit circle for every figure and size); facings joined over
+  observations; standpoints a baseline 2H apart (or three, the pair crossing squarest, as udv) build the figure, the
+  Thales circle the corner circle, H of 0 rays, H of ∞ the baseline, best H √(d_near·d_far); physics assigns the value
+  and nothing moves. `?step=1..6&h=&n=&fig=circle|egg|star|astroid&eps=0.1|0.5|2&sp=1|2|3&unit=mi|km|au`; hook
+  `window.__hchain` (`fisheye`, `triangulate`, `bestH`, `figurePoints`, `hud`, `set`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -236,7 +260,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -301,8 +325,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
   Since 13 Oct (SPN R220, R221) it has the three-party wedge: Propositions 3(f) (the sphere only if V = V₂ = H) and 5(e)
   (the even wedge's readings the two-dimensional Cauchy, every pair at its corner, the near field a third, with its
-  converse), and "A sphere in a cube" after Proposition 8 (any size; the extent must be known for amounts). §10's step 3
-  (SPN R223) shows π/2 · 2/π = 1 on the thumb: the two vantages joined return only what the reader holds.
+  converse), "More parties" after it (SPN R225: n other parties, every pair at its corner, the near field in all
+  readings 1/(n + 1)), and "A sphere in a cube" after Proposition 8 (any size; the extent must be known for amounts). §10's step 3
+  (SPN R223) shows π/2 · 2/π = 1 on the thumb: the two vantages joined return only what the reader put in, H in H.
+  Since R226, H is the value the reader chooses to start the system, not a measured size ((P1), §2, §8); V is the drawn
+  whole and V* the true breadth throughout; "What the geometry needs: a shape and one H" follows Proposition 3. §8 has
+  "What a larger H gives and takes" (R229: nΔ/H inside the corner, the lays parting past it, the best H the corner of
+  what is read) and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9
+  opens with "Geometry first, then values" (R227): physics assigns the placeholders' values as multipliers on the
+  amounts, never redrawing a whole, and the geometry is agnostic to that step.
   Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
   (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on). The fourth, an
   adversarial read, is in `plans/ofs-review-4.md`, with six edits taken (SPN R213): the paper's front now claims what its
@@ -323,7 +354,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   it caught the dropped horizon condition. Made: the three-path table in OFS §11.2, question 2 (circle, line, square
   agreeing at home, the corner and the horizon, parting between; none with a mean; sin² 2θ, fair but vanishing at the
   horizon, with the mean 4/π), checked exactly in `ofs/paths.py` (Q1–Q5; run 1's Q3 killed by my set-up, run 2 not),
-  and `paths.html`.
+  and `paths.html`. Its message 5 (five parties drawn at H, read as assuming their payloads equal) is answered by Tom's
+  "from the geometry's perspective, its job is done, what ever the true breadth makes no difference" (SPN R225): the
+  drawing is required and finishes the geometry; the true breadths enter only the amounts; the payload is what arrives.
+  Made: WDG run 2 and OFS's "More parties" after Proposition 5(e). Message 6 (placeholders, not physical breadths;
+  Tom: "so why even include breadth"), then Tom's "Even H is not a real breadth" (SPN R226): the geometry a shape and
+  one H; the corner is v = h in any drawing, equal lengths make it 45° and the even sweep's median; no reading gives V*/H.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -568,7 +604,20 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (P2); six chambers 1/6 each, the near field in both readings a third (P3); drawn at V = c₁H, V₂ = c₂H the medians move to
   1/c₁, 1/c₂, c₂/c₁, so each pair's corner needs that pair drawn at one length and the wedge needs V = V₂ = H (P4); a
   rotatable sphere's rays point every point of a cube at any extent, the address (u, t) the same at every extent (P5); a
-  face's middle quarter takes 38% of its directions (P6). Nothing killed. `sphere-cube.html` shows it.
+  face's middle quarter takes 38% of its directions (P6). Nothing killed. `sphere-cube.html` shows it. Run 2
+  (`wdg/wdg2.py`, 13 Oct; Tom: "from the geometry's perspective, its job is done, what ever the true breadth makes no
+  difference"; SPN R225): n other parties drawn at H, n = 1 … 5; the readings the n-dimensional Cauchy (P7); every
+  reading the circle's law, every pair the wedge's (P8); the near field in all readings 1/(n + 1), the count past the
+  corner even over 0 … n (P9); drawn unequally, the shares move (P10). Nothing killed.
+  `hko-plan.md` (+ `hko/hko.py`, 13 Oct; Tom: "explore what H acutally is. what is H of 0. what is H of infinity"; SPN
+  R228): exact (mpmath). Past the world's ends the lays are the corner-free rulers of OFS Proposition 14, the number line
+  at H of ∞, the logarithm (reader's) or the reciprocal (in-place) at H of 0, a corner only with H inside (P1); a world
+  lost whole three ways at H = n·b, a·e^(1 − L_max), a/n (P2); the best H for two amounts √(x₁x₂), widest angle
+  arcsin((r − 1)/(r + 1)) (P3); parallax's error per step cosh(ln(d/H)), the best half-baseline over [a, b] √(ab) (P4).
+  Nothing killed. `h-limits.html` and `h-chain.html` show it. Runs 2–3 (`hko2.py`, `hko3.py`; SPN R229), detail per
+  object [d, d + Δ]: nΔ/H inside the corner; past it n·ln(1 + Δ/d) on the reader's lay whatever H is, nΔH/(d(d + Δ)) on
+  the in-place lay. Run 2's P5 killed by my set-up (a grid too coarse to land inside [d, d + Δ]; the endpoint equalled my
+  bound); run 3: the in-place peak at H = √(d(d + Δ)), the corner of the object's own ends (P5′ not killed).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -620,8 +669,13 @@ kept off the Pages site. Don't move or remove them without asking.
 Since 9 Oct 2026 (Tom): lowercase **h, v** are **unit relations**, 0 to 1 (h relates to H, v to V): the geometry,
 scale-free. A relation requires two unit relations; a circle has two, a sphere three (Tom, 11 Oct, SPN R204: "I don't
 like the term fill levels"). The papers, the pages and this file were converted on 11 Oct; the plans and the archive keep "fill level".
-Uppercase **H, V** are breadths, amounts (H the reader's, V the other's); with the distance **d**, a size **Δ** and the
-reader's step **ε**, the physics. Never read v as V or v/h as V/H ((v·V)/(h·H) = (v/h)·(V/H)); the only bridge is a fill
+Uppercase **H, V** are breadths, written with the amounts (H the reader's, V the other's); with the distance **d**, a size **Δ** and the
+reader's step **ε**, the physics. Since 13 Oct (SPN R226; Tom: "Even H is not a real breadth, Its the value needed to
+kick off the system"; "how many relations are included in the systems definition, determine its shape"): no breadth in
+the geometry is a measured size. H is the one value the reader chooses to start the system, any value, its size setting
+only the zoom (small H fine near, large H fine far); V is the other party's whole as drawn, at H; **V*** is a party's
+true breadth, an amount never read. The geometry is a shape and one H, the shape set by how many unit relations the
+system includes (two the circle, three the sphere, n + 1 the sphere in n + 1 dimensions). Never read v as V or v/h as V/H ((v·V)/(h·H) = (v/h)·(V/H)); the only bridge is a fill
 level times its breadth, where that breadth is known. Before verifying, editing or summarising any paper, plan or lab,
 check each symbol's case and domain, and name the bridge for any conclusion that crosses from geometry to physics. Text
 before 9 Oct often conflates them (SPN's opening warning and §1, "H and h kept apart"; `plans/vh-rulings-review.md`,
@@ -666,6 +720,14 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   per observation, and its even measure is the two-dimensional Cauchy: every pair keeps its corner, the near field in both
   readings is a third (OFS Propositions 3(f), 5(e)). A rotatable sphere's rays point every point of a cube of any size,
   the address the same at every size; the point in amounts needs the cube's extent (OFS §9, "A sphere in a cube").
+  With n other parties (R225) the same, once per party: every pair keeps its corner, the near field in all readings is
+  1/(n + 1). The drawing is the geometry's whole job (Tom: "from the geometry's perspective, its job is done, what ever
+  the true breadth makes no difference"); the true breadths enter only the amounts.
+- Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
+  its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
+  includes. V is the drawn whole (at H), V* the true breadth. Then physics assigns the values (R227; Tom: "once the
+  geometry is defined, physics assigns the values of the placeholders. geometry is agnostic to that step"), as
+  multipliers on the amounts, never redrawing a whole; the values decide only where things land, the zoom.
 - Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof"). Since R217 the main result's core does
   not rest on it: any fair weight that does not vanish at the horizon puts the median at the corner and leaves no mean
   (OFS Theorem 6(e)); only the Cauchy's exact shape is the even turn's.
@@ -756,6 +818,13 @@ In short:
   23. **paths.html:** the share of the sweep measured along each path (as chords) is its closed form; all three fair and ½
       at the corner, 0.250, 0.293, 0.207 at 22.5°; the mean climbing ρ(0)·ln 10 a tenfold on each; sin² 2θ with its
       median at the corner and the mean 4/π; π/2 and 2/π at the horizon, product 1; v/h = ∞ at 90°.
+  24. **h-limits.html:** past the world's ends the number line, the logarithm and the reciprocal exactly, a corner only
+      with H inside; the world lost whole into home, past the edge, into the horizon at the thresholds; 24 and 17
+      addresses at H = 1; a pair best told apart at √(x₁x₂), arcsin(1/3) for r = 2; one object's detail flat past the
+      corner on the reader's lay, nΔ/H inside, most on the in-place lay at √(x(x + Δ)).
+  25. **h-chain.html:** one reader's even sweep gives back the unit circle for every figure and size; two standpoints 2H
+      apart hold all 72 points at the best H and none at 10⁻³ or 10³; H of 0 or one standpoint, only rays; five parties,
+      the near field 1/6; physics relabels and nothing moves.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

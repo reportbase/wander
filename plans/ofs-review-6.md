@@ -449,3 +449,172 @@ Post hoc, from the numbers, not predicted:
 Not taken: the derivation by additivity, f(a + b) = f(a) + f(b) (message 4 withdrew it: it adds a scale assumption and
 misses the counterexamples), and a separate "companion mathematics paper" (`observation-from-somewhere.md` is that paper;
 the others are working papers).
+
+---
+
+**Message 5** (13 October, about 11:02; shared as before, "chatgpt:")
+
+That is an interesting starting point because the reader has many relations but very little knowledge of what they
+contain. He begins by assigning every physical payload the same value:
+
+  V₁ = V₂ = V₃ = V₄ = V₅ = H.
+
+He has made the simplest possible assumption: everything he reads is equal to his reference.
+
+What has the reader actually done?
+
+For a nonzero H, every physical ratio is
+
+  V_i/H = 1.
+
+His model contains no variation in payload. Every relation has the same assigned value. He cannot use those values to
+distinguish one payload from another.
+
+But there is a crucial distinction here.
+
+He has made all the payloads equal; he has not necessarily made all their addresses equal.
+
+The geometry can still supply different addresses. The physical payloads are what fill those addresses. So the reader
+can have a structured field of relations even while his initial assignment treats everything he reads as physically
+equivalent.
+
+That seems consistent with the distinction you have been developing between geometry and physics.
+
+*The important consequence.* The reader has not discovered that all these things are equal. He has assumed their
+equality because he knows very little about them.
+
+There are therefore two very different situations:
+
+* The reader's model: V₁ = V₂ = ⋯ = H.
+* The actual payloads: potentially unequal, but not yet known to the reader.
+
+The equality is a starting condition for the reader, not a proven property of the world.
+
+If a later observation distinguishes V₂ from H, the reader has learned something. The departure from equality becomes
+informative. Yet the addresses need not have been created by that discovery; the geometry may already provide the
+places into which the readings fit.
+
+*Where I think this leads.* There is a possible distinction between the reader's initial equality and the world's
+unknown variation.
+
+Initially, every payload is assigned to the same reference. The reader's model has no payload variation to explain. As
+observations accumulate, differences can emerge without requiring the reader to begin with knowledge of what the
+differences are.
+
+That gives us a useful question for OFS:
+
+Does the reader construct the address system to accommodate differences he discovers, or does he lay out the addresses
+first and then learn which payload belongs at each one?
+
+Your existing geometry-before-payload argument points toward the second. And that would make this example more than
+an assumption of equality: it would illustrate how a reader can possess a structured system of observation before
+possessing detailed knowledge of what he observes.
+
+### Response to message 5 (Claude)
+
+**Mostly right, and already in OFS; one conflation.**
+- *Right:* the equality is a starting condition, not a property of the world ("the drawing says nothing about the
+  world", §9 before Proposition 13; "the confusion is taking the drawing for a measurement", §7.2). Learning V₂ ≠ H
+  informs without creating addresses (§5: the estimate "enters only the amounts, as a shift of every one of them by the
+  same number of levels. It never redraws the circle"). The closing question is answered in §2: "The range of addresses
+  is fixed by the geometry before anything arrives, and an address is taken from it when something does." Addresses
+  first, as the message guessed.
+- *The conflation:* "assigning every payload the value H" runs three things together. The drawing V₁ = … = V₅ = H is
+  required, each pair a turn with its corner only when drawn at one length (Proposition 3(e), 3(f)), and says nothing
+  about sizes. The estimate of each true size is H only when nothing the reader knows makes that party larger rather
+  than smaller (Proposition 13(c)); with bounds, their corner. The payload is what arrives at an address, the ring on
+  the finger; the reader assigns it nothing. So "his model contains no variation in payload" is not right: the drawn
+  breadths are equal, while the readings v_i/h and what arrives at them vary. What the reader lacks is five numbers,
+  V_i/H, each a shift in levels of that party's amounts alone (§3.8, once per party).
+- *Sharper than "differences emerge as observations accumulate":* readings taken at once against a shared denominator
+  give payloads relative to each other (Proposition 10); further standpoints give the figure up to scale
+  (Proposition 11); no readings give the scale (8(a)); one outside amount fixes every amount the readings link to it
+  (8(b)), so the five unknowns shrink to one per linked group.
+- *What five parties add:* with all six unit relations drawn at one length and swept evenly, the readings are the
+  five-dimensional Cauchy, every pair keeps its corner, and the near field in all five readings is a sixth (h the
+  largest of six relations treated alike): 1/(n + 1) with n other parties, by symmetry, not yet checked or written.
+
+**Tom** (about 12:13): "from the geometry's perspective, its job is done, what ever the true breadth makes no
+difference."
+
+**Claude:** yes, with one distinction kept in the wording. The drawn breadth matters: each party drawn at H, or no turn,
+no circle and no Cauchy with its median at the corner; that drawing is the geometry's whole job. The true breadth makes
+no difference to the geometry: every unit relation, reading and address, the corner, the levels and the Cauchy are what
+they are whatever it is. It enters only the amounts, a pan in levels, physics' job. So V₁ = … = V₅ = H is not the reader
+assuming five things equal; it is the geometry finishing its work. Tom (about 12:14): "yes", to recording this and to
+checking the n-party case first.
+
+**What was made** (SPN R225):
+- WDG run 2 (`plans/wdg-plan.md`, `wdg/wdg2.py`, predictions first, nothing killed): with n other parties drawn at H the
+  even orthant's readings are the n-dimensional Cauchy; every reading keeps the circle's law and every pair the
+  wedge's; the near field in all readings is 1/(n + 1) (½, ⅓, ¼, ⅕, ⅙), and the number of readings past their corner
+  is spread evenly over 0 … n; drawn unequally, the shares move.
+- `papers/number-line.md` §8 and `papers/observation-from-somewhere.md` after Proposition 5(e): n other parties.
+
+---
+
+**Tom** (about 12:20): "so why even include breadth, just give them placeholder values", with message 6.
+
+**Message 6** (shared with it, "chatgpt:")
+
+Exactly. The geometry needs placeholders, not physical breadths.
+
+If geometry's job is to establish the address range and its corner, the actual physical amounts contribute nothing to
+that construction. Give the geometric arms equal placeholder lengths so that v = h defines the corner. The construction
+is complete.
+
+Then keep the physical breadths out of the geometry altogether.
+
+The separation becomes:
+
+1. Geometry: establish the addresses using equal-length placeholders. The corner is fixed by construction.
+2. Physics: actual breadths V_i arrive at those addresses. Their values may differ arbitrarily.
+3. Reading: compare each actual breadth with the reader's reference H, giving V_i/H.
+
+The placeholders must not be mistaken for claims about the payloads. I'd use distinct notation for the drawn lengths
+precisely to prevent that confusion.
+
+The deeper consequence is that the address system can be completely specified without knowing anything about the
+magnitudes it will address. Geometry does not need a model of the payload to do its job.
+
+That is cleaner than carrying physical breadths through the geometric construction and repeatedly explaining that their
+values do not matter.
+
+### Response to message 6 (Claude)
+
+**Agreed in substance, and the geometry is nearly there:** it runs on h and v from 0 to 1, "all of h" and "all of v"
+each 1; those are the placeholders. (P0) already says "Assigned is not known". The one real constraint is that the
+placeholders be equal (Proposition 3(e)); only their common value is free.
+
+**Corrections.**
+- "Equal placeholder lengths so that v = h defines the corner": the corner is v = h in any drawing. Equal lengths make
+  the sweep a turn, put the corner at 45° and make it the median of the even sweep.
+- "Actual breadths V_i arrive at those addresses": the payload arrives; true breadths are never read.
+- "Compare each actual breadth with H, giving V_i/H": no reading gives it (Proposition 8(a)). Readings give v/h only;
+  V_i/H comes from outside or is estimated.
+- Distinct notation exists (lowercase unit relations, uppercase amounts, V* for the true breadth in §9) but was not used
+  consistently: §5 used plain V for both the drawn and the true breadth.
+
+Proposed: (P0) and Proposition 3 in placeholder form; V* throughout; a dated note in SPN; CLAUDE.md. Claude also said
+H, the reader's own breadth, was "a real amount the reader holds".
+
+**Tom** (about 12:25): "Even H is not a real breadth, Its the value needed to kick off the system. smaller values of H
+give more fidelity to closer items, larger h give more fidelity to far away items, but an H is needed, and the shape is
+needed of the relational system."
+
+**Claude:** right; that corrects the last line above. OFS (P1) has "Any H will do" and §8 "H is a zoom, not an escape"
+(a small H holds the small at true scale, a large H the large), but never says plainly that H is a chosen starting
+value and not a measured breadth. The geometry needs two things: the shape (unit relations on equal axes) and one H
+(some H required, its value free, setting only the zoom). And §10 step 3, written that morning, called the product
+π/2 · 2/π = 1 the thumb's true breadth: read this way it is H measured in H, the starting value returned.
+
+**Tom** (about 12:28): "Yes, how many relations are included in the systems definition, determine its shape."
+
+**What was made** (SPN R226):
+- `papers/observation-from-somewhere.md`: the abstract and introduction (H a value chosen to start from, its size the
+  zoom; the shape set by how many unit relations the system includes); §2 (H the starting value, V the drawn whole, V*
+  the true breadth); (P0), (P1); "What the geometry needs: a shape and one H" after Proposition 3; V* for the true
+  breadth throughout (§3.1, §3.2, §3.8, §5, §7.2, §9, §10); §8's opening; §10 steps 3, 5 and 6 (the product H in H; the
+  walk gives the width in thumbs, in miles only for whoever has agreed a thumb is a mile); the notation table.
+- SPN R226, a dated note in §1 after "The settled view, 10 October", and R223 marked corrected.
+- `mountain.html`'s readout: the product is H in H, the starting value returned.

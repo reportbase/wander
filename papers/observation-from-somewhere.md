@@ -7,7 +7,8 @@
 ## Abstract
 
 Classical geometry is drawn from nowhere: every length is held at once, to one scale, by no one in particular. A reader
-that stands somewhere has less. It knows its own breadth but not the breadth of what it reads. This paper works out the
+that stands somewhere has less. It has its own breadth, a value it chooses to start from, but not the breadth of what
+it reads. This paper works out the
 geometry that this one restriction leaves. We begin with the readers themselves. What a reader knows of two breadths
 sets one of five situations, and these give three vantages: the completed view from nowhere, whose figure is the circle,
 and two situated readers, one taking in a hemisphere at once and one sweeping it from home, whose figures are the bell
@@ -21,7 +22,10 @@ other the turn of one rigid bar, tracing a unit circle with the corner at distan
 then is there a single even turn; working back from the Cauchy distribution, which is known, arrives at V = H and
 nowhere else. The drawing is not a claim about the mountain. Its true size is a separate number, which one observation
 does not give; the reader's best estimate of it is the median of what it knows, and correcting the estimate moves every
-amount by the same number of levels and redraws nothing. Inside the
+amount by the same number of levels and redraws nothing. Nor is the reader's own breadth a measurement: H is the value
+it chooses to start from, every value gives the same circle, and its size sets only the zoom, fine near for a small H
+and fine far for a large one. The geometry needs that value and a shape, and the shape is set by how many unit
+relations the system includes: two give the circle, three the sphere. Inside the
 corner the reader can lay out its readings in proportion; past it, if no scale is preferred, the only consistent layout
 is logarithmic. The reader therefore has two address spaces, proportional and logarithmic, joined at one corner.
 
@@ -41,8 +45,8 @@ closer together than the reader's step arrive as their centroid, a sum.
 Geometry as usually written is drawn from nowhere. A blueprint shows every line at its true length, to one scale,
 turned neither toward nor away from anyone, and the equation h² + v² = 1 holds all its points at once. Nagel (1986)
 called this the view from nowhere. It is the right view for many purposes, but it is not the view of anyone who actually
-observes. An eye, an instrument or a person counting stands somewhere. It knows its own scale, its own breadth, and it
-does not know the breadth of what it reads.
+observes. An eye, an instrument or a person counting stands somewhere. It has its own scale, its own breadth, a value
+it chooses to start from rather than a size it has measured, and it does not know the breadth of what it reads.
 
 This paper asks what geometry such a reader has. Our thesis is this:
 
@@ -79,7 +83,8 @@ change the rings, and swapping the rings for others does not change the fingers.
 mathematics of the fingers alone, and the main result is that one well-known distribution, the Cauchy, is entirely
 fingers.
 
-Your thumb is your own breadth, H: the one measure you hold up. The mountain you look at has a breadth of its own, V.
+Your thumb is your own breadth, H: the one measure you hold up, chosen because it is to hand, not because it measures
+anything. The mountain you look at has a breadth of its own, V*, which you may not know.
 If you know the mountain's size, you hold the view from nowhere, and the corner is where your thumb equals the mountain,
 a point you can compute. If you do not know it, your thumb is the only measure you have, so you set the mountain equal
 to your thumb, V = H, and read the mountain in thumbs.
@@ -103,10 +108,14 @@ as if a single observation held it. Section 3 sets out the readers in full.
 - A reader that holds one breadth must assign the other party a breadth in its own unit, and its geometry requires that
   breadth to be its own, V = H. Only then is the sweep a turn, tracing a unit circle with the corner at distance 1
   whatever unit is chosen, and only then is there one even turn. Working back from the Cauchy, which is known, arrives
-  at V = H (§5, §7.1). The other party's true size is a separate estimate (§9).
-- With two other parties the same holds once per party. Drawn at V = V₂ = H, the relation lies on one sphere, and the
+  at V = H (§5, §7.1). The other party's true size is a separate estimate (§9). H itself is not a measured size but the
+  value the reader starts from; any value gives the same geometry, and its size sets only the zoom (§8).
+- How many unit relations the system includes sets its shape: two the circle, three the sphere, n + 1 the sphere in
+  n + 1 dimensions (§5). With two other parties the same holds once per party. Drawn at V = V₂ = H, the relation lies on one sphere, and the
   reader sweeps one octant of it, a wedge. Swept evenly, its readings are the two-dimensional Cauchy: every pair keeps
-  its corner, and the reader is near in both readings for a third of them, not a half (§5, §7.1).
+  its corner, and the reader is near in both readings for a third of them, not a half (§5, §7.1). With n other
+  parties it is near in all its readings for 1/(n + 1) of them. The drawing is the geometry's whole work; no party's
+  true size enters it.
 - Inside the corner the reader can lay readings out in proportion; past it, if no scale is preferred, only a
   logarithmic layout is consistent. The reader has two address spaces joined at one corner (§6).
 - **Main result.** Sweeping the circle evenly from home yields the Cauchy distribution, and the Cauchy is the reader's
@@ -115,6 +124,8 @@ as if a single observation held it. Section 3 sets out the readers in full.
   corner needs only that the sweep treat the two parties alike, and the missing mean only that, besides, its weight not
   vanish at the horizon; the circle and the even turn give the Cauchy's exact shape (§7.2).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
+  A larger H gives the near less detail and reaches the far; the best H is the corner of what is read. An H of 0 or
+  of ∞ leaves the reader one of the rulers that favour no amount, and no corner (§9).
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
   outside fixes the scale, and a fact shared between two readers supplies exactly one ratio. The best estimate of the
   other party's true size is the median of what the reader knows of it (§9).
@@ -140,13 +151,17 @@ The paper is geometry only. It makes no claim about physics, perception or the s
 whole, none of it, all of it, or anything in between, such as the fraction of a day gone or the part of a road
 behind. A relation requires two unit relations, one for each party. Draw one horizontally and one
 vertically and call them h and v. They have no units, and neither knows the other's whole. The wholes they relate to are
-the *breadths* H and V, which are amounts. The reader's breadth H is its thumb, the one measure it holds; the other's
-breadth V is the mountain it looks at. h is the reader's side of a relation. A
-circle has two unit relations, h and v; a sphere has three, h, v and v₂.
+the *breadths* H and V, written in uppercase with the amounts. Neither is a measured size. The reader's breadth H is
+the one value it chooses to start the system, its thumb in the picture of §1: any value will do, and which one it chooses sets
+only the zoom (§8). The other's breadth V is the length at which the reader draws the other party's whole, the
+mountain it looks at; the other party's true size, an amount the reader does not have, is written V*. h is the
+reader's side of a relation. A circle has two unit relations, h and v; a sphere has three, h, v and v₂. How many a
+system includes sets its shape (§5).
 
-**Unit relations are not amounts.** The amounts are h·H and v·V, so their ratio is (v·V)/(h·H) = (v/h)·(V/H). The ratio
-of the unit relations, v/h, is not the ratio of amounts, V/H. The only way from one to the other is to multiply by a
-breadth, which must be known. We keep lowercase letters for unit relations and uppercase for breadths throughout.
+**Unit relations are not amounts.** The amounts are h·H and v·V*, so their ratio is (v·V*)/(h·H) = (v/h)·(V*/H). The
+ratio of the unit relations, v/h, is not the ratio of amounts, V*/H. The only way from one to the other is to multiply
+by a breadth, which must be known. We keep lowercase letters for unit relations and uppercase for breadths and amounts
+throughout, with V* for a party's true breadth.
 
 **The sweep.** Within one observation neither breadth changes. The *sweep* is every way h and v can relate, from all of
 H (v = 0) to all of V (h = 0). Leaving *home* (v = 0), v rises against h held at 1. It can rise only until it too
@@ -237,7 +252,7 @@ only measure it has to give the mountain is its thumb: it sets V = H, mountain e
 in thumbs. Drawing the mountain at one thumb is required: only then is the sweep a turn and its readings the Cauchy
 (§5, §7.1). How many thumbs the mountain really is, is a separate estimate. It changes no reading, only the amounts, and
 one thumb is the best estimate when nothing says bigger or smaller (Proposition 13, §9). The corner v = h is still found
-exactly, but the amounts there are the estimate's. The mountain's true size, V/H thumbs, is the one number the situated
+exactly, but the amounts there are the estimate's. The mountain's true size, V*/H thumbs, is the one number the situated
 reader lacks (§3.8).
 
 - **0, nothing.** The reader has its breadth H, as it always does, but no h: nothing is related to it, so there is
@@ -269,12 +284,12 @@ do not have, and neither knows how many things there are.
 A reader turns a pair of breadths into a reading by dividing, and there are two ways to divide. Which one a reader can
 make is its situation.
 
-| divide both by | (H, V) lands at | which lies on | needs |
+| divide both by | (H, V*) lands at | which lies on | needs |
 |---|---|---|---|
-| H | (1, V/H) | the number line held upright at 1: unbounded | H only |
-| the whole, √(H² + V²) | (cos θ, sin θ) | the quarter circle: bounded | H and V |
+| H | (1, V*/H) | the number line held upright at 1: unbounded | H only |
+| the whole, √(H² + V*²) | (cos θ, sin θ) | the quarter circle: bounded | H and V* |
 
-A situated reader knows H and not V, so it cannot form the whole; it can only divide by H, measuring everything in
+A situated reader has H, which it chose, and not V*, so it cannot form the whole; it can only divide by H, measuring everything in
 thumbs. Every system it reads lands
 on one unbounded line, at its ratio, with the scale gone and a horizon at the far end. An unsituated view holds both
 breadths and can divide by the whole: every system lands on the bounded quarter circle, with the corner computed at 45°
@@ -493,7 +508,7 @@ the situated reader's V = H (§5) is its own hand. Spread the fingers between fl
 address, one ray of the relation. Put a ring on each finger: the ring is what that address holds, the payload. Turning
 the hand does not change the rings. Replace the rings with others, and the sweep from flat to upright is the same sweep,
 each finger the same address.
-- *The thumb is H.* The hand's own measure is its thumb, the reader's breadth; the mountain it looks at is V. Setting
+- *The thumb is H.* The hand's own measure is its thumb, the reader's breadth, the value it starts from; the mountain it looks at is V. Setting
   V = H is reading the mountain in thumbs.
 - *The geometry is the hand, not the rings.* Dividing v by h keeps the finger and drops the ring.
 - *The serial reader is the hand and its fingers; the parallel reader holds the rings.* One walks the addresses; the
@@ -516,8 +531,8 @@ The situations can be written in terms of one another. A situated reader, 3 or 4
 through situation 1's assumption, with situation 0's unknown on one side only. The world is a shape like any other,
 with some breadth ratio; lacking it, the reader lays its readings as if the shape were the circle.
 
-Assume a value for V, and situation 3 or 4 becomes situation 2. With directions spread evenly (§7.1), the readings in
-amounts are (v·V)/(h·H) = b·(v/h), where b = V/H. Counted in doublings of the amount ratio, the readings for b = 2 are
+Assume a value for V*, and situation 3 or 4 becomes situation 2. With directions spread evenly (§7.1), the readings in
+amounts are (v·V*)/(h·H) = b·(v/h), where b = V*/H. Counted in doublings of the amount ratio, the readings for b = 2 are
 those for b = 1 slid up exactly one doubling, every doubling's share unchanged:
 
 | doubling of the amount ratio | ¼ to ½ | ½ to 1 | 1 to 2 | 2 to 4 | 4 to 8 |
@@ -525,8 +540,8 @@ those for b = 1 slid up exactly one doubling, every doubling's share unchanged:
 | b = 1 | 0.139 | 0.205 | 0.205 | 0.139 | 0.077 |
 | b = 2 | 0.077 | 0.139 | 0.205 | 0.205 | 0.139 |
 
-So what a situated reader lacks is one number, how many thumbs the mountain is, V/H; on the count of doublings it is an
-offset, log₂(V/H), not a change of pattern. Situation 2 knows the number; 3 and 4 do not; known within bounds, they know it within bounds. Assuming it
+So what a situated reader lacks is one number, how many thumbs the mountain is, V*/H; on the count of doublings it is an
+offset, log₂(V*/H), not a change of pattern. Situation 2 knows the number; 3 and 4 do not; known within bounds, they know it within bounds. Assuming it
 clarifies the reading; it does not simplify it.
 
 ## 4. The corner
@@ -586,8 +601,10 @@ they cut the wedge into six chambers, one for each ordering of the three unit re
 
 We assume three things.
 - **(P0)** A relation requires two unit relations, one for each party, each relating it to an assigned breadth: h to
-  H, v to V. Assigned is not known: v lies in [0, 1] however large V is, but it must relate to something.
-- **(P1)** A situated reader chooses exactly one breadth, H, and holds no whole of the system. Any H will do.
+  H, v to V. Assigned is not known: v lies in [0, 1] however large the party truly is, but it must relate to
+  something.
+- **(P1)** A situated reader chooses exactly one breadth, H, the value it starts from, and holds no whole of the system.
+  H is not a measured size, and any H will do.
 - **(P2)** A level carries no measure: nothing on it but its two ends, their order and the flip between them.
 
 **Proposition 3 (the reader's circle).** Under (P0) and (P1):
@@ -621,9 +638,16 @@ at length cH, so a turn carries one to the other only if c = 1. With c ≠ 1 the
 ellipse of (c) or some other path. (f) By (e) applied to each pair: all of v and all of v₂ must each be the bar at
 length H. ∎
 
+**What the geometry needs: a shape and one H.** Neither is a measured size. The shape is set by how many unit
+relations the system includes: by (d), n of them give the sphere in n dimensions, with 2ⁿ facings, so two give the
+circle and three the sphere, once their wholes are drawn at one length, (e) and (f), and their attitudes are turns of
+one bar, (c). The H starts it: some H is needed, but by (b) every H gives the same shape and the same corner, and its
+value sets only the zoom, which things fall in the near field and are read finely (§8). No party's true size enters
+the geometry.
+
 **What V = H means.** Setting V = H is a rule of representation: the reader uses its own breadth as the unit for the
 other party. It sets the mountain equal to its thumb because its thumb is the only measure it has. It is not a claim
-that the mountain is the size of a thumb. Where it is not, every amount the reader reads is off by the true V/H, the
+that the mountain is the size of a thumb. Where it is not, every amount the reader reads is off by V*/H, the
 number of thumbs the mountain really is (§9). The rule constructs a relation calibrated in one unit and discovers nothing about the world.
 Step (a) is close to a definition; we claim only that a relation needs two assigned breadths and a situated reader has
 one. Which breadth it assigns is not free:
@@ -636,7 +660,7 @@ one. Which breadth it assigns is not free:
   its readings are the Cauchy with nothing more chosen. Working back from the Cauchy, which is known, arrives at V = H
   and nowhere else (Proposition 5(d)). So V = H is required for a situated geometry: it gives the reader a circle to
   turn. Unit relations drawn on equal axes, each running from 0 to 1, are this drawing.
-- *What c = 1 does not do.* It does not say how large the mountain is. The mountain's true breadth is a separate number,
+- *What c = 1 does not do.* It does not say how large the mountain is. The mountain's true breadth, V*, is a separate number,
   unknown within one observation. The reader may estimate it, and the best estimate is the median of what it knows
   (Proposition 13, §9), but the estimate enters only the amounts, as a shift of every one of them by the same number of
   levels. It never redraws the circle.
@@ -847,8 +871,21 @@ normalised, so (c₁a, c₂b) has the law above and each median is divided by it
 The wedge is made at each observation, not taken from a sphere the reader holds: the whole sphere, every facing drawn
 together, is the completed view. A sphere that placed every place by its direction and its distance would need every
 distance, which no situated reader has. The wedge needs no size: the readings are ratios, laid by the two-dimensional
-Cauchy. What it lacks is what the circle lacks, once per party: V/H and V₂/H. On the circle near and far were halves;
+Cauchy. What it lacks is what the circle lacks, once per party: V*/H and V₂*/H. On the circle near and far were halves;
 with three parties the reader is near in both readings for a third of its addresses.
+
+**More parties.** The same holds for any number n of other parties, each drawn at H. The relation lies on the sphere
+of n + 1 unit relations, one facing of every freedom is its positive orthant, and the point in direction (1, a) is
+(1, a)/r with r² = 1 + |a|², a = (v₁/h, …, v_n/h). The projection argument of the proof gives the element of area
+da/r^(n+1), so the even orthant's readings have density c_n·(1 + |a|²)^(−(n+1)/2), the n-dimensional half-Cauchy, with
+c_n = 2ⁿ·Γ((n + 1)/2)/π^((n+1)/2). Integrating out all readings but one leaves the law of (b); all but two, the law of
+(e). So every reading and every pair keeps its corner, and adding a party changes nothing about the pairs already held.
+Exchanging any two of the n + 1 unit relations keeps the orthant, so every ordering of them is equally likely and h's
+rank among them is spread evenly. The reader is near in all its readings (h the largest) for 1/(n + 1) of its
+addresses, a half, a third, a quarter, and so on, and the number of readings past their corner is spread evenly over
+0, 1, …, n. Drawn at unequal lengths, these shares move, as in (e).
+None of this involves any party's true breadth. The drawing is the geometry's whole work; each true breadth is one
+number of the amounts, a shift in levels of that party's amounts alone.
 
 In classical terms the readings are the tangent of a uniformly distributed angle: the gnomonic projection of a uniform
 direction. For two other parties the gnomonic projection of a uniform direction on the sphere is the multivariate
@@ -957,11 +994,11 @@ know.
 
 **Where the usual confusion comes from.** Laid evenly by direction, the sweep is uniform and bounded, g from 0 to 1,
 with its middle at the corner: geometry, with nothing wild in it. Read on the axis v/h, the same lay is a Cauchy of
-scale 1. That needs no knowledge of the true V, since h and v each run from 0 to 1; it needs only the drawing V = H,
+scale 1. That needs no knowledge of the true V*, since h and v each run from 0 to 1; it needs only the drawing V = H,
 which the Cauchy requires (Proposition 5(d)). Read in amounts against the true breadth it is another Cauchy, of
-(v·V)/(h·H) = (v/h)·(V/H), with scale V/H. Writing that one as the standard Cauchy, of scale 1, silently takes the
+(v·V*)/(h·H) = (v/h)·(V*/H), with scale V*/H. Writing that one as the standard Cauchy, of scale 1, silently takes the
 mountain's true breadth to be the drawn one: it turns a situated reader into situation 1, the circle, without knowing
-V. A situated reader must draw V = H (§5); the confusion is taking the drawing for a measurement. Taking the mean of
+V*. A situated reader must draw V = H (§5); the confusion is taking the drawing for a measurement. Taking the mean of
 the readings then applies an operation on amounts to addresses, and the missing mean is what that costs: it comes from
 the unbounded axis of the reading, not from the world. Where a Cauchy is met as data rather than laid as addresses, an
 amount has been formed from the reading by a known length, and the distribution's scale is that length, not 1 by
@@ -1148,7 +1185,8 @@ expands in the reading ρ_i/r: 1/|r − r_i| = Σ_l (ρ_i^l / r^(l+1)) P_l(cos �
 
 This is level of detail by distance, with the corner as its seam.
 
-**H is a zoom, not an escape.** Any H gives the same circle and corner, so a reader could choose a very large H and hold
+**H is a zoom, not an escape.** H is not a measured size: it is the value the reader chooses to start the system
+(P1), and nothing in the geometry fixes it. Any H gives the same circle and corner, so a reader could choose a very large H and hold
 everything it will ever look at in the near field, at true scale, with no logarithm. The cost is the level of detail.
 With finitely many addresses spread evenly over a very large H, everything at the reader's own scale falls within the
 first address and becomes a point. A small H holds the small at true scale and the large logarithmically; a large H
@@ -1161,6 +1199,20 @@ same idea appears in the hyperbolic browser, which draws only nodes at least a p
 1995), in mipmaps, which halve an image at each level (Williams 1983), and in web-map tiles, whose key gains one digit
 per level of detail (Microsoft, Bing Maps Tile System).
 
+**What a larger H gives and takes.** Count the room the reader gives one object, the stretch of amounts from x to
+x + Δ, with n addresses across the near field: n times the stretch of lay the object covers. Inside the corner
+(x + Δ ≤ H) it spans nΔ/H addresses. A larger H moves the corner away and gives the proportional field more room, but
+the count is fixed, so every object inside the corner gets fewer addresses: one level of detail fewer for each
+doubling of H. Past the corner (x ≥ H) the two lays of §6 part. On the logarithmic lay the object spans
+n·ln(1 + Δ/x), whatever H is: its detail is set by where it is, and a larger H only moves the held levels outward,
+bringing farther things in. On the in-place lay it spans n·H·(1/x − 1/(x + Δ)) = nΔH/(x(x + Δ)), which grows with H,
+so there a larger H gives the far more detail as well. A small H reads the near finely; a large H reaches the far. On
+the in-place lay an object gets the most room when H = √(x(x + Δ)), the corner of its own two ends, where it spans
+2n·(1 − √(x/(x + Δ))), close to nΔ/x for a thin object; on the logarithmic lay it gets as much as it can have for
+every H up to x. Placed on the quarter turn at arctan(x/H), two amounts are set furthest apart, at the angle
+arcsin((r − 1)/(r + 1)) for a ratio r, when H is their geometric mean. The best H is the corner of what is read, as
+the best estimate of a size is the corner of what is known (Proposition 13).
+
 **More points, fewer told apart.** A parallel reader looks side-on at N points spaced evenly around a circle and reads
 each one's position across its view to a step ε, relative to the circle's radius. Neighbours at angle θ from the middle
 of the view are about (2π/N)·cos θ apart, so the reader separates those with cos θ ≥ εN/2π, which is
@@ -1169,9 +1221,16 @@ N = 2π/ε: past the peak, more points mean fewer told apart. The addresses neve
 
 ## 9. What the geometry does not give: amounts
 
+**Geometry first, then values.** Once the geometry is defined, a shape and one H (§5), physics assigns the values of
+its placeholders, and the geometry is agnostic to that step. The values enter as multipliers on the amounts: V*/H on
+each party's, and one more on all of them together when H itself is given a value in an agreed unit. They never redraw
+a whole, since a whole drawn at any length but H would undo the turn (Proposition 3(e)). So no value assigned changes
+the shape, the corner, the levels or any address. What the values decide is where things land among the addresses:
+which fall in the near field and which past the corner, the zoom of §8.
+
 **The calibration error.** Under V = H the amounts equal the unit relations numerically, which is why the two are so easily
-confused. Where the true V differs from H, every amount is off by V/H, by the same factor on both sides of the corner: the
-reader has read the mountain as one thumb, and it is V/H thumbs. The addresses are exact; the amounts are not. Within
+confused. Where the true V* differs from H, every amount is off by V*/H, by the same factor on both sides of the corner: the
+reader has read the mountain as one thumb, and it is V*/H thumbs. The addresses are exact; the amounts are not. Within
 one observation a reader cannot tell a mountain of a hundred thumbs from one of 10¹⁶. Amounts
 can come only from outside the geometry, across observations, from something whose amount is already known. That is
 physics, and this paper does not treat it.
@@ -1372,6 +1431,13 @@ Neither kind of ruler has a corner, since no amount is laid differently from any
 neither. Proportional up to its corner and logarithmic past it (§6), it favours one amount, the one at its joint, and
 that amount is its own: its breadth H, under V = H.
 
+Taken to its ends, the reader's lay becomes the rulers that favour none. On any stretch [a, b] of amounts, once H lies
+past b the lay there is x/H, the number line, and once H lies below a it is 1 + ln(x/H), the logarithm; the in-place
+lay gives 2 − H/x there, the power −1. So an H of ∞ and an H of 0 are exactly the rulers of Proposition 14, and the
+corner, the one amount the lay favours, exists only for an H among the amounts read. At either end a reader with
+finitely many addresses loses what it reads: an endless H puts all of it in the first address, and a vanishing H sends
+all of it past the levels held, or, on the in-place lay, into the horizon's last address.
+
 **The number line is a shared unit.** The ordinary number line is the clearest example of a unit agreed between readers.
 It is one notch agreed to stand for 1, built out by counting and dividing, and its form is the form a shared ruler
 must have.
@@ -1430,28 +1496,29 @@ true width, and no one stands anywhere in it.
    not why. With fingers spread evenly over the half-turn, the range takes exactly the middle half of them, between the
    Cauchy's quartiles, which are its corners (§7.3), and the median finger points at its middle. On each finger the ring is the ridge's elevation
    reading, and together they give the range's skyline, up to scale. The far slopes are hidden, rings behind rings.
-3. *The two vantages, on the thumb.* The one breadth the reader holds truly is its thumb, and the two situated vantages
+3. *The two vantages, on the thumb.* The one breadth the reader holds is its thumb, the H it started from, and the two situated vantages
    of §3.4 read it from the reader's own turn. Each facing side of the half-turn is a quarter turn, from home to the
    limb, where a finger runs parallel to the range and never meets it. On the thumb's circle that quarter turn is an arc
    of π/2 thumbs, and its shadow on the line across the view is exactly 1 thumb. Taken in at once, the outer reading,
    the turn over its shadow, is π/2. Swept one finger at a time, the inner reading, the shadow over the turn, is 2/π: the
-   fingers' mean shadow (0.6368 with 36 fingers). Their product is 1, the thumb's true breadth, which neither vantage
-   reads alone. Out to the range's ends, at 45°, the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, the
+   fingers' mean shadow (0.6368 with 36 fingers). Their product is 1: H measured in H, the value the reader started
+   from, which neither vantage reads alone. Out to the range's ends, at 45°, the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, the
    row of §3.4 at 45°, and their product is 1 again. None of this involves the mountain: a range 2 miles wide at 1 mile
-   gives the same fingers and the same products. Joined, the two vantages return the true breadth only of what the
-   reader holds; the mountain's must be constructed (step 6).
+   gives the same fingers and the same products. Joined, the two vantages return only what the
+   reader put in; the mountain's breadth must be constructed (step 6).
 4. *What it cannot read.* A range 20 miles wide at 10 miles, 2 miles wide at 1 or 2,000 miles wide at 1,000 gives the
    same fingers and the same rings. The reach cancels from every reading (Theorem 6).
 5. *Mountain equals thumb.* Not knowing the mountain's size, the reader sets V = H: it takes the range to be one thumb,
-   1 mile, wide, and the width-to-distance reading of 2 then puts it half a mile away. Every amount is off by V/H = 20,
+   1 mile, wide, and the width-to-distance reading of 2 then puts it half a mile away. Every amount is off by V*/H = 20,
    the number of thumbs the mountain really is, by the same factor on both sides of the
    corner. In levels, the reader places the range at 0.5 H, inside its near field, when it is truly at 10 H, 3.3
    doublings out in the far field: a rigid shift of log₂ 20 ≈ 4.32 levels, with the pattern of readings untouched. This
    is the one number of §3.8.
 6. *Constructing the truth.* A second standpoint at a known baseline closes the gap. Walk one H, a mile, toward the
    range: its half-angle grows from 45° to 48.0°, the reading s from 1 to 10/9. Then d = H·s₂/(s₂ − s₁) = 10 miles and
-   V = 2·s₁·d = 20 miles. The walk is where an amount enters: the reader's own breadth, used as a baseline. The true
-   width is constructed from two standpoints and observed from neither. Once d is known, the range sits at
+   V* = 2·s₁·d = 20 miles. The walk is where an amount enters: the reader's own starting value, walked once and used as
+   a baseline. The true width, 20 thumbs, is constructed from two standpoints and observed from neither; it is 20 miles
+   for whoever has agreed that a thumb is a mile (§9). Once d is known, the range sits at
    1 + ln 10 ≈ 3.30 on the logarithmic lay and at 2 − 1/10 = 1.9 H on the in-place lay, inside the reader's 2H.
 
 What is the same for every reader, and exact: the fingers, the corner at the range's ends, the range's share of the
@@ -1599,8 +1666,10 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 
 | symbol | kind | meaning |
 |---|---|---|
-| h, v, v₂ | unit relations, from 0 to 1 | h relates to H, v to V, v₂ to V₂; a relation requires two, a circle has two, a sphere three |
-| H, V, V₂ | amounts | breadths: the reader's (its thumb), the other's (the mountain), a second other's |
+| h, v, v₂ | unit relations, from 0 to 1 | h relates to H, v to V, v₂ to V₂; a relation requires two, a circle has two, a sphere three; how many a system includes sets its shape |
+| H | the starting value | the reader's breadth, its thumb: the one value it chooses to start the system, not a measured size; its value sets the zoom (§8) |
+| V, V₂ | drawn | the other parties' wholes as the reader draws them, at H (§5) |
+| V* | an amount | a party's true breadth: never read; estimated (§9) or supplied from outside |
 | v/h, h/v | geometry | the reading before and past the corner |
 | the corner | geometry | v = h |
 | home, the horizon | geometry | v/h = 0; v/h → ∞, never reached |
