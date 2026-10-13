@@ -112,8 +112,8 @@ as if a single observation held it. Section 3 sets out the readers in full.
 - **Main result.** Sweeping the circle evenly from home yields the Cauchy distribution, and the Cauchy is the reader's
   addresses, not its payload. Whatever is met in each direction cancels from the reading. Order survives every change of
   payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7). The median at the
-  corner and the missing mean need only that the sweep treat the two parties alike; the circle and the even turn give
-  the Cauchy's exact shape (§7.2).
+  corner needs only that the sweep treat the two parties alike, and the missing mean only that, besides, its weight not
+  vanish at the horizon; the circle and the even turn give the Cauchy's exact shape (§7.2).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
   outside fixes the scale, and a fact shared between two readers supplies exactly one ratio. The best estimate of the
@@ -910,7 +910,7 @@ if f is affine on the smallest interval containing X.
 (d) *The Cauchy is an address law.* Over one facing its median is v/h = 1, the corner, and its quartiles are √2 − 1 and
 √2 + 1, a flip pair. Its mean does not exist: ∫₀^M x·2/(π(1 + x²)) dx = (1/π)·ln(1 + M²), which grows without bound.
 
-(e) *The median and the missing mean need only fairness.* Let the sweep follow any path from all of h to all of v, with
+(e) *The median needs only fairness, and the missing mean a weight that reaches the horizon.* Let the sweep follow any path from all of h to all of v, with
 any weight, both unchanged by exchanging the two parties. Then the readings' law is unchanged by the flip and its
 median is the corner. If moreover the weight gives h a density bounded away from 0 near the horizon, the mean does not
 exist. The even turn on the circle is the case that gives the Cauchy of (d).
@@ -1511,8 +1511,8 @@ logarithm past the corner (rescaling). Each relaxation gives a named alternative
   intact (Theorem 6(e));
 - a preferred scale gives a lay that stops there (§8, §11.2 question 1).
 
-The main result's core, order surviving and sums failing, with the median at the corner and no mean, needs only the
-first of the three.
+The main result's core, order surviving and sums failing, with the median at the corner, needs only the first of the
+three; the missing mean needs besides that the weight not vanish at the horizon (Theorem 6(e)).
 
 ### 11.2 Assumptions and open questions
 
@@ -1531,7 +1531,8 @@ first of the three.
    turns, rescaling and shifts, can be imposed in different ways, and give different measures, depending on how the
    random selection is made. We grant it. Which selection the reader makes, the even turn, is a choice (§11.1), and
    symmetry alone does not make it. What the framework adds is that the core of the main result survives the choice:
-   any selection that treats the two parties alike puts the median at the corner and leaves no mean.
+   any selection that treats the two parties alike puts the median at the corner, and leaves no mean if its weight
+   does not vanish at the horizon (Theorem 6(e)).
 3. *No measure on a level.* Is there a principled reason a level could not carry a measure before anything arrives?
 4. *Fairness.* Proposition 2(b) needs the reading to treat both sides alike although the reader's knowledge does not.
    Is that more than a choice?

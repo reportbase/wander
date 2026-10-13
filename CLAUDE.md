@@ -296,10 +296,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   back proves (the address reading conditional on the even sweep being the reader's own; "a reason for" the missing mean,
   not "explains"; (S) scale invariance of the lay's increments, assumed; the vantages' assignment a reading; Propositions
   9–12 classical). Keep its verbs to what is proved. The fifth (Gemini, on the foundational axioms) is in
-  `plans/ofs-review-5.md` with a response: the main result's core (median at the corner, no mean) holds for every
-  exchange-symmetric path and weight (circle, square and line alike; only the Cauchy's exact shape needs the circle and
+  `plans/ofs-review-5.md` with a response: the main result's core holds for every exchange-symmetric path and weight
+  (the median at the corner; no mean too where the weight does not vanish at the horizon) (circle, square and line alike; only the Cauchy's exact shape needs the circle and
   the even turn); the claim to make is necessity relative to a stated ignorance (§11.1). Edits A–F made (SPN R217):
-  Theorem 6(e) (the median and the missing mean need only fairness), the norm entering only through the measure on
+  Theorem 6(e) (the median needs only fairness, the missing mean also a weight that reaches the horizon), the norm entering only through the measure on
   directions, conditional necessity in §11.1, a disturbing reading out of scope, preferred scales setting where the lay
   stops; the SI's constants in `physics.md`. Its second part ("more reader situations with yet more geometries") is
   answered there too: each proposed situation lands in the payload, the amounts or a power of the reading; edit G made
@@ -311,7 +311,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   nearest prior reading; Leonard 2011 for §11.1; Drory 2015 against Jaynes, bearing on question 2). Since 13 Oct (Tom:
   "ok, cite the prior work in OFS"; SPN R222) they are cited, each rechecked first (the plan's "Cited" table, with the
   corrections found): OFS §7.8 for Theorem 6 and Proposition 5, §9 for Propositions 8, 9, 11 and 14, §11.1, §11.3, and
-  Drory answered in §11.2 question 2 (the selection is a choice; the median at the corner and the missing mean survive it).
+  Drory answered in §11.2 question 2 (the selection is a choice; the median at the corner survives it, and the missing
+  mean too where the weight does not vanish at the horizon).
   `vantages.md` (11 Oct 2026, Tom: "the core insight in our papers is that classical math and physics assume a completed
   perspective … three perspectives, completed "classical', outer-hemispherical and inner-hemispherical"; "lets start collecting
   those paradoxes, its not a short list"; SPN R191) is the catalogue of paradoxes read as vantage conflations: each entry
