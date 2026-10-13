@@ -103,7 +103,8 @@ Google Fonts load from outside:
   Each target triangulated thirty times with directions off by the step ε: held (teal), stretched (gold), lost to a ray
   past the band's far edge (red). Modes: A alone or B alone (rays from the standpoint, no distance), both with the
   baseline. The bell: ε·cosh of the levels and the error's stretch d/(B/2), round at the corner. Presets for scale (two
-  eyes; Earth's orbit with Hipparcos's 1 mas or Gaia's 20 µas). `?mode=A|B|both&preset=eyes|hipparcos|gaia&eps=`; hook
+  eyes; Earth's orbit with Hipparcos's 1 mas or Gaia's 20 µas, precisions of p = γ/2, so the step in γ is twice that:
+  the band ends near 1 kpc and 50 kpc; corrected 12 Oct). `?mode=A|B|both&preset=eyes|hipparcos|gaia&eps=`; hook
   `window.__parallax` (`relErr`, `aspect`, `band`, `farEdge`, `triangulate`, `counts`, `set`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
@@ -237,6 +238,15 @@ Google Fonts load from outside:
   as physics holds it (derived from conservation and three dimensions; tested as a bound on the exponent), in levels
   (2 of light, 3 of number per level of distance), the reader's two regimes, the near field (NRF: the pair's corner exact
   where the light is a share), the lay's form (ISQ), each claim marked physics / exact / data / reading / illustration.
+  `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
+  parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
+  strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
+  γ its facing, why parallax and situated observation are both needed, the depth's bell (cosh(ln k), the facing's rate
+  per level, the even turn's ½ sech), the error's shape (the depth is parallax's and has the corner, on the bisector only;
+  the across error is the direction's; the total least at √2·(B/2); on the circle round only at its top; off the bisector
+  the radial error least inside the circle), the band and the baseline as a second zoom, the ladder, open questions. Each
+  claim marked classical / exact / data / simulation / reading / illustration. It was OFS Proposition 11(d) for an
+  evening (R218) and was taken out; OFS keeps Proposition 11(a)–(c).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
@@ -495,7 +505,11 @@ Google Fonts load from outside:
   band acosh(1/ε)/ln 2 levels each side, far edge d ≈ B/ε (P3). P4 killed by my measure (distance from the middle takes in
   the error along the baseline); run 2: depth follows the bell, the error round at the corner and stretched by d/(B/2)
   elsewhere (P5–P7 not killed). Past the band a point is a ray: parallax needs situated observation and returns to it.
-  In OFS as Proposition 11(d) and "A baseline has a corner of its own" (SPN R218).
+  Run 3 (exact, after Tom's "does it belong in ofs?"): the corner is the depth's, on the bisector only; across the line
+  of sight the error is the direction's, falling with distance; the total least at d = √2·(B/2); on the circle the error
+  round only at its top (aspect cot(φ/2)); off the bisector the radial error least inside the circle (P8–P10 not killed).
+  Corrections recorded under run 2: "doubling per level" only far off; the stars' presets off by 2 (p = γ/2). Briefly
+  OFS Proposition 11(d) (SPN R218), then moved to `papers/parallax.md` (R219).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

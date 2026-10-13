@@ -116,3 +116,84 @@ Seed 14, 20,000 draws at each of 17 points, a second.
   one standpoint against a kind calibrated inside it (the ladder; `plans/stc-plan.md`).
 - **All of it is classical** (triangulation's 1/sin γ, the inscribed-angle theorem, stereo's depth error growing as d²).
   What PXC adds is the reading: the corner, the bell, the round error at the corner, and the band.
+
+**Corrections to the reading above** (12 October, later, after Tom's "does it belong in ofs?"; the run's numbers stand):
+- "Falls by half with every level from the corner" holds only far off. The relative error per unit angle is
+  cosh(j·ln 2) at j levels from the corner: 1, 1.25, 2.125, 4.06 and 8.03 for j = 0 to 4. The ratio from one level to
+  the next tends to 2 and is 1.25, 1.7 and 1.91 for the first three. P1's wording above the Runs line ("halves its
+  precision with every level away") is left as written; its kill condition was cosh(ln k) itself, which stands.
+- "Least wrong at the corner" is true of the depth, the error along the line of sight, on the bisector, and of nothing
+  more that this plan has shown. Worked out by hand to first order while answering Tom (and evaluated at seven points),
+  with each direction off by independent errors of spread σ: across the line of sight the error over d is
+  σ√2·(1 + k²)/2, which keeps falling with distance; both together give σ√2·(1 + k²)^(3/2)/(2k), least at
+  d = √2·(B/2) (1.299σ√2, against √2·σ√2 at the corner). Off the bisector nothing was shown. Run 3 tests these.
+- The presets in `parallax.html` were off by a factor of 2 for the stars. Hipparcos's 1 mas and Gaia's 20 µas are
+  precisions of the annual parallax p, the angle that 1 AU (half the baseline) subtends, so p = γ/2 and the step in γ is
+  2 mas and 40 µas. The far edge, d ≈ B/ε with B = 2 AU, is then about 1 kpc and 50 kpc, not 2 kpc and 100 kpc
+  (`physics.md`'s "about 2 kpc" likewise). Two eyes were right: stereo acuity is a threshold on the disparity, a
+  difference in γ itself.
+
+### Run 3: predictions (12 October, written before `pxc/pxc3.py` exists)
+
+Exact first order: the Jacobian of the triangulation map (δ₁, δ₂) ↦ (x, y), the exact intersection of the two turned
+lines, taken by complex step in mpmath at 50 digits, never from the formulas below. Each direction is off by an
+independent error of spread σ = 1; the error's covariance is J·Jᵀ. Half-baseline b = 1, so k = 1/d on the bisector.
+- **P8. On the bisector, which error is least where.** Over d, the spread along the line of sight is
+  √2·cosh(ln k) (least at the corner, the same at k and 1/k); across it, √2·(1 + k²)/2 (falling with distance toward
+  √2/2, no flip); both together, √2·(1 + k²)^(3/2)/(2k), least at k = 1/√2, that is d = √2·(B/2), where it is
+  √2·3√3/4 ≈ 1.299·√2, against √2·√2 at the corner. **Killed if** any of the three misses its formula by more
+  than 1e-12 (relative) for k = 2^(j/10), j from −100 to 100, or the least of the total, found by golden section on the
+  exact Jacobian, lies off k = 1/√2 by more than 1e-9.
+- **P9. On the circle the error is round only at its top.** Where the baseline is seen at a right angle the two lines
+  cross square, so the error's ellipse has its axes along the lines' normals, of lengths r₁σ and r₂σ, r₁ and r₂ the
+  place's distances from the two standpoints. Its aspect is max(r₁, r₂)/min(r₁, r₂), 1 only where r₁ = r₂, on the
+  bisector. **Killed if** the aspect from the exact Jacobian's covariance misses max(r₁, r₂)/min(r₁, r₂) by more than
+  1e-12 at points on the circle seen from the middle at 5°, 10°, …, 175° from the baseline.
+- **P10. Off the bisector the radial error has no flip.** The radial error over the distance from the middle, along a ray
+  at angle φ from the baseline, works out to √[r₁⁴(ρ − b cos φ)² + r₂⁴(ρ + b cos φ)²]/(2bρ² sin φ) (ρ the distance from
+  the middle). On the bisector it is the same at ρ and b²/ρ; off it, not. **Killed if** along the ray at 60° it is the
+  same at ρ = 2b and ρ = b/2 within 1%, or the exact Jacobian misses the formula by more than 1e-12 anywhere on rays at
+  15°, 30°, …, 90°. Where along each ray it is least is measured, not predicted.
+
+### Run 3 (12 October, `pxc/pxc3.py`)
+
+mpmath at 50 digits; under a second.
+
+| | prediction | result | |
+|---|---|---|---|
+| P8 | depth √2·cosh(ln k), across √2·(1 + k²)/2, total √2·(1 + k²)^(3/2)/(2k) over d; the total least at k = 1/√2 | all three to 1.3e-48; the total least at k = 0.707106781186548 (d = 1.41421356237 half-baselines), 1.2990·√2 against 1.4142·√2 at the corner | not killed |
+| P9 | on the circle the aspect is max(r₁, r₂)/min(r₁, r₂), round only at the top | to 5.2e-50 at 5° … 175°; 7.60 at 15°, 2.414 at 45°, 1.303 at 75°, 1 at 90° | not killed |
+| P10 | off the bisector, no flip; the radial formula exact | the formula to 6.7e-50; at 60°, 1.862 at ρ = 2b and 1.732 at ρ = b/2 | not killed |
+
+Per √2, on the bisector (d in half-baselines):
+
+| levels from the corner | d | depth | across | total |
+|---|---|---|---|---|
+| −4 | 16 | 8.031 | 0.502 | 8.047 |
+| −2 | 4 | 2.125 | 0.531 | 2.190 |
+| −1 | 2 | 1.25 | 0.625 | 1.398 |
+| 0 | 1 | 1 | 1 | 1.414 |
+| +1 | 0.5 | 1.25 | 2.5 | 2.795 |
+| +2 | 0.25 | 2.125 | 8.5 | 8.762 |
+| +4 | 0.0625 | 8.031 | 128.5 | 128.75 |
+
+Least radial error along each ray from the middle (measured, not predicted), against its value on the circle:
+15° at ρ = 0.968b (0.268 against 0.366), 30° at 0.892b (0.565 against 0.707), 45° at 0.826b (0.889 against 1),
+60° at 0.830b (1.184 against 1.225), 75° at 0.936b (1.363 against 1.366), 90° at b (√2).
+
+**Reading.**
+- **The corner of parallax is the depth's, on the bisector.** There, and only there, is the error along the line of
+  sight least (P8), the same at d and (B/2)²/d, and round (P9). That is the pair (half-baseline, distance) read along
+  the bisector, where its reading is k.
+- **The error across the line of sight is the direction's.** Over d it falls toward a constant, √2/2, as d grows: the
+  direction, which one standpoint already holds, is held equally well at every distance far off. Parallax adds the
+  depth, and the depth alone has the corner. Inside the circle the across error grows as 1/d² (the place between the
+  standpoints, the two lines nearly one).
+- **Together they are least past the corner, at d = √2·(B/2).** The total is not a reading of the pair, so it has no
+  flip and its least is not at the corner. Which error a reader must keep small is the reader's question, not the
+  geometry's.
+- **Off the bisector the circle is not the best place.** Along a ray at 15°–75° the radial error is least inside the
+  circle, at 0.83–0.97 of b. On the circle it is √2·sin φ (post hoc, from P10's formula at ρ = b: the numerator is
+  8 sin⁴φ), falling toward the standpoints, where the distance from the middle is pinned. The aspect on the circle is
+  r₁/r₂ = cot(φ/2) (post hoc), the reading of the pair (distance from A, distance from B), round at that pair's corner.
+  The Thales circle is where the baseline is seen square; it is the corner of the depth only on the bisector.

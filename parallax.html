@@ -16,14 +16,16 @@
     directions only. The pair (half-baseline, distance) is named; its reading k = (B/2)/d, its corner d = B/2: the circle
     with the baseline as diameter (Thales), where the baseline subtends a right angle.
       - On the bisector, the relative error in distance per unit error in the parallax angle is 1/sin γ = cosh(ln k):
-        least at the corner, doubling with every level away on either side (sin γ = sech(ln k), the parallel reader's bell).
+        least at the corner, growing as cosh of the levels on either side, about doubling per level far off
+        (sin γ = sech(ln k), the parallel reader's bell). The corner is the depth's, on the bisector only (PXC run 3).
       - The error is round at the corner and stretched elsewhere: σ along the line of sight over σ along the baseline is
         d/(B/2). Outside the circle it stretches toward a ray; inside, along the baseline.
       - With step ε, parallax holds acosh(1/ε)/ln 2 ≈ log₂(2/ε) levels on each side; its far edge is d ≈ B/ε, where the
         shift is one step. Past it a triangulated point is a ray again: what one standpoint holds alone.
     The plan is drawn on the reader's lay with H set to the half-baseline: by direction from the middle, distance laid as
     d/(B/2) inside the corner and 1 + ln(d/(B/2)) past it, so parallax's corner is the reader's corner circle.
-    Presets give published precisions for scale, rounded: an illustration, not a test.
+    Presets give published precisions for scale, rounded: an illustration, not a test. The stars' precisions are for the
+    annual parallax p = γ/2, so the step in γ is twice the quoted one (corrected 12 October; it was set equal).
     Links: ?mode=A|B|both&preset=eyes|hipparcos|gaia&eps=. Test hook: window.__parallax.
     -->
     <style>
@@ -59,9 +61,9 @@
     <p class="lede">Two standpoints, a baseline B apart, each read only directions. <span class="violet">Alone</span>, each
     holds a figure of rays: every direction, no distance, at any scale. <span class="teal">Together</span>, with the
     baseline's length, the rays cross and the figure comes back with its size. Parallax has a corner of its own: the circle
-    with the baseline as its diameter, where the baseline subtends a right angle. There its error is least, and round. With
-    every level away the error doubles and stretches, along the line of sight outside the circle and along the baseline
-    inside, until, past a band set by the step, a point is <span class="red">a ray again</span>: what one standpoint holds
+    with the baseline as its diameter, where the baseline subtends a right angle. There, on the bisector, its depth is read
+    best, and its error is round. Away from it the error grows, about doubling per level far off, and stretches, along the
+    line of sight outside the circle and along the baseline inside, until, past a band set by the step, a point is <span class="red">a ray again</span>: what one standpoint holds
     alone. Parallax needs situated observation, and returns to it.</p>
     <div class="panel">
         <div class="row"><span class="lab">readers</span>
@@ -80,8 +82,8 @@
         <h2>The bell: parallax's precision across levels</h2>
         <canvas id="bell" height="230"></canvas>
         <p class="cap">Across the levels of distance from the corner (half the baseline). <span class="gold">Gold</span>: the
-        relative error in distance, ε·cosh of the levels, least at the corner and doubling with each level away on either
-        side; it is the parallel reader's bell, upside down. <span class="violet">Violet</span>: how stretched the error is,
+        relative error in distance, ε·cosh of the levels, least at the corner and growing on either side, about doubling per
+        level far off; it is the parallel reader's bell, upside down. <span class="violet">Violet</span>: how stretched the error is,
         along the line of sight over along the baseline, round (0) at the corner. Shaded: the band where parallax gives a
         distance at all.</p>
         <div id="hud"></div>
@@ -91,7 +93,7 @@
     against anything, though laying the plane with H at the half-baseline puts the two together. The exact results are
     PXC: the relative error per unit angle cosh(ln k) to 50 digits, the error round at the corner and stretched by
     d/(B/2) elsewhere, the band acosh(1/ε)/ln 2 levels each side. Behind it: <i>Observation from Somewhere</i>,
-    Propositions 8 and 11. Other demos: <a href="zoom.html">H is a zoom</a>, <a href="ladder.html">the ladder</a>,
+    Propositions 8 and 11, and the working paper <i>Parallax from the Corner</i>. Other demos: <a href="zoom.html">H is a zoom</a>, <a href="ladder.html">the ladder</a>,
     <a href="mountain.html">the mountain and the thumb</a>, <a href="demos.html">all demos</a>.</p>
 </main>
 <script>
@@ -129,16 +131,18 @@
     const PRESETS = {
         free: { half: null, eps: 1e-2, name: 'in half-baselines' },
         eyes: { half: 0.0325, eps: 1e-4, name: 'two eyes, 6.5 cm apart, stereo acuity about 20″' },
-        hip: { half: 1.495978707e11, eps: 4.85e-9, name: "Earth's orbit, 2 AU across, Hipparcos's 1 mas" },
-        gaia: { half: 1.495978707e11, eps: 9.7e-11, name: "Earth's orbit, 2 AU across, Gaia's 20 µas" } };
+        hip: { half: 1.495978707e11, eps: 9.7e-9, name: "Earth's orbit, 2 AU across, Hipparcos's 1 mas in p = γ/2" },
+        gaia: { half: 1.495978707e11, eps: 1.94e-10, name: "Earth's orbit, 2 AU across, Gaia's 20 µas in p = γ/2" } };
     const AU = 1.495978707e11, PC = 3.0856775814913673e16;
+    const two = x => x >= 99.5 ? String(Math.round(x)) : x.toPrecision(2);       // two figures, never exponent form
     function amount(m) {
-        if (m < 1) return `${(m * 100).toPrecision(2)} cm`;
-        if (m < 1e4) return `${m < 10 ? m.toPrecision(2) : Math.round(m)} m`;
-        if (m < 0.01 * AU) return `${(m / 1000).toPrecision(2)} km`;
-        if (m < 0.1 * PC) return `${(m / AU).toPrecision(2)} AU`;
-        if (m < 1e6 * PC) return m < 1e3 * PC ? `${(m / PC).toPrecision(2)} pc` : `${(m / PC / 1e3).toPrecision(2)} kpc`;
-        return `${(m / PC / 1e6).toPrecision(2)} Mpc`;
+        if (m < 1) return `${two(m * 100)} cm`;
+        if (m < 1e4) return `${two(m)} m`;
+        if (m < 0.01 * AU) return `${two(m / 1000)} km`;
+        if (m < 0.1 * PC) return `${two(m / AU)} AU`;
+        const pc = m / PC;
+        if (pc < 999.5) return `${two(pc)} pc`;
+        return pc < 999.5e3 ? `${two(pc / 1e3)} kpc` : `${two(pc / 1e6)} Mpc`;
     }
 
     // ── state ──

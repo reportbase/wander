@@ -121,8 +121,7 @@ as if a single observation held it. Section 3 sets out the readers in full.
 - What reaches a reader of a payload depends on what it holds and what it resolves (§7.6, §9).
   - One stream fixes the course of a relation, not its parties: motion comes before the object.
   - Readings taken at once against one denominator give payloads relative to each other.
-  - Further standpoints bring back a figure up to its scale, best within a band about the corner of their baseline, the
-    circle on it as diameter, where the error is round.
+  - Further standpoints bring back a figure up to its scale.
   - Payloads closer than a step arrive as their centroid.
   - The addresses' centre, the median, is had only by a reader holding its readings at once.
 - A worked example, a mountain range read from nowhere and from where the reader stands, puts the pieces together (§10).
@@ -1180,37 +1179,15 @@ the turn at which it stands. Then:
 (b) two readers whose placement relative to each other is known up to scale fix every place both see, up to one common
 scale;
 
-(c) one agreed length between them fixes the scale;
-
-(d) two readers a baseline B apart, each reading directions with independent errors of equal spread, read a place best
-on the circle with the baseline as its diameter, the corner of the pair (half-baseline, distance). For a place on the
-perpendicular bisector at distance d from the baseline's middle, with k = (B/2)/d, the relative error in d per unit
-error in the angle γ that the baseline subtends there is cosh(ln k): least, 1, at the corner, the same at d and at
-(B/2)²/d, and doubling with each level away. To first order the error along the line of sight is d/(B/2) times the
-error across it, so at the corner it is the same in every direction.
+(c) one agreed length between them fixes the scale.
 
 *Proof.* (a) A direction from a known point is a line. (b) Two lines from different points, if not parallel, meet in
 exactly one point, and moving both readers by a common similarity moves every meeting point by the same similarity.
-(c) By Proposition 8(b). (d) On the bisector d = (B/2)/tan(γ/2), so d ln d/dγ = −1/sin γ, and
-sin γ = 2k/(1 + k²) = 1/cosh(ln k); the circle on the baseline is where γ = 90°, by the inscribed angle. For the shape
-of the error, write b = B/2 and r² = b² + d², and turn the two readers' directions by δ₁ and δ₂. Each line moves across
-itself by r·δ at the place, so the meeting point moves by Δ_along = r²(δ₁ + δ₂)/(2b) along the line of sight and
-Δ_across = r²(δ₂ − δ₁)/(2d) across it. With δ₁ and δ₂ independent and of equal spread, the two have spreads in the ratio
-d/b. ∎
+(c) By Proposition 8(b). ∎
 
 So one reader's readings, however many, fix no place. Laid out with nothing else, they return the circle of §5, the same
 from every figure. The figure comes back from a second standpoint, and its size from an agreed length. This is
 triangulation, read as a ladder of what each further standpoint buys.
-
-**A baseline has a corner of its own.** Part (d) is the corner of §4 for the pair (half-baseline, distance): near and
-far are one geometry about it, and the precision of one reading of γ, sin γ = sech(ln k), is the parallel reader's
-bell of §7.1, centred on the circle on the baseline. Two directions held at once are a parallel reading, and they read
-best where the baseline is seen at a right angle. Read to a step ε, the error stays below the distance itself for
-acosh(1/ε)/ln 2, about log₂(2/ε), levels on each side of that circle. Past the far edge, near d = B/ε, the two
-directions differ by less than a step, and the place is again only the line of (a). So a second standpoint and an
-agreed length bring back the figure only within a band about the baseline's corner; outside it, what remains is what
-one reader holds. Choosing the baseline places that band as choosing H places the reader's own window (§8). Laid with H
-at the half-baseline, the two corners coincide; they are still corners of different pairs.
 
 **Proposition 12 (below a step, the centroid first).** Payloads w₁, …, w_n > 0 at places x₁, …, x_n along a line are
 read through a step: a kernel K of total 1, mean 0 and spread σ². The reading f(x) = Σ w_i·K(x − x_i) has total
