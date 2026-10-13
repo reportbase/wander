@@ -17,6 +17,10 @@ Google Fonts load from outside:
   out of the old single page line for line. **A change here changes the labs'
   world: run every lab after it.** Since 9 Oct it also holds brightness (`lightAt`, L·A/(4πd²), the
   inverse square), read only by LAD's third run (the standard-candle rung past the resolution limit).
+- `vendor/three/`: **three.js 0.160.0** (13 Oct 2026, for `sphere-cube.html`, Tom: "create a high quality 3d three.js
+  full screen demo"), from npm (`three-0.160.0.tgz`, sha256 1ee2f935…2856), MIT (`LICENSE` beside it): the module build
+  `three.module.min.js` (sha256 3e690ac7…69ba6) and `OrbitControls.js` (sha256 5a44a9e8…7b064), loaded locally through an
+  import map, so the site still loads nothing from outside but Google Fonts. Only that page uses it.
 - `index.html`: the flying page (the world drawn, the controls, the readout, the
   live-view test hooks). Its "lab" button opens `labs.html` and its "demos" button `demos.html`; `?lab=CODE` and
   `?lab=all` forward there; `?lab=0` hides the button.
@@ -106,6 +110,18 @@ Google Fonts load from outside:
   eyes; Earth's orbit with Hipparcos's 1 mas or Gaia's 20 µas, precisions of p = γ/2, so the step in γ is twice that:
   the band ends near 1 kpc and 50 kpc; corrected 12 Oct). `?mode=A|B|both&preset=eyes|hipparcos|gaia&eps=`; hook
   `window.__parallax` (`relErr`, `aspect`, `band`, `farEdge`, `triangulate`, `counts`, `set`). Not in the flying page.
+- `sphere-cube.html`: **the sphere in the cube** (13 Oct 2026, Tom: "if we put a rotatable sphere inside the unit cube, we
+  could show that every point on the sphere maps to every point on the inner cube. the inner cube could be any size,
+  however its extent must be known"; "create a high quality 3d three.js full screen demo to explain the situation"; SPN
+  R220, R221; WDG), full screen, three.js from `vendor/three/`. The unit cube (h → x, v → y, v₂ → z, every party drawn at
+  H), a sphere free to turn (drag it; tap it to choose the point followed; drag elsewhere to look; arrow keys), 1,500
+  even points on it (a Fibonacci lattice) coloured by the face they land on, their rays to an inner cube of half-extent e
+  (`e·d/‖d‖∞`, the face of the largest component), and the point inside at t, a unit relation. Six steps: the unit cube;
+  the sphere; every point points; any size (e animates, the address unchanged, the amount e times it); the extent
+  unknown (drawn at H, off by e/H); the wedge (h, v, v₂ ≥ 0, its three faces a third each). An inset draws the face hit
+  as a reading plane with the Cauchy shading and its middle quarter's share (38%). `?step=1..6&e=&known=0&t=&wedge=1&rays=0&turn=1`;
+  hook `window.__sphereCube` (`address`, `point`, `faceOf`, `stats`, `turnBy`, `hud`, `set`, `state`, `frames`, `webgl`).
+  Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -209,7 +225,7 @@ Google Fonts load from outside:
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -265,6 +281,9 @@ Google Fonts load from outside:
   and the reader as the pivot, the hand in full, and the one number a reader lacks; never fold these into a short table.
   §10 is a worked example (a mountain range). Before rewriting it, check the new text against the old for anything lost.
   It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
+  Since 13 Oct (SPN R220, R221) it has the three-party wedge: Propositions 3(f) (the sphere only if V = V₂ = H) and 5(e)
+  (the even wedge's readings the two-dimensional Cauchy, every pair at its corner, the near field a third, with its
+  converse), and "A sphere in a cube" after Proposition 8 (any size; the extent must be known for amounts).
   Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
   (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on). The fourth, an
   adversarial read, is in `plans/ofs-review-4.md`, with six edits taken (SPN R213): the paper's front now claims what its
@@ -510,6 +529,14 @@ Google Fonts load from outside:
   round only at its top (aspect cot(φ/2)); off the bisector the radial error least inside the circle (P8–P10 not killed).
   Corrections recorded under run 2: "doubling per level" only far off; the stars' presets off by 2 (p = γ/2). Briefly
   OFS Proposition 11(d) (SPN R218), then moved to `papers/parallax.md` (R219).
+  `wdg-plan.md` (+ `wdg/wdg.py`, 13 Oct; Tom: "the unit sphere could point every address in the universe", then "but that
+  is the unsituated readers sphere, he would have to know the size if the universe. the situated reader has to sweep and
+  set V = V2 = H. and create the sweep wedge using the cauchy"; SPN R220, R221): exact (mpmath). The even wedge's readings
+  (v/h, v₂/h) are the two-dimensional Cauchy, 2/(π(1 + a² + b²)^(3/2)) (P1); every pair half-Cauchy, median at its corner
+  (P2); six chambers 1/6 each, the near field in both readings a third (P3); drawn at V = c₁H, V₂ = c₂H the medians move to
+  1/c₁, 1/c₂, c₂/c₁, so each pair's corner needs that pair drawn at one length and the wedge needs V = V₂ = H (P4); a
+  rotatable sphere's rays point every point of a cube at any extent, the address (u, t) the same at every extent (P5); a
+  face's middle quarter takes 38% of its directions (P6). Nothing killed. `sphere-cube.html` shows it.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -602,6 +629,11 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   1 + ln s by address count; by length reality is 2H (the in-place lay, 2 − 1/s, the reader's own); two address spaces, proportional and logarithmic,
   around the corner; the count is the LOD; H is a zoom, not an escape (a large H loses the small below one address; the
   best H puts the thing read at the corner). Still assumed: no measure on a level.
+- With two other parties (13 October, R220, R221): a sphere that places every place by its direction and distance needs
+  every distance, the size of the universe: the unsituated reader's. The situated reader sets V = V₂ = H, makes one wedge
+  per observation, and its even measure is the two-dimensional Cauchy: every pair keeps its corner, the near field in both
+  readings is a third (OFS Propositions 3(f), 5(e)). A rotatable sphere's rays point every point of a cube of any size,
+  the address the same at every size; the point in amounts needs the cube's extent (OFS §9, "A sphere in a cube").
 - Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof"). Since R217 the main result's core does
   not rest on it: any fair weight that does not vanish at the horizon puts the median at the corner and leaves no mean
   (OFS Theorem 6(e)); only the Cauchy's exact shape is the even turn's.
@@ -683,6 +715,10 @@ In short:
   21. **parallax.html:** the error per step 1 at the corner and 2.125 two levels either side, the same at k and 1/k; the
       band 10.966 levels each side at ε = 10⁻³; the error round at the corner, stretched by d/(B/2) elsewhere; one reader
       alone holding only rays.
+  22. **sphere-cube.html:** every point of a turning sphere lands on one point of a cube and comes back to rounding at
+      e = 10⁻³, ½ and 1, the address the same at every extent, the face its largest component's; the even sphere gives each
+      face a sixth, a face's middle quarter 38%, the wedge's faces a third each; with the extent unknown the readout says
+      off by e/H; WebGL drew frames.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

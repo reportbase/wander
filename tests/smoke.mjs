@@ -535,6 +535,37 @@ try {
     failures.push(`[parallax.html] ${JSON.stringify(px)}`);
   console.log(`${failures.length === before21 ? 'ok  ' : 'FAIL'} parallax.html (error per step 1 at the corner, ×2.125 two levels either side; band ${px.band.toFixed(3)} levels each side at ε = 1e-3; the error round at the corner (${px.aspect[0].toFixed(2)}), stretched ${px.aspect[1].toFixed(1)} at 8 half-baselines and ${px.aspect[2].toFixed(3)} at an eighth; ${px.both.crisp} held, ${px.both.stretched} stretched, ${px.both.lost} lost to a ray; one reader alone, ${px.alone.ray} rays)`);
 
+  // ── 22. sphere-cube.html: the sphere in the cube (WDG; SPN R221): every point of a turning sphere lands on one point of a
+  //    cube at any extent, its address (u, t) the same at every extent and the face its largest component's; the even
+  //    sphere gives each face a sixth, a face's middle quarter 38%, the wedge's three faces a third each; with the extent
+  //    unknown the reader draws the cube at H, its amounts off by e/H ──
+  current = 'sphere-cube.html';
+  const before22 = failures.length;
+  await page.goto(new URL('sphere-cube.html?step=6&turn=0', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__sphereCube && __sphereCube.frames > 2, null, { timeout: 30000 });
+  const sq = await page.evaluate(() => { const c = __sphereCube, o = { rt: 0, ad: 0, faceOk: true };
+    const pts = [];
+    for (let i = 0; i < 9; i++) for (let j = 0; j < 9; j++) for (let k = 0; k < 9; k++) {
+      const x = [(i - 4) / 4.1, (j - 4.2) / 4.3, (k - 3.9) / 3.9]; if (Math.hypot(...x) > 1e-9) pts.push(x); }
+    for (const [axis, ang] of [[[1, 0, 0], 0], [[0.3, 0.8, 0.1], 1.1], [[-0.5, 0.2, 0.9], 2.3]]) {
+      c.turnBy(axis, ang);
+      for (const x of pts) {
+        for (const e of [1e-3, 0.5, 1]) { const X = x.map(v => v * e), a = c.address(X, e), back = c.point(a.u, a.t, e);
+          o.rt = Math.max(o.rt, Math.hypot(back[0] - X[0], back[1] - X[1], back[2] - X[2]) / Math.hypot(...X)); }
+        const a1 = c.address(x, 1), a2 = c.address(x.map(v => v * 1e-3), 1e-3);
+        o.ad = Math.max(o.ad, Math.abs(a1.t - a2.t), ...a1.u.map((v, k) => Math.abs(v - a2.u[k])));
+        const m = Math.max(...x.map(Math.abs)), lg = x.findIndex(v => Math.abs(v) === m);
+        if (c.faceOf(x).slice(1) !== ['h', 'v', 'v₂'][lg]) o.faceOk = false;
+      }
+    }
+    const st = c.stats(6000); o.faces = st.faceShares; o.mid = st.middleShare; o.pred = c.predictedMiddle; o.wedge = st.wedge.shares;
+    c.set({ step: 5, e: 0.25, known: false }); o.hud = c.hud(); o.frames = c.frames; o.webgl = c.webgl; return o; });
+  if (!(sq.rt < 1e-12) || !(sq.ad < 1e-12) || !sq.faceOk || sq.faces.some(f => Math.abs(f - 1 / 6) > 0.01) ||
+      Math.abs(sq.mid - sq.pred) > 0.01 || sq.wedge.some(f => Math.abs(f - 1 / 3) > 0.02) ||
+      !/off by e\/H = 0\.250, 2\.00 levels/.test(sq.hud) || !(sq.frames > 0) || !sq.webgl)
+    failures.push(`[sphere-cube.html] ${JSON.stringify({ ...sq, hud: sq.hud.slice(0, 200) })}`);
+  console.log(`${failures.length === before22 ? 'ok  ' : 'FAIL'} sphere-cube.html (round trip ${sq.rt.toExponential(1)}, the address the same at every extent to ${sq.ad.toExponential(1)}, the face the largest component's; faces ${sq.faces.map(f => f.toFixed(3)).join(' ')}; a face's middle quarter ${(100 * sq.mid).toFixed(1)}% (exactly ${(100 * sq.pred).toFixed(1)}%); the wedge's faces ${sq.wedge.map(f => (100 * f).toFixed(1) + '%').join(', ')}; extent unknown, off by e/H)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

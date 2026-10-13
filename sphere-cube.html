@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The sphere in the cube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    sphere-cube.html: the sphere in the cube (13 October 2026; Tom: "if we put a rotatable sphere inside the unit cube, we
+    could show that every point on the sphere maps to every point on the inner cube. the inner cube could be any size,
+    however its extent must be known." and "create a high quality 3d three.js full screen demo to explain the situation";
+    before it, "the situated reader has to sweep and set V = V2 = H. and create the sweep wedge using the cauchy").
+    SPN R220, R221; number-line.md §8, "The situated wedge" and "A rotatable sphere in the unit cube";
+    observation-from-somewhere.md Propositions 3(f), 5(e) and "A sphere in a cube" (§9); WDG (plans/wdg-plan.md).
+
+    Keep the case. h, v and v₂ are unit relations, the cube's axes (h → x, v → y, v₂ → z), each running to 1 at the unit
+    cube's faces: the reader's breadth H, with every party drawn at it (V = V₂ = H). e, the inner cube's half-extent, is an
+    amount, in units of H.
+      - The sphere (radius 1) turns freely. Each point u on it is a direction from the centre: an address.
+      - The ray from the centre through u, turned to d = R·u, meets the cube of half-extent e once, at e·d/‖d‖∞, on the face
+        of d's largest component. Every point inside but the centre is t times that, t = ‖x‖∞/e in (0, 1]: a unit relation.
+      - The address (u, t) is the same at every e; the point in amounts is e times it. With e unknown the reader draws the
+        cube at H (e = 1): right as addresses, off as amounts by the true e/H.
+      - The wedge: h, v, v₂ ≥ 0, one octant, made by one observation. Swept evenly its readings (v/h, v₂/h) are the
+        two-dimensional Cauchy, 2/(π(1 + a² + b²)^(3/2)); its three faces take a third each, a face's middle quarter
+        (by area) 0.3846 of the face's directions (WDG P3, P6).
+    The painted points are a Fibonacci lattice on the sphere: even, not random.
+    three.js 0.160.0 (MIT) is vendored in vendor/three/ and loaded locally through an import map; nothing loads from
+    outside but Google Fonts.
+    Links: ?step=1..6&e=0.5&known=0&t=0.6&wedge=1&rays=0&turn=0. Test hook: window.__sphereCube.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #07070b; --panel: rgba(18,18,26,0.78); --line: rgba(255,255,255,0.10);
+        --ink: #c8c8d0; --dim: #8a8a96; --bright: #ece9f4; --gold: #d4a052; --teal: #8ce6cd; --violet: #b59cf0; --red: #d96e5b }
+    * { box-sizing: border-box }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground) }
+    body { color: var(--ink); font: 13.5px/1.5 'DM Mono', ui-monospace, monospace;
+        background: radial-gradient(120% 90% at 60% 40%, #15151f 0%, #0a0a10 55%, #050508 100%) }
+    #stage { position: fixed; inset: 0; display: block; width: 100vw; height: 100vh; touch-action: none; cursor: grab }
+    #stage.turning { cursor: grabbing }
+    .glass { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+        -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.45) }
+    #panel { position: fixed; top: 14px; left: 14px; width: min(370px, calc(100vw - 28px)); max-height: calc(100vh - 28px);
+        overflow: auto; padding: 14px 16px 12px; z-index: 3 }
+    h1 { font: 400 26px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 4px }
+    .sub { color: var(--dim); margin: 0 0 10px; font-size: 12px }
+    .steps { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 8px }
+    button { font: inherit; color: var(--bright); background: rgba(255,255,255,0.04); border: 1px solid var(--line);
+        border-radius: 7px; padding: 5px 9px; cursor: pointer; touch-action: manipulation; min-height: 32px }
+    button:hover { border-color: rgba(255,255,255,0.25) }
+    button.on { border-color: var(--gold); color: var(--gold); background: rgba(212,160,82,0.08) }
+    .steps button { min-width: 34px }
+    #caption { color: var(--ink); margin: 2px 0 10px; min-height: 6.2em }
+    #caption b { color: var(--bright); font-weight: 500 }
+    .ctl { display: grid; grid-template-columns: 7.2em 1fr 5.4em; gap: 6px 8px; align-items: center; margin: 6px 0 }
+    .ctl label { color: var(--dim) }
+    .ctl output { color: var(--bright); text-align: right; font-size: 12px }
+    input[type=range] { width: 100%; min-width: 0; accent-color: var(--gold) }
+    .row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .violet { color: var(--violet) } .dim { color: var(--dim) }
+    #hud { position: fixed; left: 14px; bottom: 14px; max-width: min(560px, calc(100vw - 28px)); padding: 10px 13px;
+        white-space: pre-wrap; font-size: 12px; color: var(--bright); z-index: 2 }
+    #inset { position: fixed; right: 14px; bottom: 14px; width: 236px; padding: 10px 10px 8px; z-index: 2 }
+    #inset canvas { width: 100%; aspect-ratio: 1; display: block; border-radius: 6px; background: #0b0b12 }
+    #inset .t { font-size: 11.5px; color: var(--dim); margin: 0 0 6px }
+    #inset .t b { color: var(--bright); font-weight: 500 }
+    #insetNote { font-size: 11px; color: var(--dim); margin: 6px 0 0 }
+    #hint { position: fixed; right: 14px; top: 14px; padding: 7px 11px; font-size: 11.5px; color: var(--dim); z-index: 2 }
+    #nogl { position: fixed; inset: 0; display: none; place-items: center; color: var(--bright); padding: 24px; text-align: center }
+    #fold { display: none }
+    a { color: var(--teal) }
+    @media (max-width: 760px) {
+        #panel { top: auto; bottom: 10px; left: 10px; width: calc(100vw - 20px); max-height: 52vh; padding: 10px 12px }
+        #panel.folded .more { display: none }
+        #fold { display: inline-block; float: right; min-height: 28px; padding: 2px 8px }
+        h1 { font-size: 21px }
+        #caption { min-height: 0 }
+        #hud { top: 10px; bottom: auto; left: 10px; max-width: calc(100vw - 20px); font-size: 11px; padding: 7px 9px }
+        #inset { display: none }
+        #hint { display: none }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto } }
+    </style>
+    <script type="importmap">{ "imports": { "three": "./vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+<canvas id="stage" aria-label="A sphere inside the unit cube, its points sent along rays from the centre onto an inner cube"></canvas>
+<div id="panel" class="glass">
+    <button id="fold" aria-label="fold the panel">▾</button>
+    <h1>The sphere in the cube</h1>
+    <p class="sub">Every point of a turning sphere points to one point of a cube of any size, once its extent is known.</p>
+    <div class="body">
+        <div class="steps" id="steps"></div>
+        <div id="caption"></div>
+        <div class="more">
+        <div class="ctl"><label for="ext">inner cube, e</label><input id="ext" type="range" min="-5" max="0" step="0.01" value="-1"><output id="exto"></output></div>
+        <div class="ctl"><label for="tt">along the ray, t</label><input id="tt" type="range" min="0.02" max="1" step="0.01" value="0.6"><output id="tto"></output></div>
+        <div class="row">
+            <button id="bKnown" class="on">extent known</button>
+            <button id="bWedge">the wedge</button>
+            <button id="bRays" class="on">rays</button>
+            <button id="bTurn">turn</button>
+            <button id="bView">drag: sphere</button>
+            <button id="bReset">reset</button>
+        </div>
+        <p class="sub" style="margin:10px 0 0">Drag the sphere to turn it, tap it to choose a point; drag around it to look.
+        Other demos: <a href="sphere.html">the sphere</a>, <a href="mountain.html">the mountain and the thumb</a>,
+        <a href="demos.html">all demos</a>.</p>
+        </div>
+    </div>
+</div>
+<div id="hud" class="glass"></div>
+<div id="inset" class="glass"><div class="t" id="insetT"></div><canvas id="face" width="440" height="440"></canvas><div id="insetNote"></div></div>
+<div id="hint" class="glass">h → right · v → up · v₂ → toward you</div>
+<div id="nogl"><div>This page needs WebGL to draw the sphere and the cubes.<br>The arithmetic still runs: see the test hook.</div></div>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from './vendor/three/OrbitControls.js';
+
+// ── the geometry, independent of drawing ────────────────────────────────────────────────────────────────────────
+const AX = ['h', 'v', 'v₂'];
+const PRED_MID = 4 * Math.atan(1 / (4 * Math.sqrt(1.5))) / (2 * Math.PI / 3);   // WDG P6: 0.38456530109385
+const linf = d => Math.max(Math.abs(d[0]), Math.abs(d[1]), Math.abs(d[2]));
+const norm = d => Math.hypot(d[0], d[1], d[2]);
+function faceOf(d) {                                    // the face of the largest component: [axis, sign]
+    const a = Math.abs(d[0]) >= Math.abs(d[1]) && Math.abs(d[0]) >= Math.abs(d[2]) ? 0 : Math.abs(d[1]) >= Math.abs(d[2]) ? 1 : 2;
+    return [a, d[a] >= 0 ? 1 : -1];
+}
+const faceName = ([a, s]) => (s > 0 ? '+' : '−') + AX[a];
+function readingsOn(d) {                                // the two readings against the face's own unit relation
+    const [a, s] = faceOf(d), j = (a + 1) % 3, k = (a + 2) % 3, den = Math.abs(d[a]);
+    const [p, q] = a === 1 ? [k, j] : [j, k];         // keep h before v₂ on the v face: (h/v, v₂/v)
+    return { axis: a, sign: s, p, q, ra: d[p] / den, rb: d[q] / den };
+}
+// the turn of the sphere as a quaternion [x, y, z, w]; rotate a vector
+function qrot(q, v) {
+    const [x, y, z, w] = q, [a, b, c] = v;
+    const ix = w * a + y * c - z * b, iy = w * b + z * a - x * c, iz = w * c + x * b - y * a, iw = -x * a - y * b - z * c;
+    return [ix * w + iw * -x + iy * -z - iz * -y, iy * w + iw * -y + iz * -x - ix * -z, iz * w + iw * -z + ix * -y - iy * -x];
+}
+const qconj = q => [-q[0], -q[1], -q[2], q[3]];
+function qmul(a, b) {
+    return [a[3] * b[0] + a[0] * b[3] + a[1] * b[2] - a[2] * b[1], a[3] * b[1] - a[0] * b[2] + a[1] * b[3] + a[2] * b[0],
+            a[3] * b[2] + a[0] * b[1] - a[1] * b[0] + a[2] * b[3], a[3] * b[3] - a[0] * b[0] - a[1] * b[1] - a[2] * b[2]];
+}
+function qaxis(axis, ang) { const n = norm(axis), s = Math.sin(ang / 2) / n; return [axis[0] * s, axis[1] * s, axis[2] * s, Math.cos(ang / 2)]; }
+const qnorm = q => { const n = Math.hypot(...q); return q.map(c => c / n); };
+// address and point (WDG P5): x -> (u, t) -> x
+function address(x, e, q = state.q) {
+    const t = linf(x) / e, n = norm(x), w = [x[0] / n, x[1] / n, x[2] / n];
+    return { u: qrot(qconj(q), w), w, t, face: faceName(faceOf(w)) };
+}
+function point(u, t, e, q = state.q) {
+    const d = qrot(q, u), m = linf(d);
+    return [t * e * d[0] / m, t * e * d[1] / m, t * e * d[2] / m];
+}
+// even points on the sphere: a Fibonacci lattice in the sphere's own frame
+function fib(N) {
+    const out = [], g = Math.PI * (3 - Math.sqrt(5));
+    for (let i = 0; i < N; i++) {
+        const y = 1 - 2 * (i + 0.5) / N, r = Math.sqrt(1 - y * y), th = g * i;
+        out.push([Math.cos(th) * r, y, Math.sin(th) * r]);
+    }
+    return out;
+}
+function stats(N = 1600, q = state.q) {
+    const faces = new Array(6).fill(0), wedge = [0, 0, 0];
+    let mid = 0, inW = 0;
+    for (const u of fib(N)) {
+        const d = qrot(q, u), r = readingsOn(d), fi = r.axis * 2 + (r.sign > 0 ? 0 : 1);
+        faces[fi]++;
+        if (Math.abs(r.ra) <= 0.5 && Math.abs(r.rb) <= 0.5) mid++;
+        if (d[0] >= 0 && d[1] >= 0 && d[2] >= 0) { inW++; wedge[r.axis]++; }
+    }
+    return { N, faceShares: faces.map(c => c / N), middleShare: mid / N, predictedMiddle: PRED_MID,
+             wedge: { count: inW, shares: wedge.map(c => c / Math.max(1, inW)), share: inW / N } };
+}
+
+// ── state, URL ────────────────────────────────────────────────────────────────────────────────────────────────
+const qs = new URLSearchParams(location.search);
+const state = {
+    step: Math.min(6, Math.max(1, +qs.get('step') || 3)),
+    lgE: qs.has('e') ? Math.max(-5, Math.min(0, Math.log2(+qs.get('e') || 0.5))) : -1,
+    known: qs.get('known') !== '0', t: Math.max(0.02, Math.min(1, +qs.get('t') || 0.6)),
+    wedge: qs.get('wedge') === '1', rays: qs.get('rays') !== '0', turn: qs.get('turn') === '1',
+    dragView: false, q: qnorm(qmul(qaxis([0, 1, 0], -0.5), qaxis([1, 0, 0], 0.35))),
+    sel: null, animE: false
+};
+const Q0 = state.q.slice();
+state.sel = (() => { const v = [0.84, 0.46, -0.3], n = norm(v); return qrot(qconj(Q0), v.map(c => c / n)); })();
+const e = () => 2 ** state.lgE;
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const CAPTIONS = {
+    1: ['the unit cube', '<b>The unit cube.</b> The reader holds one breadth, H, and draws every party at it: h, v and v₂ each run from 0 to 1 out to the cube\'s faces (V = V₂ = H). The cube is the reader\'s frame, not a thing in the world; it has no size of its own.'],
+    2: ['a sphere inside', '<b>A sphere inside, free to turn.</b> Each point on it is a direction from the centre: an address, with no distance in it. The points painted on it are spread evenly. Drag the sphere to turn it; tap it to choose the point that is followed.'],
+    3: ['every point points', '<b>Every point points.</b> The ray from the centre through each point meets the inner cube once, on the face of its largest component. Turn the sphere any way: every point still lands, and every point of the cube\'s surface is landed on by exactly one.'],
+    4: ['any size', '<b>Any size, the extent known.</b> A point inside the cube is t of the way along its ray, t from 0 to 1: a unit relation. The address (the direction and t) is the same at every size of the cube; the point in amounts is the extent e times it.'],
+    5: ['extent unknown', '<b>The extent unknown.</b> A reader that does not know e draws the cube at its own breadth, e = H: the mountain set equal to the thumb. Every address is still right; every amount is off by the true e/H, the same number of levels everywhere.'],
+    6: ['the wedge', '<b>The wedge.</b> One observation makes one wedge, h, v, v₂ ≥ 0, with V = V₂ = H. Swept evenly, its readings (v/h, v₂/h) are the two-dimensional Cauchy: its three faces take a third each, so the reader is near in both readings a third of the time, and a face\'s middle quarter takes 38% of its points.']
+};
+const STEP_SET = {
+    1: { rays: false, wedge: false, known: true, turn: false },
+    2: { rays: false, wedge: false, known: true, turn: !reduced },
+    3: { rays: true, wedge: false, known: true, turn: !reduced },
+    4: { rays: true, wedge: false, known: true, turn: false, animE: !reduced },
+    5: { rays: true, wedge: false, known: false, turn: false },
+    6: { rays: true, wedge: true, known: true, turn: false }
+};
+
+// ── the drawing ───────────────────────────────────────────────────────────────────────────────────────────────
+const canvas = document.getElementById('stage');
+let renderer = null;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true }); }
+catch (err) { document.getElementById('nogl').style.display = 'grid'; }
+const COL = { gold: 0xd4a052, teal: 0x8ce6cd, violet: 0xb59cf0, white: 0xece9f4, dim: 0x8a8a96 };
+// the six faces: +h gold, +v teal, +v₂ violet; the negative faces the same hues, dimmed
+const FACE_HEX = ['#e0aa58', '#7d5f30', '#8ce6cd', '#3c6d62', '#b59cf0', '#5a4d82'];
+const FACE_COL = FACE_HEX.map(h => { const c = new THREE.Color(h); return [c.r, c.g, c.b]; });   // linear, for vertex colours
+const FACE_RGB = FACE_HEX.map(h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)));           // sRGB, for the inset
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(36, 1, 0.05, 100);
+camera.position.set(3.3, 2.35, 4.2);
+let controls = null;
+const N_SHOW = 1500, probes = fib(N_SHOW);
+
+// sphere group (turns with state.q)
+const sphereG = new THREE.Group(); scene.add(sphereG);
+const sphereMesh = new THREE.Mesh(new THREE.SphereGeometry(1, 96, 64),
+    new THREE.MeshStandardMaterial({ color: 0x9fb0ff, transparent: true, opacity: 0.10, roughness: 0.25, metalness: 0.1, depthWrite: false }));
+sphereG.add(sphereMesh);
+const rim = new THREE.Mesh(new THREE.SphereGeometry(1.002, 96, 64), new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, side: THREE.FrontSide,
+    uniforms: { c: { value: new THREE.Color(0xbfc8ff) } },
+    vertexShader: 'varying vec3 n; varying vec3 vd; void main(){ vec4 mv = modelViewMatrix*vec4(position,1.); n = normalize(normalMatrix*normal); vd = normalize(-mv.xyz); gl_Position = projectionMatrix*mv; }',
+    fragmentShader: 'uniform vec3 c; varying vec3 n; varying vec3 vd; void main(){ float f = pow(1.-abs(dot(n,vd)), 2.6); gl_FragColor = vec4(c, f*0.55); }'
+}));
+sphereG.add(rim);
+// the sphere's own lines: great circles every 30°, so its turn shows
+{
+    const pts = [];
+    const ring = (f) => { for (let i = 0; i < 128; i++) { pts.push(...f(i / 128 * Math.PI * 2), ...f((i + 1) / 128 * Math.PI * 2)); } };
+    for (let k = 0; k < 6; k++) { const ph = k * Math.PI / 6; ring(a => [Math.cos(a) * Math.cos(ph), Math.sin(a), Math.cos(a) * Math.sin(ph)].map(c => c * 1.003)); }
+    for (const lat of [-60, -30, 0, 30, 60]) { const y = Math.sin(lat * Math.PI / 180), r = Math.cos(lat * Math.PI / 180); ring(a => [Math.cos(a) * r * 1.003, y * 1.003, Math.sin(a) * r * 1.003]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
+    sphereG.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: 0x8f98c8, transparent: true, opacity: 0.22, depthWrite: false })));
+}
+// the even points on the sphere, and their landings on the inner cube
+function dotTexture() {
+    const c = document.createElement('canvas'); c.width = c.height = 64; const g = c.getContext('2d');
+    const r = g.createRadialGradient(32, 32, 0, 32, 32, 30); r.addColorStop(0, 'rgba(255,255,255,1)'); r.addColorStop(0.55, 'rgba(255,255,255,0.95)'); r.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = r; g.beginPath(); g.arc(32, 32, 30, 0, Math.PI * 2); g.fill();
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const DOT = dotTexture();
+const mkPoints = (n, size) => {
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(n * 3), 3));
+    g.setAttribute('color', new THREE.BufferAttribute(new Float32Array(n * 3), 3));
+    return new THREE.Points(g, new THREE.PointsMaterial({ size, map: DOT, vertexColors: true, transparent: true, alphaTest: 0.05, depthWrite: false, sizeAttenuation: true, toneMapped: false }));
+};
+const onSphere = mkPoints(N_SHOW, 0.034), onCube = mkPoints(N_SHOW, 0.03);
+scene.add(onSphere, onCube);
+const RAY_EVERY = 3, NR = Math.ceil(N_SHOW / RAY_EVERY);
+const raysG = new THREE.BufferGeometry();
+raysG.setAttribute('position', new THREE.BufferAttribute(new Float32Array(NR * 6), 3));
+raysG.setAttribute('color', new THREE.BufferAttribute(new Float32Array(NR * 6), 3));
+const rays = new THREE.LineSegments(raysG, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.2, depthWrite: false, toneMapped: false }));
+scene.add(rays);
+
+// the unit cube (H) and the inner cube (e)
+const edges = (s, color, opacity, dashed) => {
+    const g = new THREE.EdgesGeometry(new THREE.BoxGeometry(2 * s, 2 * s, 2 * s));
+    const m = dashed ? new THREE.LineDashedMaterial({ color, transparent: true, opacity, dashSize: 0.06, gapSize: 0.045 })
+                     : new THREE.LineBasicMaterial({ color, transparent: true, opacity });
+    const l = new THREE.LineSegments(g, m); if (dashed) l.computeLineDistances(); return l;
+};
+const unitCube = edges(1, COL.white, 0.55, false); scene.add(unitCube);
+const unitFaces = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 2), new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.018, side: THREE.BackSide, depthWrite: false }));
+scene.add(unitFaces);
+const innerG = new THREE.Group(); scene.add(innerG);
+const innerEdges = edges(1, COL.teal, 0.95, false); innerG.add(innerEdges);
+const innerFaces = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 2), new THREE.MeshBasicMaterial({ color: COL.teal, transparent: true, opacity: 0.045, side: THREE.DoubleSide, depthWrite: false }));
+innerG.add(innerFaces);
+const drawnAtH = edges(1, COL.teal, 0.9, true); drawnAtH.scale.setScalar(0.992); scene.add(drawnAtH);   // the reader's drawing when e is unknown
+// the axes h, v, v₂ (to the unit cube's faces) and their labels
+const redraws = [];
+function label(text, color, height = 0.11) {                     // a sprite as wide as its text, height in world units
+    const c = document.createElement('canvas'), g = c.getContext('2d'), font = '500 64px "DM Mono", ui-monospace, monospace';
+    let s = null;
+    const paint = () => {
+        g.font = font; c.width = Math.ceil(g.measureText(text).width + 24); c.height = 96;
+        g.font = font; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = color; g.fillText(text, c.width / 2, 50);
+        if (s) s.scale.set(height * c.width / c.height, height, 1);
+    };
+    paint();
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+    s = new THREE.Sprite(new THREE.SpriteMaterial({ map: t, transparent: true, depthWrite: false })); paint();
+    redraws.push(() => { paint(); t.dispose(); t.needsUpdate = true; });
+    return s;
+}
+const axisCols = ['#d4a052', '#8ce6cd', '#b59cf0'];
+for (let a = 0; a < 3; a++) {
+    const p = [0, 0, 0]; p[a] = 1;
+    const g = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(...p)]);
+    scene.add(new THREE.Line(g, new THREE.LineBasicMaterial({ color: axisCols[a], transparent: true, opacity: 0.55 })));
+    const l = label(AX[a], axisCols[a], 0.16); l.position.set(...p.map(c => c * 1.16)); scene.add(l);
+}
+const labH = label('the unit cube, H', '#cfcbd8', 0.075); labH.position.set(0.42, -1.1, 1.02); scene.add(labH);
+const labE = label('e', '#8ce6cd', 0.13); scene.add(labE);
+
+// the followed point: its ray, the landing, the point inside at t
+const mat = c => new THREE.MeshBasicMaterial({ color: c });
+const bead = (r, c) => new THREE.Mesh(new THREE.SphereGeometry(r, 24, 16), mat(c));
+const selOnSphere = bead(0.035, COL.white), selOnCube = bead(0.032, COL.gold), selInside = bead(0.028, COL.teal), selOnUnit = bead(0.022, 0x9a96a8);
+scene.add(selOnSphere, selOnCube, selInside, selOnUnit);
+const rod = (c, r, op = 1) => new THREE.Mesh(new THREE.CylinderGeometry(r, r, 1, 12, 1, true), new THREE.MeshBasicMaterial({ color: c, transparent: op < 1, opacity: op }));
+const rodIn = rod(COL.white, 0.006), rodOut = rod(COL.gold, 0.007), rodBeyond = rod(0x9a96a8, 0.004, 0.5);
+scene.add(rodIn, rodOut, rodBeyond);
+const Y = new THREE.Vector3(0, 1, 0);
+function placeRod(m, a, b) {
+    const A = new THREE.Vector3(...a), B = new THREE.Vector3(...b), d = B.clone().sub(A), L = d.length();
+    m.visible = L > 1e-4; if (!m.visible) return;
+    m.position.copy(A).addScaledVector(d, 0.5); m.scale.set(1, L, 1); m.quaternion.setFromUnitVectors(Y, d.normalize());
+}
+
+// the wedge: the octant on the sphere, its corner arcs, the triple corner, its three faces on the inner cube
+const wedgeG = new THREE.Group(); scene.add(wedgeG);
+{
+    const n = 32, pos = [], idx = [], id = (i, j) => i * (n + 1) - (i * (i - 1)) / 2 + j;
+    for (let i = 0; i <= n; i++) for (let j = 0; j <= n - i; j++) {
+        const v = [i / n, j / n, (n - i - j) / n], m = norm(v) / 1.006; pos.push(v[0] / m, v[1] / m, v[2] / m);
+    }
+    for (let i = 0; i < n; i++) for (let j = 0; j < n - i; j++) {
+        idx.push(id(i, j), id(i + 1, j), id(i, j + 1));
+        if (j < n - i - 1) idx.push(id(i + 1, j), id(i + 1, j + 1), id(i, j + 1));
+    }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx);
+    wedgeG.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: COL.gold, transparent: true, opacity: 0.16, side: THREE.DoubleSide, depthWrite: false })));
+    const arcs = [];
+    const arc = (a, b) => { for (let i = 0; i < 48; i++) { for (const s of [i / 48, (i + 1) / 48]) { const v = a.map((c, k) => c * (1 - s) + b[k] * s), m = norm(v) / 1.008; arcs.push(v[0] / m, v[1] / m, v[2] / m); } } };
+    arc([0, 0, 1], [1, 1, 0]); arc([1, 0, 0], [0, 1, 1]); arc([0, 1, 0], [1, 0, 1]);           // v = h, v₂ = v, h = v₂
+    arc([1, 0, 0], [0, 1, 0]); arc([0, 1, 0], [0, 0, 1]); arc([0, 0, 1], [1, 0, 0]);           // the wedge's edges
+    const ga = new THREE.BufferGeometry(); ga.setAttribute('position', new THREE.Float32BufferAttribute(arcs, 3));
+    wedgeG.add(new THREE.LineSegments(ga, new THREE.LineBasicMaterial({ color: COL.gold, transparent: true, opacity: 0.85 })));
+    const tri = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(1, 1, 1)]);
+    wedgeG.add(new THREE.Line(tri, new THREE.LineDashedMaterial({ color: COL.gold, dashSize: 0.05, gapSize: 0.035 })));
+    wedgeG.children[wedgeG.children.length - 1].computeLineDistances();
+    const lt = label('v = h = v₂', '#d4a052', 0.075); lt.position.set(1.1, 1.13, 1.1); wedgeG.add(lt);
+}
+const wedgeFaces = new THREE.Group(); innerG.add(wedgeFaces);
+for (let a = 0; a < 3; a++) {
+    const g = new THREE.PlaneGeometry(1, 1), m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: [COL.gold, COL.teal, COL.violet][a], transparent: true, opacity: 0.22, side: THREE.DoubleSide, depthWrite: false }));
+    if (a === 0) { m.rotation.y = Math.PI / 2; m.position.set(1.001, 0.5, 0.5); }
+    if (a === 1) { m.rotation.x = -Math.PI / 2; m.position.set(0.5, 1.001, 0.5); }
+    if (a === 2) { m.position.set(0.5, 0.5, 1.001); }
+    wedgeFaces.add(m);
+}
+
+scene.add(new THREE.HemisphereLight(0xcfd6ff, 0x101018, 1.1));
+const sun = new THREE.DirectionalLight(0xffffff, 1.4); sun.position.set(3, 5, 4); scene.add(sun);
+
+// ── per frame: turn, land, draw ─────────────────────────────────────────────────────────────────────────────────
+let frames = 0, last = performance.now(), eT = 0;
+function update(dt) {
+    if (state.turn && !dragging) state.q = qnorm(qmul(qaxis([0.25, 1, 0.15], dt * 0.35), state.q));
+    if (state.animE) { eT += dt; state.lgE = -2.5 + 2.5 * Math.cos(eT * 0.45); $('ext').value = state.lgE; $('exto').textContent = `${e().toPrecision(2)} H`; }
+    const E = state.known ? e() : 1;                     // the cube the reader can draw
+    sphereG.quaternion.set(...state.q);
+    innerG.scale.setScalar(e());
+    innerEdges.material.opacity = state.known ? 0.95 : 0.22;
+    innerFaces.material.opacity = state.known ? 0.045 : 0.012;
+    drawnAtH.visible = !state.known;
+    labE.position.set(e() * 1.04 + 0.05, e() * 1.04 + 0.06, -e()); labE.material.opacity = state.known ? 1 : 0.45;
+    wedgeG.visible = wedgeFaces.visible = state.wedge;
+    const sp = onSphere.geometry.attributes.position.array, sc = onSphere.geometry.attributes.color.array;
+    const cp = onCube.geometry.attributes.position.array, cc = onCube.geometry.attributes.color.array;
+    const rp = raysG.attributes.position.array, rc = raysG.attributes.color.array;
+    let r = 0;
+    for (let i = 0; i < N_SHOW; i++) {
+        const d = qrot(state.q, probes[i]), [a, s] = faceOf(d), fc = FACE_COL[a * 2 + (s > 0 ? 0 : 1)], m = linf(d);
+        const inW = d[0] >= 0 && d[1] >= 0 && d[2] >= 0, k = state.wedge && !inW ? 0.32 : 1;
+        sp.set([d[0] * 1.004, d[1] * 1.004, d[2] * 1.004], i * 3); sc.set([fc[0] * k, fc[1] * k, fc[2] * k], i * 3);
+        const p = [E * d[0] / m, E * d[1] / m, E * d[2] / m];
+        cp.set(p, i * 3); cc.set([fc[0] * k, fc[1] * k, fc[2] * k], i * 3);
+        if (i % RAY_EVERY === 0) { rp.set([0, 0, 0, ...p], r * 6); rc.set([fc[0] * 0.5, fc[1] * 0.5, fc[2] * 0.5, fc[0] * k, fc[1] * k, fc[2] * k], r * 6); r++; }
+    }
+    onSphere.geometry.attributes.position.needsUpdate = onSphere.geometry.attributes.color.needsUpdate = true;
+    onCube.geometry.attributes.position.needsUpdate = onCube.geometry.attributes.color.needsUpdate = true;
+    raysG.attributes.position.needsUpdate = raysG.attributes.color.needsUpdate = true;
+    rays.visible = state.rays && state.step >= 3;
+    onCube.visible = state.step >= 3;
+    // the followed point
+    const d = qrot(state.q, state.sel), m = linf(d), land = d.map(c => E * c / m), unit = d.map(c => c / m), inside = land.map(c => c * state.t);
+    selOnSphere.position.set(...d); selOnCube.position.set(...land); selOnUnit.position.set(...unit); selInside.position.set(...inside);
+    const near = Math.min(1, E / m), far = Math.max(1, E / m);       // the sphere at 1, the cube's surface at E/m
+    placeRod(rodIn, [0, 0, 0], d.map(c => near * c));
+    placeRod(rodOut, d.map(c => near * c), d.map(c => far * c));
+    placeRod(rodBeyond, d.map(c => far * c), unit);
+    const s2 = state.step >= 2, s3 = state.step >= 3;
+    sphereG.visible = onSphere.visible = selOnSphere.visible = s2; rodIn.visible &&= s2;
+    innerG.visible = labE.visible = s3; drawnAtH.visible &&= s3;
+    selOnCube.visible = selOnUnit.visible = s3; rodOut.visible &&= s3; rodBeyond.visible &&= s3;
+    selInside.visible = state.step >= 4;
+}
+
+// ── HUD and the face inset ────────────────────────────────────────────────────────────────────────────────────
+const f3 = v => '(' + v.map(c => (c >= 0 ? ' ' : '') + c.toFixed(3)).join(', ') + ')';
+function hudText() {
+    const d = qrot(state.q, state.sel), rd = readingsOn(d), E = e(), lev = Math.log2(E);
+    const nm = (i) => AX[i];
+    const rA = `${nm(rd.p)}/${nm(rd.axis)}`, rB = `${nm(rd.q)}/${nm(rd.axis)}`;
+    const L = [];
+    if (state.step === 1) return 'the unit cube: h, v and v₂ each from 0 at the centre to 1 at a face, every party drawn at H\nits size is the reader\'s own breadth; nothing in it is an amount of the world';
+    L.push(`address: the direction ${f3(d)}  (h, v, v₂)`);
+    if (state.step >= 3) L.push(`lands on face ${faceName([rd.axis, rd.sign])}: readings ${rA} = ${rd.ra.toFixed(3)}, ${rB} = ${rd.rb.toFixed(3)}`);
+    if (state.step >= 4) L.push(`t = ${state.t.toFixed(2)} along the ray: a unit relation, the cube's inside held in proportion`);
+    const pt = point(state.sel, state.t, E);
+    if (state.step >= 4 && state.known) L.push(`the point, in amounts: e × address = ${f3(pt)} H, with e = ${E.toPrecision(3)} H (${lev.toFixed(2)} levels)`);
+    if (!state.known) {
+        const drawn = point(state.sel, state.t, 1);
+        L.push(`extent unknown: drawn at H (e = 1), the point read as ${f3(drawn)} H`);
+        L.push(`the address is right; the amount is off by e/H = ${E.toPrecision(3)}, ${Math.abs(lev).toFixed(2)} levels, the same for every point`);
+    }
+    if (state.wedge) {
+        const s = stats(8000);
+        L.push(`the wedge (h, v, v₂ ≥ 0) holds ${s.wedge.count} of 8000 even points; its faces h, v, v₂ take ${s.wedge.shares.map(c => (100 * c).toFixed(1) + '%').join(', ')}`);
+        L.push(`near in both readings (h the largest): ${(100 * s.wedge.shares[0]).toFixed(1)}%, a third, where the circle had a half`);
+    }
+    return (innerWidth < 760 && L.length > 3 ? [L[0], L[1], L[L.length - 1]] : L).join('\n');
+}
+const fc = document.getElementById('face'), fg = fc.getContext('2d');
+function drawInset() {
+    const d = qrot(state.q, state.sel), rd = readingsOn(d), W = fc.width, pad = 26, S = W - 2 * pad;
+    const X = a => pad + (a + 1) / 2 * S, Yc = b => pad + (1 - (b + 1) / 2) * S;
+    const col = FACE_RGB[rd.axis * 2 + (rd.sign > 0 ? 0 : 1)];
+    fg.clearRect(0, 0, W, W); fg.fillStyle = '#0b0b12'; fg.fillRect(0, 0, W, W);
+    const G = 56;                                        // the Cauchy on the face, (1 + a² + b²)^(−3/2), as shade
+    for (let i = 0; i < G; i++) for (let j = 0; j < G; j++) {
+        const a = -1 + (i + 0.5) * 2 / G, b = -1 + (j + 0.5) * 2 / G, w = Math.pow(1 + a * a + b * b, -1.5);
+        fg.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${(0.06 + 0.42 * w).toFixed(3)})`;
+        fg.fillRect(X(a - 1 / G), Yc(b + 1 / G), S / G + 0.6, S / G + 0.6);
+    }
+    fg.strokeStyle = 'rgba(255,255,255,0.35)'; fg.lineWidth = 2; fg.strokeRect(X(-1), Yc(1), S, S);
+    fg.setLineDash([7, 6]); fg.strokeStyle = 'rgba(236,233,244,0.75)'; fg.strokeRect(X(-0.5), Yc(0.5), S / 2, S / 2); fg.setLineDash([]);
+    let onF = 0, inMid = 0;
+    for (const u of probes) {
+        const dd = qrot(state.q, u), r = readingsOn(dd);
+        if (r.axis !== rd.axis || r.sign !== rd.sign) continue;
+        onF++; if (Math.abs(r.ra) <= 0.5 && Math.abs(r.rb) <= 0.5) inMid++;
+        fg.fillStyle = `rgb(${col[0]},${col[1]},${col[2]})`; fg.beginPath(); fg.arc(X(r.ra), Yc(r.rb), 3.2, 0, 7); fg.fill();
+    }
+    fg.fillStyle = '#fff'; fg.strokeStyle = '#000'; fg.lineWidth = 2; fg.beginPath(); fg.arc(X(rd.ra), Yc(rd.rb), 8, 0, 7); fg.fill(); fg.stroke();
+    fg.fillStyle = 'rgba(200,200,208,0.8)'; fg.font = '22px "DM Mono", monospace'; fg.textAlign = 'center';
+    fg.fillText(`${AX[rd.p]}/${AX[rd.axis]} →`, W / 2, W - 4); fg.save(); fg.translate(16, W / 2); fg.rotate(-Math.PI / 2); fg.fillText(`${AX[rd.q]}/${AX[rd.axis]} →`, 0, 0); fg.restore();
+    document.getElementById('insetT').innerHTML = `face <b>${faceName([rd.axis, rd.sign])}</b>, a reading plane: the even sphere lands as the Cauchy`;
+    document.getElementById('insetNote').textContent = `middle quarter (dashed): ${onF ? (100 * inMid / onF).toFixed(1) : '—'}% of this face's ${onF} points, 25% of its area (exactly ${(100 * PRED_MID).toFixed(1)}%)`;
+}
+
+// ── controls ──────────────────────────────────────────────────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+const stepsEl = $('steps');
+for (let s = 1; s <= 6; s++) { const b = document.createElement('button'); b.textContent = s; b.title = CAPTIONS[s][0]; b.onclick = () => setStep(s); stepsEl.appendChild(b); }
+function syncCtl() {
+    $('ext').value = state.lgE; $('exto').textContent = `${e().toPrecision(2)} H`;
+    $('tt').value = state.t; $('tto').textContent = state.t.toFixed(2);
+    $('bKnown').classList.toggle('on', state.known); $('bKnown').textContent = state.known ? 'extent known' : 'extent unknown';
+    $('bWedge').classList.toggle('on', state.wedge); $('bRays').classList.toggle('on', state.rays); $('bTurn').classList.toggle('on', state.turn);
+    $('bView').textContent = state.dragView ? 'drag: view' : 'drag: sphere'; $('bView').classList.toggle('on', state.dragView);
+    [...stepsEl.children].forEach((b, i) => b.classList.toggle('on', i + 1 === state.step));
+    $('caption').innerHTML = CAPTIONS[state.step][1];
+}
+function setStep(s) {
+    state.step = s; Object.assign(state, { animE: false }, STEP_SET[s]);
+    if (s === 4 && state.animE) eT = Math.acos(Math.max(-1, Math.min(1, (state.lgE + 2.5) / 2.5))) / 0.45;
+    if (s === 5 && state.lgE > -1) state.lgE = -2;
+    syncCtl();
+}
+$('ext').oninput = ev => { state.animE = false; state.lgE = +ev.target.value; syncCtl(); };
+$('tt').oninput = ev => { state.t = +ev.target.value; syncCtl(); };
+$('bKnown').onclick = () => { state.known = !state.known; syncCtl(); };
+$('bWedge').onclick = () => { state.wedge = !state.wedge; syncCtl(); };
+$('bRays').onclick = () => { state.rays = !state.rays; syncCtl(); };
+$('bTurn').onclick = () => { state.turn = !state.turn; syncCtl(); };
+$('bView').onclick = () => { state.dragView = !state.dragView; syncCtl(); };
+$('bReset').onclick = () => { state.q = Q0.slice(); camera.position.set(3.3, 2.35, 4.2); controls?.target.set(0, 0, 0); controls?.update(); };
+$('fold').onclick = () => { $('panel').classList.toggle('folded'); $('fold').textContent = $('panel').classList.contains('folded') ? '▴' : '▾'; };
+
+// turning the sphere by dragging it (an arcball), choosing a point by tapping it; elsewhere the view orbits
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+let dragging = false, p0 = null, downAt = null;
+function onSpherePoint(ev) {
+    const r = canvas.getBoundingClientRect(); ndc.set(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1);
+    ray.setFromCamera(ndc, camera);
+    const o = ray.ray.origin, dv = ray.ray.direction, b = o.dot(dv), c = o.lengthSq() - 1, disc = b * b - c;
+    if (disc >= 0) { const s = -b - Math.sqrt(disc); return { hit: true, p: o.clone().addScaledVector(dv, s).normalize() }; }
+    return { hit: false, p: o.clone().addScaledVector(dv, -b).normalize() };   // nearest the sphere: its silhouette
+}
+canvas.addEventListener('pointerdown', ev => {
+    if (state.dragView) return;
+    const s = onSpherePoint(ev); if (!s.hit) return;
+    dragging = true; p0 = s.p; downAt = [ev.clientX, ev.clientY]; canvas.classList.add('turning');
+    if (controls) controls.enabled = false; canvas.setPointerCapture(ev.pointerId);
+});
+canvas.addEventListener('pointermove', ev => {
+    if (!dragging) return;
+    const p1 = onSpherePoint(ev).p, dq = new THREE.Quaternion().setFromUnitVectors(p0, p1);
+    state.q = qnorm(qmul([dq.x, dq.y, dq.z, dq.w], state.q)); p0 = p1;
+});
+canvas.addEventListener('pointerup', ev => {
+    if (!dragging) return;
+    dragging = false; canvas.classList.remove('turning'); if (controls) controls.enabled = true;
+    if (Math.hypot(ev.clientX - downAt[0], ev.clientY - downAt[1]) < 5) {
+        const s = onSpherePoint(ev); if (s.hit) state.sel = qrot(qconj(state.q), [s.p.x, s.p.y, s.p.z]);
+    }
+});
+canvas.addEventListener('pointercancel', () => { dragging = false; canvas.classList.remove('turning'); if (controls) controls.enabled = true; });
+addEventListener('keydown', ev => {
+    const k = { ArrowLeft: [[0, 1, 0], -0.08], ArrowRight: [[0, 1, 0], 0.08], ArrowUp: [[1, 0, 0], -0.08], ArrowDown: [[1, 0, 0], 0.08] }[ev.key];
+    if (k) { state.q = qnorm(qmul(qaxis(...k), state.q)); ev.preventDefault(); }
+    if (/^[1-6]$/.test(ev.key)) setStep(+ev.key);
+});
+
+if (renderer) {
+    renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+    renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+    controls = new OrbitControls(camera, canvas);
+    controls.enableDamping = true; controls.dampingFactor = 0.08; controls.minDistance = 2.2; controls.maxDistance = 12; controls.enablePan = false;
+}
+function resize() {
+    const w = innerWidth, h = innerHeight; camera.aspect = w / h;
+    camera.fov = w < 760 ? 56 : 36; camera.updateProjectionMatrix();
+    if (w < 760) camera.setViewOffset(w, h, 0, Math.round(h * 0.15), w, h); else camera.clearViewOffset();   // above the panel
+    if (renderer) renderer.setSize(w, h, false);
+    canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+}
+addEventListener('resize', resize); resize();
+let hudTick = 0;
+function loop(now) {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    update(dt);
+    if (controls) controls.update();
+    if (renderer) { renderer.render(scene, camera); frames++; }
+    if ((hudTick++ % 6) === 0) {
+        $('hud').textContent = hudText();
+        $('inset').style.display = state.step >= 3 && innerWidth >= 760 ? '' : 'none';
+        if (state.step >= 3 && innerWidth >= 760) drawInset();
+    }
+    requestAnimationFrame(loop);
+}
+syncCtl();
+setStep(state.step);
+if (qs.has('e')) state.lgE = Math.max(-5, Math.min(0, Math.log2(+qs.get('e') || 0.5)));
+if (qs.has('known')) state.known = qs.get('known') !== '0';
+if (qs.has('wedge')) state.wedge = qs.get('wedge') === '1';
+if (qs.has('rays')) state.rays = qs.get('rays') !== '0';
+if (qs.has('turn')) state.turn = qs.get('turn') === '1';
+syncCtl();
+if (innerWidth < 760) { $('panel').classList.add('folded'); $('fold').textContent = '▴'; }
+document.fonts?.ready.then(() => redraws.forEach(f => f()));
+requestAnimationFrame(loop);
+
+// ── test hook ─────────────────────────────────────────────────────────────────────────────────────────────────
+window.__sphereCube = {
+    address, point, faceOf: d => faceName(faceOf(d)), readingsOn, stats, fib, predictedMiddle: PRED_MID,
+    turnBy: (axis, ang) => { state.q = qnorm(qmul(qaxis(axis, ang), state.q)); return state.q.slice(); },
+    get q() { return state.q.slice(); }, get frames() { return frames; }, get webgl() { return !!renderer; },
+    hud: () => hudText(),
+    state: () => ({ step: state.step, e: e(), known: state.known, t: state.t, wedge: state.wedge, rays: state.rays, turn: state.turn, sel: state.sel.slice() }),
+    set: o => { if (o.step) setStep(o.step); if (o.e) { state.animE = false; state.lgE = Math.log2(o.e); } if ('known' in o) state.known = o.known;
+        if (o.t) state.t = o.t; if ('wedge' in o) state.wedge = o.wedge; if ('rays' in o) state.rays = o.rays; if ('turn' in o) state.turn = o.turn;
+        if (o.sel) { const n = norm(o.sel); state.sel = o.sel.map(c => c / n); } syncCtl(); return window.__sphereCube.state(); }
+};
+</script>
+</body>
+</html>
