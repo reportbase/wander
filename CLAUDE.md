@@ -84,7 +84,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   that reaches it; "scale the world" (k multiplies V, d and the ridge) moves the blueprint and nothing in the reader's
   view (OFS Theorem 6, Proposition 8); mountain equals thumb on the reader's lay of distances (x, then 1 + ln x), read at
   0.5 H against the true 10 H, off by V/H = 20, 4.32 doublings; "walk one thumb" recovers d = H·s₂/(s₂ − s₁) and V.
-  `?V=&d=&k=&walk=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `lay`, `set`).
+  The two vantages (13 Oct, SPN R223; OFS §10 step 3): on the thumb's circle the outer reads π/2, the inner the fingers'
+  mean shadow 2/π, product 1, the thumb's true breadth; to the ends 1.1107 × 0.9003 = 1; the mountain never enters.
+  `?V=&d=&k=&walk=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `vantages`, `lay`, `set`).
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -261,7 +263,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the across error is the direction's; the total least at √2·(B/2); on the circle round only at its top; off the bisector
   the radial error least inside the circle), the band and the baseline as a second zoom, the ladder, open questions. Each
   claim marked classical / exact / data / simulation / reading / illustration. It was OFS Proposition 11(d) for an
-  evening (R218) and was taken out; OFS keeps Proposition 11(a)–(c).
+  evening (R218) and was taken out; OFS keeps Proposition 11(a)–(c). Since 13 Oct its §6 works back from what parallax
+  already knows (Tom: "work backwards from known results of paralax and show the forced logical chain"; SPN R223): d =
+  a/tan p, the au measured outside and now agreed (IAU 2012), σ_d/d = σ_p/p (exactly γ/sin γ, the outer reading, π/2 on
+  the Thales circle), not inverting noisy parallaxes (Bailer-Jones 2015; Lutz and Kelker 1973), best when square; each
+  forces the next, down to one reading, two standpoints alike (the pair's V = H) and one outside amount.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
@@ -282,7 +288,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
   Since 13 Oct (SPN R220, R221) it has the three-party wedge: Propositions 3(f) (the sphere only if V = V₂ = H) and 5(e)
   (the even wedge's readings the two-dimensional Cauchy, every pair at its corner, the near field a third, with its
-  converse), and "A sphere in a cube" after Proposition 8 (any size; the extent must be known for amounts).
+  converse), and "A sphere in a cube" after Proposition 8 (any size; the extent must be known for amounts). §10's step 3
+  (SPN R223) shows π/2 · 2/π = 1 on the thumb: the two vantages joined return only what the reader holds.
   Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
   (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on). The fourth, an
   adversarial read, is in `plans/ofs-review-4.md`, with six edits taken (SPN R213): the paper's front now claims what its
@@ -530,7 +537,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   of sight the error is the direction's, falling with distance; the total least at d = √2·(B/2); on the circle the error
   round only at its top (aspect cot(φ/2)); off the bisector the radial error least inside the circle (P8–P10 not killed).
   Corrections recorded under run 2: "doubling per level" only far off; the stars' presets off by 2 (p = γ/2). Briefly
-  OFS Proposition 11(d) (SPN R218), then moved to `papers/parallax.md` (R219).
+  OFS Proposition 11(d) (SPN R218), then moved to `papers/parallax.md` (R219). Run 4 (exact; SPN R223), working back
+  from known results: γ(d) + γ(a²/d) = π (P11); (σ_d/d)/(σ_p/p) = γ/sin γ, π/2 at the corner, 1 far off (P12); the round
+  error at the corner needs σ₁ = σ₂, the depth's corner does not (P13); a noisy parallax's inverse has no mean and keeps
+  its median, 16% of readings at or below zero at the band's edge (P14); the two parsecs differ by a·ε/3 = 242 km (P15).
   `wdg-plan.md` (+ `wdg/wdg.py`, 13 Oct; Tom: "the unit sphere could point every address in the universe", then "but that
   is the unsituated readers sphere, he would have to know the size if the universe. the situated reader has to sweep and
   set V = V2 = H. and create the sweep wedge using the cauchy"; SPN R220, R221): exact (mpmath). The even wedge's readings
@@ -705,7 +715,9 @@ In short:
   17. **pool-infinite.html:** the books balance through 2 s and a pan, the window holds the world's density, the work for a world
       16 times wider within 10%, and zoomed out the window stops growing.
   18. **mountain.html:** the range's ends at 45°, 18 of 36 fingers on it, the same at a thousand times the scale; mountain
-      equals thumb reads 1 mi at 0.5 mi, off by 20, log₂ 20 doublings; one thumb walked recovers d = 10 and V = 20.
+      equals thumb reads 1 mi at 0.5 mi, off by 20, log₂ 20 doublings; one thumb walked recovers d = 10 and V = 20; the
+      two vantages on the thumb π/2 × 2/π = 1 (the 36 fingers' mean shadow within 0.001 of 2/π), to the ends at 45°
+      1.1107 × 0.9003 = 1, the same at a thousand times the scale.
 
   19. **play-marbles.html:** the pour of 500 at rest in the bowl, the bowl and table carrying the weight within 1%; the arc seen
       ahead ends at its first contact; a throw near the rim knocks marbles out and is heard (glass, bowl, felt); the pull

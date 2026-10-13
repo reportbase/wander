@@ -197,3 +197,69 @@ Least radial error along each ray from the middle (measured, not predicted), aga
   8 sin⁴φ), falling toward the standpoints, where the distance from the middle is pinned. The aspect on the circle is
   r₁/r₂ = cot(φ/2) (post hoc), the reading of the pair (distance from A, distance from B), round at that pair's corner.
   The Thales circle is where the baseline is seen square; it is the corner of the depth only on the bisector.
+
+### Run 4: predictions (13 October, written before `pxc/pxc4.py` exists)
+
+Tom, 13 October: "seems to me that we should be able to work backwards from known results of paralax and show the
+forced logical chain of logic". The known results, each in print (sources in `papers/parallax.md`, "Working back from
+what is known"): K1 d = a/tan p, a the half-baseline (1 au) and p the parallax, the parsec defined in the small-angle form
+as (648 000/π) au; K2 the au measured from outside the parallaxes, since 2012 fixed by agreement; K3 the relative
+distance error equals the relative parallax error, σ_d/d = σ_p/p, so σ_d = d²σ_p/a; K4 inverting a parallax goes wrong
+past a fractional error of about 20%, and samples cut on parallax are biased by an amount set by σ_p/p; K5 an intersection
+is best when the rays cross square. Here p = γ/2 (the convention of `papers/parallax.md`), k = a/d. Exact (mpmath, 50
+digits), except where said.
+- **P11. The flip of the pair is the supplement of the angle.** On the bisector the places at d and at a²/d see the
+  baseline at γ and π − γ, so the depth's precision sin γ is the same at both: K5's square crossing is the fixed point of
+  the flip. **Killed if** |γ(d) + γ(a²/d) − π| exceeds 1e-40 for d = 2^(j/10), j from −300 to 300.
+- **P12. K3 is the outer reading of the parallax angle.** The ratio of the relative distance error to the relative
+  parallax error is exactly (σ_d/d)/(σ_p/p) = 2p/sin 2p = γ/sin γ, §3.4's outer reading of the turn γ. Far off it tends
+  to 1, which is K3; on the Thales circle it is π/2; inside the circle it grows without bound. **Killed if** the ratio,
+  from the derivative of d(p) = a/tan p by complex step, misses γ/sin γ by more than 1e-40 anywhere on the grid of P11,
+  or is not π/2 at k = 1 to 1e-40, or misses 1 by more than 1e-17 at k = 2⁻³⁰.
+- **P13. The round error needs the two standpoints alike.** With direction spreads σ₁ and σ₂, the depth on the bisector
+  takes their sum, so its error is least at the corner whatever σ₂/σ₁. At the corner the error's aspect is
+  max(σ₁, σ₂)/min(σ₁, σ₂): round only when the two read alike, as the circle's corner needed V = H. **Killed if**, from
+  the exact Jacobian, the aspect at the corner misses σ₂/σ₁ by more than 1e-12 at σ₂/σ₁ = 1, 2, 4, or the depth's least
+  error lies off k = 1 by more than 1e-9 at σ₂/σ₁ = 4.
+- **P14. Past the band the flip leaves no mean.** The distance is the flip of the reading. For a reading p̂ spread normally
+  about p₀ with spread σ, the expected distance over positive readings diverges: ∫_x^{p₀} φ(p)/p dp grows by φ(0)·ln 10
+  for each decade x falls, φ the reading's density. The median survives the flip: the median of a/p̂ over positive
+  readings is a over the median of the positive readings. A share Φ(−p₀/σ) of readings lands at or below zero, 0.1587
+  when σ = p₀, the band's far edge; K4's 20% lies log₂ 5 ≈ 2.32 levels inside that edge. **Killed if** the per-decade
+  increment misses φ(0)·ln 10 by more than 1e-6 (relative) for x from 10⁻¹⁰ to 10⁻²⁰, or the median identity misses by
+  more than 1e-25, at σ/p₀ = 0.2, 0.5 and 1.
+- **P15. The parsec is defined in the far field.** The tangent parsec, a/tan 1″, is shorter than the IAU's (648 000/π) au
+  by a·(1/ε − 1/tan ε) ≈ a·ε/3 with ε = 1″ in radians: about 242 km, and 1 pc lies log₂(1/tan 1″) ≈ 17.65 levels past the
+  pair's corner. **Killed if** the difference misses a·ε/3 by more than 1e-9 (relative), or the level count misses 17.654
+  by more than 1e-3.
+
+### Run 4 (13 October, `pxc/pxc4.py`)
+
+mpmath at 50 digits; three seconds.
+
+| | prediction | result | |
+|---|---|---|---|
+| P11 | γ(d) + γ(a²/d) = π | to 5.4e-51 over 2⁻³⁰ … 2³⁰ | not killed |
+| P12 | (σ_d/d)/(σ_p/p) = γ/sin γ; π/2 at the corner; → 1 far off | to 5.4e-51; π/2 to 50 digits; 1 + 5.8e-19 at k = 2⁻³⁰ | not killed |
+| P13 | the aspect at the corner σ₂/σ₁; the depth least at the corner for σ₂/σ₁ = 4 | 1, 2, 4 exactly; least at k = 1.0 | not killed |
+| P14 | the expected distance diverging by φ(0)·ln 10 a decade; the median through the flip | to 9.8e-10; to 5.3e-52 | not killed |
+| P15 | the two parsecs differ by a·ε/3; 1 pc 17.654 levels out | 241 757 m, as a·ε/3; 17.654138 levels | not killed |
+
+The ratio (σ_d/d)/(σ_p/p) across levels: 1.0000006 at k = 2⁻¹⁰, 1.0412 at 2⁻², π/2 at the corner, 2.768 at 2, 5.635
+at 4 and 24.23 at 16. Over readings spread about p₀ by σ: at σ/p₀ = 0.2, 0.5 and 1 the share at or below zero is
+2.9×10⁻⁷, 0.023 and 0.159, and the median distance over positive readings is 0.99999993, 0.986 and 0.833 of a/p₀.
+
+**Reading.**
+- **The rule of thumb is the outer vantage.** "The relative distance error equals the relative parallax error" (K3) is
+  the far-field limit of an exact ratio, γ/sin γ, which is §3.4's outer reading of the turn γ in
+  `observation-from-somewhere.md`; its reciprocal, sin γ/γ, is the inner. On the Thales circle the ratio is π/2. Stellar
+  parallax is all far field (1 pc is 17.65 levels out), so the rule holds there to parts in 10⁻¹¹; it fails near the
+  baseline, where the ratio grows without bound.
+- **"Best when square" is the flip's fixed point** (P11): the near and far places pair up by γ ↔ π − γ.
+- **The round error is what needs the two standpoints alike** (P13), not the corner of the depth, which holds for any
+  two spreads. The parallax form of V = H is the exchange of the two standpoints.
+- **Inverting a noisy parallax has no mean and keeps its median** (P14): the flip at work on payload, OFS Theorem
+  6(b)–(c). At the band's far edge 16% of readings are at or below zero. K4's practice, order statistics and a prior
+  past about 20% fractional error, is what this forces; 20% lies 2.3 levels inside the band's far edge.
+- **The parsec is a far-field unit** (P15): defined by the small-angle form, it differs from the tangent form by 242 km,
+  a·ε/3, the first term of the outer reading's departure from 1.

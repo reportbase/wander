@@ -20,6 +20,11 @@ Proposition 11(a)–(c), which this paper builds on.*
     place (§4);
   - the stars' presets were off by 2: published parallax precisions are for p = γ/2, so the step in γ is twice the
     quoted one, and Hipparcos's band ends near 1 kpc, Gaia's near 50 kpc (§5).
+- 13 October: worked back from what parallax already knows (§6; Tom: "seems to me that we should be able to work
+  backwards from known results of paralax and show the forced logical chain of logic"; PXC run 4, nothing killed). The
+  astronomers' rule σ_d/d = σ_p/p is the far-field limit of γ/sin γ, the outer reading of the parallax angle, π/2 on the
+  Thales circle; "best when square" is the flip's fixed point; the round error needs the two standpoints alike;
+  inverting a noisy parallax keeps its median and loses its mean; the parsec is a far-field unit.
 
 **Standing marks.** Each claim carries one:
 - **[classical]**: established outside this corpus (geometry, surveying, stereo vision, astrometry), quoted;
@@ -209,7 +214,58 @@ readings follow, **[reading]**:
 - Every star is many levels past the orbit's corner: 1 pc is 2.06 × 10⁵ AU, 17.7 levels out. Stellar parallax lives in
   the bell's far tail, where the relative depth error is ε·d/B.
 
-## 6. Parallax on the ladder
+## 6. Working back from what is known
+
+Read backward, from results parallax already has to what they need, each step is forced by the one before. The known
+results, each in print:
+
+| | known result | source |
+|---|---|---|
+| K1 | d = a/tan p, with p the parallax and a the half-baseline (1 au); the parsec is defined in the small-angle form, (648 000/π) au exactly | classical; IAU 2015 Resolution B2, on the au of IAU 2012 Resolution B2 |
+| K2 | the au was measured from outside the parallaxes it scales (transits of Venus, then radar ranging), and since 2012 it is fixed by agreement at 149 597 870 700 m exactly | IAU 2012 Resolution B2 |
+| K3 | the relative distance error equals the relative parallax error, σ_d/d = σ_p/p, so σ_d = d²·σ_p/a | classical |
+| K4 | inverting a parallax is reliable only while the fractional error is small; past about 20% a distance must be inferred, with a prior, rather than read as 1/p; a sample cut on parallax is biased by an amount set by σ_p/p | Bailer-Jones 2015; Lutz and Kelker 1973 |
+| K5 | an intersection is best conditioned when its rays cross square | Ghilani 2010 |
+
+(Here p is the parallax, half of the angle γ the baseline subtends, as in the conventions above.)
+
+1. **From K1, the pair.** tan p = a/d is the ratio of two amounts. So parallax is the reading of the pair
+   (half-baseline, distance): p is the pair's sweep angle, γ = 2p its facing, and its corner, d = a, is where the
+   baseline is seen square (§1). **[exact]**
+2. **From K2, one amount from outside.** Every reading is a ratio, so the angles fix distance only in units of a
+   (`observation-from-somewhere.md` Proposition 8(a)), and one amount from outside the readings fixes them all (8(b)).
+   The au was that amount, measured outside the parallaxes for two centuries, and is now an agreed unit, which is what
+   that paper's §9 says a unit is. **[exact]**, **[reading]** for the history's words.
+3. **From K3, the outer vantage.** The ratio of the relative errors is exactly (σ_d/d)/(σ_p/p) = γ/sin γ, the outer
+   reading of the turn γ in `observation-from-somewhere.md` §3.4 (PXC P12). K3 is its far-field limit, 1; on the Thales
+   circle it is π/2; near the baseline it grows without bound (2.77 one level inside the circle, 24.2 four levels in).
+   Its reciprocal, sin γ/γ, is the inner reading, and their product is 1. So the rule of thumb is one vantage's reading
+   of the parallax angle, exact only far off. Stellar parallax is all far field: there the rule holds to parts in
+   10¹¹. **[exact]**
+4. **From K5, the flip.** The places at d and a²/d see the baseline at γ and π − γ (PXC P11), so the depth's precision,
+   sin γ, is the same at both: the flip of the pair is the supplement of its angle. A precision unchanged by the flip is
+   stationary at the flip's fixed point, and Proposition 1 shows it is greatest there. "Best when square" is the
+   corner. **[exact]**
+5. **What K5 needs of the two standpoints.** The depth takes the sum of the two direction errors, so its corner holds
+   whatever their spreads. The error is round there only if the two standpoints read alike: its aspect at the corner is
+   the ratio of their spreads (PXC P13). The exchange of the two standpoints is this pair's V = H, as drawing both
+   parties at one length is the circle's. **[exact]**, **[reading]** for the parallel.
+6. **From K4, the flip on the payload.** The distance is the flip of the reading, d = a/tan p. A reading whose error
+   has any density at zero gives distances with a 1/d² tail and no mean, while the median passes through the flip
+   (PXC P14): order kept and sums lost (`observation-from-somewhere.md` Theorem 6(b)–(c)), now on what arrives. At the
+   band's far edge, where the reading's error equals the reading, 16% of readings fall at or below zero; K4's 20% lies
+   2.3 levels inside that edge. The practice K4 describes, inferring the distance and never averaging inverted
+   parallaxes, is what the flip forces. **[exact]**, **[reading]** for the words.
+7. **From K1 again, the parsec.** Defined by the small-angle form, it differs from the tangent form by a·ε/3 = 242 km,
+   with ε one arcsecond (PXC P15), the outer reading's first departure from 1. One parsec lies 17.65 levels past the
+   pair's corner: astronomy's unit of distance was set in the far field. **[exact]**
+
+**Read forwards,** the chain is this paper: the pair and its corner (§1), one amount from outside (§2), the bell and
+its flip (§3), the error's shape (§4), the band (§5) and, past the band, the flip's missing mean. What it starts from is
+small: one reading, the tangent of the parallax (K1); two standpoints that read alike (step 5); and one amount from
+outside (step 2). The second is this pair's V = H; the third is the one number a situated reader lacks.
+
+## 7. Parallax on the ladder
 
 - **Past the band, distance goes on by a kind.** A kind calibrated inside the band (a width, a luminosity) carries
   distance outward by ratios read from one standpoint: the ladder (LAD; `ladder.html`; `inverse-square.md`). MAG's
@@ -222,7 +278,7 @@ readings follow, **[reading]**:
 - **The zero-point is the same kind of error.** A common offset in p shifts the levels of every star it touches and does
   not shrink with the number of stars (`physics.md` §4, queued; the archives are blocked here). **[reading]**
 
-## 7. What stands on what
+## 8. What stands on what
 
 | claim | mark | where |
 |---|---|---|
@@ -235,10 +291,15 @@ readings follow, **[reading]**:
 | on the circle, aspect cot(φ/2), round only at the top | exact | PXC P9 |
 | off the bisector, the radial error least inside the circle | measured | PXC run 3 |
 | the band acosh(1/ε)/ln 2 levels each side; far edge B/ε | exact | PXC P3 |
+| "best when square" is the flip's fixed point: γ at d, π − γ at a²/d | exact | PXC P11 |
+| σ_d/d = σ_p/p is the far limit of γ/sin γ, the outer reading; π/2 on the circle | exact | PXC P12 |
+| the round error needs the two standpoints alike | exact | PXC P13 |
+| inverting a noisy parallax: no mean, the median kept | exact | PXC P14 |
+| the parsec a far-field unit, 242 km from the tangent form | exact | PXC P15 |
 | the baseline as a second zoom | reading | §5 |
 | the eyes and the stars at their corners | illustration | §5 |
 
-## 8. Open questions
+## 9. Open questions
 
 1. **Off the bisector, where is the radial error least, and why?** Measured at 0.83–0.97 b along rays at 15°–75°. Is it
    the corner of some named pair?
@@ -256,6 +317,9 @@ readings follow, **[reading]**:
 
 ## References
 
+Bailer-Jones, C. A. L. (2015). Estimating distances from parallaxes. *Publications of the Astronomical Society of
+the Pacific* 127, 994–1009.
+
 Euclid. *Elements*, Book III, Proposition 31.
 
 Gaia Collaboration, Prusti, T. et al. (2016). The Gaia mission. *Astronomy & Astrophysics* 595, A1.
@@ -264,8 +328,16 @@ Ghilani, C. D. (2010). *Adjustment Computations: Spatial Data Analysis*, 5th ed.
 
 Hartley, R. and Zisserman, A. (2003). *Multiple View Geometry in Computer Vision*, 2nd ed. Cambridge University Press.
 
+IAU (2012). Resolution B2, on the re-definition of the astronomical unit of length. XXVIII General Assembly, Beijing.
+
+IAU (2015). Resolution B2, on recommended zero points for the absolute and apparent bolometric magnitude scales.
+XXIX General Assembly, Honolulu.
+
 Lindegren, L. et al. (2021). Gaia Early Data Release 3: parallax bias versus magnitude, colour, and position.
 *Astronomy & Astrophysics* 649, A4.
+
+Lutz, T. E. and Kelker, D. H. (1973). On the use of trigonometric parallaxes for the calibration of luminosity
+systems: theory. *Publications of the Astronomical Society of the Pacific* 85, 573–578.
 
 Perryman, M. A. C. et al. (1997). The Hipparcos Catalogue. *Astronomy & Astrophysics* 323, L49–L52.
 
