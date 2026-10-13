@@ -85,6 +85,17 @@ Google Fonts load from outside:
   view (OFS Theorem 6, Proposition 8); mountain equals thumb on the reader's lay of distances (x, then 1 + ln x), read at
   0.5 H against the true 10 H, off by V/H = 20, 4.32 doublings; "walk one thumb" recovers d = H·s₂/(s₂ − s₁) and V.
   `?V=&d=&k=&walk=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `lay`, `set`).
+- `zoom.html`: **H is a zoom** (13 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
+  and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
+  a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
+  reader's 1 + ln s (L levels) or the in-place 2 − 1/s (`lay=inplace`, the horizon's last address taking all s ≥ n);
+  the level of detail n addresses across the near field, ε = 1/n, equal room everywhere. Panels: sizes from nowhere with
+  the held window [H/n, H·2^L] (or [H/n, H·n]), its width in levels the same at every H; the lay address by address
+  (things sharing an address not told apart; home; past the edge or at the horizon); addresses per level (n·2^k inward,
+  n·ln 2 a level past the corner, or n·2^-(k+1) mirrored); detail across sizes (εH absolute inside the corner, εx or
+  εx²/H past it). Worlds: nested clusters at every decade, the numbers 1–100, 200 scattered sizes; click a size to put it
+  at the corner. `?H=&n=&L=&lay=inplace&world=even|scatter`; hook `window.__zoom` (`lay`, `addr`, `held`, `perLevel`,
+  `detail`, `read`, `set`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -188,7 +199,7 @@ Google Fonts load from outside:
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, H is a zoom, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -635,6 +646,10 @@ In short:
   19. **play-marbles.html:** the pour of 500 at rest in the bowl, the bowl and table carrying the weight within 1%; the arc seen
       ahead ends at its first contact; a throw near the rim knocks marbles out and is heard (glass, bowl, felt); the pull
       strip throws.
+  20. **zoom.html:** the held window the same width in levels at every H (17 on the reader's lay, 10 on the in-place at
+      n = 32, L = 12); doubling H shifts the levels exactly; addresses per level 4, 8, 16 inward, n·ln 2 past the corner,
+      the in-place lay mirrored (4, 8, 16, 16, 8, 4); a cluster told apart at the corner and lost into home under a large
+      H; detail absolute inside the corner, relative past it.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

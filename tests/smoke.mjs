@@ -491,6 +491,32 @@ try {
   }
   console.log(`${failures.length === before19 ? 'ok  ' : 'FAIL'} play-marbles.html (${mb.inBowl} marbles poured and at rest, the bowl and table carrying ${(mb.held * 100).toFixed(2)}% of the weight; the arc seen ahead ends at its first contact; a throw near the rim knocked out ${mb.out}, heard ${mb.heard.glass} glass, ${mb.heard.bowl} bowl, ${mb.heard.felt} felt; the strip throws)`);
 
+  // ── 20. zoom.html: what setting H does (OFS §8, "H is a zoom, not an escape"): the held window the same width in levels
+  //    at every H, a doubling of H one level's shift, addresses per level halving inward and flat (the reader's lay) or
+  //    mirrored (the in-place lay) outward, a cluster told apart at the corner and lost into home under a large H, detail
+  //    absolute inside the corner and relative past it ──
+  current = 'zoom.html';
+  const before20 = failures.length;
+  await page.goto(new URL('zoom.html', base).href, { waitUntil: 'load' });
+  const zm = await page.evaluate(() => { const z = __zoom, n = 32, o = {};
+    o.widths = [1 / 64, 1, 1024].map(H => [z.held(H, n, 'reader', 12).levels, z.held(H, n, 'inplace', 12).levels]);
+    o.shift = Math.max(...[-8, -3, -1, 0, 1, 3, 8].map(k => Math.abs(z.perLevel(k, 1, n, 'reader', 12) - z.perLevel(k + 1, 2, n, 'reader', 12))));
+    o.reader = [-3, -2, -1, 0, 1, 5].map(k => z.perLevel(k, 1, n, 'reader', 12));
+    o.inplace = [-3, -2, -1, 0, 1, 2].map(k => z.perLevel(k, 1, n, 'inplace', 12));
+    const w = z.makeWorld('nested'), atC = z.read(w, 100, n, 'reader', 12), big = z.read(w, 1e4, n, 'reader', 12);
+    o.atCorner = atC.resolved.includes(2); o.lostSmall = !big.resolved.includes(2) && big.home >= 35;
+    o.near = [z.detail(0.25, 1, n, 'reader'), z.detail(0.5, 1, n, 'reader')];
+    o.far = [z.detail(4, 1, n, 'reader') / 4, z.detail(64, 1, n, 'reader') / 64, z.detail(64, 1, n, 'inplace') / 64];
+    z.set({ H: 8, n: 64, world: 'even' }); o.hud = document.getElementById('hud').textContent.length > 0;
+    return o; });
+  const nl2 = 32 * Math.LN2;
+  if (!zm.widths.every(([r, i]) => r === 17 && i === 10) || !(zm.shift < 1e-12) ||
+      zm.reader.slice(0, 3).join() !== '4,8,16' || !zm.reader.slice(3).every(a => Math.abs(a - nl2) < 1e-9) ||
+      zm.inplace.join() !== '4,8,16,16,8,4' || !zm.atCorner || !zm.lostSmall ||
+      zm.near[0] !== zm.near[1] || Math.abs(zm.far[0] - 1 / 32) > 1e-15 || Math.abs(zm.far[1] - 1 / 32) > 1e-15 || zm.far[2] !== 2 || !zm.hud)
+    failures.push(`[zoom.html] ${JSON.stringify(zm)}`);
+  console.log(`${failures.length === before20 ? 'ok  ' : 'FAIL'} zoom.html (held ${zm.widths[0][0]} levels on the reader's lay and ${zm.widths[0][1]} on the in-place lay at every H; doubling H shifts the levels exactly; addresses per level ${zm.reader.slice(0, 3).join(', ')} inward, ${zm.reader[3].toFixed(1)} a level past the corner, the in-place lay ${zm.inplace.join(', ')}; a cluster told apart at the corner and lost into home under H 100 times larger)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
