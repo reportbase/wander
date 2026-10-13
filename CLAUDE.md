@@ -306,7 +306,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   readings 1/(n + 1)), and "A sphere in a cube" after Proposition 8 (any size; the extent must be known for amounts). §10's step 3
   (SPN R223) shows π/2 · 2/π = 1 on the thumb: the two vantages joined return only what the reader put in, H in H.
   Since R226, H is the value the reader chooses to start the system, not a measured size ((P1), §2, §8); V is the drawn
-  whole and V* the true breadth throughout; "What the geometry needs: a shape and one H" follows Proposition 3.
+  whole and V* the true breadth throughout; "What the geometry needs: a shape and one H" follows Proposition 3. §9
+  opens with "Geometry first, then values" (R227): physics assigns the placeholders' values as multipliers on the
+  amounts, never redrawing a whole, and the geometry is agnostic to that step.
   Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
   (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on). The fourth, an
   adversarial read, is in `plans/ofs-review-4.md`, with six edits taken (SPN R213): the paper's front now claims what its
@@ -689,7 +691,9 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   the true breadth makes no difference"); the true breadths enter only the amounts.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
-  includes. V is the drawn whole (at H), V* the true breadth.
+  includes. V is the drawn whole (at H), V* the true breadth. Then physics assigns the values (R227; Tom: "once the
+  geometry is defined, physics assigns the values of the placeholders. geometry is agnostic to that step"), as
+  multipliers on the amounts, never redrawing a whole; the values decide only where things land, the zoom.
 - Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof"). Since R217 the main result's core does
   not rest on it: any fair weight that does not vanish at the horizon puts the median at the corner and leaves no mean
   (OFS Theorem 6(e)); only the Cauchy's exact shape is the even turn's.

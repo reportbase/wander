@@ -1205,6 +1205,13 @@ N = 2π/ε: past the peak, more points mean fewer told apart. The addresses neve
 
 ## 9. What the geometry does not give: amounts
 
+**Geometry first, then values.** Once the geometry is defined, a shape and one H (§5), physics assigns the values of
+its placeholders, and the geometry is agnostic to that step. The values enter as multipliers on the amounts: V*/H on
+each party's, and one more on all of them together when H itself is given a value in an agreed unit. They never redraw
+a whole, since a whole drawn at any length but H would undo the turn (Proposition 3(e)). So no value assigned changes
+the shape, the corner, the levels or any address. What the values decide is where things land among the addresses:
+which fall in the near field and which past the corner, the zoom of §8.
+
 **The calibration error.** Under V = H the amounts equal the unit relations numerically, which is why the two are so easily
 confused. Where the true V* differs from H, every amount is off by V*/H, by the same factor on both sides of the corner: the
 reader has read the mountain as one thumb, and it is V*/H thumbs. The addresses are exact; the amounts are not. Within
