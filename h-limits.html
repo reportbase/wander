@@ -70,7 +70,7 @@
             <select id="lay" aria-label="lay"><option value="reader">the reader's lay: s, then 1 + ln s</option>
                 <option value="inplace">the in-place lay: s, then 2 − 1/s</option></select>
             <select id="n" aria-label="count"><option value="8">8 addresses across the near field</option>
-                <option value="32" selected>32 addresses across the near field</option><option value="128">128 addresses across the near field</option></select>
+                <option value="32" selected>32 addresses across the near field</option><option value="128">128 addresses across the near field</option><option value="inf">unlimited addresses and levels</option></select>
             <button id="play">play</button>
         </div>
         <div id="hud"></div>
@@ -106,7 +106,9 @@
         its distance allows whatever H is, and reaches it only while it is within the held levels; the in-place lay gives
         it more as H grows, most at the corner of the object's own ends, √(x(x + Δ)).</p></div>
     <p class="note">Geometry and its placing only: the amounts are given from nowhere, as physics would assign them;
-    the reader's directions never change with H. The same corner, the geometric middle of what is read, is the best H
+    the reader's directions never change with H. Choose unlimited addresses and the value of H stops mattering: a unit
+    is needed because a reader's addresses are finite, and choosing its value is where the scale of the world first
+    reaches the reader. The same corner, the geometric middle of what is read, is the best H
     for a pair here, the best half-baseline for parallax over a range, and the best estimate of a size within bounds.
     Behind it: <i>Observation from Somewhere</i> §6 (the two lays), §8 ("H is a zoom, not an escape"), Proposition 14
     (the rulers that favour no amount), Proposition 13. Other demos: <a href="h-chain.html">the chain from H</a>,
@@ -144,8 +146,10 @@
             d[far] = Math.max(d[far], Math.abs(m - RULERS[far](x, A, B))); }
         return d;
     }
-    // the addresses a finite count gives the world: n across the near field; the reader's lay held to L_MAX levels
+    // the addresses a finite count gives the world: n across the near field; the reader's lay held to L_MAX levels.
+    // With unlimited addresses and levels (n = ∞) every amount has its own address at every H: the unit's value is idle.
     function addressOf(x, h, lay, n) {
+        if (!isFinite(n)) return x;                 // the lays are strictly increasing: distinct amounts, distinct places
         const s = x / h;
         if (lay === 'reader') { const L = LAYS.reader(s); return L > LMAX ? null : Math.floor(n * L); }
         return Math.min(Math.floor(n * LAYS.inplace(s)), 2 * n - 1);
@@ -155,7 +159,7 @@
         for (const x of WORLD) { const a = addressOf(x, h, lay, n); if (a === null) past++; else set.add(a); }
         return { addresses: set.size, past, home: set.size === 1 && set.has(0), horizon: lay === 'inplace' && set.size === 1 && set.has(2 * n - 1) };
     }
-    const thresholds = (n = state.n) => ({ home: n * B, edge: A * Math.exp(1 - LMAX), horizon: A / n });
+    const thresholds = (n = state.n) => isFinite(n) ? { home: n * B, edge: A * Math.exp(1 - LMAX), horizon: A / n } : { home: Infinity, edge: 0, horizon: 0 };
     const pairAngle = (x1, x2, h) => theta(x2, h) - theta(x1, h);
     const bestPair = (x1, x2) => { const r = x2 / x1; return { H: Math.sqrt(x1 * x2), angle: Math.asin((r - 1) / (r + 1)) }; };
     // the room one object [x, x + D] is given: n times the stretch of lay it covers (HKO runs 2, 3)
@@ -265,7 +269,11 @@
     }
 
     function drawDetail() {
-        const [g, W, Hc] = fit($('detail')), x = WORLD[state.pair[1]], D = x * state.ext, n = state.n;
+        const x = WORLD[state.pair[1]], D = x * state.ext;
+        if (!isFinite(state.n)) { const [g, W, Hc] = fit($('detail'));
+            text(g, 'unlimited addresses: every object is resolved at every H,', 16, Hc / 2 - 8, '#e6e4ee', 12.5);
+            text(g, 'so the value of H no longer matters. A unit is needed because addresses are finite.', 16, Hc / 2 + 12, '#e6e4ee', 12.5); return; }
+        const [g, W, Hc] = fit($('detail')), n = state.n;
         const L = 40, R = W - 14, T = 22, Bm = 30, lo = -4, hi = 4, ylo = -14, yhi = Math.ceil(Math.log2(n * Math.max(1, state.ext))) + 2;
         const X = r => L + (r - lo) / (hi - lo) * (R - L), Y = lv => Hc - Bm - (lv - ylo) / (yhi - ylo) * (Hc - Bm - T);
         g.strokeStyle = 'rgba(255,255,255,0.08)'; g.lineWidth = 1; g.beginPath();
@@ -299,6 +307,7 @@
         let lost = '';
         if (hd.home) lost = 'every amount in home\'s first address'; else if (state.lay === 'reader' && hd.past === WORLD.length) lost = 'every amount past the held levels';
         else if (hd.horizon) lost = 'every amount in the horizon\'s last address';
+        if (!isFinite(state.n)) return `H = ${fmtH(state.lg)}   ${where}\nunlimited addresses and levels: all 31 amounts held apart at every H; nothing is lost, and the value of H no longer matters`;
         return `H = ${fmtH(state.lg)}   ${where}\n` +
             `held: ${hd.addresses} ${hd.addresses === 1 ? 'address' : 'addresses'} for 31 amounts${hd.past ? `, ${hd.past} past the edge` : ''}${lost ? `   — lost: ${lost}` : ''}\n` +
             `lost whole at H ≥ ${fmtH(Math.log10(th.home))} (into home)${state.lay === 'reader' ? `, H < ${fmtH(Math.log10(th.edge))} (past the edge)` : `, H ≤ ${fmtH(Math.log10(th.horizon))} (into the horizon)`}`;
@@ -327,7 +336,7 @@
     $('mid').addEventListener('click', () => { stop(); goTo(Math.log10(Math.sqrt(A * B))); });
     $('play').addEventListener('click', () => { anim = null; playing = !playing; $('play').textContent = playing ? 'pause' : 'play'; $('play').classList.toggle('on', playing); });
     $('lay').addEventListener('change', () => { state.lay = $('lay').value; draw(); });
-    $('n').addEventListener('change', () => { state.n = +$('n').value; draw(); });
+    $('n').addEventListener('change', () => { state.n = $('n').value === 'inf' ? Infinity : +$('n').value; draw(); });
     $('ext').addEventListener('change', () => { state.ext = +$('ext').value; draw(); });
     $('turn').addEventListener('click', ev => {
         const r = $('turn').getBoundingClientRect(), x = ev.clientX - r.left, y = ev.clientY - r.top;
@@ -341,12 +350,13 @@
     if (q.has('h')) { const v = q.get('h'); state.lg = v === '0' ? -BIG : v === 'inf' ? BIG : Math.max(-BIG, Math.min(BIG, +v || 0)); $('h').value = Math.max(-9, Math.min(9, state.lg)); }
     if (q.get('lay') === 'inplace') { state.lay = 'inplace'; $('lay').value = 'inplace'; }
     if (['8', '32', '128'].includes(q.get('n'))) { state.n = +q.get('n'); $('n').value = q.get('n'); }
+    if (q.get('n') === 'inf') { state.n = Infinity; $('n').value = 'inf'; }
     if (q.has('pair')) { const p = q.get('pair').split(',').map(Number).filter(k => k >= 0 && k < WORLD.length); if (p.length === 2 && p[0] !== p[1]) state.pair = p; }
     draw(); requestAnimationFrame(tick);
 
     window.__hlimits = {
         WORLD, LAYS, RULERS, LMAX, theta, normLay, deviation, held, thresholds, pairAngle, bestPair, objectSpan, objectPeak,
-        hud, set(o = {}) { anim = null; stop(); if (o.lay) { state.lay = o.lay; $('lay').value = o.lay; } if (o.n) { state.n = o.n; $('n').value = String(o.n); }
+        hud, set(o = {}) { anim = null; stop(); if (o.lay) { state.lay = o.lay; $('lay').value = o.lay; } if (o.n) { state.n = o.n; $('n').value = isFinite(o.n) ? String(o.n) : 'inf'; }
             if (o.pair) state.pair = o.pair; if (o.lg !== undefined) setLg(o.lg); else draw(); return { ...state }; },
         state: () => ({ ...state, H: H() }),
     };

@@ -144,7 +144,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   gives more proportional space. reader has fixed number of addresses, so more proportional space means each object is
   given less level of detail"): one object (the amount tapped last, a hundredth, a tenth or all of its distance across)
   and its detail in levels against H on both lays, nΔ/H inside the corner, flat past it on the reader's lay, most at
-  √(x(x + Δ)) on the in-place lay. `?h=<log10 H, 0, inf>&lay=inplace&n=8|32|128&pair=i,j`; hook `window.__hlimits`
+  √(x(x + Δ)) on the in-place lay. "Unlimited addresses and levels" (`?n=inf`; R230): every amount held apart at
+  every H, the value of H idle, so a unit is needed because addresses are finite.
+  `?h=<log10 H, 0, inf>&lay=inplace&n=8|32|128|inf&pair=i,j`; hook `window.__hlimits`
   (`normLay`, `deviation`, `held`, `thresholds`, `pairAngle`, `bestPair`, `objectSpan`, `objectPeak`, `hud`, `set`).
   Not in the flying page.
 - `h-chain.html`: **the chain from H** (13 Oct 2026, Tom: "lets build stand alone demos of H kicks of the entire chain of
@@ -331,7 +333,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Since R226, H is the value the reader chooses to start the system, not a measured size ((P1), §2, §8); V is the drawn
   whole and V* the true breadth throughout; "What the geometry needs: a shape and one H" follows Proposition 3. §8 has
   "What a larger H gives and takes" (R229: nΔ/H inside the corner, the lays parting past it, the best H the corner of
-  what is read) and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9
+  what is read) and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9's "What a unit
+  is, and why a reader needs one" (R230; Tom: "A unit is needed, it injects physics into the relation"; "A unit is
+  pre-measured relation. It says something like 5 ounces/ 1 foot"): a unit is a relation measured beforehand; within
+  one reader its value is a zoom, needed because addresses are finite, where the world's scale first reaches the
+  reader (in the laying, not the readings); between readers an agreement. The introduction says the same. §9
   opens with "Geometry first, then values" (R227): physics assigns the placeholders' values as multipliers on the
   amounts, never redrawing a whole, and the geometry is agnostic to that step.
   Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
@@ -725,7 +731,9 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   the true breadth makes no difference"); the true breadths enter only the amounts.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
-  includes. V is the drawn whole (at H), V* the true breadth. Then physics assigns the values (R227; Tom: "once the
+  includes. V is the drawn whole (at H), V* the true breadth. A unit is a relation measured beforehand (R230): its
+  value matters to a lone reader only because its addresses are finite (a zoom), and between readers it is agreed.
+  Then physics assigns the values (R227; Tom: "once the
   geometry is defined, physics assigns the values of the placeholders. geometry is agnostic to that step"), as
   multipliers on the amounts, never redrawing a whole; the values decide only where things land, the zoom.
 - Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof"). Since R217 the main result's core does
@@ -821,7 +829,8 @@ In short:
   24. **h-limits.html:** past the world's ends the number line, the logarithm and the reciprocal exactly, a corner only
       with H inside; the world lost whole into home, past the edge, into the horizon at the thresholds; 24 and 17
       addresses at H = 1; a pair best told apart at √(x₁x₂), arcsin(1/3) for r = 2; one object's detail flat past the
-      corner on the reader's lay, nΔ/H inside, most on the in-place lay at √(x(x + Δ)).
+      corner on the reader's lay, nΔ/H inside, most on the in-place lay at √(x(x + Δ)); with unlimited addresses all
+      31 held apart at every H.
   25. **h-chain.html:** one reader's even sweep gives back the unit circle for every figure and size; two standpoints 2H
       apart hold all 72 points at the best H and none at 10⁻³ or 10³; H of 0 or one standpoint, only rays; five parties,
       the near field 1/6; physics relabels and nothing moves.
