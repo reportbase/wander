@@ -7,8 +7,8 @@ Claude Code: changes go on a branch, as a PR, and the owner merges. Merging to
 `main` publishes.
 
 ## Files
-Since 6 Oct 2026 (Tom's choice) the site is three files, no build step; only
-Google Fonts load from outside:
+Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13 Oct things may load from outside (Tom:
+"things can be loaded from outside"): Google Fonts, and three.js from the jsDelivr CDN for `sphere-cube.html`:
 - `world.js`: **Wander's world, shared by both pages**: the constants, the solids,
   the systems and their ticks (`tickSystem`), the signals' speed and arrival
   pieces, the readout's distance step, and the reading functions the live readout
@@ -17,10 +17,6 @@ Google Fonts load from outside:
   out of the old single page line for line. **A change here changes the labs'
   world: run every lab after it.** Since 9 Oct it also holds brightness (`lightAt`, L·A/(4πd²), the
   inverse square), read only by LAD's third run (the standard-candle rung past the resolution limit).
-- `vendor/three/`: **three.js 0.160.0** (13 Oct 2026, for `sphere-cube.html`, Tom: "create a high quality 3d three.js
-  full screen demo"), from npm (`three-0.160.0.tgz`, sha256 1ee2f935…2856), MIT (`LICENSE` beside it): the module build
-  `three.module.min.js` (sha256 3e690ac7…69ba6) and `OrbitControls.js` (sha256 5a44a9e8…7b064), loaded locally through an
-  import map, so the site still loads nothing from outside but Google Fonts. Only that page uses it.
 - `index.html`: the flying page (the world drawn, the controls, the readout, the
   live-view test hooks). Its "lab" button opens `labs.html` and its "demos" button `demos.html`; `?lab=CODE` and
   `?lab=all` forward there; `?lab=0` hides the button.
@@ -113,7 +109,10 @@ Google Fonts load from outside:
 - `sphere-cube.html`: **the sphere in the cube** (13 Oct 2026, Tom: "if we put a rotatable sphere inside the unit cube, we
   could show that every point on the sphere maps to every point on the inner cube. the inner cube could be any size,
   however its extent must be known"; "create a high quality 3d three.js full screen demo to explain the situation"; SPN
-  R220, R221; WDG), full screen, three.js from `vendor/three/`. The unit cube (h → x, v → y, v₂ → z, every party drawn at
+  R220, R221; WDG), full screen. three.js 0.160.0 (MIT) loads from jsDelivr, pinned, through an import map (Tom, 13 Oct:
+  "remove three.js from the repositiory, use the cdn"; it was vendored for a day); the smoke test serves the same version
+  from `node_modules` (the devDependency `three`, exact), since this environment's proxy blocks the CDNs, and the page says
+  so if the CDN cannot be reached. The unit cube (h → x, v → y, v₂ → z, every party drawn at
   H), a sphere free to turn (drag it; tap it to choose the point followed; drag elsewhere to look; arrow keys), 1,500
   even points on it (a Fibonacci lattice) coloured by the face they land on, their rays to an inner cube of half-extent e
   (`e·d/‖d‖∞`, the face of the largest component), and the point inside at t, a unit relation. Six steps: the unit cube;
@@ -646,8 +645,8 @@ interesting. we should do the correct physics testing, UI is secondary or even n
   checked to the last digit (`plans/ref-plan.md`, run 1, is the example of what not to count).
 - **Prediction first, from the theory alone**, with the bridge from unit relations to amounts named (see "keep the case").
 - **No page needed.** A test is a plan, a script and an entry in the papers; a demo only where it helps to see.
-- **Data.** This environment cannot reach the astronomy archives (VizieR, CDS, ESA: blocked); GitHub and PyPI are
-  reachable. Record each dataset's source, licence and sha256 in its plan, and do not commit large data.
+- **Data.** This environment cannot reach the astronomy archives (VizieR, CDS, ESA: blocked) or the CDNs (jsDelivr,
+  unpkg, cdnjs); GitHub, PyPI and npm are reachable, and GitHub's CI runner reaches the CDNs. Record each dataset's source, licence and sha256 in its plan, and do not commit large data.
 
 ## Read this first: THE LAB GUIDE
 The labs have their own rules, written in `labs.html`. Read two comments
@@ -718,7 +717,7 @@ In short:
   22. **sphere-cube.html:** every point of a turning sphere lands on one point of a cube and comes back to rounding at
       e = 10⁻³, ½ and 1, the address the same at every extent, the face its largest component's; the even sphere gives each
       face a sixth, a face's middle quarter 38%, the wedge's faces a third each; with the extent unknown the readout says
-      off by e/H; WebGL drew frames.
+      off by e/H; WebGL drew frames (three.js served from `node_modules` in place of the CDN).
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

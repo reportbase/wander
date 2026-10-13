@@ -26,8 +26,9 @@
         two-dimensional Cauchy, 2/(π(1 + a² + b²)^(3/2)); its three faces take a third each, a face's middle quarter
         (by area) 0.3846 of the face's directions (WDG P3, P6).
     The painted points are a Fibonacci lattice on the sphere: even, not random.
-    three.js 0.160.0 (MIT) is vendored in vendor/three/ and loaded locally through an import map; nothing loads from
-    outside but Google Fonts.
+    three.js 0.160.0 (MIT) loads from the jsDelivr CDN, pinned, through an import map (Tom, 13 October: "remove three.js
+    from the repositiory, use the cdn. things can be loaded from outside"). If it cannot be fetched the page says so.
+    The smoke test serves the same version from node_modules (a devDependency), so it does not depend on the CDN.
     Links: ?step=1..6&e=0.5&known=0&t=0.6&wedge=1&rays=0&turn=0. Test hook: window.__sphereCube.
     -->
     <style>
@@ -82,7 +83,9 @@
     }
     @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto } }
     </style>
-    <script type="importmap">{ "imports": { "three": "./vendor/three/three.module.min.js" } }</script>
+    <script type="importmap">{ "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
 </head>
 <body>
 <canvas id="stage" aria-label="A sphere inside the unit cube, its points sent along rays from the centre onto an inner cube"></canvas>
@@ -114,10 +117,15 @@
 <div id="inset" class="glass"><div class="t" id="insetT"></div><canvas id="face" width="440" height="440"></canvas><div id="insetNote"></div></div>
 <div id="hint" class="glass">h → right · v → up · v₂ → toward you</div>
 <div id="nogl"><div>This page needs WebGL to draw the sphere and the cubes.<br>The arithmetic still runs: see the test hook.</div></div>
+<script>
+// three.js comes from a CDN; if it has not arrived after a while, say so rather than show an empty page
+setTimeout(() => { if (!window.__sphereCube) { const n = document.getElementById('nogl');
+    n.firstElementChild.innerHTML = 'three.js could not be loaded from cdn.jsdelivr.net.<br>Check the connection and reload.'; n.style.display = 'grid'; } }, 12000);
+</script>
 
 <script type="module">
 import * as THREE from 'three';
-import { OrbitControls } from './vendor/three/OrbitControls.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 // ── the geometry, independent of drawing ────────────────────────────────────────────────────────────────────────
 const AX = ['h', 'v', 'v₂'];

@@ -541,6 +541,13 @@ try {
   //    unknown the reader draws the cube at H, its amounts off by e/H ──
   current = 'sphere-cube.html';
   const before22 = failures.length;
+  // The page loads three.js from jsDelivr. Serve the same pinned version from node_modules (a devDependency) so the test
+  // does not depend on the CDN; fall through to the network if it is not installed.
+  await page.route(/^https:\/\/cdn\.jsdelivr\.net\/npm\/three@0\.160\.0\//, async route => {
+    const rel = new URL(route.request().url()).pathname.replace('/npm/three@0.160.0/', '');
+    try { await route.fulfill({ status: 200, contentType: 'text/javascript', body: await readFile(join(ROOT, 'node_modules/three', rel)) }); }
+    catch { await route.continue(); }
+  });
   await page.goto(new URL('sphere-cube.html?step=6&turn=0', base).href, { waitUntil: 'load' });
   await page.waitForFunction(() => window.__sphereCube && __sphereCube.frames > 2, null, { timeout: 30000 });
   const sq = await page.evaluate(() => { const c = __sphereCube, o = { rt: 0, ad: 0, faceOk: true };
