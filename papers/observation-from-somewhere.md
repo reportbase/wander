@@ -129,7 +129,10 @@ as if a single observation held it. Section 3 sets out the readers in full.
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
   outside fixes the scale, and a fact shared between two readers supplies exactly one ratio. The best estimate of the
   other party's true size is the median of what the reader knows of it (§9).
-- A unit is an agreement between readers, needed only to pass amounts between them. The number line is such a unit:
+- A unit is a relation measured beforehand, such as one foot, or five ounces to a foot, and it brings in the one
+  ratio no reading supplies. A reader needs one for two reasons. Its addresses are finitely many, so the value of its
+  own unit decides which sizes it reads finely, and choosing that value well is where the scale of the world first
+  reaches it; and, agreed between readers, a unit lets amounts pass between them. The number line is such a unit:
   a ruler that favours no reader's unit must be a power or a logarithm, with no corner, and the number line is the
   power that keeps proportion on both sides of 1 (§9).
 - What reaches a reader of a payload depends on what it holds and what it resolves (§7.6, §9).
@@ -1391,26 +1394,46 @@ log₂(V*/cH) levels, and no address moves against another. A lay that keeps (S)
 the levels keep their widths. The structure was never wrong, only where it sat, and one amount from outside slides it
 into place.
 
-**What a unit is, and why readers share one.** Proposition 8(a) says more than that the scale is hidden. A reader whose
-world and own breadth are scaled together receives the same readings, so no reading contains a unit and none needs
-one. A reader alone has a unit anyway: its own breadth. It reads the mountain in thumbs, and since it compares its
-readings only with each other, the thumb serves. Nothing it does would change if its thumb were twice as long and the
-world with it.
+**What a unit is, and why a reader needs one.** Proposition 8(a) says more than that the scale is hidden. A reader
+whose world and own breadth are scaled together receives the same readings, so no reading contains a unit and none
+needs one. A reader alone has a unit anyway: its own breadth. It reads the mountain in thumbs, and since it compares
+its readings only with each other, the thumb serves. Nothing it does would change if its thumb were twice as long and
+the world with it.
 
-A unit is needed when amounts pass between readers. Two readers, each counting in its own breadth, give one amount x as
+Something does change if the thumb changes and the world does not: what the reader reads finely. Its addresses are
+finitely many, so the value of its unit decides which sizes fall at its corner and are given the most room, and which
+crowd into home or run past the levels it holds (§8). With unlimited addresses every value would serve and the unit's
+value would be idle; with finitely many, the reader needs a value suited to what it reads, and the sizes of what it
+reads are amounts. So even a reader alone needs its unit for something, and the unit's value is where the scale of the
+world first reaches it: not in its readings, which no unit changes, but in how it lays them.
+
+A unit is needed again when amounts pass between readers. Two readers, each counting in its own breadth, give one amount x as
 x/H_A and x/H_B, and the factor between them, H_A/H_B, is read by neither alone. A shared fact supplies exactly that
 factor and nothing more (Proposition 7), and one amount supplied from outside fixes every amount the readings link to it
-(Proposition 8(b)). That is what a unit is: something both readers can read, agreed to count as 1. Any such thing
+(Proposition 8(b)). That is what a unit is: a relation measured beforehand, between something both readers can read
+and a notch agreed to count as 1, or between two kinds of amount, as five ounces to a foot. It carries in the one ratio
+no reading supplies. Any such thing
 serves: a body, a stick, one reader's thumb made public. A reader then sends an amount as a count of the agreed unit,
 x = r_A·H_A, and the other takes it back into its own breadth, r_B = x/H_B. The round trip is one factor,
 r_B = r_A·(H_A/H_B), and where the two breadths are equal the reading passes unchanged. The foot, the cubit and the
 metre each began as one body or one object made into a public notch.
 
+**Two ways to represent a thing.** A thing can be given in terms of something else in view: a reading, the ratio of
+two amounts read at once, or an amount in the reader's own H. Such a representation carries no unit, and it is
+geometric: no change of unit touches it (Proposition 8(a)). Or it can be given in terms of a unit agreed beforehand, as
+a count of a notch both readers can read. That is still a ratio, but its second term is not in the reading; it was
+measured beforehand and carried in, and that is where physics enters. Of the unitless values, the geometry fixes some:
+the corner at 1, π/2 and 2/π, the near field 1/(n + 1). Others are read from the world, such as a mountain's reading or
+a dimensionless constant of physics: geometric in kind, but found, not derived. Dimensional analysis rests on the same
+division, since only unitless groups of amounts enter a law (Buckingham 1914).
+
 So three numbers are easily confused, and the geometry needs none of them:
-- the reader's own breadth H, which it chooses for itself and which only moves what sits at its corner (a zoom, §8);
+- the reader's own breadth H, which it chooses for itself and which only moves what sits at its corner, and so what
+  it reads finely (a zoom, §8);
 - its estimate of the other party's true breadth, cH, the one arbitrary number in the price of a geometry, best set at
   the median of what it knows (Proposition 13); the drawing itself, V = H, is required and is not a number to choose;
-- the shared unit, which is neither a reading nor a guess but an agreement between readers, needed only for talking.
+- the shared unit, which is neither a reading nor a guess but a relation measured beforehand and agreed between
+  readers, needed for talking.
 
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
