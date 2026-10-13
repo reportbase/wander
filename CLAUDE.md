@@ -85,7 +85,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   view (OFS Theorem 6, Proposition 8); mountain equals thumb on the reader's lay of distances (x, then 1 + ln x), read at
   0.5 H against the true 10 H, off by V/H = 20, 4.32 doublings; "walk one thumb" recovers d = H·s₂/(s₂ − s₁) and V.
   The two vantages (13 Oct, SPN R223; OFS §10 step 3): on the thumb's circle the outer reads π/2, the inner the fingers'
-  mean shadow 2/π, product 1, the thumb's true breadth; to the ends 1.1107 × 0.9003 = 1; the mountain never enters.
+  mean shadow 2/π, product 1, H in H, the starting value returned (R226; it said "the thumb's true breadth"); to the
+  ends 1.1107 × 0.9003 = 1; the mountain never enters.
   `?V=&d=&k=&walk=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `vantages`, `lay`, `set`).
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
@@ -303,7 +304,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (the even wedge's readings the two-dimensional Cauchy, every pair at its corner, the near field a third, with its
   converse), "More parties" after it (SPN R225: n other parties, every pair at its corner, the near field in all
   readings 1/(n + 1)), and "A sphere in a cube" after Proposition 8 (any size; the extent must be known for amounts). §10's step 3
-  (SPN R223) shows π/2 · 2/π = 1 on the thumb: the two vantages joined return only what the reader holds.
+  (SPN R223) shows π/2 · 2/π = 1 on the thumb: the two vantages joined return only what the reader put in, H in H.
+  Since R226, H is the value the reader chooses to start the system, not a measured size ((P1), §2, §8); V is the drawn
+  whole and V* the true breadth throughout; "What the geometry needs: a shape and one H" follows Proposition 3.
   Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
   (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on). The fourth, an
   adversarial read, is in `plans/ofs-review-4.md`, with six edits taken (SPN R213): the paper's front now claims what its
@@ -327,7 +330,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and `paths.html`. Its message 5 (five parties drawn at H, read as assuming their payloads equal) is answered by Tom's
   "from the geometry's perspective, its job is done, what ever the true breadth makes no difference" (SPN R225): the
   drawing is required and finishes the geometry; the true breadths enter only the amounts; the payload is what arrives.
-  Made: WDG run 2 and OFS's "More parties" after Proposition 5(e).
+  Made: WDG run 2 and OFS's "More parties" after Proposition 5(e). Message 6 (placeholders, not physical breadths;
+  Tom: "so why even include breadth"), then Tom's "Even H is not a real breadth" (SPN R226): the geometry a shape and
+  one H; the corner is v = h in any drawing, equal lengths make it 45° and the even sweep's median; no reading gives V*/H.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -628,8 +633,13 @@ kept off the Pages site. Don't move or remove them without asking.
 Since 9 Oct 2026 (Tom): lowercase **h, v** are **unit relations**, 0 to 1 (h relates to H, v to V): the geometry,
 scale-free. A relation requires two unit relations; a circle has two, a sphere three (Tom, 11 Oct, SPN R204: "I don't
 like the term fill levels"). The papers, the pages and this file were converted on 11 Oct; the plans and the archive keep "fill level".
-Uppercase **H, V** are breadths, amounts (H the reader's, V the other's); with the distance **d**, a size **Δ** and the
-reader's step **ε**, the physics. Never read v as V or v/h as V/H ((v·V)/(h·H) = (v/h)·(V/H)); the only bridge is a fill
+Uppercase **H, V** are breadths, written with the amounts (H the reader's, V the other's); with the distance **d**, a size **Δ** and the
+reader's step **ε**, the physics. Since 13 Oct (SPN R226; Tom: "Even H is not a real breadth, Its the value needed to
+kick off the system"; "how many relations are included in the systems definition, determine its shape"): no breadth in
+the geometry is a measured size. H is the one value the reader chooses to start the system, any value, its size setting
+only the zoom (small H fine near, large H fine far); V is the other party's whole as drawn, at H; **V*** is a party's
+true breadth, an amount never read. The geometry is a shape and one H, the shape set by how many unit relations the
+system includes (two the circle, three the sphere, n + 1 the sphere in n + 1 dimensions). Never read v as V or v/h as V/H ((v·V)/(h·H) = (v/h)·(V/H)); the only bridge is a fill
 level times its breadth, where that breadth is known. Before verifying, editing or summarising any paper, plan or lab,
 check each symbol's case and domain, and name the bridge for any conclusion that crosses from geometry to physics. Text
 before 9 Oct often conflates them (SPN's opening warning and §1, "H and h kept apart"; `plans/vh-rulings-review.md`,
@@ -677,6 +687,9 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   With n other parties (R225) the same, once per party: every pair keeps its corner, the near field in all readings is
   1/(n + 1). The drawing is the geometry's whole job (Tom: "from the geometry's perspective, its job is done, what ever
   the true breadth makes no difference"); the true breadths enter only the amounts.
+- Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
+  its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
+  includes. V is the drawn whole (at H), V* the true breadth.
 - Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof"). Since R217 the main result's core does
   not rest on it: any fair weight that does not vanish at the horizon puts the median at the corner and leaves no mean
   (OFS Theorem 6(e)); only the Cauchy's exact shape is the even turn's.

@@ -550,3 +550,71 @@ checking the n-party case first.
   wedge's; the near field in all readings is 1/(n + 1) (½, ⅓, ¼, ⅕, ⅙), and the number of readings past their corner
   is spread evenly over 0 … n; drawn unequally, the shares move.
 - `papers/number-line.md` §8 and `papers/observation-from-somewhere.md` after Proposition 5(e): n other parties.
+
+---
+
+**Tom** (about 12:20): "so why even include breadth, just give them placeholder values", with message 6.
+
+**Message 6** (shared with it, "chatgpt:")
+
+Exactly. The geometry needs placeholders, not physical breadths.
+
+If geometry's job is to establish the address range and its corner, the actual physical amounts contribute nothing to
+that construction. Give the geometric arms equal placeholder lengths so that v = h defines the corner. The construction
+is complete.
+
+Then keep the physical breadths out of the geometry altogether.
+
+The separation becomes:
+
+1. Geometry: establish the addresses using equal-length placeholders. The corner is fixed by construction.
+2. Physics: actual breadths V_i arrive at those addresses. Their values may differ arbitrarily.
+3. Reading: compare each actual breadth with the reader's reference H, giving V_i/H.
+
+The placeholders must not be mistaken for claims about the payloads. I'd use distinct notation for the drawn lengths
+precisely to prevent that confusion.
+
+The deeper consequence is that the address system can be completely specified without knowing anything about the
+magnitudes it will address. Geometry does not need a model of the payload to do its job.
+
+That is cleaner than carrying physical breadths through the geometric construction and repeatedly explaining that their
+values do not matter.
+
+### Response to message 6 (Claude)
+
+**Agreed in substance, and the geometry is nearly there:** it runs on h and v from 0 to 1, "all of h" and "all of v"
+each 1; those are the placeholders. (P0) already says "Assigned is not known". The one real constraint is that the
+placeholders be equal (Proposition 3(e)); only their common value is free.
+
+**Corrections.**
+- "Equal placeholder lengths so that v = h defines the corner": the corner is v = h in any drawing. Equal lengths make
+  the sweep a turn, put the corner at 45° and make it the median of the even sweep.
+- "Actual breadths V_i arrive at those addresses": the payload arrives; true breadths are never read.
+- "Compare each actual breadth with H, giving V_i/H": no reading gives it (Proposition 8(a)). Readings give v/h only;
+  V_i/H comes from outside or is estimated.
+- Distinct notation exists (lowercase unit relations, uppercase amounts, V* for the true breadth in §9) but was not used
+  consistently: §5 used plain V for both the drawn and the true breadth.
+
+Proposed: (P0) and Proposition 3 in placeholder form; V* throughout; a dated note in SPN; CLAUDE.md. Claude also said
+H, the reader's own breadth, was "a real amount the reader holds".
+
+**Tom** (about 12:25): "Even H is not a real breadth, Its the value needed to kick off the system. smaller values of H
+give more fidelity to closer items, larger h give more fidelity to far away items, but an H is needed, and the shape is
+needed of the relational system."
+
+**Claude:** right; that corrects the last line above. OFS (P1) has "Any H will do" and §8 "H is a zoom, not an escape"
+(a small H holds the small at true scale, a large H the large), but never says plainly that H is a chosen starting
+value and not a measured breadth. The geometry needs two things: the shape (unit relations on equal axes) and one H
+(some H required, its value free, setting only the zoom). And §10 step 3, written that morning, called the product
+π/2 · 2/π = 1 the thumb's true breadth: read this way it is H measured in H, the starting value returned.
+
+**Tom** (about 12:28): "Yes, how many relations are included in the systems definition, determine its shape."
+
+**What was made** (SPN R226):
+- `papers/observation-from-somewhere.md`: the abstract and introduction (H a value chosen to start from, its size the
+  zoom; the shape set by how many unit relations the system includes); §2 (H the starting value, V the drawn whole, V*
+  the true breadth); (P0), (P1); "What the geometry needs: a shape and one H" after Proposition 3; V* for the true
+  breadth throughout (§3.1, §3.2, §3.8, §5, §7.2, §9, §10); §8's opening; §10 steps 3, 5 and 6 (the product H in H; the
+  walk gives the width in thumbs, in miles only for whoever has agreed a thumb is a mile); the notation table.
+- SPN R226, a dated note in §1 after "The settled view, 10 October", and R223 marked corrected.
+- `mountain.html`'s readout: the product is H in H, the starting value returned.
