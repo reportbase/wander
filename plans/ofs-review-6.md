@@ -449,3 +449,104 @@ Post hoc, from the numbers, not predicted:
 Not taken: the derivation by additivity, f(a + b) = f(a) + f(b) (message 4 withdrew it: it adds a scale assumption and
 misses the counterexamples), and a separate "companion mathematics paper" (`observation-from-somewhere.md` is that paper;
 the others are working papers).
+
+---
+
+**Message 5** (13 October, about 11:02; shared as before, "chatgpt:")
+
+That is an interesting starting point because the reader has many relations but very little knowledge of what they
+contain. He begins by assigning every physical payload the same value:
+
+  V₁ = V₂ = V₃ = V₄ = V₅ = H.
+
+He has made the simplest possible assumption: everything he reads is equal to his reference.
+
+What has the reader actually done?
+
+For a nonzero H, every physical ratio is
+
+  V_i/H = 1.
+
+His model contains no variation in payload. Every relation has the same assigned value. He cannot use those values to
+distinguish one payload from another.
+
+But there is a crucial distinction here.
+
+He has made all the payloads equal; he has not necessarily made all their addresses equal.
+
+The geometry can still supply different addresses. The physical payloads are what fill those addresses. So the reader
+can have a structured field of relations even while his initial assignment treats everything he reads as physically
+equivalent.
+
+That seems consistent with the distinction you have been developing between geometry and physics.
+
+*The important consequence.* The reader has not discovered that all these things are equal. He has assumed their
+equality because he knows very little about them.
+
+There are therefore two very different situations:
+
+* The reader's model: V₁ = V₂ = ⋯ = H.
+* The actual payloads: potentially unequal, but not yet known to the reader.
+
+The equality is a starting condition for the reader, not a proven property of the world.
+
+If a later observation distinguishes V₂ from H, the reader has learned something. The departure from equality becomes
+informative. Yet the addresses need not have been created by that discovery; the geometry may already provide the
+places into which the readings fit.
+
+*Where I think this leads.* There is a possible distinction between the reader's initial equality and the world's
+unknown variation.
+
+Initially, every payload is assigned to the same reference. The reader's model has no payload variation to explain. As
+observations accumulate, differences can emerge without requiring the reader to begin with knowledge of what the
+differences are.
+
+That gives us a useful question for OFS:
+
+Does the reader construct the address system to accommodate differences he discovers, or does he lay out the addresses
+first and then learn which payload belongs at each one?
+
+Your existing geometry-before-payload argument points toward the second. And that would make this example more than
+an assumption of equality: it would illustrate how a reader can possess a structured system of observation before
+possessing detailed knowledge of what he observes.
+
+### Response to message 5 (Claude)
+
+**Mostly right, and already in OFS; one conflation.**
+- *Right:* the equality is a starting condition, not a property of the world ("the drawing says nothing about the
+  world", §9 before Proposition 13; "the confusion is taking the drawing for a measurement", §7.2). Learning V₂ ≠ H
+  informs without creating addresses (§5: the estimate "enters only the amounts, as a shift of every one of them by the
+  same number of levels. It never redraws the circle"). The closing question is answered in §2: "The range of addresses
+  is fixed by the geometry before anything arrives, and an address is taken from it when something does." Addresses
+  first, as the message guessed.
+- *The conflation:* "assigning every payload the value H" runs three things together. The drawing V₁ = … = V₅ = H is
+  required, each pair a turn with its corner only when drawn at one length (Proposition 3(e), 3(f)), and says nothing
+  about sizes. The estimate of each true size is H only when nothing the reader knows makes that party larger rather
+  than smaller (Proposition 13(c)); with bounds, their corner. The payload is what arrives at an address, the ring on
+  the finger; the reader assigns it nothing. So "his model contains no variation in payload" is not right: the drawn
+  breadths are equal, while the readings v_i/h and what arrives at them vary. What the reader lacks is five numbers,
+  V_i/H, each a shift in levels of that party's amounts alone (§3.8, once per party).
+- *Sharper than "differences emerge as observations accumulate":* readings taken at once against a shared denominator
+  give payloads relative to each other (Proposition 10); further standpoints give the figure up to scale
+  (Proposition 11); no readings give the scale (8(a)); one outside amount fixes every amount the readings link to it
+  (8(b)), so the five unknowns shrink to one per linked group.
+- *What five parties add:* with all six unit relations drawn at one length and swept evenly, the readings are the
+  five-dimensional Cauchy, every pair keeps its corner, and the near field in all five readings is a sixth (h the
+  largest of six relations treated alike): 1/(n + 1) with n other parties, by symmetry, not yet checked or written.
+
+**Tom** (about 12:13): "from the geometry's perspective, its job is done, what ever the true breadth makes no
+difference."
+
+**Claude:** yes, with one distinction kept in the wording. The drawn breadth matters: each party drawn at H, or no turn,
+no circle and no Cauchy with its median at the corner; that drawing is the geometry's whole job. The true breadth makes
+no difference to the geometry: every unit relation, reading and address, the corner, the levels and the Cauchy are what
+they are whatever it is. It enters only the amounts, a pan in levels, physics' job. So V₁ = … = V₅ = H is not the reader
+assuming five things equal; it is the geometry finishing its work. Tom (about 12:14): "yes", to recording this and to
+checking the n-party case first.
+
+**What was made** (SPN R225):
+- WDG run 2 (`plans/wdg-plan.md`, `wdg/wdg2.py`, predictions first, nothing killed): with n other parties drawn at H the
+  even orthant's readings are the n-dimensional Cauchy; every reading keeps the circle's law and every pair the
+  wedge's; the near field in all readings is 1/(n + 1) (½, ⅓, ¼, ⅕, ⅙), and the number of readings past their corner
+  is spread evenly over 0 … n; drawn unequally, the shares move.
+- `papers/number-line.md` §8 and `papers/observation-from-somewhere.md` after Proposition 5(e): n other parties.

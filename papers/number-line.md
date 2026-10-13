@@ -74,6 +74,10 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
   V = V₂ = H and makes one wedge per observation, its even measure the two-dimensional Cauchy; every pair keeps its
   corner, the six chambers are equal, and the near field is a third. Then a rotatable sphere in the unit cube points
   every point of an inner cube of any size, once its extent is known (SPN R221; `sphere-cube.html`).
+- 13 October, eighty-third: §8, any number of parties (SPN R225; WDG run 2): with n other parties drawn at H every pair
+  keeps its corner and the near field in all readings is 1/(n + 1); the drawing is the geometry's whole job, whatever
+  the true breadths (Tom: "from the geometry's perspective, its job is done, what ever the true breadth makes no
+  difference").
 - 11 October, eightieth: a candidate single principle, after an outside evaluation: equal addresses for whatever the reader cannot tell apart; proportional inside the unit, logarithmic past it, meeting at the unit (a reading; SPN Proposition 1.2).
 - 11 October, seventy-ninth: situated geometry is the Cauchy, unsituated the circle; the even turn is uniformity itself, behind both (Tom; SPN Proposition 1.2 (7), §14).
 - 11 October, seventy-eighth: the Cauchy and the fisheye derived in v and h: the bar swept in even steps of its turn moves v/h by 1 + (v/h)² a step; counting gives 1/(1 + (v/h)²), drawing gives the fisheye (Tom; SPN Proposition 1.2).
@@ -1160,6 +1164,13 @@ P1–P4, not killed).
   relations (h the largest) is a third of the wedge, past in one a third, past in both a third (P3). On the circle near
   and far were halves. The third is π/6 of π/2: a quarter of a cube's face seen from its centre.
 - **What the wedge still lacks** is the circle's one number, now once per party: V/H and V₂/H, each a pan in levels.
+- **Any number of parties** (Tom, 13 October, to a reader drawing five parties at V₁ = … = V₅ = H: "from the
+  geometry's perspective, its job is done, what ever the true breadth makes no difference"; SPN R225; WDG run 2,
+  P7–P10, not killed). With n other parties drawn at H the even orthant's readings are the n-dimensional Cauchy; every
+  reading keeps the circle's law and every pair the wedge's; the near field in all readings is 1/(n + 1), a half, a
+  third, a quarter, a fifth, a sixth, and the number of readings past their corner is spread evenly over 0 … n. Drawn
+  unequally, the shares move. No party's true breadth enters: the drawing finishes the geometry, and each true breadth
+  is one number of the amounts, a pan in levels for that party alone.
 
 **A rotatable sphere in the unit cube** (Tom, 13 October: "if we put a rotatable sphere inside the unit cube, we could
 show that every point on the sphere maps to every point on the inner cube. the inner cube could be any size, however

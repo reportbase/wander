@@ -106,7 +106,9 @@ as if a single observation held it. Section 3 sets out the readers in full.
   at V = H (§5, §7.1). The other party's true size is a separate estimate (§9).
 - With two other parties the same holds once per party. Drawn at V = V₂ = H, the relation lies on one sphere, and the
   reader sweeps one octant of it, a wedge. Swept evenly, its readings are the two-dimensional Cauchy: every pair keeps
-  its corner, and the reader is near in both readings for a third of them, not a half (§5, §7.1).
+  its corner, and the reader is near in both readings for a third of them, not a half (§5, §7.1). With n other
+  parties it is near in all its readings for 1/(n + 1) of them. The drawing is the geometry's whole work; no party's
+  true size enters it.
 - Inside the corner the reader can lay readings out in proportion; past it, if no scale is preferred, only a
   logarithmic layout is consistent. The reader has two address spaces joined at one corner (§6).
 - **Main result.** Sweeping the circle evenly from home yields the Cauchy distribution, and the Cauchy is the reader's
@@ -849,6 +851,19 @@ together, is the completed view. A sphere that placed every place by its directi
 distance, which no situated reader has. The wedge needs no size: the readings are ratios, laid by the two-dimensional
 Cauchy. What it lacks is what the circle lacks, once per party: V/H and V₂/H. On the circle near and far were halves;
 with three parties the reader is near in both readings for a third of its addresses.
+
+**More parties.** The same holds for any number n of other parties, each drawn at H. The relation lies on the sphere
+of n + 1 unit relations, one facing of every freedom is its positive orthant, and the point in direction (1, a) is
+(1, a)/r with r² = 1 + |a|², a = (v₁/h, …, v_n/h). The projection argument of the proof gives the element of area
+da/r^(n+1), so the even orthant's readings have density c_n·(1 + |a|²)^(−(n+1)/2), the n-dimensional half-Cauchy, with
+c_n = 2ⁿ·Γ((n + 1)/2)/π^((n+1)/2). Integrating out all readings but one leaves the law of (b); all but two, the law of
+(e). So every reading and every pair keeps its corner, and adding a party changes nothing about the pairs already held.
+Exchanging any two of the n + 1 unit relations keeps the orthant, so every ordering of them is equally likely and h's
+rank among them is spread evenly. The reader is near in all its readings (h the largest) for 1/(n + 1) of its
+addresses, a half, a third, a quarter, and so on, and the number of readings past their corner is spread evenly over
+0, 1, …, n. Drawn at unequal lengths, these shares move, as in (e).
+None of this involves any party's true breadth. The drawing is the geometry's whole work; each true breadth is one
+number of the amounts, a shift in levels of that party's amounts alone.
 
 In classical terms the readings are the tangent of a uniformly distributed angle: the gnomonic projection of a uniform
 direction. For two other parties the gnomonic projection of a uniform direction on the sphere is the multivariate

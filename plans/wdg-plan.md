@@ -107,3 +107,72 @@ P4 in full (medians of v/h, v₂/h, v/v₂; share near in both):
   by the true extent over H.
 - **On the cube the even sphere is still the Cauchy** (P6): each face is a reading plane, its middle quarter by area
   taking 38% of the face's directions, its centre 5.2 times as dense as its corners.
+
+### Run 2 (13 October, about 12:15; `wdg/wdg2.py`): n other parties
+
+*Tom, 13 October, about 12:13, to a fifth ChatGPT message (a reader drawing five parties at V₁ = … = V₅ = H;
+`plans/ofs-review-6.md`): "from the geometry's perspective, its job is done, what ever the true breadth makes no
+difference." Then "yes" to this run, which carries P1–P4 from two other parties to n. Predictions written before the
+script existed.*
+
+**Set-up, with the case kept.** The reader's h and n other parties' v₁, …, v_n, unit relations in [0, 1], each party
+drawn at V_i = H; the attitudes are the unit sphere in n + 1 dimensions and one facing of each is its positive orthant;
+sweeping it evenly is uniform by area. Readings a_i = v_i/h. For n = 1 this is the circle, for n = 2 run 1's wedge. No
+amounts enter; the true breadths V_i* appear nowhere.
+
+- **P7. The even orthant is the n-dimensional Cauchy.** The readings have density
+  c_n·(1 + |a|²)^(−(n+1)/2) on [0, ∞)ⁿ, c_n = 2ⁿ·Γ((n+1)/2)/π^((n+1)/2) (2/π for n = 1 and 2, 8/π² for 3, 12/π² for 4,
+  64/π³ for 5). **Killed if**, for any n from 1 to 5, the area element of a ↦ (1, a)/√(1 + |a|²), from the Gram
+  determinant of its derivatives in mpmath, misses (1 + |a|²)^(−(n+1)/2) by more than 1e-20 (relative) at 20 random
+  points of [2⁻⁶, 2⁶]ⁿ, or the density's total, by radial quadrature, misses 1 by more than 1e-25.
+- **P8. Every reading and every pair keeps its corner.** Integrating out all readings but one gives the circle's
+  2/(π(1 + x²)), median at 1, for every n; integrating out all but two gives run 1's 2/(π(1 + x² + y²)^(3/2)), so by
+  run 1's P2 every v_i/v_j is half-Cauchy with its median at 1. **Killed if** either marginal, by radial quadrature,
+  misses by more than 1e-25 (relative) at x, y in 2⁻⁸ … 2⁸ (even powers), for n = 2 … 5 (one-reading) and 3 … 5 (two).
+- **P9. The near field in all readings is 1/(n + 1), and the count past the corner is even.** The share with every
+  reading below its corner (h the largest of the n + 1) is 1/(n + 1): ½, ⅓, ¼, ⅕, ⅙ for n = 1 … 5. More: the number of
+  readings past their corner is spread evenly over 0, 1, …, n, each 1/(n + 1) (run 1's P3 is n = 2). The reason
+  expected: the even sphere treats the n + 1 unit relations alike, so h's rank among them is spread evenly. **Killed
+  if** product Gauss–Legendre quadrature of P7's density over [0, 1]ⁿ (24 nodes an axis, float64) misses 1/(n + 1) by
+  more than 1e-12 for any n, or, over 10⁷ even points drawn on the orthant (normalized Gaussian vectors made positive,
+  numpy, seed 21), any count's share is more than 5 standard errors from 1/(n + 1).
+- **P10. The drawing is required.** Drawn at V_i = c_iH and swept evenly in the drawing, the near-in-all share is the
+  base law's mass on the box ∏[0, c_i] (as run 1's P4), 1/(n + 1) at every c_i = 1 and not otherwise. **Killed if**, for
+  n = 5, the share at (1, 1, 1, 1, 1) misses ⅙ by more than 1e-12, or the share at any of (2, 1, 1, 1, 1),
+  (2, 2, 2, 2, 2), (½, 1, 1, 1, 3), (½, ½, 2, 2, 1) is within 1e-6 of ⅙.
+
+Known already: the gnomonic projection of a uniform direction on Sⁿ is the multivariate Cauchy (the multivariate t with
+one degree of freedom), its marginals Cauchy of lower dimension; a uniform rank among exchangeable coordinates. What
+run 2 adds is the reading: each further party drawn at H keeps every pair's corner, and the reader's near field in all
+its readings shrinks to 1/(n + 1).
+
+Result (mpmath at 40 digits; numpy, seed 21; eighteen seconds):
+
+| | prediction | result | |
+|---|---|---|---|
+| P7 | the even orthant's readings the n-dimensional Cauchy, n = 1 … 5 | the area element to 3.5e-38 at 100 points; every total 1 to 2.3e-41 | not killed |
+| P8 | every reading the circle's half-Cauchy; every pair run 1's wedge | to 1.2e-39 and 3.9e-40 | not killed |
+| P9 | near in all 1/(n + 1); the count past the corner even over 0 … n | ½, ⅓, ¼, ⅕, ⅙ to 8.3e-17; every count within 2.6 standard errors of 1/(n + 1) | not killed |
+| P10 | n = 5: ⅙ only when every party is drawn at H | 0.166667 at (1, 1, 1, 1, 1); 0.195, 0.450, 0.129, 0.097 at the four others | not killed |
+
+The count past the corner, from 10⁷ even points each:
+
+| n | k = 0 | 1 | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|---|---|
+| 1 | 0.4999 | 0.5001 | | | | |
+| 2 | 0.3334 | 0.3332 | 0.3334 | | | |
+| 3 | 0.2498 | 0.2503 | 0.2500 | 0.2499 | | |
+| 4 | 0.2000 | 0.2002 | 0.1998 | 0.2000 | 0.2001 | |
+| 5 | 0.1668 | 0.1667 | 0.1664 | 0.1667 | 0.1667 | 0.1667 |
+
+**Reading.**
+- **Each further party drawn at H keeps every pair's corner.** The readings are the n-dimensional Cauchy; each reading
+  alone is the circle's law and each pair the wedge's (P7, P8). Nothing about the pairs already held changes when a
+  party is added.
+- **The reader's near field in all its readings is 1/(n + 1).** With one other party it is half the addresses, with two
+  a third, with five a sixth; and the number of readings past their corner is spread evenly over 0 … n (P9). It is the
+  even sphere treating the n + 1 unit relations alike: h is the largest of them as often as any other.
+- **The drawing is the geometry's whole job** (Tom: "from the geometry's perspective, its job is done, what ever the
+  true breadth makes no difference"). Drawn unequally, the shares move (P10); drawn at H, nothing here depends on any
+  party's true breadth, which never entered the run. Each true breadth is one number of the amounts, a shift in levels
+  for that party alone.

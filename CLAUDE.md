@@ -301,7 +301,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
   Since 13 Oct (SPN R220, R221) it has the three-party wedge: Propositions 3(f) (the sphere only if V = V₂ = H) and 5(e)
   (the even wedge's readings the two-dimensional Cauchy, every pair at its corner, the near field a third, with its
-  converse), and "A sphere in a cube" after Proposition 8 (any size; the extent must be known for amounts). §10's step 3
+  converse), "More parties" after it (SPN R225: n other parties, every pair at its corner, the near field in all
+  readings 1/(n + 1)), and "A sphere in a cube" after Proposition 8 (any size; the extent must be known for amounts). §10's step 3
   (SPN R223) shows π/2 · 2/π = 1 on the thumb: the two vantages joined return only what the reader holds.
   Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
   (S) and even turns named as the assumptions the circle, the logarithm and the Cauchy rest on). The fourth, an
@@ -323,7 +324,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   it caught the dropped horizon condition. Made: the three-path table in OFS §11.2, question 2 (circle, line, square
   agreeing at home, the corner and the horizon, parting between; none with a mean; sin² 2θ, fair but vanishing at the
   horizon, with the mean 4/π), checked exactly in `ofs/paths.py` (Q1–Q5; run 1's Q3 killed by my set-up, run 2 not),
-  and `paths.html`.
+  and `paths.html`. Its message 5 (five parties drawn at H, read as assuming their payloads equal) is answered by Tom's
+  "from the geometry's perspective, its job is done, what ever the true breadth makes no difference" (SPN R225): the
+  drawing is required and finishes the geometry; the true breadths enter only the amounts; the payload is what arrives.
+  Made: WDG run 2 and OFS's "More parties" after Proposition 5(e).
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -568,7 +572,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (P2); six chambers 1/6 each, the near field in both readings a third (P3); drawn at V = c₁H, V₂ = c₂H the medians move to
   1/c₁, 1/c₂, c₂/c₁, so each pair's corner needs that pair drawn at one length and the wedge needs V = V₂ = H (P4); a
   rotatable sphere's rays point every point of a cube at any extent, the address (u, t) the same at every extent (P5); a
-  face's middle quarter takes 38% of its directions (P6). Nothing killed. `sphere-cube.html` shows it.
+  face's middle quarter takes 38% of its directions (P6). Nothing killed. `sphere-cube.html` shows it. Run 2
+  (`wdg/wdg2.py`, 13 Oct; Tom: "from the geometry's perspective, its job is done, what ever the true breadth makes no
+  difference"; SPN R225): n other parties drawn at H, n = 1 … 5; the readings the n-dimensional Cauchy (P7); every
+  reading the circle's law, every pair the wedge's (P8); the near field in all readings 1/(n + 1), the count past the
+  corner even over 0 … n (P9); drawn unequally, the shares move (P10). Nothing killed.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -666,6 +674,9 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   per observation, and its even measure is the two-dimensional Cauchy: every pair keeps its corner, the near field in both
   readings is a third (OFS Propositions 3(f), 5(e)). A rotatable sphere's rays point every point of a cube of any size,
   the address the same at every size; the point in amounts needs the cube's extent (OFS §9, "A sphere in a cube").
+  With n other parties (R225) the same, once per party: every pair keeps its corner, the near field in all readings is
+  1/(n + 1). The drawing is the geometry's whole job (Tom: "from the geometry's perspective, its job is done, what ever
+  the true breadth makes no difference"); the true breadths enter only the amounts.
 - Still open: the weight on the sweep is a choice (SPN §14, "Burdens of proof"). Since R217 the main result's core does
   not rest on it: any fair weight that does not vanish at the horizon puts the median at the corner and leaves no mean
   (OFS Theorem 6(e)); only the Cauchy's exact shape is the even turn's.
