@@ -370,6 +370,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Made: WDG run 2 and OFS's "More parties" after Proposition 5(e). Message 6 (placeholders, not physical breadths;
   Tom: "so why even include breadth"), then Tom's "Even H is not a real breadth" (SPN R226): the geometry a shape and
   one H; the corner is v = h in any drawing, equal lengths make it 45° and the even sweep's median; no reading gives V*/H.
+  The seventh (Grok, 13 Oct, an overall assessment: "ready for external scrutiny after the local clarifications") is in
+  `plans/ofs-review-7.md` with a response (SPN R232): two of its five points already in the paper, the lighthouse
+  contrast named in the abstract (edit A), serial marked as the look's in §7.1 (edit B), condensing declined (R203).
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
