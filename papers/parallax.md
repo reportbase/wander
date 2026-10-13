@@ -25,6 +25,10 @@ Proposition 11(a)–(c), which this paper builds on.*
   astronomers' rule σ_d/d = σ_p/p is the far-field limit of γ/sin γ, the outer reading of the parallax angle, π/2 on the
   Thales circle; "best when square" is the flip's fixed point; the round error needs the two standpoints alike;
   inverting a noisy parallax keeps its median and loses its mean; the parsec is a far-field unit.
+- 13 October, later (Tom: "can parallax be used to illustrate PI/2 * 2/PI = 1"): yes, with step 3 of §6, and one thing
+  made explicit there: the turn in γ/sin γ is the pair's facing, twice its sweep angle, so its π/2 falls at the pair's
+  corner, where on the thumb (`observation-from-somewhere.md` §10, step 3) it falls at the sweep's horizon. The same
+  identity on two different angles.
 
 **Standing marks.** Each claim carries one:
 - **[classical]**: established outside this corpus (geometry, surveying, stereo vision, astrometry), quoted;
@@ -239,9 +243,14 @@ results, each in print:
 3. **From K3, the outer vantage.** The ratio of the relative errors is exactly (σ_d/d)/(σ_p/p) = γ/sin γ, the outer
    reading of the turn γ in `observation-from-somewhere.md` §3.4 (PXC P12). K3 is its far-field limit, 1; on the Thales
    circle it is π/2; near the baseline it grows without bound (2.77 one level inside the circle, 24.2 four levels in).
-   Its reciprocal, sin γ/γ, is the inner reading, and their product is 1. So the rule of thumb is one vantage's reading
-   of the parallax angle, exact only far off. Stellar parallax is all far field: there the rule holds to parts in
-   10¹¹. **[exact]**
+   Its reciprocal, sin γ/γ, is the inner reading, and their product is 1. The turn here is γ, the pair's facing, twice
+   its sweep angle p: the outer reading reaches π/2 when γ is a right angle, which is at the pair's corner, d = a. On
+   the thumb of `observation-from-somewhere.md` §10 the turn is the sweep angle itself, and π/2 comes at the sweep's
+   horizon. It is the same identity read on two different angles, and the two places are not to be conflated. The
+   product 1 holds at every γ, since the two ratios convert one relative error into the other and back; what parallax
+   adds is that the π/2 is measured, the growth of a relative error on the Thales circle, not a unit chosen. So the
+   rule of thumb is one vantage's reading of the parallax angle, exact only far off. Stellar parallax is all far field:
+   there the rule holds to parts in 10¹¹. **[exact]**
 4. **From K5, the flip.** The places at d and a²/d see the baseline at γ and π − γ (PXC P11), so the depth's precision,
    sin γ, is the same at both: the flip of the pair is the supplement of its angle. A precision unchanged by the flip is
    stationary at the flip's fixed point, and Proposition 1 shows it is greatest there. "Best when square" is the

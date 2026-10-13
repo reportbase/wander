@@ -123,6 +123,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   as a reading plane with the Cauchy shading and its middle quarter's share (38%). `?step=1..6&e=&known=0&t=&wedge=1&rays=0&turn=1`;
   hook `window.__sphereCube` (`address`, `point`, `faceOf`, `stats`, `turnBy`, `hud`, `set`, `state`, `frames`, `webgl`).
   Not in the flying page.
+- `paths.html`: **one sweep, three paths** (13 Oct 2026, Tom: "yes, proceed", to the visual from the ChatGPT exchange in
+  `plans/ofs-review-6.md`; SPN R224), a standalone page like `facing.html`. Geometry only, in unit relations. The circle,
+  the line h + v = 1 and the square's edges, each swept evenly along its own length; the reading v/h is the direction
+  alone, the same on all three; b, the share of the sweep done at θ (2θ/π, tan θ/(1 + tan θ), tan θ/2 then
+  1 − cot θ/2), agrees at home, the corner and the horizon and parts in between. Panels: the three paths with the chosen
+  one cut into 24 equal lengths and their directions; b against θ, with the circle weighted by sin² 2θ dashed; the turn
+  and its shadow on the circle (outer θ/sin θ, inner sin θ/θ, π/2 and 2/π at the horizon); the mean taking readings up to
+  S, climbing ρ(0)·ln 10 a tenfold on each path, settling at 4/π for sin² 2θ. `?path=circle|line|square&t=`; hook
+  `window.__paths` (`b`, `measure` (b along the path as chords, not the closed form), `bWeighted`, `tmean`,
+  `tmeanWeighted`, `perDecade`, `vantages`, `hud`, `set`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -226,7 +236,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -267,7 +277,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   already knows (Tom: "work backwards from known results of paralax and show the forced logical chain"; SPN R223): d =
   a/tan p, the au measured outside and now agreed (IAU 2012), σ_d/d = σ_p/p (exactly γ/sin γ, the outer reading, π/2 on
   the Thales circle), not inverting noisy parallaxes (Bailer-Jones 2015; Lutz and Kelker 1973), best when square; each
-  forces the next, down to one reading, two standpoints alike (the pair's V = H) and one outside amount.
+  forces the next, down to one reading, two standpoints alike (the pair's V = H) and one outside amount. Its step 3 says
+  where the π/2 falls (Tom: "can parallax be used to illustrate PI/2 * 2/PI = 1"; SPN R224): the turn in γ/sin γ is the
+  pair's facing, twice its sweep angle, so π/2 comes at the pair's corner, where on OFS §10's thumb it comes at the
+  sweep's horizon; one identity on two angles, not to be conflated.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
@@ -304,7 +317,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   stops; the SI's constants in `physics.md`. Its second part ("more reader situations with yet more geometries") is
   answered there too: each proposed situation lands in the payload, the amounts or a power of the reading; edit G made
   (four more entries in §3.1's "Cases that look like a sixth"). A comment from Grok (an empirical defense from ordinary
-  perception and instruments) is recorded there and not taken: real instruments use several weights.
+  perception and instruments) is recorded there and not taken: real instruments use several weights. The sixth (ChatGPT,
+  13 Oct, "one sweep, two readers") is in `plans/ofs-review-6.md` with responses (SPN R224): its bounded reader a change
+  of units unless the shadow is named, its corner the horizon, its question open question 2, answered by three paths;
+  it caught the dropped horizon condition. Made: the three-path table in OFS §11.2, question 2 (circle, line, square
+  agreeing at home, the corner and the horizon, parting between; none with a mean; sin² 2θ, fair but vanishing at the
+  horizon, with the mean 4/π), checked exactly in `ofs/paths.py` (Q1–Q5; run 1's Q3 killed by my set-up, run 2 not),
+  and `paths.html`.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -734,6 +753,9 @@ In short:
       e = 10⁻³, ½ and 1, the address the same at every extent, the face its largest component's; the even sphere gives each
       face a sixth, a face's middle quarter 38%, the wedge's faces a third each; with the extent unknown the readout says
       off by e/H; WebGL drew frames (three.js served from `node_modules` in place of the CDN).
+  23. **paths.html:** the share of the sweep measured along each path (as chords) is its closed form; all three fair and ½
+      at the corner, 0.250, 0.293, 0.207 at 22.5°; the mean climbing ρ(0)·ln 10 a tenfold on each; sin² 2θ with its
+      median at the corner and the mean 4/π; π/2 and 2/π at the horizon, product 1; v/h = ∞ at 90°.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

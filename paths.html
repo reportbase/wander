@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>One sweep, three paths</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    paths.html: one sweep, three paths (13 October 2026; Tom: "yes, proceed", to the three-path visual that came out of
+    a ChatGPT exchange on "one sweep, two readers", plans/ofs-review-6.md). A standalone page like facing.html.
+
+    Geometry only, in unit relations (keep the case: h, v are 0 to 1; no H, V or distance here). The sweep runs from home
+    (all of h, θ = 0) to the horizon (all of v, θ = 90°); the reading s = v/h = tan θ is the direction alone, the same on
+    every path. Three paths from (1, 0) to (0, 1), each swept evenly along its own length; b is the share of the sweep
+    done when the direction θ is reached:
+      the circle h² + v² = 1        b = 2θ/π
+      the line h + v = 1            b = tan θ/(1 + tan θ)
+      the square's edges            b = tan θ/2 to the corner, 1 − cot θ/2 past it
+    All three are fair, b(θ) + b(90° − θ) = 1: they agree at home (0), the corner (45°, ½) and the horizon (1) and part
+    in between (Observation from Somewhere §11.2, question 2). None has a mean: the mean taking readings up to S grows by
+    ρ(0)·ln 10 each tenfold of S (2/π, 1, ½ for ρ(0)). Beside them, a fair weight that vanishes at the horizon, sin² 2θ
+    on the circle: median at the corner, mean 4/π (Theorem 6(e)'s horizon condition). On the circle, the turn and its
+    shadow: outer θ/sin θ, inner sin θ/θ, product 1; π/2 and 2/π at the horizon (§3.4). Checked exactly in ofs/paths.py.
+    Links: ?path=circle|line|square&t=θ (degrees). Test hook: window.__paths.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #e0826c; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 19px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 76ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: currentColor }
+    button[data-path=circle].on { color: var(--violet) }
+    button[data-path=line].on { color: var(--teal) }
+    button[data-path=square].on { color: var(--red) }
+    #play.on { color: var(--gold) }
+    input[type=range] { flex: 1 1 240px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    #hud, #vant { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px; overflow-wrap: anywhere }
+    .note { color: var(--dim); font-size: 12.5px; max-width: 80ch }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    .sep { width: 1px; align-self: stretch; background: var(--line); margin: 0 4px }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>One sweep, three paths</h1>
+    <p class="lede">From all of h to all of v, along a circle, a straight line or a square's two edges, each swept evenly
+    along its own length. The reading v/h is the direction alone, the same on every path. What differs is how much of
+    the sweep is done when a direction is reached. Treating the two parties alike fixes home, the corner and the
+    horizon, and nothing between. Only the circle is even in the turn, and that is where 2/π comes from.</p>
+    <div class="panel">
+        <div class="row">
+            <button data-path="circle" class="on">circle</button>
+            <button data-path="line">line</button>
+            <button data-path="square">square</button>
+            <span class="sep"></span>
+            <button id="play">play</button>
+            <label for="theta" style="color:var(--dim)">θ</label>
+            <input id="theta" type="range" min="0" max="90" step="0.1" value="22.5">
+            <button id="corner">the corner</button>
+        </div>
+        <div id="hud"></div>
+    </div>
+    <div class="grid">
+        <div class="panel"><h2>Three paths, one direction</h2><canvas id="plane" height="340"></canvas>
+            <p class="cap">The reader stands at the corner of the axes and reads directions. The chosen path is cut into 24
+            equal lengths, and each cut's direction is drawn: even on the circle; on the line, sparse near the corner and
+            crowded at the ends; on the square, the other way round. The ray at θ meets all three at one reading.</p></div>
+        <div class="panel"><h2>How much of the sweep is done</h2><canvas id="share" height="340"></canvas>
+            <p class="cap">b against θ. Every curve passes through home (0°, 0), the corner (45°, ½) and the horizon (90°, 1), and
+            each is the same turned half round the corner, b(θ) + b(90° − θ) = 1. Only the circle's is straight. Dashed: the
+            circle weighted by sin² 2θ, fair too, but flat at both ends.</p></div>
+        <div class="panel"><h2>The turn and its shadow, on the circle</h2><canvas id="turn" height="300"></canvas>
+            <div id="vant"></div>
+            <p class="cap">Equal steps of turn cast unequal pieces of shadow on the line across the view, and the pieces cover
+            it exactly once. The outer reading is the turn over its shadow, the inner the shadow over the turn: π/2 and 2/π
+            at the horizon. In parallax the same ratio is the relative distance error over the relative parallax error,
+            γ/sin γ, with γ the pair's facing, twice its sweep angle: π/2 on the Thales circle (<a href="parallax.html">parallax
+            from the corner</a>).</p></div>
+        <div class="panel"><h2>No mean, unless the weight leaves the horizon</h2><canvas id="mean" height="300"></canvas>
+            <p class="cap">The mean, taking the readings up to S, against S. On all three paths it climbs by the same amount
+            every tenfold, forever: no mean. The weight sin² 2θ keeps its median at the corner but vanishes at the horizon,
+            and its mean settles at 4/π. Every median is at the corner, s = 1.</p></div>
+    </div>
+    <p class="note">Geometry only, in unit relations: no breadth and no distance enters. Behind it: <i>Observation from
+    Somewhere</i> §3.4 (the turn and its shadow), Theorem 6(e) (the median needs only fairness, the missing mean a
+    weight that reaches the horizon) and §11.2, question 2. Other demos: <a href="facing.html">the facing</a>,
+    <a href="sweep.html">the sweep device</a>, <a href="mountain.html">the mountain and the thumb</a>,
+    <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), D = Math.PI / 180, LN10 = Math.LN10;
+    const PATHS = ['circle', 'line', 'square'];
+    const COL = { circle: '#b59cf0', line: '#8ce6cd', square: '#e0826c', weight: '#e6e4ee', gold: '#d4a052' };
+    const rgba = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
+
+    // ── the geometry ──
+    // b: the share of the path's sweep done when the direction t (degrees) is reached, in closed form
+    function b(path, t) {
+        if (t <= 0) return 0; if (t >= 90) return 1;
+        const th = t * D, tn = Math.tan(th);
+        if (path === 'circle') return th / (Math.PI / 2);
+        if (path === 'line') return tn / (1 + tn);
+        return t <= 45 ? tn / 2 : 1 - 1 / (2 * tn);                    // square
+    }
+    // the circle weighted by sin² 2θ (normalised by 4/π): its share below t
+    const bWeighted = t => { const th = Math.min(90, Math.max(0, t)) * D; return 2 * th / Math.PI - Math.sin(4 * th) / (2 * Math.PI); };
+    // the point a share u along each path, evenly by its own length
+    function along(path, u) {
+        if (path === 'circle') { const a = u * Math.PI / 2; return [Math.cos(a), Math.sin(a)]; }
+        if (path === 'line') return [1 - u, u];
+        return u <= 0.5 ? [1, 2 * u] : [2 - 2 * u, 1];
+    }
+    // where the ray at t meets each path
+    function meet(path, t) {
+        const c = Math.cos(t * D), s = Math.sin(t * D);
+        if (path === 'circle') return [c, s];
+        if (path === 'line') return [c / (c + s), s / (c + s)];
+        const m = Math.max(c, s); return [c / m, s / m];
+    }
+    // b measured, not taken from the closed form: the path as n chords, its length to where the ray at t crosses it
+    function measure(path, t, n = 20000) {
+        const dx = Math.cos(t * D), dy = Math.sin(t * D), cross = (ax, ay) => ax * dy - ay * dx;
+        let total = 0, upto = null, p = along(path, 0);
+        for (let i = 1; i <= n; i++) {
+            const q = along(path, i / n), len = Math.hypot(q[0] - p[0], q[1] - p[1]);
+            if (upto === null) {
+                const c0 = cross(p[0], p[1]), c1 = cross(q[0], q[1]);
+                if (c0 >= 0 && c1 <= 0) { const f = c0 === c1 ? 0 : c0 / (c0 - c1); upto = total + f * len; }
+            }
+            total += len; p = q;
+        }
+        return (upto === null ? total : upto) / total;
+    }
+    // the reading's density at home, and the mean taking readings up to S (closed forms)
+    const rho0 = { circle: 2 / Math.PI, line: 1, square: 0.5 };
+    const reading = t => t >= 90 ? Infinity : Math.tan(t * D);      // v/h, the direction alone
+    function tmean(path, S) {
+        if (path === 'circle') return Math.log1p(S * S) / Math.PI;
+        if (path === 'line') return Math.log1p(S) + 1 / (1 + S) - 1;
+        return S <= 1 ? S * S / 4 : 0.25 + Math.log(S) / 2;           // square
+    }
+    const tmeanWeighted = S => { const U = S * S, a = 1 / (1 + U); return (8 / Math.PI) * ((1 - a) - 0.5 * (1 - a * a)); };
+    const perDecade = (path, S) => tmean(path, 10 * S) - tmean(path, S);
+    // the turn and its shadow (§3.4)
+    function vantages(t) {
+        const th = Math.max(1e-9, t * D), sh = Math.sin(th);
+        return { turn: th, shadow: sh, outer: th / sh, inner: sh / th, product: (th / sh) * (sh / th), meanShadow: (1 - Math.cos(th)) / th };
+    }
+
+    // ── drawing ──
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.fillStyle = '#000'; g.fillRect(0, 0, w, hh); return [g, w, hh];
+    }
+    const dot = (g, x, y, r, col) => { g.fillStyle = col; g.beginPath(); g.arc(x, y, r, 0, 2 * Math.PI); g.fill(); };
+    const text = (g, s, x, y, col = '#8a8a96', size = 12, align = 'left') => { g.fillStyle = col; g.font = `${size}px DM Mono, monospace`; g.textAlign = align; g.fillText(s, x, y); g.textAlign = 'left'; };
+    const sup = k => String(k).split('').map(c => '⁰¹²³⁴⁵⁶⁷⁸⁹'['0123456789'.indexOf(c)] || c).join('');
+    const fmtS = s => !isFinite(s) ? '∞' : s >= 1000 ? `${(s / 10 ** Math.floor(Math.log10(s))).toFixed(2)} × 10${sup(Math.floor(Math.log10(s)))}` : s.toFixed(3);
+    let state = { path: 'circle', t: 22.5 };
+
+    function drawPlane() {
+        const [g, W, Hc] = fit($('plane')), t = state.t;
+        const s = Math.min(W - 120, Hc - 92), ox = 30, oy = Hc - 34, P = (h, v) => [ox + h * s, oy - v * s];
+        g.strokeStyle = 'rgba(255,255,255,0.18)'; g.lineWidth = 1;
+        g.beginPath(); g.moveTo(...P(0, 0)); g.lineTo(...P(1.04, 0)); g.moveTo(...P(0, 0)); g.lineTo(...P(0, 1.04)); g.stroke();
+        text(g, 'h', ox + 0.9 * s, oy + 16); text(g, 'v', ox - 16, oy - 0.9 * s);
+        // the cuts of the chosen path, and their directions
+        const N = 24, col = COL[state.path];
+        g.strokeStyle = rgba(col, 0.22); g.lineWidth = 1;
+        for (let k = 1; k < N; k++) { const q = along(state.path, k / N); g.beginPath(); g.moveTo(...P(0, 0)); g.lineTo(...P(...q)); g.stroke(); }
+        // the corner's ray
+        g.strokeStyle = rgba(COL.gold, 0.75); g.setLineDash([5, 5]); g.beginPath(); g.moveTo(...P(0, 0)); g.lineTo(...P(1.06, 1.06)); g.stroke(); g.setLineDash([]);
+        // the three paths, the chosen one bright
+        for (const p of PATHS) {
+            const on = p === state.path; g.strokeStyle = on ? COL[p] : rgba(COL[p], 0.38); g.lineWidth = on ? 2.6 : 1.3;
+            g.beginPath(); for (let i = 0; i <= 240; i++) { const q = P(...along(p, i / 240)); i ? g.lineTo(...q) : g.moveTo(...q); } g.stroke();
+        }
+        for (let k = 0; k <= N; k++) dot(g, ...P(...along(state.path, k / N)), 2.3, col);
+        // the ray at θ, to the square
+        const far = meet('square', t);
+        g.strokeStyle = 'rgba(230,228,238,0.8)'; g.lineWidth = 1.4; g.beginPath(); g.moveTo(...P(0, 0)); g.lineTo(...P(far[0] * 1.05, far[1] * 1.05)); g.stroke();
+        for (const p of PATHS) dot(g, ...P(...meet(p, t)), p === state.path ? 5.5 : 4, COL[p]);
+        dot(g, ...P(0, 0), 3.5, '#e6e4ee');
+        text(g, 'home', ...P(1.03, 0.035), '#e6e4ee'); text(g, 'all of h', ox + 1.03 * s, oy + 16);
+        text(g, 'the horizon, all of v', ox - 6, oy - s - 14, '#e6e4ee');
+        g.font = '11.5px DM Mono, monospace';
+        const cx = Math.min(P(1.05, 1.05)[0], W - 4 - g.measureText('the corner').width), cy = P(1.05, 1.05)[1];
+        text(g, 'the corner', cx, cy, COL.gold, 11.5); text(g, 'v = h', cx, cy + 15, COL.gold, 11.5);
+        text(g, `v/h = ${fmtS(reading(t))} on every path`, 10, 18, '#e6e4ee');
+    }
+
+    function drawShare() {
+        const [g, W, Hc] = fit($('share')), t = state.t;
+        const L = 40, R = 14, T = 20, B = 30, X = th => L + th / 90 * (W - L - R), Y = v => Hc - B - v * (Hc - B - T);
+        g.strokeStyle = 'rgba(255,255,255,0.08)'; g.lineWidth = 1; g.beginPath();
+        for (const th of [22.5, 45, 67.5, 90]) { g.moveTo(X(th), Y(0)); g.lineTo(X(th), Y(1)); }
+        for (const v of [0.25, 0.5, 0.75, 1]) { g.moveTo(X(0), Y(v)); g.lineTo(X(90), Y(v)); }
+        g.stroke();
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(X(0), Y(1)); g.lineTo(X(0), Y(0)); g.lineTo(X(90), Y(0)); g.stroke();
+        for (const th of [0, 22.5, 45, 67.5, 90]) text(g, `${th}°`, X(th), Hc - 12, '#8a8a96', 11, 'center');
+        for (const v of [0, 0.25, 0.5, 0.75, 1]) text(g, String(v), L - 6, Y(v) + 4, '#8a8a96', 11, 'right');
+        // the weighted circle, dashed
+        g.strokeStyle = 'rgba(230,228,238,0.55)'; g.lineWidth = 1.3; g.setLineDash([5, 4]); g.beginPath();
+        for (let i = 0; i <= 360; i++) { const th = i / 4, q = [X(th), Y(bWeighted(th))]; i ? g.lineTo(...q) : g.moveTo(...q); } g.stroke(); g.setLineDash([]);
+        for (const p of PATHS) {
+            const on = p === state.path; g.strokeStyle = on ? COL[p] : rgba(COL[p], 0.45); g.lineWidth = on ? 2.6 : 1.4;
+            g.beginPath(); for (let i = 0; i <= 360; i++) { const th = i / 4, q = [X(th), Y(b(p, th))]; i ? g.lineTo(...q) : g.moveTo(...q); } g.stroke();
+        }
+        g.strokeStyle = 'rgba(230,228,238,0.5)'; g.lineWidth = 1; g.beginPath(); g.moveTo(X(t), Y(0)); g.lineTo(X(t), Y(1)); g.stroke();
+        dot(g, X(t), Y(bWeighted(t)), 3, '#e6e4ee');
+        for (const p of PATHS) dot(g, X(t), Y(b(p, t)), p === state.path ? 5 : 3.5, COL[p]);
+        g.strokeStyle = COL.gold; g.lineWidth = 2; g.beginPath(); g.arc(X(45), Y(0.5), 8, 0, 2 * Math.PI); g.stroke();
+        let y = Y(0.36); const lx = Math.min(X(62), W - 104);
+        for (const [name, c] of [['line', COL.line], ['circle', COL.circle], ['square', COL.square], ['circle, sin² 2θ', '#e6e4ee']]) { text(g, name, lx, y, c, 11.5); y += 15; }
+        text(g, 'the corner', X(45) + 12, Y(0.5) + 16, COL.gold, 11.5);
+    }
+
+    function drawTurn() {
+        const [g, W, Hc] = fit($('turn')), t = state.t, th = t * D;
+        const ox = 62, s = Math.min(W - ox - 80, Hc - 50), oy = Hc - 26, P = (h, v) => [ox + h * s, oy - v * s];
+        g.strokeStyle = 'rgba(255,255,255,0.18)'; g.lineWidth = 1;
+        g.beginPath(); g.moveTo(...P(0, 0)); g.lineTo(...P(1.08, 0)); g.moveTo(...P(0, 0)); g.lineTo(...P(0, 1.08)); g.stroke();
+        g.strokeStyle = rgba(COL.circle, 0.3); g.lineWidth = 1.2; g.beginPath(); g.arc(...P(0, 0), s, -Math.PI / 2, 0); g.stroke();
+        // the turn so far
+        g.strokeStyle = COL.circle; g.lineWidth = 3; g.beginPath(); g.arc(...P(0, 0), s, -th, 0); g.stroke();
+        // the bar, and its shadow on the line across the view (the v axis)
+        const pt = [Math.cos(th), Math.sin(th)];
+        g.strokeStyle = 'rgba(230,228,238,0.85)'; g.lineWidth = 1.6; g.beginPath(); g.moveTo(...P(0, 0)); g.lineTo(...P(...pt)); g.stroke();
+        g.strokeStyle = rgba(COL.gold, 0.55); g.setLineDash([4, 4]); g.lineWidth = 1; g.beginPath(); g.moveTo(...P(...pt)); g.lineTo(...P(0, pt[1])); g.stroke(); g.setLineDash([]);
+        g.strokeStyle = COL.gold; g.lineWidth = 4; g.beginPath(); g.moveTo(P(0, 0)[0] - 8, P(0, 0)[1]); g.lineTo(P(0, pt[1])[0] - 8, P(0, pt[1])[1]); g.stroke();
+        // equal steps of turn, every 7.5°, and the pieces of shadow they cast
+        g.lineWidth = 1.2;
+        for (let k = 1; k * 7.5 <= t + 1e-9; k++) {
+            const a = k * 7.5 * D, q = [Math.cos(a), Math.sin(a)], [x1, y1] = P(...q), [x0, y0] = P(0, q[1]);
+            g.strokeStyle = COL.circle; g.beginPath(); g.moveTo(x1 - 5 * q[0], y1 + 5 * q[1]); g.lineTo(x1 + 5 * q[0], y1 - 5 * q[1]); g.stroke();
+            g.strokeStyle = '#000'; g.beginPath(); g.moveTo(x0 - 13, y0); g.lineTo(x0 - 3, y0); g.stroke();
+        }
+        dot(g, ...P(...pt), 5, COL.circle);
+        text(g, 'home', ...P(1.02, 0.03), '#e6e4ee');
+        text(g, 'shadow', P(0, 0)[0] - 14, P(0, pt[1] / 2)[1] + 4, COL.gold, 11, 'right');
+        text(g, `turn ${th.toFixed(3)}`, ...P(Math.cos(th / 2) * 1.04, Math.sin(th / 2) * 1.04), COL.circle, 11.5);
+        const v = vantages(t);
+        $('vant').textContent = `turn θ = ${v.turn.toFixed(4)}   its shadow sin θ = ${v.shadow.toFixed(4)}\n` +
+            `outer, the turn over its shadow, θ/sin θ = ${v.outer.toFixed(4)}   inner, the shadow over the turn, sin θ/θ = ${v.inner.toFixed(4)}   product ${v.product.toFixed(4)}` +
+            (t >= 89.95 ? `\nat the horizon: π/2 = ${(Math.PI / 2).toFixed(4)} and 2/π = ${(2 / Math.PI).toFixed(4)}, the even turn's mean shadow (Buffon)` : '');
+    }
+
+    function drawMean() {
+        const [g, W, Hc] = fit($('mean')), t = state.t;
+        const lo = -1, hi = 9, ymax = 21, L = 34, R = 62, T = 16, B = 30;
+        const X = lg => L + (lg - lo) / (hi - lo) * (W - L - R), Y = v => Hc - B - v / ymax * (Hc - B - T);
+        g.strokeStyle = 'rgba(255,255,255,0.08)'; g.lineWidth = 1; g.beginPath();
+        for (let k = lo; k <= hi; k++) { g.moveTo(X(k), Y(0)); g.lineTo(X(k), Y(ymax)); }
+        for (let v = 5; v <= 20; v += 5) { g.moveTo(X(lo), Y(v)); g.lineTo(X(hi), Y(v)); }
+        g.stroke();
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(X(lo), Y(ymax)); g.lineTo(X(lo), Y(0)); g.lineTo(X(hi), Y(0)); g.stroke();
+        for (let k = lo; k <= hi; k += (W < 420 ? 2 : 1)) text(g, k === -1 ? '0.1' : k === 0 ? '1' : k === 1 ? '10' : `10${sup(k)}`, X(k), Hc - 12, '#8a8a96', 11, 'center');
+        for (let v = 0; v <= 20; v += 5) text(g, String(v), L - 6, Y(v) + 4, '#8a8a96', 11, 'right');
+        text(g, 'S', X(hi) + 20, Hc - 12, '#8a8a96', 11);
+        // every median: the corner
+        g.strokeStyle = COL.gold; g.lineWidth = 1.6; g.beginPath(); g.moveTo(X(0), Y(0)); g.lineTo(X(0), Y(ymax)); g.stroke();
+        text(g, 'every median', X(0) + 5, Y(ymax) + 12, COL.gold, 11);
+        // the reading at θ
+        const lr = Math.log10(Math.tan(Math.max(0.01, t) * D));
+        if (lr > lo && lr < hi) { g.strokeStyle = 'rgba(230,228,238,0.45)'; g.lineWidth = 1; g.beginPath(); g.moveTo(X(lr), Y(0)); g.lineTo(X(lr), Y(ymax)); g.stroke(); }
+        const curve = (f, col, w, dash) => {
+            g.strokeStyle = col; g.lineWidth = w; g.setLineDash(dash || []); g.beginPath();
+            for (let i = 0; i <= 400; i++) { const lg = lo + (hi - lo) * i / 400, q = [X(lg), Y(f(10 ** lg))]; i ? g.lineTo(...q) : g.moveTo(...q); }
+            g.stroke(); g.setLineDash([]);
+        };
+        curve(tmeanWeighted, 'rgba(230,228,238,0.6)', 1.4, [5, 4]);
+        for (const p of PATHS) curve(S => tmean(p, S), p === state.path ? COL[p] : rgba(COL[p], 0.45), p === state.path ? 2.6 : 1.4);
+        const end = 10 ** hi;
+        text(g, 'each ×10', X(hi) + 4, T + 2, '#8a8a96', 10.5);
+        for (const p of PATHS) text(g, `+${(rho0[p] * LN10).toFixed(3)}`, X(hi) + 4, Y(tmean(p, end)) + 4, COL[p], 10.5);
+        text(g, '→ 4/π', X(hi) + 4, Y(tmeanWeighted(end)) - 4, '#e6e4ee', 10.5);
+    }
+
+    function hud() {
+        const t = state.t, f = p => b(p, t).toFixed(3);
+        return `θ ${t.toFixed(1)}°   the reading v/h = ${fmtS(reading(t))}, the direction alone: the same on every path\n` +
+            `b, the share of the sweep done:  circle ${f('circle')}   line ${f('line')}   square ${f('square')}   (circle weighted by sin² 2θ: ${bWeighted(t).toFixed(3)})\n` +
+            `fair: b(θ) + b(90° − θ) = 1 on each   all three ½ at the corner, 45°` +
+            (Math.abs(t - 45) < 0.05 ? '   ← here' : '');
+    }
+
+    function draw() {
+        state.t = +$('theta').value;
+        for (const bt of document.querySelectorAll('button[data-path]')) bt.classList.toggle('on', bt.dataset.path === state.path);
+        drawPlane(); drawShare(); drawTurn(); drawMean();
+        $('hud').textContent = hud();
+    }
+
+    let playing = false, dir = 1, last = null;
+    function tick(now) {
+        if (playing) {
+            const dt = last === null ? 0 : Math.min(0.1, (now - last) / 1000); let t = +$('theta').value + dir * 15 * dt;
+            if (t >= 90) { t = 90; dir = -1; } if (t <= 0) { t = 0; dir = 1; }
+            $('theta').value = t; draw();
+        }
+        last = now; requestAnimationFrame(tick);
+    }
+    const stop = () => { playing = false; $('play').textContent = 'play'; $('play').classList.remove('on'); };
+    $('play').addEventListener('click', () => { playing = !playing; $('play').textContent = playing ? 'pause' : 'play'; $('play').classList.toggle('on', playing); });
+    $('corner').addEventListener('click', () => { stop(); $('theta').value = 45; draw(); });
+    $('theta').addEventListener('input', draw);
+    for (const bt of document.querySelectorAll('button[data-path]')) bt.addEventListener('click', () => { state.path = bt.dataset.path; draw(); });
+    window.addEventListener('resize', draw);
+
+    const q = new URLSearchParams(location.search);
+    if (PATHS.includes(q.get('path'))) state.path = q.get('path');
+    if (q.has('t')) $('theta').value = Math.min(90, Math.max(0, +q.get('t') || 0));
+    draw(); requestAnimationFrame(tick);
+
+    window.__paths = {
+        paths: PATHS, b, bWeighted, measure, meet, along, rho0, tmean, tmeanWeighted, perDecade, vantages,
+        hud: () => $('hud').textContent, vant: () => $('vant').textContent,
+        set(o = {}) { if (o.path && PATHS.includes(o.path)) state.path = o.path; if (o.t !== undefined) $('theta').value = o.t; stop(); draw(); return { ...state }; },
+        state: () => ({ ...state }),
+    };
+})();
+</script>
+</body>
+</html>

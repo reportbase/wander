@@ -1533,6 +1533,24 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    symmetry alone does not make it. What the framework adds is that the core of the main result survives the choice:
    any selection that treats the two parties alike puts the median at the corner, and leaves no mean if its weight
    does not vanish at the horizon (Theorem 6(e)).
+
+   Three paths from all of h to all of v show what that leaves free. Sweep each evenly along its own length, and write
+   b for the share of the sweep done when the direction θ is reached:
+
+   | path, swept evenly along its length | b | at 22.5° | at the corner, 45° | at 67.5° | the mean below s, per tenfold of s |
+   |---|---|---|---|---|---|
+   | the circle, h² + v² = 1 | 2θ/π | 1/4 | 1/2 | 3/4 | (2/π)·ln 10 ≈ 1.47 |
+   | the line, h + v = 1 | tan θ/(1 + tan θ) | 1 − 1/√2 ≈ 0.293 | 1/2 | 1/√2 ≈ 0.707 | ln 10 ≈ 2.30 |
+   | the square's edges, the larger of h and v at 1 | tan θ/2, then 1 − cot θ/2 | (√2 − 1)/2 ≈ 0.207 | 1/2 | (3 − √2)/2 ≈ 0.793 | (ln 10)/2 ≈ 1.15 |
+
+   Each has b(θ) + b(90° − θ) = 1. They agree at home (0), at the corner (½) and at the horizon (1), and part in
+   between. So the two ends, the flip and fairness fix the corner and the median, and leave the scale between them
+   free. Only the circle is even in the turn, and the even turn is what gives b = 2θ/π, the Cauchy's exact shape and
+   the factor 2/π: the premise selects the geometry, and classical geometry supplies the factor. None of the three has
+   a mean. The mean of the readings below s grows, far out, by a fixed amount each time s grows tenfold (the last
+   column), because each weight reaches the horizon. The horizon condition does real work: the circle weighted by
+   sin² 2θ also treats the two parties alike and keeps its median at the corner, but it vanishes at home and at the
+   horizon, and its readings have a mean, 4/π.
 3. *No measure on a level.* Is there a principled reason a level could not carry a measure before anything arrives?
 4. *Fairness.* Proposition 2(b) needs the reading to treat both sides alike although the reader's knowledge does not.
    Is that more than a choice?
