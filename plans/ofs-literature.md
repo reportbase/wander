@@ -164,3 +164,38 @@ with Jaynes 1973 and Drory 2015; Gull 1988; Lupton et al. 1999; van Fraassen 200
 - **Drory (2015) bears on open question 2** and should be answered in OFS: the measure on directions depends on how the
   selection is made, which OFS concedes ("where the evenness comes from is a choice"); Theorem 6(e) is the reply, since
   the median at the corner and the missing mean do not depend on that choice.
+
+### Cited (13 October; Tom: "ok, cite the prior work in OFS")
+
+Each source was checked again before it was cited, by fresh searches: the publisher's or an index's record (DOI,
+volume, pages) and its abstract. Full texts stayed out of reach (the proxy blocks arXiv and the publishers), so what each
+is cited for rests on its abstract or on how later papers describe it.
+
+| source | where in OFS | checked | corrections to the agent's report |
+|---|---|---|---|
+| Jones 1999, *Am. Stat.* 53(2), 99–102 | §7.8, 6(a) | DOI 10.1080/00031305.1999.10474439; abstract | none |
+| Cacoullos 2014, *JMVA* 128, 147–153 | §7.8; Proposition 5(e) | DOI 10.1016/j.jmva.2014.03.010; abstract (the polar angle's tangent vector Cauchy under spherical symmetry) | none |
+| Jones 2008a, *JMVA* 99(3), 572–573 | §7.8, 5(d) forward | DOI 10.1016/j.jmva.2006.05.001; listing | none |
+| Stevens 1946, *Science* 103(2684), 677–680 | §7.8, 6(b)–(c) | secondary descriptions (the median for ordinal scales, not the mean) | none |
+| Seshadri 1965, *Canad. Math. Bull.* 8, 819–824 | §7.8, 6(e) | Cambridge listing; reference in Cacoullos and Papadatos | the title has "reciprocal", singular |
+| Jones 2008b, *JSPI* 138(10), 3039–3043 | §7.8, 6(e) | DOI 10.1016/j.jspi.2007.11.006; abstract (log-symmetry) | none |
+| Cacoullos and Papadatos 2013, *SPL* 83(1), 9–12 | §7.8, 6(e) | DOI 10.1016/j.spl.2012.06.032; abstract | none |
+| Gull 1988, in Erickson and Smith (eds), vol. 1, 53–74; Sivia and Skilling 2006 | §7.8, the lighthouse | Gull's list of papers; the lighthouse attributed to Gull by Sivia's presentation and later notes | the problem's text in Gull's chapter not seen |
+| Frank and Smith 2010, *Entropy* 12(3), 289–303; Frank 2014, *Entropy* 16(11), 6059–6098 | §7.8, the nearest reading | DOI 10.3390/e12030289; abstracts | Smith is D. Eric Smith |
+| Leonard 2011, *Bayesian Analysis* 6(4), 727–754 | §11.1 | DOI 10.1214/11-BA627; abstract (the slope's posterior unchanged by exchanging and rescaling); the `leiv` package's manual (the default prior the rotation-invariant Cauchy) | the author is David Leonard |
+| Jaynes 1973, *Found. Phys.* 3(4), 477–493 | §11.1, §11.2 Q2 | DOI 10.1007/BF00709116 | the end page is 493 in most records, 492 in some |
+| Drory 2015, *Found. Phys.* 45(4), 439–460 | §11.2 Q2, answered | DOI 10.1007/s10701-015-9876-7; arXiv abstract | the start page seen (439), the end page from memory |
+| Lupton, Gunn and Szalay 1999, *AJ* 118(3), 1406–1410 | §11.3 | Princeton record; abstract | none |
+| van Fraassen 2008, OUP | §11.3 | standard | none |
+| Buckingham 1914, *Phys. Rev.* 4(4), 345–376 | §9, after Proposition 8 | standard | none |
+| Lee 1976, *Perception* 5(4), 437–459 | §9, Proposition 9 | DOI 10.1068/p050437; abstract | none |
+| Longuet-Higgins 1981, *Nature* 293, 133–135 | §9, Proposition 11 | DOI 10.1038/293133a0 | none |
+| Aczél, Roberts and Rosenbaum 1986, *JMAA* 119, 389–416 | §9, Proposition 14 | F. S. Roberts's list of publications; a later review's description | cited only as treating the equations in general |
+
+Not cited: Pillai and Meng 2016, Akaoka et al. 2022, Vanegas and Paula 2016, the wine/water papers, the Möbius papers
+beyond Knight and McCullagh, Koenderink 1984, Portugal and Svaiter 2011, Koenker and Bassett 1978, Narens 2002, Giere,
+Massimi, Gibson, Luneburg, Poincaré. They bear on the working papers more than on OFS's claims.
+
+Drory answered in OFS §11.2, question 2: the selection (the even turn) is a choice, and symmetry alone does not make it;
+the core of the main result, the median at the corner and no mean, survives any selection fair to the two parties
+(Theorem 6(e)).
