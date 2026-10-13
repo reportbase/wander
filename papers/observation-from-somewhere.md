@@ -104,6 +104,9 @@ as if a single observation held it. Section 3 sets out the readers in full.
   breadth to be its own, V = H. Only then is the sweep a turn, tracing a unit circle with the corner at distance 1
   whatever unit is chosen, and only then is there one even turn. Working back from the Cauchy, which is known, arrives
   at V = H (§5, §7.1). The other party's true size is a separate estimate (§9).
+- With two other parties the same holds once per party. Drawn at V = V₂ = H, the relation lies on one sphere, and the
+  reader sweeps one octant of it, a wedge. Swept evenly, its readings are the two-dimensional Cauchy: every pair keeps
+  its corner, and the reader is near in both readings for a third of them, not a half (§5, §7.1).
 - Inside the corner the reader can lay readings out in proportion; past it, if no scale is preferred, only a
   logarithmic layout is consistent. The reader has two address spaces joined at one corner (§6).
 - **Main result.** Sweeping the circle evenly from home yields the Cauchy distribution, and the Cauchy is the reader's
@@ -600,7 +603,10 @@ depends on c;
 h² + v² + v₂² = 1, where v₂ is a second v read against the same h;
 
 (e) the attitudes are turns of one rigid bar only if V = H: with c ≠ 1 nothing turns all of h into all of v, and there
-is no circle.
+is no circle;
+
+(f) with two other parties, assigned V and V₂, the attitudes are the directions of one rigid bar, the sphere
+h² + v² + v₂² = 1, only if V = V₂ = H.
 
 *Proof.* (a) By (P0) the other party must be assigned a breadth for there to be a relation, and by (P1) the reader's
 only breadth is H, so the assignment is H times a number c. A unit relation v lies in [0, 1] however large V is, so no
@@ -612,7 +618,8 @@ V/H. (d) Once both parties share a unit nothing prefers one side of a freedom, s
 walk through the facings must flip each freedom an even number of times, so the facings are the 2ⁿ vertices of an
 n-cube, walked as a Gray code. (e) A turn keeps the bar's length. All of h is the bar at length H and all of v the bar
 at length cH, so a turn carries one to the other only if c = 1. With c ≠ 1 the tip must stretch on its way, along the
-ellipse of (c) or some other path. ∎
+ellipse of (c) or some other path. (f) By (e) applied to each pair: all of v and all of v₂ must each be the bar at
+length H. ∎
 
 **What V = H means.** Setting V = H is a rule of representation: the reader uses its own breadth as the unit for the
 other party. It sets the mountain equal to its thumb because its thumb is the only measure it has. It is not a claim
@@ -817,8 +824,35 @@ itself. (d) A direction φ from home in the drawing has tan φ = c·(v/h). With 
 P(v/h ≤ r) = P(φ ≤ arctan(cr)) = (2/π)·arctan(cr): a half-Cauchy of scale 1/c, with median 1/c. The flip v/h ↦ h/v
 carries it to scale c. It is the law of (b), and unchanged by the flip, exactly when c = 1. ∎
 
+**Proposition 5, continued: two other parties.** (e) Let the reader assign two other parties V = V₂ = H, so that the
+relation lies on the sphere of Proposition 3(f), and sweep one facing of every freedom, the octant h, v, v₂ ≥ 0, evenly
+by area. Write a = v/h and b = v₂/h. Then:
+- the readings (a, b) have density 2/(π(1 + a² + b²)^(3/2)) on [0, ∞)², the two-dimensional half-Cauchy;
+- each of v/h, v₂/h and v/v₂ alone has the law of (b), with its median at its own corner and no mean;
+- the six orderings of h, v and v₂ are equally likely, so the reader is near in both readings (h the largest) for a
+  third of the octant, past in one for a third and past in both for a third;
+- drawn at V = c₁H and V₂ = c₂H and swept evenly by direction in the drawing, the medians of v/h, v₂/h and v/v₂ are 1/c₁,
+  1/c₂ and c₂/c₁. Every pair keeps its corner only if c₁ = c₂ = 1, and a pair keeps its own only if its two parties are
+  drawn at one length.
+
+*Proof.* The point of the octant in direction (1, a, b) is (1, a, b)/r with r² = 1 + a² + b². Projected from the centre
+onto the plane h = 1, an element da·db of the plane at distance r from the centre subtends dA = da·db·cos α/r² of the
+sphere, where α is the angle between the ray and the plane's normal, cos α = 1/r; so dA = da·db/r³. In polar
+coordinates on that plane, a = ρ cos ψ and b = ρ sin ψ, ∫₀^∞ ρ·dρ/(1 + ρ²)^(3/2) = 1, so the octant's area is π/2 and ψ
+is spread evenly over [0, π/2]; hence b/a = tan ψ, which is v₂/v, has the law of (b). Integrating b out, ∫₀^∞ db/(1 + a² + b²)^(3/2) = 1/(1 + a²), which gives the law of (b) for
+a, and likewise for b. Exchanging any two of h, v and v₂ is a symmetry of the sphere that keeps the octant, so the six
+orderings have equal areas; h is the largest in two of them. In the drawing an even direction is (1, c₁a, c₂b)
+normalised, so (c₁a, c₂b) has the law above and each median is divided by its c. ∎
+
+The wedge is made at each observation, not taken from a sphere the reader holds: the whole sphere, every facing drawn
+together, is the completed view. A sphere that placed every place by its direction and its distance would need every
+distance, which no situated reader has. The wedge needs no size: the readings are ratios, laid by the two-dimensional
+Cauchy. What it lacks is what the circle lacks, once per party: V/H and V₂/H. On the circle near and far were halves;
+with three parties the reader is near in both readings for a third of its addresses.
+
 In classical terms the readings are the tangent of a uniformly distributed angle: the gnomonic projection of a uniform
-direction.
+direction. For two other parties the gnomonic projection of a uniform direction on the sphere is the multivariate
+Cauchy (the multivariate t with one degree of freedom), whose marginals are Cauchy (Cacoullos 2014).
 
 **Working back from the Cauchy.** The Cauchy is known: it is the tangent of an angle turned evenly. Read backward, from
 the known law to what it needs, each step is forced by the one before.
@@ -1066,8 +1100,28 @@ The same split appears in familiar places.
 The Cauchy as the image of a uniform angle (the gnomonic projection of uniform measure on a hemisphere), its invariance
 under Möbius maps and its missing mean are classical (Knight 1976; McCullagh 1996; Pitman and Williams 1967; Cuadras
 2002; Stigler 1974), as are the facts that the mean of n Cauchy variates is again Cauchy and that order statistics
-follow every increasing map. What is new here is the reading: which reader, knowing what, receives the Cauchy, and that
-what it receives is its own addresses rather than anything in the world.
+follow every increasing map; those facts are part (d). The other parts of Theorem 6 are in print too.
+- *Part (a).* The ratio of two components of any spherically symmetric vector is Cauchy, whatever its radial law, since
+  its direction is uniform and independent of its length (Jones 1999). In more dimensions the tangents of the polar
+  angle are multivariate Cauchy (Cacoullos 2014), the law of Proposition 5(e). Under elliptical symmetry the ratio is a
+  Cauchy of another scale (Jones 2008a), the forward half of Proposition 5(d). This is the reach cancelling.
+- *Parts (b) and (c).* That the median keeps its place under every order-preserving transformation, and the mean only
+  under linear ones, is Stevens's classification of scales of measurement (1946).
+- *Part (e).* Positive variables with the same law as their reciprocal were characterized by Seshadri (1965) and are
+  called log-symmetric (Jones 2008b); a ratio X/Y has that property exactly when X and Y are, or can be chosen to be,
+  exchangeable (Cacoullos and Papadatos 2013).
+- *The textbook case* is the lighthouse (Gull 1988; Sivia and Skilling 2006): flashes sent at evenly spread angles land
+  along the shore as a Cauchy, and the lamp's position is found from the median or the likelihood, never the mean. There
+  the evenness belongs to the lamp, a fact about the world. Our claim concerns the case where it belongs to the reader.
+- *The nearest prior reading* is Frank and Smith's (2010; Frank 2014): the scale on which an observer measures defines
+  the most likely distribution of what it observes, and a scale linear for small magnitudes and logarithmic for large
+  ones, as the reader's two address spaces are (§6), gives Student's t, of which the Cauchy is the case of one degree of
+  freedom. Their route is maximum entropy under a constraint set by the scale; ours is the cancellation of the reach,
+  which also separates what order keeps from what sums lose.
+
+What is new here is the reading: which reader, knowing what, receives the Cauchy, and that what it receives is its own
+addresses rather than anything in the world. We did not find that reading, or a split between addresses and payload, in
+print.
 
 ## 8. Level of detail and the choice of H
 
@@ -1144,8 +1198,22 @@ such observations, from any number of standpoints, fixes the scale;
 directly as a/L₀ or through a chain of readings whose ratios multiply to a/L₀, then a = L₀ times that product; and λ = 1
 is the only factor that leaves L₀ fixed. ∎
 
-This is the exact form of §3.4's "only two". The worked example of §10 is (b) in use: the baseline is a walk of one
-known H, and it fixes the mountain's distance and width.
+This is the exact form of §3.4's "only two". In physics it is the ground of dimensional analysis, in which only
+dimensionless ratios of amounts enter a law (Buckingham 1914). The worked example of §10 is (b) in use: the baseline is
+a walk of one known H, and it fixes the mountain's distance and width.
+
+**A sphere in a cube.** Put a sphere, free to turn, at the centre of a cube of half-extent e. From the centre each
+point u of the sphere goes along its ray to one point of the cube's surface, u·e/‖u‖_∞, on the face of u's largest
+component; every point of the surface is reached once, at every e and after any turn of the sphere, since the ray from
+the centre through a surface point meets the sphere once. Sphere and cube here are the drawings of every facing together;
+one wedge of the sphere lands on the three faces that meet at one corner of the cube, the cut "largest = 1" of §2,
+scaled by e. Every point inside the cube but its centre is t times its surface point for exactly one t in (0, 1], a
+unit relation: the cube's interior is held in proportion. So the pair
+(u, t) addresses every point of the cube, and it is the same pair at every extent. The point itself, in amounts, is e
+times it. A reader that holds the addresses and not e has the cube up to scale, as Proposition 8(a) says it must; it
+draws the cube at its own breadth, which is V = H again, right as addresses and off as amounts by the true e/H. Each
+face is the plane of one facing, so a sphere swept evenly lays the Cauchy of Proposition 5(e) on it: a face's middle
+quarter by area takes 38% of the face's directions, and its centre is 3^(3/2) ≈ 5.2 times as dense as its corners.
 
 **What reaches a reader of a payload.** Proposition 8 speaks of every reading at once. Read over time from one
 standpoint, or at once from several, it has four sharper forms. Each is classical: ratio invariance, division,
@@ -1158,7 +1226,8 @@ of amounts. For any positive function λ(t), the pair λ(t)·a(t), λ(t)·b(t) g
 
 A single stream fixes the course of the relation, not its parties. A thing coming nearer and a thing at rest growing at
 the matching rate are the same stream, and so is every mixture of the two. What the stream does fix is the relation's
-own pace, the reading over its rate, x/ẋ; for a thing coming nearer at a steady rate it is the time left until contact.
+own pace, the reading over its rate, x/ẋ; for a thing coming nearer at a steady rate it is the time left until contact,
+the quantity Lee (1976) proposed a driver reads directly when braking.
 A serial reader is given motion before it is given an object.
 
 **Proposition 10 (one denominator, at once).** Two readings taken at the same moment, x₁ = a₁/b₁ and x₂ = a₂/b₂, have
@@ -1187,7 +1256,8 @@ exactly one point, and moving both readers by a common similarity moves every me
 
 So one reader's readings, however many, fix no place. Laid out with nothing else, they return the circle of §5, the same
 from every figure. The figure comes back from a second standpoint, and its size from an agreed length. This is
-triangulation, read as a ladder of what each further standpoint buys.
+triangulation, read as a ladder of what each further standpoint buys; that two views fix a scene up to its scale is the
+basis of reconstruction from two images (Longuet-Higgins 1981).
 
 **Proposition 12 (below a step, the centroid first).** Payloads w₁, …, w_n > 0 at places x₁, …, x_n along a line are
 read through a step: a kernel K of total 1, mean 0 and spread σ². The reading f(x) = Σ w_i·K(x − x_i) has total
@@ -1296,7 +1366,8 @@ C = b(λ₀)/(a(λ₀) − 1). Then b(λ) = C·(a(λ) − 1) for every λ, so (L
 (L + C)(λ) = a(λ)·(L + C)(1), and (L + C)(1) ≠ 0 because L is not constant. So a is continuous and multiplicative,
 a(λ) = λ^p with p ≠ 0, and L = K·x^p − C. ∎
 
-This is classical: it is the form Luce (1959) found for any law that carries a ratio scale to a ratio or interval scale.
+This is classical: it is the form Luce (1959) found for any law that carries a ratio scale to a ratio or interval scale,
+and the functional equations behind it were later treated in general by Aczél, Roberts and Rosenbaum (1986).
 Neither kind of ruler has a corner, since no amount is laid differently from any other. The reader's own lay is
 neither. Proportional up to its corner and logarithmic past it (§6), it favours one amount, the one at its joint, and
 that amount is its own: its breadth H, under V = H.
@@ -1408,11 +1479,14 @@ x ↦ (x·cos α + sin α)/(cos α − x·sin α) and a rescaling as x ↦ λx. 
 which factors as turn, rescaling, turn; adding the flip x ↦ 1/x gives PGL(2,ℝ), the group that preserves cross ratios.
 The Cauchy family is the one family of distributions this group carries into itself (Knight 1976; McCullagh 1996).
 
-Choosing a measure by the transformations one is ignorant of is Jaynes's method of transformation groups (1968), and
-dx/x for an unknown scale is Jeffreys's prior (1939). The claim would therefore not be the principle itself, but that a
-situated reader's state of knowledge selects these three transformations, from which the structure follows. Two things
-remain outside it. Invariant measures are fixed only up to a constant, so the smooth join at the corner (c = 1) is still
-an added condition. And "no attitude preferred" still treats the sweep as the turning of a rigid bar.
+Choosing a measure by the transformations one is ignorant of is Jaynes's method of transformation groups (1968, 1973),
+and dx/x for an unknown scale is Jeffreys's prior (1939). The nearest use of these three transformations together is in
+fitting a line when both coordinates carry error: Leonard (2011) puts the Cauchy, the slope's law invariant under turns,
+on the slope, and the inference that results is unchanged by exchanging and by rescaling the two coordinates. The claim
+would therefore not be the principle itself, but that a situated reader's state of knowledge selects these three
+transformations, from which the structure follows. Two things remain outside it. Invariant measures are fixed only up to
+a constant, so the smooth join at the corner (c = 1) is still an added condition. And "no attitude preferred" still
+treats the sweep as the turning of a rigid bar.
 
 Which transformations a reader is ignorant of is chosen here, not derived. A reader ignorant of more or of fewer would
 be given other measures. Because the second of them presupposes turns, the principle cannot choose the circle over the
@@ -1442,7 +1516,12 @@ first of the three.
 2. *Why Euclidean, and why the even turn?* The readings are directions only, so the norm enters only through the
    measure on directions, and the two questions are one: is there a reason, from the reader's premises, that its weight
    on directions is the one every turn leaves unchanged, rather than the square's or the line's? The median at the
-   corner and the missing mean do not depend on the answer (Theorem 6(e)); the Cauchy's exact shape does.
+   corner and the missing mean do not depend on the answer (Theorem 6(e)); the Cauchy's exact shape does. The sharpest
+   form of the objection is Drory's (2015), against Jaynes's treatment of Bertrand's chord (1973): the same symmetries,
+   turns, rescaling and shifts, can be imposed in different ways, and give different measures, depending on how the
+   random selection is made. We grant it. Which selection the reader makes, the even turn, is a choice (§11.1), and
+   symmetry alone does not make it. What the framework adds is that the core of the main result survives the choice:
+   any selection that treats the two parties alike puts the median at the corner and leaves no mean.
 3. *No measure on a level.* Is there a principled reason a level could not carry a measure before anything arrives?
 4. *Fairness.* Proposition 2(b) needs the reading to treat both sides alike although the reader's knowledge does not.
    Is that more than a choice?
@@ -1473,10 +1552,13 @@ Cauchy's functional equation, Klein's Erlangen programme (1872), and Jaynes's an
 neighbours in measured perception include Gilinsky's perceived distance with a finite horizon (1951), Schwartz's
 log-polar map of visual cortex, proportional near the fovea and logarithmic beyond (1977), and the number-line
 literature, from logarithmic-to-linear shifts (Siegler and Opfer 2003; Dehaene et al. 2008) to proportion judgment on
-bounded lines (Barth and Paladino 2011). The view from nowhere is Nagel's phrase (1986); Haraway
-(1988) called the ideal of seeing everything from nowhere "the god trick". In terms of limits, classical work lets the
-reader's step go to zero first and then lets the count of things grow without bound; a situated reader has a fixed step
-and an unknown count.
+bounded lines (Barth and Paladino 2011). Scales that are linear near a unit and logarithmic far from it are common in
+practice, astronomy's asinh magnitudes among them (Lupton, Gunn and Szalay 1999); what §6 adds is the join placed at the
+flip's fixed point, where the two spacings agree. The view from nowhere is Nagel's phrase (1986); Haraway (1988) called
+the ideal of seeing everything from nowhere "the god trick", and van Fraassen (2008) argues that the measurer's own
+position enters measurement irreducibly, as the reader's does here. In terms of limits, classical work lets the reader's
+step go to zero first and then lets the count of things grow without bound; a situated reader has a fixed step and an
+unknown count.
 
 What we claim is not the pieces but their reading as one structure, set by what a reader knows of two breadths, and in
 particular that the Cauchy distribution is a situated reader's addresses, not its payload. Whether this is a better way
@@ -1505,13 +1587,25 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 
 ## References
 
+Aczél, J., Roberts, F. S. and Rosenbaum, Z. (1986). On scientific laws without dimensional constants. *Journal of
+Mathematical Analysis and Applications* 119, 389–416.
+
 Archimedes (c. 250 BC). *Measurement of a Circle*.
 
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.
 
+Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
+Review* 4(4), 345–376.
+
 Buffon, G.-L. Leclerc, comte de (1777). Essai d'arithmétique morale. In *Histoire naturelle, générale et particulière*,
 Supplément, tome 4. Imprimerie royale, Paris.
+
+Cacoullos, T. (2014). Polar angle tangent vectors follow Cauchy distributions under spherical symmetry. *Journal of
+Multivariate Analysis* 128, 147–153.
+
+Cacoullos, T. and Papadatos, N. (2013). Self-inverse and exchangeable random variables. *Statistics & Probability
+Letters* 83(1), 9–12.
 
 Crofton, M. W. (1868). On the theory of local probability, applied to straight lines drawn at random in a plane.
 *Philosophical Transactions of the Royal Society of London* 158, 181–199.
@@ -1521,14 +1615,36 @@ Cuadras, C. M. (2002). Geometrical understanding of the Cauchy distribution. *Q�
 Dehaene, S., Izard, V., Spelke, E. and Pica, P. (2008). Log or linear? Distinct intuitions of the number scale in Western
 and Amazonian indigene cultures. *Science* 320, 1217–1220.
 
+Drory, A. (2015). Failure and uses of Jaynes' principle of transformation groups. *Foundations of Physics* 45(4),
+439–460.
+
+van Fraassen, B. C. (2008). *Scientific Representation: Paradoxes of Perspective*. Oxford University Press.
+
+Frank, S. A. (2014). How to read probability distributions as statements about process. *Entropy* 16(11), 6059–6098.
+
+Frank, S. A. and Smith, D. E. (2010). Measurement invariance, entropy, and probability. *Entropy* 12(3), 289–303.
+
 Gilinsky, A. S. (1951). Perceived size and distance in visual space. *Psychological Review* 58, 460–482.
+
+Gull, S. F. (1988). Bayesian inductive inference and maximum entropy. In G. J. Erickson and C. R. Smith (eds),
+*Maximum-Entropy and Bayesian Methods in Science and Engineering*, vol. 1, 53–74. Kluwer, Dordrecht.
 
 Haraway, D. (1988). Situated knowledges: the science question in feminism and the privilege of partial perspective.
 *Feminist Studies* 14(3), 575–599.
 
 Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 
+Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3(4), 477–493.
+
 Jeffreys, H. (1939). *Theory of Probability*. Oxford University Press.
+
+Jones, M. C. (1999). Distributional relationships arising from simple trigonometric formulas. *The American
+Statistician* 53(2), 99–102.
+
+Jones, M. C. (2008a). The distribution of the ratio X/Y for all centred elliptically symmetric distributions.
+*Journal of Multivariate Analysis* 99(3), 572–573.
+
+Jones, M. C. (2008b). On reciprocal symmetry. *Journal of Statistical Planning and Inference* 138(10), 3039–3043.
 
 Kellogg, O. D. (1929). *Foundations of Potential Theory*. Springer, Berlin.
 
@@ -1540,7 +1656,19 @@ Knight, F. B. (1976). A characterization of the Cauchy type. *Proceedings of the
 Lamping, J., Rao, R. and Pirolli, P. (1995). A focus+context technique based on hyperbolic geometry for visualizing
 large hierarchies. *Proceedings of CHI '95*, 401–408.
 
+Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*
+5(4), 437–459.
+
+Leonard, D. (2011). Estimating a bivariate linear relationship. *Bayesian Analysis* 6(4), 727–754.
+
+Longuet-Higgins, H. C. (1981). A computer algorithm for reconstructing a scene from two projections. *Nature* 293,
+133–135.
+
 Luce, R. D. (1959). On the possible psychophysical laws. *Psychological Review* 66(2), 81–95.
+
+Lupton, R. H., Gunn, J. E. and Szalay, A. S. (1999). A modified magnitude system that produces well-behaved
+magnitudes, colors, and errors even for low signal-to-noise ratio measurements. *The Astronomical Journal* 118(3),
+1406–1410.
 
 McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *The Annals of Statistics* 24, 787–808.
 
@@ -1561,8 +1689,15 @@ Saint-Vincent, G. de (1647). *Opus geometricum quadraturae circuli et sectionum 
 Schwartz, E. L. (1977). Spatial mapping in the primate sensory projection: analytic structure and relevance to
 perception. *Biological Cybernetics* 25, 181–194.
 
+Seshadri, V. (1965). On random variables which have the same distribution as their reciprocal. *Canadian
+Mathematical Bulletin* 8, 819–824.
+
 Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation: evidence for multiple representations of
 numerical quantity. *Psychological Science* 14(3), 237–243.
+
+Sivia, D. S. and Skilling, J. (2006). *Data Analysis: A Bayesian Tutorial*, 2nd ed. Oxford University Press.
+
+Stevens, S. S. (1946). On the theory of scales of measurement. *Science* 103(2684), 677–680.
 
 Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the Cauchy distribution. *Biometrika*
 61(2), 375–380.

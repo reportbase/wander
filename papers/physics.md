@@ -103,6 +103,18 @@ bodies are pictures. They are never evidence here.
   dimensionless ratios are read, and since 2019 the SI fixes every base unit by an agreed value of a constant
   (the caesium frequency, c, h, e, k_B, N_A and the luminous efficacy): the agreed outside amounts of OFS Proposition
   8(b), and a unit agreed between readers as OFS §9 has it (§1).
+- 12 October, fourth: PXC, parallax from the corner (`plans/pxc-plan.md`; Tom: "show how parallax and situated observation are both needed. explore parallax from the perspecive of the corner."). Exact (mpmath) and
+  Monte Carlo: the relative error per unit angle is cosh(ln k), k = (B/2)/d, the parallel reader's bell, least at the
+  Thales circle; the error round there and stretched by d/(B/2) elsewhere; the band acosh(1/ε)/ln 2 levels each side.
+  P4 killed by my measure (the distance from the middle takes in the error along the baseline, which inside the circle
+  is the larger); run 2 not killed. Two eyes hold to about 650 m, Hipparcos's 1 mas to about 1 kpc, at 100% (§1; an
+  illustration, `parallax.html`). (*Corrected* the same evening: "about 2 kpc" was off by 2, since a published parallax
+  precision is for p = γ/2; and "least at the Thales circle" holds for the depth, on the bisector only.)
+- 12 October, fifth: parallax given its own working paper, `papers/parallax.md` (Tom: "put it in a parallax paper and
+  lets iterate there"; SPN R219), and taken out of `observation-from-somewhere.md`. PXC run 3 (exact): on the bisector
+  the depth is parallax's and has the corner; the error across the line of sight is the direction's and falls with
+  distance; both together are least at d = √2·(B/2); on the circle the error is round only at its top; off the bisector
+  the radial error is least inside the circle. Parallax is kept, like the inverse square, as a calibration case.
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -146,6 +158,7 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | levels of an approach (the reading doubling) | each takes half the time to contact read at its start; infinitely many before contact | the reader's clock | MOT P4 |
 | ωτ, the reading of the pair (speed across, speed in); its corner | how close a thing will pass, as a share of its distance: ωτ/√(1 + (ωτ)²); 1/√2 at the corner; bearing still, a collision | none (the clock cancels) | MOT P5 |
 | the corner of the pair (half-baseline, distance) | where a baseline reads distance best (a right angle of convergence), alike at d and (B/2)²/d | the breadth B | MOT P6, P7 |
+| the parallel reader's bell, sech of the levels from the corner; a band of log₂(2/ε) levels each side | parallax: the relative depth error per unit angle cosh(ln k), least at the Thales circle's top (on the bisector), the error round there and stretched by d/(B/2) elsewhere; the far edge d ≈ B/ε (stereo's depth error growing as d²) | the baseline B | PXC P1–P10; `parallax.md` |
 | the corner of the pair (stopping distance, distance); τ̇ + 1 = d/(2s) | stopping exactly at contact: Lee's τ̇ = −½ | none for the corner (the clock for τ̇) | MOT P11 |
 | a quantity unchanged when its pair swaps is stationary at the corner | a launch's longest range at 45° (complementary launches equal); all the energy passed at equal masses (as in maximum power transfer) | the pair's own amounts for the value, none for the corner | MOT P12 |
 | the facing's sine, 2k/(1 + k²) in the ratio | a launch's range, (U²/g)·sin(facing); a baseline's conditioning, sin γ | U and g; B | MOT P8, P12 |
@@ -529,7 +542,8 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
   supply it if wanted.
 - **A calibration as one shift, on real data** (from STC). A published parallax zero-point, the instrument's own scale
   error, should appear as one common shift in levels across a catalogue's distances, the same for every star linked to
-  it, and should not shrink with the number of stars. The archives that hold it (ESA, VizieR) are blocked here.
+  it, and should not shrink with the number of stars. The archives that hold it (ESA, VizieR) are blocked here. (Also
+  `papers/parallax.md` §8.)
 - **One dimension against two.** ISQ's reading separates an angular size (falling one level per level of distance) from
   its square, the light (two levels). Stars with measured angular diameters (interferometry) and parallaxes would test
   the one-level half directly.

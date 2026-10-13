@@ -491,6 +491,88 @@ try {
   }
   console.log(`${failures.length === before19 ? 'ok  ' : 'FAIL'} play-marbles.html (${mb.inBowl} marbles poured and at rest, the bowl and table carrying ${(mb.held * 100).toFixed(2)}% of the weight; the arc seen ahead ends at its first contact; a throw near the rim knocked out ${mb.out}, heard ${mb.heard.glass} glass, ${mb.heard.bowl} bowl, ${mb.heard.felt} felt; the strip throws)`);
 
+  // ── 20. zoom.html: what setting H does (OFS §8, "H is a zoom, not an escape"): the held window the same width in levels
+  //    at every H, a doubling of H one level's shift, addresses per level halving inward and flat (the reader's lay) or
+  //    mirrored (the in-place lay) outward, a cluster told apart at the corner and lost into home under a large H, detail
+  //    absolute inside the corner and relative past it ──
+  current = 'zoom.html';
+  const before20 = failures.length;
+  await page.goto(new URL('zoom.html', base).href, { waitUntil: 'load' });
+  const zm = await page.evaluate(() => { const z = __zoom, n = 32, o = {};
+    o.widths = [1 / 64, 1, 1024].map(H => [z.held(H, n, 'reader', 12).levels, z.held(H, n, 'inplace', 12).levels]);
+    o.shift = Math.max(...[-8, -3, -1, 0, 1, 3, 8].map(k => Math.abs(z.perLevel(k, 1, n, 'reader', 12) - z.perLevel(k + 1, 2, n, 'reader', 12))));
+    o.reader = [-3, -2, -1, 0, 1, 5].map(k => z.perLevel(k, 1, n, 'reader', 12));
+    o.inplace = [-3, -2, -1, 0, 1, 2].map(k => z.perLevel(k, 1, n, 'inplace', 12));
+    const w = z.makeWorld('nested'), atC = z.read(w, 100, n, 'reader', 12), big = z.read(w, 1e4, n, 'reader', 12);
+    o.atCorner = atC.resolved.includes(2); o.lostSmall = !big.resolved.includes(2) && big.home >= 35;
+    o.near = [z.detail(0.25, 1, n, 'reader'), z.detail(0.5, 1, n, 'reader')];
+    o.far = [z.detail(4, 1, n, 'reader') / 4, z.detail(64, 1, n, 'reader') / 64, z.detail(64, 1, n, 'inplace') / 64];
+    z.set({ H: 8, n: 64, world: 'even' }); o.hud = document.getElementById('hud').textContent.length > 0;
+    return o; });
+  const nl2 = 32 * Math.LN2;
+  if (!zm.widths.every(([r, i]) => r === 17 && i === 10) || !(zm.shift < 1e-12) ||
+      zm.reader.slice(0, 3).join() !== '4,8,16' || !zm.reader.slice(3).every(a => Math.abs(a - nl2) < 1e-9) ||
+      zm.inplace.join() !== '4,8,16,16,8,4' || !zm.atCorner || !zm.lostSmall ||
+      zm.near[0] !== zm.near[1] || Math.abs(zm.far[0] - 1 / 32) > 1e-15 || Math.abs(zm.far[1] - 1 / 32) > 1e-15 || zm.far[2] !== 2 || !zm.hud)
+    failures.push(`[zoom.html] ${JSON.stringify(zm)}`);
+  console.log(`${failures.length === before20 ? 'ok  ' : 'FAIL'} zoom.html (held ${zm.widths[0][0]} levels on the reader's lay and ${zm.widths[0][1]} on the in-place lay at every H; doubling H shifts the levels exactly; addresses per level ${zm.reader.slice(0, 3).join(', ')} inward, ${zm.reader[3].toFixed(1)} a level past the corner, the in-place lay ${zm.inplace.join(', ')}; a cluster told apart at the corner and lost into home under H 100 times larger)`);
+
+  // ── 21. parallax.html: parallax from the corner (PXC): the error per step least and round at the corner, the same at k
+  //    and 1/k, the band acosh(1/ε)/ln 2 levels each side, the error stretched by d/(B/2) along the line of sight, one
+  //    reader alone holding only rays ──
+  current = 'parallax.html';
+  const before21 = failures.length;
+  await page.goto(new URL('parallax.html', base).href, { waitUntil: 'load' });
+  const px = await page.evaluate(() => { const p = __parallax, o = {};
+    o.r1 = p.relErr(1, 1e-3); o.r4 = [p.relErr(4, 1e-3), p.relErr(0.25, 1e-3)]; o.band = p.band(1e-3);
+    const c = p.triangulate(0, 1, 1e-6, 4000, 7), f = p.triangulate(0, 8, 1e-6, 4000, 8), nr = p.triangulate(0, 0.125, 1e-6, 4000, 9);
+    o.aspect = [c.sAlong / c.sAcross, f.sAlong / f.sAcross, nr.sAlong / nr.sAcross];
+    o.both = p.counts(); p.set({ mode: 'A' }); o.alone = p.counts(); p.set({ mode: 'both', preset: 'eyes' });
+    o.hud = document.getElementById('hud').textContent.length > 0; return o; });
+  if (Math.abs(px.r1 - 1e-3) > 1e-15 || Math.abs(px.r4[0] - 2.125e-3) > 1e-15 || px.r4[0] !== px.r4[1] ||
+      Math.abs(px.band - 10.965783924) > 1e-8 || Math.abs(px.aspect[0] - 1) > 0.1 || Math.abs(px.aspect[1] / 8 - 1) > 0.1 ||
+      Math.abs(px.aspect[2] / 0.125 - 1) > 0.1 || !(px.both.crisp > 0 && px.both.lost > 0) || px.alone.ray !== px.both.crisp + px.both.stretched + px.both.lost || !px.hud)
+    failures.push(`[parallax.html] ${JSON.stringify(px)}`);
+  console.log(`${failures.length === before21 ? 'ok  ' : 'FAIL'} parallax.html (error per step 1 at the corner, ×2.125 two levels either side; band ${px.band.toFixed(3)} levels each side at ε = 1e-3; the error round at the corner (${px.aspect[0].toFixed(2)}), stretched ${px.aspect[1].toFixed(1)} at 8 half-baselines and ${px.aspect[2].toFixed(3)} at an eighth; ${px.both.crisp} held, ${px.both.stretched} stretched, ${px.both.lost} lost to a ray; one reader alone, ${px.alone.ray} rays)`);
+
+  // ── 22. sphere-cube.html: the sphere in the cube (WDG; SPN R221): every point of a turning sphere lands on one point of a
+  //    cube at any extent, its address (u, t) the same at every extent and the face its largest component's; the even
+  //    sphere gives each face a sixth, a face's middle quarter 38%, the wedge's three faces a third each; with the extent
+  //    unknown the reader draws the cube at H, its amounts off by e/H ──
+  current = 'sphere-cube.html';
+  const before22 = failures.length;
+  // The page loads three.js from jsDelivr. Serve the same pinned version from node_modules (a devDependency) so the test
+  // does not depend on the CDN; fall through to the network if it is not installed.
+  await page.route(/^https:\/\/cdn\.jsdelivr\.net\/npm\/three@0\.160\.0\//, async route => {
+    const rel = new URL(route.request().url()).pathname.replace('/npm/three@0.160.0/', '');
+    try { await route.fulfill({ status: 200, contentType: 'text/javascript', body: await readFile(join(ROOT, 'node_modules/three', rel)) }); }
+    catch { await route.continue(); }
+  });
+  await page.goto(new URL('sphere-cube.html?step=6&turn=0', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__sphereCube && __sphereCube.frames > 2, null, { timeout: 30000 });
+  const sq = await page.evaluate(() => { const c = __sphereCube, o = { rt: 0, ad: 0, faceOk: true };
+    const pts = [];
+    for (let i = 0; i < 9; i++) for (let j = 0; j < 9; j++) for (let k = 0; k < 9; k++) {
+      const x = [(i - 4) / 4.1, (j - 4.2) / 4.3, (k - 3.9) / 3.9]; if (Math.hypot(...x) > 1e-9) pts.push(x); }
+    for (const [axis, ang] of [[[1, 0, 0], 0], [[0.3, 0.8, 0.1], 1.1], [[-0.5, 0.2, 0.9], 2.3]]) {
+      c.turnBy(axis, ang);
+      for (const x of pts) {
+        for (const e of [1e-3, 0.5, 1]) { const X = x.map(v => v * e), a = c.address(X, e), back = c.point(a.u, a.t, e);
+          o.rt = Math.max(o.rt, Math.hypot(back[0] - X[0], back[1] - X[1], back[2] - X[2]) / Math.hypot(...X)); }
+        const a1 = c.address(x, 1), a2 = c.address(x.map(v => v * 1e-3), 1e-3);
+        o.ad = Math.max(o.ad, Math.abs(a1.t - a2.t), ...a1.u.map((v, k) => Math.abs(v - a2.u[k])));
+        const m = Math.max(...x.map(Math.abs)), lg = x.findIndex(v => Math.abs(v) === m);
+        if (c.faceOf(x).slice(1) !== ['h', 'v', 'v₂'][lg]) o.faceOk = false;
+      }
+    }
+    const st = c.stats(6000); o.faces = st.faceShares; o.mid = st.middleShare; o.pred = c.predictedMiddle; o.wedge = st.wedge.shares;
+    c.set({ step: 5, e: 0.25, known: false }); o.hud = c.hud(); o.frames = c.frames; o.webgl = c.webgl; return o; });
+  if (!(sq.rt < 1e-12) || !(sq.ad < 1e-12) || !sq.faceOk || sq.faces.some(f => Math.abs(f - 1 / 6) > 0.01) ||
+      Math.abs(sq.mid - sq.pred) > 0.01 || sq.wedge.some(f => Math.abs(f - 1 / 3) > 0.02) ||
+      !/off by e\/H = 0\.250, 2\.00 levels/.test(sq.hud) || !(sq.frames > 0) || !sq.webgl)
+    failures.push(`[sphere-cube.html] ${JSON.stringify({ ...sq, hud: sq.hud.slice(0, 200) })}`);
+  console.log(`${failures.length === before22 ? 'ok  ' : 'FAIL'} sphere-cube.html (round trip ${sq.rt.toExponential(1)}, the address the same at every extent to ${sq.ad.toExponential(1)}, the face the largest component's; faces ${sq.faces.map(f => f.toFixed(3)).join(' ')}; a face's middle quarter ${(100 * sq.mid).toFixed(1)}% (exactly ${(100 * sq.pred).toFixed(1)}%); the wedge's faces ${sq.wedge.map(f => (100 * f).toFixed(1) + '%').join(', ')}; extent unknown, off by e/H)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

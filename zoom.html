@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>H is a zoom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    zoom.html: what setting H does to the near field, the far field, zoom and level of detail (12 October 2026; Tom:
+    "create a demo that shows what the implications of setting H for near and far field zoom and LOD"). A standalone page
+    like mountain.html. Behind it: observation-from-somewhere.md §8 ("The count is the level of detail", "H is a zoom, not
+    an escape") and SPN Proposition 1.2.
+
+    Keep the case. x and H are amounts: x a thing's size or distance, H the reader's breadth, its thumb. The reader reads
+    s = x/H, an amount ratio that equals the unit relations' v/h under the drawing V = H (OFS §5). The geometry has no
+    scale; H only says which amounts sit where.
+      - The lay of a reading s: s up to the corner (s ≤ 1, the near field, in proportion); past it either the reader's lay,
+        1 + ln s (one equal step per doubling, no horizon), or the in-place lay, 2 − 1/s (the horizon at 2).
+      - The level of detail is a count: n addresses across the near field, so one address is ε = 1/n of the lay, the same
+        room everywhere on it. Two things are told apart when they fall in different addresses.
+      - Things with s < ε fall into the first address: home. Past the corner the reader's lay holds L levels (to 1 + L ln 2);
+        the in-place lay holds everything up to its horizon, where its last address takes all with s ≥ n.
+    So H slides a window of held amounts, [H/n, H·2^L] (reader's) or [H/n, H·n] (in-place), whose width in levels never
+    changes: H is a zoom, not an escape. Inside the corner the finest difference told apart is εH, absolute; past it, εx on
+    the reader's lay (relative, every doubling alike) and εx²/H on the in-place lay. A thing at x is read at true scale and
+    in full relative detail only when H = x: at the corner.
+    Links: ?H=&n=&L=&lay=inplace&world=even|scatter. Test hook: window.__zoom.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 19px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 74ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    .ctl { margin-top: 10px }
+    .c { display: grid; grid-template-columns: 22ch 1fr 16ch; grid-template-areas: "l i o"; gap: 4px 10px; align-items: center; margin: 4px 0 }
+    .c label { grid-area: l; color: var(--dim) } .c input { grid-area: i } .c output { grid-area: o; color: var(--bright); text-align: right }
+    @media (max-width: 560px) { .c { grid-template-columns: 1fr auto; grid-template-areas: "l o" "i i" } }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { width: 100%; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 10px }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .violet { color: var(--violet) } .red { color: var(--red) }
+    .sep { color: var(--dim); margin: 0 4px }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>H is a zoom</h1>
+    <p class="lede">A reader chooses one breadth, <span class="gold">H, its thumb</span>, and lays everything against it: in
+    proportion up to the corner, where a thing is as large as H, and one equal step per doubling past it. It has only so
+    many addresses, its level of detail. So setting H slides a window of held sizes whose width never changes. Below the
+    window things fall into the first address and become home; past it they leave the lay. Inside the corner detail is
+    <span class="gold">absolute</span>; past it, <span class="teal">relative</span>, every doubling alike. Only at the corner
+    is a thing read both at true scale and in full detail, so the best H puts the thing read there.</p>
+    <div class="panel">
+        <div class="row">
+            <button id="zin">zoom in (H ÷ 2)</button>
+            <button id="zout">zoom out (H × 2)</button>
+            <span class="sep">·</span>
+            <button id="layR" class="on">reader's lay</button>
+            <button id="layI">in-place lay</button>
+            <span class="sep">·</span>
+            <button id="wN" class="on">nested clusters</button>
+            <button id="wE">evenly spaced</button>
+            <button id="wS">scattered</button>
+        </div>
+        <div class="ctl">
+            <div class="c"><label for="H">H, the thumb</label><input id="H" type="range" min="-17" max="17" step="0.01" value="0"><output id="Ho"></output></div>
+            <div class="c"><label for="n">level of detail</label><input id="n" type="range" min="3" max="8" step="1" value="5"><output id="no"></output></div>
+            <div class="c"><label for="L">levels past the corner</label><input id="L" type="range" min="2" max="24" step="1" value="12"><output id="Lo"></output></div>
+        </div>
+        <h2 style="margin-top:14px">From nowhere: every size, and the window H holds</h2>
+        <canvas id="world" height="150"></canvas>
+        <p class="cap">Sizes on a scale of doublings, as no reader holds them. <span class="gold">Gold</span>: the near field,
+        from one address (H/n) up to H. <span class="teal">Teal</span>: the far field the reader holds. Grey: into home, past the lay,
+        or all at the horizon. Click anywhere to read that size at the corner (H = that size).</p>
+        <h2>From the reader: its lay, address by address</h2>
+        <canvas id="lay" height="180"></canvas>
+        <p class="cap">The lay from home to its edge, cut into addresses of equal room. Each dot is an address with something in
+        it; a number is how many things share it, and so are not told apart. The corner, where a thing is one H, is the
+        dashed line.</p>
+        <div class="grid">
+            <div><h2>Addresses per level</h2><canvas id="per" height="210"></canvas>
+            <p class="cap">How many addresses each doubling of size gets. Inside the corner they halve with every level
+            inward, until a level has less than one and its things are points; past it the reader's lay gives every level the
+            same (n·ln 2), the in-place lay halves them outward, the flip of the inside. Zooming slides the bars, never
+            reshapes them.</p></div>
+            <div><h2>Detail across sizes</h2><canvas id="det" height="210"></canvas>
+            <p class="cap">The finest difference told apart at each size, as a share of the size: smaller is finer.
+            Inside the corner it is one address of H, εH, so small things are coarse; past it, ε on the reader's lay and
+            worsening on the in-place lay. The finest relative detail that is still true scale is at the corner.</p></div>
+        </div>
+        <div id="hud"></div>
+    </div>
+    <p class="note">Keep the case: x and H are amounts; the reader reads only s = x/H, which equals its unit relations' v/h
+    under the drawing V = H. The level of detail is a count of addresses, which the geometry leaves open; the forms, in
+    proportion inside the corner and one equal step per doubling past it, are fixed. Behind it: <i>Observation from
+    Somewhere</i> §8, "The count is the level of detail" and "H is a zoom, not an escape". Other demos:
+    <a href="levels.html">the levels</a>, <a href="mountain.html">the mountain and the thumb</a>, <a href="flight.html">the
+    corner in flight</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), LN2 = Math.LN2;
+    // ── the geometry, in plain functions (the test hook uses these) ──
+    // the lay of a reading s = x/H: in proportion to the corner, then the reader's lay or the in-place lay
+    const lay = (s, kind) => s <= 1 ? s : kind === 'inplace' ? 2 - 1 / s : 1 + Math.log(s);
+    const edge = (kind, L) => kind === 'inplace' ? 2 : 1 + L * LN2;              // the lay's far end
+    // which address a thing at amount x falls in; 0 is home; null past the reader's lay
+    function addr(x, H, n, kind, L) {
+        const r = lay(x / H, kind), e = edge(kind, L), eps = 1 / n;
+        if (kind !== 'inplace' && r >= e) return null;
+        return Math.min(Math.floor(r / eps), Math.round(e / eps) - 1);          // the in-place lay's last address takes the rest
+    }
+    // the in-place lay's last address takes everything with s ≥ n: one point, the horizon
+    const atHorizon = (x, H, n, kind) => kind === 'inplace' && x / H >= n;
+    // the window of held amounts: from one address (H/n) to the edge
+    function held(H, n, kind, L) {
+        const lo = H / n, hi = kind === 'inplace' ? H * n : H * 2 ** L;
+        return { lo, hi, levels: Math.log2(hi / lo), near: Math.log2(n), far: Math.log2(hi / H) };
+    }
+    // addresses one level of sizes gets, [2^k, 2^(k+1)), under H
+    function perLevel(k, H, n, kind, L) {
+        const e = edge(kind, L), r = x => Math.min(lay(x / H, kind), e);
+        return (r(2 ** (k + 1)) - r(2 ** k)) * n;
+    }
+    // the finest difference told apart at amount x: one address of room, carried back to amounts
+    function detail(x, H, n, kind) {
+        const s = x / H, eps = 1 / n;
+        if (s <= 1) return eps * H;                                              // absolute: εH
+        return kind === 'inplace' ? eps * s * s * H : eps * x;                   // the in-place lay: εx²/H; the reader's: εx
+    }
+
+    // ── the worlds: amounts, each tagged with its cluster ──
+    function makeWorld(kind) {
+        const out = [];
+        if (kind === 'even') { for (let i = 1; i <= 100; i++) out.push({ x: i, c: 0 }); return out; }
+        if (kind === 'scatter') {
+            let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+            for (let i = 0; i < 200; i++) out.push({ x: 10 ** (-5 + 10 * rnd()), c: i });
+            return out.sort((a, b) => a.x - b.x);
+        }
+        for (let k = -4; k <= 4; k++) for (let j = 0; j < 5; j++) out.push({ x: 10 ** k * (1 + 0.15 * j), c: k });
+        return out;
+    }
+    // what the reader holds of a world under H
+    function read(world, H, n, kind, L) {
+        const cells = new Map(); let home = 0, past = 0, horizon = 0, near = 0, far = 0;
+        world.forEach(t => {
+            const a = addr(t.x, H, n, kind, L);
+            if (a === null) { past++; return; }
+            if (a === 0) { home++; return; }
+            if (atHorizon(t.x, H, n, kind)) { horizon++; return; }
+            (t.x <= H ? near++ : far++);
+            if (!cells.has(a)) cells.set(a, []); cells.get(a).push(t);
+        });
+        let told = 0, merged = 0; cells.forEach(v => { told++; if (v.length > 1) merged += v.length; });
+        const clusters = {}; world.forEach(t => { (clusters[t.c] = clusters[t.c] || []).push(addr(t.x, H, n, kind, L)); });
+        const resolved = Object.keys(clusters).filter(c => { const a = clusters[c], xs = world.filter(t => String(t.c) === c);
+            return a.every(v => v !== null && v > 0) && !xs.some(t => atHorizon(t.x, H, n, kind)) && new Set(a).size === a.length; }).map(Number);
+        return { told, home, past, horizon, near, far, merged, cells, resolved, total: world.length };
+    }
+
+    // ── state ──
+    let lgH = 0, lgn = 5, L = 12, kind = 'reader', worldKind = 'nested', world = makeWorld('nested');
+    const Hv = () => 2 ** lgH, nv = () => 2 ** lgn;
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.font = '11px DM Mono, monospace'; return [g, w, hh];
+    }
+    const fmt = x => x >= 1e4 || x < 0.01 ? x.toExponential(1).replace('e+', 'e') : x >= 100 ? x.toFixed(0) : x >= 10 ? x.toFixed(1) : x.toFixed(2);
+    const GOLD = '#d4a052', TEAL = '#8ce6cd', GREY = 'rgba(255,255,255,0.32)', RED = '#d96e5b', DIM = '#8a8a96';
+    const LG0 = -20, LG1 = 20;                                                   // the world's axis, in doublings
+
+    function draw() {
+        const H = Hv(), n = nv(), eps = 1 / n, w = held(H, n, kind, L), R = read(world, H, n, kind, L), e = edge(kind, L);
+        $('Ho').textContent = `${fmt(H)} (2^${lgH.toFixed(2)})`; $('no').textContent = `${n} addresses`;
+        $('Lo').textContent = kind === 'inplace' ? '(to the horizon)' : `${L} levels`;
+        $('L').disabled = kind === 'inplace';
+
+        // ── from nowhere ──
+        let [g, W, Hc] = fit($('world'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, Hc);
+        const x0 = 16, x1 = W - 16, X = lg => x0 + (x1 - x0) * (lg - LG0) / (LG1 - LG0), mid = 70;
+        const cl = v => Math.min(x1, Math.max(x0, v));
+        g.fillStyle = 'rgba(212,160,82,0.16)'; g.fillRect(cl(X(Math.log2(w.lo))), mid - 30, cl(X(lgH)) - cl(X(Math.log2(w.lo))), 60);
+        g.fillStyle = 'rgba(140,230,205,0.13)'; g.fillRect(cl(X(lgH)), mid - 30, cl(X(Math.log2(w.hi))) - cl(X(lgH)), 60);
+        g.strokeStyle = 'rgba(255,255,255,0.25)'; g.lineWidth = 1; g.beginPath(); g.moveTo(x0, mid); g.lineTo(x1, mid); g.stroke();
+        world.forEach(t => {
+            const lg = Math.log2(t.x), xx = X(lg); if (xx < x0 || xx > x1) return;
+            const a = addr(t.x, H, n, kind, L);
+            g.fillStyle = a === null || a === 0 || atHorizon(t.x, H, n, kind) ? GREY : t.x <= H ? GOLD : TEAL;
+            g.fillRect(xx - 0.75, mid - 12, 1.5, 24);
+        });
+        g.strokeStyle = GOLD; g.setLineDash([4, 3]); g.beginPath(); g.moveTo(X(lgH), mid - 40); g.lineTo(X(lgH), mid + 40); g.stroke(); g.setLineDash([]);
+        g.fillStyle = GOLD; g.fillText('H: the corner', Math.min(X(lgH) + 4, x1 - 90), mid - 34);
+        g.fillStyle = DIM;
+        for (let d = -6; d <= 6; d += 2) { const xx = X(d * Math.log2(10)); g.fillRect(xx, mid + 30, 1, 5); g.fillText(`1e${d}`, xx - 12, mid + 48); }
+        if (X(Math.log2(w.lo)) > x0 + 60) g.fillText('into home', x0, mid - 34);
+        if (X(Math.log2(w.hi)) < x1 - 70) g.fillText(kind === 'inplace' ? 'at the horizon' : 'past the lay', x1 - 92, mid - 34);
+        g.fillText(`held: ${w.levels.toFixed(0)} levels wide, at every H`, x0, Hc - 10);
+
+        // ── from the reader: the lay ──
+        [g, W, Hc] = fit($('lay'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, Hc);
+        const l0 = 18, l1 = W - 18, LY = 92, LXr = r => l0 + (l1 - l0) * r / e, cellPx = (l1 - l0) * eps / e;
+        g.fillStyle = 'rgba(212,160,82,0.10)'; g.fillRect(LXr(0), LY - 26, LXr(1) - LXr(0), 52);
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.lineWidth = 1.2; g.beginPath(); g.moveTo(l0, LY); g.lineTo(l1, LY); g.stroke();
+        if (cellPx >= 3) { g.fillStyle = 'rgba(255,255,255,0.18)'; for (let r = 0; r <= e + 1e-9; r += eps) g.fillRect(LXr(r), LY - 4, 1, 8); }
+        g.fillStyle = 'rgba(140,230,205,0.6)';                                    // level edges past the corner
+        for (let k = 1; ; k++) { const r = lay(2 ** k, kind); if (r >= e - 1e-9 || k > 40) break; const xx = LXr(r); if (xx - LXr(lay(2 ** (k - 1), kind)) < 2) break; g.fillRect(xx, LY - 10, 1, 20); }
+        g.strokeStyle = GOLD; g.setLineDash([4, 3]); g.beginPath(); g.moveTo(LXr(1), LY - 44); g.lineTo(LXr(1), LY + 44); g.stroke(); g.setLineDash([]);
+        g.fillStyle = GOLD; g.fillText('corner (one H)', Math.min(LXr(1) + 4, W - 110), LY - 34);
+        g.fillStyle = DIM; g.fillText('home', l0 - 2, LY + 40);
+        g.fillText(kind === 'inplace' ? 'horizon' : `edge: ${L} levels`, l1 - (kind === 'inplace' ? 46 : 80), LY + 40);
+        R.cells.forEach((v, a) => {
+            const xx = LXr((a + 0.5) * eps), far = v[0].x > H, rad = Math.min(7, 2.4 + Math.log2(v.length));
+            g.fillStyle = far ? TEAL : GOLD; g.beginPath(); g.arc(xx, LY - 14, rad, 0, 2 * Math.PI); g.fill();
+            if (v.length > 1 && (cellPx > 10 || v.length >= 5)) { g.fillStyle = '#e6e4ee'; g.fillText(String(v.length), xx - 3, LY - 24); }
+        });
+        if (R.home) { g.fillStyle = GREY; g.beginPath(); g.arc(LXr(eps / 2), LY + 16, Math.min(8, 2.4 + Math.log2(R.home)), 0, 2 * Math.PI); g.fill();
+            g.fillStyle = DIM; g.fillText(`${R.home} at home`, l0 + 12, LY + 20); }
+        if (R.horizon) { g.fillStyle = RED; g.beginPath(); g.arc(l1, LY + 16, Math.min(8, 2.4 + Math.log2(R.horizon)), 0, 2 * Math.PI); g.fill();
+            g.fillStyle = DIM; g.fillText(`${R.horizon} at the horizon`, l1 - 130, LY + 20); }
+        if (R.past) { g.fillStyle = RED; g.beginPath(); g.arc(l1, LY + 16, Math.min(8, 2.4 + Math.log2(R.past)), 0, 2 * Math.PI); g.fill();
+            g.fillStyle = DIM; g.fillText(`${R.past} past the edge`, l1 - 110, LY + 20); }
+        g.fillStyle = DIM; g.fillText(cellPx >= 3 ? `${Math.round(e / eps)} addresses` : `${Math.round(e / eps)} addresses (too fine to draw)`, l0, Hc - 10);
+
+        // ── addresses per level ──
+        [g, W, Hc] = fit($('per'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, Hc);
+        const p0 = 42, p1 = W - 10, base = Hc - 30, top = 16, K0 = -20, K1 = 19, bw = (p1 - p0) / (K1 - K0 + 1);
+        const hmax = Math.log2(1 + 2 * n), PY = a => base - (base - top) * Math.log2(1 + a) / hmax;
+        for (let k = K0; k <= K1; k++) {
+            const a = perLevel(k, H, n, kind, L), xx = p0 + (k - K0) * bw;
+            if (a <= 0) continue;
+            g.fillStyle = a < 1 ? 'rgba(217,110,91,0.7)' : 2 ** (k + 1) <= H ? GOLD : 2 ** k >= H ? TEAL : '#e6e4ee';
+            g.fillRect(xx + 1, PY(a), Math.max(1, bw - 2), base - PY(a));
+        }
+        const cx = p0 + (lgH - K0) * bw;
+        g.strokeStyle = GOLD; g.setLineDash([4, 3]); g.beginPath(); g.moveTo(cx, top - 6); g.lineTo(cx, base + 4); g.stroke(); g.setLineDash([]);
+        g.fillStyle = DIM; [[1, '1'], [n / 2, 'n/2']].forEach(([a, t]) => { const yy = PY(a); g.fillRect(p0 - 4, yy, 4, 1); g.fillText(t, 4, yy + 4); });
+        if (kind !== 'inplace') { const yy = PY(n * LN2); g.fillStyle = TEAL; g.fillText('n·ln 2 a level', Math.min(p1 - 90, cx + 8), yy - 6); }
+        for (let d = -6; d <= 4; d += 2) { const xx = p0 + (d * Math.log2(10) - K0) * bw; g.fillText(`1e${d}`, xx - 10, base + 16); }
+        g.fillStyle = 'rgba(217,110,91,0.9)'; g.fillText('red: under one address, points', p0, 12);
+
+        // ── detail across sizes ──
+        [g, W, Hc] = fit($('det'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, Hc);
+        const d0 = 46, d1 = W - 10, dTop = 14, dBase = Hc - 30, Y0 = 4, Y1 = -12;
+        const DX = lg => d0 + (d1 - d0) * (lg - LG0) / (LG1 - LG0), DY = v => dTop + (dBase - dTop) * (Y0 - Math.max(Y1, Math.min(Y0, v))) / (Y0 - Y1);
+        g.strokeStyle = 'rgba(255,255,255,0.15)'; g.lineWidth = 1;
+        [0, Math.log2(eps)].forEach(v => { g.setLineDash([3, 4]); g.beginPath(); g.moveTo(d0, DY(v)); g.lineTo(d1, DY(v)); g.stroke(); g.setLineDash([]); });
+        g.fillStyle = DIM; g.fillText('1: a point', d0 + 2, DY(0) - 4); g.fillText('ε = 1/n', d0 + 2, DY(Math.log2(eps)) - 4);
+        g.lineWidth = 2;
+        let prev = null;
+        for (let i = 0; i <= 400; i++) {
+            const lg = LG0 + (LG1 - LG0) * i / 400, x = 2 ** lg, v = Math.log2(detail(x, H, n, kind) / x), xx = DX(lg), yy = DY(v);
+            g.strokeStyle = x <= H ? GOLD : TEAL;
+            if (prev) { g.beginPath(); g.moveTo(prev[0], prev[1]); g.lineTo(xx, yy); g.stroke(); } prev = [xx, yy];
+        }
+        g.strokeStyle = GOLD; g.setLineDash([4, 3]); g.lineWidth = 1; g.beginPath(); g.moveTo(DX(lgH), dTop); g.lineTo(DX(lgH), dBase); g.stroke(); g.setLineDash([]);
+        g.fillStyle = GOLD; g.beginPath(); g.arc(DX(lgH), DY(Math.log2(eps)), 4, 0, 2 * Math.PI); g.fill();
+        g.fillStyle = DIM; for (let d = -6; d <= 6; d += 3) { const xx = DX(d * Math.log2(10)); g.fillText(`1e${d}`, xx - 10, dBase + 16); }
+        g.fillText('coarse', 0, dTop + 8); g.fillText('fine', 6, dBase);
+
+        // ── the readout ──
+        const cl2 = worldKind === 'nested' ? `clusters told apart, all five in their own addresses: ${R.resolved.length ? R.resolved.map(c => `1e${c}`).join(', ') : 'none'}` :
+            worldKind === 'even' ? `the evenly spaced numbers 1–100: ${R.told} addresses in use; neighbours told apart while one apart spans an address` :
+            `scattered sizes: zoom in or out and the held window slides; every size can have its turn at the corner, and no H holds them all`;
+        const lines = [
+            `H = ${fmt(H)}; level of detail n = ${n} addresses in the near field, one address ε = 1/${n}; ${kind === 'inplace' ? 'the in-place lay, to its horizon' : `the reader's lay, ${L} levels past the corner`}`,
+            `held: from H/n = ${fmt(w.lo)} to ${fmt(w.hi)}: ${w.levels.toFixed(0)} levels (${w.near.toFixed(0)} inside the corner, ${w.far.toFixed(0)} past it), the same width at every H`,
+            `near field, x ≤ H, in proportion (true scale): finest difference εH = ${fmt(eps * H)}, absolute`,
+            kind === 'inplace' ? `far field, the in-place lay: finest difference εx²/H, worsening by a level per level; each level gets half the last`
+                : `far field, the reader's lay: finest difference εx, one ${(100 * eps).toFixed(1)}% of any size; every level gets n·ln 2 = ${(n * LN2).toFixed(1)} addresses`,
+            `${R.total} things: ${R.near} in the near field, ${R.far} in the far field, ${R.home} fallen into home${kind === 'inplace' ? `, ${R.horizon} at the horizon` : `, ${R.past} past the edge`}; ${R.told} address${R.told === 1 ? '' : 'es'} in use, ${R.merged} things sharing one`,
+            cl2,
+            `best H: a thing read at true scale and in full relative detail must sit at the corner; click its size above to put it there`];
+        $('hud').textContent = lines.join('\n');
+    }
+
+    function sync() {
+        $('H').value = lgH; $('n').value = lgn; $('L').value = L;
+        $('layR').classList.toggle('on', kind === 'reader'); $('layI').classList.toggle('on', kind === 'inplace');
+        $('wN').classList.toggle('on', worldKind === 'nested'); $('wE').classList.toggle('on', worldKind === 'even'); $('wS').classList.toggle('on', worldKind === 'scatter');
+    }
+    const setWorld = k => { worldKind = k; world = makeWorld(k); };
+    $('H').addEventListener('input', () => { lgH = +$('H').value; draw(); });
+    $('n').addEventListener('input', () => { lgn = +$('n').value; draw(); });
+    $('L').addEventListener('input', () => { L = +$('L').value; draw(); });
+    $('zin').addEventListener('click', () => { lgH = Math.max(-17, lgH - 1); sync(); draw(); });
+    $('zout').addEventListener('click', () => { lgH = Math.min(17, lgH + 1); sync(); draw(); });
+    $('layR').addEventListener('click', () => { kind = 'reader'; sync(); draw(); });
+    $('layI').addEventListener('click', () => { kind = 'inplace'; sync(); draw(); });
+    $('wN').addEventListener('click', () => { setWorld('nested'); sync(); draw(); });
+    $('wE').addEventListener('click', () => { setWorld('even'); sync(); draw(); });
+    $('wS').addEventListener('click', () => { setWorld('scatter'); sync(); draw(); });
+    $('world').addEventListener('click', ev => {                                  // read that size at the corner
+        const rect = $('world').getBoundingClientRect(), x0 = 16, x1 = rect.width - 16;
+        lgH = Math.max(-17, Math.min(17, LG0 + (LG1 - LG0) * (ev.clientX - rect.left - x0) / (x1 - x0))); sync(); draw();
+    });
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search);
+    if (q.has('H')) lgH = Math.max(-17, Math.min(17, Math.log2(+q.get('H') || 1)));
+    if (q.has('n')) lgn = Math.max(3, Math.min(8, Math.round(Math.log2(+q.get('n') || 32))));
+    if (q.has('L')) L = Math.max(2, Math.min(24, Math.round(+q.get('L') || 12)));
+    if (q.get('lay') === 'inplace') kind = 'inplace';
+    if (q.get('world') === 'even') setWorld('even'); else if (q.get('world') === 'scatter') setWorld('scatter');
+    sync(); draw();
+
+    window.__zoom = { lay, edge, addr, held, perLevel, detail, read, makeWorld,
+        state: () => ({ H: Hv(), n: nv(), L, lay: kind, world: worldKind }),
+        set: o => { if (o.H) lgH = Math.log2(o.H); if (o.n) lgn = Math.log2(o.n); if (o.L) L = o.L; if (o.lay) kind = o.lay;
+            if (o.world) setWorld(o.world); sync(); draw(); },
+        current: () => read(world, Hv(), nv(), kind, L) };
+})();
+</script>
+</body>
+</html>

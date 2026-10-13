@@ -69,6 +69,11 @@ geometry is compile time, the readings are runtime, and the ruler is agreed on a
   (Proposition 14, Luce 1959): a ruler that favours no unit is a power or a logarithm; the number line is the power 1,
   the level rulers the logarithm, and a reader's own lay neither (Tom: "the number-line.m paper adds the number line
   itself is an example of this, explain why").
+- 13 October, eighty-second: §8, the situated wedge, made with the Cauchy (SPN R220; WDG, `plans/wdg-plan.md`): the
+  sphere that places every place by a level needs every distance, the unsituated reader's; the situated reader sets
+  V = V₂ = H and makes one wedge per observation, its even measure the two-dimensional Cauchy; every pair keeps its
+  corner, the six chambers are equal, and the near field is a third. Then a rotatable sphere in the unit cube points
+  every point of an inner cube of any size, once its extent is known (SPN R221; `sphere-cube.html`).
 - 11 October, eightieth: a candidate single principle, after an outside evaluation: equal addresses for whatever the reader cannot tell apart; proportional inside the unit, logarithmic past it, meeting at the unit (a reading; SPN Proposition 1.2).
 - 11 October, seventy-ninth: situated geometry is the Cauchy, unsituated the circle; the even turn is uniformity itself, behind both (Tom; SPN Proposition 1.2 (7), §14).
 - 11 October, seventy-eighth: the Cauchy and the fisheye derived in v and h: the bar swept in even steps of its turn moves v/h by 1 + (v/h)² a step; counting gives 1/(1 + (v/h)²), drawing gives the fisheye (Tom; SPN Proposition 1.2).
@@ -1047,6 +1052,10 @@ One H, one grain (*corrected 9 October*: was "One h means one grain"; the grain 
 quadtree, as mipmaps halve an image in both directions. The square is not symmetric under rotation, as the octant is;
 that is right for a situated reader, whose H is special and whose two directions are its own axes (the flat hand and the
 upright hand). The octant, all three held alike, stays the unsituated picture. Open: whether v and v₂ always share one level of detail.
+(*13 October*, SPN R220: the octant is not only the unsituated picture. One octant, the wedge, is what the situated reader
+makes at each observation, by sweeping with V = V₂ = H, and its even measure is the two-dimensional Cauchy ("The situated
+wedge", below). The whole sphere, all eight drawn together, is the unsituated picture. The square of two in-place sweeps
+stays a lay of the same two readings, one direction at a time.)
 
 **The wedge is the primitive** (Tom, 8 October: "v,h,f don't need to be visualized as a sphere, just like v,h don't need
 to be visualized as a circle. the primative is a single sweep of the three with no facing. v,h,f is the set of all the
@@ -1129,6 +1138,43 @@ wedge is made by an observation of its own.
   wedges are copies of one another.
 - **Finer.** Within each wedge the corner planes make six chambers: 8 × 6 = 48 in all, the cube's symmetries (in the
   plane, 4 × 2 = 8).
+
+**The situated wedge, made with the Cauchy** (Tom, 13 October: "the unit sphere could point every address in the
+universe", then, to Claude's answer, which placed every place by its direction and a level log₂(|x|/H): "but that is the
+unsituated readers sphere, he would have to know the size if the universe. the situated reader has to sweep and set
+V = V2 = H. and create the sweep wedge using the cauchy"; SPN R220. Tested exactly in WDG, `plans/wdg-plan.md`, run 1,
+P1–P4, not killed).
+- **Two spheres.** A sphere that places every place by its direction and its distance in levels needs every distance:
+  the size of the universe, which only the unsituated reader holds. The situated reader holds H and its readings,
+  v/h and v₂/h.
+- **The wedge needs V = V₂ = H.** Drawn at one length, the three unit relations lie on one sphere and one facing of each
+  is the octant, area π/2. Drawn at V = c₁H and V₂ = c₂H and swept evenly by direction, v/h has its median at 1/c₁, v₂/h
+  at 1/c₂ and v/v₂ at c₂/c₁ (P4). Each pair's corner needs that pair drawn at one length (at V = V₂ = 2H the pair
+  (v, v₂) keeps its corner and the two pairs with h lose theirs), and the wedge, all three corners with the triple
+  corner at its centre, needs all three: the circle's V = H, once per party.
+- **The Cauchy makes the wedge.** Laid on the readings (a, b) = (v/h, v₂/h), the octant's area is
+  da·db/(1 + a² + b²)^(3/2), total π/2 (P1). So sweeping the wedge evenly and laying the readings by the
+  two-dimensional Cauchy, density 2/(π(1 + a² + b²)^(3/2)), are one statement. Nothing in it needs a size.
+- **Every pair keeps its corner.** Each of v/h, v₂/h and v/v₂ is half-Cauchy with its median at 1 and no mean (P2).
+- **The near field is a third.** The six chambers, one per ordering of (h, v, v₂), hold 1/6 each, so near in both
+  relations (h the largest) is a third of the wedge, past in one a third, past in both a third (P3). On the circle near
+  and far were halves. The third is π/6 of π/2: a quarter of a cube's face seen from its centre.
+- **What the wedge still lacks** is the circle's one number, now once per party: V/H and V₂/H, each a pan in levels.
+
+**A rotatable sphere in the unit cube** (Tom, 13 October: "if we put a rotatable sphere inside the unit cube, we could
+show that every point on the sphere maps to every point on the inner cube. the inner cube could be any size, however
+its extent must be known"; SPN R221; WDG P5, P6; shown in `sphere-cube.html`).
+- **The map.** From the centre, each point u of the sphere goes along its ray to u·e/‖u‖_∞ on a cube of half-extent e,
+  on the face of u's largest component: the cut "largest = 1" of the table above, scaled by e. It is one-to-one from the
+  sphere onto the cube's surface, at every size and after any turn of the sphere (P5, to rounding).
+- **Inside the cube.** Every point but the centre is t times its surface point for exactly one t ∈ (0, 1]: a unit
+  relation, the near field in proportion. So (u, t) addresses every point of the solid cube.
+- **Any size, its extent known.** The address (u, t) is the same at every extent; the point in amounts is e times it. A
+  reader that does not know e holds every address and draws the cube at its own breadth, e = H: V = H again, right as
+  an address and off as an amount by the true e/H. This is the sphere's form of the mountain and the thumb.
+- **The faces are reading planes.** Each face is the plane h = 1 of its facing, so the even sphere on it is the Cauchy
+  (P6): a face holds 1/6 of the sphere, its middle quarter by area 38% of the face's directions, its centre 3^(3/2) ≈ 5.2
+  times as dense as its corners.
 
 **The plane, restated.** Two breadths in [0, 1]² give one relation, s = v/h in [0, ∞), or the angle θ in [0, π/2]: the
 quarter circle, length π/2. v = h is the corner. Dividing removes the scale and leaves the relation, an address on the
