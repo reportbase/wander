@@ -134,6 +134,24 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   S, climbing ρ(0)·ln 10 a tenfold on each path, settling at 4/π for sin² 2θ. `?path=circle|line|square&t=`; hook
   `window.__paths` (`b`, `measure` (b along the path as chords, not the closed form), `bWeighted`, `tmean`,
   `tmeanWeighted`, `perDecade`, `vantages`, `hud`, `set`). Not in the flying page.
+- `h-limits.html`: **what is H?** (13 Oct 2026, Tom: "explore what H acutally is. what is H of 0. what is H of infinity.
+  Picking an H creates the unit relational space"; HKO; SPN R228), a standalone page like `zoom.html`. A world of 31
+  amounts (10⁻³ … 10³) placed by H on the quarter turn (arctan(x/H)); three rulers (the number line, the reader's lay at
+  H, the logarithm, or the reciprocal for the in-place lay), the middle one becoming the top at H past the world and the
+  bottom below it, a corner only with H inside; the addresses a finite count holds for every H, the world lost whole
+  into home, past the held edge or into the horizon; the angle between two tapped amounts against H, widest at their
+  geometric mean. `?h=<log10 H, 0, inf>&lay=inplace&n=8|32|128&pair=i,j`; hook `window.__hlimits` (`normLay`,
+  `deviation`, `held`, `thresholds`, `pairAngle`, `bestPair`, `hud`, `set`). Not in the flying page.
+- `h-chain.html`: **the chain from H** (13 Oct 2026, Tom: "lets build stand alone demos of H kicks of the entire chain of
+  logic … we sweep the cauchy fisheye of it. the shape is constructed virtually, over many observations, which implies
+  that it might have something to do with parallax"; SPN R228; after draw's labs rcc and udv), six steps with one H:
+  pick an H (the unit relational space, the same at every H; a world placed by it); the number of V's sets the shape
+  (circle, sphere, a table to five); one observation sweeps the Cauchy fisheye of one facing (a reader at a figure's
+  centre, v/h = tan a, the census given back as the unit circle for every figure and size); facings joined over
+  observations; standpoints a baseline 2H apart (or three, the pair crossing squarest, as udv) build the figure, the
+  Thales circle the corner circle, H of 0 rays, H of ∞ the baseline, best H √(d_near·d_far); physics assigns the value
+  and nothing moves. `?step=1..6&h=&n=&fig=circle|egg|star|astroid&eps=0.1|0.5|2&sp=1|2|3&unit=mi|km|au`; hook
+  `window.__hchain` (`fisheye`, `triangulate`, `bestH`, `figurePoints`, `hud`, `set`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -237,7 +255,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -584,6 +602,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   difference"; SPN R225): n other parties drawn at H, n = 1 … 5; the readings the n-dimensional Cauchy (P7); every
   reading the circle's law, every pair the wedge's (P8); the near field in all readings 1/(n + 1), the count past the
   corner even over 0 … n (P9); drawn unequally, the shares move (P10). Nothing killed.
+  `hko-plan.md` (+ `hko/hko.py`, 13 Oct; Tom: "explore what H acutally is. what is H of 0. what is H of infinity"; SPN
+  R228): exact (mpmath). Past the world's ends the lays are the corner-free rulers of OFS Proposition 14, the number line
+  at H of ∞, the logarithm (reader's) or the reciprocal (in-place) at H of 0, a corner only with H inside (P1); a world
+  lost whole three ways at H = n·b, a·e^(1 − L_max), a/n (P2); the best H for two amounts √(x₁x₂), widest angle
+  arcsin((r − 1)/(r + 1)) (P3); parallax's error per step cosh(ln(d/H)), the best half-baseline over [a, b] √(ab) (P4).
+  Nothing killed. `h-limits.html` and `h-chain.html` show it.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -784,6 +808,12 @@ In short:
   23. **paths.html:** the share of the sweep measured along each path (as chords) is its closed form; all three fair and ½
       at the corner, 0.250, 0.293, 0.207 at 22.5°; the mean climbing ρ(0)·ln 10 a tenfold on each; sin² 2θ with its
       median at the corner and the mean 4/π; π/2 and 2/π at the horizon, product 1; v/h = ∞ at 90°.
+  24. **h-limits.html:** past the world's ends the number line, the logarithm and the reciprocal exactly, a corner only
+      with H inside; the world lost whole into home, past the edge, into the horizon at the thresholds; 24 and 17
+      addresses at H = 1; a pair best told apart at √(x₁x₂), arcsin(1/3) for r = 2.
+  25. **h-chain.html:** one reader's even sweep gives back the unit circle for every figure and size; two standpoints 2H
+      apart hold all 72 points at the best H and none at 10⁻³ or 10³; H of 0 or one standpoint, only rays; five parties,
+      the near field 1/6; physics relabels and nothing moves.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

@@ -600,6 +600,53 @@ try {
     failures.push(`[paths.html] ${JSON.stringify({ ...pa, hud: pa.hud.slice(0, 160), hud90: pa.hud90.slice(0, 80) })}`);
   console.log(`${failures.length === before23 ? 'ok  ' : 'FAIL'} paths.html (the share measured along each path its closed form to ${pa.meas.toExponential(1)}; fair, ½ at the corner on all three; at 22.5° ${pa.at.map(a => a.toFixed(3)).join(', ')}; the mean climbing ρ(0)·ln 10 a tenfold; sin² 2θ median at the corner, mean 4/π; π/2 and 2/π at the horizon)`);
 
+  // ── 24. h-limits.html: what is H? (HKO; SPN R228): past the world's ends the lays are the corner-free rulers (the
+  //    number line at H of ∞, the logarithm or the reciprocal at H of 0), a corner only with H among the amounts; the
+  //    world lost whole three ways at the thresholds; held 24 and 17 addresses at H = 1; the best H for a pair their
+  //    geometric mean, the widest angle arcsin((r − 1)/(r + 1)) ──
+  current = 'h-limits.html';
+  const before24 = failures.length;
+  await page.goto(new URL('h-limits.html', base).href, { waitUntil: 'load' });
+  const hl = await page.evaluate(() => { const L = __hlimits, th = L.thresholds(32), o = {};
+    o.dev = [L.deviation(1e3, 'reader').line, L.deviation(1e-3, 'reader').log, L.deviation(1e-3, 'inplace').recip, L.deviation(1e3, 'inplace').line];
+    o.mid = [L.deviation(1, 'reader'), L.deviation(1, 'inplace')].map(d => Math.min(...Object.values(d)));
+    o.home = L.held(th.home * 1.001, 'reader', 32); o.homeIn = L.held(th.home * 1.001, 'inplace', 32);
+    o.edge = L.held(th.edge / 1.001, 'reader', 32); o.hor = L.held(th.horizon / 1.001, 'inplace', 32);
+    o.short = [L.held(th.home / 1.001, 'reader', 32).addresses, L.held(th.edge * 1.001, 'reader', 32).addresses, L.held(th.horizon * 1.001, 'inplace', 32).addresses];
+    o.at1 = [L.held(1, 'reader', 32).addresses, L.held(1, 'inplace', 32).addresses];
+    const b = L.bestPair(1, 2); o.best = [b.H, b.angle, L.pairAngle(1, 2, b.H), L.pairAngle(1, 2, b.H * 1.01), L.pairAngle(1, 2, 1e-8), L.pairAngle(1, 2, 1e8)];
+    L.set({ lg: 30, lay: 'reader' }); o.hudInf = L.hud(); L.set({ lg: -30, lay: 'inplace' }); o.hudZero = L.hud(); L.set({ lg: 0, lay: 'reader' }); return o; });
+  if (hl.dev.some(d => d > 1e-12) || hl.mid.some(d => !(d > 1e-3)) || !hl.home.home || !hl.homeIn.home || hl.edge.addresses !== 0 || hl.edge.past !== 31 ||
+      !hl.hor.horizon || hl.short.some(c => c < 1) || hl.short[0] === 1 || hl.short[2] === 1 || hl.at1[0] !== 24 || hl.at1[1] !== 17 ||
+      Math.abs(hl.best[0] - Math.SQRT2) > 1e-12 || Math.abs(hl.best[1] - Math.asin(1 / 3)) > 1e-12 || Math.abs(hl.best[2] - hl.best[1]) > 1e-12 ||
+      !(hl.best[3] < hl.best[2]) || hl.best[4] > 1e-6 || hl.best[5] > 1e-6 ||
+      !/number line/.test(hl.hudInf) || !/home's first address/.test(hl.hudInf) || !/reciprocal/.test(hl.hudZero) || !/horizon's last address/.test(hl.hudZero))
+    failures.push(`[h-limits.html] ${JSON.stringify({ ...hl, hudInf: hl.hudInf.slice(0, 120), hudZero: hl.hudZero.slice(0, 120) })}`);
+  console.log(`${failures.length === before24 ? 'ok  ' : 'FAIL'} h-limits.html (past the world's ends the number line, the logarithm and the reciprocal exactly, a corner only with H inside; lost whole into home, past the edge, into the horizon at the thresholds; ${hl.at1[0]} and ${hl.at1[1]} addresses at H = 1; a pair best told apart at √(x₁x₂), ${(hl.best[1] * 180 / Math.PI).toFixed(2)}° for r = 2)`);
+
+  // ── 25. h-chain.html: the chain from H (HKO; SPN R228; draw's rcc and udv): one reader's even sweep gives back the
+  //    unit circle for every figure at every size; two standpoints 2H apart hold every point at the best H and none at
+  //    H = 10⁻³ or 10³; H of 0 or one standpoint leaves only rays; the best H the geometric middle of the figure's
+  //    distances; the count of V's sets the facings and the near field; physics relabels and nothing moves ──
+  current = 'h-chain.html';
+  const before25 = failures.length;
+  await page.goto(new URL('h-chain.html?step=5', base).href, { waitUntil: 'load' });
+  const hc = await page.evaluate(() => { const C = __hchain, o = {};
+    o.fe = Math.max(...['circle', 'egg', 'star', 'astroid'].flatMap(f => [1, 1000].map(s => C.fisheye(f, s).worst)));
+    const b = C.bestH('star'); o.best = [b.H, Math.sqrt(b.near * b.far)];
+    const at = H => C.triangulate({ H, sp: 2, eps: 0.5, fig: 'star', degenerate: null });
+    o.held = [at(1e-3).held, at(b.H).held, at(1e3).held]; o.three = C.triangulate({ H: b.H, sp: 3, eps: 0.5, fig: 'star', degenerate: null }).held;
+    o.zero = C.triangulate({ degenerate: 'zero' }).lost; o.one = C.triangulate({ sp: 1, degenerate: null }).lost;
+    C.set({ step: 2, n: 5 }); o.hud2 = C.hud();
+    C.set({ step: 6, unit: 'mi', lg: 1 }); o.hud6 = C.hud(); const after = C.triangulate({ H: 10, sp: 2, eps: 0.5, fig: 'star', degenerate: null });
+    C.set({ unit: '' }); const before = C.triangulate({ H: 10, sp: 2, eps: 0.5, fig: 'star', degenerate: null });
+    o.moved = Math.max(...after.res.map((r, i) => r.Q && before.res[i].Q ? Math.hypot(r.Q[0] - before.res[i].Q[0], r.Q[1] - before.res[i].Q[1]) : 0));
+    return o; });
+  if (!(hc.fe < 1e-12) || Math.abs(hc.best[0] - hc.best[1]) > 1e-12 || hc.held[1] !== 72 || hc.held[0] !== 0 || hc.held[2] !== 0 || hc.three !== 72 ||
+      hc.zero !== 72 || hc.one !== 72 || !/1\/6/.test(hc.hud2) || !/miles/.test(hc.hud6) || hc.moved !== 0)
+    failures.push(`[h-chain.html] ${JSON.stringify(hc)}`);
+  console.log(`${failures.length === before25 ? 'ok  ' : 'FAIL'} h-chain.html (one reader's sweep gives back the unit circle for every figure to ${hc.fe.toExponential(1)}; two standpoints 2H apart hold ${hc.held[1]} of 72 at the best H = ${hc.best[0].toFixed(3)}, ${hc.held[0]} at 10⁻³ and ${hc.held[2]} at 10³; H of 0 or one standpoint, only rays; five parties, the near field 1/6; physics relabels, nothing moves)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
