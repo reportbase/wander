@@ -337,7 +337,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   is, and why a reader needs one" (R230; Tom: "A unit is needed, it injects physics into the relation"; "A unit is
   pre-measured relation. It says something like 5 ounces/ 1 foot"): a unit is a relation measured beforehand; within
   one reader its value is a zoom, needed because addresses are finite, where the world's scale first reaches the
-  reader (in the laying, not the readings); between readers an agreement. The introduction says the same. §9
+  reader (in the laying, not the readings); between readers an agreement. The introduction says the same. Then §9's
+  "Two ways to represent a thing" (R231; Tom: "if its unitless, than its geometric"; "something can be represented in
+  terms of something else, that is unitless. or you can represent something in terms of an agreed upon unit"): in
+  terms of something else in view, unitless and geometric; in terms of a unit agreed beforehand, where physics enters;
+  unitless values fixed by the geometry, or read from the world (geometric in kind, found, not derived). §9
   opens with "Geometry first, then values" (R227): physics assigns the placeholders' values as multipliers on the
   amounts, never redrawing a whole, and the geometry is agnostic to that step.
   Its first external evaluation is in `plans/ofs-review-1.md` (V = H as representation; the Euclidean norm, the premise
@@ -733,6 +737,8 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
   includes. V is the drawn whole (at H), V* the true breadth. A unit is a relation measured beforehand (R230): its
   value matters to a lone reader only because its addresses are finite (a zoom), and between readers it is agreed.
+  If it is unitless, it is geometric (R231): a thing given in terms of something else in view carries no unit; given
+  in terms of an agreed unit, its second term was measured beforehand, and that is physics.
   Then physics assigns the values (R227; Tom: "once the
   geometry is defined, physics assigns the values of the placeholders. geometry is agnostic to that step"), as
   multipliers on the amounts, never redrawing a whole; the values decide only where things land, the zoom.

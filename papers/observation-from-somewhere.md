@@ -1418,6 +1418,15 @@ x = r_A·H_A, and the other takes it back into its own breadth, r_B = x/H_B. The
 r_B = r_A·(H_A/H_B), and where the two breadths are equal the reading passes unchanged. The foot, the cubit and the
 metre each began as one body or one object made into a public notch.
 
+**Two ways to represent a thing.** A thing can be given in terms of something else in view: a reading, the ratio of
+two amounts read at once, or an amount in the reader's own H. Such a representation carries no unit, and it is
+geometric: no change of unit touches it (Proposition 8(a)). Or it can be given in terms of a unit agreed beforehand, as
+a count of a notch both readers can read. That is still a ratio, but its second term is not in the reading; it was
+measured beforehand and carried in, and that is where physics enters. Of the unitless values, the geometry fixes some:
+the corner at 1, π/2 and 2/π, the near field 1/(n + 1). Others are read from the world, such as a mountain's reading or
+a dimensionless constant of physics: geometric in kind, but found, not derived. Dimensional analysis rests on the same
+division, since only unitless groups of amounts enter a law (Buckingham 1914).
+
 So three numbers are easily confused, and the geometry needs none of them:
 - the reader's own breadth H, which it chooses for itself and which only moves what sits at its corner, and so what
   it reads finely (a zoom, §8);
