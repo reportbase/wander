@@ -32,7 +32,9 @@ is logarithmic. The reader therefore has two address spaces, proportional and lo
 Our main result concerns what a reader receives when it sweeps this circle evenly from where it stands. Its readings
 follow the Cauchy distribution. When the evenness is the reader's own laying, we show that the distribution belongs
 entirely to the reader's addresses and not to anything that arrives at them: whatever is met in each direction cancels
-from every single reading. This gives a reason for the Cauchy's best-known peculiarity. Its median exists and sits at the corner, because a median depends only on order, which is a
+from every single reading. Where the evenness belongs to the sources instead, as when a lighthouse sends its flashes
+at evenly spread angles, the same law is a property of the world's directions. This gives a reason for the Cauchy's
+best-known peculiarity. Its median exists and sits at the corner, because a median depends only on order, which is a
 property of addresses. Its mean does not exist, because a mean is a sum of sizes, a question about the payload, and
 addresses carry no size. Neither property needs the circle or the even turn: any sweep that treats the two parties alike
 puts its median at the corner and, if it reaches the horizon, has no mean; the even turn gives the Cauchy's exact
@@ -828,7 +830,8 @@ second and 1.05 across the third. That unevenness belongs to the payload, not to
 ### 7.1 Sweeping the circle evenly
 
 With V = H the relation is a bar of length 1. A serial reader at home sweeps it from flat (all h) to upright (all v) in
-equal steps of turn, and at each step holds one reading, v/h.
+equal steps of turn, and at each step holds one reading, v/h. Serial describes this look, one direction at a time, not
+the system being read (§3.5).
 
 **Proposition 5.** (a) Equal steps of turn give unequal readings. Near home a step barely changes v/h; the corner is
 halfway through the turn; near upright each step changes v/h by more and more, without bound.
