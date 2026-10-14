@@ -338,15 +338,21 @@ up in §9.
 
 The five situations give three vantages, each with its own geometry.
 
-| vantage | situations | geometry | measure of a turn θ | reads a line of true breadth 1 as |
-|---|---|---|---|---|
-| completed: the view from nowhere | 1, 2 | the circle; every breadth held; no facing | none | 1 |
-| outer hemisphere: parallel | 3 | one facing, taken in at once; the hemisphere turns away from the reader | θ/sin θ | π/2 |
-| inner hemisphere: serial | 4 | one facing, swept from home; the hemisphere turns toward the reader | sin θ/θ | 2/π |
+| vantage | situations | geometry | the turn | measure of a turn θ | reads a line of true breadth 1 as |
+|---|---|---|---|---|---|
+| completed: the view from nowhere | 1, 2 | the circle; every breadth held; no facing | none | none | 1 |
+| outer hemisphere: parallel | 3 | one facing, taken in at once; the hemisphere turns away from the reader | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
+| inner hemisphere: serial | 4 | one facing, swept from home; the hemisphere turns toward the reader | a quarter turn: a bar, from home to the horizon | sin θ/θ | 2/π |
 
-**Where the numbers come from.** A situated reader measures by turning. Measured from the point that faces it, the arc
-to angle θ is θ, while what the reader sees of it is its projection, sin θ. Outside, the reader reads arc over
-projection, θ/sin θ; inside, projection over arc, sin θ/θ. The two are reciprocal at every turn:
+**Where the numbers come from.** A situated reader measures by turning. Its position crosses the line once, and its
+facing turns; the arc is drawn by that turning, not walked. The two situated vantages turn by different amounts, and
+the unsituated one not at all. The inner reader turns a bar of length 1 from home: at angle θ the bar's end has drawn
+an arc θ, and the line it covers, its shadow, is sin θ. The outer reader's facing turns twice as far, 2θ (§4, "Why the
+corner sits at 45°"): it faces the far end of the line at the start, is square to the line at the corner, and faces
+the first end at the finish, a half turn in all. Drawn on the line as its diameter, of radius ½, a turn of 2θ draws an
+arc of θ over a chord of sin θ. So both draw an arc θ over a line sin θ. Outside, the reader reads arc over line,
+θ/sin θ; inside, line over arc, sin θ/θ. The two are reciprocal at every turn (the table's θ is the bar's; the
+outer's facing has turned 2θ):
 
 | turned through | outside, θ/sin θ | inside, sin θ/θ | product |
 |---|---|---|---|
@@ -356,21 +362,25 @@ projection, θ/sin θ; inside, projection over arc, sin θ/θ. The two are recip
 | 75° | 1.3552 | 0.7379 | 1 |
 | 90° | π/2 = 1.5708 | 2/π = 0.6366 | 1 |
 
-Both tend to 1 as the turn shrinks, and neither reaches it while there is any turn. At the limb, a quarter turn, the
-outer hemisphere reads π/2 and the inner 2/π. (Equivalently: a half-turn stood on a line of breadth 1 as its chord has
-arc π/2, and a bar of length 1 swept evenly through a quarter turn casts an average shadow of
-(2/π)∫₀^{π/2} cos θ dθ = 2/π.) The average shadow is Buffon's needle (Buffon 1777): a needle as long as the gap
-between parallel lines, dropped at random, crosses one with probability 2/π. Crofton's formula, which measures a curve
-by the random lines that cross it, grew from the same problem (Crofton 1868). Buffon's number, like the inner reading,
-holds only when every angle of the turn is equally likely; weight the turn otherwise and it changes.
+Both tend to 1 as the turn shrinks, and neither reaches it while there is any turn. At the limb, the outer
+hemisphere's facing has made its half turn, an arc of π/2 stood on the line of 1 as its chord, and reads π/2; the
+inner's bar has made its quarter turn, and its average shadow over the turn is (2/π)∫₀^{π/2} cos θ dθ = 2/π. The
+outer turns farther and the inner less, but as ratios the two lie equally far either side of 1, π/2 above it by the
+factor that 2/π is below it, and it is their product, not their difference, that returns the line: the arc's excess
+over the line, π/2 − 1, and the shadow's shortfall, 1 − 2/π, add to 0.934, not to 1.
 
-Both readings come from the same two integrals over the quarter turn: the turn itself, ∫₀^{π/2} dθ = π/2, and the
-shadow it casts on the line, ∫₀^{π/2} cos θ dθ = 1. The outer reading is the turn over the shadow, π/2; the inner is
-the shadow over the turn, 2/π. Taken to any turn θ, the same two give the table's θ/sin θ and sin θ/θ. The shadow is
-the line itself: the steps of the turn, each casting cos θ dθ, cover the breadth exactly once. Each reading sets it
-against the turn, one way up or the other, so their product is 1. Without angles the turn is ∫₀^∞ ds/(1 + s²) over
-every relation s = v/h, and the corner halves it, π/4 on each side. The true breadth, 1, is read only with no turn at
-all.
+The average shadow is Buffon's needle (Buffon 1777): a needle as long as the gap between parallel lines, dropped at
+random, crosses one with probability 2/π. Crofton's formula, which measures a curve by the random lines that cross it,
+grew from the same problem (Crofton 1868). Buffon's number, like the inner reading, holds only when every angle of the
+turn is equally likely; weight the turn otherwise and it changes.
+
+Both readings come from the same two integrals over the quarter turn: the arc the turn draws, ∫₀^{π/2} dθ = π/2 (the
+outer's half turn, on radius ½, draws the same arc), and the shadow it casts on the line, ∫₀^{π/2} cos θ dθ = 1. The
+outer reading is the turn over the shadow, π/2; the inner is the shadow over the turn, 2/π. Taken to any turn θ, the
+same two give the table's θ/sin θ and sin θ/θ. The shadow is the line itself: the steps of the turn, each casting
+cos θ dθ, cover the breadth exactly once. Each reading sets it against the turn, one way up or the other, so their
+product is 1. Without angles the turn is ∫₀^∞ ds/(1 + s²) over every relation s = v/h, and the corner halves it, π/4 on
+each side. The true breadth, 1, is read only with no turn at all.
 
 **Archimedes' proof, from nowhere and from somewhere.** Archimedes measured the circle from both sides (*Measurement
 of a Circle*). A polygon inscribed in the circle falls short of it and one circumscribed about it exceeds it; doubling
@@ -585,7 +595,8 @@ division; only the size of D depends on scale.
 
 **Why the corner sits at 45°.** A straight segment from A to B passes once through every ratio of the two, as the
 quarter arc does. The arc has a second degree of freedom that the segment lacks: the direction it faces along the way.
-If the bar pivots at a point of the circle, as in Thales' configuration, a turn of θ moves its far end through a central
+The arc is drawn by that turning, not walked: the reader's position crosses the segment once while its facing turns
+(§3.4). If the bar pivots at a point of the circle, as in Thales' configuration, a turn of θ moves its far end through a central
 angle of 2θ (the inscribed-angle theorem), so the facing turns twice as fast as the sweep, from facing B at A to facing A
 at B. At the corner, θ = 45° and the facing is 90°: square to AB, leaning toward neither party. There the arc stands
 farthest from the segment, by 1 − 1/√2.
@@ -1525,9 +1536,10 @@ true width, and no one stands anywhere in it.
 3. *The two vantages, on the thumb.* The one breadth the reader holds is its thumb, the H it started from, and the two situated vantages
    of §3.4 read it from the reader's own turn. Each facing side of the half-turn is a quarter turn, from home to the
    limb, where a finger runs parallel to the range and never meets it. On the thumb's circle that quarter turn is an arc
-   of π/2 thumbs, and its shadow on the line across the view is exactly 1 thumb. Taken in at once, the outer reading,
-   the turn over its shadow, is π/2. Swept one finger at a time, the inner reading, the shadow over the turn, is 2/π: the
-   fingers' mean shadow (0.6368 with 36 fingers). Their product is 1: H measured in H, the value the reader started
+   of π/2 thumbs, and its shadow on the line across the view is exactly 1 thumb. Taken in at once, limb to limb, the
+   whole half-turn is an arc of π thumbs over a shadow of 2, and the outer reading, the turn over its shadow, is π/2.
+   Swept one finger at a time from home, the inner reading, the shadow over the turn, is 2/π: the fingers' mean shadow
+   (0.6368 with 36 fingers). Their product is 1: H measured in H, the value the reader started
    from, which neither vantage reads alone. Out to the range's ends, at 45°, the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, the
    row of §3.4 at 45°, and their product is 1 again. None of this involves the mountain: a range 2 miles wide at 1 mile
    gives the same fingers and the same products. Joined, the two vantages return only what the

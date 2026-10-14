@@ -25,7 +25,7 @@
     The lay of distances (in thumbs): x inside the corner (x ≤ 1), 1 + ln x past it.
     The two vantages (OFS §3.4, §10 step 3; Tom, 13 October: "how does the worlked example show the PI/2 * 2/PI = 1", then
     "yes"): on the thumb's own circle a quarter turn is an arc of π/2 thumbs over a shadow of 1; outer (all fingers at
-    once) π/2, inner (one at a time, the fingers' mean shadow) 2/π, product 1, H measured in H, the value the reader started from. To the ends, at
+    once, limb to limb, the half turn: π over 2) π/2, inner (one at a time from home, the fingers' mean shadow) 2/π, product 1, H measured in H, the value the reader started from. To the ends, at
     45°, 1.1107 × 0.9003 = 1. The mountain never enters: the vantages joined return only what the reader holds.
     Links: ?V=20&d=10&k=1&walk=1. Test hook: window.__mountain.
     -->
@@ -119,8 +119,9 @@
         const s1 = (V / 2) / d, s2 = (V / 2) / (d - H), dRec = H * s2 / (s2 - s1);
         return { s1, s2, a1: Math.atan(s1) / D, a2: Math.atan(s2) / D, d: dRec, V: 2 * s1 * dRec };
     }
-    // the two situated vantages of OFS §3.4, read on the thumb's own circle: the outer (all fingers at once) is the turn
-    // over its shadow, the inner (one finger at a time) the shadow over the turn; joined, H in H, the starting value returned, 1
+    // the two situated vantages of OFS §3.4, read on the thumb's own circle: the outer (all fingers at once, limb to limb,
+    // a half turn) is the turn over its shadow, the inner (one finger at a time from home, a quarter turn) the shadow over
+    // the turn (the arc drawn by turning, not walked; SPN R233); joined, H in H, the starting value returned, 1
     function vantages(V, d) {
         const side = fingers().filter(t => t > 0), meanShadow = side.reduce((a, t) => a + Math.sin(t * D), 0) / side.length;
         const th = Math.atan((V / 2) / d);                                       // the range's ends

@@ -373,6 +373,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   The seventh (Grok, 13 Oct, an overall assessment: "ready for external scrutiny after the local clarifications") is in
   `plans/ofs-review-7.md` with a response (SPN R232): two of its five points already in the paper, the lighthouse
   contrast named in the abstract (edit A), serial marked as the look's in §7.1 (edit B), condensing declined (R203).
+  **The arc is the head's turn, not the walk** (13 Oct, SPN R233; Tom: "this is a source of much confusion. the arc is
+  drawn by the rotation of the head, not the walk. the outside reader turns his head the farthest … the inside reader
+  turns his head the least. the unsituated reader does not turn his head at all"): the position crosses the line once;
+  the outer's facing turns a half turn (facing = 2θ, on the line as diameter), the inner's bar a quarter turn (on it as
+  radius), the unsituated none; the same arc π/2, read π/2 and 2/π; their product returns the line, not their difference
+  (π/2 − 2/π = 0.934). In OFS §3.4 (a column for the turn), §4 and §10 step 3, SPN's head and §1. A note from another
+  session that subtracted them is in `plans/facings-note.md` with corrections.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
