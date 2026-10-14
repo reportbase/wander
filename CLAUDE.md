@@ -407,7 +407,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   its centre** (14 Oct, SPN R238; Tom: "so the truth is h+v+v2=1; user sets h zoom and assigns v and v2 to be equal to it,
   and the entire geometry is revealed"; "yes, that is what the math says"): the true breadths as shares are a point of
   h + v + v₂ = 1, scale-free; H sets the zoom; V = V₂ = H is the triangle's centre (⅓, ⅓, ⅓), the triple corner, from
-  which the geometry follows; the truth lies off it by V*/H and V₂*/H. OFS §2 and the introduction.
+  which the geometry follows; the truth lies off it by V*/H and V₂*/H. OFS §2 and the introduction. **The situations with
+  V₂** (14 Oct, SPN R239; SIT): OFS §3.1 renamed "The situations", the relations first, the five for one party, then
+  "Two other parties" (one entry per party; both known, half-situated, (3, 3), (4, 4), (3, 4), (4, 3), each in prose);
+  the three-party reader where the parties' rays meet square (only home and its mirror); §3.4 "With three unit
+  relations" (a hemisphere reads 2 at once, ½ one direction at a time).
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -680,6 +684,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   stated); the even octant is even in azimuth and height (P4, Archimedes' hat-box, Lambert), and then every pair at its
   corner, near field ⅓, the 2D half-Cauchy (P5); the even-in-height raise belongs to three unit relations only (P6).
   Nothing killed.
+  `sit-plan.md` (+ `sit/sit.py`, `sit/sit2.py`, 14 Oct; Tom: "we should expand the readers situations. to accomodate V2";
+  SPN R239): exact (mpmath; Gauss-Newton from 2,000 random starts). Rays from parties at the unit points meeting with
+  every pair square meet only at t·(1, …, 1), t = 0 (the reader's home) or 2/(n + 1); with two parties on a whole circle
+  through home (P1); a hemisphere reads √π·Γ((n + 1)/2)/Γ(n/2) at once and its reciprocal one direction at a time, π/2,
+  2, 3π/4 (P2); P3 killed by my set-up (a 0.1 threshold wider than the 0.095 gap); run 2, P3′: 2 and ½ are (π/2)² and
+  (2/π)² times 8/π² and π²/8 (not killed).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -712,7 +722,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
 
 SPN's situations, since 6 Oct 2026 (Tom): 0 nothing known; 1 the circle; 2 shapes;
 3 parallel, one hemisphere counted (outside); 4 serial, one point at a time
-(inside); 3 and 4 possibly approximate. SPN uses these numbers throughout
+(inside); 3 and 4 possibly approximate. Since 14 Oct (SPN R239; Tom: "we should expand the readers situations. to
+accomodate V2"; "i'm open to how to organize the situations, or relations"): the relations come first (h, v, v₂ each in
+[0, 1] with its breadth, known unsituated, unknown situated; the situated reader draws V = V₂ = H, giving the set of every
+[h, v, v₂]), and a situation is one entry per other party, 1 to 4 each; the five are the one-party case, 0 stays one
+case; with V₂: both known, half-situated, (3, 3) a camera, (4, 4), and the mixed scanners (3, 4) and (4, 3) (OFS §3.1,
+"Two other parties"). SPN uses these numbers throughout
 (converted 6 Oct), except in quotations, Appendix A's rulings and the earlier table in
 §2.1, which keep the old ones (old 3 = 3 and 4, old 4 = 0, old 5 = 3 or 4 approximately).
 SPN §2.1 opens with "The five, in brief". Keep to the core: the sweep
@@ -792,7 +807,8 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   every other drawing is built from a standpoint's sweeps, the altitude (H to V) and the azimuth (V₂), as horizon
   coordinates; the outer and inner hemispheres are two situated views among many. The truth is the sum (R238): the true
   breadths as shares are a point of it; the reader sets H (the zoom) and draws V = V₂ = H, the sum's centre, the triple
-  corner, and the entire geometry follows; the truth lies off the centre by V*/H and V₂*/H.
+  corner, and the entire geometry follows; the truth lies off the centre by V*/H and V₂*/H. The situations follow the
+  relations (R239): one entry per other party, the five the one-party case.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
   includes. V is the drawn whole (at H), V* the true breadth. A unit is a relation measured beforehand (R230): its
