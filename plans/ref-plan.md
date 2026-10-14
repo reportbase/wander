@@ -130,3 +130,75 @@ P5: not killed. Earth's relief 0.00446 levels; with its flattening 0.00929
 - **"Broad first" is the order of seeing, not of the relief.** The shaders add the broad band first because its features
   are the largest, so they cover a few pixels first. That order holds whatever share of the relief each band holds, and
   in most of wander's bodies the craters (the middle band) hold most of it. P3 confused the two orders. The kill stands.
+
+### Run 2: real relief by octave (predictions written 14 October, before any data was downloaded)
+
+*Tom, 15:49 (SPN R249), after Claude judged the games page's Levels application an illustration, not a proof: "whats new
+is the tvf3d signal. it shows how the signal itself is packed." Then "ok", 15:53, to a plan testing it on real bodies.
+Written before the files below were downloaded or the script written; the run is recorded below this section.*
+
+**The claim.** A .tvf3d body is a series; ordered by the finest wave a term holds, its terms are the payload's own
+levels, coarse first, and level of detail is how many of them are summed. The two sides meet at sampling:
+- *The reader's side (geometry, exact).* A body of radius R spanning a addresses across its disc holds the degrees up
+  to about l_max = πa/2 (two addresses a wave at the disc's middle, where an address covers 2R/a of surface and degree
+  l's wave is 2πR/l). Past the corner a halves with each level of distance, so each level drops one octave of degrees,
+  [2^k, 2^(k+1)); inside the corner the octaves held do not change. Nothing to test: it follows from the lay.
+- *The payload's side (physics).* How much relief each octave carries is the world's, not the geometry's. The question
+  Tom's remark raises is whether real worlds come packed the way the reader reads: with no preferred level (each level
+  of distance dropping the same share of the relief), and in the one packing under which the reader sees the same thing
+  at every level (each octave's relief in proportion to its wavelength, half the relief of the octave before).
+  The first is the premise that gives the reader its logarithm, no rung preferred ((S)), carried from the reader's lay
+  to the world's payload; the geometry does not require it. The second is the reader's lay matched to the world.
+
+**Keep the case.** Relief is an amount (metres). Its RMS per octave enters only through ratios: the change in log₂ RMS
+from one octave to the next (levels of relief per level of degree) is unitless, the same in metres or in radii, and
+needs no bridge. For information only, an octave's relief in the reader's own addresses at the level where it is the
+finest held, ρ_k = RMS_k·2^(k+1)/(πR), uses R, a body's mean radius, as the bridge.
+
+**Data (fixed before download).** Seven rocky bodies, the published spherical-harmonic models of their physical
+surfaces, as pyshtools lists them (SHTOOLS `pyshtools/datasets`, commit 98c15ef, with the sha256 each download must
+match):
+- Mars: Wieczorek 2024, MOLA shape, Zenodo 10.5281/zenodo.10820719, `Mars_MOLA_shape_1439.bshc.gz` (sha256 f12bcd82…).
+- Moon: Wieczorek 2024, LOLA shape, 10.5281/zenodo.10820774, `Moon_LOLA_shape_1439.bshc.gz` (f5e8f1b7…).
+- Mercury: USGS SPG shape, 10.5281/zenodo.10809345, `Mercury_shape_1439.sh.gz` (48d5ee57…; bshc inside).
+- Venus: Wieczorek 2015, VenusTopo719, 10.5281/zenodo.3870926, `VenusTopo719.shape.gz` (9fcb04fb…).
+- Earth: Hirt and Rexer 2015, Earth2014 physical surface (water and ice included: what reaches a reader), degree 2160,
+  ddfe.curtin.edu.au, `Earth2014.SUR2014.degree2160.bshc` (5694260d…). Heights above mean sea level, not radii.
+- Vesta: DLR SPG shape (Dawn), 10.5281/zenodo.10820681, `Vesta_DLR_SPG_shape_1439.bshc.gz` (99eae345…).
+- Ceres: DLR SPG shape (Dawn), 10.5281/zenodo.10820608, `Ceres_DLR_SPG_shape_1439.bshc.gz` (ae3e9918…).
+
+The 1439 files are the first degrees of each archive's full model (5759 or 5399), not a smoothing of it.
+
+**Method (fixed before download).** Coefficients 4π-normalized (the archives' convention; checked against each file's
+documentation before the run, converted if not). Degree power S_l = Σ_m (C_lm² + S_lm²), so the relief's variance over
+the sphere is Σ_{l≥1} S_l. Octave k holds degrees 2^k ≤ l < 2^(k+1); its RMS relief is √(Σ S_l) over the octave.
+Octaves k = 3 to 9 (degrees 8 to 1023; Venus k = 3 to 8, its model ending at 719). The lowest degrees are left out:
+degree 1 is the offset of the centre of figure, 2 the spin's flattening (REF P4), and degrees under 8 a handful of
+features each (Tharsis and the dichotomy, South Pole–Aitken, Rheasilvia). Per body, the least-squares line of
+log₂ RMS_k against k, equal weights; its slope is the levels of relief per level of degree. Earth's relief is above the
+geoid and the others' radii include theirs; at degree 8 and up the geoid's share is small, and this is noted, not
+corrected.
+
+**What I knew beforehand (from memory, not checked before writing).** Planetary topography is usually described as
+roughly a power law in degree; Earth's profiles as near Brownian (power ∝ wavenumber⁻², Hurst ≈ ½; Vening Meinesz
+1951, Bell 1975, Turcotte 1987), which is a slope of about −½ here; the terrestrial planets' spectra in Wieczorek
+(2015) roughly parallel. I do not recall the others' slopes or breaks. So P7 is expected to be killed if memory serves;
+P6 and P8 I cannot call.
+
+**Predictions.**
+- **P6 (no preferred level).** On every body, each octave's log₂ RMS lies within 0.25 of the body's fitted line, over
+  k = 3 to 9 (Venus 3 to 8): each level of distance drops the same share of the relief. *Killed* if any octave on any
+  body departs from its body's line by more than 0.25 (a factor 1.19 in relief).
+- **P7 (the reader's lay matched).** On every body, the slope is −1 within ±0.15: each octave half the relief of the
+  one before (degree power ∝ l⁻³), relief in proportion to wavelength, so the reader sees the same relief in its own
+  addresses at every level. *Killed* if any body's slope lies outside [−1.15, −0.85].
+- **P8 (the packing is geometric, not the world's).** A unitless number fixed by the geometry would be the same on
+  every body (SPN R231: unitless values are fixed by the geometry or read from the world). *Killed* if the seven slopes
+  do not all lie within ±0.1 of their mean.
+
+For information, not predicted: each octave's share of the relief, ρ_k, and Earth's bedrock (Earth2014 BED2014, the
+same archive) beside its surface.
+
+**What would not be shown.** Anything about the reader's side, which is exact. Why a world's relief has the spectrum it
+has (impacts, volcanism, erosion, isostasy are physics, quoted, not derived). And seven bodies are seven: a kill of P8
+says the packing is read from the world, not that no reader could find a common one.
