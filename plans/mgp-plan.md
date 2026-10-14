@@ -68,3 +68,35 @@ holds for location or scale of interest, not for μ/σ. It would not show that i
 (Wallstrom's question), nor anything about B₂'s justification.
 
 ## Runs
+
+### Run 1 (14 October; `python3 mgp/mgp.py`, 57 minutes)
+
+```
+P1: not killed. k = 0.0: a/b spread 78.8, factorization gap 31.2; k = 0.5: a/b spread 7.94, factorization gap 4.68; k = 1.0: a/b spread 0.0, factorization gap 0.0; k = 1.5: a/b spread 4.31, factorization gap 0.824; k = 2.0: a/b spread 27.2, factorization gap 1.18
+P2: not killed. k = 0.0: a/b spread 1.4, factorization gap 0.35; k = 0.5: a/b spread 0.551, factorization gap 0.162; k = 1.0: a/b spread 0.0, factorization gap 0.0; k = 1.5: a/b spread 0.355, factorization gap 0.139; k = 2.0: a/b spread 0.584, factorization gap 0.259
+P3: not killed. k = 0.0: a/b spread 1.84, factorization gap 2.09; k = 0.5: a/b spread 0.682, factorization gap 0.721; k = 1.0: a/b spread 0.0, factorization gap 0.0; k = 1.5: a/b spread 0.543, factorization gap 0.398; k = 2.0: a/b spread 1.37, factorization gap 0.682
+P4: KILLED. k = 0.0: a/b spread 0.795, factorization gap 2.02e-48; k = 0.5: a/b spread 0.34, factorization gap 4.22e-49; k = 1.0: a/b spread 0.0, factorization gap 0.0; k = 1.5: a/b spread 0.254, factorization gap 2.11e-49; k = 2.0: a/b spread 0.515, factorization gap 4.44e-49
+```
+
+P1–P3 not killed: in Stone and Dawid's exponentials, DSZ's change point and DSZ's normal with interest μ/σ, B₁ and
+B₂ agree exactly at k = 1 (a/b constant to the last digit) and at no other power (factorization gaps from 0.14 to 31).
+In the normal, k = 1 at fixed ζ is dμ·dσ/σ² in (μ, σ), Jeffreys's general rule; k = 0, Jaynes's dμ·dσ/σ, gives the
+paradox there. (The run took 57 minutes, not the "several" the script says: the normal and Gamma integrands are slow at
+50 digits.)
+
+P4 killed, and not by my set-up: my generalization was wrong. In the Gamma-shape model with a scale nuisance, every
+power factorizes (gaps 10⁻⁴⁸): B₂ can reproduce B₁ at any k, by a different prior. Found after the run, by hand: there
+a/b = [Γ(nζ + k − 1)/Γ(nζ)]·S^(−(k − 1)), S the sum of the amounts, a function of ζ times a function of the data, so
+B₂ matches B₁ with π₂(ζ) = π(ζ)·Γ(nζ + k − 1)/Γ(nζ): the nuisance's power leaks into the prior on ζ, but produces no
+paradox. In DSZ's examples the nuisance's power enters through a factor that couples ζ and the data (Q(ζ, z) raised to
+a power with k in it), and there is no such π₂. What k = 1 gives in all four models is stronger than the absence of the
+paradox: a/b is constant, so B₂ reproduces B₁ with the same prior, π₂ = π.
+
+**Prediction for run 2** (`mgp/mgp2.py`, written before it exists):
+- **P4′. With dη/η the two reasoners agree with the same prior, in every scale-nuisance model; with another power, they
+  agree only by changing the prior on ζ, or not at all.** A fifth model, Weibull with shape ζ and the size κ as scale:
+  at k = 1, a/b is constant (spread below 1e-30); at k = 0, ½, 3/2, 2, a/b is not constant (spread above 1e-6), and,
+  worked by hand before writing (stated so: a/b = [Γ(n + (k − 1)/ζ)/Γ(n)]·T^(−(k − 1)/ζ) with T = Σℓ_i^ζ, where ζ and
+  the data are coupled), it does not factorize either: the paradox (gap above 1e-6). **Killed if** the spread at
+  k = 1 exceeds 1e-30, or any other power's spread is below 1e-6, or any other power factorizes to 1e-6, over 50
+  random data vectors (n = 4) and 20 values of ζ.
