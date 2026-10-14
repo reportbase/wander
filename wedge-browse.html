@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Browsing the wedge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    wedge-browse.html: browsing the wedge (14 October 2026; Tom: "if the data is massive, than a fisheye dual control UI
+    was explored, we should pull that forward. the situated view is typically over huge data.", then "yes" to one 2D
+    thumb driving both sweeps). SPN R241, after R240 (wedge.html). The dual control is the navigation dial of the calendar
+    project (reportbase/calendar: city-dial.html, geometry.html, dial-calendar.html; GEOMETRY.md), carried from one list
+    to the wedge's two sweeps. A standalone page; plain canvas, no libraries.
+
+    Keep the case. h, v, v₂ are unit relations; the data are amounts. An item has three amounts (X₁, X₂, X₃) in one unit;
+    its ratios are X₂/X₁ = 2^λ₁ and X₃/X₁ = 2^λ₂ (λ in levels: log-ratios, Aitchison's coordinates), its total
+    T = X₁ + X₂ + X₃ = 2^ℓ. The reader draws V = 2^μ₁·H and V₂ = 2^μ₂·H: the drawing, a pan in levels (R214), so the item
+    reads v/h = 2^(λ₁ − μ₁), v₂/h = 2^(λ₂ − μ₂), and at μ = λ it sits at the triple corner. H is the zoom along each ray
+    (s = T/H): near, in levels, merged into home (s < 1/32) or past the held edge (s > 64), shown by colour; from home
+    nothing moves with H.
+
+    THE DATA, 2^53 − 1 items, never stored: a binomial cascade (de Wijs 1951; Mandelbrot 1974) on the box λ ∈ [−32, 32)²,
+    split in halves 60 times, λ₁ and λ₂ in turn; each split gives one half a share m or 1 − m of its parent's count, m
+    from a hash of the cell's address in [0.5, 0.68]. Counts are exact integers (floor, and the rest to the other half),
+    so every cell's halves add to it exactly, and an index range belongs to every cell. An item is found by its index
+    (descend by the counts) and placed by a hash in its finest cell; its total by a smooth field of λ plus a jitter. The
+    same items in the same places whenever the reader comes back (city-dial.html's "made out of the addresses").
+
+    FROM HOME. The view is the wedge from its apex (wedge.html, step 2): each direction at its shares, the triangle
+    h + v + v₂ = 1, h ↙ v ↑ v₂ ↘. The three pencils of lines through the vertices are the three pairs' dials, their rungs at
+    displayed readings 2^k, the medians the corners. THE RADIUS w: one rung holds w levels; the displayed reading is the
+    true reading over the drawing to the power 1/w. At w = 1 the view is the wedge itself; a smaller w magnifies the levels
+    around the hand, as the dial's radius narrows its window, and the whole dataset stays inside the triangle at every w.
+    LEVEL OF DETAIL: cells are opened largest-on-screen first until a budget of cells; what is not opened is drawn as its
+    total, coloured by its density; cells of at most 16 items are opened into their items. The drawn cells and items add
+    up to 2^53 − 1 exactly. Cells at the finest address (60 halvings, 6·10⁻⁸ levels) that still hold many items share an
+    address: below the step, not told apart.
+
+    THE DUAL CONTROL (the dial's two needles). THE GOLD is the thumb and a RATE: press and pan, and the gold points from
+    the centre to the finger; its rapidity grows at 0.4·tan(gold) a second, tan(gold) being the finger's distance from the
+    centre in the screen's own tangent units (from home the screen is the tangent plane). THE BLUE is the hand and a PLACE:
+    it sits at sinh of the rapidity, in the gold's direction, so it nears the triangle's edge and never reaches it. LET GO:
+    the gold springs back and the drawing re-centres on what the blue reached (μ ← λ of the blue; the blue home). A TAP
+    CHANGES NOTHING (Tom, Sep 12, of the dial): it reads the cell or item under it. THE WHEEL sets w and keeps the blue's
+    place; SHIFT+WHEEL (or the slider, or [ ]) sets H. Keys: arrows push the gold at 45°, - = w, [ ] H, 0 back to the start.
+    The inset is the totals' sweep at the hand: a sample of the cell's items at atan(T/H), the corner at T = H.
+
+    ?w=<log2 w>&H=<log2 H>&mu=μ₁,μ₂&seed=&i=<index>; test hook window.__browse.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #07070b; --panel: rgba(18,18,26,0.82); --line: rgba(255,255,255,0.10);
+        --ink: #c8c8d0; --dim: #8a8a96; --bright: #ece9f4; --gold: #d4a052; --teal: #8ce6cd; --violet: #b59cf0; --blue: #7fb2ff }
+    * { box-sizing: border-box }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground) }
+    body { color: var(--ink); font: 13.5px/1.5 'DM Mono', ui-monospace, monospace;
+        background: radial-gradient(120% 90% at 62% 38%, #15151f 0%, #0a0a10 55%, #050508 100%) }
+    #stage { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; touch-action: none; cursor: crosshair }
+    .glass { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+        -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.45) }
+    #panel { position: fixed; top: 14px; left: 14px; width: min(372px, calc(100vw - 28px)); max-height: calc(100vh - 28px);
+        overflow: auto; padding: 14px 16px 12px; z-index: 3 }
+    h1 { font: 400 26px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 4px }
+    .sub { color: var(--dim); margin: 0 0 10px; font-size: 12px }
+    p.cap { margin: 0 0 9px } p.cap b { color: var(--bright); font-weight: 500 }
+    button, input[type=text] { font: inherit; color: var(--bright); background: rgba(255,255,255,0.04); border: 1px solid var(--line);
+        border-radius: 7px; padding: 5px 9px; min-height: 32px }
+    button { cursor: pointer; touch-action: manipulation } button:hover { border-color: rgba(255,255,255,0.25) }
+    button.on { border-color: var(--gold); color: var(--gold); background: rgba(212,160,82,0.08) }
+    input[type=text] { width: 100%; min-width: 0 }
+    .ctl { display: grid; grid-template-columns: 7.4em 1fr 6.4em; gap: 6px 8px; align-items: center; margin: 6px 0 }
+    .ctl label { color: var(--dim) } .ctl output { color: var(--bright); text-align: right; font-size: 12px }
+    input[type=range] { width: 100%; min-width: 0; accent-color: var(--gold) }
+    .row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; align-items: center }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .blue { color: var(--blue) }
+    #hud { position: fixed; left: 400px; bottom: 14px; max-width: calc(100vw - 690px); padding: 10px 13px; white-space: pre-wrap;
+        font-size: 12px; color: var(--bright); z-index: 2 }
+    #inset { position: fixed; right: 14px; bottom: 14px; width: 262px; padding: 10px 10px 8px; z-index: 2 }
+    #inset canvas { width: 100%; aspect-ratio: 1.15; display: block; border-radius: 6px; background: #0b0b12 }
+    #inset .t { font-size: 11.5px; color: var(--dim); margin: 0 0 6px } #inset .t b { color: var(--bright); font-weight: 500 }
+    #fold { display: none }
+    a { color: var(--teal) }
+    @media (max-width: 1099px) { #inset { display: none } #hud { max-width: calc(100vw - 414px) } }
+    @media (max-width: 760px) {
+        #panel { top: auto; bottom: 10px; left: 10px; width: calc(100vw - 20px); max-height: 50vh; padding: 10px 12px }
+        #panel.folded .more { display: none }
+        #fold { display: inline-block; float: right; min-height: 28px; padding: 2px 8px }
+        h1 { font-size: 21px }
+        #hud { top: 10px; bottom: auto; left: 10px; max-width: calc(100vw - 20px); font-size: 11px; padding: 7px 9px }
+    }
+    </style>
+</head>
+<body>
+<canvas id="stage" aria-label="The wedge seen from home, with two needles: a gold thumb that sets a rate and a blue hand that marks a place"></canvas>
+<div id="panel" class="glass">
+    <button id="fold" aria-label="fold the panel">▾</button>
+    <h1>Browsing the wedge</h1>
+    <p class="sub">9,007,199,254,740,991 items. The reader holds a window round the hand; the rest arrives as totals.</p>
+    <p class="cap"><b>Over huge data.</b> Each item has three amounts, made from its address and never stored (a binomial
+    cascade, so the mass clusters at every scale). Seen from home each lands at its shares. Near the hand the cells are
+    opened down to their items; the rest are held as totals, coloured by how dense they are. The drawn cells always add
+    up to every item, exactly.</p>
+    <div class="more">
+    <p class="cap"><b>Two needles</b>, the navigation dial's. Press and pan: the <span class="gold">gold thumb</span> is a
+    rate, gentle near the centre and hard toward the edge, and the <span class="blue">blue hand</span>, a place, travels.
+    Let go: the gold springs back and the drawing re-centres on what the hand reached, V and V₂ re-drawn so it reads at
+    the triple corner (a pan in levels; nothing in the geometry changes). A tap reads; it moves nothing.</p>
+    <p class="cap"><b>The radius.</b> The wheel sets w, how many levels one rung of the triangle holds. At w = 1 the view is
+    the wedge itself; a smaller w magnifies the levels round the hand, and every item stays inside the triangle. H, the
+    zoom along each ray, decides which totals are <span class="teal">near</span>, in levels, merged into home or past
+    the edge; from home nothing moves.</p>
+    <div class="ctl"><label for="lw">radius, w</label><input id="lw" type="range" min="-26" max="3" step="0.05" value="2"><output id="lwo"></output></div>
+    <div class="ctl"><label for="lH">H, the zoom</label><input id="lH" type="range" min="-36" max="36" step="0.1" value="0"><output id="lHo"></output></div>
+    <div class="row"><input id="goto" type="text" inputmode="numeric" placeholder="go to an item: 0 … 9007199254740990" aria-label="go to an item by index"></div>
+    <div class="row">
+        <button id="bGo">go</button>
+        <button id="bSel">centre on the one read</button>
+        <button id="bRungs" class="on">rungs</button>
+        <button id="bStart">back to the start</button>
+    </div>
+    <p class="sub" style="margin:10px 0 0">Keys: arrows push the gold, − = the radius, [ ] H, 0 the start.
+    From the calendar project's navigation dial. Other demos: <a href="wedge.html">the wedge</a>,
+    <a href="zoom.html">H is a zoom</a>, <a href="demos.html">all demos</a>.</p>
+    </div>
+</div>
+<div id="hud" class="glass"></div>
+<div id="inset" class="glass"><div class="t"><b>The totals at the hand</b>: each at atan(T/H), the corner at T = H</div><canvas id="sweep" width="480" height="418"></canvas></div>
+
+<script>
+'use strict';
+// ── the data: 2^53 − 1 items as a binomial cascade on the log-ratio box, made from the addresses ─────────────────────
+const N = Number.MAX_SAFE_INTEGER;                                  // 9,007,199,254,740,991
+const D_MAX = 60, LO = -32, SPAN = 64;                              // 60 halvings of [−32, 32)²: 30 per axis
+const qs = new URLSearchParams(location.search);
+const SEED = (+qs.get('seed') || 20261014) >>> 0;
+function mix(h) { h ^= h >>> 16; h = Math.imul(h, 0x85ebca6b); h ^= h >>> 13; h = Math.imul(h, 0xc2b2ae35); h ^= h >>> 16; return h >>> 0; }
+function hash4(a, b, c, d) { let h = mix((a ^ 0x9e3779b9) >>> 0); h = mix((h ^ b) >>> 0); h = mix((h ^ c) >>> 0); return mix((h ^ d) >>> 0); }
+const u01 = h => h / 4294967296;
+const ROOT = { d: 0, i1: 0, i2: 0, count: N, start: 0 };
+function boxOf(n) {                                                 // [λ₁ lo, hi, λ₂ lo, hi] in levels
+    const w1 = SPAN / 2 ** ((n.d + 1) >> 1), w2 = SPAN / 2 ** (n.d >> 1);
+    return [LO + n.i1 * w1, LO + (n.i1 + 1) * w1, LO + n.i2 * w2, LO + (n.i2 + 1) * w2];
+}
+function children(n) {                                              // halves along λ₁ at even depths, λ₂ at odd; counts exact
+    const h = hash4(SEED, n.d, n.i1, n.i2), m = 0.5 + 0.18 * u01(mix(h ^ 0x5bd1e995)), p = (h & 1) ? m : 1 - m;
+    const a = Math.floor(n.count * p), b = n.count - a;
+    return n.d % 2 === 0
+        ? [{ d: n.d + 1, i1: 2 * n.i1, i2: n.i2, count: a, start: n.start }, { d: n.d + 1, i1: 2 * n.i1 + 1, i2: n.i2, count: b, start: n.start + a }]
+        : [{ d: n.d + 1, i1: n.i1, i2: 2 * n.i2, count: a, start: n.start }, { d: n.d + 1, i1: n.i1, i2: 2 * n.i2 + 1, count: b, start: n.start + a }];
+}
+const field = (l1, l2) => 6 * Math.sin(0.21 * l1 + 0.7) + 5 * Math.cos(0.17 * l2 - 0.3) + 3 * Math.sin(0.11 * (l1 + l2));   // the totals, in levels
+function itemIn(leaf, k) {                                          // the k-th item of a finest cell: placed by a hash
+    const b = boxOf(leaf), h = hash4(SEED ^ 0x2545f491, leaf.i1, leaf.i2, k), h2 = mix(h ^ 0x68e31da4), h3 = mix(h2 ^ 0x1b873593);
+    const l1 = b[0] + u01(h) * (b[1] - b[0]), l2 = b[2] + u01(h2) * (b[3] - b[2]), ell = field(l1, l2) + 3 * (2 * u01(h3) - 1);
+    return { index: leaf.start + k, l1, l2, ell, leaf };
+}
+function descend(n, i) {                                            // the finest cell holding index i, from cell n
+    while (n.d < D_MAX) { const c = children(n); n = i < c[1].start ? c[0] : c[1]; }
+    return n;
+}
+function itemAt(i) { i = Math.max(0, Math.min(N - 1, Math.floor(i))); const leaf = descend(ROOT, i); return itemIn(leaf, i - leaf.start); }
+function cellAt(l1, l2, d) {                                        // the cell at depth d holding a point
+    let n = ROOT;
+    while (n.d < d) { const c = children(n), b = boxOf(c[0]); n = (n.d % 2 === 0 ? l1 < b[1] : l2 < b[3]) ? c[0] : c[1]; }
+    return n;
+}
+const amounts = it => { const T = 2 ** it.ell, s = trueShares(it.l1, it.l2); return s.map(x => T * x); };
+function trueShares(l1, l2) { const m = Math.max(0, l1, l2), a = 2 ** -m, b = 2 ** (l1 - m), c = 2 ** (l2 - m), t = a + b + c; return [a / t, b / t, c / t]; }
+
+// ── the view from home: the drawing μ, the radius w, the zoom H ──────────────────────────────────────────────────────
+const V = { mu1: 0, mu2: 0, lw: 2, lH: 0 };                          // w = 2^lw levels a rung, H = 2^lH
+const W_ = () => 2 ** V.lw;
+if (qs.has('w')) V.lw = Math.max(-26, Math.min(3, +qs.get('w')));
+if (qs.has('H')) V.lH = Math.max(-36, Math.min(36, +qs.get('H')));
+if (qs.has('mu')) { const [a, b] = qs.get('mu').split(',').map(Number); V.mu1 = a || 0; V.mu2 = b || 0; }
+// the displayed shares of a point λ: the true reading over the drawing, to the power 1/w
+function dispShares(l1, l2) {
+    const w = W_(), a = (l1 - V.mu1) / w, b = (l2 - V.mu2) / w, m = Math.max(0, a, b);
+    const x0 = 2 ** -m, x1 = 2 ** (a - m), x2 = 2 ** (b - m), t = x0 + x1 + x2; return [x0 / t, x1 / t, x2 / t];
+}
+const R15 = Math.sqrt(1.5), R2 = Math.SQRT2;
+const tanOf = s => [R15 * (s[2] - s[0]), (2 * s[1] - s[0] - s[2]) / R2];          // shares → the screen's tangent plane
+const sharesOfTan = (bx, by) => [1 / 3 - bx / Math.sqrt(6) - by / Math.sqrt(18), 1 / 3 + 2 * by / Math.sqrt(18), 1 / 3 + bx / Math.sqrt(6) - by / Math.sqrt(18)];
+function lambdaOfShares(s) {                                         // back from displayed shares to the levels
+    const w = W_(), f = x => Math.max(1e-300, x);
+    return [Math.max(-60, Math.min(60, V.mu1 + w * Math.log2(f(s[1]) / f(s[0])))), Math.max(-60, Math.min(60, V.mu2 + w * Math.log2(f(s[2]) / f(s[0]))))];
+}
+const L = { f: 200, cx: 0, cy: 0 };                                   // pixels per tangent unit, the centre (the hub)
+const toPx = b => [L.cx + L.f * b[0], L.cy - L.f * b[1]];
+const pxOf = (l1, l2) => toPx(tanOf(dispShares(l1, l2)));
+function tanMax(ux, uy) {                                           // how far the triangle reaches from the centre along a direction
+    const c = [-ux / Math.sqrt(6) - uy / Math.sqrt(18), 2 * uy / Math.sqrt(18), ux / Math.sqrt(6) - uy / Math.sqrt(18)];
+    let t = Infinity; for (const ci of c) if (ci < 0) t = Math.min(t, (1 / 3) / -ci); return t;
+}
+
+// ── the two needles ──────────────────────────────────────────────────────────────────────────────────────────────
+const THRUST = 0.4, SPRING_MS = 150, TAP_PX = 6;
+const G = { held: false, gx: 0, gy: 0, zx: 0, zy: 0, springAt: -1, sx: 0, sy: 0 };   // gold (tangent units), rapidity of the blue
+function bluePos() {                                                // the blue: sinh of the rapidity, in the gold's direction
+    const z = Math.hypot(G.zx, G.zy); if (z < 1e-15) return [0, 0];
+    const ux = G.zx / z, uy = G.zy / z, r = Math.min(Math.sinh(z), 0.9995 * tanMax(ux, uy)); return [ux * r, uy * r];
+}
+const blueLambda = () => lambdaOfShares(sharesOfTan(...bluePos()));
+function push(dt) {                                                 // the gold adds rapidity at THRUST · tan(gold), the blue stays inside
+    if (!G.held) return;
+    G.zx += THRUST * G.gx * dt; G.zy += THRUST * G.gy * dt;
+    const z = Math.hypot(G.zx, G.zy); if (z > 1e-15) { const zmax = Math.asinh(0.9995 * tanMax(G.zx / z, G.zy / z)); if (z > zmax) { G.zx *= zmax / z; G.zy *= zmax / z; } }
+}
+function placeBlue(l1, l2) {                                        // the blue onto a place, in the present drawing and radius
+    const b = tanOf(dispShares(l1, l2)), r = Math.hypot(...b);
+    if (r < 1e-15) { G.zx = G.zy = 0; return; }
+    const z = Math.asinh(r); G.zx = b[0] / r * z; G.zy = b[1] / r * z;
+}
+function recentre(l1, l2) { V.mu1 = l1; V.mu2 = l2; G.zx = G.zy = 0; dirty = true; }
+function release() { if (!G.held) return; G.held = false; G.springAt = performance.now(); G.sx = G.gx; G.sy = G.gy; const l = blueLambda(); recentre(l[0], l[1]); }
+function setRadius(lw) {                                            // the radius keeps the blue's place (the dial: a zoom is not a change of place)
+    const l = blueLambda(); V.lw = Math.max(-26, Math.min(3, lw)); placeBlue(l[0], l[1]); dirty = true;
+    const k = blueLambda();                                         // the window moves only when it must: the place is past what the new radius holds
+    if (Math.abs(k[0] - l[0]) + Math.abs(k[1] - l[1]) > 1e-6 * W_()) recentre(l[0], l[1]);
+}
+
+// ── level of detail: open the cells largest on the screen first, to a budget; the rest held as totals ─────────────────
+const BUDGET = 7000, MIN_PX = 3, ENUM = 16;
+let drawn = { cells: [], items: [], total: 0, opened: 0 }, dirty = true;
+function footprint(n) {                                            // the side of a square as large as the cell's image (its outline at 8 points)
+    const b = boxOf(n), x0 = b[0], x1 = b[1], y0 = b[2], y1 = b[3], xm = (x0 + x1) / 2, ym = (y0 + y1) / 2;
+    const p = [pxOf(x0, y0), pxOf(xm, y0), pxOf(x1, y0), pxOf(x1, ym), pxOf(x1, y1), pxOf(xm, y1), pxOf(x0, y1), pxOf(x0, ym)];
+    let a = 0; for (let i = 0; i < 8; i++) { const q = p[i], r = p[(i + 1) % 8]; a += q[0] * r[1] - r[0] * q[1]; }
+    return Math.sqrt(Math.abs(a) / 2);                               // a sliver along an edge has almost none: the horizon's crowd
+}
+function rebuild() {
+    const heap = [], up = i => { while (i > 0) { const p = (i - 1) >> 1; if (heap[p].f >= heap[i].f) break; [heap[p], heap[i]] = [heap[i], heap[p]]; i = p; } };
+    const down = i => { for (;;) { const l = 2 * i + 1, r = l + 1; let m = i; if (l < heap.length && heap[l].f > heap[m].f) m = l; if (r < heap.length && heap[r].f > heap[m].f) m = r; if (m === i) break; [heap[m], heap[i]] = [heap[i], heap[m]]; i = m; } };
+    const pushH = n => { n.f = footprint(n); heap.push(n); up(heap.length - 1); };
+    const cells = [], items = [];
+    pushH({ ...ROOT });
+    let opened = 0;
+    while (heap.length && heap[0].f >= MIN_PX && heap.length + cells.length + items.length < BUDGET) {
+        const n = heap[0]; const last = heap.pop(); if (heap.length) { heap[0] = last; down(0); }
+        if (n.count <= ENUM) { for (let k = 0; k < n.count; k++) { const i = n.start + k, leaf = descend(n, i); items.push(itemIn(leaf, i - leaf.start)); } continue; }
+        if (n.d >= D_MAX) { cells.push(n); continue; }                  // the finest address, still many: they share it
+        opened++;
+        for (const c of children(n)) if (c.count > 0) pushH(c);
+    }
+    for (const n of heap) cells.push(n);
+    let total = items.length; for (const c of cells) total += c.count;
+    drawn = { cells, items, total, opened }; dirty = false;
+    for (const c of cells) { const b = boxOf(c); c.px = pxOf((b[0] + b[1]) / 2, (b[2] + b[3]) / 2); c.dens = Math.log10(c.count / Math.max(1, c.f * c.f)); }
+    const ds = cells.map(c => c.dens).sort((a, b) => a - b);          // the heat spans what is drawn now, 2nd to 98th percentile
+    drawn.dLo = ds.length ? ds[Math.floor(0.02 * (ds.length - 1))] : 0; drawn.dHi = ds.length ? ds[Math.floor(0.98 * (ds.length - 1))] : 1;
+    for (const it of items) it.px = pxOf(it.l1, it.l2);
+}
+// the depth address of a total against H (zoom.html's lay; wedge.html's colours)
+const N_ADDR = 32, L_LEVELS = 6;
+function addressOf(ell) { const s = 2 ** (ell - V.lH); if (s < 1 / N_ADDR) return { kind: 'home', s }; if (s > 2 ** L_LEVELS) return { kind: 'past', s };
+    if (s <= 1) return { kind: 'near', s }; return { kind: 'far', s, level: Math.max(1, Math.ceil(Math.log2(s) - 1e-12)) }; }
+const ADDR_COL = { near: '#8ce6cd', home: '#ece9f4', past: '#6c6a78' };
+const addrCol = ad => ad.kind === 'far' ? `hsl(${38 - 4 * ad.level}, ${68 - 6 * ad.level}%, ${62 - 3 * ad.level}%)` : ADDR_COL[ad.kind];
+
+// ── drawing ──────────────────────────────────────────────────────────────────────────────────────────────────────
+const cv = document.getElementById('stage'), ctx = cv.getContext('2d');
+let DPR = 1, rungsOn = true, sel = null, frames = 0;
+function layout() {
+    DPR = Math.min(2, devicePixelRatio || 1); const W = innerWidth, H = innerHeight; cv.width = W * DPR; cv.height = H * DPR;
+    const mobile = W < 761, left = mobile ? 10 : 400, right = W >= 1100 ? 290 : 14, top = mobile ? 92 : 30, bottom = mobile ? H * 0.42 : 150;
+    const fw = (W - left - right) / (2 * R15 + 0.35), fh = (H - top - bottom) / (R2 + 1 / R2 + 0.3);
+    L.f = Math.max(60, Math.min(fw, fh)); L.cx = left + (W - left - right) / 2; L.cy = top + L.f * (R2 + 0.15);
+    dirty = true;
+}
+const fmtN = x => Math.round(x).toLocaleString('en-US');
+const fmtE = x => (x >= 1e5 || x < 1e-3) ? x.toExponential(2) : x.toPrecision(4);
+const fmtL = x => (x >= 0 ? '+' : '−') + Math.abs(x).toFixed(Math.abs(x) < 1e-3 ? 9 : Math.abs(x) < 1 ? 5 : 3);
+function heat(d) { const t = Math.max(0, Math.min(1, (d - drawn.dLo) / Math.max(1e-9, drawn.dHi - drawn.dLo))); return `hsl(${265 - 225 * t}, ${45 + 35 * t}%, ${18 + 52 * t}%)`; }
+function draw(now) {
+    if (dirty) rebuild();
+    const W = innerWidth, H = innerHeight;
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0); ctx.clearRect(0, 0, W, H);
+    const V0 = toPx(tanOf([1, 0, 0])), V1 = toPx(tanOf([0, 1, 0])), V2 = toPx(tanOf([0, 0, 1]));
+    ctx.fillStyle = 'rgba(255,255,255,0.025)'; ctx.beginPath(); ctx.moveTo(...V0); ctx.lineTo(...V1); ctx.lineTo(...V2); ctx.closePath(); ctx.fill();
+    // the totals held, as density
+    for (const c of drawn.cells) { const s = Math.max(1.6, Math.min(c.f * 0.9, 14)); ctx.fillStyle = heat(c.dens); ctx.fillRect(c.px[0] - s / 2, c.px[1] - s / 2, s, s); }
+    // the three pairs' dials: pencils through the vertices, the rungs at displayed readings 2^k, the medians the corners
+    if (rungsOn) {
+        const pen = [[V2, k => [1, 2 ** k, 0]], [V1, k => [1, 0, 2 ** k]], [V0, k => [0, 1, 2 ** k]]];
+        ctx.lineWidth = 1;
+        for (const [apex, edge] of pen) for (let k = -7; k <= 7; k++) {
+            const e = edge(k), t = e[0] + e[1] + e[2], p = toPx(tanOf(e.map(x => x / t)));
+            ctx.strokeStyle = k === 0 ? 'rgba(212,160,82,0.7)' : `rgba(236,233,244,${(0.16 - 0.012 * Math.abs(k)).toFixed(3)})`;
+            ctx.setLineDash(k === 0 ? [6, 5] : []); ctx.beginPath(); ctx.moveTo(...apex); ctx.lineTo(...p); ctx.stroke();
+        }
+        ctx.setLineDash([]);
+    }
+    ctx.strokeStyle = 'rgba(236,233,244,0.6)'; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(...V0); ctx.lineTo(...V1); ctx.lineTo(...V2); ctx.closePath(); ctx.stroke();
+    ctx.font = '500 18px "DM Mono", monospace'; ctx.textAlign = 'center';
+    ctx.fillStyle = '#d4a052'; ctx.fillText('h', V0[0] - 14, V0[1] + 18); ctx.fillStyle = '#8ce6cd'; ctx.fillText('v', V1[0], V1[1] - 10); ctx.fillStyle = '#b59cf0'; ctx.fillText('v₂', V2[0] + 16, V2[1] + 18);
+    // the items opened: one dot each, coloured by where H puts their totals
+    for (const it of drawn.items) { ctx.fillStyle = addrCol(addressOf(it.ell)); ctx.beginPath(); ctx.arc(it.px[0], it.px[1], 3.2, 0, 7); ctx.fill(); }
+    if (sel) { const p = sel.kind === 'item' ? pxOf(sel.it.l1, sel.it.l2) : sel.px; ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(p[0], p[1], 8, 0, 7); ctx.stroke(); }
+    // the needles: the gold thumb (a rate) and the blue hand (a place), both from the hub
+    let gx = G.gx, gy = G.gy;
+    if (!G.held) { if (G.springAt >= 0) { const t = (now - G.springAt) / SPRING_MS; if (t >= 1) { G.springAt = -1; gx = gy = 0; } else { const k = (1 - t) ** 3; gx = G.sx * k; gy = G.sy * k; } } else gx = gy = 0; }
+    const hub = [L.cx, L.cy], gp = toPx([gx, gy]), bp = toPx(bluePos());
+    if (gx || gy) { ctx.strokeStyle = '#d4a052'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(...hub); ctx.lineTo(...gp); ctx.stroke(); ctx.fillStyle = '#d4a052'; ctx.beginPath(); ctx.arc(gp[0], gp[1], 6, 0, 7); ctx.fill(); }
+    ctx.strokeStyle = '#7fb2ff'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(...hub); ctx.lineTo(...bp); ctx.stroke();
+    ctx.fillStyle = '#7fb2ff'; ctx.beginPath(); ctx.arc(bp[0], bp[1], 5.5, 0, 7); ctx.fill();
+    ctx.fillStyle = '#ece9f4'; ctx.beginPath(); ctx.arc(hub[0], hub[1], 3.2, 0, 7); ctx.fill();
+    frames++;
+}
+// the cell or item under a place, among those drawn
+function under(l1, l2) {
+    for (const c of drawn.cells) { const b = boxOf(c); if (l1 >= b[0] && l1 < b[1] && l2 >= b[2] && l2 < b[3]) return { kind: 'cell', c, px: c.px }; }
+    let best = null, bd = Infinity; const p = pxOf(l1, l2);
+    for (const it of drawn.items) { const d = Math.hypot(it.px[0] - p[0], it.px[1] - p[1]); if (d < bd) { bd = d; best = it; } }
+    return best && bd < 12 ? { kind: 'item', it: best } : null;
+}
+function readAtPx(x, y) {                                           // a tap: the item or cell drawn nearest, within 14 px
+    let best = null, bd = 14;
+    for (const it of drawn.items) { const d = Math.hypot(it.px[0] - x, it.px[1] - y); if (d < bd) { bd = d; best = { kind: 'item', it }; } }
+    if (best) return best;
+    for (const c of drawn.cells) { const d = Math.hypot(c.px[0] - x, c.px[1] - y); if (d < bd) { bd = d; best = { kind: 'cell', c, px: c.px }; } }
+    return best;
+}
+function sampleOf(c, n = 64) {                                       // a sample of a cell's items, spread over its indices
+    if (c.count <= n) { const out = []; for (let k = 0; k < c.count; k++) { const i = c.start + k, leaf = descend(c, i); out.push(itemIn(leaf, i - leaf.start)); } return out; }
+    const out = []; for (let k = 0; k < n; k++) { const i = c.start + Math.floor((k + 0.5) * c.count / n), leaf = descend(c, i); out.push(itemIn(leaf, i - leaf.start)); } return out;
+}
+// ── the totals' sweep at the hand ───────────────────────────────────────────────────────────────────────────────
+const sc = document.getElementById('sweep'), sg = sc.getContext('2d');
+function drawSweep() {
+    const W = sc.width, Hh = sc.height, ox = 36, oy = Hh - 40, R = Math.min(W - ox - 30, oy - 24);
+    sg.clearRect(0, 0, W, Hh); sg.fillStyle = '#0b0b12'; sg.fillRect(0, 0, W, Hh);
+    const at = a => [ox + R * Math.cos(a), oy - R * Math.sin(a)];
+    sg.strokeStyle = 'rgba(236,233,244,0.45)'; sg.lineWidth = 2; sg.beginPath(); sg.arc(ox, oy, R, -Math.PI / 2, 0); sg.stroke();
+    for (let k = -5; k <= 6; k++) { const a = Math.atan(2 ** k), p = at(a), q = [ox + (R - (k === 0 ? 22 : 10)) * Math.cos(a), oy - (R - (k === 0 ? 22 : 10)) * Math.sin(a)];
+        sg.strokeStyle = k === 0 ? '#8ce6cd' : 'rgba(236,233,244,0.35)'; sg.lineWidth = k === 0 ? 3 : 1.5; sg.beginPath(); sg.moveTo(...p); sg.lineTo(...q); sg.stroke(); }
+    sg.font = '18px "DM Mono", monospace'; sg.fillStyle = 'rgba(200,200,208,0.85)'; sg.textAlign = 'left';
+    sg.fillText('home', ox + R - 8, oy + 26); sg.fillText('horizon', ox - 26, oy - R - 8); const cp = at(Math.PI / 4); sg.fillStyle = '#8ce6cd'; sg.fillText('T = H', cp[0] + 10, cp[1] - 6);
+    const l = blueLambda(), u = under(l[0], l[1]);
+    let list = [], label = 'nothing under the hand';
+    if (u && u.kind === 'cell') { list = sampleOf(u.c); label = u.c.count <= 64 ? `${fmtN(u.c.count)} items` : `64 of ${fmtN(u.c.count)} items`; }
+    else if (u) { list = [u.it]; label = 'one item'; }
+    for (const it of list) { const a = Math.atan(2 ** (it.ell - V.lH)), p = at(a), q = [ox + (R + 12) * Math.cos(a), oy - (R + 12) * Math.sin(a)];
+        sg.strokeStyle = addrCol(addressOf(it.ell)); sg.lineWidth = 2.5; sg.beginPath(); sg.moveTo(...p); sg.lineTo(...q); sg.stroke(); }
+    sg.fillStyle = 'rgba(200,200,208,0.85)'; sg.fillText(label, ox, Hh - 10);
+}
+// ── HUD ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+function hudText() {
+    const l = blueLambda(), d1 = l[0] - V.mu1, d2 = l[1] - V.mu2, u = under(l[0], l[1]), out = [];
+    out.push(`the hand: ${fmtL(d1)}, ${fmtL(d2)} levels from the drawing; X₂/X₁ = 2^${l[0].toFixed(4)}, X₃/X₁ = 2^${l[1].toFixed(4)}`);
+    if (u && u.kind === 'cell') { const b = boxOf(u.c); out.push(`under it: a cell of ${fmtN(u.c.count)} items (indices ${fmtN(u.c.start)} to ${fmtN(u.c.start + u.c.count - 1)}), ${u.c.d} halvings deep, ${fmtE(b[1] - b[0])} levels across${u.c.d >= D_MAX ? ': the finest address, its items not told apart' : ''}`); }
+    else if (u) out.push(`under it: item ${fmtN(u.it.index)}`);
+    out.push(`the drawing: V = 2^${V.mu1.toFixed(3)}·H, V₂ = 2^${V.mu2.toFixed(3)}·H; one rung holds w = ${fmtE(W_())} levels; H = 2^${V.lH.toFixed(1)}`);
+    out.push(`held: ${fmtN(drawn.cells.length)} cells as totals and ${fmtN(drawn.items.length)} items, adding to ${fmtN(drawn.total)} of ${fmtN(N)}${drawn.total === N ? ', exactly' : ''}`);
+    if (sel) {
+        if (sel.kind === 'item') { const it = sel.it, X = amounts(it), ad = addressOf(it.ell);
+            out.push(`read: item ${fmtN(it.index)}, amounts (${X.map(fmtE).join(', ')}), total 2^${it.ell.toFixed(3)}: ${ad.kind === 'far' ? 'level ' + ad.level + ' past the corner' : ad.kind === 'near' ? 'near, inside the corner' : ad.kind === 'home' ? 'merged into home' : 'past the held edge'}`); }
+        else out.push(`read: a cell of ${fmtN(sel.c.count)} items, indices ${fmtN(sel.c.start)} on`);
+    }
+    return (innerWidth < 761 ? [out[0], out[3]] : out).join('\n');
+}
+// ── controls ─────────────────────────────────────────────────────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+function syncCtl() {
+    $('lw').value = V.lw; $('lwo').textContent = fmtE(W_()) + ' lv';
+    $('lH').value = V.lH; $('lHo').textContent = '2^' + V.lH.toFixed(1);
+    $('bRungs').classList.toggle('on', rungsOn);
+}
+$('lw').oninput = e => { setRadius(+e.target.value); syncCtl(); };
+$('lH').oninput = e => { V.lH = +e.target.value; syncCtl(); };
+$('bRungs').onclick = () => { rungsOn = !rungsOn; syncCtl(); };
+$('bStart').onclick = () => { V.mu1 = V.mu2 = 0; G.zx = G.zy = 0; V.lw = 2; V.lH = 0; sel = null; dirty = true; syncCtl(); };
+function goTo(i) {                                                  // an item by index: drawn at the triple corner, its total at the corner
+    const it = itemAt(i), b = boxOf(it.leaf);
+    V.lw = Math.max(-26, Math.min(V.lw, Math.log2((b[1] - b[0]) * 4))); V.lH = Math.max(-36, Math.min(36, it.ell));
+    recentre(it.l1, it.l2); sel = { kind: 'item', it }; syncCtl(); return it;
+}
+$('bGo').onclick = () => { const v = $('goto').value.replace(/[^0-9]/g, ''); if (v) goTo(Number(v)); };
+$('goto').onkeydown = e => { if (e.key === 'Enter') $('bGo').onclick(); };
+$('bSel').onclick = () => { if (!sel) return; if (sel.kind === 'item') goTo(sel.it.index); else { const b = boxOf(sel.c); recentre((b[0] + b[1]) / 2, (b[2] + b[3]) / 2); } };
+$('fold').onclick = () => { $('panel').classList.toggle('folded'); $('fold').textContent = $('panel').classList.contains('folded') ? '▴' : '▾'; };
+let down = null;
+const toTan = (x, y) => [(x - L.cx) / L.f, (L.cy - y) / L.f];
+cv.addEventListener('pointerdown', e => { down = { x: e.clientX, y: e.clientY, moved: false }; cv.setPointerCapture(e.pointerId); });
+cv.addEventListener('pointermove', e => {
+    if (!down) return;
+    if (!down.moved && Math.hypot(e.clientX - down.x, e.clientY - down.y) < TAP_PX) return;
+    down.moved = true; G.held = true; G.springAt = -1;
+    const t = toTan(e.clientX, e.clientY), r = Math.hypot(...t), cap = 4; [G.gx, G.gy] = r > cap ? [t[0] * cap / r, t[1] * cap / r] : t;
+});
+const endPress = e => { if (!down) return; const d = down; down = null;
+    if (d.moved) release(); else { sel = readAtPx(e.clientX, e.clientY); } };
+cv.addEventListener('pointerup', endPress); cv.addEventListener('pointercancel', () => { down = null; release(); });
+cv.addEventListener('wheel', e => { e.preventDefault();
+    if (e.shiftKey) { V.lH = Math.max(-36, Math.min(36, V.lH - (e.deltaY || e.deltaX) * 0.01)); }
+    else setRadius(V.lw + e.deltaY * (e.ctrlKey ? 0.02 : 0.004));
+    syncCtl(); }, { passive: false });
+$('sweep').addEventListener('wheel', e => { e.preventDefault(); V.lH = Math.max(-36, Math.min(36, V.lH - e.deltaY * 0.01)); syncCtl(); }, { passive: false });
+const keysDown = new Set();
+addEventListener('keydown', e => {
+    if (e.target && e.target.tagName === 'INPUT') return;
+    const dir = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, 1], ArrowDown: [0, -1] }[e.key];
+    if (dir) { keysDown.add(e.key); G.held = true; G.springAt = -1; let x = 0, y = 0; for (const k of keysDown) { const v = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, 1], ArrowDown: [0, -1] }[k]; x += v[0]; y += v[1]; } const r = Math.hypot(x, y) || 1; G.gx = x / r; G.gy = y / r; e.preventDefault(); }
+    if (e.key === '-' || e.key === '_') { setRadius(V.lw + 0.5); syncCtl(); }
+    if (e.key === '=' || e.key === '+') { setRadius(V.lw - 0.5); syncCtl(); }
+    if (e.key === '[') { V.lH -= 1; syncCtl(); } if (e.key === ']') { V.lH += 1; syncCtl(); }
+    if (e.key === '0') $('bStart').onclick();
+});
+addEventListener('keyup', e => { if (keysDown.delete(e.key) && !keysDown.size) release(); });
+addEventListener('resize', layout);
+let last = performance.now(), tick = 0;
+function loop(now) {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    push(dt); draw(now);
+    if ((tick++ % 6) === 0) { $('hud').textContent = hudText(); if (innerWidth >= 1100) drawSweep(); }
+    requestAnimationFrame(loop);
+}
+layout(); syncCtl();
+if (qs.has('i')) goTo(Number(qs.get('i')));
+if (innerWidth < 761) { $('panel').classList.add('folded'); $('fold').textContent = '▴'; }
+requestAnimationFrame(loop);
+
+// ── test hook ──────────────────────────────────────────────────────────────────────────────────────────────────────
+window.__browse = {
+    N, D_MAX, ROOT: { ...ROOT }, children, boxOf, itemAt, cellAt, descend, trueShares, dispShares, tanOf, sharesOfTan,
+    lambdaOfShares, sampleOf, amounts, addressOf,
+    rebuild: () => { rebuild(); return { cells: drawn.cells.length, items: drawn.items.length, total: drawn.total, opened: drawn.opened }; },
+    get drawn() { return { cells: drawn.cells.length, items: drawn.items.length, total: drawn.total }; },
+    screen: () => drawn.cells.slice(0, 400).map(c => c.px.slice()).concat(drawn.items.slice(0, 200).map(it => it.px.slice())),
+    view: () => ({ mu1: V.mu1, mu2: V.mu2, w: W_(), lw: V.lw, H: 2 ** V.lH, lH: V.lH, zeta: [G.zx, G.zy], held: G.held, blue: blueLambda(), bluePos: bluePos() }),
+    hold(gx, gy, seconds, dt = 1 / 60) { G.held = true; G.gx = gx; G.gy = gy; for (let t = 0; t < seconds - 1e-9; t += dt) push(dt); return this.view(); },
+    release() { release(); rebuild(); return this.view(); },
+    placeBlue(l1, l2) { placeBlue(l1, l2); return this.view(); },
+    set(o) { if ('mu1' in o) V.mu1 = o.mu1; if ('mu2' in o) V.mu2 = o.mu2; if ('lH' in o) V.lH = o.lH; if ('lw' in o) setRadius(o.lw); dirty = true; rebuild(); syncCtl(); return this.view(); },
+    goTo: i => { const it = goTo(i); rebuild(); return { index: it.index, l1: it.l1, l2: it.l2, ell: it.ell }; },
+    under: (l1, l2) => { const u = under(l1, l2); return u ? (u.kind === 'cell' ? { kind: 'cell', count: u.c.count, d: u.c.d } : { kind: 'item', index: u.it.index }) : null; },
+    hud: () => hudText(), get frames() { return frames; }
+};
+</script>
+</body>
+</html>

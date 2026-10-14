@@ -149,6 +149,25 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `?step=1..6&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|3|4&V2=known|3|4&alt=&az=&vs=&v2s=&rays=0&seed=`;
   hook `window.__wedge` (`homeProject`, `homeShares`, `shares`, `chamberShares`, `cornerHalf`, `placeAt`, `counts`,
   `coverage`, `drawingOf`, `situationName`, `set`, `state`, `hud`). Not in the flying page.
+- `wedge-browse.html`: **browsing the wedge** (14 Oct 2026, Tom: "the cool thing is we can attach array of data to this";
+  "if the data is massive, than a fisheye dual control UI was explored, we should pull that forward. the situated view is
+  typically over huge data"; "yes" to one thumb for both sweeps; SPN R241), a standalone page, plain canvas, no libraries.
+  The calendar project's navigation dial (reportbase/calendar `city-dial.html`: a gold thumb that is a rate, a blue needle
+  that is a place, the radius a window, a tap changing nothing) carried to the wedge. Data: 2⁵³ − 1 items made from their
+  addresses, never stored: a binomial cascade on λ ∈ [−32, 32)² (λ the two log-ratios X₂/X₁ = 2^λ₁, X₃/X₁ = 2^λ₂), 60
+  halvings, λ₁ and λ₂ in turn, one half getting m or 1 − m of the count (m from a hash in [0.5, 0.68]), counts exact;
+  an item found by its index (descend by counts), placed by a hash in its finest cell, its total from a smooth field
+  plus a jitter. View from home (the triangle, h ↙ v ↑ v₂ ↘): displayed reading = (true reading over the drawing)^(1/w),
+  the drawing V = 2^μ₁·H, V₂ = 2^μ₂·H; at w = 1 the wedge itself; three pencils of rungs through the vertices, the
+  medians the corners. LOD: cells opened largest-on-screen first (their image's area), to 7,000; cells of ≤ 16 items
+  opened into their items; the rest drawn as totals coloured by density; the drawn always add to 2⁵³ − 1 exactly; cells
+  at the finest address still holding many share it. Needles: press and pan, the gold (from the centre to the finger,
+  tan in the screen's own units) adds rapidity at 0.4·tan a second; the blue sits at sinh of it inside the triangle;
+  letting go re-centres (μ ← λ of the blue). Wheel: w, keeping the blue's place (or moving the window to it when it
+  must); shift+wheel: H (colours only; from home nothing moves). Inset: the totals' sweep at the hand (a sample at
+  atan(T/H)). A go-to box puts an item by index at the triple corner, its total at the corner.
+  `?w=<log2 w>&H=<log2 H>&mu=μ₁,μ₂&seed=&i=`; hook `window.__browse` (`children`, `itemAt`, `cellAt`, `dispShares`,
+  `trueShares`, `hold`, `release`, `placeBlue`, `set`, `goTo`, `under`, `screen`, `drawn`, `view`, `hud`). Not in the flying page.
 - `paths.html`: **one sweep, three paths** (13 Oct 2026, Tom: "yes, proceed", to the visual from the ChatGPT exchange in
   `plans/ofs-review-6.md`; SPN R224), a standalone page like `facing.html`. Geometry only, in unit relations. The circle,
   the line h + v = 1 and the square's edges, each swept evenly along its own length; the reading v/h is the direction
@@ -287,7 +306,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -828,6 +847,8 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   corner, and the entire geometry follows; the truth lies off the centre by V*/H and V₂*/H. The situations follow the
   relations (R239): one entry per other party, the five the one-party case. The reader's space is the wedge, not a sphere (R240): a
   relation is never negative, so a sphere's other octants are only facings; seen from home it is the sum's triangle.
+  The situated view is over huge data (R241): a dataset's columns are the parties, a row's ratios its direction and its
+  total its depth; the reader holds a window round the hand and the rest as totals.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
   includes. V is the drawn whole (at H), V* the true breadth. A unit is a relation measured beforehand (R230): its
@@ -944,6 +965,11 @@ In short:
       grows and leaving more past the edge as it shrinks; every situation reaches every direction in one scan, holding
       1, 1/24, 1/24, 1/576 of the wedge at once; the drawing at the centre, (0.2, 0.6, 0.2) with V known, the truth with
       both known.
+  27. **wedge-browse.html:** 2⁵³ − 1 items, every halving's two counts adding exactly (200 descents to the finest
+      address); the drawn cells and items adding to all of them in five states; at w = 1 and the drawing at 0 the view
+      the wedge itself; the gold at tan 1 for a second moves the blue 0.4 in rapidity, letting go re-centres on it; the
+      radius keeps the blue's place, or moves the window to it; items found by index in their finest cells; item
+      4,503,599,627,370,495 at the triple corner with its total at the corner; from home nothing moves with H.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
