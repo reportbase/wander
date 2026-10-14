@@ -10,7 +10,7 @@ Classical geometry is drawn from nowhere: every length is held at once, to one s
 that stands somewhere has less. It has its own breadth, a value it chooses to start from, but not the breadth of what
 it reads. This paper works out the
 geometry that this one restriction leaves. We begin with the readers themselves. What a reader knows of two breadths
-sets one of five situations, and these give three vantages: the completed view from nowhere, which holds the straight
+sets one of five situations (with more parties, one entry per party), and these give three vantages: the completed view from nowhere, which holds the straight
 chord between two points, and two situated readers, one taking in a hemisphere at once and one sweeping it from home,
 which hold only the arc they turn through and whose figures are the bell and the fisheye. The chord comes before the
 circle: it needs no turn, and the circle is drawn on it by one. The three read a line of true breadth 1 as 1, π/2 and
@@ -243,7 +243,18 @@ Everything in this paper is read by someone, and what kind of reader it is decid
 set by what it knows of the two breadths: not by where it is in the world, not by how many things there are, and not by
 what arrives.
 
-### 3.1 Five situations
+### 3.1 The situations
+
+**The relations first.** A system is a set of unit relations, h, v, v₂ and so on, each between 0 and 1, each with its
+breadth, H, V, V₂. A breadth may be known, which is the unsituated view, or not, which is the situated view. A situated
+reader starts the geometry by choosing H and drawing every other party at it, V = V₂ = H. That gives the set of every
+[h, v, v₂]: every way the relations can stand to one another, the unit cube of relations, whose directions are the wedge
+and whose sum h + v + v₂ = 1 holds the truth (§2). The reader stands where the parties' rays meet square: with the
+parties at the triangle's corners, (1, 0, 0), (0, 1, 0) and (0, 0, 1), the only points from which every pair is seen at
+a right angle are the cube's corner, the reader's home, and its mirror across the triangle, (⅔, ⅔, ⅔). With two parties
+those points make a whole circle through home, the circle on the chord of §4; with three they pin the reader down. A
+reader's situation is how it holds the set, and it is given party by party: first for one other party, the five below,
+then for two.
 
 | situation | H | V | standpoint | how it reads | example |
 |---|---|---|---|---|---|
@@ -271,8 +282,7 @@ like a sixth reduce to these.
 - *A system that changes kind* moves its reader from one situation to another over time (§3.5); at any one look the
   reader is in one.
 - *Several readers* each have a situation of their own; what passes between them is the subject of §9.
-- *More than two breadths* put the questions to each further breadth in turn; with V and V₂ both unknown and both set
-  to H, the circle becomes the sphere (§5).
+- *More than two breadths* put the questions to each further breadth in turn: "Two other parties", below.
 - *Directions along which nothing can arrive* are addresses still laid, with nothing met at them. That is a matter of
   payload, not of situation (Theorem 6(a)).
 - *A thumb that changes between looks* changes no reading, since every reading is a ratio of amounts in one unit and
@@ -314,6 +324,40 @@ do not have, and neither knows how many things there are.
 | 2 | computed in each direction | none | the shape | 1 |
 | 3 | found: v = h | the mathematical horizon | the bell | π/2 |
 | 4 | found: v = h | the mathematical horizon | the fisheye; counted, the Cauchy | 2/π |
+
+**Two other parties.** With V₂ the rule is put to each party in turn, and a reader's situation is one entry per party:
+1 or 2 if that party's breadth is known, 3 if its sweep is taken at once, 4 if it is taken one direction at a time.
+Situation 0 stays a single case, nothing related and no h, and the five above are the one-party case. The two sweeps
+are the altitude, from H to V, and the azimuth, which brings in V₂ (§2).
+
+| V, V₂ | what the reader has | example |
+|---|---|---|
+| both known (1 or 2 each) | the sphere, or another solid, held whole from no standpoint | a solid's equation; a three-dimensional array |
+| one known, the other 3 or 4 | half-situated: one pair held, its corner computed; the other swept from home, its corner found | a sailor who knows a lighthouse's height but not how far the coast runs |
+| 3, 3 | both sweeps at once: a hemisphere of directions in one look | a camera's frame |
+| 4, 4 | both sweeps one direction at a time | a single-pixel scanner stepped through both angles |
+| 3, 4 | the altitude at once, the azimuth one direction at a time | a rotating fan-beam radar; a slit panoramic camera |
+| 4, 3 | the azimuth at once, the altitude one direction at a time | a horizontal line scanner tipped up step by step |
+
+- **Both known.** The unsituated view in three dimensions: the solid held whole, its corners computed, no horizon. The
+  truth is one point of the triangle h + v + v₂ = 1.
+- **Half-situated.** Each party is asked separately, so one reader can hold one pair from nowhere and the other from
+  somewhere. With V known it computes the corner of h and v and reads V's amounts exactly; V₂ it draws at H and sweeps,
+  finding the corner of h and v₂ and reading V₂'s amounts up to the one ratio it lacks, V₂*/H. It is unsituated in one
+  freedom and situated in the other.
+- **Both at once (3, 3).** A hemisphere of directions taken in one look, as a camera takes its frame. Read against its
+  shadow on the base, the hemisphere reads 2, its surface being twice its base: the outer reading of §3.4 for three unit
+  relations.
+- **Both one at a time (4, 4).** The reader steps through both angles. Its mean height over the hemisphere is ½, the inner
+  reading for three unit relations, and 2 · ½ = 1, as π/2 · 2/π = 1 for two (§3.4). These are not the two-party readings
+  squared, (π/2)² and (2/π)², but those times 8/π² and π²/8: the two sweeps of a three-party reader do not read as two
+  independent two-party readers.
+- **Mixed (3, 4) and (4, 3).** One sweep at once and the other step by step, as scanning instruments work: a radar's fan
+  holds every altitude at once and turns through the azimuth; a line scanner holds a row of azimuths and tips through the
+  altitude. What such a reader reads of a whole hemisphere depends on how its two sweeps are weighted (§7.1, "Swept by
+  altitude and azimuth"), and is not taken up here.
+
+With n other parties a situation is n entries, one per party, and the rule is the same.
 
 ### 3.2 Which division a reader can make
 
@@ -418,9 +462,15 @@ outer reading is the turn over the shadow, π/2; the inner is the shadow over th
 same two give the table's θ/sin θ and sin θ/θ. The shadow is the line itself: the steps of the turn, each casting
 cos θ dθ, cover the breadth exactly once. Each reading sets it against the turn, one way up or the other, so their
 product is 1. Without angles the turn is ∫₀^∞ ds/(1 + s²) over every relation s = v/h, and the corner halves it, π/4 on
-each side. The true breadth, 1, is read only with no turn at all. From nowhere, then, a relation is the chord between
-its ends; from somewhere it is the arc the reader turns through. The chord comes first: it needs no turn, and the arc
-is drawn on it by one, where the rays the two facings sweep from its ends cross (§4, "The arc from the chord").
+each side. The true breadth, 1, is read only with no turn at all. From nowhere, then, a relation is the chord between its ends;
+from somewhere it is the arc the reader turns through. The chord comes first: it needs no turn, and the arc is drawn on
+it by one, where the rays the two facings sweep from its ends cross (§4, "The arc from the chord").
+
+**With three unit relations.** Taken over a hemisphere instead of a half-turn, the same two readings are its area over
+its shadow on the base, 2, since a hemisphere's surface is twice its base (Archimedes, *On the Sphere and Cylinder*),
+and its shadow over its area, ½, the mean height over the hemisphere, since the height is even over a sphere (the
+hat-box theorem). Their product is again 1. In n dimensions they are √π·Γ((n + 1)/2)/Γ(n/2) and its reciprocal: π/2 and
+2/π for the circle, 2 and ½ for the sphere, 3π/4 and 4/(3π) next.
 
 **Archimedes' proof, from nowhere and from somewhere.** Archimedes measured the circle from both sides (*Measurement
 of a Circle*). A polygon inscribed in the circle falls short of it and one circumscribed about it exceeds it; doubling
@@ -664,7 +714,10 @@ h, the same readings cross on the ellipse x² − x + y²/c² = 0. Paired at equ
 meet on the perpendicular bisector, a line. Sweeping A's ray in equal steps moves P in equal steps along the arc, so
 the even sweep of one ray is the even turn of §7, and its readings are the Cauchy's. Over two amounts x₁ and x₂ laid
 end to end, the crossing above the join stands at √(x₁x₂), Euclid's mean proportional (*Elements* VI.13), which is
-the H that sets the two furthest apart (§8). The chord comes first; the arc is where the two facings' rays cross.
+the H that sets the two furthest apart (§8). The chord comes first; the arc is where the two facings' rays cross. With
+three parties at the corners of the triangle h + v + v₂ = 1, rays meeting with every pair square meet only at the
+cube's corner, the reader's home, and its mirror across the triangle: the arc of two parties becomes, for three, a
+single standpoint (§3.1).
 
 **What the flip gives, and what it does not.** The flip proves that the corner is the one point it leaves fixed, that
 every sweep passes through it, that a reading kept within [0, 1] on both sides must change register there (Proposition
@@ -1794,7 +1847,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | home, the horizon | geometry | v/h = 0; v/h → ∞, never reached |
 | g | geometry | the sweep's progress, (2/π)·arctan(v/h): 0 at home, ½ at the corner, 1 at the horizon |
 | address, payload | geometry; what arrives | a place laid before anything arrives; what arrives there: the finger and the ring |
-| situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; parallel, outside; serial, inside |
+| situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; parallel, outside; serial, inside; with more parties, one entry per party |
 | ℓ | an amount | the reach of what arrives along a ray (Theorem 6); it cancels from every reading |
 | ε | a step | the reader's step, relative to what it reads (§8) |
 | the shared unit | an agreement | something two readers can both read, agreed to count as 1 (§9); not a reading, and no part of the geometry |
