@@ -741,8 +741,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   2, 3π/4 (P2); P3 killed by my set-up (a 0.1 threshold wider than the 0.095 gap); run 2, P3′: 2 and ½ are (π/2)² and
   (2/π)² times 8/π² and π²/8 (not killed).
   `jay-plan.md` (+ `jay/jay.py`, 14 Oct; Tom: "lean on one paper … and we just build on that", Jaynes accepted; SPN
-  R243): exact (fractions; mpmath). What Jaynes 1968 and 1973 prove, from abstracts and secondary sources (the papers'
-  hosts are refused here; items marked "(check)" wait for Tom's PDFs). The reader's unknowns, attitude θ and size
+  R243): exact (fractions; mpmath). What Jaynes 1968 and 1973 prove, first from abstracts and secondary sources (marked
+  "(check)"), then read in full once the network access was widened ("Jaynes's text, read": every item stands). The reader's unknowns, attitude θ and size
   κ = V*/H, under turns, rescalings and the exchange: dθ·dκ/κ, Jaynes's location and scale on a circle. Rescaling: only
   1/x, every level ln 2, on a share Haldane's prior (P1); turns: Cauchy(z) carried to Cauchy(g(z)), i fixed by every turn
   and the exchange, the arc's foot Jeffreys's arcsine, the Fisher–Rao length the facing 2θ, the octant's squares
@@ -902,8 +902,11 @@ interesting. we should do the correct physics testing, UI is secondary or even n
   checked to the last digit (`plans/ref-plan.md`, run 1, is the example of what not to count).
 - **Prediction first, from the theory alone**, with the bridge from unit relations to amounts named (see "keep the case").
 - **No page needed.** A test is a plan, a script and an entry in the papers; a demo only where it helps to see.
-- **Data.** This environment cannot reach the astronomy archives (VizieR, CDS, ESA: blocked) or the CDNs (jsDelivr,
-  unpkg, cdnjs); GitHub, PyPI and npm are reachable, and GitHub's CI runner reaches the CDNs. Record each dataset's source, licence and sha256 in its plan, and do not commit large data.
+- **Data.** Until 14 Oct 2026 the cloud environment's network access was the default, Trusted, which reaches GitHub, PyPI
+  and npm but not the astronomy archives (VizieR, CDS, ESA), arXiv, Wikipedia or the CDNs (jsDelivr, unpkg, cdnjs). On
+  14 Oct Tom set it to Full (at claude.ai/code: the cloud button above the message box, the environment's gear, Network
+  access); VizieR, arXiv and jsDelivr then answered. The smoke test still serves three.js from `node_modules`; GitHub's CI
+  runner reaches the CDNs. Record each dataset's source, licence and sha256 in its plan, and do not commit large data.
 
 ## Read this first: THE LAB GUIDE
 The labs have their own rules, written in `labs.html`. Read two comments

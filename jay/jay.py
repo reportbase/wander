@@ -13,9 +13,15 @@ mp.mp.dps = 60
 M = mp.mpf
 def verdict(ok): return "not killed" if ok else "KILLED"
 def hq(f, pts, dps=200):
-    """quadrature at 200 working digits, for densities with an algebraic singularity at an end of the range (run 2)"""
+    """quadrature at 200 working digits, for densities with an algebraic singularity at an end of the range (run 2).
+    mpmath caches the nodes of every interval it meets; at 200 digits 2,000 intervals fill memory, so each interval's
+    nodes are dropped after use (the standard nodes on [-1, 1] are kept). Memory only; the rule is unchanged."""
     with mp.workdps(dps):
-        return +mp.quad(f, pts)
+        v = +mp.quad(f, pts)
+    cache = mp.mp._tanh_sinh.transformed_cache
+    for key in [k for k in cache if (k[0], k[1]) != (-1, 1)]:
+        del cache[key]
+    return v
 results = {}
 rng = random.Random(20261014)
 
@@ -108,10 +114,9 @@ def arcsine_gap(i):
     jeff = hq(lambda u: 1 / (mp.pi * mp.sqrt(u * (1 - u))), [0, t])
     return abs(even - jeff)
 if __name__ == '__main__':
-    from concurrent.futures import ProcessPoolExecutor
     import multiprocessing
-    with ProcessPoolExecutor(mp_context=multiprocessing.get_context('fork')) as ex:   # fork: workers skip the rest
-        w2c = max(ex.map(arcsine_gap, range(1, 2001), chunksize=50))
+    with multiprocessing.get_context('fork').Pool(3) as pool:      # fork: workers skip the rest
+        w2c = max(pool.map(arcsine_gap, range(1, 2001), chunksize=50))
 w2fr = M(0)
 for i in range(1, 200):
     th = M(i) / 200 * mp.pi / 2

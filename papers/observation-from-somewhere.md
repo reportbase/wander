@@ -258,12 +258,17 @@ each level is one doubling of v/h.
 
 **What we build on: the reader's ignorance as a group.** The method is Jaynes's (1968, 1973). An observer that cannot
 tell two problems apart must treat them alike, and when the problems it cannot tell apart are related by a group of
-transformations, the measure it should use is the one the group leaves unchanged. Its classical cases are these.
-Ignorance of a location and a scale gives a measure even in the location and even in the logarithm of the scale,
-dμ·dσ/σ, Jeffreys's prior for a scale (Jeffreys 1939). Ignorance of the odds of a share t gives Haldane's prior,
-1/(t(1 − t)), even in the logarithm of the odds (Haldane 1932). And Bertrand's "chord drawn at random" in a circle
-(Bertrand 1889), posed so that the answer must not change when the circle is turned, resized or moved, has one answer,
-½, the one Crofton's measure on lines gives (Crofton 1868; Jaynes 1973).
+transformations, the measure it should use is the one the group leaves unchanged: indifference between problems, not
+between events. His cases are these (Jaynes 1968, §VII). Ignorance of a location and a scale gives a measure even in the
+location and even in the logarithm of the scale, dμ·dσ/σ, Jeffreys's rule for a scale (Jeffreys 1939); ignorance of a
+rate's time scale gives dλ/λ. Ignorance of a share t, read as a population of opinions that learns nothing from a new
+piece of evidence, which multiplies every opinion's odds by one factor, gives 1/(t(1 − t)), even in the logarithm of the
+odds, the prior Haldane (1932) had proposed. When the group has as many parameters as the problem, the measure is fixed
+up to a constant (Jaynes 1968). And Bertrand's "chord drawn at random" in a circle (Bertrand 1889) has one answer once
+it is posed so that the answer must not change when the circle is turned, resized or moved: ½, the chord's distance from
+the centre even, the answer Crofton's measure on lines gives (Crofton 1868; Jaynes 1973). Resizing alone already rules
+out Bertrand's chord between two random ends, which can hold "for, at most, only one size of circle", and moving the
+circle alone already fixes the answer.
 
 We apply the method to a situated reader. It does not know two things: its *attitude* θ, which way its bar points
 within its sweep, and the other party's true size relative to its own, κ = V*/H. Three transformations change neither
@@ -289,22 +294,26 @@ unchanged is dθ·dκ/κ, unique up to a constant factor (Haar 1933), and much o
 - *The exchange's fixed points*: θ = 45°, the corner (Proposition 1), and κ = 1, the drawing V = H (Propositions 3(e),
   5(d)).
 
-The method is not ours. Three things in its use here are. The first is the group. Which transformations a situated reader
-cannot detect is a statement about its situation, and we choose it as a statement of ignorance rather than derive it from
-anything prior (§11.1). It differs from Jaynes's own cases in one respect: this reader stands somewhere. His straws are
-thrown at a circle that may lie anywhere, so his group includes the translations, and the measures it gives are area,
-dx·dy, on the plane and Crofton's on lines. A situated reader's lines all pass through home, and the transformations that keep home where it is are
-the turns and dilations about it, z ↦ az for complex a. The measure they leave unchanged on the plane is
-dx·dy/(x² + y²) = dθ·dr/r: even in direction and even in levels of distance, not even in area. Read from home,
-Bertrand's question has no single answer. For a circle of radius R whose centre is at distance D ≥ R, the share of the
-chords cut by evenly turned rays that are longer than the side of the inscribed equilateral triangle is
-arcsin(R/2D)/arcsin(R/D). From a home on the circle it is ⅓: the rays from a point of the circle are the chords from one
-end, and this is Bertrand's chord between two random ends. As the circle recedes, the rays turn parallel and the share
-rises toward Jaynes's ½. The second is what the measure is taken to be. For Jaynes it is a prior, a distribution of
-belief over what is not known. Here it is the reader's addresses, laid before anything arrives, and its main consequence
-is that the Cauchy belongs to the addresses and not to the payload (§7). The third is the near field: within its own
-breadth the reader holds a length and lays its readings in proportion, and the proportional and logarithmic lays meet
-at the exchange's fixed point (§6). A prior for a scale alone has no such corner.
+The method is not ours. Three things in its use here are. The first is the group. Which transformations a situated
+reader cannot detect is a statement about its situation, and we choose it as a statement of ignorance rather than derive
+it from anything prior (§11.1). Jaynes's own turn is already an observer's facing: his problem "does not specify whether
+the observer is facing north or east" (1973, §2). The reader's group differs from his in one respect: this reader stands
+somewhere. His straws are thrown at a circle that may lie anywhere, so his group includes the translations, and the
+measures it gives are area, dx·dy, on the plane and Crofton's on lines. A situated reader's lines all pass through home,
+and the transformations that keep home where it is are the turns and dilations about it, z ↦ az for complex a. The
+measure they leave unchanged on the plane is dx·dy/(x² + y²) = dθ·dr/r: even in direction and even in levels of
+distance, not even in area. Read from home, Bertrand's question has no single answer. For a circle of radius R whose
+centre is at distance D ≥ R, the share of the chords cut by evenly turned rays that are longer than the side of the
+inscribed equilateral triangle is arcsin(R/2D)/arcsin(R/D). From a home on the circle it is ⅓: the rays from a point of
+the circle are the chords from one end, and this is Bertrand's chord between two random ends, holding, as Jaynes found,
+for one size of circle only: here for one ratio of R to D. As the circle recedes, the rays turn parallel and the share
+rises toward Jaynes's ½, which he derived for a tosser whose "region of uncertainty" is large compared with the circle.
+The second is what the measure is taken to be. For Jaynes the group's measure is a "pre-prior": not itself a realistic
+state of knowledge, but the invariant measure of the parameter space, on which a prior is then built from what is known
+(1968). Here it is not built on: it is the reader's addresses, laid before anything arrives, and its main consequence is
+that the Cauchy belongs to the addresses and not to the payload (§7). The third is the near field: within its own
+breadth the reader holds a length and lays its readings in proportion, and the proportional and logarithmic lays meet at
+the exchange's fixed point (§6). A prior for a scale alone has no such corner.
 
 ## 3. The reader
 
@@ -1798,9 +1807,11 @@ the group that preserves cross ratios. The Cauchy family is the one family of di
 itself (Knight 1976; McCullagh 1996), and as points m + iγ of the upper half-plane it is the hyperbolic plane on which
 the group acts. The drawings V = cH are the points i/c, one line of that plane. The distance there that every turn,
 rescaling and the exchange keep is unique up to a constant factor (Beardon 1983), and between i/c and i/c′ it is
-|ln(c′/c)|: the number of levels between the two drawings, times ln 2. So the reader's group, which supplies no
-invariant probability as a whole, supplies an invariant way to measure an error of size, and it is in levels
-(Proposition 13).
+|ln(c′/c)|: the number of levels between the two drawings, times ln 2. Acting on the reading alone, the group is too
+large in Jaynes's sense: no probability on readings is unchanged by all of it, the case he calls overdetermined
+(1973, §8). It is the right size acting on the reader's two unknowns, attitude and size, as many parameters as the
+problem (Jaynes 1968), where it fixes dθ·dκ/κ (§2). And it supplies an invariant way to measure an error of
+size, which is in levels (Proposition 13).
 
 The nearest use of these three transformations together is in fitting a line when both coordinates carry error:
 Leonard (2011) puts the Cauchy, the slope's law invariant under turns, on the slope, and the inference that results is
@@ -1867,7 +1878,8 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    The three classical priors for a share are three such drawings swept evenly. The line's is Bayes and Laplace's even
    share. The circle's, read at the foot of each of its points on the chord, which cuts the chord h² : v² (Euclid
    VI.8), is Jeffreys's prior for a share, the arcsine law 1/(π√(t(1 − t))) (Jeffreys 1946). The levels' is Haldane's,
-   1/(t(1 − t)), even in the logarithm of the odds (Haldane 1932). Each is unchanged by the exchange and has its median
+   1/(t(1 − t)), even in the logarithm of the odds (Haldane 1932), Jaynes's for complete ignorance of a share (1968).
+   Each is unchanged by the exchange and has its median
    at the corner, ½ (Haldane's on any range of levels even about it); below t = ¼ they hold ¼, ⅓ and, over three
    decades of odds either side, 0.42. Jaynes's own answer to Bertrand, ½, is from this paper's side a situated reader's answer
    from far off (§2).
