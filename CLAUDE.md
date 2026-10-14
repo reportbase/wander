@@ -389,6 +389,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   situation"): on the chord, a ray from one end reading v/h and from the other h/v cross on the semicircle (Thales), at
   distances h and v; facing twice the ray's angle (inscribed angle); the flip a projective pairing of the two pencils,
   so a conic (Steiner 1832), round only at V = H. OFS §4 "The arc from the chord", with Euclid and Steiner cited.
+  **One unsituated view; V₂ is the azimuth** (14 Oct, SPN R236, R237; Tom: "the unsituated view is h+v+?=1. the
+  situated views are everything else that builds from horizontal, vertical and ?. Not just inside and outside"; "there
+  is another sweep V2"; "Use the correct terms for V2 … lean on classical theory to explain V2"): the sum cut is the one
+  drawing needing no standpoint; every other is situated, the two hemispheres two of many ("three vantages" kept as the
+  named cases). The hand's two sweeps are horizon coordinates: altitude (H to V, v/√(h² + v₂²) = tan a) and azimuth
+  (V₂, round the horizontal from h, v₂/h = tan z), each with its corner at 45°; the even octant is even in azimuth and
+  in height (Archimedes' hat-box, Lambert's equal-area map). OFS §2 (two paragraphs), introduction, §3.4, §3.7, after
+  Proposition 5(e), notation, references (Archimedes, Lambert, Smart).
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -654,6 +662,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the top, the flip the mirror (P4); a conic at every V = cH, x² − x + y²/c² = 0, the pairing projective and not
   perspective (P5, Steiner); equal angles give the bisector (P6); the even sweep of one ray even along the arc, the
   half-Cauchy (P7); over x₁ + x₂ the height √(x₁x₂) (P8, Euclid VI.13). Nothing killed.
+  `azm-plan.md` (+ `azm/azm.py`, 14 Oct; Tom: "there is another sweep V2 … lean on classical theory to explain V2"; SPN
+  R237): exact (mpmath, a grid count, a seeded sample). V₂ is the azimuth: v₂/h = tan z and v/√(h² + v₂²) = tan a, each
+  sweep's corner at 45° (P1); an even azimuth keeps its own corner under any altitude weighting (P2); even in both angles
+  the pair neither sweep reads leaves its corner, P(v ≤ h) = 0.3426, near field 0.2326 (P3, numbers known beforehand,
+  stated); the even octant is even in azimuth and height (P4, Archimedes' hat-box, Lambert), and then every pair at its
+  corner, near field ⅓, the 2D half-Cauchy (P5); the even-in-height raise belongs to three unit relations only (P6).
+  Nothing killed.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -762,6 +777,9 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
 - The unsituated view is the chord, the situated view is the arc, and the chord is prior to the circle (14 October,
   R233, R234): the arc is drawn by the head's turn, not walked; with no turn there is only the chord, needing just the
   two parties and their sum; the circle is the arc over every facing, drawn on the chord after it.
+- One unsituated view and many situated ones (14 October, R236, R237): the sum h + v + v₂ + … = 1 needs no standpoint;
+  every other drawing is built from a standpoint's sweeps, the altitude (H to V) and the azimuth (V₂), as horizon
+  coordinates; the outer and inner hemispheres are two situated views among many.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
   includes. V is the drawn whole (at H), V* the true breadth. A unit is a relation measured beforehand (R230): its

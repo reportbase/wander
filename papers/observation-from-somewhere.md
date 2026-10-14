@@ -96,7 +96,8 @@ to your thumb, V = H, and read the mountain in thumbs.
 standpoint; this is classical geometry. Between two points it holds the straight chord, which needs no turn; the
 circle comes after the chord, drawn on it by turning. A *situated* reader has a facing, and holds only the arc it turns
 through. Either it takes in a hemisphere at once, from outside (a parallel reader), or it sweeps the hemisphere from
-home, one direction at a time (a serial reader). Their figures are the bell and the fisheye. The three read the same thing differently: a line
+home, one direction at a time (a serial reader). Their figures are the bell and the fisheye. These two are not the
+only situated views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The three read the same thing differently: a line
 of true breadth 1 reads 1 to the completed view, π/2 to the hemisphere turned away from the reader and 2/π to the
 hemisphere turned toward it. The true breadth is had only with both hemispheres in hand, which no single observation
 provides. A situated reader can construct it from several observations, but it cannot observe it. Many apparent
@@ -197,6 +198,24 @@ Every cut passes once through every ratio and meets the corner at v/h = 1. The n
 relations: the quarter arc and the octant both measure π/2 because they are cut by length. Statements about ratios hold
 in every drawing; statements about lengths, angles or areas belong to one, and we say which. We call the first three
 cuts the *arc*, the *square* and the *line*.
+
+**The sum, and the drawings built from a standpoint.** One cut needs no standpoint. The sum h + v + v₂ + … = 1 treats
+every unit relation alike and needs nothing but addition: each is a share of a whole, and only a view that holds the
+whole has shares. It is the completed view's own drawing, the line (the chord) for two unit relations and the flat
+triangle for three. Every other drawing is built from a standpoint. Dividing by one unit relation chooses a facing;
+dividing by the largest chooses a register, reading v/h up to the corner and h/v past it; dividing by length needs a
+turn. The two hemispheres of §3.4 are two such drawings, not the only ones.
+
+**Two sweeps: altitude and azimuth.** A reader reaches the wedge of three unit relations by two sweeps, the coordinates
+an observer uses for its own sky (Smart 1977). Take v as the vertical and h and v₂ as the horizontal plane, h the
+forward direction, toward the first other party. The *altitude* a sweeps from the horizontal up to the vertical: the
+sweep from H to V. The *azimuth* z sweeps round the horizontal plane, from h to v₂ square to it: the sweep that brings
+in V₂. The direction is (h, v, v₂) = (cos a cos z, sin a, cos a sin z). Each sweep reads its own pair and has its own
+corner at 45°: the azimuth reads v₂/h = tan z, whatever the altitude, and the altitude reads v against the horizontal
+reach, v/√(h² + v₂²) = tan a, whatever the azimuth. These are horizon coordinates: the horizon and the vertical are set
+by where the reader stands, as an observer's are, unlike coordinates fixed to the sky, and a surveyor's theodolite reads
+the same two angles. The sweeps choose an order, a forward direction and a vertical; the wedge itself does not. With
+n + 1 unit relations there are n sweeps. What sweeping them evenly means is taken up with the even wedge (§7.1).
 
 **Addresses and payload.** An *address* is a place in the reader's layout where a reading can be put. The range of
 addresses is fixed by the geometry before anything arrives, and an address is taken from it when something does. The
@@ -343,7 +362,9 @@ up in §9.
 
 ### 3.4 Three vantages, and the true breadth
 
-The five situations give three vantages, each with its own geometry.
+The five situations give three vantages, each with its own geometry. The completed view's own drawing is the sum,
+h + v + … = 1 (§2); the two situated vantages are two of the drawings a standpoint builds from its sweeps, the two this
+paper follows through, and not the only ones.
 
 | vantage | situations | geometry | the turn | measure of a turn θ | reads a line of true breadth 1 as |
 |---|---|---|---|---|---|
@@ -545,6 +566,10 @@ each finger the same address.
   whole, all at once, with no hand needed to reach them; in 1 every ring is alike, in 2 they differ. 3: one hand
   facing a thing from outside, all its fingers at once, each reaching the ring on the facing side. 4: inside, one
   finger at a time, each ring arriving in turn.
+- *The hand has two sweeps.* Raised, it sweeps from flat to upright, from H to V: the altitude. Turned, it sweeps
+  round from pointing at the other party to pointing square to it, which brings in a second other party, V₂: the
+  azimuth. Every way the hand can point, within one facing of each freedom, is one altitude and one azimuth, as every
+  point of an observer's sky is (§2).
 - *The unit circle is the hand's own arc.* In one facing it is a quarter, flat to upright, open at the top, since no
   finger is ever the horizon. The closed circle comes from turning the hand through its facings, or from nowhere,
   drawing every facing at once. The sphere is every way a hand could face, drawn from nowhere; no hand holds it.
@@ -924,6 +949,16 @@ together, is the completed view. A sphere that placed every place by its directi
 distance, which no situated reader has. The wedge needs no size: the readings are ratios, laid by the two-dimensional
 Cauchy. What it lacks is what the circle lacks, once per party: V*/H and V₂*/H. On the circle near and far were halves;
 with three parties the reader is near in both readings for a third of its addresses.
+
+**Swept by altitude and azimuth.** Reached by the two sweeps of §2, the even octant is even in azimuth and even in
+height v, not in altitude. By Archimedes' hat-box theorem (*On the Sphere and Cylinder*), a zone of a sphere has area
+in proportion to its height, so the octant's area between azimuths z₁, z₂ and heights v₁, v₂ is (z₂ − z₁)(v₂ − v₁):
+Lambert's equal-area map (Lambert 1772), with the altitude's density cos a. Swept that way, every pair keeps its corner
+and the near field is a third, as (e) states. Swept evenly in both angles instead, each sweep keeps its own corner (an
+even azimuth keeps v₂ = h at the median however the altitude is weighted), but the pair that neither sweep reads leaves
+its corner: v ≤ h for 0.343 of the readings, and the near field shrinks to 0.233, because the rings of azimuth narrow
+toward the vertical. The raise even in height belongs to three unit relations only: with two, the even sweep is the
+turn itself; with four, the height's density on the even orthant is (4/π)√(1 − t²).
 
 **More parties.** The same holds for any number n of other parties, each drawn at H. The relation lies on the sphere
 of n + 1 unit relations, one facing of every freedom is its positive orthant, and the point in direction (1, a) is
@@ -1744,6 +1779,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | V, V₂ | drawn | the other parties' wholes as the reader draws them, at H (§5) |
 | V* | an amount | a party's true breadth: never read; estimated (§9) or supplied from outside |
 | v/h, h/v | geometry | the reading before and past the corner |
+| a, z | geometry | altitude, from the horizontal up to the vertical (the sweep from H to V), and azimuth, round the horizontal from h to v₂ (the sweep that brings in V₂); v₂/h = tan z, v/√(h² + v₂²) = tan a (§2) |
 | the corner | geometry | v = h |
 | home, the horizon | geometry | v/h = 0; v/h → ∞, never reached |
 | g | geometry | the sweep's progress, (2/π)·arctan(v/h): 0 at home, ½ at the corner, 1 at the horizon |
@@ -1762,6 +1798,8 @@ Aczél, J., Roberts, F. S. and Rosenbaum, Z. (1986). On scientific laws without 
 Mathematical Analysis and Applications* 119, 389–416.
 
 Archimedes (c. 250 BC). *Measurement of a Circle*.
+
+Archimedes (c. 225 BC). *On the Sphere and Cylinder*.
 
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.
@@ -1833,6 +1871,8 @@ large hierarchies. *Proceedings of CHI '95*, 401–408.
 Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*
 5(4), 437–459.
 
+Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten*. Berlin.
+
 Leonard, D. (2011). Estimating a bivariate linear relationship. *Bayesian Analysis* 6(4), 727–754.
 
 Longuet-Higgins, H. C. (1981). A computer algorithm for reconstructing a scene from two projections. *Nature* 293,
@@ -1870,6 +1910,8 @@ Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation:
 numerical quantity. *Psychological Science* 14(3), 237–243.
 
 Sivia, D. S. and Skilling, J. (2006). *Data Analysis: A Bayesian Tutorial*, 2nd ed. Oxford University Press.
+
+Smart, W. M. (1977). *Textbook on Spherical Astronomy*, 6th ed., revised by R. M. Green. Cambridge University Press.
 
 Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Fincke,
 Berlin.
