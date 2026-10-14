@@ -73,6 +73,31 @@ The same summary repeated Stensola's mean of about 1.42, already stated above. N
 The code repository of Gardner et al. 2022 (github.com/erikher/GridCellTorus) was cloned to check whether it holds
 data. It holds code and notebooks; the notebooks' outputs were not opened.
 
+**Supplied (14 October 2026), recorded before the data was opened beyond its file listing.** This environment could not
+reach the data sources on 10 October; Tom widened its network access on 14 October, and Tom said "ok" (about 15:22)
+to running this test. Candidate 1: Stensola et al. 2012's supplementary material is a Materials and Methods PDF and a
+PDF of Supplementary Figures 1–20 (from the article page's descriptions; neither opened), with no per-animal table, so
+it gives no per-animal spacings to use. Candidate 2 is used: Gardner et al. 2022, figshare article 16764508
+(doi 10.6084/m9.figshare.16764508.v6), licence CC0, one file `Toroidal_topology_grid_cell_data.zip`, 319.9 MB, md5
+379bfdca61cd54d5f58cab9d3ba477de as listed by figshare; its sha256 is recorded under Runs once downloaded. The data is
+spike times and tracked positions with the authors' module assignment, not spacings, so each cell's spacing is
+computed, by a method fixed here before any value is seen:
+- **Session.** Each rat's open-field sessions (no wagon wheel, no sleep); where a rat has more than one, its first in the
+  dataset's own naming order.
+- **Rate map.** Square bins of 2.5 cm over the tracked extent (positions taken as metres if their range is under 10,
+  otherwise centimetres); spike counts and occupancy each smoothed by a Gaussian of σ = 2.5 cm; rate = counts/occupancy;
+  bins with less than 0.1 s of smoothed occupancy left out.
+- **Autocorrelogram.** Pearson correlation of the rate map with itself at every two-dimensional lag, over the bins valid
+  in both, where at least 20 are.
+- **Spacing.** Local maxima of the autocorrelogram (3 × 3 neighbourhood) with r > 0, the zero-lag peak excluded; the six
+  nearest the centre; the cell's spacing is the median of their distances from the centre. A cell with fewer than six
+  such maxima is left out.
+- **Modules.** The authors' module assignment; each module's spacing is the median of its cells' spacings (as the plan
+  says above); within a rat, modules are ordered by spacing.
+What this dataset can and cannot test, from the paper as known before this plan (not from the data): it holds three rats, so P2 (at least 3
+animals with three modules) and P3 (at least 5 with two) may fall to their own minimum counts; that is recorded as their
+kill conditions say, not relaxed.
+
 ## Predictions
 
 - **P1 (a halving, in one dimension or two).** The pooled geometric-mean ratio between adjacent modules is within 0.07
