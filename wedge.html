@@ -32,10 +32,19 @@
       - The situations, one entry per party (OFS §3.1): known (1–2), at once (3), one direction at a time (4). (3, 3) a
         camera, (3, 4) a fan-beam radar, (4, 3) a line scanner, (4, 4) a single-pixel scanner; a known breadth moves the
         drawing on the triangle, (1, V/H, V₂/H)/sum with V = V* where known and H where not, from the centre to the truth.
+      - Step 7, position, then sweep (14 October; Tom: "show how the wedge could be positioned anywhere on the sphere, so
+        there is two steps, position the wedge,then sweep it."; SPN R242). First a rotation R places the wedge on the sphere:
+        where its triple corner points (longitude, latitude) and how far it is turned about that; the head's turn. Then the
+        hand sweeps inside it, altitude and azimuth in the wedge's own frame; on the sphere the hand points R·d. The readings
+        are made against the wedge's frame, so they are the same at every position, and from home the wedge looks the same
+        (only the sphere's lines move); only a frame fixed outside, the sphere's, records the position (as an observer's horizon is placed on the sky by its
+        latitude and sidereal time before altitude and azimuth are read in it). Wherever it is placed the wedge covers π/2,
+        an eighth of the sphere; the eight octants are eight of its places, each reached by three of the octahedron's 24
+        rotations.
     three.js 0.160.0 (MIT) loads from the jsDelivr CDN, pinned, through an import map, as in sphere-cube.html; the smoke
     test serves the same version from node_modules.
-    Links: ?step=1..6&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|3|4&V2=known|3|4
-           &alt=&az=&vs=&v2s=&rays=0&seed=
+    Links: ?step=1..7&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|3|4&V2=known|3|4
+           &alt=&az=&vs=&v2s=&rays=0&seed=, and for step 7 &lon=&lat=&roll= (degrees; the wedge's position)
     Test hook: window.__wedge.
     -->
     <style>
@@ -116,6 +125,12 @@
         <div class="ctl"><label for="az">azimuth, z</label><input id="az" type="range" min="0" max="90" step="0.5" value="25"><output id="azo"></output></div>
         <div class="seg" id="sitV"><span>V, altitude</span><button data-s="known">known</button><button data-s="once">3 at once</button><button data-s="serial">4 stepped</button></div>
         <div class="seg" id="sitV2"><span>V₂, azimuth</span><button data-s="known">known</button><button data-s="once">3 at once</button><button data-s="serial">4 stepped</button></div>
+        <div id="posCtl" style="display:none">
+        <div class="ctl"><label for="plon">longitude</label><input id="plon" type="range" min="-180" max="180" step="0.5" value="45"><output id="plono"></output></div>
+        <div class="ctl"><label for="plat">latitude</label><input id="plat" type="range" min="-90" max="90" step="0.5" value="35.26"><output id="plato"></output></div>
+        <div class="ctl"><label for="proll">turned</label><input id="proll" type="range" min="-180" max="180" step="0.5" value="0"><output id="prollo"></output></div>
+        <div class="row"><button id="bPlay">position, then sweep</button><button id="bOct">an octant</button><button id="bAny">anywhere</button><button id="bPos0">the first place</button></div>
+        </div>
         <div class="row">
             <button id="bWorld">world: scatter</button>
             <button id="bLay">lay: the reader's</button>
@@ -254,7 +269,7 @@ function makeWorld(kind, seed) {
 const qs = new URLSearchParams(location.search);
 const sitParam = (k, dflt) => { const v = qs.get(k); return v === 'known' || v === '1' || v === '2' ? 'known' : v === '3' ? 'once' : v === '4' ? 'serial' : dflt; };
 const state = {
-    step: Math.min(6, Math.max(1, +qs.get('step') || 1)),
+    step: Math.min(7, Math.max(1, +qs.get('step') || 1)),
     view: 'outside', lgH: qs.has('H') ? Math.max(-2, Math.min(3, +qs.get('H') || 0)) : 0,
     lay: qs.get('lay') === 'inplace' ? 'inplace' : 'reader',
     world: ['scatter', 'decades', 'none'].includes(qs.get('world')) ? qs.get('world') : 'scatter', seed: +qs.get('seed') || 7,
@@ -271,6 +286,7 @@ const CAPTIONS = {
     3: ['two sweeps', '<b>Two sweeps.</b> The hand points by <span class="teal">altitude</span>, raised from the horizontal to the vertical, the sweep from H to V, reading tan a = v/√(h² + v₂²); and by <span class="violet">azimuth</span>, turned round the horizontal from h to v₂, the sweep that brings in V₂, reading tan z = v₂/h. Each has its corner at 45°. The map is Lambert\'s, azimuth across and height up, equal-area (Archimedes\' hat-box): the corners are curves that halve it, and the six chambers are equal.'],
     4: ['a world', '<b>A world in the wedge.</b> Each thing has a direction, its address, and a distance d, laid along its ray: in proportion out to the corner (s = d/H up to 1), then one level, ln 2 wide, for every doubling (1 + ln s). From home only the directions show, each thing as wide as it looks across, Δ/d, a relation: narrower than a pixel, it is a point. Tap a thing to point the hand at it.'],
     5: ['H is a zoom', '<b>H is a zoom.</b> Change H and every thing slides along its own ray, never across it: from home nothing moves. What changes is the address: which things are near (inside the corner), which level the rest fall in, which merge into home (nearer than H/32, the reader holding 32 addresses across the near field), and which lie past the held edge (beyond H·2⁶).'],
+    7: ['position, then sweep', '<b>Position, then sweep.</b> Two motions. First the wedge is placed on the sphere: one rotation, three angles (where its triple corner points, longitude and latitude, and how far it is turned about that): the head\'s turn. Then the hand sweeps inside it, altitude and azimuth in the wedge\'s own frame. The readings are made against that frame, so they are the same wherever the wedge is placed, and from home the wedge looks the same: only the lines of a frame fixed outside the reader, the sphere\'s, move, and only that frame records the position, as an observer\'s horizon is placed on the sky by where and when it stands before altitude and azimuth are read in it. Wherever it is placed the wedge covers an eighth of the sphere; the eight octants are eight of its places.'],
     6: ['the situations', '<b>The situations, one entry per party.</b> Each sweep is taken at once (3) or one direction at a time (4), or its party\'s breadth is known (1 or 2). Both at once: a camera\'s frame. The altitude at once and the azimuth stepped: a fan-beam radar. The azimuth at once and the altitude stepped: a line scanner. Both stepped: a single-pixel scanner. Every one reaches every direction of the wedge; they differ in how much is held at once. A known breadth moves the reader\'s drawing on the triangle from the centre toward the truth.']
 };
 const STEP_SET = {
@@ -279,7 +295,8 @@ const STEP_SET = {
     3: { view: 'outside', showWorld: false, handAnim: !reduced, zoomAnim: false, sitV: 'once', sitV2: 'once' },
     4: { view: 'outside', showWorld: true, handAnim: false, zoomAnim: false, sitV: 'once', sitV2: 'once' },
     5: { view: 'outside', showWorld: true, handAnim: false, zoomAnim: !reduced, sitV: 'once', sitV2: 'once' },
-    6: { view: 'home', showWorld: true, handAnim: false, zoomAnim: false, sitV: 'once', sitV2: 'serial' }
+    6: { view: 'home', showWorld: true, handAnim: false, zoomAnim: false, sitV: 'once', sitV2: 'serial' },
+    7: { view: 'outside', showWorld: false, handAnim: false, zoomAnim: false, sitV: 'once', sitV2: 'once' }
 };
 
 // ── the drawing ───────────────────────────────────────────────────────────────────────────────────────────────
@@ -341,7 +358,8 @@ function disposeGroup(g) {
 }
 
 // the frame: the wedge's three faces with the levels on them, its caps, the unit cube, the axes; rebuilt with the lay
-const frameG = new THREE.Group(), truthG = new THREE.Group(); scene.add(frameG, truthG);
+const wedgeRoot = new THREE.Group(); scene.add(wedgeRoot);             // step 7 turns this: the wedge placed on the sphere
+const frameG = new THREE.Group(), truthG = new THREE.Group(); wedgeRoot.add(frameG, truthG);
 const homeOnly = [], outsideOnly = [];
 let drawingBead, truthBead, centreBead, truthRod, labDrawing, labTruth;
 function levelRadii(mode) { const out = []; for (let k = 1; 2 ** k <= edgeS(mode); k++) out.push(lay(2 ** k, mode)); return out; }
@@ -421,10 +439,10 @@ const ptsMat = new THREE.ShaderMaterial({
     fragmentShader: 'varying vec3 vc; varying float va; void main(){ vec2 q = gl_PointCoord * 2.0 - 1.0; float r = dot(q, q);' +
         'if (r > 1.0 || va < 0.004) discard; gl_FragColor = vec4(vc * (0.8 + 0.35 * (1.0 - r)), va * smoothstep(1.0, 0.5, r)); }'
 });
-const worldPts = new THREE.Points(ptsGeo, ptsMat); worldPts.renderOrder = 5; worldPts.frustumCulled = false; scene.add(worldPts);
+const worldPts = new THREE.Points(ptsGeo, ptsMat); worldPts.renderOrder = 5; worldPts.frustumCulled = false; wedgeRoot.add(worldPts);
 const raysGeo = new THREE.BufferGeometry();
 const worldRays = new THREE.LineSegments(raysGeo, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, depthWrite: false }));
-worldRays.frustumCulled = false; scene.add(worldRays);
+worldRays.frustumCulled = false; wedgeRoot.add(worldRays);
 let seenAt = new Float64Array(0);
 function allocWorld() {
     const n = things.length;
@@ -449,7 +467,7 @@ function addrHex(ad) {
 }
 
 // the hand: a rod from home, its two sweeps as fans and as arcs on the rim
-const handG = new THREE.Group(); scene.add(handG);
+const handG = new THREE.Group(); wedgeRoot.add(handG);
 const ARC_N = 64;
 const dynLine = (n, hex, op) => { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(n * 3), 3)); const l = new THREE.Line(g, lineMat(hex, op)); l.frustumCulled = false; return l; };
 const dynFan = (hex, op, n = ARC_N) => { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(n * 9), 3)); const m = new THREE.Mesh(g, basic(hex, op)); m.frustumCulled = false; return m; };
@@ -467,11 +485,61 @@ function ringTexture() {
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
 }
 const handRing = new THREE.Sprite(new THREE.SpriteMaterial({ map: ringTexture(), color: 0xf6ead2, transparent: true, depthTest: false, sizeAttenuation: false }));
-handRing.renderOrder = 9; scene.add(handRing);
+handRing.renderOrder = 9; wedgeRoot.add(handRing);
 // the beam: what a reader with a stepped sweep holds at this moment
 const beamFan = dynFan(0xf6ead2, 0.13), beamRim = dynLine(ARC_N + 1, 0xf6ead2, 0.8), beamPatch = dynFan(0xf6ead2, 0.35, 2);
-scene.add(beamFan, beamRim, beamPatch);
+wedgeRoot.add(beamFan, beamRim, beamPatch);
 let tNow = 0;
+
+// step 7: the wedge placed on the sphere by one rotation (the head's turn), then swept inside (the hand)
+const C_LOC = V3(1, 1, 1).normalize(), U_LOC = V3(-1, 2, -1).normalize();        // the triple corner and the v edge's lean, in the wedge's frame
+const Rq = new THREE.Quaternion();                                                  // the position: the wedge's frame to the sphere's
+const skyDir = (lon, lat) => V3(Math.cos(lat * RAD) * Math.cos(lon * RAD), Math.sin(lat * RAD), Math.cos(lat * RAD) * Math.sin(lon * RAD));
+function upAt(t) { const up = Math.abs(t.y) > 0.9999 ? V3(1, 0, 0) : V3(0, 1, 0); return up.sub(t.clone().multiplyScalar(up.dot(t))).normalize(); }
+function posQuat(lon, lat, roll) {                                  // the triple corner to (lon, lat), the v edge leaning up, turned by roll
+    const t = skyDir(lon, lat), u = upAt(t).applyAxisAngle(t, roll * RAD), w = new THREE.Vector3().crossVectors(t, u);
+    const A = new THREE.Matrix4().makeBasis(C_LOC, U_LOC, new THREE.Vector3().crossVectors(C_LOC, U_LOC)), B = new THREE.Matrix4().makeBasis(t, u, w);
+    return new THREE.Quaternion().setFromRotationMatrix(B.multiply(A.transpose()));
+}
+function posOf(q) {                                                 // back from a position to (lon, lat, roll)
+    const t = C_LOC.clone().applyQuaternion(q), u = U_LOC.clone().applyQuaternion(q), u0 = upAt(t);
+    return { lon: Math.atan2(t.z, t.x) / RAD, lat: Math.asin(Math.max(-1, Math.min(1, t.y))) / RAD,
+             roll: Math.atan2(new THREE.Vector3().crossVectors(u0, u).dot(t), u0.dot(u)) / RAD };
+}
+function octantQuat(k) {                                            // the octant with signs from k's bits, reached by a turn of the first
+    const sg = [k & 1 ? -1 : 1, k & 2 ? -1 : 1, k & 4 ? -1 : 1];
+    let cols = [V3(sg[0], 0, 0), V3(0, sg[1], 0), V3(0, 0, sg[2])];
+    if (sg[0] * sg[1] * sg[2] < 0) cols = [cols[1], cols[0], cols[2]];   // otherwise a reflection: swap two parties to keep it a turn
+    return new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(...cols));
+}
+function octahedral() {                                             // the octahedron's turns: signed permutations with determinant 1
+    const perms = [[0, 1, 2], [1, 2, 0], [2, 0, 1], [0, 2, 1], [2, 1, 0], [1, 0, 2]], out = [];
+    for (const p of perms) for (let k = 0; k < 8; k++) {
+        const sg = [k & 1 ? -1 : 1, k & 2 ? -1 : 1, k & 4 ? -1 : 1], cols = p.map((a, i) => { const v = [0, 0, 0]; v[a] = sg[i]; return V3(...v); });
+        const M = new THREE.Matrix4().makeBasis(...cols); if (M.determinant() > 0) out.push(new THREE.Quaternion().setFromRotationMatrix(M));
+    }
+    return out;
+}
+function randomQuat(r = Math.random) {                              // an even turn (Shoemake 1992)
+    const u1 = r(), u2 = r(), u3 = r(), a = Math.sqrt(1 - u1), b = Math.sqrt(u1);
+    return new THREE.Quaternion(a * Math.sin(2 * Math.PI * u2), a * Math.cos(2 * Math.PI * u2), b * Math.sin(2 * Math.PI * u3), b * Math.cos(2 * Math.PI * u3));
+}
+// the sphere: every place the wedge can be put, fixed outside the reader, with its eight octants
+const skyG = new THREE.Group(); scene.add(skyG); skyG.visible = false;
+{
+    skyG.add(new THREE.Mesh(new THREE.SphereGeometry(OUT * 1.004, 72, 48), basic(0xbfc8ff, 0.03)));
+    const ring = f => polyline(Array.from({ length: 129 }, (_, i) => f(i / 128 * 2 * Math.PI).map(c => c * OUT * 1.005)), HEX.white, 0.26);
+    skyG.add(ring(a => [Math.cos(a), Math.sin(a), 0]), ring(a => [0, Math.cos(a), Math.sin(a)]), ring(a => [Math.cos(a), 0, Math.sin(a)]));
+    const l = label('the sphere: every place the wedge can be put', '#a6a2b4', 0.12); l.position.set(0, -OUT * 1.16, 0); skyG.add(l);
+}
+let posPlays = 0;
+function startPlay(q1) {                                            // first the position, then the sweep
+    if (!q1) q1 = posPlays++ === 0 ? posQuat(150, -25, 40) : randomQuat();
+    state.posAnim = { phase: 'position', t: 0, q0: Rq.clone(), q1 }; state.handAnim = false;
+}
+function applyHomeCam() {                                           // from home the reader looks down its own triple corner, wherever it is put
+    camera.position.set(0, 0, 0); camera.up.copy(V3(0, 1, 0).applyQuaternion(Rq)); camera.lookAt(C_LOC.clone().applyQuaternion(Rq));
+}
 function updateHand(dt) {
     if (state.handAnim) {
         handT += dt; state.az = 45 + 43 * Math.sin(handT * 0.33); state.alt = 45 + 43 * Math.sin(handT * 0.51 + 0.7); syncSliders();
@@ -519,6 +587,14 @@ function placeTruth() {
 }
 function update(dt) {
     tNow += dt;
+    if (state.posAnim) {
+        const A = state.posAnim; A.t += dt;
+        if (A.phase === 'position') { const u = Math.min(1, A.t / 2.2), e = u * u * (3 - 2 * u); Rq.slerpQuaternions(A.q0, A.q1, e); syncPos();
+            if (u >= 1) { A.phase = 'sweep'; A.t = 0; state.handAnim = !reduced; handT = 0; } }
+        else if (A.t > 6) { state.handAnim = false; state.posAnim = null; syncCtl(); }
+    }
+    wedgeRoot.quaternion.copy(Rq); skyG.visible = state.step === 7;
+    if (state.view === 'home' && !tween) applyHomeCam();
     if (state.zoomAnim) { zoomT += dt; state.lgH = 0.5 + 2.3 * Math.sin(zoomT * 0.32); syncSliders(); }
     updateHand(dt);
     const home = state.view === 'home' && !tween, H = Hval();
@@ -581,10 +657,14 @@ function setOffset(x, y) {
     camera.updateProjectionMatrix();
 }
 function applyView() { if (tween) return; const p = viewParams(state.view); camera.fov = p.fov; setOffset(p.offX, p.offY); }
-function poseOf(v) { return v === 'home' ? { pos: V3(0, 0, 0), look: V3(1, 1, 1), ...viewParams(v) } : { pos: OUT_POSE.pos.clone(), look: OUT_POSE.target.clone(), ...viewParams(v) }; }
-function setView(v, animate = true) {
-    if (v === state.view && !tween) { applyView(); return; }
-    const from = { pos: camera.position.clone(), look: lookNow(), fov: camera.fov, offX: curOff[0], offY: curOff[1] };
+const OUT7 = { pos: V3(9.6, 6.9, 12.2), target: V3(0, 0, 0) };      // step 7 looks at the whole sphere
+function poseOf(v) {
+    if (v === 'home') return { pos: V3(0, 0, 0), look: C_LOC.clone().applyQuaternion(Rq), up: V3(0, 1, 0).applyQuaternion(Rq), ...viewParams(v) };
+    const P = state.step === 7 ? OUT7 : OUT_POSE; return { pos: P.pos.clone(), look: P.target.clone(), up: V3(0, 1, 0), ...viewParams(v) };
+}
+function setView(v, animate = true, force = false) {
+    if (v === state.view && !tween && !force) { applyView(); return; }
+    const from = { pos: camera.position.clone(), look: lookNow(), up: camera.up.clone(), fov: camera.fov, offX: curOff[0], offY: curOff[1] };
     state.view = v;
     const to = poseOf(v);
     if (controls) controls.enabled = false;
@@ -595,7 +675,7 @@ function setView(v, animate = true) {
 function lookNow() { const d = new THREE.Vector3(); camera.getWorldDirection(d); return camera.position.clone().add(d.multiplyScalar(3)); }
 function finishView(to) {
     tween = null;
-    camera.position.copy(to.pos); camera.up.set(0, 1, 0); camera.lookAt(to.look); camera.fov = to.fov; setOffset(to.offX, to.offY);
+    camera.position.copy(to.pos); camera.up.copy(to.up || V3(0, 1, 0)); camera.lookAt(to.look); camera.fov = to.fov; setOffset(to.offX, to.offY);
     if (state.view === 'outside' && controls) { controls.target.copy(to.look); controls.enabled = true; controls.update(); }
     canvas.classList.toggle('home', state.view === 'home');
     syncCtl();
@@ -605,7 +685,7 @@ function stepTween(dt) {
     tween.t = Math.min(1, tween.t + dt / 1.3);
     const s = tween.t * tween.t * (3 - 2 * tween.t), f = tween.from, t = tween.to;
     camera.position.lerpVectors(f.pos, t.pos, s); camera.fov = f.fov + (t.fov - f.fov) * s;
-    camera.up.set(0, 1, 0); camera.lookAt(f.look.clone().lerp(t.look, s));
+    camera.up.copy(f.up.clone().lerp(t.up, s).normalize()); camera.lookAt(f.look.clone().lerp(t.look, s));
     setOffset(f.offX + (t.offX - f.offX) * s, f.offY + (t.offY - f.offY) * s);
     if (tween.t >= 1) finishView(t);
 }
@@ -630,6 +710,14 @@ function counts(H = Hval()) {
     return c;
 }
 function hudText() {
+    if (state.step === 7) {
+        const p = posOf(Rq), dl = dir(state.alt, state.az), dw = V3(...dl).applyQuaternion(Rq), r7 = readings(dl);
+        const L7 = [`position: the triple corner at longitude ${p.lon.toFixed(1)}°, latitude ${p.lat.toFixed(1)}° on the sphere, turned ${p.roll.toFixed(1)}° about it (one rotation)`,
+            `the hand, in the wedge's own frame: a = ${state.alt.toFixed(1)}°, z = ${state.az.toFixed(1)}°  →  (h, v, v₂) = ${f3(dl)}; it reads tan z = ${fmt(r7.az)}, tan a = ${fmt(r7.alt)} wherever the wedge is put`,
+            `on the sphere: R·d = ${f3([dw.x, dw.y, dw.z])}, longitude ${(Math.atan2(dw.z, dw.x) / RAD).toFixed(1)}°, latitude ${(Math.asin(Math.max(-1, Math.min(1, dw.y))) / RAD).toFixed(1)}°: only the sphere's frame records the position`,
+            `wherever it is put the wedge covers π/2 of the sphere's 4π, an eighth; the eight octants are eight of its places, each reached by three of the octahedron's 24 turns${state.view === 'home' ? '; from home the wedge looks the same at every position, and only the sphere\'s lines, fixed outside, move' : ''}`];
+        return (innerWidth < 760 ? L7.slice(0, 2) : L7).join('\n');
+    }
     const d = dir(state.alt, state.az), r = readings(d), sh = shares(d), H = Hval(), L = [];
     const nearCorner = (x) => Math.abs(x - 45) < 0.26 ? ' (its corner)' : '';
     L.push(`the hand: a = ${state.alt.toFixed(1)}°, z = ${state.az.toFixed(1)}°  →  (h, v, v₂) = ${f3(d)}; seen from home at its shares ${f3(sh)}`);
@@ -697,14 +785,21 @@ function drawMap() {
 // ── controls ──────────────────────────────────────────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
 const stepsEl = $('steps');
-for (let s = 1; s <= 6; s++) { const b = document.createElement('button'); b.textContent = s; b.title = CAPTIONS[s][0]; b.onclick = () => setStep(s); stepsEl.appendChild(b); }
+for (let s = 1; s <= 7; s++) { const b = document.createElement('button'); b.textContent = s; b.title = CAPTIONS[s][0]; b.onclick = () => setStep(s); stepsEl.appendChild(b); }
 function syncSliders() {
     $('lgH').value = state.lgH; $('lgHo').textContent = `${fmtAmt(Hval())}`;
     $('alt').value = state.alt; $('alto').textContent = state.alt.toFixed(1) + '°';
     $('az').value = state.az; $('azo').textContent = state.az.toFixed(1) + '°';
 }
+function syncPos() {
+    const p = posOf(Rq);
+    $('plon').value = p.lon; $('plono').textContent = p.lon.toFixed(1) + '°';
+    $('plat').value = p.lat; $('plato').textContent = p.lat.toFixed(1) + '°';
+    $('proll').value = p.roll; $('prollo').textContent = p.roll.toFixed(1) + '°';
+}
 function syncCtl() {
-    syncSliders();
+    syncSliders(); syncPos(); $('posCtl').style.display = state.step === 7 ? '' : 'none';
+    $('bPlay').classList.toggle('on', !!state.posAnim);
     [...stepsEl.children].forEach((b, i) => b.classList.toggle('on', i + 1 === state.step));
     $('caption').innerHTML = CAPTIONS[state.step][1];
     $('vOut').classList.toggle('on', state.view === 'outside'); $('vHome').classList.toggle('on', state.view === 'home');
@@ -715,10 +810,13 @@ function syncCtl() {
     $('hint').textContent = state.view === 'home' ? 'home: h ↙ · v ↑ · v₂ ↘ · drag to point the hand' : 'h → right · v → up · v₂ → toward you · drag to look';
 }
 function setStep(s) {
+    const was7 = state.step === 7;
     state.step = s; const set = STEP_SET[s];
     Object.assign(state, { showWorld: set.showWorld, handAnim: set.handAnim, zoomAnim: set.zoomAnim, sitV: set.sitV, sitV2: set.sitV2 });
     if (s === 4 || s === 6) state.lgH = 0;
-    setView(set.view);
+    if (s !== 7 || !was7) { Rq.identity(); state.posAnim = null; }        // the other steps keep the wedge in its first place
+    if (s === 7 && !was7 && !reduced) startPlay();
+    setView(set.view, true, was7 !== (s === 7));
     syncCtl();
 }
 $('vOut').onclick = () => { setView('outside'); syncCtl(); };
@@ -736,6 +834,13 @@ $('bRays').onclick = () => { state.rays = !state.rays; syncCtl(); };
 $('bSweep').onclick = () => { state.handAnim = !state.handAnim; syncCtl(); };
 $('bZoom').onclick = () => { state.zoomAnim = !state.zoomAnim; syncCtl(); };
 $('bReset').onclick = () => { state.lgH = 0; state.zoomAnim = state.handAnim = false; state.alt = 40; state.az = 25; finishView(poseOf(state.view)); };
+const setPos = () => { state.posAnim = null; Rq.copy(posQuat(+$('plon').value, +$('plat').value, +$('proll').value)); syncPos(); syncCtl(); };
+$('plon').oninput = $('plat').oninput = $('proll').oninput = setPos;
+let octK = 0;
+$('bOct').onclick = () => { octK = (octK + 1) % 8; state.posAnim = null; Rq.copy(octantQuat(octK)); $('bOct').textContent = `an octant: ${octK + 1} of 8`; syncCtl(); };
+$('bAny').onclick = () => { state.posAnim = null; Rq.copy(randomQuat()); syncCtl(); };
+$('bPlay').onclick = () => { startPlay(randomQuat()); syncCtl(); };
+$('bPos0').onclick = () => { state.posAnim = null; Rq.identity(); octK = 0; $('bOct').textContent = 'an octant'; syncCtl(); };
 $('fold').onclick = () => { $('panel').classList.toggle('folded'); $('fold').textContent = $('panel').classList.contains('folded') ? '▴' : '▾'; };
 
 function pointHand(d) {                                             // the hand at a direction, kept in the wedge
@@ -750,7 +855,7 @@ function nearestThing(ev, px = 16) {                                // the thing
     let best = -1, bd = px;
     for (let i = 0; i < things.length; i++) {
         if (aa[i] < 0.05) continue;
-        v.set(pa[i * 3], pa[i * 3 + 1], pa[i * 3 + 2]).project(camera); if (v.z > 1) continue;
+        v.set(pa[i * 3], pa[i * 3 + 1], pa[i * 3 + 2]).applyMatrix4(wedgeRoot.matrixWorld).project(camera); if (v.z > 1) continue;
         const x = (v.x + 1) / 2 * r.width, y = (1 - v.y) / 2 * r.height, dd = Math.hypot(x - (ev.clientX - r.left), y - (ev.clientY - r.top));
         if (dd < bd) { bd = dd; best = i; }
     }
@@ -763,14 +868,14 @@ canvas.addEventListener('pointerdown', ev => {
 });
 canvas.addEventListener('pointermove', ev => {
     if (!aiming || !down) return;
-    if (Math.hypot(ev.clientX - down[0], ev.clientY - down[1]) > 4) { const d = rayDir(ev); pointHand([d.x, d.y, d.z]); }
+    if (Math.hypot(ev.clientX - down[0], ev.clientY - down[1]) > 4) { const d = rayDir(ev).clone().applyQuaternion(Rq.clone().invert()); pointHand([d.x, d.y, d.z]); }
 });
 canvas.addEventListener('pointerup', ev => {
     const tap = down && Math.hypot(ev.clientX - down[0], ev.clientY - down[1]) < 5; down = null; aiming = false;
     if (!tap) return;
     const i = nearestThing(ev);
     if (i >= 0) pointHand(things[i].dir);
-    else if (state.view === 'home') { const d = rayDir(ev); pointHand([d.x, d.y, d.z]); }
+    else if (state.view === 'home') { const d = rayDir(ev).clone().applyQuaternion(Rq.clone().invert()); pointHand([d.x, d.y, d.z]); }
 });
 canvas.addEventListener('pointercancel', () => { down = null; aiming = false; });
 let mapDown = false;
@@ -782,7 +887,7 @@ mc.addEventListener('pointerup', () => { mapDown = false; });
 addEventListener('keydown', ev => {
     const k = { ArrowLeft: [0, -1], ArrowRight: [0, 1], ArrowUp: [1, 0], ArrowDown: [-1, 0] }[ev.key];
     if (k) { state.handAnim = false; state.alt = Math.max(0, Math.min(90, state.alt + k[0])); state.az = Math.max(0, Math.min(90, state.az + k[1])); syncCtl(); ev.preventDefault(); }
-    if (/^[1-6]$/.test(ev.key)) setStep(+ev.key);
+    if (/^[1-7]$/.test(ev.key)) setStep(+ev.key);
 });
 
 if (renderer) {
@@ -816,9 +921,11 @@ camera.position.copy(OUT_POSE.pos); camera.lookAt(OUT_POSE.target);
 if (controls) { controls.target.copy(OUT_POSE.target); controls.update(); }
 resize();
 setStep(state.step);
-setView(qs.has('view') ? (qs.get('view') === 'home' ? 'home' : 'outside') : state.view, false);
+setView(qs.has('view') ? (qs.get('view') === 'home' ? 'home' : 'outside') : state.view, false, true);
 if (qs.has('H')) state.lgH = Math.max(-2, Math.min(3, +qs.get('H') || 0));
 if (qs.has('alt') || qs.has('az')) { state.handAnim = false; if (qs.has('alt')) state.alt = Math.max(0, Math.min(90, +qs.get('alt'))); if (qs.has('az')) state.az = Math.max(0, Math.min(90, +qs.get('az'))); }
+if (state.step === 7 && !reduced && !(qs.has('lon') || qs.has('lat') || qs.has('roll'))) startPlay();   // opened at step 7: position, then sweep
+if (qs.has('lon') || qs.has('lat') || qs.has('roll')) { state.posAnim = null; Rq.copy(posQuat(+qs.get('lon') || 45, qs.has('lat') ? +qs.get('lat') : 35.26, +qs.get('roll') || 0)); }
 if (qs.has('V')) state.sitV = sitParam('V', state.sitV);
 if (qs.has('V2')) state.sitV2 = sitParam('V2', state.sitV2);
 syncCtl();
@@ -845,7 +952,19 @@ window.__wedge = {
     get frames() { return frames; }, get webgl() { return !!renderer; },
     hud: () => hudText(),
     state: () => ({ step: state.step, view: state.view, H: Hval(), lay: state.lay, world: state.world, showWorld: state.showWorld,
-        alt: state.alt, az: state.az, sitV: state.sitV, sitV2: state.sitV2, vs: state.vs, v2s: state.v2s, K, tween: !!tween, fov: camera.fov }),
+        alt: state.alt, az: state.az, sitV: state.sitV, sitV2: state.sitV2, vs: state.vs, v2s: state.v2s, K, tween: !!tween, fov: camera.fov,
+        pos: posOf(Rq), q: Rq.toArray(), playing: !!state.posAnim }),
+    // step 7: the position (a rotation of the wedge's frame into the sphere's), then the sweep inside it
+    position: {
+        quat: (lon, lat, roll) => posQuat(lon, lat, roll).toArray(), of: q => posOf(new THREE.Quaternion().fromArray(q)),
+        octant: k => octantQuat(k).toArray(), octahedral: () => octahedral().map(q => q.toArray()), random: () => randomQuat().toArray(),
+        imageOctant: q => { const c = V3(1, 1, 1).applyQuaternion(new THREE.Quaternion().fromArray(q)); return (c.x < 0 ? 1 : 0) | (c.y < 0 ? 2 : 0) | (c.z < 0 ? 4 : 0); },
+        inWedge: (q, d) => { const l = V3(...d).applyQuaternion(new THREE.Quaternion().fromArray(q).invert()); return l.x >= -1e-12 && l.y >= -1e-12 && l.z >= -1e-12; },
+        world: (alt, az) => V3(...dir(alt, az)).applyQuaternion(Rq).toArray(),
+        handTip: () => { updateHand(0); wedgeRoot.quaternion.copy(Rq); wedgeRoot.updateMatrixWorld(true); return handTip.getWorldPosition(new THREE.Vector3()).divideScalar(OUT * 1.04).toArray(); },
+        homeNdc: pts => { wedgeRoot.quaternion.copy(Rq); wedgeRoot.updateMatrixWorld(true); applyHomeCam(); camera.updateMatrixWorld(true);
+            return pts.map(p => { const v = V3(...p).applyMatrix4(wedgeRoot.matrixWorld).project(camera); return [v.x, v.y]; }); }
+    },
     set(o) {
         if (o.step) setStep(o.step);
         if (o.view) setView(o.view, false);
@@ -854,6 +973,8 @@ window.__wedge = {
         if (o.world) { state.world = o.world; state.showWorld = o.world !== 'none'; things = makeWorld(o.world, state.seed); allocWorld(); }
         if ('alt' in o || 'az' in o) { state.handAnim = false; if ('alt' in o) state.alt = o.alt; if ('az' in o) state.az = o.az; }
         if (o.V) state.sitV = o.V; if (o.V2) state.sitV2 = o.V2;
+        if (o.pos) { state.posAnim = null; state.handAnim = false;
+            Rq.copy('octant' in o.pos ? octantQuat(o.pos.octant) : o.pos.q ? new THREE.Quaternion().fromArray(o.pos.q) : posQuat(o.pos.lon, o.pos.lat, o.pos.roll)); }
         syncCtl(); return this.state();
     }
 };

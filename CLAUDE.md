@@ -144,11 +144,19 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   field: nearer than H/32 merged into home, past H·2⁶ (or s ≥ 32) past the held edge; H slides things along their rays,
   never across; from home each thing as wide as it looks (Δ/d). The situations per party (known, 3 at once, 4 stepped):
   a camera, a fan-beam radar (3, 4), a line scanner (4, 3), a single-pixel scanner (4, 4), the seen fading behind the
-  beam; a known breadth moves the drawing (1, V/H, V₂/H)/sum from the centre toward the truth. Six steps: the wedge,
-  from home, two sweeps, a world, H is a zoom, the situations.
-  `?step=1..6&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|3|4&V2=known|3|4&alt=&az=&vs=&v2s=&rays=0&seed=`;
+  beam; a known breadth moves the drawing (1, V/H, V₂/H)/sum from the centre toward the truth. Seven steps: the wedge,
+  from home, two sweeps, a world, H is a zoom, the situations, and (14 Oct, Tom: "show how the wedge could be positioned
+  anywhere on the sphere, so there is two steps, position the wedge,then sweep it."; SPN R242) position, then sweep: the
+  sphere with its three great circles; the wedge (everything of it, in one group) placed by a rotation R, set by where its
+  triple corner points (longitude, latitude) and a turn about that, or on an octant (a turn of the first, two parties
+  swapped where the signs would make a reflection), or anywhere (an even turn); then the hand sweeps in the wedge's own
+  frame, on the sphere R·d; "position, then sweep" plays a turn and then the sweep; from home the camera turns with R, so
+  the wedge looks the same and only the sphere's lines move. Leaving step 7 puts the wedge back in its first place.
+  `?step=1..7&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|3|4&V2=known|3|4&alt=&az=&vs=&v2s=&rays=0&seed=&lon=&lat=&roll=`;
   hook `window.__wedge` (`homeProject`, `homeShares`, `shares`, `chamberShares`, `cornerHalf`, `placeAt`, `counts`,
-  `coverage`, `drawingOf`, `situationName`, `set`, `state`, `hud`). Not in the flying page.
+  `coverage`, `drawingOf`, `situationName`, `set` (with `pos`: lon/lat/roll, `octant` or `q`), `state`, `hud`, and
+  `position`: `quat`, `of`, `octant`, `octahedral`, `random`, `imageOctant`, `inWedge`, `world`, `handTip`, `homeNdc`).
+  Not in the flying page.
 - `wedge-browse.html`: **browsing the wedge** (14 Oct 2026, Tom: "the cool thing is we can attach array of data to this";
   "if the data is massive, than a fisheye dual control UI was explored, we should pull that forward. the situated view is
   typically over huge data"; "yes" to one thumb for both sweeps; SPN R241), a standalone page, plain canvas, no libraries.
@@ -848,7 +856,9 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   relations (R239): one entry per other party, the five the one-party case. The reader's space is the wedge, not a sphere (R240): a
   relation is never negative, so a sphere's other octants are only facings; seen from home it is the sum's triangle.
   The situated view is over huge data (R241): a dataset's columns are the parties, a row's ratios its direction and its
-  total its depth; the reader holds a window round the hand and the rest as totals.
+  total its depth; the reader holds a window round the hand and the rest as totals. Position, then sweep (R242): one
+  rotation places the wedge on the sphere, the hand sweeps inside it; the readings are the same at every position, and
+  only a frame fixed outside, the sphere's, records it.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
   includes. V is the drawn whole (at H), V* the true breadth. A unit is a relation measured beforehand (R230): its
@@ -964,7 +974,10 @@ In short:
       corners meeting at v = 1/√3; H moves every thing along its own ray, never across, merging more into home as it
       grows and leaving more past the edge as it shrinks; every situation reaches every direction in one scan, holding
       1, 1/24, 1/24, 1/576 of the wedge at once; the drawing at the centre, (0.2, 0.6, 0.2) with V known, the truth with
-      both known.
+      both known; step 7: positions round-trip through (longitude, latitude, turn), the hand on the sphere is R·d, the
+      eight octants tile the sphere (3,000 directions, each in exactly one), the octahedron's 24 turns put the wedge on each
+      octant three times, an even turn's wedge holds an eighth of 40,000 even directions within 0.01, and from home the
+      wedge's points land in the same place at two positions.
   27. **wedge-browse.html:** 2⁵³ − 1 items, every halving's two counts adding exactly (200 descents to the finest
       address); the drawn cells and items adding to all of them in five states; at w = 1 and the drawing at 0 the view
       the wedge itself; the gold at tan 1 for a second moves the blue 0.4 in rapidity, letting go re-centres on it; the
