@@ -121,8 +121,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (`e·d/‖d‖∞`, the face of the largest component), and the point inside at t, a unit relation. Six steps: the unit cube;
   the sphere; every point points; any size (e animates, the address unchanged, the amount e times it); the extent
   unknown (drawn at H, off by e/H); the wedge (h, v, v₂ ≥ 0, its three faces a third each). An inset draws the face hit
-  as a reading plane with the Cauchy shading and its middle quarter's share (38%). `?step=1..6&e=&known=0&t=&wedge=1&rays=0&turn=1`;
-  hook `window.__sphereCube` (`address`, `point`, `faceOf`, `stats`, `turnBy`, `hud`, `set`, `state`, `frames`, `webgl`).
+  as a reading plane with the Cauchy shading and its middle quarter's share (38%). Step 7 (14 Oct, SPN R237, AZM; Tom: "ok,
+  proceed"): the two sweeps, the hand raised in altitude (H to V, teal) and turned in azimuth (V₂, violet) with their
+  sectors, each sweep's corner (the cone a = 45°, the half-plane v₂ = h), the flat triangle h + v + v₂ = 1 (no sweep),
+  1,600 points of the wedge swept evenly in both angles or over the wedge (height even), coloured by the largest of h, v,
+  v₂, and an inset of Lambert's equal-area map (z, v). `?step=1..7&e=&known=0&t=&wedge=1&rays=0&turn=1&alt=&az=&even=angles|area`;
+  hook `window.__sphereCube` (`address`, `point`, `faceOf`, `stats`, `turnBy`, `hud`, `set`, `state`, `frames`, `webgl`,
+  `sweeps`: `direction`, `readings`, `exact`, `counted`, `topShare`, `lambert`).
   Not in the flying page.
 - `paths.html`: **one sweep, three paths** (13 Oct 2026, Tom: "yes, proceed", to the visual from the ChatGPT exchange in
   `plans/ofs-review-6.md`; SPN R224), a standalone page like `facing.html`. Geometry only, in unit relations. The circle,
@@ -875,7 +880,9 @@ In short:
   22. **sphere-cube.html:** every point of a turning sphere lands on one point of a cube and comes back to rounding at
       e = 10⁻³, ½ and 1, the address the same at every extent, the face its largest component's; the even sphere gives each
       face a sixth, a face's middle quarter 38%, the wedge's faces a third each; with the extent unknown the readout says
-      off by e/H; WebGL drew frames (three.js served from `node_modules` in place of the CDN).
+      off by e/H; WebGL drew frames (three.js served from `node_modules` in place of the CDN); step 7, the two sweeps:
+      v₂/h = tan z and v/√(h² + v₂²) = tan a, even in both angles v ≤ h 0.3426 and h largest 0.2326, even over the wedge
+      ½ and ⅓ (the 1,600 drawn within 0.02), the top quarter of height 25% of the even wedge, Lambert's map equal-area.
   23. **paths.html:** the share of the sweep measured along each path (as chords) is its closed form; all three fair and ½
       at the corner, 0.250, 0.293, 0.207 at 22.5°; the mean climbing ρ(0)·ln 10 a tenfold on each; sin² 2θ with its
       median at the corner and the mean 4/π; π/2 and 2/π at the horizon, product 1; v/h = ∞ at 90°.

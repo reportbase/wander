@@ -26,10 +26,19 @@
         two-dimensional Cauchy, 2/(π(1 + a² + b²)^(3/2)); its three faces take a third each, a face's middle quarter
         (by area) 0.3846 of the face's directions (WDG P3, P6).
     The painted points are a Fibonacci lattice on the sphere: even, not random.
+      - Step 7, the two sweeps (14 October; Tom: "there is another sweep V2" and "Use the correct terms for V2 … lean on
+        classical theory to explain V2"; SPN R236, R237; AZM, plans/azm-plan.md): the hand reaches every direction of the
+        wedge by two sweeps, an observer's horizon coordinates. The altitude a, from the horizontal up to the vertical (the
+        sweep from H to V), reads v/√(h² + v₂²) = tan a; the azimuth z, round the horizontal from h to v₂ (the sweep that
+        brings in V₂), reads v₂/h = tan z; each has its corner at 45° (the cone, the half-plane v₂ = h). The direction is
+        (cos a cos z, sin a, cos a sin z). The flat triangle h + v + v₂ = 1 needs no sweep: the unsituated view. 1,600 points
+        of the wedge swept evenly in both angles (v ≤ h for 0.3426, h largest 0.2326) or evenly over the wedge, the azimuth
+        even and the height v even (Archimedes' hat-box; ½, ½, ½ and ⅓). The inset is Lambert's equal-area map, (z, v).
     three.js 0.160.0 (MIT) loads from the jsDelivr CDN, pinned, through an import map (Tom, 13 October: "remove three.js
     from the repositiory, use the cdn. things can be loaded from outside"). If it cannot be fetched the page says so.
     The smoke test serves the same version from node_modules (a devDependency), so it does not depend on the CDN.
-    Links: ?step=1..6&e=0.5&known=0&t=0.6&wedge=1&rays=0&turn=0. Test hook: window.__sphereCube.
+    Links: ?step=1..7&e=0.5&known=0&t=0.6&wedge=1&rays=0&turn=0, and for step 7 &alt=&az= (degrees)&even=angles|area.
+    Test hook: window.__sphereCube (with sweeps: direction, readings, exact, counted, topShare, lambert).
     -->
     <style>
     :root { color-scheme: dark; --ground: #07070b; --panel: rgba(18,18,26,0.78); --line: rgba(255,255,255,0.10);
@@ -97,9 +106,16 @@
         <div class="steps" id="steps"></div>
         <div id="caption"></div>
         <div class="more">
+        <div id="cubeCtl">
         <div class="ctl"><label for="ext">inner cube, e</label><input id="ext" type="range" min="-5" max="0" step="0.01" value="-1"><output id="exto"></output></div>
         <div class="ctl"><label for="tt">along the ray, t</label><input id="tt" type="range" min="0.02" max="1" step="0.01" value="0.6"><output id="tto"></output></div>
-        <div class="row">
+        </div>
+        <div id="sweepCtl" style="display:none">
+        <div class="ctl"><label for="alt">altitude, a</label><input id="alt" type="range" min="0" max="90" step="0.5" value="60"><output id="alto"></output></div>
+        <div class="ctl"><label for="az">azimuth, z</label><input id="az" type="range" min="0" max="90" step="0.5" value="15"><output id="azo"></output></div>
+        <div class="row"><button id="bEven">swept evenly: in both angles</button><button id="bSweep">sweep</button></div>
+        </div>
+        <div class="row" id="cubeRow">
             <button id="bKnown" class="on">extent known</button>
             <button id="bWedge">the wedge</button>
             <button id="bRays" class="on">rays</button>
@@ -186,10 +202,53 @@ function stats(N = 1600, q = state.q) {
              wedge: { count: inW, shares: wedge.map(c => c / Math.max(1, inW)), share: inW / N } };
 }
 
+// the two sweeps (step 7; AZM): altitude a from the horizontal to the vertical, azimuth z round the horizontal from h to v₂
+const RAD = Math.PI / 180;
+const sweepDir = (a, z) => [Math.cos(a * RAD) * Math.cos(z * RAD), Math.sin(a * RAD), Math.cos(a * RAD) * Math.sin(z * RAD)];
+function sweepReadings(a, z) {                                     // each sweep reads its own pair
+    const [h, v, v2] = sweepDir(a, z);
+    return { dir: [h, v, v2], az: v2 / h, alt: v / Math.hypot(h, v2) };
+}
+function simpson(f, a, b, n = 2000) {
+    const k = (b - a) / n; let t = f(a) + f(b);
+    for (let i = 1; i < n; i++) t += (i % 2 ? 4 : 2) * f(a + i * k);
+    return t * k / 3;
+}
+// the shares of the pairs and of the near field, swept evenly in both angles or evenly over the wedge (AZM P3, P5)
+const SWEEP_EXACT = (() => {
+    const full = simpson(z => Math.atan(Math.cos(z)), 0, Math.PI / 2), half = simpson(z => Math.atan(Math.cos(z)), 0, Math.PI / 4);
+    const vh = 4 / Math.PI ** 2 * full;
+    return { angles: { vh, v2h: 0.5, v2v: 1 - vh, near: 4 / Math.PI ** 2 * half },
+             area: { vh: 0.5, v2h: 0.5, v2v: 0.5, near: 1 / 3 } };
+})();
+const SW_N = 40;                                                    // 40 × 40 = 1,600 points of the wedge
+function sweepSample(mode) {
+    const out = [];
+    for (let i = 0; i < SW_N; i++) for (let j = 0; j < SW_N; j++) {
+        const z = (j + 0.5) / SW_N * 90;
+        const a = mode === 'area' ? Math.asin((i + 0.5) / SW_N) / RAD : (i + 0.5) / SW_N * 90;   // even in height, or in angle
+        out.push(sweepDir(a, z));
+    }
+    return out;
+}
+const SWEEP_PTS = { angles: sweepSample('angles'), area: sweepSample('area') };
+function sweepCounted(mode) {
+    const P = SWEEP_PTS[mode], n = P.length; let vh = 0, v2h = 0, v2v = 0, near = 0;
+    for (const [h, v, v2] of P) { vh += v <= h; v2h += v2 <= h; v2v += v2 <= v; near += h >= v && h >= v2; }
+    return { vh: vh / n, v2h: v2h / n, v2v: v2v / n, near: near / n, n };
+}
+const topShare = mode => SWEEP_PTS[mode].filter(d => d[1] >= 0.75).length / SWEEP_PTS[mode].length;   // height in the top quarter
+function lambert(z1, z2, v1, v2) {                                 // the wedge's area over a patch of (z, v): the sphere's element
+    const area = simpson(a => Math.cos(a), Math.asin(v1), Math.asin(v2), 400) * (z2 - z1) * RAD;
+    return { area, product: (z2 - z1) * RAD * (v2 - v1) };
+}
+
 // ── state, URL ────────────────────────────────────────────────────────────────────────────────────────────────
 const qs = new URLSearchParams(location.search);
 const state = {
-    step: Math.min(6, Math.max(1, +qs.get('step') || 3)),
+    step: Math.min(7, Math.max(1, +qs.get('step') || 3)),
+    alt: qs.has('alt') ? Math.max(0, Math.min(90, +qs.get('alt'))) : 60, az: qs.has('az') ? Math.max(0, Math.min(90, +qs.get('az'))) : 15,
+    even: qs.get('even') === 'area' ? 'area' : 'angles', sweepAnim: false,
     lgE: qs.has('e') ? Math.max(-5, Math.min(0, Math.log2(+qs.get('e') || 0.5))) : -1,
     known: qs.get('known') !== '0', t: Math.max(0.02, Math.min(1, +qs.get('t') || 0.6)),
     wedge: qs.get('wedge') === '1', rays: qs.get('rays') !== '0', turn: qs.get('turn') === '1',
@@ -207,7 +266,8 @@ const CAPTIONS = {
     3: ['every point points', '<b>Every point points.</b> The ray from the centre through each point meets the inner cube once, on the face of its largest component. Turn the sphere any way: every point still lands, and every point of the cube\'s surface is landed on by exactly one.'],
     4: ['any size', '<b>Any size, the extent known.</b> A point inside the cube is t of the way along its ray, t from 0 to 1: a unit relation. The address (the direction and t) is the same at every size of the cube; the point in amounts is the extent e times it.'],
     5: ['extent unknown', '<b>The extent unknown.</b> A reader that does not know e draws the cube at its own breadth, e = H: the mountain set equal to the thumb. Every address is still right; every amount is off by the true e/H, the same number of levels everywhere.'],
-    6: ['the wedge', '<b>The wedge.</b> One observation makes one wedge, h, v, v₂ ≥ 0, with V = V₂ = H. Swept evenly, its readings (v/h, v₂/h) are the two-dimensional Cauchy: its three faces take a third each, so the reader is near in both readings a third of the time, and a face\'s middle quarter takes 38% of its points.']
+    6: ['the wedge', '<b>The wedge.</b> One observation makes one wedge, h, v, v₂ ≥ 0, with V = V₂ = H. Swept evenly, its readings (v/h, v₂/h) are the two-dimensional Cauchy: its three faces take a third each, so the reader is near in both readings a third of the time, and a face\'s middle quarter takes 38% of its points.'],
+    7: ['two sweeps', '<b>Two sweeps: altitude and azimuth.</b> The hand reaches the wedge as an observer reaches its sky: raised from the horizontal to the vertical, the <span class="teal">altitude</span>, the sweep from H to V; turned round the horizontal from h to v₂, the <span class="violet">azimuth</span>, which brings in V₂. Each has its corner at 45°. The flat triangle h + v + v₂ = 1 needs no sweep. Swept evenly in both angles, the pair neither sweep reads leaves its corner; swept evenly over the wedge, the height is even (Archimedes) and every pair keeps it.']
 };
 const STEP_SET = {
     1: { rays: false, wedge: false, known: true, turn: false },
@@ -215,7 +275,8 @@ const STEP_SET = {
     3: { rays: true, wedge: false, known: true, turn: !reduced },
     4: { rays: true, wedge: false, known: true, turn: false, animE: !reduced },
     5: { rays: true, wedge: false, known: false, turn: false },
-    6: { rays: true, wedge: true, known: true, turn: false }
+    6: { rays: true, wedge: true, known: true, turn: false },
+    7: { rays: false, wedge: false, known: true, turn: false, sweepAnim: !reduced }
 };
 
 // ── the drawing ───────────────────────────────────────────────────────────────────────────────────────────────
@@ -357,6 +418,7 @@ const wedgeG = new THREE.Group(); scene.add(wedgeG);
     wedgeG.add(new THREE.Line(tri, new THREE.LineDashedMaterial({ color: COL.gold, dashSize: 0.05, gapSize: 0.035 })));
     wedgeG.children[wedgeG.children.length - 1].computeLineDistances();
     const lt = label('v = h = v₂', '#d4a052', 0.075); lt.position.set(1.1, 1.13, 1.1); wedgeG.add(lt);
+    wedgeG.userData = { mesh: wedgeG.children[0], label: lt };
 }
 const wedgeFaces = new THREE.Group(); innerG.add(wedgeFaces);
 for (let a = 0; a < 3; a++) {
@@ -365,6 +427,95 @@ for (let a = 0; a < 3; a++) {
     if (a === 1) { m.rotation.x = -Math.PI / 2; m.position.set(0.5, 1.001, 0.5); }
     if (a === 2) { m.position.set(0.5, 0.5, 1.001); }
     wedgeFaces.add(m);
+}
+
+// step 7: the two sweeps, the hand, their corners, the flat triangle, the wedge's points
+const sweepG = new THREE.Group(); scene.add(sweepG);
+const swPts = mkPoints(SW_N * SW_N, 0.032); sweepG.add(swPts);
+const lineOf = (n, color, opacity, dashed) => {
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(n * 3), 3));
+    const m = dashed ? new THREE.LineDashedMaterial({ color, transparent: true, opacity, dashSize: 0.04, gapSize: 0.03 })
+                     : new THREE.LineBasicMaterial({ color, transparent: true, opacity });
+    return new THREE.Line(g, m);
+};
+const ARC_N = 64;
+const azArc = lineOf(ARC_N + 1, COL.violet, 0.95), altArc = lineOf(ARC_N + 1, COL.teal, 0.95);
+const footLine = lineOf(2, COL.white, 0.55, true), reachLine = lineOf(2, COL.white, 0.35, false);
+sweepG.add(azArc, altArc, footLine, reachLine);
+const fanOf = color => {                                            // a sweep drawn as the sector it has covered
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(ARC_N * 9), 3));
+    return new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.28, side: THREE.DoubleSide, depthWrite: false }));
+};
+const azFan = fanOf(COL.violet), altFan = fanOf(COL.teal); sweepG.add(azFan, altFan);
+function setFan(fan, arc) {
+    const a = fan.geometry.attributes.position.array;
+    for (let k = 0; k < ARC_N; k++) a.set([0, 0, 0, ...arc[k], ...arc[k + 1]], k * 9);
+    fan.geometry.attributes.position.needsUpdate = true; fan.geometry.computeBoundingSphere();
+}
+const hand = rod(0xf6ead2, 0.011), handTip = bead(0.026, 0xf6ead2); sweepG.add(hand, handTip);
+const HAND = 1.14;                                                  // the hand reaches a little past the sphere
+const labAz = label('azimuth z', '#b59cf0', 0.085), labAlt = label('altitude a', '#8ce6cd', 0.085);
+sweepG.add(labAz, labAlt);
+{   // the azimuth's corner: the vertical half-plane v₂ = h (z = 45°), a quarter disc
+    const m = new THREE.Mesh(new THREE.CircleGeometry(1, 48, 0, Math.PI / 2),
+        new THREE.MeshBasicMaterial({ color: COL.violet, transparent: true, opacity: 0.10, side: THREE.DoubleSide, depthWrite: false }));
+    m.rotation.y = -Math.PI / 4; sweepG.add(m);
+    const l = label('v₂ = h, the azimuth\'s corner', '#b59cf0', 0.06); l.position.set(...sweepDir(22, 45).map(c => c * 1.32)); sweepG.add(l);
+}
+{   // the altitude's corner: the cone a = 45°, v equal to the horizontal reach
+    const pos = [], arcPts = [];
+    for (let k = 0; k <= 48; k++) arcPts.push(sweepDir(45, k / 48 * 90));
+    for (let k = 0; k < 48; k++) pos.push(0, 0, 0, ...arcPts[k], ...arcPts[k + 1]);
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    sweepG.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: COL.teal, transparent: true, opacity: 0.08, side: THREE.DoubleSide, depthWrite: false })));
+    const ga = new THREE.BufferGeometry().setFromPoints(arcPts.map(d => new THREE.Vector3(...d.map(c => c * 1.006))));
+    sweepG.add(new THREE.Line(ga, new THREE.LineBasicMaterial({ color: COL.teal, transparent: true, opacity: 0.8 })));
+    const l = label('v = reach, the altitude\'s corner', '#8ce6cd', 0.06); l.position.set(...sweepDir(45, 3).map(c => c * 1.3)).add(new THREE.Vector3(0.12, 0.04, 0)); sweepG.add(l);
+}
+{   // the flat triangle h + v + v₂ = 1: the sum, the one drawing with no sweep
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute([1, 0, 0, 0, 1, 0, 0, 0, 1], 3));
+    sweepG.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.07, side: THREE.DoubleSide, depthWrite: false })));
+    const ge = new THREE.BufferGeometry().setFromPoints([[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 0, 0]].map(v => new THREE.Vector3(...v)));
+    sweepG.add(new THREE.Line(ge, new THREE.LineBasicMaterial({ color: 0xece9f4, transparent: true, opacity: 0.6 })));
+    const l = label('h + v + v₂ = 1: no sweep', '#ece9f4', 0.06); l.position.set(0.5, -0.09, 0.56); sweepG.add(l);
+}
+function setLine(line, pts) {
+    const a = line.geometry.attributes.position.array;
+    pts.forEach((p, i) => a.set(p, i * 3)); line.geometry.attributes.position.needsUpdate = true;
+    if (line.material.isLineDashedMaterial) line.computeLineDistances();
+}
+let swMode = null;
+function paintSweepPoints() {                                      // coloured by the largest of h, v, v₂ (h largest: near in both)
+    if (swMode === state.even) return; swMode = state.even;
+    const P = SWEEP_PTS[state.even], pa = swPts.geometry.attributes.position.array, ca = swPts.geometry.attributes.color.array;
+    P.forEach((d, i) => {
+        const big = d[0] >= d[1] && d[0] >= d[2] ? 0 : d[1] >= d[2] ? 1 : 2, c = FACE_COL[big * 2];
+        pa.set(d.map(x => x * 1.006), i * 3); ca.set(c, i * 3);
+    });
+    swPts.geometry.attributes.position.needsUpdate = swPts.geometry.attributes.color.needsUpdate = true;
+}
+let swT = 0;
+function updateSweeps(dt) {
+    if (state.sweepAnim) {
+        swT += dt;
+        state.az = 45 + 44 * Math.sin(swT * 0.33); state.alt = 45 + 44 * Math.sin(swT * 0.51 + 0.7);
+        $('alt').value = state.alt; $('alto').textContent = state.alt.toFixed(1) + '°';
+        $('az').value = state.az; $('azo').textContent = state.az.toFixed(1) + '°';
+    }
+    paintSweepPoints();
+    const d = sweepDir(state.alt, state.az), tip = d.map(c => c * HAND);
+    placeRod(hand, [0, 0, 0], tip); handTip.position.set(...tip);
+    const foot = [d[0], 0, d[2]];
+    setLine(footLine, [d, foot]); setLine(reachLine, [[0, 0, 0], foot]);
+    const az = [], al = [];
+    for (let k = 0; k <= ARC_N; k++) {
+        const s = k / ARC_N;
+        az.push(sweepDir(0, s * state.az).map(c => c * 0.42));
+        al.push(sweepDir(s * state.alt, state.az).map(c => c * 0.64));
+    }
+    setLine(azArc, az); setLine(altArc, al); setFan(azFan, az); setFan(altFan, al);
+    labAz.position.set(...sweepDir(0, state.az / 2).map(c => c * 0.56)).add(new THREE.Vector3(0, -0.05, 0));
+    labAlt.position.set(...sweepDir(state.alt / 2, state.az).map(c => c * 0.80));
 }
 
 scene.add(new THREE.HemisphereLight(0xcfd6ff, 0x101018, 1.1));
@@ -412,6 +563,16 @@ function update(dt) {
     innerG.visible = labE.visible = s3; drawnAtH.visible &&= s3;
     selOnCube.visible = selOnUnit.visible = s3; rodOut.visible &&= s3; rodBeyond.visible &&= s3;
     selInside.visible = state.step >= 4;
+    const s7 = state.step === 7;                         // the two sweeps: the hand, the wedge and its points, nothing of the cubes inside
+    sweepG.visible = s7;
+    if (s7) {
+        updateSweeps(dt);
+        sphereG.visible = onSphere.visible = onCube.visible = rays.visible = innerG.visible = labE.visible = drawnAtH.visible = false;
+        selOnSphere.visible = selOnCube.visible = selOnUnit.visible = selInside.visible = false;
+        rodIn.visible = rodOut.visible = rodBeyond.visible = false;
+        wedgeG.visible = true; wedgeFaces.visible = false;
+    }
+    wedgeG.userData.label.visible = !s7; wedgeG.userData.mesh.material.opacity = s7 ? 0.07 : 0.16;
 }
 
 // ── HUD and the face inset ────────────────────────────────────────────────────────────────────────────────────
@@ -421,6 +582,7 @@ function hudText() {
     const nm = (i) => AX[i];
     const rA = `${nm(rd.p)}/${nm(rd.axis)}`, rB = `${nm(rd.q)}/${nm(rd.axis)}`;
     const L = [];
+    if (state.step === 7) return sweepHud();
     if (state.step === 1) return 'the unit cube: h, v and v₂ each from 0 at the centre to 1 at a face, every party drawn at H\nits size is the reader\'s own breadth; nothing in it is an amount of the world';
     L.push(`address: the direction ${f3(d)}  (h, v, v₂)`);
     if (state.step >= 3) L.push(`lands on face ${faceName([rd.axis, rd.sign])}: readings ${rA} = ${rd.ra.toFixed(3)}, ${rB} = ${rd.rb.toFixed(3)}`);
@@ -439,8 +601,39 @@ function hudText() {
     }
     return (innerWidth < 760 && L.length > 3 ? [L[0], L[1], L[L.length - 1]] : L).join('\n');
 }
+const pc = x => (100 * x).toFixed(1) + '%';
+const fmtR = x => (Number.isFinite(x) && x < 1e6 ? x.toFixed(3) : '∞');
+function sweepHud() {
+    const r = sweepReadings(state.alt, state.az), ex = SWEEP_EXACT[state.even], ct = sweepCounted(state.even);
+    const L = [`the hand: altitude a = ${state.alt.toFixed(1)}°, azimuth z = ${state.az.toFixed(1)}°  →  (h, v, v₂) = ${f3(r.dir)}`,
+        `azimuth reads v₂/h = tan z = ${fmtR(r.az)}${Math.abs(state.az - 45) < 0.26 ? ' (its corner)' : ''}; altitude reads v/√(h² + v₂²) = tan a = ${fmtR(r.alt)}${Math.abs(state.alt - 45) < 0.26 ? ' (its corner)' : ''}`,
+        (state.even === 'area' ? 'swept evenly over the wedge (azimuth even, height v even: Archimedes\' hat-box)' : 'swept evenly in both angles') +
+        `: v ≤ h ${pc(ex.vh)}, v₂ ≤ h ${pc(ex.v2h)}, v₂ ≤ v ${pc(ex.v2v)}, h largest ${pc(ex.near)} (the ${ct.n} drawn: ${pc(ct.vh)}, ${pc(ct.v2h)}, ${pc(ct.v2v)}, ${pc(ct.near)})`,
+        'h + v + v₂ = 1, the flat triangle: the one drawing that needs no sweep, the unsituated view'];
+    return (innerWidth < 760 ? [L[0], L[2]] : L).join('\n');
+}
 const fc = document.getElementById('face'), fg = fc.getContext('2d');
+function drawLambert() {                                 // Lambert's equal-area map: azimuth across, height v up
+    const W = fc.width, pad = 30, S = W - 2 * pad, X = z => pad + z / 90 * S, Yv = v => pad + (1 - v) * S;
+    fg.clearRect(0, 0, W, W); fg.fillStyle = '#0b0b12'; fg.fillRect(0, 0, W, W);
+    fg.strokeStyle = 'rgba(255,255,255,0.35)'; fg.lineWidth = 2; fg.strokeRect(X(0), Yv(1), S, S);
+    for (const d of SWEEP_PTS[state.even]) {
+        const z = Math.atan2(d[2], d[0]) / RAD, big = d[0] >= d[1] && d[0] >= d[2] ? 0 : d[1] >= d[2] ? 1 : 2, c = FACE_RGB[big * 2];
+        fg.fillStyle = `rgb(${c[0]},${c[1]},${c[2]})`; fg.fillRect(X(z) - 2.2, Yv(d[1]) - 2.2, 4.4, 4.4);
+    }
+    fg.setLineDash([7, 6]); fg.lineWidth = 2;
+    fg.strokeStyle = 'rgba(181,156,240,0.9)'; fg.beginPath(); fg.moveTo(X(45), Yv(0)); fg.lineTo(X(45), Yv(1)); fg.stroke();
+    fg.strokeStyle = 'rgba(140,230,205,0.9)'; fg.beginPath(); fg.moveTo(X(0), Yv(Math.SQRT1_2)); fg.lineTo(X(90), Yv(Math.SQRT1_2)); fg.stroke();
+    fg.setLineDash([]);
+    fg.fillStyle = '#fff'; fg.strokeStyle = '#000'; fg.lineWidth = 2; fg.beginPath(); fg.arc(X(state.az), Yv(Math.sin(state.alt * RAD)), 8, 0, 7); fg.fill(); fg.stroke();
+    fg.fillStyle = 'rgba(200,200,208,0.85)'; fg.font = '22px "DM Mono", monospace'; fg.textAlign = 'center';
+    fg.fillText('azimuth z →', W / 2, W - 6); fg.save(); fg.translate(18, W / 2); fg.rotate(-Math.PI / 2); fg.fillText('height v →', 0, 0); fg.restore();
+    document.getElementById('insetT').innerHTML = `<b>Lambert's map</b>, equal-area: azimuth across, height v up; the corners dashed`;
+    document.getElementById('insetNote').textContent = `top quarter of height (v ≥ ¾): ${pc(topShare(state.even))} of the points, 25% of the area` +
+        (state.even === 'area' ? ' (even: Archimedes)' : ' (even angles crowd the top)');
+}
 function drawInset() {
+    if (state.step === 7) return drawLambert();
     const d = qrot(state.q, state.sel), rd = readingsOn(d), W = fc.width, pad = 26, S = W - 2 * pad;
     const X = a => pad + (a + 1) / 2 * S, Yc = b => pad + (1 - (b + 1) / 2) * S;
     const col = FACE_RGB[rd.axis * 2 + (rd.sign > 0 ? 0 : 1)];
@@ -470,7 +663,7 @@ function drawInset() {
 // ── controls ──────────────────────────────────────────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
 const stepsEl = $('steps');
-for (let s = 1; s <= 6; s++) { const b = document.createElement('button'); b.textContent = s; b.title = CAPTIONS[s][0]; b.onclick = () => setStep(s); stepsEl.appendChild(b); }
+for (let s = 1; s <= 7; s++) { const b = document.createElement('button'); b.textContent = s; b.title = CAPTIONS[s][0]; b.onclick = () => setStep(s); stepsEl.appendChild(b); }
 function syncCtl() {
     $('ext').value = state.lgE; $('exto').textContent = `${e().toPrecision(2)} H`;
     $('tt').value = state.t; $('tto').textContent = state.t.toFixed(2);
@@ -479,9 +672,24 @@ function syncCtl() {
     $('bView').textContent = state.dragView ? 'drag: view' : 'drag: sphere'; $('bView').classList.toggle('on', state.dragView);
     [...stepsEl.children].forEach((b, i) => b.classList.toggle('on', i + 1 === state.step));
     $('caption').innerHTML = CAPTIONS[state.step][1];
+    const s7 = state.step === 7;
+    $('cubeCtl').style.display = $('cubeRow').style.display = s7 ? 'none' : '';
+    $('sweepCtl').style.display = s7 ? '' : 'none';
+    $('alt').value = state.alt; $('alto').textContent = state.alt.toFixed(1) + '°';
+    $('az').value = state.az; $('azo').textContent = state.az.toFixed(1) + '°';
+    $('bEven').textContent = state.even === 'area' ? 'swept evenly: over the wedge' : 'swept evenly: in both angles';
+    $('bEven').classList.toggle('on', state.even === 'area'); $('bSweep').classList.toggle('on', state.sweepAnim);
+}
+function frameView() {                                // step 7 looks at the octant, the others at the whole cube
+    if (state.step === 7) { camera.position.set(2.75, 2.05, 3.45); controls?.target.set(0.3, 0.38, 0.3); }
+    else { camera.position.set(3.3, 2.35, 4.2); controls?.target.set(0, 0, 0); }
+    controls?.update();
 }
 function setStep(s) {
-    state.step = s; Object.assign(state, { animE: false }, STEP_SET[s]);
+    const was7 = state.step === 7;
+    state.step = s; Object.assign(state, { animE: false, sweepAnim: false }, STEP_SET[s]);
+    if (s === 7 && !was7) frameView();
+    if (s !== 7 && was7) frameView();
     if (s === 4 && state.animE) eT = Math.acos(Math.max(-1, Math.min(1, (state.lgE + 2.5) / 2.5))) / 0.45;
     if (s === 5 && state.lgE > -1) state.lgE = -2;
     syncCtl();
@@ -489,11 +697,15 @@ function setStep(s) {
 $('ext').oninput = ev => { state.animE = false; state.lgE = +ev.target.value; syncCtl(); };
 $('tt').oninput = ev => { state.t = +ev.target.value; syncCtl(); };
 $('bKnown').onclick = () => { state.known = !state.known; syncCtl(); };
+$('alt').oninput = ev => { state.sweepAnim = false; state.alt = +ev.target.value; syncCtl(); };
+$('az').oninput = ev => { state.sweepAnim = false; state.az = +ev.target.value; syncCtl(); };
+$('bEven').onclick = () => { state.even = state.even === 'area' ? 'angles' : 'area'; syncCtl(); };
+$('bSweep').onclick = () => { state.sweepAnim = !state.sweepAnim; syncCtl(); };
 $('bWedge').onclick = () => { state.wedge = !state.wedge; syncCtl(); };
 $('bRays').onclick = () => { state.rays = !state.rays; syncCtl(); };
 $('bTurn').onclick = () => { state.turn = !state.turn; syncCtl(); };
 $('bView').onclick = () => { state.dragView = !state.dragView; syncCtl(); };
-$('bReset').onclick = () => { state.q = Q0.slice(); camera.position.set(3.3, 2.35, 4.2); controls?.target.set(0, 0, 0); controls?.update(); };
+$('bReset').onclick = () => { state.q = Q0.slice(); frameView(); };
 $('fold').onclick = () => { $('panel').classList.toggle('folded'); $('fold').textContent = $('panel').classList.contains('folded') ? '▴' : '▾'; };
 
 // turning the sphere by dragging it (an arcball), choosing a point by tapping it; elsewhere the view orbits
@@ -528,7 +740,7 @@ canvas.addEventListener('pointercancel', () => { dragging = false; canvas.classL
 addEventListener('keydown', ev => {
     const k = { ArrowLeft: [[0, 1, 0], -0.08], ArrowRight: [[0, 1, 0], 0.08], ArrowUp: [[1, 0, 0], -0.08], ArrowDown: [[1, 0, 0], 0.08] }[ev.key];
     if (k) { state.q = qnorm(qmul(qaxis(...k), state.q)); ev.preventDefault(); }
-    if (/^[1-6]$/.test(ev.key)) setStep(+ev.key);
+    if (/^[1-7]$/.test(ev.key)) setStep(+ev.key);
 });
 
 if (renderer) {
@@ -560,11 +772,13 @@ function loop(now) {
 }
 syncCtl();
 setStep(state.step);
+if (state.step === 7) frameView();
 if (qs.has('e')) state.lgE = Math.max(-5, Math.min(0, Math.log2(+qs.get('e') || 0.5)));
 if (qs.has('known')) state.known = qs.get('known') !== '0';
 if (qs.has('wedge')) state.wedge = qs.get('wedge') === '1';
 if (qs.has('rays')) state.rays = qs.get('rays') !== '0';
 if (qs.has('turn')) state.turn = qs.get('turn') === '1';
+if (qs.has('alt') || qs.has('az')) state.sweepAnim = false;
 syncCtl();
 if (innerWidth < 760) { $('panel').classList.add('folded'); $('fold').textContent = '▴'; }
 document.fonts?.ready.then(() => redraws.forEach(f => f()));
@@ -573,13 +787,17 @@ requestAnimationFrame(loop);
 // ── test hook ─────────────────────────────────────────────────────────────────────────────────────────────────
 window.__sphereCube = {
     address, point, faceOf: d => faceName(faceOf(d)), readingsOn, stats, fib, predictedMiddle: PRED_MID,
+    sweeps: { direction: sweepDir, readings: sweepReadings, exact: m => ({ ...SWEEP_EXACT[m] }), counted: sweepCounted, topShare, lambert },
     turnBy: (axis, ang) => { state.q = qnorm(qmul(qaxis(axis, ang), state.q)); return state.q.slice(); },
     get q() { return state.q.slice(); }, get frames() { return frames; }, get webgl() { return !!renderer; },
     hud: () => hudText(),
-    state: () => ({ step: state.step, e: e(), known: state.known, t: state.t, wedge: state.wedge, rays: state.rays, turn: state.turn, sel: state.sel.slice() }),
+    state: () => ({ step: state.step, e: e(), known: state.known, t: state.t, wedge: state.wedge, rays: state.rays, turn: state.turn, sel: state.sel.slice(),
+        alt: state.alt, az: state.az, even: state.even }),
     set: o => { if (o.step) setStep(o.step); if (o.e) { state.animE = false; state.lgE = Math.log2(o.e); } if ('known' in o) state.known = o.known;
         if (o.t) state.t = o.t; if ('wedge' in o) state.wedge = o.wedge; if ('rays' in o) state.rays = o.rays; if ('turn' in o) state.turn = o.turn;
-        if (o.sel) { const n = norm(o.sel); state.sel = o.sel.map(c => c / n); } syncCtl(); return window.__sphereCube.state(); }
+        if (o.sel) { const n = norm(o.sel); state.sel = o.sel.map(c => c / n); }
+        if ('alt' in o || 'az' in o) { state.sweepAnim = false; if ('alt' in o) state.alt = o.alt; if ('az' in o) state.az = o.az; }
+        if (o.even) state.even = o.even; syncCtl(); return window.__sphereCube.state(); }
 };
 </script>
 </body>
