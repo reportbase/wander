@@ -283,9 +283,10 @@ This is Jaynes's problem of a location and a scale, with the location on a circl
 is dθ·dκ/κ, unique up to a constant factor (Haar 1933), and much of what follows is that measure read out. Turns and
 rescalings commute, so the measure unchanged by composing with them on the left is the one unchanged by composing on the
 right. In Jaynes's location and scale they do not commute, and the two differ: dμ·dσ/σ, his, is the right-invariant
-measure, and dμ·dσ/σ², Jeffreys's general rule, the left-invariant one. Later work has favoured his: with one of the two
-parameters of interest and the other a nuisance, it is Bernardo's reference prior and gives frequentist coverage exactly
-(Ghosh 2011). For a situated reader the choice does not arise.
+measure, and dμ·dσ/σ², Jeffreys's general rule, the left-invariant one. Later work has favoured his where the location
+or the scale is of interest and the other a nuisance: it is then Bernardo's reference prior and gives frequentist
+coverage exactly (Ghosh 2011); with other quantities of interest the choice can go the other way (§11.2, question 7).
+For a situated reader the choice does not arise.
 - *Even in θ*: the even turn of §7.1. Read as v/h, with the parties drawn at one length, it is the Cauchy distribution
   with its median at the corner (Proposition 5). Write a Cauchy law with median m and scale γ as the point m + iγ of the
   upper half-plane; a turn acts on the reading v/h as a Möbius map and carries each Cauchy law to the one at the image
@@ -1918,6 +1919,27 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    reader knows, and H when it knows nothing either way. Measuring that estimate's error in levels is forced if the
    measure must be one the reader's group keeps (§11.1): the drawings lie on a line of the hyperbolic plane, and its
    distance is in levels. What remains open is the group itself.
+7. *Measures that cannot be normalized.* The reader's measure for the other's size, dκ/κ, has no total over all sizes,
+   and such measures on a nuisance can produce the marginalization paradoxes of Stone and Dawid (1972) and Dawid, Stone
+   and Zidek (1973). One reasoner integrates the nuisance out of the full data; another reasons from statistics whose
+   law does not involve it; no prior lets the second reproduce the first. The paradox does not reach the reader's size,
+   for a reason that is short to state. Let the data be amounts ℓ_i = η·w_i, the w_i drawn from a law with a parameter ζ
+   that no rescaling touches, and η a scale. Writing ℓ_i = ℓ₁·z_i, the first reasoner's likelihood for ζ under the
+   nuisance measure dη/η is ∫ η^(−n−1) Π g(ℓ_i/η | ζ) dη, and the law of the ratios z, which no η touches, is found by
+   setting η = 1 and integrating ℓ₁ out with its Jacobian: ∫ λ^(n−1) Π g(λz_i | ζ) dλ. The substitution η = ℓ₁/λ carries
+   the first into ℓ₁^(−n) times the second. So under dη/η the two reasoners reach the same conclusion about ζ with the
+   same prior, whatever the law g. Checked exactly in their own examples, Stone and Dawid's exponentials, the change
+   point and the normal with μ/σ of interest, and in two more, the two agree at dη/η and at no other power η^(−k); in
+   some laws another power produces no paradox but moves the prior on ζ instead. This is their group condition as Jaynes
+   (1980) reports it: the paradox is avoided by the nuisance's own invariant measure. The reader's size is such a
+   nuisance. Its rescaling commutes with the turns acting on what the reader reads, so dκ/κ is the one invariant measure
+   it has, and with it a reader that integrates the size out of amounts concludes what a reader of the ratios alone
+   concludes: the address reading of Theorem 6, met from the side of inference. Two cautions. Which of location and
+   scale's two measures avoids the paradox depends on what is of interest: with μ/σ of interest the nuisance σ at fixed
+   μ/σ carries dσ/σ, which is dμ·dσ/σ² in (μ, σ), Jeffreys's rule, while Jaynes's dμ·dσ/σ produces the paradox there;
+   §2's preference for the right-invariant measure is for the location or the scale of interest. And whether the paradox
+   shows improper measures inconsistent at all is disputed (Jaynes 1980; Wallstrom 2003); the reader's lay is in any
+   case finite, its levels counted.
 
 If the principle of §11.1 stands, questions 1 and 2 become one: whether a situated reader's ignorance is exactly these
 three transformations.
@@ -2013,6 +2035,9 @@ Crofton, M. W. (1868). On the theory of local probability, applied to straight l
 
 Cuadras, C. M. (2002). Geometrical understanding of the Cauchy distribution. *Qüestiió* 26(1–2), 283–287.
 
+Dawid, A. P., Stone, M. and Zidek, J. V. (1973). Marginalization paradoxes in Bayesian and structural inference.
+*Journal of the Royal Statistical Society B* 35(2), 189–233.
+
 Dehaene, S., Izard, V., Spelke, E. and Pica, P. (2008). Log or linear? Distinct intuitions of the number scale in Western
 and Amazonian indigene cultures. *Science* 320, 1217–1220.
 
@@ -2049,6 +2074,10 @@ Haraway, D. (1988). Situated knowledges: the science question in feminism and th
 Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 
 Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3(4), 477–493.
+
+Jaynes, E. T. (1980). Marginalization and prior probabilities. In A. Zellner (ed.), *Bayesian Analysis in
+Econometrics and Statistics: Essays in Honor of Harold Jeffreys*. North-Holland, Amsterdam. Reprinted in R. D.
+Rosenkrantz (ed.) (1989), *E. T. Jaynes: Papers on Probability, Statistics and Statistical Physics*, Reidel, 337–375.
 
 Jeffreys, H. (1939). *Theory of Probability*. Oxford University Press.
 
@@ -2136,6 +2165,12 @@ Stevens, S. S. (1946). On the theory of scales of measurement. *Science* 103(268
 Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the Cauchy distribution. *Biometrika*
 61(2), 375–380.
 
+Stone, M. and Dawid, A. P. (1972). Un-Bayesian implications of improper Bayes inference in routine statistical
+problems. *Biometrika* 59(2), 369–375.
+
 Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII*. Tours.
+
+Wallstrom, T. C. (2003). The marginalization paradox does not imply inconsistency for improper priors. arXiv
+math/0310006.
 
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.
