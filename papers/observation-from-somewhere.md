@@ -279,8 +279,13 @@ what it reads nor what it can check:
 3. the *exchange* of the two parties, θ ↦ 90° − θ and κ ↦ 1/κ: nothing the reader can check tells which party is which
    (Proposition 1).
 
-This is Jaynes's problem of a location and a scale, with the location on a circle. The measure the three leave
-unchanged is dθ·dκ/κ, unique up to a constant factor (Haar 1933), and much of what follows is that measure read out.
+This is Jaynes's problem of a location and a scale, with the location on a circle. The measure the three leave unchanged
+is dθ·dκ/κ, unique up to a constant factor (Haar 1933), and much of what follows is that measure read out. Turns and
+rescalings commute, so the measure unchanged by composing with them on the left is the one unchanged by composing on the
+right. In Jaynes's location and scale they do not commute, and the two differ: dμ·dσ/σ, his, is the right-invariant
+measure, and dμ·dσ/σ², Jeffreys's general rule, the left-invariant one. Later work has favoured his: with one of the two
+parameters of interest and the other a nuisance, it is Bernardo's reference prior and gives frequentist coverage exactly
+(Ghosh 2011). For a situated reader the choice does not arise.
 - *Even in θ*: the even turn of §7.1. Read as v/h, with the parties drawn at one length, it is the Cauchy distribution
   with its median at the corner (Proposition 5). Write a Cauchy law with median m and scale γ as the point m + iγ of the
   upper half-plane; a turn acts on the reading v/h as a Möbius map and carries each Cauchy law to the one at the image
@@ -308,12 +313,16 @@ inscribed equilateral triangle is arcsin(R/2D)/arcsin(R/D). From a home on the c
 the circle are the chords from one end, and this is Bertrand's chord between two random ends, holding, as Jaynes found,
 for one size of circle only: here for one ratio of R to D. As the circle recedes, the rays turn parallel and the share
 rises toward Jaynes's ½, which he derived for a tosser whose "region of uncertainty" is large compared with the circle.
-The second is what the measure is taken to be. For Jaynes the group's measure is a "pre-prior": not itself a realistic
-state of knowledge, but the invariant measure of the parameter space, on which a prior is then built from what is known
-(1968). Here it is not built on: it is the reader's addresses, laid before anything arrives, and its main consequence is
-that the Cauchy belongs to the addresses and not to the payload (§7). The third is the near field: within its own
-breadth the reader holds a length and lays its readings in proportion, and the proportional and logarithmic lays meet at
-the exchange's fixed point (§6). A prior for a scale alone has no such corner.
+Straws tossed since show the same dependence on a ratio of two lengths: the answer turns on the circle's diameter
+against the straw's length, and reaches ½ only for straws much longer than the circle (Liu and Adams 2019). The second
+is what the measure is taken to be. For Jaynes the group's measure is a "pre-prior": not itself a realistic state of
+knowledge, but the invariant measure of the parameter space, on which a prior is then built from what is known (1968).
+Norton (2008) goes further: complete ignorance is not a probability distribution at all, and indifference and the
+invariance of ignorance look paradoxical only when it is taken to be one. Here the measure is not built on: it is the
+reader's addresses, laid before anything arrives, and its main consequence is that the Cauchy belongs to the addresses
+and not to the payload (§7). The third is the near field: within its own breadth the reader holds a length and lays its
+readings in proportion, and the proportional and logarithmic lays meet at the exchange's fixed point (§6). A prior for a
+scale alone has no such corner.
 
 ## 3. The reader
 
@@ -2001,6 +2010,8 @@ Frank, S. A. (2014). How to read probability distributions as statements about p
 
 Frank, S. A. and Smith, D. E. (2010). Measurement invariance, entropy, and probability. *Entropy* 12(3), 289–303.
 
+Ghosh, M. (2011). Objective priors: an introduction for frequentists. *Statistical Science* 26(2), 187–202.
+
 Gilinsky, A. S. (1951). Perceived size and distance in visual space. *Psychological Review* 58, 460–482.
 
 Gull, S. F. (1988). Bayesian inductive inference and maximum entropy. In G. J. Erickson and C. R. Smith (eds),
@@ -2053,6 +2064,9 @@ Longuet-Higgins, H. C. (1981). A computer algorithm for reconstructing a scene f
 
 Luce, R. D. (1959). On the possible psychophysical laws. *Psychological Review* 66(2), 81–95.
 
+Liu, Z. and Adams, C. S. (2019). Experimental tests of Bertrand's question and the Duhem–Quine problem. *European
+Journal of Physics* 40(6), 065801.
+
 Lupton, R. H., Gunn, J. E. and Szalay, A. S. (1999). A modified magnitude system that produces well-behaved
 magnitudes, colors, and errors even for low signal-to-noise ratio measurements. *The Astronomical Journal* 118(3),
 1406–1410.
@@ -2067,6 +2081,8 @@ Munro, J. I. and Paterson, M. S. (1980). Selection and sorting with limited stor
 12(3), 315–323.
 
 Nagel, T. (1986). *The View from Nowhere*. Oxford University Press.
+
+Norton, J. D. (2008). Ignorance and indifference. *Philosophy of Science* 75(1), 45–68.
 
 Pitman, E. J. G. and Williams, E. J. (1967). Cauchy-distributed functions of Cauchy variates. *Annals of Mathematical
 Statistics* 38(3), 916–918.

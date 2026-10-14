@@ -381,7 +381,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   overlap with our ideas, and we just build on that."; "ok, if we find another great paper to lean on, we can just add
   it to Jaynes."): his principle of transformation groups (1968, 1973) is the method, stated in §2 ("What we build on:
   the reader's ignorance as a group"), the introduction and the abstract; §11.1 is "The principle, after Jaynes".
-  Further anchors are added beside Jaynes, not in place of him.
+  Further anchors are added beside Jaynes, not in place of him. Since R244 (Tom: "what has happend since then?"; "ok,
+  proceed") §2 also says the reader's group commutes, so it has one invariant measure where Jaynes's location and scale
+  has two (his the right-invariant one later work favours; Ghosh 2011), cites Norton (2008: complete ignorance is not a
+  probability) beside the pre-prior, and Liu and Adams (2019: tossed straws' answer depends on 2R/L) beside the
+  situated Bertrand.
   Since 13 Oct (SPN R220, R221) it has the three-party wedge: Propositions 3(f) (the sphere only if V = V₂ = H) and 5(e)
   (the even wedge's readings the two-dimensional Cauchy, every pair at its corner, the near field a third, with its
   converse), "More parties" after it (SPN R225: n other parties, every pair at its corner, the near field in all
@@ -751,7 +755,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Bertrand ½ rederived (Crofton), and from home arcsin(R/2D)/arcsin(R/D), ⅓ on the circle to ½ far off (P5); being
   situated, the measure dx·dy/(x² + y²), log-polar (P6); the drawings V = cH a hyperbolic line, levels its distance (P7).
   Run 1 killed P2 and P5 by my set-up (60-digit quadratures of densities singular at an end); run 2 at 200 digits, nothing
-  killed.
+  killed. Run 3 (`jay/jay2.py`, R244): P8, location and scale have two Haar measures (1/a², 1/a), the reader's
+  commuting group one (1/λ), the exchange keeping it; not killed. "Since 1973" in the plan: what later work did.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

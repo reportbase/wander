@@ -283,3 +283,50 @@ discrepancy near 2R/L → 1. Not "answers between 0 and ½", as the plan had it 
 - Von Mises's water and wine is a ratio of two parties. With bounds on the ratio, the exchange and rescaling give dκ/κ
   on them and the median at the bounds' corner, Proposition 13's estimate (for wine to water between 1 and 3, √3);
   Jaynes left it open. Not tested here; whether others have resolved it this way is to check.
+
+### Since 1973, and run 3 (14 October)
+
+Tom, about 12:18: "its a pretty old paper, what has happend since then?" Then, to Claude's answer and its three
+suggestions (cite Norton beside the pre-prior; note that the reader's group commutes, so the left and right Haar
+measures agree; cite Liu and Adams beside the situated Bertrand), about 12:26: "ok, proceed" (SPN R244).
+
+**What has happened since, as checked here.** Citation counts from OpenAlex (14 October): 1968, 1,749; 1973, 292.
+- *Objective Bayes went on by other rules, and met the group where there is one.* Reference priors (Bernardo 1979;
+  formally defined by Berger, Bernardo and Sun 2009, *Annals of Statistics* 37(2), 905–938) and Jeffreys's rule became
+  the standard. For location and scale the left- and right-invariant Haar priors are σ⁻² and σ⁻¹; Jeffreys's general
+  rule gives the left, Jaynes's group argument the right; the right one is Bernardo's reference prior when either
+  parameter is of interest and gives exact frequentist coverage (Datta, Ghosh and Mukerjee 2000), and "usually enjoys
+  more optimality properties" (Ghosh 2011, *Statistical Science* 26(2), 187–202, §5, read in full through arXiv).
+- *Improper priors.* Dawid, Stone and Zidek (1973), "Marginalization paradoxes in Bayesian and structural inference",
+  among the most cited works citing the 1973 paper (Semantic Scholar's list); Jaynes replied in 1980. Not read here.
+- *Bertrand.* Shackel (2007, *Philosophy of Science*) concludes, testing Marinoff's and Jaynes's resolutions, that the
+  paradox "continues to stand in refutation of the principle of indifference" (abstract); Drory (2015) as OFS has it;
+  Liu and Adams (2019, *European Journal of Physics* 40(6), 065801; arXiv 1806.00308): the answer depends on 2R/L.
+- *Ignorance is not a probability.* Norton (2008), "Ignorance and Indifference", *Philosophy of Science* 75(1), 45–68
+  (abstract read through Crossref): "The epistemic state of complete ignorance is not a probability distribution";
+  indifference and the invariance of ignorance under redescription are "so innocuous as almost to be platitudes", and
+  generate paradoxes only "when conjoined with the assumption that an epistemic state must be a probability
+  distribution".
+- From memory, not checked: Shore and Johnson's axioms for maximum entropy (1980); Amari's information geometry, where
+  Jeffreys's prior is the volume of the Fisher–Rao metric; Jaynes's book (2003), ch. 12.
+
+**Prediction for run 3** (`jay/jay2.py`, written before the script):
+- **P8. The reader's group has one Haar measure; location and scale have two.** (a) The maps x ↦ ax + b (a > 0),
+  composed (a₁, b₁)(a₂, b₂) = (a₁a₂, a₁b₂ + b₁): the density on (a, b) unchanged by every left multiplication is 1/a²,
+  by every right multiplication 1/a (Jacobians a_h² and a_h), and the two differ. (b) Turns and rescalings,
+  (α, λ)(α′, λ′) = (α + α′, λλ′), commute, and the densities unchanged by left and by right multiplication are both 1/λ;
+  the exchange, (α, λ) ↦ (−α, 1/λ), carries 1/λ to itself, so the group with the exchange added has the one measure
+  too (a group of two cannot make it lopsided). **Killed if** any of these Jacobian identities fails exactly at 200
+  rational group elements; or, in (a), 1/a² passes the right test or 1/a the left at any element with a ≠ 1; or, in
+  (b), any product fails to commute.
+
+### Run 3 (14 October; `python3 jay/jay2.py`, instant)
+
+```
+P8: not killed. location and scale: left 1/a², right 1/a, exactly, and never each other's: True; turns and rescalings commute, left = right = 1/λ, the exchange keeps it, exactly: True
+```
+
+**What it shows.** Classical (an abelian group is unimodular, and so is a finite extension of one): the question that
+has followed Jaynes's location and scale since, which of its two invariant measures to use, does not arise for the
+situated reader's group. Its one measure, dθ·dκ/κ, is what both readings give. Made: OFS §2 (the commuting group,
+Ghosh 2011; Norton beside the pre-prior; Liu and Adams beside the situated Bertrand), three references.
