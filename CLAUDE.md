@@ -131,6 +131,24 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   hook `window.__sphereCube` (`address`, `point`, `faceOf`, `stats`, `turnBy`, `hud`, `set`, `state`, `frames`, `webgl`,
   `sweeps`: `direction`, `readings`, `exact`, `counted`, `topShare`, `lambert`, `truth`, `centre`).
   Not in the flying page.
+- `wedge.html`: **the wedge** (14 Oct 2026, Tom: "this suggests a new UI paradigm, not a sphere, but a 3d wedge.", then
+  "yes, proceed on wedge.html"; SPN R240), full screen, three.js like `sphere-cube.html` (the same pinned CDN version and
+  test route). The reader's own space: every [h, v, v₂] a point of the unit cube, its directions one octant; a relation is
+  never negative, so a sphere's other seven octants are only this wedge faced another way. Two looks: from outside
+  (orbit), the three faces with the levels on them, the corner (s = 1, radius H) and the held edge; from home (the apex,
+  looking down (1, 1, 1) through a flat screen), the wedge is the triangle h + v + v₂ = 1, each direction at its shares
+  (a central projection; classical, Claude's note in R240), each pair's corner a median, the six chambers its small
+  triangles. The hand by altitude and azimuth (drag from home, tap a thing, or tap the inset, Lambert's equal-area map
+  with the corner curves and chambers). A world (280 things even over the wedge, d over five decades, or a cluster per
+  decade) laid along the rays, s to the corner then 1 + ln s (or 2 − 1/s, `lay=inplace`), n = 32 addresses across the near
+  field: nearer than H/32 merged into home, past H·2⁶ (or s ≥ 32) past the held edge; H slides things along their rays,
+  never across; from home each thing as wide as it looks (Δ/d). The situations per party (known, 3 at once, 4 stepped):
+  a camera, a fan-beam radar (3, 4), a line scanner (4, 3), a single-pixel scanner (4, 4), the seen fading behind the
+  beam; a known breadth moves the drawing (1, V/H, V₂/H)/sum from the centre toward the truth. Six steps: the wedge,
+  from home, two sweeps, a world, H is a zoom, the situations.
+  `?step=1..6&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|3|4&V2=known|3|4&alt=&az=&vs=&v2s=&rays=0&seed=`;
+  hook `window.__wedge` (`homeProject`, `homeShares`, `shares`, `chamberShares`, `cornerHalf`, `placeAt`, `counts`,
+  `coverage`, `drawingOf`, `situationName`, `set`, `state`, `hud`). Not in the flying page.
 - `paths.html`: **one sweep, three paths** (13 Oct 2026, Tom: "yes, proceed", to the visual from the ChatGPT exchange in
   `plans/ofs-review-6.md`; SPN R224), a standalone page like `facing.html`. Geometry only, in unit relations. The circle,
   the line h + v = 1 and the square's edges, each swept evenly along its own length; the reading v/h is the direction
@@ -269,7 +287,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -808,7 +826,8 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   coordinates; the outer and inner hemispheres are two situated views among many. The truth is the sum (R238): the true
   breadths as shares are a point of it; the reader sets H (the zoom) and draws V = V₂ = H, the sum's centre, the triple
   corner, and the entire geometry follows; the truth lies off the centre by V*/H and V₂*/H. The situations follow the
-  relations (R239): one entry per other party, the five the one-party case.
+  relations (R239): one entry per other party, the five the one-party case. The reader's space is the wedge, not a sphere (R240): a
+  relation is never negative, so a sphere's other octants are only facings; seen from home it is the sum's triangle.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
   includes. V is the drawn whole (at H), V* the true breadth. A unit is a relation measured beforehand (R230): its
@@ -919,6 +938,12 @@ In short:
   25. **h-chain.html:** one reader's even sweep gives back the unit circle for every figure and size; two standpoints 2H
       apart hold all 72 points at the best H and none at 10⁻³ or 10³; H of 0 or one standpoint, only rays; five parties,
       the near field 1/6; physics relabels and nothing moves.
+  26. **wedge.html:** from home the three parties at an equilateral triangle's corners and every direction at its shares
+      (to rounding), the pairs' corners its medians; Lambert's map: six chambers a sixth each, v = h halving it, the
+      corners meeting at v = 1/√3; H moves every thing along its own ray, never across, merging more into home as it
+      grows and leaving more past the edge as it shrinks; every situation reaches every direction in one scan, holding
+      1, 1/24, 1/24, 1/576 of the wedge at once; the drawing at the centre, (0.2, 0.6, 0.2) with V known, the truth with
+      both known.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

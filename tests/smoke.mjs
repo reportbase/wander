@@ -672,6 +672,48 @@ try {
     failures.push(`[h-chain.html] ${JSON.stringify(hc)}`);
   console.log(`${failures.length === before25 ? 'ok  ' : 'FAIL'} h-chain.html (one reader's sweep gives back the unit circle for every figure to ${hc.fe.toExponential(1)}; two standpoints 2H apart hold ${hc.held[1]} of 72 at the best H = ${hc.best[0].toFixed(3)}, ${hc.held[0]} at 10⁻³ and ${hc.held[2]} at 10³; H of 0 or one standpoint, only rays; five parties, the near field 1/6; physics relabels, nothing moves)`);
 
+  // ── 26. wedge.html: the wedge (SPN R240; WDG, AZM, SIT): from home the three parties at the corners of an equilateral
+  //    triangle and every direction at its shares, the pairs' corners its medians; on Lambert's map the six chambers a
+  //    sixth each, the corner v = h halving it, the three corners meeting at z = 45°, v = 1/√3; H moves every thing
+  //    along its own ray, never across it; every situation reaches every direction in one scan, holding the whole wedge,
+  //    a fan, a row or a cell at once; the drawing at the centre, at the truth with both breadths known ──
+  current = 'wedge.html';
+  const before26 = failures.length;
+  await page.goto(new URL('wedge.html?step=4', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__wedge && __wedge.frames > 2, null, { timeout: 30000 });
+  const wg = await page.evaluate(() => { const W = __wedge, o = {};
+    const A = W.homeProject([1, 0, 0]), B = W.homeProject([0, 1, 0]), C = W.homeProject([0, 0, 1]), dist = (p, q) => Math.hypot(p[0] - q[0], p[1] - q[1]);
+    o.sides = [dist(A, B), dist(B, C), dist(C, A)]; o.centre = W.homeProject([1, 1, 1]);
+    o.sh = 0; o.med = 0;
+    for (let i = 0; i < 400; i++) { const d = W.fromLambert((i * 37.1) % 90, (i * 0.6180339887) % 1), b = W.homeShares(d.map(c => c * (0.2 + (i % 7)))), s = W.shares(d);
+      o.sh = Math.max(o.sh, ...b.map((x, k) => Math.abs(x - s[k]))); }
+    for (const t of [0.05, 0.2, 0.4, 0.49]) { const b = W.homeShares([t, t, 1 - 2 * t]); o.med = Math.max(o.med, Math.abs(b[0] - b[1])); }
+    o.ch = Object.values(W.chamberShares(240)); o.half = W.cornerHalf; o.triple = [W.cornerVH(45), W.cornerVV2(45)];
+    const P = [0.01, 1, 1000].map(H => W.placeAt(H)); o.dir = 0; o.moved = 0;
+    P[0].forEach((p, i) => { for (const Q of [P[1], P[2]]) { const q = Q[i];
+      if (p.r > 0 && q.r > 0) o.dir = Math.max(o.dir, ...p.p.map((c, k) => Math.abs(c / p.r - q.p[k] / q.r)));
+      if (Math.abs(p.r - q.r) > 1e-9) o.moved++; } });
+    o.lay = [W.lay(1, 'reader'), W.lay(8, 'reader'), W.lay(8, 'inplace')];
+    o.counts = [0.01, 1, 1000].map(H => W.counts(H));
+    o.cov = [['once', 'once'], ['once', 'serial'], ['serial', 'once'], ['serial', 'serial']].map(([a, b]) => ({ ...W.coverage(a, b), name: W.situationName(a, b) }));
+    o.draw = [W.drawingOf('once', 'serial', 3, 0.5), W.drawingOf('known', 'known', 3, 0.5), W.drawingOf('known', 'serial', 3, 0.5)];
+    o.hud = W.hud();
+    W.set({ step: 6, view: 'home' }); o.home = W.state(); o.hudHome = W.hud(); o.frames = W.frames; o.webgl = W.webgl;
+    return o; });
+  const wclose = (x, y, t) => Math.abs(x - y) <= t;
+  const wOk = wg.sides.every(s => wclose(s, wg.sides[0], 1e-12)) && wg.centre.every(c => wclose(c, 0, 1e-12)) && wg.sh < 1e-12 && wg.med < 1e-12 &&
+    wg.ch.length === 6 && wg.ch.every(c => wclose(c, 1 / 6, 0.002)) && wclose(wg.half, 0.5, 1e-9) && wg.triple.every(y => wclose(y, 1 / Math.sqrt(3), 1e-15)) &&
+    wg.dir < 1e-12 && wg.moved > 100 && wclose(wg.lay[0], 1, 0) && wclose(wg.lay[1], 1 + Math.log(8), 1e-15) && wclose(wg.lay[2], 1.875, 1e-15) &&
+    wg.counts.every(c => c.home + c.near + c.far + c.past === 280) && wg.counts[2].home > wg.counts[1].home && wg.counts[0].past > wg.counts[1].past &&
+    wg.cov.every(c => c.share === 1) && wg.cov.map(c => c.held).join() === [1, 1 / 24, 1 / 24, 1 / 576].join() &&
+    /camera/.test(wg.cov[0].name) && /radar/.test(wg.cov[1].name) && /line scanner/.test(wg.cov[2].name) && /single-pixel/.test(wg.cov[3].name) &&
+    wg.draw[0].every(x => wclose(x, 1 / 3, 1e-15)) && [2 / 9, 2 / 3, 1 / 9].every((x, k) => wclose(wg.draw[1][k], x, 1e-15)) &&
+    [0.2, 0.6, 0.2].every((x, k) => wclose(wg.draw[2][k], x, 1e-15)) &&
+    /seen from home at its shares/.test(wg.hud) && /merged into home/.test(wg.hud) && /fan-beam radar/.test(wg.hudHome) &&
+    wg.home.view === 'home' && wg.frames > 0 && wg.webgl;
+  if (!wOk) failures.push(`[wedge.html] ${JSON.stringify({ ...wg, hud: wg.hud.slice(0, 200), hudHome: wg.hudHome.slice(0, 200) })}`);
+  console.log(`${failures.length === before26 ? 'ok  ' : 'FAIL'} wedge.html (from home the parties at an equilateral triangle's corners, every direction at its shares to ${wg.sh.toExponential(1)}, the pairs' corners its medians; Lambert's map: six chambers ${wg.ch.map(c => c.toFixed(3)).join(' ')}, v = h halving it, the corners meeting at v = 1/√3; H moves things along their rays, never across (to ${wg.dir.toExponential(1)}); at H = 0.01, 1, 1000 merged into home ${wg.counts.map(c => c.home).join(', ')}, past the edge ${wg.counts.map(c => c.past).join(', ')}; every situation reaches every direction, holding 1, 1/24, 1/24, 1/576 at once; the drawing at the centre, at the truth with both known)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

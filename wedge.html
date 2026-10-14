@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The wedge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    wedge.html: the wedge (14 October 2026; Tom: "this suggests a new UI paradigm, not a sphere, but a 3d wedge.", then
+    "yes, proceed on wedge.html"). SPN R240, after R236–R239; WDG, AZM and SIT (plans/wdg-plan.md, azm-plan.md,
+    sit-plan.md); observation-from-somewhere.md §2 (the sum and the two sweeps), §3.1 ("Two other parties"),
+    Propositions 3(f) and 5(e); zoom.html for the lay and the held window.
+
+    Keep the case. h, v and v₂ are unit relations, 0 to 1; H is the reader's breadth, chosen, its size only the zoom; every
+    party is drawn at it (V = V₂ = H); V* and V₂* are the true breadths, never read. d is a thing's distance and Δ its size,
+    amounts; s = d/H.
+      - The wedge: every [h, v, v₂] is a point of the unit cube, and its directions are one octant. A relation is never
+        negative, so the other seven octants of a sphere hold no other relations, only this wedge faced another way.
+        Home, the apex, is where the three parties' rays meet square (SIT P1).
+      - From home: a pinhole at the apex looking down (1, 1, 1) onto a flat screen is a central projection onto a plane
+        parallel to h + v + v₂ = 1, so it lays every direction at its shares, (h, v, v₂)/(h + v + v₂): the wedge seen from
+        home is the sum's triangle. Each pair's corner is a great circle, so a straight line, the median; the six chambers
+        are the six small triangles of the medians.
+      - The hand: altitude a (from H to V, tan a = v/√(h² + v₂²)) and azimuth z (bringing in V₂, tan z = v₂/h), each with
+        its corner at 45°; the direction (cos a cos z, sin a, cos a sin z). The inset is Lambert's equal-area map (z, v):
+        the corners curves halving it, the six chambers equal (AZM P4, P5; WDG P3).
+      - A world: each thing a direction and a distance, laid along its ray, s up to the corner, then 1 + ln s (the
+        reader's lay) or 2 − 1/s (?lay=inplace). n = 32 addresses across the near field: nearer than H/n a thing merges
+        into home; past H·2⁶ (reader's) or at s ≥ n (in-place, the horizon) it lies past the held edge. H moves every
+        thing along its own ray, never across it. From home each thing is as wide as it looks, Δ/d, a relation.
+      - The situations, one entry per party (OFS §3.1): known (1–2), at once (3), one direction at a time (4). (3, 3) a
+        camera, (3, 4) a fan-beam radar, (4, 3) a line scanner, (4, 4) a single-pixel scanner; a known breadth moves the
+        drawing on the triangle, (1, V/H, V₂/H)/sum with V = V* where known and H where not, from the centre to the truth.
+    three.js 0.160.0 (MIT) loads from the jsDelivr CDN, pinned, through an import map, as in sphere-cube.html; the smoke
+    test serves the same version from node_modules.
+    Links: ?step=1..6&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|3|4&V2=known|3|4
+           &alt=&az=&vs=&v2s=&rays=0&seed=
+    Test hook: window.__wedge.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #07070b; --panel: rgba(18,18,26,0.80); --line: rgba(255,255,255,0.10);
+        --ink: #c8c8d0; --dim: #8a8a96; --bright: #ece9f4; --gold: #d4a052; --teal: #8ce6cd; --violet: #b59cf0; --red: #e8826d }
+    * { box-sizing: border-box }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground) }
+    body { color: var(--ink); font: 13.5px/1.5 'DM Mono', ui-monospace, monospace;
+        background: radial-gradient(120% 90% at 62% 38%, #15151f 0%, #0a0a10 55%, #050508 100%) }
+    #stage { position: fixed; inset: 0; display: block; width: 100vw; height: 100vh; touch-action: none; cursor: grab }
+    #stage.home { cursor: crosshair }
+    .glass { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+        -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.45) }
+    #panel { position: fixed; top: 14px; left: 14px; width: min(372px, calc(100vw - 28px)); max-height: calc(100vh - 28px);
+        overflow: auto; padding: 14px 16px 12px; z-index: 3 }
+    h1 { font: 400 26px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 4px }
+    .sub { color: var(--dim); margin: 0 0 10px; font-size: 12px }
+    .steps { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 8px }
+    button { font: inherit; color: var(--bright); background: rgba(255,255,255,0.04); border: 1px solid var(--line);
+        border-radius: 7px; padding: 5px 9px; cursor: pointer; touch-action: manipulation; min-height: 32px }
+    button:hover { border-color: rgba(255,255,255,0.25) }
+    button.on { border-color: var(--gold); color: var(--gold); background: rgba(212,160,82,0.08) }
+    .steps button { min-width: 34px }
+    #caption { color: var(--ink); margin: 2px 0 10px; min-height: 7.4em }
+    #caption b { color: var(--bright); font-weight: 500 }
+    .ctl { display: grid; grid-template-columns: 7.2em 1fr 5.6em; gap: 6px 8px; align-items: center; margin: 6px 0 }
+    .ctl label { color: var(--dim) }
+    .ctl output { color: var(--bright); text-align: right; font-size: 12px }
+    input[type=range] { width: 100%; min-width: 0; accent-color: var(--gold) }
+    .row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px }
+    .seg { display: grid; grid-template-columns: 7.2em repeat(3, 1fr); gap: 5px; align-items: center; margin: 6px 0 }
+    .seg > span { color: var(--dim); font-size: 12px }
+    .seg button { padding: 4px 4px; font-size: 12px }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .violet { color: var(--violet) } .dim { color: var(--dim) }
+    #hud { position: fixed; left: 14px; bottom: 14px; max-width: min(620px, calc(100vw - 300px)); padding: 10px 13px;
+        white-space: pre-wrap; font-size: 12px; color: var(--bright); z-index: 2 }
+    #inset { position: fixed; right: 14px; bottom: 14px; width: 252px; padding: 10px 10px 8px; z-index: 2 }
+    #inset canvas { width: 100%; aspect-ratio: 1; display: block; border-radius: 6px; background: #0b0b12; touch-action: none; cursor: crosshair }
+    #inset .t { font-size: 11.5px; color: var(--dim); margin: 0 0 6px }
+    #inset .t b { color: var(--bright); font-weight: 500 }
+    #insetNote { font-size: 11px; color: var(--dim); margin: 6px 0 0 }
+    #hint { position: fixed; right: 14px; top: 14px; padding: 7px 11px; font-size: 11.5px; color: var(--dim); z-index: 2 }
+    #nogl { position: fixed; inset: 0; display: none; place-items: center; color: var(--bright); padding: 24px; text-align: center }
+    #fold { display: none }
+    body.homeview #inset { top: 14px; bottom: auto }
+    body.homeview #hint { display: none }
+    @media (min-width: 761px) { #hud { left: 400px; max-width: calc(100vw - 690px) } body.homeview #hud { max-width: calc(100vw - 414px) } }
+    @media (min-width: 761px) and (max-width: 1099px) { #inset { display: none } #hud { max-width: calc(100vw - 414px) } }
+    a { color: var(--teal) }
+    @media (max-width: 760px) {
+        #panel { top: auto; bottom: 10px; left: 10px; width: calc(100vw - 20px); max-height: 54vh; padding: 10px 12px }
+        #panel.folded .more { display: none }
+        #fold { display: inline-block; float: right; min-height: 28px; padding: 2px 8px }
+        h1 { font-size: 21px }
+        #caption { min-height: 0 }
+        #hud { top: 10px; bottom: auto; left: 10px; max-width: calc(100vw - 20px); font-size: 11px; padding: 7px 9px }
+        #inset { display: none }
+        #hint { display: none }
+    }
+    </style>
+    <script type="importmap">{ "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body>
+<canvas id="stage" aria-label="The wedge: one octant of directions, the reader at its apex, a world laid along its rays"></canvas>
+<div id="panel" class="glass">
+    <button id="fold" aria-label="fold the panel">▾</button>
+    <h1>The wedge</h1>
+    <p class="sub">Not a sphere: the reader's own space, one octant made by one observation, three parties at its edges.</p>
+    <div class="body">
+        <div class="steps" id="steps"></div>
+        <div id="caption"></div>
+        <div class="more">
+        <div class="seg" style="grid-template-columns: 7.2em 1fr 1fr"><span>look</span><button id="vOut">from outside</button><button id="vHome">from home</button></div>
+        <div class="ctl"><label for="lgH">H, the zoom</label><input id="lgH" type="range" min="-2" max="3" step="0.01" value="0"><output id="lgHo"></output></div>
+        <div class="ctl"><label for="alt">altitude, a</label><input id="alt" type="range" min="0" max="90" step="0.5" value="40"><output id="alto"></output></div>
+        <div class="ctl"><label for="az">azimuth, z</label><input id="az" type="range" min="0" max="90" step="0.5" value="25"><output id="azo"></output></div>
+        <div class="seg" id="sitV"><span>V, altitude</span><button data-s="known">known</button><button data-s="once">3 at once</button><button data-s="serial">4 stepped</button></div>
+        <div class="seg" id="sitV2"><span>V₂, azimuth</span><button data-s="known">known</button><button data-s="once">3 at once</button><button data-s="serial">4 stepped</button></div>
+        <div class="row">
+            <button id="bWorld">world: scatter</button>
+            <button id="bLay">lay: the reader's</button>
+            <button id="bRays" class="on">rays</button>
+            <button id="bSweep">sweep the hand</button>
+            <button id="bZoom">zoom</button>
+            <button id="bReset">reset</button>
+        </div>
+        <p class="sub" style="margin:10px 0 0">From outside, drag to look around; from home, drag to point the hand. Tap a thing
+        to point the hand at it, or tap the map. Other demos: <a href="sphere-cube.html">the sphere in the cube</a>,
+        <a href="zoom.html">H is a zoom</a>, <a href="demos.html">all demos</a>.</p>
+        </div>
+    </div>
+</div>
+<div id="hud" class="glass"></div>
+<div id="inset" class="glass"><div class="t" id="insetT"><b>Lambert's map</b>, equal-area: azimuth across, height v up</div><canvas id="map" width="460" height="460"></canvas><div id="insetNote"></div></div>
+<div id="hint" class="glass"></div>
+<div id="nogl"><div>This page needs WebGL to draw the wedge.<br>The arithmetic still runs: see the test hook.</div></div>
+<script>
+// three.js comes from a CDN; if it has not arrived after a while, say so rather than show an empty page
+setTimeout(() => { if (!window.__wedge) { const n = document.getElementById('nogl');
+    n.firstElementChild.innerHTML = 'three.js could not be loaded from cdn.jsdelivr.net.<br>Check the connection and reload.'; n.style.display = 'grid'; } }, 12000);
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// ── the geometry, independent of drawing ────────────────────────────────────────────────────────────────────────
+const RAD = Math.PI / 180, AX = ['h', 'v', 'v₂'];
+const norm = d => Math.hypot(d[0], d[1], d[2]);
+const unit = d => { const n = norm(d); return [d[0] / n, d[1] / n, d[2] / n]; };
+// the hand's two sweeps (AZM): altitude a from the horizontal up to v, azimuth z round the horizontal from h to v₂
+const dir = (a, z) => [Math.cos(a * RAD) * Math.cos(z * RAD), Math.sin(a * RAD), Math.cos(a * RAD) * Math.sin(z * RAD)];
+function anglesOf(d) { const n = norm(d); return { a: Math.asin(Math.max(-1, Math.min(1, d[1] / n))) / RAD, z: Math.atan2(d[2], d[0]) / RAD }; }
+function readings(d) { return { az: d[2] / d[0], alt: d[1] / Math.hypot(d[0], d[2]), vh: d[1] / d[0], v2h: d[2] / d[0], v2v: d[2] / d[1] }; }
+// seen from home through a flat screen square to (1, 1, 1): each direction at its shares, a point of h + v + v₂ = 1
+const shares = d => { const s = d[0] + d[1] + d[2]; return [d[0] / s, d[1] / s, d[2] / s]; };
+// Lambert's equal-area map of the wedge: azimuth across, height up (Archimedes' hat-box)
+const lambertOf = d => ({ z: Math.atan2(d[2], d[0]) / RAD, y: d[1] / norm(d) });
+const fromLambert = (z, y) => dir(Math.asin(Math.max(0, Math.min(1, y))) / RAD, Math.max(0, Math.min(90, z)));
+const rank = d => [0, 1, 2].sort((i, j) => d[j] - d[i] || i - j);
+const chamberOf = d => rank(d).map(i => AX[i]).join(' > ');
+const cornerVH = z => Math.cos(z * RAD) / Math.sqrt(1 + Math.cos(z * RAD) ** 2);   // the height where v = h
+const cornerVV2 = z => Math.sin(z * RAD) / Math.sqrt(1 + Math.sin(z * RAD) ** 2);  // where v = v₂; v₂ = h is z = 45°
+const TRIPLE = { z: 45, y: 1 / Math.sqrt(3) };
+function simpson(f, a, b, n = 2000) {
+    const k = (b - a) / n; let t = f(a) + f(b);
+    for (let i = 1; i < n; i++) t += (i % 2 ? 4 : 2) * f(a + i * k);
+    return t * k / 3;
+}
+// the share of the map below the corner v = h: ½ (AZM P5)
+const CORNER_HALF = (2 / Math.PI) * simpson(z => Math.cos(z) / Math.sqrt(1 + Math.cos(z) ** 2), 0, Math.PI / 2);
+function chamberShares(M = 240) {                                   // counted on Lambert's map, even in area
+    const c = {};
+    for (let i = 0; i < M; i++) for (let j = 0; j < M; j++) { const k = chamberOf(fromLambert((i + 0.5) / M * 90, (j + 0.5) / M)); c[k] = (c[k] || 0) + 1; }
+    for (const k in c) c[k] /= M * M;
+    return c;
+}
+
+// the lay along each ray (zoom.html; OFS Proposition 1.2): in proportion to the corner, then 1 + ln s or 2 − 1/s
+const N_ADDR = 32, L_LEVELS = 6;
+const lay = (s, mode) => s <= 1 ? s : mode === 'inplace' ? 2 - 1 / s : 1 + Math.log(s);
+const edgeS = mode => mode === 'inplace' ? N_ADDR : 2 ** L_LEVELS;
+function addressOf(d, H, mode) {
+    const s = d / H;
+    if (s < 1 / N_ADDR) return { kind: 'home', s, level: null };
+    if (s > edgeS(mode)) return { kind: 'past', s, level: null };
+    if (s <= 1) return { kind: 'near', s, level: 0 };
+    return { kind: 'far', s, level: Math.max(1, Math.ceil(Math.log2(s) - 1e-12)) };
+}
+const drawnLay = (d, H, mode) => { const ad = addressOf(d, H, mode); return ad.kind === 'home' ? 0 : lay(Math.min(ad.s, edgeS(mode)), mode); };
+
+// the situations, one entry per party (OFS §3.1): known (1–2), at once (3), one direction at a time (4)
+const SIT_NUM = { known: '1–2', once: '3', serial: '4' };
+const heldWhole = s => s !== 'serial';
+function situationName(V, V2) {
+    if (V === 'known' && V2 === 'known') return 'both known: unsituated, the solid held whole';
+    if (V === 'known' || V2 === 'known') return `half-situated: ${V === 'known' ? 'V' : 'V₂'} held, the other swept from home`;
+    if (V === 'once' && V2 === 'once') return 'both sweeps at once: a camera';
+    if (V === 'serial' && V2 === 'serial') return 'both sweeps stepped: a single-pixel scanner';
+    return V === 'once' ? 'the altitude at once, the azimuth stepped: a fan-beam radar' : 'the azimuth at once, the altitude stepped: a line scanner';
+}
+const NZ = 24, NY = 24, T_FAN = 6, T_ROW = 6, CELL_DT = 1 / 48;
+const beamKind = (V, V2) => { const a = heldWhole(V), b = heldWhole(V2); return a && b ? 'all' : a ? 'fan' : b ? 'row' : 'cell'; };
+const periodOf = k => k === 'fan' ? T_FAN : k === 'row' ? T_ROW : k === 'cell' ? NZ * NY * CELL_DT : 1;
+const heldShare = k => k === 'all' ? 1 : k === 'cell' ? 1 / (NZ * NY) : k === 'fan' ? 1 / NZ : 1 / NY;
+const frac = (t, k) => ((t / periodOf(k)) % 1 + 1) % 1;
+function beamAt(k, t) {                                             // what the reader holds at time t
+    const f = frac(t, k);
+    if (k === 'fan') return { kind: k, z: 90 * f };                 // a vertical fan, every altitude, turning in azimuth
+    if (k === 'row') return { kind: k, y: f };                      // a cone, every azimuth, tipping up in height
+    if (k === 'cell') { const i = Math.min(NZ * NY - 1, Math.floor(f * NZ * NY)), row = Math.floor(i / NZ), c = i % NZ, col = row % 2 ? NZ - 1 - c : c;
+        return { kind: k, i, z0: col * 90 / NZ, z1: (col + 1) * 90 / NZ, y0: row / NY, y1: (row + 1) / NY }; }
+    return { kind: 'all' };
+}
+function scanKey(k, L) {                                            // where in the scan a direction is reached, 0 to 1
+    if (k === 'fan') return L.z / 90;
+    if (k === 'row') return L.y;
+    const row = Math.min(NY - 1, Math.floor(L.y * NY)), col = Math.min(NZ - 1, Math.floor(L.z / 90 * NZ));
+    return (row * NZ + (row % 2 ? NZ - 1 - col : col) + 0.5) / (NZ * NY);
+}
+function passed(key, f0, f1, span) {                                // did the beam pass key between two moments?
+    if (span >= 1) return true;
+    return f0 <= f1 ? key > f0 && key <= f1 : key > f0 || key <= f1;
+}
+// the reader's drawing on the sum's triangle: V and V₂ at H unless known; the truth is the drawing with both known (R238)
+function drawingOf(V, V2, vs, v2s) { const a = V === 'known' ? vs : 1, b = V2 === 'known' ? v2s : 1, t = 1 + a + b; return [1 / t, a / t, b / t]; }
+
+// a world: each thing a direction (its address), a distance d and a size Δ, amounts; seeded
+function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function gauss(r) { return Math.sqrt(-2 * Math.log(1 - r())) * Math.cos(2 * Math.PI * r()); }
+function makeWorld(kind, seed) {
+    const r = rng(seed), out = [];
+    if (kind === 'scatter') {
+        for (let i = 0; i < 280; i++) {                             // even over the wedge (azimuth and height even)
+            const z = 0.5 + 89 * r(), y = 0.01 + 0.98 * r(), d = 10 ** (-2 + 5 * r()), ang = 10 ** (-3.5 + 2.6 * r());
+            out.push({ dir: fromLambert(z, y), d, ang, size: ang * d });
+        }
+    } else if (kind === 'decades') {                                 // a cluster at every decade, 10⁻² … 10³
+        for (let k = -2; k <= 3; k++) {
+            const zc = 12 + 66 * r(), yc = 0.15 + 0.7 * r(), ac = Math.asin(yc) / RAD;
+            for (let i = 0; i < 40; i++) {
+                const a = Math.max(0.5, Math.min(89.5, ac + 5 * gauss(r))), z = Math.max(0.5, Math.min(89.5, zc + 6 * gauss(r)));
+                const d = 10 ** (k + 0.12 * gauss(r)), ang = 10 ** (-3.2 + 1.8 * r());
+                out.push({ dir: dir(a, z), d, ang, size: ang * d, cluster: k });
+            }
+        }
+    }
+    for (const t of out) { t.L = lambertOf(t.dir); t.sh = shares(t.dir); }
+    return out;
+}
+
+// ── state, URL ────────────────────────────────────────────────────────────────────────────────────────────────
+const qs = new URLSearchParams(location.search);
+const sitParam = (k, dflt) => { const v = qs.get(k); return v === 'known' || v === '1' || v === '2' ? 'known' : v === '3' ? 'once' : v === '4' ? 'serial' : dflt; };
+const state = {
+    step: Math.min(6, Math.max(1, +qs.get('step') || 1)),
+    view: 'outside', lgH: qs.has('H') ? Math.max(-2, Math.min(3, +qs.get('H') || 0)) : 0,
+    lay: qs.get('lay') === 'inplace' ? 'inplace' : 'reader',
+    world: ['scatter', 'decades', 'none'].includes(qs.get('world')) ? qs.get('world') : 'scatter', seed: +qs.get('seed') || 7,
+    alt: 40, az: 25, sitV: 'once', sitV2: 'once', vs: Math.max(0.01, +qs.get('vs') || 3), v2s: Math.max(0.01, +qs.get('v2s') || 0.5),
+    rays: qs.get('rays') !== '0', showWorld: false, handAnim: false, zoomAnim: false
+};
+const Hval = () => 10 ** state.lgH;
+let things = makeWorld(state.world, state.seed);
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const CAPTIONS = {
+    1: ['the wedge', '<b>The wedge, not a sphere.</b> Three unit relations, h, v and v₂, each from 0 to 1, each with its breadth. The reader chooses H and draws the others at it, V = V₂ = H, and every [h, v, v₂] is a point of the unit cube; its directions are one octant, the wedge. A relation is never negative, so a sphere\'s other seven octants hold no other relations, only this wedge faced another way; and a sphere that places everything needs every distance, the size of the universe. Home, the apex, is where the three parties\' rays meet square. One observation makes one wedge.'],
+    2: ['from home', '<b>From home.</b> Stand at the apex and look down the triple corner through a flat screen: the wedge is a triangle, the three parties at its corners, and every direction lands at its shares, (h, v, v₂)/(h + v + v₂), a point of h + v + v₂ = 1, the sum. Each pair\'s corner (v = h, v₂ = h, v₂ = v) is a median; the three meet at the centre (⅓, ⅓, ⅓), the triple corner, and cut the wedge into six chambers, a sixth each swept evenly. Where h is the largest, the near field, is two of them: a third.'],
+    3: ['two sweeps', '<b>Two sweeps.</b> The hand points by <span class="teal">altitude</span>, raised from the horizontal to the vertical, the sweep from H to V, reading tan a = v/√(h² + v₂²); and by <span class="violet">azimuth</span>, turned round the horizontal from h to v₂, the sweep that brings in V₂, reading tan z = v₂/h. Each has its corner at 45°. The map is Lambert\'s, azimuth across and height up, equal-area (Archimedes\' hat-box): the corners are curves that halve it, and the six chambers are equal.'],
+    4: ['a world', '<b>A world in the wedge.</b> Each thing has a direction, its address, and a distance d, laid along its ray: in proportion out to the corner (s = d/H up to 1), then one level, ln 2 wide, for every doubling (1 + ln s). From home only the directions show, each thing as wide as it looks across, Δ/d, a relation: narrower than a pixel, it is a point. Tap a thing to point the hand at it.'],
+    5: ['H is a zoom', '<b>H is a zoom.</b> Change H and every thing slides along its own ray, never across it: from home nothing moves. What changes is the address: which things are near (inside the corner), which level the rest fall in, which merge into home (nearer than H/32, the reader holding 32 addresses across the near field), and which lie past the held edge (beyond H·2⁶).'],
+    6: ['the situations', '<b>The situations, one entry per party.</b> Each sweep is taken at once (3) or one direction at a time (4), or its party\'s breadth is known (1 or 2). Both at once: a camera\'s frame. The altitude at once and the azimuth stepped: a fan-beam radar. The azimuth at once and the altitude stepped: a line scanner. Both stepped: a single-pixel scanner. Every one reaches every direction of the wedge; they differ in how much is held at once. A known breadth moves the reader\'s drawing on the triangle from the centre toward the truth.']
+};
+const STEP_SET = {
+    1: { view: 'outside', showWorld: false, handAnim: false, zoomAnim: false, sitV: 'once', sitV2: 'once' },
+    2: { view: 'home', showWorld: false, handAnim: false, zoomAnim: false, sitV: 'once', sitV2: 'once' },
+    3: { view: 'outside', showWorld: false, handAnim: !reduced, zoomAnim: false, sitV: 'once', sitV2: 'once' },
+    4: { view: 'outside', showWorld: true, handAnim: false, zoomAnim: false, sitV: 'once', sitV2: 'once' },
+    5: { view: 'outside', showWorld: true, handAnim: false, zoomAnim: !reduced, sitV: 'once', sitV2: 'once' },
+    6: { view: 'home', showWorld: true, handAnim: false, zoomAnim: false, sitV: 'once', sitV2: 'serial' }
+};
+
+// ── the drawing ───────────────────────────────────────────────────────────────────────────────────────────────
+const canvas = document.getElementById('stage');
+let renderer = null;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true }); }
+catch (err) { document.getElementById('nogl').style.display = 'grid'; }
+const HEX = { gold: '#d4a052', teal: '#8ce6cd', violet: '#b59cf0', white: '#ece9f4', dim: '#8a8a96', red: '#e8826d' };
+const PARTY_HEX = [HEX.gold, HEX.teal, HEX.violet];
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(36, 1, 0.002, 200);
+let controls = null;
+const OUT = 2.6;                                                    // the held edge's drawn radius
+let K = 1;                                                          // the corner's drawn radius: H, where s = 1
+const V3 = (...a) => new THREE.Vector3(...a);
+const basic = (hex, opacity, extra = {}) => new THREE.MeshBasicMaterial({ color: hex, transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false, ...extra });
+const lineMat = (hex, opacity, dashed) => dashed ? new THREE.LineDashedMaterial({ color: hex, transparent: true, opacity, dashSize: 0.06, gapSize: 0.045 })
+                                                 : new THREE.LineBasicMaterial({ color: hex, transparent: true, opacity });
+function polyline(pts, hex, opacity, dashed = false) {
+    const g = new THREE.BufferGeometry().setFromPoints(pts.map(p => V3(...p))), l = new THREE.Line(g, lineMat(hex, opacity, dashed));
+    if (dashed) l.computeLineDistances(); return l;
+}
+const facePt = (f, r, phi) => { const c = r * Math.cos(phi * RAD), s = r * Math.sin(phi * RAD); return f === 0 ? [c, s, 0] : f === 1 ? [c, 0, s] : [0, c, s]; };
+const arcOn = (R, a, b, n = 64) => { const out = []; for (let i = 0; i <= n; i++) { const t = i / n; out.push(unit(a.map((c, k) => c * (1 - t) + b[k] * t)).map(c => c * R)); } return out; };
+function octantMesh(R, hex, opacity) {
+    const n = 32, pos = [], idx = [], id = (i, j) => i * (n + 1) - (i * (i - 1)) / 2 + j;
+    for (let i = 0; i <= n; i++) for (let j = 0; j <= n - i; j++) { const u = unit([i / n, j / n, (n - i - j) / n]); pos.push(u[0] * R, u[1] * R, u[2] * R); }
+    for (let i = 0; i < n; i++) for (let j = 0; j < n - i; j++) { idx.push(id(i, j), id(i + 1, j), id(i, j + 1)); if (j < n - i - 1) idx.push(id(i + 1, j), id(i + 1, j + 1), id(i, j + 1)); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx);
+    return new THREE.Mesh(g, basic(hex, opacity));
+}
+const redraws = [];
+function label(text, color, height = 0.11) {                       // a sprite as wide as its text, height in world units
+    const c = document.createElement('canvas'), g = c.getContext('2d'), font = '500 64px "DM Mono", ui-monospace, monospace';
+    let s = null;
+    const paint = () => {
+        g.font = font; c.width = Math.ceil(g.measureText(text).width + 24); c.height = 96;
+        g.font = font; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = color; g.fillText(text, c.width / 2, 50);
+        if (s) s.scale.set(height * c.width / c.height, height, 1);
+    };
+    paint();
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+    s = new THREE.Sprite(new THREE.SpriteMaterial({ map: t, transparent: true, depthWrite: false, depthTest: false })); paint();
+    s.userData.h = height;
+    redraws.push(() => { paint(); t.dispose(); t.needsUpdate = true; });
+    return s;
+}
+const bead = (r, hex) => new THREE.Mesh(new THREE.SphereGeometry(r, 24, 16), new THREE.MeshBasicMaterial({ color: hex }));
+const rod = (hex, r, op = 1) => new THREE.Mesh(new THREE.CylinderGeometry(r, r, 1, 12, 1, true), new THREE.MeshBasicMaterial({ color: hex, transparent: op < 1, opacity: op }));
+const Yup = V3(0, 1, 0);
+function placeRod(m, a, b) {
+    const A = V3(...a), B = V3(...b), d = B.clone().sub(A), L = d.length();
+    m.visible = L > 1e-4; if (!m.visible) return;
+    m.position.copy(A).addScaledVector(d, 0.5); m.scale.set(1, L, 1); m.quaternion.setFromUnitVectors(Yup, d.normalize());
+}
+function disposeGroup(g) {
+    g.traverse(o => { o.geometry?.dispose(); if (o.material) { o.material.map?.dispose(); o.material.dispose(); } });
+    g.clear();
+}
+
+// the frame: the wedge's three faces with the levels on them, its caps, the unit cube, the axes; rebuilt with the lay
+const frameG = new THREE.Group(), truthG = new THREE.Group(); scene.add(frameG, truthG);
+const homeOnly = [], outsideOnly = [];
+let drawingBead, truthBead, centreBead, truthRod, labDrawing, labTruth;
+function levelRadii(mode) { const out = []; for (let k = 1; 2 ** k <= edgeS(mode); k++) out.push(lay(2 ** k, mode)); return out; }
+function buildFrame() {
+    disposeGroup(frameG); disposeGroup(truthG); homeOnly.length = outsideOnly.length = 0;
+    K = OUT / lay(edgeS(state.lay), state.lay);
+    const levels = levelRadii(state.lay);
+    for (let f = 0; f < 3; f++) {                                   // each face is one pair's plane: (h, v), (h, v₂), (v, v₂)
+        const pos = [];
+        for (let k = 0; k < 48; k++) pos.push(0, 0, 0, ...facePt(f, OUT, k / 48 * 90), ...facePt(f, OUT, (k + 1) / 48 * 90));
+        const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+        const m = new THREE.Mesh(g, basic(0xffffff, 0.03)); frameG.add(m); outsideOnly.push(m);
+        const ring = (r, hex, op, dashed) => { const l = polyline(Array.from({ length: 65 }, (_, k) => facePt(f, r, k / 64 * 90)), hex, op, dashed); frameG.add(l); outsideOnly.push(l); };
+        ring(K, HEX.teal, 0.75); ring(K / 2, HEX.teal, 0.16, true);
+        levels.forEach((r, i) => ring(K * r, HEX.gold, i === levels.length - 1 ? 0.55 : 0.34 - 0.03 * i, i === levels.length - 1));
+        const diag = polyline([[0, 0, 0], facePt(f, OUT, 45)], [HEX.teal, HEX.violet, HEX.white][f], 0.55, true); frameG.add(diag); outsideOnly.push(diag);
+    }
+    const cap = octantMesh(OUT, 0xbfc8ff, 0.035), ccap = octantMesh(K, 0x8ce6cd, 0.05);
+    frameG.add(cap, ccap); outsideOnly.push(cap, ccap);
+    const E = [[1, 0, 0], [0, 1, 0], [0, 0, 1]];
+    for (let i = 0; i < 3; i++) {
+        const a = E[i], b = E[(i + 1) % 3], c = E[(i + 2) % 3];
+        frameG.add(polyline(arcOn(OUT, a, b), HEX.white, 0.42));                                    // the held edge's rim
+        const ce = polyline(arcOn(K, a, b), HEX.teal, 0.5); frameG.add(ce); outsideOnly.push(ce);  // the corner's rim
+        frameG.add(polyline(arcOn(OUT * 0.999, c, [a[0] + b[0], a[1] + b[1], a[2] + b[2]]), HEX.gold, 0.55, true));   // a pair's corner
+    }
+    const tri = polyline([[0, 0, 0], unit([1, 1, 1]).map(c => c * OUT)], HEX.gold, 0.7, true); frameG.add(tri); outsideOnly.push(tri);
+    {   // the unit cube of relations, every [h, v, v₂], its side H drawn at the corner
+        const l = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(K, K, K)), lineMat(0xffffff, 0.2));
+        l.position.set(K / 2, K / 2, K / 2); frameG.add(l); outsideOnly.push(l);
+    }
+    for (let i = 0; i < 3; i++) {                                   // the axes, each party drawn at H
+        const p = E[i];
+        const ax = polyline([[0, 0, 0], p.map(c => c * OUT * 1.06)], PARTY_HEX[i], 0.6); frameG.add(ax); outsideOnly.push(ax);
+        const l = label(AX[i], PARTY_HEX[i], 0.2); l.position.set(...unit(p.map((c, k) => c - 0.07 * (k !== i))).map(c => c * OUT * 1.13)); frameG.add(l); outsideOnly.push(l);
+        const lh = label(AX[i], PARTY_HEX[i], 0.24); lh.position.set(...unit(p.map((c, k) => c + [0.1, 0.13, 0.1][i] * (k !== i))).map(c => c * OUT)); frameG.add(lh); homeOnly.push(lh);
+        const lH = label(['H', 'V = H', 'V₂ = H'][i], PARTY_HEX[i], 0.075);
+        lH.position.set(...p.map(c => c * K)).add(V3(...[[0, -0.09, 0.07], [0.16, 0, 0.05], [0.05, -0.09, 0.0]][i])); frameG.add(lH); outsideOnly.push(lH);
+    }
+    const lh = label('home', HEX.white, 0.09); lh.position.set(-0.1, -0.1, -0.06); frameG.add(lh); outsideOnly.push(lh);
+    const lc = label('the corner, s = 1', HEX.teal, 0.068); lc.position.set(...facePt(1, K * 1.05, 72)).add(V3(0.0, -0.07, 0.08)); frameG.add(lc); outsideOnly.push(lc);
+    const le = label(state.lay === 'inplace' ? 'the horizon, s = 32' : 'the held edge, s = 64', HEX.white, 0.075);
+    le.position.set(...facePt(1, OUT * 1.02, 70)).add(V3(0, -0.12, 0.1)); frameG.add(le); outsideOnly.push(le);
+    // the six chambers, labelled from home at their centroids on the sum
+    for (const ord of [[0, 1, 2], [0, 2, 1], [1, 0, 2], [1, 2, 0], [2, 0, 1], [2, 1, 0]]) {
+        const p = [0, 0, 0]; p[ord[0]] = 1 + 1 / 2 + 1 / 3; p[ord[1]] = 1 / 2 + 1 / 3; p[ord[2]] = 1 / 3;
+        const l = label(ord.map(i => AX[i]).join(' > '), PARTY_HEX[ord[0]], 0.13); l.position.set(...unit(p).map(c => c * OUT * 0.98));
+        l.material.opacity = 0.75; frameG.add(l); homeOnly.push(l);
+    }
+    // the sum's triangle, h + v + v₂ = 1 (at H): its medians, the three regions by the largest party, the centre and the truth
+    {
+        const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute([K, 0, 0, 0, K, 0, 0, 0, K], 3));
+        truthG.add(new THREE.Mesh(g, basic(0xffffff, 0.05)));
+        truthG.add(polyline([[K, 0, 0], [0, K, 0], [0, 0, K], [K, 0, 0]], HEX.white, 0.6));
+        for (let i = 0; i < 3; i++) {
+            const a = [0, 0, 0], m = [K / 2, K / 2, K / 2]; a[i] = K; m[i] = 0;
+            truthG.add(polyline([a, m], HEX.gold, 0.5, true));
+            const kite = [a, [0, 0, 0], [K / 3, K / 3, K / 3], [0, 0, 0]];
+            const j = (i + 1) % 3, k = (i + 2) % 3; kite[1][i] = kite[1][j] = K / 2; kite[3][i] = kite[3][k] = K / 2;
+            const gk = new THREE.BufferGeometry(); gk.setAttribute('position', new THREE.Float32BufferAttribute([...kite[0], ...kite[1], ...kite[2], ...kite[0], ...kite[2], ...kite[3]], 3));
+            truthG.add(new THREE.Mesh(gk, basic(PARTY_HEX[i], 0.09)));
+        }
+        centreBead = bead(0.022, 0xece9f4); centreBead.position.set(K / 3, K / 3, K / 3);
+        drawingBead = bead(0.026, 0xffffff); truthBead = bead(0.026, 0xe8826d); truthRod = rod(0xe8826d, 0.005, 0.85);
+        labDrawing = label('the drawing', HEX.white, 0.06); labTruth = label('the truth', HEX.red, 0.06);
+        truthG.add(centreBead, drawingBead, truthBead, truthRod, labDrawing, labTruth);
+        const ls = label('h + v + v₂ = 1', HEX.white, 0.06); ls.position.set(K * 0.5, -0.08, K * 0.55); truthG.add(ls); outsideOnly.push(ls);
+    }
+}
+
+// the world: points as wide as they should be, rays from home
+const ptsGeo = new THREE.BufferGeometry();
+const ptsMat = new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, uniforms: { pr: { value: 1 } },
+    vertexShader: 'attribute vec3 col; attribute float sz; attribute float al; uniform float pr; varying vec3 vc; varying float va;' +
+        'void main(){ vc = col; va = al; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); gl_PointSize = sz * pr; }',
+    fragmentShader: 'varying vec3 vc; varying float va; void main(){ vec2 q = gl_PointCoord * 2.0 - 1.0; float r = dot(q, q);' +
+        'if (r > 1.0 || va < 0.004) discard; gl_FragColor = vec4(vc * (0.8 + 0.35 * (1.0 - r)), va * smoothstep(1.0, 0.5, r)); }'
+});
+const worldPts = new THREE.Points(ptsGeo, ptsMat); worldPts.renderOrder = 5; worldPts.frustumCulled = false; scene.add(worldPts);
+const raysGeo = new THREE.BufferGeometry();
+const worldRays = new THREE.LineSegments(raysGeo, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, depthWrite: false }));
+worldRays.frustumCulled = false; scene.add(worldRays);
+let seenAt = new Float64Array(0);
+function allocWorld() {
+    const n = things.length;
+    ptsGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(n * 3), 3));
+    ptsGeo.setAttribute('col', new THREE.BufferAttribute(new Float32Array(n * 3), 3));
+    ptsGeo.setAttribute('sz', new THREE.BufferAttribute(new Float32Array(n), 1));
+    ptsGeo.setAttribute('al', new THREE.BufferAttribute(new Float32Array(n), 1));
+    raysGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(n * 6), 3));
+    raysGeo.setAttribute('color', new THREE.BufferAttribute(new Float32Array(n * 8), 4));
+    seenAt = new Float64Array(n).fill(-1e9);
+}
+// colours by address: near teal, the levels gold fading outward, merged into home white, past the held edge grey
+const srgb = hex => [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255);
+const lin = hex => { const c = new THREE.Color(hex); return [c.r, c.g, c.b]; };
+const mixHex = (a, b, t) => { const A = srgb(a), B = srgb(b); return '#' + A.map((c, i) => Math.round(255 * (c + (B[i] - c) * t)).toString(16).padStart(2, '0')).join(''); };
+function addrHex(ad) {
+    if (ad.kind === 'near') return HEX.teal;
+    if (ad.kind === 'home') return HEX.white;
+    if (ad.kind === 'past') return '#6c6a78';
+    const L = Math.log2(edgeS(state.lay));
+    return mixHex('#e2ad5c', '#8d7fa8', (ad.level - 1) / Math.max(1, L - 1));
+}
+
+// the hand: a rod from home, its two sweeps as fans and as arcs on the rim
+const handG = new THREE.Group(); scene.add(handG);
+const ARC_N = 64;
+const dynLine = (n, hex, op) => { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(n * 3), 3)); const l = new THREE.Line(g, lineMat(hex, op)); l.frustumCulled = false; return l; };
+const dynFan = (hex, op, n = ARC_N) => { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(n * 9), 3)); const m = new THREE.Mesh(g, basic(hex, op)); m.frustumCulled = false; return m; };
+function setLine(l, pts) { const a = l.geometry.attributes.position.array; pts.forEach((p, i) => a.set(p, i * 3)); l.geometry.attributes.position.needsUpdate = true; }
+function setFan(m, arc) { const a = m.geometry.attributes.position.array; for (let k = 0; k < arc.length - 1; k++) a.set([0, 0, 0, ...arc[k], ...arc[k + 1]], k * 9); m.geometry.attributes.position.needsUpdate = true; }
+const hand = rod(0xf6ead2, 0.012), handTip = bead(0.034, 0xf6ead2);
+const azFan = dynFan(0xb59cf0, 0.26), altFan = dynFan(0x8ce6cd, 0.26);
+const azArc = dynLine(ARC_N + 1, 0xb59cf0, 0.95), altArc = dynLine(ARC_N + 1, 0x8ce6cd, 0.95);
+const azRim = dynLine(ARC_N + 1, 0xb59cf0, 0.9), altRim = dynLine(ARC_N + 1, 0x8ce6cd, 0.9);
+const labAz = label('azimuth z', HEX.violet, 0.09), labAlt = label('altitude a', HEX.teal, 0.09);
+handG.add(hand, handTip, azFan, altFan, azArc, altArc, azRim, altRim, labAz, labAlt);
+function ringTexture() {
+    const c = document.createElement('canvas'); c.width = c.height = 64; const g = c.getContext('2d');
+    g.strokeStyle = '#fff'; g.lineWidth = 5; g.beginPath(); g.arc(32, 32, 26, 0, 7); g.stroke();
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const handRing = new THREE.Sprite(new THREE.SpriteMaterial({ map: ringTexture(), color: 0xf6ead2, transparent: true, depthTest: false, sizeAttenuation: false }));
+handRing.renderOrder = 9; scene.add(handRing);
+// the beam: what a reader with a stepped sweep holds at this moment
+const beamFan = dynFan(0xf6ead2, 0.13), beamRim = dynLine(ARC_N + 1, 0xf6ead2, 0.8), beamPatch = dynFan(0xf6ead2, 0.35, 2);
+scene.add(beamFan, beamRim, beamPatch);
+let tNow = 0;
+function updateHand(dt) {
+    if (state.handAnim) {
+        handT += dt; state.az = 45 + 43 * Math.sin(handT * 0.33); state.alt = 45 + 43 * Math.sin(handT * 0.51 + 0.7); syncSliders();
+    }
+    const d = dir(state.alt, state.az), home = state.view === 'home' && !tween;
+    placeRod(hand, [0, 0, 0], d.map(c => c * OUT * 1.04)); handTip.position.set(...d.map(c => c * OUT * 1.04));
+    const az = [], al = [], azr = [], alr = [];
+    for (let k = 0; k <= ARC_N; k++) {
+        const s = k / ARC_N;
+        az.push(dir(0, s * state.az).map(c => c * OUT * 0.36)); al.push(dir(s * state.alt, state.az).map(c => c * OUT * 0.55));
+        azr.push(dir(0, s * state.az).map(c => c * OUT * 1.002)); alr.push(dir(s * state.alt, state.az).map(c => c * OUT * 1.002));
+    }
+    setLine(azArc, az); setLine(altArc, al); setFan(azFan, az); setFan(altFan, al); setLine(azRim, azr); setLine(altRim, alr);
+    labAz.position.set(...dir(0, state.az / 2).map(c => c * OUT * 0.47)).add(V3(0, -0.1, 0));
+    labAlt.position.set(...dir(state.alt / 2, state.az).map(c => c * OUT * 0.67));
+    hand.visible &&= !home; azFan.visible = altFan.visible = azArc.visible = altArc.visible = labAz.visible = labAlt.visible = !home;
+    handTip.visible = !home; handRing.visible = home;
+    handRing.position.set(...d.map(c => c * OUT)); handRing.scale.setScalar(0.07);
+    // the beam
+    const k = beamKind(state.sitV, state.sitV2), b = beamAt(k, tNow);
+    beamFan.visible = beamRim.visible = k === 'fan' || k === 'row'; beamPatch.visible = k === 'cell';
+    if (k === 'fan' || k === 'row') {
+        const arc = [];
+        for (let i = 0; i <= ARC_N; i++) { const s = i / ARC_N; arc.push((k === 'fan' ? dir(s * 90, b.z) : dir(Math.asin(b.y) / RAD, s * 90)).map(c => c * OUT)); }
+        setFan(beamFan, arc); setLine(beamRim, arc);
+        beamFan.visible = !home;
+    }
+    if (k === 'cell') {
+        const p = (z, y) => fromLambert(z, y).map(c => c * OUT * 1.001);
+        const a = beamPatch.geometry.attributes.position.array;
+        a.set([...p(b.z0, b.y0), ...p(b.z1, b.y0), ...p(b.z1, b.y1), ...p(b.z0, b.y0), ...p(b.z1, b.y1), ...p(b.z0, b.y1)]);
+        beamPatch.geometry.attributes.position.needsUpdate = true;
+    }
+}
+let handT = 0;
+
+// ── per frame ──────────────────────────────────────────────────────────────────────────────────────────────────
+let frames = 0, last = performance.now(), zoomT = 0, prevScan = { k: 'all', t: 0 };
+function placeTruth() {
+    const dr = drawingOf(state.sitV, state.sitV2, state.vs, state.v2s), tr = drawingOf('known', 'known', state.vs, state.v2s);
+    drawingBead.position.set(...dr.map(c => c * K)); truthBead.position.set(...tr.map(c => c * K));
+    placeRod(truthRod, dr.map(c => c * K), tr.map(c => c * K));
+    labDrawing.position.set(dr[0] * K, dr[1] * K + 0.08, dr[2] * K); labTruth.position.set(tr[0] * K + 0.05, tr[1] * K + 0.08, tr[2] * K);
+    return { dr, tr };
+}
+function update(dt) {
+    tNow += dt;
+    if (state.zoomAnim) { zoomT += dt; state.lgH = 0.5 + 2.3 * Math.sin(zoomT * 0.32); syncSliders(); }
+    updateHand(dt);
+    const home = state.view === 'home' && !tween, H = Hval();
+    for (const o of outsideOnly) o.visible = !home;
+    for (const o of homeOnly) o.visible = home;
+    const ds = home ? 0.24 : 1;                                     // beads read smaller seen from home
+    for (const b of [centreBead, drawingBead, truthBead]) b.scale.setScalar(ds);
+    placeTruth(); truthRod.scale.x = truthRod.scale.z = ds;
+    labDrawing.visible = labTruth.visible = !home;
+    // the world
+    const n = things.length, show = state.showWorld && state.world !== 'none';
+    worldPts.visible = show; worldRays.visible = show && state.rays && !home;
+    if (!n) return;
+    const pa = ptsGeo.attributes.position.array, ca = ptsGeo.attributes.col.array, sa = ptsGeo.attributes.sz.array, aa = ptsGeo.attributes.al.array;
+    const ra = raysGeo.attributes.position.array, rc = raysGeo.attributes.color.array;
+    const k = beamKind(state.sitV, state.sitV2), P = periodOf(k);
+    const f0 = frac(prevScan.t, k), f1 = frac(tNow, k), span = prevScan.k === k ? (tNow - prevScan.t) / P : 0;
+    if (prevScan.k !== k) seenAt.fill(-1e9);
+    const ppr = (innerHeight / 2) / Math.tan(camera.fov * RAD / 2), hl = handLock();
+    for (let i = 0; i < n; i++) {
+        const t = things[i], ad = addressOf(t.d, H, state.lay), r = K * drawnLay(t.d, H, state.lay), p = t.dir.map(c => c * r);
+        pa.set(p, i * 3);
+        const hex = addrHex(ad); ca.set(srgb(hex), i * 3);
+        if (k === 'all') seenAt[i] = tNow; else if (passed(scanKey(k, t.L), f0, f1, span)) seenAt[i] = tNow;
+        const glow = k === 'all' ? 1 : Math.max(0.07, Math.exp(-(tNow - seenAt[i]) / 1.1));
+        const a = (home && ad.kind === 'home' ? 0 : 0.92) * glow;
+        aa[i] = a;
+        sa[i] = home ? Math.max(3, Math.min(52, t.ang * ppr)) : 3.4 + 1.3 * Math.log10(t.ang / 10 ** -3.5);
+        if (i === hl) sa[i] += home ? 4 : 3;
+        ra.set([0, 0, 0, ...p], i * 6);
+        const lc = lin(hex), ra2 = 0.2 * glow;
+        rc.set([...lc, ra2 * 0.3, ...lc, ra2], i * 8);
+    }
+    prevScan = { k, t: tNow };
+    ptsGeo.attributes.position.needsUpdate = ptsGeo.attributes.col.needsUpdate = ptsGeo.attributes.sz.needsUpdate = ptsGeo.attributes.al.needsUpdate = true;
+    raysGeo.attributes.position.needsUpdate = raysGeo.attributes.color.needsUpdate = true;
+}
+// the thing the hand points at: the nearest in direction within 3°
+function handLock() {
+    if (!(state.showWorld && state.world !== 'none')) return -1;
+    const d = dir(state.alt, state.az); let best = -1, bc = Math.cos(3 * RAD);
+    things.forEach((t, i) => { const c = t.dir[0] * d[0] + t.dir[1] * d[1] + t.dir[2] * d[2]; if (c > bc) { bc = c; best = i; } });
+    return best;
+}
+
+// ── the camera: from outside (orbit) or from home (the apex, looking down the triple corner) ─────────────────────
+const OUT_POSE = { pos: V3(8.35, 6.05, 10.56), target: V3(0.72, 1.02, 0.72) };
+let tween = null, curOff = [0, 0];
+function viewParams(v) {                                            // the fov and view offset of each look
+    const w = innerWidth, h = innerHeight, mobile = w < 760, offX = mobile ? 0 : -Math.min(190, Math.round(w * 0.13));
+    if (v === 'home') {                                             // from home the triangle spans tan −√½ … √2 up, ±√1.5 across
+        const free = mobile ? w : w - 380, T = Math.max(mobile ? 1.6 : 1.71, (Math.sqrt(1.5) + 0.18) * h / free);
+        return { fov: 2 * Math.atan(T) / RAD, offX, offY: Math.round(((T - 0.354) / (2 * T) - (mobile ? 0.3 : 0.37)) * h) };
+    }
+    return { fov: mobile ? 56 : 36, offX, offY: mobile ? Math.round(h * 0.15) : 0 };
+}
+function setOffset(x, y) {
+    const w = innerWidth, h = innerHeight; camera.aspect = w / h; curOff = [x, y];
+    if (x || y) camera.setViewOffset(w, h, Math.round(x), Math.round(y), w, h); else camera.clearViewOffset();
+    camera.updateProjectionMatrix();
+}
+function applyView() { if (tween) return; const p = viewParams(state.view); camera.fov = p.fov; setOffset(p.offX, p.offY); }
+function poseOf(v) { return v === 'home' ? { pos: V3(0, 0, 0), look: V3(1, 1, 1), ...viewParams(v) } : { pos: OUT_POSE.pos.clone(), look: OUT_POSE.target.clone(), ...viewParams(v) }; }
+function setView(v, animate = true) {
+    if (v === state.view && !tween) { applyView(); return; }
+    const from = { pos: camera.position.clone(), look: lookNow(), fov: camera.fov, offX: curOff[0], offY: curOff[1] };
+    state.view = v;
+    const to = poseOf(v);
+    if (controls) controls.enabled = false;
+    document.body.classList.toggle('homeview', v === 'home');
+    if (!animate || reduced) { finishView(to); return; }
+    tween = { t: 0, from, to };
+}
+function lookNow() { const d = new THREE.Vector3(); camera.getWorldDirection(d); return camera.position.clone().add(d.multiplyScalar(3)); }
+function finishView(to) {
+    tween = null;
+    camera.position.copy(to.pos); camera.up.set(0, 1, 0); camera.lookAt(to.look); camera.fov = to.fov; setOffset(to.offX, to.offY);
+    if (state.view === 'outside' && controls) { controls.target.copy(to.look); controls.enabled = true; controls.update(); }
+    canvas.classList.toggle('home', state.view === 'home');
+    syncCtl();
+}
+function stepTween(dt) {
+    if (!tween) return;
+    tween.t = Math.min(1, tween.t + dt / 1.3);
+    const s = tween.t * tween.t * (3 - 2 * tween.t), f = tween.from, t = tween.to;
+    camera.position.lerpVectors(f.pos, t.pos, s); camera.fov = f.fov + (t.fov - f.fov) * s;
+    camera.up.set(0, 1, 0); camera.lookAt(f.look.clone().lerp(t.look, s));
+    setOffset(f.offX + (t.offX - f.offX) * s, f.offY + (t.offY - f.offY) * s);
+    if (tween.t >= 1) finishView(t);
+}
+
+// a fixed camera at home, aspect 1, for the hook: where each direction lands seen from home
+const homeCam = new THREE.PerspectiveCamera(120, 1, 0.001, 100); homeCam.position.set(0, 0, 0); homeCam.up.set(0, 1, 0); homeCam.lookAt(1, 1, 1); homeCam.updateMatrixWorld(); homeCam.updateProjectionMatrix();
+const homeProject = p => { const v = V3(...p).project(homeCam); return [v.x, v.y]; };
+function bary(P, A, B, C) {                                         // barycentric coordinates of P in the triangle ABC
+    const det = (B[1] - C[1]) * (A[0] - C[0]) + (C[0] - B[0]) * (A[1] - C[1]);
+    const l1 = ((B[1] - C[1]) * (P[0] - C[0]) + (C[0] - B[0]) * (P[1] - C[1])) / det, l2 = ((C[1] - A[1]) * (P[0] - C[0]) + (A[0] - C[0]) * (P[1] - C[1])) / det;
+    return [l1, l2, 1 - l1 - l2];
+}
+function homeShares(d) { return bary(homeProject(d), homeProject([1, 0, 0]), homeProject([0, 1, 0]), homeProject([0, 0, 1])); }
+
+// ── HUD and the map ───────────────────────────────────────────────────────────────────────────────────────────
+const f3 = v => '(' + v.map(c => c.toFixed(3)).join(', ') + ')';
+const fmt = x => !Number.isFinite(x) || x > 1e6 ? '∞' : x < 1e-3 ? x.toExponential(1) : x < 100 ? x.toFixed(3) : x.toFixed(0);
+const fmtAmt = x => x >= 1e4 || x < 1e-2 ? x.toExponential(2) : x.toPrecision(3);
+function counts(H = Hval()) {
+    const c = { home: 0, near: 0, far: 0, past: 0, levels: new Array(Math.log2(edgeS(state.lay)) + 1).fill(0) };
+    for (const t of things) { const ad = addressOf(t.d, H, state.lay); c[ad.kind]++; if (ad.kind === 'far') c.levels[ad.level]++; }
+    return c;
+}
+function hudText() {
+    const d = dir(state.alt, state.az), r = readings(d), sh = shares(d), H = Hval(), L = [];
+    const nearCorner = (x) => Math.abs(x - 45) < 0.26 ? ' (its corner)' : '';
+    L.push(`the hand: a = ${state.alt.toFixed(1)}°, z = ${state.az.toFixed(1)}°  →  (h, v, v₂) = ${f3(d)}; seen from home at its shares ${f3(sh)}`);
+    L.push(`azimuth reads v₂/h = tan z = ${fmt(r.az)}${nearCorner(state.az)}; altitude reads v/√(h² + v₂²) = tan a = ${fmt(r.alt)}${nearCorner(state.alt)}; chamber ${chamberOf(d)}${rank(d)[0] === 0 ? ', the near field' : ''}`);
+    if (state.showWorld && state.world !== 'none') {
+        const c = counts(H), edge = state.lay === 'inplace' ? 'at the horizon' : 'past the held edge';
+        L.push(`H = ${fmtAmt(H)} (${state.lay === 'inplace' ? 'the in-place lay, 2 − 1/s' : 'the reader\'s lay, 1 + ln s'}; ${N_ADDR} addresses across the near field): ${c.near} near, ${c.far} in levels 1–${c.levels.length - 1}, ${c.home} merged into home, ${c.past} ${edge}`);
+        const i = handLock();
+        if (i >= 0) {
+            const t = things[i], ad = addressOf(t.d, H, state.lay);
+            const where = ad.kind === 'near' ? `near, laid at s = ${ad.s.toFixed(3)}` : ad.kind === 'far' ? `level ${ad.level} past the corner, laid at ${state.lay === 'inplace' ? '2 − 1/s' : '1 + ln s'} = ${lay(ad.s, state.lay).toFixed(3)}`
+                : ad.kind === 'home' ? `merged into home (s < 1/${N_ADDR})` : edge;
+            L.push(`at the hand: a thing at d = ${fmtAmt(t.d)}, s = d/H = ${fmtAmt(ad.s)}: ${where}; ${(t.ang).toExponential(1)} across, a relation the same at every H`);
+        }
+    }
+    const k = beamKind(state.sitV, state.sitV2), dr = drawingOf(state.sitV, state.sitV2, state.vs, state.v2s), tr = drawingOf('known', 'known', state.vs, state.v2s);
+    const held = k === 'all' ? 'the whole wedge held at once' : k === 'fan' ? `held at once: a fan, 1/${NZ} of the azimuth` : k === 'row' ? `held at once: a cone, 1/${NY} of the height` : `held at once: one cell, 1/${NZ * NY}`;
+    const off = state.sitV === 'known' && state.sitV2 === 'known' ? 'the drawing is the truth' : `off the truth by ${[state.sitV !== 'known' ? `V*/H = ${+state.vs.toFixed(3)}` : '', state.sitV2 !== 'known' ? `V₂*/H = ${+state.v2s.toFixed(3)}` : ''].filter(Boolean).join(' and ')}`;
+    L.push(`(${SIT_NUM[state.sitV]}, ${SIT_NUM[state.sitV2]}): ${situationName(state.sitV, state.sitV2)}; ${held}; the drawing ${f3(dr)}, ${off} ${f3(tr)}`);
+    return (innerWidth < 760 ? [L[0], L[2]] : L).join('\n');
+}
+const mc = document.getElementById('map'), mg = mc.getContext('2d');
+const MP = 34, MS = mc.width - 2 * MP, MX = z => MP + z / 90 * MS, MY = y => MP + (1 - y) * MS;
+let mapBg = null;
+function paintMapBg() {
+    mapBg = document.createElement('canvas'); mapBg.width = mapBg.height = mc.width; const g = mapBg.getContext('2d');
+    g.fillStyle = '#0b0b12'; g.fillRect(0, 0, mc.width, mc.width);
+    const G = 90;
+    for (let i = 0; i < G; i++) for (let j = 0; j < G; j++) {
+        const z = (i + 0.5) / G * 90, y = (j + 0.5) / G, o = rank(fromLambert(z, y)), c = srgb(PARTY_HEX[o[0]]).map(x => Math.round(x * 255));
+        g.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${o[1] === (o[0] + 1) % 3 ? 0.2 : 0.11})`;
+        g.fillRect(MX(i / G * 90), MY((j + 1) / G), MS / G + 0.7, MS / G + 0.7);
+    }
+    g.strokeStyle = 'rgba(255,255,255,0.35)'; g.lineWidth = 2; g.strokeRect(MX(0), MY(1), MS, MS);
+    g.setLineDash([7, 6]); g.lineWidth = 2.2; g.strokeStyle = 'rgba(236,233,244,0.85)';
+    for (const f of [cornerVH, cornerVV2]) { g.beginPath(); for (let k = 0; k <= 90; k++) { const x = MX(k), y = MY(f(k)); k ? g.lineTo(x, y) : g.moveTo(x, y); } g.stroke(); }
+    g.beginPath(); g.moveTo(MX(45), MY(0)); g.lineTo(MX(45), MY(1)); g.stroke(); g.setLineDash([]);
+    g.fillStyle = '#d4a052'; g.beginPath(); g.arc(MX(TRIPLE.z), MY(TRIPLE.y), 6, 0, 7); g.fill();
+    g.font = '19px "DM Mono", monospace'; g.fillStyle = 'rgba(236,233,244,0.85)';
+    g.fillText('v = h', MX(4), MY(cornerVH(4)) - 8); g.fillText('v₂ = v', MX(70), MY(cornerVV2(70)) - 8); g.fillText('v₂ = h', MX(46.5), MY(0.95));
+    g.fillStyle = 'rgba(200,200,208,0.85)'; g.font = '20px "DM Mono", monospace'; g.textAlign = 'center';
+    g.fillText('azimuth z →', mc.width / 2, mc.width - 7); g.save(); g.translate(19, mc.width / 2); g.rotate(-Math.PI / 2); g.fillText('height v →', 0, 0); g.restore();
+}
+function drawMap() {
+    if (!mapBg) paintMapBg();
+    mg.drawImage(mapBg, 0, 0);
+    const k = beamKind(state.sitV, state.sitV2), b = beamAt(k, tNow);
+    mg.fillStyle = 'rgba(246,234,210,0.28)';
+    if (k === 'fan') mg.fillRect(MX(b.z) - 2, MY(1), 4, MS);
+    if (k === 'row') mg.fillRect(MX(0), MY(b.y) - 2, MS, 4);
+    if (k === 'cell') mg.fillRect(MX(b.z0), MY(b.y1), MS / NZ, MS / NY);
+    if (state.showWorld && state.world !== 'none') {
+        const H = Hval();
+        things.forEach((t, i) => {
+            const ad = addressOf(t.d, H, state.lay), c = srgb(addrHex(ad)).map(x => Math.round(x * 255));
+            const glow = k === 'all' ? 1 : Math.max(0.1, Math.exp(-(tNow - seenAt[i]) / 1.1));
+            mg.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${(0.95 * glow).toFixed(3)})`; mg.beginPath(); mg.arc(MX(t.L.z), MY(t.L.y), 3.3, 0, 7); mg.fill();
+        });
+    }
+    const L = lambertOf(dir(state.alt, state.az));
+    mg.fillStyle = '#fff'; mg.strokeStyle = '#000'; mg.lineWidth = 2; mg.beginPath(); mg.arc(MX(L.z), MY(L.y), 8, 0, 7); mg.fill(); mg.stroke();
+    document.getElementById('insetNote').textContent = 'the corners dashed, each halving the map; the six chambers equal, by the largest party; the triple corner at z = 45°, v = 1/√3';
+}
+
+// ── controls ──────────────────────────────────────────────────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+const stepsEl = $('steps');
+for (let s = 1; s <= 6; s++) { const b = document.createElement('button'); b.textContent = s; b.title = CAPTIONS[s][0]; b.onclick = () => setStep(s); stepsEl.appendChild(b); }
+function syncSliders() {
+    $('lgH').value = state.lgH; $('lgHo').textContent = `${fmtAmt(Hval())}`;
+    $('alt').value = state.alt; $('alto').textContent = state.alt.toFixed(1) + '°';
+    $('az').value = state.az; $('azo').textContent = state.az.toFixed(1) + '°';
+}
+function syncCtl() {
+    syncSliders();
+    [...stepsEl.children].forEach((b, i) => b.classList.toggle('on', i + 1 === state.step));
+    $('caption').innerHTML = CAPTIONS[state.step][1];
+    $('vOut').classList.toggle('on', state.view === 'outside'); $('vHome').classList.toggle('on', state.view === 'home');
+    for (const [id, key] of [['sitV', 'sitV'], ['sitV2', 'sitV2']]) [...$(id).querySelectorAll('button')].forEach(b => b.classList.toggle('on', b.dataset.s === state[key]));
+    $('bWorld').textContent = `world: ${state.showWorld ? state.world : 'hidden'}`; document.body.classList.toggle('homeview', state.view === 'home'); $('bWorld').classList.toggle('on', state.showWorld && state.world !== 'none');
+    $('bLay').textContent = state.lay === 'inplace' ? 'lay: in place' : 'lay: the reader\'s';
+    $('bRays').classList.toggle('on', state.rays); $('bSweep').classList.toggle('on', state.handAnim); $('bZoom').classList.toggle('on', state.zoomAnim);
+    $('hint').textContent = state.view === 'home' ? 'home: h ↙ · v ↑ · v₂ ↘ · drag to point the hand' : 'h → right · v → up · v₂ → toward you · drag to look';
+}
+function setStep(s) {
+    state.step = s; const set = STEP_SET[s];
+    Object.assign(state, { showWorld: set.showWorld, handAnim: set.handAnim, zoomAnim: set.zoomAnim, sitV: set.sitV, sitV2: set.sitV2 });
+    if (s === 4 || s === 6) state.lgH = 0;
+    setView(set.view);
+    syncCtl();
+}
+$('vOut').onclick = () => { setView('outside'); syncCtl(); };
+$('vHome').onclick = () => { setView('home'); syncCtl(); };
+$('lgH').oninput = ev => { state.zoomAnim = false; state.lgH = +ev.target.value; syncCtl(); };
+$('alt').oninput = ev => { state.handAnim = false; state.alt = +ev.target.value; syncCtl(); };
+$('az').oninput = ev => { state.handAnim = false; state.az = +ev.target.value; syncCtl(); };
+for (const [id, key] of [['sitV', 'sitV'], ['sitV2', 'sitV2']]) $(id).onclick = ev => { const s = ev.target.dataset?.s; if (s) { state[key] = s; syncCtl(); } };
+$('bWorld').onclick = () => {
+    const order = ['scatter', 'decades', 'none'], next = state.showWorld && state.world !== 'none' ? order[(order.indexOf(state.world) + 1) % 3] : 'scatter';
+    state.showWorld = true; state.world = next; things = makeWorld(next, state.seed); allocWorld(); syncCtl();
+};
+$('bLay').onclick = () => { state.lay = state.lay === 'inplace' ? 'reader' : 'inplace'; buildFrame(); syncCtl(); };
+$('bRays').onclick = () => { state.rays = !state.rays; syncCtl(); };
+$('bSweep').onclick = () => { state.handAnim = !state.handAnim; syncCtl(); };
+$('bZoom').onclick = () => { state.zoomAnim = !state.zoomAnim; syncCtl(); };
+$('bReset').onclick = () => { state.lgH = 0; state.zoomAnim = state.handAnim = false; state.alt = 40; state.az = 25; finishView(poseOf(state.view)); };
+$('fold').onclick = () => { $('panel').classList.toggle('folded'); $('fold').textContent = $('panel').classList.contains('folded') ? '▴' : '▾'; };
+
+function pointHand(d) {                                             // the hand at a direction, kept in the wedge
+    const c = unit([Math.max(0, d[0]), Math.max(0, d[1]), Math.max(0, d[2])].map(x => x || 1e-9));
+    const g = anglesOf(c); state.handAnim = false; state.alt = Math.max(0, Math.min(90, g.a)); state.az = Math.max(0, Math.min(90, g.z)); syncCtl();
+}
+const ndc = new THREE.Vector2(), ray = new THREE.Raycaster();
+function rayDir(ev) { const r = canvas.getBoundingClientRect(); ndc.set(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1); ray.setFromCamera(ndc, camera); return ray.ray.direction; }
+function nearestThing(ev, px = 16) {                                // the thing drawn nearest the pointer, within px
+    if (!(state.showWorld && state.world !== 'none')) return -1;
+    const r = canvas.getBoundingClientRect(), pa = ptsGeo.attributes.position.array, aa = ptsGeo.attributes.al.array, v = new THREE.Vector3();
+    let best = -1, bd = px;
+    for (let i = 0; i < things.length; i++) {
+        if (aa[i] < 0.05) continue;
+        v.set(pa[i * 3], pa[i * 3 + 1], pa[i * 3 + 2]).project(camera); if (v.z > 1) continue;
+        const x = (v.x + 1) / 2 * r.width, y = (1 - v.y) / 2 * r.height, dd = Math.hypot(x - (ev.clientX - r.left), y - (ev.clientY - r.top));
+        if (dd < bd) { bd = dd; best = i; }
+    }
+    return best;
+}
+let down = null, aiming = false;
+canvas.addEventListener('pointerdown', ev => {
+    down = [ev.clientX, ev.clientY];
+    if (state.view === 'home' && !tween) { aiming = true; canvas.setPointerCapture(ev.pointerId); }
+});
+canvas.addEventListener('pointermove', ev => {
+    if (!aiming || !down) return;
+    if (Math.hypot(ev.clientX - down[0], ev.clientY - down[1]) > 4) { const d = rayDir(ev); pointHand([d.x, d.y, d.z]); }
+});
+canvas.addEventListener('pointerup', ev => {
+    const tap = down && Math.hypot(ev.clientX - down[0], ev.clientY - down[1]) < 5; down = null; aiming = false;
+    if (!tap) return;
+    const i = nearestThing(ev);
+    if (i >= 0) pointHand(things[i].dir);
+    else if (state.view === 'home') { const d = rayDir(ev); pointHand([d.x, d.y, d.z]); }
+});
+canvas.addEventListener('pointercancel', () => { down = null; aiming = false; });
+let mapDown = false;
+const mapAim = ev => { const r = mc.getBoundingClientRect(), x = (ev.clientX - r.left) / r.width * mc.width, y = (ev.clientY - r.top) / r.height * mc.height;
+    pointHand(fromLambert((x - MP) / MS * 90, 1 - (y - MP) / MS)); };
+mc.addEventListener('pointerdown', ev => { mapDown = true; mc.setPointerCapture(ev.pointerId); mapAim(ev); });
+mc.addEventListener('pointermove', ev => { if (mapDown) mapAim(ev); });
+mc.addEventListener('pointerup', () => { mapDown = false; });
+addEventListener('keydown', ev => {
+    const k = { ArrowLeft: [0, -1], ArrowRight: [0, 1], ArrowUp: [1, 0], ArrowDown: [-1, 0] }[ev.key];
+    if (k) { state.handAnim = false; state.alt = Math.max(0, Math.min(90, state.alt + k[0])); state.az = Math.max(0, Math.min(90, state.az + k[1])); syncCtl(); ev.preventDefault(); }
+    if (/^[1-6]$/.test(ev.key)) setStep(+ev.key);
+});
+
+if (renderer) {
+    renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    controls = new OrbitControls(camera, canvas);
+    controls.enableDamping = true; controls.dampingFactor = 0.08; controls.minDistance = 3; controls.maxDistance = 30; controls.enablePan = false;
+}
+function resize() {
+    const w = innerWidth, h = innerHeight;
+    if (renderer) renderer.setSize(w, h, false);
+    canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+    ptsMat.uniforms.pr.value = renderer ? renderer.getPixelRatio() : 1;
+    applyView();
+}
+addEventListener('resize', resize);
+let hudTick = 0;
+function loop(now) {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    stepTween(dt);
+    update(dt);
+    if (controls && controls.enabled && state.view === 'outside' && !tween) controls.update();
+    if (renderer) { renderer.render(scene, camera); frames++; }
+    if ((hudTick++ % 6) === 0) { $('hud').textContent = hudText(); if (innerWidth >= 760) drawMap(); }
+    requestAnimationFrame(loop);
+}
+
+// ── start ─────────────────────────────────────────────────────────────────────────────────────────────────────
+buildFrame(); allocWorld();
+camera.position.copy(OUT_POSE.pos); camera.lookAt(OUT_POSE.target);
+if (controls) { controls.target.copy(OUT_POSE.target); controls.update(); }
+resize();
+setStep(state.step);
+setView(qs.has('view') ? (qs.get('view') === 'home' ? 'home' : 'outside') : state.view, false);
+if (qs.has('H')) state.lgH = Math.max(-2, Math.min(3, +qs.get('H') || 0));
+if (qs.has('alt') || qs.has('az')) { state.handAnim = false; if (qs.has('alt')) state.alt = Math.max(0, Math.min(90, +qs.get('alt'))); if (qs.has('az')) state.az = Math.max(0, Math.min(90, +qs.get('az'))); }
+if (qs.has('V')) state.sitV = sitParam('V', state.sitV);
+if (qs.has('V2')) state.sitV2 = sitParam('V2', state.sitV2);
+syncCtl();
+if (innerWidth < 760) { $('panel').classList.add('folded'); $('fold').textContent = '▴'; }
+document.fonts?.ready.then(() => { redraws.forEach(f => f()); mapBg = null; });
+requestAnimationFrame(loop);
+
+// ── test hook ─────────────────────────────────────────────────────────────────────────────────────────────────
+window.__wedge = {
+    dir, anglesOf, readings, shares, lambertOf, fromLambert, chamberOf, chamberShares, cornerVH, cornerVV2, triple: { ...TRIPLE },
+    cornerHalf: CORNER_HALF, homeProject, homeShares, lay, addressOf, edgeS, N_ADDR, L_LEVELS,
+    situationName, beamKind, heldShare, drawingOf,
+    // every thing's drawn position at a given H: the direction and the distance laid along it, in units of the corner
+    placeAt: (H, mode = state.lay) => things.map(t => { const r = drawnLay(t.d, H, mode); return { p: t.dir.map(c => c * r), r, dir: t.dir.slice(), ad: addressOf(t.d, H, mode).kind }; }),
+    world: () => things.map(t => ({ dir: t.dir.slice(), d: t.d, ang: t.ang })),
+    counts: H => counts(H),
+    coverage(V, V2, dt = 1 / 60) {                                   // one full period: is every thing reached?
+        const k = beamKind(V, V2), P = periodOf(k), seen = new Uint8Array(things.length);
+        if (k === 'all') return { kind: k, share: 1, period: 0, held: 1 };
+        let t0 = 0;
+        for (let t = dt; t <= P + 1e-9; t += dt) { const f0 = frac(t0, k), f1 = frac(t, k); things.forEach((th, i) => { if (passed(scanKey(k, th.L), f0, f1, (t - t0) / P)) seen[i] = 1; }); t0 = t; }
+        return { kind: k, share: seen.reduce((a, b) => a + b, 0) / things.length, period: P, held: heldShare(k) };
+    },
+    get frames() { return frames; }, get webgl() { return !!renderer; },
+    hud: () => hudText(),
+    state: () => ({ step: state.step, view: state.view, H: Hval(), lay: state.lay, world: state.world, showWorld: state.showWorld,
+        alt: state.alt, az: state.az, sitV: state.sitV, sitV2: state.sitV2, vs: state.vs, v2s: state.v2s, K, tween: !!tween, fov: camera.fov }),
+    set(o) {
+        if (o.step) setStep(o.step);
+        if (o.view) setView(o.view, false);
+        if ('H' in o) { state.zoomAnim = false; state.lgH = Math.log10(o.H); }
+        if (o.lay) { state.lay = o.lay; buildFrame(); }
+        if (o.world) { state.world = o.world; state.showWorld = o.world !== 'none'; things = makeWorld(o.world, state.seed); allocWorld(); }
+        if ('alt' in o || 'az' in o) { state.handAnim = false; if ('alt' in o) state.alt = o.alt; if ('az' in o) state.az = o.az; }
+        if (o.V) state.sitV = o.V; if (o.V2) state.sitV2 = o.V2;
+        syncCtl(); return this.state();
+    }
+};
+</script>
+</body>
+</html>
