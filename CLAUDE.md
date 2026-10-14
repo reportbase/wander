@@ -562,6 +562,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   hundredth of a level of their corner, giants a tenth (P4, P5 not killed). Wander's bodies (P1–P3 killed): one asteroid's
   corner 1.3% off its ball; the Moon 0.25 levels (the real one 0.0165), Mars 0.135; the middle band, not the broad, holds
   most relief in twelve bodies. Scaling `res/` relief to real levels is Tom's call.
+  Run 2 (`ref/ref2.py`, 14 Oct; Tom: "whats new is the tvf3d signal. it shows how the signal itself is packed."; SPN
+  R249): a reader drops one octave of degree per level of distance (exact); on seven published shape models (Mercury,
+  Venus, Earth2014, LOLA, MOLA, Vesta, Ceres; Zenodo/Curtin, sha256 in the plan, not committed) the relief per octave,
+  degrees 8–1023. All three killed: one power law (P6, by the airless bodies, which bend at a tenth to a fortieth of
+  their radius), half per octave (P7: slopes −0.21 to −0.98), one slope for all (P8). Earth, Mars, Venus
+  about −0.4 per octave. The packing is the reader's; the share is the world's. A band's relief when first held is
+  0.0002–0.07 of an address. The games page's Levels application was judged an illustration (its rule wander's; the
+  shape any size-on-screen LOD's; geometry clipmaps, Losasso and Hoppe 2004, already do it).
   `mag-plan.md` (+ `mag/mag.py`, 10 Oct): on the Hipparcos stars (HYG v3.8 from GitHub, sha256 in the plan; parallax
   distance, V and spectral type only), light falls two levels per level of distance: G dwarfs 2.02, K0 giants 1.93 where
   complete (P1–P3 not killed), 1.61 past the limit; K0 III scatters 1.4 levels (P4 killed).

@@ -1,0 +1,76 @@
+octaves k: degrees [2^k, 2^(k+1)); RMS relief in metres; log2 residual from the body's line; rho = RMS in the reader's addresses at the level where the octave is the finest held
+
+Mercury: R 2439.5 km (model to degree 1439), relief RMS over degrees 1-1023 1092 m; slope -0.280 levels of relief per octave (degree power ~ l^-1.56)
+  k 3 [   8,   16): RMS     416.4 m   residual -0.184   rho 0.0009
+  k 4 [  16,   32): RMS     383.8 m   residual -0.021   rho 0.0016
+  k 5 [  32,   64): RMS     292.4 m   residual -0.135   rho 0.0024
+  k 6 [  64,  128): RMS     324.6 m   residual +0.296   rho 0.0054
+  k 7 [ 128,  256): RMS     279.9 m   residual +0.362   rho 0.0093
+  k 8 [ 256,  512): RMS     197.2 m   residual +0.136   rho 0.0132
+  k 9 [ 512, 1024): RMS     107.9 m   residual -0.454   rho 0.0144
+
+Venus: R 6051.9 km (model to degree 719), relief RMS over degrees 1-511 958 m; slope -0.337 levels of relief per octave (degree power ~ l^-1.67)
+  k 3 [   8,   16): RMS     455.0 m   residual +0.207   rho 0.0004
+  k 4 [  16,   32): RMS     304.4 m   residual -0.036   rho 0.0005
+  k 5 [  32,   64): RMS     208.3 m   residual -0.246   rho 0.0007
+  k 6 [  64,  128): RMS     176.6 m   residual -0.148   rho 0.0012
+  k 7 [ 128,  256): RMS     170.8 m   residual +0.141   rho 0.0023
+  k 8 [ 256,  512): RMS     129.6 m   residual +0.081   rho 0.0035
+
+Earth: R 6371.0 km (model to degree 2160), relief RMS over degrees 1-1023 634 m; slope -0.438 levels of relief per octave (degree power ~ l^-1.88)
+  k 3 [   8,   16): RMS     285.5 m   residual -0.109   rho 0.0002
+  k 4 [  16,   32): RMS     242.4 m   residual +0.092   rho 0.0004
+  k 5 [  32,   64): RMS     180.7 m   residual +0.107   rho 0.0006
+  k 6 [  64,  128): RMS     121.6 m   residual -0.027   rho 0.0008
+  k 7 [ 128,  256): RMS      88.5 m   residual -0.048   rho 0.0011
+  k 8 [ 256,  512): RMS      64.8 m   residual -0.059   rho 0.0017
+  k 9 [ 512, 1024): RMS      51.3 m   residual +0.043   rho 0.0026
+
+Moon: R 1737.2 km (model to degree 1439), relief RMS over degrees 1-1023 2329 m; slope -0.208 levels of relief per octave (degree power ~ l^-1.42)
+  k 3 [   8,   16): RMS     550.4 m   residual -0.274   rho 0.0016
+  k 4 [  16,   32): RMS     510.4 m   residual -0.174   rho 0.0030
+  k 5 [  32,   64): RMS     531.8 m   residual +0.093   rho 0.0062
+  k 6 [  64,  128): RMS     591.8 m   residual +0.455   rho 0.0139
+  k 7 [ 128,  256): RMS     489.4 m   residual +0.389   rho 0.0230
+  k 8 [ 256,  512): RMS     323.1 m   residual -0.002   rho 0.0303
+  k 9 [ 512, 1024): RMS     199.7 m   residual -0.488   rho 0.0375
+
+Mars: R 3389.5 km (model to degree 1439), relief RMS over degrees 1-1023 6688 m; slope -0.424 levels of relief per octave (degree power ~ l^-1.85)
+  k 3 [   8,   16): RMS     701.5 m   residual -0.059   rho 0.0011
+  k 4 [  16,   32): RMS     571.6 m   residual +0.070   rho 0.0017
+  k 5 [  32,   64): RMS     415.3 m   residual +0.033   rho 0.0025
+  k 6 [  64,  128): RMS     286.1 m   residual -0.081   rho 0.0034
+  k 7 [ 128,  256): RMS     226.5 m   residual +0.005   rho 0.0054
+  k 8 [ 256,  512): RMS     181.0 m   residual +0.105   rho 0.0087
+  k 9 [ 512, 1024): RMS     119.2 m   residual -0.073   rho 0.0115
+
+Vesta: R 260.4 km (model to degree 1439), relief RMS over degrees 1-1023 18018 m; slope -0.982 levels of relief per octave (degree power ~ l^-2.96)
+  k 3 [   8,   16): RMS    2038.2 m   residual -0.390   rho 0.0399
+  k 4 [  16,   32): RMS    1282.6 m   residual -0.076   rho 0.0502
+  k 5 [  32,   64): RMS     769.2 m   residual +0.169   rho 0.0602
+  k 6 [  64,  128): RMS     456.8 m   residual +0.399   rho 0.0715
+  k 7 [ 128,  256): RMS     228.9 m   residual +0.385   rho 0.0716
+  k 8 [ 256,  512): RMS      93.8 m   residual +0.080   rho 0.0587
+  k 9 [ 512, 1024): RMS      30.3 m   residual -0.566   rho 0.0380
+
+Ceres: R 469.5 km (model to degree 1439), relief RMS over degrees 1-1023 11143 m; slope -0.686 levels of relief per octave (degree power ~ l^-2.37)
+  k 3 [   8,   16): RMS     974.4 m   residual -0.522   rho 0.0106
+  k 4 [  16,   32): RMS     913.7 m   residual +0.071   rho 0.0198
+  k 5 [  32,   64): RMS     677.4 m   residual +0.324   rho 0.0294
+  k 6 [  64,  128): RMS     415.5 m   residual +0.305   rho 0.0361
+  k 7 [ 128,  256): RMS     250.3 m   residual +0.259   rho 0.0434
+  k 8 [ 256,  512): RMS     134.7 m   residual +0.051   rho 0.0468
+  k 9 [ 512, 1024): RMS      57.7 m   residual -0.488   rho 0.0400
+
+Earth bedrock: R 6371.0 km (model to degree 2160), relief RMS over degrees 1-1023 2417 m; slope -0.426 levels of relief per octave (degree power ~ l^-1.85)
+  k 3 [   8,   16): RMS     842.8 m   residual -0.069   rho 0.0007
+  k 4 [  16,   32): RMS     696.4 m   residual +0.081   rho 0.0011
+  k 5 [  32,   64): RMS     510.6 m   residual +0.059   rho 0.0016
+  k 6 [  64,  128): RMS     356.9 m   residual -0.032   rho 0.0023
+  k 7 [ 128,  256): RMS     266.8 m   residual -0.026   rho 0.0034
+  k 8 [ 256,  512): RMS     192.0 m   residual -0.075   rho 0.0049
+  k 9 [ 512, 1024): RMS     157.3 m   residual +0.063   rho 0.0081
+
+P6: KILLED. largest departure from a body's line 0.566 levels (Vesta, k = 9); threshold 0.25. Over 0.25: Mercury k=6 (+0.296), Mercury k=7 (+0.362), Mercury k=9 (-0.454), Moon k=3 (-0.274), Moon k=6 (+0.455), Moon k=7 (+0.389), Moon k=9 (-0.488), Vesta k=3 (-0.390), Vesta k=6 (+0.399), Vesta k=7 (+0.385), Vesta k=9 (-0.566), Ceres k=3 (-0.522), Ceres k=5 (+0.324), Ceres k=6 (+0.305), Ceres k=7 (+0.259), Ceres k=9 (-0.488)
+P7: KILLED. slopes Mercury -0.280, Venus -0.337, Earth -0.438, Moon -0.208, Mars -0.424, Vesta -0.982, Ceres -0.686; outside [-1.15, -0.85]: Mercury, Venus, Earth, Moon, Mars, Ceres
+P8: KILLED. mean slope -0.479, largest departure 0.503 (threshold 0.1)

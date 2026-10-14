@@ -120,6 +120,12 @@ bodies are pictures. They are never evidence here.
   exact ratio γ/sin γ, the outer reading of the parallax angle (π/2 on the Thales circle, parts in 10¹¹ off 1 at 1 pc);
   the practice of inferring distances rather than inverting noisy parallaxes (Bailer-Jones 2015) is the flip's missing
   mean with the median kept; the au, measured outside the parallaxes and now fixed by the IAU, is the one outside amount.
+- 14 October: two real-data runs once the network reached the archives. GRD run 1 (`plans/grd-plan.md`; SPN R248): the
+  ratio between grid modules in two rats, 1.432 pooled, in the √2 band; too few animals for the rest. REF run 2
+  (`plans/ref-plan.md`; SPN R249; Tom: "whats new is the tvf3d signal. it shows how the signal itself is packed."):
+  seven bodies' published shape models read by octave of degree, the level a reader drops per level of distance. All
+  three predictions killed: Earth, Mars and Venus are near power laws (slopes −0.34 to −0.44), the airless bodies are
+  not, and no slope is common (§2.1, §3).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -221,6 +227,21 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   - the rocky worlds' flattening: Earth 0.0048 levels, Mars 0.0085, the Moon 0.0017;
   - the spinning giants about a tenth: Jupiter 0.097, Saturn 0.149;
   - Earth's relief, Challenger Deep to Everest, 0.0045; with its flattening the whole Earth is within 0.0093 levels.
+- **A reader drops one octave of a world's relief per level of distance; how much each octave holds is the world's**
+  (REF run 2, `plans/ref-plan.md`). Published spherical-harmonic models of seven physical surfaces (Mercury, Venus,
+  Earth, the Moon, Mars, Vesta, Ceres), relief by octave of degree from 8 to 1023:
+  - Earth, Mars and Venus hold one power law over six or seven octaves (within 0.11, 0.11, 0.25 levels), each octave
+    about 0.4 levels of relief below the one before (slopes −0.44, −0.42, −0.34; Earth's bedrock as its surface);
+  - the airless bodies do not: the Moon's relief per octave rises from degree 16 to 127 and Mercury's rises again at 64
+    to 127, then both fall ever faster, and Vesta and Ceres steepen throughout; on all four degrees 64 to 255
+    (wavelengths a tenth to a fortieth of the radius) stand above the body's line, the same octaves in the body's own
+    size from 260 to 2,440 km (post hoc);
+  - at the level where a band is first held its relief is 0.0002 to 0.07 of one of the reader's addresses, so dropping
+    bands by distance moves no world's outline by as much as an address; on five of the seven each nearer level shows
+    more relief in the reader's addresses, not the same.
+
+  The octave packing is the reader's (and the series'); the share in each octave is read from the world, not fixed by
+  the geometry.
 
 ### 2.2 Exact arithmetic
 
@@ -477,6 +498,11 @@ that holds less of it can be tested against the referee exactly. That is evidenc
 - **REF P1–P3: wander's bodies** are far rougher than real worlds. The Moon spans 0.25 levels against the real 0.0165.
   "Broad first" is the order in which bands are seen, not where the relief lies. Under §0 this was never evidence. It is
   kept as the example of what not to count.
+- **REF run 2, P6–P8: real worlds are not packed as the reader reads.** Each level of distance was predicted to drop the
+  same share of a world's relief (a power law in degree), at half the relief per octave (the reader seeing the same at
+  every level), and with one slope on every body. The airless bodies bend (their relief standing highest, against a
+  line, at about a tenth to a fortieth of their radius), the slopes run from −0.21 to −0.98, and only Vesta's, an
+  average over a bend, is near −1. The share is the world's.
 - **MAG P4: K0 III scatters 1.4 levels**, not under 1.0. A known kind is a bridge about a level wide.
 - **CNT P3 and P4: the plane and the poles count alike.** The disc was predicted to flatten the counts toward the poles
   more than in the plane. It does not: both give 1.23. Dust in the plane and the clumping of young bright stars are the
@@ -544,9 +570,11 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
   distance, from their members' mean parallax. At a fixed colour their main sequences should step two levels of light
   per level of the clusters' distance. This needs membership lists. Hipparcos membership is published, but the archives
   are blocked here.
-- **Real topography for REF.** The Moon (LOLA), Mars (MOLA) and Earth have spherical-harmonic shape models. With them:
-  the depth spans in levels, and whether the relief's power falls by a fixed amount per level of wavenumber (Kaula-like).
-  NASA's PDS is blocked here.
+- **The airless bodies' preferred level, in their own size** (from REF run 2, post hoc). On Mercury, the Moon, Vesta and
+  Ceres degrees 64 to 255, a tenth to a fortieth of the radius, stand above the body's line, whatever the radius. If
+  that is a breadth against the body's (the largest craters against the world), other cratered bodies with high-degree
+  shape models should show it in the same octaves. Prediction first; pyshtools lists further shape models (Eros, Psyche,
+  Callisto and others), their degrees to be checked before predicting.
 - **The ratio or the turn, in a measured reader** (from MOT). x/ẋ gives time to contact at every distance; θ/θ̇
   overstates it by π/2 at the corner and grows past it. Responses to looming that run on to large visual angles (half-angle
   near 45° and past) would tell which a measured reader uses there. A published data set with the angles reached is

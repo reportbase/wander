@@ -202,3 +202,61 @@ same archive) beside its surface.
 **What would not be shown.** Anything about the reader's side, which is exact. Why a world's relief has the spectrum it
 has (impacts, volcanism, erosion, isostasy are physics, quoted, not derived). And seven bodies are seven: a kill of P8
 says the packing is read from the world, not that no reader could find a common one.
+
+### Run 2 (14 October 2026)
+
+`python3 -I plans/ref/ref2.py <data>`, two seconds; the full output, octave by octave, in `plans/ref/ref-run2.txt`.
+All eight files matched the sha256 above on download (Earth2014's bedrock: 146dcc80…). The archives' own
+documentation says 4π-normalized, Condon–Shortley phase excluded, metres (Zenodo records; Earth2014's readme, V1.1),
+so nothing was converted. The data is CC BY 4.0 (the Zenodo archives) and Curtin's Earth2014 (cite Hirt and Rexer
+2015); none of it is committed. Before the run the script was checked on synthetic spectra of known slope (−1.5 to 0):
+it recovered each within 0.02.
+
+```
+Mercury: R 2439.5 km (model to degree 1439), relief RMS over degrees 1-1023 1092 m; slope -0.280 levels of relief per octave (degree power ~ l^-1.56)
+Venus: R 6051.9 km (model to degree 719), relief RMS over degrees 1-511 958 m; slope -0.337 levels of relief per octave (degree power ~ l^-1.67)
+Earth: R 6371.0 km (model to degree 2160), relief RMS over degrees 1-1023 634 m; slope -0.438 levels of relief per octave (degree power ~ l^-1.88)
+Moon: R 1737.2 km (model to degree 1439), relief RMS over degrees 1-1023 2329 m; slope -0.208 levels of relief per octave (degree power ~ l^-1.42)
+Mars: R 3389.5 km (model to degree 1439), relief RMS over degrees 1-1023 6688 m; slope -0.424 levels of relief per octave (degree power ~ l^-1.85)
+Vesta: R 260.4 km (model to degree 1439), relief RMS over degrees 1-1023 18018 m; slope -0.982 levels of relief per octave (degree power ~ l^-2.96)
+Ceres: R 469.5 km (model to degree 1439), relief RMS over degrees 1-1023 11143 m; slope -0.686 levels of relief per octave (degree power ~ l^-2.37)
+Earth bedrock: R 6371.0 km (model to degree 2160), relief RMS over degrees 1-1023 2417 m; slope -0.426 levels of relief per octave (degree power ~ l^-1.85)
+P6: KILLED. largest departure from a body's line 0.566 levels (Vesta, k = 9); threshold 0.25. Over 0.25: Mercury k=6 (+0.296), Mercury k=7 (+0.362), Mercury k=9 (-0.454), Moon k=3 (-0.274), Moon k=6 (+0.455), Moon k=7 (+0.389), Moon k=9 (-0.488), Vesta k=3 (-0.390), Vesta k=6 (+0.399), Vesta k=7 (+0.385), Vesta k=9 (-0.566), Ceres k=3 (-0.522), Ceres k=5 (+0.324), Ceres k=6 (+0.305), Ceres k=7 (+0.259), Ceres k=9 (-0.488)
+P7: KILLED. slopes Mercury -0.280, Venus -0.337, Earth -0.438, Moon -0.208, Mars -0.424, Vesta -0.982, Ceres -0.686; outside [-1.15, -0.85]: Mercury, Venus, Earth, Moon, Mars, Ceres
+P8: KILLED. mean slope -0.479, largest departure 0.503 (threshold 0.1)
+```
+
+All three killed.
+
+- **P6 killed, by the four airless bodies.** Earth (largest departure 0.11), Mars (0.11) and Venus (0.25, at its edge)
+  hold a straight line over their six or seven octaves. Mercury, the Moon, Vesta and Ceres do not: on each the middle
+  octaves (degrees 64 to 255) stand 0.26 to 0.46 above the line and degrees 512 to 1023 fall 0.45 to 0.57 below it.
+- **P7 killed, by six bodies.** The slopes run from −0.21 (the Moon) to −0.69 (Ceres); only Vesta's (−0.98) is in the
+  band, and Vesta's spectrum is curved (P6), so its line is an average over a bend. Relief per octave falls more slowly
+  than wavelength on every other body: the finer a band, the steeper its slopes.
+- **P8 killed.** The seven slopes spread 0.50 about their mean (−0.48). The share a level drops is not one number.
+
+**Reading (after the run; not ruled).**
+- *The packing is the reader's; the share is the world's.* Every model here is a series by degree, and the reader
+  drops one octave of it per level of distance, as the claim says. But how much relief each octave carries is read
+  from the world (SPN R231: unitless, found, not derived): it differs from body to body, and on the airless bodies from
+  level to level.
+- *What the local slopes show* (log₂ of each octave's RMS over the one before, computed after the run from the table):
+  Earth −0.24 to −0.57, Mars −0.30 to −0.60, Venus −0.05 to −0.58, each averaging about −0.4; Earth's bedrock the same
+  as its surface (−0.43 against −0.44; the oceans lower the relief, 634 m against 2,417 m, not its slope). The Moon
+  −0.11, +0.06, +0.15, −0.27, −0.60, −0.69 and Mercury −0.12, −0.39, +0.15, −0.21, −0.51, −0.87: relief per octave
+  flat or rising to about degree 128, then falling ever faster. Vesta (−0.67 to −1.63) and Ceres (−0.09 to −1.22)
+  steepen throughout. Earth's −0.44 is near the Brownian −½ recalled beforehand.
+- *A preferred level on the airless bodies.* On all four, degrees 64 to 255 (wavelengths of about a tenth to a fortieth
+  of the radius) stand above the body's line, from Vesta (260 km) to Mercury (2,440 km): the same octaves in the body's
+  own size, not the same size in kilometres. On the Moon and Mercury the relief per octave itself rises there; on Vesta
+  and Ceres it only falls more slowly there than further out (a bend, not a peak). That is the large craters and basins,
+  and it would be a statement in unit relations, the crater's breadth against the body's. Post hoc, from four bodies: a
+  prediction for a new run, not a result.
+- *Relief far under the reader's grain.* At the level where a band is first held, its relief is 0.0002 to 0.07 of
+  one of the reader's addresses (ρ, every body, every octave): dropping a band by distance moves the outline by far
+  less than an address, so level of detail by octave is safe for the outline of every world here. On Earth, Mars,
+  Venus, Mercury and the Moon ρ grows by 1.1 to 2.2 a level: coming nearer, each new level shows more relief in the
+  reader's own addresses, not the same; seen in shading, a real world grows rougher as the reader approaches.
+- *For the pictures.* The bands of wander's and the games page's bodies halve per octave (slope −1, chosen); real
+  worlds keep more of their relief in the fine octaves (about −0.4). Scaling `res/` is still Tom's call (run 1).
