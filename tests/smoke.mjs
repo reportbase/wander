@@ -714,6 +714,43 @@ try {
   if (!wOk) failures.push(`[wedge.html] ${JSON.stringify({ ...wg, hud: wg.hud.slice(0, 200), hudHome: wg.hudHome.slice(0, 200) })}`);
   console.log(`${failures.length === before26 ? 'ok  ' : 'FAIL'} wedge.html (from home the parties at an equilateral triangle's corners, every direction at its shares to ${wg.sh.toExponential(1)}, the pairs' corners its medians; Lambert's map: six chambers ${wg.ch.map(c => c.toFixed(3)).join(' ')}, v = h halving it, the corners meeting at v = 1/√3; H moves things along their rays, never across (to ${wg.dir.toExponential(1)}); at H = 0.01, 1, 1000 merged into home ${wg.counts.map(c => c.home).join(', ')}, past the edge ${wg.counts.map(c => c.past).join(', ')}; every situation reaches every direction, holding 1, 1/24, 1/24, 1/576 at once; the drawing at the centre, at the truth with both known)`);
 
+  // ── 27. wedge-browse.html: browsing the wedge (SPN R241; the calendar project's navigation dial): 2^53 − 1 items made
+  //    from their addresses, every cell's halves adding to it exactly; the drawn cells and items adding to all of them in
+  //    every state; at w = 1 and the drawing at 0 the view is the wedge itself; the gold, a rate, moves the blue by 0.4 a
+  //    second at tan 1, and letting go re-centres the drawing on what the blue reached; the radius keeps the blue's place;
+  //    an item found by its index sits at the triple corner with its total at the corner; from home nothing moves with H ──
+  current = 'wedge-browse.html';
+  const before27 = failures.length;
+  await page.goto(new URL('wedge-browse.html', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__browse && __browse.frames > 2, null, { timeout: 30000 });
+  const br = await page.evaluate(() => { const B = __browse, o = { split: true, totals: [] };
+    let seed = 7; const rnd = () => (seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648;
+    for (let k = 0; k < 200; k++) { let n = { ...B.ROOT };
+      while (n.d < B.D_MAX) { const c = B.children(n);
+        if (c[0].count + c[1].count !== n.count || c[0].start !== n.start || c[1].start !== n.start + c[0].count || c[0].count < 0 || c[1].count < 0) o.split = false;
+        n = rnd() < 0.5 || c[1].count === 0 ? (c[0].count ? c[0] : c[1]) : c[1]; } }
+    o.totals.push(B.drawn.total);
+    o.wedge = 0; B.set({ mu1: 0, mu2: 0, lw: 0 });
+    for (let k = 0; k < 300; k++) { const l1 = 60 * rnd() - 30, l2 = 60 * rnd() - 30, a = B.dispShares(l1, l2), b = B.trueShares(l1, l2); o.wedge = Math.max(o.wedge, ...a.map((x, i) => Math.abs(x - b[i]))); }
+    o.totals.push(B.drawn.total);
+    B.set({ lw: 2 }); const h = B.hold(1, 0, 1.0); o.zeta = Math.hypot(...h.zeta); const blue = h.blue; const r = B.release(); o.recentre = B.dispShares(...blue).map(x => Math.abs(x - 1 / 3)); o.mu = [r.mu1 - blue[0], r.mu2 - blue[1]];
+    o.totals.push(B.drawn.total);
+    B.placeBlue(r.mu1 + 1.5, r.mu2 - 0.7); const k0 = B.view().blue; B.set({ lw: 3 }); const k1 = B.view(); o.keep = Math.hypot(k1.blue[0] - k0[0], k1.blue[1] - k0[1]); o.keptMu = k1.mu1 === r.mu1 && k1.mu2 === r.mu2;
+    B.set({ lw: -20 }); const k2 = B.view(); o.moved = Math.hypot(k2.mu1 - k0[0], k2.mu2 - k0[1]);
+    o.items = [0, 1, 12345, 2 ** 52, 7e15, B.N - 1].map(i => { const it = B.itemAt(i), bx = B.boxOf(it.leaf), c = B.cellAt(it.l1, it.l2, B.D_MAX);
+      return { ok: it.index === i && it.l1 >= bx[0] && it.l1 < bx[1] && it.l2 >= bx[2] && it.l2 < bx[3] && c.i1 === it.leaf.i1 && c.i2 === it.leaf.i2 && c.start === it.leaf.start } ; }).every(x => x.ok);
+    const g = B.goTo(4503599627370495), v = B.view(); o.goto = { centre: B.dispShares(g.l1, g.l2).map(x => Math.abs(x - 1 / 3)), corner: Math.abs(2 ** (g.ell - v.lH) - 1), under: B.under(g.l1, g.l2) };
+    o.totals.push(B.drawn.total); o.hud = B.hud();
+    const s0 = B.screen(); B.set({ lH: v.lH + 7 }); const s1 = B.screen(); o.still = s0.length === s1.length && s0.every((p, i) => p[0] === s1[i][0] && p[1] === s1[i][1]);
+    const t0 = performance.now(); B.set({ mu1: 0, mu2: 0, lw: 2, lH: 0 }); o.ms = performance.now() - t0; o.totals.push(B.drawn.total); o.frames = B.frames;
+    return o; });
+  const brOk = br.split && br.totals.every(t => t === 9007199254740991) && br.wedge < 1e-15 && Math.abs(br.zeta - 0.4) < 1e-9 &&
+    br.recentre.every(x => x < 1e-12) && br.mu.every(x => x === 0) && br.keep < 1e-9 && br.keptMu && br.moved < 1e-9 && br.items &&
+    br.goto.centre.every(x => x < 1e-9) && br.goto.corner < 1e-12 && br.goto.under && br.goto.under.kind === 'item' && br.goto.under.index === 4503599627370495 &&
+    /adding to 9,007,199,254,740,991 of 9,007,199,254,740,991, exactly/.test(br.hud) && /read: item 4,503,599,627,370,495/.test(br.hud) && br.still && br.frames > 0;
+  if (!brOk) failures.push(`[wedge-browse.html] ${JSON.stringify({ ...br, hud: br.hud.slice(0, 300) })}`);
+  console.log(`${failures.length === before27 ? 'ok  ' : 'FAIL'} wedge-browse.html (2^53 − 1 items, every halving adding exactly; the drawn cells and items adding to all of them in ${br.totals.length} states; at w = 1 the wedge itself to ${br.wedge.toExponential(1)}; the gold at tan 1 for a second moves the blue ${br.zeta.toFixed(3)}, letting go re-centres on it; the radius keeps the blue's place, or moves the window to it; item 4,503,599,627,370,495 found by index at the triple corner, its total at the corner; from home nothing moves with H; a rebuild ${br.ms.toFixed(0)} ms)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
