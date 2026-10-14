@@ -569,12 +569,29 @@ try {
       }
     }
     const st = c.stats(6000); o.faces = st.faceShares; o.mid = st.middleShare; o.pred = c.predictedMiddle; o.wedge = st.wedge.shares;
-    c.set({ step: 5, e: 0.25, known: false }); o.hud = c.hud(); o.frames = c.frames; o.webgl = c.webgl; return o; });
+    c.set({ step: 5, e: 0.25, known: false }); o.hud = c.hud(); o.frames = c.frames; o.webgl = c.webgl;
+    // step 7, the two sweeps (AZM; SPN R237): altitude and azimuth each read their own pair, the corners at 45°; swept
+    // evenly in both angles v ≤ h for 0.3426 and h largest 0.2326; swept evenly over the wedge (height even) ½ and ⅓
+    c.set({ step: 7, alt: 30, az: 60, even: 'angles' }); const S = c.sweeps, r = S.readings(30, 60);
+    o.sw = { az: r.az, alt: r.alt, exA: S.exact('angles'), exB: S.exact('area'), ctA: S.counted('angles'), ctB: S.counted('area'),
+      top: [S.topShare('angles'), S.topShare('area')], lam: S.lambert(10, 50, 0.2, 0.7), hud: c.hud(),
+      truth: S.truth(3, 0.5), centre: S.centre };
+    return o; });
+  const sw = sq.sw, close = (x, y, t) => Math.abs(x - y) <= t;
+  const swOk = close(sw.az, Math.sqrt(3), 1e-12) && close(sw.alt, 1 / Math.sqrt(3), 1e-12) &&
+    close(sw.exA.vh, 0.3425834779, 1e-8) && close(sw.exA.near, 0.2326315334, 1e-8) && close(sw.exA.v2h, 0.5, 1e-12) &&
+    ['vh', 'v2h', 'v2v'].every(k => close(sw.exB[k], 0.5, 1e-12)) && close(sw.exB.near, 1 / 3, 1e-12) &&
+    ['vh', 'v2h', 'v2v', 'near'].every(k => close(sw.ctA[k], sw.exA[k], 0.02) && close(sw.ctB[k], sw.exB[k], 0.02)) &&
+    sw.top[0] > 0.4 && close(sw.top[1], 0.25, 0.01) && close(sw.lam.area, sw.lam.product, 1e-9) &&
+    /azimuth reads v₂\/h = tan z = 1\.732/.test(sw.hud) && /v ≤ h 34\.3%/.test(sw.hud) &&
+    // R238: the truth a point of h + v + v₂ = 1, the reader's drawing V = V₂ = H its centre
+    [2 / 9, 2 / 3, 1 / 9].every((x, k) => close(sw.truth[k], x, 1e-15)) && sw.centre.every(x => close(x, 1 / 3, 1e-15)) &&
+    /its centre \(⅓, ⅓, ⅓\)/.test(sw.hud);
   if (!(sq.rt < 1e-12) || !(sq.ad < 1e-12) || !sq.faceOk || sq.faces.some(f => Math.abs(f - 1 / 6) > 0.01) ||
       Math.abs(sq.mid - sq.pred) > 0.01 || sq.wedge.some(f => Math.abs(f - 1 / 3) > 0.02) ||
-      !/off by e\/H = 0\.250, 2\.00 levels/.test(sq.hud) || !(sq.frames > 0) || !sq.webgl)
-    failures.push(`[sphere-cube.html] ${JSON.stringify({ ...sq, hud: sq.hud.slice(0, 200) })}`);
-  console.log(`${failures.length === before22 ? 'ok  ' : 'FAIL'} sphere-cube.html (round trip ${sq.rt.toExponential(1)}, the address the same at every extent to ${sq.ad.toExponential(1)}, the face the largest component's; faces ${sq.faces.map(f => f.toFixed(3)).join(' ')}; a face's middle quarter ${(100 * sq.mid).toFixed(1)}% (exactly ${(100 * sq.pred).toFixed(1)}%); the wedge's faces ${sq.wedge.map(f => (100 * f).toFixed(1) + '%').join(', ')}; extent unknown, off by e/H)`);
+      !/off by e\/H = 0\.250, 2\.00 levels/.test(sq.hud) || !(sq.frames > 0) || !sq.webgl || !swOk)
+    failures.push(`[sphere-cube.html] ${JSON.stringify({ ...sq, hud: sq.hud.slice(0, 200), sw: { ...sw, hud: sw.hud.slice(0, 300) } })}`);
+  console.log(`${failures.length === before22 ? 'ok  ' : 'FAIL'} sphere-cube.html (round trip ${sq.rt.toExponential(1)}, the address the same at every extent to ${sq.ad.toExponential(1)}, the face the largest component's; faces ${sq.faces.map(f => f.toFixed(3)).join(' ')}; a face's middle quarter ${(100 * sq.mid).toFixed(1)}% (exactly ${(100 * sq.pred).toFixed(1)}%); the wedge's faces ${sq.wedge.map(f => (100 * f).toFixed(1) + '%').join(', ')}; extent unknown, off by e/H; two sweeps: v₂/h = tan z, v/reach = tan a, even in both angles v ≤ h ${sw.exA.vh.toFixed(4)} and h largest ${sw.exA.near.toFixed(4)} (drawn ${sw.ctA.vh.toFixed(3)}, ${sw.ctA.near.toFixed(3)}), even over the wedge ½ and ⅓ (drawn ${sw.ctB.vh.toFixed(3)}, ${sw.ctB.near.toFixed(3)}), Lambert's map equal-area; the drawing V = V₂ = H the triangle's centre, a true point off it)`);
 
   // ── 23. paths.html: one sweep, three paths (plans/ofs-review-6.md; OFS §11.2, question 2): the share of the sweep
   //    measured along each path matches its closed form; all three fair and ½ at the corner, parting between; the mean

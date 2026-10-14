@@ -10,10 +10,11 @@ Classical geometry is drawn from nowhere: every length is held at once, to one s
 that stands somewhere has less. It has its own breadth, a value it chooses to start from, but not the breadth of what
 it reads. This paper works out the
 geometry that this one restriction leaves. We begin with the readers themselves. What a reader knows of two breadths
-sets one of five situations, and these give three vantages: the completed view from nowhere, whose figure is the circle,
-and two situated readers, one taking in a hemisphere at once and one sweeping it from home, whose figures are the bell
-and the fisheye. The three read a line of true breadth 1 as 1, π/2 and 2/π; the true breadth is held only from nowhere,
-or constructed from several observations, never observed from one. Any relation between two parties can be written as a pair of unit relations, h
+sets one of five situations, and these give three vantages: the completed view from nowhere, which holds the straight
+chord between two points, and two situated readers, one taking in a hemisphere at once and one sweeping it from home,
+which hold only the arc they turn through and whose figures are the bell and the fisheye. The chord comes before the
+circle: it needs no turn, and the circle is drawn on it by one. The three read a line of true breadth 1 as 1, π/2 and
+2/π; the true breadth is held only from nowhere, or constructed from several observations, never observed from one. Any relation between two parties can be written as a pair of unit relations, h
 and v, each between 0 and 1, and the reader reads their ratio. Because neither unit relation can pass 1, every such sweep
 turns over at a single point, v = h, the *corner*, where reading v in terms of h gives way to reading h in terms of v.
 For there to be a relation, the reader must assign the other party a breadth, and its only measure is its own: it
@@ -32,7 +33,9 @@ is logarithmic. The reader therefore has two address spaces, proportional and lo
 Our main result concerns what a reader receives when it sweeps this circle evenly from where it stands. Its readings
 follow the Cauchy distribution. When the evenness is the reader's own laying, we show that the distribution belongs
 entirely to the reader's addresses and not to anything that arrives at them: whatever is met in each direction cancels
-from every single reading. This gives a reason for the Cauchy's best-known peculiarity. Its median exists and sits at the corner, because a median depends only on order, which is a
+from every single reading. Where the evenness belongs to the sources instead, as when a lighthouse sends its flashes
+at evenly spread angles, the same law is a property of the world's directions. This gives a reason for the Cauchy's
+best-known peculiarity. Its median exists and sits at the corner, because a median depends only on order, which is a
 property of addresses. Its mean does not exist, because a mean is a sum of sizes, a question about the payload, and
 addresses carry no size. Neither property needs the circle or the even turn: any sweep that treats the two parties alike
 puts its median at the corner and, if it reaches the horizon, has no mean; the even turn gives the Cauchy's exact
@@ -90,9 +93,14 @@ a point you can compute. If you do not know it, your thumb is the only measure y
 to your thumb, V = H, and read the mountain in thumbs.
 
 **Three vantages.** A figure can be held in three ways. The *completed* vantage holds every breadth at once from no
-standpoint; this is classical geometry, and its figure is the circle. A *situated* reader has a facing. Either it takes
-in a hemisphere at once, from outside (a parallel reader), or it sweeps the hemisphere from home, one direction at a
-time (a serial reader). Their figures are the bell and the fisheye. The three read the same thing differently: a line
+standpoint; this is classical geometry. Between two points it holds the straight chord, which needs no turn; the
+circle comes after the chord, drawn on it by turning. A *situated* reader has a facing, and holds only the arc it turns
+through. Either it takes in a hemisphere at once, from outside (a parallel reader), or it sweeps the hemisphere from
+home, one direction at a time (a serial reader). Their figures are the bell and the fisheye. These two are not the
+only situated views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is
+where the truth lies: a system's true breadths, as shares of their whole, are one point of it. A reader's drawing, every
+party at its own H, is the sum's centre, where every pair is at its corner; the geometry follows from there, and the
+truth lies off the centre by the ratios the reader lacks. The three read the same thing differently: a line
 of true breadth 1 reads 1 to the completed view, π/2 to the hemisphere turned away from the reader and 2/π to the
 hemisphere turned toward it. The true breadth is had only with both hemispheres in hand, which no single observation
 provides. A situated reader can construct it from several observations, but it cannot observe it. Many apparent
@@ -194,6 +202,31 @@ relations: the quarter arc and the octant both measure π/2 because they are cut
 in every drawing; statements about lengths, angles or areas belong to one, and we say which. We call the first three
 cuts the *arc*, the *square* and the *line*.
 
+**The sum, and the drawings built from a standpoint.** One cut needs no standpoint. The sum h + v + v₂ + … = 1 treats
+every unit relation alike and needs nothing but addition: each is a share of a whole, and only a view that holds the
+whole has shares. It is the completed view's own drawing, the line (the chord) for two unit relations and the flat
+triangle for three. Every other drawing is built from a standpoint. Dividing by one unit relation chooses a facing;
+dividing by the largest chooses a register, reading v/h up to the corner and h/v past it; dividing by length needs a
+turn. The two hemispheres of §3.4 are two such drawings, not the only ones.
+
+The sum also shows where a reader stands. A system's true breadths, taken as shares of their whole, are one point of
+the triangle, and no common unit moves it. A situated reader does not have that point. It chooses H, which sets only
+its zoom (§8), and draws every other party at it, V = V₂ = H: equal shares, the triangle's centre (⅓, ⅓, ⅓), which is
+the triple corner, where every pair is at its corner. The rest of the geometry follows from that drawing. The true point
+lies off the centre by the two ratios the reader lacks, V*/H and V₂*/H (§3.8); amounts brought from outside move the
+reader's amounts toward it and redraw nothing (§9).
+
+**Two sweeps: altitude and azimuth.** A reader reaches the wedge of three unit relations by two sweeps, the coordinates
+an observer uses for its own sky (Smart 1977). Take v as the vertical and h and v₂ as the horizontal plane, h the
+forward direction, toward the first other party. The *altitude* a sweeps from the horizontal up to the vertical: the
+sweep from H to V. The *azimuth* z sweeps round the horizontal plane, from h to v₂ square to it: the sweep that brings
+in V₂. The direction is (h, v, v₂) = (cos a cos z, sin a, cos a sin z). Each sweep reads its own pair and has its own
+corner at 45°: the azimuth reads v₂/h = tan z, whatever the altitude, and the altitude reads v against the horizontal
+reach, v/√(h² + v₂²) = tan a, whatever the azimuth. These are horizon coordinates: the horizon and the vertical are set
+by where the reader stands, as an observer's are, unlike coordinates fixed to the sky, and a surveyor's theodolite reads
+the same two angles. The sweeps choose an order, a forward direction and a vertical; the wedge itself does not. With
+n + 1 unit relations there are n sweeps. What sweeping them evenly means is taken up with the even wedge (§7.1).
+
 **Addresses and payload.** An *address* is a place in the reader's layout where a reading can be put. The range of
 addresses is fixed by the geometry before anything arrives, and an address is taken from it when something does. The
 *payload* is what arrives. In the picture of §1 the fingers are addresses and the rings are payload. The addresses a
@@ -284,19 +317,24 @@ do not have, and neither knows how many things there are.
 
 ### 3.2 Which division a reader can make
 
-A reader turns a pair of breadths into a reading by dividing, and there are two ways to divide. Which one a reader can
-make is its situation.
+A reader turns a pair of breadths into a reading by dividing, and there are two ways to divide: by its own breadth, or
+by the whole, taken as a sum or as a length. Which one a reader can make is its situation.
 
 | divide both by | (H, V*) lands at | which lies on | needs |
 |---|---|---|---|
 | H | (1, V*/H) | the number line held upright at 1: unbounded | H only |
-| the whole, √(H² + V*²) | (cos θ, sin θ) | the quarter circle: bounded | H and V* |
+| the sum, H + V* | (H, V*)/(H + V*) | the chord h + v = 1: bounded | H and V* |
+| the whole, √(H² + V*²) | (cos θ, sin θ) | the quarter circle: bounded | H and V*, and Euclidean length |
 
 A situated reader has H, which it chose, and not V*, so it cannot form the whole; it can only divide by H, measuring everything in
 thumbs. Every system it reads lands
 on one unbounded line, at its ratio, with the scale gone and a horizon at the far end. An unsituated view holds both
-breadths and can divide by the whole: every system lands on the bounded quarter circle, with the corner computed at 45°
-and no horizon. The two are one projection apart: projecting (1, x) toward the centre gives the circle's point.
+breadths and can divide by the whole. Divided by their sum, every system lands on the chord h + v = 1, which needs
+nothing beyond the two breadths and their addition; divided by their length, it lands on the bounded quarter circle,
+which needs the Euclidean length as well (§5, "The Euclidean choice"). Either way the corner is computed, at the chord's
+middle or at 45°, and there is no horizon. The chord comes first: the arc is the chord with a facing turned through
+(§4), and the circle is that arc over every facing. The number line and the quarter circle are one projection apart:
+projecting (1, x) toward the centre gives the circle's point.
 
 ### 3.3 The number line laid twice
 
@@ -334,17 +372,25 @@ up in §9.
 
 ### 3.4 Three vantages, and the true breadth
 
-The five situations give three vantages, each with its own geometry.
+The five situations give three vantages, each with its own geometry. The completed view's own drawing is the sum,
+h + v + … = 1 (§2); the two situated vantages are two of the drawings a standpoint builds from its sweeps, the two this
+paper follows through, and not the only ones.
 
-| vantage | situations | geometry | measure of a turn θ | reads a line of true breadth 1 as |
-|---|---|---|---|---|
-| completed: the view from nowhere | 1, 2 | the circle; every breadth held; no facing | none | 1 |
-| outer hemisphere: parallel | 3 | one facing, taken in at once; the hemisphere turns away from the reader | θ/sin θ | π/2 |
-| inner hemisphere: serial | 4 | one facing, swept from home; the hemisphere turns toward the reader | sin θ/θ | 2/π |
+| vantage | situations | geometry | the turn | measure of a turn θ | reads a line of true breadth 1 as |
+|---|---|---|---|---|---|
+| completed: the view from nowhere | 1, 2 | the chord, and the circle drawn on it; every breadth held; no facing | none | none | 1 |
+| outer hemisphere: parallel | 3 | one facing, taken in at once; the hemisphere turns away from the reader | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
+| inner hemisphere: serial | 4 | one facing, swept from home; the hemisphere turns toward the reader | a quarter turn: a bar, from home to the horizon | sin θ/θ | 2/π |
 
-**Where the numbers come from.** A situated reader measures by turning. Measured from the point that faces it, the arc
-to angle θ is θ, while what the reader sees of it is its projection, sin θ. Outside, the reader reads arc over
-projection, θ/sin θ; inside, projection over arc, sin θ/θ. The two are reciprocal at every turn:
+**Where the numbers come from.** A situated reader measures by turning. Its position crosses the line once, and its
+facing turns; the arc is drawn by that turning, not walked. The two situated vantages turn by different amounts, and
+the unsituated one not at all. The inner reader turns a bar of length 1 from home: at angle θ the bar's end has drawn
+an arc θ, and the line it covers, its shadow, is sin θ. The outer reader's facing turns twice as far, 2θ (§4, "Why the
+corner sits at 45°"): it faces the far end of the line at the start, is square to the line at the corner, and faces
+the first end at the finish, a half turn in all. Drawn on the line as its diameter, of radius ½, a turn of 2θ draws an
+arc of θ over a chord of sin θ. So both draw an arc θ over a line sin θ. Outside, the reader reads arc over line,
+θ/sin θ; inside, line over arc, sin θ/θ. The two are reciprocal at every turn (the table's θ is the bar's; the
+outer's facing has turned 2θ):
 
 | turned through | outside, θ/sin θ | inside, sin θ/θ | product |
 |---|---|---|---|
@@ -354,21 +400,27 @@ projection, θ/sin θ; inside, projection over arc, sin θ/θ. The two are recip
 | 75° | 1.3552 | 0.7379 | 1 |
 | 90° | π/2 = 1.5708 | 2/π = 0.6366 | 1 |
 
-Both tend to 1 as the turn shrinks, and neither reaches it while there is any turn. At the limb, a quarter turn, the
-outer hemisphere reads π/2 and the inner 2/π. (Equivalently: a half-turn stood on a line of breadth 1 as its chord has
-arc π/2, and a bar of length 1 swept evenly through a quarter turn casts an average shadow of
-(2/π)∫₀^{π/2} cos θ dθ = 2/π.) The average shadow is Buffon's needle (Buffon 1777): a needle as long as the gap
-between parallel lines, dropped at random, crosses one with probability 2/π. Crofton's formula, which measures a curve
-by the random lines that cross it, grew from the same problem (Crofton 1868). Buffon's number, like the inner reading,
-holds only when every angle of the turn is equally likely; weight the turn otherwise and it changes.
+Both tend to 1 as the turn shrinks, and neither reaches it while there is any turn. At the limb, the outer
+hemisphere's facing has made its half turn, an arc of π/2 stood on the line of 1 as its chord, and reads π/2; the
+inner's bar has made its quarter turn, and its average shadow over the turn is (2/π)∫₀^{π/2} cos θ dθ = 2/π. The
+outer turns farther and the inner less, but as ratios the two lie equally far either side of 1, π/2 above it by the
+factor that 2/π is below it, and it is their product, not their difference, that returns the line: the arc's excess
+over the line, π/2 − 1, and the shadow's shortfall, 1 − 2/π, add to 0.934, not to 1.
 
-Both readings come from the same two integrals over the quarter turn: the turn itself, ∫₀^{π/2} dθ = π/2, and the
-shadow it casts on the line, ∫₀^{π/2} cos θ dθ = 1. The outer reading is the turn over the shadow, π/2; the inner is
-the shadow over the turn, 2/π. Taken to any turn θ, the same two give the table's θ/sin θ and sin θ/θ. The shadow is
-the line itself: the steps of the turn, each casting cos θ dθ, cover the breadth exactly once. Each reading sets it
-against the turn, one way up or the other, so their product is 1. Without angles the turn is ∫₀^∞ ds/(1 + s²) over
-every relation s = v/h, and the corner halves it, π/4 on each side. The true breadth, 1, is read only with no turn at
-all.
+The average shadow is Buffon's needle (Buffon 1777): a needle as long as the gap between parallel lines, dropped at
+random, crosses one with probability 2/π. Crofton's formula, which measures a curve by the random lines that cross it,
+grew from the same problem (Crofton 1868). Buffon's number, like the inner reading, holds only when every angle of the
+turn is equally likely; weight the turn otherwise and it changes.
+
+Both readings come from the same two integrals over the quarter turn: the arc the turn draws, ∫₀^{π/2} dθ = π/2 (the
+outer's half turn, on radius ½, draws the same arc), and the shadow it casts on the line, ∫₀^{π/2} cos θ dθ = 1. The
+outer reading is the turn over the shadow, π/2; the inner is the shadow over the turn, 2/π. Taken to any turn θ, the
+same two give the table's θ/sin θ and sin θ/θ. The shadow is the line itself: the steps of the turn, each casting
+cos θ dθ, cover the breadth exactly once. Each reading sets it against the turn, one way up or the other, so their
+product is 1. Without angles the turn is ∫₀^∞ ds/(1 + s²) over every relation s = v/h, and the corner halves it, π/4 on
+each side. The true breadth, 1, is read only with no turn at all. From nowhere, then, a relation is the chord between
+its ends; from somewhere it is the arc the reader turns through. The chord comes first: it needs no turn, and the arc
+is drawn on it by one, where the rays the two facings sweep from its ends cross (§4, "The arc from the chord").
 
 **Archimedes' proof, from nowhere and from somewhere.** Archimedes measured the circle from both sides (*Measurement
 of a Circle*). A polygon inscribed in the circle falls short of it and one circumscribed about it exceeds it; doubling
@@ -524,6 +576,10 @@ each finger the same address.
   whole, all at once, with no hand needed to reach them; in 1 every ring is alike, in 2 they differ. 3: one hand
   facing a thing from outside, all its fingers at once, each reaching the ring on the facing side. 4: inside, one
   finger at a time, each ring arriving in turn.
+- *The hand has two sweeps.* Raised, it sweeps from flat to upright, from H to V: the altitude. Turned, it sweeps
+  round from pointing at the other party to pointing square to it, which brings in a second other party, V₂: the
+  azimuth. Every way the hand can point, within one facing of each freedom, is one altitude and one azimuth, as every
+  point of an observer's sky is (§2).
 - *The unit circle is the hand's own arc.* In one facing it is a quarter, flat to upright, open at the top, since no
   finger is ever the horizon. The closed circle comes from turning the hand through its facings, or from nowhere,
   drawing every facing at once. The sphere is every way a hand could face, drawn from nowhere; no hand holds it.
@@ -583,15 +639,38 @@ division; only the size of D depends on scale.
 
 **Why the corner sits at 45°.** A straight segment from A to B passes once through every ratio of the two, as the
 quarter arc does. The arc has a second degree of freedom that the segment lacks: the direction it faces along the way.
-If the bar pivots at a point of the circle, as in Thales' configuration, a turn of θ moves its far end through a central
+The arc is drawn by that turning, not walked: the reader's position crosses the segment once while its facing turns
+(§3.4). If the bar pivots at a point of the circle, as in Thales' configuration, a turn of θ moves its far end through a central
 angle of 2θ (the inscribed-angle theorem), so the facing turns twice as fast as the sweep, from facing B at A to facing A
 at B. At the corner, θ = 45° and the facing is 90°: square to AB, leaning toward neither party. There the arc stands
 farthest from the segment, by 1 − 1/√2.
 
+**The arc from the chord.** The arc can be had from the chord AB without turning a bar. Stand the two parties at
+its ends, and from each end sweep a ray: from A a ray reading v/h, from horizontal along AB up to vertical, and from B
+a ray reading the flip, h/v, from vertical down to horizontal. Where the two rays cross traces the semicircle on AB.
+With A = (0, 0), B = (1, 0) and A's ray of slope s = v/h, the crossing is P = (1, s)/(1 + s²); the rays meet at a right
+angle, so P lies on the circle with AB as diameter (Thales' theorem, Euclid's *Elements* III.31, with its converse).
+Its distances from A and from B are h and v, the chord is the hypotenuse, and h² + v² = 1 is Pythagoras on it; the
+foot of P cuts AB into h² and v², and its height is hv, their mean proportional (*Elements* VI.8). Seen from the middle
+of AB, P has turned through 2α when A's ray has turned through α (the inscribed angle theorem, *Elements* III.20): the
+facing turning twice as fast as the sweep. The reading is the tangent of half the facing φ, so
+cos φ = (1 − s²)/(1 + s²) and sin φ = 2s/(1 + s²), and a rational reading gives a rational point (Euclid's formula for
+Pythagorean triples). At the corner, s = 1, both rays stand at 45° and P is over the middle of AB; the flip s ↦ 1/s
+mirrors P across the perpendicular bisector. In classical terms this is Steiner's construction of a conic (Steiner
+1832): the lines through A and the lines through B are paired by a projective correspondence, slope s with slope −1/s,
+that does not pair AB with itself, so corresponding lines meet along a conic through A and B. It is a circle because
+the pairing turns each line through a right angle, and that needs h and v drawn at one length: drawn with v at c times
+h, the same readings cross on the ellipse x² − x + y²/c² = 0. Paired at equal angles instead of by the flip, the rays
+meet on the perpendicular bisector, a line. Sweeping A's ray in equal steps moves P in equal steps along the arc, so
+the even sweep of one ray is the even turn of §7, and its readings are the Cauchy's. Over two amounts x₁ and x₂ laid
+end to end, the crossing above the join stands at √(x₁x₂), Euclid's mean proportional (*Elements* VI.13), which is
+the H that sets the two furthest apart (§8). The chord comes first; the arc is where the two facings' rays cross.
+
 **What the flip gives, and what it does not.** The flip proves that the corner is the one point it leaves fixed, that
 every sweep passes through it, that a reading kept within [0, 1] on both sides must change register there (Proposition
 2(a)), that a fair reading puts it at the middle (Proposition 2(b)), and that expansions about home stop there. It does
-not prove that the drawing is a circle, which needs Euclidean length (§5); how readings past the corner are laid out,
+not prove that the drawing is a circle: paired by the flip, the rays from the two ends cross on a conic, and only
+Euclidean measure, the right angle drawn at one length, makes it round (above, and §5); how readings past the corner are laid out,
 which needs the premise that no scale is preferred (§6); or the weight with which the sweep is counted, which needs
 even steps of turn (§7). Each of these rests on its own premise, and we name it where it enters.
 
@@ -671,7 +750,9 @@ one. Which breadth it assigns is not free:
 **The Euclidean choice.** Part (c) is where an assumption enters. One unit makes the axes commensurable, but "a bar of
 fixed length" also needs a norm: under the largest-component norm the bar traces the square, under the sum norm the
 line. The circle follows if the sweep is the turning of a rigid bar. The facing of §4 motivates that; it does not prove
-it. Less rests on it than it seems. The readings are directions only (Theorem 6(a)), so the norm reaches them only
+it. The same circle comes without a bar, from the chord and the two facings' rays (§4, "The arc from the chord");
+there the Euclidean measure enters as the right angle at which the flip pairs the rays, drawn with h and v at one
+length, and without it the crossings are still a conic, an ellipse. Less rests on the Euclidean choice than it seems. The readings are directions only (Theorem 6(a)), so the norm reaches them only
 through the measure on directions that "sweeping evenly" uses; laid by direction, every path gives the same readings
 (§7.4). Swept evenly along their own paths, the square and the line give other laws, with the same median at the corner
 and no mean (Theorem 6(e)). What the circle and the even turn add is the Cauchy's exact shape.
@@ -686,7 +767,8 @@ ends at 2ᵏ. We read the 2 across the reader's own level and the 2 between leve
 this is a reading, not a proof.
 
 **Where the reader lives.** The reader stands at home, the centre of the circle its own choice creates. It is not the
-circle. The circle read evenly from no standpoint is the completed view; read from home it is the fisheye of §7.
+circle. Held whole from no standpoint, drawn on the chord as the completed view draws it (§3.2), the circle has no
+home and no horizon; read from home it is the fisheye of §7.
 
 ## 6. Two address spaces
 
@@ -828,7 +910,8 @@ second and 1.05 across the third. That unevenness belongs to the payload, not to
 ### 7.1 Sweeping the circle evenly
 
 With V = H the relation is a bar of length 1. A serial reader at home sweeps it from flat (all h) to upright (all v) in
-equal steps of turn, and at each step holds one reading, v/h.
+equal steps of turn, and at each step holds one reading, v/h. Serial describes this look, one direction at a time, not
+the system being read (§3.5).
 
 **Proposition 5.** (a) Equal steps of turn give unequal readings. Near home a step barely changes v/h; the corner is
 halfway through the turn; near upright each step changes v/h by more and more, without bound.
@@ -876,6 +959,16 @@ together, is the completed view. A sphere that placed every place by its directi
 distance, which no situated reader has. The wedge needs no size: the readings are ratios, laid by the two-dimensional
 Cauchy. What it lacks is what the circle lacks, once per party: V*/H and V₂*/H. On the circle near and far were halves;
 with three parties the reader is near in both readings for a third of its addresses.
+
+**Swept by altitude and azimuth.** Reached by the two sweeps of §2, the even octant is even in azimuth and even in
+height v, not in altitude. By Archimedes' hat-box theorem (*On the Sphere and Cylinder*), a zone of a sphere has area
+in proportion to its height, so the octant's area between azimuths z₁, z₂ and heights v₁, v₂ is (z₂ − z₁)(v₂ − v₁):
+Lambert's equal-area map (Lambert 1772), with the altitude's density cos a. Swept that way, every pair keeps its corner
+and the near field is a third, as (e) states. Swept evenly in both angles instead, each sweep keeps its own corner (an
+even azimuth keeps v₂ = h at the median however the altitude is weighted), but the pair that neither sweep reads leaves
+its corner: v ≤ h for 0.343 of the readings, and the near field shrinks to 0.233, because the rings of azimuth narrow
+toward the vertical. The raise even in height belongs to three unit relations only: with two, the even sweep is the
+turn itself; with four, the height's density on the even orthant is (4/π)√(1 − t²).
 
 **More parties.** The same holds for any number n of other parties, each drawn at H. The relation lies on the sphere
 of n + 1 unit relations, one facing of every freedom is its positive orthant, and the point in direction (1, a) is
@@ -1082,7 +1175,8 @@ the first meeting along each address; what it loses is everything behind that. O
 Held whole, from no standpoint, the bar's even turn traces the circle h² + v² = 1, every point like every other: no
 home, no horizon and no corner of any consequence. Swept from home and read as v/h, the same even turn gives the Cauchy
 when counted and the fisheye when drawn. Home, the corner and the horizon appear because the reading is taken from
-somewhere. Situated geometry is the Cauchy; unsituated geometry is the circle.
+somewhere. Situated geometry is the arc, read as the Cauchy; unsituated geometry is the chord, with the circle drawn
+on it whole. The chord needs no turn, and the circle is what a turn traces.
 
 Proposition 5 assumes the turn is stepped evenly, which is a choice of weight on the sweep. It is not a weight chosen to
 produce the Cauchy: stepping the turn evenly is what makes the circle uniform in the first place, so one assumption,
@@ -1522,9 +1616,10 @@ true width, and no one stands anywhere in it.
 3. *The two vantages, on the thumb.* The one breadth the reader holds is its thumb, the H it started from, and the two situated vantages
    of §3.4 read it from the reader's own turn. Each facing side of the half-turn is a quarter turn, from home to the
    limb, where a finger runs parallel to the range and never meets it. On the thumb's circle that quarter turn is an arc
-   of π/2 thumbs, and its shadow on the line across the view is exactly 1 thumb. Taken in at once, the outer reading,
-   the turn over its shadow, is π/2. Swept one finger at a time, the inner reading, the shadow over the turn, is 2/π: the
-   fingers' mean shadow (0.6368 with 36 fingers). Their product is 1: H measured in H, the value the reader started
+   of π/2 thumbs, and its shadow on the line across the view is exactly 1 thumb. Taken in at once, limb to limb, the
+   whole half-turn is an arc of π thumbs over a shadow of 2, and the outer reading, the turn over its shadow, is π/2.
+   Swept one finger at a time from home, the inner reading, the shadow over the turn, is 2/π: the fingers' mean shadow
+   (0.6368 with 36 fingers). Their product is 1: H measured in H, the value the reader started
    from, which neither vantage reads alone. Out to the range's ends, at 45°, the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, the
    row of §3.4 at 45°, and their product is 1 again. None of this involves the mountain: a range 2 miles wide at 1 mile
    gives the same fingers and the same products. Joined, the two vantages return only what the
@@ -1694,6 +1789,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | V, V₂ | drawn | the other parties' wholes as the reader draws them, at H (§5) |
 | V* | an amount | a party's true breadth: never read; estimated (§9) or supplied from outside |
 | v/h, h/v | geometry | the reading before and past the corner |
+| a, z | geometry | altitude, from the horizontal up to the vertical (the sweep from H to V), and azimuth, round the horizontal from h to v₂ (the sweep that brings in V₂); v₂/h = tan z, v/√(h² + v₂²) = tan a (§2) |
 | the corner | geometry | v = h |
 | home, the horizon | geometry | v/h = 0; v/h → ∞, never reached |
 | g | geometry | the sweep's progress, (2/π)·arctan(v/h): 0 at home, ½ at the corner, 1 at the horizon |
@@ -1712,6 +1808,8 @@ Aczél, J., Roberts, F. S. and Rosenbaum, Z. (1986). On scientific laws without 
 Mathematical Analysis and Applications* 119, 389–416.
 
 Archimedes (c. 250 BC). *Measurement of a Circle*.
+
+Archimedes (c. 225 BC). *On the Sphere and Cylinder*.
 
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.
@@ -1738,6 +1836,9 @@ and Amazonian indigene cultures. *Science* 320, 1217–1220.
 
 Drory, A. (2015). Failure and uses of Jaynes' principle of transformation groups. *Foundations of Physics* 45(4),
 439–460.
+
+Euclid (c. 300 BC). *Elements*. Translated by T. L. Heath (1908), *The Thirteen Books of Euclid's Elements*. Cambridge
+University Press.
 
 van Fraassen, B. C. (2008). *Scientific Representation: Paradoxes of Perspective*. Oxford University Press.
 
@@ -1780,6 +1881,8 @@ large hierarchies. *Proceedings of CHI '95*, 401–408.
 Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*
 5(4), 437–459.
 
+Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten*. Berlin.
+
 Leonard, D. (2011). Estimating a bivariate linear relationship. *Bayesian Analysis* 6(4), 727–754.
 
 Longuet-Higgins, H. C. (1981). A computer algorithm for reconstructing a scene from two projections. *Nature* 293,
@@ -1817,6 +1920,11 @@ Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation:
 numerical quantity. *Psychological Science* 14(3), 237–243.
 
 Sivia, D. S. and Skilling, J. (2006). *Data Analysis: A Bayesian Tutorial*, 2nd ed. Oxford University Press.
+
+Smart, W. M. (1977). *Textbook on Spherical Astronomy*, 6th ed., revised by R. M. Green. Cambridge University Press.
+
+Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Fincke,
+Berlin.
 
 Stevens, S. S. (1946). On the theory of scales of measurement. *Science* 103(2684), 677–680.
 

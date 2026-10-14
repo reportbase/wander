@@ -121,8 +121,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (`e·d/‖d‖∞`, the face of the largest component), and the point inside at t, a unit relation. Six steps: the unit cube;
   the sphere; every point points; any size (e animates, the address unchanged, the amount e times it); the extent
   unknown (drawn at H, off by e/H); the wedge (h, v, v₂ ≥ 0, its three faces a third each). An inset draws the face hit
-  as a reading plane with the Cauchy shading and its middle quarter's share (38%). `?step=1..6&e=&known=0&t=&wedge=1&rays=0&turn=1`;
-  hook `window.__sphereCube` (`address`, `point`, `faceOf`, `stats`, `turnBy`, `hud`, `set`, `state`, `frames`, `webgl`).
+  as a reading plane with the Cauchy shading and its middle quarter's share (38%). Step 7 (14 Oct, SPN R237, AZM; Tom: "ok,
+  proceed"): the two sweeps, the hand raised in altitude (H to V, teal) and turned in azimuth (V₂, violet) with their
+  sectors, each sweep's corner (the cone a = 45°, the half-plane v₂ = h), the flat triangle h + v + v₂ = 1 (no sweep),
+  1,600 points of the wedge swept evenly in both angles or over the wedge (height even), coloured by the largest of h, v,
+  v₂, and an inset of Lambert's equal-area map (z, v); on the triangle (R238) the reader's drawing V = V₂ = H at its
+  centre (⅓, ⅓, ⅓) and a true point (1, V*/H, V₂*/H)/sum beside it (`?vs=&v2s=`, 3 and ½ by default).
+  `?step=1..7&e=&known=0&t=&wedge=1&rays=0&turn=1&alt=&az=&even=angles|area&vs=&v2s=`;
+  hook `window.__sphereCube` (`address`, `point`, `faceOf`, `stats`, `turnBy`, `hud`, `set`, `state`, `frames`, `webgl`,
+  `sweeps`: `direction`, `readings`, `exact`, `counted`, `topShare`, `lambert`, `truth`, `centre`).
   Not in the flying page.
 - `paths.html`: **one sweep, three paths** (13 Oct 2026, Tom: "yes, proceed", to the visual from the ChatGPT exchange in
   `plans/ofs-review-6.md`; SPN R224), a standalone page like `facing.html`. Geometry only, in unit relations. The circle,
@@ -370,6 +377,37 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Made: WDG run 2 and OFS's "More parties" after Proposition 5(e). Message 6 (placeholders, not physical breadths;
   Tom: "so why even include breadth"), then Tom's "Even H is not a real breadth" (SPN R226): the geometry a shape and
   one H; the corner is v = h in any drawing, equal lengths make it 45° and the even sweep's median; no reading gives V*/H.
+  The seventh (Grok, 13 Oct, an overall assessment: "ready for external scrutiny after the local clarifications") is in
+  `plans/ofs-review-7.md` with a response (SPN R232): two of its five points already in the paper, the lighthouse
+  contrast named in the abstract (edit A), serial marked as the look's in §7.1 (edit B), condensing declined (R203).
+  **The arc is the head's turn, not the walk** (13 Oct, SPN R233; Tom: "this is a source of much confusion. the arc is
+  drawn by the rotation of the head, not the walk. the outside reader turns his head the farthest … the inside reader
+  turns his head the least. the unsituated reader does not turn his head at all"): the position crosses the line once;
+  the outer's facing turns a half turn (facing = 2θ, on the line as diameter), the inner's bar a quarter turn (on it as
+  radius), the unsituated none; the same arc π/2, read π/2 and 2/π; their product returns the line, not their difference
+  (π/2 − 2/π = 0.934). In OFS §3.4 (a column for the turn), §4 and §10 step 3, SPN's head and §1. A note from another
+  session that subtracted them is in `plans/facings-note.md` with corrections. **The unsituated view is the chord, the
+  situated view is the arc; the chord is prior to the circle** (14 Oct, SPN R234): the chord needs only the two parties
+  and their sum (h + v = 1, the sum norm), no turn; the arc adds a facing turned through and the Euclidean length; the
+  circle is that arc over every facing, held whole by the completed view but drawn on the chord, after it. In OFS's
+  abstract, introduction, §3.2 (a row dividing by the sum), §3.4, §5 and §7.5; SPN's head, §1, Proposition 1.2 (7).
+  **The arc is where the two facings' rays cross** (14 Oct, SPN R235; Tom: "the arc is the intersection of the rays that
+  are swept over the two facings from horizontal to vertical"; "lean on whatever classical theory best describes this
+  situation"): on the chord, a ray from one end reading v/h and from the other h/v cross on the semicircle (Thales), at
+  distances h and v; facing twice the ray's angle (inscribed angle); the flip a projective pairing of the two pencils,
+  so a conic (Steiner 1832), round only at V = H. OFS §4 "The arc from the chord", with Euclid and Steiner cited.
+  **One unsituated view; V₂ is the azimuth** (14 Oct, SPN R236, R237; Tom: "the unsituated view is h+v+?=1. the
+  situated views are everything else that builds from horizontal, vertical and ?. Not just inside and outside"; "there
+  is another sweep V2"; "Use the correct terms for V2 … lean on classical theory to explain V2"): the sum cut is the one
+  drawing needing no standpoint; every other is situated, the two hemispheres two of many ("three vantages" kept as the
+  named cases). The hand's two sweeps are horizon coordinates: altitude (H to V, v/√(h² + v₂²) = tan a) and azimuth
+  (V₂, round the horizontal from h, v₂/h = tan z), each with its corner at 45°; the even octant is even in azimuth and
+  in height (Archimedes' hat-box, Lambert's equal-area map). OFS §2 (two paragraphs), introduction, §3.4, §3.7, after
+  Proposition 5(e), notation, references (Archimedes, Lambert, Smart). **The truth is the sum; the reader's drawing is
+  its centre** (14 Oct, SPN R238; Tom: "so the truth is h+v+v2=1; user sets h zoom and assigns v and v2 to be equal to it,
+  and the entire geometry is revealed"; "yes, that is what the math says"): the true breadths as shares are a point of
+  h + v + v₂ = 1, scale-free; H sets the zoom; V = V₂ = H is the triangle's centre (⅓, ⅓, ⅓), the triple corner, from
+  which the geometry follows; the truth lies off it by V*/H and V₂*/H. OFS §2 and the introduction.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -628,6 +666,20 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   object [d, d + Δ]: nΔ/H inside the corner; past it n·ln(1 + Δ/d) on the reader's lay whatever H is, nΔH/(d(d + Δ)) on
   the in-place lay. Run 2's P5 killed by my set-up (a grid too coarse to land inside [d, d + Δ]; the endpoint equalled my
   bound); run 3: the in-place peak at H = √(d(d + Δ)), the corner of the object's own ends (P5′ not killed).
+  `thl-plan.md` (+ `thl/thl.py`, 14 Oct; Tom: "the arc is the intersection of the rays that are swept over the two
+  facings from horizontal to vertical"; SPN R235): exact (fractions and mpmath). On the chord A = (0, 0), B = (1, 0), A's
+  ray reading s = v/h and B's reading h/v cross at (1, s)/(1 + s²), on the semicircle (P1, Thales), at distances h and v,
+  foot h² | v², height hv (P2, Euclid VI.8); facing 2·atan s, the half-angle form, Euclid's triples (P3); the corner at
+  the top, the flip the mirror (P4); a conic at every V = cH, x² − x + y²/c² = 0, the pairing projective and not
+  perspective (P5, Steiner); equal angles give the bisector (P6); the even sweep of one ray even along the arc, the
+  half-Cauchy (P7); over x₁ + x₂ the height √(x₁x₂) (P8, Euclid VI.13). Nothing killed.
+  `azm-plan.md` (+ `azm/azm.py`, 14 Oct; Tom: "there is another sweep V2 … lean on classical theory to explain V2"; SPN
+  R237): exact (mpmath, a grid count, a seeded sample). V₂ is the azimuth: v₂/h = tan z and v/√(h² + v₂²) = tan a, each
+  sweep's corner at 45° (P1); an even azimuth keeps its own corner under any altitude weighting (P2); even in both angles
+  the pair neither sweep reads leaves its corner, P(v ≤ h) = 0.3426, near field 0.2326 (P3, numbers known beforehand,
+  stated); the even octant is even in azimuth and height (P4, Archimedes' hat-box, Lambert), and then every pair at its
+  corner, near field ⅓, the 2D half-Cauchy (P5); the even-in-height raise belongs to three unit relations only (P6).
+  Nothing killed.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -733,6 +785,14 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   With n other parties (R225) the same, once per party: every pair keeps its corner, the near field in all readings is
   1/(n + 1). The drawing is the geometry's whole job (Tom: "from the geometry's perspective, its job is done, what ever
   the true breadth makes no difference"); the true breadths enter only the amounts.
+- The unsituated view is the chord, the situated view is the arc, and the chord is prior to the circle (14 October,
+  R233, R234): the arc is drawn by the head's turn, not walked; with no turn there is only the chord, needing just the
+  two parties and their sum; the circle is the arc over every facing, drawn on the chord after it.
+- One unsituated view and many situated ones (14 October, R236, R237): the sum h + v + v₂ + … = 1 needs no standpoint;
+  every other drawing is built from a standpoint's sweeps, the altitude (H to V) and the azimuth (V₂), as horizon
+  coordinates; the outer and inner hemispheres are two situated views among many. The truth is the sum (R238): the true
+  breadths as shares are a point of it; the reader sets H (the zoom) and draws V = V₂ = H, the sum's centre, the triple
+  corner, and the entire geometry follows; the truth lies off the centre by V*/H and V₂*/H.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
   includes. V is the drawn whole (at H), V* the true breadth. A unit is a relation measured beforehand (R230): its
@@ -828,7 +888,10 @@ In short:
   22. **sphere-cube.html:** every point of a turning sphere lands on one point of a cube and comes back to rounding at
       e = 10⁻³, ½ and 1, the address the same at every extent, the face its largest component's; the even sphere gives each
       face a sixth, a face's middle quarter 38%, the wedge's faces a third each; with the extent unknown the readout says
-      off by e/H; WebGL drew frames (three.js served from `node_modules` in place of the CDN).
+      off by e/H; WebGL drew frames (three.js served from `node_modules` in place of the CDN); step 7, the two sweeps:
+      v₂/h = tan z and v/√(h² + v₂²) = tan a, even in both angles v ≤ h 0.3426 and h largest 0.2326, even over the wedge
+      ½ and ⅓ (the 1,600 drawn within 0.02), the top quarter of height 25% of the even wedge, Lambert's map equal-area;
+      the truth for V*/H = 3, V₂*/H = ½ at (2/9, 2/3, 1/9) and the drawing at the centre (⅓, ⅓, ⅓).
   23. **paths.html:** the share of the sweep measured along each path (as chords) is its closed form; all three fair and ½
       at the corner, 0.250, 0.293, 0.207 at 22.5°; the mean climbing ρ(0)·ln 10 a tenfold on each; sin² 2θ with its
       median at the corner and the mean 4/π; π/2 and 2/π at the horizon, product 1; v/h = ∞ at 90°.
