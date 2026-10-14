@@ -259,3 +259,51 @@ the paper claim less, never more. What changed in `papers/observation-from-somew
 Not changed: the referee's checked-and-correct list (the Möbius and hyperbolic facts, Bertrand from home, the plane
 measure, the water-and-wine numbers, the marginalization substitution, the Haar measures, the classical priors, the
 Jaynes quotations, the references) stands as checked.
+
+## Re-check of the revision
+
+*A second fresh agent, briefed to verify the revision narrowly and to look hardest for errors it introduced, read the
+changed passages against this review (commit 96c1d4e). Its verdict: both blocking findings resolved in substance; nothing
+blocking introduced; four consistency errors a hostile referee would raise, and smaller points. It redid the algebra:
+question 7's substitution and the |ℓ|^n identity (numerically, for a normal with data of both signs, to 30 digits), the
+distance |ln(κ/ĉ)|, and §7.3's 1 − 1/√2 and √3, all correct; the water-and-wine numbers again correct; cross-references
+resolve; every reference cited and listed. What it found, and what was done:*
+
+1. *The drawing credited to the exchange alone,* though Proposition 3(e)'s rigid turn, kept as a standing premise,
+   already forces c = 1, and the relaxation "a preferred party gives c ≠ 1" cannot happen while the bar is rigid. **Fixed:**
+   §2 now says the drawing is "selected twice: by the rigid turn … (Proposition 3(e)), and by the exchange acting on the
+   law of the readings (Proposition 5(d))", and that turns in a V = cH drawing's plane "do not carry all of h into all
+   of v"; §11.1, "What is claimed, then" and the first result likewise; the relaxation reads "a preferred party, with the
+   bar no longer rigid, gives c ≠ 1".
+2. *"The even turn of the true bar is the Cauchy law at iκ" is ill-posed* (a bar at the true size does not turn rigidly;
+   drawn at c = κ its amounts are Cauchy at i). **Fixed:** "the even turn of the drawn bar, read in amounts at the true
+   breadth, is the Cauchy law at iκ".
+3. *"For the reader's group, which commutes, there is one" is false as stated:* with the exchange, a reflection, the
+   group does not commute; it is unimodular, so the conclusion holds. **Fixed:** "its turns and rescalings commute, and its
+   exchange is a reflection, so the group is unimodular and the measures unchanged by composing on the left and on the
+   right coincide".
+4. *The near-field shift contradicts "home removes the translations".* **Fixed:** proportion is now "an indifference
+   within the near field, not a translation of home, which stays where it is": no position within H preferred, equal
+   differences within H given equal room (§2, §11.1).
+5. *The remark after Proposition 13 mixed the two groups again.* **Fixed:** the argument now runs from the reader's
+   ignorance alone (an error unchanged when the size and the estimate are rescaled together, and alike for larger and
+   smaller, is a function of |ln(κ/ĉ)|; with absolute loss, the median); the Möbius distance appears in §11.1 only as
+   "the same quantity as a distance". Question 6 likewise.
+6. *Case slip: the lay "places amounts".* **Fixed:** "places far readings, taken as amounts at V = H" (§2, §6).
+7. *Notation clashes the new text introduced.* **Fixed:** the constant in the Haar argument and Proposition 4's slope are
+   now k (Proposition 4's statement and proof, §6's "smooth join (k = 1)", §11.1); the family's affine group is
+   x ↦ p + qx; the density bound in Theorem 6(e)'s proof is q₀ (β being §9's share).
+8. *"It does not know two things", then a three-part group.* **Fixed:** "two quantities …; nor, from a reading alone,
+   which of the two unit relations the reading was divided by".
+9. *Question 7:* a single g did not cover two of the three examples; "a reader of the ratios alone" though the proof uses
+   the direction with its sign; and "at none of the other powers we tried" reported trials. **Fixed:** a joint law
+   g(w | ζ) for the vector of amounts; "a reader of the data's direction alone …, the ratios with their overall sign"; the
+   trials replaced by what DSZ's examples show ("the paradox comes from other powers of η (in Stone and Dawid's
+   exponentials, an even prior on the rate)").
+10. *Item 3 cited Proposition 1 for more than it proves.* **Fixed:** the exchange "sends a reading to its flip … (Proposition
+    1)", the citation now on the flip.
+11. *Uncited eponyms.* **Fixed:** Bernardo (1979) and Benford (1938) cited and listed.
+
+Partly resolved majors from the first review, now closed: finding 10 (§6's "the addresses are even" is now "the lay's
+addresses", and the sweep's addresses are named as §7's); finding 11 (item 4 above); finding 12's leftover ("within its
+sweep" removed from θ's definition).
