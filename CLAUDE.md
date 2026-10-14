@@ -384,6 +384,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and their sum (h + v = 1, the sum norm), no turn; the arc adds a facing turned through and the Euclidean length; the
   circle is that arc over every facing, held whole by the completed view but drawn on the chord, after it. In OFS's
   abstract, introduction, §3.2 (a row dividing by the sum), §3.4, §5 and §7.5; SPN's head, §1, Proposition 1.2 (7).
+  **The arc is where the two facings' rays cross** (14 Oct, SPN R235; Tom: "the arc is the intersection of the rays that
+  are swept over the two facings from horizontal to vertical"; "lean on whatever classical theory best describes this
+  situation"): on the chord, a ray from one end reading v/h and from the other h/v cross on the semicircle (Thales), at
+  distances h and v; facing twice the ray's angle (inscribed angle); the flip a projective pairing of the two pencils,
+  so a conic (Steiner 1832), round only at V = H. OFS §4 "The arc from the chord", with Euclid and Steiner cited.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -642,6 +647,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   object [d, d + Δ]: nΔ/H inside the corner; past it n·ln(1 + Δ/d) on the reader's lay whatever H is, nΔH/(d(d + Δ)) on
   the in-place lay. Run 2's P5 killed by my set-up (a grid too coarse to land inside [d, d + Δ]; the endpoint equalled my
   bound); run 3: the in-place peak at H = √(d(d + Δ)), the corner of the object's own ends (P5′ not killed).
+  `thl-plan.md` (+ `thl/thl.py`, 14 Oct; Tom: "the arc is the intersection of the rays that are swept over the two
+  facings from horizontal to vertical"; SPN R235): exact (fractions and mpmath). On the chord A = (0, 0), B = (1, 0), A's
+  ray reading s = v/h and B's reading h/v cross at (1, s)/(1 + s²), on the semicircle (P1, Thales), at distances h and v,
+  foot h² | v², height hv (P2, Euclid VI.8); facing 2·atan s, the half-angle form, Euclid's triples (P3); the corner at
+  the top, the flip the mirror (P4); a conic at every V = cH, x² − x + y²/c² = 0, the pairing projective and not
+  perspective (P5, Steiner); equal angles give the bisector (P6); the even sweep of one ray even along the arc, the
+  half-Cauchy (P7); over x₁ + x₂ the height √(x₁x₂) (P8, Euclid VI.13). Nothing killed.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

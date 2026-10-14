@@ -389,7 +389,7 @@ cos θ dθ, cover the breadth exactly once. Each reading sets it against the tur
 product is 1. Without angles the turn is ∫₀^∞ ds/(1 + s²) over every relation s = v/h, and the corner halves it, π/4 on
 each side. The true breadth, 1, is read only with no turn at all. From nowhere, then, a relation is the chord between
 its ends; from somewhere it is the arc the reader turns through. The chord comes first: it needs no turn, and the arc
-is drawn on it by one.
+is drawn on it by one, where the rays the two facings sweep from its ends cross (§4, "The arc from the chord").
 
 **Archimedes' proof, from nowhere and from somewhere.** Archimedes measured the circle from both sides (*Measurement
 of a Circle*). A polygon inscribed in the circle falls short of it and one circumscribed about it exceeds it; doubling
@@ -610,10 +610,32 @@ angle of 2θ (the inscribed-angle theorem), so the facing turns twice as fast as
 at B. At the corner, θ = 45° and the facing is 90°: square to AB, leaning toward neither party. There the arc stands
 farthest from the segment, by 1 − 1/√2.
 
+**The arc from the chord.** The arc can be had from the chord AB without turning a bar. Stand the two parties at
+its ends, and from each end sweep a ray: from A a ray reading v/h, from horizontal along AB up to vertical, and from B
+a ray reading the flip, h/v, from vertical down to horizontal. Where the two rays cross traces the semicircle on AB.
+With A = (0, 0), B = (1, 0) and A's ray of slope s = v/h, the crossing is P = (1, s)/(1 + s²); the rays meet at a right
+angle, so P lies on the circle with AB as diameter (Thales' theorem, Euclid's *Elements* III.31, with its converse).
+Its distances from A and from B are h and v, the chord is the hypotenuse, and h² + v² = 1 is Pythagoras on it; the
+foot of P cuts AB into h² and v², and its height is hv, their mean proportional (*Elements* VI.8). Seen from the middle
+of AB, P has turned through 2α when A's ray has turned through α (the inscribed angle theorem, *Elements* III.20): the
+facing turning twice as fast as the sweep. The reading is the tangent of half the facing φ, so
+cos φ = (1 − s²)/(1 + s²) and sin φ = 2s/(1 + s²), and a rational reading gives a rational point (Euclid's formula for
+Pythagorean triples). At the corner, s = 1, both rays stand at 45° and P is over the middle of AB; the flip s ↦ 1/s
+mirrors P across the perpendicular bisector. In classical terms this is Steiner's construction of a conic (Steiner
+1832): the lines through A and the lines through B are paired by a projective correspondence, slope s with slope −1/s,
+that does not pair AB with itself, so corresponding lines meet along a conic through A and B. It is a circle because
+the pairing turns each line through a right angle, and that needs h and v drawn at one length: drawn with v at c times
+h, the same readings cross on the ellipse x² − x + y²/c² = 0. Paired at equal angles instead of by the flip, the rays
+meet on the perpendicular bisector, a line. Sweeping A's ray in equal steps moves P in equal steps along the arc, so
+the even sweep of one ray is the even turn of §7, and its readings are the Cauchy's. Over two amounts x₁ and x₂ laid
+end to end, the crossing above the join stands at √(x₁x₂), Euclid's mean proportional (*Elements* VI.13), which is
+the H that sets the two furthest apart (§8). The chord comes first; the arc is where the two facings' rays cross.
+
 **What the flip gives, and what it does not.** The flip proves that the corner is the one point it leaves fixed, that
 every sweep passes through it, that a reading kept within [0, 1] on both sides must change register there (Proposition
 2(a)), that a fair reading puts it at the middle (Proposition 2(b)), and that expansions about home stop there. It does
-not prove that the drawing is a circle, which needs Euclidean length (§5); how readings past the corner are laid out,
+not prove that the drawing is a circle: paired by the flip, the rays from the two ends cross on a conic, and only
+Euclidean measure, the right angle drawn at one length, makes it round (above, and §5); how readings past the corner are laid out,
 which needs the premise that no scale is preferred (§6); or the weight with which the sweep is counted, which needs
 even steps of turn (§7). Each of these rests on its own premise, and we name it where it enters.
 
@@ -693,7 +715,9 @@ one. Which breadth it assigns is not free:
 **The Euclidean choice.** Part (c) is where an assumption enters. One unit makes the axes commensurable, but "a bar of
 fixed length" also needs a norm: under the largest-component norm the bar traces the square, under the sum norm the
 line. The circle follows if the sweep is the turning of a rigid bar. The facing of §4 motivates that; it does not prove
-it. Less rests on it than it seems. The readings are directions only (Theorem 6(a)), so the norm reaches them only
+it. The same circle comes without a bar, from the chord and the two facings' rays (§4, "The arc from the chord");
+there the Euclidean measure enters as the right angle at which the flip pairs the rays, drawn with h and v at one
+length, and without it the crossings are still a conic, an ellipse. Less rests on the Euclidean choice than it seems. The readings are directions only (Theorem 6(a)), so the norm reaches them only
 through the measure on directions that "sweeping evenly" uses; laid by direction, every path gives the same readings
 (§7.4). Swept evenly along their own paths, the square and the line give other laws, with the same median at the corner
 and no mean (Theorem 6(e)). What the circle and the even turn add is the Cauchy's exact shape.
@@ -1765,6 +1789,9 @@ and Amazonian indigene cultures. *Science* 320, 1217–1220.
 Drory, A. (2015). Failure and uses of Jaynes' principle of transformation groups. *Foundations of Physics* 45(4),
 439–460.
 
+Euclid (c. 300 BC). *Elements*. Translated by T. L. Heath (1908), *The Thirteen Books of Euclid's Elements*. Cambridge
+University Press.
+
 van Fraassen, B. C. (2008). *Scientific Representation: Paradoxes of Perspective*. Oxford University Press.
 
 Frank, S. A. (2014). How to read probability distributions as statements about process. *Entropy* 16(11), 6059–6098.
@@ -1843,6 +1870,9 @@ Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation:
 numerical quantity. *Psychological Science* 14(3), 237–243.
 
 Sivia, D. S. and Skilling, J. (2006). *Data Analysis: A Bayesian Tutorial*, 2nd ed. Oxford University Press.
+
+Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Fincke,
+Berlin.
 
 Stevens, S. S. (1946). On the theory of scales of measurement. *Science* 103(2684), 677–680.
 
