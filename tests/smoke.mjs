@@ -707,7 +707,7 @@ try {
     W.set({ step: 7, view: 'outside', pos: { lon: 150, lat: -25, roll: 40 } });
     p7.rt = 0; for (const [lo, la, ro] of [[150, -25, 40], [-60, 70, -120], [10, -5, 170], [45, 35.26, 0]]) { const b = PS.of(PS.quat(lo, la, ro));
       p7.rt = Math.max(p7.rt, Math.abs(((b.lon - lo + 540) % 360) - 180), Math.abs(b.lat - la), Math.abs(((b.roll - ro + 540) % 360) - 180)); }
-    W.set({ alt: 33, az: 61 }); const tip = PS.handTip(), wd = PS.world(33, 61); p7.tip = Math.max(...tip.map((x, k) => Math.abs(x - wd[k])));
+    W.set({ alt: 33, az: 61 }); const tip = PS.handTip(), wd = PS.world(33, 61); p7.tip = Math.max(...tip.map((x, k) => Math.abs(x - wd[k]))); p7.hud = W.hud();
     p7.first = PS.of(PS.quat(45, Math.asin(1 / Math.sqrt(3)) * 180 / Math.PI, 0)); p7.idq = PS.quat(45, Math.asin(1 / Math.sqrt(3)) * 180 / Math.PI, 0);
     const oct = [0, 1, 2, 3, 4, 5, 6, 7].map(k => PS.octant(k)); p7.tile = 0;
     for (let i = 0; i < 3000; i++) { const d = rdir(); if (oct.filter(q => PS.inWedge(q, d)).length !== 1) p7.tile++; }
@@ -715,7 +715,7 @@ try {
     const qr = PS.random(); let ins = 0; for (let i = 0; i < 40000; i++) if (PS.inWedge(qr, rdir())) ins++; p7.eighth = ins / 40000;
     W.set({ view: 'home' }); const pts = [[1, 0.2, 0.1], [0.3, 1, 0.5], [0.2, 0.4, 1], [1, 1, 1], [0.7, 0.1, 0.9]];
     W.set({ pos: { lon: 150, lat: -25, roll: 40 } }); const na = PS.homeNdc(pts); W.set({ pos: { octant: 5 } }); const nb = PS.homeNdc(pts);
-    p7.home = Math.max(...na.map((p, i) => Math.max(Math.abs(p[0] - nb[i][0]), Math.abs(p[1] - nb[i][1])))); p7.hud = W.hud();
+    p7.home = Math.max(...na.map((p, i) => Math.max(Math.abs(p[0] - nb[i][0]), Math.abs(p[1] - nb[i][1])))); p7.hudHome = W.hud();
     o.p7 = p7;
     return o; });
   const wclose = (x, y, t) => Math.abs(x - y) <= t;
@@ -731,7 +731,7 @@ try {
     wg.home.view === 'home' && wg.frames > 0 && wg.webgl &&
     wg.p7.rt < 1e-9 && wg.p7.tip < 1e-6 && wg.p7.idq.slice(0, 3).every(x => Math.abs(x) < 1e-12) && wg.p7.tile === 0 &&
     wg.p7.turns[0] === 24 && wg.p7.turns[1].every(c => c === 3) && Math.abs(wg.p7.eighth - 0.125) < 0.01 && wg.p7.home < 1e-9 &&
-    /turned 40\.0° about it/.test(wg.p7.hud) && /from home the wedge looks the same at every position/.test(wg.p7.hud);
+    /turned 40\.0° about it/.test(wg.p7.hud) && /from home the wedge looks the same at every position/.test(wg.p7.hudHome);
   if (!wOk) failures.push(`[wedge.html] ${JSON.stringify({ ...wg, hud: wg.hud.slice(0, 200), hudHome: wg.hudHome.slice(0, 200) })}`);
   console.log(`${failures.length === before26 ? 'ok  ' : 'FAIL'} wedge.html (from home the parties at an equilateral triangle's corners, every direction at its shares to ${wg.sh.toExponential(1)}, the pairs' corners its medians; Lambert's map: six chambers ${wg.ch.map(c => c.toFixed(3)).join(' ')}, v = h halving it, the corners meeting at v = 1/√3; H moves things along their rays, never across (to ${wg.dir.toExponential(1)}); at H = 0.01, 1, 1000 merged into home ${wg.counts.map(c => c.home).join(', ')}, past the edge ${wg.counts.map(c => c.past).join(', ')}; every situation reaches every direction, holding 1, 1/24, 1/24, 1/576 at once; the drawing at the centre, at the truth with both known; step 7: one rotation places it (round trip ${wg.p7.rt.toExponential(1)}), the hand on the sphere R·d to ${wg.p7.tip.toExponential(1)}, the eight octants tile the sphere, the octahedron's 24 turns each octant 3 times, an eighth wherever put (${wg.p7.eighth.toFixed(4)}), from home the same at every position to ${wg.p7.home.toExponential(1)})`);
 
