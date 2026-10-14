@@ -199,7 +199,12 @@ different geometric representation". Claude's reading, from SPN; unruled.*
   tell apart) picks the measure.
 - *Already known*: Jaynes resolved it by invariance under the transformations the problem leaves unspecified (Jaynes
   1973), which is the same principle.
-- *Standing*: **reading**, resting on a known resolution.
+- *Worked* (14 October, JAY P5, exact): Jaynes's ½ is the unsituated thrower's, whose circle may lie anywhere (his group
+  keeps translations). From home, with the rays turned evenly, the share of chords longer than the triangle's side is
+  arcsin(R/2D)/arcsin(R/D): ⅓ from a home on the circle (Bertrand's random ends, which Jaynes found can hold "for, at
+  most, only one size of circle"), rising toward ½ as the circle recedes. Tossed straws depend likewise on a ratio of
+  two lengths, ½ only for straws much longer than the circle (Liu and Adams 2019).
+- *Standing*: **worked**, resting on a known resolution; the situated version is exact arithmetic (`plans/jay-plan.md`).
 
 **B4. Benford's law.**
 - *The paradox*: in many real collections of numbers the leading digit is 1 about 30% of the time, not 11%.
@@ -237,6 +242,25 @@ different geometric representation". Claude's reading, from SPN; unruled.*
   The vague boundary is the reader's resolution limit, an amount (physics, not the corner), not a fact about the heap.
 - *Already known*: many theories of vagueness (epistemic, supervaluationist, degree).
 - *Standing*: **reading**, with a synthetic illustration (`plans/grn-plan.md`). It is closest to the epistemic view.
+
+**C4. Water and wine** (von Mises 1928; Jaynes's open case, 1973 §8).
+- *The paradox*: a liquid is wine and water, the ratio x of wine to water between 1/3 and 3; the chance that x ≤ 2 is
+  5/8 by indifference over x and 15/16 by indifference over 1/x.
+- *Vantages*: the two textbook answers are a reader holding one liquid as its unit and laying the other in proportion
+  past the corner, each favouring its own (P(x ≤ 1) = ¼ and ¾); the completed view, with a shared unit (volume) agreed,
+  can be even in the shares (Mikkelson 2004: 5/6); the situated reader, with no unit given for either liquid, is even
+  in levels.
+- *Reading*: every fair answer (Mikkelson's 5/6, Burock's 0.764, the average 25/32, the levels 0.8155, the even turn
+  0.8470) puts P(x ≤ 1) = ½, the corner, and they part past it, so fairness fixes only the corner. Jaynes's two steps
+  for Bertrand finish it: one law for every statement (restriction) unchanged by a change of one liquid's unit leaves
+  the powers of x, and the exchange of the liquids picks dx/x, ln 6/ln 9 ≈ 0.8155. In Jaynes's own form ("at least
+  half wine"; at least three-quarters?) the levels have no answer on an unbounded range: on [1, 2^L] it is
+  1 − log₂ 3/L, the missing number the range held.
+- *Already known*: Mikkelson (2004), Burock (2005), Deakin (2006: any answer in [½, 1]), Gerville-Réache (2016, who
+  notes P(x < c) + P(x < 1/c) = 1 for every fair answer), Parker and Jeynes (2023, Benford's law, 0.816, not fair).
+  Jeffreys's rule for a ratio gives the levels; it was not found stated for this problem in what was read.
+- *Standing*: **worked**, exact arithmetic (`plans/wwp-plan.md`; WWP run 1 killed P3 on the average, run 2 with Jaynes's
+  restriction rule not killed); which unit von Mises meant is a reading.
 
 ## D. In physics
 
@@ -397,6 +421,7 @@ Named because a vantage reading looks possible. Each needs its vantages shown in
 
 ## Iterations
 
+- 14 October: water and wine (C4), Jaynes's open case, worked (WWP); Bertrand (B3) worked from home (JAY P5).
 - 11 October, first: started from Tom's statement (SPN R191), with the three vantages and nineteen entries: six in the
   corpus's geometry (A1–A6), four in mathematics (B1–B4), three in probability and decision (C1–C3) and six in physics
   (D1–D6), plus eight candidates.
@@ -429,16 +454,26 @@ Barth, H. C. and Paladino, A. M. (2011). *Developmental Science* 14(1), 125–13
 Bernoulli, D. (1738). Specimen theoriae novae de mensura sortis. *Commentarii Academiae Scientiarum Imperialis
 Petropolitanae* 5, 175–192.
 Bertrand, J. (1889). *Calcul des probabilités*. Gauthier-Villars.
+Burock, M. (2005). Indifference, sample space, and the wine/water paradox. PhilSci Archive 2487 (preprint; its method as
+Gerville-Réache (2016) states it).
+Deakin, M. A. B. (2006). The wine/water paradox: background, provenance and proposed resolutions. *Gazette of the
+Australian Mathematical Society* 33(3), 200 (not read; quoted by Parker and Jeynes 2023).
 Dehaene, S., Izard, V., Spelke, E. and Pica, P. (2008). *Science* 320, 1217–1220.
 Einstein, A. (1905). *Annalen der Physik* 17, 891–921.
 Fechner, G. T. (1860). *Elemente der Psychophysik*. Breitkopf und Härtel.
 Galilei, G. (1638). *Discorsi e dimostrazioni matematiche intorno a due nuove scienze*.
+Gerville-Réache, L. (2016). Mettre de l'eau dans du vin, un paradoxe de l'indifférence ? *Implications philosophiques*.
 Hill, T. P. (1995). A statistical derivation of the significant-digit law. *Statistical Science* 10(4), 354–363.
 Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3, 477–493.
 Jaynes, E. T. (1992). The Gibbs paradox. In C. R. Smith et al. (eds), *Maximum Entropy and Bayesian Methods*, 1–22.
 Kluwer.
 Kaufman, L. and Rock, I. (1962). The moon illusion, I. *Science* 136, 953–961.
+Liu, Z. and Adams, C. S. (2019). Experimental tests of Bertrand's question and the Duhem–Quine problem. *European Journal
+of Physics* 40(6), 065801.
 Mandelbrot, B. (1967). How long is the coast of Britain? *Science* 156, 636–638.
+Mikkelson, J. M. (2004). Dissolving the wine/water paradox. *British Journal for the Philosophy of Science* 55, 137–145.
+Mises, R. von (1928). *Wahrscheinlichkeit, Statistik und Wahrheit*. Springer, Vienna.
+Parker, M. C. and Jeynes, C. (2023). A maximum entropy resolution to the wine/water paradox. *Entropy* 25(8), 1242.
 Richardson, L. F. (1961). The problem of contiguity. *General Systems Yearbook* 6, 139–187.
 Siegler, R. S. and Opfer, J. E. (2003). *Psychological Science* 14(3), 237–243.
 Weber, E. H. (1834). *De pulsu, resorptione, auditu et tactu*. Koehler.

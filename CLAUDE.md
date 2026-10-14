@@ -377,6 +377,27 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and the reader as the pivot, the hand in full, and the one number a reader lacks; never fold these into a short table.
   §10 is a worked example (a mountain range). Before rewriting it, check the new text against the old for anything lost.
   It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
+  **It builds on Jaynes** (14 Oct, SPN R243; Tom: "It would be nice to find and lean on one paper that well cited that has
+  overlap with our ideas, and we just build on that."; "ok, if we find another great paper to lean on, we can just add
+  it to Jaynes."): his principle of transformation groups (1968, 1973) is the method, stated in §2 ("What we build on:
+  the reader's ignorance as a group"), the introduction and the abstract; §11.1 is "The principle, after Jaynes".
+  Further anchors are added beside Jaynes, not in place of him. Since R244 (Tom: "what has happend since then?"; "ok,
+  proceed") §2 also says the reader's group commutes, so it has one invariant measure where the location-and-scale
+  family's affine group has two (Jaynes's own eq. 49 group commutes; its measure coincides with the right-invariant one,
+  which later work favours where the location or the scale is of interest; Ghosh 2011), cites Norton (2008: complete
+  ignorance is not a probability) beside the pre-prior, and Liu and Adams (2019) beside the situated Bertrand.
+  **Since R247 (review 9, `plans/ofs-review-9.md`)** OFS keeps two groups apart: the reader's ignorance (turns of θ,
+  rescalings of κ = V*/H, and the exchange of the unit relations, which acts on readings and drawings, not on κ) and the
+  Möbius action on readings (turns and changes of the drawing, PSL(2,ℝ)), a fact about the family of drawings used only
+  to measure distances. The drawing is c (V = cH, required c = 1), the estimate ĉ (ĉH, Proposition 13), the true size κ;
+  never run them together. V = H comes from the exchange on the law of readings (Proposition 5(d)); κ touches no
+  reading, so dκ/κ gives the estimate and only through amounts motivates (S), still a premise. Front claims are
+  conditional (a chosen group; the sweep a rigid bar's turn). Since R245 §11.2 question 2 also works von Mises's water and wine, the case Jaynes left open: every
+  fair answer puts P(x ≤ 1) = ½, and one law unchanged by one liquid's unit plus the exchange gives the levels, ln 6/ln 9.
+  Since R246 §11.2 question 7 answers the marginalization paradox (Dawid, Stone and Zidek): under a scale nuisance's own
+  dη/η, integrating it out agrees with reasoning from ratios, same prior, for every law; the reader's dκ/κ is that
+  measure. §2's preference for the right-invariant measure is qualified to the location or the scale of interest (for
+  μ/σ the paradox-free one is Jeffreys's dμ·dσ/σ²).
   Since 13 Oct (SPN R220, R221) it has the three-party wedge: Propositions 3(f) (the sphere only if V = V₂ = H) and 5(e)
   (the even wedge's readings the two-dimensional Cauchy, every pair at its corner, the near field a third, with its
   converse), "More parties" after it (SPN R225: n other parties, every pair at its corner, the near field in all
@@ -735,6 +756,30 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   through home (P1); a hemisphere reads √π·Γ((n + 1)/2)/Γ(n/2) at once and its reciprocal one direction at a time, π/2,
   2, 3π/4 (P2); P3 killed by my set-up (a 0.1 threshold wider than the 0.095 gap); run 2, P3′: 2 and ½ are (π/2)² and
   (2/π)² times 8/π² and π²/8 (not killed).
+  `jay-plan.md` (+ `jay/jay.py`, 14 Oct; Tom: "lean on one paper … and we just build on that", Jaynes accepted; SPN
+  R243): exact (fractions; mpmath). What Jaynes 1968 and 1973 prove, first from abstracts and secondary sources (marked
+  "(check)"), then read in full once the network access was widened ("Jaynes's text, read": every item stands). The reader's unknowns, attitude θ and size
+  κ = V*/H, under turns, rescalings and the exchange: dθ·dκ/κ, Jaynes's location and scale on a circle. Rescaling: only
+  1/x, every level ln 2, on a share Haldane's prior (P1); turns: Cauchy(z) carried to Cauchy(g(z)), i fixed by every turn
+  and the exchange, the arc's foot Jeffreys's arcsine, the Fisher–Rao length the facing 2θ, the octant's squares
+  Dirichlet(½, ½, ½) (P2); the exchange fixes the corner and the median, not the law (Bayes–Laplace, Jeffreys, Haldane
+  all fair; ¼, ⅓, 0.42 below t = ¼) (P3); the median of dκ/κ on bounds √(V₋V₊) (P4, OFS Proposition 13); Jaynes's
+  Bertrand ½ rederived (Crofton), and from home arcsin(R/2D)/arcsin(R/D), ⅓ on the circle to ½ far off (P5); being
+  situated, the measure dx·dy/(x² + y²), log-polar (P6); the drawings V = cH a hyperbolic line, levels its distance (P7).
+  Run 1 killed P2 and P5 by my set-up (60-digit quadratures of densities singular at an end); run 2 at 200 digits, nothing
+  killed. Run 3 (`jay/jay2.py`, R244): P8, location and scale have two Haar measures (1/a², 1/a), the reader's
+  commuting group one (1/λ), the exchange keeping it; not killed. "Since 1973" in the plan: what later work did.
+  `wwp-plan.md` (+ `wwp/wwp.py`, `wwp/wwp2.py`, 14 Oct; SPN R245): von Mises's water and wine, 1/3 ≤ x ≤ 3, P(x ≤ 2),
+  exact. The literature read first (Mikkelson 5/6, Burock 0.764 via Gerville-Réache, Parker and Jeynes 0.816). Every
+  fair law puts P(x ≤ 1) = ½, the corner (P2); one party's unit leaves the powers, the exchange picks dx/x (P1). Run 1
+  killed P3: the mean of 5/8 and 15/16 also keeps its value under the unit. Run 2 with Jaynes's restriction rule (one
+  law, its restriction the law on the smaller range): only the levels, ln 6/ln 9 ≈ 0.8155 (P3′ not killed). Jaynes's
+  unbounded form: 1 − log₂ 3/L on [1, 2^L], the range held the missing number (P4).
+  `mgp-plan.md` (+ `mgp/mgp.py`, `mgp/mgp2.py`, 14 Oct; SPN R246): the marginalization paradox, exact (both reasoners'
+  likelihoods by quadrature). Stone and Dawid's exponentials, DSZ's change point and normal (μ/σ): agreement only at the
+  nuisance's dη/η (P1–P3); the gamma killed P4 (other powers move the prior instead of producing the paradox); Weibull
+  P4′ not killed. General: under dη/η integrating the scale out is ℓ₁^(−n) times the ratios' law. Runs take 57 and 35
+  minutes.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -859,6 +904,14 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   total its depth; the reader holds a window round the hand and the rest as totals. Position, then sweep (R242): one
   rotation places the wedge on the sphere, the hand sweeps inside it; the readings are the same at every position, and
   only a frame fixed outside, the sphere's, records it.
+- Building on Jaynes (14 October, R243; corrected R247): the method is his principle of transformation groups, the
+  measure a group of undetectable transformations leaves unchanged. The reader's ignorance, as chosen: its attitude θ
+  (turns), the other's size κ = V*/H (rescalings) and which unit relation a reading was divided by (the exchange, on
+  readings and drawings, not on κ). Turns and rescalings leave dθ·dκ/κ. Given the sweep is a rigid bar's turn, the turns
+  give the even turn (the Cauchy at i); the exchange gives the corner and, on the law of readings, V = H; dκ/κ gives the
+  estimate's median and, through amounts, motivates (S). Situated means no translations (Jaynes's straw-thrower keeps them): from home the
+  measure is log-polar. What is ours: the group (chosen, not derived), the corner and near field, and the measure read as
+  addresses, not belief. Further anchors go beside Jaynes.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
   includes. V is the drawn whole (at H), V* the true breadth. A unit is a relation measured beforehand (R230): its
@@ -880,8 +933,11 @@ interesting. we should do the correct physics testing, UI is secondary or even n
   checked to the last digit (`plans/ref-plan.md`, run 1, is the example of what not to count).
 - **Prediction first, from the theory alone**, with the bridge from unit relations to amounts named (see "keep the case").
 - **No page needed.** A test is a plan, a script and an entry in the papers; a demo only where it helps to see.
-- **Data.** This environment cannot reach the astronomy archives (VizieR, CDS, ESA: blocked) or the CDNs (jsDelivr,
-  unpkg, cdnjs); GitHub, PyPI and npm are reachable, and GitHub's CI runner reaches the CDNs. Record each dataset's source, licence and sha256 in its plan, and do not commit large data.
+- **Data.** Until 14 Oct 2026 the cloud environment's network access was the default, Trusted, which reaches GitHub, PyPI
+  and npm but not the astronomy archives (VizieR, CDS, ESA), arXiv, Wikipedia or the CDNs (jsDelivr, unpkg, cdnjs). On
+  14 Oct Tom set it to Full (at claude.ai/code: the cloud button above the message box, the environment's gear, Network
+  access); VizieR, arXiv and jsDelivr then answered. The smoke test still serves three.js from `node_modules`; GitHub's CI
+  runner reaches the CDNs. Record each dataset's source, licence and sha256 in its plan, and do not commit large data.
 
 ## Read this first: THE LAB GUIDE
 The labs have their own rules, written in `labs.html`. Read two comments

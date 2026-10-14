@@ -2,14 +2,18 @@
 
 **Addresses, payloads and the geometry of a situated reader**
 
-*Tom Brinkman, with Claude. Draft for external review, 11 October 2026.*
+*Tom Brinkman, with Claude. Draft for external review, 14 October 2026.*
 
 ## Abstract
 
 Classical geometry is drawn from nowhere: every length is held at once, to one scale, by no one in particular. A reader
 that stands somewhere has less. It has its own breadth, a value it chooses to start from, but not the breadth of what
 it reads. This paper works out the
-geometry that this one restriction leaves. We begin with the readers themselves. What a reader knows of two breadths
+geometry that this one restriction leaves. We build on Jaynes's principle of transformation groups: what a reader
+cannot tell apart, it addresses alike. Taking its ignorance to be of its own attitude, of the other's size and of which
+unit relation a reading was divided by, and the sweep to be the turning of a rigid bar, the principle gives the even
+turn, the corner and the drawing at the reader's own breadth, and, through amounts, motivates the logarithm past the
+corner; being situated, at home, removes the translations that Jaynes's chord keeps. We begin with the readers themselves. What a reader knows of two breadths
 sets one of five situations (with more parties, one entry per party), and these give three vantages: the completed view from nowhere, which holds the straight
 chord between two points, and two situated readers, one taking in a hemisphere at once and one sweeping it from home,
 which hold only the arc they turn through and whose figures are the bell and the fisheye. The chord comes before the
@@ -79,6 +83,17 @@ addresses without touching the object. The contribution is a construction of a b
 does not presuppose the whole, together with an exact account of what that construction can recover and what it
 cannot. Classical geometry is not wrong; it begins where this paper ends, with the whole already in hand.
 
+**What we build on.** The method is not new either. Jaynes (1968, 1973) showed how to choose a measure from what an
+observer does not know: state its ignorance as a group of transformations, and take the measure the group leaves
+unchanged. His cases give the classical priors, even in a location and even in the logarithm of a scale, and one answer
+to Bertrand's chord drawn at random in a circle, posed so that turning, resizing or moving the circle changes nothing.
+We apply the method to a reader that stands somewhere, with a group we choose as its ignorance: turns of its bar,
+rescalings of the other party's size, and the exchange of the two unit relations. Given that the sweep is the turning of
+a rigid bar, the measures these leave unchanged give much of this paper's geometry: the even turn and its Cauchy, the
+corner, and the drawing at the reader's own breadth; carried to amounts, the same indifference to scale motivates the
+logarithm past the corner (§2). What is ours is the choice of group, the near field, and the reading of the measure as
+the reader's addresses rather than its belief.
+
 **A picture.** Hold your hand out flat, palm down, and turn it until it points straight up. The motion between is a
 sweep. Spread your fingers between flat and upright: each finger is a direction in which you can look, an address. Now
 put a ring on each finger. The rings are what you find in each direction, the *payload*. Turning the hand does not
@@ -108,6 +123,13 @@ paradoxes come from reading one vantage's geometry as if it were another's, most
 as if a single observation held it. Section 3 sets out the readers in full.
 
 **Results.**
+- A situated reader's ignorance, as we choose it, is a group: turns of its bar, rescalings of the other party's size,
+  and the exchange of the two unit relations. The measure the first two leave unchanged, even in attitude and even in
+  levels of size, is analogous to Jaynes's location and scale with the location on a circle. Given that the sweep is the
+  turning of a rigid bar, it gives the even turn; the exchange gives the corner and, with the rigid turn, the drawing V
+  = H; through amounts, the rescalings motivate the logarithm past the corner. Standing at home removes the
+  translations: from home the even measure is even in direction and in levels of distance, not in area, and Bertrand's
+  chord has an answer that depends on where the circle lies, ⅓ from on it, rising to Jaynes's ½ from far off (§2).
 - What a reader knows of the two breadths sets its situation, one of five, and the situations give three vantages,
   each with its own geometry and its own reading of a line of true breadth 1. A situated reader can divide only by its
   own breadth, and what it lacks is a single number (§3).
@@ -151,9 +173,9 @@ as if a single observation held it. Section 3 sets out the readers in full.
   - The addresses' centre, the median, is had only by a reader holding its readings at once.
 - A worked example, a mountain range read from nowhere and from where the reader stands, puts the pieces together (§10).
 
-Section 11 discusses a single principle that may underlie all of these. The geometry is claimed as necessary relative
-to a stated ignorance, not absolutely, and each relaxation of that ignorance gives a named alternative; the section also
-lists the assumptions and related work.
+Section 2 states the principle these rest on, Jaynes's, and Section 11 returns to it. The geometry is claimed as
+necessary relative to a stated ignorance, not absolutely, and each relaxation of that ignorance gives a named
+alternative; Section 11 also lists the assumptions and related work.
 The paper is geometry only. It makes no claim about physics, perception or the structure of spacetime.
 
 ## 2. Setting
@@ -236,6 +258,91 @@ that places each reading at a position in a drawing; the *room* a stretch of rea
 length or by number of addresses. A *facing* is one side of the corner in one freedom; a sweep from all h to all v
 covers one facing. A *level* is a stretch of the reading: the first runs from home to the corner, and past the corner
 each level is one doubling of v/h.
+
+**What we build on: the reader's ignorance as a group.** The method is Jaynes's (1968, 1973). An observer that cannot
+tell two problems apart must treat them alike, and when the problems it cannot tell apart are related by a group of
+transformations, the measure it should use is the one the group leaves unchanged: indifference between problems, not
+between events. His cases are these (Jaynes 1968, §VII). Ignorance of a location and a scale gives a measure even in the
+location and even in the logarithm of the scale, dμ·dσ/σ, Jeffreys's rule for a scale (Jeffreys 1939); ignorance of a
+rate's time scale gives dλ/λ. Ignorance of a share t, read as a population of opinions that learns nothing from a new
+piece of evidence, which multiplies every opinion's odds by one factor, gives 1/(t(1 − t)), even in the logarithm of the
+odds, the prior Haldane (1932) had proposed. When the group has as many parameters as the problem, the measure is fixed
+up to a constant (Jaynes 1968). And Bertrand's "chord drawn at random" in a circle (Bertrand 1889) has one answer once
+it is posed so that the answer must not change when the circle is turned, resized or moved: ½, the chord's distance from
+the centre even, the answer Crofton's measure on lines gives (Crofton 1868; Jaynes 1973). Resizing alone already rules
+out Bertrand's chord between two random ends, which can hold "for, at most, only one size of circle", and moving the
+circle alone already fixes the answer.
+
+We apply the method to a situated reader. It does not know two quantities, its *attitude* θ, which way its bar points,
+and the other party's true size relative to its own, κ = V*/H (written b in §3.8); nor, from a reading alone, which of
+the two unit relations the reading was divided by. We take its ignorance of these to be this group:
+1. a *turn* of the bar, θ ↦ θ + α: nothing the reader holds prefers one attitude to another;
+2. a *rescaling* of the other party's size, κ ↦ λκ: the other party's amounts all change by one factor, and no unit
+   relation and no reading changes;
+3. the *exchange* of the two unit relations, v ↔ h, which sends a reading to its flip and θ to 90° − θ (Proposition 1):
+   nothing in a reading says which of the two it was divided by. It acts on readings and on drawings, not on κ: the
+   reader holds H and not V*, and the two breadths cannot be swapped without changing what it knows. That the other is
+   as likely to be larger as smaller, κ and 1/κ alike, is a separate premise, used only for the estimate of the size
+   (Proposition 13(c)).
+
+The turns and the rescalings act on separate unknowns and commute. This is analogous to Jaynes's problem of a location
+and a scale, with the location on a circle, though here the scale acts on no reading: two problems side by side rather
+than one. The measure they leave unchanged is dθ·dκ/κ, their Haar measure (Haar 1933), unique up to a constant factor,
+since f(θ + α, λκ)·λ = f(θ, κ) for all α and λ leaves only k/κ. Jaynes's own group, μ′ = μ + b with σ′ = aσ (1968, eq.
+49), also commutes. The location-and-scale family's group, x ↦ p + qx, does not, and has two invariant measures:
+dμ·dσ/σ, the right-invariant one, which coincides with Jaynes's, and dμ·dσ/σ², the left-invariant one, Jeffreys's
+general rule. Later work has favoured the right-invariant one where the location or the scale is of interest and the
+other a nuisance: it is then Bernardo's reference prior (Bernardo 1979) and gives frequentist coverage exactly (as
+reviewed by Ghosh 2011); with other quantities of interest the left one can be the better (§11.2, question 7). The
+reader's group has one: its turns and rescalings commute, and its exchange is a reflection, so the group is unimodular
+and the measures unchanged by composing on the left and on the right coincide. What the measure gives:
+- *Even in θ*: once the sweep is taken to be the turning of the bar, an even turn (§7.1); which variable the evenness is
+  in is the choice Drory presses (§11.2, question 2). Read as v/h on one facing, with the parties drawn at one length,
+  it is the half-Cauchy with its median at the corner (Proposition 5); signed over both facings, the standard Cauchy.
+  Write a Cauchy law with median m and scale γ as the point m + iγ of the upper half-plane. A turn acts on the signed
+  reading as a Möbius map and carries each Cauchy law to the one at the image point (McCullagh 1996); the standard
+  Cauchy, at i, is the only one every turn leaves where it is. Drawn at V = cH the even turn's readings are the Cauchy
+  law at i/c (Proposition 5(d)); turns in that drawing's plane act on its readings by conjugate maps, which fix i/c, and
+  do not carry all of h into all of v; the exchange carries i/c to ic. So the drawing V = H is selected twice: by the
+  rigid turn, which with c ≠ 1 has no turn from all of h to all of v (Proposition 3(e)), and by the exchange acting on
+  the law of the readings, V = H being the only drawing whose readings favour neither unit relation (Proposition 5(d)).
+- *Even in log κ*: every level of the other's size alike. As an estimate of the size, with nothing to make the other
+  larger rather than smaller (the separate premise above), it gives the median of what is known: the corner √(V₋·V₊) of
+  any bounds, and H itself when what is known is symmetric in levels about H (Proposition 13). It does not lay the
+  readings, which κ never touches. Carried to amounts, a far reading taken as an amount at V = H, the same indifference
+  to scale motivates premise (S) of §6, which gives the logarithmic lay past the corner (Proposition 4): the bridge is
+  the amount, and (S) stays a premise (§11.2, question 1). The lay and the even turn are different measures on the same
+  reading: the even turn is how a sweep steps through attitudes, the lay how the reader places far readings, taken as
+  amounts at V = H, past its own breadth.
+- *The exchange's fixed point*: v = h, θ = 45°, the corner (Proposition 1).
+
+The method is not ours. Three things in its use here are. The first is the group. Which transformations a situated
+reader cannot detect is a statement about its situation, and we choose it as a statement of ignorance rather than derive
+it from anything prior (§11.1). Jaynes phrases his rotation as the observer's: his problem "does not specify whether the
+observer is facing north or east" (1973, §2); here the turn is the bar's attitude. The reader's group differs from his
+in one respect: this reader stands somewhere. His straws are thrown at a circle that may lie anywhere, so his group
+includes the translations, and the measure it gives on lines is Crofton's; on points of the plane, the measure that
+translations and turns keep is area. A situated reader's lines all pass through home, and the transformations that keep
+home where it is are the turns and dilations about it, multiplication of the plane's points by a complex number. The
+measure they leave unchanged on the plane is dx·dy/(x² + y²) = dθ·dr/r: even in direction and even in levels of
+distance, not even in area. Read from home, Bertrand's question has no single answer. For a circle of radius R whose
+centre is at distance D ≥ R, the share of the chords cut by evenly turned rays that are longer than the side of the
+inscribed equilateral triangle is arcsin(R/2D)/arcsin(R/D). From a home on the circle it is ⅓: the rays from a point of
+the circle are the chords from one end, and this is Bertrand's chord between two random ends, holding, as Jaynes found,
+for one size of circle only: here for one ratio of R to D. As the circle recedes, the rays turn parallel and the share
+rises toward Jaynes's ½, which, he argued, is what a tosser whose "region of uncertainty" is large compared with the
+circle will see. Straws tossed since show a similar dependence on a ratio of two lengths: the answer turns on the
+circle's diameter against the straw's length, and reaches ½ only for straws much longer than the circle (Liu and Adams
+2019). The second is what the measure is taken to be. For Jaynes the group's measure is a "pre-prior": not itself a
+realistic state of knowledge, but the invariant measure of the parameter space, on which a prior is then built from what
+is known (1968). Norton (2008) goes further: complete ignorance is not a probability distribution at all, and
+indifference and the invariance of ignorance look paradoxical only when it is taken to be one. Here the measure is not
+built on: it is the reader's addresses, laid before anything arrives, and its main consequence is that the Cauchy
+belongs to the addresses and not to the payload (§7). The third is the near field: within its own breadth the reader
+holds a length, and no position within it is preferred, so equal differences within H get equal room, which is
+proportion (an indifference within the near field, not a translation of home, which stays where it is); the proportional
+and logarithmic lays meet at the exchange's fixed point, where their spacings agree once the logarithm's constant is
+chosen to make the join smooth (§6). A prior for a scale alone has no such corner.
 
 ## 3. The reader
 
@@ -836,13 +943,13 @@ require that no scale be preferred:
 
 > **(S)** r(λx) − r(x) depends on λ alone, for all x, λ ≥ 1.
 
-**Proposition 4.** If r is increasing and satisfies (S), then r(x) = 1 + c·ln x for some c > 0: every doubling receives
-the same number of addresses, c·ln 2. If the far lay also joins the near lay r(x) = x without a kink at the corner, then
-c = 1.
+**Proposition 4.** If r is increasing and satisfies (S), then r(x) = 1 + k·ln x for some k > 0: every doubling receives
+the same number of addresses, k·ln 2. If the far lay also joins the near lay r(x) = x without a kink at the corner, then
+k = 1.
 
 *Proof.* Let g(λ) = r(λ) − 1. Comparing (S) at x = μ with (S) at x = 1 gives r(λμ) − r(μ) = g(λ), so
 g(λμ) = g(λ) + g(μ) for all λ, μ ≥ 1. This is Cauchy's functional equation in multiplicative form, and its only
-increasing solutions are g(λ) = c·ln λ. At x = 1 the near lay has slope 1 and the far lay slope c. ∎
+increasing solutions are g(λ) = k·ln λ. At x = 1 the near lay has slope 1 and the far lay slope k. ∎
 
 Room here is the number of addresses a doubling receives, not its length.
 
@@ -862,7 +969,7 @@ have. Each natural alternative breaks it in just this way:
 The logarithm alone gives room that depends on λ and not on x, and Proposition 4 shows it is the only increasing lay
 that does. (S) does not follow from "any H will do", which only places the corner. It is scale invariance of the lay's
 increments, motivated by Proposition 3(b) and assumed, not derived (§11.2, question 1). Note also that the argument for (S) passes
-through amounts, by way of V = H, and that the smooth join (c = 1) is a further condition rather than a consequence of
+through amounts, by way of V = H, and that the smooth join (k = 1) is a further condition rather than a consequence of
 the flip.
 
 **A second route, through ratios alone.** Relations chain by multiplying: through any middle unit relation m,
@@ -953,10 +1060,14 @@ keeps the division's local scale 1/h but accumulates it, and so lays the same re
 and logarithmically past it. Latitude is the Gudermannian of the map's height, φ = gd(y). It is the oldest instance we
 know of the two address spaces laid out.
 
-**The proportion is in the addresses.** Within a doubling past the corner the addresses are even; how evenly things
-arrive at them is up to the world. If directions are spread evenly (§7), the far share h/v has density proportional to
-1/(1 + (h/v)²), so the arrivals thin toward the corner by 1.6 to 1 across the first doubling past it, 1.18 across the
-second and 1.05 across the third. That unevenness belongs to the payload, not to the addresses.
+**The proportion is in the addresses.** Within a doubling past the corner the lay's addresses are even; how evenly
+things arrive at them is up to the world. If what arrives is spread evenly in direction, as a lighthouse's flashes are
+(§7.8), the far share h/v has density proportional to 1/(1 + (h/v)²), so the arrivals thin toward the corner by 1.6 to 1
+across the first doubling past it, 1.18 across the second and 1.05 across the third. That unevenness belongs to the
+payload, not to the addresses. The two measures are different things on the same reading: the lay places far readings,
+taken as amounts at V = H, past the reader's own breadth, and an even turn is how a sweep steps through attitudes. When
+the even turn is the reader's own sweeping, its law is the law of the reader's sweep, the addresses of §7; when it is
+the sources' spread, it is the world's.
 
 ## 7. The Cauchy distribution is the address, not the payload
 
@@ -1108,7 +1219,7 @@ Jensen's. (d) Over one facing the distribution function is
 (2/π)·arctan(v/h), which is ½ at v/h = 1 and ¼ and ¾ at tan(π/8) = √2 − 1 and tan(3π/8) = √2 + 1; the integral is
 elementary. (e) The exchange carries v/h to h/v and leaves path and weight unchanged, so v/h and 1/(v/h) have one law,
 F(1/x) = 1 − F(x), and by Proposition 2(b) F(1) = ½. Near the horizon v stays above some v₀ > 0, so
-P(v/h > r) ≥ P(h < v₀/r) ≥ κ·v₀/r for large r, where κ bounds the density of h there; then ∫ P(v/h > r) dr diverges, and
+P(v/h > r) ≥ P(h < v₀/r) ≥ q₀·v₀/r for large r, where q₀ > 0 bounds the density of h there from below; then ∫ P(v/h > r) dr diverges, and
 so does the mean. ∎
 
 The theorem is elementary; its content is the reading. The Cauchy distribution is not a law of anything the reader
@@ -1124,7 +1235,7 @@ arrives, never what arrives.
    anything in the world is distributed that way.
 
 Two things are not claimed. The theorem does not show that every real observer samples in equal turns; it shows what a
-reader that does so receives, and why equal turns is the sampling that prefers no attitude (§7.5). Nor does it show that
+reader that does so receives, and why equal turns is the sampling that prefers no attitude (§2, §7.5). Nor does it show that
 every Cauchy distribution met in data has this origin; a Cauchy met as data may have others, and the next paragraph
 says what sets its scale when it is formed from a reading.
 
@@ -1169,8 +1280,9 @@ is in them.
 - *The rings hide; the hand does not.* Two rings on one finger, seen along it, show only the nearer. Every back side is
   made by the payload; the addresses hide nothing.
 - *Three breadths.* In space the fingers spread through a solid wedge and, spread evenly, give the two-variable Cauchy, with
-  density proportional to (1 + |x|²)^(−3/2). Here the corner is no longer the median: only 1 − 1/√2 ≈ 0.29 of the
-  addresses lie within it, and the median of |x| is √3. The median is still an address, though not the corner.
+  density proportional to (1 + |x|²)^(−3/2). Each pair of readings keeps its median at its own corner (Proposition
+  5(e)), but the radius |x| does not: only 1 − 1/√2 ≈ 0.29 of the addresses have |x| ≤ 1, and the median of |x| is
+  √3. That median is still an address, though not a corner.
 
 ### 7.4 The shape is payload
 
@@ -1489,32 +1601,35 @@ Fingers order; rings add.
 
 **The best estimate of the true size.** The geometry requires the drawing V = H (Proposition 3(e), Proposition 5(d)),
 and the drawing says nothing about the world. To read amounts, the reader also needs an estimate of the other party's
-true breadth V*, some cH, by which it scales the amounts the drawing gives: the reading v/h becomes c·(v/h) thumbs. In
-levels that is a shift of log c, the same for every reading, and it leaves the circle and the turn alone. Every amount
-is then off by the factor V*/(cH). Which c is best depends on what the reader knows of V*.
+true breadth V*, some ĉH, by which it scales the amounts the drawing gives: the reading v/h becomes ĉ·(v/h) thumbs. In
+levels that is a shift of log ĉ, the same for every reading, and it leaves the circle and the turn alone. Every amount
+is then off by the factor V*/(ĉH). Which ĉ is best depends on what the reader knows of V*.
 
-**Proposition 13 (the best estimate is the median).** Measure the error by |f(V*) − f(cH)| for an increasing f: in
+**Proposition 13 (the best estimate is the median).** Measure the error by |f(V*) − f(ĉH)| for an increasing f: in
 levels, f = log; in amounts, f the identity.
 
 (a) If the reader knows only that V₋ ≤ V* ≤ V₊, the estimate whose worst error in levels is least is
-cH = √(V₋·V₊), the corner of the pair of bounds. Its worst error is half the range, ½·log(V₊/V₋).
+ĉH = √(V₋·V₊), the corner of the pair of bounds. Its worst error is half the range, ½·log(V₊/V₋).
 
 (b) If the reader holds a distribution for V*, the estimate whose expected error is least is a median of that
 distribution. It is the same median for every increasing f. The mean, best under squared error in amounts, changes with
 f and need not exist.
 
 (c) If nothing the reader knows makes the other larger rather than smaller, so that V*/H and H/V* are alike, (a) and (b)
-both give cH = H, the estimate equal to the drawing.
+both give ĉH = H, the estimate equal to the drawing.
 
-*Proof.* (a) The worst error is the larger of |log V₊ − log cH| and |log V₋ − log cH|, least when log cH is midway
+*Proof.* (a) The worst error is the larger of |log V₊ − log ĉH| and |log V₋ − log ĉH|, least when log ĉH is midway
 between log V₋ and log V₊. (b) E|X − m| is least when m is a median of X. For X = f(V*) a median is f of a median of V*,
 since medians commute with increasing maps, as order does (Theorem 6(b)). (c) The bounds are then H/R and H·R, whose
 geometric mean is H, and log(V*/H) has median 0. ∎
 
-So for a reader that knows nothing to make the other's breadth larger or smaller than its own, the best estimate of
-the true size is its own breadth, the same as the drawing; otherwise it is the median of what the reader knows. The
-drawing V = H is required; the estimate is chosen, and this is how to choose it. The result rests on measuring error by
-order or in levels, the same premise of no preferred scale as (S).
+So for a reader whose knowledge is symmetric in levels about its own breadth, the best estimate of the true size is its
+own breadth, the same as the drawing; otherwise it is the median of what the reader knows. The drawing V = H is
+required; the estimate is chosen, and this is how to choose it. The result rests on measuring error by order or in
+levels, the same premise of no preferred scale as (S). Levels are what the reader's ignorance of the size leaves: an
+error unchanged when the size κ = V*/H and the estimate are rescaled together, and alike for larger and smaller, is a
+function of |ln(κ/ĉ)|, the error in levels, and with absolute loss in levels the best estimate is the median (b)
+(§11.1). As a distribution, dκ/κ restricted to the bounds has its median at √(V₋·V₊)/H, the same estimate (§2).
 
 **The price of a geometry.** Two acts are easily run together, and only one of them is a guess.
 - *Designating* the other party, as (P0) requires, and drawing it at the reader's own breadth, V = H, as the turn
@@ -1522,12 +1637,12 @@ order or in levels, the same premise of no preferred scale as (S).
   the Cauchy of §7. It asserts nothing about the world, since a unit relation lies in [0, 1] however large the other
   breadth is, and it costs nothing. A reader that will not designate a second party has no relation and nothing to
   read: situation 0 (§3.1).
-- *Sizing* the other party, an estimate cH of its true breadth, gives the reader amounts: the mountain in thumbs. That
+- *Sizing* the other party, an estimate ĉH of its true breadth, gives the reader amounts: the mountain in thumbs. That
   is the arbitrary part. By Proposition 13 the reader's best size is the median of what it knows.
 
 So the geometry is free, and the amounts cost one arbitrary number. Sense is then made in three ways.
 1. *The addresses are exact while the scale is wrong.* Directions, the corner, order and every shape up to scale do not
-   depend on c (Theorem 6, Proposition 8(a)). In §10 the fingers and the corners are right while every mile is off by
+   depend on ĉ (Theorem 6, Proposition 8(a)). In §10 the fingers and the corners are right while every mile is off by
    a factor of twenty.
 2. *Several observations construct what one cannot hold.* A second standpoint at a known baseline, or a fact shared
    with another reader, supplies the missing factor, and nothing within the readings does (Propositions 7, 8 and 11).
@@ -1537,7 +1652,7 @@ So the geometry is free, and the amounts cost one arbitrary number. Sense is the
      other's size.
 
 The correction is cheap, and in levels it is exact. When the true size arrives, every reading moves by the same
-log₂(V*/cH) levels, and no address moves against another. A lay that keeps (S) gives every doubling the same room, so
+log₂(V*/ĉH) levels, and no address moves against another. A lay that keeps (S) gives every doubling the same room, so
 the levels keep their widths. The structure was never wrong, only where it sat, and one amount from outside slides it
 into place.
 
@@ -1577,7 +1692,7 @@ division, since only unitless groups of amounts enter a law (Buckingham 1914).
 So three numbers are easily confused, and the geometry needs none of them:
 - the reader's own breadth H, which it chooses for itself and which only moves what sits at its corner, and so what
   it reads finely (a zoom, §8);
-- its estimate of the other party's true breadth, cH, the one arbitrary number in the price of a geometry, best set at
+- its estimate of the other party's true breadth, ĉH, the one arbitrary number in the price of a geometry, best set at
   the median of what it knows (Proposition 13); the drawing itself, V = H, is required and is not a number to choose;
 - the shared unit, which is neither a reading nor a guess but a relation measured beforehand and agreed between
   readers, needed for talking.
@@ -1699,52 +1814,67 @@ shift in levels.
 
 ## 11. Discussion
 
-### 11.1 A candidate single principle
+### 11.1 The principle, after Jaynes
 
-The results above rest on several premises. They may be one. We offer the following as a conjecture.
+With the method of §2, the results above rest on one principle rather than several:
 
 > A situated reader gives equal addresses to whatever its readings cannot tell apart.
 
-That is, the reader's addresses are the measure left unchanged by the transformations it cannot detect: Klein's
-criterion applied to measures. A situated reader's ignorance names three such transformations.
-1. *Which party is which.* Exchanging v and h changes nothing the reader can check. The fixed point of the exchange is
-   the corner (Proposition 1), and fairness (Proposition 2(b)) is this invariance stated as a rule.
-2. *Which attitude the bar is in.* If no turn is preferred, the Euclidean norm is the only norm all turns preserve,
-   giving the circle (Proposition 3(c)), and uniform measure on angle is the only probability measure they preserve,
-   giving equal steps of turn and so the Cauchy and the fisheye (Proposition 5). The circle and the Cauchy then come
-   from one premise.
-3. *How large V is.* Multiplying every far reading by one factor changes nothing the reader can check. The measure
-   invariant under rescaling is dx/x, which gives every doubling the same number of addresses: premise (S), and so the
-   logarithm (Proposition 4).
+This is Jaynes's principle of transformation groups (1968, 1973), read as a rule for addresses rather than for belief,
+and Klein's criterion applied to measures. It is applied to a group chosen as the situated reader's ignorance (§2), and
+what it gives rests on that choice and on two further premises, which we name. Given that the sweep is the turning of a
+rigid bar, the turns give the even turn, and so the Cauchy and the fisheye (Proposition 5); with the bar drawn at V = H
+the attitudes trace the circle (Proposition 3(c)), so the circle and the Cauchy rest on one premise, the rigid turn. The
+exchange of the unit relations gives the corner, and, acting on the law of the readings, the drawing V = H (Proposition
+5(d)), which the rigid turn also requires (Proposition 3(e)); fairness (Proposition 2(b)) is its invariance stated as a
+rule. The rescalings of the other's size give dκ/κ, and, carried to amounts, motivate premise (S) and so the logarithm
+past the corner (Proposition 4); (S) is still assumed (§11.2, question 1).
 
-Inside the corner the reader does hold H, and what remains is that no position within H is preferred: the measure
-invariant under shifts gives proportion. The two address spaces are then one principle on either side of what the
-reader knows. Their spacings, 1 and 1/x per unit, agree at x = 1, so the fixed point of the flip and the meeting of the
-two spaces coincide. The halving of §6 is the same criterion applied to points.
+Inside the corner the reader holds H as a length, and one more indifference applies: no position within H is preferred,
+so equal differences within H get equal room, which is proportion. It is an indifference within the near field, not a
+translation of home, which stays where it is. The two address spaces are then the same principle applied on either side
+of what the reader knows, to different transformations. Their spacings, 1 and k/x, agree at x = 1 only for k = 1, the
+smooth join, which is chosen (below). The halving of §6 is the same criterion applied to points.
 
-The three transformations form one group. On the ratio x = v/h a turn acts as the Möbius map
-x ↦ (x·cos α + sin α)/(cos α − x·sin α) and a rescaling as x ↦ λx. Together they generate PSL(2,ℝ), every element of
-which factors as turn, rescaling, turn; adding the flip x ↦ 1/x gives PGL(2,ℝ), the group that preserves cross ratios.
-The Cauchy family is the one family of distributions this group carries into itself (Knight 1976; McCullagh 1996).
+On the reading itself a different group acts, and it should not be confused with the reader's ignorance. On the signed
+reading x = v/h, over both facings, a turn acts as the Möbius map x ↦ (x·cos α + sin α)/(cos α − x·sin α), and a change
+of the drawing, V = cH, as x ↦ x/c. Together these generate PSL(2,ℝ), every element of which factors as turn, change of
+drawing, turn; adding the flip x ↦ 1/x gives PGL(2,ℝ), the group that preserves cross ratios. The Cauchy family is the
+one family of distributions this group carries into itself (Knight 1976; McCullagh 1996), and as points m + iγ of the
+upper half-plane it is the hyperbolic plane on which the group acts. The drawings V = cH are the points i/c, one line of
+that plane, at distance |ln(c′/c)| from one another, the number of levels between them times ln 2. This group is not the
+reader's ignorance: its change of drawing is not something the reader leaves open, since the drawing is required to be V
+= H, and acting on the readings alone it is too large in Jaynes's sense, with no probability on readings unchanged by
+all of it (the case he calls overdetermined, 1973, §8). It is a fact about the family of drawings, and its one use here
+is to measure distances.
 
-Choosing a measure by the transformations one is ignorant of is Jaynes's method of transformation groups (1968, 1973),
-and dx/x for an unknown scale is Jeffreys's prior (1939). The nearest use of these three transformations together is in
-fitting a line when both coordinates carry error: Leonard (2011) puts the Cauchy, the slope's law invariant under turns,
-on the slope, and the inference that results is unchanged by exchanging and by rescaling the two coordinates. The claim
-would therefore not be the principle itself, but that a situated reader's state of knowledge selects these three
-transformations, from which the structure follows. Two things remain outside it. Invariant measures are fixed only up to
-a constant, so the smooth join at the corner (c = 1) is still an added condition. And "no attitude preferred" still
-treats the sweep as the turning of a rigid bar.
+The estimate of the size is measured by the reader's own ignorance, not by this group. If the error e(κ, ĉ) of an
+estimate ĉH is to be unchanged when the other's size and the estimate are rescaled together, it is a function of κ/ĉ; if
+larger and smaller count alike, of |ln(κ/ĉ)|, the error in levels; and with absolute loss in levels the best estimate is
+Proposition 13's median. The Möbius picture gives the same quantity as a distance: the even turn of the drawn bar, read
+in amounts at the true breadth, is the Cauchy law at iκ, and read at the estimate it is at iĉ; their distance is
+|ln(κ/ĉ)|, the one distance along curves, up to a constant factor, that the action keeps (Beardon 1983).
+
+The nearest use of these three transformations together is in fitting a line when both coordinates carry error: Leonard
+(2011) puts the Cauchy, the slope's law invariant under turns, on the slope, and the inference that results is unchanged
+by exchanging and by rescaling the two coordinates. The claim is therefore not the principle, which is Jaynes's, but
+that a situated reader's state of knowledge selects these transformations, from which, with the premises named above,
+the structure follows. Two things remain outside it. Invariant measures are fixed only up to a constant, so the smooth
+join at the corner (k = 1) is still an added condition. And "no attitude preferred" still treats the sweep as the
+turning of a rigid bar.
 
 Which transformations a reader is ignorant of is chosen here, not derived. A reader ignorant of more or of fewer would
-be given other measures. Because the second of them presupposes turns, the principle cannot choose the circle over the
-square (§11.2, question 2).
+be given other measures. Because ignorance of attitude presupposes turns, the principle cannot choose the circle over
+the square (§11.2, question 2).
 
 **What is claimed, then.** The geometry is necessary relative to a stated ignorance, not absolutely: a reader that does
-not know which party is which, which attitude the bar is in, or how large V is. From that premise come the corner and
-the median (the exchange), the even turn and, with V = H, the Cauchy (the turns, and Proposition 5(d)), and the
-logarithm past the corner (rescaling). Each relaxation gives a named alternative rather than no geometry:
-- a preferred party gives c ≠ 1, and an even turn then puts the Cauchy's median off the corner (Proposition 5(d));
+not know which unit relation a reading was divided by, which attitude the bar is in, or how large the other party is.
+From that premise, with the sweep taken as the turning of a rigid bar, come the corner and the median (the exchange),
+the drawing V = H (the rigid turn, Proposition 3(e), and the exchange acting on the law of readings, Proposition 5(d)),
+the even turn and the Cauchy (the turns), and, through amounts and premise (S), the logarithm past the corner (the
+rescalings). Each relaxation gives a named alternative rather than no geometry:
+- a preferred party, with the bar no longer rigid, gives c ≠ 1, and an even turn then puts the Cauchy's median off the
+  corner (Proposition 5(d));
 - a preferred direction gives the square's or the line's law, with the median at the corner and the missing mean
   intact (Theorem 6(e));
 - a preferred scale gives a lay that stops there (§8, §11.2 question 1).
@@ -1789,6 +1919,35 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    column), because each weight reaches the horizon. The horizon condition does real work: the circle weighted by
    sin² 2θ also treats the two parties alike and keeps its median at the corner, but it vanishes at home and at the
    horizon, and its readings have a mean, 4/π.
+
+   The three classical priors for a share come from this paper's drawings: two of the paths above swept evenly, and
+   the levels. The line's is Bayes and Laplace's even share. The circle's, read at the foot of each of its points on
+   the chord, which cuts the chord h² : v² (Euclid VI.8), is Jeffreys's prior for a share, the arcsine law 1/(π√(t(1
+   − t))) (Jeffreys 1946). The levels give Haldane's, 1/(t(1 − t)), even in the logarithm of the odds (Haldane 1932),
+   Jaynes's for complete ignorance of a share (1968). Each is unchanged by the exchange and has its median at the
+   corner, ½ (Haldane's on any range of levels even about it); below t = ¼ they hold ¼, ⅓ and, over three decades of
+   odds either side, 0.42. Jaynes's own answer to Bertrand, ½, is from this paper's side a situated reader's answer
+   from far off (§2).
+
+   Von Mises's water and wine, the case Jaynes left open as overdetermined (Jaynes 1973, §8), shows the same
+   structure, and his method gives an answer once one premise is added. In the form Mikkelson (2004) states it: a
+   liquid is wine and water, the ratio x of wine to water between 1/3 and 3; what is the chance that x ≤ 2 (von Mises
+   1928)? Indifference over x gives 5/8 and over 1/x gives 15/16, each favouring one liquid, and any answer between ½
+   and 1 can be had (Deakin 2006, as Parker and Jeynes 2023 report it). Answers that treat the two liquids alike, 5/6
+   (even in the share of wine; Mikkelson 2004), about 0.764 (even along the hyperbola xy = 1; Burock 2005, as stated
+   by Gerville-Réache 2016), the mean of 5/8 and 15/16, 25/32 (which Mikkelson considers and rejects), and the levels
+   and the even turn of this paper, 0.815 and 0.847, all put the chance of x ≤ 1 at ½, the corner, and part past it.
+   Parker and Jeynes (2023) reach 0.816 from scale invariance through Benford's law (Benford 1938) and maximum
+   entropy, by a law that does not treat the liquids alike. Nothing in the statement fixes the unit in which either
+   liquid is measured, and a change of one liquid's unit multiplies x by a constant. If, as Jaynes required of the
+   chord, one law is to hold on every range of x (its restriction to a smaller range is the law there), a premise the
+   problem does not state, then a law unchanged by such a change is a power of x, and the exchange of the liquids
+   leaves dx/x alone, the levels, and the answer ln 6/ln 9 ≈ 0.815. The mean of 5/8 and 15/16 is also unchanged by
+   the unit, but it is no single law: it weighs its two parts afresh on each range. In Jaynes's own form (at least
+   half wine; what is the chance of at least three-quarters?) the range of x is unbounded, and no proper law on it is
+   unchanged by a change of unit: his overdetermination. Bounded at 2^L, the levels give 1 − (log₂ 3)/L, so an answer
+   needs the range held. With volume agreed beforehand as the common unit, the completed view's even share, 5/6, is
+   available instead; the problem's statement does not say which reading von Mises meant.
 3. *No measure on a level.* Is there a principled reason a level could not carry a measure before anything arrives?
 4. *Fairness.* Proposition 2(b) needs the reading to treat both sides alike although the reader's knowledge does not.
    Is that more than a choice?
@@ -1796,8 +1955,32 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    the circle", and the two are one question about the measure on directions.
 6. *V = H.* Answered: the drawing V = H is required, for the turn (Proposition 3(e)) and for the Cauchy, forward and
    working back from it (Proposition 5(d)). The estimate of the true size is Proposition 13's: the median of what the
-   reader knows, and H when it knows nothing either way. What remains open is whether measuring that estimate's error
-   by order or in levels is itself forced.
+   reader knows, and H when what it knows is symmetric in levels about H. If the error of that estimate is to be
+   unchanged when the size and the estimate are rescaled together, and alike for larger and smaller, it is a function of
+   the error in levels (§11.1), and with absolute loss the best estimate is the median. What remains open is the group
+   itself.
+7. *Measures that cannot be normalized.* The reader's measure for the other's size, dκ/κ, has no total over all sizes,
+   and such measures on a nuisance can produce the marginalization paradoxes of Stone and Dawid (1972) and Dawid, Stone
+   and Zidek (1973). One reasoner integrates the nuisance out of the full data; another reasons from statistics whose
+   law does not involve it; no prior lets the second reproduce the first. The paradox does not reach the reader's size,
+   for a reason that is short to state. Let the data be amounts ℓ = η·w, a vector of n, with w drawn from a joint law
+   g(w | ζ) whose parameter ζ no rescaling touches, and η a scale. Under the nuisance measure dη/η the first reasoner's
+   likelihood for ζ is ∫ η^(−n−1) g(ℓ/η | ζ) dη, which the substitution η = 1/λ makes ∫ λ^(n−1) g(λℓ | ζ) dλ. The second
+   reasoner uses the data's direction u = ℓ/|ℓ|, which no η touches; its law is found by setting η = 1 and integrating
+   the length r = |ℓ| out with its Jacobian, ∫ r^(n−1) g(r·u | ζ) dr, and putting r = λ|ℓ| shows this is |ℓ|^n times the
+   first. So under dη/η the two reasoners reach the same conclusion about ζ with the same prior, whatever the law g and
+   whatever the signs of the data. In their own examples the paradox comes from other powers of η (in Stone and Dawid's
+   exponentials, an even prior on the rate); in some laws, a gamma for one, another power produces no paradox but moves
+   the prior on ζ instead. This is their group condition as Jaynes (1980) reports it: the paradox is avoided by the
+   nuisance's own invariant measure. The reader's size is such a nuisance, and dκ/κ is the one invariant measure its
+   rescalings have; with it a reader that integrates the size out of amounts concludes what a reader of the data's
+   direction alone concludes, the ratios with their overall sign: the address reading of Theorem 6, met from the side of
+   inference. Two cautions. Which of the location-and-scale family's two measures avoids the paradox depends on what is
+   of interest: with μ/σ of interest the nuisance σ at fixed μ/σ carries dσ/σ, which is dμ·dσ/σ² in (μ, σ), Jeffreys's
+   rule, while dμ·dσ/σ, Jaynes's, produces the paradox there; §2's note that later work favours the right-invariant
+   measure holds where the location or the scale is of interest. And whether the paradox shows improper measures
+   inconsistent at all is disputed (Jaynes 1980; Wallstrom 2003); the reader's lay is in any case finite, its levels
+   counted.
 
 If the principle of §11.1 stands, questions 1 and 2 become one: whether a situated reader's ignorance is exactly these
 three transformations.
@@ -1815,7 +1998,8 @@ three transformations.
 ### 11.3 Related work
 
 The pieces are classical: the flip x ↦ 1/x, the Cauchy as the projection of a uniform angle and its Möbius invariance,
-Cauchy's functional equation, Klein's Erlangen programme (1872), and Jaynes's and Jeffreys's invariant priors. Near
+Cauchy's functional equation, Klein's Erlangen programme (1872), and Jaynes's and Jeffreys's invariant priors, the
+first of which this paper builds on (§2). Near
 neighbours in measured perception include Gilinsky's perceived distance with a finite horizon (1951), Schwartz's
 log-polar map of visual cortex, proportional near the fovea and logarithmic beyond (1977), and the number-line
 literature, from logarithmic-to-linear shifts (Siegler and Opfer 2003; Dehaene et al. 2008) to proportion judgment on
@@ -1842,6 +2026,9 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | V, V₂ | drawn | the other parties' wholes as the reader draws them, at H (§5) |
 | V* | an amount | a party's true breadth: never read; estimated (§9) or supplied from outside |
 | v/h, h/v | geometry | the reading before and past the corner |
+| θ, κ | what the reader does not know | its attitude, which way its bar points; the other's size relative to its own, κ = V*/H (b in §3.8). Turns of θ and rescalings of κ leave dθ·dκ/κ unchanged; the exchange acts on readings and drawings, not on κ (§2) |
+| m + iγ | geometry | a Cauchy law of the signed reading with median m and scale γ, as a point of the upper half-plane; the even turn drawn at V = cH is i/c (§2, §11.1) |
+| c, ĉ | drawn; an estimate | c: the drawing V = cH, required to be 1 (Propositions 3(e), 5(d)); ĉ: the estimate ĉH of the true breadth V* (Proposition 13) |
 | a, z | geometry | altitude, from the horizontal up to the vertical (the sweep from H to V), and azimuth, round the horizontal from h to v₂ (the sweep that brings in V₂); v₂/h = tan z, v/√(h² + v₂²) = tan a (§2) |
 | the corner | geometry | v = h |
 | home, the horizon | geometry | v/h = 0; v/h → ∞, never reached |
@@ -1867,11 +2054,22 @@ Archimedes (c. 225 BC). *On the Sphere and Cylinder*.
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.
 
+Beardon, A. F. (1983). *The Geometry of Discrete Groups*. Graduate Texts in Mathematics 91. Springer, New York.
+
+Benford, F. (1938). The law of anomalous numbers. *Proceedings of the American Philosophical Society* 78(4), 551–572.
+
+Bernardo, J. M. (1979). Reference posterior distributions for Bayesian inference. *Journal of the Royal Statistical
+Society B* 41(2), 113–128.
+
+Bertrand, J. (1889). *Calcul des probabilités*. Gauthier-Villars, Paris.
+
 Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
 Review* 4(4), 345–376.
 
 Buffon, G.-L. Leclerc, comte de (1777). Essai d'arithmétique morale. In *Histoire naturelle, générale et particulière*,
 Supplément, tome 4. Imprimerie royale, Paris.
+
+Burock, M. (2005). Indifference, sample space, and the wine/water paradox. Preprint, PhilSci Archive 2487.
 
 Cacoullos, T. (2014). Polar angle tangent vectors follow Cauchy distributions under spherical symmetry. *Journal of
 Multivariate Analysis* 128, 147–153.
@@ -1883,6 +2081,12 @@ Crofton, M. W. (1868). On the theory of local probability, applied to straight l
 *Philosophical Transactions of the Royal Society of London* 158, 181–199.
 
 Cuadras, C. M. (2002). Geometrical understanding of the Cauchy distribution. *Qüestiió* 26(1–2), 283–287.
+
+Dawid, A. P., Stone, M. and Zidek, J. V. (1973). Marginalization paradoxes in Bayesian and structural inference.
+*Journal of the Royal Statistical Society B* 35(2), 189–233.
+
+Deakin, M. A. B. (2006). The wine/water paradox: background, provenance and proposed resolutions. *Gazette of the
+Australian Mathematical Society* 33(3), 200.
 
 Dehaene, S., Izard, V., Spelke, E. and Pica, P. (2008). Log or linear? Distinct intuitions of the number scale in Western
 and Amazonian indigene cultures. *Science* 320, 1217–1220.
@@ -1899,10 +2103,20 @@ Frank, S. A. (2014). How to read probability distributions as statements about p
 
 Frank, S. A. and Smith, D. E. (2010). Measurement invariance, entropy, and probability. *Entropy* 12(3), 289–303.
 
+Gerville-Réache, L. (2016). Mettre de l'eau dans du vin, un paradoxe de l'indifférence ? *Implications
+philosophiques*, 12 December 2016.
+
+Ghosh, M. (2011). Objective priors: an introduction for frequentists. *Statistical Science* 26(2), 187–202.
+
 Gilinsky, A. S. (1951). Perceived size and distance in visual space. *Psychological Review* 58, 460–482.
 
 Gull, S. F. (1988). Bayesian inductive inference and maximum entropy. In G. J. Erickson and C. R. Smith (eds),
 *Maximum-Entropy and Bayesian Methods in Science and Engineering*, vol. 1, 53–74. Kluwer, Dordrecht.
+
+Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *Annals of Mathematics* 34(1), 147–169.
+
+Haldane, J. B. S. (1932). A note on inverse probability. *Proceedings of the Cambridge Philosophical Society* 28(1),
+55–61.
 
 Haraway, D. (1988). Situated knowledges: the science question in feminism and the privilege of partial perspective.
 *Feminist Studies* 14(3), 575–599.
@@ -1911,7 +2125,14 @@ Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science
 
 Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3(4), 477–493.
 
+Jaynes, E. T. (1980). Marginalization and prior probabilities. In A. Zellner (ed.), *Bayesian Analysis in
+Econometrics and Statistics: Essays in Honor of Harold Jeffreys*. North-Holland, Amsterdam. Reprinted in R. D.
+Rosenkrantz (ed.) (1989), *E. T. Jaynes: Papers on Probability, Statistics and Statistical Physics*, Reidel, 337–375.
+
 Jeffreys, H. (1939). *Theory of Probability*. Oxford University Press.
+
+Jeffreys, H. (1946). An invariant form for the prior probability in estimation problems. *Proceedings of the Royal
+Society of London A* 186(1007), 453–461.
 
 Jones, M. C. (1999). Distributional relationships arising from simple trigonometric formulas. *The American
 Statistician* 53(2), 99–102.
@@ -1928,15 +2149,18 @@ Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschu
 Knight, F. B. (1976). A characterization of the Cauchy type. *Proceedings of the American Mathematical Society* 55,
 130–135.
 
+Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten*. Berlin.
+
 Lamping, J., Rao, R. and Pirolli, P. (1995). A focus+context technique based on hyperbolic geometry for visualizing
 large hierarchies. *Proceedings of CHI '95*, 401–408.
 
 Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*
 5(4), 437–459.
 
-Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten*. Berlin.
-
 Leonard, D. (2011). Estimating a bivariate linear relationship. *Bayesian Analysis* 6(4), 727–754.
+
+Liu, Z. and Adams, C. S. (2019). Experimental tests of Bertrand's question and the Duhem–Quine problem. *European
+Journal of Physics* 40(6), 065801.
 
 Longuet-Higgins, H. C. (1981). A computer algorithm for reconstructing a scene from two projections. *Nature* 293,
 133–135.
@@ -1953,10 +2177,19 @@ Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium 
 
 Microsoft. Bing Maps Tile System (documentation).
 
+Mikkelson, J. M. (2004). Dissolving the wine/water paradox. *British Journal for the Philosophy of Science* 55(1),
+137–145.
+
+von Mises, R. (1928). *Wahrscheinlichkeit, Statistik und Wahrheit*. Springer, Vienna.
+
 Munro, J. I. and Paterson, M. S. (1980). Selection and sorting with limited storage. *Theoretical Computer Science*
 12(3), 315–323.
 
 Nagel, T. (1986). *The View from Nowhere*. Oxford University Press.
+
+Norton, J. D. (2008). Ignorance and indifference. *Philosophy of Science* 75(1), 45–68.
+
+Parker, M. C. and Jeynes, C. (2023). A maximum entropy resolution to the wine/water paradox. *Entropy* 25(8), 1242.
 
 Pitman, E. J. G. and Williams, E. J. (1967). Cauchy-distributed functions of Cauchy variates. *Annals of Mathematical
 Statistics* 38(3), 916–918.
@@ -1984,6 +2217,12 @@ Stevens, S. S. (1946). On the theory of scales of measurement. *Science* 103(268
 Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the Cauchy distribution. *Biometrika*
 61(2), 375–380.
 
+Stone, M. and Dawid, A. P. (1972). Un-Bayesian implications of improper Bayes inference in routine statistical
+problems. *Biometrika* 59(2), 369–375.
+
 Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII*. Tours.
+
+Wallstrom, T. C. (2003). The marginalization paradox does not imply inconsistency for improper priors. arXiv
+math/0310006.
 
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.
