@@ -182,3 +182,104 @@ singular end at 0, 10⁻¹⁰⁴ at 200 digits.
 - **P5′.** As P5, with every quadrature of the family q·r^(q − 2)/(2πR^q) and of the endpoint law at 200 working digits.
   **Killed if** any clause of P5 fails at its bound.
 P1, P3, P4, P6 and P7 are not rerun as new predictions; run 2 repeats them unchanged.
+
+### Run 2 (14 October; `python3 jay/jay.py`, 6.5 minutes on three cores)
+
+```
+P1: not killed. invariant candidates: ['1/x']; worst level mass - ln 2: 0.0; Haldane invariant and ds/s = dt/(t(1-t)) exactly: True
+P2: not killed. pushforward = Cauchy(g(z)) to 7.78e-61; turns move i by 0.0, least move of z != i 0.124; arcsine = even turn's foot to 5.81e-61; Fisher-Rao length - 2θ 9.57e-60; octant moments = Dirichlet(½,½,½) to 3.11e-61
+P3: not killed. fixed point only at 1; f(s) = f(1/s)/s² exactly for the line, the turn, the levels: True; arcsine symmetric to 7.78e-61; medians at ½; below t = ¼: 0.25, 0.3333, 0.4205
+P4: not killed. dθ·dκ/κ unchanged by turns, rescalings and the exchange, exactly: True; fixed point (45°, κ = 1); median of dκ/κ on bounds = √(V₋V₊) to 3.89e-61
+P5: not killed. Crofton: ½ at every centre and radius, exactly: True; the family normalized and kept under scale, 2^-q, to 2.33e-61; endpoints ⅓ (0.333333), fits a power: False; situated: ⅓ on the circle (3.89e-62 off), rising: True, ½ − 6.25e-18 at 10⁸R, 0.482584 at D = 2R (counted 0.48254 ± 0.00087)
+P6: not killed. dx·dy/(x²+y²) unchanged by every z -> az, exactly: True; area passes for some |a| ≠ 1: False
+P7: not killed. readings at V = cH Cauchy(0, c) to 6.25e-56; distance i to ci = |ln c| to 2.49e-60; kept by maps and the exchange to 8.25e-59
+```
+
+P2′ and P5′ not killed; P1, P3, P4, P6 and P7 as in run 1, to the digit. Notes:
+- Two attempts before this one gave no verdict and are not runs. The first was stopped by my own 15-minute limit on the
+  command, before anything printed. The second ran the 2,000 arcsine quadratures on four cores and a worker was killed
+  for memory: mpmath keeps the nodes of every interval it integrates over, and at 200 digits 2,000 intervals took
+  about 14 GB (one process reached it; the test run beside it lost its browser page the same way). The script now drops
+  each interval's nodes after use and keeps the standard ones; memory stays near 35 MB a process. The rule, the
+  precision and the comparisons are unchanged.
+- P5's far value, ½ − 6.25 × 10⁻¹⁸ at D = 10⁸R, is the closed form's own approach to ½, from below by R²/(16D²) to
+  leading order, within the 10⁻¹⁵ bound; not rounding.
+
+**What it shows.** The measures Jaynes's method gives for a situated reader's stated ignorance are the corpus's: a
+rescaling of the other's size fixes 1/x, every level alike, and on a share Haldane's prior; a turn fixes the even
+turn, the Cauchy law at the one point i of the upper half-plane that every turn and the exchange leave, and read at
+the arc's foot on the chord Jeffreys's prior, the Fisher–Rao length being the facing; the exchange fixes the corner and
+the median, not the law; together, turn and rescaling give Jaynes's location and scale on a circle, dθ·dκ/κ, with the
+median of any bounds at their corner, Proposition 13's estimate. Jaynes's ½ for Bertrand's chord is Crofton's measure;
+read from home the same question gives arcsin(R/2D)/arcsin(R/D), Bertrand's ⅓ from a home on the circle rising toward
+½ as the circle recedes; and the measure that keeps home fixed is log-polar, not area. The drawings V = cH lie on a
+line of the hyperbolic plane, levels its distance. All classical; what is checked is the bookkeeping that makes them
+the corpus's lay, sweep, corner and estimate. That a situated reader's ignorance is exactly this group stays a choice.
+
+### Jaynes's text, read (14 October, after run 1)
+
+The papers could not be fetched at first: their hosts were outside the cloud environment's network access, which was the
+default setting, Trusted (GitHub and the package registries only), not a rule of Tom's. Tom set it to Full (about 12:06,
+"done"), and both papers were then read in full from the author's copies at bayes.wustl.edu (Jaynes's own retyped
+versions; not committed): `prior.pdf`, 10 pages, sha256 d1e8bfbce2321146ce78d862abe7a7aaca6aa6e42bc9a32b77ddac718bbc8cfd;
+`well.pdf`, 10 pages, sha256 7b792e23c2ccbd39a8d40eff0c72e62576216de9e5bfe927550d06f413abe5cd. The items marked
+(check) above, item by item; the text above the "Runs" line is left as written.
+
+**1968, "Prior Probabilities".**
+- *Location and scale* (§VII, eqs. 47–54): the group μ′ = μ + b, σ′ = aσ; the functional equation
+  f(μ, σ) = a·f(μ + b, aσ); its solution const/σ, "which is the Jeffreys rule". Stands.
+- *A rate* (eqs. 55–58): two observers whose watches run at different rates; f(λ) = q·f(qλ); the prior dλ/λ. Stands.
+- *An unknown share* (eqs. 59–68): "a large population of individuals who hold varying beliefs about the probability of
+  success", all given one more piece of evidence E; Bayes's theorem maps each belief θ to θ′ = aθ/(1 − θ + aθ) (62),
+  a = p(E | SX)/p(E | FX), so every belief's odds are multiplied by a; "total confusion" is the population unchanged by
+  it; the solution f(θ) = const/(θ(1 − θ)) (68), "which has the qualitative property anticipated by Jeffreys". It is in
+  the 1968 paper, not only the later book. Jaynes does not name Haldane; the name is ours (Haldane 1932). With r
+  successes in n trials the posterior mean is r/n, and the Bayes–Laplace uniform prior is the posterior after one
+  success and one failure. Stands.
+- *The discussion* (headed "VII" a second time in this copy, between VII and IX): when the group has as many parameters
+  as the problem, the group's "fundamental domain … reduces to a point and the form of the prior is uniquely
+  determined"; with the change of scale alone, f = k(μ)/σ, k arbitrary. The principle is "indifference between problems,
+  rather than indifference between events". The group's measures cannot be normalized: "The pre-prior distribution
+  resulting from a transformation group does not strictly represent any realistic state of knowledge, but it does
+  define the invariant measure for our parameter space." Bertrand is mentioned: invariance under infinitesimal
+  displacements of the circle "uniquely determines the solution", the proof deferred to 1973.
+
+**1973, "The Well-Posed Problem".**
+- *The three answers* (§1): uniform density of (A) the distance between the centres of chord and circle, ½; (B) the
+  angles of intersection on the circumference, ⅓; (C) the chord's centre over the area, ¼. Ten authors' views are
+  quoted in an appendix. The invariant measure on lines is credited to Poincaré (1912) and Kendall and Moran (1963), the
+  density (u² + v²)^(−3/2) for the line ux + vy = 1: Crofton's measure in those coordinates.
+- *Rotation* (§2): "the statement of the problem does not specify whether the observer is facing north or east"; so
+  f(r, θ) = f(r). Rotational symmetry is "irrelevant to the distribution of chord lengths".
+- *Scale* (§3): a concentric circle of radius aR; the functional equation (6); its normalized solutions
+  f(r) = q·r^(q − 2)/(2πR^q) (7), q > 0 not fixed by scale. B is eliminated: it "could be true for, at most, only one
+  size of circle"; A (q = 1) and C (q = 2) remain. Stands, the form and the order of steps as the plan had them.
+- *Translation* (§4–5): two equal circles a distance b apart; equal probabilities for corresponding regions if and only
+  if q = 1; f(r, θ) = 1/(2πRr) (12); the chord-length law x dx/√(1 − x²), x = L/2R (13), Borel's conjecture (1909).
+  Jaynes adds that translation alone already fixes (12): scale "was not really necessary".
+- *Frequency correspondence and the experiment* (§6): any rain of straws that does not give (13) gives different
+  distributions on different circles, so (13) is what a tosser whose "region of uncertainty" is large compared with the
+  circle will see. Jaynes and Charles E. Tyler tossed broom straws from a standing position onto a 5-inch circle drawn
+  on the floor; in ten categories of chord length, "128 successful tosses confirmed Eq. (13) with an embarrassingly low
+  value of chi-squared". Stands (128).
+- *Conjectures* (§8): von Mises's water and wine is "overdetermined": "so many things are left unspecified that the
+  invariance group is too large, and no solution can conform to it".
+
+**One correction to the plan's sources.** The 2018 experiment is Liu and Adams, "Experimental tests of Bertrand's
+question and the Duhem–Quine problem" (arXiv 1806.00308, abstract read through arXiv's API): the answer depends on the
+ratio of the circle's diameter to the straw's length, 2R/L, and Jaynes's ½ (the case they identify with Laplace's
+principle of indifference) is reached only in the limit 2R/L → 0, straws of unbounded length; they see a systematic
+discrepancy near 2R/L → 1. Not "answers between 0 and ½", as the plan had it from a search result.
+
+**What the reading changes in the papers** (Claude's, unruled):
+- Jaynes's rotation is already an observer's facing; the reader's turn is its bar's attitude.
+- His group measure is a "pre-prior", the invariant measure a prior is built on, not a state of knowledge. That is
+  nearer the corpus's addresses than the plan's "a distribution of belief"; OFS §2 now says so.
+- A group with more parameters than the problem leaves it overdetermined. The turns and rescalings, acting on the
+  reading alone, generate PSL(2,ℝ), under which no probability on readings is unchanged; acting on the two unknowns,
+  attitude and size, they are as many as the problem and fix dθ·dκ/κ (OFS §11.1).
+- Liu and Adams's answer depends on a pair of lengths (2R, L) as P5(c)'s does on (R, D), and in both Jaynes's ½ is a
+  limit: unbounded straws, a circle far off.
+- Von Mises's water and wine is a ratio of two parties. With bounds on the ratio, the exchange and rescaling give dκ/κ
+  on them and the median at the bounds' corner, Proposition 13's estimate (for wine to water between 1 and 3, √3);
+  Jaynes left it open. Not tested here; whether others have resolved it this way is to check.
