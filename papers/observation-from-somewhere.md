@@ -97,7 +97,10 @@ standpoint; this is classical geometry. Between two points it holds the straight
 circle comes after the chord, drawn on it by turning. A *situated* reader has a facing, and holds only the arc it turns
 through. Either it takes in a hemisphere at once, from outside (a parallel reader), or it sweeps the hemisphere from
 home, one direction at a time (a serial reader). Their figures are the bell and the fisheye. These two are not the
-only situated views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The three read the same thing differently: a line
+only situated views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is
+where the truth lies: a system's true breadths, as shares of their whole, are one point of it. A reader's drawing, every
+party at its own H, is the sum's centre, where every pair is at its corner; the geometry follows from there, and the
+truth lies off the centre by the ratios the reader lacks. The three read the same thing differently: a line
 of true breadth 1 reads 1 to the completed view, π/2 to the hemisphere turned away from the reader and 2/π to the
 hemisphere turned toward it. The true breadth is had only with both hemispheres in hand, which no single observation
 provides. A situated reader can construct it from several observations, but it cannot observe it. Many apparent
@@ -205,6 +208,13 @@ whole has shares. It is the completed view's own drawing, the line (the chord) f
 triangle for three. Every other drawing is built from a standpoint. Dividing by one unit relation chooses a facing;
 dividing by the largest chooses a register, reading v/h up to the corner and h/v past it; dividing by length needs a
 turn. The two hemispheres of §3.4 are two such drawings, not the only ones.
+
+The sum also shows where a reader stands. A system's true breadths, taken as shares of their whole, are one point of
+the triangle, and no common unit moves it. A situated reader does not have that point. It chooses H, which sets only
+its zoom (§8), and draws every other party at it, V = V₂ = H: equal shares, the triangle's centre (⅓, ⅓, ⅓), which is
+the triple corner, where every pair is at its corner. The rest of the geometry follows from that drawing. The true point
+lies off the centre by the two ratios the reader lacks, V*/H and V₂*/H (§3.8); amounts brought from outside move the
+reader's amounts toward it and redraw nothing (§9).
 
 **Two sweeps: altitude and azimuth.** A reader reaches the wedge of three unit relations by two sweeps, the coordinates
 an observer uses for its own sky (Smart 1977). Take v as the vertical and h and v₂ as the horizontal plane, h the

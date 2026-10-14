@@ -34,11 +34,15 @@
         (cos a cos z, sin a, cos a sin z). The flat triangle h + v + v₂ = 1 needs no sweep: the unsituated view. 1,600 points
         of the wedge swept evenly in both angles (v ≤ h for 0.3426, h largest 0.2326) or evenly over the wedge, the azimuth
         even and the height v even (Archimedes' hat-box; ½, ½, ½ and ⅓). The inset is Lambert's equal-area map, (z, v).
+        On the triangle (R238; Tom: "so the truth is h+v+v2=1; user sets h zoom and assigns v and v2 to be equal to it,
+        and the entire geometry is revealed"): the reader's drawing V = V₂ = H is its centre (⅓, ⅓, ⅓), the triple corner;
+        a true point, the true breadths as shares, (1, V*/H, V₂*/H)/(1 + V*/H + V₂*/H), lies off it (?vs=&v2s=, the two
+        ratios the reader lacks; 3 and ½ by default).
     three.js 0.160.0 (MIT) loads from the jsDelivr CDN, pinned, through an import map (Tom, 13 October: "remove three.js
     from the repositiory, use the cdn. things can be loaded from outside"). If it cannot be fetched the page says so.
     The smoke test serves the same version from node_modules (a devDependency), so it does not depend on the CDN.
-    Links: ?step=1..7&e=0.5&known=0&t=0.6&wedge=1&rays=0&turn=0, and for step 7 &alt=&az= (degrees)&even=angles|area.
-    Test hook: window.__sphereCube (with sweeps: direction, readings, exact, counted, topShare, lambert).
+    Links: ?step=1..7&e=0.5&known=0&t=0.6&wedge=1&rays=0&turn=0, and for step 7 &alt=&az= (degrees)&even=angles|area&vs=&v2s=.
+    Test hook: window.__sphereCube (with sweeps: direction, readings, exact, counted, topShare, lambert, truth, centre).
     -->
     <style>
     :root { color-scheme: dark; --ground: #07070b; --panel: rgba(18,18,26,0.78); --line: rgba(255,255,255,0.10);
@@ -237,6 +241,9 @@ function sweepCounted(mode) {
     for (const [h, v, v2] of P) { vh += v <= h; v2h += v2 <= h; v2v += v2 <= v; near += h >= v && h >= v2; }
     return { vh: vh / n, v2h: v2h / n, v2v: v2v / n, near: near / n, n };
 }
+// the truth on the triangle h + v + v₂ = 1 (R238): the true breadths as shares, scale-free; the reader's drawing is the centre
+const truthPoint = (r1, r2) => { const t = 1 + r1 + r2; return [1 / t, r1 / t, r2 / t]; };
+const CENTRE = [1 / 3, 1 / 3, 1 / 3];
 const topShare = mode => SWEEP_PTS[mode].filter(d => d[1] >= 0.75).length / SWEEP_PTS[mode].length;   // height in the top quarter
 function lambert(z1, z2, v1, v2) {                                 // the wedge's area over a patch of (z, v): the sphere's element
     const area = simpson(a => Math.cos(a), Math.asin(v1), Math.asin(v2), 400) * (z2 - z1) * RAD;
@@ -249,6 +256,7 @@ const state = {
     step: Math.min(7, Math.max(1, +qs.get('step') || 3)),
     alt: qs.has('alt') ? Math.max(0, Math.min(90, +qs.get('alt'))) : 60, az: qs.has('az') ? Math.max(0, Math.min(90, +qs.get('az'))) : 15,
     even: qs.get('even') === 'area' ? 'area' : 'angles', sweepAnim: false,
+    vs: Math.max(0.01, +qs.get('vs') || 3), v2s: Math.max(0.01, +qs.get('v2s') || 0.5),     // V*/H and V₂*/H, never read
     lgE: qs.has('e') ? Math.max(-5, Math.min(0, Math.log2(+qs.get('e') || 0.5))) : -1,
     known: qs.get('known') !== '0', t: Math.max(0.02, Math.min(1, +qs.get('t') || 0.6)),
     wedge: qs.get('wedge') === '1', rays: qs.get('rays') !== '0', turn: qs.get('turn') === '1',
@@ -267,7 +275,7 @@ const CAPTIONS = {
     4: ['any size', '<b>Any size, the extent known.</b> A point inside the cube is t of the way along its ray, t from 0 to 1: a unit relation. The address (the direction and t) is the same at every size of the cube; the point in amounts is the extent e times it.'],
     5: ['extent unknown', '<b>The extent unknown.</b> A reader that does not know e draws the cube at its own breadth, e = H: the mountain set equal to the thumb. Every address is still right; every amount is off by the true e/H, the same number of levels everywhere.'],
     6: ['the wedge', '<b>The wedge.</b> One observation makes one wedge, h, v, v₂ ≥ 0, with V = V₂ = H. Swept evenly, its readings (v/h, v₂/h) are the two-dimensional Cauchy: its three faces take a third each, so the reader is near in both readings a third of the time, and a face\'s middle quarter takes 38% of its points.'],
-    7: ['two sweeps', '<b>Two sweeps: altitude and azimuth.</b> The hand reaches the wedge as an observer reaches its sky: raised from the horizontal to the vertical, the <span class="teal">altitude</span>, the sweep from H to V; turned round the horizontal from h to v₂, the <span class="violet">azimuth</span>, which brings in V₂. Each has its corner at 45°. The flat triangle h + v + v₂ = 1 needs no sweep. Swept evenly in both angles, the pair neither sweep reads leaves its corner; swept evenly over the wedge, the height is even (Archimedes) and every pair keeps it.']
+    7: ['two sweeps', '<b>Two sweeps: altitude and azimuth.</b> The hand reaches the wedge as an observer reaches its sky: raised from the horizontal to the vertical, the <span class="teal">altitude</span>, the sweep from H to V; turned round the horizontal from h to v₂, the <span class="violet">azimuth</span>, which brings in V₂. Each has its corner at 45°. The flat triangle h + v + v₂ = 1 needs no sweep: the truth is a point of it, and the reader\'s drawing, V = V₂ = H, its centre. Swept evenly in both angles, the pair neither sweep reads leaves its corner; swept evenly over the wedge, the height is even (Archimedes) and every pair keeps it.']
 };
 const STEP_SET = {
     1: { rays: false, wedge: false, known: true, turn: false },
@@ -479,6 +487,19 @@ sweepG.add(labAz, labAlt);
     sweepG.add(new THREE.Line(ge, new THREE.LineBasicMaterial({ color: 0xece9f4, transparent: true, opacity: 0.6 })));
     const l = label('h + v + v₂ = 1: no sweep', '#ece9f4', 0.06); l.position.set(0.5, -0.09, 0.56); sweepG.add(l);
 }
+// the reader's drawing, V = V₂ = H, at the triangle's centre; a true point beside it, off by V*/H and V₂*/H
+const centreBead = bead(0.028, 0xece9f4); centreBead.position.set(...CENTRE); sweepG.add(centreBead);
+const truthBead = bead(0.03, 0xe8826d); sweepG.add(truthBead);
+const truthRod = rod(0xe8826d, 0.006, 0.9); sweepG.add(truthRod);
+const labCentre = label('V = V₂ = H: the reader\'s drawing', '#ece9f4', 0.052); sweepG.add(labCentre);
+const labTruth = label(`the truth: V*/H = ${+state.vs.toFixed(2)}, V₂*/H = ${+state.v2s.toFixed(2)}`, '#f09a86', 0.058); sweepG.add(labTruth);
+function placeTruth() {
+    const t = truthPoint(state.vs, state.v2s);
+    truthBead.position.set(...t);
+    labCentre.position.set(CENTRE[0] - 0.02, CENTRE[1] + 0.085, CENTRE[2] + 0.02);
+    labTruth.position.set(t[0] + 0.06, t[1] + 0.07, t[2] + 0.02);
+    return t;
+}
 function setLine(line, pts) {
     const a = line.geometry.attributes.position.array;
     pts.forEach((p, i) => a.set(p, i * 3)); line.geometry.attributes.position.needsUpdate = true;
@@ -514,6 +535,7 @@ function updateSweeps(dt) {
         al.push(sweepDir(s * state.alt, state.az).map(c => c * 0.64));
     }
     setLine(azArc, az); setLine(altArc, al); setFan(azFan, az); setFan(altFan, al);
+    placeRod(truthRod, CENTRE, placeTruth());
     labAz.position.set(...sweepDir(0, state.az / 2).map(c => c * 0.56)).add(new THREE.Vector3(0, -0.05, 0));
     labAlt.position.set(...sweepDir(state.alt / 2, state.az).map(c => c * 0.80));
 }
@@ -609,7 +631,7 @@ function sweepHud() {
         `azimuth reads v₂/h = tan z = ${fmtR(r.az)}${Math.abs(state.az - 45) < 0.26 ? ' (its corner)' : ''}; altitude reads v/√(h² + v₂²) = tan a = ${fmtR(r.alt)}${Math.abs(state.alt - 45) < 0.26 ? ' (its corner)' : ''}`,
         (state.even === 'area' ? 'swept evenly over the wedge (azimuth even, height v even: Archimedes\' hat-box)' : 'swept evenly in both angles') +
         `: v ≤ h ${pc(ex.vh)}, v₂ ≤ h ${pc(ex.v2h)}, v₂ ≤ v ${pc(ex.v2v)}, h largest ${pc(ex.near)} (the ${ct.n} drawn: ${pc(ct.vh)}, ${pc(ct.v2h)}, ${pc(ct.v2v)}, ${pc(ct.near)})`,
-        'h + v + v₂ = 1, the flat triangle: the one drawing that needs no sweep, the unsituated view'];
+        `h + v + v₂ = 1 needs no sweep; the truth is a point of it, ${f3(truthPoint(state.vs, state.v2s))} for V*/H = ${+state.vs.toFixed(3)}, V₂*/H = ${+state.v2s.toFixed(3)}; the drawing V = V₂ = H is its centre (⅓, ⅓, ⅓), off the truth by the ratios the reader lacks`];
     return (innerWidth < 760 ? [L[0], L[2]] : L).join('\n');
 }
 const fc = document.getElementById('face'), fg = fc.getContext('2d');
@@ -787,7 +809,8 @@ requestAnimationFrame(loop);
 // ── test hook ─────────────────────────────────────────────────────────────────────────────────────────────────
 window.__sphereCube = {
     address, point, faceOf: d => faceName(faceOf(d)), readingsOn, stats, fib, predictedMiddle: PRED_MID,
-    sweeps: { direction: sweepDir, readings: sweepReadings, exact: m => ({ ...SWEEP_EXACT[m] }), counted: sweepCounted, topShare, lambert },
+    sweeps: { direction: sweepDir, readings: sweepReadings, exact: m => ({ ...SWEEP_EXACT[m] }), counted: sweepCounted, topShare, lambert,
+              truth: truthPoint, centre: CENTRE.slice() },
     turnBy: (axis, ang) => { state.q = qnorm(qmul(qaxis(axis, ang), state.q)); return state.q.slice(); },
     get q() { return state.q.slice(); }, get frames() { return frames; }, get webgl() { return !!renderer; },
     hud: () => hudText(),

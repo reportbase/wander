@@ -125,9 +125,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   proceed"): the two sweeps, the hand raised in altitude (H to V, teal) and turned in azimuth (V₂, violet) with their
   sectors, each sweep's corner (the cone a = 45°, the half-plane v₂ = h), the flat triangle h + v + v₂ = 1 (no sweep),
   1,600 points of the wedge swept evenly in both angles or over the wedge (height even), coloured by the largest of h, v,
-  v₂, and an inset of Lambert's equal-area map (z, v). `?step=1..7&e=&known=0&t=&wedge=1&rays=0&turn=1&alt=&az=&even=angles|area`;
+  v₂, and an inset of Lambert's equal-area map (z, v); on the triangle (R238) the reader's drawing V = V₂ = H at its
+  centre (⅓, ⅓, ⅓) and a true point (1, V*/H, V₂*/H)/sum beside it (`?vs=&v2s=`, 3 and ½ by default).
+  `?step=1..7&e=&known=0&t=&wedge=1&rays=0&turn=1&alt=&az=&even=angles|area&vs=&v2s=`;
   hook `window.__sphereCube` (`address`, `point`, `faceOf`, `stats`, `turnBy`, `hud`, `set`, `state`, `frames`, `webgl`,
-  `sweeps`: `direction`, `readings`, `exact`, `counted`, `topShare`, `lambert`).
+  `sweeps`: `direction`, `readings`, `exact`, `counted`, `topShare`, `lambert`, `truth`, `centre`).
   Not in the flying page.
 - `paths.html`: **one sweep, three paths** (13 Oct 2026, Tom: "yes, proceed", to the visual from the ChatGPT exchange in
   `plans/ofs-review-6.md`; SPN R224), a standalone page like `facing.html`. Geometry only, in unit relations. The circle,
@@ -401,7 +403,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   named cases). The hand's two sweeps are horizon coordinates: altitude (H to V, v/√(h² + v₂²) = tan a) and azimuth
   (V₂, round the horizontal from h, v₂/h = tan z), each with its corner at 45°; the even octant is even in azimuth and
   in height (Archimedes' hat-box, Lambert's equal-area map). OFS §2 (two paragraphs), introduction, §3.4, §3.7, after
-  Proposition 5(e), notation, references (Archimedes, Lambert, Smart).
+  Proposition 5(e), notation, references (Archimedes, Lambert, Smart). **The truth is the sum; the reader's drawing is
+  its centre** (14 Oct, SPN R238; Tom: "so the truth is h+v+v2=1; user sets h zoom and assigns v and v2 to be equal to it,
+  and the entire geometry is revealed"; "yes, that is what the math says"): the true breadths as shares are a point of
+  h + v + v₂ = 1, scale-free; H sets the zoom; V = V₂ = H is the triangle's centre (⅓, ⅓, ⅓), the triple corner, from
+  which the geometry follows; the truth lies off it by V*/H and V₂*/H. OFS §2 and the introduction.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -784,7 +790,9 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   two parties and their sum; the circle is the arc over every facing, drawn on the chord after it.
 - One unsituated view and many situated ones (14 October, R236, R237): the sum h + v + v₂ + … = 1 needs no standpoint;
   every other drawing is built from a standpoint's sweeps, the altitude (H to V) and the azimuth (V₂), as horizon
-  coordinates; the outer and inner hemispheres are two situated views among many.
+  coordinates; the outer and inner hemispheres are two situated views among many. The truth is the sum (R238): the true
+  breadths as shares are a point of it; the reader sets H (the zoom) and draws V = V₂ = H, the sum's centre, the triple
+  corner, and the entire geometry follows; the truth lies off the centre by V*/H and V₂*/H.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
   includes. V is the drawn whole (at H), V* the true breadth. A unit is a relation measured beforehand (R230): its
@@ -882,7 +890,8 @@ In short:
       face a sixth, a face's middle quarter 38%, the wedge's faces a third each; with the extent unknown the readout says
       off by e/H; WebGL drew frames (three.js served from `node_modules` in place of the CDN); step 7, the two sweeps:
       v₂/h = tan z and v/√(h² + v₂²) = tan a, even in both angles v ≤ h 0.3426 and h largest 0.2326, even over the wedge
-      ½ and ⅓ (the 1,600 drawn within 0.02), the top quarter of height 25% of the even wedge, Lambert's map equal-area.
+      ½ and ⅓ (the 1,600 drawn within 0.02), the top quarter of height 25% of the even wedge, Lambert's map equal-area;
+      the truth for V*/H = 3, V₂*/H = ½ at (2/9, 2/3, 1/9) and the drawing at the centre (⅓, ⅓, ⅓).
   23. **paths.html:** the share of the sweep measured along each path (as chords) is its closed form; all three fair and ½
       at the corner, 0.250, 0.293, 0.207 at 22.5°; the mean climbing ρ(0)·ln 10 a tenfold on each; sin² 2θ with its
       median at the corner and the mean 4/π; π/2 and 2/π at the horizon, product 1; v/h = ∞ at 90°.
