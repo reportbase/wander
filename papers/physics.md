@@ -206,6 +206,16 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 
   The run's own predictions were killed (§3); these are readings of the same data after it, not ruled. They say the even
   spread holds within 100 pc, kind by kind, so CNT's 1.2 is not in the counting itself but in the spread past 100 pc.
+- **The step between grid-cell modules is near √2, in two rats** (GRD run 1, `plans/grd-plan.md`). On Gardner et al.
+  2022's recordings (figshare, CC0; rats Q, R, S), each cell's grid spacing from its rate map's autocorrelogram, by a
+  method fixed before the data was opened. Modules: Q 68.0 and 95.0 cm; R 56.2, 83.6 and 118.0 cm; S one module.
+  - Pooled adjacent ratio 1.432 (P1 not killed, in the √2 band; √e, 1.7, e and 2 far off; 3/2 0.07 away).
+  - P2 and P3 killed by their own minimum counts (one rat with three modules, two with two).
+  - Post hoc, rat R's second day: the first step repeats (1.487, 1.491), the step to the largest module does not
+    (1.412, 1.141). The largest module, about 0.8 of the 1.5 m box, is not measured reliably by this method.
+
+  Two rats, the reliable steps 1.40 and 1.49: consistent with a halving of a map's area, D.1's 2^(1/D) with D = 2, and
+  with Stensola et al.'s published mean of about 1.42, which was known beforehand. Weak evidence; more animals needed.
 - **Real worlds are their corner within a hundredth of a level** (REF, `plans/ref-plan.md`, P4 and P5). By published
   radii:
   - the rocky worlds' flattening: Earth 0.0048 levels, Mars 0.0085, the Moon 0.0017;
@@ -519,11 +529,12 @@ that holds less of it can be tested against the referee exactly. That is evidenc
 
 Tests that could be run next, each on real data or exact arithmetic. Each would need its plan written first.
 
-- **The ratio between levels, in a measured reader** (GRD, `plans/grd-plan.md`, predictions written, data to be
-  supplied). Grid cells map place in discrete modules, each coarser than the last by a measured ratio no physics law
-  sets. D.1 allows only a halving without an added measure: 2 along a line, or √2 if a level doubles a map's area. The
-  plan names what was known beforehand (published means near 1.42 and 1.7; an optimal-coding theory's √e) and needs
-  per-animal data not yet opened.
+- **The ratio between levels, in a measured reader, on more animals** (GRD, `plans/grd-plan.md`; run 1 on two rats,
+  §2.1). Grid cells map place in discrete modules, each coarser than the last by a measured ratio no physics law sets.
+  D.1 allows only a halving without an added measure: 2 along a line, or √2 if a level doubles a map's area. Run 1 found
+  √2 in two rats; P2 and P3 need a dataset with five or more animals with two modules (Stensola et al. 2012's, if
+  released, or the Giocomo lab's on DANDI), its data section fixed before it is opened, and a box large enough for the
+  largest module or a method that does not need it.
 - **Why the counts give 1.2.** GCN's exploration (not a result) points to a thin layer of luminous stars seen through
   dust: 71% of the stars Hipparcos counts are past 100 pc, and even in the disc's middle the luminous ones stop rising
   with volume past about 125 pc. A test needs a bright all-sky Gaia sample (G ≤ 10) with parallaxes and extinctions, and

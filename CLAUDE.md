@@ -572,9 +572,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   J/A+A/649/A6 table1c, from Tom; sha256 in the plan), kinds by colour on the main sequence. All four killed: the RUWE cut
   removes more near stars (steeper counts, poles past the plane), and a fifth of G/K colours within 50 pc are white dwarfs.
   Read after the run without the cut: 2.93–3.00 levels of number per level of distance for every kind, plane = poles.
-  `grd-plan.md` (10 Oct, predictions only): the ratio between levels in a measured reader, the grid cells' modules.
-  P1: a halving, √2 (area) or 2 (length), within 0.07; prior knowledge of the published means (~1.42, ~1.7) is stated in
-  the plan, so it runs only on per-animal data not yet opened (Tom to supply; candidates listed there).
+  `grd-plan.md` (+ `grd/grd.py`; predictions 10 Oct, run 1 14 Oct, SPN R248): the ratio between levels in a measured
+  reader, the grid cells' modules. Run 1 on Gardner et al. 2022 (figshare, CC0; data not committed, sha256 in the plan):
+  pooled adjacent ratio 1.432 in the √2 band (P1 not killed); P2, P3 killed by too few animals; post hoc the largest
+  module is not measured reliably in a 1.5 m box. Two rats; more animals needed. P1 was a halving, √2 (area) or 2
+  (length), within 0.07; the plan states the published means known beforehand (~1.42, ~1.7).
   `grd-landscape.md` (10 Oct, a reading; Tom: "lets just establish the boundries, see how we might slot in"): the
   measured ratios, the coding theories (economy √e, nested codes) and the mechanism (Kang 2019), and SPN's slot as the
   measure-free baseline 2^(1/D), which the coding theories depart from by their added measure; told apart in 1D and 3D.

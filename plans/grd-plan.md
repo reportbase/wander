@@ -125,3 +125,47 @@ kill conditions say, not relaxed.
 
 ## Runs
 
+
+### Run 1 (14 October; `python3 grd/grd.py <data dir>`, 39 seconds)
+
+Data: Gardner et al. 2022, figshare 16764508 v6, CC0; `Toroidal_topology_grid_cell_data.zip`, 319,902,753 bytes, md5
+379bfdca61cd54d5f58cab9d3ba477de (matching figshare's listing), sha256
+56842a7ae8e8f9144e390c9cdd72494d8ea2c48f2ce89cdee4780a49ed495372; not committed. Contents: rats Q (modules 1, 2),
+R (modules 1, 2, 3; day 1 and day 2 files) and S (module 1), each an npz of spike times per cell by module and tracking
+(x, y, t in metres and seconds), with a sessions file. Before the run, the method was checked on synthetic grids of
+known spacing (35, 50, 71, 100 cm read as 34.0, 49.8, 71.2, 99.5). Set-up decided from the sessions files only, before
+any value: rat R's open field lists valid-time windows, and only those windows are used.
+
+```
+rat Q: open_field_1 [(27826.0, 31223.0)], positions x100 to cm; spikes_mod1: 97 of 97 cells, spacing 68.0 cm; spikes_mod2: 66 of 66 cells, spacing 95.0 cm
+rat R: open_field_1 [(7457.0, 14778.0), (14890.0, 16045.0)], positions x100 to cm; spikes_mod1: 166 of 166 cells, spacing 56.2 cm; spikes_mod2: 168 of 168 cells, spacing 83.6 cm; spikes_mod3: 149 of 149 cells, spacing 118.0 cm
+rat S: open_field_1 [(9939.0, 12363.0)], positions x100 to cm; spikes_mod1: 140 of 140 cells, spacing 54.7 cm
+adjacent ratios: {'Q': [1.397], 'R': [1.487, 1.412], 'S': []}
+P1: not killed. pooled geometric-mean ratio 1.432 over 3 ratios from 2 animals (bootstrap over animals 95%: 1.397-1.449); bands 1.344-1.484 and 1.93-2.07
+P2: KILLED. animals with three modules: 1 (needs 3); for information, log2 step difference [np.float64(0.075)]
+P3: KILLED. animals with two modules: 2 (needs 5); for information, sd log2 lambda1 0.138, sd log2 ratio 0.045
+P4: not killed. adjacent pairs under 1.2: 0 of 3
+```
+
+P1 not killed: the pooled ratio 1.432 lies in the √2 band, 0.018 from √2, and outside 2's; of the named alternatives
+√e (1.649), 1.7 and e are far off, 3/2 is 0.068 away. P2 and P3 killed by their own minimum counts (one rat with three
+modules; two with two), as the plan said they might be; for information only, both point the predicted way (rat R's
+two steps differ by 0.075 in log₂, under 0.1; the smallest module's spacing spreads 0.138 in log₂ across the two rats,
+the ratio 0.045). P4 not killed. Two animals make the bootstrap interval nearly meaningless; the run is weak evidence.
+
+**Post hoc, not a test** (the method fixed rat R's first file; its second day was run afterwards, same method, to see
+whether the spacings repeat): rat R day 2, open_field_1 (10617–13004 s): modules 53.0, 79.1, 90.2 cm, ratios 1.491 and
+1.141. The first step repeats (1.487 on day 1, 1.491 on day 2); the second does not (1.412, 1.141), and on day 2 it would
+fall under P4's 1.2. The tracked box is the same both days (148 × 147 cm and 156 × 146 cm; Q 146, S 143), and day 2 has
+2,387 s of tracking against day 1's 8,476 s. Reading: the largest module's spacing, about 0.8 of the box, puts its six
+autocorrelogram peaks where few bins overlap, and with less data the method finds nearer maxima; the method does not
+measure the largest module reliably in a 1.5 m box. The ratios it measures reliably here are the two first steps,
+1.397 (Q) and 1.487–1.491 (R), geometric mean about 1.44: still in the √2 band, from two rats.
+
+**What it shows.** On the one per-animal dataset reached, the step between the two smaller grid modules is near √2 in
+both rats that have two (1.40 and 1.49), as Stensola et al.'s mean of about 1.42 already said, and far from √e, 1.7 or
+2; the third module cannot be measured reliably in this arena by this method. That is consistent with a halving of a
+map's area, the plan's second reading, which was available to be chosen after the fact (the plan said so before the
+run); it is not a test of the dimension, and two rats are not a population. P2 and P3 need more animals: a further run
+needs a dataset with five or more animals with two modules (Stensola et al. 2012's recordings, if released, or the
+Giocomo lab's on DANDI), with its own data section fixed before it is opened.
