@@ -260,3 +260,14 @@ All three killed.
   reader's own addresses, not the same; seen in shading, a real world grows rougher as the reader approaches.
 - *For the pictures.* The bands of wander's and the games page's bodies halve per octave (slope −1, chosen); real
   worlds keep more of their relief in the fine octaves (about −0.4). Scaling `res/` is still Tom's call (run 1).
+
+**Correction (Tom, 16:26; SPN R250): "no, real signals are not packed tvf3d. tvf3d is like a pre-read signal."** Run 2's
+claim read Tom's remark as saying the payload brings levels of its own, and asked whether real worlds come packed the
+way the reader reads. That was not what was said. A real signal arrives unpacked. A .tvf3d is a signal already read:
+the reader's levels with the payload placed in them, coarse first, so a later reader at any distance takes the levels
+it holds there and reads nothing again. The packing is the reader's, done once and ahead of time. The predictions and
+their kills stand as written: P6–P8 tested a claim nobody made. The measurement is kept for what it is. The published
+models are themselves pre-read signals (each a modeller's reading of altimetry or images into degrees), and the run
+shows how real relief fills such levels: not in equal shares, not in self-similar ones, and not alike from body to
+body. (Claude's reading, unruled: a pre-read signal holds a whole approach at once, each prefix of the series what a
+reader holds at one distance; SPN §3.3's levels existing whole, a thing's level set by its size.)

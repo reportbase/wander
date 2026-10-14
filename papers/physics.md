@@ -125,7 +125,9 @@ bodies are pictures. They are never evidence here.
   (`plans/ref-plan.md`; SPN R249; Tom: "whats new is the tvf3d signal. it shows how the signal itself is packed."):
   seven bodies' published shape models read by octave of degree, the level a reader drops per level of distance. All
   three predictions killed: Earth, Mars and Venus are near power laws (slopes −0.34 to −0.44), the airless bodies are
-  not, and no slope is common (§2.1, §3).
+  not, and no slope is common (§2.1, §3). Then Tom (SPN R250): "no, real signals are not packed tvf3d. tvf3d is like a
+  pre-read signal." The run's framing, that a world's signal comes packed, was a misreading; the packing is a reader's,
+  done ahead of time, and the run measures how real relief fills such levels.
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -240,8 +242,8 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
     bands by distance moves no world's outline by as much as an address; on five of the seven each nearer level shows
     more relief in the reader's addresses, not the same.
 
-  The octave packing is the reader's (and the series'); the share in each octave is read from the world, not fixed by
-  the geometry.
+  The octave packing is a reader's, done ahead of time in the models (a pre-read signal, SPN R250: a real signal
+  arrives unpacked); the share in each octave is read from the world, not fixed by the geometry.
 
 ### 2.2 Exact arithmetic
 
@@ -498,11 +500,12 @@ that holds less of it can be tested against the referee exactly. That is evidenc
 - **REF P1–P3: wander's bodies** are far rougher than real worlds. The Moon spans 0.25 levels against the real 0.0165.
   "Broad first" is the order in which bands are seen, not where the relief lies. Under §0 this was never evidence. It is
   kept as the example of what not to count.
-- **REF run 2, P6–P8: real worlds are not packed as the reader reads.** Each level of distance was predicted to drop the
-  same share of a world's relief (a power law in degree), at half the relief per octave (the reader seeing the same at
-  every level), and with one slope on every body. The airless bodies bend (their relief standing highest, against a
-  line, at about a tenth to a fortieth of their radius), the slopes run from −0.21 to −0.98, and only Vesta's, an
-  average over a bend, is near −1. The share is the world's.
+- **REF run 2, P6–P8: real relief does not fill a reader's levels evenly, self-similarly or alike.** (The run framed
+  this as whether worlds come packed as the reader reads; a real signal comes unpacked, SPN R250.) Each level of
+  distance was predicted to drop the same share of a world's relief (a power law in degree), at half the relief per
+  octave (the reader seeing the same at every level), and with one slope on every body. The airless bodies bend (their
+  relief standing highest, against a line, at about a tenth to a fortieth of their radius), the slopes run from −0.21 to
+  −0.98, and only Vesta's, an average over a bend, is near −1. The share is the world's.
 - **MAG P4: K0 III scatters 1.4 levels**, not under 1.0. A known kind is a bridge about a level wide.
 - **CNT P3 and P4: the plane and the poles count alike.** The disc was predicted to flatten the counts toward the poles
   more than in the plane. It does not: both give 1.23. Dust in the plane and the clumping of young bright stars are the

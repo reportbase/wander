@@ -566,8 +566,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R249): a reader drops one octave of degree per level of distance (exact); on seven published shape models (Mercury,
   Venus, Earth2014, LOLA, MOLA, Vesta, Ceres; Zenodo/Curtin, sha256 in the plan, not committed) the relief per octave,
   degrees 8–1023. All three killed: one power law (P6, by the airless bodies, which bend at a tenth to a fortieth of
-  their radius), half per octave (P7: slopes −0.21 to −0.98), one slope for all (P8). Earth, Mars, Venus
-  about −0.4 per octave. The packing is the reader's; the share is the world's. A band's relief when first held is
+  their radius), half per octave (P7: slopes −0.21 to −0.98), one slope for all (P8). Earth, Mars, Venus about −0.4 per
+  octave. Then Tom (16:26, SPN R250): "no, real signals are not packed tvf3d. tvf3d is like a pre-read signal": a real
+  signal arrives unpacked; a .tvf3d is the reader's levels with the payload already placed, coarse first, so a later
+  reader takes a prefix and reads nothing again. The run's framing (does the world come packed?) was a misreading; its
+  kills stand; it measures how real relief fills a pre-read signal's levels. A band's relief when first held is
   0.0002–0.07 of an address. The games page's Levels application was judged an illustration (its rule wander's; the
   shape any size-on-screen LOD's; geometry clipmaps, Losasso and Hoppe 2004, already do it).
   `mag-plan.md` (+ `mag/mag.py`, 10 Oct): on the Hipparcos stars (HYG v3.8 from GitHub, sha256 in the plan; parallax
