@@ -377,6 +377,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and the reader as the pivot, the hand in full, and the one number a reader lacks; never fold these into a short table.
   §10 is a worked example (a mountain range). Before rewriting it, check the new text against the old for anything lost.
   It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
+  **It builds on Jaynes** (14 Oct, SPN R243; Tom: "It would be nice to find and lean on one paper that well cited that has
+  overlap with our ideas, and we just build on that."; "ok, if we find another great paper to lean on, we can just add
+  it to Jaynes."): his principle of transformation groups (1968, 1973) is the method, stated in §2 ("What we build on:
+  the reader's ignorance as a group"), the introduction and the abstract; §11.1 is "The principle, after Jaynes".
+  Further anchors are added beside Jaynes, not in place of him.
   Since 13 Oct (SPN R220, R221) it has the three-party wedge: Propositions 3(f) (the sphere only if V = V₂ = H) and 5(e)
   (the even wedge's readings the two-dimensional Cauchy, every pair at its corner, the near field a third, with its
   converse), "More parties" after it (SPN R225: n other parties, every pair at its corner, the near field in all
@@ -735,6 +740,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   through home (P1); a hemisphere reads √π·Γ((n + 1)/2)/Γ(n/2) at once and its reciprocal one direction at a time, π/2,
   2, 3π/4 (P2); P3 killed by my set-up (a 0.1 threshold wider than the 0.095 gap); run 2, P3′: 2 and ½ are (π/2)² and
   (2/π)² times 8/π² and π²/8 (not killed).
+  `jay-plan.md` (+ `jay/jay.py`, 14 Oct; Tom: "lean on one paper … and we just build on that", Jaynes accepted; SPN
+  R243): exact (fractions; mpmath). What Jaynes 1968 and 1973 prove, from abstracts and secondary sources (the papers'
+  hosts are refused here; items marked "(check)" wait for Tom's PDFs). The reader's unknowns, attitude θ and size
+  κ = V*/H, under turns, rescalings and the exchange: dθ·dκ/κ, Jaynes's location and scale on a circle. Rescaling: only
+  1/x, every level ln 2, on a share Haldane's prior (P1); turns: Cauchy(z) carried to Cauchy(g(z)), i fixed by every turn
+  and the exchange, the arc's foot Jeffreys's arcsine, the Fisher–Rao length the facing 2θ, the octant's squares
+  Dirichlet(½, ½, ½) (P2); the exchange fixes the corner and the median, not the law (Bayes–Laplace, Jeffreys, Haldane
+  all fair; ¼, ⅓, 0.42 below t = ¼) (P3); the median of dκ/κ on bounds √(V₋V₊) (P4, OFS Proposition 13); Jaynes's
+  Bertrand ½ rederived (Crofton), and from home arcsin(R/2D)/arcsin(R/D), ⅓ on the circle to ½ far off (P5); being
+  situated, the measure dx·dy/(x² + y²), log-polar (P6); the drawings V = cH a hyperbolic line, levels its distance (P7).
+  Run 1 killed P2 and P5 by my set-up (60-digit quadratures of densities singular at an end); run 2 at 200 digits.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -859,6 +875,12 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   total its depth; the reader holds a window round the hand and the rest as totals. Position, then sweep (R242): one
   rotation places the wedge on the sphere, the hand sweeps inside it; the readings are the same at every position, and
   only a frame fixed outside, the sphere's, records it.
+- Building on Jaynes (14 October, R243): the method is his principle of transformation groups, the measure a group of
+  undetectable transformations leaves unchanged. The reader's ignorance is its attitude θ, the other's size κ = V*/H and
+  which party is which; turns, rescalings and the exchange leave dθ·dκ/κ, which gives the even turn (the Cauchy at i),
+  the levels, the corner and V = H. Situated means no translations (Jaynes's straw-thrower keeps them): from home the
+  measure is log-polar. What is ours: the group (chosen, not derived), the corner and near field, and the measure read as
+  addresses, not belief. Further anchors go beside Jaynes.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
   includes. V is the drawn whole (at H), V* the true breadth. A unit is a relation measured beforehand (R230): its
