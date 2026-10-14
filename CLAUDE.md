@@ -385,7 +385,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   proceed") §2 also says the reader's group commutes, so it has one invariant measure where Jaynes's location and scale
   has two (his the right-invariant one later work favours; Ghosh 2011), cites Norton (2008: complete ignorance is not a
   probability) beside the pre-prior, and Liu and Adams (2019: tossed straws' answer depends on 2R/L) beside the
-  situated Bertrand.
+  situated Bertrand. Since R245 §11.2 question 2 also works von Mises's water and wine, the case Jaynes left open: every
+  fair answer puts P(x ≤ 1) = ½, and one law unchanged by one liquid's unit plus the exchange gives the levels, ln 6/ln 9.
   Since 13 Oct (SPN R220, R221) it has the three-party wedge: Propositions 3(f) (the sphere only if V = V₂ = H) and 5(e)
   (the even wedge's readings the two-dimensional Cauchy, every pair at its corner, the near field a third, with its
   converse), "More parties" after it (SPN R225: n other parties, every pair at its corner, the near field in all
@@ -757,6 +758,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Run 1 killed P2 and P5 by my set-up (60-digit quadratures of densities singular at an end); run 2 at 200 digits, nothing
   killed. Run 3 (`jay/jay2.py`, R244): P8, location and scale have two Haar measures (1/a², 1/a), the reader's
   commuting group one (1/λ), the exchange keeping it; not killed. "Since 1973" in the plan: what later work did.
+  `wwp-plan.md` (+ `wwp/wwp.py`, `wwp/wwp2.py`, 14 Oct; SPN R245): von Mises's water and wine, 1/3 ≤ x ≤ 3, P(x ≤ 2),
+  exact. The literature read first (Mikkelson 5/6, Burock 0.764 via Gerville-Réache, Parker and Jeynes 0.816). Every
+  fair law puts P(x ≤ 1) = ½, the corner (P2); one party's unit leaves the powers, the exchange picks dx/x (P1). Run 1
+  killed P3: the mean of 5/8 and 15/16 also keeps its value under the unit. Run 2 with Jaynes's restriction rule (one
+  law, its restriction the law on the smaller range): only the levels, ln 6/ln 9 ≈ 0.8155 (P3′ not killed). Jaynes's
+  unbounded form: 1 − log₂ 3/L on [1, 2^L], the range held the missing number (P4).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

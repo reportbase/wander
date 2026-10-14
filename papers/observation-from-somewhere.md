@@ -1892,6 +1892,22 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    at the corner, ½ (Haldane's on any range of levels even about it); below t = ¼ they hold ¼, ⅓ and, over three
    decades of odds either side, 0.42. Jaynes's own answer to Bertrand, ½, is from this paper's side a situated reader's answer
    from far off (§2).
+
+   Von Mises's water and wine, the case Jaynes left open as overdetermined (Jaynes 1973, §8), shows the same
+   structure and is finished by his method. A liquid is wine and water, the ratio x of wine to water between 1/3 and
+   3; what is the chance that x ≤ 2 (von Mises 1928)? Indifference over x gives 5/8 and over 1/x gives 15/16, each
+   favouring one liquid. The answers proposed since that treat the two alike, 25/32 (the mean of those two), 5/6
+   (even in the share of wine; Mikkelson 2004) and about 0.764 (even along the hyperbola xy = 1; Burock 2005, as
+   stated by Gerville-Réache 2016), and the levels and the even turn of this paper, 0.815 and 0.847, all put the
+   chance of x ≤ 1 at ½, the corner, and part past it. Nothing in the statement fixes the unit in which either liquid
+   is measured, and a change of one liquid's unit multiplies x by a constant. Asking, as Jaynes asked of the chord,
+   for one law on every range of x (its restriction to a smaller range is the law there) that is unchanged by such a
+   change leaves the powers of x; the exchange of the liquids leaves dx/x alone, the levels, and the answer ln 6/ln 9
+   ≈ 0.815. The mean of 5/8 and 15/16 is also unchanged by the unit, but it is no single law: it weighs its two parts
+   afresh on each range. In Jaynes's own form (at least half wine; what is the chance of at least three-quarters?)
+   the range of x is unbounded, and on [1, 2^L] the levels give 1 − (log₂ 3)/L: the missing number is how many levels
+   are held, which is the overdetermination he found. With volume agreed beforehand as the common unit, the completed
+   view's even share, 5/6, is available instead; the problem's statement does not say which reading von Mises meant.
 3. *No measure on a level.* Is there a principled reason a level could not carry a measure before anything arrives?
 4. *Fairness.* Proposition 2(b) needs the reading to treat both sides alike although the reader's knowledge does not.
    Is that more than a choice?
@@ -1984,6 +2000,8 @@ Review* 4(4), 345–376.
 Buffon, G.-L. Leclerc, comte de (1777). Essai d'arithmétique morale. In *Histoire naturelle, générale et particulière*,
 Supplément, tome 4. Imprimerie royale, Paris.
 
+Burock, M. (2005). Indifference, sample space, and the wine/water paradox. Preprint, PhilSci Archive 2487.
+
 Cacoullos, T. (2014). Polar angle tangent vectors follow Cauchy distributions under spherical symmetry. *Journal of
 Multivariate Analysis* 128, 147–153.
 
@@ -2009,6 +2027,9 @@ van Fraassen, B. C. (2008). *Scientific Representation: Paradoxes of Perspective
 Frank, S. A. (2014). How to read probability distributions as statements about process. *Entropy* 16(11), 6059–6098.
 
 Frank, S. A. and Smith, D. E. (2010). Measurement invariance, entropy, and probability. *Entropy* 12(3), 289–303.
+
+Gerville-Réache, L. (2016). Mettre de l'eau dans du vin, un paradoxe de l'indifférence ? *Implications
+philosophiques*, 12 December 2016.
 
 Ghosh, M. (2011). Objective priors: an introduction for frequentists. *Statistical Science* 26(2), 187–202.
 
@@ -2076,6 +2097,11 @@ McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *T
 Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata*. Duisburg.
 
 Microsoft. Bing Maps Tile System (documentation).
+
+Mikkelson, J. M. (2004). Dissolving the wine/water paradox. *British Journal for the Philosophy of Science* 55(1),
+137–145.
+
+von Mises, R. (1928). *Wahrscheinlichkeit, Statistik und Wahrheit*. Springer, Vienna.
 
 Munro, J. I. and Paterson, M. S. (1980). Selection and sorting with limited storage. *Theoretical Computer Science*
 12(3), 315–323.
