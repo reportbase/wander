@@ -10,10 +10,11 @@ Classical geometry is drawn from nowhere: every length is held at once, to one s
 that stands somewhere has less. It has its own breadth, a value it chooses to start from, but not the breadth of what
 it reads. This paper works out the
 geometry that this one restriction leaves. We begin with the readers themselves. What a reader knows of two breadths
-sets one of five situations, and these give three vantages: the completed view from nowhere, whose figure is the circle,
-and two situated readers, one taking in a hemisphere at once and one sweeping it from home, whose figures are the bell
-and the fisheye. The three read a line of true breadth 1 as 1, π/2 and 2/π; the true breadth is held only from nowhere,
-or constructed from several observations, never observed from one. Any relation between two parties can be written as a pair of unit relations, h
+sets one of five situations, and these give three vantages: the completed view from nowhere, which holds the straight
+chord between two points, and two situated readers, one taking in a hemisphere at once and one sweeping it from home,
+which hold only the arc they turn through and whose figures are the bell and the fisheye. The chord comes before the
+circle: it needs no turn, and the circle is drawn on it by one. The three read a line of true breadth 1 as 1, π/2 and
+2/π; the true breadth is held only from nowhere, or constructed from several observations, never observed from one. Any relation between two parties can be written as a pair of unit relations, h
 and v, each between 0 and 1, and the reader reads their ratio. Because neither unit relation can pass 1, every such sweep
 turns over at a single point, v = h, the *corner*, where reading v in terms of h gives way to reading h in terms of v.
 For there to be a relation, the reader must assign the other party a breadth, and its only measure is its own: it
@@ -92,9 +93,10 @@ a point you can compute. If you do not know it, your thumb is the only measure y
 to your thumb, V = H, and read the mountain in thumbs.
 
 **Three vantages.** A figure can be held in three ways. The *completed* vantage holds every breadth at once from no
-standpoint; this is classical geometry, and its figure is the circle. A *situated* reader has a facing. Either it takes
-in a hemisphere at once, from outside (a parallel reader), or it sweeps the hemisphere from home, one direction at a
-time (a serial reader). Their figures are the bell and the fisheye. The three read the same thing differently: a line
+standpoint; this is classical geometry. Between two points it holds the straight chord, which needs no turn; the
+circle comes after the chord, drawn on it by turning. A *situated* reader has a facing, and holds only the arc it turns
+through. Either it takes in a hemisphere at once, from outside (a parallel reader), or it sweeps the hemisphere from
+home, one direction at a time (a serial reader). Their figures are the bell and the fisheye. The three read the same thing differently: a line
 of true breadth 1 reads 1 to the completed view, π/2 to the hemisphere turned away from the reader and 2/π to the
 hemisphere turned toward it. The true breadth is had only with both hemispheres in hand, which no single observation
 provides. A situated reader can construct it from several observations, but it cannot observe it. Many apparent
@@ -286,19 +288,24 @@ do not have, and neither knows how many things there are.
 
 ### 3.2 Which division a reader can make
 
-A reader turns a pair of breadths into a reading by dividing, and there are two ways to divide. Which one a reader can
-make is its situation.
+A reader turns a pair of breadths into a reading by dividing, and there are two ways to divide: by its own breadth, or
+by the whole, taken as a sum or as a length. Which one a reader can make is its situation.
 
 | divide both by | (H, V*) lands at | which lies on | needs |
 |---|---|---|---|
 | H | (1, V*/H) | the number line held upright at 1: unbounded | H only |
-| the whole, √(H² + V*²) | (cos θ, sin θ) | the quarter circle: bounded | H and V* |
+| the sum, H + V* | (H, V*)/(H + V*) | the chord h + v = 1: bounded | H and V* |
+| the whole, √(H² + V*²) | (cos θ, sin θ) | the quarter circle: bounded | H and V*, and Euclidean length |
 
 A situated reader has H, which it chose, and not V*, so it cannot form the whole; it can only divide by H, measuring everything in
 thumbs. Every system it reads lands
 on one unbounded line, at its ratio, with the scale gone and a horizon at the far end. An unsituated view holds both
-breadths and can divide by the whole: every system lands on the bounded quarter circle, with the corner computed at 45°
-and no horizon. The two are one projection apart: projecting (1, x) toward the centre gives the circle's point.
+breadths and can divide by the whole. Divided by their sum, every system lands on the chord h + v = 1, which needs
+nothing beyond the two breadths and their addition; divided by their length, it lands on the bounded quarter circle,
+which needs the Euclidean length as well (§5, "The Euclidean choice"). Either way the corner is computed, at the chord's
+middle or at 45°, and there is no horizon. The chord comes first: the arc is the chord with a facing turned through
+(§4), and the circle is that arc over every facing. The number line and the quarter circle are one projection apart:
+projecting (1, x) toward the centre gives the circle's point.
 
 ### 3.3 The number line laid twice
 
@@ -340,7 +347,7 @@ The five situations give three vantages, each with its own geometry.
 
 | vantage | situations | geometry | the turn | measure of a turn θ | reads a line of true breadth 1 as |
 |---|---|---|---|---|---|
-| completed: the view from nowhere | 1, 2 | the circle; every breadth held; no facing | none | none | 1 |
+| completed: the view from nowhere | 1, 2 | the chord, and the circle drawn on it; every breadth held; no facing | none | none | 1 |
 | outer hemisphere: parallel | 3 | one facing, taken in at once; the hemisphere turns away from the reader | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
 | inner hemisphere: serial | 4 | one facing, swept from home; the hemisphere turns toward the reader | a quarter turn: a bar, from home to the horizon | sin θ/θ | 2/π |
 
@@ -380,7 +387,9 @@ outer reading is the turn over the shadow, π/2; the inner is the shadow over th
 same two give the table's θ/sin θ and sin θ/θ. The shadow is the line itself: the steps of the turn, each casting
 cos θ dθ, cover the breadth exactly once. Each reading sets it against the turn, one way up or the other, so their
 product is 1. Without angles the turn is ∫₀^∞ ds/(1 + s²) over every relation s = v/h, and the corner halves it, π/4 on
-each side. The true breadth, 1, is read only with no turn at all.
+each side. The true breadth, 1, is read only with no turn at all. From nowhere, then, a relation is the chord between
+its ends; from somewhere it is the arc the reader turns through. The chord comes first: it needs no turn, and the arc
+is drawn on it by one.
 
 **Archimedes' proof, from nowhere and from somewhere.** Archimedes measured the circle from both sides (*Measurement
 of a Circle*). A polygon inscribed in the circle falls short of it and one circumscribed about it exceeds it; doubling
@@ -699,7 +708,8 @@ ends at 2ᵏ. We read the 2 across the reader's own level and the 2 between leve
 this is a reading, not a proof.
 
 **Where the reader lives.** The reader stands at home, the centre of the circle its own choice creates. It is not the
-circle. The circle read evenly from no standpoint is the completed view; read from home it is the fisheye of §7.
+circle. Held whole from no standpoint, drawn on the chord as the completed view draws it (§3.2), the circle has no
+home and no horizon; read from home it is the fisheye of §7.
 
 ## 6. Two address spaces
 
@@ -1096,7 +1106,8 @@ the first meeting along each address; what it loses is everything behind that. O
 Held whole, from no standpoint, the bar's even turn traces the circle h² + v² = 1, every point like every other: no
 home, no horizon and no corner of any consequence. Swept from home and read as v/h, the same even turn gives the Cauchy
 when counted and the fisheye when drawn. Home, the corner and the horizon appear because the reading is taken from
-somewhere. Situated geometry is the Cauchy; unsituated geometry is the circle.
+somewhere. Situated geometry is the arc, read as the Cauchy; unsituated geometry is the chord, with the circle drawn
+on it whole. The chord needs no turn, and the circle is what a turn traces.
 
 Proposition 5 assumes the turn is stepped evenly, which is a choice of weight on the sweep. It is not a weight chosen to
 produce the Cauchy: stepping the turn evenly is what makes the circle uniform in the first place, so one assumption,

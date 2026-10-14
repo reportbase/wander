@@ -379,7 +379,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the outer's facing turns a half turn (facing = 2θ, on the line as diameter), the inner's bar a quarter turn (on it as
   radius), the unsituated none; the same arc π/2, read π/2 and 2/π; their product returns the line, not their difference
   (π/2 − 2/π = 0.934). In OFS §3.4 (a column for the turn), §4 and §10 step 3, SPN's head and §1. A note from another
-  session that subtracted them is in `plans/facings-note.md` with corrections.
+  session that subtracted them is in `plans/facings-note.md` with corrections. **The unsituated view is the chord, the
+  situated view is the arc; the chord is prior to the circle** (14 Oct, SPN R234): the chord needs only the two parties
+  and their sum (h + v = 1, the sum norm), no turn; the arc adds a facing turned through and the Euclidean length; the
+  circle is that arc over every facing, held whole by the completed view but drawn on the chord, after it. In OFS's
+  abstract, introduction, §3.2 (a row dividing by the sum), §3.4, §5 and §7.5; SPN's head, §1, Proposition 1.2 (7).
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -743,6 +747,9 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   With n other parties (R225) the same, once per party: every pair keeps its corner, the near field in all readings is
   1/(n + 1). The drawing is the geometry's whole job (Tom: "from the geometry's perspective, its job is done, what ever
   the true breadth makes no difference"); the true breadths enter only the amounts.
+- The unsituated view is the chord, the situated view is the arc, and the chord is prior to the circle (14 October,
+  R233, R234): the arc is drawn by the head's turn, not walked; with no turn there is only the chord, needing just the
+  two parties and their sum; the circle is the arc over every facing, drawn on the chord after it.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,
   its size only the zoom. The geometry needs a shape and one H; the shape is set by how many unit relations the system
   includes. V is the drawn whole (at H), V* the true breadth. A unit is a relation measured beforehand (R230): its
