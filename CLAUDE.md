@@ -382,10 +382,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   it to Jaynes."): his principle of transformation groups (1968, 1973) is the method, stated in §2 ("What we build on:
   the reader's ignorance as a group"), the introduction and the abstract; §11.1 is "The principle, after Jaynes".
   Further anchors are added beside Jaynes, not in place of him. Since R244 (Tom: "what has happend since then?"; "ok,
-  proceed") §2 also says the reader's group commutes, so it has one invariant measure where Jaynes's location and scale
-  has two (his the right-invariant one later work favours; Ghosh 2011), cites Norton (2008: complete ignorance is not a
-  probability) beside the pre-prior, and Liu and Adams (2019: tossed straws' answer depends on 2R/L) beside the
-  situated Bertrand. Since R245 §11.2 question 2 also works von Mises's water and wine, the case Jaynes left open: every
+  proceed") §2 also says the reader's group commutes, so it has one invariant measure where the location-and-scale
+  family's affine group has two (Jaynes's own eq. 49 group commutes; its measure coincides with the right-invariant one,
+  which later work favours where the location or the scale is of interest; Ghosh 2011), cites Norton (2008: complete
+  ignorance is not a probability) beside the pre-prior, and Liu and Adams (2019) beside the situated Bertrand.
+  **Since R247 (review 9, `plans/ofs-review-9.md`)** OFS keeps two groups apart: the reader's ignorance (turns of θ,
+  rescalings of κ = V*/H, and the exchange of the unit relations, which acts on readings and drawings, not on κ) and the
+  Möbius action on readings (turns and changes of the drawing, PSL(2,ℝ)), a fact about the family of drawings used only
+  to measure distances. The drawing is c (V = cH, required c = 1), the estimate ĉ (ĉH, Proposition 13), the true size κ;
+  never run them together. V = H comes from the exchange on the law of readings (Proposition 5(d)); κ touches no
+  reading, so dκ/κ gives the estimate and only through amounts motivates (S), still a premise. Front claims are
+  conditional (a chosen group; the sweep a rigid bar's turn). Since R245 §11.2 question 2 also works von Mises's water and wine, the case Jaynes left open: every
   fair answer puts P(x ≤ 1) = ½, and one law unchanged by one liquid's unit plus the exchange gives the levels, ln 6/ln 9.
   Since R246 §11.2 question 7 answers the marginalization paradox (Dawid, Stone and Zidek): under a scale nuisance's own
   dη/η, integrating it out agrees with reasoning from ratios, same prior, for every law; the reader's dκ/κ is that
@@ -897,10 +904,12 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   total its depth; the reader holds a window round the hand and the rest as totals. Position, then sweep (R242): one
   rotation places the wedge on the sphere, the hand sweeps inside it; the readings are the same at every position, and
   only a frame fixed outside, the sphere's, records it.
-- Building on Jaynes (14 October, R243): the method is his principle of transformation groups, the measure a group of
-  undetectable transformations leaves unchanged. The reader's ignorance is its attitude θ, the other's size κ = V*/H and
-  which party is which; turns, rescalings and the exchange leave dθ·dκ/κ, which gives the even turn (the Cauchy at i),
-  the levels, the corner and V = H. Situated means no translations (Jaynes's straw-thrower keeps them): from home the
+- Building on Jaynes (14 October, R243; corrected R247): the method is his principle of transformation groups, the
+  measure a group of undetectable transformations leaves unchanged. The reader's ignorance, as chosen: its attitude θ
+  (turns), the other's size κ = V*/H (rescalings) and which unit relation a reading was divided by (the exchange, on
+  readings and drawings, not on κ). Turns and rescalings leave dθ·dκ/κ. Given the sweep is a rigid bar's turn, the turns
+  give the even turn (the Cauchy at i); the exchange gives the corner and, on the law of readings, V = H; dκ/κ gives the
+  estimate's median and, through amounts, motivates (S). Situated means no translations (Jaynes's straw-thrower keeps them): from home the
   measure is log-polar. What is ours: the group (chosen, not derived), the corner and near field, and the measure read as
   addresses, not belief. Further anchors go beside Jaynes.
 - Not even H is a measured size (13 October, R226): it is the value the reader chooses to start the system, any value,

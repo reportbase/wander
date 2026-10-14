@@ -330,3 +330,19 @@ P8: not killed. location and scale: left 1/a², right 1/a, exactly, and never ea
 has followed Jaynes's location and scale since, which of its two invariant measures to use, does not arise for the
 situated reader's group. Its one measure, dθ·dκ/κ, is what both readings give. Made: OFS §2 (the commuting group,
 Ghosh 2011; Norton beside the pre-prior; Liu and Adams beside the situated Bertrand), three references.
+
+### Correction (14 October, after review 9)
+
+An outside read (`plans/ofs-review-9.md`, SPN R247) found that the reading above ran two groups together, and three
+sizes. The runs stand; these readings are corrected:
+- The reader's ignorance group (turns of θ, rescalings of κ) and the Möbius action on readings (turns and changes of the
+  drawing, PSL(2,ℝ)) are different groups. κ touches no reading. P6 and P7's hyperbolic line belong to the second; the
+  drawing V = cH is c, required to be 1, not an unknown; P4's dθ·dκ/κ belongs to the first.
+- The exchange acts on readings and drawings (v ↔ h); κ ↦ 1/κ is not an exchange of what the reader knows (it holds H,
+  not V*), but a separate premise of symmetric ignorance used for the estimate (Proposition 13(c)).
+- The levels' error measure (P7) applies to the estimate ĉ through amounts: the even turn of the true bar is the Cauchy
+  law at iκ in amounts, the estimate's at iĉ, the distance |ln(κ/ĉ)|; invariance gives a function of it, not a unique
+  error, and the median needs absolute loss.
+- "Since 1973" said "Jaynes's group argument the right": his own group (1968, eq. 49) commutes, and its measure
+  coincides with the right-invariant measure of the location-and-scale family's affine group, which is the
+  non-commuting one. P8 checked the affine group, correctly so named in its own text.
