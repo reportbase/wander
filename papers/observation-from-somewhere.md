@@ -1928,18 +1928,18 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    nuisance measure dη/η is ∫ η^(−n−1) Π g(ℓ_i/η | ζ) dη, and the law of the ratios z, which no η touches, is found by
    setting η = 1 and integrating ℓ₁ out with its Jacobian: ∫ λ^(n−1) Π g(λz_i | ζ) dλ. The substitution η = ℓ₁/λ carries
    the first into ℓ₁^(−n) times the second. So under dη/η the two reasoners reach the same conclusion about ζ with the
-   same prior, whatever the law g. Checked exactly in their own examples, Stone and Dawid's exponentials, the change
-   point and the normal with μ/σ of interest, and in two more, the two agree at dη/η and at no other power η^(−k); in
-   some laws another power produces no paradox but moves the prior on ζ instead. This is their group condition as Jaynes
-   (1980) reports it: the paradox is avoided by the nuisance's own invariant measure. The reader's size is such a
-   nuisance. Its rescaling commutes with the turns acting on what the reader reads, so dκ/κ is the one invariant measure
-   it has, and with it a reader that integrates the size out of amounts concludes what a reader of the ratios alone
-   concludes: the address reading of Theorem 6, met from the side of inference. Two cautions. Which of location and
-   scale's two measures avoids the paradox depends on what is of interest: with μ/σ of interest the nuisance σ at fixed
-   μ/σ carries dσ/σ, which is dμ·dσ/σ² in (μ, σ), Jeffreys's rule, while Jaynes's dμ·dσ/σ produces the paradox there;
-   §2's preference for the right-invariant measure is for the location or the scale of interest. And whether the paradox
-   shows improper measures inconsistent at all is disputed (Jaynes 1980; Wallstrom 2003); the reader's lay is in any
-   case finite, its levels counted.
+   same prior, whatever the law g. Checked exactly in their own three examples (Stone and Dawid's exponentials, the
+   change point, the normal with μ/σ of interest) and in a Weibull law, the two agree at dη/η and at no other power
+   η^(−k); in a gamma law another power produces no paradox but moves the prior on ζ instead, and only dη/η leaves it
+   where it was. This is their group condition as Jaynes (1980) reports it: the paradox is avoided by the nuisance's own
+   invariant measure. The reader's size is such a nuisance. Its rescaling commutes with the turns acting on what the
+   reader reads, so dκ/κ is the one invariant measure it has, and with it a reader that integrates the size out of
+   amounts concludes what a reader of the ratios alone concludes: the address reading of Theorem 6, met from the side of
+   inference. Two cautions. Which of location and scale's two measures avoids the paradox depends on what is of
+   interest: with μ/σ of interest the nuisance σ at fixed μ/σ carries dσ/σ, which is dμ·dσ/σ² in (μ, σ), Jeffreys's
+   rule, while Jaynes's dμ·dσ/σ produces the paradox there; §2's preference for the right-invariant measure is for the
+   location or the scale of interest. And whether the paradox shows improper measures inconsistent at all is disputed
+   (Jaynes 1980; Wallstrom 2003); the reader's lay is in any case finite, its levels counted.
 
 If the principle of §11.1 stands, questions 1 and 2 become one: whether a situated reader's ignorance is exactly these
 three transformations.

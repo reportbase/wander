@@ -100,3 +100,21 @@ paradox: a/b is constant, so B₂ reproduces B₁ with the same prior, π₂ = �
   the data are coupled), it does not factorize either: the paradox (gap above 1e-6). **Killed if** the spread at
   k = 1 exceeds 1e-30, or any other power's spread is below 1e-6, or any other power factorizes to 1e-6, over 50
   random data vectors (n = 4) and 20 values of ζ.
+
+### Run 2 (14 October; `python3 mgp/mgp2.py`, 35 minutes)
+
+```
+P4': not killed. Weibull, shape of interest, scale nuisance: k = 0.0: a/b spread 0.909, factorization gap 0.234; k = 0.5: a/b spread 0.45, factorization gap 0.125; k = 1.0: a/b spread 0.0, factorization gap 0.0; k = 1.5: a/b spread 0.818, factorization gap 0.142; k = 2.0: a/b spread 2.3, factorization gap 0.305
+```
+
+**What it shows.** In all five scale-nuisance models (Stone and Dawid's exponentials, DSZ's change point, DSZ's normal
+with μ/σ of interest, a gamma and a Weibull shape) the nuisance's own invariant measure dη/η makes integrating it out
+and reasoning from the ratios alone agree with the same prior, a/b constant to the last digit. Every other power either
+produces the paradox (four models) or moves the prior on what is of interest (the gamma). The general reason, written
+after run 1 and so not a prediction: with ℓ_i = η·w_i and ℓ_i = ℓ₁·z_i, ∫ η^(−n−1) Π g(ℓ_i/η | ζ) dη becomes, under
+η = ℓ₁/λ, ℓ₁^(−n) ∫ λ^(n−1) Π g(λz_i | ζ) dλ, the second being the ratios' law (η = 1, ℓ₁ integrated out with its
+Jacobian); so the agreement holds for every law g. The situated reader's size is such a nuisance and dκ/κ its one
+invariant measure (its group commutes), so the paradox does not reach it. In the normal, the measure that avoids the
+paradox for μ/σ is dμ·dσ/σ², Jeffreys's rule; §2 of OFS is qualified accordingly. Made: OFS §11.2 question 7 and the
+qualification in §2; three references (Stone and Dawid 1972; Dawid, Stone and Zidek 1973; Wallstrom 2003) and Jaynes
+1980.

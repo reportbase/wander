@@ -387,6 +387,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   probability) beside the pre-prior, and Liu and Adams (2019: tossed straws' answer depends on 2R/L) beside the
   situated Bertrand. Since R245 §11.2 question 2 also works von Mises's water and wine, the case Jaynes left open: every
   fair answer puts P(x ≤ 1) = ½, and one law unchanged by one liquid's unit plus the exchange gives the levels, ln 6/ln 9.
+  Since R246 §11.2 question 7 answers the marginalization paradox (Dawid, Stone and Zidek): under a scale nuisance's own
+  dη/η, integrating it out agrees with reasoning from ratios, same prior, for every law; the reader's dκ/κ is that
+  measure. §2's preference for the right-invariant measure is qualified to the location or the scale of interest (for
+  μ/σ the paradox-free one is Jeffreys's dμ·dσ/σ²).
   Since 13 Oct (SPN R220, R221) it has the three-party wedge: Propositions 3(f) (the sphere only if V = V₂ = H) and 5(e)
   (the even wedge's readings the two-dimensional Cauchy, every pair at its corner, the near field a third, with its
   converse), "More parties" after it (SPN R225: n other parties, every pair at its corner, the near field in all
@@ -764,6 +768,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   killed P3: the mean of 5/8 and 15/16 also keeps its value under the unit. Run 2 with Jaynes's restriction rule (one
   law, its restriction the law on the smaller range): only the levels, ln 6/ln 9 ≈ 0.8155 (P3′ not killed). Jaynes's
   unbounded form: 1 − log₂ 3/L on [1, 2^L], the range held the missing number (P4).
+  `mgp-plan.md` (+ `mgp/mgp.py`, `mgp/mgp2.py`, 14 Oct; SPN R246): the marginalization paradox, exact (both reasoners'
+  likelihoods by quadrature). Stone and Dawid's exponentials, DSZ's change point and normal (μ/σ): agreement only at the
+  nuisance's dη/η (P1–P3); the gamma killed P4 (other powers move the prior instead of producing the paradox); Weibull
+  P4′ not killed. General: under dη/η integrating the scale out is ℓ₁^(−n) times the ratios' law. Runs take 57 and 35
+  minutes.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
