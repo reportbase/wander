@@ -324,6 +324,54 @@ So the answer to "where is the removal of the scale" is that it happens in two p
 
 The mean never removes it.
 
+### V = H on the beach
+*Tom, about 04:49: "can we show that V = H in the ligiht house metaphore?" (SPN R257). The numbers are exact. The
+reading in the corpus's terms is Claude's.*
+
+Yes. The lighthouse shows V = H in three ways, and it also shows what V = H is not.
+
+1. **Physics has drawn it for the lamp.**
+   - The lamp turns rigidly in a plane where a metre out to sea is a metre along the shore.
+   - A flash's two legs are β (h, all of H) and x − α (v). Its direction (cos θ, sin θ) lies on one unit circle, and
+     the shore is met at the reach β/cos θ.
+   - This is OFS Proposition 3(e): a rigid turn carries all of h into all of v only if both are drawn at one length.
+
+   In the lighthouse, the isotropy of space draws V = H. The situated reader has to draw it for itself.
+2. **The beach can test it: OFS Proposition 5(d) on the shore.**
+   - Read the landings on a shore ruler whose unit is c sea units. Read the lamp's distance on the sea's ruler. Form
+     R = (offset from the foot) / (lamp's distance).
+   - The lamp's even turn gives P(R ≤ r) = (2/π)·arctan(c·r), with median 1/c.
+   - **At c = 1**, half the landings lie within one lamp-distance of the foot. The law is unchanged by the flip
+     R ↦ 1/R: the near half is the mirror of the far half.
+   - **At c = 2**, 70.5% lie within "one lamp-distance", the median is ½, and the flip fails (by 0.25 at r = 0.3).
+
+   The law sits at the corner, and is unchanged by the flip, exactly when c = 1. V = H is the condition for the 45°
+   flash to be the corner. Testing it needs one outside amount, the lamp's distance read out to sea. The landings alone
+   cannot test it, because a Cauchy read on any ruler is still a Cauchy.
+3. **Charts show c ≠ 1.** A plate carrée chart, with latitude and longitude drawn at one scale, draws east–west
+   lengths at sec(latitude) times their ground length. Take a shore running east–west and a lamp due north of it.
+
+   | latitude | stretch | true 45° flash drawn at | landings within one drawn lamp-distance |
+   |---|---|---|---|
+   | 30°N | 1.155 | 49.1° | 45.4% |
+   | 60°N | 2 | 63.4° | 29.5% |
+
+   At 60°N the flip fails too. Mercator's chart stretches north–south by the same sec(latitude) (dy/dφ = sec φ, 2.000
+   at 60°N), so locally c = 1. It keeps V = H at every point, which is why angles read on it are true (it is
+   conformal), and there the 45° flash is drawn at 45°. OFS §7 already uses Mercator's map, for the two address spaces.
+4. **What it does not show: the true size.** The lighthouse keeps apart the two numbers OFS keeps apart.
+   - **c is the drawing**, V = cH. It must be 1. With c ≠ 1 the figure is stretched: its angles change and the corner
+     leaves 45°.
+   - **κ = β/H is the true size**, and it is free.
+     - **The lamp's reader.** It reads by angle, so it has tan θ and no β. Choosing an H, it lays the shore at
+       H·tan θ. That is off from the truth by β/H in both directions alike: a similar figure, every angle kept, the
+       45° flash still the corner. This is a zoom, fixed by one outside amount (the lamp's distance in metres).
+     - **The shore readers.** With no sea ruler, they take β from the corner (half the interquartile range). This is
+       OFS Proposition 13's estimate at the median: the lamp drawn as far out as the half-way landing is along.
+
+So the lighthouse shows V = H as the condition for its corner, and shows it apart from H. The lamp may be drawn at any
+distance (a zoom), but not at different lengths along and across (a stretch).
+
 ## 8. Open for Tom
 
 1. **Does a population held at once count as a sweep?** It is the parallel reader's way. With it, ten of the 65
