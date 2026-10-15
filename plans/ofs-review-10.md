@@ -401,3 +401,18 @@ required there for something named (the corner at the 45° flash; true bearings)
 - **H.** The date line: 15 October 2026 (Proposition 5(f), (g) were added today).
 
 Not proposed: condensing (R203, R232). The abstract's length is Tom's call.
+
+### Made (15 October, about 05:11, at Tom's "yes"; SPN R259)
+
+Edits A–H as proposed. Only the wording listed above changed; the paragraphs touched were re-wrapped, and a word-level
+comparison against the previous text shows no other change.
+- A in the abstract and the introduction's item. The introduction also says that sweeps which are not turns keep the
+  corner and the missing mean but not the Cauchy's shape (Theorem 6(e), §11.2).
+- B as Theorem 6's opening sentences.
+- C in §7.4.
+- D in §1, §2 and §3.1. §3.1's "Both known" entry keeps "the truth is one point of the triangle", since there the
+  breadths are in hand.
+- E in the abstract.
+- F in Theorem 6(c) and its proof.
+- G in §1.
+- H the date line.

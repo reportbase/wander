@@ -2,40 +2,41 @@
 
 **Addresses, payloads and the geometry of a situated reader**
 
-*Tom Brinkman, with Claude. Draft for external review, 14 October 2026.*
+*Tom Brinkman, with Claude. Draft for external review, 15 October 2026.*
 
 ## Abstract
 
 Classical geometry is drawn from nowhere: every length is held at once, to one scale, by no one in particular. A reader
-that stands somewhere has less. It has its own breadth, a value it chooses to start from, but not the breadth of what
-it reads. This paper works out the
-geometry that this one restriction leaves. We build on Jaynes's principle of transformation groups: what a reader
-cannot tell apart, it addresses alike. Taking its ignorance to be of its own attitude, of the other's size and of which
-unit relation a reading was divided by, and the sweep to be the turning of a rigid bar, the principle gives the even
-turn, the corner and the drawing at the reader's own breadth, and, through amounts, motivates the logarithm past the
-corner; being situated, at home, removes the translations that Jaynes's chord keeps. We begin with the readers themselves. What a reader knows of two breadths
-sets one of five situations (with more parties, one entry per party), and these give three vantages: the completed view from nowhere, which holds the straight
+that stands somewhere has less. It has its own breadth, a value it chooses to start from, but not the breadth of what it
+reads. This paper works out the geometry that this one restriction leaves. We build on Jaynes's principle of
+transformation groups: what a reader cannot tell apart, it addresses alike. Taking its ignorance to be of its own
+attitude, of the other's size and of which unit relation a reading was divided by, and the sweep to be the turning of a
+rigid bar, the principle gives the even turn, the corner and the drawing at the reader's own breadth, and, through
+amounts, motivates the logarithm past the corner; being situated, at home, removes the translations that Jaynes's chord
+keeps. We begin with the readers themselves. What a reader knows of two breadths sets one of five situations (with more
+parties, one entry per party), and these give three vantages: the completed view from nowhere, which holds the straight
 chord between two points, and two situated readers, one taking in a hemisphere at once and one sweeping it from home,
 which hold only the arc they turn through and whose figures are the bell and the fisheye. The chord comes before the
 circle: it needs no turn, and the circle is drawn on it by one. The three read a line of true breadth 1 as 1, π/2 and
-2/π; the true breadth is held only from nowhere, or constructed from several observations, never observed from one. Any relation between two parties can be written as a pair of unit relations, h
-and v, each between 0 and 1, and the reader reads their ratio. Because neither unit relation can pass 1, every such sweep
-turns over at a single point, v = h, the *corner*, where reading v in terms of h gives way to reading h in terms of v.
-For there to be a relation, the reader must assign the other party a breadth, and its only measure is its own: it
-draws the mountain at the breadth of its thumb, V = H. This is required. Only then is the sweep from one party to the
-other the turn of one rigid bar, tracing a unit circle with the corner at distance 1 whatever unit was chosen, and only
-then is there a single even turn; working back from the Cauchy distribution, which is known, arrives at V = H and
-nowhere else. The two familiar pictures of a turn laid on a line require it too: a lighthouse's flashes put half their
-landings within the lamp's distance of its foot only when shore and sea are drawn at one length, and Mercator's map
-draws every compass course true only because it stretches north–south as much as east–west, giving up only size, a
-zoom. The drawing is not a claim about the mountain. Its true size is a separate number, which one observation
-does not give; the reader's best estimate of it is the median of what it knows, and correcting the estimate moves every
-amount by the same number of levels and redraws nothing. Nor is the reader's own breadth a measurement: H is the value
-it chooses to start from, every value gives the same circle, and its size sets only the zoom, fine near for a small H
-and fine far for a large one. The geometry needs that value and a shape, and the shape is set by how many unit
-relations the system includes: two give the circle, three the sphere. Inside the
-corner the reader can lay out its readings in proportion; past it, if no scale is preferred, the only consistent layout
-is logarithmic. The reader therefore has two address spaces, proportional and logarithmic, joined at one corner.
+2/π; the true breadth is held only from nowhere, or constructed from several observations, never observed from one. Any
+relation between two parties can be written as a pair of unit relations, h and v, each between 0 and 1, and the reader
+reads their ratio. Because neither unit relation can pass 1, every such sweep turns over at a single point, v = h, the
+*corner*, where reading v in terms of h gives way to reading h in terms of v. For there to be a relation, the reader
+must assign the other party a breadth, and its only measure is its own: it draws the mountain at the breadth of its
+thumb, V = H. This is required for the sweep to be a turn. Only then is the sweep from one party to the other the turn
+of one rigid bar, tracing a unit circle with the corner at distance 1 whatever unit was chosen, and only then is there a
+single even turn; working back from the Cauchy distribution, which is known, arrives at V = H and nowhere else. The two
+familiar pictures of a turn laid on a line require it too: a lighthouse's flashes put half their landings within the
+lamp's distance of its foot only when shore and sea are drawn at one length, and Mercator's map draws every compass
+course true only because it stretches north–south as much as east–west, giving up only size, a zoom. The drawing is not
+a claim about the mountain. Its true size is a separate number, which one observation does not give; the reader's best
+estimate of it is the median of what it knows, and correcting the estimate moves every amount by the same number of
+levels and redraws nothing. Nor is the reader's own breadth a measurement: H is the value it chooses to start from,
+every value gives the same circle, and its size sets only the zoom, fine near for a small H and fine far for a large
+one. The geometry needs that value and a shape, and the shape is set by how many unit relations the system includes: two
+give the circle, three the sphere. Inside the corner the reader can lay out its readings in proportion; past it, if no
+scale is preferred (a premise we assume, not derive), the only consistent layout is logarithmic. The reader therefore
+has two address spaces, proportional and logarithmic, joined at one corner.
 
 Our main result concerns what a reader receives when it sweeps this circle evenly from where it stands. Its readings
 follow the Cauchy distribution. When the evenness is the reader's own laying, we show that the distribution belongs
@@ -52,11 +53,12 @@ closer together than the reader's step arrive as their centroid, a sum.
 
 ## 1. Introduction
 
-Geometry as usually written is drawn from nowhere. A blueprint shows every line at its true length, to one scale,
-turned neither toward nor away from anyone, and the equation h² + v² = 1 holds all its points at once. Nagel (1986)
-called this the view from nowhere. It is the right view for many purposes, but it is not the view of anyone who actually
-observes. An eye, an instrument or a person counting stands somewhere. It has its own scale, its own breadth, a value
-it chooses to start from rather than a size it has measured, and it does not know the breadth of what it reads.
+Geometry as usually written is drawn from nowhere. A blueprint shows every line at its true length, to one scale, turned
+neither toward nor away from anyone, and the equation h² + v² = 1 holds all its points at once. Nagel (1986) called this
+the view from nowhere. It is not a view anyone takes but a representation that abstracts from every standpoint: the
+right one for many purposes, but not what anyone who actually observes has. An eye, an instrument or a person counting
+stands somewhere. It has its own scale, its own breadth, a value it chooses to start from rather than a size it has
+measured, and it does not know the breadth of what it reads.
 
 This paper asks what geometry such a reader has. Our thesis is this:
 
@@ -116,7 +118,8 @@ circle comes after the chord, drawn on it by turning. A *situated* reader has a 
 through. Either it takes in a hemisphere at once, from outside (a parallel reader), or it sweeps the hemisphere from
 home, one direction at a time (a serial reader). Their figures are the bell and the fisheye. These two are not the
 only situated views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is
-where the truth lies: a system's true breadths, as shares of their whole, are one point of it. A reader's drawing, every
+where the truth would lie: a system's true breadths, as shares of their whole, would be one point of it, found only
+with the breadths themselves, amounts the reader does not read. A reader's drawing, every
 party at its own H, is the sum's centre, where every pair is at its corner; the geometry follows from there, and the
 truth lies off the centre by the ratios the reader lacks. The three read the same thing differently: a line
 of true breadth 1 reads 1 to the completed view, π/2 to the hemisphere turned away from the reader and 2/π to the
@@ -138,13 +141,15 @@ as if a single observation held it. Section 3 sets out the readers in full.
   own breadth, and what it lacks is a single number (§3).
 - Every sweep between two parties turns over at one point, the corner v = h, the only point left fixed when the two
   parties are exchanged. Near and far are one geometry, read from either side of it (§4).
-- A reader that holds one breadth must assign the other party a breadth in its own unit, and its geometry requires that
-  breadth to be its own, V = H. Only then is the sweep a turn, tracing a unit circle with the corner at distance 1
-  whatever unit is chosen, and only then is there one even turn. Working back from the Cauchy, which is known, arrives
-  at V = H (§5, §7.1). So do the two familiar pictures of a turn laid on a line: a lighthouse's flashes on a shore, and
-  Mercator's chart, which draws every compass course true only because it stretches north–south as much as east–west.
-  Both leave the size free (§7.1). The other party's true size is a separate estimate (§9). H itself is not a measured size but the
-  value the reader starts from; any value gives the same geometry, and its size sets only the zoom (§8).
+- A reader that holds one breadth must assign the other party a breadth in its own unit. For the sweep to be a turn,
+  that breadth must be its own, V = H: only then does the sweep trace a unit circle with the corner at distance 1
+  whatever unit is chosen, and only then is there one even turn. Sweeps that are not turns (along a line, say) keep the
+  corner and the missing mean but not the Cauchy's shape (Theorem 6(e), §11.2). Working back from the Cauchy, which is
+  known, arrives at V = H (§5, §7.1). So do the two familiar pictures of a turn laid on a line: a lighthouse's flashes
+  on a shore, and Mercator's chart, which draws every compass course true only because it stretches north–south as much
+  as east–west. Both leave the size free (§7.1). The other party's true size is a separate estimate (§9). H itself is
+  not a measured size but the value the reader starts from; any value gives the same geometry, and its size sets only
+  the zoom (§8).
 - How many unit relations the system includes sets its shape: two the circle, three the sphere, n + 1 the sphere in
   n + 1 dimensions (§5). With two other parties the same holds once per party. Drawn at V = V₂ = H, the relation lies on one sphere, and the
   reader sweeps one octant of it, a wedge. Swept evenly, its readings are the two-dimensional Cauchy: every pair keeps
@@ -236,8 +241,10 @@ triangle for three. Every other drawing is built from a standpoint. Dividing by 
 dividing by the largest chooses a register, reading v/h up to the corner and h/v past it; dividing by length needs a
 turn. The two hemispheres of §3.4 are two such drawings, not the only ones.
 
-The sum also shows where a reader stands. A system's true breadths, taken as shares of their whole, are one point of
-the triangle, and no common unit moves it. A situated reader does not have that point. It chooses H, which sets only
+The sum also shows where a reader stands. The triangle holds every way the breadths can share a whole. A system's true
+breadths, taken as shares of their whole, would be one point of it, and no common unit moves that point; but finding it
+needs the true breadths, which are amounts, and normalizing the unit relations by their sum does not supply them. A
+situated reader does not have that point. It chooses H, which sets only
 its zoom (§8), and draws every other party at it, V = V₂ = H: equal shares, the triangle's centre (⅓, ⅓, ⅓), which is
 the triple corner, where every pair is at its corner. The rest of the geometry follows from that drawing. The true point
 lies off the centre by the two ratios the reader lacks, V*/H and V₂*/H (§3.8); amounts brought from outside move the
@@ -361,12 +368,12 @@ what arrives.
 breadth, H, V, V₂. A breadth may be known, which is the unsituated view, or not, which is the situated view. A situated
 reader starts the geometry by choosing H and drawing every other party at it, V = V₂ = H. That gives the set of every
 [h, v, v₂]: every way the relations can stand to one another, the unit cube of relations, whose directions are the wedge
-and whose sum h + v + v₂ = 1 holds the truth (§2). The reader stands where the parties' rays meet square: with the
-parties at the triangle's corners, (1, 0, 0), (0, 1, 0) and (0, 0, 1), the only points from which every pair is seen at
-a right angle are the cube's corner, the reader's home, and its mirror across the triangle, (⅔, ⅔, ⅔). With two parties
-those points make a whole circle through home, the circle on the chord of §4; with three they pin the reader down. A
-reader's situation is how it holds the set, and it is given party by party: first for one other party, the five below,
-then for two.
+and whose sum h + v + v₂ = 1 holds every point the truth could be (§2). The reader stands where the parties' rays meet
+square: with the parties at the triangle's corners, (1, 0, 0), (0, 1, 0) and (0, 0, 1), the only points from which every
+pair is seen at a right angle are the cube's corner, the reader's home, and its mirror across the triangle, (⅔, ⅔, ⅔).
+With two parties those points make a whole circle through home, the circle on the chord of §4; with three they pin the
+reader down. A reader's situation is how it holds the set, and it is given party by party: first for one other party,
+the five below, then for two.
 
 | situation | H | V | standpoint | how it reads | example |
 |---|---|---|---|---|---|
@@ -1287,7 +1294,9 @@ Call a statistic of a set of readings an *address statistic* if it depends only 
 the quartiles, which side of the corner each lies on), and a *payload statistic* if it depends on their sizes (the mean,
 any sum).
 
-**Theorem 6.**
+**Theorem 6.** Parts (a) and (d) concern the readings of Proposition 5: the other party drawn at V = H and the circle
+swept evenly by direction. Parts (b) and (c) hold for any finite set of readings. Part (e) drops both the circle and
+the even turn.
 
 (a) *Nothing that arrives changes the Cauchy.* Suppose that whatever arrives in the direction of each step lies at some
 reach ℓ > 0, an amount that may differ from direction to direction and is unknown to the reader. In the reader's unit
@@ -1299,9 +1308,9 @@ f(X) has the same ranks as X, so every address statistic picks out the same elem
 median f(X) = f(median X). Conversely, two sets with the same ranks are carried onto one another by some strictly
 increasing f, so the ranks keep exactly what survives every such change, and nothing more.
 
-(c) *Payload statistics do not.* Only an affine f commutes with the mean on every set of readings: for any f that is not
-affine there is a set X with mean f(X) ≠ f(mean X). For convex f, mean f(X) ≥ f(mean X) on every X, with equality only
-if f is affine on the smallest interval containing X.
+(c) *Payload statistics do not.* Among the strictly increasing maps of (b), only an affine f commutes with the mean on
+every set of readings: for any such f that is not affine there is a set X with mean f(X) ≠ f(mean X). For convex f, mean
+f(X) ≥ f(mean X) on every X, with equality only if f is affine on the smallest interval containing X.
 
 (d) *The Cauchy is an address law.* Over one facing its median is v/h = 1, the corner, and its quartiles are √2 − 1 and
 √2 + 1, a flip pair. Its mean does not exist: ∫₀^M x·2/(π(1 + x²)) dx = (1/π)·ln(1 + M²), which grows without bound.
@@ -1313,7 +1322,9 @@ exist. The even turn on the circle is the case that gives the Cauchy of (d).
 
 *Proof.* (a) is the cancellation shown. (b) Strictly increasing maps preserve ranks; the converse follows by monotone
 interpolation between matched points. (c) A strictly increasing f that satisfies f((a + b)/2) = (f(a) + f(b))/2 for all a, b is affine,
-so a non-affine f fails it for some pair, and X = {a, b} is the set required; the inequality and its equality case are
+so a non-affine f fails it for some pair, and X = {a, b} is the set required. Monotonicity, or some other regularity
+such as measurability, is needed: an additive function built on a Hamel basis, plus a constant, satisfies the midpoint
+equation and commutes with the mean of every finite set without being affine. The inequality and its equality case are
 Jensen's. (d) Over one facing the distribution function is
 (2/π)·arctan(v/h), which is ½ at v/h = 1 and ¼ and ¾ at tan(π/8) = √2 − 1 and tan(3π/8) = √2 + 1; the integral is
 elementary. (e) The exchange carries v/h to h/v and leaves path and weight unchanged, so v/h and 1/(v/h) have one law,
@@ -1389,7 +1400,7 @@ The sweep opens a closed shape out, with home in the middle of the opening and t
 in each facing. Opening divides out size, so each place on the opened line is an address pointing back to a point of the
 closed shape, which keeps its size. Laid evenly by direction, every shape opens into the same fisheye and the same
 Cauchy; the shape survives only in what arrives at each address, one breadth per direction, as Theorem 6(a)
-requires. The addresses are universal, and the shape is payload.
+requires. The addresses are the same for every shape laid evenly by direction, and the shape is payload.
 
 **The lay, not the shape.** Laying the same shapes another way shows where the Cauchy comes from. Read each shape from
 its centre as v/h, and describe its opening by four numbers: the share of readings before the corner, their median, how
