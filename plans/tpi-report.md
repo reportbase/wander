@@ -358,7 +358,7 @@ Yes. The lighthouse shows V = H in three ways, and it also shows what V = H is n
 
    At 60°N the flip fails too. Mercator's chart stretches north–south by the same sec(latitude) (dy/dφ = sec φ, 2.000
    at 60°N), so locally c = 1. It keeps V = H at every point, which is why angles read on it are true (it is
-   conformal), and there the 45° flash is drawn at 45°. OFS §7 already uses Mercator's map, for the two address spaces.
+   conformal), and there the 45° flash is drawn at 45°. OFS §6 already uses Mercator's map, for the two address spaces.
 4. **What it does not show: the true size.** The lighthouse keeps apart the two numbers OFS keeps apart.
    - **c is the drawing**, V = cH. It must be 1. With c ≠ 1 the figure is stretched: its angles change and the corner
      leaves 45°.
