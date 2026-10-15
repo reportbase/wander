@@ -1071,4 +1071,3 @@ In short:
 ## Related repos
 games, draw, 3d and flare are the owner's other projects. wander doesn't depend
 on any of them.
-
