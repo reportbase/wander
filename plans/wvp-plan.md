@@ -95,7 +95,7 @@ but never a mean. This is a simulation of our own on a law chosen beforehand; it
 waves or particles.
 
 **Next, not run.** Real data: published single-photon (or single-electron) build-ups of an interference pattern, where
-counted arrivals are recorded one by one (Tonomura et al. 1989; Aspect, Grangier and Roger's single-photon experiments).
+counted arrivals are recorded one by one (Tonomura et al. 1989 for electrons; Grangier, Roger and Aspect 1986 for single photons).
 The prediction to write first: the counted pattern's Kolmogorov gap falls as N^(−1/2), and the pattern's own corner (in
 whatever pair is named) is found by count with the spread its density sets. The bridge (counts and positions in amounts)
 must be named before it is run.
