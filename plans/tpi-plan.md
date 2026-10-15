@@ -247,3 +247,31 @@ identities (no use): K3, K14, C1, C2, C9
   does not need it; in use, either can serve a reader who lacks the whole. So the two marks sort the derivations
   cleanly and the uses not at all: the situated reading belongs to the use of a turn's 2/π to read an unknown whole,
   which thirteen of the fifty-five turn occurrences have.
+
+### Run 4: the third mark, a sweep (predictions written 14 October, before the third question is put)
+
+*Tom, 21:01: "there also needs to be a sweep, not ust an equation." (SPN R253.) Written before the classifier of run 3,
+still told nothing of turns, the situated view or these predictions, answers one more question; the run is recorded
+below this section.*
+
+**What changes.** The situated view has three marks: a turn, V not known, and a sweep actually made. An identity or a
+derivation's integral over an angle is an equation; a sweep is a process that meets the directions. The corpus already
+separates the ways of meeting them: the parallel reader holds a hemisphere at once, the serial reader one direction at a
+time (OFS §3.1, situations 3 and 4).
+
+**The question (fixed now).**
+- **Q3.** In the physical situation the formula describes (not its derivation), is the angle or phase that π comes
+  from (a) traversed in order by a process, a rotation, oscillation or wave advancing in time, or a scan across
+  positions, so that the directions are met one after another; (b) present all at once as a population, many needles,
+  fibres, leaves, particles, pairs or directions held together; or (c) not traversed at all, the formula being an
+  identity, a definition or a convention, or its π coming from a shape, a pole or a constant with no direction varied?
+
+**Predictions.**
+- **P8 (no sweep without a turn).** Every route-S entry (the circle as a shape) and every identity (Q2 n/a in run 3)
+  is (c) on Q3. *Killed* if any is (a) or (b).
+- **P9 (the three marks meet).** At least three entries carry all three marks: a turn (route E or H), used to infer what
+  is not known (Q2 (b) or (c)), and swept in order (Q3 (a)). *Killed* if fewer than three. My prior, stated: the
+  averaging meter, the relay's describing function and Coltman's bar-target relation look like such cases; Buffon's
+  needles, Kendall's pairs, the canopy's leaves and the magnetic particles look like populations.
+
+Reported as well: the entries with each combination of marks.
