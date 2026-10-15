@@ -416,3 +416,103 @@ comparison against the previous text shows no other change.
 - F in Theorem 6(c) and its proof.
 - G in §1.
 - H the date line.
+
+---
+
+## Follow-up: ChatGPT on whether V = H is unique (shared by Tom, 15 October, about 10:32)
+
+*Prefixed "chatgpt:"; a reply in Tom's conversation with ChatGPT after the "two choices" and "should, not does"
+exchanges (SPN R260–R262). Kept as received, the LaTeX written plainly.*
+
+Yes. I think that gets closer to the actual argument, and it exposes a weakness in my previous answer.
+
+I treated V ≠ H as a different but still coherent drawing. You are pointing out that a drawing can be internally
+consistent yet be a bad geometry for an observer who must sweep the environment smoothly.
+
+Imagine an observer sweeping across a scene, from one direction to the next. The representation needs to preserve a
+stable relationship between successive observations. Otherwise, the observer encounters distortions introduced not by
+the environment, but by the observer's own representation rule.
+
+If V/H = c ≠ 1 introduces a systematic mismatch, then the consequences could include:
+- A displaced corner: the physical event corresponding to the geometric fixed point no longer falls at the intended
+  location.
+- A distorted sweep: equal changes in the sweep no longer produce the intended relationships between represented
+  breadths.
+- A broken correspondence: the reader's geometric addresses no longer line up with the landmarks that make the sweep
+  coherent.
+- Accumulated difficulty: the observer must compensate for distortions that the V = H assignment avoids.
+
+The key point is not that alternative assignments are mathematically impossible. It is that they may impose a cost on
+the observer's ability to operate successfully.
+
+*The argument becomes stronger—and more demanding.* I would distinguish two claims:
+1. Geometric claim: Under your stated requirements, V = H preserves the desired rigid-bar turn, corner alignment, and
+   standard Cauchy reading.
+2. Observer claim: A reader that must sweep its environment smoothly has a functional reason to use a representation
+   that preserves those relationships.
+
+The second claim explains why the geometry matters. It connects the mathematical construction to the observer's task.
+
+But there is one important step to establish: does every c ≠ 1 actually introduce a sweep distortion, or can some
+alternative assignment preserve smoothness while changing the scale or location of the corner? Smoothness alone does not
+automatically establish uniqueness. You need to show that the relevant kind of smooth sweep requires the particular
+alignments your construction provides.
+
+If you can establish that, the conclusion is more consequential than "V = H is a convenient convention." It becomes:
+
+> The assignment is selected by the operational requirements of successful observation, rather than imposed as an
+> arbitrary mathematical preference.
+
+That is the argument I would now stress-test—not the weaker claim that an observer can draw a consistent picture with
+any value of c.
+
+### Response (15 October, Claude)
+
+The question is the right one, and its caution is right: **smoothness alone does not single out V = H.**
+- Drawn at V = cH, the bar's tip runs on an ellipse, which is as smooth as a circle.
+- OFS already notes this (§7.1, "Working back from the Cauchy", step 3): even steps of the ellipse's own parameter give
+  the Cauchy at the corner.
+
+What does single it out is something the sweep has beyond smoothness: it is **uniform** (every step the same map) and
+it **returns** after one full turn.
+
+**Claim (classical).** Let the sweep be a one-parameter group of linear maps of the (h, v) plane, g(t) = exp(tA), with
+A ≠ 0 and g(T) = I for some T > 0. Then g preserves an inner product, unique up to a positive factor. In it, every point
+the sweep reaches from all of h has the same length, and all of v is among those points. So the sweep draws V = H in its
+own measure. The one free number is the factor, which is H.
+
+*Proof.*
+1. A real 2 × 2 matrix with exp(TA) = I has eigenvalues ±iω with ω = 2πk/T, k ≠ 0. A pair of zeros would make A
+   nilpotent, and then exp(TA) = I + TA ≠ I.
+2. So A = P(ωJ)P⁻¹, with J the quarter-turn generator, and g(t) = P·R(ωt)·P⁻¹. This preserves Q(x) = |P⁻¹x|².
+3. Suppose B is any symmetric form preserved by every g(t). Then C = PᵀBP is preserved by every rotation, so it
+   commutes with J.
+4. Being symmetric, C is a multiple of the identity, so B is a multiple of Q.
+5. All points of one orbit have equal Q. ∎
+
+Checked in `ofs/periodic.py` on eight random changes of coordinates:
+- the invariant inner product is unique up to a factor and positive definite;
+- the page shows c from 0.54 to 27;
+- in the sweep's own measure, all of v over all of h is 1 to 25 digits.
+
+**What it means.**
+- A drawing with c ≠ 1 is the same uniform sweep described in the page's coordinates rather than its own.
+- Laid by the sweep's own parameter, its readings in unit relations are unchanged. What changes is where the page puts
+  things, and which steps look even on the page.
+- Proposition 5(d)'s c ≠ 1 is evenness taken in the page's angle, not in the sweep's.
+
+So V = H is not one choice among coherent alternatives. It is the sweep's own measure, written down. What is chosen is H,
+the factor, which is the "two choices" of R260 made exact.
+
+In the follow-up's own words, the operational requirement is uniformity and return, not smoothness. Under it the
+assignment is selected, up to the zoom.
+
+The corner does not move either. v = h in unit relations is the half-way point of the sweep's own parameter. Only
+its place on a page drawn at c ≠ 1 moves.
+
+**Where it would go.**
+- OFS Proposition 3, a new part (g), with the proof above. It lets (c) and (e) rest on uniformity and return in place of
+  "a rigid bar", since the rigidity then follows.
+- One sentence in "Two choices, and a number that is not one".
+
+Proposed, not made: Tom set OFS's scope this morning (R258: "that's enough for this paper"), so this waits for his word.
