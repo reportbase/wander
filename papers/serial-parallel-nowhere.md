@@ -921,7 +921,7 @@ is to set V = H, not 1"; "thats a pretty solid proof, kind of a proof of necessi
   1.673), and even in the ellipse's parameter is the circle's turn with V = H, stretched afterwards. Working back from
   the known Cauchy arrives at V = H and nowhere else (`observation-from-somewhere.md` Proposition 3(e), Proposition
   5(d)). What R212's c can still be is the **estimate of the other's true size**, which enters only the amounts, as a pan
-  in levels, and never redraws the circle; R212's median result stands for it. (b) The corner is then at
+  in levels, and never redraws the circle; R212's median result stands for it. *15 October* (R258): the two familiar pictures of a turn laid on a line, the lighthouse and Mercator's map, each require V = H and leave the size free (§2.1, "The lighthouse and Mercator's map require V = H"; OFS Proposition 5(f), (g)). (b) The corner is then at
   radius 1, since it is one H from home measured in H, H/H, whichever H was chosen; no number is chosen, and the size of H never
   enters, so the choice of which H is free (a convention: §8.4, the unit is not geometric; §3.8, a different H only moves
   the reader's rung). (c) The
@@ -2119,6 +2119,56 @@ past it, the pole a horizon it never reaches. *Corrected, 7 October,* after a re
 "the globe divided by h". It is the oldest instance found of the situated reading laid out (Mercator, 1569;
 `plans/neighbours.md`).
 
+**The lighthouse and Mercator's map require V = H** (15 October; R256–R258. Tom: "all we need for this paper is to
+complete the well known metaphors of the mercator and lighthouses. If we can show that V must equal H in those to
+situations, that's enough for this paper."). These are the two familiar pictures of a turn laid on a straight line.
+Both are worked in `observation-from-somewhere.md`, Proposition 5(f) and (g), with proofs; every number is checked in
+`ofs/charts.py`. The fuller working is in `plans/tpi-report.md` §7.
+
+- **The lighthouse** (Gull 1988; Sivia and Skilling 2006). A lamp stands β out to sea, opposite the shore's point α,
+  and flashes at angles θ spread evenly over the half turn toward the shore.
+  - **Where the Cauchy is.** A flash lands at x = α + β·tan θ, so the reading is the shore offset over the lamp's
+    distance, (x − α)/β = tan θ. Home is the foot, the corners are the flashes at ±45° (landing at α ± β), and the
+    horizons are the shore's two ends. Half the landings fall within β of the foot.
+  - **Where the scale is removed.** Within each flash, the path β/cos θ cancels from the ratio of its two legs. That is
+    OFS Theorem 6(a), with the reach being the path.
+  - **Where the scale stays.** Across flashes one length is left, β. It is the same for every flash because the shore
+    is straight; curve the shore round the lamp and the landings come out even, with no Cauchy.
+  - **The shore's readers.** They hold metres on an agreed ruler and know neither α nor β. The mean of N landings has
+    the law of one landing, so sums never remove the scale. Order gives α at the median and β as half the
+    interquartile range, at the corner.
+  - **V = H.** Draw the shore at c times the sea, V = cH. The half-way flash is then drawn at arctan c, and
+    (2/π)·arctan(1/c) of the landings fall within one drawn lamp-distance of the foot. The law is the corner's, and
+    unchanged by the flip, only at c = 1. Drawing at any H in place of β changes every length by β/H in both
+    directions alike: a similar figure, a zoom.
+  - **Whose sweep.** The lamp is situated: it turns and needs no distance. The shore is unsituated, a ruled line. The
+    textbook's Cauchy is the lamp's, the world's. A reader standing at the lamp and reading by direction holds
+    tan θ, with no β.
+- **Mercator's map.** A chart that draws the parallels as equal horizontal lines draws a step east at sec φ and a step
+  north at f′(φ). Write c = f′(φ)·cos φ, which is V = cH at that place.
+  - A compass course at bearing ψ is drawn at ψ′, with tan ψ′ = tan ψ/c. Every course is drawn true, and northeast
+    (the corner between north and east) at 45°, at every latitude, only if c = 1 everywhere. That is f′ = sec φ,
+    y = asinh(tan φ): Mercator's map, the "vertical equally" above, now shown to be required.
+  - A small circle is drawn as an ellipse with axis ratio c. This is Tissot's indicatrix (Tissot 1881), the bar of
+    Proposition 3(c) in two units; it is a circle only on Mercator's map.
+  - What Mercator gives up is area, by sec²φ: a zoom that changes from place to place and keeps every angle.
+    Greenland drawn as large as Africa is the zoom, not the drawing.
+  - Keeping area instead forces c = cos²φ. No chart keeps both (Euler 1777; Gauss 1828).
+
+  At latitude 60° the course northeast is drawn on each cylindrical chart as follows:
+
+  | chart | height y, in v and h | c | course northeast drawn at |
+  |---|---|---|---|
+  | plate carrée | arctan(v/h), the turn | cos φ | 63.4° |
+  | Lambert's equal-area | v | cos²φ | 76.0° |
+  | central cylindrical | v/h, the division | sec φ | 26.6° |
+  | Mercator's | asinh(v/h) | 1 | 45° |
+
+So both pictures separate the two numbers the corpus keeps apart (R215, R247). The drawing c must be 1; with c ≠ 1 the
+figure is stretched, angles change, and the corner leaves 45°. The size (the lamp's distance, or the chart's local
+scale) is free; it is a zoom that changes every length and no angle. Mercator chose as the situated reader does: keep
+the drawing, and leave the size to be estimated.
+
 **Depth, read against the sweep** (Tom, 6 October: "when we normalize depth is the difference between g=0 and g=1";
 "isn't depth just calculus, the total area between the unit line of g=0 and the fully expressed line of g=1"; "The unit
 line or sweep is the complete set of all possible v vs h. Depth is read against that base line.")
@@ -2622,7 +2672,7 @@ the situated reader into situation 1, the circle, without knowing V. A situated 
   operation to a unit relation; the address's centre is the corner, the Cauchy's median.
 - Where a Cauchy is physical (a line shape; a lighthouse's beam on a straight shore), an amount has been formed through a
   bridge, a distance times the reading. The amount inherits the lay, with the scale that distance sets, not 1 by
-  assumption.
+  assumption. (The lighthouse is worked closely in §2.1, "The lighthouse and Mercator's map require V = H".)
 
 (§1, "Checking an argument".) The earlier placeholder reading above, "the standard γ = 1 is what puts the corner at the
 middle", holds in unit relations; in amounts it is this assumption.
@@ -6362,6 +6412,7 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
 - **R255** (15 Oct, about 04:32): "wrie. a report.     Maybe a sweep is the better clue, there needs to b a horizon and a sweep over it..", to Claude's answer on R254. **A sweep over a horizon as the clue.** The report is `plans/tpi-report.md`: TPI runs 1–4 and R251–R254 in one place, with the 65 occurrences and their marks. Reading (Claude's, unruled; the facts classical, checked exactly): OFS already states the clue in this form (its abstract and Theorem 6(e): a sweep fair to both parties puts the median at the corner and, if it reaches the horizon, has no mean, on every path). 2/π is that sweep's measure on one path only, the circle (three paths agree at home, the corner and the horizon, and only the circle's share carries π), and it needs the horizon (sin θ/θ is 2/π only there); the horizon, built into every quarter turn, could not sort the catalogue. The horizon is where the reader's own division meets its limit: v/h runs off, v/(h + v) does not. On the unbounded face, the reading laid on a line, the sweep's fingerprint is the median at the corner with no mean: classical in the lighthouse, a resonance's Lorentzian ((1/π)·dδ/dE as the phase sweeps 0 to π; half the states within one half-width, the corner), the ground seen from a height (the half-plane's harmonic measure; half within the height of the foot, at 45°) and an inverted noisy parallax. Whose sweep it is (OFS §7.8: the reader's addresses, or the world's, as with the lighthouse's lamp) is a fourth question. Proposed, not run: the unbounded face gathered and classified as TPI did the bounded one, with the stable limit of summed heavy-tailed amounts named as a likely kill (a horizon reached, no turn). Open: which horizon (the turn's end, the line swept, or the azimuth), whether a population held at once is a sweep, and whether the sweep must be the reader's own. Made: `plans/tpi-report.md`; a correction to run 4's counts (`plans/tpi-plan.md`, R253 annotated); CLAUDE.md.
 - **R256** (15 Oct, about 04:44): "lets look more closely at the lighthouse, more closely that seems to be a common metaphore.       where is the cauchy in the light house, where is the removal of the scale?" **The lighthouse, closely** (`plans/tpi-report.md` §7; classical, checked exactly; the reading Claude's, unruled). The Cauchy: a flash at θ lands at x = α + β·tan θ, so the shore offset from the foot over the lamp's distance is the reading, (x − α)/β = tan θ; home the foot, the corners at ±45° landing at α ± β (half the flashes within β of the foot), the horizons the shore's two ends; the shares by doublings of distance from the foot flip-symmetric about the corner. The scale is removed in two places. Within each flash the path r = β/cos θ cancels from the ratio of its two legs (OFS Theorem 6(a), the reach ℓ the path). Across flashes one scale is left, β, the same for every flash because the shore is straight: the lamp's H (a shore curved round the lamp gives even landings, no Cauchy; the Cauchy is an even turn laid on a straight line). On the shore it is not removed: the detectors read metres on an agreed ruler (the unsituated view), the mean of N flashes has exactly the law of one, and order gives β back at the corner (half the interquartile range) and α at the median. The lamp is situated (it turns, needs no distance, its sweep reaches the horizon at both ends, hence no mean); the shore is unsituated; the textbook's Cauchy is the lamp's, the world's (OFS §7.8). OFS's case is the mirror: a reader at the lamp reading each landing by angle has tan θ, no β; β enters only to lay the readings out as distances, the one bridge, and laid at a chosen H the median falls at β/H. Made: `plans/tpi-report.md` §7, CLAUDE.md.
 - **R257** (15 Oct, about 04:49): "can we show that V = H in the ligiht house metaphore?" **V = H on the beach** (`plans/tpi-report.md` §7, "V = H on the beach"; exact; the reading Claude's, unruled). Yes, three ways. (1) Physics has drawn it for the lamp: it turns rigidly in a plane where a metre out to sea is a metre along the shore, a flash's legs β (h, all of H) and x − α (v), its direction on one unit circle and the shore met at reach β/cos θ (OFS Proposition 3(e)); the isotropy of space draws V = H, which the situated reader must draw for itself. (2) The beach tests it (OFS Proposition 5(d) on the shore): with the shore read on a ruler c times the sea's, R = offset/(lamp's distance) has P(R ≤ r) = (2/π)·arctan(cr), median 1/c, unchanged by the flip only at c = 1 (at c = 2, 70.5% within "one lamp-distance", the flip off by 0.25 at r = 0.3); one outside amount, the lamp's distance read out to sea, is needed, since the landings alone stay a Cauchy on any ruler. (3) Charts: a plate carrée chart draws east–west lengths at sec(latitude), so with an east–west shore and a lamp due north the true 45° flash is drawn at 49.1° at 30°N and 63.4° at 60°N, with 45.4% and 29.5% within one drawn lamp-distance; Mercator's stretches north–south by sec φ too, locally c = 1, angles true. What it does not show is the true size: c (the drawing, required 1, else the figure stretched and the corner off 45°) and κ = β/H (the true size, free: the lamp reading by angle and laying the shore at H·tan θ draws a similar figure, a zoom, fixed by one outside amount; the shore readers take β from the corner, OFS Proposition 13). Made: `plans/tpi-report.md` §7, CLAUDE.md.
+- **R258** (15 Oct, about 04:55): "all we need for this paper is to complete the well known metaphors of the mercator and lighthouses.  If we can show that V must equal H in those to situations, that's enough for this paper.      Move the ideas into the  primary papers OFS and SPN." **The lighthouse and Mercator's map, completed, are enough for OFS.** What OFS needs from this line of work is that V = H is required in the two familiar pictures of a turn laid on a straight line. Made: `observation-from-somewhere.md` Proposition 5(f) (the lighthouse: the reading (x − α)/β = tan θ, the path cancelling from the two legs, the straight shore leaving one length β, the shore drawn at c times the sea putting the half-way flash at arctan c and (2/π)·arctan(1/c) of the landings within one drawn lamp-distance, the corner's law and the flip only at c = 1, any H in place of β a similar figure) and 5(g) (Mercator's map: a cylindrical chart's scales sec φ east and f′(φ) north, c = f′(φ)·cos φ; a course at bearing ψ drawn at tan ψ′ = tan ψ/c, every course true and northeast at 45° everywhere only at c = 1, f′ = sec φ, y = asinh(tan φ); the indicatrix an ellipse of ratio c (Tissot 1881); areas sec²φ, a zoom; equal area forces c = cos²φ, and no chart keeps both, Euler 1777, Gauss 1828), with proofs, a table of four cylindrical charts in v and h, "What the two pictures show" (the drawing required, the size a zoom; Mercator chose as the situated reader does), pointers from the abstract, the introduction, §6 and §7.8, and three references; the numbers checked in `ofs/charts.py` (measured from the constructions: the rhumb line integrated and drawn on each chart). SPN §2.1, "The lighthouse and Mercator's map require V = H", after Mercator's map framed in v and h; a note at Proposition 1.2's R215 passage and at §2.2's physical Cauchy. The 2/π catalogue, the marks and the sweep over a horizon stay in `plans/tpi-plan.md` and `plans/tpi-report.md`, not in OFS.
 
 ## Appendix B. Demos and computations
 

@@ -478,6 +478,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "Two other parties" (one entry per party; both known, half-situated, (3, 3), (4, 4), (3, 4), (4, 3), each in prose);
   the three-party reader where the parties' rays meet square (only home and its mirror); §3.4 "With three unit
   relations" (a hemisphere reads 2 at once, ½ one direction at a time).
+  **The lighthouse and Mercator's map require V = H** (15 Oct, SPN R258; Tom: "all we need for this paper is to complete
+  the well known metaphors of the mercator and lighthouses. If we can show that V must equal H in those to situations,
+  that's enough for this paper."): Proposition 5(f), (g) after "Working back from the Cauchy" in §7.1, with proofs.
+  The lighthouse: (x − α)/β = tan θ, the path cancelling from the two legs, the shore drawn at c times the sea putting
+  the half-way flash at arctan c, the corner and the flip only at c = 1, any H a similar figure. Mercator's map: a
+  cylindrical chart's c = f′(φ)·cos φ, bearings drawn at tan ψ′ = tan ψ/c, true everywhere only at c = 1 (Mercator),
+  Tissot's indicatrix the bar in two units, areas sec²φ a zoom, equal area forcing c = cos²φ (Euler, Gauss); a table of
+  four charts in v and h. Numbers checked in `ofs/charts.py`. The abstract, introduction, §6 and §7.8 point to them.
+  That is the scope Tom set for OFS on this line: the 2/π catalogue and the sweep over a horizon stay in the plans.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -828,7 +837,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   on the beach" (SPN R257; Tom: "can we show that V = H in the ligiht house metaphore?"): isotropy draws it for the lamp
   (Proposition 3(e)); the shore tests it with one outside amount (Proposition 5(d): read on a ruler c times the sea's,
   P(R ≤ r) = (2/π)·arctan(cr), the corner only at c = 1); a plate carrée chart is c = sec(latitude), Mercator's c = 1;
-  c (a stretch, required 1) kept apart from κ = β/H (a zoom, free).
+  c (a stretch, required 1) kept apart from κ = β/H (a zoom, free). Then Tom: "all we need for this paper is to complete the well
+  known metaphors of the mercator and lighthouses. If we can show that V must equal H in those to situations, that's
+  enough for this paper." (SPN R258): OFS Proposition 5(f), (g) and SPN §2.1 (below).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
