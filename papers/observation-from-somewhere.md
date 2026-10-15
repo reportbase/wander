@@ -113,22 +113,22 @@ a point you can compute. If you do not know it, your thumb is the only measure y
 to your thumb, V = H, and read the mountain in thumbs.
 
 **Three vantages.** A figure can be held in three ways. The *completed* vantage holds every breadth at once from no
-standpoint; this is classical geometry. Between two points it holds the straight chord, which needs no turn; the
-circle comes after the chord, drawn on it by turning. A *situated* reader has a facing, and holds only the arc it turns
-through. Either it reads the hemisphere turned away from it, from outside, or the hemisphere turned toward it, from
-home, inside. How either is read is not pinned down; this paper follows one proposal, the convex side taken in at
-once (the exterior reader) and the concave side swept one direction at a time (the interior reader), and their figures
-are the bell and the fisheye. These two are not the only situated
-views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is
-where the truth would lie: a system's true breadths, as shares of their whole, would be one point of it, found only
-with the breadths themselves, amounts the reader does not read. A reader's drawing, every
-party at its own H, is the sum's centre, where every pair is at its corner; the geometry follows from there, and the
-truth lies off the centre by the ratios the reader lacks. The three read the same thing differently: a line
-of true breadth 1 reads 1 to the completed view, π/2 to the hemisphere turned away from the reader and 2/π to the
-hemisphere turned toward it. The true breadth is had only with both hemispheres in hand, which no single observation
-provides. A situated reader can construct it from several observations, but it cannot observe it. Many apparent
-paradoxes come from reading one vantage's geometry as if it were another's, most often from treating the completed view
-as if a single observation held it. Section 3 sets out the readers in full.
+standpoint; this is classical geometry. Between two points it holds the straight chord, which needs no turn; the circle
+comes after the chord, drawn on it by turning. A *situated* reader has a facing, and holds only the arc it turns
+through, by one of two sweeps that get two different things. The exterior sweep, over the arc's convex side, gets the
+payloads, what arrives, read by their mean; the interior sweep, from home over the concave side, gets the addresses to
+the payloads, the Cauchy, read by its median at the corner. How either sweep is made is not pinned down; this paper
+follows one proposal, the exterior taken at once and the interior one direction at a time. These two are not the only
+situated views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is where
+the truth would lie: a system's true breadths, as shares of their whole, would be one point of it, found only with the
+breadths themselves, amounts the reader does not read. A reader's drawing, every party at its own H, is the sum's
+centre, where every pair is at its corner; the geometry follows from there, and the truth lies off the centre by the
+ratios the reader lacks. The three read the same thing differently: a line of true breadth 1 reads 1 to the completed
+view, π/2 to the hemisphere turned away from the reader and 2/π to the hemisphere turned toward it. The true breadth is
+had only with both hemispheres in hand, which no single observation provides. A situated reader can construct it from
+several observations, but it cannot observe it. Many apparent paradoxes come from reading one vantage's geometry as if
+it were another's, most often from treating the completed view as if a single observation held it. Section 3 sets out
+the readers in full.
 
 **Results.**
 - A situated reader's ignorance, as we choose it, is a group: turns of its bar, rescalings of the other party's size,
@@ -384,27 +384,32 @@ the five below, then for two.
 | 0 | known | not known | none | nothing: H but no h, so no relation | — |
 | 1 | known | known, equal to H | none | the whole at once | an equation: the circle h² + v² = 1 |
 | 2 | known | known, unequal or varying with direction | none | the whole at once | an array: a shape's breadth in every direction |
-| 3 | known | not known | outside, an exterior point: the convex side | not pinned down; proposed: one hemisphere at once | an apple held in the hand, its facing side seen at once |
-| 4 | known | not known | inside, an interior point: the concave side | not pinned down; proposed: one direction at a time | a molecule inside an endless apple, the others arriving one at a time, nearest first |
+| 3 | known | not known | an exterior point: the convex side | not pinned down; proposed: one hemisphere at once | the exterior sweep: it gets the payloads, what arrives |
+| 4 | known | not known | an interior point: the concave side | not pinned down; proposed: one direction at a time | the interior sweep: it gets the addresses to the payloads |
 
-**Vantage, not mechanism.** Situations 3 and 4 are set by the vantage, by which side of the arc the reader reads: 3 the
-convex side, turned away from a reader at an exterior point, outside the thing, facing it; 4 the concave side, turned
-toward a reader at an interior point, inside, at home (§3.4). How a reader comes to read either hemisphere, its
-mechanism, is not pinned down for either. The paper calls them the exterior reader and the interior reader, and follows
-one proposal throughout: the convex side taken in at once, the concave swept one direction at a time from home, with
-static and dynamic saying why (§3.5). What it shows that rests on the proposal (the bell and the fisheye, §7.1; which
-centre a reader can hold, §7.6) is shown of a reader working that way, and attaches to situation 3 or 4 as far as the
-proposal holds (§11.2, question 8). Taking in a hemisphere at once is not holding the whole: the whole at once is
-situations 1 and 2.
+**Two sweeps, two results.** Situations 3 and 4 are two sweeps over the same facing, and they get two different things.
+The exterior sweep, from an exterior point of the circle over the arc's convex side, gets the payloads: what arrives,
+its departure from the unit circle, read by its mean. Averaged over the facing that departure is a sum of bounded parts;
+where they vary independently its mean tends to the normal law (the central limit theorem). The exterior sweep's centre
+is the payload's centre of gravity. The interior sweep, from an interior point, home, over the concave side, gets the
+addresses to the payloads: the places a reading can be put, laid before anything arrives, whose law is the Cauchy, with
+its median at the corner and no mean (Theorem 6). The interior sweep's centre is that median, the address of the
+payload's centre. Neither is a reader standing outside or inside a thing; each is a sweep, set by the side of the arc it
+runs over (§3.4). How a reader makes either sweep, its mechanism, is not pinned down for either. The paper calls them
+the exterior reader and the interior reader, and follows one proposal throughout: the convex side taken in at once, the
+concave swept one direction at a time from home, with static and dynamic saying why (§3.5). What it shows that rests on
+the proposal (the bell and the fisheye, §7.1; which centre a reader can hold, §7.6) is shown of a reader working that
+way, and attaches to situation 3 or 4 as far as the proposal holds (§11.2, question 8). Taking in a hemisphere at once
+is not holding the whole: the whole at once is situations 1 and 2.
 
 **The rule.** Three questions place any reader in exactly one situation.
 1. Is anything related to the reader, so that it has an h? If not, it is in situation 0.
 2. Does the reader know V? If it does, it holds the whole: situation 1 if V equals H in every direction, situation 2
    otherwise.
-3. If it does not, which hemisphere does it read? From outside the thing, facing it, the hemisphere turned away from
-   it: situation 3. From inside, at home, the hemisphere turned toward it: situation 4. (On the proposal followed here,
-   the first is read at once, as when the thing holds still for the reader's look, and the second one direction at a
-   time, as when the thing changes or arrives during the look; §3.5.)
+3. If it does not, which sweep does it make? The exterior sweep, over the arc's convex side, getting the payloads:
+   situation 3. The interior sweep, from home over the concave side, getting the addresses: situation 4. (On the
+   proposal followed here, the first is taken at once, as when the thing holds still for the reader's look, and the
+   second one direction at a time, as when the thing changes or arrives during the look; §3.5.)
 
 Each question has two answers, and each answer either ends the questioning or leads to the next question, so every
 reader lands in one situation and no reader lands in two: the five are exhaustive and do not overlap. Cases that look
@@ -442,13 +447,12 @@ reader lacks (§3.8).
   corner is computed, at 45°, and there is no horizon.
 - **2, every other shape.** Both breadths known but unequal, or varying with direction, held whole as an array: the
   breadth in every direction, known together. The corner is computed in each direction, and there is no horizon.
-- **3, the convex side, outside.** A reader outside a thing, facing it, reads the facing side; the far side is
-  turned away. Its sweep covers one hemisphere, from the point that faces it (0) to the limb (π/2); the half past the
-  limb is never swept. On the proposal followed here it takes the facing side in at once, counting every
-  relation at once, and their shares make a bell (§7.1).
-- **4, the concave side, inside.** A reader inside, one part among others, reads the rest from home. On the
-  proposal followed here it takes them one direction at a time, and its view is the fisheye, the running total
-  of the same bell (§7.1).
+- **3, the exterior sweep.** It runs over the arc's convex side, from the point square to it (0) to the limb (π/2);
+  the half past the limb is never swept. It gets the payloads, what arrives over the facing, and reads them by their
+  mean, the average departure from the unit circle.
+- **4, the interior sweep.** It runs from home over the concave side, to the horizon. It gets the addresses to the
+  payloads, the Cauchy laid by direction, and reads them by their median, the corner. Its addresses' shares make a bell,
+  and their running total is the fisheye (§7.1).
 
 Situations 1 and 2 are the view from nowhere. They are mathematical views, an equation or an array, and they name a
 state of knowledge, not a place anyone stands. Situations 3 and 4 are the view from somewhere. Both find the corner
@@ -572,11 +576,11 @@ the unsituated one not at all. The interior reader turns a bar of length 1 from 
 an arc θ, and the line it covers, its shadow, is sin θ. The exterior reader's facing turns twice as far, 2θ (§4, "Why
 the corner sits at 45°"): it faces the far end of the line at the start, is square to the line at the corner, and faces
 the first end at the finish, a half turn in all. Drawn on the line as its diameter, of radius ½, a turn of 2θ draws an
-arc of θ over a chord of sin θ. So both draw an arc θ over a line sin θ. Outside, the reader reads arc over line,
-θ/sin θ; inside, line over arc, sin θ/θ. The two are reciprocal at every turn (the table's θ is the bar's; the
+arc of θ over a chord of sin θ. So both draw an arc θ over a line sin θ. The exterior sweep reads arc over line,
+θ/sin θ; the interior, line over arc, sin θ/θ. The two are reciprocal at every turn (the table's θ is the bar's; the
 exterior reader's facing has turned 2θ):
 
-| turned through | outside, θ/sin θ | inside, sin θ/θ | product |
+| turned through | exterior, θ/sin θ | interior, sin θ/θ | product |
 |---|---|---|---|
 | almost 0° | 1.0000 | 1.0000 | 1 |
 | 15° | 1.0115 | 0.9886 | 1 |
@@ -765,9 +769,8 @@ each finger the same address.
 - *The far field's doublings are fingers.* Past the corner the levels are doublings (§6), addresses laid before
   anything arrives; what lands on them is rings. The fingers sit side by side on one hand, not one inside another.
 - *The situations in the hand.* 0: no hand, nothing to point with and nothing pointed at. 1 and 2: the rings held
-  whole, all at once, with no hand needed to reach them; in 1 every ring is alike, in 2 they differ. 3: one hand
-  facing a thing from outside, all its fingers at once, each reaching the ring on the facing side. 4: inside, one
-  finger at a time, each ring arriving in turn.
+  whole, all at once, with no hand needed to reach them; in 1 every ring is alike, in 2 they differ. 3: the exterior
+  sweep, which gets the rings, the payloads. 4: the interior sweep, which lays the fingers, the addresses to the rings.
 - *The hand has two sweeps.* Raised, it sweeps from flat to upright, from H to V: the altitude. Turned, it sweeps
   round from pointing at the other party to pointing square to it, which brings in a second other party, V₂: the
   azimuth. Every way the hand can point, within one facing of each freedom, is one altitude and one azimuth, as every
@@ -1346,20 +1349,20 @@ carrée chart at 60°, with the shore running east–west, its half-way flash is
 In the lighthouse the evenness is the lamp's, a fact about the world (§7.8). A reader standing at the lamp and reading
 each landing by its direction holds tan θ itself, with no β at all. The same requirement holds for it, by (d).
 
-**The exterior reader's bell.** A reader that takes in every relation at once, as the exterior reader does on the
-proposal of §3.1, has each with its share of the turn. On the logarithmic axis x = ln(v/h) the shares form a bell
-centred on the corner,
+**The addresses' bell.** The interior sweep's addresses, taken together, each with its share of the turn, form a bell;
+the exterior sweep's payloads are a different thing, read by their mean (§3.1). On the logarithmic axis x = ln(v/h) the
+shares form a bell centred on the corner,
 
   ½·sech x = 1/(v/h + h/v),  with total area π/2, a quarter turn.
 
 On the plain axis the same shares are 1/(1 + (v/h)²), Cauchy's curve. The bell and the fisheye are one function: the
-area under the bell up to x is arctan(v/h) = π/4 + ½·gd(x), the fisheye's radius there, because the Gudermannian is
-the running area under sech. A reader direction by direction has the running total, which is the fisheye; a reader
-all at once has every share, which is the bell. It is not the normal curve. With the same peak and
-area the two look alike near the corner, but one level out from it the bell stands at 0.400, then 0.235, 0.123, 0.062,
-halving with every further level and keeping a share in every level without end, while the normal curve falls ever
-faster and its far levels vanish (0.043 at the fourth level against the bell's 0.062, and 0.002 against 0.016 at the
-sixth). The bell has a horizon; the normal curve has none.
+area under the bell up to x is arctan(v/h) = π/4 + ½·gd(x), the fisheye's radius there, because the Gudermannian is the
+running area under sech. Taken direction by direction the addresses give the running total, which is the fisheye; taken
+together, every share, which is the bell. It is not the normal curve, which belongs to the payload's mean. With the same
+peak and area the two look alike near the corner, but one level out from it the bell stands at 0.400, then 0.235, 0.123,
+0.062, halving with every further level and keeping a share in every level without end, while the normal curve falls
+ever faster and its far levels vanish (0.043 at the fourth level against the bell's 0.062, and 0.002 against 0.016 at
+the sixth). The bell has a horizon; the normal curve has none.
 
 ### 7.2 The main result
 
@@ -1547,7 +1550,8 @@ sums, and the Cauchy is the extreme case: an order law with no sum.
 **Order needs holding.** The median survives every change of what arrives (Theorem 6), but a reader has it only if it
 holds its readings. Finding the exact median of n arrivals taken one at a time needs storage that grows in proportion to
 n (Munro and Paterson 1980).
-- A reader that holds its hemisphere at once has the median.
+- A reader that holds its hemisphere at once has the median of what arrived. (The median of the addresses, the
+  corner, needs no holding: the interior sweep lays it before anything arrives, §3.1.)
 - A reader that holds one arrival at a time does not. What it can keep, at the cost of one more slot, is one
   arrival, held and left alone, against which every later arrival is higher or lower.
   - That comparison is unchanged by any common rescaling.
@@ -2245,7 +2249,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | home, the horizon | geometry | v/h = 0; v/h → ∞, never reached |
 | g | geometry | the sweep's progress, (2/π)·arctan(v/h): 0 at home, ½ at the corner, 1 at the horizon |
 | address, payload | geometry; what arrives | a place laid before anything arrives; what arrives there: the finger and the ring |
-| situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; the convex side, outside; the concave side, inside; with more parties, one entry per party |
+| situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; the exterior sweep, the payloads; the interior sweep, the addresses; with more parties, one entry per party |
 | ℓ | an amount | the reach of what arrives along a ray (Theorem 6); it cancels from every reading |
 | ε | a step | the reader's step, relative to what it reads (§8) |
 | the shared unit | an agreement | something two readers can both read, agreed to count as 1 (§9); not a reading, and no part of the geometry |

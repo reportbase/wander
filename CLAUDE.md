@@ -535,7 +535,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   **Exterior: the payload's mean (Gaussian); interior: the addresses' median (Cauchy)** (15 Oct, SPN R271; Tom: "outside
   is gaussian, it is the mean, it measures the actual physical payoad … inside is cauchy, it is median, is the address and
   sweep of the gaussian center of gravity."): a reading; OFS §7.1 ("the exterior reader's bell") and §7.6 read
-  otherwise; OFS unchanged pending Tom.
+  otherwise. **Two sweeps, two results** (15 Oct, SPN R272; Tom: "remove the outside the apple, inside the apple metaphore
+  … its two sweeps … the outside sweep gets the payloads, the inside sweep gets the addresses to the payloads."): OFS §3.1
+  "Two sweeps, two results", the rule, the five, the introduction, the hand, §3.4, §7.1 "The addresses' bell", §7.6; no
+  apple in OFS.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
