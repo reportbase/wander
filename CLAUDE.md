@@ -802,7 +802,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Wigner, disc capacitance, Sneddon cone, Oliver–Pharr, stress drop, rotational broadening) and one pole (alternating
   permutations); P2 killed (KT's 2 a dimension, the Gaussian beam's a convention); P3 killed (in space: axis shadow ½,
   relative angle π/4, half-angle chord 2/3); P4 not killed. Run 1 had three quadrature set-up errors of mine (P3 killed
-  by one). A strong clue for the even turn, not by itself for the situated reader.
+  by one). A strong clue for the even turn, not by itself for the situated reader. Run 3 (`tpi/run3.py`,
+  `tpi/classification.md`; Tom: "the other definining characteristic of the situated view is V is not known."; SPN
+  R252): a second blind agent classed all 65 on where π enters and how each is used. P5 killed (51 of 63 agree with run
+  2's routes; six disagreements are the hidden turns, put by my question at their Gaussian or Gamma constant), P6 not
+  killed (all seven shape entries fix their extent in advance: V known), P7 killed the other way (13 of 51 turn formulas
+  infer an unknown, 4 of 7 shape ones). The marks sort derivations, not uses; the best cases are turn formulas reading a
+  missing whole through a shadow or a sign.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
