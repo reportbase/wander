@@ -498,6 +498,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   than choosing to assign V to it."): OFS §5 after "What V = H means": H free (a zoom); c (V = cH) not free, c = 1 the
   only value giving the rigid turn (3(e)), the Cauchy at the corner (5(d)), the lighthouse's corner (5(f)), true
   bearings (5(g)); V*/H not a choice (Propositions 8, 13). A zoom changes both directions alike, a stretch one.
+  **V = H shown for the construction, not claimed for readers** (15 Oct, SPN R261; Tom: "parallex assumes v=h and it
+  works great. that is solid proof that at least the math works, not that readers actually do that. … a bridge to far
+  for a single paper."): OFS §11.2 question 6 "Answered for the construction, open for readers" (triangulation and
+  Mercator's chart show the mathematics holds; whether an eye, a brain or an instrument draws V = H is empirical, not
+  taken up). Keep OFS from claiming that readers do it.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the

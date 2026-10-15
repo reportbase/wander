@@ -2085,12 +2085,17 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    Is that more than a choice?
 5. *Uniformity as the weight.* Now part of question 2: the argument of §7.5 moves the burden of the even turn to "why
    the circle", and the two are one question about the measure on directions.
-6. *V = H.* Answered: the drawing V = H is required, for the turn (Proposition 3(e)) and for the Cauchy, forward and
-   working back from it (Proposition 5(d)). The estimate of the true size is Proposition 13's: the median of what the
-   reader knows, and H when what it knows is symmetric in levels about H. If the error of that estimate is to be
-   unchanged when the size and the estimate are rescaled together, and alike for larger and smaller, it is a function of
-   the error in levels (§11.1), and with absolute loss the best estimate is the median. What remains open is the group
-   itself.
+6. *V = H.* Answered for the construction, open for readers. The drawing V = H is required for the turn
+   (Proposition 3(e)) and for the Cauchy, forward and working back from it (Proposition 5(d)). That the construction
+   works is shown where it is used. Triangulation from two standpoints (Proposition 11) draws every direction in one
+   unit, which is V = H, and it is how surveying and astronomy measure distance; Mercator's chart, on which navigators
+   have laid compass courses since 1569, draws V = H at every place (Proposition 5(g)). That shows the mathematics
+   holds. It does not show that any particular reader, an eye, a brain or an instrument, draws V = H. Whether readers do
+   is an empirical question, and this paper does not take it up. The estimate of the true size is Proposition 13's: the
+   median of what the reader knows, and H when what it knows is symmetric in levels about H. If the error of that
+   estimate is to be unchanged when the size and the estimate are rescaled together, and alike for larger and smaller,
+   it is a function of the error in levels (§11.1), and with absolute loss the best estimate is the median. What remains
+   open is the group itself.
 7. *Measures that cannot be normalized.* The reader's measure for the other's size, dκ/κ, has no total over all sizes,
    and such measures on a nuisance can produce the marginalization paradoxes of Stone and Dawid (1972) and Dawid, Stone
    and Zidek (1973). One reasoner integrates the nuisance out of the full data; another reasons from statistics whose
