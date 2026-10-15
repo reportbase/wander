@@ -528,6 +528,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   **Exterior and interior** (15 Oct, SPN R269; Tom: "adopt math formal names for inner and outer, no need to invent new
   names."): OFS's situation 3 is the exterior reader (an exterior point, the arc's convex side, the exterior reading
   π/2), 4 the interior reader (an interior point, the concave side, the interior reading 2/π).
+  **Exterior wave-like, interior particle-like** (15 Oct, SPN R270; Tom: "exterior - wave like, interior - particle
+  liike"): a reading, untested, in SPN only (physics, not OFS).
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
