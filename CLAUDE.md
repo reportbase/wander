@@ -532,6 +532,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   liike"): a reading, in SPN only (physics, not OFS). Tested for consistency by WVP (`plans/wvp-plan.md` + `wvp/`):
   the interior's counted arrivals build the exterior's pattern at √N, find the corner with spread (π/2)/√N, never
   settle a mean (it climbs (2/π)·ln 10 a decade; P3 killed by my tolerance, P3′ not); real data queued.
+  **Exterior: the payload's mean (Gaussian); interior: the addresses' median (Cauchy)** (15 Oct, SPN R271; Tom: "outside
+  is gaussian, it is the mean, it measures the actual physical payoad … inside is cauchy, it is median, is the address and
+  sweep of the gaussian center of gravity."): a reading; OFS §7.1 ("the exterior reader's bell") and §7.6 read
+  otherwise; OFS unchanged pending Tom.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
