@@ -816,7 +816,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   arc into the chord, you want remove the curve and ge the straight line for some reason." (SPN R254): OFS §3.4 read
   the other way (the line of 1 over the arc of π/2); a reading, untested, covering the four forms and the shape group
   (a semicircle's area is ½·r·arc), KT, the Gaussian beam and the pole left over; Claude's candidate purpose a mean
-  (the readings v/h have none, their shadows 2/π). Run 5 offered, not run.
+  (the readings v/h have none, their shadows 2/π). Run 5 offered, not run. `tpi-report.md` (15 Oct; Tom: "wrie. a report. Maybe a sweep is
+  the better clue, there needs to b a horizon and a sweep over it.."; SPN R255): the four runs and R251–R254 in one
+  place, the 65 with their marks; the suggestion read as OFS Theorem 6(e) (a fair sweep reaching the horizon: median at
+  the corner, no mean, on every path; 2/π only the circle's), its unbounded face classical (lighthouse, resonance,
+  the ground from a height, inverted parallax); a horizon test proposed, not run; open: which horizon, populations,
+  whose sweep. Run 4's counts corrected (the 13 equations are among the 30 not traversed).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

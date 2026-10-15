@@ -345,3 +345,17 @@ can be written against it.
   the 2/π replaces by what straight or flat one, if any, and (Q5) to what end: (a) to average or add, (b) to compare
   with an amount on a line, (c) to infer a whole not known, (d) none (an identity or a definition). Predictions to be
   written before it is asked.
+
+**Correction to run 4's reading** (15 October, found while writing `plans/tpi-report.md`): "13 equations with an angle
+in the derivation but no sweep, 24 populations held at once, 30 with no turn traversed" counts the 13 twice. They are
+among the 30 (c): the turn formulas that compute from known sizes. By run 4's grid the 65 are 11 traversed in order (9
+computing, 2 inferring), 24 held at once (16 and 8) and 30 not traversed (20 turn formulas: 13 computing, 4 identities,
+3 inferring; and the 7 shape entries, the pole and the 2 untraced). No verdict changes. SPN R253 is annotated.
+
+### After the arc and the chord: the report, and a sweep over a horizon (15 October; SPN R255)
+
+Tom, 04:32: "wrie. a report. Maybe a sweep is the better clue, there needs to b a horizon and a sweep over it.." The
+report is `plans/tpi-report.md`. Its §6 reads the suggestion (OFS Theorem 6(e): a fair sweep reaching the horizon
+gives the median at the corner and no mean on every path; 2/π is the circle's measure of it) and proposes a test on the
+unbounded face (occurrences of the Cauchy and its kin, classified for a sweep reaching a horizon and for whose sweep it
+is). Not run; predictions to be written first if Tom says to run it.
