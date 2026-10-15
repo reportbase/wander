@@ -487,6 +487,27 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Tissot's indicatrix the bar in two units, areas sec²φ a zoom, equal area forcing c = cos²φ (Euler, Gauss); a table of
   four charts in v and h. Numbers checked in `ofs/charts.py`. The abstract, introduction, §6 and §7.8 point to them.
   That is the scope Tom set for OFS on this line: the 2/π catalogue and the sweep over a horizon stay in the plans.
+  The tenth evaluation (ChatGPT, 15 Oct, of the 14 Oct draft: "8/10 as a working paper") is in `plans/ofs-review-10.md`
+  with a response; edits A–H made (SPN R259): V = H "required for the sweep to be a turn" (abstract, introduction);
+  Theorem 6 opens with its premises; "universal" addresses scoped to shapes laid evenly by direction; the sum is where
+  the truth *would* lie, found only with the breadths (amounts), never by normalizing; (S) named as assumed in the
+  abstract; **Theorem 6(c) fixed** (it was false for unrestricted f: Hamel-basis additive maps commute with every
+  finite mean; now stated for strictly increasing f); the view from nowhere a representation, not a view anyone takes.
+  Condensing again declined (R203).
+  **Two choices, and a number that is not one** (15 Oct, SPN R260; Tom: "two degrees of freedom here, choose and H and
+  than choosing to assign V to it."): OFS §5 after "What V = H means": H free (a zoom); c (V = cH) not free, c = 1 the
+  only value giving the rigid turn (3(e)), the Cauchy at the corner (5(d)), the lighthouse's corner (5(f)), true
+  bearings (5(g)); V*/H not a choice (Propositions 8, 13). A zoom changes both directions alike, a stretch one.
+  **V = H shown for the construction, not claimed for readers** (15 Oct, SPN R261; Tom: "parallex assumes v=h and it
+  works great. that is solid proof that at least the math works, not that readers actually do that. … a bridge to far
+  for a single paper."): OFS §11.2 question 6 "Answered for the construction, open for readers" (triangulation and
+  Mercator's chart show the mathematics holds; whether an eye, a brain or an instrument draws V = H is empirical, not
+  taken up). Keep OFS from claiming that readers do it.
+  **Should, not does** (15 Oct, SPN R262; Tom: "but they should  If the don't.  it offers many mathmatically
+  interesting capabilities."): OFS claims that a reader should draw V = H (normative, as Jaynes's principle is), since
+  only that drawing gives the turn (3(e)), the readings laid before anything arrives with the corner at their median
+  and the near field a half (5(d)), every pair's corner (5(e)), the angles kept (5(f), (g)); the introduction and
+  §11.2 question 6 say so. Whether readers do stays open.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
