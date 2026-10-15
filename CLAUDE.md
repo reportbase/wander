@@ -793,6 +793,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   nuisance's dη/η (P1–P3); the gamma killed P4 (other powers move the prior instead of producing the paradox); Weibull
   P4′ not killed. General: under dη/η integrating the scale out is ℓ₁^(−n) times the ratios' law. Runs take 57 and 35
   minutes.
+  `tpi-plan.md` (+ `tpi/tpi.py`, `tpi/catalogue.md`, 14–15 Oct; Tom: "Possibly anytime 2/PI shows up, its the situated
+  situation."; "its probably the best clue there is. there are many more examples of 2/PI showing up."; SPN R251): where
+  2/π shows up. Twenty occurrences known beforehand and forty-five found by a fresh agent (not shown the predictions),
+  each constant computed from its derivation step (63 of 63 match). Fifty-four come from an even turn read as a shadow
+  or a share (41 explicit, 13 via an equal-spread normal pair or a Haar measure). P1 killed by eight: the circle as a
+  shape (semicircle area or arcsine integral: Hertz line contact, Wigner, disc capacitance, Sneddon cone, Oliver–Pharr,
+  stress drop, rotational broadening) and one pole (alternating permutations); P2 killed (KT's 2 a dimension, the
+  Gaussian beam's a convention); P3 killed (in space: axis shadow ½, relative angle π/4, half-angle chord 2/3); P4 not
+  killed. Run 1 had three quadrature set-up errors of mine (P3 killed by one). A strong clue for the even turn, not by
+  itself for the situated reader.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

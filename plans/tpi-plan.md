@@ -99,3 +99,65 @@ the corner (0.705, 0.295) and the share's law off the arcsine (0.585, 0.201 agai
 
 **Run 2**, with the same predictions: the singular integrals at doubled precision, Van Vleck's breakpoints corrected,
 the kink split; and the catalogue's entries added when the search returns.
+
+### Run 2 (14–15 October; the twenty known entries and the catalogue's forty-five)
+
+The catalogue (`plans/tpi/catalogue.md`) was gathered by a fresh agent told only to find occurrences with formula,
+field, source and the step of the standard derivation where π enters; it was not given the predictions or the forms.
+It found 45 main entries across about forty fields (37 seen in their sources, 3 partly, 5 from memory), and set apart
+15 entries written as π/2 and 12 as √(2/π). `python3 -I plans/tpi/tpi.py`, ten seconds; output in
+`plans/tpi/tpi-run2.txt`. Two of the new entries' checks first failed on quadrature (the loaded circle's |cos| across
+its kink, Kramers–Kronig's principal value across the resonance); both were split and pass. The routes and forms are
+my judgments, made from each derivation step as the catalogue (or the source) gives it, before the verdict lines were
+read; the computations check the constants, not the judgments.
+
+```
+all constants match: True (63 of 63)
+route E: 41   (an even turn in the standard derivation)
+route H: 13   (a hidden turn of a kind named in the plan: an equal-spread normal pair, a Haar measure)
+route S: 7    Hertz line contact; Wigner's semicircle; disc capacitance; Sneddon's cone; Oliver–Pharr's ε; the stress
+              drop of a surface-breaking fault; rotational broadening
+route P: 1    alternating permutations (A_n/n! ÷ 2(2/π)^{n+1} = 1 at n = 240, the zigzag numbers exactly)
+route U: 1    the Bauer–Ramanujan series (step not seen)
+P1: KILLED by the seven S entries and alternating permutations
+P2: KILLED by Kosterlitz–Thouless [a dimension], the Gaussian beam [a convention], alternating permutations [a pole],
+    the seven S entries [only after a substitution]; the infinite grid and Bauer–Ramanujan not traced
+P3: KILLED. Shadows on an axis rebuild to ½ (Buffon between planes; the 3D gas, ¼ = ½·½; the arc's centroid as the
+    hemispherical shell's; remanence, fibres and leaves random in space). Two others do not: rods' mean |sin γ| over the
+    sphere is π/4, and the mean chord on a sphere (and the relative speed of animals moving in space) is 2/3 of 2r.
+P4: not killed (as in run 1)
+```
+
+- **P1 killed, by eight of sixty-three.** Fifty-four come from a turn measured evenly and read through something never
+  negative: forty-one with the turn in the standard derivation (orientations, phases in time, Fourier phases, the
+  ellipse's or the pendulum's angle, a Brillouin zone) and thirteen through a hidden one of the kinds named beforehand
+  (the equal-spread normal pair behind Van Vleck, Kendall's τ, Kac's roots, the median's efficiency, Γ(½)² in Struve's
+  constant; the Haar measure behind Sato–Tate). Seven are one group: **the circle held as a shape.** π/2 there is a
+  semicircle's area (Hertz's line contact, Wigner's semicircle, a star's rotational broadening, a fault's slip) or the
+  arcsine integral ∫₀¹ dx/√(1 − x²) (a disc's capacitance, Sneddon's cone, the Oliver–Pharr constant). They come from
+  square-root profiles that solve mixed boundary problems or moment problems, and the quarter turn appears only after
+  the substitution x = sin θ, which those derivations do not make (Glauert's substitution, Muskhelishvili's map to the
+  circle or the disc's shadow would supply one; Irwin's ellipse angle is why the penny-shaped crack is not in the
+  group). The eighth is **a location**: alternating permutations grow as (2/π)ⁿ because sec x + tan x has its first pole
+  at π/2, where tan runs off; no measure is taken.
+- **P2 killed.** The four forms were too narrow: the Kosterlitz–Thouless 2 is the plane's dimension (the entropy of a
+  vortex's place) over the energy of its even winding, π; the Gaussian beam's 2/π belongs to the 1/e² radius
+  convention (with the 1/e radius it is 1/π); the S group fits form (iv) only after the substitution.
+- **P3 killed.** In the plane three constructions coincide: the mean shadow of a direction on an axis, the mean |sin| of
+  the angle between two directions, and the mean half-angle chord all give 2/π. In space they part: ½ (Archimedes'
+  hat-box), π/4 and 2/3. The prediction's ½ belongs to the first only.
+- **P4 not killed** where computed: concentrating the turn, or drawing the two parties unequally, moves every value off.
+
+**Reading (after the run; not ruled).**
+- *A strong clue, with a boundary.* Across about forty fields, 2/π overwhelmingly marks a turn taken evenly and read
+  as a shadow or a share: the inner reading of OFS §3.4. Where it arises otherwise, it is the circle as a shape (an area,
+  an arcsine integral) or the quarter turn as a place (a pole), with no turn taken.
+- *In the corpus's terms* (the bridge, named in the plan, untested): the turn taken is the situated reader's (R233), and
+  the circle held whole, drawn on the chord after the arc, is the completed view's (R234). So 2/π by itself does not
+  identify the situated reader; 2/π reached through an even turn does, and the S group is where the circle appears
+  with no one turning.
+- *Measured occurrences* in the catalogue (Campbell and Robson's 4/π in human contrast thresholds; the
+  Kosterlitz–Thouless jump in helium films; fibre factors in concrete; canopy extinction; one-bit correlators) each
+  follow from their own derivation: they confirm the physics, not the reading.
+- *Not counted:* the π/2 entries (the same relations read the other way) and the √(2/π) entries, whose π is the normal
+  law's 1/√(2π); their squares are 2/π through the equal-spread pair, as (E|Z|)² is.
