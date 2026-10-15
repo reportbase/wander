@@ -161,3 +161,37 @@ P4: not killed (as in run 1)
   follow from their own derivation: they confirm the physics, not the reading.
 - *Not counted:* the π/2 entries (the same relations read the other way) and the √(2/π) entries, whose π is the normal
   law's 1/√(2π); their squares are 2/π through the equal-spread pair, as (E|Z|)² is.
+
+### Run 3: the second mark, V not known (predictions written 14 October, before the second classification)
+
+*Tom, 20:12: "the other definining characteristic of the situated view is V is not known." (SPN R252; the corpus has it
+since R205 and R226: known V is the unsituated view, and the situated reader never reads V*.) Then "yes", 20:31, to a
+test. Written before a second fresh agent classifies the 63 entries; the run is recorded below this section.*
+
+**What changes.** The situated view has two marks: a turn taken, and V not known. Run 2 tested only the first. The
+second is a property of use as much as of derivation: the same 2/π serves a reader that knows the whole (Buffon's
+crossing probability from a known needle and gap) and one that does not (stereology's unknown length from counted
+crossings; an averaging meter's unknown peak).
+
+**Method (fixed now).** A fresh agent, told nothing of turns, the situated view or these predictions, gets the 63
+entries by name, field, formula and source (no route, no form, no "angle?" judgment) and answers, for each, with a
+line of justification and an example of use:
+- **Q1.** In the step of the standard derivation where π enters, what is integrated or evaluated over: (a) an angle or
+  a phase (including a direction drawn at random or a phase uniform in time); (b) a position along a segment, or across
+  a region, whose ends or boundary are given lengths; (c) something else (say what)?
+- **Q2.** In the field's typical use, is the formula used (a) to compute a result from sizes or amplitudes all known
+  beforehand; (b) to infer a size, an amplitude or another quantity not known beforehand from a measurement; (c) both,
+  commonly?
+
+**Predictions.**
+- **P5 (the routes agree).** The second agent's Q1 matches run 2's routes (E or H with (a); S with (b)) on at least 57
+  of the 63. *Killed* if fewer. A check of my judgments in run 2.
+- **P6 (the circle as a shape has V known).** All seven route-S entries are (b) on Q1: each fixes its extent by both ends
+  in advance. *Killed* if any is (a) or (c).
+- **P7 (the two marks go together).** If 2/π marks the situated view, the turn it comes from should be read in place of
+  a whole not known: among the turn entries (E and H), the share used to infer something not known beforehand (Q2 (b)
+  or (c)) exceeds the share among the route-S entries. *Killed* if it does not exceed it. My prior, stated: I do not
+  expect much difference; two S entries (Oliver–Pharr's ε, rotational broadening) are used to infer unknown sizes, and
+  many turn entries (a pendulum's period, a known wave's Fourier coefficient, Onsager's energy) compute from known sizes.
+
+Reported as well, not predicted: how many entries carry both marks (a turn, and Q2 (b) or (c)).
