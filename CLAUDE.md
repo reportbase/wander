@@ -517,6 +517,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   **Neither choice can be declined** (15 Oct, SPN R264; Tom: "Not choosing a value is not an option either."): OFS §5's
   "Two choices" closes with it: no breadth for the other, no relation (3(a)); an H favouring no value is H at 0 or ∞, a
   corner-free ruler (Proposition 14) that loses what is read (§9); with nothing known the estimate is H (13(c)).
+  **Situations 3 and 4 are vantages, their mechanism open** (15 Oct, SPN R266; Tom: "the exact mechanism has not been
+  pinned down for either."): 3 the outer hemisphere, 4 the inner; OFS follows parallel and serial as a proposal, says
+  so in §3.1 ("Vantage, not mechanism"), the rule's third question, §3.5 and §11.2 question 8, and never as the
+  definition.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -906,7 +910,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
 
 SPN's situations, since 6 Oct 2026 (Tom): 0 nothing known; 1 the circle; 2 shapes;
 3 parallel, one hemisphere counted (outside); 4 serial, one point at a time
-(inside); 3 and 4 possibly approximate. Since 14 Oct (SPN R239; Tom: "we should expand the readers situations. to
+(inside); 3 and 4 possibly approximate. Since 15 Oct (SPN R266; Tom: "situation 3 describes the vantage, reading the outer
+hemisphere. situation 4 describes reading the inner hemisphere. the exact mechanism has not been pinned down for
+either."): 3 and 4 are the outer and inner hemispheres; parallel and serial are the proposed mechanism, not the
+definition (OFS §3.1, "Vantage, not mechanism"; §11.2 question 8). Since 14 Oct (SPN R239; Tom: "we should expand the readers situations. to
 accomodate V2"; "i'm open to how to organize the situations, or relations"): the relations come first (h, v, v₂ each in
 [0, 1] with its breadth, known unsituated, unknown situated; the situated reader draws V = V₂ = H, giving the set of every
 [h, v, v₂]), and a situation is one entry per other party, 1 to 4 each; the five are the one-party case, 0 stays one

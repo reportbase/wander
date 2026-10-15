@@ -115,9 +115,11 @@ to your thumb, V = H, and read the mountain in thumbs.
 **Three vantages.** A figure can be held in three ways. The *completed* vantage holds every breadth at once from no
 standpoint; this is classical geometry. Between two points it holds the straight chord, which needs no turn; the
 circle comes after the chord, drawn on it by turning. A *situated* reader has a facing, and holds only the arc it turns
-through. Either it takes in a hemisphere at once, from outside (a parallel reader), or it sweeps the hemisphere from
-home, one direction at a time (a serial reader). Their figures are the bell and the fisheye. These two are not the
-only situated views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is
+through. Either it reads the hemisphere turned away from it, from outside, or the hemisphere turned toward it, from
+home, inside. How either is read is not pinned down; this paper follows one proposal, the outer hemisphere taken in at
+once (a parallel reader) and the inner swept one direction at a time (a serial reader), and their figures are the bell
+and the fisheye. These two are not the only situated
+views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is
 where the truth would lie: a system's true breadths, as shares of their whole, would be one point of it, found only
 with the breadths themselves, amounts the reader does not read. A reader's drawing, every
 party at its own H, is the sum's centre, where every pair is at its corner; the geometry follows from there, and the
@@ -381,16 +383,27 @@ the five below, then for two.
 | 0 | known | not known | none | nothing: H but no h, so no relation | — |
 | 1 | known | known, equal to H | none | the whole at once | an equation: the circle h² + v² = 1 |
 | 2 | known | known, unequal or varying with direction | none | the whole at once | an array: a shape's breadth in every direction |
-| 3 | known | not known | outside | parallel: one hemisphere at once | an apple held in the hand, its facing side seen at once |
-| 4 | known | not known | inside | serial: one direction at a time | a molecule inside an endless apple, the others arriving one at a time, nearest first |
+| 3 | known | not known | outside: the outer hemisphere | not pinned down; proposed, parallel: one hemisphere at once | an apple held in the hand, its facing side seen at once |
+| 4 | known | not known | inside: the inner hemisphere | not pinned down; proposed, serial: one direction at a time | a molecule inside an endless apple, the others arriving one at a time, nearest first |
+
+**Vantage, not mechanism.** Situations 3 and 4 are set by the vantage, by which hemisphere the reader reads: 3 the
+outer, turned away from the reader, which stands outside the thing, facing it; 4 the inner, turned toward the reader,
+which stands inside, at home (§3.4). How a reader comes to read either hemisphere, its mechanism, is not pinned down for
+either. This paper follows one proposal throughout: the outer hemisphere taken in at once (parallel), the inner swept
+one direction at a time from home (serial), with static and dynamic saying why (§3.5). Where the paper speaks of a
+parallel or a serial reader it means a reader working that way, and what it shows of such a reader (the bell and the
+fisheye, §7.1; which centre each can hold, §7.6) is shown of that mechanism; it attaches to situation 3 or 4 as far as
+the proposal holds (§11.2, question 8). Parallel does not mean the whole at once: the whole at once is situations 1
+and 2.
 
 **The rule.** Three questions place any reader in exactly one situation.
 1. Is anything related to the reader, so that it has an h? If not, it is in situation 0.
 2. Does the reader know V? If it does, it holds the whole: situation 1 if V equals H in every direction, situation 2
    otherwise.
-3. If it does not, does the thing hold still for the reader's look, so that its facing side can be taken at once from
-   outside? If so, situation 3. If it changes or arrives during the look, so that it must be taken one direction at a
-   time from inside, situation 4.
+3. If it does not, which hemisphere does it read? From outside the thing, facing it, the hemisphere turned away from
+   it: situation 3. From inside, at home, the hemisphere turned toward it: situation 4. (On the proposal followed here,
+   the first is read at once, as when the thing holds still for the reader's look, and the second one direction at a
+   time, as when the thing changes or arrives during the look; §3.5.)
 
 Each question has two answers, and each answer either ends the questioning or leads to the next question, so every
 reader lands in one situation and no reader lands in two: the five are exhaustive and do not overlap. Cases that look
@@ -427,11 +440,13 @@ reader lacks (§3.8).
   corner is computed, at 45°, and there is no horizon.
 - **2, every other shape.** Both breadths known but unequal, or varying with direction, held whole as an array: the
   breadth in every direction, known together. The corner is computed in each direction, and there is no horizon.
-- **3, parallel, outside.** A reader outside a thing, facing it, takes in the facing side at once; the far side is
+- **3, the outer hemisphere, outside.** A reader outside a thing, facing it, reads the facing side; the far side is
   turned away. Its sweep covers one hemisphere, from the point that faces it (0) to the limb (π/2); the half past the
-  limb is never swept. It counts every relation at once, and their shares make a bell (§7.1).
-- **4, serial, inside.** A reader inside, one part among others, takes the rest one direction at a time, from home.
-  Its view is the fisheye, the running total of the same bell (§7.1).
+  limb is never swept. On the proposal followed here it takes the facing side in at once (parallel), counting every
+  relation at once, and their shares make a bell (§7.1).
+- **4, the inner hemisphere, inside.** A reader inside, one part among others, reads the rest from home. On the
+  proposal followed here it takes them one direction at a time (serial), and its view is the fisheye, the running total
+  of the same bell (§7.1).
 
 Situations 1 and 2 are the view from nowhere. They are mathematical views, an equation or an array, and they name a
 state of knowledge, not a place anyone stands. Situations 3 and 4 are the view from somewhere. Both find the corner
@@ -446,9 +461,10 @@ do not have, and neither knows how many things there are.
 | 4 | found: v = h | the mathematical horizon | the fisheye; counted, the Cauchy | 2/π |
 
 **Two other parties.** With V₂ the rule is put to each party in turn, and a reader's situation is one entry per party:
-1 or 2 if that party's breadth is known, 3 if its sweep is taken at once, 4 if it is taken one direction at a time.
-Situation 0 stays a single case, nothing related and no h, and the five above are the one-party case. The two sweeps
-are the altitude, from H to V, and the azimuth, which brings in V₂ (§2).
+1 or 2 if that party's breadth is known, 3 if its sweep reads the outer hemisphere, 4 if the inner. Situation 0 stays a
+single case, nothing related and no h, and the five above are the one-party case. The two sweeps are the altitude, from
+H to V, and the azimuth, which brings in V₂ (§2). The table and its examples follow the proposal above, the outer taken
+at once and the inner one direction at a time; the readings, 2 and ½, are the vantages' own and do not depend on it.
 
 | V, V₂ | what the reader has | example |
 |---|---|---|
@@ -521,10 +537,11 @@ nothing curved.
 - **1** is the quarter circle itself: a closed, known curve, both breadths held, the corner computed at 45°, no
   horizon.
 - **2** puts a shape in place of the circle: each number lands at the shape's radius in its direction.
-- **3**, parallel, holds the laid numbers at once and reads the unit line against the circle, θ/sin θ: rising from 1
-  toward π/2, approaching the line from above.
-- **4**, serial, takes one number at a time, projected onto the circle, and reads the circle against the unit line,
-  sin θ/θ: falling from 1 toward 2/π, approaching from below. Its view is the unit line laid out as the fisheye.
+- **3**, outside (parallel, on the proposal of §3.1), holds the laid numbers at once and reads the unit line against
+  the circle, θ/sin θ: rising from 1 toward π/2, approaching the line from above.
+- **4**, inside (serial, on that proposal), takes one number at a time, projected onto the circle, and reads the circle
+  against the unit line, sin θ/θ: falling from 1 toward 2/π, approaching from below. Its view is the unit line laid out
+  as the fisheye.
 - **0** has no unit, and nothing to lay.
 
 Past 1, every number lands closer to the circle's top and the line's end, and the numbers out to infinity crowd into the
@@ -543,8 +560,8 @@ paper follows through, and not the only ones.
 | vantage | situations | geometry | the turn | measure of a turn θ | reads a line of true breadth 1 as |
 |---|---|---|---|---|---|
 | completed: the view from nowhere | 1, 2 | the chord, and the circle drawn on it; every breadth held; no facing | none | none | 1 |
-| outer hemisphere: parallel | 3 | one facing, taken in at once; the hemisphere turns away from the reader | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
-| inner hemisphere: serial | 4 | one facing, swept from home; the hemisphere turns toward the reader | a quarter turn: a bar, from home to the horizon | sin θ/θ | 2/π |
+| outer hemisphere | 3 | one facing; the hemisphere turns away from the reader (proposed: taken in at once, parallel) | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
+| inner hemisphere | 4 | one facing; the hemisphere turns toward the reader (proposed: swept from home, serial) | a quarter turn: a bar, from home to the horizon | sin θ/θ | 2/π |
 
 **Where the numbers come from.** A situated reader measures by turning. Its position crosses the line once, and its
 facing turns; the arc is drawn by that turning, not walked. The two situated vantages turn by different amounts, and
@@ -670,9 +687,11 @@ point of the completed drawing.
 
 ### 3.5 Parallel and serial: static and dynamic
 
-Parallel and serial say how a situated reader reads; static and dynamic say why. A system is *static* to a reader if it
-holds still for the whole look, so that the reader can take its facing side at once: situation 3. It is *dynamic* if it
-changes or arrives during the look, so that the reader takes it one part at a time from inside: situation 4.
+Parallel and serial say how a situated reader reads, on the proposal this paper follows for situations 3 and 4, which
+are set by the vantage, their mechanism not pinned down (§3.1); static and dynamic say why. A system is *static* to a
+reader if it holds still for the whole look, so that the reader can take its facing side at once: on the proposal,
+situation 3. It is *dynamic* if it changes or arrives during the look, so that the reader takes it one part at a time
+from inside: on the proposal, situation 4.
 - *Both are situated.* Static and dynamic part 3 from 4, not situated from unsituated. The equation and the array of 1
   and 2 are held whole, with no reader standing anywhere.
 - *It is measured against the reader's look, not the system alone.* A building that does not move is read serially by
@@ -2163,6 +2182,13 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    inconsistent at all is disputed (Jaynes 1980; Wallstrom 2003); the reader's lay is in any case finite, its levels
    counted.
 
+8. *How situations 3 and 4 are read.* The two are set by the vantage, the outer hemisphere and the inner (§3.1). The
+   mechanism is not pinned down for either. This paper follows one proposal, the outer taken in at once and the inner
+   swept one direction at a time, and what it shows of parallel and serial readers (the bell and the fisheye, §7.1;
+   the median held and the reference kept, §7.6) is shown of those mechanisms. The vantages' own readings, π/2 and
+   2/π (§3.4), and every result that needs only the readings and their weight, do not depend on it. Whether a reader
+   of the outer hemisphere does take it in at once, or a reader of the inner one direction at a time, is open.
+
 If the principle of §11.1 stands, questions 1 and 2 become one: whether a situated reader's ignorance is exactly these
 three transformations.
 
@@ -2215,7 +2241,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | home, the horizon | geometry | v/h = 0; v/h → ∞, never reached |
 | g | geometry | the sweep's progress, (2/π)·arctan(v/h): 0 at home, ½ at the corner, 1 at the horizon |
 | address, payload | geometry; what arrives | a place laid before anything arrives; what arrives there: the finger and the ring |
-| situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; parallel, outside; serial, inside; with more parties, one entry per party |
+| situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; the outer hemisphere, outside; the inner hemisphere, inside; with more parties, one entry per party |
 | ℓ | an amount | the reach of what arrives along a ray (Theorem 6); it cancels from every reading |
 | ε | a step | the reader's step, relative to what it reads (§8) |
 | the shared unit | an agreement | something two readers can both read, agreed to count as 1 (§9); not a reading, and no part of the geometry |
