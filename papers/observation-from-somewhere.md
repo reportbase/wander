@@ -147,9 +147,10 @@ as if a single observation held it. Section 3 sets out the readers in full.
   corner and the missing mean but not the Cauchy's shape (Theorem 6(e), §11.2). Working back from the Cauchy, which is
   known, arrives at V = H (§5, §7.1). So do the two familiar pictures of a turn laid on a line: a lighthouse's flashes
   on a shore, and Mercator's chart, which draws every compass course true only because it stretches north–south as much
-  as east–west. Both leave the size free (§7.1). The other party's true size is a separate estimate (§9). H itself is
-  not a measured size but the value the reader starts from; any value gives the same geometry, and its size sets only
-  the zoom (§8).
+  as east–west. Both leave the size free (§7.1). What the paper shows is that a reader should draw V = H, since only
+  that drawing gives it these; whether readers do is an empirical question it leaves open (§11.2). The other party's
+  true size is a separate estimate (§9). H itself is not a measured size but the value the reader starts from; any value
+  gives the same geometry, and its size sets only the zoom (§8).
 - How many unit relations the system includes sets its shape: two the circle, three the sphere, n + 1 the sphere in
   n + 1 dimensions (§5). With two other parties the same holds once per party. Drawn at V = V₂ = H, the relation lies on one sphere, and the
   reader sweeps one octant of it, a wedge. Swept evenly, its readings are the two-dimensional Cauchy: every pair keeps
@@ -2085,13 +2086,19 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    Is that more than a choice?
 5. *Uniformity as the weight.* Now part of question 2: the argument of §7.5 moves the burden of the even turn to "why
    the circle", and the two are one question about the measure on directions.
-6. *V = H.* Answered for the construction, open for readers. The drawing V = H is required for the turn
-   (Proposition 3(e)) and for the Cauchy, forward and working back from it (Proposition 5(d)). That the construction
-   works is shown where it is used. Triangulation from two standpoints (Proposition 11) draws every direction in one
-   unit, which is V = H, and it is how surveying and astronomy measure distance; Mercator's chart, on which navigators
-   have laid compass courses since 1569, draws V = H at every place (Proposition 5(g)). That shows the mathematics
-   holds. It does not show that any particular reader, an eye, a brain or an instrument, draws V = H. Whether readers do
-   is an empirical question, and this paper does not take it up. The estimate of the true size is Proposition 13's: the
+6. *V = H.* Answered for the construction and for what a reader should do; open for what readers do. The drawing V = H
+   is required for the turn (Proposition 3(e)) and for the Cauchy, forward and working back from it (Proposition 5(d)).
+   That the construction works is shown where it is used. Triangulation from two standpoints (Proposition 11) draws
+   every direction in one unit, which is V = H, and it is how surveying and astronomy measure distance; Mercator's
+   chart, on which navigators have laid compass courses since 1569, draws V = H at every place (Proposition 5(g)). That
+   shows the mathematics holds. It does not show that any particular reader, an eye, a brain or an instrument, draws
+   V = H. Whether readers do is an empirical question, and this paper does not take it up. That a reader should draw
+   V = H is what the propositions show, in the sense of Jaynes's principle, which says what a reader should assign given
+   what it does not know, not what any reader does. Only the drawing V = H makes the reader's own turning a turn, with
+   one even sweep (Proposition 3(e)). Only it lays the readings out before anything arrives with the corner at their
+   median and the near field exactly a half (Proposition 5(d)), keeps every pair's corner however many parties are held
+   (Proposition 5(e)), and keeps in the drawing the angles the reader turned through (Proposition 5(f), (g)). A reader
+   that draws otherwise holds a consistent picture without these. The estimate of the true size is Proposition 13's: the
    median of what the reader knows, and H when what it knows is symmetric in levels about H. If the error of that
    estimate is to be unchanged when the size and the estimate are rescaled together, and alike for larger and smaller,
    it is a function of the error in levels (§11.1), and with absolute loss the best estimate is the median. What remains

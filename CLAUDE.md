@@ -503,6 +503,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   for a single paper."): OFS §11.2 question 6 "Answered for the construction, open for readers" (triangulation and
   Mercator's chart show the mathematics holds; whether an eye, a brain or an instrument draws V = H is empirical, not
   taken up). Keep OFS from claiming that readers do it.
+  **Should, not does** (15 Oct, SPN R262; Tom: "but they should  If the don't.  it offers many mathmatically
+  interesting capabilities."): OFS claims that a reader should draw V = H (normative, as Jaynes's principle is), since
+  only that drawing gives the turn (3(e)), the readings laid before anything arrives with the corner at their median
+  and the near field a half (5(d)), every pair's corner (5(e)), the angles kept (5(f), (g)); the introduction and
+  §11.2 question 6 say so. Whether readers do stays open.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
