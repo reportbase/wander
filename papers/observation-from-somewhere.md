@@ -961,6 +961,13 @@ one. Which breadth it assigns is not free:
 Changing H rescales the drawing in both directions alike, which is a zoom. Changing c stretches it in one direction,
 which changes its angles and moves its corner off 45°. These are the two effects Proposition 5(f) and (g) keep apart.
 
+Neither choice can be declined. Without a breadth for the other party there is no relation (part (a)). An H that
+favours no value is one taken to its ends, 0 or ∞. There the reader's lay becomes one of the rulers of Proposition 14
+that favour no amount. It has no corner, and a reader with finitely many addresses loses what it reads: all of it
+falls into the first address, or past the levels held (§9). So some H must be chosen; which one sets only the zoom.
+The estimate of the true size is not left open either: with nothing known either way, it is H itself (Proposition
+13(c)).
+
 **The Euclidean choice.** Part (c) is where an assumption enters. One unit makes the axes commensurable, but "a bar of
 fixed length" also needs a norm: under the largest-component norm the bar traces the square, under the sum norm the
 line. The circle follows if the sweep is the turning of a rigid bar. The facing of §4 motivates that; it does not prove
