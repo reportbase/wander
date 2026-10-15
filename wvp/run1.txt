@@ -1,0 +1,14 @@
+N=   100: D 0.08656 (√N·D 0.8656); median ln s +0.01056, √N·sd 1.5881; mean s median 3.583 IQR 2.284; h² 0.49776; share≤¼ 0.33355; π/2·shadow 0.99800
+N=  1000: D 0.02673 (√N·D 0.8454); median ln s -0.00179, √N·sd 1.5587; mean s median 5.541 IQR 3.559; h² 0.50049; share≤¼ 0.33251; π/2·shadow 1.00067
+N= 10000: D 0.00851 (√N·D 0.8514); median ln s -0.00053, √N·sd 1.5139; mean s median 6.784 IQR 2.986; h² 0.50014; share≤¼ 0.33310; π/2·shadow 1.00018
+N=100000: D 0.00270 (√N·D 0.8537); median ln s -0.00008, √N·sd 1.5012; mean s median 8.344 IQR 3.358; h² 0.50003; share≤¼ 0.33323; π/2·shadow 1.00003
+P1: slope -0.5015, √N·mean D at 1e5 0.8537 vs 0.8687
+P2: medians within 3 se: True; √N·sd at 1e3..1e5 [np.float64(1.5587), np.float64(1.5139), np.float64(1.5012)] vs π/2 = 1.5708
+P3: decade steps [np.float64(1.958), np.float64(1.243), np.float64(1.56)] vs 1.466; IQR shrink 1e2→1e5 ×0.68
+P4: h² mean off ½ by 0.55 se; share≤¼ off ⅓ by 1.36 se (arcsine (2/π)asin(½) = 0.333333)
+P5: (π/2)·mean shadow off 1 by 0.41 se
+P1 not killed
+P2 not killed
+P3 KILLED
+P4 not killed
+P5 not killed

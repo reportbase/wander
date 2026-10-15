@@ -48,3 +48,31 @@ spread of the corner's estimate, 2/π the mean's climb). Those two are the conte
 
 ## Runs
 
+### Run 1 (15 Oct, `wvp/wvp.py`, output in `wvp/run1.txt`; 4 s)
+
+| N | √N·mean D | median ln s | √N·sd of median | median of mean s | IQR of mean s | mean h² | share h² ≤ ¼ | (π/2)·mean shadow |
+|---|---|---|---|---|---|---|---|---|
+| 10² | 0.8656 | +0.0106 | 1.5881 | 3.583 | 2.284 | 0.49776 | 0.33355 | 0.99800 |
+| 10³ | 0.8454 | −0.0018 | 1.5587 | 5.541 | 3.559 | 0.50049 | 0.33251 | 1.00067 |
+| 10⁴ | 0.8514 | −0.0005 | 1.5139 | 6.784 | 2.986 | 0.50014 | 0.33310 | 1.00018 |
+| 10⁵ | 0.8537 | −0.0001 | 1.5012 | 8.344 | 3.358 | 0.50003 | 0.33323 | 1.00003 |
+
+- **P1 not killed.** Slope −0.5015; √N·mean D at 10⁵ 0.8537 against 0.8687 (inside ± 0.05).
+- **P2 not killed.** The medians sit at the corner within 3 standard errors at every N; √N × their spread 1.559,
+  1.514, 1.501 against π/2 = 1.571 (inside 5%; the last is 4.4% low).
+- **P3 killed.** The mean did not settle (its interquartile range across runs grew, ×1/0.68 from 10² to 10⁵, where a
+  settling mean would shrink it 32-fold), but the decade steps of its median were 1.958, 1.243 and 1.560 against
+  1.466 ± 0.15: two outside. Over the three decades the climb averages 1.587 a decade, 8% above (2/π)·ln 10. Post hoc,
+  my set-up: the median over 400 runs of a quantity whose spread across runs is about 3 carries a standard error near
+  0.2 by itself, so a ±0.15 band on each step was narrower than the noise I chose. The climb's size is not tested by
+  this run.
+- **P4 not killed.** Mean h² off ½ by 0.55 standard errors; the share with h² ≤ ¼ off ⅓ by 1.36.
+- **P5 not killed.** (π/2)·mean shadow off 1 by 0.41 standard errors at 10⁵.
+
+### Run 2, P3′ (prediction written before running)
+
+The climb of the mean, with the noise counted. **P3′.** With 4,000 seeded runs per N (seeds 10,000–13,999) at
+N = 10², 10³, 10⁴, 10⁵, the median across runs of the running mean of s climbs (2/π)·ln 10 = 1.466 a decade on
+average over the three decades, (median at 10⁵ − median at 10²)/3. Its standard error is taken from 1,000 bootstrap
+resamples of the runs. *Killed if* the average climb is off 1.466 by more than 3 bootstrap standard errors, or the
+interquartile range of the mean across runs shrinks by more than a factor 2 from 10² to 10⁵.
