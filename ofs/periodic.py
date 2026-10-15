@@ -1,7 +1,7 @@
 """A uniform, periodic sweep draws V = H in its own measure.
 
-For the ChatGPT follow-up recorded in plans/ofs-review-10.md (15 October): does any drawing V = cH with c != 1 keep
-the sweep smooth? It does (an ellipse is smooth), so smoothness alone cannot single out V = H. The claim checked here
+For observation-from-somewhere.md Proposition 3(g) and the ChatGPT follow-up in plans/ofs-review-10.md (15 October):
+does any drawing V = cH with c != 1 keep the sweep smooth? It does (an ellipse is smooth), so smoothness alone cannot single out V = H. The claim checked here
 is the stronger statement: if the sweep is uniform (every step the same linear map, a one-parameter group exp(tA)) and
 returns after one full turn (exp(2*pi*A) = I), it preserves an inner product, unique up to one factor, and in that
 inner product all of h and everything the sweep carries it to (all of v among them) have one length. On the page the

@@ -516,3 +516,19 @@ its place on a page drawn at c ≠ 1 moves.
 - One sentence in "Two choices, and a number that is not one".
 
 Proposed, not made: Tom set OFS's scope this morning (R258: "that's enough for this paper"), so this waits for his word.
+
+### Made (15 October, about 10:40, at Tom's "yes"; SPN R263)
+
+- **OFS Proposition 3(g)** and its proof. A sweep that is uniform, returns after a full turn and carries all of h into
+  all of v in a quarter of it preserves an inner product, unique up to a factor. In it, all of h, all of v and every
+  attitude between have one length, all of v is square to all of h, and (h, v) = (cos ωt, sin ωt). The sweep draws
+  V = H in its own measure, and the factor is H.
+- **Pointers to it:**
+  - in "Two choices, and a number that is not one" (a drawing at c ≠ 1 is the same sweep in coordinates other than its
+    own);
+  - in "The Euclidean choice" (the assumption narrowed to a uniform, linear sweep);
+  - in §11.2, question 2.
+- **The check:** `ofs/periodic.py` now names 3(g).
+- **Text comparison:** a word-level comparison against the previous text shows only these insertions. One rewrap first
+  merged question 2's three-path table into its paragraph; it was caught by that comparison and restored before
+  committing.

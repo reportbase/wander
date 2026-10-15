@@ -508,6 +508,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   only that drawing gives the turn (3(e)), the readings laid before anything arrives with the corner at their median
   and the near field a half (5(d)), every pair's corner (5(e)), the angles kept (5(f), (g)); the introduction and
   §11.2 question 6 say so. Whether readers do stays open.
+  **Proposition 3(g): a uniform sweep that returns draws V = H in its own measure** (15 Oct, SPN R263; Tom: "yes", to
+  Claude's answer to a ChatGPT follow-up, "Smoothness alone does not automatically establish uniqueness"): smoothness
+  does not (an ellipse is smooth); a sweep uniform (one linear map per step) that returns after a full turn, all of v
+  a quarter on, preserves an inner product unique up to a factor, in which V = H and (h, v) = (cos ωt, sin ωt). The
+  rigid bar is derived; the factor is H; what stays assumed is uniform and linear. `ofs/periodic.py` checks it.
+  Pointers in "Two choices", "The Euclidean choice", §11.2 question 2. The follow-up is in `plans/ofs-review-10.md`.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the

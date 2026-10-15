@@ -878,7 +878,16 @@ h² + v² + v₂² = 1, where v₂ is a second v read against the same h;
 is no circle;
 
 (f) with two other parties, assigned V and V₂, the attitudes are the directions of one rigid bar, the sphere
-h² + v² + v₂² = 1, only if V = V₂ = H.
+h² + v² + v₂² = 1, only if V = V₂ = H;
+
+(g) the bar can be derived rather than assumed. Take a sweep that is uniform (every step the same linear map of the
+plane of all-h and all-v), that returns to its start after one full turn, and that carries all of h into all of v in a
+quarter of it. Such a sweep preserves an inner product, unique up to a positive factor.
+- In that inner product, all of h, all of v and every attitude between them have one length, and all of v is square to
+  all of h.
+- At the sweep's own parameter t, the unit relations are (h, v) = (cos ωt, sin ωt): the unit circle of (c).
+
+So the sweep is the turning of a rigid bar in its own measure, and it draws V = H there. The one factor left free is H.
 
 *Proof.* (a) By (P0) the other party must be assigned a breadth for there to be a relation, and by (P1) the reader's
 only breadth is H, so the assignment is H times a number c. A unit relation v lies in [0, 1] however large V is, so no
@@ -891,7 +900,21 @@ walk through the facings must flip each freedom an even number of times, so the 
 n-cube, walked as a Gray code. (e) A turn keeps the bar's length. All of h is the bar at length H and all of v the bar
 at length cH, so a turn carries one to the other only if c = 1. With c ≠ 1 the tip must stretch on its way, along the
 ellipse of (c) or some other path. (f) By (e) applied to each pair: all of v and all of v₂ must each be the bar at
-length H. ∎
+length H.
+
+(g) Write the sweep as g(t) = exp(tA), with A ≠ 0 and T the least time with g(T) = I.
+1. A real 2 × 2 matrix with exp(TA) = I has eigenvalues ±iω, with ω = 2π/T. A pair of zeros would make A nilpotent,
+   and then exp(TA) = I + TA ≠ I.
+2. So A = P(ωJ)P⁻¹, with J the generator of turns, and g(t) = P·R(ωt)·P⁻¹. This preserves Q(x) = |P⁻¹x|².
+3. Suppose a symmetric form B is preserved by every g(t). Then PᵀBP is preserved by every turn, so it commutes with J;
+   being symmetric, it is a multiple of the identity. So B is a multiple of Q.
+4. Let u = P⁻¹(all of h). Since all of v = g(T/4)(all of h), P⁻¹(all of v) = R(π/2)u. The two are square to each
+   other and of one length in Q.
+5. Then g(t)(all of h) = cos ωt·(all of h) + sin ωt·(all of v), so (h, v) = (cos ωt, sin ωt), and every point of the
+   orbit has the same Q.
+
+A page drawn at V = cH with c ≠ 1 shows the same sweep in coordinates other than its own. Its unit relations at the
+sweep's parameter are unchanged; only the page's angles differ, which is the c of Proposition 5(d). ∎
 
 **What the geometry needs: a shape and one H.** Neither is a measured size. The shape is set by how many unit
 relations the system includes: by (d), n of them give the sphere in n dimensions, with 2ⁿ facings, so two give the
@@ -929,7 +952,9 @@ one. Which breadth it assigns is not free:
   - a lighthouse's 45° flash is the corner of its landings (Proposition 5(f));
   - a chart draws every compass bearing true (Proposition 5(g)).
 
-  Any other c is a consistent drawing, but it gives up all four.
+  Any other c is a consistent drawing, but it gives up all four. By part (g), it is the same sweep described in
+  coordinates other than its own. A uniform sweep that returns after a full turn has its own measure, unique up to a
+  factor, and in that measure V = H. The factor is H.
 - *V*/H, the true size.* It is not a choice. The readings never give it (Proposition 8). It is estimated at the median
   of what the reader knows (Proposition 13), and corrected by a shift in levels when an amount arrives.
 
@@ -939,9 +964,12 @@ which changes its angles and moves its corner off 45°. These are the two effect
 **The Euclidean choice.** Part (c) is where an assumption enters. One unit makes the axes commensurable, but "a bar of
 fixed length" also needs a norm: under the largest-component norm the bar traces the square, under the sum norm the
 line. The circle follows if the sweep is the turning of a rigid bar. The facing of §4 motivates that; it does not prove
-it. The same circle comes without a bar, from the chord and the two facings' rays (§4, "The arc from the chord");
-there the Euclidean measure enters as the right angle at which the flip pairs the rays, drawn with h and v at one
-length, and without it the crossings are still a conic, an ellipse. Less rests on the Euclidean choice than it seems. The readings are directions only (Theorem 6(a)), so the norm reaches them only
+it. Part (g) narrows the assumption. A sweep that is uniform and returns after a full turn is the turning of a rigid bar
+in its own measure, which is Euclidean and unique up to the factor H. What remains assumed is that the sweep is uniform
+and acts linearly on the mixes of all-h and all-v. The same circle comes without a bar, from the chord and the two
+facings' rays (§4, "The arc from the chord"); there the Euclidean measure enters as the right angle at which the flip
+pairs the rays, drawn with h and v at one length, and without it the crossings are still a conic, an ellipse. Less rests
+on the Euclidean choice than it seems. The readings are directions only (Theorem 6(a)), so the norm reaches them only
 through the measure on directions that "sweeping evenly" uses; laid by direction, every path gives the same readings
 (§7.4). Swept evenly along their own paths, the square and the line give other laws, with the same median at the corner
 and no mean (Theorem 6(e)). What the circle and the even turn add is the Cauchy's exact shape.
@@ -2024,16 +2052,18 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    invariance, from which it follows? Real readers do have preferred scales, their own step among them. Here a preferred
    scale sets where the lay stops, the count of levels a reader resolves (§8), and (S) is claimed only for the lay's
    form within that range.
-2. *Why Euclidean, and why the even turn?* The readings are directions only, so the norm enters only through the
-   measure on directions, and the two questions are one: is there a reason, from the reader's premises, that its weight
-   on directions is the one every turn leaves unchanged, rather than the square's or the line's? The median at the
-   corner and the missing mean do not depend on the answer (Theorem 6(e)); the Cauchy's exact shape does. The sharpest
-   form of the objection is Drory's (2015), against Jaynes's treatment of Bertrand's chord (1973): the same symmetries,
-   turns, rescaling and shifts, can be imposed in different ways, and give different measures, depending on how the
-   random selection is made. We grant it. Which selection the reader makes, the even turn, is a choice (§11.1), and
-   symmetry alone does not make it. What the framework adds is that the core of the main result survives the choice:
-   any selection that treats the two parties alike puts the median at the corner, and leaves no mean if its weight
-   does not vanish at the horizon (Theorem 6(e)).
+2. *Why Euclidean, and why the even turn?* The readings are directions only, so the norm enters only through the measure
+   on directions, and the two questions are one: is there a reason, from the reader's premises, that its weight on
+   directions is the one every turn leaves unchanged, rather than the square's or the line's? The median at the corner
+   and the missing mean do not depend on the answer (Theorem 6(e)); the Cauchy's exact shape does. Part of the answer is
+   Proposition 3(g): a sweep that is uniform and returns after a full turn has its own Euclidean measure, unique up to
+   the factor H, so the norm follows from a uniform, linear sweep, and that is what remains chosen. The sharpest form of
+   the objection is Drory's (2015), against Jaynes's treatment of Bertrand's chord (1973): the same symmetries, turns,
+   rescaling and shifts, can be imposed in different ways, and give different measures, depending on how the random
+   selection is made. We grant it. Which selection the reader makes, the even turn, is a choice (§11.1), and symmetry
+   alone does not make it. What the framework adds is that the core of the main result survives the choice: any
+   selection that treats the two parties alike puts the median at the corner, and leaves no mean if its weight does not
+   vanish at the horizon (Theorem 6(e)).
 
    Three paths from all of h to all of v show what that leaves free. Sweep each evenly along its own length, and write
    b for the share of the sweep done when the direction θ is reached:
