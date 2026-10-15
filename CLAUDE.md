@@ -522,6 +522,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   so in §3.1 ("Vantage, not mechanism"), the rule's third question, §3.5 and §11.2 question 8, and never as the
   definition. **The payload is a wave of some kind** (15 Oct, SPN R267; Tom: "the payload is a wave of some kind, not
   the actual object(s) creating that payload wave."): OFS §2 says so; the reader reads the wave, not its sources.
+  **No "parallel" or "serial" in OFS** (15 Oct, SPN R268; Tom: "yes, remove serial parallel."): OFS names situations 3
+  and 4 the outer reader and the inner reader; where a result rests on holding, it states the condition. SPN keeps its
+  words (and its name).
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the

@@ -117,7 +117,7 @@ standpoint; this is classical geometry. Between two points it holds the straight
 circle comes after the chord, drawn on it by turning. A *situated* reader has a facing, and holds only the arc it turns
 through. Either it reads the hemisphere turned away from it, from outside, or the hemisphere turned toward it, from
 home, inside. How either is read is not pinned down; this paper follows one proposal, the outer hemisphere taken in at
-once (a parallel reader) and the inner swept one direction at a time (a serial reader), and their figures are the bell
+once (the outer reader) and the inner swept one direction at a time (the inner reader), and their figures are the bell
 and the fisheye. These two are not the only situated
 views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is
 where the truth would lie: a system's true breadths, as shares of their whole, would be one point of it, found only
@@ -384,18 +384,17 @@ the five below, then for two.
 | 0 | known | not known | none | nothing: H but no h, so no relation | — |
 | 1 | known | known, equal to H | none | the whole at once | an equation: the circle h² + v² = 1 |
 | 2 | known | known, unequal or varying with direction | none | the whole at once | an array: a shape's breadth in every direction |
-| 3 | known | not known | outside: the outer hemisphere | not pinned down; proposed, parallel: one hemisphere at once | an apple held in the hand, its facing side seen at once |
-| 4 | known | not known | inside: the inner hemisphere | not pinned down; proposed, serial: one direction at a time | a molecule inside an endless apple, the others arriving one at a time, nearest first |
+| 3 | known | not known | outside: the outer hemisphere | not pinned down; proposed: one hemisphere at once | an apple held in the hand, its facing side seen at once |
+| 4 | known | not known | inside: the inner hemisphere | not pinned down; proposed: one direction at a time | a molecule inside an endless apple, the others arriving one at a time, nearest first |
 
 **Vantage, not mechanism.** Situations 3 and 4 are set by the vantage, by which hemisphere the reader reads: 3 the
 outer, turned away from the reader, which stands outside the thing, facing it; 4 the inner, turned toward the reader,
 which stands inside, at home (§3.4). How a reader comes to read either hemisphere, its mechanism, is not pinned down for
-either. This paper follows one proposal throughout: the outer hemisphere taken in at once (parallel), the inner swept
-one direction at a time from home (serial), with static and dynamic saying why (§3.5). Where the paper speaks of a
-parallel or a serial reader it means a reader working that way, and what it shows of such a reader (the bell and the
-fisheye, §7.1; which centre each can hold, §7.6) is shown of that mechanism; it attaches to situation 3 or 4 as far as
-the proposal holds (§11.2, question 8). Parallel does not mean the whole at once: the whole at once is situations 1
-and 2.
+either. The paper calls them the outer reader and the inner reader, and follows one proposal throughout: the outer
+hemisphere taken in at once, the inner swept one direction at a time from home, with static and dynamic saying why
+(§3.5). What it shows that rests on the proposal (the bell and the fisheye, §7.1; which centre a reader can hold,
+§7.6) is shown of a reader working that way, and attaches to situation 3 or 4 as far as the proposal holds (§11.2,
+question 8). Taking in a hemisphere at once is not holding the whole: the whole at once is situations 1 and 2.
 
 **The rule.** Three questions place any reader in exactly one situation.
 1. Is anything related to the reader, so that it has an h? If not, it is in situation 0.
@@ -412,7 +411,8 @@ like a sixth reduce to these.
 - *V known only within bounds, or as a distribution,* is situation 3 or 4 with its one missing number known that way
   (§3.8). Its best estimate is then the corner of the bounds, or the median (Proposition 13).
 - *H unknown* leaves no reader at all: H is the reader's own breadth and is always held. Situation 0 is H with no h.
-- *A reader that reads in patches* is serial across the patches and parallel within each; every single look is 3 or 4.
+- *A reader that reads in patches* is one at a time across the patches and at once within each; every single look is
+  3 or 4.
 - *A system that changes kind* moves its reader from one situation to another over time (§3.5); at any one look the
   reader is in one.
 - *Several readers* each have a situation of their own; what passes between them is the subject of §9.
@@ -443,10 +443,10 @@ reader lacks (§3.8).
   breadth in every direction, known together. The corner is computed in each direction, and there is no horizon.
 - **3, the outer hemisphere, outside.** A reader outside a thing, facing it, reads the facing side; the far side is
   turned away. Its sweep covers one hemisphere, from the point that faces it (0) to the limb (π/2); the half past the
-  limb is never swept. On the proposal followed here it takes the facing side in at once (parallel), counting every
+  limb is never swept. On the proposal followed here it takes the facing side in at once, counting every
   relation at once, and their shares make a bell (§7.1).
 - **4, the inner hemisphere, inside.** A reader inside, one part among others, reads the rest from home. On the
-  proposal followed here it takes them one direction at a time (serial), and its view is the fisheye, the running total
+  proposal followed here it takes them one direction at a time, and its view is the fisheye, the running total
   of the same bell (§7.1).
 
 Situations 1 and 2 are the view from nowhere. They are mathematical views, an equation or an array, and they name a
@@ -538,11 +538,11 @@ nothing curved.
 - **1** is the quarter circle itself: a closed, known curve, both breadths held, the corner computed at 45°, no
   horizon.
 - **2** puts a shape in place of the circle: each number lands at the shape's radius in its direction.
-- **3**, outside (parallel, on the proposal of §3.1), holds the laid numbers at once and reads the unit line against
+- **3**, the outer reader, holds the laid numbers at once (on the proposal of §3.1) and reads the unit line against
   the circle, θ/sin θ: rising from 1 toward π/2, approaching the line from above.
-- **4**, inside (serial, on that proposal), takes one number at a time, projected onto the circle, and reads the circle
-  against the unit line, sin θ/θ: falling from 1 toward 2/π, approaching from below. Its view is the unit line laid out
-  as the fisheye.
+- **4**, the inner reader, takes one number at a time (on that proposal), projected onto the circle, and reads the
+  circle against the unit line, sin θ/θ: falling from 1 toward 2/π, approaching from below. Its view is the unit line
+  laid out as the fisheye.
 - **0** has no unit, and nothing to lay.
 
 Past 1, every number lands closer to the circle's top and the line's end, and the numbers out to infinity crowd into the
@@ -561,8 +561,8 @@ paper follows through, and not the only ones.
 | vantage | situations | geometry | the turn | measure of a turn θ | reads a line of true breadth 1 as |
 |---|---|---|---|---|---|
 | completed: the view from nowhere | 1, 2 | the chord, and the circle drawn on it; every breadth held; no facing | none | none | 1 |
-| outer hemisphere | 3 | one facing; the hemisphere turns away from the reader (proposed: taken in at once, parallel) | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
-| inner hemisphere | 4 | one facing; the hemisphere turns toward the reader (proposed: swept from home, serial) | a quarter turn: a bar, from home to the horizon | sin θ/θ | 2/π |
+| outer hemisphere | 3 | one facing; the hemisphere turns away from the reader (proposed: taken in at once) | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
+| inner hemisphere | 4 | one facing; the hemisphere turns toward the reader (proposed: swept from home) | a quarter turn: a bar, from home to the horizon | sin θ/θ | 2/π |
 
 **Where the numbers come from.** A situated reader measures by turning. Its position crosses the line once, and its
 facing turns; the arc is drawn by that turning, not walked. The two situated vantages turn by different amounts, and
@@ -686,27 +686,27 @@ account holds the whole figure and so cannot state an order of arrival; a situat
 and cannot hold the whole figure. And the point on which the situated reading turns, the corner, is an unremarkable
 point of the completed drawing.
 
-### 3.5 Parallel and serial: static and dynamic
+### 3.5 At once or one at a time: static and dynamic
 
-Parallel and serial say how a situated reader reads, on the proposal this paper follows for situations 3 and 4, which
-are set by the vantage, their mechanism not pinned down (§3.1); static and dynamic say why. A system is *static* to a
-reader if it holds still for the whole look, so that the reader can take its facing side at once: on the proposal,
-situation 3. It is *dynamic* if it changes or arrives during the look, so that the reader takes it one part at a time
-from inside: on the proposal, situation 4.
+At once and one at a time say how a situated reader reads, on the proposal this paper follows for situations 3 and
+4, which are set by the vantage, their mechanism not pinned down (§3.1); static and dynamic say why. A system is
+*static* to a reader if it holds still for the whole look, so that the reader can take its facing side at once: on the
+proposal, situation 3. It is *dynamic* if it changes or arrives during the look, so that the reader takes it one part
+at a time from inside: on the proposal, situation 4.
 - *Both are situated.* Static and dynamic part 3 from 4, not situated from unsituated. The equation and the array of 1
   and 2 are held whole, with no reader standing anywhere.
-- *It is measured against the reader's look, not the system alone.* A building that does not move is read serially by
-  someone walking through it, and a moving flock is read in parallel by a photograph.
-- *Arrival makes a reading dynamic, as change does.* A system that holds still is still read serially when news of it
-  reaches the reader over time, nearest first.
+- *It is measured against the reader's look, not the system alone.* A building that does not move is read one part at a
+  time by someone walking through it, and a moving flock is read at once by a photograph.
+- *Arrival makes a reading dynamic, as change does.* A system that holds still is still read one part at a time when
+  news of it reaches the reader over time, nearest first.
 - *It is not a matter of dimension.* Static is not "three dimensions" and dynamic is not "three dimensions plus time".
   Both read the same sweep, 0 to π/2, one laid across at once and one walked.
 
 A system can change kind, and the reader must follow. A dynamic system can settle (4 becomes 3), and once its breadths
-are in hand it is held whole (it becomes 2). When a system settles, the serial reader's levels can serve as the
-parallel reader's addresses, and the reader need not start again. When a static system starts to change, a parallel
-reader that lays its sweep once keeps a stale picture; only reading again and comparing, which is serial reading, shows
-the change. So a reader that may face either kind keeps some serial check running. In both directions the reader
+are in hand it is held whole (it becomes 2). When a system settles, the levels read one at a time can serve as the
+addresses of a reading at once, and the reader need not start again. When a static system starts to change, a reader
+that lays its sweep once keeps a stale picture; only reading again and comparing, one look after another, shows the
+change. So a reader that may face either kind keeps some such check running. In both directions the reader
 infers the change rather than seeing it: a system that changes more slowly than the look, or more finely than the
 reader resolves, looks still.
 
@@ -756,8 +756,8 @@ each finger the same address.
 - *The thumb is H.* The hand's own measure is its thumb, the reader's breadth, the value it starts from; the mountain it looks at is V. Setting
   V = H is reading the mountain in thumbs.
 - *The geometry is the hand, not the rings.* Dividing v by h keeps the finger and drops the ring.
-- *The serial reader is the hand and its fingers; the parallel reader holds the rings.* One walks the addresses; the
-  other keeps the magnitudes, all at once.
+- *The inner reader is the hand and its fingers; the outer reader holds the rings.* One walks the addresses; the
+  other keeps the magnitudes, all at once (on the proposal of §3.1).
 - *The rings hide; the hand does not.* Two rings on one finger, seen along it, show only the nearer: the ring behind is
   the back side. The hand hid nothing; the rings did.
 - *The far field's doublings are fingers.* Past the corner the levels are doublings (§6), addresses laid before
@@ -1157,9 +1157,9 @@ the sources' spread, it is the world's.
 
 ### 7.1 Sweeping the circle evenly
 
-With V = H the relation is a bar of length 1. A serial reader at home sweeps it from flat (all h) to upright (all v) in
-equal steps of turn, and at each step holds one reading, v/h. Serial describes this look, one direction at a time, not
-the system being read (§3.5).
+With V = H the relation is a bar of length 1. A reader at home sweeps it from flat (all h) to upright (all v) in
+equal steps of turn, and at each step holds one reading, v/h. One direction at a time describes this look, not the
+system being read (§3.5).
 
 **Proposition 5.** (a) Equal steps of turn give unequal readings. Near home a step barely changes v/h; the corner is
 halfway through the turn; near upright each step changes v/h by more and more, without bound.
@@ -1344,15 +1344,16 @@ carrée chart at 60°, with the shore running east–west, its half-way flash is
 In the lighthouse the evenness is the lamp's, a fact about the world (§7.8). A reader standing at the lamp and reading
 each landing by its direction holds tan θ itself, with no β at all. The same requirement holds for it, by (d).
 
-**The parallel reader's bell.** A parallel reader takes in every relation at once, each with its share of the turn. On
-the logarithmic axis x = ln(v/h) the shares form a bell centred on the corner,
+**The outer reader's bell.** A reader that takes in every relation at once, as the outer reader does on the proposal
+of §3.1, has each with its share of the turn. On the logarithmic axis x = ln(v/h) the shares form a bell centred on
+the corner,
 
   ½·sech x = 1/(v/h + h/v),  with total area π/2, a quarter turn.
 
 On the plain axis the same shares are 1/(1 + (v/h)²), Cauchy's curve. The bell and the fisheye are one function: the
 area under the bell up to x is arctan(v/h) = π/4 + ½·gd(x), the fisheye's radius there, because the Gudermannian is
-the running area under sech. The serial reader, direction by direction, has the running total, which is the fisheye; the
-parallel reader, all at once, has every share, which is the bell. It is not the normal curve. With the same peak and
+the running area under sech. A reader direction by direction has the running total, which is the fisheye; a reader
+all at once has every share, which is the bell. It is not the normal curve. With the same peak and
 area the two look alike near the corner, but one level out from it the bell stands at 0.400, then 0.235, 0.123, 0.062,
 halving with every further level and keeping a share in every level without end, while the normal curve falls ever
 faster and its far levels vanish (0.043 at the fourth level against the bell's 0.062, and 0.002 against 0.016 at the
@@ -1544,14 +1545,14 @@ sums, and the Cauchy is the extreme case: an order law with no sum.
 **Order needs holding.** The median survives every change of what arrives (Theorem 6), but a reader has it only if it
 holds its readings. Finding the exact median of n arrivals taken one at a time needs storage that grows in proportion to
 n (Munro and Paterson 1980).
-- A parallel reader holds its hemisphere at once, and has the median.
-- A serial reader holds one arrival at a time, and does not. What it can keep, at the cost of one more slot, is one
+- A reader that holds its hemisphere at once has the median.
+- A reader that holds one arrival at a time does not. What it can keep, at the cost of one more slot, is one
   arrival, held and left alone, against which every later arrival is higher or lower.
   - That comparison is unchanged by any common rescaling.
   - It needs no step, since it asks only which of two is larger, so readers who count in different steps mark the same
     arrivals.
 
-  It does for the serial reader what the median does for the parallel one. A reference that moves with the reader's
+  It does for the one what the median does for the other. A reference that moves with the reader's
   own counts loses this: readers counting in different steps then mark different arrivals.
 
 ### 7.7 Other addresses and payloads
@@ -1663,11 +1664,11 @@ every H up to x. Placed on the quarter turn at arctan(x/H), two amounts are set 
 arcsin((r − 1)/(r + 1)) for a ratio r, when H is their geometric mean. The best H is the corner of what is read, as
 the best estimate of a size is the corner of what is known (Proposition 13).
 
-**More points, fewer told apart.** A parallel reader looks side-on at N points spaced evenly around a circle and reads
-each one's position across its view to a step ε, relative to the circle's radius. Neighbours at angle θ from the middle
-of the view are about (2π/N)·cos θ apart, so the reader separates those with cos θ ≥ εN/2π, which is
-R(N) = (N/π)·arccos(εN/2π) of them. This peaks at about 1.12/ε points, where εN/2π ≈ 0.65, and falls to none at
-N = 2π/ε: past the peak, more points mean fewer told apart. The addresses never overflow; the resolution does.
+**More points, fewer told apart.** A reader taking its view at once looks side-on at N points spaced evenly around a
+circle and reads each one's position across its view to a step ε, relative to the circle's radius. Neighbours at
+angle θ from the middle of the view are about (2π/N)·cos θ apart, so the reader separates those with cos θ ≥ εN/2π,
+which is R(N) = (N/π)·arccos(εN/2π) of them. This peaks at about 1.12/ε points, where εN/2π ≈ 0.65, and falls to
+none at N = 2π/ε: past the peak, more points mean fewer told apart. The addresses never overflow; the resolution does.
 
 ## 9. What the geometry does not give: amounts
 
@@ -1737,7 +1738,7 @@ A single stream fixes the course of the relation, not its parties. A thing comin
 the matching rate are the same stream, and so is every mixture of the two. What the stream does fix is the relation's
 own pace, the reading over its rate, x/ẋ; for a thing coming nearer at a steady rate it is the time left until contact,
 the quantity Lee (1976) proposed a driver reads directly when braking.
-A serial reader is given motion before it is given an object.
+A reader taking one look after another is given motion before it is given an object.
 
 **Proposition 10 (one denominator, at once).** Two readings taken at the same moment, x₁ = a₁/b₁ and x₂ = a₂/b₂, have
 the ratio x₁/x₂ = (a₁/a₂)(b₂/b₁). When the two parties share the denominator, b₁ = b₂, the ratio is a₁/a₂, whatever the
@@ -2185,7 +2186,7 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
 
 8. *How situations 3 and 4 are read.* The two are set by the vantage, the outer hemisphere and the inner (§3.1). The
    mechanism is not pinned down for either. This paper follows one proposal, the outer taken in at once and the inner
-   swept one direction at a time, and what it shows of parallel and serial readers (the bell and the fisheye, §7.1;
+   swept one direction at a time, and what it shows of readers working that way (the bell and the fisheye, §7.1;
    the median held and the reference kept, §7.6) is shown of those mechanisms. The vantages' own readings, π/2 and
    2/π (§3.4), and every result that needs only the readings and their weight, do not depend on it. Whether a reader
    of the outer hemisphere does take it in at once, or a reader of the inner one direction at a time, is open.
