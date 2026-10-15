@@ -203,3 +203,47 @@ relation (C39, C41: the square wave's fundamental, computed under C34, C36 and C
 routes are E 43, H 12, S 7, P 1, U 2 (65): fifty-five come from an even turn, not fifty-four of sixty-three. No verdict
 changes. P5 is scored on run 2's 63 rows as written (C10b taking C10's answer).
 
+
+### Run 3 (14–15 October; the blind classification)
+
+A fresh agent, given only `plans/tpi/neutral-list.md` (the 65 by name, field, formula and source) and told nothing of
+turns, the situated view or the predictions, answered Q1 and Q2 for each from standard references
+(`plans/tpi/classification.md`, with its conventions and seven low-confidence rows: K4, K17, C2, C5, C20, C26, C28).
+Scored by `python3 -I plans/tpi/run3.py plans/tpi/classification.md`:
+
+```
+P5: KILLED. routes agree on 51 of 63 rows (needs 57)
+  disagreements: C2 (U vs c), C7 (H vs c), C10 (H vs c), C22 (E vs c), C27 (H vs b), C28 (E vs c), K4 (H vs c), K6 (E vs b), K9 (H vs c), K10 (H vs c), K11 (E vs b)
+P6: not killed. route S on Q1: K16 b, K17 b, C25 b, C29 b, C30 b, C32 b, C44 b
+P7: KILLED. inferring an unknown (Q2 b or c): turn entries 13 of 51 with a use (0.255; 13 of 55 counting identities, 0.236), route S 4 of 7 (0.571)
+both marks (a turn, and used to infer): 13: K2 (c), K4 (c), K5 (b), K7 (b), K8 (b), K10 (c), K11 (c), C13 (b), C20 (b), C22 (b), C34 (c), C41 (b), C42 (c)
+identities (no use): K3, K14, C1, C2, C9
+```
+
+- **P5 killed, partly by my set-up.** Six of the twelve disagreeing rows are run 2's hidden turns (the arcsine law,
+  the median's efficiency, (E|Z|)², Kac's roots, Struve's constant twice), which the agent put in (c): Q1 asked where π
+  enters at the step itself, and there it is a Gaussian or Gamma constant (the agent's own note: "its usual evaluation
+  squares the integral and uses a polar angle"). Mapping H to (a) did not fit the question I wrote. The rest are
+  disagreements in kind: the pixel and the dipole (b: a phase across a given length, by the agent's convention), the
+  baffled piston (b: the π is the piston's area πa², the radiation mass having none), Kramers–Kronig (c: a half-residue),
+  the penny-shaped crack (c: Sneddon's route, which the agent found more common; run 2 took Irwin's), Bauer–Ramanujan
+  (U against c). Counting the six hidden turns as agreeing (after the run) gives 57, the threshold.
+- **P6 not killed.** All seven circle-as-a-shape entries are (b) to a reader who did not know the question: positions
+  across a segment or region whose ends are given. Their extent is fixed in advance; in the derivation V is known.
+- **P7 killed, the other way round.** Turn formulas are mostly used to compute from known sizes (13 of 51 infer
+  something); the circle-as-a-shape ones more often infer (4 of 7: Young's modulus from indentation curves through
+  Sneddon's cone and the Oliver–Pharr constant, stress drops from slip, v sin i from line profiles). Whether V is known
+  is not carried by the formula.
+
+**Reading (after the run; not ruled).**
+- *Two kinds of inference.* The shape formulas infer by fitting: a profile whose shape is known, scaled to the data,
+  its extent the fitted number. The thirteen turn formulas used to infer read a whole they do not have through a shadow
+  or a sign of an evenly turned quantity: an averaging meter's peak from the mean of |sin|, a correlation from sign
+  agreements (Van Vleck) or from rank agreements (Kendall's τ), a length from crossings (Buffon, stereology), a
+  superfluid density from the stiffness's jump, a refractive index from absorption (Kramers–Kronig), an MTF from bar
+  targets (Coltman), leaf area from light extinction (the canopy G-function). These carry both marks: they are the
+  clue's best cases.
+- *What the second mark adds.* In the derivations, the circle-as-a-shape group has V known (P6) and the turn group
+  does not need it; in use, either can serve a reader who lacks the whole. So the two marks sort the derivations
+  cleanly and the uses not at all: the situated reading belongs to the use of a turn's 2/π to read an unknown whole,
+  which thirteen of the fifty-five turn occurrences have.

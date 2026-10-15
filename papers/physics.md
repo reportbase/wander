@@ -523,7 +523,10 @@ that holds less of it can be tested against the referee exactly. That is evidenc
 - **TPI P1–P3: 2/π is not always a turn.** Every occurrence was predicted to come from an even turn read as a shadow or a
   share, in one of four forms, with ½ in its place in space. Eight of sixty-five come another way (seven the circle as a
   shape, one a pole); the Kosterlitz–Thouless 2 is a dimension and the Gaussian beam's a convention; in space only the
-  shadow on an axis gives ½. 2/π is a strong clue for the even turn, not a proof of one.
+  shadow on an axis gives ½. 2/π is a strong clue for the even turn, not a proof of one. Run 3 (SPN R252, the second mark, V not known): a blind
+  classification puts every circle-as-a-shape entry on an extent given in advance (V known), but the uses do not sort:
+  13 of 51 turn formulas infer an unknown against 4 of 7 shape formulas (P7 killed). The clue's best cases are the turn
+  formulas used to read a missing whole through a shadow or a sign.
 - **MAG P4: K0 III scatters 1.4 levels**, not under 1.0. A known kind is a bridge about a level wide.
 - **CNT P3 and P4: the plane and the poles count alike.** The disc was predicted to flatten the counts toward the poles
   more than in the plane. It does not: both give 1.23. Dust in the plane and the clumping of young bright stars are the
