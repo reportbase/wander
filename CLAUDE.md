@@ -478,6 +478,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "Two other parties" (one entry per party; both known, half-situated, (3, 3), (4, 4), (3, 4), (4, 3), each in prose);
   the three-party reader where the parties' rays meet square (only home and its mirror); §3.4 "With three unit
   relations" (a hemisphere reads 2 at once, ½ one direction at a time).
+  **The lighthouse and Mercator's map require V = H** (15 Oct, SPN R258; Tom: "all we need for this paper is to complete
+  the well known metaphors of the mercator and lighthouses. If we can show that V must equal H in those to situations,
+  that's enough for this paper."): Proposition 5(f), (g) after "Working back from the Cauchy" in §7.1, with proofs.
+  The lighthouse: (x − α)/β = tan θ, the path cancelling from the two legs, the shore drawn at c times the sea putting
+  the half-way flash at arctan c, the corner and the flip only at c = 1, any H a similar figure. Mercator's map: a
+  cylindrical chart's c = f′(φ)·cos φ, bearings drawn at tan ψ′ = tan ψ/c, true everywhere only at c = 1 (Mercator),
+  Tissot's indicatrix the bar in two units, areas sec²φ a zoom, equal area forcing c = cos²φ (Euler, Gauss); a table of
+  four charts in v and h. Numbers checked in `ofs/charts.py`. The abstract, introduction, §6 and §7.8 point to them.
+  That is the scope Tom set for OFS on this line: the 2/π catalogue and the sweep over a horizon stay in the plans.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -562,6 +571,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   hundredth of a level of their corner, giants a tenth (P4, P5 not killed). Wander's bodies (P1–P3 killed): one asteroid's
   corner 1.3% off its ball; the Moon 0.25 levels (the real one 0.0165), Mars 0.135; the middle band, not the broad, holds
   most relief in twelve bodies. Scaling `res/` relief to real levels is Tom's call.
+  Run 2 (`ref/ref2.py`, 14 Oct; Tom: "whats new is the tvf3d signal. it shows how the signal itself is packed."; SPN
+  R249): a reader drops one octave of degree per level of distance (exact); on seven published shape models (Mercury,
+  Venus, Earth2014, LOLA, MOLA, Vesta, Ceres; Zenodo/Curtin, sha256 in the plan, not committed) the relief per octave,
+  degrees 8–1023. All three killed: one power law (P6, by the airless bodies, which bend at a tenth to a fortieth of
+  their radius), half per octave (P7: slopes −0.21 to −0.98), one slope for all (P8). Earth, Mars, Venus about −0.4 per
+  octave. Then Tom (16:26, SPN R250): "no, real signals are not packed tvf3d. tvf3d is like a pre-read signal": a real
+  signal arrives unpacked; a .tvf3d is the reader's levels with the payload already placed, coarse first, so a later
+  reader takes a prefix and reads nothing again. The run's framing (does the world come packed?) was a misreading; its
+  kills stand; it measures how real relief fills a pre-read signal's levels. A band's relief when first held is
+  0.0002–0.07 of an address. The games page's Levels application was judged an illustration (its rule wander's; the
+  shape any size-on-screen LOD's; geometry clipmaps, Losasso and Hoppe 2004, already do it).
   `mag-plan.md` (+ `mag/mag.py`, 10 Oct): on the Hipparcos stars (HYG v3.8 from GitHub, sha256 in the plan; parallax
   distance, V and spectral type only), light falls two levels per level of distance: G dwarfs 2.02, K0 giants 1.93 where
   complete (P1–P3 not killed), 1.61 past the limit; K0 III scatters 1.4 levels (P4 killed).
@@ -572,9 +592,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   J/A+A/649/A6 table1c, from Tom; sha256 in the plan), kinds by colour on the main sequence. All four killed: the RUWE cut
   removes more near stars (steeper counts, poles past the plane), and a fifth of G/K colours within 50 pc are white dwarfs.
   Read after the run without the cut: 2.93–3.00 levels of number per level of distance for every kind, plane = poles.
-  `grd-plan.md` (10 Oct, predictions only): the ratio between levels in a measured reader, the grid cells' modules.
-  P1: a halving, √2 (area) or 2 (length), within 0.07; prior knowledge of the published means (~1.42, ~1.7) is stated in
-  the plan, so it runs only on per-animal data not yet opened (Tom to supply; candidates listed there).
+  `grd-plan.md` (+ `grd/grd.py`; predictions 10 Oct, run 1 14 Oct, SPN R248): the ratio between levels in a measured
+  reader, the grid cells' modules. Run 1 on Gardner et al. 2022 (figshare, CC0; data not committed, sha256 in the plan):
+  pooled adjacent ratio 1.432 in the √2 band (P1 not killed); P2, P3 killed by too few animals; post hoc the largest
+  module is not measured reliably in a 1.5 m box. Two rats; more animals needed. P1 was a halving, √2 (area) or 2
+  (length), within 0.07; the plan states the published means known beforehand (~1.42, ~1.7).
   `grd-landscape.md` (10 Oct, a reading; Tom: "lets just establish the boundries, see how we might slot in"): the
   measured ratios, the coding theories (economy √e, nested codes) and the mechanism (Kang 2019), and SPN's slot as the
   measure-free baseline 2^(1/D), which the coding theories depart from by their added measure; told apart in 1D and 3D.
@@ -780,6 +802,44 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   nuisance's dη/η (P1–P3); the gamma killed P4 (other powers move the prior instead of producing the paradox); Weibull
   P4′ not killed. General: under dη/η integrating the scale out is ℓ₁^(−n) times the ratios' law. Runs take 57 and 35
   minutes.
+  `tpi-plan.md` (+ `tpi/tpi.py`, `tpi/catalogue.md`, 14–15 Oct; Tom: "Possibly anytime 2/PI shows up, its the situated
+  situation."; "its probably the best clue there is. there are many more examples of 2/PI showing up."; SPN R251): where
+  2/π shows up. Twenty occurrences known beforehand and forty-five found by a fresh agent (not shown the predictions),
+  each constant computed from its derivation step (63 checks of 62, all match; Wheeler's microstrip not traced).
+  Fifty-five come from an even turn read as a shadow or a share (43 explicit, 12 via an equal-spread normal pair or a
+  Haar measure). P1 killed by eight: the circle as a shape (semicircle area or arcsine integral: Hertz line contact,
+  Wigner, disc capacitance, Sneddon cone, Oliver–Pharr, stress drop, rotational broadening) and one pole (alternating
+  permutations); P2 killed (KT's 2 a dimension, the Gaussian beam's a convention); P3 killed (in space: axis shadow ½,
+  relative angle π/4, half-angle chord 2/3); P4 not killed. Run 1 had three quadrature set-up errors of mine (P3 killed
+  by one). A strong clue for the even turn, not by itself for the situated reader. Run 3 (`tpi/run3.py`,
+  `tpi/classification.md`; Tom: "the other definining characteristic of the situated view is V is not known."; SPN
+  R252): a second blind agent classed all 65 on where π enters and how each is used. P5 killed (51 of 63 agree with run
+  2's routes; six disagreements are the hidden turns, put by my question at their Gaussian or Gamma constant), P6 not
+  killed (all seven shape entries fix their extent in advance: V known), P7 killed the other way (13 of 51 turn formulas
+  infer an unknown, 4 of 7 shape ones). The marks sort derivations, not uses; the best cases are turn formulas reading a
+  missing whole through a shadow or a sign. Run 4 (`tpi/run4.py`, `tpi/classification-q3.md`; Tom: "there also needs to
+  be a sweep, not ust an equation."; SPN R253): the same classifier asked whether the angle is traversed in order, held
+  at once, or not traversed. P8 not killed (no shape entry or identity has a sweep); P9 killed: only the averaging AC
+  meter and the relay's describing function carry all three marks, the inner reading as an instrument; ten if a
+  population held at once (the parallel reader) counts, which is Tom's to rule. Then Tom: "2/PI  is needed to turn the
+  arc into the chord, you want remove the curve and ge the straight line for some reason." (SPN R254): OFS §3.4 read
+  the other way (the line of 1 over the arc of π/2); a reading, untested, covering the four forms and the shape group
+  (a semicircle's area is ½·r·arc), KT, the Gaussian beam and the pole left over; Claude's candidate purpose a mean
+  (the readings v/h have none, their shadows 2/π). Run 5 offered, not run. `tpi-report.md` (15 Oct; Tom: "wrie. a report. Maybe a sweep is
+  the better clue, there needs to b a horizon and a sweep over it.."; SPN R255): the four runs and R251–R254 in one
+  place, the 65 with their marks; the suggestion read as OFS Theorem 6(e) (a fair sweep reaching the horizon: median at
+  the corner, no mean, on every path; 2/π only the circle's), its unbounded face classical (lighthouse, resonance,
+  the ground from a height, inverted parallax); a horizon test proposed, not run; open: which horizon, populations,
+  whose sweep. Run 4's counts corrected (the 13 equations are among the 30 not traversed). Its §7 (SPN R256; Tom: "where is the
+  cauchy in the light house, where is the removal of the scale?"): (x − α)/β = tan θ; the scale removed within each flash
+  (the path cancels from its two legs, OFS Theorem 6(a)) and found again at the corner by the shore (half the
+  interquartile range), never by the mean; the straight shore makes the Cauchy; the lamp situated, the shore not. "V = H
+  on the beach" (SPN R257; Tom: "can we show that V = H in the ligiht house metaphore?"): isotropy draws it for the lamp
+  (Proposition 3(e)); the shore tests it with one outside amount (Proposition 5(d): read on a ruler c times the sea's,
+  P(R ≤ r) = (2/π)·arctan(cr), the corner only at c = 1); a plate carrée chart is c = sec(latitude), Mercator's c = 1;
+  c (a stretch, required 1) kept apart from κ = β/H (a zoom, free). Then Tom: "all we need for this paper is to complete the well
+  known metaphors of the mercator and lighthouses. If we can show that V must equal H in those to situations, that's
+  enough for this paper." (SPN R258): moved into OFS Proposition 5(f), (g) and SPN §2.1 (see the OFS entry).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

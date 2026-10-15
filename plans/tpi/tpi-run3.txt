@@ -1,0 +1,6 @@
+P5: KILLED. routes agree on 51 of 63 rows (needs 57)
+  disagreements: C2 (U vs c), C7 (H vs c), C10 (H vs c), C22 (E vs c), C27 (H vs b), C28 (E vs c), K4 (H vs c), K6 (E vs b), K9 (H vs c), K10 (H vs c), K11 (E vs b)
+P6: not killed. route S on Q1: K16 b, K17 b, C25 b, C29 b, C30 b, C32 b, C44 b
+P7: KILLED. inferring an unknown (Q2 b or c): turn entries 13 of 51 with a use (0.255; 13 of 55 counting identities, 0.236), route S 4 of 7 (0.571)
+both marks (a turn, and used to infer): 13: K2 (c), K4 (c), K5 (b), K7 (b), K8 (b), K10 (c), K11 (c), C13 (b), C20 (b), C22 (b), C34 (c), C41 (b), C42 (c)
+identities (no use): K3, K14, C1, C2, C9

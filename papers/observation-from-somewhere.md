@@ -25,7 +25,10 @@ For there to be a relation, the reader must assign the other party a breadth, an
 draws the mountain at the breadth of its thumb, V = H. This is required. Only then is the sweep from one party to the
 other the turn of one rigid bar, tracing a unit circle with the corner at distance 1 whatever unit was chosen, and only
 then is there a single even turn; working back from the Cauchy distribution, which is known, arrives at V = H and
-nowhere else. The drawing is not a claim about the mountain. Its true size is a separate number, which one observation
+nowhere else. The two familiar pictures of a turn laid on a line require it too: a lighthouse's flashes put half their
+landings within the lamp's distance of its foot only when shore and sea are drawn at one length, and Mercator's map
+draws every compass course true only because it stretches north–south as much as east–west, giving up only size, a
+zoom. The drawing is not a claim about the mountain. Its true size is a separate number, which one observation
 does not give; the reader's best estimate of it is the median of what it knows, and correcting the estimate moves every
 amount by the same number of levels and redraws nothing. Nor is the reader's own breadth a measurement: H is the value
 it chooses to start from, every value gives the same circle, and its size sets only the zoom, fine near for a small H
@@ -138,7 +141,9 @@ as if a single observation held it. Section 3 sets out the readers in full.
 - A reader that holds one breadth must assign the other party a breadth in its own unit, and its geometry requires that
   breadth to be its own, V = H. Only then is the sweep a turn, tracing a unit circle with the corner at distance 1
   whatever unit is chosen, and only then is there one even turn. Working back from the Cauchy, which is known, arrives
-  at V = H (§5, §7.1). The other party's true size is a separate estimate (§9). H itself is not a measured size but the
+  at V = H (§5, §7.1). So do the two familiar pictures of a turn laid on a line: a lighthouse's flashes on a shore, and
+  Mercator's chart, which draws every compass course true only because it stretches north–south as much as east–west.
+  Both leave the size free (§7.1). The other party's true size is a separate estimate (§9). H itself is not a measured size but the
   value the reader starts from; any value gives the same geometry, and its size sets only the zoom (§8).
 - How many unit relations the system includes sets its shape: two the circle, three the sphere, n + 1 the sphere in
   n + 1 dimensions (§5). With two other parties the same holds once per party. Drawn at V = V₂ = H, the relation lies on one sphere, and the
@@ -1051,7 +1056,7 @@ having levels on both sides of 1 and a floor; the situated reader has proportion
 **An older instance: Mercator's map.** On a globe at latitude φ let v = sin φ, the height above the equator, and
 h = cos φ, the radius of the circle of latitude, so that v/h = tan φ and the globe's meridian is the quarter circle.
 Mercator's map (Mercator 1569) stretches each circle of latitude by 1/h so that all are drawn the same width, and stretches the
-vertical equally to keep shapes. Summed from the equator, the height on the map is y = asinh(v/h), the textbook
+vertical equally to keep shapes; the equal stretch, V = H at every place, is what keeps them (Proposition 5(g)). Summed from the equator, the height on the map is y = asinh(v/h), the textbook
 ln tan(π/4 + φ/2) written as one relation. Near the equator y ≈ v/h, in proportion; past 45°, the corner, y approaches
 ln(2·v/h), and each doubling of v/h adds a height approaching ln 2 (0.562, 0.651, 0.682, 0.690, 0.692 for the doublings
 from 1 to 32). The pole is the horizon, h = 0, which is why the map is cut off short of it. The central cylindrical
@@ -1062,7 +1067,7 @@ know of the two address spaces laid out.
 
 **The proportion is in the addresses.** Within a doubling past the corner the lay's addresses are even; how evenly
 things arrive at them is up to the world. If what arrives is spread evenly in direction, as a lighthouse's flashes are
-(§7.8), the far share h/v has density proportional to 1/(1 + (h/v)²), so the arrivals thin toward the corner by 1.6 to 1
+(§7.1, §7.8), the far share h/v has density proportional to 1/(1 + (h/v)²), so the arrivals thin toward the corner by 1.6 to 1
 across the first doubling past it, 1.18 across the second and 1.05 across the third. That unevenness belongs to the
 payload, not to the addresses. The two measures are different things on the same reading: the lay places far readings,
 taken as amounts at V = H, past the reader's own breadth, and an even turn is how a sweep steps through attitudes. When
@@ -1165,6 +1170,100 @@ the known law to what it needs, each step is forced by the one before.
 So V = H is not a convenience laid over the Cauchy. It is what the Cauchy requires, and, forward through Proposition 3
 and parts (a) to (c), it is also enough. Every link of the chain, from the reader's one breadth to the Cauchy and back,
 passes through V = H.
+
+**Proposition 5, continued: two familiar pictures.** The best-known pictures of a turn laid out on a straight line
+are a lighthouse's flashes on a shore and Mercator's chart of the globe. Each requires V = H, and each separates it
+from the size, which stays free.
+
+(f) *The lighthouse.* A lamp stands at distance β from a straight shore, opposite the shore's point α. It sends flashes
+at angles θ from the perpendicular, spread evenly over the half turn toward the shore.
+- A flash at θ lands at x = α + β·tan θ. Its offset from the foot over the lamp's distance is the reading:
+  (x − α)/β = tan θ.
+  - **Home** is the foot.
+  - **The corners** are the flashes at ±45°, which land at α ± β.
+  - **The horizons** are the shore's two ends.
+
+  The landings follow the law of (b) over both facings, and half of them lie within β of the foot.
+- The flash's path, β/cos θ, differs from flash to flash and cancels from the ratio of its two legs: β out to sea and
+  x − α along the shore. One length remains, β. It is the same for every flash because the shore is straight.
+- Draw the shore at c times the length of the sea: V = cH, with H the lamp's distance.
+  - The half-way flash then lands c drawn lamp-distances from the foot and is drawn at arctan c.
+  - The share of landings within one drawn lamp-distance is (2/π)·arctan(1/c).
+  - The drawn readings follow the law of (b), with the median at the corner and unchanged by the flip, if and only
+    if c = 1.
+- Drawn at V = H, but with any H in place of β, each landing is laid H·tan θ from the foot. Every angle is kept and the
+  45° flash is still the corner; every length is off by β/H, in both directions alike.
+
+(g) *Mercator's map.* On a globe of radius 1, take a chart that draws the parallels as horizontal lines of one length
+(x the longitude λ) and puts the latitude φ at height y = f(φ). It draws a step east at sec φ times its length on the
+globe and a step north at f′(φ) times. Write c = f′(φ)·cos φ for the ratio of the two: V = cH at that place, with H the
+step east.
+- A course of constant compass bearing ψ is drawn, where it crosses the latitude φ, at bearing ψ′, with
+  tan ψ′ = tan ψ/c.
+  - Every bearing is drawn true, and the course northeast (the corner between north and east) is drawn at 45°, at
+    every latitude, if and only if c = 1 everywhere.
+  - That is, f′(φ) = sec φ and y = ln tan(π/4 + φ/2) = asinh(tan φ): Mercator's map. There every such course is a
+    straight line at its true bearing.
+- A small circle on the globe is drawn as an ellipse whose axes stand in the ratio c. This is the bar of Proposition 3(c)
+  traced in two units, and it is Tissot's indicatrix (Tissot 1881). It is a circle only on Mercator's map.
+- Mercator's map draws lengths at sec φ in both directions at latitude φ, so its areas are sec²φ times true. That is a
+  zoom which changes from place to place and keeps every angle.
+- A chart that keeps areas instead must have c = cos²φ, which is 1 only on the equator. No chart of the globe keeps both
+  angles and areas (Euler 1777; Gauss 1828).
+
+In v and h (§6), with v = sin φ and h = cos φ:
+
+| chart | height y | in v and h | c at latitude φ | the course northeast, drawn at latitude 60° |
+|---|---|---|---|---|
+| plate carrée | φ | arctan(v/h), the turn | cos φ | 63.4° |
+| Lambert's equal-area | sin φ | v | cos²φ | 76.0° |
+| central cylindrical | tan φ | v/h, the division | sec φ | 26.6° |
+| Mercator's | asinh(tan φ) | asinh(v/h) | 1 | 45° |
+
+*Proof.* (f) The flash at θ meets the shore where its leg out to sea, of length β, and its leg along the shore, x − α,
+stand at angle θ. So (x − α)/β = tan θ, and the path, β/cos θ, divides out of the ratio. With θ even on
+(−π/2, π/2), the law of (b) over both facings follows as in the proof of (b), and P(|x − α| ≤ β) = P(|θ| ≤ π/4) = ½.
+Drawn with the shore at c times, the drawn reading is c·tan θ, so P(|c·tan θ| ≤ r) = (2/π)·arctan(r/c). That is a
+Cauchy of scale c, with median c. The flip carries it to scale 1/c, so it is the law of (b), and unchanged by the flip,
+exactly when c = 1, as in (d). (In (d) the evenness is in the drawing's directions, so the median there is 1/c; here
+it is in the lamp's turn, so it is c. Either way only c = 1 keeps the corner.) The flash at 45° is drawn at c·β from
+the foot, at angle arctan c. Laying each landing H·tan θ from the foot multiplies every length of the true figure by
+H/β, which is a similarity.
+
+(g) A step dφ north has length dφ on the globe and f′(φ)·dφ on the chart. A step dλ east has length cos φ·dλ on the
+globe and dλ on the chart. So the chart's scales are f′(φ) north and sec φ east, and their ratio is c. A course at
+bearing ψ moves east and north in the ratio tan ψ, so cos φ·dλ = tan ψ·dφ, and on the chart
+dx/dy = dλ/(f′(φ)·dφ) = tan ψ/c. That is tan ψ for every ψ only if c = 1. Where c = 1 at every latitude, dx/dy is
+constant along the course, so the course is drawn straight. Integrating f′ = sec φ from the equator gives
+ln tan(π/4 + φ/2) = asinh(tan φ).
+
+A circle of small radius ε, its points ε·(cos t, sin t) north and east, is drawn as ε·(f′(φ) cos t, sec φ sin t): an
+ellipse with axes in the ratio c. With f′ = sec φ both scales are sec φ, and areas are multiplied by sec²φ. Keeping
+areas means f′(φ)·sec φ = 1, so f′ = cos φ and c = cos²φ. On any chart, keeping angles makes the two scales equal at
+each place, and keeping areas makes their product 1. Both together make every scale 1, a drawing of the sphere on the
+plane without stretch, which its curvature forbids (Gauss's theorema egregium). ∎
+
+**What the two pictures show.** Each lays an even turn on a straight line: the lamp's flashes on the shore, and a
+navigator's bearings on the chart. Each keeps the turn true only when its two directions are drawn at one length.
+- **The lighthouse** shows it on one picture. Drawn with the shore stretched, the half-way flash leaves 45°, half the
+  landings no longer fall within one drawn lamp-distance of the foot, and the near half no longer mirrors the far half.
+- **Mercator's map** shows it at every place. It is the one chart of its kind on which the corner between north and
+  east is drawn at 45° everywhere.
+
+What each leaves free is the size: the lamp's distance, which the picture can be drawn at any value of, and the local
+scale sec φ, which Mercator lets grow toward the poles. Both are zooms, which change every length and no angle. That
+is the distinction this paper draws throughout: the drawing V = H is required, and the true size is one number the
+readings do not fix.
+
+Mercator's choice (keep the angles, give up the areas) is the one this paper's reader makes: it keeps the drawing and
+leaves the size to be estimated. The familiar complaint about his map, that it draws Greenland as large as Africa, is a
+complaint about the zoom, not about the drawing.
+
+The two pictures meet on a chart. A lighthouse charted on Mercator's map is drawn true at every latitude. On a plate
+carrée chart at 60°, with the shore running east–west, its half-way flash is drawn at 63.4°.
+
+In the lighthouse the evenness is the lamp's, a fact about the world (§7.8). A reader standing at the lamp and reading
+each landing by its direction holds tan θ itself, with no β at all. The same requirement holds for it, by (d).
 
 **The parallel reader's bell.** A parallel reader takes in every relation at once, each with its share of the turn. On
 the logarithmic axis x = ln(v/h) the shares form a bell centred on the corner,
@@ -1412,6 +1511,12 @@ follow every increasing map; those facts are part (d). The other parts of Theore
 - *The textbook case* is the lighthouse (Gull 1988; Sivia and Skilling 2006): flashes sent at evenly spread angles land
   along the shore as a Cauchy, and the lamp's position is found from the median or the likelihood, never the mean. There
   the evenness belongs to the lamp, a fact about the world. Our claim concerns the case where it belongs to the reader.
+  That half the landings fall within the lamp's distance of its foot only when shore and sea are drawn at one length
+  is Proposition 5(f), which is elementary.
+- *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
+  (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
+  does so everywhere; and no chart keeps both angles and areas (Euler 1777; Gauss 1828). What is ours is the reading: the
+  ratio of the two scales is the drawing V = cH, and the corner between north and east is the corner of §4.
 - *The nearest prior reading* is Frank and Smith's (2010; Frank 2014): the scale on which an observer measures defines
   the most likely distribution of what it observes, and a scale linear for small magnitudes and logarithmic for large
   ones, as the reader's two address spaces are (§6), gives Student's t, of which the Cauchy is the case of one degree of
@@ -2097,11 +2202,16 @@ Drory, A. (2015). Failure and uses of Jaynes' principle of transformation groups
 Euclid (c. 300 BC). *Elements*. Translated by T. L. Heath (1908), *The Thirteen Books of Euclid's Elements*. Cambridge
 University Press.
 
+Euler, L. (1777). De repraesentatione superficiei sphaericae super plano. *Acta Academiae Scientiarum Imperialis
+Petropolitanae* 1777(1), 107–132.
+
 van Fraassen, B. C. (2008). *Scientific Representation: Paradoxes of Perspective*. Oxford University Press.
 
 Frank, S. A. (2014). How to read probability distributions as statements about process. *Entropy* 16(11), 6059–6098.
 
 Frank, S. A. and Smith, D. E. (2010). Measurement invariance, entropy, and probability. *Entropy* 12(3), 289–303.
+
+Gauss, C. F. (1828). *Disquisitiones generales circa superficies curvas*. Göttingen.
 
 Gerville-Réache, L. (2016). Mettre de l'eau dans du vin, un paradoxe de l'indifférence ? *Implications
 philosophiques*, 12 December 2016.
@@ -2219,6 +2329,9 @@ Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the
 
 Stone, M. and Dawid, A. P. (1972). Un-Bayesian implications of improper Bayes inference in routine statistical
 problems. *Biometrika* 59(2), 369–375.
+
+Tissot, N. A. (1881). *Mémoire sur la représentation des surfaces et les projections des cartes géographiques*.
+Gauthier-Villars, Paris.
 
 Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII*. Tours.
 

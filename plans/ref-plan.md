@@ -130,3 +130,144 @@ P5: not killed. Earth's relief 0.00446 levels; with its flattening 0.00929
 - **"Broad first" is the order of seeing, not of the relief.** The shaders add the broad band first because its features
   are the largest, so they cover a few pixels first. That order holds whatever share of the relief each band holds, and
   in most of wander's bodies the craters (the middle band) hold most of it. P3 confused the two orders. The kill stands.
+
+### Run 2: real relief by octave (predictions written 14 October, before any data was downloaded)
+
+*Tom, 15:49 (SPN R249), after Claude judged the games page's Levels application an illustration, not a proof: "whats new
+is the tvf3d signal. it shows how the signal itself is packed." Then "ok", 15:53, to a plan testing it on real bodies.
+Written before the files below were downloaded or the script written; the run is recorded below this section.*
+
+**The claim.** A .tvf3d body is a series; ordered by the finest wave a term holds, its terms are the payload's own
+levels, coarse first, and level of detail is how many of them are summed. The two sides meet at sampling:
+- *The reader's side (geometry, exact).* A body of radius R spanning a addresses across its disc holds the degrees up
+  to about l_max = πa/2 (two addresses a wave at the disc's middle, where an address covers 2R/a of surface and degree
+  l's wave is 2πR/l). Past the corner a halves with each level of distance, so each level drops one octave of degrees,
+  [2^k, 2^(k+1)); inside the corner the octaves held do not change. Nothing to test: it follows from the lay.
+- *The payload's side (physics).* How much relief each octave carries is the world's, not the geometry's. The question
+  Tom's remark raises is whether real worlds come packed the way the reader reads: with no preferred level (each level
+  of distance dropping the same share of the relief), and in the one packing under which the reader sees the same thing
+  at every level (each octave's relief in proportion to its wavelength, half the relief of the octave before).
+  The first is the premise that gives the reader its logarithm, no rung preferred ((S)), carried from the reader's lay
+  to the world's payload; the geometry does not require it. The second is the reader's lay matched to the world.
+
+**Keep the case.** Relief is an amount (metres). Its RMS per octave enters only through ratios: the change in log₂ RMS
+from one octave to the next (levels of relief per level of degree) is unitless, the same in metres or in radii, and
+needs no bridge. For information only, an octave's relief in the reader's own addresses at the level where it is the
+finest held, ρ_k = RMS_k·2^(k+1)/(πR), uses R, a body's mean radius, as the bridge.
+
+**Data (fixed before download).** Seven rocky bodies, the published spherical-harmonic models of their physical
+surfaces, as pyshtools lists them (SHTOOLS `pyshtools/datasets`, commit 98c15ef, with the sha256 each download must
+match):
+- Mars: Wieczorek 2024, MOLA shape, Zenodo 10.5281/zenodo.10820719, `Mars_MOLA_shape_1439.bshc.gz` (sha256 f12bcd82…).
+- Moon: Wieczorek 2024, LOLA shape, 10.5281/zenodo.10820774, `Moon_LOLA_shape_1439.bshc.gz` (f5e8f1b7…).
+- Mercury: USGS SPG shape, 10.5281/zenodo.10809345, `Mercury_shape_1439.sh.gz` (48d5ee57…; bshc inside).
+- Venus: Wieczorek 2015, VenusTopo719, 10.5281/zenodo.3870926, `VenusTopo719.shape.gz` (9fcb04fb…).
+- Earth: Hirt and Rexer 2015, Earth2014 physical surface (water and ice included: what reaches a reader), degree 2160,
+  ddfe.curtin.edu.au, `Earth2014.SUR2014.degree2160.bshc` (5694260d…). Heights above mean sea level, not radii.
+- Vesta: DLR SPG shape (Dawn), 10.5281/zenodo.10820681, `Vesta_DLR_SPG_shape_1439.bshc.gz` (99eae345…).
+- Ceres: DLR SPG shape (Dawn), 10.5281/zenodo.10820608, `Ceres_DLR_SPG_shape_1439.bshc.gz` (ae3e9918…).
+
+The 1439 files are the first degrees of each archive's full model (5759 or 5399), not a smoothing of it.
+
+**Method (fixed before download).** Coefficients 4π-normalized (the archives' convention; checked against each file's
+documentation before the run, converted if not). Degree power S_l = Σ_m (C_lm² + S_lm²), so the relief's variance over
+the sphere is Σ_{l≥1} S_l. Octave k holds degrees 2^k ≤ l < 2^(k+1); its RMS relief is √(Σ S_l) over the octave.
+Octaves k = 3 to 9 (degrees 8 to 1023; Venus k = 3 to 8, its model ending at 719). The lowest degrees are left out:
+degree 1 is the offset of the centre of figure, 2 the spin's flattening (REF P4), and degrees under 8 a handful of
+features each (Tharsis and the dichotomy, South Pole–Aitken, Rheasilvia). Per body, the least-squares line of
+log₂ RMS_k against k, equal weights; its slope is the levels of relief per level of degree. Earth's relief is above the
+geoid and the others' radii include theirs; at degree 8 and up the geoid's share is small, and this is noted, not
+corrected.
+
+**What I knew beforehand (from memory, not checked before writing).** Planetary topography is usually described as
+roughly a power law in degree; Earth's profiles as near Brownian (power ∝ wavenumber⁻², Hurst ≈ ½; Vening Meinesz
+1951, Bell 1975, Turcotte 1987), which is a slope of about −½ here; the terrestrial planets' spectra in Wieczorek
+(2015) roughly parallel. I do not recall the others' slopes or breaks. So P7 is expected to be killed if memory serves;
+P6 and P8 I cannot call.
+
+**Predictions.**
+- **P6 (no preferred level).** On every body, each octave's log₂ RMS lies within 0.25 of the body's fitted line, over
+  k = 3 to 9 (Venus 3 to 8): each level of distance drops the same share of the relief. *Killed* if any octave on any
+  body departs from its body's line by more than 0.25 (a factor 1.19 in relief).
+- **P7 (the reader's lay matched).** On every body, the slope is −1 within ±0.15: each octave half the relief of the
+  one before (degree power ∝ l⁻³), relief in proportion to wavelength, so the reader sees the same relief in its own
+  addresses at every level. *Killed* if any body's slope lies outside [−1.15, −0.85].
+- **P8 (the packing is geometric, not the world's).** A unitless number fixed by the geometry would be the same on
+  every body (SPN R231: unitless values are fixed by the geometry or read from the world). *Killed* if the seven slopes
+  do not all lie within ±0.1 of their mean.
+
+For information, not predicted: each octave's share of the relief, ρ_k, and Earth's bedrock (Earth2014 BED2014, the
+same archive) beside its surface.
+
+**What would not be shown.** Anything about the reader's side, which is exact. Why a world's relief has the spectrum it
+has (impacts, volcanism, erosion, isostasy are physics, quoted, not derived). And seven bodies are seven: a kill of P8
+says the packing is read from the world, not that no reader could find a common one.
+
+### Run 2 (14 October 2026)
+
+`python3 -I plans/ref/ref2.py <data>`, two seconds; the full output, octave by octave, in `plans/ref/ref-run2.txt`.
+All eight files matched the sha256 above on download (Earth2014's bedrock: 146dcc80…). The archives' own
+documentation says 4π-normalized, Condon–Shortley phase excluded, metres (Zenodo records; Earth2014's readme, V1.1),
+so nothing was converted. The data is CC BY 4.0 (the Zenodo archives) and Curtin's Earth2014 (cite Hirt and Rexer
+2015); none of it is committed. Before the run the script was checked on synthetic spectra of known slope (−1.5 to 0):
+it recovered each within 0.02.
+
+```
+Mercury: R 2439.5 km (model to degree 1439), relief RMS over degrees 1-1023 1092 m; slope -0.280 levels of relief per octave (degree power ~ l^-1.56)
+Venus: R 6051.9 km (model to degree 719), relief RMS over degrees 1-511 958 m; slope -0.337 levels of relief per octave (degree power ~ l^-1.67)
+Earth: R 6371.0 km (model to degree 2160), relief RMS over degrees 1-1023 634 m; slope -0.438 levels of relief per octave (degree power ~ l^-1.88)
+Moon: R 1737.2 km (model to degree 1439), relief RMS over degrees 1-1023 2329 m; slope -0.208 levels of relief per octave (degree power ~ l^-1.42)
+Mars: R 3389.5 km (model to degree 1439), relief RMS over degrees 1-1023 6688 m; slope -0.424 levels of relief per octave (degree power ~ l^-1.85)
+Vesta: R 260.4 km (model to degree 1439), relief RMS over degrees 1-1023 18018 m; slope -0.982 levels of relief per octave (degree power ~ l^-2.96)
+Ceres: R 469.5 km (model to degree 1439), relief RMS over degrees 1-1023 11143 m; slope -0.686 levels of relief per octave (degree power ~ l^-2.37)
+Earth bedrock: R 6371.0 km (model to degree 2160), relief RMS over degrees 1-1023 2417 m; slope -0.426 levels of relief per octave (degree power ~ l^-1.85)
+P6: KILLED. largest departure from a body's line 0.566 levels (Vesta, k = 9); threshold 0.25. Over 0.25: Mercury k=6 (+0.296), Mercury k=7 (+0.362), Mercury k=9 (-0.454), Moon k=3 (-0.274), Moon k=6 (+0.455), Moon k=7 (+0.389), Moon k=9 (-0.488), Vesta k=3 (-0.390), Vesta k=6 (+0.399), Vesta k=7 (+0.385), Vesta k=9 (-0.566), Ceres k=3 (-0.522), Ceres k=5 (+0.324), Ceres k=6 (+0.305), Ceres k=7 (+0.259), Ceres k=9 (-0.488)
+P7: KILLED. slopes Mercury -0.280, Venus -0.337, Earth -0.438, Moon -0.208, Mars -0.424, Vesta -0.982, Ceres -0.686; outside [-1.15, -0.85]: Mercury, Venus, Earth, Moon, Mars, Ceres
+P8: KILLED. mean slope -0.479, largest departure 0.503 (threshold 0.1)
+```
+
+All three killed.
+
+- **P6 killed, by the four airless bodies.** Earth (largest departure 0.11), Mars (0.11) and Venus (0.25, at its edge)
+  hold a straight line over their six or seven octaves. Mercury, the Moon, Vesta and Ceres do not: on each the middle
+  octaves (degrees 64 to 255) stand 0.26 to 0.46 above the line and degrees 512 to 1023 fall 0.45 to 0.57 below it.
+- **P7 killed, by six bodies.** The slopes run from −0.21 (the Moon) to −0.69 (Ceres); only Vesta's (−0.98) is in the
+  band, and Vesta's spectrum is curved (P6), so its line is an average over a bend. Relief per octave falls more slowly
+  than wavelength on every other body: the finer a band, the steeper its slopes.
+- **P8 killed.** The seven slopes spread 0.50 about their mean (−0.48). The share a level drops is not one number.
+
+**Reading (after the run; not ruled).**
+- *The packing is the reader's; the share is the world's.* Every model here is a series by degree, and the reader
+  drops one octave of it per level of distance, as the claim says. But how much relief each octave carries is read
+  from the world (SPN R231: unitless, found, not derived): it differs from body to body, and on the airless bodies from
+  level to level.
+- *What the local slopes show* (log₂ of each octave's RMS over the one before, computed after the run from the table):
+  Earth −0.24 to −0.57, Mars −0.30 to −0.60, Venus −0.05 to −0.58, each averaging about −0.4; Earth's bedrock the same
+  as its surface (−0.43 against −0.44; the oceans lower the relief, 634 m against 2,417 m, not its slope). The Moon
+  −0.11, +0.06, +0.15, −0.27, −0.60, −0.69 and Mercury −0.12, −0.39, +0.15, −0.21, −0.51, −0.87: relief per octave
+  flat or rising to about degree 128, then falling ever faster. Vesta (−0.67 to −1.63) and Ceres (−0.09 to −1.22)
+  steepen throughout. Earth's −0.44 is near the Brownian −½ recalled beforehand.
+- *A preferred level on the airless bodies.* On all four, degrees 64 to 255 (wavelengths of about a tenth to a fortieth
+  of the radius) stand above the body's line, from Vesta (260 km) to Mercury (2,440 km): the same octaves in the body's
+  own size, not the same size in kilometres. On the Moon and Mercury the relief per octave itself rises there; on Vesta
+  and Ceres it only falls more slowly there than further out (a bend, not a peak). That is the large craters and basins,
+  and it would be a statement in unit relations, the crater's breadth against the body's. Post hoc, from four bodies: a
+  prediction for a new run, not a result.
+- *Relief far under the reader's grain.* At the level where a band is first held, its relief is 0.0002 to 0.07 of
+  one of the reader's addresses (ρ, every body, every octave): dropping a band by distance moves the outline by far
+  less than an address, so level of detail by octave is safe for the outline of every world here. On Earth, Mars,
+  Venus, Mercury and the Moon ρ grows by 1.1 to 2.2 a level: coming nearer, each new level shows more relief in the
+  reader's own addresses, not the same; seen in shading, a real world grows rougher as the reader approaches.
+- *For the pictures.* The bands of wander's and the games page's bodies halve per octave (slope −1, chosen); real
+  worlds keep more of their relief in the fine octaves (about −0.4). Scaling `res/` is still Tom's call (run 1).
+
+**Correction (Tom, 16:26; SPN R250): "no, real signals are not packed tvf3d. tvf3d is like a pre-read signal."** Run 2's
+claim read Tom's remark as saying the payload brings levels of its own, and asked whether real worlds come packed the
+way the reader reads. That was not what was said. A real signal arrives unpacked. A .tvf3d is a signal already read:
+the reader's levels with the payload placed in them, coarse first, so a later reader at any distance takes the levels
+it holds there and reads nothing again. The packing is the reader's, done once and ahead of time. The predictions and
+their kills stand as written: P6–P8 tested a claim nobody made. The measurement is kept for what it is. The published
+models are themselves pre-read signals (each a modeller's reading of altimetry or images into degrees), and the run
+shows how real relief fills such levels: not in equal shares, not in self-similar ones, and not alike from body to
+body. (Claude's reading, unruled: a pre-read signal holds a whole approach at once, each prefix of the series what a
+reader holds at one distance; SPN §3.3's levels existing whole, a thing's level set by its size.)

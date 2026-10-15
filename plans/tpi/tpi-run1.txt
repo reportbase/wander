@@ -1,0 +1,36 @@
+entry | form | where the turn enters | computed | as written | match
+the sweep, P(v/h <= s), s = 3 | (ii) | θ even on [0, π/2], v/h = tan θ | 0.795167235300867 | 0.795167235300867 | yes
+Buffon's needle, l = 0.7 d | (i) | needle angle even over the turn | 0.445633840657307 | 0.445633840657307 | yes
+Viète's product | (iii) | the quarter turn halved again and again | 0.636619772367581 | 0.636619772367581 | yes
+arcsine law, P(x <= 0.3) | (ii) | θ even; x = sin²θ (or the share of an equal-spread pair) | 0.369010119565545 | 0.369010119565545 | NO
+AC meter: mean |sin| over a cycle | (i) | phase even in time | 0.636619772367581 | 0.636619772367581 | yes
+square pixel's response at Nyquist | (iii) | phase even across the pixel, [-π/2, π/2] | 0.636619772367581 | 0.636619772367581 | yes
+Van Vleck: E[sgn X sgn Y], ρ = cos 0.9 | (ii) | the pair's direction even (isotropy) | 0.427670635434456 | 0.427042204869177 | NO
+Kosterlitz–Thouless jump K_c | (?) | phase winds evenly round the vortex (full turn, ½ from the energy); the 2 is the plane's dimension (positions ∝ (R/a)²) | 0.636619772367581 | 0.636619772367581 | yes | π = ½·(full even turn); 2 = dimension, not a turn
+ARE of the median (and sign test) under a normal law | (iv) | the normal's pair turned evenly (2π), four quadrants | 0.636619772367581 | 0.636619772367581 | yes
+(E|Z|)² for a standard normal (and the one-bit loss) | (i) | the pair's angle even (isotropy) | 0.636619772367581 | 0.636619772367581 | yes
+half-wave dipole: effective length / physical length | (i) | phase even along the wire | 0.636619772367581 | 0.636619772367581 | yes
+rolling wheel: mean rim speed / 2v | (i) | the wheel's turn even in time | 0.636619772367581 | 0.636619772367581 | yes
+2D gas through a line: flux / (n v̄ / 2) | (i) | velocity directions even over the turn | 0.636619772367581 | 0.636619772367581 | yes
+Jordan's inequality: the chord's slope | (iii) | sin θ/θ at the quarter turn | 0.636619772367581 | 0.636619772367581 | yes
+Flamant's half-plane: A/P | (iv) | directions into the half-plane measured evenly, weight cos² | 0.636619772367581 | 0.636619772367581 | yes
+Hertz line contact: p0·a/P | (iv) | x = a sin θ, θ even over the half turn, weight cos² | 0.636619772367581 | 0.636619772367581 | yes
+Wigner's semicircle: density at 0 | (iv) | x = cos θ, weight sin²θ over the half turn; the even disc's shadow | 0.636619772367581 | 0.636619772367581 | yes
+Sato–Tate density coefficient | (iv) | Haar measure of SU(2) on its rotation angle | 0.636619772367581 | 0.636619772367581 | yes
+Chebyshev's equilibrium measure on [0, 1], at x = 0.6 | (ii) | nodes at evenly spaced angles; x = sin²θ | 0.564094216848975 | 0.564094216848975 | NO
+Goemans–Williamson ratio / (2/π) | (ii) | the hyperplane's normal even over the turn | 1.3800501396893 | 1.3800501396893 | yes | α = 0.8785672058
+
+P3, the two families
+  n = 2: mean shadow 0.636614844025 (family 0.636619772368), even ball's shadow at 0 0.636619772368 (family 0.636619772368)
+  n = 3: mean shadow 0.499992258542 (family 0.5), even ball's shadow at 0 0.75 (family 0.75)
+  n = 4: mean shadow 0.424403324802 (family 0.424413181578), even ball's shadow at 0 0.848826363157 (family 0.848826363157)
+  Buffon between planes: P·d/ℓ = 0.499992258542 (½); 3D gas through a wall: flux/(n v̄) = 0.25 (¼ = ½·½)
+P3: KILLED
+
+P4, uneven turns (von Mises concentration κ about 0; spreads in ratio c)
+  κ = 0.5: mean |cos| 0.6493396831, mean |sin| 0.6238735534, pixel with uneven phase 0.7370806392  (2/π = 0.6366197724)
+  κ = 1.0: mean |cos| 0.6819425186, mean |sin| 0.5909300057, pixel with uneven phase 0.8175683231  (2/π = 0.6366197724)
+  κ = 2.0: mean |cos| 0.7630245545, mean |sin| 0.5064366411, pixel with uneven phase 0.9101058434  (2/π = 0.6366197724)
+  c = 0.5: sweep P(v/h <= 1) = 0.7048327647 (½ at c = 1); share P(x <= 0.3) = 0.5847640183 (arcsine 0.3690101196)
+  c = 2.0: sweep P(v/h <= 1) = 0.2951672353 (½ at c = 1); share P(x <= 0.3) = 0.201385116 (arcsine 0.3690101196)
+P4: not killed

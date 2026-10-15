@@ -120,6 +120,17 @@ bodies are pictures. They are never evidence here.
   exact ratio γ/sin γ, the outer reading of the parallax angle (π/2 on the Thales circle, parts in 10¹¹ off 1 at 1 pc);
   the practice of inferring distances rather than inverting noisy parallaxes (Bailer-Jones 2015) is the flip's missing
   mean with the median kept; the au, measured outside the parallaxes and now fixed by the IAU, is the one outside amount.
+- 14 October: two real-data runs once the network reached the archives. GRD run 1 (`plans/grd-plan.md`; SPN R248): the
+  ratio between grid modules in two rats, 1.432 pooled, in the √2 band; too few animals for the rest. REF run 2
+  (`plans/ref-plan.md`; SPN R249; Tom: "whats new is the tvf3d signal. it shows how the signal itself is packed."):
+  seven bodies' published shape models read by octave of degree, the level a reader drops per level of distance. All
+  three predictions killed: Earth, Mars and Venus are near power laws (slopes −0.34 to −0.44), the airless bodies are
+  not, and no slope is common (§2.1, §3). Then Tom (SPN R250): "no, real signals are not packed tvf3d. tvf3d is like a
+  pre-read signal." The run's framing, that a world's signal comes packed, was a misreading; the packing is a reader's,
+  done ahead of time, and the run measures how real relief fills such levels.
+- 14–15 October: TPI, where 2/π shows up (`plans/tpi-plan.md`; SPN R251; Tom: "Possibly anytime 2/PI shows up, its
+  the situated situation."). Sixty-five occurrences, each constant computed from its derivation (§2.2); fifty-five come
+  from an even turn read as a shadow or a share, eight do not (§3).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
@@ -206,13 +217,53 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 
   The run's own predictions were killed (§3); these are readings of the same data after it, not ruled. They say the even
   spread holds within 100 pc, kind by kind, so CNT's 1.2 is not in the counting itself but in the spread past 100 pc.
+- **The step between grid-cell modules is near √2, in two rats** (GRD run 1, `plans/grd-plan.md`). On Gardner et al.
+  2022's recordings (figshare, CC0; rats Q, R, S), each cell's grid spacing from its rate map's autocorrelogram, by a
+  method fixed before the data was opened. Modules: Q 68.0 and 95.0 cm; R 56.2, 83.6 and 118.0 cm; S one module.
+  - Pooled adjacent ratio 1.432 (P1 not killed, in the √2 band; √e, 1.7, e and 2 far off; 3/2 0.07 away).
+  - P2 and P3 killed by their own minimum counts (one rat with three modules, two with two).
+  - Post hoc, rat R's second day: the first step repeats (1.487, 1.491), the step to the largest module does not
+    (1.412, 1.141). The largest module, about 0.8 of the 1.5 m box, is not measured reliably by this method.
+
+  Two rats, the reliable steps 1.40 and 1.49: consistent with a halving of a map's area, D.1's 2^(1/D) with D = 2, and
+  with Stensola et al.'s published mean of about 1.42, which was known beforehand. Weak evidence; more animals needed.
 - **Real worlds are their corner within a hundredth of a level** (REF, `plans/ref-plan.md`, P4 and P5). By published
   radii:
   - the rocky worlds' flattening: Earth 0.0048 levels, Mars 0.0085, the Moon 0.0017;
   - the spinning giants about a tenth: Jupiter 0.097, Saturn 0.149;
   - Earth's relief, Challenger Deep to Everest, 0.0045; with its flattening the whole Earth is within 0.0093 levels.
+- **A reader drops one octave of a world's relief per level of distance; how much each octave holds is the world's**
+  (REF run 2, `plans/ref-plan.md`). Published spherical-harmonic models of seven physical surfaces (Mercury, Venus,
+  Earth, the Moon, Mars, Vesta, Ceres), relief by octave of degree from 8 to 1023:
+  - Earth, Mars and Venus hold one power law over six or seven octaves (within 0.11, 0.11, 0.25 levels), each octave
+    about 0.4 levels of relief below the one before (slopes −0.44, −0.42, −0.34; Earth's bedrock as its surface);
+  - the airless bodies do not: the Moon's relief per octave rises from degree 16 to 127 and Mercury's rises again at 64
+    to 127, then both fall ever faster, and Vesta and Ceres steepen throughout; on all four degrees 64 to 255
+    (wavelengths a tenth to a fortieth of the radius) stand above the body's line, the same octaves in the body's own
+    size from 260 to 2,440 km (post hoc);
+  - at the level where a band is first held its relief is 0.0002 to 0.07 of one of the reader's addresses, so dropping
+    bands by distance moves no world's outline by as much as an address; on five of the seven each nearer level shows
+    more relief in the reader's addresses, not the same.
+
+  The octave packing is a reader's, done ahead of time in the models (a pre-read signal, SPN R250: a real signal
+  arrives unpacked); the share in each octave is read from the world, not fixed by the geometry.
 
 ### 2.2 Exact arithmetic
+
+- **Where 2/π shows up** (TPI, `plans/tpi-plan.md`). Sixty-five occurrences across about forty fields, from Buffon's
+  needle and Viète to AC meters, one-bit correlators, Kendall's τ, the Lebesgue constant, Onsager's Ising energy, an
+  infinite resistor grid, Fabry–Pérot linewidths, the square wave's fundamental in human contrast thresholds and the
+  Kosterlitz–Thouless jump. For 62 of them the constant, computed from the step of its derivation where π enters,
+  matches its source (63 checks, mostly to 40 digits); two share the square wave's computation, and Wheeler's microstrip
+  formula was not traced. Fifty-five come from a turn taken evenly (an orientation, a phase, the equal-spread normal
+  pair, a Haar measure) and read as something never negative, the inner reading of OFS §3.4. Seven are the circle held
+  as a shape (a semicircle's area or the arcsine integral: contact, a disc's capacitance, a fault's slip, random
+  matrices, stellar line profiles), one is a pole (alternating permutations) and two were not traced. In space the
+  shadow on an axis gives ½, but the relative angle π/4 and the half-angle chord 2/3. Read as a conversion (SPN R254; a reading, untested): the
+  2/π turns an arc into its chord, the semicircle on the line of 1 (arc π/2) or the quarter turn on its shadow; the
+  shape group too, a semicircle's area being half its radius times its arc (Hertz's peak over mean 4/π, the disc's
+  capacitance 2/π of the sphere's); left over the Kosterlitz–Thouless jump, the Gaussian beam and the pole. The
+  candidate purpose is a mean: the even turn's readings v/h have none, their shadows have one, 2/π.
 
 - **The lay has the inverse square's form** (ISQ, `plans/isq-plan.md`). Past the corner the lay is proportion in h/v, so
   its room per unit s is 1/s², the flip's Jacobian, exactly. Each level gets 2^−(k+1) of the room.
@@ -467,6 +518,21 @@ that holds less of it can be tested against the referee exactly. That is evidenc
 - **REF P1–P3: wander's bodies** are far rougher than real worlds. The Moon spans 0.25 levels against the real 0.0165.
   "Broad first" is the order in which bands are seen, not where the relief lies. Under §0 this was never evidence. It is
   kept as the example of what not to count.
+- **REF run 2, P6–P8: real relief does not fill a reader's levels evenly, self-similarly or alike.** (The run framed
+  this as whether worlds come packed as the reader reads; a real signal comes unpacked, SPN R250.) Each level of
+  distance was predicted to drop the same share of a world's relief (a power law in degree), at half the relief per
+  octave (the reader seeing the same at every level), and with one slope on every body. The airless bodies bend (their
+  relief standing highest, against a line, at about a tenth to a fortieth of their radius), the slopes run from −0.21 to
+  −0.98, and only Vesta's, an average over a bend, is near −1. The share is the world's.
+- **TPI P1–P3: 2/π is not always a turn.** Every occurrence was predicted to come from an even turn read as a shadow or a
+  share, in one of four forms, with ½ in its place in space. Eight of sixty-five come another way (seven the circle as a
+  shape, one a pole); the Kosterlitz–Thouless 2 is a dimension and the Gaussian beam's a convention; in space only the
+  shadow on an axis gives ½. 2/π is a strong clue for the even turn, not a proof of one. Run 3 (SPN R252, the second mark, V not known): a blind
+  classification puts every circle-as-a-shape entry on an extent given in advance (V known), but the uses do not sort:
+  13 of 51 turn formulas infer an unknown against 4 of 7 shape formulas (P7 killed). The clue's best cases are the turn
+  formulas used to read a missing whole through a shadow or a sign. Run 4 (SPN R253, the third mark, a sweep actually
+  made): only the averaging AC meter and the relay's describing function carry all three marks (P9 killed, two not
+  three); there the 2/π is the inner reading as an instrument. Ten if a population held at once counts as a sweep.
 - **MAG P4: K0 III scatters 1.4 levels**, not under 1.0. A known kind is a bridge about a level wide.
 - **CNT P3 and P4: the plane and the poles count alike.** The disc was predicted to flatten the counts toward the poles
   more than in the plane. It does not: both give 1.23. Dust in the plane and the clumping of young bright stars are the
@@ -519,11 +585,12 @@ that holds less of it can be tested against the referee exactly. That is evidenc
 
 Tests that could be run next, each on real data or exact arithmetic. Each would need its plan written first.
 
-- **The ratio between levels, in a measured reader** (GRD, `plans/grd-plan.md`, predictions written, data to be
-  supplied). Grid cells map place in discrete modules, each coarser than the last by a measured ratio no physics law
-  sets. D.1 allows only a halving without an added measure: 2 along a line, or √2 if a level doubles a map's area. The
-  plan names what was known beforehand (published means near 1.42 and 1.7; an optimal-coding theory's √e) and needs
-  per-animal data not yet opened.
+- **The ratio between levels, in a measured reader, on more animals** (GRD, `plans/grd-plan.md`; run 1 on two rats,
+  §2.1). Grid cells map place in discrete modules, each coarser than the last by a measured ratio no physics law sets.
+  D.1 allows only a halving without an added measure: 2 along a line, or √2 if a level doubles a map's area. Run 1 found
+  √2 in two rats; P2 and P3 need a dataset with five or more animals with two modules (Stensola et al. 2012's, if
+  released, or the Giocomo lab's on DANDI), its data section fixed before it is opened, and a box large enough for the
+  largest module or a method that does not need it.
 - **Why the counts give 1.2.** GCN's exploration (not a result) points to a thin layer of luminous stars seen through
   dust: 71% of the stars Hipparcos counts are past 100 pc, and even in the disc's middle the luminous ones stop rising
   with volume past about 125 pc. A test needs a bright all-sky Gaia sample (G ≤ 10) with parallaxes and extinctions, and
@@ -533,9 +600,11 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
   distance, from their members' mean parallax. At a fixed colour their main sequences should step two levels of light
   per level of the clusters' distance. This needs membership lists. Hipparcos membership is published, but the archives
   are blocked here.
-- **Real topography for REF.** The Moon (LOLA), Mars (MOLA) and Earth have spherical-harmonic shape models. With them:
-  the depth spans in levels, and whether the relief's power falls by a fixed amount per level of wavenumber (Kaula-like).
-  NASA's PDS is blocked here.
+- **The airless bodies' preferred level, in their own size** (from REF run 2, post hoc). On Mercury, the Moon, Vesta and
+  Ceres degrees 64 to 255, a tenth to a fortieth of the radius, stand above the body's line, whatever the radius. If
+  that is a breadth against the body's (the largest craters against the world), other cratered bodies with high-degree
+  shape models should show it in the same octaves. Prediction first; pyshtools lists further shape models (Eros, Psyche,
+  Callisto and others), their degrees to be checked before predicting.
 - **The ratio or the turn, in a measured reader** (from MOT). x/ẋ gives time to contact at every distance; θ/θ̇
   overstates it by π/2 at the corner and grows past it. Responses to looming that run on to large visual angles (half-angle
   near 45° and past) would tell which a measured reader uses there. A published data set with the angles reached is
