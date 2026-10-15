@@ -2,8 +2,13 @@
 See plans/tpi-plan.md. Run: python3 -I plans/tpi/run4.py plans/tpi/classification.md plans/tpi/classification-q3.md
 """
 import sys, re
-sys.path.insert(0, __file__.rsplit('/', 1)[0])
-from run3 import ROUTE          # noqa: E402  (run 2's routes by occurrence)
+# run 2's routes by occurrence, as in run3.py (copied, so that run3's scoring does not run on import)
+ROUTE = dict(K1='E', K2='E', K3='E', K4='H', K5='E', K6='E', K7='H', K8='E', K9='H', K10='H', K11='E', K12='E', K13='E',
+             K14='E', K15='E', K16='S', K17='S', K18='H', K19='E', K20='H',
+             C1='E', C2='U', C3='E', C4='E', C5='E', C6='E', C7='H', C8='P', C9='E', C10='H', C11='H', C12='H', C13='H',
+             C14='E', C15='E', C16='E', C17='E', C18='E', C19='E', C20='E', C21='E', C22='E', C23='E', C24='E', C25='S',
+             C26='U', C27='H', C28='E', C29='S', C30='S', C31='E', C32='S', C33='E', C34='E', C35='E', C36='E', C37='E',
+             C38='E', C39='E', C40='E', C41='E', C42='E', C43='E', C44='S', C45='E')
 
 def table(path, col):
     out = {}

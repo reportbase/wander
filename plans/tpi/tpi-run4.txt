@@ -1,0 +1,16 @@
+P8: not killed. route S and identities on Q3: K16 c, K17 c, C25 c, C29 c, C30 c, C32 c, C44 c, K3 c, K14 c, C1 c, C2 c, C9 c
+P9: KILLED. all three marks (turn, inferring, swept in order): 2: K5, C34
+Q3 counts: a 11, b 24, c 30
+by marks (turn / infer / Q3):
+  P     compute  c:  1  C8
+  S     compute  c:  3  K16, K17, C25
+  S     infer    c:  4  C29, C30, C32, C44
+  U     compute  c:  1  C26
+  U     identity c:  1  C2
+  turn  compute  a:  9  K12, C3, C4, C16, C35, C36, C37, C38, C45
+  turn  compute  b: 16  K6, K13, K15, K18, K20, C11, C12, C15, C19, C21, C24, C31, C33, C39, C40, C43
+  turn  compute  c: 13  K1, K9, K19, C5, C6, C7, C10, C14, C17, C18, C23, C27, C28
+  turn  identity c:  4  K3, K14, C1, C9
+  turn  infer    a:  2  K5, C34
+  turn  infer    b:  8  K2, K7, K8, K11, C13, C20, C41, C42
+  turn  infer    c:  3  K4, K10, C22

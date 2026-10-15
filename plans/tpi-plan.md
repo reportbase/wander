@@ -275,3 +275,46 @@ time (OFS §3.1, situations 3 and 4).
   needles, Kendall's pairs, the canopy's leaves and the magnetic particles look like populations.
 
 Reported as well: the entries with each combination of marks.
+
+### Run 4 (15 October; the third question)
+
+The classifier of run 3, still told nothing of the hypothesis, answered Q3 for all 65 (`plans/tpi/classification-q3.md`,
+with its rules for borderline cases stated first and twelve low-confidence rows: K6, K8, K11, K15, C6, C7, C12, C24,
+C31, C39, C40, C41). Scored by `python3 -I plans/tpi/run4.py plans/tpi/classification.md plans/tpi/classification-q3.md`:
+
+```
+P8: not killed. route S and identities on Q3: K16 c, K17 c, C25 c, C29 c, C30 c, C32 c, C44 c, K3 c, K14 c, C1 c, C2 c, C9 c
+P9: KILLED. all three marks (turn, inferring, swept in order): 2: K5, C34
+Q3 counts: a 11, b 24, c 30
+by marks (turn / infer / Q3):
+  turn  compute  a:  9  K12, C3, C4, C16, C35, C36, C37, C38, C45
+  turn  compute  b: 16  K6, K13, K15, K18, K20, C11, C12, C15, C19, C21, C24, C31, C33, C39, C40, C43
+  turn  compute  c: 13  K1, K9, K19, C5, C6, C7, C10, C14, C17, C18, C23, C27, C28
+  turn  identity c:  4  K3, K14, C1, C9
+  turn  infer    a:  2  K5, C34
+  turn  infer    b:  8  K2, K7, K8, K11, C13, C20, C41, C42
+  turn  infer    c:  3  K4, K10, C22
+  (and S, P, U: all c)
+```
+
+- **P8 not killed.** None of the circle-as-a-shape entries and none of the identities has a sweep; the rotating star's
+  π is its disc's area, not its rotation's phase.
+- **P9 killed: two, not three.** Only the averaging AC meter (K5) and the relay's describing function (C34) carry all
+  three marks. Coltman's relation, which I expected, was classed a population (the bar target held across positions at
+  once, low confidence).
+
+**Reading (after the run; not ruled).**
+- *Where all three marks meet, the 2/π is the inner reading itself.* The averaging meter takes a phase that advances
+  evenly in time, reads its shadow (the rectified mean) and infers a peak it does not have: (2/π) of the peak, the
+  inner vantage of OFS §3.4 built as an instrument. The relay's describing function does the same for an oscillation of
+  unknown amplitude: it reads the fundamental of a switched output as the phase sweeps and infers the amplitude.
+- *Most of the catalogue carries one or two marks.* Of 65: 13 equations with an angle in the derivation but no sweep
+  (the identities and derivations' integrals), 24 populations held at once, 30 with no turn traversed (including the
+  shape group). The catalogue was gathered by searching formulas for 2/π, which favours equations; a catalogue of
+  instruments and perceivers might weigh differently.
+- *An open question for the definition.* Q3 (b), the population held at once, is the parallel reader's way of meeting
+  the directions (the corpus's situation 3, a camera holding a hemisphere), as (a) is the serial reader's (situation 4).
+  If a sweep held at once counts, eight more turn entries used to infer carry all three marks (Buffon, Van Vleck's
+  correlators, the Kosterlitz–Thouless jump, the dipole, Kendall's τ, the magnetic remanence, Coltman, the canopy),
+  ten in all. Whether the third mark includes the parallel reader is Tom's to rule; the many-object populations (needles,
+  fibres, particles) are not obviously one reader's held facing.

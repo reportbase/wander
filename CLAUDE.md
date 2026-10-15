@@ -808,7 +808,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   2's routes; six disagreements are the hidden turns, put by my question at their Gaussian or Gamma constant), P6 not
   killed (all seven shape entries fix their extent in advance: V known), P7 killed the other way (13 of 51 turn formulas
   infer an unknown, 4 of 7 shape ones). The marks sort derivations, not uses; the best cases are turn formulas reading a
-  missing whole through a shadow or a sign.
+  missing whole through a shadow or a sign. Run 4 (`tpi/run4.py`, `tpi/classification-q3.md`; Tom: "there also needs to
+  be a sweep, not ust an equation."; SPN R253): the same classifier asked whether the angle is traversed in order, held
+  at once, or not traversed. P8 not killed (no shape entry or identity has a sweep); P9 killed: only the averaging AC
+  meter and the relay's describing function carry all three marks, the inner reading as an instrument; ten if a
+  population held at once (the parallel reader) counts, which is Tom's to rule.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
