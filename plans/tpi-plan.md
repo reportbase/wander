@@ -81,3 +81,21 @@ bound the clue: a 2/π reached with no turn means the constant can arise another
 only for the forms that survive.
 
 ## Runs
+
+### Run 1 (14 October; the twenty entries known before the search, the catalogue not yet in)
+
+`python3 -I plans/tpi/tpi.py` as first written; output in `plans/tpi/tpi-run1.txt`. Seventeen entries matched their
+written constants to 40 digits. Three did not, and P3 was killed, all by my set-up:
+- the arcsine law and Chebyshev's equilibrium measure: a density singular at an end, integrated at 50 digits, came out
+  2·10⁻²⁹ off, against a tolerance of 10⁻⁴⁰;
+- Van Vleck's sign correlation: the breakpoints given to the quadrature were wrong (one negative, unsorted), so the
+  indicator was integrated across its jumps;
+- P3 killed: the mean |cos| over the sphere was integrated across the kink at π/2 without splitting there, 8·10⁻⁶ off
+  (0.4999923 for ½, 0.6366148 for 2/π).
+
+P4 not killed: von Mises concentrations ½, 1, 2 move the mean shadow to 0.649, 0.682, 0.763 (and |sin| to 0.624,
+0.591, 0.506; a pixel with uneven phase to 0.737, 0.818, 0.910); spreads in ratio ½ and 2 move the sweep's median off
+the corner (0.705, 0.295) and the share's law off the arcsine (0.585, 0.201 against 0.369 at x = 0.3).
+
+**Run 2**, with the same predictions: the singular integrals at doubled precision, Van Vleck's breakpoints corrected,
+the kink split; and the catalogue's entries added when the search returns.
