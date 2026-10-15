@@ -266,7 +266,8 @@ n + 1 unit relations there are n sweeps. What sweeping them evenly means is take
 
 **Addresses and payload.** An *address* is a place in the reader's layout where a reading can be put. The range of
 addresses is fixed by the geometry before anything arrives, and an address is taken from it when something does. The
-*payload* is what arrives. In the picture of §1 the fingers are addresses and the rings are payload. The addresses a
+*payload* is what arrives: a wave of some kind, sent out or shaped by the things read, not the things themselves.
+A reader reads what arrives and reaches the things only through it. In the picture of §1 the fingers are addresses and the rings are payload. The addresses a
 reader lays do not depend on what arrives at them; every "if" belongs to the payload, including which side of the
 corner a given reading falls on. A *lay* is a rule
 that places each reading at a position in a drawing; the *room* a stretch of readings receives is measured either by
