@@ -195,3 +195,11 @@ line of justification and an example of use:
   many turn entries (a pendulum's period, a known wave's Fourier coefficient, Onsager's energy) compute from known sizes.
 
 Reported as well, not predicted: how many entries carry both marks (a turn, and Q2 (b) or (c)).
+
+**Correction to run 2's counts** (found while preparing run 3's list, before its results): the script's 63 checks cover
+62 distinct occurrences (C10b is a second check of C10's constant). Of the 65 occurrences gathered, three have no row of
+their own: Wheeler's microstrip formula (C26: no derivation step seen, route U) and the machine MMF and Coltman's
+relation (C39, C41: the square wave's fundamental, computed under C34, C36 and C40, route E). Counted by occurrence, the
+routes are E 43, H 12, S 7, P 1, U 2 (65): fifty-five come from an even turn, not fifty-four of sixty-three. No verdict
+changes. P5 is scored on run 2's 63 rows as written (C10b taking C10's answer).
+

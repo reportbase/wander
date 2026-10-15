@@ -129,7 +129,7 @@ bodies are pictures. They are never evidence here.
   pre-read signal." The run's framing, that a world's signal comes packed, was a misreading; the packing is a reader's,
   done ahead of time, and the run measures how real relief fills such levels.
 - 14–15 October: TPI, where 2/π shows up (`plans/tpi-plan.md`; SPN R251; Tom: "Possibly anytime 2/PI shows up, its
-  the situated situation."). Sixty-three occurrences, each constant computed from its derivation (§2.2); fifty-four come
+  the situated situation."). Sixty-five occurrences, each constant computed from its derivation (§2.2); fifty-five come
   from an even turn read as a shadow or a share, eight do not (§3).
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
@@ -250,15 +250,16 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 
 ### 2.2 Exact arithmetic
 
-- **Where 2/π shows up** (TPI, `plans/tpi-plan.md`). Sixty-three occurrences across about forty fields, from Buffon's
+- **Where 2/π shows up** (TPI, `plans/tpi-plan.md`). Sixty-five occurrences across about forty fields, from Buffon's
   needle and Viète to AC meters, one-bit correlators, Kendall's τ, the Lebesgue constant, Onsager's Ising energy, an
   infinite resistor grid, Fabry–Pérot linewidths, the square wave's fundamental in human contrast thresholds and the
-  Kosterlitz–Thouless jump. Every constant computed from the step of its derivation where π enters matches its source
-  (63 of 63, mostly to 40 digits). Fifty-four come from a turn taken evenly (an orientation, a phase, the equal-spread
-  normal pair, a Haar measure) and read as something never negative, the inner reading of OFS §3.4. The other eight
-  are the circle held as a shape (a semicircle's area or the arcsine integral, in contact, cracks, a disc's capacitance,
-  faults, random matrices, stellar line profiles) and one pole (alternating permutations). In space the shadow on an
-  axis gives ½, but the relative angle π/4 and the half-angle chord 2/3.
+  Kosterlitz–Thouless jump. For 62 of them the constant, computed from the step of its derivation where π enters,
+  matches its source (63 checks, mostly to 40 digits); two share the square wave's computation, and Wheeler's microstrip
+  formula was not traced. Fifty-five come from a turn taken evenly (an orientation, a phase, the equal-spread normal
+  pair, a Haar measure) and read as something never negative, the inner reading of OFS §3.4. Seven are the circle held
+  as a shape (a semicircle's area or the arcsine integral: contact, a disc's capacitance, a fault's slip, random
+  matrices, stellar line profiles), one is a pole (alternating permutations) and two were not traced. In space the
+  shadow on an axis gives ½, but the relative angle π/4 and the half-angle chord 2/3.
 
 - **The lay has the inverse square's form** (ISQ, `plans/isq-plan.md`). Past the corner the lay is proportion in h/v, so
   its room per unit s is 1/s², the flip's Jacobian, exactly. Each level gets 2^−(k+1) of the room.
@@ -520,7 +521,7 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   relief standing highest, against a line, at about a tenth to a fortieth of their radius), the slopes run from −0.21 to
   −0.98, and only Vesta's, an average over a bend, is near −1. The share is the world's.
 - **TPI P1–P3: 2/π is not always a turn.** Every occurrence was predicted to come from an even turn read as a shadow or a
-  share, in one of four forms, with ½ in its place in space. Eight of sixty-three come another way (seven the circle as a
+  share, in one of four forms, with ½ in its place in space. Eight of sixty-five come another way (seven the circle as a
   shape, one a pole); the Kosterlitz–Thouless 2 is a dimension and the Gaussian beam's a convention; in space only the
   shadow on an axis gives ½. 2/π is a strong clue for the even turn, not a proof of one.
 - **MAG P4: K0 III scatters 1.4 levels**, not under 1.0. A known kind is a bridge about a level wide.
