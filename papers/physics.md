@@ -259,7 +259,11 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   pair, a Haar measure) and read as something never negative, the inner reading of OFS §3.4. Seven are the circle held
   as a shape (a semicircle's area or the arcsine integral: contact, a disc's capacitance, a fault's slip, random
   matrices, stellar line profiles), one is a pole (alternating permutations) and two were not traced. In space the
-  shadow on an axis gives ½, but the relative angle π/4 and the half-angle chord 2/3.
+  shadow on an axis gives ½, but the relative angle π/4 and the half-angle chord 2/3. Read as a conversion (SPN R254; a reading, untested): the
+  2/π turns an arc into its chord, the semicircle on the line of 1 (arc π/2) or the quarter turn on its shadow; the
+  shape group too, a semicircle's area being half its radius times its arc (Hertz's peak over mean 4/π, the disc's
+  capacitance 2/π of the sphere's); left over the Kosterlitz–Thouless jump, the Gaussian beam and the pole. The
+  candidate purpose is a mean: the even turn's readings v/h have none, their shadows have one, 2/π.
 
 - **The lay has the inverse square's form** (ISQ, `plans/isq-plan.md`). Past the corner the lay is proportion in h/v, so
   its room per unit s is 1/s², the flip's Jacobian, exactly. Each level gets 2^−(k+1) of the room.

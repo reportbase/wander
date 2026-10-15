@@ -812,7 +812,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   be a sweep, not ust an equation."; SPN R253): the same classifier asked whether the angle is traversed in order, held
   at once, or not traversed. P8 not killed (no shape entry or identity has a sweep); P9 killed: only the averaging AC
   meter and the relay's describing function carry all three marks, the inner reading as an instrument; ten if a
-  population held at once (the parallel reader) counts, which is Tom's to rule.
+  population held at once (the parallel reader) counts, which is Tom's to rule. Then Tom: "2/PI  is needed to turn the
+  arc into the chord, you want remove the curve and ge the straight line for some reason." (SPN R254): OFS §3.4 read
+  the other way (the line of 1 over the arc of π/2); a reading, untested, covering the four forms and the shape group
+  (a semicircle's area is ½·r·arc), KT, the Gaussian beam and the pole left over; Claude's candidate purpose a mean
+  (the readings v/h have none, their shadows 2/π). Run 5 offered, not run.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

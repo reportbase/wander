@@ -318,3 +318,30 @@ by marks (turn / infer / Q3):
   correlators, the Kosterlitz–Thouless jump, the dipole, Kendall's τ, the magnetic remanence, Coltman, the canopy),
   ten in all. Whether the third mark includes the parallel reader is Tom's to rule; the many-object populations (needles,
   fibres, particles) are not obviously one reader's held facing.
+
+### After run 4: arc to chord (15 October; SPN R254; a reading, not a run)
+
+Tom, to the report of run 4: "2/PI  is needed to turn the arc into the chord, you want remove the curve and ge the
+straight line for some reason." Nothing here is a prediction or a result of this plan; it is recorded so that a run 5
+can be written against it.
+
+- *What it is.* OFS §3.4 read the other way: the semicircle on the line of 1 has an arc of π/2, line over arc 2/π; the
+  inner bar's quarter turn has an arc of π/2 over a shadow of 1, mean shadow 2/π. Checked exactly (classical): the arc
+  centroid of a semicircle r·chord/arc = 2r/π; Viète's product as chord over arc reached by halving the arc, the
+  polygon's length growing by 1/cos(π/2^(n+2)) a level, the first step cos 45° (the two chords meeting at the corner).
+- *What it covers.* The four forms (mean shadow, the share as the arc unrolled onto [0, 1], sin θ/θ, the arc's length
+  as normaliser) and the shape group of P1's kill: a sector's area is ½·r·arc, so a semicircular or semi-elliptical
+  profile against the rectangle of equal area is arc over chord (Hertz, Wigner, the fault's slip: peak over mean 4/π);
+  the disc's capacitance (2a/π in Gaussian units) against the sphere's (a), 2/π; the square wave against the sine, 4/π.
+  Left over: K8 (the 2 a dimension), C23 (a convention), C8 (the pole of tan(π/4 + x/2), the turn from the corner to
+  the horizon laid out as a radius; a stretch).
+- *What it does not do.* It does not separate the situated reader: a shape's held arc converts like a swept one. The
+  three marks (runs 2–4) still do that.
+- *"For some reason": a candidate (Claude's).* To take a mean. An even turn's readings v/h = tan θ have no mean (the
+  Cauchy's; the median is the corner); their shadows cos θ, sin θ have one, 2/π. Means and sums are taken on a line,
+  and the unsituated view is the chord (the sum). So 2/π would come in where a reading on the arc is carried to the line
+  to be averaged, added or set against an amount there.
+- *A run 5, offered, not run.* The same blind classifier, asked of each occurrence (Q4) what curved or turned quantity
+  the 2/π replaces by what straight or flat one, if any, and (Q5) to what end: (a) to average or add, (b) to compare
+  with an amount on a line, (c) to infer a whole not known, (d) none (an identity or a definition). Predictions to be
+  written before it is asked.
