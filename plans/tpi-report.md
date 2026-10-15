@@ -25,6 +25,10 @@ rule).*
   6(e)). 2/π is that sweep's measure only on one path, the circle. The sweep's own fingerprint, a median at the corner
   with no mean, appears on every path. It is classical in the lighthouse, a resonance's line shape, the ground seen
   from a height, and an inverted noisy parallax. A test on that side is proposed below. It has not been run.
+- **The lighthouse, closely** (§7). The Cauchy is the shore offset over the lamp's distance, (x − α)/β = tan θ. The
+  scale is removed in two places: within each flash, where the path length cancels from the ratio of the two legs
+  (OFS Theorem 6(a)); and at the corner, where the shore readers find β as half the interquartile range. Averaging
+  never removes it, since the mean of N flashes has exactly the law of one.
 
 ## 1. The question and the conjecture
 
@@ -245,7 +249,82 @@ fields, as TPI showed the even turn. It would not show that each system is a rea
 bridge (R233), named and not tested. The fourth question would show how often the sweep is the reader's own. If it is
 rare in the textbooks, as the sweep was in run 4, that would say where the situated reader has been left out.
 
-## 7. Open for Tom
+## 7. The lighthouse, closely
+
+*Tom, about 04:44: "lets look more closely at the lighthouse, more closely that seems to be a common metaphore. where
+is the cauchy in the light house, where is the removal of the scale?" (SPN R256). Everything below is classical. The
+numbers are checked exactly with α = 3, β = 2. The reading of it in the corpus's terms is Claude's.*
+
+**The set-up** (Gull 1988; Sivia and Skilling 2006):
+- A lamp stands a distance β out to sea, opposite the point α on a straight shore.
+- It sends flashes at angles θ spread evenly over the half turn toward the shore.
+- Detectors along the shore record only where each flash lands, as a position x on the shore's ruler.
+- Find the lamp.
+
+### Where the Cauchy is
+A flash at θ lands at x = α + β·tan θ. Measure from the foot of the perpendicular and divide by the lamp's distance:
+(x − α)/β = tan θ.
+- That is the reading v/h of a sweep.
+  - **Home** is the foot (θ = 0).
+  - **The corners** are at ±45°, landing at α ± β.
+  - **The horizons** are the two ends of the shore (θ → ±90°), where a flash runs parallel to the shore and never lands.
+- An even θ makes tan θ the standard Cauchy. The shore receives density β/(π(β² + (x − α)²)): a Cauchy centred on the
+  foot, with scale the lamp's distance.
+- **The corner holds half the flashes.** Half land within β of the foot.
+- **The shares are flip-symmetric about the corner.** Counted in doublings of distance from the foot, the shares are
+  the same on both sides of it: 0.205, 0.139, 0.077, 0.039, 0.020 outward, and the same inward.
+
+### Where the scale is removed
+It is removed in two places. In a third place it is not.
+1. **Within each flash: the reach cancels.**
+   - A flash travels a distance r = β/cos θ, different for every flash.
+   - Its two legs, out to sea and along the shore, are r cos θ and r sin θ. Their ratio is tan θ, and r is gone.
+   - At θ = 0.3 the path is 2.094, the legs 2.000 and 0.619. At θ = 1.2 the path is 5.519, the legs 2.000 and 5.144.
+     The ratio is tan θ both times.
+
+   This is OFS Theorem 6(a) exactly. Its reach ℓ is the flash's path, and its components ℓ·h and ℓ·v are the two
+   legs.
+2. **Across flashes: one scale is left, and it is the lamp's H.**
+   - The out-to-sea leg is β for every flash, because the shore is straight. The straight shore holds h at all of β, so
+     every landing is the reading times β.
+   - Divide by β and the law is scale-free.
+   - The straightness is what makes the Cauchy. Curve the shore into a circle round the lamp and the flashes land
+     evenly along it, with no Cauchy.
+
+   So the Cauchy is what an even turn looks like laid on a straight line: a turn read on a line, the same meeting as
+   R254's arc and chord. On this side it gives the Cauchy's law, where on the other it gave 2/π, the mean of the
+   shadow.
+3. **On the shore it is not removed.**
+   - The detectors read x in metres, on an agreed ruler along a known line. That is the unsituated view (R231, R234).
+   - They know neither α nor β, so their Cauchy carries the scale.
+   - **Summing cannot take it out.** The mean of N flashes has exactly the law of one flash, the same α and the same β:
+     the characteristic function e^{iαt − β|t|} is unchanged by averaging. The mean of |x − α| has no limit; out to
+     10⁶ from the foot it is 16.7 and still growing with the logarithm.
+   - **Order gives it back, at the corner.** The median of the landings is the foot, α. Half land within β of it, so
+     half the interquartile range is β. The shore readers recover both numbers from order, and neither from sums: OFS
+     Theorem 6(b)–(e), worked on a beach.
+
+### Whose sweep, and why the metaphor is so common
+The textbook lighthouse has both views in one picture.
+- **The lamp is situated.** It stands somewhere, turns evenly, and needs no distance at all. Its sweep reaches the
+  horizon at both ends of the shore, which is why there is no mean. A bay of finite length would have one.
+- **The shore is unsituated.** It is a straight line with a ruler, on which the turn is laid.
+
+The Cauchy is the meeting of the two. Because the sweep is the lamp's, the textbook's Cauchy belongs to the world
+(OFS §7.8: "There the evenness belongs to the lamp, a fact about the world.").
+
+OFS's own case is the mirror image. Put the reader at the lamp, sweeping, and let it read each landing by its angle.
+Its readings are tan θ, with no β anywhere. β enters only when it lays those readings out as distances along the shore:
+amount = reading × breadth, the one bridge. If it lays them at a chosen H in place of β, the median of |x − α|/H falls
+at β/H, not at 1. It is off by the lamp's true distance in units of its H, the size the geometry never reads.
+
+So the answer to "where is the removal of the scale" is that it happens in two places:
+- **at the lamp**, in the ratio of a flash's two legs, which carry the same path length;
+- **at the corner**, where the shore readers find the β they lack.
+
+The mean never removes it.
+
+## 8. Open for Tom
 
 1. **Does a population held at once count as a sweep?** It is the parallel reader's way. With it, ten of the 65
    carry all three marks rather than two.

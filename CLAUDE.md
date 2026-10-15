@@ -821,7 +821,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   place, the 65 with their marks; the suggestion read as OFS Theorem 6(e) (a fair sweep reaching the horizon: median at
   the corner, no mean, on every path; 2/π only the circle's), its unbounded face classical (lighthouse, resonance,
   the ground from a height, inverted parallax); a horizon test proposed, not run; open: which horizon, populations,
-  whose sweep. Run 4's counts corrected (the 13 equations are among the 30 not traversed).
+  whose sweep. Run 4's counts corrected (the 13 equations are among the 30 not traversed). Its §7 (SPN R256; Tom: "where is the
+  cauchy in the light house, where is the removal of the scale?"): (x − α)/β = tan θ; the scale removed within each flash
+  (the path cancels from its two legs, OFS Theorem 6(a)) and found again at the corner by the shore (half the
+  interquartile range), never by the mean; the straight shore makes the Cauchy; the lamp situated, the shore not.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
