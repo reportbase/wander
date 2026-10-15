@@ -76,3 +76,26 @@ N = 10², 10³, 10⁴, 10⁵, the median across runs of the running mean of s cl
 average over the three decades, (median at 10⁵ − median at 10²)/3. Its standard error is taken from 1,000 bootstrap
 resamples of the runs. *Killed if* the average climb is off 1.466 by more than 3 bootstrap standard errors, or the
 interquartile range of the mean across runs shrinks by more than a factor 2 from 10² to 10⁵.
+
+### Run 2 (15 Oct, `wvp/wvp2.py`, output in `wvp/run2.txt`; 5 s)
+
+The median of the mean across 4,000 runs: 3.7919 at N = 10², 8.0673 at 10⁵. Average climb 1.4252 a decade against
+(2/π)·ln 10 = 1.4659, bootstrap standard error 0.0165: off by 2.47 standard errors, inside 3. The interquartile range of
+the mean across runs 2.962 at 10², 2.893 at 10⁵ (×1.02: it does not shrink). **P3′ not killed**, close to its edge.
+
+## What it shows
+
+On the even turn, the interior reader's arrivals, counted, build the exterior reader's pattern: the law of the
+directions at the rate √N (P1), the squares' arcsine law and its middle (P4), the mean shadow 2/π, whose product with
+the exterior's π/2 tends to 1 (P5). The two vantages' numbers set how the interior converges: the corner is found by
+count with spread (π/2)/√N in levels (P2), and the mean of the readings never settles but climbs (2/π)·ln 10 a decade
+(P3′; P3 killed by my tolerance). So the reading of R270 is consistent: one payload, held whole as a pattern by the
+exterior reader, met one arrival at a time by the interior reader, which reaches the pattern's shares and its corner
+but never a mean. This is a simulation of our own on a law chosen beforehand; it says nothing yet about physical
+waves or particles.
+
+**Next, not run.** Real data: published single-photon (or single-electron) build-ups of an interference pattern, where
+counted arrivals are recorded one by one (Tonomura et al. 1989; Aspect, Grangier and Roger's single-photon experiments).
+The prediction to write first: the counted pattern's Kolmogorov gap falls as N^(−1/2), and the pattern's own corner (in
+whatever pair is named) is found by count with the spread its density sets. The bridge (counts and positions in amounts)
+must be named before it is run.
