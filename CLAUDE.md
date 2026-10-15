@@ -795,6 +795,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the top, the flip the mirror (P4); a conic at every V = cH, x² − x + y²/c² = 0, the pairing projective and not
   perspective (P5, Steiner); equal angles give the bisector (P6); the even sweep of one ray even along the arc, the
   half-Cauchy (P7); over x₁ + x₂ the height √(x₁x₂) (P8, Euclid VI.13). Nothing killed.
+  `thl/waves.py` (15 Oct; SPN R265, Tom: "the outside has wave like chartacteristics"): the outer vantage reads the line
+  as a power detector reads a wave, in squares at twice the angle: its foot h² (Malus), the Stokes point at 2θ
+  (Poincaré), a resonance's admittance (1, s)/(1 + s²) with half power at the corner, the unitarity circle and
+  Breit–Wigner, a sine's form factor 1.1107 the outer reading at 45°. Classical identities, a reading; not in OFS.
   `azm-plan.md` (+ `azm/azm.py`, 14 Oct; Tom: "there is another sweep V2 … lean on classical theory to explain V2"; SPN
   R237): exact (mpmath, a grid count, a seeded sample). V₂ is the azimuth: v₂/h = tan z and v/√(h² + v₂²) = tan a, each
   sweep's corner at 45° (P1); an even azimuth keeps its own corner under any altitude weighting (P2); even in both angles
