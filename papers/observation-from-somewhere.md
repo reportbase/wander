@@ -912,12 +912,28 @@ one. Which breadth it assigns is not free:
   different laws, and only one of them is the Cauchy with its median at the corner (Proposition 5(d)).
 - *Why c = 1.* With V = H the sweep is one rigid bar turning, it traces the unit circle, and the even turn is unique;
   its readings are the Cauchy with nothing more chosen. Working back from the Cauchy, which is known, arrives at V = H
-  and nowhere else (Proposition 5(d)). So V = H is required for a situated geometry: it gives the reader a circle to
-  turn. Unit relations drawn on equal axes, each running from 0 to 1, are this drawing.
+  and nowhere else (Proposition 5(d)). So V = H is required for a situated geometry built on a turn: it gives the
+  reader a circle to turn. Unit relations drawn on equal axes, each running from 0 to 1, are this drawing.
 - *What c = 1 does not do.* It does not say how large the mountain is. The mountain's true breadth, V*, is a separate number,
   unknown within one observation. The reader may estimate it, and the best estimate is the median of what it knows
   (Proposition 13, §9), but the estimate enters only the amounts, as a shift of every one of them by the same number of
   levels. It never redraws the circle.
+
+**Two choices, and a number that is not one.** The reader makes two choices in turn, and they differ in kind.
+- *H, the reference.* It is free. Every H gives the same circle and the same corner (part (b)), and its value sets only
+  the zoom (§8).
+- *c, the representation, V = cH.* It is not free. c = 1 is the only value for which:
+  - the sweep is one rigid bar turning (part (e));
+  - the even turn's readings are the Cauchy, with the median at the corner and unchanged by the flip (Proposition 5(d));
+  - a lighthouse's 45° flash is the corner of its landings (Proposition 5(f));
+  - a chart draws every compass bearing true (Proposition 5(g)).
+
+  Any other c is a consistent drawing, but it gives up all four.
+- *V*/H, the true size.* It is not a choice. The readings never give it (Proposition 8). It is estimated at the median
+  of what the reader knows (Proposition 13), and corrected by a shift in levels when an amount arrives.
+
+Changing H rescales the drawing in both directions alike, which is a zoom. Changing c stretches it in one direction,
+which changes its angles and moves its corner off 45°. These are the two effects Proposition 5(f) and (g) keep apart.
 
 **The Euclidean choice.** Part (c) is where an assumption enters. One unit makes the axes commensurable, but "a bar of
 fixed length" also needs a norm: under the largest-component norm the bar traces the square, under the sum norm the
