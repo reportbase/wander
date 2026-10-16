@@ -65,3 +65,19 @@ whose set-up I have not yet read.
 - The PDF is not committed. Its sha256 goes here when it arrives.
 
 ## Runs
+
+### Prior work found after the predictions (15 Oct about 21:15)
+
+Tom shared arXiv:1407.6762v1, Krause, Fischbach and Rohrbach (2014), "A priori which-way information in quantum
+interference with unstable particles" (PDF sha256 49edd844c2056b33c8c5286bb6ce913145fa1b56f1a4bfdceaefc2c3fb01d2e9, not
+committed). It is theory and has none of the 1987 data. Its Eqs. (23)–(24) give, for two paths whose amplitudes differ
+by a factor e^(θ_cav):
+- the visibility V = sech θ_cav;
+- the predictability P = tanh θ_cav;
+- V² + P² = 1, from sech² + tanh² = 1, the form of Bramon, Garbarino and Hiesmayr's unified description (Phys. Rev. A
+  69, 022112, 2004).
+
+So the reading this plan called "ours", the contrast as sech of the levels between the amplitudes, is in print. θ_cav is
+ln k, the levels in nats. Nothing of DUO's reading is new; what stays is the test on the 1987 data, and the corner (k = 1,
+V = 1, P = 0) named as the pair's. Its references also name other measurements of V² + P² = 1: Liu et al. (Phys. Rev. A
+85, 022106, 2012) for photons, and Zawisky (Found. Phys. Lett. 17, 561, 2004) for neutrons.
