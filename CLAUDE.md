@@ -546,7 +546,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   only at V = H. R269's exterior/interior replaced by the formal central/inscribed throughout OFS.
   **The density in full** (15 Oct, SPN R274; Tom: "the cauchy equation is missing the density parameter"; "the
   parameter is 0 to 1, 1 is the default"): ρ, the share of addresses met by a payload, ρ·2/(π(1 + (v/h)²)); ρ = 1
-  simplified away; a constant ρ normalises out. OFS after Proposition 5(d). Reading to confirm.
+  simplified away; a constant ρ normalises out. OFS after Proposition 5(d). It is R80's g (archived *Reader Geometry*:
+  "at density = 0 unit circle … at density = 1 full shape"); OFS keeps ρ since its g is the sweep's progress (R275).
+  **When the density varies** (R275): arrivals ρ(θ)·2/(π(1 + s²)), the inscribed sweep's Cauchy times what the central
+  sweep finds; their median the payload's median direction, at the corner only if ρ weighs alike on both sides.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the

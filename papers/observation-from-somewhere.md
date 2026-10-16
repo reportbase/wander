@@ -1224,8 +1224,23 @@ so the density times the extent of the quarter turn is ρ·(2/π)·(π/2) = ρ, 
 met, ρ = 1, the default, and the parameter is simplified away: that is the form of (b) and of the rest of the paper. The
 simplification loses nothing the addresses hold. ρ counts payload, not addresses: dividing the arrivals by their total
 ρ returns the law of (b), so a constant ρ leaves the median at the corner, the quartiles and the flip where they were
-(Theorem 6(a)). Where ρ varies with direction it is no longer a constant to drop but the payload's own shape (§7.4),
-and the arrivals' law is ρ(θ) times the addresses'.
+(Theorem 6(a)).
+
+**When the density varies with direction.** Where ρ depends on the direction θ = arctan(v/h), it is no longer a
+constant to drop: it is the payload's shape (§7.4), and the arrivals per unit of v/h are
+
+  ρ(θ)·2/(π(1 + (v/h)²)),  in total ρ̄ = (2/π)∫₀^{π/2} ρ(θ) dθ,
+
+which, divided by ρ̄, is no longer a Cauchy. The addresses are the same at every ρ; only what they find differs. This is
+the join of §4 ("The address points at the payload") read as a law: the inscribed sweep lays the Cauchy, the central
+sweep finds ρ(θ) at each address, and the arrivals are their product. The total ρ̄, the payload's average over the
+facing, is what the central sweep reads by its mean (§3.1). Since the addresses are even in θ, the arrivals' median is
+the direction θ_m at which ∫₀^{θ_m} ρ dθ is half of ∫₀^{π/2} ρ dθ: the median direction of the payload. It stays at the
+corner when the payload weighs as much on one side of it as on the other, and in particular when ρ(θ) = ρ(π/2 − θ),
+unchanged by the flip; otherwise it moves toward the heavier side. With ρ = (2 + cos 2θ)/3, heavier toward home, the
+arrivals' median falls at θ = 32.1°, v/h = 0.627, and 0.659 of them lie below the corner; with ρ = (2 + cos 4θ)/3,
+unchanged by the flip, it stays at 45°. The distance of the arrivals' median from the corner measures the payload's
+lopsidedness, in the payload's own terms, against addresses that did not move.
 
 **Proposition 5, continued: two other parties.** (e) Let the reader assign two other parties V = V₂ = H, so that the
 relation lies on the sphere of Proposition 3(f), and sweep one facing of every freedom, the octant h, v, v₂ ≥ 0, evenly
