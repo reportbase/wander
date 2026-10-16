@@ -641,6 +641,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Cauchy's conditions already stated.
   Review 15 (ChatGPT, 16 Oct, `plans/ofs-review-15.md`; SPN R302): reading the situated operation, writing producing the
   completed, unsituated representation; v·V (the drawing's amount, = v·H) kept apart from v·V* (the act of writing).
+  Standard vocabulary (16 Oct, SPN R304, R305; Tom: "look for opportunites to reduce our vocabulary with standard
+  vocabularly. inside and outside are not good metaphores"; "apply the clean swaps"): two kinds of situated reader,
+  readers of the payload (central) and of the ratios (inscribed), a writer needing both and losing its situation (§9);
+  OFS now says the reciprocal (not the flip), reciprocal-symmetric (not fair), the hyperbolic secant density (not the
+  bell), uniform (not even), the projection (not the shadow), the Thales circle, the ℓ₂/ℓ∞/ℓ₁ cuts and the simplex, the
+  corner / end of the range / horizon, "Designating and sizing"; no inside/outside, hemisphere turned away/toward.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
