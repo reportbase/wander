@@ -62,6 +62,27 @@ The note is the address/payload confusion in its purest form. Grok, shown this c
 exact and the two distinct, and proposed recording it. It wrote "squared foot" for h², which is the foot itself. One
 sentence went into OFS §4 ("What each sweep reads", after the factor of two), geometry only.
 
+## Grok's follow-up (16 Oct, SPN R301)
+
+Tom shared Grok's follow-up without comment, 16 Oct about 11:02. Grok, reading the 16 Oct draft:
+
+> The address-density / payload-share identity ρ(s) = (2/π)·h² is still not stated in the draft. … The proposed
+> one-sentence addition to §4 ("What each sweep reads") and the short subsection in the Born note therefore remain the
+> minimal, geometry-only insertions … If you want them written into the current draft and into
+> `born_rule_address_density.md`, say so and I will place them.
+
+**Response.** Both are already there, so nothing needs placing.
+- **In OFS.** The identity has been in OFS §4 since the R289 commit, merged with PR #109 on 16 Oct. It sits in the
+  factor-of-two paragraph under "What each sweep reads": "The inscribed sweep's addresses crowd on the line with
+  density 2/(π(1 + s²)) = (2/π)·h²: at every address, the inscribed reading 2/π times the foot of the point that
+  address points to. The two have one shape, but they are different things. …" ChatGPT's review 14 quotes it.
+- **In this note.** The subsection is the section above, "Why so close, yet so far".
+
+Grok's reading of the identity agrees with ours: the two functions differ only by 2/π, the inscribed reading. Taking
+the density's height for a Born probability, or for a payload's share, is the swap the paper diagnoses. One correction:
+in OFS ρ is the share of addresses met by a payload, not the address density, so the density is written
+2/(π(1 + s²)) and not ρ(s).
+
 ---
 
 # The Born Rule as the Address Density of a Situated Reader

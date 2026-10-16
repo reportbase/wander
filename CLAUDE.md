@@ -608,7 +608,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   drawing taken for a measurement is reading mistaken for writing. R293's "laying with H is writing" withdrawn (H is
   always held). OFS §9 "Reading and writing", after "Two ways to represent a thing".
   An observer is both (SPN R295; Tom: "Readers need ratios v,h.  writers need V,H"): the case convention is the split;
-  the bridge v·V is the act of writing; H's value matters only where readings meet amounts (the zoom).
+  the bridge v·V* is the act of writing (v·V, the drawing's amount, writes nothing new; R302); H's value matters only where readings meet amounts (the zoom).
   Writers are unsituated, readers situated (SPN R296; Tom: "writers are the gods eye view … Writers are unsituated.
   Readers are situated."): a breadth needs the whole, both hemispheres, which no standpoint gives; an observer writes by
   carrying in what it did not read; the view from nowhere is where writing is done, not where anyone stands.
@@ -639,6 +639,22 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and writing modes, not kinds of observer; "only a circle can be the base", scoped to one pivot, centred for the central
   sweep, through it for the inscribed; writing an operation whose product is the completed representation); the
   Cauchy's conditions already stated.
+  Review 15 (ChatGPT, 16 Oct, `plans/ofs-review-15.md`; SPN R302): reading the situated operation, writing producing the
+  completed, unsituated representation; v·V (the drawing's amount, = v·H) kept apart from v·V* (the act of writing).
+  Standard vocabulary (16 Oct, SPN R304, R305; Tom: "look for opportunites to reduce our vocabulary with standard
+  vocabularly. inside and outside are not good metaphores"; "apply the clean swaps"): two kinds of situated reader,
+  readers of the payload (central) and of the ratios (inscribed), a writer needing both and losing its situation (§9);
+  OFS now says the reciprocal (not the flip), reciprocal-symmetric (not fair), the hyperbolic secant density (not the
+  bell), uniform (not even), the projection (not the shadow), the Thales circle, the ℓ₂/ℓ∞/ℓ₁ cuts and the simplex, the
+  corner / end of the range / horizon, "Designating and sizing"; no inside/outside, hemisphere turned away/toward.
+  The inscribed reading is the ratio itself (16 Oct, SPN R306; Tom: "the inscribed reader only ever knows the ratio,
+  inscribed reading is the ratio itself, the reader does not have divide them"): a direction, [h : v] in homogeneous
+  coordinates; the projection divides, not the reader; breadths only in a writer's account; an unbounded breadth reads
+  as the horizon. OFS §9 after "Reading and writing", citing Möbius 1827.
+  The central reading is an amount (16 Oct, SPN R307; Tom: "the central reader just receives breadths, no ratios."):
+  from the centre the directions are given (rate 1); what arrives is the radius, an amount (polar coordinates: inscribed
+  the angle, central the radius); amounts add (the mean); all in one unit no reading fixes (a₀), so the shape in amounts,
+  not its size; a writer needs addresses, amounts and the unit. OFS §9 after R306's paragraph.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
