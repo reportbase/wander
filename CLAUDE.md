@@ -586,6 +586,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (`plans/qbt-plan.md` + `qbt/`, exact, nothing killed): the state a direction at θ, its Bloch point at 2θ (the square),
   Born's rule the foot, orthogonal states antipodal, the double cover, ζ = ψ₁/ψ₀ the stereographic chart, a pure state on
   the sphere and a mixture inside; textbook, the reading ours; not entanglement, Bell or measurement. In `physics.md`.
+  What the situated framing offers quantum (16 Oct, SPN R290; Tom: "i wonder if the situated observer framing offers any
+  new ideas for quantum?", "yes, proceed"): QSO (`plans/qso-plan.md` + `qso/`, exact; F4 killed by my set-up, F4′ by my
+  arithmetic, F4″ not): a missing frame (the twirl, Jaynes's group) loses amounts (the Bloch vector, the visibility) and
+  keeps readings (the overlap, the predictability); a weak value on the equator is the stereographic address, even in
+  height, superweak 1 − 1/√2 past the corner, the foot giving back ⟨σz⟩; two Gaussians' overlap sech(ln k), the
+  reference width a zoom. Known physics, the reading ours; nothing on entanglement, Bell or measurement. In `physics.md`.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
