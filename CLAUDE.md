@@ -579,6 +579,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   from the centre (rate 1) or a point of the circle (rate 2); elsewhere 2t/(t + t′); the party's sweep is the
   stereographic chart (ratios, unbounded, median), the pair's middle reads its square ½(h + iv)² (bounded, means); only
   on the circle. TWS (`plans/tws-plan.md` + `tws/`): exact; T3 killed by my set-up (atan2's cut), T3′ not.
+  Why classical work did not draw the split (16 Oct, SPN R285; Tom: "that discussion is painful, its probably best done
+  in a follow up document."): kept out of OFS; seeded in `plans/classical-split-note.md` (five reasons, a reading), the
+  claim kept narrow (the pieces in print, the split at the standpoint not found).
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
