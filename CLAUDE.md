@@ -655,6 +655,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   from the centre the directions are given (rate 1); what arrives is the radius, an amount (polar coordinates: inscribed
   the angle, central the radius); amounts add (the mean); all in one unit no reading fixes (a₀), so the shape in amounts,
   not its size; a writer needs addresses, amounts and the unit. OFS §9 after R306's paragraph.
+  Review 16 (Grok, 16 Oct, `plans/ofs-review-16.md`; SPN R308): the sech density is the inscribed reader's (its
+  addresses on the level axis, ½·sech ξ = hv); the abstract, the situations table, §3.1 and question 8 re-paired
+  (they had it with situation 3); in the central sweep the same function is a coordinate, the payload point's height
+  2hv = sech ξ (foot ½(1 − tanh ξ)), the density half of it, in OFS §4. Its identity claim mistaken (in §4 since R289).
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
