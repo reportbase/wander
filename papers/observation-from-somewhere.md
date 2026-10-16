@@ -1648,6 +1648,11 @@ constant, and r² + r′² = c² has two kinds of solution, r = c, the circle ce
 the circle through the reader. These are the central and the inscribed sweeps of §4, and no other shape gives either.
 Read as the reader's ignorance (§2), a reader who does not know the shape needs a law that every radial map leaves
 unchanged, and only a law on directions alone is one; the rescalings of κ are the radial maps with g constant.
+So a reader can begin at the unit circle and sweep the perturbation without knowing V: in ln r = a₀ + ρ·f(θ), the
+unknown size is the constant term alone, a₀ = ln κ, the one term no ratio of radii reads, and the even measure dκ/κ
+is the flat da₀. Every term of f is the shape, read exactly from ratios of radii wherever the payload or another
+standpoint supplies them (from directions alone none is read), and taking the terms in order of n is a level of
+detail, each truncation leaving every address where it was.
 
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the

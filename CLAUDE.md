@@ -597,6 +597,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   radial maps a group fixing every direction, the readings by direction the Cauchy at every ρ, along the outline moving
   with ρ; only circles read evenly along their outline (r² + r′² = c²: centred on the reader or through it, the central
   and inscribed sweeps). In OFS §7.4 after "Why the circle and the Cauchy go together".
+  Run 2 (SPN R292; Tom: "user starts with a unit circle and the sweeps by changing the density parameters despite not
+  knowing V"): in ln r = a₀ + ρ·f(θ) the unknown size is a₀ = ln(V*/H) alone (no ratio reads it; dκ/κ = da₀); the
+  modes n ≥ 1, the shape, read exactly from ratios of radii (which the payload or other standpoints must supply);
+  modes in order of n are level of detail.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
