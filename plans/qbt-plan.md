@@ -53,3 +53,33 @@ the Bloch vector (⟨σx⟩, ⟨σy⟩, ⟨σz⟩).
 would be my computation or my statement of the textbook result, not quantum mechanics.
 
 ## Runs
+
+### Run 1 (16 Oct about 05:15, `qbt/qbt.py`, output in `qbt/run1.txt`)
+
+**Q1–Q6 not killed.** Every identity holds to 7·10⁻⁴¹, and Q5 to 3·10⁻³⁵.
+
+| a | foil visibility | foil predictability | foil \|n\| | chopper visibility | chopper predictability | chopper \|n\| |
+|---|---|---|---|---|---|---|
+| 0.05 | 0.426 | 0.905 | 1 | 0.095 | 0.905 | 0.910 |
+| 0.24 | 0.790 | 0.613 | 1 | 0.387 | 0.613 | 0.725 |
+| 0.5 | 0.943 | 0.333 | 1 | 0.667 | 0.333 | 0.745 |
+| 0.9 | 0.999 | 0.053 | 1 | 0.947 | 0.053 | 0.949 |
+
+## What it shows
+
+A qubit's state is the inscribed sweep's direction and its Bloch point is the central sweep's, the state squared at
+twice the angle. Five things that make a qubit feel strange follow from that one doubling:
+- the half angle;
+- orthogonal states antipodal;
+- −ψ after a 2π state turn (720° of Bloch rotation to return);
+- Born's rule as the foot h²;
+- the duality relation as the sphere itself.
+
+The complex ratio of amplitudes is the stereographic chart of the Bloch sphere: the address, with a phase. A pure state
+lies on the sphere, at its facing, like DUO's foil. A mixture lies inside the ball, at the same predictability, like
+DUO's chopper.
+
+All of this is textbook quantum mechanics: the double cover SU(2) → SO(3), the Riemann sphere, Born's rule, and
+Englert–Greenberger–Yasin. The reading is ours. It does not touch entanglement, Bell's theorem, non-commuting
+observables beyond one qubit, or the measurement problem, so it explains some of quantum mechanics' felt strangeness,
+not its hard core.
