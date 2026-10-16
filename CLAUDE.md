@@ -679,6 +679,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   V = H is V = H = 1 (16 Oct, SPN R310; Tom: "right V = H = 1"): H a zoom, so the drawing's unit; the unit circle; the
   amounts then equal the unit relations in number only (the corner v = h = 1 on the capped square); the zoom moves from
   the drawing to the laying, which world amount is the 1 (s = d/H). OFS §5.
+  The third relation in today's paragraphs (16 Oct, SPN R311): c and c₂ both 1; V = V₂ = H = 1 the unit sphere, the
+  triple corner h = v = v₂ = 1; the inscribed direction [h : v : v₂]; the central reader's two fixed angles; writing one
+  amount, not one per party.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the

@@ -1081,6 +1081,8 @@ one. Which breadth it assigns is not free:
 
 Changing H rescales the drawing in both directions alike, which is a zoom. Changing c stretches it in one direction,
 which changes its angles and moves its corner off 45°. These are the two effects Proposition 5(f) and (g) keep apart.
+With a third party the drawing has two such numbers, c and c₂ (V = cH, V₂ = c₂H), and both must be 1 (Proposition 3(f));
+H is still the one free choice.
 
 So drawing V = H is the same as drawing V = H = 1. The value of H sets only the zoom, so it may be taken as the
 drawing's own unit, and then V = H = 1 is the unit circle itself. In that drawing the amounts equal the unit relations
@@ -1088,7 +1090,8 @@ in number, h·H = h and v·V = v, and the corner v = h is the point where both a
 relations. The agreement is in number only: the unit relations are still ratios and the drawing's amounts are still
 amounts in H, which is why the two are so easily run together. Taking H = 1 does not use up the zoom; it moves it from
 the drawing to the laying: the zoom is which amount in the world is taken as the 1, and with it the number s = d/H at
-which each thing lands (§8).
+which each thing lands (§8). With three unit relations it is V = V₂ = H = 1, the unit sphere, and on the capped cube the
+triple corner is h = v = v₂ = 1, the point (⅓, ⅓, ⅓) of the simplex written another way.
 
 Neither choice can be declined. Without a breadth for the other party there is no relation (part (a)). An H that
 favours no value is one taken to its ends, 0 or ∞. There the reader's lay becomes one of the rulers of Proposition 14
@@ -2102,7 +2105,8 @@ breadths: to state the other's size in amounts is to write it, and without V* it
 (Proposition 13); to write an amount for another reader needs the shared unit; a world drawn in amounts is written with
 its breadths known, and a common factor on all of them would change no reading. Taking the drawing V = H for a
 measurement (§7.1) is reading mistaken for writing. What is written can change without any reading changing, which is
-why no reading recovers it.
+why no reading recovers it. With more parties writing still costs one amount, not one per party: every party is drawn in
+the reader's own unit, so one known move writes every breadth, V*/H and V₂*/H alike.
 
 **The inscribed reading is the ratio itself.** The reader of ratios never touches a breadth and never divides one by
 another. What reaches it through its standpoint is a direction, and a direction already is a ratio: v/h = tan θ, a point
@@ -2115,7 +2119,9 @@ reader: a breadth without bound arrives as one more direction, [0 : 1], the hori
 and 1. A breadth that can never be written can still be read. Only where two breadths both grow without bound does their
 reading need the limit of their ratio, which is again a ratio and must arrive as one. A reader that measures two amounts
 and then divides them, two intensities compared, does touch breadths: it writes first and reads afterwards, and is not a
-reader of ratios in this sense.
+reader of ratios in this sense. With a third party the direction is [h : v : v₂], a point of the projective plane
+carrying two ratios, v/h and v₂/h; a breadth without bound still arrives as a point at the edge, [0 : 1 : 0] for an
+unbounded V*, and the reading stays bounded.
 
 **The central reading is an amount.** The reader of the payload receives the complement of what the reader of ratios
 receives. From the centre every ray is a radius, and equal turns reach equal arcs (§4), so its directions are laid out
@@ -2134,7 +2140,9 @@ gives a ratio, but the comparison is a further reading, made of what it holds, a
 are complements: one receives directions, ratios without amounts; the other receives amounts along directions it already
 had, without a ratio and without their unit. Neither receives the unit, the one term a₀. A writer needs all three: the
 addresses from the one, the amounts from the other, and the unit carried in from outside by a move or an exchange
-(above). Holding them at once is holding the whole, situations 1 and 2, from no standpoint.
+(above). Holding them at once is holding the whole, situations 1 and 2, from no standpoint. With a third party its fixed
+directions are two angles, the altitude and the azimuth (§2), and what arrives along each is still a radius in the one
+unit no reading fixes.
 
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
