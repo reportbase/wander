@@ -467,7 +467,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   is another sweep V2"; "Use the correct terms for V2 … lean on classical theory to explain V2"): the sum cut is the one
   drawing needing no standpoint; every other is situated, the two hemispheres two of many ("three vantages" kept as the
   named cases). The hand's two sweeps are horizon coordinates: altitude (H to V, v/√(h² + v₂²) = tan a) and azimuth
-  (V₂, round the horizontal from h, v₂/h = tan z), each with its corner at 45°; the even octant is even in azimuth and
+  (V₂, round the horizontal from h, v₂/h = tan ψ; z until 16 Oct), each with its corner at 45°; the even octant is even in azimuth and
   in height (Archimedes' hat-box, Lambert's equal-area map). OFS §2 (two paragraphs), introduction, §3.4, §3.7, after
   Proposition 5(e), notation, references (Archimedes, Lambert, Smart). **The truth is the sum; the reader's drawing is
   its centre** (14 Oct, SPN R238; Tom: "so the truth is h+v+v2=1; user sets h zoom and assigns v and v2 to be equal to it,
@@ -627,6 +627,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   ρ kept for the density and the perturbation only (a polar radius and the inversion radius renamed q); "The amounts'
   error" for "The calibration error"; ρ and reading/writing added to the notation. Left as they are: the letters a, b, c
   and s each with more than one use, and the long table lines.
+  Notation pass (16 Oct, Tom: "keep the standard math notation, change any notation that we have created that
+  conflicts"): standard kept (Cauchy m + iγ; Mercator's latitude φ, longitude λ, bearing ψ; Smart's altitude a; Jaynes's
+  μ, σ, a, b; Luce's ruler L(x); Legendre P_l and γ_i); ours renamed: azimuth z → ψ (the bearing's letter; z is the
+  zenith distance), 5(e)'s readings (a, b) → (s, s₂) and "More parties" a → s, c_n → Z_n, §3.8's b → κ, the lay r(x) →
+  L(x), level index k → j, the facing φ → 2α or 2θ, the drawing's direction φ → θ′, the perturbation's radial map
+  e^{g(θ)} → λ(θ) and its circles c → q, §11.2's share b → g, the bell's axis x → ξ, §8's amounts x → d, Prop 12's
+  centroid c → x̄ (share β → w, separation s → Δ), 3(g)'s g(t), P, B → Φ(t), U, G, Tissot's ε → δ, q₀ → f₀, limits M → s,
+  the walk's s₁, s₂ → s, s′, the error e(κ, ĉ) → "the loss", the polar angle in 5(e) → χ, readings A, B → 1, 2.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
