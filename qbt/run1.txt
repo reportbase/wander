@@ -1,0 +1,16 @@
+Q1 Bloch point = (sin2θ cosα, sin2θ sinα, cos2θ), real slice (2hv, 0, h²−v²): worst 2.3e-41
+Q2 Born's rule P(0) = h² = (1 + n_z)/2: worst 1.36e-41
+Q3 orthogonal states antipodal; |⟨ψ₁|ψ₂⟩|² = (1 + n₁·n₂)/2: worst 6.31e-41
+Q4 a state turn β turns n by 2β; β = π gives −ψ with the same n, 2π gives ψ: worst 2.3e-41
+Q5 ζ = ψ₁/ψ₀ = e^(iα)·tanθ = (n_x + i n_y)/(1 + n_z); real slice ζ = v/h: worst 2.74e-35
+   a = 0.05: foil V 0.42591771, P 0.9047619048, |n| 1.0; chopper V 0.09523809524, P 0.9047619048, |n| 0.9097606274
+   a = 0.24: foil V 0.7901579815, P 0.6129032258, |n| 1.0; chopper V 0.3870967742, P 0.6129032258, |n| 0.7249098405
+   a = 0.5: foil V 0.9428090416, P 0.3333333333, |n| 1.0; chopper V 0.6666666667, P 0.3333333333, |n| 0.7453559925
+   a = 0.9: foil V 0.9986139979, P 0.05263157895, |n| 1.0; chopper V 0.9473684211, P 0.05263157895, |n| 0.948829283
+Q6 foil on the sphere, chopper inside the ball: worst 2.3e-41, mixtures inside: True
+Q1 not killed
+Q2 not killed
+Q3 not killed
+Q4 not killed
+Q5 not killed
+Q6 not killed

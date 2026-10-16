@@ -467,7 +467,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   is another sweep V2"; "Use the correct terms for V2 … lean on classical theory to explain V2"): the sum cut is the one
   drawing needing no standpoint; every other is situated, the two hemispheres two of many ("three vantages" kept as the
   named cases). The hand's two sweeps are horizon coordinates: altitude (H to V, v/√(h² + v₂²) = tan a) and azimuth
-  (V₂, round the horizontal from h, v₂/h = tan z), each with its corner at 45°; the even octant is even in azimuth and
+  (V₂, round the horizontal from h, v₂/h = tan ψ; z until 16 Oct), each with its corner at 45°; the even octant is even in azimuth and
   in height (Archimedes' hat-box, Lambert's equal-area map). OFS §2 (two paragraphs), introduction, §3.4, §3.7, after
   Proposition 5(e), notation, references (Archimedes, Lambert, Smart). **The truth is the sum; the reader's drawing is
   its centre** (14 Oct, SPN R238; Tom: "so the truth is h+v+v2=1; user sets h zoom and assigns v and v2 to be equal to it,
@@ -582,6 +582,65 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Why classical work did not draw the split (16 Oct, SPN R285; Tom: "that discussion is painful, its probably best done
   in a follow up document."): kept out of OFS; seeded in `plans/classical-split-note.md` (five reasons, a reading), the
   claim kept narrow (the pieces in print, the split at the standpoint not found).
+  The qubit is the two sweeps (16 Oct, SPN R286; Tom: "does this help quantum … is this why?", "yes"): QBT
+  (`plans/qbt-plan.md` + `qbt/`, exact, nothing killed): the state a direction at θ, its Bloch point at 2θ (the square),
+  Born's rule the foot, orthogonal states antipodal, the double cover, ζ = ψ₁/ψ₀ the stereographic chart, a pure state on
+  the sphere and a mixture inside; textbook, the reading ours; not entanglement, Bell or measurement. In `physics.md`.
+  What the situated framing offers quantum (16 Oct, SPN R290; Tom: "i wonder if the situated observer framing offers any
+  new ideas for quantum?", "yes, proceed"): QSO (`plans/qso-plan.md` + `qso/`, exact; F4 killed by my set-up, F4′ by my
+  arithmetic, F4″ not): a missing frame (the twirl, Jaynes's group) loses amounts (the Bloch vector, the visibility) and
+  keeps readings (the overlap, the predictability); a weak value on the equator is the stereographic address, even in
+  height, superweak 1 − 1/√2 past the corner, the foot giving back ⟨σz⟩; two Gaussians' overlap sech(ln k), the
+  reference width a zoom. Known physics, the reading ours; nothing on entanglement, Bell or measurement. In `physics.md`.
+  A shape is a perturbation of the circle (16 Oct, SPN R291; Tom: "density is the pertibation of a unit circle"; "How
+  could you do that with any other shape?"): SHG (`plans/shg-plan.md` + `shg/`, exact, nothing killed): r = exp(ρ·f(θ)),
+  radial maps a group fixing every direction, the readings by direction the Cauchy at every ρ, along the outline moving
+  with ρ; only circles read evenly along their outline (r² + r′² = c²: centred on the reader or through it, the central
+  and inscribed sweeps). In OFS §7.4 after "Why the circle and the Cauchy go together".
+  Run 2 (SPN R292; Tom: "user starts with a unit circle and the sweeps by changing the density parameters despite not
+  knowing V"): in ln r = a₀ + ρ·f(θ) the unknown size is a₀ = ln(V*/H) alone (no ratio reads it; dκ/κ = da₀); the
+  modes n ≥ 1, the shape, read exactly from ratios of radii (which the payload or other standpoints must supply);
+  modes in order of n are level of detail.
+  Reading and writing (16 Oct, SPN R293, R294; Tom: "reader just needs ratios, breadth are just needed by writers";
+  "Writing is situation 1 and 2, reading is situation 3 and 4"): every reading a ratio (Proposition 8(a), Theorem 6(a),
+  R292); to write is to state in amounts, the whole with V known (situations 1, 2); to read is to sweep with V unknown
+  (3, 4); a reader that also writes needs actual breadths (without V* only ĉH; the shared unit for another reader); the
+  drawing taken for a measurement is reading mistaken for writing. R293's "laying with H is writing" withdrawn (H is
+  always held). OFS §9 "Reading and writing", after "Two ways to represent a thing".
+  An observer is both (SPN R295; Tom: "Readers need ratios v,h.  writers need V,H"): the case convention is the split;
+  the bridge v·V is the act of writing; H's value matters only where readings meet amounts (the zoom).
+  Writers are unsituated, readers situated (SPN R296; Tom: "writers are the gods eye view … Writers are unsituated.
+  Readers are situated."): a breadth needs the whole, both hemispheres, which no standpoint gives; an observer writes by
+  carrying in what it did not read; the view from nowhere is where writing is done, not where anyone stands.
+  Reading is free, writing needs movement and interaction (SPN R297): every ratio the geometry's (8(a)); every breadth
+  an amount from outside (8(b)): movement (H walked as a baseline gives V*/H, OFS §10 step 6) or interaction (a shared
+  unit, a known kind, a constant measured beforehand).
+  RWT (SPN R298; `plans/rwt-plan.md` + `rwt/`, exact, nothing killed) counts the steps by the Jacobian's nullity: one
+  standpoint writes nothing; one known move writes in the reader's own H; one exchanged number for another reader; one
+  agreed notch for a public unit.
+  Situation 1 is common to readers and writers (SPN R299): the circle V = H is the reader's drawing and the writer's
+  equation, one circle held two ways; situation 2 writing alone, 3 and 4 reading alone; taking the reader's circle for
+  the writer's is OFS §7.1's confusion.
+  Vocabulary pass (16 Oct, Tom: "Do a cleanup read of ofs, to make shur the vocabuary is now consistent"): situations 3
+  and 4 named by their sweeps everywhere (the mechanism, at once or one at a time, marked "on the proposal"); V* for the
+  true breadth in §10; the reader's unit circle (centred at home) told apart from the circle on the chord (through home);
+  ρ kept for the density and the perturbation only (a polar radius and the inversion radius renamed q); "The amounts'
+  error" for "The calibration error"; ρ and reading/writing added to the notation. Left as they are: the letters a, b, c
+  and s each with more than one use, and the long table lines.
+  Notation pass (16 Oct, Tom: "keep the standard math notation, change any notation that we have created that
+  conflicts"): standard kept (Cauchy m + iγ; Mercator's latitude φ, longitude λ, bearing ψ; Smart's altitude a; Jaynes's
+  μ, σ, a, b; Luce's ruler L(x); Legendre P_l and γ_i); ours renamed: azimuth z → ψ (the bearing's letter; z is the
+  zenith distance), 5(e)'s readings (a, b) → (s, s₂) and "More parties" a → s, c_n → Z_n, §3.8's b → κ, the lay r(x) →
+  L(x), level index k → j, the facing φ → 2α or 2θ, the drawing's direction φ → θ′, the perturbation's radial map
+  e^{g(θ)} → λ(θ) and its circles c → q, §11.2's share b → g, the bell's axis x → ξ, §8's amounts x → d, Prop 12's
+  centroid c → x̄ (share β → w, separation s → Δ), 3(g)'s g(t), P, B → Φ(t), U, G, Tissot's ε → δ, q₀ → f₀, limits M → s,
+  the walk's s₁, s₂ → s, s′, the error e(κ, ĉ) → "the loss", the polar angle in 5(e) → χ, readings A, B → 1, 2.
+  Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
+  mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
+  Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
+  Born step an identity, Fubini–Study circular, the wrong group, entanglement as shared content against Bell).
+  Why so close (SPN R289): at every address the density 2/(π(1 + s²)) = (2/π)·h², the inscribed reading times the
+  foot the address points to; one shape, two things (a density sums to the arctangent; the foot is a share); in OFS §4.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the

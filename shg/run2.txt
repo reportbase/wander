@@ -1,0 +1,17 @@
+R1 ratios the same for every a₀; modes 1–6 recovered, 7–31 empty; constant term −ρ f(θ₀), not a₀: worst 1.13e-40
+R2 rescaling is a shift of a₀, dκ/κ = da₀, unchanged by shifts: worst 2.3e-41
+R3 every address fixed through the sweep: worst 1.84e-40
+   M = 0: mean square of the dropped part 0.03970925588
+   M = 1: mean square of the dropped part 0.03456540387
+   M = 2: mean square of the dropped part 0.01720076947
+   M = 3: mean square of the dropped part 0.0109945162
+   M = 4: mean square of the dropped part 0.009577327988
+   M = 5: mean square of the dropped part 0.0006823638876
+   M = 6: mean square of the dropped part 0.0
+R4 truncation at mode M, Parseval: worst 0.0, falling: True
+R5 directions alone: the same set for every (a₀, ρ, f): True
+R1 not killed
+R2 not killed
+R3 not killed
+R4 not killed
+R5 not killed

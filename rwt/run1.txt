@@ -1,0 +1,12 @@
+T1 one standpoint: readings unchanged by λ (worst 1.84e-40); nullity 4 (predicted 4)
+T2 one known move: V*/H and d/H recovered, worst 1.19e-35; nullities [0, 0, 0, 0, 0, 0] (predicted 0)
+T3 move of unknown length: nullity 1 (predicted 1); scenes ×λ read the same, worst 1.84e-40
+T4 a second known move: same V*/H (worst 2.03e-35); nullity 0 (predicted 0)
+T5 two readers: written breadths differ by H_B/H_A, one number sent makes all 4 agree (worst 1.6e-38); nullity without 1, with 0 (predicted 1, 0)
+T6 in metres: nullity without a notch 1, with H_A = 0.7 m 0 (predicted 1, 0); breadths in metres, worst 4.43e-39
+T1 not killed
+T2 not killed
+T3 not killed
+T4 not killed
+T5 not killed
+T6 not killed

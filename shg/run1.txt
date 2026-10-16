@@ -1,0 +1,16 @@
+S1 by direction: reading tan θ at every ρ, law (2/π)·arctan t: worst 7.35e-40
+   along the outline f1 ρ=0.0: P(v/h ≤ 1) 0.5, P(v/h ≤ ¼) 0.155958260755 (Cauchy ½, 0.155958260755)
+   along the outline f1 ρ=0.25: P(v/h ≤ 1) 0.529492642342, P(v/h ≤ ¼) 0.170663488438 (Cauchy ½, 0.155958260755)
+   along the outline f1 ρ=0.5: P(v/h ≤ 1) 0.562525362991, P(v/h ≤ ¼) 0.184398855172 (Cauchy ½, 0.155958260755)
+   along the outline f1 ρ=1.0: P(v/h ≤ 1) 0.63227180844, P(v/h ≤ ¼) 0.208736174271 (Cauchy ½, 0.155958260755)
+   along the outline f2 ρ=0.0: P(v/h ≤ 1) 0.5, P(v/h ≤ ¼) 0.155958260755 (Cauchy ½, 0.155958260755)
+   along the outline f2 ρ=0.25: P(v/h ≤ 1) 0.5, P(v/h ≤ ¼) 0.163105349651 (Cauchy ½, 0.155958260755)
+   along the outline f2 ρ=0.5: P(v/h ≤ 1) 0.5, P(v/h ≤ ¼) 0.168167563119 (Cauchy ½, 0.155958260755)
+   along the outline f2 ρ=1.0: P(v/h ≤ 1) 0.5, P(v/h ≤ ¼) 0.174669544775 (Cauchy ½, 0.155958260755)
+S2 along the outline the law moves with ρ; the flip-symmetric shape keeps its corner: True
+S3 circles centred on or through the reader: spread at most 9.18e-41; 26 perturbations: least spread 0.124438
+S4 radial maps commute and keep directions: worst 2.3e-41; the disc's share within ½ ¼ → 0.275740244709 (moved 0.02574)
+S1 not killed
+S2 not killed
+S3 not killed
+S4 not killed
