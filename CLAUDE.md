@@ -609,6 +609,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   always held). OFS §9 "Reading and writing", after "Two ways to represent a thing".
   An observer is both (SPN R295; Tom: "Readers need ratios v,h.  writers need V,H"): the case convention is the split;
   the bridge v·V is the act of writing; H's value matters only where readings meet amounts (the zoom).
+  Writers are unsituated, readers situated (SPN R296; Tom: "writers are the gods eye view … Writers are unsituated.
+  Readers are situated."): a breadth needs the whole, both hemispheres, which no standpoint gives; an observer writes by
+  carrying in what it did not read; the view from nowhere is where writing is done, not where anyone stands.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
