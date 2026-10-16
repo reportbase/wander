@@ -536,7 +536,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   frames (Enlighten doi:10.5525/gla.researchdata.281, CC BY 4.0, sha256 in the plan, not committed; the frames are
   cumulative, a photon a cluster of pixels, the fringes along rows): run 3 killed by my set-up; run 4 not killed: period
   fλ/d, independent arrivals at √N, the phase's spread as the pattern sets, the slits at their corner (2hv 0.997, 1.000)
-  and the contrast (0.69, 0.56) under it. Classical; consistent with the reading, no further test of it.
+  and the contrast (0.69, 0.56) under it. Classical; consistent with the reading, no further test of it. The bound is
+  the duality relation V² + P² ≤ 1 (Greenberger–Yasin, Englert): V = 2hv = sin 2θ, P = |cos 2θ| (SPN R279; in
+  `physics.md`'s dictionary and `thl/waves.py`); no open counts with unequal shares found (the neutron foils of
+  Summhammer, Rauch and Tuppinger 1987 are the best case, paywalled).
   **Exterior: the payload's mean (Gaussian); interior: the addresses' median (Cauchy)** (15 Oct, SPN R271; Tom: "outside
   is gaussian, it is the mean, it measures the actual physical payoad … inside is cauchy, it is median, is the address and
   sweep of the gaussian center of gravity."): a reading; OFS §7.1 ("the exterior reader's bell") and §7.6 read

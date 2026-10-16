@@ -193,6 +193,9 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | one stream against readings at once with a shared denominator | looming's size–distance ambiguity; a same-depth neighbour's ratio S₁/S₂ separates approach from growth | none | PAY P1, P2 |
 | one amount from outside fixes every amount linked to it (OFS Proposition 8(b)); a unit agreed between readers (OFS §9) | dimensional analysis (only dimensionless ratios are read); the SI since 2019, every base unit fixed by an agreed value of a constant (Δν_Cs, c, h, e, k_B, N_A, K_cd) | the constants themselves, by agreement | OFS review 5, point 5 |
 | the addresses (directions, order, shape up to scale) exact while the scale is arbitrary; one amount from outside, a pan in levels | the completed view assembled from situated observations (parallax, triangulation, multi-epoch astrometry, the distance ladder); statistical error, which averages down, against systematic calibration error, which does not and is carried up the ladder | a baseline (travel), a shared length, a known kind | STC P1–P7 |
+| the central reading in squares at twice the angle: the point (h², hv) on the circle over the line (R265, a reading) | Malus's law (the foot h² = cos²θ); a polarization's Stokes point at 2θ; a resonance's admittance circle, half power at the corner X = R; the unitarity circle and Breit–Wigner's sin²δ | none: classical identities, stated, then checked | `thl/waves.py` (identities) |
+| the facing on the unit circle: sin 2θ = 2hv and cos 2θ = h² − v², with h and v two paths' amplitudes as unit relations | two-path interference: visibility at most 2hv, predictability P = \|h² − v²\|, V² + P² ≤ 1 (Greenberger and Yasin 1988; Englert 1996), equal for a pure state; full visibility only at the corner, 2hv = sech of the levels between the amplitudes | the Born rule: an amplitude is the square root of a share of the counts | WVP run 4 (the bound, at the corner only); `thl/waves.py` (the identity) |
+| a payload held whole as a pattern, met one arrival at a time (R270, a reading: wave-like, particle-like) | an intensity pattern built by counted detections, independent draws at √N | the Born rule; one detection an event | WVP runs 1–2 (simulation), 3–4 (real photons; classical) |
 
 ## 2. Results, by standing
 
@@ -636,7 +639,13 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
 - **The contrast against the slits' shares** (from WVP run 4). Run 4's slits were lit equally, so the pair sat at its
   corner. A double slit with one slit partly covered, recorded photon by photon with the shares measured, should lose
   contrast as 2hv = sech of the levels between the two amplitudes, the same at k and 1/k. That would show the corner in
-  the counts, not only the bound. Data with several shares are needed; none is found yet.
+  the counts, not only the bound. This is the duality relation V² + P² ≤ 1 (Greenberger and Yasin, Phys. Lett. A 128,
+  391, 1988; Englert, Phys. Rev. Lett. 77, 2154, 1996), long tested; what would be ours is only reading it in levels.
+  A search on 15 Oct found no open raw counts with several shares: Zenodo's datasets, and Schwindt, Kwiat and Englert
+  (Phys. Rev. A 60, 4285, 1999; its data in figures only, the path marked by polarization). The best case is
+  Summhammer, Rauch and Tuppinger (Phys. Rev. A 36, 4447, 1987): neutron foils of transmission a in one path, the
+  predicted contrast 2√a/(1 + a), which is 2hv, against a chopper's 2a/(1 + a) at the same mean count. The paper is
+  behind its publisher; Tom to supply it if wanted.
 - **One dimension against two.** ISQ's reading separates an angular size (falling one level per level of distance) from
   its square, the light (two levels). Stars with measured angular diameters (interferometry) and parallaxes would test
   the one-level half directly.

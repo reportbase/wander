@@ -8,7 +8,8 @@ diameter's ends; a series resonance's admittance in units of 1/R is the crossing
 s = X/R, power share h², half power at the corner; a scattered wave's amplitude e^(iδ) sin δ on the unitarity circle,
 S = e^(2iδ), the Breit–Wigner share sin²δ, quartiles of an even δ at the half-maximum; the Cauchy's characteristic
 function e^(-|t|); a sine's RMS over its mean rectified value equal to the outer reading at 45°. All classical; checked
-after they were stated, not predictions. R, X, E_R and Γ are amounts used only to draw; every stated result is a ratio.
+after they were stated, not predictions. And (15 Oct) two paths' visibility V = 2hv = sin 2θ and
+predictability P = |h² − v²| = |cos 2θ|, V² + P² = 1 for a pure state (Greenberger and Yasin 1988; Englert 1996). R, X, E_R and Γ are amounts used only to draw; every stated result is a ratio.
 Run: python3 thl/waves.py   (mpmath, 30 digits; a few seconds)
 """
 from mpmath import mp, mpf, mpc, cos, sin, tan, cot, atan, pi, sqrt, exp, quad, quadosc, inf, fabs, arg, degrees
@@ -48,4 +49,9 @@ rms = sqrt(quad(lambda x: cos(x)**2, [0, pi/2])/(pi/2)); arv = quad(cos, [0, pi/
 chk("RMS of a sine = cos 45°, the corner", rms, cos(pi/4)); chk("mean shadow 2/π", arv, 2/pi)
 chk("form factor RMS/mean = outer reading at 45°", rms/arv, (pi/4)/sin(pi/4))
 chk("mean foot over an even facing = ½", quad(lambda x: cos(x)**2, [0, pi/2])/(pi/2), mpf(1)/2)
+for th in (mpf('0.1'), pi/4, mpf('0.9'), mpf('1.4')):            # two paths, amplitudes h and v (unit relations)
+    h, v = cos(th), sin(th); Vis, Pr = 2*h*v, fabs(h*h - v*v)    # visibility, predictability (Greenberger–Yasin)
+    chk(f"θ={mp.nstr(th,4)}: V = sin 2θ", Vis, sin(2*th)); chk("P = |cos 2θ|", Pr, fabs(cos(2*th)))
+    chk("V² + P² = 1 (Englert's equality, a pure state)", Vis**2 + Pr**2, 1)
+    k = v/h; chk("V = 2k/(1 + k²) = sech(ln k)", Vis, 1/mp.cosh(mp.log(k)))
 print('all match' if ok else 'MISMATCH')
