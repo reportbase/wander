@@ -1082,6 +1082,12 @@ one. Which breadth it assigns is not free:
 Changing H rescales the drawing in both directions alike, which is a zoom. Changing c stretches it in one direction,
 which changes its angles and moves its corner off 45°. These are the two effects Proposition 5(f) and (g) keep apart.
 
+So drawing V = H is the same as drawing V = H = 1. The value of H sets only the zoom, so it may be taken as the
+drawing's own unit, and then V = H = 1 is the unit circle itself. In that drawing the amounts equal the unit relations
+in number, h·H = h and v·V = v, and the corner v = h is the point where both are 1 on the square of the capped unit
+relations. The agreement is in number only: the unit relations are still ratios and the drawing's amounts are still
+amounts in H, which is why the two are so easily run together.
+
 Neither choice can be declined. Without a breadth for the other party there is no relation (part (a)). An H that
 favours no value is one taken to its ends, 0 or ∞. There the reader's lay becomes one of the rulers of Proposition 14
 that favour no amount. It has no corner, and a reader with finitely many addresses loses what it reads: all of it
