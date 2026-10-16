@@ -2035,14 +2035,16 @@ So three numbers are easily confused, and the geometry needs none of them:
 - the shared unit, which is neither a reading nor a guess but a relation measured beforehand and agreed between
   readers, needed for talking.
 
-**Reading needs ratios; breadths are for writing.** Every reading is a ratio, and none contains a unit (Proposition
-8(a)); the shape too is read from ratios alone, its size the one term no ratio of radii reads (§7.4). A breadth enters
-only where something is written. A reader writes its readings into its own finitely many addresses, and that laying
-needs its H (with unlimited addresses H is idle, as above); it writes a guess at the other's size, ĉH, when it must
-state an amount (Proposition 13); and it writes an amount for another reader, which needs the shared unit. The three
-numbers above are the three writings. A world drawn in amounts is written the same way: its breadths are set so that
-the readings come out right, and any common factor would serve as well. What is written can change without any reading
-changing, which is why no reading recovers it.
+**Reading and writing.** Reading needs only ratios: every reading is a ratio, none contains a unit (Proposition
+8(a)), and the shape is read from ratios alone, its size the one term no ratio of radii reads (§7.4). Writing needs
+breadths. To write a thing is to state it in amounts, as an equation or an array of breadths, and that is situations
+1 and 2, the whole held with V known. Reading is situations 3 and 4, the two sweeps, with V unknown. A reader that only
+reads needs nothing beyond its ratios and its own H, by which it lays them. A reader that also writes needs actual
+breadths: to state the other's size in amounts is to write it, and without V* it can write only its estimate ĉH
+(Proposition 13); to write an amount for another reader needs the shared unit; a world drawn in amounts is written
+with its breadths known, and a common factor on all of them would change no reading. Taking the drawing V = H for a
+measurement (§7.1) is reading mistaken for writing. What is written can change without any reading changing, which is
+why no reading recovers it.
 
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a

@@ -601,10 +601,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   knowing V"): in ln r = a₀ + ρ·f(θ) the unknown size is a₀ = ln(V*/H) alone (no ratio reads it; dκ/κ = da₀); the
   modes n ≥ 1, the shape, read exactly from ratios of radii (which the payload or other standpoints must supply);
   modes in order of n are level of detail.
-  Reading needs ratios; breadths are for writing (16 Oct, SPN R293; Tom: "reader just needs ratios, breadth are just
-  needed by writers"): every reading a ratio (Proposition 8(a), Theorem 6(a), R292); every breadth a writing: readings
-  into the reader's finite addresses (H), a guess at the other's size (ĉH), an amount for another reader (the unit), a
-  world drawn in amounts (R227). OFS §9, after "Two ways to represent a thing".
+  Reading and writing (16 Oct, SPN R293, R294; Tom: "reader just needs ratios, breadth are just needed by writers";
+  "Writing is situation 1 and 2, reading is situation 3 and 4"): every reading a ratio (Proposition 8(a), Theorem 6(a),
+  R292); to write is to state in amounts, the whole with V known (situations 1, 2); to read is to sweep with V unknown
+  (3, 4); a reader that also writes needs actual breadths (without V* only ĉH; the shared unit for another reader); the
+  drawing taken for a measurement is reading mistaken for writing. R293's "laying with H is writing" withdrawn (H is
+  always held). OFS §9 "Reading and writing", after "Two ways to represent a thing".
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
