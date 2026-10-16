@@ -618,6 +618,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   RWT (SPN R298; `plans/rwt-plan.md` + `rwt/`, exact, nothing killed) counts the steps by the Jacobian's nullity: one
   standpoint writes nothing; one known move writes in the reader's own H; one exchanged number for another reader; one
   agreed notch for a public unit.
+  Situation 1 is common to readers and writers (SPN R299): the circle V = H is the reader's drawing and the writer's
+  equation, one circle held two ways; situation 2 writing alone, 3 and 4 reading alone; taking the reader's circle for
+  the writer's is OFS §7.1's confusion.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
