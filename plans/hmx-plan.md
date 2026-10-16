@@ -43,3 +43,23 @@ Everything here is classical; the run checks the reading given it, exactly (mpma
 
 ## Runs
 
+### Run 1 (16 Oct, `hmx/hmx.py`, output in `hmx/run1.txt`; 76 s)
+
+- **P1 killed, by my set-up.** The normal's product density varies by 2.5e-32 round the unit circle, the Laplace's by
+  0.0227 and Student's t₃'s by 0.0028, but the uniform's by 0: the unit circle lies inside the square [−1, 1]², where the
+  uniform's product is ¼ everywhere. The circle I chose never reaches the edge of the uniform's support, so it could not
+  show the uniform failing. Not a finding about the theorem.
+- **P2 not killed.** The quadrant's reading |Y|/|X| has P(s ≤ r) = (2/π)·arctan(r·σ_h/σ_v) to 9.9e-32 at all nine
+  points; its median is σ_v/σ_h (1, 2 and ⅓), at the corner only with equal spreads.
+- **P3 not killed.** With equal spreads, size and direction are independent to 2.5e-32 and P(θ ≤ t) = 2t/π (¼, ½, ¾); at
+  σ_v = 2σ_h the defect is 0.0069, 0.038 and 0.070.
+- **P4 not killed.** With the payload's centre at (0, 1), the reading's median is 1.5151, off the corner, and its law
+  differs from the half-Cauchy of that median by 0.0037 to 0.0111.
+- **P5 not killed.** E|X| = √(2/π) = 0.79788… to all 20 digits shown; the reading's truncated mean less (2/π)·ln M is
+  3.2e-13 at 10⁶ and 3.2e-17 at 10⁸: it is (1/π)·ln(1 + M²), growing without limit.
+
+### Run 2, P1′ (prediction written before running)
+
+**P1′.** On the circle of radius 1.2, which crosses the uniform's edge (it leaves [−1, 1]² along the axes and stays
+inside near the diagonals), the uniform's product density varies by at least 0.2 (¼ against 0), the Laplace's and t₃'s by
+more than 1e-3, and the normal's by at most 1e-25. *Killed if* any of these fails.
