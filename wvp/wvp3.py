@@ -13,16 +13,19 @@ SETS = {'D_SM': 'Heralded Diffraction SM.zip', 'D_MM': 'Heraded DIffraction MM.z
         'G_SM': 'Ghost Diffraction SM.zip', 'GI_SM': 'Ghost Imaging SM.zip'}
 
 def arrivals(name):
-    """Every frame's nonzero pixels as (frame, row, col), a value k counted k times; cached beside the data."""
+    """Every frame's new arrivals as (frame, row, col), a gain of k counted k times; cached beside the data."""
     cache = os.path.join(SRC, name + '.npz')
     if os.path.exists(cache):
         return np.load(cache)['a']
     z = zipfile.ZipFile(os.path.join(SRC, SETS[name])); out = []
     names = sorted(n for n in z.namelist() if n.lower().endswith('.asc'))
+    prev = np.zeros((512, 512), dtype=np.int32)
     for f, n in enumerate(names):
         img = np.array(z.read(n).split(), dtype=np.int32).reshape(512, 512)
-        r, c = np.nonzero(img)
-        k = img[r, c]
+        new = img - prev; prev = img       # the frames are cumulative: a frame's arrivals are its gain on the last
+        assert new.min() >= 0, (name, n)
+        r, c = np.nonzero(new)
+        k = new[r, c]
         out.append(np.column_stack([np.full(k.sum(), f), np.repeat(r, k), np.repeat(c, k)]))
     a = np.concatenate(out); np.savez_compressed(cache, a=a); return a
 

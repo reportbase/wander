@@ -149,6 +149,13 @@ two slits' facing, against two-beam interference, or if the bridge (one illumina
 tests the geometry itself; together they test R270's reading on real arrivals: one payload, a pattern whose contrast is
 the pair's facing, met one arrival at a time and built at √N.
 
+**A correction to the procedure, before any result** (15 Oct about 20:25). The frames are cumulative: each holds every
+photon so far (D_SM's counts climb 5, 19, 31, … to 40,110 by its last frame; in 150 frames checked no pixel ever falls,
+none rises by more than one between frames). The first run of the script took each frame's nonzero pixels as its
+arrivals, counting every photon again in every later frame; it was stopped before any fit or test was printed. An
+arrival is now a frame's gain on the frame before (the first frame's own pixels); the script stops if any pixel falls.
+Nothing else changes.
+
 **Not tested here: the mean's climb.** Read per arrival as s = tan(φ/2) (φ the facing, φ/2 the inscribed sweep), the
 arrivals have density (1 + C cos φ) over the turn, so near the dark fringe a share (1 − C) of the even turn's: the
 running mean of |s| climbs (1 − C)·(2/π)·ln 10 a decade (the even turn's (2/π)·ln 10 at C = 0, and a mean at C = 1).
