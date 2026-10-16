@@ -635,6 +635,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   e^{g(θ)} → λ(θ) and its circles c → q, §11.2's share b → g, the bell's axis x → ξ, §8's amounts x → d, Prop 12's
   centroid c → x̄ (share β → w, separation s → Δ), 3(g)'s g(t), P, B → Φ(t), U, G, Tissot's ε → δ, q₀ → f₀, limits M → s,
   the walk's s₁, s₂ → s, s′, the error e(κ, ĉ) → "the loss", the polar angle in 5(e) → χ, readings A, B → 1, 2.
+  Review 14 (ChatGPT, 16 Oct, of the 16 Oct draft, `plans/ofs-review-14.md`; SPN R300): three corrections made (reading
+  and writing modes, not kinds of observer; "only a circle can be the base", scoped to one pivot, centred for the central
+  sweep, through it for the inscribed; writing an operation whose product is the completed representation); the
+  Cauchy's conditions already stated.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
