@@ -2046,28 +2046,31 @@ whole held with V known. Reading is situations 3 and 4, the two sweeps, with V u
 The circle, V = H, is the reader's drawing, chosen before anything arrives, and the writer's equation, with V known to
 equal H: one circle held two ways, drawn by the one and known by the other. Situation 2 is writing alone, a shape
 written on that circle as its perturbation (§7.4), and 3 and 4 are reading alone. Taking the reader's circle for the
-writer's is the confusion of §7.1. Reading and writing are operations, not kinds of observer: reading is the situated
-operation; writing produces the completed, unsituated representation of situations 1 and 2, stating a thing in amounts.
-A situated observer can write, but only with information its ratios do not contain. To know a breadth is to hold the
-whole, both hemispheres at once, which is situations 1 and 2 and which no standpoint supplies: no reading gives V*/H
-(Proposition 8). An observer writes by carrying in what it did not read, a shared unit or an amount from outside, and
-the view from nowhere is where that writing is done, not a place anyone stands. Reading is free: the geometry supplies
-every ratio. Writing must discover the breadths, and every breadth it finds is an amount from outside the readings
-(Proposition 8(b)), found by movement or by interaction. Movement takes the reader's own H as a baseline: walked once,
-it gives the other's true size in the reader's own breadth, V*/H (§10, step 6). Interaction takes in what another has
-measured: a shared unit, a known kind, a constant measured beforehand, and writes in a breadth both can read. Counted,
-the steps are one each: from one standpoint nothing is written, each thing's size and distance free together; one
-displacement of known length writes every breadth in the reader's own H, and a second adds nothing to the scale; one
-number exchanged writes them for another reader; one notch agreed writes them in a public unit. An observer is both a
-reader and a writer: as a reader it needs the unit relations h and v, as a writer the breadths H and V, and the value of
-its own H matters only where its readings meet amounts (the zoom, §8). The one bridge between them is a unit relation
-times its breadth, and two such products must be kept apart: v·V, the amount in the reader's drawing, which is v·H and
-writes nothing new, and v·V*, the amount at the other's true breadth, which is the act of writing and needs V*. A reader
-that also writes needs actual breadths: to state the other's size in amounts is to write it, and without V* it can write
-only its estimate ĉH (Proposition 13); to write an amount for another reader needs the shared unit; a world drawn in
-amounts is written with its breadths known, and a common factor on all of them would change no reading. Taking the
-drawing V = H for a measurement (§7.1) is reading mistaken for writing. What is written can change without any reading
-changing, which is why no reading recovers it.
+writer's is the confusion of §7.1. From the geometry alone there are two kinds of situated reader, one for each sweep of
+§4: readers of the payload, by the central sweep, and readers of the ratios, by the inscribed sweep, whose ratios are
+the addresses. A writer needs both, the payload and the addresses it sits at, together with the breadths that turn them
+into amounts, and loses its situation in the process: holding both at once is holding the whole, situations 1 and 2,
+from no standpoint. So reading is the situated operation, and writing produces the completed, unsituated representation,
+stating a thing in amounts. A situated observer can write, but only with information its ratios do not contain. To know
+a breadth is to hold the whole, both hemispheres at once, the one each sweep faces, which is situations 1 and 2 and
+which no standpoint supplies: no reading gives V*/H (Proposition 8). An observer writes by carrying in what it did not
+read, a shared unit or an amount from outside, and the view from nowhere is where that writing is done, not a place
+anyone stands. Reading is free: the geometry supplies every ratio. Writing must discover the breadths, and every breadth
+it finds is an amount from outside the readings (Proposition 8(b)), found by movement or by interaction. Movement takes
+the reader's own H as a baseline: walked once, it gives the other's true size in the reader's own breadth, V*/H (§10,
+step 6). Interaction takes in what another has measured: a shared unit, a known kind, a constant measured beforehand,
+and writes in a breadth both can read. Counted, the steps are one each: from one standpoint nothing is written, each
+thing's size and distance free together; one displacement of known length writes every breadth in the reader's own H,
+and a second adds nothing to the scale; one number exchanged writes them for another reader; one notch agreed writes
+them in a public unit. An observer is both a reader and a writer: as a reader it needs the unit relations h and v, as a
+writer the breadths H and V, and the value of its own H matters only where its readings meet amounts (the zoom, §8). The
+one bridge between them is a unit relation times its breadth, and two such products must be kept apart: v·V, the amount
+in the reader's drawing, which is v·H and writes nothing new, and v·V*, the amount at the other's true breadth, which is
+the act of writing and needs V*. A reader that also writes needs actual breadths: to state the other's size in amounts
+is to write it, and without V* it can write only its estimate ĉH (Proposition 13); to write an amount for another reader
+needs the shared unit; a world drawn in amounts is written with its breadths known, and a common factor on all of them
+would change no reading. Taking the drawing V = H for a measurement (§7.1) is reading mistaken for writing. What is
+written can change without any reading changing, which is why no reading recovers it.
 
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
