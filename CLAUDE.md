@@ -677,7 +677,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   alone; either may be held at once or in order (§3.5 static/dynamic). A camera is inscribed (held at once), a lidar or
   sonar central, a total station mixed. §3.6: the projection divides, not the reader.
   V = H is V = H = 1 (16 Oct, SPN R310; Tom: "right V = H = 1"): H a zoom, so the drawing's unit; the unit circle; the
-  amounts then equal the unit relations in number only (the corner v = h = 1 on the capped square). OFS §5.
+  amounts then equal the unit relations in number only (the corner v = h = 1 on the capped square); the zoom moves from
+  the drawing to the laying, which world amount is the 1 (s = d/H). OFS §5.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the

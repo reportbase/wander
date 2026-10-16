@@ -1086,7 +1086,9 @@ So drawing V = H is the same as drawing V = H = 1. The value of H sets only the 
 drawing's own unit, and then V = H = 1 is the unit circle itself. In that drawing the amounts equal the unit relations
 in number, h·H = h and v·V = v, and the corner v = h is the point where both are 1 on the square of the capped unit
 relations. The agreement is in number only: the unit relations are still ratios and the drawing's amounts are still
-amounts in H, which is why the two are so easily run together.
+amounts in H, which is why the two are so easily run together. Taking H = 1 does not use up the zoom; it moves it from
+the drawing to the laying: the zoom is which amount in the world is taken as the 1, and with it the number s = d/H at
+which each thing lands (§8).
 
 Neither choice can be declined. Without a breadth for the other party there is no relation (part (a)). An H that
 favours no value is one taken to its ends, 0 or ∞. There the reader's lay becomes one of the rulers of Proposition 14
