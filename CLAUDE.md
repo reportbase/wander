@@ -615,6 +615,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Reading is free, writing needs movement and interaction (SPN R297): every ratio the geometry's (8(a)); every breadth
   an amount from outside (8(b)): movement (H walked as a baseline gives V*/H, OFS §10 step 6) or interaction (a shared
   unit, a known kind, a constant measured beforehand).
+  RWT (SPN R298; `plans/rwt-plan.md` + `rwt/`, exact, nothing killed) counts the steps by the Jacobian's nullity: one
+  standpoint writes nothing; one known move writes in the reader's own H; one exchanged number for another reader; one
+  agreed notch for a public unit.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the

@@ -2046,14 +2046,17 @@ anyone stands. Reading is free: the geometry supplies every ratio. Writing must 
 it finds is an amount from outside the readings (Proposition 8(b)), found by movement or by interaction. Movement takes
 the reader's own H as a baseline: walked once, it gives the other's true size in the reader's own breadth, V*/H (§10,
 step 6). Interaction takes in what another has measured: a shared unit, a known kind, a constant measured beforehand,
-and writes in a breadth both can read. An observer is both a reader and a writer: as a reader it needs the unit
-relations h and v, as a writer the breadths H and V, and the value of its own H matters only where its readings meet
-amounts (the zoom, §8). The one bridge between them, a unit relation times its breadth, v·V, is the act of writing. A
-reader that also writes needs actual breadths: to state the other's size in amounts is to write it, and without V* it
-can write only its estimate ĉH (Proposition 13); to write an amount for another reader needs the shared unit; a world
-drawn in amounts is written with its breadths known, and a common factor on all of them would change no reading. Taking
-the drawing V = H for a measurement (§7.1) is reading mistaken for writing. What is written can change without any
-reading changing, which is why no reading recovers it.
+and writes in a breadth both can read. Counted, the steps are one each: from one standpoint nothing is written, each
+thing's size and distance free together; one displacement of known length writes every breadth in the reader's own H,
+and a second adds nothing to the scale; one number exchanged writes them for another reader; one notch agreed writes
+them in a public unit. An observer is both a reader and a writer: as a reader it needs the unit relations h and v, as a
+writer the breadths H and V, and the value of its own H matters only where its readings meet amounts (the zoom, §8). The
+one bridge between them, a unit relation times its breadth, v·V, is the act of writing. A reader that also writes needs
+actual breadths: to state the other's size in amounts is to write it, and without V* it can write only its estimate ĉH
+(Proposition 13); to write an amount for another reader needs the shared unit; a world drawn in amounts is written with
+its breadths known, and a common factor on all of them would change no reading. Taking the drawing V = H for a
+measurement (§7.1) is reading mistaken for writing. What is written can change without any reading changing, which is
+why no reading recovers it.
 
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
