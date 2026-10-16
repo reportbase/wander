@@ -211,6 +211,18 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Thales circle the corner circle, H of 0 rays, H of ∞ the baseline, best H √(d_near·d_far); physics assigns the value
   and nothing moves. `?step=1..6&h=&n=&fig=circle|egg|star|astroid&eps=0.1|0.5|2&sp=1|2|3&unit=mi|km|au`; hook
   `window.__hchain` (`fisheye`, `triangulate`, `bestH`, `figurePoints`, `hud`, `set`). Not in the flying page.
+- `two-readers.html`, `pinhole.html`, `write.html`: **reading and writing** (16 Oct 2026, Tom: "what demos should we create
+  to help visualize this", then "build all three demos"; SPN R297, R298, R304, R306, R307), standalone pages like `facing.html`.
+  `two-readers.html`: one shape ln r = a₀ + ρ·f(θ) read from its centre (the central reader: fixed directions, the radius
+  along each, an amount, shown over the geometric mean since the common factor is not read) and from home on the outline
+  (the inscribed reader: directions only, laid by (2/π)·arctan(v/h)); a₀ ("scale the world") moves neither; the writer
+  draws the true size only with the addresses, the amounts and one amount carried in; a seeded uniform sweep, the
+  inscribed median at 1 and its mean climbing, the central mean settling. `?shape=circle|egg|star|lumpy&rho=&a0=&writer=`;
+  hook `window.__twoReaders`. `pinhole.html`: a thing of breadth V* at distance d through a pinhole; the reading [h : v],
+  bounded, unchanged by k; V* = ∞ the horizon (0, 1), off the flat screen; "the writer's account" overlays V*/d; a ruler
+  reader whose amounts move with k. `?V=<log10>|inf&d=&k=&account=1`; hook `window.__pinhole`. `write.html`: RWT step by
+  step, four targets, the nullity computed on the page (4, 1, 0, 0, 1, 0, 1, 0), the breadths written in A's H, B's H and
+  metres. `?step=0..7&seed=`; hook `window.__write`. Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -314,7 +326,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -1284,6 +1296,15 @@ In short:
       the wedge itself; the gold at tan 1 for a second moves the blue 0.4 in rapidity, letting go re-centres on it; the
       radius keeps the blue's place, or moves the window to it; items found by index in their finest cells; item
       4,503,599,627,370,495 at the triple corner with its total at the corner; from home nothing moves with H.
+
+  28. **two-readers.html:** scaling the world moves no direction from home and not the central shape, its amounts all by
+      e^Δa₀ (four shapes, three ρ, three a₀); on the circle the ray at half the central angle; the writer only with all
+      three, at the true size; a uniform sweep's inscribed median within 0.05 of 1, its mean climbing, the central mean
+      within 0.01 of its exact value.
+  29. **pinhole.html:** the reading unchanged by k = 10⁻³, 7, 10⁶; V* = ∞ at (0, 1), 90°, off the flat screen; equal
+      breadth and distance at 45° and half the turn; the ruler reader's amounts move by k, their quotient does not.
+  30. **write.html:** the nullities 4, 1, 0, 0, 1, 0, 1, 0 in three scenes; the breadths written in A's H from one known move
+      and the same from two; B's off by H_B/H_A until one number is sent; metres after one notch (all to 10⁻⁹).
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

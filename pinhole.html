@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The pinhole</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    pinhole.html: the projection does the dividing (16 October 2026, Tom: "build all three demos"; SPN R306: "inscribed
+    reading is the ratio itself, the reader does not have divide them"). A standalone page like facing.html.
+    A standpoint O with a pinhole; a thing of true breadth V* standing upright at distance d, its foot on the axis. The
+    light through O forms the image point by itself: on a flat screen one unit behind, at V*/d (unbounded), and as a
+    direction, the point [d : V*] of the projective line, read as the unit relations (h, v) = (d, V*)/√(d² + V*²), on the
+    quarter turn (2/π)·arctan(V*/d): bounded. "Scale the world" (k) multiplies V* and d together: the figure is similar,
+    and no reading moves (exact). A breadth sent to infinity arrives as one more direction, [0 : 1], the horizon: off the
+    flat screen, at v = 1 on the turn.
+    "The writer's account" overlays V*, d and the sum V*/d: the description's division, never the reader's.
+    The ruler reader beside it measures two amounts in its own H and divides them: its amounts move with k, their
+    quotient does not; it touches breadths, so it writes first and reads afterwards (OFS §9).
+    Geometry only, no physics. Links: ?V=<log10 V*>|inf&d=<log10 d>&k=<log10 k>&account=1. Test hook: window.__pinhole.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 76ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 200px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The pinhole</h1>
+    <p class="lede">The reader never divides. Light from the top of a thing comes through the pinhole along one ray, and
+    the ray is the reading: a direction, which is already a ratio. Make the thing bigger and farther together and nothing
+    the reader holds moves. Send its breadth to infinity and it arrives as one more direction, the horizon. The division
+    V*/d belongs to the description, the writer's account of the reading.</p>
+    <div class="panel">
+        <div class="row">
+            <label for="lv">breadth V*</label><input id="lv" type="range" min="-2" max="3" step="0.01" value="0.5">
+            <button id="inf">V* = ∞</button>
+        </div>
+        <div class="row" style="margin-top:6px">
+            <label for="ld">distance d</label><input id="ld" type="range" min="-1" max="3" step="0.01" value="1">
+        </div>
+        <div class="row" style="margin-top:6px">
+            <label for="lk">scale the world, k</label><input id="lk" type="range" min="-3" max="6" step="0.01" value="0">
+            <button id="account">the writer's account</button>
+        </div>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="scene" height="300"></canvas><p class="cap">The scene, drawn to fit: the pinhole O, the thing
+            standing at its distance, the ray from its top. Scaling the world gives the same figure; only the bar of one H
+            changes.</p></div>
+            <div>
+                <canvas id="screen" height="140"></canvas><p class="cap">A flat screen one unit behind the pinhole: the image
+                at V*/d, unbounded. An infinite breadth leaves it.</p>
+                <canvas id="turn" height="150" style="margin-top:8px"></canvas><p class="cap">The reading as a direction:
+                (h, v) on the quarter turn, bounded; an infinite breadth is the point (0, 1), the horizon.</p>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <canvas id="ruler" height="120"></canvas><p class="cap">The ruler reader: it measures two amounts in its own H and
+        divides them. Its amounts move when the world is scaled; only their quotient does not. It touches breadths: it writes
+        first and reads afterwards.</p>
+        <div id="hud"></div>
+    </div>
+    <p class="note">The pinhole forms the image point x/z by itself; no one computes it from x and z. The reach cancels
+    between the two legs of each reading before it arrives. Behind it: <i>Observation from Somewhere</i> §9, "The inscribed
+    reading is the ratio itself"; homogeneous coordinates (Möbius 1827). Other demos: <a href="two-readers.html">two
+    readers</a>, <a href="write.html">writing costs one amount a step</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), D = 180 / Math.PI;
+    const S = { lv: 0.5, ld: 1, lk: 0, inf: false, account: false, H: 1 };
+    // the reading: a direction, the point [d : V*] of the projective line
+    function reading(V, d) {
+        if (!isFinite(V)) return { h: 0, v: 1, theta: 90, turn: 1, ratio: Infinity, image: Infinity };
+        const n = Math.hypot(V, d), h = d / n, v = V / n, a = Math.atan2(V, d);
+        return { h, v, theta: a * D, turn: a / (Math.PI / 2), ratio: V / d, image: V / d };
+    }
+    // the ruler reader: two amounts in its own H, then their quotient
+    const ruler = (V, d, H = 1) => ({ a: V / H, b: d / H, q: (V / H) / (d / H) });
+    const world = () => { const k = 10 ** S.lk; return { V: S.inf ? Infinity : 10 ** S.lv * k, d: 10 ** S.ld * k, k }; };
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.fillStyle = '#000'; g.fillRect(0, 0, w, hh); return [g, w, hh];
+    }
+    const txt = (g, s, x, y, c = '#8a8a96', size = 12) => { g.fillStyle = c; g.font = `${size}px DM Mono, monospace`; g.fillText(s, x, y); };
+    const fmt = x => !isFinite(x) ? '∞' : Math.abs(x) >= 1e4 || Math.abs(x) < 1e-2 ? x.toExponential(2) : x.toPrecision(4);
+    function draw() {
+        const w = world(), r = reading(w.V, w.d);
+        // the scene, drawn to fit the figure (similar at every k)
+        let [g, W, H] = fit($('scene'));
+        const ox = 40, oy = H - 40, sc = isFinite(w.V) ? Math.min((W - 80) / w.d, (H - 70) / w.V) : (W - 80) / w.d;
+        const tx = ox + w.d * sc, ty = isFinite(w.V) ? oy - w.V * sc : -10;
+        g.strokeStyle = 'rgba(255,255,255,0.25)'; g.lineWidth = 1; g.beginPath(); g.moveTo(10, oy); g.lineTo(W - 10, oy); g.stroke();
+        g.strokeStyle = '#e6e4ee'; g.lineWidth = 4; g.beginPath(); g.moveTo(tx, oy); g.lineTo(tx, Math.max(ty, -10)); g.stroke();
+        g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath(); g.moveTo(ox, oy);
+        if (isFinite(w.V)) g.lineTo(tx, ty); else g.lineTo(ox, -10); g.stroke();
+        g.fillStyle = '#d4a052'; g.beginPath(); g.arc(ox, oy, 5, 0, 2 * Math.PI); g.fill(); txt(g, 'O', ox - 6, oy + 20, '#d4a052');
+        // the reader's own breadth H, as a bar at this figure's scale
+        const hb = S.H * sc; if (hb > 0.5 && hb < W) { g.strokeStyle = '#d96e5b'; g.lineWidth = 2; g.beginPath(); g.moveTo(ox, oy + 28); g.lineTo(ox + hb, oy + 28); g.stroke(); txt(g, '1 H', ox + Math.min(hb, W - 60) + 4, oy + 32, '#d96e5b', 11); }
+        else txt(g, `1 H is ${hb <= 0.5 ? 'below a pixel' : 'wider than the figure'} here`, ox, oy + 32, '#d96e5b', 11);
+        if (S.account) {
+            txt(g, `the writer's account: V* = ${fmt(w.V)} H, d = ${fmt(w.d)} H`, 10, 18, '#e6e4ee');
+            txt(g, `V*/d = ${fmt(w.V)} / ${fmt(w.d)} = ${fmt(r.ratio)}  (a sum the reader never does)`, 10, 36, '#e6e4ee');
+        } else txt(g, 'the reader holds the ray, not V* or d', 10, 18);
+        // the flat screen: unbounded
+        [g, W, H] = fit($('screen'));
+        const sy = H / 2, smax = 4, sx = u => 20 + (W - 40) * Math.min(u, smax) / smax;
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(20, sy); g.lineTo(W - 20, sy); g.stroke();
+        for (let u = 0; u <= smax; u++) { g.beginPath(); g.moveTo(sx(u), sy - 4); g.lineTo(sx(u), sy + 4); g.stroke(); txt(g, String(u), sx(u) - 3, sy + 20, '#8a8a96', 10); }
+        if (r.image <= smax) { g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(sx(r.image), sy, 6, 0, 2 * Math.PI); g.fill(); }
+        else txt(g, r.image === Infinity ? 'the image has left the screen: ∞' : `off the screen, at ${fmt(r.image)}`, W - 250, sy - 12, '#d96e5b');
+        txt(g, 'flat screen: the image at V*/d', 10, 18);
+        // the turn: bounded
+        [g, W, H] = fit($('turn'));
+        const R0 = Math.min(H - 30, W / 2 - 20), cx = 30, cy = H - 15;
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.lineWidth = 1.5; g.beginPath(); g.arc(cx, cy, R0, -Math.PI / 2, 0); g.stroke();
+        g.strokeStyle = 'rgba(212,160,82,0.6)'; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx + R0 * Math.SQRT1_2, cy - R0 * Math.SQRT1_2); g.stroke(); g.setLineDash([]);
+        g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx + R0 * r.h, cy - R0 * r.v); g.stroke();
+        g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(cx + R0 * r.h, cy - R0 * r.v, 5, 0, 2 * Math.PI); g.fill();
+        const bx = cx + R0 + 30, bw = W - bx - 20;
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(bx, cy - 20); g.lineTo(bx + bw, cy - 20); g.stroke();
+        g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(bx + bw * r.turn, cy - 20, 5, 0, 2 * Math.PI); g.fill();
+        txt(g, '0', bx - 3, cy - 2, '#8a8a96', 10); txt(g, '½ corner', bx + bw / 2 - 12, cy - 2, '#d4a052', 10); txt(g, '1 horizon', bx + bw - 40, cy - 2, '#8a8a96', 10);
+        txt(g, `[h : v] = [${r.h.toFixed(4)} : ${r.v.toFixed(4)}]`, bx, 30, '#e6e4ee');
+        txt(g, `the turn (2/π)·arctan = ${r.turn.toFixed(4)}`, bx, 48, '#e6e4ee');
+        // the ruler reader
+        [g, W, H] = fit($('ruler'));
+        const ru = ruler(w.V, w.d, S.H);
+        txt(g, `ruler reader, in its own H:  V*/H = ${fmt(ru.a)}   d/H = ${fmt(ru.b)}   their quotient ${fmt(ru.q)}`, 10, 24, '#e6e4ee');
+        txt(g, 'its amounts move with k; the quotient does not; it held breadths to get it: it wrote first', 10, 48, '#d96e5b');
+        const lg = x => isFinite(x) ? Math.log10(x) : 9, bar = (y, v, col) => { const u = Math.max(0, Math.min(1, (lg(v) + 5) / 14)); g.fillStyle = col; g.fillRect(10, y, (W - 20) * u, 12); };
+        bar(62, ru.a, '#b59cf0'); bar(82, ru.b, '#b59cf0'); txt(g, 'log scale, 10⁻⁵ … 10⁹', 10, 112, '#8a8a96', 10);
+        $('hud').textContent = `k = ${fmt(w.k)}: the reading [h : v] = [${r.h.toFixed(6)} : ${r.v.toFixed(6)}], ${r.theta.toFixed(4)}° above the axis` +
+            `${S.inf ? '; an infinite breadth: the horizon, at no cost to the reader' : ''}`;
+    }
+    function set(o = {}) {
+        for (const k of ['lv', 'ld', 'lk']) if (o[k] !== undefined) { S[k] = +o[k]; $(k).value = S[k]; }
+        if (o.inf !== undefined) S.inf = !!o.inf;
+        if (o.account !== undefined) S.account = !!o.account;
+        $('inf').classList.toggle('on', S.inf); $('account').classList.toggle('on', S.account);
+        draw(); return state();
+    }
+    const state = () => { const w = world(); return { ...S, V: w.V, d: w.d, k: w.k, reading: reading(w.V, w.d), ruler: ruler(w.V, w.d, S.H) }; };
+    for (const k of ['lv', 'ld', 'lk']) $(k).addEventListener('input', () => set({ [k]: $(k).value, ...(k === 'lv' ? { inf: false } : {}) }));
+    $('inf').addEventListener('click', () => set({ inf: !S.inf }));
+    $('account').addEventListener('click', () => set({ account: !S.account }));
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search), init = {};
+    if (q.has('V')) { if (q.get('V') === 'inf') init.inf = true; else init.lv = Math.min(3, Math.max(-2, +q.get('V') || 0)); }
+    if (q.has('d')) init.ld = Math.min(3, Math.max(-1, +q.get('d') || 0));
+    if (q.has('k')) init.lk = Math.min(6, Math.max(-3, +q.get('k') || 0));
+    if (q.get('account') === '1') init.account = true;
+    set(init);
+
+    window.__pinhole = { reading, ruler, set, state };
+})();
+</script>
+</body>
+</html>

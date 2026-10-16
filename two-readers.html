@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Two readers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    two-readers.html: the angle and the radius (16 October 2026, Tom: "build all three demos"; SPN R304, R306, R307).
+    A standalone page like facing.html. One shape, ln r = a₀ + ρ·f(θ) about a centre C (OFS §7.4), read by two pivots:
+      the central reader at C: its directions θₖ = 2πk/N are laid out before anything arrives (equal turns, equal arcs),
+        and what arrives along each is the radius rₖ, an amount; every rₖ carries the one factor e^{a₀}, which no reading
+        fixes, so the panel shows the shape in amounts, rₖ over their geometric mean, and not the size;
+      the inscribed reader at home A, the outline's point at θ = π: it receives the direction α of each point of the upper
+        half from A, the ratio v/h = tan α, and no amount.
+    "Scale the world" (a₀) is a homothety about C: no direction from A moves and the central shape does not move (exact).
+    The writer (from nowhere) draws the shape at its true size only with all three: the addresses, the amounts and one
+    amount carried in (the radius along θ = 0, in H, as one known move gives it, OFS §10 step 6).
+    The statistics strip: a uniform sweep from each pivot, seeded; the inscribed readings' median settles at the corner
+    (1) and their mean climbs; the central readings' mean settles.
+    Geometry only: H is the reader's own breadth, a₀ = ln κ, κ = V*/H; no physics.
+    Links: ?shape=circle|egg|star|lumpy&rho=&a0=&writer=addresses,amounts,unit. Test hook: window.__twoReaders.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 76ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button, select { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 200px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    .teal { color: var(--teal) } .gold { color: var(--gold) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Two readers</h1>
+    <p class="lede">One shape, two places to stand. From the centre, every direction is laid out before anything arrives, so a
+    direction says nothing; what arrives along it is how far the outline lies, an amount. From a point of the outline,
+    what arrives is the direction itself, a ratio, and no amount. <span class="gold">The central reader</span> gets the
+    radius, <span class="teal">the inscribed reader</span> the angle. Neither gets the unit: scale the world and neither
+    reading moves. Only the writer, holding all three, draws the thing at its size.</p>
+    <div class="panel">
+        <div class="row">
+            <label for="shape">shape</label>
+            <select id="shape"><option value="circle">circle</option><option value="egg">egg</option>
+                <option value="star">star</option><option value="lumpy" selected>lumpy</option></select>
+            <label for="rho">ρ</label><input id="rho" type="range" min="0" max="1" step="0.01" value="1">
+        </div>
+        <div class="row" style="margin-top:6px">
+            <label for="a0">scale the world, a₀ = ln(V*/H)</label><input id="a0" type="range" min="-2" max="2" step="0.01" value="0">
+            <button id="play">play the scale</button>
+        </div>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="world" height="340"></canvas><p class="cap">The world, as only the view from nowhere sees it:
+            the outline, the centre C with its fixed directions (gold) and home A with its rays (teal).</p></div>
+            <div>
+                <canvas id="insc" height="150"></canvas><p class="cap">What the inscribed reader receives: directions,
+                laid by v/h on the turn, (2/π)·arctan(v/h), the corner at ½. No lengths anywhere.</p>
+                <canvas id="cent" height="150" style="margin-top:8px"></canvas><p class="cap">What the central reader
+                receives: an amount along each of its directions. The axis has no unit: the common factor is not read, so
+                it holds the shape in amounts (each over their geometric mean), not the size.</p>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="row">
+            <span style="color:var(--dim)">the writer holds</span>
+            <button id="w-addresses">the addresses</button>
+            <button id="w-amounts">the amounts</button>
+            <button id="w-unit">one amount carried in</button>
+        </div>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="writer" height="260"></canvas><p class="cap">The writer, from nowhere: the outline at its true
+            size in the reader's own H, only with all three. The unit is one amount carried in from outside, the radius
+            along one direction in H, as one known move gives it.</p></div>
+            <div><canvas id="stats" height="260"></canvas><p class="cap">A uniform sweep from each pivot (log of the count
+            across). <span class="teal">Inscribed</span>: the median settles at the corner, 1; the mean (dashed) keeps
+            climbing. <span class="gold">Central</span>: the mean settles, since amounts add.</p></div>
+        </div>
+        <div id="hud"></div>
+    </div>
+    <p class="note">Polar coordinates about a pivot split a point into an angle and a radius; the two sweeps take one each.
+    The inscribed reading is the ratio itself: the projection through the standpoint has done the dividing. The central
+    reading is an amount, in a unit no reading fixes. Behind it: <i>Observation from Somewhere</i> §9, "The inscribed
+    reading is the ratio itself" and "The central reading is an amount", and §7.4 on the shape as a perturbation of the
+    circle. Other demos: <a href="pinhole.html">the projection does the dividing</a>, <a href="write.html">writing costs
+    one amount a step</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), TAU = 2 * Math.PI;
+    const SHAPES = {
+        circle: () => 0,
+        egg: t => 0.22 * Math.cos(t) + 0.06 * Math.cos(2 * t),
+        star: t => 0.2 * Math.cos(5 * t),
+        lumpy: t => 0.15 * Math.cos(2 * t) + 0.08 * Math.cos(3 * t + 0.4) + 0.05 * Math.cos(6 * t + 1)
+    };
+    const NC = 24, NI = 24;
+    const S = { shape: 'lumpy', rho: 1, a0: 0, writer: { addresses: false, amounts: false, unit: false } };
+    const radius = (p, t) => Math.exp(p.a0 + p.rho * SHAPES[p.shape](t));
+    const point = (p, t) => { const r = radius(p, t); return [r * Math.cos(t), r * Math.sin(t)]; };
+    const home = p => point(p, Math.PI);
+    // the inscribed reader at A: the direction of each point of the upper half, as α from the chord A→C, and its ratio
+    function inscribed(p, n = NI) {
+        const [ax, ay] = home(p), out = [];
+        for (let k = 1; k < n; k++) {
+            const [x, y] = point(p, Math.PI * k / n), a = Math.atan2(y - ay, x - ax);
+            out.push({ alpha: a, ratio: Math.tan(a) });
+        }
+        return out;
+    }
+    // the central reader at C: an amount along each fixed direction; what it can hold is the shape, each over their geometric mean
+    function central(p, n = NC) {
+        const raw = [], dirs = [];
+        for (let k = 0; k < n; k++) { dirs.push(TAU * k / n); raw.push(radius(p, TAU * k / n)); }
+        const gm = Math.exp(raw.reduce((s, r) => s + Math.log(r), 0) / n);
+        return { dirs, raw, shape: raw.map(r => r / gm) };
+    }
+    // the writer: needs the addresses, the amounts and one amount carried in (the radius along θ = 0, in H)
+    function writer(p, w) {
+        const missing = ['addresses', 'amounts', 'unit'].filter(k => !w[k]);
+        if (missing.length) return { ok: false, missing };
+        const c = central(p), carried = radius(p, 0), f = carried / c.shape[0];
+        const radii = c.shape.map(g => g * f);
+        return { ok: true, missing: [], radii, dirs: c.dirs, carried };
+    }
+    // a seeded uniform sweep from each pivot
+    function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+    function stats(p, n = 20000, seed = 7) {
+        const R = rng(seed), ins = [], marks = new Set();
+        for (let j = 0; j <= 8 * Math.log10(n); j++) marks.add(Math.round(10 ** (j / 8)));
+        let sumI = 0, sumC = 0, gm = Math.exp(p.a0 + p.rho * meanF(p)); const out = [];
+        for (let i = 1; i <= n; i++) {
+            // inscribed: A's ray turned uniformly over the facing, read as the ratio v/h = tan α
+            const a = (Math.PI / 2) * R(), x = Math.tan(a); ins.push(x); sumI += x;
+            // central: C's radius at a uniform direction, an amount (shown over the geometric mean, the unit not read)
+            const r = radius(p, TAU * R()) / gm; sumC += r;
+            if (marks.has(i) || i === n) out.push({ n: i, median: median(ins), meanI: sumI / i, meanC: sumC / i });
+        }
+        return out;
+    }
+    function meanF(p) { let s = 0; const m = 720; for (let k = 0; k < m; k++) s += SHAPES[p.shape](TAU * k / m); return s / m; }
+    function median(a) { const b = a.slice().sort((x, y) => x - y), m = b.length >> 1; return b.length % 2 ? b[m] : (b[m - 1] + b[m]) / 2; }
+    function exactCentralMean(p) { let s = 0; const m = 4000, gm = Math.exp(p.a0 + p.rho * meanF(p));
+        for (let k = 0; k < m; k++) s += radius(p, TAU * (k + 0.5) / m); return s / m / gm; }
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.fillStyle = '#000'; g.fillRect(0, 0, w, hh); return [g, w, hh];
+    }
+    const txt = (g, s, x, y, c = '#8a8a96', size = 12) => { g.fillStyle = c; g.font = `${size}px DM Mono, monospace`; g.fillText(s, x, y); };
+    let statsCache = null, statsKey = '';
+    function draw() {
+        const p = S;
+        // the world, at a fixed screen scale so that scaling the world shows
+        let [g, W, H] = fit($('world'));
+        const cx = W / 2, cy = H / 2, sc = Math.min(W, H) * 0.16, P = ([x, y]) => [cx + x * sc, cy - y * sc];
+        g.strokeStyle = 'rgba(255,255,255,0.12)'; g.lineWidth = 1;
+        for (let k = 1; k <= 3; k++) { g.beginPath(); g.arc(cx, cy, k * sc, 0, TAU); g.stroke(); }
+        txt(g, '1 H', cx + sc + 3, cy - 3, 'rgba(255,255,255,0.35)', 10);
+        const c = central(p);
+        g.strokeStyle = 'rgba(212,160,82,0.45)';
+        for (const t of c.dirs) { g.beginPath(); g.moveTo(cx, cy); g.lineTo(...P(point(p, t))); g.stroke(); }
+        const A = home(p);
+        g.strokeStyle = 'rgba(140,230,205,0.5)';
+        for (let k = 1; k < NI; k++) { g.beginPath(); g.moveTo(...P(A)); g.lineTo(...P(point(p, Math.PI * k / NI))); g.stroke(); }
+        g.strokeStyle = '#e6e4ee'; g.lineWidth = 2; g.beginPath();
+        for (let k = 0; k <= 360; k++) { const q = P(point(p, TAU * k / 360)); k ? g.lineTo(...q) : g.moveTo(...q); } g.stroke();
+        g.fillStyle = '#d4a052'; g.beginPath(); g.arc(cx, cy, 5, 0, TAU); g.fill(); txt(g, 'C', cx + 7, cy + 14, '#d4a052');
+        g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(...P(A), 5, 0, TAU); g.fill(); txt(g, 'A', P(A)[0] - 16, P(A)[1] + 4, '#8ce6cd');
+        txt(g, `the world from nowhere: V*/H = e^a₀ = ${Math.exp(p.a0).toFixed(3)}`, 10, 18);
+
+        // the inscribed reader: directions only, laid by (2/π)·arctan(v/h)
+        [g, W, H] = fit($('insc'));
+        const ins = inscribed(p), x0 = 20, x1 = W - 20, y = H * 0.58;
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(x0, y); g.lineTo(x1, y); g.stroke();
+        g.strokeStyle = '#d4a052'; g.setLineDash([3, 3]); g.beginPath(); g.moveTo((x0 + x1) / 2, y - 34); g.lineTo((x0 + x1) / 2, y + 22); g.stroke(); g.setLineDash([]);
+        txt(g, 'v/h = 1', (x0 + x1) / 2 - 22, y + 36, '#d4a052', 11); txt(g, '0', x0 - 4, y + 36, '#8a8a96', 11); txt(g, '∞', x1 - 4, y + 36, '#8a8a96', 11);
+        g.strokeStyle = '#8ce6cd'; g.lineWidth = 2;
+        for (const r of ins) { const u = r.alpha / (Math.PI / 2), xx = x0 + (x1 - x0) * u; g.beginPath(); g.moveTo(xx, y - 22); g.lineTo(xx, y + 8); g.stroke(); }
+        txt(g, 'inscribed reader: ratios, no amounts', 10, 18, '#8ce6cd');
+
+        // the central reader: amounts on its fixed directions, over their geometric mean
+        [g, W, H] = fit($('cent'));
+        const bw = (W - 30) / NC, base = H - 22, top = 40, gmax = 2.2;
+        g.strokeStyle = 'rgba(255,255,255,0.2)'; g.beginPath(); g.moveTo(15, base); g.lineTo(W - 15, base); g.stroke();
+        const y1 = base - (base - top) / gmax; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(15, y1); g.lineTo(W - 15, y1); g.stroke(); g.setLineDash([]);
+        g.fillStyle = '#d4a052';
+        c.shape.forEach((s, k) => { const hgt = Math.min(base - top, (base - top) * s / gmax); g.fillRect(15 + k * bw + 1, base - hgt, bw - 2, hgt); });
+        txt(g, 'central reader: amounts, no ratio', 10, 18, '#d4a052'); txt(g, 'the common factor not read', 10, 34, '#8a8a96', 11);
+        txt(g, 'geometric mean', W - 118, y1 - 4, '#8a8a96', 10);
+
+        // the writer
+        [g, W, H] = fit($('writer'));
+        const w = writer(p, S.writer);
+        if (!w.ok) {
+            txt(g, 'nothing written yet: missing', 14, 28, '#d96e5b', 13);
+            w.missing.forEach((m, i) => txt(g, '· ' + ({ addresses: 'the addresses (where each amount lies)', amounts: 'the amounts (how far)', unit: 'one amount carried in (the unit)' })[m], 22, 52 + 20 * i, '#e6e4ee'));
+        } else {
+            const ccx = W / 2, ccy = H / 2, s2 = Math.min(W, H) * 0.12;
+            g.strokeStyle = 'rgba(255,255,255,0.12)';
+            for (let k = 1; k <= 4; k++) { g.beginPath(); g.arc(ccx, ccy, k * s2, 0, TAU); g.stroke(); }
+            g.strokeStyle = '#e6e4ee'; g.lineWidth = 2; g.beginPath();
+            w.radii.forEach((r, k) => { const q = [ccx + r * Math.cos(w.dirs[k]) * s2, ccy - r * Math.sin(w.dirs[k]) * s2]; k ? g.lineTo(...q) : g.moveTo(...q); });
+            g.closePath(); g.stroke();
+            txt(g, `written in H: radius along θ = 0 is ${w.carried.toFixed(3)} H (carried in)`, 10, 18, '#e6e4ee');
+            txt(g, 'rings: 1, 2, 3, 4 H', 10, H - 10, '#8a8a96', 11);
+        }
+
+        // the statistics strip
+        const key = `${p.shape}|${p.rho}`;
+        if (key !== statsKey) { statsCache = stats(p); statsKey = key; }
+        [g, W, H] = fit($('stats'));
+        const L = Math.log10(statsCache[statsCache.length - 1].n), X = n => 30 + (W - 45) * Math.log10(n) / L, ymax = 4, Y = v => H - 24 - (H - 64) * Math.min(v, ymax) / ymax;
+        g.strokeStyle = 'rgba(255,255,255,0.2)'; g.beginPath(); g.moveTo(30, Y(0)); g.lineTo(W - 15, Y(0)); g.moveTo(30, Y(0)); g.lineTo(30, Y(ymax)); g.stroke();
+        g.setLineDash([2, 4]); g.beginPath(); g.moveTo(30, Y(1)); g.lineTo(W - 15, Y(1)); g.stroke(); g.setLineDash([]);
+        txt(g, '1', 16, Y(1) + 4, '#8a8a96', 11); txt(g, 'count →', W - 70, H - 8, '#8a8a96', 11);
+        const line = (key2, col, dash) => { g.strokeStyle = col; g.lineWidth = 2; g.setLineDash(dash); g.beginPath();
+            statsCache.forEach((s, i) => { const q = [X(s.n), Y(s[key2])]; i ? g.lineTo(...q) : g.moveTo(...q); }); g.stroke(); g.setLineDash([]); };
+        line('median', '#8ce6cd', []); line('meanI', '#8ce6cd', [6, 4]); line('meanC', '#d4a052', []);
+        const last = statsCache[statsCache.length - 1];
+        txt(g, `n ${last.n}: inscribed median ${last.median.toFixed(3)}, mean ${last.meanI.toFixed(2)}`, 10, 18, '#8ce6cd', 11);
+        txt(g, `central mean ${last.meanC.toFixed(3)}`, 10, 34, '#d4a052', 11);
+
+        const ex = exactCentralMean(p);
+        $('hud').textContent =
+            `inscribed: ${ins.length} directions from A, ${(ins[0].alpha * 180 / Math.PI).toFixed(1)}° to ${(ins[ins.length - 1].alpha * 180 / Math.PI).toFixed(1)}° from the chord${ins.some(r => r.alpha > Math.PI / 2) ? ' (some past square: this outline is not a circle through A)' : ''}; scaling the world moves none\n` +
+            `central: ${NC} amounts, raw ${c.raw[0].toFixed(3)} … (each × e^a₀), held as the shape ${c.shape[0].toFixed(3)} … (unchanged by a₀)\n` +
+            `central mean over a uniform turn, exactly ${ex.toFixed(4)} (shape units); the inscribed readings have no mean\n` +
+            `writer: ${w.ok ? 'written, the outline at its true size in H' : 'missing ' + w.missing.join(', ')}`;
+    }
+    const sync = () => { for (const k of ['addresses', 'amounts', 'unit']) $('w-' + k).classList.toggle('on', S.writer[k]); };
+    function set(o = {}) {
+        if (o.shape && SHAPES[o.shape]) { S.shape = o.shape; $('shape').value = o.shape; }
+        if (o.rho !== undefined) { S.rho = +o.rho; $('rho').value = S.rho; }
+        if (o.a0 !== undefined) { S.a0 = +o.a0; $('a0').value = S.a0; }
+        if (o.writer) Object.assign(S.writer, o.writer);
+        sync(); draw(); return state();
+    }
+    const state = () => ({ shape: S.shape, rho: S.rho, a0: S.a0, writer: { ...S.writer } });
+    $('shape').addEventListener('change', () => set({ shape: $('shape').value }));
+    $('rho').addEventListener('input', () => set({ rho: $('rho').value }));
+    $('a0').addEventListener('input', () => set({ a0: $('a0').value }));
+    for (const k of ['addresses', 'amounts', 'unit']) $('w-' + k).addEventListener('click', () => set({ writer: { [k]: !S.writer[k] } }));
+    let playing = false, ph = 0, lastT = null;
+    $('play').addEventListener('click', () => { playing = !playing; $('play').classList.toggle('on', playing); $('play').textContent = playing ? 'pause' : 'play the scale'; });
+    function tick(now) { if (playing) { const dt = lastT === null ? 0 : (now - lastT) / 1000; ph += dt * 0.6; set({ a0: (1.6 * Math.sin(ph)).toFixed(3) }); } lastT = now; requestAnimationFrame(tick); }
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search);
+    const init = {};
+    if (q.has('shape')) init.shape = q.get('shape');
+    if (q.has('rho')) init.rho = Math.min(1, Math.max(0, +q.get('rho') || 0));
+    if (q.has('a0')) init.a0 = Math.min(2, Math.max(-2, +q.get('a0') || 0));
+    if (q.has('writer')) { init.writer = {}; for (const k of q.get('writer').split(',')) if (k in S.writer) init.writer[k] = true; }
+    set(init); requestAnimationFrame(tick);
+
+    window.__twoReaders = { radius, inscribed, central, writer, stats, exactCentralMean, set, state,
+        params: o => ({ shape: 'lumpy', rho: 1, a0: 0, ...o }) };
+})();
+</script>
+</body>
+</html>

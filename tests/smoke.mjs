@@ -772,6 +772,88 @@ try {
   if (!brOk) failures.push(`[wedge-browse.html] ${JSON.stringify({ ...br, hud: br.hud.slice(0, 300) })}`);
   console.log(`${failures.length === before27 ? 'ok  ' : 'FAIL'} wedge-browse.html (2^53 − 1 items, every halving adding exactly; the drawn cells and items adding to all of them in ${br.totals.length} states; at w = 1 the wedge itself to ${br.wedge.toExponential(1)}; the gold at tan 1 for a second moves the blue ${br.zeta.toFixed(3)}, letting go re-centres on it; the radius keeps the blue's place, or moves the window to it; item 4,503,599,627,370,495 found by index at the triple corner, its total at the corner; from home nothing moves with H; a rebuild ${br.ms.toFixed(0)} ms)`);
 
+  // ── 28. two-readers.html: the inscribed reader's directions and the central reader's shape do not move when the world
+  //    is scaled (a₀); the central amounts move together by e^Δa₀; the writer writes only with all three, at the true
+  //    size; a uniform sweep's inscribed median settles at the corner, its mean climbs, the central mean settles ──
+  current = 'two-readers.html';
+  const before28 = failures.length;
+  await page.goto(new URL('two-readers.html', base).href, { waitUntil: 'load' });
+  const tr = await page.evaluate(() => {
+    const T = __twoReaders, out = { insc: 0, shape: 0, factor: 0, writer: [], size: 0 };
+    for (const shape of ['circle', 'egg', 'star', 'lumpy']) for (const rho of [0, 0.5, 1]) {
+      const p0 = T.params({ shape, rho, a0: 0 }), i0 = T.inscribed(p0), c0 = T.central(p0);
+      for (const a0 of [-2, 0.7, 2]) {
+        const p = T.params({ shape, rho, a0 }), i = T.inscribed(p), c = T.central(p);
+        i.forEach((r, k) => { out.insc = Math.max(out.insc, Math.abs(r.alpha - i0[k].alpha)); });
+        c.shape.forEach((s, k) => { out.shape = Math.max(out.shape, Math.abs(s - c0.shape[k])); });
+        c.raw.forEach((r, k) => { out.factor = Math.max(out.factor, Math.abs(r / c0.raw[k] / Math.exp(a0) - 1)); });
+        const w = T.writer(p, { addresses: true, amounts: true, unit: true });
+        w.radii.forEach((r, k) => { out.size = Math.max(out.size, Math.abs(r / T.radius(p, c.dirs[k]) - 1)); });
+      }
+    }
+    const circ = T.inscribed(T.params({ shape: 'circle', rho: 0 }));
+    out.halfAngle = Math.max(...circ.map((r, k) => Math.abs(r.alpha - Math.PI * (k + 1) / 24 / 2)));
+    const p = T.params({});
+    for (const m of [0, 1, 2, 3, 4, 5, 6, 7]) out.writer.push(T.writer(p, { addresses: !!(m & 1), amounts: !!(m & 2), unit: !!(m & 4) }).ok);
+    const st = T.stats(p, 20000, 7), early = st.find(s => s.n === 100), last = st[st.length - 1];
+    out.median = last.median; out.meanEarly = early.meanI; out.meanLast = last.meanI; out.cmean = last.meanC; out.cexact = T.exactCentralMean(p);
+    return out;
+  });
+  const trOk = tr.insc < 1e-12 && tr.shape < 1e-12 && tr.factor < 1e-12 && tr.size < 1e-12 && tr.halfAngle < 1e-12 &&
+    tr.writer.every((ok, m) => ok === (m === 7)) && Math.abs(tr.median - 1) < 0.05 && tr.meanLast > tr.meanEarly + 1 &&
+    Math.abs(tr.cmean - tr.cexact) < 0.01;
+  if (!trOk) failures.push(`[two-readers.html] ${JSON.stringify(tr)}`);
+  console.log(`${failures.length === before28 ? 'ok  ' : 'FAIL'} two-readers.html (scaling the world moves no direction from home (${tr.insc.toExponential(0)}) and not the central shape (${tr.shape.toExponential(0)}), its amounts all by e^Δa₀; on the circle the ray at half the central angle; the writer only with the addresses, the amounts and the unit, at the true size; a uniform sweep: the inscribed median ${tr.median.toFixed(3)}, its mean ${tr.meanEarly.toFixed(2)} → ${tr.meanLast.toFixed(2)}, the central mean ${tr.cmean.toFixed(4)} against ${tr.cexact.toFixed(4)})`);
+
+  // ── 29. pinhole.html: the reading [h : v] is unchanged when the world is scaled; an infinite breadth is the horizon
+  //    (0, 1), off the flat screen; the ruler reader's amounts move with the scale and only their quotient does not ──
+  current = 'pinhole.html';
+  const before29 = failures.length;
+  await page.goto(new URL('pinhole.html?V=inf', base).href, { waitUntil: 'load' });
+  const ph = await page.evaluate(() => {
+    const P = __pinhole, out = { scale: 0, quot: 0, amounts: true };
+    for (const [V, d] of [[3.2, 10], [0.01, 400], [700, 2]]) {
+      const r0 = P.reading(V, d), u0 = P.ruler(V, d);
+      for (const k of [1e-3, 7, 1e6]) {
+        const r = P.reading(k * V, k * d), u = P.ruler(k * V, k * d);
+        out.scale = Math.max(out.scale, Math.abs(r.h - r0.h), Math.abs(r.v - r0.v), Math.abs(r.theta - r0.theta));
+        out.quot = Math.max(out.quot, Math.abs(u.q / u0.q - 1));
+        if (Math.abs(u.a / u0.a / k - 1) > 1e-12 || Math.abs(u.b / u0.b / k - 1) > 1e-12) out.amounts = false;
+      }
+    }
+    const inf = P.reading(Infinity, 10), st = P.state(), c = P.reading(5, 5);
+    return { ...out, inf, page: st.reading, corner: c, image: P.reading(3, 4).image };
+  });
+  const phOk = ph.scale < 1e-12 && ph.quot < 1e-12 && ph.amounts && ph.inf.h === 0 && ph.inf.v === 1 && ph.inf.theta === 90 &&
+    ph.inf.image === Infinity && ph.page.v === 1 && Math.abs(ph.corner.theta - 45) < 1e-12 && Math.abs(ph.corner.turn - 0.5) < 1e-12 &&
+    Math.abs(ph.image - 0.75) < 1e-15;
+  if (!phOk) failures.push(`[pinhole.html] ${JSON.stringify(ph)}`);
+  console.log(`${failures.length === before29 ? 'ok  ' : 'FAIL'} pinhole.html (the reading unchanged when the world is scaled by 10⁻³, 7, 10⁶ (${ph.scale.toExponential(0)}); an infinite breadth the horizon [0 : 1], off the flat screen; equal breadth and distance at 45°, half the turn; the ruler reader's amounts move by k, only their quotient does not)`);
+
+  // ── 30. write.html: the nullities of RWT, 4, 1, 0, 0, 1, 0, 1, 0; every breadth written in A's own H from one known
+  //    move, the same from a second; B's in its own H off by H_B/H_A, agreeing after one number; metres after one notch ──
+  current = 'write.html';
+  const before30 = failures.length;
+  await page.goto(new URL('write.html', base).href, { waitUntil: 'load' });
+  const wr = await page.evaluate(() => {
+    const W = __write, out = { nul: [], eA: 0, eA2: 0, eB: 0, eBA: 0, eM: 0, free0: true, free6: true };
+    for (const seed of [13, 5, 99]) {
+      W.set({ seed, step: 0 }); const s = W.state(); out.nul.push(s.nullities.join(','));
+      if (s.written.some(r => r.A !== undefined)) out.free0 = false;
+      W.set({ step: 2 }); for (const r of W.state().written) out.eA = Math.max(out.eA, Math.abs(r.A / r.truth.inHA - 1));
+      W.set({ step: 3 }); for (const r of W.state().written) out.eA2 = Math.max(out.eA2, Math.abs(r.A / r.truth.inHA - 1));
+      W.set({ step: 4 }); const s4 = W.state(); for (const r of s4.written) out.eB = Math.max(out.eB, Math.abs(r.A / r.B / (s4.HB / s4.HA) - 1));
+      W.set({ step: 5 }); for (const r of W.state().written) out.eBA = Math.max(out.eBA, Math.abs(r.BinA / r.A - 1));
+      W.set({ step: 6 }); if (W.state().written.some(r => r.m !== undefined)) out.free6 = false;
+      W.set({ step: 7 }); for (const r of W.state().written) out.eM = Math.max(out.eM, Math.abs(r.m / r.truth.m - 1));
+    }
+    W.set({ seed: 13, step: 0 });
+    return out;
+  });
+  const wrOk = wr.nul.every(n => n === '4,1,0,0,1,0,1,0') && wr.free0 && wr.free6 && Math.max(wr.eA, wr.eA2, wr.eB, wr.eBA, wr.eM) < 1e-9;
+  if (!wrOk) failures.push(`[write.html] ${JSON.stringify(wr)}`);
+  console.log(`${failures.length === before30 ? 'ok  ' : 'FAIL'} write.html (still free at each step ${wr.nul[0]}, in three scenes; one known move writes every breadth in A's own H (${wr.eA.toExponential(0)}), a second the same; B's off by H_B/H_A until one number is sent; metres after one notch (${wr.eM.toExponential(0)}))`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

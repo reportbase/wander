@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Writing, step by step</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    write.html: reading is free, writing costs one amount a step (16 October 2026, Tom: "build all three demos"; SPN R297,
+    R298; RWT, plans/rwt-plan.md, rwt/rwt.py, played step by step). A standalone page like facing.html.
+    Four targets, each a half-breadth a and a place (d, φ) from reader A's first standpoint, amounts in metres, seeded.
+    Every reading is a bearing and a half-angle reading a/distance. What is not fixed is counted as the nullity of the
+    Jacobian of the log-readings (and any known values) in the log-amounts, computed on the page (central differences,
+    rank by pivoted elimination). The steps:
+      0 one standpoint: nullity 4, each target's size and distance free together, nothing written;
+      1 a move of unknown length: nullity 1, a common scale;
+      2 the move's length known, H: nullity 0, every breadth written in A's own H (triangulation across the baseline);
+      3 a second known move: nullity 0, the same breadths;
+      4 a second reader B with its own H: both write in their own breadth, differing by H_B/H_A at every target, which
+        neither alone fixes: nullity 1;
+      5 B sends one number (its first breadth): nullity 0, all agree;
+      6 in metres: nullity 1 until a notch is agreed;
+      7 one notch, H_A = 0.7 m: nullity 0, every breadth in metres.
+    Geometry only. Links: ?step=0..7&seed=. Test hook: window.__write.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 76ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 3fr 2fr; gap: 12px }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #count { font: 400 54px/1 'DM Serif Display', Georgia, serif; color: var(--gold) }
+    #what { color: var(--bright); margin: 6px 0 10px }
+    table { border-collapse: collapse; width: 100%; font-size: 12.5px }
+    td, th { border-bottom: 1px solid var(--line); padding: 4px 6px; text-align: right }
+    th { color: var(--dim); font-weight: 400 } td:first-child, th:first-child { text-align: left }
+    .free { color: var(--red) }
+    .note { color: var(--dim); font-size: 12.5px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Writing, step by step</h1>
+    <p class="lede">Reading is free: from one standpoint every ratio is there. Writing a breadth costs one amount carried in
+    from outside the readings, and each step costs exactly one: a move of known length writes in the reader's own H, one
+    number exchanged writes for another reader, one agreed notch writes in a public unit. The counter is what is still
+    free, counted exactly.</p>
+    <div class="panel">
+        <div class="row" id="steps"></div>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="plan" height="360"></canvas><p class="cap">The plan, as only the view from nowhere sees it: four
+            targets (their true breadths), the standpoints (A teal, B violet) and the rays read.</p></div>
+            <div>
+                <div style="color:var(--dim)">still free</div><div id="count">4</div>
+                <div id="what"></div>
+                <table id="table"></table>
+            </div>
+        </div>
+    </div>
+    <p class="note">The count is the nullity of the Jacobian of what is read and known with respect to every amount, as in
+    <code>rwt/rwt.py</code> (there exact to 40 digits; here in double precision). Behind it: <i>Observation from
+    Somewhere</i> §9, "Reading and writing"; Proposition 8 (no reading gives V*/H; every breadth is an amount from outside).
+    Other demos: <a href="two-readers.html">two readers</a>, <a href="pinhole.html">the projection does the dividing</a>,
+    <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), K = 4, HA = 0.7, HB = 1.9, QA = 0.4, QB = 2.0, BX = 15, BY = -8;
+    const STEPS = [
+        ['one standpoint', 'Every reading is a ratio. Each target\'s size and distance trade freely: nothing is written.'],
+        ['a move, length unknown', 'Two standpoints, but the baseline\'s length unknown: one common scale is free.'],
+        ['the move\'s length known', 'One displacement of known length, H: every breadth written in A\'s own H.'],
+        ['a second known move', 'A second move adds nothing to the scale: the same breadths.'],
+        ['a second reader, B', 'B writes in its own H. The two differ by H_B/H_A, which neither alone fixes.'],
+        ['B sends one number', 'One number exchanged (B\'s first breadth): all four agree.'],
+        ['in metres', 'Everything so far is in A\'s own H. In metres one scale is free again.'],
+        ['one notch agreed', 'H_A = 0.7 m agreed: every breadth written in a public unit.']
+    ];
+    const S = { step: 0, seed: 13, scene: null };
+    function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+    function scene(seed) { const R = rng(seed); return Array.from({ length: K }, () => ({ a: 0.5 + 2.5 * R(), d: 20 + 180 * R(), ph: 0.3 + 2.5 * R() })); }
+    // a bearing and the log half-angle reading of each target, from (px, py)
+    function readingsFrom(t, px, py) {
+        const out = [];
+        for (const { a, d, ph } of t) { const x = d * Math.cos(ph) - px, y = d * Math.sin(ph) - py; out.push(Math.atan2(y, x), Math.log(a) - Math.log(Math.hypot(x, y))); }
+        return out;
+    }
+    const unpack = u => Array.from({ length: K }, (_, k) => ({ a: Math.exp(u[3 * k]), d: Math.exp(u[3 * k + 1]), ph: u[3 * k + 2] }));
+    const pack = t => t.flatMap(({ a, d, ph }) => [Math.log(a), Math.log(d), ph]);
+    function rank(J) {
+        const m = J.length, n = J[0].length, A = J.map(r => r.slice()); let rk = 0;
+        const scale = Math.max(...A.flat().map(Math.abs)) || 1;
+        for (let c = 0; c < n && rk < m; c++) {
+            let p = rk; for (let i = rk + 1; i < m; i++) if (Math.abs(A[i][c]) > Math.abs(A[p][c])) p = i;
+            if (Math.abs(A[p][c]) < 1e-7 * scale) continue;
+            [A[rk], A[p]] = [A[p], A[rk]];
+            for (let i = rk + 1; i < m; i++) { const f = A[i][c] / A[rk][c]; for (let j = c; j < n; j++) A[i][j] -= f * A[rk][j]; }
+            rk++;
+        }
+        return rk;
+    }
+    function nullity(F, u) {
+        const n = u.length, e = 1e-6, cols = [];
+        for (let j = 0; j < n; j++) { const up = u.slice(), dn = u.slice(); up[j] += e; dn[j] -= e; const a = F(up), b = F(dn); cols.push(a.map((x, i) => (x - b[i]) / (2 * e))); }
+        const J = cols[0].map((_, i) => cols.map(c => c[i]));
+        return n - rank(J);
+    }
+    // recover each target's half-breadth and distance in units of the baseline D, from two standpoints' readings
+    function recover(r1, r2, psi) {
+        return Array.from({ length: K }, (_, k) => {
+            const b1 = r1[2 * k], b2 = r2[2 * k], s1 = Math.exp(r1[2 * k + 1]);
+            const d = Math.sin(b2 - psi) / Math.sin(b2 - b1); return { a: s1 * d, d };
+        });
+    }
+    function systems(t) {
+        const tA = t.map(({ a, d, ph }) => ({ a: a / HA, d: d / HA, ph }));        // in A's own H
+        const q2 = QA + Math.PI / 2;
+        const shifted = t.map(({ a, d, ph }) => { const x = d * Math.cos(ph) - BX, y = d * Math.sin(ph) - BY; return { a, d: Math.hypot(x, y), ph: Math.atan2(y, x) }; });
+        const rA = recover(readingsFrom(t, 0, 0), readingsFrom(t, HA * Math.cos(QA), HA * Math.sin(QA)), QA);       // in units of H_A
+        const rA2 = recover(readingsFrom(t, 0, 0), readingsFrom(t, HA * Math.cos(q2), HA * Math.sin(q2)), q2);
+        const rB = recover(readingsFrom(shifted, 0, 0), readingsFrom(shifted, HB * Math.cos(QB), HB * Math.sin(QB)), QB); // in units of H_B
+        const two = (u, known) => { const tt = unpack(u), D = Math.exp(u[3 * K]); const r = readingsFrom(tt, 0, 0).concat(readingsFrom(tt, D * Math.cos(QA), D * Math.sin(QA))); if (known) r.push(u[3 * K]); return r; };
+        const three = u => { const tt = unpack(u), D = Math.exp(u[3 * K]);
+            return readingsFrom(tt, 0, 0).concat(readingsFrom(tt, D * Math.cos(QA), D * Math.sin(QA)), readingsFrom(tt, D * (Math.cos(QA) + Math.cos(q2)), D * (Math.sin(QA) + Math.sin(q2))), [u[3 * K]]); };
+        const withB = (u, sent) => { const r = two(u, true); if (sent) r.push(u[0] - u[3 * K + 1] - Math.log(rB[0].a)); return r; };
+        const metres = (u, notch) => { const tt = unpack(u), lD = u[3 * K], lHB = u[3 * K + 1], lHA = u[3 * K + 2], D = Math.exp(lD);
+            const r = readingsFrom(tt, 0, 0).concat(readingsFrom(tt, D * Math.cos(QA), D * Math.sin(QA)), [lD - lHA, u[0] - lHB - Math.log(rB[0].a)]);
+            if (notch) r.push(lHA - Math.log(0.7)); return r; };
+        const uA = pack(tA), uM = pack(t);
+        const nul = [
+            nullity(u => readingsFrom(unpack(u), 0, 0), uA),
+            nullity(u => two(u, false), uA.concat([0])),
+            nullity(u => two(u, true), uA.concat([0])),
+            nullity(three, uA.concat([0])),
+            nullity(u => withB(u, false), uA.concat([0, Math.log(HB / HA)])),
+            nullity(u => withB(u, true), uA.concat([0, Math.log(HB / HA)])),
+            nullity(u => metres(u, false), uM.concat([Math.log(HA), Math.log(HB), Math.log(HA)])),
+            nullity(u => metres(u, true), uM.concat([Math.log(HA), Math.log(HB), Math.log(HA)]))
+        ];
+        return { nul, rA, rA2, rB, ratio: rA[0].a / rB[0].a };
+    }
+    function written(step) {
+        const t = S.scene, sy = S.sys, rows = [];
+        for (let k = 0; k < K; k++) {
+            const truth = { inHA: 2 * t[k].a / HA, inHB: 2 * t[k].a / HB, m: 2 * t[k].a };
+            const row = { k, truth };
+            if (step >= 2) row.A = 2 * (step === 3 ? sy.rA2 : sy.rA)[k].a;               // full breadth V* = 2a, in H_A
+            if (step >= 4) row.B = 2 * sy.rB[k].a;                                         // in H_B
+            if (step >= 5) row.BinA = row.B * sy.ratio;                                    // B's, converted with the one number
+            if (step >= 7) row.m = row.A * 0.7;                                            // in metres, with the notch
+            rows.push(row);
+        }
+        return rows;
+    }
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.fillStyle = '#000'; g.fillRect(0, 0, w, hh); return [g, w, hh];
+    }
+    function draw() {
+        const st = S.step, t = S.scene;
+        const [g, W, H] = fit($('plan'));
+        const pts = t.map(({ d, ph }) => [d * Math.cos(ph), d * Math.sin(ph)]).concat([[0, 0], [BX, BY]]);
+        const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]), x0 = Math.min(...xs) - 10, x1 = Math.max(...xs) + 10, y0 = Math.min(...ys) - 10, y1 = Math.max(...ys) + 10;
+        const sc = Math.min((W - 20) / (x1 - x0), (H - 20) / (y1 - y0)), P = ([x, y]) => [10 + (x - x0) * sc, H - 10 - (y - y0) * sc];
+        const stands = [[0, 0, '#8ce6cd']];
+        if (st >= 1) stands.push([HA * Math.cos(QA), HA * Math.sin(QA), '#8ce6cd']);
+        if (st === 3) stands.push([HA * (Math.cos(QA) + Math.cos(QA + Math.PI / 2)), HA * (Math.sin(QA) + Math.sin(QA + Math.PI / 2)), '#8ce6cd']);
+        if (st >= 4) stands.push([BX, BY, '#b59cf0'], [BX + HB * Math.cos(QB), BY + HB * Math.sin(QB), '#b59cf0']);
+        for (const [sx, sy, col] of stands) { g.strokeStyle = col === '#8ce6cd' ? 'rgba(140,230,205,0.25)' : 'rgba(181,156,240,0.25)'; g.lineWidth = 1;
+            for (const p of pts.slice(0, K)) { g.beginPath(); g.moveTo(...P([sx, sy])); g.lineTo(...P(p)); g.stroke(); } }
+        t.forEach(({ a, d, ph }, k) => { const c = P([d * Math.cos(ph), d * Math.sin(ph)]); g.strokeStyle = '#e6e4ee'; g.lineWidth = 2; g.beginPath(); g.arc(...c, Math.max(2, a * sc), 0, 2 * Math.PI); g.stroke();
+            g.fillStyle = '#8a8a96'; g.font = '11px DM Mono, monospace'; g.fillText(String(k + 1), c[0] + 6, c[1] - 6); });
+        for (const [sx, sy, col] of stands) { g.fillStyle = col; g.beginPath(); g.arc(...P([sx, sy]), 4, 0, 2 * Math.PI); g.fill(); }
+        g.fillStyle = '#8ce6cd'; g.font = '12px DM Mono, monospace'; g.fillText('A', P([0, 0])[0] - 14, P([0, 0])[1] + 4);
+        if (st >= 4) { g.fillStyle = '#b59cf0'; g.fillText('B', P([BX, BY])[0] + 8, P([BX, BY])[1] + 4); }
+        // counter, text, table
+        $('count').textContent = String(S.sys.nul[st]);
+        $('what').textContent = STEPS[st][1];
+        const rows = written(st), f = x => x === undefined ? '<span class="free">free</span>' : x.toFixed(4);
+        const head = ['target', 'A, in H_A'].concat(st >= 4 ? ['B, in H_B'] : [], st >= 5 ? ['B, in H_A'] : [], st >= 6 ? ['in metres'] : []);
+        $('table').innerHTML = '<tr>' + head.map(h => `<th>${h}</th>`).join('') + '</tr>' + rows.map(r => '<tr>' +
+            [`${r.k + 1}`, f(r.A)].concat(st >= 4 ? [f(r.B)] : [], st >= 5 ? [f(r.BinA)] : [], st >= 6 ? [f(r.m)] : []).map(c => `<td>${c}</td>`).join('') + '</tr>').join('');
+        [...$('steps').children].forEach((b, i) => b.classList.toggle('on', i === st));
+    }
+    function set(o = {}) {
+        if (o.seed !== undefined && +o.seed !== S.seed) { S.seed = +o.seed; S.scene = null; }
+        if (!S.scene) { S.scene = scene(S.seed); S.sys = systems(S.scene); }
+        if (o.step !== undefined) S.step = Math.max(0, Math.min(7, Math.round(+o.step)));
+        draw(); return state();
+    }
+    const state = () => ({ step: S.step, seed: S.seed, nullity: S.sys.nul[S.step], nullities: S.sys.nul.slice(), written: written(S.step), ratio: S.sys.ratio, HA, HB });
+    STEPS.forEach(([name], i) => { const b = document.createElement('button'); b.textContent = `${i} ${name}`; b.addEventListener('click', () => set({ step: i })); $('steps').appendChild(b); });
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search);
+    set({ seed: q.has('seed') ? +q.get('seed') || 13 : 13, step: q.has('step') ? +q.get('step') || 0 : 0 });
+
+    window.__write = { set, state, scene, readingsFrom, recover, nullity, steps: STEPS.map(s => s[0]) };
+})();
+</script>
+</body>
+</html>
