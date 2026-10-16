@@ -1,0 +1,4 @@
+medians of the mean: 1e2 3.7919, 1e5 8.0673
+average climb a decade 1.4252 vs (2/π)ln10 1.4659; bootstrap se 0.0165; off by 2.47 se
+IQR 1e2 2.962, 1e5 2.893; shrink ×1.02
+P3' not killed

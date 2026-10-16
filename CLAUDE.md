@@ -517,6 +517,39 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   **Neither choice can be declined** (15 Oct, SPN R264; Tom: "Not choosing a value is not an option either."): OFS §5's
   "Two choices" closes with it: no breadth for the other, no relation (3(a)); an H favouring no value is H at 0 or ∞, a
   corner-free ruler (Proposition 14) that loses what is read (§9); with nothing known the estimate is H (13(c)).
+  **Situations 3 and 4 are vantages, their mechanism open** (15 Oct, SPN R266; Tom: "the exact mechanism has not been
+  pinned down for either."): 3 the outer hemisphere, 4 the inner; OFS follows parallel and serial as a proposal, says
+  so in §3.1 ("Vantage, not mechanism"), the rule's third question, §3.5 and §11.2 question 8, and never as the
+  definition. **The payload is a wave of some kind** (15 Oct, SPN R267; Tom: "the payload is a wave of some kind, not
+  the actual object(s) creating that payload wave."): OFS §2 says so; the reader reads the wave, not its sources.
+  **No "parallel" or "serial" in OFS** (15 Oct, SPN R268; Tom: "yes, remove serial parallel."): OFS names situations 3
+  and 4 the outer reader and the inner reader; where a result rests on holding, it states the condition. SPN keeps its
+  words (and its name).
+  **Exterior and interior** (15 Oct, SPN R269; Tom: "adopt math formal names for inner and outer, no need to invent new
+  names."): OFS's situation 3 is the exterior reader (an exterior point, the arc's convex side, the exterior reading
+  π/2), 4 the interior reader (an interior point, the concave side, the interior reading 2/π).
+  **Exterior wave-like, interior particle-like** (15 Oct, SPN R270; Tom: "exterior - wave like, interior - particle
+  liike"): a reading, in SPN only (physics, not OFS). Tested for consistency by WVP (`plans/wvp-plan.md` + `wvp/`):
+  the interior's counted arrivals build the exterior's pattern at √N, find the corner with spread (π/2)/√N, never
+  settle a mean (it climbs (2/π)·ln 10 a decade; P3 killed by my tolerance, P3′ not); real data queued.
+  **Exterior: the payload's mean (Gaussian); interior: the addresses' median (Cauchy)** (15 Oct, SPN R271; Tom: "outside
+  is gaussian, it is the mean, it measures the actual physical payoad … inside is cauchy, it is median, is the address and
+  sweep of the gaussian center of gravity."): a reading; OFS §7.1 ("the exterior reader's bell") and §7.6 read
+  otherwise. **Two sweeps, two results** (15 Oct, SPN R272; Tom: "remove the outside the apple, inside the apple metaphore
+  … its two sweeps … the outside sweep gets the payloads, the inside sweep gets the addresses to the payloads."): OFS §3.1
+  "Two sweeps, two results", the rule, the five, the introduction, the hand, §3.4, §7.1 "The addresses' bell", §7.6; no
+  apple in OFS.
+  **The address points at the payload; central and inscribed** (15 Oct, SPN R273; Tom: "can we confirm that the address
+  we calculate on the inside points directly to the payload on the outside?"; "this is a major insight, lets explain it
+  fully"): OFS §4 "The address points at the payload": A's ray at θ (the inscribed sweep, the address) and the radius
+  at 2θ (the central sweep, the payload) end at one point (Euclid III.20), B's projection on the address (III.31),
+  only at V = H. R269's exterior/interior replaced by the formal central/inscribed throughout OFS.
+  **The density in full** (15 Oct, SPN R274; Tom: "the cauchy equation is missing the density parameter"; "the
+  parameter is 0 to 1, 1 is the default"): ρ, the share of addresses met by a payload, ρ·2/(π(1 + (v/h)²)); ρ = 1
+  simplified away; a constant ρ normalises out. OFS after Proposition 5(d). It is R80's g (archived *Reader Geometry*:
+  "at density = 0 unit circle … at density = 1 full shape"); OFS keeps ρ since its g is the sweep's progress (R275).
+  **When the density varies** (R275): arrivals ρ(θ)·2/(π(1 + s²)), the inscribed sweep's Cauchy times what the central
+  sweep finds; their median the payload's median direction, at the corner only if ρ weighs alike on both sides.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
@@ -795,6 +828,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the top, the flip the mirror (P4); a conic at every V = cH, x² − x + y²/c² = 0, the pairing projective and not
   perspective (P5, Steiner); equal angles give the bisector (P6); the even sweep of one ray even along the arc, the
   half-Cauchy (P7); over x₁ + x₂ the height √(x₁x₂) (P8, Euclid VI.13). Nothing killed.
+  `thl/waves.py` (15 Oct; SPN R265, Tom: "the outside has wave like chartacteristics"): the outer vantage reads the line
+  as a power detector reads a wave, in squares at twice the angle: its foot h² (Malus), the Stokes point at 2θ
+  (Poincaré), a resonance's admittance (1, s)/(1 + s²) with half power at the corner, the unitarity circle and
+  Breit–Wigner, a sine's form factor 1.1107 the outer reading at 45°. Classical identities, a reading; not in OFS.
   `azm-plan.md` (+ `azm/azm.py`, 14 Oct; Tom: "there is another sweep V2 … lean on classical theory to explain V2"; SPN
   R237): exact (mpmath, a grid count, a seeded sample). V₂ is the azimuth: v₂/h = tan z and v/√(h² + v₂²) = tan a, each
   sweep's corner at 45° (P1); an even azimuth keeps its own corner under any altitude weighting (P2); even in both angles
@@ -902,7 +939,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
 
 SPN's situations, since 6 Oct 2026 (Tom): 0 nothing known; 1 the circle; 2 shapes;
 3 parallel, one hemisphere counted (outside); 4 serial, one point at a time
-(inside); 3 and 4 possibly approximate. Since 14 Oct (SPN R239; Tom: "we should expand the readers situations. to
+(inside); 3 and 4 possibly approximate. Since 15 Oct (SPN R266; Tom: "situation 3 describes the vantage, reading the outer
+hemisphere. situation 4 describes reading the inner hemisphere. the exact mechanism has not been pinned down for
+either."): 3 and 4 are the outer and inner hemispheres; parallel and serial are the proposed mechanism, not the
+definition (OFS §3.1, "Vantage, not mechanism"; §11.2 question 8). Since 14 Oct (SPN R239; Tom: "we should expand the readers situations. to
 accomodate V2"; "i'm open to how to organize the situations, or relations"): the relations come first (h, v, v₂ each in
 [0, 1] with its breadth, known unsituated, unknown situated; the situated reader draws V = V₂ = H, giving the set of every
 [h, v, v₂]), and a situation is one entry per other party, 1 to 4 each; the five are the one-party case, 0 stays one
