@@ -539,7 +539,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and the contrast (0.69, 0.56) under it. Classical; consistent with the reading, no further test of it. The bound is
   the duality relation V² + P² ≤ 1 (Greenberger–Yasin, Englert): V = 2hv = sin 2θ, P = |cos 2θ| (SPN R279; in
   `physics.md`'s dictionary and `thl/waves.py`); no open counts with unequal shares found (the neutron foils of
-  Summhammer, Rauch and Tuppinger 1987 are the best case, paywalled).
+  Summhammer, Rauch and Tuppinger 1987 are the best case, paywalled). DUO (`plans/duo-plan.md` + `duo/`; SPN R280,
+  R281): the sech form is in print (Bramon et al. 2004; Krause et al. 2014); run 1 read the 1987 figure from Rauch's
+  2013 slides by hand (readings first): foils on √a for a ≥ 0.05, the chopper on a, 0.447 against 0.243 at a ≈ 0.24
+  (D2, D3 not killed); D1 killed by the thinnest Gd foils (uneven thickness, by the paper's account).
   **Exterior: the payload's mean (Gaussian); interior: the addresses' median (Cauchy)** (15 Oct, SPN R271; Tom: "outside
   is gaussian, it is the mean, it measures the actual physical payoad … inside is cauchy, it is median, is the address and
   sweep of the gaussian center of gravity."): a reading; OFS §7.1 ("the exterior reader's bell") and §7.6 read

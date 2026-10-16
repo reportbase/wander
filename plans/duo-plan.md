@@ -104,3 +104,43 @@ How each value is read, fixed now:
 - **D3.** On the two fringe panels, the amplitude ratio is the absorber's peak-to-trough bar over the empty one's. Both
   are drawn at the right edge of each panel, so the ratio needs no axis.
 - **Recording.** Every reading is written to `duo/readings.md` before `duo/duo.py` compares it with either form.
+
+### Run 1 (15 Oct about 21:55, `duo/duo.py`, readings in `duo/readings.md`, output in `duo/run1.txt`)
+
+While reading, before the script ran, I saw that M2 and the left inset's gadolinium points sat well below the drawn √a
+curve. The rule for M2's possible double count (counted alone, or taken as L3) was set after that, so both are reported.
+
+| set | points | outside 2σ | outside 3σ | verdict |
+|---|---|---|---|---|
+| foils, M2 counted alone | 13 | 3 (M2 −4.5, L2 −4.5, L3 −2.5) | 2 | D1 killed |
+| foils, M2 taken as L3 | 12 | 2 | 1 | D1 killed |
+| foils with a ≥ 0.05 (the main plot) | 6 | 0 (largest −1.3) | 0 | – |
+| chopper | 3 | 0 (largest −0.6) | 0 | D2 not killed |
+
+- **D1 killed, by the gadolinium foils at a < 0.005.** All three sit below √a. Carrying a's own horizontal bar through
+  √a (post hoc) leaves L2 at −2.0σ and M2 at −3.7σ: still killed. Every foil with a ≥ 0.05 is within 1.3σ of √a, and
+  11.7σ to 15.6σ from a.
+- **D2 not killed.** The chopper's points lie on A = a, and 6.7σ to 22σ from √a.
+- **D3 not killed.** On the fringe panels, the gold foil (a = 0.226) keeps 0.447 ± 0.003 of the empty amplitude and the
+  chopper (a = 0.242) 0.243 ± 0.003. That is 45σ apart: at nearly the same counts, the pure pair keeps twice the
+  mixture's fringe.
+- **D4 not tested.** The figure's legend does not mark the lattice's points apart.
+
+Post hoc:
+- **The gold foil's bar is 3.2σ below √0.226.** On the amplitude plot its point (S4, a = 0.219) is 0.85σ above. So
+  the drawn bars and the plotted points do not agree to their stated precision.
+- **The low-a foils.** Rauch's slide 22 gives the paper's account of them: an absorber of uneven thickness transmits
+  a mean ā = a₀·e^(2(δχ)²), more than the a₀ its coherent amplitude carries, so the amplitude √a₀ falls below √ā.
+  Gadolinium foils thin enough for a < 0.005 are where the unevenness tells. My prediction took every foil as even, so
+  this kill is that assumption, in the paper's own terms. A run with the paper's thickness spreads would need the
+  paper's text, which is still not to hand.
+
+## What run 1 shows
+
+Away from the thinnest foils, the 1987 neutrons take the two forms the duality relation gives. A foil, every arrival one
+pure pair with amplitudes 1 and √a, keeps √a of the fringe: the facing, 2hv on the contrast, on the circle V² + P² = 1. A
+chopper, a mixture of the pair at its corner and one path alone, keeps a: inside the circle, at the same counts and the
+same P. At a ≈ 0.24 the pure pair keeps 0.447 and the mixture 0.243. The kill is at the thinnest gadolinium foils,
+whose unevenness the paper itself names. All of this is classical (Summhammer, Rauch and Tuppinger 1987), and the sech
+form is in print (Bramon et al. 2004; Krause et al. 2014). The reading adds only names: the corner of the pair is where
+V = 1, and a mixture of corner and home is not the pair at its facing.

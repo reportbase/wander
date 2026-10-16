@@ -266,6 +266,20 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   with R270's reading, a payload held whole as a pattern and met one arrival at a time, and does not test it beyond
   that. Run 3 was killed by my set-up (wrong axis, pixels for photons).
 
+- **A pure pair keeps its facing; a mixture does not** (DUO run 1, `plans/duo-plan.md`). Summhammer, Rauch and
+  Tuppinger's 1987 neutron interferometer, one path attenuated to transmission a, read by hand from their figure (as
+  scanned in Rauch's 2013 slides):
+  - foils (each neutron passes with probability a: a pure pair, amplitudes 1 and √a) keep √a of the fringe amplitude:
+    six points with a from 0.05 to 0.47, all within 1.3σ;
+  - a beam chopper open a share a of the time (a mixture of the pair at its corner and one path alone) keeps a: three
+    points within 0.6σ;
+  - at a ≈ 0.24 the gold foil keeps 0.447 and the chopper 0.243, 45σ apart, at the same counts;
+  - the prediction for foils (D1) was killed by the thinnest gadolinium foils (a < 0.005), all below √a, which the
+    paper ascribes to uneven thickness (the mean transmission exceeds what the coherent amplitude carries).
+
+  The bridge is the Born rule, and the transmission is measured. On the duality circle: the foil is on it (V² + P² = 1),
+  the chopper inside it (same P, lower V). Classical, and the sech form is in print (§1); this records the data.
+
 ### 2.2 Exact arithmetic
 
 - **Where 2/π shows up** (TPI, `plans/tpi-plan.md`). Sixty-five occurrences across about forty fields, from Buffon's
@@ -645,7 +659,8 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
   (Phys. Rev. A 60, 4285, 1999; its data in figures only, the path marked by polarization). The best case is
   Summhammer, Rauch and Tuppinger (Phys. Rev. A 36, 4447, 1987): neutron foils of transmission a in one path, the
   predicted contrast 2√a/(1 + a), which is 2hv, against a chopper's 2a/(1 + a) at the same mean count. The paper is
-  behind its publisher; Tom to supply it if wanted.
+  behind its publisher. DUO run 1 (§2.1) read its figure from Rauch's 2013 slides: foils on √a for a ≥ 0.05, the
+  chopper on a, the thinnest gadolinium foils below √a (killed; uneven thickness, by the paper's account).
 - **One dimension against two.** ISQ's reading separates an angular size (falling one level per level of distance) from
   its square, the light (two levels). Stars with measured angular diameters (interferometry) and parallaxes would test
   the one-level half directly.
