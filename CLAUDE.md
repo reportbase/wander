@@ -612,6 +612,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Writers are unsituated, readers situated (SPN R296; Tom: "writers are the gods eye view … Writers are unsituated.
   Readers are situated."): a breadth needs the whole, both hemispheres, which no standpoint gives; an observer writes by
   carrying in what it did not read; the view from nowhere is where writing is done, not where anyone stands.
+  Reading is free, writing needs movement and interaction (SPN R297): every ratio the geometry's (8(a)); every breadth
+  an amount from outside (8(b)): movement (H walked as a baseline gives V*/H, OFS §10 step 6) or interaction (a shared
+  unit, a known kind, a constant measured beforehand).
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
