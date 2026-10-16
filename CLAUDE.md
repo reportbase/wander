@@ -544,6 +544,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   fully"): OFS §4 "The address points at the payload": A's ray at θ (the inscribed sweep, the address) and the radius
   at 2θ (the central sweep, the payload) end at one point (Euclid III.20), B's projection on the address (III.31),
   only at V = H. R269's exterior/interior replaced by the formal central/inscribed throughout OFS.
+  **The density in full** (16 Oct, SPN R274; Tom: "the cauchy equation is missing the density parameter"; "the
+  parameter is 0 to 1, 1 is the default"): ρ, the share of addresses met by a payload, ρ·2/(π(1 + (v/h)²)); ρ = 1
+  simplified away; a constant ρ normalises out. OFS after Proposition 5(d). Reading to confirm.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the

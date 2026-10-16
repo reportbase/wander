@@ -1218,6 +1218,15 @@ itself. (d) A direction φ from home in the drawing has tan φ = c·(v/h). With 
 P(v/h ≤ r) = P(φ ≤ arctan(cr)) = (2/π)·arctan(cr): a half-Cauchy of scale 1/c, with median 1/c. The flip v/h ↦ h/v
 carries it to scale c. It is the law of (b), and unchanged by the flip, exactly when c = 1. ∎
 
+**The density in full.** Written out in full, (b) carries one more parameter, ρ in [0, 1]: the share of the sweep's
+addresses at which a payload is met. The arrivals per unit of v/h are ρ·2/(π(1 + (v/h)²)), and per unit of turn ρ·2/π,
+so the density times the extent of the quarter turn is ρ·(2/π)·(π/2) = ρ, the share that arrived. With every address
+met, ρ = 1, the default, and the parameter is simplified away: that is the form of (b) and of the rest of the paper. The
+simplification loses nothing the addresses hold. ρ counts payload, not addresses: dividing the arrivals by their total
+ρ returns the law of (b), so a constant ρ leaves the median at the corner, the quartiles and the flip where they were
+(Theorem 6(a)). Where ρ varies with direction it is no longer a constant to drop but the payload's own shape (§7.4),
+and the arrivals' law is ρ(θ) times the addresses'.
+
 **Proposition 5, continued: two other parties.** (e) Let the reader assign two other parties V = V₂ = H, so that the
 relation lies on the sphere of Proposition 3(f), and sweep one facing of every freedom, the octant h, v, v₂ ≥ 0, evenly
 by area. Write a = v/h and b = v₂/h. Then:
