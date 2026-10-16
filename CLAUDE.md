@@ -607,6 +607,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (3, 4); a reader that also writes needs actual breadths (without V* only ĉH; the shared unit for another reader); the
   drawing taken for a measurement is reading mistaken for writing. R293's "laying with H is writing" withdrawn (H is
   always held). OFS §9 "Reading and writing", after "Two ways to represent a thing".
+  An observer is both (SPN R295; Tom: "Readers need ratios v,h.  writers need V,H"): the case convention is the split;
+  the bridge v·V is the act of writing; H's value matters only where readings meet amounts (the zoom).
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
