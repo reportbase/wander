@@ -539,6 +539,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   … its two sweeps … the outside sweep gets the payloads, the inside sweep gets the addresses to the payloads."): OFS §3.1
   "Two sweeps, two results", the rule, the five, the introduction, the hand, §3.4, §7.1 "The addresses' bell", §7.6; no
   apple in OFS.
+  **The address points at the payload; central and inscribed** (15 Oct, SPN R273; Tom: "can we confirm that the address
+  we calculate on the inside points directly to the payload on the outside?"; "this is a major insight, lets explain it
+  fully"): OFS §4 "The address points at the payload": A's ray at θ (the inscribed sweep, the address) and the radius
+  at 2θ (the central sweep, the payload) end at one point (Euclid III.20), B's projection on the address (III.31),
+  only at V = H. R269's exterior/interior replaced by the formal central/inscribed throughout OFS.
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the

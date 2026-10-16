@@ -115,10 +115,10 @@ to your thumb, V = H, and read the mountain in thumbs.
 **Three vantages.** A figure can be held in three ways. The *completed* vantage holds every breadth at once from no
 standpoint; this is classical geometry. Between two points it holds the straight chord, which needs no turn; the circle
 comes after the chord, drawn on it by turning. A *situated* reader has a facing, and holds only the arc it turns
-through, by one of two sweeps that get two different things. The exterior sweep, over the arc's convex side, gets the
-payloads, what arrives, read by their mean; the interior sweep, from home over the concave side, gets the addresses to
+through, by one of two sweeps that get two different things. The central sweep, turning about the centre of the circle
+on the chord, gets the payloads, what arrives, read by their mean; the inscribed sweep, from home, gets the addresses to
 the payloads, the Cauchy, read by its median at the corner. How either sweep is made is not pinned down; this paper
-follows one proposal, the exterior taken at once and the interior one direction at a time. These two are not the only
+follows one proposal, the central taken at once and the inscribed one direction at a time. These two are not the only
 situated views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is where
 the truth would lie: a system's true breadths, as shares of their whole, would be one point of it, found only with the
 breadths themselves, amounts the reader does not read. A reader's drawing, every party at its own H, is the sum's
@@ -384,30 +384,32 @@ the five below, then for two.
 | 0 | known | not known | none | nothing: H but no h, so no relation | — |
 | 1 | known | known, equal to H | none | the whole at once | an equation: the circle h² + v² = 1 |
 | 2 | known | known, unequal or varying with direction | none | the whole at once | an array: a shape's breadth in every direction |
-| 3 | known | not known | an exterior point: the convex side | not pinned down; proposed: one hemisphere at once | the exterior sweep: it gets the payloads, what arrives |
-| 4 | known | not known | an interior point: the concave side | not pinned down; proposed: one direction at a time | the interior sweep: it gets the addresses to the payloads |
+| 3 | known | not known | the centre of the circle on the chord: a central angle | not pinned down; proposed: one hemisphere at once | the central sweep: it gets the payloads, what arrives |
+| 4 | known | not known | home, a point of that circle: an inscribed angle | not pinned down; proposed: one direction at a time | the inscribed sweep: it gets the addresses to the payloads |
 
 **Two sweeps, two results.** Situations 3 and 4 are two sweeps over the same facing, and they get two different things.
-The exterior sweep, from an exterior point of the circle over the arc's convex side, gets the payloads: what arrives,
-its departure from the unit circle, read by its mean. Averaged over the facing that departure is a sum of bounded parts;
-where they vary independently its mean tends to the normal law (the central limit theorem). The exterior sweep's centre
-is the payload's centre of gravity. The interior sweep, from an interior point, home, over the concave side, gets the
+The central sweep, a radius turning about the centre of the circle on the chord, gets the payloads: what arrives, its
+departure from the unit circle, read by its mean. Averaged over the facing that departure is a sum of bounded parts;
+where they vary independently its mean tends to the normal law (the central limit theorem). What the central sweep reads
+is centred on the payload's centre of gravity. The inscribed sweep, a ray from home, a point of that circle, gets the
 addresses to the payloads: the places a reading can be put, laid before anything arrives, whose law is the Cauchy, with
-its median at the corner and no mean (Theorem 6). The interior sweep's centre is that median, the address of the
-payload's centre. Neither is a reader standing outside or inside a thing; each is a sweep, set by the side of the arc it
-runs over (§3.4). How a reader makes either sweep, its mechanism, is not pinned down for either. The paper calls them
-the exterior reader and the interior reader, and follows one proposal throughout: the convex side taken in at once, the
-concave swept one direction at a time from home, with static and dynamic saying why (§3.5). What it shows that rests on
-the proposal (the bell and the fisheye, §7.1; which centre a reader can hold, §7.6) is shown of a reader working that
-way, and attaches to situation 3 or 4 as far as the proposal holds (§11.2, question 8). Taking in a hemisphere at once
-is not holding the whole: the whole at once is situations 1 and 2.
+its median at the corner and no mean (Theorem 6). What the inscribed sweep reads is centred on that median, the address
+of the payload's centre. Neither is a reader standing outside or inside a thing; each is a sweep, set by where it turns:
+the central sweep about the centre of the circle on the chord, the inscribed sweep at home, a point of that circle; and
+each address points at its payload (§4, "The address points at the payload"). How a reader makes either sweep, its
+mechanism, is not pinned down for either. The paper calls them the central reader and the inscribed reader, and follows
+one proposal throughout: the central sweep taken in at once, the inscribed swept one direction at a time from home, with
+static and dynamic saying why (§3.5). What it shows that rests on the proposal (the bell and the fisheye, §7.1; which
+centre a reader can hold, §7.6) is shown of a reader working that way, and attaches to situation 3 or 4 as far as the
+proposal holds (§11.2, question 8). Taking in a hemisphere at once is not holding the whole: the whole at once is
+situations 1 and 2.
 
 **The rule.** Three questions place any reader in exactly one situation.
 1. Is anything related to the reader, so that it has an h? If not, it is in situation 0.
 2. Does the reader know V? If it does, it holds the whole: situation 1 if V equals H in every direction, situation 2
    otherwise.
-3. If it does not, which sweep does it make? The exterior sweep, over the arc's convex side, getting the payloads:
-   situation 3. The interior sweep, from home over the concave side, getting the addresses: situation 4. (On the
+3. If it does not, which sweep does it make? The central sweep, turning about the centre of the circle on the chord,
+   getting the payloads: situation 3. The inscribed sweep, from home, getting the addresses: situation 4. (On the
    proposal followed here, the first is taken at once, as when the thing holds still for the reader's look, and the
    second one direction at a time, as when the thing changes or arrives during the look; §3.5.)
 
@@ -447,12 +449,12 @@ reader lacks (§3.8).
   corner is computed, at 45°, and there is no horizon.
 - **2, every other shape.** Both breadths known but unequal, or varying with direction, held whole as an array: the
   breadth in every direction, known together. The corner is computed in each direction, and there is no horizon.
-- **3, the exterior sweep.** It runs over the arc's convex side, from the point square to it (0) to the limb (π/2);
-  the half past the limb is never swept. It gets the payloads, what arrives over the facing, and reads them by their
-  mean, the average departure from the unit circle.
-- **4, the interior sweep.** It runs from home over the concave side, to the horizon. It gets the addresses to the
-  payloads, the Cauchy laid by direction, and reads them by their median, the corner. Its addresses' shares make a bell,
-  and their running total is the fisheye (§7.1).
+- **3, the central sweep.** A radius of the circle on the chord, it turns a half turn about that circle's centre, from
+  one end of the chord to the other, twice the angle of the address it meets. It gets the payloads, what arrives over
+  the facing, and reads them by their mean, the average departure from the unit circle.
+- **4, the inscribed sweep.** A ray from home, it turns a quarter turn, from along the chord to square to it. It gets
+  the addresses to the payloads, the Cauchy laid by direction, and reads them by their median, the corner. Its
+  addresses' shares make a bell, and their running total is the fisheye (§7.1).
 
 Situations 1 and 2 are the view from nowhere. They are mathematical views, an equation or an array, and they name a
 state of knowledge, not a place anyone stands. Situations 3 and 4 are the view from somewhere. Both find the corner
@@ -466,12 +468,11 @@ do not have, and neither knows how many things there are.
 | 3 | found: v = h | the mathematical horizon | the bell | π/2 |
 | 4 | found: v = h | the mathematical horizon | the fisheye; counted, the Cauchy | 2/π |
 
-**Two other parties.** With V₂ the rule is put to each party in turn, and a reader's situation is one entry per party:
-1 or 2 if that party's breadth is known, 3 if its sweep reads the convex side, 4 if the concave. Situation 0 stays a
-single case, nothing related and no h, and the five above are the one-party case. The two sweeps are the altitude, from
-H to V, and the azimuth, which brings in V₂ (§2). The table and its examples follow the proposal above, the convex side
-taken at once and the concave one direction at a time; the readings, 2 and ½, are the vantages' own and do not depend on
-it.
+**Two other parties.** With V₂ the rule is put to each party in turn, and a reader's situation is one entry per party: 1
+or 2 if that party's breadth is known, 3 if its sweep is central, 4 if inscribed. Situation 0 stays a single case,
+nothing related and no h, and the five above are the one-party case. The two sweeps are the altitude, from H to V, and
+the azimuth, which brings in V₂ (§2). The table and its examples follow the proposal above, the central sweep taken at
+once and the inscribed one direction at a time; the readings, 2 and ½, are the vantages' own and do not depend on it.
 
 | V, V₂ | what the reader has | example |
 |---|---|---|
@@ -489,12 +490,12 @@ it.
   finding the corner of h and v₂ and reading V₂'s amounts up to the one ratio it lacks, V₂*/H. It is unsituated in one
   freedom and situated in the other.
 - **Both at once (3, 3).** A hemisphere of directions taken in one look, as a camera takes its frame. Read against its
-  shadow on the base, the hemisphere reads 2, its surface being twice its base: the exterior reading of §3.4 for three
+  shadow on the base, the hemisphere reads 2, its surface being twice its base: the central reading of §3.4 for three
   unit relations.
 - **Both one at a time (4, 4).** The reader steps through both angles. Its mean height over the hemisphere is ½, the
-  interior reading for three unit relations, and 2 · ½ = 1, as π/2 · 2/π = 1 for two (§3.4). These are not the two-party
-  readings squared, (π/2)² and (2/π)², but those times 8/π² and π²/8: the two sweeps of a three-party reader do not read
-  as two independent two-party readers.
+  inscribed reading for three unit relations, and 2 · ½ = 1, as π/2 · 2/π = 1 for two (§3.4). These are not the
+  two-party readings squared, (π/2)² and (2/π)², but those times 8/π² and π²/8: the two sweeps of a three-party reader
+  do not read as two independent two-party readers.
 - **Mixed (3, 4) and (4, 3).** One sweep at once and the other step by step, as scanning instruments work: a radar's fan
   holds every altitude at once and turns through the azimuth; a line scanner holds a row of azimuths and tips through the
   altitude. What such a reader reads of a whole hemisphere depends on how its two sweeps are weighted (§7.1, "Swept by
@@ -544,9 +545,9 @@ nothing curved.
 - **1** is the quarter circle itself: a closed, known curve, both breadths held, the corner computed at 45°, no
   horizon.
 - **2** puts a shape in place of the circle: each number lands at the shape's radius in its direction.
-- **3**, the exterior reader, holds the laid numbers at once (on the proposal of §3.1) and reads the unit line against
+- **3**, the central reader, holds the laid numbers at once (on the proposal of §3.1) and reads the unit line against
   the circle, θ/sin θ: rising from 1 toward π/2, approaching the line from above.
-- **4**, the interior reader, takes one number at a time (on that proposal), projected onto the circle, and reads the
+- **4**, the inscribed reader, takes one number at a time (on that proposal), projected onto the circle, and reads the
   circle against the unit line, sin θ/θ: falling from 1 toward 2/π, approaching from below. Its view is the unit line
   laid out as the fisheye.
 - **0** has no unit, and nothing to lay.
@@ -567,20 +568,20 @@ paper follows through, and not the only ones.
 | vantage | situations | geometry | the turn | measure of a turn θ | reads a line of true breadth 1 as |
 |---|---|---|---|---|---|
 | completed: the view from nowhere | 1, 2 | the chord, and the circle drawn on it; every breadth held; no facing | none | none | 1 |
-| exterior: the convex side | 3 | one facing; the hemisphere turns away from the reader (proposed: taken in at once) | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
-| interior: the concave side | 4 | one facing; the hemisphere turns toward the reader (proposed: swept from home) | a quarter turn: a bar, from home to the horizon | sin θ/θ | 2/π |
+| central: a radius of the circle on the chord | 3 | one facing; the hemisphere turns away from the reader (proposed: taken in at once) | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
+| inscribed: a ray from home | 4 | one facing; the hemisphere turns toward the reader (proposed: swept from home) | a quarter turn: a bar, from home to the horizon | sin θ/θ | 2/π |
 
 **Where the numbers come from.** A situated reader measures by turning. Its position crosses the line once, and its
-facing turns; the arc is drawn by that turning, not walked. The two situated vantages turn by different amounts, and
-the unsituated one not at all. The interior reader turns a bar of length 1 from home: at angle θ the bar's end has drawn
-an arc θ, and the line it covers, its shadow, is sin θ. The exterior reader's facing turns twice as far, 2θ (§4, "Why
-the corner sits at 45°"): it faces the far end of the line at the start, is square to the line at the corner, and faces
-the first end at the finish, a half turn in all. Drawn on the line as its diameter, of radius ½, a turn of 2θ draws an
-arc of θ over a chord of sin θ. So both draw an arc θ over a line sin θ. The exterior sweep reads arc over line,
-θ/sin θ; the interior, line over arc, sin θ/θ. The two are reciprocal at every turn (the table's θ is the bar's; the
-exterior reader's facing has turned 2θ):
+facing turns; the arc is drawn by that turning, not walked. The two situated vantages turn by different amounts, and the
+unsituated one not at all. The inscribed reader turns a bar of length 1 from home: at angle θ the bar's end has drawn an
+arc θ, and the line it covers, its shadow, is sin θ. The central reader's facing turns twice as far, 2θ (§4, "Why the
+corner sits at 45°"): it faces the far end of the line at the start, is square to the line at the corner, and faces the
+first end at the finish, a half turn in all. Drawn on the line as its diameter, of radius ½, a turn of 2θ draws an arc
+of θ over a chord of sin θ. So both draw an arc θ over a line sin θ. The central sweep reads arc over line, θ/sin θ; the
+inscribed, line over arc, sin θ/θ. The two are reciprocal at every turn (the table's θ is the bar's; the central
+reader's facing has turned 2θ):
 
-| turned through | exterior, θ/sin θ | interior, sin θ/θ | product |
+| turned through | central, θ/sin θ | inscribed, sin θ/θ | product |
 |---|---|---|---|
 | almost 0° | 1.0000 | 1.0000 | 1 |
 | 15° | 1.0115 | 0.9886 | 1 |
@@ -588,21 +589,21 @@ exterior reader's facing has turned 2θ):
 | 75° | 1.3552 | 0.7379 | 1 |
 | 90° | π/2 = 1.5708 | 2/π = 0.6366 | 1 |
 
-Both tend to 1 as the turn shrinks, and neither reaches it while there is any turn. At the limb, the exterior
+Both tend to 1 as the turn shrinks, and neither reaches it while there is any turn. At the limb, the central
 reader's facing has made its half turn, an arc of π/2 stood on the line of 1 as its chord, and reads π/2; the
-interior reader's bar has made its quarter turn, and its average shadow over the turn is (2/π)∫₀^{π/2} cos θ dθ = 2/π.
-The exterior reader turns farther and the interior less, but as ratios the two lie equally far either side of 1, π/2
+inscribed reader's bar has made its quarter turn, and its average shadow over the turn is (2/π)∫₀^{π/2} cos θ dθ = 2/π.
+The central reader turns farther and the inscribed less, but as ratios the two lie equally far either side of 1, π/2
 above it by the factor that 2/π is below it, and it is their product, not their difference, that returns the line: the
 arc's excess over the line, π/2 − 1, and the shadow's shortfall, 1 − 2/π, add to 0.934, not to 1.
 
 The average shadow is Buffon's needle (Buffon 1777): a needle as long as the gap between parallel lines, dropped at
 random, crosses one with probability 2/π. Crofton's formula, which measures a curve by the random lines that cross it,
-grew from the same problem (Crofton 1868). Buffon's number, like the interior reading, holds only when every angle of
+grew from the same problem (Crofton 1868). Buffon's number, like the inscribed reading, holds only when every angle of
 the turn is equally likely; weight the turn otherwise and it changes.
 
 Both readings come from the same two integrals over the quarter turn: the arc the turn draws, ∫₀^{π/2} dθ = π/2 (the
-exterior reader's half turn, on radius ½, draws the same arc), and the shadow it casts on the line,
-∫₀^{π/2} cos θ dθ = 1. The exterior reading is the turn over the shadow, π/2; the interior is the shadow over the turn,
+central reader's half turn, on radius ½, draws the same arc), and the shadow it casts on the line,
+∫₀^{π/2} cos θ dθ = 1. The central reading is the turn over the shadow, π/2; the inscribed is the shadow over the turn,
 2/π. Taken to any turn θ, the same two give the table's θ/sin θ and sin θ/θ. The shadow is the line itself: the steps of the turn, each casting
 cos θ dθ, cover the breadth exactly once. Each reading sets it against the turn, one way up or the other, so their
 product is 1. Without angles the turn is ∫₀^∞ ds/(1 + s²) over every relation s = v/h, and the corner halves it, π/4 on
@@ -621,7 +622,7 @@ of a Circle*). A polygon inscribed in the circle falls short of it and one circu
 their sides from 6 to 96 squeezed π between 223/71 and 22/7. Both polygons need the circle in hand: the inscribed one's
 corners lie on it and the circumscribed one's sides touch it. His proof is the completed view, both sides held at once.
 
-The interior reader's measure equals his inscribed polygon in number. An inscribed polygon of n sides has perimeter
+The inscribed reader's measure equals his inscribed polygon in number. An inscribed polygon of n sides has perimeter
 n·sin(π/n) against the circle's π (both for a diameter of 1), and with θ = π/n that ratio is sin θ/θ. So the reading at
 the quarter turn, 90°, is the polygon of 2 sides, 2/π; at 45° it is the square, 0.9003; and halving the turn matches his
 doubling of the sides, each step bringing the reading about four times closer to 1:
@@ -636,7 +637,7 @@ doubling of the sides, each step bringing the reading about four times closer to
 A situated reader draws neither polygon. Both need the circle in hand, and it does not hold the circle: the inscribed
 polygon's corners lie on the circle just as the outer polygon's sides touch it. What the reader has is its own turn,
 swept step by step from home. Its reading sin θ/θ is a reading of that turn, not a polygon laid on a circle; it equals
-the inscribed polygon's share in number, but the reader never holds the polygon. The exterior reader reaches it the same
+the inscribed polygon's share in number, but the reader never holds the polygon. The central reader reaches it the same
 way, as a number, through the flip, θ/sin θ = 1/(sin θ/θ): so it knows π/2 at the limb without standing outside, and
 π/2 · 2/π = 1 stands in for the circle it does not hold. (Archimedes' outer polygon goes as tan θ/θ rather than
 θ/sin θ; both lie above 1 and close on it at the same rate.) Archimedes squeezed π between two polygons because he held
@@ -644,7 +645,7 @@ the whole; a situated reader holds neither polygon and has the same numbers from
 convergence is ordinary geometry; what the vantages add is what each reader holds.
 
 The reader's own turn gives the halvings without a polygon. Halving a turn takes out one cosine,
-sin 2θ/2θ = cos θ · sin θ/θ, so the interior reading at the quarter turn is a product with one factor per halving, the
+sin 2θ/2θ = cos θ · sin θ/θ, so the inscribed reading at the quarter turn is a product with one factor per halving, the
 first at the corner:
 
   2/π = cos 45° · cos 22.5° · cos 11.25° · … = (√2/2) · (√(2 + √2)/2) · (√(2 + √(2 + √2))/2) · …
@@ -762,15 +763,15 @@ each finger the same address.
 - *The thumb is H.* The hand's own measure is its thumb, the reader's breadth, the value it starts from; the mountain it looks at is V. Setting
   V = H is reading the mountain in thumbs.
 - *The geometry is the hand, not the rings.* Dividing v by h keeps the finger and drops the ring.
-- *The interior reader is the hand and its fingers; the exterior reader holds the rings.* One walks the addresses; the
+- *The inscribed reader is the hand and its fingers; the central reader holds the rings.* One walks the addresses; the
   other keeps the magnitudes, all at once (on the proposal of §3.1).
 - *The rings hide; the hand does not.* Two rings on one finger, seen along it, show only the nearer: the ring behind is
   the back side. The hand hid nothing; the rings did.
 - *The far field's doublings are fingers.* Past the corner the levels are doublings (§6), addresses laid before
   anything arrives; what lands on them is rings. The fingers sit side by side on one hand, not one inside another.
 - *The situations in the hand.* 0: no hand, nothing to point with and nothing pointed at. 1 and 2: the rings held
-  whole, all at once, with no hand needed to reach them; in 1 every ring is alike, in 2 they differ. 3: the exterior
-  sweep, which gets the rings, the payloads. 4: the interior sweep, which lays the fingers, the addresses to the rings.
+  whole, all at once, with no hand needed to reach them; in 1 every ring is alike, in 2 they differ. 3: the central
+  sweep, which gets the rings, the payloads. 4: the inscribed sweep, which lays the fingers, the addresses to the rings.
 - *The hand has two sweeps.* Raised, it sweeps from flat to upright, from H to V: the altitude. Turned, it sweeps
   round from pointing at the other party to pointing square to it, which brings in a second other party, V₂: the
   azimuth. Every way the hand can point, within one facing of each freedom, is one altitude and one azimuth, as every
@@ -863,6 +864,36 @@ the H that sets the two furthest apart (§8). The chord comes first; the arc is 
 three parties at the corners of the triangle h + v + v₂ = 1, rays meeting with every pair square meet only at the
 cube's corner, the reader's home, and its mirror across the triangle: the arc of two parties becomes, for three, a
 single standpoint (§3.1).
+
+**The address points at the payload.** The two sweeps of §3.1 meet on this arc, one point at a time. The inscribed
+sweep is A's ray: from home, a point of the circle on the chord, it turns through the inscribed angle θ from along the
+chord, and at each step it is an address, the reading s = v/h = tan θ, laid before anything arrives. The central sweep
+is the circle's radius: it turns about the middle M of the chord through the central angle, from pointing at B. The
+payload is what is found where that radius ends. The ray at θ and the radius at 2θ end at the same point P of the arc,
+for every θ. That is the inscribed angle theorem (*Elements* III.20): an angle at the circle is half the angle at the
+centre on the same arc, and P is its one shared point. So the address computed by the inscribed sweep points directly
+at the payload reached by the central sweep. It does so in five ways.
+- *Exactly, and once.* Each address meets one point of the arc, and each point of the arc has one address. The map
+  keeps the order: the address along the chord, θ = 0, points at B itself, the other party, where the radius starts;
+  the corner, θ = 45°, points at the top of the arc, where the radius stands square to the chord; the horizon, θ → 90°,
+  points at A's own end of the chord, where the radius has made its half turn.
+- *At the other party's shadow on the address.* The angle APB is right (*Elements* III.31), so P is the foot of the
+  perpendicular from B onto the ray: what the address finds is the other party projected onto it. It lies at distance
+  h from home and v from B, its foot on the chord at h² and its height hv (*Elements* VI.8).
+- *Without the payload in the address.* The address is the ray and its reading; the payload is what is at P. What
+  arrives there changes nothing in the address, since the reach of what arrives along a ray cancels from its reading
+  (Theorem 6(a)). The inscribed sweep can lay every address before anything arrives, and each still points at where its
+  payload will be.
+- *In the two readings.* Read along the ray, line over arc, the inscribed sweep gives sin θ/θ, 2/π over the whole
+  turn; read along the arc, arc over line, the central sweep gives θ/sin θ, π/2 (§3.4). One point, named twice: by its
+  direction from home, its address, and by the facing of the radius that reaches it, the payload's place.
+- *Only with V = H.* Drawn with v at c times h, the same rays cross on the ellipse x² − x + y²/c² = 0 (above). Each
+  address still meets one point, but the radius no longer turns twice the address's angle, and the corner no longer
+  points at the top. The direct pointing is a property of the circle, so of the drawing V = H (Proposition 3(e)).
+
+The inscribed sweep lays the addresses; the central sweep reaches, at each, the payload that address points to. The
+reader's addresses and the world's payloads are joined point for point by one classical theorem, and the join needs
+nothing the reader lacks: no amount, only the drawing.
 
 **What the flip gives, and what it does not.** The flip proves that the corner is the one point it leaves fixed, that
 every sweep passes through it, that a reading kept within [0, 1] on both sides must change register there (Proposition
@@ -1349,8 +1380,8 @@ carrée chart at 60°, with the shore running east–west, its half-way flash is
 In the lighthouse the evenness is the lamp's, a fact about the world (§7.8). A reader standing at the lamp and reading
 each landing by its direction holds tan θ itself, with no β at all. The same requirement holds for it, by (d).
 
-**The addresses' bell.** The interior sweep's addresses, taken together, each with its share of the turn, form a bell;
-the exterior sweep's payloads are a different thing, read by their mean (§3.1). On the logarithmic axis x = ln(v/h) the
+**The addresses' bell.** The inscribed sweep's addresses, taken together, each with its share of the turn, form a bell;
+the central sweep's payloads are a different thing, read by their mean (§3.1). On the logarithmic axis x = ln(v/h) the
 shares form a bell centred on the corner,
 
   ½·sech x = 1/(v/h + h/v),  with total area π/2, a quarter turn.
@@ -1551,7 +1582,7 @@ sums, and the Cauchy is the extreme case: an order law with no sum.
 holds its readings. Finding the exact median of n arrivals taken one at a time needs storage that grows in proportion to
 n (Munro and Paterson 1980).
 - A reader that holds its hemisphere at once has the median of what arrived. (The median of the addresses, the
-  corner, needs no holding: the interior sweep lays it before anything arrives, §3.1.)
+  corner, needs no holding: the inscribed sweep lays it before anything arrives, §3.1.)
 - A reader that holds one arrival at a time does not. What it can keep, at the cost of one more slot, is one
   arrival, held and left alone, against which every later arrival is higher or lower.
   - That comparison is unchanged by any common rescaling.
@@ -1980,8 +2011,8 @@ true width, and no one stands anywhere in it.
    of §3.4 read it from the reader's own turn. Each facing side of the half-turn is a quarter turn, from home to the
    limb, where a finger runs parallel to the range and never meets it. On the thumb's circle that quarter turn is an arc
    of π/2 thumbs, and its shadow on the line across the view is exactly 1 thumb. Taken in at once, limb to limb, the
-   whole half-turn is an arc of π thumbs over a shadow of 2, and the exterior reading, the turn over its shadow, is π/2.
-   Swept one finger at a time from home, the interior reading, the shadow over the turn, is 2/π: the fingers' mean
+   whole half-turn is an arc of π thumbs over a shadow of 2, and the central reading, the turn over its shadow, is π/2.
+   Swept one finger at a time from home, the inscribed reading, the shadow over the turn, is 2/π: the fingers' mean
    shadow (0.6368 with 36 fingers). Their product is 1: H measured in H, the value the reader started
    from, which neither vantage reads alone. Out to the range's ends, at 45°, the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, the
    row of §3.4 at 45°, and their product is 1 again. None of this involves the mountain: a range 2 miles wide at 1 mile
@@ -2190,12 +2221,12 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    inconsistent at all is disputed (Jaynes 1980; Wallstrom 2003); the reader's lay is in any case finite, its levels
    counted.
 
-8. *How situations 3 and 4 are read.* The two are set by the vantage, the convex side and the concave (§3.1). The
-   mechanism is not pinned down for either. This paper follows one proposal, the convex side taken in at once and the
-   concave swept one direction at a time, and what it shows of readers working that way (the bell and the fisheye, §7.1;
-   the median held and the reference kept, §7.6) is shown of those mechanisms. The vantages' own readings, π/2 and
-   2/π (§3.4), and every result that needs only the readings and their weight, do not depend on it. Whether a reader
-   of the convex side does take it in at once, or a reader of the concave side one direction at a time, is open.
+8. *How situations 3 and 4 are read.* The two are set by the vantage, the central sweep and the inscribed (§3.1). The
+   mechanism is not pinned down for either. This paper follows one proposal, the central sweep taken in at once and the
+   inscribed swept one direction at a time, and what it shows of readers working that way (the bell and the fisheye,
+   §7.1; the median held and the reference kept, §7.6) is shown of those mechanisms. The vantages' own readings, π/2 and
+   2/π (§3.4), and every result that needs only the readings and their weight, do not depend on it. Whether a reader of
+   the central sweep does take it in at once, or a reader of the inscribed sweep one direction at a time, is open.
 
 If the principle of §11.1 stands, questions 1 and 2 become one: whether a situated reader's ignorance is exactly these
 three transformations.
@@ -2249,7 +2280,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | home, the horizon | geometry | v/h = 0; v/h → ∞, never reached |
 | g | geometry | the sweep's progress, (2/π)·arctan(v/h): 0 at home, ½ at the corner, 1 at the horizon |
 | address, payload | geometry; what arrives | a place laid before anything arrives; what arrives there: the finger and the ring |
-| situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; the exterior sweep, the payloads; the interior sweep, the addresses; with more parties, one entry per party |
+| situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; the central sweep, the payloads; the inscribed sweep, the addresses; with more parties, one entry per party |
 | ℓ | an amount | the reach of what arrives along a ray (Theorem 6); it cancels from every reading |
 | ε | a step | the reader's step, relative to what it reads (§8) |
 | the shared unit | an agreement | something two readers can both read, agreed to count as 1 (§9); not a reading, and no part of the geometry |
