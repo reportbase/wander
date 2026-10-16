@@ -81,3 +81,26 @@ So the reading this plan called "ours", the contrast as sech of the levels betwe
 ln k, the levels in nats. Nothing of DUO's reading is new; what stays is the test on the 1987 data, and the corner (k = 1,
 V = 1, P = 0) named as the pair's. Its references also name other measurements of V² + P² = 1: Liu et al. (Phys. Rev. A
 85, 022106, 2012) for photons, and Zawisky (Found. Phys. Lett. 17, 561, 2004) for neutrons.
+
+### The source used, and how it is read (15 Oct about 21:20, before any value was read)
+
+The paper itself is not to hand. Its figure is: Rauch's slides for EmQM 2013 ("Rauch-EmQM131.pdf", Fetzer Franklin Fund;
+sha256 f8f65de2aad4797d1326f317a46600d951c281a1b708b891b4e62690dafbd5e6, not committed). Slide 22 embeds a 500 ppi
+1-bit scan, 2,436 × 3,464 px, of the paper's figure, credited to Summhammer, Rauch and Tuppinger (1987). Slide 21
+gives the two forms, I_sto ∝ (1 + a) + 2√a cos χ and I_det ∝ (1 + a) + 2a cos χ: classical, as predicted. The scan has:
+- the stochastic fringes, empty and with a gold foil (transmission 22.6 ± 0.8%);
+- the deterministic fringes, empty and with the beam chopper (24.2 ± 0.2%);
+- the normalised amplitude A(a)/A(1) against the transmission probability a, for both kinds, with two magnified insets
+  near a = 0 (gadolinium foils).
+
+So D1–D3 are read as amplitudes, which the predictions allowed: √a for foils, a for the chopper. D4 (the lattice) is
+read only if the lattice's points are marked apart; the scan's legend names only "stochastic" and "deterministic".
+
+How each value is read, fixed now:
+- **Axes.** Each axis is calibrated from two labelled ticks, by their pixel centres in the native scan.
+- **Points.** Each marker's centre is placed by eye on crops at native resolution, with a 10 px grid over them. The
+  error bar is read from its ends where it is drawn; otherwise σ is half the marker. A marker's place is uncertain by
+  about 3 px (a hundredth of the unit on the main plot), which is added in quadrature to σ.
+- **D3.** On the two fringe panels, the amplitude ratio is the absorber's peak-to-trough bar over the empty one's. Both
+  are drawn at the right edge of each panel, so the ratio needs no axis.
+- **Recording.** Every reading is written to `duo/readings.md` before `duo/duo.py` compares it with either form.
