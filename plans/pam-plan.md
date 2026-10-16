@@ -60,3 +60,33 @@ What a kill would mean:
 None of this is new mathematics. The test keeps the two readings apart on one example family.
 
 ## Runs
+
+### Run 1 (15 Oct about 23:10, `pam/pam.py`, output in `pam/run1.txt`; 23 s)
+
+- **A1 not killed.** For (i), (ii), (iii) and (vi) the median direction is π/4 to 4·10⁻³², so s_m = 1.
+- **A2 not killed.**
+  - (iv): 32.1031895°.
+  - (v), the unsymmetrised relief: 47.128°, s_m = 1.0772. Its weight is 0.794 below 45° and 0.887 above, so the
+    median moved toward the heavier side.
+- **A3 not killed.** The climbs from 10⁶ to 10⁷ match their predictions to all twelve printed digits: 1.46587119776,
+  2.19880679664 and 0.73293559888. (vi)'s mean is 4/π to 25 digits.
+- **A4 killed, by my bound.** The Kolmogorov distances for K = 1 to 64 were 0.04689, 0.01109, 0.00518, 0.00256,
+  0.00169, 0.00084 and 0.00085. K = 1 is past 0.033. The rest halve with each doubling of K down to the sampling floor
+  (about 0.0006), as a 1/K law does. Post hoc: my constant, 0.03, was a guess, not derived. At K = 1 the pair's weights
+  (cos 0.3, sin 0.3) are unequal, and the sum is nearly one uniform.
+
+### Run 2, A4′ (prediction written 15 Oct about 23:15, before running)
+
+From the Edgeworth series for a symmetric sum, F(z) − Φ(z) ≈ −(κ₄/24)·φ(z)·(z³ − 3z). Here κ₄ is the standardised excess
+kurtosis of p: Σ_n (cos⁴ nθ + sin⁴ nθ)·(−2/15)/(K/3)², since a uniform on (−1, 1) has variance 1/3 and fourth cumulant
+−2/15. The largest |φ(z)(z³ − 3z)| is 0.5506, at z = 0.742. So the predicted distance is (|κ₄|/24)·0.5506 at θ = 0.3:
+- 0.00968 for K = 2;
+- 0.00465 for K = 4;
+- 0.00246 for K = 8;
+- 0.00130 for K = 16;
+- 0.00065 for K = 32;
+- 0.00032 for K = 64.
+
+**A4′.** A fresh sample, numpy seed 12, of 2,000,000 reliefs at θ = 0.3. *Killed if*, for K = 2, 4 or 8, the measured
+distance is off its prediction by more than 25% of it plus 0.001; or, for K = 16, 32 or 64, it exceeds the prediction
+by more than 0.0015 (where sampling dominates). K = 1 is outside the series' reach and has no prediction.
