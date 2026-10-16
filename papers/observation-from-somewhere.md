@@ -1638,19 +1638,22 @@ knows nothing of any shape are the same lay, and both give the Cauchy. Every oth
 the Cauchy is usually met through the circle, as the tangent of an angle spread evenly round it: it belongs to the even
 turn, and the circle is the one shape in which the even turn and the shape cannot be told apart.
 
-**A shape is a perturbation of the circle, and only the circle can be the base.** Write a shape seen from the reader as
+**A shape is a perturbation of the circle, and only a circle can be the base.** Write a shape seen from the reader as
 r(θ) = exp(ρ·f(θ)), the unit circle at ρ = 0 and the full shape at ρ = 1. Every such map moves each point along its own
 ray and never across it, so the maps r ↦ λ(θ)·r, λ(θ) > 0, form a group that fixes every direction; laid by direction,
 the readings are the same Cauchy at every ρ, not only at the two ends. Laid along the outline, the law moves with ρ: for
 f = 0.3 cos 2θ + 0.1 cos(3θ + 0.4) the share before the corner runs 0.500, 0.529, 0.563, 0.632 at ρ = 0, ¼, ½, 1, and
-for f = 0.25 cos 4θ, unchanged by the exchange, it stays 0.500 while the ends move. The circle is the only base that
-carries nothing: an outline reads evenly by direction exactly when its length per unit of turn, √(r² + r′²), is
-constant, and r² + r′² = q² has two kinds of solution, r = q, the circle centred on the one who sweeps, and
-r = q·sin(θ + θ₀), the circle through it. These are the two pivots of §4, the centre and a point of the circle, and no
-other shape gives either. Read as the reader's ignorance (§2), a reader who does not know the shape needs a law that
-every radial map leaves unchanged, and only a law on directions alone is one; the rescalings of κ are the radial maps
-with λ constant. So a reader can begin at the unit circle and sweep the perturbation without knowing V*: in
-ln r = a₀ + ρ·f(θ), the unknown size is the constant term alone, a₀ = ln κ, the one term no ratio of radii reads, and
+for f = 0.25 cos 4θ, unchanged by the exchange, it stays 0.500 while the ends move. Among outlines read from one pivot,
+only a circle is a base that carries nothing: an outline reads evenly by direction exactly when its length per unit of
+turn, √(r² + r′²), is constant, and r² + r′² = q² has two kinds of solution, r = q, the circle centred on the one who
+sweeps, and r = q·sin(θ + θ₀), the circle through it. These are the two pivots of §4, the centre and a point of the
+circle, and no other shape gives either. Which circle depends on the sweep: the circle centred on the pivot for the
+central sweep, the circle through it for the inscribed; with the pivot at home, these are the reader's unit circle and
+the circle on the chord. The uniqueness is relative to the construction, an even lay by direction from one pivot, not a
+claim that no other geometry can be drawn. Read as the reader's ignorance (§2), a reader who does not know the shape
+needs a law that every radial map leaves unchanged, and only a law on directions alone is one; the rescalings of κ are
+the radial maps with λ constant. So a reader can begin at the unit circle and sweep the perturbation without knowing V*:
+in ln r = a₀ + ρ·f(θ), the unknown size is the constant term alone, a₀ = ln κ, the one term no ratio of radii reads, and
 the even measure dκ/κ is the flat da₀. Every term of f is the shape, read exactly from ratios of radii wherever the
 payload or another standpoint supplies them (from directions alone none is read), and taking the terms in order of n is
 a level of detail, each truncation leaving every address where it was.
@@ -2043,24 +2046,27 @@ whole held with V known. Reading is situations 3 and 4, the two sweeps, with V u
 The circle, V = H, is the reader's drawing, chosen before anything arrives, and the writer's equation, with V known to
 equal H: one circle held two ways, drawn by the one and known by the other. Situation 2 is writing alone, a shape
 written on that circle as its perturbation (§7.4), and 3 and 4 are reading alone. Taking the reader's circle for the
-writer's is the confusion of §7.1. So writers are unsituated and readers situated. To know a breadth is to hold the
-whole, both hemispheres at once, which is situations 1 and 2 and which no standpoint supplies: no reading gives V*/H
-(Proposition 8). An observer writes by carrying in what it did not read, a shared unit or an amount from outside, and
-the view from nowhere is where that writing is done, not a place anyone stands. Reading is free: the geometry supplies
-every ratio. Writing must discover the breadths, and every breadth it finds is an amount from outside the readings
-(Proposition 8(b)), found by movement or by interaction. Movement takes the reader's own H as a baseline: walked once,
-it gives the other's true size in the reader's own breadth, V*/H (§10, step 6). Interaction takes in what another has
-measured: a shared unit, a known kind, a constant measured beforehand, and writes in a breadth both can read. Counted,
-the steps are one each: from one standpoint nothing is written, each thing's size and distance free together; one
-displacement of known length writes every breadth in the reader's own H, and a second adds nothing to the scale; one
-number exchanged writes them for another reader; one notch agreed writes them in a public unit. An observer is both a
-reader and a writer: as a reader it needs the unit relations h and v, as a writer the breadths H and V, and the value of
-its own H matters only where its readings meet amounts (the zoom, §8). The one bridge between them, a unit relation
-times its breadth, v·V, is the act of writing. A reader that also writes needs actual breadths: to state the other's
-size in amounts is to write it, and without V* it can write only its estimate ĉH (Proposition 13); to write an amount
-for another reader needs the shared unit; a world drawn in amounts is written with its breadths known, and a common
-factor on all of them would change no reading. Taking the drawing V = H for a measurement (§7.1) is reading mistaken for
-writing. What is written can change without any reading changing, which is why no reading recovers it.
+writer's is the confusion of §7.1. Reading and writing are modes, not kinds of observer: writing is the unsituated mode,
+reading the situated one. Writing is an operation, stating a thing in amounts, and what it produces is the completed
+representation of situations 1 and 2; a situated observer can make it, but only with information its ratios do not
+contain. To know a breadth is to hold the whole, both hemispheres at once, which is situations 1 and 2 and which no
+standpoint supplies: no reading gives V*/H (Proposition 8). An observer writes by carrying in what it did not read, a
+shared unit or an amount from outside, and the view from nowhere is where that writing is done, not a place anyone
+stands. Reading is free: the geometry supplies every ratio. Writing must discover the breadths, and every breadth it
+finds is an amount from outside the readings (Proposition 8(b)), found by movement or by interaction. Movement takes the
+reader's own H as a baseline: walked once, it gives the other's true size in the reader's own breadth, V*/H (§10, step
+6). Interaction takes in what another has measured: a shared unit, a known kind, a constant measured beforehand, and
+writes in a breadth both can read. Counted, the steps are one each: from one standpoint nothing is written, each thing's
+size and distance free together; one displacement of known length writes every breadth in the reader's own H, and a
+second adds nothing to the scale; one number exchanged writes them for another reader; one notch agreed writes them in a
+public unit. An observer is both a reader and a writer: as a reader it needs the unit relations h and v, as a writer the
+breadths H and V, and the value of its own H matters only where its readings meet amounts (the zoom, §8). The one bridge
+between them, a unit relation times its breadth, v·V, is the act of writing. A reader that also writes needs actual
+breadths: to state the other's size in amounts is to write it, and without V* it can write only its estimate ĉH
+(Proposition 13); to write an amount for another reader needs the shared unit; a world drawn in amounts is written with
+its breadths known, and a common factor on all of them would change no reading. Taking the drawing V = H for a
+measurement (§7.1) is reading mistaken for writing. What is written can change without any reading changing, which is
+why no reading recovers it.
 
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
