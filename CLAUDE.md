@@ -651,6 +651,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   inscribed reading is the ratio itself, the reader does not have divide them"): a direction, [h : v] in homogeneous
   coordinates; the projection divides, not the reader; breadths only in a writer's account; an unbounded breadth reads
   as the horizon. OFS §9 after "Reading and writing", citing Möbius 1827.
+  The central reading is an amount (16 Oct, SPN R307; Tom: "the central reader just receives breadths, no ratios."):
+  from the centre the directions are given (rate 1); what arrives is the radius, an amount (polar coordinates: inscribed
+  the angle, central the radius); amounts add (the mean); all in one unit no reading fixes (a₀), so the shape in amounts,
+  not its size; a writer needs addresses, amounts and the unit. OFS §9 after R306's paragraph.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the

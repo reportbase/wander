@@ -2059,29 +2059,30 @@ equal H: one circle held two ways, drawn by the one and known by the other. Situ
 written on that circle as its perturbation (§7.4), and 3 and 4 are reading alone. Taking the reader's circle for the
 writer's is the confusion of §7.1. From the geometry alone there are two kinds of situated reader, one for each sweep of
 §4: readers of the payload, by the central sweep, and readers of the ratios, by the inscribed sweep, whose ratios are
-the addresses. A writer needs both, the payload and the addresses it sits at, together with the breadths that turn them
-into amounts, and loses its situation in the process: holding both at once is holding the whole, situations 1 and 2,
-from no standpoint. So reading is the situated operation, and writing produces the completed, unsituated representation,
-stating a thing in amounts. A situated observer can write, but only with information its ratios do not contain. To know
-a breadth is to hold the whole, both hemispheres at once, the one each sweep faces, which is situations 1 and 2 and
-which no standpoint supplies: no reading gives V*/H (Proposition 8). An observer writes by carrying in what it did not
-read, a shared unit or an amount from outside, and the view from nowhere is where that writing is done, not a place
-anyone stands. Reading is free: the geometry supplies every ratio. Writing must discover the breadths, and every breadth
-it finds is an amount from outside the readings (Proposition 8(b)), found by movement or by interaction. Movement takes
-the reader's own H as a baseline: walked once, it gives the other's true size in the reader's own breadth, V*/H (§10,
-step 6). Interaction takes in what another has measured: a shared unit, a known kind, a constant measured beforehand,
-and writes in a breadth both can read. Counted, the steps are one each: from one standpoint nothing is written, each
-thing's size and distance free together; one displacement of known length writes every breadth in the reader's own H,
-and a second adds nothing to the scale; one number exchanged writes them for another reader; one notch agreed writes
-them in a public unit. An observer is both a reader and a writer: as a reader it needs the unit relations h and v, as a
-writer the breadths H and V, and the value of its own H matters only where its readings meet amounts (the zoom, §8). The
-one bridge between them is a unit relation times its breadth, and two such products must be kept apart: v·V, the amount
-in the reader's drawing, which is v·H and writes nothing new, and v·V*, the amount at the other's true breadth, which is
-the act of writing and needs V*. A reader that also writes needs actual breadths: to state the other's size in amounts
-is to write it, and without V* it can write only its estimate ĉH (Proposition 13); to write an amount for another reader
-needs the shared unit; a world drawn in amounts is written with its breadths known, and a common factor on all of them
-would change no reading. Taking the drawing V = H for a measurement (§7.1) is reading mistaken for writing. What is
-written can change without any reading changing, which is why no reading recovers it.
+the addresses. A writer needs both, the payload's amounts and the addresses they sit at, together with the one unit that
+fixes the size of the amounts (below), and loses its situation in the process: holding both at once is holding the
+whole, situations 1 and 2, from no standpoint. So reading is the situated operation, and writing produces the completed,
+unsituated representation, stating a thing in amounts. A situated observer can write, but only with information its
+ratios do not contain. To know a breadth is to hold the whole, both hemispheres at once, the one each sweep faces, which
+is situations 1 and 2 and which no standpoint supplies: no reading gives V*/H (Proposition 8). An observer writes by
+carrying in what it did not read, a shared unit or an amount from outside, and the view from nowhere is where that
+writing is done, not a place anyone stands. Reading is free: the geometry supplies every ratio. Writing must discover
+the breadths, and every breadth it finds is an amount from outside the readings (Proposition 8(b)), found by movement or
+by interaction. Movement takes the reader's own H as a baseline: walked once, it gives the other's true size in the
+reader's own breadth, V*/H (§10, step 6). Interaction takes in what another has measured: a shared unit, a known kind, a
+constant measured beforehand, and writes in a breadth both can read. Counted, the steps are one each: from one
+standpoint nothing is written, each thing's size and distance free together; one displacement of known length writes
+every breadth in the reader's own H, and a second adds nothing to the scale; one number exchanged writes them for
+another reader; one notch agreed writes them in a public unit. An observer is both a reader and a writer: as a reader it
+needs the unit relations h and v, as a writer the breadths H and V, and the value of its own H matters only where its
+readings meet amounts (the zoom, §8). The one bridge between them is a unit relation times its breadth, and two such
+products must be kept apart: v·V, the amount in the reader's drawing, which is v·H and writes nothing new, and v·V*, the
+amount at the other's true breadth, which is the act of writing and needs V*. A reader that also writes needs actual
+breadths: to state the other's size in amounts is to write it, and without V* it can write only its estimate ĉH
+(Proposition 13); to write an amount for another reader needs the shared unit; a world drawn in amounts is written with
+its breadths known, and a common factor on all of them would change no reading. Taking the drawing V = H for a
+measurement (§7.1) is reading mistaken for writing. What is written can change without any reading changing, which is
+why no reading recovers it.
 
 **The inscribed reading is the ratio itself.** The reader of ratios never touches a breadth and never divides one by
 another. What reaches it through its standpoint is a direction, and a direction already is a ratio: v/h = tan θ, a point
@@ -2095,6 +2096,25 @@ and 1. A breadth that can never be written can still be read. Only where two br
 reading need the limit of their ratio, which is again a ratio and must arrive as one. A reader that measures two amounts
 and then divides them, two intensities compared, does touch breadths: it writes first and reads afterwards, and is not a
 reader of ratios in this sense.
+
+**The central reading is an amount.** The reader of the payload receives the complement of what the reader of ratios
+receives. From the centre every ray is a radius, and equal turns reach equal arcs (§4), so its directions are laid out
+uniformly before anything arrives. A direction from the centre therefore tells it nothing about the outline: on the
+circle every direction is alike, and a perturbation moves each point along its own ray and never across it (§7.4). What
+arrives along each direction is how far the outline lies, the radius r(θ), an amount. In polar coordinates about the
+pivot, the reader of ratios receives the angle, v/h = tan θ, and no amount; the reader of the payload receives the
+radius and no ratio. Its point on the circle, ½(h² − v², 2hv), is a pair of lengths along its axes, bounded by the
+radius, not a ratio of two unit relations, and lengths add: every average over a uniform turn exists (§4). That is why
+the central sweep is read by the mean and the inscribed by the median (Theorem 6(b), (c)): a mean is an amount, and
+ranks are what survive when there are none. Yet the central reader does not receive breadths in a known unit. Every
+radius it receives is in one unit, the same on every ray, and nothing it receives fixes that unit: in ln r = a₀ + ρ·f(θ)
+the size a₀ = ln κ is the term common to every ray, and changing it multiplies every amount by one factor (§7.4;
+Proposition 8). So the reader of the payload holds the shape in amounts but not its size. Comparing two of its amounts
+gives a ratio, but the comparison is a further reading, made of what it holds, and not what it received. The two readers
+are complements: one receives directions, ratios without amounts; the other receives amounts along directions it already
+had, without a ratio and without their unit. Neither receives the unit, the one term a₀. A writer needs all three: the
+addresses from the one, the amounts from the other, and the unit carried in from outside by a move or an exchange
+(above). Holding them at once is holding the whole, situations 1 and 2, from no standpoint.
 
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
