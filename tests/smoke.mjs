@@ -724,10 +724,10 @@ try {
     wg.dir < 1e-12 && wg.moved > 100 && wclose(wg.lay[0], 1, 0) && wclose(wg.lay[1], 1 + Math.log(8), 1e-15) && wclose(wg.lay[2], 1.875, 1e-15) &&
     wg.counts.every(c => c.home + c.near + c.far + c.past === 280) && wg.counts[2].home > wg.counts[1].home && wg.counts[0].past > wg.counts[1].past &&
     wg.cov.every(c => c.share === 1) && wg.cov.map(c => c.held).join() === [1, 1 / 24, 1 / 24, 1 / 576].join() &&
-    /camera/.test(wg.cov[0].name) && /radar/.test(wg.cov[1].name) && /line scanner/.test(wg.cov[2].name) && /single-pixel/.test(wg.cov[3].name) &&
+    /camera's frame/.test(wg.cov[0].name) && /slit panoramic/.test(wg.cov[1].name) && /line camera/.test(wg.cov[2].name) && /single-pixel/.test(wg.cov[3].name) &&
     wg.draw[0].every(x => wclose(x, 1 / 3, 1e-15)) && [2 / 9, 2 / 3, 1 / 9].every((x, k) => wclose(wg.draw[1][k], x, 1e-15)) &&
     [0.2, 0.6, 0.2].every((x, k) => wclose(wg.draw[2][k], x, 1e-15)) &&
-    /seen from home at its shares/.test(wg.hud) && /merged into home/.test(wg.hud) && /fan-beam radar/.test(wg.hudHome) &&
+    /seen from home at its shares/.test(wg.hud) && /merged into home/.test(wg.hud) && /slit panoramic/.test(wg.hudHome) &&
     wg.home.view === 'home' && wg.frames > 0 && wg.webgl &&
     wg.p7.rt < 1e-9 && wg.p7.tip < 1e-6 && wg.p7.idq.slice(0, 3).every(x => Math.abs(x) < 1e-12) && wg.p7.tile === 0 &&
     wg.p7.turns[0] === 24 && wg.p7.turns[1].every(c => c === 3) && Math.abs(wg.p7.eighth - 0.125) < 0.01 && wg.p7.home < 1e-9 &&

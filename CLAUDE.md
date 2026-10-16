@@ -142,9 +142,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   with the corner curves and chambers). A world (280 things even over the wedge, d over five decades, or a cluster per
   decade) laid along the rays, s to the corner then 1 + ln s (or 2 − 1/s, `lay=inplace`), n = 32 addresses across the near
   field: nearer than H/32 merged into home, past H·2⁶ (or s ≥ 32) past the held edge; H slides things along their rays,
-  never across; from home each thing as wide as it looks (Δ/d). The situations per party (known, 3 at once, 4 stepped):
-  a camera, a fan-beam radar (3, 4), a line scanner (4, 3), a single-pixel scanner (4, 4), the seen fading behind the
-  beam; a known breadth moves the drawing (1, V/H, V₂/H)/sum from the centre toward the truth. Seven steps: the wedge,
+  never across; from home each thing as wide as it looks (Δ/d). The situations per party (known 1–2, or swept from
+  home, 4, held at once or in order; since SPN R309 holding is a second axis, not the situation): a camera's frame, a slit
+  panoramic camera, a line camera tipped up, a single-pixel scanner, the seen fading behind the beam (a lidar would be 3,
+  not drawn); `?V=&V2=` take known|once|order (3 and 4 still accepted); a known breadth moves the drawing (1, V/H, V₂/H)/sum from the centre toward the truth. Seven steps: the wedge,
   from home, two sweeps, a world, H is a zoom, the situations, and (14 Oct, Tom: "show how the wedge could be positioned
   anywhere on the sphere, so there is two steps, position the wedge,then sweep it."; SPN R242) position, then sweep: the
   sphere with its three great circles; the wedge (everything of it, in one group) placed by a rotation R, set by where its
@@ -152,7 +153,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   swapped where the signs would make a reflection), or anywhere (an even turn); then the hand sweeps in the wedge's own
   frame, on the sphere R·d; "position, then sweep" plays a turn and then the sweep; from home the camera turns with R, so
   the wedge looks the same and only the sphere's lines move. Leaving step 7 puts the wedge back in its first place.
-  `?step=1..7&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|3|4&V2=known|3|4&alt=&az=&vs=&v2s=&rays=0&seed=&lon=&lat=&roll=`;
+  `?step=1..7&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|once|order&V2=known|once|order&alt=&az=&vs=&v2s=&rays=0&seed=&lon=&lat=&roll=`;
   hook `window.__wedge` (`homeProject`, `homeShares`, `shares`, `chamberShares`, `cornerHalf`, `placeAt`, `counts`,
   `coverage`, `drawingOf`, `situationName`, `set` (with `pos`: lon/lat/roll, `octant` or `q`), `state`, `hud`, and
   `position`: `quat`, `of`, `octant`, `octahedral`, `random`, `imageOctant`, `inWedge`, `world`, `handTip`, `homeNdc`).

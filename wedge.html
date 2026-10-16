@@ -29,8 +29,11 @@
         reader's lay) or 2 − 1/s (?lay=inplace). n = 32 addresses across the near field: nearer than H/n a thing merges
         into home; past H·2⁶ (reader's) or at s ≥ n (in-place, the horizon) it lies past the held edge. H moves every
         thing along its own ray, never across it. From home each thing is as wide as it looks, Δ/d, a relation.
-      - The situations, one entry per party (OFS §3.1): known (1–2), at once (3), one direction at a time (4). (3, 3) a
-        camera, (3, 4) a fan-beam radar, (4, 3) a line scanner, (4, 4) a single-pixel scanner; a known breadth moves the
+      - The situations, one entry per party (OFS §3.1; since SPN R309 holding is a second axis): from home every reading
+        is a direction, so a swept party is 4 (inscribed), held at once or taken in order; a known breadth 1–2. Both at
+        once a camera's frame, the altitude at once a slit panoramic camera, the azimuth at once a line camera tipped up
+        step by step, both in order a single-pixel scanner (a lidar, ranges along pointed beams, would be 3, central,
+        and is not drawn here); a known breadth moves the
         drawing on the triangle, (1, V/H, V₂/H)/sum with V = V* where known and H where not, from the centre to the truth.
       - Step 7, position, then sweep (14 October; Tom: "show how the wedge could be positioned anywhere on the sphere, so
         there is two steps, position the wedge,then sweep it."; SPN R242). First a rotation R places the wedge on the sphere:
@@ -43,7 +46,7 @@
         rotations.
     three.js 0.160.0 (MIT) loads from the jsDelivr CDN, pinned, through an import map, as in sphere-cube.html; the smoke
     test serves the same version from node_modules.
-    Links: ?step=1..7&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|3|4&V2=known|3|4
+    Links: ?step=1..7&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|once|order&V2=known|once|order (3 and 4 accepted for once and order)
            &alt=&az=&vs=&v2s=&rays=0&seed=, and for step 7 &lon=&lat=&roll= (degrees; the wedge's position)
     Test hook: window.__wedge.
     -->
@@ -123,8 +126,8 @@
         <div class="ctl"><label for="lgH">H, the zoom</label><input id="lgH" type="range" min="-2" max="3" step="0.01" value="0"><output id="lgHo"></output></div>
         <div class="ctl"><label for="alt">altitude, a</label><input id="alt" type="range" min="0" max="90" step="0.5" value="40"><output id="alto"></output></div>
         <div class="ctl"><label for="az">azimuth, z</label><input id="az" type="range" min="0" max="90" step="0.5" value="25"><output id="azo"></output></div>
-        <div class="seg" id="sitV"><span>V, altitude</span><button data-s="known">known</button><button data-s="once">3 at once</button><button data-s="serial">4 stepped</button></div>
-        <div class="seg" id="sitV2"><span>V₂, azimuth</span><button data-s="known">known</button><button data-s="once">3 at once</button><button data-s="serial">4 stepped</button></div>
+        <div class="seg" id="sitV"><span>V, altitude</span><button data-s="known">known</button><button data-s="once">held at once</button><button data-s="serial">in order</button></div>
+        <div class="seg" id="sitV2"><span>V₂, azimuth</span><button data-s="known">known</button><button data-s="once">held at once</button><button data-s="serial">in order</button></div>
         <div id="posCtl" style="display:none">
         <div class="ctl"><label for="plon">longitude</label><input id="plon" type="range" min="-180" max="180" step="0.5" value="45"><output id="plono"></output></div>
         <div class="ctl"><label for="plat">latitude</label><input id="plat" type="range" min="-90" max="90" step="0.5" value="35.26"><output id="plato"></output></div>
@@ -204,15 +207,17 @@ function addressOf(d, H, mode) {
 }
 const drawnLay = (d, H, mode) => { const ad = addressOf(d, H, mode); return ad.kind === 'home' ? 0 : lay(Math.min(ad.s, edgeS(mode)), mode); };
 
-// the situations, one entry per party (OFS §3.1): known (1–2), at once (3), one direction at a time (4)
-const SIT_NUM = { known: '1–2', once: '3', serial: '4' };
+// the situations, one entry per party (OFS §3.1): known (1–2), or swept from home, which reads directions (4); held at
+// once or taken in order is a second axis (SPN R309), not the situation
+const SIT_NUM = { known: '1–2', once: '4', serial: '4' };
 const heldWhole = s => s !== 'serial';
 function situationName(V, V2) {
     if (V === 'known' && V2 === 'known') return 'both known: unsituated, the solid held whole';
     if (V === 'known' || V2 === 'known') return `half-situated: ${V === 'known' ? 'V' : 'V₂'} held, the other swept from home`;
-    if (V === 'once' && V2 === 'once') return 'both sweeps at once: a camera';
-    if (V === 'serial' && V2 === 'serial') return 'both sweeps stepped: a single-pixel scanner';
-    return V === 'once' ? 'the altitude at once, the azimuth stepped: a fan-beam radar' : 'the azimuth at once, the altitude stepped: a line scanner';
+    if (V === 'once' && V2 === 'once') return 'directions in both angles, held at once: a camera\'s frame';
+    if (V === 'serial' && V2 === 'serial') return 'directions in both angles, taken in order: a single-pixel scanner';
+    return V === 'once' ? 'the altitude held at once, the azimuth taken in order: a slit panoramic camera'
+        : 'the azimuth held at once, the altitude taken in order: a line camera tipped up step by step';
 }
 const NZ = 24, NY = 24, T_FAN = 6, T_ROW = 6, CELL_DT = 1 / 48;
 const beamKind = (V, V2) => { const a = heldWhole(V), b = heldWhole(V2); return a && b ? 'all' : a ? 'fan' : b ? 'row' : 'cell'; };
@@ -267,7 +272,7 @@ function makeWorld(kind, seed) {
 
 // ── state, URL ────────────────────────────────────────────────────────────────────────────────────────────────
 const qs = new URLSearchParams(location.search);
-const sitParam = (k, dflt) => { const v = qs.get(k); return v === 'known' || v === '1' || v === '2' ? 'known' : v === '3' ? 'once' : v === '4' ? 'serial' : dflt; };
+const sitParam = (k, dflt) => { const v = qs.get(k); return v === 'known' || v === '1' || v === '2' ? 'known' : v === '3' || v === 'once' ? 'once' : v === '4' || v === 'order' ? 'serial' : dflt; };
 const state = {
     step: Math.min(7, Math.max(1, +qs.get('step') || 1)),
     view: 'outside', lgH: qs.has('H') ? Math.max(-2, Math.min(3, +qs.get('H') || 0)) : 0,
@@ -287,7 +292,7 @@ const CAPTIONS = {
     4: ['a world', '<b>A world in the wedge.</b> Each thing has a direction, its address, and a distance d, laid along its ray: in proportion out to the corner (s = d/H up to 1), then one level, ln 2 wide, for every doubling (1 + ln s). From home only the directions show, each thing as wide as it looks across, Δ/d, a relation: narrower than a pixel, it is a point. Tap a thing to point the hand at it.'],
     5: ['H is a zoom', '<b>H is a zoom.</b> Change H and every thing slides along its own ray, never across it: from home nothing moves. What changes is the address: which things are near (inside the corner), which level the rest fall in, which merge into home (nearer than H/32, the reader holding 32 addresses across the near field), and which lie past the held edge (beyond H·2⁶).'],
     7: ['position, then sweep', '<b>Position, then sweep.</b> Two motions. First the wedge is placed on the sphere: one rotation, three angles (where its triple corner points, longitude and latitude, and how far it is turned about that): the head\'s turn. Then the hand sweeps inside it, altitude and azimuth in the wedge\'s own frame. The readings are made against that frame, so they are the same wherever the wedge is placed, and from home the wedge looks the same: only the lines of a frame fixed outside the reader, the sphere\'s, move, and only that frame records the position, as an observer\'s horizon is placed on the sky by where and when it stands before altitude and azimuth are read in it. Wherever it is placed the wedge covers an eighth of the sphere; the eight octants are eight of its places.'],
-    6: ['the situations', '<b>The situations, one entry per party.</b> Each sweep is taken at once (3) or one direction at a time (4), or its party\'s breadth is known (1 or 2). Both at once: a camera\'s frame. The altitude at once and the azimuth stepped: a fan-beam radar. The azimuth at once and the altitude stepped: a line scanner. Both stepped: a single-pixel scanner. Every one reaches every direction of the wedge; they differ in how much is held at once. A known breadth moves the reader\'s drawing on the triangle from the centre toward the truth.']
+    6: ['the situations', '<b>The situations, one entry per party.</b> From home every reading is a direction, so a swept party is situation 4, the inscribed reading; a party whose breadth is known is 1 or 2. The buttons set how each sweep is held, at once or in order: a second axis, not the situation. Both at once: a camera\'s frame. The altitude at once and the azimuth in order: a slit panoramic camera. The azimuth at once and the altitude in order: a line camera tipped up step by step. Both in order: a single-pixel scanner. Every one reaches every direction of the wedge; they differ in how much is held at once. A reader receiving a range along each pointed direction, a lidar, would be situation 3, the central reading; this page draws directions only. A known breadth moves the reader\'s drawing on the triangle from the centre toward the truth.']
 };
 const STEP_SET = {
     1: { view: 'outside', showWorld: false, handAnim: false, zoomAnim: false, sitV: 'once', sitV2: 'once' },
