@@ -221,7 +221,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   inscribed median at 1 and its mean climbing, the central mean settling. `?shape=circle|egg|star|lumpy&rho=&a0=&writer=`;
   hook `window.__twoReaders`. `pinhole.html`: a thing of breadth V* at distance d through a pinhole; the reading [h : v],
   bounded, unchanged by k; V* = ∞ the horizon (0, 1), off the flat screen; "the writer's account" overlays V*/d; a ruler
-  reader whose amounts move with k. `?V=<log10>|inf&d=&k=&account=1`; hook `window.__pinhole`. `write.html`: RWT step by
+  reader whose amounts move with k; "a uniform sky" (R312): directions uniform over the octant on the flat screen, the
+  Cauchy wedge, 1 − 1/√(1 + q²) within q. `?V=<log10>|inf&d=&k=&account=1&sky=1`; hook `window.__pinhole` (with `sky`). `write.html`: RWT step by
   step, four targets, the nullity computed on the page (4, 1, 0, 0, 1, 0, 1, 0), the breadths written in A's H, B's H and
   metres. `?step=0..7&seed=`; hook `window.__write`. Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
@@ -682,6 +683,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   The third relation in today's paragraphs (16 Oct, SPN R311): c and c₂ both 1; V = V₂ = H = 1 the unit sphere, the
   triple corner h = v = v₂ = 1; the inscribed direction [h : v : v₂]; the central reader's two fixed angles; writing one
   amount, not one per party.
+  The Cauchy wedge (16 Oct, SPN R312; Tom: "the wedge is just the 3d version of the sweep."): Proposition 5(e)'s law
+  named, the sweep in three dimensions (uniform over the octant's area); the gnomonic projection a pinhole's flat screen,
+  density (2/π)·cos³α (the geometric part of the cos⁴ falloff), the sweep's (2/π)·cos²θ, one more cosine per party.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
@@ -1314,7 +1318,8 @@ In short:
       three, at the true size; a uniform sweep's inscribed median within 0.05 of 1, its mean climbing, the central mean
       within 0.01 of its exact value.
   29. **pinhole.html:** the reading unchanged by k = 10⁻³, 7, 10⁶; V* = ∞ at (0, 1), 90°, off the flat screen; equal
-      breadth and distance at 45° and half the turn; the ruler reader's amounts move by k, their quotient does not.
+      breadth and distance at 45° and half the turn; the ruler reader's amounts move by k, their quotient does not; a uniform
+      sky's share within q = ½, 1, 2 within 0.01 of 1 − 1/√(1 + q²), its density (2/π)·cos³α.
   30. **write.html:** the nullities 4, 1, 0, 0, 1, 0, 1, 0 in three scenes; the breadths written in A's H from one known move
       and the same from two; B's off by H_B/H_A until one number is sent; metres after one notch (all to 10⁻⁹).
 

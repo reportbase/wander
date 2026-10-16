@@ -822,13 +822,15 @@ try {
       }
     }
     const inf = P.reading(Infinity, 10), st = P.state(), c = P.reading(5, 5);
-    return { ...out, inf, page: st.reading, corner: c, image: P.reading(3, 4).image };
+    const sk = P.sky(40000, 11), skyErr = Math.max(...[0.5, 1, 2].map(q => Math.abs(sk.share(q) - sk.exact(q))));
+    const cosErr = Math.max(...[[0, 0], [1, 0], [0.3, 2.2], [5, 7]].map(([a, b]) => Math.abs(sk.density(a, b) - sk.cos3(a, b))));
+    return { ...out, inf, page: st.reading, corner: c, image: P.reading(3, 4).image, skyErr, cosErr, exact1: sk.exact(1) };
   });
   const phOk = ph.scale < 1e-12 && ph.quot < 1e-12 && ph.amounts && ph.inf.h === 0 && ph.inf.v === 1 && ph.inf.theta === 90 &&
     ph.inf.image === Infinity && ph.page.v === 1 && Math.abs(ph.corner.theta - 45) < 1e-12 && Math.abs(ph.corner.turn - 0.5) < 1e-12 &&
-    Math.abs(ph.image - 0.75) < 1e-15;
+    Math.abs(ph.image - 0.75) < 1e-15 && ph.skyErr < 0.01 && ph.cosErr < 1e-15 && Math.abs(ph.exact1 - (1 - Math.SQRT1_2)) < 1e-15;
   if (!phOk) failures.push(`[pinhole.html] ${JSON.stringify(ph)}`);
-  console.log(`${failures.length === before29 ? 'ok  ' : 'FAIL'} pinhole.html (the reading unchanged when the world is scaled by 10⁻³, 7, 10⁶ (${ph.scale.toExponential(0)}); an infinite breadth the horizon [0 : 1], off the flat screen; equal breadth and distance at 45°, half the turn; the ruler reader's amounts move by k, only their quotient does not)`);
+  console.log(`${failures.length === before29 ? 'ok  ' : 'FAIL'} pinhole.html (the reading unchanged when the world is scaled by 10⁻³, 7, 10⁶ (${ph.scale.toExponential(0)}); an infinite breadth the horizon [0 : 1], off the flat screen; equal breadth and distance at 45°, half the turn; the ruler reader's amounts move by k, only their quotient does not; a uniform sky on the flat screen the Cauchy wedge, within q of the axis to ${ph.skyErr.toFixed(4)} of 1 − 1/√(1 + q²), its density (2/π)·cos³α)`);
 
   // ── 30. write.html: the nullities of RWT, 4, 1, 0, 0, 1, 0, 1, 0; every breadth written in A's own H from one known
   //    move, the same from a second; B's in its own H off by H_B/H_A, agreeing after one number; metres after one notch ──

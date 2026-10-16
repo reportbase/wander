@@ -1367,11 +1367,14 @@ and v₂ is a symmetry of the sphere that keeps the octant, so the six orderings
 of them. In the drawing a uniform direction is (1, c₁s, c₂s₂) normalised, so (c₁s, c₂s₂) has the law above and each
 median is divided by its c. ∎
 
-The wedge is made at each observation, not taken from a sphere the reader holds: the whole sphere, every facing drawn
-together, is the completed view. A sphere that placed every place by its direction and its distance would need every
-distance, which no situated reader has. The wedge needs no size: the readings are ratios, laid by the two-dimensional
-Cauchy. What it lacks is what the circle lacks, once per party: V*/H and V₂*/H. On the circle near and far were halves;
-with three parties the reader is near in both readings for a third of its addresses.
+The law of (e) is the Cauchy wedge, the sweep in three dimensions. Where two unit relations are swept by one uniform
+turn, three are swept uniformly over the octant's area, and every pair it holds is swept as the circle is; uniform over
+the area is not uniform in both angles, which keeps only the pairs each angle reads ("Swept by altitude and azimuth",
+below). The wedge is made at each observation, not taken from a sphere the reader holds: the whole sphere, every facing
+drawn together, is the completed view. A sphere that placed every place by its direction and its distance would need
+every distance, which no situated reader has. The wedge needs no size: the readings are ratios, laid by the
+two-dimensional Cauchy. What it lacks is what the circle lacks, once per party: V*/H and V₂*/H. On the circle near and
+far were halves; with three parties the reader is near in both readings for a third of its addresses.
 
 **Swept by altitude and azimuth.** Reached by the two sweeps of §2, the uniform octant is uniform in azimuth and uniform
 in height v, not in altitude. By Archimedes' hat-box theorem (*On the Sphere and Cylinder*), a zone of a sphere has area
@@ -1397,8 +1400,14 @@ drawing is the geometry's whole work; each true breadth is one number of the amo
 amounts alone.
 
 In classical terms the readings are the tangent of a uniformly distributed angle: the gnomonic projection of a uniform
-direction. For two other parties the gnomonic projection of a uniform direction on the sphere is the multivariate
-Cauchy (the multivariate t with one degree of freedom), whose marginals are Cauchy (Cacoullos 2014).
+direction. For two other parties the gnomonic projection of a uniform direction on the sphere is the multivariate Cauchy
+(the multivariate t with one degree of freedom), whose marginals are Cauchy (Cacoullos 2014). The gnomonic projection is
+the image plane of a pinhole: a direction (1, s, s₂) lands at (s, s₂) on a flat screen one unit along h, so the Cauchy
+wedge is what such a screen records of directions arriving uniformly over the octant, with no reader dividing anything
+(§9). With α the angle off the axis, 1 + s² + s₂² = 1/cos²α, and the density is (2/π)·cos³α, the solid angle a flat
+screen receives per unit of its area: the geometric part of the classical cos⁴ falloff across a camera's image. The
+sweep's own density is (2/π)·cos²θ (§4), and with n other parties it is Z_n·cos^(n+1)α: one more power of the cosine for
+each party added.
 
 **Working back from the Cauchy.** The Cauchy is known: it is the tangent of an angle turned uniformly. Read backward,
 from the known law to what it needs, each step is forced by the one before.

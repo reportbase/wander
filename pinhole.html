@@ -18,7 +18,9 @@
     "The writer's account" overlays V*, d and the sum V*/d: the description's division, never the reader's.
     The ruler reader beside it measures two amounts in its own H and divides them: its amounts move with k, their
     quotient does not; it touches breadths, so it writes first and reads afterwards (OFS §9).
-    Geometry only, no physics. Links: ?V=<log10 V*>|inf&d=<log10 d>&k=<log10 k>&account=1. Test hook: window.__pinhole.
+    Geometry only, no physics. Links: ?V=<log10 V*>|inf&d=<log10 d>&k=<log10 k>&account=1&sky=1. Test hook: window.__pinhole.
+    A uniform sky (16 Oct, SPN R312): directions uniform over the octant land on the flat screen at (v/h, v₂/h), the Cauchy
+    wedge, density (2/π)·cos³α; the share within radius q is 1 − 1/√(1 + q²).
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -80,6 +82,18 @@
         divides them. Its amounts move when the world is scaled; only their quotient does not. It touches breadths: it writes
         first and reads afterwards.</p>
         <div id="hud"></div>
+    </div>
+    <div class="panel">
+        <div class="row"><button id="skyBtn">a uniform sky</button><span class="cap" style="margin:0">the Cauchy wedge: the sweep in three
+        dimensions, on a flat screen</span></div>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="sky" height="260"></canvas><p class="cap">Directions arriving uniformly over a quarter of the sky
+            (the octant), each landing on a flat screen one unit behind the pinhole at (v/h, v₂/h). Nobody divides: the
+            projection places them. Rings at radius ½, 1 and 2.</p></div>
+            <div><canvas id="skyLaw" height="260"></canvas><p class="cap">The share landing within radius q of the axis,
+            counted (dots) against the two-dimensional Cauchy, 1 − 1/√(1 + q²): a density (2/π)·cos³α, the solid angle per
+            unit of flat screen.</p></div>
+        </div>
     </div>
     <p class="note">The pinhole forms the image point x/z by itself; no one computes it from x and z. The reach cancels
     between the two legs of each reading before it arrives. Behind it: <i>Observation from Somewhere</i> §9, "The inscribed
@@ -174,7 +188,43 @@
     if (q.get('account') === '1') init.account = true;
     set(init);
 
-    window.__pinhole = { reading, ruler, set, state };
+    // a uniform sky: directions uniform over the octant, landing on the flat screen at (v/h, v₂/h): the Cauchy wedge
+    function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+    function sky(n = 4000, seed = 5) {
+        const R = rng(seed), gauss = () => { let u = 0; while (!u) u = R(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * R()); };
+        const pts = [];
+        for (let i = 0; i < n; i++) { const h = Math.abs(gauss()), v = Math.abs(gauss()), v2 = Math.abs(gauss()); pts.push([v / h, v2 / h]); }
+        const exact = q => 1 - 1 / Math.sqrt(1 + q * q), share = q => pts.filter(([a, b]) => a * a + b * b <= q * q).length / n;
+        return { pts, share, exact, density: (s1, s2) => (2 / Math.PI) / Math.pow(1 + s1 * s1 + s2 * s2, 1.5),
+            cos3: (s1, s2) => (2 / Math.PI) * Math.pow(1 / Math.sqrt(1 + s1 * s1 + s2 * s2), 3) };
+    }
+    let skyShown = null;
+    function drawSky() {
+        if (!skyShown) return;
+        let [g, W, H] = fit($('sky'));
+        const smax = 2.5, sc = Math.min(W, H) - 30, ox = 20, oy = H - 15, P = (a, b) => [ox + a / smax * sc, oy - b / smax * sc];
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(...P(0, smax)); g.lineTo(...P(0, 0)); g.lineTo(...P(smax, 0)); g.stroke();
+        g.strokeStyle = 'rgba(212,160,82,0.6)'; g.setLineDash([3, 3]);
+        for (const q of [0.5, 1, 2]) { g.beginPath(); g.arc(...P(0, 0), q / smax * sc, -Math.PI / 2, 0); g.stroke(); } g.setLineDash([]);
+        g.fillStyle = 'rgba(140,230,205,0.7)';
+        for (const [a, b] of skyShown.pts) if (a < smax && b < smax) { const [x, y] = P(a, b); g.fillRect(x, y, 1.5, 1.5); }
+        txt(g, 'v/h →', W - 60, oy - 4, '#8a8a96', 10); txt(g, 'v₂/h ↑', ox + 4, 14, '#8a8a96', 10);
+        [g, W, H] = fit($('skyLaw'));
+        const qmax = 4, X = q => 30 + (W - 45) * q / qmax, Y = f => H - 24 - (H - 44) * f;
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(30, Y(0)); g.lineTo(W - 15, Y(0)); g.moveTo(30, Y(0)); g.lineTo(30, Y(1)); g.stroke();
+        g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath();
+        for (let i = 0; i <= 200; i++) { const q = qmax * i / 200, pt = [X(q), Y(skyShown.exact(q))]; i ? g.lineTo(...pt) : g.moveTo(...pt); } g.stroke();
+        g.fillStyle = '#8ce6cd';
+        for (let i = 1; i <= 16; i++) { const q = qmax * i / 16; g.beginPath(); g.arc(X(q), Y(skyShown.share(q)), 3, 0, 2 * Math.PI); g.fill(); }
+        txt(g, `within 1: counted ${skyShown.share(1).toFixed(3)}, exact 1 − 1/√2 = ${skyShown.exact(1).toFixed(3)}`, 10, 16, '#e6e4ee', 11);
+        txt(g, 'q →', W - 34, H - 6, '#8a8a96', 10);
+    }
+    $('skyBtn').addEventListener('click', () => { skyShown = skyShown ? null : sky(); $('skyBtn').classList.toggle('on', !!skyShown);
+        if (!skyShown) { for (const id of ['sky', 'skyLaw']) fit($(id)); } else drawSky(); });
+    window.addEventListener('resize', drawSky);
+    if (q.get('sky') === '1') { skyShown = sky(); $('skyBtn').classList.add('on'); drawSky(); }
+    window.__pinhole = { reading, ruler, set, state, sky };
 })();
 </script>
 </body>
