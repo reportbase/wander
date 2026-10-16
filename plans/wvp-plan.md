@@ -99,3 +99,58 @@ counted arrivals are recorded one by one (Tonomura et al. 1989 for electrons; Gr
 The prediction to write first: the counted pattern's Kolmogorov gap falls as N^(−1/2), and the pattern's own corner (in
 whatever pair is named) is found by count with the spread its density sets. The bridge (counts and positions in amounts)
 must be named before it is run.
+
+### Run 3, real data: predictions (written 15 Oct about 20:05, before any frame's counts were read)
+
+Tom, 15 Oct about 20:00: "yes" (to this follow-up, the real-data test named above). **Data.** Aspden, Padgett and
+Spalding (2016), *Video recording true single-photon double-slit interference*, Am. J. Phys. 84, 671–677; raw frames
+at Enlighten Research Data, doi:10.5525/gla.researchdata.281, CC BY 4.0. `Video_data.zip` (1,001,556,516 bytes,
+sha256 f81834b586f301b6697ec9b9696b9198a2975146f9853f0758371d8aa2e70d42), not committed. Ten sets of 512 × 512 frames,
+thresholded and binarised by the authors, each frame a few heralded photons. Used here: heralded diffraction with a
+single-mode herald (D_SM, 4,070 frames) and multi-mode (D_MM, 1,500), heralded imaging of the slits single-mode (I_SM,
+4,070), and the ghost pair as a replicate (G_SM diffraction, GI_SM imaging, 4,070 each).
+
+**Known beforehand** (the paper's text and captions, read before writing this): slits 100 µm wide, 500 µm apart
+centre to centre; λ = 710 nm (10 nm filter); f = 500 mm, fringe spacing fλ/d; the figures' axis 0 to 6,500 µm across
+the frame; the single-mode herald gives high-contrast fringes, the multi-mode largely erases them, imaging is little
+affected; the ghost and heralded diffraction planes are 1 : 1. Read: one frame's format (512 rows of 512 tab-separated
+values). Not read: any count, profile or figure value.
+
+**The bridge.** A detection is a pixel; its place x along the fringes is an amount, carried into the unit relations by
+the fringe period P (the phase φ = 2π(x − x₀)/P + δ) and, for Q4, by the Born rule: each slit's amplitude is the square
+root of its share of the counts, h = √(n₁/(n₁ + n₂)), v = √(n₂/(n₁ + n₂)), read from the imaging run, which is assumed to
+light the slits as the diffraction run did (same source and slits, another lens).
+
+**Procedure, fixed now.** An arrival is a nonzero pixel (a value k > 1 counted k times); order by frame, within a frame
+shuffled (seed 0). The fringe axis is the one (rows or columns summed) with more power at periods 30–90 px. The summed
+profile is fitted by Poisson maximum likelihood to n(x) = B + A·sinc²(π(x − x₀)/W)·(1 + C cos(2π(x − x₀)/P + δ)), all
+seven free; standard errors from 200 bootstrap resamples of frames (seed 1). The imaging profile's two stripes are
+split at the lowest pixel between their peaks, with B taken from the frame's outer quarters, per pixel.
+
+- **Q1. The bridge.** The fitted P in D_SM and G_SM is fλ/d at the figures' 12.70 µm a pixel, 55.9 px, within 10%.
+  *Killed if* outside: then the pixel scale or the optics are not as read; the rest runs on the fitted P.
+- **Q2. The pattern built at √N.** Consecutive blocks of N arrivals, N = 25·2^k while N ≤ M/16 (M the set's total), each
+  compared with every arrival outside it by the Kolmogorov distance of its profile along x. *Killed if* the slope of
+  log mean D against log N is outside [−0.55, −0.45] in D_SM, D_MM or G_SM, or √N·mean D at the largest N is more than
+  20% above its value at the smallest (a drifting pattern).
+- **Q3. The address found by count, with the spread the pattern sets.** In blocks of N arrivals (N = 50, 100, 200, at
+  least 30 blocks), the phase estimate φ̂ = arg Σ e^(iφ_j). Predicted: √N·sd(φ̂) = √⟨sin²φ⟩/⟨cos φ⟩, the moments over all
+  arrivals (√2/C for a fold that is exactly 1 + C cos φ). *Killed if* off by more than 3 of the sd's own standard errors,
+  1/√(2(b − 1)) for b blocks, at any N in D_SM or G_SM.
+- **Q4. The contrast is the pair's facing, at most.** Two beams of amplitudes h and v give 1 + 2hv·|γ| cos φ: the
+  contrast is the facing sin 2θ = 2hv (tan θ = v/h) times a coherence |γ| ≤ 1, so it reaches 1 only at the corner,
+  h = v. *Killed if* C(D_SM) > 2hv(I_SM) + 3 standard errors (the two combined), or C(G_SM) >
+  2hv(GI_SM) + 3 standard errors, or C(D_MM) is not below C(D_SM) by 3 standard errors (the last known beforehand, in
+  kind).
+
+What a kill would mean: Q1 is the bridge's amounts. Q2 and Q3 fail if photons are not independent draws from one
+pattern (bunching, drift, dead time): physics or the apparatus, not the geometry. Q4 fails if the contrast exceeds the
+two slits' facing, against two-beam interference, or if the bridge (one illumination for both runs) is wrong. None
+tests the geometry itself; together they test R270's reading on real arrivals: one payload, a pattern whose contrast is
+the pair's facing, met one arrival at a time and built at √N.
+
+**Not tested here: the mean's climb.** Read per arrival as s = tan(φ/2) (φ the facing, φ/2 the inscribed sweep), the
+arrivals have density (1 + C cos φ) over the turn, so near the dark fringe a share (1 − C) of the even turn's: the
+running mean of |s| climbs (1 − C)·(2/π)·ln 10 a decade (the even turn's (2/π)·ln 10 at C = 0, and a mean at C = 1).
+With about 56 px a fringe, the pixel's step caps |s| near 35, and the climb is a few hundredths a decade: below what
+these counts resolve. Stated, not run.
