@@ -2301,7 +2301,11 @@ log-polar map of visual cortex, proportional near the fovea and logarithmic beyo
 literature, from logarithmic-to-linear shifts (Siegler and Opfer 2003; Dehaene et al. 2008) to proportion judgment on
 bounded lines (Barth and Paladino 2011). Scales that are linear near a unit and logarithmic far from it are common in
 practice, astronomy's asinh magnitudes among them (Lupton, Gunn and Szalay 1999); what §6 adds is the join placed at the
-flip's fixed point, where the two spacings agree. The view from nowhere is Nagel's phrase (1986); Haraway (1988) called
+flip's fixed point, where the two spacings agree. The pair and its corner appear in two-path interference: with the
+paths' amplitudes in the relation of h to v, the fringe visibility is at most 2hv and the which-path predictability is
+|h² − v²|, the sine and cosine of the facing, so that their squares sum to at most 1 (Greenberger and Yasin 1988;
+Englert 1996). In the logarithm of the amplitudes' ratio they are its sech and tanh (Bramon, Garbarino and Hiesmayr
+2004), and the visibility is whole only where the two amplitudes are equal, at the corner. The view from nowhere is Nagel's phrase (1986); Haraway (1988) called
 the ideal of seeing everything from nowhere "the god trick", and van Fraassen (2008) argues that the measurer's own
 position enters measurement irreducibly, as the reader's does here. In terms of limits, classical work lets the reader's
 step go to zero first and then lets the count of things grow without bound; a situated reader has a fixed step and an
@@ -2359,6 +2363,9 @@ Society B* 41(2), 113–128.
 
 Bertrand, J. (1889). *Calcul des probabilités*. Gauthier-Villars, Paris.
 
+Bramon, A., Garbarino, G. and Hiesmayr, B. C. (2004). Quantitative complementarity in two-path interferometry.
+*Physical Review A* 69, 022112.
+
 Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
 Review* 4(4), 345–376.
 
@@ -2390,6 +2397,9 @@ and Amazonian indigene cultures. *Science* 320, 1217–1220.
 Drory, A. (2015). Failure and uses of Jaynes' principle of transformation groups. *Foundations of Physics* 45(4),
 439–460.
 
+Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77,
+2154–2157.
+
 Euclid (c. 300 BC). *Elements*. Translated by T. L. Heath (1908), *The Thirteen Books of Euclid's Elements*. Cambridge
 University Press.
 
@@ -2410,6 +2420,9 @@ philosophiques*, 12 December 2016.
 Ghosh, M. (2011). Objective priors: an introduction for frequentists. *Statistical Science* 26(2), 187–202.
 
 Gilinsky, A. S. (1951). Perceived size and distance in visual space. *Psychological Review* 58, 460–482.
+
+Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
+*Physics Letters A* 128, 391–394.
 
 Gull, S. F. (1988). Bayesian inductive inference and maximum entropy. In G. J. Erickson and C. R. Smith (eds),
 *Maximum-Entropy and Bayesian Methods in Science and Engineering*, vol. 1, 53–74. Kluwer, Dordrecht.
