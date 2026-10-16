@@ -15,7 +15,7 @@ rigid bar, the principle gives the even turn, the corner and the drawing at the 
 amounts, motivates the logarithm past the corner; being situated, at home, removes the translations that Jaynes's chord
 keeps. We begin with the readers themselves. What a reader knows of two breadths sets one of five situations (with more
 parties, one entry per party), and these give three vantages: the completed view from nowhere, which holds the straight
-chord between two points, and two situated readers, one taking in a hemisphere at once and one sweeping it from home,
+chord between two points, and two situated readers, the central sweep and the inscribed sweep,
 which hold only the arc they turn through and whose figures are the bell and the fisheye. The chord comes before the
 circle: it needs no turn, and the circle is drawn on it by one. The three read a line of true breadth 1 as 1, π/2 and
 2/π; the true breadth is held only from nowhere, or constructed from several observations, never observed from one. Any
@@ -419,8 +419,8 @@ like a sixth reduce to these.
 - *V known only within bounds, or as a distribution,* is situation 3 or 4 with its one missing number known that way
   (§3.8). Its best estimate is then the corner of the bounds, or the median (Proposition 13).
 - *H unknown* leaves no reader at all: H is the reader's own breadth and is always held. Situation 0 is H with no h.
-- *A reader that reads in patches* is one at a time across the patches and at once within each; every single look is
-  3 or 4.
+- *A reader that reads in patches* is, on the proposal of §3.1, one at a time across the patches and at once within
+  each; every single look is 3 or 4.
 - *A system that changes kind* moves its reader from one situation to another over time (§3.5); at any one look the
   reader is in one.
 - *Several readers* each have a situation of their own; what passes between them is the subject of §9.
@@ -489,13 +489,13 @@ once and the inscribed one direction at a time; the readings, 2 and ½, are the 
   somewhere. With V known it computes the corner of h and v and reads V's amounts exactly; V₂ it draws at H and sweeps,
   finding the corner of h and v₂ and reading V₂'s amounts up to the one ratio it lacks, V₂*/H. It is unsituated in one
   freedom and situated in the other.
-- **Both at once (3, 3).** A hemisphere of directions taken in one look, as a camera takes its frame. Read against its
-  shadow on the base, the hemisphere reads 2, its surface being twice its base: the central reading of §3.4 for three
-  unit relations.
-- **Both one at a time (4, 4).** The reader steps through both angles. Its mean height over the hemisphere is ½, the
-  inscribed reading for three unit relations, and 2 · ½ = 1, as π/2 · 2/π = 1 for two (§3.4). These are not the
-  two-party readings squared, (π/2)² and (2/π)², but those times 8/π² and π²/8: the two sweeps of a three-party reader
-  do not read as two independent two-party readers.
+- **Both central (3, 3).** On the proposal, a hemisphere of directions taken in one look, as a camera takes its frame.
+  Read against its shadow on the base, the hemisphere reads 2, its surface being twice its base: the central reading of
+  §3.4 for three unit relations.
+- **Both inscribed (4, 4).** On the proposal, the reader steps through both angles. Its mean height over the hemisphere
+  is ½, the inscribed reading for three unit relations, and 2 · ½ = 1, as π/2 · 2/π = 1 for two (§3.4). These are not
+  the two-party readings squared, (π/2)² and (2/π)², but those times 8/π² and π²/8: the two sweeps of a three-party
+  reader do not read as two independent two-party readers.
 - **Mixed (3, 4) and (4, 3).** One sweep at once and the other step by step, as scanning instruments work: a radar's fan
   holds every altitude at once and turns through the azimuth; a line scanner holds a row of azimuths and tips through the
   altitude. What such a reader reads of a whole hemisphere depends on how its two sweeps are weighted (§7.1, "Swept by
@@ -638,7 +638,7 @@ A situated reader draws neither polygon. Both need the circle in hand, and it do
 polygon's corners lie on the circle just as the outer polygon's sides touch it. What the reader has is its own turn,
 swept step by step from home. Its reading sin θ/θ is a reading of that turn, not a polygon laid on a circle; it equals
 the inscribed polygon's share in number, but the reader never holds the polygon. The central reader reaches it the same
-way, as a number, through the flip, θ/sin θ = 1/(sin θ/θ): so it knows π/2 at the limb without standing outside, and
+way, as a number, through the flip, θ/sin θ = 1/(sin θ/θ): so it knows π/2 at the limb from its own turn, and
 π/2 · 2/π = 1 stands in for the circle it does not hold. (Archimedes' outer polygon goes as tan θ/θ rather than
 θ/sin θ; both lie above 1 and close on it at the same rate.) Archimedes squeezed π between two polygons because he held
 the whole; a situated reader holds neither polygon and has the same numbers from its own turn and the flip. The
@@ -699,7 +699,7 @@ At once and one at a time say how a situated reader reads, on the proposal this 
 4, which are set by the vantage, their mechanism not pinned down (§3.1); static and dynamic say why. A system is
 *static* to a reader if it holds still for the whole look, so that the reader can take its facing side at once: on the
 proposal, situation 3. It is *dynamic* if it changes or arrives during the look, so that the reader takes it one part
-at a time from inside: on the proposal, situation 4.
+at a time: on the proposal, situation 4.
 - *Both are situated.* Static and dynamic part 3 from 4, not situated from unsituated. The equation and the array of 1
   and 2 are held whole, with no reader standing anywhere.
 - *It is measured against the reader's look, not the system alone.* A building that does not move is read one part at a
@@ -707,9 +707,9 @@ at a time from inside: on the proposal, situation 4.
 - *Arrival makes a reading dynamic, as change does.* A system that holds still is still read one part at a time when
   news of it reaches the reader over time, nearest first.
 - *It is not a matter of dimension.* Static is not "three dimensions" and dynamic is not "three dimensions plus time".
-  Both read the same sweep, 0 to π/2, one laid across at once and one walked.
+  Both read the same sweep, 0 to π/2, one laid across at once and one turned step by step.
 
-A system can change kind, and the reader must follow. A dynamic system can settle (4 becomes 3), and once its breadths
+A system can change kind, and the reader must follow. A dynamic system can settle (on the proposal, 4 becomes 3), and once its breadths
 are in hand it is held whole (it becomes 2). When a system settles, the levels read one at a time can serve as the
 addresses of a reading at once, and the reader need not start again. When a static system starts to change, a reader
 that lays its sweep once keeps a stale picture; only reading again and comparing, one look after another, shows the
@@ -729,7 +729,7 @@ built that way, and it is not a number of dimensions. It consists of five things
 - *magnitudes*: the world's, one value at each address, met, not swept.
 
 A reader *divides* (v by h, leaving a relation with no scale), *sweeps* (lays the relation from home, step by step) and
-*points* (each address reaches a magnitude, an amount v·V, which needs V). Dividing and sweeping are addressing, and can
+*points* (each address reaches a magnitude, an amount v·V*, which needs V*). Dividing and sweeping are addressing, and can
 be done before anything is there; the magnitude is the world.
 
 **The reader is the pivot.** Draw the relation as a bar that turns, about one fixed end, from pure horizontal to pure
@@ -763,7 +763,7 @@ each finger the same address.
 - *The thumb is H.* The hand's own measure is its thumb, the reader's breadth, the value it starts from; the mountain it looks at is V. Setting
   V = H is reading the mountain in thumbs.
 - *The geometry is the hand, not the rings.* Dividing v by h keeps the finger and drops the ring.
-- *The inscribed reader is the hand and its fingers; the central reader holds the rings.* One walks the addresses; the
+- *The inscribed reader is the hand and its fingers; the central reader holds the rings.* One steps through the addresses; the
   other keeps the magnitudes, all at once (on the proposal of §3.1).
 - *The rings hide; the hand does not.* Two rings on one finger, seen along it, show only the nearer: the ring behind is
   the back side. The hand hid nothing; the rings did.
@@ -1092,8 +1092,10 @@ ends at 2ᵏ. We read the 2 across the reader's own level and the 2 between leve
 this is a reading, not a proof.
 
 **Where the reader lives.** The reader stands at home, the centre of the circle its own choice creates. It is not the
-circle. Held whole from no standpoint, drawn on the chord as the completed view draws it (§3.2), the circle has no
-home and no horizon; read from home it is the fisheye of §7.
+circle. Two circles meet at home and should not be confused: this one, the reader's unit circle, is centred there, the
+bar's own; the circle on the chord of §4 passes through home. Read from home they give the same directions, and they are
+the two circles that read evenly along their own outline (§7.4). Held whole from no standpoint, as the completed
+view holds it (§3.2), either circle has no home and no horizon; read from home it is the fisheye of §7.
 
 ## 6. Two address spaces
 
@@ -1187,7 +1189,7 @@ its edge. And its expansions about home would fail past the corner (§4).
 The *near horizon* is the corner, v = h, between the two sides of its reading; every reader finds it. The *far horizon*
 is where the reader's count of addresses runs out, well short of h = 0; a reader can reach it, as a floating-point
 number overflows when its exponent runs out. The *mathematical horizon* is the reading's own infinity, h = 0 and v/h
-without end, at the reader's sides: the boundary between the hemisphere it faces and the one behind it, which no reader
+without end, at the reader's sides: the boundary between the side it faces and the side behind it, which no reader
 reaches. It is not the vanishing point. A thing infinitely far ahead reads 0, at home; the reading's infinity lies at
 the sides, in what is nearest.
 
@@ -1237,10 +1239,9 @@ the sources' spread, it is the world's.
 ## 7. The Cauchy distribution is the address, not the payload
 
 ### 7.1 Sweeping the circle evenly
-
-With V = H the relation is a bar of length 1. A reader at home sweeps it from flat (all h) to upright (all v) in
-equal steps of turn, and at each step holds one reading, v/h. One direction at a time describes this look, not the
-system being read (§3.5).
+With V = H the relation is a bar of length 1. A reader at home sweeps it from flat (all h) to upright (all v) in equal
+steps of turn, and at each step holds one reading, v/h. On the proposal of §3.1, one direction at a time describes this
+look, not the system being read (§3.5).
 
 **Proposition 5.** (a) Equal steps of turn give unequal readings. Near home a step barely changes v/h; the corner is
 halfway through the turn; near upright each step changes v/h by more and more, without bound.
@@ -1272,7 +1273,7 @@ simplification loses nothing the addresses hold. ρ counts payload, not addresse
 (Theorem 6(a)).
 
 **When the density varies with direction.** Where ρ depends on the direction θ = arctan(v/h), it is no longer a
-constant to drop: it is the payload's shape (§7.4), and the arrivals per unit of v/h are
+constant to drop: it carries the payload's shape (§7.4), and the arrivals per unit of v/h are
 
   ρ(θ)·2/(π(1 + (v/h)²)),  in total ρ̄ = (2/π)∫₀^{π/2} ρ(θ) dθ,
 
@@ -1296,7 +1297,7 @@ does. The second is that the two components vary independently. Given both, the 
 the only law of two independent components that every turn leaves unchanged (Herschel 1850; Maxwell 1860). Three things
 follow, each classical.
 - Its direction is even over the turn, so its reading is the half-Cauchy of (b), P(s ≤ r) = (2/π)·arctan r, with its
-  median at the corner. The Cauchy addresses are the normal payload read by its ratio.
+  median at the corner. The normal payload's ratio has the addresses' law.
 - Its size, √(X² + Y²), is independent of its direction. What arrives and where it is addressed separate exactly:
   Theorem 6(a), seen from the payload's side.
 - With unequal spreads, σ_v ≠ σ_h, the reading is still a half-Cauchy, of scale σ_v/σ_h, its median there: (d) with
@@ -1304,8 +1305,8 @@ follow, each classical.
   Cauchy at all, and its median leaves the corner (with the centre at (0, σ), to 1.515): the density varying with
   direction, above.
 
-The central sweep reads the payload, which has a mean (each component's size averages √(2/π)·σ); the inscribed sweep
-reads its ratio, which has none (its mean up to M is (1/π)·ln(1 + M²), growing without limit). The two routes to the
+The central sweep reads the payload, which has a mean (each component's size averages √(2/π)·σ); its ratio, which has the
+addresses' law, has none (its mean up to M is (1/π)·ln(1 + M²), growing without limit). The two routes to the
 Cauchy are kept apart. The address law of (b) is the sweep's own: it needs only the even turn and holds whatever the
 payload is, Gaussian or not (Theorem 6(a)). The normal payload is a second route that arrives at the same law, a model
 consistent with the addresses, not their cause. The paper does not claim that payloads are Gaussian, only that if a
@@ -1327,7 +1328,7 @@ by area. Write a = v/h and b = v₂/h. Then:
 *Proof.* The point of the octant in direction (1, a, b) is (1, a, b)/r with r² = 1 + a² + b². Projected from the centre
 onto the plane h = 1, an element da·db of the plane at distance r from the centre subtends dA = da·db·cos α/r² of the
 sphere, where α is the angle between the ray and the plane's normal, cos α = 1/r; so dA = da·db/r³. In polar
-coordinates on that plane, a = ρ cos ψ and b = ρ sin ψ, ∫₀^∞ ρ·dρ/(1 + ρ²)^(3/2) = 1, so the octant's area is π/2 and ψ
+coordinates on that plane, a = q cos ψ and b = q sin ψ, ∫₀^∞ q·dq/(1 + q²)^(3/2) = 1, so the octant's area is π/2 and ψ
 is spread evenly over [0, π/2]; hence b/a = tan ψ, which is v₂/v, has the law of (b). Integrating b out, ∫₀^∞ db/(1 + a² + b²)^(3/2) = 1/(1 + a²), which gives the law of (b) for
 a, and likewise for b. Exchanging any two of h, v and v₂ is a symmetry of the sphere that keeps the octant, so the six
 orderings have equal areas; h is the largest in two of them. In the drawing an even direction is (1, c₁a, c₂b)
@@ -1396,7 +1397,7 @@ at angles θ from the perpendicular, spread evenly over the half turn toward the
   The landings follow the law of (b) over both facings, and half of them lie within β of the foot.
 - The flash's path, β/cos θ, differs from flash to flash and cancels from the ratio of its two legs: β out to sea and
   x − α along the shore. One length remains, β. It is the same for every flash because the shore is straight.
-- Draw the shore at c times the length of the sea: V = cH, with H the lamp's distance.
+- Draw the shore at c times the length of the sea: V = cH, with H drawn at the lamp's distance.
   - The half-way flash then lands c drawn lamp-distances from the foot and is drawn at arctan c.
   - The share of landings within one drawn lamp-distance is (2/π)·arctan(1/c).
   - The drawn readings follow the law of (b), with the median at the corner and unchanged by the flip, if and only
@@ -1644,15 +1645,15 @@ readings are the same Cauchy at every ρ, not only at the two ends. Laid along t
 f = 0.3 cos 2θ + 0.1 cos(3θ + 0.4) the share before the corner runs 0.500, 0.529, 0.563, 0.632 at ρ = 0, ¼, ½, 1, and
 for f = 0.25 cos 4θ, unchanged by the exchange, it stays 0.500 while the ends move. The circle is the only base that
 carries nothing: an outline reads evenly by direction exactly when its length per unit of turn, √(r² + r′²), is
-constant, and r² + r′² = c² has two kinds of solution, r = c, the circle centred on the reader, and r = c·sin(θ + φ),
-the circle through the reader. These are the central and the inscribed sweeps of §4, and no other shape gives either.
-Read as the reader's ignorance (§2), a reader who does not know the shape needs a law that every radial map leaves
-unchanged, and only a law on directions alone is one; the rescalings of κ are the radial maps with g constant.
-So a reader can begin at the unit circle and sweep the perturbation without knowing V: in ln r = a₀ + ρ·f(θ), the
-unknown size is the constant term alone, a₀ = ln κ, the one term no ratio of radii reads, and the even measure dκ/κ
-is the flat da₀. Every term of f is the shape, read exactly from ratios of radii wherever the payload or another
-standpoint supplies them (from directions alone none is read), and taking the terms in order of n is a level of
-detail, each truncation leaving every address where it was.
+constant, and r² + r′² = c² has two kinds of solution, r = c, the circle centred on the one who sweeps, and
+r = c·sin(θ + φ), the circle through it. These are the two pivots of §4, the centre and a point of the circle, and no
+other shape gives either. Read as the reader's ignorance (§2), a reader who does not know the shape needs a law that
+every radial map leaves unchanged, and only a law on directions alone is one; the rescalings of κ are the radial maps
+with g constant. So a reader can begin at the unit circle and sweep the perturbation without knowing V*: in
+ln r = a₀ + ρ·f(θ), the unknown size is the constant term alone, a₀ = ln κ, the one term no ratio of radii reads, and
+the even measure dκ/κ is the flat da₀. Every term of f is the shape, read exactly from ratios of radii wherever the
+payload or another standpoint supplies them (from directions alone none is read), and taking the terms in order of n is
+a level of detail, each truncation leaving every address where it was.
 
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the
@@ -1772,15 +1773,15 @@ each time the number of addresses it spans halves; when it spans a single addres
 the span sets the level. How many addresses a thing spans depends on amounts, which the geometry does not supply.
 
 **From far off, a thing is its total at its centroid.** Take payloads w_i at points r_i about a centre, each at
-distance ρ_i from it, read from a standpoint at distance r with every ρ_i < r. The reciprocal of the distance to each
-expands in the reading ρ_i/r: 1/|r − r_i| = Σ_l (ρ_i^l / r^(l+1)) P_l(cos γ_i), with P_l the Legendre polynomials and
+distance q_i from it, read from a standpoint at distance r with every q_i < r. The reciprocal of the distance to each
+expands in the reading q_i/r: 1/|r − r_i| = Σ_l (q_i^l / r^(l+1)) P_l(cos γ_i), with P_l the Legendre polynomials and
 γ_i the angle at the centre.
 - Weighted by the w_i and taken about their centroid, the first-order terms cancel. From far off the payloads read as
   their total at their centroid, and each finer order of their arrangement arrives smaller by one more power of the
   reading.
-- For a single payload the series converges outside the sphere of radius ρ and fails inside it. On that sphere, along
-  the line to the payload, every term is the same and none may be dropped: the corner of the pair (ρ, r).
-- Inversion in that sphere, r ↦ ρ²/r with the factor ρ/r, exchanges the outer series and the inner one term by term
+- For a single payload the series converges outside the sphere of radius q and fails inside it. On that sphere, along
+  the line to the payload, every term is the same and none may be dropped: the corner of the pair (q, r).
+- Inversion in that sphere, r ↦ q²/r with the factor q/r, exchanges the outer series and the inner one term by term
   (Kelvin's inversion; Kellogg 1929). It is the flip of §4, in space.
 
 This is level of detail by distance, with the corner as its seam.
@@ -1828,7 +1829,7 @@ a whole, since a whole drawn at any length but H would undo the turn (Propositio
 the shape, the corner, the levels or any address. What the values decide is where things land among the addresses:
 which fall in the near field and which past the corner, the zoom of §8.
 
-**The calibration error.** Under V = H the amounts equal the unit relations numerically, which is why the two are so easily
+**The amounts' error.** Under V = H the amounts equal the unit relations numerically, which is why the two are so easily
 confused. Where the true V* differs from H, every amount is off by V*/H, by the same factor on both sides of the corner: the
 reader has read the mountain as one thumb, and it is V*/H thumbs. The addresses are exact; the amounts are not. Within
 one observation a reader cannot tell a mountain of a hundred thumbs from one of 10¹⁶. Amounts
@@ -2116,16 +2117,16 @@ readers, the number line.
 
 A reader looks at a mountain range, face on, from opposite its middle. From nowhere we know three amounts: the reader's
 thumb H = 1 mile (the thumb is whatever single measure the reader holds; here it is a mile), the mountain's width
-V = 20 miles, and its distance d = 10 miles. The reader knows only its thumb.
+V* = 20 miles, and its distance d = 10 miles. The reader knows only its thumb.
 
 **The pairs.** Each pair has its own corner, so we name them first.
 
 | pair | ratio | where it sits |
 |---|---|---|
-| half-width to distance, (V/2, d) = (10, 10) | 1 | at that pair's corner: each end of the range lies 45° off straight ahead |
-| width to distance, (V, d) = (20, 10) | 2 | one doubling past that pair's corner: the range is wider than it is far |
+| half-width to distance, (V*/2, d) = (10, 10) | 1 | at that pair's corner: each end of the range lies 45° off straight ahead |
+| width to distance, (V*, d) = (20, 10) | 2 | one doubling past that pair's corner: the range is wider than it is far |
 | distance to the thumb, (d, H) = (10, 1) | 10 | log₂ 10 ≈ 3.32 doublings past the reader's corner |
-| mountain to thumb, (V, H) = (20, 1) | 20 | log₂ 20 ≈ 4.32 doublings: the mountain is 20 thumbs |
+| mountain to thumb, (V*, H) = (20, 1) | 20 | log₂ 20 ≈ 4.32 doublings: the mountain is 20 thumbs |
 
 The first two can be read from the view itself, as directions. The last two set H against amounts the reader does not
 have.
@@ -2145,17 +2146,17 @@ true width, and no one stands anywhere in it.
    not why. With fingers spread evenly over the half-turn, the range takes exactly the middle half of them, between the
    Cauchy's quartiles, which are its corners (§7.3), and the median finger points at its middle. On each finger the ring is the ridge's elevation
    reading, and together they give the range's skyline, up to scale. The far slopes are hidden, rings behind rings.
-3. *The two vantages, on the thumb.* The one breadth the reader holds is its thumb, the H it started from, and the two situated vantages
-   of §3.4 read it from the reader's own turn. Each facing side of the half-turn is a quarter turn, from home to the
-   limb, where a finger runs parallel to the range and never meets it. On the thumb's circle that quarter turn is an arc
-   of π/2 thumbs, and its shadow on the line across the view is exactly 1 thumb. Taken in at once, limb to limb, the
-   whole half-turn is an arc of π thumbs over a shadow of 2, and the central reading, the turn over its shadow, is π/2.
-   Swept one finger at a time from home, the inscribed reading, the shadow over the turn, is 2/π: the fingers' mean
-   shadow (0.6368 with 36 fingers). Their product is 1: H measured in H, the value the reader started
-   from, which neither vantage reads alone. Out to the range's ends, at 45°, the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, the
-   row of §3.4 at 45°, and their product is 1 again. None of this involves the mountain: a range 2 miles wide at 1 mile
-   gives the same fingers and the same products. Joined, the two vantages return only what the
-   reader put in; the mountain's breadth must be constructed (step 6).
+3. *The two vantages, on the thumb.* The one breadth the reader holds is its thumb, the H it started from, and the two
+   situated vantages of §3.4 read it from the reader's own turn. Each facing side of the half-turn is a quarter turn,
+   from home to the limb, where a finger runs parallel to the range and never meets it. On the thumb's circle that
+   quarter turn is an arc of π/2 thumbs, and its shadow on the line across the view is exactly 1 thumb. Read by the
+   central sweep, limb to limb, the whole half-turn is an arc of π thumbs over a shadow of 2, and the central reading,
+   the turn over its shadow, is π/2. Read by the inscribed sweep, one finger at a time from home, the inscribed reading,
+   the shadow over the turn, is 2/π: the fingers' mean shadow (0.6368 with 36 fingers). Their product is 1: H measured
+   in H, the value the reader started from, which neither vantage reads alone. Out to the range's ends, at 45°, the same
+   two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, the row of §3.4 at 45°, and their product is 1 again. None of
+   this involves the mountain: a range 2 miles wide at 1 mile gives the same fingers and the same products. Joined, the
+   two vantages return only what the reader put in; the mountain's breadth must be constructed (step 6).
 4. *What it cannot read.* A range 20 miles wide at 10 miles, 2 miles wide at 1 or 2,000 miles wide at 1,000 gives the
    same fingers and the same rings. The reach cancels from every reading (Theorem 6).
 5. *Mountain equals thumb.* Not knowing the mountain's size, the reader sets V = H: it takes the range to be one thumb,
@@ -2421,6 +2422,8 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | the corner | geometry | v = h |
 | home, the horizon | geometry | v/h = 0; v/h → ∞, never reached |
 | g | geometry | the sweep's progress, (2/π)·arctan(v/h): 0 at home, ½ at the corner, 1 at the horizon |
+| ρ | geometry | the share of the addresses at which a payload is met, in [0, 1] (after Proposition 5(d)); in §7.4, the strength of a shape's perturbation of the circle, r = exp(ρ·f(θ)); in both uses a constant ρ changes no reading |
+| reading, writing | what an observer does | reading: in the unit relations h and v, with V unknown (situations 3, 4); writing: in amounts, with the breadths H and V known (situations 1, 2); situation 1 is common to both (§9) |
 | address, payload | geometry; what arrives | a place laid before anything arrives; what arrives there: the finger and the ring |
 | situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; the central sweep, the payloads; the inscribed sweep, the addresses; with more parties, one entry per party |
 | ℓ | an amount | the reach of what arrives along a ray (Theorem 6); it cancels from every reading |

@@ -621,6 +621,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Situation 1 is common to readers and writers (SPN R299): the circle V = H is the reader's drawing and the writer's
   equation, one circle held two ways; situation 2 writing alone, 3 and 4 reading alone; taking the reader's circle for
   the writer's is OFS §7.1's confusion.
+  Vocabulary pass (16 Oct, Tom: "Do a cleanup read of ofs, to make shur the vocabuary is now consistent"): situations 3
+  and 4 named by their sweeps everywhere (the mechanism, at once or one at a time, marked "on the proposal"); V* for the
+  true breadth in §10; the reader's unit circle (centred at home) told apart from the circle on the chord (through home);
+  ρ kept for the density and the perturbation only (a polar radius and the inversion radius renamed q); "The amounts'
+  error" for "The calibration error"; ρ and reading/writing added to the notation. Left as they are: the letters a, b, c
+  and s each with more than one use, and the long table lines.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
