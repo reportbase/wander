@@ -67,3 +67,25 @@ What a kill would mean:
 - T7: the readings' laws, already in OFS §7.
 
 ## Runs
+
+### Run 1 (16 Oct about 05:05, `tws/tws.py`, output in `tws/run1.txt`; 6 s)
+
+- **T1 not killed.** At the centre the arc's rate is 1 for every direction.
+- **T2 not killed.** From a point of the circle it is 2 for every ray into it.
+- **T3 killed, by my set-up.** For p = 0.1, 0.5 and 0.9, the rate matches 2t/(t + t′) to 2·10⁻⁴¹ at all 50
+  directions, and the outward extreme is 1 − p exactly. But the inward extreme, at ψ = π, printed −2.8·10⁴⁴. The hit's
+  angle there sits on atan2's cut at ±π, so the numerical derivative straddled a jump of 2π.
+- **T4 not killed.** Outside, the rate at the near hit runs over [−4.70, −0.50] at p = 1.5, [−7.33, −1.00] at p = 2 and
+  [−21.5, −4.00] at p = 5, and reaches about −10⁴ beside a tangent ray. It is negative because the near hit moves
+  against the turn.
+- **T5 not killed.** Of 301 pivots from p = 0 to 3, only p = 0 and p = 1 give a constant rate.
+- **T6 not killed.** On the chord, 2(P − M) = (h + iv)², its angle is 2θ, and s = tan θ = tan(φ/2) is where the ray
+  meets the tangent at B, all within 10⁻³⁰.
+- **T7 not killed.** The inscribed readings are exactly Cauchy, with median at s = 1 and a mean that climbs
+  1.46587119776 a decade. The central sweep's means are 0 and 2/π.
+
+### Run 2, T3′ (prediction written 16 Oct about 05:08, before running)
+
+The same claim as T3, with the hit's angle measured from the direction opposite the pivot, so it never crosses ±π. Its
+derivative then needs no unwrapping. *Killed if*, for p = 0.1, 0.5 or 0.9, the rate at ψ = π is off 1 + p by more than
+10⁻³⁰, or the rate at ψ = 0 is off 1 − p by more than 10⁻³⁰.
