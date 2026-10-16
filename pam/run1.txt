@@ -1,0 +1,26 @@
+A1, A2: the median direction
+  (i) even                     θ_m = 45.0°  s_m = 1.0  off π/4 by 0.0
+  (ii) 1 + cos4θ/2             θ_m = 45.0°  s_m = 1.0  off π/4 by 4.24e-32
+  (iii) relief, symmetrised    θ_m = 45.0°  s_m = 1.0  off π/4 by 4.12e-33
+  (iv) (2 + cos2θ)/3           θ_m = 32.1031895334229°  s_m = 0.627376393533  off π/4 by 0.225
+  (v) relief                   θ_m = 47.1279507585727°  s_m = 1.07718148526  off π/4 by 0.0371
+  (vi) sin²2θ                  θ_m = 45.0°  s_m = 1.0  off π/4 by 2.12e-32
+  (v): weight below 45° 0.79406094, above 0.88714325; median moved toward the heavier side: True
+A3: the truncated mean of s
+  (i) even                     climb 10⁶→10⁷ 1.46587119776 predicted 1.46587119776 ok
+  (ii) 1 + cos4θ/2             climb 10⁶→10⁷ 2.19880679664 predicted 2.19880679664 ok
+  (iv) (2 + cos2θ)/3           climb 10⁶→10⁷ 0.73293559888 predicted 0.732935598879 ok
+  (vi) sin²2θ mean 1.27323954473516268615107 against 4/π 1.27323954473516268615107 ok
+A4: the payload at θ = 0.3, a_n, b_n uniform on (−1, 1), standardised by √(K/3)
+  K   1: Kolmogorov distance 0.04689  bound 0.03300  (and > 0.01) OFF
+  K   2: Kolmogorov distance 0.01109  bound 0.01800 ok
+  K   4: Kolmogorov distance 0.00518  bound 0.01050 ok
+  K   8: Kolmogorov distance 0.00256  bound 0.00675 ok
+  K  16: Kolmogorov distance 0.00169  bound 0.00487 ok
+  K  32: Kolmogorov distance 0.00084  bound 0.00394 ok
+  K  64: Kolmogorov distance 0.00085  bound 0.00347 ok
+  the full-turn mean of p over 200 reliefs (K = 64, 4,096 even points): at most 7.77e-16
+A1 not killed
+A2 not killed
+A3 not killed
+A4 KILLED

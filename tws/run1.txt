@@ -1,0 +1,18 @@
+T1 centre: r in [1.0, 1.0]
+T2 on the circle: r in [2.0, 2.0]
+T3 p=0.1: r against 2t/(t+t′) off at most 2.3e-41; outward 0.9, inward -2.80239429141e+44
+T3 p=0.5: r against 2t/(t+t′) off at most 2.3e-41; outward 0.5, inward -2.80239429141e+44
+T3 p=0.9: r against 2t/(t+t′) off at most 2.3e-41; outward 0.1, inward -2.80239429141e+44
+T4 p=1.5: r in [-4.6989333, -0.50029713], spread 4.19864; near a tangent ray -8751.5
+T4 p=2.0: r in [-7.326141, -1.0004895], spread 6.32565; near a tangent ray -12859.7
+T4 p=5.0: r in [-21.485201, -4.0014478], spread 17.4838; near a tangent ray -34877.2
+T5 pivots with a constant rate, p in 0 … 3: [0.0, 1.0]
+T6 two charts on the chord: every check within 1e-30
+T7 inscribed: Cauchy law True, P(s ≤ 1) = 0.5, mean climb 10⁶→10⁷ 1.46587119776 (2/π·ln 10 = 1.46587119776); central: means -5.2278e-48, 0.636619772367581 (2/π 0.636619772367581)
+T1 not killed
+T2 not killed
+T3 KILLED
+T4 not killed
+T5 not killed
+T6 not killed
+T7 not killed

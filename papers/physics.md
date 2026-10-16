@@ -193,6 +193,9 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | one stream against readings at once with a shared denominator | looming's size–distance ambiguity; a same-depth neighbour's ratio S₁/S₂ separates approach from growth | none | PAY P1, P2 |
 | one amount from outside fixes every amount linked to it (OFS Proposition 8(b)); a unit agreed between readers (OFS §9) | dimensional analysis (only dimensionless ratios are read); the SI since 2019, every base unit fixed by an agreed value of a constant (Δν_Cs, c, h, e, k_B, N_A, K_cd) | the constants themselves, by agreement | OFS review 5, point 5 |
 | the addresses (directions, order, shape up to scale) exact while the scale is arbitrary; one amount from outside, a pan in levels | the completed view assembled from situated observations (parallax, triangulation, multi-epoch astrometry, the distance ladder); statistical error, which averages down, against systematic calibration error, which does not and is carried up the ladder | a baseline (travel), a shared length, a known kind | STC P1–P7 |
+| the central reading in squares at twice the angle: the point (h², hv) on the circle over the line (R265, a reading) | Malus's law (the foot h² = cos²θ); a polarization's Stokes point at 2θ; a resonance's admittance circle, half power at the corner X = R; the unitarity circle and Breit–Wigner's sin²δ | none: classical identities, stated, then checked | `thl/waves.py` (identities) |
+| the facing on the unit circle: sin 2θ = 2hv and cos 2θ = h² − v², with h and v two paths' amplitudes as unit relations | two-path interference: visibility at most 2hv, predictability P = \|h² − v²\|, V² + P² ≤ 1 (Greenberger and Yasin 1988; Englert 1996), equal for a pure state; full visibility only at the corner, 2hv = sech of the levels between the amplitudes, already in print as V = sech θ, P = tanh θ (Bramon, Garbarino and Hiesmayr 2004; Krause, Fischbach and Rohrbach 2014) | the Born rule: an amplitude is the square root of a share of the counts | WVP run 4 (the bound, at the corner only); `thl/waves.py` (the identity) |
+| a payload held whole as a pattern, met one arrival at a time (R270, a reading: wave-like, particle-like) | an intensity pattern built by counted detections, independent draws at √N | the Born rule; one detection an event | WVP runs 1–2 (simulation), 3–4 (real photons; classical) |
 
 ## 2. Results, by standing
 
@@ -247,6 +250,35 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 
   The octave packing is a reader's, done ahead of time in the models (a pre-read signal, SPN R250: a real signal
   arrives unpacked); the share in each octave is read from the world, not fixed by the geometry.
+
+- **Single photons build one pattern, whose contrast is at most the slits' facing** (WVP runs 3–4,
+  `plans/wvp-plan.md`). On Aspden, Padgett and Spalding's frames (2016, Enlighten, CC BY 4.0), a double slit lit one
+  heralded photon at a time, each photon a cluster of pixels:
+  - the fringe period is fλ/d to 0.3% and 1.7%;
+  - the photons are independent draws from one pattern that does not drift: √N·D near Kolmogorov's 0.87;
+  - the fringes' place is found by count with the spread the pattern sets (0.94 of it);
+  - the two slits' shares, from the imaging runs, give 2hv = 0.997 and 1.000: the pair at its corner;
+  - the contrast, 0.69 and 0.56, sits below that facing, short by the source's coherence; the multi-mode herald's is
+    0.09.
+
+  The bridge is the Born rule: a slit's amplitude is the square root of its share of the counts. The imaging run is
+  taken to light the slits as the diffraction run did. This is classical two-beam interference throughout. It agrees
+  with R270's reading, a payload held whole as a pattern and met one arrival at a time, and does not test it beyond
+  that. Run 3 was killed by my set-up (wrong axis, pixels for photons).
+
+- **A pure pair keeps its facing; a mixture does not** (DUO run 1, `plans/duo-plan.md`). Summhammer, Rauch and
+  Tuppinger's 1987 neutron interferometer, one path attenuated to transmission a, read by hand from their figure (as
+  scanned in Rauch's 2013 slides):
+  - foils (each neutron passes with probability a: a pure pair, amplitudes 1 and √a) keep √a of the fringe amplitude:
+    six points with a from 0.05 to 0.47, all within 1.3σ;
+  - a beam chopper open a share a of the time (a mixture of the pair at its corner and one path alone) keeps a: three
+    points within 0.6σ;
+  - at a ≈ 0.24 the gold foil keeps 0.447 and the chopper 0.243, 45σ apart, at the same counts;
+  - the prediction for foils (D1) was killed by the thinnest gadolinium foils (a < 0.005), all below √a, which the
+    paper ascribes to uneven thickness (the mean transmission exceeds what the coherent amplitude carries).
+
+  The bridge is the Born rule, and the transmission is measured. On the duality circle: the foil is on it (V² + P² = 1),
+  the chopper inside it (same P, lower V). Classical, and the sech form is in print (§1); this records the data.
 
 ### 2.2 Exact arithmetic
 
@@ -618,6 +650,17 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
   error, should appear as one common shift in levels across a catalogue's distances, the same for every star linked to
   it, and should not shrink with the number of stars. The archives that hold it (ESA, VizieR) are blocked here. (Also
   `papers/parallax.md` §9.)
+- **The contrast against the slits' shares** (from WVP run 4). Run 4's slits were lit equally, so the pair sat at its
+  corner. A double slit with one slit partly covered, recorded photon by photon with the shares measured, should lose
+  contrast as 2hv = sech of the levels between the two amplitudes, the same at k and 1/k. That would show the corner in
+  the counts, not only the bound. This is the duality relation V² + P² ≤ 1 (Greenberger and Yasin, Phys. Lett. A 128,
+  391, 1988; Englert, Phys. Rev. Lett. 77, 2154, 1996), long tested; what would be ours is only reading it in levels.
+  A search on 15 Oct found no open raw counts with several shares: Zenodo's datasets, and Schwindt, Kwiat and Englert
+  (Phys. Rev. A 60, 4285, 1999; its data in figures only, the path marked by polarization). The best case is
+  Summhammer, Rauch and Tuppinger (Phys. Rev. A 36, 4447, 1987): neutron foils of transmission a in one path, the
+  predicted contrast 2√a/(1 + a), which is 2hv, against a chopper's 2a/(1 + a) at the same mean count. The paper is
+  behind its publisher. DUO run 1 (§2.1) read its figure from Rauch's 2013 slides: foils on √a for a ≥ 0.05, the
+  chopper on a, the thinnest gadolinium foils below √a (killed; uneven thickness, by the paper's account).
 - **One dimension against two.** ISQ's reading separates an angular size (falling one level per level of distance) from
   its square, the light (two levels). Stars with measured angular diameters (interferometry) and parallaxes would test
   the one-level half directly.

@@ -531,7 +531,20 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   **Exterior wave-like, interior particle-like** (15 Oct, SPN R270; Tom: "exterior - wave like, interior - particle
   liike"): a reading, in SPN only (physics, not OFS). Tested for consistency by WVP (`plans/wvp-plan.md` + `wvp/`):
   the interior's counted arrivals build the exterior's pattern at √N, find the corner with spread (π/2)/√N, never
-  settle a mean (it climbs (2/π)·ln 10 a decade; P3 killed by my tolerance, P3′ not); real data queued.
+  settle a mean (it climbs (2/π)·ln 10 a decade; P3 killed by my tolerance, P3′ not). Real data (15 Oct, SPN R278;
+  Tom: "yes"), runs 3–4 (`wvp/wvp3.py`, `wvp/wvp4.py`) on Aspden, Padgett and Spalding's single-photon double-slit
+  frames (Enlighten doi:10.5525/gla.researchdata.281, CC BY 4.0, sha256 in the plan, not committed; the frames are
+  cumulative, a photon a cluster of pixels, the fringes along rows): run 3 killed by my set-up; run 4 not killed: period
+  fλ/d, independent arrivals at √N, the phase's spread as the pattern sets, the slits at their corner (2hv 0.997, 1.000)
+  and the contrast (0.69, 0.56) under it. Classical; consistent with the reading, no further test of it. The bound is
+  the duality relation V² + P² ≤ 1 (Greenberger–Yasin, Englert): V = 2hv = sin 2θ, P = |cos 2θ| (SPN R279; in
+  `physics.md`'s dictionary and `thl/waves.py`); no open counts with unequal shares found (the neutron foils of
+  Summhammer, Rauch and Tuppinger 1987 are the best case, paywalled). DUO (`plans/duo-plan.md` + `duo/`; SPN R280,
+  R281): the sech form is in print (Bramon et al. 2004; Krause et al. 2014); run 1 read the 1987 figure from Rauch's
+  2013 slides by hand (readings first): foils on √a for a ≥ 0.05, the chopper on a, 0.447 against 0.243 at a ≈ 0.24
+  (D2, D3 not killed); D1 killed by the thinnest Gd foils (uneven thickness, by the paper's account). OFS §11.3
+  cites the duality relation as related work (SPN R282; Tom: "yes, cite it"): visibility at most 2hv, predictability
+  |h² − v²|, sech and tanh of the amplitudes' log-ratio (Greenberger and Yasin 1988; Englert 1996; Bramon et al. 2004).
   **Exterior: the payload's mean (Gaussian); interior: the addresses' median (Cauchy)** (15 Oct, SPN R271; Tom: "outside
   is gaussian, it is the mean, it measures the actual physical payoad … inside is cauchy, it is median, is the address and
   sweep of the gaussian center of gravity."): a reading; OFS §7.1 ("the exterior reader's bell") and §7.6 read
@@ -556,6 +569,19 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Narrowed by review 12 (SPN R277, `plans/ofs-review-12.md`): the normal is a model under two premises (a turn-invariant
   law, which the reader's ignorance selects as a representation, and independent components), not a consequence of the
   sweep; the Cauchy addresses are the sweep's own, whatever the payload; the central limit theorem kept to sums.
+  PAM (`plans/pam-plan.md` + `pam/`, 15 Oct, SPN R283; Tom: "4"): exact and seeded; the addresses' median at the corner
+  for every exchange-symmetric weight (to 10⁻³²), moved toward a lopsided weight's heavier side; their mean only for a
+  weight vanishing at the horizon, else a climb of (2/π)(ρ(π/2)/ρ̄)·ln 10 a decade; a payload of independent uniform
+  parts normal at Edgeworth's 1/K (A4 killed by my guessed bound, A4′ from the series not).
+  **Why exactly two sweeps** (16 Oct, SPN R284; Tom: "the inside and outside are just two different type of sweeps, but
+  why,structurally."; "yes, a detailed explanation without physics is needed. people have been very confused about
+  this."): OFS §4 "Why there are two sweeps, and only two" and "What each sweep reads": equal turns give equal arcs only
+  from the centre (rate 1) or a point of the circle (rate 2); elsewhere 2t/(t + t′); the party's sweep is the
+  stereographic chart (ratios, unbounded, median), the pair's middle reads its square ½(h + iv)² (bounded, means); only
+  on the circle. TWS (`plans/tws-plan.md` + `tws/`): exact; T3 killed by my set-up (atan2's cut), T3′ not.
+  Why classical work did not draw the split (16 Oct, SPN R285; Tom: "that discussion is painful, its probably best done
+  in a follow up document."): kept out of OFS; seeded in `plans/classical-split-note.md` (five reasons, a reading), the
+  claim kept narrow (the pieces in print, the split at the standpoint not found).
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the

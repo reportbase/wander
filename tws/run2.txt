@@ -1,0 +1,4 @@
+p=0.1: inward 1.1 (1 + p), outward 0.9 (1 − p) ok
+p=0.5: inward 1.5 (1 + p), outward 0.5 (1 − p) ok
+p=0.9: inward 1.9 (1 + p), outward 0.1 (1 − p) ok
+T3′ not killed
