@@ -63,3 +63,19 @@ Everything here is classical; the run checks the reading given it, exactly (mpma
 **P1′.** On the circle of radius 1.2, which crosses the uniform's edge (it leaves [−1, 1]² along the axes and stays
 inside near the diagonals), the uniform's product density varies by at least 0.2 (¼ against 0), the Laplace's and t₃'s by
 more than 1e-3, and the normal's by at most 1e-25. *Killed if* any of these fails.
+
+### Run 2 (16 Oct, `hmx/hmx2.py`, output in `hmx/run2.txt`)
+
+On the circle of radius 1.2 the uniform's product density varies by 0.25, the Laplace's by 0.0295, t₃'s by 0.0045 and
+the normal's by 2.5e-32. **P1′ not killed.** (An illustration: the theorem itself is Herschel's and Maxwell's, with a
+classical proof; three counter-laws failing is not a proof that only the normal passes.)
+
+## What it shows
+
+Granting the turns (OFS Proposition 3(e)) and one premise more, that the payload's two components vary independently,
+the central sweep's payload is the isotropic normal, and the inscribed sweep's reading of it, its ratio, is the
+Cauchy: the payload's direction is even, its ratio half-Cauchy with the median at the corner (P2), its size independent
+of its direction (P3). Unequal spreads are Proposition 5(d)'s c (P2); a payload off centre is no longer read as a Cauchy
+(P4). The payload has a mean; the reading has none (P5). So ChatGPT's "the outside retains magnitude, while the inside
+retains proportion" holds, and the Gaussian side is derived, not assumed, up to the independence premise. The run
+checks classical identities; it is not evidence about any physical payload.

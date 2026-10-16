@@ -1,0 +1,5 @@
+P1' normal: variation on the circle of radius 1.2 2.46519e-32
+P1' Laplace: variation on the circle of radius 1.2 0.029493
+P1' uniform: variation on the circle of radius 1.2 0.25
+P1' t3: variation on the circle of radius 1.2 0.00453433
+P1' not killed
