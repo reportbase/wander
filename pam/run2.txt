@@ -1,0 +1,7 @@
+K   2: κ₄ -0.42187  predicted 0.00968  measured 0.01171  ok
+K   4: κ₄ -0.20279  predicted 0.00465  measured 0.00547  ok
+K   8: κ₄ -0.10725  predicted 0.00246  measured 0.00259  ok
+K  16: κ₄ -0.05651  predicted 0.00130  measured 0.00146  ok
+K  32: κ₄ -0.02823  predicted 0.00065  measured 0.00118  ok
+K  64: κ₄ -0.01408  predicted 0.00032  measured 0.00039  ok
+A4′ not killed

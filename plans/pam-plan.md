@@ -90,3 +90,34 @@ kurtosis of p: Σ_n (cos⁴ nθ + sin⁴ nθ)·(−2/15)/(K/3)², since a unifor
 **A4′.** A fresh sample, numpy seed 12, of 2,000,000 reliefs at θ = 0.3. *Killed if*, for K = 2, 4 or 8, the measured
 distance is off its prediction by more than 25% of it plus 0.001; or, for K = 16, 32 or 64, it exceeds the prediction
 by more than 0.0015 (where sampling dominates). K = 1 is outside the series' reach and has no prediction.
+
+### Run 2 (15 Oct about 23:17, `pam/pam2.py`, output in `pam/run2.txt`; 15 s)
+
+| K | κ₄ | predicted | measured |
+|---|---|---|---|
+| 2 | −0.422 | 0.00968 | 0.01171 |
+| 4 | −0.203 | 0.00465 | 0.00547 |
+| 8 | −0.107 | 0.00246 | 0.00259 |
+| 16 | −0.057 | 0.00130 | 0.00146 |
+| 32 | −0.028 | 0.00065 | 0.00118 |
+| 64 | −0.014 | 0.00032 | 0.00039 |
+
+**A4′ not killed.** At small K the first Edgeworth term is a little low (the next term adds), and from K = 16 on sampling
+noise of about 0.0006 dominates.
+
+## What runs 1 and 2 show
+
+The two readings answer to different things, as R272 says and R275 qualifies:
+- **The addresses' median** is set by the weight's symmetry about the corner alone. Every exchange-symmetric weight puts
+  it at s = 1 exactly, whatever its shape: even, a cos 4θ ripple, a random relief symmetrised, or one vanishing at the
+  horizon. A lopsided weight moves it toward its heavier side (32.1° and 47.1° here).
+- **The addresses' mean** exists only when the weight vanishes at the horizon. Otherwise the mean climbs
+  (2/π)·(ρ(π/2)/ρ̄)·ln 10 per tenfold, exactly.
+- **The payload's law** is its own business. A sum of independent components, uniform here, not normal, approaches the
+  normal at the rate the Edgeworth series gives, 1/K for symmetric components, and its full-turn mean is the average
+  perturbation from the circle, 0 here.
+
+So R277's two premises (a turn-invariant law and independent components) are where the normal comes from. The Cauchy
+addresses need neither: they are fixed by the sweep and the weight's symmetry. All of this is classical: OFS Theorem
+6(e), R275, and the central limit theorem with Edgeworth's correction. A4 was killed by a bound I guessed instead of
+derived.

@@ -569,6 +569,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Narrowed by review 12 (SPN R277, `plans/ofs-review-12.md`): the normal is a model under two premises (a turn-invariant
   law, which the reader's ignorance selects as a representation, and independent components), not a consequence of the
   sweep; the Cauchy addresses are the sweep's own, whatever the payload; the central limit theorem kept to sums.
+  PAM (`plans/pam-plan.md` + `pam/`, 15 Oct, SPN R283; Tom: "4"): exact and seeded; the addresses' median at the corner
+  for every exchange-symmetric weight (to 10⁻³²), moved toward a lopsided weight's heavier side; their mean only for a
+  weight vanishing at the horizon, else a climb of (2/π)(ρ(π/2)/ρ̄)·ln 10 a decade; a payload of independent uniform
+  parts normal at Edgeworth's 1/K (A4 killed by my guessed bound, A4′ from the series not).
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
