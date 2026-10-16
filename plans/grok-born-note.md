@@ -40,6 +40,28 @@ Not usable as it stands: not in OFS (R201), and not in `physics.md` either. Each
 - Born's rule is the foot h² = (1 + n_z)/2 of the central sweep's point: an identity of the circle, given the bridge.
 - That is not a derivation of Born's rule. QBT names Born's rule as the bridge rather than deriving it.
 
+## Why so close, yet so far (16 Oct, SPN R289)
+
+Tom: "it might be interesting to compare, why the difference, so close, yet still so far." At every address
+s = v/h = tan θ, the inscribed sweep's address density equals the inscribed reading 2/π times the foot h² = cos²θ of
+the point that address points to:
+
+  2/(π(1 + s²)) = (2/π)·h².
+
+This is exact (`tws/density.py`: to 10⁻⁴¹ at 59 addresses), from the stereographic stretch 1 + s² = sec²θ. It is why
+the note kept landing on cos²: the crowding of addresses has the shape of the payload's share. The two remain
+different things:
+- **A density is not a share.** The density must be summed over addresses; summed it is the arctangent (the Cauchy's
+  share), not h². The foot is already a share of the chord. At the corner the density is 1/π and the foot ½.
+- **They belong to different sweeps.** The density is the inscribed sweep's (addresses laid before anything arrives);
+  the foot is the central sweep's (the point read as its square at 2θ).
+- **The note drops the 2/π.** It evaluates 1/(1 + s²) without its normalisation, so the density seems to equal Born's
+  number.
+
+The note is the address/payload confusion in its purest form. Grok, shown this comparison, agreed that the identity is
+exact and the two distinct, and proposed recording it. It wrote "squared foot" for h², which is the foot itself. One
+sentence went into OFS §4 ("What each sweep reads", after the factor of two), geometry only.
+
 ---
 
 # The Born Rule as the Address Density of a Situated Reader

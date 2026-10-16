@@ -930,11 +930,15 @@ middle makes.
   bounded by the radius, so every average over an even turn exists: cos 2θ averages 0 and sin 2θ averages 2/π.
 
 The factor of two between the sweeps is that square. It is why the radius turns twice as fast as the ray, why the
-address at θ points at the payload at 2θ (above), and why one sweep's readings are ratios and the other's are squares. A
-party's sweep reads ratios, of the first degree, unbounded, and is read by the median. The pair's middle reads squares,
-of the second degree, bounded, and is read by the mean. Both rates are exact only on the circle. Drawn on the ellipse of
-a stretched drawing, the inscribed angle theorem fails and neither pivot turns an even sweep into an even arc. So the
-two sweeps, like the pointing, need the drawing V = H (Proposition 3(e)).
+address at θ points at the payload at 2θ (above), and why one sweep's readings are ratios and the other's are squares.
+Read at one address, the two are easily confused. The inscribed sweep's addresses crowd on the line with density
+2/(π(1 + s²)) = (2/π)·h²: at every address, the inscribed reading 2/π times the foot of the point that address points
+to. The two have one shape, but they are different things. The density must be summed over a stretch of addresses to
+give a share, and summed it is the arctangent, not h². The foot is already a share of the chord. At the corner the
+density is 1/π and the foot ½. A party's sweep reads ratios, of the first degree, unbounded, and is read by the median.
+The pair's middle reads squares, of the second degree, bounded, and is read by the mean. Both rates are exact only on
+the circle. Drawn on the ellipse of a stretched drawing, the inscribed angle theorem fails and neither pivot turns an
+even sweep into an even arc. So the two sweeps, like the pointing, need the drawing V = H (Proposition 3(e)).
 
 **What the flip gives, and what it does not.** The flip proves that the corner is the one point it leaves fixed, that
 every sweep passes through it, that a reading kept within [0, 1] on both sides must change register there (Proposition

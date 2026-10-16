@@ -1,0 +1,2 @@
+density − (2/π)·foot, worst over 59 addresses: 1.15e-41
+at the corner: density 0.318309886183791, foot 0.5, share of addresses up to the corner 0.5
