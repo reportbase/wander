@@ -66,3 +66,32 @@ The distinction is now about operations and representations, not mutually exclus
 Remaining refinement
 Make it unmistakable that writing produces an unsituated representation, and maintain the drawn-breadth versus true-breadth distinction.
 The important thing is that v26 strengthens the truth conditions of two claims without changing the construction. That is exactly the kind of revision worth making in a truth-first paper: it reduces the chance that a reader can object to a broader claim than the mathematics actually requires. I would keep both changes.
+
+
+## ChatGPT's follow-up (16 Oct about 11:50, SPN R303)
+
+Shared by Tom without comment. ChatGPT reads R295 ("Readers need ratios v,h. writers need V,H") as making the
+distinction more basic: reading needs only v/h, and V and H enter only where a reading is turned into stated amounts.
+
+**Response.** This agrees with OFS §9's "Reading and writing" as it stands after review 15, and nothing new is needed:
+- Its three-way split (the geometry gives v/h; reading obtains it from a standpoint; writing converts it into amounts)
+  is the paragraph's.
+- Its caution, that relative does not mean arbitrary, is already in §9's "Two ways to represent a thing": unitless
+  values are either fixed by the geometry or "read from the world: geometric in kind, but found, not derived". A reading
+  is the same for every reader at that standpoint, whatever unit each holds (Proposition 8(a)).
+
+One term to correct: the follow-up says "fill levels". Since 11 Oct the corpus says unit relations (SPN R204).
+
+The follow-up as received:
+
+> Yes. That makes the distinction more fundamental: \(V\) and \(H\) belong to the conversion from relative reading to stated physical amounts. They are not prerequisites for reading itself.
+> A reader can establish \(v/h\) without knowing either physical breadth. The reader needs a relation between the two fill levels, not their absolute sizes.
+> That gives you a clean separation:
+>
+> * Geometry: \(v/h\) — the address or ratio available to the situated reader.
+> * Reading: the act of obtaining that ratio from a particular standpoint.
+> * Writing: converting the relative reading into stated amounts, which requires additional information about physical breadths.
+>
+> The key consequence is that the reader doesn't have to reconstruct the world in absolute units to read it. The geometry already supplies the relative structure.
+> And this sharpens your argument about the Cauchy distribution: the address law can arise from the geometry of reading without knowing the payload's physical magnitude. \(V\) and \(H\) become relevant only when you ask what physical amounts those addresses represent.
+> I'd make one distinction explicit, though: relative does not mean arbitrary. The reading is relative to the observer's reference and standpoint, but the resulting ratio is constrained by the geometry. That's what lets it be a structured alternative to a completed, absolute description—not merely a subjective impression.
