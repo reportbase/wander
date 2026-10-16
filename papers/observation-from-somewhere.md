@@ -2083,6 +2083,19 @@ needs the shared unit; a world drawn in amounts is written with its breadths kno
 would change no reading. Taking the drawing V = H for a measurement (§7.1) is reading mistaken for writing. What is
 written can change without any reading changing, which is why no reading recovers it.
 
+**The inscribed reading is the ratio itself.** The reader of ratios never touches a breadth and never divides one by
+another. What reaches it through its standpoint is a direction, and a direction already is a ratio: v/h = tan θ, a point
+of the projective line, [h : v] in homogeneous coordinates (Möbius 1827), before anything is divided. The dividing is
+done by the projection through the standpoint, not by the reader: the reach cancels between the two legs of each reading
+before it arrives (Theorem 6(a)), as a pinhole's image point is formed by the light and never computed from its two
+distances. Breadths, and the division that turns them into ratios, appear only in a writer's account of the reading, the
+view from nowhere writing it as V*/d. So the breadths may be as large as they like, even infinite, at no cost to the
+reader: a breadth without bound arrives as one more direction, [0 : 1], the horizon, and the reading stays between 0
+and 1. A breadth that can never be written can still be read. Only where two breadths both grow without bound does their
+reading need the limit of their ratio, which is again a ratio and must arrive as one. A reader that measures two amounts
+and then divides them, two intensities compared, does touch breadths: it writes first and reads afterwards, and is not a
+reader of ratios in this sense.
+
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
 change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the
@@ -2614,6 +2627,8 @@ Mikkelson, J. M. (2004). Dissolving the wine/water paradox. *British Journal for
 137–145.
 
 von Mises, R. (1928). *Wahrscheinlichkeit, Statistik und Wahrheit*. Springer, Vienna.
+
+Möbius, A. F. (1827). *Der barycentrische Calcul*. Barth, Leipzig.
 
 Munro, J. I. and Paterson, M. S. (1980). Selection and sorting with limited storage. *Theoretical Computer Science*
 12(3), 315–323.

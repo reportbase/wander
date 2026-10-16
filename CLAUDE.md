@@ -647,6 +647,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   OFS now says the reciprocal (not the flip), reciprocal-symmetric (not fair), the hyperbolic secant density (not the
   bell), uniform (not even), the projection (not the shadow), the Thales circle, the ℓ₂/ℓ∞/ℓ₁ cuts and the simplex, the
   corner / end of the range / horizon, "Designating and sizing"; no inside/outside, hemisphere turned away/toward.
+  The inscribed reading is the ratio itself (16 Oct, SPN R306; Tom: "the inscribed reader only ever knows the ratio,
+  inscribed reading is the ratio itself, the reader does not have divide them"): a direction, [h : v] in homogeneous
+  coordinates; the projection divides, not the reader; breadths only in a writer's account; an unbounded breadth reads
+  as the horizon. OFS §9 after "Reading and writing", citing Möbius 1827.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
