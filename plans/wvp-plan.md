@@ -149,7 +149,7 @@ two slits' facing, against two-beam interference, or if the bridge (one illumina
 tests the geometry itself; together they test R270's reading on real arrivals: one payload, a pattern whose contrast is
 the pair's facing, met one arrival at a time and built at √N.
 
-**A correction to the procedure, before any result** (15 Oct about 20:25). The frames are cumulative: each holds every
+**A correction to the procedure, before any result** (15 Oct about 20:15). The frames are cumulative: each holds every
 photon so far (D_SM's counts climb 5, 19, 31, … to 40,110 by its last frame; in 150 frames checked no pixel ever falls,
 none rises by more than one between frames). The first run of the script took each frame's nonzero pixels as its
 arrivals, counting every photon again in every later frame; it was stopped before any fit or test was printed. An
@@ -162,7 +162,7 @@ running mean of |s| climbs (1 − C)·(2/π)·ln 10 a decade (the even turn's (2
 With about 56 px a fringe, the pixel's step caps |s| near 35, and the climb is a few hundredths a decade: below what
 these counts resolve. Stated, not run.
 
-### Run 3 (15 Oct about 20:40, `wvp/wvp3.py`, output in `wvp/run3.txt`; 9 min)
+### Run 3 (15 Oct about 20:28, `wvp/wvp3.py`, output in `wvp/run3.txt`; 9 min)
 
 Arrivals: D_SM 40,110, D_MM 589,498, G_SM 26,902, I_SM 65,316, GI_SM 928,175 (pixels, as defined above).
 
@@ -185,7 +185,7 @@ Post hoc, three errors of mine, found by looking at the profiles after the run:
 3. **The phase estimator.** Q3's prediction used ⟨cos φ⟩ for the resultant's length, which holds only if the mean
    direction is at 0. It also needs N·R̄² large, and at N = 50 this was not so.
 
-### Run 4: predictions (written 15 Oct about 20:50, before running)
+### Run 4: predictions (written 15 Oct about 20:30, before running)
 
 The same data and tests, with the three errors removed. Fixed now:
 - An arrival is a cluster: the 8-connected pixels of one frame's gain, placed at its centroid along the fringe axis,
@@ -207,7 +207,7 @@ share on rows with clusters.
 - **Q4′.** As Q4, on rows and clusters. *Killed if* C(D_SM) > 2hv(I_SM) + 3 se, or C(G_SM) > 2hv(GI_SM) + 3 se, or
   C(D_MM) is not below C(D_SM) by 3 se.
 
-### Run 4 (15 Oct about 21:05, `wvp/wvp4.py`, output in `wvp/run4.txt`; 8 min)
+### Run 4 (15 Oct about 20:38, `wvp/wvp4.py`, output in `wvp/run4.txt`; 8 min)
 
 | set | arrivals (clusters) | pixels each | P (px) | P/(fλ/d) | C | √N·mean D, N = 25 → largest | slope |
 |---|---|---|---|---|---|---|---|
