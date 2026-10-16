@@ -895,6 +895,47 @@ The inscribed sweep lays the addresses; the central sweep reaches, at each, the 
 reader's addresses and the world's payloads are joined point for point by one classical theorem, and the join needs
 nothing the reader lacks: no amount, only the drawing.
 
+**Why there are two sweeps, and only two.** The two sweeps are often pictured as reading the arc from outside and from
+inside. Structurally the difference is only where the pivot stands. A sweep is a ray turning about a pivot, and a reader
+counts its steps of turn. For those steps to stand for steps along the arc, equal turns must reach equal stretches of
+arc wherever the ray points. Only two kinds of pivot do this.
+
+- *The centre.* A ray from the middle M of the chord is a radius. Each step of turn moves its end by the same step of
+  arc, at rate 1.
+- *A point of the circle.* From a point A on the circle, a ray turned through θ reaches the point whose central angle
+  from B is 2θ, wherever it points (the inscribed angle theorem, *Elements* III.20). Each step of turn moves its end by
+  twice that step of arc, at rate 2.
+- *Anywhere else.* Take the radius as 1 and a pivot P inside the circle at distance p from the centre. A ray from P
+  meets the arc ahead at distance t and behind at distance t′, and a step of turn dψ moves the point ahead by 2t/(t +
+  t′)·dψ of arc. That is 1 − p looking straight away from the centre and 1 + p looking straight toward it. Equal turns
+  reach unequal arcs, unless p = 0, or unless the point behind is the pivot itself, t′ = 0, which happens just when P
+  lies on the circle. From a pivot outside the circle the rate grows without bound toward the two rays that graze it. In
+  classical terms, the angle at a point inside a circle is half the sum of the two arcs it cuts off, and at a point
+  outside half their difference; only at the centre and on the circle does one arc alone fix it.
+
+So an even sweep of a circle has two places to stand, and no third. The points of the circle that matter are the two
+parties, home A and the other end B of the chord. The centre is the chord's middle, which belongs to the pair and is
+neither party's standpoint. The inscribed sweep is the sweep a party makes; the central sweep is the sweep the pair's
+middle makes.
+
+**What each sweep reads.** The two pivots name the same point of the arc in two ways.
+
+- *From a party.* Read A's ray at θ where it crosses the line touching the circle at B: its height there is s = tan θ =
+  v/h. This is projection from a point of the circle onto a line (stereographic projection; in the half-angle form s =
+  tan(φ/2), with φ the central angle). It carries the whole circle but A itself onto a whole line, so its readings are
+  unbounded: as the ray turns toward the tangent at A, square to the chord, s runs to the horizon. An even turn laid on
+  that line is the Cauchy law (§7.1): its median is at the corner, and it has no mean.
+- *From the pair's middle.* The radius at 2θ ends at ½(cos 2θ, sin 2θ) = ½(h² − v², 2hv). With h + iv for A's direction,
+  that end is ½(h + iv)²: the central sweep's point is the inscribed sweep's direction squared. Its coordinates are
+  bounded by the radius, so every average over an even turn exists: cos 2θ averages 0 and sin 2θ averages 2/π.
+
+The factor of two between the sweeps is that square. It is why the radius turns twice as fast as the ray, why the
+address at θ points at the payload at 2θ (above), and why one sweep's readings are ratios and the other's are squares. A
+party's sweep reads ratios, of the first degree, unbounded, and is read by the median. The pair's middle reads squares,
+of the second degree, bounded, and is read by the mean. Both rates are exact only on the circle. Drawn on the ellipse of
+a stretched drawing, the inscribed angle theorem fails and neither pivot turns an even sweep into an even arc. So the
+two sweeps, like the pointing, need the drawing V = H (Proposition 3(e)).
+
 **What the flip gives, and what it does not.** The flip proves that the corner is the one point it leaves fixed, that
 every sweep passes through it, that a reading kept within [0, 1] on both sides must change register there (Proposition
 2(a)), that a fair reading puts it at the middle (Proposition 2(b)), and that expansions about home stop there. It does

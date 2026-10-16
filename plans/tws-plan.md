@@ -89,3 +89,28 @@ What a kill would mean:
 The same claim as T3, with the hit's angle measured from the direction opposite the pivot, so it never crosses ±π. Its
 derivative then needs no unwrapping. *Killed if*, for p = 0.1, 0.5 or 0.9, the rate at ψ = π is off 1 + p by more than
 10⁻³⁰, or the rate at ψ = 0 is off 1 − p by more than 10⁻³⁰.
+
+### Run 2 (16 Oct about 05:10, `tws/tws2.py`, output in `tws/run2.txt`)
+
+**T3′ not killed.** For p = 0.1, 0.5 and 0.9 the rate is exactly 1 + p looking toward the centre and 1 − p looking
+away. (The script was tidied after its first run, removing dead lines; the rerun printed the same.)
+
+### Post hoc (16 Oct about 05:15, `tws/ellipse.py`, output in `tws/ellipse.txt`)
+
+This checks a claim in the OFS text that was not among the predictions. On the stretched drawing, the ellipse
+x² − x + y²/4 = 0 (c = 2), equal turns do not reach equal arcs from either pivot:
+- from A the arc per unit of turn runs from 1.00 to 3.91;
+- from M it runs from 0.50 to 1.07;
+- on the circle (c = 1) the same code gives exactly 1 and ½, the rates 2 and 1 on a radius of ½.
+
+## What it shows
+
+On the circle, exactly two kinds of pivot turn an even sweep into an even arc:
+- the centre, at rate 1;
+- the points of the circle, at rate 2.
+
+Every other pivot reaches unequal arcs, between 1 − p and 1 + p inside and without bound outside. The two that matter
+are a party (home A, on the circle) and the pair's middle (M, the centre). They are two charts of one point. From A the
+point is a ratio, the stereographic chart, unbounded: Cauchy, a median and no mean. From M it is that direction squared,
+½(h + iv)², bounded: means exist. The factor 2 is the square. Classical throughout; the reading of the two pivots as a
+party and the pair's middle is ours.

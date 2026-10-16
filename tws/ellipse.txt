@@ -1,0 +1,4 @@
+from A: arc per turn from 1.0009369 to 3.9113351 (ratio 3.90767)
+from M: arc per turn from 0.50082093 to 1.0712102 (ratio 2.13891)
+circle from A: arc per turn from 1.0 to 1.0
+circle from M: arc per turn from 0.5 to 0.5
