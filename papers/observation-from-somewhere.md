@@ -389,19 +389,19 @@ the five below, then for two.
 
 **Two sweeps, two results.** Situations 3 and 4 are two sweeps over the same facing, and they get two different things.
 The central sweep, a radius turning about the centre of the circle on the chord, gets the payloads: what arrives, its
-departure from the unit circle, read by its mean. Where its two components vary independently, the turns the reader
-cannot detect make it normal (§7.1, "Why the payload is Gaussian"), and its average over the facing tends to the normal
-law (the central limit theorem). What the central sweep reads is centred on the payload's centre of gravity. The
-inscribed sweep, a ray from home, a point of that circle, gets the addresses to the payloads: the places a reading can
-be put, laid before anything arrives, whose law is the Cauchy, with its median at the corner and no mean (Theorem 6).
-What the inscribed sweep reads is centred on that median, the address of the payload's centre. Neither is a reader
-standing outside or inside a thing; each is a sweep, set by where it turns: the central sweep about the centre of the
-circle on the chord, the inscribed sweep at home, a point of that circle; and each address points at its payload (§4,
-"The address points at the payload"). How a reader makes either sweep, its mechanism, is not pinned down for either. The
-paper calls them the central reader and the inscribed reader, and follows one proposal throughout: the central sweep
-taken in at once, the inscribed swept one direction at a time from home, with static and dynamic saying why (§3.5). What
-it shows that rests on the proposal (the bell and the fisheye, §7.1; which centre a reader can hold, §7.6) is shown of a
-reader working that way, and attaches to situation 3 or 4 as far as the proposal holds (§11.2, question 8). Taking in a
+departure from the unit circle, read by its mean. If its law is taken to be unchanged by turns and its two components to
+vary independently, it is normal (§7.1, "Why the payload is Gaussian"); that is a model under two premises, not a
+consequence of the sweep. What the central sweep reads is centred on the payload's centre of gravity. The inscribed
+sweep, a ray from home, a point of that circle, gets the addresses to the payloads: the places a reading can be put,
+laid before anything arrives, whose law is the Cauchy, with its median at the corner and no mean (Theorem 6). What the
+inscribed sweep reads is centred on that median, the address of the payload's centre. Neither is a reader standing
+outside or inside a thing; each is a sweep, set by where it turns: the central sweep about the centre of the circle on
+the chord, the inscribed sweep at home, a point of that circle; and each address points at its payload (§4, "The address
+points at the payload"). How a reader makes either sweep, its mechanism, is not pinned down for either. The paper calls
+them the central reader and the inscribed reader, and follows one proposal throughout: the central sweep taken in at
+once, the inscribed swept one direction at a time from home, with static and dynamic saying why (§3.5). What it shows
+that rests on the proposal (the bell and the fisheye, §7.1; which centre a reader can hold, §7.6) is shown of a reader
+working that way, and attaches to situation 3 or 4 as far as the proposal holds (§11.2, question 8). Taking in a
 hemisphere at once is not holding the whole: the whole at once is situations 1 and 2.
 
 **The rule.** Three questions place any reader in exactly one situation.
@@ -1243,10 +1243,13 @@ unchanged by the flip, it stays at 45°. The distance of the arrivals' median fr
 lopsidedness, in the payload's own terms, against addresses that did not move.
 
 **Why the payload is Gaussian.** Let the payload at the reader have two components, X on h's side and Y on v's, as
-amounts; its reading is their ratio, s = |Y|/|X|, which keeps the direction and drops the size. Grant what the paper
-already grants, that the reader's turns cannot be detected (Proposition 3(e)), and one premise more: the two components
-vary independently. Then the payload's law is the isotropic normal, the only law of two independent components that
-every turn leaves unchanged (Herschel 1850; Maxwell 1860). Three things follow, each classical.
+amounts; its reading is their ratio, s = |Y|/|X|, which keeps the direction and drops the size. Two premises are needed,
+and the paper's own do not supply them. The first is that the payload's law is unchanged by every turn. That the reader
+cannot detect its own turns (Proposition 3(e)) is a fact about what the reader knows, not about the payload; it makes
+the turn-invariant law the representation an ignorant reader should choose, in Jaynes's sense (§2), and that is all it
+does. The second is that the two components vary independently. Given both, the payload's law is the isotropic normal,
+the only law of two independent components that every turn leaves unchanged (Herschel 1850; Maxwell 1860). Three things
+follow, each classical.
 - Its direction is even over the turn, so its reading is the half-Cauchy of (b), P(s ≤ r) = (2/π)·arctan r, with its
   median at the corner. The Cauchy addresses are the normal payload read by its ratio.
 - Its size, √(X² + Y²), is independent of its direction. What arrives and where it is addressed separate exactly:
@@ -1257,8 +1260,13 @@ every turn leaves unchanged (Herschel 1850; Maxwell 1860). Three things follow, 
   direction, above.
 
 The central sweep reads the payload, which has a mean (each component's size averages √(2/π)·σ); the inscribed sweep
-reads its ratio, which has none (its mean up to M is (1/π)·ln(1 + M²), growing without limit). The geometry gives the
-turn; the independence of the two components is the one premise added, and the normal law is not claimed without it.
+reads its ratio, which has none (its mean up to M is (1/π)·ln(1 + M²), growing without limit). The two routes to the
+Cauchy are kept apart. The address law of (b) is the sweep's own: it needs only the even turn and holds whatever the
+payload is, Gaussian or not (Theorem 6(a)). The normal payload is a second route that arrives at the same law, a model
+consistent with the addresses, not their cause. The paper does not claim that payloads are Gaussian, only that if a
+payload's law is taken to be unchanged by turns, with independent components, it is the normal, and its ratio is then
+the Cauchy the addresses already were. The central limit theorem is a third matter: it makes a sum of many independent
+contributions normal, and says nothing about a single payload averaged over the facing.
 
 **Proposition 5, continued: two other parties.** (e) Let the reader assign two other parties V = V₂ = H, so that the
 relation lies on the sphere of Proposition 3(f), and sweep one facing of every freedom, the octant h, v, v₂ ≥ 0, evenly
