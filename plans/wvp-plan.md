@@ -206,3 +206,48 @@ share on rows with clusters.
   G_SM.
 - **Q4′.** As Q4, on rows and clusters. *Killed if* C(D_SM) > 2hv(I_SM) + 3 se, or C(G_SM) > 2hv(GI_SM) + 3 se, or
   C(D_MM) is not below C(D_SM) by 3 se.
+
+### Run 4 (15 Oct about 21:05, `wvp/wvp4.py`, output in `wvp/run4.txt`; 8 min)
+
+| set | arrivals (clusters) | pixels each | P (px) | P/(fλ/d) | C | √N·mean D, N = 25 → largest | slope |
+|---|---|---|---|---|---|---|---|
+| D_SM | 15,551 | 2.58 | 56.08 ± 0.12 | 1.003 | 0.686 ± 0.016 | 0.839 → 0.877 (×1.045) | −0.483 |
+| D_MM | 406,836 | 1.45 | 55.72 ± 0.73 | 0.997 | 0.090 ± 0.010 | 0.832 → 0.911 (×1.095) | −0.487 |
+| G_SM | 12,310 | 2.19 | 54.95 ± 0.24 | 0.983 | 0.564 ± 0.014 | 0.851 → 0.985 (×1.157) | −0.452 |
+
+- **Q1′ not killed.** The fringe period is fλ/d to 0.3% (D_SM) and 1.7% (G_SM), and to 0.3% in D_MM.
+- **Q2′ not killed.** The slopes are −0.48, −0.49 and −0.45 (G_SM at its band's edge). √N·mean D sits at 0.83–0.99,
+  around Kolmogorov's 0.87, where run 3's pixels gave 1.4–1.9. Counted as photons, the arrivals are independent draws
+  from one pattern that does not drift, to within this test.
+- **Q3′ not killed, but thinly.** The phase found by count spreads 0.939 (D_SM, N = 280, 55 blocks) and 0.935 (G_SM,
+  N = 390, 31 blocks) times the spread the pattern sets, allowed ±0.29 and ±0.39. Only the first N had 30 blocks in
+  each set. D_MM's resultant (0.016) needs N₀ = 78,960, five blocks: not tested.
+- **Q4′ not killed.** The imaging runs give the two slits' shares 9,026 : 10,465 (I_SM) and 11,993 : 11,891 (GI_SM):
+  2hv = 0.9973 ± 0.0018 and 0.99999 ± 0.0038. The pair sits at its corner. The contrast is below that facing: 0.686
+  (19 se under) and 0.564 (30 se under), so the coherence |γ| = C/2hv is 0.69 and 0.56. The multi-mode herald's contrast
+  is 0.090, 32 se under the single-mode's.
+
+Post hoc, not predicted: the envelope's width over the period, W/P, is 5.12 in D_SM, against the slits' d/a = 5
+(a single slit's sinc² has its first zero at fλ/a). G_SM gives 3.82 and D_MM 7.48: the ghost and multi-mode envelopes
+are not one slit's.
+
+## What runs 3 and 4 show
+
+On real single photons, the reading of R270 holds as far as these four tests reach:
+- arrivals met one at a time build one pattern at √N, as independent draws (Q2′);
+- the pattern's period is the slits' (Q1′);
+- the place of the fringes is found by count with the spread the pattern sets (Q3′, at one block size per set);
+- the pattern's contrast is at most the two slits' facing, 2hv, and that facing is 1 only at the pair's corner (Q4′).
+  Here the apparatus lit the slits equally, so the pair sat at its corner, and the contrast fell short only by the
+  source's coherence.
+
+All of this is classical: two-beam interference and the statistics of independent counts. What it adds is that nothing
+in the data contradicts the reading: a payload read whole as a pattern, its contrast the pair's facing, and met one
+arrival at a time.
+
+Run 3 was killed by my set-up three times over: the wrong axis, pixels counted as photons, and a phase estimator
+centred at 0. Run 4 removed those three errors, with predictions written first.
+
+Not tested: whether the corner itself is visible in the counts beyond the contrast. That would need a set where the
+two slits' shares vary (a slit partly covered), with the contrast falling as 2hv = sech of the levels between them.
+That is the next real-data test, if such data exist. The mean's climb is stated above, not run.

@@ -531,7 +531,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   **Exterior wave-like, interior particle-like** (15 Oct, SPN R270; Tom: "exterior - wave like, interior - particle
   liike"): a reading, in SPN only (physics, not OFS). Tested for consistency by WVP (`plans/wvp-plan.md` + `wvp/`):
   the interior's counted arrivals build the exterior's pattern at √N, find the corner with spread (π/2)/√N, never
-  settle a mean (it climbs (2/π)·ln 10 a decade; P3 killed by my tolerance, P3′ not); real data queued.
+  settle a mean (it climbs (2/π)·ln 10 a decade; P3 killed by my tolerance, P3′ not). Real data (15 Oct, SPN R278;
+  Tom: "yes"), runs 3–4 (`wvp/wvp3.py`, `wvp/wvp4.py`) on Aspden, Padgett and Spalding's single-photon double-slit
+  frames (Enlighten doi:10.5525/gla.researchdata.281, CC BY 4.0, sha256 in the plan, not committed; the frames are
+  cumulative, a photon a cluster of pixels, the fringes along rows): run 3 killed by my set-up; run 4 not killed: period
+  fλ/d, independent arrivals at √N, the phase's spread as the pattern sets, the slits at their corner (2hv 0.997, 1.000)
+  and the contrast (0.69, 0.56) under it. Classical; consistent with the reading, no further test of it.
   **Exterior: the payload's mean (Gaussian); interior: the addresses' median (Cauchy)** (15 Oct, SPN R271; Tom: "outside
   is gaussian, it is the mean, it measures the actual physical payoad … inside is cauchy, it is median, is the address and
   sweep of the gaussian center of gravity."): a reading; OFS §7.1 ("the exterior reader's bell") and §7.6 read

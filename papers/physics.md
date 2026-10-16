@@ -248,6 +248,21 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
   The octave packing is a reader's, done ahead of time in the models (a pre-read signal, SPN R250: a real signal
   arrives unpacked); the share in each octave is read from the world, not fixed by the geometry.
 
+- **Single photons build one pattern, whose contrast is at most the slits' facing** (WVP runs 3–4,
+  `plans/wvp-plan.md`). On Aspden, Padgett and Spalding's frames (2016, Enlighten, CC BY 4.0), a double slit lit one
+  heralded photon at a time, each photon a cluster of pixels:
+  - the fringe period is fλ/d to 0.3% and 1.7%;
+  - the photons are independent draws from one pattern that does not drift: √N·D near Kolmogorov's 0.87;
+  - the fringes' place is found by count with the spread the pattern sets (0.94 of it);
+  - the two slits' shares, from the imaging runs, give 2hv = 0.997 and 1.000: the pair at its corner;
+  - the contrast, 0.69 and 0.56, sits below that facing, short by the source's coherence; the multi-mode herald's is
+    0.09.
+
+  The bridge is the Born rule: a slit's amplitude is the square root of its share of the counts. The imaging run is
+  taken to light the slits as the diffraction run did. This is classical two-beam interference throughout. It agrees
+  with R270's reading, a payload held whole as a pattern and met one arrival at a time, and does not test it beyond
+  that. Run 3 was killed by my set-up (wrong axis, pixels for photons).
+
 ### 2.2 Exact arithmetic
 
 - **Where 2/π shows up** (TPI, `plans/tpi-plan.md`). Sixty-five occurrences across about forty fields, from Buffon's
@@ -618,6 +633,10 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
   error, should appear as one common shift in levels across a catalogue's distances, the same for every star linked to
   it, and should not shrink with the number of stars. The archives that hold it (ESA, VizieR) are blocked here. (Also
   `papers/parallax.md` §9.)
+- **The contrast against the slits' shares** (from WVP run 4). Run 4's slits were lit equally, so the pair sat at its
+  corner. A double slit with one slit partly covered, recorded photon by photon with the shares measured, should lose
+  contrast as 2hv = sech of the levels between the two amplitudes, the same at k and 1/k. That would show the corner in
+  the counts, not only the bound. Data with several shares are needed; none is found yet.
 - **One dimension against two.** ISQ's reading separates an angular size (falling one level per level of distance) from
   its square, the light (two levels). Stars with measured angular diameters (interferometry) and parallaxes would test
   the one-level half directly.
