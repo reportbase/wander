@@ -161,3 +161,48 @@ arrivals have density (1 + C cos φ) over the turn, so near the dark fringe a sh
 running mean of |s| climbs (1 − C)·(2/π)·ln 10 a decade (the even turn's (2/π)·ln 10 at C = 0, and a mean at C = 1).
 With about 56 px a fringe, the pixel's step caps |s| near 35, and the climb is a few hundredths a decade: below what
 these counts resolve. Stated, not run.
+
+### Run 3 (15 Oct about 20:40, `wvp/wvp3.py`, output in `wvp/run3.txt`; 9 min)
+
+Arrivals: D_SM 40,110, D_MM 589,498, G_SM 26,902, I_SM 65,316, GI_SM 928,175 (pixels, as defined above).
+
+- **Q1 killed by my set-up.** Fitted P: D_SM 63.4, G_SM 70.1 px against 55.9 (D_MM, not required, 56.6: 1.3% off).
+- **Q2 killed.** Slopes −0.434 (D_SM), −0.419 (D_MM), −0.496 (G_SM); √N·mean D rose 1.33×, 1.72×, 1.01×, and sat at
+  1.4–1.9 where independent arrivals give about 0.87.
+- **Q3 killed by my set-up.** √N·sd(φ̂) 2.2–2.5 times the prediction in D_SM and G_SM.
+- **Q4 "not killed", but void.** 2hv 0.998 and 1.000; C 0.615 and 0.550; C(D_MM) 0.145. It was measured on the wrong
+  axis (below), so it counts for nothing.
+
+Post hoc, three errors of mine, found by looking at the profiles after the run:
+1. **The axis.** For the single-mode sets the rule picked columns, where the profile is one narrow peak (the beam's
+   width along the slits, whose low frequencies leak into the 30–90 px band). The fringes run along rows, about 56 px
+   a period, as in D_MM, where the rule chose rows and P came out at fλ/d. The imaging runs agree: along rows they show
+   the two slits' stripes 49 px apart; along columns, nothing. So Q1, Q3 and Q4 were fitted to the wrong profile.
+2. **The arrival.** One photon lights a cluster of adjacent pixels (the intensifier's spot). In frames 1–399 there were
+   2.58 pixels a cluster in D_SM and 2.18 in G_SM, and 1.45 in D_MM, whose clusters are mostly single pixels. Counting
+   pixels counts most photons two to five times, in neighbouring places: the arrivals clump. That alone raises
+   √N·mean D and the phase's spread above independent arrivals'. Q2's kill is my set-up as much as the photons.
+3. **The phase estimator.** Q3's prediction used ⟨cos φ⟩ for the resultant's length, which holds only if the mean
+   direction is at 0. It also needs N·R̄² large, and at N = 50 this was not so.
+
+### Run 4: predictions (written 15 Oct about 20:50, before running)
+
+The same data and tests, with the three errors removed. Fixed now:
+- An arrival is a cluster: the 8-connected pixels of one frame's gain, placed at its centroid along the fringe axis,
+  floored to a pixel.
+- The fringe axis is rows for every set, fixed by the slits: rows is the axis along which the imaging runs show the
+  two stripes.
+- The phase estimator uses R̄ = |⟨e^(iφ)⟩| over all arrivals and the mean direction μ.
+
+Known beforehand, from the diagnosis: the single-mode profiles along rows ripple at about 56 px, and the imaging
+stripes' heights above background differ by roughly a fifth in GI_SM. Not computed: any fit, distance, spread or
+share on rows with clusters.
+
+- **Q1′.** Fitted P in D_SM and G_SM within 10% of 55.9 px. *Killed if* outside.
+- **Q2′.** As Q2, on clusters: the slope in [−0.55, −0.45] and √N·mean D at the largest N at most 1.2 times its value
+  at the smallest, in D_SM, D_MM and G_SM. *Killed if* not.
+- **Q3′.** Blocks of N, N₀·2^k for k = 0, 1, 2, where N₀ is the least multiple of 10 with N₀·R̄² ≥ 20; at least 30
+  blocks. Predicted √N·sd(φ̂) = √⟨sin²(φ − μ)⟩/R̄. *Killed if* off by more than 3/√(2(b − 1)) at any N, in D_SM or
+  G_SM.
+- **Q4′.** As Q4, on rows and clusters. *Killed if* C(D_SM) > 2hv(I_SM) + 3 se, or C(G_SM) > 2hv(GI_SM) + 3 se, or
+  C(D_MM) is not below C(D_SM) by 3 se.

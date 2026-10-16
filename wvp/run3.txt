@@ -1,0 +1,62 @@
+f·λ/d at 12.70 µm a pixel: 55.91 px
+
+D_SM: 40110 arrivals in 4070 frames; fringe axis columns, Fourier period 85.3 px
+  B = 28.1870 ± 0.8182
+  A = 419.7283 ± 14.8187
+  x0 = 280.5491 ± 0.5408
+  W = 61.4720 ± 2.7933
+  C = 0.6146 ± 0.0415
+  P = 63.4290 ± 1.8016
+  δ = 0.1614 ± 0.0774
+  Q2: N, √N·mean D: 25 1.411, 50 1.514, 100 1.599, 200 1.660, 400 1.746, 800 1.786, 1600 1.876
+  Q2: slope -0.4344; √N·mean D largest/smallest 1.330
+  Q3: ⟨cos φ⟩ 0.2388, ⟨sin² φ⟩ 0.4912, predicted √N·sd(φ̂) 2.9349 (√2/C 2.3010)
+  Q3: N 50, 802 blocks: √N·sd 6.6837, ratio 2.2773, allowed ±0.0750 OUT
+  Q3: N 100, 401 blocks: √N·sd 6.8505, ratio 2.3341, allowed ±0.1061 OUT
+  Q3: N 200, 200 blocks: √N·sd 7.1901, ratio 2.4498, allowed ±0.1504 OUT
+  Q1: P 63.429 px, ratio to f·λ/d 1.1346
+
+D_MM: 589498 arrivals in 1500 frames; fringe axis rows, Fourier period 56.9 px
+  B = 697.6701 ± 10.8426
+  A = 790.2640 ± 10.2335
+  x0 = 284.7468 ± 0.7842
+  W = 331.6361 ± 5.0020
+  C = 0.1451 ± 0.0082
+  P = 56.6241 ± 0.3704
+  δ = -1.7748 ± 0.1089
+  Q2: N, √N·mean D: 25 0.871, 50 0.913, 100 0.980, 200 1.077, 400 1.192, 800 1.272, 1600 1.326, 3200 1.388, 6400 1.410, 12800 1.423, 25600 1.498
+  Q2: slope -0.4188; √N·mean D largest/smallest 1.720
+  Q3: ⟨cos φ⟩ 0.0244, ⟨sin² φ⟩ 0.5010, predicted √N·sd(φ̂) 28.9689 (√2/C 9.7480)
+  Q3: N 50, 11789 blocks: √N·sd 11.7144, ratio 0.4044, allowed ±0.0195 OUT
+  Q3: N 100, 5894 blocks: √N·sd 15.9701, ratio 0.5513, allowed ±0.0276 OUT
+  Q3: N 200, 2947 blocks: √N·sd 21.9038, ratio 0.7561, allowed ±0.0391 OUT
+  Q1: P 56.624 px, ratio to f·λ/d 1.0129
+
+G_SM: 26902 arrivals in 4070 frames; fringe axis columns, Fourier period 85.3 px
+  B = 17.5192 ± 0.7351
+  A = 257.2999 ± 17.8663
+  x0 = 250.3729 ± 1.2189
+  W = 71.5256 ± 6.3790
+  C = 0.5499 ± 0.0678
+  P = 70.0898 ± 5.6778
+  δ = -0.1995 ± 0.1446
+  Q2: N, √N·mean D: 25 1.378, 50 1.461, 100 1.505, 200 1.610, 400 1.579, 800 1.471, 1600 1.387
+  Q2: slope -0.4958; √N·mean D largest/smallest 1.007
+  Q3: ⟨cos φ⟩ 0.2066, ⟨sin² φ⟩ 0.4783, predicted √N·sd(φ̂) 3.3483 (√2/C 2.5720)
+  Q3: N 50, 538 blocks: √N·sd 7.2179, ratio 2.1557, allowed ±0.0915 OUT
+  Q3: N 100, 269 blocks: √N·sd 8.0661, ratio 2.4090, allowed ±0.1296 OUT
+  Q3: N 200, 134 blocks: √N·sd 8.2824, ratio 2.4736, allowed ±0.1839 OUT
+  Q1: P 70.090 px, ratio to f·λ/d 1.2537
+
+I_SM: 65316 arrivals; stripes at 268 and 284 px, split at 274; background 37.027 a pixel; n₁ 24750, n₂ 21608; 2hv = 0.99770 ± 0.00446
+
+GI_SM: 928175 arrivals; stripes at 255 and 271 px, split at 261; background 1662.996 a pixel; n₁ 38406, n₂ 38315; 2hv = 1.00000 ± 0.00561
+
+Q4: C(D_SM) 0.6146 against 2hv(I_SM) 0.9977: (C − 2hv)/se = -9.19; |γ| ≈ 0.6160
+Q4: C(G_SM) 0.5499 against 2hv(GI_SM) 1.0000: (C − 2hv)/se = -6.62; |γ| ≈ 0.5499
+Q4: C(D_MM) 0.1451, below C(D_SM) by 11.11 se
+
+Q1 KILLED
+Q2 KILLED
+Q3 KILLED
+Q4 not killed
