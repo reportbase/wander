@@ -16,27 +16,28 @@ amounts, motivates the logarithm past the corner; being situated, at home, remov
 keeps. We begin with the readers themselves. What a reader knows of two breadths sets one of five situations (with more
 parties, one entry per party), and these give three vantages: the completed view from nowhere, which holds the straight
 chord between two points, and two situated readers, the central sweep and the inscribed sweep, which hold only the arc
-they turn through and whose figures are the hyperbolic secant density and the fisheye. The chord comes before the
-circle: it needs no turn, and the circle is drawn on it by one. The three read a line of true breadth 1 as 1, π/2 and
-2/π; the true breadth is held only from nowhere, or constructed from several observations, never observed from one. Any
-relation between two parties can be written as a pair of unit relations, h and v, each between 0 and 1, and the reader
-reads their ratio. Because neither unit relation can pass 1, every such sweep turns over at a single point, v = h, the
-*corner*, where reading v in terms of h gives way to reading h in terms of v. For there to be a relation, the reader
-must assign the other party a breadth, and its only measure is its own: it draws the mountain at the breadth of its
-thumb, V = H. This is required for the sweep to be a turn. Only then is the sweep from one party to the other the turn
-of one rigid bar, tracing a unit circle with the corner at distance 1 whatever unit was chosen, and only then is there a
-single uniform turn; working back from the Cauchy distribution, which is known, arrives at V = H and nowhere else. The
-two familiar pictures of a turn laid on a line require it too: a lighthouse's flashes put half their landings within the
-lamp's distance of its foot only when shore and sea are drawn at one length, and Mercator's map draws every compass
-course true only because it stretches north–south as much as east–west, giving up only size, a zoom. The drawing is not
-a claim about the mountain. Its true size is a separate number, which one observation does not give; the reader's best
-estimate of it is the median of what it knows, and correcting the estimate moves every amount by the same number of
-levels and redraws nothing. Nor is the reader's own breadth a measurement: H is the value it chooses to start from,
-every value gives the same circle, and its size sets only the zoom, fine near for a small H and fine far for a large
-one. The geometry needs that value and a shape, and the shape is set by how many unit relations the system includes: two
-give the circle, three the sphere. Inside the corner the reader can lay out its readings in proportion; past it, if no
-scale is preferred (a premise we assume, not derive), the only consistent layout is logarithmic. The reader therefore
-has two address spaces, proportional and logarithmic, joined at one corner.
+they turn through: the central sweep's payloads are read by their mean, and the inscribed sweep's addresses make the
+hyperbolic secant density and the fisheye. The chord comes before the circle: it needs no turn, and the circle is drawn
+on it by one. The three read a line of true breadth 1 as 1, π/2 and 2/π; the true breadth is held only from nowhere, or
+constructed from several observations, never observed from one. Any relation between two parties can be written as a
+pair of unit relations, h and v, each between 0 and 1, and the reader reads their ratio. Because neither unit relation
+can pass 1, every such sweep turns over at a single point, v = h, the *corner*, where reading v in terms of h gives way
+to reading h in terms of v. For there to be a relation, the reader must assign the other party a breadth, and its only
+measure is its own: it draws the mountain at the breadth of its thumb, V = H. This is required for the sweep to be a
+turn. Only then is the sweep from one party to the other the turn of one rigid bar, tracing a unit circle with the
+corner at distance 1 whatever unit was chosen, and only then is there a single uniform turn; working back from the
+Cauchy distribution, which is known, arrives at V = H and nowhere else. The two familiar pictures of a turn laid on a
+line require it too: a lighthouse's flashes put half their landings within the lamp's distance of its foot only when
+shore and sea are drawn at one length, and Mercator's map draws every compass course true only because it stretches
+north–south as much as east–west, giving up only size, a zoom. The drawing is not a claim about the mountain. Its true
+size is a separate number, which one observation does not give; the reader's best estimate of it is the median of what
+it knows, and correcting the estimate moves every amount by the same number of levels and redraws nothing. Nor is the
+reader's own breadth a measurement: H is the value it chooses to start from, every value gives the same circle, and its
+size sets only the zoom, fine near for a small H and fine far for a large one. The geometry needs that value and a
+shape, and the shape is set by how many unit relations the system includes: two give the circle, three the sphere.
+Inside the corner the reader can lay out its readings in proportion; past it, if no scale is preferred (a premise we
+assume, not derive), the only consistent layout is logarithmic. The reader therefore has two address spaces,
+proportional and logarithmic, joined at one corner.
 
 Our main result concerns what a reader receives when it sweeps this circle uniformly from where it stands. Its readings
 follow the Cauchy distribution. When the uniformity is the reader's own laying, we show that the distribution belongs
@@ -403,9 +404,11 @@ circle, the inscribed sweep at home, a point of that circle; and each address po
 points at the payload"). How a reader makes either sweep, its mechanism, is not pinned down for either. The paper calls
 them the central reader and the inscribed reader, and follows one proposal throughout: the central sweep taken in at
 once, the inscribed swept one direction at a time from home, with static and dynamic saying why (§3.5). What it shows
-that rests on the proposal (the hyperbolic secant density and the fisheye, §7.1; which centre a reader can hold, §7.6)
-is shown of a reader working that way, and attaches to situation 3 or 4 as far as the proposal holds (§11.2, question
-8). Taking in a hemisphere at once is not holding the whole: the whole at once is situations 1 and 2.
+that rests on the proposal (which centre a reader can hold, §7.6) is shown of a reader working that way, and attaches to
+situation 3 or 4 as far as the proposal holds (§11.2, question 8). The hyperbolic secant density and the fisheye do not
+rest on it: both are the inscribed reader's addresses, held together or taken in order (§7.1), and whether they are held
+at once is a question of mechanism only. Taking in a hemisphere at once is not holding the whole: the whole at once is
+situations 1 and 2.
 
 **The rule.** Three questions place any reader in exactly one situation.
 1. Is anything related to the reader, so that it has an h? If not, it is in situation 0.
@@ -468,8 +471,8 @@ do not have, and neither knows how many things there are.
 |---|---|---|---|---|
 | 1 | computed, at 45° | none | the circle | 1 |
 | 2 | computed in each direction | none | the shape | 1 |
-| 3 | found: v = h | the horizon | the hyperbolic secant density | π/2 |
-| 4 | found: v = h | the horizon | the fisheye; counted, the Cauchy | 2/π |
+| 3 | found: v = h | the horizon | the Thales circle, turned about its centre; its payloads' mean | π/2 |
+| 4 | found: v = h | the horizon | the fisheye and the hyperbolic secant density; counted, the Cauchy | 2/π |
 
 **Two other parties.** With V₂ the rule is put to each party in turn, and a reader's situation is one entry per party: 1
 or 2 if that party's breadth is known, 3 if its sweep is central, 4 if inscribed. Situation 0 stays a single case,
@@ -937,13 +940,17 @@ middle makes.
 The factor of two between the sweeps is that square. It is why the radius turns twice as fast as the ray, why the
 address at θ points at the payload at 2θ (above), and why one sweep's readings are ratios and the other's are squares.
 Read at one address, the two are easily confused. The inscribed sweep's addresses crowd on the line with density
-2/(π(1 + s²)) = (2/π)·h²: at every address, the inscribed reading 2/π times the foot of the point that address points
+2/(π(1 + s²)) = (2/π)·h²: at every address, the inscribed reading 2/π times the foot of the point that address points
 to. The two have one shape, but they are different things. The density must be summed over a stretch of addresses to
 give a share, and summed it is the arctangent, not h². The foot is already a share of the chord. At the corner the
-density is 1/π and the foot ½. A party's sweep reads ratios, of the first degree, unbounded, and is read by the median.
-The pair's middle reads squares, of the second degree, bounded, and is read by the mean. Both rates are exact only on
-the circle. Drawn on the ellipse of a stretched drawing, the inscribed angle theorem fails and neither pivot turns a
-uniform sweep into a uniform arc. So the two sweeps, like the pointing, need the drawing V = H (Proposition 3(e)).
+density is 1/π and the foot ½. On the level axis ξ = ln(v/h) the same pairing returns. There the addresses' density is
+½·sech ξ = hv, its total π/2 and its running area the fisheye (§7.1), while the payload's point ½(h² − v², 2hv) has
+height 2hv = sin 2θ = sech ξ and foot h² = ½(1 − tanh ξ). The density is half the height of the point its address points
+to: one function, a density of addresses on the one side and an amount of the payload on the other, ½ and 1 at the
+corner. A party's sweep reads ratios, of the first degree, unbounded, and is read by the median. The pair's middle reads
+squares, of the second degree, bounded, and is read by the mean. Both rates are exact only on the circle. Drawn on the
+ellipse of a stretched drawing, the inscribed angle theorem fails and neither pivot turns a uniform sweep into a uniform
+arc. So the two sweeps, like the pointing, need the drawing V = H (Proposition 3(e)).
 
 **What the reciprocal gives, and what it does not.** The reciprocal proves that the corner is the one point it leaves
 fixed, that every sweep passes through it, that a reading kept within [0, 1] on both sides must change register there
@@ -2417,12 +2424,13 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    counted.
 
 8. *How situations 3 and 4 are read.* The two are set by the vantage, the central sweep and the inscribed (§3.1). The
-   mechanism is not pinned down for either. This paper follows one proposal, the central sweep taken in at once and the
-   inscribed swept one direction at a time, and what it shows of readers working that way (the hyperbolic secant density
-   and the fisheye, §7.1; the median held and the reference kept, §7.6) is shown of those mechanisms. The vantages' own
+   mechanism is not pinned down for either. This paper follows one proposal, the central sweep taken in at once and
+   the inscribed swept one direction at a time, and what it shows of readers working that way (the median held and
+   the reference kept, §7.6) is shown of those mechanisms. The hyperbolic secant density and the fisheye are the
+   inscribed reader's addresses whatever the mechanism, held together or taken in order (§7.1). The vantages' own
    readings, π/2 and 2/π (§3.4), and every result that needs only the readings and their weight, do not depend on it.
-   Whether a reader of the central sweep does take it in at once, or a reader of the inscribed sweep one direction at a
-   time, is open.
+   Whether a reader of the central sweep does take it in at once, or a reader of the inscribed sweep one direction at
+   a time, is open.
 
 If the principle of §11.1 stands, questions 1 and 2 become one: whether a situated reader's ignorance is exactly these
 three transformations.
