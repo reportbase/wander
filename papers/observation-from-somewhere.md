@@ -1637,6 +1637,18 @@ knows nothing of any shape are the same lay, and both give the Cauchy. Every oth
 the Cauchy is usually met through the circle, as the tangent of an angle spread evenly round it: it belongs to the even
 turn, and the circle is the one shape in which the even turn and the shape cannot be told apart.
 
+**A shape is a perturbation of the circle, and only the circle can be the base.** Write a shape seen from the reader as
+r(θ) = exp(ρ·f(θ)), the unit circle at ρ = 0 and the full shape at ρ = 1. Every such map moves each point along its own
+ray and never across it, so the maps r ↦ r·e^{g(θ)} form a group that fixes every direction; laid by direction, the
+readings are the same Cauchy at every ρ, not only at the two ends. Laid along the outline, the law moves with ρ: for
+f = 0.3 cos 2θ + 0.1 cos(3θ + 0.4) the share before the corner runs 0.500, 0.529, 0.563, 0.632 at ρ = 0, ¼, ½, 1, and
+for f = 0.25 cos 4θ, unchanged by the exchange, it stays 0.500 while the ends move. The circle is the only base that
+carries nothing: an outline reads evenly by direction exactly when its length per unit of turn, √(r² + r′²), is
+constant, and r² + r′² = c² has two kinds of solution, r = c, the circle centred on the reader, and r = c·sin(θ + φ),
+the circle through the reader. These are the central and the inscribed sweeps of §4, and no other shape gives either.
+Read as the reader's ignorance (§2), a reader who does not know the shape needs a law that every radial map leaves
+unchanged, and only a law on directions alone is one; the rescalings of κ are the radial maps with g constant.
+
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the
 parts behind are hidden: rings behind rings on one finger.

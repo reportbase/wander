@@ -592,6 +592,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   keeps readings (the overlap, the predictability); a weak value on the equator is the stereographic address, even in
   height, superweak 1 − 1/√2 past the corner, the foot giving back ⟨σz⟩; two Gaussians' overlap sech(ln k), the
   reference width a zoom. Known physics, the reading ours; nothing on entanglement, Bell or measurement. In `physics.md`.
+  A shape is a perturbation of the circle (16 Oct, SPN R291; Tom: "density is the pertibation of a unit circle"; "How
+  could you do that with any other shape?"): SHG (`plans/shg-plan.md` + `shg/`, exact, nothing killed): r = exp(ρ·f(θ)),
+  radial maps a group fixing every direction, the readings by direction the Cauchy at every ρ, along the outline moving
+  with ρ; only circles read evenly along their outline (r² + r′² = c²: centred on the reader or through it, the central
+  and inscribed sweeps). In OFS §7.4 after "Why the circle and the Cauchy go together".
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
