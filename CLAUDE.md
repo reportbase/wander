@@ -639,6 +639,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and writing modes, not kinds of observer; "only a circle can be the base", scoped to one pivot, centred for the central
   sweep, through it for the inscribed; writing an operation whose product is the completed representation); the
   Cauchy's conditions already stated.
+  Review 15 (ChatGPT, 16 Oct, `plans/ofs-review-15.md`; SPN R302): reading the situated operation, writing producing the
+  completed, unsituated representation; v·V (the drawing's amount, = v·H) kept apart from v·V* (the act of writing).
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
