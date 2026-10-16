@@ -117,19 +117,19 @@ to your thumb, V = H, and read the mountain in thumbs.
 standpoint; this is classical geometry. Between two points it holds the straight chord, which needs no turn; the circle
 comes after the chord, drawn on it by turning. A *situated* reader has a facing, and holds only the arc it turns
 through, by one of two sweeps that get two different things. The central sweep, turning about the centre of the Thales
-circle, gets the payloads, what arrives, read by their mean; the inscribed sweep, from home, gets the addresses to
-the payloads, the Cauchy, read by its median at the corner. How either sweep is made is not pinned down; this paper
-follows one proposal, the central taken at once and the inscribed one direction at a time. These two are not the only
-situated views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is where
-the truth would lie: a system's true breadths, as shares of their whole, would be one point of it, found only with the
-breadths themselves, amounts the reader does not read. A reader's drawing, every party at its own H, is the sum's
-centre, where every pair is at its corner; the geometry follows from there, and the truth lies off the centre by the
-ratios the reader lacks. The three read the same thing differently: a line of true breadth 1 reads 1 to the completed
-view, π/2 to the central sweep and 2/π to the inscribed sweep. The true breadth is
-had only with both hemispheres in hand, which no single observation provides. A situated reader can construct it from
-several observations, but it cannot observe it. Many apparent paradoxes come from reading one vantage's geometry as if
-it were another's, most often from treating the completed view as if a single observation held it. Section 3 sets out
-the readers in full.
+circle, gets the payloads, what arrives, read by their mean; the inscribed sweep, from home, gets the addresses to the
+payloads, the Cauchy, read by its median at the corner. The two are told apart by what each receives, amounts along
+directions laid out in advance or directions alone, not by how a reader holds what it receives: either may hold it at
+once or take it in order. These two are not the only situated views: every drawing other than the sum of the unit
+relations is built from a standpoint (§2). The sum is where the truth would lie: a system's true breadths, as shares of
+their whole, would be one point of it, found only with the breadths themselves, amounts the reader does not read. A
+reader's drawing, every party at its own H, is the sum's centre, where every pair is at its corner; the geometry follows
+from there, and the truth lies off the centre by the ratios the reader lacks. The three read the same thing differently:
+a line of true breadth 1 reads 1 to the completed view, π/2 to the central sweep and 2/π to the inscribed sweep. The
+true breadth is had only with both hemispheres in hand, which no single observation provides. A situated reader can
+construct it from several observations, but it cannot observe it. Many apparent paradoxes come from reading one
+vantage's geometry as if it were another's, most often from treating the completed view as if a single observation held
+it. Section 3 sets out the readers in full.
 
 **Results.**
 - A situated reader's ignorance, as we choose it, is a group: turns of its bar, rescalings of the other party's size,
@@ -388,8 +388,8 @@ the five below, then for two.
 | 0 | known | not known | none | nothing: H but no h, so no relation | — |
 | 1 | known | known, equal to H | none | the whole at once | an equation: the circle h² + v² = 1 |
 | 2 | known | known, unequal or varying with direction | none | the whole at once | an array: a shape's breadth in every direction |
-| 3 | known | not known | the centre of the Thales circle: a central angle | not pinned down; proposed: one hemisphere at once | the central sweep: it gets the payloads, what arrives |
-| 4 | known | not known | home, a point of that circle: an inscribed angle | not pinned down; proposed: one direction at a time | the inscribed sweep: it gets the addresses to the payloads |
+| 3 | known | not known | the centre of the Thales circle: a central angle | amounts along directions given in advance; held at once or in order | the central sweep: it gets the payloads, what arrives |
+| 4 | known | not known | home, a point of that circle: an inscribed angle | directions, the ratios, and no amount; held at once or in order | the inscribed sweep: it gets the addresses to the payloads |
 
 **Two sweeps, two results.** Situations 3 and 4 are two sweeps over the same facing, and they get two different things.
 The central sweep, a radius turning about the centre of the Thales circle, gets the payloads: what arrives, its
@@ -401,23 +401,22 @@ laid before anything arrives, whose law is the Cauchy, with its median at the co
 inscribed sweep reads is centred on that median, the address of the payload's centre. Neither is a reader standing
 outside or inside a thing; each is a sweep, set by where it turns: the central sweep about the centre of the Thales
 circle, the inscribed sweep at home, a point of that circle; and each address points at its payload (§4, "The address
-points at the payload"). How a reader makes either sweep, its mechanism, is not pinned down for either. The paper calls
-them the central reader and the inscribed reader, and follows one proposal throughout: the central sweep taken in at
-once, the inscribed swept one direction at a time from home, with static and dynamic saying why (§3.5). What it shows
-that rests on the proposal (which centre a reader can hold, §7.6) is shown of a reader working that way, and attaches to
-situation 3 or 4 as far as the proposal holds (§11.2, question 8). The hyperbolic secant density and the fisheye do not
-rest on it: both are the inscribed reader's addresses, held together or taken in order (§7.1), and whether they are held
-at once is a question of mechanism only. Taking in a hemisphere at once is not holding the whole: the whole at once is
-situations 1 and 2.
+points at the payload"). The paper calls them the central reader and the inscribed reader, and tells them apart by what
+each receives (§9): the central sweep's directions are laid out before anything arrives, and what it receives along them
+is amounts; the inscribed sweep receives directions, which are ratios, and no amount. How a reader holds what it
+receives is a second, separate matter: either reader may hold its readings at once or take them in order, as static and
+dynamic say (§3.5), and a result that rests on holding, such as which centre a reader can keep (§7.6), says which
+holding it needs. The hyperbolic secant density and the fisheye are the inscribed reader's addresses, held together or
+taken in order (§7.1). Taking in a hemisphere at once is not holding the whole: the whole at once is situations 1 and 2.
 
 **The rule.** Three questions place any reader in exactly one situation.
 1. Is anything related to the reader, so that it has an h? If not, it is in situation 0.
 2. Does the reader know V? If it does, it holds the whole: situation 1 if V equals H in every direction, situation 2
    otherwise.
-3. If it does not, which sweep does it make? The central sweep, turning about the centre of the Thales circle,
-   getting the payloads: situation 3. The inscribed sweep, from home, getting the addresses: situation 4. (On the
-   proposal followed here, the first is taken at once, as when the thing holds still for the reader's look, and the
-   second one direction at a time, as when the thing changes or arrives during the look; §3.5.)
+3. If it does not, which sweep does it make? The central sweep, turning about the centre of the Thales circle, getting
+   the payloads: situation 3. The inscribed sweep, from home, getting the addresses: situation 4. (Either may hold its
+   readings at once, as when the thing holds still for the reader's look, or take them in order, as when it changes or
+   arrives during the look; that is how the reader holds, not which situation it is in, §3.5.)
 
 Each question has two answers, and each answer either ends the questioning or leads to the next question, so every
 reader lands in one situation and no reader lands in two: the five are exhaustive and do not overlap. Cases that look
@@ -425,8 +424,8 @@ like a sixth reduce to these.
 - *V known only within bounds, or as a distribution,* is situation 3 or 4 with its one missing number known that way
   (§3.8). Its best estimate is then the corner of the bounds, or the median (Proposition 13).
 - *H unknown* leaves no reader at all: H is the reader's own breadth and is always held. Situation 0 is H with no h.
-- *A reader that reads in patches* is, on the proposal of §3.1, one at a time across the patches and at once within
-  each; every single look is 3 or 4.
+- *A reader that reads in patches* holds each patch at once and takes the patches in order; that is its holding, and
+  each look is 3 or 4 by what it receives, amounts or directions.
 - *A system that changes kind* moves its reader from one situation to another over time (§3.5); at any one look the
   reader is in one.
 - *Several readers* each have a situation of their own; what passes between them is the subject of §9.
@@ -477,17 +476,18 @@ do not have, and neither knows how many things there are.
 **Two other parties.** With V₂ the rule is put to each party in turn, and a reader's situation is one entry per party: 1
 or 2 if that party's breadth is known, 3 if its sweep is central, 4 if inscribed. Situation 0 stays a single case,
 nothing related and no h, and the five above are the one-party case. The two sweeps are the altitude, from H to V, and
-the azimuth, which brings in V₂ (§2). The table and its examples follow the proposal above, the central sweep taken at
-once and the inscribed one direction at a time; the readings, 2 and ½, are the vantages' own and do not depend on it.
+the azimuth, which brings in V₂ (§2). The examples are sorted by what each sweep receives, amounts along a pointed beam
+or directions alone; how an instrument holds its readings, at once or in order, does not change its situation. The
+readings, 2 and ½, are the vantages' own.
 
 | V, V₂ | what the reader has | example |
 |---|---|---|
 | both known (1 or 2 each) | the sphere, or another solid, held whole from no standpoint | a solid's equation; a three-dimensional array |
 | one known, the other 3 or 4 | half-situated: one pair held, its corner computed; the other swept from home, its corner found | a sailor who knows a lighthouse's height but not how far the coast runs |
-| 3, 3 | both sweeps at once: a hemisphere of directions in one look | a camera's frame |
-| 4, 4 | both sweeps one direction at a time | a single-pixel scanner stepped through both angles |
-| 3, 4 | the altitude at once, the azimuth one direction at a time | a rotating fan-beam radar; a slit panoramic camera |
-| 4, 3 | the azimuth at once, the altitude one direction at a time | a horizontal line scanner tipped up step by step |
+| 3, 3 | amounts along directions given in both angles | a lidar or sonar scan: a range returned along each pointed beam |
+| 4, 4 | directions in both angles, and no amount | a camera's frame, held at once; a single-pixel scanner, taken in order |
+| 3, 4 | an amount along the aimed line to V, a direction to V₂ | a surveyor's total station: a distance along its aimed line, an angle across it |
+| 4, 3 | a direction to V, an amount along the aimed line to V₂ | the same, with the two parties exchanged |
 
 - **Both known.** The unsituated view in three dimensions: the solid held whole, its corners computed, no horizon. The
   truth is one point of the triangle h + v + v₂ = 1.
@@ -495,17 +495,19 @@ once and the inscribed one direction at a time; the readings, 2 and ½, are the 
   somewhere. With V known it computes the corner of h and v and reads V's amounts exactly; V₂ it draws at H and sweeps,
   finding the corner of h and v₂ and reading V₂'s amounts up to the one ratio it lacks, V₂*/H. It is unsituated in one
   freedom and situated in the other.
-- **Both central (3, 3).** On the proposal, a hemisphere of directions taken in one look, as a camera takes its frame.
-  Read against its projection on the base, the hemisphere reads 2, its surface being twice its base: the central reading
-  of §3.4 for three unit relations.
-- **Both inscribed (4, 4).** On the proposal, the reader steps through both angles. Its mean height over the hemisphere
-  is ½, the inscribed reading for three unit relations, and 2 · ½ = 1, as π/2 · 2/π = 1 for two (§3.4). These are not
-  the two-party readings squared, (π/2)² and (2/π)², but those times 8/π² and π²/8: the two sweeps of a three-party
-  reader do not read as two independent two-party readers.
-- **Mixed (3, 4) and (4, 3).** One sweep at once and the other step by step, as scanning instruments work: a radar's fan
-  holds every altitude at once and turns through the azimuth; a line scanner holds a row of azimuths and tips through the
-  altitude. What such a reader reads of a whole hemisphere depends on how its two sweeps are weighted (§7.1, "Swept by
-  altitude and azimuth"), and is not taken up here.
+- **Both central (3, 3).** Amounts along directions laid out in advance in both angles, as a lidar returns a range along
+  each pointed beam, whether it fires them together or one after another. Over a whole hemisphere the central reading is
+  its area over its projection on the base, 2, its surface being twice its base: the central reading of §3.4 for three
+  unit relations.
+- **Both inscribed (4, 4).** Directions in both angles and no amount, as a camera's frame holds them at once or a
+  single-pixel scanner takes them in order. Its mean height over the hemisphere is ½, the inscribed reading for three
+  unit relations, and 2 · ½ = 1, as π/2 · 2/π = 1 for two (§3.4). These are not the two-party readings squared, (π/2)²
+  and (2/π)², but those times 8/π² and π²/8: the two sweeps of a three-party reader do not read as two independent
+  two-party readers.
+- **Mixed (3, 4) and (4, 3).** One party read as an amount along a pointed beam and the other as a direction, as a
+  surveyor's total station measures a distance along its aimed line and an angle across it. What such a reader reads of
+  a whole hemisphere depends on how its two sweeps are weighted (§7.1, "Swept by altitude and azimuth"), and is not
+  taken up here.
 
 With n other parties a situation is n entries, one per party, and the rule is the same.
 
@@ -551,11 +553,11 @@ nothing curved.
 - **1** is the quarter circle itself: a closed, known curve, both breadths held, the corner computed at 45°, no
   horizon.
 - **2** puts a shape in place of the circle: each number lands at the shape's radius in its direction.
-- **3**, the central reader, holds the laid numbers at once (on the proposal of §3.1) and reads the unit line against
+- **3**, the central reader, receives the laid numbers as amounts along its directions and reads the unit line against
   the circle, θ/sin θ: rising from 1 toward π/2, approaching the line from above.
-- **4**, the inscribed reader, takes one number at a time (on that proposal), projected onto the circle, and reads the
-  circle against the unit line, sin θ/θ: falling from 1 toward 2/π, approaching from below. Its view is the unit line
-  laid out as the fisheye.
+- **4**, the inscribed reader, receives each number as a direction, projected onto the circle, and reads the circle
+  against the unit line, sin θ/θ: falling from 1 toward 2/π, approaching from below. Its view is the unit line laid out
+  as the fisheye.
 - **0** has no unit, and nothing to lay.
 
 Past 1, every number lands closer to the circle's top and the line's end, and the numbers out to infinity crowd into the
@@ -574,8 +576,8 @@ paper follows through, and not the only ones.
 | vantage | situations | geometry | the turn | measure of a turn θ | reads a line of true breadth 1 as |
 |---|---|---|---|---|---|
 | completed: the view from nowhere | 1, 2 | the chord, and the circle drawn on it; every breadth held; no facing | none | none | 1 |
-| central: a radius of the Thales circle | 3 | one facing (proposed: taken in at once) | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
-| inscribed: a ray from home | 4 | one facing (proposed: swept from home) | a quarter turn: a bar, from home to the horizon | sin θ/θ | 2/π |
+| central: a radius of the Thales circle | 3 | one facing: amounts along directions given in advance | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
+| inscribed: a ray from home | 4 | one facing: directions from home | a quarter turn: a bar, from home to the horizon | sin θ/θ | 2/π |
 
 **Where the numbers come from.** A situated reader measures by turning. Its position crosses the line once, and its
 facing turns; the arc is drawn by that turning, not walked. The two situated vantages turn by different amounts, and the
@@ -700,29 +702,31 @@ account holds the whole figure and so cannot state an order of arrival; a situat
 and cannot hold the whole figure. And the point on which the situated reading turns, the corner, is an unremarkable
 point of the completed drawing.
 
-### 3.5 At once or one at a time: static and dynamic
+### 3.5 At once or in order: static and dynamic
 
-At once and one at a time say how a situated reader reads, on the proposal this paper follows for situations 3 and
-4, which are set by the vantage, their mechanism not pinned down (§3.1); static and dynamic say why. A system is
-*static* to a reader if it holds still for the whole look, so that the reader can take its facing side at once: on the
-proposal, situation 3. It is *dynamic* if it changes or arrives during the look, so that the reader takes it one part
-at a time: on the proposal, situation 4.
-- *Both are situated.* Static and dynamic part 3 from 4, not situated from unsituated. The equation and the array of 1
-  and 2 are held whole, with no reader standing anywhere.
-- *It is measured against the reader's look, not the system alone.* A building that does not move is read one part at a
-  time by someone walking through it, and a moving flock is read at once by a photograph.
-- *Arrival makes a reading dynamic, as change does.* A system that holds still is still read one part at a time when
-  news of it reaches the reader over time, nearest first.
+At once and in order say how a situated reader holds what it receives; static and dynamic say why. Holding is a second
+axis, beside the situation. The situation, 3 or 4, is set by what is received, amounts along directions given in advance
+or directions alone (§3.1, §9), and either reader may hold its readings at once or take them in order. A system is
+*static* to a reader if it holds still for the whole look, so that the reader can take its facing side at once. It is
+*dynamic* if it changes or arrives during the look, so that the reader takes it in order.
+
+- *Both are situated.* Static and dynamic part two ways of holding, not situated from unsituated and not 3 from 4. The
+  equation and the array of 1 and 2 are held whole, with no reader standing anywhere.
+- *It is measured against the reader's look, not the system alone.* A building that does not move is read in order by
+  someone walking through it, and a moving flock is read at once by a photograph.
+- *Arrival makes a reading dynamic, as change does.* A system that holds still is still read in order when news of it
+  reaches the reader over time, nearest first.
 - *It is not a matter of dimension.* Static is not "three dimensions" and dynamic is not "three dimensions plus time".
   Both read the same sweep, 0 to π/2, one laid across at once and one turned step by step.
 
-A system can change kind, and the reader must follow. A dynamic system can settle (on the proposal, 4 becomes 3), and once its breadths
-are in hand it is held whole (it becomes 2). When a system settles, the levels read one at a time can serve as the
-addresses of a reading at once, and the reader need not start again. When a static system starts to change, a reader
-that lays its sweep once keeps a stale picture; only reading again and comparing, one look after another, shows the
-change. So a reader that may face either kind keeps some such check running. In both directions the reader
-infers the change rather than seeing it: a system that changes more slowly than the look, or more finely than the
-reader resolves, looks still.
+A system can change kind, and the reader must follow. A dynamic system can settle, and the reader can then hold at once
+what it took in order; once its breadths are in hand it is held whole (it becomes 2). When a system settles, the levels
+read in order can serve as the addresses of a reading at once, and the reader need not start again. When a static system
+starts to change, a reader that lays its sweep once keeps a stale picture; only reading again and comparing, one look
+after another, shows the change. So a reader that may face either kind keeps some such check running. In both directions
+the reader infers the change rather than seeing it: a system that changes more slowly than the look, or more finely than
+the reader resolves, looks still.
+
 
 ### 3.6 What a situated reader holds, and where it stands
 
@@ -735,9 +739,10 @@ built that way, and it is not a number of dimensions. It consists of five things
 - *the share* of a reading: v as a share of h before the corner, h as a share of v past it;
 - *magnitudes*: the world's, one value at each address, met, not swept.
 
-A reader *divides* (v by h, leaving a relation with no scale), *sweeps* (lays the relation from home, step by step) and
-*points* (each address reaches a magnitude, an amount v·V*, which needs V*). Dividing and sweeping are addressing, and can
-be done before anything is there; the magnitude is the world.
+A reading *divides* (v by h, leaving a relation with no scale; the division is made by the projection through the
+standpoint, not by the reader, §9), the reader *sweeps* (lays the relation from home, step by step) and each address
+*points* (it reaches a magnitude, an amount v·V*, which needs V*). Dividing and sweeping are addressing, and are laid
+before anything is there; the magnitude is the world.
 
 **The reader is the pivot.** Draw the relation as a bar that turns, about one fixed end, from pure horizontal to pure
 vertical. The free end traces the sweep, and the reader is the fixed end. It sits off the sweep and points along the bar
@@ -770,8 +775,9 @@ each finger the same address.
 - *The thumb is H.* The hand's own measure is its thumb, the reader's breadth, the value it starts from; the mountain it looks at is V. Setting
   V = H is reading the mountain in thumbs.
 - *The geometry is the hand, not the rings.* Dividing v by h keeps the finger and drops the ring.
-- *The inscribed reader is the hand and its fingers; the central reader holds the rings.* One steps through the addresses; the
-  other keeps the magnitudes, all at once (on the proposal of §3.1).
+- *The inscribed reader is the hand and its fingers; the central reader holds the rings.* One receives the addresses,
+  the fingers' directions; the other receives the magnitudes along fingers it already had. Either may hold what it
+  receives at once or take it in order (§3.5).
 - *The rings hide; the hand does not.* Two rings on one finger, seen along it, show only the nearer: the ring behind is
   the back side. The hand hid nothing; the rings did.
 - *The far field's doublings are fingers.* Past the corner the levels are doublings (§6), addresses laid before
@@ -1254,10 +1260,9 @@ of §7; when it is the sources' spread, it is the world's.
 
 ## 7. The Cauchy distribution is the address, not the payload
 
-### 7.1 Sweeping the circle uniformly
-With V = H the relation is a bar of length 1. A reader at home sweeps it from flat (all h) to upright (all v) in equal
-steps of turn, and at each step holds one reading, v/h. On the proposal of §3.1, one direction at a time describes this
-look, not the system being read (§3.5).
+### 7.1 Sweeping the circle uniformly With V = H the relation is a bar of length 1. A reader at home sweeps it from flat
+(all h) to upright (all v) in equal steps of turn, and at each step holds one reading, v/h. Taking the steps in order
+describes how this reader holds its readings, not which readings they are (§3.5).
 
 **Proposition 5.** (a) Equal steps of turn give unequal readings. Near home a step barely changes v/h; the corner is
 halfway through the turn; near upright each step changes v/h by more and more, without bound.
@@ -2423,14 +2428,12 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    inconsistent at all is disputed (Jaynes 1980; Wallstrom 2003); the reader's lay is in any case finite, its levels
    counted.
 
-8. *How situations 3 and 4 are read.* The two are set by the vantage, the central sweep and the inscribed (§3.1). The
-   mechanism is not pinned down for either. This paper follows one proposal, the central sweep taken in at once and
-   the inscribed swept one direction at a time, and what it shows of readers working that way (the median held and
-   the reference kept, §7.6) is shown of those mechanisms. The hyperbolic secant density and the fisheye are the
-   inscribed reader's addresses whatever the mechanism, held together or taken in order (§7.1). The vantages' own
-   readings, π/2 and 2/π (§3.4), and every result that needs only the readings and their weight, do not depend on it.
-   Whether a reader of the central sweep does take it in at once, or a reader of the inscribed sweep one direction at
-   a time, is open.
+8. *How situations 3 and 4 hold what they read.* The two are set by what each sweep receives, amounts along directions
+   given in advance or directions alone (§3.1, §9), not by how the reader holds them. Either may hold its readings at
+   once or take them in order (§3.5), and the results that rest on holding (the median held and the reference kept,
+   §7.6) say which they need. The hyperbolic secant density and the fisheye are the inscribed reader's addresses however
+   they are held (§7.1). The vantages' own readings, π/2 and 2/π (§3.4), and every result that needs only the readings
+   and their weight, do not depend on holding. How a given reader holds what it receives is open.
 
 If the principle of §11.1 stands, questions 1 and 2 become one: whether a situated reader's ignorance is exactly these
 three transformations.

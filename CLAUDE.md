@@ -671,6 +671,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   addresses on the level axis, ½·sech ξ = hv); the abstract, the situations table, §3.1 and question 8 re-paired
   (they had it with situation 3); in the central sweep the same function is a coordinate, the payload point's height
   2hv = sech ξ (foot ½(1 − tanh ξ)), the density half of it, in OFS §4. Its identity claim mistaken (in §4 since R289).
+  Holding is a second axis (16 Oct, SPN R309; Tom: "ok", "yes"): OFS no longer follows the mechanism proposal (3 at
+  once, 4 one at a time). Situations 3 and 4 are set by what is received, amounts along given directions or directions
+  alone; either may be held at once or in order (§3.5 static/dynamic). A camera is inscribed (held at once), a lidar or
+  sonar central, a total station mixed. §3.6: the projection divides, not the reader.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
@@ -1074,7 +1078,8 @@ accomodate V2"; "i'm open to how to organize the situations, or relations"): the
 [0, 1] with its breadth, known unsituated, unknown situated; the situated reader draws V = V₂ = H, giving the set of every
 [h, v, v₂]), and a situation is one entry per other party, 1 to 4 each; the five are the one-party case, 0 stays one
 case; with V₂: both known, half-situated, (3, 3) a camera, (4, 4), and the mixed scanners (3, 4) and (4, 3) (OFS §3.1,
-"Two other parties"). SPN uses these numbers throughout
+"Two other parties"). Since R309 OFS drops the proposal: 3 and 4 are set by what is received (amounts along given
+directions, or directions), and holding, at once or in order, is a separate axis. SPN uses these numbers throughout
 (converted 6 Oct), except in quotations, Appendix A's rulings and the earlier table in
 §2.1, which keep the old ones (old 3 = 3 and 4, old 4 = 0, old 5 = 3 or 4 approximately).
 SPN §2.1 opens with "The five, in brief". Keep to the core: the sweep
