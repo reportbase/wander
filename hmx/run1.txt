@@ -1,0 +1,18 @@
+P1 normal: variation of f(x)f(y) on the unit circle over 8 directions 2.4652e-32
+P1 Laplace: variation of f(x)f(y) on the unit circle over 8 directions 0.022744
+P1 uniform: variation of f(x)f(y) on the unit circle over 8 directions 0.0
+P1 t3: variation of f(x)f(y) on the unit circle over 8 directions 0.0028447
+P2 σh=1, σv=1: median σv/σh = 1.0; P(s ≤ σv/σh) = 0.5
+P2 σh=1, σv=2: median σv/σh = 2.0; P(s ≤ σv/σh) = 0.5
+P2 σh=3, σv=1: median σv/σh = 0.3333333333333333; P(s ≤ σv/σh) = 0.5
+P2 worst gap from (2/π)·arctan(r σh/σv): 9.8608e-32
+P3 (a, t) = (0.5, 0.3927): defect equal spreads 3.081e-33, σv = 2σh 0.006904; P(θ ≤ t) = 0.25 vs 2t/π = 0.25
+P3 (a, t) = (1.0, 0.7854): defect equal spreads 2.465e-32, σv = 2σh 0.03801; P(θ ≤ t) = 0.5 vs 2t/π = 0.5
+P3 (a, t) = (2.0, 1.178): defect equal spreads 0.0, σv = 2σh 0.06963; P(θ ≤ t) = 0.75 vs 2t/π = 0.75
+P4 means (0, 1): median of |Y|/|X| 1.515064481; gaps from the half-Cauchy of that median ['0.007625', '0.0111', '0.003746', '0.005998']
+P5 E|X| 0.79788456080286535588 vs √(2/π) 0.79788456080286535588; truncated mean − (2/π)ln M at 1e6, 1e8: 3.1831e-13, 3.1831e-17
+P1 KILLED
+P2 not killed
+P3 not killed
+P4 not killed
+P5 not killed

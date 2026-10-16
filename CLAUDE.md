@@ -550,6 +550,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "at density = 0 unit circle … at density = 1 full shape"); OFS keeps ρ since its g is the sweep's progress (R275).
   **When the density varies** (R275): arrivals ρ(θ)·2/(π(1 + s²)), the inscribed sweep's Cauchy times what the central
   sweep finds; their median the payload's median direction, at the corner only if ρ weighs alike on both sides.
+  **Why the payload is Gaussian** (16 Oct, SPN R276; ChatGPT review 11, `plans/ofs-review-11.md`; Tom: "yes"): turns
+  plus independent components give the isotropic normal (Herschel–Maxwell), its ratio the Cauchy, its size independent
+  of direction; unequal spreads are c; OFS §7.1. Checked in HMX (`plans/hmx-plan.md` + `hmx/`; P1 killed by my set-up).
   `plans/ofs-literature.md` (12 Oct): a prior-work search by a fresh agent (sources seen as search results only, details
   to check). The address/payload reading of the Cauchy was not found; its parts are in print (Jones 1999, Cacoullos 2014
   for 6(a); Stevens 1946 for 6(b)–(c); Cacoullos and Papadatos 2013, Jones 2008 for 6(e); Frank and Smith 2010 the
