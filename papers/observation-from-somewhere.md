@@ -2194,6 +2194,26 @@ state, the shape, does not move. This is Proposition 8 used as a test: what scal
 what it moves, in a named unit, is an amount that had to be carried in. A record that scaling would not change cannot
 contain the world's size, however carefully it was made.
 
+**Growth, the test's other form.** The world can also grow without being scaled, and the same split shows. An address
+made by dividing a thing's place in a list by the list's length is a ratio, a reading of the list's own contents: the
+thing a third of the way through a level is placed a third of the way through, and it moves as soon as the level grows.
+An address made of slots, a fixed number to each level whatever the level holds, does not move: the number of slots, the
+radix, was agreed beforehand, and it is a written amount carried into every address, as the base is carried into every
+side. A timestamp is the familiar case. Year, month, day, hour, minute and second are levels with fixed slots, and
+2026·9·3·14·30·15 names the same second however many later seconds are recorded, because nothing in it was divided by a
+count. Positional notation is stable for the same reason. Read against its own contents, a list re-addresses itself as
+it grows; written against an agreed radix, it never does, and the price is the slots held empty.
+
+**Units within units.** When lengths are read against different units, nested one inside another, writing costs one
+amount for each level of unit crossed. An ISO metric screw thread is a standard case. Its profile is fixed by the pitch
+P (ISO 68-1): the fundamental triangle stands (√3/2)·P high and the basic depth of engagement is five eighths of that,
+so the profile's ratios, 0.86603 and 0.54127 of the pitch, and their quotient 1.6, are the same from M6 to M36, readings
+against the pitch in which the pitch cancels. The pitch is set against the nominal diameter D by a second standard (ISO
+261), and relating a profile length to the diameter takes that one further number, P/D, which differs from size to size.
+Two lengths read against one unit are related for nothing, two read against units one level apart for one number, and
+two whose common unit lies k levels up for k numbers. This is the count above, one move or one exchanged number, carried
+through nested units; with every party drawn in the reader's one H there is one level, and one amount writes them all.
+
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
 change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the
@@ -2665,6 +2685,12 @@ Haraway, D. (1988). Situated knowledges: the science question in feminism and th
 *Feminist Studies* 14(3), 575–599.
 
 Herschel, J. F. W. (1850). Quetelet on probabilities. *Edinburgh Review* 92, 1–57.
+
+ISO 68-1 (1998). *ISO general purpose screw threads — Basic profile — Part 1: Metric screw threads*. International
+Organization for Standardization, Geneva.
+
+ISO 261 (1998). *ISO general purpose metric screw threads — General plan*. International Organization for
+Standardization, Geneva.
 
 Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 

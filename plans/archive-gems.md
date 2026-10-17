@@ -43,6 +43,10 @@ that the level is the count and a hand steering by its own ratio steps exactly o
   table. Current view: the count is the level of detail (R190); this is that, built.
 
 **Where it went:** SPN Proposition 1.2, "The tower: the levels as an address" (a reading).
+Since 16 Oct (SPN R315) the calendar tower and the tower of grouped holds are also in OFS §9 as reading and writing:
+"Growth, the test's other form" (a derived address moves as the list grows, a fixed-slot one is written and does not) and
+"Units within units" (one amount per level of unit crossed; the ISO thread, with the basic profile's exact ratios in
+place of Degrees of Freedom's 0.61343, which is ISO 965's root depth).
 
 ## The denominator
 
