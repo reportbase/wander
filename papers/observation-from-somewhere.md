@@ -2217,6 +2217,26 @@ n − 1, every independent ratio there is. So a reader can hold a whole hierar
 one above, in ratios alone. What none of them gives is the top: writing still costs one amount, and one length anywhere
 in the hierarchy, a single diameter in millimetres, writes every other.
 
+**A worked example of the tower.** A building holds two rooms, A and B, and each room holds two things. Each length is
+read only against the length that holds it, so every reading is a ratio, and none is an amount:
+
+| reading | against | value |
+|---|---|---|
+| room A | the building | 1/2 |
+| room B | the building | 1/3 |
+| thing a₁, thing a₂ | room A | 3/4, 1/2 |
+| thing b₁, thing b₂ | room B | 2/3, 1/3 |
+
+Seven lengths give six readings, n − 1: four inside the rooms and two between them. Two things in one room are related
+by one quotient, a₁/a₂ = (3/4)/(1/2) = 3/2. Two things in different rooms are related by two quotients, one for each
+level up to the building that holds them both: a₁/b₁ = (3/4)/(2/3) · (1/2)/(1/3) = 9/8 · 3/2 = 27/16. Nothing has been
+measured yet. One amount then writes every length, whichever it is: the building's 12 m gives a₁ = 4.5 m and b₂ = 4/3 m;
+b₂ = 1 m measured instead gives the building 9 m and a₁ = 27/8 m. Scaling the world by k multiplies every one of those
+amounts by k and leaves the six readings as they were. And if one link is misread, room B taken as 0.3 of the building
+instead of 1/3, everything in room B moves by one factor, 9/10, its ratio b₁/b₂ = 2 does not move, room A is untouched,
+and a₁/b₁ is off by that one factor, 10/9. A whole hierarchy is held in six ratios, and one amount anywhere in it writes
+the rest; an error in a link is shared by everything the link holds.
+
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
 change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the

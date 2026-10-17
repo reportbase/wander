@@ -703,7 +703,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   tower of grouped holds; the ISO thread, its profile against the pitch, ISO 68-1, the pitch against the diameter, ISO
   261). Since R316 (Tom: "the tower of holds shows that sophisticated use of ratios is possible."): the factor between
   levels is a ratio read one level up, not an amount; n lengths give n − 1 ratios however grouped; a whole hierarchy
-  of units is held in ratios alone, and writing still costs one amount at the top.
+  of units is held in ratios alone, and writing still costs one amount at the top. Then "A worked example of the tower" (R320; Tom: "we could
+  show the tower with a simple synthetic worked example"): a building, two rooms, two things each; six readings for seven
+  lengths; a₁/b₁ = 27/16 by two quotients; one amount writes all; a misread link moves its room by one factor (9/10).
+  Exact in `ofs/tower.py`.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
