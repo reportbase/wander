@@ -16,9 +16,12 @@
     alike. Rung 2, parallax: one step to a second standpoint, its length H, the reader's unit; the rays cross and the box
     is placed and sized in H (V*/H). Rung 3, one amount: the step counted in strides of 0.7 m, carried in, writes metres.
     The writer: walks the whole box, front and back (both hemispheres), counting strides, and writes its breadth and depth.
-    Scale the world by k: nothing read moves, nothing in H moves; the metres move by k.
+    Scale the world by k: nothing read moves, nothing in H moves; the metres move by k. The writer is the number line
+    (R338, Tom: "the writer is the number line. because the writer writes, it needs the proportional number without the
+    corner"): a strip lays the same strides on the writer's ruler, alike everywhere, and on a reader's lay, in proportion
+    to its corner at H and 1 + ln s past it.
     Links: ?step=1|2|3|writer&k=<log10 k>. Test hook: window.__writerReaders (truth, rung1, rung2, rung3, writer, ghosts,
-    set, state).
+    rulers, set, state).
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -56,7 +59,8 @@
     <p class="lede">The readers stand on one side of the box and read; the writer walks all the way round it. From one
     standpoint the two reads give the frame, the writer's 1, at no size. A second standpoint, one step away, places the box
     and sizes it in that step. One amount carried in, the step counted in strides, writes it in metres. The writer needs no
-    reading at all: it walks the whole thing. Scale the world, and see what moves.</p>
+    reading at all: it walks the whole thing, and writes on the number line, where every stride is laid alike and
+    there is no corner. Scale the world, and see what moves.</p>
     <div class="panel">
         <div class="row"><button data-s="1">1 · one standpoint</button><button data-s="2">2 · a second standpoint</button>
             <button data-s="3">3 · count the step</button><button data-s="writer">the writer</button></div>
@@ -69,6 +73,10 @@
             <div>
                 <div class="read" id="say"></div>
                 <div style="overflow-x:auto"><table id="tab"></table></div>
+                <canvas id="cv3" height="170"></canvas><p class="cap">The writer's ruler and a reader's. Above, the
+                number line: every stride laid alike, in proportion on both sides of 1, no corner, so strides add. Below,
+                the reader's lay in its own H: in proportion to the corner (its step H), then 1 + ln s, the same strides
+                bunching past it.</p>
             </div>
         </div>
     </div>
@@ -121,9 +129,37 @@
         return { strides: { front, right: side, back: front, left: side }, Vm: front * STRIDE, Dm: side * STRIDE, read: 0 };
     }
 
+    // the writer's ruler (the number line: x in proportion, no corner) and the reader's lay (s = x/H in proportion to the
+    // corner, then 1 + ln s), each stride's place on both, over the world from 0 to 1.5 times its farthest amount
+    function rulers(k = K()) {
+        const T = truth(k), H = T.step, xmax = 1.5 * Math.max(T.d + T.D, T.V), lay = x => { const q = x / H; return q <= 1 ? q : 1 + Math.log(q); };
+        const n = Math.floor(xmax / STRIDE), every = Math.max(1, Math.ceil(n / 40)), ticks = [];
+        for (let i = 0; i <= n; i += every) ticks.push(i * STRIDE);
+        return { xmax, H, layMax: lay(xmax), writer: x => x / xmax, reader: x => lay(x) / lay(xmax), ticks, marks: { d: T.d, V: T.V, H } };
+    }
+    function drawRulers() {
+        const { g, w, h } = fit($('cv3')); g.clearRect(0, 0, w, h);
+        const R = rulers(), pad = 14, X = f => pad + (w - 2 * pad) * f, y1 = 48, y2 = 120;
+        g.font = '11px DM Mono, monospace';
+        g.strokeStyle = '#b59cf0'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(X(0), y1); g.lineTo(X(1), y1); g.stroke();
+        g.strokeStyle = '#d4a052'; g.beginPath(); g.moveTo(X(0), y2); g.lineTo(X(1), y2); g.stroke();
+        for (const x of R.ticks) {
+            g.strokeStyle = 'rgba(181,156,240,0.8)'; g.beginPath(); g.moveTo(X(R.writer(x)), y1 - 6); g.lineTo(X(R.writer(x)), y1 + 6); g.stroke();
+            g.strokeStyle = 'rgba(212,160,82,0.8)'; g.beginPath(); g.moveTo(X(R.reader(x)), y2 - 6); g.lineTo(X(R.reader(x)), y2 + 6); g.stroke();
+        }
+        g.fillStyle = '#b59cf0'; g.fillText('the writer: the number line, strides alike', pad, 18);
+        g.fillStyle = '#d4a052'; g.fillText("a reader's lay: the corner at H, then 1 + ln s", pad, y2 + 36);
+        const cx = X(R.reader(R.H)); g.strokeStyle = '#e6e4ee'; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(cx, y2 - 16); g.lineTo(cx, y2 + 10); g.stroke(); g.setLineDash([]);
+        g.fillStyle = '#e6e4ee'; g.fillText('corner', cx - 18, y2 - 20);
+        for (const [key, lab] of [['d', 'd'], ['V', 'V*']]) {
+            const x = R.marks[key]; g.fillStyle = '#8ce6cd';
+            g.beginPath(); g.arc(X(R.writer(x)), y1, 3.5, 0, 2 * Math.PI); g.fill(); g.fillText(lab, X(R.writer(x)) - 4, y1 + 20);
+            g.beginPath(); g.arc(X(R.reader(x)), y2, 3.5, 0, 2 * Math.PI); g.fill(); g.fillText(lab, X(R.reader(x)) - 4, y2 + 20);
+        }
+    }
     function fit(cv) {
         const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth,
-            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * 1.05));
+            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * (cv.id === 'cv3' ? 0.6 : 1.05)));
         cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr);
         const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return { g, w, h: hh };
     }
@@ -166,7 +202,7 @@
         const mb = Math.min(4 * Hm, Math.pow(10, Math.round(Math.log10(Hm * 2)))), x1 = 12, y1 = 18, x2 = x1 + sc * mb / Hm;
         g.strokeStyle = '#8a8a96'; g.lineWidth = 2; g.beginPath(); g.moveTo(x1, y1); g.lineTo(x2, y1); g.stroke();
         g.fillStyle = '#8a8a96'; g.fillText(`${mb >= 1 ? mb.toFixed(0) : mb.toPrecision(1)} m (the referee's)`, x1, y1 + 16);
-        hud();
+        drawRulers(); hud();
     }
     const f3 = x => x == null ? '—' : x.toFixed(3);
     function hud() {
@@ -185,7 +221,7 @@
                 + `so H = ${f3(r3.Hm)} m, and everything read in H is written in metres.\nV* = ${f3(r3.Vm)} m, d = ${f3(r3.dm)} m. `
                 + `Many readings, one amount.`,
             writer: `<span class="w">The writer.</span> It reads nothing: it walks the whole box, front and back (both hemispheres), `
-                + `counting strides: ${wr.strides.front.toFixed(2)} along the front, ${wr.strides.right.toFixed(2)} along a side.\n`
+                + `counting strides, each laid alike on its ruler, the number line, so they add: ${wr.strides.front.toFixed(2)} along the front, ${wr.strides.right.toFixed(2)} along a side.\n`
                 + `V* = ${f3(wr.Vm)} m, depth ${f3(wr.Dm)} m. The writer holds the true breadth because it walked it.`,
         }[s];
         $('say').innerHTML = say + (Math.abs(st.lk) > 1e-9 ? `\n<span class="x">The world scaled by k = ${$('kv').textContent}:</span> `
@@ -206,7 +242,7 @@
     if (['1', '2', '3', 'writer'].includes(P.get('step'))) st.step = P.get('step');
     if (P.has('k')) { st.lk = Math.max(-2, Math.min(2, +P.get('k'))); $('k').value = st.lk; }
     draw();
-    window.__writerReaders = { STRIDE, truth, rung1, rung2, rung3, writer, ghosts, set, state };
+    window.__writerReaders = { STRIDE, truth, rung1, rung2, rung3, writer, ghosts, rulers, set, state };
 })();
 </script>
 </body>

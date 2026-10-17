@@ -123,34 +123,37 @@ read the mountain in thumbs.
 
 **Three vantages: a writer and two readers.** There are writers and readers, told apart by their vantage. The writer's
 vantage is dual-hemispherical: it holds both hemispheres, every breadth at once. The writer needs the true breadth, and
-to have it must walk the complete object, or carry in an amount measured beforehand; readers need neither. Between two
-points it holds the straight chord, which needs no turn; the circle comes after the chord, drawn on it by turning. A
-reader's vantage is hemispherical: a *situated* reader has a facing, and holds only the arc it turns through. One turn
-of the head makes one read, and the read breaks down two ways, not one: the payload read and the address read. Readers
-are of two types, by which breakdown each keeps. The *payload reader*, the central sweep, turning about the centre of
-the Thales circle, gets the payloads, what arrives, read by their mean; the *address reader*, the inscribed sweep, from
-home, gets the addresses to the payloads, the Cauchy, read by its median at the corner. The two are told apart by what
-each receives, amounts along directions laid out in advance or directions alone, not by how a reader holds what it
-receives: either may hold it at once or take it in order. All three stand on one baseline, situation 1, the circle V =
-H: the writer's equation and each reader's drawing; what sets them apart is what each adds to it. The kinds are
-vantages, not observers: one observer can read and then write, taking one vantage at a time, but no standpoint gives the
-writer's. The two readers are not the only situated views: every drawing other than the sum of the unit relations is
-built from a standpoint (§2). The sum is where the truth would lie: a system's true breadths, as shares of their whole,
-would be one point of it, found only with the breadths themselves, amounts the reader does not read. A reader's drawing,
-every party at its own H, is the sum's centre, where every pair is at its corner; the geometry follows from there, and
-the truth lies off the centre by the ratios the reader lacks. The three read the same thing differently: a line of true
-breadth 1 reads 1 to the writer, π/2 to the payload reader and 2/π to the address reader. That is why the vantages are
-named so: the names follow the sweep. The writer knows the line as 1; each reader holds one hemisphere and reads it as
-π/2 or 2/π; the two hemispheres together, as the writer holds them, give back the 1, as the product of the two readings,
-π/2 · 2/π = 1, not their difference. What they give back is the baseline, the reader's own H measured in H (§10, step
-3), not the other party's true breadth. The limits are the same for every line, so they carry no size: from one
-standpoint the two reads give the writer's whole, at no particular size. Its true size needs parallax: a second
-standpoint, the walk between the two a baseline in the reader's own H, places the whole at V*/H (Proposition 11; §10,
-step 6), and one amount carried in writes it in a shared unit. Each step adds what the one before could not: the frame
-from one standpoint, the size in H from two, the unit from one amount more. The true breadth is had only with both
-hemispheres in hand, which no single observation provides. A situated reader can construct it from several observations,
-but it cannot observe it. Many apparent paradoxes come from reading one vantage's geometry as if it were another's, most
-often from treating the writer's vantage as if a single observation held it. Section 3 sets out the readers in full.
+to have it must walk the complete object, or carry in an amount measured beforehand; readers need neither. Because it
+writes, its ruler is the number line: what it writes are amounts, counted out and added, and an amount must be laid
+alike on both sides of 1, in proportion and with no corner (§9). The corner, where a lay turns from proportion to
+levels, is a reader's: it sits where the reader's own unit falls. Between two points it holds the straight chord, which
+needs no turn; the circle comes after the chord, drawn on it by turning. A reader's vantage is hemispherical: a
+*situated* reader has a facing, and holds only the arc it turns through. One turn of the head makes one read, and the
+read breaks down two ways, not one: the payload read and the address read. Readers are of two types, by which breakdown
+each keeps. The *payload reader*, the central sweep, turning about the centre of the Thales circle, gets the payloads,
+what arrives, read by their mean; the *address reader*, the inscribed sweep, from home, gets the addresses to the
+payloads, the Cauchy, read by its median at the corner. The two are told apart by what each receives, amounts along
+directions laid out in advance or directions alone, not by how a reader holds what it receives: either may hold it at
+once or take it in order. All three stand on one baseline, situation 1, the circle V = H: the writer's equation and each
+reader's drawing; what sets them apart is what each adds to it. The kinds are vantages, not observers: one observer can
+read and then write, taking one vantage at a time, but no standpoint gives the writer's. The two readers are not the
+only situated views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is
+where the truth would lie: a system's true breadths, as shares of their whole, would be one point of it, found only with
+the breadths themselves, amounts the reader does not read. A reader's drawing, every party at its own H, is the sum's
+centre, where every pair is at its corner; the geometry follows from there, and the truth lies off the centre by the
+ratios the reader lacks. The three read the same thing differently: a line of true breadth 1 reads 1 to the writer, π/2
+to the payload reader and 2/π to the address reader. That is why the vantages are named so: the names follow the sweep.
+The writer knows the line as 1; each reader holds one hemisphere and reads it as π/2 or 2/π; the two hemispheres
+together, as the writer holds them, give back the 1, as the product of the two readings, π/2 · 2/π = 1, not their
+difference. What they give back is the baseline, the reader's own H measured in H (§10, step 3), not the other party's
+true breadth. The limits are the same for every line, so they carry no size: from one standpoint the two reads give the
+writer's whole, at no particular size. Its true size needs parallax: a second standpoint, the walk between the two a
+baseline in the reader's own H, places the whole at V*/H (Proposition 11; §10, step 6), and one amount carried in writes
+it in a shared unit. Each step adds what the one before could not: the frame from one standpoint, the size in H from
+two, the unit from one amount more. The true breadth is had only with both hemispheres in hand, which no single
+observation provides. A situated reader can construct it from several observations, but it cannot observe it. Many
+apparent paradoxes come from reading one vantage's geometry as if it were another's, most often from treating the
+writer's vantage as if a single observation held it. Section 3 sets out the readers in full.
 
 **Results.**
 - A situated reader's ignorance, as we choose it, is a group: turns of its bar, rescalings of the other party's size,
@@ -635,7 +638,7 @@ two this paper follows through, and not the only ones.
 
 | vantage | situations | geometry | the turn | measure of a turn θ | reads a line of true breadth 1 as |
 |---|---|---|---|---|---|
-| writer, dual-hemispherical: the whole, walked or carried in | 2, on 1 | the chord, and the circle drawn on it; every breadth held; no facing | none | none | 1 |
+| writer, dual-hemispherical: the whole, walked or carried in | 2, on 1 | the chord, and the circle drawn on it; every breadth held; no facing; its ruler the number line, with no corner | none | none | 1 |
 | payload reader, hemispherical, central: a radius of the Thales circle | 3, on 1 | one quadrant: amounts along directions given in advance | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
 | address reader, hemispherical, inscribed: a ray from home | 4, on 1 | one quadrant: directions from home | a quarter turn: a bar, from zero to the horizon | sin θ/θ | 2/π |
 
@@ -2372,9 +2375,9 @@ corner, the one amount the lay favours, exists only for an H among the amounts r
 finitely many addresses loses what it reads: an endless H puts all of it in the first address, and a vanishing H sends
 all of it past the levels held, or, on the in-place lay, into the horizon's last address.
 
-**The number line is a shared unit.** The ordinary number line is the clearest example of a unit agreed between readers.
-It is one notch agreed to stand for 1, built out by counting and dividing, and its form is the form a shared ruler
-must have.
+**The number line is a shared unit, and the writer's ruler.** The ordinary number line is the clearest example of a unit
+agreed between readers. It is one notch agreed to stand for 1, built out by counting and dividing, and its form is the
+form a shared ruler must have.
 - *It has no corner.* Every stretch is laid like every other: 0.5 to 1 looks exactly like 1 to 1.5, and nothing turns
   over at 1. A corner would sit at some reader's unit and favour that reader, and by Proposition 14 a ruler that
   favours none has none. The corner belongs to the reader, where its unit falls on the line, not to the line.
@@ -2386,16 +2389,20 @@ must have.
   count of levels with a plain ruler inside one.
 - *It has the same grain everywhere.* It cannot know who will read it or how finely, so it is notched alike throughout,
   whether or not a given reader needs the detail there.
-- *It is not a reader.* It reads nothing and has no standpoint, so it has no situation. A reading passes through it,
-  from one reader's relations to another's, and nobody reads on it.
+- *It is not a reader; it is the writer's.* It reads nothing and has no standpoint, so it has no situation. A reading
+  passes through it, from one reader's relations to another's, and nobody reads on it. The writer writes on it, and
+  needs it as it is: to write is to state amounts, counted out in a unit and added, a breadth walked as so many strides,
+  and a sum of equal steps is laid in proportion, the power p = 1, with each step alike wherever it falls. A corner
+  would lay the steps on one side of it differently from those on the other, so the amount written would depend on where
+  the writer's unit fell; a ruler for amounts must have none.
 - *Its two infinities are its readers'.* Outward without end (1, 2, 4, …) and inward without end (1, ½, ¼, …) are
   exchanged by the reciprocal. They are the far and near sides of whatever unit a reader holds against the line (§3.3,
   §4), not two separate properties of the line.
 
-So the number line is not the structure of observation, and it need not be. It is the interface readers agree on so
-that amounts can pass between them, made after the geometry and the readings, and its plainness, uniform and without a
-corner, is what lets it favour no one. In order: the world, a reading, a relation, an address and then, between
-readers, the number line.
+So the number line is not the structure of observation, and it need not be. It is the writer's ruler, and the interface
+readers agree on so that amounts can pass between them, made after the geometry and the readings, and its plainness,
+uniform and without a corner, is what lets it favour no one. In order: the world, a reading, a relation, an address and
+then, between readers, the number line.
 
 ## 10. A worked example: a mountain range
 

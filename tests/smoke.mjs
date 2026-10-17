@@ -994,12 +994,15 @@ try {
     // every ghost reads its edges along the same two directions from A
     for (const g of W.ghosts(1)) { const a = Math.atan2(g.d, g.x0), b = Math.atan2(g.d, g.x0 + g.V);
       out.ghosts = Math.max(out.ghosts, Math.abs(a - Math.atan2(r1.left.v, r1.left.h)), Math.abs(b - Math.atan2(r1.right.v, r1.right.h))); }
+    // the writer's ruler, the number line: every stride the same length; a reader's lay: strides shorter past its corner
+    const R = W.rulers(1), xs = R.ticks.map(R.writer), ys = R.ticks.map(R.reader), dw = xs.slice(1).map((x, i) => x - xs[i]), dr = ys.slice(1).map((y, i) => y - ys[i]);
+    out.lineSpread = Math.max(...dw) - Math.min(...dw); out.layShrinks = dr[dr.length - 1] < 0.5 * dr[0];
     return Object.assign(out, { size1: r1.size, product: r1.product, VH: r2.VH, trueVH: T.V / T.step, Vm: r3.Vm, trueV: T.V, wV: wr.Vm, wD: wr.Dm, depthH: r2.depthH });
   });
-  const wdrOk = wrd.size1 === null && Math.abs(wrd.product - 1) < 1e-15 && Math.abs(wrd.VH - wrd.trueVH) < 1e-9 && Math.abs(wrd.Vm - wrd.trueV) < 1e-9 &&
+  const wdrOk = wrd.size1 === null && wrd.lineSpread < 1e-12 && wrd.layShrinks && Math.abs(wrd.product - 1) < 1e-15 && Math.abs(wrd.VH - wrd.trueVH) < 1e-9 && Math.abs(wrd.Vm - wrd.trueV) < 1e-9 &&
     Math.abs(wrd.wV - 3) < 1e-9 && Math.abs(wrd.wD - 1) < 1e-9 && wrd.depthH === null && wrd.scale < 1e-9 && wrd.metres < 1e-9 && wrd.ghosts < 1e-12;
   if (!wdrOk) failures.push(`[writer-readers.html] ${JSON.stringify(wrd)}`);
-  console.log(`${failures.length === before35 ? 'ok  ' : 'FAIL'} writer-readers.html (one standpoint: the frame, product 1, no size, every box along the same rays alike; two standpoints a step apart: V*/H = ${wrd.VH.toFixed(4)}, its depth unread; the step counted: ${wrd.Vm.toFixed(4)} m; the writer walks 3 m by 1 m; scaling the world by 10⁻², 7, 10² moves no reading and nothing in H, the metres by k)`);
+  console.log(`${failures.length === before35 ? 'ok  ' : 'FAIL'} writer-readers.html (one standpoint: the frame, product 1, no size, every box along the same rays alike; two standpoints a step apart: V*/H = ${wrd.VH.toFixed(4)}, its depth unread; the step counted: ${wrd.Vm.toFixed(4)} m; the writer walks 3 m by 1 m; scaling the world by 10⁻², 7, 10² moves no reading and nothing in H, the metres by k; on the writer's number line every stride alike, on a reader's lay shorter past the corner)`);
 
   // ── 36. theorem6.html: (a) scaling, reshaping, reshuffling or thinning what arrives moves no address; (b) the median
   //    commutes with an increasing f, (c) the mean only with an affine one; (d) median 1, quartiles √2 ∓ 1, the mean

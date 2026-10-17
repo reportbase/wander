@@ -266,11 +266,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `?count=turn|even|lopsided|screen|payload&t=&legs=&play=1`; hook `window.__sweepZero` (`law`, `quantile`, `median`,
   `tally`, `compose`, `fixed`, `set`, `stop`, `state`). `writer-readers.html` (R328–R335): a box 3 m by 1 m, 5 m off; one
   standpoint the frame (π/2·2/π = 1) and no size (ghost boxes along the same rays), a second a step H (two strides of 0.7 m)
-  away V*/H, the step counted metres, the writer walking it all; drawn in H, so k moves only the metre bar.
-  `?step=1|2|3|writer&k=<log10 k>`; hook `window.__writerReaders` (`truth`, `rung1`, `rung2`, `rung3`, `writer`, `ghosts`,
-  `set`, `state`). `theorem6.html` (R330): (a) scale, reshape, reshuffle or thin what arrives, no address moves; (b), (c) a
-  table of median and mean against f (affine, x³, √x, eˣ) on the addresses and the amounts; (d), (e) median and mean against N
-  to 10⁶ on the circle, the line, the square's edges and a lopsided weight. `?n=&op=&f=&path=&seed=`; hook
+  away V*/H, the step counted metres, the writer walking it all; drawn in H, so k moves only the metre bar. Since R338
+  (Tom: "the writer is the number line. because the writer writes, it needs the proportional number without the corner";
+  OFS "Three vantages", §3.4, §9) a strip lays the same strides on the writer's number line (alike everywhere, no
+  corner) and on a reader's lay (the corner at H, then 1 + ln s). `?step=1|2|3|writer&k=<log10 k>`; hook
+  `window.__writerReaders` (`truth`, `rung1`, `rung2`, `rung3`, `writer`, `ghosts`, `rulers`, `set`, `state`).
+  `theorem6.html` (R330): (a) scale, reshape, reshuffle or thin what arrives, no address moves; (b), (c) a table of
+  median and mean against f (affine, x³, √x, eˣ) on the addresses and the amounts; (d), (e) median and mean against N to
+  10⁶ on the circle, the line, the square's edges and a lopsided weight. `?n=&op=&f=&path=&seed=`; hook
   `window.__theorem6` (`addresses`, `payload`, `apply`, `readingsWith`, `stats`, `commute`, `meanAt`, `medianAt`,
   `quartiles`, `readingAt`, `set`, `state`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
@@ -812,6 +815,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Review 18 (ChatGPT, 17 Oct, of version 32, 9.3/10, `plans/ofs-review-18.md`; SPN R336): Nagel and Haraway removed from
   §11.3 (and the references); §1 no longer characterizes coordinate systems in general; V = H's "required" tied to the
   turn and the Cauchy in three more places; R335's rewrap had merged §1's object/address/payload list into prose, restored.
+  **The writer is the number line** (17 Oct, SPN R338; Tom: "the writer is the number line.    because the writer writes,
+  it needs the proportional number without the corner.."): writing states amounts, counted out and added, so its ruler
+  is proportional on both sides of 1 with no corner; the corner is a reader's, where its unit falls. In "Three
+  vantages", §3.4's table and §9 ("the writer's ruler").
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
@@ -1474,7 +1481,8 @@ In short:
       compose to tan 70°, once round to no turn; a turn carries the Cauchy onto itself.
   35. **writer-readers.html:** one standpoint the frame (product 1), no size, every ghost box on the same rays; two a step
       apart V*/H exactly, the depth unread; the step counted 3 m; the writer 3 m by 1 m; scaling the world by 10⁻², 7, 10²
-      moves no reading and nothing in H, the metres by k.
+      moves no reading and nothing in H, the metres by k; on the writer's number line every stride the same length, on a
+      reader's lay shorter past the corner.
   36. **theorem6.html:** scaling, reshaping, reshuffling or thinning what arrives moves no address, the median at the corner;
       the median commutes with every increasing f tried, the mean only with the affine one (Jensen's way for the convex);
       quartiles √2 ∓ 1, the mean climbing (2/π)·ln 10 a decade; the line and the square's edges with median 1 and a
