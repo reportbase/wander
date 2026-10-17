@@ -83,13 +83,12 @@ world. It is a geometry of the reader's own
 found there.
 
 **What is new, and what is not.** That coordinates depend on the observer is old: a coordinate system is a choice, and a
-change of coordinates changes every coordinate. What is new here is where the scheme comes from. A coordinate system is
-laid on a space already written in full. It presupposes the whole, with every length already in one scale, and a change
-of coordinates carries every amount along with it. A situated reader has no such space to lay coordinates on. It has its
-own breadth and the relations it can form from where it stands, and from these alone it builds its places before
-anything is read. Three things then have to be kept apart: - the *object*, whatever exists independently of any reading
-of it; - the *address*, the place in the reader's scheme at which something can be met; - the *payload*, the magnitude
-met there.
+change of coordinates changes every coordinate. What is new here is where this reader's scheme comes from: it is built
+from the relations available at its standpoint, its own breadth and what it can relate to it, before any payload
+arrives. Three things then have to be kept apart:
+- the *object*, whatever exists independently of any reading of it;
+- the *address*, the place in the reader's scheme at which something can be met;
+- the *payload*, the magnitude met there.
 
 A change of coordinates moves addresses and payloads together. The separation here lets either change without the other.
 Changing what arrives leaves every address in place (Theorem 6), and changing the reader's sweep changes its addresses
@@ -124,34 +123,37 @@ read the mountain in thumbs.
 
 **Three vantages: a writer and two readers.** There are writers and readers, told apart by their vantage. The writer's
 vantage is dual-hemispherical: it holds both hemispheres, every breadth at once. The writer needs the true breadth, and
-to have it must walk the complete object, or carry in an amount measured beforehand; readers need neither. Between two
-points it holds the straight chord, which needs no turn; the circle comes after the chord, drawn on it by turning. A
-reader's vantage is hemispherical: a *situated* reader has a facing, and holds only the arc it turns through. One turn
-of the head makes one read, and the read breaks down two ways, not one: the payload read and the address read. Readers
-are of two types, by which breakdown each keeps. The *payload reader*, the central sweep, turning about the centre of
-the Thales circle, gets the payloads, what arrives, read by their mean; the *address reader*, the inscribed sweep, from
-home, gets the addresses to the payloads, the Cauchy, read by its median at the corner. The two are told apart by what
-each receives, amounts along directions laid out in advance or directions alone, not by how a reader holds what it
-receives: either may hold it at once or take it in order. All three stand on one baseline, situation 1, the circle V =
-H: the writer's equation and each reader's drawing; what sets them apart is what each adds to it. The kinds are
-vantages, not observers: one observer can read and then write, taking one vantage at a time, but no standpoint gives the
-writer's. The two readers are not the only situated views: every drawing other than the sum of the unit relations is
-built from a standpoint (§2). The sum is where the truth would lie: a system's true breadths, as shares of their whole,
-would be one point of it, found only with the breadths themselves, amounts the reader does not read. A reader's drawing,
-every party at its own H, is the sum's centre, where every pair is at its corner; the geometry follows from there, and
-the truth lies off the centre by the ratios the reader lacks. The three read the same thing differently: a line of true
-breadth 1 reads 1 to the writer, π/2 to the payload reader and 2/π to the address reader. That is why the vantages are
-named so: the names follow the sweep. The writer knows the line as 1; each reader holds one hemisphere and reads it as
-π/2 or 2/π; the two hemispheres together, as the writer holds them, give back the 1, as the product of the two readings,
-π/2 · 2/π = 1, not their difference. What they give back is the baseline, the reader's own H measured in H (§10, step
-3), not the other party's true breadth. The limits are the same for every line, so they carry no size: from one
-standpoint the two reads give the writer's whole, at no particular size. Its true size needs parallax: a second
-standpoint, the walk between the two a baseline in the reader's own H, places the whole at V*/H (Proposition 11; §10,
-step 6), and one amount carried in writes it in a shared unit. Each step adds what the one before could not: the frame
-from one standpoint, the size in H from two, the unit from one amount more. The true breadth is had only with both
-hemispheres in hand, which no single observation provides. A situated reader can construct it from several observations,
-but it cannot observe it. Many apparent paradoxes come from reading one vantage's geometry as if it were another's, most
-often from treating the writer's vantage as if a single observation held it. Section 3 sets out the readers in full.
+to have it must walk the complete object, or carry in an amount measured beforehand; readers need neither. Because it
+writes, its ruler is the number line: what it writes are amounts, counted out and added, and an amount must be laid
+alike on both sides of 1, in proportion and with no corner (§9). The corner, where a lay turns from proportion to
+levels, is a reader's: it sits where the reader's own unit falls. Between two points it holds the straight chord, which
+needs no turn; the circle comes after the chord, drawn on it by turning. A reader's vantage is hemispherical: a
+*situated* reader has a facing, and holds only the arc it turns through. One turn of the head makes one read, and the
+read breaks down two ways, not one: the payload read and the address read. Readers are of two types, by which breakdown
+each keeps. The *payload reader*, the central sweep, turning about the centre of the Thales circle, gets the payloads,
+what arrives, read by their mean; the *address reader*, the inscribed sweep, from home, gets the addresses to the
+payloads, the Cauchy, read by its median at the corner. The two are told apart by what each receives, amounts along
+directions laid out in advance or directions alone, not by how a reader holds what it receives: either may hold it at
+once or take it in order. All three stand on one baseline, situation 1, the circle V = H: the writer's equation and each
+reader's drawing; what sets them apart is what each adds to it. The kinds are vantages, not observers: one observer can
+read and then write, taking one vantage at a time, but no standpoint gives the writer's. The two readers are not the
+only situated views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is
+where the truth would lie: a system's true breadths, as shares of their whole, would be one point of it, found only with
+the breadths themselves, amounts the reader does not read. A reader's drawing, every party at its own H, is the sum's
+centre, where every pair is at its corner; the geometry follows from there, and the truth lies off the centre by the
+ratios the reader lacks. The three read the same thing differently: a line of true breadth 1 reads 1 to the writer, π/2
+to the payload reader and 2/π to the address reader. That is why the vantages are named so: the names follow the sweep.
+The writer knows the line as 1; each reader holds one hemisphere and reads it as π/2 or 2/π; the two hemispheres
+together, as the writer holds them, give back the 1, as the product of the two readings, π/2 · 2/π = 1, not their
+difference. What they give back is the baseline, the reader's own H measured in H (§10, step 3), not the other party's
+true breadth. The limits are the same for every line, so they carry no size: from one standpoint the two reads give the
+writer's whole, at no particular size. Its true size needs parallax: a second standpoint, the walk between the two a
+baseline in the reader's own H, places the whole at V*/H (Proposition 11; §10, step 6), and one amount carried in writes
+it in a shared unit. Each step adds what the one before could not: the frame from one standpoint, the size in H from
+two, the unit from one amount more. The true breadth is had only with both hemispheres in hand, which no single
+observation provides. A situated reader can construct it from several observations, but it cannot observe it. Many
+apparent paradoxes come from reading one vantage's geometry as if it were another's, most often from treating the
+writer's vantage as if a single observation held it. Section 3 sets out the readers in full.
 
 **Results.**
 - A situated reader's ignorance, as we choose it, is a group: turns of its bar, rescalings of the other party's size,
@@ -636,7 +638,7 @@ two this paper follows through, and not the only ones.
 
 | vantage | situations | geometry | the turn | measure of a turn θ | reads a line of true breadth 1 as |
 |---|---|---|---|---|---|
-| writer, dual-hemispherical: the whole, walked or carried in | 2, on 1 | the chord, and the circle drawn on it; every breadth held; no facing | none | none | 1 |
+| writer, dual-hemispherical: the whole, walked or carried in | 2, on 1 | the chord, and the circle drawn on it; every breadth held; no facing; its ruler the number line, with no corner | none | none | 1 |
 | payload reader, hemispherical, central: a radius of the Thales circle | 3, on 1 | one quadrant: amounts along directions given in advance | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
 | address reader, hemispherical, inscribed: a ray from home | 4, on 1 | one quadrant: directions from home | a quarter turn: a bar, from zero to the horizon | sin θ/θ | 2/π |
 
@@ -789,6 +791,18 @@ starts to change, a reader that lays its sweep once keeps a stale picture; only 
 after another, shows the change. So a reader that may face either kind keeps some such check running. In both directions
 the reader infers the change rather than seeing it: a system that changes more slowly than the look, or more finely than
 the reader resolves, looks still.
+
+**With no motion at all.** If the reader does not turn and nothing in the world moves, what is left depends on the
+holding. A reader that holds at once, a camera or an eye, still has every address in its frame: the sweep is laid across
+its receptors instead of turned through, and each direction [h : v] arrives together, so the corner is still found, as
+the median of what the frame holds. What sets the count is then the receptors' spacing, not a turn: receptors at equal
+angles count as the turn does, and give the Cauchy with its median at the corner; a flat screen of equal pixels counts
+evenly in v/h out to its edge, and puts the median at half the edge's reading instead. The read is the same; only the
+count differs. A reader that takes one direction at a time has, without turning, one address: one reading from one zero,
+with no law, no median and no corner, since the corner is met by passing through it. Either way, with no motion the
+reader has no parallax, so no V*/H (§9), and no change, so looking again tells it nothing new: a near small thing and a
+far large one read alike, and nothing approaches. What remains is one still frame of addresses, or a single address,
+each still pointing at its payload.
 
 
 ### 3.6 What a situated reader holds, and where it stands
@@ -1573,9 +1587,9 @@ navigator's bearings on the chart. Each keeps the turn true only when its two di
   east is drawn at 45° everywhere.
 
 What each leaves free is the size: the lamp's distance, which the picture can be drawn at any value of, and the local
-scale sec φ, which Mercator lets grow toward the poles. Both are zooms, which change every length and no angle. That
-is the distinction this paper draws throughout: the drawing V = H is required, and the true size is one number the
-readings do not fix.
+scale sec φ, which Mercator lets grow toward the poles. Both are zooms, which change every length and no angle. That is
+the distinction this paper draws throughout: the drawing V = H is required for the turn and its readings, and the true
+size is one number the readings do not fix.
 
 Mercator's choice (keep the angles, give up the areas) is the one this paper's reader makes: it keeps the drawing and
 leaves the size to be estimated. The familiar complaint about his map, that it draws Greenland as large as Africa, is a
@@ -1688,11 +1702,11 @@ scale 1. That needs no knowledge of the true V*, since h and v each run from 0 t
 which the Cauchy requires (Proposition 5(d)). Read in amounts against the true breadth it is another Cauchy, of
 (v·V*)/(h·H) = (v/h)·(V*/H), with scale V*/H. Writing that one as the standard Cauchy, of scale 1, silently takes the
 mountain's true breadth to be the drawn one: it turns a situated reader into situation 1, the circle, without knowing
-V*. A situated reader must draw V = H (§5); the confusion is taking the drawing for a measurement. Taking the mean of
-the readings then applies an operation on amounts to addresses, and the missing mean is what that costs: it comes from
-the unbounded axis of the reading, not from the world. Where a Cauchy is met as data rather than laid as addresses, an
-amount has been formed from the reading by a known length, and the distribution's scale is that length, not 1 by
-assumption.
+V*. A situated reader whose sweep is to be a turn must draw V = H (§5); the confusion is taking the drawing for a
+measurement. Taking the mean of the readings then applies an operation on amounts to addresses, and the missing mean is
+what that costs: it comes from the unbounded axis of the reading, not from the world. Where a Cauchy is met as data
+rather than laid as addresses, an amount has been formed from the reading by a known length, and the distribution's
+scale is that length, not 1 by assumption.
 
 ### 7.3 In the picture of the hand
 
@@ -1867,6 +1881,14 @@ follow every increasing map; those facts are part (d). The other parts of Theore
   belongs to whatever sweeps, the lamp or a reader, and not to what the sweep meets. That half the landings fall within
   the lamp's distance of its foot only when shore and sea are drawn at one length is Proposition 5(f), which is
   elementary.
+- *The same law without a sweep.* Not every Cauchy is a sweep's. A spectral line or a resonance is a Lorentzian because
+  of a pole a half-width off the real line, |1/(x − x₀ + iγ)|², from an exponential decay or a damped response
+  (Weisskopf and Wigner 1930; Breit and Wigner 1936); there it is the line, a frequency or an energy, that is swept
+  uniformly, and the pole's phase turns through half a turn, not uniformly, as the line is crossed, standing 45° from
+  its middle at the half-width. A sum of terms whose densities fall off like 1/x² reaches the same law as a stable limit
+  of index 1, with no angle at all (Lévy 1925). In these the law is a fact about the system, as the lighthouse's is
+  about the lamp. Our claim is narrower: where a reader sweeps uniformly, the law of what it lays is its own addresses,
+  whatever else may give the same shape.
 - *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
   (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
   does so everywhere; and no chart keeps both angles and areas (Euler 1777; Gauss 1828). What is ours is the reading: the
@@ -2151,8 +2173,9 @@ division, since only unitless groups of amounts enter a law (Buckingham 1914).
 So three numbers are easily confused, and the geometry needs none of them:
 - the reader's own breadth H, which it chooses for itself and which only moves what sits at its corner, and so what
   it reads finely (a zoom, §8);
-- its estimate of the other party's true breadth, ĉH, the one arbitrary number in sizing (above), best set at
-  the median of what it knows (Proposition 13); the drawing itself, V = H, is required and is not a number to choose;
+- its estimate of the other party's true breadth, ĉH, the one arbitrary number in sizing (above), best set at the median
+  of what it knows (Proposition 13); the drawing itself, V = H, is required for the turn and the Cauchy at the corner
+  (§5) and is not a number to choose;
 - the shared unit, which is neither a reading nor a guess but a relation measured beforehand and agreed between
   readers, needed for talking.
 
@@ -2346,6 +2369,19 @@ be used for estimating camera translation but is a perfect bearing reference for
 are kept as a direction with an inverse depth that may be zero until the motion gives them a place (Civera, Davison and
 Montiel 2008). Joining every direction from every standpoint into one figure is bundle adjustment (Triggs et al. 2000).
 
+**Turning in place gives no parallax.** A turn about the point the reader sees from, home, carries every direction
+through the same angle, near and far alike, so nothing shifts against anything else: the turn gives the directions, the
+frame and the corner, and no distance. Both reads of one turn come from the same standpoint, the address read pivoting
+at home and the payload read at the centre of the circle on the chord, and the standpoint does not move; that is why one
+standpoint gives the frame and not the size. Photographers rely on the same fact, turning a camera about
+its no-parallax point so that frames taken in different directions join without near and far things shifting. A head is
+not a pure turn: the eye sits a distance r in front of the axis it turns about, so a turn through Δ carries it along a
+chord B = 2r·sin(Δ/2), about 14 cm for r = 10 cm and a quarter turn. That chord is a baseline, and by Proposition 11(b)
+it places things out to about B/ε. The parallax comes from the translation inside the turn, not from the turn: in the
+reader's own H the chord sizes things against itself, and to write them in a shared unit the offset r must be known, an
+amount carried in, here the reader's own build. Two eyes give a baseline with no motion at all. Every route to parallax
+moves the point seen from; a turn alone gives directions.
+
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
 change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the
@@ -2372,9 +2408,9 @@ corner, the one amount the lay favours, exists only for an H among the amounts r
 finitely many addresses loses what it reads: an endless H puts all of it in the first address, and a vanishing H sends
 all of it past the levels held, or, on the in-place lay, into the horizon's last address.
 
-**The number line is a shared unit.** The ordinary number line is the clearest example of a unit agreed between readers.
-It is one notch agreed to stand for 1, built out by counting and dividing, and its form is the form a shared ruler
-must have.
+**The number line is a shared unit, and the writer's ruler.** The ordinary number line is the clearest example of a unit
+agreed between readers. It is one notch agreed to stand for 1, built out by counting and dividing, and its form is the
+form a shared ruler must have.
 - *It has no corner.* Every stretch is laid like every other: 0.5 to 1 looks exactly like 1 to 1.5, and nothing turns
   over at 1. A corner would sit at some reader's unit and favour that reader, and by Proposition 14 a ruler that
   favours none has none. The corner belongs to the reader, where its unit falls on the line, not to the line.
@@ -2386,16 +2422,20 @@ must have.
   count of levels with a plain ruler inside one.
 - *It has the same grain everywhere.* It cannot know who will read it or how finely, so it is notched alike throughout,
   whether or not a given reader needs the detail there.
-- *It is not a reader.* It reads nothing and has no standpoint, so it has no situation. A reading passes through it,
-  from one reader's relations to another's, and nobody reads on it.
+- *It is not a reader; it is the writer's.* It reads nothing and has no standpoint, so it has no situation. A reading
+  passes through it, from one reader's relations to another's, and nobody reads on it. The writer writes on it, and
+  needs it as it is: to write is to state amounts, counted out in a unit and added, a breadth walked as so many strides,
+  and a sum of equal steps is laid in proportion, the power p = 1, with each step alike wherever it falls. A corner
+  would lay the steps on one side of it differently from those on the other, so the amount written would depend on where
+  the writer's unit fell; a ruler for amounts must have none.
 - *Its two infinities are its readers'.* Outward without end (1, 2, 4, …) and inward without end (1, ½, ¼, …) are
   exchanged by the reciprocal. They are the far and near sides of whatever unit a reader holds against the line (§3.3,
   §4), not two separate properties of the line.
 
-So the number line is not the structure of observation, and it need not be. It is the interface readers agree on so
-that amounts can pass between them, made after the geometry and the readings, and its plainness, uniform and without a
-corner, is what lets it favour no one. In order: the world, a reading, a relation, an address and then, between
-readers, the number line.
+So the number line is not the structure of observation, and it need not be. It is the writer's ruler, and the interface
+readers agree on so that amounts can pass between them, made after the geometry and the readings, and its plainness,
+uniform and without a corner, is what lets it favour no one. In order: the world, a reading, a relation, an address and
+then, between readers, the number line.
 
 ## 10. A worked example: a mountain range
 
@@ -2569,7 +2609,7 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    Each has g(θ) + g(90° − θ) = 1. They agree at zero, at the corner (½) and at the horizon (1), and part in
    between. So the two ends, the reciprocal and its symmetry fix the corner and the median, and leave the scale between
    them free. Only the circle is uniform in the turn, and the uniform turn is what gives g = 2θ/π, the Cauchy's exact
-   shape and the factor 2/π: the premise selects the geometry, and classical geometry supplies the factor. None of the
+   shape and the factor 2/π: the premise selects the geometry, and the circle supplies the factor. None of the
    three has a mean. The mean of the readings below s grows, far out, by a fixed amount each time s grows tenfold (the
    last column), because each weight reaches the horizon. The horizon condition does real work: the circle weighted by
    sin² 2θ also treats the two parties alike and keeps its median at the corner, but it vanishes at zero and at the
@@ -2682,12 +2722,9 @@ pair and its corner appear in two-path interference: with the paths' amplitudes 
 visibility is at most 2hv and the which-path predictability is |h² − v²|, the sine and cosine of the facing, so that
 their squares sum to at most 1 (Greenberger and Yasin 1988; Englert 1996). In the logarithm of the amplitudes' ratio
 they are its sech and tanh (Bramon, Garbarino and Hiesmayr 2004), and the visibility is whole only where the two
-amplitudes are equal, at the corner. Nagel (1986) called a representation that abstracts from every standpoint the view
-from nowhere, and Haraway (1988) called the ideal of seeing everything from nowhere "the god trick"; the writer here is
-neither, since it holds the whole only by walking it or by carrying in an amount measured beforehand. Van Fraassen
-(2008) argues that the measurer's own position enters measurement irreducibly, as the reader's does here. In terms of
-limits, a writer's account lets the resolution go to zero first and then lets the count of things grow without bound; a
-situated reader has a fixed resolution and an unknown count.
+amplitudes are equal, at the corner. Van Fraassen (2008) argues that the measurer's own position enters measurement
+irreducibly, as the reader's does here. In terms of limits, a writer's account lets the resolution go to zero first and
+then lets the count of things grow without bound; a situated reader has a fixed resolution and an unknown count.
 
 What we claim is not the pieces but their reading as one structure, set by what a reader knows of two breadths, and in
 particular that the Cauchy distribution is a situated reader's addresses, not its payload. Whether this is a better way
@@ -2749,6 +2786,8 @@ Bertrand, J. (1889). *Calcul des probabilités*. Gauthier-Villars, Paris.
 
 Bramon, A., Garbarino, G. and Hiesmayr, B. C. (2004). Quantitative complementarity in two-path interferometry.
 *Physical Review A* 69, 022112.
+
+Breit, G. and Wigner, E. (1936). Capture of slow neutrons. *Physical Review* 49(7), 519–531.
 
 Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
 Review* 4(4), 345–376.
@@ -2819,9 +2858,6 @@ Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *A
 Haldane, J. B. S. (1932). A note on inverse probability. *Proceedings of the Cambridge Philosophical Society* 28(1),
 55–61.
 
-Haraway, D. (1988). Situated knowledges: the science question in feminism and the privilege of partial perspective.
-*Feminist Studies* 14(3), 575–599.
-
 Herschel, J. F. W. (1850). Quetelet on probabilities. *Edinburgh Review* 92, 1–57.
 
 ISO 68-1 (1998). *ISO general purpose screw threads — Basic profile — Part 1: Metric screw threads*. International
@@ -2868,6 +2904,8 @@ Lee, D. N. (1976). A theory of visual control of braking based on information ab
 
 Leonard, D. (2011). Estimating a bivariate linear relationship. *Bayesian Analysis* 6(4), 727–754.
 
+Lévy, P. (1925). *Calcul des probabilités*. Gauthier-Villars, Paris.
+
 Liu, Z. and Adams, C. S. (2019). Experimental tests of Bertrand's question and the Duhem–Quine problem. *European
 Journal of Physics* 40(6), 065801.
 
@@ -2897,8 +2935,6 @@ Möbius, A. F. (1827). *Der barycentrische Calcul*. Barth, Leipzig.
 
 Munro, J. I. and Paterson, M. S. (1980). Selection and sorting with limited storage. *Theoretical Computer Science*
 12(3), 315–323.
-
-Nagel, T. (1986). *The View from Nowhere*. Oxford University Press.
 
 Norton, J. D. (2008). Ignorance and indifference. *Philosophy of Science* 75(1), 45–68.
 
@@ -2948,5 +2984,8 @@ Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII*. Tour
 
 Wallstrom, T. C. (2003). The marginalization paradox does not imply inconsistency for improper priors. arXiv
 math/0310006.
+
+Weisskopf, V. and Wigner, E. (1930). Berechnung der natürlichen Linienbreite auf Grund der Diracschen Lichttheorie.
+*Zeitschrift für Physik* 63, 54–73.
 
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.

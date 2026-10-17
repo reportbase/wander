@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The writer and two readers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    writer-readers.html: the writer and the two readers (17 October 2026, Tom: "lets continue to create visuals to help
+    visualize the math", "all four"; SPN R337; after R328, R329, R333, R335; OFS "Three vantages: a writer and two
+    readers", §9 "A survey: many readings, one amount", "The test: scale the world"). A standalone page, plain canvas.
+    A box 3 m across and 1 m deep, 5 m off; the readers stand in front of it and see only its front (the hemisphere turned
+    toward them). Rung 1, one standpoint: the edges' directions are read, the frame is had (the payload reader's π/2 times
+    the address reader's 2/π is 1, the writer's 1), and no size: every box along the same two rays, at any distance, reads
+    alike. Rung 2, parallax: one step to a second standpoint, its length H, the reader's unit; the rays cross and the box
+    is placed and sized in H (V*/H). Rung 3, one amount: the step counted in strides of 0.7 m, carried in, writes metres.
+    The writer: walks the whole box, front and back (both hemispheres), counting strides, and writes its breadth and depth.
+    Scale the world by k: nothing read moves, nothing in H moves; the metres move by k. The writer is the number line
+    (R338, Tom: "the writer is the number line. because the writer writes, it needs the proportional number without the
+    corner"): a strip lays the same strides on the writer's ruler, alike everywhere, and on a reader's lay, in proportion
+    to its corner at H and 1 + ln s past it.
+    Links: ?step=1|2|3|writer&k=<log10 k>. Test hook: window.__writerReaders (truth, rung1, rung2, rung3, writer, ghosts,
+    rulers, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 3fr 2fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } table { font-size: 11.5px } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15;
+        overflow-wrap: anywhere }
+    table { border-collapse: collapse; font-size: 13px; width: 100% }
+    td, th { text-align: left; padding: 3px 6px; border-bottom: 1px solid var(--line) }
+    th { color: var(--dim); font-weight: 400 }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The writer and the two readers</h1>
+    <p class="lede">The readers stand on one side of the box and read; the writer walks all the way round it. From one
+    standpoint the two reads give the frame, the writer's 1, at no size. A second standpoint, one step away, places the box
+    and sizes it in that step. One amount carried in, the step counted in strides, writes it in metres. The writer needs no
+    reading at all: it walks the whole thing, and writes on the number line, where every stride is laid alike and
+    there is no corner. Scale the world, and see what moves.</p>
+    <div class="panel">
+        <div class="row"><button data-s="1">1 · one standpoint</button><button data-s="2">2 · a second standpoint</button>
+            <button data-s="3">3 · count the step</button><button data-s="writer">the writer</button></div>
+        <div class="row"><label for="k">scale the world, k</label><input id="k" type="range" min="-2" max="2" step="0.01" value="0">
+            <span id="kv" class="b"></span><button id="k1">k = 1</button></div>
+        <div class="grid">
+            <div><canvas id="cv" height="460"></canvas><p class="cap">The plan, drawn in the reader's own step H (so it
+            does not move with k); the metre bar does. Gold: rays read from the first standpoint A; teal: from the second, B.
+            Faint boxes: what one standpoint cannot tell apart. Dashed: the back of the box, turned away from the readers.</p></div>
+            <div>
+                <div class="read" id="say"></div>
+                <div style="overflow-x:auto"><table id="tab"></table></div>
+                <canvas id="cv3" height="170"></canvas><p class="cap">The writer's ruler and a reader's. Above, the
+                number line: every stride laid alike, in proportion on both sides of 1, no corner, so strides add. Below,
+                the reader's lay in its own H: in proportion to the corner (its step H), then 1 + ln s, the same strides
+                bunching past it.</p>
+            </div>
+        </div>
+    </div>
+    <p class="note">Related: <a href="one-read.html">one turn, one read</a>, <a href="write.html">writing, step by step</a>,
+    <a href="room-walk.html">walking the room</a>, <a href="mountain.html">the mountain and the thumb</a>.
+    <a href="demos.html">All the demos</a>.</p>
+</main>
+<script>
+(function () {
+    'use strict';
+    const $ = id => document.getElementById(id), P = new URLSearchParams(location.search);
+    const STRIDE = 0.7, STEP_STRIDES = 2;
+    const st = { step: '1', lk: 0 };
+    const K = () => Math.pow(10, st.lk);
+
+    // the world in metres, scaled by k (the referee's, never read): the box's front from x0 to x0 + V at y = d, depth D;
+    // the readers at A = (0, 0) and B = (step, 0)
+    function truth(k = K()) {
+        return { x0: -1 * k, V: 3 * k, d: 5 * k, D: 1 * k, step: STEP_STRIDES * STRIDE * k };
+    }
+    const dirOf = (from, p) => Math.atan2(p[1] - from[1], p[0] - from[0]);
+    // rung 1: one standpoint; each edge read as a direction [h : v] (from A's zero, the way it will step)
+    function rung1(k = K()) {
+        const T = truth(k), L = [T.x0, T.d], R = [T.x0 + T.V, T.d];
+        const a = dirOf([0, 0], L), b = dirOf([0, 0], R);
+        return { left: { h: Math.cos(a), v: Math.sin(a), deg: a * 180 / Math.PI }, right: { h: Math.cos(b), v: Math.sin(b), deg: b * 180 / Math.PI },
+            across: (a - b) * 180 / Math.PI, payload: Math.PI / 2, address: 2 / Math.PI, product: (Math.PI / 2) * (2 / Math.PI), size: null };
+    }
+    // the boxes one standpoint cannot tell apart: the same two rays, any distance
+    const ghosts = (k = K()) => [0.35, 0.6, 1, 1.6, 2.4].map(f => { const T = truth(k); return { x0: T.x0 * f, V: T.V * f, d: T.d * f, D: T.D * f }; });
+    // two rays, from A = (0, 0) at angle a and from B = (1, 0) at angle b, in H: where they cross
+    function cross(a, b) {
+        const ca = Math.cos(a), sa = Math.sin(a), cb = Math.cos(b), sb = Math.sin(b), den = ca * sb - sa * cb;
+        const t = sb / den; return [t * ca, t * sa];
+    }
+    // rung 2: a second standpoint one step on; the step is H, so B = (1, 0) in H. Each edge read from both and crossed.
+    function rung2(k = K()) {
+        const T = truth(k), L = [T.x0, T.d], R = [T.x0 + T.V, T.d], B = [T.step, 0];
+        const pL = cross(dirOf([0, 0], L), dirOf(B, L)), pR = cross(dirOf([0, 0], R), dirOf(B, R));
+        return { left: pL, right: pR, VH: Math.hypot(pR[0] - pL[0], pR[1] - pL[1]), dH: (pL[1] + pR[1]) / 2, depthH: null };
+    }
+    // rung 3: the step counted in strides of a length carried in, which writes H, and so everything, in metres
+    function rung3(k = K()) {
+        const T = truth(k), strides = T.step / STRIDE, H = strides * STRIDE, r = rung2(k);
+        return { strides, Hm: H, Vm: r.VH * H, dm: r.dH * H, depthm: null };
+    }
+    // the writer: walks the whole box, both sides, counting strides along each side
+    function writer(k = K()) {
+        const T = truth(k), front = T.V / STRIDE, side = T.D / STRIDE;
+        return { strides: { front, right: side, back: front, left: side }, Vm: front * STRIDE, Dm: side * STRIDE, read: 0 };
+    }
+
+    // the writer's ruler (the number line: x in proportion, no corner) and the reader's lay (s = x/H in proportion to the
+    // corner, then 1 + ln s), each stride's place on both, over the world from 0 to 1.5 times its farthest amount
+    function rulers(k = K()) {
+        const T = truth(k), H = T.step, xmax = 1.5 * Math.max(T.d + T.D, T.V), lay = x => { const q = x / H; return q <= 1 ? q : 1 + Math.log(q); };
+        const n = Math.floor(xmax / STRIDE), every = Math.max(1, Math.ceil(n / 40)), ticks = [];
+        for (let i = 0; i <= n; i += every) ticks.push(i * STRIDE);
+        return { xmax, H, layMax: lay(xmax), writer: x => x / xmax, reader: x => lay(x) / lay(xmax), ticks, marks: { d: T.d, V: T.V, H } };
+    }
+    function drawRulers() {
+        const { g, w, h } = fit($('cv3')); g.clearRect(0, 0, w, h);
+        const R = rulers(), pad = 14, X = f => pad + (w - 2 * pad) * f, y1 = 48, y2 = 120;
+        g.font = '11px DM Mono, monospace';
+        g.strokeStyle = '#b59cf0'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(X(0), y1); g.lineTo(X(1), y1); g.stroke();
+        g.strokeStyle = '#d4a052'; g.beginPath(); g.moveTo(X(0), y2); g.lineTo(X(1), y2); g.stroke();
+        for (const x of R.ticks) {
+            g.strokeStyle = 'rgba(181,156,240,0.8)'; g.beginPath(); g.moveTo(X(R.writer(x)), y1 - 6); g.lineTo(X(R.writer(x)), y1 + 6); g.stroke();
+            g.strokeStyle = 'rgba(212,160,82,0.8)'; g.beginPath(); g.moveTo(X(R.reader(x)), y2 - 6); g.lineTo(X(R.reader(x)), y2 + 6); g.stroke();
+        }
+        g.fillStyle = '#b59cf0'; g.fillText('the writer: the number line, strides alike', pad, 18);
+        g.fillStyle = '#d4a052'; g.fillText("a reader's lay: the corner at H, then 1 + ln s", pad, y2 + 36);
+        const cx = X(R.reader(R.H)); g.strokeStyle = '#e6e4ee'; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(cx, y2 - 16); g.lineTo(cx, y2 + 10); g.stroke(); g.setLineDash([]);
+        g.fillStyle = '#e6e4ee'; g.fillText('corner', cx - 18, y2 - 20);
+        for (const [key, lab] of [['d', 'd'], ['V', 'V*']]) {
+            const x = R.marks[key]; g.fillStyle = '#8ce6cd';
+            g.beginPath(); g.arc(X(R.writer(x)), y1, 3.5, 0, 2 * Math.PI); g.fill(); g.fillText(lab, X(R.writer(x)) - 4, y1 + 20);
+            g.beginPath(); g.arc(X(R.reader(x)), y2, 3.5, 0, 2 * Math.PI); g.fill(); g.fillText(lab, X(R.reader(x)) - 4, y2 + 20);
+        }
+    }
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth,
+            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * (cv.id === 'cv3' ? 0.6 : 1.05)));
+        cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr);
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return { g, w, h: hh };
+    }
+    function draw() {
+        const { g, w, h } = fit($('cv')); g.clearRect(0, 0, w, h);
+        const k = K(), T = truth(k), Hm = T.step, s = st.step;
+        // drawn in H: x from −3.5 to 4.5 H, y from −0.6 to 10.4 H
+        const sc = Math.min(w / 8.4, (h - 20) / 11.2), ox = w / 2 - 0.5 * sc, oy = h - 0.9 * sc;
+        const X = p => [ox + sc * p[0] / Hm, oy - sc * p[1] / Hm];
+        g.font = '12px DM Mono, monospace';
+        const box = (b, col, back, wid) => {
+            const a = X([b.x0, b.d]), c = X([b.x0 + b.V, b.d]), e = X([b.x0 + b.V, b.d + b.D]), f = X([b.x0, b.d + b.D]);
+            g.strokeStyle = col; g.lineWidth = wid; g.beginPath(); g.moveTo(...a); g.lineTo(...c); g.stroke();
+            g.setLineDash(back ? [] : [4, 4]); g.beginPath(); g.moveTo(...c); g.lineTo(...e); g.lineTo(...f); g.lineTo(...a); g.stroke(); g.setLineDash([]);
+        };
+        const A = X([0, 0]), B = X([T.step, 0]);
+        const ray = (from, p, col) => { const q = X(p), dx = q[0] - from[0], dy = q[1] - from[1], n = Math.hypot(dx, dy), L = 2.2 * Math.hypot(w, h);
+            g.strokeStyle = col; g.lineWidth = 1.2; g.beginPath(); g.moveTo(...from); g.lineTo(from[0] + dx / n * L, from[1] + dy / n * L); g.stroke(); };
+        if (s !== 'writer') {
+            ray(A, [T.x0, T.d], 'rgba(212,160,82,0.85)'); ray(A, [T.x0 + T.V, T.d], 'rgba(212,160,82,0.85)');
+            if (s === '1') for (const gb of ghosts(k)) box(gb, 'rgba(230,228,238,0.25)', false, 1);
+            else { ray(B, [T.x0, T.d], 'rgba(140,230,205,0.85)'); ray(B, [T.x0 + T.V, T.d], 'rgba(140,230,205,0.85)'); }
+        }
+        if (s !== '1') box(T, s === 'writer' ? '#b59cf0' : '#e6e4ee', s === 'writer', 2.5);
+        else box(T, 'rgba(230,228,238,0.6)', false, 1.5);
+        if (s === 'writer') {
+            // the walk round, a stride at a time
+            const m = 0.35 * Hm, pts = [[T.x0 - m, T.d - m], [T.x0 + T.V + m, T.d - m], [T.x0 + T.V + m, T.d + T.D + m], [T.x0 - m, T.d + T.D + m], [T.x0 - m, T.d - m]];
+            g.strokeStyle = 'rgba(181,156,240,0.7)'; g.lineWidth = 1; g.setLineDash([2, 5]); g.beginPath(); pts.forEach((p, i) => i ? g.lineTo(...X(p)) : g.moveTo(...X(p))); g.stroke(); g.setLineDash([]);
+            g.fillStyle = '#b59cf0'; const q = X([T.x0 - m, T.d + T.D + m + 0.2 * Hm]); g.fillText('the writer walks it all', q[0], q[1]);
+        }
+        const dot = (p, col) => { g.fillStyle = col; g.beginPath(); g.arc(p[0], p[1], 5, 0, 2 * Math.PI); g.fill(); };
+        if (s !== 'writer') { dot(A, '#d4a052'); g.fillStyle = '#d4a052'; g.fillText('A', A[0] - 16, A[1] + 4); }
+        if (s === '2' || s === '3') {
+            dot(B, '#8ce6cd'); g.fillStyle = '#8ce6cd'; g.fillText('B', B[0] + 8, B[1] + 4);
+            g.strokeStyle = '#e6e4ee'; g.lineWidth = 2; g.beginPath(); g.moveTo(...A); g.lineTo(...B); g.stroke();
+            g.fillStyle = '#e6e4ee'; g.fillText(s === '3' ? `H = ${STEP_STRIDES * k > 9.99 ? (STEP_STRIDES * k).toFixed(0) : (STEP_STRIDES * k).toFixed(2)} strides` : 'H, one step', (A[0] + B[0]) / 2 - 30, A[1] + 18);
+        }
+        // the metre bar (moves with k, since the drawing is in H)
+        const mb = Math.min(4 * Hm, Math.pow(10, Math.round(Math.log10(Hm * 2)))), x1 = 12, y1 = 18, x2 = x1 + sc * mb / Hm;
+        g.strokeStyle = '#8a8a96'; g.lineWidth = 2; g.beginPath(); g.moveTo(x1, y1); g.lineTo(x2, y1); g.stroke();
+        g.fillStyle = '#8a8a96'; g.fillText(`${mb >= 1 ? mb.toFixed(0) : mb.toPrecision(1)} m (the referee's)`, x1, y1 + 16);
+        drawRulers(); hud();
+    }
+    const f3 = x => x == null ? '—' : x.toFixed(3);
+    function hud() {
+        const k = K(), r1 = rung1(k), r2 = rung2(k), r3 = rung3(k), wr = writer(k), s = st.step;
+        $('kv').textContent = k >= 10 ? k.toFixed(0) : k.toPrecision(3);
+        document.querySelectorAll('[data-s]').forEach(b => b.classList.toggle('on', b.dataset.s === s));
+        const say = {
+            '1': `<span class="g">One standpoint.</span> Turning once, A reads the box's edges as directions: [h : v] = `
+                + `[${f3(r1.left.h)} : ${f3(r1.left.v)}] and [${f3(r1.right.h)} : ${f3(r1.right.v)}], ${r1.across.toFixed(2)}° across.\n`
+                + `The payload reader reads the writer's 1 as π/2, the address reader as 2/π; their product gives the 1 back: the frame.\n`
+                + `No size: every faint box lies along the same two rays and reads exactly alike.`,
+            '2': `<span class="r">A second standpoint.</span> A steps once, the step's length H its unit (never measured); from B `
+                + `the edges are read again. The rays cross: the box is placed and sized in H.\n`
+                + `V*/H = ${f3(r2.VH)}, d/H = ${f3(r2.dH)}. Its depth is not read: its back is turned away.`,
+            '3': `<span class="b">One amount carried in.</span> The step counted: ${r3.strides.toFixed(2)} strides of ${STRIDE} m, `
+                + `so H = ${f3(r3.Hm)} m, and everything read in H is written in metres.\nV* = ${f3(r3.Vm)} m, d = ${f3(r3.dm)} m. `
+                + `Many readings, one amount.`,
+            writer: `<span class="w">The writer.</span> It reads nothing: it walks the whole box, front and back (both hemispheres), `
+                + `counting strides, each laid alike on its ruler, the number line, so they add: ${wr.strides.front.toFixed(2)} along the front, ${wr.strides.right.toFixed(2)} along a side.\n`
+                + `V* = ${f3(wr.Vm)} m, depth ${f3(wr.Dm)} m. The writer holds the true breadth because it walked it.`,
+        }[s];
+        $('say').innerHTML = say + (Math.abs(st.lk) > 1e-9 ? `\n<span class="x">The world scaled by k = ${$('kv').textContent}:</span> `
+            + 'the readings and everything in H are unchanged; the metres are k times.' : '');
+        const rows = [['', 'one standpoint', 'two', 'the step counted', 'the writer'],
+            ['the frame (product 1)', '✓', '✓', '✓', 'the 1 itself'],
+            ['V*/H', '—', f3(r2.VH), f3(r2.VH), '—'],
+            ['V* in metres', '—', '—', f3(r3.Vm), f3(wr.Vm)],
+            ['depth', '—', '—', '—', f3(wr.Dm) + ' m']];
+        $('tab').innerHTML = rows.map((r, i) => `<tr>${r.map((c, j) => i === 0 || j === 0 ? `<th>${c}</th>` : `<td>${c}</td>`).join('')}</tr>`).join('');
+    }
+    document.querySelectorAll('[data-s]').forEach(b => b.onclick = () => { st.step = b.dataset.s; draw(); });
+    $('k').oninput = e => { st.lk = +e.target.value; draw(); };
+    $('k1').onclick = () => { st.lk = 0; $('k').value = 0; draw(); };
+    window.addEventListener('resize', draw);
+    function set(o) { if ('step' in o) st.step = String(o.step); if ('k' in o) { st.lk = Math.log10(+o.k); $('k').value = st.lk; } draw(); return state(); }
+    function state() { return { step: st.step, k: K() }; }
+    if (['1', '2', '3', 'writer'].includes(P.get('step'))) st.step = P.get('step');
+    if (P.has('k')) { st.lk = Math.max(-2, Math.min(2, +P.get('k'))); $('k').value = st.lk; }
+    draw();
+    window.__writerReaders = { STRIDE, truth, rung1, rung2, rung3, writer, ghosts, rulers, set, state };
+})();
+</script>
+</body>
+</html>
