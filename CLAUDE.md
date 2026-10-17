@@ -772,6 +772,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   is uniform by definition, you can't sweep un-uniformly."): the uniformity never in question, only what is counted; the
   lighthouse the lamp's sweep (its addresses on the shore), not an exception; sources spread evenly and counted as
   arrivals are the payload's density. Intro, §7.1 ("Third"), §7.8's lighthouse entry.
+  One read, two breakdowns (R332; Tom: "just by rotating your head, nothing else, you create a sweep, a read, and the read
+  can be broken down in two ways, not one, the payload read and the address read."): the two sweeps are one turn counted
+  from its two pivots, not two motions; the address read the direction, the payload read the amount along it, meeting at
+  one point (III.20); a reader type is the breakdown it keeps. §3.1's "Two sweeps, two results" is now "One read, two
+  results"; intro, §4's "Why there are two sweeps, and only two", §9.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

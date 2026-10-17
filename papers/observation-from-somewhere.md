@@ -122,27 +122,28 @@ to your thumb, V = H, and read the mountain in thumbs.
 vantage, the *completed* one, is dual-hemispherical: it holds both hemispheres, every breadth at once from no
 standpoint; this is classical geometry. Between two points it holds the straight chord, which needs no turn; the circle
 comes after the chord, drawn on it by turning. A reader's vantage is hemispherical: a *situated* reader has a facing,
-and holds only the arc it turns through, by one of two sweeps that get two different things, so readers are of two
-types. The *payload reader*, the central sweep, turning about the centre of the Thales circle, gets the payloads, what
-arrives, read by their mean; the *address reader*, the inscribed sweep, from home, gets the addresses to the payloads,
-the Cauchy, read by its median at the corner. The two are told apart by what each receives, amounts along directions
-laid out in advance or directions alone, not by how a reader holds what it receives: either may hold it at once or take
-it in order. All three stand on one baseline, situation 1, the circle V = H: the writer's equation and each reader's
-drawing; what sets them apart is what each adds to it. The kinds are vantages, not observers: one observer can read and
-then write, taking one vantage at a time, but no standpoint gives the writer's. The two readers are not the only
-situated views: every drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is where
-the truth would lie: a system's true breadths, as shares of their whole, would be one point of it, found only with the
-breadths themselves, amounts the reader does not read. A reader's drawing, every party at its own H, is the sum's
-centre, where every pair is at its corner; the geometry follows from there, and the truth lies off the centre by the
-ratios the reader lacks. The three read the same thing differently: a line of true breadth 1 reads 1 to the writer, π/2
-to the payload reader and 2/π to the address reader. That is why the vantages are named so: the names follow the sweep.
-The writer knows the line as 1; each reader holds one hemisphere and reads it as π/2 or 2/π; the two hemispheres
-together, as the writer holds them, give back the 1, as the product of the two readings, π/2 · 2/π = 1, not their
-difference. What they give back is the baseline, the reader's own H measured in H (§10, step 3), not the other party's
-true breadth. The true breadth is had only with both hemispheres in hand, which no single observation provides. A
-situated reader can construct it from several observations, but it cannot observe it. Many apparent paradoxes come from
-reading one vantage's geometry as if it were another's, most often from treating the completed view as if a single
-observation held it. Section 3 sets out the readers in full.
+and holds only the arc it turns through. One turn of the head makes one read, and the read breaks down two ways, not
+one: the payload read and the address read. Readers are of two types, by which breakdown each keeps. The *payload
+reader*, the central sweep, turning about the centre of the Thales circle, gets the payloads, what arrives, read by
+their mean; the *address reader*, the inscribed sweep, from home, gets the addresses to the payloads, the Cauchy, read
+by its median at the corner. The two are told apart by what each receives, amounts along directions laid out in advance
+or directions alone, not by how a reader holds what it receives: either may hold it at once or take it in order. All
+three stand on one baseline, situation 1, the circle V = H: the writer's equation and each reader's drawing; what sets
+them apart is what each adds to it. The kinds are vantages, not observers: one observer can read and then write, taking
+one vantage at a time, but no standpoint gives the writer's. The two readers are not the only situated views: every
+drawing other than the sum of the unit relations is built from a standpoint (§2). The sum is where the truth would lie:
+a system's true breadths, as shares of their whole, would be one point of it, found only with the breadths themselves,
+amounts the reader does not read. A reader's drawing, every party at its own H, is the sum's centre, where every pair is
+at its corner; the geometry follows from there, and the truth lies off the centre by the ratios the reader lacks. The
+three read the same thing differently: a line of true breadth 1 reads 1 to the writer, π/2 to the payload reader and 2/π
+to the address reader. That is why the vantages are named so: the names follow the sweep. The writer knows the line as
+1; each reader holds one hemisphere and reads it as π/2 or 2/π; the two hemispheres together, as the writer holds them,
+give back the 1, as the product of the two readings, π/2 · 2/π = 1, not their difference. What they give back is the
+baseline, the reader's own H measured in H (§10, step 3), not the other party's true breadth. The true breadth is had
+only with both hemispheres in hand, which no single observation provides. A situated reader can construct it from
+several observations, but it cannot observe it. Many apparent paradoxes come from reading one vantage's geometry as if
+it were another's, most often from treating the completed view as if a single observation held it. Section 3 sets out
+the readers in full.
 
 **Results.**
 - A situated reader's ignorance, as we choose it, is a group: turns of its bar, rescalings of the other party's size,
@@ -439,23 +440,24 @@ the five below, then for two.
 | 3 | known | not known | the centre of the Thales circle: a central angle | amounts along directions given in advance; held at once or in order | the central sweep: it gets the payloads, what arrives |
 | 4 | known | not known | home, a point of that circle: an inscribed angle | directions, the ratios, and no amount; held at once or in order | the inscribed sweep: it gets the addresses to the payloads |
 
-**Two sweeps, two results.** Situations 3 and 4 are two sweeps over the same quadrant, and they get two different
-things. The central sweep, a radius turning about the centre of the Thales circle, gets the payloads: what arrives, its
-departure from the unit circle, read by its mean. If its law is taken to be unchanged by turns and its two components to
-vary independently, it is normal (§7.1, "Why the payload is Gaussian"); that is a model under two premises, not a
-consequence of the sweep. What the central sweep reads is centred on the payload's centre of gravity. The inscribed
-sweep, a ray from home, a point of that circle, gets the addresses to the payloads: the places a reading can be put,
-laid before anything arrives, whose law is the Cauchy, with its median at the corner and no mean (Theorem 6). What the
-inscribed sweep reads is centred on that median, the address of the payload's centre. Neither is a reader standing
-outside or inside a thing; each is a sweep, set by where it turns: the central sweep about the centre of the Thales
-circle, the inscribed sweep at home, a point of that circle; and each address points at its payload (§4, "The address
-points at the payload"). The paper calls them the central reader and the inscribed reader, and tells them apart by what
-each receives (§9): the central sweep's directions are laid out before anything arrives, and what it receives along them
-is amounts; the inscribed sweep receives directions, which are ratios, and no amount. How a reader holds what it
-receives is a second, separate matter: either reader may hold its readings at once or take them in order, as static and
-dynamic say (§3.5), and a result that rests on holding, such as which centre a reader can keep (§7.6), says which
-holding it needs. The hyperbolic secant density and the fisheye are the inscribed reader's addresses, held together or
-taken in order (§7.1). Taking in a hemisphere at once is not holding the whole: the whole at once is situations 1 and 2.
+**One read, two results.** Situations 3 and 4 are one turn over the same quadrant, its read broken down two ways, and
+the two breakdowns get two different things. The central sweep, a radius turning about the centre of the Thales circle,
+gets the payloads: what arrives, its departure from the unit circle, read by its mean. If its law is taken to be
+unchanged by turns and its two components to vary independently, it is normal (§7.1, "Why the payload is Gaussian");
+that is a model under two premises, not a consequence of the sweep. What the central sweep reads is centred on the
+payload's centre of gravity. The inscribed sweep, a ray from home, a point of that circle, gets the addresses to the
+payloads: the places a reading can be put, laid before anything arrives, whose law is the Cauchy, with its median at the
+corner and no mean (Theorem 6). What the inscribed sweep reads is centred on that median, the address of the payload's
+centre. Neither is a reader standing outside or inside a thing; each is a sweep, set by where it turns: the central
+sweep about the centre of the Thales circle, the inscribed sweep at home, a point of that circle; and each address
+points at its payload (§4, "The address points at the payload"). The paper calls them the central reader and the
+inscribed reader, and tells them apart by what each receives (§9): the central sweep's directions are laid out before
+anything arrives, and what it receives along them is amounts; the inscribed sweep receives directions, which are ratios,
+and no amount. How a reader holds what it receives is a second, separate matter: either reader may hold its readings at
+once or take them in order, as static and dynamic say (§3.5), and a result that rests on holding, such as which centre a
+reader can keep (§7.6), says which holding it needs. The hyperbolic secant density and the fisheye are the inscribed
+reader's addresses, held together or taken in order (§7.1). Taking in a hemisphere at once is not holding the whole: the
+whole at once is situations 1 and 2.
 
 **The rule.** Three questions place any reader in exactly one situation.
 1. Is anything related to the reader, so that it has an h? If not, it is in situation 0.
@@ -959,10 +961,12 @@ The inscribed sweep lays the addresses; the central sweep reaches, at each, the 
 reader's addresses and the world's payloads are joined point for point by one classical theorem, and the join needs
 nothing the reader lacks: no amount, only the drawing.
 
-**Why there are two sweeps, and only two.** The two sweeps are often pictured as reading the arc from outside and from
-inside. Structurally the difference is only where the pivot stands. A sweep is a ray turning about a pivot, and a reader
-counts its steps of turn. For those steps to stand for steps along the arc, equal turns must reach equal stretches of
-arc wherever the ray points. Only two kinds of pivot do this.
+**Why there are two sweeps, and only two.** The two sweeps are not two motions. One turn of the head makes one read, and
+the two sweeps are that turn counted from its two possible pivots: two breakdowns of one read, the address read and the
+payload read, which meet at one point of the circle (above, “The address points at the payload”). They are often
+pictured as reading the arc from outside and from inside. Structurally the difference is only where the pivot stands. A
+sweep is a ray turning about a pivot, and a reader counts its steps of turn. For those steps to stand for steps along
+the arc, equal turns must reach equal stretches of arc wherever the ray points. Only two kinds of pivot do this.
 
 - *The centre.* A ray from the middle M of the chord is a radius. Each step of turn moves its end by the same step of
   arc, at rate 1.
@@ -2149,20 +2153,21 @@ writer's equation, with V known to equal H: one circle held two ways, drawn by t
 2 is writing alone, a shape written on that circle as its perturbation (§7.4), and 3 and 4 are reading alone. Taking the
 reader's circle for the writer's is the confusion of §7.1. Writers and readers are told apart by their vantage: the
 writer's is dual-hemispherical, a reader's hemispherical. From the geometry alone there are two types of reader, one for
-each sweep of §4: the payload reader, by the central sweep, and the address reader, by the inscribed sweep, whose ratios
-are the addresses. A writer needs both, the payload's amounts and the addresses they sit at, together with the one unit
-that fixes the size of the amounts (below), and loses its situation in the process: holding both at once is holding the
-whole, situations 1 and 2, from no standpoint. So reading is the situated operation, and writing produces the completed,
-unsituated representation, stating a thing in amounts. A situated observer can write, but only with information its
-ratios do not contain. To know a breadth is to hold the whole, both hemispheres at once, the one each sweep faces, which
-is situations 1 and 2 and which no standpoint supplies: no reading gives V*/H (Proposition 8). An observer writes by
-carrying in what it did not read, a shared unit or an amount from outside, and the view from nowhere is where that
-writing is done, not a place anyone stands. Reading is free: the geometry supplies every ratio. Writing must discover
-the breadths, and every breadth it finds is an amount from outside the readings (Proposition 8(b)), found by movement or
-by interaction. Movement takes the reader's own H as a baseline: walked once, it gives the other's true size in the
-reader's own breadth, V*/H (§10, step 6). Interaction takes in what another has measured: a shared unit, a known kind, a
-constant measured beforehand, and writes in a breadth both can read. Counted, the steps are one each: from one
-standpoint nothing is written, each thing's size and distance free together; one displacement of known length writes
+each way a read breaks down (§4): the payload reader, which keeps what arrives along each direction (the central sweep),
+and the address reader, which keeps the directions (the inscribed sweep), whose ratios are the addresses. One turn of
+the head feeds both. A writer needs both, the payload's amounts and the addresses they sit at, together with the one
+unit that fixes the size of the amounts (below), and loses its situation in the process: holding both at once is holding
+the whole, situations 1 and 2, from no standpoint. So reading is the situated operation, and writing produces the
+completed, unsituated representation, stating a thing in amounts. A situated observer can write, but only with
+information its ratios do not contain. To know a breadth is to hold the whole, both hemispheres at once, the one each
+sweep faces, which is situations 1 and 2 and which no standpoint supplies: no reading gives V*/H (Proposition 8). An
+observer writes by carrying in what it did not read, a shared unit or an amount from outside, and the view from nowhere
+is where that writing is done, not a place anyone stands. Reading is free: the geometry supplies every ratio. Writing
+must discover the breadths, and every breadth it finds is an amount from outside the readings (Proposition 8(b)), found
+by movement or by interaction. Movement takes the reader's own H as a baseline: walked once, it gives the other's true
+size in the reader's own breadth, V*/H (§10, step 6). Interaction takes in what another has measured: a shared unit, a
+known kind, a constant measured beforehand, and writes in a breadth both can read. Counted, the steps are one each: from
+one standpoint nothing is written, each thing's size and distance free together; one displacement of known length writes
 every breadth in the reader's own H, and a second adds nothing to the scale; one number exchanged writes them for
 another reader; one notch agreed writes them in a public unit. An observer is both a reader and a writer: as a reader it
 needs the unit relations h and v, as a writer the breadths H and V, and the value of its own H matters only where its
