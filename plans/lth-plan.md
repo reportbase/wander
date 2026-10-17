@@ -87,6 +87,34 @@ If P2 and P3 are killed together, Hubble's errors were object by object, not run
 a list of methods for his ladder. If P4 is killed, something above the anchors depends on which anchor is used, and the
 ladder is not a tower with one bottom hold.
 
+## Data, recorded before the run
+
+**Hubble 1929** (recorded 16 Oct, before any modern distance was looked up). The publisher, PubMed Central, Europe PMC
+and the web archive refused this environment; two course copies were used:
+- `hubble.1929.pdf`, www.astro.rug.nl/~weygaert/tim1publication/cosmo2007/literature/hubble.1929.pdf (a retyped
+  transcription, 5 pages), sha256 6b3a60069c31e3b616dc4ea70d612b62d3d9487b3a8b187a5bb589d990629775;
+- `hubble1929.pdf`, www.hep.shef.ac.uk/roszkowski/phy306/papers/hubble1929.pdf (a scan with OCR, 6 pages), sha256
+  bc98cc36e172a76db65988d813510c1fe34b7ba2ea15ccefa2ef413cd6499ba2.
+
+The two agree on every distance in Table 1. Public domain in the US (published 1929). Not committed.
+
+**The rungs, from Hubble's text** ("The first seven distances are the most reliable, depending, except for M 32 the
+companion of M 31, upon extensive investigations of many stars involved. The next thirteen distances, depending upon
+the criterion of a uniform upper limit of stellar luminosity, are subject to considerable probable errors … The last
+four objects appear to be in the Virgo Cluster. The distance assigned to the cluster, 2 x 10⁶ parsecs, is derived from
+the distribution of nebular luminosities, together with luminosities of stars in some of the later-type spirals"):
+
+| rung | objects (Hubble's r, Mpc) |
+|---|---|
+| (a) stars involved, Cepheids and others (7) | SMC 0.032, LMC 0.034 (Shapley's values), NGC 6822 0.214, NGC 598 0.263, NGC 221 0.275, NGC 224 0.275, NGC 5457 0.45 |
+| (b) brightest stars (13) | NGC 4736 0.5, 5194 0.5, 4449 0.63, 4214 0.8, 3031 0.9, 3627 0.9, 4826 0.9, 5236 0.9, 1068 1.0, 5055 1.1, 7331 1.1, 4258 1.4, 4151 1.7 |
+| (c) cluster mean luminosity (4) | NGC 4382, 4472, 4486, 4649, all 2.0 (Virgo) |
+
+Two notes, made now: NGC 221 (M 32) is in rung (a) by Hubble's grouping but has its distance by association with
+M 31, not from its own stars; it stays in (a), as the plan assigns by Hubble's text. The four Virgo members share one
+distance, so within rung (c) the spread of r is the spread of their modern distances alone, and P3 has no Hubble ratio
+within (c) to test (all are 1); P3 uses rungs (a) and (b) only.
+
 ## Runs
 
 (none yet)
