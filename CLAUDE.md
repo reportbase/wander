@@ -1245,6 +1245,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   And (R346; Tom: "the reader can't have any impact on the world, only writers"): the strength is the world's, changed
   only by writing; the level of detail is the reader's, so it cannot stand in for the strength.
   Since R347 none of this is in OFS (ρ removed); it stays in the plan and SPN.
+  `rsh-plan.md` (+ `rsh/rsh-run.mjs`, 17 Oct; Tom: "Let's create a new lab that recovers 3d shapes", "in levels application of
+  games.html"; SPN R348): draw's RCC and UDV in three dimensions, the lab in reportbase/games' Levels (`LEVELS_APP`, menu
+  "Recover a body", hook `_debug.recover(idx, k)`), driven from here in headless Chromium. One reader at a body's centre
+  reads the sweep's own [h : v : v₂], the same for every body, the census one sphere; three readers inside, directions only,
+  give the body to 10⁻¹³ in |AB|, stretch included; |AB| gives the size; k moves nothing. Nothing killed but P3's census
+  clause in its letter (the Fibonacci lattice's own 4.5·10⁻⁵, my set-up).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
