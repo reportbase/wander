@@ -2237,6 +2237,39 @@ instead of 1/3, everything in room B moves by one factor, 9/10, its ratio b₁/b
 and a₁/b₁ is off by that one factor, 10/9. A whole hierarchy is held in six ratios, and one amount anywhere in it writes
 the rest; an error in a link is shared by everything the link holds.
 
+**Closing a loop, and what is left to the reader.** A tree of readings, each thing read against only the one length that
+holds it, cannot find its own error: room B misread moves everything in B together, and every reading inside B still
+agrees. A second route finds it. Read a₁ directly against b₁ as well, from a standpoint where both are in view: the
+reading is 27/16, where the chain through the misread link gives 15/8, and the two routes disagree by 10/9, the misread
+factor exactly. That is a closure error, and it is why surveys are built of triangles and checked by a second base. The
+reader computes none of this. The projection through its standpoint divides (above); that ratios compose by
+multiplication is the geometry's; whether two routes close is the geometry's too. What the reader contributes is not
+computation but three acts of position: choosing H, and with it the drawing V = H, which the geometry cannot choose for
+it (§5); holding what arrives, at once or in order, without which there is no median (§7.6); and taking standpoints, a
+second one for a loop to close or a known move for an amount to be written. The heavy lifting is done by the geometry
+and by being situated.
+
+**Inside a room: the two sweeps.** Each room is a hold, and drawing V = H gives it a unit circle on which both sweeps of
+§4 work. The inscribed sweep, from home on that circle, gives where the things in the room are: each is a direction
+[h : v], an address, and together they are the room's layout, with no amount in it. The central sweep, from each thing's
+own centre, gives what the thing is: its outline as a perturbation of the unit circle (§7.4), its shape read from the
+ratios of its radii, its size the one term that sweep cannot read. Moving a thing changes its address and not its shape;
+reshaping it changes its shape and not its address. Its size in the room's units comes from neither sweep alone but from
+holding: the thing and the room's wall read at once against one denominator, side by side at one distance, give the one
+relative to the other, and the distance cancels (Proposition 10). So a room is read whole, its layout, its things'
+shapes and their sizes, in ratios, and the tower's links join the rooms. Each room has its own corner, one for each
+hold, as two readers with different H have two; the levels of the tower are holds joined by ratios, not corners nested
+inside one another.
+
+**To move the furniture is to write.** A reader that wants to move a chair to a place, or hang a picture at a height,
+wants a thing to be at an amount: a metre from the wall, at eye level. No reading holds that, so the reader must become
+a writer, and writing needs what reading never does: the reader must move and engage with the room's geometry
+physically. A known step, a hand laid flat against the wall, a tape measure: one amount carried in writes every length
+of the room in its unit (§10, step 6), and only then can the place wanted be named. Then the writer acts, and the act
+changes the payload, not the geometry: the chair moved has a new address and the same shape, the picture hung a new
+place on the wall. Reading the room again afterwards is free. Reading is done from where the reader stands; writing, and
+changing what is written, needs the reader to move.
+
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
 change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the
