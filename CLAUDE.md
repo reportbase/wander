@@ -757,6 +757,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (uneven only against a clock, a flat ruler or the payload); g is the share of the sweep from zero already passed, the
   arctangent the writer's formula for it; the corner met, not computed; the stop the next zero, readings composing by
   tangent addition. Proposition 3(g)'s remaining premise is linearity (one motion repeated), not uniformity.
+  Writers and readers by vantage (R328; Tom: "there are writers and readers.   writers and readers are distinguished by
+  their vantage.   the writers vantage is dual hemsipherical the readers vantage is  hemispherical.   readers are broken
+  up into two types, the address reader and the payload reader."; "everyone uses situation 1, it is the baseline for all
+  vantages."): the three vantages are the writer (dual-hemispherical, situation 2), the payload reader (central, 3) and
+  the address reader (inscribed, 4), all on the baseline of situation 1, the circle V = H; vantages, not observers (R300
+  kept). In OFS's abstract, introduction ("Three vantages: a writer and two readers"), Results, §3.4's table, §9.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

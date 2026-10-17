@@ -432,9 +432,9 @@
         const n = ro.standpoints, have = ro.placed.length;
         const lines = [];
         lines.push(`Standpoints taken: ${n}${n ? ` · legs walked: ${ro.legs}, each walked along the zero its last sweep stopped at, its length not read` : ''}`);
-        lines.push(`Inscribed sweep (directions received, no amount): ${n ? `${NAMES.length} things, ${n * NAMES.length} directions so far` : '—'}`);
+        lines.push(`Address reader, the inscribed sweep (directions received, no amount): ${n ? `${NAMES.length} things, ${n * NAMES.length} directions so far` : '—'}`);
         const cov = NAMES.map(nm => `${nm} ${centralOf(nm).covered}/${NC}`).join(', ');
-        lines.push(`Central sweep (radii along given directions, an amount in a unit no reading fixes): ${n ? cov : '—'}`);
+        lines.push(`Payload reader, the central sweep (radii along given directions, an amount in a unit no reading fixes): ${n ? cov : '—'}`);
         lines.push(`Placed (from two standpoints, the walk's first leg as H): ${have ? `${have} of ${NAMES.length}${ro.legsH && ro.legsH.length > 1 ? `; later legs found from the things: ${ro.legsH.slice(1).map(f3).join(', ')} H` : ''}` : (ro.why || '—')}`);
         lines.push(`Held (a thing's two edges read at once, at its distance): ${have ? 'breadths across the line of sight, in H' : '—'}`);
         const tr = ro.rows.find(r => r.name === 'tree'), deg = x => (x * 180 / Math.PI).toPrecision(3) + '°';
@@ -444,7 +444,7 @@
                 : n > 1 ? 'so far that every standpoint reads it in one direction: a ray, no place' : 'one standpoint: a direction')
             + (n ? (tr.resolved ? '; its two edges told apart' : '; narrower than ε: one point, no breadth') : ''));
         lines.push(ro.H ? `Written: the first leg counted, ${ro.steps.toFixed(2)} strides of ${STRIDE} m (carried in), so H = ${ro.H.toFixed(3)} m; every place and breadth in metres`
-            : `Written: nothing. Still unknown: H in any agreed unit (one amount: count one leg), and every radius's unit`);
+            : `Written (the writer's vantage, both hemispheres): nothing. Still unknown: H in any agreed unit (one amount: count one leg), and every radius's unit`);
         $('sit').innerHTML = lines.map((l, i) => `<span class="${['', 'g', 'r', 'w', 'w', 'g', ro.H ? 'w' : 'x'][i]}">${l}</span>`).join('\n');
         const unit = ro.H ? 'm' : 'H';
         let t = `<tr><th>thing</th><th>direction from its zero</th><th>edges</th><th>regime</th><th>central: directions</th><th>shape (radii / mean)</th>`
