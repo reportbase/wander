@@ -307,7 +307,10 @@ holds, and OFS §9, "Units within units"):
   grouped by the rung his text gives, are off by one factor per rung (spread 0.4–0.8 levels within a rung against
   1.2–1.7 between), compounding up the ladder (about 1.2 levels for the Cepheid rung, near Baade's factor of 2; about
   2.8–2.9 for the brightest stars; 3.0 for the Virgo cluster), with ratios within a rung surviving better than the
-  distances; SH0ES 2022's single-anchor H₀ agree within the anchors' own distance terms (χ²/dof 0.31, weak).
+  distances; SH0ES 2022's single-anchor H₀ agree within the anchors' own distance terms (χ²/dof 0.31, weak). LTH run 2, Cosmicflows-4
+  method against method: killed. After a bias of my set-up is removed most pairs differ by one constant factor, but the
+  Fundamental Plane and SBF drift against the supernovae by about 0.1 mag per magnitude of distance; one constant factor
+  per rung is a property of some rungs, not all. **[data]**
 - **Parallax sets the tower's pitch.** A tower of holds does not say how many levels one hold can carry. Proposition 4
   does: a rung read to a step ε holds about log₂(2/ε) levels each side of its corner, and past the far edge a place is a
   ray, so a new hold is needed, a longer baseline or a kind, calibrated inside the band. The two meet best where both
@@ -339,6 +342,7 @@ holds, and OFS §9, "Units within units"):
 | the eyes and the stars at their corners | illustration | §5 |
 | the ladder a tower of holds: ratios between rungs, one amount at the bottom, errors adding by rung | exact (given independent errors), reading | §7; LTH |
 | Hubble 1929 off by one factor per rung, compounding; SH0ES anchors consistent with one bottom hold | data | LTH run 1 |
+| one constant factor per rung fails for FP and SBF against SN Ia in Cosmicflows-4 | data (killed) | LTH run 2 |
 
 ## 9. Open questions
 

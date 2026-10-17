@@ -710,7 +710,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Hubble 1929 by rung against modern distances (P1–P3), SH0ES 2022's single-anchor H₀ (P4). Run 1 (16 Oct, SPN R318;
   `lth/lth.py`, NED-D 17.1.0, sha256s in the plan, data not committed): nothing killed; rung means 1.6, 2.8, 3.0 levels,
   sd(b) 0.76; post hoc M 101 is a brightest-star distance, and without it rung (a) is off 1.2 levels (Baade's ~2);
-  P4 χ²/dof 0.31 (weak, shared hosts).
+  P4 χ²/dof 0.31 (weak, shared hosts). Run 2 (SPN R319; `lth/lth2.py`, Cosmicflows-4 table2): P5, P6 killed;
+  post hoc part of P5 my set-up (regressing on the pair's mean), but FP and SBF drift against SN Ia by ~0.1 mag/mag at
+  ~3σ, so one constant factor per rung holds for some rungs, not all.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the

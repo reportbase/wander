@@ -230,3 +230,43 @@ Recorded (16 Oct, before computing): `table2.dat.gz`, 2,485,646 bytes, sha256
 8e908928e68352b59292cf67020a4d70aaa6d30f278dfa6aa3e41a9df808332f; the ReadMe, sha256
 2cfed1418147d5a626dee1fa37c47252124477c9828490508d9bbe511d34edb4. VizieR's licence terms (CDS); not committed. Columns
 by the ReadMe's byte positions.
+
+### Run 2 (16 Oct 2026; `lth/lth2.py`)
+
+`python3 -I lth/lth2.py table2.dat`, 55,877 galaxies. Pairs with at least 30 galaxies measured by both methods:
+
+| pair | n | mean Δμ (mag) | slope on μ̄ (mag/mag) | slope/se | var(Δμ)/mean(e_A² + e_B²) |
+|---|---|---|---|---|---|
+| SN Ia − TF | 151 | +0.060 | −0.114 ± 0.029 | 3.93 | 1.130 |
+| SN Ia − FP | 68 | +0.007 | −0.193 ± 0.040 | 4.86 | 1.184 |
+| SN Ia − SBF | 31 | −0.041 | +0.088 ± 0.022 | 3.91 | 0.727 |
+| SN Ia − Ceph | 37 | −0.105 | −0.011 ± 0.020 | 0.55 | 0.339 |
+| TF − FP | 67 | +0.557 | −0.127 ± 0.069 | 1.85 | 0.741 |
+| TF − SN II | 41 | −0.150 | +0.064 ± 0.079 | 0.81 | 1.546 |
+| TF − TRGB | 55 | +0.038 | +0.097 ± 0.076 | 1.27 | 1.646 |
+| TF − Ceph | 41 | −0.183 | −0.057 ± 0.048 | 1.20 | 1.483 |
+| FP − SBF | 131 | −0.126 | +0.120 ± 0.044 | 2.74 | 1.124 |
+
+- **P5 killed.** Three pairs past the kill line: SN Ia − TF, SN Ia − FP, SN Ia − SBF.
+- **P6 killed.** One pair outside 0.5–2: SN Ia − Ceph, 0.339.
+
+**Read after the run (post hoc, not tests):**
+- *Part of P5's kill is my set-up.* Regressing Δμ on the pair's own mean μ̄ is biased when the two methods' errors
+  differ: cov(Δμ, μ̄) = (σ_A² − σ_B²)/2, so the slope carries (σ_A² − σ_B²)/(2·var μ̄) with no trend in the world. That
+  bias alone is −0.039 (SN Ia − TF), −0.048 (SN Ia − FP), +0.007 (SN Ia − SBF), +0.088 (FP − SBF), −0.072 (TF − FP).
+  Regressed instead on the more precise method's modulus alone: SN Ia − TF −0.049 ± 0.032 (1.5 se), FP − SBF −0.012 ±
+  0.046 (0.2 se), TF − FP +0.037 ± 0.072 (0.5 se), SN Ia − Ceph −0.018 ± 0.020 (0.9 se): no trend. But **SN Ia − FP
+  −0.145 ± 0.047 (3.1 se) and SN Ia − SBF +0.083 ± 0.024 (3.4 se) remain**: against the supernovae, the Fundamental
+  Plane and SBF offsets change with distance, by about 0.1 mag per magnitude. For those rungs the error is not one
+  factor at every distance. A distance-dependent bias is what selection (Malmquist-type) produces in samples limited by
+  apparent brightness, and the Fundamental Plane is known to need such corrections; that reading is not tested here.
+- *P6's one failure is not independent data.* The 37 galaxies with both SN Ia and Cepheid moduli are the supernova
+  calibrators, on which CF4's SN Ia zero-point is set; their two moduli are tied by construction, and the variance is
+  low (0.34) for that reason, not because the quoted errors are wrong.
+- A fix is a new run with its own prediction (regress on an independent distance, the velocity in the Hubble flow, or
+  on the more precise method). Not written: this run has shown its answer, so the next one would not be blind.
+
+**Standing.** The tower's "one factor per rung" holds for Hubble's 1929 ladder (run 1) and, after a set-up bias is
+removed, for most method pairs in Cosmicflows-4; it fails for the Fundamental Plane and SBF against the supernovae,
+whose offsets drift with distance. The tower's arithmetic (factors, ratios, one written amount) is untouched; the
+premise that each rung's error is one constant factor is a property of a rung, true of some and not others.
