@@ -686,6 +686,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   The Cauchy wedge (16 Oct, SPN R312; Tom: "the wedge is just the 3d version of the sweep."): Proposition 5(e)'s law
   named, the sweep in three dimensions (uniform over the octant's area); the gnomonic projection a pinhole's flat screen,
   density (2/π)·cos³α (the geometric part of the cos⁴ falloff), the sweep's (2/π)·cos²θ, one more cosine per party.
+  Our words and the standard ones (16 Oct, SPN R313; Tom: "ok"): OFS §2 names each coinage once (home the standpoint;
+  zero the reading v/h = 0; the wedge the positive orthant; the triple corner [1 : 1 : 1]; the bar the unit vector of
+  V = H; the corner the reciprocal's fixed point; a level a dyadic interval; a lay a scale, Luce's ruler; g the uniform
+  turn's distribution function; the capped reading the ℓ∞ cut). Splits: facing only the direction faced (it turns),
+  a sign-region a quadrant/orthant/octant, the divisor a denominator; home only the standpoint, v/h = 0 zero; "the
+  share of a reading" the capped reading; ε the resolution, not a step. Keep these senses apart in OFS.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
