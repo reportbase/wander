@@ -834,6 +834,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   sweep's: a pole a half-width off the line (Weisskopf and Wigner 1930; Breit and Wigner 1936) and stable sums of
   index 1 (Lévy 1925) give it as a fact about the system; the claim is only that a reader's uniform sweep lays its own
   addresses. Keep OFS from implying every Cauchy is a sweep.
+  **The geometry is enough for this paper** (17 Oct, SPN R343; Tom: "real world tests can be done later.   the geometry
+  seems solid, that is enough for this paper."): OFS needs no real-world test to stand; whether readers draw V = H stays
+  open (question 6). Deferred, in order: a perception test of V = H (NLE run 2), GRD with more animals, ocular parallax
+  against measured thresholds, refinement by the signal.
   **Turning in place gives no parallax** (17 Oct, SPN R339; Tom: "can you get parallax from just rotating your head",
   then "yes"): OFS §9 after "Far off": a turn about the point seen from moves every direction alike, so only directions,
   the frame and the corner; a head's eye sits r off the axis, a turn Δ carrying it a chord 2r·sin(Δ/2), a baseline; the
