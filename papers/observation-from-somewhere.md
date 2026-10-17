@@ -1379,30 +1379,6 @@ itself. (d) A direction θ′ from home in the drawing has tan θ′ = c·(v/h).
 P(v/h ≤ r) = P(θ′ ≤ arctan(cr)) = (2/π)·arctan(cr): a half-Cauchy of scale 1/c, with median 1/c. The reciprocal
 v/h ↦ h/v carries it to scale c. It is the law of (b), and unchanged by the reciprocal, exactly when c = 1. ∎
 
-**The density in full.** Written out in full, (b) carries one more parameter, ρ in [0, 1]: the share of the sweep's
-addresses at which a payload is met. The arrivals per unit of v/h are ρ·2/(π(1 + (v/h)²)), and per unit of turn ρ·2/π,
-so the density times the extent of the quarter turn is ρ·(2/π)·(π/2) = ρ, the share that arrived. With every address
-met, ρ = 1, the default, and the parameter is simplified away: that is the form of (b) and of the rest of the paper. The
-simplification loses nothing the addresses hold. ρ counts payload, not addresses: dividing the arrivals by their total ρ
-returns the law of (b), so a constant ρ leaves the median at the corner, the quartiles and the reciprocal where they
-were (Theorem 6(a)).
-
-**When the density varies with direction.** Where ρ depends on the direction θ = arctan(v/h), it is no longer a
-constant to drop: it carries the payload's shape (§7.4), and the arrivals per unit of v/h are
-
-  ρ(θ)·2/(π(1 + (v/h)²)),  in total ρ̄ = (2/π)∫₀^{π/2} ρ(θ) dθ,
-
-which, divided by ρ̄, is no longer a Cauchy. The addresses are the same at every ρ; only what they find differs. This is
-the join of §4 ("The address points at the payload") read as a law: the inscribed sweep lays the Cauchy, the central
-sweep finds ρ(θ) at each address, and the arrivals are their product. The total ρ̄, the payload's average over the
-quadrant, is what the central sweep reads by its mean (§3.1). Since the addresses are uniform in θ, the arrivals' median
-is the direction θ_m at which ∫₀^{θ_m} ρ dθ is half of ∫₀^{π/2} ρ dθ: the median direction of the payload. It stays at
-the corner when the payload weighs as much on one side of it as on the other, and in particular when ρ(θ) = ρ(π/2 − θ),
-unchanged by the reciprocal; otherwise it moves toward the heavier side. With ρ = (2 + cos 2θ)/3, heavier toward zero,
-the arrivals' median falls at θ = 32.1°, v/h = 0.627, and 0.659 of them lie below the corner; with ρ = (2 + cos 4θ)/3,
-unchanged by the reciprocal, it stays at 45°. The distance of the arrivals' median from the corner measures the
-payload's lopsidedness, in the payload's own terms, against addresses that did not move.
-
 **Why the payload is Gaussian.** Let the payload at the reader have two components, X on h's side and Y on v's, as
 amounts; its reading is their ratio, s = |Y|/|X|, which keeps the direction and drops the size. Two premises are needed,
 and the paper's own do not supply them. The first is that the payload's law is unchanged by every turn. That the reader
@@ -1417,8 +1393,7 @@ follow, each classical.
   Theorem 6(a), seen from the payload's side.
 - With unequal spreads, σ_v ≠ σ_h, the reading is still a half-Cauchy, of scale σ_v/σ_h, its median there: (d) with
   c = σ_v/σ_h. Equal spreads are the drawing V = H. With the payload's centre off the origin the reading is no longer a
-  Cauchy at all, and its median leaves the corner (with the centre at (0, σ), to 1.515): the density varying with
-  direction, above.
+  Cauchy at all, and its median leaves the corner (with the centre at (0, σ), to 1.515).
 
 The central sweep reads the payload, which has a mean (each component's size averages √(2/π)·σ); its ratio, which has the
 addresses' law, has none (its mean up to s is (1/π)·ln(1 + s²), growing without limit). The two routes to the
@@ -1768,24 +1743,24 @@ the Cauchy is usually met through the circle, as the tangent of an angle spread 
 uniform turn, and the circle is the one shape in which the uniform turn and the shape cannot be told apart.
 
 **A shape is a perturbation of the circle, and only a circle can be the base.** Write a shape seen from the reader as
-r(θ) = exp(ρ·f(θ)), the unit circle at ρ = 0 and the full shape at ρ = 1. Every such map moves each point along its own
-ray and never across it, so the maps r ↦ λ(θ)·r, λ(θ) > 0, form a group that fixes every direction; laid by direction,
-the readings are the same Cauchy at every ρ, not only at the two ends. Laid along the outline, the law moves with ρ: for
-f = 0.3 cos 2θ + 0.1 cos(3θ + 0.4) the share before the corner runs 0.500, 0.529, 0.563, 0.632 at ρ = 0, ¼, ½, 1, and
-for f = 0.25 cos 4θ, unchanged by the exchange, it stays 0.500 while the ends move. Among outlines read from one pivot,
-only a circle is a base that carries nothing: an outline reads uniformly by direction exactly when its length per unit
-of turn, √(r² + r′²), is constant, and r² + r′² = q² has two kinds of solution, r = q, the circle centred on the one who
-sweeps, and r = q·sin(θ + θ₀), the circle through it. These are the two pivots of §4, the centre and a point of the
-circle, and no other shape gives either. Which circle depends on the sweep: the circle centred on the pivot for the
-central sweep, the circle through it for the inscribed; with the pivot at home, these are the reader's unit circle and
-the Thales circle. The uniqueness is relative to the construction, a uniform lay by direction from one pivot, not a
-claim that no other geometry can be drawn. Read as the reader's ignorance (§2), a reader who does not know the shape
-needs a law that every radial map leaves unchanged, and only a law on directions alone is one; the rescalings of κ are
-the radial maps with λ constant. So a reader can begin at the unit circle and sweep the perturbation without knowing V*:
-in ln r = a₀ + ρ·f(θ), the unknown size is the constant term alone, a₀ = ln κ, the one term no ratio of radii reads, and
-the uniform measure dκ/κ is the flat da₀. Every term of f is the shape, read exactly from ratios of radii wherever the
-payload or another standpoint supplies them (from directions alone none is read), and taking the terms in order of n is
-a level of detail, each truncation leaving every address where it was.
+r(θ) = exp(f(θ)), the unit circle at f = 0. Every such map moves each point along its own ray and never across it, so
+the maps r ↦ λ(θ)·r, λ(θ) > 0, form a group that fixes every direction; laid by direction, the readings are the same
+Cauchy for every shape. Laid along the outline, the law moves with the shape: for f = 0.3 cos 2θ + 0.1 cos(3θ + 0.4) the
+share before the corner is 0.632, against the circle's 0.500, and for f = 0.25 cos 4θ, unchanged by the exchange, it
+stays 0.500 while the ends move. Among outlines read from one pivot, only a circle is a base that carries nothing: an
+outline reads uniformly by direction exactly when its length per unit of turn, √(r² + r′²), is constant, and r² + r′² =
+q² has two kinds of solution, r = q, the circle centred on the one who sweeps, and r = q·sin(θ + θ₀), the circle through
+it. These are the two pivots of §4, the centre and a point of the circle, and no other shape gives either. Which circle
+depends on the sweep: the circle centred on the pivot for the central sweep, the circle through it for the inscribed;
+with the pivot at home, these are the reader's unit circle and the Thales circle. The uniqueness is relative to the
+construction, a uniform lay by direction from one pivot, not a claim that no other geometry can be drawn. Read as the
+reader's ignorance (§2), a reader who does not know the shape needs a law that every radial map leaves unchanged, and
+only a law on directions alone is one; the rescalings of κ are the radial maps with λ constant. So a reader can begin at
+the unit circle and read the shape without knowing V*: in ln r = a₀ + f(θ), the unknown size is the constant term alone,
+a₀ = ln κ, the one term no ratio of radii reads, and the uniform measure dκ/κ is the flat da₀. Every term of f is the
+shape, read exactly from ratios of radii wherever the payload or another standpoint supplies them (from directions alone
+none is read), and taking the terms in order of n is a level of detail, each truncation leaving every address where it
+was.
 
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the
@@ -2242,7 +2217,7 @@ radius and no ratio. Its point on the circle, ½(h² − v², 2hv), is a pair of
 radius, not a ratio of two unit relations, and lengths add: every average over a uniform turn exists (§4). That is why
 the central sweep is read by the mean and the inscribed by the median (Theorem 6(b), (c)): a mean is an amount, and
 ranks are what survive when there are none. Yet the central reader does not receive breadths in a known unit. Every
-radius it receives is in one unit, the same on every ray, and nothing it receives fixes that unit: in ln r = a₀ + ρ·f(θ)
+radius it receives is in one unit, the same on every ray, and nothing it receives fixes that unit: in ln r = a₀ + f(θ)
 the size a₀ = ln κ is the term common to every ray, and changing it multiplies every amount by one factor (§7.4;
 Proposition 8). So the reader of the payload holds the shape in amounts but not its size. Comparing two of its amounts
 gives a ratio, but the comparison is a further reading, made of what it holds, and not what it received. The two readers
@@ -2749,7 +2724,6 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | home | geometry | where the reader stands, the point its rays leave from; the lays of §6 put zero there |
 | zero, the horizon | geometry | v/h = 0, all h, pointing at the other party; v/h → ∞, never reached |
 | g | geometry | the sweep's progress, (2/π)·arctan(v/h), the uniform turn's distribution function: 0 at zero, ½ at the corner, 1 at the horizon |
-| ρ | geometry | the share of the addresses at which a payload is met, in [0, 1] (after Proposition 5(d)); in §7.4, the strength of a shape's perturbation of the circle, r = exp(ρ·f(θ)); in both uses a constant ρ changes no reading |
 | reading, writing | what an observer does | reading: in the unit relations h and v, with V unknown (situations 3, 4); writing: in amounts, with the breadths H and V known (situations 1, 2); situation 1 is common to both, the baseline of every vantage (§9); the writer's vantage dual-hemispherical, a reader's hemispherical, of two types, the payload reader (central) and the address reader (inscribed) |
 | address, payload | geometry; what arrives | a place laid before anything arrives; what arrives there: the finger and the ring |
 | situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; the central sweep, the payloads; the inscribed sweep, the addresses; with more parties, one entry per party |
