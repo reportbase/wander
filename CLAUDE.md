@@ -1238,6 +1238,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   twice over; ln ρ returns the modes to O(τ²). OFS "A shape's outline is such a density", after Proposition 5(d).
   The strength is not a level of detail (R345; Tom: "this is different than level of detail"): τ scales every mode
   together, a level of detail keeps the broad modes whole and drops the fine, set by the addresses spanned (OFS §7.4).
+  And (R346; Tom: "the reader can't have any impact on the world, only writers"): the strength is the world's, changed
+  only by writing; the level of detail is the reader's, so it cannot stand in for the strength.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

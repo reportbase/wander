@@ -1805,7 +1805,11 @@ every term of f up together, from the circle at ρ = 0 to the full shape at ρ =
 a level of detail keeps the broad terms whole and drops the fine ones, and is set by how many of the reader's
 addresses the thing spans (§8), which the shape does not say. A shape at half strength has all its modes at half their
 size, and one truncated to its broad form has some at full size and the rest at none. Both leave every address where it
-was, and they are different maps.
+was, and they are different maps. They also belong to different parties. The strength is the world's: the shape is as
+strong as it is, a reader only finds it, and to change it is to write (§9, "To move the furniture is to write"). The
+level of detail is the reader's: it changes how much of the shape the reader holds, never the shape. So the level of
+detail cannot stand in for the strength. A reader that begins at the unit circle and reads the perturbation is moving
+its own drawing from the circle toward the world's strength, not the world's strength itself.
 
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the
