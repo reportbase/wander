@@ -710,7 +710,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   that reader doesn't have to do much, the heavy lifing is done simply by geometry and being situated."): a tree of
   readings cannot find its own error, a second route can (closure error 10/9); the reader computes nothing (the
   projection divides, composition and closure are the geometry's); it contributes three acts of position: choosing H
-  (and V = H), holding, and taking standpoints.
+  (and V = H), holding, and taking standpoints. Then (R322; Tom: "the objects in the rooms relative positions are given by
+  the inscribed sweep and the pertubations these objects by the central scan"; "if the reader wants to move the
+  furniture or hang a picture on the wall he switches to be a writer and must move and engage with the rooms geometry
+  physically") "Inside a room: the two sweeps" (layout from the inscribed, shapes from the central, sizes from holding
+  at one distance, one corner per hold) and "To move the furniture is to write".
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
