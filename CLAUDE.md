@@ -225,6 +225,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Cauchy wedge, 1 − 1/√(1 + q²) within q. `?V=<log10>|inf&d=&k=&account=1&sky=1`; hook `window.__pinhole` (with `sky`). `write.html`: RWT step by
   step, four targets, the nullity computed on the page (4, 1, 0, 0, 1, 0, 1, 0), the breadths written in A's H, B's H and
   metres. `?step=0..7&seed=`; hook `window.__write`. Not in the flying page.
+- `room.html`: **the room** (17 Oct 2026, Tom: "could we create a wire frame room with some basic objects and illustrate the
+  basic sweeps as we point and sweep the room?"; SPN R322, R323; OFS §9 "Inside a room" and "To move the furniture is to
+  write"), a standalone page, plain canvas. Home is the room's floor corner, so the room is one wedge (h along the first
+  wall, v up, v₂ along the second). Five things (table, chair, ball, cabinet, picture) with true sizes in metres, hidden
+  until written. Six steps: the room; point (the hand by altitude and azimuth, the thing it meets, its address); the
+  inscribed sweep (the hand from all h to all v₂, things laid on g = (2/π)ψ, the corner at ½: the layout); the central
+  sweep (16 fixed radii from a thing's centre, the shape over the geometric mean, the size unread); holding (a thing and
+  the room's width at one distance, its size in room units); writing (a known 1 m step and two readings write the room in
+  metres; "put it 1 m from the wall"). Scale the world moves no reading; move changes the address, reshape the shape.
+  `?step=1..6&thing=&alt=&az=&k=<log10 k>`; hook `window.__room` (`address`, `radii`, `shape`, `sizeInRoom`,
+  `writeFromStep`, `writeRoom`, `sweepOrder`, `hit`, `handDir`, `move`, `placeFromWall`, `reshape`, `set`, `state`).
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -328,7 +339,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -1360,6 +1371,10 @@ In short:
       sky's share within q = ½, 1, 2 within 0.01 of 1 − 1/√(1 + q²), its density (2/π)·cos³α.
   30. **write.html:** the nullities 4, 1, 0, 0, 1, 0, 1, 0 in three scenes; the breadths written in A's H from one known move
       and the same from two; B's off by H_B/H_A until one number is sent; metres after one notch (all to 10⁻⁹).
+  31. **room.html:** scaling the world by 10⁻², 7, 10² moves no address, shape or room-unit size; a thing's size in room
+      units the same at every distance; moving the chair changes its address and not its shape, reshaping the table its
+      shape and not its address; the hand pointed at the ball meets it; one known step writes the room and every place; the
+      chair put 1 m from the wall.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
