@@ -115,6 +115,23 @@ M 31, not from its own stars; it stays in (a), as the plan assigns by Hubble's t
 distance, so within rung (c) the spread of r is the spread of their modern distances alone, and P3 has no Hubble ratio
 within (c) to test (all are 1); P3 uses rungs (a) and (b) only.
 
+**NED-D** (recorded 16 Oct, after the rungs above were committed): NED30.5.1-D-17.1.2-20200415.csv, from
+ned.ipac.caltech.edu/Archive/Distances/, NED-D version 17.1.0 (15 Apr 2020), 41,077,792 bytes, sha256
+fe818b6d652d9e8e822002aeb619a166e6611172d4d7496ee23c0223e1a05f55. NED asks for its acknowledgement; © Caltech. Not
+committed. NED names the Messier objects by their Messier numbers; NGC 5194 is taken as MESSIER 051a (M 51a, the
+galaxy itself, not the pair). Every row with a positive distance is used, whatever its exclusion code.
+
+**SH0ES 2022** (recorded 16 Oct): arXiv:2112.04510 (the accepted version), 9,544,553 bytes, sha256
+572e5d2c0f32bf6e80a118eec13ed0107e1e2830f9ebe90b5bc4e9d1b7fa5df1. The single-anchor values are its fits 10–12 (the
+"Geometric Anchors Variants" of its table of variants): N4258 72.51 ± 1.54, Milky Way 73.02 ± 1.19, LMC 73.59 ± 1.36
+km/s/Mpc. These quoted uncertainties include terms shared above the anchors (the SN Ia calibrators, the hosts' P–L), so,
+as the prediction says, they are replaced. **How, fixed before the χ² is computed:** each value's uncertainty is its
+anchor's distance term in the paper's error budget (its Table 7, "σµ,anchor, Anchor distance", this work): N4258 1.5%,
+MW 1.0%, LMC 1.2%, as a percentage of that value. That is the prediction's "geometric term alone". Reported beside it,
+not a kill clause: the same with the budget's "subtotal per anchor" (N4258 1.8%, MW 1.0%, LMC 1.4%), which adds the
+anchor's own P–L mean, zero-points and metallicity term. χ² about the inverse-variance weighted mean, 2 degrees of
+freedom.
+
 ## Runs
 
 (none yet)
