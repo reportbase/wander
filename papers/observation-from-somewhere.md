@@ -2282,6 +2282,11 @@ longer go round, two points of the circle it would have walked. Past d ≈ B/�
 direction, and only a line through it remains (Proposition 11(a)). Its breadth across, held between its two edges, lasts
 while that breadth is more than ε of its distance. Near, a thing gives shape and place; farther, place without shape;
 farthest, direction alone. Each loss is set by a ratio, of the walk or the thing to the distance, and not by any amount.
+Robotics meets the same order from the other side. A single moving camera recovers a scene and its own path only up to
+one common scale, which stays undetermined unless a known length is supplied; a feature that shows no parallax “cannot
+be used for estimating camera translation but is a perfect bearing reference for estimating rotation”, so such features
+are kept as a direction with an inverse depth that may be zero until the motion gives them a place (Civera, Davison and
+Montiel 2008). Joining every direction from every standpoint into one figure is bundle adjustment (Triggs et al. 2000).
 
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
@@ -2698,6 +2703,9 @@ Multivariate Analysis* 128, 147–153.
 Cacoullos, T. and Papadatos, N. (2013). Self-inverse and exchangeable random variables. *Statistics & Probability
 Letters* 83(1), 9–12.
 
+Civera, J., Davison, A. J. and Montiel, J. M. M. (2008). Inverse depth parametrization for monocular SLAM. *IEEE
+Transactions on Robotics* 24(5), 932–945.
+
 Crofton, M. W. (1868). On the theory of local probability, applied to straight lines drawn at random in a plane.
 *Philosophical Transactions of the Royal Society of London* 158, 181–199.
 
@@ -2871,6 +2879,9 @@ problems. *Biometrika* 59(2), 369–375.
 
 Tissot, N. A. (1881). *Mémoire sur la représentation des surfaces et les projections des cartes géographiques*.
 Gauthier-Villars, Paris.
+
+Triggs, B., McLauchlan, P. F., Hartley, R. I. and Fitzgibbon, A. W. (2000). Bundle adjustment — a modern synthesis.
+In *Vision Algorithms: Theory and Practice*, Lecture Notes in Computer Science 1883, 298–372. Springer, Berlin.
 
 Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII*. Tours.
 

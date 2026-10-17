@@ -746,6 +746,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the central sweep" (R325): seen from a thing's centre a walk turns through its parallax angle, about B/d; the shape needs
   a good share of the turn, the place only an angle above ε (Proposition 11(b)), past d ≈ B/ε a line (11(a)); near shape
   and place, farther place without shape, farthest direction alone (the angle named in words: γ is the Cauchy scale).
+  It closes on robotics (R326; Tom: "How does robotic work", "Yes"): a moving camera's scene up to one scale, a feature
+  without parallax "a perfect bearing reference for estimating rotation" and none for translation, kept as a direction
+  with inverse depth possibly zero (Civera, Davison and Montiel 2008, read in full); bundle adjustment (Triggs et al.
+  2000). The camera inscribed, lidar central through c, odometry the counted step, loop closure "Closing a loop": SPN R326.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
