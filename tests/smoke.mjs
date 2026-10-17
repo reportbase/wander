@@ -856,6 +856,45 @@ try {
   if (!wrOk) failures.push(`[write.html] ${JSON.stringify(wr)}`);
   console.log(`${failures.length === before30 ? 'ok  ' : 'FAIL'} write.html (still free at each step ${wr.nul[0]}, in three scenes; one known move writes every breadth in A's own H (${wr.eA.toExponential(0)}), a second the same; B's off by H_B/H_A until one number is sent; metres after one notch (${wr.eM.toExponential(0)}))`);
 
+  // ── 31. room.html: scaling the world moves no address, shape or room-unit size; moving a thing changes its address and
+  //    not its shape, reshaping its shape and not its address; one known step writes the room and the things' places ──
+  current = 'room.html';
+  const before31 = failures.length;
+  await page.goto(new URL('room.html', base).href, { waitUntil: 'load' });
+  const rm = await page.evaluate(() => {
+    const R = __room, out = { scale: 0, size: 0, writeRoom: 0, places: 0, order: true, moveAddr: false, moveShape: 0,
+      reshapeShape: false, reshapeAddr: 0, hit: '', place: 0 };
+    const rel = (a, b) => Math.abs(a / b - 1);
+    const snap = () => R.NAMES.map(n => ({ a: R.address(n), s: R.shape(n), z: R.sizeInRoom(n) }));
+    R.set({ lk: 0 }); const s0 = snap();
+    for (const lk of [-2, Math.log10(7), 2]) {
+      R.set({ lk }); const s1 = snap();
+      s0.forEach((x, i) => { out.scale = Math.max(out.scale, rel(s1[i].a.v2h, x.a.v2h), rel(s1[i].a.valt, x.a.valt), rel(s1[i].z, x.z),
+        ...x.s.map((v, j) => v > 0 ? rel(s1[i].s[j], v) : 0)); });
+      const w = R.writeRoom(1), k = Math.pow(10, lk);
+      out.writeRoom = Math.max(out.writeRoom, rel(w.W, 5 * k), rel(w.D, 4 * k));
+      for (const n of R.NAMES) { const c = R.thingAt(n).c; out.places = Math.max(out.places, rel(w.places[n].x, c[0]), rel(w.places[n].z, c[2])); }
+    }
+    R.set({ lk: 0 });
+    for (const n of R.NAMES) for (const d of [1, 10, 1000]) out.size = Math.max(out.size, rel(R.sizeInRoom(n, d), R.sizeInRoom(n)));
+    const ord = R.sweepOrder(); for (let i = 1; i < ord.length; i++) if (ord[i].g < ord[i - 1].g) out.order = false;
+    const a0 = R.address('chair'), sh0 = R.shape('chair'); R.move('chair', [0.5, 0, -0.4]);
+    const a1 = R.address('chair'), sh1 = R.shape('chair');
+    out.moveAddr = Math.abs(a1.v2h - a0.v2h) > 1e-3; out.moveShape = Math.max(...sh0.map((v, j) => Math.abs(sh1[j] - v)));
+    const b0 = R.address('table'), t0 = R.shape('table'); R.reshape('table');
+    const b1 = R.address('table'), t1 = R.shape('table');
+    out.reshapeShape = t1.some((v, j) => Math.abs(v - t0[j]) > 1e-3); out.reshapeAddr = Math.abs(b1.v2h - b0.v2h);
+    const ta = R.address('ball'); R.set({ step: 2, alt: ta.alt * 180 / Math.PI, az: ta.az * 180 / Math.PI });
+    out.hit = (R.hit(R.handDir()) || {}).name || 'none';
+    R.set({ step: 6, stepTaken: true }); R.placeFromWall('chair', 1);
+    const c = R.thingAt('chair'); out.place = Math.abs((c.c[2] + c.half[2]) - (R.room().D - 1));
+    return out;
+  });
+  const rmOk = rm.scale < 1e-12 && rm.size < 1e-12 && rm.writeRoom < 1e-9 && rm.places < 1e-9 && rm.order && rm.moveAddr &&
+    rm.moveShape < 1e-12 && rm.reshapeShape && rm.reshapeAddr < 1e-12 && rm.hit === 'ball' && rm.place < 1e-9;
+  if (!rmOk) failures.push(`[room.html] ${JSON.stringify(rm)}`);
+  console.log(`${failures.length === before31 ? 'ok  ' : 'FAIL'} room.html (scaling the world by 10⁻², 7, 10² moves no address, shape or room-unit size (${rm.scale.toExponential(0)}); a thing's size in room units the same at every distance; moving the chair changes its address and not its shape, reshaping the table its shape and not its address; the hand pointed at the ball meets it; one known step writes the room and every place (${rm.writeRoom.toExponential(0)}); the chair put 1 m from the wall)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
