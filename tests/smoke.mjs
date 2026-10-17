@@ -1055,6 +1055,27 @@ try {
   if (!htOk) failures.push(`[head-turn.html] ${JSON.stringify(ht)}`);
   console.log(`${failures.length === before37 ? 'ok  ' : 'FAIL'} head-turn.html (a pure turn places nothing and shifts nothing; the head, 10 cm off its axis turned a quarter turn, reaches ${ht.reach.toFixed(0)} m at 1 mrad and places every post inside it exactly (${ht.headErr.toExponential(0)}); 30° and 150° reach alike, 50 m; the eye alone ${ht.eyeReach.toFixed(2)} m at 1 arcmin; fixating 2 m, nearer posts shift one way and farther the other)`);
 
+  // ── 38. recover.html: recovering a body (RSH; SPN R348, R349): one reader at a Levels body's centre reads the sweep's own
+  //    directions, the same for every body, the census a unit sphere; the wedge on the sphere holds an eighth of them, v ≤ h for
+  //    half and the near field in both for a third, at any position; three readers, directions only, place every point in
+  //    |AB| to rounding, and scaling the world moves nothing ──
+  current = 'recover.html';
+  const before38 = failures.length;
+  await page.goto(new URL('recover.html?step=5', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__recover && __recover.frames > 2, null, { timeout: 30000 });
+  const rv = await page.evaluate(() => { const X = __recover, a = X.recover(0), b = X.recover(7), k = X.recover(7, 1e3), o = {};
+    o.rd = Math.max(a.rdErr, b.rdErr); o.cross = 0; o.kk = 0;
+    for (let i = 0; i < a.reads.length; i++) for (let j = 0; j < 3; j++) { o.cross = Math.max(o.cross, Math.abs(a.reads[i][j] - b.reads[i][j]));
+      if (k.rec[i] && b.rec[i]) o.kk = Math.max(o.kk, Math.abs(k.rec[i][j] - b.rec[i][j])); }
+    o.rec = Math.max(a.recErr, b.recErr); o.fewest = Math.min(a.fewest, b.fewest);
+    o.w = [[45, 35.26, 0], [120, -20, 30], [-60, 70, 100]].map(([lon, lat, roll]) => { const W = X.sharesOf(X.wedgeReadings(X.wedgeQuat(lon, lat, roll))); return [W.n / a.reads.length, W.vh, W.both]; });
+    o.frames = X.frames; o.webgl = X.webgl; o.hud = X.hud();
+    return o; });
+  if (rv.rd > 1e-12 || rv.cross > 1e-12 || rv.rec > 1e-9 || rv.fewest < 2 || rv.kk > 1e-9 || !rv.webgl || rv.frames < 3
+      || rv.w.some(([n, vh, both]) => Math.abs(n - 0.125) > 0.01 || Math.abs(vh - 0.5) > 0.02 || Math.abs(both - 1 / 3) > 0.02) || !/the body itself/.test(rv.hud))
+    failures.push(`[${current}] ${JSON.stringify(rv)}`);
+  console.log(`${failures.length === before38 ? 'ok  ' : 'FAIL'} ${current} (readings the sweep's own to ${rv.rd.toExponential(0)}, the same for two bodies; the wedge ${rv.w.map(w => w[0].toFixed(3)).join(', ')} of the sphere; points in |AB| to ${rv.rec.toExponential(0)}; ×10³ moves ${rv.kk.toExponential(0)})`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

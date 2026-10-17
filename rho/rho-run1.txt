@@ -1,0 +1,29 @@
+P1 density σ/max σ against arc length along the outline: worst 1.15e-41; f1 at t = 1: 0.529492642342, 0.562525362991, 0.63227180844 (SHG 0.529, 0.563, 0.632)
+   f2 ε=0.25: median − 45° = 0.0°, P(v/h ≤ ¼) − Cauchy = 0.00714709
+   f2 ε=0.5: median − 45° = 0.0°, P(v/h ≤ ¼) − Cauchy = 0.0122093
+   f2 ε=1.0: median − 45° = 0.0°, P(v/h ≤ ¼) − Cauchy = 0.0187113
+   f3 ε=0.25: median − 45° = -7.34684e-40°, P(v/h ≤ ¼) − Cauchy = 0.0155212
+   f3 ε=0.5: median − 45° = 0.0°, P(v/h ≤ ¼) − Cauchy = 0.0351153
+   f3 ε=1.0: median − 45° = -7.34684e-40°, P(v/h ≤ ¼) − Cauchy = 0.0703002
+   f1 ε=0.25: median − 45° = -2.67109°, P(v/h ≤ ¼) − Cauchy = 0.0147052
+   f1 ε=0.5: median − 45° = -5.57872°, P(v/h ≤ ¼) − Cauchy = 0.0284406
+   f1 ε=1.0: median − 45° = -10.9475°, P(v/h ≤ ¼) − Cauchy = 0.0527779
+P2 exchange-symmetric shapes keep the corner, f1 moves it: True
+   ε=0.1: δ -0.01780885128, δ₁ -0.01713916483, relative error 0.039073
+   ε=0.05: δ -0.008741587729, δ₁ -0.008569582417, relative error 0.020072
+   ε=0.025: δ -0.004328317699, δ₁ -0.004284791208, relative error 0.010158
+   ε=0.0125: δ -0.00215333983, δ₁ -0.002142395604, relative error 0.0051084
+P3 first order δ₁ = ε·-0.1713916483; the error falls by 1.947, 1.976, 1.989 per halving
+P4 a0 = −5, 0, 5: worst change 2.03e-38
+   r^1: δ -0.002144711773 against 1·δ₁ -0.002142395604, relative error 0.0010811
+   r^2: δ -0.004293996893 against 2·δ₁ -0.004284791208, relative error 0.0021485
+P5 arc element against radius: |Δ median| 0.0005282, 0.00013566, 3.4321e-5, 8.6281e-6; falls by 3.894, 3.953, 3.978 per halving
+   f1: max error / ε² = 0.181232 at ε = 0.1, 0.181923 at ε = 0.0125
+   f3: max error / ε² = 1.87709 at ε = 0.1, 1.93886 at ε = 0.0125
+P6 ln ρ − mean = ε(f − f̄) + O(ε²): True
+P1 not killed
+P2 not killed
+P3 not killed
+P4 not killed
+P5 not killed
+P6 not killed

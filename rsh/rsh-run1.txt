@@ -1,0 +1,12 @@
+P1 readings against the lattice: worst 3.33e-16; between bodies: worst 5.55e-16; P(v ≤ h) 0.5012–0.5012, P(v ≤ h, v₂ ≤ h) 0.3342–0.3342
+P2 three readers, every point in |AB|: worst 1.01e-13 of the mean radius
+P3 extents' ratios: worst 4.12e-14; the census's from 1:1:1: worst 4.45e-5
+P4 k = 1e-3, 7, 1e3: readings and |AB| points worst 1.01e-13; with |AB| carried in, off the truth 7.79e-14
+P5 fewest readers seeing a point, over 200 bodies: 3
+P6 least pair difference among the first 20 bodies (three readers, in |AB|): 0.2632 of the mean radius
+P1 not killed
+P2 not killed
+P3 not killed
+P4 not killed
+P5 not killed
+P6 not killed
