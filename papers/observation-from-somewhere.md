@@ -1403,6 +1403,21 @@ the arrivals' median falls at θ = 32.1°, v/h = 0.627, and 0.659 of them lie be
 unchanged by the reciprocal, it stays at 45°. The distance of the arrivals' median from the corner measures the
 payload's lopsidedness, in the payload's own terms, against addresses that did not move.
 
+**A shape's outline is such a density.** Take a shape seen from the reader in §7.4's form, ln r = a₀ + τ·f(θ), its
+strength written τ here to keep it apart from the density, and lay it along its own length rather than by direction.
+The outline met at the address θ is its length per unit of turn, √(r² + r′²), so the law along the outline is the
+density ρ(θ) = √(r² + r′²)/max, which is e^{τf}·√(1 + τ²f′²) up to a constant factor, on the inscribed sweep's
+addresses, which did not move. The two uses of ρ are one: the strength of the perturbation is how far the density is
+from constant. The circle, the one outline with r² + r′² constant, is the one shape whose density is constant, which is
+why it alone reads as the Cauchy both by direction and along its outline. The size a₀ cancels from ρ, so the arrivals
+never read κ. To first order in τ the median direction moves from the corner by
+(τ/2)·[∫_{π/4}^{π/2} f dθ − ∫₀^{π/4} f dθ], only by the part of the shape that the exchange θ ↦ π/2 − θ reverses: for
+f = 0.3 cos 2θ + 0.1 cos(3θ + 0.4) the first order is −0.171·τ radians (exactly, −2.67° at τ = ¼ and −10.95° at τ = 1),
+and for f = 0.25 cos 4θ, unchanged by the exchange, the median stays at 45° at every τ while the ends move. A radius or
+an area met in place of the length (ρ in proportion to r or r²) moves the median by the same first order, once or twice
+over. And ln ρ less its mean over the quarter turn is τ·(f − f̄) to second order in τ: the arrivals give back the
+shape's modes, not its size.
+
 **Why the payload is Gaussian.** Let the payload at the reader have two components, X on h's side and Y on v's, as
 amounts; its reading is their ratio, s = |Y|/|X|, which keeps the direction and drops the size. Two premises are needed,
 and the paper's own do not supply them. The first is that the payload's law is unchanged by every turn. That the reader
@@ -2749,7 +2764,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | home | geometry | where the reader stands, the point its rays leave from; the lays of §6 put zero there |
 | zero, the horizon | geometry | v/h = 0, all h, pointing at the other party; v/h → ∞, never reached |
 | g | geometry | the sweep's progress, (2/π)·arctan(v/h), the uniform turn's distribution function: 0 at zero, ½ at the corner, 1 at the horizon |
-| ρ | geometry | the share of the addresses at which a payload is met, in [0, 1] (after Proposition 5(d)); in §7.4, the strength of a shape's perturbation of the circle, r = exp(ρ·f(θ)); in both uses a constant ρ changes no reading |
+| ρ | geometry | the share of the addresses at which a payload is met, in [0, 1] (after Proposition 5(d)); in §7.4, the strength of a shape's perturbation of the circle, r = exp(ρ·f(θ)); in both uses a constant ρ changes no reading; along an outline the first is set by the second, ρ(θ) = √(r² + r′²)/max (after Proposition 5(d)) |
 | reading, writing | what an observer does | reading: in the unit relations h and v, with V unknown (situations 3, 4); writing: in amounts, with the breadths H and V known (situations 1, 2); situation 1 is common to both, the baseline of every vantage (§9); the writer's vantage dual-hemispherical, a reader's hemispherical, of two types, the payload reader (central) and the address reader (inscribed) |
 | address, payload | geometry; what arrives | a place laid before anything arrives; what arrives there: the finger and the ring |
 | situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; the central sweep, the payloads; the inscribed sweep, the addresses; with more parties, one entry per party |

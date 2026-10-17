@@ -1230,6 +1230,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   killed (half within a half-width, 45° there). H5 killed in its letter by the two laws on a circle (wrapped Cauchy,
   Fabry–Pérot), where the horizon closes and a mean returns. Every computable law matched (run 1's oscillatory
   quadratures failed by my set-up, run 2 by quadosc not).
+  `rho-plan.md` (+ `rho/rho.py`, 17 Oct; Tom: "the cauchy density setting is interesting", then "yes"; SPN R344): OFS's
+  two ρ joined, exact, nothing killed. A shape ln r = a₀ + τ·f(θ) laid along its outline is the density
+  ρ(θ) = √(r² + r′²)/max on the unmoved addresses (draw's SMP lab knew the identity); the strength τ is the density's
+  departure from constant, the circle the one shape with it constant; a₀ cancels; the median moves by
+  (τ/2)·[∫_{π/4}^{π/2} f − ∫₀^{π/4} f] to first order, only by the exchange-reversed part; r or r² as payload once or
+  twice over; ln ρ returns the modes to O(τ²). OFS "A shape's outline is such a density", after Proposition 5(d).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
