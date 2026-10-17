@@ -64,4 +64,31 @@ gives.
 
 ## Runs
 
-(None yet. Nothing above this line is edited after a run.)
+(Nothing above this line is edited after a run.)
+
+### Run 1 (17 Oct, `python3 -I htp/htp.py 1`; output `htp/htp-run1.txt`)
+
+- **P1 killed, by my set-up.** The largest change in a pair's angle came out 6.28, which is 2π: a pair's angle
+  difference crossed ±π and wrapped, and I compared it without reducing it to one turn. No point was placed.
+- P2 not killed: 95 points recovered from 0.5 r to 10⁶ r, largest relative error 1.5·10⁻⁴⁴; the eye's two places
+  2r·sin(Δ₁/2) apart to 3·10⁻⁵².
+- P3 not killed: every reading in r unchanged by k = 10⁻³, 7, 10³, to 10⁻⁴⁴.
+- P4 not killed: the exact reach at ε = 10⁻³ is 50.087 m, 100.000 m and 49.913 m at 30°, 90°, 150° against
+  r·sin Δ₁/ε = 50, 100, 50 m: off 0.17%, 3·10⁻⁷ and 0.17%.
+- P5 not killed: the head (r = 0.1 m, a quarter turn) 100 m at 1 mrad, 343.8 m at 1 arcmin; the eye alone (7.6 mm, a
+  10° gaze shift, 1 arcmin) 4.54 m.
+- P6 not killed: fixating a point 2 m off, points on the line of sight shift +0.094, +0.029, +0.009 rad nearer (0.5, 1,
+  1.5 m) and −0.009, −0.021, −0.026 farther (3, 10, 1000 m), zero at 2 m; with r = 0 nothing shifts.
+
+### Run 2 (17 Oct, `python3 -I htp/htp.py 2`; output `htp/htp-run2.txt`)
+
+**P1′**, P1 as written with each pair's angle taken modulo a whole turn (stated before the run): the largest change
+1·10⁻⁵⁰, no point placed. Not killed. P2–P6 as in run 1.
+
+**Reading.** A head turn's parallax is the eye's translation: with the eye on the axis no pair's angle changes and
+nothing is placed; off it, the eye's two places are a chord 2r·sin(Δ/2) apart and every point is recovered exactly,
+in r, unchanged by scaling the world with r. The reach is set by the eye's sideways step, r·sin Δ, over the resolution,
+so a quarter turn reaches farthest, a turn of 150° no farther than one of 30°, and a half turn, which steps the eye
+straight back, not at all. The eye's own turn alone reaches a
+few metres, as Santini and Rucci found by robot. Fixating, near points move one way and far points the other, the
+fixated distance between them; with no offset, nothing moves.

@@ -1,0 +1,8 @@
+KILLED     P1 a pure turn gives no parallax: largest change in a pair angle 6.28, points placed 0
+not killed P2 the chord is the baseline: 95 points recovered, largest relative error 1.48e-44; chord = 2r sin(D/2) to 3.34e-52
+not killed P3 in the reader's own unit: largest change of a reading in r under k = 1e-3, 7, 1e3: 9.97e-45
+not killed P4 the reach is the sideways step over eps: 30 deg: exact 50.0866 m, r sin D/eps 50.0 m, off 0.00173; 90 deg: exact 100.0 m, r sin D/eps 100.0 m, off 3.33e-7; 150 deg: exact 49.9134 m, r sin D/eps 50.0 m, off 0.00173
+not killed P5 the numbers: head r = 0.1 m, quarter turn: 100.0 m at 1 mrad, 343.77 m at 1 arcmin; eye alone r = 7.6 mm, 10 deg: 4.537 m first order, 4.544 m exact
+not killed P6 fixating: 0.5: 0.0942, 1: 0.0286, 1.5: 0.00924, 1.99: 0.000137, 2: 0.0, 2.01: -0.000136, 3: -0.00897, 10: -0.0211, 1000: -0.0261; at r = 0 the largest shift 0.0
+
+killed: ['P1 a pure turn gives no parallax']
