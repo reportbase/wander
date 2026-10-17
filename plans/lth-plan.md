@@ -204,3 +204,24 @@ sd 0.032.
 history in outline (stated before the plan); the per-object structure is new to this run. SH0ES's anchors are consistent
 with one bottom hold, weakly.
 
+### Run 2 plan (16 Oct 2026; predictions written before Cosmicflows-4's table was downloaded)
+
+*Known before this run, stated so it is not mistaken for blind:* while taking P4's values from SH0ES 2022 I read its
+§6.7 and §7.2: Cepheid minus TRGB moduli on common hosts average 0.000 ± 0.030 (EDD) and 0.002 ± 0.030 mag (CCHP), and
+most of the CCHP–SH0ES H₀ difference (0.04 of 0.05 mag) is put to one calibration, the TRGB's in NGC 4258. That is
+"one factor per rung" already found, so it is not used as a test. Cosmicflows-4 (Tully et al. 2023, ApJ 944, 94;
+VizieR J/ApJ/944/94, table2) gives each galaxy a modulus by every method that measured it (SN Ia, Tully–Fisher,
+Fundamental Plane, SBF, SN II, TRGB, Cepheids, masers); only its ReadMe's column list has been opened. I know that CF4
+brings its methods to one zero-point, so the mean difference between two methods is near 0 by construction and is not
+tested. What is tested is whether one constant factor per method is all that separates them.
+
+For each pair of methods (A, B) with at least 30 galaxies measured by both, Δμ = μ_A − μ_B (mag; 1 mag = 1/(5·log₁₀ 2)
+= 0.664 levels of distance) and μ̄ = (μ_A + μ_B)/2:
+- **P5 (one factor per rung, the same at every distance).** The least-squares slope of Δμ against μ̄ is consistent with
+  0: a rung's error is one factor, shared by everything on it, and does not grow or shrink with distance. *Kill:* any
+  pair with |slope| > 3 standard errors and |slope| > 0.02 mag per mag (0.2 mag over ten magnitudes of distance).
+- **P6 (nothing per object beyond the quoted errors).** About its mean, Δμ's variance is what the two quoted errors
+  give: 0.5 ≤ var(Δμ)/mean(e_A² + e_B²) ≤ 2 for every pair. *Kill:* any pair outside. (A check of CF4's error model as
+  much as of the tower; written so that it is on record.)
+
+Data: table2.dat from cdsarc.cds.unistra.fr/ftp/J/ApJ/944/94/, sha256 to be recorded here before P5 and P6 are computed.
