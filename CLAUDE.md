@@ -636,6 +636,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "at density = 0 unit circle … at density = 1 full shape"); OFS keeps ρ since its g is the sweep's progress (R275).
   **When the density varies** (R275): arrivals ρ(θ)·2/(π(1 + s²)), the inscribed sweep's Cauchy times what the central
   sweep finds; their median the payload's median direction, at the corner only if ρ weighs alike on both sides.
+  **ρ removed from OFS** (17 Oct, SPN R347; Tom: "remove ρ, its not our concern in this paper."): the density, its
+  variation with direction, RHO's join and the perturbation's strength are the payload's, the world's; OFS now writes a
+  shape as r = exp(f(θ)) (ln r = a₀ + f(θ)), with no ρ and no notation entry. The two entries above and RHO describe
+  text before R347; the record stays in SPN and the plans.
   **Why the payload is Gaussian** (16 Oct, SPN R276; ChatGPT review 11, `plans/ofs-review-11.md`; Tom: "yes"): turns
   plus independent components give the isotropic normal (Herschel–Maxwell), its ratio the Cauchy, its size independent
   of direction; unequal spreads are c; OFS §7.1. Checked in HMX (`plans/hmx-plan.md` + `hmx/`; P1 killed by my set-up).
@@ -1240,6 +1244,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   together, a level of detail keeps the broad modes whole and drops the fine, set by the addresses spanned (OFS §7.4).
   And (R346; Tom: "the reader can't have any impact on the world, only writers"): the strength is the world's, changed
   only by writing; the level of detail is the reader's, so it cannot stand in for the strength.
+  Since R347 none of this is in OFS (ρ removed); it stays in the plan and SPN.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
