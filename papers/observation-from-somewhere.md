@@ -132,10 +132,14 @@ the truth would lie: a system's true breadths, as shares of their whole, would b
 breadths themselves, amounts the reader does not read. A reader's drawing, every party at its own H, is the sum's
 centre, where every pair is at its corner; the geometry follows from there, and the truth lies off the centre by the
 ratios the reader lacks. The three read the same thing differently: a line of true breadth 1 reads 1 to the writer, π/2
-to the payload reader and 2/π to the address reader. The true breadth is had only with both hemispheres in hand, which
-no single observation provides. A situated reader can construct it from several observations, but it cannot observe it.
-Many apparent paradoxes come from reading one vantage's geometry as if it were another's, most often from treating the
-completed view as if a single observation held it. Section 3 sets out the readers in full.
+to the payload reader and 2/π to the address reader. That is why the vantages are named so: the names follow the sweep.
+The writer knows the line as 1; each reader holds one hemisphere and reads it as π/2 or 2/π; the two hemispheres
+together, as the writer holds them, give back the 1, as the product of the two readings, π/2 · 2/π = 1, not their
+difference. What they give back is the baseline, the reader's own H measured in H (§10, step 3), not the other party's
+true breadth. The true breadth is had only with both hemispheres in hand, which no single observation provides. A
+situated reader can construct it from several observations, but it cannot observe it. Many apparent paradoxes come from
+reading one vantage's geometry as if it were another's, most often from treating the completed view as if a single
+observation held it. Section 3 sets out the readers in full.
 
 **Results.**
 - A situated reader's ignorance, as we choose it, is a group: turns of its bar, rescalings of the other party's size,

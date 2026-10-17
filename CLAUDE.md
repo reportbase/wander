@@ -763,6 +763,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   vantages."): the three vantages are the writer (dual-hemispherical, situation 2), the payload reader (central, 3) and
   the address reader (inscribed, 4), all on the baseline of situation 1, the circle V = H; vantages, not observers (R300
   kept). In OFS's abstract, introduction ("Three vantages: a writer and two readers"), Results, §3.4's table, §9.
+  Why the names (R329; Tom: "it maps clean to the  the sweep.    writer knows 1, readers read 1 as 2/PI or PI/2."): the
+  writer knows the line as 1, the payload reader reads π/2, the address reader 2/π; the two hemispheres together give back
+  the 1 as their product (the baseline, H in H, not V*).
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
