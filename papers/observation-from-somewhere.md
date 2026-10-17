@@ -139,11 +139,15 @@ three read the same thing differently: a line of true breadth 1 reads 1 to the w
 to the address reader. That is why the vantages are named so: the names follow the sweep. The writer knows the line as
 1; each reader holds one hemisphere and reads it as π/2 or 2/π; the two hemispheres together, as the writer holds them,
 give back the 1, as the product of the two readings, π/2 · 2/π = 1, not their difference. What they give back is the
-baseline, the reader's own H measured in H (§10, step 3), not the other party's true breadth. The true breadth is had
-only with both hemispheres in hand, which no single observation provides. A situated reader can construct it from
-several observations, but it cannot observe it. Many apparent paradoxes come from reading one vantage's geometry as if
-it were another's, most often from treating the completed view as if a single observation held it. Section 3 sets out
-the readers in full.
+baseline, the reader's own H measured in H (§10, step 3), not the other party's true breadth. The limits are the same
+for every line, so they carry no size: from one standpoint the two reads give the writer's whole, at no particular size.
+Its true size needs parallax: a second standpoint, the walk between the two a baseline in the reader's own H, places the
+whole at V*/H (Proposition 11; §10, step 6), and one amount carried in writes it in a shared unit. Each step adds what
+the one before could not: the frame from one standpoint, the size in H from two, the unit from one amount more. The true
+breadth is had only with both hemispheres in hand, which no single observation provides. A situated reader can construct
+it from several observations, but it cannot observe it. Many apparent paradoxes come from reading one vantage's geometry
+as if it were another's, most often from treating the completed view as if a single observation held it. Section 3 sets
+out the readers in full.
 
 **Results.**
 - A situated reader's ignorance, as we choose it, is a group: turns of its bar, rescalings of the other party's size,

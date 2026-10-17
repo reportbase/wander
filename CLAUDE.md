@@ -777,6 +777,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   from its two pivots, not two motions; the address read the direction, the payload read the amount along it, meeting at
   one point (III.20); a reader type is the breakdown it keeps. §3.1's "Two sweeps, two results" is now "One read, two
   results"; intro, §4's "Why there are two sweeps, and only two", §9.
+  What the two reads return (R333; Tom: "the two reads can recover the true writer's breadth, but that requires
+  parallex"; "Your clarification is correct"): from one standpoint the limits' product, the writer's 1, the frame at no
+  size; parallax places it at V*/H; one amount carried in, the unit. In "Three vantages".
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
