@@ -80,4 +80,60 @@ of the textbooks, as TPI run 4 found for the bounded face.
 
 ## Runs
 
-(None yet. Nothing above this line is edited after a run.)
+(Nothing above this line is edited after a run.)
+
+### Run 1 (17 Oct)
+
+**The gathering.** A fresh agent, shown none of the above, listed 58 occurrences from its own knowledge (no web
+searches; its DOIs from memory, unchecked): `plans/hzt/neutral-list.md`. Probability and statistics (the definition, the
+ratio of normals, t₁, the lighthouse, stable laws, Brownian hitting, winding, the wrapped and Möbius families, Kostlan's
+zeros, free probability, priors, a combination test, a robust loss), spectroscopy and resonance (natural, collision,
+lifetime, power and motional widths, NMR, Mössbauer, Breit–Wigner, Fano, Fabry–Pérot, the laser line), response and
+noise (filters, Drude, Debye, telegraph noise, tweezers, ion channels, the solar modes), condensed matter (quasiparticles,
+Lloyd, Friedel–Anderson, tunnelling, the Lorentzian S-matrix ensemble, Ornstein–Zernike, light and neutron scattering,
+Raman), fields (the Poisson kernel, an image charge, a line source, random dipoles, a Poisson network), and finance and
+ecology (Mandelbrot, Lévy flights, seed dispersal).
+
+**The classification**, by a second fresh agent shown only that list: `plans/hzt/classification.md`, with its
+conventions at its top (a Lorentzian from a single pole or an exponential decay is "no", since the swept variable is the
+ratio itself, not an angle; a characteristic-function route is "no" unless the derivation passes through the angle; a
+density equal to dθ/dx from an isotropic point is "hidden").
+- Q1: yes 4 (H4 the lighthouse, H12 the stereographic image of the uniform circle, H14 cot 2Θ, H57 the combination
+  test), hidden 8 (H2, H3, H6, H8, H16, H41, H49, H50), **no 46**.
+- Among the 12: Q2 traversed 1 (the lighthouse), held 8, not traversed 3; Q3 observer **0**, source or system 3,
+  population 6, none 3.
+- On its own alternatives, 13 of the 46 could go to yes or hidden (H1, H5, H9, H10, H11, H13, H17, H21, H25, H31,
+  H34, H51, H55); 33 stay no either way.
+
+**The exact checks** (`hzt/hzt.py`). Run 1 (`hzt/hzt-run1.txt`): the law computed from each entry's derivation step
+matched the list's formula to 10⁻²³ or better for every entry taken by a change of variables, a pole, a mixture, Kac–Rice,
+Agnesi's construction, an image charge or a line source; the sixteen entries taken by a Fourier transform or a
+characteristic function to infinity failed, by my quadrature (an oscillatory integral to infinity by plain `quad`), not
+by their laws. Run 2 (`hzt/hzt-run2.txt`), with those integrals by `quadosc` (stated before the run): every computable
+law matched, to 2.6·10⁻²⁶ (the wrapped Cauchy to 3·10⁻⁶ from truncating its sum; the random dipoles' and the Poisson
+network's log characteristic functions exactly linear in t, index 1). Three were not computed: Spitzer's winding (a
+limit), Mandelbrot's prices (fitted at α ≈ 1.7, the Cauchy only a member) and Lévy flights (a tail exponent only).
+
+**Verdicts.**
+- **H1 killed**, by 46 of 58 (33 even on the classifier's alternatives). The predicted kill, the stable limit, is among
+  them (H7, H9, H10, H25, H51, H52, H53), but the largest family is another: **a single pole, or an exponential decay**
+  (spectral lines, resonances, responses, relaxation, correlated noise, scattering: 29), where the line itself is
+  swept and the Cauchy shape is |1/(x + iγ)|². Others are defined or chosen (H1, H55, H56, H58), mixtures (H54) or curves
+  (H5). The sweep reaching a horizon is one origin of the unbounded face, found in 12, not its only one.
+- **H2 not killed**: of the 12, held 8, traversed 1.
+- **H3 not killed**: the observer's own sweep in none of the 12.
+- **H4 not killed**: every entry with an angle or phase in its step has half the law within one half-width, and the
+  angle or phase there 45° from the sweep's middle, exactly (2.6·10⁻²⁶); that holds for the pole family's phase as well.
+- **H5 killed, in its letter, by two**: the wrapped Cauchy (H11) and the Fabry–Pérot peaks (H31) live on a circle (a
+  period), where a mean direction or a mean over the period exists; every law on the line has none (the first moment
+  grows g·ln 10/π a decade, to 6·10⁻⁹), 26 of them recorded as used near their centre only (cut).
+
+**Reading (post hoc, not a rescue).** The unbounded face has (at least) three origins: an even angle reaching a horizon
+(12, the lighthouse among them), a pole a half-width off the line (the most common, every resonance and decay), and a
+sum of terms with the right tail (the stable laws). A pole can be read as a sweep seen from the other end: its phase
+turns through half a turn as the line is crossed, the Lorentzian is (1/π)·dφ/dx, and the half-width is where the phase
+stands 45° from its middle (H4 above); but in the derivation it is the line that is swept evenly, not the phase, and
+any Cauchy at all can be written as some angle's image, so reading every pole as a sweep would make H1 unfalsifiable.
+H5's two kills are where the horizon is closed up: wrapped onto a circle, the reading never runs off, and a mean
+returns. In none of the 12 is the sweep the observer's own: as TPI run 4 found for the bounded face, the textbooks put
+the evenness in a source, a population or the mathematics, never in the one who reads.

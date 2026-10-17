@@ -1,0 +1,63 @@
+id    mechanism         law err            share     corner deg   decade/(g ln10/pi)  note
+H1    stable           2.58e-26              0.5           None         0.9999999938  cf e^-|t| inverted
+H2    ratio            2.58e-26              0.5           45.0         0.9999999938  
+H3    mixture          1.55e-25              0.5           None         0.9999999938  t1 as normal over chi-square precision
+H4    turn             2.58e-26              0.5           45.0         0.9999999938  
+H5    agnesi           5.23e-24              0.5           45.0         0.9999999938  the curve normalised
+H6    harmonic         2.58e-26              0.5           45.0         0.9999999938  
+H7    stable           2.58e-26              0.5           None         0.9999999938  
+H8    harmonic         2.58e-26              0.5           45.0         0.9999999938  
+H9    stable           2.58e-26              0.5           None         0.9999999938  cf e^-a|t| from the passage time
+H10   None         not computed                            None                       a limit law; not computed
+H11   wrapped           3.22e-6    on the circle           None a mean direction exists (circle)  
+H12   half_angle       2.58e-26              0.5           45.0         0.9999999938  
+H13   pole             5.17e-26              0.5           45.0         0.9999999938  Im 1/(x - theta)
+H14   turn             2.58e-26              0.5           45.0         0.9999999938  cot 2Theta
+H15   pole             5.17e-26              0.5           45.0         0.9999999938  Cauchy transform 1/(z + i g)
+H16   kacrice          2.58e-26              0.5           45.0         0.9999999979  
+H17   ft               2.58e-26              0.5           45.0         0.9999999938  cut
+H18   ft               2.58e-26              0.5           45.0         0.9999999938  cut
+H19   pole             5.17e-26              0.5           45.0         0.9999999938  wings; cut
+H20   ft               2.58e-26              0.5           45.0         0.9999999938  cut
+H21   pole             5.17e-26              0.5           45.0         0.9999999938  near resonance; cut
+H22   pole             5.17e-26              0.5           45.0         0.9999999938  
+H23   pole             5.17e-26              0.5           45.0         0.9999999938  
+H24   ft               2.58e-26              0.5           45.0         0.9999999938  cut
+H25   dipole       log cf at 2t over at t: 2.0 (Cauchy: 2)      from the cf           None    no mean (index 1)  cut at the nearest neighbour
+H26   ft               2.58e-26              0.5           45.0         0.9999999938  convolution; cut
+H27   pole             5.17e-26              0.5           45.0         0.9999999938  cut
+H28   pole             5.17e-26              0.5           45.0         0.9999999938  cut
+H29   ft               2.58e-26              0.5           45.0         0.9999999938  cut (bounded below)
+H30   pole             5.17e-26              0.5           45.0         0.9999999938  q -> inf; cut
+H31   airy         near the peak 0.000208 (F = 400)         periodic           None periodic: the mean over a period exists  periodic
+H32   ft               2.58e-26              0.5           45.0         0.9999999938  cut
+H33   ft               2.58e-26              0.5           45.0         0.9999999938  
+H34   pole             5.17e-26              0.5           45.0         0.9999999938  
+H35   pole             5.17e-26              0.5           45.0         0.9999999938  
+H36   pole             5.17e-26              0.5           45.0         0.9999999938  
+H37   pole             5.17e-26              0.5           45.0         0.9999999938  cut
+H38   pole             5.17e-26              0.5           45.0         0.9999999938  contour at the Cauchy pole
+H39   pole             5.17e-26              0.5           45.0         0.9999999938  cut (band)
+H40   pole             5.17e-26              0.5           45.0         0.9999999938  cut
+H41   pole             5.17e-26              0.5           45.0         0.9999999938  N = 1
+H42   pole             5.17e-26              0.5           45.0         0.9999999938  small q; cut
+H43   ft               2.58e-26              0.5           45.0         0.9999999938  
+H44   ft               2.58e-26              0.5           45.0         0.9999999938  cut
+H45   pole             5.17e-26              0.5           45.0         0.9999999938  cut
+H46   pole             5.17e-26              0.5           45.0         0.9999999938  cut
+H47   pole             5.17e-26              0.5           45.0         0.9999999938  cut (fitted band)
+H48   ft               2.58e-26              0.5           45.0         0.9999999938  cut (measured band)
+H49   image            2.58e-26              0.5           None         0.9999999938  
+H50   line_source      2.58e-26              0.5           None         0.9999999938  
+H51   planar       log cf at 2t over at t: 2.0 (Cauchy: 2)      from the cf           None    no mean (index 1)  guard zone may cut
+H52   None         not computed                            None                       alpha ~ 1.7 fitted; Cauchy a member only
+H53   None         not computed                            None                       a tail exponent only
+H54   mixture          1.55e-25              0.5           None         0.9999999938  2Dt/1D Cauchy kernel as a scale mixture; cut
+H55   mixture          1.55e-25              0.5           None         0.9999999938  Zellner-Siow
+H56   mixture          1.55e-25              0.5           None         0.9999999938  folded
+H57   turn             2.58e-26              0.5           45.0         0.9999999938  tan((0.5 - p) pi)
+H58   pole             5.17e-26              0.5           45.0         0.9999999938  the loss is -log of this law
+
+law off: none
+H4 off: none
+H5 off: none
