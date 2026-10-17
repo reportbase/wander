@@ -303,7 +303,11 @@ holds, and OFS §9, "Units within units"):
 - **A rung's hold revised moves everything above it by one factor.** Baade's revision of the Cepheid zero-point
   (announced 1952; Baade 1956) and Sandage's finding that Hubble's "brightest stars" were HII regions (Sandage 1958)
   each moved every distance on and above the rung revised and none below, and left the ratios within a rung as they were. **[classical]** for the history;
-  **[reading]** for the account; tested in LTH (`plans/lth-plan.md`).
+  **[reading]** for the account. **[data]**, LTH run 1 (`plans/lth-plan.md`): Hubble's 1929 distances against NED-D,
+  grouped by the rung his text gives, are off by one factor per rung (spread 0.4–0.8 levels within a rung against
+  1.2–1.7 between), compounding up the ladder (about 1.2 levels for the Cepheid rung, near Baade's factor of 2; about
+  2.8–2.9 for the brightest stars; 3.0 for the Virgo cluster), with ratios within a rung surviving better than the
+  distances; SH0ES 2022's single-anchor H₀ agree within the anchors' own distance terms (χ²/dof 0.31, weak).
 - **Parallax sets the tower's pitch.** A tower of holds does not say how many levels one hold can carry. Proposition 4
   does: a rung read to a step ε holds about log₂(2/ε) levels each side of its corner, and past the far edge a place is a
   ray, so a new hold is needed, a longer baseline or a kind, calibrated inside the band. The two meet best where both
@@ -334,6 +338,7 @@ holds, and OFS §9, "Units within units"):
 | the baseline as a second zoom | reading | §5 |
 | the eyes and the stars at their corners | illustration | §5 |
 | the ladder a tower of holds: ratios between rungs, one amount at the bottom, errors adding by rung | exact (given independent errors), reading | §7; LTH |
+| Hubble 1929 off by one factor per rung, compounding; SH0ES anchors consistent with one bottom hold | data | LTH run 1 |
 
 ## 9. Open questions
 

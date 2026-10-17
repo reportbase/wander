@@ -134,4 +134,73 @@ freedom.
 
 ## Runs
 
-(none yet)
+### Run 1 (16 Oct 2026; `lth/lth.py`)
+
+`python3 -I lth/lth.py NED30.5.1-D-17.1.2-20200415.csv`. Order, for the record: Hubble's table and the rungs were
+committed first (93e1308); the NED-D file was then downloaded and the script run on it for P1–P3 before its source and
+sha256 were written above (a slip in the plan's order; the rungs, the blind part, were already fixed); then the SH0ES
+values and P4's uncertainties were recorded (c2248d1) before P4 was computed.
+
+r = log₂(d_modern/d_Hubble), d_modern the NED-D median of Cepheid and TRGB distances where there are any, else of all:
+
+| object | rung | Hubble r (Mpc) | NED-D (Mpc) | Cepheid/TRGB, all | r (levels) |
+|---|---|---|---|---|---|
+| SMC | a | 0.032 | 0.062 | 161, 379 | 0.966 |
+| LMC | a | 0.034 | 0.050 | 335, 1017 | 0.559 |
+| NGC 6822 | a | 0.214 | 0.479 | 104, 141 | 1.162 |
+| NGC 598 (M 33) | a | 0.263 | 0.855 | 90, 172 | 1.701 |
+| NGC 221 (M 32) | a | 0.275 | 0.724 | 7, 43 | 1.397 |
+| NGC 224 (M 31) | a | 0.275 | 0.783 | 183, 440 | 1.510 |
+| NGC 5457 (M 101) | a | 0.45 | 6.900 | 76, 144 | 3.939 |
+| NGC 4736 | b | 0.5 | 4.660 | 5, 24 | 3.220 |
+| NGC 5194 | b | 0.5 | 8.580 | 9, 57 | 4.101 |
+| NGC 4449 | b | 0.63 | 4.205 | 8, 18 | 2.739 |
+| NGC 4214 | b | 0.8 | 2.935 | 10, 22 | 1.875 |
+| NGC 3031 | b | 0.9 | 3.630 | 55, 115 | 2.012 |
+| NGC 3627 | b | 0.9 | 10.550 | 40, 88 | 3.551 |
+| NGC 4826 | b | 0.9 | 4.965 | 2, 24 | 2.464 |
+| NGC 5236 | b | 0.9 | 4.610 | 5, 21 | 2.357 |
+| NGC 1068 | b | 1.0 | 10.500 | 0, 13 | 3.392 |
+| NGC 5055 | b | 1.1 | 9.095 | 2, 29 | 3.048 |
+| NGC 7331 | b | 1.1 | 15.000 | 19, 59 | 3.769 |
+| NGC 4258 | b | 1.4 | 7.510 | 67, 109 | 2.423 |
+| NGC 4151 | b | 1.7 | 5.385 | 0, 16 | 1.663 |
+| NGC 4382 | c | 2.0 | 15.450 | 0, 28 | 2.950 |
+| NGC 4472 | c | 2.0 | 16.200 | 0, 70 | 3.018 |
+| NGC 4486 | c | 2.0 | 16.000 | 3, 131 | 3.000 |
+| NGC 4649 | c | 2.0 | 16.200 | 1, 48 | 3.018 |
+
+Rung means and spreads (levels): (a) n 7, mean 1.605, sd 1.096; (b) n 13, mean 2.817, sd 0.764; (c) n 4, mean 2.996,
+sd 0.032.
+
+- **P1 not killed.** mean(a) 1.605 < mean(b) 2.817 and < mean(c) 2.996.
+- **P2 not killed.** sd(b) 0.764 < |mean(b) − mean(a)| 1.212. (Reported: sd(c) 0.032 against 1.392.)
+- **P3 not killed.** The median error of a same-rung log ratio, 0.760 levels (99 pairs in rungs a and b), is under half
+  the median |r|, 1.301 (24 objects).
+- **P4 not killed.** With each anchor's distance term only (1.5%, 1.0%, 1.2%): weighted mean 73.095 km/s/Mpc, χ² 0.614
+  on 2 dof, 0.307 per dof. With the subtotal per anchor (reported): χ² 0.442, 0.221 per dof.
+
+**Read after the run (post hoc, not tests):**
+- *M 101 is a brightest-star distance.* Hubble groups NGC 5457 with "the first seven", but his table gives it a
+  brightest-star magnitude (ms 17.0), which the other six lack; its r, 3.94 levels, is rung (b)'s. Moved to (b): rung (a)
+  n 6, mean 1.216, sd 0.412; (b) n 14, mean 2.897, sd 0.793. Without M 101 and M 32 (placed by association): (a) mean
+  1.180, sd 0.450. P2 is then stronger (0.79 < 1.68), and rung (a)'s factor, 2^1.2 ≈ 2.3, is about Baade's revision
+  (about 1.5 mag, a factor of 2). The Magellanic Clouds alone, Shapley's values, are off by 0.76 levels.
+- *The factors compose.* Rung (b) sits about 1.6–1.7 levels above rung (a): its own calibration (the brightest stars,
+  many of them HII regions, Sandage 1958) times the Cepheid factor it was built on. Rung (c), the Virgo cluster, sits
+  0.1–0.2 levels above (b): Hubble's cluster distance leaned on the same stars ("together with luminosities of stars in
+  some of the later-type spirals"). This is the tower's composition, read off; it was not a prediction.
+- *P2 and P3 are not independent.* For per-object errors of spread s within a rung, a same-rung log ratio has error
+  √2·s, median about 0.95·s; with s ≈ 0.76–0.79, 0.73–0.75, as found (0.760). P3 passes because the shared factor is
+  large against the scatter, which is P2's content. E1 is what both rest on.
+- *P4 is weak, as the plan said.* χ² well under 1 is not independence: the three single-anchor fits share every host,
+  Cepheid and supernova, and the paper reports that the anchors' consistency "is a direct consequence of the Cepheid
+  metallicity dependence" fitted across them. What P4 shows is only that nothing above the anchors moves H₀ by more than
+  the anchors' own terms when the anchor is swapped.
+
+**Standing.** On real data, Hubble's 1929 ladder behaves as a tower of holds: one factor per rung shared by its members
+(spread 0.4–0.8 levels within a rung against 1.2–1.7 between), the factors compounding up the ladder (1.2, then about
+2.8–2.9, then 3.0 levels, a factor near 2, then near 7–8), ratios within a rung surviving better than distances. Known
+history in outline (stated before the plan); the per-object structure is new to this run. SH0ES's anchors are consistent
+with one bottom hold, weakly.
+
