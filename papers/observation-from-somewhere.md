@@ -43,14 +43,16 @@ has two address spaces, proportional and logarithmic, joined at one corner.
 
 Our main result concerns what a reader receives when it sweeps this circle uniformly from where it stands. Its readings
 follow the Cauchy distribution. When the uniformity is the reader's own laying, we show that the distribution belongs
-entirely to the reader's addresses and not to anything that arrives at them: whatever is met in each direction cancels
-from every single reading. Where the uniformity belongs to the sources instead, as when a lighthouse sends its flashes
-at uniformly spread angles, the same law is a property of the world's directions. This gives a reason for the Cauchy's
+entirely to the address reader, the inscribed sweep, and not to anything that arrives at its addresses: it is a property
+of the reader, not of the payload, since whatever is met in each direction cancels from every single reading. The
+payload reader, the central sweep, receives amounts, and their law is the payload's. This is why the readers are named
+by what they receive. Where the uniformity belongs to the sources instead, as when a lighthouse sends its flashes at
+uniformly spread angles, the same law is a property of the world's directions. This gives a reason for the Cauchy's
 best-known peculiarity. Its median exists and sits at the corner, because a median depends only on order, which is a
 property of addresses. Its mean does not exist, because a mean is a sum of sizes, a question about the payload, and
 addresses carry no size. Neither property needs the circle or the uniform turn: any sweep that treats the two parties
 alike puts its median at the corner and, if it reaches the horizon, has no mean; the uniform turn gives the Cauchy's
-exact shape. The same split decides what reaches a reader of a payload. One stream of readings fixes the course of a
+exact shape. The same split decides what reaches the payload reader. One stream of readings fixes the course of a
 relation, not its parties. The median is had only by a reader that holds its readings at once. Payloads closer together
 than the reader's resolution arrive as their centroid, a sum.
 
@@ -1593,7 +1595,8 @@ any sum).
 
 **Theorem 6.** Parts (a) and (d) concern the readings of Proposition 5: the other party drawn at V = H and the circle
 swept uniformly by direction. Parts (b) and (c) hold for any finite set of readings. Part (e) drops both the circle and
-the uniform turn.
+the uniform turn. The readings are the address reader's: directions, ratios with no amount in them, so what (a), (d) and
+(e) find is a property of that reader and not of what it reads; the payload reader's amounts are what (c) concerns.
 
 (a) *Nothing that arrives changes the Cauchy.* Suppose that whatever arrives in the direction of each step lies at some
 reach ℓ > 0, an amount that may differ from direction to direction and is unknown to the reader. In the reader's unit

@@ -766,6 +766,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Why the names (R329; Tom: "it maps clean to the  the sweep.    writer knows 1, readers read 1 as 2/PI or PI/2."): the
   writer knows the line as 1, the payload reader reads π/2, the address reader 2/π; the two hemispheres together give back
   the 1 as their product (the baseline, H in H, not V*).
+  For Theorem 6 (R330; Tom: "cauchy is a property if the inscribed read, not the payload read.   it is a property of the
+  reader not the payload."): the introduction's main result and Theorem 6's opening say the Cauchy belongs to the address
+  reader, a property of the reader, not the payload; the payload reader's amounts are (c)'s; the lighthouse caveat kept.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
