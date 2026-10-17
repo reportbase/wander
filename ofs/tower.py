@@ -3,7 +3,8 @@
 A building of length L; two rooms read against it; two things in each room read against that room. Every reading is a
 ratio, held as an exact fraction. The example's claims are checked exactly: the count of independent ratios, relations
 across rooms from quotients of readings alone (one quotient per level), one length writing every other, scaling the
-world moving every amount and no reading, and one misread link moving its whole room by one factor.
+world moving every amount and no reading, one misread link moving its whole room by one factor, and a second route
+closing the loop and exposing it.
 Run: python3 ofs/tower.py
 """
 from fractions import Fraction as F
@@ -61,5 +62,13 @@ check("misread link: b2 moved by the same factor", Wm["b2"] / W["b2"], F(9, 10))
 check("misread link: b1/b2 unchanged", Wm["b1"] / Wm["b2"], W["b1"] / W["b2"])
 check("misread link: room A untouched", (Wm["a1"], Wm["a2"]) == (W["a1"], W["a2"]), True)
 check("misread link: a1/b1 off by the one factor", (Wm["a1"] / Wm["b1"]) / (W["a1"] / W["b1"]), F(10, 9))
+
+# closing a loop: a direct reading of a1 against b1 exposes the misread link
+direct = W["a1"] / W["b1"]                              # read with both in view: the true ratio
+chain = (Rm["a1"] / Rm["b1"]) * (Rm["A"] / Rm["B"])    # through the misread link
+check("direct reading a1/b1", direct, F(27, 16))
+check("chain through the misread link", chain, F(15, 8))
+check("closure error = the misread factor", chain / direct, F(10, 9))
+check("with no misreading the loop closes", ((R["a1"] / R["b1"]) * (R["A"] / R["B"])) / direct, F(1))
 
 print("all exact" if ok else "MISMATCH")

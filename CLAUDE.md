@@ -706,7 +706,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   of units is held in ratios alone, and writing still costs one amount at the top. Then "A worked example of the tower" (R320; Tom: "we could
   show the tower with a simple synthetic worked example"): a building, two rooms, two things each; six readings for seven
   lengths; a₁/b₁ = 27/16 by two quotients; one amount writes all; a misread link moves its room by one factor (9/10).
-  Exact in `ofs/tower.py`.
+  Exact in `ofs/tower.py`. Then "Closing a loop, and what is left to the reader" (17 Oct, R321; Tom: "my intuition is
+  that reader doesn't have to do much, the heavy lifing is done simply by geometry and being situated."): a tree of
+  readings cannot find its own error, a second route can (closure error 10/9); the reader computes nothing (the
+  projection divides, composition and closure are the geometry's); it contributes three acts of position: choosing H
+  (and V = H), holding, and taking standpoints.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

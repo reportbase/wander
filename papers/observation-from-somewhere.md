@@ -2237,6 +2237,18 @@ instead of 1/3, everything in room B moves by one factor, 9/10, its ratio b₁/b
 and a₁/b₁ is off by that one factor, 10/9. A whole hierarchy is held in six ratios, and one amount anywhere in it writes
 the rest; an error in a link is shared by everything the link holds.
 
+**Closing a loop, and what is left to the reader.** A tree of readings, each thing read against only the one length that
+holds it, cannot find its own error: room B misread moves everything in B together, and every reading inside B still
+agrees. A second route finds it. Read a₁ directly against b₁ as well, from a standpoint where both are in view: the
+reading is 27/16, where the chain through the misread link gives 15/8, and the two routes disagree by 10/9, the misread
+factor exactly. That is a closure error, and it is why surveys are built of triangles and checked by a second base. The
+reader computes none of this. The projection through its standpoint divides (above); that ratios compose by
+multiplication is the geometry's; whether two routes close is the geometry's too. What the reader contributes is not
+computation but three acts of position: choosing H, and with it the drawing V = H, which the geometry cannot choose for
+it (§5); holding what arrives, at once or in order, without which there is no median (§7.6); and taking standpoints, a
+second one for a loop to close or a known move for an amount to be written. The heavy lifting is done by the geometry
+and by being situated.
+
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
 change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the
