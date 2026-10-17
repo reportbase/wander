@@ -142,9 +142,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   with the corner curves and chambers). A world (280 things even over the wedge, d over five decades, or a cluster per
   decade) laid along the rays, s to the corner then 1 + ln s (or 2 − 1/s, `lay=inplace`), n = 32 addresses across the near
   field: nearer than H/32 merged into home, past H·2⁶ (or s ≥ 32) past the held edge; H slides things along their rays,
-  never across; from home each thing as wide as it looks (Δ/d). The situations per party (known, 3 at once, 4 stepped):
-  a camera, a fan-beam radar (3, 4), a line scanner (4, 3), a single-pixel scanner (4, 4), the seen fading behind the
-  beam; a known breadth moves the drawing (1, V/H, V₂/H)/sum from the centre toward the truth. Seven steps: the wedge,
+  never across; from home each thing as wide as it looks (Δ/d). The situations per party (known 1–2, or swept from
+  home, 4, held at once or in order; since SPN R309 holding is a second axis, not the situation): a camera's frame, a slit
+  panoramic camera, a line camera tipped up, a single-pixel scanner, the seen fading behind the beam (a lidar would be 3,
+  not drawn); `?V=&V2=` take known|once|order (3 and 4 still accepted); a known breadth moves the drawing (1, V/H, V₂/H)/sum from the centre toward the truth. Seven steps: the wedge,
   from home, two sweeps, a world, H is a zoom, the situations, and (14 Oct, Tom: "show how the wedge could be positioned
   anywhere on the sphere, so there is two steps, position the wedge,then sweep it."; SPN R242) position, then sweep: the
   sphere with its three great circles; the wedge (everything of it, in one group) placed by a rotation R, set by where its
@@ -152,7 +153,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   swapped where the signs would make a reflection), or anywhere (an even turn); then the hand sweeps in the wedge's own
   frame, on the sphere R·d; "position, then sweep" plays a turn and then the sweep; from home the camera turns with R, so
   the wedge looks the same and only the sphere's lines move. Leaving step 7 puts the wedge back in its first place.
-  `?step=1..7&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|3|4&V2=known|3|4&alt=&az=&vs=&v2s=&rays=0&seed=&lon=&lat=&roll=`;
+  `?step=1..7&view=home|outside&H=<log10 H>&lay=inplace&world=scatter|decades|none&V=known|once|order&V2=known|once|order&alt=&az=&vs=&v2s=&rays=0&seed=&lon=&lat=&roll=`;
   hook `window.__wedge` (`homeProject`, `homeShares`, `shares`, `chamberShares`, `cornerHalf`, `placeAt`, `counts`,
   `coverage`, `drawingOf`, `situationName`, `set` (with `pos`: lon/lat/roll, `octant` or `q`), `state`, `hud`, and
   `position`: `quat`, `of`, `octant`, `octahedral`, `random`, `imageOctant`, `inWedge`, `world`, `handTip`, `homeNdc`).
@@ -211,6 +212,19 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Thales circle the corner circle, H of 0 rays, H of ∞ the baseline, best H √(d_near·d_far); physics assigns the value
   and nothing moves. `?step=1..6&h=&n=&fig=circle|egg|star|astroid&eps=0.1|0.5|2&sp=1|2|3&unit=mi|km|au`; hook
   `window.__hchain` (`fisheye`, `triangulate`, `bestH`, `figurePoints`, `hud`, `set`). Not in the flying page.
+- `two-readers.html`, `pinhole.html`, `write.html`: **reading and writing** (16 Oct 2026, Tom: "what demos should we create
+  to help visualize this", then "build all three demos"; SPN R297, R298, R304, R306, R307), standalone pages like `facing.html`.
+  `two-readers.html`: one shape ln r = a₀ + ρ·f(θ) read from its centre (the central reader: fixed directions, the radius
+  along each, an amount, shown over the geometric mean since the common factor is not read) and from home on the outline
+  (the inscribed reader: directions only, laid by (2/π)·arctan(v/h)); a₀ ("scale the world") moves neither; the writer
+  draws the true size only with the addresses, the amounts and one amount carried in; a seeded uniform sweep, the
+  inscribed median at 1 and its mean climbing, the central mean settling. `?shape=circle|egg|star|lumpy&rho=&a0=&writer=`;
+  hook `window.__twoReaders`. `pinhole.html`: a thing of breadth V* at distance d through a pinhole; the reading [h : v],
+  bounded, unchanged by k; V* = ∞ the horizon (0, 1), off the flat screen; "the writer's account" overlays V*/d; a ruler
+  reader whose amounts move with k; "a uniform sky" (R312): directions uniform over the octant on the flat screen, the
+  Cauchy wedge, 1 − 1/√(1 + q²) within q. `?V=<log10>|inf&d=&k=&account=1&sky=1`; hook `window.__pinhole` (with `sky`). `write.html`: RWT step by
+  step, four targets, the nullity computed on the page (4, 1, 0, 0, 1, 0, 1, 0), the breadths written in A's H, B's H and
+  metres. `?step=0..7&seed=`; hook `window.__write`. Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -314,7 +328,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -659,6 +673,25 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   addresses on the level axis, ½·sech ξ = hv); the abstract, the situations table, §3.1 and question 8 re-paired
   (they had it with situation 3); in the central sweep the same function is a coordinate, the payload point's height
   2hv = sech ξ (foot ½(1 − tanh ξ)), the density half of it, in OFS §4. Its identity claim mistaken (in §4 since R289).
+  Holding is a second axis (16 Oct, SPN R309; Tom: "ok", "yes"): OFS no longer follows the mechanism proposal (3 at
+  once, 4 one at a time). Situations 3 and 4 are set by what is received, amounts along given directions or directions
+  alone; either may be held at once or in order (§3.5 static/dynamic). A camera is inscribed (held at once), a lidar or
+  sonar central, a total station mixed. §3.6: the projection divides, not the reader.
+  V = H is V = H = 1 (16 Oct, SPN R310; Tom: "right V = H = 1"): H a zoom, so the drawing's unit; the unit circle; the
+  amounts then equal the unit relations in number only (the corner v = h = 1 on the capped square); the zoom moves from
+  the drawing to the laying, which world amount is the 1 (s = d/H). OFS §5.
+  The third relation in today's paragraphs (16 Oct, SPN R311): c and c₂ both 1; V = V₂ = H = 1 the unit sphere, the
+  triple corner h = v = v₂ = 1; the inscribed direction [h : v : v₂]; the central reader's two fixed angles; writing one
+  amount, not one per party.
+  The Cauchy wedge (16 Oct, SPN R312; Tom: "the wedge is just the 3d version of the sweep."): Proposition 5(e)'s law
+  named, the sweep in three dimensions (uniform over the octant's area); the gnomonic projection a pinhole's flat screen,
+  density (2/π)·cos³α (the geometric part of the cos⁴ falloff), the sweep's (2/π)·cos²θ, one more cosine per party.
+  Our words and the standard ones (16 Oct, SPN R313; Tom: "ok"): OFS §2 names each coinage once (home the standpoint;
+  zero the reading v/h = 0; the wedge the positive orthant; the triple corner [1 : 1 : 1]; the bar the unit vector of
+  V = H; the corner the reciprocal's fixed point; a level a dyadic interval; a lay a scale, Luce's ruler; g the uniform
+  turn's distribution function; the capped reading the ℓ∞ cut). Splits: facing only the direction faced (it turns),
+  a sign-region a quadrant/orthant/octant, the divisor a denominator; home only the standpoint, v/h = 0 zero; "the
+  share of a reading" the capped reading; ε the resolution, not a step. Keep these senses apart in OFS.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
@@ -1062,7 +1095,8 @@ accomodate V2"; "i'm open to how to organize the situations, or relations"): the
 [0, 1] with its breadth, known unsituated, unknown situated; the situated reader draws V = V₂ = H, giving the set of every
 [h, v, v₂]), and a situation is one entry per other party, 1 to 4 each; the five are the one-party case, 0 stays one
 case; with V₂: both known, half-situated, (3, 3) a camera, (4, 4), and the mixed scanners (3, 4) and (4, 3) (OFS §3.1,
-"Two other parties"). SPN uses these numbers throughout
+"Two other parties"). Since R309 OFS drops the proposal: 3 and 4 are set by what is received (amounts along given
+directions, or directions), and holding, at once or in order, is a separate axis. SPN uses these numbers throughout
 (converted 6 Oct), except in quotations, Appendix A's rulings and the earlier table in
 §2.1, which keep the old ones (old 3 = 3 and 4, old 4 = 0, old 5 = 3 or 4 approximately).
 SPN §2.1 opens with "The five, in brief". Keep to the core: the sweep
@@ -1284,6 +1318,16 @@ In short:
       the wedge itself; the gold at tan 1 for a second moves the blue 0.4 in rapidity, letting go re-centres on it; the
       radius keeps the blue's place, or moves the window to it; items found by index in their finest cells; item
       4,503,599,627,370,495 at the triple corner with its total at the corner; from home nothing moves with H.
+
+  28. **two-readers.html:** scaling the world moves no direction from home and not the central shape, its amounts all by
+      e^Δa₀ (four shapes, three ρ, three a₀); on the circle the ray at half the central angle; the writer only with all
+      three, at the true size; a uniform sweep's inscribed median within 0.05 of 1, its mean climbing, the central mean
+      within 0.01 of its exact value.
+  29. **pinhole.html:** the reading unchanged by k = 10⁻³, 7, 10⁶; V* = ∞ at (0, 1), 90°, off the flat screen; equal
+      breadth and distance at 45° and half the turn; the ruler reader's amounts move by k, their quotient does not; a uniform
+      sky's share within q = ½, 1, 2 within 0.01 of 1 − 1/√(1 + q²), its density (2/π)·cos³α.
+  30. **write.html:** the nullities 4, 1, 0, 0, 1, 0, 1, 0 in three scenes; the breadths written in A's H from one known move
+      and the same from two; B's off by H_B/H_A until one number is sent; metres after one notch (all to 10⁻⁹).
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
