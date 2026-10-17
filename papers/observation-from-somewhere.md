@@ -43,19 +43,21 @@ has two address spaces, proportional and logarithmic, joined at one corner.
 
 Our main result concerns what a reader receives when it sweeps this circle uniformly from where it stands. Its readings
 follow the Cauchy distribution. A sweep is uniform by definition, since a turn measured by itself has no other measure
-(§2), and we show that the distribution belongs entirely to the address reader, the inscribed sweep, and not to anything
-that arrives at its addresses: it is a property of the reader, not of the payload, since whatever is met in each
-direction cancels from every single reading. The payload reader, the central sweep, receives amounts, and their law is
-the payload's. This is why the readers are named by what they receive. A lighthouse is such a sweep: its lamp turns, and
-the shore records the lamp's addresses laid on a line. Where instead many sources happen to be spread evenly in angle
-and a reader counts what arrives, the same shape is the payload's density over directions, a property of the world, not
-of any reader. This gives a reason for the Cauchy's best-known peculiarity. Its median exists and sits at the corner,
-because a median depends only on order, which is a property of addresses. Its mean does not exist, because a mean is a
-sum of sizes, a question about the payload, and addresses carry no size. Neither property needs the circle or the
-uniform turn: any sweep that treats the two parties alike puts its median at the corner and, if it reaches the horizon,
-has no mean; the uniform turn gives the Cauchy's exact shape. The same split decides what reaches the payload reader.
-One stream of readings fixes the course of a relation, not its parties. The median is had only by a reader that holds
-its readings at once. Payloads closer together than the reader's resolution arrive as their centroid, a sum.
+(§2). Other weights are coherent, but each counts the turn against something else, a clock, a screen or what arrives,
+and where such a weight treats the two parties alike, what survives is the median at the corner (Theorem 6(e)). We show
+that the distribution belongs entirely to the address reader, the inscribed sweep, and not to anything that arrives at
+its addresses: it is a property of the reader, not of the payload, since whatever is met in each direction cancels from
+every single reading. The payload reader, the central sweep, receives amounts, and their law is the payload's. This is
+why the readers are named by what they receive. A lighthouse is such a sweep: its lamp turns, and the shore records the
+lamp's addresses laid on a line. Where instead many sources happen to be spread evenly in angle and a reader counts what
+arrives, the same shape is the payload's density over directions, a property of the world, not of any reader. This gives
+a reason for the Cauchy's best-known peculiarity. Its median exists and sits at the corner, because a median depends
+only on order, which is a property of addresses. Its mean does not exist, because a mean is a sum of sizes, a question
+about the payload, and addresses carry no size. Neither property needs the circle or the uniform turn: any sweep that
+treats the two parties alike puts its median at the corner and, if it reaches the horizon, has no mean; the uniform turn
+gives the Cauchy's exact shape. The same split decides what reaches the payload reader. One stream of readings fixes the
+course of a relation, not its parties. The median is had only by a reader that holds its readings at once. Payloads
+closer together than the reader's resolution arrive as their centroid, a sum.
 
 ## 1. Introduction
 

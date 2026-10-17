@@ -22,6 +22,12 @@ is proposed, for Tom to decide:
   has no other measure (§2)", add: "Other weights are coherent, but each counts the turn against something else, a
   clock, a screen or what arrives, and what survives them is the median at the corner (Theorem 6(e))."
 
+*Made (17 Oct, Tom: "ok, you can integrate chatgpt comments if you agree."; SPN R334):* edit A, worded "Other weights
+are coherent, but each counts the turn against something else, a clock, a screen or what arrives, and where such a weight
+treats the two parties alike, what survives is the median at the corner (Theorem 6(e))." The clause "where such a weight
+treats the two parties alike" was added in the making: Theorem 6(e) keeps the median at the corner only for
+reciprocal-symmetric weights. Nothing else in the review asked for a change.
+
 Its closing verdict, that the Cauchy is the construction's result and not a claim that the room contains a Cauchy
 distribution, is the paper's (Theorem 6; the objects are payload).
 

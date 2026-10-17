@@ -780,6 +780,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   What the two reads return (R333; Tom: "the two reads can recover the true writer's breadth, but that requires
   parallex"; "Your clarification is correct"): from one standpoint the limits' product, the writer's 1, the frame at no
   size; parallax places it at V*/H; one amount carried in, the unit. In "Three vantages".
+  Review 17 (ChatGPT, 17 Oct, of version 31, 9.2/10, `plans/ofs-review-17.md`; SPN R334): "uniform by definition" means
+  measured by its own turning, not that other weights are impossible; edit A in the introduction (other weights are
+  coherent, each a count against a clock, a screen or what arrives; reciprocal-symmetric ones keep the corner, 6(e)).
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
