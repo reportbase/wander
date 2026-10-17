@@ -2172,6 +2172,28 @@ addresses from the one, the amounts from the other, and the unit carried in from
 directions are two angles, the altitude and the azimuth (§2), and what arrives along each is still a radius in the one
 unit no reading fixes.
 
+**A survey: many readings, one amount.** Triangulation divides the labour exactly so. Snellius measured an arc of the
+meridian, about 130 km from Alkmaar to Bergen op Zoom, as a chain of triangles whose angles he read from church towers,
+and scaled the whole chain from one short base near Leiden (Snellius 1617). Roy's triangulation, which joined Greenwich
+to Paris and began the Ordnance Survey, read its angles with a theodolite from hill to hill and took its scale from one
+base on Hounslow Heath, about 8.4 km, measured with rods through the summer of 1784 (Roy 1785). Every angle is a
+direction read at a standpoint, a reading in the sense above, and the network of angles fixes the figure up to its size
+and no further, however many angles are read (Propositions 8 and 11). The base is the one amount carried in, found by
+moving along the ground, and it writes every side of every triangle at once, in the base's own unit. A second base, as
+Roy measured one on Romney Marsh, adds nothing to the scale: it checks the angles that carried the first base's length
+to it. The costs fall where the geometry puts them: each angle needed only an instrument and a standpoint, while the
+base needed the ground itself, crossed rod by rod, and one was enough to write the whole. The finished map is the
+written thing, a completed representation drawn from no standpoint, and its scale bar is the base.
+
+**The test: scale the world.** Whether a record is read or written can be checked without asking how it was made.
+Multiply every breadth and distance in the world by one factor k. A reading does not change: a direction, each angle of
+the survey, a photograph, the reader of ratios' [h : v], the shape the reader of the payload holds. A writing changes by
+k: a dimension on a floor plan, the length the map's scale bar states, the length of the base. The radii the reader of
+the payload receives also move by k, but in a unit it never received (above), so they state no size, and what it can
+state, the shape, does not move. This is Proposition 8 used as a test: what scaling leaves unchanged is geometry, and
+what it moves, in a named unit, is an amount that had to be carried in. A record that scaling would not change cannot
+contain the world's size, however carefully it was made.
+
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
 change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the
@@ -2721,6 +2743,9 @@ Parker, M. C. and Jeynes, C. (2023). A maximum entropy resolution to the wine/wa
 Pitman, E. J. G. and Williams, E. J. (1967). Cauchy-distributed functions of Cauchy variates. *Annals of Mathematical
 Statistics* 38(3), 916–918.
 
+Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions of the Royal
+Society of London* 75.
+
 Saint-Vincent, G. de (1647). *Opus geometricum quadraturae circuli et sectionum coni*. Antwerp.
 
 Schwartz, E. L. (1977). Spatial mapping in the primate sensory projection: analytic structure and relevance to
@@ -2735,6 +2760,8 @@ numerical quantity. *Psychological Science* 14(3), 237–243.
 Sivia, D. S. and Skilling, J. (2006). *Data Analysis: A Bayesian Tutorial*, 2nd ed. Oxford University Press.
 
 Smart, W. M. (1977). *Textbook on Spherical Astronomy*, 6th ed., revised by R. M. Green. Cambridge University Press.
+
+Snellius, W. (1617). *Eratosthenes Batavus, de terrae ambitus vera quantitate*. Leiden.
 
 Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Fincke,
 Berlin.

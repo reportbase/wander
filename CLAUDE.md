@@ -692,6 +692,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   turn's distribution function; the capped reading the ℓ∞ cut). Splits: facing only the direction faced (it turns),
   a sign-region a quadrant/orthant/octant, the divisor a denominator; home only the standpoint, v/h = 0 zero; "the
   share of a reading" the capped reading; ε the resolution, not a step. Keep these senses apart in OFS.
+  Writers made intuitive (16 Oct, SPN R314; Tom: "yes"): OFS §9 "A survey: many readings, one amount" (Snellius 1617;
+  Roy's Hounslow Heath base, 1784, Roy 1785: thousands of angles read, one base walked writes every side; a second
+  base checks, adds no scale) and "The test: scale the world" (a reading unchanged by k, a writing changed by k; the
+  payload reader's radii move but in no received unit). The perception cases (tilt-shift, forced perspective, the
+  Ames room, "banana for scale") are in SPN R314 only.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
