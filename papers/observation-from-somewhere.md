@@ -83,13 +83,12 @@ world. It is a geometry of the reader's own
 found there.
 
 **What is new, and what is not.** That coordinates depend on the observer is old: a coordinate system is a choice, and a
-change of coordinates changes every coordinate. What is new here is where the scheme comes from. A coordinate system is
-laid on a space already written in full. It presupposes the whole, with every length already in one scale, and a change
-of coordinates carries every amount along with it. A situated reader has no such space to lay coordinates on. It has its
-own breadth and the relations it can form from where it stands, and from these alone it builds its places before
-anything is read. Three things then have to be kept apart: - the *object*, whatever exists independently of any reading
-of it; - the *address*, the place in the reader's scheme at which something can be met; - the *payload*, the magnitude
-met there.
+change of coordinates changes every coordinate. What is new here is where this reader's scheme comes from: it is built
+from the relations available at its standpoint, its own breadth and what it can relate to it, before any payload
+arrives. Three things then have to be kept apart:
+- the *object*, whatever exists independently of any reading of it;
+- the *address*, the place in the reader's scheme at which something can be met;
+- the *payload*, the magnitude met there.
 
 A change of coordinates moves addresses and payloads together. The separation here lets either change without the other.
 Changing what arrives leaves every address in place (Theorem 6), and changing the reader's sweep changes its addresses
@@ -1573,9 +1572,9 @@ navigator's bearings on the chart. Each keeps the turn true only when its two di
   east is drawn at 45° everywhere.
 
 What each leaves free is the size: the lamp's distance, which the picture can be drawn at any value of, and the local
-scale sec φ, which Mercator lets grow toward the poles. Both are zooms, which change every length and no angle. That
-is the distinction this paper draws throughout: the drawing V = H is required, and the true size is one number the
-readings do not fix.
+scale sec φ, which Mercator lets grow toward the poles. Both are zooms, which change every length and no angle. That is
+the distinction this paper draws throughout: the drawing V = H is required for the turn and its readings, and the true
+size is one number the readings do not fix.
 
 Mercator's choice (keep the angles, give up the areas) is the one this paper's reader makes: it keeps the drawing and
 leaves the size to be estimated. The familiar complaint about his map, that it draws Greenland as large as Africa, is a
@@ -1688,11 +1687,11 @@ scale 1. That needs no knowledge of the true V*, since h and v each run from 0 t
 which the Cauchy requires (Proposition 5(d)). Read in amounts against the true breadth it is another Cauchy, of
 (v·V*)/(h·H) = (v/h)·(V*/H), with scale V*/H. Writing that one as the standard Cauchy, of scale 1, silently takes the
 mountain's true breadth to be the drawn one: it turns a situated reader into situation 1, the circle, without knowing
-V*. A situated reader must draw V = H (§5); the confusion is taking the drawing for a measurement. Taking the mean of
-the readings then applies an operation on amounts to addresses, and the missing mean is what that costs: it comes from
-the unbounded axis of the reading, not from the world. Where a Cauchy is met as data rather than laid as addresses, an
-amount has been formed from the reading by a known length, and the distribution's scale is that length, not 1 by
-assumption.
+V*. A situated reader whose sweep is to be a turn must draw V = H (§5); the confusion is taking the drawing for a
+measurement. Taking the mean of the readings then applies an operation on amounts to addresses, and the missing mean is
+what that costs: it comes from the unbounded axis of the reading, not from the world. Where a Cauchy is met as data
+rather than laid as addresses, an amount has been formed from the reading by a known length, and the distribution's
+scale is that length, not 1 by assumption.
 
 ### 7.3 In the picture of the hand
 
@@ -2151,8 +2150,9 @@ division, since only unitless groups of amounts enter a law (Buckingham 1914).
 So three numbers are easily confused, and the geometry needs none of them:
 - the reader's own breadth H, which it chooses for itself and which only moves what sits at its corner, and so what
   it reads finely (a zoom, §8);
-- its estimate of the other party's true breadth, ĉH, the one arbitrary number in sizing (above), best set at
-  the median of what it knows (Proposition 13); the drawing itself, V = H, is required and is not a number to choose;
+- its estimate of the other party's true breadth, ĉH, the one arbitrary number in sizing (above), best set at the median
+  of what it knows (Proposition 13); the drawing itself, V = H, is required for the turn and the Cauchy at the corner
+  (§5) and is not a number to choose;
 - the shared unit, which is neither a reading nor a guess but a relation measured beforehand and agreed between
   readers, needed for talking.
 
@@ -2569,7 +2569,7 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    Each has g(θ) + g(90° − θ) = 1. They agree at zero, at the corner (½) and at the horizon (1), and part in
    between. So the two ends, the reciprocal and its symmetry fix the corner and the median, and leave the scale between
    them free. Only the circle is uniform in the turn, and the uniform turn is what gives g = 2θ/π, the Cauchy's exact
-   shape and the factor 2/π: the premise selects the geometry, and classical geometry supplies the factor. None of the
+   shape and the factor 2/π: the premise selects the geometry, and the circle supplies the factor. None of the
    three has a mean. The mean of the readings below s grows, far out, by a fixed amount each time s grows tenfold (the
    last column), because each weight reaches the horizon. The horizon condition does real work: the circle weighted by
    sin² 2θ also treats the two parties alike and keeps its median at the corner, but it vanishes at zero and at the
@@ -2682,12 +2682,9 @@ pair and its corner appear in two-path interference: with the paths' amplitudes 
 visibility is at most 2hv and the which-path predictability is |h² − v²|, the sine and cosine of the facing, so that
 their squares sum to at most 1 (Greenberger and Yasin 1988; Englert 1996). In the logarithm of the amplitudes' ratio
 they are its sech and tanh (Bramon, Garbarino and Hiesmayr 2004), and the visibility is whole only where the two
-amplitudes are equal, at the corner. Nagel (1986) called a representation that abstracts from every standpoint the view
-from nowhere, and Haraway (1988) called the ideal of seeing everything from nowhere "the god trick"; the writer here is
-neither, since it holds the whole only by walking it or by carrying in an amount measured beforehand. Van Fraassen
-(2008) argues that the measurer's own position enters measurement irreducibly, as the reader's does here. In terms of
-limits, a writer's account lets the resolution go to zero first and then lets the count of things grow without bound; a
-situated reader has a fixed resolution and an unknown count.
+amplitudes are equal, at the corner. Van Fraassen (2008) argues that the measurer's own position enters measurement
+irreducibly, as the reader's does here. In terms of limits, a writer's account lets the resolution go to zero first and
+then lets the count of things grow without bound; a situated reader has a fixed resolution and an unknown count.
 
 What we claim is not the pieces but their reading as one structure, set by what a reader knows of two breadths, and in
 particular that the Cauchy distribution is a situated reader's addresses, not its payload. Whether this is a better way
@@ -2819,9 +2816,6 @@ Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *A
 Haldane, J. B. S. (1932). A note on inverse probability. *Proceedings of the Cambridge Philosophical Society* 28(1),
 55–61.
 
-Haraway, D. (1988). Situated knowledges: the science question in feminism and the privilege of partial perspective.
-*Feminist Studies* 14(3), 575–599.
-
 Herschel, J. F. W. (1850). Quetelet on probabilities. *Edinburgh Review* 92, 1–57.
 
 ISO 68-1 (1998). *ISO general purpose screw threads — Basic profile — Part 1: Metric screw threads*. International
@@ -2897,8 +2891,6 @@ Möbius, A. F. (1827). *Der barycentrische Calcul*. Barth, Leipzig.
 
 Munro, J. I. and Paterson, M. S. (1980). Selection and sorting with limited storage. *Theoretical Computer Science*
 12(3), 315–323.
-
-Nagel, T. (1986). *The View from Nowhere*. Oxford University Press.
 
 Norton, J. D. (2008). Ignorance and indifference. *Philosophy of Science* 75(1), 45–68.
 

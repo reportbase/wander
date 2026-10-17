@@ -790,6 +790,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "the view from nowhere" and "the completed view" are "the writer's vantage" throughout; the writer holds the true
   breadth by walking the whole or carrying in a measured amount; Nagel and Haraway kept in §11.3 as a contrast.
   Supersedes R296's "gods eye view". Older entries above that say "view from nowhere" describe the text before R335.
+  Review 18 (ChatGPT, 17 Oct, of version 32, 9.3/10, `plans/ofs-review-18.md`; SPN R336): Nagel and Haraway removed from
+  §11.3 (and the references); §1 no longer characterizes coordinate systems in general; V = H's "required" tied to the
+  turn and the Cauchy in three more places; R335's rewrap had merged §1's object/address/payload list into prose, restored.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
