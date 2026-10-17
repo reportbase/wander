@@ -284,6 +284,19 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and farther the other. Presets: the head (0.1 m, a quarter turn: 100 m at 1 mrad), the eye alone (7.6 mm, 10°, 1
   arcmin: 4.5 m), a pure turn. `?r=&t=&eps=mrad|arcmin&fix=1&known=1`; hook `window.__headTurn` (`bearing`,
   `triangulate`, `parallax`, `reach`, `shift`, `posts`, `set`, `state`). Not in the flying page.
+- `recover.html`: **recovering a body** (17 Oct 2026, Tom: "lets do a stand alone demo for this. show the unit sphere, the
+  wedge on the sphere. and the 3d shape that it recovers"; SPN R348, R349; RSH, `plans/rsh-plan.md`), full screen, three.js
+  like `wedge.html` (the same pinned CDN version and test route). A Levels body (games.html `bodyOf`, copied; every band
+  in full) in the middle; to its left the census, one reader at the centre sweeping 4,096 directions (a Fibonacci lattice),
+  each reading the direction to the point it meets, drawn at H: the unit sphere, the same for every body; on it the wedge,
+  one octant placed by the longitude and latitude of its triple corner and a turn (as `wedge.html` step 7), its readings
+  [h : v : v₂], an eighth of the directions, v ≤ h for half, the near field in both a third, its part of the body lit; to
+  the right the three readers' body in |AB| (a triangle 0.12 of the least half-extent about the centre, the squarest pair's
+  rays crossed), drawn at one length, and in step 5 the teal points with |AB| carried in landing on the body. Five steps
+  (the body, one reader, the wedge, three readers, one length); body ◀ ▶ and another; scale the world (readings and points
+  in |AB| unmoved). `?step=1..5&body=&lon=&lat=&roll=&k=<log10 k>`; hook `window.__recover` (`recover`, `bodyFrame`,
+  `bodyOf`, `wedgeQuat`, `inWedgeOf`, `wedgeReadings`, `sharesOf`, `set`, `state`, `frames`, `webgl`, `hud`). Not in the
+  flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -387,7 +400,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, recovering a body, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -1250,7 +1263,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "Recover a body", hook `_debug.recover(idx, k)`), driven from here in headless Chromium. One reader at a body's centre
   reads the sweep's own [h : v : v₂], the same for every body, the census one sphere; three readers inside, directions only,
   give the body to 10⁻¹³ in |AB|, stretch included; |AB| gives the size; k moves nothing. Nothing killed but P3's census
-  clause in its letter (the Fibonacci lattice's own 4.5·10⁻⁵, my set-up).
+  clause in its letter (the Fibonacci lattice's own 4.5·10⁻⁵, my set-up). `recover.html` shows it (R349).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -1557,6 +1570,10 @@ In short:
   37. **head-turn.html:** a pure turn places nothing and shifts nothing; the head (10 cm off its axis, a quarter turn) reaches
       100 m at 1 mrad and places every post inside it exactly; 30° and 150° reach alike, 50 m; the eye alone 1–10 m at
       1 arcmin; fixating 2 m, nearer posts shift one way and farther the other.
+
+  38. **recover.html:** one reader's readings are the sweep's own directions to 10⁻¹², the same for two bodies; the wedge
+      at three positions holds an eighth of the directions, v ≤ h for half, the near field in both a third; three readers
+      place every point in |AB| to 10⁻⁹, ×10³ moving none; WebGL drew frames; step 5 says "the body itself".
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

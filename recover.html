@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Recovering a body</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    recover.html: recovering a 3D body from its addresses (17 October 2026; Tom: "lets do a stand alone demo for this.
+    show the unit sphere, the wedge on the sphere. and the 3d shape that it recovers"). RSH (plans/rsh-plan.md; SPN R348,
+    R349), the lab in reportbase/games' Levels (LEVELS_APP's recover), after draw's RCC and UDV labs.
+
+    Keep the case. h, v, v₂ are unit relations; a reading is a direction [h : v : v₂]; H is the reader's drawn length;
+    |AB| is the readers' own spacing, an amount none of them reads; k scales the world (V*, the body's true size, with it).
+      - The body is one of Levels' (games.html bodyOf, copied: four bands of five waves, frequency 3, 6, 12, 24, each band
+        weighed 0.3–1.7, stretched by s per axis), every band in full: c + diag(s)·R(u)·u from its centre c.
+      - One reader at the centre sweeps 4,096 directions, even over the sphere (a Fibonacci lattice). Each meets the
+        surface once; its reading is the direction itself, so the readings are the sweep's own, the same for every body,
+        and the census (each drawn at the one length H) is the unit sphere: nothing of the body, its stretch included.
+      - The wedge: one observation is one octant of directions, h, v, v₂ ≥ 0 in the wedge's own frame (wedge.html), placed
+        on the sphere by a rotation (where its triple corner points, longitude and latitude, and a turn about that). Its
+        readings are [h : v : v₂]; uniform over the sphere they put v ≤ h for half and the near field in both for a third
+        (WDG). The part of the body it covers is the part its rays meet.
+      - Three readers inside (a triangle 0.12 of the body's least half-extent about the centre, tipped out of every axis
+        plane), facing one frame, hold only the direction to each surface point (which point is given). A point is placed
+        where the rays of the two that see it squarest cross. Laid in |AB| it is the body up to its size (violet, drawn at
+        a length of the readers' choosing); with |AB| carried in, the body (teal, on it).
+    three.js 0.160.0 (MIT) from the jsDelivr CDN through an import map, as in wedge.html; the smoke test serves the same
+    version from node_modules.
+    Links: ?step=1..5&body=<id>&lon=&lat=&roll=&k=<log10 k>
+    Test hook: window.__recover.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #07070b; --panel: rgba(18,18,26,0.80); --line: rgba(255,255,255,0.10);
+        --ink: #c8c8d0; --dim: #8a8a96; --bright: #ece9f4; --gold: #d4a052; --teal: #8ce6cd; --violet: #b59cf0; --red: #e8826d }
+    * { box-sizing: border-box }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground) }
+    body { color: var(--ink); font: 13.5px/1.5 'DM Mono', ui-monospace, monospace;
+        background: radial-gradient(120% 90% at 62% 38%, #15151f 0%, #0a0a10 55%, #050508 100%) }
+    #stage { position: fixed; inset: 0; display: block; width: 100vw; height: 100vh; touch-action: none; cursor: grab }
+    .glass { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+        -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.45) }
+    #panel { position: fixed; top: 14px; left: 14px; width: min(372px, calc(100vw - 28px)); max-height: calc(100vh - 28px);
+        overflow: auto; padding: 14px 16px 12px; z-index: 3 }
+    h1 { font: 400 26px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 4px }
+    .sub { color: var(--dim); margin: 0 0 10px; font-size: 12px }
+    .steps { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 8px }
+    button { font: inherit; color: var(--bright); background: rgba(255,255,255,0.04); border: 1px solid var(--line);
+        border-radius: 7px; padding: 5px 9px; cursor: pointer; touch-action: manipulation; min-height: 32px }
+    button:hover { border-color: rgba(255,255,255,0.25) }
+    button.on { border-color: var(--gold); color: var(--gold); background: rgba(212,160,82,0.08) }
+    .steps button { min-width: 34px }
+    #caption { color: var(--ink); margin: 2px 0 10px; min-height: 7.4em }
+    #caption b { color: var(--bright); font-weight: 500 }
+    .ctl { display: grid; grid-template-columns: 7.2em 1fr 5.6em; gap: 6px 8px; align-items: center; margin: 6px 0 }
+    .ctl label { color: var(--dim) }
+    .ctl output { color: var(--bright); text-align: right; font-size: 12px }
+    input[type=range] { width: 100%; min-width: 0; accent-color: var(--gold) }
+    .row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .violet { color: var(--violet) } .red { color: var(--red) } .dim { color: var(--dim) }
+    #hud { position: fixed; left: 14px; bottom: 14px; max-width: min(620px, calc(100vw - 28px)); padding: 10px 13px;
+        white-space: pre-wrap; font-size: 12px; color: var(--bright); z-index: 2 }
+    #labels { position: fixed; inset: 0; pointer-events: none; z-index: 1 }
+    #labels div { position: absolute; transform: translate(-50%, 0); font-size: 12px; color: var(--dim); white-space: nowrap;
+        text-shadow: 0 1px 3px #000 }
+    #nogl { position: fixed; inset: 0; display: none; place-items: center; color: var(--bright); padding: 24px; text-align: center }
+    #fold { display: none }
+    a { color: var(--teal) }
+    @media (min-width: 761px) { #hud { left: 400px; max-width: calc(100vw - 414px) } }
+    @media (max-width: 760px) {
+        #panel { top: auto; bottom: 10px; left: 10px; width: calc(100vw - 20px); max-height: 50vh; padding: 10px 12px }
+        #panel.folded .more, #panel.folded #caption, #panel.folded .sub { display: none }
+        #labels { display: none }
+        #fold { display: inline-block; float: right; min-height: 28px; padding: 2px 8px }
+        h1 { font-size: 21px }
+        #caption { min-height: 0 }
+        #hud { top: 10px; bottom: auto; left: 10px; max-width: calc(100vw - 20px); max-height: 19vh; overflow: auto; font-size: 10.5px; padding: 6px 8px }
+    }
+    </style>
+    <script type="importmap">{ "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body>
+<canvas id="stage" aria-label="A body, the unit sphere its one reader reads, the wedge on the sphere, and the body recovered from directions"></canvas>
+<div id="labels"></div>
+<div id="panel" class="glass">
+    <button id="fold" aria-label="fold the panel">▾</button>
+    <h1>Recovering a body</h1>
+    <p class="sub">One reader reads only directions: a sphere, the same for every body. Three readers' directions give the body back.</p>
+    <div class="steps" id="steps"></div>
+    <div id="caption"></div>
+    <div class="more">
+        <div class="row"><button id="bPrev">◀ body</button><button id="bNext">body ▶</button><button id="bRand">another body</button><span id="bodyName" class="dim" style="align-self:center"></span></div>
+        <div class="ctl"><label for="lon">wedge: longitude</label><input id="lon" type="range" min="-180" max="180" step="0.5" value="45"><output id="lono"></output></div>
+        <div class="ctl"><label for="lat">latitude</label><input id="lat" type="range" min="-90" max="90" step="0.5" value="35.26"><output id="lato"></output></div>
+        <div class="ctl"><label for="roll">turned</label><input id="roll" type="range" min="-180" max="180" step="0.5" value="0"><output id="rollo"></output></div>
+        <div class="ctl"><label for="lgk">scale the world</label><input id="lgk" type="range" min="-3" max="3" step="0.01" value="0"><output id="lgko"></output></div>
+        <div class="row"><button id="bSweep">sweep</button><button id="bSolid" class="on">body</button><button id="bSpin">turn</button><button id="bReset">reset</button></div>
+        <p class="sub" style="margin:10px 0 0">Drag to look around. Other demos: <a href="wedge.html">the wedge</a>,
+        <a href="sphere-cube.html">the sphere in the cube</a>, <a href="demos.html">all demos</a>. In reportbase/games, Levels' "Recover a body".</p>
+    </div>
+</div>
+<div id="hud" class="glass"></div>
+<div id="nogl"><div>This page needs WebGL to draw the bodies.<br>The arithmetic still runs: see the test hook.</div></div>
+<script>
+setTimeout(() => { if (!window.__recover) { const n = document.getElementById('nogl');
+    n.firstElementChild.innerHTML = 'three.js could not be loaded from cdn.jsdelivr.net.<br>Check the connection and reload.'; n.style.display = 'grid'; } }, 12000);
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// ── the geometry, independent of drawing ────────────────────────────────────────────────────────────────────────
+const RAD = Math.PI / 180;
+const nrm = p => { const l = Math.hypot(p[0], p[1], p[2]); return [p[0] / l, p[1] / l, p[2] / l]; };
+const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+// a Levels body (games.html bodyOf, copied as it is): seeded by its id, four bands of five waves, stretched by s
+function bodyOf(idx){
+    let s = (Math.imul(idx + 1, 2654435761) ^ 0x9e3779b9) >>> 0;
+    const rnd = () => (s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296, waves = [];
+    for (let b = 0; b < 4; b++){ const m = 0.3 + 1.4 * rnd();
+        for (let j = 0; j < 5; j++){ const z = rnd() * 2 - 1, a = rnd() * 2 * Math.PI, q = Math.sqrt(1 - z * z);
+            waves.push({ b, f: 3 * 2 ** b, A: 0.07 / 2 ** b * m, d: [q * Math.cos(a), z, q * Math.sin(a)], ph: rnd() * 2 * Math.PI }); } }
+    const st = [0.85 + 0.3 * rnd(), 0.8 + 0.5 * rnd(), 0.85 + 0.3 * rnd()];
+    const h = rnd(), sat = 0.45 + 0.25 * rnd(), l = 0.52 + 0.14 * rnd();
+    return { waves, s: st, hsl: [h, sat, l] };
+}
+// its frame in its own units, the world scaled by k: centre, stretch, radius R(u), the surface met along d, inside
+function bodyFrame(idx, k = 1){
+    const B = bodyOf(idx), s = B.s.map(x => x * k), c = [0, 0.5 * s[1], 0];
+    const R = u => { let r = 0; for (const w of B.waves) r += w.A * Math.cos(w.f * (u[0] * w.d[0] + u[1] * w.d[1] + u[2] * w.d[2]) + w.ph); return 0.5 * (1 + r); };
+    const surf = u => { const r = R(u); return [c[0] + s[0] * r * u[0], c[1] + s[1] * r * u[1], c[2] + s[2] * r * u[2]]; };
+    const hit = d => surf(nrm([d[0] / s[0], d[1] / s[1], d[2] / s[2]]));
+    const inside = q => { const w = sub(q, c), l = Math.hypot(w[0], w[1], w[2]); if (l < 1e-12) return true; const p = hit(w); return l < Math.hypot(p[0] - c[0], p[1] - c[1], p[2] - c[2]) * (1 - 1e-9); };
+    return { B, s, c, R, surf, hit, inside };
+}
+const N = 4096;
+const LATTICE = (() => { const L = [], ga = Math.PI * (3 - Math.sqrt(5));
+    for (let i = 0; i < N; i++){ const y = 1 - 2 * (i + 0.5) / N, q = Math.sqrt(1 - y * y), a = ga * i; L.push([q * Math.cos(a), y, q * Math.sin(a)]); } return L; })();
+const TRI = [[2, -1, -1], [-1, 2, -1], [-1, -1, 2]].map(nrm);
+// the whole lab: one reader's readings and census, three readers' points in |AB|, as games.html's recover
+function recover(idx, k = 1){
+    const F = bodyFrame(idx, k), m = 0.12 * 0.5 * Math.min(...F.s);
+    const RD = TRI.map(e => [F.c[0] + m * e[0], F.c[1] + m * e[1], F.c[2] + m * e[2]]);
+    const AB = Math.hypot(...sub(RD[1], RD[0]));
+    const P = LATTICE.map(d => F.hit(d));
+    let rdErr = 0, meanR = 0;
+    const reads = P.map((p, i) => { const r = nrm(sub(p, F.c)); for (let j = 0; j < 3; j++) rdErr = Math.max(rdErr, Math.abs(r[j] - LATTICE[i][j])); meanR += Math.hypot(...sub(p, F.c)); return r; });
+    meanR /= N;
+    const seen = p => RD.map(a => { for (let t = 1; t < 32; t++){ if (!F.inside([a[0] + (p[0] - a[0]) * t / 32, a[1] + (p[1] - a[1]) * t / 32, a[2] + (p[2] - a[2]) * t / 32])) return false; } return true; });
+    let fewest = 3, recErr = 0; const rec = [], pair = [];
+    for (const p of P){
+        const S = seen(p), dirs = RD.map(a => nrm(sub(p, a))), who = [0, 1, 2].filter(i => S[i]); fewest = Math.min(fewest, who.length);
+        if (who.length < 2){ rec.push(null); pair.push(null); continue; }
+        let best = null;
+        for (let x = 0; x < who.length; x++) for (let y = x + 1; y < who.length; y++){ const a = dirs[who[x]], b = dirs[who[y]];
+            const cr = Math.hypot(a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]); if (!best || cr > best.cr) best = { i: who[x], j: who[y], cr }; }
+        const A = RD[best.i].map(x => x / AB), Bp = RD[best.j].map(x => x / AB), a = dirs[best.i], b = dirs[best.j];
+        const w0 = sub(A, Bp), ab = a[0] * b[0] + a[1] * b[1] + a[2] * b[2], dd = a[0] * w0[0] + a[1] * w0[1] + a[2] * w0[2], ee = b[0] * w0[0] + b[1] * w0[1] + b[2] * w0[2], den = 1 - ab * ab;
+        const t = (ab * ee - dd) / den, u = (ee - ab * dd) / den;
+        const q = [0, 1, 2].map(i => 0.5 * (A[i] + t * a[i] + Bp[i] + u * b[i]));
+        rec.push(q); pair.push([best.i, best.j]);
+        recErr = Math.max(recErr, Math.hypot(q[0] - p[0] / AB, q[1] - p[1] / AB, q[2] - p[2] / AB) / (meanR / AB));
+    }
+    return { idx, k, F, P, reads, rec, pair, RD, AB, meanR, rdErr, recErr, fewest };
+}
+// the wedge on the sphere: a rotation placing the first octant's triple corner at (longitude, latitude), turned about it
+function wedgeQuat(lon, lat, roll){
+    const t = new THREE.Vector3(Math.cos(lat * RAD) * Math.cos(lon * RAD), Math.sin(lat * RAD), Math.cos(lat * RAD) * Math.sin(lon * RAD));
+    const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(1, 1, 1).normalize(), t);
+    return new THREE.Quaternion().setFromAxisAngle(t, roll * RAD).multiply(q);
+}
+function inWedgeOf(q){ const qi = q.clone().invert(), v = new THREE.Vector3();
+    return d => { v.set(d[0], d[1], d[2]).applyQuaternion(qi); return v.x >= 0 && v.y >= 0 && v.z >= 0; }; }
+function wedgeReadings(q){ const qi = q.clone().invert(), v = new THREE.Vector3(), out = [];
+    for (const d of LATTICE){ v.set(d[0], d[1], d[2]).applyQuaternion(qi); if (v.x >= 0 && v.y >= 0 && v.z >= 0) out.push([v.x, v.y, v.z]); }
+    return out; }
+function sharesOf(R){ let vh = 0, both = 0; for (const [h, v, v2] of R){ if (v <= h) vh++; if (v <= h && v2 <= h) both++; } return { n: R.length, vh: vh / R.length, both: both / R.length }; }
+
+// ── state ─────────────────────────────────────────────────────────────────────────────────────────────────────
+const P0 = new URLSearchParams(location.search);
+const num = (k, d) => { const v = parseFloat(P0.get(k)); return Number.isFinite(v) ? v : d; };
+const S = { step: Math.max(1, Math.min(5, Math.round(num('step', 1)))), body: Math.max(0, Math.round(num('body', 0))),
+    lon: num('lon', 45), lat: num('lat', 35.26), roll: num('roll', 0), lgk: num('lgk', num('k', 0)), solid: true, spin: false, sweep: 1 };
+let R = recover(S.body), RK = null;
+
+// ── drawing ───────────────────────────────────────────────────────────────────────────────────────────────────
+const canvas = document.getElementById('stage');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); } catch (e) { document.getElementById('nogl').style.display = 'grid'; }
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(38, 1, 0.01, 100);
+camera.position.set(0.4, 1.5, 5.2);
+const controls = renderer ? new OrbitControls(camera, canvas) : null;
+if (controls){ controls.enableDamping = true; controls.target.set(0, 0, 0); }
+scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+const sun = new THREE.DirectionalLight(0xffffff, 1.4); sun.position.set(3, 5, 4); scene.add(sun);
+const GAP = 1.75;                                     // the three places across: census, body, body up to size
+const PL = { census: new THREE.Vector3(-GAP, 0, 0), body: new THREE.Vector3(0, 0, 0), rec: new THREE.Vector3(GAP, 0, 0) };
+const ROOT = new THREE.Group(); scene.add(ROOT);
+const G = {};
+function cloud(n, size){ const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(n * 3), 3));
+    g.setAttribute('color', new THREE.BufferAttribute(new Float32Array(n * 3), 3));
+    return new THREE.Points(g, new THREE.PointsMaterial({ size, vertexColors: true, sizeAttenuation: true, transparent: true, opacity: 0.95, depthWrite: false })); }
+const C = { gold: new THREE.Color(0xd4a052), goldDim: new THREE.Color(0x4a3a22), teal: new THREE.Color(0x8ce6cd), tealDim: new THREE.Color(0x2b4a42),
+    violet: new THREE.Color(0xb59cf0), violetDim: new THREE.Color(0x3a3150), red: new THREE.Color(0xe8826d), white: new THREE.Color(0xe8e6f0) };
+// the census sphere (the reader's drawing, radius H = 0.5 here), its faint unit sphere and the wedge on it
+const HR = 0.5;
+G.sphereWire = new THREE.Mesh(new THREE.SphereGeometry(HR, 48, 24), new THREE.MeshBasicMaterial({ color: 0x3a3a52, wireframe: true, transparent: true, opacity: 0.18 }));
+G.census = cloud(N, 0.022);
+G.wedgeGroup = new THREE.Group();
+(() => {
+    const patch = new THREE.SphereGeometry(HR * 1.004, 32, 16, 0, Math.PI / 2, 0, Math.PI / 2);   // one octant
+    // three.js's sphere: x = −cos φ sin θ, z = sin φ sin θ; φ in [0, π/2] gives x ≤ 0, so turn it to x, y, z ≥ 0
+    patch.rotateY(Math.PI / 2);
+    const m = new THREE.Mesh(patch, new THREE.MeshBasicMaterial({ color: 0xd4a052, transparent: true, opacity: 0.16, side: THREE.DoubleSide, depthWrite: false }));
+    G.wedgeGroup.add(m);
+    const arc = (a, b) => { const pts = []; for (let i = 0; i <= 48; i++){ const t = i / 48 * Math.PI / 2; pts.push(a.clone().multiplyScalar(Math.cos(t)).add(b.clone().multiplyScalar(Math.sin(t))).multiplyScalar(HR * 1.006)); }
+        return new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: 0xd4a052 })); };
+    const X = new THREE.Vector3(1, 0, 0), Y = new THREE.Vector3(0, 1, 0), Z = new THREE.Vector3(0, 0, 1);
+    G.wedgeGroup.add(arc(X, Y), arc(Y, Z), arc(Z, X));
+    // the three parties' edges (h, v, v₂) from the centre, and the triple corner [1 : 1 : 1]
+    const ray = (d, col, len = HR * 1.35) => new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), d.clone().multiplyScalar(len)]), new THREE.LineBasicMaterial({ color: col }));
+    G.wedgeGroup.add(ray(X, 0xd4a052), ray(Y, 0xd4a052), ray(Z, 0xd4a052), ray(new THREE.Vector3(1, 1, 1).normalize(), 0xffffff, HR * 1.2));
+})();
+G.censusGroup = new THREE.Group(); G.censusGroup.add(G.sphereWire, G.census, G.wedgeGroup); G.censusGroup.position.copy(PL.census); ROOT.add(G.censusGroup);
+// the body: its true surface, its points met by the sweep, the three readers and some of their rays
+G.bodyGroup = new THREE.Group(); G.bodyGroup.position.copy(PL.body); ROOT.add(G.bodyGroup);
+G.bodyMat = new THREE.MeshStandardMaterial({ color: 0x888888, roughness: 0.7, metalness: 0.05, transparent: true, opacity: 0.9 });
+G.bodyMesh = new THREE.Mesh(new THREE.SphereGeometry(1, 96, 48), G.bodyMat); G.bodyGroup.add(G.bodyMesh);
+G.met = cloud(N, 0.02); G.bodyGroup.add(G.met);
+G.readers = cloud(3, 0.08); G.readers.material.depthTest = false; G.readers.renderOrder = 5; G.bodyGroup.add(G.readers);
+G.sweepRays = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: 0xd4a052, transparent: true, opacity: 0.35 })); G.bodyGroup.add(G.sweepRays);
+G.triRays = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: 0xe8826d, transparent: true, opacity: 0.5, depthTest: false })); G.triRays.renderOrder = 4; G.bodyGroup.add(G.triRays);
+// the readers' body in |AB| alone, drawn at a length of their choosing (violet)
+G.recGroup = new THREE.Group(); G.recGroup.position.copy(PL.rec); ROOT.add(G.recGroup);
+G.recCloud = cloud(N, 0.02); G.recGroup.add(G.recCloud);
+const AB_DRAWN = 0.08;                                    // |AB| drawn at this length, for every body: the readers' own unit
+
+function bodyGeometry(){
+    const F = R.F, g = G.bodyMesh.geometry, pos = g.attributes.position, n0 = g.userData.n0 || (g.userData.n0 = Float32Array.from(pos.array));
+    for (let i = 0; i < pos.count; i++){ const u = nrm([n0[i * 3], n0[i * 3 + 1], n0[i * 3 + 2]]), p = F.surf(u); pos.setXYZ(i, p[0] - F.c[0], p[1] - F.c[1], p[2] - F.c[2]); }
+    pos.needsUpdate = true; g.computeVertexNormals();
+    const [h, s, l] = F.B.hsl; G.bodyMat.color.setHSL(h, s, l);
+}
+function draw(){
+    const q = wedgeQuat(S.lon, S.lat, S.roll), inW = inWedgeOf(q), F = R.F, c = F.c, upto = Math.round(N * S.sweep);
+    G.wedgeGroup.quaternion.copy(q);
+    G.wedgeGroup.visible = S.step >= 3;
+    // census: each reading drawn at H about the reader
+    const cp = G.census.geometry.attributes.position, cc = G.census.geometry.attributes.color;
+    const mp = G.met.geometry.attributes.position, mc = G.met.geometry.attributes.color;
+    const rp = G.recCloud.geometry.attributes.position, rc = G.recCloud.geometry.attributes.color;
+    const cAB = c.map(x => x / R.AB);
+    let nr = 0;
+    for (let i = 0; i < N; i++){
+        const d = R.reads[i], w = inW(d), shown = i < upto;
+        cp.setXYZ(i, d[0] * HR, d[1] * HR, d[2] * HR);
+        const col = !shown ? C.goldDim : S.step >= 3 ? (w ? C.gold : C.goldDim) : C.gold; cc.setXYZ(i, shown ? col.r : 0, shown ? col.g : 0, shown ? col.b : 0);
+        const p = R.P[i];
+        if (S.step >= 5 && R.rec[i]){ const r = R.rec[i]; mp.setXYZ(i, r[0] * R.AB - c[0], r[1] * R.AB - c[1], r[2] * R.AB - c[2]); const cl = w ? C.teal : C.tealDim; mc.setXYZ(i, cl.r, cl.g, cl.b); }
+        else { mp.setXYZ(i, p[0] - c[0], p[1] - c[1], p[2] - c[2]); const cl = S.step >= 3 && w ? C.gold : C.white; const on = shown && S.step >= 2 && (S.step < 4 || w); mc.setXYZ(i, on ? cl.r * 0.9 : 0, on ? cl.g * 0.9 : 0, on ? cl.b * 0.9 : 0); }
+        const r = R.rec[i];
+        if (r){ rp.setXYZ(i, (r[0] - cAB[0]) * AB_DRAWN, (r[1] - cAB[1]) * AB_DRAWN, (r[2] - cAB[2]) * AB_DRAWN);
+            const cl = S.step >= 4 ? (w ? C.violet : C.violetDim) : new THREE.Color(0, 0, 0); rc.setXYZ(i, cl.r, cl.g, cl.b); nr++; }
+    }
+    cp.needsUpdate = cc.needsUpdate = mp.needsUpdate = mc.needsUpdate = rp.needsUpdate = rc.needsUpdate = true;
+    G.census.visible = S.step >= 2; G.sphereWire.visible = S.step >= 2;
+    G.recCloud.visible = S.step >= 4;
+    G.met.visible = S.step >= 2;
+    G.bodyMesh.visible = S.solid; G.bodyMat.opacity = S.step >= 4 ? 0.3 : S.step >= 2 ? 0.55 : 0.92;
+    // readers and rays
+    const rdp = G.readers.geometry.attributes.position, rdc = G.readers.geometry.attributes.color;
+    R.RD.forEach((a, j) => { rdp.setXYZ(j, a[0] - c[0], a[1] - c[1], a[2] - c[2]); rdc.setXYZ(j, C.red.r, C.red.g, C.red.b); });
+    rdp.needsUpdate = rdc.needsUpdate = true; G.readers.visible = S.step >= 4;
+    const sw = [];
+    if (S.step === 2 || S.step === 3) for (let i = 0; i < upto; i += 23){ if (S.step === 3 && !inW(R.reads[i])) continue; const p = R.P[i]; sw.push(0, 0, 0, p[0] - c[0], p[1] - c[1], p[2] - c[2]); }
+    G.sweepRays.geometry.setAttribute('position', new THREE.Float32BufferAttribute(sw, 3));
+    const tr = [];
+    if (S.step >= 4) for (let i = 0; i < N; i += 29){ if (!inW(R.reads[i]) || !R.pair[i]) continue; const p = R.P[i]; for (const j of R.pair[i]){ const a = R.RD[j]; tr.push(a[0] - c[0], a[1] - c[1], a[2] - c[2], p[0] - c[0], p[1] - c[1], p[2] - c[2]); } }
+    G.triRays.geometry.setAttribute('position', new THREE.Float32BufferAttribute(tr, 3));
+    hud(q);
+}
+
+// ── words ─────────────────────────────────────────────────────────────────────────────────────────────────────
+const STEPS = [
+    ['The body', 'A body, as Levels draws it (its id ' + '<span id="bid"></span>): a ball with relief in four bands, stretched by axis. Its true shape and size are the world\'s; no reader holds them. Drag to look round it.'],
+    ['One reader', '<b>One reader at its centre</b> sweeps every direction evenly. Each direction meets the surface once, and what it reads is the direction itself. Drawn at the one length H, the readings are the <span class="gold">unit sphere</span> (left): <b>the same sphere for every body</b>. Change the body; the sphere does not move.'],
+    ['The wedge', '<b>The wedge on the sphere</b>: one observation is one octant of directions, h, v, v₂ ≥ 0 in its own frame, placed by where its triple corner points. Its readings are [h : v : v₂]; v ≤ h for half of them, the near field in both for a third. On the body it picks out the part its rays meet. Move it with the sliders.'],
+    ['Three readers', '<b>Three readers inside</b> (red), each holding only directions. Where two of their rays cross is the place. Knowing only the shape of their own triangle, they give the body back <b>up to its size</b> (<span class="violet">violet</span>, right, drawn at a size of their choosing): the stretch and every bump come back; the wedge\'s part is bright.'],
+    ['One length', '<b>One length carried in</b>, |AB|, how far apart two readers stand, and the readers\' body lands on the true one (<span class="teal">teal</span>, on it). Scaling the world moves no reading and no point in |AB|; only the length carried in changes.'],
+];
+const stepsEl = document.getElementById('steps');
+STEPS.forEach((s, i) => { const b = document.createElement('button'); b.textContent = (i + 1) + ' ' + s[0]; b.onclick = () => set({ step: i + 1 }); stepsEl.appendChild(b); });
+function hud(q){
+    const W = sharesOf(wedgeReadings(q)), k = 10 ** S.lgk;
+    if (!RK || RK.idx !== S.body || RK.k !== k) RK = k === 1 ? R : recover(S.body, k);
+    let dr = 0, dq = 0;
+    for (let i = 0; i < N; i++){ for (let j = 0; j < 3; j++){ dr = Math.max(dr, Math.abs(RK.reads[i][j] - R.reads[i][j])); if (RK.rec[i] && R.rec[i]) dq = Math.max(dq, Math.abs(RK.rec[i][j] - R.rec[i][j])); } }
+    const f = x => x.toExponential(0), lines = [];
+    lines.push(`body ${S.body}: stretch ${R.F.s.map(x => x.toFixed(3)).join(' × ')}, mean radius ${(R.meanR * k).toPrecision(3)} (world units)`);
+    if (S.step >= 2) lines.push(`one reader: ${N} readings, each the sweep's own direction to ${f(Math.max(R.rdErr, 1e-17))}; the census a unit sphere, the same for every body`);
+    if (S.step >= 3) lines.push(`the wedge: ${W.n} of ${N} directions (${(W.n / N).toFixed(3)}, an eighth is 0.125); v ≤ h ${W.vh.toFixed(3)} (½), the near field in both ${W.both.toFixed(3)} (⅓)`);
+    if (S.step >= 4) lines.push(`three readers, directions only: every point to ${f(Math.max(R.recErr, 1e-17))} of the mean radius in |AB|; seen by at least ${R.fewest} readers`);
+    if (S.step >= 5) lines.push(`|AB| carried in = ${(R.AB * k).toPrecision(4)} world units: the body itself`);
+    lines.push(`scale the world ×${k >= 1e3 || k < 1e-2 ? k.toExponential(1) : k.toPrecision(3)}: readings moved ${f(Math.max(dr, 1e-17))}, points in |AB| ${f(Math.max(dq, 1e-17))}`);
+    document.getElementById('hud').textContent = lines.join('\n');
+    S._last = { wedge: W, dr, dq };
+}
+function caption(){
+    document.getElementById('caption').innerHTML = STEPS[S.step - 1][1];
+    const b = document.getElementById('bid'); if (b) b.textContent = S.body;
+    [...stepsEl.children].forEach((b, i) => b.classList.toggle('on', i + 1 === S.step));
+    document.getElementById('bodyName').textContent = 'body ' + S.body;
+    for (const [id, v, u] of [['lon', S.lon, '°'], ['lat', S.lat, '°'], ['roll', S.roll, '°']]){ document.getElementById(id).value = v; document.getElementById(id + 'o').textContent = (+v).toFixed(1) + u; }
+    document.getElementById('lgk').value = S.lgk; document.getElementById('lgko').textContent = '×' + (10 ** S.lgk).toPrecision(3);
+    document.getElementById('bSolid').classList.toggle('on', S.solid); document.getElementById('bSpin').classList.toggle('on', S.spin);
+}
+// labels under the three places
+const LAB = [['census: one reader', PL.census, 'gold'], ['the body', PL.body, ''], ['recovered, in |AB|', PL.rec, 'violet']].map(([t, p, cl]) => {
+    const d = document.createElement('div'); d.textContent = t; if (cl) d.className = cl; document.getElementById('labels').appendChild(d); return { d, p }; });
+function labels(){ const w = canvas.clientWidth, h = canvas.clientHeight, v = new THREE.Vector3();
+    LAB.forEach(({ d, p }, i) => { v.copy(p).add(new THREE.Vector3(0, -0.85, 0)); ROOT.localToWorld(v); v.project(camera);
+        const on = i === 1 || (i === 0 && S.step >= 2) || (i === 2 && S.step >= 4);
+        d.style.display = on && v.z < 1 ? '' : 'none'; d.style.left = ((v.x + 1) / 2 * w) + 'px'; d.style.top = ((1 - v.y) / 2 * h) + 'px'; }); }
+
+function set(o){
+    Object.assign(S, o);
+    if (o.body !== undefined){ S.body = Math.max(0, Math.round(S.body)); R = recover(S.body); RK = null; bodyGeometry(); }
+    caption(); draw();
+}
+document.getElementById('bPrev').onclick = () => set({ body: Math.max(0, S.body - 1) });
+document.getElementById('bNext').onclick = () => set({ body: S.body + 1 });
+document.getElementById('bRand').onclick = () => set({ body: Math.floor(Math.random() * 100000) });
+for (const id of ['lon', 'lat', 'roll']) document.getElementById(id).oninput = e => set({ [id]: +e.target.value });
+document.getElementById('lgk').oninput = e => set({ lgk: +e.target.value });
+document.getElementById('bSolid').onclick = () => set({ solid: !S.solid });
+document.getElementById('bSpin').onclick = () => set({ spin: !S.spin });
+document.getElementById('bReset').onclick = () => set({ step: 1, lon: 45, lat: 35.26, roll: 0, lgk: 0, sweep: 1, spin: false, solid: true });
+let sweepT = null;
+document.getElementById('bSweep').onclick = () => { if (S.step < 2) S.step = 2; sweepT = performance.now(); };
+document.getElementById('fold').onclick = () => document.getElementById('panel').classList.toggle('folded');
+if (matchMedia('(max-width: 760px)').matches) document.getElementById('panel').classList.add('folded');   // (a phone opens on the bodies)
+
+let frames = 0;
+function resize(){ const w = canvas.clientWidth, h = canvas.clientHeight; if (renderer){ renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setSize(w, h, false); }
+    camera.aspect = w / h;
+    // three places across a wide screen (moved right of the panel), stacked on a narrow one
+    const tall = w / h < 0.9;
+    const gv = 1.3;
+    PL.census.set(tall ? 0 : -GAP, tall ? gv : 0, 0); PL.body.set(0, 0, 0); PL.rec.set(tall ? 0 : GAP, tall ? -gv : 0, 0);
+    G.censusGroup.position.copy(PL.census); G.bodyGroup.position.copy(PL.body); G.recGroup.position.copy(PL.rec);
+    ROOT.position.x = !tall && w > 760 ? 0.5 * (390 / w) * 5.4 : 0; ROOT.position.y = tall ? 0.3 : 0;
+    camera.position.setLength(tall ? 10.5 : 5.6); camera.updateProjectionMatrix(); }
+addEventListener('resize', resize);
+function frame(t){
+    requestAnimationFrame(frame);
+    if (sweepT != null){ const s = Math.min(1, (t - sweepT) / 3500); if (s !== S.sweep){ S.sweep = s; draw(); } if (s >= 1) sweepT = null; }
+    if (S.spin) ROOT.rotation.y += 0.004;
+    if (controls) controls.update();
+    if (renderer){ renderer.render(scene, camera); frames++; }
+    labels();
+}
+bodyGeometry(); resize(); caption(); draw(); requestAnimationFrame(frame);
+
+window.__recover = {
+    LATTICE, bodyOf, bodyFrame, recover, wedgeQuat, inWedgeOf, wedgeReadings, sharesOf, set,
+    get state(){ return { ...S, R: { idx: R.idx, AB: R.AB, meanR: R.meanR, rdErr: R.rdErr, recErr: R.recErr, fewest: R.fewest } }; },
+    get frames(){ return frames; }, get webgl(){ return !!renderer; },
+    hud(){ return document.getElementById('hud').textContent; }, last(){ return S._last; },
+};
+</script>
+</body>
+</html>
