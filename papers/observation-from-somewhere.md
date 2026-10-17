@@ -2172,6 +2172,71 @@ addresses from the one, the amounts from the other, and the unit carried in from
 directions are two angles, the altitude and the azimuth (§2), and what arrives along each is still a radius in the one
 unit no reading fixes.
 
+**A survey: many readings, one amount.** Triangulation divides the labour exactly so. Snellius measured an arc of the
+meridian, about 130 km from Alkmaar to Bergen op Zoom, as a chain of triangles whose angles he read from church towers,
+and scaled the whole chain from one short base near Leiden (Snellius 1617). Roy's triangulation, which joined Greenwich
+to Paris and began the Ordnance Survey, read its angles with a theodolite from hill to hill and took its scale from one
+base on Hounslow Heath, about 8.4 km, measured with rods through the summer of 1784 (Roy 1785). Every angle is a
+direction read at a standpoint, a reading in the sense above, and the network of angles fixes the figure up to its size
+and no further, however many angles are read (Propositions 8 and 11). The base is the one amount carried in, found by
+moving along the ground, and it writes every side of every triangle at once, in the base's own unit. A second base, as
+Roy measured one on Romney Marsh, adds nothing to the scale: it checks the angles that carried the first base's length
+to it. The costs fall where the geometry puts them: each angle needed only an instrument and a standpoint, while the
+base needed the ground itself, crossed rod by rod, and one was enough to write the whole. The finished map is the
+written thing, a completed representation drawn from no standpoint, and its scale bar is the base.
+
+**The test: scale the world.** Whether a record is read or written can be checked without asking how it was made.
+Multiply every breadth and distance in the world by one factor k. A reading does not change: a direction, each angle of
+the survey, a photograph, the reader of ratios' [h : v], the shape the reader of the payload holds. A writing changes by
+k: a dimension on a floor plan, the length the map's scale bar states, the length of the base. The radii the reader of
+the payload receives also move by k, but in a unit it never received (above), so they state no size, and what it can
+state, the shape, does not move. This is Proposition 8 used as a test: what scaling leaves unchanged is geometry, and
+what it moves, in a named unit, is an amount that had to be carried in. A record that scaling would not change cannot
+contain the world's size, however carefully it was made.
+
+**Growth, the test's other form.** The world can also grow without being scaled, and the same split shows. An address
+made by dividing a thing's place in a list by the list's length is a ratio, a reading of the list's own contents: the
+thing a third of the way through a level is placed a third of the way through, and it moves as soon as the level grows.
+An address made of slots, a fixed number to each level whatever the level holds, does not move: the number of slots, the
+radix, was agreed beforehand, and it is a written amount carried into every address, as the base is carried into every
+side. A timestamp is the familiar case. Year, month, day, hour, minute and second are levels with fixed slots, and
+2026·9·3·14·30·15 names the same second however many later seconds are recorded, because nothing in it was divided by a
+count. Positional notation is stable for the same reason. Read against its own contents, a list re-addresses itself as
+it grows; written against an agreed radix, it never does, and the price is the slots held empty.
+
+**Units within units.** Ratios can carry much more than one relation. When lengths are read against units nested one
+inside another, every unit cancels inside its own level, and what is left between two levels is again a ratio, read one
+level up. An ISO metric screw thread is a standard case. Its profile is fixed by the pitch P (ISO 68-1): the fundamental
+triangle stands (√3/2)·P high and the basic depth of engagement is five eighths of that, so the profile's ratios,
+0.86603 and 0.54127 of the pitch, and their quotient 1.6, are the same from M6 to M36, readings against the pitch in
+which the pitch cancels. The pitch is set against the nominal diameter D by a second standard (ISO 261), and what
+relates a profile length to the diameter is P/D, a ratio read at the level above, not an amount. Two lengths read
+against one unit are related directly; two whose common unit lies k levels up are related through k ratios, one for each
+level between. However the n lengths are grouped, n − g ratios inside g groups and g − 1 between them make the same
+n − 1, every independent ratio there is. So a reader can hold a whole hierarchy of units, each level read against the
+one above, in ratios alone. What none of them gives is the top: writing still costs one amount, and one length anywhere
+in the hierarchy, a single diameter in millimetres, writes every other.
+
+**A worked example of the tower.** A building holds two rooms, A and B, and each room holds two things. Each length is
+read only against the length that holds it, so every reading is a ratio, and none is an amount:
+
+| reading | against | value |
+|---|---|---|
+| room A | the building | 1/2 |
+| room B | the building | 1/3 |
+| thing a₁, thing a₂ | room A | 3/4, 1/2 |
+| thing b₁, thing b₂ | room B | 2/3, 1/3 |
+
+Seven lengths give six readings, n − 1: four inside the rooms and two between them. Two things in one room are related
+by one quotient, a₁/a₂ = (3/4)/(1/2) = 3/2. Two things in different rooms are related by two quotients, one for each
+level up to the building that holds them both: a₁/b₁ = (3/4)/(2/3) · (1/2)/(1/3) = 9/8 · 3/2 = 27/16. Nothing has been
+measured yet. One amount then writes every length, whichever it is: the building's 12 m gives a₁ = 4.5 m and b₂ = 4/3 m;
+b₂ = 1 m measured instead gives the building 9 m and a₁ = 27/8 m. Scaling the world by k multiplies every one of those
+amounts by k and leaves the six readings as they were. And if one link is misread, room B taken as 0.3 of the building
+instead of 1/3, everything in room B moves by one factor, 9/10, its ratio b₁/b₂ = 2 does not move, room A is untouched,
+and a₁/b₁ is off by that one factor, 10/9. A whole hierarchy is held in six ratios, and one amount anywhere in it writes
+the rest; an error in a link is shared by everything the link holds.
+
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
 change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the
@@ -2644,6 +2709,12 @@ Haraway, D. (1988). Situated knowledges: the science question in feminism and th
 
 Herschel, J. F. W. (1850). Quetelet on probabilities. *Edinburgh Review* 92, 1–57.
 
+ISO 68-1 (1998). *ISO general purpose screw threads — Basic profile — Part 1: Metric screw threads*. International
+Organization for Standardization, Geneva.
+
+ISO 261 (1998). *ISO general purpose metric screw threads — General plan*. International Organization for
+Standardization, Geneva.
+
 Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 
 Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3(4), 477–493.
@@ -2721,6 +2792,9 @@ Parker, M. C. and Jeynes, C. (2023). A maximum entropy resolution to the wine/wa
 Pitman, E. J. G. and Williams, E. J. (1967). Cauchy-distributed functions of Cauchy variates. *Annals of Mathematical
 Statistics* 38(3), 916–918.
 
+Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions of the Royal
+Society of London* 75.
+
 Saint-Vincent, G. de (1647). *Opus geometricum quadraturae circuli et sectionum coni*. Antwerp.
 
 Schwartz, E. L. (1977). Spatial mapping in the primate sensory projection: analytic structure and relevance to
@@ -2735,6 +2809,8 @@ numerical quantity. *Psychological Science* 14(3), 237–243.
 Sivia, D. S. and Skilling, J. (2006). *Data Analysis: A Bayesian Tutorial*, 2nd ed. Oxford University Press.
 
 Smart, W. M. (1977). *Textbook on Spherical Astronomy*, 6th ed., revised by R. M. Green. Cambridge University Press.
+
+Snellius, W. (1617). *Eratosthenes Batavus, de terrae ambitus vera quantitate*. Leiden.
 
 Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Fincke,
 Berlin.

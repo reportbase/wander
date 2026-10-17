@@ -692,6 +692,30 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   turn's distribution function; the capped reading the ℓ∞ cut). Splits: facing only the direction faced (it turns),
   a sign-region a quadrant/orthant/octant, the divisor a denominator; home only the standpoint, v/h = 0 zero; "the
   share of a reading" the capped reading; ε the resolution, not a step. Keep these senses apart in OFS.
+  Writers made intuitive (16 Oct, SPN R314; Tom: "yes"): OFS §9 "A survey: many readings, one amount" (Snellius 1617;
+  Roy's Hounslow Heath base, 1784, Roy 1785: thousands of angles read, one base walked writes every side; a second
+  base checks, adds no scale) and "The test: scale the world" (a reading unchanged by k, a writing changed by k; the
+  payload reader's radii move but in no received unit). The perception cases (tilt-shift, forced perspective, the
+  Ames room, "banana for scale") are in SPN R314 only.
+  The towers as reading and writing (16 Oct, SPN R315; Tom: "both are interesting related ideas we have explored"):
+  OFS §9 "Growth, the test's other form" (the calendar tower: a place divided by the list's length moves as the list
+  grows, a fixed-slot address, the radix agreed beforehand, does not; the timestamp) and "Units within units" (the
+  tower of grouped holds; the ISO thread, its profile against the pitch, ISO 68-1, the pitch against the diameter, ISO
+  261). Since R316 (Tom: "the tower of holds shows that sophisticated use of ratios is possible."): the factor between
+  levels is a ratio read one level up, not an amount; n lengths give n − 1 ratios however grouped; a whole hierarchy
+  of units is held in ratios alone, and writing still costs one amount at the top. Then "A worked example of the tower" (R320; Tom: "we could
+  show the tower with a simple synthetic worked example"): a building, two rooms, two things each; six readings for seven
+  lengths; a₁/b₁ = 27/16 by two quotients; one amount writes all; a misread link moves its room by one factor (9/10).
+  Exact in `ofs/tower.py`.
+  `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
+  them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
+  Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
+  Hubble 1929 by rung against modern distances (P1–P3), SH0ES 2022's single-anchor H₀ (P4). Run 1 (16 Oct, SPN R318;
+  `lth/lth.py`, NED-D 17.1.0, sha256s in the plan, data not committed): nothing killed; rung means 1.6, 2.8, 3.0 levels,
+  sd(b) 0.76; post hoc M 101 is a brightest-star distance, and without it rung (a) is off 1.2 levels (Baade's ~2);
+  P4 χ²/dof 0.31 (weak, shared hosts). Run 2 (SPN R319; `lth/lth2.py`, Cosmicflows-4 table2): P5, P6 killed;
+  post hoc part of P5 my set-up (regressing on the pair's mean), but FP and SBF drift against SN Ia by ~0.1 mag/mag at
+  ~3σ, so one constant factor per rung holds for some rungs, not all.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
