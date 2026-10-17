@@ -1,6 +1,6 @@
 # OFS review 18 (ChatGPT, 17 October 2026, of the draft after R335, "version 32")
 
-*Shared by Tom, 17 Oct about 10:27 (Tom's local time), headed "chatgpt:", without a further instruction. Its edits were
+*Shared by Tom, 17 Oct about 10:28 (Tom's local time), headed "chatgpt:", without a further instruction. Its edits were
 made under Tom's go-ahead for review 17 ("ok, you can integrate chatgpt comments if you agree."), on a branch for him
 to merge or not. SPN R336. Recorded verbatim below, after the response.*
 
