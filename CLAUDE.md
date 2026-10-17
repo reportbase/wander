@@ -783,6 +783,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Review 17 (ChatGPT, 17 Oct, of version 31, 9.2/10, `plans/ofs-review-17.md`; SPN R334): "uniform by definition" means
   measured by its own turning, not that other weights are impossible; edit A in the introduction (other weights are
   coherent, each a count against a clock, a screen or what arrives; reciprocal-symmetric ones keep the corner, 6(e)).
+  **The writer, not a view from nowhere** (R335; Tom: "calling the traditional classical math and geometry view the gods
+  eye view is not accurate.    It is the writers vantage, writers need to know the true breadth, readers do not.
+  writers need to walk the complete object, readers do not."; "we are not debating classical math"): OFS characterizes
+  no classical mathematics; it opens with its own problem (what geometry a reader needs without the complete object);
+  "the view from nowhere" and "the completed view" are "the writer's vantage" throughout; the writer holds the true
+  breadth by walking the whole or carrying in a measured amount; Nagel and Haraway kept in §11.3 as a contrast.
+  Supersedes R296's "gods eye view". Older entries above that say "view from nowhere" describe the text before R335.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
