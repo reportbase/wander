@@ -137,3 +137,25 @@ any Cauchy at all can be written as some angle's image, so reading every pole as
 H5's two kills are where the horizon is closed up: wrapped onto a circle, the reading never runs off, and a mean
 returns. In none of the 12 is the sweep the observer's own: as TPI run 4 found for the bounded face, the textbooks put
 the evenness in a source, a population or the mathematics, never in the one who reads.
+
+### Note added after the run (17 Oct): prior work not consulted
+
+Tom, 13:58: "draw.html has some examples of cauchy in action with shapes library."; 14:05: "they are your tests from
+another session." The draw repository's labs (`labs.html` there; read at `ea07709`), written by Claude in an earlier
+session, already ran the controlled form of this test on the shapes library, and I did not consult them before
+writing the predictions above, though CLAUDE.md asks for it before new work on readers, shapes or recovery:
+- **SMP** (sampling tests): every figure read twice from its centre. Stepped evenly in the turn, the readings tan a are
+  Cauchy whatever the figure (the statistic (q90 − q10)/IQR at its Cauchy value, 2·tan(0.4π)/2 = 3.078); walked at
+  constant speed along the outline, they are not, and the arrival density is the arc element √(r² + r′²), recovered up
+  to one constant (where the reader stood).
+- **RCC** (the recovered circle) and **WHR** (what can be recovered) draw it: the even turn gives back the same unit
+  circle from every figure; the walk gives the figure's arc element.
+- **CAU** (cauchy tests): the lens 2h₀·(2/π)·atan(v/h₀), h₀ the median radius; in log-radius its slope is the sech
+  density, steepest at the corner, so the log lay and the fisheye spend the same cells.
+
+So H1's kill was foreseeable from SMP: a uniform turn gives the Cauchy, a uniform walk along a line gives something
+else. The pole family is SMP's walk on a straight line: walked uniformly in x at distance γ, the Lorentzian
+|1/(x + iγ)|²·γ/π is (1/π)·dθ/dx, the turn passed per unit of walk; the walk is what is uniform, not the turn, so it is
+not a reader's sweep. What HZT adds to SMP is the census across the textbooks (the pole commonest, 29 of 58; the
+observer's own sweep in none). Nothing above the Runs line is changed.
+

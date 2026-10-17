@@ -1375,6 +1375,13 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   not rest on it: any fair weight that does not vanish at the horizon puts the median at the corner and leaves no mean
   (OFS Theorem 6(e)); only the Cauchy's exact shape is the even turn's.
 
+## Read this first: check draw's labs before new work
+Since 17 Oct 2026 (SPN R342; Tom: "they are your tests from another session."): before planning any new work on readers,
+shapes, recovery, sweeps or the Cauchy, read the draw repository's labs (`reportbase/draw`, `labs.html` lists them; run
+one with `draw.html?lab=CODE`). Many were written by Claude in earlier sessions and already answer, in controlled form,
+questions the corpus asks again (HZT was SMP's census: a uniform turn gives the Cauchy whatever the figure, a uniform
+walk along the outline gives its arc element). Cite what is found as known beforehand in the plan's predictions.
+
 ## Read this first: the physics comes first
 Since 10 Oct 2026 (Tom: "wanderer priority was user experience, not physics. the physics then became unexpextedly
 interesting. we should do the correct physics testing, UI is secondary or even not needed"):
