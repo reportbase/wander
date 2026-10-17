@@ -246,8 +246,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   placed in H by bearings alone (one linear least squares, later legs found from the things); holding a thing's two edges
   gives its breadth across in H; "count my steps" (strides of 0.7 m, carried in) writes metres. The readout: standpoints,
   directions, central coverage, placed, held, written, still unknown. Scale the world moves nothing in H, the radii and
-  metres by k. `?walk=path|none&n=&thing=&k=<log10 k>&count=1&truth=1`; hook `window.__roomWalk` (`bearings`,
-  `centralSample`, `centralOf`, `reconstruct`, `readout`, `roundPoints`, `set`, `stepTo`, `state`). Not in the flying page.
+  metres by k. A tree through a window in the far wall (R325; Tom: "Parallex seems to be needed when central sweep is not
+  available, say the object is far away."), 2.5 m to 10 km out, the reader's resolution ε = 1 mrad: seen from a thing's
+  centre the walk turns through its parallax angle γ (about B/d); γ ≥ 1/16 of the turn both sweeps, ε < γ below that
+  parallax only (the place to about ε/γ), γ ≤ ε a ray; the breadth held while the edges are more than ε apart.
+  `?walk=path|none&n=&thing=&k=<log10 k>&far=<log10 m>&eps=&count=1&truth=1`; hook `window.__roomWalk` (`bearings`,
+  `centralSample`, `centralOf`, `reconstruct`, `readout`, `roundPoints`, `gammaOf`, `regimeOf`, `set`, `stepTo`, `state`).
+  Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -737,7 +742,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the inscribed sweep and the pertubations these objects by the central scan"; "if the reader wants to move the
   furniture or hang a picture on the wall he switches to be a writer and must move and engage with the rooms geometry
   physically") "Inside a room: the two sweeps" (layout from the inscribed, shapes from the central, sizes from holding
-  at one distance, one corner per hold) and "To move the furniture is to write".
+  at one distance, one corner per hold) and "To move the furniture is to write". Then "Far off, parallax in place of
+  the central sweep" (R325): seen from a thing's centre a walk turns through its parallax angle, about B/d; the shape needs
+  a good share of the turn, the place only an angle above ε (Proposition 11(b)), past d ≈ B/ε a line (11(a)); near shape
+  and place, farther place without shape, farthest direction alone (the angle named in words: γ is the Cauchy scale).
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
@@ -1387,9 +1395,10 @@ In short:
       units the same at every distance; moving the chair changes its address and not its shape, reshaping the table its
       shape and not its address; the hand pointed at the ball meets it; one known step writes the room and every place; the
       chair put 1 m from the wall.
-  32. **room-walk.html:** one standpoint gives directions and one radius a thing, nothing placed; the path places all four
+  32. **room-walk.html:** one standpoint gives directions and one radius a thing, nothing placed; the path places all five
       from directions alone in the first leg, exactly; scaling the world by 10⁻², 7, 10² moves no direction, place,
-      breadth in H or shape, the radii and the metres by k; walking round the table fills at least 8 of its 16 directions.
+      breadth in H or shape, the radii and the metres by k; walking round the table fills at least 8 of its 16 directions;
+      the tree at 2.5 m read by both sweeps, at 30 m by parallax only and placed exactly, at 8 km a ray and unresolved.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

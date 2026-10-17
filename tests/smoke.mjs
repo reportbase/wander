@@ -902,7 +902,7 @@ try {
   const before32 = failures.length;
   await page.goto(new URL('room-walk.html?walk=path', base).href, { waitUntil: 'load' });
   const rw = await page.evaluate(() => {
-    const R = __roomWalk, out = { placed: 0, exact: 0, scaleH: 0, scaleShape: 0, radiiK: 0, metresK: 0, one: '', round: 0 };
+    const R = __roomWalk, out = { near: null, mid: null, far: null, placed: 0, exact: 0, scaleH: 0, scaleShape: 0, radiiK: 0, metresK: 0, one: '', round: 0 };
     const rel = (a, b) => Math.abs(a / b - 1);
     let r0 = R.set({ lk: 0, count: false, walk: R.PATH });
     out.placed = r0.placed.length;
@@ -918,15 +918,23 @@ try {
       const m1 = R.set({ count: true });
       m1.rows.forEach((x, i) => { out.metresK = Math.max(out.metresK, rel(x.acrossM, k * m0.rows[i].acrossM)); });
     }
+    // the tree through the window: near, both sweeps; farther, parallax only (placed exactly); far, a ray
+    for (const [lf, key] of [[0.4, 'near'], [Math.log10(30), 'mid'], [Math.log10(8000), 'far']]) {
+      const r = R.set({ lk: 0, count: false, lfar: lf, walk: R.PATH }), t = r.rows.find(x => x.name === 'tree'), L = r.trueLegs[0];
+      out[key] = { regime: t.regime, central: t.central, resolved: t.resolved,
+        err: t.placeH ? Math.hypot(t.placeH[0] * L - t.truth.place[0], t.placeH[1] * L - t.truth.place[1]) / Math.hypot(...t.truth.place) : null };
+    }
+    R.set({ lfar: Math.log10(30) });
     const one = R.set({ lk: 0, count: false, walk: [R.PATH[0]] }); out.one = `${one.placed.length} ${one.rows.every(x => x.dir != null && x.central === 1)}`;
     const rr = R.set({ walk: [[0.6, 0.6], ...R.roundPoints('table')] }); out.round = rr.rows.find(x => x.name === 'table').central;
     R.set({ walk: R.PATH });
     return out;
   });
-  const rwOk = rw.placed === 4 && rw.exact < 1e-9 && rw.scaleH < 1e-9 && rw.scaleShape < 1e-12 && rw.radiiK < 1e-12 && rw.metresK < 1e-9 &&
+  const rwOk = rw.placed === 5 && rw.near.regime === 'both sweeps' && rw.near.central >= 2 && rw.mid.regime === 'parallax only' &&
+    rw.mid.central === 1 && rw.mid.err < 1e-9 && rw.far.regime === 'a ray' && rw.far.err === null && !rw.far.resolved && rw.exact < 1e-9 && rw.scaleH < 1e-9 && rw.scaleShape < 1e-12 && rw.radiiK < 1e-12 && rw.metresK < 1e-9 &&
     rw.one === '0 true' && rw.round >= 8;
   if (!rwOk) failures.push(`[room-walk.html] ${JSON.stringify(rw)}`);
-  console.log(`${failures.length === before32 ? 'ok  ' : 'FAIL'} room-walk.html (one standpoint: directions and one radius a thing, nothing placed; the path places all four from directions alone, in the first leg, exactly (${rw.exact.toExponential(0)}); scaling the world by 10⁻², 7, 10² moves no direction, place, breadth in H or shape, the radii and the metres by k; walking round the table gives ${rw.round} of its 16 directions)`);
+  console.log(`${failures.length === before32 ? 'ok  ' : 'FAIL'} room-walk.html (one standpoint: directions and one radius a thing, nothing placed; the path places all five from directions alone, in the first leg, exactly (${rw.exact.toExponential(0)}); scaling the world by 10⁻², 7, 10² moves no direction, place, breadth in H or shape, the radii and the metres by k; walking round the table gives ${rw.round} of its 16 directions; the tree at 2.5 m by both sweeps, at 30 m by parallax only (${rw.mid.err.toExponential(0)}), at 8 km a ray, unresolved)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';

@@ -26,7 +26,16 @@
     and every place and breadth is then in metres. "Scale the world" (k) multiplies every true size: no direction,
     shape or amount in H moves; the radii and the metres move by k.
     Tap the plan to walk there; "walk round" circles the chosen thing at eight standpoints.
-    Links: ?walk=path|none&n=<standpoints of the path>&thing=&k=<log10 k>&count=1&truth=1. Test hook: window.__roomWalk.
+    A tree outside, seen through a window in the far wall, at a distance set by a slider (17 October 2026, Tom: "Parallex
+    seems to be needed when central sweep is not available, say the object is far away."; SPN R325; OFS §9 "Far off,
+    parallax in place of the central sweep"). As seen from a thing's centre the walk turns through γ, the widest angle
+    there between two standpoints, about B/d far off. The central sweep needs a good share of the whole turn (here a new
+    direction every 1/16 of it): near, both sweeps; once γ is under 1/16 of the turn, no central sweep, and the place
+    comes from parallax alone, to about ε/γ of its distance (ε the reader's resolution, 1 mrad, ?eps=); once γ is under
+    ε, every standpoint reads one direction: a ray, no place. Its breadth across is held while its two edges are more
+    than ε apart. In the room every thing is near.
+    Links: ?walk=path|none&n=<standpoints of the path>&thing=&k=<log10 k>&far=<log10 m>&eps=&count=1&truth=1.
+    Test hook: window.__roomWalk.
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -65,7 +74,9 @@
     sweep</span>, its hand turned once round, receives directions only: where each thing is from here, the layout. The
     <span class="r">central sweep</span> runs from each thing's own centre: where the reader stands gives the direction,
     and what arrives is the radius along it, an amount in a unit nothing fixes; walking round a thing collects its shape.
-    The readout keeps the situation: what has been read, what is held, what is written, and what is still unknown.</p>
+    The readout keeps the situation: what has been read, what is held, what is written, and what is still unknown.
+    Through the window a tree: move it away and the walk can no longer go round it, so its shape is lost and its place
+    comes from parallax alone; further still, it is only a direction.</p>
     <div class="panel">
         <div class="row" id="things"></div>
         <div class="row">
@@ -73,6 +84,8 @@
             <button id="undo">step back</button><button id="again">start again</button>
             <button id="count">count my steps (0.7 m)</button><button id="truth">the referee</button>
         </div>
+        <div class="row"><label for="lf">the tree's distance</label><input id="lf" type="range" min="0.4" max="4" step="0.01" value="1.48">
+            <span id="lfv" class="cap"></span></div>
         <div class="row"><label for="lk">scale the world k</label><input id="lk" type="range" min="-2" max="2" step="0.01" value="0"></div>
         <div class="grid">
             <div><canvas id="plan" height="430"></canvas><p class="cap">The floor. Tap to walk there. Gold: the inscribed
@@ -100,10 +113,14 @@
         table:   { kind: 'box',  c: [2.6, 2.2], half: [0.7, 0.4],   col: '#d4a052' },
         chair:   { kind: 'box',  c: [1.5, 3.1], half: [0.22, 0.22], col: '#8ce6cd' },
         ball:    { kind: 'ball', c: [3.9, 0.9], half: [0.3, 0.3],   col: '#b59cf0' },
-        cabinet: { kind: 'box',  c: [4.55, 3.3], half: [0.3, 0.5],  col: '#d96e5b' } };
-    const NAMES = Object.keys(BASE), NC = 16, STRIDE = 0.7, SPREAD = 0.5 * Math.PI / 180;
+        cabinet: { kind: 'box',  c: [4.55, 3.3], half: [0.3, 0.5],  col: '#d96e5b' },
+        tree:    { kind: 'ball', c: [5 + 30, 2.0], half: [2, 2],     col: '#8fc97a', outside: true } };   // seen through the window
+    const NAMES = Object.keys(BASE), NC = 16, STRIDE = 0.7, BIN = 2 * Math.PI / NC;
+    const EPS = +(P.get('eps') || 1e-3);                            // the reader's resolution, radians: two directions closer are one
+    const WIN = [1.5, 2.5];                                         // the window in the far wall (z)
     const PATH = [[0.6, 0.6], [2.2, 0.5], [4.6, 1.8], [3.4, 3.65], [0.6, 3.5], [0.7, 1.7]];
-    const st = { lk: 0, thing: 'table', walk: [], count: false, truth: false, anim: null };
+    const st = { lk: 0, thing: 'table', walk: [], count: false, truth: false, anim: null, lfar: Math.log10(30) };
+    const setFar = lf => { st.lfar = lf; BASE.tree.c[0] = ROOM.W + Math.pow(10, lf); };
     const kOf = () => Math.pow(10, st.lk);
 
     // ---- the referee's world (true amounts, scaled by k) ----
@@ -112,7 +129,7 @@
     const wrap = a => { a %= 2 * Math.PI; return a < 0 ? a + 2 * Math.PI : a; };
     const wrapPi = a => { a = wrap(a + Math.PI); return a - Math.PI; };
     function inside(p, m) {                                         // a base point inside a thing (with a margin m)
-        for (const n of NAMES) { const t = BASE[n];
+        for (const n of NAMES) { const t = BASE[n]; if (t.outside) continue;
             if (t.kind === 'ball' ? Math.hypot(p[0] - t.c[0], p[1] - t.c[1]) < t.half[0] + m
                 : Math.abs(p[0] - t.c[0]) < t.half[0] + m && Math.abs(p[1] - t.c[1]) < t.half[1] + m) return n; }
         return null;
@@ -143,7 +160,8 @@
     }
     function centralSample(n, p) {
         const q = at(p), c = thingC(n), phi = wrap(Math.atan2(q[1] - c[1], q[0] - c[0]));
-        return { phi, bin: Math.round(phi / (2 * Math.PI / NC)) % NC, r: radiusAt(n, phi) };
+        const d = bearings(p)[n], resolved = d.dh - d.dl > EPS;      // its two edges told apart, or one point
+        return { phi, bin: Math.round(phi / BIN) % NC, r: radiusAt(n, phi), resolved };
     }
 
     // ---- what the reader has: readings per standpoint ----
@@ -175,8 +193,7 @@
     function reconstruct() {
         const n = st.walk.length, R = readings(), L = legs();
         if (n < 2) return { ok: false, why: 'one standpoint: directions only, no place' };
-        const placed = NAMES.filter(nm => { const bs = R.map(r => r.dirs[nm].b);
-            let mx = 0; for (const a of bs) for (const b of bs) mx = Math.max(mx, Math.abs(Math.sin(a - b))); return mx > Math.sin(SPREAD); });
+        const placed = NAMES.filter(nm => gammaOf(nm) > EPS);           // parallax: the standpoints told apart from the thing
         const nl = n - 2, nu = nl + 2 * placed.length;
         if (!placed.length) return { ok: false, why: 'no thing seen from two directions yet' };
         const M = Array.from({ length: nu }, () => new Array(nu).fill(0)), rhs = new Array(nu).fill(0);
@@ -194,6 +211,16 @@
         const T = {}; placed.forEach((nm, j) => { T[nm] = [x[nl + 2 * j], x[nl + 2 * j + 1]]; });
         return { ok: true, legs: Ls, Q, T, placed };
     }
+    // the turn the walk makes as seen from a thing's centre: the widest angle there between two standpoints. The central
+    // sweep needs a good share of the whole turn (a new direction every 1/16 of it); parallax only needs γ above ε.
+    function gammaOf(nm) {
+        const c = thingC(nm), as = st.walk.map(p => { const q = at(p); return Math.atan2(q[1] - c[1], q[0] - c[0]); });
+        let mx = 0; for (const a of as) for (const b of as) mx = Math.max(mx, Math.abs(wrapPi(a - b))); return mx;
+    }
+    function regimeOf(nm) {
+        const g = gammaOf(nm);
+        return g >= BIN ? 'both sweeps' : g > EPS ? 'parallax only' : st.walk.length ? 'a ray' : '—';
+    }
     // holding: a thing's two edges read at once, at its distance in H, give its breadth across the line of sight
     function breadthAcross(dl, dh, d) { return d * (Math.tan(dh) - Math.tan(dl)); }
     // writing: the first leg counted in strides (an amount carried in) puts H in metres
@@ -202,7 +229,7 @@
 
     function centralOf(n) {                                         // every radius received for n, one per direction bin
         const bins = new Map();
-        for (const p of st.walk) { const s = centralSample(n, p); bins.set(s.bin, s); }
+        for (const p of st.walk) { const s = centralSample(n, p); if (s.resolved) bins.set(s.bin, s); }
         const ss = [...bins.values()].sort((a, b) => a.phi - b.phi);
         const G = ss.length ? Math.exp(ss.reduce((a, s) => a + Math.log(s.r), 0) / ss.length) : NaN;
         return { samples: ss.map(s => ({ phi: s.phi, bin: s.bin, r: s.r, shape: s.r / G })), G, covered: ss.length };
@@ -211,13 +238,15 @@
     function readout() {
         const n = st.walk.length, R = readings(), rec = reconstruct(), hm = hMetres(), here = R[n - 1];
         const rows = NAMES.map(nm => {
-            const c = centralOf(nm), row = { name: nm, seenFrom: n, central: c.covered,
+            const c = centralOf(nm), row = { name: nm, seenFrom: n, central: c.covered, gamma: gammaOf(nm), regime: regimeOf(nm),
+                resolved: !!here && here.dirs[nm].dh - here.dirs[nm].dl > EPS,
                 shape: c.samples.map(s => s.shape), radii: c.samples.map(s => s.r) };
             if (here) { const d = here.dirs[nm]; row.dir = d.b * 180 / Math.PI; row.edges = [d.lo, d.hi].map(a => a * 180 / Math.PI); }
             if (rec.ok && rec.T[nm]) {
                 const T = rec.T[nm], Qn = rec.Q[n - 1], dH = Math.hypot(T[0] - Qn[0], T[1] - Qn[1]);
-                row.placeH = T; row.across = breadthAcross(here.dirs[nm].dl, here.dirs[nm].dh, dH);
-                if (hm) { row.placeM = T.map(x => x * hm); row.acrossM = row.across * hm; }
+                row.placeH = T; row.distH = dH; row.relErr = EPS / row.gamma;   // a place to readings of step ε: off by about ε/γ of its distance
+                if (row.resolved) row.across = breadthAcross(here.dirs[nm].dl, here.dirs[nm].dh, dH);
+                if (hm) { row.placeM = T.map(x => x * hm); row.distM = dH * hm; if (row.across != null) row.acrossM = row.across * hm; }
             }
             // the referee's own amounts (from the first standpoint, metres), for comparison only
             const c0 = thingC(nm), q0 = at(st.walk[0] || [0, 0]), q = at(st.walk[n - 1] || [0, 0]), d = here && here.dirs[nm];
@@ -267,13 +296,22 @@
         const s = (t - tw) / 1.1; if (s < 1) return { p: a.to, hand: s * 2 * Math.PI };
         st.anim = null; return { p: last, hand: null };
     }
+    function planFrame(w, h) {
+        const pad = 22, right = 64, sc = Math.min((w - 2 * pad - right) / ROOM.W, (h - 2 * pad) / ROOM.D);
+        return { pad, sc, ox: (w - right - sc * ROOM.W) / 2, oy: pad };
+    }
     function drawPlan(ap) {
         const { g, w, h } = fit($('plan')); g.clearRect(0, 0, w, h);
-        const pad = 22, sc = Math.min((w - 2 * pad) / ROOM.W, (h - 2 * pad) / ROOM.D), ox = (w - sc * ROOM.W) / 2, oy = pad;
+        const { pad, sc, ox, oy } = planFrame(w, h);
         const X = p => [ox + sc * p[0], oy + sc * p[1]];
         g.strokeStyle = 'rgba(230,228,238,0.55)'; g.lineWidth = 1.5; g.strokeRect(ox, oy, sc * ROOM.W, sc * ROOM.D);
+        g.strokeStyle = '#000'; g.lineWidth = 3; g.beginPath(); g.moveTo(...X([ROOM.W, WIN[0]])); g.lineTo(...X([ROOM.W, WIN[1]])); g.stroke();
+        g.strokeStyle = 'rgba(143,201,122,0.7)'; g.lineWidth = 1; g.setLineDash([2, 3]); g.beginPath(); g.moveTo(...X([ROOM.W, WIN[0]])); g.lineTo(...X([ROOM.W, WIN[1]])); g.stroke(); g.setLineDash([]);
+        { const tx = w - 8, ty = X([0, BASE.tree.c[1]])[1], far = Math.pow(10, st.lfar) * kOf();     // the tree, off the plan
+          g.fillStyle = BASE.tree.col; g.beginPath(); g.arc(tx - 6, ty, 6, 0, 2 * Math.PI); g.fill();
+          g.textAlign = 'right'; g.fillText('tree', tx - 16, ty - 8); g.fillText(st.truth ? `${f3(far)} m out` : 'outside', tx - 16, ty + 16); g.textAlign = 'left'; }
         g.fillStyle = '#8a8a96'; g.font = '11px DM Mono, monospace'; g.fillText('first wall →', ox + 4, oy - 6);
-        for (const n of NAMES) { const t = BASE[n], [cx, cy] = X(t.c);
+        for (const n of NAMES) { const t = BASE[n]; if (t.outside) continue; const [cx, cy] = X(t.c);
             g.strokeStyle = t.col; g.lineWidth = n === st.thing ? 2.2 : 1.2; g.beginPath();
             if (t.kind === 'ball') g.arc(cx, cy, sc * t.half[0], 0, 2 * Math.PI); else g.rect(cx - sc * t.half[0], cy - sc * t.half[1], 2 * sc * t.half[0], 2 * sc * t.half[1]);
             g.stroke(); g.fillStyle = t.col; g.fillText(n, cx - 16, cy + 4);
@@ -293,7 +331,7 @@
         if (!ap.moving) {                                           // the inscribed sweep from here
             const ds = bearings(ap.p);
             for (const n of NAMES) { const d = ds[n], met = ap.hand == null || wrap(d.lo) <= ap.hand || wrap(d.b) <= ap.hand;
-                if (!met) continue; const c = X(BASE[n].c);
+                if (!met) continue; const c = BASE[n].outside ? [R[0] + 3 * sc * Math.cos(d.b), R[1] + 3 * sc * Math.sin(d.b)] : X(BASE[n].c);
                 g.strokeStyle = 'rgba(212,160,82,0.75)'; g.lineWidth = 1; g.beginPath(); g.moveTo(R[0], R[1]); g.lineTo(c[0], c[1]); g.stroke();
                 for (const e of [d.lo, d.hi]) { g.strokeStyle = 'rgba(212,160,82,0.25)'; g.beginPath(); g.moveTo(R[0], R[1]);
                     g.lineTo(R[0] + 2.2 * sc * Math.cos(e), R[1] + 2.2 * sc * Math.sin(e)); g.stroke(); } }
@@ -306,7 +344,7 @@
         const { g, w, h } = fit($('map')); g.clearRect(0, 0, w, h);
         const rec = reconstruct(); g.font = '11px DM Mono, monospace';
         if (!rec.ok) { g.fillStyle = '#8a8a96'; g.fillText(rec.why || '', 10, 20); $('mapcap').textContent = 'The reader\'s own map: nothing placed yet.'; return; }
-        const pts = [...rec.Q, ...Object.values(rec.T)];
+        const pts = [...rec.Q, ...Object.entries(rec.T).filter(([nm]) => !BASE[nm].outside).map(e => e[1])];
         let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
         for (const p of pts) { x0 = Math.min(x0, p[0]); x1 = Math.max(x1, p[0]); y0 = Math.min(y0, p[1]); y1 = Math.max(y1, p[1]); }
         const pad = 26, sc = Math.min((w - 2 * pad) / Math.max(1e-9, x1 - x0), (h - 2 * pad) / Math.max(1e-9, y1 - y0));
@@ -314,8 +352,13 @@
         g.strokeStyle = 'rgba(181,156,240,0.6)'; g.setLineDash([4, 4]); g.beginPath();
         rec.Q.forEach((p, i) => { const q = X(p); i ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]); }); g.stroke(); g.setLineDash([]);
         rec.Q.forEach((p, i) => { const q = X(p); g.fillStyle = '#b59cf0'; g.beginPath(); g.arc(q[0], q[1], 3, 0, 2 * Math.PI); g.fill(); g.fillText(String(i + 1), q[0] + 5, q[1] - 5); });
-        for (const row of ro.rows) if (row.placeH) { const q = X(row.placeH); g.fillStyle = BASE[row.name].col;
+        for (const row of ro.rows) if (row.placeH && !BASE[row.name].outside) { const q = X(row.placeH); g.fillStyle = BASE[row.name].col;
             g.beginPath(); g.arc(q[0], q[1], 4, 0, 2 * Math.PI); g.fill(); g.fillText(row.name, q[0] + 6, q[1] + 4); }
+        const tr = ro.rows.find(r => r.name === 'tree'), qn = X(rec.Q[rec.Q.length - 1]);
+        if (tr && tr.placeH) { const a = Math.atan2(tr.placeH[1] - rec.Q[rec.Q.length - 1][1], tr.placeH[0] - rec.Q[rec.Q.length - 1][0]);
+            g.fillStyle = BASE.tree.col; g.textAlign = 'right';
+            g.fillText(`tree ${f3(ro.H ? tr.distM : tr.distH)} ${ro.H ? 'm' : 'H'} ±${(100 * tr.relErr).toPrecision(2)}% →`, w - 6, Math.max(14, Math.min(h - 6, qn[1] + 40 * Math.sin(a))));
+            g.textAlign = 'left'; }
         const q0 = X(rec.Q[0]), q1 = X(rec.Q[1]); g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.moveTo(...q0); g.lineTo(...q1); g.stroke();
         g.fillStyle = '#d4a052'; g.fillText(ro.H ? `H = ${ro.H.toFixed(3)} m` : 'H', (q0[0] + q1[0]) / 2 + 4, (q0[1] + q1[1]) / 2 - 4);
         $('mapcap').textContent = ro.H ? 'The reader\'s map, written: the first leg counted in strides, so every place in metres.'
@@ -366,19 +409,25 @@
         lines.push(`Central sweep (radii along given directions, an amount in a unit no reading fixes): ${n ? cov : '—'}`);
         lines.push(`Placed (from two standpoints, the walk's first leg as H): ${have ? `${have} of ${NAMES.length}${ro.legsH && ro.legsH.length > 1 ? `; later legs found from the things: ${ro.legsH.slice(1).map(f3).join(', ')} H` : ''}` : (ro.why || '—')}`);
         lines.push(`Held (a thing's two edges read at once, at its distance): ${have ? 'breadths across the line of sight, in H' : '—'}`);
+        const tr = ro.rows.find(r => r.name === 'tree'), deg = x => (x * 180 / Math.PI).toPrecision(3) + '°';
+        lines.push(`The tree, through the window: the walk turns ${n > 1 ? deg(tr.gamma) : '0°'} as seen from it (one direction of its central sweep is ${deg(BIN)}, the resolution ε ${deg(EPS)}): `
+            + (tr.regime === 'both sweeps' ? 'near enough to walk round in part: both sweeps'
+                : tr.regime === 'parallax only' ? `too far to walk round: no central sweep, its place by parallax alone (±${(100 * tr.relErr).toPrecision(2)}% of its distance)`
+                : n > 1 ? 'so far that every standpoint reads it in one direction: a ray, no place' : 'one standpoint: a direction')
+            + (n ? (tr.resolved ? '; its two edges told apart' : '; narrower than ε: one point, no breadth') : ''));
         lines.push(ro.H ? `Written: the first leg counted, ${ro.steps.toFixed(2)} strides of ${STRIDE} m (carried in), so H = ${ro.H.toFixed(3)} m; every place and breadth in metres`
             : `Written: nothing. Still unknown: H in any agreed unit (one amount: count one leg), and every radius's unit`);
-        $('sit').innerHTML = lines.map((l, i) => `<span class="${['', 'g', 'r', 'w', 'w', ro.H ? 'w' : 'x'][i]}">${l}</span>`).join('\n');
+        $('sit').innerHTML = lines.map((l, i) => `<span class="${['', 'g', 'r', 'w', 'w', 'g', ro.H ? 'w' : 'x'][i]}">${l}</span>`).join('\n');
         const unit = ro.H ? 'm' : 'H';
-        let t = `<tr><th>thing</th><th>direction from here</th><th>edges from here</th><th>central: directions</th><th>shape (radii / mean)</th>`
+        let t = `<tr><th>thing</th><th>direction from here</th><th>edges from here</th><th>regime</th><th>central: directions</th><th>shape (radii / mean)</th>`
             + `<th>place (from 1)</th><th>breadth across</th>${st.truth ? '<th>referee (m)</th>' : ''}</tr>`;
         for (const r of ro.rows) {
             const pl = ro.H ? r.placeM : r.placeH, ac = ro.H ? r.acrossM : r.across;
             const shp = r.central ? `${Math.min(...r.shape).toFixed(2)}–${Math.max(...r.shape).toFixed(2)}` : '—';
             t += `<tr><td style="color:${BASE[r.name].col}">${r.name}</td><td>${r.dir == null ? '—' : r.dir.toFixed(1) + '°'}</td>`
                 + `<td>${r.edges ? r.edges.map(a => a.toFixed(1) + '°').join(' to ') : '—'}</td>`
-                + `<td class="r">${r.central}/${NC}</td><td class="r">${shp}</td>`
-                + `<td class="${pl ? 'w' : 'no'}">${pl ? `(${f3(pl[0])}, ${f3(pl[1])}) ${unit}` : 'not placed'}</td>`
+                + `<td>${r.regime}</td><td class="r">${r.central}/${NC}</td><td class="r">${shp}</td>`
+                + `<td class="${pl ? 'w' : 'no'}">${pl ? `(${f3(pl[0])}, ${f3(pl[1])}) ${unit}${r.relErr > 1e-3 ? ` ±${(100 * r.relErr).toPrecision(2)}%` : ''}` : 'not placed'}</td>`
                 + `<td class="${ac != null ? 'w' : 'no'}">${ac != null ? f3(ac) + ' ' + unit : '—'}</td>`
                 + (st.truth ? `<td class="x">(${f3(r.truth.place[0])}, ${f3(r.truth.place[1])}), ${f3(r.truth.across)}</td>` : '') + '</tr>';
         }
@@ -393,6 +442,7 @@
         $('count').classList.toggle('on', st.count); $('truth').classList.toggle('on', st.truth);
         for (const b of $('things').children) b.classList.toggle('on', b.dataset.n === st.thing);
         $('round').textContent = `walk round the ${st.thing}`;
+        $('lfv').textContent = `${f3(Math.pow(10, st.lfar))} m beyond the window`;
     }
     function tick() { draw(); if (st.anim) requestAnimationFrame(tick); else next(); }
 
@@ -406,15 +456,16 @@
     $('count').onclick = () => { st.count = !st.count; draw(); };
     $('truth').onclick = () => { st.truth = !st.truth; draw(); };
     $('lk').oninput = e => { st.lk = +e.target.value; draw(); };
+    $('lf').oninput = e => { setFar(+e.target.value); draw(); };
     $('plan').addEventListener('pointerdown', e => {
-        const cv = $('plan'), r = cv.getBoundingClientRect(), w = cv.clientWidth, h = r.height, pad = 22;
-        const sc = Math.min((w - 2 * pad) / ROOM.W, (h - 2 * pad) / ROOM.D), ox = (w - sc * ROOM.W) / 2;
-        queue = []; stepTo([(e.clientX - r.left - ox) / sc, (e.clientY - r.top - pad) / sc]);
+        const cv = $('plan'), r = cv.getBoundingClientRect(), { sc, ox, oy } = planFrame(cv.clientWidth, r.height);
+        queue = []; stepTo([(e.clientX - r.left - ox) / sc, (e.clientY - r.top - oy) / sc]);
     });
     window.addEventListener('resize', draw);
 
     function set(o) {
         if ('lk' in o) { st.lk = o.lk; $('lk').value = o.lk; }
+        if ('lfar' in o) { setFar(o.lfar); $('lf').value = o.lfar; }
         for (const key of ['thing', 'count', 'truth']) if (key in o) st[key] = o[key];
         if ('walk' in o) { queue = []; st.anim = null; st.walk = []; for (const p of o.walk) stepTo(p, true); }
         draw(); return readout();
@@ -422,6 +473,7 @@
     // ---- links ----
     const init = {};
     if (P.has('k')) init.lk = +P.get('k');
+    if (P.has('far')) init.lfar = +P.get('far');
     if (P.has('thing') && NAMES.includes(P.get('thing'))) init.thing = P.get('thing');
     if (P.get('count') === '1') init.count = true;
     if (P.get('truth') === '1') init.truth = true;
@@ -429,9 +481,9 @@
     if (w0 !== 'none') init.walk = PATH.slice(0, Math.max(1, Math.min(PATH.length, +(P.get('n') || (w0 === 'path' ? PATH.length : 2)))));
     set(init);
 
-    window.__roomWalk = { NAMES, NC, STRIDE, PATH, bearings, radiusAt, centralSample, centralOf, reconstruct, readout,
+    window.__roomWalk = { NAMES, NC, STRIDE, PATH, EPS, BIN, gammaOf, regimeOf, bearings, radiusAt, centralSample, centralOf, reconstruct, readout,
         roundPoints, breadthAcross, set, stepTo: p => { const ok = stepTo(p, true); return ok; },
-        state: () => JSON.parse(JSON.stringify({ lk: st.lk, thing: st.thing, walk: st.walk, count: st.count, truth: st.truth })) };
+        state: () => JSON.parse(JSON.stringify({ lfar: st.lfar, lk: st.lk, thing: st.thing, walk: st.walk, count: st.count, truth: st.truth })) };
 })();
 </script>
 </body>

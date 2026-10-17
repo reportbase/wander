@@ -2270,6 +2270,19 @@ changes the payload, not the geometry: the chair moved has a new address and the
 place on the wall. Reading the room again afterwards is free. Reading is done from where the reader stands; writing, and
 changing what is written, needs the reader to move.
 
+**Far off, parallax in place of the central sweep.** The central sweep needs the directions from a thing's centre given
+across its turn, and a reader that cannot stand at the centre gets them by walking round it: each standpoint gives one
+direction from the centre and the radius along it. Seen from the thing's centre, a walk turns through its parallax
+angle, the widest angle there between two of its standpoints; for a thing at distance d and a walk spanning B square to
+the line of sight, that angle is about B/d. The shape needs a good share of the whole turn; the place needs only two
+directions that differ. By Proposition 11(b) any parallax angle larger than the reader's resolution ε fixes the place,
+up to the common scale, to about ε over that angle, as a share of its distance. So as a thing recedes the central sweep
+is lost first, while the walk still places it: parallax is what is left of the central sweep when the reader can no
+longer go round, two points of the circle it would have walked. Past d ≈ B/ε every standpoint reads the thing in one
+direction, and only a line through it remains (Proposition 11(a)). Its breadth across, held between its two edges, lasts
+while that breadth is more than ε of its distance. Near, a thing gives shape and place; farther, place without shape;
+farthest, direction alone. Each loss is set by a ratio, of the walk or the thing to the distance, and not by any amount.
+
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
 change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the
