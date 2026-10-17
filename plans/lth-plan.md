@@ -225,3 +225,8 @@ For each pair of methods (A, B) with at least 30 galaxies measured by both, Δμ
   much as of the tower; written so that it is on record.)
 
 Data: table2.dat from cdsarc.cds.unistra.fr/ftp/J/ApJ/944/94/, sha256 to be recorded here before P5 and P6 are computed.
+Recorded (16 Oct, before computing): `table2.dat.gz`, 2,485,646 bytes, sha256
+01da4042b02c737ffdda39aeb97c8ccc7e2e992fc5f7821c0891f9e4e4c8ad79; unpacked `table2.dat`, 55,877 rows, sha256
+8e908928e68352b59292cf67020a4d70aaa6d30f278dfa6aa3e41a9df808332f; the ReadMe, sha256
+2cfed1418147d5a626dee1fa37c47252124477c9828490508d9bbe511d34edb4. VizieR's licence terms (CDS); not committed. Columns
+by the ReadMe's byte positions.
