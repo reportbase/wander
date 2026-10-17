@@ -276,6 +276,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   10⁶ on the circle, the line, the square's edges and a lopsided weight. `?n=&op=&f=&path=&seed=`; hook
   `window.__theorem6` (`addresses`, `payload`, `apply`, `readingsWith`, `stats`, `commute`, `meanAt`, `medianAt`,
   `quartiles`, `readingAt`, `set`, `state`). Not in the flying page.
+- `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
+  "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
+  carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
+  known: r = 0 places nothing and shifts nothing; r > 0 places each post exactly, in r, while its parallax is above ε,
+  out to r·sin Δ/ε (the eye's sideways step); "r known" writes metres; fixating the 2 m post, nearer posts shift one way
+  and farther the other. Presets: the head (0.1 m, a quarter turn: 100 m at 1 mrad), the eye alone (7.6 mm, 10°, 1
+  arcmin: 4.5 m), a pure turn. `?r=&t=&eps=mrad|arcmin&fix=1&known=1`; hook `window.__headTurn` (`bearing`,
+  `triangulate`, `parallax`, `reach`, `shift`, `posts`, `set`, `state`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -819,6 +827,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   it needs the proportional number without the corner.."): writing states amounts, counted out and added, so its ruler
   is proportional on both sides of 1 with no corner; the corner is a reader's, where its unit falls. In "Three
   vantages", §3.4's table and §9 ("the writer's ruler").
+  **With no motion at all** (17 Oct, SPN R339, R340; Tom: "1,2,3"): OFS §3.5 closes with it: holding at once keeps the
+  frame (the sweep laid across the receptors; equal angles the Cauchy, a flat screen's median at half its edge), one
+  direction at a time keeps one address; no parallax, no change.
   **Turning in place gives no parallax** (17 Oct, SPN R339; Tom: "can you get parallax from just rotating your head",
   then "yes"): OFS §9 after "Far off": a turn about the point seen from moves every direction alike, so only directions,
   the frame and the corner; a head's eye sits r off the axis, a turn Δ carrying it a chord 2r·sin(Δ/2), a baseline; the
@@ -1088,6 +1099,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   from known results: γ(d) + γ(a²/d) = π (P11); (σ_d/d)/(σ_p/p) = γ/sin γ, π/2 at the corner, 1 far off (P12); the round
   error at the corner needs σ₁ = σ₂, the depth's corner does not (P13); a noisy parallax's inverse has no mean and keeps
   its median, 16% of readings at or below zero at the band's edge (P14); the two parsecs differ by a·ε/3 = 242 km (P15).
+  `htp-plan.md` (+ `htp/htp.py`, 17 Oct; Tom: "can you get parallax from just rotating your head", then "1,2,3"; SPN
+  R339, R340): exact (mpmath). A turn about the point seen from changes no pair's angle and places nothing (P1; run 1
+  killed by my set-up, a pair angle compared without reducing it to one turn; P1′ not); off the axis the eye's two places
+  are 2r·sin(Δ/2) apart and every point from 0.5 r to 10⁶ r is recovered exactly (P2), in r, unchanged by scaling the
+  world with r (P3); the reach is r·sin Δ/ε, the eye's sideways step (P4: 50, 100, 50 m at 30°, 90°, 150°, ε = 1 mrad);
+  the head 100 m at 1 mrad, 344 m at 1 arcmin, the eye alone (7.6 mm, Konrad et al. 2020 citing Atchison; Santini and
+  Rucci's robot) 4.5 m (P5); fixating, the shift changes sign at the fixated distance (P6). `head-turn.html` shows it.
   `wdg-plan.md` (+ `wdg/wdg.py`, 13 Oct; Tom: "the unit sphere could point every address in the universe", then "but that
   is the unsituated readers sphere, he would have to know the size if the universe. the situated reader has to sweep and
   set V = V2 = H. and create the sweep wedge using the cauchy"; SPN R220, R221): exact (mpmath). The even wedge's readings
@@ -1195,6 +1213,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   c (a stretch, required 1) kept apart from κ = β/H (a zoom, free). Then Tom: "all we need for this paper is to complete the well
   known metaphors of the mercator and lighthouses. If we can show that V must equal H in those to situations, that's
   enough for this paper." (SPN R258): moved into OFS Proposition 5(f), (g) and SPN §2.1 (see the OFS entry).
+  `hzt-plan.md` (+ `plans/hzt/`, `hzt/hzt.py`, 17 Oct; Tom: "1,2,3"; SPN R340): the horizon test proposed in
+  `tpi-report.md` §6.5, the unbounded face. 58 occurrences of the Cauchy and its kin gathered by a fresh agent
+  (`hzt/neutral-list.md`, its own knowledge, DOIs unchecked) and classified blind (`hzt/classification.md`). H1 killed:
+  a sweep reaching a horizon in 12 (4 explicit: the lighthouse, the stereographic circle, cot 2Θ, the combination test;
+  8 hidden), none in 46 (33 even on the classifier's alternatives); the commonest origin a pole a half-width off the
+  line (29), then stable sums (7). H2, H3 not killed (held 8, traversed 1; the observer's own sweep in none). H4 not
+  killed (half within a half-width, 45° there). H5 killed in its letter by the two laws on a circle (wrapped Cauchy,
+  Fabry–Pérot), where the horizon closes and a mean returns. Every computable law matched (run 1's oscillatory
+  quadratures failed by my set-up, run 2 by quadosc not).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -1491,6 +1518,9 @@ In short:
       the median commutes with every increasing f tried, the mean only with the affine one (Jensen's way for the convex);
       quartiles √2 ∓ 1, the mean climbing (2/π)·ln 10 a decade; the line and the square's edges with median 1 and a
       climbing mean, a lopsided weight's median off the corner.
+  37. **head-turn.html:** a pure turn places nothing and shifts nothing; the head (10 cm off its axis, a quarter turn) reaches
+      100 m at 1 mrad and places every post inside it exactly; 30° and 150° reach alike, 50 m; the eye alone 1–10 m at
+      1 arcmin; fixating 2 m, nearer posts shift one way and farther the other.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

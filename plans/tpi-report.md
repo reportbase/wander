@@ -380,7 +380,9 @@ distance (a zoom), but not at different lengths along and across (a stretch).
    the line the sweep falls on (the shore, the ground). Or it may be the azimuth, a sweep along the horizon. The first
    two lead to the same unbounded face.
 3. **Must the sweep be the reader's own** (OFS's addresses), or does a source's sweep, like the lighthouse's, count?
-4. **Should the horizon test (§6.5) be run?** Predictions first.
+4. **Should the horizon test (§6.5) be run?** Predictions first. *Run on 17 October (Tom: "1,2,3"; SPN R340): `plans/hzt-plan.md`. The sweep reaching a horizon
+   is one origin of the unbounded face (12 of 58), a pole a half-width off the line the commonest (29); in none is the
+   sweep the observer's own.*
 
 ## Sources
 

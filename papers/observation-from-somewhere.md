@@ -792,6 +792,18 @@ after another, shows the change. So a reader that may face either kind keeps som
 the reader infers the change rather than seeing it: a system that changes more slowly than the look, or more finely than
 the reader resolves, looks still.
 
+**With no motion at all.** If the reader does not turn and nothing in the world moves, what is left depends on the
+holding. A reader that holds at once, a camera or an eye, still has every address in its frame: the sweep is laid across
+its receptors instead of turned through, and each direction [h : v] arrives together, so the corner is still found, as
+the median of what the frame holds. What sets the count is then the receptors' spacing, not a turn: receptors at equal
+angles count as the turn does, and give the Cauchy with its median at the corner; a flat screen of equal pixels counts
+evenly in v/h out to its edge, and puts the median at half the edge's reading instead. The read is the same; only the
+count differs. A reader that takes one direction at a time has, without turning, one address: one reading from one zero,
+with no law, no median and no corner, since the corner is met by passing through it. Either way, with no motion the
+reader has no parallax, so no V*/H (§9), and no change, so looking again tells it nothing new: a near small thing and a
+far large one read alike, and nothing approaches. What remains is one still frame of addresses, or a single address,
+each still pointing at its payload.
+
 
 ### 3.6 What a situated reader holds, and where it stands
 

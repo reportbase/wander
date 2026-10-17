@@ -1031,6 +1031,30 @@ try {
   if (!t6Ok) failures.push(`[theorem6.html] ${JSON.stringify(t6)}`);
   console.log(`${failures.length === before36 ? 'ok  ' : 'FAIL'} theorem6.html ((a) scaling, reshaping, reshuffling or thinning what arrives moves no address (${t6.moved.toExponential(0)}), the median at the corner; (b) the median commutes with x³, √x, eˣ and 2x + 1; (c) the mean only with 2x + 1, Jensen's way for the convex; (d) quartiles √2 ∓ 1, the mean climbing ${t6.decade.toFixed(4)} a decade; (e) the line and the square's edges with the median at 1 and no mean, a lopsided weight at ${t6.meds[3].toFixed(3)})`);
 
+  // ── 37. head-turn.html: a pure turn (r = 0) places nothing and moves no shift; the head (r = 0.1 m, a quarter turn)
+  //    places every post within the reach r·sin Δ/ε exactly; the eye alone reaches a few metres; fixating, the shift
+  //    changes sign at the fixated distance ──
+  current = 'head-turn.html';
+  const before37 = failures.length;
+  await page.goto(new URL('head-turn.html', base).href, { waitUntil: 'load' });
+  const ht = await page.evaluate(() => {
+    const H = __headTurn, out = {};
+    const z = H.set({ r: 0, t: 90, eps: 'mrad' }); out.zeroPlaced = z.posts.filter(p => p.placed).length;
+    out.zeroShift = Math.max(...[0.5, 1, 5, 100].map(d => Math.abs(H.shift(d, 2, 0, Math.PI / 3))));
+    const a = H.set({ r: 0.1, t: 90, eps: 'mrad' }); out.reach = a.reach;
+    out.headOk = a.posts.every(p => p.placed === (p.d < a.reach * 0.9)); out.headErr = Math.max(...a.posts.filter(p => p.placed).map(p => p.err));
+    const b = H.set({ r: 0.1, t: 30 }), c = H.set({ r: 0.1, t: 150 }); out.r30 = b.reach; out.r150 = c.reach;
+    const e = H.set({ r: 0.0076, t: 10, eps: 'arcmin' }); out.eyeReach = e.reach;
+    out.flip = [0.5, 1.9, 2, 2.1, 50].map(d => H.shift(d, 2, 0.1, Math.PI / 6));
+    H.set({ r: 0.1, t: 90, eps: 'mrad' });
+    return out;
+  });
+  const htOk = ht.zeroPlaced === 0 && ht.zeroShift < 1e-12 && Math.abs(ht.reach - 100) < 1e-9 && ht.headOk && ht.headErr < 1e-9 &&
+    Math.abs(ht.r30 - ht.r150) < 1e-9 && Math.abs(ht.r30 - 50) < 1e-9 && ht.eyeReach > 1 && ht.eyeReach < 10 &&
+    ht.flip[0] > 0 && ht.flip[1] > 0 && Math.abs(ht.flip[2]) < 1e-12 && ht.flip[3] < 0 && ht.flip[4] < 0;
+  if (!htOk) failures.push(`[head-turn.html] ${JSON.stringify(ht)}`);
+  console.log(`${failures.length === before37 ? 'ok  ' : 'FAIL'} head-turn.html (a pure turn places nothing and shifts nothing; the head, 10 cm off its axis turned a quarter turn, reaches ${ht.reach.toFixed(0)} m at 1 mrad and places every post inside it exactly (${ht.headErr.toExponential(0)}); 30° and 150° reach alike, 50 m; the eye alone ${ht.eyeReach.toFixed(2)} m at 1 arcmin; fixating 2 m, nearer posts shift one way and farther the other)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

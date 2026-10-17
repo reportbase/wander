@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Turning the head</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    head-turn.html: parallax from turning the head (17 October 2026, Tom: "can you get parallax from just rotating your
+    head", "yes", then "1,2,3"; SPN R339, R340; HTP, plans/htp-plan.md; OFS §9 "Turning in place gives no parallax").
+    A standalone page, plain canvas. The head's axis at the origin, the eye a distance r in front of it; a turn Δ carries
+    the eye along a chord 2r·sin(Δ/2). Posts from 0.5 m to 500 m are read as bearings before and after the turn and the
+    rays crossed with the turn known: with r = 0 every pair's angle is unchanged and nothing is placed; with r > 0 every
+    post is placed exactly, in r, while its parallax angle is above the resolution ε; the reach is r·sin Δ/ε, the eye's
+    sideways step over ε. Fixating one post, nearer posts shift one way and farther ones the other. Presets: the head
+    (r = 0.1 m, a quarter turn) and the eye alone (the nodal point 7.6 mm from the eye's centre of rotation, a 10° shift).
+    Links: ?r=<m>&t=<deg>&eps=mrad|arcmin&fix=1&known=1. Test hook: window.__headTurn (bearing, triangulate, parallax,
+    reach, shift, posts, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button, select { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    .grid > * { min-width: 0 }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } table { font-size: 11.5px } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15;
+        overflow-wrap: anywhere }
+    table { border-collapse: collapse; font-size: 13px; width: 100% }
+    td, th { text-align: left; padding: 3px 6px; border-bottom: 1px solid var(--line) }
+    th { color: var(--dim); font-weight: 400 }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Turning the head</h1>
+    <p class="lede">Turn about the point you see from and every direction turns alike: nothing shifts against anything
+    else, so nothing gets a distance. A head is not that: the eye sits in front of the neck, so turning carries it along
+    a chord, and that chord is a baseline. The parallax is the eye's step, not the turn. Set the offset to zero and watch
+    everything stop being placed.</p>
+    <div class="panel">
+        <div class="row"><button id="pHead">the head: r 10 cm, a quarter turn</button><button id="pEye">the eye alone: 7.6 mm, 10°</button>
+            <button id="pZero">a pure turn: r = 0</button></div>
+        <div class="row"><label for="t">the turn Δ</label><input id="t" type="range" min="0" max="180" step="0.5" value="90">
+            <span id="tv" class="b"></span></div>
+        <div class="row"><label for="r">the eye's offset r</label><input id="r" type="range" min="0" max="0.15" step="0.0005" value="0.1">
+            <span id="rv" class="b"></span></div>
+        <div class="row"><label for="eps">resolution ε</label><select id="eps"><option value="mrad">1 mrad</option><option value="arcmin">1 arcmin</option></select>
+            <button id="fix">fixate the 2 m post</button><button id="known">r known (write metres)</button></div>
+        <div class="grid">
+            <div><canvas id="cv1" height="300"></canvas><p class="cap">The head from above, close up: the axis (white), the
+            eye before (gold) and after (teal) the turn, the chord between them (violet) and the eye's sideways step.</p>
+                <canvas id="cv3" height="170"></canvas><p class="cap">What the eye reads: how far each post's bearing
+                moved between the two looks, against the farthest point (or the fixated post), teal one way and gold the
+                other. With r = 0 nothing moves.</p></div>
+            <div><canvas id="cv2" height="380"></canvas><p class="cap">The world on the reader's lay (in proportion to 1 m,
+            then 1 + ln d): posts true (white), placed by the two looks (teal ring), or left as a direction (red ray) when
+            their parallax is under ε. The dashed circle is the reach.</p></div>
+        </div>
+        <div class="read" id="say"></div>
+        <div style="overflow-x:auto"><table id="tab"></table></div>
+    </div>
+    <p class="note">Related: <a href="room-walk.html">walking the room</a> (parallax far off), <a href="parallax.html">parallax
+    from the corner</a>, <a href="writer-readers.html">the writer and two readers</a>. <a href="demos.html">All the demos</a>.</p>
+</main>
+<script>
+(function () {
+    'use strict';
+    const $ = id => document.getElementById(id), P = new URLSearchParams(location.search);
+    const rad = d => d * Math.PI / 180, deg = a => a * 180 / Math.PI;
+    const EPS = { mrad: 1e-3, arcmin: Math.PI / 10800 };
+    const POSTS = [[0.5, -30], [1, 25], [2, 0], [5, -15], [20, 35], [100, -40], [500, 10]];   // distance from the axis (m), direction (deg)
+    const st = { r: 0.1, t: 90, eps: 'mrad', fix: false, known: false };
+
+    const eye = (r, D) => [r * Math.sin(D), r * Math.cos(D)];
+    const wrap = a => { while (a > Math.PI) a -= 2 * Math.PI; while (a <= -Math.PI) a += 2 * Math.PI; return a; };
+    // a point's bearing from the eye after a turn D, from the facing (counter-clockwise positive)
+    function bearing(p, r, D) { const e = eye(r, D); return wrap(Math.atan2(p[1] - e[1], p[0] - e[0]) - (Math.PI / 2 - D)); }
+    // the two rays, turned back to the start frame, crossed; null when they are one ray (no baseline)
+    function triangulate(b0, b1, r, D) {
+        const p0 = eye(r, 0), p1 = eye(r, D), a0 = Math.PI / 2 + b0, a1 = Math.PI / 2 - D + b1;
+        const u0 = [Math.cos(a0), Math.sin(a0)], u1 = [Math.cos(a1), Math.sin(a1)], den = u0[0] * u1[1] - u0[1] * u1[0];
+        if (Math.abs(den) < 1e-15) return null;
+        const t = ((p1[0] - p0[0]) * u1[1] - (p1[1] - p0[1]) * u1[0]) / den;
+        return [p0[0] + t * u0[0], p0[1] + t * u0[1]];
+    }
+    const at = (d, a) => [d * Math.sin(rad(a)), d * Math.cos(rad(a))];
+    // the parallax angle a point subtends between the two eye places
+    function parallax(p, r, D) { const e0 = eye(r, 0), e1 = eye(r, D);
+        return Math.abs(wrap(Math.atan2(e0[1] - p[1], e0[0] - p[0]) - Math.atan2(e1[1] - p[1], e1[0] - p[0]))); }
+    const reach = (r, D, eps) => r * Math.sin(D) / eps;
+    // fixating F straight ahead: a point on the line of sight shifts against F by this much
+    function shift(d, dF, r, D) { const p = [0, d], f = [0, dF];
+        return wrap((bearing(p, r, D) - bearing(p, r, 0)) - (bearing(f, r, D) - bearing(f, r, 0))); }
+    function posts(o = st) {
+        const D = rad(o.t), eps = EPS[o.eps];
+        return POSTS.map(([d, a]) => {
+            const p = at(d, a), g = parallax(p, o.r, D), placedOk = o.r > 0 && g > eps;
+            const q = o.r > 0 ? triangulate(bearing(p, o.r, 0), bearing(p, o.r, D), o.r, D) : null;
+            const dist = q ? Math.hypot(q[0], q[1]) : null;
+            return { d, a, parallax: g, placed: placedOk && !!q, inR: placedOk && q ? dist / o.r : null, metres: placedOk && q && o.known ? dist : null,
+                err: q ? Math.hypot(q[0] - p[0], q[1] - p[1]) / d : null };
+        });
+    }
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth,
+            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * ({ cv1: 0.7, cv2: 1, cv3: 0.45 })[cv.id]));
+        cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr);
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return { g, w, h: hh };
+    }
+    function drawHead() {
+        const { g, w, h } = fit($('cv1')); g.clearRect(0, 0, w, h);
+        const D = rad(st.t), R = Math.max(st.r, 0.02), sc = Math.min(w, h) * 0.32 / Math.max(R, 0.03), cx = w / 2, cy = h * 0.62;
+        const X = p => [cx + sc * p[0], cy - sc * p[1]];
+        g.font = '12px DM Mono, monospace';
+        g.strokeStyle = 'rgba(230,228,238,0.25)'; g.beginPath(); g.arc(cx, cy, sc * Math.max(st.r, 0.0001), 0, 2 * Math.PI); g.stroke();
+        const e0 = eye(st.r, 0), e1 = eye(st.r, D);
+        // the facings
+        const face = (e, a, col) => { const p = X(e); g.strokeStyle = col; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(...p);
+            g.lineTo(p[0] + Math.cos(Math.PI / 2 - a) * 80, p[1] - Math.sin(Math.PI / 2 - a) * 80); g.stroke(); g.setLineDash([]); };
+        face(e0, 0, 'rgba(212,160,82,0.6)'); face(e1, D, 'rgba(140,230,205,0.6)');
+        // the chord and the sideways step
+        g.strokeStyle = '#b59cf0'; g.lineWidth = 2; g.beginPath(); g.moveTo(...X(e0)); g.lineTo(...X(e1)); g.stroke(); g.lineWidth = 1;
+        g.strokeStyle = 'rgba(181,156,240,0.5)'; g.setLineDash([2, 3]); g.beginPath(); g.moveTo(...X([0, e1[1]])); g.lineTo(...X(e1)); g.stroke(); g.setLineDash([]);
+        const dot = (p, col, r) => { g.fillStyle = col; g.beginPath(); g.arc(p[0], p[1], r, 0, 2 * Math.PI); g.fill(); };
+        dot([cx, cy], '#e6e4ee', 4); dot(X(e0), '#d4a052', 5); dot(X(e1), '#8ce6cd', 5);
+        g.fillStyle = '#e6e4ee'; g.fillText('axis', cx + 8, cy + 14);
+        g.fillStyle = '#b59cf0'; g.fillText(`chord ${(2 * st.r * Math.sin(D / 2) * 100).toFixed(2)} cm`, 10, 18);
+        g.fillText(`sideways step ${(st.r * Math.sin(D) * 100).toFixed(2)} cm`, 10, 34);
+        if (st.r === 0) { g.fillStyle = '#d96e5b'; g.fillText('the eye is on the axis: a pure turn', 10, h - 10); }
+    }
+    const lay = d => d <= 1 ? d : 1 + Math.log(d);
+    function drawWorld() {
+        const { g, w, h } = fit($('cv2')); g.clearRect(0, 0, w, h);
+        const maxL = lay(800), sc = Math.min(w / 2, h * 0.92) / maxL, cx = w / 2, cy = h - 12;
+        const X = (d, a) => { const L = lay(d); return [cx + sc * L * Math.sin(rad(a)), cy - sc * L * Math.cos(rad(a))]; };
+        g.font = '11px DM Mono, monospace';
+        for (const d of [1, 10, 100, 1000]) { g.strokeStyle = d === 1 ? 'rgba(230,228,238,0.4)' : 'rgba(230,228,238,0.12)';
+            g.beginPath(); g.arc(cx, cy, sc * lay(d), Math.PI, 2 * Math.PI); g.stroke(); g.fillStyle = '#8a8a96'; g.fillText(d + ' m', cx + sc * lay(d) - 26, cy - 3); }
+        const R = reach(st.r, rad(st.t), EPS[st.eps]);
+        if (R > 0) { g.strokeStyle = 'rgba(140,230,205,0.6)'; g.setLineDash([5, 5]); g.beginPath(); g.arc(cx, cy, sc * lay(Math.min(R, 900)), Math.PI, 2 * Math.PI); g.stroke(); g.setLineDash([]); }
+        posts().forEach(p => {
+            const q = X(p.d, p.a);
+            if (!p.placed) { g.strokeStyle = 'rgba(217,110,91,0.7)'; g.beginPath(); g.moveTo(cx, cy); g.lineTo(...X(800, p.a)); g.stroke(); }
+            g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(q[0], q[1], 3.5, 0, 2 * Math.PI); g.fill();
+            if (p.placed) { g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath(); g.arc(q[0], q[1], 7, 0, 2 * Math.PI); g.stroke(); g.lineWidth = 1; }
+            g.fillStyle = '#c8c8d0'; g.fillText(p.d + ' m', q[0] + 9, q[1] + 4);
+        });
+        g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(cx, cy, 4, 0, 2 * Math.PI); g.fill();
+    }
+    function drawStrip() {
+        const { g, w, h } = fit($('cv3')); g.clearRect(0, 0, w, h);
+        const D = rad(st.t), far = at(1e9, 0), F = at(2, 0), ref = st.fix ? F : far;
+        // each post's shift between the two looks, against the reference (the farthest point, or the fixated post)
+        const sh = POSTS.map(([d, a]) => { const p = at(d, a);
+            return wrap((bearing(p, st.r, D) - bearing(p, st.r, 0)) - (bearing(ref, st.r, D) - bearing(ref, st.r, 0))); });
+        const m = Math.max(...sh.map(Math.abs)), span = m > 1e-12 ? m * 1.15 : 1, cx = w / 2 + 20, half = w / 2 - 70;
+        const row = (h - 30) / POSTS.length;
+        g.font = '11px DM Mono, monospace';
+        g.strokeStyle = 'rgba(230,228,238,0.3)'; g.beginPath(); g.moveTo(cx, 6); g.lineTo(cx, h - 22); g.stroke();
+        POSTS.forEach(([d], i) => {
+            const y = 10 + row * (i + 0.5), x = cx + half * sh[i] / span;
+            g.fillStyle = '#8a8a96'; g.fillText(d + ' m', 8, y + 4);
+            g.fillStyle = sh[i] >= 0 ? '#8ce6cd' : '#d4a052'; g.fillRect(Math.min(cx, x), y - 4, Math.max(1, Math.abs(x - cx)), 8);
+        });
+        g.fillStyle = '#8a8a96';
+        g.fillText(m > 1e-12 ? `largest shift ${m.toExponential(2)} rad` : 'no shift: every direction turned alike', 8, h - 6);
+    }
+    const fmt = x => x == null ? '—' : x >= 100 ? x.toFixed(0) : x.toPrecision(3);
+    function hud() {
+        const D = rad(st.t), eps = EPS[st.eps], R = reach(st.r, D, eps), ps = posts();
+        $('tv').textContent = st.t.toFixed(1) + '°'; $('rv').textContent = (st.r * 100).toFixed(2) + ' cm';
+        $('fix').classList.toggle('on', st.fix); $('known').classList.toggle('on', st.known);
+        const n = ps.filter(p => p.placed).length;
+        $('say').innerHTML = st.r === 0
+            ? `<span class="x">A pure turn.</span> The eye is on the axis: every direction turns through ${st.t.toFixed(1)}°, near and far alike, `
+              + `so no pair's angle changes and the two rays from each post are one ray. Directions, the frame and the corner; no distance. Nothing placed.`
+            : `<span class="w">The eye's step.</span> Chord ${(2 * st.r * Math.sin(D / 2) * 100).toFixed(2)} cm, sideways step ${(st.r * Math.sin(D) * 100).toFixed(2)} cm. `
+              + `Reach r·sin Δ/ε = <span class="r">${fmt(R)} m</span>. ${n} of ${ps.length} posts placed, `
+              + (st.known ? 'written in metres (r carried in).' : 'in units of r (the reader\'s own); metres need r.')
+              + (st.t >= 179.5 ? '\nA half turn steps the eye straight back: no sideways step, nothing placed straight ahead.' : '');
+        const rows = [['post', 'parallax', '> ε?', 'placed, in r', 'in metres']].concat(ps.map(p => [p.d + ' m', p.parallax.toExponential(2),
+            p.parallax > eps ? '<span class="r">yes</span>' : '<span class="x">no</span>', p.placed ? fmt(p.inR) + ' r' : 'a direction', p.metres != null ? fmt(p.metres) + ' m' : '—']));
+        $('tab').innerHTML = rows.map((r, i) => `<tr>${r.map(c => i ? `<td>${c}</td>` : `<th>${c}</th>`).join('')}</tr>`).join('');
+    }
+    function draw() { drawHead(); drawWorld(); drawStrip(); hud(); $('t').value = st.t; $('r').value = st.r; $('eps').value = st.eps; }
+    $('t').oninput = e => { st.t = +e.target.value; draw(); };
+    $('r').oninput = e => { st.r = +e.target.value; draw(); };
+    $('eps').onchange = e => { st.eps = e.target.value; draw(); };
+    $('fix').onclick = () => { st.fix = !st.fix; draw(); };
+    $('known').onclick = () => { st.known = !st.known; draw(); };
+    $('pHead').onclick = () => { Object.assign(st, { r: 0.1, t: 90 }); draw(); };
+    $('pEye').onclick = () => { Object.assign(st, { r: 0.0076, t: 10, eps: 'arcmin' }); draw(); };
+    $('pZero').onclick = () => { st.r = 0; draw(); };
+    window.addEventListener('resize', draw);
+    function set(o) { for (const k of ['r', 't']) if (k in o) st[k] = +o[k]; for (const k of ['eps']) if (k in o) st[k] = o[k];
+        for (const k of ['fix', 'known']) if (k in o) st[k] = !!o[k]; draw(); return { posts: posts(), reach: reach(st.r, rad(st.t), EPS[st.eps]) }; }
+    if (P.has('r')) st.r = Math.max(0, Math.min(0.15, +P.get('r')));
+    if (P.has('t')) st.t = Math.max(0, Math.min(180, +P.get('t')));
+    if (EPS[P.get('eps')]) st.eps = P.get('eps');
+    st.fix = P.get('fix') === '1'; st.known = P.get('known') === '1';
+    draw();
+    window.__headTurn = { EPS, POSTS, eye, bearing, triangulate, parallax, reach, shift, posts, set, state: () => Object.assign({}, st) };
+})();
+</script>
+</body>
+</html>
