@@ -1800,7 +1800,12 @@ the radial maps with λ constant. So a reader can begin at the unit circle and s
 in ln r = a₀ + ρ·f(θ), the unknown size is the constant term alone, a₀ = ln κ, the one term no ratio of radii reads, and
 the uniform measure dκ/κ is the flat da₀. Every term of f is the shape, read exactly from ratios of radii wherever the
 payload or another standpoint supplies them (from directions alone none is read), and taking the terms in order of n is
-a level of detail, each truncation leaving every address where it was.
+a level of detail, each truncation leaving every address where it was. The strength ρ is not a level of detail. It turns
+every term of f up together, from the circle at ρ = 0 to the full shape at ρ = 1, the fine terms as much as the broad;
+a level of detail keeps the broad terms whole and drops the fine ones, and is set by how many of the reader's
+addresses the thing spans (§8), which the shape does not say. A shape at half strength has all its modes at half their
+size, and one truncated to its broad form has some at full size and the rest at none. Both leave every address where it
+was, and they are different maps.
 
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the
