@@ -2204,15 +2204,18 @@ side. A timestamp is the familiar case. Year, month, day, hour, minute and secon
 count. Positional notation is stable for the same reason. Read against its own contents, a list re-addresses itself as
 it grows; written against an agreed radix, it never does, and the price is the slots held empty.
 
-**Units within units.** When lengths are read against different units, nested one inside another, writing costs one
-amount for each level of unit crossed. An ISO metric screw thread is a standard case. Its profile is fixed by the pitch
-P (ISO 68-1): the fundamental triangle stands (√3/2)·P high and the basic depth of engagement is five eighths of that,
-so the profile's ratios, 0.86603 and 0.54127 of the pitch, and their quotient 1.6, are the same from M6 to M36, readings
-against the pitch in which the pitch cancels. The pitch is set against the nominal diameter D by a second standard (ISO
-261), and relating a profile length to the diameter takes that one further number, P/D, which differs from size to size.
-Two lengths read against one unit are related for nothing, two read against units one level apart for one number, and
-two whose common unit lies k levels up for k numbers. This is the count above, one move or one exchanged number, carried
-through nested units; with every party drawn in the reader's one H there is one level, and one amount writes them all.
+**Units within units.** Ratios can carry much more than one relation. When lengths are read against units nested one
+inside another, every unit cancels inside its own level, and what is left between two levels is again a ratio, read one
+level up. An ISO metric screw thread is a standard case. Its profile is fixed by the pitch P (ISO 68-1): the fundamental
+triangle stands (√3/2)·P high and the basic depth of engagement is five eighths of that, so the profile's ratios,
+0.86603 and 0.54127 of the pitch, and their quotient 1.6, are the same from M6 to M36, readings against the pitch in
+which the pitch cancels. The pitch is set against the nominal diameter D by a second standard (ISO 261), and what
+relates a profile length to the diameter is P/D, a ratio read at the level above, not an amount. Two lengths read
+against one unit are related directly; two whose common unit lies k levels up are related through k ratios, one for each
+level between. However the n lengths are grouped, n − g ratios inside g groups and g − 1 between them make the same
+n − 1, every independent ratio there is. So a reader can hold a whole hierarchy of units, each level read against the
+one above, in ratios alone. What none of them gives is the top: writing still costs one amount, and one length anywhere
+in the hierarchy, a single diameter in millimetres, writes every other.
 
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a

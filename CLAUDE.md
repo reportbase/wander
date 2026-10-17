@@ -700,8 +700,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   The towers as reading and writing (16 Oct, SPN R315; Tom: "both are interesting related ideas we have explored"):
   OFS §9 "Growth, the test's other form" (the calendar tower: a place divided by the list's length moves as the list
   grows, a fixed-slot address, the radix agreed beforehand, does not; the timestamp) and "Units within units" (the
-  tower of grouped holds: one amount per level of unit crossed; the ISO thread, its profile against the pitch, ISO
-  68-1, the pitch against the diameter, ISO 261).
+  tower of grouped holds; the ISO thread, its profile against the pitch, ISO 68-1, the pitch against the diameter, ISO
+  261). Since R316 (Tom: "the tower of holds shows that sophisticated use of ratios is possible."): the factor between
+  levels is a ratio read one level up, not an amount; n lengths give n − 1 ratios however grouped; a whole hierarchy
+  of units is held in ratios alone, and writing still costs one amount at the top.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
   mechanism, closing on "π/2 − 2/π = 1" (false: 0.934; the product is 1); nothing taken into OFS.
   Grok's note "The Born Rule as the Address Density" (16 Oct, `plans/grok-born-note.md`; SPN R288): not usable (the
