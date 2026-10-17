@@ -819,6 +819,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   it needs the proportional number without the corner.."): writing states amounts, counted out and added, so its ruler
   is proportional on both sides of 1 with no corner; the corner is a reader's, where its unit falls. In "Three
   vantages", §3.4's table and §9 ("the writer's ruler").
+  **Turning in place gives no parallax** (17 Oct, SPN R339; Tom: "can you get parallax from just rotating your head",
+  then "yes"): OFS §9 after "Far off": a turn about the point seen from moves every direction alike, so only directions,
+  the frame and the corner; a head's eye sits r off the axis, a turn Δ carrying it a chord 2r·sin(Δ/2), a baseline; the
+  parallax is that translation, metres need r carried in; two eyes a baseline without motion.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

@@ -2349,6 +2349,19 @@ be used for estimating camera translation but is a perfect bearing reference for
 are kept as a direction with an inverse depth that may be zero until the motion gives them a place (Civera, Davison and
 Montiel 2008). Joining every direction from every standpoint into one figure is bundle adjustment (Triggs et al. 2000).
 
+**Turning in place gives no parallax.** A turn about the point the reader sees from, home, carries every direction
+through the same angle, near and far alike, so nothing shifts against anything else: the turn gives the directions, the
+frame and the corner, and no distance. Both reads of one turn come from the same standpoint, the address read pivoting
+at home and the payload read at the centre of the circle on the chord, and the standpoint does not move; that is why one
+standpoint gives the frame and not the size. Photographers rely on the same fact, turning a camera about
+its no-parallax point so that frames taken in different directions join without near and far things shifting. A head is
+not a pure turn: the eye sits a distance r in front of the axis it turns about, so a turn through Δ carries it along a
+chord B = 2r·sin(Δ/2), about 14 cm for r = 10 cm and a quarter turn. That chord is a baseline, and by Proposition 11(b)
+it places things out to about B/ε. The parallax comes from the translation inside the turn, not from the turn: in the
+reader's own H the chord sizes things against itself, and to write them in a shared unit the offset r must be known, an
+amount carried in, here the reader's own build. Two eyes give a baseline with no motion at all. Every route to parallax
+moves the point seen from; a turn alone gives directions.
+
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
 change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the
