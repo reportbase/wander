@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>One turn, one read</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    one-read.html: one turn of the head makes one read, which breaks down two ways (17 October 2026, Tom: "lets continue to
+    create visuals to help visualize the math", "all four"; SPN R337; after R332, R273, R329; OFS §4, "The address points at
+    the payload" and "Why there are two sweeps, and only two"). A standalone page, plain canvas, unit relations only.
+    The Thales circle on the chord from home A = (0, 0) to B = (1, 0), centre O = (½, 0). The reader at A turns its head
+    through θ from along the chord: its line of sight meets the circle at one point P = (h², hv), (h, v) = (cos θ, sin θ).
+    That one point is the end of the address, A's ray at θ (the address read: the direction [h : v], no amount), and the
+    place of the payload, O's radius at 2θ (the payload read: an amount along a given direction): Euclid III.20. The arc
+    from B to P is θ, its chord sin θ; the payload reader reads arc over chord, θ/sin θ, the address reader chord over
+    arc, sin θ/θ, their product 1, the writer's value; at the end of the turn π/2 and 2/π. With the other party drawn at
+    V = cH the circle is an ellipse, the radius at 2θ and the ray at θ part, and the two breakdowns no longer meet: only
+    V = H keeps them one read.
+    Links: ?t=<θ in degrees>&c=<V/H>&play=1. Test hook: window.__oneRead (at, read, gap, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 3fr 2fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } table { font-size: 11.5px } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15 }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>One turn, one read</h1>
+    <p class="lede">Turn your head and nothing else. Your line of sight meets one point, and that one read breaks down two
+    ways. Kept as a <span class="g">direction</span> from where you stand, it is the address read; kept as an
+    <span class="r">amount</span> along a direction from the centre, it is the payload read. Both end at the same point:
+    the address points at the payload. Over the whole turn the two readers read the line as π/2 and 2/π; together, their
+    product, the 1 that only the writer holds.</p>
+    <div class="panel">
+        <div class="row"><label for="t">the head's turn θ</label><input id="t" type="range" min="0" max="90" step="0.1" value="30">
+            <span id="tv" class="b"></span><button id="play">turn</button></div>
+        <div class="row"><label for="c">the other drawn at V = cH, c</label><input id="c" type="range" min="-1" max="1" step="0.01" value="0">
+            <span id="cv" class="b"></span><button id="one">V = H</button></div>
+        <div class="grid">
+            <div><canvas id="cv1" height="440"></canvas><p class="cap">The chord from home A to B, and the circle drawn on it.
+            Gold: the address, A's ray at θ. Teal: the payload, the radius from the centre at 2θ. Violet: the arc from B
+            already turned through, over its chord.</p></div>
+            <div>
+                <div class="read" id="addr"></div>
+                <div class="read" id="pay"></div>
+                <div class="read" id="both"></div>
+                <canvas id="cv2" height="200"></canvas><p class="cap">Over the turn: the payload reader's arc over chord
+                (teal, rising to π/2), the address reader's chord over arc (gold, falling to 2/π), and their product
+                (white), 1 throughout.</p>
+            </div>
+        </div>
+    </div>
+    <p class="note">Related: <a href="facing.html">the facing</a>, <a href="paths.html">one sweep, three paths</a>,
+    <a href="two-readers.html">two readers</a>. <a href="demos.html">All the demos</a>.</p>
+</main>
+<script>
+(function () {
+    'use strict';
+    const $ = id => document.getElementById(id), P = new URLSearchParams(location.search);
+    const st = { t: 30, lc: 0, anim: null };
+    const c = () => Math.pow(10, st.lc);
+    const rad = d => d * Math.PI / 180;
+
+    // the one point, built two ways. With V = cH the circle on the chord is the ellipse (½(1 + cos φ), (c/2) sin φ).
+    function at(tDeg, cc) {
+        cc = cc == null ? c() : cc;
+        const t = rad(tDeg);
+        // the payload: the radius from the centre at 2θ
+        const pay = [0.5 + 0.5 * Math.cos(2 * t), 0.5 * cc * Math.sin(2 * t)];
+        // the address: the ray from home at θ, where it meets the drawn curve, φ = 2·atan(tan θ / c)
+        const phi = t >= Math.PI / 2 ? Math.PI : 2 * Math.atan(Math.tan(t) / cc);
+        const addr = [0.5 + 0.5 * Math.cos(phi), 0.5 * cc * Math.sin(phi)];
+        return { pay, addr, phi };
+    }
+    const gap = (tDeg, cc) => { const a = at(tDeg, cc); return Math.hypot(a.pay[0] - a.addr[0], a.pay[1] - a.addr[1]); };
+    // the two reads of the arc turned through (on the circle, V = H): arc θ over chord sin θ
+    function read(tDeg) {
+        const t = rad(tDeg), h = Math.cos(t), v = Math.sin(t);
+        const arc = t, chord = Math.sin(t);
+        const payR = t === 0 ? 1 : arc / chord, addrR = t === 0 ? 1 : chord / arc;
+        return { h, v, ratio: h > 1e-15 ? v / h : Infinity, g: t / (Math.PI / 2), foot: h * h, height: h * v,
+            arc, chord, payload: payR, address: addrR, product: payR * addrR };
+    }
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth,
+            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * (cv.id === 'cv2' ? 0.5 : 0.9)));
+        cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr);
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return { g, w, h: hh };
+    }
+    function draw1() {
+        const { g, w, h } = fit($('cv1')); g.clearRect(0, 0, w, h);
+        const cc = c(), sc = Math.min(w * 0.82, (h - 60) / Math.max(0.5, cc * 0.5 + 0.08)), ox = (w - sc) / 2, oy = h - 40;
+        const X = p => [ox + sc * p[0], oy - sc * p[1]];
+        g.font = '12px DM Mono, monospace';
+        // the chord
+        g.strokeStyle = 'rgba(230,228,238,0.7)'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(...X([0, 0])); g.lineTo(...X([1, 0])); g.stroke();
+        // the drawn curve (the circle at c = 1)
+        g.strokeStyle = 'rgba(230,228,238,0.35)'; g.lineWidth = 1; g.beginPath();
+        for (let i = 0; i <= 180; i++) { const f = Math.PI * i / 180, q = X([0.5 + 0.5 * Math.cos(f), 0.5 * cc * Math.sin(f)]); i ? g.lineTo(...q) : g.moveTo(...q); }
+        g.stroke();
+        const a = at(st.t), O = X([0.5, 0]), A = X([0, 0]), B = X([1, 0]);
+        // the arc from B already turned through (violet), along the drawn curve to the payload point
+        g.strokeStyle = '#b59cf0'; g.lineWidth = 3; g.beginPath();
+        for (let i = 0; i <= 90; i++) { const f = 2 * rad(st.t) * i / 90, q = X([0.5 + 0.5 * Math.cos(f), 0.5 * cc * Math.sin(f)]); i ? g.lineTo(...q) : g.moveTo(...q); }
+        g.stroke();
+        // its chord
+        g.strokeStyle = 'rgba(181,156,240,0.6)'; g.lineWidth = 1; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(...B); g.lineTo(...X(a.pay)); g.stroke(); g.setLineDash([]);
+        // the address ray from home at θ
+        const t = rad(st.t), far = 1.25;
+        g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.moveTo(...A); g.lineTo(...X([far * Math.cos(t), far * Math.sin(t)])); g.stroke();
+        // the payload radius from the centre at 2θ
+        g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath(); g.moveTo(...O); g.lineTo(...X(a.pay)); g.stroke();
+        // the points
+        const dot = (p, col, r) => { g.fillStyle = col; g.beginPath(); g.arc(p[0], p[1], r, 0, 2 * Math.PI); g.fill(); };
+        dot(X(a.addr), '#d4a052', 6); dot(X(a.pay), '#8ce6cd', 4);
+        dot(A, '#e6e4ee', 4); dot(B, '#e6e4ee', 3); dot(O, '#8a8a96', 3);
+        g.fillStyle = '#e6e4ee'; g.fillText('A, home', A[0] - 8, A[1] + 18); g.fillText('B', B[0] - 4, B[1] + 18); g.fillText('centre', O[0] - 22, O[1] + 18);
+        // the angles
+        g.strokeStyle = 'rgba(212,160,82,0.6)'; g.beginPath(); g.arc(A[0], A[1], 34, -t, 0); g.stroke(); g.fillStyle = '#d4a052'; g.fillText('θ', A[0] + 38, A[1] - 6);
+        if (Math.abs(cc - 1) < 1e-9) { g.strokeStyle = 'rgba(140,230,205,0.6)'; g.beginPath(); g.arc(O[0], O[1], 22, -2 * t, 0); g.stroke(); g.fillStyle = '#8ce6cd'; g.fillText('2θ', O[0] + 26, O[1] - 14); }
+        const gp = gap(st.t);
+        if (gp > 1e-9) { g.fillStyle = '#d96e5b'; g.fillText(`the two breakdowns miss by ${gp.toFixed(3)}`, 12, 20); }
+        else { g.fillStyle = '#8ce6cd'; g.fillText('one point: the address points at the payload', 12, 20); }
+    }
+    function draw2() {
+        const { g, w, h } = fit($('cv2')); g.clearRect(0, 0, w, h);
+        const pad = 26, X = d => pad + (w - 2 * pad) * d / 90, Y = y => h - pad - (h - 2 * pad) * (y - 0.5) / 1.2;
+        g.font = '11px DM Mono, monospace'; g.fillStyle = '#8a8a96';
+        for (const y of [2 / Math.PI, 1, Math.PI / 2]) { g.fillRect(pad, Y(y), w - 2 * pad, 0.5); }
+        g.fillText('π/2', 2, Y(Math.PI / 2) + 4); g.fillText('1', 8, Y(1) + 4); g.fillText('2/π', 2, Y(2 / Math.PI) + 4);
+        for (const d of [0, 45, 90]) g.fillText(d + '°', X(d) - 8, h - 6);
+        const line = (f, col) => { g.strokeStyle = col; g.lineWidth = 2; g.beginPath(); for (let i = 0; i <= 180; i++) { const d = i / 2, y = f(read(d)); i ? g.lineTo(X(d), Y(y)) : g.moveTo(X(d), Y(y)); } g.stroke(); };
+        line(r => r.payload, '#8ce6cd'); line(r => r.address, '#d4a052'); line(r => r.product, '#e6e4ee');
+        g.fillStyle = '#d4a052'; g.fillRect(X(st.t) - 1, pad, 2, h - 2 * pad);
+    }
+    const f4 = x => !isFinite(x) ? '∞' : x.toFixed(4);
+    function hud() {
+        const r = read(st.t), cc = c();
+        $('tv').textContent = st.t.toFixed(1) + '°';
+        $('cv').textContent = cc.toFixed(3);
+        $('addr').innerHTML = `<span class="g">The address read</span> (the inscribed sweep, from home): a direction, no amount.\n`
+            + `  [h : v] = [${f4(r.h)} : ${f4(r.v)}], so v/h = ${f4(r.ratio)}\n  the sweep's share so far, g = ${f4(r.g)}${Math.abs(st.t - 45) < 0.05 ? '  (the corner: the arms read alike)' : ''}`;
+        $('pay').innerHTML = `<span class="r">The payload read</span> (the central sweep, from the centre): an amount along a direction given in advance.\n`
+            + `  facing turned 2θ = ${(2 * st.t).toFixed(1)}°; the point's foot h² = ${f4(r.foot)}, height hv = ${f4(r.height)}`;
+        $('both').innerHTML = `<span class="w">The arc turned through</span> θ = ${f4(r.arc)} over its chord sin θ = ${f4(r.chord)}:\n`
+            + `  payload reader, arc over chord: <span class="r">${f4(r.payload)}</span>\n  address reader, chord over arc: <span class="g">${f4(r.address)}</span>\n`
+            + `  their product: <span class="b">${f4(r.product)}</span>, the writer's 1` + (st.t >= 89.95 ? '\n  at the end of the turn: π/2 and 2/π' : '')
+            + (Math.abs(cc - 1) > 1e-9 ? `\n<span class="x">Drawn at V = ${cc.toFixed(2)}H: the ray at θ and the radius at 2θ part, by ${gap(st.t).toFixed(4)}.</span>` : '');
+    }
+    function draw() { draw1(); draw2(); hud(); $('t').value = st.t; $('c').value = st.lc; }
+    function play() {
+        if (st.anim) { cancelAnimationFrame(st.anim); st.anim = null; return; }
+        const t0 = performance.now(), from = st.t >= 89.9 ? 0 : st.t;
+        const step = now => { st.t = Math.min(90, from + (now - t0) / 1000 * 18); draw(); st.anim = st.t < 90 ? requestAnimationFrame(step) : null; };
+        st.anim = requestAnimationFrame(step);
+    }
+    $('t').oninput = e => { st.t = +e.target.value; draw(); };
+    $('c').oninput = e => { st.lc = +e.target.value; draw(); };
+    $('play').onclick = play;
+    $('one').onclick = () => { st.lc = 0; draw(); };
+    window.addEventListener('resize', draw);
+    function set(o) { if ('t' in o) st.t = +o.t; if ('c' in o) st.lc = Math.log10(+o.c); draw(); return read(st.t); }
+    if (P.has('t')) st.t = Math.max(0, Math.min(90, +P.get('t')));
+    if (P.has('c')) st.lc = Math.log10(Math.max(0.1, Math.min(10, +P.get('c'))));
+    draw();
+    if (P.get('play') === '1') play();
+    window.__oneRead = { at, read, gap, set, state: () => ({ t: st.t, c: c() }) };
+})();
+</script>
+</body>
+</html>

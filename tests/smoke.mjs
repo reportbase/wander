@@ -941,6 +941,93 @@ try {
   if (!rwOk) failures.push(`[room-walk.html] ${JSON.stringify(rw)}`);
   console.log(`${failures.length === before32 ? 'ok  ' : 'FAIL'} room-walk.html (one standpoint: directions and one radius a thing, nothing placed; the path places all five from directions alone, in the first leg, exactly (${rw.exact.toExponential(0)}); scaling the world by 10⁻², 7, 10² moves no direction, place, breadth in H or shape, the radii and the metres by k; walking round the table gives ${rw.round} of its 16 directions; the tree at 2.5 m by both sweeps, at 30 m by parallax only (${rw.mid.err.toExponential(0)}), at 8 km a ray, unresolved; no fixed frame: faced three ways at first, the map the room's turned, exactly (${rw.faces.toExponential(0)}))`);
 
+  // ── 33. one-read.html: one turn meets one point, the address (A's ray at θ) and the payload (the radius at 2θ) at it
+  //    only with V = H; arc over chord and chord over arc, product 1, π/2 and 2/π at the end of the turn ──
+  current = 'one-read.html';
+  const before33 = failures.length;
+  await page.goto(new URL('one-read.html', base).href, { waitUntil: 'load' });
+  const orr = await page.evaluate(() => {
+    const O = __oneRead; let gap1 = 0, gap2 = 1, gapHalf = 1, prod = 0;
+    for (let t = 0.5; t < 90; t += 0.5) { gap1 = Math.max(gap1, O.gap(t, 1)); gap2 = Math.min(gap2, O.gap(t, 2)); gapHalf = Math.min(gapHalf, O.gap(t, 0.5));
+      prod = Math.max(prod, Math.abs(O.read(t).product - 1)); }
+    const e = O.read(90), c = O.read(45), r = O.set({ t: 30, c: 1 });
+    return { gap1, gap2, gapHalf, prod, pay: Math.abs(e.payload - Math.PI / 2), addr: Math.abs(e.address - 2 / Math.PI), ratio: c.ratio, g: c.g,
+      foot: Math.abs(r.foot - 0.75), height: Math.abs(r.height - Math.sqrt(3) / 4) };
+  });
+  const orOk = orr.gap1 < 1e-12 && orr.gap2 > 1e-4 && orr.gapHalf > 1e-4 && orr.prod < 1e-12 && orr.pay < 1e-12 && orr.addr < 1e-12 &&
+    Math.abs(orr.ratio - 1) < 1e-12 && Math.abs(orr.g - 0.5) < 1e-12 && orr.foot < 1e-12 && orr.height < 1e-12;
+  if (!orOk) failures.push(`[one-read.html] ${JSON.stringify(orr)}`);
+  console.log(`${failures.length === before33 ? 'ok  ' : 'FAIL'} one-read.html (at V = H the ray at θ and the radius at 2θ meet at one point at every θ (${orr.gap1.toExponential(0)}), at V = 2H and V = H/2 they part; arc over chord times chord over arc 1 throughout, π/2 and 2/π at the end of the turn; at 45° v/h = 1 and g = ½; at 30° foot ¾, height √3/4)`);
+
+  // ── 34. sweep-zero.html: counted by its own turn the readings are the Cauchy, median 1; a clock alike on both sides
+  //    keeps the median, a lopsided one moves it, a flat screen puts it at half the frame; the legs compose by tangent
+  //    addition and once round to no turn; a turn carries the Cauchy onto itself ──
+  current = 'sweep-zero.html';
+  const before34 = failures.length;
+  await page.goto(new URL('sweep-zero.html', base).href, { waitUntil: 'load' });
+  const sz = await page.evaluate(() => {
+    const S = __sweepZero, m = {}; for (const k of ['turn', 'even', 'lopsided', 'screen', 'payload']) m[k] = S.median(k);
+    const half = S.tally('turn', 45), full = S.tally('turn', 90), round = S.compose([50, 80, 70, 85, 75]), two = S.compose([30, 40]);
+    let gEq = 0; for (let t = 0; t <= 90; t += 7.5) { const y = S.tally('turn', t); gEq = Math.max(gEq, Math.abs(y.share - y.g)); }
+    S.set({ t: 35, legs: [] }); S.stop(); const st = S.state();
+    return { m, halfN: half.n, fullMed: full.median, gEq, closed: round.closed, roundH: round.h, two: Math.abs(two.reading - Math.tan(70 * Math.PI / 180)),
+      fixed: Math.max(S.fixed(37), S.fixed(90), S.fixed(-120)), afterStop: st };
+  });
+  const szOk = Math.abs(sz.m.turn - 1) < 1e-12 && Math.abs(sz.m.even - 1) < 1e-6 && sz.m.lopsided > 1.3 && Math.abs(sz.m.screen - 2) < 1e-12 &&
+    Math.abs(sz.m.payload - 1) > 0.05 && sz.halfN === 101 && Math.abs(sz.fullMed - 1) < 1e-12 && sz.gEq < 1e-12 && sz.closed && Math.abs(sz.roundH - 1) < 1e-12 &&
+    sz.two < 1e-12 && sz.fixed < 1e-3 && sz.afterStop.t === 0 && sz.afterStop.legs.length === 1 && sz.afterStop.legs[0] === 35;
+  if (!szOk) failures.push(`[sweep-zero.html] ${JSON.stringify(sz)}`);
+  console.log(`${failures.length === before34 ? 'ok  ' : 'FAIL'} sweep-zero.html (counted by its own turn the share counted is the share turned and the median 1, half the counts by the corner; a clock alike on both sides keeps 1, a lopsided one moves it to ${sz.m.lopsided.toFixed(2)}, a flat screen to 2, half its edge; a stop is a new zero; 30° then 40° compose to tan 70°, once round to no turn; a turn carries the Cauchy onto itself (${sz.fixed.toExponential(0)}))`);
+
+  // ── 35. writer-readers.html: one standpoint reads directions and no size; a second, one step H away, sizes the box in H;
+  //    the step counted writes metres; the writer walks it; scaling the world moves only the metres ──
+  current = 'writer-readers.html';
+  const before35 = failures.length;
+  await page.goto(new URL('writer-readers.html', base).href, { waitUntil: 'load' });
+  const wrd = await page.evaluate(() => {
+    const W = __writerReaders, T = W.truth(1), r1 = W.rung1(1), r2 = W.rung2(1), r3 = W.rung3(1), wr = W.writer(1), out = { scale: 0, metres: 0, ghosts: 0 };
+    for (const k of [0.01, 7, 100]) {
+      const a = W.rung1(k), b = W.rung2(k);
+      out.scale = Math.max(out.scale, Math.abs(a.left.v - r1.left.v), Math.abs(a.right.h - r1.right.h), Math.abs(b.VH - r2.VH), Math.abs(b.dH - r2.dH));
+      out.metres = Math.max(out.metres, Math.abs(W.rung3(k).Vm / (k * r3.Vm) - 1), Math.abs(W.writer(k).Vm / (k * wr.Vm) - 1));
+    }
+    // every ghost reads its edges along the same two directions from A
+    for (const g of W.ghosts(1)) { const a = Math.atan2(g.d, g.x0), b = Math.atan2(g.d, g.x0 + g.V);
+      out.ghosts = Math.max(out.ghosts, Math.abs(a - Math.atan2(r1.left.v, r1.left.h)), Math.abs(b - Math.atan2(r1.right.v, r1.right.h))); }
+    return Object.assign(out, { size1: r1.size, product: r1.product, VH: r2.VH, trueVH: T.V / T.step, Vm: r3.Vm, trueV: T.V, wV: wr.Vm, wD: wr.Dm, depthH: r2.depthH });
+  });
+  const wdrOk = wrd.size1 === null && Math.abs(wrd.product - 1) < 1e-15 && Math.abs(wrd.VH - wrd.trueVH) < 1e-9 && Math.abs(wrd.Vm - wrd.trueV) < 1e-9 &&
+    Math.abs(wrd.wV - 3) < 1e-9 && Math.abs(wrd.wD - 1) < 1e-9 && wrd.depthH === null && wrd.scale < 1e-9 && wrd.metres < 1e-9 && wrd.ghosts < 1e-12;
+  if (!wdrOk) failures.push(`[writer-readers.html] ${JSON.stringify(wrd)}`);
+  console.log(`${failures.length === before35 ? 'ok  ' : 'FAIL'} writer-readers.html (one standpoint: the frame, product 1, no size, every box along the same rays alike; two standpoints a step apart: V*/H = ${wrd.VH.toFixed(4)}, its depth unread; the step counted: ${wrd.Vm.toFixed(4)} m; the writer walks 3 m by 1 m; scaling the world by 10⁻², 7, 10² moves no reading and nothing in H, the metres by k)`);
+
+  // ── 36. theorem6.html: (a) scaling, reshaping, reshuffling or thinning what arrives moves no address; (b) the median
+  //    commutes with an increasing f, (c) the mean only with an affine one; (d) median 1, quartiles √2 ∓ 1, the mean
+  //    climbing (2/π)·ln 10 a decade; (e) the line and the square's edges at the corner too, a lopsided weight off it ──
+  current = 'theorem6.html';
+  const before36 = failures.length;
+  await page.goto(new URL('theorem6.html', base).href, { waitUntil: 'load' });
+  const t6 = await page.evaluate(() => {
+    const T = __theorem6, out = { moved: 0, med: 0, kept: {} };
+    for (const op of ['none', 'scale', 'reshape', 'shuffle', 'thin']) { const s = T.set({ op, n: 25 }); out.moved = Math.max(out.moved, s.moved);
+      out.med = Math.max(out.med, Math.abs(s.medianAfter - 1)); out.kept[op] = s.kept; }
+    T.set({ op: 'none' });
+    const X = T.readingsWith('none'), L = T.payload(), c = {};
+    for (const f of ['affine', 'cube', 'sqrt', 'exp']) { const a = T.commute(X, f), b = T.commute(L, f);
+      c[f] = { med: Math.max(Math.abs(a.medianFX - a.fMedianX), Math.abs(b.medianFX - b.fMedianX)), mean: Math.min(Math.abs(a.meanFX - a.fMeanX), Math.abs(b.meanFX - b.fMeanX)),
+        jensen: f === 'cube' || f === 'exp' ? a.meanFX >= a.fMeanX && b.meanFX >= b.fMeanX : true }; }
+    const q = T.quartiles('circle'), m4 = T.meanAt('circle', 10001), m5 = T.meanAt('circle', 100001);
+    const meds = ['circle', 'line', 'square', 'lopsided'].map(p => T.medianAt(p, 100001));
+    const climb = ['line', 'square'].map(p => T.meanAt(p, 100001) - T.meanAt(p, 10001));
+    return Object.assign(out, { c, q, decade: m5 - m4, meds, climb });
+  });
+  const t6Ok = t6.moved < 1e-14 && t6.med < 1e-12 && t6.kept.thin === 13 && t6.kept.scale === 25 &&
+    Object.values(t6.c).every(x => x.med < 1e-9 && x.jensen) && t6.c.affine.mean < 1e-9 && ['cube', 'sqrt', 'exp'].every(f => t6.c[f].mean > 1e-3) &&
+    Math.abs(t6.q[0] - (Math.SQRT2 - 1)) < 1e-4 && Math.abs(t6.q[1] - (Math.SQRT2 + 1)) < 1e-3 && Math.abs(t6.decade - 2 / Math.PI * Math.LN10) < 1e-3 &&
+    t6.meds.slice(0, 3).every(m => Math.abs(m - 1) < 1e-12) && t6.meds[3] > 1.2 && t6.climb.every(x => x > 1);
+  if (!t6Ok) failures.push(`[theorem6.html] ${JSON.stringify(t6)}`);
+  console.log(`${failures.length === before36 ? 'ok  ' : 'FAIL'} theorem6.html ((a) scaling, reshaping, reshuffling or thinning what arrives moves no address (${t6.moved.toExponential(0)}), the median at the corner; (b) the median commutes with x³, √x, eˣ and 2x + 1; (c) the mean only with 2x + 1, Jensen's way for the convex; (d) quartiles √2 ∓ 1, the mean climbing ${t6.decade.toFixed(4)} a decade; (e) the line and the square's edges with the median at 1 and no mean, a lopsided weight at ${t6.meds[3].toFixed(3)})`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

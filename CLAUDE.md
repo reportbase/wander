@@ -254,6 +254,25 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `?walk=path|none&n=&thing=&k=<log10 k>&far=<log10 m>&eps=&face=&count=1&truth=1`; hook `window.__roomWalk` (`bearings`, `zeroAt`, `relDirs`, `headings`,
   `centralSample`, `centralOf`, `reconstruct`, `readout`, `roundPoints`, `gammaOf`, `regimeOf`, `set`, `stepTo`, `state`).
   Not in the flying page.
+- `one-read.html`, `sweep-zero.html`, `writer-readers.html`, `theorem6.html`: **visuals of the math** (17 Oct 2026, Tom: "lets
+  continue to create visuals to help visualize the math, what do you suggest", then "all four"; SPN R337), standalone pages
+  like `facing.html`. `one-read.html` (R332): one head turn θ from home on the chord's Thales circle meets one point; the
+  address (A's ray at θ) and the payload (the radius at 2θ) end there (III.20); arc over chord θ/sin θ and chord over arc,
+  product 1, π/2 and 2/π at the end; at V = cH the ellipse parts them. `?t=&c=&play=1`; hook `window.__oneRead` (`at`, `read`,
+  `gap`, `set`, `state`). `sweep-zero.html` (R327, R331, R334): the sweep only forward from zero; N = 201 counts at the law's
+  quantiles; counted against the turn itself (the Cauchy, median 1), a clock alike on both sides (median 1), a lopsided clock
+  (median moved), a flat screen of equal pixels to v/h = 4 (median 2), what arrives (its median direction); "stop" a new zero,
+  the legs composed by tangent addition, once round to no turn; a turn carries the Cauchy onto itself.
+  `?count=turn|even|lopsided|screen|payload&t=&legs=&play=1`; hook `window.__sweepZero` (`law`, `quantile`, `median`,
+  `tally`, `compose`, `fixed`, `set`, `stop`, `state`). `writer-readers.html` (R328–R335): a box 3 m by 1 m, 5 m off; one
+  standpoint the frame (π/2·2/π = 1) and no size (ghost boxes along the same rays), a second a step H (two strides of 0.7 m)
+  away V*/H, the step counted metres, the writer walking it all; drawn in H, so k moves only the metre bar.
+  `?step=1|2|3|writer&k=<log10 k>`; hook `window.__writerReaders` (`truth`, `rung1`, `rung2`, `rung3`, `writer`, `ghosts`,
+  `set`, `state`). `theorem6.html` (R330): (a) scale, reshape, reshuffle or thin what arrives, no address moves; (b), (c) a
+  table of median and mean against f (affine, x³, √x, eˣ) on the addresses and the amounts; (d), (e) median and mean against N
+  to 10⁶ on the circle, the line, the square's edges and a lopsided weight. `?n=&op=&f=&path=&seed=`; hook
+  `window.__theorem6` (`addresses`, `payload`, `apply`, `readingsWith`, `stats`, `commute`, `meanAt`, `medianAt`,
+  `quartiles`, `readingAt`, `set`, `state`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -357,7 +376,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -1447,6 +1466,19 @@ In short:
       breadth in H or shape, the radii and the metres by k; walking round the table fills at least 8 of its 16 directions;
       the tree at 2.5 m read by both sweeps, at 30 m by parallax only and placed exactly, at 8 km a ray and unresolved; first
       facing three ways, the map the room's turned, exactly.
+
+  33. **one-read.html:** at V = H the ray at θ and the radius at 2θ meet at every θ, at V = 2H and H/2 they part; arc over
+      chord times chord over arc 1 throughout, π/2 and 2/π at the end; at 45° v/h = 1 and g = ½; at 30° foot ¾, height √3/4.
+  34. **sweep-zero.html:** counted by its own turn the share counted is the share turned and the median 1; a clock alike on
+      both sides keeps it, a lopsided one moves it, a flat screen to 2, half its edge; a stop is a new zero; 30° then 40°
+      compose to tan 70°, once round to no turn; a turn carries the Cauchy onto itself.
+  35. **writer-readers.html:** one standpoint the frame (product 1), no size, every ghost box on the same rays; two a step
+      apart V*/H exactly, the depth unread; the step counted 3 m; the writer 3 m by 1 m; scaling the world by 10⁻², 7, 10²
+      moves no reading and nothing in H, the metres by k.
+  36. **theorem6.html:** scaling, reshaping, reshuffling or thinning what arrives moves no address, the median at the corner;
+      the median commutes with every increasing f tried, the mean only with the affine one (Jensen's way for the convex);
+      quartiles √2 ∓ 1, the mean climbing (2/π)·ln 10 a decade; the line and the square's edges with median 1 and a
+      climbing mean, a lopsided weight's median off the corner.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
