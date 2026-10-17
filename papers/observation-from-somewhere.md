@@ -42,19 +42,20 @@ scale is preferred (a premise we assume, not derive), the only consistent layout
 has two address spaces, proportional and logarithmic, joined at one corner.
 
 Our main result concerns what a reader receives when it sweeps this circle uniformly from where it stands. Its readings
-follow the Cauchy distribution. When the uniformity is the reader's own laying, we show that the distribution belongs
-entirely to the address reader, the inscribed sweep, and not to anything that arrives at its addresses: it is a property
-of the reader, not of the payload, since whatever is met in each direction cancels from every single reading. The
-payload reader, the central sweep, receives amounts, and their law is the payload's. This is why the readers are named
-by what they receive. Where the uniformity belongs to the sources instead, as when a lighthouse sends its flashes at
-uniformly spread angles, the same law is a property of the world's directions. This gives a reason for the Cauchy's
-best-known peculiarity. Its median exists and sits at the corner, because a median depends only on order, which is a
-property of addresses. Its mean does not exist, because a mean is a sum of sizes, a question about the payload, and
-addresses carry no size. Neither property needs the circle or the uniform turn: any sweep that treats the two parties
-alike puts its median at the corner and, if it reaches the horizon, has no mean; the uniform turn gives the Cauchy's
-exact shape. The same split decides what reaches the payload reader. One stream of readings fixes the course of a
-relation, not its parties. The median is had only by a reader that holds its readings at once. Payloads closer together
-than the reader's resolution arrive as their centroid, a sum.
+follow the Cauchy distribution. A sweep is uniform by definition, since a turn measured by itself has no other measure
+(§2), and we show that the distribution belongs entirely to the address reader, the inscribed sweep, and not to anything
+that arrives at its addresses: it is a property of the reader, not of the payload, since whatever is met in each
+direction cancels from every single reading. The payload reader, the central sweep, receives amounts, and their law is
+the payload's. This is why the readers are named by what they receive. A lighthouse is such a sweep: its lamp turns, and
+the shore records the lamp's addresses laid on a line. Where instead many sources happen to be spread evenly in angle
+and a reader counts what arrives, the same shape is the payload's density over directions, a property of the world, not
+of any reader. This gives a reason for the Cauchy's best-known peculiarity. Its median exists and sits at the corner,
+because a median depends only on order, which is a property of addresses. Its mean does not exist, because a mean is a
+sum of sizes, a question about the payload, and addresses carry no size. Neither property needs the circle or the
+uniform turn: any sweep that treats the two parties alike puts its median at the corner and, if it reaches the horizon,
+has no mean; the uniform turn gives the Cauchy's exact shape. The same split decides what reaches the payload reader.
+One stream of readings fixes the course of a relation, not its parties. The median is had only by a reader that holds
+its readings at once. Payloads closer together than the reader's resolution arrive as their centroid, a sum.
 
 ## 1. Introduction
 
@@ -1645,15 +1646,17 @@ arrives, never what arrives.
 3. So the Cauchy is a property of the sweep, the reader's addressing, and finding it is no evidence by itself that
    anything in the world is distributed that way.
 
-Two things are not claimed. The theorem does not show that every real observer samples in equal turns; it shows what a
-reader that does so receives, and why equal turns is the sampling that prefers no attitude (§2, §7.5). Nor does it show that
-every Cauchy distribution met in data has this origin; a Cauchy met as data may have others, and the next paragraph
-says what sets its scale when it is formed from a reading.
+Two things are not claimed. The theorem does not show that every real observer counts by its sweep rather than by a
+clock, a flat sensor or what arrives (§2); it shows what a reader that counts by its sweep receives, and why the turn,
+measured by itself, is the count that prefers no attitude (§2, §7.5). Nor does it show that every Cauchy distribution
+met in data has this origin; a Cauchy met as data may have others, and the next paragraph says what sets its scale when
+it is formed from a reading.
 
-Third, where the uniformity comes from is a choice. If it comes from the world, as when sources are spread uniformly in
-direction, the same Cauchy is a property of the world's directions, and "addresses" would be the wrong name for it.
-The address reading holds where the uniform sweep is the reader's own laying, as step 1 defines it. What does not depend
-on that choice:
+Third, a sweep is uniform by definition, a turn measured by itself (§2), so the uniformity is never in question; what
+can differ is what is counted. Counted along the sweep, the law is the sweeping reader's addresses, as step 1 defines
+them. Counted as arrivals from sources that happen to be spread evenly in direction, the same shape is the payload's
+density over directions, a property of the world, and "addresses" would be the wrong name for it. What does not depend
+on what is counted:
 - the reach cancels from every single reading, not on average (Theorem 6(a));
 - order survives every change of payload (Theorem 6(b));
 - only an affine map commutes with the mean on every set (Theorem 6(c));
@@ -1844,9 +1847,10 @@ follow every increasing map; those facts are part (d). The other parts of Theore
   exchangeable (Cacoullos and Papadatos 2013).
 - *The textbook case* is the lighthouse (Gull 1988; Sivia and Skilling 2006): flashes sent at uniformly spread angles
   land along the shore as a Cauchy, and the lamp's position is found from the median or the likelihood, never the mean.
-  There the uniformity belongs to the lamp, a fact about the world. Our claim concerns the case where it belongs to the
-  reader. That half the landings fall within the lamp's distance of its foot only when shore and sea are drawn at one
-  length is Proposition 5(f), which is elementary.
+  There the lamp is the one sweeping, and the shore records its addresses laid on a line; our claim is that this law
+  belongs to whatever sweeps, the lamp or a reader, and not to what the sweep meets. That half the landings fall within
+  the lamp's distance of its foot only when shore and sea are drawn at one length is Proposition 5(f), which is
+  elementary.
 - *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
   (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
   does so everywhere; and no chart keeps both angles and areas (Euler 1777; Gauss 1828). What is ours is the reading: the

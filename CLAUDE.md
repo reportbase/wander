@@ -768,7 +768,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the 1 as their product (the baseline, H in H, not V*).
   For Theorem 6 (R330; Tom: "cauchy is a property if the inscribed read, not the payload read.   it is a property of the
   reader not the payload."): the introduction's main result and Theorem 6's opening say the Cauchy belongs to the address
-  reader, a property of the reader, not the payload; the payload reader's amounts are (c)'s; the lighthouse caveat kept.
+  reader, a property of the reader, not the payload; the payload reader's amounts are (c)'s. Then (R331; Tom: "the sweep
+  is uniform by definition, you can't sweep un-uniformly."): the uniformity never in question, only what is counted; the
+  lighthouse the lamp's sweep (its addresses on the shore), not an exception; sources spread evenly and counted as
+  arrivals are the payload's density. Intro, §7.1 ("Third"), §7.8's lighthouse entry.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
