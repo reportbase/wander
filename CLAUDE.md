@@ -834,6 +834,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   sweep's: a pole a half-width off the line (Weisskopf and Wigner 1930; Breit and Wigner 1936) and stable sums of
   index 1 (Lévy 1925) give it as a fact about the system; the claim is only that a reader's uniform sweep lays its own
   addresses. Keep OFS from implying every Cauchy is a sweep.
+  **The geometry is enough for this paper** (17 Oct, SPN R343; Tom: "real world tests can be done later.   the geometry
+  seems solid, that is enough for this paper."): OFS needs no real-world test to stand; whether readers draw V = H stays
+  open (question 6). Deferred, in order: a perception test of V = H (NLE run 2), GRD with more animals, ocular parallax
+  against measured thresholds, refinement by the signal.
   **Turning in place gives no parallax** (17 Oct, SPN R339; Tom: "can you get parallax from just rotating your head",
   then "yes"): OFS §9 after "Far off": a turn about the point seen from moves every direction alike, so only directions,
   the frame and the corner; a head's eye sits r off the axis, a turn Δ carrying it a chord 2r·sin(Δ/2), a baseline; the
@@ -1375,6 +1379,13 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   not rest on it: any fair weight that does not vanish at the horizon puts the median at the corner and leaves no mean
   (OFS Theorem 6(e)); only the Cauchy's exact shape is the even turn's.
 
+## Read this first: check draw's labs before new work
+Since 17 Oct 2026 (SPN R342; Tom: "they are your tests from another session."): before planning any new work on readers,
+shapes, recovery, sweeps or the Cauchy, read the draw repository's labs (`reportbase/draw`, `labs.html` lists them; run
+one with `draw.html?lab=CODE`). Many were written by Claude in earlier sessions and already answer, in controlled form,
+questions the corpus asks again (HZT was SMP's census: a uniform turn gives the Cauchy whatever the figure, a uniform
+walk along the outline gives its arc element). Cite what is found as known beforehand in the plan's predictions.
+
 ## Read this first: the physics comes first
 Since 10 Oct 2026 (Tom: "wanderer priority was user experience, not physics. the physics then became unexpextedly
 interesting. we should do the correct physics testing, UI is secondary or even not needed"):
@@ -1529,7 +1540,8 @@ In short:
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
   recorded result. When this was set up, WOB, ELV and EQV were the killed ones.
-- Run `npm test` before every PR.
+- Run `npm test` before every PR that changes a page, a script or the tests. Not for doc-only changes (papers, plans,
+  CLAUDE.md): Tom, 17 Oct 2026, "you don't need to run npmp test for doc only changes".
 
 ## Related repos
 games, draw, 3d and flare are the owner's other projects. wander doesn't depend
