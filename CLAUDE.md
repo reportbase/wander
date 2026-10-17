@@ -236,6 +236,24 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   metres; "put it 1 m from the wall"). Scale the world moves no reading; move changes the address, reshape the shape.
   `?step=1..6&thing=&alt=&az=&k=<log10 k>`; hook `window.__room` (`address`, `radii`, `shape`, `sizeInRoom`,
   `writeFromStep`, `writeRoom`, `sweepOrder`, `hit`, `handDir`, `move`, `placeFromWall`, `reshape`, `set`, `state`).
+- `room-walk.html`: **walking the room** (17 Oct 2026, Tom: "I want focus on the two sweeps central and inscribed. How a
+  reader walks around a room doing both. Show a readout of the situation."; SPN R324), a standalone page, plain canvas, the
+  floor plan only. Four things (table, chair, ball, cabinet) with true sizes hidden unless "the referee" is on. Tap the
+  floor to walk; at every standpoint both sweeps: the inscribed (the hand once round, each thing's centre and two edges as
+  directions in the room's frame, no amount) and the central (from each thing's centre the direction toward the reader is
+  given, the radius along it arrives, an amount in an unread unit; walking round a thing collects its shape over the
+  geometric mean). Legs walked in known directions, lengths unread; the first leg is H; from two standpoints every thing
+  placed in H by bearings alone (one linear least squares, later legs found from the things); holding a thing's two edges
+  gives its breadth across in H; "count my steps" (strides of 0.7 m, carried in) writes metres. The readout: standpoints,
+  directions, central coverage, placed, held, written, still unknown. Scale the world moves nothing in H, the radii and
+  metres by k. No fixed frame (R327): the reader first faces any way (`?face=`), each later zero is the way it walked in,
+  readings from the zero, its frame the turns composed; its map the room's turned. A tree through a window in the far wall (R325; Tom: "Parallex seems to be needed when central sweep is not
+  available, say the object is far away."), 2.5 m to 10 km out, the reader's resolution ε = 1 mrad: seen from a thing's
+  centre the walk turns through its parallax angle γ (about B/d); γ ≥ 1/16 of the turn both sweeps, ε < γ below that
+  parallax only (the place to about ε/γ), γ ≤ ε a ray; the breadth held while the edges are more than ε apart.
+  `?walk=path|none&n=&thing=&k=<log10 k>&far=<log10 m>&eps=&face=&count=1&truth=1`; hook `window.__roomWalk` (`bearings`, `zeroAt`, `relDirs`, `headings`,
+  `centralSample`, `centralOf`, `reconstruct`, `readout`, `roundPoints`, `gammaOf`, `regimeOf`, `set`, `stepTo`, `state`).
+  Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -339,7 +357,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -725,7 +743,43 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the inscribed sweep and the pertubations these objects by the central scan"; "if the reader wants to move the
   furniture or hang a picture on the wall he switches to be a writer and must move and engage with the rooms geometry
   physically") "Inside a room: the two sweeps" (layout from the inscribed, shapes from the central, sizes from holding
-  at one distance, one corner per hold) and "To move the furniture is to write".
+  at one distance, one corner per hold) and "To move the furniture is to write". Then "Far off, parallax in place of
+  the central sweep" (R325): seen from a thing's centre a walk turns through its parallax angle, about B/d; the shape needs
+  a good share of the turn, the place only an angle above ε (Proposition 11(b)), past d ≈ B/ε a line (11(a)); near shape
+  and place, farther place without shape, farthest direction alone (the angle named in words: γ is the Cauchy scale).
+  It closes on robotics (R326; Tom: "How does robotic work", "Yes"): a moving camera's scene up to one scale, a feature
+  without parallax "a perfect bearing reference for estimating rotation" and none for translation, kept as a direction
+  with inverse depth possibly zero (Civera, Davison and Montiel 2008, read in full); bundle adjustment (Triggs et al.
+  2000). The camera inscribed, lidar central through c, odometry the counted step, loop closure "Closing a loop": SPN R326.
+  Then "Sweeping from zero" in §2 (R327; Tom: "so cauchy could be created just by turning your head …", "i don't see
+  how you could sweep non-unformly", "arctan just implies you can go to a specific spot on the curve, you can not, you
+  can only sweep from home.", "once you stop your sweep, that is you new home."): a turn measured by itself is uniform
+  (uneven only against a clock, a flat ruler or the payload); g is the share of the sweep from zero already passed, the
+  arctangent the writer's formula for it; the corner met, not computed; the stop the next zero, readings composing by
+  tangent addition. Proposition 3(g)'s remaining premise is linearity (one motion repeated), not uniformity.
+  Writers and readers by vantage (R328; Tom: "there are writers and readers.   writers and readers are distinguished by
+  their vantage.   the writers vantage is dual hemsipherical the readers vantage is  hemispherical.   readers are broken
+  up into two types, the address reader and the payload reader."; "everyone uses situation 1, it is the baseline for all
+  vantages."): the three vantages are the writer (dual-hemispherical, situation 2), the payload reader (central, 3) and
+  the address reader (inscribed, 4), all on the baseline of situation 1, the circle V = H; vantages, not observers (R300
+  kept). In OFS's abstract, introduction ("Three vantages: a writer and two readers"), Results, §3.4's table, §9.
+  Why the names (R329; Tom: "it maps clean to the  the sweep.    writer knows 1, readers read 1 as 2/PI or PI/2."): the
+  writer knows the line as 1, the payload reader reads π/2, the address reader 2/π; the two hemispheres together give back
+  the 1 as their product (the baseline, H in H, not V*).
+  For Theorem 6 (R330; Tom: "cauchy is a property if the inscribed read, not the payload read.   it is a property of the
+  reader not the payload."): the introduction's main result and Theorem 6's opening say the Cauchy belongs to the address
+  reader, a property of the reader, not the payload; the payload reader's amounts are (c)'s. Then (R331; Tom: "the sweep
+  is uniform by definition, you can't sweep un-uniformly."): the uniformity never in question, only what is counted; the
+  lighthouse the lamp's sweep (its addresses on the shore), not an exception; sources spread evenly and counted as
+  arrivals are the payload's density. Intro, §7.1 ("Third"), §7.8's lighthouse entry.
+  One read, two breakdowns (R332; Tom: "just by rotating your head, nothing else, you create a sweep, a read, and the read
+  can be broken down in two ways, not one, the payload read and the address read."): the two sweeps are one turn counted
+  from its two pivots, not two motions; the address read the direction, the payload read the amount along it, meeting at
+  one point (III.20); a reader type is the breakdown it keeps. §3.1's "Two sweeps, two results" is now "One read, two
+  results"; intro, §4's "Why there are two sweeps, and only two", §9.
+  What the two reads return (R333; Tom: "the two reads can recover the true writer's breadth, but that requires
+  parallex"; "Your clarification is correct"): from one standpoint the limits' product, the writer's 1, the frame at no
+  size; parallax places it at V*/H; one amount carried in, the unit. In "Three vantages".
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
@@ -1375,6 +1429,11 @@ In short:
       units the same at every distance; moving the chair changes its address and not its shape, reshaping the table its
       shape and not its address; the hand pointed at the ball meets it; one known step writes the room and every place; the
       chair put 1 m from the wall.
+  32. **room-walk.html:** one standpoint gives directions and one radius a thing, nothing placed; the path places all five
+      from directions alone in the first leg, exactly; scaling the world by 10⁻², 7, 10² moves no direction, place,
+      breadth in H or shape, the radii and the metres by k; walking round the table fills at least 8 of its 16 directions;
+      the tree at 2.5 m read by both sweeps, at 30 m by parallax only and placed exactly, at 8 km a ray and unresolved; first
+      facing three ways, the map the room's turned, exactly.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
