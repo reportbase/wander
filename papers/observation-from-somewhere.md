@@ -1881,6 +1881,14 @@ follow every increasing map; those facts are part (d). The other parts of Theore
   belongs to whatever sweeps, the lamp or a reader, and not to what the sweep meets. That half the landings fall within
   the lamp's distance of its foot only when shore and sea are drawn at one length is Proposition 5(f), which is
   elementary.
+- *The same law without a sweep.* Not every Cauchy is a sweep's. A spectral line or a resonance is a Lorentzian because
+  of a pole a half-width off the real line, |1/(x − x₀ + iγ)|², from an exponential decay or a damped response
+  (Weisskopf and Wigner 1930; Breit and Wigner 1936); there it is the line, a frequency or an energy, that is swept
+  uniformly, and the pole's phase turns through half a turn, not uniformly, as the line is crossed, standing 45° from
+  its middle at the half-width. A sum of terms whose densities fall off like 1/x² reaches the same law as a stable limit
+  of index 1, with no angle at all (Lévy 1925). In these the law is a fact about the system, as the lighthouse's is
+  about the lamp. Our claim is narrower: where a reader sweeps uniformly, the law of what it lays is its own addresses,
+  whatever else may give the same shape.
 - *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
   (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
   does so everywhere; and no chart keeps both angles and areas (Euler 1777; Gauss 1828). What is ours is the reading: the
@@ -2779,6 +2787,8 @@ Bertrand, J. (1889). *Calcul des probabilités*. Gauthier-Villars, Paris.
 Bramon, A., Garbarino, G. and Hiesmayr, B. C. (2004). Quantitative complementarity in two-path interferometry.
 *Physical Review A* 69, 022112.
 
+Breit, G. and Wigner, E. (1936). Capture of slow neutrons. *Physical Review* 49(7), 519–531.
+
 Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
 Review* 4(4), 345–376.
 
@@ -2894,6 +2904,8 @@ Lee, D. N. (1976). A theory of visual control of braking based on information ab
 
 Leonard, D. (2011). Estimating a bivariate linear relationship. *Bayesian Analysis* 6(4), 727–754.
 
+Lévy, P. (1925). *Calcul des probabilités*. Gauthier-Villars, Paris.
+
 Liu, Z. and Adams, C. S. (2019). Experimental tests of Bertrand's question and the Duhem–Quine problem. *European
 Journal of Physics* 40(6), 065801.
 
@@ -2972,5 +2984,8 @@ Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII*. Tour
 
 Wallstrom, T. C. (2003). The marginalization paradox does not imply inconsistency for improper priors. arXiv
 math/0310006.
+
+Weisskopf, V. and Wigner, E. (1930). Berechnung der natürlichen Linienbreite auf Grund der Diracschen Lichttheorie.
+*Zeitschrift für Physik* 63, 54–73.
 
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.

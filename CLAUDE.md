@@ -830,6 +830,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   **With no motion at all** (17 Oct, SPN R339, R340; Tom: "1,2,3"): OFS §3.5 closes with it: holding at once keeps the
   frame (the sweep laid across the receptors; equal angles the Cauchy, a flat screen's median at half its edge), one
   direction at a time keeps one address; no parallax, no change.
+  **The same law without a sweep** (17 Oct, SPN R341; after HZT; Tom: "yes"): OFS §7.8 says not every Cauchy is a
+  sweep's: a pole a half-width off the line (Weisskopf and Wigner 1930; Breit and Wigner 1936) and stable sums of
+  index 1 (Lévy 1925) give it as a fact about the system; the claim is only that a reader's uniform sweep lays its own
+  addresses. Keep OFS from implying every Cauchy is a sweep.
   **Turning in place gives no parallax** (17 Oct, SPN R339; Tom: "can you get parallax from just rotating your head",
   then "yes"): OFS §9 after "Far off": a turn about the point seen from moves every direction alike, so only directions,
   the frame and the corner; a head's eye sits r off the axis, a turn Δ carrying it a chord 2r·sin(Δ/2), a baseline; the
