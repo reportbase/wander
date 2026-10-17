@@ -246,11 +246,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   placed in H by bearings alone (one linear least squares, later legs found from the things); holding a thing's two edges
   gives its breadth across in H; "count my steps" (strides of 0.7 m, carried in) writes metres. The readout: standpoints,
   directions, central coverage, placed, held, written, still unknown. Scale the world moves nothing in H, the radii and
-  metres by k. A tree through a window in the far wall (R325; Tom: "Parallex seems to be needed when central sweep is not
+  metres by k. No fixed frame (R327): the reader first faces any way (`?face=`), each later zero is the way it walked in,
+  readings from the zero, its frame the turns composed; its map the room's turned. A tree through a window in the far wall (R325; Tom: "Parallex seems to be needed when central sweep is not
   available, say the object is far away."), 2.5 m to 10 km out, the reader's resolution ε = 1 mrad: seen from a thing's
   centre the walk turns through its parallax angle γ (about B/d); γ ≥ 1/16 of the turn both sweeps, ε < γ below that
   parallax only (the place to about ε/γ), γ ≤ ε a ray; the breadth held while the edges are more than ε apart.
-  `?walk=path|none&n=&thing=&k=<log10 k>&far=<log10 m>&eps=&count=1&truth=1`; hook `window.__roomWalk` (`bearings`,
+  `?walk=path|none&n=&thing=&k=<log10 k>&far=<log10 m>&eps=&face=&count=1&truth=1`; hook `window.__roomWalk` (`bearings`, `zeroAt`, `relDirs`, `headings`,
   `centralSample`, `centralOf`, `reconstruct`, `readout`, `roundPoints`, `gammaOf`, `regimeOf`, `set`, `stepTo`, `state`).
   Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
@@ -750,6 +751,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   without parallax "a perfect bearing reference for estimating rotation" and none for translation, kept as a direction
   with inverse depth possibly zero (Civera, Davison and Montiel 2008, read in full); bundle adjustment (Triggs et al.
   2000). The camera inscribed, lidar central through c, odometry the counted step, loop closure "Closing a loop": SPN R326.
+  Then "Sweeping from zero" in §2 (R327; Tom: "so cauchy could be created just by turning your head …", "i don't see
+  how you could sweep non-unformly", "arctan just implies you can go to a specific spot on the curve, you can not, you
+  can only sweep from home.", "once you stop your sweep, that is you new home."): a turn measured by itself is uniform
+  (uneven only against a clock, a flat ruler or the payload); g is the share of the sweep from zero already passed, the
+  arctangent the writer's formula for it; the corner met, not computed; the stop the next zero, readings composing by
+  tangent addition. Proposition 3(g)'s remaining premise is linearity (one motion repeated), not uniformity.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
@@ -1402,7 +1409,8 @@ In short:
   32. **room-walk.html:** one standpoint gives directions and one radius a thing, nothing placed; the path places all five
       from directions alone in the first leg, exactly; scaling the world by 10⁻², 7, 10² moves no direction, place,
       breadth in H or shape, the radii and the metres by k; walking round the table fills at least 8 of its 16 directions;
-      the tree at 2.5 m read by both sweeps, at 30 m by parallax only and placed exactly, at 8 km a ray and unresolved.
+      the tree at 2.5 m read by both sweeps, at 30 m by parallax only and placed exactly, at 8 km a ray and unresolved; first
+      facing three ways, the map the room's turned, exactly.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

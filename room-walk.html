@@ -11,7 +11,12 @@
     "I want focus on the two sweeps central and inscribed. How a reader walks around a room doing both. Show a readout of
     the situation."; SPN R324; after room.html and OFS §9, "Inside a room: the two sweeps"). A standalone page, plain
     canvas, the floor plan only (heights left out). Four things with true sizes in metres (the referee's, hidden unless
-    "the referee" is on). The reader keeps its bearings by the walls (directions in the room's frame).
+    "the referee" is on). No fixed frame (17 October 2026, Tom: "once you stop your sweep, that is you new home."; SPN R327):
+    each sweep starts from its zero, where the last one stopped. The reader first faces any way (?face=, radians, the
+    referee's, never read); at each standpoint its zero is the way it walked in; the sweep goes once round from there,
+    then turns on to face the next standpoint and stops, and that stop, read from the zero, is the turn it carries. Its
+    own frame is the turns composed (angles add; ratios by tangent addition); its map is the room's turned by the first
+    facing and scaled by the first leg, and no wall is needed.
     At every standpoint the reader does both sweeps:
     - the inscribed sweep: the hand turned once round, each thing met as a direction (its centre and its two edges), no
       amount: the layout from here (directions only received);
@@ -94,8 +99,8 @@
             <div><canvas id="map" height="230"></canvas><p class="cap" id="mapcap">The reader's own map.</p>
             <canvas id="shape" height="200"></canvas><p class="cap" id="shapecap">The central sweep of the chosen thing.</p></div>
         </div>
-        <canvas id="strip" height="92"></canvas><p class="cap">The inscribed sweep from here: the hand once round (the
-        first wall at 0°), each thing laid as the directions of its two edges, in the order the hand meets them.</p>
+        <canvas id="strip" height="92"></canvas><p class="cap">The inscribed sweep from here: the hand once round from
+        its zero, where the last sweep stopped (the way it walked in; the white tick on the floor), each thing laid as the directions of its two edges, in the order the hand meets them.</p>
     </div>
     <div class="panel">
         <div id="sit"></div>
@@ -119,7 +124,8 @@
     const EPS = +(P.get('eps') || 1e-3);                            // the reader's resolution, radians: two directions closer are one
     const WIN = [1.5, 2.5];                                         // the window in the far wall (z)
     const PATH = [[0.6, 0.6], [2.2, 0.5], [4.6, 1.8], [3.4, 3.65], [0.6, 3.5], [0.7, 1.7]];
-    const st = { lk: 0, thing: 'table', walk: [], count: false, truth: false, anim: null, lfar: Math.log10(30) };
+    const st = { lk: 0, thing: 'table', walk: [], count: false, truth: false, anim: null, lfar: Math.log10(30),
+        face0: +(P.get('face') || 0.4) };                           // the first facing, the referee's angle (radians), never read
     const setFar = lf => { st.lfar = lf; BASE.tree.c[0] = ROOM.W + Math.pow(10, lf); };
     const kOf = () => Math.pow(10, st.lk);
 
@@ -136,7 +142,7 @@
     }
     const inRoom = p => p[0] > 0.1 && p[0] < ROOM.W - 0.1 && p[1] > 0.1 && p[1] < ROOM.D - 0.1;
 
-    // the inscribed sweep: directions only (the centre and the two edges), in the room's frame
+    // the referee's directions (the centre and the two edges) in the room's frame; the reader reads them from its zero
     function bearings(p) {
         const q = at(p), out = {};
         for (const n of NAMES) {
@@ -165,10 +171,27 @@
     }
 
     // ---- what the reader has: readings per standpoint ----
-    function readings() {
-        return st.walk.map(p => ({ dirs: bearings(p), central: Object.fromEntries(NAMES.map(n => [n, centralSample(n, p)])) }));
+    // No fixed frame: each sweep starts where the last one stopped. The reader's zero at the first standpoint is wherever
+    // it happened to face (st.face0, the referee's angle, never read); at each later one the way it walked in. Its sweep
+    // goes once round from that zero, then turns on to face the next standpoint and stops: that stop is the next zero.
+    function zeroAt(i) {
+        if (i === 0) return st.face0;
+        const a = at(st.walk[i - 1]), b = at(st.walk[i]); return Math.atan2(b[1] - a[1], b[0] - a[0]);
     }
-    // legs: directions read off the walls (known); lengths unknown, the first one the reader's H
+    function relDirs(p, z) {                                         // a standpoint's readings, from its own zero
+        const ds = bearings(p), out = {};
+        for (const n of NAMES) { const d = ds[n]; out[n] = { b: wrap(d.b - z), lo: wrap(d.lo - z), hi: wrap(d.hi - z), dl: d.dl, dh: d.dh }; }
+        return out;
+    }
+    function readings() {
+        return st.walk.map((p, i) => ({ dirs: relDirs(p, zeroAt(i)),
+            turn: i + 1 < st.walk.length ? wrap(zeroAt(i + 1) - zeroAt(i)) : null,    // where the sweep stopped, read from its zero
+            central: Object.fromEntries(NAMES.map(n => [n, centralSample(n, p)])) }));
+    }
+    // the reader's own frame: the first zero at 0, each later zero the turns composed (angles add; ratios by
+    // tangent addition, (s + t)/(1 − st)). Nothing outside the readings is used.
+    function headings(R) { const H = [0]; for (let i = 1; i < R.length; i++) H.push(wrap(H[i - 1] + R[i - 1].turn)); return H; }
+    // legs: walked along each new zero (known in the reader's frame); lengths unknown, the first one the reader's H
     function legs() {
         const out = [];
         for (let i = 1; i < st.walk.length; i++) { const a = at(st.walk[i - 1]), b = at(st.walk[i]);
@@ -191,14 +214,15 @@
     // the figure from directions alone: standpoints Q_i = Σ L_k u_k (L_1 = 1, the reader's H), things T_j, every bearing
     // b from Q_i to T_j giving cross(b, T_j − Q_i) = 0, linear in the unknowns; least squares (exact readings: exact)
     function reconstruct() {
-        const n = st.walk.length, R = readings(), L = legs();
+        const n = st.walk.length, R = readings(), Hd = headings(R);
+        const L = legs().map((l, k) => ({ len: l.len, u: [Math.cos(Hd[k + 1]), Math.sin(Hd[k + 1])] }));   // leg k+1 along zero k+1
         if (n < 2) return { ok: false, why: 'one standpoint: directions only, no place' };
         const placed = NAMES.filter(nm => gammaOf(nm) > EPS);           // parallax: the standpoints told apart from the thing
         const nl = n - 2, nu = nl + 2 * placed.length;
         if (!placed.length) return { ok: false, why: 'no thing seen from two directions yet' };
         const M = Array.from({ length: nu }, () => new Array(nu).fill(0)), rhs = new Array(nu).fill(0);
         for (let i = 0; i < n; i++) placed.forEach((nm, j) => {
-            const b = R[i].dirs[nm].b, bx = Math.cos(b), bz = Math.sin(b), row = new Array(nu).fill(0); let c0 = 0;
+            const b = R[i].dirs[nm].b + Hd[i], bx = Math.cos(b), bz = Math.sin(b), row = new Array(nu).fill(0); let c0 = 0;
             row[nl + 2 * j] = -bz; row[nl + 2 * j + 1] = bx;               // cross(b, T) = bx·Tz − bz·Tx
             for (let k = 1; k <= i; k++) { const u = L[k - 1].u, coef = -(bx * u[1] - bz * u[0]);
                 if (k === 1) c0 += coef; else row[k - 2] += coef; }          // − cross(b, Q_i), L_1 = 1 to the right
@@ -209,7 +233,7 @@
         const Ls = [1, ...x.slice(0, nl)], Q = [[0, 0]];
         for (let k = 0; k < Ls.length; k++) Q.push([Q[k][0] + Ls[k] * L[k].u[0], Q[k][1] + Ls[k] * L[k].u[1]]);
         const T = {}; placed.forEach((nm, j) => { T[nm] = [x[nl + 2 * j], x[nl + 2 * j + 1]]; });
-        return { ok: true, legs: Ls, Q, T, placed };
+        return { ok: true, legs: Ls, Q, T, placed, headings: Hd };
     }
     // the turn the walk makes as seen from a thing's centre: the widest angle there between two standpoints. The central
     // sweep needs a good share of the whole turn (a new direction every 1/16 of it); parallax only needs γ above ε.
@@ -250,7 +274,8 @@
             }
             // the referee's own amounts (from the first standpoint, metres), for comparison only
             const c0 = thingC(nm), q0 = at(st.walk[0] || [0, 0]), q = at(st.walk[n - 1] || [0, 0]), d = here && here.dirs[nm];
-            row.truth = { place: [c0[0] - q0[0], c0[1] - q0[1]], across: d ? breadthAcross(d.dl, d.dh, Math.hypot(c0[0] - q[0], c0[1] - q[1])) : null };
+            const rx = c0[0] - q0[0], rz = c0[1] - q0[1], cf = Math.cos(st.face0), sf = Math.sin(st.face0);
+            row.truth = { place: [cf * rx + sf * rz, -sf * rx + cf * rz], across: d ? breadthAcross(d.dl, d.dh, Math.hypot(c0[0] - q[0], c0[1] - q[1])) : null };
             return row;
         });
         const L = legs();
@@ -329,14 +354,17 @@
         if (!ap.p) { g.fillStyle = '#8a8a96'; g.fillText('tap the floor to stand there', ox + 10, oy + 20); return; }
         const R = X(ap.p);
         if (!ap.moving) {                                           // the inscribed sweep from here
-            const ds = bearings(ap.p);
-            for (const n of NAMES) { const d = ds[n], met = ap.hand == null || wrap(d.lo) <= ap.hand || wrap(d.b) <= ap.hand;
+            const ds = bearings(ap.p), z = zeroAt(st.walk.length - 1), rel = relDirs(ap.p, z);
+            for (const n of NAMES) { const d = ds[n], met = ap.hand == null || rel[n].lo <= ap.hand || rel[n].b <= ap.hand;
                 if (!met) continue; const c = BASE[n].outside ? [R[0] + 3 * sc * Math.cos(d.b), R[1] + 3 * sc * Math.sin(d.b)] : X(BASE[n].c);
                 g.strokeStyle = 'rgba(212,160,82,0.75)'; g.lineWidth = 1; g.beginPath(); g.moveTo(R[0], R[1]); g.lineTo(c[0], c[1]); g.stroke();
                 for (const e of [d.lo, d.hi]) { g.strokeStyle = 'rgba(212,160,82,0.25)'; g.beginPath(); g.moveTo(R[0], R[1]);
                     g.lineTo(R[0] + 2.2 * sc * Math.cos(e), R[1] + 2.2 * sc * Math.sin(e)); g.stroke(); } }
             if (ap.hand != null) { g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.moveTo(R[0], R[1]);
-                g.lineTo(R[0] + 0.9 * sc * Math.cos(ap.hand), R[1] + 0.9 * sc * Math.sin(ap.hand)); g.stroke(); }
+                g.lineTo(R[0] + 0.9 * sc * Math.cos(z + ap.hand), R[1] + 0.9 * sc * Math.sin(z + ap.hand)); g.stroke(); }
+            // the zero: where the last sweep stopped (the way the reader walked in, or faced at first)
+            g.strokeStyle = '#e6e4ee'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(R[0], R[1]);
+            g.lineTo(R[0] + 0.5 * sc * Math.cos(z), R[1] + 0.5 * sc * Math.sin(z)); g.stroke();
         }
         g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(R[0], R[1], 6, 0, 2 * Math.PI); g.fill();
     }
@@ -362,7 +390,7 @@
         const q0 = X(rec.Q[0]), q1 = X(rec.Q[1]); g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.moveTo(...q0); g.lineTo(...q1); g.stroke();
         g.fillStyle = '#d4a052'; g.fillText(ro.H ? `H = ${ro.H.toFixed(3)} m` : 'H', (q0[0] + q1[0]) / 2 + 4, (q0[1] + q1[1]) / 2 - 4);
         $('mapcap').textContent = ro.H ? 'The reader\'s map, written: the first leg counted in strides, so every place in metres.'
-            : 'The reader\'s own map, in H (gold, the first leg): the room\'s figure, similar, its size unread.';
+            : 'The reader\'s own map, in H (gold, the first leg), in its own frame (the first zero along +x): the room\'s figure, turned and similar, its size unread.';
     }
     function drawShape() {
         const { g, w, h } = fit($('shape')); g.clearRect(0, 0, w, h);
@@ -391,7 +419,7 @@
         g.fillStyle = '#8a8a96'; g.font = '11px DM Mono, monospace';
         for (const d of [0, 90, 180, 270, 360]) { const x = X(d * Math.PI / 180); g.fillRect(x, y - 4, 1, 8); g.fillText(d + '°', x - 8, h - 6); }
         if (!ap.p || ap.moving) return;
-        const ds = bearings(ap.p), order = NAMES.slice().sort((a, b) => ds[a].b - ds[b].b);
+        const ds = relDirs(ap.p, zeroAt(st.walk.length - 1)), order = NAMES.slice().sort((a, b) => ds[a].b - ds[b].b);
         order.forEach((n, i) => { const d = ds[n]; if (ap.hand != null && d.b > ap.hand) return;
             g.strokeStyle = BASE[n].col; g.lineWidth = 6; const yy = y - 14 - 8 * (i % 2);
             const segs = d.lo <= d.hi ? [[d.lo, d.hi]] : [[d.lo, 2 * Math.PI], [0, d.hi]];
@@ -403,7 +431,7 @@
     function hud(ro) {
         const n = ro.standpoints, have = ro.placed.length;
         const lines = [];
-        lines.push(`Standpoints taken: ${n}${n ? ` · legs walked: ${ro.legs}, each in a direction read off the walls, its length not read` : ''}`);
+        lines.push(`Standpoints taken: ${n}${n ? ` · legs walked: ${ro.legs}, each walked along the zero its last sweep stopped at, its length not read` : ''}`);
         lines.push(`Inscribed sweep (directions received, no amount): ${n ? `${NAMES.length} things, ${n * NAMES.length} directions so far` : '—'}`);
         const cov = NAMES.map(nm => `${nm} ${centralOf(nm).covered}/${NC}`).join(', ');
         lines.push(`Central sweep (radii along given directions, an amount in a unit no reading fixes): ${n ? cov : '—'}`);
@@ -419,7 +447,7 @@
             : `Written: nothing. Still unknown: H in any agreed unit (one amount: count one leg), and every radius's unit`);
         $('sit').innerHTML = lines.map((l, i) => `<span class="${['', 'g', 'r', 'w', 'w', 'g', ro.H ? 'w' : 'x'][i]}">${l}</span>`).join('\n');
         const unit = ro.H ? 'm' : 'H';
-        let t = `<tr><th>thing</th><th>direction from here</th><th>edges from here</th><th>regime</th><th>central: directions</th><th>shape (radii / mean)</th>`
+        let t = `<tr><th>thing</th><th>direction from its zero</th><th>edges</th><th>regime</th><th>central: directions</th><th>shape (radii / mean)</th>`
             + `<th>place (from 1)</th><th>breadth across</th>${st.truth ? '<th>referee (m)</th>' : ''}</tr>`;
         for (const r of ro.rows) {
             const pl = ro.H ? r.placeM : r.placeH, ac = ro.H ? r.acrossM : r.across;
@@ -466,7 +494,7 @@
     function set(o) {
         if ('lk' in o) { st.lk = o.lk; $('lk').value = o.lk; }
         if ('lfar' in o) { setFar(o.lfar); $('lf').value = o.lfar; }
-        for (const key of ['thing', 'count', 'truth']) if (key in o) st[key] = o[key];
+        for (const key of ['thing', 'count', 'truth', 'face0']) if (key in o) st[key] = o[key];
         if ('walk' in o) { queue = []; st.anim = null; st.walk = []; for (const p of o.walk) stepTo(p, true); }
         draw(); return readout();
     }
@@ -481,7 +509,7 @@
     if (w0 !== 'none') init.walk = PATH.slice(0, Math.max(1, Math.min(PATH.length, +(P.get('n') || (w0 === 'path' ? PATH.length : 2)))));
     set(init);
 
-    window.__roomWalk = { NAMES, NC, STRIDE, PATH, EPS, BIN, gammaOf, regimeOf, bearings, radiusAt, centralSample, centralOf, reconstruct, readout,
+    window.__roomWalk = { NAMES, NC, STRIDE, PATH, EPS, BIN, gammaOf, regimeOf, zeroAt, relDirs, headings, bearings, radiusAt, centralSample, centralOf, reconstruct, readout,
         roundPoints, breadthAcross, set, stepTo: p => { const ok = stepTo(p, true); return ok; },
         state: () => JSON.parse(JSON.stringify({ lfar: st.lfar, lk: st.lk, thing: st.thing, walk: st.walk, count: st.count, truth: st.truth })) };
 })();

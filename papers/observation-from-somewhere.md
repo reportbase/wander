@@ -11,33 +11,34 @@ that stands somewhere has less. It has its own breadth, a value it chooses to st
 reads. This paper works out the geometry that this one restriction leaves. We build on Jaynes's principle of
 transformation groups: what a reader cannot tell apart, it addresses alike. Taking its ignorance to be of its own
 attitude, of the other's size and of which unit relation a reading was divided by, and the sweep to be the turning of a
-rigid bar, the principle gives the uniform turn, the corner and the drawing at the reader's own breadth, and, through
-amounts, motivates the logarithm past the corner; being situated, at home, removes the translations that Jaynes's chord
-keeps. We begin with the readers themselves. What a reader knows of two breadths sets one of five situations (with more
-parties, one entry per party), and these give three vantages: the completed view from nowhere, which holds the straight
-chord between two points, and two situated readers, the central sweep and the inscribed sweep, which hold only the arc
-they turn through: the central sweep's payloads are read by their mean, and the inscribed sweep's addresses make the
-hyperbolic secant density and the fisheye. The chord comes before the circle: it needs no turn, and the circle is drawn
-on it by one. The three read a line of true breadth 1 as 1, π/2 and 2/π; the true breadth is held only from nowhere, or
-constructed from several observations, never observed from one. Any relation between two parties can be written as a
-pair of unit relations, h and v, each between 0 and 1, and the reader reads their ratio. Because neither unit relation
-can pass 1, every such sweep turns over at a single point, v = h, the *corner*, where reading v in terms of h gives way
-to reading h in terms of v. For there to be a relation, the reader must assign the other party a breadth, and its only
-measure is its own: it draws the mountain at the breadth of its thumb, V = H. This is required for the sweep to be a
-turn. Only then is the sweep from one party to the other the turn of one rigid bar, tracing a unit circle with the
-corner at distance 1 whatever unit was chosen, and only then is there a single uniform turn; working back from the
-Cauchy distribution, which is known, arrives at V = H and nowhere else. The two familiar pictures of a turn laid on a
-line require it too: a lighthouse's flashes put half their landings within the lamp's distance of its foot only when
-shore and sea are drawn at one length, and Mercator's map draws every compass course true only because it stretches
-north–south as much as east–west, giving up only size, a zoom. The drawing is not a claim about the mountain. Its true
-size is a separate number, which one observation does not give; the reader's best estimate of it is the median of what
-it knows, and correcting the estimate moves every amount by the same number of levels and redraws nothing. Nor is the
-reader's own breadth a measurement: H is the value it chooses to start from, every value gives the same circle, and its
-size sets only the zoom, fine near for a small H and fine far for a large one. The geometry needs that value and a
-shape, and the shape is set by how many unit relations the system includes: two give the circle, three the sphere.
-Inside the corner the reader can lay out its readings in proportion; past it, if no scale is preferred (a premise we
-assume, not derive), the only consistent layout is logarithmic. The reader therefore has two address spaces,
-proportional and logarithmic, joined at one corner.
+rigid bar, the principle gives the uniform turn (the turn measured by itself, needing no clock and no calculation by the
+reader), the corner and the drawing at the reader's own breadth, and, through amounts, motivates the logarithm past the
+corner; being situated, at home, removes the translations that Jaynes's chord keeps. We begin with the readers
+themselves. What a reader knows of two breadths sets one of five situations (with more parties, one entry per party),
+and these give three vantages: the completed view from nowhere, which holds the straight chord between two points, and
+two situated readers, the central sweep and the inscribed sweep, which hold only the arc they turn through: the central
+sweep's payloads are read by their mean, and the inscribed sweep's addresses make the hyperbolic secant density and the
+fisheye. The chord comes before the circle: it needs no turn, and the circle is drawn on it by one. The three read a
+line of true breadth 1 as 1, π/2 and 2/π; the true breadth is held only from nowhere, or constructed from several
+observations, never observed from one. Any relation between two parties can be written as a pair of unit relations, h
+and v, each between 0 and 1, and the reader reads their ratio. Because neither unit relation can pass 1, every such
+sweep turns over at a single point, v = h, the *corner*, where reading v in terms of h gives way to reading h in terms
+of v. For there to be a relation, the reader must assign the other party a breadth, and its only measure is its own: it
+draws the mountain at the breadth of its thumb, V = H. This is required for the sweep to be a turn. Only then is the
+sweep from one party to the other the turn of one rigid bar, tracing a unit circle with the corner at distance 1
+whatever unit was chosen, and only then is there a single uniform turn; working back from the Cauchy distribution, which
+is known, arrives at V = H and nowhere else. The two familiar pictures of a turn laid on a line require it too: a
+lighthouse's flashes put half their landings within the lamp's distance of its foot only when shore and sea are drawn at
+one length, and Mercator's map draws every compass course true only because it stretches north–south as much as
+east–west, giving up only size, a zoom. The drawing is not a claim about the mountain. Its true size is a separate
+number, which one observation does not give; the reader's best estimate of it is the median of what it knows, and
+correcting the estimate moves every amount by the same number of levels and redraws nothing. Nor is the reader's own
+breadth a measurement: H is the value it chooses to start from, every value gives the same circle, and its size sets
+only the zoom, fine near for a small H and fine far for a large one. The geometry needs that value and a shape, and the
+shape is set by how many unit relations the system includes: two give the circle, three the sphere. Inside the corner
+the reader can lay out its readings in proportion; past it, if no scale is preferred (a premise we assume, not derive),
+the only consistent layout is logarithmic. The reader therefore has two address spaces, proportional and logarithmic,
+joined at one corner.
 
 Our main result concerns what a reader receives when it sweeps this circle uniformly from where it stands. Its readings
 follow the Cauchy distribution. When the uniformity is the reader's own laying, we show that the distribution belongs
@@ -290,9 +291,11 @@ direction [1 : 1 : 1], the centre (⅓, ⅓, ⅓) of the simplex. The *bar* is t
 drawing V = H, and its *attitude* θ is its polar angle. The *corner* is the fixed point of the reciprocal x ↦ 1/x,
 x = 1. A *level* past the corner is a dyadic interval of the reading, from 2^(j−1) to 2^j, an octave in the sense of
 music and of signal processing. A *lay* is a scale in the sense of measurement theory (Stevens 1946), a monotone map L
-from readings to positions, as Luce's ruler is (Luce 1959). The sweep's progress g = (2/π)·arctan(v/h) is the
-distribution function of the uniform turn's readings (§7.1). The *capped reading*, v/h up to the corner and h/v past it,
-is the reading normalized by the larger unit relation, the ℓ∞ cut.
+from readings to positions, as Luce's ruler is (Luce 1959). The sweep's progress g is the share of the sweep from zero
+already passed when the reading v/h arrives; written from outside the sweep, g = (2/π)·arctan(v/h), the distribution
+function of the uniform turn's readings (§7.1). The reader holds g by sweeping and never evaluates the arctangent, which
+is the writer's formula for that record (below, “Sweeping from zero”). The *capped reading*, v/h up to the corner and
+h/v past it, is the reading normalized by the larger unit relation, the ℓ∞ cut.
 
 **What we build on: the reader's ignorance as a group.** The method is Jaynes's (1968, 1973). An observer that cannot
 tell two problems apart must treat them alike, and when the problems it cannot tell apart are related by a group of
@@ -331,17 +334,21 @@ interest and the other a nuisance: it is then Bernardo's reference prior (Bernar
 exactly (as reviewed by Ghosh 2011); with other quantities of interest the left one can be the better (§11.2, question
 7). The reader's group has one: its turns and rescalings commute, and its exchange is a reflection, so the group is
 unimodular and the measures unchanged by composing on the left and on the right coincide. What the measure gives:
-- *Uniform in θ*: once the sweep is taken to be the turning of the bar, a uniform turn (§7.1); which variable the
-  uniformity is in is the choice Drory presses (§11.2, question 2). Read as v/h on one quadrant, with the parties drawn
-  at one length, it is the half-Cauchy with its median at the corner (Proposition 5); signed over both quadrants, the
-  standard Cauchy. Write a Cauchy law with median m and scale γ as the point m + iγ of the upper half-plane. A turn acts
-  on the signed reading as a Möbius map and carries each Cauchy law to the one at the image point (McCullagh 1996); the
-  standard Cauchy, at i, is the only one every turn leaves where it is. Drawn at V = cH the uniform turn's readings are
-  the Cauchy law at i/c (Proposition 5(d)); turns in that drawing's plane act on its readings by conjugate maps, which
-  fix i/c, and do not carry all of h into all of v; the exchange carries i/c to ic. So the drawing V = H is selected
-  twice: by the rigid turn, which with c ≠ 1 has no turn from all of h to all of v (Proposition 3(e)), and by the
-  exchange acting on the law of the readings, V = H being the only drawing whose readings favour neither unit relation
-  (Proposition 5(d)).
+- *Uniform in θ*: once the sweep is taken to be the turning of the bar, a uniform turn (§7.1). That is not a rate the
+  reader must keep. Measured by itself a turn is uniform: a reader with no clock, no flat ruler and no count of arrivals
+  has no measure on its directions but the amount of turning, and the measure every turn leaves unchanged is unique up
+  to a factor. A sweep is uneven only against something carried in: a clock (the time spent at each direction), a flat
+  screen or wall (equal steps along it are equal in tan θ, not in θ, as a camera's pixels are) or what arrives (a
+  density over directions, the payload). Which of these the readings are counted against is the choice Drory presses
+  (§11.2, question 2). Read as v/h on one quadrant, with the parties drawn at one length, the uniform turn is the
+  half-Cauchy with its median at the corner (Proposition 5); signed over both quadrants, the standard Cauchy. Write a
+  Cauchy law with median m and scale γ as the point m + iγ of the upper half-plane. A turn acts on the signed reading as
+  a Möbius map and carries each Cauchy law to the one at the image point (McCullagh 1996); the standard Cauchy, at i, is
+  the only one every turn leaves where it is. Drawn at V = cH the uniform turn's readings are the Cauchy law at i/c
+  (Proposition 5(d)); turns in that drawing's plane act on its readings by conjugate maps, which fix i/c, and do not
+  carry all of h into all of v; the exchange carries i/c to ic. So the drawing V = H is selected twice: by the rigid
+  turn, which with c ≠ 1 has no turn from all of h to all of v (Proposition 3(e)), and by the exchange acting on the law
+  of the readings, V = H being the only drawing whose readings favour neither unit relation (Proposition 5(d)).
 - *Uniform in log κ*: every level of the other's size alike. As an estimate of the size, with nothing to make the other
   larger rather than smaller (the separate premise above), it gives the median of what is known: the corner √(V₋·V₊) of
   any bounds, and H itself when what is known is symmetric in levels about H (Proposition 13). It does not lay the
@@ -351,6 +358,18 @@ unimodular and the measures unchanged by composing on the left and on the right 
   same reading: the uniform turn is how a sweep steps through attitudes, the lay how the reader places far readings,
   taken as amounts at V = H, past its own breadth.
 - *The exchange's fixed point*: v = h, θ = 45°, the corner (Proposition 1).
+
+**Sweeping from zero.** The reader reaches its directions only in order. A sweep starts at zero, the direction the
+reader faces, and passes each direction once; what it holds of a direction is g, the share of the sweep already passed
+when that direction arrives. That is a running record, not a place the reader can go to: it cannot jump to a reading,
+and it reads nothing past the hand. The arctangent that writes g as a function of v/h is the writer's account of the
+record, made with the whole turn in view. The corner is met, not computed: it is the direction at which the two arms
+read alike, and that it halves the sweep is known only once the sweep is complete. A sweep ends where the reader stops,
+and that direction is the next sweep's zero. Nothing is lost: every turn leaves the standard Cauchy where it is, so the
+readings from the new zero have the same law, and no zero is preferred. The old zero survives only as one reading from
+the new one. Successive sweeps compose their readings as turns compose, by tangent addition, s ⊕ t = (s + t)/(1 − st); a
+full round composes to no turn, a check on the record like the closed loop of §9. A frame that seems fixed, a wall or a
+far point, is one the reader keeps by reading it again from each new zero.
 
 The method is not ours. Three things in its use here are. The first is the group. Which transformations a situated
 reader cannot detect is a statement about its situation, and we choose it as a statement of ignorance rather than derive
@@ -1120,14 +1139,15 @@ The estimate of the true size is not left open either: with nothing known either
 fixed length" also needs a norm: under the largest-component norm the bar traces the square, under the sum norm the
 line. The circle follows if the sweep is the turning of a rigid bar. The facing of §4 motivates that; it does not prove
 it. Part (g) narrows the assumption. A sweep that is uniform and returns after a full turn is the turning of a rigid bar
-in its own measure, which is Euclidean and unique up to the factor H. What remains assumed is that the sweep is uniform
-and acts linearly on the mixes of all-h and all-v. The same circle comes without a bar, from the chord and the two
-parties' rays (§4, "The arc from the chord"); there the Euclidean measure enters as the right angle at which the
-reciprocal pairs the rays, drawn with h and v at one length, and without it the crossings are still a conic, an ellipse.
-Less rests on the Euclidean choice than it seems. The readings are directions only (Theorem 6(a)), so the norm reaches
-them only through the measure on directions that "sweeping uniformly" uses; laid by direction, every path gives the same
-readings (§7.4). Swept uniformly along their own paths, the square and the line give other laws, with the same median at
-the corner and no mean (Theorem 6(e)). What the circle and the uniform turn add is the Cauchy's exact shape.
+in its own measure, which is Euclidean and unique up to the factor H. What remains assumed is that the sweep acts
+linearly on the mixes of all-h and all-v, one motion repeated. That it is uniform is not a further premise: the reader
+measures its turn by nothing but that motion (§2, “Uniform in θ”). The same circle comes without a bar, from the chord
+and the two parties' rays (§4, "The arc from the chord"); there the Euclidean measure enters as the right angle at which
+the reciprocal pairs the rays, drawn with h and v at one length, and without it the crossings are still a conic, an
+ellipse. Less rests on the Euclidean choice than it seems. The readings are directions only (Theorem 6(a)), so the norm
+reaches them only through the measure on directions that "sweeping uniformly" uses; laid by direction, every path gives
+the same readings (§7.4). Swept uniformly along their own paths, the square and the line give other laws, with the same
+median at the corner and no mean (Theorem 6(e)). What the circle and the uniform turn add is the Cauchy's exact shape.
 
 **What the count of orthants borrows.** The count 2ⁿ needs no angle. That the orthants tile the circle or the sphere in
 equal shares, a quarter turn each or π/2 of the sphere's area each, is the Euclidean measure of (c), not part of the
@@ -2489,13 +2509,15 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    on directions is the one every turn leaves unchanged, rather than the square's or the line's? The median at the
    corner and the missing mean do not depend on the answer (Theorem 6(e)); the Cauchy's exact shape does. Part of the
    answer is Proposition 3(g): a sweep that is uniform and returns after a full turn has its own Euclidean measure,
-   unique up to the factor H, so the norm follows from a uniform, linear sweep, and that is what remains chosen. The
-   sharpest form of the objection is Drory's (2015), against Jaynes's treatment of Bertrand's chord (1973): the same
-   symmetries, turns, rescaling and shifts, can be imposed in different ways, and give different measures, depending on
-   how the random selection is made. We grant it. Which selection the reader makes, the uniform turn, is a choice
-   (§11.1), and symmetry alone does not make it. What the framework adds is that the core of the main result survives
-   the choice: any selection that treats the two parties alike puts the median at the corner, and leaves no mean if its
-   weight does not vanish at the horizon (Theorem 6(e)).
+   unique up to the factor H, so the norm follows from a linear sweep, one motion repeated, and that is what remains
+   chosen; uniformity is not chosen, since a turn measured by itself is uniform (§2). The sharpest form of the objection
+   is Drory's (2015), against Jaynes's treatment of Bertrand's chord (1973): the same symmetries, turns, rescaling and
+   shifts, can be imposed in different ways, and give different measures, depending on how the random selection is made.
+   We grant it. Which selection is made is a choice of what the turn is counted against (§2): the turn itself gives the
+   uniform turn, while a clock, a flat ruler or a count of arrivals gives another law (§11.1), and symmetry alone does
+   not say which is wanted. What the framework adds is that the core of the main result survives the choice: any
+   selection that treats the two parties alike puts the median at the corner, and leaves no mean if its weight does not
+   vanish at the horizon (Theorem 6(e)).
 
    Three paths from all of h to all of v show what that leaves free. Sweep each uniformly along its own length, and
    write g for the share of the sweep done when the direction θ is reached:

@@ -925,6 +925,11 @@ try {
         err: t.placeH ? Math.hypot(t.placeH[0] * L - t.truth.place[0], t.placeH[1] * L - t.truth.place[1]) / Math.hypot(...t.truth.place) : null };
     }
     R.set({ lfar: Math.log10(30) });
+    // no fixed frame: whatever way the reader first faces, its map is the room's turned by that facing, exactly
+    out.faces = 0;
+    for (const f of [0, 2, -2.5]) { const r = R.set({ face0: f, walk: R.PATH }), L = r.trueLegs[0];
+      for (const x of r.rows) if (x.placeH) out.faces = Math.max(out.faces, Math.abs(x.placeH[0] * L - x.truth.place[0]), Math.abs(x.placeH[1] * L - x.truth.place[1])); }
+    R.set({ face0: 0.4 });
     const one = R.set({ lk: 0, count: false, walk: [R.PATH[0]] }); out.one = `${one.placed.length} ${one.rows.every(x => x.dir != null && x.central === 1)}`;
     const rr = R.set({ walk: [[0.6, 0.6], ...R.roundPoints('table')] }); out.round = rr.rows.find(x => x.name === 'table').central;
     R.set({ walk: R.PATH });
@@ -932,9 +937,9 @@ try {
   });
   const rwOk = rw.placed === 5 && rw.near.regime === 'both sweeps' && rw.near.central >= 2 && rw.mid.regime === 'parallax only' &&
     rw.mid.central === 1 && rw.mid.err < 1e-9 && rw.far.regime === 'a ray' && rw.far.err === null && !rw.far.resolved && rw.exact < 1e-9 && rw.scaleH < 1e-9 && rw.scaleShape < 1e-12 && rw.radiiK < 1e-12 && rw.metresK < 1e-9 &&
-    rw.one === '0 true' && rw.round >= 8;
+    rw.one === '0 true' && rw.round >= 8 && rw.faces < 1e-9;
   if (!rwOk) failures.push(`[room-walk.html] ${JSON.stringify(rw)}`);
-  console.log(`${failures.length === before32 ? 'ok  ' : 'FAIL'} room-walk.html (one standpoint: directions and one radius a thing, nothing placed; the path places all five from directions alone, in the first leg, exactly (${rw.exact.toExponential(0)}); scaling the world by 10⁻², 7, 10² moves no direction, place, breadth in H or shape, the radii and the metres by k; walking round the table gives ${rw.round} of its 16 directions; the tree at 2.5 m by both sweeps, at 30 m by parallax only (${rw.mid.err.toExponential(0)}), at 8 km a ray, unresolved)`);
+  console.log(`${failures.length === before32 ? 'ok  ' : 'FAIL'} room-walk.html (one standpoint: directions and one radius a thing, nothing placed; the path places all five from directions alone, in the first leg, exactly (${rw.exact.toExponential(0)}); scaling the world by 10⁻², 7, 10² moves no direction, place, breadth in H or shape, the radii and the metres by k; walking round the table gives ${rw.round} of its 16 directions; the tree at 2.5 m by both sweeps, at 30 m by parallax only (${rw.mid.err.toExponential(0)}), at 8 km a ray, unresolved; no fixed frame: faced three ways at first, the map the room's turned, exactly (${rw.faces.toExponential(0)}))`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
