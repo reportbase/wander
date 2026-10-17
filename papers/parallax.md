@@ -287,6 +287,32 @@ outside (step 2). The second is this pair's V = H; the third is the one number a
 - **The zero-point is the same kind of error.** A common offset in p shifts the levels of every star it touches and does
   not shrink with the number of stars (`physics.md` §4, queued; the archives are blocked here). **[reading]**
 
+**The ladder as a tower of holds** (16 Oct; SPN R317, from *Degrees of Freedom* §5.10, the archive's tower of grouped
+holds, and OFS §9, "Units within units"):
+- **Each rung is a level of unit.** A parallax reads d/B, a ratio to its own baseline; the baseline is the rung's unit,
+  its hold. The next rung's unit is a length already read, as a ratio, on the rung below: the AU in Earth radii (the
+  transits of Venus), stellar distances in AU, a kind (Cepheids, then type Ia supernovae) calibrated on stars of known
+  parallax. **[classical]**
+- **Everything between rungs is a ratio.** What links two rungs is read one rung up, as a thread's P/D is; only one
+  amount is written, at the bottom: the metre, through the AU, a defined number of metres since 2012. **[reading]**
+- **Strangers cost the depth.** Two distances on one rung are related through that rung's ratios alone; a distance k
+  rungs up is related to the metre through k of them. With independent errors σ_j on each rung's ratio (in levels), a
+  distance on rung k carries √(σ_1² + … + σ_k²) against the metre, while two distances on rung k are related to each
+  other with neither the rungs below nor the written amount: their ratio's error is the rung's own scatter. **[exact]**,
+  given independent errors.
+- **A rung's hold revised moves everything above it by one factor.** Baade's revision of the Cepheid zero-point
+  (announced 1952; Baade 1956) and Sandage's finding that Hubble's "brightest stars" were HII regions (Sandage 1958)
+  each moved every distance on and above the rung revised and none below, and left the ratios within a rung as they were. **[classical]** for the history;
+  **[reading]** for the account; tested in LTH (`plans/lth-plan.md`).
+- **Parallax sets the tower's pitch.** A tower of holds does not say how many levels one hold can carry. Proposition 4
+  does: a rung read to a step ε holds about log₂(2/ε) levels each side of its corner, and past the far edge a place is a
+  ray, so a new hold is needed, a longer baseline or a kind, calibrated inside the band. The two meet best where both
+  read well, near the geometric mean of their ranges (OFS §8, the best H). **[exact]** for the band; **[reading]** for
+  the pitch.
+- **What the tower adds to §7.** "More readings improve the figure, never the scale" (STC) is the tower's last line: the
+  written amount is shared by every rung and no ratio corrects it; each rung's own errors are what more readings shrink.
+  **[reading]**
+
 ## 8. What stands on what
 
 | claim | mark | where |
@@ -307,6 +333,7 @@ outside (step 2). The second is this pair's V = H; the third is the one number a
 | the parsec a far-field unit, 242 km from the tangent form | exact | PXC P15 |
 | the baseline as a second zoom | reading | §5 |
 | the eyes and the stars at their corners | illustration | §5 |
+| the ladder a tower of holds: ratios between rungs, one amount at the bottom, errors adding by rung | exact (given independent errors), reading | §7; LTH |
 
 ## 9. Open questions
 
@@ -325,6 +352,9 @@ outside (step 2). The second is this pair's V = H; the third is the one number a
    What is new is the error out of each plane, a direction's error at each standpoint. Whether it has a corner: open.
 
 ## References
+
+Baade, W. (1956). The period-luminosity relation of the Cepheids. *Publications of the Astronomical Society of the
+Pacific* 68, 5.
 
 Bailer-Jones, C. A. L. (2015). Estimating distances from parallaxes. *Publications of the Astronomical Society of
 the Pacific* 127, 994–1009.
@@ -349,5 +379,7 @@ Lutz, T. E. and Kelker, D. H. (1973). On the use of trigonometric parallaxes for
 systems: theory. *Publications of the Astronomical Society of the Pacific* 85, 573–578.
 
 Perryman, M. A. C. et al. (1997). The Hipparcos Catalogue. *Astronomy & Astrophysics* 323, L49–L52.
+
+Sandage, A. (1958). Current problems in the extragalactic distance scale. *Astrophysical Journal* 127, 513.
 
 Snellius, W. (1617). *Eratosthenes Batavus*. Leiden.
