@@ -895,6 +895,39 @@ try {
   if (!rmOk) failures.push(`[room.html] ${JSON.stringify(rm)}`);
   console.log(`${failures.length === before31 ? 'ok  ' : 'FAIL'} room.html (scaling the world by 10⁻², 7, 10² moves no address, shape or room-unit size (${rm.scale.toExponential(0)}); a thing's size in room units the same at every distance; moving the chair changes its address and not its shape, reshaping the table its shape and not its address; the hand pointed at the ball meets it; one known step writes the room and every place (${rm.writeRoom.toExponential(0)}); the chair put 1 m from the wall)`);
 
+  // ── 32. room-walk.html: walking the path places every thing from directions alone, in H (the first leg), exactly; the
+  //    central sweep's shape and every place and breadth in H unmoved by scaling the world, the radii and metres moved by k;
+  //    walking round a thing fills its central sweep; counting one leg writes the metres ──
+  current = 'room-walk.html';
+  const before32 = failures.length;
+  await page.goto(new URL('room-walk.html?walk=path', base).href, { waitUntil: 'load' });
+  const rw = await page.evaluate(() => {
+    const R = __roomWalk, out = { placed: 0, exact: 0, scaleH: 0, scaleShape: 0, radiiK: 0, metresK: 0, one: '', round: 0 };
+    const rel = (a, b) => Math.abs(a / b - 1);
+    let r0 = R.set({ lk: 0, count: false, walk: R.PATH });
+    out.placed = r0.placed.length;
+    const L1 = r0.trueLegs[0];
+    for (const x of r0.rows) out.exact = Math.max(out.exact, Math.abs(x.placeH[0] * L1 - x.truth.place[0]), Math.abs(x.placeH[1] * L1 - x.truth.place[1]),
+      Math.abs(x.across * L1 - x.truth.across));
+    const m0 = R.set({ count: true });
+    for (const lk of [-2, Math.log10(7), 2]) {
+      const k = Math.pow(10, lk), r1 = R.set({ lk, count: false });
+      r1.rows.forEach((x, i) => { const y = r0.rows[i];
+        out.scaleH = Math.max(out.scaleH, Math.abs(x.placeH[0] - y.placeH[0]), Math.abs(x.placeH[1] - y.placeH[1]), rel(x.across, y.across), Math.abs(x.dir - y.dir));
+        x.shape.forEach((v, j) => { out.scaleShape = Math.max(out.scaleShape, rel(v, y.shape[j])); out.radiiK = Math.max(out.radiiK, rel(x.radii[j], k * y.radii[j])); }); });
+      const m1 = R.set({ count: true });
+      m1.rows.forEach((x, i) => { out.metresK = Math.max(out.metresK, rel(x.acrossM, k * m0.rows[i].acrossM)); });
+    }
+    const one = R.set({ lk: 0, count: false, walk: [R.PATH[0]] }); out.one = `${one.placed.length} ${one.rows.every(x => x.dir != null && x.central === 1)}`;
+    const rr = R.set({ walk: [[0.6, 0.6], ...R.roundPoints('table')] }); out.round = rr.rows.find(x => x.name === 'table').central;
+    R.set({ walk: R.PATH });
+    return out;
+  });
+  const rwOk = rw.placed === 4 && rw.exact < 1e-9 && rw.scaleH < 1e-9 && rw.scaleShape < 1e-12 && rw.radiiK < 1e-12 && rw.metresK < 1e-9 &&
+    rw.one === '0 true' && rw.round >= 8;
+  if (!rwOk) failures.push(`[room-walk.html] ${JSON.stringify(rw)}`);
+  console.log(`${failures.length === before32 ? 'ok  ' : 'FAIL'} room-walk.html (one standpoint: directions and one radius a thing, nothing placed; the path places all four from directions alone, in the first leg, exactly (${rw.exact.toExponential(0)}); scaling the world by 10⁻², 7, 10² moves no direction, place, breadth in H or shape, the radii and the metres by k; walking round the table gives ${rw.round} of its 16 directions)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

@@ -236,6 +236,18 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   metres; "put it 1 m from the wall"). Scale the world moves no reading; move changes the address, reshape the shape.
   `?step=1..6&thing=&alt=&az=&k=<log10 k>`; hook `window.__room` (`address`, `radii`, `shape`, `sizeInRoom`,
   `writeFromStep`, `writeRoom`, `sweepOrder`, `hit`, `handDir`, `move`, `placeFromWall`, `reshape`, `set`, `state`).
+- `room-walk.html`: **walking the room** (17 Oct 2026, Tom: "I want focus on the two sweeps central and inscribed. How a
+  reader walks around a room doing both. Show a readout of the situation."; SPN R324), a standalone page, plain canvas, the
+  floor plan only. Four things (table, chair, ball, cabinet) with true sizes hidden unless "the referee" is on. Tap the
+  floor to walk; at every standpoint both sweeps: the inscribed (the hand once round, each thing's centre and two edges as
+  directions in the room's frame, no amount) and the central (from each thing's centre the direction toward the reader is
+  given, the radius along it arrives, an amount in an unread unit; walking round a thing collects its shape over the
+  geometric mean). Legs walked in known directions, lengths unread; the first leg is H; from two standpoints every thing
+  placed in H by bearings alone (one linear least squares, later legs found from the things); holding a thing's two edges
+  gives its breadth across in H; "count my steps" (strides of 0.7 m, carried in) writes metres. The readout: standpoints,
+  directions, central coverage, placed, held, written, still unknown. Scale the world moves nothing in H, the radii and
+  metres by k. `?walk=path|none&n=&thing=&k=<log10 k>&count=1&truth=1`; hook `window.__roomWalk` (`bearings`,
+  `centralSample`, `centralOf`, `reconstruct`, `readout`, `roundPoints`, `set`, `stepTo`, `state`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -339,7 +351,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -1375,6 +1387,9 @@ In short:
       units the same at every distance; moving the chair changes its address and not its shape, reshaping the table its
       shape and not its address; the hand pointed at the ball meets it; one known step writes the room and every place; the
       chair put 1 m from the wall.
+  32. **room-walk.html:** one standpoint gives directions and one radius a thing, nothing placed; the path places all four
+      from directions alone in the first leg, exactly; scaling the world by 10⁻², 7, 10² moves no direction, place,
+      breadth in H or shape, the radii and the metres by k; walking round the table fills at least 8 of its 16 directions.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
