@@ -1378,6 +1378,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   uniform headings ended by edges; H54 seed dispersal, the scale the release height), F 0; E1 killed in its letter (H52 has
   no Cauchy), E3 killed, E2, E4, E5 not killed, E6 undecided. Next: the D entries' sources and tests, and a second list
   aimed at conclusions about the payload.
+  R363 (Tom: "Regardless, any cauchy based result will have to be reframed"): every Cauchy result restated whatever its
+  class, as address, turn, standpoint z, payload and the result; `plans/rea/reframed.md` for the 58 (widths are heights, a
+  rate; strengths the payload; a reader's scale is H; breakers amounts entering).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
