@@ -1,0 +1,14 @@
+T1 (a) the transform of C(0.7, 0.3) against e^(izt): 3.47e-46; (b) the phasor's power spectrum against the Lorentzian: 1.24e-60
+T2 (a) t =  1: quartiles -1.0240, 1.0017 (3 se 0.0258)
+T2 (a) t =  4: quartiles -4.0141, 3.9919 (3 se 0.1032)
+T2 (a) t = 16: quartiles -15.8990, 15.8516 (3 se 0.4130)
+T2 (b) X(16)/4 against X(4), independent paths: KS 0.00202 (limit 0.00729); (c) rank correlation of X(4) − X(1) with X(1): 0.00131 (limit 0.00949)
+T3 (a) orders changed: 0; (b) ratio of spreads off by 2.2e-16; (c) rate off k/c by 2.2e-16; (d) rate × duration off k by 2.2e-16
+T4 D =  0.1: landing quartiles -1.0051, 1.0024 (3 se 0.0258); median passage 11.0693 against h²/(2Dq) = 10.9905 (3 se 0.2432)
+T4 D =  1.0: landing quartiles -0.9907, 0.9934 (3 se 0.0258); median passage 1.0984 against h²/(2Dq) = 1.0991 (3 se 0.0243)
+T4 D = 10.0: landing quartiles -0.9936, 1.0184 (3 se 0.0258); median passage 0.1103 against h²/(2Dq) = 0.1099 (3 se 0.0024)
+T4 (b) landings at D = 0.1 and 10: KS 0.00366 (limit 0.00729)
+T4 (d) M =   10: median batch mean 12.168 against M·h²/(2q) = 10.991 (3 se 2.432)
+T4 (d) M =  100: median batch mean 107.241 against M·h²/(2q) = 109.905 (3 se 24.323)
+T4 (d) M = 1000: median batch mean 975.380 against M·h²/(2q) = 1099.055 (3 se 243.228)
+verdicts: T1 not killed, T2 not killed, T3 not killed, T4 not killed

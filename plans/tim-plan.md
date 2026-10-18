@@ -116,3 +116,57 @@ joined by the signal's speed (CFH, WRD).
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (18 Oct, `python3 tim/tim.py`; output `tim/tim-run1.txt`, 65 s; T5 by hand from the sources below)
+
+Nothing was killed.
+
+- **T1 not killed.**
+  - (a) The transform of C(0.7, 0.3) is e^{izt} to 3.5·10⁻⁴⁶.
+  - (b) The damped phasor's power spectrum is the Lorentzian to 1.2·10⁻⁶⁰.
+- **T2 not killed.**
+  - (a) The quartiles at t = 1, 4, 16 are −1.024/1.002, −4.014/3.992 and −15.90/15.85. 3 standard errors are 0.026, 0.10
+    and 0.41.
+  - (b) X(16)/4 against X(4): KS 0.0020, limit 0.0073. The two samples were drawn from independent sets of paths, since a
+    KS test on one set's correlated values would be too easy to pass.
+  - (c) The rank correlation of the increments is 0.0013, limit 0.0095.
+- **T3 not killed.** Under every clock c and world k:
+  - no order changed;
+  - the ratio of spreads, the rate's k/c and the product's k all held to 2.2·10⁻¹⁶.
+- **T4 not killed.**
+
+  | D | landing quartiles | median passage | h²/(2Dq) | 3 se |
+  |---|---|---|---|---|
+  | 0.1 | −1.0051, 1.0024 | 11.069 | 10.990 | 0.243 |
+  | 1 | −0.9907, 0.9934 | 1.0984 | 1.0991 | 0.024 |
+  | 10 | −0.9936, 1.0184 | 0.11030 | 0.10991 | 0.0024 |
+
+  - The landings at D = 0.1 and 10: KS 0.0037, limit 0.0073.
+  - (d) The median batch mean at M = 10, 100, 1000 is 12.2, 107 and 975, against 11.0, 110 and 1099. 3 standard errors
+    are 2.4, 24 and 243. It grows in proportion to M: the mean never settles.
+- **T5 not killed, on one pair.** Na 3p ²P₃/₂ (the D2 line).
+  - The width, in frequency: Oates, Vogel and Hall (1996, *PRL* 76, 2866) measured the natural linewidth by spectroscopy
+    on ultracold two-level atoms, to under 0.25%, and quote it as the lifetime 16.237(35) ns, that is
+    Γ/2π = 9.802 MHz.
+  - The lifetime, in time: Volz, Majerus, Liebel, Schmitt and Schmoranzer (1996, *PRL* 76, 2862), by beam-gas-laser
+    spectroscopy, the decay in flight: 16.254(22) ns.
+  - Γ·τ = 16.254/16.237 = 1.0010 ± 0.0025: 0.41 combined standard errors from 1.
+  - Read from their abstracts (OpenAlex, `api.openalex.org/works/doi:…`). The responses' sha256s are a88ada14…2694
+    (2866) and b5a08820…6ccb (2862); not committed.
+- **Not a pair.**
+  - Gaupp, Kuske and Andrä (1982, *PRA* 26, 3351; response sha256 44418f7a…2d21), the old discrepant time-domain value,
+    measured 16.40(3) ns for the ²P₁/₂ level, not ²P₃/₂. A different transition, so it does not count here.
+  - Oates et al. say their value "disagrees with previous time-domain measurements". The old ²P₃/₂ values were not
+    found in what could be read here.
+  - One pair is thin. The 1% discrepancy that the two 1996 papers resolved is the history of this pair.
+
+**T6, the verdict: not killed.** In every case:
+- **The order and the ratios are free.** No order moved under the clock or the world. The spread's growth ratio held, the
+  landing was the same whatever the clock's rate, and Γ·τ was 1 in real data.
+- **The durations move.** The passage times went as 1/D, and the rate read went as k/c.
+- **The only constant joining place to time is a speed.** The index-1 self-similarity (T2b) means the Cauchy process's
+  rate is length per time, and the clock is the only amount.
+
+The hidden clock (T4) is the plainest form: speed the Brownian clock up a hundredfold and every passage time shrinks a
+hundredfold, while not one landing moves, and the clock's durations have no mean to settle on. The Cauchy keeps time by
+order, as the address keeps place. The mathematics is classical (Lévy, Spitzer, Weisskopf–Wigner); the reading is ours.

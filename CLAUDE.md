@@ -1363,6 +1363,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   move z, the distance hyperbolic (its unit along the height the level, ln 2 a doubling), the height a built-in level of
   detail (mode k kept while kγ < 1), relays grow linearly and averaging gains nothing; A2(c) killed by my reasoning (the
   quartile read survives a Möbius pole, consistent for g(z); unlike LOM's normal amounts, which lost 73%).
+  `tim-plan.md` (+ `tim/tim.py`, 18 Oct; SPN R361, "How does cauchy handle time."): exact and seeded, nothing killed. Time
+  turns z (e^{izt}, the Lorentzian a damped phasor), raises the standpoint (C(0, t)), and the clock is hidden (Spitzer's
+  landing the same at every Brownian rate, the passage times as 1/D, no mean); order and ratios free, durations amounts,
+  a speed the bridge. Real data, one pair: Na D2's width by spectroscopy (Oates et al. 1996) against its decay in time
+  (Volz et al. 1996), Γ·τ = 1.0010 ± 0.0025. draw's REC known beforehand.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
