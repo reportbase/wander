@@ -1368,6 +1368,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   landing the same at every Brownian rate, the passage times as 1/D, no mean); order and ratios free, durations amounts,
   a speed the bridge. Real data, one pair: Na D2's width by spectroscopy (Oates et al. 1996) against its decay in time
   (Volz et al. 1996), Γ·τ = 1.0010 ± 0.0025. draw's REC known beforehand.
+  `rea-plan.md` (18 Oct; SPN R362, Tom: "Every previous cauchy based conclusion is now suspect, at a miniumum. Those results
+  will have to be re-analyzed"): the re-analysis's first pass on HZT's 58 entries (claim, layer, turn, amount, impact U/R/D/F,
+  test), a blind classifier and Claude's check; predictions E1–E6 first. Theorems and measurements stand; conclusions about
+  the payload drawn from the Cauchy are suspect (Claude's "the system's own" for resonances withdrawn: the phase's turn).
+  R362 also: the clock is the head's rate ω, which cancels from every reading; the height γ is not a rate; a speed on the
+  line is γω.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
