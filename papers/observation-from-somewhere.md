@@ -192,7 +192,9 @@ writer's vantage as if a single observation held it. Section 3 sets out the read
   reader's addresses, not its payload. Whatever is met in each direction cancels from the reading. Order survives every
   change of payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7). The median
   at the corner needs only that the sweep treat the two parties alike, and the missing mean only that, besides, its
-  weight not vanish at the horizon; the circle and the uniform turn give the Cauchy's exact shape (§7.2).
+  weight not vanish at the horizon; the circle and the uniform turn give the Cauchy's exact shape (§7.2). As a rule: a
+  Cauchy variable is a direction, read by its order, never an amount, and where one appears beside an amount, as a
+  spectral line's profile beside its strength, the two are separate factors (§7.2).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
   A larger H gives the near less detail and reaches the far; the best H is the corner of what is read. An H of 0 or
   of ∞ leaves the reader one of the rulers that favour no amount, and no corner (§9).
@@ -1595,6 +1597,25 @@ sech density's 0.062, and 0.002 against 0.016 at the sixth). The sech density ha
 
 > **The Cauchy is not the payload; it is the address to the payload.**
 
+**The rule, and a test.** A Cauchy variable is a direction: a point of the projective line, a ratio [x : y] read in one
+chart, laid by a turn. It is never an amount. Its median and its quartiles are places on that line and mean what they
+say; it has no mean because the coordinates of directions do not add. Two directions have no sum, only a composition, a
+turn followed by a turn, which in the chart is tangent addition (§2). Where a Cauchy appears beside an amount, the two
+are separate factors: the amount is the payload, and the Cauchy is where it lands. So for any Cauchy met in practice
+there is a test: find the turn, and find the amount. In the lighthouse the lamp turns and the flash is the amount. For a
+ratio of two components of a spherically symmetric vector the turn is the vector's direction, uniform, and the amount
+its length, which cancels (part (a) below).
+
+The plainest instance in practice is a spectral line. Spectroscopy writes a line as a strength times a profile, I(ν) =
+S·φ(ν − ν₀) with ∫φ = 1. The strength S is an amount, in physical units, and the strengths of separate lines add. The
+profile of a resonance is the Lorentzian, φ(ν) = (1/π)·dδ/dν, where δ is the phase of the response, tan δ = γ/(ν₀ − ν),
+which turns through half a turn as the line is crossed: the profile is the frequency line laid by a uniform turn of that
+phase, the address. Spectroscopy reads the profile by its centre and its half-width at half maximum, γ, which for a
+Cauchy is half the interquartile range, and reads the strength by its integral: the address by its order and the amount
+by its sum, as Theorem 6 says each must be read. The line's cross-section has the same shape, γ²/((ν − ν₀)² + γ²) =
+sin²δ, since at every address the density is 2/π times the foot of the point it points to (§4); but it is bounded by 1,
+a share of what arrives, the payload's, not the address.
+
 Call a statistic of a set of readings an *address statistic* if it depends only on their order (the ranks, the median,
 the quartiles, which side of the corner each lies on), and a *payload statistic* if it depends on their sizes (the mean,
 any sum).
@@ -1856,14 +1877,14 @@ follow every increasing map; those facts are part (d). The other parts of Theore
   belongs to whatever sweeps, the lamp or a reader, and not to what the sweep meets. That half the landings fall within
   the lamp's distance of its foot only when shore and sea are drawn at one length is Proposition 5(f), which is
   elementary.
-- *The same law without a sweep.* Not every Cauchy is a sweep's. A spectral line or a resonance is a Lorentzian because
-  of a pole a half-width off the real line, |1/(x − x₀ + iγ)|², from an exponential decay or a damped response
-  (Weisskopf and Wigner 1930; Breit and Wigner 1936); there it is the line, a frequency or an energy, that is swept
-  uniformly, and the pole's phase turns through half a turn, not uniformly, as the line is crossed, standing 45° from
-  its middle at the half-width. A sum of terms whose densities fall off like 1/x² reaches the same law as a stable limit
-  of index 1, with no angle at all (Lévy 1925). In these the law is a fact about the system, as the lighthouse's is
-  about the lamp. Our claim is narrower: where a reader sweeps uniformly, the law of what it lays is its own addresses,
-  whatever else may give the same shape.
+- *The same law where no reader sweeps.* A spectral line or a resonance is a Lorentzian because of a pole a half-width
+  off the real line, |1/(x − x₀ + iγ)|², from an exponential decay or a damped response (Weisskopf and Wigner 1930;
+  Breit and Wigner 1936). Crossed uniformly in frequency or energy, the pole's phase turns through half a turn, not
+  uniformly, standing 45° from its middle at the half-width; read the other way, the Lorentzian is the line laid by a
+  uniform turn of that phase, the profile of §7.2, with the line's strength the amount. The turn there is the
+  response's, not a reader's. A sum of terms whose densities fall off like 1/x² reaches the same law as a stable limit
+  of index 1, with no angle in sight (Lévy 1925). Our claim is that where a reader sweeps uniformly, the law of what it
+  lays is its own addresses, whatever else may give the same shape.
 - *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
   (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
   does so everywhere; and no chart keeps both angles and areas (Euler 1777; Gauss 1828). What is ours is the reading: the
