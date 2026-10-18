@@ -2357,6 +2357,21 @@ reader's own H the chord sizes things against itself, and to write them in a sha
 amount carried in, here the reader's own build. Two eyes give a baseline with no motion at all. Every route to parallax
 moves the point seen from; a turn alone gives directions.
 
+**From one place: the outline is free, the face is carried in.** A reader that neither walks round a thing nor stands at
+its centre still sees it from many sides when the thing crosses its view. Each look gives the directions that meet the
+thing, and the two at the edges of that set are lines that touch it. Over the crossing these lines close in on it from
+every side the line of sight turned through, and what lies within them at every look is the thing's visual hull
+(Laurentini 1994). The hull contains the thing, meets it wherever some edge touched it, and elsewhere only spans it: a
+hollow that no edge reached is bridged over. It is built of directions alone, so it is the outline up to the common
+scale, and nothing in it moves when the world is scaled; the thing's track across the view, which the hull needs, is
+itself known from the looks only up to that scale. The face, the central reading, needs more. Along each direction the
+reader must receive how far the surface lies, an amount, and that amount must arrive in a unit. A range does both: the
+time for a signal to go out and return, times the signal's speed, which is an amount measured beforehand and carried in.
+That speed supplies the unit, the one term a₀ that neither reader receives, so a ranging reader is a writer. With the
+ranges it holds every point it meets in that unit, and with them the face, and the thing's distance and speed as well.
+From one standpoint, then, the addresses and the outline they sweep come free; the payload reading needs an amount
+received along each direction, or a second vantage (the walk above, or a standpoint at the centre).
+
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
 change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the
@@ -2872,6 +2887,9 @@ Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Hi
 
 Lamping, J., Rao, R. and Pirolli, P. (1995). A focus+context technique based on hyperbolic geometry for visualizing
 large hierarchies. *Proceedings of CHI '95*, 401–408.
+
+Laurentini, A. (1994). The visual hull concept for silhouette-based image understanding. *IEEE Transactions on
+Pattern Analysis and Machine Intelligence* 16(2), 150–162.
 
 Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*
 5(4), 437–459.

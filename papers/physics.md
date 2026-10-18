@@ -546,6 +546,16 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   Statistical against systematic error is address against payload: what more readings improve is the figure, and the
   scale is exactly as good as the one amount from outside. All of this is known in metrology and astronomy; the reading
   is the corpus's.
+- **Ranging is writing; silhouettes are reading** (CFH, `plans/cfh-plan.md`; SPN R355, R356). A lumpy moon crossing the
+  view of a reader at home, 32 looks, its line of sight turning 44°:
+  - **with a range on each detected direction** (the signal's round trip times its speed, an amount carried in), every
+    point met lies on the surface to 10⁻¹²; with the centre fitted from the ranges the face is read to 4% rms
+    (correlation 0.88), and distance and speed to 0.25% and 0.06%, with no other amount;
+  - **with directions alone** the visual hull contains the moon, is tight to about one address where an edge touched it
+    (correlation 0.87) and keeps none of the face elsewhere (0.16); scaling the world moves nothing in it.
+  The bridge is named: the signal's speed. Classical (radar and lidar ranging; Laurentini's visual hull, 1994); the
+  reading is the corpus's: one standpoint reads the addresses and the outline free, and the payload needs an amount
+  received along each direction, or another vantage.
 
 ## 3. What was killed, and what it taught
 

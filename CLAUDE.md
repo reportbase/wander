@@ -893,6 +893,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   then "yes"): OFS §9 after "Far off": a turn about the point seen from moves every direction alike, so only directions,
   the frame and the corner; a head's eye sits r off the axis, a turn Δ carrying it a chord 2r·sin(Δ/2), a baseline; the
   parallax is that translation, metres need r carried in; two eyes a baseline without motion.
+  **From one place: the outline is free, the face is carried in** (18 Oct, SPN R356; Tom: "ok, proceed with paper
+  updates", after CFH): OFS §9 after "Turning in place": a thing crossing the view gives its visual hull from the looks
+  alone (Laurentini 1994), up to scale; the face needs a range along each direction, an amount whose unit is the signal's
+  speed (the a₀ neither reader receives), so a ranging reader is a writer; or a second vantage. `physics.md` §2.4 has it.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
