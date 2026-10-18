@@ -1338,6 +1338,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   writes distance and speed to 0.25% (C2); silhouettes alone, the visual hull, contain the body and are tight on the rim to
   about a cell (C4 killed by my 3%, a cell at the far ticks), with none of the face elsewhere; from detections alone 0.57 on
   the rim (C5); unmoved by scaling (C6). The inscribed sweep alone earns the rim's outline, not the central painting.
+  `wrd-plan.md` (18 Oct; SPN R357, "it may be important if this is what readers actually do, not engineerd to do."): what
+  real readers do. Ranging by an emitted signal is writing, every range off by held speed / medium's speed. On Amichai et
+  al. 2021 (bats in heliox, 10–27% faster sound): run 1 (the text) every level read closer, no recalibration, the speed
+  held innate; W1, W2 untested in letter (no perceived distance with an interval), W3 killed at 27% (lift); the paper's
+  "equivalent ∼95 cm" is 1.3·(1 − 0.27), the echo gives 1.024 m. Run 2 (the factor from Dataset S1, predictions committed)
+  not run: PMC's file link is behind a proof-of-work page, pnas.org unreachable; Tom could supply the file.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

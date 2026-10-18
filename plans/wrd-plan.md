@@ -151,3 +151,10 @@ The kill conditions:
   - *Killed* if the share falls outside 0.787 ± 0.06.
 - **W1″ (15%, 10%):** within ±0.06 of 0.870 and 0.909, where the dataset has the flights. *Killed* if outside.
 - **Untested**, and I say so, if the dataset lacks per-flight ISI by condition, target distance and bat.
+
+Run 2 has not run: the dataset could not be reached from this environment. On 18 October:
+- PMC answers the file's link with a proof-of-work page, which I did not try to get past;
+- Europe PMC says the article is not in its open-access set;
+- pnas.org does not resolve.
+
+The predictions above stand as written, for whenever the file can be supplied.
