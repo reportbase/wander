@@ -121,7 +121,7 @@ let s3n = 0, s3w = 0; const s3b = new Set(), S3R = [];
 for (let b = 0; b < M; b++) for (let t = 2; t < T - 2; t++){ const ids = [-2, -1, 0, 1, 2].map(j => TICK[t + j].of.get(b)); if (ids.some(x => x === undefined)) continue;
     const sh = ids.map((x, j) => TICK[t + j - 2].P[x]); if (sh.some(p => p.cells.length < 2000)) continue;
     let sl = 0; sh.forEach((p, j) => { sl += (j - 2) * Math.log(p.share); }); sl /= 10;
-    const C = centre(b, t), d = len(C), tauT = d / -(dot(C, V[b]) / d), tau = 2 / sl; s3n++; s3b.add(b); S3R.push([b, t, sh[2].cells.length, tau / tauT - 1, ang(nrm(centre(b, t - 2)), nrm(centre(b, t + 2))) / Math.PI * 180]); s3w = Math.max(s3w, Math.abs(tau / tauT - 1)); }
+    const C = centre(b, t), d = len(C), tauT = d / -(dot(C, V[b]) / d), tau = 2 / sl; s3n++; s3b.add(b); let rs = 0; sh.forEach((p, j) => { const lin = Math.log(sh[2].share) + sl * (j - 2); rs += (Math.log(p.share) - lin) ** 2; }); S3R.push([b, t, sh[2].cells.length, tau / tauT - 1, ang(nrm(centre(b, t - 2)), nrm(centre(b, t + 2))) / Math.PI * 180, tauT, Math.sqrt(rs / 3)]); s3w = Math.max(s3w, Math.abs(tau / tauT - 1)); }
 ok.S3 = s3n > 0 && s3w <= 0.03;
 console.log(`S3 τ over five ticks for clean patches of 2,000 cells or more: ${s3n} readings on ${s3b.size} bodies, worst ${(100 * s3w).toFixed(2)}%`);
 for (const k of ['S2', 'S3']) console.log(k, ok[k] ? 'not killed' : 'KILLED');
@@ -129,4 +129,4 @@ for (const k of ['S2', 'S3']) console.log(k, ok[k] ? 'not killed' : 'KILLED');
 for (const [lo, hi] of [[50, 200], [200, 1000], [1000, 5000], [5000, 1e9]]){ const r = S2R.filter(x => x[0] >= lo && x[0] < hi); if (!r.length) continue;
     console.log(`   ω, patches of ${lo}–${hi} cells: ${r.length} readings, worst ${(100 * Math.max(...r.map(x => x[1]))).toFixed(3)}%, median ${(100 * r.map(x => x[1]).sort((a, b) => a - b)[r.length >> 1]).toFixed(3)}%`); }
 const byB = new Map(); for (const x of S3R){ const m = byB.get(x[0]) || []; m.push(x); byB.set(x[0], m); }
-for (const [b, r] of byB) console.log(`   τ body ${b}: ${r.length} readings, cells ${r[0][2]}–${r.at(-1)[2]}, error ${(100 * Math.min(...r.map(x => x[3]))).toFixed(2)}% … ${(100 * Math.max(...r.map(x => x[3]))).toFixed(2)}%, the line of sight turning ${r[0][4].toFixed(2)}° over five ticks`);
+for (const [b, r] of byB) console.log(`   τ body ${b}: ${r.length} readings, cells ${r[0][2]}–${r.at(-1)[2]}, error ${(100 * Math.min(...r.map(x => x[3]))).toFixed(2)}% … ${(100 * Math.max(...r.map(x => x[3]))).toFixed(2)}%, the line of sight turning ${r[0][4].toFixed(2)}° over five ticks; true τ ${r[0][5].toFixed(0)}; ln s scatter about the line ${(100 * Math.max(...r.map(x => x[6]))).toFixed(2)}%, giving τ an expected error ~${(100 * Math.max(...r.map(x => x[6] * Math.abs(x[5]) / 2 / Math.sqrt(10)))).toFixed(1)}%`);
