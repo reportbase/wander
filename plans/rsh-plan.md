@@ -104,3 +104,147 @@ stretch included; three readers holding only directions and the shape of their o
 up to the triangle's size; the length between two of them gives the size. Each reading is a direction of three unit
 relations, two ratios, and two rays crossing in space fix a point, so three dimensions need no more readers than two
 did (UDV used three; two seeing a point squarely suffice for that point).
+
+## Run 2: many bodies at once (predictions, written before the code)
+
+*17 October 2026. Tom, 18:34: "what if the reader was looking at many 3d objects at once?"; 19:01: "both", to Claude's
+offer of a run (this) and a mode in `recover.html`. Geometry, plus one physical amount, the readers' resolution ε.*
+
+**Known beforehand.** Draw's OCC lab ("find what is hidden"): a point of an outline is seen if the reader's ray meets
+the outline there first; from outside a reader sees only part, and what is hidden from every standpoint stays hidden.
+Draw's UDV and run 1 above: three readers' directions and their own triangle give every point up to size, one length the
+size. wander: PXC (`plans/pxc-plan.md`), parallax's band and its far edge d ≈ B/ε, the depth error growing as d²;
+`room-walk.html` (SPN R325): near, shape and place; farther, place without shape; farthest, direction alone. Classical:
+a solid angle falls as the inverse square of distance; a ball seen from distance d shows the cap (1 − r/d)/2 of its
+surface; stereo's depth error εd²/B. So nothing here is new geometry: the run puts these together on one field.
+
+**The field.** Three readers at the corners of an equilateral triangle of side B = 1 (|AB|), its plane square to
+(1, 1, 1), centred at O. M = 40 Levels bodies (`bodyOf(0 … 39)`, every band in full, as run 1), each centre in a direction
+within 30° of (1, 1, 1) (inside the first octant: the field lies in one wedge) at a distance d from O, log-uniform on
+[4, 16384] (12 doublings), seeded; 12 of the 40 are planted behind an earlier one, on the ray from O through its centre,
+at 1.3 to 2 times its distance (at least far enough that their bounding balls do not meet). No two bounding balls meet.
+Each body carries 1,024 surface points (the Fibonacci lattice of directions from its centre, as run 1). A reader sees a
+point when the segment to it leaves every body's inside nowhere before it (64 steps a segment, the point's own end
+excluded). Which point of which body a reading belongs to is given, as in run 1.
+
+**The census** is a fourth standpoint at O sweeping 2²⁰ lattice directions; each is painted by the first body its ray
+meets (ray marched against every body whose bounding ball it meets, then bisected), or by none. Every direction's
+reading is its own, as in run 1; what the many bodies change is only the painting.
+
+**Resolution.** Each reader reads a direction on a flat screen square to (1, 1, 1) at unit distance (a gnomonic grid,
+the screens of all three alike), rounded to pixels ε wide in both screen coordinates; ε = 10⁻³ and 10⁻⁴ (B/ε = 1,000 and
+10,000). A point is placed by least squares on the rays of every reader that sees it, if two of those rounded readings
+differ; if all coincide it is a ray. Per body: the share of its seen points that are rays; its place error
+e_p = |centroid of the placed points − centroid of the same true points| / d; its shape error
+e_s = rms |(placed − its centroid) − (true − its centroid)| / R̄ (R̄ the body's mean radius).
+
+### Predictions
+
+- **P7 (one standpoint reads the sky, breadth over distance).** (a) The world scaled about O by k = 10⁻³, 7, 10³ paints
+  the same census: every direction the same body, but for at most 10⁻⁴ of the directions (grazing rays, rounding).
+  (b) One body moved from d to 2d along its ray and doubled in size about O paints the same census, to the same 10⁻⁴.
+  (c) Body 0 alone on the ray (1, 1, 1) at d = 4·2^j, j = 0 … 11: its solid angle (a lattice of 20,000 directions over its
+  bounding cap) times d² settles; Ω(d)/Ω(2d) is within 2% of 4 for d ≥ 64 and within 0.5% for d ≥ 512.
+  (d) Each body alone, seen from O: the share of its 1,024 points seen is within 0.08 of (1 − R̄/d)/2.
+  *Killed* if any part fails.
+- **P8 (occlusion gives order, not depth).** (a) From O, "i hides j" (some ray meets i first, then j) has no cycle, and
+  every pair whose centre distances differ by more than the sum of their bounding radii is ordered as its centres are
+  (near an identity: a check of my code). (b) Scaling by k (P7a) changes no pair. (c) With ε = 10⁻³: every hiding pair
+  with both bodies nearer than 100 is ordered the same way by the placed centroids' distances; and of the hiding pairs
+  with the hider past 4B/ε, at least one is misordered by the placed centroids or has a body all rays, while occlusion
+  still orders it. *Killed* if any part fails.
+- **P9 (the bands are the resolution's).** At ε = 10⁻³: (a) every body nearer than 10 has e_s < 0.1 (shape), every body
+  farther than 100 has e_s > 0.1; (b) every body nearer than 100 has e_p < 0.1 (place), every body farther than 4,000
+  has e_p > 0.1 or is all rays; (c) no body nearer than 250 has a ray; over the bodies farther than 4B/ε the mean ray share
+  is at least 0.3; (d) fitted over the bodies from d = 8 with e < 1, e_s grows as d^(2.0 ± 0.25) and e_p as
+  d^(1.0 ± 0.25); (e) at ε = 10⁻⁴ the same fits give errors smaller by 10 within a factor 1.5 (the error ∝ ε).
+  *Killed* if any part fails.
+- **P10 (the geometry has no bands; one length writes the field).** At ε = 0 every seen point of every body, laid in
+  |AB|, is the true point laid in |AB| to 10⁻⁹ of its distance from O, from d = 4 to 16,384; scaling the world by
+  k = 10⁻³, 7, 10³ moves none; with |AB| carried in, every point is in the world's units to the same 10⁻⁹. *Killed* if
+  any point misses.
+
+P7(a, b), P8(a, b) and P10 are near identities (a kill would be my code); P7(c, d) and P9 are classical laws met on
+these bodies, where a kill would be my estimate of the constants; P8(c) says what occlusion keeps that parallax loses.
+
+**What would and would not be shown.** That from one standpoint many bodies are a painting of the sky, each patch its
+breadth over its distance, ordered by what hides what and never sized; that three readers' directions place every body
+in their own length and one length writes the whole field; and that the near, middle and far bands come from the
+resolution, not from the geometry. Not how a reader finds which reading belongs to which body (the correspondence is
+given), nor anything of light.
+
+### Run 2 (17 Oct, `node rsh/rsh2.mjs` as first committed; output `rsh/rsh-run2.txt`, 2 min)
+
+All four killed, most by my code:
+- **P7** killed. (a) held: k = 10⁻³, 7, 10³ painted every one of the 2²⁰ directions alike. (b) by my code: the body
+  "moved to 2d and doubled" was placed at 4d (`placed` scales the centre it is given). (c) held: Ω(d)/Ω(2d) within
+  0.02% of 4 from d = 64 on (4.0013 at 128, 4.0031 at 256 at worst; 4.0000–4.0006 from 512). (d) by my code: a reader saw
+  every point of a body farther than about 64, its far side included: 64 steps along a segment thousands long step clean
+  over a body one across.
+- **P8** killed. (a), (b) held (6 hiding pairs, all separated and ordered as their centres, no cycle, the same under k).
+  (c) by my set-up: the census's 2²⁰ directions, 3.5·10⁻³ apart, meet no body past about 250, so no hiding pair past
+  4,000 was found; and a near pair failed on a body that no two readers see (wholly hidden), which has no place to order.
+- **P9** killed. (b) by my set-up, on the same wholly hidden body (no place to measure). (d), (e) by my set-up for the
+  shape (the fit took in far bodies whose points all fell in one or two pixels, so their spread is lost and e_s sits
+  near 1, under the cut) and **for real for the place**: e_p grew as d^1.40 and fell 25-fold for a tenfold ε. Post hoc:
+  a resolved body's centroid averages its points' errors over the pixels it spans, about (2R̄/(dε))² of them, so its
+  place error grows faster than d and falls faster than ε; a body inside one pixel averages nothing. The visibility
+  fault (P7d) also counted far sides as seen, so every P9 number is suspect.
+- **P10** killed by my code: least squares on the normal equations squares the conditioning (the rays from three readers
+  1 apart at d ≈ 26,000 are 4·10⁻⁵ from parallel), 8·10⁻⁷ of the distance; and the |AB|-carried-in check compared a
+  placed point with the wrong true one (an index over all points, not the seen ones).
+
+## Run 3: the same field, the code fixed (predictions, written before the fixed code runs)
+
+The fixes: the moved body placed at 2d (P7b); a point seen when no body's inside is met along the ray before it (the ray
+marched in 256 steps through each bounding ball it crosses, then bisected; the same `enter` as the census), not 64 steps
+of the whole segment (P7d, P8, P9); the least squares solved in the frame of the rays' mean direction, the small
+eigenvalue taken from the rays' cross products, not from 1 − (u·m)² (P10); the true point matched by its own index
+(P10). The field, its seed, ε and every threshold as run 2.
+
+- **P7′** = P7, unchanged.
+- **P8′** = P8 but (c): its near clause over the hiding pairs with both bodies placed (seen by two readers somewhere);
+  its far clause over the planted pairs whose hider lies past 4B/ε, the hiding read on the ray from O through both
+  centres (`enter` on each), since no census direction meets them.
+- **P9′** = P9 (a)–(c) over the bodies with at least 100 points seen by two readers (a wholly hidden body has neither
+  place nor shape); (d) its shape clause only, over the bodies resolved by at least ten pixels across (2R̄/d > 10ε), with
+  the slope 2.0 ± 0.25; (e) its shape clause only, the same bodies at both ε, the ratio 10 within a factor 1.5. The
+  place clauses of (d), (e) stand killed (run 2); no new prediction is made on them.
+- **P10′** = P10, unchanged.
+
+### Run 3 (17 Oct, `node rsh/rsh2.mjs`; output `rsh/rsh-run3.txt`, 2.5 min)
+
+- **P7′ killed**, in (d) alone, and not by my code: each body seen alone from O shows 0.345 to 0.526 of its points, off
+  (1 − R̄/d)/2 by up to 0.127 (body 36 at d = 49: 0.368 against 0.495). (a) every direction painted alike at k = 10⁻³, 7,
+  10³; (b) body 12 moved to 2d and doubled about O: every direction alike; (c) as run 2. Post hoc
+  (`rsh/rsh3-p7d.mjs`): with the relief taken off (the same stretched bodies, R(u) = ½) every share is within 0.008 of
+  (1 − R̄/d)/2; so the relief's own shadows, and its points laid by direction from the centre rather than by area,
+  move the share both ways by more than my 0.08 allowed. The cap law holds for the bodies' broad form only.
+- **P8′ not killed.** (a), (b) as run 2. (c) the 3 near hiding pairs with both bodies placed are ordered by the placed
+  centroids as by occlusion; the 5 planted pairs past 4B/ε are all hidden on the ray through their centres, and the
+  placed centroids lose 4 of them (13 hides 31 and 17 hides 39: the hider all rays; in those two and in 20 hides 34
+  and 38 the hidden body is seen by no two readers, hidden from them too), keeping one (19 at 947 before 33 at 1,073, both far short of their 4,288 and 5,636).
+- **P9′ not killed**, over the 26 bodies seen by two readers at 100 points or more. (a) shape: e_s < 0.1 for all four
+  nearer than 10 (0.009–0.024), above 0.1 for all past 100; (b) place: e_p < 0.1 for all nearer than 100 (at most
+  6·10⁻⁴), above 0.1 or all rays past 4,000; (c) no ray nearer than 250 (the first at 1,124, 1.7% of its points), the
+  mean ray share past 4,000 0.747 (8 bodies; 4 all rays); (d) e_s ∝ d^1.90 over the 5 bodies resolved by ten pixels or
+  more; (e) e_s 10.09 times smaller at ε = 10⁻⁴ (12 bodies). Not predicted: over the same resolved bodies e_p ∝ d^0.14
+  and falls 6.2-fold for a tenfold ε. Post hoc: a resolved body's points fall at every phase of the pixel, so their
+  rounding nearly cancels in the centroid, which is placed far better than any one point until the body shrinks to a
+  few pixels; past that e_p jumps to 0.24–0.88 (d 1,124–7,286) and then to all rays.
+- **P10′ not killed:** at ε = 0 every seen point of every body in |AB| to 2.8·10⁻¹² of its distance, from d = 4 to
+  25,945 (the conditioning, ~10⁻¹⁶·d/B); k = 10⁻³, 7, 10³ move none by more than 4.2·10⁻¹²; with |AB| carried in,
+  3.5·10⁻¹² in world units.
+
+Of the 40 bodies 14 are seen by two readers at fewer than 100 points, 11 at none (nine of the twelve planted, and two
+behind nearer bodies), so occlusion, not resolution, is what hides most.
+
+**Reading.** From one standpoint many bodies are a painting of the sky: each direction one body or none, unchanged by
+scaling the world or by moving a body out along its ray at its size times as far, so each patch is breadth over
+distance (its solid angle falls as 1/d² to 0.02% from d = 64); what hides what orders them, and that order never
+sizes them. Three readers' directions place every body in their own length exactly at every distance (ε = 0), and
+one length writes the whole field: the geometry has no bands. The bands are the resolution's: shape while a body's
+points are told apart in depth (εd²/B against its radius, e_s ∝ d^1.9, ∝ ε), place well past that (a resolved body's
+centroid averages its pixels away), and past B/ε rays, where the readers' pixels coincide; occlusion still orders
+pairs out there that the placed centroids lose. Draw's OCC lab's lesson holds in three dimensions and among bodies:
+from outside a reader sees part, and here most of what is lost is lost to other bodies, not to distance.

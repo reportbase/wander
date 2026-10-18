@@ -294,9 +294,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the right the three readers' body in |AB| (a triangle 0.12 of the least half-extent about the centre, the squarest pair's
   rays crossed), drawn at one length, and in step 5 the teal points with |AB| carried in landing on the body. Five steps
   (the body, one reader, the wedge, three readers, one length); body ◀ ▶ and another; scale the world (readings and points
-  in |AB| unmoved). `?step=1..5&body=&lon=&lat=&roll=&k=<log10 k>`; hook `window.__recover` (`recover`, `bodyFrame`,
-  `bodyOf`, `wedgeQuat`, `inWedgeOf`, `wedgeReadings`, `sharesOf`, `set`, `state`, `frames`, `webgl`, `hud`). Not in the
-  flying page.
+  in |AB| unmoved). Step 6, many bodies (SPN R350; Tom: "what if the reader was looking at many 3d objects at once?";
+  RSH runs 2–3): 24 bodies in one wedge, d 4 to ~16,500, six planted behind others; the census from the middle painted by
+  the first body each direction meets (30,000 directions of the field's cap; the census turned to face the eye, the field
+  to point right); three readers |AB| = 1 apart on flat screens of pixels ε wide (slider, or exact); the field on the
+  reader's lay (corner at H = 8, then 1 + ln s), each body by its band against the world: shape (teal, drawn larger),
+  place (gold), a direction (red ray), hidden; faint dots where they truly are; the wedge dims the bodies outside it.
+  `?step=1..6&body=&lon=&lat=&roll=&k=<log10 k>&eps=<log10 ε>|0`; hook `window.__recover` (`recover`, `bodyFrame`,
+  `bodyOf`, `wedgeQuat`, `inWedgeOf`, `wedgeReadings`, `sharesOf`, `many`, `manyRead`, `placedBody`, `enterBody`,
+  `screenRead`, `MB`, `set`, `state`, `frames`, `webgl`, `hud`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -1264,6 +1270,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   reads the sweep's own [h : v : v₂], the same for every body, the census one sphere; three readers inside, directions only,
   give the body to 10⁻¹³ in |AB|, stretch included; |AB| gives the size; k moves nothing. Nothing killed but P3's census
   clause in its letter (the Fibonacci lattice's own 4.5·10⁻⁵, my set-up). `recover.html` shows it (R349).
+  Runs 2–3 (`rsh/rsh2.mjs`, 17 Oct; SPN R350, "many 3d objects at once"): 40 bodies in one wedge (d 4 to ~26,000, 12
+  planted behind others), three readers B = 1 apart, pixels ε on a flat screen. Run 2 killed by my code (a body moved to
+  4d, not 2d; 64 steps along a long segment stepping over far bodies; normal equations squaring the conditioning; an
+  index). Run 3: the census paints breadth over distance (unchanged by k or by moving a body out at its size times as
+  far; solid angle 1/d² to 0.02%), occlusion orders and never sizes, ε = 0 places every point in |AB| to 3·10⁻¹² at
+  every d (no bands), on pixels shape ∝ εd²/B (e_s ∝ d^1.9), place well past it, rays past ~B/ε; occlusion orders far
+  pairs the centroids lose; 11 of 40 bodies hidden by others. P7′(d) killed by the relief (the cap law (1 − r/d)/2 only
+  for the broad form, `rsh/rsh3-p7d.mjs`); P8′–P10′ not killed. `recover.html` step 6 shows it.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -1573,7 +1587,10 @@ In short:
 
   38. **recover.html:** one reader's readings are the sweep's own directions to 10⁻¹², the same for two bodies; the wedge
       at three positions holds an eighth of the directions, v ≤ h for half, the near field in both a third; three readers
-      place every point in |AB| to 10⁻⁹, ×10³ moving none; WebGL drew frames; step 5 says "the body itself".
+      place every point in |AB| to 10⁻⁹, ×10³ moving none; WebGL drew frames; step 5 says "the body itself". Step 6,
+      many bodies: the census painted alike at ×10³; at ε = 0 every seen point in |AB| to 10⁻⁹, ×10³ moving none, no
+      body a direction only; at ε = 10⁻³ the nearest bodies keep their shape, the farthest are directions, some are
+      hidden, and a finer ε holds more.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

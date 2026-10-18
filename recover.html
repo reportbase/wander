@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
     <!--
     recover.html: recovering a 3D body from its addresses (17 October 2026; Tom: "lets do a stand alone demo for this.
-    show the unit sphere, the wedge on the sphere. and the 3d shape that it recovers"). RSH (plans/rsh-plan.md; SPN R348,
+    show the unit sphere, the wedge on the sphere. and the 3d shape that it recovers"). RSH (plans/rsh-plan.md; SPN R348 to R350,
     R349), the lab in reportbase/games' Levels (LEVELS_APP's recover), after draw's RCC and UDV labs.
 
     Keep the case. h, v, v₂ are unit relations; a reading is a direction [h : v : v₂]; H is the reader's drawn length;
@@ -28,7 +28,13 @@
         a length of the readers' choosing); with |AB| carried in, the body (teal, on it).
     three.js 0.160.0 (MIT) from the jsDelivr CDN through an import map, as in wedge.html; the smoke test serves the same
     version from node_modules.
-    Links: ?step=1..5&body=<id>&lon=&lat=&roll=&k=<log10 k>
+      - Step 6, many bodies (RSH runs 2–3; Tom: "what if the reader was looking at many 3d objects at once?"): 24 bodies
+        in one wedge, d from 4 to about 30,000, six planted behind others; the census from the middle painted by the first
+        body each direction meets; three readers |AB| = 1 apart read on flat screens of pixels ε wide; each body by its
+        band against the world (the referee): shape (e_s < 0.1), place (e_p < 0.1), a direction (rays, or placed off by
+        a tenth or more), hidden (seen by two readers at fewer than an eighth of its points). The field drawn on the
+        reader's lay, in proportion to the corner at H = 8, then 1 + ln s.
+    Links: ?step=1..6&body=<id>&lon=&lat=&roll=&k=<log10 k>&eps=<log10 ε>|0
     Test hook: window.__recover.
     -->
     <style>
@@ -96,6 +102,8 @@
         <div class="ctl"><label for="lon">wedge: longitude</label><input id="lon" type="range" min="-180" max="180" step="0.5" value="45"><output id="lono"></output></div>
         <div class="ctl"><label for="lat">latitude</label><input id="lat" type="range" min="-90" max="90" step="0.5" value="35.26"><output id="lato"></output></div>
         <div class="ctl"><label for="roll">turned</label><input id="roll" type="range" min="-180" max="180" step="0.5" value="0"><output id="rollo"></output></div>
+        <div id="epsRow"><div class="ctl"><label for="lgeps">pixels ε</label><input id="lgeps" type="range" min="-5" max="-2" step="0.1" value="-3"><output id="lgepso"></output></div>
+            <div class="row" style="margin-top:0"><button id="bExact">ε = 0, exact</button></div></div>
         <div class="ctl"><label for="lgk">scale the world</label><input id="lgk" type="range" min="-3" max="3" step="0.01" value="0"><output id="lgko"></output></div>
         <div class="row"><button id="bSweep">sweep</button><button id="bSolid" class="on">body</button><button id="bSpin">turn</button><button id="bReset">reset</button></div>
         <p class="sub" style="margin:10px 0 0">Drag to look around. Other demos: <a href="wedge.html">the wedge</a>,
@@ -180,10 +188,104 @@ function wedgeReadings(q){ const qi = q.clone().invert(), v = new THREE.Vector3(
     return out; }
 function sharesOf(R){ let vh = 0, both = 0; for (const [h, v, v2] of R){ if (v <= h) vh++; if (v <= h && v2 <= h) both++; } return { n: R.length, vh: vh / R.length, both: both / R.length }; }
 
+// ── many bodies at once (RSH runs 2–3, plans/rsh-plan.md; Tom: "what if the reader was looking at many 3d objects at
+// once?"): a field of Levels bodies in one wedge, three readers B = |AB| = 1 apart at its middle O, each reading
+// directions on a flat screen of pixels ε wide. A smaller field than the run's (24 bodies, 256 points each), the same
+// rules: a point seen when no body's inside is met along the ray before it; placed by least squares on the rays of
+// every reader that sees it, unless their rounded readings coincide (then a ray).
+const dot3 = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2], add3 = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+const mul3 = (a, k) => [a[0] * k, a[1] * k, a[2] * k], len3 = a => Math.hypot(a[0], a[1], a[2]);
+const cross3 = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+const fibN = n => { const L = [], ga = Math.PI * (3 - Math.sqrt(5)); for (let i = 0; i < n; i++){ const y = 1 - 2 * (i + 0.5) / n, q = Math.sqrt(1 - y * y), a = ga * i; L.push([q * Math.cos(a), y, q * Math.sin(a)]); } return L; };
+const MB = { M: 24, PLANT: 6, NP: 256, NCAP: 30000, CAP: 34 * RAD, H: 8 };
+MB.AX = nrm([1, 1, 1]); MB.E1 = nrm(cross3(MB.AX, [0, 1, 0])); MB.E2 = cross3(MB.AX, MB.E1); MB.PTS = fibN(MB.NP);
+function placedBody(idx, C, k = 1){
+    const B = bodyOf(idx), s = B.s.map(x => x * k), c = mul3(C, k);
+    const R = u => { let r = 0; for (const w of B.waves) r += w.A * Math.cos(w.f * dot3(u, w.d) + w.ph); return 0.5 * (1 + r); };
+    const surf = u => { const r = R(u); return [c[0] + s[0] * r * u[0], c[1] + s[1] * r * u[1], c[2] + s[2] * r * u[2]]; };
+    const hit = d => surf(nrm([d[0] / s[0], d[1] / s[1], d[2] / s[2]]));
+    const inside = q => { const w = sub(q, c), l = len3(w); if (l < 1e-300) return true; return l < len3(sub(hit(w), c)) * (1 - 1e-12); };
+    let sa = 0; for (const w of B.waves) sa += w.A;
+    return { idx, B, c, s, surf, inside, rb: 0.5 * Math.max(...s) * (1 + sa) };
+}
+function enterBody(F, o, d, steps = 128){        // the first t at which o + t·d enters F, marched then bisected
+    const w = sub(F.c, o), tc = dot3(w, d), q2 = dot3(w, w) - tc * tc; if (q2 >= F.rb * F.rb) return null;
+    const hw = Math.sqrt(F.rb * F.rb - q2), t0 = Math.max(0, tc - hw), t1 = tc + hw, at = t => F.inside([o[0] + t * d[0], o[1] + t * d[1], o[2] + t * d[2]]);
+    let prev = t0;
+    for (let i = 1; i <= steps; i++){ const t = t0 + (t1 - t0) * i / steps;
+        if (at(t)){ let a = prev, b = t; for (let j = 0; j < 50; j++){ const m = 0.5 * (a + b); if (at(m)) b = m; else a = m; } return b; } prev = t; }
+    return null;
+}
+function manyField(){
+    let sd = 7; const rnd = () => { sd |= 0; sd = sd + 0x6D2B79F5 | 0; let t = Math.imul(sd ^ sd >>> 15, 1 | sd); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+    const cos30 = Math.cos(Math.PI / 6), cone = () => { const z = cos30 + (1 - cos30) * rnd(), a = 2 * Math.PI * rnd(), q = Math.sqrt(1 - z * z);
+        return add3(mul3(MB.AX, z), add3(mul3(MB.E1, q * Math.cos(a)), mul3(MB.E2, q * Math.sin(a)))); };
+    const CEN = [], behind = [], free = (C, i) => { const F = placedBody(i, C); if (len3(C) < F.rb + 1) return false;
+        return CEN.every((D, j) => len3(sub(C, D)) > F.rb + placedBody(j, D).rb); };
+    for (let i = 0; i < MB.M; i++) for (let tries = 0; tries < 5000; tries++){
+        let C;
+        if (i < MB.M - MB.PLANT) C = mul3(cone(), 4 * 2 ** (12 * rnd()));
+        else { const h = Math.floor(rnd() * (MB.M - MB.PLANT)), dh = len3(CEN[h]); C = mul3(nrm(CEN[h]), Math.max((1.3 + 0.7 * rnd()) * dh, dh + placedBody(h, CEN[h]).rb + placedBody(i, [0, 0, 0]).rb + 0.1)); }
+        if (free(C, i)){ CEN.push(C); if (i >= MB.M - MB.PLANT) behind.push(i); break; } }
+    return { CEN, behind };
+}
+function lsqRays(As, us){                        // least squares on rays, in the frame of their mean direction (run 3)
+    const m = nrm(us.reduce((x, u) => add3(x, u), [0, 0, 0])), f = nrm(cross3(m, Math.abs(m[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0])), g = cross3(m, f);
+    const o = mul3(As.reduce((x, A) => add3(x, A), [0, 0, 0]), 1 / As.length), M3 = [[0, 0, 0], [0, 0, 0], [0, 0, 0]], r = [0, 0, 0];
+    As.forEach((A0, n) => { const u = us[n], U = [dot3(u, m), dot3(u, f), dot3(u, g)], w = sub(A0, o), A = [dot3(w, m), dot3(w, f), dot3(w, g)];
+        const P = [[U[1] ** 2 + U[2] ** 2, -U[0] * U[1], -U[0] * U[2]], [-U[0] * U[1], 1 - U[1] ** 2, -U[1] * U[2]], [-U[0] * U[2], -U[1] * U[2], 1 - U[2] ** 2]];
+        for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++){ M3[i][j] += P[i][j]; r[i] += P[i][j] * A[j]; } });
+    const det = q => q[0][0] * (q[1][1] * q[2][2] - q[1][2] * q[2][1]) - q[0][1] * (q[1][0] * q[2][2] - q[1][2] * q[2][0]) + q[0][2] * (q[1][0] * q[2][1] - q[1][1] * q[2][0]);
+    const D = det(M3), x = [0, 1, 2].map(c => det(M3.map((row, i) => row.map((v, j) => j === c ? r[i] : v))) / D);
+    return add3(o, add3(mul3(m, x[0]), add3(mul3(f, x[1]), mul3(g, x[2]))));
+}
+let MANY = null;
+function many(){                                  // built when first wanted: the field, its census, who sees each point
+    if (MANY) return MANY;
+    const { CEN, behind } = manyField(), F = CEN.map((C, i) => placedBody(i, C)), O = [0, 0, 0];
+    const dist = F.map(f => len3(f.c)), meanR = F.map(f => MB.PTS.reduce((a, u) => a + len3(sub(f.surf(u), f.c)), 0) / MB.NP);
+    // the census from O over the field's cap (34° about (1, 1, 1)), each direction painted by the first body it meets
+    const one = 2 * Math.sin(MB.CAP / 2) ** 2, ga = Math.PI * (3 - Math.sqrt(5)), dirs = [], paint = new Int16Array(MB.NCAP).fill(-1), hides = new Set();
+    const cones = F.map(f => ({ u: nrm(f.c), cs: Math.sqrt(Math.max(0, 1 - (f.rb / len3(f.c)) ** 2)) }));
+    for (let i = 0; i < MB.NCAP; i++){ const w = one * (i + 0.5) / MB.NCAP, z = 1 - w, q = Math.sqrt(w * (2 - w)), ph = ga * i;
+        const d = nrm(add3(mul3(MB.AX, z), add3(mul3(MB.E1, q * Math.cos(ph)), mul3(MB.E2, q * Math.sin(ph))))); dirs.push(d);
+        const hits = []; F.forEach((f, b) => { if (dot3(d, cones[b].u) > cones[b].cs){ const t = enterBody(f, O, d); if (t !== null) hits.push([t, b]); } });
+        if (hits.length){ hits.sort((x, y) => x[0] - y[0]); paint[i] = hits[0][1]; for (let x = 1; x < hits.length; x++) hides.add(hits[0][1] * 100 + hits[x][1]); } }
+    const RD = [90, 210, 330].map(a => add3(mul3(MB.E1, Math.cos(a * RAD) / Math.sqrt(3)), mul3(MB.E2, Math.sin(a * RAD) / Math.sqrt(3))));
+    const AB = len3(sub(RD[1], RD[0]));
+    const seen = (a, p) => { const sg = sub(p, a), L = len3(sg), d = mul3(sg, 1 / L); return F.every(f => { const t = enterBody(f, a, d); return t === null || t >= L - 1e-9 * (L + f.rb); }); };
+    const seers = F.map(f => MB.PTS.map(u => { const p = f.surf(u); return [0, 1, 2].filter(i => seen(RD[i], p)); }));
+    MANY = { CEN, F, dist, meanR, behind, dirs, paint, hides, RD, AB, seers, reads: {} };
+    return MANY;
+}
+// the readers' screen: square to (1, 1, 1) at unit distance, pixels ε wide in both coordinates (ε = 0: exact)
+function screenRead(d, eps){ const z = dot3(d, MB.AX); let x = dot3(d, MB.E1) / z, y = dot3(d, MB.E2) / z;
+    if (eps > 0){ x = (Math.floor(x / eps) + 0.5) * eps; y = (Math.floor(y / eps) + 0.5) * eps; }
+    return { x, y, u: eps > 0 ? nrm(add3(MB.AX, add3(mul3(MB.E1, x), mul3(MB.E2, y)))) : d }; }
+// every body read at ε with the world scaled by k: its placed points in |AB|, its rays, and (against the world, the
+// referee's measure) its place and shape errors and band
+function manyRead(eps, k = 1){
+    const W = many(), key = eps + ':' + k; if (W.reads[key]) return W.reads[key];
+    const RDk = W.RD.map(a => mul3(a, k)), ABk = W.AB * k;
+    const out = W.F.map((f0, b) => {
+        const f = k === 1 ? f0 : placedBody(b, W.CEN[b], k), placed = [], truth = []; let two = 0, rays = 0;
+        MB.PTS.forEach((u, n) => { const who = W.seers[b][n]; if (who.length < 2) return; two++;
+            const p = f.surf(u), rs = who.map(i => screenRead(nrm(sub(p, RDk[i])), eps));
+            if (eps > 0 && rs.every(r => r.x === rs[0].x && r.y === rs[0].y)){ rays++; return; }
+            placed.push(lsqRays(who.map(i => mul3(RDk[i], 1 / ABk)), rs.map(r => r.u))); truth.push(mul3(p, 1 / ABk)); });
+        const r = { b, two, rays, placed, truth, ep: null, es: null, cq: null, rq: 0, err0: 0 };
+        if (placed.length){ const cen = P => mul3(P.reduce((a, q) => add3(a, q), [0, 0, 0]), 1 / P.length), cq = cen(placed), ct = cen(truth);
+            let s2 = 0, rq = 0; placed.forEach((q, n) => { const e = sub(sub(q, cq), sub(truth[n], ct)); s2 += dot3(e, e); rq += dot3(sub(q, cq), sub(q, cq)); r.err0 = Math.max(r.err0, len3(sub(q, truth[n])) / len3(truth[n])); });
+            r.cq = cq; r.rq = Math.sqrt(rq / placed.length); r.ep = len3(sub(cq, ct)) / (W.dist[b] / W.AB); r.es = Math.sqrt(s2 / placed.length) / (W.meanR[b] / W.AB); }
+        r.band = two < MB.NP / 8 ? 'hidden' : !placed.length || rays >= two / 2 || r.ep >= 0.1 ? 'direction' : r.es < 0.1 ? 'shape' : 'place';
+        return r; });
+    W.reads[key] = out; return out;
+}
+
 // ── state ─────────────────────────────────────────────────────────────────────────────────────────────────────
 const P0 = new URLSearchParams(location.search);
 const num = (k, d) => { const v = parseFloat(P0.get(k)); return Number.isFinite(v) ? v : d; };
-const S = { step: Math.max(1, Math.min(5, Math.round(num('step', 1)))), body: Math.max(0, Math.round(num('body', 0))),
+const S = { step: Math.max(1, Math.min(6, Math.round(num('step', 1)))), lgeps: P0.get('eps') === '0' ? null : num('eps', -3), body: Math.max(0, Math.round(num('body', 0))),
     lon: num('lon', 45), lat: num('lat', 35.26), roll: num('roll', 0), lgk: num('lgk', num('k', 0)), solid: true, spin: false, sweep: 1 };
 let R = recover(S.body), RK = null;
 
@@ -239,6 +341,20 @@ G.triRays = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBas
 G.recGroup = new THREE.Group(); G.recGroup.position.copy(PL.rec); ROOT.add(G.recGroup);
 G.recCloud = cloud(N, 0.02); G.recGroup.add(G.recCloud);
 const AB_DRAWN = 0.08;                                    // |AB| drawn at this length, for every body: the readers' own unit
+// step 6, many bodies: the census painted by body (on the census sphere), and the field laid by the reader's lay of
+// distances (in proportion to the corner at H = 8, then 1 + ln s), turned so the field's middle points right
+G.paint = cloud(MB.NCAP, 0.014); G.paint.visible = false; G.censusGroup.add(G.paint);
+const QF = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(1, 1, 1).normalize(), new THREE.Vector3(1, 0, 0));
+// the census sphere turned to show its painted cap to the eye; the field turned to point right. Two drawings of the same
+// directions, each turned its own way (a turn changes no reading), the wedge turned with the census
+const QC = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(1, 1, 1).normalize(), new THREE.Vector3(0.25, 0.3, 1).normalize());
+G.field = new THREE.Group(); G.field.visible = false; ROOT.add(G.field);
+G.fieldTurned = new THREE.Group(); G.fieldTurned.quaternion.copy(QF); G.field.add(G.fieldTurned);
+G.trueDots = cloud(MB.M, 0.035); G.shapePts = cloud(MB.M * MB.NP, 0.013); G.placeDots = cloud(MB.M, 0.07); G.mbReaders = cloud(1, 0.07);
+G.rayLines = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: 0xe8826d, transparent: true, opacity: 0.6 }));
+G.fieldTurned.add(G.trueDots, G.shapePts, G.placeDots, G.mbReaders, G.rayLines);
+G.rings = new THREE.Group(); G.field.add(G.rings);
+const layOf = d => { const s = d / MB.H; return s <= 1 ? s : 1 + Math.log(s); };
 
 function bodyGeometry(){
     const F = R.F, g = G.bodyMesh.geometry, pos = g.attributes.position, n0 = g.userData.n0 || (g.userData.n0 = Float32Array.from(pos.array));
@@ -247,6 +363,10 @@ function bodyGeometry(){
     const [h, s, l] = F.B.hsl; G.bodyMat.color.setHSL(h, s, l);
 }
 function draw(){
+    const six = S.step === 6;
+    G.paint.visible = G.field.visible = six; G.bodyGroup.visible = G.recGroup.visible = !six;
+    G.censusGroup.quaternion.copy(six ? QC : new THREE.Quaternion());
+    if (six){ G.census.visible = false; G.sphereWire.visible = true; return drawMany(); }
     const q = wedgeQuat(S.lon, S.lat, S.roll), inW = inWedgeOf(q), F = R.F, c = F.c, upto = Math.round(N * S.sweep);
     G.wedgeGroup.quaternion.copy(q);
     G.wedgeGroup.visible = S.step >= 3;
@@ -285,6 +405,63 @@ function draw(){
     hud(q);
 }
 
+const epsOf = () => S.lgeps === null ? 0 : 10 ** S.lgeps;
+let SC = 1, RINGS_AT = null;
+function drawMany(){
+    const W = many(), eps = epsOf(), k = 10 ** S.lgk, RS = manyRead(eps), q = wedgeQuat(S.lon, S.lat, S.roll), inW = inWedgeOf(q);
+    G.wedgeGroup.quaternion.copy(q); G.wedgeGroup.visible = true;
+    // the census painted by body: each direction the first body it meets, or sky
+    const pp = G.paint.geometry.attributes.position, pc = G.paint.geometry.attributes.color, col = new THREE.Color();
+    W.dirs.forEach((d, i) => { pp.setXYZ(i, d[0] * HR * 1.002, d[1] * HR * 1.002, d[2] * HR * 1.002); const b = W.paint[i], w = inW(d);
+        if (b < 0) col.setRGB(0.035, 0.035, 0.055); else { const [h, s, l] = W.F[b].B.hsl; col.setHSL(h, s, l); }
+        if (!w) col.multiplyScalar(0.3); pc.setXYZ(i, col.r, col.g, col.b); });
+    pp.needsUpdate = pc.needsUpdate = true;
+    // the field on the reader's lay: true places faint, then each body by its band
+    const tp = G.trueDots.geometry.attributes.position, tc = G.trueDots.geometry.attributes.color;
+    const sp = G.shapePts.geometry.attributes.position, sc = G.shapePts.geometry.attributes.color;
+    const dp = G.placeDots.geometry.attributes.position, dc = G.placeDots.geometry.attributes.color, rl = [];
+    const lmax = 1 + Math.log(Math.max(...W.dist) / MB.H), at = (d, dist) => mul3(d, layOf(dist) * SC);
+    let ns = 0;
+    RS.forEach((r, b) => {
+        const u = nrm(W.F[b].c), w = inW(u), dim = w ? 1 : 0.3, T = at(u, W.dist[b]);
+        tp.setXYZ(b, T[0], T[1], T[2]); tc.setXYZ(b, 0.55 * dim, 0.55 * dim, 0.6 * dim);
+        dp.setXYZ(b, 0, 0, 0); dc.setXYZ(b, 0, 0, 0);
+        if (r.band === 'shape'){ const cq = r.cq, P = at(nrm(cq), len3(cq) * W.AB), g = 0.11 / r.rq;
+            for (const qq of r.placed){ const e = sub(qq, cq); sp.setXYZ(ns, P[0] + e[0] * g, P[1] + e[1] * g, P[2] + e[2] * g); sc.setXYZ(ns, C.teal.r * dim, C.teal.g * dim, C.teal.b * dim); ns++; } }
+        else if (r.band === 'place'){ const P = at(nrm(r.cq), len3(r.cq) * W.AB); dp.setXYZ(b, P[0], P[1], P[2]); dc.setXYZ(b, C.gold.r * dim, C.gold.g * dim, C.gold.b * dim); }
+        else if (r.band === 'direction'){ const E = mul3(u, (lmax + 0.25) * SC); rl.push(0, 0, 0, E[0], E[1], E[2]); }
+    });
+    for (let i = ns; i < MB.M * MB.NP; i++){ sp.setXYZ(i, 0, 0, 0); sc.setXYZ(i, 0, 0, 0); }
+    G.shapePts.geometry.setDrawRange(0, ns);
+    tp.needsUpdate = tc.needsUpdate = sp.needsUpdate = sc.needsUpdate = dp.needsUpdate = dc.needsUpdate = true;
+    G.rayLines.geometry.setAttribute('position', new THREE.Float32BufferAttribute(rl, 3));
+    const rp = G.mbReaders.geometry.attributes.position, rc = G.mbReaders.geometry.attributes.color; rp.setXYZ(0, 0, 0, 0); rc.setXYZ(0, C.red.r, C.red.g, C.red.b); rp.needsUpdate = rc.needsUpdate = true;
+    // rings: the corner (gold) and each doubling past it, in the screen's plane
+    if (RINGS_AT !== SC){ RINGS_AT = SC; G.rings.clear();
+        for (let j = 0; 1 + j * Math.log(2) <= lmax + 1e-9; j++){ const r = (1 + j * Math.log(2)) * SC, pts = [];
+            for (let i = 0; i <= 40; i++){ const a = (-38 + 76 * i / 40) * RAD; pts.push(new THREE.Vector3(r * Math.cos(a), r * Math.sin(a), 0)); }
+            G.rings.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: j === 0 ? 0xd4a052 : 0x3a3a52, transparent: true, opacity: j === 0 ? 0.7 : 0.45 }))); } }
+    hudMany(W, RS, eps, k, inW);
+}
+function hudMany(W, RS, eps, k, inW){
+    const cnt = { shape: 0, place: 0, direction: 0, hidden: 0 }; RS.forEach(r => cnt[r.band]++);
+    const shown = new Set(W.paint), seenCensus = [...shown].filter(b => b >= 0).length;
+    let painted = 0; for (const b of W.paint) if (b >= 0) painted++;
+    const inWedge = W.F.filter(f => inW(nrm(f.c))).length;
+    const R0 = manyRead(0); let e0 = 0; R0.forEach(r => { e0 = Math.max(e0, r.err0); });
+    let dq = 0; if (k !== 1){ const RK = manyRead(eps, k); RS.forEach((r, b) => { const o = RK[b]; if (r.placed.length === o.placed.length) r.placed.forEach((qq, n) => { dq = Math.max(dq, len3(sub(qq, o.placed[n])) / len3(qq)); }); }); }
+    const reach = band => { const ds = RS.filter(r => r.band === band).map(r => W.dist[r.b]); return ds.length ? Math.max(...ds) : 0; };
+    const f = x => x.toExponential(0), lines = [];
+    lines.push(`many bodies: ${MB.M} in one wedge, d ${Math.min(...W.dist).toFixed(1)} … ${Math.max(...W.dist).toFixed(0)}; ${inWedge} in the wedge you placed`);
+    lines.push(`one standpoint: ${painted} of ${MB.NCAP} directions painted, by ${seenCensus} bodies; ${W.hides.size} pairs ordered by what hides what, none sized`);
+    lines.push(`three readers |AB| = 1 apart, pixels ε = ${eps ? eps.toExponential(0) : '0 (exact)'}${eps ? ` (B/ε = ${(1 / eps).toPrecision(2)})` : ''}:`);
+    lines.push(`  shape ${cnt.shape} (out to ${reach('shape').toFixed(0)}), place ${cnt.place} (to ${reach('place').toFixed(0)}), direction only ${cnt.direction}, hidden ${cnt.hidden}`);
+    lines.push(`at ε = 0 every seen point in |AB| to ${f(Math.max(e0, 1e-17))} of its distance: the geometry has no bands; one length |AB| writes the field`);
+    lines.push(`scale the world ×${k >= 1e3 || k < 1e-2 ? k.toExponential(1) : k.toPrecision(3)}: points in |AB| moved ${f(Math.max(dq, 1e-17))}`);
+    document.getElementById('hud').textContent = lines.join('\n');
+    S._last = { cnt, painted, seenCensus, hides: W.hides.size, e0, dq, inWedge };
+}
+
 // ── words ─────────────────────────────────────────────────────────────────────────────────────────────────────
 const STEPS = [
     ['The body', 'A body, as Levels draws it (its id ' + '<span id="bid"></span>): a ball with relief in four bands, stretched by axis. Its true shape and size are the world\'s; no reader holds them. Drag to look round it.'],
@@ -292,6 +469,7 @@ const STEPS = [
     ['The wedge', '<b>The wedge on the sphere</b>: one observation is one octant of directions, h, v, v₂ ≥ 0 in its own frame, placed by where its triple corner points. Its readings are [h : v : v₂]; v ≤ h for half of them, the near field in both for a third. On the body it picks out the part its rays meet. Move it with the sliders.'],
     ['Three readers', '<b>Three readers inside</b> (red), each holding only directions. Where two of their rays cross is the place. Knowing only the shape of their own triangle, they give the body back <b>up to its size</b> (<span class="violet">violet</span>, right, drawn at a size of their choosing): the stretch and every bump come back; the wedge\'s part is bright.'],
     ['One length', '<b>One length carried in</b>, |AB|, how far apart two readers stand, and the readers\' body lands on the true one (<span class="teal">teal</span>, on it). Scaling the world moves no reading and no point in |AB|; only the length carried in changes.'],
+    ['Many bodies', '<b>Many bodies at once.</b> From one standpoint (left) the field is a <b>painting of the sky</b>: each direction one body or none, each patch its breadth over its distance; what hides what orders them, never sizes them. Three readers a length 1 apart, reading on pixels ε wide, lay the field (right, on the reader\'s lay, the corner in <span class="gold">gold</span>): near, <span class="teal">the shape</span> (drawn larger than it is); farther, <span class="gold">the place</span> alone; past about B/ε, <span class="red">a direction</span>. Faint: where the bodies truly are. With ε = 0 every body is placed exactly: the bands are the pixels\', not the geometry\'s. The wedge picks out some.'],
 ];
 const stepsEl = document.getElementById('steps');
 STEPS.forEach((s, i) => { const b = document.createElement('button'); b.textContent = (i + 1) + ' ' + s[0]; b.onclick = () => set({ step: i + 1 }); stepsEl.appendChild(b); });
@@ -316,6 +494,9 @@ function caption(){
     [...stepsEl.children].forEach((b, i) => b.classList.toggle('on', i + 1 === S.step));
     document.getElementById('bodyName').textContent = 'body ' + S.body;
     for (const [id, v, u] of [['lon', S.lon, '°'], ['lat', S.lat, '°'], ['roll', S.roll, '°']]){ document.getElementById(id).value = v; document.getElementById(id + 'o').textContent = (+v).toFixed(1) + u; }
+    document.getElementById('epsRow').style.display = S.step === 6 ? '' : 'none';
+    document.getElementById('lgeps').value = S.lgeps === null ? -5 : S.lgeps; document.getElementById('lgepso').textContent = S.lgeps === null ? '0' : (10 ** S.lgeps).toExponential(0);
+    document.getElementById('bExact').classList.toggle('on', S.lgeps === null);
     document.getElementById('lgk').value = S.lgk; document.getElementById('lgko').textContent = '×' + (10 ** S.lgk).toPrecision(3);
     document.getElementById('bSolid').classList.toggle('on', S.solid); document.getElementById('bSpin').classList.toggle('on', S.spin);
 }
@@ -324,11 +505,12 @@ const LAB = [['census: one reader', PL.census, 'gold'], ['the body', PL.body, ''
     const d = document.createElement('div'); d.textContent = t; if (cl) d.className = cl; document.getElementById('labels').appendChild(d); return { d, p }; });
 function labels(){ const w = canvas.clientWidth, h = canvas.clientHeight, v = new THREE.Vector3();
     LAB.forEach(({ d, p }, i) => { v.copy(p).add(new THREE.Vector3(0, -0.85, 0)); ROOT.localToWorld(v); v.project(camera);
-        const on = i === 1 || (i === 0 && S.step >= 2) || (i === 2 && S.step >= 4);
+        const on = S.step === 6 ? i === 0 : i === 1 || (i === 0 && S.step >= 2) || (i === 2 && S.step >= 4);
         d.style.display = on && v.z < 1 ? '' : 'none'; d.style.left = ((v.x + 1) / 2 * w) + 'px'; d.style.top = ((1 - v.y) / 2 * h) + 'px'; }); }
 
 function set(o){
     Object.assign(S, o);
+    if (S.step === 6 && !MANY){ many(); resize(); }
     if (o.body !== undefined){ S.body = Math.max(0, Math.round(S.body)); R = recover(S.body); RK = null; bodyGeometry(); }
     caption(); draw();
 }
@@ -337,9 +519,11 @@ document.getElementById('bNext').onclick = () => set({ body: S.body + 1 });
 document.getElementById('bRand').onclick = () => set({ body: Math.floor(Math.random() * 100000) });
 for (const id of ['lon', 'lat', 'roll']) document.getElementById(id).oninput = e => set({ [id]: +e.target.value });
 document.getElementById('lgk').oninput = e => set({ lgk: +e.target.value });
+document.getElementById('lgeps').oninput = e => set({ lgeps: +e.target.value });
+document.getElementById('bExact').onclick = () => set({ lgeps: S.lgeps === null ? -3 : null });
 document.getElementById('bSolid').onclick = () => set({ solid: !S.solid });
 document.getElementById('bSpin').onclick = () => set({ spin: !S.spin });
-document.getElementById('bReset').onclick = () => set({ step: 1, lon: 45, lat: 35.26, roll: 0, lgk: 0, sweep: 1, spin: false, solid: true });
+document.getElementById('bReset').onclick = () => set({ step: 1, lon: 45, lat: 35.26, roll: 0, lgk: 0, lgeps: -3, sweep: 1, spin: false, solid: true });
 let sweepT = null;
 document.getElementById('bSweep').onclick = () => { if (S.step < 2) S.step = 2; sweepT = performance.now(); };
 document.getElementById('fold').onclick = () => document.getElementById('panel').classList.toggle('folded');
@@ -354,7 +538,11 @@ function resize(){ const w = canvas.clientWidth, h = canvas.clientHeight; if (re
     PL.census.set(tall ? 0 : -GAP, tall ? gv : 0, 0); PL.body.set(0, 0, 0); PL.rec.set(tall ? 0 : GAP, tall ? -gv : 0, 0);
     G.censusGroup.position.copy(PL.census); G.bodyGroup.position.copy(PL.body); G.recGroup.position.copy(PL.rec);
     ROOT.position.x = !tall && w > 760 ? 0.5 * (390 / w) * 5.4 : 0; ROOT.position.y = tall ? 0.3 : 0;
-    camera.position.setLength(tall ? 10.5 : 5.6); camera.updateProjectionMatrix(); }
+    camera.position.setLength(tall ? 10.5 : 5.6); camera.updateProjectionMatrix();
+    // step 6: the field from just right of the census (wide) or below it (tall)
+    G.field.position.set(tall ? -1.15 : -GAP + 0.8, tall ? -0.45 : 0, 0);
+    const span = tall ? 2.3 : 2.75, W = MANY; SC = W ? span / (1 + Math.log(Math.max(...W.dist) / MB.H) + 0.25) : span / 9;
+    if (S.step === 6) draw(); }
 addEventListener('resize', resize);
 function frame(t){
     requestAnimationFrame(frame);
@@ -364,10 +552,11 @@ function frame(t){
     if (renderer){ renderer.render(scene, camera); frames++; }
     labels();
 }
-bodyGeometry(); resize(); caption(); draw(); requestAnimationFrame(frame);
+bodyGeometry(); if (S.step === 6) many(); resize(); caption(); draw(); requestAnimationFrame(frame);
 
 window.__recover = {
     LATTICE, bodyOf, bodyFrame, recover, wedgeQuat, inWedgeOf, wedgeReadings, sharesOf, set,
+    many, manyRead, placedBody, enterBody, screenRead, MB,
     get state(){ return { ...S, R: { idx: R.idx, AB: R.AB, meanR: R.meanR, rdErr: R.rdErr, recErr: R.recErr, fewest: R.fewest } }; },
     get frames(){ return frames; }, get webgl(){ return !!renderer; },
     hud(){ return document.getElementById('hud').textContent; }, last(){ return S._last; },
