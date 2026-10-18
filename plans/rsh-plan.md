@@ -172,3 +172,79 @@ breadth over its distance, ordered by what hides what and never sized; that thre
 in their own length and one length writes the whole field; and that the near, middle and far bands come from the
 resolution, not from the geometry. Not how a reader finds which reading belongs to which body (the correspondence is
 given), nor anything of light.
+
+### Run 2 (17 Oct, `node rsh/rsh2.mjs` as first committed; output `rsh/rsh-run2.txt`, 2 min)
+
+All four killed, most by my code:
+- **P7** killed. (a) held: k = 10⁻³, 7, 10³ painted every one of the 2²⁰ directions alike. (b) by my code: the body
+  "moved to 2d and doubled" was placed at 4d (`placed` scales the centre it is given). (c) held: Ω(d)/Ω(2d) within
+  0.02% of 4 from d = 64 on (4.0013 at 128, 4.0031 at 256 at worst; 4.0000–4.0006 from 512). (d) by my code: a reader saw
+  every point of a body farther than about 64, its far side included: 64 steps along a segment thousands long step clean
+  over a body one across.
+- **P8** killed. (a), (b) held (6 hiding pairs, all separated and ordered as their centres, no cycle, the same under k).
+  (c) by my set-up: the census's 2²⁰ directions, 3.5·10⁻³ apart, meet no body past about 250, so no hiding pair past
+  4,000 was found; and a near pair failed on a body that no two readers see (wholly hidden), which has no place to order.
+- **P9** killed. (b) by my set-up, on the same wholly hidden body (no place to measure). (d), (e) by my set-up for the
+  shape (the fit took in far bodies whose points all fell in one or two pixels, so their spread is lost and e_s sits
+  near 1, under the cut) and **for real for the place**: e_p grew as d^1.40 and fell 25-fold for a tenfold ε. Post hoc:
+  a resolved body's centroid averages its points' errors over the pixels it spans, about (2R̄/(dε))² of them, so its
+  place error grows faster than d and falls faster than ε; a body inside one pixel averages nothing. The visibility
+  fault (P7d) also counted far sides as seen, so every P9 number is suspect.
+- **P10** killed by my code: least squares on the normal equations squares the conditioning (the rays from three readers
+  1 apart at d ≈ 26,000 are 4·10⁻⁵ from parallel), 8·10⁻⁷ of the distance; and the |AB|-carried-in check compared a
+  placed point with the wrong true one (an index over all points, not the seen ones).
+
+## Run 3: the same field, the code fixed (predictions, written before the fixed code runs)
+
+The fixes: the moved body placed at 2d (P7b); a point seen when no body's inside is met along the ray before it (the ray
+marched in 256 steps through each bounding ball it crosses, then bisected; the same `enter` as the census), not 64 steps
+of the whole segment (P7d, P8, P9); the least squares solved in the frame of the rays' mean direction, the small
+eigenvalue taken from the rays' cross products, not from 1 − (u·m)² (P10); the true point matched by its own index
+(P10). The field, its seed, ε and every threshold as run 2.
+
+- **P7′** = P7, unchanged.
+- **P8′** = P8 but (c): its near clause over the hiding pairs with both bodies placed (seen by two readers somewhere);
+  its far clause over the planted pairs whose hider lies past 4B/ε, the hiding read on the ray from O through both
+  centres (`enter` on each), since no census direction meets them.
+- **P9′** = P9 (a)–(c) over the bodies with at least 100 points seen by two readers (a wholly hidden body has neither
+  place nor shape); (d) its shape clause only, over the bodies resolved by at least ten pixels across (2R̄/d > 10ε), with
+  the slope 2.0 ± 0.25; (e) its shape clause only, the same bodies at both ε, the ratio 10 within a factor 1.5. The
+  place clauses of (d), (e) stand killed (run 2); no new prediction is made on them.
+- **P10′** = P10, unchanged.
+
+### Run 3 (17 Oct, `node rsh/rsh2.mjs`; output `rsh/rsh-run3.txt`, 2.5 min)
+
+- **P7′ killed**, in (d) alone, and not by my code: each body seen alone from O shows 0.345 to 0.526 of its points, off
+  (1 − R̄/d)/2 by up to 0.127 (body 36 at d = 49: 0.368 against 0.495). (a) every direction painted alike at k = 10⁻³, 7,
+  10³; (b) body 12 moved to 2d and doubled about O: every direction alike; (c) as run 2. Post hoc
+  (`rsh/rsh3-p7d.mjs`): with the relief taken off (the same stretched bodies, R(u) = ½) every share is within 0.008 of
+  (1 − R̄/d)/2; so the relief's own shadows, and its points laid by direction from the centre rather than by area,
+  move the share both ways by more than my 0.08 allowed. The cap law holds for the bodies' broad form only.
+- **P8′ not killed.** (a), (b) as run 2. (c) the 3 near hiding pairs with both bodies placed are ordered by the placed
+  centroids as by occlusion; the 5 planted pairs past 4B/ε are all hidden on the ray through their centres, and the
+  placed centroids lose 4 of them (13 hides 31 and 17 hides 39: the hider all rays; in those two and in 20 hides 34
+  and 38 the hidden body is seen by no two readers, hidden from them too), keeping one (19 at 947 before 33 at 1,073, both far short of their 4,288 and 5,636).
+- **P9′ not killed**, over the 26 bodies seen by two readers at 100 points or more. (a) shape: e_s < 0.1 for all four
+  nearer than 10 (0.009–0.024), above 0.1 for all past 100; (b) place: e_p < 0.1 for all nearer than 100 (at most
+  6·10⁻⁴), above 0.1 or all rays past 4,000; (c) no ray nearer than 250 (the first at 1,124, 1.7% of its points), the
+  mean ray share past 4,000 0.747 (8 bodies; 4 all rays); (d) e_s ∝ d^1.90 over the 5 bodies resolved by ten pixels or
+  more; (e) e_s 10.09 times smaller at ε = 10⁻⁴ (12 bodies). Not predicted: over the same resolved bodies e_p ∝ d^0.14
+  and falls 6.2-fold for a tenfold ε. Post hoc: a resolved body's points fall at every phase of the pixel, so their
+  rounding nearly cancels in the centroid, which is placed far better than any one point until the body shrinks to a
+  few pixels; past that e_p jumps to 0.24–0.88 (d 1,124–7,286) and then to all rays.
+- **P10′ not killed:** at ε = 0 every seen point of every body in |AB| to 2.8·10⁻¹² of its distance, from d = 4 to
+  25,945 (the conditioning, ~10⁻¹⁶·d/B); k = 10⁻³, 7, 10³ move none by more than 4.2·10⁻¹²; with |AB| carried in,
+  3.5·10⁻¹² in world units.
+
+Of the 40 bodies 14 are seen by two readers at fewer than 100 points, 11 at none (nine of the twelve planted, and two
+behind nearer bodies), so occlusion, not resolution, is what hides most.
+
+**Reading.** From one standpoint many bodies are a painting of the sky: each direction one body or none, unchanged by
+scaling the world or by moving a body out along its ray at its size times as far, so each patch is breadth over
+distance (its solid angle falls as 1/d² to 0.02% from d = 64); what hides what orders them, and that order never
+sizes them. Three readers' directions place every body in their own length exactly at every distance (ε = 0), and
+one length writes the whole field: the geometry has no bands. The bands are the resolution's: shape while a body's
+points are told apart in depth (εd²/B against its radius, e_s ∝ d^1.9, ∝ ε), place well past that (a resolved body's
+centroid averages its pixels away), and past B/ε rays, where the readers' pixels coincide; occlusion still orders
+pairs out there that the placed centroids lose. Draw's OCC lab's lesson holds in three dimensions and among bodies:
+from outside a reader sees part, and here most of what is lost is lost to other bodies, not to distance.

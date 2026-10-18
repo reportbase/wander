@@ -1,6 +1,7 @@
 // RSH run 2 (plans/rsh-plan.md, "Run 2: many bodies at once"): a field of 40 Levels bodies around three readers.
 // One standpoint's census painted by the first body each direction meets (P7, P8); three readers, directions only,
 // on a flat screen of pixels ε wide, placing every seen point by its rays (P9), and with ε = 0 exactly (P10).
+// Run 3 (the code fixed, P7′–P10′): the moved body, the visibility, the least squares and P10's index; see the plan.
 // bodyOf is games.html's (as recover.html copies it). Run: node rsh/rsh2.mjs
 const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]], add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
 const mul = (a, k) => [a[0] * k, a[1] * k, a[2] * k], dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
@@ -44,17 +45,14 @@ function enter(F, o, d, steps = 256){
         prev = t; }
     return null;
 }
-// is the segment from a to the point p (on body own) clear of every body's inside? 64 steps, p's end excluded
+// is p (a point of some body's surface) seen from a? Seen when no body's inside is met along the ray before it: the ray
+// marched through each bounding ball it crosses and bisected (enter). Run 2 stepped 64 times along the whole segment,
+// which steps clean over a body far off.
 function clear(field, a, p){
     const seg = sub(p, a), L = len(seg), d = mul(seg, 1 / L);
-    for (const F of field){
-        const w = sub(F.c, a), tc = Math.min(Math.max(dot(w, d), 0), L), cl = add(a, mul(d, tc));
-        if (len(sub(F.c, cl)) >= F.rb) continue;
-        for (let t = 1; t < 64; t++) if (F.inside([a[0] + seg[0] * t / 64, a[1] + seg[1] * t / 64, a[2] + seg[2] * t / 64])) return false;
-    }
+    for (const F of field){ const t = enter(F, a, d); if (t !== null && t < L - 1e-9 * (L + F.rb)) return false; }
     return true;
 }
-
 // ── the field ─────────────────────────────────────────────────────────────────────────────────────────────
 let seed = 2; const rnd = () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
     t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
@@ -106,9 +104,9 @@ for (const k of [1e-3, 7, 1e3]){ const Ck = census(field(k)); hidesK[k] = Ck.hid
 const inPair = new Set(); for (const h of C1.hides){ inPair.add(Math.floor(h / 1000)); inPair.add(h % 1000); }
 const order = [...dist.keys()].sort((a, b) => dist[a] - dist[b]);
 let mv = -1;
-for (const b of order){ if (inPair.has(b)) continue; const G = placed(b, mul(CEN[b], 2), 2);
+for (const b of order){ if (inPair.has(b)) continue; const G = placed(b, CEN[b], 2);
     if (F1.every((F, j) => j === b || len(sub(F.c, G.c)) > F.rb + G.rb)) { mv = b; break; } }
-const F2 = F1.slice(); F2[mv] = placed(mv, mul(CEN[mv], 2), 2);
+const F2 = F1.slice(); F2[mv] = placed(mv, CEN[mv], 2);   // the centre and the stretch doubled about O
 const C2 = census(F2); let d7b = 0; for (let i = 0; i < NC; i++) if (C2.paint[i] !== C1.paint[i]) d7b++;
 let share = 0; for (let i = 0; i < NC; i++) if (C1.paint[i] === mv) share++;
 console.log(`   body ${mv} (d ${dist[mv].toFixed(1)}, ${share} directions) at 2d and twice the size: ${d7b} directions painted otherwise`);
@@ -150,11 +148,19 @@ const ABlen = len(sub(RD[1], RD[0]));
 function readScreen(dir, eps){ const z = dot(dir, AX); let x = dot(dir, E1) / z, y = dot(dir, E2) / z;
     if (eps > 0){ x = (Math.floor(x / eps) + 0.5) * eps; y = (Math.floor(y / eps) + 0.5) * eps; }
     return { x, y, u: eps > 0 ? nrm(add(AX, add(mul(E1, x), mul(E2, y)))) : dir }; }
-function lsq(As, us){                // the point nearest every ray A + t·u in least squares
+function lsq(As, us){                // the point nearest every ray A + t·u in least squares, in the frame of the rays' mean
+    // direction m: each u = (c, p, q) there, and 1 − c² = p² + q² taken from p and q, so the small eigenvalue along m
+    // (about γ², the rays nearly parallel far off) is not lost to rounding, as it was on the normal equations in run 2
+    const m = nrm(us.reduce((x, u) => add(x, u), [0, 0, 0])), f = nrm(cross(m, Math.abs(m[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0])), g = cross(m, f);
+    const o = mul(As.reduce((x, A) => add(x, A), [0, 0, 0]), 1 / As.length);
     const M3 = [[0, 0, 0], [0, 0, 0], [0, 0, 0]], r = [0, 0, 0];
-    As.forEach((A, n) => { const u = us[n]; for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++){ const P = (i === j ? 1 : 0) - u[i] * u[j]; M3[i][j] += P; r[i] += P * A[j]; } });
-    const det = m => m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) - m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0]) + m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]);
-    const D = det(M3); return [0, 1, 2].map(c => det(M3.map((row, i) => row.map((v, j) => j === c ? r[i] : v))) / D);
+    As.forEach((A0, n) => { const u = us[n], pq = [dot(u, f), dot(u, g)], c = dot(u, m), U = [c, pq[0], pq[1]];
+        const w = sub(A0, o), A = [dot(w, m), dot(w, f), dot(w, g)];
+        const P = [[pq[0] ** 2 + pq[1] ** 2, -c * U[1], -c * U[2]], [-c * U[1], 1 - U[1] ** 2, -U[1] * U[2]], [-c * U[2], -U[1] * U[2], 1 - U[2] ** 2]];
+        for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++){ M3[i][j] += P[i][j]; r[i] += P[i][j] * A[j]; } });
+    const det = q => q[0][0] * (q[1][1] * q[2][2] - q[1][2] * q[2][1]) - q[0][1] * (q[1][0] * q[2][2] - q[1][2] * q[2][0]) + q[0][2] * (q[1][0] * q[2][1] - q[1][1] * q[2][0]);
+    const D = det(M3), x = [0, 1, 2].map(cc => det(M3.map((row, i) => row.map((v, j) => j === cc ? r[i] : v))) / D);
+    return add(o, add(mul(m, x[0]), add(mul(f, x[1]), mul(g, x[2]))));
 }
 // who sees each point (ε does not enter)
 const truePts = F1.map(F => PTS.map(u => F.surf(u)));
@@ -180,9 +186,9 @@ function errs(R, b){ if (!R.placed.length) return null;
 let p10 = 0, p10k = 0, p10w = 0;
 const R0 = readField(0);
 R0.forEach((R, b) => R.placed.forEach((q, n) => { p10 = Math.max(p10, len(sub(q, R.truth[n])) / len(R.truth[n])); }));
-for (const k of [1e-3, 7, 1e3]){ const Rk = readField(0, k);
+for (const k of [1e-3, 7, 1e3]){ const Rk = readField(0, k);   // the true point by its own index (run 2 took truePts by the placed one)
     Rk.forEach((R, b) => R.placed.forEach((q, n) => { p10k = Math.max(p10k, len(sub(q, R0[b].placed[n])) / len(R0[b].placed[n]));
-        const w = mul(q, ABlen * k), tw = mul(truePts[b][n], k); p10w = Math.max(p10w, len(sub(w, tw)) / len(tw)); })); }
+        const w = mul(q, ABlen * k), tw = mul(R.truth[n], ABlen * k); p10w = Math.max(p10w, len(sub(w, tw)) / len(tw)); })); }
 let fewest = Infinity; R0.forEach((R, b) => { fewest = Math.min(fewest, R.two); });
 ok.P10 = p10 <= 1e-9 && p10k <= 1e-9 && p10w <= 1e-9;
 console.log(`P10 ε = 0: every point in |AB| to ${p10.toExponential(2)} of its distance; k moves ${p10k.toExponential(2)}; ` +
@@ -197,32 +203,36 @@ for (const b of order) console.log(`   ${String(b).padStart(3)} ${dist[b].toFixe
     `${e3[b].raySh.toFixed(3).padStart(10)} ${(e3[b].none ? '—' : e3[b].ep.toExponential(2)).padStart(10)} ${(e3[b].none ? '—' : e3[b].es.toExponential(2)).padStart(10)} ` +
     `${(E[1e-4][b].none ? '—' : E[1e-4][b].ep.toExponential(2)).padStart(11)} ${(E[1e-4][b].none ? '—' : E[1e-4][b].es.toExponential(2)).padStart(10)}`);
 const all = [...dist.keys()];
-const p9a = all.every(b => !(dist[b] < 10) || (!e3[b].none && e3[b].es < 0.1)) && all.every(b => !(dist[b] > 100) || e3[b].none || e3[b].es > 0.1);
-const p9b = all.every(b => !(dist[b] < 100) || (!e3[b].none && e3[b].ep < 0.1)) && all.every(b => !(dist[b] > 4000) || e3[b].none || e3[b].ep > 0.1);
-const far = all.filter(b => dist[b] > 4000), meanRay = far.reduce((a, b) => a + e3[b].raySh, 0) / far.length;
-const p9c = all.every(b => !(dist[b] < 250) || e3[b].rays === 0) && meanRay >= 0.3;
-function fit(key, eps){ const xs = [], ys = []; for (const b of all){ const e = E[eps][b]; if (dist[b] < 8 || e.none || !(e[key] < 1) || e[key] <= 0) continue; xs.push(Math.log(dist[b])); ys.push(Math.log(e[key])); }
+// run 3 (P9′): (a)–(c) over the bodies with at least 100 points seen by two readers; (d), (e) the shape alone, over the
+// bodies at least ten pixels across (2R̄/d > 10ε, at ε = 10⁻³ for both fits)
+const vis = all.filter(b => e3[b].two >= 100), res10 = b => 2 * meanR[b] / dist[b] > 10 * 1e-3;
+const p9a = vis.every(b => !(dist[b] < 10) || (!e3[b].none && e3[b].es < 0.1)) && vis.every(b => !(dist[b] > 100) || e3[b].none || e3[b].es > 0.1);
+const p9b = vis.every(b => !(dist[b] < 100) || (!e3[b].none && e3[b].ep < 0.1)) && vis.every(b => !(dist[b] > 4000) || e3[b].none || e3[b].ep > 0.1);
+const far = vis.filter(b => dist[b] > 4000), meanRay = far.reduce((a, b) => a + e3[b].raySh, 0) / far.length;
+const p9c = vis.every(b => !(dist[b] < 250) || e3[b].rays === 0) && meanRay >= 0.3;
+function fit(key, eps, pick){ const xs = [], ys = []; for (const b of all){ const e = E[eps][b]; if (!pick(b) || e.none || !(e[key] > 0)) continue; xs.push(Math.log(dist[b])); ys.push(Math.log(e[key])); }
     const mx = xs.reduce((a, b) => a + b) / xs.length, my = ys.reduce((a, b) => a + b) / ys.length; let sxy = 0, sxx = 0;
     xs.forEach((x, i) => { sxy += (x - mx) * (ys[i] - my); sxx += (x - mx) ** 2; }); return { slope: sxy / sxx, n: xs.length }; }
-const fs = fit('es', 1e-3), fp = fit('ep', 1e-3);
-const p9d = Math.abs(fs.slope - 2) <= 0.25 && Math.abs(fp.slope - 1) <= 0.25;
-function ratio(key){ let s = 0, n = 0; for (const b of all){ const a = E[1e-3][b], c = E[1e-4][b]; if (dist[b] < 8 || a.none || c.none || !(a[key] < 1) || a.rays || c.rays || a[key] <= 0 || c[key] <= 0) continue; s += Math.log(a[key] / c[key]); n++; } return { r: Math.exp(s / n), n }; }
-const rs = ratio('es'), rp = ratio('ep');
-const p9e = [rs.r, rp.r].every(r => r >= 10 / 1.5 && r <= 15);
+const pickS = b => dist[b] >= 8 && e3[b].two >= 100 && res10(b) && e3[b].es < 1;
+const fs = fit('es', 1e-3, pickS), fp = fit('ep', 1e-3, pickS);
+const p9d = Math.abs(fs.slope - 2) <= 0.25;
+function ratio(key, pick){ let s = 0, n = 0; for (const b of all){ const a = E[1e-3][b], c = E[1e-4][b]; if (!pick(b) || a.none || c.none || !(a[key] > 0) || !(c[key] > 0)) continue; s += Math.log(a[key] / c[key]); n++; } return { r: Math.exp(s / n), n }; }
+const rs = ratio('es', b => e3[b].two >= 100 && res10(b)), rp = ratio('ep', b => e3[b].two >= 100 && res10(b));
+const p9e = rs.r >= 10 / 1.5 && rs.r <= 15;
 ok.P9 = p9a && p9b && p9c && p9d && p9e;
-console.log(`P9 (a) shape bands ${p9a}; (b) place bands ${p9b}; (c) no ray nearer than 250 and the mean ray share past 4,000 ${meanRay.toFixed(3)} ` +
-    `(${far.length} bodies): ${p9c}; (d) e_s ∝ d^${fs.slope.toFixed(3)} (${fs.n} bodies), e_p ∝ d^${fp.slope.toFixed(3)} (${fp.n}): ${p9d}; ` +
-    `(e) ε 10⁻³ over 10⁻⁴: e_s ×${rs.r.toFixed(2)} (${rs.n}), e_p ×${rp.r.toFixed(2)} (${rp.n}): ${p9e}`);
-// P8(c)
-let nearBad = 0, nearN = 0, farN = 0, farLost = 0; const farRows = [];
-for (const [a, b] of pairs){
-    if (dist[a] < 100 && dist[b] < 100){ nearN++; if (e3[a].none || e3[b].none || !(e3[a].cdist < e3[b].cdist)) nearBad++; }
-    if (dist[a] > 4000){ farN++; const lost = e3[a].none || e3[b].none || !(e3[a].cdist < e3[b].cdist); if (lost) farLost++;
-        farRows.push(`${a}→${b} (${dist[a].toFixed(0)}, ${dist[b].toFixed(0)}): placed at ${e3[a].none ? 'rays' : e3[a].cdist.toFixed(0)}, ${e3[b].none ? 'rays' : e3[b].cdist.toFixed(0)}`); }
-}
+console.log(`P9′ over ${vis.length} bodies seen by two at 100 points or more: (a) shape bands ${p9a}; (b) place bands ${p9b}; (c) no ray nearer than 250 and the mean ray share past 4,000 ${meanRay.toFixed(3)} ` +
+    `(${far.length} bodies): ${p9c}; (d) e_s ∝ d^${fs.slope.toFixed(3)} (${fs.n} resolved bodies): ${p9d} [e_p ∝ d^${fp.slope.toFixed(3)}, not predicted]; ` +
+    `(e) ε 10⁻³ over 10⁻⁴: e_s ×${rs.r.toFixed(2)} (${rs.n}): ${p9e} [e_p ×${rp.r.toFixed(2)}, not predicted]`);
+// P8′(c): near hiding pairs with both bodies placed; far, the planted pairs past 4B/ε, hiding read on the ray through both centres
+let nearBad = 0, nearN = 0, farN = 0, farLost = 0, farHide = 0; const farRows = [];
+for (const [a, b] of pairs){ if (dist[a] < 100 && dist[b] < 100 && !e3[a].none && !e3[b].none){ nearN++; if (!(e3[a].cdist < e3[b].cdist)) nearBad++; } }
+for (const [h, i] of behind){ if (dist[h] <= 4000) continue; farN++;
+    const u = nrm(F1[h].c), th = enter(F1[h], O, u), ti = enter(F1[i], O, u), hides = th !== null && ti !== null && th < ti; if (hides) farHide++;
+    const lost = e3[h].none || e3[i].none || !(e3[h].cdist < e3[i].cdist); if (lost) farLost++;
+    farRows.push(`${h} hides ${i}: ${hides} (${dist[h].toFixed(0)}, ${dist[i].toFixed(0)}), placed at ${e3[h].none ? 'rays' : e3[h].cdist.toFixed(0)}, ${e3[i].none ? 'rays' : e3[i].cdist.toFixed(0)}`); }
 farRows.forEach(r => console.log('   ' + r));
-const p8c = nearBad === 0 && farN > 0 && farLost >= 1;
+const p8c = nearBad === 0 && farN > 0 && farHide === farN && farLost >= 1;
 ok.P8 = !cyc && sepBad === 0 && p8b && p8c;
-console.log(`P8 (a) no cycle, separated pairs as their centres: ${!cyc && sepBad === 0}; (b) ${p8b}; (c) near pairs ordered by the placed centroids ` +
-    `${nearN - nearBad} of ${nearN}, far pairs lost by them ${farLost} of ${farN}: ${p8c}`);
-for (const k of ['P7', 'P8', 'P9', 'P10']) console.log(k, ok[k] ? 'not killed' : 'KILLED');
+console.log(`P8′ (a) no cycle, separated pairs as their centres: ${!cyc && sepBad === 0}; (b) ${p8b}; (c) near pairs ordered by the placed centroids ` +
+    `${nearN - nearBad} of ${nearN}; far planted pairs hidden on the ray ${farHide} of ${farN}, lost by the placed centroids ${farLost}: ${p8c}`);
+for (const k of ['P7', 'P8', 'P9', 'P10']) console.log(k + '′', ok[k] ? 'not killed' : 'KILLED');
