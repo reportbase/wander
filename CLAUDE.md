@@ -1381,6 +1381,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R363 (Tom: "Regardless, any cauchy based result will have to be reframed"): every Cauchy result restated whatever its
   class, as address, turn, standpoint z, payload and the result; `plans/rea/reframed.md` for the 58 (widths are heights, a
   rate; strengths the payload; a reader's scale is H; breakers amounts entering).
+  R364 (Tom: "the impact might minor … that kind of conclusion can only be from the community itself. Lets just keep this
+  in our pocket."): OFS makes no claim about other work's results or their impact; REA stays in the plans and SPN.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
