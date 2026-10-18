@@ -911,6 +911,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   charts v/h and h/v, the reciprocal the exchange; the missing mean is the chart's (a bounded chart has one: the angle π/4,
   x/(1 + x) ½), not the arc's. The audit changed four sentences (§3.7's rings and open arc, §10's elevation as a ring and
   "one finger at a time").
+  **Arrays, and no floor** (18 Oct, SPN R367; Tom: "this is how I developed intuition for the cauchy. with arrays";
+  "the universe does not uses math.floor. it used LOD."; "arrays are easy to understand, it offers another metaphore"):
+  OFS §7.3 "In the picture of an array" (the index the address, for even N the leaf slopes tan(θ_k/2) exactly the N
+  evenly spaced Cauchy quantiles; the stored values the payload; places composed by tangent subtraction; the array rounds,
+  the reader does not) and §8 "A resolution, not cells" (a thing between addresses held at the coarser level; the level
+  continuous; the Cauchy's height a built-in LOD, e^{−kγ}).
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

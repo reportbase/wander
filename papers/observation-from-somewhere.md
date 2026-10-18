@@ -1785,6 +1785,22 @@ rings is in them.
   (Proposition 5(e)), but the radius |s| does not: only 1 − 1/√2 ≈ 0.29 of the addresses have |s| ≤ 1, and the median of
   |s| is √3. That median is still an address, though not a corner.
 
+**In the picture of an array.** A closed curve stored as N samples x[k], y[k], at the places θ_k = (k + ½)·2π/N, makes
+the same split in a form any programmer knows.
+- *The index is the address.* The places are fixed by the index before any value is stored, at equal steps of turn.
+  - Read as slopes of the inscribed angle (§4), s_k = tan(θ_k/2), they are, for even N, exactly the N evenly spaced
+    quantiles of the standard Cauchy.
+  - Half of them lie within the corner, |s_k| ≤ 1.
+  - For odd N one place falls on the horizon itself, [0 : 1], an address like any other.
+- *The stored values are the payload.* Changing them moves no place, so the places' ranks, their median and their
+  corner are untouched by anything stored (Theorem 6(a)).
+- *Places compose without angles.* The offset from one place to another is the tangent subtraction of their slopes:
+  turns composed (§2).
+- *Where the array is not the reader.* To read a value at a place between samples, an array must round the place to an
+  index, which is a floor. A reader has no floor. A place between addresses is held at the coarser level of detail
+  (§8), not rounded to one of them. Band-limited reconstruction is how an array does the same: it spreads a value over
+  every sample by weights that sum to one, with N setting the band.
+
 ### 7.4 The shape is payload
 
 The sweep opens a closed shape out, with zero in the middle of the opening and the two ends running toward the horizon
@@ -1971,6 +1987,13 @@ the count is the *level of detail*: the geometry gives the forms, and the level 
 **Size sets the level.** A thing that spans n of the reader's addresses is resolved to about log₂ n levels, one fewer
 each time the number of addresses it spans halves; when it spans a single address it is a point. Nothing is requested:
 the span sets the level. How many addresses a thing spans depends on amounts, which the geometry does not supply.
+
+**A resolution, not cells.** The count is a resolution; it does not make cells.
+- A thing between two addresses is not rounded to either. It is held at the coarser level.
+- The level is a continuous number, and its fractional part says how far the finest detail held has faded.
+- The Cauchy carries such a level in its own height. Seen from height γ, a pattern's mode of frequency k is kept as
+  e^{−kγ} (the Poisson kernel), and each mode fades, faster the finer it is, with none cut off.
+- Rounding to cells is a device of storage, not of reading.
 
 **From far off, a thing is its total at its centroid.** Take payloads w_i at points r_i about a centre, each at
 distance q_i from it, read from a standpoint at distance r with every q_i < r. The reciprocal of the distance to each
