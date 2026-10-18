@@ -1119,6 +1119,25 @@ try {
     failures.push(`[${current} step 7] ${JSON.stringify(ins)}`);
   console.log(`${failures.length === before38c ? 'ok  ' : 'FAIL'} ${current} step 7 (the inscribed reader: all addresses v ≤ h ${ins.all[0].toFixed(3)}, near field ${ins.all[1].toFixed(3)} with any bodies; the mirrored field's ${ins.metM} met at ${ins.mirror.toFixed(3)}, the field's at ${ins.field.toFixed(3)}; ×10³ moves none; equal-angle pixels: shape ${ins.b3.shape}, place ${ins.b3.place}, direction ${ins.b3.direction})`);
 
+  // ── 39. moon.html: one moon (MON; SPN R352): the inscribed sweep's detections unmoved by scaling the world, its turn read
+  //    from them to 1%, the smooth moon's time to contact and (with its radius carried in) its distance; the central sweep's
+  //    painting R/GM the body's own, the same under k while its radii move by k, more of the face painted over the pass ──
+  current = 'moon.html';
+  const before39 = failures.length;
+  await page.goto(new URL('moon.html?t=16&known=1', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__moon, null, { timeout: 60000 });
+  const mo = await page.evaluate(() => { const M = __moon, o = { dk: 0, om: 0, tauS: 0, dS: 0 };
+    for (const t of [3, 16, 28]) for (const k of [1e-3, 1e3]){ const a = new Set(M.detect(t, 1).det), b = M.detect(t, k).det; o.dk += Math.abs(a.size - b.length) + b.filter(x => !a.has(x)).length; }
+    for (let t = 2; t < M.T - 2; t += 3){ const a = M.readout(t, false), b = M.readout(t, true);
+      o.om = Math.max(o.om, Math.abs(a.om / a.truth.om - 1)); o.tauS = Math.max(o.tauS, Math.abs(b.tau / b.truth.tau - 1)); o.dS = Math.max(o.dS, Math.abs(b.dE / b.truth.d - 1)); }
+    const P = M.paint(10), Q = M.paint(10, 7); o.pk = 0; o.rk = 0;
+    if (P.held.length !== Q.held.length) o.pk = 1; else P.painting.forEach((x, n) => { o.pk = Math.max(o.pk, Math.abs(x - Q.painting[n])); o.rk = Math.max(o.rk, Math.abs(Q.radii[n] / P.radii[n] / 7 - 1)); });
+    const ever = new Set(); for (let t = 0; t < M.T; t += 3) M.paint(t).held.forEach(i => ever.add(i)); o.ever = ever.size; o.once = P.held.length;
+    o.hud = M.hud(); return o; });
+  if (mo.dk > 0 || mo.om > 0.01 || mo.tauS > 0.08 || mo.dS > 0.02 || mo.pk > 1e-12 || mo.rk > 1e-12 || !(mo.ever > mo.once * 1.1) || !/radius known/.test(mo.hud))
+    failures.push(`[${current}] ${JSON.stringify(mo)}`);
+  console.log(`${failures.length === before39 ? 'ok  ' : 'FAIL'} ${current} (detections unmoved by ×10⁻³ and ×10³; ω to ${(100 * mo.om).toFixed(2)}%; the smooth moon's τ to ${(100 * mo.tauS).toFixed(1)}% and, its radius known, distance to ${(100 * mo.dS).toFixed(2)}%; the painting the same under k, radii ×k; ${mo.once} held at once, ${mo.ever} over the pass)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
