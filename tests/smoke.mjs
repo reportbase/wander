@@ -1075,6 +1075,32 @@ try {
       || rv.w.some(([n, vh, both]) => Math.abs(n - 0.125) > 0.01 || Math.abs(vh - 0.5) > 0.02 || Math.abs(both - 1 / 3) > 0.02) || !/the body itself/.test(rv.hud))
     failures.push(`[${current}] ${JSON.stringify(rv)}`);
   console.log(`${failures.length === before38 ? 'ok  ' : 'FAIL'} ${current} (readings the sweep's own to ${rv.rd.toExponential(0)}, the same for two bodies; the wedge ${rv.w.map(w => w[0].toFixed(3)).join(', ')} of the sphere; points in |AB| to ${rv.rec.toExponential(0)}; ×10³ moves ${rv.kk.toExponential(0)})`);
+  // step 6, many bodies (RSH runs 2–3): the census painted by body is the same with the world scaled; three readers at
+  // ε = 0 place every seen point in |AB| to rounding at every distance, ×10³ moving none; at ε = 10⁻³ the nearest bodies
+  // keep their shape, some far ones are a direction only, some are hidden, and the bands go out with a finer ε
+  const before38b = failures.length;
+  await page.goto(new URL('recover.html?step=6', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__recover && __recover.frames > 2, null, { timeout: 60000 });
+  const many6 = await page.evaluate(() => { const X = __recover, W = X.many(), o = {};
+    const near = W.dist.map((d, b) => [d, b]).sort((x, y) => x[0] - y[0]);
+    const R0 = X.manyRead(0), R0k = X.manyRead(0, 1e3), R3 = X.manyRead(1e-3), R4 = X.manyRead(1e-4);
+    o.e0 = Math.max(...R0.map(r => r.err0)); o.kk = 0;
+    R0.forEach((r, b) => r.placed.forEach((q, n) => { const p = R0k[b].placed[n]; o.kk = Math.max(o.kk, Math.hypot(q[0] - p[0], q[1] - p[1], q[2] - p[2]) / Math.hypot(...q)); }));
+    const bands = R => { const c = { shape: 0, place: 0, direction: 0, hidden: 0 }; R.forEach(r => c[r.band]++); return c; };
+    o.b3 = bands(R3); o.b4 = bands(R4); o.b0 = bands(R0);
+    o.nearShape = near.filter(([d, b]) => d < 8 && R3[b].band !== 'hidden').every(([d, b]) => R3[b].band === 'shape');
+    o.farDir = near.filter(([d, b]) => d > 8000 && R3[b].band !== 'hidden').every(([d, b]) => R3[b].band === 'direction');
+    // the census with the world scaled by 10³: the same body in every direction (a sample, the same marching)
+    let diff = 0; const Fk = W.CEN.map((C, i) => X.placedBody(i, C, 1e3));
+    for (let i = 0; i < W.dirs.length; i += 7){ const d = W.dirs[i]; let best = -1, bt = Infinity;
+      Fk.forEach((f, b) => { const t = X.enterBody(f, [0, 0, 0], d); if (t !== null && t < bt){ bt = t; best = b; } }); if (best !== W.paint[i]) diff++; }
+    o.paintDiff = diff; o.painted = [...W.paint].filter(b => b >= 0).length; o.hides = W.hides.size;
+    o.frames = X.frames; o.hud = X.hud();
+    return o; });
+  if (many6.e0 > 1e-9 || many6.kk > 1e-9 || many6.paintDiff > 0 || many6.painted < 100 || !many6.nearShape || !many6.farDir || many6.b3.direction < 1 || many6.b3.hidden < 1
+      || many6.b0.direction > 0 || many6.b4.shape + many6.b4.place < many6.b3.shape + many6.b3.place || many6.b4.shape < many6.b3.shape || !/no bands/.test(many6.hud))
+    failures.push(`[${current} step 6] ${JSON.stringify(many6)}`);
+  console.log(`${failures.length === before38b ? 'ok  ' : 'FAIL'} ${current} step 6 (many bodies: ${many6.painted} directions painted, the same at ×10³; at ε = 0 every point to ${many6.e0.toExponential(0)}; at ε = 10⁻³ shape ${many6.b3.shape}, place ${many6.b3.place}, direction ${many6.b3.direction}, hidden ${many6.b3.hidden}; at 10⁻⁴ shape ${many6.b4.shape}, place ${many6.b4.place})`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
