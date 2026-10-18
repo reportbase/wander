@@ -89,3 +89,65 @@ classification: the bat's error is an amount's error, and the ratios are free.
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (18 Oct, the paper's text, read from PMC8126842 after the predictions were committed)
+
+The rest of the paper was read for what it reports on each prediction.
+
+- **W1 untested in its letter.** The paper gives no perceived distance, in metres or as a share, for the 15% condition. It
+  reads the bats' range from two echolocation parameters taken before takeoff: the interstrobe interval (ISI) and the
+  call duration (Dur).
+  - Its one quantitative comparison is at 27% SOS. There the bats' parameters toward a 1.3 m target were "similar" to
+    those toward a 90 cm target in air. The methods call 1.3 m in 27% SOS "equivalent to ∼95 cm in air".
+  - That equivalent is 1.3 × (1 − 0.27). The echo's delay gives 1.3/1.27 = 1.024 m, a share of 0.787. The paper's 95 cm
+    is the naive form this plan set aside.
+  - Two calibration distances (90 and 130 cm) and "similar" cannot tell 0.69, 0.73 and 0.79 apart. No interval is given.
+- **W2 untested in its letter.** No per-group share is given.
+  - The paper's tests find no difference by rearing: the effect of rearing origin P = 0.62, the response's magnitude
+    P = 0.65. Every adult in every heliox level (10%, 15%, 27%) read the target closer, with no change over 3–13 days.
+  - Consistent with W2; not a numerical test.
+  - The discussion adds: "the bats regarded the object as being 7.5 ms away and not 1.3 m away". That is 2 × 1.3/343 s,
+    the delay in air.
+- **W3 killed at 27% SOS.** Every flight in air landed. In 10% SOS about 51% landed, half of air's, so W3 passes there by
+  a hair. In 27% SOS about 3% landed. At 15%, of the two bats filmed, one landed at all.
+  - The paper puts the misses mostly to lift in the lighter gas ("category I": short flights to the floor). Its
+    "category II" misses cover the whole distance and pass just under the target, "arguably due to sensory error". Flight
+    speed was the same in air and heliox (1.5–1.6 m/s).
+  - The plan called W3 its weakest for this reason. It is killed as written.
+
+**Reading.** The published case agrees with claim 3 in kind:
+- one held speed;
+- every range read short in every heliox level;
+- no recalibration, in pups raised in heliox or in adults over days.
+
+The paper's own reading, that bats "encode the world in terms of time and do not translate time into distance", is the
+same claim seen from the other side. A reader that holds a fixed speed and one that holds only the delay act alike: in
+either case the one amount carried in is never re-measured. The size of the factor is not settled by the text. The data
+may settle it (run 2).
+
+### Run 2: the factor from Dataset S1 (written before the dataset is opened)
+
+**The data.** Dataset S1 (`pnas.2024352118.sd01.xlsx`, from PMC; its sha256 to be recorded, not committed): the
+per-flight pretakeoff ISI and Dur.
+
+**The method, fixed now.**
+- Calibration, per adult bat that flew both targets in air: the median ISI toward 130 cm and toward 90 cm. Distance is
+  taken as linear in ISI between them.
+- A heliox condition's perceived distance is the distance at which that line gives the median ISI in the heliox
+  condition. Its share is that distance over the true distance.
+- The same is done with Dur, as a second reading.
+- Pooled over bats: the median share and its range across bats.
+
+**The predictions.** The share is 1/(1 + x), for x the SOS increase the paper states:
+- 27% SOS (1.3 m target): 0.787, 1.024 m;
+- 15% SOS (1.3 m): 0.870;
+- 10% SOS (0.9 m target): 0.909, 0.818 m. That lies below the 90 cm calibration, so it is an extrapolation and the
+  weakest of the three.
+
+The kill conditions:
+- **W1′ (27%):** the pooled ISI share within ±0.06 of 0.787.
+  - It is also to lie nearer 0.787 than the paper's 0.731 (95 cm) when that difference exceeds the range across bats;
+    otherwise this clause is untested, and I say so.
+  - *Killed* if the share falls outside 0.787 ± 0.06.
+- **W1″ (15%, 10%):** within ±0.06 of 0.870 and 0.909, where the dataset has the flights. *Killed* if outside.
+- **Untested**, and I say so, if the dataset lacks per-flight ISI by condition, target distance and bat.
