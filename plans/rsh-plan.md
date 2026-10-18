@@ -248,3 +248,54 @@ points are told apart in depth (εd²/B against its radius, e_s ∝ d^1.9, ∝ �
 centroid averages its pixels away), and past B/ε rays, where the readers' pixels coincide; occlusion still orders
 pairs out there that the placed centroids lose. Draw's OCC lab's lesson holds in three dimensions and among bodies:
 from outside a reader sees part, and here most of what is lost is lost to other bodies, not to distance.
+
+## Run 4: the inscribed reader among many bodies (predictions, written before the code)
+
+*17 October 2026. Tom, 20:50: "tell me abou this demo with multiple objects, is it using cauchy inscribed reader?";
+Claude: partly (directions only, one length) but not the Cauchy: the census covered a 34° cap and painted which body,
+never laying the readings as addresses; the readers' pixels were a flat screen (a count against a ruler, not the turn);
+the placement was parallax. Tom, 20:53: "yes, build the inscribed version".*
+
+**Known beforehand.** WDG (`plans/wdg-plan.md`) and AZM (`plans/azm-plan.md`): directions uniform over the octant are
+the Cauchy wedge, uniform in azimuth ψ (v₂/h = tan ψ) and in height (Archimedes, Lambert), every pair's corner at its
+median, P(v ≤ h) = ½, the near field in both a third. PAM (`plans/pam-plan.md`): the addresses' median is at the corner
+for every exchange-symmetric weight and moves toward a lopsided weight's heavier side. Theorem 6 (OFS): what arrives
+never moves an address. Draw's SMP: a uniform turn's census is the Cauchy whatever the figure. Run 3 above: the flat
+screen's bands.
+
+**The inscribed reader.** One reader at home O sweeps the whole wedge (the first octant, h → x, v → y, v₂ → z)
+uniformly: N addresses, a grid uniform in azimuth ψ ∈ [0, π/2] and in height y ∈ [0, 1] (Archimedes: equal area, so
+equal shares of the sweep), 2¹¹ × 2¹¹ = 4,194,304 cells, each read at its middle. Each address is painted by the first
+body its ray meets, or by none; the reading is the address itself, [h : v : v₂]. A body's share is its addresses over
+N. Three readers (as run 3) read with **equal-angle pixels**: altitude a (tan a = v/√(h² + v₂²)) and azimuth ψ each
+rounded to steps of ε radians (the two sweeps counted by their own turns), in place of run 3's flat screen. The field
+is run 3's (the same seed), and a **mirrored field**: 20 bodies placed in the half of the 30° cone where v < h, each
+with its mirror across v = h (x ↔ y, the body reflected too), no two bounding balls meeting.
+
+### Predictions
+
+- **P11 (a body's share is its solid angle).** For every body of run 3's field with at least 200 addresses, its share
+  times π/2 equals its solid angle (run 3's cap lattice of 20,000 directions, the body alone, unhidden bodies only)
+  within 2%; the shares and the sky add to 1 exactly; the world scaled by k = 10⁻³, 7, 10³ changes no address's body
+  but for at most 10⁻⁴ of them. *Killed* if any part fails.
+- **P12 (the addresses are the sweep's, whatever the bodies).** Over all N addresses P(v ≤ h) is within 0.002 of ½ and
+  the near field in both (v ≤ h and v₂ ≤ h) within 0.002 of ⅓, for the empty wedge, run 3's field and the mirrored
+  field alike (the addresses do not depend on what is met). Over the addresses the mirrored field paints, P(v ≤ h) is
+  within 0.01 of ½ (an exchange-symmetric payload keeps its median at the corner). Over those run 3's field paints, the
+  share with v ≤ h is reported, not predicted. *Killed* if any predicted part fails.
+- **P13 (equal-angle pixels).** With ε = 10⁻³ and 10⁻⁴: run 3's P9′(a)–(c) hold again (shape below 10 and lost past 100;
+  place below 100 and lost past 4,000 or all rays; no ray below 250, mean ray share past 4,000 at least 0.3); for every
+  body with a shape error under 1 at both pixel kinds, e_s(equal-angle)/e_s(flat screen) lies in [0.4, 2.5], their
+  geometric mean in [0.7, 1.4] (around (1, 1, 1) a flat-screen pixel and an equal-angle pixel differ by at most cos²35°
+  in altitude and cos 35° in azimuth). *Killed* if any part fails.
+- **P14 (no size in an address).** With equal-angle pixels the three readers' rounded readings are unchanged by scaling
+  the world (k = 10⁻³, 7, 10³), but for at most 10⁻⁴ of them (rounding at a pixel's edge), and at ε = 0 every seen point is
+  placed in |AB| to 10⁻⁹ of its distance. *Killed* if either fails.
+
+P11, P12's first part and P14 are near identities (a kill would be my code); P12's second part is PAM's corner for a
+symmetric payload met among bodies; P13 says the bands do not hang on the pixel's shape.
+
+**What would and would not be shown.** That the inscribed reader's sweep is the same Cauchy wedge whatever bodies lie
+in it, each body taking a share of its addresses equal to its solid angle (breadth over distance, no size), the median
+at the corner moved only by a lopsided payload; and that its own pixels, equal turns, give the same bands as a flat
+screen. Not how the correspondence is found, nor anything of light.
