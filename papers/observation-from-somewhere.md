@@ -869,9 +869,9 @@ each finger the same address.
   point of an observer's sky is (§2).
 - *The unit circle is the hand's own arc.* In one quadrant it is a quarter, flat to upright. Upright is the arc's end,
   the horizon [0 : 1], a direction the hand can point; in the chart v/h it is open at the top, since no finite reading
-  is the horizon (§4). The closed circle comes from turning the hand through the four quadrants, or by the
-  writer, drawing every quadrant at once. The sphere is every way a hand could face, drawn by the writer; no hand holds
-  it.
+  is the horizon (§4). Turned through the four quadrants, the hand reads four arcs alike, since no reading carries a
+  sign. Joining them into the closed circle is the writer's work: it knows each one's size, so their ends can be made
+  to meet. The sphere is every way a hand could face, its eight octants joined by the writer; no hand holds it.
 
 ### 3.8 What the reader lacks is one number
 
@@ -1785,6 +1785,49 @@ rings is in them.
   (Proposition 5(e)), but the radius |s| does not: only 1 − 1/√2 ≈ 0.29 of the addresses have |s| ≤ 1, and the median of
   |s| is √3. That median is still an address, though not a corner.
 
+**In the picture of an array.** A closed curve stored as N samples x[k], y[k], at the places θ_k = (k + ½)·2π/N, makes
+the same split in a form any programmer knows.
+- *The index is the address.* The places are fixed by the index before any value is stored, at equal steps of turn.
+  - Read as slopes of the inscribed angle (§4), s_k = tan(θ_k/2), they are, for even N, exactly the N evenly spaced
+    quantiles of the standard Cauchy.
+  - Half of them lie within the corner, |s_k| ≤ 1.
+  - For odd N one place falls on the horizon itself, [0 : 1], an address like any other.
+- *The stored values are the payload.* Changing them moves no place, so the places' ranks, their median and their
+  corner are untouched by anything stored (Theorem 6(a)).
+- *Places compose without angles.* The offset from one place to another is the tangent subtraction of their slopes:
+  turns composed (§2).
+- *Where the array is not the reader.* To read a value at a place between samples, an array must round the place to an
+  index, which is a floor. A reader has no floor. A place between addresses is held at the coarser level of detail
+  (§8), not rounded to one of them. Band-limited reconstruction is how an array does the same: it spreads a value over
+  every sample by weights that sum to one, with N setting the band.
+- *One array per facing.* A circle has four facings, the quadrants, and can be stored as four arrays on one lattice.
+  - Each array has its places at ψ_k = (k + ½)·(π/2)/N, read as tan ψ_k: the N evenly spaced quantiles of the
+    half-Cauchy.
+  - The circle stores one value everywhere, its radius. A shape stores others (§7.4).
+  - The size is the one value no reading fixes (Proposition 8).
+  - Within an array, its middle is the corner, and reading it backwards is the reciprocal:
+    tan ψ_k · tan ψ_(N−1−k) = 1.
+  - A closed curve stored as 4N samples over the full turn is these four arrays laid end to end.
+  - A sphere is eight arrays, one per octant, each two-dimensional, uniform in azimuth and in height.
+- *The reader reads the arrays; the writer joins them.*
+  - A reading carries no sign, and composed turns repeat after a half turn (tangent addition). So from inside, every
+    facing is the same array, and a reader reads within one.
+  - To join two arrays, their values must meet at the shared end in one unit. That needs each array's size, its extent
+    in amounts.
+  - The reader holds each array only up to its own factor, the size no reading fixes (Proposition 8), so it cannot tell
+    whether two ends meet. The point in amounts needs the extent, as for the sphere in a cube (§9).
+  - The writer knows the sizes, and which facing each array is, so it can join the four into the closed circle, or the
+    eight into the sphere.
+  - Since the places sit at midpoints, no array holds an end, and joined arrays never claim the same element.
+- *Not knowing the size makes the corner and the horizon.*
+  - Knowing an array's size, the writer has its end at an amount, the other party's whole V*. Its ruler is the number
+    line, and the point where the two parties are equal is computed and marks nothing (§10, the writer's map; §9).
+  - Not knowing it, the reader must draw the other party at its own H, and v = h becomes its split of near from far and
+    the median of its readings, the corner (Propositions 3(e), 5(d)).
+  - With no size, the array's far end is no amount, only a direction, [0 : 1], where the chart v/h runs out: the horizon
+    (§4).
+  - Both are the reader's because the size is missing; the writer, holding it, has neither.
+
 ### 7.4 The shape is payload
 
 The sweep opens a closed shape out, with zero in the middle of the opening and the two ends running toward the horizon
@@ -1971,6 +2014,13 @@ the count is the *level of detail*: the geometry gives the forms, and the level 
 **Size sets the level.** A thing that spans n of the reader's addresses is resolved to about log₂ n levels, one fewer
 each time the number of addresses it spans halves; when it spans a single address it is a point. Nothing is requested:
 the span sets the level. How many addresses a thing spans depends on amounts, which the geometry does not supply.
+
+**A resolution, not cells.** The count is a resolution; it does not make cells.
+- A thing between two addresses is not rounded to either. It is held at the coarser level.
+- The level is a continuous number, and its fractional part says how far the finest detail held has faded.
+- The Cauchy carries such a level in its own height. Seen from height γ, a pattern's mode of frequency k is kept as
+  e^{−kγ} (the Poisson kernel), and each mode fades, faster the finer it is, with none cut off.
+- Rounding to cells is a device of storage, not of reading.
 
 **From far off, a thing is its total at its centroid.** Take payloads w_i at points r_i about a centre, each at
 distance q_i from it, read from a standpoint at distance r with every q_i < r. The reciprocal of the distance to each

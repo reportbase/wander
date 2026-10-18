@@ -911,6 +911,22 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   charts v/h and h/v, the reciprocal the exchange; the missing mean is the chart's (a bounded chart has one: the angle π/4,
   x/(1 + x) ½), not the arc's. The audit changed four sentences (§3.7's rings and open arc, §10's elevation as a ring and
   "one finger at a time").
+  **Arrays, and no floor** (18 Oct, SPN R367; Tom: "this is how I developed intuition for the cauchy. with arrays";
+  "the universe does not uses math.floor. it used LOD."; "arrays are easy to understand, it offers another metaphore"):
+  OFS §7.3 "In the picture of an array" (the index the address, for even N the leaf slopes tan(θ_k/2) exactly the N
+  evenly spaced Cauchy quantiles; the stored values the payload; places composed by tangent subtraction; the array rounds,
+  the reader does not) and §8 "A resolution, not cells" (a thing between addresses held at the coarser level; the level
+  continuous; the Cauchy's height a built-in LOD, e^{−kγ}).
+  **One array per facing; the writer joins them** (18 Oct, SPN R368; Tom: "a cirlce has four facings. you can define a
+  circle by defining four array"; "the writer joins them, the reader reads them."): OFS §7.3: four arrays (eight for the
+  sphere) on one lattice, the half-Cauchy's quantiles; the reader reads within one facing (no reading carries a sign), the
+  writer, holding the signs, joins them; §3.7's closed circle and sphere are the writer's joins.
+  R369 (Tom: "the situated view does not know the size of the arrays. the unsituated view knows the size of the arrays,
+  so he can connect them."): the join needs each array's size (its extent in amounts), which the reader lacks
+  (Proposition 8); the writer knows it.
+  R370 (Tom: "the fact that reader does not know the size of the array creates the corner and the horizon."): OFS §7.3,
+  the writer's end an amount V* (no corner, no horizon), the reader's v = h its split and median, its far end the
+  direction [0 : 1]; the point v = h exists anyway (Proposition 1), the missing size gives it its role.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
