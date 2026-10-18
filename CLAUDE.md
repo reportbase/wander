@@ -1383,6 +1383,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   rate; strengths the payload; a reader's scale is H; breakers amounts entering).
   R364 (Tom: "the impact might minor … that kind of conclusion can only be from the community itself. Lets just keep this
   in our pocket."): OFS makes no claim about other work's results or their impact; REA stays in the plans and SPN.
+  R365 (Tom: "Lets not worry about phsyics in this paper. but add any useful comments from chatgpt to our pocket."):
+  `plans/rea/linewidth-note.md`, the attribution as the error (numbers kept, attribution corrected), ChatGPT's comments
+  (generate or reveal; reconstruct the inference), the pole revealed and the Lorentzian its trace on the reader's line;
+  the run not taken.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
