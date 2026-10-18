@@ -1555,16 +1555,15 @@ In v and h (§6), with v = sin φ and h = cos φ:
 | central cylindrical | tan φ | v/h, the division | sec φ | 26.6° |
 | Mercator's | asinh(tan φ) | asinh(v/h) | 1 | 45° |
 
-**Two readers, two charts.** Mercator's chart is drawn for the address reader. A course is a direction, the ratio of a
-step east to a step north, and the chart draws every one true. The price is an area scale of sec²φ, a zoom that changes
-with latitude, and areas are amounts, the payload reader's.
-- Greenland, between 60° and 84°N, is drawn ten to twelve times its area.
-- Africa, across the equator, is drawn about 1.15 times its area.
-- Africa is truly about 14 times Greenland (30.4 against 2.2 million km²); on the chart it is about 1.5 times.
-
-So the payload reader objects. Lambert's equal-area chart is drawn for it instead, and gives up the bearings. No chart
-keeps both, so neither reader can be served by the same drawing: only the globe, the complete object the writer holds,
-keeps every direction and every area at once.
+**Two readers, two charts.** Mercator's chart keeps local angles, so a course of constant compass bearing is a straight
+line on it. That serves the address reader, for whom the relation that matters is a direction: the ratio of a step
+east to a step north. It does so by an area scale of sec²φ, a zoom that grows with latitude, and areas are amounts, the
+payload reader's. So the payload reader objects. On the chart Greenland looks comparable to Africa, about two-thirds its
+size, when Africa is in fact about fourteen times larger. An equal-area chart such as Lambert's keeps the relative
+areas instead, at the cost of the bearings. The two charts keep different properties of the same globe. No flat chart
+keeps both (Euler 1777; Gauss 1828), and neither reader is thereby obliged to use either: each chart follows from the
+property its reader needs kept. Only the globe itself, the complete object, keeps every direction and every area at
+once; it is the common reference from which both charts are drawn.
 
 *Proof.* (f) The flash at θ meets the shore where its leg out to sea, of length β, and its leg along the shore, x − α,
 stand at angle θ. So (x − α)/β = tan θ, and the path, β/cos θ, divides out of the ratio. With θ uniform on (−π/2, π/2),
