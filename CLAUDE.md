@@ -1374,6 +1374,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the payload drawn from the Cauchy are suspect (Claude's "the system's own" for resonances withdrawn: the phase's turn).
   R362 also: the clock is the head's rate ω, which cancels from every reading; the height γ is not a rate; a speed on the
   line is γω.
+  Run 1 (`plans/rea/classification.md`, blind, then checked): U 25, R 31, D 2 (H53 Lévy foraging, μ = 2 the law of
+  uniform headings ended by edges; H54 seed dispersal, the scale the release height), F 0; E1 killed in its letter (H52 has
+  no Cauchy), E3 killed, E2, E4, E5 not killed, E6 undecided. Next: the D entries' sources and tests, and a second list
+  aimed at conclusions about the payload.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
