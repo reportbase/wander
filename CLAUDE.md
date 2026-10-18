@@ -319,6 +319,18 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   from the detections alone: ω, τ (a five-tick slope of ln s), the path angle; the referee; scale the world (no detection
   moves); "radius known" (1,737 km) writes distance and speed. `?t=0..31&smooth=1&k=<log10 k>&truth=1&known=1`; hook
   `window.__moon` (`detect`, `readout`, `paint`, `centre`, `moonOf`, `set`, `state`, `hud`). Not in the flying page.
+- `from-home.html`: **the face from home** (18 Oct 2026, Tom: "do we have both an inscribed and central sweep views of the
+  moon and. it is possible to have both?", "help me understand what this means?", then "create a demo to explain"; SPN R355;
+  CFH), a standalone page, plain canvas. A slice through MON's moon (body 3 on its great circle z = 0) on MON run 2's path in
+  the plane, 4096 rays over the quarter turn. Ranges (each ray's distance to its first surface point; the signal's speed the
+  bridge): every hit on the outline, the face exactly with the centre given, to a few percent with it fitted (a circle each
+  tick, a line through the centres), and the fitted track writes distance and speed. Silhouettes alone: the visual hull
+  in the moon's frame (kept between the run's two edge rays at every tick), containing the moon, tight where an edge grazed
+  it and loose elsewhere; its track given, or read from the detections (in the plane a width of two edges, coarse: the
+  hull lands off the moon). Panels: from home, at the moon, the moon's frame (drawn by the referee where everything truly
+  lies, + the readers' fitted centres), the painting round the moon. `?t=&ranges=0|1&hull=0|1&fit=1&smooth=1&k=<log10 k>`;
+  hook `window.__fromHome` (`detect`, `ticks`, `rangedTrack`, `silTrack`, `rangedPoints`, `hullOf`, `seenOf`, `touchedOf`,
+  `compare`, `centre`, `rOf`, `compute`, `set`, `state`, `last`, `hud`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -422,7 +434,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, recovering a body, one moon, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, recovering a body, one moon, the face from home, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -1640,6 +1652,10 @@ In short:
   39. **moon.html:** the detections unmoved by ×10⁻³ and ×10³; ω read from them to 1%; the smooth moon's τ to 8% and, its
       radius known, its distance to 2%; the painting R/GM the same under ×7 while its radii move by 7; more of the face
       painted over the pass than at once.
+
+  40. **from-home.html:** ranged points on the outline to 10⁻⁹ and the face from them at correlation 0.999 or more with the
+      centre given; the hull containing the moon (within 0.03 of its radius) and more than 5 times as far off away from where
+      an edge grazed it; ×10³ moving no detection or hull, the ranges by k; with the centre fitted, distance and speed to 1%.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
