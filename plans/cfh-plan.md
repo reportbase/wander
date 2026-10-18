@@ -113,3 +113,66 @@ Not light, not noise in the ranges or the cells beyond their own size, not a spi
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (18 Oct, `node cfh/cfh.mjs`; output `cfh/cfh-run1.txt`, 9 min)
+
+Run 1 used MON run 2's 32 ticks (d from 40 down to 15.2). 2,359 of the 4,096 lattice directions are held at some tick
+(0.576), 1,224 are on the rim at some tick, and 1,460 are held but never on the rim.
+
+- **C1 killed.** Every one of 543,451 ranged points lies on the body, |ρd − c| = R(u) to 1.2·10⁻¹² of R̄. But 7 held
+  directions have no ranged point within 2°.
+  - On the other 2,352, A1's painting matches the true one: rms 0.0017, correlation 0.9998.
+- **C2 not killed.**
+  - Under k = 10⁻³, 7 and 10³ the detections are the same; the ranges move by k to 1.5·10⁻¹⁴ and A1's radii by k to
+    3·10⁻¹³.
+  - The ranges alone write the distance to within 0.25% and the speed to within 0.055%.
+- **C3 not killed.**
+  - The centre fitted from the ranges is within 0.082 R̄ of the true centre. Each tick's sphere fit is off by up to 0.085 R̄;
+    the line over the 32 ticks takes little of that off.
+  - The painting on 2,331 of 2,359 held directions: rms 0.043, worst 0.112, correlation 0.88.
+- **C4 killed in one part.**
+  - The hull contains the body: worst −0.014 R̄.
+  - On held directions never on the rim, the median error is 0.161, against 0.014 on the rim. That is more than twice
+    the rim's in both the relative radius and the painting (0.111 against 0.031).
+  - But only 64.6% of rim directions are within 3%, against the 80% predicted.
+  - The hull's painting correlates with the true painting at 0.87 on the rim and 0.16 on held directions never on the rim.
+- **C5 not killed.**
+  - From the detections alone the track's speed is 0.02478 d(0) a tick, against the true 0.02500.
+  - The hull's painting correlates with the true painting at 0.57 on the rim (rms 0.076), below B1's 0.87.
+  - Over all held directions it correlates at 0.03.
+- **C6 not killed.** The detections-alone hull under k is the same to the last bit.
+
+**Post hoc** (`cfh/cfh1-posthoc.mjs`, output `cfh/cfh1-posthoc.txt`).
+
+- **C1.** The 7 uncovered directions have their nearest ranged point 2.02° to 2.42° away. They are not limb grazers: their
+  largest cosine to home while held is 0.09 to 0.66. At the far ticks one address spans about 1.7° of the moon's directions
+  about its centre, square on, and more on slopes. My 2° was at the address spacing: my threshold, not the reading.
+- **C4.** The rim's error follows the size of one cell at the nearest tick where that direction was on the rim:
+
+  | d at that tick | median error | one cell |
+  |---|---|---|
+  | 15–20 | 1.6% | 1.3% |
+  | 20–25 | 0.2% | 1.7% |
+  | 25–30 | 1.2% | 2.1% |
+  | 30–35 | 2.8% | 2.5% |
+  | 35–41 | 3.3% | 2.9% |
+
+  53%, 66% and 75% of rim directions are within 1, 2 and 3 cells. My 3% took no account of the cell, which reaches 3% of
+  R at the far ticks. Two more reasons:
+  - The rim set is geometric (square to the line of sight). A body with relief has its true contour off that band.
+  - A silhouette is tight only on the contour itself.
+
+**Reading.**
+
+- **Ranging carries the central sweep home.** With the centre given, ranging gives the moon's face exactly. With the centre
+  fitted from the ranges, it gives the face to 4% rms (correlation 0.88), the error being the sphere fit's bias from a
+  half-seen lumpy body.
+- **The ranges write.** They give distance and speed to a quarter of a percent, because their bridge, the signal's speed,
+  is an amount: ranging is writing.
+- **Silhouettes alone give only the outline the turn swept,** and only up to size:
+  - on the rim, the face to about a cell (correlation 0.87, or 0.57 with the track also read from the detections);
+  - elsewhere, a hull that keeps none of the face's relief (correlation 0.16): the concavities no rim passed are lost, as
+    Laurentini's hull says.
+  - Nothing in it moves when the world is scaled.
+- **The inscribed sweep alone does not earn the central painting.** It earns the rim's outline. The face needs an amount
+  along each direction, from a ranging signal or from a vantage at the moon.

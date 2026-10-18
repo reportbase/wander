@@ -1,0 +1,20 @@
+moon: body 3, mean radius 0.5007; 32 ticks, d 40.00 → 15.18; 5845 → 38623 addresses met (120 s)
+held 2359 of 4096 lattice directions (0.5759), rim 1224, held and never on the rim 1460
+C1 ranging, centre given: |ρd − c| against R(u) worst 1.23e-12 of R̄ over 543451 ranged points; held directions with no ranged point within 2°: 7
+   its painting on the held set: 2352/2359 directions: rms 0.0017, median 0.0005, worst 0.0259, correlation 0.9998
+A2 the centre from the ranges: worst 0.0816 R̄ from the true centre; per-tick sphere fits off 0.0848 R̄ at worst
+   distance worst 0.249%, speed 1.00055 a tick (0.055% off 1)
+C3 its painting on the held set: 2331/2359 directions: rms 0.0426, median 0.0336, worst 0.1121, correlation 0.8833
+C1 uncovered lattice direction 261: nearest ranged point 2.02°, its largest cosine to home while held 0.0947 (0 is the limb)
+C1 uncovered lattice direction 627: nearest ranged point 2.42°, its largest cosine to home while held 0.2567 (0 is the limb)
+C1 uncovered lattice direction 963: nearest ranged point 2.04°, its largest cosine to home while held 0.2321 (0 is the limb)
+C1 uncovered lattice direction 1009: nearest ranged point 2.16°, its largest cosine to home while held 0.1199 (0 is the limb)
+C1 uncovered lattice direction 1539: nearest ranged point 2.21°, its largest cosine to home while held 0.1822 (0 is the limb)
+C1 uncovered lattice direction 2938: nearest ranged point 2.20°, its largest cosine to home while held 0.1928 (0 is the limb)
+C1 uncovered lattice direction 3407: nearest ranged point 2.15°, its largest cosine to home while held 0.6621 (0 is the limb)
+C4 rim directions last on the rim at d 15–20: 693, error median 0.0157, within 3% 63.1%, one cell there 0.0129 of R
+C4 rim directions last on the rim at d 20–25: 220, error median 0.0023, within 3% 79.5%, one cell there 0.0170 of R
+C4 rim directions last on the rim at d 25–30: 149, error median 0.0115, within 3% 65.1%, one cell there 0.0211 of R
+C4 rim directions last on the rim at d 30–35: 79, error median 0.0284, within 3% 53.2%, one cell there 0.0251 of R
+C4 rim directions last on the rim at d 35–41: 83, error median 0.0330, within 3% 48.2%, one cell there 0.0288 of R
+C4 rim directions within 1, 2, 3 cells' breadth at their nearest rim tick: 52.7%, 66.0%, 75.1%

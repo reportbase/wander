@@ -1316,6 +1316,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   1/median(r̂) reads τ within 2.5% at CV 2.5, median(τ̂) 73% short. L5, the verdict, not killed: classical (Geary, the delta
   method, Lutz–Kelker, Bailer-Jones); the framing restates it (one direction [r̂ : 1] on the projective line, the median
   taken on the chart whose cut lies outside the readings).
+  `cfh-plan.md` (+ `cfh/cfh.mjs`, `cfh/cfh1-posthoc.mjs`, 18 Oct; SPN R355, "it is possible to have both?"): the central sweep
+  earned from home, on MON run 2's moon. Run 1: ranging (an amount per address, the signal's speed the bridge) gives the
+  face exactly with the centre given (C1 killed by my 2°, the address spacing) and to 4% rms with the centre fitted (C3), and
+  writes distance and speed to 0.25% (C2); silhouettes alone, the visual hull, contain the body and are tight on the rim to
+  about a cell (C4 killed by my 3%, a cell at the far ticks), with none of the face elsewhere; from detections alone 0.57 on
+  the rim (C5); unmoved by scaling (C6). The inscribed sweep alone earns the rim's outline, not the central painting.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

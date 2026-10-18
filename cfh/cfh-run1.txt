@@ -1,0 +1,25 @@
+moon: body 3, mean radius 0.5007; 32 ticks, d 40.00 → 15.18; 5845 → 38623 addresses met (133 s)
+held 2359 of 4096 lattice directions (0.5759), rim 1224, held and never on the rim 1460
+C1 ranging, centre given: |ρd − c| against R(u) worst 1.23e-12 of R̄ over 543451 ranged points; held directions with no ranged point within 2°: 7
+   its painting on the held set: 2352/2359 directions: rms 0.0017, median 0.0005, worst 0.0259, correlation 0.9998
+A2 the centre from the ranges: worst 0.0816 R̄ from the true centre; per-tick sphere fits off 0.0848 R̄ at worst
+   distance worst 0.249%, speed 1.00055 a tick (0.055% off 1)
+C3 its painting on the held set: 2331/2359 directions: rms 0.0426, median 0.0336, worst 0.1121, correlation 0.8833
+C4 the hull, track given (155 s): R_hull − R worst -0.0144 R̄ (contains the body if ≥ −0.02); rim within 3%: 64.6% (median 0.0138); held never on the rim, median 0.1613
+   painting on the rim set: 1224/1224 directions: rms 0.0451, median 0.0312, worst 0.1935, correlation 0.8735
+   painting on held, never rim: 1460/1460 directions: rms 0.2299, median 0.1108, worst 1.1559, correlation 0.1566  (C4 compares the medians: 0.1108 against 2 × 0.0312)
+   painting on the held set: 2359/2359 directions: rms 0.2147, median 0.1084, worst 1.2946, correlation 0.1949
+C5 the hull from detections alone (164 s): track speed 0.02478 d(0) a tick (true 0.02500); rim set: 1224/1224 directions: rms 0.0759, median 0.0485, worst 0.2984, correlation 0.5694 (B1's correlation 0.8735)
+   held set: 2359/2359 directions: rms 0.2430, median 0.1153, worst 1.3492, correlation 0.0255
+   k = 0.001: done (296 s)
+   k = 7: done (430 s)
+   k = 1000: done (564 s)
+C2 the world scaled by 10⁻³, 7, 10³: detections the same true; ranges ×k to 1.48e-14; the A1 radii ×k to 2.95e-13; the ranges write distance (worst 0.249%) and speed (0.055%)
+C6 the detections-alone hull under k: radii the same to 0.00e+0
+C1 KILLED
+C2 not killed
+C3 not killed
+C4 KILLED
+C5 not killed
+C6 not killed
+(564 s)
