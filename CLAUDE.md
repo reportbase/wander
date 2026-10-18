@@ -1310,6 +1310,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   clean–clean link of 898; identity lost only at touches) and S5 (10 sub-cell bodies one cell, one track) not killed; S2
   (ω 2.9%) and S3 (τ 6.8%) killed: post hoc (`sky/sky1-posthoc.mjs`) the cells' scatter, which τ carries in proportion to
   |τ|, and the relief's turning profile for large patches' ω.
+  `lom-plan.md` (+ `lom/lom.mjs`, 17 Oct; SPN R354, "focus on cauchy to see if our cauchy insights have anything new to say
+  about classical results"): looming as a ratio, τ̂ = 1/r̂ on a smooth sphere's share, 4,000–40,000 repeats per τ = 10 …
+  10,000. Run 1: L1–L4 killed (the median identity fails across r̂ = 0; my straight approach's t³ term); post hoc
+  1/median(r̂) reads τ within 2.5% at CV 2.5, median(τ̂) 73% short. L5, the verdict, not killed: classical (Geary, the delta
+  method, Lutz–Kelker, Bailer-Jones); the framing restates it (one direction [r̂ : 1] on the projective line, the median
+  taken on the chart whose cut lies outside the readings).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
