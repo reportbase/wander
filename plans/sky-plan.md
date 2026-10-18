@@ -81,3 +81,34 @@ not light, and not how a real sky's detections are made.
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (17 Oct, `node sky/sky.mjs`; output `sky/sky-run1.txt`, 17 min)
+
+One choice the plan left open, made before running: a track seen once has no last step, so its gate takes the largest
+step a body is given, 10 cells. The sky: 40 bodies, d 23 to 15,218 at the middle tick, 36–40 patches a tick, 10 bodies
+under one cell all run; touches at 18 of 25 ticks (up to 4 bodies at once, the planted crossings).
+
+- **S1 not killed:** under k = 10⁻³, 7, 10³ none of 1,423,461 detections differs.
+- **S2 killed:** 187 readings of ω on clean patches of 50 cells or more, worst 2.86% (median 0.3–0.7%); the 10 bodies
+  under one cell, whole-run turn within 0.68 of a cell.
+- **S3 killed:** 50 readings of τ on 4 bodies of 2,000 cells or more, worst 6.83%.
+- **S4 not killed:** 44 tracks, 921 links; over 898 clean–clean tick pairs no link wrong and none missing; 17 links at
+  touches joined a patch to another body's or a merged patch (the last clause tested).
+- **S5 not killed:** all 10 bodies under one cell were one cell at their centre direction every tick, each one track over
+  all 25 ticks.
+
+**Post hoc** (`sky/sky1-posthoc.mjs`; outputs `sky/sky1-posthoc.txt` and, with the relief taken off,
+`sky/sky1-posthoc-smooth.txt`). τ: taking off the relief does not help (worst 7.41%). The error is the cells': ln s scatters
+0.2–0.8% about its five-tick line (a patch's edge cells come and go), and τ = 2/slope turns that scatter into
+σ·|τ|/(2√10) of τ, 3–9% for these bodies (true |τ| 30 to 150 ticks). The observed errors follow it (body 12, τ 34: 1.4%;
+bodies 1, 17, 32, |τ| 115–150: 4–7%). My threshold took no account of |τ|: a body far from contact changes its share by
+a few tenths of a percent a tick, near the cells' own scatter, so its τ is read worst. ω: without relief the patches of
+1,000 cells or more read within 0.96% (worst 2.86% with it), and the small ones (50–200 cells) scatter to 2.75% either
+way: S2's 1% was too tight for small patches (the centre's own cell scatter over a step of 6 to 20 cells) and, for large
+ones, the relief's turning profile moves the centre as MON found.
+
+**Reading.** The inscribed sweep's detections alone keep a sky of moving bodies apart: every clean link right, every
+body under a cell held as one cell and one track, identity lost only where patches touch or one hides another, and
+nothing moving when the world is scaled. What the detections give each body (ω, τ) is as good as its patch is many
+cells: ω to well under 1% for large smooth patches, τ to the cells' scatter times |τ| over the window, so a body far from
+contact (large |τ|) is read worst; the relief adds its turning profile to both.

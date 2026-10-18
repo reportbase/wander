@@ -319,6 +319,18 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   from the detections alone: ω, τ (a five-tick slope of ln s), the path angle; the referee; scale the world (no detection
   moves); "radius known" (1,737 km) writes distance and speed. `?t=0..31&smooth=1&k=<log10 k>&truth=1&known=1`; hook
   `window.__moon` (`detect`, `readout`, `paint`, `centre`, `moonOf`, `set`, `state`, `hud`). Not in the flying page.
+- `from-home.html`: **the face from home** (18 Oct 2026, Tom: "do we have both an inscribed and central sweep views of the
+  moon and. it is possible to have both?", "help me understand what this means?", then "create a demo to explain"; SPN R355;
+  CFH), a standalone page, plain canvas. A slice through MON's moon (body 3 on its great circle z = 0) on MON run 2's path in
+  the plane, 4096 rays over the quarter turn. Ranges (each ray's distance to its first surface point; the signal's speed the
+  bridge): every hit on the outline, the face exactly with the centre given, to a few percent with it fitted (a circle each
+  tick, a line through the centres), and the fitted track writes distance and speed. Silhouettes alone: the visual hull
+  in the moon's frame (kept between the run's two edge rays at every tick), containing the moon, tight where an edge grazed
+  it and loose elsewhere; its track given, or read from the detections (in the plane a width of two edges, coarse: the
+  hull lands off the moon). Panels: from home, at the moon, the moon's frame (drawn by the referee where everything truly
+  lies, + the readers' fitted centres), the painting round the moon. `?t=&ranges=0|1&hull=0|1&fit=1&smooth=1&k=<log10 k>`;
+  hook `window.__fromHome` (`detect`, `ticks`, `rangedTrack`, `silTrack`, `rangedPoints`, `hullOf`, `seenOf`, `touchedOf`,
+  `compare`, `centre`, `rOf`, `compute`, `set`, `state`, `last`, `hud`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -422,7 +434,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, recovering a body, one moon, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, recovering a body, one moon, the face from home, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -881,6 +893,24 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   then "yes"): OFS §9 after "Far off": a turn about the point seen from moves every direction alike, so only directions,
   the frame and the corner; a head's eye sits r off the axis, a turn Δ carrying it a chord 2r·sin(Δ/2), a baseline; the
   parallax is that translation, metres need r carried in; two eyes a baseline without motion.
+  **From one place: the outline is free, the face is carried in** (18 Oct, SPN R356; Tom: "ok, proceed with paper
+  updates", after CFH): OFS §9 after "Turning in place": a thing crossing the view gives its visual hull from the looks
+  alone (Laurentini 1994), up to scale; the face needs a range along each direction, an amount whose unit is the signal's
+  speed (the a₀ neither reader receives), so a ranging reader is a writer; or a second vantage. `physics.md` §2.4 has it.
+  **Cauchy is address, not payload, as a rule** (18 Oct, SPN R358; Tom: "that is not a small distinction. that is
+  everything."; "It would be well known, if it was know. we have done that search before."): OFS §7.2 "The rule, and a
+  test": a Cauchy variable is a direction, never an amount; find the turn, find the amount; spectroscopy's strength ×
+  profile (the Lorentzian the phase's uniform turn); a sum of Cauchys a relay of standpoints (SUM); §7.8's resonance and
+  Lévy's limit each given their turn (the phase's; Spitzer's Brownian landing). No new prior-art search (Tom).
+  **Once a Cauchy, always a Cauchy; what breaks it** (18 Oct, SPN R359): OFS §7.2: every operation on directions keeps
+  the family, moving only its point m + iγ (the standpoint); the normal law the counterpart among amounts; only an amount
+  entering breaks it (squaring, an edge, a scale mixture, an added amount as in a Voigt line, pooled standpoints, a
+  weight not the turn's); the tails, and so the horizon, go last.
+  **The reader's line, closed; a metaphor audit** (18 Oct, SPN R366; review 19, `plans/ofs-review-19.md`; Tom: "yes, do
+  both"): OFS §4 after Proposition 2: readings the closed half-arc of the projective line, home [1 : 0], horizon [0 : 1],
+  charts v/h and h/v, the reciprocal the exchange; the missing mean is the chart's (a bounded chart has one: the angle π/4,
+  x/(1 + x) ½), not the arc's. The audit changed four sentences (§3.7's rings and open arc, §10's elevation as a ring and
+  "one finger at a time").
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
@@ -1304,6 +1334,64 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   killed (distance 5.5% with R̄ carried in); post hoc (`mon/mon2-smooth.mjs`) a smooth moon passes all (τ 1.2%, distance
   0.05%): the relief's turning profile enters the share, so detections alone cannot tell approach from turning, and the
   amount carried in must be the silhouette's breadth. `moon.html` shows it.
+  `sky-plan.md` (+ `sky/sky.mjs`, 17 Oct; SPN R353, "the next test is a sky of 40 moving bodies"): 40 moving Levels
+  bodies (4 crossing pairs), one sweep of the whole wedge (2048², a sub-cell body lighting its centre cell), patches as
+  8-connected groups, a gated nearest-neighbour tracker on detections alone. Run 1: S1 (scaling), S4 (no wrong or missing
+  clean–clean link of 898; identity lost only at touches) and S5 (10 sub-cell bodies one cell, one track) not killed; S2
+  (ω 2.9%) and S3 (τ 6.8%) killed: post hoc (`sky/sky1-posthoc.mjs`) the cells' scatter, which τ carries in proportion to
+  |τ|, and the relief's turning profile for large patches' ω.
+  `lom-plan.md` (+ `lom/lom.mjs`, 17 Oct; SPN R354, "focus on cauchy to see if our cauchy insights have anything new to say
+  about classical results"): looming as a ratio, τ̂ = 1/r̂ on a smooth sphere's share, 4,000–40,000 repeats per τ = 10 …
+  10,000. Run 1: L1–L4 killed (the median identity fails across r̂ = 0; my straight approach's t³ term); post hoc
+  1/median(r̂) reads τ within 2.5% at CV 2.5, median(τ̂) 73% short. L5, the verdict, not killed: classical (Geary, the delta
+  method, Lutz–Kelker, Bailer-Jones); the framing restates it (one direction [r̂ : 1] on the projective line, the median
+  taken on the chart whose cut lies outside the readings).
+  `cfh-plan.md` (+ `cfh/cfh.mjs`, `cfh/cfh1-posthoc.mjs`, 18 Oct; SPN R355, "it is possible to have both?"): the central sweep
+  earned from home, on MON run 2's moon. Run 1: ranging (an amount per address, the signal's speed the bridge) gives the
+  face exactly with the centre given (C1 killed by my 2°, the address spacing) and to 4% rms with the centre fitted (C3), and
+  writes distance and speed to 0.25% (C2); silhouettes alone, the visual hull, contain the body and are tight on the rim to
+  about a cell (C4 killed by my 3%, a cell at the far ticks), with none of the face elsewhere; from detections alone 0.57 on
+  the rim (C5); unmoved by scaling (C6). The inscribed sweep alone earns the rim's outline, not the central painting.
+  `wrd-plan.md` (18 Oct; SPN R357, "it may be important if this is what readers actually do, not engineerd to do."): what
+  real readers do. Ranging by an emitted signal is writing, every range off by held speed / medium's speed. On Amichai et
+  al. 2021 (bats in heliox, 10–27% faster sound): run 1 (the text) every level read closer, no recalibration, the speed
+  held innate; W1, W2 untested in letter (no perceived distance with an interval), W3 killed at 27% (lift); the paper's
+  "equivalent ∼95 cm" is 1.3·(1 − 0.27), the echo gives 1.024 m. Run 2 (the factor from Dataset S1, predictions committed)
+  not run: PMC's file link is behind a proof-of-work page, pnas.org unreachable; Tom could supply the file.
+  `sum-plan.md` (+ `sum/sum.py`, 18 Oct; SPN R358, "cauchy is address, not payload … that is everything"): a sum of
+  Cauchys read as addresses. The guess (tangent addition) withdrawn before running (scale 1 against the sum's 2). A sum is
+  a relay of standpoints: a uniform turn from γ₁ + γ₂ landed at height γ₂ and turned again lands as one turn from
+  γ₁ + γ₂; the heights and feet (m + iγ) add, the sum stays a direction. Run 1 killed by my tolerances (under the
+  sampling error); run 2 (in standard errors) nothing killed; the stable limit's turn is Spitzer's Brownian landing.
+  `adr-plan.md` (+ `adr/adr.py`, 18 Oct; SPN R360, "cauchy addresses are robust, can be combined, they are a kind of
+  primititive"): the address as a primitive, z = m + iγ (foot and height). Run 1: combination linear in z, Möbius maps
+  move z, the distance hyperbolic (its unit along the height the level, ln 2 a doubling), the height a built-in level of
+  detail (mode k kept while kγ < 1), relays grow linearly and averaging gains nothing; A2(c) killed by my reasoning (the
+  quartile read survives a Möbius pole, consistent for g(z); unlike LOM's normal amounts, which lost 73%).
+  `tim-plan.md` (+ `tim/tim.py`, 18 Oct; SPN R361, "How does cauchy handle time."): exact and seeded, nothing killed. Time
+  turns z (e^{izt}, the Lorentzian a damped phasor), raises the standpoint (C(0, t)), and the clock is hidden (Spitzer's
+  landing the same at every Brownian rate, the passage times as 1/D, no mean); order and ratios free, durations amounts,
+  a speed the bridge. Real data, one pair: Na D2's width by spectroscopy (Oates et al. 1996) against its decay in time
+  (Volz et al. 1996), Γ·τ = 1.0010 ± 0.0025. draw's REC known beforehand.
+  `rea-plan.md` (18 Oct; SPN R362, Tom: "Every previous cauchy based conclusion is now suspect, at a miniumum. Those results
+  will have to be re-analyzed"): the re-analysis's first pass on HZT's 58 entries (claim, layer, turn, amount, impact U/R/D/F,
+  test), a blind classifier and Claude's check; predictions E1–E6 first. Theorems and measurements stand; conclusions about
+  the payload drawn from the Cauchy are suspect (Claude's "the system's own" for resonances withdrawn: the phase's turn).
+  R362 also: the clock is the head's rate ω, which cancels from every reading; the height γ is not a rate; a speed on the
+  line is γω.
+  Run 1 (`plans/rea/classification.md`, blind, then checked): U 25, R 31, D 2 (H53 Lévy foraging, μ = 2 the law of
+  uniform headings ended by edges; H54 seed dispersal, the scale the release height), F 0; E1 killed in its letter (H52 has
+  no Cauchy), E3 killed, E2, E4, E5 not killed, E6 undecided. Next: the D entries' sources and tests, and a second list
+  aimed at conclusions about the payload.
+  R363 (Tom: "Regardless, any cauchy based result will have to be reframed"): every Cauchy result restated whatever its
+  class, as address, turn, standpoint z, payload and the result; `plans/rea/reframed.md` for the 58 (widths are heights, a
+  rate; strengths the payload; a reader's scale is H; breakers amounts entering).
+  R364 (Tom: "the impact might minor … that kind of conclusion can only be from the community itself. Lets just keep this
+  in our pocket."): OFS makes no claim about other work's results or their impact; REA stays in the plans and SPN.
+  R365 (Tom: "Lets not worry about phsyics in this paper. but add any useful comments from chatgpt to our pocket."):
+  `plans/rea/linewidth-note.md`, the attribution as the error (numbers kept, attribution corrected), ChatGPT's comments
+  (generate or reveal; reconstruct the inference), the pole revealed and the Lorentzian its trace on the reader's line;
+  the run not taken.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -1622,6 +1710,10 @@ In short:
   39. **moon.html:** the detections unmoved by ×10⁻³ and ×10³; ω read from them to 1%; the smooth moon's τ to 8% and, its
       radius known, its distance to 2%; the painting R/GM the same under ×7 while its radii move by 7; more of the face
       painted over the pass than at once.
+
+  40. **from-home.html:** ranged points on the outline to 10⁻⁹ and the face from them at correlation 0.999 or more with the
+      centre given; the hull containing the moon (within 0.03 of its radius) and more than 5 times as far off away from where
+      an edge grazed it; ×10³ moving no detection or hull, the ranges by k; with the centre fitted, distance and speed to 1%.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

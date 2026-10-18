@@ -1,0 +1,10 @@
+A1 exact: characteristic functions differ by at most 3.57e-102; sample read 4.9693 + 5.2425i against 4.95 + 5.25i (3 se = 0.0247)
+A2 (a) the law of g(X) against C(g(z)): 1.34e-51; (b) the quartile read under x → 3x − 2 off by 1.11e-16; (c) under g, the quartile read 0.6416 + 0.3122i against g(read) 0.6419 + 0.3126i, 0.3 se apart; the likelihood read 0.641855 + 0.312693i against g(mle) 0.641855 + 0.312693i, relative 8.6e-14 (true g(z) = 0.6424+0.3103j)
+A3 Fisher information against I/(2γ²): 1.34e-51; d_H(i, 2i) − ln 2 = 0.0; Möbius invariance 0.0
+A4 each mode multiplied by e^(−kγ): worst 9.86e-32; modes kept above 1/e at γ = 2^-k, k = 0…7: [0, 1, 2, 3, 4, 5, 6, 7]
+A5 half-IQR of the relay and of the mean, against Gaussian sd: n=1: relay 0.996, mean 1.003; Gaussian sum 0.997, mean 0.9965; n=4: relay 4.021, mean 0.998; Gaussian sum 2.002, mean 0.5004; n=16: relay 15.941, mean 1.004; Gaussian sum 4.002, mean 0.2501
+A1 not killed
+A2 KILLED
+A3 not killed
+A4 not killed
+A5 not killed

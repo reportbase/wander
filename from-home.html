@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The face from home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    from-home.html: the central sweep earned from home (18 October 2026). Tom asked: "do we have both an inscribed and
+    central sweep views of the moon and. it is possible to have both?", then "yes" to a run, then "help me understand what
+    this means?", then "create a demo to explain". CFH (plans/cfh-plan.md, cfh/cfh.mjs); SPN R355. A standalone page.
+
+    The page draws the plane through the middle of MON's moon (Levels body 3's waves, every band, on the great circle z = 0),
+    so it computes at once and shows what the 3d run measured. Keep the case.
+      - Home O at the corner of the plane's quarter turn (h → x, v → y). The moon's centre moves in a straight line, from 40
+        out at 30°, speed 1 a tick, 20° off straight toward home, 32 ticks (d 40 to 15), as MON run 2.
+      - The inscribed sweep: 4096 rays evenly over the quarter turn. A ray detected when it meets the moon; in the plane the
+        detected rays are one run of addresses, its two ends the silhouette's edges.
+      - Ranges: each detected ray also carries the distance to its first surface point (an amount; the bridge is the
+        signal's speed). With the centre given, every ranged point is on the outline; fitted (a circle each tick, then a
+        straight line through the centres), the face to a few percent; and the fitted track writes distance and speed.
+      - Silhouettes alone: the visual hull in the moon's frame, every point kept that lay between the two edge rays at
+        every tick so far. It contains the moon, touches it where an edge ray grazed it, and bridges every hollow no edge
+        touched. Its track is given, or read from the detections alone (direction the run's middle, distance 1/width in a
+        unit d(0) = 1). Scaling the world moves none of it.
+    Links: ?t=0..31&ranges=0|1&hull=0|1&fit=1&smooth=1&k=<log10 k>. Test hook: window.__fromHome.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1060px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 78ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 200px; min-width: 0; accent-color: var(--gold) }
+    label { color: var(--dim) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; aspect-ratio: 1 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px; overflow-x: auto }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .violet { color: var(--violet) }
+    a { color: var(--teal) }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 14px }
+    @media (max-width: 560px) { .two { grid-template-columns: 1fr } }
+    .two .panel { margin: 0 }
+    .two h2 { font: 400 19px/1.2 'DM Serif Display', Georgia, serif; margin: 0 0 4px }
+    .two p { margin: 0; color: var(--dim); font-size: 13px }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The face from home</h1>
+    <p class="lede">Standing at home, every ray of your sweep reports one thing: did it meet the moon. That is the
+    inscribed sweep, directions only. The moon's face, its hills and hollows, is an amount along each direction: how far
+    out the surface is. Can home earn it? Two ways, shown here on a slice through the moon's middle as it crosses the sky.</p>
+    <div class="two">
+        <div class="panel"><h2 class="teal">Ranges: looking plus a known signal speed</h2><p>Each ray also brings back how far
+        it went before it hit, as radar or lidar does. Every hit is then a point on the moon, in a real unit. The face comes
+        out, and so do the moon's distance and speed: the signal's speed is an amount carried in, so ranging writes.</p></div>
+        <div class="panel"><h2 class="violet">Silhouettes: looking alone</h2><p>Only the patch's two edges each tick. As the
+        line of sight turns, the edges wrap the moon from many sides; keep what stayed between them every time (the visual
+        hull). It hugs the moon where an edge grazed it and bridges every hollow no edge touched. Up to size: scale the world
+        and nothing moves.</p></div>
+    </div>
+    <div class="panel">
+        <div class="row">
+            <button id="play">play</button>
+            <label for="t">tick</label><input id="t" type="range" min="0" max="31" step="1" value="31"><output id="to"></output>
+        </div>
+        <div class="row" style="margin-top:6px">
+            <button id="ranges" class="on">ranges</button><button id="hull" class="on">silhouettes</button>
+            <button id="fit">centre from the readings</button><button id="smooth">smooth moon</button>
+            <label for="k">scale the world</label><input id="k" type="range" min="-3" max="3" step="0.5" value="0"><output id="ko"></output>
+        </div>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="sky" width="560" height="560"></canvas><p class="cap">From home: the quarter turn and the moon's
+            path. The rays that meet the moon this tick fan out from home; <span class="gold">gold</span>, its two edges.</p></div>
+            <div><canvas id="near" width="560" height="560"></canvas><p class="cap">At the moon: every other ray that meets it.
+            With ranges each ends at its first surface point (<span class="teal">teal</span>); the
+            <span class="gold">edges</span> graze it and go on.</p></div>
+            <div><canvas id="frame" width="560" height="560"></canvas><p class="cap">In the moon's own frame, every tick so
+            far: <span class="teal">ranged points</span>; the <span class="gold">edge rays</span> and the
+            <span class="violet">hull</span> they leave; the true outline dashed; all drawn by the referee where it really lies, with + where each reader puts the centre when it fits it.</p></div>
+            <div><canvas id="chart" width="560" height="560"></canvas><p class="cap">The face as a painting: radius over its
+            geometric mean, round the moon. White the truth, shaded where it has been seen from home; teal from ranges,
+            violet from the hull.</p></div>
+        </div>
+        <div id="hud"></div>
+    </div>
+    <p class="cap">The test is CFH (run 1, in three dimensions on the whole moon: ranges with the centre given give the face
+    exactly, with it fitted to 4% rms, and write distance and speed to 0.25%; the hull contains the moon, is tight on the rim
+    to about one address and keeps none of the face elsewhere; nothing in it moves when the world is scaled). Other demos:
+    <a href="moon.html">one moon</a>, <a href="recover.html?step=7">the inscribed reader among many bodies</a>,
+    <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+const RAD = Math.PI / 180;
+const add = (a, b) => [a[0] + b[0], a[1] + b[1]], sub = (a, b) => [a[0] - b[0], a[1] - b[1]], mul = (a, k) => [a[0] * k, a[1] * k];
+const len = a => Math.hypot(a[0], a[1]), dot = (a, b) => a[0] * b[0] + a[1] * b[1];
+// Levels body 3 (games.html bodyOf, copied as it is), read on its great circle z = 0
+function bodyOf(idx){
+    let s = (Math.imul(idx + 1, 2654435761) ^ 0x9e3779b9) >>> 0;
+    const rnd = () => (s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296, waves = [];
+    for (let b = 0; b < 4; b++){ const m = 0.3 + 1.4 * rnd();
+        for (let j = 0; j < 5; j++){ const z = rnd() * 2 - 1, a = rnd() * 2 * Math.PI, q = Math.sqrt(1 - z * z);
+            waves.push({ b, f: 3 * 2 ** b, A: 0.07 / 2 ** b * m, d: [q * Math.cos(a), z, q * Math.sin(a)], ph: rnd() * 2 * Math.PI }); } }
+    return { waves };
+}
+const WAVES = bodyOf(3).waves; let SA = 0; for (const w of WAVES) SA += w.A;
+const rOf = (phi, smooth) => { if (smooth) return 0.5; const c = Math.cos(phi), s = Math.sin(phi); let r = 0;
+    for (const w of WAVES) r += w.A * Math.cos(w.f * (c * w.d[0] + s * w.d[1]) + w.ph); return 0.5 * (1 + r); };
+const NPHI = 720, PHIS = Array.from({ length: NPHI }, (_, i) => (i + 0.5) / NPHI * 2 * Math.PI);
+// the path, as MON run 2's in the plane
+const U0 = [Math.cos(30 * RAD), Math.sin(30 * RAD)], TOO = mul(U0, -1), G = -20 * RAD;   // turned so the moon climbs toward v (30° to 74°)
+const VEL = [TOO[0] * Math.cos(G) - TOO[1] * Math.sin(G), TOO[0] * Math.sin(G) + TOO[1] * Math.cos(G)];
+const centre = t => add(mul(U0, 40), mul(VEL, t)), T = 32;
+// the inscribed sweep: NA rays evenly over the quarter turn
+const NA = 4096, CELL = Math.PI / 2 / NA, rayDir = j => { const a = (j + 0.5) * CELL; return [Math.cos(a), Math.sin(a)]; };
+const cellOf = p => { const a = Math.atan2(p[1], p[0]); return a < 0 || a >= Math.PI / 2 ? -1 : Math.floor(a / CELL); };
+function moon(t, k, smooth){ const c = mul(centre(t), k), rb = 0.5 * k * (1 + (smooth ? 0 : SA));
+    const inside = q => { const w = sub(q, c), l = len(w); return l < 1e-300 || l < k * rOf(Math.atan2(w[1], w[0]), smooth) * (1 - 1e-12); };
+    return { c, rb, inside, k, smooth }; }
+function enter(F, d){ const tc = dot(F.c, d), q2 = dot(F.c, F.c) - tc * tc; if (q2 >= F.rb * F.rb) return null;
+    const hw = Math.sqrt(F.rb * F.rb - q2), t0 = Math.max(0, tc - hw), t1 = tc + hw, at = s => F.inside(mul(d, s)); let prev = t0;
+    for (let i = 1; i <= 256; i++){ const s = t0 + (t1 - t0) * i / 256;
+        if (at(s)){ let a = prev, b = s; for (let n = 0; n < 60; n++){ const m = 0.5 * (a + b); if (at(m)) b = m; else a = m; } return b; } prev = s; }
+    return null; }
+// one tick: the detected rays (one run in the plane) and, for ranging, each one's distance
+function detect(t, k = 1, smooth = false){ const F = moon(t, k, smooth), dc = len(F.c), ac = Math.atan2(F.c[1], F.c[0]), al = Math.asin(F.rb / dc);
+    const j0 = Math.max(0, Math.floor((ac - al) / CELL) - 1), j1 = Math.min(NA - 1, Math.ceil((ac + al) / CELL) + 1), hits = [];
+    for (let j = j0; j <= j1; j++){ const e = enter(F, rayDir(j)); if (e !== null) hits.push({ j, rho: e }); }
+    return { t, hits, lo: hits[0].j, hi: hits.at(-1).j, F }; }
+// fits
+function solve3(A, b){ const M = A.map((r, i) => [...r, b[i]]);
+    for (let c = 0; c < 3; c++){ let p = c; for (let r = c + 1; r < 3; r++) if (Math.abs(M[r][c]) > Math.abs(M[p][c])) p = r; [M[c], M[p]] = [M[p], M[c]];
+        for (let r = 0; r < 3; r++) if (r !== c){ const f = M[r][c] / M[c][c]; for (let q = c; q <= 3; q++) M[r][q] -= f * M[c][q]; } }
+    return M.map((r, i) => r[3] / r[i]); }
+function circleFit(pts){ const m = mul(pts.reduce(add, [0, 0]), 1 / pts.length), A = [[0, 0, 0], [0, 0, 0], [0, 0, 0]], b = [0, 0, 0];
+    for (const p of pts){ const q = sub(p, m), row = [2 * q[0], 2 * q[1], 1], y = dot(q, q); for (let i = 0; i < 3; i++){ b[i] += row[i] * y; for (let j = 0; j < 3; j++) A[i][j] += row[i] * row[j]; } }
+    const x = solve3(A, b); return add(m, [x[0], x[1]]); }
+function lineFit(ts, cs){ const n = ts.length, tm = ts.reduce((a, b) => a + b, 0) / n, cm = mul(cs.reduce(add, [0, 0]), 1 / n);
+    if (n < 2) return { at: () => cm, v: [0, 0] };
+    let stt = 0, b = [0, 0]; ts.forEach((t, i) => { stt += (t - tm) ** 2; b = add(b, mul(sub(cs[i], cm), t - tm)); });
+    const v = mul(b, 1 / stt); return { at: t => add(cm, mul(v, t - tm)), v }; }
+// what home holds up to tick t
+const CACHE = new Map();
+function ticks(t, k, smooth){ const key = `${k}|${smooth}`; if (!CACHE.has(key)) CACHE.set(key, []); const L = CACHE.get(key);
+    for (let n = L.length; n <= t; n++) L.push(detect(n, k, smooth)); return L.slice(0, t + 1); }
+function rangedTrack(D){ const ts = D.map(d => d.t), cs = D.map(d => circleFit(d.hits.map(h => mul(rayDir(h.j), h.rho)))); return lineFit(ts, cs); }
+function silTrack(D){ const w0 = D[0].hi - D[0].lo + 1, pts = D.map(d => { const a = (d.lo + d.hi + 1) / 2 * CELL, w = d.hi - d.lo + 1; return mul([Math.cos(a), Math.sin(a)], w0 / w); });
+    return { L: lineFit(D.map(d => d.t), pts), size: w0 / 2 * CELL }; }   // size: the moon's radius in the unit d(0) = 1, as its first width reads it
+// the ranged points in the moon's frame, as radius by angle round its centre
+function rangedPoints(D, track){ const P = []; D.forEach(d => { const c = track(d.t); d.hits.forEach(h => { const w = sub(mul(rayDir(h.j), h.rho), c); P.push({ phi: (Math.atan2(w[1], w[0]) + 2 * Math.PI) % (2 * Math.PI), r: len(w), w }); }); });
+    return P; }
+// the visual hull along each angle round the centre: the largest r kept at every tick (the kept set is convex, so bisect)
+function hullOf(D, track, scale){ const cs = D.map(d => track(d.t));
+    const kept = x => { for (let n = 0; n < D.length; n++){ const j = cellOf(add(cs[n], x)); if (j < D[n].lo || j > D[n].hi) return false; } return true; };
+    return PHIS.map(phi => { const u = [Math.cos(phi), Math.sin(phi)]; if (!kept([0, 0])) return 0; let a = 0, b = 3 * scale;
+        if (kept(mul(u, b))) return b; for (let i = 0; i < 40; i++){ const m = 0.5 * (a + b); if (kept(mul(u, m))) a = m; else b = m; } return a; }); }
+// seen from home at some tick: the angles whose surface point is the first thing met along home's ray to it
+function seenOf(D, k, smooth){ return PHIS.map(phi => D.some(d => { const F = d.F, p = add(F.c, mul([Math.cos(phi), Math.sin(phi)], k * rOf(phi, smooth))), L = len(p), e = enter(F, mul(p, 1 / L)); return e !== null && e >= L * (1 - 1e-9); })); }
+// the edge rays touch the moon near the run's end rays' first hits
+function touchedOf(D, track){ const T = new Set(); D.forEach(d => { const c = track(d.t); for (const h of [d.hits[0], d.hits.at(-1)]){ const w = sub(mul(rayDir(h.j), h.rho), c);
+    const i = Math.floor(((Math.atan2(w[1], w[0]) + 2 * Math.PI) % (2 * Math.PI)) / (2 * Math.PI) * NPHI); for (let q = -2; q <= 2; q++) T.add((i + q + NPHI) % NPHI); } }); return T; }
+function nearestR(P){ const B = Array.from({ length: NPHI }, () => null), tol = 1 * RAD;
+    for (const p of P){ const i = Math.floor(p.phi / (2 * Math.PI) * NPHI) % NPHI; if (!B[i] || Math.abs(p.phi - PHIS[i]) < Math.abs(B[i].phi - PHIS[i])) B[i] = p; }
+    return PHIS.map((phi, i) => { let best = null; for (let q = -2; q <= 2; q++){ const p = B[(i + q + NPHI) % NPHI]; if (!p) continue;
+        let d = Math.abs(p.phi - phi); d = Math.min(d, 2 * Math.PI - d); if (d <= tol && (!best || d < best.d)) best = { d, r: p.r }; } return best ? best.r : 0; }); }
+function compare(rad, truth, ids){ ids = ids.filter(i => rad[i] > 0); if (ids.length < 3) return null;
+    const g = a => Math.exp(ids.reduce((s, i) => s + Math.log(a[i]), 0) / ids.length), ga = g(rad), gt = g(truth);
+    const p = ids.map(i => rad[i] / ga), q = ids.map(i => truth[i] / gt), mp = p.reduce((a, b) => a + b) / p.length, mq = q.reduce((a, b) => a + b) / q.length;
+    let sxy = 0, sxx = 0, syy = 0, se = 0; p.forEach((x, n) => { sxy += (x - mp) * (q[n] - mq); sxx += (x - mp) ** 2; syy += (q[n] - mq) ** 2; se += (x - q[n]) ** 2; });
+    return { n: ids.length, rms: Math.sqrt(se / p.length), corr: sxx > 0 ? sxy / Math.sqrt(sxx * syy) : 0, ga, gt }; }
+
+// ── state ──
+const S = { t: 31, ranges: true, hull: true, fit: false, smooth: false, lk: 0 };
+{ const q = new URLSearchParams(location.search);
+  if (q.has('t')) S.t = Math.max(0, Math.min(T - 1, +q.get('t') | 0)); if (q.get('ranges') === '0') S.ranges = false; if (q.get('hull') === '0') S.hull = false;
+  if (q.get('fit') === '1') S.fit = true; if (q.get('smooth') === '1') S.smooth = true; if (q.has('k')) S.lk = Math.max(-3, Math.min(3, +q.get('k') || 0)); }
+function compute(){ const k = 10 ** S.lk, D = ticks(S.t, k, S.smooth), truthC = t => mul(centre(t), k);
+    const rT = S.fit ? rangedTrack(D) : null, sT = S.fit ? silTrack(D) : null;
+    const rtrack = S.fit ? rT.at : truthC, strack = S.fit ? sT.L.at : truthC, sscale = S.fit ? sT.size : 0.5 * k;
+    const truth = PHIS.map(phi => k * rOf(phi, S.smooth)), seen = seenOf(D, k, S.smooth);
+    const P = rangedPoints(D, rtrack), Pr = nearestR(P), H = hullOf(D, strack, sscale), touched = touchedOf(D, truthC);   // the referee's: where an edge truly grazed
+    const seenIds = PHIS.map((_, i) => i).filter(i => seen[i]), tIds = seenIds.filter(i => touched.has(i)), fIds = seenIds.filter(i => !touched.has(i));
+    let onOutline = 0; if (!S.fit) for (const p of P) onOutline = Math.max(onOutline, Math.abs(p.r - k * rOf(p.phi, S.smooth)) / (0.5 * k));
+    return { k, D, truth, seen, P, Pr, H, touched, rT, sT, strack, rtrack, sscale, onOutline,
+        cR: compare(Pr, truth, seenIds), cHt: compare(H, truth, tIds), cHf: compare(H, truth, fIds), cH: compare(H, truth, seenIds), seenIds }; }
+
+// ── drawing ──
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const C = { gold: css('--gold'), teal: css('--teal'), violet: css('--violet'), dim: css('--dim'), bright: css('--bright'), red: css('--red') };
+function drawSky(R){ const cv = document.getElementById('sky'), g = cv.getContext('2d'), W = cv.width, m = 34, sc = (W - 2 * m) / 44, X = p => [m + p[0] * sc, W - m - p[1] * sc];
+    g.clearRect(0, 0, W, W); g.strokeStyle = 'rgba(255,255,255,0.12)'; g.lineWidth = 1;
+    for (const r of [10, 20, 30, 40]){ g.beginPath(); g.arc(m, W - m, r * sc, -Math.PI / 2, 0); g.stroke(); }
+    g.beginPath(); g.moveTo(...X([0, 44])); g.lineTo(...X([0, 0])); g.lineTo(...X([44, 0])); g.stroke();
+    g.setLineDash([2, 4]); g.strokeStyle = C.gold; g.globalAlpha = 0.5; g.beginPath(); g.moveTo(...X([0, 0])); g.lineTo(...X([31, 31])); g.stroke(); g.setLineDash([]); g.globalAlpha = 1;
+    g.strokeStyle = 'rgba(255,255,255,0.25)'; g.beginPath(); for (let t = 0; t < T; t++){ const p = X(centre(t)); t ? g.lineTo(...p) : g.moveTo(...p); } g.stroke();
+    const d = R.D.at(-1), k = R.k; g.fillStyle = 'rgba(140,230,205,0.10)'; g.beginPath(); g.moveTo(...X([0, 0]));
+    const far = len(centre(S.t)) + 3; g.lineTo(...X(mul(rayDir(d.lo), far))); g.lineTo(...X(mul(rayDir(d.hi), far))); g.closePath(); g.fill();
+    g.strokeStyle = C.gold; g.lineWidth = 1.2; for (const j of [d.lo, d.hi]){ g.beginPath(); g.moveTo(...X([0, 0])); g.lineTo(...X(mul(rayDir(j), far))); g.stroke(); }
+    const c = X(centre(S.t)); g.fillStyle = C.bright; g.beginPath(); g.arc(c[0], c[1], 4, 0, 2 * Math.PI); g.fill();
+    g.fillStyle = C.dim; g.font = '12px DM Mono, monospace'; g.fillText('home', m - 4, W - m + 16); g.fillText('h', W - m, W - m + 16); g.fillText('v', m - 16, m + 8);
+    g.fillText(`tick ${S.t}: the moon ${(len(centre(S.t))).toFixed(1)} out (the referee's), its run ${d.hi - d.lo + 1} rays wide`, 10, 18);
+    g.fillStyle = C.gold; g.globalAlpha = 0.7; g.fillText('the corner, h = v', X([30, 30])[0] - 120, X([30, 30])[1] - 6); g.globalAlpha = 1; }
+function drawNear(R){ const cv = document.getElementById('near'), g = cv.getContext('2d'), W = cv.width, d = R.D.at(-1), F = d.F, k = R.k, sc = W / (2.6 * k), c = F.c;
+    const X = p => [W / 2 + (p[0] - c[0]) * sc, W / 2 - (p[1] - c[1]) * sc]; g.clearRect(0, 0, W, W);
+    g.fillStyle = 'rgba(230,228,238,0.16)'; g.strokeStyle = 'rgba(230,228,238,0.6)'; g.beginPath();
+    PHIS.forEach((phi, i) => { const p = X(add(c, mul([Math.cos(phi), Math.sin(phi)], k * rOf(phi, S.smooth)))); i ? g.lineTo(...p) : g.moveTo(...p); }); g.closePath(); g.fill(); g.stroke();
+    const dc = len(c), back = dc - 1.6 * k; g.lineWidth = 1;
+    d.hits.forEach((h, n) => { const u = rayDir(h.j), edge = n === 0 || n === d.hits.length - 1; if (!edge && n % 2) return;
+        g.strokeStyle = edge ? C.gold : 'rgba(140,230,205,0.35)'; g.beginPath(); g.moveTo(...X(mul(u, back))); g.lineTo(...X(mul(u, edge ? dc + 1.6 * k : h.rho))); g.stroke();
+        if (S.ranges){ const p = X(mul(u, h.rho)); g.fillStyle = C.teal; g.beginPath(); g.arc(p[0], p[1], 2.2, 0, 2 * Math.PI); g.fill(); } });
+    g.fillStyle = C.dim; g.font = '12px DM Mono, monospace'; g.fillText('toward home ↙', 10, W - 12);
+    g.fillText(S.ranges ? `${d.hits.length} rays met, each with its range` : `${d.hits.length} rays met: directions only`, 10, 18); }
+function drawFrame(R){ const cv = document.getElementById('frame'), g = cv.getContext('2d'), W = cv.width; g.clearRect(0, 0, W, W);
+    // drawn by the referee, about the moon's true centre and at its true size: every reading put where it really lies
+    const k = R.k, sc = W / (2.8 * k), X = p => [W / 2 + p[0] * sc, W / 2 - p[1] * sc], D0 = 40 * k, ct = t => mul(centre(t), k);
+    const sAt = t => S.fit ? mul(R.strack(t), D0) : ct(t), rAt = t => S.fit ? R.rtrack(t) : ct(t);   // the reader's centres, in the world
+    if (S.hull){ g.strokeStyle = 'rgba(212,160,82,0.18)'; g.lineWidth = 1;
+        R.D.forEach(d => { const c = ct(d.t), dc = len(c); for (const j of [d.lo, d.hi]){ const u = rayDir(j); g.beginPath(); g.moveTo(...X(sub(mul(u, dc - 3 * k), c))); g.lineTo(...X(sub(mul(u, dc + 3 * k), c))); g.stroke(); } });
+        const off = sub(sAt(S.t), ct(S.t)), hs = S.fit ? D0 : 1;
+        g.fillStyle = 'rgba(181,156,240,0.18)'; g.strokeStyle = C.violet; g.lineWidth = 1.6; g.beginPath();
+        PHIS.forEach((phi, i) => { const p = X(add(off, mul([Math.cos(phi), Math.sin(phi)], R.H[i] * hs))); i ? g.lineTo(...p) : g.moveTo(...p); }); g.closePath(); g.fill(); g.stroke();
+        if (S.fit) cross(g, X(off), C.violet); }
+    g.setLineDash([3, 3]); g.strokeStyle = 'rgba(230,228,238,0.75)'; g.lineWidth = 1; g.beginPath();
+    PHIS.forEach((phi, i) => { const p = X(mul([Math.cos(phi), Math.sin(phi)], R.truth[i])); i ? g.lineTo(...p) : g.moveTo(...p); }); g.closePath(); g.stroke(); g.setLineDash([]);
+    if (S.ranges){ g.fillStyle = C.teal; R.D.forEach(d => { const c = ct(d.t); d.hits.forEach((h, n) => { if (n % 2) return; const p = X(sub(mul(rayDir(h.j), h.rho), c)); g.fillRect(p[0] - 1, p[1] - 1, 2, 2); }); });
+        if (S.fit) cross(g, X(sub(rAt(S.t), ct(S.t))), C.teal); }
+    const toHome = mul(centre(S.t), -1 / len(centre(S.t))); g.strokeStyle = C.dim; g.beginPath(); g.moveTo(...X(mul(toHome, 0.9 * k))); g.lineTo(...X(mul(toHome, 1.25 * k))); g.stroke();
+    g.fillStyle = C.dim; g.font = '12px DM Mono, monospace'; g.fillText('home now', ...X(mul(toHome, 1.3 * k)));
+    g.fillText(S.fit ? 'centres fitted from the readings: + where each reader puts it' : 'centre given (the referee\'s)', 10, 18); }
+function cross(g, p, col){ g.strokeStyle = col; g.lineWidth = 2; g.beginPath(); g.moveTo(p[0] - 7, p[1]); g.lineTo(p[0] + 7, p[1]); g.moveTo(p[0], p[1] - 7); g.lineTo(p[0], p[1] + 7); g.stroke(); }
+function drawChart(R){ const cv = document.getElementById('chart'), g = cv.getContext('2d'), W = cv.width, m = 34; g.clearRect(0, 0, W, W);
+    const lo = 0.6, hi = 1.4, X = i => m + i / NPHI * (W - 2 * m), Y = v => W - m - (v - lo) / (hi - lo) * (W - 2 * m);
+    g.fillStyle = 'rgba(255,255,255,0.06)'; R.seen.forEach((s, i) => { if (s) g.fillRect(X(i), m, (W - 2 * m) / NPHI + 0.5, W - 2 * m); });
+    g.strokeStyle = 'rgba(255,255,255,0.12)'; for (const v of [0.8, 1, 1.2]){ g.beginPath(); g.moveTo(m, Y(v)); g.lineTo(W - m, Y(v)); g.stroke(); }
+    const gm = ids => Math.exp(ids.reduce((s, i) => s + Math.log(R.truth[i]), 0) / ids.length), gt = R.seenIds.length ? gm(R.seenIds) : 0.5 * R.k;
+    g.strokeStyle = C.bright; g.lineWidth = 1.4; g.beginPath(); R.truth.forEach((r, i) => { const p = [X(i), Y(r / gt)]; i ? g.lineTo(...p) : g.moveTo(...p); }); g.stroke();
+    if (S.hull && R.cH){ g.strokeStyle = C.violet; g.lineWidth = 1.4; g.beginPath(); let on = false;
+        R.H.forEach((r, i) => { if (!R.seen[i]){ on = false; return; } const p = [X(i), Y(Math.min(hi, r / R.cH.ga))]; on ? g.lineTo(...p) : g.moveTo(...p); on = true; }); g.stroke(); }
+    if (S.ranges && R.cR){ g.fillStyle = C.teal; R.Pr.forEach((r, i) => { if (r > 0 && R.seen[i]) g.fillRect(X(i) - 1, Y(r / R.cR.ga) - 1, 2.4, 2.4); }); }
+    g.fillStyle = C.dim; g.font = '12px DM Mono, monospace'; for (const v of [0.8, 1, 1.2]) g.fillText(v.toFixed(1), 2, Y(v) + 4);
+    g.fillText('0°', m, W - m + 16); g.fillText('angle round the moon', W / 2 - 70, W - m + 16); g.fillText('360°', W - m - 26, W - m + 16);
+    g.fillText(`seen from home so far: ${(100 * R.seenIds.length / NPHI).toFixed(0)}% of the way round`, 10, 18); }
+function hudOf(R){ const L = [], pct = x => (100 * x).toFixed(2) + '%', f = c => c ? `rms ${c.rms.toFixed(3)}, correlation ${c.corr.toFixed(3)} (${c.n} angles)` : '—';
+    const tc = centre(S.t), dTrue = R.k * len(tc);
+    if (S.ranges){ L.push(`RANGES (the signal's speed carried in)`);
+        if (!S.fit) L.push(`  centre given: ${R.P.length} ranged points, each on the outline to ${R.onOutline.toExponential(1)} of the radius`);
+        else { const e = R.rT.at(S.t), sp = len(R.rT.v); L.push(`  centre fitted (a circle each tick, a line through them): off the true centre by ${(len(sub(e, mul(tc, R.k))) / (0.5 * R.k)).toFixed(3)} of the radius`);
+            L.push(`  it writes: distance ${len(e).toPrecision(5)} (true ${dTrue.toPrecision(5)}, ${pct(Math.abs(len(e) / dTrue - 1))} off); speed ${S.t > 0 ? sp.toPrecision(5) : '—'} a tick (true ${R.k.toPrecision(3)})`); }
+        L.push(`  the face, where seen: ${f(R.cR)}`); }
+    if (S.hull){ L.push(`SILHOUETTES ALONE (directions only)`);
+        if (S.fit){ const sp = len(R.sT.L.v), off = len(sub(mul(R.sT.L.at(S.t), 40 * R.k), mul(tc, R.k))) / (0.5 * R.k);
+            L.push(`  track from the detections alone, in the unit d(0) = 1: speed ${S.t > 0 ? sp.toFixed(5) : '—'} a tick (true ${(1 / 40).toFixed(5)}); no metres without an amount`);
+            L.push(`  its centre off the true one by ${off.toFixed(2)} of the moon's radius: in the plane the width is two edges, so the distance is coarse, and the hull lands off the moon`); }
+        L.push(`  the hull where an edge grazed the moon: ${f(R.cHt)}`);
+        L.push(`  the hull on the rest of the face seen:    ${f(R.cHf)}`); }
+    L.push(`scale the world ×${R.k >= 100 || R.k < 0.01 ? R.k.toExponential(0) : R.k.toPrecision(3)}: ${S.lk === 0 ? 'the detections as made' : `${diffK(R)} detections changed; the ranges ×k`}`);
+    return L.join('\n'); }
+function diffK(R){ const A = ticks(S.t, 1, S.smooth); let n = 0; A.forEach((a, i) => { const b = R.D[i]; if (a.lo !== b.lo || a.hi !== b.hi || a.hits.length !== b.hits.length) n++; }); return n; }
+let LAST = null;
+function render(){ const R = compute(); LAST = R; drawSky(R); drawNear(R); drawFrame(R); drawChart(R);
+    document.getElementById('hud').textContent = hudOf(R); document.getElementById('to').textContent = S.t;
+    document.getElementById('ko').textContent = '×' + (10 ** S.lk >= 100 || 10 ** S.lk < 0.01 ? (10 ** S.lk).toExponential(0) : (10 ** S.lk).toPrecision(3));
+    for (const id of ['ranges', 'hull', 'fit', 'smooth']) document.getElementById(id).classList.toggle('on', S[id]); }
+function set(o){ Object.assign(S, o); document.getElementById('t').value = S.t; document.getElementById('k').value = S.lk; render(); return { ...S }; }
+document.getElementById('t').oninput = e => set({ t: +e.target.value });
+document.getElementById('k').oninput = e => set({ lk: +e.target.value });
+for (const id of ['ranges', 'hull', 'fit', 'smooth']) document.getElementById(id).onclick = () => set({ [id]: !S[id] });
+let timer = null; document.getElementById('play').onclick = () => { if (timer){ clearInterval(timer); timer = null; document.getElementById('play').textContent = 'play'; return; }
+    if (S.t >= T - 1) set({ t: 0 }); document.getElementById('play').textContent = 'pause';
+    timer = setInterval(() => { if (S.t >= T - 1){ clearInterval(timer); timer = null; document.getElementById('play').textContent = 'play'; return; } set({ t: S.t + 1 }); }, 220); };
+render();
+window.__fromHome = { detect, ticks, rangedTrack, silTrack, rangedPoints, hullOf, seenOf, touchedOf, compare, centre, rOf, compute, set,
+    get state(){ return { ...S }; }, get last(){ return LAST; }, hud: () => document.getElementById('hud').textContent, NA, NPHI, PHIS };
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+sky: 40 bodies (8 in 4 crossing pairs), d 23.3 … 15218; 25 ticks; patches per tick 36–40; under one cell all run: 10
+S2 ω from clean patches of 50 cells or more: 187 readings, worst 2.862%; bodies under one cell: 10, whole-run turn worst 0.681 cells
+S3 τ over five ticks for clean patches of 2,000 cells or more: 50 readings on 4 bodies, worst 6.83%
+S2 KILLED
+S3 KILLED
+   ω, patches of 50–200 cells: 41 readings, worst 2.642%, median 0.678%
+   ω, patches of 200–1000 cells: 49 readings, worst 1.663%, median 0.334%
+   ω, patches of 1000–5000 cells: 77 readings, worst 2.862%, median 0.405%
+   ω, patches of 5000–1000000000 cells: 20 readings, worst 2.129%, median 0.352%
+   τ body 1: 15 readings, cells 3634–2604, error -6.30% … 6.83%, the line of sight turning 1.91° over five ticks; true τ -115; ln s scatter about the line 0.45%, giving τ an expected error ~8.7%
+   τ body 12: 14 readings, cells 2281–5859, error -1.26% … 1.41%, the line of sight turning 0.63° over five ticks; true τ 34; ln s scatter about the line 0.84%, giving τ an expected error ~3.8%
+   τ body 17: 13 readings, cells 5283–6988, error -1.22% … 3.25%, the line of sight turning 0.60° over five ticks; true τ 150; ln s scatter about the line 0.20%, giving τ an expected error ~4.5%
+   τ body 32: 8 readings, cells 4205–3090, error -4.27% … 4.13%, the line of sight turning 1.10° over five ticks; true τ -123; ln s scatter about the line 0.32%, giving τ an expected error ~6.9%

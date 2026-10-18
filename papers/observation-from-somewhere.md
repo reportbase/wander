@@ -192,7 +192,9 @@ writer's vantage as if a single observation held it. Section 3 sets out the read
   reader's addresses, not its payload. Whatever is met in each direction cancels from the reading. Order survives every
   change of payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7). The median
   at the corner needs only that the sweep treat the two parties alike, and the missing mean only that, besides, its
-  weight not vanish at the horizon; the circle and the uniform turn give the Cauchy's exact shape (§7.2).
+  weight not vanish at the horizon; the circle and the uniform turn give the Cauchy's exact shape (§7.2). As a rule: a
+  Cauchy variable is a direction, read by its order, never an amount, and where one appears beside an amount, as a
+  spectral line's profile beside its strength, the two are separate factors (§7.2).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
   A larger H gives the near less detail and reaches the far; the best H is the corner of what is read. An H of 0 or
   of ∞ leaves the reader one of the rulers that favour no amount, and no corner (§9).
@@ -846,8 +848,7 @@ stays put. Changing the focus rescales every reading, and nothing in the world c
 Hold your hand out flat: that is h, zero. Turn it until it points straight up: that is v, toward the horizon. The
 motion between is the sweep, and the hand treats the two alike because they share one denominator, the hand itself:
 the situated reader's V = H (§5) is its own hand. Spread the fingers between flat and upright: each finger is an
-address, one ray of the relation. Put a ring on each finger: the ring is what that address holds, the payload. Turning
-the hand does not change the rings. Replace the rings with others, and the sweep from flat to upright is the same sweep,
+address, one ray of the relation. Put a ring on each finger: the ring is what that address holds, the payload. Replace the rings with others, and the sweep from flat to upright is the same sweep,
 each finger the same address.
 - *The thumb is H.* The hand's own measure is its thumb, the reader's breadth, the value it starts from; the mountain it looks at is V. Setting
   V = H is reading the mountain in thumbs.
@@ -866,8 +867,9 @@ each finger the same address.
   round from pointing at the other party to pointing square to it, which brings in a second other party, V₂: the
   azimuth. Every way the hand can point, within the positive octant, is one altitude and one azimuth, as every
   point of an observer's sky is (§2).
-- *The unit circle is the hand's own arc.* In one quadrant it is a quarter, flat to upright, open at the top, since no
-  finger is ever the horizon. The closed circle comes from turning the hand through the four quadrants, or by the
+- *The unit circle is the hand's own arc.* In one quadrant it is a quarter, flat to upright. Upright is the arc's end,
+  the horizon [0 : 1], a direction the hand can point; in the chart v/h it is open at the top, since no finite reading
+  is the horizon (§4). The closed circle comes from turning the hand through the four quadrants, or by the
   writer, drawing every quadrant at once. The sphere is every way a hand could face, drawn by the writer; no hand holds
   it.
 
@@ -915,6 +917,28 @@ Part (b) assumes the reading is *reciprocal-symmetric* (log-symmetric, as Jones 
 alike, although the reader's knowledge does not, since it knows H and not V. Without that symmetry a bounded reading
 such as x/(2 + x) has its middle at x = 2. Reciprocal-symmetric readings include the line's share v/(v + h) = x/(1 + x)
 and the arc's v²/(h² + v²) = x²/(1 + x²).
+
+**The reader's line, closed.** A reading is a direction [h : v] with h, v ≥ 0, not both zero: a point of the projective
+line (§2). These points form the closed arc of that line on which h and v share a sign, half of it. The arc has two
+ends, home [1 : 0] and the horizon [0 : 1], and two charts:
+- x = v/h, defined everywhere but the horizon;
+- y = h/v, defined everywhere but home;
+- where both are defined, y = 1/x.
+
+The reciprocal of Proposition 1 is the exchange [h : v] ↦ [v : h]. On the arc it swaps the two ends and the two charts,
+and it fixes one point, the corner [1 : 1]. The results so far, and those to come, divide by what they use.
+- *The exchange alone, on the open arc between the ends:*
+  - the corner and its uniqueness, and the reversed order (Proposition 1);
+  - the registers and their cap (Proposition 2(a));
+  - the median of any reciprocal-symmetric law (Proposition 2(b); Theorem 6(e)).
+- *The closed arc, its ends as points:*
+  - a quarter turn from home ends at a point, the horizon, where the chart y is 0 and the chart x has no value;
+  - the exchange carries the arc onto itself, ends included.
+- *A chart that sends an end to infinity: the missing mean* (Theorem 6(d), (e)). The readings' law has no mean in x,
+  which runs to infinity at the horizon, nor in y, which does so at home. On a bounded chart of the same arc, the angle
+  θ or the capped share x/(1 + x), the same law has one: π/4 and ½ for the uniform turn. So the missing mean is a fact
+  about the chart in which directions are counted as numbers, not about the arc. A mean asks for the readings to be
+  amounts on some chart; the arc holds them as directions.
 
 **Series stop at the corner.** The expansion 1/(1 + x²) = 1 − x² + x⁴ − … converges for x < 1 and diverges for x > 1;
 past the corner the expansion in 1/x converges instead. The singularities at x = ±i lie at distance one from zero, so no
@@ -1595,6 +1619,64 @@ sech density's 0.062, and 0.002 against 0.016 at the sixth). The sech density ha
 
 > **The Cauchy is not the payload; it is the address to the payload.**
 
+**The rule, and a test.** A Cauchy variable is a direction: a point of the projective line, a ratio [x : y] read in one
+chart, laid by a turn. It is never an amount. Its median and its quartiles are places on that line and mean what they
+say; it has no mean because the coordinates of directions do not add. Two directions have no sum, only a composition, a
+turn followed by a turn, which in the chart is tangent addition (§2). Where a Cauchy appears beside an amount, the two
+are separate factors: the amount is the payload, and the Cauchy is where it lands. So for any Cauchy met in practice
+there is a test: find the turn, and find the amount. In the lighthouse the lamp turns and the flash is the amount. For a
+ratio of two components of a spherically symmetric vector the turn is the vector's direction, uniform, and the amount
+its length, which cancels (part (a) below).
+
+A sum of independent Cauchy variables, which is again Cauchy, looks like amounts added, and is not: it is a relay of
+standpoints. Land a uniform turn made from a height γ₁ + γ₂ on the line at height γ₂, take that landing as the next
+standpoint, and turn again down to the line: where it lands is the sum of two Cauchys of scales γ₁ and γ₂, and it lands
+exactly as one uniform turn from height γ₁ + γ₂ would. What adds is the standpoints' heights and feet, the parameters m
++ iγ (McCullagh 1996), which are amounts; the sum itself is still a direction from the combined standpoint, read by its
+order, with no mean. It is not the composition of the two directions: that, tan(θ₁ + θ₂), is a turn of uniform angle
+again and keeps the scale 1 where the sum of two standard Cauchys has scale 2.
+
+**Once a Cauchy, always a Cauchy.** Every operation a reader can make on a direction keeps the law in the family, and
+moves only its one point m + iγ, the standpoint's foot and height above the line:
+
+| What the reader does | What the law does |
+|---|---|
+| starts again from a new zero (a turn) | a Möbius map: Cauchy to Cauchy |
+| divides by the other unit relation (the reciprocal) | Cauchy to Cauchy |
+| rescales its drawing, or zooms | Cauchy of another scale |
+| relays through a standpoint between | the sum: Cauchy |
+| averages n readings | the same Cauchy: nothing gained, nothing lost |
+
+The closure under Möbius maps and under sums is classical (Knight 1976; McCullagh 1996; Lévy 1925); the reading is that
+the family is closed because it is the reader's addresses, and that its one parameter is where the reader stands. The
+normal law is its counterpart among amounts: closed under sums and rescalings, the operations on amounts, and not under
+ratios, reciprocals or turns, where a ratio of two independent centred normals becomes a Cauchy (§7.1). Taking a ratio
+carries the one fixed law into the other.
+
+**What breaks it.** Only operations that are not operations on directions. Folding a reading to its size, |X|, is not
+one of them: it keeps the half-Cauchy, the quadrant's law, which the reciprocal keeps too. The breaks are these.
+Squaring, X², which is not a reading of any turn. Cutting the line at an edge, as a flat screen of finite width does, so
+that the addresses past it are lost (§3.5). Multiplying each reading by an amount that varies, A·X with A random and
+positive, which gives a mixture of scales and no single standpoint; the characteristic function E[e^{−A|t|}] is
+e^{−γ|t|} only when A is constant. Adding an amount to each reading, X + N, as the thermal velocities of emitters add a
+Doppler shift to every address of a line: the profile becomes Voigt's, normal at its core and Lorentzian in its wings.
+Pooling readings taken from different standpoints without relaying them, which gives a mixture of Cauchys with different
+centres. And counting the turn against something other than itself (a lopsided clock, the payload's density), which
+changes the law; if that weight treats the two parties alike the median stays at the corner (Theorem 6(e)), if not it
+moves. In each, an amount has entered: a writer's move, not a reader's. Even then the far field holds: an added amount
+of finite spread leaves the tails ~ γ/(πx²), so the Cauchy is lost first near its centre and last at the horizon, which
+is why the wings of a Voigt line's normalized profile still read its half-width.
+
+The plainest instance in practice is a spectral line. Spectroscopy writes a line as a strength times a profile, I(ν) =
+S·φ(ν − ν₀) with ∫φ = 1. The strength S is an amount, in physical units, and the strengths of separate lines add. The
+profile of a resonance is the Lorentzian, φ(ν) = (1/π)·dδ/dν, where δ is the phase of the response, tan δ = γ/(ν₀ − ν),
+which turns through half a turn as the line is crossed: the profile is the frequency line laid by a uniform turn of that
+phase, the address. Spectroscopy reads the profile by its centre and its half-width at half maximum, γ, which for a
+Cauchy is half the interquartile range, and reads the strength by its integral: the address by its order and the amount
+by its sum, as Theorem 6 says each must be read. The line's cross-section has the same shape, γ²/((ν − ν₀)² + γ²) =
+sin²δ, since at every address the density is 2/π times the foot of the point it points to (§4); but it is bounded by 1,
+a share of what arrives, the payload's, not the address.
+
 Call a statistic of a set of readings an *address statistic* if it depends only on their order (the ranks, the median,
 the quartiles, which side of the corner each lies on), and a *payload statistic* if it depends on their sizes (the mean,
 any sum).
@@ -1856,14 +1938,15 @@ follow every increasing map; those facts are part (d). The other parts of Theore
   belongs to whatever sweeps, the lamp or a reader, and not to what the sweep meets. That half the landings fall within
   the lamp's distance of its foot only when shore and sea are drawn at one length is Proposition 5(f), which is
   elementary.
-- *The same law without a sweep.* Not every Cauchy is a sweep's. A spectral line or a resonance is a Lorentzian because
-  of a pole a half-width off the real line, |1/(x − x₀ + iγ)|², from an exponential decay or a damped response
-  (Weisskopf and Wigner 1930; Breit and Wigner 1936); there it is the line, a frequency or an energy, that is swept
-  uniformly, and the pole's phase turns through half a turn, not uniformly, as the line is crossed, standing 45° from
-  its middle at the half-width. A sum of terms whose densities fall off like 1/x² reaches the same law as a stable limit
-  of index 1, with no angle at all (Lévy 1925). In these the law is a fact about the system, as the lighthouse's is
-  about the lamp. Our claim is narrower: where a reader sweeps uniformly, the law of what it lays is its own addresses,
-  whatever else may give the same shape.
+- *The same law where no reader sweeps.* A spectral line or a resonance is a Lorentzian because of a pole a half-width
+  off the real line, |1/(x − x₀ + iγ)|², from an exponential decay or a damped response (Weisskopf and Wigner 1930;
+  Breit and Wigner 1936). Crossed uniformly in frequency or energy, the pole's phase turns through half a turn, not
+  uniformly, standing 45° from its middle at the half-width; read the other way, the Lorentzian is the line laid by a
+  uniform turn of that phase, the profile of §7.2, with the line's strength the amount. The turn there is the
+  response's, not a reader's. A sum of terms whose densities fall off like 1/x² reaches the same law as a stable limit
+  of index 1, with no angle in the terms (Lévy 1925); the turn is in the limit, which is where a planar Brownian motion
+  started above the line first lands on it, a uniform turn from its start (Spitzer 1958). Our claim is that where a reader sweeps uniformly, the law of what it
+  lays is its own addresses, whatever else may give the same shape.
 - *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
   (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
   does so everywhere; and no chart keeps both angles and areas (Euler 1777; Gauss 1828). What is ours is the reading: the
@@ -2357,6 +2440,21 @@ reader's own H the chord sizes things against itself, and to write them in a sha
 amount carried in, here the reader's own build. Two eyes give a baseline with no motion at all. Every route to parallax
 moves the point seen from; a turn alone gives directions.
 
+**From one place: the outline is free, the face is carried in.** A reader that neither walks round a thing nor stands at
+its centre still sees it from many sides when the thing crosses its view. Each look gives the directions that meet the
+thing, and the two at the edges of that set are lines that touch it. Over the crossing these lines close in on it from
+every side the line of sight turned through, and what lies within them at every look is the thing's visual hull
+(Laurentini 1994). The hull contains the thing, meets it wherever some edge touched it, and elsewhere only spans it: a
+hollow that no edge reached is bridged over. It is built of directions alone, so it is the outline up to the common
+scale, and nothing in it moves when the world is scaled; the thing's track across the view, which the hull needs, is
+itself known from the looks only up to that scale. The face, the central reading, needs more. Along each direction the
+reader must receive how far the surface lies, an amount, and that amount must arrive in a unit. A range does both: the
+time for a signal to go out and return, times the signal's speed, which is an amount measured beforehand and carried in.
+That speed supplies the unit, the one term a₀ that neither reader receives, so a ranging reader is a writer. With the
+ranges it holds every point it meets in that unit, and with them the face, and the thing's distance and speed as well.
+From one standpoint, then, the addresses and the outline they sweep come free; the payload reading needs an amount
+received along each direction, or a second vantage (the walk above, or a standpoint at the centre).
+
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
 change of the ruler's own scale and origin: L(λx) = a(λ)·L(x) + b(λ) for all x and λ, with a(λ) > 0. Then, up to the
@@ -2443,17 +2541,17 @@ width, and no one stands anywhere in it.
 2. *What it reads exactly.* Sweeping its directions, the reader finds zero, v/h = 0, straight ahead at the middle of the
    range, and the range's ends at v/h = ±1: exactly at its corners. It knows that the ends sit at its corner, though not
    why. With fingers spread uniformly over the half-turn, the range takes exactly the middle half of them, between the
-   Cauchy's quartiles, which are its corners (§7.3), and the median finger points at its middle. On each finger the ring
-   is the ridge's elevation reading, and together they give the range's skyline, up to scale. The far slopes are hidden,
-   rings behind rings.
+   Cauchy's quartiles, which are its corners (§7.3), and the median finger points at its middle. On each finger the
+   ridge's elevation is a second direction, read by the altitude sweep (§3.7). Together they give the range's skyline, a
+   curve of directions, up to scale. The far slopes are hidden, rings behind rings.
 3. *The two vantages, on the thumb.* The one breadth the reader holds is its thumb, the H it started from, and the two
    situated vantages of §3.4 read it from the reader's own turn. Each side of the half-turn is a quarter turn,
    from home to the limb, where a finger runs parallel to the range and never meets it. On the thumb's circle that
    quarter turn is an arc of π/2 thumbs, and its projection on the line across the view is exactly 1 thumb. Read by the
    central sweep, limb to limb, the whole half-turn is an arc of π thumbs over a projection of 2, and the central
-   reading, the turn over its projection, is π/2. Read by the inscribed sweep, one finger at a time from home, the
-   inscribed reading, the projection over the turn, is 2/π: the fingers' mean projection (0.6368 with 36 fingers). Their
-   product is 1: H measured in H, the value the reader started from, which neither vantage reads alone. Out to the
+   reading, the turn over its projection, is π/2. Read by the inscribed sweep, from home, the inscribed reading, the
+   projection over the turn, is 2/π: the fingers' mean projection (0.6368 with 36 fingers). Their product is 1: H
+   measured in H, the value the reader started from, which neither vantage reads alone. Out to the
    range's ends, at 45°, the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, the row of §3.4 at 45°, and
    their product is 1 again. None of this involves the mountain: a range 2 miles wide at 1 mile gives the same fingers
    and the same products. Joined, the two vantages return only what the reader put in; the mountain's breadth must be
@@ -2873,6 +2971,9 @@ Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Hi
 Lamping, J., Rao, R. and Pirolli, P. (1995). A focus+context technique based on hyperbolic geometry for visualizing
 large hierarchies. *Proceedings of CHI '95*, 401–408.
 
+Laurentini, A. (1994). The visual hull concept for silhouette-based image understanding. *IEEE Transactions on
+Pattern Analysis and Machine Intelligence* 16(2), 150–162.
+
 Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*
 5(4), 437–459.
 
@@ -2939,6 +3040,9 @@ Snellius, W. (1617). *Eratosthenes Batavus, de terrae ambitus vera quantitate*. 
 
 Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Fincke,
 Berlin.
+
+Spitzer, F. (1958). Some theorems concerning 2-dimensional Brownian motion. *Transactions of the American
+Mathematical Society* 87, 187–197.
 
 Stevens, S. S. (1946). On the theory of scales of measurement. *Science* 103(2684), 677–680.
 

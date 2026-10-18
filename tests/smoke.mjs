@@ -1138,6 +1138,26 @@ try {
     failures.push(`[${current}] ${JSON.stringify(mo)}`);
   console.log(`${failures.length === before39 ? 'ok  ' : 'FAIL'} ${current} (detections unmoved by ×10⁻³ and ×10³; ω to ${(100 * mo.om).toFixed(2)}%; the smooth moon's τ to ${(100 * mo.tauS).toFixed(1)}% and, its radius known, distance to ${(100 * mo.dS).toFixed(2)}%; the painting the same under k, radii ×k; ${mo.once} held at once, ${mo.ever} over the pass)`);
 
+  // ── 40. from-home.html: the central sweep earned from home (CFH; SPN R355), on a slice through the moon: ranged points on
+  //    the outline, the face from them exactly with the centre given; the hull containing the moon, tight where an edge grazed
+  //    it and loose elsewhere; nothing in the detections or the hull moved by scaling the world, the ranges by k; with the
+  //    centre fitted from the ranges, distance and speed written to 1% ──
+  current = 'from-home.html';
+  const before40 = failures.length;
+  await page.goto(new URL('from-home.html', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__fromHome && window.__fromHome.last, null, { timeout: 60000 });
+  const fh = await page.evaluate(() => { const F = __fromHome, R = F.last, o = {};
+    o.on = R.onOutline; o.rc = R.cR.corr; o.ht = R.cHt.rms; o.hf = R.cHf.rms;
+    o.inside = Math.min(...R.H.map((h, i) => (h - R.truth[i]) / 0.5));
+    const A = F.ticks(31, 1, false), B = F.ticks(31, 1e3, false); o.dk = 0; o.rk = 0;
+    A.forEach((a, i) => { const b = B[i]; if (a.lo !== b.lo || a.hi !== b.hi || a.hits.length !== b.hits.length) o.dk++; else a.hits.forEach((h, n) => { o.rk = Math.max(o.rk, Math.abs(b.hits[n].rho / (1e3 * h.rho) - 1)); }); });
+    const c = (D, k) => { const s = F.silTrack(D); return F.hullOf(D, s.L.at, s.size); }, h1 = c(A), h2 = c(B); o.hk = Math.max(...h1.map((x, i) => Math.abs(x - h2[i])));
+    F.set({ fit: true }); const Q = F.last, e = Q.rT.at(31), d = Math.hypot(...F.centre(31)); o.dist = Math.abs(Math.hypot(...e) / d - 1); o.speed = Math.abs(Math.hypot(...Q.rT.v) - 1);
+    o.hud = F.hud(); return o; });
+  if (fh.on > 1e-9 || fh.rc < 0.999 || fh.inside < -0.03 || !(fh.hf > 5 * fh.ht) || fh.dk > 0 || fh.rk > 1e-12 || fh.hk > 1e-12 || fh.dist > 0.01 || fh.speed > 0.01 || !/no metres/.test(fh.hud))
+    failures.push(`[${current}] ${JSON.stringify(fh)}`);
+  console.log(`${failures.length === before40 ? 'ok  ' : 'FAIL'} ${current} (ranged points on the outline to ${fh.on.toExponential(1)}, the face at correlation ${fh.rc.toFixed(4)}; the hull contains the moon (${fh.inside.toFixed(4)}), rms ${fh.ht.toFixed(3)} where grazed, ${fh.hf.toFixed(3)} elsewhere; ×10³ moves no detection or hull, the ranges ×k; fitted, distance ${(100 * fh.dist).toFixed(2)}%, speed ${(100 * fh.speed).toFixed(2)}%)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

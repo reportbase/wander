@@ -1,0 +1,13 @@
+   τ    10: CV 0.003, r̂ mean off 277.79 se, sd 2.643e-4; τ̂ mean 9.89 (-1.15%; CV² 0.00%), median 9.89 (-1.14%), wrong sign 0.0%; median·median 0.0e+0, mean·mean − 1 6.82e-6
+   τ    30: CV 0.008, r̂ mean off 9.92 se, sd 2.722e-4; τ̂ mean 29.96 (-0.12%; CV² 0.01%), median 29.96 (-0.13%), wrong sign 0.0%; median·median 0.0e+0, mean·mean − 1 6.65e-5
+   τ   100: CV 0.027, r̂ mean off 0.64 se, sd 2.744e-4; τ̂ mean 100.05 (0.05%; CV² 0.08%), median 100.06 (0.06%), wrong sign 0.0%; median·median 0.0e+0, mean·mean − 1 7.51e-4
+   τ   300: CV 0.082, r̂ mean off -1.88 se, sd 2.724e-4; τ̂ mean 302.79 (0.93%; CV² 0.67%), median 301.21 (0.40%), wrong sign 0.0%; median·median 1.1e-16, mean·mean − 1 6.84e-3
+   τ  1000: CV 0.256, r̂ mean off 0.99 se, sd 2.559e-4; τ̂ mean Infinity (Infinity%; CV² 6.55%), median 998.81 (-0.12%), wrong sign 0.0%; median·median 1.9e-6, mean·mean − 1 Infinity
+   τ  3000: CV 0.760, r̂ mean off 0.30 se, sd 2.534e-4; τ̂ mean Infinity (Infinity%; CV² 57.79%), median 2559.92 (-14.67%), wrong sign 9.4%; median·median 1.3e-1, mean·mean − 1 Infinity
+   τ 10000: CV 2.553, r̂ mean off -0.92 se, sd 2.553e-4; τ̂ mean Infinity (Infinity%; CV² 651.66%), median 2732.93 (-72.67%), wrong sign 35.0%; median·median 7.3e-1, mean·mean − 1 Infinity
+L2 tested: true; r̂'s sd from the least to the most ×1.083
+L1 KILLED
+L2 KILLED
+L3 KILLED
+L4 KILLED
+L5 is read from the above against the classical expectations (the plan); recorded in the plan, not computed
