@@ -1358,6 +1358,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   a relay of standpoints: a uniform turn from γ₁ + γ₂ landed at height γ₂ and turned again lands as one turn from
   γ₁ + γ₂; the heights and feet (m + iγ) add, the sum stays a direction. Run 1 killed by my tolerances (under the
   sampling error); run 2 (in standard errors) nothing killed; the stable limit's turn is Spitzer's Brownian landing.
+  `adr-plan.md` (+ `adr/adr.py`, 18 Oct; SPN R360, "cauchy addresses are robust, can be combined, they are a kind of
+  primititive"): the address as a primitive, z = m + iγ (foot and height). Run 1: combination linear in z, Möbius maps
+  move z, the distance hyperbolic (its unit along the height the level, ln 2 a doubling), the height a built-in level of
+  detail (mode k kept while kγ < 1), relays grow linearly and averaging gains nothing; A2(c) killed by my reasoning (the
+  quartile read survives a Möbius pole, consistent for g(z); unlike LOM's normal amounts, which lost 73%).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

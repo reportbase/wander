@@ -74,3 +74,52 @@ What is ours is the reading, not the mathematics.
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (18 Oct, `python3 adr/adr.py`; output `adr/adr-run1.txt`, 22 s)
+
+- **A1 not killed.**
+  - Exactly: the characteristic functions differ by at most 3.6·10⁻¹⁰².
+  - By sample: the read is 4.9693 + 5.2425i against 4.95 + 5.25i. 3 standard errors are 0.0247.
+- **A2 killed, in clause (c), by my set-up.**
+  - (a) The law of g(X) is C(g(z)) to 1.3·10⁻⁵¹.
+  - (b) The quartile read follows x → 3x − 2 to 1.1·10⁻¹⁶.
+  - (c) Under g, with its pole among the readings (7% of X lies past −3):
+    - the quartile read of g(X) is 0.6416 + 0.3122i;
+    - g of the quartile read of X is 0.6419 + 0.3126i;
+    - the two are 0.3 standard errors apart, not the more than 10 predicted.
+  - The likelihood read agrees under g to 8.6·10⁻¹⁴.
+- **A3 not killed.**
+  - The Fisher information is I/(2γ²) to 1.3·10⁻⁵¹ at three points.
+  - d_H(i, 2i) = ln 2 exactly.
+  - The Möbius maps leave d_H unchanged (difference 0 at 50 digits).
+- **A4 not killed.**
+  - Each mode of the pattern is multiplied by e^{−kγ}, to 10⁻³¹.
+  - The modes kept above 1/e at γ = 2⁻ᵏ number 0, 1, 2, …, 7 for k = 0 … 7.
+- **A5 not killed.**
+
+  | n | relay's half-IQR | mean's half-IQR | Gaussian sum, sd | Gaussian mean, sd |
+  |---|---|---|---|---|
+  | 1 | 0.996 | 1.003 | 0.997 | 0.9965 |
+  | 4 | 4.021 | 0.998 | 2.002 | 0.5004 |
+  | 16 | 15.941 | 1.004 | 4.002 | 0.2501 |
+
+**A2(c) was my reasoning, not the primitive.** I took LOM's lesson, that a sample median is not carried over by a map whose
+pole lies among the readings, and applied it to the read of z. But g(X) is exactly C(g(z)) (A2a). So the quartile read of
+g(X) and g applied to the quartile read of X are both consistent for g(z), and differ only by sampling noise. They are
+not exactly equal sample by sample, which the likelihood read is (8.6·10⁻¹⁴); but there is no systematic failure.
+
+The contrast with LOM is the finding. There the readings were close to normal (amounts), and the reciprocal across zero
+moved their median by 73%. Here the readings are Cauchy (addresses), the same kind of map leaves the read intact, and the
+reason is the family's closure. Once a Cauchy, always a Cauchy is what protects the quartile read across a pole.
+
+**A6, the verdict: not killed.** Every kill is my set-up. The address meets the four marks of a primitive:
+- **a value:** z;
+- **closed operations:** positive and mixed combinations linear in z, and Möbius maps moving z;
+- **an invariant distance:** the hyperbolic one, whose unit along the height is the level, ln 2 a doubling;
+- **a robust read:** the quartiles, consistent under every Möbius map, and the likelihood, exactly equivariant.
+
+It also has two further properties:
+- **A built-in level of detail.** The height γ keeps exactly the modes with kγ < 1, one level per halving.
+- **Linear error growth.** Along a relay the error grows as n; averaging leaves it at 1. Amounts give √n and 1/√n.
+
+The mathematics is classical (Knight, McCullagh, the Poisson kernel). The reading is ours.
