@@ -67,3 +67,34 @@ places the framing as a restatement here, not a discovery. Not a test of real vi
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (17 Oct, `node lom/lom.mjs`; output `lom/lom-run1.txt`, 40 s)
+
+CV of the rate, by τ = 10 … 10,000: 0.003, 0.008, 0.027, 0.082, 0.256, 0.760, 2.553; the rate's sd the same at every τ
+within 8% (2.5–2.7·10⁻⁴ a tick: the cells' scatter does not depend on the rate). All four of L1–L4 killed:
+- **L1 killed** at τ = 1,000, 3,000 and 10,000: median(τ̂)·median(r̂) − 1 = 2·10⁻⁶, 0.13, 0.73. The reciprocal is monotone
+  on each side of 0, not across it; where some r̂ are 0 (exactly: equal counts) or negative, the order is cut and the
+  median does not go through. I wrote "no zero" among the known facts and left it out of L1.
+- **L2 killed:** at τ = 10 the five-tick slope over a straight approach reads τ 1.15% short (my set-up: ln d is not
+  linear in t; the slope carries (1/τ)(1 + 34/(30τ²)), 1.13% at τ = 10); at τ = 1,000 (CV 0.26) a repeat with r̂ = 0
+  exactly makes mean(τ̂) infinite. The middle τ (30–300) follow the delta method (0.93% against CV² 0.67% at τ = 300).
+- **L3 killed:** τ = 10,000 (CV 2.55) has 35% of τ̂ with the wrong sign, but the median of τ̂ is 73% short of τ (the
+  negative readings sit below every positive one on the τ line); τ = 3,000 (CV 0.76) did not reach CV 1, so the settling
+  clause was untested.
+- **L4 killed** by my set-up at τ = 10 and 30 (r̂'s mean 278 and 9.9 standard errors off 1/τ, the t³ term above); its sd
+  clause held (×1.08).
+
+**Post hoc** (`lom/lom1-posthoc.mjs`, output `lom/lom1-posthoc.txt`): against the slope's own expectation r̂'s mean is
+within 2 standard errors for τ ≥ 30 (6.6 at τ = 10, the next term); r̂ = 0 exactly in 0.17% (τ = 3,000) and 0.37%
+(τ = 10,000) of repeats; and **1/median(r̂) reads τ to −0.12%, −2.4% and +2.5% at τ = 1,000, 3,000, 10,000**, where the
+median of τ̂ is off −0.12%, −15% and −73%.
+
+**L5 (the verdict), read against the classical results: not killed.** Everything above is classical: the reciprocal of a
+noisy rate has no mean (r̂ reaches 0), the delta method's CV² bias, Geary's normal approximation failing as the denominator's
+CV grows, and Bailer-Jones's advice (infer on the parallax, the rate, and flip). The corpus's framing gets each right, and
+gives one way of saying why the median must be taken on the rate side: τ̂ and r̂ are one reading, the direction [r̂ : 1]
+on the projective line, and the reciprocal is a turn of that circle. A turn keeps the circle's order but moves where the
+circle is cut to make a line; a median goes through only if the cut falls outside the readings. On the rate's chart the
+cut is at r = ∞ (τ = 0, never read); on τ's chart it is at τ = ∞ (r = 0), inside the readings once CV nears 1. That is
+the address picture (a reading is a direction, R306; the horizon is where a chart is cut), and it is the classical advice
+restated, not a new result.

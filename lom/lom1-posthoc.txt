@@ -1,0 +1,7 @@
+   τ    10: r̂ = 0 exactly in 0.00%; 1/median(r̂) 9.89 (-1.14%); r̂ mean against the slope's own expectation (1/τ)(1 + 34/(30τ²)): 6.57 se
+   τ    30: r̂ = 0 exactly in 0.00%; 1/median(r̂) 29.96 (-0.13%); r̂ mean against the slope's own expectation (1/τ)(1 + 34/(30τ²)): 0.17 se
+   τ   100: r̂ = 0 exactly in 0.00%; 1/median(r̂) 100.06 (0.06%); r̂ mean against the slope's own expectation (1/τ)(1 + 34/(30τ²)): 0.38 se
+   τ   300: r̂ = 0 exactly in 0.00%; 1/median(r̂) 301.21 (0.40%); r̂ mean against the slope's own expectation (1/τ)(1 + 34/(30τ²)): -1.89 se
+   τ  1000: r̂ = 0 exactly in 0.00%; 1/median(r̂) 998.81 (-0.12%); r̂ mean against the slope's own expectation (1/τ)(1 + 34/(30τ²)): 0.99 se
+   τ  3000: r̂ = 0 exactly in 0.17%; 1/median(r̂) 2929.28 (-2.36%); r̂ mean against the slope's own expectation (1/τ)(1 + 34/(30τ²)): 0.30 se
+   τ 10000: r̂ = 0 exactly in 0.37%; 1/median(r̂) 10245.00 (2.45%); r̂ mean against the slope's own expectation (1/τ)(1 + 34/(30τ²)): -0.92 se
