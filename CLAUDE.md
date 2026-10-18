@@ -1304,6 +1304,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   killed (distance 5.5% with R̄ carried in); post hoc (`mon/mon2-smooth.mjs`) a smooth moon passes all (τ 1.2%, distance
   0.05%): the relief's turning profile enters the share, so detections alone cannot tell approach from turning, and the
   amount carried in must be the silhouette's breadth. `moon.html` shows it.
+  `sky-plan.md` (+ `sky/sky.mjs`, 17 Oct; SPN R353, "the next test is a sky of 40 moving bodies"): 40 moving Levels
+  bodies (4 crossing pairs), one sweep of the whole wedge (2048², a sub-cell body lighting its centre cell), patches as
+  8-connected groups, a gated nearest-neighbour tracker on detections alone. Run 1: S1 (scaling), S4 (no wrong or missing
+  clean–clean link of 898; identity lost only at touches) and S5 (10 sub-cell bodies one cell, one track) not killed; S2
+  (ω 2.9%) and S3 (τ 6.8%) killed: post hoc (`sky/sky1-posthoc.mjs`) the cells' scatter, which τ carries in proportion to
+  |τ|, and the relief's turning profile for large patches' ω.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
