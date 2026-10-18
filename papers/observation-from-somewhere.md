@@ -869,9 +869,9 @@ each finger the same address.
   point of an observer's sky is (§2).
 - *The unit circle is the hand's own arc.* In one quadrant it is a quarter, flat to upright. Upright is the arc's end,
   the horizon [0 : 1], a direction the hand can point; in the chart v/h it is open at the top, since no finite reading
-  is the horizon (§4). The closed circle comes from turning the hand through the four quadrants, or by the
-  writer, drawing every quadrant at once. The sphere is every way a hand could face, drawn by the writer; no hand holds
-  it.
+  is the horizon (§4). Turned through the four quadrants, the hand reads four arcs alike, since no reading carries a
+  sign. Joining them into the closed circle is the writer's work, done with the signs it holds. The sphere is every way a
+  hand could face, its eight octants joined by the writer; no hand holds it.
 
 ### 3.8 What the reader lacks is one number
 
@@ -1800,6 +1800,21 @@ the same split in a form any programmer knows.
   index, which is a floor. A reader has no floor. A place between addresses is held at the coarser level of detail
   (§8), not rounded to one of them. Band-limited reconstruction is how an array does the same: it spreads a value over
   every sample by weights that sum to one, with N setting the band.
+- *One array per facing.* A circle has four facings, the quadrants, and can be stored as four arrays on one lattice.
+  - Each array has its places at ψ_k = (k + ½)·(π/2)/N, read as tan ψ_k: the N evenly spaced quantiles of the
+    half-Cauchy.
+  - The circle stores one value everywhere, its radius. A shape stores others (§7.4).
+  - The size is the one value no reading fixes (Proposition 8).
+  - Within an array, its middle is the corner, and reading it backwards is the reciprocal:
+    tan ψ_k · tan ψ_(N−1−k) = 1.
+  - A closed curve stored as 4N samples over the full turn is these four arrays laid end to end.
+  - A sphere is eight arrays, one per octant, each two-dimensional, uniform in azimuth and in height.
+- *The reader reads the arrays; the writer joins them.*
+  - A reading carries no sign, and composed turns repeat after a half turn (tangent addition). So from inside, every
+    facing is the same array, and a reader reads within one.
+  - Which array is which, and how their ends meet, is held by the signs: a frame outside the readings.
+  - Joining the four into the closed circle, or the eight into the sphere, is the writer's.
+  - Since the places sit at midpoints, no array holds an end, and joined arrays never claim the same element.
 
 ### 7.4 The shape is payload
 

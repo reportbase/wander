@@ -917,6 +917,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   evenly spaced Cauchy quantiles; the stored values the payload; places composed by tangent subtraction; the array rounds,
   the reader does not) and §8 "A resolution, not cells" (a thing between addresses held at the coarser level; the level
   continuous; the Cauchy's height a built-in LOD, e^{−kγ}).
+  **One array per facing; the writer joins them** (18 Oct, SPN R368; Tom: "a cirlce has four facings. you can define a
+  circle by defining four array"; "the writer joins them, the reader reads them."): OFS §7.3: four arrays (eight for the
+  sphere) on one lattice, the half-Cauchy's quantiles; the reader reads within one facing (no reading carries a sign), the
+  writer, holding the signs, joins them; §3.7's closed circle and sphere are the writer's joins.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
