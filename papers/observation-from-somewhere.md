@@ -1614,6 +1614,37 @@ exactly as one uniform turn from height γ₁ + γ₂ would. What adds is the st
 order, with no mean. It is not the composition of the two directions: that, tan(θ₁ + θ₂), is a turn of uniform angle
 again and keeps the scale 1 where the sum of two standard Cauchys has scale 2.
 
+**Once a Cauchy, always a Cauchy.** Every operation a reader can make on a direction keeps the law in the family, and
+moves only its one point m + iγ, the standpoint's foot and height above the line:
+
+| What the reader does | What the law does |
+|---|---|
+| starts again from a new zero (a turn) | a Möbius map: Cauchy to Cauchy |
+| divides by the other unit relation (the reciprocal) | Cauchy to Cauchy |
+| rescales its drawing, or zooms | Cauchy of another scale |
+| relays through a standpoint between | the sum: Cauchy |
+| averages n readings | the same Cauchy: nothing gained, nothing lost |
+
+The closure under Möbius maps and under sums is classical (Knight 1976; McCullagh 1996; Lévy 1925); the reading is that
+the family is closed because it is the reader's addresses, and that its one parameter is where the reader stands. The
+normal law is its counterpart among amounts: closed under sums and rescalings, the operations on amounts, and not under
+ratios, reciprocals or turns, where a ratio of two independent centred normals becomes a Cauchy (§7.1). Taking a ratio
+carries the one fixed law into the other.
+
+**What breaks it.** Only operations that are not operations on directions. Folding a reading to its size, |X|, is not
+one of them: it keeps the half-Cauchy, the quadrant's law, which the reciprocal keeps too. The breaks are these.
+Squaring, X², which is not a reading of any turn. Cutting the line at an edge, as a flat screen of finite width does, so
+that the addresses past it are lost (§3.5). Multiplying each reading by an amount that varies, A·X with A random and
+positive, which gives a mixture of scales and no single standpoint; the characteristic function E[e^{−A|t|}] is
+e^{−γ|t|} only when A is constant. Adding an amount to each reading, X + N, as the thermal velocities of emitters add a
+Doppler shift to every address of a line: the profile becomes Voigt's, normal at its core and Lorentzian in its wings.
+Pooling readings taken from different standpoints without relaying them, which gives a mixture of Cauchys with different
+centres. And counting the turn against something other than itself (a lopsided clock, the payload's density), which
+changes the law; if that weight treats the two parties alike the median stays at the corner (Theorem 6(e)), if not it
+moves. In each, an amount has entered: a writer's move, not a reader's. Even then the far field holds: an added amount
+of finite spread leaves the tails ~ γ/(πx²), so the Cauchy is lost first near its centre and last at the horizon, which
+is why the wings of a Voigt line's normalized profile still read its half-width.
+
 The plainest instance in practice is a spectral line. Spectroscopy writes a line as a strength times a profile, I(ν) =
 S·φ(ν − ν₀) with ∫φ = 1. The strength S is an amount, in physical units, and the strengths of separate lines add. The
 profile of a resonance is the Lorentzian, φ(ν) = (1/π)·dδ/dν, where δ is the phase of the response, tan δ = γ/(ν₀ − ν),

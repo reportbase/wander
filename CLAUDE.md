@@ -902,6 +902,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   test": a Cauchy variable is a direction, never an amount; find the turn, find the amount; spectroscopy's strength ×
   profile (the Lorentzian the phase's uniform turn); a sum of Cauchys a relay of standpoints (SUM); §7.8's resonance and
   Lévy's limit each given their turn (the phase's; Spitzer's Brownian landing). No new prior-art search (Tom).
+  **Once a Cauchy, always a Cauchy; what breaks it** (18 Oct, SPN R359): OFS §7.2: every operation on directions keeps
+  the family, moving only its point m + iγ (the standpoint); the normal law the counterpart among amounts; only an amount
+  entering breaks it (squaring, an edge, a scale mixture, an added amount as in a Voigt line, pooled standpoints, a
+  weight not the turn's); the tails, and so the horizon, go last.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
