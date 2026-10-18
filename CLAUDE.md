@@ -906,6 +906,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the family, moving only its point m + iγ (the standpoint); the normal law the counterpart among amounts; only an amount
   entering breaks it (squaring, an edge, a scale mixture, an added amount as in a Voigt line, pooled standpoints, a
   weight not the turn's); the tails, and so the horizon, go last.
+  **The reader's line, closed; a metaphor audit** (18 Oct, SPN R366; review 19, `plans/ofs-review-19.md`; Tom: "yes, do
+  both"): OFS §4 after Proposition 2: readings the closed half-arc of the projective line, home [1 : 0], horizon [0 : 1],
+  charts v/h and h/v, the reciprocal the exchange; the missing mean is the chart's (a bounded chart has one: the angle π/4,
+  x/(1 + x) ½), not the arc's. The audit changed four sentences (§3.7's rings and open arc, §10's elevation as a ring and
+  "one finger at a time").
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

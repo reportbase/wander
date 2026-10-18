@@ -848,8 +848,7 @@ stays put. Changing the focus rescales every reading, and nothing in the world c
 Hold your hand out flat: that is h, zero. Turn it until it points straight up: that is v, toward the horizon. The
 motion between is the sweep, and the hand treats the two alike because they share one denominator, the hand itself:
 the situated reader's V = H (§5) is its own hand. Spread the fingers between flat and upright: each finger is an
-address, one ray of the relation. Put a ring on each finger: the ring is what that address holds, the payload. Turning
-the hand does not change the rings. Replace the rings with others, and the sweep from flat to upright is the same sweep,
+address, one ray of the relation. Put a ring on each finger: the ring is what that address holds, the payload. Replace the rings with others, and the sweep from flat to upright is the same sweep,
 each finger the same address.
 - *The thumb is H.* The hand's own measure is its thumb, the reader's breadth, the value it starts from; the mountain it looks at is V. Setting
   V = H is reading the mountain in thumbs.
@@ -868,8 +867,9 @@ each finger the same address.
   round from pointing at the other party to pointing square to it, which brings in a second other party, V₂: the
   azimuth. Every way the hand can point, within the positive octant, is one altitude and one azimuth, as every
   point of an observer's sky is (§2).
-- *The unit circle is the hand's own arc.* In one quadrant it is a quarter, flat to upright, open at the top, since no
-  finger is ever the horizon. The closed circle comes from turning the hand through the four quadrants, or by the
+- *The unit circle is the hand's own arc.* In one quadrant it is a quarter, flat to upright. Upright is the arc's end,
+  the horizon [0 : 1], a direction the hand can point; in the chart v/h it is open at the top, since no finite reading
+  is the horizon (§4). The closed circle comes from turning the hand through the four quadrants, or by the
   writer, drawing every quadrant at once. The sphere is every way a hand could face, drawn by the writer; no hand holds
   it.
 
@@ -917,6 +917,28 @@ Part (b) assumes the reading is *reciprocal-symmetric* (log-symmetric, as Jones 
 alike, although the reader's knowledge does not, since it knows H and not V. Without that symmetry a bounded reading
 such as x/(2 + x) has its middle at x = 2. Reciprocal-symmetric readings include the line's share v/(v + h) = x/(1 + x)
 and the arc's v²/(h² + v²) = x²/(1 + x²).
+
+**The reader's line, closed.** A reading is a direction [h : v] with h, v ≥ 0, not both zero: a point of the projective
+line (§2). These points form the closed arc of that line on which h and v share a sign, half of it. The arc has two
+ends, home [1 : 0] and the horizon [0 : 1], and two charts:
+- x = v/h, defined everywhere but the horizon;
+- y = h/v, defined everywhere but home;
+- where both are defined, y = 1/x.
+
+The reciprocal of Proposition 1 is the exchange [h : v] ↦ [v : h]. On the arc it swaps the two ends and the two charts,
+and it fixes one point, the corner [1 : 1]. The results so far, and those to come, divide by what they use.
+- *The exchange alone, on the open arc between the ends:*
+  - the corner and its uniqueness, and the reversed order (Proposition 1);
+  - the registers and their cap (Proposition 2(a));
+  - the median of any reciprocal-symmetric law (Proposition 2(b); Theorem 6(e)).
+- *The closed arc, its ends as points:*
+  - a quarter turn from home ends at a point, the horizon, where the chart y is 0 and the chart x has no value;
+  - the exchange carries the arc onto itself, ends included.
+- *A chart that sends an end to infinity: the missing mean* (Theorem 6(d), (e)). The readings' law has no mean in x,
+  which runs to infinity at the horizon, nor in y, which does so at home. On a bounded chart of the same arc, the angle
+  θ or the capped share x/(1 + x), the same law has one: π/4 and ½ for the uniform turn. So the missing mean is a fact
+  about the chart in which directions are counted as numbers, not about the arc. A mean asks for the readings to be
+  amounts on some chart; the arc holds them as directions.
 
 **Series stop at the corner.** The expansion 1/(1 + x²) = 1 − x² + x⁴ − … converges for x < 1 and diverges for x > 1;
 past the corner the expansion in 1/x converges instead. The singularities at x = ±i lie at distance one from zero, so no
@@ -2519,17 +2541,17 @@ width, and no one stands anywhere in it.
 2. *What it reads exactly.* Sweeping its directions, the reader finds zero, v/h = 0, straight ahead at the middle of the
    range, and the range's ends at v/h = ±1: exactly at its corners. It knows that the ends sit at its corner, though not
    why. With fingers spread uniformly over the half-turn, the range takes exactly the middle half of them, between the
-   Cauchy's quartiles, which are its corners (§7.3), and the median finger points at its middle. On each finger the ring
-   is the ridge's elevation reading, and together they give the range's skyline, up to scale. The far slopes are hidden,
-   rings behind rings.
+   Cauchy's quartiles, which are its corners (§7.3), and the median finger points at its middle. On each finger the
+   ridge's elevation is a second direction, read by the altitude sweep (§3.7). Together they give the range's skyline, a
+   curve of directions, up to scale. The far slopes are hidden, rings behind rings.
 3. *The two vantages, on the thumb.* The one breadth the reader holds is its thumb, the H it started from, and the two
    situated vantages of §3.4 read it from the reader's own turn. Each side of the half-turn is a quarter turn,
    from home to the limb, where a finger runs parallel to the range and never meets it. On the thumb's circle that
    quarter turn is an arc of π/2 thumbs, and its projection on the line across the view is exactly 1 thumb. Read by the
    central sweep, limb to limb, the whole half-turn is an arc of π thumbs over a projection of 2, and the central
-   reading, the turn over its projection, is π/2. Read by the inscribed sweep, one finger at a time from home, the
-   inscribed reading, the projection over the turn, is 2/π: the fingers' mean projection (0.6368 with 36 fingers). Their
-   product is 1: H measured in H, the value the reader started from, which neither vantage reads alone. Out to the
+   reading, the turn over its projection, is π/2. Read by the inscribed sweep, from home, the inscribed reading, the
+   projection over the turn, is 2/π: the fingers' mean projection (0.6368 with 36 fingers). Their product is 1: H
+   measured in H, the value the reader started from, which neither vantage reads alone. Out to the
    range's ends, at 45°, the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, the row of §3.4 at 45°, and
    their product is 1 again. None of this involves the mountain: a range 2 miles wide at 1 mile gives the same fingers
    and the same products. Joined, the two vantages return only what the reader put in; the mountain's breadth must be
