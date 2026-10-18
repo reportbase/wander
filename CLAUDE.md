@@ -897,6 +897,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   updates", after CFH): OFS §9 after "Turning in place": a thing crossing the view gives its visual hull from the looks
   alone (Laurentini 1994), up to scale; the face needs a range along each direction, an amount whose unit is the signal's
   speed (the a₀ neither reader receives), so a ranging reader is a writer; or a second vantage. `physics.md` §2.4 has it.
+  **Cauchy is address, not payload, as a rule** (18 Oct, SPN R358; Tom: "that is not a small distinction. that is
+  everything."; "It would be well known, if it was know. we have done that search before."): OFS §7.2 "The rule, and a
+  test": a Cauchy variable is a direction, never an amount; find the turn, find the amount; spectroscopy's strength ×
+  profile (the Lorentzian the phase's uniform turn); a sum of Cauchys a relay of standpoints (SUM); §7.8's resonance and
+  Lévy's limit each given their turn (the phase's; Spitzer's Brownian landing). No new prior-art search (Tom).
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
@@ -1344,6 +1349,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   held innate; W1, W2 untested in letter (no perceived distance with an interval), W3 killed at 27% (lift); the paper's
   "equivalent ∼95 cm" is 1.3·(1 − 0.27), the echo gives 1.024 m. Run 2 (the factor from Dataset S1, predictions committed)
   not run: PMC's file link is behind a proof-of-work page, pnas.org unreachable; Tom could supply the file.
+  `sum-plan.md` (+ `sum/sum.py`, 18 Oct; SPN R358, "cauchy is address, not payload … that is everything"): a sum of
+  Cauchys read as addresses. The guess (tangent addition) withdrawn before running (scale 1 against the sum's 2). A sum is
+  a relay of standpoints: a uniform turn from γ₁ + γ₂ landed at height γ₂ and turned again lands as one turn from
+  γ₁ + γ₂; the heights and feet (m + iγ) add, the sum stays a direction. Run 1 killed by my tolerances (under the
+  sampling error); run 2 (in standard errors) nothing killed; the stable limit's turn is Spitzer's Brownian landing.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

@@ -1606,6 +1606,14 @@ there is a test: find the turn, and find the amount. In the lighthouse the lamp 
 ratio of two components of a spherically symmetric vector the turn is the vector's direction, uniform, and the amount
 its length, which cancels (part (a) below).
 
+A sum of independent Cauchy variables, which is again Cauchy, looks like amounts added, and is not: it is a relay of
+standpoints. Land a uniform turn made from a height γ₁ + γ₂ on the line at height γ₂, take that landing as the next
+standpoint, and turn again down to the line: where it lands is the sum of two Cauchys of scales γ₁ and γ₂, and it lands
+exactly as one uniform turn from height γ₁ + γ₂ would. What adds is the standpoints' heights and feet, the parameters m
++ iγ (McCullagh 1996), which are amounts; the sum itself is still a direction from the combined standpoint, read by its
+order, with no mean. It is not the composition of the two directions: that, tan(θ₁ + θ₂), is a turn of uniform angle
+again and keeps the scale 1 where the sum of two standard Cauchys has scale 2.
+
 The plainest instance in practice is a spectral line. Spectroscopy writes a line as a strength times a profile, I(ν) =
 S·φ(ν − ν₀) with ∫φ = 1. The strength S is an amount, in physical units, and the strengths of separate lines add. The
 profile of a resonance is the Lorentzian, φ(ν) = (1/π)·dδ/dν, where δ is the phase of the response, tan δ = γ/(ν₀ − ν),
@@ -1883,7 +1891,8 @@ follow every increasing map; those facts are part (d). The other parts of Theore
   uniformly, standing 45° from its middle at the half-width; read the other way, the Lorentzian is the line laid by a
   uniform turn of that phase, the profile of §7.2, with the line's strength the amount. The turn there is the
   response's, not a reader's. A sum of terms whose densities fall off like 1/x² reaches the same law as a stable limit
-  of index 1, with no angle in sight (Lévy 1925). Our claim is that where a reader sweeps uniformly, the law of what it
+  of index 1, with no angle in the terms (Lévy 1925); the turn is in the limit, which is where a planar Brownian motion
+  started above the line first lands on it, a uniform turn from its start (Spitzer 1958). Our claim is that where a reader sweeps uniformly, the law of what it
   lays is its own addresses, whatever else may give the same shape.
 - *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
   (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
@@ -2978,6 +2987,9 @@ Snellius, W. (1617). *Eratosthenes Batavus, de terrae ambitus vera quantitate*. 
 
 Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Fincke,
 Berlin.
+
+Spitzer, F. (1958). Some theorems concerning 2-dimensional Brownian motion. *Transactions of the American
+Mathematical Society* 87, 187–197.
 
 Stevens, S. S. (1946). On the theory of scales of measurement. *Science* 103(2684), 677–680.
 

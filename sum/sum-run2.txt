@@ -1,0 +1,8 @@
+P1 exact: characteristic functions e^-|t|·e^-2|t| − e^-3|t| at most 0.0; relay quartiles -2.9918 3.0001, one turn from 3: -2.9985 2.9963; KS 0.00090
+P2 X1 + X2 quartiles -2.0000 1.9932; tangent addition (X1 + X2)/(1 − X1X2) -0.9982 1.0034
+P3 the mean of n: n=1 quartiles -0.9972 1.0023; n=10 quartiles -0.9932 1.0065; n=1000 quartiles -1.0071 1.0020
+P4 KS to Cauchy(0, π/2) of S_n/n: n=10 0.0080, n=100 0.0028, n=1000 0.0018; Brownian landing from π/2 (exact construction) quartiles -1.5722 1.5754
+P1 not killed
+P2 not killed
+P3 not killed
+P4 not killed

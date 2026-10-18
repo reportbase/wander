@@ -130,3 +130,36 @@ The predictions:
 - **P5** as written.
 
 *Killed* as before, with these thresholds.
+
+### Run 2 (18 Oct, `python3 sum/sum.py 2`; output `sum/sum-run2.txt`, 4 s)
+
+None of P1′–P5 was killed.
+
+| prediction | measured | 3 standard errors |
+|---|---|---|
+| P1′, the relay | quartiles −2.9918, 3.0001 | 0.0245 |
+| P1′, one turn from height 3 | quartiles −2.9985, 2.9963 | 0.0245 |
+| P1′, two-sample KS | 0.00090 | limit 0.0023 |
+| P2′, X₁ + X₂ | quartiles −2.0000, 1.9932 | |
+| P2′, tangent addition | quartiles −0.9982, 1.0034 | |
+| P3′, n = 1 | −0.9972, 1.0023 | 0.0258 |
+| P3′, n = 10 | −0.9932, 1.0065 | 0.0258 |
+| P3′, n = 1000 | −1.0071, 1.0020 | 0.0258 |
+| P4′, KS of Sₙ/n at n = 10, 100, 1000 | 0.0080, 0.0028, 0.0018 | limit 0.0052 at n = 1000 |
+| P4′, the Brownian landing from π/2 | quartiles −1.5722, 1.5754 | |
+
+**P5, the verdict: not killed.** A turn and an amount can be named in every case:
+- **The relay (P1′).** One uniform turn from the combined standpoint; the amounts are the heights, which add.
+- **The sum against the composition (P2′).** The sum is the relay, scale 2. The composition of directions, scale 1, is
+  a different thing, as the withdrawn guess should have seen.
+- **The mean of n (P3′).** A relay from height n, rescaled by 1/n back to height 1. The quartiles do not narrow, since
+  averaging addresses gains nothing.
+- **The stable limit (P4′).**
+  - The summands are not directions. They are amounts with tails 1/(2y²) on each side.
+  - The turn is in the limit object: the landing of a planar Brownian motion from height πc = π/2, a uniform turn
+    (harmonic measure).
+  - So the rule holds for the Cauchy variable, the limit, and not for the summands. That is what the rule claims.
+
+In no case does a Cauchy variable add as an amount. What adds are the standpoints' heights and feet, the parameters
+m + iγ. The sum of Cauchy variables is the landing of one turn from the summed standpoint: a direction still, read by
+its order.
