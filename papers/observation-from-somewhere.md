@@ -870,8 +870,8 @@ each finger the same address.
 - *The unit circle is the hand's own arc.* In one quadrant it is a quarter, flat to upright. Upright is the arc's end,
   the horizon [0 : 1], a direction the hand can point; in the chart v/h it is open at the top, since no finite reading
   is the horizon (§4). Turned through the four quadrants, the hand reads four arcs alike, since no reading carries a
-  sign. Joining them into the closed circle is the writer's work, done with the signs it holds. The sphere is every way a
-  hand could face, its eight octants joined by the writer; no hand holds it.
+  sign. Joining them into the closed circle is the writer's work: it knows each one's size, so their ends can be made
+  to meet. The sphere is every way a hand could face, its eight octants joined by the writer; no hand holds it.
 
 ### 3.8 What the reader lacks is one number
 
@@ -1812,8 +1812,12 @@ the same split in a form any programmer knows.
 - *The reader reads the arrays; the writer joins them.*
   - A reading carries no sign, and composed turns repeat after a half turn (tangent addition). So from inside, every
     facing is the same array, and a reader reads within one.
-  - Which array is which, and how their ends meet, is held by the signs: a frame outside the readings.
-  - Joining the four into the closed circle, or the eight into the sphere, is the writer's.
+  - To join two arrays, their values must meet at the shared end in one unit. That needs each array's size, its extent
+    in amounts.
+  - The reader holds each array only up to its own factor, the size no reading fixes (Proposition 8), so it cannot tell
+    whether two ends meet. The point in amounts needs the extent, as for the sphere in a cube (§9).
+  - The writer knows the sizes, and which facing each array is, so it can join the four into the closed circle, or the
+    eight into the sphere.
   - Since the places sit at midpoints, no array holds an end, and joined arrays never claim the same element.
 
 ### 7.4 The shape is payload
