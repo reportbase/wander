@@ -924,6 +924,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R369 (Tom: "the situated view does not know the size of the arrays. the unsituated view knows the size of the arrays,
   so he can connect them."): the join needs each array's size (its extent in amounts), which the reader lacks
   (Proposition 8); the writer knows it.
+  R370 (Tom: "the fact that reader does not know the size of the array creates the corner and the horizon."): OFS §7.3,
+  the writer's end an amount V* (no corner, no horizon), the reader's v = h its split and median, its far end the
+  direction [0 : 1]; the point v = h exists anyway (Proposition 1), the missing size gives it its role.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

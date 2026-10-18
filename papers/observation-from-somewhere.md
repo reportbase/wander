@@ -1819,6 +1819,14 @@ the same split in a form any programmer knows.
   - The writer knows the sizes, and which facing each array is, so it can join the four into the closed circle, or the
     eight into the sphere.
   - Since the places sit at midpoints, no array holds an end, and joined arrays never claim the same element.
+- *Not knowing the size makes the corner and the horizon.*
+  - Knowing an array's size, the writer has its end at an amount, the other party's whole V*. Its ruler is the number
+    line, and the point where the two parties are equal is computed and marks nothing (§10, the writer's map; §9).
+  - Not knowing it, the reader must draw the other party at its own H, and v = h becomes its split of near from far and
+    the median of its readings, the corner (Propositions 3(e), 5(d)).
+  - With no size, the array's far end is no amount, only a direction, [0 : 1], where the chart v/h runs out: the horizon
+    (§4).
+  - Both are the reader's because the size is missing; the writer, holding it, has neither.
 
 ### 7.4 The shape is payload
 
