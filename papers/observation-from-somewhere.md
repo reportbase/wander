@@ -1791,8 +1791,8 @@ the world has no indices of its own. The picture shows that addresses and payloa
 addresses follow the uniform turn is Proposition 5's, not the array's.
 - *The index is the address.* The places are fixed by the index before any value is stored, at equal steps of turn.
   - Read as slopes of the inscribed angle (§4), s_k = tan(θ_k/2), they are, for even N, exactly the N evenly spaced
-    quantiles of the standard Cauchy. A finite array holds the law at N of its quantiles; the law itself is the
-    continuous turn's (Proposition 5).
+    quantiles of the standard Cauchy. A finite array samples the continuous law at N quantile locations; the law
+    itself is the continuous turn's (Proposition 5).
   - For even N, half of them lie within the corner, |s_k| ≤ 1.
   - For odd N one place falls on the horizon itself, [0 : 1], an address like any other, and the share within the
     corner is not exactly a half.
