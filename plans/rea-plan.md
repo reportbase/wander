@@ -119,3 +119,67 @@ damage to be. E6 tests whether any of it can be decided.
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (18 Oct; the classifier's table `plans/rea/classification.md`, then Claude's check)
+
+**The classifier.**
+- A fresh agent read only `plans/hzt/neutral-list.md` and opened no source on the web, so every entry rests on the
+  catalogue's text and its memory.
+- It was not fully blind. The session's project instructions (`CLAUDE.md`) reached it with the task. It did not open them,
+  but they say that this plan exists with predictions E1–E6 (not what they are), and they summarise HZT's results.
+- Its counts:
+  - U 25: H1–H3, H5–H16, H20, H26, H31, H34, H38, H41, H49, H50, H52, H58;
+  - R 31: H4, H17–H19, H21–H25, H27–H30, H32, H33, H35–H37, H39, H40, H42–H48, H51, H55–H57;
+  - D 2: H53, H54;
+  - F 0.
+- Low confidence: H25, H51, H53, H54, H56.
+
+**Claude's check**, read against what I know of the sources (no source reopened here either; that is the next step for
+the D entries). I agree with every class. Notes where my reading adds to the classifier's:
+
+- **H25 and H51, a turn.** These are the dilute dipoles and Poisson-network interference: sums of amounts with a
+  scale-free Lévy measure, giving index 1 (H51 at b = 2). The classifier found no clean turn. I name the stable limit's
+  turn, the planar Brownian landing (SUM P4′, Spitzer), as SUM did for sums of amounts with 1/y² tails. The summands are
+  amounts; the limit is a direction.
+- **H52, Mandelbrot.** The conclusion uses α ≈ 1.7, not the Cauchy. Neither reader names a turn, because the conclusion
+  carries no Cauchy variable. The catalogue holds the entry for the family, of which the Cauchy is one member.
+- **H53, Lévy flights.** The classifier's turn checks exactly. A straight leg at a uniform heading θ from a point y off a
+  straight edge has length ℓ = y/cos θ, and P(ℓ > L) = (2/π)·arccos(y/L) ≈ (2/π)(y/L) far out. That is a density in
+  ℓ^(−2): μ = 2. So the "optimal" exponent is also the law of isotropic legs ended by edges.
+  - The optimality theorem itself is U.
+  - The empirical inference ("this animal searches optimally, because its steps have a μ ≈ 2 tail") rests on the tail
+    alone. It is D: the reading predicts that the tail's scale follows the distance to edges.
+  - It becomes F if the test shows that.
+- **H56, the half-Cauchy prior on σ.** The classifier gave R, with D as the alternative. I keep R. Under the rule a Cauchy
+  law on σ is a law on the direction [σ : A], and the choice of A sets its corner. But Gelman's reasons do not rest on σ
+  being a direction, and the sensitivity to A is already known.
+
+**Agreed count:** U 25, R 31, D 2, F 0.
+
+**The predictions.**
+- **E1 killed, in its letter, by H52.** Neither reader names a turn there, but neither does the source use a Cauchy
+  variable for its conclusion (α ≈ 1.7). So the kill is the catalogue's inclusion of the stable family, not a Cauchy
+  without a turn. Every entry that carries a Cauchy variable has a turn named: 57 of 57.
+- **E2 not killed.** Every layer-1-only entry is U. H33, a theorem given R, is restated and not changed.
+- **E3 killed.** D holds 2, not at least 3, and F holds none.
+- **E4 not killed.** The line shapes and spectra (H17–H48) are 0 F and 32 R or U.
+- **E5 not killed, on its edge.** H53 and H54 are D; H51 and H52 are not.
+- **E6 undecided.**
+  - H53's test needs movement tracks paired with habitat maps. Movebank did not answer from here (timed out, and its data
+    repository reset the connection).
+  - H54's test needs seed-trap data with release heights. Zenodo answers, but no dataset has been identified yet.
+  - Neither test has been shown possible or impossible.
+
+**Reading.** On this catalogue the damage is narrower than E3 expected:
+- **The theorems stand,** 25 entries.
+- **The physics of widths restates throughout,** 31 entries. A width is the turn's height, read as a rate, and every
+  prediction stands (TIM T5 was one such case, on real data).
+- **What changes is where an amount was modelled with a Cauchy tail and a property of the payload was read from it.**
+  That is foraging (H53) and dispersal (H54). There the rule forces a turn to be named, and the turn it names gives a
+  testable dependence on the standpoint's height.
+- **No conclusion falls on this first pass.** That could change once the D entries' sources are read in full and their
+  tests are run.
+
+This is one catalogue of 58, classified from memory. The re-analysis of the wider literature that R362 asks for would go
+past it: a second list (the plan's "entries added later"), aimed at layer-3p conclusions, since this catalogue was
+gathered for occurrences, not conclusions.
