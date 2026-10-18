@@ -1101,6 +1101,23 @@ try {
       || many6.b0.direction > 0 || many6.b4.shape + many6.b4.place < many6.b3.shape + many6.b3.place || many6.b4.shape < many6.b3.shape || !/no bands/.test(many6.hud))
     failures.push(`[${current} step 6] ${JSON.stringify(many6)}`);
   console.log(`${failures.length === before38b ? 'ok  ' : 'FAIL'} ${current} step 6 (many bodies: ${many6.painted} directions painted, the same at ×10³; at ε = 0 every point to ${many6.e0.toExponential(0)}; at ε = 10⁻³ shape ${many6.b3.shape}, place ${many6.b3.place}, direction ${many6.b3.direction}, hidden ${many6.b3.hidden}; at 10⁻⁴ shape ${many6.b4.shape}, place ${many6.b4.place})`);
+  // step 7, the inscribed reader (RSH run 4): the whole wedge swept evenly, 256 × 256 addresses: whatever the bodies, v ≤ h
+  // for half and the near field in both a third; the mirrored field's painted addresses at the corner; the painting the
+  // same with the world scaled; the equal-angle readers exact at ε = 0 and banded at ε = 10⁻³
+  const before38c = failures.length;
+  await page.goto(new URL('recover.html?step=7&mirror=1', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__recover && __recover.frames > 2, null, { timeout: 60000 });
+  const ins = await page.evaluate(() => { const X = __recover, o = {};
+    const Wf = X.many('field'), Wm = X.many('mirror'), Mf = X.mapPaint(Wf), Mm = X.mapPaint(Wm), Mk = X.mapPaint(Wm, 1e3);
+    o.all = [Mf.all.vh, Mf.all.both, Mm.all.vh, Mm.all.both]; o.mirror = Mm.painted.vh; o.field = Mf.painted.vh; o.metM = Mm.painted.n;
+    o.dk = 0; for (let i = 0; i < Mm.paint.length; i++) if (Mk.paint[i] !== Mm.paint[i]) o.dk++;
+    o.e0 = Math.max(...X.manyRead(0, 1, 'field', 'angle').map(r => r.err0));
+    const R3 = X.manyRead(1e-3, 1, 'field', 'angle'), c = { shape: 0, place: 0, direction: 0, hidden: 0 }; R3.forEach(r => c[r.band]++); o.b3 = c;
+    o.hud = X.hud(); o.frames = X.frames; return o; });
+  if (ins.all.some((x, i) => Math.abs(x - (i % 2 ? 1 / 3 : 0.5)) > 0.003) || Math.abs(ins.mirror - 0.5) > 0.02 || ins.metM < 500 || ins.dk > 0
+      || ins.e0 > 1e-9 || ins.b3.shape < 1 || ins.b3.direction < 1 || !/whatever the bodies/.test(ins.hud))
+    failures.push(`[${current} step 7] ${JSON.stringify(ins)}`);
+  console.log(`${failures.length === before38c ? 'ok  ' : 'FAIL'} ${current} step 7 (the inscribed reader: all addresses v ≤ h ${ins.all[0].toFixed(3)}, near field ${ins.all[1].toFixed(3)} with any bodies; the mirrored field's ${ins.metM} met at ${ins.mirror.toFixed(3)}, the field's at ${ins.field.toFixed(3)}; ×10³ moves none; equal-angle pixels: shape ${ins.b3.shape}, place ${ins.b3.place}, direction ${ins.b3.direction})`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';

@@ -34,7 +34,13 @@
         band against the world (the referee): shape (e_s < 0.1), place (e_p < 0.1), a direction (rays, or placed off by
         a tenth or more), hidden (seen by two readers at fewer than an eighth of its points). The field drawn on the
         reader's lay, in proportion to the corner at H = 8, then 1 + ln s.
-    Links: ?step=1..6&body=<id>&lon=&lat=&roll=&k=<log10 k>&eps=<log10 ε>|0
+      - Step 7, the inscribed reader (RSH run 4; Tom: "is it using cauchy inscribed reader?", then "yes, build the
+        inscribed version"): one reader at home sweeps the whole wedge evenly, 256 × 256 addresses even in azimuth and
+        height (Lambert's cylindrical equal-area map, each cell an equal share), painted by the first body met; the
+        addresses' shares (v ≤ h ½, near field ⅓) whatever is met; a body's share × π/2 its solid angle; the painted
+        addresses' median where the bodies lie, at the corner for the mirrored field; the three readers' pixels ε in
+        altitude and azimuth (their own turns), not a flat screen.
+    Links: ?step=1..7&body=<id>&lon=&lat=&roll=&k=<log10 k>&eps=<log10 ε>|0&mirror=1
     Test hook: window.__recover.
     -->
     <style>
@@ -103,7 +109,7 @@
         <div class="ctl"><label for="lat">latitude</label><input id="lat" type="range" min="-90" max="90" step="0.5" value="35.26"><output id="lato"></output></div>
         <div class="ctl"><label for="roll">turned</label><input id="roll" type="range" min="-180" max="180" step="0.5" value="0"><output id="rollo"></output></div>
         <div id="epsRow"><div class="ctl"><label for="lgeps">pixels ε</label><input id="lgeps" type="range" min="-5" max="-2" step="0.1" value="-3"><output id="lgepso"></output></div>
-            <div class="row" style="margin-top:0"><button id="bExact">ε = 0, exact</button></div></div>
+            <div class="row" style="margin-top:0"><button id="bExact">ε = 0, exact</button><button id="bMirror">mirror the field</button></div></div>
         <div class="ctl"><label for="lgk">scale the world</label><input id="lgk" type="range" min="-3" max="3" step="0.01" value="0"><output id="lgko"></output></div>
         <div class="row"><button id="bSweep">sweep</button><button id="bSolid" class="on">body</button><button id="bSpin">turn</button><button id="bReset">reset</button></div>
         <p class="sub" style="margin:10px 0 0">Drag to look around. Other demos: <a href="wedge.html">the wedge</a>,
@@ -239,10 +245,30 @@ function lsqRays(As, us){                        // least squares on rays, in th
     const D = det(M3), x = [0, 1, 2].map(c => det(M3.map((row, i) => row.map((v, j) => j === c ? r[i] : v))) / D);
     return add3(o, add3(mul3(m, x[0]), add3(mul3(f, x[1]), mul3(g, x[2]))));
 }
+// step 7's second field (RSH run 4): bodies in the half of the cone where v < h, each with its mirror across v = h
+// (x ↔ y, the body reflected too), so the payload is exchange-symmetric
+const swp = p => [p[1], p[0], p[2]];
+function mirrored(f){ return { idx: f.idx, B: f.B, c: swp(f.c), s: f.s, rb: f.rb, surf: u => swp(f.surf(u)), inside: q => f.inside(swp(q)) }; }
+function mirrorField(){
+    let sd = 5; const rnd = () => { sd |= 0; sd = sd + 0x6D2B79F5 | 0; let t = Math.imul(sd ^ sd >>> 15, 1 | sd); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+    const cos30 = Math.cos(Math.PI / 6), CEN = [], MIR = [], F = [];
+    for (let i = 0; i < MB.M / 2; i++) for (let tries = 0; tries < 5000; tries++){
+        const z = cos30 + (1 - cos30) * rnd(), a = 2 * Math.PI * rnd(), q = Math.sqrt(1 - z * z);
+        let u = add3(mul3(MB.AX, z), add3(mul3(MB.E1, q * Math.cos(a)), mul3(MB.E2, q * Math.sin(a)))); if (u[1] > u[0]) u = swp(u);
+        const C = mul3(u, 4 * 2 ** (12 * rnd() ** 2)), f = placedBody(i, C), g = mirrored(f);   // (distances skewed near, so some show shape)
+        if (len3(C) < f.rb + 1 || len3(sub(f.c, g.c)) <= 2 * f.rb) continue;
+        if (F.every(h => len3(sub(h.c, f.c)) > h.rb + f.rb && len3(sub(h.c, g.c)) > h.rb + g.rb)){ F.push(f, g); CEN.push(C, C); MIR.push(false, true); break; } }
+    return { CEN, MIR, F };
+}
+// a body of a field at scale k (the mirrored field's bodies reflected)
+const bodyAt = (W, b, k) => { const f = placedBody(W.F[b].idx, W.CEN[b], k); return W.MIR && W.MIR[b] ? mirrored(f) : f; };
+const MANYS = {};
 let MANY = null;
-function many(){                                  // built when first wanted: the field, its census, who sees each point
-    if (MANY) return MANY;
-    const { CEN, behind } = manyField(), F = CEN.map((C, i) => placedBody(i, C)), O = [0, 0, 0];
+function many(kind = 'field'){                    // built when first wanted: the field, its census, who sees each point
+    if (MANYS[kind]) return (MANY = MANYS[kind]);
+    let CEN, behind = [], F, MIR = null, O = [0, 0, 0];
+    if (kind === 'mirror') ({ CEN, MIR, F } = mirrorField());
+    else { ({ CEN, behind } = manyField()); F = CEN.map((C, i) => placedBody(i, C)); }
     const dist = F.map(f => len3(f.c)), meanR = F.map(f => MB.PTS.reduce((a, u) => a + len3(sub(f.surf(u), f.c)), 0) / MB.NP);
     // the census from O over the field's cap (34° about (1, 1, 1)), each direction painted by the first body it meets
     const one = 2 * Math.sin(MB.CAP / 2) ** 2, ga = Math.PI * (3 - Math.sqrt(5)), dirs = [], paint = new Int16Array(MB.NCAP).fill(-1), hides = new Set();
@@ -255,8 +281,25 @@ function many(){                                  // built when first wanted: th
     const AB = len3(sub(RD[1], RD[0]));
     const seen = (a, p) => { const sg = sub(p, a), L = len3(sg), d = mul3(sg, 1 / L); return F.every(f => { const t = enterBody(f, a, d); return t === null || t >= L - 1e-9 * (L + f.rb); }); };
     const seers = F.map(f => MB.PTS.map(u => { const p = f.surf(u); return [0, 1, 2].filter(i => seen(RD[i], p)); }));
-    MANY = { CEN, F, dist, meanR, behind, dirs, paint, hides, RD, AB, seers, reads: {} };
+    MANY = MANYS[kind] = { kind, CEN, MIR, F, dist, meanR, behind, dirs, paint, hides, RD, AB, seers, reads: {} };
     return MANY;
+}
+// the inscribed reader's sweep (step 7; RSH run 4): one reader at O sweeps the whole wedge (h → x, v → y, v₂ → z)
+// uniformly, a grid even in azimuth ψ (v₂/h = tan ψ) and in height y (Archimedes: equal area, so each cell an equal share
+// of the sweep); each address painted by the first body its ray meets. This grid is Lambert's cylindrical equal-area map.
+MB.NG = 256;
+function mapAddr(i){ const a = i % MB.NG, b = (i - a) / MB.NG, ps = (a + 0.5) / MB.NG * Math.PI / 2, y = (b + 0.5) / MB.NG, q = Math.sqrt(1 - y * y);
+    return [q * Math.cos(ps), y, q * Math.sin(ps)]; }
+function mapPaint(W, k = 1){
+    const key = 'map:' + k; if (W[key]) return W[key];
+    const F = k === 1 ? W.F : W.F.map((f, b) => bodyAt(W, b, k)), N = MB.NG * MB.NG, paint = new Int16Array(N).fill(-1), cnt = new Array(F.length).fill(0);
+    const cones = F.map(f => ({ u: nrm(f.c), cs: Math.sqrt(Math.max(0, 1 - (f.rb / len3(f.c)) ** 2)) }));
+    for (let i = 0; i < N; i++){ const d = mapAddr(i); let best = -1, bt = Infinity;
+        F.forEach((f, b) => { if (dot3(d, cones[b].u) > cones[b].cs){ const t = enterBody(f, [0, 0, 0], d); if (t !== null && t < bt){ bt = t; best = b; } } });
+        if (best >= 0){ paint[i] = best; cnt[best]++; } }
+    let n = 0, vh = 0, both = 0, pn = 0, pvh = 0;
+    for (let i = 0; i < N; i++){ const [h, v, v2] = mapAddr(i); n++; if (v <= h){ vh++; if (v2 <= h) both++; } if (paint[i] >= 0){ pn++; if (v <= h) pvh++; } }
+    return (W[key] = { paint, cnt, all: { vh: vh / n, both: both / n }, painted: { n: pn, vh: pvh / pn } });
 }
 // the readers' screen: square to (1, 1, 1) at unit distance, pixels ε wide in both coordinates (ε = 0: exact)
 function screenRead(d, eps){ const z = dot3(d, MB.AX); let x = dot3(d, MB.E1) / z, y = dot3(d, MB.E2) / z;
@@ -264,13 +307,17 @@ function screenRead(d, eps){ const z = dot3(d, MB.AX); let x = dot3(d, MB.E1) / 
     return { x, y, u: eps > 0 ? nrm(add3(MB.AX, add3(mul3(MB.E1, x), mul3(MB.E2, y)))) : d }; }
 // every body read at ε with the world scaled by k: its placed points in |AB|, its rays, and (against the world, the
 // referee's measure) its place and shape errors and band
-function manyRead(eps, k = 1){
-    const W = many(), key = eps + ':' + k; if (W.reads[key]) return W.reads[key];
+// the inscribed reader's own pixels: altitude a (tan a = v/√(h² + v₂²)) and azimuth ψ each rounded to ε (RSH run 4)
+function angleRead(d, eps){ let ps = Math.atan2(d[2], d[0]), a = Math.atan2(d[1], Math.hypot(d[0], d[2]));
+    if (eps > 0){ ps = (Math.floor(ps / eps) + 0.5) * eps; a = (Math.floor(a / eps) + 0.5) * eps; }
+    return { x: ps, y: a, u: eps > 0 ? [Math.cos(a) * Math.cos(ps), Math.sin(a), Math.cos(a) * Math.sin(ps)] : d }; }
+function manyRead(eps, k = 1, kind = 'field', pix = 'flat'){
+    const W = many(kind), key = eps + ':' + k + ':' + pix, read = pix === 'angle' ? angleRead : screenRead; if (W.reads[key]) return W.reads[key];
     const RDk = W.RD.map(a => mul3(a, k)), ABk = W.AB * k;
     const out = W.F.map((f0, b) => {
-        const f = k === 1 ? f0 : placedBody(b, W.CEN[b], k), placed = [], truth = []; let two = 0, rays = 0;
+        const f = k === 1 ? f0 : bodyAt(W, b, k), placed = [], truth = []; let two = 0, rays = 0;
         MB.PTS.forEach((u, n) => { const who = W.seers[b][n]; if (who.length < 2) return; two++;
-            const p = f.surf(u), rs = who.map(i => screenRead(nrm(sub(p, RDk[i])), eps));
+            const p = f.surf(u), rs = who.map(i => read(nrm(sub(p, RDk[i])), eps));
             if (eps > 0 && rs.every(r => r.x === rs[0].x && r.y === rs[0].y)){ rays++; return; }
             placed.push(lsqRays(who.map(i => mul3(RDk[i], 1 / ABk)), rs.map(r => r.u))); truth.push(mul3(p, 1 / ABk)); });
         const r = { b, two, rays, placed, truth, ep: null, es: null, cq: null, rq: 0, err0: 0 };
@@ -285,7 +332,7 @@ function manyRead(eps, k = 1){
 // ── state ─────────────────────────────────────────────────────────────────────────────────────────────────────
 const P0 = new URLSearchParams(location.search);
 const num = (k, d) => { const v = parseFloat(P0.get(k)); return Number.isFinite(v) ? v : d; };
-const S = { step: Math.max(1, Math.min(6, Math.round(num('step', 1)))), lgeps: P0.get('eps') === '0' ? null : num('eps', -3), body: Math.max(0, Math.round(num('body', 0))),
+const S = { step: Math.max(1, Math.min(7, Math.round(num('step', 1)))), mirror: P0.get('mirror') === '1', lgeps: P0.get('eps') === '0' ? null : num('eps', -3), body: Math.max(0, Math.round(num('body', 0))),
     lon: num('lon', 45), lat: num('lat', 35.26), roll: num('roll', 0), lgk: num('lgk', num('k', 0)), solid: true, spin: false, sweep: 1 };
 let R = recover(S.body), RK = null;
 
@@ -363,8 +410,9 @@ function bodyGeometry(){
     const [h, s, l] = F.B.hsl; G.bodyMat.color.setHSL(h, s, l);
 }
 function draw(){
-    const six = S.step === 6;
+    const six = S.step >= 6;
     G.paint.visible = G.field.visible = six; G.bodyGroup.visible = G.recGroup.visible = !six;
+    G.censusGroup.visible = S.step !== 7; G.mapGroup.visible = S.step === 7;
     G.censusGroup.quaternion.copy(six ? QC : new THREE.Quaternion());
     if (six){ G.census.visible = false; G.sphereWire.visible = true; return drawMany(); }
     const q = wedgeQuat(S.lon, S.lat, S.roll), inW = inWedgeOf(q), F = R.F, c = F.c, upto = Math.round(N * S.sweep);
@@ -408,14 +456,18 @@ function draw(){
 const epsOf = () => S.lgeps === null ? 0 : 10 ** S.lgeps;
 let SC = 1, RINGS_AT = null;
 function drawMany(){
-    const W = many(), eps = epsOf(), k = 10 ** S.lgk, RS = manyRead(eps), q = wedgeQuat(S.lon, S.lat, S.roll), inW = inWedgeOf(q);
-    G.wedgeGroup.quaternion.copy(q); G.wedgeGroup.visible = true;
+    const seven = S.step === 7, kind = seven && S.mirror ? 'mirror' : 'field', pix = seven ? 'angle' : 'flat';
+    const W = many(kind), eps = epsOf(), k = 10 ** S.lgk, RS = manyRead(eps, 1, kind, pix), q = wedgeQuat(S.lon, S.lat, S.roll);
+    const inW = seven ? () => true : inWedgeOf(q);
+    G.wedgeGroup.quaternion.copy(q); G.wedgeGroup.visible = !seven;
+    if (seven) drawMap(W);
+    else {
     // the census painted by body: each direction the first body it meets, or sky
     const pp = G.paint.geometry.attributes.position, pc = G.paint.geometry.attributes.color, col = new THREE.Color();
     W.dirs.forEach((d, i) => { pp.setXYZ(i, d[0] * HR * 1.002, d[1] * HR * 1.002, d[2] * HR * 1.002); const b = W.paint[i], w = inW(d);
         if (b < 0) col.setRGB(0.035, 0.035, 0.055); else { const [h, s, l] = W.F[b].B.hsl; col.setHSL(h, s, l); }
         if (!w) col.multiplyScalar(0.3); pc.setXYZ(i, col.r, col.g, col.b); });
-    pp.needsUpdate = pc.needsUpdate = true;
+    pp.needsUpdate = pc.needsUpdate = true; }
     // the field on the reader's lay: true places faint, then each body by its band
     const tp = G.trueDots.geometry.attributes.position, tc = G.trueDots.geometry.attributes.color;
     const sp = G.shapePts.geometry.attributes.position, sc = G.shapePts.geometry.attributes.color;
@@ -441,7 +493,47 @@ function drawMany(){
         for (let j = 0; 1 + j * Math.log(2) <= lmax + 1e-9; j++){ const r = (1 + j * Math.log(2)) * SC, pts = [];
             for (let i = 0; i <= 40; i++){ const a = (-38 + 76 * i / 40) * RAD; pts.push(new THREE.Vector3(r * Math.cos(a), r * Math.sin(a), 0)); }
             G.rings.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: j === 0 ? 0xd4a052 : 0x3a3a52, transparent: true, opacity: j === 0 ? 0.7 : 0.45 }))); } }
-    hudMany(W, RS, eps, k, inW);
+    if (seven) hudInscribed(W, RS, eps, k); else hudMany(W, RS, eps, k, inW);
+}
+// step 7's left: the inscribed reader's addresses, Lambert's cylindrical equal-area map of the wedge (azimuth ψ across,
+// from h to v₂; height v up), each cell an equal share of the sweep, painted by the first body met; the three pairs'
+// corners (v = h, v₂ = h, v = v₂) meeting at the triple corner
+const MAPW = 1.15;
+G.mapGroup = new THREE.Group(); G.mapGroup.visible = false; ROOT.add(G.mapGroup);
+G.mapPts = cloud(MB.NG * MB.NG, 0.0062); G.mapPts.material.transparent = false; G.mapGroup.add(G.mapPts);
+(() => {
+    const at = (ps, y) => new THREE.Vector3((ps / (Math.PI / 2) - 0.5) * MAPW, (y - 0.5) * MAPW, 0.002);
+    const line = (pts, col, op = 0.9) => G.mapGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: op })));
+    const curve = f => { const pts = []; for (let i = 0; i <= 90; i++){ const ps = i / 90 * Math.PI / 2; pts.push(at(ps, f(ps))); } return pts; };
+    line([at(0, 0), at(Math.PI / 2, 0), at(Math.PI / 2, 1), at(0, 1), at(0, 0)], 0x3a3a52, 0.8);
+    line(curve(ps => Math.cos(ps) / Math.sqrt(1 + Math.cos(ps) ** 2)), 0xd4a052);         // v = h
+    line(curve(ps => Math.sin(ps) / Math.sqrt(1 + Math.sin(ps) ** 2)), 0xd4a052);         // v = v₂
+    line([at(Math.PI / 4, 0), at(Math.PI / 4, 1)], 0xd4a052);                            // v₂ = h
+    const tc = cloud(1, 0.045); tc.geometry.attributes.position.setXYZ(0, 0, (1 / Math.sqrt(3) - 0.5) * MAPW, 0.004);
+    tc.geometry.attributes.color.setXYZ(0, 1, 1, 1); G.mapGroup.add(tc);
+})();
+function drawMap(W){
+    const M = mapPaint(W), pp = G.mapPts.geometry.attributes.position, pc = G.mapPts.geometry.attributes.color, col = new THREE.Color();
+    for (let i = 0; i < MB.NG * MB.NG; i++){ const a = i % MB.NG, b = (i - a) / MB.NG;
+        pp.setXYZ(i, ((a + 0.5) / MB.NG - 0.5) * MAPW, ((b + 0.5) / MB.NG - 0.5) * MAPW, 0);
+        const p = M.paint[i]; if (p < 0) col.setRGB(0.022, 0.022, 0.034); else { const [h, s, l] = W.F[p].B.hsl; col.setHSL(h, s, l); }
+        pc.setXYZ(i, col.r, col.g, col.b); }
+    pp.needsUpdate = pc.needsUpdate = true;
+}
+function hudInscribed(W, RS, eps, k){
+    const M = mapPaint(W), cnt = { shape: 0, place: 0, direction: 0, hidden: 0 }; RS.forEach(r => cnt[r.band]++);
+    const R0 = manyRead(0, 1, W.kind, 'angle'); let e0 = 0; R0.forEach(r => { e0 = Math.max(e0, r.err0); });
+    let dk = 0; if (k !== 1){ const Mk = mapPaint(W, k); for (let i = 0; i < M.paint.length; i++) if (Mk.paint[i] !== M.paint[i]) dk++; }
+    const met = M.cnt.filter(c => c > 0).length, near = W.dist.map((d, b) => [d, b]).sort((x, y) => x[0] - y[0])[0][1];
+    const f = x => x.toExponential(0), lines = [];
+    lines.push(`the inscribed reader: ${MB.NG * MB.NG} addresses, even in azimuth and height, each an equal share of the sweep`);
+    lines.push(`all addresses: v ≤ h ${M.all.vh.toFixed(3)} (½), the near field in both ${M.all.both.toFixed(3)} (⅓), whatever the bodies`);
+    lines.push(`${W.kind === 'mirror' ? 'the mirrored field' : 'the field'}: ${M.painted.n} addresses met, by ${met} bodies; among them v ≤ h ${M.painted.vh.toFixed(3)}${W.kind === 'mirror' ? ' (symmetric: the corner)' : ' (where the bodies lie)'}`);
+    lines.push(`a body's share × π/2 is its solid angle: the nearest, ${M.cnt[near]} addresses at d ${W.dist[near].toFixed(1)}; breadth over distance, no size`);
+    lines.push(`three readers, equal-angle pixels ε = ${eps ? eps.toExponential(0) : '0 (exact)'}: shape ${cnt.shape}, place ${cnt.place}, direction only ${cnt.direction}, hidden ${cnt.hidden}`);
+    lines.push(`at ε = 0 every seen point in |AB| to ${f(Math.max(e0, 1e-17))} of its distance; scale the world ×${k >= 1e3 || k < 1e-2 ? k.toExponential(1) : k.toPrecision(3)}: ${dk} addresses painted otherwise`);
+    document.getElementById('hud').textContent = lines.join('\n');
+    S._last = { cnt, all: M.all, painted: M.painted, e0, dk, met };
 }
 function hudMany(W, RS, eps, k, inW){
     const cnt = { shape: 0, place: 0, direction: 0, hidden: 0 }; RS.forEach(r => cnt[r.band]++);
@@ -470,6 +562,7 @@ const STEPS = [
     ['Three readers', '<b>Three readers inside</b> (red), each holding only directions. Where two of their rays cross is the place. Knowing only the shape of their own triangle, they give the body back <b>up to its size</b> (<span class="violet">violet</span>, right, drawn at a size of their choosing): the stretch and every bump come back; the wedge\'s part is bright.'],
     ['One length', '<b>One length carried in</b>, |AB|, how far apart two readers stand, and the readers\' body lands on the true one (<span class="teal">teal</span>, on it). Scaling the world moves no reading and no point in |AB|; only the length carried in changes.'],
     ['Many bodies', '<b>Many bodies at once.</b> From one standpoint (left) the field is a <b>painting of the sky</b>: each direction one body or none, each patch its breadth over its distance; what hides what orders them, never sizes them. Three readers a length 1 apart, reading on pixels ε wide, lay the field (right, on the reader\'s lay, the corner in <span class="gold">gold</span>): near, <span class="teal">the shape</span> (drawn larger than it is); farther, <span class="gold">the place</span> alone; past about B/ε, <span class="red">a direction</span>. Faint: where the bodies truly are. With ε = 0 every body is placed exactly: the bands are the pixels\', not the geometry\'s. The wedge picks out some.'],
+    ['The inscribed reader', '<b>The inscribed reader among the bodies.</b> One reader at home sweeps the whole wedge evenly (left: Lambert\'s equal-area map, azimuth across from h to v₂, height up to v; each cell an equal share of the sweep). Each address is painted by the first body it meets. The addresses are the sweep\'s own, the Cauchy wedge, whatever is met: v ≤ h for half, the near field in both a third, the <span class="gold">corners</span> where they always are. A body takes a share equal to its solid angle, breadth over distance; what is met moves only the median of what arrives, and a <b>mirrored field</b> keeps it at the corner. The three readers now count their own turns: pixels ε in altitude and azimuth (right).'],
 ];
 const stepsEl = document.getElementById('steps');
 STEPS.forEach((s, i) => { const b = document.createElement('button'); b.textContent = (i + 1) + ' ' + s[0]; b.onclick = () => set({ step: i + 1 }); stepsEl.appendChild(b); });
@@ -494,7 +587,8 @@ function caption(){
     [...stepsEl.children].forEach((b, i) => b.classList.toggle('on', i + 1 === S.step));
     document.getElementById('bodyName').textContent = 'body ' + S.body;
     for (const [id, v, u] of [['lon', S.lon, '°'], ['lat', S.lat, '°'], ['roll', S.roll, '°']]){ document.getElementById(id).value = v; document.getElementById(id + 'o').textContent = (+v).toFixed(1) + u; }
-    document.getElementById('epsRow').style.display = S.step === 6 ? '' : 'none';
+    document.getElementById('epsRow').style.display = S.step >= 6 ? '' : 'none';
+    document.getElementById('bMirror').style.display = S.step === 7 ? '' : 'none'; document.getElementById('bMirror').classList.toggle('on', S.mirror);
     document.getElementById('lgeps').value = S.lgeps === null ? -5 : S.lgeps; document.getElementById('lgepso').textContent = S.lgeps === null ? '0' : (10 ** S.lgeps).toExponential(0);
     document.getElementById('bExact').classList.toggle('on', S.lgeps === null);
     document.getElementById('lgk').value = S.lgk; document.getElementById('lgko').textContent = '×' + (10 ** S.lgk).toPrecision(3);
@@ -505,12 +599,12 @@ const LAB = [['census: one reader', PL.census, 'gold'], ['the body', PL.body, ''
     const d = document.createElement('div'); d.textContent = t; if (cl) d.className = cl; document.getElementById('labels').appendChild(d); return { d, p }; });
 function labels(){ const w = canvas.clientWidth, h = canvas.clientHeight, v = new THREE.Vector3();
     LAB.forEach(({ d, p }, i) => { v.copy(p).add(new THREE.Vector3(0, -0.85, 0)); ROOT.localToWorld(v); v.project(camera);
-        const on = S.step === 6 ? i === 0 : i === 1 || (i === 0 && S.step >= 2) || (i === 2 && S.step >= 4);
+        const on = S.step >= 6 ? i === 0 && S.step === 6 : i === 1 || (i === 0 && S.step >= 2) || (i === 2 && S.step >= 4);
         d.style.display = on && v.z < 1 ? '' : 'none'; d.style.left = ((v.x + 1) / 2 * w) + 'px'; d.style.top = ((1 - v.y) / 2 * h) + 'px'; }); }
 
 function set(o){
     Object.assign(S, o);
-    if (S.step === 6 && !MANY){ many(); resize(); }
+    if (S.step >= 6 && !MANY){ many(); resize(); }
     if (o.body !== undefined){ S.body = Math.max(0, Math.round(S.body)); R = recover(S.body); RK = null; bodyGeometry(); }
     caption(); draw();
 }
@@ -520,6 +614,7 @@ document.getElementById('bRand').onclick = () => set({ body: Math.floor(Math.ran
 for (const id of ['lon', 'lat', 'roll']) document.getElementById(id).oninput = e => set({ [id]: +e.target.value });
 document.getElementById('lgk').oninput = e => set({ lgk: +e.target.value });
 document.getElementById('lgeps').oninput = e => set({ lgeps: +e.target.value });
+document.getElementById('bMirror').onclick = () => set({ mirror: !S.mirror });
 document.getElementById('bExact').onclick = () => set({ lgeps: S.lgeps === null ? -3 : null });
 document.getElementById('bSolid').onclick = () => set({ solid: !S.solid });
 document.getElementById('bSpin').onclick = () => set({ spin: !S.spin });
@@ -542,21 +637,23 @@ function resize(){ const w = canvas.clientWidth, h = canvas.clientHeight; if (re
     // step 6: the field from just right of the census (wide) or below it (tall)
     G.field.position.set(tall ? -1.15 : -GAP + 0.8, tall ? -0.45 : 0, 0);
     const span = tall ? 2.3 : 2.75, W = MANY; SC = W ? span / (1 + Math.log(Math.max(...W.dist) / MB.H) + 0.25) : span / 9;
-    if (S.step === 6) draw(); }
+    G.mapGroup.position.copy(PL.census); if (!tall) G.mapGroup.position.x += 0.2; else G.mapGroup.position.y -= 0.15;
+    if (S.step >= 6) draw(); }
 addEventListener('resize', resize);
 function frame(t){
     requestAnimationFrame(frame);
     if (sweepT != null){ const s = Math.min(1, (t - sweepT) / 3500); if (s !== S.sweep){ S.sweep = s; draw(); } if (s >= 1) sweepT = null; }
     if (S.spin) ROOT.rotation.y += 0.004;
     if (controls) controls.update();
+    if (G.mapGroup.visible) G.mapGroup.quaternion.copy(camera.quaternion);   // the map faces the eye
     if (renderer){ renderer.render(scene, camera); frames++; }
     labels();
 }
-bodyGeometry(); if (S.step === 6) many(); resize(); caption(); draw(); requestAnimationFrame(frame);
+bodyGeometry(); if (S.step >= 6) many(); resize(); caption(); draw(); requestAnimationFrame(frame);
 
 window.__recover = {
     LATTICE, bodyOf, bodyFrame, recover, wedgeQuat, inWedgeOf, wedgeReadings, sharesOf, set,
-    many, manyRead, placedBody, enterBody, screenRead, MB,
+    many, manyRead, placedBody, enterBody, screenRead, angleRead, mapPaint, mapAddr, MB,
     get state(){ return { ...S, R: { idx: R.idx, AB: R.AB, meanR: R.meanR, rdErr: R.rdErr, recErr: R.recErr, fewest: R.fewest } }; },
     get frames(){ return frames; }, get webgl(){ return !!renderer; },
     hud(){ return document.getElementById('hud').textContent; }, last(){ return S._last; },
