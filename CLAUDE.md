@@ -930,6 +930,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Review 20 (ChatGPT, of version 34, 9.4/10, `plans/ofs-review-20.md`; SPN R371): §7.3's array picture tightened (the
   finite array holds the law at N quantiles, half within the corner for even N only; band-limited reconstruction one
   method, an analogy; an array a representation, its indexing chosen, the address law Proposition 5's).
+  **Two readers, two charts** (18 Oct, SPN R372; Tom: "merkator map is drawn for address readers. payload readers
+  object because greenland is bigger than africa."): OFS Proposition 5(g) after the table: Mercator the address reader's
+  (bearings true), Lambert's equal-area the payload reader's (areas true); Greenland 10–12 times, Africa 1.15, drawn 1.5
+  against a true 14; only the writer's globe keeps both.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
