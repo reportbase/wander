@@ -1786,20 +1786,25 @@ rings is in them.
   |s| is √3. That median is still an address, though not a corner.
 
 **In the picture of an array.** A closed curve stored as N samples x[k], y[k], at the places θ_k = (k + ½)·2π/N, makes
-the same split in a form any programmer knows.
+the same split in a form any programmer knows. An array is a representation: whoever builds it chooses its indexing, and
+the world has no indices of its own. The picture shows that addresses and payloads can be held apart; why a reader's
+addresses follow the uniform turn is Proposition 5's, not the array's.
 - *The index is the address.* The places are fixed by the index before any value is stored, at equal steps of turn.
   - Read as slopes of the inscribed angle (§4), s_k = tan(θ_k/2), they are, for even N, exactly the N evenly spaced
-    quantiles of the standard Cauchy.
-  - Half of them lie within the corner, |s_k| ≤ 1.
-  - For odd N one place falls on the horizon itself, [0 : 1], an address like any other.
+    quantiles of the standard Cauchy. A finite array holds the law at N of its quantiles; the law itself is the
+    continuous turn's (Proposition 5).
+  - For even N, half of them lie within the corner, |s_k| ≤ 1.
+  - For odd N one place falls on the horizon itself, [0 : 1], an address like any other, and the share within the
+    corner is not exactly a half.
 - *The stored values are the payload.* Changing them moves no place, so the places' ranks, their median and their
   corner are untouched by anything stored (Theorem 6(a)).
 - *Places compose without angles.* The offset from one place to another is the tangent subtraction of their slopes:
   turns composed (§2).
 - *Where the array is not the reader.* To read a value at a place between samples, an array must round the place to an
   index, which is a floor. A reader has no floor. A place between addresses is held at the coarser level of detail
-  (§8), not rounded to one of them. Band-limited reconstruction is how an array does the same: it spreads a value over
-  every sample by weights that sum to one, with N setting the band.
+  (§8), not rounded to one of them. One method an array can use for something like it is band-limited reconstruction,
+  which spreads a value over every sample by weights that sum to one, with N setting the band. That method assumes a
+  model of the signal; it is an analogy to the reader's coarser level, not the same mechanism.
 - *One array per facing.* A circle has four facings, the quadrants, and can be stored as four arrays on one lattice.
   - Each array has its places at ψ_k = (k + ½)·(π/2)/N, read as tan ψ_k: the N evenly spaced quantiles of the
     half-Cauchy.
