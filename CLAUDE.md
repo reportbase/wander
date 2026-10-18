@@ -300,9 +300,25 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   to point right); three readers |AB| = 1 apart on flat screens of pixels ε wide (slider, or exact); the field on the
   reader's lay (corner at H = 8, then 1 + ln s), each body by its band against the world: shape (teal, drawn larger),
   place (gold), a direction (red ray), hidden; faint dots where they truly are; the wedge dims the bodies outside it.
-  `?step=1..6&body=&lon=&lat=&roll=&k=<log10 k>&eps=<log10 ε>|0`; hook `window.__recover` (`recover`, `bodyFrame`,
-  `bodyOf`, `wedgeQuat`, `inWedgeOf`, `wedgeReadings`, `sharesOf`, `many`, `manyRead`, `placedBody`, `enterBody`,
-  `screenRead`, `MB`, `set`, `state`, `frames`, `webgl`, `hud`). Not in the flying page.
+  Step 7, the inscribed reader (SPN R351; RSH run 4): one reader sweeps the whole wedge evenly, 256 × 256 addresses even
+  in azimuth and height (left: Lambert's cylindrical equal-area map with the three corners), each painted by the first
+  body met; v ≤ h ½ and the near field ⅓ whatever is met; the met addresses' median where the bodies lie, at the corner
+  for "mirror the field" (12 bodies and their mirrors across v = h, distances skewed near); the three readers' pixels ε
+  in altitude and azimuth (`angleRead`), not a flat screen.
+  `?step=1..7&body=&lon=&lat=&roll=&k=<log10 k>&eps=<log10 ε>|0&mirror=1`; hook `window.__recover` (`recover`, `bodyFrame`,
+  `bodyOf`, `wedgeQuat`, `inWedgeOf`, `wedgeReadings`, `sharesOf`, `many(kind)`, `manyRead(eps, k, kind, pix)`,
+  `placedBody`, `enterBody`, `screenRead`, `angleRead`, `mapPaint`, `mapAddr`, `MB`, `set`, `state`, `frames`, `webgl`,
+  `hud`). Not in the flying page.
+- `moon.html`: **one moon** (17 Oct 2026, Tom: "lets say we have a single moon moving across the sky … central sweep for
+  that … inscribed sweep for that"; "the inscribed sweep would encompass the entire wedge"; "the inscribed sweep detects
+  ratios of moving bodies, and the central sweep paints them"; SPN R352; MON), a standalone page, plain canvas. Levels
+  body 3's waves at stretch 1 (or smooth), its centre on MON run 2's path (40 out, 20° off straight toward home, 32 ticks,
+  d 40 to 15). Panels: the inscribed sweep, the whole wedge as Lambert's equal-area map (1024 × 1024 addresses; only the
+  moon's bounding cone tested), the patch detected and its track; the close-up, one pixel a cell; the central sweep's
+  painting R/GM from the moon's centre over 2,048 directions, held now and painted so far, seen from the start. Readout
+  from the detections alone: ω, τ (a five-tick slope of ln s), the path angle; the referee; scale the world (no detection
+  moves); "radius known" (1,737 km) writes distance and speed. `?t=0..31&smooth=1&k=<log10 k>&truth=1&known=1`; hook
+  `window.__moon` (`detect`, `readout`, `paint`, `centre`, `moonOf`, `set`, `state`, `hud`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -406,7 +422,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, recovering a body, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, recovering a body, one moon, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -1278,6 +1294,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   every d (no bands), on pixels shape ∝ εd²/B (e_s ∝ d^1.9), place well past it, rays past ~B/ε; occlusion orders far
   pairs the centroids lose; 11 of 40 bodies hidden by others. P7′(d) killed by the relief (the cap law (1 − r/d)/2 only
   for the broad form, `rsh/rsh3-p7d.mjs`); P8′–P10′ not killed. `recover.html` step 6 shows it.
+  Run 4 (`rsh/rsh4.mjs`, 17 Oct; SPN R351, "is it using cauchy inscribed reader?"), nothing killed: one reader sweeping the
+  whole wedge evenly (2¹¹ × 2¹¹ addresses even in azimuth and height) keeps v ≤ h ½ and the near field ⅓ with any bodies;
+  each body's share × π/2 its solid angle (0.16%); the met addresses' median 0.587 for run 3's field, 0.5000 mirrored;
+  equal-angle pixels' shape errors 0.78–1.09 of the flat screen's. `recover.html` step 7 shows it.
+  `mon-plan.md` (+ `mon/mon.mjs`, 17 Oct; SPN R352): one moon, detected by the inscribed sweep, painted by the central.
+  Run 1 did not run (my path never came within 12). Run 2: M1 not killed (no detection moves under k), M2 killed (ω to
+  0.25%, but τ off 9%, β 2.4°), M3 not killed (the painting R/GM exactly, 0.58 painted over the pass, 0.48 at once), M4
+  killed (distance 5.5% with R̄ carried in); post hoc (`mon/mon2-smooth.mjs`) a smooth moon passes all (τ 1.2%, distance
+  0.05%): the relief's turning profile enters the share, so detections alone cannot tell approach from turning, and the
+  amount carried in must be the silhouette's breadth. `moon.html` shows it.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -1590,7 +1616,12 @@ In short:
       place every point in |AB| to 10⁻⁹, ×10³ moving none; WebGL drew frames; step 5 says "the body itself". Step 6,
       many bodies: the census painted alike at ×10³; at ε = 0 every seen point in |AB| to 10⁻⁹, ×10³ moving none, no
       body a direction only; at ε = 10⁻³ the nearest bodies keep their shape, the farthest are directions, some are
-      hidden, and a finer ε holds more.
+      hidden, and a finer ε holds more. Step 7, the inscribed reader: all addresses v ≤ h ½ and the near field ⅓ with
+      any bodies; the mirrored field's met addresses at the corner; the painting the same at ×10³; equal-angle pixels
+      exact at ε = 0, banded at 10⁻³.
+  39. **moon.html:** the detections unmoved by ×10⁻³ and ×10³; ω read from them to 1%; the smooth moon's τ to 8% and, its
+      radius known, its distance to 2%; the painting R/GM the same under ×7 while its radii move by 7; more of the face
+      painted over the pass than at once.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>One moon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    moon.html: one moon moving across the sky (17 October 2026; Tom: "lets say we have a single moon moving across the sky.
+    nothing else. we can see the front side of the moon and should use central sweep for that. the moon is moving, we
+    should use the inscribed sweep for that."; "the inscribed sweep would encompass the entire wedge, the moon would just
+    be a small part of the inscribed sweep."; "yes, I'm thinking that we can show the inscribed sweep detects ratios of
+    moving bodies, and the central sweep paints them."). MON (plans/mon-plan.md, mon/mon.mjs); SPN R352. A standalone page.
+
+    Keep the case. The readings are directions [h : v : v₂] (h → x, v → y, v₂ → z); amounts are the central sweep's radii,
+    in a unit no reading fixes; the clock (ticks) is the only amount the inscribed sweep has.
+      - The moon: Levels body 3's waves (games.html bodyOf, copied), stretch 1, mean radius R̄ ≈ ½; or smooth (R = ½).
+        Its centre moves in a straight line, from 40 out at azimuth 30°, altitude 25°, speed 1 a tick, 20° off straight
+        toward home, for 32 ticks (d 40 to 15), as MON run 2.
+      - The inscribed sweep covers the whole wedge every tick: 1024 × 1024 addresses even in azimuth and height (Lambert's
+        cylindrical equal-area map, each an equal share), an address detected when its ray meets the moon (only the cells
+        in the moon's bounding cone are tested; the rest are sky). From the detections alone: the share s (a solid angle),
+        the patch's direction, ω, τ = 2s/ṡ, β = atan(ωτ).
+      - The central sweep paints the face: from the moon's centre 2,048 fixed directions, along each the radius arriving
+        (an amount), held where that point is seen from home; drawn as R/GM, the size unread; "painted so far" the union.
+      - Writing: the moon's radius carried in (1,737 km) gives d = R̄·√(π/s) and the speed d·√(ω² + 1/τ²).
+    Links: ?t=0..31&smooth=1&k=<log10 k>&truth=1&known=1. Test hook: window.__moon.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1060px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 76ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 200px; min-width: 0; accent-color: var(--gold) }
+    label { color: var(--dim) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; aspect-ratio: 1 }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px }
+    @media (max-width: 820px) { .grid { grid-template-columns: 1fr 1fr } }
+    @media (max-width: 520px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px; overflow-x: auto }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .violet { color: var(--violet) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>One moon</h1>
+    <p class="lede">A single moon crossing the sky, nothing else. The <span class="teal">inscribed sweep</span> covers the
+    whole wedge every tick and only <b>detects</b> which of its addresses the moon meets: a small patch, moving over
+    addresses that stay put. From the patch alone come the moon's track, its turn per tick, its time to contact and its
+    path's angle, all ratios and ticks. The <span class="violet">central sweep</span> <b>paints</b> it: the radius
+    arriving along fixed directions from its centre, an amount in a unit nothing reads, over the face it turns toward you.
+    One amount carried in writes its distance and speed.</p>
+    <div class="panel">
+        <div class="row">
+            <button id="play">play</button>
+            <label for="t">tick</label><input id="t" type="range" min="0" max="31" step="1" value="0"><output id="to"></output>
+        </div>
+        <div class="row" style="margin-top:6px">
+            <label for="k">scale the world</label><input id="k" type="range" min="-3" max="3" step="0.5" value="0"><output id="ko"></output>
+            <button id="smooth">smooth moon</button><button id="truth">the referee</button><button id="known">radius known</button>
+        </div>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="map" width="512" height="512"></canvas><p class="cap">The inscribed sweep: the whole wedge, Lambert's
+            equal-area map (azimuth across from h to v₂, height up to v), every cell an equal share. Gold: the corners. White:
+            the moon detected this tick; teal: its track.</p></div>
+            <div><canvas id="near" width="512" height="512"></canvas><p class="cap">The same addresses near the moon, one pixel a
+            cell. Nothing here is a size: the patch is its share of the sweep.</p></div>
+            <div><canvas id="face" width="512" height="512"></canvas><p class="cap">The central sweep paints: from the moon's
+            centre, the radius over its geometric mean along the directions seen from home (bright), and all painted so far
+            (dim), seen from the start.</p></div>
+        </div>
+        <div id="hud"></div>
+    </div>
+    <p class="cap">The test is MON (run 2: detections unmoved by scaling; ω exact; τ and the path angle exact for the smooth
+    moon, off by up to 9% for the one with relief, whose turning profile its share takes in). Other demos:
+    <a href="recover.html?step=7">the inscribed reader among many bodies</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]], add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+const mul = (a, k) => [a[0] * k, a[1] * k, a[2] * k], dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+const len = a => Math.hypot(a[0], a[1], a[2]), nrm = a => mul(a, 1 / len(a));
+const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+const RAD = Math.PI / 180, O = [0, 0, 0];
+// a Levels body (games.html bodyOf, copied as it is)
+function bodyOf(idx){
+    let s = (Math.imul(idx + 1, 2654435761) ^ 0x9e3779b9) >>> 0;
+    const rnd = () => (s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296, waves = [];
+    for (let b = 0; b < 4; b++){ const m = 0.3 + 1.4 * rnd();
+        for (let j = 0; j < 5; j++){ const z = rnd() * 2 - 1, a = rnd() * 2 * Math.PI, q = Math.sqrt(1 - z * z);
+            waves.push({ b, f: 3 * 2 ** b, A: 0.07 / 2 ** b * m, d: [q * Math.cos(a), z, q * Math.sin(a)], ph: rnd() * 2 * Math.PI }); } }
+    return { waves };
+}
+const WAVES = bodyOf(3).waves;
+function moonOf(C, k, smooth){
+    const W = smooth ? [] : WAVES, c = mul(C, k);
+    const R = u => { let r = 0; for (const w of W) r += w.A * Math.cos(w.f * dot(u, w.d) + w.ph); return 0.5 * (1 + r); };
+    let sa = 0; for (const w of W) sa += w.A;
+    const inside = q => { const w = sub(q, c), l = len(w); if (l < 1e-300) return true; return l < k * R(mul(w, 1 / l)) * (1 - 1e-12); };
+    return { c, R, inside, surf: u => add(c, mul(u, k * R(u))), rb: 0.5 * k * (1 + sa) };
+}
+function enter(F, o, d, steps = 128){
+    const w = sub(F.c, o), tc = dot(w, d), q2 = dot(w, w) - tc * tc; if (q2 >= F.rb * F.rb) return null;
+    const hw = Math.sqrt(F.rb * F.rb - q2), t0 = Math.max(0, tc - hw), t1 = tc + hw, at = t => F.inside(add(o, mul(d, t)));
+    let prev = t0;
+    for (let i = 1; i <= steps; i++){ const t = t0 + (t1 - t0) * i / steps;
+        if (at(t)){ let a = prev, b = t; for (let j = 0; j < 50; j++){ const m = 0.5 * (a + b); if (at(m)) b = m; else a = m; } return b; } prev = t; }
+    return null;
+}
+const fib = n => { const L = [], ga = Math.PI * (3 - Math.sqrt(5)); for (let i = 0; i < n; i++){ const y = 1 - 2 * (i + 0.5) / n, q = Math.sqrt(1 - y * y), a = ga * i; L.push([q * Math.cos(a), y, q * Math.sin(a)]); } return L; };
+const LAT = fib(2048);
+// the path (MON run 2)
+const dirOf = (ps, a) => [Math.cos(a) * Math.cos(ps), Math.sin(a), Math.cos(a) * Math.sin(ps)];
+const U0 = dirOf(30 * RAD, 25 * RAD), EP = nrm(sub([0, 1, 0], mul(U0, U0[1])));
+const VEL = add(mul(U0, -Math.cos(20 * RAD)), mul(EP, Math.sin(20 * RAD)));
+const centre = t => add(mul(U0, 40), mul(VEL, t));
+const T = 32;
+// ── the inscribed sweep: NG × NG addresses even in azimuth and height ──
+const NG = 1024, N = NG * NG;   // (MON's run used 4096; a page computes as it draws)
+const cell = (i, j) => { const ps = (i + 0.5) / NG * Math.PI / 2, y = (j + 0.5) / NG, q = Math.sqrt(1 - y * y); return [q * Math.cos(ps), y, q * Math.sin(ps)]; };
+const CACHE = new Map();
+function detect(t, k = 1, smooth = false){
+    const key = t + ':' + k + ':' + smooth; if (CACHE.has(key)) return CACHE.get(key);
+    const F = moonOf(centre(t), k, smooth), dc = len(F.c), u = mul(F.c, 1 / dc), al = Math.asin(F.rb / dc), cs = Math.cos(al);
+    const ac = Math.asin(u[1]), ps = Math.atan2(u[2], u[0]), amax = Math.min(Math.PI / 2, ac + al), dps = al / Math.cos(amax) + Math.PI / NG;
+    const j0 = Math.max(0, Math.floor(Math.sin(Math.max(0, ac - al)) * NG) - 1), j1 = Math.min(NG - 1, Math.ceil(Math.sin(amax) * NG) + 1);
+    const i0 = Math.max(0, Math.floor((ps - dps) / (Math.PI / 2) * NG) - 1), i1 = Math.min(NG - 1, Math.ceil((ps + dps) / (Math.PI / 2) * NG) + 1);
+    const det = []; let sum = [0, 0, 0];
+    for (let j = j0; j <= j1; j++) for (let i = i0; i <= i1; i++){ const d = cell(i, j); if (dot(d, u) <= cs) continue;
+        if (enter(F, O, d) !== null){ det.push(j * NG + i); sum = add(sum, d); } }
+    const r = { det, share: det.length / N * Math.PI / 2, c: det.length ? nrm(sum) : u, box: [i0, i1, j0, j1] };
+    CACHE.set(key, r); return r;
+}
+// what the detections give, and the referee's truth
+function readout(t, smooth = false){
+    // the rates from the detections over five ticks (a least-squares slope of ln s, and the patch's turn end to end): on
+    // this coarser grid one tick's share is too noisy to difference (MON's 4096 grid differenced t ± 1)
+    const n = Math.max(2, Math.min(T - 3, t)), b = detect(n, 1, smooth);
+    let sl = 0; for (let j = -2; j <= 2; j++) sl += j * Math.log(detect(n + j, 1, smooth).share); sl /= 10;
+    const tau = 2 / sl, om = Math.acos(Math.min(1, dot(detect(n - 2, 1, smooth).c, detect(n + 2, 1, smooth).c))) / 4, beta = Math.atan(om * tau);
+    const C = centre(n), d = len(C), truth = { d, tau: d / -(dot(C, VEL) / d), om: len(cross(C, VEL)) / (d * d), beta: Math.acos(dot(VEL, mul(C, -1 / d))) };
+    let rbar = 0; const F = moonOf([0, 0, 0], 1, smooth); for (const u of LAT) rbar += F.R(u); rbar /= LAT.length;
+    const dE = rbar * Math.sqrt(Math.PI / b.share);
+    return { tick: n, share: b.share, tau, om, beta, truth, rbar, dE, speedE: dE * Math.sqrt(om * om + 1 / (tau * tau)) };
+}
+// ── the central sweep: the radius along fixed directions from the moon's centre, held where seen from home ──
+function paint(t, k = 1, smooth = false){
+    const F = moonOf(centre(t), k, smooth), held = [], radii = [];
+    LAT.forEach((u, i) => { const p = F.surf(u), L = len(p), e = enter(F, O, mul(p, 1 / L), 64); if (e !== null && e >= L * (1 - 1e-9)){ held.push(i); radii.push(len(sub(p, F.c))); } });
+    const gm = Math.exp(radii.reduce((a, r) => a + Math.log(r), 0) / radii.length);
+    return { held, radii, painting: radii.map(r => r / gm) };
+}
+
+// ── state and drawing ──
+const P0 = new URLSearchParams(location.search), num = (k, d) => { const v = parseFloat(P0.get(k)); return Number.isFinite(v) ? v : d; };
+const S = { t: Math.max(0, Math.min(T - 1, Math.round(num('t', 0)))), lgk: num('k', 0), smooth: P0.get('smooth') === '1',
+    truth: P0.get('truth') === '1', known: P0.get('known') === '1', play: false };
+const cv = id => { const c = document.getElementById(id); return { c, g: c.getContext('2d') }; };
+const MAP = cv('map'), NEAR = cv('near'), FACE = cv('face');
+function drawMap(){
+    const { g, c } = MAP, W = c.width, k = 10 ** S.lgk, img = g.createImageData(W, W), f = NG / W;
+    for (let p = 0; p < W * W; p++){ img.data[p * 4] = 6; img.data[p * 4 + 1] = 6; img.data[p * 4 + 2] = 10; img.data[p * 4 + 3] = 255; }
+    const D = detect(S.t, k, S.smooth);
+    for (const id of D.det){ const i = id % NG, j = (id - i) / NG, x = Math.floor(i / f), y = W - 1 - Math.floor(j / f), p = (y * W + x) * 4;
+        img.data[p] = img.data[p + 1] = img.data[p + 2] = 255; }
+    g.putImageData(img, 0, 0);
+    const X = ps => ps / (Math.PI / 2) * W, Y = y => (1 - y) * W;
+    const curve = fn => { g.beginPath(); for (let i = 0; i <= 90; i++){ const ps = i / 90 * Math.PI / 2; g[i ? 'lineTo' : 'moveTo'](X(ps), Y(fn(ps))); } g.stroke(); };
+    g.strokeStyle = 'rgba(212,160,82,0.75)'; g.lineWidth = 1.2;
+    curve(ps => Math.cos(ps) / Math.sqrt(1 + Math.cos(ps) ** 2)); curve(ps => Math.sin(ps) / Math.sqrt(1 + Math.sin(ps) ** 2));
+    g.beginPath(); g.moveTo(X(Math.PI / 4), 0); g.lineTo(X(Math.PI / 4), W); g.stroke();
+    // the track: the patch's direction at every tick so far
+    g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath();
+    for (let t = 0; t <= S.t; t++){ const c2 = detect(t, k, S.smooth).c, ps = Math.atan2(c2[2], c2[0]); g[t ? 'lineTo' : 'moveTo'](X(ps), Y(c2[1])); } g.stroke();
+    g.fillStyle = '#8a8a96'; g.font = '13px DM Mono, monospace'; g.fillText('h', 6, W - 8); g.fillText('v₂', W - 22, W - 8); g.fillText('v', 6, 16);
+    // the close-up box
+    const [i0, i1, j0, j1] = D.box; g.strokeStyle = 'rgba(255,255,255,0.35)'; g.lineWidth = 1; g.strokeRect(i0 / f - 2, W - j1 / f - 2, (i1 - i0) / f + 4, (j1 - j0) / f + 4);
+}
+function drawNear(){
+    const { g, c } = NEAR, W = c.width, k = 10 ** S.lgk, D = detect(S.t, k, S.smooth), [i0, i1, j0, j1] = D.box;
+    const span = Math.max(i1 - i0, j1 - j0) + 1, px = W / span; g.fillStyle = '#060609'; g.fillRect(0, 0, W, W);
+    g.fillStyle = 'rgba(255,255,255,0.06)'; if (px >= 4) for (let a = 0; a <= span; a++){ g.fillRect(a * px, 0, 1, W); g.fillRect(0, a * px, W, 1); }
+    g.fillStyle = '#f0eef6'; for (const id of D.det){ const i = id % NG, j = (id - i) / NG; g.fillRect((i - i0) * px, W - (j - j0 + 1) * px, Math.ceil(px), Math.ceil(px)); }
+    g.fillStyle = '#8a8a96'; g.font = '13px DM Mono, monospace'; g.fillText(`${D.det.length} of ${N.toLocaleString()} addresses`, 8, 18);
+}
+// the face: orthographic, seen from home's direction at the first tick (a fixed frame on the moon), so the painting
+// collects in one picture as the moon crosses
+const VIEW = nrm(mul(centre(0), -1)), VE1 = nrm(cross(VIEW, [0, 1, 0])), VE2 = cross(VE1, VIEW);
+function drawFace(){
+    const { g, c } = FACE, W = c.width, k = 10 ** S.lgk; g.fillStyle = '#000'; g.fillRect(0, 0, W, W);
+    const ever = new Set(); for (let t = 0; t < S.t; t++) paintOf(t).held.forEach(i => ever.add(i));
+    const P = paintOf(S.t), now = new Set(P.held), sc = W * 0.42, F = moonOf([0, 0, 0], 1, S.smooth);
+    const pts = LAT.map((u, i) => ({ i, u, z: dot(u, VIEW), x: dot(u, VE1), y: dot(u, VE2) })).sort((a, b) => a.z - b.z);
+    for (const p of pts){ const r = F.R(p.u) / 0.5, X = W / 2 + p.x * sc * r, Y = W / 2 - p.y * sc * r;
+        let col;
+        if (now.has(p.i)){ const n = P.held.indexOf(p.i), v = Math.max(0, Math.min(1, (P.painting[n] - 0.85) / 0.3)); col = `rgb(${120 + 120 * v | 0},${100 + 110 * v | 0},${170 + 80 * v | 0})`; }
+        else if (ever.has(p.i)) col = 'rgba(181,156,240,0.28)'; else if (p.z > 0) col = 'rgba(70,70,90,0.35)'; else continue;
+        g.fillStyle = col; g.beginPath(); g.arc(X, Y, p.z > 0 ? 3.2 : 2.2, 0, 2 * Math.PI); g.fill(); }
+    g.fillStyle = '#8a8a96'; g.font = '13px DM Mono, monospace';
+    g.fillText(`held now ${(P.held.length / LAT.length).toFixed(3)}, painted so far ${((new Set([...ever, ...now])).size / LAT.length).toFixed(3)}`, 8, 18);
+}
+const PAINTS = new Map(); function paintOf(t){ const key = t + ':' + S.smooth; if (!PAINTS.has(key)) PAINTS.set(key, paint(t, 1, S.smooth)); return PAINTS.get(key); }
+function hud(){
+    const r = readout(S.t, S.smooth), k = 10 ** S.lgk, D1 = detect(S.t, 1, S.smooth), Dk = detect(S.t, k, S.smooth);
+    const a = new Set(D1.det); let diff = 0; for (const x of Dk.det) if (!a.has(x)) diff++; diff += D1.det.length - (Dk.det.length - diff);
+    const f = (x, p = 3) => x.toFixed(p), deg = x => (x / RAD).toFixed(2) + '°', L = [];
+    L.push(`tick ${S.t}: the inscribed sweep detects ${D1.det.length} addresses, a share ${D1.share.toExponential(3)} of the octant's π/2 (a solid angle)`);
+    L.push(`from the detections alone: turning ω ${r.om.toExponential(3)} a tick, time to contact τ ${f(r.tau, 1)} ticks, the path ${deg(r.beta)} off the line of sight`);
+    if (S.truth) L.push(`the referee: ω ${r.truth.om.toExponential(3)}, τ ${f(r.truth.tau, 1)}, the path ${deg(r.truth.beta)}; distance ${f(r.truth.d, 2)} (no reader has it)`);
+    L.push(`scale the world ×${k >= 100 || k < 0.01 ? k.toExponential(0) : k.toPrecision(3)}: ${diff} detections changed; the painting the same, its radii ×k`);
+    const kmPer = 1737.4 / r.rbar;
+    if (S.known) L.push(`radius known (1,737 km): distance ${(r.dE * kmPer).toFixed(0)} km${S.truth ? ` (true ${(r.truth.d * kmPer).toFixed(0)})` : ''}, speed ${(r.speedE * kmPer).toFixed(0)} km a tick${S.truth ? ` (true ${kmPer.toFixed(0)})` : ''}`);
+    else L.push('distance, size and speed: not read (carry one amount in: "radius known")');
+    document.getElementById('hud').textContent = L.join('\n');
+    S._last = { r, diff };
+}
+function draw(){
+    document.getElementById('t').value = S.t; document.getElementById('to').textContent = S.t;
+    document.getElementById('k').value = S.lgk; document.getElementById('ko').textContent = '×' + (10 ** S.lgk).toPrecision(2);
+    for (const id of ['smooth', 'truth', 'known']) document.getElementById(id).classList.toggle('on', S[id]);
+    document.getElementById('play').textContent = S.play ? 'pause' : 'play';
+    drawMap(); drawNear(); drawFace(); hud();
+}
+function set(o){ Object.assign(S, o); draw(); }
+document.getElementById('t').oninput = e => set({ t: +e.target.value });
+document.getElementById('k').oninput = e => set({ lgk: +e.target.value });
+for (const id of ['smooth', 'truth', 'known']) document.getElementById(id).onclick = () => set({ [id]: !S[id] });
+let timer = null;
+document.getElementById('play').onclick = () => { S.play = !S.play;
+    if (S.play){ if (S.t >= T - 1) S.t = 0; timer = setInterval(() => { if (S.t >= T - 1){ clearInterval(timer); S.play = false; draw(); return; } set({ t: S.t + 1 }); }, 260); }
+    else clearInterval(timer); draw(); };
+draw();
+window.__moon = { detect, readout, paint, centre, moonOf, set, T, N, NG, get state(){ return { ...S }; }, hud: () => document.getElementById('hud').textContent };
+</script>
+</body>
+</html>

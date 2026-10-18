@@ -1,0 +1,12 @@
+sky: 40 bodies (8 in 4 crossing pairs), d 23.3 … 15218; 25 ticks; patches per tick 36–40; under one cell all run: 10
+S1 the world scaled by 10⁻³, 7, 10³: 0 detections differ of 1423461
+S2 ω from clean patches of 50 cells or more: 187 readings, worst 2.862%; bodies under one cell: 10, whole-run turn worst 0.681 cells
+S3 τ over five ticks for clean patches of 2,000 cells or more: 50 readings on 4 bodies, worst 6.83%
+S4 tracker: 44 tracks, 921 links; clean–clean pairs 898: 0 wrong, 0 missing; links at touches that join different bodies or a body to another's patch: 17
+S5 10 bodies under one cell: 0 ticks not one cell at the centre direction; 0 not one track over all 25 ticks
+   touches by tick: 1 0 0 0 0 0 2 2 2 2 2 3 4 3 4 3 3 3 2 2 3 3 2 1 0
+S1 not killed
+S2 KILLED
+S3 KILLED
+S4 not killed
+S5 not killed

@@ -1,0 +1,18 @@
+moon: body 3, stretch 1, mean radius 0.5007; 32 ticks, d 40.0 → 15.2; 5845 → 38623 addresses met
+M1 the world scaled by 10⁻³, 7, 10³: 0 detections differ of 3271236 cells tested
+   t=1: d 39.06, τ 41.650 (true 41.703), ω 8.9702e-3 (8.9662e-3), β 20.49° (20.50°)
+   t=5: d 35.34, τ 37.612 (true 38.331), ω 1.0946e-2 (1.0952e-2), β 22.38° (22.77°)
+   t=9: d 31.69, τ 35.032 (true 35.135), ω 1.3610e-2 (1.3621e-2), β 25.49° (25.57°)
+   t=13: d 28.14, τ 32.108 (true 32.200), ω 1.7264e-2 (1.7280e-2), β 29.00° (29.09°)
+   t=17: d 24.72, τ 30.114 (true 29.679), ω 2.2352e-2 (2.2390e-2), β 33.94° (33.60°)
+   t=21: d 21.50, τ 29.210 (true 27.871), ω 2.9531e-2 (2.9592e-2), β 40.78° (39.51°)
+   t=25: d 18.59, τ 29.944 (true 27.457), ω 3.9484e-2 (3.9584e-2), β 49.78° (47.38°)
+   t=29: d 16.15, τ 32.368 (true 30.382), ω 5.2412e-2 (5.2434e-2), β 59.48° (57.88°)
+   t=30: d 15.64, τ 34.598 (true 32.255), ω 5.5894e-2 (5.5900e-2), β 62.66° (60.99°)
+M2 from the detections alone: τ worst 9.22%, ω worst 0.252%, β worst 2.408°
+M3 the painting against the body's own R/GM: 5.44e-15; under k: 2.62e-14 (radii ×k to 9.99e-15); held over the pass 0.5759 against (π + Δ)/(2π) = 0.6230 (Δ = 44.29°), most at one tick 0.4805
+M4 with R̄ carried in: distance worst 5.50%, speed worst 7.96%
+M1 not killed
+M2 KILLED
+M3 not killed
+M4 KILLED

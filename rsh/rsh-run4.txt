@@ -1,0 +1,64 @@
+field: 40 bodies, d 4.02 … 25945, 12 planted behind, mean radius 0.508
+   body 3 (d 21.4): 4174 addresses, share·π/2 1.5632e-3 against Ω 1.5613e-3 (0.12%)
+   body 5 (d 84.5): 283 addresses, share·π/2 1.0599e-4 against Ω 1.0598e-4 (0.01%)
+   body 7 (d 19.7): 6460 addresses, share·π/2 2.4193e-3 against Ω 2.4231e-3 (-0.16%)
+   body 9 (d 27.7): 3279 addresses, share·π/2 1.2280e-3 against Ω 1.2299e-3 (-0.16%)
+   body 10 (d 6.2): 87355 addresses, share·π/2 3.2715e-2 against Ω 3.2729e-2 (-0.04%)
+   body 11 (d 6.5): 54746 addresses, share·π/2 2.0503e-2 against Ω 2.0495e-2 (0.04%)
+   body 12 (d 4.0): 176292 addresses, share·π/2 6.6023e-2 against Ω 6.5942e-2 (0.12%)
+   body 22 (d 54.2): 671 addresses, share·π/2 2.5129e-4 against Ω 2.5109e-4 (0.08%)
+   body 24 (d 22.4): 4353 addresses, share·π/2 1.6302e-3 against Ω 1.6291e-3 (0.07%)
+   body 26 (d 40.7): 1637 addresses, share·π/2 6.1307e-4 against Ω 6.1386e-4 (-0.13%)
+   body 27 (d 5.0): 92068 addresses, share·π/2 3.4480e-2 against Ω 3.4450e-2 (0.09%)
+   k=0.001: 0 of 4194304 addresses painted otherwise
+   k=7: 0 of 4194304 addresses painted otherwise
+   k=1000: 0 of 4194304 addresses painted otherwise
+P11 11 unhidden bodies with 200 addresses or more, share·π/2 against solid angle worst 0.16%; shares and sky add to N: true; k: 0.00e+0
+P12 all addresses: empty 0.50000/0.33333, field 0.50000/0.33333, mirrored 0.50000/0.33333 (½ and ⅓); painted by the mirrored field 337226 addresses, v ≤ h 0.5000; painted by run 3's field 432696, v ≤ h 0.5870 (reported)
+   body      d   seen2   rays(ang)  e_s ang/flat 1e-3        e_p ang/flat 1e-3
+    12      4.0    363      0.000    7.64e-3   8.96e-3     1.87e-5   3.04e-5
+    27      5.0    411      0.000    1.32e-2   1.34e-2     5.60e-5   4.06e-5
+    10      6.2    426      0.000    1.96e-2   1.88e-2     1.06e-4   2.42e-5
+    11      6.5    420      0.000    2.31e-2   2.44e-2     5.01e-5   3.54e-5
+    30     10.3      1      0.000    0.00e+0   0.00e+0     2.35e-3   3.86e-3
+     7     19.7    528      0.000    2.22e-1   2.14e-1     1.49e-4   1.11e-4
+     3     21.4    443      0.000    2.22e-1   2.61e-1     6.89e-4   2.55e-4
+    24     22.4    492      0.000    4.25e-1   4.22e-1     1.92e-4   4.67e-4
+    32     26.8      0      0.000          —         —           —         —
+     9     27.7    482      0.000    3.96e-1   4.18e-1     2.60e-4   1.52e-5
+    37     30.6     53      0.000    5.19e-1   6.53e-1     1.28e-4   2.61e-4
+    26     40.7    539      0.000    7.51e-1   9.66e-1     3.96e-4   3.57e-4
+     0     42.9    293      0.000    1.60e+0   1.17e+0     2.18e-4   3.39e-4
+    36     48.7      0      0.000          —         —           —         —
+    22     54.2    450      0.000    1.95e+0   1.98e+0     1.89e-3   5.82e-4
+    21     73.1      0      0.000          —         —           —         —
+     5     84.5    445      0.000    2.87e+0   4.74e+0     1.43e-3   2.24e-4
+     8    171.8    463      0.000    1.59e+1   1.62e+1     5.08e-3   3.87e-3
+    18    313.7    402      0.000    8.22e+1   7.66e+1     4.48e-3   2.25e-3
+    28    323.3      0      0.000          —         —           —         —
+    35    470.7      0      0.000          —         —           —         —
+     4    503.5    457      0.000    1.05e+2   1.11e+2     2.93e-2   2.15e-3
+     1    760.1    478      0.000    2.38e+2   2.96e+2     1.17e-1   4.51e-2
+    29    928.4      0      0.000          —         —           —         —
+    14   1124.2    409      0.015    8.87e+1   6.19e+1     2.98e-1   2.41e-1
+    25   1508.1    433      0.058    2.51e+2   7.50e+1     3.56e-1   4.53e-1
+     2   2663.4      0      0.000          —         —           —         —
+    19   4287.7    491      0.980    2.26e-1   9.78e+1     8.38e-1   7.79e-1
+    23   5436.7    451      0.124    2.14e+2   7.38e-1     8.60e-1   8.28e-1
+    33   5635.8     41      1.000          —   3.49e-1           —   8.10e-1
+    20   7286.1    539      1.000          —   7.66e-1           —   8.77e-1
+    15   7853.1    521      0.484    1.82e+3         —     7.90e-1         —
+     6   8092.5    399      1.000          —         —           —         —
+    16  10705.5    524      0.462    7.18e-1         —     9.26e-1         —
+    13  13020.3    447      0.553    6.96e-1         —     9.51e-1         —
+    34  13460.0      0      0.000          —         —           —         —
+    17  13876.5    520      0.954    3.55e-1         —     8.94e-1         —
+    38  14447.1      0      0.000          —         —           —         —
+    39  19147.0      0      0.000          —         —           —         —
+    31  25945.0      0      0.000          —         —           —         —
+P13 equal-angle pixels: (a) true, (b) true, (c) true (mean ray share past 4,000 0.694, 8 bodies); e_s angle/flat over 21: 0.777 … 1.089, geometric mean 0.949
+P14 rounded readings changed by k: 0 of 35763; at ε = 0 every seen point in |AB| to 2.79e-12
+P11 not killed
+P12 not killed
+P13 not killed
+P14 not killed
