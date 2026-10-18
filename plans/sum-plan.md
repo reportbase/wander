@@ -80,3 +80,53 @@ P1–P4 are classical, so a kill would be my set-up. P5 is the reading.
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (18 Oct, `python3 sum/sum.py`; output `sum/sum-run1.txt`, 4 s)
+
+- **P1 killed.**
+  - The characteristic functions agree exactly (difference 0 at 200 digits).
+  - The relay's quartiles are −3.0102 and 2.9924, against one turn's −2.9911 and 3.0021. The two-sample KS distance is
+    0.00257.
+  - The relay's lower quartile misses ±3 by 0.0102.
+- **P2 not killed.** X₁ + X₂ has quartiles −1.9957 and 2.0022. Tangent addition has −0.9999 and 1.0030.
+- **P3 killed.** The mean's quartiles, by n:
+
+  | n | lower | upper |
+  |---|---|---|
+  | 1 | −1.0100 | 1.0062 |
+  | 10 | −1.0049 | 0.9935 |
+  | 1000 | −0.9952 | 1.0187 |
+
+  n = 1's and n = 1000's miss ±1 by more than 0.01.
+- **P4 killed.**
+  - The KS distance of Sₙ/n to Cauchy(0, π/2) was 0.0068, 0.0019 and 0.0044 at n = 10, 100 and 1000. It did not fall
+    at every step.
+  - The stepped Brownian motion was not run as written: its hitting time has no mean, about 5.5·10⁶ steps a path at the
+    median. The script used the exact construction instead (hitting time h²/Z², place √τ·N), quartiles −1.5748 and
+    1.5609.
+
+**Every kill is my set-up.** A sample quartile of a Cauchy of scale γ from M draws has standard error
+2πγ·√(3/(16M)). That is 0.0082 at γ = 3 with M = 10⁶, and 0.0086 at γ = 1 with M = 10⁵. A tolerance of 0.01 is little
+more than one standard error. P4's "falls at every step" asked for a difference below the KS noise floor, about
+0.87/√M = 0.0027 at M = 10⁵. Every number agrees with the classical laws within its noise.
+
+### Run 2: the thresholds in standard errors (written before it runs)
+
+The same script and draws, with fresh seeds. Each threshold is now set by its noise:
+- **Quartiles.** A quartile is within 3 standard errors, 3·2πγ·√(3/(16M)), of ∓γ.
+- **Two-sample KS.** Below the 1% critical value, 1.63·√(2/N).
+- **One-sample KS.** Below 1.63/√M.
+
+The predictions:
+- **P1′.** The relay and the one turn from height 3 each have quartiles within 3 standard errors of ±3, and their
+  two-sample KS distance is below 1.63·√(2/N).
+- **P2′.** X₁ + X₂ has quartiles within 3 standard errors of ±2, and tangent addition within 3 standard errors of ±1.
+  These are scales 2 and 1, so the two are 2·γ standard errors apart, and the sum is not the composition.
+- **P3′.** The mean of n has quartiles within 3 standard errors of ±1 at n = 1, 10 and 1000.
+- **P4′.**
+  - At n = 1000 the one-sample KS distance to Cauchy(0, π/2) is below 1.63/√M: consistent with the limit.
+  - At n = 10 it may exceed that; no claim is made for n = 10.
+  - The Brownian landing from height π/2, by the exact construction, has quartiles within 3 standard errors of ±π/2.
+- **P5** as written.
+
+*Killed* as before, with these thresholds.
