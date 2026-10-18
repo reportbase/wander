@@ -299,3 +299,25 @@ symmetric payload met among bodies; P13 says the bands do not hang on the pixel'
 in it, each body taking a share of its addresses equal to its solid angle (breadth over distance, no size), the median
 at the corner moved only by a lopsided payload; and that its own pixels, equal turns, give the same bands as a flat
 screen. Not how the correspondence is found, nor anything of light.
+
+### Run 4 (17 Oct, `node rsh/rsh4.mjs`; output `rsh/rsh-run4.txt`, about 50 min)
+
+Nothing killed.
+- **P11 not killed.** The 11 unhidden bodies with 200 addresses or more: share × π/2 equals the solid angle within 0.16%
+  (body 12 at d = 4: 176,292 addresses, +0.12%; body 5 at d = 85: 283, +0.01%); shares and sky add to 4,194,304 exactly;
+  k = 10⁻³, 7, 10³ repaint no address.
+- **P12 not killed.** Over all addresses P(v ≤ h) = 0.50000 and the near field in both 0.33333 for the empty wedge, run
+  3's field and the mirrored field alike; the mirrored field's 337,226 met addresses have v ≤ h at 0.5000. Reported: run
+  3's field's 432,696 met addresses have v ≤ h at 0.587 (its near bodies lie on the v < h side): what is met moves the
+  median of what arrives, never the addresses'.
+- **P13 not killed.** With equal-angle pixels P9′(a)–(c) hold again (mean ray share past 4,000 0.694, 8 bodies); e_s
+  equal-angle over flat screen 0.78 to 1.09 over 21 bodies-and-ε, geometric mean 0.95.
+- **P14 not killed.** No rounded reading of 35,763 moves under k = 10⁻³, 7, 10³; at ε = 0 every seen point in |AB| to
+  2.8·10⁻¹².
+
+**Reading.** The inscribed reader's sweep is the Cauchy wedge whatever bodies lie in it: its addresses keep their
+shares (v ≤ h a half, the near field a third) with nothing, with a field and with a mirrored field. Each body takes a
+share of the addresses equal to its solid angle, breadth over distance, unmoved by scaling the world; the bodies move
+only the median of what arrives, which stays at the corner when the payload is exchange-symmetric. Counting its own
+turns (equal-angle pixels) in place of a flat screen changes the bands by less than a quarter. `recover.html` step 7
+shows it.

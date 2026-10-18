@@ -66,3 +66,37 @@ Not light, not a real moon, and not how the moon is told from the sky (a detecti
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (17 Oct, `node mon/mon.mjs`): did not run
+
+My set-up was impossible: the path's closest approach to O is 40·sin 20° ≈ 13.7, so "while d > 12" never ends and the
+script stopped (by its own check) when the moon left the wedge, before any sweep. Nothing was measured.
+
+### Run 2: the set-up corrected (written before it runs)
+
+The same moon, path and sweeps, the ticks t = 0, 1, … while d > 15 (the approach, t = 0 to 31, d from 40 to about 15.3),
+so τ is positive throughout. M1–M4 unchanged, thresholds and all.
+
+### Run 2 (17 Oct, `node mon/mon.mjs`; output `mon/mon-run2.txt`, 9 min)
+
+- **M1 not killed:** under k = 10⁻³, 7, 10³ no detection of 3,271,236 cells tested changes (32 ticks, 5,845 to 38,623
+  addresses met).
+- **M2 killed:** ω within 0.25% at every tick, but τ off by up to 9.2% and β by up to 2.4° (late in the pass, d 21 to 15:
+  τ read 29.2 against 27.9 at t = 21, 34.6 against 32.3 at t = 30).
+- **M3 not killed:** the painting is the body's own R/GM to 5·10⁻¹⁵, the same under k to 3·10⁻¹⁴ while the radii move by
+  k; over the pass 0.576 of the moon held against (π + Δ)/(2π) = 0.623 (Δ = 44.3°), more than the 0.481 at any one tick.
+- **M4 killed:** with R̄ carried in, the distance off by up to 5.5% and the speed by up to 8.0%.
+
+**Post hoc** (`mon/mon2-smooth.mjs`, output `mon/mon2-smooth.txt`): the same pass with the relief taken off (R = ½):
+τ within 1.2%, ω within 0.13%, β within 0.25°, the distance within 0.05%, the speed within 1.1%: all four of M2 and M4's
+thresholds met. So the kills are the moon's relief: as the line of sight turns (44° over the pass) the moon shows another
+profile, and its share of the sweep changes with the face it turns as well as with its distance. From detections alone
+the inscribed sweep cannot tell approach from a turning profile (PAY's one stream: approach from growth); and the one
+amount carried in must be the silhouette's breadth, not the mean radius (with relief they differ by up to 5.5% here).
+The central sweep is what tells them apart: it paints the face that turns.
+
+**Reading.** One moon is a small patch of the inscribed sweep. Its detections are ratios (nothing in them moves when the
+world is scaled), and its motion over addresses that stay put gives its angular rate exactly, its time to contact and
+path angle exactly for a round moon, and approximately for one with relief, whose turning profile the share mixes in.
+The central sweep paints the face in amounts of an unread unit, more of it as the moon crosses (0.58 of it over a 44°
+turn, 0.48 at once). Distance and speed need one amount carried in.
