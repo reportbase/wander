@@ -288,3 +288,38 @@ Nothing was killed.
   alone", is borne out, and stated exactly.
 
 The mathematics is classical (the Poisson semigroup; a jump's u·ln(1/u); vanishing moments). The reading is ours.
+
+### ChatGPT's comments after run 2 (18 Oct, 20:41, via Tom; SPN R377)
+
+It proposes three directions, in order:
+1. the address–height law: which distinctions stay readable at each height, tested on a smooth function, a sharp
+   boundary and isolated payloads;
+2. a minimal hierarchical reader, compared against a flat array and a fixed-depth tree on accuracy, detail opened and
+   cost;
+3. only then, attention in AI, keeping apart "can scale-dependent attention help" from "does the Cauchy's geometry
+   explain the weighting".
+
+Its central question: "When a reader moves upward in height, what exactly is lost: binary address precision, payload
+variation, or the ability to distinguish between payloads?"
+
+**Where it stands.** Direction 1 was written before run 2 was seen. Runs 1 and 2 answer two of its three losses; the third
+is classical and checked here.
+
+- **Address precision is linear and payload-free.** From height γ the address's middle half is 2γ wide, exactly (D1).
+- **Payload variation is a soft cut in u = γ·2^{j′}.** Its shape depends on the kind of detail (run 2). Run 2 covered the
+  smooth case and the sharp boundary.
+- **Distinguishing two isolated payloads** (equal point sources Δ apart) has a sharp threshold. The sum of two Cauchys of
+  height γ is two-peaked exactly when Δ > 2γ/√3. Classical; mpmath confirms the sign change of the second derivative at
+  the middle at Δ/2 = γ/√3 = 0.5774γ.
+  - At the reader's own cell (γ = w/2) two payloads closer than w/√3 ≈ 0.58 of the cell read as one.
+
+**What it shows.** The three losses share one variable, height over width. They do not share one law:
+- the address is linear;
+- payload variation follows a soft curve set by the detail's kind;
+- distinguishing two payloads has a sharp threshold.
+
+That answers its question as it framed the success case ("if your construction gives them a common law") the other way.
+There is a common variable but no common law, and the differences are the refinement it asked for: the address's
+loss is the geometry's; the other two are the payload's.
+
+**Directions 2 and 3** are queued, not taken. Direction 3 is outside the papers, as physics is (R365).
