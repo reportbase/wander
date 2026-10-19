@@ -157,3 +157,29 @@ tiling of the address's plane, a multi-dimensional array (level, index) with an 
 height is a different filter on the same plane.
 
 The mathematics is classical (Böröczky; Poisson; the sinc of a box). The reading is ours.
+
+### ChatGPT's comments on run 1 (18 Oct, 20:35, via Tom; SPN R375)
+
+Its advice was "exact check first, then the demo". That is the order taken: the plan, then the run, then `depth.html`.
+
+**Where it agrees with run 1:**
+- The two coordinates have separate jobs: m is the position, γ the scale.
+- The step between levels, ln 2, is exact. Its standing is the binary tiling's, classical.
+- The Poisson kernel's e^{−|k|γ} is exact; ADR A4 uses the same convention.
+- Dyadic digits and Fourier modes are different representations. The attenuation acts on modes and does not delete digits.
+
+**Where it differs: the height convention.**
+- It takes γ_j = 2^{−j}, the full width.
+- DYH takes γ_j = 2^{−(j+1)}, half the width.
+- Both give ln 2 a level.
+- Only the half-width makes the cell the Cauchy's interquartile range (D1, ½ exactly). At the full width the cell holds (2/π)·arctan ½ = 0.295.
+
+**Its open question:** a rule from a cell's address to its frequency content. A step at a cell's edge has a different spectrum from a smooth change across the same cell, so cell width alone cannot settle it.
+- Run 1's D5 answers one case. A box average and the Poisson kernel are different filters at every γ, the closest still 0.22 apart.
+- It does not answer the question as asked: how much of the detail at level j′ a reader at height γ keeps.
+
+**The candidate rule (Claude's, offered, not run).** Measure each level's detail by its Haar wavelet ψ_{j′}, the step at the cell's middle. A reader at height γ keeps the share r = ‖P_γ ∗ ψ_{j′}‖²/‖ψ_{j′}‖².
+- By the half-plane's isometries, r depends only on u = γ·2^{j′}.
+- That gives a single curve over the levels, the same at every depth: a soft cut in levels, not a floor.
+- The curve's shape is the open part, along with how a smooth detail (in place of Haar's step) moves it.
+- Predictions would be written before it runs.
