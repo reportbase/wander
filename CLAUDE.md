@@ -571,7 +571,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   of units unless the shadow is named, its corner the horizon, its question open question 2, answered by three paths;
   it caught the dropped horizon condition. Made: the three-path table in OFS §11.2, question 2 (circle, line, square
   agreeing at home, the corner and the horizon, parting between; none with a mean; sin² 2θ, fair but vanishing at the
-  horizon, with the mean 4/π), checked exactly in `ofs/paths.py` (Q1–Q5; run 1's Q3 killed by my set-up, run 2 not),
+  horizon, with the mean 4/π), checked exactly in `runs/ofs/paths.py` (Q1–Q5; run 1's Q3 killed by my set-up, run 2 not),
   and `paths.html`. Its message 5 (five parties drawn at H, read as assuming their payloads equal) is answered by Tom's
   "from the geometry's perspective, its job is done, what ever the true breadth makes no difference" (SPN R225): the
   drawing is required and finishes the geometry; the true breadths enter only the amounts; the payload is what arrives.
@@ -620,7 +620,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the half-way flash at arctan c, the corner and the flip only at c = 1, any H a similar figure. Mercator's map: a
   cylindrical chart's c = f′(φ)·cos φ, bearings drawn at tan ψ′ = tan ψ/c, true everywhere only at c = 1 (Mercator),
   Tissot's indicatrix the bar in two units, areas sec²φ a zoom, equal area forcing c = cos²φ (Euler, Gauss); a table of
-  four charts in v and h. Numbers checked in `ofs/charts.py`. The abstract, introduction, §6 and §7.8 point to them.
+  four charts in v and h. Numbers checked in `runs/ofs/charts.py`. The abstract, introduction, §6 and §7.8 point to them.
   That is the scope Tom set for OFS on this line: the 2/π catalogue and the sweep over a horizon stay in the plans.
   The tenth evaluation (ChatGPT, 15 Oct, of the 14 Oct draft: "8/10 as a working paper") is in `plans/ofs-review-10.md`
   with a response; edits A–H made (SPN R259): V = H "required for the sweep to be a turn" (abstract, introduction);
@@ -647,7 +647,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Claude's answer to a ChatGPT follow-up, "Smoothness alone does not automatically establish uniqueness"): smoothness
   does not (an ellipse is smooth); a sweep uniform (one linear map per step) that returns after a full turn, all of v
   a quarter on, preserves an inner product unique up to a factor, in which V = H and (h, v) = (cos ωt, sin ωt). The
-  rigid bar is derived; the factor is H; what stays assumed is uniform and linear. `ofs/periodic.py` checks it.
+  rigid bar is derived; the factor is H; what stays assumed is uniform and linear. `runs/ofs/periodic.py` checks it.
   Pointers in "Two choices", "The Euclidean choice", §11.2 question 2. The follow-up is in `plans/ofs-review-10.md`.
   **Neither choice can be declined** (15 Oct, SPN R264; Tom: "Not choosing a value is not an option either."): OFS §5's
   "Two choices" closes with it: no breadth for the other, no relation (3(a)); an H favouring no value is H at 0 or ∞, a
@@ -664,17 +664,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   names."): OFS's situation 3 is the exterior reader (an exterior point, the arc's convex side, the exterior reading
   π/2), 4 the interior reader (an interior point, the concave side, the interior reading 2/π).
   **Exterior wave-like, interior particle-like** (15 Oct, SPN R270; Tom: "exterior - wave like, interior - particle
-  liike"): a reading, in SPN only (physics, not OFS). Tested for consistency by WVP (`plans/wvp-plan.md` + `wvp/`):
+  liike"): a reading, in SPN only (physics, not OFS). Tested for consistency by WVP (`plans/wvp-plan.md` + `runs/wvp/`):
   the interior's counted arrivals build the exterior's pattern at √N, find the corner with spread (π/2)/√N, never
   settle a mean (it climbs (2/π)·ln 10 a decade; P3 killed by my tolerance, P3′ not). Real data (15 Oct, SPN R278;
-  Tom: "yes"), runs 3–4 (`wvp/wvp3.py`, `wvp/wvp4.py`) on Aspden, Padgett and Spalding's single-photon double-slit
+  Tom: "yes"), runs 3–4 (`runs/wvp/wvp3.py`, `runs/wvp/wvp4.py`) on Aspden, Padgett and Spalding's single-photon double-slit
   frames (Enlighten doi:10.5525/gla.researchdata.281, CC BY 4.0, sha256 in the plan, not committed; the frames are
   cumulative, a photon a cluster of pixels, the fringes along rows): run 3 killed by my set-up; run 4 not killed: period
   fλ/d, independent arrivals at √N, the phase's spread as the pattern sets, the slits at their corner (2hv 0.997, 1.000)
   and the contrast (0.69, 0.56) under it. Classical; consistent with the reading, no further test of it. The bound is
   the duality relation V² + P² ≤ 1 (Greenberger–Yasin, Englert): V = 2hv = sin 2θ, P = |cos 2θ| (SPN R279; in
-  `physics.md`'s dictionary and `thl/waves.py`); no open counts with unequal shares found (the neutron foils of
-  Summhammer, Rauch and Tuppinger 1987 are the best case, paywalled). DUO (`plans/duo-plan.md` + `duo/`; SPN R280,
+  `physics.md`'s dictionary and `runs/thl/waves.py`); no open counts with unequal shares found (the neutron foils of
+  Summhammer, Rauch and Tuppinger 1987 are the best case, paywalled). DUO (`plans/duo-plan.md` + `runs/duo/`; SPN R280,
   R281): the sech form is in print (Bramon et al. 2004; Krause et al. 2014); run 1 read the 1987 figure from Rauch's
   2013 slides by hand (readings first): foils on √a for a ≥ 0.05, the chopper on a, 0.447 against 0.243 at a ≈ 0.24
   (D2, D3 not killed); D1 killed by the thinnest Gd foils (uneven thickness, by the paper's account). OFS §11.3
@@ -704,11 +704,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   text before R347; the record stays in SPN and the plans.
   **Why the payload is Gaussian** (16 Oct, SPN R276; ChatGPT review 11, `plans/ofs-review-11.md`; Tom: "yes"): turns
   plus independent components give the isotropic normal (Herschel–Maxwell), its ratio the Cauchy, its size independent
-  of direction; unequal spreads are c; OFS §7.1. Checked in HMX (`plans/hmx-plan.md` + `hmx/`; P1 killed by my set-up).
+  of direction; unequal spreads are c; OFS §7.1. Checked in HMX (`plans/hmx-plan.md` + `runs/hmx/`; P1 killed by my set-up).
   Narrowed by review 12 (SPN R277, `plans/ofs-review-12.md`): the normal is a model under two premises (a turn-invariant
   law, which the reader's ignorance selects as a representation, and independent components), not a consequence of the
   sweep; the Cauchy addresses are the sweep's own, whatever the payload; the central limit theorem kept to sums.
-  PAM (`plans/pam-plan.md` + `pam/`, 15 Oct, SPN R283; Tom: "4"): exact and seeded; the addresses' median at the corner
+  PAM (`plans/pam-plan.md` + `runs/pam/`, 15 Oct, SPN R283; Tom: "4"): exact and seeded; the addresses' median at the corner
   for every exchange-symmetric weight (to 10⁻³²), moved toward a lopsided weight's heavier side; their mean only for a
   weight vanishing at the horizon, else a climb of (2/π)(ρ(π/2)/ρ̄)·ln 10 a decade; a payload of independent uniform
   parts normal at Edgeworth's 1/K (A4 killed by my guessed bound, A4′ from the series not).
@@ -717,22 +717,22 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   this."): OFS §4 "Why there are two sweeps, and only two" and "What each sweep reads": equal turns give equal arcs only
   from the centre (rate 1) or a point of the circle (rate 2); elsewhere 2t/(t + t′); the party's sweep is the
   stereographic chart (ratios, unbounded, median), the pair's middle reads its square ½(h + iv)² (bounded, means); only
-  on the circle. TWS (`plans/tws-plan.md` + `tws/`): exact; T3 killed by my set-up (atan2's cut), T3′ not.
+  on the circle. TWS (`plans/tws-plan.md` + `runs/tws/`): exact; T3 killed by my set-up (atan2's cut), T3′ not.
   Why classical work did not draw the split (16 Oct, SPN R285; Tom: "that discussion is painful, its probably best done
   in a follow up document."): kept out of OFS; seeded in `plans/classical-split-note.md` (five reasons, a reading), the
   claim kept narrow (the pieces in print, the split at the standpoint not found).
   The qubit is the two sweeps (16 Oct, SPN R286; Tom: "does this help quantum … is this why?", "yes"): QBT
-  (`plans/qbt-plan.md` + `qbt/`, exact, nothing killed): the state a direction at θ, its Bloch point at 2θ (the square),
+  (`plans/qbt-plan.md` + `runs/qbt/`, exact, nothing killed): the state a direction at θ, its Bloch point at 2θ (the square),
   Born's rule the foot, orthogonal states antipodal, the double cover, ζ = ψ₁/ψ₀ the stereographic chart, a pure state on
   the sphere and a mixture inside; textbook, the reading ours; not entanglement, Bell or measurement. In `physics.md`.
   What the situated framing offers quantum (16 Oct, SPN R290; Tom: "i wonder if the situated observer framing offers any
-  new ideas for quantum?", "yes, proceed"): QSO (`plans/qso-plan.md` + `qso/`, exact; F4 killed by my set-up, F4′ by my
+  new ideas for quantum?", "yes, proceed"): QSO (`plans/qso-plan.md` + `runs/qso/`, exact; F4 killed by my set-up, F4′ by my
   arithmetic, F4″ not): a missing frame (the twirl, Jaynes's group) loses amounts (the Bloch vector, the visibility) and
   keeps readings (the overlap, the predictability); a weak value on the equator is the stereographic address, even in
   height, superweak 1 − 1/√2 past the corner, the foot giving back ⟨σz⟩; two Gaussians' overlap sech(ln k), the
   reference width a zoom. Known physics, the reading ours; nothing on entanglement, Bell or measurement. In `physics.md`.
   A shape is a perturbation of the circle (16 Oct, SPN R291; Tom: "density is the pertibation of a unit circle"; "How
-  could you do that with any other shape?"): SHG (`plans/shg-plan.md` + `shg/`, exact, nothing killed): r = exp(ρ·f(θ)),
+  could you do that with any other shape?"): SHG (`plans/shg-plan.md` + `runs/shg/`, exact, nothing killed): r = exp(ρ·f(θ)),
   radial maps a group fixing every direction, the readings by direction the Cauchy at every ρ, along the outline moving
   with ρ; only circles read evenly along their outline (r² + r′² = c²: centred on the reader or through it, the central
   and inscribed sweeps). In OFS §7.4 after "Why the circle and the Cauchy go together".
@@ -754,7 +754,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Reading is free, writing needs movement and interaction (SPN R297): every ratio the geometry's (8(a)); every breadth
   an amount from outside (8(b)): movement (H walked as a baseline gives V*/H, OFS §10 step 6) or interaction (a shared
   unit, a known kind, a constant measured beforehand).
-  RWT (SPN R298; `plans/rwt-plan.md` + `rwt/`, exact, nothing killed) counts the steps by the Jacobian's nullity: one
+  RWT (SPN R298; `plans/rwt-plan.md` + `runs/rwt/`, exact, nothing killed) counts the steps by the Jacobian's nullity: one
   standpoint writes nothing; one known move writes in the reader's own H; one exchanged number for another reader; one
   agreed notch for a public unit.
   Situation 1 is common to readers and writers (SPN R299): the circle V = H is the reader's drawing and the writer's
@@ -831,7 +831,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   of units is held in ratios alone, and writing still costs one amount at the top. Then "A worked example of the tower" (R320; Tom: "we could
   show the tower with a simple synthetic worked example"): a building, two rooms, two things each; six readings for seven
   lengths; a₁/b₁ = 27/16 by two quotients; one amount writes all; a misread link moves its room by one factor (9/10).
-  Exact in `ofs/tower.py`. Then "Closing a loop, and what is left to the reader" (17 Oct, R321; Tom: "my intuition is
+  Exact in `runs/ofs/tower.py`. Then "Closing a loop, and what is left to the reader" (17 Oct, R321; Tom: "my intuition is
   that reader doesn't have to do much, the heavy lifing is done simply by geometry and being situated."): a tree of
   readings cannot find its own error, a second route can (closure error 10/9); the reader computes nothing (the
   projection divides, composition and closure are the geometry's); it contributes three acts of position: choosing H
@@ -965,9 +965,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
   Hubble 1929 by rung against modern distances (P1–P3), SH0ES 2022's single-anchor H₀ (P4). Run 1 (16 Oct, SPN R318;
-  `lth/lth.py`, NED-D 17.1.0, sha256s in the plan, data not committed): nothing killed; rung means 1.6, 2.8, 3.0 levels,
+  `runs/lth/lth.py`, NED-D 17.1.0, sha256s in the plan, data not committed): nothing killed; rung means 1.6, 2.8, 3.0 levels,
   sd(b) 0.76; post hoc M 101 is a brightest-star distance, and without it rung (a) is off 1.2 levels (Baade's ~2);
-  P4 χ²/dof 0.31 (weak, shared hosts). Run 2 (SPN R319; `lth/lth2.py`, Cosmicflows-4 table2): P5, P6 killed;
+  P4 χ²/dof 0.31 (weak, shared hosts). Run 2 (SPN R319; `runs/lth/lth2.py`, Cosmicflows-4 table2): P5, P6 killed;
   post hoc part of P5 my set-up (regressing on the pair's mean), but FP and SBF drift against SN Ia by ~0.1 mag/mag at
   ~3σ, so one constant factor per rung holds for some rungs, not all.
   Review 13 (Grok, 16 Oct, `plans/ofs-review-13.md`; SPN R287): the head rotation and wave/particle offered as a
@@ -995,7 +995,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   papers kept as received, never edited: *Reader Geometry as Addressing* (rulings R1–R151 only; R152–R187 are
   quoted in SPN Appendix A), *The Relation Space*, *Browsing the Fisheye*, *The Radix*, *The Order of Limits*, *One
   Reader*, *Degrees of Freedom*; and since 11 Oct an eighth, *Special Relativity, Through the Fisheye* (4 Sep; Tom: "here is
-  a earlier paper on SR"), its numbers rechecked in `srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
+  a earlier paper on SR"), its numbers rechecked in `runs/srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
   dimensions), its gems and one link to MOT run 2 (γ even, γβ odd in ln k; 1/γ = 2k/(1 + k²)) in `plans/archive-gems.md`.
   They predate 9 Oct: check every term (density, view from everywhere, inside/outside,
   fulcrum, arctan, h and v as breadths, recursive corners, depth, old situation numbers) before pulling anything forward.
@@ -1003,6 +1003,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   one that is not archived, the paper that is not archived stands** (Tom, 11 Oct; SPN R192).
   Other papers the corpus cites that are not in this repo (`plans/…` notes from other sessions): leave those references as they are. `_config.yml`
   keeps `papers/` and `plans/` off the Pages site.
+- `runs/`: **every test's scripts and outputs, one folder a code** (`runs/dyh/`, `runs/tim/`, …; 19 Oct 2026, Tom: "you
+  are creating to many 3 letter folders in the wander project. why?", then "proceed per your recommendation"; SPN R381).
+  Until then each lived at the top level beside the pages. A new test's plan goes in `plans/<code>-plan.md` and its
+  scripts and outputs in `runs/<code>/`, never a new top-level folder. Run scripts from the repository's root
+  (`python3 runs/dyh/dyh.py`). `runs/ofs/` holds OFS's own checks. Kept off the Pages site, like `papers/` and `plans/`.
 - `plans/`: working notes, reviews and lab plans, as the corpus cites them
   (`plans/…`). `what-deserves-attention.md` is a review of what to take up next
   (6 Oct 2026): a reading, not a ruling. `hrt-plan.md` (the run for the 2: three
@@ -1081,7 +1086,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   J/A+A/649/A6 table1c, from Tom; sha256 in the plan), kinds by colour on the main sequence. All four killed: the RUWE cut
   removes more near stars (steeper counts, poles past the plane), and a fifth of G/K colours within 50 pc are white dwarfs.
   Read after the run without the cut: 2.93–3.00 levels of number per level of distance for every kind, plane = poles.
-  `grd-plan.md` (+ `grd/grd.py`; predictions 10 Oct, run 1 14 Oct, SPN R248): the ratio between levels in a measured
+  `grd-plan.md` (+ `runs/grd/grd.py`; predictions 10 Oct, run 1 14 Oct, SPN R248): the ratio between levels in a measured
   reader, the grid cells' modules. Run 1 on Gardner et al. 2022 (figshare, CC0; data not committed, sha256 in the plan):
   pooled adjacent ratio 1.432 in the √2 band (P1 not killed); P2, P3 killed by too few animals; post hoc the largest
   module is not measured reliably in a 1.5 m box. Two rats; more animals needed. P1 was a halving, √2 (area) or 2
@@ -1161,36 +1166,36 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Lambertian disc σ = −2s²/(1+s²): halfway at s = d/a = 1 and flip-symmetric (P1), sphere from its surface likewise (P2);
   the line counted from every direction and the isotropic emitter's solid angle are not (P3, P4 killed); the width is
   log₂(81)/k for a share in s^k (P5 killed). The corner holds where the light counted is a share (projected solid angle).
-  `cei-plan.md` (+ `cei/cei.py`, 11 Oct, exact): more points, less seen, from the archive: a parallel reader of step ε
+  `cei-plan.md` (+ `runs/cei/cei.py`, 11 Oct, exact): more points, less seen, from the archive: a parallel reader of step ε
   resolves (N/π)·arccos(εN/2π) of N points round a circle (within 2 points; P1, P3, P4 not killed), peak 1.1222/ε to
-  0.11%, its place 2.6% off at ε = 10⁻³ (P2 killed narrowly). `tgt-plan.md` (+ `tgt/tgt.py`, 11 Oct, exact): closure
+  0.11%, its place 2.6% off at ε = 10⁻³ (P2 killed narrowly). `tgt-plan.md` (+ `runs/tgt/tgt.py`, 11 Oct, exact): closure
   between two readers' counted edges recovers the ratio of their holds, |S_A|/|S_B|, to 5×10⁻¹⁵, and nothing more
   (P1–P5 not killed): the denominator exchange made exact.
-  `mot-plan.md` (+ `mot/mot.py`, 11 Oct, exact; Tom: "maybe h helps in object tracking and motion"): motion read from
+  `mot-plan.md` (+ `runs/mot/mot.py`, 11 Oct, exact; Tom: "maybe h helps in object tracking and motion"): motion read from
   inside, the clock the only amount. x/ẋ (x = S/d) is time to contact at every distance; from the turn arctan x it is off
   by arctan(x)(1+x²)/x, π/2 at the corner; of two looks a tick apart the older gives τ now, the newer τ one tick ago (POL
   run 10's 8%); each level of an approach takes half the τ read at its start; m/d = ωτ/√(1+(ωτ)²), no bridge (P1–P5 not
   killed). A breadth B as a baseline reads distance best at the pair's corner, d = B/2, alike at d and (B/2)²/d (P7 not
   killed); the first-order stereo error killed past εd/B ≈ 0.18 (P6: x/(1−x) on the far side, the horizon at d = 2B/ε).
-  Run 2 (`mot/mot2.py`; Tom: "a fuller geometric explanation of motion using our corner insights"): corners in motion
+  Run 2 (`runs/mot/mot2.py`; Tom: "a fuller geometric explanation of motion using our corner insights"): corners in motion
   come in two kinds, stationary where a quantity is unchanged by swapping its pair (a launch's range at 45°, the energy
   passed at equal masses, a baseline's conditioning; f(k) = f(1/k) gives f′(1) = 0) and a change of regime where swapping
   flips its sign (braking: τ̇ + 1 = d/(2s), Lee's −½ is stopping distance = distance) (P11, P12 not killed). Ranging: the
   capped unit relation and the angle are best at the corner, the plain ratio nowhere (P8); at one budget the in-place
   lay beats the even turn between 0.52 b and 1.91 b (P9). Ratio forms trig-free and exact; P10 killed in its angle
   clause (an angle holds a big ratio to ulp·(1 + x²)/x; the capped unit relation to 1.5e-16 at every size).
-  Run 3 (`mot/mot3.py`; special relativity, after the archived SR paper; Tom: "yes"): v = β, h = 1/γ (c the bridge);
+  Run 3 (`runs/mot/mot3.py`; special relativity, after the archived SR paper; Tom: "yes"): v = β, h = 1/γ (c the bridge);
   three pairs, three corners (rest for the Doppler pair, β = 1/√2 for (β, 1/γ), the transverse plane for the sky; a
   boost moves only the sky's, to tan(θ/2) = k); γ the even and γβ the odd part of k in levels, 1/γ = 2k/(1 + k²);
   rapidity the reader's lay of celerity smoothed (within 1 − ln 2 nats); pseudorapidity a direction's level; the regime
   switch at pc = mc², symmetric for E (β², a share) and lopsided for T; uniform acceleration one level per ln 2/a of
   proper time (P13–P18 not killed).
-  `emc-plan.md` (+ `emc/emc.py`, 11 Oct, exact; Tom: "how the corner helps understand the known equation"): E² = (pc)² +
+  `emc-plan.md` (+ `runs/emc/emc.py`, 11 Oct, exact; Tom: "how the corner helps understand the known equation"): E² = (pc)² +
   (mc²)² is the unit circle of (pc, mc²) in the one unit E, v = β (from dE/dp), h = 1/γ (the clock's rate); E = mc² home,
   E = pc the horizon; Newton's and the ultra-relativistic forms flips of each other, e_N(x) = e_U(1/x), both 6.07% high at
   pc = mc²; mass the light-cone pair's corner, fixed as a boost pans its levels (P1–P4 not killed; P2's quoted decimals
   my slip, recorded). Bertozzi's electrons queued (paper blocked).
-  `pay-plan.md` (+ `pay/pay.py`, 11 Oct, exact; Tom: "all we see is the motion of the center of gravity as situated observers
+  `pay-plan.md` (+ `runs/pay/pay.py`, 11 Oct, exact; Tom: "all we see is the motion of the center of gravity as situated observers
   of serial streams"; SPN R210, two centres: the median of the addresses, the centroid of the unresolved payload): one
   stream cannot tell approach from growth; a same-depth neighbour read at once separates them (payloads relative, never
   scale); below the step the payload arrives as its moments, the photocentre first (a binary's a·|B − β|); a body far off
@@ -1205,14 +1210,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   geometry is in the main papers (SPN R211: "this is pure geometry not physics actually"): SPN §4.7 (with §2.1's "What 3
   and 4 hold"), OFS §7.6 "Order needs holding", Propositions 9–12 in §9 and §8's "From far off"; `physics.md` keeps the
   physical instances (looming, unresolved binaries, gravity from far off).
-  `stc-plan.md` (+ `stc/`, 12 Oct; Tom: "Physics already constructs the completed view from situated observations, and the
+  `stc-plan.md` (+ `runs/stc/`, 12 Oct; Tom: "Physics already constructs the completed view from situated observations, and the
   framework supplies a geometric reason the construction can succeed"; SPN R216): a simulation of our own against a
   referee, a figure of 20 landmarks read by 16 to 4,096 standpoints plus one outside length (1% error) and a candle rung.
   More readings improve the figure (shape error N^(−0.49) with maximum likelihood), never the scale (the common shift at
   the outside length's 1% throughout, the landmarks' errors 99% correlated by 4,096); the rung carries 0.0150 whatever
   the number of far members (P2–P7 not killed). P1 killed by my estimator: least squares on noisy bearing lines leaves a
   floor more readings do not remove. Statistical against systematic error is address against payload.
-  `pxc-plan.md` (+ `pxc/`, 12 Oct; Tom: "show how parallax and situated observation are both needed. explore parallax
+  `pxc-plan.md` (+ `runs/pxc/`, 12 Oct; Tom: "show how parallax and situated observation are both needed. explore parallax
   from the perspecive of the corner"): the pair (half-baseline, distance), its corner the Thales circle. Exact (mpmath,
   50 digits): the relative error per unit angle cosh(ln k), sin γ = sech(ln k), the parallel reader's bell (P1, P2); the
   band acosh(1/ε)/ln 2 levels each side, far edge d ≈ B/ε (P3). P4 killed by my measure (distance from the middle takes in
@@ -1226,14 +1231,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   from known results: γ(d) + γ(a²/d) = π (P11); (σ_d/d)/(σ_p/p) = γ/sin γ, π/2 at the corner, 1 far off (P12); the round
   error at the corner needs σ₁ = σ₂, the depth's corner does not (P13); a noisy parallax's inverse has no mean and keeps
   its median, 16% of readings at or below zero at the band's edge (P14); the two parsecs differ by a·ε/3 = 242 km (P15).
-  `htp-plan.md` (+ `htp/htp.py`, 17 Oct; Tom: "can you get parallax from just rotating your head", then "1,2,3"; SPN
+  `htp-plan.md` (+ `runs/htp/htp.py`, 17 Oct; Tom: "can you get parallax from just rotating your head", then "1,2,3"; SPN
   R339, R340): exact (mpmath). A turn about the point seen from changes no pair's angle and places nothing (P1; run 1
   killed by my set-up, a pair angle compared without reducing it to one turn; P1′ not); off the axis the eye's two places
   are 2r·sin(Δ/2) apart and every point from 0.5 r to 10⁶ r is recovered exactly (P2), in r, unchanged by scaling the
   world with r (P3); the reach is r·sin Δ/ε, the eye's sideways step (P4: 50, 100, 50 m at 30°, 90°, 150°, ε = 1 mrad);
   the head 100 m at 1 mrad, 344 m at 1 arcmin, the eye alone (7.6 mm, Konrad et al. 2020 citing Atchison; Santini and
   Rucci's robot) 4.5 m (P5); fixating, the shift changes sign at the fixated distance (P6). `head-turn.html` shows it.
-  `wdg-plan.md` (+ `wdg/wdg.py`, 13 Oct; Tom: "the unit sphere could point every address in the universe", then "but that
+  `wdg-plan.md` (+ `runs/wdg/wdg.py`, 13 Oct; Tom: "the unit sphere could point every address in the universe", then "but that
   is the unsituated readers sphere, he would have to know the size if the universe. the situated reader has to sweep and
   set V = V2 = H. and create the sweep wedge using the cauchy"; SPN R220, R221): exact (mpmath). The even wedge's readings
   (v/h, v₂/h) are the two-dimensional Cauchy, 2/(π(1 + a² + b²)^(3/2)) (P1); every pair half-Cauchy, median at its corner
@@ -1241,11 +1246,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   1/c₁, 1/c₂, c₂/c₁, so each pair's corner needs that pair drawn at one length and the wedge needs V = V₂ = H (P4); a
   rotatable sphere's rays point every point of a cube at any extent, the address (u, t) the same at every extent (P5); a
   face's middle quarter takes 38% of its directions (P6). Nothing killed. `sphere-cube.html` shows it. Run 2
-  (`wdg/wdg2.py`, 13 Oct; Tom: "from the geometry's perspective, its job is done, what ever the true breadth makes no
+  (`runs/wdg/wdg2.py`, 13 Oct; Tom: "from the geometry's perspective, its job is done, what ever the true breadth makes no
   difference"; SPN R225): n other parties drawn at H, n = 1 … 5; the readings the n-dimensional Cauchy (P7); every
   reading the circle's law, every pair the wedge's (P8); the near field in all readings 1/(n + 1), the count past the
   corner even over 0 … n (P9); drawn unequally, the shares move (P10). Nothing killed.
-  `hko-plan.md` (+ `hko/hko.py`, 13 Oct; Tom: "explore what H acutally is. what is H of 0. what is H of infinity"; SPN
+  `hko-plan.md` (+ `runs/hko/hko.py`, 13 Oct; Tom: "explore what H acutally is. what is H of 0. what is H of infinity"; SPN
   R228): exact (mpmath). Past the world's ends the lays are the corner-free rulers of OFS Proposition 14, the number line
   at H of ∞, the logarithm (reader's) or the reciprocal (in-place) at H of 0, a corner only with H inside (P1); a world
   lost whole three ways at H = n·b, a·e^(1 − L_max), a/n (P2); the best H for two amounts √(x₁x₂), widest angle
@@ -1254,31 +1259,31 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   object [d, d + Δ]: nΔ/H inside the corner; past it n·ln(1 + Δ/d) on the reader's lay whatever H is, nΔH/(d(d + Δ)) on
   the in-place lay. Run 2's P5 killed by my set-up (a grid too coarse to land inside [d, d + Δ]; the endpoint equalled my
   bound); run 3: the in-place peak at H = √(d(d + Δ)), the corner of the object's own ends (P5′ not killed).
-  `thl-plan.md` (+ `thl/thl.py`, 14 Oct; Tom: "the arc is the intersection of the rays that are swept over the two
+  `thl-plan.md` (+ `runs/thl/thl.py`, 14 Oct; Tom: "the arc is the intersection of the rays that are swept over the two
   facings from horizontal to vertical"; SPN R235): exact (fractions and mpmath). On the chord A = (0, 0), B = (1, 0), A's
   ray reading s = v/h and B's reading h/v cross at (1, s)/(1 + s²), on the semicircle (P1, Thales), at distances h and v,
   foot h² | v², height hv (P2, Euclid VI.8); facing 2·atan s, the half-angle form, Euclid's triples (P3); the corner at
   the top, the flip the mirror (P4); a conic at every V = cH, x² − x + y²/c² = 0, the pairing projective and not
   perspective (P5, Steiner); equal angles give the bisector (P6); the even sweep of one ray even along the arc, the
   half-Cauchy (P7); over x₁ + x₂ the height √(x₁x₂) (P8, Euclid VI.13). Nothing killed.
-  `thl/waves.py` (15 Oct; SPN R265, Tom: "the outside has wave like chartacteristics"): the outer vantage reads the line
+  `runs/thl/waves.py` (15 Oct; SPN R265, Tom: "the outside has wave like chartacteristics"): the outer vantage reads the line
   as a power detector reads a wave, in squares at twice the angle: its foot h² (Malus), the Stokes point at 2θ
   (Poincaré), a resonance's admittance (1, s)/(1 + s²) with half power at the corner, the unitarity circle and
   Breit–Wigner, a sine's form factor 1.1107 the outer reading at 45°. Classical identities, a reading; not in OFS.
-  `azm-plan.md` (+ `azm/azm.py`, 14 Oct; Tom: "there is another sweep V2 … lean on classical theory to explain V2"; SPN
+  `azm-plan.md` (+ `runs/azm/azm.py`, 14 Oct; Tom: "there is another sweep V2 … lean on classical theory to explain V2"; SPN
   R237): exact (mpmath, a grid count, a seeded sample). V₂ is the azimuth: v₂/h = tan z and v/√(h² + v₂²) = tan a, each
   sweep's corner at 45° (P1); an even azimuth keeps its own corner under any altitude weighting (P2); even in both angles
   the pair neither sweep reads leaves its corner, P(v ≤ h) = 0.3426, near field 0.2326 (P3, numbers known beforehand,
   stated); the even octant is even in azimuth and height (P4, Archimedes' hat-box, Lambert), and then every pair at its
   corner, near field ⅓, the 2D half-Cauchy (P5); the even-in-height raise belongs to three unit relations only (P6).
   Nothing killed.
-  `sit-plan.md` (+ `sit/sit.py`, `sit/sit2.py`, 14 Oct; Tom: "we should expand the readers situations. to accomodate V2";
+  `sit-plan.md` (+ `runs/sit/sit.py`, `runs/sit/sit2.py`, 14 Oct; Tom: "we should expand the readers situations. to accomodate V2";
   SPN R239): exact (mpmath; Gauss-Newton from 2,000 random starts). Rays from parties at the unit points meeting with
   every pair square meet only at t·(1, …, 1), t = 0 (the reader's home) or 2/(n + 1); with two parties on a whole circle
   through home (P1); a hemisphere reads √π·Γ((n + 1)/2)/Γ(n/2) at once and its reciprocal one direction at a time, π/2,
   2, 3π/4 (P2); P3 killed by my set-up (a 0.1 threshold wider than the 0.095 gap); run 2, P3′: 2 and ½ are (π/2)² and
   (2/π)² times 8/π² and π²/8 (not killed).
-  `jay-plan.md` (+ `jay/jay.py`, 14 Oct; Tom: "lean on one paper … and we just build on that", Jaynes accepted; SPN
+  `jay-plan.md` (+ `runs/jay/jay.py`, 14 Oct; Tom: "lean on one paper … and we just build on that", Jaynes accepted; SPN
   R243): exact (fractions; mpmath). What Jaynes 1968 and 1973 prove, first from abstracts and secondary sources (marked
   "(check)"), then read in full once the network access was widened ("Jaynes's text, read": every item stands). The reader's unknowns, attitude θ and size
   κ = V*/H, under turns, rescalings and the exchange: dθ·dκ/κ, Jaynes's location and scale on a circle. Rescaling: only
@@ -1289,15 +1294,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Bertrand ½ rederived (Crofton), and from home arcsin(R/2D)/arcsin(R/D), ⅓ on the circle to ½ far off (P5); being
   situated, the measure dx·dy/(x² + y²), log-polar (P6); the drawings V = cH a hyperbolic line, levels its distance (P7).
   Run 1 killed P2 and P5 by my set-up (60-digit quadratures of densities singular at an end); run 2 at 200 digits, nothing
-  killed. Run 3 (`jay/jay2.py`, R244): P8, location and scale have two Haar measures (1/a², 1/a), the reader's
+  killed. Run 3 (`runs/jay/jay2.py`, R244): P8, location and scale have two Haar measures (1/a², 1/a), the reader's
   commuting group one (1/λ), the exchange keeping it; not killed. "Since 1973" in the plan: what later work did.
-  `wwp-plan.md` (+ `wwp/wwp.py`, `wwp/wwp2.py`, 14 Oct; SPN R245): von Mises's water and wine, 1/3 ≤ x ≤ 3, P(x ≤ 2),
+  `wwp-plan.md` (+ `runs/wwp/wwp.py`, `runs/wwp/wwp2.py`, 14 Oct; SPN R245): von Mises's water and wine, 1/3 ≤ x ≤ 3, P(x ≤ 2),
   exact. The literature read first (Mikkelson 5/6, Burock 0.764 via Gerville-Réache, Parker and Jeynes 0.816). Every
   fair law puts P(x ≤ 1) = ½, the corner (P2); one party's unit leaves the powers, the exchange picks dx/x (P1). Run 1
   killed P3: the mean of 5/8 and 15/16 also keeps its value under the unit. Run 2 with Jaynes's restriction rule (one
   law, its restriction the law on the smaller range): only the levels, ln 6/ln 9 ≈ 0.8155 (P3′ not killed). Jaynes's
   unbounded form: 1 − log₂ 3/L on [1, 2^L], the range held the missing number (P4).
-  `mgp-plan.md` (+ `mgp/mgp.py`, `mgp/mgp2.py`, 14 Oct; SPN R246): the marginalization paradox, exact (both reasoners'
+  `mgp-plan.md` (+ `runs/mgp/mgp.py`, `runs/mgp/mgp2.py`, 14 Oct; SPN R246): the marginalization paradox, exact (both reasoners'
   likelihoods by quadrature). Stone and Dawid's exponentials, DSZ's change point and normal (μ/σ): agreement only at the
   nuisance's dη/η (P1–P3); the gamma killed P4 (other powers move the prior instead of producing the paradox); Weibull
   P4′ not killed. General: under dη/η integrating the scale out is ℓ₁^(−n) times the ratios' law. Runs take 57 and 35
@@ -1340,16 +1345,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   c (a stretch, required 1) kept apart from κ = β/H (a zoom, free). Then Tom: "all we need for this paper is to complete the well
   known metaphors of the mercator and lighthouses. If we can show that V must equal H in those to situations, that's
   enough for this paper." (SPN R258): moved into OFS Proposition 5(f), (g) and SPN §2.1 (see the OFS entry).
-  `hzt-plan.md` (+ `plans/hzt/`, `hzt/hzt.py`, 17 Oct; Tom: "1,2,3"; SPN R340): the horizon test proposed in
+  `hzt-plan.md` (+ `plans/hzt/`, `runs/hzt/hzt.py`, 17 Oct; Tom: "1,2,3"; SPN R340): the horizon test proposed in
   `tpi-report.md` §6.5, the unbounded face. 58 occurrences of the Cauchy and its kin gathered by a fresh agent
-  (`hzt/neutral-list.md`, its own knowledge, DOIs unchecked) and classified blind (`hzt/classification.md`). H1 killed:
+  (`runs/hzt/neutral-list.md`, its own knowledge, DOIs unchecked) and classified blind (`runs/hzt/classification.md`). H1 killed:
   a sweep reaching a horizon in 12 (4 explicit: the lighthouse, the stereographic circle, cot 2Θ, the combination test;
   8 hidden), none in 46 (33 even on the classifier's alternatives); the commonest origin a pole a half-width off the
   line (29), then stable sums (7). H2, H3 not killed (held 8, traversed 1; the observer's own sweep in none). H4 not
   killed (half within a half-width, 45° there). H5 killed in its letter by the two laws on a circle (wrapped Cauchy,
   Fabry–Pérot), where the horizon closes and a mean returns. Every computable law matched (run 1's oscillatory
   quadratures failed by my set-up, run 2 by quadosc not).
-  `rho-plan.md` (+ `rho/rho.py`, 17 Oct; Tom: "the cauchy density setting is interesting", then "yes"; SPN R344): OFS's
+  `rho-plan.md` (+ `runs/rho/rho.py`, 17 Oct; Tom: "the cauchy density setting is interesting", then "yes"; SPN R344): OFS's
   two ρ joined, exact, nothing killed. A shape ln r = a₀ + τ·f(θ) laid along its outline is the density
   ρ(θ) = √(r² + r′²)/max on the unmoved addresses (draw's SMP lab knew the identity); the strength τ is the density's
   departure from constant, the circle the one shape with it constant; a₀ cancels; the median moves by
@@ -1360,43 +1365,43 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   And (R346; Tom: "the reader can't have any impact on the world, only writers"): the strength is the world's, changed
   only by writing; the level of detail is the reader's, so it cannot stand in for the strength.
   Since R347 none of this is in OFS (ρ removed); it stays in the plan and SPN.
-  `rsh-plan.md` (+ `rsh/rsh-run.mjs`, 17 Oct; Tom: "Let's create a new lab that recovers 3d shapes", "in levels application of
+  `rsh-plan.md` (+ `runs/rsh/rsh-run.mjs`, 17 Oct; Tom: "Let's create a new lab that recovers 3d shapes", "in levels application of
   games.html"; SPN R348): draw's RCC and UDV in three dimensions, the lab in reportbase/games' Levels (`LEVELS_APP`, menu
   "Recover a body", hook `_debug.recover(idx, k)`), driven from here in headless Chromium. One reader at a body's centre
   reads the sweep's own [h : v : v₂], the same for every body, the census one sphere; three readers inside, directions only,
   give the body to 10⁻¹³ in |AB|, stretch included; |AB| gives the size; k moves nothing. Nothing killed but P3's census
   clause in its letter (the Fibonacci lattice's own 4.5·10⁻⁵, my set-up). `recover.html` shows it (R349).
-  Runs 2–3 (`rsh/rsh2.mjs`, 17 Oct; SPN R350, "many 3d objects at once"): 40 bodies in one wedge (d 4 to ~26,000, 12
+  Runs 2–3 (`runs/rsh/rsh2.mjs`, 17 Oct; SPN R350, "many 3d objects at once"): 40 bodies in one wedge (d 4 to ~26,000, 12
   planted behind others), three readers B = 1 apart, pixels ε on a flat screen. Run 2 killed by my code (a body moved to
   4d, not 2d; 64 steps along a long segment stepping over far bodies; normal equations squaring the conditioning; an
   index). Run 3: the census paints breadth over distance (unchanged by k or by moving a body out at its size times as
   far; solid angle 1/d² to 0.02%), occlusion orders and never sizes, ε = 0 places every point in |AB| to 3·10⁻¹² at
   every d (no bands), on pixels shape ∝ εd²/B (e_s ∝ d^1.9), place well past it, rays past ~B/ε; occlusion orders far
   pairs the centroids lose; 11 of 40 bodies hidden by others. P7′(d) killed by the relief (the cap law (1 − r/d)/2 only
-  for the broad form, `rsh/rsh3-p7d.mjs`); P8′–P10′ not killed. `recover.html` step 6 shows it.
-  Run 4 (`rsh/rsh4.mjs`, 17 Oct; SPN R351, "is it using cauchy inscribed reader?"), nothing killed: one reader sweeping the
+  for the broad form, `runs/rsh/rsh3-p7d.mjs`); P8′–P10′ not killed. `recover.html` step 6 shows it.
+  Run 4 (`runs/rsh/rsh4.mjs`, 17 Oct; SPN R351, "is it using cauchy inscribed reader?"), nothing killed: one reader sweeping the
   whole wedge evenly (2¹¹ × 2¹¹ addresses even in azimuth and height) keeps v ≤ h ½ and the near field ⅓ with any bodies;
   each body's share × π/2 its solid angle (0.16%); the met addresses' median 0.587 for run 3's field, 0.5000 mirrored;
   equal-angle pixels' shape errors 0.78–1.09 of the flat screen's. `recover.html` step 7 shows it.
-  `mon-plan.md` (+ `mon/mon.mjs`, 17 Oct; SPN R352): one moon, detected by the inscribed sweep, painted by the central.
+  `mon-plan.md` (+ `runs/mon/mon.mjs`, 17 Oct; SPN R352): one moon, detected by the inscribed sweep, painted by the central.
   Run 1 did not run (my path never came within 12). Run 2: M1 not killed (no detection moves under k), M2 killed (ω to
   0.25%, but τ off 9%, β 2.4°), M3 not killed (the painting R/GM exactly, 0.58 painted over the pass, 0.48 at once), M4
-  killed (distance 5.5% with R̄ carried in); post hoc (`mon/mon2-smooth.mjs`) a smooth moon passes all (τ 1.2%, distance
+  killed (distance 5.5% with R̄ carried in); post hoc (`runs/mon/mon2-smooth.mjs`) a smooth moon passes all (τ 1.2%, distance
   0.05%): the relief's turning profile enters the share, so detections alone cannot tell approach from turning, and the
   amount carried in must be the silhouette's breadth. `moon.html` shows it.
-  `sky-plan.md` (+ `sky/sky.mjs`, 17 Oct; SPN R353, "the next test is a sky of 40 moving bodies"): 40 moving Levels
+  `sky-plan.md` (+ `runs/sky/sky.mjs`, 17 Oct; SPN R353, "the next test is a sky of 40 moving bodies"): 40 moving Levels
   bodies (4 crossing pairs), one sweep of the whole wedge (2048², a sub-cell body lighting its centre cell), patches as
   8-connected groups, a gated nearest-neighbour tracker on detections alone. Run 1: S1 (scaling), S4 (no wrong or missing
   clean–clean link of 898; identity lost only at touches) and S5 (10 sub-cell bodies one cell, one track) not killed; S2
-  (ω 2.9%) and S3 (τ 6.8%) killed: post hoc (`sky/sky1-posthoc.mjs`) the cells' scatter, which τ carries in proportion to
+  (ω 2.9%) and S3 (τ 6.8%) killed: post hoc (`runs/sky/sky1-posthoc.mjs`) the cells' scatter, which τ carries in proportion to
   |τ|, and the relief's turning profile for large patches' ω.
-  `lom-plan.md` (+ `lom/lom.mjs`, 17 Oct; SPN R354, "focus on cauchy to see if our cauchy insights have anything new to say
+  `lom-plan.md` (+ `runs/lom/lom.mjs`, 17 Oct; SPN R354, "focus on cauchy to see if our cauchy insights have anything new to say
   about classical results"): looming as a ratio, τ̂ = 1/r̂ on a smooth sphere's share, 4,000–40,000 repeats per τ = 10 …
   10,000. Run 1: L1–L4 killed (the median identity fails across r̂ = 0; my straight approach's t³ term); post hoc
   1/median(r̂) reads τ within 2.5% at CV 2.5, median(τ̂) 73% short. L5, the verdict, not killed: classical (Geary, the delta
   method, Lutz–Kelker, Bailer-Jones); the framing restates it (one direction [r̂ : 1] on the projective line, the median
   taken on the chart whose cut lies outside the readings).
-  `cfh-plan.md` (+ `cfh/cfh.mjs`, `cfh/cfh1-posthoc.mjs`, 18 Oct; SPN R355, "it is possible to have both?"): the central sweep
+  `cfh-plan.md` (+ `runs/cfh/cfh.mjs`, `runs/cfh/cfh1-posthoc.mjs`, 18 Oct; SPN R355, "it is possible to have both?"): the central sweep
   earned from home, on MON run 2's moon. Run 1: ranging (an amount per address, the signal's speed the bridge) gives the
   face exactly with the centre given (C1 killed by my 2°, the address spacing) and to 4% rms with the centre fitted (C3), and
   writes distance and speed to 0.25% (C2); silhouettes alone, the visual hull, contain the body and are tight on the rim to
@@ -1408,17 +1413,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   held innate; W1, W2 untested in letter (no perceived distance with an interval), W3 killed at 27% (lift); the paper's
   "equivalent ∼95 cm" is 1.3·(1 − 0.27), the echo gives 1.024 m. Run 2 (the factor from Dataset S1, predictions committed)
   not run: PMC's file link is behind a proof-of-work page, pnas.org unreachable; Tom could supply the file.
-  `sum-plan.md` (+ `sum/sum.py`, 18 Oct; SPN R358, "cauchy is address, not payload … that is everything"): a sum of
+  `sum-plan.md` (+ `runs/sum/sum.py`, 18 Oct; SPN R358, "cauchy is address, not payload … that is everything"): a sum of
   Cauchys read as addresses. The guess (tangent addition) withdrawn before running (scale 1 against the sum's 2). A sum is
   a relay of standpoints: a uniform turn from γ₁ + γ₂ landed at height γ₂ and turned again lands as one turn from
   γ₁ + γ₂; the heights and feet (m + iγ) add, the sum stays a direction. Run 1 killed by my tolerances (under the
   sampling error); run 2 (in standard errors) nothing killed; the stable limit's turn is Spitzer's Brownian landing.
-  `adr-plan.md` (+ `adr/adr.py`, 18 Oct; SPN R360, "cauchy addresses are robust, can be combined, they are a kind of
+  `adr-plan.md` (+ `runs/adr/adr.py`, 18 Oct; SPN R360, "cauchy addresses are robust, can be combined, they are a kind of
   primititive"): the address as a primitive, z = m + iγ (foot and height). Run 1: combination linear in z, Möbius maps
   move z, the distance hyperbolic (its unit along the height the level, ln 2 a doubling), the height a built-in level of
   detail (mode k kept while kγ < 1), relays grow linearly and averaging gains nothing; A2(c) killed by my reasoning (the
   quartile read survives a Möbius pole, consistent for g(z); unlike LOM's normal amounts, which lost 73%).
-  `tim-plan.md` (+ `tim/tim.py`, 18 Oct; SPN R361, "How does cauchy handle time."): exact and seeded, nothing killed. Time
+  `tim-plan.md` (+ `runs/tim/tim.py`, 18 Oct; SPN R361, "How does cauchy handle time."): exact and seeded, nothing killed. Time
   turns z (e^{izt}, the Lorentzian a damped phasor), raises the standpoint (C(0, t)), and the clock is hidden (Spitzer's
   landing the same at every Brownian rate, the passage times as 1/D, no mean); order and ratios free, durations amounts,
   a speed the bridge. Real data, one pair: Na D2's width by spectroscopy (Oates et al. 1996) against its decay in time
@@ -1442,7 +1447,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `plans/rea/linewidth-note.md`, the attribution as the error (numbers kept, attribution corrected), ChatGPT's comments
   (generate or reveal; reconstruct the inference), the pole revealed and the Lorentzian its trace on the reader's line;
   the run not taken.
-  `dyh-plan.md` (+ `dyh/dyh.py`, 18 Oct; SPN R374; Tom: "we are throwing away alot of data … its another dimension
+  `dyh-plan.md` (+ `runs/dyh/dyh.py`, 18 Oct; SPN R374; Tom: "we are throwing away alot of data … its another dimension
   actually, maybe we could use multi-dimensional arrays", then "both"): exact, nothing killed. The cell (j, k) is
   z = (k + ½)2^−j + i·2^−(j+1): from it C(m, γ) puts ½ in the cell, ¼ in each half (D1); parent to child arcosh 3/2,
   siblings arcosh 3, n apart arcosh(1 + 2n²), every level the next by z ↦ 2z (D2); every tile of hyperbolic area 1 (D3,
@@ -1452,18 +1457,18 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   against smooth and never zero (D5). The fraction is the half-plane's height; keeping digits is not reading a Cauchy.
   Known beforehand: draw's TFE ("the pyramid in rungs"), `wedge-browse.html`, `pool-infinite.html`, `.tvf3d` (R250).
   ChatGPT's comments (R375; "exact check first, then the demo"; "does the Cauchy attenuation derive the hierarchy's loss
-  of detail, or does it merely resemble it?") recorded under the plan's runs. Run 2 (`dyh/dyh2.py`, R376; Tom: "yes"):
+  of detail, or does it merely resemble it?") recorded under the plan's runs. Run 2 (`runs/dyh/dyh2.py`, R376; Tom: "yes"):
   the share of a level's detail (a wavelet) kept by a reader at height γ depends only on u = γ·2^{j′} (to 10⁻¹⁴⁸): one
   soft cut over the levels, the same at every depth, 5.5 levels from 90% to 10%, Haar's step half kept 3.09 levels
   coarser than the reader's own cell; its shape the detail's (a step loses (12/π)·u·ln(1/u), a smooth one (4/√π)·u; far
   off u⁻³ or u⁻⁵ by vanishing moments). Nothing killed.
   ChatGPT's next comments (R377, R378): three losses with height (address precision, variation, telling apart), one
-  variable and three laws; sort each result by geometry, payload or kernel. Run 3 (`dyh/dyh3.py`, R379; Tom: "yes"),
+  variable and three laws; sort each result by geometry, payload or kernel. Run 3 (`runs/dyh/dyh3.py`, R379; Tom: "yes"),
   nothing killed: the address window is the line's (2γ open, (2/π)·arctan(tanh πγ) closed), never a payload's; variation
   the payload's (a softened step a step above u ≈ s, smooth below; levels interact from a height); telling apart the
   kernel's and the payloads' (equal thresholds Cauchy 2/√3, Gaussian 2, sech² 2·artanh(1/√3), a cusp none; unequal
   amplitudes raise all, the Cauchy slower than the Gaussian with a faint source beside a bright).
-  `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
+  `opn-plan.md` (+ `runs/ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
   `omm-plan.md` (10 Oct, plan only, nothing worked): taking D6 forward (Tom's 23 Sep status note, Ω_m = ψ₁ψ₂ = 1/π, not

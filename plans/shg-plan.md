@@ -58,7 +58,7 @@ table in a new form; S3 is the claim that only the circle works.
 
 ## Runs
 
-### Run 1 (16 Oct about 08:55, `shg/shg.py`, output in `shg/run1.txt`; 4 s)
+### Run 1 (16 Oct about 08:55, `runs/shg/shg.py`, output in `runs/shg/run1.txt`; 4 s)
 
 **S1–S4 not killed.**
 - **S1.** By direction the reading is tan θ at every ρ and the law is (2/π)·arctan t (to 7·10⁻⁴⁰).
@@ -112,7 +112,7 @@ a₀ ∈ {−3, 0, 2.5}; ρ ∈ {0, ¼, ½, 1}; N = 64 even directions θₖ = 2
 *Killed if* any check misses its tolerance. R1 and R4 rest on my statement of the sampling and Parseval identities, R2
 and R3 are identities; a kill would be my computation.
 
-### Run 2 (16 Oct about 09:05, `shg/shg2.py`, output in `shg/run2.txt`)
+### Run 2 (16 Oct about 09:05, `runs/shg/shg2.py`, output in `runs/shg/run2.txt`)
 
 **R1–R5 not killed.**
 - **R1.** The ratios are the same for a₀ = −3, 0 and 2.5, and modes 1–6 come back from them exactly, with nothing at

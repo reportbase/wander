@@ -2,7 +2,7 @@
 
 *12 October 2026. Tom: "show how parallax and situated observation are both needed. explore parallax from the perspective
 of the corner." Exact arithmetic and the complex step, with one Monte Carlo check of the first-order error. Predictions
-written before the script (`pxc/pxc.py`) exists. It builds on SPN Proposition 9.6 (parallax as two situated directions
+written before the script (`runs/pxc/pxc.py`) exists. It builds on SPN Proposition 9.6 (parallax as two situated directions
 and the reader's own travel), MOT P6–P7 (`plans/mot-plan.md`: a baseline reads distance best at d = B/2, alike at d and
 (B/2)²/d; sin γ = 2k/(1 + k²)) and COR's "parallax against the grain" (SPN §3, gives out at a shift of one address).*
 
@@ -50,7 +50,7 @@ being a second zoom like H (`zoom.html`), sliding the band.
 
 ## Runs
 
-### Run 1 (12 October, `pxc/pxc.py`)
+### Run 1 (12 October, `runs/pxc/pxc.py`)
 
 mpmath at 50 digits for P1–P3; seed 13 for P4; under a second.
 
@@ -76,7 +76,7 @@ depth along the line of sight, as P1 is stated, and tests the shape of the error
 out: the ellipse's aspect ratio σ_y/σ_x is d = 1/k, the reading's flip, so **the error is round exactly at the corner**,
 stretched along the line of sight outside the Thales circle and along the baseline inside it.
 
-### Run 2: predictions (12 October, written before `pxc/pxc2.py` exists)
+### Run 2: predictions (12 October, written before `runs/pxc/pxc2.py` exists)
 
 Same set-up as P4 (ε = 10⁻⁶, 20,000 draws a point, k = 2^j for j from −8 to 8, each direction off by Gaussian ε/√2).
 - **P5. Depth along the line of sight follows the bell.** The rms of (y − d)/d over ε·cosh(ln k) lies within 3% of 1 at
@@ -88,7 +88,7 @@ Same set-up as P4 (ε = 10⁻⁶, 20,000 draws a point, k = 2^j for j from −8 
   √(σ_y² + 3σ_x⁴/(4d²))/d with σ_y = (1 + d²)ε/2 and σ_x = σ_y/d, lies within 3% of 1 at every k. **Killed if** any
   point is off by more than 3%.
 
-### Run 2 (12 October, `pxc/pxc2.py`)
+### Run 2 (12 October, `runs/pxc/pxc2.py`)
 
 Seed 14, 20,000 draws at each of 17 points, a second.
 
@@ -133,7 +133,7 @@ Seed 14, 20,000 draws at each of 17 points, a second.
   (`physics.md`'s "about 2 kpc" likewise). Two eyes were right: stereo acuity is a threshold on the disparity, a
   difference in γ itself.
 
-### Run 3: predictions (12 October, written before `pxc/pxc3.py` exists)
+### Run 3: predictions (12 October, written before `runs/pxc/pxc3.py` exists)
 
 Exact first order: the Jacobian of the triangulation map (δ₁, δ₂) ↦ (x, y), the exact intersection of the two turned
 lines, taken by complex step in mpmath at 50 digits, never from the formulas below. Each direction is off by an
@@ -155,7 +155,7 @@ independent error of spread σ = 1; the error's covariance is J·Jᵀ. Half-base
   same at ρ = 2b and ρ = b/2 within 1%, or the exact Jacobian misses the formula by more than 1e-12 anywhere on rays at
   15°, 30°, …, 90°. Where along each ray it is least is measured, not predicted.
 
-### Run 3 (12 October, `pxc/pxc3.py`)
+### Run 3 (12 October, `runs/pxc/pxc3.py`)
 
 mpmath at 50 digits; under a second.
 
@@ -198,7 +198,7 @@ Least radial error along each ray from the middle (measured, not predicted), aga
   r₁/r₂ = cot(φ/2) (post hoc), the reading of the pair (distance from A, distance from B), round at that pair's corner.
   The Thales circle is where the baseline is seen square; it is the corner of the depth only on the bisector.
 
-### Run 4: predictions (13 October, written before `pxc/pxc4.py` exists)
+### Run 4: predictions (13 October, written before `runs/pxc/pxc4.py` exists)
 
 Tom, 13 October: "seems to me that we should be able to work backwards from known results of paralax and show the
 forced logical chain of logic". The known results, each in print (sources in `papers/parallax.md`, "Working back from
@@ -233,7 +233,7 @@ digits), except where said.
   pair's corner. **Killed if** the difference misses a·ε/3 by more than 1e-9 (relative), or the level count misses 17.654
   by more than 1e-3.
 
-### Run 4 (13 October, `pxc/pxc4.py`)
+### Run 4 (13 October, `runs/pxc/pxc4.py`)
 
 mpmath at 50 digits; three seconds.
 

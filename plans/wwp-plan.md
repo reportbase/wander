@@ -3,7 +3,7 @@
 *14 October 2026 (Tom's local date). After JAY (SPN R243, R244), Claude suggested von Mises's water and wine as the test
 of the anchor: the case Jaynes left open as "overdetermined" (1973, §8). Tom, about 12:33: "ok, proceed". Exact
 arithmetic: fractions where rational, mpmath at 50 digits elsewhere; predictions written before the script
-(`wwp/wwp.py`) exists.*
+(`runs/wwp/wwp.py`) exists.*
 
 ## The problem and what has been said
 
@@ -83,7 +83,7 @@ the completed view. That is a reading of the problem, not a result.
 
 ## Runs
 
-### Run 1 (14 October; `python3 wwp/wwp.py`, under a second)
+### Run 1 (14 October; `python3 runs/wwp/wwp.py`, under a second)
 
 ```
 P1: not killed. pass the unit's change: ['x^-3', 'x^-2', 'x^-1', 'x^-1/2', 'x^0', 'x^1']; powers their own image under the exchange: ['-1']
@@ -104,7 +104,7 @@ What separates the levels from the average is the rule Jaynes used for his scale
 range, restricted to a smaller range inside it, must be the solution on the smaller range. One density for the whole
 family of statements has it; a rule that renormalizes its mixture for each range need not.
 
-**Prediction for run 2** (written before `wwp/wwp2.py` exists):
+**Prediction for run 2** (written before `runs/wwp/wwp2.py` exists):
 - **P3′. With Jaynes's restriction rule added, only the levels survive.** A method must give, on [a, c′] ⊂ [a, b],
   the answer its law on [a, b] gives conditioned on [a, c′]. On Deakin's bounds the levels, the even share, the even
   turn and the hyperbola pass this (each is one density), and the average fails it: conditioned on [1/3, 2], its law on
@@ -113,7 +113,7 @@ family of statements has it; a rule that renormalizes its mixture for each range
   **Killed if** a single-density method fails the restriction rule at 50 random nested ranges by more than 1e-40; the
   average passes it at the stated nesting to 1e-6; or any method other than the levels passes both.
 
-### Run 2 (14 October; `python3 wwp/wwp2.py`, a few seconds)
+### Run 2 (14 October; `python3 runs/wwp/wwp2.py`, a few seconds)
 
 ```
 P3': not killed. restriction rule, worst gap over 50 nested ranges: levels 1.34e-51, even share 1.34e-51, even turn 1.34e-51, hyperbola 1.34e-51, average 0.181; the average on [1/3, 2] at x = 1: direct 0.6, conditioned from [1/3, 3] 0.64; unchanged by the unit: ['levels', 'average']; pass both: ['levels']

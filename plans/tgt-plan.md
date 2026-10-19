@@ -1,6 +1,6 @@
 # TGT: the two-group tower, closure recovers the one factor that crosses (exact arithmetic)
 
-*Plan written 11 October 2026, before `tgt/tgt.py` was written or run (Claude; Tom: "proceed according to your
+*Plan written 11 October 2026, before `runs/tgt/tgt.py` was written or run (Claude; Tom: "proceed according to your
 recommendation"). The archived result (*The Order of Limits* §4.4, T3: "L ÷ unit = ρ: 0.5000, 2.0000 and 3.7003")
 rests on a script not in this repository and on that paper's stitch machinery. This plan restates the claim in its
 plainest exact form and tests that, before anything moves into `papers/observation-from-somewhere.md`.*
@@ -38,7 +38,7 @@ factor leaves every count unchanged, so the absolute size is not recovered.
 
 ## Runs
 
-**Run 1 (11 October 2026; `tgt/tgt.py`, seed 11).**
+**Run 1 (11 October 2026; `runs/tgt/tgt.py`, seed 11).**
 - **P1 not killed**: on 2000 random closed polygons (3–40 edges, ρ from 0.01 to 100, holds from 10⁻³ to 10³), the worst
   relative error in the recovered ρ is 5.3×10⁻¹⁵.
 - **P2 not killed**: on a 4000-edge circle split in half, ρ = 0.5, 2 and 3.7 are recovered as 0.5000, 2.0000, 3.7000:

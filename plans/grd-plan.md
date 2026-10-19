@@ -126,7 +126,7 @@ kill conditions say, not relaxed.
 ## Runs
 
 
-### Run 1 (14 October; `python3 grd/grd.py <data dir>`, 39 seconds)
+### Run 1 (14 October; `python3 runs/grd/grd.py <data dir>`, 39 seconds)
 
 Data: Gardner et al. 2022, figshare 16764508 v6, CC0; `Toroidal_topology_grid_cell_data.zip`, 319,902,753 bytes, md5
 379bfdca61cd54d5f58cab9d3ba477de (matching figshare's listing), sha256

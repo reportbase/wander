@@ -3,7 +3,7 @@
 *11 October 2026. Tom: "the payloads can't be recovered from serial situated observation, but can be in parallel situated
 observation. basically, all we see is the motion of the center of gravity as situated observers of serial streams"; then
 "yes" to a run and to naming the two centres (SPN R210). Exact arithmetic, rationals where the numbers are rational, the
-complex step for rates. Predictions written before the script (`pay/pay.py`) exists.*
+complex step for rates. Predictions written before the script (`runs/pay/pay.py`) exists.*
 
 ## Set-up, with the case kept
 
@@ -80,7 +80,7 @@ reading, and the expansion's two forms are the flip about the corner.
 
 ## Runs
 
-### Run 1 (11 October, `pay/pay.py`)
+### Run 1 (11 October, `runs/pay/pay.py`)
 
 Seed 17, four seconds. P4 (c) is in rationals; the rest are in floats, with rates by the complex step.
 

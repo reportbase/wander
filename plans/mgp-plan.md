@@ -3,7 +3,7 @@
 *14 October 2026 (Tom's local date). After WWP (SPN R245), Claude suggested answering the standard objection to
 measures that cannot be normalized, Dawid, Stone and Zidek's marginalization paradoxes, before an outside reader raises
 it; the corpus leans on dκ/κ for the other party's size. Tom, about 13:00: "yes". Exact arithmetic where it is
-rational, mpmath at 50 digits elsewhere; predictions written before the script (`mgp/mgp.py`) exists.*
+rational, mpmath at 50 digits elsewhere; predictions written before the script (`runs/mgp/mgp.py`) exists.*
 
 ## The objection, as read
 
@@ -69,7 +69,7 @@ holds for location or scale of interest, not for μ/σ. It would not show that i
 
 ## Runs
 
-### Run 1 (14 October; `python3 mgp/mgp.py`, 57 minutes)
+### Run 1 (14 October; `python3 runs/mgp/mgp.py`, 57 minutes)
 
 ```
 P1: not killed. k = 0.0: a/b spread 78.8, factorization gap 31.2; k = 0.5: a/b spread 7.94, factorization gap 4.68; k = 1.0: a/b spread 0.0, factorization gap 0.0; k = 1.5: a/b spread 4.31, factorization gap 0.824; k = 2.0: a/b spread 27.2, factorization gap 1.18
@@ -92,7 +92,7 @@ paradox. In DSZ's examples the nuisance's power enters through a factor that cou
 a power with k in it), and there is no such π₂. What k = 1 gives in all four models is stronger than the absence of the
 paradox: a/b is constant, so B₂ reproduces B₁ with the same prior, π₂ = π.
 
-**Prediction for run 2** (`mgp/mgp2.py`, written before it exists):
+**Prediction for run 2** (`runs/mgp/mgp2.py`, written before it exists):
 - **P4′. With dη/η the two reasoners agree with the same prior, in every scale-nuisance model; with another power, they
   agree only by changing the prior on ζ, or not at all.** A fifth model, Weibull with shape ζ and the size κ as scale:
   at k = 1, a/b is constant (spread below 1e-30); at k = 0, ½, 3/2, 2, a/b is not constant (spread above 1e-6), and,
@@ -101,7 +101,7 @@ paradox: a/b is constant, so B₂ reproduces B₁ with the same prior, π₂ = �
   k = 1 exceeds 1e-30, or any other power's spread is below 1e-6, or any other power factorizes to 1e-6, over 50
   random data vectors (n = 4) and 20 values of ζ.
 
-### Run 2 (14 October; `python3 mgp/mgp2.py`, 35 minutes)
+### Run 2 (14 October; `python3 runs/mgp/mgp2.py`, 35 minutes)
 
 ```
 P4': not killed. Weibull, shape of interest, scale nuisance: k = 0.0: a/b spread 0.909, factorization gap 0.234; k = 0.5: a/b spread 0.45, factorization gap 0.125; k = 1.0: a/b spread 0.0, factorization gap 0.0; k = 1.5: a/b spread 0.818, factorization gap 0.142; k = 2.0: a/b spread 2.3, factorization gap 0.305

@@ -6,7 +6,7 @@ that is the rotation from parallel to to perpindicular." Then, to Claude's namin
 azimuth, about 3:06: "Parallel to perpendicular. are just my terms. Use the correct terms for V2 that you mentioned.
 lean on classical theory to explain V2." It follows R236 (the unsituated view h + v + … = 1; the situated views
 everything else built from the horizontal, the vertical and the rest) and R235 (the arc where the two facings' rays
-cross). Exact arithmetic (mpmath quadrature at 50 digits); predictions written before the script (`azm/azm.py`)
+cross). Exact arithmetic (mpmath quadrature at 50 digits); predictions written before the script (`runs/azm/azm.py`)
 exists.*
 
 **Prior knowledge, stated.** Before this plan, a midpoint grid (1,200 × 1,200) in a scratch computation gave, for the
@@ -78,7 +78,7 @@ when a reader reaches the octant by two sweeps. It does not show that a reader s
 
 ## Runs
 
-### Run 1 (14 October; `python3 azm/azm.py`, about 50 s)
+### Run 1 (14 October; `python3 runs/azm/azm.py`, about 50 s)
 
 ```
 P1: not killed. v2/h = tan z, v/√(h² + v2²) = tan a, h² + v² + v2² = 1; worst 5.97e-59

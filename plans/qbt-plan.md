@@ -54,7 +54,7 @@ would be my computation or my statement of the textbook result, not quantum mech
 
 ## Runs
 
-### Run 1 (16 Oct about 05:15, `qbt/qbt.py`, output in `qbt/run1.txt`)
+### Run 1 (16 Oct about 05:15, `runs/qbt/qbt.py`, output in `runs/qbt/run1.txt`)
 
 **Q1–Q6 not killed.** Every identity holds to 7·10⁻⁴¹, and Q5 to 3·10⁻³⁵.
 

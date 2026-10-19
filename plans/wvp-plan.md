@@ -48,7 +48,7 @@ spread of the corner's estimate, 2/π the mean's climb). Those two are the conte
 
 ## Runs
 
-### Run 1 (15 Oct, `wvp/wvp.py`, output in `wvp/run1.txt`; 4 s)
+### Run 1 (15 Oct, `runs/wvp/wvp.py`, output in `runs/wvp/run1.txt`; 4 s)
 
 | N | √N·mean D | median ln s | √N·sd of median | median of mean s | IQR of mean s | mean h² | share h² ≤ ¼ | (π/2)·mean shadow |
 |---|---|---|---|---|---|---|---|---|
@@ -77,7 +77,7 @@ average over the three decades, (median at 10⁵ − median at 10²)/3. Its stan
 resamples of the runs. *Killed if* the average climb is off 1.466 by more than 3 bootstrap standard errors, or the
 interquartile range of the mean across runs shrinks by more than a factor 2 from 10² to 10⁵.
 
-### Run 2 (15 Oct, `wvp/wvp2.py`, output in `wvp/run2.txt`; 5 s)
+### Run 2 (15 Oct, `runs/wvp/wvp2.py`, output in `runs/wvp/run2.txt`; 5 s)
 
 The median of the mean across 4,000 runs: 3.7919 at N = 10², 8.0673 at 10⁵. Average climb 1.4252 a decade against
 (2/π)·ln 10 = 1.4659, bootstrap standard error 0.0165: off by 2.47 standard errors, inside 3. The interquartile range of
@@ -162,7 +162,7 @@ running mean of |s| climbs (1 − C)·(2/π)·ln 10 a decade (the even turn's (2
 With about 56 px a fringe, the pixel's step caps |s| near 35, and the climb is a few hundredths a decade: below what
 these counts resolve. Stated, not run.
 
-### Run 3 (15 Oct about 20:28, `wvp/wvp3.py`, output in `wvp/run3.txt`; 9 min)
+### Run 3 (15 Oct about 20:28, `runs/wvp/wvp3.py`, output in `runs/wvp/run3.txt`; 9 min)
 
 Arrivals: D_SM 40,110, D_MM 589,498, G_SM 26,902, I_SM 65,316, GI_SM 928,175 (pixels, as defined above).
 
@@ -207,7 +207,7 @@ share on rows with clusters.
 - **Q4′.** As Q4, on rows and clusters. *Killed if* C(D_SM) > 2hv(I_SM) + 3 se, or C(G_SM) > 2hv(GI_SM) + 3 se, or
   C(D_MM) is not below C(D_SM) by 3 se.
 
-### Run 4 (15 Oct about 20:38, `wvp/wvp4.py`, output in `wvp/run4.txt`; 8 min)
+### Run 4 (15 Oct about 20:38, `runs/wvp/wvp4.py`, output in `runs/wvp/run4.txt`; 8 min)
 
 | set | arrivals (clusters) | pixels each | P (px) | P/(fλ/d) | C | √N·mean D, N = 25 → largest | slope |
 |---|---|---|---|---|---|---|---|

@@ -6,7 +6,7 @@ is H of infinity. Picking an H creates the unit relational space. The number of 
 actaully sweep the full shape, we sweep the cauchy fisheye of it. the shape is constructed virtually, over many
 observations, which implies that it might have something to do with parallax." It follows SPN R226 (H is not a measured
 size but the value the reader chooses to start the system; the geometry a shape and one H) and R227 (physics assigns
-the values). Exact arithmetic (mpmath); predictions written before the script (`hko/hko.py`) exists. The pages that
+the values). Exact arithmetic (mpmath); predictions written before the script (`runs/hko/hko.py`) exists. The pages that
 show it come after the run.*
 
 ## Set-up, with the case kept
@@ -68,7 +68,7 @@ baseline is the same corner, the geometric middle of what is read (as Propositio
 
 ## Runs
 
-### Run 1 (13 October, `hko/hko.py`)
+### Run 1 (13 October, `runs/hko/hko.py`)
 
 mpmath at 60 digits; under a second.
 
@@ -100,7 +100,7 @@ mpmath at 60 digits; under a second.
 Post hoc, from the numbers: the widest angle between two amounts is arcsin((r − 1)/(r + 1)) (19.47° at r = 2), the
 same as 2·arctan(√r) − 90°.
 
-### Run 2 (13 October; `hko/hko2.py`): detail per object
+### Run 2 (13 October; `runs/hko/hko2.py`): detail per object
 
 *Tom, about 13:14: "small H gives good fidelity to nearby objects, large h gives good fidelity to far away objects.
 larger H moves the corner further away from the observer, which gives more proportional space. reader has fixed number
@@ -137,7 +137,7 @@ H = √(d(d + Δ)), the geometric middle of the object's own ends, where it is 2
 Δ/d = 1, at H/d = √2; the grid found 18.745 at 1.4125). The reader's-lay span there is n·(1 + ln((d + Δ)/H) − d/H),
 falling for H ≥ d, so the reader's lay has no peak, only its flat run up to d.
 
-### Run 3 (13 October; `hko/hko3.py`): the peak found by search
+### Run 3 (13 October; `runs/hko/hko3.py`): the peak found by search
 
 *Prediction written before the script, after run 2's diagnosis.*
 

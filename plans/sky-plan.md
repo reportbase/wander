@@ -82,7 +82,7 @@ not light, and not how a real sky's detections are made.
 
 (Nothing above this line is edited after a run.)
 
-### Run 1 (17 Oct, `node sky/sky.mjs`; output `sky/sky-run1.txt`, 17 min)
+### Run 1 (17 Oct, `node runs/sky/sky.mjs`; output `runs/sky/sky-run1.txt`, 17 min)
 
 One choice the plan left open, made before running: a track seen once has no last step, so its gate takes the largest
 step a body is given, 10 cells. The sky: 40 bodies, d 23 to 15,218 at the middle tick, 36–40 patches a tick, 10 bodies
@@ -97,8 +97,8 @@ under one cell all run; touches at 18 of 25 ticks (up to 4 bodies at once, the p
 - **S5 not killed:** all 10 bodies under one cell were one cell at their centre direction every tick, each one track over
   all 25 ticks.
 
-**Post hoc** (`sky/sky1-posthoc.mjs`; outputs `sky/sky1-posthoc.txt` and, with the relief taken off,
-`sky/sky1-posthoc-smooth.txt`). τ: taking off the relief does not help (worst 7.41%). The error is the cells': ln s scatters
+**Post hoc** (`runs/sky/sky1-posthoc.mjs`; outputs `runs/sky/sky1-posthoc.txt` and, with the relief taken off,
+`runs/sky/sky1-posthoc-smooth.txt`). τ: taking off the relief does not help (worst 7.41%). The error is the cells': ln s scatters
 0.2–0.8% about its five-tick line (a patch's edge cells come and go), and τ = 2/slope turns that scatter into
 σ·|τ|/(2√10) of τ, 3–9% for these bodies (true |τ| 30 to 150 ticks). The observed errors follow it (body 12, τ 34: 1.4%;
 bodies 1, 17, 32, |τ| 115–150: 4–7%). My threshold took no account of |τ|: a body far from contact changes its share by

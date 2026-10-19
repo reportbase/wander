@@ -81,7 +81,7 @@ P1–P4 are classical, so a kill would be my set-up. P5 is the reading.
 
 (Nothing above this line is edited after a run.)
 
-### Run 1 (18 Oct, `python3 sum/sum.py`; output `sum/sum-run1.txt`, 4 s)
+### Run 1 (18 Oct, `python3 runs/sum/sum.py`; output `runs/sum/sum-run1.txt`, 4 s)
 
 - **P1 killed.**
   - The characteristic functions agree exactly (difference 0 at 200 digits).
@@ -131,7 +131,7 @@ The predictions:
 
 *Killed* as before, with these thresholds.
 
-### Run 2 (18 Oct, `python3 sum/sum.py 2`; output `sum/sum-run2.txt`, 4 s)
+### Run 2 (18 Oct, `python3 runs/sum/sum.py 2`; output `runs/sum/sum-run2.txt`, 4 s)
 
 None of P1′–P5 was killed.
 

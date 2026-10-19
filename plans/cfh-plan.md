@@ -114,7 +114,7 @@ Not light, not noise in the ranges or the cells beyond their own size, not a spi
 
 (Nothing above this line is edited after a run.)
 
-### Run 1 (18 Oct, `node cfh/cfh.mjs`; output `cfh/cfh-run1.txt`, 9 min)
+### Run 1 (18 Oct, `node runs/cfh/cfh.mjs`; output `runs/cfh/cfh-run1.txt`, 9 min)
 
 Run 1 used MON run 2's 32 ticks (d from 40 down to 15.2). 2,359 of the 4,096 lattice directions are held at some tick
 (0.576), 1,224 are on the rim at some tick, and 1,460 are held but never on the rim.
@@ -142,7 +142,7 @@ Run 1 used MON run 2's 32 ticks (d from 40 down to 15.2). 2,359 of the 4,096 lat
   - Over all held directions it correlates at 0.03.
 - **C6 not killed.** The detections-alone hull under k is the same to the last bit.
 
-**Post hoc** (`cfh/cfh1-posthoc.mjs`, output `cfh/cfh1-posthoc.txt`).
+**Post hoc** (`runs/cfh/cfh1-posthoc.mjs`, output `runs/cfh/cfh1-posthoc.txt`).
 
 - **C1.** The 7 uncovered directions have their nearest ranged point 2.02° to 2.42° away. They are not limb grazers: their
   largest cosine to home while held is 0.09 to 0.66. At the far ticks one address spans about 1.7° of the moon's directions

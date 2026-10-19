@@ -6,7 +6,7 @@ to Claude's reading (Thales' construction: from the chord's two ends, one ray re
 the semicircle), about 2:34: "yes, lean on whatever classical theory best describes this situation." It follows SPN R233
 (the arc drawn by the head's turn, not the walk) and R234 (the unsituated view the chord, the situated the arc; the
 chord prior to the circle). Exact arithmetic: rational arithmetic (Python's `fractions`) where the points are rational,
-and mpmath at 60 digits elsewhere; predictions written before the script (`thl/thl.py`) exists.*
+and mpmath at 60 digits elsewhere; predictions written before the script (`runs/thl/thl.py`) exists.*
 
 ## Set-up, with the case kept
 
@@ -91,7 +91,7 @@ show that a reader draws the arc this way; that is a reading (SPN R235).
 
 ## Runs
 
-### Run 1 (14 October; `python3 thl/thl.py`, under 2 s)
+### Run 1 (14 October; `python3 runs/thl/thl.py`, under 2 s)
 
 ```
 P1: not killed. exact on 1600 rational readings; worst |PO - 1/2| over 1e-10..1e10: 1.17e-61

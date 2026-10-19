@@ -2,7 +2,7 @@
 
 *11 October 2026. Tom: "maybe h helps in object tracking and motion", then "yes, explore in physics.md", after the
 reading that a situated reader can know when without knowing how far. Exact arithmetic and exact kinematics, no data.
-Predictions written before the script (`mot/mot.py`) exists.*
+Predictions written before the script (`runs/mot/mot.py`) exists.*
 
 ## Set-up, with the case kept
 
@@ -57,7 +57,7 @@ held) give these exactly.
 
 ## Runs
 
-### Run 1 (11 October, `mot/mot.py`)
+### Run 1 (11 October, `runs/mot/mot.py`)
 
 Rationals where the arithmetic is rational (P3, P4's levels); elsewhere floats, with every rate of a reading taken by the
 complex step (exact to rounding, and never from the reading's formula). Seed 12. Three seconds.
@@ -104,7 +104,7 @@ Values from the run:
   it moves between two looks) reads a distance best with its half-breadth equal to the distance, and as badly at d as at
   (B/2)²/d.
 
-### Run 2: predictions (11 October, written before `mot/mot2.py` exists)
+### Run 2: predictions (11 October, written before `runs/mot/mot2.py` exists)
 
 Tom: "connecting known kinematics to the corner may reveal a deeper geometric truth, but if all we can do is explain
 motion through our vocabulary, that might be useful, particularly using ratios instead of angles may simplify the
@@ -193,7 +193,7 @@ computed by folding at 1, arctan x = π/2 − arctan(1/x). What run 2 adds is th
 pair, of which kind, and that the capped unit relation keeps both the ratio's algebra and the angle's best-conditioned
 middle.
 
-### Run 2 (11 October, `mot/mot2.py`)
+### Run 2 (11 October, `runs/mot/mot2.py`)
 
 Seed 13, two seconds. P11 is in exact rationals; the rest are in floats, with rates by the complex step. Each reader is
 handed a counting math namespace (√ free, every trig call counted).
@@ -254,7 +254,7 @@ pair stayed within 1e-13 (reducing the angle by whole turns would help it; the p
   0.52 b and 1.91 b (by π/2 at the corner); the even turn, the Cauchy's lay, reads best outside that (by 4/π far off
   and near home).
 
-### Run 3: predictions (11 October, written before `mot/mot3.py` exists)
+### Run 3: predictions (11 October, written before `runs/mot/mot3.py` exists)
 
 Tom: "yes", to special relativity in unit relations. The run follows the archived *Special Relativity, Through the
 Fisheye* (`papers/archive/sr-through-the-fisheye.md`) and its survey (`plans/archive-gems.md`).
@@ -325,7 +325,7 @@ ultra-relativistic regimes either side of pc ~ mc²; hyperbolic motion, t = sinh
 adds is the reading: three named pairs, their corners and their kinds, and the regime switch symmetric only where the
 quantity is a share.
 
-### Run 3 (11 October, `mot/mot3.py`)
+### Run 3 (11 October, `runs/mot/mot3.py`)
 
 Seed 15, two seconds. P14 and P18 are in exact rationals; the rest are in floats, with rates by the complex step.
 

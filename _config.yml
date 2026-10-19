@@ -1,4 +1,5 @@
-# GitHub Pages builds the site with Jekyll. The papers and plans are the repository's, not the site's: keep them off it.
+# GitHub Pages builds the site with Jekyll. The papers, plans and runs are the repository's, not the site's: keep them off it.
 exclude:
   - papers
   - plans
+  - runs

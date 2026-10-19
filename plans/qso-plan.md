@@ -92,7 +92,7 @@ before running).
 
 ## Runs
 
-### Run 1 (16 Oct about 06:05, `qso/qso.py`, output in `qso/run1.txt`; 1 min)
+### Run 1 (16 Oct about 06:05, `runs/qso/qso.py`, output in `runs/qso/run1.txt`; 1 min)
 
 - **F1, F2, F3, F5 not killed** (to 4·10⁻⁴¹). Without a phase reference the visibility goes and the predictability
   stays; without an orientation one qubit is I/2; two copies twirled together are p·singlet + ((1 − p)/3)·triplet with
@@ -114,7 +114,7 @@ The same claim as F4 with the condition repaired: for every two of the 20 pairs 
 the twirled states' trace distance is at least 10⁻³ (and, from the Werner form, equal to |Δ(n₁·n₂)|/3 to 10⁻³⁰).
 *Killed if* any such pair falls below 10⁻³ or off |Δ(n₁·n₂)|/3 by more than 10⁻³⁰.
 
-### Run 2 (16 Oct about 06:12, `qso/qso.py`, output in `qso/run2.txt`)
+### Run 2 (16 Oct about 06:12, `runs/qso/qso.py`, output in `runs/qso/run2.txt`)
 
 **F4′ killed, by my arithmetic.** Every two pairs whose n₁·n₂ differ by more than 10⁻³ are told apart (the least trace
 distance 0.00116), but the distance is |Δ(n₁·n₂)|/4 at every pair (the ratio 0.25 to 20 digits), not the /3 I wrote. The
@@ -126,7 +126,7 @@ trace distance is (|Δp| + 3·|Δp|/3)/2 = |Δp| = |Δ(n₁·n₂)|/4; I had dro
 As F4′ with the distance |Δ(n₁·n₂)|/4. *Killed if* any pair whose n₁·n₂ differ by more than 10⁻³ has a trace distance
 below 10⁻³ or off |Δ(n₁·n₂)|/4 by more than 10⁻³⁰.
 
-### Run 3 (16 Oct about 06:17, `qso/qso.py`, output in `qso/run3.txt`)
+### Run 3 (16 Oct about 06:17, `runs/qso/qso.py`, output in `runs/qso/run3.txt`)
 
 **F4″ not killed.** Pairs whose n₁·n₂ differ are told apart at exactly |Δ(n₁·n₂)|/4; rotated pairs are not. Every other
 check printed as in run 1. Nothing killed in run 3.

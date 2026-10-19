@@ -2,7 +2,7 @@
 
 *17 October 2026 (Tom's local date). Tom, 14:28: "the cauchy density setting is interesting. what does the paper say
 about that."; 14:31: "yes", to Claude's suggestion that OFS never ties its two uses of ρ together. Geometry, exact.
-Predictions written before the script (`rho/rho.py`) exists.*
+Predictions written before the script (`runs/rho/rho.py`) exists.*
 
 ## The two uses, as OFS has them
 
@@ -78,7 +78,7 @@ the first-order picture holds for each, scaled.
 
 (Nothing above this line is edited after a run.)
 
-### Run 1 (17 Oct, `python3 -I rho/rho.py`; output `rho/rho-run1.txt`, 2 min)
+### Run 1 (17 Oct, `python3 -I runs/rho/rho.py`; output `runs/rho/rho-run1.txt`, 2 min)
 
 - P1 not killed: the density σ/max σ on the inscribed sweep's addresses and arc length along the outline (computed from
   the polar points themselves) agree to 1·10⁻⁴¹; f₁ at t = 1 gives 0.5295, 0.5625, 0.6323 (SHG's 0.529, 0.563, 0.632).

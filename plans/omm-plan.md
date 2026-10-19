@@ -90,7 +90,7 @@ evolution the l = 2 calculation, once done, cannot account for; (c) any detectio
 
 ## Runs
 
-**Stage 1, run 1 (10 October 2026; `omm/omm.py`, exact, sympy).** Tom: "lets not rule, but try it both ways, see what
+**Stage 1, run 1 (10 October 2026; `runs/omm/omm.py`, exact, sympy).** Tom: "lets not rule, but try it both ways, see what
 falls out." So neither ruling was made; both weights and both readings of ψ₂ were worked.
 
 | | ψ₁, the average share on h | × one facing of two (½) | × one quarter of four (¼) |
@@ -122,7 +122,7 @@ falls out." So neither ruling was made; both weights and both readings of ψ₂ 
   in one facing. For X to carry that number, the payload must be what lands on the reader's h. That identification is
   stated here, not shown.
 
-**Stage 2, B5 worked both ways (10 October 2026; `omm/b5.py`; flat matter plus constant dark energy, radiation left out).**
+**Stage 2, B5 worked both ways (10 October 2026; `runs/omm/b5.py`; flat matter plus constant dark energy, radiation left out).**
 Two readings of where the share 1/π belongs, under reading X (matter the payload).
 
 - **(i) Every epoch's own home reads 1/π.** dΩ_m/dz = −3·Ω_m0(Ω_m0 − 1)(1 + z)²/(…)², which is zero for all z only when

@@ -134,9 +134,9 @@ freedom.
 
 ## Runs
 
-### Run 1 (16 Oct 2026; `lth/lth.py`)
+### Run 1 (16 Oct 2026; `runs/lth/lth.py`)
 
-`python3 -I lth/lth.py NED30.5.1-D-17.1.2-20200415.csv`. Order, for the record: Hubble's table and the rungs were
+`python3 -I runs/lth/lth.py NED30.5.1-D-17.1.2-20200415.csv`. Order, for the record: Hubble's table and the rungs were
 committed first (93e1308); the NED-D file was then downloaded and the script run on it for P1–P3 before its source and
 sha256 were written above (a slip in the plan's order; the rungs, the blind part, were already fixed); then the SH0ES
 values and P4's uncertainties were recorded (c2248d1) before P4 was computed.
@@ -231,9 +231,9 @@ Recorded (16 Oct, before computing): `table2.dat.gz`, 2,485,646 bytes, sha256
 2cfed1418147d5a626dee1fa37c47252124477c9828490508d9bbe511d34edb4. VizieR's licence terms (CDS); not committed. Columns
 by the ReadMe's byte positions.
 
-### Run 2 (16 Oct 2026; `lth/lth2.py`)
+### Run 2 (16 Oct 2026; `runs/lth/lth2.py`)
 
-`python3 -I lth/lth2.py table2.dat`, 55,877 galaxies. Pairs with at least 30 galaxies measured by both methods:
+`python3 -I runs/lth/lth2.py table2.dat`, 55,877 galaxies. Pairs with at least 30 galaxies measured by both methods:
 
 | pair | n | mean Δμ (mag) | slope on μ̄ (mag/mag) | slope/se | var(Δμ)/mean(e_A² + e_B²) |
 |---|---|---|---|---|---|

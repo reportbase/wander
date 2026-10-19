@@ -54,7 +54,7 @@ public unit 1 notch more.
 
 ## Runs
 
-### Run 1 (16 Oct about 09:45, `rwt/rwt.py`, output in `rwt/run1.txt`; 2 s)
+### Run 1 (16 Oct about 09:45, `runs/rwt/rwt.py`, output in `runs/rwt/run1.txt`; 2 s)
 
 **T1–T6 not killed.** (An unused function was removed from the script after the run; the rerun printed the same.)
 - **T1.** From one standpoint the readings are unchanged by λ (to 2·10⁻⁴⁰). The nullity is 4: each target's size and

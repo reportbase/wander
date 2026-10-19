@@ -490,7 +490,7 @@ own measure. The one free number is the factor, which is H.
 4. Being symmetric, C is a multiple of the identity, so B is a multiple of Q.
 5. All points of one orbit have equal Q. ∎
 
-Checked in `ofs/periodic.py` on eight random changes of coordinates:
+Checked in `runs/ofs/periodic.py` on eight random changes of coordinates:
 - the invariant inner product is unique up to a factor and positive definite;
 - the page shows c from 0.54 to 27;
 - in the sweep's own measure, all of v over all of h is 1 to 25 digits.
@@ -528,7 +528,7 @@ Proposed, not made: Tom set OFS's scope this morning (R258: "that's enough for t
     own);
   - in "The Euclidean choice" (the assumption narrowed to a uniform, linear sweep);
   - in §11.2, question 2.
-- **The check:** `ofs/periodic.py` now names 3(g).
+- **The check:** `runs/ofs/periodic.py` now names 3(g).
 - **Text comparison:** a word-level comparison against the previous text shows only these insertions. One rewrap first
   merged question 2's three-path table into its paragraph; it was caught by that comparison and restored before
   committing.
