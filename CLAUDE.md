@@ -508,6 +508,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   where the π/2 falls (Tom: "can parallax be used to illustrate PI/2 * 2/PI = 1"; SPN R224): the turn in γ/sin γ is the
   pair's facing, twice its sweep angle, so π/2 comes at the pair's corner, where on OFS §10's thumb it comes at the
   sweep's horizon; one identity on two angles, not to be conflated.
+  `mapping.md` (19 Oct 2026, Tom: "start a new paper that can fully explore this."; SPN R387: "the prospect of an
+  alternative method is interesting, even if exiisting methods are better. understanding the geometry is useful for its
+  own sake.") is the working paper on mapping from addresses, marked like `parallax.md` (classical / exact / simulation /
+  reading / open / illustration): what is known already (triangulation, structure from motion, bundle adjustment and
+  robust costs, monocular SLAM's scale and inverse depth, the base-to-height ratio, Baarda, single-view metrology, the
+  visual hull); the reader's two inscribed sweeps and addresses; one place (a picture, no distance); one step (the map in
+  H, STC, PXC, TRI's error law); the second reader (TRI runs 2–3's payload coordinate, CIW); the one amount (seven ways in,
+  one suffices); the lay; an address-first pipeline against the usual one, stage by stage with what each needs; the
+  Cauchy's place; and a test queue, AFM first (the address-first mapper against bundle adjustment, a measurement, not a
+  contest).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
