@@ -121,3 +121,48 @@ what reading at a height changes, exactly, in the error.
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (19 Oct, `python3 runs/tri/tri.py`; output `runs/tri/tri-run1.txt`, 32 s)
+
+Nothing was killed.
+
+- **T1 not killed.** At γ = 10⁻⁴ the relative depth error is Cauchy(0, 2γ·cosh(ln k)) at every k: KS distance 0.0006–0.0010
+  against a limit of 0.00136.
+  - The medians are within 0.91 standard errors of 0.
+  - The upper quartile over 2γ·cosh(ln k) is 0.995–1.003.
+- **T2 not killed.** At k = 1, the ratio of half-interquartile ranges, Cauchy over normal, is 1.4118 against √2 = 1.4142
+  (bootstrap standard error 0.0028). Cauchy bearings add their scales; normal ones add in quadrature.
+- **T3 not killed.**
+  - (a) The exact probability of no forward crossing: 0.000638 and 0.00646 at k = 1 (γ = 10⁻³, 10⁻²); 0.00259 and
+    0.0258 at k = 8. The samples agree within 0.8 standard errors.
+    - The plan called the integral "over the difference of the two angular errors". The script integrates over A's
+      error, with B's in closed form. That is also one-dimensional, and exact.
+  - (b) Over 20 batches at k = 8, γ = 10⁻², the batch means' interquartile range is 271 times the medians'.
+    - The means are those of the readings that cross in front. The rest have no depth, a direction only, so they have no
+      mean to include.
+  - (c) At matched median angular error (k = 8, γ = 10⁻²), the probability of no forward crossing is 0.0258 for Cauchy
+    bearings and 9.3·10⁻³³ for normal ones: a ratio of 2.8·10³⁰.
+- **T4 not killed.** The depth step at which two equal targets read as two, over the depth, against the first-order
+  (4/√3)·γ·cosh(ln k):
+  - k = ¼: 1.0003;
+  - k = 1: 1.0012;
+  - k = 4: 1.0046.
+
+  The bisection on the count of maxima equals the closed form d + Δ* = b·tan(arctan k + arctan(2γ/√3)) to all digits
+  shown.
+
+**T5, the verdict: not killed.** ChatGPT's alternatives come apart cleanly:
+- **Reading at a height does not give a new reconstruction rule.** The crossing and the baseline are classical, so it is
+  a different representation of the same solution.
+- **It gives a different error law, exactly:**
+  1. **The depth error is a Cauchy.** Its scale is 2γ·cosh(ln k), least at the pair's corner. This is PXC's bell, with
+     the scale of the reading in place of ε.
+  2. **Two standpoints' errors add their scales.** They do not average down: √2 more than a normal model's at the same
+     median error. This is ADR A5's relay, once.
+  3. **Rays that fail to meet in front are a visible share,** 2.6% at k = 8 and γ = 10⁻², where a normal model puts them
+     at 10⁻³².
+  4. **Depth resolution follows the corner too:** Δ*/d = (4/√3)·γ·cosh(ln k).
+
+The address window per bearing (2γ) is the geometry's. What the triangle does to it (cosh(ln k)) is the pair's corner.
+
+The mathematics is classical: error propagation, the stable index 1, and run 3's threshold. The reading is ours.

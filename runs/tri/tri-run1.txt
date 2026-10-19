@@ -1,0 +1,20 @@
+T1 KS limit 0.00136
+   k=0.125  KS 0.00085  median/se +0.33  upper quartile/(2g cosh) 0.9958
+   k=0.5    KS 0.00099  median/se -0.04  upper quartile/(2g cosh) 0.9970
+   k=1      KS 0.00090  median/se +0.20  upper quartile/(2g cosh) 1.0029
+   k=2      KS 0.00063  median/se -0.91  upper quartile/(2g cosh) 0.9983
+   k=8      KS 0.00098  median/se +0.05  upper quartile/(2g cosh) 0.9950
+T1 True
+T2 ratio of half-IQRs Cauchy/normal 1.4118 (sqrt2 1.4142, se 0.0028) True
+   k=1 g=0.001: exact P(no forward crossing) 0.00063801936, sample 0.000656 (z +0.71)
+   k=1 g=0.01: exact P(no forward crossing) 0.0064593065, sample 0.006509 (z +0.62)
+   k=8 g=0.001: exact P(no forward crossing) 0.0025864482, sample 0.002548 (z -0.76)
+   k=8 g=0.01: exact P(no forward crossing) 0.025808722, sample 0.025829 (z +0.13)
+T3a True
+T3b batch means IQR / batch medians IQR = 271.1 (means of the finite crossings; 20 batches) True
+T3c no forward crossing at k=8, g=1e-2: Cauchy 0.0258087, normal 9.29256e-33, ratio 2.777e+30 True
+   k=0.25: Delta*/d exact 0.0049088944 (closed form 0.0049088944), first order 0.0049074773, ratio 1.00029
+   k=1.0: Delta*/d exact 0.0023120708 (closed form 0.0023120708), first order 0.0023094011, ratio 1.00116
+   k=4.0: Delta*/d exact 0.0049302491 (closed form 0.0049302491), first order 0.0049074773, ratio 1.00464
+T4 True
+T5 True {'T1': np.True_, 'T2': np.True_, 'T3a': np.True_, 'T3b': np.True_, 'T3c': True, 'T4': True, 'T5': True}

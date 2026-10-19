@@ -1468,6 +1468,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the payload's (a softened step a step above u ≈ s, smooth below; levels interact from a height); telling apart the
   kernel's and the payloads' (equal thresholds Cauchy 2/√3, Gaussian 2, sech² 2·artanh(1/√3), a cusp none; unequal
   amplitudes raise all, the Cauchy slower than the Gaussian with a faint source beside a bright).
+  `tri-plan.md` (+ `runs/tri/tri.py`, 19 Oct; SPN R382; ChatGPT via Tom on triangulation, then "yes"): bearings read from
+  a height γ (tan δ ~ Cauchy(0, γ)), two standpoints a baseline apart, the classical crossing. Nothing killed: the
+  depth error Cauchy(0, 2γ·cosh(ln k)) (PXC's bell, least at the corner); two standpoints' scales add, √2 over normal
+  errors at equal median, never averaging down; rays not meeting ahead a visible share (0.0258 at k = 8, γ = 10⁻²,
+  normal 10⁻³²); depth resolution Δ*/d = (4/√3)·γ·cosh(ln k). A different representation of the classical solution,
+  with its own error law; no new reconstruction rule.
   `opn-plan.md` (+ `runs/ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
