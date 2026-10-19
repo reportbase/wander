@@ -1810,11 +1810,15 @@ addresses follow the uniform turn is Proposition 5's, not the array's.
   corner are untouched by anything stored (Theorem 6(a)).
 - *Places compose without angles.* The offset from one place to another is the tangent subtraction of their slopes:
   turns composed (§2).
-- *Where the array is not the reader.* To read a value at a place between samples, an array must round the place to an
-  index, which is a floor. A reader has no floor. A place between addresses is held at the coarser level of detail
-  (§8), not rounded to one of them. One method an array can use for something like it is band-limited reconstruction,
-  which spreads a value over every sample by weights that sum to one, with N setting the band. That method assumes a
-  model of the signal; it is an analogy to the reader's coarser level, not the same mechanism.
+- *Where the array is not the reader.* An array index is ⌊x⌋. The floor keeps the cell and discards the fractional
+  part, which locates the place within that cell. In binary, the fraction is a sequence of halvings, each digit one
+  finer level below the indexed cell (exact for dyadic subdivisions). By indexing alone, the array keeps the levels
+  across its indices but not this hierarchy within a cell. A reader has no floor. It uses the continuous address and
+  keeps as much of the finer structure as its resolution supports, rather than discarding every finer level at once;
+  how many levels it keeps is set by its resolution, not by the fraction (§8). One method an array can use for
+  something like it is band-limited reconstruction, which spreads a value over every sample by weights that sum to
+  one, with N setting the band. That method assumes a model of the signal; it is an analogy to the reader's coarser
+  level, not the same mechanism.
 - *One array per facing.* A circle has four facings, the quadrants, and can be stored as four arrays on one lattice.
   - Each array has its places at ψ_k = (k + ½)·(π/2)/N, read as tan ψ_k: the N evenly spaced quantiles of the
     half-Cauchy.
@@ -2035,6 +2039,8 @@ the span sets the level. How many addresses a thing spans depends on amounts, wh
 - The level is a continuous number, and its fractional part says how far the finest detail held has faded.
 - The Cauchy carries such a level in its own height. Seen from height γ, a pattern's mode of frequency k is kept as
   e^{−kγ} (the Poisson kernel), and each mode fades, faster the finer it is, with none cut off.
+- The address itself is continuous; the reader's level of detail decides how much of its finer structure remains
+  distinguishable.
 - Rounding to cells is a device of storage, not of reading.
 
 **From far off, a thing is its total at its centroid.** Take payloads w_i at points r_i about a centre, each at
