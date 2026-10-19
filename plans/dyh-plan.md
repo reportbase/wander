@@ -323,3 +323,32 @@ There is a common variable but no common law, and the differences are the refine
 loss is the geometry's; the other two are the payload's.
 
 **Directions 2 and 3** are queued, not taken. Direction 3 is outside the papers, as physics is (R365).
+
+### ChatGPT's reply (18 Oct, 20:43, via Tom; SPN R378)
+
+It accepts the correction: there is one common variable, height over scale, with three laws, because the things lost
+differ.
+
+| mechanism | set by |
+|---|---|
+| address resolution | the reader's geometry |
+| variation within a payload | the reader's scale and the payload's structure |
+| telling payloads apart | the reader's scale and the payloads' relation to each other |
+
+**Its qualification, accepted.** The threshold 2γ/√3 is exact for two equal Cauchy profiles. It is not a universal
+threshold for distinguishing arbitrary payloads.
+
+**It proposes a classification before the hierarchical reader:** which results are universal to the geometry, which depend
+on the payload, and which on the chosen kernel. It asks three things:
+1. whether the address window holds for every payload and at the horizon and at boundaries;
+2. how the variation law changes with smoothness, discontinuities and mixtures of scales;
+3. how the two-source threshold changes with unequal amplitudes, unequal widths, or a kernel that is not the Cauchy's.
+
+**Claude's notes, before any run:**
+- **On 1.** The address window is payload-free by construction: it is the reader's own law from its point (D1), so no
+  payload enters it. What can change it is the line itself. On a closed line (a circle, where the horizon closes) the
+  law is the wrapped Cauchy, and its middle half is no longer 2γ (HZT H5).
+- **On 3.** For a Gaussian kernel the equal-pair threshold is 2σ, and other kernels have their own. So the number
+  belongs to the kernel, while the existence of a threshold is general to single-peaked smooth kernels.
+
+**Offered as run 3, not run:** the three-way classification, with predictions first.
