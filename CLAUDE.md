@@ -951,6 +951,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   **The floor's depth as the half-plane** (SPN R374; Tom: "its another dimension actually, maybe we could use
   multi-dimensional arrays"; DYH, `depth.html`): not in OFS. The dyadic cells are points m + iγ, Böröczky's binary
   tiling; the fraction the floor drops is the height; the floor's fade is not the Cauchy's (DYH D5).
+  **What the height fixes, and what it does not** (SPN R380; Tom: "yes"): OFS §8 after "A resolution, not cells", from
+  DYH runs 1–3: the cell's point m + iγ (γ half its width), the binary tiling (Böröczky 1974, cited), every tile area 1;
+  the Cauchy from the point half in the cell, so the height fixes a 2γ window no payload enters (closed line
+  (2/π)·arctan(tanh πγ)); variation kept the payload's, telling apart the kernel's and the payloads'; Theorem 6's
+  division at the level of detail; keeping digits not reading from a height (never within 0.22).
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

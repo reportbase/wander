@@ -2043,6 +2043,28 @@ the span sets the level. How many addresses a thing spans depends on amounts, wh
   distinguishable.
 - Rounding to cells is a device of storage, not of reading.
 
+**What the height fixes, and what it does not.** Give the dyadic cell [kw, (k + 1)w), w = 2^(−j), the point m + iγ of the
+upper half-plane, with m its middle and γ = w/2 its half-width. The fraction the floor discards is this height.
+- Each binary digit is one step down, and every step is alike. The map z ↦ 2z is an isometry of the half-plane carrying
+  each level onto the next, and every cell's tile [kw, (k + 1)w] × [w/2, w] has the same hyperbolic area,
+  ∫∫ dx·dy/y² = 1. The cells are Böröczky's binary tiling (Böröczky 1974).
+- From its point, the Cauchy C(m, γ) puts exactly half its weight in the cell: (1/π)(arctan 1 − arctan(−1)) = ½. So the
+  height fixes an address window, 2γ wide, before anything arrives, and no payload enters it. Only the line changes it.
+  On a closed line of length 1 the window is (2/π)·arctan(tanh πγ), close to 2γ for a low reader and half the line for a
+  high one.
+- What is kept of a payload's variation depends on the payload. For a detail a cell of width w′ wide, the share kept
+  depends only on γ/w′, by the same isometries. So the reader's loss of detail is one soft cut over the levels, the same
+  at every depth. Its form is the detail's: near the reader a step loses (12/π)·u·ln(1/u) at u = γ/w′, a smooth detail
+  an amount in proportion to u, and far off the detail's vanishing moments set how fast it falls.
+- Whether two payloads read as two depends on the kernel and on the payloads. Two equal Cauchy profiles of height γ
+  show two maxima only when more than 2γ/√3 apart, and two equal Gaussians of width σ only when more than 2σ apart.
+  Cusped profiles show two at any separation, and unequal amplitudes raise every threshold.
+
+So the height alone fixes where the reader's window falls, and what survives inside it is the payload's: the division
+of Theorem 6, at the level of detail. Keeping binary digits is not reading from a height. A cell average multiplies
+e^{ikx} by |sin(kw/2)/(kw/2)|, which has zeros, and the Cauchy multiplies it by e^{−kγ}, which has none; no γ brings the
+two within 0.22 of each other.
+
 **From far off, a thing is its total at its centroid.** Take payloads w_i at points r_i about a centre, each at
 distance q_i from it, read from a standpoint at distance r with every q_i < r. The reciprocal of the distance to each
 expands in the reading q_i/r: 1/|r − r_i| = Σ_l (q_i^l / r^(l+1)) P_l(cos γ_i), with P_l the Legendre polynomials and
@@ -2926,6 +2948,9 @@ Bernardo, J. M. (1979). Reference posterior distributions for Bayesian inference
 Society B* 41(2), 113–128.
 
 Bertrand, J. (1889). *Calcul des probabilités*. Gauthier-Villars, Paris.
+
+Böröczky, K. (1974). Gömbkitöltések állandó görbületű terekben I [Sphere packings in spaces of constant curvature I].
+*Matematikai Lapok* 25, 265–306.
 
 Bramon, A., Garbarino, G. and Hiesmayr, B. C. (2004). Quantitative complementarity in two-path interferometry.
 *Physical Review A* 69, 022112.
