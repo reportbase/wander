@@ -352,3 +352,59 @@ on the payload, and which on the chosen kernel. It asks three things:
   belongs to the kernel, while the existence of a threshold is general to single-peaked smooth kernels.
 
 **Offered as run 3, not run:** the three-way classification, with predictions first.
+
+### Run 3: geometry, payload or kernel (predictions, 18 Oct, before the run; Tom: "yes")
+
+The three losses, each tested for where its law comes from. Exact at 50 digits with mpmath, except where a count of maxima
+is bisected (C3, C4), which uses double precision and says so.
+
+**A. The address window is the line's, never a payload's.** The window is the reader's own law from its point; no payload
+enters it. Only the line can change it.
+- On the open line the middle half is 2γ at every height.
+- On a closed line of length 1 (the horizon closed, the wrapped Cauchy with ρ = e^{−2πγ}), the middle half is
+  W(γ) = (2/π)·arctan(tanh(πγ)). This is derived before the run from the wrapped law's quantiles: the wrapped Cauchy is a
+  Möbius image of the uniform turn.
+- **A1.** W(γ) equals the middle half found by quadrature of the wrapped density (Σ of shifted Cauchys, summed to
+  convergence), at γ ∈ {0.01, 0.1, 0.25, 1}, to 10⁻²⁵. *Killed* otherwise.
+- **A2.** Near the open line's value, (1 − W/(2γ))/γ² is within 10⁻⁶ (relative) of 2π²/3 at γ = 10⁻⁶. As the height grows,
+  W → ½, half the circle (within 10⁻¹⁰ at γ = 10). *Killed* otherwise.
+
+**B. Variation depends on the payload's structure.** Run 2 had the step and the smooth detail. Here are a family between
+them and a mixture of levels.
+- **B1 (the crossover).** Take the step softened at its edges, ψ_s = ψ_H ∗ g_σ with g_σ the Gaussian of width
+  σ = s·2^{−j′}, normalised.
+  - At s = 10⁻⁶, |R_s − R_H| < 10⁻³ at u ∈ {10⁻³, 10⁻², 10⁻¹}: above the softening, a step.
+  - At u = 10⁻¹², (1 − R_s)/u is within 1% of 4π·E_s|η|, the mean of |η| under |ψ̂_s|², by quadrature: below it,
+    smooth.
+  - So the near law is set by the payload's own finest scale against u.
+  - *Killed* if either fails.
+- **B2 (levels do not read apart).** The cross term c(γ) = ⟨ψ_{0,0}, P_{2γ} ∗ ψ_{3,0}⟩ between a level and a finer one
+  inside it is exactly 0 at γ = 0 (orthogonality). It is under 10⁻⁴ in size at γ = 10⁻⁶ and over 10⁻³ at γ = 0.1, by
+  the closed box formula.
+  - So a mixture's share kept is not the sum of its levels' shares: what a reader keeps of one level depends on the levels
+    around it.
+  - *Killed* if |c(0.1)| ≤ 10⁻³, or |c(10⁻⁶)| ≥ 10⁻⁴.
+
+**C. Telling payloads apart depends on the kernel.** A threshold is the least separation at which the sum of two profiles
+has two maxima.
+- **C1.** Equal profiles, at 50 digits:
+  - Cauchy 2γ/√3, and the Gaussian 2σ, to 10⁻⁴⁰;
+  - sech² (a third smooth peak), positive and finite;
+  - Laplace e^{−|x|} (a cusped peak), 0: two maxima at every separation, since between the peaks the sum is
+    2e^{−a}·cosh x.
+
+  *Killed* otherwise.
+- **C2 (the value is the kernel's).** In each kernel's half-width at half maximum (Cauchy γ, Gaussian σ√(2 ln 2)), the
+  equal thresholds are 1.1547 and 1.6986. They differ by more than 10%. *Killed* if within 10%.
+- **C3 (unequal amplitudes).** Amplitudes 1 and A, A ∈ {1, 2, 4, 10}. The threshold (double precision, bisection on the
+  count of maxima, to 10⁻⁶) is finite and increases with A, for both the Cauchy and the Gaussian. *Killed* if it is
+  infinite or not increasing for either.
+- **C4 (unequal widths).** Cauchy heights 1 and r ∈ {2, 4}: the threshold is finite. *Killed* if not.
+
+**D. The verdict.**
+- **The window is the geometry's.** It depends on the line (open or closed), never on a payload (A).
+- **What is kept of variation is the payload's.** Its finest scale sets the near law, and levels interact (B).
+- **Telling apart is the kernel's and the payloads'.** The value is the kernel's, and even whether there is a threshold
+  (a cusp has none). It moves with the payloads' amplitudes and widths (C).
+
+*Killed* if A, B or C is killed.
