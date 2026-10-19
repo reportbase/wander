@@ -1555,6 +1555,16 @@ In v and h (§6), with v = sin φ and h = cos φ:
 | central cylindrical | tan φ | v/h, the division | sec φ | 26.6° |
 | Mercator's | asinh(tan φ) | asinh(v/h) | 1 | 45° |
 
+**Two readers, two charts.** Mercator's chart keeps local angles, so a course of constant compass bearing is a straight
+line on it. That serves the address reader, for whom the relation that matters is a direction: the ratio of a step
+east to a step north. It does so by an area scale of sec²φ, a zoom that grows with latitude, and areas are amounts, the
+payload reader's. So the payload reader objects. On the chart Greenland looks comparable to Africa, about two-thirds its
+size, when Africa is in fact about fourteen times larger. An equal-area chart such as Lambert's keeps the relative
+areas instead, at the cost of the bearings. The two charts keep different properties of the same globe. No flat chart
+keeps both (Euler 1777; Gauss 1828), and neither reader is thereby obliged to use either: each chart follows from the
+property its reader needs kept. Only the globe itself, the complete object, keeps every direction and every area at
+once; it is the common reference from which both charts are drawn.
+
 *Proof.* (f) The flash at θ meets the shore where its leg out to sea, of length β, and its leg along the shore, x − α,
 stand at angle θ. So (x − α)/β = tan θ, and the path, β/cos θ, divides out of the ratio. With θ uniform on (−π/2, π/2),
 the law of (b) over both quadrants follows as in the proof of (b), and P(|x − α| ≤ β) = P(|θ| ≤ π/4) = ½. Drawn with the
@@ -1791,8 +1801,8 @@ the world has no indices of its own. The picture shows that addresses and payloa
 addresses follow the uniform turn is Proposition 5's, not the array's.
 - *The index is the address.* The places are fixed by the index before any value is stored, at equal steps of turn.
   - Read as slopes of the inscribed angle (§4), s_k = tan(θ_k/2), they are, for even N, exactly the N evenly spaced
-    quantiles of the standard Cauchy. A finite array holds the law at N of its quantiles; the law itself is the
-    continuous turn's (Proposition 5).
+    quantiles of the standard Cauchy. A finite array samples the continuous law at N quantile locations; the law
+    itself is the continuous turn's (Proposition 5).
   - For even N, half of them lie within the corner, |s_k| ≤ 1.
   - For odd N one place falls on the horizon itself, [0 : 1], an address like any other, and the share within the
     corner is not exactly a half.
@@ -1800,11 +1810,15 @@ addresses follow the uniform turn is Proposition 5's, not the array's.
   corner are untouched by anything stored (Theorem 6(a)).
 - *Places compose without angles.* The offset from one place to another is the tangent subtraction of their slopes:
   turns composed (§2).
-- *Where the array is not the reader.* To read a value at a place between samples, an array must round the place to an
-  index, which is a floor. A reader has no floor. A place between addresses is held at the coarser level of detail
-  (§8), not rounded to one of them. One method an array can use for something like it is band-limited reconstruction,
-  which spreads a value over every sample by weights that sum to one, with N setting the band. That method assumes a
-  model of the signal; it is an analogy to the reader's coarser level, not the same mechanism.
+- *Where the array is not the reader.* An array index is ⌊x⌋. The floor keeps the cell and discards the fractional
+  part, which locates the place within that cell. In binary, the fraction is a sequence of halvings, each digit one
+  finer level below the indexed cell (exact for dyadic subdivisions). By indexing alone, the array keeps the levels
+  across its indices but not this hierarchy within a cell. A reader has no floor. It uses the continuous address and
+  keeps as much of the finer structure as its resolution supports, rather than discarding every finer level at once;
+  how many levels it keeps is set by its resolution, not by the fraction (§8). One method an array can use for
+  something like it is band-limited reconstruction, which spreads a value over every sample by weights that sum to
+  one, with N setting the band. That method assumes a model of the signal; it is an analogy to the reader's coarser
+  level, not the same mechanism.
 - *One array per facing.* A circle has four facings, the quadrants, and can be stored as four arrays on one lattice.
   - Each array has its places at ψ_k = (k + ½)·(π/2)/N, read as tan ψ_k: the N evenly spaced quantiles of the
     half-Cauchy.
@@ -2025,7 +2039,31 @@ the span sets the level. How many addresses a thing spans depends on amounts, wh
 - The level is a continuous number, and its fractional part says how far the finest detail held has faded.
 - The Cauchy carries such a level in its own height. Seen from height γ, a pattern's mode of frequency k is kept as
   e^{−kγ} (the Poisson kernel), and each mode fades, faster the finer it is, with none cut off.
+- The address itself is continuous; the reader's level of detail decides how much of its finer structure remains
+  distinguishable.
 - Rounding to cells is a device of storage, not of reading.
+
+**What the height fixes, and what it does not.** Give the dyadic cell [kw, (k + 1)w), w = 2^(−j), the point m + iγ of the
+upper half-plane, with m its middle and γ = w/2 its half-width. The fraction the floor discards is this height.
+- Each binary digit is one step down, and every step is alike. The map z ↦ 2z is an isometry of the half-plane carrying
+  each level onto the next, and every cell's tile [kw, (k + 1)w] × [w/2, w] has the same hyperbolic area,
+  ∫∫ dx·dy/y² = 1. The cells are Böröczky's binary tiling (Böröczky 1974).
+- From its point, the Cauchy C(m, γ) puts exactly half its weight in the cell: (1/π)(arctan 1 − arctan(−1)) = ½. So the
+  height fixes an address window, 2γ wide, before anything arrives, and no payload enters it. Only the line changes it.
+  On a closed line of length 1 the window is (2/π)·arctan(tanh πγ), close to 2γ for a low reader and half the line for a
+  high one.
+- What is kept of a payload's variation depends on the payload. For a detail a cell of width w′ wide, the share kept
+  depends only on γ/w′, by the same isometries. So the reader's loss of detail is one soft cut over the levels, the same
+  at every depth. Its form is the detail's: near the reader a step loses (12/π)·u·ln(1/u) at u = γ/w′, a smooth detail
+  an amount in proportion to u, and far off the detail's vanishing moments set how fast it falls.
+- Whether two payloads read as two depends on the kernel and on the payloads. Two equal Cauchy profiles of height γ
+  show two maxima only when more than 2γ/√3 apart, and two equal Gaussians of width σ only when more than 2σ apart.
+  Cusped profiles show two at any separation, and unequal amplitudes raise every threshold.
+
+So the height alone fixes where the reader's window falls, and what survives inside it is the payload's: the division
+of Theorem 6, at the level of detail. Keeping binary digits is not reading from a height. A cell average multiplies
+e^{ikx} by |sin(kw/2)/(kw/2)|, which has zeros, and the Cauchy multiplies it by e^{−kγ}, which has none; no γ brings the
+two within 0.22 of each other.
 
 **From far off, a thing is its total at its centroid.** Take payloads w_i at points r_i about a centre, each at
 distance q_i from it, read from a standpoint at distance r with every q_i < r. The reciprocal of the distance to each
@@ -2910,6 +2948,9 @@ Bernardo, J. M. (1979). Reference posterior distributions for Bayesian inference
 Society B* 41(2), 113–128.
 
 Bertrand, J. (1889). *Calcul des probabilités*. Gauthier-Villars, Paris.
+
+Böröczky, K. (1974). Gömbkitöltések állandó görbületű terekben I [Sphere packings in spaces of constant curvature I].
+*Matematikai Lapok* 25, 265–306.
 
 Bramon, A., Garbarino, G. and Hiesmayr, B. C. (2004). Quantitative complementarity in two-path interferometry.
 *Physical Review A* 69, 022112.

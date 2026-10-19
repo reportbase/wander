@@ -331,6 +331,21 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   lies, + the readers' fitted centres), the painting round the moon. `?t=&ranges=0|1&hull=0|1&fit=1&smooth=1&k=<log10 k>`;
   hook `window.__fromHome` (`detect`, `ticks`, `rangedTrack`, `silTrack`, `rangedPoints`, `hullOf`, `seenOf`, `touchedOf`,
   `compare`, `centre`, `rOf`, `compute`, `set`, `state`, `last`, `hud`). Not in the flying page.
+- `depth.html`: **the floor's depth** (18 Oct 2026, Tom: "the arrays work good with math.floor, but we are throwing away alot
+  of data … its another dimension actually, maybe we could use multi-dimensional arrays", then "both"; SPN R374; DYH), a
+  standalone page like `one-read.html`. The cell (level j, index k) is the point m + iγ of the upper half-plane (m its
+  middle, γ its half-width); the floor keeps level 0, each binary digit a step down. Rows by level ("in levels", each ln 2
+  tall) or by γ ("as the plane"); two places' descents; L levels kept, the rest totals (a binomial cascade made from the
+  addresses, never stored, the kept cells adding to 1); the Cauchy read from the kept cell's point, half in its cell; the
+  readout gives d in the plane, the tiling's steps with sideways neighbours and the tree's alone. "Two fades": the cell
+  average |sinc(πn)| against e^(−2πnγ), never closer than 0.22. Since 19 Oct (Tom: "update depth.html"; DYH runs 2–3,
+  OFS §8 "What the height fixes"): how much of each level a reader at its own cell's point keeps (a step in closed form,
+  or a smooth bump, the Gaussian's derivative at w'/4) against the floor's step; telling two sources apart through four
+  kernels (Cauchy, Gaussian, sech², Laplace's cusp) with a fainter second; the window open (2γ) and closed
+  ((2/π)·arctan(tanh πγ)). `?x=&x2=&L=&g=<γ/w>&view=levels|plane&kind=step|smooth&kern=cauchy|gauss|sech|laplace&sep=&amp=`;
+  hook `window.__depth` (`cell`, `share`, `dist`, `area`, `graph`, `tree`, `digits`, `descent`, `fade`, `avg`, `maxDiff`,
+  `bestGamma`, `mass`, `drawn`, `RH`, `RG`, `keep`, `halfLevel`, `maxima`, `thresh`, `windowOf`, `set`, `state`). Not in the
+  flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -434,7 +449,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, recovering a body, one moon, the face from home, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -930,6 +945,22 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Review 20 (ChatGPT, of version 34, 9.4/10, `plans/ofs-review-20.md`; SPN R371): §7.3's array picture tightened (the
   finite array holds the law at N quantiles, half within the corner for even N only; band-limited reconstruction one
   method, an analogy; an array a representation, its indexing chosen, the address law Proposition 5's).
+  **Two readers, two charts** (18 Oct, SPN R372; Tom: "merkator map is drawn for address readers. payload readers
+  object because greenland is bigger than africa."): OFS Proposition 5(g) after the table: Mercator the address reader's
+  (bearings true), Lambert's equal-area the payload reader's (areas true); Greenland 10–12 times, Africa 1.15, drawn 1.5
+  against a true 14; only the writer's globe keeps both.
+  Review 21 (`plans/ofs-review-21.md`) rewrote it: Mercator by what it keeps, no reader obliged to either chart, the globe
+  itself the common reference. **The array's depth** (SPN R373; Tom: "the depth is the float that we strip away with
+  Math.floor"; review 22, `plans/ofs-review-22.md`): §7.3, the floor discards the within-cell position, whose binary
+  digits are the finer dyadic levels; the reader keeps as many as its resolution supports; §8, the address continuous.
+  **The floor's depth as the half-plane** (SPN R374; Tom: "its another dimension actually, maybe we could use
+  multi-dimensional arrays"; DYH, `depth.html`): not in OFS. The dyadic cells are points m + iγ, Böröczky's binary
+  tiling; the fraction the floor drops is the height; the floor's fade is not the Cauchy's (DYH D5).
+  **What the height fixes, and what it does not** (SPN R380; Tom: "yes"): OFS §8 after "A resolution, not cells", from
+  DYH runs 1–3: the cell's point m + iγ (γ half its width), the binary tiling (Böröczky 1974, cited), every tile area 1;
+  the Cauchy from the point half in the cell, so the height fixes a 2γ window no payload enters (closed line
+  (2/π)·arctan(tanh πγ)); variation kept the payload's, telling apart the kernel's and the payloads'; Theorem 6's
+  division at the level of detail; keeping digits not reading from a height (never within 0.22).
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
@@ -1411,6 +1442,27 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `plans/rea/linewidth-note.md`, the attribution as the error (numbers kept, attribution corrected), ChatGPT's comments
   (generate or reveal; reconstruct the inference), the pole revealed and the Lorentzian its trace on the reader's line;
   the run not taken.
+  `dyh-plan.md` (+ `dyh/dyh.py`, 18 Oct; SPN R374; Tom: "we are throwing away alot of data … its another dimension
+  actually, maybe we could use multi-dimensional arrays", then "both"): exact, nothing killed. The cell (j, k) is
+  z = (k + ½)2^−j + i·2^−(j+1): from it C(m, γ) puts ½ in the cell, ¼ in each half (D1); parent to child arcosh 3/2,
+  siblings arcosh 3, n apart arcosh(1 + 2n²), every level the next by z ↦ 2z (D2); every tile of hyperbolic area 1 (D3,
+  Böröczky's binary tiling); the tree alone puts neighbours across the middle 2j apart, with sideways neighbours
+  |d − g·ln 2| ≤ 2.19 over all 523,776 pairs at level 10, the shortest way always up, across and down, d/g → ln 2 (D4);
+  the floor's fade |sinc(πnw)| and the Cauchy's e^(−2πnγ) never within 0.2227 (at γ = 0.24 w), zeros and side lobes
+  against smooth and never zero (D5). The fraction is the half-plane's height; keeping digits is not reading a Cauchy.
+  Known beforehand: draw's TFE ("the pyramid in rungs"), `wedge-browse.html`, `pool-infinite.html`, `.tvf3d` (R250).
+  ChatGPT's comments (R375; "exact check first, then the demo"; "does the Cauchy attenuation derive the hierarchy's loss
+  of detail, or does it merely resemble it?") recorded under the plan's runs. Run 2 (`dyh/dyh2.py`, R376; Tom: "yes"):
+  the share of a level's detail (a wavelet) kept by a reader at height γ depends only on u = γ·2^{j′} (to 10⁻¹⁴⁸): one
+  soft cut over the levels, the same at every depth, 5.5 levels from 90% to 10%, Haar's step half kept 3.09 levels
+  coarser than the reader's own cell; its shape the detail's (a step loses (12/π)·u·ln(1/u), a smooth one (4/√π)·u; far
+  off u⁻³ or u⁻⁵ by vanishing moments). Nothing killed.
+  ChatGPT's next comments (R377, R378): three losses with height (address precision, variation, telling apart), one
+  variable and three laws; sort each result by geometry, payload or kernel. Run 3 (`dyh/dyh3.py`, R379; Tom: "yes"),
+  nothing killed: the address window is the line's (2γ open, (2/π)·arctan(tanh πγ) closed), never a payload's; variation
+  the payload's (a softened step a step above u ≈ s, smooth below; levels interact from a height); telling apart the
+  kernel's and the payloads' (equal thresholds Cauchy 2/√3, Gaussian 2, sech² 2·artanh(1/√3), a cusp none; unequal
+  amplitudes raise all, the Cauchy slower than the Gaussian with a faint source beside a bright).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
@@ -1733,6 +1785,12 @@ In short:
   40. **from-home.html:** ranged points on the outline to 10⁻⁹ and the face from them at correlation 0.999 or more with the
       centre given; the hull containing the moon (within 0.03 of its radius) and more than 5 times as far off away from where
       an edge grazed it; ×10³ moving no detection or hull, the ranges by k; with the centre fitted, distance and speed to 1%.
+  41. **depth.html:** from a cell's point the Cauchy puts half in the cell, every tile's area 1, parent to child arcosh 3/2
+      and siblings arcosh 3 at every level; across the middle of level 10 the tree takes 20 steps, the tiling 1; 0.8125 is
+      0.1101, cell 13 of 16; the kept cells add to the whole; the two fades never closer than 0.2227; a step half kept 3.09
+      levels coarser than the reader's own cell (own level 0.0269), a smooth bump 2.61; equal sources part at 2/√3, 2 and
+      2·artanh(1/√3) (Cauchy, Gaussian, sech²), a cusp at once, a tenfold fainter one at 3.406 and 3.354; the closed window
+      at γ = ¼ 0.36952.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

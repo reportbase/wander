@@ -18,3 +18,10 @@ law apart from the payload law, which §7.3 already states. It raises three poin
 
 Not changed: the facing arrays' half-Cauchy quantiles. Those are exact for every N, since tan(π/2 · (k + ½)/N) is the
 half-Cauchy's quantile at (k + ½)/N.
+
+## Review 20, round 2 (ChatGPT, of version 35, 9.5/10)
+
+It accepts the three changes and suggests one wording, taken: "A finite array samples the continuous law at N quantile
+locations". It also notes that the array picture makes the address–payload separation intuitive but does not prove
+that every reader uses Cauchy addresses, which rests on the sweep's stated assumptions. OFS already says so: the picture
+opens by sending the address law to Proposition 5, and Theorem 6 states its premises.

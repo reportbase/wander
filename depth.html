@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The floor's depth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    depth.html: what Math.floor throws away (18 October 2026, Tom: "the arrays work good with math.floor, but we are
+    throwing away alot of data. I can't help but wonder if that can be used to good purppose in some way. its another
+    dimension actually, maybe we could use multi-dimensional arrays.", then "both" to an exact check and a demo; SPN R374;
+    DYH, plans/dyh-plan.md). A standalone page, plain canvas, unit relations only.
+    The cell of level j and index k (width w = 2^-j on [0, 1)) is the point z = m + iγ of the upper half-plane, m its
+    middle, γ = w/2 its half-width: the Cauchy's own parameter. The floor keeps level 0; each binary digit of the fraction
+    is one step down. The cells are Böröczky's binary tiling: every tile [kw, (k+1)w] × [w/2, w] has hyperbolic area 1,
+    every level is the next by the isometry z ↦ 2z, parent to child is arcosh(3/2), and with sideways neighbours the
+    cells measure the plane (|d − g·ln 2| ≤ 2.2 at level 10), where the tree alone puts neighbours across the middle 2j
+    steps apart. From its point, C(m, γ) puts exactly half in its cell. A reader keeping L levels holds 2^L cells; the
+    rest is totals, here a binomial cascade made from the cells' addresses, never stored, the kept cells always adding to
+    the whole. The second panel: the floor's fade (a cell average, |sinc(πnw)|) against the Cauchy's (e^-2πnγ); they
+    differ by at least 0.22 at every γ (DYH D5), so keeping digits is not reading a Cauchy.
+    Three more panels (19 Oct, Tom: "update depth.html"; DYH runs 2–3, OFS §8 "What the height fixes, and what it does
+    not"): how much of each level's detail a reader at its own cell's point keeps (a step, Haar's, in closed form, or a
+    smooth bump, the Gaussian's derivative of width w'/4, by its spectrum), against the floor's step; telling two sources
+    apart through four kernels (Cauchy 2/√3, Gaussian 2, sech² 2·artanh(1/√3), Laplace's cusp none; a fainter second
+    raising each); the address window on an open line (2γ) and a closed one ((2/π)·arctan(tanh πγ)).
+    Links: ?x=&x2=&L=&g=<γ/w>&view=levels|plane&kind=step|smooth&kern=cauchy|gauss|sech|laplace&sep=&amp=. Test hook:
+    window.__depth (cell, share, dist, area, graph, tree, digits, descent, fade, avg, maxDiff, bestGamma, mass, drawn,
+    RH, RG, keep, halfLevel, maxima, thresh, windowOf, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 20px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 3fr 2fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15; overflow-wrap: anywhere }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The floor's depth</h1>
+    <p class="lede">An array index is ⌊x⌋: the floor keeps the cell and throws the fraction away. But the fraction has a
+    home. Each binary digit is one step down, and the cells, laid by level, are points m + iγ of the half-plane the Cauchy
+    lives in: the cell's middle and its half-width. In that plane every cell has the same room, every level is the next,
+    and the cells with their neighbours measure the distances. What the floor drops is the second coordinate:
+    <span class="b">how deep</span>.</p>
+    <div class="panel">
+        <div class="row"><label for="x">a place x</label><input id="x" type="range" min="0" max="0.999999" step="0.000001" value="0.6875">
+            <span id="xv" class="g"></span></div>
+        <div class="row"><label for="x2">a second place</label><input id="x2" type="range" min="0" max="0.999999" step="0.000001" value="0.3125">
+            <span id="x2v" class="w"></span></div>
+        <div class="row"><label for="L">levels kept L</label><input id="L" type="range" min="0" max="11" step="1" value="5">
+            <span id="Lv" class="b"></span>
+            <button id="vLevels" class="on">in levels</button><button id="vPlane">as the plane</button></div>
+        <div class="grid">
+            <div><canvas id="cv" height="460"></canvas>
+                <p class="cap">Tap to place x (a second tap below the middle places the second place). Rows are levels, the
+                reader's line at the bottom; <span class="g">gold</span> the cells holding x, <span class="w">violet</span>
+                the second place's; below L the cells are merged into what is kept. Shade: the totals, a cascade made
+                from each cell's address, never stored. <span class="r">Teal</span> on the line: the Cauchy read from the
+                kept cell's point.</p></div>
+            <div><div id="rd" class="read"></div></div>
+        </div>
+        <p class="note">"In levels" draws each level the same height, as the half-plane's own metric does (a level is ln 2
+        tall); "as the plane" draws γ itself, so the deep levels crowd onto the line.</p>
+    </div>
+    <div class="panel">
+        <h2>Two fades</h2>
+        <div class="row"><label for="g">the Cauchy's height γ, in cell widths</label><input id="g" type="range" min="0.01" max="1" step="0.001" value="0.5">
+            <span id="gv" class="r"></span>
+            <button id="gOwn">the cell's own, ½</button><button id="gBest">closest, 0.240</button><button id="gHalf">half power, 0.1245</button></div>
+        <canvas id="fv" height="240"></canvas>
+        <p class="cap">Against the frequency n (in cycles a cell): <span class="g">gold</span> what the floor keeps of a wave,
+        the cell's average |sinc(πn)|, with zeros and side lobes; <span class="r">teal</span> what a Cauchy read from
+        height γ keeps, e^(−2πnγ), smooth and never zero. No height makes them one: the closest leaves 0.22.</p>
+        <div id="fd" class="read"></div>
+    </div>
+    <div class="panel">
+        <h2>How much of each level a reader keeps</h2>
+        <div class="row"><label>the detail</label><button id="kStep" class="on">a step</button><button id="kSmooth">a smooth bump</button></div>
+        <canvas id="kv" height="240"></canvas>
+        <p class="cap">A reader at its own cell's point (level L above, so γ is half that cell's width) reading the detail of
+        every level, coarser to the left, finer to the right. <span class="r">Teal</span>: the share of that level's detail
+        it keeps. <span class="g">Gold outline</span>: what the floor at level L keeps, everything coarser whole and nothing
+        else. The reader's cut is soft and the same at every depth, since only its height over the detail's width counts;
+        its shape is the detail's. A step and a smooth bump of the same width fade differently.</p>
+        <div id="kd" class="read"></div>
+    </div>
+    <div class="panel">
+        <h2>Telling two apart</h2>
+        <div class="row"><label>the kernel</label><button id="kc" class="on">Cauchy</button><button id="kg">Gaussian</button>
+            <button id="ks">sech²</button><button id="kl">Laplace (a cusp)</button></div>
+        <div class="row"><label for="sep">separation, in the kernel's width</label><input id="sep" type="range" min="0" max="4" step="0.001" value="1">
+            <span id="sepv" class="b"></span></div>
+        <div class="row"><label for="amp">the second's brightness A</label><input id="amp" type="range" min="1" max="10" step="0.01" value="1">
+            <span id="ampv" class="b"></span></div>
+        <canvas id="tv" height="220"></canvas>
+        <p class="cap">Two sources read through one kernel: each faint, their sum bright, its peaks marked <span class="x">red</span>.
+        Whether they read as two depends on the kernel and on the sources: equal Cauchy profiles part at 2/√3 of their width,
+        Gaussians at 2, a cusped kernel at any separation. A fainter second source needs more room, and the Cauchy's long
+        tails bury it sooner than the Gaussian's.</p>
+        <div id="td" class="read"></div>
+    </div>
+    <div class="panel">
+        <h2>The window, open and closed</h2>
+        <canvas id="wv" height="200"></canvas>
+        <p class="cap">The address window, the middle half of the Cauchy read from height γ, against γ (both on log scales).
+        <span class="g">Gold</span>: on an open line, 2γ at every height. <span class="r">Teal</span>: on a closed line of length 1,
+        (2/π)·arctan(tanh πγ), the same while the reader is low, and never more than half the line however high it goes.
+        The dot is the reader at level L above. No payload enters either curve: the window is the line's.</p>
+        <div id="wd" class="read"></div>
+    </div>
+    <p class="note">Classical: Böröczky's binary tiling, the Poisson kernel, the box's sinc. Checked exactly in DYH. Back to
+    <a href="demos.html">the demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    const S = { x: 0.6875, x2: 0.3125, L: 5, g: 0.5, view: 'levels', kind: 'step', kern: 'cauchy', sep: 1, amp: 1 };
+    const SHOW = 11;  // levels drawn
+    const LN2 = Math.LN2;
+
+    function cell(j, k) { const w = Math.pow(2, -j); return { m: (k + 0.5) * w, gamma: w / 2, w }; }
+    function idx(x, j) { return Math.min(Math.pow(2, j) - 1, Math.floor(x * Math.pow(2, j))); }
+    function share(j, k, a, b) {  // C(m, γ) of cell (j, k) on [a, b]; the cell itself by default
+        const c = cell(j, k); if (a === undefined) { a = k * c.w; b = (k + 1) * c.w; }
+        return (Math.atan((b - c.m) / c.gamma) - Math.atan((a - c.m) / c.gamma)) / Math.PI;
+    }
+    function dist(z1, z2) {
+        const dm = z1.m - z2.m, dg = z1.gamma - z2.gamma;
+        return Math.acosh(1 + (dm * dm + dg * dg) / (2 * z1.gamma * z2.gamma));
+    }
+    function area(j) { const w = Math.pow(2, -j); return w * (1 / (w / 2) - 1 / w); }
+    function graph(k1, k2, j) {  // up, across, down: equals the tiling's breadth-first distance (DYH D4b)
+        let best = Infinity;
+        for (let s = 0; s <= j; s++) best = Math.min(best, 2 * s + Math.abs(Math.floor(k2 / 2 ** s) - Math.floor(k1 / 2 ** s)));
+        return best;
+    }
+    function tree(k1, k2) { let t = 0; while (k1 !== k2) { k1 = Math.floor(k1 / 2); k2 = Math.floor(k2 / 2); t++; } return 2 * t; }
+    function digits(x, L) { let s = ''; for (let j = 1; j <= L; j++) s += (idx(x, j) & 1); return s; }
+    function descent(x, L) { const out = []; for (let j = 0; j <= L; j++) out.push({ j, k: idx(x, j), ...cell(j, idx(x, j)) }); return out; }
+    function fade(n, g) { return Math.exp(-2 * Math.PI * n * g); }
+    function avg(n, w = 1) { const a = Math.PI * n * w; return a === 0 ? 1 : Math.abs(Math.sin(a) / a); }
+    function maxDiff(g) { let m = 0; for (let i = 0; i <= 20000; i++) { const n = i * 1e-3; m = Math.max(m, Math.abs(fade(n, g) - avg(n))); } return m; }
+    let bestMemo = null;
+    function bestGamma() {
+        if (bestMemo) return bestMemo;
+        let b = { diff: 9, g: 0 };
+        for (let i = 1; i <= 2000; i++) { const g = i * 1e-3, d = maxDiff(g); if (d < b.diff) b = { diff: d, g }; }
+        return (bestMemo = b);
+    }
+    // The totals: a binomial cascade made from the cells' addresses (as wedge-browse.html), never stored.
+    function hash(j, k) { let h = (j * 374761393 + k * 668265263) >>> 0; h = Math.imul(h ^ (h >>> 13), 1274126177) >>> 0; return ((h ^ (h >>> 16)) >>> 0) / 4294967296; }
+    function split(j, k) { return 0.5 + 0.2 * hash(j, k); }  // the left child's share, the larger side chosen by the hash
+    function mass(j, k) {
+        let m = 1;
+        for (let i = 0; i < j; i++) {
+            const parent = Math.floor(k / 2 ** (j - i)), bit = Math.floor(k / 2 ** (j - i - 1)) & 1;
+            const s = split(i, parent), left = hash(i + 7, parent) < 0.5 ? s : 1 - s;
+            m *= bit ? 1 - left : left;
+        }
+        return m;
+    }
+    function drawn(L) { let s = 0; for (let k = 0; k < 2 ** L; k++) s += mass(L, k); return s; }
+
+    // drawing
+    const cv = $('cv'), cx = cv.getContext('2d'), fv = $('fv'), fx = fv.getContext('2d');
+    function fit(c, h) { const r = window.devicePixelRatio || 1, w = c.clientWidth || 600; c.width = w * r; c.height = h * r; return { W: w, H: h, r }; }
+    let geo = null;
+    function rowY(j, H) {  // top and bottom of level j's tiles, the line at the bottom
+        const base = H - 40;
+        if (S.view === 'levels') { const rh = (base - 10) / (SHOW + 1); return [10 + j * rh, 10 + (j + 1) * rh]; }
+        const sc = base - 10, w = Math.pow(2, -j);  // γ from w/2 to w, scaled so level 0's top (γ = 1... drawn as w) sits at 10
+        return [base - w * sc, base - (w / 2) * sc];
+    }
+    function draw() {
+        const { W, H, r } = fit(cv, 460); geo = { W, H };
+        cx.setTransform(r, 0, 0, r, 0, 0); cx.clearRect(0, 0, W, H);
+        const X = x => 12 + x * (W - 24), base = H - 40;
+        const pathA = descent(S.x, SHOW), pathB = descent(S.x2, SHOW);
+        for (let j = 0; j <= SHOW; j++) {
+            const [y0, y1] = rowY(j, H), n = 2 ** j;
+            if (y1 - y0 < 0.4) continue;
+            for (let k = 0; k < n; k++) {
+                const x0 = X(k / n), x1 = X((k + 1) / n);
+                const kept = j <= S.L;
+                const dens = mass(j, k) * n;  // density relative to even
+                const t = Math.max(0, Math.min(1, 0.5 + 0.35 * Math.log2(dens)));
+                cx.fillStyle = kept ? `rgba(${60 + 90 * t | 0},${70 + 60 * t | 0},${110 + 40 * t | 0},${0.35 + 0.4 * t})` : 'rgba(40,40,52,0.25)';
+                cx.fillRect(x0, y0, Math.max(0.5, x1 - x0 - (n < 256 ? 1 : 0)), Math.max(0.5, y1 - y0 - 1));
+            }
+            for (const [p, col] of [[pathB[j], '#b59cf0'], [pathA[j], '#d4a052']]) {
+                cx.strokeStyle = col; cx.lineWidth = j <= S.L ? 2 : 1; cx.globalAlpha = j <= S.L ? 1 : 0.35;
+                cx.strokeRect(X(p.k / n) + 0.5, y0 + 0.5, Math.max(1, X((p.k + 1) / n) - X(p.k / n) - 1), Math.max(1, y1 - y0 - 1));
+                cx.globalAlpha = 1;
+            }
+            cx.fillStyle = '#8a8a96'; cx.font = '11px DM Mono, monospace';
+            if (S.view === 'levels' || y1 - y0 > 12) cx.fillText(j === 0 ? 'floor' : `${j}: ${(idx(S.x, j) & 1)}`, W - 64, (y0 + y1) / 2 + 4);
+        }
+        // the line, the cell kept, and the Cauchy read from its point
+        cx.strokeStyle = '#555'; cx.lineWidth = 1; cx.beginPath(); cx.moveTo(X(0), base + 0.5); cx.lineTo(X(1), base + 0.5); cx.stroke();
+        const c = cell(S.L, idx(S.x, S.L));
+        cx.fillStyle = 'rgba(212,160,82,0.25)'; cx.fillRect(X(c.m - c.gamma), base - 2, X(c.m + c.gamma) - X(c.m - c.gamma), 4);
+        cx.strokeStyle = '#8ce6cd'; cx.lineWidth = 1.5; cx.beginPath();
+        const peak = 1 / (Math.PI * c.gamma);
+        for (let i = 0; i <= 600; i++) { const u = i / 600, y = (c.gamma / Math.PI) / ((u - c.m) ** 2 + c.gamma ** 2) / peak;
+            const py = base + 34 - 30 * y; i ? cx.lineTo(X(u), py) : cx.moveTo(X(u), py); }
+        cx.stroke();
+        for (const [x, col] of [[S.x2, '#b59cf0'], [S.x, '#d4a052']]) { cx.fillStyle = col; cx.beginPath(); cx.arc(X(x), base, 4, 0, 7); cx.fill(); }
+        readout();
+    }
+    function readout() {
+        const L = S.L, k1 = idx(S.x, L), k2 = idx(S.x2, L), c = cell(L, k1), c2 = cell(L, k2), top = cell(0, 0);
+        const n = Math.abs(k2 - k1), d = dist(c, c2), g = graph(k1, k2, L), t = tree(k1, k2);
+        $('rd').innerHTML =
+`<span class="g">x = ${S.x.toFixed(6)}</span>
+⌊x·2^L⌋ keeps cell <span class="b">${k1}</span> of ${2 ** L}; the digits taken: 0.<span class="g">${digits(S.x, L) || '–'}</span>
+the cell's point z = ${c.m.toFixed(5)} + ${c.gamma.toExponential(2)} i
+<span class="r">from z, the Cauchy puts ${share(L, k1).toFixed(6)} in the cell</span>
+down from the floor: d = ${dist(top, c).toFixed(4)}  (vertically ${(L * LN2).toFixed(4)} = L·ln 2)
+every tile's area: ${area(L).toFixed(6)}
+
+<span class="w">second place, cell ${k2}</span>, ${n} apart at level ${L}
+  in the plane       d = ${d.toFixed(4)}
+  with neighbours    g = ${g} steps, g·ln 2 = ${(g * LN2).toFixed(4)}
+  by the tree alone  ${t} steps
+the cascade: kept cells add to ${drawn(L).toFixed(12)}; x's cell holds ${mass(L, k1).toExponential(3)}`;
+        $('xv').textContent = S.x.toFixed(4); $('x2v').textContent = S.x2.toFixed(4); $('Lv').textContent = `${L} (${2 ** L} cells)`;
+    }
+    function drawFade() {
+        const { W, H, r } = fit(fv, 240); fx.setTransform(r, 0, 0, r, 0, 0); fx.clearRect(0, 0, W, H);
+        const N = 4, X = n => 36 + n / N * (W - 48), Y = v => H - 24 - v * (H - 40);
+        fx.strokeStyle = '#333'; fx.beginPath(); fx.moveTo(X(0), Y(0)); fx.lineTo(X(N), Y(0)); fx.moveTo(X(0), Y(0)); fx.lineTo(X(0), Y(1)); fx.stroke();
+        fx.fillStyle = '#8a8a96'; fx.font = '11px DM Mono, monospace';
+        for (let n = 0; n <= N; n++) fx.fillText(n, X(n) - 3, H - 8);
+        fx.fillText('1', 20, Y(1) + 4); fx.fillText('0', 20, Y(0) + 4);
+        let worst = 0, at = 0;
+        for (let i = 0; i <= 20000; i++) { const n = i * 1e-3, dd = Math.abs(fade(n, S.g) - avg(n)); if (dd > worst) { worst = dd; at = n; } }
+        for (const [f, col] of [[avg, '#d4a052'], [n => fade(n, S.g), '#8ce6cd']]) {
+            fx.strokeStyle = col; fx.lineWidth = 1.6; fx.beginPath();
+            for (let i = 0; i <= 800; i++) { const n = i / 800 * N, y = Y(f(n)); i ? fx.lineTo(X(n), y) : fx.moveTo(X(n), y); }
+            fx.stroke();
+        }
+        if (at <= N) { fx.strokeStyle = '#d96e5b'; fx.beginPath(); fx.moveTo(X(at), Y(avg(at))); fx.lineTo(X(at), Y(fade(at, S.g))); fx.stroke(); }
+        const b = bestGamma();
+        $('fd').innerHTML = `γ = ${S.g.toFixed(3)} w: the largest difference <span class="x">${worst.toFixed(4)}</span> at n = ${at.toFixed(3)}
+the closest any γ comes: ${b.diff.toFixed(4)} at γ = ${b.g.toFixed(3)} w`;
+        $('gv').textContent = S.g.toFixed(3);
+    }
+    // Run 2: the share of a level's detail a reader keeps. A step (Haar's) in closed form: the double integral of the
+    // Poisson kernel P_s, s = 2γ, over the step's boxes, from G'' = P_s. A smooth bump (the Gaussian's derivative, width
+    // σ = w'/4) by its spectrum, |ψ^|² ∝ η² e^(−4π²η²), read through e^(−4π uσ η).
+    function Gs(t, s) { return t === 0 ? -(s / 2) * Math.log(s * s) / Math.PI : (t * Math.atan(t / s) - (s / 2) * Math.log(t * t + s * s)) / Math.PI; }
+    function boxP(a, b, c, d, s) { return Gs(b - c, s) - Gs(a - c, s) - Gs(b - d, s) + Gs(a - d, s); }
+    function RH(u) { const s = 2 * u, I = [[0, 0.5, 1], [0.5, 1, -1]]; let r = 0;
+        for (const [p, q, si] of I) for (const [c, d, sj] of I) r += si * sj * boxP(p, q, c, d, s); return r; }
+    const ETA = 2400, DE = 1.2 / ETA;
+    function simpson(f) { let t = f(0) + f(1.2); for (let i = 1; i < ETA; i++) t += (i % 2 ? 4 : 2) * f(i * DE); return t * DE / 3; }
+    const G0 = simpson(e => e * e * Math.exp(-4 * Math.PI ** 2 * e * e));
+    function RG(us) { return simpson(e => e * e * Math.exp(-4 * Math.PI ** 2 * e * e - 4 * Math.PI * us * e)) / G0; }
+    function keep(d, kind = S.kind) { const u = Math.pow(2, d - 1); return kind === 'smooth' ? RG(4 * u) : RH(u); }
+    function halfLevel(kind = S.kind) {  // the level (relative to the reader's own) where half is kept
+        let lo = -12, hi = 4; for (let i = 0; i < 60; i++) { const m = (lo + hi) / 2; keep(m, kind) > 0.5 ? lo = m : hi = m; } return (lo + hi) / 2;
+    }
+    // Run 3: telling two apart, and the window.
+    const KERN = {
+        cauchy: { f: x => 1 / (1 + x * x), hw: 1, name: 'Cauchy' },
+        gauss: { f: x => Math.exp(-x * x / 2), hw: Math.sqrt(2 * Math.LN2), name: 'Gaussian' },
+        sech: { f: x => 1 / Math.cosh(x) ** 2, hw: Math.acosh(Math.SQRT2), name: 'sech²' },
+        laplace: { f: x => Math.exp(-Math.abs(x)), hw: Math.LN2, name: 'Laplace' },
+    };
+    function profile(kern, sep, A, x) { const f = KERN[kern].f; return f(x + sep / 2) + A * f(x - sep / 2); }
+    function maxima(kern, sep, A, n = 20001) {
+        const span = sep / 2 + 8, out = []; let p0 = profile(kern, sep, A, -span), p1 = profile(kern, sep, A, -span + 2 * span / (n - 1));
+        for (let i = 2; i < n; i++) { const x = -span + 2 * span * i / (n - 1), p2 = profile(kern, sep, A, x);
+            if (p1 > p0 && p1 >= p2) out.push(x - 2 * span / (n - 1)); p0 = p1; p1 = p2; }
+        return out;
+    }
+    const TH = {};
+    function thresh(kern, A) {
+        const key = kern + ':' + A; if (key in TH) return TH[key];
+        if (kern === 'laplace') return (TH[key] = 0);  // a cusp: two maxima at every separation (1 + e^(−2a) > 2e^(−a))
+        let lo = 0, hi = 1; while (maxima(kern, hi, A).length < 2 && hi < 64) hi *= 2;
+        for (let i = 0; i < 40; i++) { const m = (lo + hi) / 2; maxima(kern, m, A).length >= 2 ? hi = m : lo = m; }
+        return (TH[key] = hi);
+    }
+    function windowOf(g, closed) { return closed ? (2 / Math.PI) * Math.atan(Math.tanh(Math.PI * g)) : 2 * g; }
+
+    const kv = $('kv'), kx = kv.getContext('2d'), tv = $('tv'), tx = tv.getContext('2d'), wv = $('wv'), wx = wv.getContext('2d');
+    function drawKeep() {
+        const { W, H, r } = fit(kv, 240); kx.setTransform(r, 0, 0, r, 0, 0); kx.clearRect(0, 0, W, H);
+        const D0 = -8, D1 = 3, n = D1 - D0 + 1, bw = (W - 48) / n, Y = v => H - 30 - v * (H - 50);
+        kx.strokeStyle = '#333'; kx.beginPath(); kx.moveTo(36, Y(0)); kx.lineTo(W - 8, Y(0)); kx.moveTo(36, Y(0)); kx.lineTo(36, Y(1)); kx.stroke();
+        kx.fillStyle = '#8a8a96'; kx.font = '11px DM Mono, monospace'; kx.fillText('1', 22, Y(1) + 4); kx.fillText('½', 22, Y(0.5) + 4); kx.fillText('0', 22, Y(0) + 4);
+        kx.strokeStyle = '#333'; kx.setLineDash([3, 4]); kx.beginPath(); kx.moveTo(36, Y(0.5)); kx.lineTo(W - 8, Y(0.5)); kx.stroke(); kx.setLineDash([]);
+        for (let i = 0; i < n; i++) {
+            const d = D0 + i, x0 = 40 + i * bw, v = keep(d), j = S.L + d;
+            kx.fillStyle = j < 0 ? 'rgba(140,230,205,0.25)' : '#8ce6cd'; kx.fillRect(x0 + 3, Y(v), bw - 6, Y(0) - Y(v));
+            const fl = d < 0 ? 1 : 0; kx.strokeStyle = '#d4a052'; kx.lineWidth = 1.5; kx.strokeRect(x0 + 1.5, Y(fl), bw - 3, Y(0) - Y(fl) || 1);
+            kx.fillStyle = d === 0 ? '#e6e4ee' : '#8a8a96'; kx.fillText(d === 0 ? 'own' : (d > 0 ? '+' + d : d), x0 + bw / 2 - 9, H - 12);
+        }
+        const hl = halfLevel(), other = halfLevel(S.kind === 'step' ? 'smooth' : 'step');
+        $('kd').innerHTML = `${S.kind === 'step' ? 'a step' : 'a smooth bump'}: <span class="r">half kept ${(-hl).toFixed(2)} levels coarser than the reader's own cell</span> (${S.kind === 'step' ? 'a smooth bump' : 'a step'}: ${(-other).toFixed(2)})
+own level ${keep(0).toFixed(4)}, one coarser ${keep(-1).toFixed(4)}, three coarser ${keep(-3).toFixed(4)}; the floor keeps 1 for every coarser level and 0 from its own
+the reader here is at level ${S.L}; the curve is the same at every level`;
+        $('kStep').classList.toggle('on', S.kind === 'step'); $('kSmooth').classList.toggle('on', S.kind === 'smooth');
+    }
+    function drawTwo() {
+        const { W, H, r } = fit(tv, 220); tx.setTransform(r, 0, 0, r, 0, 0); tx.clearRect(0, 0, W, H);
+        const span = 6, X = x => W / 2 + x / span * (W / 2 - 12), top = 1 + S.amp, Y = v => H - 20 - v / top * (H - 34);
+        const f = KERN[S.kern].f;
+        for (const [g, a] of [[x => f(x + S.sep / 2), 1], [x => S.amp * f(x - S.sep / 2), 1]]) {
+            tx.strokeStyle = 'rgba(200,200,208,0.35)'; tx.lineWidth = 1; tx.beginPath();
+            for (let i = 0; i <= 600; i++) { const x = -span + 2 * span * i / 600, y = Y(g(x)); i ? tx.lineTo(X(x), y) : tx.moveTo(X(x), y); } tx.stroke();
+        }
+        tx.strokeStyle = '#e6e4ee'; tx.lineWidth = 1.8; tx.beginPath();
+        for (let i = 0; i <= 900; i++) { const x = -span + 2 * span * i / 900, y = Y(profile(S.kern, S.sep, S.amp, x)); i ? tx.lineTo(X(x), y) : tx.moveTo(X(x), y); } tx.stroke();
+        const mx = maxima(S.kern, S.sep, S.amp, 4001);
+        tx.fillStyle = '#d96e5b'; for (const m of mx) { tx.beginPath(); tx.arc(X(m), Y(profile(S.kern, S.sep, S.amp, m)), 4, 0, 7); tx.fill(); }
+        const t = thresh(S.kern, Math.round(S.amp * 100) / 100), K = KERN[S.kern];
+        $('td').innerHTML = `${K.name}, A = ${S.amp.toFixed(2)}, ${S.sep.toFixed(3)} apart: <span class="${mx.length >= 2 ? 'r' : 'x'}">${mx.length >= 2 ? 'two' : 'one'}</span>
+reads as two past ${t.toFixed(4)} of its width (${(t / K.hw).toFixed(4)} half-widths at half maximum)
+equal sources, in half-widths: Cauchy ${(thresh('cauchy', 1) / KERN.cauchy.hw).toFixed(3)}, Gaussian ${(thresh('gauss', 1) / KERN.gauss.hw).toFixed(3)}, sech² ${(thresh('sech', 1) / KERN.sech.hw).toFixed(3)}, Laplace 0`;
+        for (const [id, k] of [['kc', 'cauchy'], ['kg', 'gauss'], ['ks', 'sech'], ['kl', 'laplace']]) $(id).classList.toggle('on', S.kern === k);
+        $('sepv').textContent = S.sep.toFixed(3); $('ampv').textContent = S.amp.toFixed(2);
+    }
+    function drawWindow() {
+        const { W, H, r } = fit(wv, 200); wx.setTransform(r, 0, 0, r, 0, 0); wx.clearRect(0, 0, W, H);
+        const g0 = -4, g1 = 1, y0 = -4, y1 = 1, X = lg => 40 + (lg - g0) / (g1 - g0) * (W - 52), Y = ly => H - 24 - (ly - y0) / (y1 - y0) * (H - 36);
+        wx.strokeStyle = '#333'; wx.beginPath(); wx.moveTo(X(g0), Y(y0)); wx.lineTo(X(g1), Y(y0)); wx.moveTo(X(g0), Y(y0)); wx.lineTo(X(g0), Y(y1)); wx.stroke();
+        wx.fillStyle = '#8a8a96'; wx.font = '11px DM Mono, monospace';
+        for (let e = g0; e <= g1; e++) wx.fillText('1e' + e, X(e) - 10, H - 8);
+        for (let e = y0; e <= y1; e++) wx.fillText('1e' + e, 2, Y(e) + 4);
+        wx.setLineDash([3, 4]); wx.strokeStyle = '#444'; wx.beginPath(); wx.moveTo(X(g0), Y(Math.log10(0.5))); wx.lineTo(X(g1), Y(Math.log10(0.5))); wx.stroke(); wx.setLineDash([]);
+        for (const [closed, col] of [[false, '#d4a052'], [true, '#8ce6cd']]) {
+            wx.strokeStyle = col; wx.lineWidth = 1.8; wx.beginPath();
+            for (let i = 0; i <= 400; i++) { const lg = g0 + (g1 - g0) * i / 400, ly = Math.log10(windowOf(10 ** lg, closed)); const y = Y(Math.min(y1, ly)); i ? wx.lineTo(X(lg), y) : wx.moveTo(X(lg), y); }
+            wx.stroke();
+        }
+        const g = Math.pow(2, -(S.L + 1));
+        wx.fillStyle = '#e6e4ee'; wx.beginPath(); wx.arc(X(Math.log10(g)), Y(Math.log10(windowOf(g, true))), 4, 0, 7); wx.fill();
+        $('wd').innerHTML = `the reader at level ${S.L}: γ = ${g.toExponential(3)}
+open line <span class="g">${windowOf(g, false).toExponential(4)}</span>, closed line <span class="r">${windowOf(g, true).toExponential(4)}</span>
+at γ = 0.25: open 0.5, closed ${windowOf(0.25, true).toFixed(5)}; as γ grows the closed window tends to ½`;
+    }
+    function set(o = {}) {
+        Object.assign(S, o);
+        S.x = Math.max(0, Math.min(0.999999, +S.x)); S.x2 = Math.max(0, Math.min(0.999999, +S.x2));
+        S.L = Math.max(0, Math.min(SHOW, Math.round(+S.L))); S.g = Math.max(0.001, Math.min(2, +S.g));
+        S.sep = Math.max(0, Math.min(4, +S.sep)); S.amp = Math.max(1, Math.min(10, +S.amp));
+        if (!(S.kern in KERN)) S.kern = 'cauchy'; if (S.kind !== 'smooth') S.kind = 'step';
+        $('sep').value = S.sep; $('amp').value = S.amp;
+        $('x').value = S.x; $('x2').value = S.x2; $('L').value = S.L; $('g').value = Math.min(1, S.g);
+        $('vLevels').classList.toggle('on', S.view === 'levels'); $('vPlane').classList.toggle('on', S.view === 'plane');
+        draw(); drawFade(); drawKeep(); drawTwo(); drawWindow();
+        return state();
+    }
+    function state() {
+        const k = idx(S.x, S.L);
+        return { ...S, k, digits: digits(S.x, S.L), z: cell(S.L, k), share: share(S.L, k), drawn: drawn(S.L) };
+    }
+    $('x').oninput = e => set({ x: +e.target.value }); $('x2').oninput = e => set({ x2: +e.target.value });
+    $('L').oninput = e => set({ L: +e.target.value }); $('g').oninput = e => set({ g: +e.target.value });
+    $('vLevels').onclick = () => set({ view: 'levels' }); $('vPlane').onclick = () => set({ view: 'plane' });
+    $('gOwn').onclick = () => set({ g: 0.5 }); $('gBest').onclick = () => set({ g: bestGamma().g }); $('gHalf').onclick = () => set({ g: 0.1245 });
+    cv.addEventListener('pointerdown', e => {
+        const rc = cv.getBoundingClientRect(), u = (e.clientX - rc.left - 12) / (rc.width - 24), v = (e.clientY - rc.top) / rc.height;
+        const x = Math.max(0, Math.min(0.999999, u));
+        set(v > 0.5 ? { x2: x } : { x });
+    });
+    $('kStep').onclick = () => set({ kind: 'step' }); $('kSmooth').onclick = () => set({ kind: 'smooth' });
+    for (const [id, k] of [['kc', 'cauchy'], ['kg', 'gauss'], ['ks', 'sech'], ['kl', 'laplace']]) $(id).onclick = () => set({ kern: k });
+    $('sep').oninput = e => set({ sep: +e.target.value }); $('amp').oninput = e => set({ amp: +e.target.value });
+    addEventListener('resize', () => set({}));
+    const q = new URLSearchParams(location.search), o = {};
+    for (const key of ['x', 'x2', 'L', 'g', 'sep', 'amp']) if (q.has(key)) o[key] = +q.get(key);
+    for (const key of ['kind', 'kern']) if (q.has(key)) o[key] = q.get(key);
+    if (q.get('view') === 'plane') o.view = 'plane';
+    window.__depth = { cell, share, dist, area, graph, tree, digits, descent, fade, avg, maxDiff, bestGamma, mass, drawn, RH, RG, keep, halfLevel, maxima, thresh, windowOf, set, state };
+    set(o);
+})();
+</script>
+</body>
+</html>
