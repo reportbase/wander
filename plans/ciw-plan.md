@@ -124,3 +124,58 @@ classical arc formula for harmonic measure.
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (19 Oct, `python3 runs/ciw/ciw.py`; output `runs/ciw/ciw-run1.txt`, 55 s)
+
+K6 is killed in its letter, by K1's arc clause.
+
+- **K1 killed, by my quadrature.**
+  - The pointwise identity holds: 2π·P_z(φ) = ±(2·dθ/dφ − 1) to 1.0·10⁻⁴⁸ at 10⁴ (z, φ), inside and outside. The closed
+    form of dθ/dφ matches numerical differentiation to 10⁻⁴⁸.
+  - The arcs failed: ω_z = θ_z/π − α/(2π) only to 5.1·10⁻⁵. The plain `mp.quad` over [φ₁, φ₂] missed the kernel's peak
+    at arg z when |z| is near 0.99.
+  - Post hoc, on the same 10³ arcs (the RNG replayed): with the peak as a breakpoint the error is 1.5·10⁻⁴⁸; with the
+    Poisson kernel's closed-form antiderivative, 5·10⁻⁵⁰.
+- **K2 not killed.** At |z| = 0.1, 0.5, 0.9, twice the landings' centroid is z within 2.2 standard errors in each
+  component. The kernel-weighted centroid is z itself within 2.2.
+- **K3 not killed.**
+  - −(1/π)∮ e^{iφ} dθ equals 1/z̄ to 7·10⁻⁵² at |z| = 1.5, 2, 4, 100.
+  - The near crossings' share (real to 10⁻⁵¹) is 0.6667, 0.6153, 0.5541 and 0.5021: within 0.5% of ½ at 100, and well off
+    it at 1.5.
+  - Post hoc: (share − ½)·|z| is 0.2501, 0.2307, 0.2163, 0.2122, approaching 2/(3π) = 0.2122.
+- **K4 not killed.**
+  - Scaling the world by 10⁻³, 7 and 10³ moves no landing's central angle by more than 4.4·10⁻¹⁶ rad.
+  - Over 200 repeats of N = 10⁴, ẑ averages z within 0.9 standard errors; each ẑ is good to about 0.014.
+- **K5 not killed.** For the ellipse the combined density integrates to 1 but dips below zero (to −0.0014). The best
+  wrapped Cauchy leaves a relative L1 residual of 0.40.
+
+### Run 2 predictions (19 Oct, written before the run; `runs/ciw/ciw2.py`)
+
+**K1′.** The same 10³ arcs on a fresh seed. ω_z, computed by `mp.quad` with the kernel's peak at arg z (and its copies
+2π apart) as breakpoints, equals θ_z/π − α/(2π) to 10⁻³⁰. *Killed* if not.
+
+**K6′.** The verdict of K6. *Killed* if K1 (pointwise, run 1), K1′, K2 or K4 is killed.
+
+### Run 2 (19 Oct, `python3 runs/ciw/ciw2.py`; output `runs/ciw/ciw-run2.txt`)
+
+The predictions above were written to the plan before the script ran, but committed with the run, not before it.
+
+- **K1′ not killed.** On 10³ fresh arcs, ω_z = θ_z/π − α/(2π) to 6·10⁻⁵⁰.
+- **K6′, the verdict, not killed.**
+  - **The head's turn alone** lays the uniform turn's law on an object, the same for every object. On a flat one this is
+    the lighthouse's Cauchy, whose centre and width are the reader's foot and distance.
+  - **Combined with the central sweep, on a round object,** the two give the object's own Cauchy exactly: the wrapped
+    Cauchy (the Poisson kernel, the harmonic measure).
+    - It is 2 × the inscribed rate − 1 × the central rate. These are the two rates of OFS §4, 2 at the circle and 1 at
+      the centre.
+    - Its parameters are the reader's standpoint in the object's own radius, z = (D/R)·e^{iψ}, with no unit carried in.
+      The central sweep supplies the object's angle, not an amount.
+    - The circle closes the horizon, so this Cauchy has a mean: z from inside, 1/z̄ from outside.
+  - **From inside,** the landings of a uniform head turn have centroid z/2, halfway from the object's centre to the
+    reader.
+  - **From outside,** the identity needs both crossings of each ray. The inscribed reader sees only the near ones, about
+    half of it (two thirds at 1.5 R, ½ far off). The back is the central sweep's.
+  - **Only the circle.** For an ellipse the combination is not a wrapped Cauchy (40% residual) and is not a probability.
+
+The mathematics is classical: the Poisson kernel, the arc formula for harmonic measure, the inscribed angle. The reading
+is ours.

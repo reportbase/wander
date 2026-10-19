@@ -1482,6 +1482,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   pull, fixes the lateral place near the baseline (k < 2γ/(0.6745 s)), stands in for a missing bearing (same law, rescues
   97–99% of misses), detects a misread but cannot locate it (equal w-tests); U5b′ killed (the check's threshold is the
   Cauchy tail, so only gross misreads, far off blind to α against π − α); angular size gives the breadth in b.
+  `ciw-plan.md` (+ `runs/ciw/ciw.py`, `ciw2.py`, 19 Oct; SPN R384; Tom: "doesn't rotating the head sweeping sweeping the
+  object create the cauchy of it.", "yes, but combine that with the central sweep."): exact and seeded. The head's turn
+  alone lays the uniform turn's law on an object (on a flat one the lighthouse's Cauchy, m + i·d the standpoint). On a
+  circle the object's own Cauchy, the wrapped Cauchy (Poisson kernel, harmonic measure), is ±(2·dθ/dφ − 1)/2π: twice the
+  inscribed rate less the central, at the point both address (to 10⁻⁴⁸); its parameters the standpoint in the object's
+  radius, unitless; its mean z inside, 1/z̄ outside; the head turn's landings' centroid z/2 from inside; from outside half
+  of it behind the object, the central sweep's. Run 1's arc clause killed by my quadrature (the peak missed), run 2 not.
+  Only the circle (an ellipse's combination is no wrapped Cauchy).
   `opn-plan.md` (+ `runs/ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

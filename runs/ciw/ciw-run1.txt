@@ -1,0 +1,13 @@
+K1 2pi P = +/-(2 dtheta/dphi - 1) to 1.03e-48 (closed form of dtheta to 9.62e-49); arcs omega = theta_z/pi - alpha/2pi to 5.11e-5 False
+   |z|=0.1: 2 x centroid 0.07699+0.06253i (z 0.07648+0.06442i, z-scores +0.36 -1.34); weighted by the kernel 0.07682+0.06349i (+0.48 -1.32)
+   |z|=0.5: 2 x centroid 0.38448+0.32390i (z 0.38242+0.32211i, z-scores +1.50 +1.31); weighted by the kernel 0.38322+0.32306i (+1.17 +1.46)
+   |z|=0.9: 2 x centroid 0.68549+0.57900i (z 0.68836+0.57980i, z-scores -2.22 -0.65); weighted by the kernel 0.68690+0.57897i (-2.22 -1.45)
+K2 True
+   |z|=1.5: -(1/pi) closed integral (0.509894791523 + 0.429478458158j), 1/conj(z) (0.509894791523 + 0.429478458158j); the near crossings' share (0.66674766 - 9.6426706e-53j)
+   |z|=2.0: -(1/pi) closed integral (0.382421093642 + 0.322108843619j), 1/conj(z) (0.382421093642 + 0.322108843619j); the near crossings' share (0.61533777 - 3.8970427e-52j)
+   |z|=4.0: -(1/pi) closed integral (0.191210546821 + 0.161054421809j), 1/conj(z) (0.191210546821 + 0.161054421809j); the near crossings' share (0.55408108 - 5.7156299e-52j)
+   |z|=100.0: -(1/pi) closed integral (0.00764842187284 + 0.00644217687238j), 1/conj(z) (0.00764842187284 + 0.00644217687238j); the near crossings' share (0.50212213 + 3.1841232e-52j)
+K3 closed integral = 1/conj(z) to 6.68e-52; near share at 100 (0.50212213 + 3.1841232e-52j), at 1.5 (0.66674766 - 9.6426706e-53j) True
+K4 scaling moves no landing by more than 4.4e-16 rad; mean of z-hat 0.38303+0.32130i over 200 (z-scores +0.63 -0.89), each to 0.0137 True
+K5 ellipse: combined density integrates to 1.000000, its least -0.0014; best wrapped Cauchy rho 0.5038 mu -0.0000, relative L1 residual 0.4012 True
+K6 False {'K1': False, 'K2': np.True_, 'K3': True, 'K4': np.True_, 'K5': np.True_, 'K6': False}
