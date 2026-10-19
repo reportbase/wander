@@ -408,3 +408,59 @@ has two maxima.
   (a cusp has none). It moves with the payloads' amplitudes and widths (C).
 
 *Killed* if A, B or C is killed.
+
+### Run 3 (18 Oct, `python3 dyh/dyh3.py`; output `dyh/dyh-run3.txt`, 77 s)
+
+Nothing was killed.
+
+**A. The address window.**
+- **A1 not killed.** On the closed line the middle half is (2/π)·arctan(tanh(πγ)), agreeing with the wrapped density's
+  own series to 6·10⁻³⁵. It is 0.019987, 0.18801, 0.36952 and 0.49881 at γ = 0.01, 0.1, 0.25 and 1, against the open
+  line's 0.02, 0.2, 0.5 and 2.
+- **A2 not killed.** Near the open line the deficit over γ² is 2π²/3 to 10⁻¹¹. At γ = 10 the window is ½ to 3·10⁻²⁸:
+  half the circle, the turn's middle half.
+
+**B. Variation.**
+- **B1 not killed.** A step softened at s = 10⁻⁶ reads as a step for u from 10⁻³ to 0.1 (to 3·10⁻⁶). Below its own
+  softening it reads as smooth: at u = 10⁻¹², (1 − R_s)/u = 4π·E|η| to 7·10⁻⁸, with E|η| = 4.006.
+
+  The crossover, (1 − R_s)/u against the step's (12/π)·ln(1/u):
+
+  | u | 10⁻⁹ | 10⁻⁷ | 10⁻⁶ | 10⁻⁵ | 10⁻⁴ |
+  |---|---|---|---|---|---|
+  | softened step | 50.3 | 50.0 | 47.8 | 41.3 | 32.8 |
+  | step law | 79.2 | 61.6 | 52.8 | 44.0 | 35.2 |
+
+  It is flat (linear) below u ≈ s, and follows the step's logarithm above.
+- **B2 not killed.** The cross term between level 0 and level 3 inside it is 0 at γ = 0, −1.9·10⁻⁵ at 10⁻⁶ and −0.0105
+  at 0.1. Read from a height, levels are not independent: a mixture's share is not the sum of its levels' shares.
+
+**C. Telling apart.**
+- **C1 not killed.**
+  - The equal thresholds are: Cauchy 2/√3 = 1.1547 (to 10⁻⁶¹); Gaussian 2; sech² 2·artanh(1/√3) = 1.3170.
+  - Laplace's cusp has two maxima at every separation (1 + e^{−2a} > 2e^{−a} for every a > 0): no threshold.
+- **C2 not killed.** In half-widths at half maximum: Cauchy 1.155, Gaussian 1.699.
+- **C3 not killed.** With unequal amplitudes the thresholds are finite and increase with A:
+
+  | A | 1 | 2 | 4 | 10 |
+  |---|---|---|---|---|
+  | Cauchy, in γ | 1.155 | 1.861 | 2.467 | 3.406 |
+  | Gaussian, in σ | 2.000 | 2.628 | 2.981 | 3.354 |
+
+  Post hoc, in half-widths: the Gaussian's run 1.70, 2.23, 2.53, 2.85 against the Cauchy's 1.15, 1.86, 2.47, 3.41. So the
+  Cauchy separates equal sources sooner but a faint source beside a bright one later; the order flips between A = 4 and
+  10. Its tails bury the fainter peak.
+- **C4 not killed.** With Cauchy heights 1 and 2 the threshold is 2.200; with 1 and 4, 3.327.
+
+**D, the verdict: not killed.** The classification ChatGPT asked for, on these cases:
+
+| result | set by | evidence |
+|---|---|---|
+| the address window | the geometry: the line, open (2γ) or closed ((2/π)·arctan(tanh πγ)); never a payload | A |
+| what is kept of variation | the payload: its finest scale against u sets the near law; levels interact | B, run 2 |
+| telling sources apart | the kernel (its value; even whether a threshold exists, which a cusp removes) and the payloads (amplitudes, widths), with the kernels' order changing as amplitudes part | C |
+
+The reader's height is the shared variable in all three. Only the first is the reader's alone.
+
+The mathematics is classical (the wrapped Cauchy; Poisson smoothing; mixture modality, e.g. the Gaussian's 2σ). The
+sorting is ours.

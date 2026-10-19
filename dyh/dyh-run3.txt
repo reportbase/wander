@@ -1,0 +1,15 @@
+A1 closed line: middle half (2/pi) atan(tanh(pi g)) against the wrapped series, worst 6.27e-35; W at 0.01, 0.1, 0.25, 1: ['0.019986854', '0.18800678', '0.36951811', '0.49881115'] True
+A2 near the open line: deficit/g^2 over 2pi^2/3 = 0.99999999999; at g = 10, |W - 1/2| = 3.28e-28 True
+   (the frequency route with s = 1e-20 against the closed form at u = 0.1: 4.17e-32)
+B1 softened step, s = 1e-6: |R_s - R_H| at u = 1e-3..0.1 at most 3.3e-6; at u = 1e-12, (1 - R_s)/u over 4 pi E|eta| = 0.99999993 (E|eta| = 4.00623) True
+   u = 1.0e-9: (1 - R_s)/u = 50.3404, step law (12/pi) ln(1/u) = 79.157
+   u = 1.0e-7: (1 - R_s)/u = 50.0174, step law (12/pi) ln(1/u) = 61.5666
+   u = 1.0e-6: (1 - R_s)/u = 47.8436, step law (12/pi) ln(1/u) = 52.7714
+   u = 1.0e-5: (1 - R_s)/u = 41.2892, step law (12/pi) ln(1/u) = 43.9761
+   u = 0.0001: (1 - R_s)/u = 32.7892, step law (12/pi) ln(1/u) = 35.1809
+B2 cross term level 0 with level 3: at 0 0.0, at 1e-6 -1.912e-5, at 0.1 -0.0105157 True
+C1 equal thresholds: Cauchy 1.154700538 (2/sqrt3 to 1.56e-61), Gaussian 2.0, sech^2 1.316957897 (2 atanh(1/sqrt3) = 1.316957897), Laplace 0 (peaks at every separation: True) True
+C2 in half-widths at half maximum: Cauchy 1.1547, Gaussian 1.69864 True
+C3 unequal amplitudes A = 1, 2, 4, 10: {'Cauchy': [1.1547, 1.86121, 2.46741, 3.4062], 'Gaussian': [2.0, 2.62751, 2.98068, 3.354]} True
+C4 Cauchy heights 1 and r = 2, 4: [2.1996, 3.32728] True
+D True {'A1': True, 'A2': True, 'B1': True, 'B2': True, 'C1': True, 'C2': True, 'C3': True, 'C4': True, 'D': True}

@@ -1447,6 +1447,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   soft cut over the levels, the same at every depth, 5.5 levels from 90% to 10%, Haar's step half kept 3.09 levels
   coarser than the reader's own cell; its shape the detail's (a step loses (12/π)·u·ln(1/u), a smooth one (4/√π)·u; far
   off u⁻³ or u⁻⁵ by vanishing moments). Nothing killed.
+  ChatGPT's next comments (R377, R378): three losses with height (address precision, variation, telling apart), one
+  variable and three laws; sort each result by geometry, payload or kernel. Run 3 (`dyh/dyh3.py`, R379; Tom: "yes"),
+  nothing killed: the address window is the line's (2γ open, (2/π)·arctan(tanh πγ) closed), never a payload's; variation
+  the payload's (a softened step a step above u ≈ s, smooth below; levels interact from a height); telling apart the
+  kernel's and the payloads' (equal thresholds Cauchy 2/√3, Gaussian 2, sech² 2·artanh(1/√3), a cusp none; unequal
+  amplitudes raise all, the Cauchy slower than the Gaussian with a faint source beside a bright).
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
