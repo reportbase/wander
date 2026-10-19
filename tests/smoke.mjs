@@ -1158,6 +1158,26 @@ try {
     failures.push(`[${current}] ${JSON.stringify(fh)}`);
   console.log(`${failures.length === before40 ? 'ok  ' : 'FAIL'} ${current} (ranged points on the outline to ${fh.on.toExponential(1)}, the face at correlation ${fh.rc.toFixed(4)}; the hull contains the moon (${fh.inside.toFixed(4)}), rms ${fh.ht.toFixed(3)} where grazed, ${fh.hf.toFixed(3)} elsewhere; ×10³ moves no detection or hull, the ranges ×k; fitted, distance ${(100 * fh.dist).toFixed(2)}%, speed ${(100 * fh.speed).toFixed(2)}%)`);
 
+  // ── 41. depth.html: what the floor throws away (DYH; SPN R374): the cells as points of the half-plane, half of the Cauchy
+  //    in its own cell, every tile of area 1, parent to child arcosh 3/2 and siblings arcosh 3 at every level; neighbours
+  //    across the middle 2j apart by the tree, one step with sideways neighbours; the kept cells adding to the whole; the
+  //    floor's fade and the Cauchy's never closer than 0.22 ──
+  current = 'depth.html';
+  const before41 = failures.length;
+  await page.goto(new URL('depth.html?L=6', base).href, { waitUntil: 'load' });
+  const dp = await page.evaluate(() => { const D = __depth, o = {};
+    o.share = Math.max(...[[0, 0], [5, 7], [20, 12345], [40, 2 ** 39]].map(([j, k]) => Math.abs(D.share(j, k) - 0.5)));
+    o.area = Math.max(...[0, 3, 20, 40].map(j => Math.abs(D.area(j) - 1)));
+    o.pc = Math.max(...[1, 6, 30].map(j => Math.abs(D.dist(D.cell(j, 1), D.cell(j - 1, 0)) - Math.acosh(1.5))));
+    o.sib = Math.max(...[1, 6, 30].map(j => Math.abs(D.dist(D.cell(j, 0), D.cell(j, 1)) - Math.acosh(3))));
+    o.tree = D.tree(511, 512); o.graph = D.graph(511, 512, 10); o.mid = Math.abs(D.dist(D.cell(10, 511), D.cell(10, 512)) - Math.acosh(3));
+    o.digits = D.digits(0.8125, 4); o.drawn = Math.max(...[0, 4, 11].map(L => Math.abs(D.drawn(L) - 1)));
+    o.best = D.bestGamma(); const s = D.set({ x: 0.8125, L: 4 }); o.k = s.k; o.sh = s.share; return o; });
+  if (dp.share > 1e-12 || dp.area > 1e-12 || dp.pc > 1e-9 || dp.sib > 1e-9 || dp.tree !== 20 || dp.graph !== 1 || dp.mid > 1e-9 || dp.digits !== '1101' ||
+    dp.drawn > 1e-12 || Math.abs(dp.best.diff - 0.2227) > 1e-3 || dp.k !== 13 || Math.abs(dp.sh - 0.5) > 1e-12)
+    failures.push(`[${current}] ${JSON.stringify(dp)}`);
+  console.log(`${failures.length === before41 ? 'ok  ' : 'FAIL'} ${current} (the Cauchy from a cell's point puts half in the cell, every tile's area 1, parent to child arcosh 3/2 and siblings arcosh 3 at every level; across the middle of level 10 the tree takes 20 steps, the tiling 1; 0.8125 is 0.1101, cell 13 of 16; the kept cells add to the whole; the fades never closer than ${dp.best.diff.toFixed(4)})`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
