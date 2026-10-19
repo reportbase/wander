@@ -183,3 +183,65 @@ Its advice was "exact check first, then the demo". That is the order taken: the 
 - That gives a single curve over the levels, the same at every depth: a soft cut in levels, not a floor.
 - The curve's shape is the open part, along with how a smooth detail (in place of Haar's step) moves it.
 - Predictions would be written before it runs.
+
+### Run 2: how much of each level's detail a reader keeps (predictions, 18 Oct, before the run; Tom: "yes")
+
+**The set-up.**
+- **The detail.** A level's detail is its wavelet ψ_{j′,k}(x) = 2^{j′/2}·ψ(2^{j′}x − k), normalised to ‖ψ‖ = 1.
+- **The reader.** It stands at height γ and keeps P_γ ∗ ψ, the Poisson (Cauchy) smoothing.
+- **The share kept.** R = ‖P_γ ∗ ψ‖² = ⟨ψ, P_{2γ} ∗ ψ⟩, by the semigroup P_γ ∗ P_γ = P_{2γ}.
+- **The three details:**
+  - Haar's step ψ_H (+1 on [0, ½), −1 on [½, 1));
+  - a smooth step, the Gaussian's derivative ψ_G ∝ x·e^{−x²/2};
+  - the Mexican hat ψ_M ∝ (1 − x²)·e^{−x²/2}.
+- **The variable.** u = γ·2^{j′}, the reader's height in the detail's own widths. A reader at its own cell's point at
+  level J (γ = 2^{−(J+1)}) reading level j′ has u = 2^{j′ − J − 1}.
+- **The floor, for comparison.** Cell averages at level J keep every Haar detail coarser than J whole (j′ < J, u ≤ ¼)
+  and none finer (u ≥ ½): a step.
+
+**Known beforehand, or derived here before running:**
+- |ψ̂_H(η)|² = sin⁴(πη/2)/(πη/2)², with η in cycles.
+- The Poisson kernel's transform is e^{−2πγ|η|}.
+- So R(u) = ∫|ψ̂(η)|²·e^{−4πu|η|} dη.
+- In space, the double integral of P_s over a box comes from G(t) = (1/π)(t·arctan(t/s) − (s/2)·ln(t² + s²)), with
+  G″ = P_s. So R_H has a closed form.
+- **Small u.**
+  - A step's jumps make 1 − R go as u·ln(1/u). Its jumps, in the unit of ψ_H, are 1, 2 and 1, so Σ jump² = 6; at
+    s = 2γ the leading term is (6·2/π)·u·ln(1/u) = (12/π)·u·ln(1/u).
+  - For a smooth detail the loss is linear: (1 − R)/u → 4π·E|η|. For ψ_G that is 4/√π.
+- **Large u.** R is set by the vanishing moments:
+  - ψ_H and ψ_G have one, so |ψ̂|² ∝ η² near 0 and R ∝ u⁻³. The constants are R_H·u³ → 1/(64π) and R_G·u³ → 1/√π.
+  - ψ_M has two, so R ∝ u⁻⁵.
+
+**Predictions.** All at 50 digits with mpmath, ψ_G and ψ_M at σ = 1.
+
+- **Q1 (one variable).** R_H computed directly in space at level j′ ∈ {0, 3, 10, 30} and index k ∈ {0, 5}, with
+  γ = u·2^{−j′}, is the same at each u ∈ {0.01, 0.1, 1, 10}, to 10⁻³⁰. So the share kept depends only on the reader's
+  height in the detail's widths: a cut in levels, the same at every depth.
+  - *Killed* otherwise.
+- **Q2 (space and frequency agree).** The closed form and the frequency integral agree to 10⁻²⁵ at those four u.
+  - *Killed* otherwise. A kill here would be my set-up.
+- **Q3 (a soft cut, coarser than the floor).**
+  - R_H falls monotonically from 1 to 0 on a grid of u from 10⁻⁸ to 10⁸.
+  - Its half point u* lies in [2⁻⁶, 2⁻²]. So a reader at its own cell's point keeps half of the step detail only 2 to 6
+    levels coarser than its own cell, and less than half of its own level's (R_H(½) < ½).
+  - From R_H = 0.9 to R_H = 0.1 takes between 2 and 10 levels (log₂ of the ratio of the u's).
+  - *Killed* if any clause fails.
+- **Q4 (the step's tails).**
+  - (1 − R_H)/(u·ln(1/u)) is within 5% of 12/π at u = 10⁻³⁰.
+  - R_H·u³ is within 1% of 1/(64π) at u = 10³.
+  - *Killed* otherwise.
+- **Q5 (smooth details).**
+  - (1 − R_G)/u is within 10⁻⁶ (relative) of 4/√π at u = 10⁻³⁰.
+  - R_G·u³ is within 1% of 1/√π at u = 10³.
+  - The log slope of R_M at u = 10³ is within 0.05 of −5.
+  - *Killed* otherwise.
+- **Q6 (the verdict).** The rule's variable is universal: the reader's height over the detail's width, so a soft cut
+  that is the same at every depth (Q1). The curve's shape is not universal:
+  - near the reader, a step loses u·ln(1/u) and a smooth detail u (Q4, Q5);
+  - far off, the detail's vanishing moments set the tail (u⁻³ or u⁻⁵).
+
+  So how much of a level's detail stays readable is fixed by the address (its level) only together with the kind of
+  detail, which is the payload's.
+  - *Killed* if Q1 fails, or if R_H and R_G coincide under some rescaling of u. Their near tails differ in form, so that
+    would mean my tails are wrong.
