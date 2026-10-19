@@ -961,6 +961,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy from the point half in the cell, so the height fixes a 2γ window no payload enters (closed line
   (2/π)·arctan(tanh πγ)); variation kept the payload's, telling apart the kernel's and the payloads'; Theorem 6's
   division at the level of detail; keeping digits not reading from a height (never within 0.22).
+  **The two sweeps joined by their rates, in the worked example** (19 Oct, SPN R385; Tom: "what about the worked example
+  in the paper.   the central sweep and inscribed sweeps working together.", then "yes"; after CIW): OFS §10 step 3: the
+  range's ends at the pair's corner put the reader on the central reader's circle about the range's middle; the reader's
+  rate is half the central's (the inscribed angle theorem, §4's 2 and 1); 2·dθ/dφ − 1 is any circle's own Cauchy (the
+  wrapped Cauchy, the Poisson kernel), here 0 but at home: joined by their rates the sweeps return the reader's place, by
+  their product H in H; neither the 20. Checked in `runs/ofs/rim.py`.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

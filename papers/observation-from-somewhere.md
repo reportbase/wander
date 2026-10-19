@@ -2649,6 +2649,23 @@ width, and no one stands anywhere in it.
    their product is 1 again. None of this involves the mountain: a range 2 miles wide at 1 mile gives the same fingers
    and the same products. Joined, the two vantages return only what the reader put in; the mountain's breadth must be
    constructed (step 6).
+
+   The two sweeps can also be joined by their rates, and on this range they say the same thing.
+   - A central reader at the range's middle, sweeping a radius of half the width, passes through both ends. Because
+     the pair (V*/2, d) is at its corner, the same circle passes through the reader's own place.
+   - So the reader stands on the central reader's circle. The central reader sees the ends 90° either side of the line
+     to the reader; the reader sees them 45° either side (step 2).
+   - By the inscribed angle theorem, the reader's head turns at exactly half the central reader's rate, at every point
+     of that circle. These are the rates 2 and 1 of §4, seen from the other side.
+   - Joined as twice the inscribed rate less the central rate, 2·dθ/dφ − 1, the two sweeps of any circle give the
+     circle's own Cauchy. That is the wrapped Cauchy (the Poisson kernel, the harmonic measure seen from the reader's
+     place), since 2·dθ/dφ − 1 = (1 − |z|²)/|e^{iφ} − z|² for a reader at z in units of the radius. Its centre and
+     concentration are the reader's direction and distance, in the circle's own radius.
+   - Here the reader is on the circle, |z| = 1. The combination is 2·½ − 1 = 0 everywhere but at the reader's own place,
+     where all of it gathers.
+
+   Joined by their product the two vantages return H in H. Joined by their rates they return the reader's own place.
+   Neither form reads the 20, and scaling the world moves neither.
 4. *What it cannot read.* A range 20 miles wide at 10 miles, 2 miles wide at 1 or 2,000 miles wide at 1,000 gives the
    same fingers and the same rings. The reach cancels from every reading (Theorem 6).
 5. *Mountain equals thumb.* Not knowing the mountain's size, the reader sets V = H: it takes the range to be one thumb,
