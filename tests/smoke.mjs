@@ -1172,11 +1172,18 @@ try {
     o.sib = Math.max(...[1, 6, 30].map(j => Math.abs(D.dist(D.cell(j, 0), D.cell(j, 1)) - Math.acosh(3))));
     o.tree = D.tree(511, 512); o.graph = D.graph(511, 512, 10); o.mid = Math.abs(D.dist(D.cell(10, 511), D.cell(10, 512)) - Math.acosh(3));
     o.digits = D.digits(0.8125, 4); o.drawn = Math.max(...[0, 4, 11].map(L => Math.abs(D.drawn(L) - 1)));
-    o.best = D.bestGamma(); const s = D.set({ x: 0.8125, L: 4 }); o.k = s.k; o.sh = s.share; return o; });
+    o.best = D.bestGamma(); const s = D.set({ x: 0.8125, L: 4 }); o.k = s.k; o.sh = s.share;
+    o.rhHalf = D.RH(0.0587335); o.rhOwn = D.RH(0.5); o.rg = D.RG(0.327648); o.hl = [D.halfLevel('step'), D.halfLevel('smooth')];
+    o.th = ['cauchy', 'gauss', 'sech', 'laplace'].map(k => D.thresh(k, 1)); o.th10 = [D.thresh('cauchy', 10), D.thresh('gauss', 10)];
+    o.win = D.windowOf(0.25, true); o.lap = D.maxima('laplace', 0.05, 1).length; return o; });
   if (dp.share > 1e-12 || dp.area > 1e-12 || dp.pc > 1e-9 || dp.sib > 1e-9 || dp.tree !== 20 || dp.graph !== 1 || dp.mid > 1e-9 || dp.digits !== '1101' ||
-    dp.drawn > 1e-12 || Math.abs(dp.best.diff - 0.2227) > 1e-3 || dp.k !== 13 || Math.abs(dp.sh - 0.5) > 1e-12)
+    dp.drawn > 1e-12 || Math.abs(dp.best.diff - 0.2227) > 1e-3 || dp.k !== 13 || Math.abs(dp.sh - 0.5) > 1e-12 ||
+    Math.abs(dp.rhHalf - 0.5) > 1e-5 || Math.abs(dp.rhOwn - 0.026855) > 1e-5 || Math.abs(dp.rg - 0.5) > 1e-4 ||
+    Math.abs(dp.hl[0] + 3.0897) > 1e-3 || Math.abs(dp.hl[1] + 2.6098) > 1e-3 || Math.abs(dp.th[0] - 2 / Math.sqrt(3)) > 1e-4 ||
+    Math.abs(dp.th[1] - 2) > 1e-4 || Math.abs(dp.th[2] - 2 * Math.atanh(1 / Math.sqrt(3))) > 1e-4 || dp.th[3] !== 0 ||
+    Math.abs(dp.th10[0] - 3.4062) > 1e-3 || Math.abs(dp.th10[1] - 3.3540) > 1e-3 || Math.abs(dp.win - 0.369518) > 1e-5 || dp.lap !== 2)
     failures.push(`[${current}] ${JSON.stringify(dp)}`);
-  console.log(`${failures.length === before41 ? 'ok  ' : 'FAIL'} ${current} (the Cauchy from a cell's point puts half in the cell, every tile's area 1, parent to child arcosh 3/2 and siblings arcosh 3 at every level; across the middle of level 10 the tree takes 20 steps, the tiling 1; 0.8125 is 0.1101, cell 13 of 16; the kept cells add to the whole; the fades never closer than ${dp.best.diff.toFixed(4)})`);
+  console.log(`${failures.length === before41 ? 'ok  ' : 'FAIL'} ${current} (the Cauchy from a cell's point puts half in the cell, every tile's area 1, parent to child arcosh 3/2 and siblings arcosh 3 at every level; across the middle of level 10 the tree takes 20 steps, the tiling 1; 0.8125 is 0.1101, cell 13 of 16; the kept cells add to the whole; the fades never closer than ${dp.best.diff.toFixed(4)}; a step half kept ${(-dp.hl[0]).toFixed(2)} levels coarser than the reader's own cell, a smooth bump ${(-dp.hl[1]).toFixed(2)}; two equal sources part at Cauchy 2/√3, Gaussian 2, sech² 2·artanh(1/√3), a cusp at once, a tenfold fainter one later (Cauchy ${dp.th10[0].toFixed(3)}, Gaussian ${dp.th10[1].toFixed(3)}); the closed window at γ = ¼ ${dp.win.toFixed(5)})`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';

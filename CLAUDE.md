@@ -338,9 +338,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   tall) or by γ ("as the plane"); two places' descents; L levels kept, the rest totals (a binomial cascade made from the
   addresses, never stored, the kept cells adding to 1); the Cauchy read from the kept cell's point, half in its cell; the
   readout gives d in the plane, the tiling's steps with sideways neighbours and the tree's alone. "Two fades": the cell
-  average |sinc(πn)| against e^(−2πnγ), never closer than 0.22. `?x=&x2=&L=&g=<γ/w>&view=levels|plane`; hook
-  `window.__depth` (`cell`, `share`, `dist`, `area`, `graph`, `tree`, `digits`, `descent`, `fade`, `avg`, `maxDiff`,
-  `bestGamma`, `mass`, `drawn`, `set`, `state`). Not in the flying page.
+  average |sinc(πn)| against e^(−2πnγ), never closer than 0.22. Since 19 Oct (Tom: "update depth.html"; DYH runs 2–3,
+  OFS §8 "What the height fixes"): how much of each level a reader at its own cell's point keeps (a step in closed form,
+  or a smooth bump, the Gaussian's derivative at w'/4) against the floor's step; telling two sources apart through four
+  kernels (Cauchy, Gaussian, sech², Laplace's cusp) with a fainter second; the window open (2γ) and closed
+  ((2/π)·arctan(tanh πγ)). `?x=&x2=&L=&g=<γ/w>&view=levels|plane&kind=step|smooth&kern=cauchy|gauss|sech|laplace&sep=&amp=`;
+  hook `window.__depth` (`cell`, `share`, `dist`, `area`, `graph`, `tree`, `digits`, `descent`, `fade`, `avg`, `maxDiff`,
+  `bestGamma`, `mass`, `drawn`, `RH`, `RG`, `keep`, `halfLevel`, `maxima`, `thresh`, `windowOf`, `set`, `state`). Not in the
+  flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -1782,7 +1787,10 @@ In short:
       an edge grazed it; ×10³ moving no detection or hull, the ranges by k; with the centre fitted, distance and speed to 1%.
   41. **depth.html:** from a cell's point the Cauchy puts half in the cell, every tile's area 1, parent to child arcosh 3/2
       and siblings arcosh 3 at every level; across the middle of level 10 the tree takes 20 steps, the tiling 1; 0.8125 is
-      0.1101, cell 13 of 16; the kept cells add to the whole; the two fades never closer than 0.2227.
+      0.1101, cell 13 of 16; the kept cells add to the whole; the two fades never closer than 0.2227; a step half kept 3.09
+      levels coarser than the reader's own cell (own level 0.0269), a smooth bump 2.61; equal sources part at 2/√3, 2 and
+      2·artanh(1/√3) (Cauchy, Gaussian, sech²), a cusp at once, a tenfold fainter one at 3.406 and 3.354; the closed window
+      at γ = ¼ 0.36952.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
