@@ -117,3 +117,43 @@ D1–D4 are classical, so a kill there would be my set-up. D5 is the question R3
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (18 Oct, `python3 dyh/dyh.py`; output `dyh/dyh-run1.txt`, 4 s)
+
+Nothing was killed.
+
+- **D1 not killed.** From every cell's point, C(m, γ) puts ½ in the cell, ¼ in each half, and 0.1024164 in each outer
+  quarter, to 10⁻⁶² at j = 0 … 52.
+- **D2 not killed**, to rounding at 60 digits.
+  - Parent to child: arcosh(3/2) = 0.96242.
+  - Siblings: arcosh 3 = 1.76275.
+  - Same level, n apart: arcosh(1 + 2n²), at every j and k.
+  - The map z ↦ 2z carries each cell onto its namesake a level up. The plan wrote "2z − k"; the shift is not needed for
+    cells on [0, 2).
+- **D3 not killed.** Every tile has area exactly 1, by its closed form and by quadrature.
+- **D4 not killed.**
+  - (a) Across the middle of each level, j = 2 … 30, the tree distance is 2j and d stays arcosh 3. The tree alone puts
+    neighbours 60 steps apart at j = 30.
+  - (b) For all 523,776 pairs at level 10, with sideways neighbours, max |d − g·ln 2| = 2.19 (bound 3). The shortest way
+    is always up, across and down: the closed form min_s (2s + |⌊k₂/2^s⌋ − ⌊k₁/2^s⌋|) equals the breadth-first search
+    for every pair.
+  - (c) Using that closed form, d/g is 0.7625 at t = 10 and 0.7105 at t = 40 (g = 80), against ln 2 = 0.6931. The plan
+    expected g = 2t + 1. In fact the shortest way goes up t − 1 levels and two across, g = 2t, so
+    d/g = (2t + 2)·ln 2/(2t) → ln 2.
+- **D5 not killed.** The least largest difference between e^{−2πnγ} and |sinc(πn)| is 0.2227, at γ = 0.240 w. At the
+  cell's own height γ = w/2 it is 0.477. Matched at half power (γ = 0.1245 w) it is 0.457, at n = 1, where the cell average
+  is 0 and the Cauchy's is not.
+  - The two fades differ in kind. The cell average has zeros and side lobes (the floor aliases), while the Cauchy's fade is
+    smooth, never zero, and a semigroup in γ.
+
+**D6, the verdict: not killed.** The floor's discarded fraction is the height of the half-plane:
+- each level is one isometric step (vertically ln 2; parent to child arcosh 3/2);
+- every cell has the same hyperbolic area, 1;
+- the cell is the middle half of the Cauchy read from its point;
+- with sideways neighbours, the cells measure the plane to within an additive constant of 2.2 at level 10.
+
+Keeping digits is not reading a Cauchy from that height: the fades differ by at least 0.22 at every γ. The cells are a
+tiling of the address's plane, a multi-dimensional array (level, index) with an exact metric. The reader's continuous
+height is a different filter on the same plane.
+
+The mathematics is classical (Böröczky; Poisson; the sinc of a box). The reading is ours.

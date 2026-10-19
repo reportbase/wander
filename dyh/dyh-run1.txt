@@ -1,0 +1,8 @@
+D1 shares own 1/2, half 1/4, outer quarter 0.10241638235; worst 9.72e-63 True
+D2 parent-child 0.962423650119, siblings 1.76274717404; worst 0 True
+D3 tile area 1; worst 0 True
+D4a across the middle: tree 2j, d arcosh 3 (worst 0) True
+D4b 523776 pairs, max |d - g ln2| = 2.1946; up-across-down formula differs from BFS in 0 True
+D4c d/g at t=10: 0.762462 (g 20), t=40: 0.710476 (g 80), ln 2 0.693147 True
+D5 least max difference 0.2227 at gamma 0.240 (w = 1); half power: sinc at n = 0.443, Poisson at n*gamma = 0.0552, so the best-matching gamma by half power is 0.1245 True
+D6 True
