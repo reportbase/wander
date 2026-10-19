@@ -1185,6 +1185,37 @@ try {
     failures.push(`[${current}] ${JSON.stringify(dp)}`);
   console.log(`${failures.length === before41 ? 'ok  ' : 'FAIL'} ${current} (the Cauchy from a cell's point puts half in the cell, every tile's area 1, parent to child arcosh 3/2 and siblings arcosh 3 at every level; across the middle of level 10 the tree takes 20 steps, the tiling 1; 0.8125 is 0.1101, cell 13 of 16; the kept cells add to the whole; the fades never closer than ${dp.best.diff.toFixed(4)}; a step half kept ${(-dp.hl[0]).toFixed(2)} levels coarser than the reader's own cell, a smooth bump ${(-dp.hl[1]).toFixed(2)}; two equal sources part at Cauchy 2/√3, Gaussian 2, sech² 2·artanh(1/√3), a cusp at once, a tenfold fainter one later (Cauchy ${dp.th10[0].toFixed(3)}, Gaussian ${dp.th10[1].toFixed(3)}); the closed window at γ = ¼ ${dp.win.toFixed(5)})`);
 
+  // ── 42. room-ratios.html: the room in ratios (SPN R386): the two inscribed sweeps' addresses unchanged by scaling the
+  //    world or by a thing's ghost at ½ and 2 about the eye; a corner 45° across reads 1; one step's two rays cross at every
+  //    corner, in steps, exactly; the map in steps unchanged by k; one counted stride writes metres; ratios between things ──
+  current = 'room-ratios.html';
+  const before42 = failures.length;
+  await page.goto(new URL('room-ratios.html', base).href, { waitUntil: 'load' });
+  const rr = await page.evaluate(() => { const R = __roomRatios, o = {};
+    const addrs = () => R.NAMES.flatMap(n => R.corners(n).map(p => R.address(p, R.eyeA())));
+    R.set({ k: 0 }); const a0 = addrs(), m0 = R.mapAll();
+    o.k = 0; o.mk = 0; o.metres = 0;
+    for (const lk of [-1, Math.log10(7), 1]) { R.set({ k: lk }); const a = addrs(), m = R.mapAll();
+      o.k = Math.max(o.k, ...a.map((x, i) => Math.max(Math.abs(x.lr - a0[i].lr), Math.abs(x.ud - a0[i].ud))));
+      for (const n of R.NAMES) { m[n].points.forEach((p, i) => p.forEach((x, j) => { o.mk = Math.max(o.mk, Math.abs(x - m0[n].points[i][j])); }));
+        const t = R.truthIn(n, 1), c = m[n].centre.map(x => x * R.stepLen()); o.metres = Math.max(o.metres, ...t.map((x, j) => Math.abs(x - c[j]) / R.kOf())); } }
+    R.set({ k: 0 }); const E = R.eyeA();
+    o.ghost = Math.max(...R.NAMES.flatMap(n => R.corners(n).flatMap(p => [0.5, 2].map(f => { const q = E.map((e, i) => e + f * (p[i] - e));
+      const x = R.address(q, E), y = R.address(p, E); return Math.max(Math.abs(x.lr - y.lr), Math.abs(x.ud - y.ud)); }))));
+    const c45 = R.address([E[0] + 1, E[1] + 1, E[2] + Math.SQRT2], E); o.c45 = [c45.lr, c45.ud];
+    o.steps = 0; o.gap = 0; const unit = Math.hypot(...R.eyeB().map((b, i) => b - E[i]));
+    for (const n of R.NAMES) { const m = R.mapThing(n); o.gap = Math.max(o.gap, m.gap);
+      R.corners(n).forEach((p, i) => p.forEach((x, j) => { o.steps = Math.max(o.steps, Math.abs(m.points[i][j] - (x - E[j]) / unit)); })); }
+    const m = R.mapAll(), tc = n => Math.hypot(...R.truthIn(n, 1));
+    o.ratio = Math.abs(R.ratios()[0][1] - tc('cabinet') / tc('ball'));
+    o.ball = Math.abs(m.ball.size.across * unit - 0.3);
+    R.set({ step: 1 }); o.s1 = document.getElementById('tab').textContent.includes('unread') && /nothing here says how far/.test(R.state().note);
+    R.set({ step: 3 }); o.s3 = /metres/.test(R.state().say); return o; });
+  if (rr.k > 1e-12 || rr.mk > 1e-9 || rr.metres > 1e-9 || rr.ghost > 1e-12 || Math.abs(rr.c45[0] - 1) > 1e-12 || Math.abs(rr.c45[1] - 1) > 1e-12 ||
+    rr.steps > 1e-9 || rr.gap > 1e-9 || rr.ratio > 1e-9 || rr.ball > 1e-9 || !rr.s1 || !rr.s3)
+    failures.push(`[${current}] ${JSON.stringify(rr)}`);
+  console.log(`${failures.length === before42 ? 'ok  ' : 'FAIL'} ${current} (scaling the world by 10⁻¹, 7, 10 moves no address (${rr.k.toExponential(1)}) and no place in steps (${rr.mk.toExponential(1)}); a ghost at ½ and 2 about the eye the same addresses; 45° across and up reads 1 and 1; one step's rays cross at every corner, in steps, to ${rr.steps.toExponential(1)}; the counted stride writes metres to ${rr.metres.toExponential(1)}; the cabinet's distance over the ball's the referee's; from one place, distance unread)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

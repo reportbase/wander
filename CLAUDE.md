@@ -254,6 +254,20 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `?walk=path|none&n=&thing=&k=<log10 k>&far=<log10 m>&eps=&face=&count=1&truth=1`; hook `window.__roomWalk` (`bearings`, `zeroAt`, `relDirs`, `headings`,
   `centralSample`, `centralOf`, `reconstruct`, `readout`, `roundPoints`, `gammaOf`, `regimeOf`, `set`, `stepTo`, `state`).
   Not in the flying page.
+- `room-ratios.html`: **the room in ratios** (19 Oct 2026, Tom: "so the inscribed sweep is two sweeps up down and left
+  right.", "and the inscribed sweep returns addresses", "so we can map out a room with ratios with the two inscribed
+  sweeps.", then "lets create demo that explains this. how the inscribed sweeps gives the ratios to the objects in a room.
+  Objects can be simple."; SPN R386), a standalone page, plain canvas, after `room.html` and `room-walk.html`, in three
+  dimensions and the inscribed sweeps only. A room 5 × 4 × 2.5 m, four simple things (table, cube, ball on the table,
+  cabinet), the eye at A. The two inscribed sweeps, left–right (v₂/h = tan ψ) and up–down (v/√(h² + v₂²) = tan a): each
+  corner an address, two ratios. Panels: the room (drag to orbit; rays from A, and B after the step; teal where the map
+  puts each corner), the sweep chart (even in azimuth and in height, the corners at 45° dashed, the room's edges, the
+  hand's raster sweep stopping at the first thing met), the reader's own map from above. Steps: one place (addresses,
+  angles, distance unread; ghosts at ½ and 2 on the same rays), one step to the right (each corner's two rays cross:
+  places, distances, sizes in steps; ratios between things), count the step (one stride, 0.7 m at k = 1, writes metres).
+  Scale the world (k, the walk included) moves no address and no place in steps. `?step=1|2|3&thing=&k=<log10 k>&truth=1`;
+  hook `window.__roomRatios` (`address`, `rayOf`, `hitOf`, `readThing`, `crossRays`, `mapThing`, `mapAll`, `ratios`,
+  `truthIn`, `stepLen`, `corners`, `centreOf`, `eyeA`, `eyeB`, `kOf`, `set`, `state`). Not in the flying page.
 - `one-read.html`, `sweep-zero.html`, `writer-readers.html`, `theorem6.html`: **visuals of the math** (17 Oct 2026, Tom: "lets
   continue to create visuals to help visualize the math, what do you suggest", then "all four"; SPN R337), standalone pages
   like `facing.html`. `one-read.html` (R332): one head turn θ from home on the chord's Thales circle meets one point; the
@@ -449,7 +463,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -1824,6 +1838,11 @@ In short:
       levels coarser than the reader's own cell (own level 0.0269), a smooth bump 2.61; equal sources part at 2/√3, 2 and
       2·artanh(1/√3) (Cauchy, Gaussian, sech²), a cusp at once, a tenfold fainter one at 3.406 and 3.354; the closed window
       at γ = ¼ 0.36952.
+
+  42. **room-ratios.html:** scaling the world by 10⁻¹, 7, 10 moves no address and no place in steps; a thing's ghost at ½
+      and 2 about the eye gives the same addresses; 45° across and up reads 1 and 1; one step's two rays cross at every
+      corner, in steps, exactly; the counted stride writes metres; the cabinet's distance over the ball's the referee's;
+      from one place, distance unread.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
