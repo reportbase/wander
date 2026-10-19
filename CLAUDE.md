@@ -1474,6 +1474,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   errors at equal median, never averaging down; rays not meeting ahead a visible share (0.0258 at k = 8, γ = 10⁻²,
   normal 10⁻³²); depth resolution Δ*/d = (4/√3)·γ·cosh(ln k). A different representation of the classical solution,
   with its own error law; no new reconstruction rule.
+  Runs 2–3 (`runs/tri/tri2.py`, `tri3.py`, SPN R383; Tom: "we can use the payload and address reader to retrieve more
+  informattion abou the ojet.", "yes"): the pair's bipolar coordinates, σ (parallax angle, the address reader's, corner the
+  Thales circle) and τ = ln(r_A/r_B) (a ratio of amounts, the payload reader's, corner the bisector). Run 2: U2, U4a, U4b
+  killed by my set-up (a threshold resolving the second order it named; a 5% KS test on a rare draw; a formula missing
+  backward rays), U5 faulted (double precision; NaN). Run 3: the ratio adds nothing to bisector depth but a second-order
+  pull, fixes the lateral place near the baseline (k < 2γ/(0.6745 s)), stands in for a missing bearing (same law, rescues
+  97–99% of misses), detects a misread but cannot locate it (equal w-tests); U5b′ killed (the check's threshold is the
+  Cauchy tail, so only gross misreads, far off blind to α against π − α); angular size gives the breadth in b.
   `opn-plan.md` (+ `runs/ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).

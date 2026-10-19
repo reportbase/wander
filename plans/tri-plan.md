@@ -350,3 +350,61 @@ The same set-up and claims, with the four set-up faults mended. Each is a new pr
   - *Killed* if not.
 - **U3, U4c, U6a, U6b** are repeated on the fresh seed, with run 2's predictions and k·cot β for U6b.
 - **U7′.** The verdict of U7. *Killed* if U1, U2′, U4a′ or U4b′ is killed.
+
+### Run 3 (19 Oct, `python3 runs/tri/tri3.py`; output `runs/tri/tri-run3.txt`, 70 s)
+
+U7′ is not killed. U5b′ is killed.
+
+- **U2′ not killed.** The median of (y_bearings − y_σ̂,τ)/(y₀(1 + k²)τ̂²/4) is −1.00000, −1.00000 and −1.00002 at
+  k = 1/8, 1, 8. The depth is σ's alone to first order; the bearings' τ error pulls it down at second order, and an exact
+  ratio removes that pull.
+- **U3 not killed** (again). Every lateral half-interquartile range is within 2 standard errors of its prediction. The
+  ratio is better at k ≤ 2, the bearings at 8.
+- **U4a′ not killed.**
+  - KS distance 0.00131, 0.00054 and 0.00137 against the 1% limit of 0.00163.
+  - Each is within 10⁻⁴ of its own draw's distance (0.00136, 0.00053, 0.00127). The route adds nothing to the scatter of
+    the bearing it uses.
+- **U4b′ not killed.** Shares rescued:
+  - k = 1: 0.99348 against 1 − q²/P_nc = 0.99373 (z = −0.5);
+  - k = 8: 0.97379 against 0.97419 (z = −0.4).
+
+  The formula without the backward rays is off by 10 standard errors at k = 1, confirming run 2's diagnosis.
+- **U4c not killed.** The rescued depths' median absolute relative error is 0.999 and 1.002 times the forward crossings'.
+- **U5a′ not killed.** At 50 digits the three w-tests agree to 4.6·10⁻⁴³.
+- **U5b′ killed.** The misread caught half the time, against k·c_thr:
+  - k = ½: 0.1529 against 0.1285 (1.19);
+  - k = 2: 0.1506 against 0.1235 (1.22);
+  - k = 8: 0.3285 against 0.1059 (3.10).
+
+  Post hoc:
+  - The 99.9% threshold is set by the closure's Cauchy tail: about 636 × 2γ/k, which is 0.257 at k = ½, with s = 10⁻³
+    playing almost no part.
+  - So the misreads caught are a tenth of a radian or more, far past first order.
+  - Inverted exactly (the least Δ with |ln sin α − ln sin(α + Δ)| = c_thr), the closure gives the measured Δ₅₀ to
+    3·10⁻⁵ at all three k.
+  - Far off the closure saturates. sin α is flat near π/2 and cannot tell α from π − α, so a misread must carry the
+    bearing past the perpendicular before the check sees it: 0.33 rad at k = 8.
+- **U6a not killed.** KS distance 0.00129, 0.00119 and 0.00123 against 0.00136, with the median R̂ 0.05 b to 2·10⁻⁷.
+- **U6b not killed.** k·cot β to z = −1.3 and +0.2.
+
+**The verdict (U7′).** Tom's point holds, in a definite shape.
+- **The two readers read the pair's two bipolar coordinates.** These are orthogonal and share one scale factor h.
+  - The address reader reads the parallax angle σ; its corner is the Thales circle.
+  - The payload reader reads the log ratio τ; its corner is the perpendicular bisector, where the two amounts are equal.
+- **What the payload ratio adds:**
+  1. **Not the depth on the bisector,** which is σ's alone, except to remove a second-order pull of
+     −(1 + k²)τ̂²/4.
+  2. **The lateral place,** better than the bearings for k < 2γ/(0.6745·s): near the baseline, where the bearings are
+     nearly opposite.
+  3. **A stand-in for a missing bearing.** One bearing with an exact ratio has the same Cauchy law as two bearings, and no
+     better. It rescues every miss but those with both bearings off the forward quarter: 99.4% at k = 1 and 97.4% at
+     k = 8 for γ = 10⁻².
+  4. **A check that detects a misread and cannot say which reading it was.** The three w-tests are equal, as Baarda's
+     one redundancy says. Against Cauchy bearings it catches only gross misreads (its threshold is the tail's). Far off
+     it is blind to a misread that keeps sin α, such as α against π − α.
+  5. **With angular size, the object's breadth in b.** The relative error is Cauchy(0, γ(cot β + cosh(ln k))). The
+     angular sizes give a ratio with no physics bridge, but it beats the bearings only for an object larger than its
+     distance from the baseline.
+
+The mathematics is classical: bipolar coordinates, Apollonius, the law of sines, Baarda's reliability. The reading is
+ours.
