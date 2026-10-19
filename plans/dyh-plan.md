@@ -245,3 +245,46 @@ Its advice was "exact check first, then the demo". That is the order taken: the 
   detail, which is the payload's.
   - *Killed* if Q1 fails, or if R_H and R_G coincide under some rescaling of u. Their near tails differ in form, so that
     would mean my tails are wrong.
+
+### Run 2 (18 Oct, `python3 dyh/dyh2.py`; output `dyh/dyh-run2.txt`, 7 s)
+
+Nothing was killed.
+
+- **Q1 not killed.** At each u, the Haar step's share kept is the same at levels 0, 3, 10 and 30 and indices 0 and 5, to
+  10⁻¹⁴⁸ at 150 digits.
+  - The share R_H at u = 0.01, 0.1, 1 and 10 is 0.84766, 0.34415, 0.0044276 and 4.967·10⁻⁶.
+- **Q2 not killed.** The closed form in space and the quadrature in frequency agree to 1.5·10⁻⁴⁴.
+- **Q3 not killed.**
+  - R_H is monotone over u from 10⁻⁸ to 10⁸.
+  - Half is kept at u* = 0.05873 (log₂ −4.09).
+  - So a reader at its own cell's point keeps half of the step detail 3.09 levels coarser than its own cell. It keeps
+    0.11 of the level just coarser than its own, and 0.027 of its own level.
+  - From R_H = 0.9 to 0.1 takes 5.52 levels.
+
+  | level read, against the reader's own (j′ − J) | −7 | −6 | −5 | −4 | −3 | −2 | −1 | 0 | +1 | +2 |
+  |---|---|---|---|---|---|---|---|---|---|---|
+  | share of the step kept | 0.927 | 0.874 | 0.789 | 0.660 | 0.482 | 0.279 | 0.110 | 0.027 | 0.0044 | 0.0006 |
+
+  The floor at level J keeps every level coarser than J whole (j′ − J ≤ −1) and none at J or finer: a step.
+- **Q4 not killed.**
+  - Near the reader, (1 − R_H)/(u·ln(1/u)) over 12/π is 0.933, 0.966, 0.983 and 0.991 at u = 10⁻⁴, 10⁻⁸, 10⁻¹⁶ and 10⁻³⁰.
+    It closes on 1 as 1/ln(1/u), the log's slow correction.
+  - Far off, R_H·u³ over 1/(64π) is 0.9999999 at u = 10³.
+- **Q5 not killed.**
+  - For the Gaussian's derivative, (1 − R_G)/u is 4/√π to 12 digits at u = 10⁻³⁰.
+  - R_G·u³ is 1/√π to 3·10⁻⁶ at u = 10³.
+  - The Mexican hat's log slope at u = 10³ is −4.99999.
+  - For the record: R_G is half at u = 0.328 (in units of its σ, a convention) and spans 4.78 levels from 0.9 to 0.1.
+
+**Q6, the verdict: not killed.** The rule ChatGPT asked for exists, in part.
+- **What is universal is its variable,** the reader's height measured in the detail's own width. So the reader's loss of
+  detail is one soft cut over the levels, the same at every depth, about 5½ levels from 90% kept to 10%. For a step
+  detail it is centred 3 levels coarser than the reader's own cell.
+- **What is not universal is the curve's shape.**
+  - Near the reader a step loses u·ln(1/u) and a smooth detail u.
+  - Far off, the detail's vanishing moments set the fall: u⁻³ for one, u⁻⁵ for two.
+- **So a level's address and the reader's height fix how far the cut has gone.** What fraction of the detail survives
+  there also needs the kind of detail, which is the payload's. ChatGPT's caution, "it cannot be inferred from cell width
+  alone", is borne out, and stated exactly.
+
+The mathematics is classical (the Poisson semigroup; a jump's u·ln(1/u); vanishing moments). The reading is ours.

@@ -1,0 +1,13 @@
+Q1 one variable: worst over levels and indices 1.03e-148 True
+   R_H at u = 0.01, 0.1, 1, 10: ['0.847663511986', '0.344149135985', '0.00442755128896', '4.96738371056e-6']
+Q2 space against frequency: worst 1.54e-44 True
+Q3 monotone True; half at u* = 0.0587335 (log2 -4.09, so 3.09 levels above the reader's own cell); R_H(1/2) = 0.026855, R_H(1/4) = 0.11005; 0.9 to 0.1 over 5.518 levels True
+   by level, reader at its own cell J: j' - J =  -7: 0.9265, -6: 0.8736, -5: 0.7886, -4: 0.6596, -3: 0.4824, -2: 0.2788, -1: 0.11, 0: 0.02685, 1: 0.004428, 2: 0.0006029
+Q4 near: (1 - R)/(u ln 1/u) over 12/pi = 0.99106304; far: R u^3 over 1/(64 pi) = 0.99999988 True
+   u = 1e-4: 0.93297279
+   u = 1e-8: 0.96648639
+   u = 1e-16: 0.9832432
+   u = 1e-30: 0.99106304
+Q5 smooth near: (1 - R_G)/u over 4/sqrt(pi) = 1.0; far: R_G u^3 over 1/sqrt(pi) = 0.999997; Mexican hat slope -4.99999 True
+   R_G half at u = 0.327648 (sigma = 1); 0.9 to 0.1 over 4.782 levels
+Q6 True {'Q1': True, 'Q2': True, 'Q3': True, 'Q4': True, 'Q5': True, 'Q6': True}

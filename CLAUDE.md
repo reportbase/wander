@@ -1441,6 +1441,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the floor's fade |sinc(πnw)| and the Cauchy's e^(−2πnγ) never within 0.2227 (at γ = 0.24 w), zeros and side lobes
   against smooth and never zero (D5). The fraction is the half-plane's height; keeping digits is not reading a Cauchy.
   Known beforehand: draw's TFE ("the pyramid in rungs"), `wedge-browse.html`, `pool-infinite.html`, `.tvf3d` (R250).
+  ChatGPT's comments (R375; "exact check first, then the demo"; "does the Cauchy attenuation derive the hierarchy's loss
+  of detail, or does it merely resemble it?") recorded under the plan's runs. Run 2 (`dyh/dyh2.py`, R376; Tom: "yes"):
+  the share of a level's detail (a wavelet) kept by a reader at height γ depends only on u = γ·2^{j′} (to 10⁻¹⁴⁸): one
+  soft cut over the levels, the same at every depth, 5.5 levels from 90% to 10%, Haar's step half kept 3.09 levels
+  coarser than the reader's own cell; its shape the detail's (a step loses (12/π)·u·ln(1/u), a smooth one (4/√π)·u; far
+  off u⁻³ or u⁻⁵ by vanishing moments). Nothing killed.
   `opn-plan.md` (+ `ofs/opening.py`, 11 Oct): how shapes open into the fisheye, for OFS §7.4 (SPN §2.4's 73-shape run repeated on
   exact shapes): laid by direction every shape gives the circle's (0.5, 1, 2/π, 2/π); laid along its outline, swap-symmetric
   shapes keep corner and middle and differ at the ends (square 0.500, astroid 3.15), the ellipse b = 2 moves its corner (not killed).
