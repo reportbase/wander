@@ -283,3 +283,70 @@ What the payload adds:
 4. A check that detects a misread bearing but cannot locate it.
 5. With angular size, the breadth in b, and a ratio needing no bridge but weaker than the bearings for any object clear
    of the baseline.
+
+### Run 2 (19 Oct, `python3 runs/tri/tri2.py`; output `runs/tri/tri-run2.txt`, 103 s)
+
+U7 is killed in its letter, by U2, U4a and U4b.
+
+- **U1 not killed.** At 10⁴ targets:
+  - the bipolar formulas give each target back to 3.6·10⁻¹⁵;
+  - ln(sin α_B/sin α_A) equals τ to 3.8·10⁻¹⁵;
+  - the Jacobian is h times a rotation to 6·10⁻⁵⁰.
+- **U2 killed, by my tolerance.** The difference in half-interquartile ranges is 5.9·10⁻⁷ at k = 1/8, 8 standard errors.
+  - The prediction itself called the effect second order, then set a threshold (3 bootstrap standard errors at 10⁶
+    readings) fine enough to resolve it.
+  - Post hoc, on the bisector y = y₀·(1 − (1 + k²)·τ²/4) to second order. So the bearings' own τ error,
+    (δ_B − δ_A)/k, pulls the depth down by about γ²(1 + k²)/k²: 6.5·10⁻⁷, 2·10⁻⁸ and 1·10⁻⁸ at k = 1/8, 1, 8, against
+    the measured 5.9·10⁻⁷, 2.5·10⁻⁸ and 7.7·10⁻⁹.
+- **U3 not killed.**
+  - The lateral half-interquartile ranges are within 2.1 standard errors of 2γ·cosh(ln k) (bearings) and of
+    0.6745·s·k·cosh(ln k) (ratio) at every k.
+  - The ratio is better at k ≤ 2 and the bearings at k = 8 (k* = 2.965).
+- **U4a killed, in its letter.** The KS distance is 0.00215 at k = 1, against a limit of 0.00136; at k = 1/8 and 8 it is
+  0.00103 and 0.00071.
+  - Post hoc: that k's raw draw of tan δ is itself 0.00214 from its own Cauchy (p ≈ 2·10⁻⁴), so the route added
+    10⁻⁵.
+  - The limit was the 5% level, applied three times.
+- **U4b killed, by my formula.** At k = 1 the share rescued is 0.99503, against the predicted 0.99843 (z = −6.9).
+  - The formula counted only bearings at or past π/2. A bearing at or below 0 also meets the bisector behind, not
+    ahead: P = (1/π)·arctan(γ/k), as large as the other at k = 1.
+  - With q = (1/π)(arctan kγ + arctan(γ/k)), the shares are 0.99373 (z = +2.6) at k = 1 and 0.97419 (z = −0.7) at k = 8.
+- **U4c not killed.** The rescued depths' median absolute relative error is 1.027 and 1.029 times the forward crossings'.
+- **U5a killed, by floating point.**
+  - With the standard deviations drawn over three decades, Q_e = W⁻¹ − G N⁻¹ Gᵀ subtracts nearly equal numbers.
+  - In double precision the three w-tests agreed only to 2.9·10⁻⁵.
+- **U5b not valid** (reported "True" by a bug).
+  - A Cauchy outlier carries a bearing out of (0, π), and the log of a negative sine is NaN. The 99.9% quantile was then
+    NaN, every comparison false, and the bisection ran to its upper end.
+- **U6a not killed.** R̂/R − 1 against Cauchy(0, γ(cot β + cosh(ln k))): KS 0.00091, 0.00060 and 0.00050. The median R̂
+  is 0.05 b to 2·10⁻⁸.
+- **U6b not killed.** The ratio of half-interquartile ranges, size over bearings:
+  - R = 0.4 b: 1.3073 against k·cot β = 1.3050 (z = +1.2);
+  - R = 0.6 b: 0.7846 against 0.7862 (z = −1.4).
+
+  The values printed in the prediction, 1.137 and 0.825, were my arithmetic slip; the formula k·cot β gives 1.305 and
+  0.786.
+
+### Run 3 predictions (19 Oct, written before the run; `runs/tri/tri3.py`, a fresh seed)
+
+The same set-up and claims, with the four set-up faults mended. Each is a new prediction:
+
+- **U2′.** On the bisector the depth from (σ̂, the true τ) and from the bearings alone differ, reading by reading, by the
+  second-order term. The median of (y_bearings − y_σ̂,τ)/(y₀·(1 + k²)·τ̂²/4), with τ̂ the bearings' own, is −1 within 2%,
+  at k ∈ {1/8, 1, 8} and γ = 10⁻⁴.
+  - So the depth is σ's alone to first order, and an exact ratio removes only this small downward pull.
+  - *Killed* if not.
+- **U4a′.** The one-bearing route's relative error is Cauchy(0, 2γ·cosh(ln k)) at k ∈ {1/8, 1, 8}. Two conditions:
+  - its KS distance is below 1.63/√N (the 1% level) at every k;
+  - its KS distance is within 2·10⁻⁴ of that of the bearing's own draw of tan δ against Cauchy(0, γ).
+  - *Killed* if either fails.
+- **U4b′.** The share of no-forward-crossing readings rescued is 1 − q²/P_nc, with q = (1/π)(arctan kγ + arctan(γ/k)),
+  within 3 standard errors at k ∈ {1, 8}, γ = 10⁻².
+  - *Killed* if not.
+- **U5a′.** The three w-tests are computed at 50 digits (mpmath) and have equal magnitude to 10⁻³⁰ at 10³ targets.
+  - *Killed* if not.
+- **U5b′.** A reading with a bearing outside (0, π) is counted as caught: no triangle lies in front. Otherwise U5b
+  stands: Δ₅₀ = k·c_thr within 5% at k ∈ {1/2, 2, 8}.
+  - *Killed* if not.
+- **U3, U4c, U6a, U6b** are repeated on the fresh seed, with run 2's predictions and k·cot β for U6b.
+- **U7′.** The verdict of U7. *Killed* if U1, U2′, U4a′ or U4b′ is killed.
