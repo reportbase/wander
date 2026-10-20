@@ -134,3 +134,33 @@ C2 as written is expected to be killed in its Möbius clause. It is run as writt
 - So the straight-ray identity carries to a shape exactly when the shape has a centre from which its own uniform turn is
   the central sweep: a circle.
 - *Killed* if (a) fails or (b) holds. C6's kill condition now reads C2′ for C2.
+
+### Run 1 (19 Oct; `runs/cmp/cmp.py`, output `runs/cmp/cmp-run1.txt`)
+
+Seed 20261019. C1 in double precision (walk-on-spheres, 2¹⁶ boundary samples and Newton to the nearest boundary point,
+stopping within 10⁻⁶); C2, C2′ and C3 at 50 digits; C4 and C5 in double precision, N = 1,024.
+
+- **C1 not killed.** All nine cases land as the wrapped Cauchy P_z: KS 0.0017–0.0044 against 0.00515. Walks took 103–130
+  steps; for z/(1 − 0.4z) at z = 0.4 the walk took 2, because F(0.4) = 0.476 is the image circle's centre, so the first
+  step lands exactly on the boundary.
+- **C2 killed**, as the note before the run expected. The Möbius residual is 0.5 at b = 0.2 and 1.33 at b = 0.4, not
+  10⁻³⁰. The polynomial clause holds (0.11 to 2.5).
+- **C2′ not killed.**
+  - (a) Möbius: 9·10⁻⁵⁰ and 1.5·10⁻⁴⁹, which is the working precision.
+  - (b) Polynomial, with ψ = arg F: 0.058 to 2.1. At z = 0 this residual is ψ′ − 1, so the failure is the gap between
+    the geometric angle from F(0) and the conformal angle. That gap is exactly what Theodorsen's step supplies.
+- **C3 not killed.** The maximum residual over a is 4.537, 4.594 and 4.599 at a = 10⁻², 10⁻³ and 10⁻⁴, a spread of
+  1.4%. It is first order, with its peak at φ = 0, the point nearest the reader. The leading coefficient tends to about
+  4.60.
+- **C4 not killed.** Every case reaches 8.9·10⁻¹⁶. It falls below 10⁻¹⁰ at iterations 5, 9, 6, 13, 7 and 25 for
+  (n, a) = (2, 0.02), (2, 0.1), (3, 0.02), (3, 0.1), (5, 0.02) and (5, 0.1). That is slower as a·(n − 1), the radii's
+  log-slope, grows.
+- **C5 not killed.** Scaling the radii by 10⁻³, 7 and 10³ moves θ by at most 2.7·10⁻¹⁵.
+- **C6 not killed** (with C2′ for C2).
+  - A reader inside a shape meets the shape's own Cauchy, its harmonic measure, as the disc's Poisson kernel carried by
+    the conformal map.
+  - The straight-ray combination of the two sweeps gives it only on a circle, and only in the circle's own central angle.
+  - On other shapes the conformal angle has to be found. Theodorsen finds it from the central reader's radii in any unit
+    and the address reader's directions, with no amount carried in.
+  - All of this is classical (Riemann, Carathéodory, Theodorsen). The run checks our arithmetic and how the readers'
+    contributions divide; it adds no new mathematics.

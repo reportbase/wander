@@ -999,6 +999,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "yes"): OFS's introduction, Results bullet, Theorem 6's opening and "What the result establishes" say the Cauchy is the
   law of the uniform turn itself, whoever turns and whether it receives or sends (a lighthouse the same turn aimed
   outward); the address reader uses it as its addresses. Refines R330's "a property of the reader".
+  `cmp-plan.md` (+ `runs/cmp/cmp.py`, 19 Oct; SPN R390; Tom: "we also have demos that shows the address points to shape
+  … I'm wondering if there is more here, ideas that we missed.", then "yes"): CIW beyond the circle, by the conformal map
+  F: D → Ω. Nothing killed but C2, which I found wrong before the run (on a Möbius image the identity is in the image
+  circle's own angle ψ: 2·dθ/dφ − dψ/dφ = 2πP_z); C2′ not killed. Walk-on-spheres lands as P_z carried by F (nine
+  cases, KS under 1%). The straight-ray combination holds only on a circle (10⁻⁴⁹) and fails at first order elsewhere
+  (4.60·a at z = 0.3). Theodorsen recovers the conformal angle from radii in any unit plus directions, to 10⁻¹⁵. Classical.
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

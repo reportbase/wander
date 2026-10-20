@@ -1,0 +1,39 @@
+C1: walk-on-spheres, N = 1e5, KS threshold 1.63/sqrt(N) = 0.00515
+  z/(1 - 0.4z)   z = 0.000+0.000j  steps  122  KS 0.00170  ok
+  z/(1 - 0.4z)   z = 0.400+0.000j  steps    2  KS 0.00301  ok
+  z/(1 - 0.4z)   z = 0.324+0.505j  steps  114  KS 0.00230  ok
+  z + 0.3z^2     z = 0.000+0.000j  steps  120  KS 0.00187  ok
+  z + 0.3z^2     z = 0.400+0.000j  steps  122  KS 0.00214  ok
+  z + 0.3z^2     z = 0.324+0.505j  steps  104  KS 0.00438  ok
+  z + 0.2z^3     z = 0.000+0.000j  steps  130  KS 0.00214  ok
+  z + 0.2z^3     z = 0.400+0.000j  steps  103  KS 0.00413  ok
+  z + 0.2z^3     z = 0.324+0.505j  steps  113  KS 0.00194  ok
+C1 not killed
+
+C2 and C2': max over 1,000 seeded (z, phi), |z| < 0.9, 50 digits
+  z/(1 - 0.2z)    C2        0.5   C2'  8.553e-50
+  z/(1 - 0.4z)    C2      1.333   C2'  1.497e-49
+  z + 0.05z^2     C2       0.11   C2'     0.0575
+  z + 0.1z^2      C2     0.2449   C2'     0.1342
+  z + 0.05z^3     C2     0.3275   C2'     0.2225
+  z + 0.1z^3      C2     0.7674   C2'     0.5457
+  z + 0.05z^5     C2      1.002   C2'     0.8146
+  z + 0.1z^5      C2      2.509   C2'      2.121
+C2 KILLED   C2' not killed
+
+C3: F = z + a z^3, z = 0.3, max over phi of the C2 residual, over a
+  a = 1e-2   max 0.045369366  max/a 4.5369366  at phi 0.0
+  a = 1e-3   max 0.0045936149  max/a 4.5936149  at phi 0.0
+  a = 1e-4   max 0.00045993607  max/a 4.5993607  at phi 0.0
+C3 spread 0.01376 not killed
+
+C4: Theodorsen, N = 1,024, 60 iterations, max |theta - arg F(e^{i phi})|
+  n = 2 a = 0.02  error 8.88e-16  below 1e-10 at iteration 5  C5 moves 1.8e-15, 8.9e-16, 1.9e-15
+  n = 2 a =  0.1  error 8.88e-16  below 1e-10 at iteration 9  C5 moves 1.8e-15, 8.9e-16, 1.8e-15
+  n = 3 a = 0.02  error 8.88e-16  below 1e-10 at iteration 6  C5 moves 1.8e-15, 8.9e-16, 1.8e-15
+  n = 3 a =  0.1  error 8.88e-16  below 1e-10 at iteration 13  C5 moves 2.7e-15, 8.9e-16, 2.0e-15
+  n = 5 a = 0.02  error 8.88e-16  below 1e-10 at iteration 7  C5 moves 2.2e-15, 8.9e-16, 1.8e-15
+  n = 5 a =  0.1  error 8.88e-16  below 1e-10 at iteration 25  C5 moves 2.7e-15, 1.8e-15, 2.7e-15
+C4 not killed   C5 not killed
+
+C6 not killed (C2' for C2, by the note written before the run)
