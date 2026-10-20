@@ -388,7 +388,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (y/x, or the ray's own direction at the horizon) is checked against the turn's own tan θ, with the median and the split
   at the corner; a strip shows the fixed addresses over the changing payload (colour and distance). Beside it an
   equal-metres reader (the same count spaced up a line one H away to the world's extent), moving with S and with nothing
-  to space against when the size is unknown or the world empty. `?world=trees|wall|curve|stars|sun|noise|empty&s=<0..12>|unknown&n=&play=1`;
+  to space against when the size is unknown or the world empty. The sweep (20 Oct, Tom: "we should be able to sweep the
+  payloads", "the sweep would just show as we sweep, new payloads become visible over the sweep."): the hand (gold) passes
+  the addresses in order from zero; every address is drawn from the start, faint, and what arrived shows only once passed
+  (a button and a slider; `?sweep=0` sweeps on opening, another value stops there).
+  `?world=trees|wall|curve|stars|sun|noise|empty&s=<0..12>|unknown&n=&play=1&sweep=<0..1>`;
   hook `window.__payloadFree` (`fan`, `worldOf`, `hit`, `readings`, `median`, `metresFan`, `lay`, `WORLDS`, `set`, `state`).
   Not in the flying page.
 - `payload-free-3d.html`: **the payload doesn't matter, in 3D** (20 Oct 2026, Tom: "how would we do the same visual but in
@@ -401,7 +405,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   grid's (v ≤ h, v₂ ≤ h, v₂ ≤ v a half each, the near field a third) in every world. Panels: the scene on the reader's lay
   (orbit; arcs at H and each tenfold, the corners dashed), the wedge from home (the triangle h + v + v₂ = 1, medians the
   pairs' corners), Lambert's map painted, and an equal-metres flat screen one H away along h out to the world's extent
-  (needs it; none when unknown). `?world=forest|room|dome|stars|sun|noise|empty&s=<0..12>|unknown&n=16|32|64&play=1`;
+  (needs it; none when unknown). The sweep, as on the 2D page: the hand passes the addresses round in azimuth along a row,
+  then up a row; the Lambert map and the triangle fill behind it.
+  `?world=forest|room|dome|stars|sun|noise|empty&s=<0..12>|unknown&n=16|32|64&play=1&sweep=<0..1>`;
   hook `window.__payloadFree3d` (`grid`, `worldOf`, `hit`, `readings`, `counts`, `metresScreen`, `lay`, `WORLDS`, `set`,
   `state`, `frames`, `webgl`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
@@ -1996,11 +2002,12 @@ In short:
   44. **payload-free.html:** every world (trees, wall, curve, stars, sun, noise, empty) at sizes 1, 10³, 10⁶, 10¹² and unknown,
       with 15, 63 and 255 rays, gives back the turn's own readings tan θ to 10⁻¹⁴, the median at the corner, half the rays
       either side; the seven worlds paint differently; the equal-metres reader moves with the size and has none when it is
-      unknown.
+      unknown; swept half way, 32 of 63 addresses passed and only their payloads seen, at zero none.
   45. **payload-free-3d.html:** every world at sizes 1, 10⁶, 10¹² and unknown, on 16 × 16 and 32 × 32 grids, gives back the
       sweep's own [h : v : v₂] to 10⁻¹⁴, one set of counts per grid (at 32 × 32 v ≤ h, v₂ ≤ v within 0.01 of ½, v₂ ≤ h
       exactly ½, the near field within 0.01 of ⅓); the seven worlds paint differently; the equal-metres screen moves with
-      the size and has none when it is unknown; in the room every ray meets a wall; WebGL drew frames.
+      the size and has none when it is unknown; in the room every ray meets a wall; WebGL drew frames; swept a quarter of the
+      way, 256 addresses passed (eight rows), each meeting the room.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

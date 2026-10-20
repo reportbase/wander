@@ -29,7 +29,11 @@
       - For contrast, an equal-metres reader: a flat screen one H away along h, its n × n pixels spaced evenly out to the
         world's extent. It must be told that extent, its addresses move with every S, and with an unknown or empty world it
         has nothing to space against. Its near field holds (1/E)² of its pixels, where the turn's holds a third.
-    Links: ?world=forest|room|dome|stars|sun|noise|empty&s=<log10 size>|unknown&n=16|32|64&play=1. Test hook:
+    The sweep (20 October; Tom: "we should be able to sweep the payloads", "the sweep would just show as we sweep, new
+    payloads become visible over the sweep."): the hand passes the addresses in order, round in azimuth along a row of
+    height, then up a row; every address is drawn from the start, faint, and what arrived at it shows only once the hand has
+    passed. ?sweep=0 sweeps as the page opens, any other value stops the hand that share of the way.
+    Links: ?world=forest|room|dome|stars|sun|noise|empty&s=<log10 size>|unknown&n=16|32|64&play=1&sweep=<0..1>. Test hook:
     window.__payloadFree3d (the arithmetic works without WebGL; `frames` and `webgl` say whether the scene drew).
     three.js 0.160.0 from jsDelivr, pinned, as wedge.html (the smoke test serves it from node_modules).
     -->
@@ -77,6 +81,8 @@
         <div class="row"><label for="size">world size S</label><input id="size" type="range" min="0" max="12" step="0.5" value="0">
             <span id="sizeVal" style="min-width:9ch"></span><button id="unknown">unknown</button></div>
         <div class="row"><label>rays</label><span id="ns"></span><button id="play">play</button></div>
+        <div class="row"><button id="sweep">sweep</button><label for="swept">swept</label><input id="swept" type="range" min="0" max="1" step="0.0005" value="1">
+            <span id="sweptVal" style="min-width:12ch"></span></div>
         <p id="say"></p>
     </div>
 
@@ -123,7 +129,7 @@
 'use strict';
 // ── the geometry and the flat panels, without three.js, so the arithmetic and the hook work without WebGL ─────────────────
 const $ = id => document.getElementById(id);
-const S0 = { world: 'forest', s: 0, unknown: false, n: 32, play: false };
+const S0 = { world: 'forest', s: 0, unknown: false, n: 32, play: false, sweep: 1 };   // sweep: the share of the addresses passed, 0 to 1
 const S = { ...S0 };
 const WORLDS = [['forest', 'a forest'], ['room', 'a room'], ['dome', 'a dome round home'], ['stars', 'stars at every distance'],
     ['sun', 'one sun'], ['noise', 'noise'], ['empty', 'nothing at all']];
@@ -202,17 +208,23 @@ function drawTriangleFrame(c, g) {
     g.setLineDash([]); g.fillStyle = '#8a8a96'; g.font = '15px DM Mono, monospace';
     g.fillText('h', V[0][0] - 18, V[0][1] + 18); g.fillText('v', V[1][0] - 4, V[1][1] - 10); g.fillText('v₂', V[2][0] + 6, V[2][1] + 18);
 }
-function drawHome(R) { const c = $('home'), g = c.getContext('2d'); drawTriangleFrame(c, g);
+function drawHome(R, shown) { const c = $('home'), g = c.getContext('2d'); drawTriangleFrame(c, g);
     const rad = S.n >= 64 ? 1.6 : S.n >= 32 ? 2.6 : 4;
-    R.forEach(r => { const [x, y] = triXY(c, r.p); g.fillStyle = r.col ? css(r.col) : 'rgba(140,230,205,0.22)'; g.beginPath(); g.arc(x, y, rad, 0, 2 * Math.PI); g.fill(); }); }
-function drawMap(R) { const c = $('map'), g = c.getContext('2d'), W = c.width, P = 26, L = W - 2 * P, n = S.n, w = L / n;
+    R.forEach((r, k) => { const [x, y] = triXY(c, r.p);
+        g.fillStyle = k >= shown ? 'rgba(255,255,255,0.10)' : r.col ? css(r.col) : 'rgba(140,230,205,0.22)';   // not swept yet: the address alone
+        g.beginPath(); g.arc(x, y, rad, 0, 2 * Math.PI); g.fill(); });
+    if (shown > 0 && shown < R.length) { const [x, y] = triXY(c, R[shown - 1].p); g.strokeStyle = '#d4a052'; g.lineWidth = 2;
+        g.beginPath(); g.arc(x, y, rad + 5, 0, 2 * Math.PI); g.stroke(); } }
+function drawMap(R, shown) { const c = $('map'), g = c.getContext('2d'), W = c.width, P = 26, L = W - 2 * P, n = S.n, w = L / n;
     g.fillStyle = '#000'; g.fillRect(0, 0, W, W);
-    R.forEach((r, k) => { const i = k % n, j = Math.floor(k / n); g.fillStyle = r.col ? css(r.col) : '#121219';
+    R.forEach((r, k) => { const i = k % n, j = Math.floor(k / n); g.fillStyle = k >= shown ? '#08080c' : r.col ? css(r.col) : '#121219';
         g.fillRect(P + i * w, P + L - (j + 1) * w, Math.max(1, w - (n > 32 ? 0 : 1)), Math.max(1, w - (n > 32 ? 0 : 1))); });
     g.setLineDash([5, 5]); g.strokeStyle = 'rgba(212,160,82,0.85)'; g.lineWidth = 1.5;
     const curve = f => { g.beginPath(); for (let q = 0; q <= 100; q++) { const psi = q / 100 * Math.PI / 2, y = f(psi), X = P + q / 100 * L, Y = P + L - y * L; q ? g.lineTo(X, Y) : g.moveTo(X, Y); } g.stroke(); };
     curve(p => Math.cos(p) / Math.sqrt(1 + Math.cos(p) ** 2)); curve(p => Math.sin(p) / Math.sqrt(1 + Math.sin(p) ** 2));
     g.beginPath(); g.moveTo(P + L / 2, P); g.lineTo(P + L / 2, P + L); g.stroke(); g.setLineDash([]);
+    if (shown > 0 && shown < R.length) { const k = shown - 1, i = k % n, j = Math.floor(k / n); g.strokeStyle = '#d4a052'; g.lineWidth = 2;
+        g.strokeRect(P + i * w - 1, P + L - (j + 1) * w - 1, w + 2, w + 2); }
     g.fillStyle = '#8a8a96'; g.font = '13px DM Mono, monospace'; g.fillText('h', P, W - 8); g.fillText('v₂', W - P - 14, W - 8); g.fillText('v', 6, P + 10);
 }
 function drawMetres(extent) { const c = $('metres'), g = c.getContext('2d'); drawTriangleFrame(c, g);
@@ -223,21 +235,25 @@ function drawMetres(extent) { const c = $('metres'), g = c.getContext('2d'); dra
     return M;
 }
 
-let last = null, draw3d = null;
+let last = null, draw3d = null, sweeping = null, cache = null;
 const median = xs => { const a = xs.slice().sort((p, q) => p - q), m = a.length >> 1; return a.length % 2 ? a[m] : Math.sqrt(a[m - 1] * a[m]); };
 function render() {
-    const s = S.unknown ? UNKNOWN_S : S.s, R = readings(S.world, s, S.n), G = grid(S.n);
+    const s = S.unknown ? UNKNOWN_S : S.s, key = S.world + '|' + s + '|' + S.n;
+    if (!cache || cache.key !== key) cache = { key, R: readings(S.world, s, S.n) };   // a sweep redraws every frame; the world is read once
+    const R = cache.R, G = grid(S.n), shown = Math.round(S.sweep * R.length), seen = R.slice(0, shown).filter(r => r.d != null).length;
     let worst = 0; R.forEach((r, k) => { const d = G[k].d;
         worst = Math.max(worst, Math.abs(r.vh - d[1] / d[0]) / (d[1] / d[0]), Math.abs(r.v2h - d[2] / d[0]) / (d[2] / d[0])); });
     const C = counts(R), met = R.filter(r => r.d != null).length, N = R.length;
-    drawHome(R); drawMap(R);
+    drawHome(R, shown); drawMap(R, shown);
     const W = worldOf(S.world, Math.pow(10, s)), M = drawMetres(S.unknown ? null : W.extent);
     const nearM = M ? M.filter(p => p[1] <= 1 && p[2] <= 1).length / M.length : null;
-    last = { worst, ...C, met, N, nearMetres: nearM, medV2H: median(R.map(r => r.v2h)) };
-    if (draw3d) draw3d(R);
+    last = { worst, ...C, met, N, nearMetres: nearM, medV2H: median(R.map(r => r.v2h)), shown, seen };
+    if (draw3d) draw3d(R, shown);
     $('sizeVal').textContent = S.unknown ? 'unknown' : 'S = 10^' + S.s;
     $('say').textContent = `${WORLDS.find(w => w[0] === S.world)[1]}, ${S.unknown ? 'of unknown size' : 'size 10^' + S.s}: ` +
-        `${met} of ${N} rays meet something, ${N - met} run to the horizon. The rays have not moved.`;
+        (shown < N ? `swept ${shown} of ${N} addresses, ${seen} payloads seen so far. The addresses were all there before the sweep.`
+        : `${met} of ${N} rays meet something, ${N - met} run to the horizon. The rays have not moved.`);
+    $('swept').value = S.sweep; $('sweptVal').textContent = `${shown} of ${N}`; $('sweep').classList.toggle('on', !!sweeping);
     const pc = x => (100 * x).toFixed(1) + '%';
     $('check').innerHTML = `<span class="ok">Every reading [h : v : v₂], taken back from where its ray landed, against the sweep's own: ` +
         `largest relative difference ${worst.toExponential(1)}.</span> So in every world v ≤ h for ${pc(C.vLeH)}, v₂ ≤ h for ${pc(C.v2LeH)}, ` +
@@ -250,6 +266,12 @@ function render() {
     $('size').value = S.s; $('size').disabled = S.unknown;
 }
 function set(o) { Object.assign(S, o); render(); }
+// the sweep: the hand passes the addresses in order, round in azimuth along a row of height, then up a row; every address is
+// there from the start, and what arrived at it shows once the hand has passed
+function sweep() { if (sweeping) { cancelAnimationFrame(sweeping); sweeping = null; render(); return; }
+    const T = 9000, t0 = performance.now() - (S.sweep < 1 ? S.sweep * T : 0);
+    const go = now => { S.sweep = Math.min(1, (now - t0) / T); sweeping = S.sweep < 1 ? requestAnimationFrame(go) : null; render(); };
+    sweeping = requestAnimationFrame(go); }
 let timer = null;
 function play(on) { S.play = on; clearInterval(timer);
     if (on) timer = setInterval(() => { const k = WORLDS.findIndex(w => w[0] === S.world); set({ world: WORLDS[(k + 1) % WORLDS.length][0] }); }, 2200);
@@ -260,12 +282,16 @@ NS.forEach(n => { const b = document.createElement('button'); b.textContent = n 
 $('size').oninput = e => set({ s: +e.target.value });
 $('unknown').onclick = () => set({ unknown: !S.unknown });
 $('play').onclick = () => play(!S.play);
+$('sweep').onclick = sweep;
+$('swept').oninput = e => { if (sweeping) { cancelAnimationFrame(sweeping); sweeping = null; } set({ sweep: +e.target.value }); };
 
 const q = new URLSearchParams(location.search);
 if (WORLDS.some(w => w[0] === q.get('world'))) S.world = q.get('world');
 if (q.get('s') === 'unknown') S.unknown = true; else if (q.has('s') && isFinite(+q.get('s'))) S.s = Math.max(0, Math.min(12, +q.get('s')));
 if (NS.includes(+q.get('n'))) S.n = +q.get('n');
+if (q.has('sweep') && isFinite(+q.get('sweep'))) S.sweep = Math.min(1, Math.max(0, +q.get('sweep')));
 render();
+if (q.get('sweep') === '0') sweep();                         // ?sweep=0 sweeps from zero as the page opens
 if (q.get('play') === '1') play(true);
 
 window.__payloadFree3d = { grid, worldOf, hit, readings, counts, metresScreen, lay, WORLDS, set, frames: 0, webgl: false,
@@ -308,15 +334,19 @@ if (renderer) {
     const rayGeo = new THREE.BufferGeometry(), rays = new THREE.LineSegments(rayGeo, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.55 }));
     const dotGeo = new THREE.BufferGeometry(), dots = new THREE.Points(dotGeo, new THREE.PointsMaterial({ vertexColors: true, size: 0.55, sizeAttenuation: true }));
     scene.add(rays, dots);
-    P.drawScene = list => {
+    const handGeo = new THREE.BufferGeometry(), hand = new THREE.Line(handGeo, new THREE.LineBasicMaterial({ color: 0xd4a052 })); scene.add(hand);
+    P.drawScene = (list, shown) => {
         const n = list.length, rp = new Float32Array(6 * n), rc = new Float32Array(6 * n), dp = [], dc = [];
         list.forEach((r, k) => { const L = Math.hypot(...r.p), u = r.p.map(x => x / L), end = r.d == null ? R : Math.min(R, P.lay(r.d));
             rp.set([0, 0, 0, u[0] * end, u[1] * end, u[2] * end], 6 * k);
-            const a = r.d == null ? [0.05, 0.10, 0.09] : [0.12, 0.27, 0.24]; rc.set([...a, ...a], 6 * k);   // dim: the dots carry the picture
-            if (r.d != null) { dp.push(u[0] * end, u[1] * end, u[2] * end); dc.push(...r.col); } });
+            const a = k >= shown ? [0.03, 0.04, 0.045] : r.d == null ? [0.05, 0.10, 0.09] : [0.12, 0.27, 0.24];   // dim: the dots carry the picture
+            rc.set([...a, ...a], 6 * k);
+            if (k < shown && r.d != null) { dp.push(u[0] * end, u[1] * end, u[2] * end); dc.push(...r.col); } });
         rayGeo.setAttribute('position', new THREE.BufferAttribute(rp, 3)); rayGeo.setAttribute('color', new THREE.BufferAttribute(rc, 3));
         dotGeo.setAttribute('position', new THREE.Float32BufferAttribute(dp, 3)); dotGeo.setAttribute('color', new THREE.Float32BufferAttribute(dc, 3));
         dots.material.size = list.length > 2000 ? 0.35 : 0.55;
+        hand.visible = shown > 0 && shown < n;               // the hand, where the sweep is now
+        if (hand.visible) { const p = list[shown - 1].p, L = Math.hypot(...p); handGeo.setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(...p.map(x => x / L * R))]); }
     };
     const size = () => { const w = cv.clientWidth || 600; if (cv.width !== Math.round(w * renderer.getPixelRatio())) { renderer.setSize(w, w, false); cam.aspect = 1; cam.updateProjectionMatrix(); } };
     const loop = () => { size(); ctl.update(); renderer.render(scene, cam); P.frames++; requestAnimationFrame(loop); };
@@ -327,7 +357,7 @@ if (renderer) {
 </script>
 <script>
 // the plain script renders before three.js arrives; once the scene is ready it draws every later reading too
-window.addEventListener('scene-ready', () => { draw3d = R => window.__payloadFree3d.drawScene(R); render(); });
+window.addEventListener('scene-ready', () => { draw3d = (R, shown) => window.__payloadFree3d.drawScene(R, shown); render(); });
 </script>
 </body>
 </html>

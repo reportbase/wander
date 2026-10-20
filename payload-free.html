@@ -23,7 +23,11 @@
     Beside it, smaller, an equal-metres reader for contrast: its n addresses spaced evenly up a line one H away, out to the
     world's extent. It must be told N (the extent), its rays move with every size, and with an unknown or empty world it has
     nothing to space against.
-    Links: ?world=trees|wall|curve|stars|sun|noise|empty&s=<log10 size>|unknown&n=15|63|255&play=1. Test hook:
+    The sweep (20 October; Tom: "we should be able to sweep the payloads", "the sweep would just show as we sweep, new
+    payloads become visible over the sweep."): the hand passes the addresses in order from zero; every address is drawn
+    from the start, faint, and what arrived at it shows only once the hand has passed. ?sweep=0 sweeps as the page opens,
+    any other value stops the hand that share of the way.
+    Links: ?world=trees|wall|curve|stars|sun|noise|empty&s=<log10 size>|unknown&n=15|63|255&play=1&sweep=<0..1>. Test hook:
     window.__payloadFree.
     -->
     <style>
@@ -63,6 +67,8 @@
         <div class="row"><label for="size">world size S</label><input id="size" type="range" min="0" max="12" step="0.5" value="0">
             <span id="sizeVal" style="min-width:9ch"></span><button id="unknown">unknown</button></div>
         <div class="row"><label>rays</label><span id="ns"></span><button id="play">play</button></div>
+        <div class="row"><button id="sweep">sweep</button><label for="swept">swept</label><input id="swept" type="range" min="0" max="1" step="0.001" value="1">
+            <span id="sweptVal" style="min-width:9ch"></span></div>
         <p id="say"></p>
     </div>
 
@@ -98,7 +104,7 @@
 <script>
 'use strict';
 const $ = id => document.getElementById(id);
-const S0 = { world: 'trees', s: 0, unknown: false, n: 63, play: false };
+const S0 = { world: 'trees', s: 0, unknown: false, n: 63, play: false, sweep: 1 };   // sweep: the share of the turn done, 0 to 1
 const S = { ...S0 };
 const WORLDS = [['trees', 'a row of trees'], ['wall', 'a straight wall'], ['curve', 'a curved wall'], ['stars', 'stars at every distance'],
     ['sun', 'one sun'], ['noise', 'noise'], ['empty', 'nothing at all']];
@@ -154,7 +160,7 @@ function metresFan(extent, n) { if (!extent || !isFinite(extent)) return null; c
 // DRAWING, on the reader's lay: d up to the corner (H = 1), then 1 + ln d
 const lay = d => d <= 1 ? d : 1 + Math.log(d);
 const RMAX = lay(Math.pow(10, 13));
-function drawFan(R) {
+function drawFan(R, shown) {
     const c = $('fan'), g = c.getContext('2d'), W = c.width, P = 30, sc = (W - 2 * P) / RMAX, ox = P, oy = W - P;
     g.fillStyle = '#000'; g.fillRect(0, 0, W, W);
     const ring = (d, col, lab) => { const rr = lay(d) * sc; g.strokeStyle = col; g.beginPath(); g.arc(ox, oy, rr, -Math.PI / 2, 0); g.stroke();
@@ -163,9 +169,13 @@ function drawFan(R) {
     g.setLineDash([6, 6]); g.strokeStyle = 'rgba(212,160,82,0.7)'; g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + RMAX * sc, oy - RMAX * sc); g.stroke(); g.setLineDash([]);
     const A = fan(S.n);
     A.forEach((th, k) => { const r = R[k], end = (r.d == null ? RMAX : Math.min(RMAX, lay(r.d))) * sc;
+        if (k >= shown) { g.strokeStyle = 'rgba(140,230,205,0.07)'; g.lineWidth = 1; g.beginPath(); g.moveTo(ox, oy);   // an address not yet swept: there, nothing arrived
+            g.lineTo(ox + RMAX * sc * Math.cos(th), oy - RMAX * sc * Math.sin(th)); g.stroke(); return; }
         g.strokeStyle = r.d == null ? 'rgba(140,230,205,0.18)' : 'rgba(140,230,205,0.55)'; g.lineWidth = S.n > 100 ? 0.6 : 1.1;
         g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + end * Math.cos(th), oy - end * Math.sin(th)); g.stroke();
         if (r.d != null) { g.fillStyle = r.col; g.beginPath(); g.arc(ox + end * Math.cos(th), oy - end * Math.sin(th), S.n > 100 ? 2.5 : 4.5, 0, 2 * Math.PI); g.fill(); } });
+    if (shown > 0 && shown < A.length) { const th = A[shown - 1]; g.strokeStyle = '#d4a052'; g.lineWidth = 2.5;   // the hand, where the sweep is now
+        g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + RMAX * sc * Math.cos(th), oy - RMAX * sc * Math.sin(th)); g.stroke(); }
     g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(ox, oy, 5, 0, 2 * Math.PI); g.fill();
     g.fillStyle = '#8a8a96'; g.font = '14px DM Mono, monospace'; g.fillText('home', ox + 8, oy - 8); g.fillText('horizon', ox + 6, P + 4);
 }
@@ -179,7 +189,7 @@ function drawMetres(extent) {
     M.forEach(th => { g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + L * Math.cos(th), oy - L * Math.sin(th)); g.stroke(); });
     return M;
 }
-function drawStrip(R) {
+function drawStrip(R, shown) {
     const c = $('strip'), g = c.getContext('2d'), W = c.width, Hh = c.height, P = 20, n = R.length, w = (W - 2 * P) / n;
     g.fillStyle = '#000'; g.fillRect(0, 0, W, Hh);
     const A = fan(n), lo = Math.log10(Math.tan(A[0])), hi = Math.log10(Math.tan(A[n - 1]));
@@ -188,9 +198,11 @@ function drawStrip(R) {
     const cx = P + (0 - lo) / (hi - lo) * (W - 2 * P); g.strokeStyle = '#d4a052'; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(cx, 4); g.lineTo(cx, 34); g.stroke(); g.setLineDash([]);
     const base = Hh - 14, top = 52, dmax = 16;
     R.forEach((r, k) => { const x = P + k * w;
+        if (k >= shown) return;                              // not swept yet: nothing has arrived there
         if (r.d == null) { g.fillStyle = '#16161d'; g.fillRect(x, top, Math.max(1, w - 1), base - top); return; }
         const hgt = Math.max(3, (Math.log10(Math.max(r.d, 1e-3)) + 3) / (dmax + 3) * (base - top));
         g.fillStyle = r.col; g.fillRect(x, base - hgt, Math.max(1, w - 1), hgt); });
+    if (shown < n) { g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.moveTo(P + shown * w, top - 4); g.lineTo(P + shown * w, base); g.stroke(); }
     g.fillStyle = '#6a6a76'; g.font = '12px DM Mono, monospace'; g.fillText('addresses (fixed)', P, 46); g.fillText('payload: colour and distance (changes)', P + 190, 46);
 }
 
@@ -200,13 +212,16 @@ function render() {
     let worst = 0; R.forEach((r, k) => { worst = Math.max(worst, Math.abs(r.v_h - turn[k]) / turn[k]); });
     const vs = R.map(r => r.v_h), med = median(vs), below = vs.filter(v => v < 1 - 1e-12).length, above = vs.filter(v => v > 1 + 1e-12).length;
     const met = R.filter(r => r.d != null).length;
-    drawFan(R); drawStrip(R);
+    const shown = Math.round(S.sweep * S.n), seen = R.slice(0, shown).filter(r => r.d != null).length;
+    drawFan(R, shown); drawStrip(R, shown);
     const W = worldOf(S.world, Math.pow(10, s)), M = drawMetres(S.unknown ? null : W.extent);
     const nearM = M ? M.filter(th => Math.tan(th) <= 1).length : null;
-    last = { worst, med, below, above, met, nearMetres: nearM, metres: M };
+    last = { worst, med, below, above, met, nearMetres: nearM, metres: M, shown, seen };
     $('sizeVal').textContent = S.unknown ? 'unknown' : 'S = 10^' + S.s;
     $('say').textContent = `${WORLDS.find(w => w[0] === S.world)[1]}, ${S.unknown ? 'of unknown size' : 'size 10^' + S.s}: ` +
-        `${met} of ${S.n} rays meet something, ${S.n - met} run to the horizon. The rays have not moved.`;
+        (shown < S.n ? `swept ${shown} of ${S.n} addresses, ${seen} payloads seen so far. The addresses were all there before the sweep.`
+        : `${met} of ${S.n} rays meet something, ${S.n - met} run to the horizon. The rays have not moved.`);
+    $('swept').value = S.sweep; $('sweptVal').textContent = `${shown} of ${S.n}`; $('sweep').classList.toggle('on', !!sweeping);
     $('check').innerHTML = `<span class="ok">Every reading, taken back from where its ray landed, against the turn's own (tan of its angle, no world at all): largest relative difference ${worst.toExponential(1)}.</span> ` +
         `Median v/h = ${med.toPrecision(12)} (the corner, 1); ${below} rays below it, ${above} above.`;
     $('compare').innerHTML = M ? `Equal-metres reader, told the size: ${nearM} of ${S.n} addresses inside the corner (v ≤ h), against the turn's ${below + 1}. Change S and its rays move.`
@@ -215,7 +230,12 @@ function render() {
     document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
     $('unknown').classList.toggle('on', S.unknown);
 }
-let last = null;
+let last = null, sweeping = null;
+// the sweep: the hand passes the addresses in order from zero, and what has arrived shows behind it
+function sweep() { if (sweeping) { cancelAnimationFrame(sweeping); sweeping = null; render(); return; }
+    const T = 5000, t0 = performance.now() - (S.sweep < 1 ? S.sweep * T : 0);
+    const go = now => { S.sweep = Math.min(1, (now - t0) / T); sweeping = S.sweep < 1 ? requestAnimationFrame(go) : null; render(); };
+    sweeping = requestAnimationFrame(go); }
 function set(o) { Object.assign(S, o); $('size').value = S.s; render(); return S; }
 $('worlds').innerHTML = WORLDS.map(([k, l]) => `<button data-w="${k}">${l}</button>`).join('');
 $('ns').innerHTML = [15, 63, 255].map(n => `<button data-n="${n}">${n}</button>`).join(' ');
@@ -223,6 +243,8 @@ document.querySelectorAll('[data-w]').forEach(b => b.onclick = () => set({ world
 document.querySelectorAll('[data-n]').forEach(b => b.onclick = () => set({ n: +b.dataset.n }));
 $('size').addEventListener('input', e => set({ s: +e.target.value, unknown: false }));
 $('unknown').onclick = () => set({ unknown: !S.unknown });
+$('sweep').onclick = sweep;
+$('swept').addEventListener('input', e => { if (sweeping) { cancelAnimationFrame(sweeping); sweeping = null; } set({ sweep: +e.target.value }); });
 let timer = null, step = 0;
 function play(on) { S.play = on; $('play').classList.toggle('on', on); clearInterval(timer);
     if (on) timer = setInterval(() => { step++; const w = WORLDS[step % WORLDS.length][0], r = rng(step)();
@@ -232,7 +254,9 @@ const q = new URLSearchParams(location.search);
 if (WORLDS.some(w => w[0] === q.get('world'))) S.world = q.get('world');
 if (q.get('s') === 'unknown') S.unknown = true; else if (q.has('s')) S.s = Math.min(12, Math.max(0, +q.get('s')));
 if (['15', '63', '255'].includes(q.get('n'))) S.n = +q.get('n');
+if (q.has('sweep') && isFinite(+q.get('sweep'))) S.sweep = Math.min(1, Math.max(0, +q.get('sweep')));
 $('size').value = S.s; render(); if (q.get('play') === '1') play(true);
+if (q.get('sweep') === '0') sweep();                         // ?sweep=0 sweeps from zero as the page opens
 window.__payloadFree = { fan, worldOf, hit, readings, median, metresFan, lay, WORLDS, set, state: () => ({ ...S, last }) };
 </script>
 </body>
