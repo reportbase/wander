@@ -1,1 +1,2 @@
 f = 0.0: AF2-wide 2.390e-03  AF2-vote 1.980e-03  BA-CB 1.812e-03   worst turn error: wide 0.2512 deg, vote 0.1703 deg
+f = 0.1: AF2-wide 4.723e-03  AF2-vote 2.549e-03  BA-CB 1.867e-03   worst turn error: wide 6.3927 deg, vote 0.3342 deg
