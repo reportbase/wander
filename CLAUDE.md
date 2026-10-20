@@ -360,6 +360,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   hook `window.__depth` (`cell`, `share`, `dist`, `area`, `graph`, `tree`, `digits`, `descent`, `fade`, `avg`, `maxDiff`,
   `bestGamma`, `mass`, `drawn`, `RH`, `RG`, `keep`, `halfLevel`, `maxima`, `thresh`, `windowOf`, `set`, `state`). Not in the
   flying page.
+- `boost-sky.html`: **sampling a boosted sky** (20 Oct 2026, Tom: "seems like cauchy could provide more run-time options,
+  not have to precalculate so much", "yes", then "can you demo this?"; SPN R402; IMS), a standalone page, plain canvas. A sky
+  importance-sampled under a boost along the axis (rapidity η, 0–4), the light per solid angle f = D^k·L (k = 2 arrivals,
+  4 beaming), the payload L uniform or a sun (vMF κ = 500 at 60°). Four samplers: uniform; the Cauchy (uniform directions in
+  the sky's frame pushed through the boost, no table); the table rebuilt per view (64 × 128, 8,192 evaluations a change);
+  mixed (L tabled once in the sky's frame, pushed through the boost). Panels: the sky as seen and in its own frame, both on
+  the level ln tan(θ/2), on which the boost is a slide of η, with 2,000 sampled directions; each sampler's V by quadrature
+  (4 × 4 Gauss–Legendre in 128 × 256 cells) at this η and against η. `?eta=&k=2|4&sky=uniform|sun&show=uniform|cauchy|table|mixed&play=1`;
+  hook `window.__boostSky` (`variance`, `samples`, `seenTable`, `restTable`, `Lof`, `toSeen`, `toRest`, `set`, `state`,
+  `curveFor`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -463,7 +473,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -1927,6 +1937,10 @@ In short:
       and 2 about the eye gives the same addresses; 45° across and up reads 1 and 1; one step's two rays cross at every
       corner, in steps, exactly; the counted stride writes metres; the cabinet's distance over the ball's the referee's;
       from one place, distance unread.
+
+  43. **boost-sky.html:** a uniform sky's V 0 for the Cauchy and the payload tabled once at η 0.5, 2, 4; with a sun the
+      Cauchy's V 124.75 and the mixed sampler's 0.0684 the same at every η; the table rebuilt per view more than 10 times the
+      Cauchy at η = 4 (4,098); with beaming the mixed below the Cauchy; the boost a slide of η on the level, exactly.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
