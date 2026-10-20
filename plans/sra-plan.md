@@ -97,3 +97,15 @@ script.*
 - The azimuth tested independently: compute the observed direction's unit vector by the Lorentz transformation of the
   photon's momentum (not by keeping φ), and read its azimuth.
 - *Killed* if either fails. A5′ reads A1′ for A1.
+
+### Run 2 (19 Oct; `runs/sra/sra2.py`, output `runs/sra/sra-run2.txt`)
+
+- **A1′ killed, by my set-up again.**
+  - The azimuth is unmoved by the Lorentz transformation to 5·10⁻⁵¹: tested independently, it holds.
+  - z′ = z/k missed by 7.4·10⁻⁴⁵ relative. The chart (n_x + i·n_y)/(1 + n_z) cancels digits where n_z is near −1, that is
+    sources behind the observer, θ near π. A relative tolerance at the working precision's edge cannot absorb that.
+- **A5′ killed in its letter.**
+
+**A1″ (before run 3).** Run 2's script unchanged except the working precision, raised from 50 digits to 100, with the
+same tolerance 10⁻⁴⁵. If the identity is exact and the misses are cancellation, the worst relative error falls by about
+fifty orders. *Killed* if the worst stays above 10⁻⁴⁵. A5″ reads A1″.
