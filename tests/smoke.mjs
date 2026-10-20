@@ -1262,6 +1262,34 @@ try {
     failures.push(`[${current}] ${JSON.stringify(pf)}`);
   console.log(`${failures.length === before44 ? 'ok  ' : 'FAIL'} ${current} (${pf.cases} worlds, sizes and fans give back the turn's own readings to ${pf.worst.toExponential(1)}, the median at the corner, half either side; ${pf.paints} different paints; the equal-metres reader moves with the size and has nothing to space against when it is unknown)`);
 
+  // ── 45. payload-free-3d.html: the same in three dimensions: every world at every size or of unknown size gives back the
+  //    sweep's own [h : v : v₂], so every count is the grid's (a half each side of every corner, the near field a third);
+  //    the paint differs; the equal-metres screen needs the size; WebGL drew frames (three.js served as for check 22) ──
+  current = 'payload-free-3d.html';
+  const before45 = failures.length;
+  await page.route(/^https:\/\/cdn\.jsdelivr\.net\/npm\/three@0\.160\.0\//, async route => {
+    const rel = new URL(route.request().url()).pathname.replace('/npm/three@0.160.0/', '');
+    try { await route.fulfill({ status: 200, contentType: 'text/javascript', body: await readFile(join(ROOT, 'node_modules/three', rel)) }); }
+    catch { await route.continue(); }
+  });
+  await page.goto(new URL('payload-free-3d.html?world=room', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__payloadFree3d && __payloadFree3d.frames > 2, null, { timeout: 30000 }).catch(() => {});
+  const p3 = await page.evaluate(() => { const P = __payloadFree3d, o = { worst: 0, cases: 0, counts: {}, paints: new Set() };
+    for (const n of [16, 32]) { const G = P.grid(n), seen = new Set();
+      for (const [w] of P.WORLDS) for (const s of [0, 6, 12, 15]) { const R = P.readings(w, s, n); o.cases++;
+        R.forEach((r, k) => { const d = G[k].d; o.worst = Math.max(o.worst, Math.abs(r.vh - d[1] / d[0]) / (d[1] / d[0]), Math.abs(r.v2h - d[2] / d[0]) / (d[2] / d[0])); });
+        seen.add(JSON.stringify(P.counts(R))); if (n === 16 && s === 0) o.paints.add(R.map(r => r.col ? r.col.join() : '-').join('|')); }
+      o.counts[n] = [...seen].map(x => JSON.parse(x)); }
+    o.paints = o.paints.size; const a = P.metresScreen(10, 16), b = P.metresScreen(1e4, 16);
+    o.metresMove = Math.abs(a[5][1] - b[5][1]) > 1; o.metresNone = P.metresScreen(null, 16) === null;
+    o.frames = P.frames; o.webgl = P.webgl; o.page = P.state().last; return o; });
+  const c32 = p3.counts[32];
+  if (p3.worst > 1e-14 || p3.counts[16].length !== 1 || c32.length !== 1 || c32[0].v2LeH !== 0.5 || Math.abs(c32[0].vLeH - 0.5) > 0.01 ||
+    Math.abs(c32[0].v2LeV - 0.5) > 0.01 || Math.abs(c32[0].near - 1 / 3) > 0.01 || p3.paints < 7 || !p3.metresMove || !p3.metresNone ||
+    !p3.webgl || !(p3.frames > 2) || p3.page.met !== p3.page.N)
+    failures.push(`[${current}] ${JSON.stringify(p3)}`);
+  console.log(`${failures.length === before45 ? 'ok  ' : 'FAIL'} ${current} (${p3.cases} worlds, sizes and grids give back the sweep's own [h : v : v₂] to ${p3.worst.toExponential(1)}; one set of counts per grid, v ≤ h ${c32[0].vLeH}, v₂ ≤ h ${c32[0].v2LeH}, v₂ ≤ v ${c32[0].v2LeV}, the near field ${c32[0].near.toFixed(4)} at 32 × 32; ${p3.paints} paints; the equal-metres screen moves with the size and has none when it is unknown; WebGL drew ${p3.frames} frames)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
