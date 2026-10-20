@@ -132,3 +132,52 @@ The verdict, read past the letter, as a measurement:
 - With poses fixed it is also the cheapest of the three.
 - It is a robust estimator among known ones, close to the best and simpler, not a winner. Joint poses, far features
   and real images remain.
+
+### Before run 2: the poses not given (19 Oct, written before run 2's script)
+
+Tom (after run 1's explanation, which named the untested cases: "not knowing where you stood …, things very far away,
+real photographs"): "test it". Run 2 takes the first: the poses estimated jointly. Far features enter only as the source
+of the turn. Real photographs need a dataset, and are not this run.
+
+**The set-up.**
+- Run 1's rooms, with K = 8 standpoints and the 6 far features (10⁶ m) added.
+- Every standpoint is turned by a seeded rotation. Nothing is given but the readings and which feature each is.
+- The gauge: standpoint 1 at the origin in its own frame, |AB| = 1.
+- Cauchy bearings, γ = 10⁻³; outliers f ∈ {0, 0.1, 0.2, 0.3}, as in run 1.
+
+**The address-first pipeline (AF2), every stage a median of pairwise quantities:**
+1. **The turn of each standpoint from standpoint 1.** Each pair of far features gives one rotation by the triad method
+   (two direction pairs fix it). Take the coordinatewise median of the 15 rotations as quaternions, signs aligned, then
+   normalize.
+2. **The direction of each step from standpoint 1.**
+   - With the turn known, each room feature gives a normal n = u₁ × R·u_k, which is perpendicular to the step.
+   - Each pair of normals gives a candidate step direction, n × n′.
+   - Take the median of the candidates, signs aligned, normalized.
+   - The overall sign is the one that puts most features in front.
+3. **The scale of each step after the first.** Each feature, placed from standpoints 1 and 2, gives the step length s
+   along the step direction at which standpoint k's ray passes closest. Take the median.
+4. **The places.** Run 1's AF (the median of pairwise crossings), with the poses from steps 1–3.
+
+**Bundle adjustment.** All poses (the six numbers of each, standpoint 2's length held at 1) and all 86 points.
+- **BA-LS:** least squares.
+- **BA-CB:** Cauchy loss at γ.
+- Both start from AF2's answer. That is generous to them, since bundle adjustment needs a starting point and AF2
+  needs none.
+
+**Predictions.**
+- **G1 (clean, f = 0).**
+  - AF2's median point error is within 3 times run 1's AF with poses given (1.23·10⁻³ at K = 8).
+  - BA-CB from it is at most AF2's.
+  - BA-LS is worse than BA-CB.
+- **G2 (the weakest link, from theory).**
+  - A rotation from a pair of far features is clean only if all four of its readings are, (1 − f)⁴, which falls below ½
+    at f = 1 − 2^(−1/4) = 0.159.
+  - So AF2's median error stays within 3 times its clean value at f = 0.1, and passes 10 times at f = 0.2.
+- **G3.** At f = 0.1, BA-LS passes 10 times its clean error.
+- **G4.** At f = 0.1, BA-CB started from AF2 stays within 3 times its clean error.
+- **G5 (the verdict).** A judgment. *Killed* if G1 or G2 is killed.
+  - With poses unknown, the address-first pipeline still works.
+  - Its breakdown is set by its weakest median, the rotation from far features, and the share of clean pairs predicts it.
+  - Bundle adjustment with a robust cost refines it.
+
+*Each killed if its clauses fail.*
