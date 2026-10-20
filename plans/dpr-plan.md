@@ -110,3 +110,46 @@ plane, not √(nf). *Killed* if not.
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (20 Oct; `runs/dpr/dpr.py`, output `runs/dpr/dpr-run1.txt`)
+
+The relative separation r(d) = Δd/d, one stored step farther, computed exactly (50 digits; the floats' neighbours from
+binary32 itself):
+
+| d (m) | Z24 | IP24(n) | RZ32 | LOG24 | RL24(√(nf)) | RL24(n) |
+|---|---|---|---|---|---|---|
+| 1 | 5.96·10⁻⁸ | 5.96·10⁻⁸ | 5.96·10⁻⁸ | 9.61·10⁻⁷ | 1.71·10⁻³ | 9.61·10⁻⁷ |
+| 10 | 5.96·10⁻⁷ | 5.96·10⁻⁷ | 7.45·10⁻⁸ | 9.61·10⁻⁷ | 1.71·10⁻⁴ | 9.61·10⁻⁷ |
+| 10² | 5.96·10⁻⁶ | 5.96·10⁻⁶ | 9.31·10⁻⁸ | 9.61·10⁻⁷ | 1.71·10⁻⁵ | 9.61·10⁻⁷ |
+| 10³ | 5.96·10⁻⁵ | 5.96·10⁻⁵ | 1.16·10⁻⁷ | 9.61·10⁻⁷ | 1.71·10⁻⁶ | 9.61·10⁻⁷ |
+| 10⁴ | 5.96·10⁻⁴ | 5.96·10⁻⁴ | 7.28·10⁻⁸ | 9.61·10⁻⁷ | 5.40·10⁻⁷ | 9.61·10⁻⁷ |
+| 10⁵ | 6.00·10⁻³ | 6.00·10⁻³ | 9.09·10⁻⁸ | 9.61·10⁻⁷ | 5.40·10⁻⁷ | 9.61·10⁻⁷ |
+| 10⁶ | 0.0634 | 0.0634 | 1.14·10⁻⁷ | 9.61·10⁻⁷ | 5.40·10⁻⁷ | 9.61·10⁻⁷ |
+| 10⁷ | 1.48 | 1.48 | 7.11·10⁻⁸ | 9.61·10⁻⁷ | 5.40·10⁻⁷ | 9.61·10⁻⁷ |
+
+- **D1 killed, by my set-up, in its first clause.**
+  - Z24 follows (d/n)(1 − n/f)·2^(−24) within 1% from 1 m to 10⁵ m. At 10⁶ m it is 6% over (0.0634 against 0.0596),
+    and at 10⁷ m 1.48 against 0.6.
+  - My formula was the first-order step, true only while the step is small. Far out one step of the buffer is no longer
+    small against what is left of 1 − n/d, and the separation runs away faster than d/n. The buffer is worse far out
+    than I predicted, not better.
+  - The second clause holds exactly: IP24 at H = n gives Z24's r(d) at every d. Its stored value is Z24's,
+    (1 − n/d)/(1 − n/f), so the standard depth buffer is the in-place lay with its corner at the near plane.
+- **D2 not killed:** reversed-Z lies in (2^(−24), 2^(−23)] at every d, from 5.96·10⁻⁸ to 1.16·10⁻⁷.
+- **D3 not killed:** log depth is 9.607·10⁻⁷ at every d.
+- **D4 not killed.** The reader's lay at √(nf) is absolute inside the corner, Δd = 1.707·10⁻³ m (r = 1.7·10⁻³ at 1 m,
+  1,800 times log depth's), and relative past it, 5.399·10⁻⁷, 1.78 times better than log depth.
+- **D5 not killed:** the reader's lay at H = n is log depth, to the digit.
+- **D6 not killed.** Every exponent of binary32 was checked at its first two and last two mantissas, 1,018 values (the
+  spacing is constant within an exponent, so these cover all). Every value keeps both clauses: subnormals spaced
+  2^(−149), and normals relatively in (2^(−24), 2^(−23)].
+- **D7 killed in its letter**, by D1's first clause.
+
+The verdict, read past that letter:
+- The standard depth buffer is the in-place lay with its corner at the near plane. Log depth is the reader's lay with its
+  corner at the near plane. A binary32 float is a reader's lay in base 2: proportional below its corner at the smallest
+  normal, then 2²³ addresses in every level. Reversed-Z stores the in-place lay's reciprocal in that float, which is why
+  its relative precision is constant.
+- On depth precision the geometry adds no new scheme: it names the existing ones. The pair's corner, √(nf), trades
+  precision near for precision far, so it is the right H only where absolute precision is wanted near. Rendering wants
+  relative precision, and for that the corner belongs at the near plane, or below it, as floats put it.

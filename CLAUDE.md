@@ -551,6 +551,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the survival slope over 2–32 px is −0.31, a plateau of wrong matches (5.1% past 32 px), not a power tail; B2 not killed
   at its edge (Cauchy over normal in 6 of 8, but post hoc it cannot tell a Cauchy from a normal plus a floor); B3 not
   killed (γ 0.1–0.8 px, growing with difficulty). A narrow core plus wrong matches; the far, low-parallax case untested.
+  DPR (`plans/dpr-plan.md` + `runs/dpr/dpr.py`, 20 Oct; SPN R401; Tom: "what about synthetic situations, where the
+  blueprint is known, but you want to provide a first person view.", "yes"): drawing a known blueprint is rendering, a
+  writing turned into a reading; exact depth precision, near 1 m, far 10⁷ m. The standard 24-bit depth buffer is the
+  in-place lay with its corner at the near plane, log depth the reader's lay there (D5), a binary32 float a reader's lay in
+  base 2 (subnormals the proportional part, 2²³ addresses a level; D6), reversed-Z the in-place lay's reciprocal in a float
+  (constant relative precision, D2); the reader's lay at √(nf) absolute inside the corner (1.7 mm) and 1.78× better than
+  log depth past it (D4). D1 killed by my set-up (a first-order step formula far out). The geometry names these schemes
+  and adds none.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
