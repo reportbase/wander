@@ -37,6 +37,8 @@ goes into OFS only once it has been worked out here or in a plan.*
   - Added to §5, "Passive and active readers": the Cauchy belongs to the turn, whether it aims a receiver or an
     emitter, and ranging is the active reader's carried-in amount.
   - §9's lighthouse entry now says so too.
+- 19 October, later (SPN R389). Tom: "yes, that clarification means that cauchy is an interesting combination
+  capabilities. its not the reader, its not the writer, its the turn itself." §9 now opens with it.
 
 **Standing marks.** Each claim carries one:
 - **[classical]**: established outside this corpus (surveying, photogrammetry, computer vision, robotics), quoted;
@@ -297,6 +299,11 @@ Why it might not: least squares with a good robust cost is hard to beat on accur
 it (§0). The Cauchy cost is already one of those costs. **[reading]**
 
 ## 9. The Cauchy's place
+
+The Cauchy is the law of the uniform turn itself: not the reader's, not the writer's, not the payload's (SPN R389). Any
+uniform turn lays it, whether it aims a receiver (an eye) or an emitter (a lamp, a lidar's beam), and whatever uses the
+turn inherits it. That is why one law serves a passive eye, an active lamp and a ranging scanner, each adding its own
+amount, or none, on top. **[exact]**, that the law is the turn's (OFS Theorem 6(a)); **[reading]**, the wording.
 
 Nothing in §§3–7 needs the Cauchy by name. It enters in four places:
 - **as the uniform sweep's law,** which lays the addresses (§2);

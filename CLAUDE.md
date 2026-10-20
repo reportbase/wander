@@ -995,6 +995,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   rate is half the central's (the inscribed angle theorem, §4's 2 and 1); 2·dθ/dφ − 1 is any circle's own Cauchy (the
   wrapped Cauchy, the Poisson kernel), here 0 but at home: joined by their rates the sweeps return the reader's place, by
   their product H in H; neither the 20. Checked in `runs/ofs/rim.py`.
+  **The Cauchy is the turn's** (19 Oct, SPN R389; Tom: "its not the reader, its not the writer, its the turn itself.";
+  "yes"): OFS's introduction, Results bullet, Theorem 6's opening and "What the result establishes" say the Cauchy is the
+  law of the uniform turn itself, whoever turns and whether it receives or sends (a lighthouse the same turn aimed
+  outward); the address reader uses it as its addresses. Refines R330's "a property of the reader".
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

@@ -47,11 +47,13 @@ Our main result concerns what a reader receives when it sweeps this circle unifo
 follow the Cauchy distribution. A sweep is uniform by definition, since a turn measured by itself has no other measure
 (§2). Other weights are coherent, but each counts the turn against something else, a clock, a screen or what arrives,
 and where such a weight treats the two parties alike, what survives is the median at the corner (Theorem 6(e)). We show
-that the distribution belongs entirely to the address reader, the inscribed sweep, and not to anything that arrives at
-its addresses: it is a property of the reader, not of the payload, since whatever is met in each direction cancels from
-every single reading. The payload reader, the central sweep, receives amounts, and their law is the payload's. This is
-why the readers are named by what they receive. A lighthouse is such a sweep: its lamp turns, and the shore records the
-lamp's addresses laid on a line. Where instead many sources happen to be spread evenly in angle and a reader counts what
+that the distribution is the law of the uniform turn itself. It is not the payload's, since whatever is met in each
+direction cancels from every single reading. Nor is it the reader's or the writer's: any uniform turn lays it, whoever
+or whatever turns, and whether the turn aims something that receives or something that sends. The address reader, the
+inscribed sweep, is the reader that uses the turn's law as its addresses. The payload reader, the central sweep,
+receives amounts, and their law is the payload's. This is why the readers are named by what they receive. A lighthouse
+is the same turn aimed outward: its lamp turns, and the shore records the lamp's addresses laid on a line. An eye
+turning to look and a lamp turning to shine lay one law. Where instead many sources happen to be spread evenly in angle and a reader counts what
 arrives, the same shape is the payload's density over directions, a property of the world, not of any reader. This gives
 a reason for the Cauchy's best-known peculiarity. Its median exists and sits at the corner, because a median depends
 only on order, which is a property of addresses. Its mean does not exist, because a mean is a sum of sizes, a question
@@ -188,8 +190,9 @@ writer's vantage as if a single observation held it. Section 3 sets out the read
   work; no party's true size enters it.
 - Inside the corner the reader can lay readings out in proportion; past it, if no scale is preferred, only a
   logarithmic layout is consistent. The reader has two address spaces joined at one corner (§6).
-- **Main result.** Sweeping the circle uniformly from home yields the Cauchy distribution, and the Cauchy is the
-  reader's addresses, not its payload. Whatever is met in each direction cancels from the reading. Order survives every
+- **Main result.** Sweeping the circle uniformly from home yields the Cauchy distribution. The Cauchy is the law of
+  the uniform turn itself, whoever turns and whether the turn receives or sends: the address reader's addresses, not its
+  payload. Whatever is met in each direction cancels from the reading. Order survives every
   change of payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7). The median
   at the corner needs only that the sweep treat the two parties alike, and the missing mean only that, besides, its
   weight not vanish at the horizon; the circle and the uniform turn give the Cauchy's exact shape (§7.2). As a rule: a
@@ -1694,7 +1697,7 @@ any sum).
 **Theorem 6.** Parts (a) and (d) concern the readings of Proposition 5: the other party drawn at V = H and the circle
 swept uniformly by direction. Parts (b) and (c) hold for any finite set of readings. Part (e) drops both the circle and
 the uniform turn. The readings are the address reader's: directions, ratios with no amount in them, so what (a), (d) and
-(e) find is a property of that reader and not of what it reads; the payload reader's amounts are what (c) concerns.
+(e) find is a property of the uniform turn that lays them, whoever makes it, and not of what is read; the payload reader's amounts are what (c) concerns.
 
 (a) *Nothing that arrives changes the Cauchy.* Suppose that whatever arrives in the direction of each step lies at some
 reach ℓ > 0, an amount that may differ from direction to direction and is unknown to the reader. In the reader's unit
@@ -1740,8 +1743,8 @@ arrives, never what arrives.
 1. The sweep is defined without any reference to what arrives: equal steps of turn, from home.
 2. Changing what arrives, while keeping the sweep, leaves the readings and their distribution exactly as they were
    (Theorem 6(a)).
-3. So the Cauchy is a property of the sweep, the reader's addressing, and finding it is no evidence by itself that
-   anything in the world is distributed that way.
+3. So the Cauchy is a property of the sweep, the uniform turn, whoever makes it, and finding it is no evidence by
+   itself that anything in the world is distributed that way.
 
 Two things are not claimed. The theorem does not show that every real observer counts by its sweep rather than by a
 clock, a flat sensor or what arrives (§2); it shows what a reader that counts by its sweep receives, and why the turn,
