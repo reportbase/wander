@@ -96,7 +96,12 @@
             <div class="tw" style="margin-top:10px"><table id="lensTab"></table></div>
             <p class="note">The lens bends the seen angle, θ′ = θ + (λ/2)·sin 2θ. Only slides of the level are Möbius maps on this
                 axis, so with λ ≠ 0 the view change is no longer one: closure breaks. Pushing samples through the lens still
-                works if each carries the lens's derivative (a normalizing flow), but no single z describes them any more.</p>
+                works if each carries the lens's derivative (a normalizing flow), but no single z describes them any more. Or the
+                Cauchy is refit to the lens: a few slid spherical Cauchys (z's) fitted to the lensed addresses, sampled directly.
+                That is unbiased, since the mixture is the density drawn from, and costs only variance. A lens that spreads the
+                level (λ &lt; 0) is fitted well by three z's. One that squeezes it (λ &gt; 0) is not: along the axis every spherical
+                Cauchy has one width on the level, and a mixture of them can be wider than that, never narrower, so three z's
+                collapse onto one.</p>
             <p class="note">V is the relative variance of one sample's estimate of the total light, (∫ f²/q)/F² − 1: 0 is a
                 perfect sampler. It is computed by quadrature, not from the dots. A view change costs the rebuilt table 8,192
                 evaluations of f plus its running sums; it costs the Cauchy and the mixed sampler one 2×2 matrix product.</p></div>
@@ -199,6 +204,40 @@ function lensStats(eta, lam, k, sky) {
     }
     return { residual, bias: E / F - 1 };
 }
+// THE CAUCHY REFIT TO THE LENS (Tom, 20 Oct: "can we make cauchy handle the lense"). About the axis every spherical Cauchy
+// is the uniform sky slid along the level: its density in t = ln tan(θ/2) is ½·sech²(t − s). The lens bends the level, so
+// the addresses it produces, p′(t′) = ½·sech²(t + η)/(dt′/dt), are no single such bump; a mixture of K slid bumps is fitted
+// to them (EM over 400 levels, centres and weights free), and directions are drawn from that mixture. The mixture is exactly
+// the density sampled from, so the estimate stays unbiased; the fit costs variance, not bias, and no table is built.
+const sech2 = t => { const c = Math.cosh(t); return 1 / (c * c); };
+function fitLens(eta, lam, K) {
+    const G = 400, ts = [], ws = [];
+    for (let i = 0; i < G; i++) { const cr = -1 + 2 * (i + 0.5) / G, th = 2 * Math.atan(Math.exp(tOf(cr) - eta));
+        ts.push(Math.log(Math.tan(lensOf(th, lam) / 2))); ws.push(1 / G); }   // equal-mass points of the lensed addresses
+    let mu = Array.from({ length: K }, (_, k) => ts[Math.floor((k + 0.5) * G / K)]), pi = Array(K).fill(1 / K);
+    for (let it = 0; it < 200; it++) {
+        const num = Array(K).fill(0), den = Array(K).fill(0);
+        for (let i = 0; i < G; i++) { const r = mu.map((m, k) => pi[k] * sech2(ts[i] - m)), tot = r.reduce((a, b) => a + b) || 1e-300;
+            for (let k = 0; k < K; k++) { const g = ws[i] * r[k] / tot; den[k] += g; num[k] += g * ts[i]; } }
+        for (let k = 0; k < K; k++) { pi[k] = den[k]; if (den[k] > 0) mu[k] = num[k] / den[k]; }
+    }
+    return { mu, pi };
+}
+const mixDensityT = (t, fit) => fit.mu.reduce((a, m, k) => a + fit.pi[k] * 0.5 * sech2(t - m), 0);
+// the variance of sampling the lensed view from the refit mixture (q per solid angle = q_t/(2π·sech² t′))
+function lensRefitV(eta, lam, k, sky, K) {
+    const be = Math.tanh(eta), ga = Math.cosh(eta), fit = fitLens(eta, lam, K);
+    let F = 0, A = 0; const hc = 1 / NC, hp = Math.PI / NP;
+    for (let i = 0; i < NC; i++) for (const [tc, wc] of GL) {
+        const c = -1 + (2 * i + 1) * hc + tc * hc, D = ga * (1 + be * c), th = 2 * Math.atan(Math.exp(tOf(c) - eta)), tl = lensOf(th, lam);
+        const tp = Math.log(Math.tan(tl / 2)), J = lensJ(th, lam), q = mixDensityT(tp, fit) / (2 * Math.PI * sech2(tp));
+        const Dk2 = Math.pow(D, k - 2), Dk = Math.pow(D, k);
+        for (let j = 0; j < NP; j++) for (const [tp2, wp] of GL) {
+            const phi = (2 * j + 1) * hp + tp2 * hp, w = wc * hc * wp * hp, L = Lof(c, phi, sky);
+            F += Dk2 * L * w; A += (Dk * L / J) * (Dk2 * L * w) / q; }
+    }
+    return { V: A / (F * F) - 1, fit };
+}
 function samples(kind, eta, k, sky, n = NS, seed = 402) {
     const be = Math.tanh(eta), r = rng(seed), out = [], qT = kind === 'table' ? seenTable(eta, k, sky) : null;
     for (let s = 0; s < n; s++) {
@@ -279,11 +318,14 @@ function render() {
         `<tr><td class="c">the Cauchy</td><td>${fmt(v.C)}</td><td>one 2×2 product</td></tr>` +
         `<tr><td class="t">the table rebuilt per view</td><td>${fmt(v.T)}</td><td>8,192 evaluations of f + sums</td></tr>` +
         `<tr><td class="m">mixed (payload tabled once)</td><td>${fmt(v.M)}</td><td>one 2×2 product</td></tr>`;
-    const ls = lensStats(eta, S.lens, k, sky); lastLens = ls;
+    const ls = lensStats(eta, S.lens, k, sky), R1 = lensRefitV(eta, S.lens, k, sky, 1), R3 = lensRefitV(eta, S.lens, k, sky, 3);
+    lastLens = { ...ls, refit1: R1.V, refit3: R3.V };
     $('lensTab').innerHTML = '<tr><th>through the lens</th><th>result</th><th>cost of a view change</th></tr>' +
         `<tr><td>the pushed directions against the nearest spherical Cauchy</td><td>${S.lens ? 'off by up to ' + (100 * ls.residual).toPrecision(3) + '%' : 'exact (' + ls.residual.toExponential(1) + ')'}</td><td></td></tr>` +
         `<tr><td class="c">the Cauchy, closure assumed (one z kept)</td><td>${S.lens ? 'biased ' + (ls.bias > 0 ? '+' : '') + (100 * ls.bias).toPrecision(3) + '%' : 'unbiased'}</td><td>one 2×2 product</td></tr>` +
         `<tr><td class="c">the Cauchy with the lens's derivative</td><td>unbiased, V ${fmt(v.C)} as without the lens</td><td>${S.lens ? 'a derivative per sample' : 'one 2×2 product'}</td></tr>` +
+        `<tr><td class="c">the Cauchy refit to the lens, one z</td><td>unbiased, V ${fmt(R1.V)}</td><td>a fit over 400 levels</td></tr>` +
+        `<tr><td class="c">the Cauchy refit to the lens, three z's</td><td>unbiased, V ${fmt(R3.V)}</td><td>a fit over 400 levels</td></tr>` +
         `<tr><td class="t">the table rebuilt per view</td><td>rebuilt anyway, lens or not</td><td>8,192 evaluations of f + sums</td></tr>`;
     const best = Object.entries({ Cauchy: v.C, 'rebuilt table': v.T, mixed: v.M }).sort((a, b) => a[1] - b[1])[0][0];
     $('say').textContent = (sky === 'uniform' && k === 2 ? 'A uniform sky, arrivals counted: the Cauchy is exact (V = 0) at every η, with no table. ' :
@@ -312,7 +354,7 @@ if (q.get('sky') === 'uniform') S.sky = 'uniform';
 if (q.has('lens')) S.lens = Math.min(0.9, Math.max(-0.9, +q.get('lens')));
 if (['uniform', 'cauchy', 'table', 'mixed'].includes(q.get('show'))) S.show = q.get('show');
 $('eta').value = S.eta; $('lens').value = S.lens; render(); if (q.get('play') === '1') play(true);
-window.__boostSky = { variance, lensStats, lensOf, lensInv, lensJ, samples, seenTable, restTable, Lof, toSeen, toRest, set, state: () => ({ ...S, last }), curveFor };
+window.__boostSky = { variance, lensStats, lensRefitV, fitLens, lensOf, lensInv, lensJ, samples, seenTable, restTable, Lof, toSeen, toRest, set, state: () => ({ ...S, last }), curveFor };
 </script>
 </body>
 </html>
