@@ -200,3 +200,34 @@ Drory answered in OFS §11.2, question 2: the selection (the even turn) is a cho
 the median at the corner survives any selection fair to the two parties, and the missing mean any such selection whose
 weight does not vanish at the horizon (Theorem 6(e)). (*Corrected* 13 October: the first wording dropped the horizon
 condition.)
+
+## The hand as a teaching picture (19 Oct, SPN R391)
+
+Tom (19:49 MDT): "find a paper that uses a metaphore like the hand and fingers to explain cauchy."
+
+Five web searches, two of them in the perception literature, found no hand-and-fingers picture. Every classical teaching
+picture found is the same one: something aimed at a uniform angle, with the spot where it lands on a straight line as
+the variable.
+
+- **A rotating needle,** its tangent projected onto a line: C. M. Cuadras, "Geometrical understanding of the Cauchy
+  distribution", *Qüestiió* 26 (2002) 283–287 (raco.cat/index.php/Questiio/article/view/27030; EuDML 40380).
+  - Elementary proofs of the Cauchy's properties from the circle.
+  - Igelbrink and Wakolbinger (Mainz) answered its call for a geometric proof that the mean of tangents of uniform
+    angles is again Cauchy.
+  - The nearest paper built on a picture.
+- **A flashlight** spun about its centre, one unit from a line: Larson and Odoni, *Urban Operations Research*, §3.3.3
+  (MIT).
+- **A light on a wall:** Siegrist, *Random Services*, the Cauchy distribution, X = a + b·tan Θ.
+- **A ball kicked toward a wall:** Wikipedia. **A blindfolded archer:** R Views (2017). **A spotlight, with grazing
+  beams for the tails:** QuantMemo.
+- **Gull's lighthouse (1988),** the Bayesian case; already in OFS Proposition 5(f).
+- **Perception:** none found that models a uniform turn of the eye or the hand as laying a Cauchy.
+- **Directional statistics:** a circular and spherical projected Cauchy (arXiv 2302.02468) is the nearest family, not
+  checked further.
+
+In every picture found, the turn is the mechanism and the landing spot, a position on the line, is the variable: the
+Cauchy as what arrives. The hand reverses this: the fingers (the turn's own addresses) are the variable, and what lands
+on them, the rings, is the payload. That reading was not found.
+
+Not a survey: it rests on web search results and the pages they returned. The full text of Cuadras could not be fetched
+(raco.cat would not resolve).
