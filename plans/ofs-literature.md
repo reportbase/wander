@@ -254,7 +254,7 @@ Three found, each classical, and each splitting what arrives into where (a law f
   8820).
   - The detectors on the shore record only that a flash arrived and where, not its brightness or its direction.
   - The problem keeps the addresses and throws the payload away by construction; brightness plays no part.
-- **Spectroscopy's strength × profile** (Townsend's line-profile notes; Hanson's EPS 238 notes; the Voigt literature).
+- **Spectroscopy's strength × profile** (Townsend's line-profile notes; Chance's EPS 238 notes (Harvard); Hanson's spectral-lineshape lecture (Princeton CEFRC); the Voigt literature).
   - A line is its strength, the integrated amount, times a profile of unit area. The Lorentzian is the profile.
   - Broadening reshapes the profile and leaves the strength alone; the strength scales the line and leaves the shape
     alone.
