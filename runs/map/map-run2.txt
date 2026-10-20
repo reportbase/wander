@@ -1,0 +1,6 @@
+
+M4: a swapped payload in B's view
+  rays of wrong matches pass 0.01066 apart at least; right matches meet to 1.39e-44
+  (A, B) against (A, C): swapped features differ by 0.08815 at least; the rest agree to 5.79e-38
+M4' not killed
+M7' KILLED (M6, run 1)

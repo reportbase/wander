@@ -145,3 +145,22 @@ At ε = 10⁻³ and 10⁻²:
 - Run 1's M4 clauses unchanged, but the right matches' meeting measured relative to the meeting's distance along A's
   ray: dist / max(1, t) < 10⁻⁴⁰.
 - Same seeds and swaps. *Killed* if any clause fails. M7′ reads M4′ for M4, and keeps M6 killed.
+
+### Run 2 (19 Oct; `runs/map/map2.py`, output `runs/map/map-run2.txt`)
+
+- **M4′ not killed.**
+  - Right matches meet to 1.4·10⁻⁴⁴ of their distance.
+  - Wrong matches' rays pass at least 0.011 |AB| apart.
+  - The loop separates swapped features by at least 0.088, and the rest agree to 6·10⁻³⁸.
+  - So the addresses flag every wrong payload match, and a third standpoint places it.
+- **M7′ killed in its letter**, by run 1's M6 alone.
+
+The verdict, read past that letter:
+- The two readers become a mapper with four acts and one amount.
+- The address says where and the payload says which.
+  - At exact resolution the addresses pair every point alone: the nearest wrong pair passes 2.8·10⁻⁴ |AB| apart.
+  - At finite resolution only the payload pairs them: 15% of rays are ambiguous at 1 mrad, 62% at 10 mrad.
+- Each half checks the other.
+- The scale enters only with the stride.
+- What failed is my bound on how a rotation error from far features spreads into places. It is set by the parallax of
+  the worst-placed feature, about δ·d/γ, not by its distance alone.

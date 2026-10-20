@@ -526,8 +526,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   room."; "both"): §7½ "What it takes to map": the two readers, four acts (turn, hold, step, match) and one amount; the
   address says where, the payload says which (identity, not geometry), each checking the other (rays of a wrong match do
   not meet; a loop places the error); a ranging payload in an unread unit gives the shape from one place; structure from
-  motion's keypoint and descriptor are the split unnamed. Tested by MAP (`plans/map-plan.md`, M1–M7 written, not run;
-  scripts to go in `runs/map/`), item 0 of §11's queue, before AFM.
+  motion's keypoint and descriptor are the split unnamed. Tested by MAP (`plans/map-plan.md` + `runs/map/`, exact, a
+  synthetic room of 80 features and 6 far): run 1 M1, M2, M3, M5 not killed (exact addresses pair alone, the nearest wrong
+  pair 2.8·10⁻⁴ |AB|; 15% of rays ambiguous at 1 mrad, 62% at 10 mrad; payload matches all 86; the unit cancels), M4
+  killed by my set-up (an absolute tolerance at far features), M6 killed narrowly (rotation from far features to 10⁻⁶,
+  places to 1.02·10⁻⁴ against my 10⁻⁴, a feature seen across 0.011 rad of parallax: δ·d/γ); run 2's M4′ not killed
+  (wrong matches' rays 0.011 apart, a third standpoint separates them). Item 0 of §11's queue, before AFM.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

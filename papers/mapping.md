@@ -328,6 +328,18 @@ the division of labour stated as a rule, with three consequences:
 - the bearings' error law (§4) points the estimator to medians;
 - a range in an unread unit is a reader, not a writer, so scale stays out of every stage but the last.
 
+**MAP, runs 1–2.** **[exact]**, in a synthetic room of 80 features and 6 far ones.
+- **Pairing.** With exact readings the addresses pair every point alone; the nearest wrong pair passes 2.8·10⁻⁴ |AB|
+  apart. At 1 mrad a seventh of the rays have a rival within reach, at 10 mrad five in eight.
+- **Matching by payload.** It gets all 86 right, and places come out to 10⁻⁴⁸.
+- **Checking.** A wrong match's rays pass at least 0.011 |AB| apart, and a third standpoint separates the swapped
+  features.
+- **Scale.** Scaling the world moves nothing until the stride writes metres.
+- **One place.** A ranging payload in an unread unit gives every distance ratio from there, and every place off by its
+  unit.
+- **The turn.** Six far features give the rotation between views to 10⁻⁶ rad. Places with it are worst for features
+  seen across little parallax, about δ·d/γ. The plan's bound of 10⁻⁴ |AB| was missed narrowly, at 1.02·10⁻⁴.
+
 ## 8. An address-first pipeline
 
 What a mapper built only from the stages above would do, against the usual pipeline. **[reading]**, the whole section;
