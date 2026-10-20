@@ -222,3 +222,41 @@ Read past the letter:
   - Or the rotation read from room features through the essential matrix, with a median over minimal sets (as RANSAC does
     with a vote).
   - A third route: the turn read in ratio forms from the vanishing points of the room's own edges.
+
+### Before run 3: a robust turn (19 Oct, written before run 3's script)
+
+Tom: "proceed with the next test", after run 2 named the robust turn as next. Run 2 broke at the turn, for two
+reasons:
+- **Conditioning:** its six far features sat in one window.
+- **Breakdown:** a median of pairs of four readings fails at f = 1 − 2^(−1/4) = 0.159.
+
+The breakdown applies to the step's direction too, since a pair of epipolar normals is also four readings. The step's
+length uses three readings, so it fails at f = 1 − 2^(−1/3) = 0.206. Run 3 meets the two reasons separately.
+
+**The set-up.** Run 2's rooms and readings, but with 12 far features at directions uniform over the sphere (seeded), so
+that pairs are well spread. Cauchy bearings, γ = 10⁻³; f ∈ {0, 0.1, 0.2, 0.3}.
+
+**Two pipelines.**
+- **AF2-wide:** run 2's AF2 unchanged (medians at every stage), on the spread far features.
+- **AF2-vote:** the same candidates, but at each of the three pose stages (turn, step direction, step length) the
+  candidate with the most agreeing readings is kept, and the median is then taken over the readings that agree. A
+  reading agrees when its angular residual is under 10γ (20γ for the step direction's normals). This is RANSAC's
+  consensus (Fischler and Bolles 1981) taken over every candidate, not a random sample. The places are run 1's AF.
+- **BA-CB** (Cauchy loss) started from AF2-vote.
+
+**Predictions.**
+- **H1 (conditioning).** Clean, AF2-wide's median point error is at most 2 times run 1's poses-given AF (2.5·10⁻³), and
+  its worst turn error is at most 0.2°.
+- **H2 (structure, unchanged).** AF2-wide still breaks between f = 0.1 (within 3 times clean) and f = 0.2 (past 10
+  times), since its medians of four-reading pairs are unchanged.
+- **H3 (consensus).** AF2-vote at f = 0.3 is within 3 times its clean error. The vote needs only one clean candidate and
+  a largest agreeing set made of clean readings.
+- **H4.** BA-CB started from AF2-vote is, at f = 0.3, within 3 times its own clean error, and no worse than AF2-vote.
+- **H5 (the verdict).** A judgment. *Killed* if H1, H2 or H3 is killed.
+  - The address-first pipeline's two weaknesses separate: spreading the far features fixes the conditioning; consensus
+    fixes the breakdown.
+  - With both, it is a sound start for a robust bundle adjustment under heavy-tailed readings and wrong matches.
+  - Consensus is not ours: it is RANSAC's. What remains ours is the error law, the breakdown points predicted from the
+    readings each stage uses, and the medians in ratio form.
+
+*Each killed if its clauses fail.*
