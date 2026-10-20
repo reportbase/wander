@@ -39,6 +39,8 @@ goes into OFS only once it has been worked out here or in a plan.*
   - §9's lighthouse entry now says so too.
 - 19 October, later (SPN R389). Tom: "yes, that clarification means that cauchy is an interesting combination
   capabilities. its not the reader, its not the writer, its the turn itself." §9 now opens with it.
+- 19 October, later (SPN R389). Tom: "in draw.html we use the shape library to test cauchy against a. variety of shape,
+  and it always returns a unit circle.", then "yes". §9 cites draw's SMP and RCC labs as the principle's controlled test.
 
 **Standing marks.** Each claim carries one:
 - **[classical]**: established outside this corpus (surveying, photogrammetry, computer vision, robotics), quoted;
@@ -304,6 +306,17 @@ The Cauchy is the law of the uniform turn itself: not the reader's, not the writ
 uniform turn lays it, whether it aims a receiver (an eye) or an emitter (a lamp, a lidar's beam), and whatever uses the
 turn inherits it. That is why one law serves a passive eye, an active lamp and a ranging scanner, each adding its own
 amount, or none, on top. **[exact]**, that the law is the turn's (OFS Theorem 6(a)); **[reading]**, the wording.
+
+Its earliest controlled test is draw's SMP lab (`reportbase/draw`, `draw.html?lab=smp`). The lab reads each shape of the
+shape library twice:
+- **stepped evenly in the turn:** the census comes back as the unit circle for every shape;
+- **walked at constant speed along the outline:** what comes back is the shape's own arc element, different for each
+  shape.
+
+The shape enters the turn only as what is met along each direction (the central reader's radii). A walk paced by the
+outline's length is not a turn, so the shape shows in it. draw's RCC lab says the same of one reader: its readings carry
+the turn, not the size. The corpus met it again in RSH (the census one sphere), in `h-chain.html` step 3 and in HZT.
+**[simulation]**, the labs.
 
 Nothing in §§3–7 needs the Cauchy by name. It enters in four places:
 - **as the uniform sweep's law,** which lays the addresses (§2);
