@@ -109,3 +109,20 @@ script.*
 **A1″ (before run 3).** Run 2's script unchanged except the working precision, raised from 50 digits to 100, with the
 same tolerance 10⁻⁴⁵. If the identity is exact and the misses are cancellation, the worst relative error falls by about
 fifty orders. *Killed* if the worst stays above 10⁻⁴⁵. A5″ reads A1″.
+
+### Run 3 (19 Oct; `runs/sra/sra3.py`, run 2's script at 100 digits; output `runs/sra/sra-run3.txt`)
+
+- **A1″ not killed.** z′ = z/k to 2·10⁻⁹⁵ relative; the azimuth unmoved to 10⁻¹⁰¹. Runs 1–2's misses were cancellation
+  at 50 digits.
+- **A5″ not killed.**
+  - Special relativity transforms what is seen in two parts.
+    - **The addresses:** aberration, a Möbius map of the celestial sphere, z ↦ z/k in the stereographic chart, with no
+      frequency in it. It carries a uniform sky to the spherical Cauchy (the wrapped Cauchy in 2 + 1) and moves only its
+      parameter, ρ = tanh(η/2).
+    - **The payload:** the Doppler factor D at each address.
+  - Beaming's D⁴ is D² of addresses (the Möbius map's Jacobian, the crowding ahead) times D² of payload (energy and
+    arrival rate).
+  - All classical. The split is in the formulas; none of the sources read names it.
+- **The archive's C1 stands.** It concerns one signed coordinate of the stereographic chart, which for a sphere sky is a
+  multivariate t's marginal, as Kato and McCullagh note, not a Cauchy. The spherical Cauchy is the law on the sphere
+  itself.

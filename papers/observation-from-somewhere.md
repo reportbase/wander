@@ -2020,6 +2020,27 @@ follow every increasing map; those facts are part (d). The other parts of Theore
   of index 1, with no angle in the terms (Lévy 1925); the turn is in the limit, which is where a planar Brownian motion
   started above the line first lands on it, a uniform turn from its start (Spitzer 1958). Our claim is that where a reader sweeps uniformly, the law of what it
   lays is its own addresses, whatever else may give the same shape.
+- *Special relativity's sky.* A moving observer sees each source change in two ways, which the theory writes as two
+  formulas.
+  - **Where the source is seen moves.** This is aberration: cos θ′ = (cos θ + β)/(1 + β cos θ), the same at every
+    frequency. In the stereographic chart it is z ↦ z/k, with k = √((1 + β)/(1 − β)), a Möbius map of the celestial
+    sphere (Penrose 1959; Terrell 1959).
+  - **What arrives at each place seen changes.** This is the Doppler factor D = √(1 − β²)/(1 − β cos θ′), which scales
+    each photon's energy and its arrival rate.
+
+  The first is a map of addresses, and it carries the Cauchy's family onto itself.
+  - A sky uniform in the sources' own frame is seen as the spherical Cauchy, density (1 − β²)/(4π(1 − β cos θ′)²)
+    (Kato and McCullagh 2020).
+  - Its parameter is ρ = tanh(η/2), where η is the rapidity. With one dimension fewer it is the wrapped Cauchy with the
+    same ρ.
+  - That density is D²/4π: the crowding of addresses toward the motion.
+
+  The second is a weighting of the payload at each address, and it moves no address.
+  - Of the D⁴ by which an isotropic sky's intensity brightens ahead (Rybicki and Lightman 1979), D² is the addresses'
+    crowding, and D² is the payload: energy and arrival rate, D each.
+
+  The split is in the formulas, aberration apart from Doppler shift and beaming. It is not named there as a
+  transformation of addresses and a weighting of payload. (We checked these identities exactly.)
 - *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
   (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
   does so everywhere; and no chart keeps both angles and areas (Euler 1777; Gauss 1828). What is ours is the reading: the
@@ -3094,6 +3115,8 @@ Jones, M. C. (2008b). On reciprocal symmetry. *Journal of Statistical Planning a
 Kakutani, S. (1944). Two-dimensional Brownian motion and harmonic functions. *Proceedings of the Imperial Academy
 Tokyo* 20(10), 706–714.
 
+Kato, S. and McCullagh, P. (2020). Möbius transformation and a Cauchy family on the sphere. *Bernoulli* 26(4).
+
 Kellogg, O. D. (1929). *Foundations of Potential Theory*. Springer, Berlin.
 
 Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen* (the Erlangen programme).
@@ -3150,11 +3173,16 @@ Norton, J. D. (2008). Ignorance and indifference. *Philosophy of Science* 75(1),
 
 Parker, M. C. and Jeynes, C. (2023). A maximum entropy resolution to the wine/water paradox. *Entropy* 25(8), 1242.
 
+Penrose, R. (1959). The apparent shape of a relativistically moving sphere. *Proceedings of the Cambridge
+Philosophical Society* 55, 137–139.
+
 Pitman, E. J. G. and Williams, E. J. (1967). Cauchy-distributed functions of Cauchy variates. *Annals of Mathematical
 Statistics* 38(3), 916–918.
 
 Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions of the Royal
 Society of London* 75.
+
+Rybicki, G. B. and Lightman, A. P. (1979). *Radiative Processes in Astrophysics*. Wiley, New York.
 
 Saint-Vincent, G. de (1647). *Opus geometricum quadraturae circuli et sectionum coni*. Antwerp.
 
@@ -3186,6 +3214,8 @@ Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the
 
 Stone, M. and Dawid, A. P. (1972). Un-Bayesian implications of improper Bayes inference in routine statistical
 problems. *Biometrika* 59(2), 369–375.
+
+Terrell, J. (1959). Invisibility of the Lorentz contraction. *Physical Review* 116(4), 1041–1045.
 
 Tissot, N. A. (1881). *Mémoire sur la représentation des surfaces et les projections des cartes géographiques*.
 Gauthier-Villars, Paris.

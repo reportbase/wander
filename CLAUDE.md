@@ -1015,6 +1015,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   each direction read as v/h, gives the Cauchy whatever is looked at, since "replace the wall with a row of trees" a row of
   trees, curved or straight, or nothing (trunk, gap, trunk swapped in and out, the direction unmoved); the row's shape only
   sets where the directions meet it; a straight row is the case where position equals the reading (the lighthouse).
+  **Special relativity's sky, the one physics exception** (19 Oct, SPN R395; Tom: "SR itself uses these ideas, and no
+  where does it mention the distinction between the payload and the addres."; "lets make this one exception because it
+  goes to our main thesis."): OFS §7.8 "Special relativity's sky": aberration a Möbius map of the addresses (z ↦ z/k), a
+  uniform sky boosted the spherical Cauchy (Kato and McCullagh 2020) with ρ = tanh(η/2), its density D²/4π; Doppler the
+  payload's weighting; beaming's D⁴ = D² × D². Checked in SRA (`plans/sra-plan.md` + `runs/sra/`; runs 1–2 killed in A1
+  by my set-up, run 3 at 100 digits not). Otherwise OFS keeps no physics (R201).
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

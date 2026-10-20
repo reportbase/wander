@@ -1,0 +1,2 @@
+A1'' z' = z/k, relative: worst 2.12e-95; azimuth moved: worst 1.43e-101  not killed
+A5'' not killed (A2, A3 from run 1)
