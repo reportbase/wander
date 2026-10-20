@@ -72,3 +72,28 @@ script.*
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (19 Oct; `runs/sra/sra.py`, output `runs/sra/sra-run1.txt`)
+
+- **A1 killed, by my set-up.**
+  - The cosine and half-angle forms agree to 4·10⁻⁴⁶.
+  - The stereographic clause missed by 1.5·10⁻⁴⁵ against 10⁻⁴⁵. I tested an absolute error on z, which is unbounded:
+    near θ = π, |z| = tan(θ/2) runs to the thousands, and 50 digits leave ~10⁻⁴⁹ relative.
+  - The azimuth is unchanged by construction in the script, so that clause was not tested independently.
+- **A2 not killed.**
+  - The pushed-forward uniform sky equals (1 − β²)/(4π(1 − β cos θ′)²) and Kato and McCullagh's d = 2 member to
+    5·10⁻⁴⁸ or better.
+  - The 2 + 1 circle is the wrapped Cauchy to 2·10⁻⁴⁹ or better.
+  - ρ = (k − 1)/(k + 1) = tanh(η/2) exactly: 0.0501, 1/3 and 0.8676 at β = 0.1, 0.6 and 0.99.
+- **A3 not killed.** The address density is D² to 10⁻⁵¹. The blackbody's bolometric intensity is D⁴ of the rest frame's
+  to 3·10⁻⁵¹.
+- **A4 not killed.**
+  - A turn about the motion moves no D (0 at 50 digits).
+  - That the aberration contains no frequency is true by its form, not tested.
+- **A5 killed in its letter**, through A1.
+
+**A1′ (before run 2).**
+- The stereographic clause, as a relative error: |z′ − z/k| / |z/k| < 10⁻⁴⁵ at the same seeded points.
+- The azimuth tested independently: compute the observed direction's unit vector by the Lorentz transformation of the
+  photon's momentum (not by keeping φ), and read its azimuth.
+- *Killed* if either fails. A5′ reads A1′ for A1.
