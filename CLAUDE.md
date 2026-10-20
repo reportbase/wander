@@ -1005,6 +1005,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   circle's own angle ψ: 2·dθ/dφ − dψ/dφ = 2πP_z); C2′ not killed. Walk-on-spheres lands as P_z carried by F (nine
   cases, KS under 1%). The straight-ray combination holds only on a circle (10⁻⁴⁹) and fails at first order elsewhere
   (4.60·a at z = 0.3). Theodorsen recovers the conformal angle from radii in any unit plus directions, to 10⁻¹⁵. Classical.
+  **An address is not a payload** (19 Oct, SPN R393; Tom: "An address is NOT the payload. That needs to be stated
+  explicity."): OFS §7.2 says so under its boxed statement (an address a point, a payload a function on the points, the
+  Cauchy the turn's measure on them, fixed by standpoint and turn); §7.8 names the fields that carry the split unnamed
+  (harmonic measure against boundary data, Kakutani 1944, Doyle and Snell 1984; profile against strength; the
+  lighthouse) and says we did not find the statement in print. The searches are in `plans/ofs-literature.md` (R391, R392).
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):

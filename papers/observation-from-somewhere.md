@@ -1632,6 +1632,14 @@ sech density's 0.062, and 0.002 against 0.016 at the sixth). The sech density ha
 
 > **The Cauchy is not the payload; it is the address to the payload.**
 
+**An address is not a payload.** The two are different kinds of thing, and this paper keeps them apart throughout. An
+address is a point: a direction, a reading [h : v], a place on the reader's line. A payload is what is found at that
+point: an amount, a function on the addresses. The law of the addresses, the Cauchy, is a measure on the points, the
+uniform turn carried onto them; it is fixed by the standpoint and the turn alone, and no payload enters it. Whatever
+arrives can be swapped for anything else, at any address, and the addresses and their law do not move (Theorem 6(a)).
+So nothing the Cauchy says (its median, its scale, its missing mean) is a statement about the payload, and nothing in
+the payload can be read from it.
+
 **The rule, and a test.** A Cauchy variable is a direction: a point of the projective line, a ratio [x : y] read in one
 chart, laid by a turn. It is never an amount. Its median and its quartiles are places on that line and mean what they
 say; it has no mean because the coordinates of directions do not add. Two directions have no sum, only a composition, a
@@ -2023,8 +2031,13 @@ follow every increasing map; those facts are part (d). The other parts of Theore
   which also separates what order keeps from what sums lose.
 
 What is new here is the reading: which reader, knowing what, receives the Cauchy, and that what it receives is its own
-addresses rather than anything in the world. We did not find that reading, or a split between addresses and payload, in
-print.
+addresses rather than anything in the world. The split itself is carried, unnamed, in the equations of several fields.
+In potential theory the value at a point is the boundary's values averaged by where a Brownian path started there first
+meets the boundary, u(x) = ∫ f dμ_x, the harmonic measure μ_x fixed by the point and the region alone, the half-plane's
+Cauchy from i, and the boundary data f free (Kakutani 1944; Doyle and Snell 1984). In spectroscopy a line is its
+strength times a profile of unit area. In the lighthouse only where each flash lands is recorded. Each separates a
+measure on points from what is found at them; none states that the Cauchy is always the first and never the second. We
+did not find that statement, that an address is not a payload, made in print.
 
 ## 8. Level of detail and the choice of H
 
@@ -3008,6 +3021,9 @@ Australian Mathematical Society* 33(3), 200.
 Dehaene, S., Izard, V., Spelke, E. and Pica, P. (2008). Log or linear? Distinct intuitions of the number scale in Western
 and Amazonian indigene cultures. *Science* 320, 1217–1220.
 
+Doyle, P. G. and Snell, J. L. (1984). *Random Walks and Electric Networks*. Carus Mathematical Monographs 22.
+Mathematical Association of America, Washington.
+
 Drory, A. (2015). Failure and uses of Jaynes' principle of transformation groups. *Foundations of Physics* 45(4),
 439–460.
 
@@ -3074,6 +3090,9 @@ Jones, M. C. (2008a). The distribution of the ratio X/Y for all centred elliptic
 *Journal of Multivariate Analysis* 99(3), 572–573.
 
 Jones, M. C. (2008b). On reciprocal symmetry. *Journal of Statistical Planning and Inference* 138(10), 3039–3043.
+
+Kakutani, S. (1944). Two-dimensional Brownian motion and harmonic functions. *Proceedings of the Imperial Academy
+Tokyo* 20(10), 706–714.
 
 Kellogg, O. D. (1929). *Foundations of Potential Theory*. Springer, Berlin.
 
