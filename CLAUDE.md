@@ -545,6 +545,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   sphere fix the conditioning (clean 2.39·10⁻³; the medians still break past 0.159, H2 not killed); a consensus vote at
   each pose stage (RANSAC's) fixes the breakdown (2.68× clean at 30% wrong matches, H3; the Cauchy-cost adjustment from it
   2.23×, H4); H1 killed narrowly by its turn clause (0.251° against 0.2°).
+  BER (`plans/ber-plan.md` + `runs/ber/ber.py`, 20 Oct; SPN R400; Tom: "what would a cauchy based system need to make it
+  competitive", "but  cauchy is passive so", "ok"): are real bearing errors heavy-tailed? The Oxford affine benchmark
+  (Mikolajczyk et al. 2005; 8 sequences, sha256 in the plan, not committed), 24 pairs, 38,160 SIFT matches. B1 killed:
+  the survival slope over 2–32 px is −0.31, a plateau of wrong matches (5.1% past 32 px), not a power tail; B2 not killed
+  at its edge (Cauchy over normal in 6 of 8, but post hoc it cannot tell a Cauchy from a normal plus a floor); B3 not
+  killed (γ 0.1–0.8 px, growing with difficulty). A narrow core plus wrong matches; the far, low-parallax case untested.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

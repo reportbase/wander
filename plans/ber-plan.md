@@ -92,3 +92,48 @@ benchmark.
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (20 Oct; `runs/ber/ber.py`, output `runs/ber/ber-run1.txt`)
+
+Data sha256 (archives from `thor.robots.ox.ac.uk/affine/`, not committed):
+- bark f631c09a0f43fc1e092203f32f8f27e2e43e59b524918255d45474c50c91ea4f
+- bikes 3b95c49accadfd71e63c2fa0f7602abcbadd87d7f53ff54eb1efb15210d19e0c
+- boat 6e5721f37fbf9c3e974fd05935a42c1670f3e71aa3e5b218807ea046a068c603
+- graf 999871b945ee968a00a0d5f9af957d1382fb9dae1511cdee9553366817b53b5b
+- leuven 9b1ade6e64e5b27eee43463ff8f9ad2bd2f9c6911666e93de2634f3a5c0fe5dc
+- trees 04a39f201bffbc5035a560136fb37d2b36ecaa1532113eebfb113c90b5327f5d
+- ubc 26ab4ac94c8d0b2ded66c3bfaeb3f12589ec33005e5b4d5fcba4639f5b6e5414
+- wall 3cb3df75f40471f093adf6647d13df6a9f4312f7a222fc591d03f6c08e086344
+
+38,160 matches kept by the ratio test over the 24 pairs; median error 0.674 px.
+
+- **B1 killed.** The slope of log P(|e| > x) over 2–32 px is −0.309, flatter than −0.5. It is the rival hypothesis's
+  plateau:
+
+  | range | slope |
+  |---|---|
+  | 0.5–2 px | −1.01 |
+  | 2–8 px | −0.57 |
+  | 8–32 px | −0.14 |
+  | 32–256 px | −0.29 |
+
+  5.1% of matches are off by more than 32 px and 2.7% by more than 256: wrong matches spread over the image, which the
+  ratio test let through.
+- **B2 not killed,** at its edge: the Cauchy's likelihood is higher in 6 of 8 sequences (graf, boat, bikes, trees,
+  leuven, ubc); the normal is higher on wall and bark.
+- **B3 not killed:** γ grows from (1, 2) to (1, 4) in 7 of 8 (not wall), and in order through (1, 3) in five.
+- **B4 killed,** by B1.
+
+Read after the run (post hoc, not tested):
+- **B2 does not separate the Cauchy from the mixture.** The window ±8 px holds some wrong matches too, and a normal with
+  no room for them loses to any heavy-tailed fit. A test that could tell them apart fits the Cauchy against a normal
+  plus a flat floor. That would be run 2, with its own prediction.
+- **The core.** Over 0.5–2 px the slope is −1.01, the Cauchy's. But the homographies are good to about a pixel, so that
+  range mixes the keypoints' error with the ground truth's own. On this benchmark the core's shape cannot be read below
+  a pixel or so.
+- **The verdict, read past its letter.** On real images and a standard pipeline, a reading's error is a narrow core
+  (γ 0.1–0.8 px, growing with difficulty) plus a few percent of wrong matches spread over the image. That is the
+  mixture robust methods are built for. It is not a power tail across the range. So on this data, robust costs earn
+  their place by the wrong matches, and the premise of item 1 fails here. It is not settled for far, low-parallax
+  features, which these planar scenes do not have; there the error that matters is in depth, and it is heavy-tailed
+  by the geometry alone (TRI), whatever the bearing's.

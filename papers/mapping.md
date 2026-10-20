@@ -452,6 +452,11 @@ In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule")
        adjustment started from it holds to 2.23 times, better than its start.
      - Killed: H1 narrowly in its turn clause (the worst turn 0.251°, against my 0.2°).
    - Open: minimal sets of room features in place of far ones, far features as targets, real images.
+   - **Real bearing errors, [data].** On the Oxford affine benchmark (Mikolajczyk et al. 2005; 24 image pairs, 38,160
+     SIFT matches kept by the ratio test), the error is a narrow core (Cauchy scale 0.1–0.8 px, growing with the pair's
+     difficulty) plus about 5% wrong matches spread over the image: the survival function's slope is −0.31 over 2–32 px,
+     a plateau, not a power tail (BER run 1, B1 killed). So robust costs earn their place by the wrong matches. The far,
+     low-parallax regime, which planar scenes lack, is untested.
 2. **Medians against least squares on bearing lines.** STC's floor (§4) suggests least squares on Cauchy-like bearings
    stops improving. At what rate does a median-of-crossings estimator improve, and does it keep improving? **[open]**
 3. **Exactness of a whole map in ratio forms.** Does MOT P10's exactness survive composition over many standpoints and a
@@ -484,6 +489,8 @@ In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule")
   133–135.
 - Lowe, D. G. (2004). Distinctive image features from scale-invariant keypoints. *International Journal of Computer
   Vision* 60(2), 91–110.
+- Mikolajczyk, K., Tuytelaars, T., Schmid, C., Zisserman, A., Matas, J., Schaffalitzky, F., Kadir, T. and Van Gool, L.
+  (2005). A comparison of affine region detectors. *International Journal of Computer Vision* 65, 43–72.
 - Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions of the Royal
   Society of London* 75, 385–480.
 - Snellius, W. (1617). *Eratosthenes Batavus*. Leiden.
