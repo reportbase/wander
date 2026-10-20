@@ -1,0 +1,18 @@
+d (m)      Z24          IP24(n)      RZ32         LOG24        RL24(sqrt nf)  RL24(n)
+1e0       5.9605e-8    5.9605e-8    5.9605e-8    9.6071e-7    0.0017074    9.6071e-7  
+1e1       5.9605e-7    5.9605e-7    7.4506e-8    9.6071e-7    0.00017074   9.6071e-7  
+1e2       5.9605e-6    5.9605e-6    9.3132e-8    9.6071e-7    1.7074e-5    9.6071e-7  
+1e3       5.9608e-5    5.9608e-5    1.1642e-7    9.6071e-7    1.7074e-6    9.6071e-7  
+1e4       0.0005964    0.0005964    7.276e-8     9.6071e-7    5.3994e-7    9.6071e-7  
+1e5       0.0059962    0.0059962    9.0949e-8    9.6071e-7    5.3994e-7    9.6071e-7  
+1e6       0.063383     0.063383     1.1369e-7    9.6071e-7    5.3994e-7    9.6071e-7  
+1e7       1.4755       1.4755       7.1054e-8    9.6071e-7    5.3994e-7    9.6071e-7  
+
+D1: Z24 against (d/n)(1 - n/f)2^-24, worst 1.476;  IP24(n) equals Z24 within 1%: True
+D1 KILLED
+D2 RZ32 in (2^-24, 2^-23] at every d: not killed
+D3 LOG24 = ln(f/n)2^-24 = 9.607e-7 within 1%: not killed
+D4 RL24(sqrt nf): span 9.0587, inside |dd| = 0.001707 m, past r = 5.399e-7; not killed
+D5 RL24(n) equals LOG24 within 1%: not killed
+D6 binary32 values checked 1018, breaking a clause 0: not killed
+D7 KILLED

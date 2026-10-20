@@ -1,0 +1,36 @@
+F1: Cauchy bearings, no outliers, median relative error
+  K =  4: LS 3.353e-03  CB 1.975e-03  AF 2.956e-03  (rays only 0)
+  K =  8: LS 2.549e-03  CB 9.476e-04  AF 1.233e-03  (rays only 0)
+  K = 16: LS 2.409e-03  CB 5.899e-04  AF 7.483e-04  (rays only 0)
+  K 4 -> 16 improves LS by 1.39, CB by 3.35, AF by 3.95
+F1 not killed
+
+F2: normal bearings (same median), K = 8
+  LS 9.132e-04  CB 8.649e-04  AF 9.646e-04;  LS/CB 1.056, AF/LS 1.056
+F2 KILLED
+
+F3, F4: outliers, Cauchy bearings, K = 8
+  f = 0.00: LS      1.00x  CB      1.00x  AF      1.00x  (rays only 0)
+  f = 0.05: LS      2.35x  CB      1.00x  AF      1.03x  (rays only 0)
+  f = 0.10: LS      9.97x  CB      0.96x  AF      1.12x  (rays only 0)
+  f = 0.15: LS     40.63x  CB      1.32x  AF      1.45x  (rays only 0)
+  f = 0.20: LS     64.07x  CB      1.60x  AF      1.58x  (rays only 0)
+  f = 0.25: LS     78.40x  CB      1.86x  AF      1.79x  (rays only 0)
+  f = 0.30: LS     94.54x  CB      2.73x  AF      2.41x  (rays only 0)
+  f = 0.35: LS    144.40x  CB      4.72x  AF      3.31x  (rays only 0)
+  f = 0.40: LS    171.25x  CB     35.90x  AF      5.14x  (rays only 0)
+  f = 0.45: LS    207.57x  CB    354.45x  AF     17.27x  (rays only 0)
+  f = 0.50: LS    242.57x  CB    566.56x  AF    166.49x  (rays only 0)
+  f = 0.55: LS    259.00x  CB    686.39x  AF    309.42x  (rays only 0)
+  f = 0.60: LS    303.03x  CB    814.91x  AF    419.13x  (rays only 0)
+  f = 0.65: LS    310.47x  CB    810.66x  AF    533.66x  (rays only 0)
+  f = 0.70: LS    344.11x  CB    940.53x  AF    574.62x  (rays only 0)
+F3 KILLED
+  AF's breakdown f* = 0.45
+F4 not killed
+
+F5: time per feature at K = 16
+  LS 2.11 ms  CB 4.53 ms  AF 0.96 ms;  AF/LS 0.46
+F5 KILLED
+
+F6 KILLED

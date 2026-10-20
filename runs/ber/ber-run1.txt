@@ -1,0 +1,20 @@
+graf    matches  1179   677   231; in window  1707; logL Cauchy    -4610.5 normal    -6190.1 (Cauchy higher); gamma 0.372 px, sigma 1.483 px; gamma by pair 0.284 0.597 0.807
+wall    matches  5445  4227  2312; in window 11818; logL Cauchy   -32712.1 normal   -32227.3 (Cauchy lower); gamma 0.505 px, sigma 0.946 px; gamma by pair 0.598 0.341 0.695
+boat    matches  2564  1944   856; in window  4915; logL Cauchy    -8284.9 normal    -9654.4 (Cauchy higher); gamma 0.277 px, sigma 0.646 px; gamma by pair 0.302 0.224 0.352
+bark    matches   648   568   715; in window  1837; logL Cauchy    -5858.5 normal    -5222.4 (Cauchy lower); gamma 0.755 px, sigma 1.002 px; gamma by pair 0.674 0.502 0.611
+bikes   matches   892   730   474; in window  1660; logL Cauchy    -3183.6 normal    -4305.6 (Cauchy higher); gamma 0.281 px, sigma 0.885 px; gamma by pair 0.228 0.287 0.418
+trees   matches  1925  1638   751; in window  4025; logL Cauchy   -12559.5 normal   -13823.0 (Cauchy higher); gamma 0.592 px, sigma 1.347 px; gamma by pair 0.393 0.524 1.159
+leuven  matches  1244   973   780; in window  2767; logL Cauchy    -2615.8 normal    -5691.4 (Cauchy higher); gamma 0.170 px, sigma 0.677 px; gamma by pair 0.145 0.164 0.232
+ubc     matches  3185  2549  1653; in window  7074; logL Cauchy    -3025.8 normal    -8273.3 (Cauchy higher); gamma 0.129 px, sigma 0.434 px; gamma by pair 0.091 0.146 0.222
+
+pooled matches 38160; P(|e| > x): 2.0:0.1487  2.5:0.1060  3.2:0.0860  4.0:0.0773  5.0:0.0709  6.3:0.0664  8.0:0.0623  10.1:0.0605  12.7:0.0584  16.0:0.0572  20.2:0.0558  25.4:0.0535  32.0:0.0507
+  slope over 0.5-2 px: -1.013
+  slope over 2-8 px: -0.568
+  slope over 8-32 px: -0.140
+  slope over 32-256 px: -0.293
+  share past 32 px 0.0507, past 256 px 0.0267, median 0.674 px
+
+B1 slope over 2-32 px -0.309: KILLED
+B2 Cauchy higher in 6 of 8: not killed
+B3 gamma grows (1,2) to (1,4) in 7 of 8: not killed
+B4 KILLED

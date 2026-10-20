@@ -1,0 +1,5 @@
+feature 26: error 1.02e-04, distance 3.46 |AB|, parallax angle 0.011 rad, error/(d^2) 8.55e-06
+feature 25: error 3.89e-05, distance 3.76 |AB|, parallax angle 0.050 rad, error/(d^2) 2.74e-06
+feature 6: error 2.53e-05, distance 3.88 |AB|, parallax angle 0.080 rad, error/(d^2) 1.68e-06
+feature 29: error 2.15e-05, distance 1.50 |AB|, parallax angle 0.027 rad, error/(d^2) 9.52e-06
+feature 61: error 9.77e-06, distance 3.18 |AB|, parallax angle 0.170 rad, error/(d^2) 9.67e-07

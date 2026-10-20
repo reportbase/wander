@@ -1,0 +1,166 @@
+# MAP: what it takes to map, the two readers made into a mapper
+
+*19 October 2026 (Tom's local date), SPN R396.*
+
+*Tom (20:33 MDT): "keep on exploring how to map the room with the payload and address reader. do a thought expirment,
+what would be needed to turn the two readers into something that could map a room." Claude's thought experiment is
+now `papers/mapping.md` §7½. Then (21:02): "both", the section and this plan.*
+
+*Exact where a closed form exists (mpmath), seeded otherwise. Scripts in `runs/map/`. Predictions written before the
+script. Distances in |AB|, the step's own length, which no reading gives.*
+
+## Known beforehand
+
+- **Epipolar geometry.** Given the relative pose, a point seen in one view lies on a line in the other; two rays from
+  different centres generically do not meet unless they see the same point (Longuet-Higgins 1981; Hartley and Zisserman
+  2004). **[classical]**
+- **Descriptors.** A keypoint's descriptor is used to find the same point in another view; ambiguous matches are
+  rejected by the ratio test (Lowe 2004). **[classical]**
+- **Rotation from points at infinity.** Directions to very far points are unchanged by translation, so they fix the turn
+  between views (Civera, Davison and Montiel 2008). Kabsch's or Horn's method recovers it from direction pairs.
+  **[classical]**
+- **draw's UDV:** standpoints give the figure up to size, and one agreed length the size. **RCC:** the readings carry the
+  turn, not the size.
+- **This corpus:**
+  - `room-ratios.html`: two places, rays crossing, places in steps.
+  - TRI: bearings read from a height γ, depth error Cauchy(0, 2γ·cosh ln k).
+  - OFS §9's "Closing a loop": a tree cannot find its own error, a loop can.
+  - WRD: ranging with a wrong held speed keeps the shape.
+
+## The set-up
+
+- **The room and its features.** A room 5 × 4 × 2.5 m. N = 80 feature points, a seeded mix:
+  - 50 on the walls, floor and ceiling;
+  - 30 on four things (`room-ratios`' table, cube, ball, cabinet);
+  - 6 far features "through a window", at 10⁶ m.
+- **The payload.** Each feature has a payload: a 16-number descriptor, drawn once per feature (seeded, standard normal),
+  received at each standpoint with independent noise of standard deviation σ_p.
+- **The standpoints.** A, B and C, each a unit step apart in a seeded direction, all inside the room, each turned by a
+  seeded rotation.
+- **What each standpoint reads.** Each standpoint reads every feature's address [h : v : v₂] in its own frame:
+  - exact (ε = 0);
+  - or with each direction perturbed by an angle of standard deviation ε.
+- **The referee** holds every true place.
+- **Nothing reads a length**, except where a prediction says so.
+
+## Predictions
+
+**M1 (addresses alone: exact matches the pair, finite resolution does not).** With the turn and the step's direction
+known and ε = 0:
+- each A ray meets exactly one B ray, its true partner's, to 10⁻⁴⁰ in |AB|;
+- every other pair's closest approach is at least 10⁻⁶ |AB|, over all 80 × 79 wrong pairs in five seeded rooms.
+
+At ε = 10⁻³ and 10⁻²:
+- the share of A rays with more than one B ray within the reading's own reach (3ε times the ray's distance, on the
+  common perpendicular) is above 0 and rises with ε;
+- the share at 10⁻² is larger than at 10⁻³.
+
+*Killed* if exact readings leave any wrong pair within 10⁻⁶, or the ambiguous share does not rise with ε.
+
+**M2 (the payload names the pair).**
+- With σ_p = 0.1 and each A feature matched to the B feature of nearest descriptor, all 80 matches are right, in five
+  seeded rooms.
+- Triangulated from those matches at ε = 0, every place equals the referee's, in |AB| and in A's frame, to 10⁻³⁰.
+
+*Killed* if any match is wrong, or any place misses by more than 10⁻³⁰.
+
+**M3 (the scale stays out).**
+- Scaling the world, the step included, by k ∈ {10⁻³, 7, 10³} changes no address (10⁻⁴⁰), no match, and no place in
+  |AB| (10⁻³⁰).
+- One counted stride, the step's length carried in, writes metres equal to the referee's, to 10⁻³⁰.
+
+*Killed* if not.
+
+**M4 (each half checks the other).**
+- In B's view, swap the payloads of two features (a wrong match, both ways) for 10 seeded pairs.
+- At ε = 0, the two rays of every wrong match pass at least 10⁻⁶ |AB| apart, and every right match's meet to 10⁻⁴⁰.
+  So the addresses flag every wrong payload match.
+- With three standpoints, the place triangulated from (A, B) for a swapped feature differs from the one from (A, C) by
+  at least 10⁻⁶ |AB|, while every unswapped feature agrees to 10⁻³⁰. So the loop locates the swap at the swapped features.
+
+*Killed* if any wrong match passes as right, or any right one fails.
+
+**M5 (a ranging payload in an unread unit: the shape from one place).**
+- From A alone, the payload carries a range u·d along each address, u ∈ {0.73, 1, 1.27}: a wrong held speed, as with the
+  bats.
+- Every ratio of two distances between features equals the referee's, to 10⁻³⁰, at every u.
+- Every place is off by the factor u exactly.
+
+*Killed* if not.
+
+**M6 (the turn from far features).**
+- The rotation between A and B, recovered from the six far features' addresses alone (Kabsch on the direction pairs,
+  ε = 0), is off by at most 10⁻⁵ rad. The far features' own parallax is |AB|·6 m / 10⁶ m at most, of order 10⁻⁶.
+- M2's places triangulated with that recovered rotation miss the referee's by at most 10⁻⁴ |AB|.
+
+*Killed* if either bound fails.
+
+**M7 (the verdict).** A judgment. *Killed* if M1, M2, M4 or M6 is killed.
+- The two readers become a mapper with four acts (turn, hold, step, match) and one amount.
+- The address says where and the payload says which.
+- At exact resolution the addresses could find every pair alone; at a finite one only the payload can.
+- Each half checks the other: rays that do not meet flag a wrong match, and a loop places the error.
+- The scale enters only at the end.
+
+## What would and would not be shown
+
+**Shown:** the division of labour between the two readers, exactly, in a synthetic room.
+
+**Not shown:**
+- that this beats the usual pipeline (that is AFM, `papers/mapping.md` §11 item 1);
+- real images, where descriptors are not independent draws and features are found, not given;
+- moving things.
+
+## Runs
+
+(Nothing above this line is edited after a run.)
+
+### Run 1 (19 Oct; `runs/map/map.py`, output `runs/map/map-run1.txt`)
+
+- **M1 not killed.**
+  - Exact readings: every true pair meets to 6·10⁻⁴⁸. The nearest of the 5 × 80 × 79 wrong pairs passes 2.8·10⁻⁴ |AB|
+    apart.
+  - Ambiguous share of A rays: 0.148 at ε = 10⁻³ and 0.623 at 10⁻².
+  - So at exact resolution the addresses pair every point alone. At 1 mrad one ray in seven already has a rival within
+    reach, and at 10 mrad five in eight do.
+- **M2 not killed.** All 86 matched right in every room, by payload. Places to 3·10⁻⁴⁸.
+- **M3 not killed.** At k = 10⁻³, 7 and 10³: addresses moved 4·10⁻⁵¹, places in |AB| 1.4·10⁻³⁶, and the counted stride's
+  metres 1.4·10⁻³⁶ off.
+- **M4 killed, by my set-up.**
+  - Every wrong match's rays pass at least 0.011 |AB| apart, and the loop separates every swapped feature by at least
+    0.088 |AB|. Both clauses that test the flagging hold.
+  - The kill: the right matches' "meet to 10⁻⁴⁰" missed, at 1.4·10⁻³⁸. That is the far features again: an absolute
+    tolerance on rays meeting 10⁶ |AB| out, where 50 digits leave about 10⁶·10⁻⁴⁴. M1 had kept to the room's 80, M4 did
+    not.
+- **M5 not killed.** At u = 0.73, 1 and 1.27: distance ratios to 4·10⁻⁴⁹, and every place off by exactly u, to 5·10⁻⁵¹.
+- **M6 killed, narrowly, in its place clause.**
+  - The rotation from six far features is off 4·10⁻⁸ to 8·10⁻⁷ rad, inside its bound of 10⁻⁵.
+  - Places with it are off 2·10⁻⁶ to 1.02·10⁻⁴ |AB|; room 15 is just past the 10⁻⁴.
+  - Post hoc (`runs/map/map1-m6-posthoc.py`): the worst is feature 26, 3.5 |AB| out but seen across a parallax of only
+    0.011 rad, almost along the step. A rotation error δ moves a place by about δ·d/γ, not the δ·d²/B I had in mind.
+    My bound ignored the features near the baseline.
+- **M7 killed in its letter**, by M4 and M6.
+
+**M4′ (before run 2).**
+- Run 1's M4 clauses unchanged, but the right matches' meeting measured relative to the meeting's distance along A's
+  ray: dist / max(1, t) < 10⁻⁴⁰.
+- Same seeds and swaps. *Killed* if any clause fails. M7′ reads M4′ for M4, and keeps M6 killed.
+
+### Run 2 (19 Oct; `runs/map/map2.py`, output `runs/map/map-run2.txt`)
+
+- **M4′ not killed.**
+  - Right matches meet to 1.4·10⁻⁴⁴ of their distance.
+  - Wrong matches' rays pass at least 0.011 |AB| apart.
+  - The loop separates swapped features by at least 0.088, and the rest agree to 6·10⁻³⁸.
+  - So the addresses flag every wrong payload match, and a third standpoint places it.
+- **M7′ killed in its letter**, by run 1's M6 alone.
+
+The verdict, read past that letter:
+- The two readers become a mapper with four acts and one amount.
+- The address says where and the payload says which.
+  - At exact resolution the addresses pair every point alone: the nearest wrong pair passes 2.8·10⁻⁴ |AB| apart.
+  - At finite resolution only the payload pairs them: 15% of rays are ambiguous at 1 mrad, 62% at 10 mrad.
+- Each half checks the other.
+- The scale enters only with the stride.
+- What failed is my bound on how a rotation error from far features spreads into places. It is set by the parallax of
+  the worst-placed feature, about δ·d/γ, not by its distance alone.

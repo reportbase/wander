@@ -360,6 +360,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   hook `window.__depth` (`cell`, `share`, `dist`, `area`, `graph`, `tree`, `digits`, `descent`, `fade`, `avg`, `maxDiff`,
   `bestGamma`, `mass`, `drawn`, `RH`, `RG`, `keep`, `halfLevel`, `maxima`, `thresh`, `windowOf`, `set`, `state`). Not in the
   flying page.
+- `boost-sky.html`: **sampling a boosted sky** (20 Oct 2026, Tom: "seems like cauchy could provide more run-time options,
+  not have to precalculate so much", "yes", then "can you demo this?"; SPN R402; IMS), a standalone page, plain canvas. A sky
+  importance-sampled under a boost along the axis (rapidity η, 0–4), the light per solid angle f = D^k·L (k = 2 arrivals,
+  4 beaming), the payload L uniform or a sun (vMF κ = 500 at 60°). Four samplers: uniform; the Cauchy (uniform directions in
+  the sky's frame pushed through the boost, no table); the table rebuilt per view (64 × 128, 8,192 evaluations a change);
+  mixed (L tabled once in the sky's frame, pushed through the boost). Panels: the sky as seen and in its own frame, both on
+  the level ln tan(θ/2), on which the boost is a slide of η, with 2,000 sampled directions; each sampler's V by quadrature
+  (4 × 4 Gauss–Legendre in 128 × 256 cells) at this η and against η. `?eta=&k=2|4&sky=uniform|sun&show=uniform|cauchy|table|mixed&play=1`;
+  hook `window.__boostSky` (`variance`, `samples`, `seenTable`, `restTable`, `Lof`, `toSeen`, `toRest`, `set`, `state`,
+  `curveFor`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -463,7 +473,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -522,6 +532,50 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   that clarification is needed."): §5 "Passive and active readers": the Cauchy belongs to the uniform turn, whether it aims
   a receiver or an emitter (the lighthouse is active); a ranging reader carries in the signal's speed and a clock and is a
   writer (CFH); passive gives directions only from one place, active a range per direction.
+  Since R396 (Tom: "do a thought expirment, what would be needed to turn the two readers into something that could map a
+  room."; "both"): §7½ "What it takes to map": the two readers, four acts (turn, hold, step, match) and one amount; the
+  address says where, the payload says which (identity, not geometry), each checking the other (rays of a wrong match do
+  not meet; a loop places the error); a ranging payload in an unread unit gives the shape from one place; structure from
+  motion's keypoint and descriptor are the split unnamed. Tested by MAP (`plans/map-plan.md` + `runs/map/`, exact, a
+  synthetic room of 80 features and 6 far): run 1 M1, M2, M3, M5 not killed (exact addresses pair alone, the nearest wrong
+  pair 2.8·10⁻⁴ |AB|; 15% of rays ambiguous at 1 mrad, 62% at 10 mrad; payload matches all 86; the unit cancels), M4
+  killed by my set-up (an absolute tolerance at far features), M6 killed narrowly (rotation from far features to 10⁻⁶,
+  places to 1.02·10⁻⁴ against my 10⁻⁴, a feature seen across 0.011 rad of parallax: δ·d/γ); run 2's M4′ not killed
+  (wrong matches' rays 0.011 apart, a third standpoint separates them). Item 0 of §11's queue, before AFM.
+  AFM (`plans/afm-plan.md` + `runs/afm/afm.py`, 19 Oct; SPN R397; Tom: "ok"), §11 item 1, structure only with poses fixed:
+  under Cauchy bearings least squares stalls (×1.39 from K = 4 to 16), the Cauchy-cost adjustment most accurate, the
+  address-first median of pairwise crossings improving fastest (×3.95), 6% from least squares under normal errors (F2
+  killed: I predicted more), cheapest (F5 killed: I predicted dearer), surviving 45% wrong matches (CB 35–40%); F3 killed
+  narrowly (least squares 9.97× at 10% outliers). A robust estimator among known ones, not a winner.
+  Run 2 (`runs/afm/afm2.py`, SPN R398; Tom: "test it"), the poses not given, every stage a median of pairs: clean 8.7·10⁻³
+  (G1 killed: the turn from six far features in one window is badly conditioned, 2.4° worst), refined by a Cauchy-cost
+  bundle adjustment to 1.8·10⁻³; breaks between 10% and 20% wrong matches as (1 − f)⁴ predicted (G2 not killed); the robust
+  adjustment inherits a broken start (G4 killed).
+  Run 3 (`runs/afm/afm3.py`, SPN R399; Tom: "proceed with the next test"), a robust turn: twelve far features over the
+  sphere fix the conditioning (clean 2.39·10⁻³; the medians still break past 0.159, H2 not killed); a consensus vote at
+  each pose stage (RANSAC's) fixes the breakdown (2.68× clean at 30% wrong matches, H3; the Cauchy-cost adjustment from it
+  2.23×, H4); H1 killed narrowly by its turn clause (0.251° against 0.2°).
+  BER (`plans/ber-plan.md` + `runs/ber/ber.py`, 20 Oct; SPN R400; Tom: "what would a cauchy based system need to make it
+  competitive", "but  cauchy is passive so", "ok"): are real bearing errors heavy-tailed? The Oxford affine benchmark
+  (Mikolajczyk et al. 2005; 8 sequences, sha256 in the plan, not committed), 24 pairs, 38,160 SIFT matches. B1 killed:
+  the survival slope over 2–32 px is −0.31, a plateau of wrong matches (5.1% past 32 px), not a power tail; B2 not killed
+  at its edge (Cauchy over normal in 6 of 8, but post hoc it cannot tell a Cauchy from a normal plus a floor); B3 not
+  killed (γ 0.1–0.8 px, growing with difficulty). A narrow core plus wrong matches; the far, low-parallax case untested.
+  DPR (`plans/dpr-plan.md` + `runs/dpr/dpr.py`, 20 Oct; SPN R401; Tom: "what about synthetic situations, where the
+  blueprint is known, but you want to provide a first person view.", "yes"): drawing a known blueprint is rendering, a
+  writing turned into a reading; exact depth precision, near 1 m, far 10⁷ m. The standard 24-bit depth buffer is the
+  in-place lay with its corner at the near plane, log depth the reader's lay there (D5), a binary32 float a reader's lay in
+  base 2 (subnormals the proportional part, 2²³ addresses a level; D6), reversed-Z the in-place lay's reciprocal in a float
+  (constant relative precision, D2); the reader's lay at √(nf) absolute inside the corner (1.7 mm) and 1.78× better than
+  log depth past it (D4). D1 killed by my set-up (a first-order step formula far out). The geometry names these schemes
+  and adds none.
+  IMS (`plans/ims-plan.md` + `runs/ims/ims.py`, 20 Oct; SPN R402; Tom: "seems like cauchy could provide more run-time
+  options, not have to precalculate so much", "yes"): importance sampling a sky under a boost (Möbius view changes,
+  η 0.5–4), the Cauchy (uniform pushed through the boost, no table) against a 64 × 128 table rebuilt per view and a mixed
+  sampler (the payload tabled once in its own frame, the addresses by the Cauchy). I1 exact (spherical Cauchy closed
+  under composed boosts, 10⁻⁶⁰); the address part cancels exactly (V 0 for a uniform sky; with a sun the Cauchy's V
+  124.75 and the mixed sampler's 0.068 at every η); I3(b) killed (the rebuilt table loses to the Cauchy alone at η = 4,
+  4,098 against 124.75). The Cauchy removes the precomputation tied to the view, not the payload's.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
@@ -1883,6 +1937,10 @@ In short:
       and 2 about the eye gives the same addresses; 45° across and up reads 1 and 1; one step's two rays cross at every
       corner, in steps, exactly; the counted stride writes metres; the cabinet's distance over the ball's the referee's;
       from one place, distance unread.
+
+  43. **boost-sky.html:** a uniform sky's V 0 for the Cauchy and the payload tabled once at η 0.5, 2, 4; with a sun the
+      Cauchy's V 124.75 and the mixed sampler's 0.0684 the same at every η; the table rebuilt per view more than 10 times the
+      Cauchy at η = 4 (4,098); with beaming the mixed below the Cauchy; the boost a slide of η on the level, exactly.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

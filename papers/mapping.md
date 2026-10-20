@@ -264,6 +264,82 @@ notch.)
   - A map's resolution is set by γ and the corner, not by a grid.
   - **[exact]**
 
+## 7½. What it takes to map: the two readers made into a mapper
+
+A thought experiment: start from the two readers as they are, and add only what a map cannot be made without. **[reading]**,
+the section; each claim's own mark where it has one; MAP (`plans/map-plan.md`) tests the claims marked *(MAP)*.
+
+**Each reader alone, from one place.**
+- **The address reader.** A turn gives a direction to everything met: every corner of every thing, the lines where walls
+  meet. It also gives what is in front of what, since occlusion orders things (RSH), but no distance and no size: ghosts
+  at half or twice the size and distance sit on the same rays (§3). **[exact]**
+- **The payload reader.** It receives what arrives along each direction. Strictly the central sweep stands at a thing's
+  centre, which a reader in a room cannot do. From home, the payload is the wave itself: colour, brightness, texture, and,
+  if the reader ranges, an amount (§5).
+
+Neither maps alone: the first has where without how far, the second what without where.
+
+**Joined at one place.** The payload labels each address: this direction is brick, that one the table's edge. Its first
+job is identity, not geometry.
+- **Ranging with the unit unknown.** If the payload carries an amount in proportion to distance, such as an echo's time
+  with the speed of sound unknown, one place gives the whole room up to one scale. The unknown unit cancels from every
+  ratio of amounts, so the shape comes out in the payload's own unit (WRD's bats in heliox: the unit wrong, the shape
+  right). *(MAP M5)*
+- **Brightness.** Distance comes only by assuming a known kind, the same paint under the same light. That is carried in.
+
+**What a passive reader adds to map.**
+1. **A second standpoint and the turn between the views.** The step's length is never read. The turn comes from far
+   features that show no parallax, which fix rotation and not position (Civera, Davison and Montiel 2008). *(MAP M6)*
+2. **Correspondence: the same point at both standpoints.**
+   - With exact readings and the turn known, the addresses alone find it: in three dimensions two rays generically do
+     not meet, so only the true partner's ray crosses (the epipolar constraint, Longuet-Higgins 1981).
+   - At a finite resolution ε, many rays pass within reach of each other, and geometry alone becomes ambiguous.
+     *(MAP M1)*
+   - The payload resolves that. The same brick or the same edge, received at both standpoints, names the pair.
+     *(MAP M2)*
+   - So: **the address says where, the payload says which.** Each also checks the other. A wrong match pairs two rays
+     that do not meet, and the geometry flags it. *(MAP M4)*
+3. **Holding.** Two addresses compared must be held together, at once or in order. Each hold gives one ratio.
+4. **The band.** Places come out only inside d ≲ B/ε; past it, directions (§4, §7).
+5. **More standpoints.** These fill in what occlusion hides, and the visual hull tightens with each view (CFH).
+6. **A second route.** A loop that fails to close says something was misread (OFS §9, "Closing a loop"). *(MAP M4)*
+7. **A still room, or swaps told apart.** A step moves every address by a pattern parallax fixes. A payload changing at
+   fixed addresses is something moving (MON, SKY).
+8. **One amount, for metres only.** Until then every place is in steps. *(MAP M3)*
+
+| part | supplied by | cost |
+|---|---|---|
+| directions | the turn (address reader) | free |
+| which point is which | the payload | free, where the payload is distinctive |
+| distance up to scale, from one place | a ranging payload in an unread unit | free only with ranging |
+| places in steps | a second standpoint plus correspondence | a move |
+| the turn between views | far features with no parallax | free |
+| an error check | the rays of a match meeting; a closed loop | free; a second route |
+| metres | one counted stride | carried in |
+
+So the mapper is the two readers, four acts (turn, hold, step, match) and one amount. The match is the act the address
+reader cannot finish alone at finite resolution, and the one the payload reader exists to do.
+
+**Known already.** Structure from motion works exactly so. A keypoint's position in the image is its address, and its
+descriptor (Lowe 2004) is its payload, used only to find the same point in another view. The epipolar check is the
+address checking the payload. **[classical]** None of it is described as address and payload. What the framing adds is
+the division of labour stated as a rule, with three consequences:
+- each half can be tested apart from the other;
+- the bearings' error law (§4) points the estimator to medians;
+- a range in an unread unit is a reader, not a writer, so scale stays out of every stage but the last.
+
+**MAP, runs 1–2.** **[exact]**, in a synthetic room of 80 features and 6 far ones.
+- **Pairing.** With exact readings the addresses pair every point alone; the nearest wrong pair passes 2.8·10⁻⁴ |AB|
+  apart. At 1 mrad a seventh of the rays have a rival within reach, at 10 mrad five in eight.
+- **Matching by payload.** It gets all 86 right, and places come out to 10⁻⁴⁸.
+- **Checking.** A wrong match's rays pass at least 0.011 |AB| apart, and a third standpoint separates the swapped
+  features.
+- **Scale.** Scaling the world moves nothing until the stride writes metres.
+- **One place.** A ranging payload in an unread unit gives every distance ratio from there, and every place off by its
+  unit.
+- **The turn.** Six far features give the rotation between views to 10⁻⁶ rad. Places with it are worst for features
+  seen across little parallax, about δ·d/γ. The plan's bound of 10⁻⁴ |AB| was missed narrowly, at 1.02·10⁻⁴.
+
 ## 8. An address-first pipeline
 
 What a mapper built only from the stages above would do, against the usual pipeline. **[reading]**, the whole section;
@@ -339,6 +415,7 @@ In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule")
 
 ## 11. Open questions and the test queue
 
+0. **MAP: what it takes to map** (§7½). Predictions in `plans/map-plan.md`, exact and seeded, run before AFM. **[open]**
 1. **AFM: the address-first mapper against bundle adjustment.**
    - The setting: a synthetic room (the `room-ratios` scene, scaled up to many features) with bearings read at a finite
      resolution γ, outliers mixed in, and a referee.
@@ -350,7 +427,36 @@ In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule")
      - behaviour far off (k = 100–1,000);
      - computation;
      - what each needs carried in.
-   - A measurement, not a contest (§1). Predictions first, in `plans/afm-plan.md`. **[open]**
+   - A measurement, not a contest (§1). Predictions first, in `plans/afm-plan.md`.
+   - **Run 1, structure only (poses fixed), [simulation].** Under Cauchy bearings, least squares stalls: its error falls
+     by 1.39 from 4 to 16 standpoints. The Cauchy-cost adjustment (CB) stays the most accurate: 0.59·10⁻³ at 16. The
+     address-first median (AF) improves fastest (factor 3.95, to 0.75·10⁻³).
+   - Under normal bearings AF is within 6% of least squares, and with poses fixed it is the cheapest of the three.
+   - AF survives wrong matches to 45% (0.293 for all pairs, later because pairs not meeting ahead drop out). CB gives
+     way at 35–40%.
+   - Killed in that run: F2 (AF was less costly under normal errors than predicted), F3 narrowly (least squares at 10%
+     outliers was 9.97 times, not more than 10) and F5 (AF was faster, not slower).
+   - **Run 2, the poses not given, [simulation].** Every stage was a median of pairwise quantities: the turn from pairs
+     of far features, the step's direction from pairs of the epipolar constraint's normals, its length, then the places.
+     - Clean, it reached 8.7·10⁻³. A Cauchy-cost bundle adjustment started from it reached 1.8·10⁻³.
+     - It broke between 10% and 20% wrong matches, as the share of clean four-reading pairs, (1 − f)⁴, predicted
+       (0.159).
+     - Its weak stage is the turn: six far features in one window, 1.5°–26° apart, fix it to about γ/sin(angle).
+     - Started from a broken turn, the robust adjustment does not recover.
+     - Killed: G1 (the clean error, against my 3.7·10⁻³) and G4 (the robust adjustment's 7.8× at 10%).
+   - **Run 3, a robust turn, [simulation].** Twelve far features spread over the sphere, and at each pose stage the
+     candidate with the most agreeing readings kept before the median (RANSAC's consensus, Fischler and Bolles 1981).
+     - Spreading fixes the conditioning: clean, 2.39·10⁻³ with medians alone. The medians still break between 10% and
+       20% wrong matches (232× at 20%).
+     - Consensus fixes the breakdown: 1.98·10⁻³ clean, 2.68 times that at 30% wrong matches. A Cauchy-cost bundle
+       adjustment started from it holds to 2.23 times, better than its start.
+     - Killed: H1 narrowly in its turn clause (the worst turn 0.251°, against my 0.2°).
+   - Open: minimal sets of room features in place of far ones, far features as targets, real images.
+   - **Real bearing errors, [data].** On the Oxford affine benchmark (Mikolajczyk et al. 2005; 24 image pairs, 38,160
+     SIFT matches kept by the ratio test), the error is a narrow core (Cauchy scale 0.1–0.8 px, growing with the pair's
+     difficulty) plus about 5% wrong matches spread over the image: the survival function's slope is −0.31 over 2–32 px,
+     a plateau, not a power tail (BER run 1, B1 killed). So robust costs earn their place by the wrong matches. The far,
+     low-parallax regime, which planar scenes lack, is untested.
 2. **Medians against least squares on bearing lines.** STC's floor (§4) suggests least squares on Cauchy-like bearings
    stops improving. At what rate does a median-of-crossings estimator improve, and does it keep improving? **[open]**
 3. **Exactness of a whole map in ratio forms.** Does MOT P10's exactness survive composition over many standpoints and a
@@ -374,9 +480,17 @@ In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule")
   Transactions on Robotics* 24(5), 932–945.
 - Criminisi, A., Reid, I. and Zisserman, A. (2000). Single view metrology. *International Journal of Computer Vision*
   40(2), 123–148.
+- Fischler, M. A. and Bolles, R. C. (1981). Random sample consensus: a paradigm for model fitting with applications to
+  image analysis and automated cartography. *Communications of the ACM* 24, 381–395.
 - Hartley, R. and Zisserman, A. (2003). *Multiple View Geometry in Computer Vision*, 2nd ed. Cambridge University Press.
 - Laurentini, A. (1994). The visual hull concept for silhouette-based image understanding. *IEEE Transactions on Pattern
   Analysis and Machine Intelligence* 16(2), 150–162.
+- Longuet-Higgins, H. C. (1981). A computer algorithm for reconstructing a scene from two projections. *Nature* 293,
+  133–135.
+- Lowe, D. G. (2004). Distinctive image features from scale-invariant keypoints. *International Journal of Computer
+  Vision* 60(2), 91–110.
+- Mikolajczyk, K., Tuytelaars, T., Schmid, C., Zisserman, A., Matas, J., Schaffalitzky, F., Kadir, T. and Van Gool, L.
+  (2005). A comparison of affine region detectors. *International Journal of Computer Vision* 65, 43–72.
 - Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions of the Royal
   Society of London* 75, 385–480.
 - Snellius, W. (1617). *Eratosthenes Batavus*. Leiden.

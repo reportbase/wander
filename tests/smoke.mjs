@@ -1216,6 +1216,24 @@ try {
     failures.push(`[${current}] ${JSON.stringify(rr)}`);
   console.log(`${failures.length === before42 ? 'ok  ' : 'FAIL'} ${current} (scaling the world by 10⁻¹, 7, 10 moves no address (${rr.k.toExponential(1)}) and no place in steps (${rr.mk.toExponential(1)}); a ghost at ½ and 2 about the eye the same addresses; 45° across and up reads 1 and 1; one step's rays cross at every corner, in steps, to ${rr.steps.toExponential(1)}; the counted stride writes metres to ${rr.metres.toExponential(1)}; the cabinet's distance over the ball's the referee's; from one place, distance unread)`);
 
+  // ── 43. boost-sky.html: sampling a boosted sky (SPN R402, IMS run 1): the address part of the view change cancels from
+  //    the Cauchy and from the payload tabled once; the table rebuilt per view falls behind at η = 4; the boost a pure slide ──
+  current = 'boost-sky.html';
+  const before43 = failures.length;
+  await page.goto(new URL('boost-sky.html?eta=4', base).href, { waitUntil: 'load' });
+  const bs = await page.evaluate(() => { const B = __boostSky, o = { zero: 0, cSpread: 0, mSpread: 0 }, cs = [], ms = [];
+    for (const e of [0.5, 2, 4]) { const u = B.variance(e, 2, 'uniform'); o.zero = Math.max(o.zero, Math.abs(u.C), Math.abs(u.M));
+      const v = B.variance(e, 2, 'sun'); cs.push(v.C); ms.push(v.M); o.beam = (o.beam ?? true) && B.variance(e, 4, 'sun').M < B.variance(e, 4, 'sun').C; }
+    o.c = cs; o.m = ms; o.cSpread = Math.max(...cs) - Math.min(...cs); o.mSpread = Math.max(...ms) - Math.min(...ms);
+    const t4 = B.variance(4, 2, 'sun'); o.t4 = t4.T; o.c4 = t4.C;
+    o.slide = 0; for (const kind of ['cauchy', 'mixed']) for (const p of B.samples(kind, 4, 2, 'sun', 500)) o.slide = Math.max(o.slide, Math.abs(p.rest[0] - 4 - p.seen[0]));
+    const c = B.samples('cauchy', 3, 2, 'uniform', 2000); o.meanRest = c.reduce((a, p) => a + p.restC, 0) / c.length;
+    B.set({ eta: 4, k: 2, sky: 'sun', show: 'table' }); o.tab = document.getElementById('tab').textContent; return o; });
+  if (bs.zero > 1e-9 || bs.cSpread > 1e-6 || Math.abs(bs.c[0] - 124.75) > 0.01 || bs.mSpread > 1e-9 || Math.abs(bs.m[0] - 0.0684) > 0.001 ||
+    !(bs.t4 > 10 * bs.c4) || !bs.beam || bs.slide > 1e-9 || Math.abs(bs.meanRest) > 0.05 || !bs.tab.includes('4,098'))
+    failures.push(`[${current}] ${JSON.stringify(bs)}`);
+  console.log(`${failures.length === before43 ? 'ok  ' : 'FAIL'} ${current} (a uniform sky's V 0 for the Cauchy and the payload tabled once at every η (${bs.zero.toExponential(1)}); with a sun the Cauchy's V ${bs.c[0].toFixed(2)} and the mixed sampler's ${bs.m[0].toFixed(4)} the same at η 0.5, 2, 4; the table rebuilt per view ${Math.round(bs.t4)} at η = 4; with beaming the mixed below the Cauchy; the boost a slide of η to ${bs.slide.toExponential(1)})`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

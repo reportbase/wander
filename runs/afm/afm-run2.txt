@@ -1,0 +1,14 @@
+f = 0.0: AF2 8.708e-03  BA-LS 7.206e-03  BA-CB 1.819e-03   AF2's worst turn error 2.4444 deg (median over rooms 0.7391)
+f = 0.1: AF2 2.035e-02  BA-LS 1.804e-01  BA-CB 1.420e-02   AF2's worst turn error 128.7197 deg (median over rooms 17.8653)
+f = 0.2: AF2 6.032e-01  BA-LS 5.633e-01  BA-CB 7.327e-01   AF2's worst turn error 178.4211 deg (median over rooms 109.9217)
+f = 0.3: AF2 7.528e-01  BA-LS 6.725e-01  BA-CB 7.568e-01   AF2's worst turn error 147.7043 deg (median over rooms 95.7357)
+
+ratios to f = 0:
+  f = 0.1: AF2 2.34x  BA-LS 25.04x  BA-CB 7.81x
+  f = 0.2: AF2 69.28x  BA-LS 78.17x  BA-CB 402.74x
+  f = 0.3: AF2 86.45x  BA-LS 93.33x  BA-CB 415.98x
+G1 KILLED
+G2 not killed
+G3 not killed
+G4 KILLED
+G5 KILLED
