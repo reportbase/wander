@@ -231,3 +231,34 @@ on them, the rings, is the payload. That reading was not found.
 
 Not a survey: it rests on web search results and the pages they returned. The full text of Cuadras could not be fetched
 (raco.cat would not resolve).
+
+### Pictures that keep the payload apart from the address (19 Oct, SPN R392)
+
+Tom (19:55 MDT): "i'm am actually persuaded about the swapping idea, I know it works, but reality sweeps and doesnt use
+arrays. keep on looking for any cauch metaphore that seperates the payload from the addres."
+
+Three found, each classical, and each splitting what arrives into where (a law fixed by the standpoint alone) and what
+(the values found there).
+
+- **Kakutani's walker** (Kakutani 1944; Doyle and Snell, *Random Walks and Electric Networks*, 1984; Lawler's notes;
+  the CMU walk-on-spheres lectures).
+  - The value at a point (a temperature, a voltage, a payoff) is the average of the boundary's values, weighted by
+    where a walker started there first reaches the boundary: u(x) = E[f(B_τ)].
+  - The "where" is the harmonic measure, the Poisson kernel. From i over the half-plane it is the standard Cauchy,
+    and on a circle the wrapped Cauchy (CMP C1 checked this through the conformal map).
+  - The "what" is f, the boundary data, which the kernel never sees.
+  - Here the kernel is the addresses, set by the standpoint and the shape alone, and f is the payload. Changing f
+    changes no kernel: the swap, with a walk in place of an array.
+  - The nearest match found. Not checked: whether any of these texts says the kernel is fixed while f is swapped.
+- **Gull's lighthouse** (1988, in its classroom forms: Imperial's ICIC workshop, Heidelberg, Ohio State's Physics
+  8820).
+  - The detectors on the shore record only that a flash arrived and where, not its brightness or its direction.
+  - The problem keeps the addresses and throws the payload away by construction; brightness plays no part.
+- **Spectroscopy's strength × profile** (Townsend's line-profile notes; Hanson's EPS 238 notes; the Voigt literature).
+  - A line is its strength, the integrated amount, times a profile of unit area. The Lorentzian is the profile.
+  - Broadening reshapes the profile and leaves the strength alone; the strength scales the line and leaves the shape
+    alone.
+  - The payload is the strength, the address law the profile (OFS §7.2 already uses this split).
+
+None of the three is put as "the Cauchy is the address, not the payload". Each carries the split in its equations and
+its picture, unnamed. Searched, not surveyed.
