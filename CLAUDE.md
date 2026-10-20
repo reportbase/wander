@@ -1018,6 +1018,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the family, moving only its point m + iγ (the standpoint); the normal law the counterpart among amounts; only an amount
   entering breaks it (squaring, an edge, a scale mixture, an added amount as in a Voigt line, pooled standpoints, a
   weight not the turn's); the tails, and so the horizon, go last.
+  **The Cauchy's superpower** (20 Oct, SPN R404; Tom: "seems to me this is cauchy's superpower.    you can sweep with
+  cauchy, and the tail stays long.   the payloads can be changed, cauchy addresses stay fixed."): OFS §7.2 "Three properties
+  of one law" names them together (sweeping keeps the family, payloads change and addresses stay, the tails last; only an
+  edge or a power takes them). The exact instance in SPN: the lens of `boost-sky.html` slides both far tails by ±ln(1 + λ)
+  (`runs/ims/tails.py`, to 9·10⁻²⁶), breaking only the middle.
   **The reader's line, closed; a metaphor audit** (18 Oct, SPN R366; review 19, `plans/ofs-review-19.md`; Tom: "yes, do
   both"): OFS §4 after Proposition 2: readings the closed half-arc of the projective line, home [1 : 0], horizon [0 : 1],
   charts v/h and h/v, the reciprocal the exchange; the missing mean is the chart's (a bounded chart has one: the angle π/4,

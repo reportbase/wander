@@ -1688,6 +1688,12 @@ moves. In each, an amount has entered: a writer's move, not a reader's. Even the
 of finite spread leaves the tails ~ γ/(πx²), so the Cauchy is lost first near its centre and last at the horizon, which
 is why the wings of a Voigt line's normalized profile still read its half-width.
 
+**Three properties of one law.** Read together, the closure above, Theorem 6(a) and the far field are what make the
+Cauchy usable as addresses. A reader can sweep with it and stay in the family, moving only m + iγ. The payload can be
+changed at every address and no address moves. And where an amount enters, the law is broken from its centre outward,
+its tails ~ γ/(πx²) kept to the last; only cutting the line at an edge, or taking a power of the reading, takes the
+tails.
+
 The plainest instance in practice is a spectral line. Spectroscopy writes a line as a strength times a profile, I(ν) =
 S·φ(ν − ν₀) with ∫φ = 1. The strength S is an amount, in physical units, and the strengths of separate lines add. The
 profile of a resonance is the Lorentzian, φ(ν) = (1/π)·dδ/dν, where δ is the phase of the response, tan δ = γ/(ν₀ − ν),
