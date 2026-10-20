@@ -181,3 +181,44 @@ of the turn. Real photographs need a dataset, and are not this run.
   - Bundle adjustment with a robust cost refines it.
 
 *Each killed if its clauses fail.*
+
+### Run 2 (19 Oct; `runs/afm/afm2.py`, output `runs/afm/afm-run2.txt`)
+
+Median relative error of the room's 80 features over five rooms, and AF2's worst turn error:
+
+| f | AF2 | BA-LS | BA-CB | AF2's turn, worst (median) |
+|---|---|---|---|---|
+| 0 | 8.71·10⁻³ | 7.21·10⁻³ | 1.82·10⁻³ | 2.44° (0.74°) |
+| 0.1 | 2.04·10⁻² (2.3×) | 1.80·10⁻¹ (25×) | 1.42·10⁻² (7.8×) | 129° (18°) |
+| 0.2 | 0.60 (69×) | 0.56 (78×) | 0.73 (403×) | 178° (110°) |
+| 0.3 | 0.75 (86×) | 0.67 (93×) | 0.76 (416×) | 148° (96°) |
+
+- **G1 killed.**
+  - AF2's clean error is 8.7·10⁻³, against my bound of 3 times run 1's 1.23·10⁻³ (3.7·10⁻³).
+  - The other two clauses hold: BA-CB from AF2 refines it to 1.8·10⁻³ (better than run 1's poses-given AF), and BA-LS is
+    worse than BA-CB.
+  - The turn is the cause: up to 2.4° off even when clean.
+  - Post hoc (`runs/afm/afm2-posthoc.py`): my six far features lie through one window, 1.5° to 26° apart (median 11–18°).
+    A pair's turn is off by about γ/sin(angle), four to forty times γ, and the Cauchy tails reach the median of 15 such
+    pairs.
+- **G2 not killed.** At f = 0.1, 2.3×; at f = 0.2, 69×. The breakdown came between the two, as the share of clean pairs,
+  (1 − f)⁴, predicted.
+- **G3 not killed.** BA-LS at f = 0.1 is 25×.
+- **G4 killed.**
+  - BA-CB at f = 0.1 is 7.8×, not within 3×.
+  - Started from AF2, it inherits AF2's wrong turns in the rooms where they had already gone (a median room 18° off). A
+    robust cost refines a good start; it cannot rescue a wrong one.
+  - At f ≥ 0.2 BA-CB is worse than AF2 itself.
+- **G5 killed in its letter**, by G1.
+
+Read past the letter:
+- With the poses unknown, the address-first pipeline is held back by its first stage: the turn from far features.
+- That turn was badly conditioned here, because the far features sat in one narrow window, and it broke where the share
+  of clean pairs said it would.
+- Started from the pipeline's answer, the Cauchy-cost bundle adjustment gives the most accurate map when clean, 1.8·10⁻³.
+  With wrong matches it is only as good as its start.
+- What the address-first pipeline lacks against the usual one is a robust way to the turn.
+  - Candidates: more far features, or features spread wider.
+  - Or the rotation read from room features through the essential matrix, with a median over minimal sets (as RANSAC does
+    with a vote).
+  - A third route: the turn read in ratio forms from the vanishing points of the room's own edges.

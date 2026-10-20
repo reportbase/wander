@@ -6572,6 +6572,11 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
   - **Not killed:** F1 (under Cauchy bearings least squares stalls, improving 1.39 from 4 to 16 standpoints; the Cauchy-cost adjustment CB improves 3.35 and the address-first median AF 3.95) and F4 (AF's breakdown at 45% wrong matches, later than the all-pairs 29%; CB gives way at 35–40%).
   - **Killed:** F2 (AF is within 6% of least squares under normal errors; I predicted more than 10%), F3 narrowly (least squares at 10% outliers was 9.97 times its clean error, not more than 10) and F5 (AF is the cheapest, 0.46 of least squares, not three times dearer).
   - **The measurement:** CB is the most accurate when clean; AF is close to it, simplest and cheapest, and survives the most wrong matches. One robust estimator among known ones, not a winner.
+- **R398** (19 Oct, 21:46–21:47): "help me understand", then "test it": the cases run 1 left open, first the poses not given. AFM run 2 (`runs/afm/afm2.py`; predictions G1–G5 committed first):
+  - **The pipeline:** address-first at every stage (turn from far-feature pairs, step direction from epipolar normals' pairs, step length, then the median of crossings). Clean it gives 8.7·10⁻³; a Cauchy-cost bundle adjustment started from it, 1.8·10⁻³.
+  - **Not killed:** G2, its breakdown between 10% and 20% wrong matches, where (1 − f)⁴ falls through ½ (0.159), and G3.
+  - **Killed:** G1 (the clean error, against my 3.7·10⁻³: the turn from six far features in one window, 1.5°–26° apart, is badly conditioned) and G4 (the robust adjustment inherits a broken start, 7.8× at 10%).
+  - **Open:** the pipeline's weak stage is the turn; a robust turn (wider far features, or minimal sets of room features) is next.
 
 ## Appendix B. Demos and computations
 

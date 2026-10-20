@@ -1,0 +1,5 @@
+room 11: pair angles 2.9 to 26.4 deg, median 14.1
+room 12: pair angles 8.9 to 25.8 deg, median 17.7
+room 13: pair angles 3.4 to 25.9 deg, median 17.4
+room 14: pair angles 1.5 to 20.6 deg, median 10.8
+room 15: pair angles 2.5 to 21.6 deg, median 11.2

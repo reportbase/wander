@@ -537,6 +537,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   address-first median of pairwise crossings improving fastest (×3.95), 6% from least squares under normal errors (F2
   killed: I predicted more), cheapest (F5 killed: I predicted dearer), surviving 45% wrong matches (CB 35–40%); F3 killed
   narrowly (least squares 9.97× at 10% outliers). A robust estimator among known ones, not a winner.
+  Run 2 (`runs/afm/afm2.py`, SPN R398; Tom: "test it"), the poses not given, every stage a median of pairs: clean 8.7·10⁻³
+  (G1 killed: the turn from six far features in one window is badly conditioned, 2.4° worst), refined by a Cauchy-cost
+  bundle adjustment to 1.8·10⁻³; breaks between 10% and 20% wrong matches as (1 − f)⁴ predicted (G2 not killed); the robust
+  adjustment inherits a broken start (G4 killed). Next: a robust turn.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

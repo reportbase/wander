@@ -436,7 +436,16 @@ In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule")
      way at 35–40%.
    - Killed in that run: F2 (AF was less costly under normal errors than predicted), F3 narrowly (least squares at 10%
      outliers was 9.97 times, not more than 10) and F5 (AF was faster, not slower).
-   - Open: poses estimated jointly, far features, real images.
+   - **Run 2, the poses not given, [simulation].** Every stage was a median of pairwise quantities: the turn from pairs
+     of far features, the step's direction from pairs of the epipolar constraint's normals, its length, then the places.
+     - Clean, it reached 8.7·10⁻³. A Cauchy-cost bundle adjustment started from it reached 1.8·10⁻³.
+     - It broke between 10% and 20% wrong matches, as the share of clean four-reading pairs, (1 − f)⁴, predicted
+       (0.159).
+     - Its weak stage is the turn: six far features in one window, 1.5°–26° apart, fix it to about γ/sin(angle).
+     - Started from a broken turn, the robust adjustment does not recover.
+     - Killed: G1 (the clean error, against my 3.7·10⁻³) and G4 (the robust adjustment's 7.8× at 10%).
+   - Open: a robust turn (wider far features, or a median over minimal sets of room features), far features as targets,
+     real images.
 2. **Medians against least squares on bearing lines.** STC's floor (§4) suggests least squares on Cauchy-like bearings
    stops improving. At what rate does a median-of-crossings estimator improve, and does it keep improving? **[open]**
 3. **Exactness of a whole map in ratio forms.** Does MOT P10's exactness survive composition over many standpoints and a
