@@ -1023,6 +1023,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   of one law" names them together (sweeping keeps the family, payloads change and addresses stay, the tails last; only an
   edge or a power takes them). The exact instance in SPN: the lens of `boost-sky.html` slides both far tails by ±ln(1 + λ)
   (`runs/ims/tails.py`, to 9·10⁻²⁶), breaking only the middle.
+  Then R405 (Tom: "the world is unknowably large, what we look at has perfect fidelity … because we don't actually know
+  N."; "yours is better.  use that."): the sweep is uniform, the world is not (equal angles free, equal metres cost N); each
+  address exact and the reader's own circle complete (draw TB §16), its own count of addresses finite; the unknown rest
+  carried by the tail at the horizon. In SPN only.
   **The reader's line, closed; a metaphor audit** (18 Oct, SPN R366; review 19, `plans/ofs-review-19.md`; Tom: "yes, do
   both"): OFS §4 after Proposition 2: readings the closed half-arc of the projective line, home [1 : 0], horizon [0 : 1],
   charts v/h and h/v, the reciprocal the exchange; the missing mean is the chart's (a bounded chart has one: the angle π/4,
