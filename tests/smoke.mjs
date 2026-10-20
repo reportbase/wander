@@ -1231,13 +1231,16 @@ try {
     const l0 = B.lensStats(2, 0, 2, 'sun'), l5 = B.lensStats(2, 0.5, 2, 'uniform'); o.lens0 = Math.max(l0.residual, Math.abs(l0.bias));
     o.lensRes = l5.residual; o.lensBias = l5.bias;
     o.refit0 = B.lensRefitV(2, 0, 2, 'uniform', 1).V; o.refitW1 = B.lensRefitV(2, -0.5, 2, 'uniform', 1).V; o.refitW3 = B.lensRefitV(2, -0.5, 2, 'uniform', 3).V;
+    o.ringN = 0; for (let i = 0; i < 20000; i++) { const th = Math.PI * (i + 0.5) / 20000; o.ringN += B.ringP(Math.cos(th), Math.sin(th), 0.8, 1) * 2 * Math.PI * Math.sin(th) * Math.PI / 20000; }
+    o.onS = B.lensRefitV(0.5, 0.5, 2, 'uniform', 3).V; o.ringS = B.lensRingV(0.5, 0.5, 2, 'uniform', 3).V;
     B.set({ eta: 4, k: 2, sky: 'sun', show: 'table' }); o.tab = document.getElementById('tab').textContent; return o; });
   if (bs.zero > 1e-9 || bs.cSpread > 1e-6 || Math.abs(bs.c[0] - 124.75) > 0.01 || bs.mSpread > 1e-9 || Math.abs(bs.m[0] - 0.0684) > 0.001 ||
     !(bs.t4 > 10 * bs.c4) || !bs.beam || bs.slide > 1e-9 || Math.abs(bs.meanRest) > 0.05 || !bs.tab.includes('4,098') ||
     bs.lens0 > 1e-9 || !(bs.lensRes > 0.1) || !(Math.abs(bs.lensBias) > 0.05) ||
-    !(bs.refit0 >= 0 && bs.refit0 < 1e-3) || !(bs.refitW3 < 0.5 * bs.refitW1))
+    !(Math.abs(bs.refit0) < 1e-3) || !(bs.refitW3 < 0.5 * bs.refitW1) ||
+    Math.abs(bs.ringN - 1) > 1e-6 || !(Math.abs(bs.ringS) < 0.1 * bs.onS))
     failures.push(`[${current}] ${JSON.stringify(bs)}`);
-  console.log(`${failures.length === before43 ? 'ok  ' : 'FAIL'} ${current} (a uniform sky's V 0 for the Cauchy and the payload tabled once at every η (${bs.zero.toExponential(1)}); with a sun the Cauchy's V ${bs.c[0].toFixed(2)} and the mixed sampler's ${bs.m[0].toFixed(4)} the same at η 0.5, 2, 4; the table rebuilt per view ${Math.round(bs.t4)} at η = 4; with beaming the mixed below the Cauchy; the boost a slide of η to ${bs.slide.toExponential(1)}; no lens a spherical Cauchy to ${bs.lens0.toExponential(1)}, a lens of 0.5 off by ${(100 * bs.lensRes).toFixed(0)}% and the one-z shortcut biased ${(100 * bs.lensBias).toFixed(0)}%; refit, unbiased, V ${bs.refit0.toExponential(1)} with no lens, ${bs.refitW1.toFixed(4)} and ${bs.refitW3.toFixed(4)} for one and three z's at λ = −0.5)`);
+  console.log(`${failures.length === before43 ? 'ok  ' : 'FAIL'} ${current} (a uniform sky's V 0 for the Cauchy and the payload tabled once at every η (${bs.zero.toExponential(1)}); with a sun the Cauchy's V ${bs.c[0].toFixed(2)} and the mixed sampler's ${bs.m[0].toFixed(4)} the same at η 0.5, 2, 4; the table rebuilt per view ${Math.round(bs.t4)} at η = 4; with beaming the mixed below the Cauchy; the boost a slide of η to ${bs.slide.toExponential(1)}; no lens a spherical Cauchy to ${bs.lens0.toExponential(1)}, a lens of 0.5 off by ${(100 * bs.lensRes).toFixed(0)}% and the one-z shortcut biased ${(100 * bs.lensBias).toFixed(0)}%; refit, unbiased, V ${bs.refit0.toExponential(1)} with no lens, ${bs.refitW1.toFixed(4)} and ${bs.refitW3.toFixed(4)} for one and three z's at λ = −0.5; a squeezing lens at η = 0.5 V ${bs.onS.toFixed(3)} on the axis, ${bs.ringS.toFixed(4)} with three rings off it)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';

@@ -373,9 +373,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   normalizing flow, not closure); the sky's levels as ticks, even under the boost, bunched by the lens. The Cauchy refit to the lens (Tom: "can we make cauchy  handle the lense"): one or three slid
   spherical Cauchys (½·sech²(t − s) on the level) fitted by EM to the lensed addresses and sampled directly, unbiased, V
   0.060 and 0.0022 at λ = −0.5, η = 2 (uniform sky); a squeezing lens (λ > 0) no better with three, since a mixture of the
-  family can only be wider than one member.
+  family can only be wider than one member. Off the axis (Tom: "try off axis cauchy"): a spherical Cauchy tipped off the
+  axis, its azimuth drawn at random, is a ring (closed density, `ringP`); one or three rings fitted by EM (`fitRings`,
+  two starts, the on-axis fit among them) take the squeezing lens λ = 0.5 at η = 0.5 from V 0.187 to 0.0011. The lens
+  table waits until the controls rest (about a second of fits).
   `?eta=&k=2|4&sky=uniform|sun&show=uniform|cauchy|table|mixed&lens=&play=1`;
-  hook `window.__boostSky` (`variance`, `lensStats`, `lensRefitV`, `fitLens`, `lensOf`, `lensInv`, `lensJ`, `samples`, `seenTable`, `restTable`, `Lof`, `toSeen`, `toRest`, `set`, `state`,
+  hook `window.__boostSky` (`variance`, `lensStats`, `lensRefitV`, `fitLens`, `lensRingV`, `fitRings`, `ringP`, `lensOf`, `lensInv`, `lensJ`, `samples`, `seenTable`, `restTable`, `Lof`, `toSeen`, `toRest`, `set`, `state`,
   `curveFor`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
@@ -1949,7 +1952,8 @@ In short:
       Cauchy's V 124.75 and the mixed sampler's 0.0684 the same at every η; the table rebuilt per view more than 10 times the
       Cauchy at η = 4 (4,098); with beaming the mixed below the Cauchy; the boost a slide of η on the level, exactly; with no
       lens the pushed directions one spherical Cauchy, through a lens of 0.5 off by more than 10% and the one-z shortcut biased;
-      refit, V 0 with no lens, three z's below half of one's at λ = −0.5.
+      refit, V 0 with no lens, three z's below half of one's at λ = −0.5; a ring's density integrating to 1, three
+      rings under a tenth of the on-axis fit's V for the squeezing lens at η = 0.5.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
