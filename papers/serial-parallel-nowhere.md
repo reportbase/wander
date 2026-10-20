@@ -6584,6 +6584,8 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
   - **Killed:** H1 in its turn clause, narrowly (the worst turn 0.251° against my 0.2°, a tenth of run 2's), and so H5 in its letter.
   - **Reading:** the address-first pipeline, with spread far features and consensus, starts a robust adjustment soundly; consensus is not ours, the breakdown points from the readings each stage uses are.
 
+- **R400** (20 Oct, 05:07–05:27): "what is these tests for?", "why are existing methods better", "what would a cauchy based system need to make it competitive", "but  cauchy is passive so", then "ok". Claude's answers: AFM found bundle adjustment more accurate (it weighs every reading jointly; under normal errors least squares is optimal by theorem), the address-first pipeline cheaper and a sound start, and its robust form largely known pieces (RANSAC's consensus, robust losses). A Cauchy-based mapper's case needs, first, real bearing errors with heavy tails; then exact uncertainty under projective maps (the Cauchy family is closed under them, z = m + iγ), a depth scale that holds across decades, thresholds set by known tails, the payload–address cross-check on real descriptors, scale and speed, and standard benchmarks. Passive narrows the rivals to passive mappers (cameras), not active ranging; its niche is where emitting is impossible or costly, and its weak regime (far, low parallax) is where heavy tails matter most. Strictly the Cauchy is the uniform turn's (R389); the passive reader is the one that only receives. The first need is tested by BER (`plans/ber-plan.md`; predictions B1–B4 committed first).
+
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |
