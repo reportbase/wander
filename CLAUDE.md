@@ -522,6 +522,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   that clarification is needed."): §5 "Passive and active readers": the Cauchy belongs to the uniform turn, whether it aims
   a receiver or an emitter (the lighthouse is active); a ranging reader carries in the signal's speed and a clock and is a
   writer (CFH); passive gives directions only from one place, active a range per direction.
+  Since R396 (Tom: "do a thought expirment, what would be needed to turn the two readers into something that could map a
+  room."; "both"): §7½ "What it takes to map": the two readers, four acts (turn, hold, step, match) and one amount; the
+  address says where, the payload says which (identity, not geometry), each checking the other (rays of a wrong match do
+  not meet; a loop places the error); a ranging payload in an unread unit gives the shape from one place; structure from
+  motion's keypoint and descriptor are the split unnamed. Tested by MAP (`plans/map-plan.md`, M1–M7 written, not run;
+  scripts to go in `runs/map/`), item 0 of §11's queue, before AFM.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
