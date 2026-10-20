@@ -1,0 +1,3 @@
+f = 0.0: AF2 8.708e-03  BA-LS 7.206e-03  BA-CB 1.819e-03   AF2's worst turn error 2.4444 deg (median over rooms 0.7391)
+f = 0.1: AF2 2.035e-02  BA-LS 1.804e-01  BA-CB 1.420e-02   AF2's worst turn error 128.7197 deg (median over rooms 17.8653)
+f = 0.2: AF2 6.032e-01  BA-LS 5.633e-01  BA-CB 7.327e-01   AF2's worst turn error 178.4211 deg (median over rooms 109.9217)
