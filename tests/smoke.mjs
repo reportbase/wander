@@ -1228,11 +1228,67 @@ try {
     const t4 = B.variance(4, 2, 'sun'); o.t4 = t4.T; o.c4 = t4.C;
     o.slide = 0; for (const kind of ['cauchy', 'mixed']) for (const p of B.samples(kind, 4, 2, 'sun', 500)) o.slide = Math.max(o.slide, Math.abs(p.rest[0] - 4 - p.seen[0]));
     const c = B.samples('cauchy', 3, 2, 'uniform', 2000); o.meanRest = c.reduce((a, p) => a + p.restC, 0) / c.length;
+    const l0 = B.lensStats(2, 0, 2, 'sun'), l5 = B.lensStats(2, 0.5, 2, 'uniform'); o.lens0 = Math.max(l0.residual, Math.abs(l0.bias));
+    o.lensRes = l5.residual; o.lensBias = l5.bias;
+    o.refit0 = B.lensRefitV(2, 0, 2, 'uniform', 1).V; o.refitW1 = B.lensRefitV(2, -0.5, 2, 'uniform', 1).V; o.refitW3 = B.lensRefitV(2, -0.5, 2, 'uniform', 3).V;
+    o.ringN = 0; for (let i = 0; i < 20000; i++) { const th = Math.PI * (i + 0.5) / 20000; o.ringN += B.ringP(Math.cos(th), Math.sin(th), 0.8, 1) * 2 * Math.PI * Math.sin(th) * Math.PI / 20000; }
+    o.onS = B.lensRefitV(0.5, 0.5, 2, 'uniform', 3).V; o.ringS = B.lensRingV(0.5, 0.5, 2, 'uniform', 3).V;
     B.set({ eta: 4, k: 2, sky: 'sun', show: 'table' }); o.tab = document.getElementById('tab').textContent; return o; });
   if (bs.zero > 1e-9 || bs.cSpread > 1e-6 || Math.abs(bs.c[0] - 124.75) > 0.01 || bs.mSpread > 1e-9 || Math.abs(bs.m[0] - 0.0684) > 0.001 ||
-    !(bs.t4 > 10 * bs.c4) || !bs.beam || bs.slide > 1e-9 || Math.abs(bs.meanRest) > 0.05 || !bs.tab.includes('4,098'))
+    !(bs.t4 > 10 * bs.c4) || !bs.beam || bs.slide > 1e-9 || Math.abs(bs.meanRest) > 0.05 || !bs.tab.includes('4,098') ||
+    bs.lens0 > 1e-9 || !(bs.lensRes > 0.1) || !(Math.abs(bs.lensBias) > 0.05) ||
+    !(Math.abs(bs.refit0) < 1e-3) || !(bs.refitW3 < 0.5 * bs.refitW1) ||
+    Math.abs(bs.ringN - 1) > 1e-6 || !(Math.abs(bs.ringS) < 0.1 * bs.onS))
     failures.push(`[${current}] ${JSON.stringify(bs)}`);
-  console.log(`${failures.length === before43 ? 'ok  ' : 'FAIL'} ${current} (a uniform sky's V 0 for the Cauchy and the payload tabled once at every η (${bs.zero.toExponential(1)}); with a sun the Cauchy's V ${bs.c[0].toFixed(2)} and the mixed sampler's ${bs.m[0].toFixed(4)} the same at η 0.5, 2, 4; the table rebuilt per view ${Math.round(bs.t4)} at η = 4; with beaming the mixed below the Cauchy; the boost a slide of η to ${bs.slide.toExponential(1)})`);
+  console.log(`${failures.length === before43 ? 'ok  ' : 'FAIL'} ${current} (a uniform sky's V 0 for the Cauchy and the payload tabled once at every η (${bs.zero.toExponential(1)}); with a sun the Cauchy's V ${bs.c[0].toFixed(2)} and the mixed sampler's ${bs.m[0].toFixed(4)} the same at η 0.5, 2, 4; the table rebuilt per view ${Math.round(bs.t4)} at η = 4; with beaming the mixed below the Cauchy; the boost a slide of η to ${bs.slide.toExponential(1)}; no lens a spherical Cauchy to ${bs.lens0.toExponential(1)}, a lens of 0.5 off by ${(100 * bs.lensRes).toFixed(0)}% and the one-z shortcut biased ${(100 * bs.lensBias).toFixed(0)}%; refit, unbiased, V ${bs.refit0.toExponential(1)} with no lens, ${bs.refitW1.toFixed(4)} and ${bs.refitW3.toFixed(4)} for one and three z's at λ = −0.5; a squeezing lens at η = 0.5 V ${bs.onS.toFixed(3)} on the axis, ${bs.ringS.toFixed(4)} with three rings off it)`);
+
+  // ── 44. payload-free.html: the payload doesn't matter (SPN R405): every world, at every size or of unknown size, gives
+  //    back the turn's own readings, median at the corner; the paint differs; the equal-metres reader moves with the size ──
+  current = 'payload-free.html';
+  const before44 = failures.length;
+  await page.goto(new URL('payload-free.html?world=stars&s=unknown', base).href, { waitUntil: 'load' });
+  const pf = await page.evaluate(() => { const P = __payloadFree, o = { worst: 0, med: 0, split: true, paints: new Set(), cases: 0 };
+    for (const n of [15, 63, 255]) { const turn = P.fan(n).map(Math.tan);
+      for (const [w] of P.WORLDS) for (const s of [0, 3, 6, 12, 15]) { const v = P.readings(w, s, n).map(r => r.v_h); o.cases++;
+        v.forEach((x, k) => { o.worst = Math.max(o.worst, Math.abs(x - turn[k]) / turn[k]); });
+        o.med = Math.max(o.med, Math.abs(P.median(v) - 1));
+        if (v.filter(x => x < 1 - 1e-12).length !== (n - 1) / 2 || v.filter(x => x > 1 + 1e-12).length !== (n - 1) / 2) o.split = false;
+        if (n === 15 && s === 0) o.paints.add(P.readings(w, s, n).map(r => r.col).join()); } }
+    o.paints = o.paints.size; const a = P.metresFan(1e3, 15), b = P.metresFan(1e6, 15);
+    o.metresMove = Math.abs(a[0] - b[0]); o.metresNone = P.metresFan(null, 15) === null && P.metresFan(Infinity, 15) === null;
+    o.page = P.state().last; return o; });
+  if (pf.worst > 1e-14 || pf.med > 1e-12 || !pf.split || pf.paints < 7 || !(pf.metresMove > 1e-3) || !pf.metresNone ||
+    pf.page.worst > 1e-14 || pf.page.metres !== null || pf.page.met !== 63)
+    failures.push(`[${current}] ${JSON.stringify(pf)}`);
+  console.log(`${failures.length === before44 ? 'ok  ' : 'FAIL'} ${current} (${pf.cases} worlds, sizes and fans give back the turn's own readings to ${pf.worst.toExponential(1)}, the median at the corner, half either side; ${pf.paints} different paints; the equal-metres reader moves with the size and has nothing to space against when it is unknown)`);
+
+  // ── 45. payload-free-3d.html: the same in three dimensions: every world at every size or of unknown size gives back the
+  //    sweep's own [h : v : v₂], so every count is the grid's (a half each side of every corner, the near field a third);
+  //    the paint differs; the equal-metres screen needs the size; WebGL drew frames (three.js served as for check 22) ──
+  current = 'payload-free-3d.html';
+  const before45 = failures.length;
+  await page.route(/^https:\/\/cdn\.jsdelivr\.net\/npm\/three@0\.160\.0\//, async route => {
+    const rel = new URL(route.request().url()).pathname.replace('/npm/three@0.160.0/', '');
+    try { await route.fulfill({ status: 200, contentType: 'text/javascript', body: await readFile(join(ROOT, 'node_modules/three', rel)) }); }
+    catch { await route.continue(); }
+  });
+  await page.goto(new URL('payload-free-3d.html?world=room', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__payloadFree3d && __payloadFree3d.frames > 2, null, { timeout: 30000 }).catch(() => {});
+  const p3 = await page.evaluate(() => { const P = __payloadFree3d, o = { worst: 0, cases: 0, counts: {}, paints: new Set() };
+    for (const n of [16, 32]) { const G = P.grid(n), seen = new Set();
+      for (const [w] of P.WORLDS) for (const s of [0, 6, 12, 15]) { const R = P.readings(w, s, n); o.cases++;
+        R.forEach((r, k) => { const d = G[k].d; o.worst = Math.max(o.worst, Math.abs(r.vh - d[1] / d[0]) / (d[1] / d[0]), Math.abs(r.v2h - d[2] / d[0]) / (d[2] / d[0])); });
+        seen.add(JSON.stringify(P.counts(R))); if (n === 16 && s === 0) o.paints.add(R.map(r => r.col ? r.col.join() : '-').join('|')); }
+      o.counts[n] = [...seen].map(x => JSON.parse(x)); }
+    o.paints = o.paints.size; const a = P.metresScreen(10, 16), b = P.metresScreen(1e4, 16);
+    o.metresMove = Math.abs(a[5][1] - b[5][1]) > 1; o.metresNone = P.metresScreen(null, 16) === null;
+    o.frames = P.frames; o.webgl = P.webgl; o.page = P.state().last; return o; });
+  const c32 = p3.counts[32];
+  if (p3.worst > 1e-14 || p3.counts[16].length !== 1 || c32.length !== 1 || c32[0].v2LeH !== 0.5 || Math.abs(c32[0].vLeH - 0.5) > 0.01 ||
+    Math.abs(c32[0].v2LeV - 0.5) > 0.01 || Math.abs(c32[0].near - 1 / 3) > 0.01 || p3.paints < 7 || !p3.metresMove || !p3.metresNone ||
+    !p3.webgl || !(p3.frames > 2) || p3.page.met !== p3.page.N)
+    failures.push(`[${current}] ${JSON.stringify(p3)}`);
+  console.log(`${failures.length === before45 ? 'ok  ' : 'FAIL'} ${current} (${p3.cases} worlds, sizes and grids give back the sweep's own [h : v : v₂] to ${p3.worst.toExponential(1)}; one set of counts per grid, v ≤ h ${c32[0].vLeH}, v₂ ≤ h ${c32[0].v2LeH}, v₂ ≤ v ${c32[0].v2LeV}, the near field ${c32[0].near.toFixed(4)} at 32 × 32; ${p3.paints} paints; the equal-metres screen moves with the size and has none when it is unknown; WebGL drew ${p3.frames} frames)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';

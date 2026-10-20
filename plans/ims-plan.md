@@ -169,3 +169,11 @@ The verdict:
   0.068 to 0.21–0.40.
 
 Not shown: warps that are not Möbius maps, and time on a GPU.
+
+### Read after the run (20 Oct, SPN R403)
+
+Tom: "the advantage that cauchy has is it does not need to know N.", then "so tie with classical is good news actually."
+I3(b)'s kill is this run's clearest case: the rebuilt table has an N (its 64 × 128 cells) and fails when they are too
+coarse; the Cauchy has none. The payload's table, built once, is where N stays. The lens in `boost-sky.html` (not a run of
+this plan; no predictions were committed for it) restates draw's Tangent Bridge §10.2–10.3 for sampling, known beforehand
+and not checked first.

@@ -367,9 +367,43 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the sky's frame pushed through the boost, no table); the table rebuilt per view (64 × 128, 8,192 evaluations a change);
   mixed (L tabled once in the sky's frame, pushed through the boost). Panels: the sky as seen and in its own frame, both on
   the level ln tan(θ/2), on which the boost is a slide of η, with 2,000 sampled directions; each sampler's V by quadrature
-  (4 × 4 Gauss–Legendre in 128 × 256 cells) at this η and against η. `?eta=&k=2|4&sky=uniform|sun&show=uniform|cauchy|table|mixed&play=1`;
-  hook `window.__boostSky` (`variance`, `samples`, `seenTable`, `restTable`, `Lof`, `toSeen`, `toRest`, `set`, `state`,
+  (4 × 4 Gauss–Legendre in 128 × 256 cells) at this η and against η. A lens (Tom, 20 Oct: "add a lense to see where it
+  breaks"): θ′ = θ + (λ/2)·sin 2θ on the seen angle, not a Möbius map for λ ≠ 0; the pushed directions' miss from the
+  nearest spherical Cauchy, the bias of the shortcut keeping one z, the lens's derivative per sample removing it (a
+  normalizing flow, not closure); the sky's levels as ticks, even under the boost, bunched by the lens. The Cauchy refit to the lens (Tom: "can we make cauchy  handle the lense"): one or three slid
+  spherical Cauchys (½·sech²(t − s) on the level) fitted by EM to the lensed addresses and sampled directly, unbiased, V
+  0.060 and 0.0022 at λ = −0.5, η = 2 (uniform sky); a squeezing lens (λ > 0) no better with three, since a mixture of the
+  family can only be wider than one member. Off the axis (Tom: "try off axis cauchy"): a spherical Cauchy tipped off the
+  axis, its azimuth drawn at random, is a ring (closed density, `ringP`); one or three rings fitted by EM (`fitRings`,
+  two starts, the on-axis fit among them) take the squeezing lens λ = 0.5 at η = 0.5 from V 0.187 to 0.0011. The lens
+  table waits until the controls rest (about a second of fits).
+  `?eta=&k=2|4&sky=uniform|sun&show=uniform|cauchy|table|mixed&lens=&play=1`;
+  hook `window.__boostSky` (`variance`, `lensStats`, `lensRefitV`, `fitLens`, `lensRingV`, `fitRings`, `ringP`, `lensOf`, `lensInv`, `lensJ`, `samples`, `seenTable`, `restTable`, `Lof`, `toSeen`, `toRest`, `set`, `state`,
   `curveFor`). Not in the flying page.
+- `payload-free.html`: **the payload doesn't matter** (20 Oct 2026, Tom: "how can we visualize this?", "but the amazing thing is
+  that the payloads are irrelevent.", then "yes"; SPN R405), a standalone page, plain canvas. One fan of n rays at equal angles
+  (15, 63 or 255, the middle one at 45°), fixed; the world behind it changes (a row of trees, a straight wall, a curved wall
+  round home, stars at every distance, one sun, noise, nothing at all), scaled by S from 1 to 10¹² or of unknown size, drawn
+  on the reader's lay (d to H, then 1 + ln d). Each ray is painted by what it meets; the reading taken back from the hit
+  (y/x, or the ray's own direction at the horizon) is checked against the turn's own tan θ, with the median and the split
+  at the corner; a strip shows the fixed addresses over the changing payload (colour and distance). Beside it an
+  equal-metres reader (the same count spaced up a line one H away to the world's extent), moving with S and with nothing
+  to space against when the size is unknown or the world empty. `?world=trees|wall|curve|stars|sun|noise|empty&s=<0..12>|unknown&n=&play=1`;
+  hook `window.__payloadFree` (`fan`, `worldOf`, `hit`, `readings`, `median`, `metresFan`, `lay`, `WORLDS`, `set`, `state`).
+  Not in the flying page.
+- `payload-free-3d.html`: **the payload doesn't matter, in 3D** (20 Oct 2026, Tom: "how would we do the same visual but in
+  3d.", then "yes"; after `payload-free.html`, OFS Theorem 6(a) and Proposition 5(e)), a standalone page, three.js like
+  `wedge.html` (the same pinned CDN version and test route) for the scene only: the geometry and the flat panels are a plain
+  script, so the hook works without WebGL. The addresses: n × n cell centres of Lambert's map (16, 32 or 64), uniform over
+  the octant in azimuth and height, fixed. The worlds (a forest of trunks, a room with home in its floor corner, a dome round
+  home, stars at every distance, one sun, noise, nothing), scaled by S from 1 to 10¹² or of unknown size; each ray painted by
+  the first thing met, its [h : v : v₂] taken back from the hit and checked against the grid's own, so every count is the
+  grid's (v ≤ h, v₂ ≤ h, v₂ ≤ v a half each, the near field a third) in every world. Panels: the scene on the reader's lay
+  (orbit; arcs at H and each tenfold, the corners dashed), the wedge from home (the triangle h + v + v₂ = 1, medians the
+  pairs' corners), Lambert's map painted, and an equal-metres flat screen one H away along h out to the world's extent
+  (needs it; none when unknown). `?world=forest|room|dome|stars|sun|noise|empty&s=<0..12>|unknown&n=16|32|64&play=1`;
+  hook `window.__payloadFree3d` (`grid`, `worldOf`, `hit`, `readings`, `counts`, `metresScreen`, `lay`, `WORLDS`, `set`,
+  `state`, `frames`, `webgl`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -473,7 +507,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -575,7 +609,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   sampler (the payload tabled once in its own frame, the addresses by the Cauchy). I1 exact (spherical Cauchy closed
   under composed boosts, 10⁻⁶⁰); the address part cancels exactly (V 0 for a uniform sky; with a sun the Cauchy's V
   124.75 and the mixed sampler's 0.068 at every η); I3(b) killed (the rebuilt table loses to the Cauchy alone at η = 4,
-  4,098 against 124.75). The Cauchy removes the precomputation tied to the view, not the payload's.
+  4,098 against 124.75). The Cauchy removes the precomputation tied to the view, not the payload's. Then (SPN R403; Tom:
+  "the advantage that cauchy has is it does not need to know N."; "so tie with classical is good news actually."): the Cauchy
+  addresses without knowing N; what needs N is the payload's or the writer's; a tie with a classical method shows correctness,
+  and comes free where that method needs N (IMS's table, DPR's far plane). The lens restates draw's Tangent Bridge §10.2–10.3
+  (known beforehand, not checked first). Two things from that paper await a ruling: its pan × tilt measure in 3D against
+  OFS 5(e)'s uniform octant, and its §1.1 "unique Möbius-invariant distribution" (rotation-invariant is meant).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
@@ -1003,6 +1042,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the family, moving only its point m + iγ (the standpoint); the normal law the counterpart among amounts; only an amount
   entering breaks it (squaring, an edge, a scale mixture, an added amount as in a Voigt line, pooled standpoints, a
   weight not the turn's); the tails, and so the horizon, go last.
+  **The Cauchy's superpower** (20 Oct, SPN R404; Tom: "seems to me this is cauchy's superpower.    you can sweep with
+  cauchy, and the tail stays long.   the payloads can be changed, cauchy addresses stay fixed."): OFS §7.2 "Three properties
+  of one law" names them together (sweeping keeps the family, payloads change and addresses stay, the tails last; only an
+  edge or a power takes them). The exact instance in SPN: the lens of `boost-sky.html` slides both far tails by ±ln(1 + λ)
+  (`runs/ims/tails.py`, to 9·10⁻²⁶), breaking only the middle.
+  Then R405 (Tom: "the world is unknowably large, what we look at has perfect fidelity … because we don't actually know
+  N."; "yours is better.  use that."): the sweep is uniform, the world is not (equal angles free, equal metres cost N); each
+  address exact and the reader's own circle complete (draw TB §16), its own count of addresses finite; the unknown rest
+  carried by the tail at the horizon. In SPN only.
   **The reader's line, closed; a metaphor audit** (18 Oct, SPN R366; review 19, `plans/ofs-review-19.md`; Tom: "yes, do
   both"): OFS §4 after Proposition 2: readings the closed half-arc of the projective line, home [1 : 0], horizon [0 : 1],
   charts v/h and h/v, the reciprocal the exchange; the missing mean is the chart's (a bounded chart has one: the angle π/4,
@@ -1940,7 +1988,19 @@ In short:
 
   43. **boost-sky.html:** a uniform sky's V 0 for the Cauchy and the payload tabled once at η 0.5, 2, 4; with a sun the
       Cauchy's V 124.75 and the mixed sampler's 0.0684 the same at every η; the table rebuilt per view more than 10 times the
-      Cauchy at η = 4 (4,098); with beaming the mixed below the Cauchy; the boost a slide of η on the level, exactly.
+      Cauchy at η = 4 (4,098); with beaming the mixed below the Cauchy; the boost a slide of η on the level, exactly; with no
+      lens the pushed directions one spherical Cauchy, through a lens of 0.5 off by more than 10% and the one-z shortcut biased;
+      refit, V 0 with no lens, three z's below half of one's at λ = −0.5; a ring's density integrating to 1, three
+      rings under a tenth of the on-axis fit's V for the squeezing lens at η = 0.5.
+
+  44. **payload-free.html:** every world (trees, wall, curve, stars, sun, noise, empty) at sizes 1, 10³, 10⁶, 10¹² and unknown,
+      with 15, 63 and 255 rays, gives back the turn's own readings tan θ to 10⁻¹⁴, the median at the corner, half the rays
+      either side; the seven worlds paint differently; the equal-metres reader moves with the size and has none when it is
+      unknown.
+  45. **payload-free-3d.html:** every world at sizes 1, 10⁶, 10¹² and unknown, on 16 × 16 and 32 × 32 grids, gives back the
+      sweep's own [h : v : v₂] to 10⁻¹⁴, one set of counts per grid (at 32 × 32 v ≤ h, v₂ ≤ v within 0.01 of ½, v₂ ≤ h
+      exactly ½, the near field within 0.01 of ⅓); the seven worlds paint differently; the equal-metres screen moves with
+      the size and has none when it is unknown; in the room every ray meets a wall; WebGL drew frames.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

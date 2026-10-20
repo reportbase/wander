@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The payload doesn't matter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    payload-free.html: the payload doesn't matter (20 October 2026, Tom: "how can we visualize this?", then "but the amazing
+    thing is that the payloads are irrelevent.", then "yes"; SPN R403–R405, OFS §7.2 and Theorem 6(a)). A standalone page,
+    plain canvas, no libraries.
+    One reader at home turns uniformly through the quarter turn, from all of h (along the ground, right) to all of v (up),
+    n rays at equal angles (n odd, so the middle ray lies on the corner, 45°). That fan is the reader's addresses, and it is
+    drawn once and never changes. Behind it the world cycles: a row of trees, a straight wall, a curved wall round home,
+    stars at every distance, one sun, noise, or nothing at all; any of them scaled by a size S from 1 to 10¹², or unknown.
+    Each ray is painted with whatever it meets first (the payload), and the reading is taken back from the place it met:
+    v/h = y/x of the hit, or the ray's own direction when it meets nothing and runs to the horizon. The readout compares
+    every reading with the turn's own, tan of the ray's angle, with no world at all: they agree to rounding, the median stays at the corner, half the rays either side.
+    That is Theorem 6(a) shown, not proved: the address is the turn's, and no payload enters it. What the payload does change
+    is the paint on each ray, the strip at the bottom.
+    The world is drawn on the reader's lay of distances, d to the corner (H = 1), then 1 + ln d, so a world 10¹² across fits.
+    Beside it, smaller, an equal-metres reader for contrast: its n addresses spaced evenly up a line one H away, out to the
+    world's extent. It must be told N (the extent), its rays move with every size, and with an unknown or empty world it has
+    nothing to space against.
+    Links: ?world=trees|wall|curve|stars|sun|noise|empty&s=<log10 size>|unknown&n=15|63|255&play=1. Test hook:
+    window.__payloadFree.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0; --blue: #7fa8e8 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 82ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 200px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    #say { color: var(--bright); font-size: 13px; margin: 0 0 8px }
+    .ok { color: var(--teal) } .bad { color: var(--red) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The payload doesn't matter</h1>
+    <p class="lede">A reader turns its head evenly through a quarter turn. Where each ray points is its address: fixed by
+        the turn alone, before anything arrives. Change the world behind it to anything, any size, or nothing at all, and the
+        addresses do not move. Only what each ray finds there, the payload, changes.</p>
+
+    <div class="panel">
+        <div class="row" id="worlds"></div>
+        <div class="row"><label for="size">world size S</label><input id="size" type="range" min="0" max="12" step="0.5" value="0">
+            <span id="sizeVal" style="min-width:9ch"></span><button id="unknown">unknown</button></div>
+        <div class="row"><label>rays</label><span id="ns"></span><button id="play">play</button></div>
+        <p id="say"></p>
+    </div>
+
+    <div class="grid">
+        <div class="panel">
+            <canvas id="fan" width="900" height="900"></canvas>
+            <p class="cap">The reader at home (bottom left), h to the right, v up. Its rays at equal angles; the corner, v = h,
+                dashed at 45°. The world on the reader's lay: in proportion out to one H (the gold ring), then each tenfold
+                the same width (rings at 10, 10³, 10⁶, 10⁹, 10¹²). A dot where a ray meets something, in its colour; a ray
+                that meets nothing runs to the horizon.</p>
+        </div>
+        <div class="panel">
+            <canvas id="metres" width="450" height="450"></canvas>
+            <p class="cap">For contrast, an equal-metres reader: the same number of addresses spaced evenly up a line one
+                H away, out to the world's size. It needs that size. Its rays move with every S, and with an unknown or
+                empty world it has none.</p>
+            <div id="compare" class="note"></div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <canvas id="strip" width="1100" height="230"></canvas>
+        <p class="cap">Top row: the addresses, one tick per ray (v/h on a log scale), the same in every world. Below: the
+            payload, each ray's colour, and how far away it met something (higher is farther, in tenfolds). This is all that
+            changes from world to world.</p>
+        <div id="check" class="note"></div>
+    </div>
+
+    <p class="note">The address is the turn's; whatever arrives can be swapped at every address and no address moves
+        (Observation from Somewhere, Theorem 6(a), §7.2). So nothing the addresses say is about the payload, and the
+        world's size never enters them: equal angles are free, equal metres cost N. <a href="payload-free-3d.html">The same in 3D</a>. <a href="demos.html">All demos</a>.</p>
+</main>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const S0 = { world: 'trees', s: 0, unknown: false, n: 63, play: false };
+const S = { ...S0 };
+const WORLDS = [['trees', 'a row of trees'], ['wall', 'a straight wall'], ['curve', 'a curved wall'], ['stars', 'stars at every distance'],
+    ['sun', 'one sun'], ['noise', 'noise'], ['empty', 'nothing at all']];
+const UNKNOWN_S = 15;                                        // an unknown size is drawn as 10¹⁵, past every ring
+function rng(seed) { let a = seed >>> 0; return () => { a += 0x6D2B79F5; let t = a; t = Math.imul(t ^ t >>> 15, t | 1);
+    t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const hsl = (h, s, l) => `hsl(${h},${s}%,${l}%)`;
+
+// THE ADDRESSES: n rays at equal angles over the quarter turn, (k + ½)·(π/2)/n. With n odd the middle ray is at π/4 exactly.
+// Nothing about the world is passed in: the fan is the turn's alone.
+function fan(n) { const a = []; for (let k = 0; k < n; k++) a.push((k + 0.5) * (Math.PI / 2) / n); return a; }
+
+// THE WORLD, in units of H = 1, then scaled by the size: discs {x, y, r, col} and segments {x1, y1, x2, y2, col}.
+function worldOf(kind, size) {
+    const r = rng(404), D = [], G = [];
+    if (kind === 'trees') for (let j = 0; j <= 40; j++) D.push({ x: 1, y: 0.2 * j, r: 0.07, col: hsl(110 + 20 * r(), 45, 30 + 15 * r()) });
+    if (kind === 'wall') G.push({ x1: 1, y1: 0, x2: 1, y2: 1e9, col: hsl(20, 30, 55) });
+    if (kind === 'curve') { const cx = 1.5, cy = 1.5, R = 2.2, m = 96;   // a circle round home, so every ray meets it once
+        for (let j = 0; j < m; j++) { const a = 2 * Math.PI * j / m, b = 2 * Math.PI * (j + 1) / m;
+            G.push({ x1: cx + R * Math.cos(a), y1: cy + R * Math.sin(a), x2: cx + R * Math.cos(b), y2: cy + R * Math.sin(b), col: hsl(200 + 60 * j / m, 45, 58) }); } }
+    if (kind === 'stars') for (let j = 0; j < 500; j++) { const d = Math.pow(10, 4 * r()), a = (Math.PI / 2) * r();
+        D.push({ x: d * Math.cos(a), y: d * Math.sin(a), r: 0.012 * d, col: hsl(40 + 200 * r(), 60, 55 + 30 * r()) }); }
+    if (kind === 'sun') D.push({ x: 3, y: 2, r: 0.8, col: '#ffd27a' });
+    if (kind === 'noise') for (let j = 0; j < 320; j++) D.push({ x: 4 * r(), y: 4 * r(), r: 0.02 + 0.08 * r(), col: hsl(360 * r(), 70, 55) });
+    const k = size;                                          // scale the world: every place and size times k
+    return { discs: D.map(o => ({ x: o.x * k, y: o.y * k, r: o.r * k, col: o.col })),
+        segs: G.map(o => ({ x1: o.x1 * k, y1: o.y1 * k, x2: o.x2 * k, y2: o.y2 * k, col: o.col })),
+        extent: kind === 'empty' ? null : (kind === 'stars' ? 1e4 : kind === 'wall' ? 8 : kind === 'trees' ? 8 : 4) * k };
+}
+
+// the first thing a ray meets, or null
+function hit(world, th) {
+    const ux = Math.cos(th), uy = Math.sin(th); let best = null;
+    for (const o of world.discs) { const b = ux * o.x + uy * o.y, c = o.x * o.x + o.y * o.y - o.r * o.r, q = b * b - c;
+        if (q < 0) continue; const t = b - Math.sqrt(q) > 0 ? b - Math.sqrt(q) : b + Math.sqrt(q);
+        if (t > 0 && (!best || t < best.t)) best = { t, col: o.col }; }
+    for (const o of world.segs) { const ex = o.x2 - o.x1, ey = o.y2 - o.y1, den = ux * ey - uy * ex; if (Math.abs(den) < 1e-300) continue;
+        const t = (o.x1 * ey - o.y1 * ex) / den, w = (o.x1 * uy - o.y1 * ux) / den;
+        if (t > 0 && w >= 0 && w <= 1 && (!best || t < best.t)) best = { t, col: o.col }; }
+    if (!best) return null;
+    return { t: best.t, x: best.t * ux, y: best.t * uy, col: best.col };
+}
+// THE READINGS, taken back from where each ray landed: v/h = y/x of the hit, or the ray's own direction when it met nothing.
+function readings(kind, s, n) {
+    const W = worldOf(kind, Math.pow(10, s)), A = fan(n);
+    return A.map(th => { const h = hit(W, th); return h ? { v_h: h.y / h.x, d: h.t, col: h.col } : { v_h: Math.tan(th), d: null, col: null }; });
+}
+function median(xs) { const a = xs.slice().sort((p, q) => p - q); return a[(a.length - 1) / 2]; }
+// THE EQUAL-METRES READER: n addresses evenly up a line one H away, out to the world's extent L. It needs L.
+function metresFan(extent, n) { if (!extent || !isFinite(extent)) return null; const a = [];
+    for (let k = 0; k < n; k++) a.push(Math.atan((k + 0.5) * extent / n)); return a; }
+
+// DRAWING, on the reader's lay: d up to the corner (H = 1), then 1 + ln d
+const lay = d => d <= 1 ? d : 1 + Math.log(d);
+const RMAX = lay(Math.pow(10, 13));
+function drawFan(R) {
+    const c = $('fan'), g = c.getContext('2d'), W = c.width, P = 30, sc = (W - 2 * P) / RMAX, ox = P, oy = W - P;
+    g.fillStyle = '#000'; g.fillRect(0, 0, W, W);
+    const ring = (d, col, lab) => { const rr = lay(d) * sc; g.strokeStyle = col; g.beginPath(); g.arc(ox, oy, rr, -Math.PI / 2, 0); g.stroke();
+        if (lab) { g.fillStyle = '#6a6a76'; g.font = '13px DM Mono, monospace'; g.fillText(lab, ox + rr + 4, oy - 4); } };
+    g.lineWidth = 1; ring(1, '#d4a052', 'H'); [10, 1e3, 1e6, 1e9, 1e12].forEach(d => ring(d, 'rgba(255,255,255,0.12)', d < 1e3 ? String(d) : '10^' + Math.round(Math.log10(d))));
+    g.setLineDash([6, 6]); g.strokeStyle = 'rgba(212,160,82,0.7)'; g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + RMAX * sc, oy - RMAX * sc); g.stroke(); g.setLineDash([]);
+    const A = fan(S.n);
+    A.forEach((th, k) => { const r = R[k], end = (r.d == null ? RMAX : Math.min(RMAX, lay(r.d))) * sc;
+        g.strokeStyle = r.d == null ? 'rgba(140,230,205,0.18)' : 'rgba(140,230,205,0.55)'; g.lineWidth = S.n > 100 ? 0.6 : 1.1;
+        g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + end * Math.cos(th), oy - end * Math.sin(th)); g.stroke();
+        if (r.d != null) { g.fillStyle = r.col; g.beginPath(); g.arc(ox + end * Math.cos(th), oy - end * Math.sin(th), S.n > 100 ? 2.5 : 4.5, 0, 2 * Math.PI); g.fill(); } });
+    g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(ox, oy, 5, 0, 2 * Math.PI); g.fill();
+    g.fillStyle = '#8a8a96'; g.font = '14px DM Mono, monospace'; g.fillText('home', ox + 8, oy - 8); g.fillText('horizon', ox + 6, P + 4);
+}
+function drawMetres(extent) {
+    const c = $('metres'), g = c.getContext('2d'), W = c.width, P = 20, ox = P, oy = W - P, L = W - 2 * P;
+    g.fillStyle = '#000'; g.fillRect(0, 0, W, W);
+    g.strokeStyle = 'rgba(212,160,82,0.5)'; g.setLineDash([5, 5]); g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + L, oy - L); g.stroke(); g.setLineDash([]);
+    const M = metresFan(extent, S.n);
+    if (!M) { g.fillStyle = '#d96e5b'; g.font = '15px DM Mono, monospace'; g.fillText('no size: nothing to space against', ox + 20, oy - L / 2); return null; }
+    g.strokeStyle = 'rgba(217,110,91,0.6)'; g.lineWidth = S.n > 100 ? 0.5 : 1;
+    M.forEach(th => { g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + L * Math.cos(th), oy - L * Math.sin(th)); g.stroke(); });
+    return M;
+}
+function drawStrip(R) {
+    const c = $('strip'), g = c.getContext('2d'), W = c.width, Hh = c.height, P = 20, n = R.length, w = (W - 2 * P) / n;
+    g.fillStyle = '#000'; g.fillRect(0, 0, W, Hh);
+    const A = fan(n), lo = Math.log10(Math.tan(A[0])), hi = Math.log10(Math.tan(A[n - 1]));
+    g.strokeStyle = '#8ce6cd'; g.lineWidth = 1;
+    A.forEach(th => { const x = P + (Math.log10(Math.tan(th)) - lo) / (hi - lo) * (W - 2 * P); g.beginPath(); g.moveTo(x, 8); g.lineTo(x, 30); g.stroke(); });
+    const cx = P + (0 - lo) / (hi - lo) * (W - 2 * P); g.strokeStyle = '#d4a052'; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(cx, 4); g.lineTo(cx, 34); g.stroke(); g.setLineDash([]);
+    const base = Hh - 14, top = 52, dmax = 16;
+    R.forEach((r, k) => { const x = P + k * w;
+        if (r.d == null) { g.fillStyle = '#16161d'; g.fillRect(x, top, Math.max(1, w - 1), base - top); return; }
+        const hgt = Math.max(3, (Math.log10(Math.max(r.d, 1e-3)) + 3) / (dmax + 3) * (base - top));
+        g.fillStyle = r.col; g.fillRect(x, base - hgt, Math.max(1, w - 1), hgt); });
+    g.fillStyle = '#6a6a76'; g.font = '12px DM Mono, monospace'; g.fillText('addresses (fixed)', P, 46); g.fillText('payload: colour and distance (changes)', P + 190, 46);
+}
+
+function render() {
+    const s = S.unknown ? UNKNOWN_S : S.s, R = readings(S.world, s, S.n);
+    const turn = fan(S.n).map(Math.tan);                     // the turn's own readings, before any world: the reference
+    let worst = 0; R.forEach((r, k) => { worst = Math.max(worst, Math.abs(r.v_h - turn[k]) / turn[k]); });
+    const vs = R.map(r => r.v_h), med = median(vs), below = vs.filter(v => v < 1 - 1e-12).length, above = vs.filter(v => v > 1 + 1e-12).length;
+    const met = R.filter(r => r.d != null).length;
+    drawFan(R); drawStrip(R);
+    const W = worldOf(S.world, Math.pow(10, s)), M = drawMetres(S.unknown ? null : W.extent);
+    const nearM = M ? M.filter(th => Math.tan(th) <= 1).length : null;
+    last = { worst, med, below, above, met, nearMetres: nearM, metres: M };
+    $('sizeVal').textContent = S.unknown ? 'unknown' : 'S = 10^' + S.s;
+    $('say').textContent = `${WORLDS.find(w => w[0] === S.world)[1]}, ${S.unknown ? 'of unknown size' : 'size 10^' + S.s}: ` +
+        `${met} of ${S.n} rays meet something, ${S.n - met} run to the horizon. The rays have not moved.`;
+    $('check').innerHTML = `<span class="ok">Every reading, taken back from where its ray landed, against the turn's own (tan of its angle, no world at all): largest relative difference ${worst.toExponential(1)}.</span> ` +
+        `Median v/h = ${med.toPrecision(12)} (the corner, 1); ${below} rays below it, ${above} above.`;
+    $('compare').innerHTML = M ? `Equal-metres reader, told the size: ${nearM} of ${S.n} addresses inside the corner (v ≤ h), against the turn's ${below + 1}. Change S and its rays move.`
+        : `<span class="bad">Equal-metres reader: no size to space against.</span> The turn's reader keeps all ${S.n}.`;
+    document.querySelectorAll('[data-w]').forEach(b => b.classList.toggle('on', b.dataset.w === S.world));
+    document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
+    $('unknown').classList.toggle('on', S.unknown);
+}
+let last = null;
+function set(o) { Object.assign(S, o); $('size').value = S.s; render(); return S; }
+$('worlds').innerHTML = WORLDS.map(([k, l]) => `<button data-w="${k}">${l}</button>`).join('');
+$('ns').innerHTML = [15, 63, 255].map(n => `<button data-n="${n}">${n}</button>`).join(' ');
+document.querySelectorAll('[data-w]').forEach(b => b.onclick = () => set({ world: b.dataset.w }));
+document.querySelectorAll('[data-n]').forEach(b => b.onclick = () => set({ n: +b.dataset.n }));
+$('size').addEventListener('input', e => set({ s: +e.target.value, unknown: false }));
+$('unknown').onclick = () => set({ unknown: !S.unknown });
+let timer = null, step = 0;
+function play(on) { S.play = on; $('play').classList.toggle('on', on); clearInterval(timer);
+    if (on) timer = setInterval(() => { step++; const w = WORLDS[step % WORLDS.length][0], r = rng(step)();
+        set({ world: w, s: Math.round(r * 24) / 2, unknown: step % 9 === 8 }); }, 1600); }
+$('play').onclick = () => play(!S.play);
+const q = new URLSearchParams(location.search);
+if (WORLDS.some(w => w[0] === q.get('world'))) S.world = q.get('world');
+if (q.get('s') === 'unknown') S.unknown = true; else if (q.has('s')) S.s = Math.min(12, Math.max(0, +q.get('s')));
+if (['15', '63', '255'].includes(q.get('n'))) S.n = +q.get('n');
+$('size').value = S.s; render(); if (q.get('play') === '1') play(true);
+window.__payloadFree = { fan, worldOf, hit, readings, median, metresFan, lay, WORLDS, set, state: () => ({ ...S, last }) };
+</script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>The payload doesn't matter, in 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    payload-free-3d.html: the payload doesn't matter, in three dimensions (20 October 2026; Tom: "how would we do the same
+    visual but in 3d.", then "yes"). After payload-free.html (SPN R405) and its two-dimensional fan; OFS Theorem 6(a),
+    Proposition 5(e) (the uniform wedge's readings the two-dimensional Cauchy, every pair at its corner, the near field a
+    third); wedge.html for the view from home; recover.html step 7 for the wedge painted by what each address meets, there
+    on one fixed field of bodies.
+
+    Keep the case. h, v and v₂ are unit relations; H is the reader's breadth, here 1, every party drawn at it (V = V₂ = H).
+    d is a distance, an amount; S scales every place and size in the world.
+      - The addresses: n × n directions uniform over the octant, even in azimuth ψ (round the horizontal from h to v₂) and
+        in height (the v component), the cell centres of Lambert's equal-area map (Archimedes' hat-box): the wedge's uniform
+        sweep. Nothing about the world is passed in; the grid is the turn's alone, drawn once.
+      - The worlds behind it: a forest of trunks, a room with home in its floor corner, a dome round home, stars at every
+        distance, one sun, noise, nothing at all; any of them scaled by S from 1 to 10¹², or of unknown size (drawn at 10¹⁵).
+        Each ray stops at the first thing it meets and is painted by it (the payload). The reading [h : v : v₂] is taken
+        back from the place it met: the hit's own components. The readout compares v/h and v₂/h with the grid's own: they
+        agree to rounding, so every count the grid gives (v ≤ h, v₂ ≤ h, v₂ ≤ v, the near field) is the same in every world.
+      - Three views of one reading: the scene (three.js, orbit it), on the reader's lay of distances (d to H, then 1 + ln d,
+        so a world 10¹² across fits); the wedge from home, the triangle h + v + v₂ = 1, each address at its shares, the
+        medians the pairs' corners; Lambert's map, where the grid is even and the paint is a picture of the world.
+      - For contrast, an equal-metres reader: a flat screen one H away along h, its n × n pixels spaced evenly out to the
+        world's extent. It must be told that extent, its addresses move with every S, and with an unknown or empty world it
+        has nothing to space against. Its near field holds (1/E)² of its pixels, where the turn's holds a third.
+    Links: ?world=forest|room|dome|stars|sun|noise|empty&s=<log10 size>|unknown&n=16|32|64&play=1. Test hook:
+    window.__payloadFree3d (the arithmetic works without WebGL; `frames` and `webgl` say whether the scene drew).
+    three.js 0.160.0 from jsDelivr, pinned, as wedge.html (the smoke test serves it from node_modules).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0; --blue: #7fa8e8 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1180px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 86ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px; min-width: 0 }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 200px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    #scene { aspect-ratio: 1 / 1; touch-action: none; cursor: grab }
+    .grid { display: grid; grid-template-columns: 3fr 2fr; gap: 12px }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 760px) { .grid, .grid2 { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    #say { color: var(--bright); font-size: 13px; margin: 0 0 8px }
+    .ok { color: var(--teal) } .bad { color: var(--red) }
+    a { color: var(--teal) }
+    #nogl { display: none; color: var(--red); font-size: 13px; padding: 8px 0 0 }
+    </style>
+    <script type="importmap">{ "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body>
+<main>
+    <h1>The payload doesn't matter, in 3D</h1>
+    <p class="lede">The reader sweeps evenly over a whole octant: up from h toward v, round from h toward v₂. Where each ray
+        points is its address, [h : v : v₂], fixed by the sweep alone. Put anything behind it, at any size, or nothing at
+        all: the addresses do not move. Only what each ray finds, the payload, changes. <a href="payload-free.html">The same
+        in 2D</a>.</p>
+
+    <div class="panel">
+        <div class="row" id="worlds"></div>
+        <div class="row"><label for="size">world size S</label><input id="size" type="range" min="0" max="12" step="0.5" value="0">
+            <span id="sizeVal" style="min-width:9ch"></span><button id="unknown">unknown</button></div>
+        <div class="row"><label>rays</label><span id="ns"></span><button id="play">play</button></div>
+        <p id="say"></p>
+    </div>
+
+    <div class="grid">
+        <div class="panel">
+            <canvas id="scene"></canvas>
+            <p class="cap">Home at the corner where the three axes meet: h, v (up) and v₂. Drag to turn, scroll or pinch to
+                zoom. Each ray of the sweep, and a dot where it meets something, in its colour; a ray that meets nothing runs
+                to the horizon. Distances on the reader's lay: in proportion out to H (the gold arcs), then each tenfold the
+                same width (arcs at 10, 10³, 10⁶, 10⁹, 10¹²).</p>
+            <div id="nogl"></div>
+        </div>
+        <div class="panel">
+            <canvas id="home" width="600" height="540"></canvas>
+            <p class="cap">From home: the wedge is the triangle h + v + v₂ = 1, every address at its shares. The dashed
+                medians are the three pairs' corners (v = h, v₂ = h, v₂ = v); the middle triangle, the near field in both
+                readings, holds a third. The dots never move; their colours are the payload.</p>
+        </div>
+    </div>
+
+    <div class="grid2">
+        <div class="panel">
+            <canvas id="map" width="560" height="560"></canvas>
+            <p class="cap">Lambert's equal-area map of the wedge: azimuth across (h on the left, v₂ on the right), height v
+                up. The sweep's grid is even here, one cell per address, the corners dashed. Painted, it is a picture of
+                whatever the rays met; the cells themselves are the same in every world.</p>
+            <div id="check" class="note"></div>
+        </div>
+        <div class="panel">
+            <canvas id="metres" width="560" height="504"></canvas>
+            <p class="cap">For contrast, an equal-metres reader: a flat screen one H away along h, its pixels spaced evenly
+                out to the world's size, shown from home. It needs that size. Every S moves its addresses, and with an
+                unknown or empty world it has none.</p>
+            <div id="compare" class="note"></div>
+        </div>
+    </div>
+
+    <p class="note">The address is the sweep's; whatever arrives can be swapped at every address and no address moves
+        (Observation from Somewhere, Theorem 6(a), Proposition 5(e)). So nothing the addresses say is about the payload,
+        and the world's size never enters them: equal angles are free, equal metres cost N. <a href="demos.html">All demos</a>.</p>
+</main>
+
+<script>
+'use strict';
+// ── the geometry and the flat panels, without three.js, so the arithmetic and the hook work without WebGL ─────────────────
+const $ = id => document.getElementById(id);
+const S0 = { world: 'forest', s: 0, unknown: false, n: 32, play: false };
+const S = { ...S0 };
+const WORLDS = [['forest', 'a forest'], ['room', 'a room'], ['dome', 'a dome round home'], ['stars', 'stars at every distance'],
+    ['sun', 'one sun'], ['noise', 'noise'], ['empty', 'nothing at all']];
+const NS = [16, 32, 64];
+const UNKNOWN_S = 15;                                        // an unknown size is drawn as 10¹⁵, past every arc
+function rng(seed) { let a = seed >>> 0; return () => { a += 0x6D2B79F5; let t = a; t = Math.imul(t ^ t >>> 15, t | 1);
+    t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function hsl(h, s, l) { s /= 100; l /= 100; const k = n => (n + h / 30) % 12, a = s * Math.min(l, 1 - l);
+    const f = n => l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1))); return [f(0), f(8), f(4)]; }
+const css = c => `rgb(${Math.round(255 * c[0])},${Math.round(255 * c[1])},${Math.round(255 * c[2])})`;
+
+// THE ADDRESSES: n × n cell centres of Lambert's map, azimuth ψ = (i + ½)/n · π/2, height y = (j + ½)/n; the direction
+// (cos a cos ψ, sin a, cos a sin ψ) with sin a = y. Uniform over the octant's area. Nothing about the world is passed in.
+function grid(n) { const out = [];
+    for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) { const psi = (i + 0.5) / n * Math.PI / 2, y = (j + 0.5) / n, c = Math.sqrt(1 - y * y);
+        out.push({ i, j, d: [c * Math.cos(psi), y, c * Math.sin(psi)] }); }
+    return out; }
+
+// THE WORLD, in units of H = 1, then scaled by the size: spheres {c, r, col}, upright trunks {x, z, r, top, col}, and the
+// room's box (home in its floor corner). Each ray meets the first; the colour is the payload.
+function worldOf(kind, size) {
+    const r = rng(405), B = [], T = []; let room = null, ext = null;
+    if (kind === 'forest') { for (let j = 0; j < 70; j++) { const x = 0.6 + 7 * r(), z = 0.6 + 7 * r();
+            T.push({ x, z, r: 0.08 + 0.08 * r(), top: 0.8 + 2.4 * r(), col: hsl(95 + 40 * r(), 40, 28 + 18 * r()) }); } ext = 8; }
+    if (kind === 'room') { room = { X: 4, Y: 2.5, Z: 5 };
+        B.push({ c: [2, 0.45, 2.2], r: 0.45, col: hsl(5, 65, 55) }, { c: [3.2, 0.3, 4.2], r: 0.3, col: hsl(48, 70, 58) }); ext = 7; }
+    if (kind === 'dome') { B.push({ c: [1, 0.4, 1], r: 3, col: null, dome: true }); ext = 4.5; }
+    if (kind === 'stars') { for (let j = 0; j < 1500; j++) { const d = Math.pow(10, 4 * r()), psi = Math.PI / 2 * r(), y = r(), c = Math.sqrt(1 - y * y);
+            B.push({ c: [d * c * Math.cos(psi), d * y, d * c * Math.sin(psi)], r: 0.03 * d, col: hsl(30 + 200 * r(), 60, 55 + 30 * r()) }); } ext = 1e4; }
+    if (kind === 'sun') { B.push({ c: [20, 14, 12], r: 7, col: [1, 0.82, 0.48] }); ext = 30; }
+    if (kind === 'noise') { for (let j = 0; j < 450; j++) B.push({ c: [5 * r(), 5 * r(), 5 * r()], r: 0.03 + 0.12 * r(), col: hsl(360 * r(), 70, 55) }); ext = 8.7; }
+    const k = size;                                          // scale the world: every place and size times k
+    return { balls: B.map(o => ({ ...o, c: o.c.map(x => x * k), r: o.r * k })),
+        trunks: T.map(o => ({ ...o, x: o.x * k, z: o.z * k, r: o.r * k, top: o.top * k })),
+        room: room && { X: room.X * k, Y: room.Y * k, Z: room.Z * k, k }, k, extent: kind === 'empty' ? null : ext * k };
+}
+function hit(W, d) {
+    let best = null; const take = (t, col) => { if (t > 0 && (!best || t < best.t)) best = { t, col }; };
+    for (const o of W.balls) { const b = d[0] * o.c[0] + d[1] * o.c[1] + d[2] * o.c[2], c0 = o.c[0] ** 2 + o.c[1] ** 2 + o.c[2] ** 2 - o.r * o.r,
+            q = b * b - c0; if (q < 0) continue; const sq = Math.sqrt(q); let t = b - sq; if (t <= 0) t = b + sq; if (t <= 0) continue;
+        let col = o.col;
+        if (o.dome) { const p = [t * d[0] - o.c[0], t * d[1] - o.c[1], t * d[2] - o.c[2]], lat = Math.asin(p[1] / o.r), lon = Math.atan2(p[2], p[0]);
+            col = hsl(200 + 50 * Math.sin(3 * lon), 45, 40 + 25 * Math.cos(6 * lat)); }
+        take(t, col); }
+    for (const o of W.trunks) { const qq = d[0] * d[0] + d[2] * d[2]; if (qq < 1e-24) continue;
+        const b = d[0] * o.x + d[2] * o.z, c0 = o.x * o.x + o.z * o.z - o.r * o.r, q = b * b - qq * c0; if (q < 0) continue;
+        const t = (b - Math.sqrt(q)) / qq; if (t > 0 && t * d[1] <= o.top) take(t, o.col); }
+    if (W.room) { const R = W.room, tx = R.X / d[0], ty = R.Y / d[1], tz = R.Z / d[2], t = Math.min(tx, ty, tz), p = [t * d[0], t * d[1], t * d[2]];
+        const tile = (u, w) => (Math.floor(u / (0.5 * R.k)) + Math.floor(w / (0.5 * R.k))) & 1;
+        const col = t === tx ? hsl(25, 35, tile(p[1], p[2]) ? 52 : 44) : t === tz ? hsl(210, 30, tile(p[0], p[1]) ? 52 : 44) : hsl(45, 15, tile(p[0], p[2]) ? 78 : 70);
+        take(t, col); }
+    return best;
+}
+// the readings taken back from where each ray landed: the hit's own components, or the ray's own direction at the horizon
+function readings(kind, s, n) { const W = worldOf(kind, Math.pow(10, s));
+    return grid(n).map(g => { const h = hit(W, g.d), p = h ? [h.t * g.d[0], h.t * g.d[1], h.t * g.d[2]] : g.d;
+        return { vh: p[1] / p[0], v2h: p[2] / p[0], p, d: h ? h.t : null, col: h ? h.col : null }; }); }
+function counts(R) { const n = R.length, f = x => R.filter(x).length / n;
+    return { vLeH: f(r => r.vh <= 1), v2LeH: f(r => r.v2h <= 1), v2LeV: f(r => r.v2h <= r.vh), near: f(r => r.vh <= 1 && r.v2h <= 1) }; }
+// THE EQUAL-METRES READER: a flat screen one H away along h, n × n pixels evenly over [0, E]², E the world's extent. It needs E.
+function metresScreen(extent, n) { if (!extent || !isFinite(extent)) return null; const out = [];
+    for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) out.push([1, (j + 0.5) * extent / n, (i + 0.5) * extent / n]);
+    return out; }
+const lay = d => d <= 1 ? d : 1 + Math.log(d);
+const RMAX = lay(Math.pow(10, 13));
+
+// the triangle from home: h bottom left, v top, v₂ bottom right; a direction at its shares
+function triXY(c, p) { const s = p[0] + p[1] + p[2], W = c.width, Hh = c.height, P = 34, A = [P, Hh - P], Bv = [W / 2, P + 6], C = [W - P, Hh - P];
+    return [(p[0] * A[0] + p[1] * Bv[0] + p[2] * C[0]) / s, (p[0] * A[1] + p[1] * Bv[1] + p[2] * C[1]) / s]; }
+function drawTriangleFrame(c, g) {
+    g.fillStyle = '#000'; g.fillRect(0, 0, c.width, c.height);
+    const V = [[1, 0, 0], [0, 1, 0], [0, 0, 1]].map(p => triXY(c, p));
+    g.strokeStyle = 'rgba(255,255,255,0.25)'; g.lineWidth = 1; g.beginPath(); g.moveTo(...V[0]); g.lineTo(...V[1]); g.lineTo(...V[2]); g.closePath(); g.stroke();
+    g.setLineDash([5, 5]); g.strokeStyle = 'rgba(212,160,82,0.75)';
+    for (const [a, m] of [[[0, 0, 1], [1, 1, 0]], [[0, 1, 0], [1, 0, 1]], [[1, 0, 0], [0, 1, 1]]]) { g.beginPath(); g.moveTo(...triXY(c, a)); g.lineTo(...triXY(c, m)); g.stroke(); }
+    g.setLineDash([]); g.fillStyle = '#8a8a96'; g.font = '15px DM Mono, monospace';
+    g.fillText('h', V[0][0] - 18, V[0][1] + 18); g.fillText('v', V[1][0] - 4, V[1][1] - 10); g.fillText('v₂', V[2][0] + 6, V[2][1] + 18);
+}
+function drawHome(R) { const c = $('home'), g = c.getContext('2d'); drawTriangleFrame(c, g);
+    const rad = S.n >= 64 ? 1.6 : S.n >= 32 ? 2.6 : 4;
+    R.forEach(r => { const [x, y] = triXY(c, r.p); g.fillStyle = r.col ? css(r.col) : 'rgba(140,230,205,0.22)'; g.beginPath(); g.arc(x, y, rad, 0, 2 * Math.PI); g.fill(); }); }
+function drawMap(R) { const c = $('map'), g = c.getContext('2d'), W = c.width, P = 26, L = W - 2 * P, n = S.n, w = L / n;
+    g.fillStyle = '#000'; g.fillRect(0, 0, W, W);
+    R.forEach((r, k) => { const i = k % n, j = Math.floor(k / n); g.fillStyle = r.col ? css(r.col) : '#121219';
+        g.fillRect(P + i * w, P + L - (j + 1) * w, Math.max(1, w - (n > 32 ? 0 : 1)), Math.max(1, w - (n > 32 ? 0 : 1))); });
+    g.setLineDash([5, 5]); g.strokeStyle = 'rgba(212,160,82,0.85)'; g.lineWidth = 1.5;
+    const curve = f => { g.beginPath(); for (let q = 0; q <= 100; q++) { const psi = q / 100 * Math.PI / 2, y = f(psi), X = P + q / 100 * L, Y = P + L - y * L; q ? g.lineTo(X, Y) : g.moveTo(X, Y); } g.stroke(); };
+    curve(p => Math.cos(p) / Math.sqrt(1 + Math.cos(p) ** 2)); curve(p => Math.sin(p) / Math.sqrt(1 + Math.sin(p) ** 2));
+    g.beginPath(); g.moveTo(P + L / 2, P); g.lineTo(P + L / 2, P + L); g.stroke(); g.setLineDash([]);
+    g.fillStyle = '#8a8a96'; g.font = '13px DM Mono, monospace'; g.fillText('h', P, W - 8); g.fillText('v₂', W - P - 14, W - 8); g.fillText('v', 6, P + 10);
+}
+function drawMetres(extent) { const c = $('metres'), g = c.getContext('2d'); drawTriangleFrame(c, g);
+    const M = metresScreen(extent, S.n);
+    if (!M) { g.fillStyle = '#d96e5b'; g.font = '16px DM Mono, monospace'; g.fillText('no size: nothing to space against', 60, c.height / 2); return null; }
+    g.fillStyle = 'rgba(217,110,91,0.75)'; const rad = S.n >= 64 ? 1.4 : 2.2;
+    M.forEach(p => { const [x, y] = triXY(c, p); g.beginPath(); g.arc(x, y, rad, 0, 2 * Math.PI); g.fill(); });
+    return M;
+}
+
+let last = null, draw3d = null;
+const median = xs => { const a = xs.slice().sort((p, q) => p - q), m = a.length >> 1; return a.length % 2 ? a[m] : Math.sqrt(a[m - 1] * a[m]); };
+function render() {
+    const s = S.unknown ? UNKNOWN_S : S.s, R = readings(S.world, s, S.n), G = grid(S.n);
+    let worst = 0; R.forEach((r, k) => { const d = G[k].d;
+        worst = Math.max(worst, Math.abs(r.vh - d[1] / d[0]) / (d[1] / d[0]), Math.abs(r.v2h - d[2] / d[0]) / (d[2] / d[0])); });
+    const C = counts(R), met = R.filter(r => r.d != null).length, N = R.length;
+    drawHome(R); drawMap(R);
+    const W = worldOf(S.world, Math.pow(10, s)), M = drawMetres(S.unknown ? null : W.extent);
+    const nearM = M ? M.filter(p => p[1] <= 1 && p[2] <= 1).length / M.length : null;
+    last = { worst, ...C, met, N, nearMetres: nearM, medV2H: median(R.map(r => r.v2h)) };
+    if (draw3d) draw3d(R);
+    $('sizeVal').textContent = S.unknown ? 'unknown' : 'S = 10^' + S.s;
+    $('say').textContent = `${WORLDS.find(w => w[0] === S.world)[1]}, ${S.unknown ? 'of unknown size' : 'size 10^' + S.s}: ` +
+        `${met} of ${N} rays meet something, ${N - met} run to the horizon. The rays have not moved.`;
+    const pc = x => (100 * x).toFixed(1) + '%';
+    $('check').innerHTML = `<span class="ok">Every reading [h : v : v₂], taken back from where its ray landed, against the sweep's own: ` +
+        `largest relative difference ${worst.toExponential(1)}.</span> So in every world v ≤ h for ${pc(C.vLeH)}, v₂ ≤ h for ${pc(C.v2LeH)}, ` +
+        `v₂ ≤ v for ${pc(C.v2LeV)} of the addresses (a half each, on this grid), and the near field in both holds ${pc(C.near)} (a third).`;
+    $('compare').innerHTML = M ? `Equal-metres screen, told the size: ${pc(nearM)} of its pixels in the near field, against the sweep's ${pc(C.near)}. Change S and they move.`
+        : `<span class="bad">Equal-metres screen: no size to space against.</span> The sweep keeps all ${N}.`;
+    document.querySelectorAll('[data-w]').forEach(b => b.classList.toggle('on', b.dataset.w === S.world));
+    document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
+    $('unknown').classList.toggle('on', S.unknown); $('play').classList.toggle('on', S.play);
+    $('size').value = S.s; $('size').disabled = S.unknown;
+}
+function set(o) { Object.assign(S, o); render(); }
+let timer = null;
+function play(on) { S.play = on; clearInterval(timer);
+    if (on) timer = setInterval(() => { const k = WORLDS.findIndex(w => w[0] === S.world); set({ world: WORLDS[(k + 1) % WORLDS.length][0] }); }, 2200);
+    render(); }
+
+WORLDS.forEach(([k, name]) => { const b = document.createElement('button'); b.textContent = name; b.dataset.w = k; b.onclick = () => set({ world: k }); $('worlds').appendChild(b); });
+NS.forEach(n => { const b = document.createElement('button'); b.textContent = n + ' × ' + n; b.dataset.n = n; b.onclick = () => set({ n }); $('ns').appendChild(b); $('ns').append(' '); });
+$('size').oninput = e => set({ s: +e.target.value });
+$('unknown').onclick = () => set({ unknown: !S.unknown });
+$('play').onclick = () => play(!S.play);
+
+const q = new URLSearchParams(location.search);
+if (WORLDS.some(w => w[0] === q.get('world'))) S.world = q.get('world');
+if (q.get('s') === 'unknown') S.unknown = true; else if (q.has('s') && isFinite(+q.get('s'))) S.s = Math.max(0, Math.min(12, +q.get('s')));
+if (NS.includes(+q.get('n'))) S.n = +q.get('n');
+render();
+if (q.get('play') === '1') play(true);
+
+window.__payloadFree3d = { grid, worldOf, hit, readings, counts, metresScreen, lay, WORLDS, set, frames: 0, webgl: false,
+    state: () => ({ ...S, last }) };
+setTimeout(() => { if (!window.__payloadFree3d.webgl) { $('nogl').style.display = 'block';
+    $('nogl').textContent = 'The 3D scene needs WebGL and three.js from cdn.jsdelivr.net; the flat views and the readout still work.'; } }, 12000);
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+const P = window.__payloadFree3d, cv = document.getElementById('scene');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true }); } catch (e) { renderer = null; }
+if (renderer) {
+    renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+    const scene = new THREE.Scene(); scene.background = new THREE.Color(0x000000);
+    const cam = new THREE.PerspectiveCamera(40, 1, 0.05, 500); cam.position.set(20, 15, 23);       // framed on the first few tenfolds; scroll out for the horizon
+    const ctl = new OrbitControls(cam, cv); ctl.target.set(2.5, 2.5, 2.5); ctl.enableDamping = true; ctl.update();
+    const R = 37.9;                                          // the lay's reach at 10¹⁶, just past the horizon's arcs
+    // the three axes and the lay's arcs on the wedge's three faces
+    const lines = (pts, color, opacity, dashed) => { const g = new THREE.BufferGeometry().setFromPoints(pts.map(p => new THREE.Vector3(...p)));
+        const m = dashed ? new THREE.LineDashedMaterial({ color, transparent: true, opacity, dashSize: 0.8, gapSize: 0.6 })
+            : new THREE.LineBasicMaterial({ color, transparent: true, opacity });
+        const l = new THREE.Line(g, m); if (dashed) l.computeLineDistances(); scene.add(l); return l; };
+    lines([[0, 0, 0], [R, 0, 0]], 0xc8c8d0, 0.6); lines([[0, 0, 0], [0, R, 0]], 0xc8c8d0, 0.6); lines([[0, 0, 0], [0, 0, R]], 0xc8c8d0, 0.6);
+    const arc = (rad, color, opacity) => { for (const f of [a => [Math.cos(a), Math.sin(a), 0], a => [0, Math.sin(a), Math.cos(a)], a => [Math.cos(a), 0, Math.sin(a)]]) {
+        const pts = []; for (let q = 0; q <= 48; q++) pts.push(f(q / 48 * Math.PI / 2).map(x => x * rad)); lines(pts, color, opacity); } };
+    arc(P.lay(1), 0xd4a052, 0.9); [10, 1e3, 1e6, 1e9, 1e12].forEach(d => arc(P.lay(d), 0xffffff, 0.16));
+    // the corner v = h on the wedge: the cone tan a = cos ψ, drawn as its trace at the lay's reach; and v₂ = h, the plane ψ = 45°
+    const cone = []; for (let q = 0; q <= 48; q++) { const psi = q / 48 * Math.PI / 2, a = Math.atan(Math.cos(psi)); cone.push([R * Math.cos(a) * Math.cos(psi), R * Math.sin(a), R * Math.cos(a) * Math.sin(psi)]); }
+    lines(cone, 0xd4a052, 0.5, true); lines([[0, 0, 0], [R * Math.SQRT1_2, 0, R * Math.SQRT1_2]], 0xd4a052, 0.5, true);
+    // labels
+    const label = (txt, pos) => { const c = document.createElement('canvas'); c.width = 128; c.height = 64; const g = c.getContext('2d');
+        g.fillStyle = '#c8c8d0'; g.font = '40px DM Mono, monospace'; g.fillText(txt, 8, 46);
+        const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(c), transparent: true })); s.scale.set(4, 2, 1); s.position.set(...pos); scene.add(s); };
+    label('h', [R + 2, 0, 0]); label('v', [0, R + 2, 0]); label('v₂', [0, 0, R + 2]); label('home', [-1.5, -1.5, -1.5]);
+    const home = new THREE.Mesh(new THREE.SphereGeometry(0.35, 16, 12), new THREE.MeshBasicMaterial({ color: 0xe6e4ee })); scene.add(home);
+    // the rays and the dots, rebuilt from each reading
+    const rayGeo = new THREE.BufferGeometry(), rays = new THREE.LineSegments(rayGeo, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.55 }));
+    const dotGeo = new THREE.BufferGeometry(), dots = new THREE.Points(dotGeo, new THREE.PointsMaterial({ vertexColors: true, size: 0.55, sizeAttenuation: true }));
+    scene.add(rays, dots);
+    P.drawScene = list => {
+        const n = list.length, rp = new Float32Array(6 * n), rc = new Float32Array(6 * n), dp = [], dc = [];
+        list.forEach((r, k) => { const L = Math.hypot(...r.p), u = r.p.map(x => x / L), end = r.d == null ? R : Math.min(R, P.lay(r.d));
+            rp.set([0, 0, 0, u[0] * end, u[1] * end, u[2] * end], 6 * k);
+            const a = r.d == null ? [0.05, 0.10, 0.09] : [0.12, 0.27, 0.24]; rc.set([...a, ...a], 6 * k);   // dim: the dots carry the picture
+            if (r.d != null) { dp.push(u[0] * end, u[1] * end, u[2] * end); dc.push(...r.col); } });
+        rayGeo.setAttribute('position', new THREE.BufferAttribute(rp, 3)); rayGeo.setAttribute('color', new THREE.BufferAttribute(rc, 3));
+        dotGeo.setAttribute('position', new THREE.Float32BufferAttribute(dp, 3)); dotGeo.setAttribute('color', new THREE.Float32BufferAttribute(dc, 3));
+        dots.material.size = list.length > 2000 ? 0.35 : 0.55;
+    };
+    const size = () => { const w = cv.clientWidth || 600; if (cv.width !== Math.round(w * renderer.getPixelRatio())) { renderer.setSize(w, w, false); cam.aspect = 1; cam.updateProjectionMatrix(); } };
+    const loop = () => { size(); ctl.update(); renderer.render(scene, cam); P.frames++; requestAnimationFrame(loop); };
+    P.webgl = true; loop();
+    // hand the drawing to the plain script's render, and draw what it last read
+    window.dispatchEvent(new Event('scene-ready'));
+}
+</script>
+<script>
+// the plain script renders before three.js arrives; once the scene is ready it draws every later reading too
+window.addEventListener('scene-ready', () => { draw3d = R => window.__payloadFree3d.drawScene(R); render(); });
+</script>
+</body>
+</html>
