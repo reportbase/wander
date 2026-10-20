@@ -404,6 +404,12 @@ Nothing in §§3–7 needs the Cauchy by name. It enters in four places:
 In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule"). **[exact]**, the four statements;
 **[reading]**, that this is why the pieces of mapping have their shapes.
 
+**What it does not need: N** (SPN R403; Tom: "the advantage that cauchy has is it does not need to know N."; "so tie with
+classical is good news actually."). The Cauchy addresses without a count of readings, a grid or an extent; what needs N (a
+mean, a table, an extent) is the payload's or the writer's. Here that sorts the tests: AFM's ties with least squares and
+bundle adjustment show correctness only, since neither needs N either; where a classical method must know N (a table rebuilt
+per view, IMS; a depth buffer told its far plane, DPR) a tie comes free. **[reading]**, on IMS and DPR's **[exact]** numbers.
+
 ## 10. What stands on what
 
 - **[exact]** throughout: the addresses (§2), one place (§3), the map in H (§4), the payload coordinate (§5), the one

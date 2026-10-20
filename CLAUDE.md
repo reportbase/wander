@@ -585,7 +585,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   sampler (the payload tabled once in its own frame, the addresses by the Cauchy). I1 exact (spherical Cauchy closed
   under composed boosts, 10⁻⁶⁰); the address part cancels exactly (V 0 for a uniform sky; with a sun the Cauchy's V
   124.75 and the mixed sampler's 0.068 at every η); I3(b) killed (the rebuilt table loses to the Cauchy alone at η = 4,
-  4,098 against 124.75). The Cauchy removes the precomputation tied to the view, not the payload's.
+  4,098 against 124.75). The Cauchy removes the precomputation tied to the view, not the payload's. Then (SPN R403; Tom:
+  "the advantage that cauchy has is it does not need to know N."; "so tie with classical is good news actually."): the Cauchy
+  addresses without knowing N; what needs N is the payload's or the writer's; a tie with a classical method shows correctness,
+  and comes free where that method needs N (IMS's table, DPR's far plane). The lens restates draw's Tangent Bridge §10.2–10.3
+  (known beforehand, not checked first). Two things from that paper await a ruling: its pan × tilt measure in 3D against
+  OFS 5(e)'s uniform octant, and its §1.1 "unique Möbius-invariant distribution" (rotation-invariant is meant).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
