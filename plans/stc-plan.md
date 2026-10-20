@@ -4,7 +4,7 @@
 and the framework supplies a geometric reason the construction can succeed. … Several situated observations, plus one
 external amount that fixes scale, are assembled into a representation that no individual observation held." Then "yes"
 to Claude's five refinements and to this test. A simulation of our own, checked against a full referee (the true
-figure, known to the script). Predictions written before the script (`stc/stc.py`) exists.*
+figure, known to the script). Predictions written before the script (`runs/stc/stc.py`) exists.*
 
 ## The claim, refined
 
@@ -81,7 +81,7 @@ common shift in levels across a catalogue's distances. The archives that hold it
 
 ## Runs
 
-### Run 1 (12 October, `stc/stc.py`)
+### Run 1 (12 October, `runs/stc/stc.py`)
 
 Seed 12, 2,000 trials at each N, fourteen seconds.
 
@@ -108,7 +108,7 @@ shrink with N, a floor of about 0.0012 if the rest of r at N = 4,096 is the expe
 systematic error of the construction, not of the scale: an inconsistent construction has a systematic of its own,
 which more readings do not remove. Run 2 tests that.
 
-### Run 2: predictions (12 October, written before `stc/stc2.py` exists)
+### Run 2: predictions (12 October, written before `runs/stc/stc2.py` exists)
 
 Same figure, readers, outside length and rung as run 1 (seed 12 again, so the figure is the same).
 - **P5. Run 1's floor is the line estimator's own bias.** With run 1's estimator:
@@ -127,7 +127,7 @@ Same figure, readers, outside length and rung as run 1 (seed 12 again, so the fi
   at both n_far, correlation within 0.1 of 0.667).
   - **Killed if** any of these fails.
 
-### Run 2 (12 October, `stc/stc2.py`)
+### Run 2 (12 October, `runs/stc/stc2.py`)
 
 Seed 12, 2,000 trials at each setting, seventy-three seconds.
 

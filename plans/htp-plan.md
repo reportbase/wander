@@ -2,7 +2,7 @@
 
 *17 October 2026 (Tom's local date). Tom, 12:14: "can you get parallax from just rotating your head"; 12:16: "yes", to
 Claude's answer going into OFS (SPN R339, OFS §9 "Turning in place gives no parallax"); 12:59: "1,2,3", whose second
-item was this test (SPN R340). Predictions written before the script (`htp/htp.py`) exists.*
+item was this test (SPN R340). Predictions written before the script (`runs/htp/htp.py`) exists.*
 
 ## The claim (R339)
 
@@ -66,7 +66,7 @@ gives.
 
 (Nothing above this line is edited after a run.)
 
-### Run 1 (17 Oct, `python3 -I htp/htp.py 1`; output `htp/htp-run1.txt`)
+### Run 1 (17 Oct, `python3 -I runs/htp/htp.py 1`; output `runs/htp/htp-run1.txt`)
 
 - **P1 killed, by my set-up.** The largest change in a pair's angle came out 6.28, which is 2π: a pair's angle
   difference crossed ±π and wrapped, and I compared it without reducing it to one turn. No point was placed.
@@ -80,7 +80,7 @@ gives.
 - P6 not killed: fixating a point 2 m off, points on the line of sight shift +0.094, +0.029, +0.009 rad nearer (0.5, 1,
   1.5 m) and −0.009, −0.021, −0.026 farther (3, 10, 1000 m), zero at 2 m; with r = 0 nothing shifts.
 
-### Run 2 (17 Oct, `python3 -I htp/htp.py 2`; output `htp/htp-run2.txt`)
+### Run 2 (17 Oct, `python3 -I runs/htp/htp.py 2`; output `runs/htp/htp-run2.txt`)
 
 **P1′**, P1 as written with each pair's angle taken modulo a whole turn (stated before the run): the largest change
 1·10⁻⁵⁰, no point placed. Not killed. P2–P6 as in run 1.

@@ -2,7 +2,7 @@
 
 *11 October 2026. Tom, to adding the shape-opening contrast to the paper: "ok". The 73-shape run it repeats is SPN §2.4
 and `v-and-h.md` item 331 (`vh/unclose.py`, on svg.html's shape library, not in this repository); this plan repeats the
-method on shapes defined exactly, so the paper's numbers can be reproduced here: `ofs/opening.py`.*
+method on shapes defined exactly, so the paper's numbers can be reproduced here: `runs/ofs/opening.py`.*
 
 **Method.** Each shape is read from its centre as v/h = |y|/|x|, laid two ways: evenly by direction, and in equal steps of
 arc length along its outline (2,000,000 points). Four numbers: corner P(s < 1); middle, the median of s; head

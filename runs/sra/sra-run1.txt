@@ -1,0 +1,11 @@
+A1 cosine form against tan(theta'/2) = tan(theta/2)/k: worst 4.11e-46; stereographic z -> z/k: worst 1.51e-45  KILLED
+A2 beta 0.1: rho 0.050125629 = tanh(eta/2) to 0.0; 3+1 spherical Cauchy 6.68e-52; 2+1 wrapped Cauchy 6.68e-52
+A2 beta 0.6: rho 0.33333333 = tanh(eta/2) to 0.0; 3+1 spherical Cauchy 2.0e-51; 2+1 wrapped Cauchy 6.68e-52
+A2 beta 0.99: rho 0.86760873 = tanh(eta/2) to 0.0; 3+1 spherical Cauchy 4.73e-48; 2+1 wrapped Cauchy 2.25e-49
+A2 not killed
+A3 beta 0.1: address density = D^2 to 0.0; intensity D^4 to 2.7e-51 (D at theta' = 2.8: 0.90931)
+A3 beta 0.6: address density = D^2 to 6.7e-52; intensity D^4 to 0.0 (D at theta' = 2.8: 0.511073)
+A3 beta 0.99: address density = D^2 to 1.0e-53; intensity D^4 to 0.0 (D at theta' = 2.8: 0.072986)
+A3 not killed
+A4 aberration has no frequency in it (by its form); a turn about the motion moves D by 0.0  not killed
+A5 KILLED

@@ -6,7 +6,7 @@ to know the size if the universe. the situated reader has to sweep and set V = V
 the cauchy." Then "yes" to an exact check and a write-up, with: "if we put a rotatable sphere inside the unit cube, we
 could show that every point on the sphere maps to every point on the inner cube. the inner cube could be any size,
 however its extent must be known." Exact arithmetic (mpmath, 30 digits) and identities checked to rounding.
-Predictions written before the script (`wdg/wdg.py`) exists. It builds on `observation-from-somewhere.md` Propositions
+Predictions written before the script (`runs/wdg/wdg.py`) exists. It builds on `observation-from-somewhere.md` Propositions
 3 and 5 (the circle, forward and back), `number-line.md` §8 (the sphere of three unit relations, the octant, the six
 chambers, the triple corner, the unit cube) and Tom's line of 8 October there: the wedge is made at every observation.*
 
@@ -68,7 +68,7 @@ its extent is known.
 
 ## Runs
 
-### Run 1 (13 October, `wdg/wdg.py`)
+### Run 1 (13 October, `runs/wdg/wdg.py`)
 
 mpmath at 30 digits (20 for P4's root-finding); numpy for P5, seed 20; three minutes.
 
@@ -108,7 +108,7 @@ P4 in full (medians of v/h, v₂/h, v/v₂; share near in both):
 - **On the cube the even sphere is still the Cauchy** (P6): each face is a reading plane, its middle quarter by area
   taking 38% of the face's directions, its centre 5.2 times as dense as its corners.
 
-### Run 2 (13 October, about 12:15; `wdg/wdg2.py`): n other parties
+### Run 2 (13 October, about 12:15; `runs/wdg/wdg2.py`): n other parties
 
 *Tom, 13 October, about 12:13, to a fifth ChatGPT message (a reader drawing five parties at V₁ = … = V₅ = H;
 `plans/ofs-review-6.md`): "from the geometry's perspective, its job is done, what ever the true breadth makes no

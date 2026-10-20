@@ -105,11 +105,11 @@ density equal to dθ/dx from an isotropic point is "hidden").
 - On its own alternatives, 13 of the 46 could go to yes or hidden (H1, H5, H9, H10, H11, H13, H17, H21, H25, H31,
   H34, H51, H55); 33 stay no either way.
 
-**The exact checks** (`hzt/hzt.py`). Run 1 (`hzt/hzt-run1.txt`): the law computed from each entry's derivation step
+**The exact checks** (`runs/hzt/hzt.py`). Run 1 (`runs/hzt/hzt-run1.txt`): the law computed from each entry's derivation step
 matched the list's formula to 10⁻²³ or better for every entry taken by a change of variables, a pole, a mixture, Kac–Rice,
 Agnesi's construction, an image charge or a line source; the sixteen entries taken by a Fourier transform or a
 characteristic function to infinity failed, by my quadrature (an oscillatory integral to infinity by plain `quad`), not
-by their laws. Run 2 (`hzt/hzt-run2.txt`), with those integrals by `quadosc` (stated before the run): every computable
+by their laws. Run 2 (`runs/hzt/hzt-run2.txt`), with those integrals by `quadosc` (stated before the run): every computable
 law matched, to 2.6·10⁻²⁶ (the wrapped Cauchy to 3·10⁻⁶ from truncating its sum; the random dipoles' and the Poisson
 network's log characteristic functions exactly linear in t, index 1). Three were not computed: Spitzer's winding (a
 limit), Mandelbrot's prices (fitted at α ≈ 1.7, the Cauchy only a member) and Lévy flights (a tail exponent only).

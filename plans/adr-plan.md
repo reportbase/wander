@@ -75,7 +75,7 @@ What is ours is the reading, not the mathematics.
 
 (Nothing above this line is edited after a run.)
 
-### Run 1 (18 Oct, `python3 adr/adr.py`; output `adr/adr-run1.txt`, 22 s)
+### Run 1 (18 Oct, `python3 runs/adr/adr.py`; output `runs/adr/adr-run1.txt`, 22 s)
 
 - **A1 not killed.**
   - Exactly: the characteristic functions differ by at most 3.6·10⁻¹⁰².

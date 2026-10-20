@@ -47,11 +47,13 @@ Our main result concerns what a reader receives when it sweeps this circle unifo
 follow the Cauchy distribution. A sweep is uniform by definition, since a turn measured by itself has no other measure
 (§2). Other weights are coherent, but each counts the turn against something else, a clock, a screen or what arrives,
 and where such a weight treats the two parties alike, what survives is the median at the corner (Theorem 6(e)). We show
-that the distribution belongs entirely to the address reader, the inscribed sweep, and not to anything that arrives at
-its addresses: it is a property of the reader, not of the payload, since whatever is met in each direction cancels from
-every single reading. The payload reader, the central sweep, receives amounts, and their law is the payload's. This is
-why the readers are named by what they receive. A lighthouse is such a sweep: its lamp turns, and the shore records the
-lamp's addresses laid on a line. Where instead many sources happen to be spread evenly in angle and a reader counts what
+that the distribution is the law of the uniform turn itself. It is not the payload's, since whatever is met in each
+direction cancels from every single reading. Nor is it the reader's or the writer's: any uniform turn lays it, whoever
+or whatever turns, and whether the turn aims something that receives or something that sends. The address reader, the
+inscribed sweep, is the reader that uses the turn's law as its addresses. The payload reader, the central sweep,
+receives amounts, and their law is the payload's. This is why the readers are named by what they receive. A lighthouse
+is the same turn aimed outward: its lamp turns, and the shore records the lamp's addresses laid on a line. An eye
+turning to look and a lamp turning to shine lay one law. The plainest case needs nothing but a head: turn it steadily from any starting direction and read each direction faced as the ratio v/h of the turn, and the readings fall as a Cauchy, half of them within 45° of where the turn began and with no mean, whatever is being looked at: a row of trees, curved or straight, or nothing at all. What is seen in each direction is the payload, a trunk, then a gap, then the next trunk, swapped in and out as the head turns; the direction is the address, and no tree moves it. The row's shape changes only where the directions meet it, which is the row's own geometry; a straight row is the one case where position along it equals the reading, which is why the lighthouse draws its Cauchy on a straight shore. Where instead many sources happen to be spread evenly in angle and a reader counts what
 arrives, the same shape is the payload's density over directions, a property of the world, not of any reader. This gives
 a reason for the Cauchy's best-known peculiarity. Its median exists and sits at the corner, because a median depends
 only on order, which is a property of addresses. Its mean does not exist, because a mean is a sum of sizes, a question
@@ -188,8 +190,9 @@ writer's vantage as if a single observation held it. Section 3 sets out the read
   work; no party's true size enters it.
 - Inside the corner the reader can lay readings out in proportion; past it, if no scale is preferred, only a
   logarithmic layout is consistent. The reader has two address spaces joined at one corner (§6).
-- **Main result.** Sweeping the circle uniformly from home yields the Cauchy distribution, and the Cauchy is the
-  reader's addresses, not its payload. Whatever is met in each direction cancels from the reading. Order survives every
+- **Main result.** Sweeping the circle uniformly from home yields the Cauchy distribution. The Cauchy is the law of
+  the uniform turn itself, whoever turns and whether the turn receives or sends: the address reader's addresses, not its
+  payload. Whatever is met in each direction cancels from the reading. Order survives every
   change of payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7). The median
   at the corner needs only that the sweep treat the two parties alike, and the missing mean only that, besides, its
   weight not vanish at the horizon; the circle and the uniform turn give the Cauchy's exact shape (§7.2). As a rule: a
@@ -1629,6 +1632,14 @@ sech density's 0.062, and 0.002 against 0.016 at the sixth). The sech density ha
 
 > **The Cauchy is not the payload; it is the address to the payload.**
 
+**An address is not a payload.** The two are different kinds of thing, and this paper keeps them apart throughout. An
+address is a point: a direction, a reading [h : v], a place on the reader's line. A payload is what is found at that
+point: an amount, a function on the addresses. The law of the addresses, the Cauchy, is a measure on the points, the
+uniform turn carried onto them; it is fixed by the standpoint and the turn alone, and no payload enters it. Whatever
+arrives can be swapped for anything else, at any address, and the addresses and their law do not move (Theorem 6(a)).
+So nothing the Cauchy says (its median, its scale, its missing mean) is a statement about the payload, and nothing in
+the payload can be read from it.
+
 **The rule, and a test.** A Cauchy variable is a direction: a point of the projective line, a ratio [x : y] read in one
 chart, laid by a turn. It is never an amount. Its median and its quartiles are places on that line and mean what they
 say; it has no mean because the coordinates of directions do not add. Two directions have no sum, only a composition, a
@@ -1694,7 +1705,7 @@ any sum).
 **Theorem 6.** Parts (a) and (d) concern the readings of Proposition 5: the other party drawn at V = H and the circle
 swept uniformly by direction. Parts (b) and (c) hold for any finite set of readings. Part (e) drops both the circle and
 the uniform turn. The readings are the address reader's: directions, ratios with no amount in them, so what (a), (d) and
-(e) find is a property of that reader and not of what it reads; the payload reader's amounts are what (c) concerns.
+(e) find is a property of the uniform turn that lays them, whoever makes it, and not of what is read; the payload reader's amounts are what (c) concerns.
 
 (a) *Nothing that arrives changes the Cauchy.* Suppose that whatever arrives in the direction of each step lies at some
 reach ℓ > 0, an amount that may differ from direction to direction and is unknown to the reader. In the reader's unit
@@ -1740,8 +1751,8 @@ arrives, never what arrives.
 1. The sweep is defined without any reference to what arrives: equal steps of turn, from home.
 2. Changing what arrives, while keeping the sweep, leaves the readings and their distribution exactly as they were
    (Theorem 6(a)).
-3. So the Cauchy is a property of the sweep, the reader's addressing, and finding it is no evidence by itself that
-   anything in the world is distributed that way.
+3. So the Cauchy is a property of the sweep, the uniform turn, whoever makes it, and finding it is no evidence by
+   itself that anything in the world is distributed that way.
 
 Two things are not claimed. The theorem does not show that every real observer counts by its sweep rather than by a
 clock, a flat sensor or what arrives (§2); it shows what a reader that counts by its sweep receives, and why the turn,
@@ -2009,6 +2020,27 @@ follow every increasing map; those facts are part (d). The other parts of Theore
   of index 1, with no angle in the terms (Lévy 1925); the turn is in the limit, which is where a planar Brownian motion
   started above the line first lands on it, a uniform turn from its start (Spitzer 1958). Our claim is that where a reader sweeps uniformly, the law of what it
   lays is its own addresses, whatever else may give the same shape.
+- *Special relativity's sky.* A moving observer sees each source change in two ways, which the theory writes as two
+  formulas.
+  - **Where the source is seen moves.** This is aberration: cos θ′ = (cos θ + β)/(1 + β cos θ), the same at every
+    frequency. In the stereographic chart it is z ↦ z/k, with k = √((1 + β)/(1 − β)), a Möbius map of the celestial
+    sphere (Penrose 1959; Terrell 1959).
+  - **What arrives at each place seen changes.** This is the Doppler factor D = √(1 − β²)/(1 − β cos θ′), which scales
+    each photon's energy and its arrival rate.
+
+  The first is a map of addresses, and it carries the Cauchy's family onto itself.
+  - A sky uniform in the sources' own frame is seen as the spherical Cauchy, density (1 − β²)/(4π(1 − β cos θ′)²)
+    (Kato and McCullagh 2020).
+  - Its parameter is ρ = tanh(η/2), where η is the rapidity. With one dimension fewer it is the wrapped Cauchy with the
+    same ρ.
+  - That density is D²/4π: the crowding of addresses toward the motion.
+
+  The second is a weighting of the payload at each address, and it moves no address.
+  - Of the D⁴ by which an isotropic sky's intensity brightens ahead (Rybicki and Lightman 1979), D² is the addresses'
+    crowding, and D² is the payload: energy and arrival rate, D each.
+
+  The split is in the formulas, aberration apart from Doppler shift and beaming. It is not named there as a
+  transformation of addresses and a weighting of payload. (We checked these identities exactly.)
 - *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
   (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
   does so everywhere; and no chart keeps both angles and areas (Euler 1777; Gauss 1828). What is ours is the reading: the
@@ -2020,8 +2052,13 @@ follow every increasing map; those facts are part (d). The other parts of Theore
   which also separates what order keeps from what sums lose.
 
 What is new here is the reading: which reader, knowing what, receives the Cauchy, and that what it receives is its own
-addresses rather than anything in the world. We did not find that reading, or a split between addresses and payload, in
-print.
+addresses rather than anything in the world. The split itself is carried, unnamed, in the equations of several fields.
+In potential theory the value at a point is the boundary's values averaged by where a Brownian path started there first
+meets the boundary, u(x) = ∫ f dμ_x, the harmonic measure μ_x fixed by the point and the region alone, the half-plane's
+Cauchy from i, and the boundary data f free (Kakutani 1944; Doyle and Snell 1984). In spectroscopy a line is its
+strength times a profile of unit area. In the lighthouse only where each flash lands is recorded. Each separates a
+measure on points from what is found at them; none states that the Cauchy is always the first and never the second. We
+did not find that statement, that an address is not a payload, made in print.
 
 ## 8. Level of detail and the choice of H
 
@@ -2649,6 +2686,23 @@ width, and no one stands anywhere in it.
    their product is 1 again. None of this involves the mountain: a range 2 miles wide at 1 mile gives the same fingers
    and the same products. Joined, the two vantages return only what the reader put in; the mountain's breadth must be
    constructed (step 6).
+
+   The two sweeps can also be joined by their rates, and on this range they say the same thing.
+   - A central reader at the range's middle, sweeping a radius of half the width, passes through both ends. Because
+     the pair (V*/2, d) is at its corner, the same circle passes through the reader's own place.
+   - So the reader stands on the central reader's circle. The central reader sees the ends 90° either side of the line
+     to the reader; the reader sees them 45° either side (step 2).
+   - By the inscribed angle theorem, the reader's head turns at exactly half the central reader's rate, at every point
+     of that circle. These are the rates 2 and 1 of §4, seen from the other side.
+   - Joined as twice the inscribed rate less the central rate, 2·dθ/dφ − 1, the two sweeps of any circle give the
+     circle's own Cauchy. That is the wrapped Cauchy (the Poisson kernel, the harmonic measure seen from the reader's
+     place), since 2·dθ/dφ − 1 = (1 − |z|²)/|e^{iφ} − z|² for a reader at z in units of the radius. Its centre and
+     concentration are the reader's direction and distance, in the circle's own radius.
+   - Here the reader is on the circle, |z| = 1. The combination is 2·½ − 1 = 0 everywhere but at the reader's own place,
+     where all of it gathers.
+
+   Joined by their product the two vantages return H in H. Joined by their rates they return the reader's own place.
+   Neither form reads the 20, and scaling the world moves neither.
 4. *What it cannot read.* A range 20 miles wide at 10 miles, 2 miles wide at 1 or 2,000 miles wide at 1,000 gives the
    same fingers and the same rings. The reach cancels from every reading (Theorem 6).
 5. *Mountain equals thumb.* Not knowing the mountain's size, the reader sets V = H: it takes the range to be one thumb,
@@ -2988,6 +3042,9 @@ Australian Mathematical Society* 33(3), 200.
 Dehaene, S., Izard, V., Spelke, E. and Pica, P. (2008). Log or linear? Distinct intuitions of the number scale in Western
 and Amazonian indigene cultures. *Science* 320, 1217–1220.
 
+Doyle, P. G. and Snell, J. L. (1984). *Random Walks and Electric Networks*. Carus Mathematical Monographs 22.
+Mathematical Association of America, Washington.
+
 Drory, A. (2015). Failure and uses of Jaynes' principle of transformation groups. *Foundations of Physics* 45(4),
 439–460.
 
@@ -3055,6 +3112,11 @@ Jones, M. C. (2008a). The distribution of the ratio X/Y for all centred elliptic
 
 Jones, M. C. (2008b). On reciprocal symmetry. *Journal of Statistical Planning and Inference* 138(10), 3039–3043.
 
+Kakutani, S. (1944). Two-dimensional Brownian motion and harmonic functions. *Proceedings of the Imperial Academy
+Tokyo* 20(10), 706–714.
+
+Kato, S. and McCullagh, P. (2020). Möbius transformation and a Cauchy family on the sphere. *Bernoulli* 26(4).
+
 Kellogg, O. D. (1929). *Foundations of Potential Theory*. Springer, Berlin.
 
 Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen* (the Erlangen programme).
@@ -3111,11 +3173,16 @@ Norton, J. D. (2008). Ignorance and indifference. *Philosophy of Science* 75(1),
 
 Parker, M. C. and Jeynes, C. (2023). A maximum entropy resolution to the wine/water paradox. *Entropy* 25(8), 1242.
 
+Penrose, R. (1959). The apparent shape of a relativistically moving sphere. *Proceedings of the Cambridge
+Philosophical Society* 55, 137–139.
+
 Pitman, E. J. G. and Williams, E. J. (1967). Cauchy-distributed functions of Cauchy variates. *Annals of Mathematical
 Statistics* 38(3), 916–918.
 
 Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions of the Royal
 Society of London* 75.
+
+Rybicki, G. B. and Lightman, A. P. (1979). *Radiative Processes in Astrophysics*. Wiley, New York.
 
 Saint-Vincent, G. de (1647). *Opus geometricum quadraturae circuli et sectionum coni*. Antwerp.
 
@@ -3147,6 +3214,8 @@ Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the
 
 Stone, M. and Dawid, A. P. (1972). Un-Bayesian implications of improper Bayes inference in routine statistical
 problems. *Biometrika* 59(2), 369–375.
+
+Terrell, J. (1959). Invisibility of the Lorentz contraction. *Physical Review* 116(4), 1041–1045.
 
 Tissot, N. A. (1881). *Mémoire sur la représentation des surfaces et les projections des cartes géographiques*.
 Gauthier-Villars, Paris.

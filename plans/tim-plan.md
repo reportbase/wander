@@ -117,7 +117,7 @@ joined by the signal's speed (CFH, WRD).
 
 (Nothing above this line is edited after a run.)
 
-### Run 1 (18 Oct, `python3 tim/tim.py`; output `tim/tim-run1.txt`, 65 s; T5 by hand from the sources below)
+### Run 1 (18 Oct, `python3 runs/tim/tim.py`; output `runs/tim/tim-run1.txt`, 65 s; T5 by hand from the sources below)
 
 Nothing was killed.
 

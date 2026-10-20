@@ -140,7 +140,7 @@ with it. The archive's versions stay in the archive as the record.
 *Tom, 11 October: "here is a earlier paper on SR". Dated 4 September 2026, it is now
 `papers/archive/sr-through-the-fisheye.md` (sha256 b362ca06…6e8279), kept as received. It cites sr.md, The Fulcrum, The
 Bounded Observer in Motion, The Unit Circle, Reader-geometry and The Two Settings, none of which is in this repo. Its
-numbers were recomputed where they can be (`srf/check.py`). This survey is Claude's, a reading and not a ruling.*
+numbers were recomputed where they can be (`runs/srf/check.py`). This survey is Claude's, a reading and not a ruling.*
 
 **Terms to convert before reusing anything.** Each of these predates 9 October; under R192 the papers that are not
 archived stand.
@@ -155,7 +155,7 @@ archived stand.
   item 48).
 - **§10's "k = h_now/h_then … holds ḧ/h and never h"** uses h for an amount: H, by the case rule.
 
-**What its numbers came to** (`srf/check.py`).
+**What its numbers came to** (`runs/srf/check.py`).
 - **Recomputed and agreeing:** C0 (half-angle aberration, to 2.5e-14); C2 (fore 0.577 and 0.229, aft 1.732 and 4.359;
   the forward hemisphere within 60.0° and 25.8°; within exactly 45° at β = 1/√2, k = 1 + √2); C3 (the k-ladder 3/5,
   15/17, 63/65, …; celerities 0.75, 1.875, 3.94, 7.97, 15.98, 31.99; rapidity in doublings minus log₂ celerity 1.093,
@@ -187,7 +187,7 @@ archived stand.
 | The lead killed in its own run: overlapping resonances add their widths (a Cauchy sum), not nested readers | §12 | kept as the record's kill | noted |
 | Reader space is velocity space; the zoom-and-pan between two views is a hypercycle, not the geodesic, the gap being the Thomas precession | §13 | not rechecked here | noted |
 
-**One link to MOT run 2** (Claude's, checked in `srf/check.py`, not in the archived paper). In the Doppler pair's levels,
+**One link to MOT run 2** (Claude's, checked in `runs/srf/check.py`, not in the archived paper). In the Doppler pair's levels,
 ζ = ln k, γ = (k + 1/k)/2 = cosh ζ is even (stationary at rest, the pair's corner), and γβ = (k − 1/k)/2 = sinh ζ is
 odd (zero at rest, approach against recession): the two kinds of corner of `plans/mot-plan.md` run 2. And
 1/γ = 2k/(1 + k²) exactly, the facing's sine. That is the same form as a launch's range and a baseline's conditioning,

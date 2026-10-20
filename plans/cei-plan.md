@@ -1,6 +1,6 @@
 # CEI: more points, less seen (exact arithmetic)
 
-*Plan written 11 October 2026, before `cei/cei.py` was written or run (Claude; Tom: "proceed according to your
+*Plan written 11 October 2026, before `runs/cei/cei.py` was written or run (Claude; Tom: "proceed according to your
 recommendation", to check the archived result before moving it into `papers/observation-from-somewhere.md`). The lab
 rules hold: predictions and kills first; nothing above "Runs" edited after the run.*
 
@@ -39,7 +39,7 @@ x* ≈ 0.6522, giving R_max = (2/ε)·x*·arccos x* ≈ 1.1222/ε, at N* = 2πx*
 
 ## Runs
 
-**Run 1 (11 October 2026; `cei/cei.py`).**
+**Run 1 (11 October 2026; `runs/cei/cei.py`).**
 
 | | ε = 10⁻³ | ε = 10⁻⁴ |
 |---|---|---|

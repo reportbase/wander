@@ -1,0 +1,166 @@
+# CMP: the conformal map, CIW beyond the circle
+
+*19 October 2026 (Tom's local date), SPN R390.*
+
+*Tom (19:22 MDT): "we also have demos that shows the address points to shape, so we can recover the shape. I'm wondering
+if there is more here, ideas that we missed."*
+
+*Claude proposed three leads; first the conformal map, the general form of CIW, which the archived* Reader Geometry as
+Addressing *noted (item 5) and the corpus never followed up. Tom (19:24): "yes".*
+
+*Exact (mpmath) where a closed form exists, seeded samples elsewhere, thresholds in standard errors. Scripts in
+`runs/cmp/`.*
+
+## Known beforehand
+
+- **The Riemann mapping theorem.**
+  - A simply connected region Ω is the conformal image F(D) of the unit disc, with F(0) a chosen interior point.
+  - For a Jordan boundary, F extends one-to-one from the circle onto ∂Ω (Riemann; Carathéodory 1913).
+  - **[classical]**
+- **Harmonic measure is conformally invariant.** The harmonic measure of ∂Ω from F(z) is the Poisson kernel P_z on the
+  circle carried by F. From F(0) it is the uniform measure dφ/2π carried by F (Garnett and Marshall 2005).
+  **[classical]**
+- **Theodorsen's equation** for a star-shaped near-circle (Theodorsen 1931; Gaier 1964; Henrici 1986, vol. 3).
+  - Write F(e^{iφ}) = ρ(θ(φ))·e^{iθ(φ)}, with F(0) = 0 and F′(0) > 0.
+  - The boundary correspondence then satisfies θ(φ) = φ + K[ln ρ(θ(·))](φ), where K is the conjugate-function operator
+    on the circle: the periodic Hilbert transform, which sends cos nφ to sin nφ and kills constants.
+  - It is solved by iteration.
+  - **[classical]**
+- **The archive.** *Reader Geometry as Addressing* item 5: "the even circle pushed through it lands as the shape's harmonic
+  measure from the image of the centre … with the line's Cauchy as the simplest case." Not followed up in
+  `plans/archive-gems.md`.
+- **CIW.**
+  - On a circle the wrapped Cauchy (the Poisson kernel) is ±(2·dθ/dφ − 1)/2π, twice the straight-ray inscribed rate less
+    the central rate.
+  - For an ellipse with φ its geometric central angle, the combination is no wrapped Cauchy.
+- **draw's SMP:** a uniform turn's census is the unit circle for every shape. RCC: the readings carry the turn, not the
+  size.
+- **ADR:** the Cauchy family is carried onto itself by Möbius maps, its parameters moving with them (McCullagh 1996).
+
+## The set-up
+
+- **The shapes.** Ω = F(D) with three kinds of map:
+  - **Möbius maps** F(z) = z/(1 − bz), b real in (0, 1): the control, whose images are discs;
+  - **polynomial maps** F(z) = z + a·zⁿ, n ∈ {2, 3, 5}, a real in (0, 1/n), so F is univalent: smooth lobed shapes;
+  - **the near-circles** among the polynomial maps (a small), for Theodorsen.
+- **The reader** stands at w = F(z) for an interior z.
+- **The inscribed reading** of the boundary point F(e^{iφ}) is its straight-ray direction from w,
+  θ_w(φ) = arg(F(e^{iφ}) − w).
+- **The central angle** is φ, the conformal angle: the disc's own uniform turn carried to the shape. It is not the
+  geometric angle from F(0), except on a circle.
+- **The radii.** The central reader at F(0) = 0 reads ρ along the geometric direction θ: amounts, in a unit no reading
+  fixes.
+
+## Predictions
+
+**C1 (the shape's own Cauchy is the disc's Poisson kernel carried by F).**
+- For each map and three interior points z, Brownian motion from w = F(z), run by walk-on-spheres to within 10⁻⁶ of ∂Ω,
+  lands at conformal angles φ whose law is the wrapped Cauchy P_z: the boundary point is pulled back through F⁻¹ by
+  Newton's method on F(e^{iφ}).
+- KS distance below 1.63/√N (the 1% level), N = 10⁵ per case, nine cases (three maps × three points).
+- **[classical]**; the run checks our arithmetic.
+- *Killed* if any case fails.
+
+**C2 (the straight-ray combination is the circle's alone).**
+- 2·dθ_w/dφ − 1 = 2π·P_z(φ) holds at every φ and every interior z for the Möbius maps, to 10⁻³⁰ at 50 digits over
+  10³ seeded (z, φ).
+- For each polynomial map with a ≥ 0.05, there is a sampled (z, φ) where it fails by more than 10⁻³.
+- So straight rays carry the turn's law to the shape's own Cauchy only when the shape is a circle; elsewhere F bends the
+  rays.
+- *Killed* if the Möbius case fails or any polynomial case holds.
+
+**C3 (the failure is first order in the shape's departure).**
+- For F(z) = z + a·z³ and z = 0.3, the largest |2·dθ_w/dφ − 1 − 2π·P_z(φ)| over φ, divided by a, at a = 10⁻², 10⁻³ and
+  10⁻⁴, agrees between the three within 2%.
+- *Killed* if not.
+
+**C4 (Theodorsen recovers the boundary correspondence).**
+- For F(z) = z + a·zⁿ with n ∈ {2, 3, 5} and a ∈ {0.02, 0.1}: start from the true radii ρ(θ) of ∂Ω (computed from F)
+  on N = 1,024 points.
+- Iterating θ ← φ + K[ln ρ(θ)] (K by the FFT) converges to arg F(e^{iφ}), to 10⁻¹⁰ in the maximum, within 60
+  iterations.
+- *Killed* if any case fails.
+
+**C5 (the radii's unit cancels).**
+- K kills constants, so replacing ρ by k·ρ (k ∈ {10⁻³, 7, 10³}) leaves the recovered θ(φ) unchanged to 10⁻¹².
+- So the boundary correspondence, and with it the shape's own Cauchy from F(0), is recovered from:
+  - the address reader's directions θ;
+  - the central reader's radii up to an unknown unit;
+  - and no amount carried in.
+- *Killed* if any case moves by more than 10⁻¹².
+
+**C6 (the verdict).** A judgment. *Killed* if C1, C2 or C4 is killed.
+- The shape's own Cauchy (its harmonic measure from a reader inside it) is the disc's Poisson kernel carried by the
+  conformal map. The turn's law (the unit circle, SMP) is the disc; the shape is the map.
+- Straight rays carry it onto the shape only for a circle, which is why CIW's identity is the circle's alone.
+- For other shapes, the turn needs the map:
+  - the address reader's directions;
+  - the central reader's radii in no unit;
+  - Theodorsen's step.
+- With them, a reader recovers the boundary correspondence, and with it the shape's harmonic measure from F(0).
+
+## What would and would not be shown
+
+**Shown:**
+- that CIW's result generalises through the conformal map;
+- what each reader contributes to recovering it: directions, radii up to a unit, and no amount.
+
+**Not shown:**
+- that any reader computes a conformal map;
+- shapes that are not star-shaped about F(0), where Theodorsen's equation does not apply in this form;
+- three dimensions, where conformal maps are only Möbius (Liouville's theorem) and the theorem has no analogue.
+
+## Runs
+
+(Nothing above this line is edited after a run.)
+
+### Before run 1: an error found in C2, and C2′ (19 Oct, written before any run)
+
+C2's Möbius clause is wrong by my own derivation, made while writing the script, before anything ran.
+- A Möbius map's image is a circle, centre c′ = b/(1 − b²), radius 1/(1 − b²), but the conformal angle φ is not that
+  circle's own central angle ψ = arg(F(e^{iφ}) − c′).
+- CIW's identity holds on the image circle in ψ: 2·dθ_w/dψ − 1 = 2π·P_{z′}(ψ), with the harmonic measure in ψ.
+- Harmonic measure is invariant: P_z(φ)·dφ = P_{z′}(ψ)·dψ.
+- So in φ the identity is 2·dθ_w/dφ − dψ/dφ = 2π·P_z(φ). It equals C2's 2·dθ_w/dφ − 1 only where dψ/dφ = 1, that is
+  at b = 0.
+
+C2 as written is expected to be killed in its Möbius clause. It is run as written and recorded as it comes out.
+
+**C2′.**
+- (a) For the Möbius maps (b ∈ {0.2, 0.4}), 2·dθ_w/dφ − dψ/dφ = 2π·P_z(φ), with ψ the image circle's own central angle.
+  It holds to 10⁻³⁰ at 50 digits over 10³ seeded (z, φ).
+- (b) For the polynomial maps, with ψ = arg F(e^{iφ}) (the geometric angle from F(0)), the same expression fails by more
+  than 10⁻³ somewhere among the samples when a ≥ 0.05.
+- So the straight-ray identity carries to a shape exactly when the shape has a centre from which its own uniform turn is
+  the central sweep: a circle.
+- *Killed* if (a) fails or (b) holds. C6's kill condition now reads C2′ for C2.
+
+### Run 1 (19 Oct; `runs/cmp/cmp.py`, output `runs/cmp/cmp-run1.txt`)
+
+Seed 20261019. C1 in double precision (walk-on-spheres, 2¹⁶ boundary samples and Newton to the nearest boundary point,
+stopping within 10⁻⁶); C2, C2′ and C3 at 50 digits; C4 and C5 in double precision, N = 1,024.
+
+- **C1 not killed.** All nine cases land as the wrapped Cauchy P_z: KS 0.0017–0.0044 against 0.00515. Walks took 103–130
+  steps; for z/(1 − 0.4z) at z = 0.4 the walk took 2, because F(0.4) = 0.476 is the image circle's centre, so the first
+  step lands exactly on the boundary.
+- **C2 killed**, as the note before the run expected. The Möbius residual is 0.5 at b = 0.2 and 1.33 at b = 0.4, not
+  10⁻³⁰. The polynomial clause holds (0.11 to 2.5).
+- **C2′ not killed.**
+  - (a) Möbius: 9·10⁻⁵⁰ and 1.5·10⁻⁴⁹, which is the working precision.
+  - (b) Polynomial, with ψ = arg F: 0.058 to 2.1. At z = 0 this residual is ψ′ − 1, so the failure is the gap between
+    the geometric angle from F(0) and the conformal angle. That gap is exactly what Theodorsen's step supplies.
+- **C3 not killed.** The maximum residual over a is 4.537, 4.594 and 4.599 at a = 10⁻², 10⁻³ and 10⁻⁴, a spread of
+  1.4%. It is first order, with its peak at φ = 0, the point nearest the reader. The leading coefficient tends to about
+  4.60.
+- **C4 not killed.** Every case reaches 8.9·10⁻¹⁶. It falls below 10⁻¹⁰ at iterations 5, 9, 6, 13, 7 and 25 for
+  (n, a) = (2, 0.02), (2, 0.1), (3, 0.02), (3, 0.1), (5, 0.02) and (5, 0.1). That is slower as a·(n − 1), the radii's
+  log-slope, grows.
+- **C5 not killed.** Scaling the radii by 10⁻³, 7 and 10³ moves θ by at most 2.7·10⁻¹⁵.
+- **C6 not killed** (with C2′ for C2).
+  - A reader inside a shape meets the shape's own Cauchy, its harmonic measure, as the disc's Poisson kernel carried by
+    the conformal map.
+  - The straight-ray combination of the two sweeps gives it only on a circle, and only in the circle's own central angle.
+  - On other shapes the conformal angle has to be found. Theodorsen finds it from the central reader's radii in any unit
+    and the address reader's directions, with no amount carried in.
+  - All of this is classical (Riemann, Carathéodory, Theodorsen). The run checks our arithmetic and how the readers'
+    contributions divide; it adds no new mathematics.

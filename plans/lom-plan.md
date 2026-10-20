@@ -68,7 +68,7 @@ places the framing as a restatement here, not a discovery. Not a test of real vi
 
 (Nothing above this line is edited after a run.)
 
-### Run 1 (17 Oct, `node lom/lom.mjs`; output `lom/lom-run1.txt`, 40 s)
+### Run 1 (17 Oct, `node runs/lom/lom.mjs`; output `runs/lom/lom-run1.txt`, 40 s)
 
 CV of the rate, by τ = 10 … 10,000: 0.003, 0.008, 0.027, 0.082, 0.256, 0.760, 2.553; the rate's sd the same at every τ
 within 8% (2.5–2.7·10⁻⁴ a tick: the cells' scatter does not depend on the rate). All four of L1–L4 killed:
@@ -84,7 +84,7 @@ within 8% (2.5–2.7·10⁻⁴ a tick: the cells' scatter does not depend on the
 - **L4 killed** by my set-up at τ = 10 and 30 (r̂'s mean 278 and 9.9 standard errors off 1/τ, the t³ term above); its sd
   clause held (×1.08).
 
-**Post hoc** (`lom/lom1-posthoc.mjs`, output `lom/lom1-posthoc.txt`): against the slope's own expectation r̂'s mean is
+**Post hoc** (`runs/lom/lom1-posthoc.mjs`, output `runs/lom/lom1-posthoc.txt`): against the slope's own expectation r̂'s mean is
 within 2 standard errors for τ ≥ 30 (6.6 at τ = 10, the next term); r̂ = 0 exactly in 0.17% (τ = 3,000) and 0.37%
 (τ = 10,000) of repeats; and **1/median(r̂) reads τ to −0.12%, −2.4% and +2.5% at τ = 1,000, 3,000, 10,000**, where the
 median of τ̂ is off −0.12%, −15% and −73%.

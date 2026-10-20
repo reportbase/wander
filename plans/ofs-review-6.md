@@ -5,7 +5,7 @@ of `papers/observation-from-somewhere.md` as it stands with PR #91 merged and PR
 vantages, on the thumb": π/2 · 2/π = 1). Kept as received below, in Markdown, with the layout tidied: the mathematics,
 which came through rendered three times over, is written once; an inline image (a stock picture of a quarter circle) and
 the words "Add to Favorites" are left out. A response follows each message. Then the check the exchange called for, with
-its predictions written before the script (`ofs/paths.py`) existed, and what was made.*
+its predictions written before the script (`runs/ofs/paths.py`) existed, and what was made.*
 
 ---
 
@@ -339,7 +339,7 @@ proceed".
 
 ---
 
-## The check (`ofs/paths.py`)
+## The check (`runs/ofs/paths.py`)
 
 *Predictions written before the script existed.* Exact arithmetic (mpmath, 40 digits), the closed forms against
 quadrature and root-finding.
@@ -385,7 +385,7 @@ the circle.
 
 ## Runs
 
-### Run 1 (13 October, `ofs/paths.py`)
+### Run 1 (13 October, `runs/ofs/paths.py`)
 
 mpmath at 40 digits (30 for the derivatives); seven seconds.
 
@@ -438,7 +438,7 @@ Post hoc, from the numbers, not predicted:
   between), what the circle adds (the even turn, the Cauchy's exact shape, the 2/π), and the sin² 2θ weight as the
   horizon condition at work. Before it, the same morning: the horizon condition restored wherever the missing mean was
   said to need only fairness (message 4's catch).
-- `ofs/paths.py`, Q1–Q5 above.
+- `runs/ofs/paths.py`, Q1–Q5 above.
 - `paths.html`, "One sweep, three paths": the three paths, the chosen one cut into equal lengths with their directions;
   b against θ; the turn and its shadow on the circle; the mean taking readings up to S. Smoke test 23; a card in
   `demos.html`.
@@ -545,7 +545,7 @@ assuming five things equal; it is the geometry finishing its work. Tom (about 12
 checking the n-party case first.
 
 **What was made** (SPN R225):
-- WDG run 2 (`plans/wdg-plan.md`, `wdg/wdg2.py`, predictions first, nothing killed): with n other parties drawn at H the
+- WDG run 2 (`plans/wdg-plan.md`, `runs/wdg/wdg2.py`, predictions first, nothing killed): with n other parties drawn at H the
   even orthant's readings are the n-dimensional Cauchy; every reading keeps the circle's law and every pair the
   wedge's; the near field in all readings is 1/(n + 1) (½, ⅓, ¼, ⅕, ⅙), and the number of readings past their corner
   is spread evenly over 0 … n; drawn unequally, the shares move.

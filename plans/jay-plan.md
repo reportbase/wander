@@ -4,7 +4,7 @@
 that has overlap with our ideas, and we just build on that." Claude proposed E. T. Jaynes's principle of transformation
 groups ("Prior Probabilities", 1968; "The Well-Posed Problem", 1973). Tom, about 11:24: "ok, if we find another great
 paper to lean on, we can just add it to Jaynes." (SPN R243.) Exact arithmetic: Python's `fractions` where the numbers
-are rational, mpmath at 60 digits elsewhere; predictions written before the script (`jay/jay.py`) exists.*
+are rational, mpmath at 60 digits elsewhere; predictions written before the script (`runs/jay/jay.py`) exists.*
 
 ## What Jaynes proved, and what is still to check against his text
 
@@ -154,7 +154,7 @@ read Jaynes's text; the items marked (check) wait for it.
 
 ## Runs
 
-### Run 1 (14 October; `python3 jay/jay.py`, about 4 minutes)
+### Run 1 (14 October; `python3 runs/jay/jay.py`, about 4 minutes)
 
 ```
 P1: not killed. invariant candidates: ['1/x']; worst level mass - ln 2: 0.0; Haldane invariant and ds/s = dt/(t(1-t)) exactly: True
@@ -183,7 +183,7 @@ singular end at 0, 10⁻¹⁰⁴ at 200 digits.
   **Killed if** any clause of P5 fails at its bound.
 P1, P3, P4, P6 and P7 are not rerun as new predictions; run 2 repeats them unchanged.
 
-### Run 2 (14 October; `python3 jay/jay.py`, 6.5 minutes on three cores)
+### Run 2 (14 October; `python3 runs/jay/jay.py`, 6.5 minutes on three cores)
 
 ```
 P1: not killed. invariant candidates: ['1/x']; worst level mass - ln 2: 0.0; Haldane invariant and ds/s = dt/(t(1-t)) exactly: True
@@ -310,7 +310,7 @@ measures agree; cite Liu and Adams beside the situated Bertrand), about 12:26: "
 - From memory, not checked: Shore and Johnson's axioms for maximum entropy (1980); Amari's information geometry, where
   Jeffreys's prior is the volume of the Fisher–Rao metric; Jaynes's book (2003), ch. 12.
 
-**Prediction for run 3** (`jay/jay2.py`, written before the script):
+**Prediction for run 3** (`runs/jay/jay2.py`, written before the script):
 - **P8. The reader's group has one Haar measure; location and scale have two.** (a) The maps x ↦ ax + b (a > 0),
   composed (a₁, b₁)(a₂, b₂) = (a₁a₂, a₁b₂ + b₁): the density on (a, b) unchanged by every left multiplication is 1/a²,
   by every right multiplication 1/a (Jacobians a_h² and a_h), and the two differ. (b) Turns and rescalings,
@@ -320,7 +320,7 @@ measures agree; cite Liu and Adams beside the situated Bertrand), about 12:26: "
   rational group elements; or, in (a), 1/a² passes the right test or 1/a the left at any element with a ≠ 1; or, in
   (b), any product fails to commute.
 
-### Run 3 (14 October; `python3 jay/jay2.py`, instant)
+### Run 3 (14 October; `python3 runs/jay/jay2.py`, instant)
 
 ```
 P8: not killed. location and scale: left 1/a², right 1/a, exactly, and never each other's: True; turns and rescalings commute, left = right = 1/λ, the exchange keeps it, exactly: True

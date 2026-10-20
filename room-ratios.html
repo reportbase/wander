@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The room in ratios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    room-ratios.html: how the two inscribed sweeps map a room in ratios (19 October 2026, Tom: "so the inscribed sweep is
+    two sweeps up down and left right.", "and the inscribed sweep returns addresses", "so we can map out a room with
+    ratios with the two inscribed sweeps.", then "lets create demo that explains this. how the inscribed sweep gives the
+    ratios to the objects in a room. Objects can be simple."; SPN R386). A standalone page, plain canvas, after room.html
+    (read from the room's corner) and room-walk.html (the floor plan, both sweeps), in three dimensions and the inscribed
+    sweeps only.
+    The reader's eye at A, facing straight ahead (+y). Its two inscribed sweeps: left-right, the azimuth ψ
+    (v₂/h = tan ψ), and up-down, the altitude a (v/√(h² + v₂²) = tan a). Every point it looks at is an address, the
+    pair (tan ψ, tan a): a ratio, not an amount. The sweep chart lays them evenly in azimuth and in height (sin a), so
+    the wedge's area is even (Archimedes; OFS Proposition 5(e)).
+    Three steps:
+    1. one standpoint: every thing as addresses, the angles between things and across each thing; no distance. The
+       ghosts (the chosen thing at ½ and 2 times its size and distance, about the eye) give the same addresses.
+    2. one step to the right, its length unmeasured (the reader's H, one step): each corner read again; the two read
+       rays cross, so every place, distance and size comes out in steps, a ratio to the step: the map.
+    3. count the step: one amount carried in (a stride measured once, 0.7 m at k = 1) writes the map in metres.
+    "Scale the world" (k) multiplies every true size, the walk included: no address, no place in steps and no ratio
+    moves; only the metres do.
+    Links: ?step=1|2|3&thing=table|cube|ball|cabinet&k=<log10 k>&truth=1. Test hook: window.__roomRatios.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid { display: grid; grid-template-columns: 3fr 2fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    #say { color: var(--bright); font-size: 13px; margin: 0 0 8px }
+    .tw { overflow-x: auto }
+    table { border-collapse: collapse; font-size: 12px; width: 100%; min-width: 560px }
+    th, td { text-align: left; padding: 3px 6px; border-bottom: 1px solid var(--line); vertical-align: top }
+    th { color: var(--dim); font-weight: 400 }
+    td.no { color: var(--dim) }
+    .r { color: var(--teal) } .g { color: var(--gold) } .w { color: var(--violet) } .x { color: var(--red) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The room in ratios</h1>
+    <p class="lede">The reader's inscribed sweep is two sweeps: <span class="g">left–right</span> (the azimuth) and
+    <span class="g">up–down</span> (the altitude). Each returns a ratio, so every point looked at is an address:
+    how far across against how far ahead, and how far up against how far out. From one place that is a picture, every
+    direction and every angle, but no distance. One step, its length never measured, makes it a map: every place and size
+    as so many steps. One counted stride writes it in metres.</p>
+    <div class="panel">
+        <div class="row" id="steps"></div>
+        <div class="row" id="things"></div>
+        <div class="row"><label for="lk">scale the world k</label><input id="lk" type="range" min="-1" max="1" step="0.01" value="0">
+            <span id="kv" class="cap"></span><button id="truth">the referee</button><button id="play">sweep</button></div>
+        <div id="say"></div>
+        <div class="grid">
+            <div><canvas id="room" height="430"></canvas><p class="cap" id="roomcap">The room. Drag to look round it.</p></div>
+            <div><canvas id="chart" height="250"></canvas><p class="cap">What the reader receives from A: the two sweeps,
+            left–right across, up–down up the side (even in height). The dashed lines are each sweep's corner, 45°, where
+            the ratio is 1.</p>
+            <canvas id="plan" height="200"></canvas><p class="cap" id="plancap">The reader's own map.</p></div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="tw"><table id="tab"></table></div>
+        <p class="note" id="note"></p>
+    </div>
+    <p class="note">After <a href="room.html">the room</a> and <a href="room-walk.html">walking the room</a>.
+    <a href="demos.html">All the demos</a>.</p>
+</main>
+<script>
+(function () {
+    'use strict';
+    const $ = id => document.getElementById(id), P = new URLSearchParams(location.search);
+    const DEG = 180 / Math.PI;
+    // the referee's room, metres at k = 1: x across (the reader's right), y ahead, z up
+    const ROOM = { W: 5, D: 4, H: 2.5 };
+    const EYE = [1.5, 0.3, 1.6], STEP = [0.7, 0, 0];           // the reader's eye at A; its step, to the right
+    const STRIDE = 0.7;                                          // the stride measured once against a rule (at k = 1)
+    const BASE = {
+        table:   { kind: 'box',  lo: [1.6, 2.0, 0], hi: [2.8, 2.8, 0.75], col: '#d4a052' },
+        cube:    { kind: 'box',  lo: [3.4, 1.2, 0], hi: [3.9, 1.7, 0.5],  col: '#8ce6cd' },
+        ball:    { kind: 'ball', c: [2.2, 2.4, 0.9], r: 0.15,              col: '#b59cf0' },
+        cabinet: { kind: 'box',  lo: [0.2, 3.4, 0], hi: [0.8, 3.8, 1.8],  col: '#d96e5b' } };
+    const NAMES = Object.keys(BASE);
+    const st = { step: Math.max(1, Math.min(3, +(P.get('step') || 1))), thing: BASE[P.get('thing')] ? P.get('thing') : 'table',
+        lk: +(P.get('k') || 0), truth: P.get('truth') === '1', yaw: -0.65, pitch: 0.42, play: 0, hand: null };
+    const kOf = () => Math.pow(10, st.lk);
+    const sc = (p, k) => p.map(x => x * k);
+    const add = (a, b) => a.map((x, i) => x + b[i]), sub = (a, b) => a.map((x, i) => x - b[i]);
+    const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2], norm = a => Math.sqrt(dot(a, a));
+
+    // ---- the referee's world at k ----
+    const eyeA = () => sc(EYE, kOf()), eyeB = () => sc(add(EYE, STEP), kOf());
+    function corners(n) {                                        // a box's eight corners; a ball's centre and six poles
+        const t = BASE[n], k = kOf();
+        if (t.kind === 'ball') { const c = sc(t.c, k), r = t.r * k;
+            return [c, add(c, [r, 0, 0]), add(c, [-r, 0, 0]), add(c, [0, 0, r]), add(c, [0, 0, -r]), add(c, [0, r, 0]), add(c, [0, -r, 0])]; }
+        const out = [];
+        for (const x of [t.lo[0], t.hi[0]]) for (const y of [t.lo[1], t.hi[1]]) for (const z of [t.lo[2], t.hi[2]]) out.push(sc([x, y, z], k));
+        return out;
+    }
+    const EDGES = [[0, 1], [2, 3], [4, 5], [6, 7], [0, 2], [1, 3], [4, 6], [5, 7], [0, 4], [1, 5], [2, 6], [3, 7]];
+    const centreOf = n => { const t = BASE[n]; return t.kind === 'ball' ? sc(t.c, kOf()) : sc(t.lo.map((x, i) => (x + t.hi[i]) / 2), kOf()); };
+
+    // ---- the inscribed sweeps: an address is two ratios ----
+    // left-right: v₂/h = tan ψ (across over ahead); up-down: v/√(h² + v₂²) = tan a (up over out)
+    function address(p, eye) {
+        const d = sub(p, eye), out = Math.hypot(d[0], d[1]);
+        return { lr: d[0] / d[1], ud: d[2] / out, psi: Math.atan2(d[0], d[1]), alt: Math.atan2(d[2], out) };
+    }
+    // the direction an address points along, in the reader's own frame (no amount in it)
+    function rayOf(ad) { const ca = Math.cos(ad.alt); return [Math.sin(ad.psi) * ca, Math.cos(ad.psi) * ca, Math.sin(ad.alt)]; }
+    // what the reader reads of a thing from one standpoint: its corners' addresses and its angular sizes
+    function readThing(n, eye) {
+        const cs = corners(n).map(p => address(p, eye)), t = BASE[n];
+        const psis = cs.map(a => a.psi), alts = cs.map(a => a.alt);
+        const c = address(centreOf(n), eye);
+        let across, up;
+        if (t.kind === 'ball') { const s = 2 * Math.asin(t.r * kOf() / norm(sub(centreOf(n), eye))); across = s; up = s; }
+        else { across = Math.max(...psis) - Math.min(...psis); up = Math.max(...alts) - Math.min(...alts); }
+        return { centre: c, corners: cs, across, up };
+    }
+    // two standpoints a step apart: each corner's two rays cross; the step (its direction known, its length the
+    // reader's one step) sets the unit, so every point comes out in steps
+    function crossRays(adA, adB) {
+        const u = rayOf(adA), w = rayOf(adB), s = [1, 0, 0];      // B = A + 1 step to the right, in the reader's frame
+        // A + t u = s + r w, least squares in (t, r) (exact readings: an exact crossing)
+        const uu = dot(u, u), ww = dot(w, w), uw = dot(u, w), us = dot(u, s), ws = dot(w, s);
+        const den = uu * ww - uw * uw;
+        const t = (us * ww - uw * ws) / den, r = (uw * us - uu * ws) / den;
+        const p1 = sc(u, t), p2 = add(s, sc(w, r));
+        return { p: sc(add(p1, p2), 0.5), gap: norm(sub(p1, p2)), t };
+    }
+    function mapThing(n) {                                       // the thing in steps, from A and B's readings alone
+        const A = readThing(n, eyeA()), B = readThing(n, eyeB());
+        const pts = A.corners.map((a, i) => crossRays(a, B.corners[i]).p);
+        const c = crossRays(A.centre, B.centre), t = BASE[n];
+        let size;
+        if (t.kind === 'ball') { const r = c.t * Math.sin(A.across / 2); size = { across: 2 * r, deep: 2 * r, up: 2 * r }; }
+        else { const ext = i => Math.max(...pts.map(p => p[i])) - Math.min(...pts.map(p => p[i]));
+            size = { across: ext(0), deep: ext(1), up: ext(2) }; }
+        return { centre: c.p, dist: c.t, points: pts, size, gap: c.gap };
+    }
+    const mapAll = () => Object.fromEntries(NAMES.map(n => [n, mapThing(n)]));
+    // ratios between things: unitless, the same in steps or metres
+    function ratios() {
+        const m = mapAll();
+        return [
+            ['the cabinet is', m.cabinet.dist / m.ball.dist, 'times as far as the ball'],
+            ['the table is', m.table.size.across / m.cube.size.across, 'times as wide as the cube'],
+            ['the cabinet is', m.cabinet.size.up / m.table.size.up, 'times as tall as the table'],
+            ['the ball is', m.ball.size.across / m.table.size.across, 'of the table\'s width'] ];
+    }
+    // the first thing the hand's ray meets: a thing (a box by its slabs, the ball by its sphere), else the room's wall
+    function hitOf(E, d) {
+        let best = { t: Infinity, n: null };
+        const slab = (lo, hi) => { let t0 = 0, t1 = Infinity;
+            for (let i = 0; i < 3; i++) { if (Math.abs(d[i]) < 1e-15) { if (E[i] < lo[i] || E[i] > hi[i]) return Infinity; continue; }
+                let a = (lo[i] - E[i]) / d[i], b = (hi[i] - E[i]) / d[i]; if (a > b) [a, b] = [b, a]; t0 = Math.max(t0, a); t1 = Math.min(t1, b); }
+            return t0 <= t1 ? t0 : Infinity; };
+        for (const n of NAMES) { const t = BASE[n], k = kOf(); let tt;
+            if (t.kind === 'ball') { const m = sub(E, sc(t.c, k)), b = dot(m, d), c = dot(m, m) - (t.r * k) ** 2, D = b * b - c;
+                tt = D >= 0 && -b - Math.sqrt(D) > 0 ? -b - Math.sqrt(D) : Infinity; }
+            else tt = slab(sc(t.lo, k), sc(t.hi, k));
+            if (tt < best.t) best = { t: tt, n }; }
+        if (best.n) return best;
+        const k = kOf(), B = [ROOM.W * k, ROOM.D * k, ROOM.H * k]; let t = Infinity;
+        for (let i = 0; i < 3; i++) if (Math.abs(d[i]) > 1e-15) t = Math.min(t, ((d[i] > 0 ? B[i] : 0) - E[i]) / d[i]);
+        return { t, n: null };
+    }
+    const stepLen = () => STRIDE * kOf();                         // the stride, counted: the one amount carried in
+    const truthIn = (n, unit) => { const c = sub(centreOf(n), eyeA()); return sc(c, 1 / unit); };
+
+    // ---- drawing ----
+    const cv = { room: $('room'), chart: $('chart'), plan: $('plan') };
+    function fit(c) { const r = devicePixelRatio || 1, w = c.clientWidth, h = +c.getAttribute('height');
+        if (c.width !== Math.round(w * r)) { c.width = Math.round(w * r); c.height = Math.round(h * r); c.style.height = h + 'px'; }
+        const g = c.getContext('2d'); g.setTransform(r, 0, 0, r, 0, 0); return [g, w, h]; }
+    function proj(p, w, h) {                                      // an outside camera orbiting the room (in base metres)
+        const k = kOf(), q = sc(p, 1 / k), c = [ROOM.W / 2, ROOM.D / 2, ROOM.H / 2];
+        let x = q[0] - c[0], y = q[1] - c[1], z = q[2] - c[2];
+        const cy = Math.cos(st.yaw), sy = Math.sin(st.yaw), cp = Math.cos(st.pitch), sp = Math.sin(st.pitch);
+        [x, y] = [cy * x - sy * y, sy * x + cy * y];
+        [y, z] = [cp * y + sp * z, -sp * y + cp * z];
+        const dist = 11, f = Math.min(w, h) * 1.25, depth = dist + y;
+        return [w / 2 + f * x / depth, h / 2 - f * z / depth, depth];
+    }
+    function line(g, a, b, w, h) { const p = proj(a, w, h), q = proj(b, w, h); g.beginPath(); g.moveTo(p[0], p[1]); g.lineTo(q[0], q[1]); g.stroke(); }
+    function drawThing(g, n, w, h, pts, col, dash) {
+        g.strokeStyle = col; g.setLineDash(dash || []);
+        if (BASE[n].kind === 'ball') { const c = proj(pts[0], w, h), e = proj(pts[1], w, h);
+            g.beginPath(); g.arc(c[0], c[1], Math.max(2, Math.hypot(e[0] - c[0], e[1] - c[1])), 0, 2 * Math.PI); g.stroke(); }
+        else for (const [i, j] of EDGES) line(g, pts[i], pts[j], w, h);
+        g.setLineDash([]);
+    }
+    function drawRoom() {
+        const [g, w, h] = fit(cv.room); g.clearRect(0, 0, w, h);
+        const k = kOf(), R = [[0, 0, 0], [ROOM.W, 0, 0], [0, ROOM.D, 0], [ROOM.W, ROOM.D, 0], [0, 0, ROOM.H], [ROOM.W, 0, ROOM.H], [0, ROOM.D, ROOM.H], [ROOM.W, ROOM.D, ROOM.H]].map(p => sc(p, k));
+        g.lineWidth = 1; g.strokeStyle = 'rgba(255,255,255,0.08)';
+        for (let x = 0; x <= ROOM.W; x += 0.5) line(g, sc([x, 0, 0], k), sc([x, ROOM.D, 0], k), w, h);
+        for (let y = 0; y <= ROOM.D; y += 0.5) line(g, sc([0, y, 0], k), sc([ROOM.W, y, 0], k), w, h);
+        g.strokeStyle = 'rgba(255,255,255,0.3)';
+        for (const [i, j] of [[0, 1], [0, 2], [1, 3], [2, 3], [4, 5], [4, 6], [5, 7], [6, 7], [0, 4], [1, 5], [2, 6], [3, 7]]) line(g, R[i], R[j], w, h);
+        for (const n of NAMES) { g.lineWidth = n === st.thing ? 2 : 1.2; drawThing(g, n, w, h, corners(n), BASE[n].col); }
+        const A = eyeA(), B = eyeB(), sel = corners(st.thing);
+        // the ghosts: the chosen thing at ½ and 2 times, about the eye: the same rays, the same addresses
+        if (st.step === 1) for (const f of [0.5, 2]) {
+            g.lineWidth = 1; drawThing(g, st.thing, w, h, sel.map(p => add(A, sc(sub(p, A), f))), 'rgba(212,160,82,0.45)', [4, 4]); }
+        g.lineWidth = 1;
+        g.strokeStyle = 'rgba(212,160,82,0.55)'; for (const p of sel) line(g, A, st.step === 1 ? add(A, sc(sub(p, A), 2)) : p, w, h);
+        if (st.step >= 2) { g.strokeStyle = 'rgba(181,156,240,0.55)'; for (const p of sel) line(g, B, p, w, h); }
+        // the reader: eye and body; B after the step
+        for (const [E, col] of st.step >= 2 ? [[A, '#d4a052'], [B, '#b59cf0']] : [[A, '#d4a052']]) {
+            const e = proj(E, w, h), f = proj([E[0], E[1], 0], w, h);
+            g.strokeStyle = col; g.lineWidth = 2; g.beginPath(); g.moveTo(e[0], e[1]); g.lineTo(f[0], f[1]); g.stroke();
+            g.fillStyle = col; g.beginPath(); g.arc(e[0], e[1], 4, 0, 2 * Math.PI); g.fill(); }
+        // the reconstruction, in steps, laid back into the room at the reader's eye (teal): where the map puts each corner
+        if (st.step >= 2) { const m = mapThing(st.thing), unit = norm(sub(eyeB(), eyeA()));
+            g.fillStyle = '#8ce6cd'; for (const q of m.points) { const p = proj(add(A, sc(q, unit)), w, h); g.beginPath(); g.arc(p[0], p[1], 3, 0, 2 * Math.PI); g.fill(); } }
+        if (st.hand) { const d = rayOf(st.hand), hit = hitOf(A, d), p = add(A, sc(d, hit.t));
+            g.strokeStyle = hit.n ? BASE[hit.n].col : '#ffffff'; g.lineWidth = 1.5; line(g, A, p, w, h);
+            const q = proj(p, w, h); g.fillStyle = g.strokeStyle; g.beginPath(); g.arc(q[0], q[1], 3.5, 0, 2 * Math.PI); g.fill(); }
+        g.fillStyle = '#8a8a96'; g.font = '12px DM Mono, monospace';
+        const a = proj(A, w, h); g.fillText('A', a[0] + 6, a[1] - 6);
+        if (st.step >= 2) { const b = proj(B, w, h); g.fillText('B', b[0] + 6, b[1] - 6); }
+    }
+    function chartXY(ad, w, h) {                                  // even in azimuth across, even in height (sin a) up
+        const m = 22; return [m + (ad.psi / Math.PI + 0.5) * (w - 2 * m), h / 2 - Math.sin(ad.alt) * (h / 2 - 14)];
+    }
+    function drawChart() {
+        const [g, w, h] = fit(cv.chart); g.clearRect(0, 0, w, h);
+        const E = eyeA();
+        g.strokeStyle = 'rgba(255,255,255,0.15)'; g.lineWidth = 1;
+        const L = (a, b) => { g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke(); };
+        L(chartXY({ psi: -Math.PI / 2, alt: 0 }, w, h), chartXY({ psi: Math.PI / 2, alt: 0 }, w, h));
+        L(chartXY({ psi: 0, alt: -Math.PI / 2 }, w, h), chartXY({ psi: 0, alt: Math.PI / 2 }, w, h));
+        g.setLineDash([4, 4]); g.strokeStyle = 'rgba(212,160,82,0.5)';
+        for (const s of [-1, 1]) { L(chartXY({ psi: s * Math.PI / 4, alt: -Math.PI / 2 }, w, h), chartXY({ psi: s * Math.PI / 4, alt: Math.PI / 2 }, w, h));
+            L(chartXY({ psi: -Math.PI / 2, alt: s * Math.PI / 4 }, w, h), chartXY({ psi: Math.PI / 2, alt: s * Math.PI / 4 }, w, h)); }
+        g.setLineDash([]);
+        // the room's own edges, as the reader sees them ahead (an edge's points behind the reader left out)
+        { const k = kOf(), RC = [[0, 0, 0], [ROOM.W, 0, 0], [0, ROOM.D, 0], [ROOM.W, ROOM.D, 0], [0, 0, ROOM.H], [ROOM.W, 0, ROOM.H], [0, ROOM.D, ROOM.H], [ROOM.W, ROOM.D, ROOM.H]].map(p => sc(p, k));
+            g.strokeStyle = 'rgba(255,255,255,0.28)'; g.lineWidth = 1;
+            for (const [i, j] of [[0, 1], [0, 2], [1, 3], [2, 3], [4, 5], [4, 6], [5, 7], [6, 7], [0, 4], [1, 5], [2, 6], [3, 7]]) {
+                g.beginPath(); let on = false;
+                for (let s = 0; s <= 64; s++) { const p = add(RC[i], sc(sub(RC[j], RC[i]), s / 64));
+                    if (p[1] - E[1] <= 1e-6) { on = false; continue; }
+                    const q = chartXY(address(p, E), w, h); on ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]); on = true; }
+                g.stroke(); } }
+        for (const n of NAMES) {
+            g.strokeStyle = BASE[n].col; g.lineWidth = n === st.thing ? 2 : 1.2;
+            if (BASE[n].kind === 'ball') { const c = centreOf(n), r = BASE[n].r * kOf(), d = sub(c, E), D = norm(d), s = Math.asin(r / D);
+                const ad = address(c, E); g.beginPath();
+                for (let i = 0; i <= 40; i++) { const t = 2 * Math.PI * i / 40;
+                    const p = chartXY({ psi: ad.psi + s * Math.cos(t) / Math.cos(ad.alt), alt: ad.alt + s * Math.sin(t) }, w, h);
+                    i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1]); } g.stroke(); }
+            else { const cs = corners(n);
+                for (const [i, j] of EDGES) { g.beginPath();
+                    for (let s = 0; s <= 16; s++) { const p = chartXY(address(add(cs[i], sc(sub(cs[j], cs[i]), s / 16)), E), w, h);
+                        s ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1]); } g.stroke(); } }
+        }
+        if (st.hand) { const p = chartXY(st.hand, w, h); g.fillStyle = '#fff'; g.beginPath(); g.arc(p[0], p[1], 3.5, 0, 2 * Math.PI); g.fill(); }
+        g.fillStyle = '#8a8a96'; g.font = '11px DM Mono, monospace';
+        g.fillText('left', 4, h / 2 - 4); g.fillText('right', w - 40, h / 2 - 4); g.fillText('up', w / 2 + 4, 12); g.fillText('down', w / 2 + 4, h - 4);
+        g.fillText('45°', chartXY({ psi: Math.PI / 4, alt: 0 }, w, h)[0] + 3, h - 4);
+    }
+    function drawPlan() {
+        const [g, w, h] = fit(cv.plan); g.clearRect(0, 0, w, h);
+        g.fillStyle = '#8a8a96'; g.font = '12px DM Mono, monospace';
+        if (st.step === 1) { $('plancap').textContent = 'The reader\'s own map: from one place, none. Each thing is only a set of directions; how far along them it lies is unread.';
+            g.fillText('from one place: directions only', 12, h / 2); return; }
+        const m = mapAll(), metres = st.step === 3, unit = metres ? stepLen() : 1;
+        const sx = (w - 30) / 8, ox = 15 + 2.5 * sx, oy = h - 14, s = Math.min(sx, (h - 28) / 6);
+        const X = x => ox + x * unit / (metres ? stepLen() : 1) * s, Y = y => oy - y * unit / (metres ? stepLen() : 1) * s;
+        g.strokeStyle = 'rgba(255,255,255,0.07)';
+        for (let i = -3; i <= 6; i++) { g.beginPath(); g.moveTo(X(i), Y(0)); g.lineTo(X(i), Y(6)); g.stroke(); }
+        for (let j = 0; j <= 6; j++) { g.beginPath(); g.moveTo(X(-3), Y(j)); g.lineTo(X(6), Y(j)); g.stroke(); }
+        for (const n of NAMES) { const pts = m[n].points;
+            g.fillStyle = BASE[n].col; for (const p of pts) { g.beginPath(); g.arc(X(p[0]), Y(p[1]), 2.4, 0, 2 * Math.PI); g.fill(); }
+            const c = m[n].centre; g.fillText(n, X(c[0]) + 5, Y(c[1]) - 5); }
+        g.fillStyle = '#d4a052'; g.beginPath(); g.arc(X(0), Y(0), 4, 0, 2 * Math.PI); g.fill(); g.fillText('A', X(0) - 14, Y(0) - 4);
+        g.fillStyle = '#b59cf0'; g.beginPath(); g.arc(X(1), Y(0), 4, 0, 2 * Math.PI); g.fill(); g.fillText('B', X(1) + 6, Y(0) - 4);
+        $('plancap').textContent = metres
+            ? 'The reader\'s own map, now in metres: the same map, each step written as ' + stepLen().toFixed(3) + ' m. The grid is one step.'
+            : 'The reader\'s own map, from above: every corner placed by crossing its two rays, in steps (the grid is one step). Its size in metres is unread.';
+    }
+
+    // ---- the readout ----
+    const f3 = x => (Math.abs(x) >= 100 ? x.toFixed(1) : x.toFixed(3));
+    function readout() {
+        const A = eyeA(), rows = [], m = st.step >= 2 ? mapAll() : null, unit = stepLen();
+        let head;
+        if (st.step === 1) {
+            head = ['thing', 'left–right (v₂/h)', 'up–down (v/√(h²+v₂²))', 'seen across', 'seen tall', 'distance'];
+            for (const n of NAMES) { const r = readThing(n, A);
+                rows.push([n, f3(r.centre.lr), f3(r.centre.ud), (r.across * DEG).toFixed(2) + '°', (r.up * DEG).toFixed(2) + '°', '<span class="x">unread</span>']); }
+        } else {
+            head = ['thing', 'across, ahead, up (steps)', 'distance (steps)', 'wide × deep × tall (steps)'];
+            if (st.step === 3) head.push('in metres');
+            if (st.truth) head.push('the referee (m)');
+            for (const n of NAMES) { const t = m[n], c = t.centre, z = t.size;
+                const row = [n, c.map(f3).join(', '), f3(t.dist), [z.across, z.deep, z.up].map(f3).join(' × ')];
+                if (st.step === 3) row.push(c.map(x => (x * unit).toFixed(3)).join(', ') + ' · ' + (t.dist * unit).toFixed(3) + ' m away');
+                if (st.truth) { const q = truthIn(n, 1); row.push(q.map(x => x.toFixed(3)).join(', ')); }
+                rows.push(row); }
+        }
+        $('tab').innerHTML = '<tr>' + head.map(x => '<th>' + x + '</th>').join('') + '</tr>' +
+            rows.map(r => '<tr>' + r.map((x, i) => '<td' + (i ? '' : ' class="g"') + '>' + x + '</td>').join('') + '</tr>').join('');
+        let note;
+        if (st.step === 1) {
+            const ang = (a, b) => { const u = rayOf(readThing(a, A).centre), v = rayOf(readThing(b, A).centre); return Math.acos(Math.max(-1, Math.min(1, dot(u, v)))) * DEG; };
+            note = 'From A alone every number is a ratio of the view: across over ahead, up over out, and the angles they make. ' +
+                'The table and the cube are ' + ang('table', 'cube').toFixed(2) + '° apart; the ball sits ' + ang('ball', 'table').toFixed(2) +
+                '° from the table\'s middle. The dashed ghosts, the ' + st.thing + ' at half and twice its size and distance, give exactly the same addresses: nothing here says how far.';
+        } else {
+            note = 'Between things, unitless, the same in steps or in metres: ' + ratios().map(r => r[0] + ' ' + r[1].toFixed(3) + ' ' + r[2]).join('; ') + '. ' +
+                (st.step === 2 ? 'Every number in the table is so many steps, and the step was never measured: it is the reader\'s own one, its H.'
+                    : 'One stride, measured once against a rule (' + unit.toFixed(3) + ' m), writes every place and size in metres. That one amount is the only thing carried in.');
+        }
+        $('note').innerHTML = note;
+        $('say').innerHTML = [
+            '<span class="g">One place.</span> The two sweeps give every corner as an address, a pair of ratios: a picture. Distance is not among them.',
+            '<span class="w">One step.</span> From B, a step to the right, every corner is read again. Its two rays cross: each place, distance and size comes out in steps.',
+            '<span class="r">Count the step.</span> One counted stride, an amount carried in, turns the map of steps into metres. Nothing else changes.'][st.step - 1];
+        $('roomcap').textContent = st.step === 1
+            ? 'The room. Gold rays: A\'s addresses of the chosen thing, run past it; the dashed ghosts lie on the same rays. Drag to look round.'
+            : 'The room. Gold rays from A, violet from B; teal: where the map puts each corner, from the readings alone. Drag to look round.';
+        $('kv').textContent = 'k = ' + kOf().toFixed(3);
+    }
+    function draw() { drawRoom(); drawChart(); drawPlan(); readout(); }
+
+    // ---- controls ----
+    function buttons() {
+        $('steps').innerHTML = ''; $('things').innerHTML = '';
+        ['1. one place', '2. one step', '3. count the step'].forEach((s, i) => { const b = document.createElement('button');
+            b.textContent = s; b.className = st.step === i + 1 ? 'on' : ''; b.onclick = () => { st.step = i + 1; buttons(); draw(); }; $('steps').appendChild(b); });
+        NAMES.forEach(n => { const b = document.createElement('button'); b.textContent = n; b.className = st.thing === n ? 'on' : '';
+            b.style.color = BASE[n].col; b.onclick = () => { st.thing = n; buttons(); draw(); }; $('things').appendChild(b); });
+        $('truth').className = st.truth ? 'on' : '';
+    }
+    $('lk').value = st.lk; $('lk').oninput = e => { st.lk = +e.target.value; draw(); };
+    $('truth').onclick = () => { st.truth = !st.truth; buttons(); draw(); };
+    // the hand sweeps: left-right fast, up-down slow (even in height), the two inscribed sweeps of one raster
+    $('play').onclick = () => { st.play = st.play ? 0 : performance.now(); $('play').className = st.play ? 'on' : ''; if (!st.play) { st.hand = null; draw(); } else tick(); };
+    function tick() {
+        if (!st.play) return;
+        const t = (performance.now() - st.play) / 1000, rows = 9, per = 1.6, i = Math.floor(t / per) % rows, u = (t / per) % 1;
+        const z = 1 - 2 * (i + 0.5) / rows;                        // height, from high to low: even in sin a
+        st.hand = { psi: (u - 0.5) * Math.PI, alt: Math.asin(z) };
+        draw(); requestAnimationFrame(tick);
+    }
+    let drag = null;
+    cv.room.addEventListener('pointerdown', e => { drag = [e.clientX, e.clientY, st.yaw, st.pitch]; cv.room.setPointerCapture(e.pointerId); });
+    cv.room.addEventListener('pointermove', e => { if (!drag) return;
+        st.yaw = drag[2] + (e.clientX - drag[0]) * 0.008; st.pitch = Math.max(-0.1, Math.min(1.4, drag[3] + (e.clientY - drag[1]) * 0.006)); drawRoom(); });
+    cv.room.addEventListener('pointerup', () => { drag = null; });
+    addEventListener('resize', draw);
+    buttons(); draw();
+
+    // ---- test hook ----
+    window.__roomRatios = {
+        address, rayOf, hitOf, readThing, crossRays, mapThing, mapAll, ratios, truthIn, stepLen, corners, centreOf,
+        eyeA, eyeB, kOf, NAMES,
+        set(o) { if (o.step) st.step = o.step; if (o.thing) st.thing = o.thing; if (o.k != null) st.lk = o.k;
+            if (o.truth != null) st.truth = !!o.truth; $('lk').value = st.lk; buttons(); draw(); },
+        state: () => ({ step: st.step, thing: st.thing, k: kOf(), truth: st.truth, say: $('say').textContent, note: $('note').textContent })
+    };
+})();
+</script>
+</body>
+</html>

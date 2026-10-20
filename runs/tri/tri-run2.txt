@@ -1,0 +1,38 @@
+U1 back to the target 3.6e-15, sine law 3.8e-15, Jacobian h*rotation 5.8e-50 (det sign +1) True
+   k=0.125 half-IQR with tau exact 8.104467e-04, bearings alone 8.098550e-04, difference 5.9e-07 (se 7.5e-08)
+   k=1     half-IQR with tau exact 1.994535e-04, bearings alone 1.994289e-04, difference 2.5e-08 (se 7.6e-09)
+   k=8     half-IQR with tau exact 8.127010e-04, bearings alone 8.126933e-04, difference 7.7e-09 (se 1.3e-08)
+U2 False
+   k* = 2.9652
+   k=0.125 lateral half-IQR: bearings 8.1233e-04 (pred 8.1250e-04, z -0.14), ratio 3.4286e-05 (pred 3.4251e-05, z +0.83); better: ratio
+   k=0.5   lateral half-IQR: bearings 2.5008e-04 (pred 2.5000e-04, z +0.20), ratio 4.2117e-05 (pred 4.2156e-05, z -0.79); better: ratio
+   k=1     lateral half-IQR: bearings 1.9978e-04 (pred 2.0000e-04, z -0.68), ratio 6.7384e-05 (pred 6.7449e-05, z -0.86); better: ratio
+   k=2     lateral half-IQR: bearings 2.5078e-04 (pred 2.5000e-04, z +2.08), ratio 1.6866e-04 (pred 1.6862e-04, z +0.17); better: ratio
+   k=8     lateral half-IQR: bearings 8.1120e-04 (pred 8.1250e-04, z -1.02), ratio 2.1951e-03 (pred 2.1921e-03, z +1.11); better: bearings
+U3 True
+   k=0.125 one bearing + exact ratio: KS 0.00103
+   k=1     one bearing + exact ratio: KS 0.00215
+   k=8     one bearing + exact ratio: KS 0.00071
+U4a (limit 0.00136) False
+   k=1 g=1e-2: P(no crossing) 0.00645931; rescued 0.99503 of 6437, predicted 0.998431 (z -6.90), with bearings <= 0 counted 0.993726 (z +2.64)
+       median |rel err| rescued 0.02036, forward crossings 0.01982, ratio 1.0269
+   k=8 g=1e-2: P(no crossing) 0.0258087; rescued 0.97353 of 25689, predicted 0.974981 (z -1.49), with bearings <= 0 counted 0.974192 (z -0.68)
+       median |rel err| rescued 0.07995, forward crossings 0.07771, ratio 1.0288
+U4b False U4c True
+U5a the three w-tests equal in magnitude to 2.9e-05 False
+/home/user/wander/runs/tri/tri2.py:169: RuntimeWarning: invalid value encountered in log
+  clo = lambda D: np.log(np.sin(a + dB) / np.sin(a + dA + D)) - tr
+   k=0.5  threshold |c| nan; misread caught half the time 5.0000e-01 rad, k*thr nan, ratio nan
+   k=2    threshold |c| nan; misread caught half the time 5.0000e-01 rad, k*thr nan, ratio nan
+   k=8    threshold |c| nan; misread caught half the time 5.0000e-01 rad, k*thr nan, ratio nan
+U5b True
+   k=0.125 cot beta 20.13: R in b, KS against Cauchy(0, g(cot beta + cosh ln k)) 0.00091, median R 0.04999998 b
+   k=1     cot beta 28.27: R in b, KS against Cauchy(0, g(cot beta + cosh ln k)) 0.00060, median R 0.05000002 b
+   k=8     cot beta 161.24: R in b, KS against Cauchy(0, g(cot beta + cosh ln k)) 0.00050, median R 0.04999998 b
+U6a (limit 0.00136) True
+/home/user/wander/runs/tri/tri2.py:205: RuntimeWarning: invalid value encountered in log
+  t_size = np.log(np.sin(bB) / np.sin(bA)); t_bear = np.log(np.sin(B_) / np.sin(A_))
+   R=0.4 b (d = 0.5 b): half-IQR of tau, size/bearings 1.3073, predicted k cot beta 1.3050 (se 0.0019, z +1.23)
+   R=0.6 b (d = 0.5 b): half-IQR of tau, size/bearings 0.7846, predicted k cot beta 0.7862 (se 0.0012, z -1.37)
+U6b True
+U7 False {'U1': True, 'U2': np.False_, 'U3': True, 'U4a': np.False_, 'U4b': np.False_, 'U4c': np.True_, 'U5a': np.False_, 'U5b': True, 'U6a': np.True_, 'U6b': np.True_, 'U7': np.False_}

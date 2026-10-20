@@ -1,0 +1,2 @@
+K1' arcs omega = theta_z/pi - alpha/2pi to 6.15e-50 True
+K6' True

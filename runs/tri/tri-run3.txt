@@ -1,0 +1,37 @@
+/home/user/wander/runs/tri/tri3.py:44: RuntimeWarning: invalid value encountered in log
+  t_b = np.log(np.sin(B_) / np.sin(A_))
+   k=0.125 median of the depth difference over y0 (1 + k^2) tau^2 / 4: -1.00000
+   k=1     median of the depth difference over y0 (1 + k^2) tau^2 / 4: -1.00000
+   k=8     median of the depth difference over y0 (1 + k^2) tau^2 / 4: -1.00002
+U2' True
+   k* = 2.9652
+   k=0.125 lateral half-IQR: bearings 8.1289e-04 (pred 8.1250e-04, z +0.30), ratio 3.4205e-05 (pred 3.4251e-05, z -1.03); better: ratio
+   k=0.5   lateral half-IQR: bearings 2.4921e-04 (pred 2.5000e-04, z -1.98), ratio 4.2203e-05 (pred 4.2156e-05, z +0.95); better: ratio
+   k=1     lateral half-IQR: bearings 2.0023e-04 (pred 2.0000e-04, z +0.78), ratio 6.7390e-05 (pred 6.7449e-05, z -0.75); better: ratio
+   k=2     lateral half-IQR: bearings 2.4958e-04 (pred 2.5000e-04, z -1.07), ratio 1.6871e-04 (pred 1.6862e-04, z +0.41); better: ratio
+   k=8     lateral half-IQR: bearings 8.1112e-04 (pred 8.1250e-04, z -0.98), ratio 2.1936e-03 (pred 2.1921e-03, z +0.61); better: bearings
+U3 True
+   k=0.125 one bearing + exact ratio: KS 0.00131, the draw itself 0.00136
+   k=1     one bearing + exact ratio: KS 0.00054, the draw itself 0.00053
+   k=8     one bearing + exact ratio: KS 0.00137, the draw itself 0.00127
+U4a' (limit 0.00163; largest gap to the draw 9.7e-05) True
+   k=1 g=1e-2: P(no crossing) 0.00645931; rescued 0.99348 of 6438, predicted 0.998431 (z -10.05), with bearings <= 0 counted 0.993726 (z -0.51)
+       median |rel err| rescued 0.01975, forward crossings 0.01977, ratio 0.9988
+   k=8 g=1e-2: P(no crossing) 0.0258087; rescued 0.97379 of 25642, predicted 0.974981 (z -1.22), with bearings <= 0 counted 0.974192 (z -0.41)
+       median |rel err| rescued 0.07819, forward crossings 0.07802, ratio 1.0023
+U4b' True U4c True
+U5a' the three w-tests equal in magnitude to 4.6e-43 True
+   k=0.5  threshold |c| 2.5697e-01; misread caught half the time 1.5293e-01 rad, k*thr 1.2848e-01, ratio 1.1903
+   k=2    threshold |c| 6.1756e-02; misread caught half the time 1.5062e-01 rad, k*thr 1.2351e-01, ratio 1.2194
+   k=8    threshold |c| 1.3233e-02; misread caught half the time 3.2850e-01 rad, k*thr 1.0586e-01, ratio 3.1031
+U5b' False
+   k=0.125 cot beta 20.13: R in b, KS against Cauchy(0, g(cot beta + cosh ln k)) 0.00129, median R 0.05000005 b
+   k=1     cot beta 28.27: R in b, KS against Cauchy(0, g(cot beta + cosh ln k)) 0.00119, median R 0.05000000 b
+   k=8     cot beta 161.24: R in b, KS against Cauchy(0, g(cot beta + cosh ln k)) 0.00123, median R 0.04999983 b
+U6a (limit 0.00136) True
+/home/user/wander/runs/tri/tri3.py:185: RuntimeWarning: invalid value encountered in log
+  t_size = np.log(np.sin(bB) / np.sin(bA)); t_bear = np.log(np.sin(B_) / np.sin(A_))
+   R=0.4 b (d = 0.5 b): half-IQR of tau, size/bearings 1.3024, predicted k cot beta 1.3050 (se 0.0021, z -1.27)
+   R=0.6 b (d = 0.5 b): half-IQR of tau, size/bearings 0.7865, predicted k cot beta 0.7862 (se 0.0014, z +0.24)
+U6b True
+U7' True {'U1': True, 'U2': np.True_, 'U3': True, 'U4a': np.True_, 'U4b': np.True_, 'U4c': np.True_, 'U5a': True, 'U5b': np.False_, 'U6a': np.True_, 'U6b': np.True_, 'U7': np.True_}

@@ -43,7 +43,7 @@ Everything here is classical; the run checks the reading given it, exactly (mpma
 
 ## Runs
 
-### Run 1 (16 Oct, `hmx/hmx.py`, output in `hmx/run1.txt`; 76 s)
+### Run 1 (16 Oct, `runs/hmx/hmx.py`, output in `runs/hmx/run1.txt`; 76 s)
 
 - **P1 killed, by my set-up.** The normal's product density varies by 2.5e-32 round the unit circle, the Laplace's by
   0.0227 and Student's t₃'s by 0.0028, but the uniform's by 0: the unit circle lies inside the square [−1, 1]², where the
@@ -64,7 +64,7 @@ Everything here is classical; the run checks the reading given it, exactly (mpma
 inside near the diagonals), the uniform's product density varies by at least 0.2 (¼ against 0), the Laplace's and t₃'s by
 more than 1e-3, and the normal's by at most 1e-25. *Killed if* any of these fails.
 
-### Run 2 (16 Oct, `hmx/hmx2.py`, output in `hmx/run2.txt`)
+### Run 2 (16 Oct, `runs/hmx/hmx2.py`, output in `runs/hmx/run2.txt`)
 
 On the circle of radius 1.2 the uniform's product density varies by 0.25, the Laplace's by 0.0295, t₃'s by 0.0045 and
 the normal's by 2.5e-32. **P1′ not killed.** (An illustration: the theorem itself is Herschel's and Maxwell's, with a

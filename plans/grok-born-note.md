@@ -48,7 +48,7 @@ the point that address points to:
 
   2/(π(1 + s²)) = (2/π)·h².
 
-This is exact (`tws/density.py`: to 10⁻⁴¹ at 59 addresses), from the stereographic stretch 1 + s² = sec²θ. It is why
+This is exact (`runs/tws/density.py`: to 10⁻⁴¹ at 59 addresses), from the stereographic stretch 1 + s² = sec²θ. It is why
 the note kept landing on cos²: the crowding of addresses has the shape of the payload's share. The two remain
 different things:
 - **A density is not a share.** The density must be summed over addresses; summed it is the arctangent (the Cauchy's

@@ -7,7 +7,7 @@ in the unsituated view, unknown in the unsituated view. unsituated view kickstar
 his choosen H. this creates a set of [h,v,v2]. which represents all possile ways those three relations can be
 represented relative to each other. this set is created by the intersection of their three rays." Then, to Claude's
 reading of the two places where "unsituated" stood for "situated", about 4:16: "yes, your correction is correct. I mixed
-the to up." SPN R239. Exact arithmetic (mpmath at 50 digits); predictions written before the script (`sit/sit.py`)
+the to up." SPN R239. Exact arithmetic (mpmath at 50 digits); predictions written before the script (`runs/sit/sit.py`)
 exists.*
 
 ## Set-up, with the case kept
@@ -59,7 +59,7 @@ entry per party, the old five the one-party case) is a choice of exposition, not
 
 ## Runs
 
-### Run 1 (14 October; `python3 sit/sit.py`, about 75 s)
+### Run 1 (14 October; `python3 runs/sit/sit.py`, about 75 s)
 
 ```
 P1: not killed. 3 parties: 2000 of 2000 starts converged, all within 0.0 of t = 0 or 2/3; 4 parties: 2000 of 2000 starts converged, all within 1.2e-641 of t = 0 or 2/4; 5 parties: 2000 of 2000 starts converged, all within 6.7e-52 of t = 0 or 2/5; two parties: the circle on the chord, through home, to 5.3e-51
@@ -72,7 +72,7 @@ than the gap I had written beside it on the inner side, ½ against (2/π)² = 0.
 geometry; the threshold was mine. (A first draft of the script also tested a different condition from the plan's; it
 was replaced by the plan's condition before the run.)
 
-### Run 2 (prediction written before `sit/sit2.py` exists)
+### Run 2 (prediction written before `runs/sit/sit2.py` exists)
 
 - **P3′. The hemisphere's readings are the per-sweep products times a fixed factor, 8/π², and its reciprocal.** The
   reading at once, 2, is (π/2)² × 8/π², and the reading one direction at a time, ½, is (2/π)² × π²/8; 8/π² = 0.8106,

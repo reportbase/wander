@@ -79,7 +79,7 @@ nothing about light or physics.
 
 (Nothing above this line is edited after a run.)
 
-### Run 1 (17 Oct, `node rsh/rsh-run.mjs`, driving `games.html?app=levels` through `LEVELS_APP._debug.recover` in headless Chromium; output `rsh/rsh-run1.txt`, 5 min)
+### Run 1 (17 Oct, `node runs/rsh/rsh-run.mjs`, driving `games.html?app=levels` through `LEVELS_APP._debug.recover` in headless Chromium; output `runs/rsh/rsh-run1.txt`, 5 min)
 
 - P1 not killed: every body's 4,096 readings are the lattice's directions to 3·10⁻¹⁶, any two bodies' to 6·10⁻¹⁶;
   P(v ≤ h) = 0.5012 and P(v ≤ h, v₂ ≤ h) = 0.3342 on every body (the lattice's own, the same for all).
@@ -173,7 +173,7 @@ in their own length and one length writes the whole field; and that the near, mi
 resolution, not from the geometry. Not how a reader finds which reading belongs to which body (the correspondence is
 given), nor anything of light.
 
-### Run 2 (17 Oct, `node rsh/rsh2.mjs` as first committed; output `rsh/rsh-run2.txt`, 2 min)
+### Run 2 (17 Oct, `node runs/rsh/rsh2.mjs` as first committed; output `runs/rsh/rsh-run2.txt`, 2 min)
 
 All four killed, most by my code:
 - **P7** killed. (a) held: k = 10⁻³, 7, 10³ painted every one of the 2²⁰ directions alike. (b) by my code: the body
@@ -212,12 +212,12 @@ eigenvalue taken from the rays' cross products, not from 1 − (u·m)² (P10); t
   place clauses of (d), (e) stand killed (run 2); no new prediction is made on them.
 - **P10′** = P10, unchanged.
 
-### Run 3 (17 Oct, `node rsh/rsh2.mjs`; output `rsh/rsh-run3.txt`, 2.5 min)
+### Run 3 (17 Oct, `node runs/rsh/rsh2.mjs`; output `runs/rsh/rsh-run3.txt`, 2.5 min)
 
 - **P7′ killed**, in (d) alone, and not by my code: each body seen alone from O shows 0.345 to 0.526 of its points, off
   (1 − R̄/d)/2 by up to 0.127 (body 36 at d = 49: 0.368 against 0.495). (a) every direction painted alike at k = 10⁻³, 7,
   10³; (b) body 12 moved to 2d and doubled about O: every direction alike; (c) as run 2. Post hoc
-  (`rsh/rsh3-p7d.mjs`): with the relief taken off (the same stretched bodies, R(u) = ½) every share is within 0.008 of
+  (`runs/rsh/rsh3-p7d.mjs`): with the relief taken off (the same stretched bodies, R(u) = ½) every share is within 0.008 of
   (1 − R̄/d)/2; so the relief's own shadows, and its points laid by direction from the centre rather than by area,
   move the share both ways by more than my 0.08 allowed. The cap law holds for the bodies' broad form only.
 - **P8′ not killed.** (a), (b) as run 2. (c) the 3 near hiding pairs with both bodies placed are ordered by the placed
@@ -300,7 +300,7 @@ in it, each body taking a share of its addresses equal to its solid angle (bread
 at the corner moved only by a lopsided payload; and that its own pixels, equal turns, give the same bands as a flat
 screen. Not how the correspondence is found, nor anything of light.
 
-### Run 4 (17 Oct, `node rsh/rsh4.mjs`; output `rsh/rsh-run4.txt`, about 50 min)
+### Run 4 (17 Oct, `node runs/rsh/rsh4.mjs`; output `runs/rsh/rsh-run4.txt`, about 50 min)
 
 Nothing killed.
 - **P11 not killed.** The 11 unhidden bodies with 200 addresses or more: share × π/2 equals the solid angle within 0.16%

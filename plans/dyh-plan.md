@@ -118,7 +118,7 @@ D1–D4 are classical, so a kill there would be my set-up. D5 is the question R3
 
 (Nothing above this line is edited after a run.)
 
-### Run 1 (18 Oct, `python3 dyh/dyh.py`; output `dyh/dyh-run1.txt`, 4 s)
+### Run 1 (18 Oct, `python3 runs/dyh/dyh.py`; output `runs/dyh/dyh-run1.txt`, 4 s)
 
 Nothing was killed.
 
@@ -246,7 +246,7 @@ Its advice was "exact check first, then the demo". That is the order taken: the 
   - *Killed* if Q1 fails, or if R_H and R_G coincide under some rescaling of u. Their near tails differ in form, so that
     would mean my tails are wrong.
 
-### Run 2 (18 Oct, `python3 dyh/dyh2.py`; output `dyh/dyh-run2.txt`, 7 s)
+### Run 2 (18 Oct, `python3 runs/dyh/dyh2.py`; output `runs/dyh/dyh-run2.txt`, 7 s)
 
 Nothing was killed.
 
@@ -409,7 +409,7 @@ has two maxima.
 
 *Killed* if A, B or C is killed.
 
-### Run 3 (18 Oct, `python3 dyh/dyh3.py`; output `dyh/dyh-run3.txt`, 77 s)
+### Run 3 (18 Oct, `python3 runs/dyh/dyh3.py`; output `runs/dyh/dyh-run3.txt`, 77 s)
 
 Nothing was killed.
 

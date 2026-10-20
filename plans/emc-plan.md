@@ -2,7 +2,7 @@
 
 *11 October 2026. Tom: "so lets talk about how the corner helps understand the known equation", then "yes" to writing it
 up with predictions first. Exact arithmetic (rationals where the numbers are rational) and the complex step. Predictions
-written before the script (`emc/emc.py`) exists. It follows MOT run 3 (`plans/mot-plan.md`), whose P17 already has the
+written before the script (`runs/emc/emc.py`) exists. It follows MOT run 3 (`plans/mot-plan.md`), whose P17 already has the
 energy's level-slope, β², halfway at the corner.*
 
 ## Set-up, with the case kept
@@ -65,7 +65,7 @@ table will not be used. Tom to supply the table if wanted.
 
 ## Runs
 
-### Run 1 (11 October, `emc/emc.py`)
+### Run 1 (11 October, `runs/emc/emc.py`)
 
 Seed 16, two seconds. P1's identities and P4 are in exact rationals, from Pythagorean triples and rational Doppler
 factors. The rest is in floats, with the speed taken by complex step from E(p).

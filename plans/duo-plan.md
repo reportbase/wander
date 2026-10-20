@@ -60,7 +60,7 @@ whose set-up I have not yet read.
   ticks, and record each reading and its uncertainty (half a marker) before comparing.
 - Take a from the paper's own transmission measurement for each absorber, not from nominal thicknesses.
 - If the paper corrects for the absorber's small-angle scattering or phase shift, use its corrected values and say so.
-- The script (`duo/duo.py`) holds the values transcribed by hand, with page and table numbers, and prints each point
+- The script (`runs/duo/duo.py`) holds the values transcribed by hand, with page and table numbers, and prints each point
   against both forms.
 - The PDF is not committed. Its sha256 goes here when it arrives.
 
@@ -103,9 +103,9 @@ How each value is read, fixed now:
   about 3 px (a hundredth of the unit on the main plot), which is added in quadrature to σ.
 - **D3.** On the two fringe panels, the amplitude ratio is the absorber's peak-to-trough bar over the empty one's. Both
   are drawn at the right edge of each panel, so the ratio needs no axis.
-- **Recording.** Every reading is written to `duo/readings.md` before `duo/duo.py` compares it with either form.
+- **Recording.** Every reading is written to `runs/duo/readings.md` before `runs/duo/duo.py` compares it with either form.
 
-### Run 1 (15 Oct about 21:55, `duo/duo.py`, readings in `duo/readings.md`, output in `duo/run1.txt`)
+### Run 1 (15 Oct about 21:55, `runs/duo/duo.py`, readings in `runs/duo/readings.md`, output in `runs/duo/run1.txt`)
 
 While reading, before the script ran, I saw that M2 and the left inset's gadolinium points sat well below the drawn √a
 curve. The rule for M2's possible double count (counted alone, or taken as L3) was set after that, so both are reported.

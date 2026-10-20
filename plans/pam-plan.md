@@ -61,7 +61,7 @@ None of this is new mathematics. The test keeps the two readings apart on one ex
 
 ## Runs
 
-### Run 1 (15 Oct about 23:10, `pam/pam.py`, output in `pam/run1.txt`; 23 s)
+### Run 1 (15 Oct about 23:10, `runs/pam/pam.py`, output in `runs/pam/run1.txt`; 23 s)
 
 - **A1 not killed.** For (i), (ii), (iii) and (vi) the median direction is π/4 to 4·10⁻³², so s_m = 1.
 - **A2 not killed.**
@@ -91,7 +91,7 @@ kurtosis of p: Σ_n (cos⁴ nθ + sin⁴ nθ)·(−2/15)/(K/3)², since a unifor
 distance is off its prediction by more than 25% of it plus 0.001; or, for K = 16, 32 or 64, it exceeds the prediction
 by more than 0.0015 (where sampling dominates). K = 1 is outside the series' reach and has no prediction.
 
-### Run 2 (15 Oct about 23:17, `pam/pam2.py`, output in `pam/run2.txt`; 15 s)
+### Run 2 (15 Oct about 23:17, `runs/pam/pam2.py`, output in `runs/pam/run2.txt`; 15 s)
 
 | K | κ₄ | predicted | measured |
 |---|---|---|---|

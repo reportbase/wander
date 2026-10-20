@@ -63,7 +63,7 @@ the normal and the median to the Cauchy as their natural centres.
 
 ## Made (SPN R276)
 
-- `plans/hmx-plan.md` (+ `hmx/`): predictions first, exact (mpmath). P1 killed by my set-up (the unit circle never left the
+- `plans/hmx-plan.md` (+ `runs/hmx/`): predictions first, exact (mpmath). P1 killed by my set-up (the unit circle never left the
   uniform's support); P1′ on a circle of radius 1.2 not killed; P2–P5 not killed.
 - OFS §7.1, "Why the payload is Gaussian", after "When the density varies with direction"; §3.1's "Two sweeps, two
   results" points to it; references Herschel 1850 and Maxwell 1860.

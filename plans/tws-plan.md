@@ -68,7 +68,7 @@ What a kill would mean:
 
 ## Runs
 
-### Run 1 (16 Oct about 05:05, `tws/tws.py`, output in `tws/run1.txt`; 6 s)
+### Run 1 (16 Oct about 05:05, `runs/tws/tws.py`, output in `runs/tws/run1.txt`; 6 s)
 
 - **T1 not killed.** At the centre the arc's rate is 1 for every direction.
 - **T2 not killed.** From a point of the circle it is 2 for every ray into it.
@@ -90,12 +90,12 @@ The same claim as T3, with the hit's angle measured from the direction opposite 
 derivative then needs no unwrapping. *Killed if*, for p = 0.1, 0.5 or 0.9, the rate at ψ = π is off 1 + p by more than
 10⁻³⁰, or the rate at ψ = 0 is off 1 − p by more than 10⁻³⁰.
 
-### Run 2 (16 Oct about 05:10, `tws/tws2.py`, output in `tws/run2.txt`)
+### Run 2 (16 Oct about 05:10, `runs/tws/tws2.py`, output in `runs/tws/run2.txt`)
 
 **T3′ not killed.** For p = 0.1, 0.5 and 0.9 the rate is exactly 1 + p looking toward the centre and 1 − p looking
 away. (The script was tidied after its first run, removing dead lines; the rerun printed the same.)
 
-### Post hoc (16 Oct about 05:15, `tws/ellipse.py`, output in `tws/ellipse.txt`)
+### Post hoc (16 Oct about 05:15, `runs/tws/ellipse.py`, output in `runs/tws/ellipse.txt`)
 
 This checks a claim in the OFS text that was not among the predictions. On the stretched drawing, the ellipse
 x² − x + y²/4 = 0 (c = 2), equal turns do not reach equal arcs from either pivot:
