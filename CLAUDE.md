@@ -1012,8 +1012,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   lighthouse) and says we did not find the statement in print. The searches are in `plans/ofs-literature.md` (R391, R392).
   **Nothing but a head** (19 Oct, SPN R394; Tom: "you can literally create a cauchy distribution by sweeping a straight
   line, just moving your head"; "the wall does not need to be straight."): OFS's introduction says a steady head turn,
-  each direction read as v/h, gives the Cauchy whatever is looked at, a wall of any shape or nothing; the wall's shape only
-  sets where the directions meet it; a straight wall is the case where position equals the reading (the lighthouse).
+  each direction read as v/h, gives the Cauchy whatever is looked at, since "replace the wall with a row of trees" a row of
+  trees, curved or straight, or nothing (trunk, gap, trunk swapped in and out, the direction unmoved); the row's shape only
+  sets where the directions meet it; a straight row is the case where position equals the reading (the lighthouse).
   `parallax.md` §7 also has "The ladder as a tower of holds" (16 Oct, SPN R317): rungs as levels of unit, ratios between
   them, the metre the one written amount; errors adding by rung, a revised hold moving all on and above it (Baade 1956,
   Sandage 1958); Proposition 4's band the tower's pitch. Tested by LTH (`plans/lth-plan.md`, predictions only, not run):
