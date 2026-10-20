@@ -113,3 +113,24 @@ Addressing *noted (item 5) and the corpus never followed up. Tom (19:24): "yes".
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Before run 1: an error found in C2, and C2′ (19 Oct, written before any run)
+
+C2's Möbius clause is wrong by my own derivation, made while writing the script, before anything ran.
+- A Möbius map's image is a circle, centre c′ = b/(1 − b²), radius 1/(1 − b²), but the conformal angle φ is not that
+  circle's own central angle ψ = arg(F(e^{iφ}) − c′).
+- CIW's identity holds on the image circle in ψ: 2·dθ_w/dψ − 1 = 2π·P_{z′}(ψ), with the harmonic measure in ψ.
+- Harmonic measure is invariant: P_z(φ)·dφ = P_{z′}(ψ)·dψ.
+- So in φ the identity is 2·dθ_w/dφ − dψ/dφ = 2π·P_z(φ). It equals C2's 2·dθ_w/dφ − 1 only where dψ/dφ = 1, that is
+  at b = 0.
+
+C2 as written is expected to be killed in its Möbius clause. It is run as written and recorded as it comes out.
+
+**C2′.**
+- (a) For the Möbius maps (b ∈ {0.2, 0.4}), 2·dθ_w/dφ − dψ/dφ = 2π·P_z(φ), with ψ the image circle's own central angle.
+  It holds to 10⁻³⁰ at 50 digits over 10³ seeded (z, φ).
+- (b) For the polynomial maps, with ψ = arg F(e^{iφ}) (the geometric angle from F(0)), the same expression fails by more
+  than 10⁻³ somewhere among the samples when a ≥ 0.05.
+- So the straight-ray identity carries to a shape exactly when the shape has a centre from which its own uniform turn is
+  the central sweep: a circle.
+- *Killed* if (a) fails or (b) holds. C6's kill condition now reads C2′ for C2.
