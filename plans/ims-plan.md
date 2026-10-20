@@ -111,3 +111,61 @@ importance-sampling table the Cauchy makes unnecessary, and what remains.
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (20 Oct; `runs/ims/ims.py`, output `runs/ims/ims-run1.txt`, 42 s)
+
+- **I1 not killed.**
+  - (a) The boost z ↦ e^η·z pushes the uniform sphere to KM(tanh(η/2), e₃) to 5.8·10⁻⁶⁰, over 600 points.
+  - (b) Two non-collinear boosts composed push it to one spherical Cauchy: p^(−1/2) is affine in x to 1.0·10⁻⁶⁰.
+
+The relative variance of one sample, V, at 16 × 16 points a cell. The quadrature's own error, |16 − 24|, is at most
+7·10⁻⁴ and mostly below 10⁻¹⁰.
+
+| η | k | sky | V_U | V_C | V_T(64), rebuilt | V_M(64), built once |
+|---|---|---|---|---|---|---|
+| 0.5 | 2 | uniform | 0.362 | 0 | 1.3·10⁻⁴ | 0 |
+| 0.5 | 2 | sun | 241 | 124.75 | 0.168 | 0.0684 |
+| 0.5 | 4 | uniform | 1.44 | 0.252 | 6.5·10⁻⁴ | 0.252 |
+| 0.5 | 4 | sun | 332 | 172 | 0.197 | 0.210 |
+| 2 | 2 | uniform | 17.5 | 0 | 0.075 | 0 |
+| 2 | 2 | sun | 3,904 | 124.75 | 6.17 | 0.0684 |
+| 2 | 4 | uniform | 67.9 | 0.767 | 0.470 | 0.767 |
+| 2 | 4 | sun | 6,155 | 197 | 6.52 | 0.388 |
+| 4 | 2 | uniform | 993 | 0 | 18.3 | 0 |
+| 4 | 2 | sun | 210,661 | 124.75 | 4,098 | 0.0684 |
+| 4 | 4 | uniform | 3,830 | 0.799 | 59.9 | 0.799 |
+| 4 | 4 | sun | 333,724 | 197 | 5,299 | 0.397 |
+
+- **I2 not killed.** For the uniform sky with k = 2, V_C is 3.6·10⁻¹⁵, zero to rounding, at every η. For k = 4 it is
+  0.25–0.80, always below V_U.
+- **I3(a) not killed:** with the sun and k = 2, V_C is 124.750000 at every η. The boost cancels and only the payload is
+  left.
+- **I3(b) killed.** The table rebuilt per view beats the Cauchy at η = 0.5 and 2, but not at η = 4: 4,098 against 124.75
+  for k = 2, and 5,299 against 197 for k = 4.
+  - My prediction assumed a rebuilt table is always the better sampler.
+  - At η = 4 the boost squeezes the sun to about a twentieth of its rest width, and squeezes the forward cap where D² is
+    largest. A 64 × 128 table built from cell centres no longer resolves either. Its V is 18 even for the uniform sky,
+    where the Cauchy is exact.
+  - Post hoc: a finer table, cell averages in place of centres, or a table that adapts to the view would do better. That
+    is more precomputation per view, the cost the Cauchy avoids.
+- **I4 not killed.**
+  - (a) With the sun and k = 2, V_M is 0.068407 at every η, the rest-frame table's own variance.
+  - (b) V_M ≤ V_T at η = 2 and 4, by a factor of 90 at η = 2 and 60,000 at η = 4.
+  - (c) For k = 4, V_M < V_C at every η.
+  - Post hoc: at η = 0.5 with k = 4, M (0.210) is slightly above T (0.197). That was not predicted, and does not kill (b),
+    which named η = 2 and 4 only.
+- **I5.** A view change costs T(64) 8,192 evaluations of f plus its sums. C and M cost one 2×2 product, and M's table was
+  built once.
+- **I6 not killed.**
+
+The verdict:
+- The Cauchy removes the precomputation tied to the view. The address part of a view change cancels exactly from the
+  sampler, at any rapidity and through composed maps.
+- The payload's table is still needed, but built once, in the payload's own frame. Paired with the Cauchy for the
+  addresses, it keeps the same variance under every view change: 0.068 at η = 0.5, 2 and 4 alike.
+- The table rebuilt for each view at fixed resolution degrades as the view changes more, and at η = 4 it is worse than
+  the Cauchy alone.
+- What a view change leaves over is the payload's own weighting (the second D² of beaming), as k = 4 shows: M rises from
+  0.068 to 0.21–0.40.
+
+Not shown: warps that are not Möbius maps, and time on a GPU.
