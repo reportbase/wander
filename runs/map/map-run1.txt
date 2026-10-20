@@ -1,0 +1,39 @@
+M1: addresses alone, turn and step direction known
+  exact: true pairs meet to 5.89e-48; nearest wrong pair 0.0002778 |AB|
+  ambiguous share of A rays: eps 1e-3 0.1475, eps 1e-2 0.6225
+M1 not killed
+
+M2: payload matching (sd 0.1), then the rays crossed
+  room 11: 86/86 matched right; worst place 1.49e-48 (relative past |AB|)
+  room 12: 86/86 matched right; worst place 3.01e-49 (relative past |AB|)
+  room 13: 86/86 matched right; worst place 2.75e-49 (relative past |AB|)
+  room 14: 86/86 matched right; worst place 1.61e-49 (relative past |AB|)
+  room 15: 86/86 matched right; worst place 2.71e-48 (relative past |AB|)
+M2 not killed
+
+M3: scale the world (the step included)
+  k = 1e-3: addresses moved 4.28e-51; places in |AB| moved 1.42e-36; metres off 2.92e-37
+  k = 7: addresses moved 3.15e-51; places in |AB| moved 1.42e-36; metres off 2.92e-37
+  k = 1e3: addresses moved 3.06e-51; places in |AB| moved 2.32e-38; metres off 1.35e-36
+M3 not killed
+
+M4: a swapped payload in B's view
+  rays of wrong matches pass 0.01066 apart at least; right matches meet to 1.39e-38
+  (A, B) against (A, C): swapped features differ by 0.08815 at least; the rest agree to 5.79e-38
+M4 KILLED
+
+M5: a ranging payload in an unread unit, from A alone
+  u = 0.73: distance ratios off 6.41e-50; every place off by u to 2.67e-51
+  u = 1: distance ratios off 2.14e-50; every place off by u to 2.67e-51
+  u = 1.27: distance ratios off 3.85e-49; every place off by u to 5.35e-51
+M5 not killed
+
+M6: the turn from six far features
+  room 11: rotation off 4.21e-08 rad; places off 2.40e-06 |AB| at most
+  room 12: rotation off 5.06e-07 rad; places off 1.63e-05 |AB| at most
+  room 13: rotation off 6.02e-07 rad; places off 2.68e-05 |AB| at most
+  room 14: rotation off 4.27e-07 rad; places off 9.82e-06 |AB| at most
+  room 15: rotation off 8.19e-07 rad; places off 1.02e-04 |AB| at most
+M6 KILLED
+
+M7 KILLED

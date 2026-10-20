@@ -114,3 +114,34 @@ At ε = 10⁻³ and 10⁻²:
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (19 Oct; `runs/map/map.py`, output `runs/map/map-run1.txt`)
+
+- **M1 not killed.**
+  - Exact readings: every true pair meets to 6·10⁻⁴⁸. The nearest of the 5 × 80 × 79 wrong pairs passes 2.8·10⁻⁴ |AB|
+    apart.
+  - Ambiguous share of A rays: 0.148 at ε = 10⁻³ and 0.623 at 10⁻².
+  - So at exact resolution the addresses pair every point alone. At 1 mrad one ray in seven already has a rival within
+    reach, and at 10 mrad five in eight do.
+- **M2 not killed.** All 86 matched right in every room, by payload. Places to 3·10⁻⁴⁸.
+- **M3 not killed.** At k = 10⁻³, 7 and 10³: addresses moved 4·10⁻⁵¹, places in |AB| 1.4·10⁻³⁶, and the counted stride's
+  metres 1.4·10⁻³⁶ off.
+- **M4 killed, by my set-up.**
+  - Every wrong match's rays pass at least 0.011 |AB| apart, and the loop separates every swapped feature by at least
+    0.088 |AB|. Both clauses that test the flagging hold.
+  - The kill: the right matches' "meet to 10⁻⁴⁰" missed, at 1.4·10⁻³⁸. That is the far features again: an absolute
+    tolerance on rays meeting 10⁶ |AB| out, where 50 digits leave about 10⁶·10⁻⁴⁴. M1 had kept to the room's 80, M4 did
+    not.
+- **M5 not killed.** At u = 0.73, 1 and 1.27: distance ratios to 4·10⁻⁴⁹, and every place off by exactly u, to 5·10⁻⁵¹.
+- **M6 killed, narrowly, in its place clause.**
+  - The rotation from six far features is off 4·10⁻⁸ to 8·10⁻⁷ rad, inside its bound of 10⁻⁵.
+  - Places with it are off 2·10⁻⁶ to 1.02·10⁻⁴ |AB|; room 15 is just past the 10⁻⁴.
+  - Post hoc (`runs/map/map1-m6-posthoc.py`): the worst is feature 26, 3.5 |AB| out but seen across a parallax of only
+    0.011 rad, almost along the step. A rotation error δ moves a place by about δ·d/γ, not the δ·d²/B I had in mind.
+    My bound ignored the features near the baseline.
+- **M7 killed in its letter**, by M4 and M6.
+
+**M4′ (before run 2).**
+- Run 1's M4 clauses unchanged, but the right matches' meeting measured relative to the meeting's distance along A's
+  ray: dist / max(1, t) < 10⁻⁴⁰.
+- Same seeds and swaps. *Killed* if any clause fails. M7′ reads M4′ for M4, and keeps M6 killed.
