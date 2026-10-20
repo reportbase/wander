@@ -444,8 +444,14 @@ In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule")
      - Its weak stage is the turn: six far features in one window, 1.5°–26° apart, fix it to about γ/sin(angle).
      - Started from a broken turn, the robust adjustment does not recover.
      - Killed: G1 (the clean error, against my 3.7·10⁻³) and G4 (the robust adjustment's 7.8× at 10%).
-   - Open: a robust turn (wider far features, or a median over minimal sets of room features), far features as targets,
-     real images.
+   - **Run 3, a robust turn, [simulation].** Twelve far features spread over the sphere, and at each pose stage the
+     candidate with the most agreeing readings kept before the median (RANSAC's consensus, Fischler and Bolles 1981).
+     - Spreading fixes the conditioning: clean, 2.39·10⁻³ with medians alone. The medians still break between 10% and
+       20% wrong matches (232× at 20%).
+     - Consensus fixes the breakdown: 1.98·10⁻³ clean, 2.68 times that at 30% wrong matches. A Cauchy-cost bundle
+       adjustment started from it holds to 2.23 times, better than its start.
+     - Killed: H1 narrowly in its turn clause (the worst turn 0.251°, against my 0.2°).
+   - Open: minimal sets of room features in place of far ones, far features as targets, real images.
 2. **Medians against least squares on bearing lines.** STC's floor (§4) suggests least squares on Cauchy-like bearings
    stops improving. At what rate does a median-of-crossings estimator improve, and does it keep improving? **[open]**
 3. **Exactness of a whole map in ratio forms.** Does MOT P10's exactness survive composition over many standpoints and a
@@ -469,6 +475,8 @@ In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule")
   Transactions on Robotics* 24(5), 932–945.
 - Criminisi, A., Reid, I. and Zisserman, A. (2000). Single view metrology. *International Journal of Computer Vision*
   40(2), 123–148.
+- Fischler, M. A. and Bolles, R. C. (1981). Random sample consensus: a paradigm for model fitting with applications to
+  image analysis and automated cartography. *Communications of the ACM* 24, 381–395.
 - Hartley, R. and Zisserman, A. (2003). *Multiple View Geometry in Computer Vision*, 2nd ed. Cambridge University Press.
 - Laurentini, A. (1994). The visual hull concept for silhouette-based image understanding. *IEEE Transactions on Pattern
   Analysis and Machine Intelligence* 16(2), 150–162.

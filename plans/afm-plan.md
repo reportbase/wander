@@ -260,3 +260,36 @@ that pairs are well spread. Cauchy bearings, γ = 10⁻³; f ∈ {0, 0.1, 0.2, 0
     readings each stage uses, and the medians in ratio form.
 
 *Each killed if its clauses fail.*
+
+### Run 3 (19–20 Oct; `runs/afm/afm3.py`, output `runs/afm/afm-run3.txt`)
+
+Median point error over the five rooms' 80 room features (in |AB|), and the worst turn error over every standpoint:
+
+| f | AF2-wide | AF2-vote | BA-CB from AF2-vote | worst turn, wide | worst turn, vote |
+|---|---|---|---|---|---|
+| 0 | 2.39·10⁻³ | 1.98·10⁻³ | 1.81·10⁻³ | 0.251° | 0.170° |
+| 0.1 | 4.72·10⁻³ (1.98×) | 2.55·10⁻³ (1.29×) | 1.87·10⁻³ (1.03×) | 6.39° | 0.334° |
+| 0.2 | 0.554 (232×) | 2.85·10⁻³ (1.44×) | 1.37·10⁻³ (0.76×) | 127° | 0.253° |
+| 0.3 | 0.626 (262×) | 5.31·10⁻³ (2.68×) | 4.04·10⁻³ (2.23×) | 115° | 1.04° |
+
+- **H1 killed, narrowly, in its turn clause.** The error clause holds: spreading the far features over the sphere took
+  the clean error from run 2's 8.7·10⁻³ to 2.39·10⁻³, under the bound of 2.5·10⁻³. But the worst turn error, 0.251°, is
+  past my 0.2°, though a tenth of run 2's 2.4°. The worst case was not examined; twelve directions at random still put
+  some pairs close together, and the median of quaternions over all 66 pairs takes them in.
+- **H2 not killed.** AF2-wide is within 3 times clean at f = 0.1 (1.98×) and past 10 times at 0.2 (232×), as the share
+  of clean four-reading pairs, (1 − f)⁴, falling through ½ at 0.159 predicted. Its worst turn is already 6.4° at 0.1.
+- **H3 not killed.** AF2-vote at f = 0.3 is 2.68 times its clean error, inside 3. The turn holds to about a degree at
+  worst, and by 0.2 a third of a degree.
+- **H4 not killed.** Started from AF2-vote, the Cauchy-cost bundle adjustment is 2.23 times its clean error at f = 0.3,
+  and better than AF2-vote there (4.04·10⁻³ against 5.31·10⁻³). At f = 0.2 it came out below its own clean error, a
+  draw of the readings, not a gain from outliers.
+- **H5 killed in its letter**, by H1's turn clause.
+
+The verdict, read past that letter:
+- The pipeline's two weaknesses separate. Spreading the far features fixes the conditioning: the clean error drops 3.6
+  times, while the medians still break at 0.159, as run 2's did. Consensus fixes the breakdown: with a vote at each pose
+  stage the pipeline holds to 30% wrong matches.
+- Together they give a robust bundle adjustment a sound start (run 2's G4 kill was the broken start, not the
+  adjustment).
+- Consensus is RANSAC's, not ours. What is ours is the error law and the breakdown points, predicted from how many
+  readings each stage uses.

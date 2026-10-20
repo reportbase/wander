@@ -540,7 +540,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Run 2 (`runs/afm/afm2.py`, SPN R398; Tom: "test it"), the poses not given, every stage a median of pairs: clean 8.7·10⁻³
   (G1 killed: the turn from six far features in one window is badly conditioned, 2.4° worst), refined by a Cauchy-cost
   bundle adjustment to 1.8·10⁻³; breaks between 10% and 20% wrong matches as (1 − f)⁴ predicted (G2 not killed); the robust
-  adjustment inherits a broken start (G4 killed). Next: a robust turn.
+  adjustment inherits a broken start (G4 killed).
+  Run 3 (`runs/afm/afm3.py`, SPN R399; Tom: "proceed with the next test"), a robust turn: twelve far features over the
+  sphere fix the conditioning (clean 2.39·10⁻³; the medians still break past 0.159, H2 not killed); a consensus vote at
+  each pose stage (RANSAC's) fixes the breakdown (2.68× clean at 30% wrong matches, H3; the Cauchy-cost adjustment from it
+  2.23×, H4); H1 killed narrowly by its turn clause (0.251° against 0.2°).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

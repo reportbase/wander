@@ -6578,6 +6578,12 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
   - **Killed:** G1 (the clean error, against my 3.7·10⁻³: the turn from six far features in one window, 1.5°–26° apart, is badly conditioned) and G4 (the robust adjustment inherits a broken start, 7.8× at 10%).
   - **Open:** the pipeline's weak stage is the turn; a robust turn (wider far features, or minimal sets of room features) is next.
 
+- **R399** (19 Oct, 22:20): "proceed with the next test": AFM run 3, a robust turn (`runs/afm/afm3.py`; predictions H1–H5 committed first). Twelve far features spread over the sphere; two pipelines, run 2's medians unchanged (AF2-wide) and a consensus vote at each pose stage, then the median over the agreeing readings (AF2-vote, RANSAC's consensus over every candidate).
+  - **Spreading fixes the conditioning:** clean, AF2-wide 2.39·10⁻³ (run 2: 8.7·10⁻³). Its medians still break between 10% and 20% wrong matches (1.98×, then 232×), as (1 − f)⁴ predicts (H2 not killed).
+  - **Consensus fixes the breakdown:** AF2-vote is 2.68 times its clean 1.98·10⁻³ at 30% wrong matches (H3 not killed); a Cauchy-cost bundle adjustment from it 2.23 times, and better than its start (H4 not killed).
+  - **Killed:** H1 in its turn clause, narrowly (the worst turn 0.251° against my 0.2°, a tenth of run 2's), and so H5 in its letter.
+  - **Reading:** the address-first pipeline, with spread far features and consensus, starts a robust adjustment soundly; consensus is not ours, the breakdown points from the readings each stage uses are.
+
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |
