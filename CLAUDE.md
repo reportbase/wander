@@ -518,6 +518,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   one suffices); the lay; an address-first pipeline against the usual one, stage by stage with what each needs; the
   Cauchy's place; and a test queue, AFM first (the address-first mapper against bundle adjustment, a measurement, not a
   contest).
+  Since R388 (Tom: "lidar sends out a pulse correct or lasers. cauchy is more passive, it rececives the signal..", "Yes,
+  that clarification is needed."): §5 "Passive and active readers": the Cauchy belongs to the uniform turn, whether it aims
+  a receiver or an emitter (the lighthouse is active); a ranging reader carries in the signal's speed and a clock and is a
+  writer (CFH); passive gives directions only from one place, active a range per direction.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

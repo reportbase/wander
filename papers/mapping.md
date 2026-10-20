@@ -31,6 +31,12 @@ goes into OFS only once it has been worked out here or in a plan.*
   - Claude's answer to the last: the reconstruction is classical, and what the Cauchy reading adds has close relatives
     in photogrammetry and SLAM (§0).
   - Then the two messages that set the stance above.
+- 19 October, evening (SPN R388).
+  - Tom: "lidar sends out a pulse correct or lasers. cauchy is more passive, it rececives the signal..", then "Yes,
+    that clarification is needed."
+  - Added to §5, "Passive and active readers": the Cauchy belongs to the turn, whether it aims a receiver or an
+    emitter, and ranging is the active reader's carried-in amount.
+  - §9's lighthouse entry now says so too.
 
 **Standing marks.** Each claim carries one:
 - **[classical]**: established outside this corpus (surveying, photogrammetry, computer vision, robotics), quoted;
@@ -180,6 +186,38 @@ where they agree and where they part, not a contest. A gap either way is informa
   - Only the circle has it.
   - **[exact]**
 
+### Passive and active readers
+
+- **Passive.** A head, an eye or a camera sends nothing out. It receives what arrives. Its turn aims a receiver: each
+  direction is an address, and what arrives along it is the payload. From one place it has directions only, no distance
+  (§3). **[exact]**
+- **Active.** A lidar or a sonar sends out a pulse and times its return. The range along each direction is c·t/2, so it
+  needs the signal's speed c and a clock. **[classical]**
+  - The range is an amount whose unit is the signal's speed. A ranging reader is therefore a writer: it carries c in
+    (CFH; OFS §9, "From one place"; SPN R356). **[simulation]**, CFH; **[reading]**, "a writer".
+  - It is a central-sweep reader: amounts along directions it gives itself (OFS §3.1; SPN R309). **[reading]**
+  - A held speed that is wrong makes every range off by one factor. Bats in heliox, where sound runs faster (15% in the
+    experiment), kept their built-in speed and read every distance closer (WRD; Amichai et al. 2021). **[classical]**, the
+    measurement; **[reading]**, the account.
+- **The Cauchy is not the passive reader's alone.** It belongs to the uniform turn, whichever way the signal travels.
+  - The lighthouse is active. Its lamp's turn lays the Cauchy on the shore (OFS Proposition 5(f)).
+  - A scanning lidar's beam sweep does the same, so its directions are addresses laid by its own turn.
+  - **[exact]**
+- **What each adds beyond directions:**
+
+  | | directions | distance from one place | carried in |
+  |---|---|---|---|
+  | passive reader | the addresses | none | one amount: a step, a known length, … (§6) |
+  | active, ranging reader | the addresses of its own scan | a range per direction | the signal's speed c and a clock |
+
+  **[reading]**, the table.
+- **The trade in mapping.**
+  - Passive: nothing sent and nothing to calibrate, and it works as far as light arrives from. But it needs a step or a
+    known length for size.
+  - Active: distance from one place at once. But it costs an emitter, a clock and a speed that must be trusted, and it
+    reaches only as far as its own pulse returns.
+  - **[reading]**
+
 ## 6. The one amount
 
 Sizes need one amount carried in. Any one will do. **[exact]** (RWT: one known move, one exchanged number, one agreed
@@ -263,7 +301,8 @@ it (§0). The Cauchy cost is already one of those costs. **[reading]**
 Nothing in §§3–7 needs the Cauchy by name. It enters in four places:
 - **as the uniform sweep's law,** which lays the addresses (§2);
 - **as the error law of bearings read at finite resolution** (§4);
-- **as the lighthouse,** when the sweep lands on a flat surface (§2);
+- **as the lighthouse,** when the sweep lands on a flat surface (§2). The turn may aim a receiver (an eye) or an emitter (a
+  lamp, a lidar's beam); the law is the turn's either way (§5, "Passive and active readers");
 - **as the wrapped Cauchy on a round object,** when the two sweeps are combined (§5).
 
 In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule"). **[exact]**, the four statements;
@@ -308,6 +347,7 @@ In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule")
 
 ## References
 
+- Amichai, E. et al. (2021). *Proceedings of the National Academy of Sciences*, doi:10.1073/pnas.2024352118.
 - Baarda, W. (1968). *A Testing Procedure for Use in Geodetic Networks*. Netherlands Geodetic Commission, Publications on
   Geodesy 2(5).
 - Civera, J., Davison, A. J. and Montiel, J. M. M. (2008). Inverse depth parametrization for monocular SLAM. *IEEE
