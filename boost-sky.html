@@ -25,7 +25,10 @@
     sampler's directions as dots; the same directions in the sky's own frame; the variance of one sample for each sampler
     at this η, and against η from 0 to 4. The variance is computed by quadrature (4 × 4 Gauss-Legendre points in each of
     128 × 256 equal-area cells), not from the dots.
-    Links: ?eta=&k=2|4&sky=uniform|sun&show=uniform|cauchy|table|mixed&play=1. Test hook: window.__boostSky.
+    The lens (Tom, 20 Oct: "add a lense to see where it breaks"): θ′ = θ + (λ/2)·sin 2θ on the seen angle, not a Möbius map
+    for λ ≠ 0. Readout: the pushed directions' miss from the nearest spherical Cauchy, and the bias of the shortcut that keeps
+    the boost's spherical Cauchy as the density; carrying the lens's derivative per sample removes the bias.
+    Links: ?eta=&k=2|4&sky=uniform|sun&show=uniform|cauchy|table|mixed&lens=&play=1. Test hook: window.__boostSky.
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -67,6 +70,8 @@
     <div class="panel">
         <div class="row"><label for="eta">rapidity η</label><input id="eta" type="range" min="0" max="4" step="0.05" value="2">
             <span id="etaVal"></span><button id="play">play</button></div>
+        <div class="row"><label for="lens">lens λ</label><input id="lens" type="range" min="-0.9" max="0.9" step="0.05" value="0">
+            <span id="lensVal"></span></div>
         <div class="row"><label>light counted</label><button data-k="2">arrivals, D²</button><button data-k="4">beaming, D⁴</button>
             <label>sky</label><button data-sky="uniform">uniform</button><button data-sky="sun">with a sun</button></div>
         <div class="row"><label>show the samples of</label><button data-show="uniform">uniform</button><button data-show="cauchy">the Cauchy</button>
@@ -88,6 +93,10 @@
 
     <div class="grid">
         <div class="panel"><div class="tw"><table id="tab"></table></div>
+            <div class="tw" style="margin-top:10px"><table id="lensTab"></table></div>
+            <p class="note">The lens bends the seen angle, θ′ = θ + (λ/2)·sin 2θ. Only slides of the level are Möbius maps on this
+                axis, so with λ ≠ 0 the view change is no longer one: closure breaks. Pushing samples through the lens still
+                works if each carries the lens's derivative (a normalizing flow), but no single z describes them any more.</p>
             <p class="note">V is the relative variance of one sample's estimate of the total light, (∫ f²/q)/F² − 1: 0 is a
                 perfect sampler. It is computed by quadrature, not from the dots. A view change costs the rebuilt table 8,192
                 evaluations of f plus its running sums; it costs the Cauchy and the mixed sampler one 2×2 matrix product.</p></div>
@@ -107,7 +116,7 @@ const N = 64, NC = 128, NP = 256, KAPPA = 500, TS = Math.PI / 3, NS = 2000;
 const MU = [Math.sin(TS), 0, Math.cos(TS)], VMF = KAPPA / (2 * Math.PI * (1 - Math.exp(-2 * KAPPA)));
 const GL = [[-0.8611363115940526, 0.3478548451374538], [-0.3399810435848563, 0.6521451548625461],
             [0.3399810435848563, 0.6521451548625461], [0.8611363115940526, 0.3478548451374538]];
-const S = { eta: 2, k: 2, sky: 'sun', show: 'cauchy', play: false };
+const S = { eta: 2, k: 2, sky: 'sun', show: 'cauchy', play: false, lens: 0 };
 
 function Lof(c, phi, sky) {
     if (sky === 'uniform') return 1;
@@ -160,6 +169,36 @@ function fromTable(q, r) {                                   // a cell by its we
     const i = Math.floor(idx / (2 * N)), j = idx % (2 * N);
     return [-1 + (i + r()) * 2 / N, (j + r()) * Math.PI / N];
 }
+// THE LENS (Tom, 20 Oct: "add a lense to see where it breaks"). A smooth radial distortion of the seen angle,
+// θ′ = θ + (λ/2)·sin 2θ (λ in (−1, 1), so it is one-to-one, fixing straight ahead and straight behind). It is not a Möbius
+// map unless λ = 0: the only Möbius maps keeping the axis are tan(θ′/2) = k·tan(θ/2), a slide on the level. So boost and
+// lens together are no longer one Möbius map, and the directions pushed through them are no single spherical Cauchy.
+const lensOf = (th, lam) => th + 0.5 * lam * Math.sin(2 * th);
+function lensInv(thp, lam) { let th = thp; for (let i = 0; i < 40; i++) th -= (lensOf(th, lam) - thp) / (1 + lam * Math.cos(2 * th)); return th; }
+const lensJ = (th, lam) => { const tp = lensOf(th, lam); return th < 1e-12 ? Math.pow(1 + lam, 2) : Math.sin(tp) * (1 + lam * Math.cos(2 * th)) / Math.sin(th); };
+// how far the pushed directions are from every spherical Cauchy, and the bias of the shortcut that assumes they are one
+function lensStats(eta, lam, k, sky) {
+    const be = Math.tanh(eta), ga = Math.cosh(eta);
+    // (1) closure: the density of uniform directions pushed through boost and lens, p′(θ′) = (D²/4π)/J; a spherical Cauchy
+    // has p^(−1/2) affine in cos θ′, so fit that line and report the worst relative miss of p′ from it
+    const xs = [], ys = [], ps = [];
+    for (let i = 1; i < 400; i++) { const cr = -1 + 2 * i / 400, th = 2 * Math.atan(Math.exp(tOf(cr) - eta)), tp = lensOf(th, lam);
+        const D = ga * (1 + be * cr), p = D * D / (4 * Math.PI) / lensJ(th, lam); xs.push(Math.cos(tp)); ys.push(Math.pow(p, -0.5)); ps.push(p); }
+    const n = xs.length, mx = xs.reduce((a, b) => a + b) / n, my = ys.reduce((a, b) => a + b) / n;
+    let sxy = 0, sxx = 0; for (let i = 0; i < n; i++) { sxy += (xs[i] - mx) * (ys[i] - my); sxx += (xs[i] - mx) ** 2; }
+    const b = sxy / sxx, a = my - b * mx; let residual = 0;
+    for (let i = 0; i < n; i++) residual = Math.max(residual, Math.abs(ps[i] * Math.pow(a + b * xs[i], 2) - 1));
+    // (2) the shortcut: keep the boost's spherical Cauchy as the sampler's density, D_seen(θ′)²/4π, ignoring the lens.
+    // Its estimate of the total light F is ∫ f·(D²/4π)/(J·q_assumed(θ′)) dΩ over the seen sphere; by quadrature in the sky's frame
+    let F = 0, E = 0; const hc = 1 / NC, hp = Math.PI / NP;
+    for (let i = 0; i < NC; i++) for (const [tc, wc] of GL) {
+        const c = -1 + (2 * i + 1) * hc + tc * hc, D = ga * (1 + be * c), th = 2 * Math.atan(Math.exp(tOf(c) - eta)), tp = lensOf(th, lam);
+        const Dq = 1 / (ga - Math.sinh(eta) * Math.cos(tp)), ratio = D * D / (lensJ(th, lam) * Dq * Dq), Dk2 = Math.pow(D, k - 2);
+        for (let j = 0; j < NP; j++) for (const [tp2, wp] of GL) {
+            const phi = (2 * j + 1) * hp + tp2 * hp, w = wc * hc * wp * hp, fw = Dk2 * Lof(c, phi, sky) * w; F += fw; E += fw * ratio; }
+    }
+    return { residual, bias: E / F - 1 };
+}
 function samples(kind, eta, k, sky, n = NS, seed = 402) {
     const be = Math.tanh(eta), r = rng(seed), out = [], qT = kind === 'table' ? seenTable(eta, k, sky) : null;
     for (let s = 0; s < n; s++) {
@@ -171,7 +210,8 @@ function samples(kind, eta, k, sky, n = NS, seed = 402) {
         // the level of each direction, ln tan(θ/2): the boost slides it by exactly η (tan(θ/2) ↦ e^(−η)·tan(θ/2))
         let tr, ts;
         if (kind === 'cauchy' || kind === 'mixed') { tr = tOf(rc); ts = tr - eta; } else { ts = tOf(sc); tr = ts + eta; }
-        out.push({ rest: [tr, ph], seen: [ts, ph], restC: rc, seenC: sc });
+        const tl = S.lens ? Math.log(Math.tan(lensOf(2 * Math.atan(Math.exp(ts)), S.lens) / 2)) : ts;   // through the lens
+        out.push({ rest: [tr, ph], seen: [tl, ph], unlensed: ts, restC: rc, seenC: sc });
     }
     return out;
 }
@@ -214,7 +254,7 @@ function drawCurve(cur) {
     g.strokeStyle = 'rgba(255,255,255,0.5)'; g.lineWidth = 1; g.beginPath(); g.moveTo(X(S.eta), 10); g.lineTo(X(S.eta), H - 24); g.stroke();
 }
 const fmt = v => v < 1e-9 ? '0' : v < 0.01 ? v.toExponential(2) : v < 1000 ? v.toPrecision(4) : Math.round(v).toLocaleString('en');
-let last = null;
+let last = null, lastLens = null;
 function render() {
     const { eta, k, sky } = S, be = Math.tanh(eta), ga = Math.cosh(eta);
     $('etaVal').textContent = eta.toFixed(2) + ' (speed ' + be.toFixed(3) + ' c)';
@@ -223,24 +263,41 @@ function render() {
     document.querySelectorAll('[data-show]').forEach(b => b.classList.toggle('on', b.dataset.show === S.show));
     const pts = samples(S.show, eta, k, sky);
     // seen at level t is the sky's own level t + η; D from the rest direction, so nothing is lost near straight ahead
-    dots(shade($('seen'), (t, ph) => { const cr = -Math.tanh(t + eta); return Math.pow(ga * (1 + be * cr), k) * Lof(cr, ph, sky); }), pts, 'seen');
+    const lam = S.lens;
+    const g = shade($('seen'), (t, ph) => { let tu = t, J = 1;             // through the lens: undo it, then f/J
+        if (lam) { const th = lensInv(2 * Math.atan(Math.exp(t)), lam); tu = Math.log(Math.tan(th / 2)); J = lensJ(th, lam); }
+        const cr = -Math.tanh(tu + eta); return Math.pow(ga * (1 + be * cr), k) * Lof(cr, ph, sky) / J; });
+    // the sky's own levels −4 … 4 as seen: evenly spaced (a slide) without the lens, bunched by it
+    const H = g.canvas.height, W = g.canvas.width; g.strokeStyle = 'rgba(140,230,205,0.55)'; g.lineWidth = 1;
+    for (let L = -4; L <= 4; L++) { let t = L - eta; if (lam) t = Math.log(Math.tan(lensOf(2 * Math.atan(Math.exp(t)), lam) / 2));
+        const y = (t - T0) / (T1 - T0) * H; if (y < 0 || y > H) continue; g.beginPath(); g.moveTo(W - 26, y); g.lineTo(W, y); g.stroke(); }
+    dots(g, pts, 'seen');
     dots(shade($('rest'), (t, ph) => Lof(-Math.tanh(t), ph, sky)), pts, 'rest');
     const v = variance(eta, k, sky); last = v;
-    $('tab').innerHTML = '<tr><th>sampler</th><th>V, one sample</th><th>cost of a view change</th></tr>' +
+    $('tab').innerHTML = '<tr><th>sampler (the boost alone)</th><th>V, one sample</th><th>cost of a view change</th></tr>' +
         `<tr><td class="u">uniform</td><td>${fmt(v.U)}</td><td>none</td></tr>` +
         `<tr><td class="c">the Cauchy</td><td>${fmt(v.C)}</td><td>one 2×2 product</td></tr>` +
         `<tr><td class="t">the table rebuilt per view</td><td>${fmt(v.T)}</td><td>8,192 evaluations of f + sums</td></tr>` +
         `<tr><td class="m">mixed (payload tabled once)</td><td>${fmt(v.M)}</td><td>one 2×2 product</td></tr>`;
+    const ls = lensStats(eta, S.lens, k, sky); lastLens = ls;
+    $('lensTab').innerHTML = '<tr><th>through the lens</th><th>result</th><th>cost of a view change</th></tr>' +
+        `<tr><td>the pushed directions against the nearest spherical Cauchy</td><td>${S.lens ? 'off by up to ' + (100 * ls.residual).toPrecision(3) + '%' : 'exact (' + ls.residual.toExponential(1) + ')'}</td><td></td></tr>` +
+        `<tr><td class="c">the Cauchy, closure assumed (one z kept)</td><td>${S.lens ? 'biased ' + (ls.bias > 0 ? '+' : '') + (100 * ls.bias).toPrecision(3) + '%' : 'unbiased'}</td><td>one 2×2 product</td></tr>` +
+        `<tr><td class="c">the Cauchy with the lens's derivative</td><td>unbiased, V ${fmt(v.C)} as without the lens</td><td>${S.lens ? 'a derivative per sample' : 'one 2×2 product'}</td></tr>` +
+        `<tr><td class="t">the table rebuilt per view</td><td>rebuilt anyway, lens or not</td><td>8,192 evaluations of f + sums</td></tr>`;
     const best = Object.entries({ Cauchy: v.C, 'rebuilt table': v.T, mixed: v.M }).sort((a, b) => a[1] - b[1])[0][0];
     $('say').textContent = (sky === 'uniform' && k === 2 ? 'A uniform sky, arrivals counted: the Cauchy is exact (V = 0) at every η, with no table. ' :
         sky === 'uniform' ? 'A uniform sky with beaming: the payload’s own D² is left over after the Cauchy. ' :
         'A sun in the sky: the Cauchy alone cannot see it; the mixed sampler’s table, built once, does. ') +
-        `At η = ${eta.toFixed(2)} the best of the three is the ${best}.`;
+        `At η = ${eta.toFixed(2)} the best of the three is the ${best}.` +
+        (S.lens ? ` Through the lens (λ = ${S.lens.toFixed(2)}) the view change is no longer a Möbius map: the sky's levels (ticks, right) no longer slide evenly, and the shortcut that keeps one spherical Cauchy is biased.` : '');
+    $('lensVal').textContent = S.lens.toFixed(2) + (S.lens ? (S.lens > 0 ? ' (spreads the middle)' : ' (squeezes the middle)') : ' (no lens: a pure boost)');
     drawCurve(curveFor(k, sky));
 }
 // controls
-function set(o) { Object.assign(S, o); $('eta').value = S.eta; render(); return S; }
+function set(o) { Object.assign(S, o); $('eta').value = S.eta; $('lens').value = S.lens; render(); return S; }
 $('eta').addEventListener('input', e => set({ eta: +e.target.value }));
+$('lens').addEventListener('input', e => set({ lens: +e.target.value }));
 document.querySelectorAll('[data-k]').forEach(b => b.onclick = () => set({ k: +b.dataset.k }));
 document.querySelectorAll('[data-sky]').forEach(b => b.onclick = () => set({ sky: b.dataset.sky }));
 document.querySelectorAll('[data-show]').forEach(b => b.onclick = () => set({ show: b.dataset.show }));
@@ -252,9 +309,10 @@ const q = new URLSearchParams(location.search);
 if (q.has('eta')) S.eta = Math.min(4, Math.max(0, +q.get('eta')));
 if (q.get('k') === '4') S.k = 4;
 if (q.get('sky') === 'uniform') S.sky = 'uniform';
+if (q.has('lens')) S.lens = Math.min(0.9, Math.max(-0.9, +q.get('lens')));
 if (['uniform', 'cauchy', 'table', 'mixed'].includes(q.get('show'))) S.show = q.get('show');
-$('eta').value = S.eta; render(); if (q.get('play') === '1') play(true);
-window.__boostSky = { variance, samples, seenTable, restTable, Lof, toSeen, toRest, set, state: () => ({ ...S, last }), curveFor };
+$('eta').value = S.eta; $('lens').value = S.lens; render(); if (q.get('play') === '1') play(true);
+window.__boostSky = { variance, lensStats, lensOf, lensInv, lensJ, samples, seenTable, restTable, Lof, toSeen, toRest, set, state: () => ({ ...S, last }), curveFor };
 </script>
 </body>
 </html>

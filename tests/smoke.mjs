@@ -1228,11 +1228,14 @@ try {
     const t4 = B.variance(4, 2, 'sun'); o.t4 = t4.T; o.c4 = t4.C;
     o.slide = 0; for (const kind of ['cauchy', 'mixed']) for (const p of B.samples(kind, 4, 2, 'sun', 500)) o.slide = Math.max(o.slide, Math.abs(p.rest[0] - 4 - p.seen[0]));
     const c = B.samples('cauchy', 3, 2, 'uniform', 2000); o.meanRest = c.reduce((a, p) => a + p.restC, 0) / c.length;
+    const l0 = B.lensStats(2, 0, 2, 'sun'), l5 = B.lensStats(2, 0.5, 2, 'uniform'); o.lens0 = Math.max(l0.residual, Math.abs(l0.bias));
+    o.lensRes = l5.residual; o.lensBias = l5.bias;
     B.set({ eta: 4, k: 2, sky: 'sun', show: 'table' }); o.tab = document.getElementById('tab').textContent; return o; });
   if (bs.zero > 1e-9 || bs.cSpread > 1e-6 || Math.abs(bs.c[0] - 124.75) > 0.01 || bs.mSpread > 1e-9 || Math.abs(bs.m[0] - 0.0684) > 0.001 ||
-    !(bs.t4 > 10 * bs.c4) || !bs.beam || bs.slide > 1e-9 || Math.abs(bs.meanRest) > 0.05 || !bs.tab.includes('4,098'))
+    !(bs.t4 > 10 * bs.c4) || !bs.beam || bs.slide > 1e-9 || Math.abs(bs.meanRest) > 0.05 || !bs.tab.includes('4,098') ||
+    bs.lens0 > 1e-9 || !(bs.lensRes > 0.1) || !(Math.abs(bs.lensBias) > 0.05))
     failures.push(`[${current}] ${JSON.stringify(bs)}`);
-  console.log(`${failures.length === before43 ? 'ok  ' : 'FAIL'} ${current} (a uniform sky's V 0 for the Cauchy and the payload tabled once at every η (${bs.zero.toExponential(1)}); with a sun the Cauchy's V ${bs.c[0].toFixed(2)} and the mixed sampler's ${bs.m[0].toFixed(4)} the same at η 0.5, 2, 4; the table rebuilt per view ${Math.round(bs.t4)} at η = 4; with beaming the mixed below the Cauchy; the boost a slide of η to ${bs.slide.toExponential(1)})`);
+  console.log(`${failures.length === before43 ? 'ok  ' : 'FAIL'} ${current} (a uniform sky's V 0 for the Cauchy and the payload tabled once at every η (${bs.zero.toExponential(1)}); with a sun the Cauchy's V ${bs.c[0].toFixed(2)} and the mixed sampler's ${bs.m[0].toFixed(4)} the same at η 0.5, 2, 4; the table rebuilt per view ${Math.round(bs.t4)} at η = 4; with beaming the mixed below the Cauchy; the boost a slide of η to ${bs.slide.toExponential(1)}; no lens a spherical Cauchy to ${bs.lens0.toExponential(1)}, a lens of 0.5 off by ${(100 * bs.lensRes).toFixed(0)}% and the one-z shortcut biased ${(100 * bs.lensBias).toFixed(0)}%)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
