@@ -427,7 +427,16 @@ In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule")
      - behaviour far off (k = 100–1,000);
      - computation;
      - what each needs carried in.
-   - A measurement, not a contest (§1). Predictions first, in `plans/afm-plan.md`. **[open]**
+   - A measurement, not a contest (§1). Predictions first, in `plans/afm-plan.md`.
+   - **Run 1, structure only (poses fixed), [simulation].** Under Cauchy bearings, least squares stalls: its error falls
+     by 1.39 from 4 to 16 standpoints. The Cauchy-cost adjustment (CB) stays the most accurate: 0.59·10⁻³ at 16. The
+     address-first median (AF) improves fastest (factor 3.95, to 0.75·10⁻³).
+   - Under normal bearings AF is within 6% of least squares, and with poses fixed it is the cheapest of the three.
+   - AF survives wrong matches to 45% (0.293 for all pairs, later because pairs not meeting ahead drop out). CB gives
+     way at 35–40%.
+   - Killed in that run: F2 (AF was less costly under normal errors than predicted), F3 narrowly (least squares at 10%
+     outliers was 9.97 times, not more than 10) and F5 (AF was faster, not slower).
+   - Open: poses estimated jointly, far features, real images.
 2. **Medians against least squares on bearing lines.** STC's floor (§4) suggests least squares on Cauchy-like bearings
    stops improving. At what rate does a median-of-crossings estimator improve, and does it keep improving? **[open]**
 3. **Exactness of a whole map in ratio forms.** Does MOT P10's exactness survive composition over many standpoints and a

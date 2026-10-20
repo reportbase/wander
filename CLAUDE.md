@@ -532,6 +532,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   killed by my set-up (an absolute tolerance at far features), M6 killed narrowly (rotation from far features to 10⁻⁶,
   places to 1.02·10⁻⁴ against my 10⁻⁴, a feature seen across 0.011 rad of parallax: δ·d/γ); run 2's M4′ not killed
   (wrong matches' rays 0.011 apart, a third standpoint separates them). Item 0 of §11's queue, before AFM.
+  AFM (`plans/afm-plan.md` + `runs/afm/afm.py`, 19 Oct; SPN R397; Tom: "ok"), §11 item 1, structure only with poses fixed:
+  under Cauchy bearings least squares stalls (×1.39 from K = 4 to 16), the Cauchy-cost adjustment most accurate, the
+  address-first median of pairwise crossings improving fastest (×3.95), 6% from least squares under normal errors (F2
+  killed: I predicted more), cheapest (F5 killed: I predicted dearer), surviving 45% wrong matches (CB 35–40%); F3 killed
+  narrowly (least squares 9.97× at 10% outliers). A robust estimator among known ones, not a winner.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

@@ -96,3 +96,39 @@ family.
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (19 Oct; `runs/afm/afm.py`, output `runs/afm/afm-run1.txt`)
+
+- **F1 not killed.** Under Cauchy bearings, median relative errors at K = 4, 8 and 16:
+
+  | | K = 4 | K = 8 | K = 16 | factor from K = 4 to 16 |
+  |---|---|---|---|---|
+  | LS | 3.35·10⁻³ | 2.55·10⁻³ | 2.41·10⁻³ | 1.39 (stalls, STC's floor) |
+  | CB | 1.98·10⁻³ | 0.95·10⁻³ | 0.59·10⁻³ | 3.35 |
+  | AF | 2.96·10⁻³ | 1.23·10⁻³ | 0.75·10⁻³ | 3.95 |
+
+  AF improves fastest, and CB stays the most accurate.
+- **F2 killed.**
+  - Under normal bearings of the same median at K = 8: LS 9.13·10⁻⁴, CB 8.65·10⁻⁴, AF 9.65·10⁻⁴.
+  - The first clause holds: LS is within 1.06 of CB.
+  - The kill is AF: only 1.06 times LS, against my "more than 1.1". The median of pairwise crossings loses only 6% to least
+    squares even where least squares is the right estimator. I expected it to cost more.
+- **F3 killed, narrowly, in its LS clause.**
+  - LS at f = 0.1 is 9.97 times its clean error, against "more than 10". It reaches 41 times at 0.15.
+  - At f = 0.2, CB is 1.60 times and AF 1.58 times their clean errors; both hold.
+- **F4 not killed.** AF's breakdown is f* = 0.45.
+  - That is later than the all-pairs bound of 0.293, since pairs not meeting ahead are dropped.
+  - CB gives way first: 4.7 times at 0.35, 36 times at 0.40, 354 times at 0.45. AF is 3.3, 5.1 and 17 times there.
+- **F5 killed.** At K = 16, AF takes 0.96 ms a feature, against 2.11 for LS and 4.53 for CB.
+  - Its 120 closed-form crossings and a median cost less than an iterative solver's evaluations. I had counted pairs
+    against rays and forgotten the iterations.
+- **F6 killed in its letter**, by F2 and F3.
+
+The verdict, read past the letter, as a measurement:
+- Under the bearings' own heavy-tailed law, least squares stalls.
+  - The Cauchy-cost bundle adjustment is the most accurate when clean.
+  - The address-first median improves fastest, and survives the most wrong matches: 0.45 against 0.35–0.40.
+- Under normal errors, the address-first median costs only 6%.
+- With poses fixed it is also the cheapest of the three.
+- It is a robust estimator among known ones, close to the best and simpler, not a winner. Joint poses, far features
+  and real images remain.
