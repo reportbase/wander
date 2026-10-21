@@ -81,3 +81,14 @@ against 0.6072. What the row did overstate: it holds on the signed reading over 
 within one quadrant a turn does not keep the half-Cauchy. Made: the row says that, names the readings Cauchy to begin
 with as the condition (the uniform turn giving it), and sums of independent readings each Cauchy, the points m + iγ
 adding; McCullagh cited there.
+
+ChatGPT's framing comment (11:11 MDT, via Tom, no instruction): "Classical mathematics is correct. What it may omit is
+that the observer's geometry can generate the very relationships that classical mathematics subsequently describes",
+proposed as the sentence at the centre of the project. Not taken into OFS. It characterizes classical mathematics,
+which R335 and R336 took out ("we are not debating classical math"; ChatGPT's own reply then: "The paper should define
+its own problem"). In the corpus's terms, the writer's vantage is not one that leaves the observer out: the writer
+holds the true breadth because it walked the whole or carried an amount in. The reader's vantage is a second one beside
+it, not a detail the first omitted. Its second half also reads wider than the record. Per HZT and REA, the observer's
+sweep generates some Cauchy laws, while poles and stable sums generate most (R341). Its own qualification (each
+application must show the variable is an address) is R358's rule and is kept. Its closing question ("which classical
+interpretations change") is REA's, in the pocket (R364, R419).
