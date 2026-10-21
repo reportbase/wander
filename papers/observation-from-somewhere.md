@@ -2185,6 +2185,31 @@ H·tan(kπ/2K), with no reference to how many things there are or how far they r
 horizon, so a finite K covers an unbounded world, and whatever lies past every other address lands in that tail. N
 then enters only as the share each address holds, which is payload (Theorem 6(a)).
 
+**Other ways to squeeze the line.** The three paths of §11.2 (question 2) each squeeze the reader's line into K
+addresses, each swept uniformly along its own length and read as the signed reading s = v/h:
+
+| path, swept uniformly | law of s | where the last of K addresses begins | swept again from a new zero (a turn of 30°) | two readings added |
+|---|---|---|---|---|
+| the circle (a turn) | 1/(π(1 + s²)), the Cauchy | cot(π/2K)·H ≈ 0.64·K·H | the same law | a Cauchy, scale 2 |
+| the line, \|h\| + \|v\| = 1 | ½·(1 + \|s\|)⁻² | (K − 1)·H | 0.044 from its own family | 0.022 from it |
+| the square's edges | ¼ up to \|s\| = 1, then 1/(4s²) | (K/2)·H | 0.047 from it | 0.062 from it |
+
+The distances are the least, over location and scale, of the largest gap between distribution functions (the fourth
+column) and between characteristic functions (the fifth).
+- All three are unchanged by the reciprocal, so H is their median and K/2 addresses lie on each side of it. Each has a
+  tail c/s past s, with c = 2/π, 1 and ½, so the last address begins near c·K·H and the unbounded rest of the line goes
+  to the horizon. All three keep K apart from N.
+- They part when swept again. A turn about the standpoint carries the Cauchy onto itself, and every turn and zoom
+  carries it onto a Cauchy (§7.2; McCullagh 1996). The others leave their own families: each has kinks where its path
+  has corners (the line's law at s = 0, the square's at s = ±1), and a turn moves those kinks to places no member of
+  the family has them.
+- They part when recombined. Two independent Cauchy readings add to a Cauchy, the stable law of index 1 (Lévy 1925),
+  and neither of the other sums stays in its family. Added many times, the line's and the square's readings, scaled by
+  their count, tend to a Cauchy too, of scale π/2 and π/4: their tails put them in its domain of attraction.
+
+So every fair squeeze with such a tail keeps K apart from N, and recombining them tends to the Cauchy. Only the turn's
+squeeze can be swept again or recombined without changing its shape.
+
 **More points, fewer told apart.** A reader taking its view at once looks side-on at N points spaced uniformly around a
 circle and reads each one's position across its view to a resolution ε, relative to the circle's radius. Neighbours at
 angle θ from the middle of the view are about (2π/N)·cos θ apart, so the reader separates those with cos θ ≥ εN/2π,

@@ -717,7 +717,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   H·tan(kπ/2K), half inside H at every H, any N held at the same K (Proposition 12's kernel renamed τ so K is not used
   twice; a notation row for K), then "Two readers, one K" (R410; Tom: "the reader interacts with K,  the writer interacts
   with N."): the address reader's split the corner, H in none of its readings; the payload reader's the zoom; the in-place
-  lay 2H long, far boundaries the near reflected about H; joined, a K × K polar grid whatever N; and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9's "What a unit
+  lay 2H long, far boundaries the near reflected about H; joined, a K × K polar grid whatever N; then (R411–R413) the Cauchy
+  keeps K apart from N, all but about 2KH/π to the horizon, and "Other ways to squeeze the line": the three paths of §11.2
+  q. 2 as K-squeezes (reach 0.64, 1, 0.5 of K·H), all fair, only the circle's unchanged by a new zero or a sum (the line
+  and the square 0.044 and 0.047 off at 30°; summed many times both tend to a Cauchy), checked in `runs/ofs/squeeze.py`; and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9's "What a unit
   is, and why a reader needs one" (R230; Tom: "A unit is needed, it injects physics into the relation"; "A unit is
   pre-measured relation. It says something like 5 ounces/ 1 foot"): a unit is a relation measured beforehand; within
   one reader its value is a zoom, needed because addresses are finite, where the world's scale first reaches the
