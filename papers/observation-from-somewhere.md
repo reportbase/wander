@@ -2150,6 +2150,66 @@ every H up to d. Placed on the quarter turn at arctan(x/H), two amounts are set 
 arcsin((r − 1)/(r + 1)) for a ratio r, when H is their geometric mean. The best H is the corner of what is read, as
 the best estimate of a size is the corner of what is known (Proposition 13).
 
+**A fixed count, aimed by H.** Call the reader's whole count of addresses K: its fixed capacity to observe, its own,
+the same whatever it looks at. K comes before H. Choosing H does not change K; it splits it in two. Lay the K addresses
+of a uniform turn along distance under the drawing V = H. Their boundaries fall at d_k = H·tan(kπ/2K), k = 1, …, K − 1,
+the quantiles of the Cauchy with its scale at H.
+- Since tan(π/4) = 1, the middle boundary is d = H whatever H is. Half the addresses lie inside the corner and half past
+  it, at every H (Proposition 5(d)). H moves the split; it never changes the count.
+- A small H gives the near half a short stretch of amounts, each address a fine one, the first tan(π/2K)·H ≈ πH/2K wide.
+  A large H gives the same half a long stretch, each address coarser, and carries the far half farther out.
+- The world's own count enters nowhere. Doubling or thinning what arrives moves no address (Theorem 6(a)), so a world of
+  N things, of 2N, or of infinitely many is held at the same K addresses, each holding its share.
+
+So a reader can turn its K addresses on any world and, by its choice of H, place its finest ones anywhere along
+distance; it never holds more than K at a time. The count is the level of detail, and H is the zoom. (Elsewhere in this
+section n counts the addresses across the near field on a lay, a different measure; on the turn's own addresses it is
+K/2.)
+
+**Two readers, one K.** The two readers of §3.1 hold the same count, and they use H differently.
+- The address reader reads directions only. Its K addresses are the turn's equal angles, split K/2 and K/2 at the
+  corner by the drawing V = H. The value of H appears in none of its readings, so no choice of H moves them (Theorem
+  6(a)): its split is fixed by the geometry.
+- The payload reader receives amounts along given directions, in a unit no reading fixes. Its K addresses are laid
+  along the amount, and there the value of H is the zoom: K/2 in proportion up to H, at an absolute grain, the first
+  about πH/2K wide, and K/2 past it at a relative grain, out to the horizon.
+- On the in-place lay the far boundaries are the near ones reflected about H, since 2 − cot θ_k = 2 − tan(π/2 − θ_k).
+  So the K addresses fill a ruler 2H long, K/2 on each side of H, with the horizon at its end. On the logarithmic lay
+  the far half has no end in length, only in count.
+- Where an address and a payload meet (§4, "The address points at the payload"), the two readers together hold a polar
+  grid of K × K cells. Every thing falls in exactly one, whatever the world's count N. H moves only the radial split.
+
+The reader interacts with K. The writer, which states every distance in amounts, interacts with N: its number line is
+alike everywhere and needs a mark for every thing it places. The Cauchy is what keeps the two apart. Its K quantiles are fixed by the turn alone, at
+H·tan(kπ/2K), with no reference to how many things there are or how far they reach. Its last address runs to the
+horizon, so a finite K covers an unbounded world, and whatever lies past every other address lands in that tail. N
+then enters only as the share each address holds, which is payload (Theorem 6(a)).
+
+**Other ways to squeeze the line.** The three paths of §11.2 (question 2) each squeeze the reader's line into K
+addresses, each swept uniformly along its own length and read as the signed reading s = v/h:
+
+| path, swept uniformly | law of s | where the last of K addresses begins | swept again from a new zero (a turn of 30°) | two readings added |
+|---|---|---|---|---|
+| the circle (a turn) | 1/(π(1 + s²)), the Cauchy | cot(π/2K)·H ≈ 0.64·K·H | the same law | a Cauchy, scale 2 |
+| the line, \|h\| + \|v\| = 1 | ½·(1 + \|s\|)⁻² | (K − 1)·H | 0.044 from its own family | 0.022 from it |
+| the square's edges | ¼ up to \|s\| = 1, then 1/(4s²) | (K/2)·H | 0.047 from it | 0.062 from it |
+
+The distances are the least, over location and scale, of the largest gap between distribution functions (the fourth
+column) and between characteristic functions (the fifth).
+- All three are unchanged by the reciprocal, so H is their median and K/2 addresses lie on each side of it. Each has a
+  tail c/s past s, with c = 2/π, 1 and ½, so the last address begins near c·K·H and the unbounded rest of the line goes
+  to the horizon. All three keep K apart from N.
+- They part when swept again. A turn about the standpoint carries the Cauchy onto itself, and every turn and zoom
+  carries it onto a Cauchy (§7.2; McCullagh 1996). The others leave their own families: each has kinks where its path
+  has corners (the line's law at s = 0, the square's at s = ±1), and a turn moves those kinks to places no member of
+  the family has them.
+- They part when recombined. Two independent Cauchy readings add to a Cauchy, the stable law of index 1 (Lévy 1925),
+  and neither of the other sums stays in its family. Added many times, the line's and the square's readings, scaled by
+  their count, tend to a Cauchy too, of scale π/2 and π/4: their tails put them in its domain of attraction.
+
+So every fair squeeze with such a tail keeps K apart from N, and recombining them tends to the Cauchy. Only the turn's
+squeeze can be swept again or recombined without changing its shape.
+
 **More points, fewer told apart.** A reader taking its view at once looks side-on at N points spaced uniformly around a
 circle and reads each one's position across its view to a resolution ε, relative to the circle's radius. Neighbours at
 angle θ from the middle of the view are about (2π/N)·cos θ apart, so the reader separates those with cos θ ≥ εN/2π,
@@ -2256,10 +2316,10 @@ triangulation, read as a ladder of what each further standpoint buys; that two v
 basis of reconstruction from two images (Longuet-Higgins 1981).
 
 **Proposition 12 (below the resolution, the centroid first).** Payloads w₁, …, w_n > 0 at places x₁, …, x_n along a line
-are read at a resolution: a kernel K of total 1, mean 0 and spread σ². The reading f(x) = Σ w_i·K(x − x_i) has total W =
+are read at a resolution: a kernel τ of total 1, mean 0 and spread σ². The reading f(x) = Σ w_i·τ(x − x_i) has total W =
 Σ w_i, centroid x̄ = Σ w_i·x_i / W, and spread σ² + Σ (w_i/W)(x_i − x̄)².
 
-*Proof.* Integrate the sum of shifted kernels: ∫ f = W; ∫ x f = Σ w_i x_i, since K has mean 0; and
+*Proof.* Integrate the sum of shifted kernels: ∫ f = W; ∫ x f = Σ w_i x_i, since τ has mean 0; and
 ∫ (x − x̄)² f = Σ w_i (σ² + (x_i − x̄)²). ∎
 
 Payloads closer together than the resolution arrive as their total and their centroid, exactly, however close they are.
@@ -2602,7 +2662,7 @@ Since L is not constant, a(λμ) = a(λ)a(μ) and b(λ)·(a(μ) − 1) = b(μ)·
 depends on λ alone, and as in Proposition 4, L = k·ln x + m. Otherwise choose λ₀ with a(λ₀) ≠ 1 and set
 C = b(λ₀)/(a(λ₀) − 1). Then b(λ) = C·(a(λ) − 1) for every λ, so (L + C)(λx) = a(λ)·(L + C)(x). At x = 1 this reads
 (L + C)(λ) = a(λ)·(L + C)(1), and (L + C)(1) ≠ 0 because L is not constant. So a is continuous and multiplicative,
-a(λ) = λ^p with p ≠ 0, and L = K·x^p − C. ∎
+a(λ) = λ^p with p ≠ 0, and L = c₀·x^p − C. ∎
 
 This is classical: it is the form Luce (1959) found for any law that carries a ratio scale to a ratio or interval scale,
 and the functional equations behind it were later treated in general by Aczél, Roberts and Rosenbaum (1986).
@@ -2963,6 +3023,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | symbol | kind | meaning |
 |---|---|---|
 | h, v, v₂ | unit relations, from 0 to 1 | h relates to H, v to V, v₂ to V₂; a relation requires two, a circle has two, a sphere three; how many a system includes sets its shape |
+| K | the reader's capacity | its whole count of addresses, fixed and prior to H; H splits it, half inside the corner and half past it; the address reader's split is the corner, the payload reader's the zoom; the reader interacts with K, the writer with N (§8) |
 | H | the starting value | the reader's breadth, its thumb: the one value it chooses to start the system, not a measured size; its value sets the zoom (§8) |
 | V, V₂ | drawn | the other parties' wholes as the reader draws them, at H (§5) |
 | V* | an amount | a party's true breadth: never read; estimated (§9) or supplied from outside |

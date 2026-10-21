@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>An infinite star field, in 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    star-field-3d.html: an infinite star field in three dimensions (21 October 2026; Tom: "in 3d .     let use change the
+    size of H.", after star-field.html; then "the key point to drive home is that N is invisible to the reader. Its always
+    the same, N*2 is perceived the same as N. this demo does not show that. the far field gets dense, from the writer's view,
+    but from the readers view, his view never changes, its always the proportional near field."). The wedge (one octant),
+    three.js like payload-free-3d.html (the same pinned CDN version and test route) for the writer's scene only; the field,
+    the index, the reader's view and the hook are a plain script.
+
+    Keep the case. H is the reader's breadth, chosen, its size only the zoom; d a star's distance in the world's own unit u,
+    an amount (the writer's); the reading [h : v : v₂] is the address.
+      - The world: stars evenly through the octant, made from their cells, never stored. Level 0 the near field d ≤ 1 u,
+        G × G × G cells (G = 2); level j ≥ 1, 2^(j−1) < d ≤ 2^j u, 7G·2^(j−1) cells round in azimuth by G·2^(j−1) up in
+        height (Lambert's cells, even in solid angle) by G·2^(j−1) out (even in volume), one star a cell placed by a hash.
+        Each level holds eight times the last. index = G³·8^(j−1) + ((row out)·(cells up) + up)·(cells round) + round
+        (BigInt; `fromIndex` back). A world of N stars is the first N by index rounded up to whole rows (a row holds one
+        star in every direction cell, so no direction is favoured by where the count stops), N = 2^m to within a row, or ∞.
+      - The writer's view (the scene): where the stars are, every distance an amount; double N and the far field holds
+        twice the stars. Laid along each star's own ray at d/H, then 1 + ln(d/H) past the corner (the gold sphere at H),
+        so the infinite field fits; H slides every star along its ray. Orbit, zoom toward the cursor; a level too full to
+        draw is thinned to a seeded random choice of its real stars. Point at a star for its index; click to pin; type an
+        index to fly to its star.
+      - The reader's addresses in distance (Tom, 21 Oct: "Reader has fixed number addresses.  Setting H, splits them between
+        the near and far fields.   Small H still has 50% of the addresses but proportionally they are much smaller."): the
+        turn lays its n = √K addresses along distance at d = H·tan(kπ/2n), half within H and half past it at every H; a ruler in
+        doublings of u shows a small H packing its near half into a small stretch, each address proportionally smaller.
+      - The reader's view: each star read as a direction only, [h : v : v₂], no distance; the reader holds K = n × n addresses
+        (Lambert's cells, uniform over the octant) and what it holds is the share of what it reads at each. Painted on the
+        map, an even share one flat colour; shown for N and for 2N: the same. Every pair at its corner, the near field in both
+        readings a third, at every N and every H. Exact counts: a level whose columns fit the reader's cells whole is counted
+        by columns, the near levels star by star.
+    Links: ?N=<log2 N, 3..60>|inf&H=<log2 H, −4..12>&n=16|32|64&star=<index> (n a side, K = n²). Test hook: window.__starField3d.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1180px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 19px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 86ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px; min-width: 0 }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button, input[type=text] { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; touch-action: manipulation }
+    button { cursor: pointer }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=text] { width: 24ch; min-width: 0 }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 200px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    #scene { aspect-ratio: 1 / 1; touch-action: none; cursor: crosshair }
+    .rmap { cursor: crosshair }
+    .grid { display: grid; grid-template-columns: 3fr 2fr; gap: 12px }
+    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    .t { color: var(--bright); font-size: 13px; margin: 0 0 4px }
+    #say { color: var(--bright); font-size: 13px; margin: 0 }
+    #info { color: var(--bright); font-size: 13px; min-height: 6.5em; white-space: pre-wrap; overflow-wrap: anywhere; margin: 8px 0 0 }
+    .ok { color: var(--teal) } a { color: var(--teal) }
+    #nogl { display: none; color: var(--red); font-size: 13px; padding: 8px 0 0 }
+    </style>
+    <script type="importmap">{ "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body>
+<main>
+    <h1>An infinite star field, in 3D</h1>
+    <p class="lede">The writer sees the stars where they are: give the world more and its far field fills. The reader sees
+        each star only as a direction, one of its own addresses over the octant, and holds the share of what it reads at
+        each. At N, 2N or infinitely many stars, and at any H, that view is the same. N is invisible to the reader; H only
+        slides the writer's stars along their rays.</p>
+
+    <div class="panel">
+        <div class="row"><label for="m">N, the stars</label><input id="m" type="range" min="3" max="60" step="1" value="24">
+            <button id="half">÷ 2</button><button id="dbl">× 2</button><span id="Nval" style="min-width:16ch"></span><button id="inf">N = ∞</button></div>
+        <div class="row"><label for="H">H, the zoom</label><input id="H" type="range" min="-4" max="12" step="1" value="0">
+            <span id="Hval" style="min-width:12ch"></span></div>
+        <div class="row"><label>K = n × n, the reader's addresses; n =</label><span id="ns"></span><button id="fit">whole field</button>
+            <label for="goto">go to star</label><input id="goto" type="text" placeholder="an index" inputmode="numeric"><button id="go">go</button></div>
+        <p id="say"></p>
+    </div>
+
+    <div class="panel">
+        <h2>The reader's addresses in distance, and H</h2>
+        <canvas id="ruler" width="1100" height="170"></canvas>
+        <p class="cap">The reader's addresses laid along distance by its turn, d = H·tan θ at equal angles θ, on a scale of
+            doublings of u (the world's own unit). Half of them always lie inside H (teal, v/h ≤ 1, in proportion) and half
+            past it (violet, h/v ≤ 1, wider and wider to the horizon). The reader's count is fixed and comes first; H
+            only splits it. Move H: the count on each side never changes; a small H
+            packs its near half into a small stretch of the world, each address proportionally smaller, a large H spreads it.</p>
+        <div id="rulerNote" class="note"></div>
+    </div>
+
+    <div class="grid">
+        <div class="panel">
+            <h2>The writer's view</h2>
+            <canvas id="scene"></canvas>
+            <p class="cap">Where the stars are, every distance an amount. Home where the axes meet: h, v (up) and v₂; in
+                proportion out to H (the gold sphere, the corner), then every doubling the same depth, so the infinite field
+                fits. Double N and the far field holds twice the stars; change H and every star slides along its own ray.
+                Drag to turn, scroll or pinch to zoom toward the cursor; a level too full to draw is thinned to a random
+                choice of its stars, filling in as you zoom.</p>
+            <div id="nogl"></div><div id="status" class="note"></div>
+            <div id="info">Point at a star for its index.</div>
+        </div>
+        <div class="panel">
+            <h2>The reader's view</h2>
+            <div class="pair">
+                <div><p class="t" id="tA">at N</p><canvas id="mapA" class="rmap" width="420" height="420"></canvas></div>
+                <div><p class="t" id="tB">at 2N</p><canvas id="mapB" class="rmap" width="420" height="420"></canvas></div>
+            </div>
+            <p class="cap">Each star read as a direction only, counted at the reader's own addresses: Lambert's equal-area map
+                of the octant, azimuth across (h left, v₂ right), height v up, one cell per address, the corners dashed. Each
+                cell shaded by its share of what is read: an even share is one flat colour, at N and at 2N alike. No cell
+                knows a distance, so there is no far field for the reader to fill. With fewer stars than cells the reader sees
+                single stars; once N is well past them, N and 2N are the same map.</p>
+            <div id="check" class="note"></div>
+        </div>
+    </div>
+
+    <p class="note">The writer needs N: to place a star it needs its distance, and the far field's count grows with N. The
+        reader needs none of it: its addresses are fixed by its sweep, and its view is the share of what it reads at each,
+        the same at N, 2N and ∞, and at every H. <a href="star-field.html">The same in 2D</a>,
+        <a href="payload-free-3d.html">the payload doesn't matter in 3D</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const G = 2, JMAX = 30, Q = Math.PI / 2, INF_LEVELS = 20;
+const NS = [16, 32, 64];
+const S = { m: 24, inf: false, k: 0, n: 32 };                 // N = 2^m; H = 2^k u
+const Hof = () => 2 ** S.k;
+
+// ── the field, made from its cells ─────────────────────────────────────────────────────────────────────────────────
+const nPsi = j => j === 0 ? G : 7 * G * 2 ** (j - 1), nY = j => j === 0 ? G : G * 2 ** (j - 1), nR = j => j === 0 ? G : G * 2 ** (j - 1);
+const r0 = j => j === 0 ? 0 : 2 ** (j - 1), r1 = j => 2 ** j;
+const lay = s => s <= 1 ? s : 1 + Math.log(s);
+function h32(a) { a |= 0; a ^= a >>> 16; a = Math.imul(a, 0x7feb352d); a ^= a >>> 15; a = Math.imul(a, 0x846ca68b); a ^= a >>> 16; return a >>> 0; }
+const lo = x => (x % 4294967296) >>> 0, hi = x => Math.floor(x / 4294967296) >>> 0, U = s => s / 4294967296;
+const seedOf = (j, a, b, c) => h32(Math.imul(j + 1, 0x9e3779b1) ^ h32(lo(a) ^ h32(hi(a) + 0x1234567)) ^ h32((lo(b) + 0x5678) ^ h32(hi(b) + 0x9abcdef)) ^ h32(lo(c) + 0x31415926));
+function star(j, ip, iy, ir) { const s = seedOf(j, ip, iy, ir), fp = U(h32(s + 1)), fy = U(h32(s + 2)), fr = U(h32(s + 3)), fc = U(h32(s + 4));
+    const psi = (ip + fp) / nPsi(j) * Q, y = (iy + fy) / nY(j), c = Math.sqrt(Math.max(0, 1 - y * y)), a = r0(j) ** 3, b = r1(j) ** 3;
+    const r = Math.cbrt(a + (ir + fr) / nR(j) * (b - a));
+    return { j, ip, iy, ir, psi, y, dir: [c * Math.cos(psi), y, c * Math.sin(psi)], r, c: fc }; }
+const countBelow = j => j === 0 ? 0n : BigInt(G ** 3) * 8n ** BigInt(j - 1);
+const indexOf = s => countBelow(s.j) + (BigInt(s.ir) * BigInt(nY(s.j)) + BigInt(s.iy)) * BigInt(nPsi(s.j)) + BigInt(s.ip);
+function fromIndex(I) { I = BigInt(I); if (I < 0n) return null; let j = 0; while (j < JMAX && countBelow(j + 1) <= I) j++;
+    let rem = I - countBelow(j); const P = BigInt(nPsi(j)), Y = BigInt(nY(j)); if (rem >= P * Y * BigInt(nR(j))) return null;
+    const ip = Number(rem % P); rem /= P; const iy = Number(rem % Y); return star(j, ip, iy, Number(rem / Y)); }
+// the world of the first N stars, rounded up to whole rows: whole levels below jN, then irN whole rows out of level jN. A row
+// holds one star in every direction cell, so a world of whole rows is even in direction; N is 2^m to within a row.
+function worldOf(N) { if (N === Infinity) return { inf: true, jN: INF_LEVELS, irN: nR(INF_LEVELS), iyN: 0, ipN: 0 };
+    N = BigInt(N); let j = 0; while (j < JMAX && countBelow(j + 1) < N) j++;
+    const rem = N - countBelow(j), row = BigInt(nPsi(j) * nY(j)), rows = (rem + row - 1n) / row;   // rounded up to whole rows
+    return { inf: false, jN: j, irN: Number(rows), iyN: 0, ipN: 0, N: countBelow(j) + rows * row }; }
+const curN = () => S.inf ? Infinity : 2n ** BigInt(S.m);
+const inWorld = (s, w) => w.inf ? s.j <= w.jN : (s.j < w.jN || (s.j === w.jN && (s.ir < w.irN || (s.ir === w.irN && (s.iy < w.iyN || (s.iy === w.iyN && s.ip < w.ipN))))));
+const COLS = [[160, 190, 255], [200, 215, 255], [245, 245, 255], [255, 240, 210], [255, 215, 160], [255, 185, 130]];
+const placeOf = (s, H) => { const R = lay(s.r / H); return [s.dir[0] * R, s.dir[1] * R, s.dir[2] * R]; };
+// the stars of the world within d ≤ H: whole levels for H = 2^k, k ≥ 0 (the index runs outward); the near stars for k < 0
+function nearCount(k, N = curN()) { const w = worldOf(N);
+    if (k >= 0) { const c = countBelow(Math.min(k, JMAX) + 1); return w.inf ? c : (c < w.N ? c : w.N); }
+    let c = 0n; for (let ip = 0; ip < G; ip++) for (let iy = 0; iy < G; iy++) for (let ir = 0; ir < G; ir++) { const s = star(0, ip, iy, ir); if (s.r <= 2 ** k && inWorld(s, w)) c++; } return c; }
+
+// ── the reader: n × n addresses (Lambert's cells); it reads each star's direction and holds the share at each ─────────────
+function counts(N, n) {
+    const w = worldOf(N), c = new Float64Array(n * n);
+    const bin = s => Math.min(n - 1, Math.floor(s.y * n)) * n + Math.min(n - 1, Math.floor(s.psi / Q * n));
+    for (let j = 0; j <= w.jN; j++) { const P = nPsi(j), Y = nY(j), R = nR(j), rows = j < w.jN ? R : w.irN, part = j === w.jN && !w.inf;
+        if (P % n === 0 && Y % n === 0) { const mp = P / n, my = Y / n;   // whole columns per address: counted by columns
+            for (let ky = 0; ky < n; ky++) for (let kp = 0; kp < n; kp++) { let x = mp * my * rows;
+                if (part) { const fullY = Math.max(0, Math.min(w.iyN, (ky + 1) * my) - ky * my); x += fullY * mp;
+                    if (w.iyN >= ky * my && w.iyN < (ky + 1) * my) x += Math.max(0, Math.min(w.ipN, (kp + 1) * mp) - kp * mp); }
+                c[ky * n + kp] += x; } continue; }
+        for (let iy = 0; iy < Y; iy++) for (let ip = 0; ip < P; ip++) {     // the near levels: by column, star by star where a column spans an edge
+            const more = part && (iy < w.iyN || (iy === w.iyN && ip < w.ipN)) ? 1 : 0, cnt = rows + more; if (!cnt) continue;
+            const by0 = Math.floor(iy * n / Y), by1 = Math.floor(((iy + 1) * n - 1) / Y), bp0 = Math.floor(ip * n / P), bp1 = Math.floor(((ip + 1) * n - 1) / P);
+            if (by0 === by1 && bp0 === bp1) { c[by0 * n + bp0] += cnt; continue; }
+            for (let ir = 0; ir < cnt; ir++) c[bin(star(j, ip, iy, ir < rows ? ir : w.irN))]++; } }
+    return c;
+}
+const viewCache = new Map();
+function readerView(N, n) { const key = String(N) + '|' + n; if (viewCache.has(key)) return viewCache.get(key);
+    const c = counts(N, n), tot = c.reduce((a, b) => a + b, 0), nn = n * n, share = Array.from(c, x => x / tot * nn);
+    // every pair at its corner and the near field, from the cells' directions weighted by the shares
+    let vh = 0, v2h = 0, v2v = 0, near = 0;
+    for (let ky = 0; ky < n; ky++) for (let kp = 0; kp < n; kp++) { const y = (ky + 0.5) / n, psi = (kp + 0.5) / n * Q, cc = Math.sqrt(1 - y * y), d = [cc * Math.cos(psi), y, cc * Math.sin(psi)];
+        const x = c[ky * n + kp] / tot; if (d[1] <= d[0]) vh += x; if (d[2] <= d[0]) v2h += x; if (d[2] <= d[1]) v2v += x; if (d[1] <= d[0] && d[2] <= d[0]) near += x; }
+    const v = { share, total: tot, vh, v2h, v2v, near, maxDev: Math.max(...share.map(x => Math.abs(x - 1))) }; viewCache.set(key, v); return v; }
+
+// ── the reader's view, drawn ─────────────────────────────────────────────────────────────────────────────────────────────
+let hover = null, pinned = null, hoverCell = -1, last = null, scene3d = null;
+function drawMap(cv, v) { const g = cv.getContext('2d'), W = cv.width, P = 18, L = W - 2 * P, n = S.n, w = L / n;
+    g.fillStyle = '#000'; g.fillRect(0, 0, W, W);
+    v.share.forEach((x, k) => { const i = k % n, j = Math.floor(k / n), t = Math.max(0, Math.min(2, x)) / 2;   // 1 (even) mid
+        g.fillStyle = `rgb(${Math.round(40 + 200 * t)},${Math.round(70 + 150 * t)},${Math.round(90 + 110 * t)})`;
+        g.fillRect(P + i * w, P + L - (j + 1) * w, Math.ceil(w), Math.ceil(w)); });
+    g.setLineDash([5, 5]); g.strokeStyle = 'rgba(212,160,82,0.9)'; g.lineWidth = 1.5;
+    const curve = f => { g.beginPath(); for (let q = 0; q <= 100; q++) { const psi = q / 100 * Q, X = P + q / 100 * L, Y = P + L - f(psi) * L; q ? g.lineTo(X, Y) : g.moveTo(X, Y); } g.stroke(); };
+    curve(p => Math.cos(p) / Math.sqrt(1 + Math.cos(p) ** 2)); curve(p => Math.sin(p) / Math.sqrt(1 + Math.sin(p) ** 2));
+    g.beginPath(); g.moveTo(P + L / 2, P); g.lineTo(P + L / 2, P + L); g.stroke(); g.setLineDash([]);
+    if (hoverCell >= 0) { const i = hoverCell % n, j = Math.floor(hoverCell / n); g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.strokeRect(P + i * w - 1, P + L - (j + 1) * w - 1, w + 2, w + 2); }
+    g.fillStyle = '#8a8a96'; g.font = '12px DM Mono, monospace'; g.fillText('h', P, W - 4); g.fillText('v₂', W - P - 12, W - 4); g.fillText('v', 4, P + 10);
+}
+const fmt = I => I.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+const sci = x => x < 1e4 && x > 1e-3 ? x.toPrecision(4) : x.toExponential(3);
+function describe(s) { const d = s.dir, H = Hof(), n = S.n, cell = Math.min(n - 1, Math.floor(s.y * n)) * n + Math.min(n - 1, Math.floor(s.psi / Q * n));
+    return `star #${fmt(indexOf(s))}\nthe writer: d = ${sci(s.r)} u = ${sci(s.r / H)} H (${s.r <= H ? 'inside' : 'past'} the corner), level ${s.j}\n` +
+        `the reader: address ${cell + 1} of ${n * n}, [h : v : v₂] = [1 : ${sci(d[1] / d[0])} : ${sci(d[2] / d[0])}], no distance`; }
+function showInfo() {
+    if (hoverCell >= 0) { const a = readerView(curN(), S.n), b = readerView(S.inf ? Infinity : 2n * curN(), S.n);
+        $('info').textContent = `the reader's address ${hoverCell + 1} of ${S.n * S.n}\nits share × K: ${a.share[hoverCell].toFixed(6)} at N, ${b.share[hoverCell].toFixed(6)} at 2N (1 is even)\n` +
+            `it reads no distance: every star along it, near or far, is one address`; return; }
+    const s = hover || pinned; $('info').textContent = s ? (s === pinned && !hover ? '(pinned) ' : '') + describe(s) : 'Point at a star for its index.'; }
+
+// the reader's addresses along distance: n at equal angles of its turn, boundaries d = H·tan(kπ/2n); half within H
+const distanceAddresses = (n, H) => Array.from({ length: n - 1 }, (_, k) => H * Math.tan((k + 1) * Q / n));
+function drawRuler() { const cv = $('ruler'), g = cv.getContext('2d'), W = cv.width, Hh = cv.height, P = 30, n = S.n, H = Hof();
+    const L0 = -10, L1 = 26, X = d => P + (Math.log2(d) - L0) / (L1 - L0) * (W - 2 * P), y0 = 46, y1 = 112;
+    g.fillStyle = '#000'; g.fillRect(0, 0, W, Hh);
+    const b = [0, ...distanceAddresses(n, H), Infinity];
+    for (let k = 0; k < n; k++) { const a = Math.max(b[k], 2 ** L0), c = Math.min(b[k + 1], 2 ** L1); if (c <= 2 ** L0 || a >= 2 ** L1) continue;
+        g.fillStyle = k < n / 2 ? (k % 2 ? 'rgba(140,230,205,0.75)' : 'rgba(140,230,205,0.45)') : (k % 2 ? 'rgba(181,156,240,0.75)' : 'rgba(181,156,240,0.45)');
+        g.fillRect(X(a), y0, Math.max(1, X(c) - X(a)), y1 - y0); }
+    g.strokeStyle = '#d4a052'; g.lineWidth = 2.5; g.beginPath(); g.moveTo(X(H), y0 - 10); g.lineTo(X(H), y1 + 10); g.stroke();
+    g.fillStyle = '#d4a052'; g.font = '14px DM Mono, monospace'; g.fillText('H = 2^' + S.k + ' u', X(H) + 6, y0 - 14);
+    g.fillStyle = '#8a8a96'; g.font = '12px DM Mono, monospace';
+    for (let e = L0; e <= L1; e += 4) { g.fillRect(X(2 ** e), y1 + 2, 1, 6); g.fillText('2^' + e, X(2 ** e) - 10, y1 + 22); }
+    g.fillText('home', P - 4, y1 + 40); g.fillText('d in u, doublings →', W - P - 150, y1 + 40);
+    g.fillStyle = 'rgba(140,230,205,0.95)'; g.fillText(`${n / 2} addresses inside H`, Math.max(P, X(H) - 190), y0 + 40);
+    g.fillStyle = 'rgba(181,156,240,0.95)'; g.fillText(`${n / 2} past it`, X(H) + 12, y0 + 40);
+    const w1 = b[1], wn = H - b[n / 2 - 1];
+    $('rulerNote').textContent = `With H = 2^${S.k} u: ${n / 2} addresses inside it, the first ${sci(w1)} u wide and the one at the corner ${sci(wn)} u; ` +
+        `${n / 2} past it, the last but one ending at ${sci(b[n - 1])} u and the last reaching the horizon. Halve H and every near address halves; the counts stay ${n / 2} and ${n / 2}.`; }
+function render() {
+    const N = curN(), a = readerView(N, S.n), b = readerView(S.inf ? Infinity : 2n * N, S.n), H = Hof(), near = nearCount(S.k), w = worldOf(N);
+    drawMap($('mapA'), a); drawMap($('mapB'), b); drawRuler();
+    const diff = Math.max(...a.share.map((x, k) => Math.abs(x - b.share[k])));
+    last = { N: String(N), Neff: N === Infinity ? '∞' : w.N.toString(), n: S.n, H, near: near.toString(), diff, a: { vh: a.vh, v2h: a.v2h, v2v: a.v2v, near: a.near, maxDev: a.maxDev },
+        b: { vh: b.vh, v2h: b.v2h, v2v: b.v2v, near: b.near, maxDev: b.maxDev }, jN: w.jN };
+    $('Nval').textContent = S.inf ? 'no end' : `≈ 2^${S.m} = ${fmt(w.N)}`;
+    $('Hval').textContent = `H = 2^${S.k} u` + (S.k < 0 ? ` = ${H} u` : ` = ${H.toLocaleString()} u`);
+    $('tA').textContent = S.inf ? 'at N = ∞' : `at N = 2^${S.m}`; $('tB').textContent = S.inf ? 'at 2N = ∞' : `at 2N = 2^${S.m + 1}`;
+    const Ne = N === Infinity ? null : w.N, past = Ne === null ? '∞' : fmt(Ne - near);
+    $('say').innerHTML = `The writer: ${S.inf ? 'infinitely many stars' : fmt(Ne) + ' stars'}, ${S.inf ? 'every level filled' : `out to level ${w.jN} (d ≤ 2^${w.jN} u)`}; ` +
+        `at H = 2^${S.k} u, ${fmt(near)} inside the corner and ${past} past it. The reader: ${S.n} × ${S.n} addresses, the same at every N and every H.`;
+    const pc = x => (100 * x).toFixed(2) + '%';
+    $('check').innerHTML = `<span class="ok">The reader's view at N and at 2N differ by at most ${diff.toExponential(2)} in any cell's share × K;</span> ` +
+        `each is even to within ${Math.max(a.maxDev, b.maxDev).toExponential(2)}${N !== Infinity && N < 16n * BigInt(S.n * S.n) ? ` (only ${fmt(N)} stars for ${S.n * S.n} addresses: the reader sees single stars; raise N)` : ''}. ` +
+        `What it reads past each corner: v > h ${pc(1 - a.vh)}, v₂ > h ${pc(1 - a.v2h)}, v₂ > v ${pc(1 - a.v2v)}; the near field in both readings ${pc(a.near)}. ` +
+        `None of it moves with H: the reader's addresses hold directions, and H lays only the writer's distances.`;
+    document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
+    $('inf').classList.toggle('on', S.inf); $('m').value = S.m; $('m').disabled = S.inf; $('half').disabled = S.inf; $('dbl').disabled = S.inf; $('H').value = S.k;
+    showInfo(); if (scene3d) scene3d.rebuild();
+}
+function set(o) { const refit = ('m' in o && o.m !== S.m && !o.keepView) || ('inf' in o && o.inf !== S.inf); Object.assign(S, o); S.m = Math.max(3, Math.min(60, S.m));
+    render(); if (refit && scene3d) scene3d.fit(); return S; }
+function goTo(I) { const s = fromIndex(I); if (!s) return null;
+    if (!S.inf && BigInt(I) >= curN()) { let m = S.m; while (m < 60 && 2n ** BigInt(m) <= BigInt(I)) m++; if (2n ** BigInt(m) > BigInt(I)) S.m = m; else S.inf = true; }
+    pinned = s; hover = null; render(); if (scene3d) scene3d.flyTo(s); return s; }
+
+NS.forEach(n => { const b = document.createElement('button'); b.textContent = n + ' × ' + n; b.dataset.n = n; b.onclick = () => set({ n }); $('ns').appendChild(b); $('ns').append(' '); });
+$('m').oninput = e => set({ m: +e.target.value });
+$('half').onclick = () => set({ m: S.m - 1, keepView: true }); $('dbl').onclick = () => set({ m: S.m + 1, keepView: true });
+$('inf').onclick = () => set({ inf: !S.inf });
+$('H').oninput = e => set({ k: +e.target.value });
+$('fit').onclick = () => { if (scene3d) scene3d.fit(); };
+const tryGo = () => { const t = $('goto').value.replace(/[,\s_]/g, ''); if (/^\d+$/.test(t) && !goTo(t)) $('info').textContent = 'No star has that index.'; };
+$('go').onclick = tryGo; $('goto').onkeydown = e => { if (e.key === 'Enter') tryGo(); };
+for (const id of ['mapA', 'mapB']) { const cv = $(id);
+    const cellOf = e => { const W = cv.width, P = 18, L = W - 2 * P, sc = W / cv.getBoundingClientRect().width, x = e.offsetX * sc, y = e.offsetY * sc;
+        const i = Math.floor((x - P) / (L / S.n)), j = Math.floor((P + L - y) / (L / S.n)); return i < 0 || j < 0 || i >= S.n || j >= S.n ? -1 : j * S.n + i; };
+    cv.addEventListener('pointermove', e => { hoverCell = cellOf(e); hover = null; drawMap($('mapA'), readerView(curN(), S.n)); drawMap($('mapB'), readerView(S.inf ? Infinity : 2n * curN(), S.n)); showInfo(); if (scene3d) scene3d.marks(); });
+    cv.addEventListener('pointerleave', () => { hoverCell = -1; drawMap($('mapA'), readerView(curN(), S.n)); drawMap($('mapB'), readerView(S.inf ? Infinity : 2n * curN(), S.n)); showInfo(); if (scene3d) scene3d.marks(); }); }
+
+const q = new URLSearchParams(location.search);
+if (q.get('N') === 'inf') S.inf = true; else if (q.has('N') && isFinite(+q.get('N'))) S.m = Math.max(3, Math.min(60, Math.round(+q.get('N'))));
+if (q.has('H') && isFinite(+q.get('H'))) S.k = Math.max(-4, Math.min(12, Math.round(+q.get('H'))));
+if (NS.includes(+q.get('n'))) S.n = +q.get('n');
+render();
+window.__starField3d = { h32, G, nPsi, nY, nR, star, indexOf: s => indexOf(s).toString(), fromIndex: I => fromIndex(I), countBelow: j => countBelow(j).toString(),
+    worldOf: N => worldOf(N === Infinity ? N : BigInt(N)), counts: (N, n) => counts(N === Infinity ? N : BigInt(N), n),
+    readerView: (N, n) => readerView(N === Infinity ? N : BigInt(N), n), nearCount: (k, N) => nearCount(k, N === undefined ? curN() : N === Infinity ? N : BigInt(N)).toString(),
+    placeOf, lay, inWorld, distanceAddresses, set, goTo, state: () => ({ ...S, last }), frames: 0, webgl: false, drawn: 0, thinned: [] };
+setTimeout(() => { if (!window.__starField3d.webgl) { $('nogl').style.display = 'block';
+    $('nogl').textContent = 'The writer\'s scene needs WebGL and three.js from cdn.jsdelivr.net; the reader\'s view and the readout still work.'; } }, 12000);
+const pendingStar = q.has('star') && /^\d+$/.test(q.get('star')) ? q.get('star') : null;
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+const F = window.__starField3d, cv = document.getElementById('scene'), Q = Math.PI / 2;
+let renderer = null; try { renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true }); } catch (e) { renderer = null; }
+if (renderer) {
+    renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+    const scene = new THREE.Scene(); scene.background = new THREE.Color(0x000000);
+    const cam = new THREE.PerspectiveCamera(40, 1, 1e-7, 1000);
+    const ctl = new OrbitControls(cam, cv); ctl.enableDamping = true; ctl.zoomToCursor = true; ctl.minDistance = 1e-6; ctl.maxDistance = 400;
+    const world = () => worldOf(curN());
+    const Rmax = () => F.lay(2 ** Math.min(world().jN, 30) / Hof());
+    // the frame: axes, the corner sphere (gold arcs at H), arcs at each tenfold of H, the corners v = h and v₂ = h
+    const frame = new THREE.Group(); scene.add(frame);
+    const line = (pts, color, opacity, dashed) => { const g = new THREE.BufferGeometry().setFromPoints(pts.map(p => new THREE.Vector3(...p)));
+        const m = dashed ? new THREE.LineDashedMaterial({ color, transparent: true, opacity, dashSize: 0.5, gapSize: 0.4 }) : new THREE.LineBasicMaterial({ color, transparent: true, opacity });
+        const l = new THREE.Line(g, m); if (dashed) l.computeLineDistances(); frame.add(l); };
+    function buildFrame() { frame.clear(); const R = 30;
+        for (const a of [[R, 0, 0], [0, R, 0], [0, 0, R]]) line([[0, 0, 0], a], 0xc8c8d0, 0.5);
+        const arcs = (rad, color, op) => { for (const f of [t => [Math.cos(t), Math.sin(t), 0], t => [0, Math.sin(t), Math.cos(t)], t => [Math.cos(t), 0, Math.sin(t)]]) {
+            const pts = []; for (let i = 0; i <= 48; i++) pts.push(f(i / 48 * Q).map(x => x * rad)); line(pts, color, op); } };
+        arcs(1, 0xd4a052, 0.95); for (let e = 1; e <= 12; e++) arcs(1 + e * Math.LN10, 0xffffff, 0.12);
+        const cone = []; for (let i = 0; i <= 48; i++) { const p = i / 48 * Q, a = Math.atan(Math.cos(p)); cone.push([R * Math.cos(a) * Math.cos(p), R * Math.sin(a), R * Math.cos(a) * Math.sin(p)]); }
+        line(cone, 0xd4a052, 0.45, true); line([[0, 0, 0], [R * Math.SQRT1_2, 0, R * Math.SQRT1_2]], 0xd4a052, 0.45, true); }
+    const home = new THREE.Mesh(new THREE.SphereGeometry(0.06, 12, 8), new THREE.MeshBasicMaterial({ color: 0xe6e4ee })); scene.add(home);
+    // the stars: drawn about an anchor (the point looked at), so deep zooms keep their precision
+    const starsG = new THREE.Group(); scene.add(starsG); let pts = null, list = [];
+    const dot = (() => { const c = document.createElement('canvas'); c.width = c.height = 32; const g = c.getContext('2d'), gr = g.createRadialGradient(16, 16, 0, 16, 16, 16);
+        gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(0.4, 'rgba(255,255,255,0.9)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = gr; g.fillRect(0, 0, 32, 32); return new THREE.CanvasTexture(c); })();
+    const BUDGET = 300000, PER_LEVEL = 12000;
+    function rebuild() {
+        starsG.clear(); if (pts) { pts.geometry.dispose(); pts.material.dispose(); pts = null; }
+        buildFrame();
+        const H = Hof(), w = world(), T = ctl.target, Tl = T.length(), D = cam.position.distanceTo(T), anchor = T.clone(); list = []; const thinned = [], pos = [], col = [];
+        const half = 0.6 * D;                                 // the half-width of what the camera sees at the target
+        const Tdir = Tl > 1e-12 ? T.clone().divideScalar(Tl) : new THREE.Vector3(1, 1, 1).normalize();
+        const psiT = Math.atan2(Tdir.z, Tdir.x), yT = Tdir.y, cosT = Math.sqrt(Math.max(1e-6, 1 - yT * yT)), levels = w.jN + 1;
+        for (let j = 0; j <= w.jN; j++) {
+            const P = F.nPsi(j), Y = F.nY(j), R = j < w.jN || w.inf ? F.nR(j) : Math.min(F.nR(j), w.irN + 1), Ra = j === 0 ? 0 : F.lay(2 ** (j - 1) / H), Rb = F.lay(2 ** j / H);
+            if (R <= 0) continue;
+            let rg = [0, P - 1, 0, Y - 1, 0, R - 1];          // the cells of this level to draw: all of it, or the part around where we look
+            if (P * Y * R > PER_LEVEL) { const lo = Math.max(Ra, Tl - half), hi = Math.min(Rb, Tl + half);
+                if (lo < hi && half < Tl) { const a = Math.min(Q, half / Tl), toW = Rl => { const d = H * (Rl <= 1 ? Rl : Math.exp(Rl - 1)), a3 = j > 0 ? (2 ** (j - 1)) ** 3 : 0, b3 = (2 ** j) ** 3;
+                        return Math.min(1, Math.max(0, (d ** 3 - a3) / (b3 - a3))); };
+                    rg = [Math.max(0, Math.floor((psiT - a / cosT) / Q * P) - 1), Math.min(P - 1, Math.floor((psiT + a / cosT) / Q * P) + 1),
+                        Math.max(0, Math.floor((yT - a) * Y) - 1), Math.min(Y - 1, Math.floor((yT + a) * Y) + 1),
+                        Math.max(0, Math.floor(toW(lo) * F.nR(j)) - 1), Math.min(R - 1, Math.floor(toW(hi) * F.nR(j)) + 1)];
+                    if (rg[5] < rg[4]) continue; } }
+            const [p0, p1, y0, y1, q0, q1] = rg, cells = (p1 - p0 + 1) * (y1 - y0 + 1) * (q1 - q0 + 1);
+            const cap = Math.min(cells > PER_LEVEL ? PER_LEVEL : 1e12, Math.max(0, BUDGET - list.length) / Math.max(1, levels - j) * 3);
+            const push = st => { if (!F.inWorld(st, w)) return; const p = F.placeOf(st, H); pos.push(p[0] - anchor.x, p[1] - anchor.y, p[2] - anchor.z);
+                const c = COLS[Math.min(5, Math.floor(st.c * 6))]; col.push(c[0] / 255, c[1] / 255, c[2] / 255); list.push(st); };
+            if (cells <= cap) { for (let ir = q0; ir <= q1; ir++) for (let iy = y0; iy <= y1; iy++) for (let ip = p0; ip <= p1; ip++) push(F.star(j, ip, iy, ir)); }
+            else {                                            // too many: a seeded random choice of cells, real stars still, evenly spread
+                const m = Math.floor(cap), np = p1 - p0 + 1, ny = y1 - y0 + 1, nq = q1 - q0 + 1; thinned.push([j, cells / Math.max(m, 1)]);
+                for (let i = 0; i < m; i++) { const h = F.h32(Math.imul(j + 7, 0x2545f491) ^ F.h32(i + 0x51ed27));
+                    push(F.star(j, p0 + Math.floor(F.h32(h + 1) / 4294967296 * np), y0 + Math.floor(F.h32(h + 2) / 4294967296 * ny), q0 + Math.floor(F.h32(h + 3) / 4294967296 * nq))); } }
+        }
+        const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+        pts = new THREE.Points(g, new THREE.PointsMaterial({ size: 4, sizeAttenuation: false, vertexColors: true, map: dot, transparent: true, alphaTest: 0.1, depthWrite: false }));
+        pts.position.copy(anchor); starsG.add(pts); F.drawn = list.length; F.thinned = thinned; marks();
+        const one = x => x < 1e4 ? Math.round(x).toLocaleString() : x.toExponential(1);
+        document.getElementById('status').textContent = `${list.length.toLocaleString()} stars drawn` + (thinned.length ? `; levels ${thinned[0][0]}–${thinned[thinned.length - 1][0]} thinned, one star shown in every ${one(thinned[0][1])} to ${one(thinned[thinned.length - 1][1])} (zoom in and they fill in)` : ', every one in view');
+    }
+    // a star picked or pinned, and the address pointed at on the reader's map
+    const ringMat = c => new THREE.SpriteMaterial({ map: (() => { const k = document.createElement('canvas'); k.width = k.height = 64; const g = k.getContext('2d');
+        g.strokeStyle = c; g.lineWidth = 5; g.beginPath(); g.arc(32, 32, 26, 0, 2 * Math.PI); g.stroke(); return new THREE.CanvasTexture(k); })(), depthTest: false, sizeAttenuation: false });
+    const pinRing = new THREE.Sprite(ringMat('#d4a052')), hovRing = new THREE.Sprite(ringMat('#8ce6cd')); pinRing.scale.set(0.05, 0.05, 1); hovRing.scale.set(0.05, 0.05, 1);
+    scene.add(pinRing, hovRing); const rayGeo = new THREE.BufferGeometry(), ray = new THREE.Line(rayGeo, new THREE.LineBasicMaterial({ color: 0x8ce6cd })); scene.add(ray);
+    function marks() { const H = Hof(), put = (spr, s) => { spr.visible = !!s; if (s) spr.position.set(...F.placeOf(s, H)); };
+        put(pinRing, pinned); put(hovRing, hover);
+        ray.visible = hoverCell >= 0; if (ray.visible) { const n = S.n, i = hoverCell % n, j = Math.floor(hoverCell / n), psi = (i + 0.5) / n * Q, y = (j + 0.5) / n, c = Math.sqrt(1 - y * y);
+            rayGeo.setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(30 * c * Math.cos(psi), 30 * y, 30 * c * Math.sin(psi))]); } }
+    function fit() { const R = Math.min(Rmax(), 24); ctl.target.set(R * 0.33, R * 0.3, R * 0.33); cam.position.set(R * 2.1, R * 1.6, R * 2.4); ctl.update(); rebuild(); }
+    function flyTo(s) { const p = F.placeOf(s, Hof()), cell = F.lay(s.r / Hof()) * Q / F.nPsi(s.j), d = Math.max(cell * 12, 2e-6);
+        const dir = new THREE.Vector3(...p).normalize(); ctl.target.set(...p); cam.position.set(p[0] + d * (0.6 + 0.3 * dir.x), p[1] + d * 0.5, p[2] + d * (0.6 + 0.3 * dir.z)); ctl.update(); rebuild(); }
+    let timer = null; ctl.addEventListener('change', () => { clearTimeout(timer); timer = setTimeout(rebuild, 140); });
+    // pointing at a star: the nearest drawn star to the cursor, within a few pixels
+    const ndc = new THREE.Vector3();
+    cv.addEventListener('pointermove', e => { if (e.buttons) return; const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top; let best = null;
+        if (list.length) { const m = new THREE.Matrix4().multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse), a = pts.position, arr = pts.geometry.attributes.position.array;
+            for (let i = 0; i < list.length; i++) { ndc.set(arr[3 * i] + a.x, arr[3 * i + 1] + a.y, arr[3 * i + 2] + a.z).applyMatrix4(m);
+                if (ndc.z > 1 || ndc.z < -1) continue; const sx = (ndc.x + 1) / 2 * r.width, sy = (1 - ndc.y) / 2 * r.height, dd = Math.hypot(sx - mx, sy - my);
+                if (dd < 10 && (!best || dd < best.dd)) best = { dd, s: list[i] }; } }
+        hover = best ? best.s : null; hoverCell = -1; showInfo(); marks(); });
+    cv.addEventListener('pointerdown', e => { cv._down = [e.clientX, e.clientY]; });
+    cv.addEventListener('pointerup', e => { if (cv._down && Math.hypot(e.clientX - cv._down[0], e.clientY - cv._down[1]) < 4 && hover) { pinned = hover; showInfo(); marks(); } });
+    const size = () => { const w = cv.clientWidth || 600; if (cv.width !== Math.round(w * renderer.getPixelRatio())) { renderer.setSize(w, w, false); cam.aspect = 1; cam.updateProjectionMatrix(); } };
+    const loop = () => { size(); ctl.update(); renderer.render(scene, cam); F.frames++; requestAnimationFrame(loop); };
+    scene3d = { rebuild, fit, flyTo, marks };
+    F.webgl = true; F.scene = { rebuild, fit, flyTo, cam, ctl }; size(); fit(); loop();
+    if (pendingStar) goTo(pendingStar);
+}
+</script>
+</body>
+</html>
