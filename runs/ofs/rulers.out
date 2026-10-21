@@ -1,0 +1,44 @@
+pass  x = 0.001: (tan t - sinh z)/x: 0.0
+pass  x = 0.001: t - gd(z): 0.0
+pass  x = 0.001: 2*hyperbolic sector - z: 0.0
+pass  x = 0.3333: (tan t - sinh z)/x: 0.0
+pass  x = 0.3333: t - gd(z): 0.0
+pass  x = 0.3333: 2*hyperbolic sector - z: 0.0
+pass  x = 1.0: (tan t - sinh z)/x: 0.0
+pass  x = 1.0: t - gd(z): 0.0
+pass  x = 1.0: 2*hyperbolic sector - z: -1.3364e-51
+pass  x = 3.0: (tan t - sinh z)/x: -3.5637e-51
+pass  x = 3.0: t - gd(z): 0.0
+pass  x = 3.0: 2*hyperbolic sector - z: -8.0183e-51
+pass  x = 1000.0: (tan t - sinh z)/x: 1.1509e-48
+pass  x = 1000.0: t - gd(z): 0.0
+pass  x = 1000.0: 2*hyperbolic sector - z: 1.9713e-46
+pass  corner on the turn: atan 1 - pi/4: 0.0
+      corner on the hyperbola: asinh 1 = 0.88137358702
+pass  reciprocal on the turn at x = 0.001: 0.0
+pass  reciprocal on the turn at x = 0.3333: -2.6728e-51
+pass  reciprocal on the turn at x = 1.0: 0.0
+pass  reciprocal on the turn at x = 3.0: -2.0046e-51
+pass  reciprocal on the turn at x = 1000.0: 6.447e-52
+      on z at x = 0.3333: asinh(1/x) = 1.818446459, 2 asinh 1 - asinh x = 1.435297024
+      on z at x = 3.0: asinh(1/x) = 0.3274501502, 2 asinh 1 - asinh x = -0.05569928519
+pass  gap at the corner - (1 - asinh 1): 0.0
+pass  gap at x = 1e12 - (1 - ln 2): -2.5e-25
+pass  every gap within [0, 1 - ln 2] (worst excess): 0
+      gap 1 - asinh 1 = 0.118626413 ; 1 - ln 2 = 0.3068528194
+pass  uniform turn: median x - 1: 0.0
+pass  uniform z on [0, 1.0]: median - sinh(Z/2): 1.8394e-52
+      median x = 0.52109531
+pass  uniform z on [0, 1.76275]: median - sinh(Z/2): 5.0672e-52
+      median x = 1.0
+pass  uniform z on [0, 4.0]: median - sinh(Z/2): 2.6608e-51
+      median x = 3.6268604
+pass  uniform z on [0, 10.0]: median - sinh(Z/2): 1.2814e-50
+      median x = 74.203211
+      Z for the corner: 2 asinh 1 = 1.762747174
+pass  dt/dz - cos t at x = 0.001: 0.0
+pass  dt/dz - cos t at x = 0.3333: 0.0
+pass  dt/dz - cos t at x = 1.0: 0.0
+pass  dt/dz - cos t at x = 3.0: -1.3364e-51
+pass  dt/dz - cos t at x = 1000.0: 1.1511e-51
+ALL PASS

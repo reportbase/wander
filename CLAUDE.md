@@ -695,6 +695,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   family's affine group has two (Jaynes's own eq. 49 group commutes; its measure coincides with the right-invariant one,
   which later work favours where the location or the scale is of interest; Ghosh 2011), cites Norton (2008: complete
   ignorance is not a probability) beside the pre-prior, and Liu and Adams (2019) beside the situated Bertrand.
+  **One figure, three rulers** (21 Oct, SPN R422; Tom: "we have show that the same math applies to the reader and
+  writer", after calendar's `geometry.html` dial): OFS §6 after Mercator's map. The circle, the unit hyperbola and the
+  tangent at the apex lay one reading x three ways, the writer's line x, the turn θ = arctan x, the hyperbolic angle
+  ζ = asinh x (Mercator's height, the reader's lay made smooth, within 1 − ln 2), x = tan θ = sinh ζ, θ = gd ζ; all carry
+  the corner, only the turn makes it the median (uniform ζ on [0, Z]: sinh(Z/2)). §7.8's SR entry has one sentence
+  (celerity x, rapidity ζ, speed sin θ). Checked in `runs/ofs/rulers.py`.
   **Since R247 (review 9, `plans/ofs-review-9.md`)** OFS keeps two groups apart: the reader's ignorance (turns of θ,
   rescalings of κ = V*/H, and the exchange of the unit relations, which acts on readings and drawings, not on κ) and the
   Möbius action on readings (turns and changes of the drawing, PSL(2,ℝ)), a fact about the family of drawings used only

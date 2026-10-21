@@ -634,7 +634,7 @@ last stretch of both without arriving: the horizon, the same on both layouts. On
 are the quarter circle, held whole; 3 and 4 live on the unit line, and the two situated readers are the two ways of
 comparing the layouts, line over circle and circle over line, with 1 between them. The unit line is the address space,
 and the number line is what is addressed. Why the number line itself, unlike any reader's lay, has no corner is taken
-up in §9.
+up in §9; the line, the turn and the lay are drawn on one figure in §6 ("One figure, three rulers").
 
 ### 3.4 Three vantages, and the true breadth
 
@@ -1371,6 +1371,39 @@ keeps the division's local scale 1/h but accumulates it, and so lays the same re
 and logarithmically past it. Latitude is the Gudermannian of the map's height, φ = gd(y). It is the oldest instance we
 know of the two address spaces laid out.
 
+**One figure, three rulers.** The circle, the number line and Mercator's height fit in one figure, and the figure shows
+what each of them does with the corner. Draw the unit circle, the tangent line at its apex A = (1, 0), and the unit
+hyperbola u² − w² = 1, which touches the same line at A (u along the axis, w sideways). A reading x = v/h sits on the
+tangent at T = (1, x). The circle's point P = (cos θ, sin θ), whose ray from the centre passes through T, and the
+hyperbola's point (cosh ζ, sinh ζ) level with T, give
+
+  x = tan θ = sinh ζ,  so θ = gd(ζ),
+
+and each angle is twice the area of its sector from A: the circle's (Archimedes) and the hyperbola's. So one reading is
+laid three ways, each an exact function of the others:
+
+| ruler | range | at the corner x = 1 | the reciprocal x ↦ 1/x |
+|---|---|---|---|
+| x itself, the writer's number line (§9) | unbounded | a point like any other | no symmetry of the ruler |
+| θ = arctan x, the turn | bounded, a quarter turn | the middle, 45° | θ ↦ π/2 − θ, a reflection |
+| ζ = asinh x, the hyperbolic angle, Mercator's height | unbounded | asinh 1 ≈ 0.881 | no reflection of the ruler |
+
+The third is the reader's lay of Proposition 4 made smooth. ζ ≈ x inside the corner and ζ ≈ ln 2x past it, and the
+lay (x, then 1 + ln x) never exceeds it by more than 1 − ln 2 ≈ 0.307, approached far out (0.119 at the corner).
+
+All three carry the corner, since it is the reciprocal's fixed point (Proposition 1) and so a point of the reading
+itself. Only the turn gives it a role.
+- A measure uniform in θ puts its median at x = 1 with nothing else given (Proposition 5(d)), because the turn is
+  bounded.
+- The two unbounded rulers have no uniform measure until a range is given beforehand. A measure uniform in ζ over
+  [0, Z] puts its median at x = sinh(Z/2), at the corner only when Z = 2 asinh 1 ≈ 1.763. A measure uniform in x over
+  [0, X] puts it at X/2, at the corner only when X = 2. Either way the range, an amount, decides where the middle falls.
+
+So the corner's point is shared, and its role as the median belongs to the turn. This is the division of §9 drawn on
+one figure: the writer's ruler and the reader's lay hold the corner as a point, and only the reader's sweep makes it
+the median. The rulers' rates against one another are dθ/dx = 1/(1 + x²), the Cauchy's density shape, and
+dθ/dζ = cos θ.
+
 **The proportion is in the addresses.** Within a doubling past the corner the lay's addresses are uniform; how uniformly
 things arrive at them is up to the world. If what arrives is spread uniformly in direction, as a lighthouse's flashes
 are (§7.1, §7.8), the far share h/v has density proportional to 1/(1 + (h/v)²), so the arrivals thin toward the corner
@@ -2072,6 +2105,9 @@ follow every increasing map; those facts are part (d). The other parts of Theore
 
   The split is in the formulas, aberration apart from Doppler shift and beaming. It is not named there as a
   transformation of addresses and a weighting of payload. (We checked these identities exactly.)
+  The same theory runs on §6's three rulers. A velocity's celerity γβ is x, its rapidity η is ζ, its speed
+  β = tanh η = sin θ and γ = sec θ. Rapidities add along a line, and nothing in the theory turns uniformly in θ, so
+  its corner γβ = 1 (β = 1/√2) is where its two regimes hand over, not a median.
 - *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
   (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
   does so everywhere; and no chart keeps both angles and areas (Euler 1777; Gauss 1828). What is ours is the reading: the
