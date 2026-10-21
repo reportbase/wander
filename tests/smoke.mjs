@@ -1296,6 +1296,28 @@ try {
     failures.push(`[${current}] ${JSON.stringify(p3)}`);
   console.log(`${failures.length === before45 ? 'ok  ' : 'FAIL'} ${current} (${p3.cases} worlds, sizes and grids give back the sweep's own [h : v : v₂] to ${p3.worst.toExponential(1)}; one set of counts per grid, v ≤ h ${c32[0].vLeH}, v₂ ≤ h ${c32[0].v2LeH}, v₂ ≤ v ${c32[0].v2LeV}, the near field ${c32[0].near.toFixed(4)} at 32 × 32; ${p3.paints} paints; the equal-metres screen moves with the size and has none when it is unknown; WebGL drew ${p3.frames} frames)`);
 
+  // ── 46. star-field.html: an infinite star field (SPN R405): every star comes back from its index at levels 0 to 40; N
+  //    is K²·4^L; the lit share follows 1 − e^(−2^L/λ) and is whole at N = ∞, the addresses the same at every N; a star
+  //    pointed at on the map is the star there; a star found by index is shown with it ──
+  current = 'star-field.html';
+  const before46 = failures.length;
+  await page.goto(new URL('star-field.html?L=6', base).href, { waitUntil: 'load' });
+  const sf = await page.evaluate(() => { const F = __starField, o = { bad: 0 };
+    for (const j of [0, 1, 2, 5, 10, 20, 30, 40]) for (let k = 0; k < 12; k++) { const A = F.na(j), B = F.nr(j), ia = Math.floor((k * 0.618 % 1) * A), ir = Math.floor((k * 0.414 % 1) * B);
+      const s = F.star(j, ia, ir), s2 = F.fromIndex(F.indexOf(s)); if (!s2 || s2.j !== j || s2.ia !== ia || s2.ir !== ir) o.bad++;
+      if (!(s.r > (j ? 2 ** (j - 1) : 0) && s.r <= 2 ** j)) o.bad++; }
+    o.N = [F.N(0), F.N(8), F.N(20)]; o.below = F.countBelow(9);
+    o.lit = [4, 8, 10, 12].map(L => { const sk = F.skyOf(L, 512); return [sk.filter(s => s && !s.beyond).length / 512, F.expectedLit(L)]; });
+    const inf = F.skyOf(40, 512); o.litInf = inf.filter(s => s && !s.beyond).length / 512;
+    o.sameAddr = F.addresses(512).every((t, k) => t === (k + 0.5) / 512 * Math.PI / 2);
+    F.set({ L: 6 }); const s = F.star(5, 7, 3), [sx, sy] = F.toScr(s.R * Math.cos(s.th), s.R * Math.sin(s.th)), h = F.starNear(sx, sy);
+    o.hover = !!h && F.indexOf(h) === F.indexOf(s);
+    const g = F.goTo('123456789012'); o.goto = g && F.indexOf(g); o.info = document.getElementById('info').textContent; return o; });
+  if (sf.bad || sf.N.join() !== '4,262144,4398046511104' || sf.below !== '262144' || sf.lit.some(([m, e]) => Math.abs(m - e) > 0.05) ||
+    !(sf.litInf === 1) || !sf.sameAddr || !sf.hover || sf.goto !== '123456789012' || !sf.info.includes('123,456,789,012'))
+    failures.push(`[${current}] ${JSON.stringify(sf)}`);
+  console.log(`${failures.length === before46 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–40; N = 4^(L+1); the lit share at L = 4, 8, 10, 12 ${sf.lit.map(([m]) => m.toFixed(3)).join(', ')} against 1 − e^(−2^L/λ) ${sf.lit.map(([, e]) => e.toFixed(3)).join(', ')}, whole at N = ∞; the same 512 addresses at every N; the star pointed at is the star there; star #123,456,789,012 found)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
