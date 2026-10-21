@@ -17,28 +17,28 @@
     addresses.  Setting H, splits them between the near and far fields.   Small H still has 50% of the addresses but
     proportionally they are much smaller."; "the readers K, their total address space to observe, is fixed but they can us
     cauchy to focus on any N, but only K at a time.  Always k, it's invarient, but he can zoom his near or far field by
-    adjusting his H, not K." (Tom's K is the page's n, the reader's count of addresses; the page's K is the cells' grain.)
+    adjusting his H, not K."; then "find another variable for grid size are generated on.    K is users fixed capabiity to observe, and he splits it in two, but setting H.    So K is prior to H." (SPN R409: K is the reader's count of addresses, prior to H; the cells' grain is G.)
 
     Keep the case. H is the reader's breadth, the zoom it chooses, H = 2^k u (u the world's own unit); d a distance, an amount
     (the writer's); the reading v/h is the address.
       - The world: stars scattered evenly over the quarter plane, made from their cells, never stored, so the field can be
-        infinite. Level 0, d ≤ 1 u, a K × K grid of cells (K = 2), one star a cell; level j ≥ 1, 2^(j−1) < d ≤ 2^j, a grid of
-        3K·2^(j−1) cells across the turn by K·2^(j−1) out (even in area), one star a cell, placed by a hash of (j, cell).
+        infinite. Level 0, d ≤ 1 u, a G × G grid of cells (G = 2), one star a cell; level j ≥ 1, 2^(j−1) < d ≤ 2^j, a grid of
+        3G·2^(j−1) cells across the turn by G·2^(j−1) out (even in area), one star a cell, placed by a hash of (j, cell).
         Each level holds four times the last. The index counts outward: every star of every nearer level, then the star's
-        row and place in its own level, index = K²·4^(j−1) + row·(cells across) + place (BigInt; `fromIndex` back).
+        row and place in its own level, index = G²·4^(j−1) + row·(cells across) + place (BigInt; `fromIndex` back).
         A world of N stars is the first N by index rounded up to whole rows (a row holds one star in every column across
         the turn, so no direction is favoured by where the count stops), N = 2^m to within a row (a slider, ×2, ÷2), or ∞.
       - The writer's view (the map): where the stars are, every distance an amount. N fills it outward: double N and the
         far field holds twice the stars. On the reader's lay of distances (d/H to the corner, then 1 + ln(d/H)) so the
         infinite field fits; pan, zoom, point at a star for its index. H slides every star along its own ray.
-      - The reader's addresses in distance: its n addresses at equal angles land at d = H·tan(kπ/2n), half inside H and
+      - The reader's addresses in distance: its K addresses at equal angles land at d = H·tan(kπ/2K), half inside H and
         half past it at every H; H moves the split, never the count.
       - The reader's view: the reader reads each star as a direction only, its address [h : v], with no distance; it holds n
         addresses at equal angles (128, 512, 2048) and what it holds is the share of what it reads at each. Laid on its own
         unit circle, v/h in proportion up to the corner and h/v in proportion past it, each address a ray as long as its
-        share × n, so an even share is the unit circle itself. Shown for N and for 2N side by side: the same circle. The
+        share × K, so an even share is the unit circle itself. Shown for N and for 2N side by side: the same circle. The
         counts are exact: a level whose columns fit the reader's addresses whole is counted by columns, the rest star by star.
-    Links: ?N=<log2 N, 2..60>|inf&H=<log2 H, -4..12>&n=128|512|2048&star=<index>. Test hook: window.__starField.
+    Links: ?N=<log2 N, 2..60>|inf&H=<log2 H, -4..12>&K=128|512|2048&star=<index>. Test hook: window.__starField.
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -76,15 +76,15 @@
     <p class="lede">The writer sees the stars where they are: give the world more and its far field fills. The reader sees
         each star only as a direction, one of its own addresses at equal angles, and holds the share of what it reads at
         each. However many stars there are, N or 2N or infinitely many, that view is the same: the unit circle, in
-        proportion on both sides of the corner. N is invisible to the reader. Its count of addresses is fixed too; H, the
-        zoom it chooses, only decides where in the world the near half of them falls.</p>
+        proportion on both sides of the corner. N is invisible to the reader. Its count of addresses, K, is
+        fixed and comes first: choosing H, its zoom, only splits K in two, half inside H and half past it.</p>
 
     <div class="panel">
         <div class="row"><label for="m">N, the stars</label><input id="m" type="range" min="2" max="60" step="1" value="24">
             <button id="half">÷ 2</button><button id="dbl">× 2</button><span id="Nval" style="min-width:16ch"></span><button id="inf">N = ∞</button></div>
         <div class="row"><label for="H">H, the zoom</label><input id="H" type="range" min="-4" max="12" step="1" value="0">
             <span id="Hval" style="min-width:12ch"></span></div>
-        <div class="row"><label>reader's addresses</label><span id="ns"></span><button id="fit">whole field</button>
+        <div class="row"><label>K, the reader's addresses</label><span id="ns"></span><button id="fit">whole field</button>
             <label for="goto">go to star</label><input id="goto" type="text" placeholder="an index" inputmode="numeric"><button id="go">go</button></div>
         <p id="say"></p>
     </div>
@@ -94,7 +94,7 @@
         <canvas id="ruler" width="1100" height="170"></canvas>
         <p class="cap">The reader's addresses laid along distance by its turn, d = H·tan θ at equal angles θ, on a scale of
             doublings of u (the world's own unit). Half of them always lie inside H (teal, v/h ≤ 1, in proportion) and half
-            past it (violet, h/v ≤ 1, wider and wider to the horizon). The count is fixed; H is the zoom. A small H packs the
+            past it (violet, h/v ≤ 1, wider and wider to the horizon). The count K is fixed and comes first; H is the zoom that splits it. A small H packs the
             near half into a small stretch of the world, each address proportionally smaller; a large H spreads it out and
             reaches farther. Whatever N is, the reader holds it at these addresses, never more of them.</p>
         <div id="rulerNote" class="note"></div>
@@ -114,7 +114,7 @@
             <h2>The reader's view</h2>
             <canvas id="reader" width="900" height="1240"></canvas>
             <p class="cap">Each star read as a direction only, counted at the reader's own addresses (equal angles, h to v). Each
-                address is a ray as long as its share of what is read, times the number of addresses: an even share reaches
+                address is a ray as long as its share of what is read, times K, the number of addresses: an even share reaches
                 the unit circle (gold), whatever N is. Inside the corner the reading is v/h, past it h/v, both in proportion:
                 for the reader there is no far field to fill. Above at N, below at 2N. With
                 fewer stars than addresses the reader sees single stars, spikes and gaps; once N is well past its addresses,
@@ -131,14 +131,14 @@
 <script>
 'use strict';
 const $ = id => document.getElementById(id);
-const K = 2, JMAX = 40, Q = Math.PI / 2, INF_LEVELS = 30;
+const G = 2, JMAX = 40, Q = Math.PI / 2, INF_LEVELS = 30;
 const NS = [128, 512, 2048];
 const S = { m: 24, inf: false, k: 0, n: 512 };                // N = 2^m; H = 2^k u
 const Hof = () => 2 ** S.k;
 
 // ── the field, made from its cells ─────────────────────────────────────────────────────────────────────────────────
-const na = j => j === 0 ? K : 3 * K * 2 ** (j - 1);          // cells across the turn
-const nr = j => j === 0 ? K : K * 2 ** (j - 1);              // cells out, even in area
+const na = j => j === 0 ? G : 3 * G * 2 ** (j - 1);          // cells across the turn
+const nr = j => j === 0 ? G : G * 2 ** (j - 1);              // cells out, even in area
 const r0 = j => j === 0 ? 0 : 2 ** (j - 1), r1 = j => 2 ** j;
 // the reader's lay at its H: d/H to the corner, then 1 + ln(d/H); every star's place on the map is read through it
 const lay = d => { const s = d / Hof(); return s <= 1 ? s : 1 + Math.log(s); }, unlay = R => Hof() * (R <= 1 ? R : Math.exp(R - 1));
@@ -149,7 +149,7 @@ const seedOf = (j, ia, ir) => h32(Math.imul(j + 1, 0x9e3779b1) ^ h32(lo(ia) ^ h3
 function star(j, ia, ir) { const s = seedOf(j, ia, ir), fu = U(h32(s + 1)), fw = U(h32(s + 2)), fc = U(h32(s + 3));
     const th = (ia + fu) / na(j) * Q, a = r0(j), b = r1(j), r = Math.sqrt(a * a + (ir + fw) / nr(j) * (b * b - a * a));
     return { j, ia, ir, th, r, R: lay(r), c: fc }; }
-const countBelow = j => j === 0 ? 0n : BigInt(K * K) * 4n ** BigInt(j - 1);          // stars nearer than level j
+const countBelow = j => j === 0 ? 0n : BigInt(G * G) * 4n ** BigInt(j - 1);          // stars nearer than level j
 const indexOf = s => countBelow(s.j) + BigInt(s.ir) * BigInt(na(s.j)) + BigInt(s.ia);
 function fromIndex(I) { I = BigInt(I); if (I < 0n) return null; let j = 0; while (j < JMAX && countBelow(j + 1) <= I) j++;
     const rem = I - countBelow(j), A = BigInt(na(j)); if (rem >= A * BigInt(nr(j))) return null;
@@ -170,7 +170,7 @@ const COLS = [[160, 190, 255], [200, 215, 255], [245, 245, 255], [255, 240, 210]
 const colOf = c => COLS[Math.min(COLS.length - 1, Math.floor(c * COLS.length))];
 const css = (c, a = 1) => `rgba(${c[0]},${c[1]},${c[2]},${a})`;
 
-// ── the reader: n addresses at equal angles; it reads each star's direction and holds the share at each address ──────────
+// ── the reader: K addresses at equal angles (n in the code); it reads each star's direction and holds the share at each address ──────────
 // Exact counts. A level whose columns each fall inside one address (na divisible by n) is counted by columns; otherwise a
 // column that spans an address's edge is counted star by star (only the near levels: na ≥ n from level log2 n on).
 function counts(N, n) {
@@ -252,10 +252,10 @@ function describe(s) { const vh = Math.tan(s.th), k = Math.min(S.n - 1, Math.flo
 function showInfo() { const s = hover || pinned;
     if (hoverAddr >= 0) { const a = readerView(curN(), S.n), b = readerView(S.inf ? Infinity : 2n * curN(), S.n), t0 = hoverAddr / S.n * Q, t1 = (hoverAddr + 1) / S.n * Q;
         $('info').textContent = `the reader's address ${hoverAddr + 1} of ${S.n}, ${(t0 / Q * 90).toFixed(2)}°–${(t1 / Q * 90).toFixed(2)}°\n` +
-            `its share × n: ${a.share[hoverAddr].toFixed(6)} at N, ${b.share[hoverAddr].toFixed(6)} at 2N (1 is even)\nit reads no distance: every star in that wedge, near or far, is one address`; return; }
+            `its share × K: ${a.share[hoverAddr].toFixed(6)} at N, ${b.share[hoverAddr].toFixed(6)} at 2N (1 is even)\nit reads no distance: every star in that wedge, near or far, is one address`; return; }
     $('info').textContent = s ? (s === pinned && !hover ? '(pinned) ' : '') + describe(s) : 'Point at a star for its index.'; }
 
-// ── the reader's view: its unit circle, each address a ray as long as its share × n, at N and at 2N ───────────────────────
+// ── the reader's view: its unit circle, each address a ray as long as its share × K, at N and at 2N ───────────────────────
 const rd = $('reader'), rg = rd.getContext('2d');
 function drawReaderQuadrant(v, ox, oy, R0, title) {
     const n = v.share.length;
@@ -268,7 +268,7 @@ function drawReaderQuadrant(v, ox, oy, R0, title) {
     rg.fillStyle = '#8a8a96'; rg.font = '14px DM Mono, monospace';
     rg.fillText('h', ox + R0 + 8, oy + 4); rg.fillText('v', ox - 4, oy - R0 - 10); rg.fillText('v/h, in proportion', ox + R0 * 0.55, oy - 10);
     rg.fillText('h/v, in proportion', ox + 8, oy - R0 * 0.9); rg.fillText('the corner', ox + R0 * 0.78, oy - R0 * 0.8);
-    rg.fillText(`share past the corner ${(1 - v.near).toFixed(6)};  largest |share × n − 1| ${v.maxDev.toExponential(2)}`, ox, oy + 32);
+    rg.fillText(`share past the corner ${(1 - v.near).toFixed(6)};  largest |share × K − 1| ${v.maxDev.toExponential(2)}`, ox, oy + 32);
 }
 function drawReader() { const a = readerView(curN(), S.n), b = readerView(S.inf ? Infinity : 2n * curN(), S.n);
     rg.fillStyle = '#000'; rg.fillRect(0, 0, rd.width, rd.height);
@@ -310,7 +310,7 @@ function render() {
     $('say').innerHTML = `The writer: ${S.inf ? 'infinitely many stars' : fmt(Ne) + ' stars'}, ` +
         `${S.inf ? 'every level filled' : `out to level ${w.jN} (d ≤ 2^${w.jN} u)`}; at H = 2^${S.k} u, ${fmt(near)} inside the corner and ` +
         `${far === null ? 'infinitely many' : fmt(far)} past it. The reader: ${S.n} addresses, ${S.n / 2} inside H and ${S.n / 2} past it, the same at every N and every H.`;
-    $('check').innerHTML = `<span class="ok">The reader's view at N and at 2N differ by at most ${last.diff.toExponential(2)} in any address's share × n;</span> ` +
+    $('check').innerHTML = `<span class="ok">The reader's view at N and at 2N differ by at most ${last.diff.toExponential(2)} in any address's share × K;</span> ` +
         `each is the unit circle to within ${Math.max(a.maxDev, b.maxDev).toExponential(2)}, half its reading past the corner${N !== Infinity && N < 16n * BigInt(S.n) ? ` (only ${fmt(N)} stars for ${S.n} addresses: the reader sees single stars; raise N)` : ''}. The writer meanwhile ` +
         `${S.inf ? 'has no end to its count' : `counts ${fmt(Ne)} stars, then ${fmt(worldOf(2n * N).N)}`}. `;
     document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
@@ -361,12 +361,12 @@ rd.addEventListener('pointerleave', () => { hoverAddr = -1; drawMap(); drawReade
 
 const q = new URLSearchParams(location.search);
 if (q.get('N') === 'inf') S.inf = true; else if (q.has('N') && isFinite(+q.get('N'))) S.m = Math.max(2, Math.min(60, Math.round(+q.get('N'))));
-if (NS.includes(+q.get('n'))) S.n = +q.get('n');
+if (NS.includes(+(q.get('K') ?? q.get('n')))) S.n = +(q.get('K') ?? q.get('n'));       // K, the reader's count (n accepted)
 if (q.has('H') && isFinite(+q.get('H'))) S.k = Math.max(-4, Math.min(12, Math.round(+q.get('H'))));
 fit(); render();
 if (q.has('star') && /^\d+$/.test(q.get('star'))) goTo(q.get('star'));
 
-window.__starField = { K, na, nr, star, indexOf: s => indexOf(s).toString(), fromIndex: I => fromIndex(I), countBelow: j => countBelow(j).toString(),
+window.__starField = { G, na, nr, star, indexOf: s => indexOf(s).toString(), fromIndex: I => fromIndex(I), countBelow: j => countBelow(j).toString(),
     worldOf: N => worldOf(N === Infinity ? N : BigInt(N)), counts: (N, n) => counts(N === Infinity ? N : BigInt(N), n),
     readerView: (N, n) => readerView(N === Infinity ? N : BigInt(N), n), nearCount: (k, N) => nearCount(k, N === Infinity ? N : BigInt(N)).toString(),
     lay, distanceAddresses, starNear, toScr, toPic, view, set, goTo, fit, state: () => ({ ...S, last }) };

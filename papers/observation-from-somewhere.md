@@ -2150,18 +2150,21 @@ every H up to d. Placed on the quarter turn at arctan(x/H), two amounts are set 
 arcsin((r − 1)/(r + 1)) for a ratio r, when H is their geometric mean. The best H is the corner of what is read, as
 the best estimate of a size is the corner of what is known (Proposition 13).
 
-**A fixed count, aimed by H.** The reader's count of addresses is its own and does not change; what it looks at does.
-Lay the n addresses of a uniform turn along distance under the drawing V = H. Their boundaries fall at
-d_k = H·tan(kπ/2n), k = 1, …, n − 1, the quantiles of the Cauchy with its scale at H.
+**A fixed count, aimed by H.** Call the reader's whole count of addresses K: its fixed capacity to observe, its own,
+the same whatever it looks at. K comes before H. Choosing H does not change K; it splits it in two. Lay the K addresses
+of a uniform turn along distance under the drawing V = H. Their boundaries fall at d_k = H·tan(kπ/2K), k = 1, …, K − 1,
+the quantiles of the Cauchy with its scale at H.
 - Since tan(π/4) = 1, the middle boundary is d = H whatever H is. Half the addresses lie inside the corner and half past
   it, at every H (Proposition 5(d)). H moves the split; it never changes the count.
-- A small H gives the near half a short stretch of amounts, each address a fine one, the first tan(π/2n)·H ≈ πH/2n wide.
+- A small H gives the near half a short stretch of amounts, each address a fine one, the first tan(π/2K)·H ≈ πH/2K wide.
   A large H gives the same half a long stretch, each address coarser, and carries the far half farther out.
 - The world's own count enters nowhere. Doubling or thinning what arrives moves no address (Theorem 6(a)), so a world of
-  N things, of 2N, or of infinitely many is held at the same n addresses, each holding its share.
+  N things, of 2N, or of infinitely many is held at the same K addresses, each holding its share.
 
-So a reader can turn its n addresses on any world and, by its choice of H, place its finest ones anywhere along
-distance; it never holds more than n at a time. The count is the level of detail, and H is the zoom.
+So a reader can turn its K addresses on any world and, by its choice of H, place its finest ones anywhere along
+distance; it never holds more than K at a time. The count is the level of detail, and H is the zoom. (Elsewhere in this
+section n counts the addresses across the near field on a lay, a different measure; on the turn's own addresses it is
+K/2.)
 
 **More points, fewer told apart.** A reader taking its view at once looks side-on at N points spaced uniformly around a
 circle and reads each one's position across its view to a resolution ε, relative to the circle's radius. Neighbours at
@@ -2269,10 +2272,10 @@ triangulation, read as a ladder of what each further standpoint buys; that two v
 basis of reconstruction from two images (Longuet-Higgins 1981).
 
 **Proposition 12 (below the resolution, the centroid first).** Payloads w₁, …, w_n > 0 at places x₁, …, x_n along a line
-are read at a resolution: a kernel K of total 1, mean 0 and spread σ². The reading f(x) = Σ w_i·K(x − x_i) has total W =
+are read at a resolution: a kernel τ of total 1, mean 0 and spread σ². The reading f(x) = Σ w_i·τ(x − x_i) has total W =
 Σ w_i, centroid x̄ = Σ w_i·x_i / W, and spread σ² + Σ (w_i/W)(x_i − x̄)².
 
-*Proof.* Integrate the sum of shifted kernels: ∫ f = W; ∫ x f = Σ w_i x_i, since K has mean 0; and
+*Proof.* Integrate the sum of shifted kernels: ∫ f = W; ∫ x f = Σ w_i x_i, since τ has mean 0; and
 ∫ (x − x̄)² f = Σ w_i (σ² + (x_i − x̄)²). ∎
 
 Payloads closer together than the resolution arrive as their total and their centroid, exactly, however close they are.
@@ -2615,7 +2618,7 @@ Since L is not constant, a(λμ) = a(λ)a(μ) and b(λ)·(a(μ) − 1) = b(μ)·
 depends on λ alone, and as in Proposition 4, L = k·ln x + m. Otherwise choose λ₀ with a(λ₀) ≠ 1 and set
 C = b(λ₀)/(a(λ₀) − 1). Then b(λ) = C·(a(λ) − 1) for every λ, so (L + C)(λx) = a(λ)·(L + C)(x). At x = 1 this reads
 (L + C)(λ) = a(λ)·(L + C)(1), and (L + C)(1) ≠ 0 because L is not constant. So a is continuous and multiplicative,
-a(λ) = λ^p with p ≠ 0, and L = K·x^p − C. ∎
+a(λ) = λ^p with p ≠ 0, and L = c₀·x^p − C. ∎
 
 This is classical: it is the form Luce (1959) found for any law that carries a ratio scale to a ratio or interval scale,
 and the functional equations behind it were later treated in general by Aczél, Roberts and Rosenbaum (1986).
@@ -2976,6 +2979,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | symbol | kind | meaning |
 |---|---|---|
 | h, v, v₂ | unit relations, from 0 to 1 | h relates to H, v to V, v₂ to V₂; a relation requires two, a circle has two, a sphere three; how many a system includes sets its shape |
+| K | the reader's capacity | its whole count of addresses, fixed and prior to H; H splits it, half inside the corner and half past it (§8) |
 | H | the starting value | the reader's breadth, its thumb: the one value it chooses to start the system, not a measured size; its value sets the zoom (§8) |
 | V, V₂ | drawn | the other parties' wholes as the reader draws them, at H (§5) |
 | V* | an amount | a party's true breadth: never read; estimated (§9) or supplied from outside |

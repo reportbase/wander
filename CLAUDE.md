@@ -415,32 +415,32 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   should show its index."; then, of the first build: "the key point to drive home is that N is invisible to the reader. Its
   always the same, N*2 is perceived the same as N. this demo does not show that. the far field gets dense, from the writer's
   view, but from the readers view, his view never changes, its always the proportional near field."; SPN R406), a standalone
-  page, plain canvas. Stars evenly over the quarter plane, made from their cells, never stored: level 0 d ≤ H (K × K cells,
-  K = 2), level j ≥ 1 2^(j−1) < d ≤ 2^j (3K·2^(j−1) across by K·2^(j−1) out, even in area), one star a cell by a hash; the
-  index K²·4^(j−1) + row·across + place (BigInt, `fromIndex` back). A world of N stars is the first N by index rounded up to
+  page, plain canvas. Stars evenly over the quarter plane, made from their cells, never stored: level 0 d ≤ 1 u (G × G cells,
+  G = 2), level j ≥ 1 2^(j−1) < d ≤ 2^j (3G·2^(j−1) across by G·2^(j−1) out, even in area), one star a cell by a hash; the
+  index G²·4^(j−1) + row·across + place (BigInt, `fromIndex` back). A world of N stars is the first N by index rounded up to
   whole rows (a row holds one star in every column, so where the count stops favours no direction), N = 2^m (2–60, ×2, ÷2)
   or ∞. Two views. The writer's: the map on the reader's lay, pan and zoom to any level, stars one by one where they fit,
   else shaded; point for the index, click to pin, type an index to fly there. The reader's: each star a direction only,
-  counted exactly at the reader's n addresses (128, 512, 2048; whole columns where they fit an address, star by star in the
+  counted exactly at the reader's K addresses (128, 512, 2048; whole columns where they fit an address, star by star in the
   near levels), each address a ray as long as its share × n on its unit circle, v/h then h/v in proportion, at N and at 2N:
   the same circle (apart by 10⁻², 10⁻⁵, 10⁻⁸ at 2^20, 2^30, 2^40), half past the corner. With fewer stars than addresses
   the reader sees single stars. H (R407, R408), 2^−4 to 2^12 u: the writer's map laid at d/H then 1 + ln(d/H), every star
   sliding along its ray, the reader's view unmoved; a ruler of the reader's n addresses along distance, H·tan(kπ/2n),
   half inside H at every H, the near ones' widths in proportion to H. (The first build, 21 Oct, showed instead a sky lit by stars of size ρ, the lit share
-  1 − e^(−2^L/λ), Olbers; it put N into the reader's view and was replaced.) `?N=<log2 N>|inf&H=<log2 H>&n=128|512|2048&star=<index>`;
+  1 − e^(−2^L/λ), Olbers; it put N into the reader's view and was replaced.) `?N=<log2 N>|inf&H=<log2 H>&K=128|512|2048&star=<index>`;
   hook `window.__starField` (`star`, `indexOf`, `fromIndex`, `countBelow`, `worldOf`, `counts`, `readerView`, `nearCount`,
   `lay`, `distanceAddresses`, `starNear`,
   `toScr`, `toPic`, `view`, `set`, `goTo`, `fit`, `state`). Not in the flying page.
 - `star-field-3d.html`: **an infinite star field, in 3D** (21 Oct 2026, Tom: "in 3d .     let use change the size of H.";
   then the same correction as the 2D page; SPN R406), three.js like `payload-free-3d.html` (the same pinned CDN version and
   test route) for the writer's scene only; the field, the index, the reader's view and the hook are a plain script. Stars
-  evenly through the octant: level 0 d ≤ 1 u (K³ cells), level j ≥ 1 (7K·2^(j−1) round in azimuth × K·2^(j−1) up in height,
-  Lambert's cells, × K·2^(j−1) out, even in volume), eight times as many each level; index K³·8^(j−1) + ((out)·(up cells) +
+  evenly through the octant: level 0 d ≤ 1 u (G³ cells), level j ≥ 1 (7G·2^(j−1) round in azimuth × G·2^(j−1) up in height,
+  Lambert's cells, × G·2^(j−1) out, even in volume), eight times as many each level; index G³·8^(j−1) + ((out)·(up cells) +
   up)·(round cells) + round (BigInt); a world of N stars rounded up to whole rows, N = 2^m (3–60) or ∞. The writer's scene:
   each star along its own ray at d/H, then 1 + ln(d/H) past the corner (the gold sphere); H a slider (2^−4 to 2^12 u) slides
   every star along its ray; orbit, zoom toward the cursor, levels too full thinned to a seeded random choice of real stars,
   drawn about the point looked at; point at a star for its index, click to pin, type an index to fly to it. The reader's
-  view: each star a direction only, counted exactly at n × n cells of Lambert's map (16, 32, 64), shaded by share (one flat
+  view: each star a direction only, counted exactly at K = n × n cells of Lambert's map (n 16, 32, 64), shaded by share (one flat
   colour when even), at N and at 2N: the same map; every pair at its corner (½), the near field a third; H changes none of
   it. The reader's addresses in distance (SPN R407; Tom: "Reader has fixed number addresses.  Setting H, splits them between
   the near and far fields.   Small H still has 50% of the addresses but proportionally they are much smaller."): a ruler on
@@ -709,8 +709,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "What a larger H gives and takes" (R229: nΔ/H inside the corner, the lays parting past it, the best H the corner of
   what is read), then "A fixed count, aimed by H" (R408; Tom: "the readers K, their total address space to observe, is
   fixed but they can us cauchy to focus on any N, but only K at a time.  Always k, it's invarient, but he can zoom his
-  near or far field by adjusting his H, not K."): the n addresses along distance at H·tan(kπ/2n), half inside H at every
-  H, any N held at the same n, and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9's "What a unit
+  near or far field by adjusting his H, not K."; R409: "K is users fixed capabiity to observe, and he splits it in two,
+  but setting H.    So K is prior to H."): K the reader's whole count of addresses, prior to H, laid along distance at
+  H·tan(kπ/2K), half inside H at every H, any N held at the same K (Proposition 12's kernel renamed τ so K is not used
+  twice; a notation row for K), and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9's "What a unit
   is, and why a reader needs one" (R230; Tom: "A unit is needed, it injects physics into the relation"; "A unit is
   pre-measured relation. It says something like 5 ounces/ 1 foot"): a unit is a relation measured beforehand; within
   one reader its value is a zoom, needed because addresses are finite, where the world's scale first reaches the

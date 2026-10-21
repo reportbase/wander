@@ -6625,6 +6625,9 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
   - Tom's K is the reader's count of addresses (n in OFS §8 and on the pages; the pages' own K is the cells' grain, a different thing). It is fixed, the reader's own; it is not a choice made per world.
   - It is aimed, not resized: the world's N never enters what is held (Theorem 6(a), R403, R406), so any N, 2N or ∞ is held at the same n addresses, each holding its share; H places the split between near and far (the median, d = H) and so where the finest addresses fall (the first tan(π/2n)·H wide). The level of detail is the count; the zoom is H.
   - Made: OFS §8 "A fixed count, aimed by H", after "What a larger H gives and takes" (R229); `star-field.html` now has H (2^−4 to 2^12 u, sliding every star along its ray on the writer's map, the reader's view unmoved) and the same ruler as the 3D page.
+- **R409** (21 Oct, 07:41), of R408's note that the pages' K was the cells' grain: "find another variable for grid size are generated on.    K is users fixed capabiity to observe, and he splits it in two, but setting H.    So K is prior to H." Recorded:
+  - K is the reader's whole count of addresses, its fixed capacity to observe. It comes first; H is chosen after it and only splits it, half inside H and half past it. No choice of H changes K, and no world (N) does.
+  - Made: the star pages' grain renamed G (the hooks' `K` is now `G`), K their reader's count (`?K=` in 2D, n accepted; in 3D K = n × n, n a side); OFS §8 "A fixed count, aimed by H" in K, with a notation row, and Proposition 12's kernel renamed τ (and a proof's constant c₀) so that K has one meaning in OFS. §8's other n (addresses across the near field on a lay, R229) is kept: a different measure.
 
 ## Appendix B. Demos and computations
 
