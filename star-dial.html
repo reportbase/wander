@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Browsing the stars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    star-dial.html: browsing an infinite star field with the dial on the wedge (21 October 2026; Tom: "I would like to
+    combine the dial with the wedge to browse an infinite starfield.     we also need a way to set H."). After
+    wedge-browse.html (the view from home and the dial's two needles, SPN R241) and star-field-3d.html (an infinite field,
+    made from its cells, SPN R406, R407); OFS §6 "One figure, three rulers" and §8 "Two readers, one K" (R410, R422). A
+    standalone page; plain canvas, no libraries.
+
+    Keep the case. H is the reader's breadth, chosen, its size only the zoom; a star's distance d, in the world's own unit
+    u, is an amount (the writer's); its reading [h : v : v₂] is the address. Two zooms, one for each reader:
+      - THE DIAL moves the address reader. From home every star is a direction, drawn at its shares on the triangle
+        h + v + v₂ = 1 (h ↙ v ↑ v₂ ↘). The drawing V = 2^μ₁·H, V₂ = 2^μ₂·H puts the hand's direction at the triple corner;
+        one rung of the triangle holds w levels of each reading. The gold thumb is a rate, the blue hand a place; letting go
+        re-centres the drawing on what the hand reached (the stop is the new home); the wheel sets w and keeps the hand's
+        place; a tap reads and moves nothing. No star moves with H, since H is in none of these readings.
+      - H moves the payload reader. Along each ray the reader holds n = 32 addresses across the near field (d ≤ H, in
+        proportion) and L = 6 levels past it, each a doubling (zoom.html's held window, H/32 to 64H). Stars nearer than H/32
+        merge into home, farther than 64H go past the held edge; there are infinitely many of those, and none is drawn.
+        Set H on the ruler (drag or tap), with [ ], shift+wheel, or the buttons; H is a power of two, so the held window
+        is whole levels of the field and every count exact.
+
+    THE FIELD, without end and never stored: level 0 d ≤ 1 u, level j ≥ 1 2^(j−1) < d ≤ 2^j u, holding 8^(j+1) stars, so the
+    field is even in volume (level 0 seven eighths as dense). Their directions on Lambert's equal-area square of the octant
+    (u = ψ/(π/2) across, y = v up, each cell the same solid angle), cut in quarters: level j's leaves are at depth
+    D_j = ⌊(3j + 3)/2⌋, 1 or 2 stars a leaf (8^(j+1) = 4^D_j × that). A star is placed by a hash in its leaf, its distance
+    cube-root even in its shell. index = 8(8^j − 1)/7 + (row·2^D_j + column)·(stars a leaf) + which (BigInt; fromIndex
+    back). Any cell of the square at any depth holds an exact count of each level's stars, so the drawn cells and stars add
+    up exactly to the held ones, a finite number at every H though the field has no end.
+    LEVEL OF DETAIL (as wedge-browse.html): cells opened largest on the screen first, to a budget; a cell holding at most
+    12 held stars is opened into its stars (drawn in full where they are sparse on the screen, else thinned as the totals
+    are); the rest are held as totals and drawn thinned, every held star in them shown
+    with the same chance (real stars, chosen by each level's share of the cell). The field is even in direction, so how
+    they crowd on the screen is the view's, the Cauchy wedge at w = 1 and the dial's magnification elsewhere.
+    The inset is the hand's own ray: the stars under it laid at atan(d/H), the corner at d = H; H slides them along it.
+
+    ?w=<log2 w>&H=<log2 H, −4..24>&mu=μ₁,μ₂&star=<index>; test hook window.__starDial.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #050508; --panel: rgba(18,18,26,0.84); --line: rgba(255,255,255,0.10);
+        --ink: #c8c8d0; --dim: #8a8a96; --bright: #ece9f4; --gold: #d4a052; --teal: #8ce6cd; --violet: #b59cf0; --blue: #7fb2ff }
+    * { box-sizing: border-box }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground) }
+    body { color: var(--ink); font: 13.5px/1.5 'DM Mono', ui-monospace, monospace;
+        background: radial-gradient(120% 90% at 62% 38%, #10101a 0%, #07070c 55%, #030305 100%) }
+    #stage { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; touch-action: none; cursor: crosshair }
+    .glass { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+        -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.45) }
+    #panel { position: fixed; top: 14px; left: 14px; width: min(372px, calc(100vw - 28px)); max-height: calc(100vh - 28px);
+        overflow: auto; padding: 14px 16px 12px; z-index: 3 }
+    h1 { font: 400 26px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 4px }
+    .sub { color: var(--dim); margin: 0 0 10px; font-size: 12px }
+    p.cap { margin: 0 0 9px } p.cap b { color: var(--bright); font-weight: 500 }
+    button, input[type=text] { font: inherit; color: var(--bright); background: rgba(255,255,255,0.04); border: 1px solid var(--line);
+        border-radius: 7px; padding: 5px 9px; min-height: 32px }
+    button { cursor: pointer; touch-action: manipulation } button:hover { border-color: rgba(255,255,255,0.25) }
+    button.on { border-color: var(--gold); color: var(--gold); background: rgba(212,160,82,0.08) }
+    input[type=text] { width: 100%; min-width: 0 }
+    .ctl { display: grid; grid-template-columns: 7.4em 1fr 6.4em; gap: 6px 8px; align-items: center; margin: 6px 0 }
+    .ctl label { color: var(--dim) } .ctl output { color: var(--bright); text-align: right; font-size: 12px }
+    input[type=range] { width: 100%; min-width: 0; accent-color: var(--gold) }
+    .row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; align-items: center }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .blue { color: var(--blue) }
+    #ruler { width: 100%; height: 92px; display: block; border-radius: 7px; background: #0b0b12; touch-action: none; cursor: ew-resize; margin: 4px 0 2px }
+    #rulerNote { font-size: 11.5px; color: var(--dim); margin: 0 0 6px }
+    #hud { position: fixed; left: 400px; bottom: 14px; max-width: calc(100vw - 690px); padding: 10px 13px; white-space: pre-wrap;
+        font-size: 12px; color: var(--bright); z-index: 2; overflow-wrap: anywhere }
+    #inset { position: fixed; right: 14px; bottom: 14px; width: 262px; padding: 10px 10px 8px; z-index: 2 }
+    #inset canvas { width: 100%; aspect-ratio: 1.15; display: block; border-radius: 6px; background: #0b0b12 }
+    #inset .t { font-size: 11.5px; color: var(--dim); margin: 0 0 6px } #inset .t b { color: var(--bright); font-weight: 500 }
+    #fold { display: none }
+    a { color: var(--teal) }
+    @media (max-width: 1099px) { #inset { display: none } #hud { max-width: calc(100vw - 414px) } }
+    @media (max-width: 760px) {
+        #panel { top: auto; bottom: 10px; left: 10px; width: calc(100vw - 20px); max-height: 52vh; padding: 10px 12px }
+        #panel.folded .more { display: none }
+        #fold { display: inline-block; float: right; min-height: 28px; padding: 2px 8px }
+        h1 { font-size: 21px }
+        #hud { top: 10px; bottom: auto; left: 10px; max-width: calc(100vw - 20px); font-size: 11px; padding: 7px 9px }
+    }
+    </style>
+</head>
+<body>
+<canvas id="stage" aria-label="An infinite star field seen from home on the wedge, with the dial's two needles: a gold thumb that sets a rate and a blue hand that marks a place"></canvas>
+<div id="panel" class="glass">
+    <button id="fold" aria-label="fold the panel">▾</button>
+    <h1>Browsing the stars</h1>
+    <p class="sub">A star field without end, browsed with two zooms: the dial for directions, H for distance.</p>
+    <div class="ctl" style="grid-template-columns: 1fr auto auto"><label>H, the zoom along every ray</label>
+        <button id="hDown" aria-label="halve H">÷ 2</button><button id="hUp" aria-label="double H">× 2</button></div>
+    <canvas id="ruler" aria-label="the reader's held window along distance; drag to set H"></canvas>
+    <p id="rulerNote"></p>
+    <div class="more">
+    <p class="cap"><b>From home</b> every star is a direction, drawn where its readings put it on the wedge. The
+    <span class="gold">gold thumb</span> is a rate: press and pan, and the <span class="blue">blue hand</span> travels,
+    gently near the centre, hard toward the edge. Let go and the view re-centres on what the hand reached; that stop is the
+    new home. The wheel sets the radius w, how many levels one rung holds. A tap reads a star; it moves nothing.</p>
+    <p class="cap"><b>H</b> lays each ray: <span class="teal">near</span> stars in proportion up to H, then six doublings,
+    each the same room. Nearer than H/32 merges into home; past 64H is past the held edge, without end, and not drawn.
+    Change H and no star moves on the screen: H is in no direction. What changes is which stars are held, and their
+    colours.</p>
+    <div class="ctl"><label for="lw">radius, w</label><input id="lw" type="range" min="-46" max="3" step="0.05" value="1"><output id="lwo"></output></div>
+    <div class="row"><input id="goto" type="text" inputmode="numeric" placeholder="go to a star by its index" aria-label="go to a star by index"></div>
+    <div class="row">
+        <button id="bGo">go</button>
+        <button id="bSel">centre on the one read</button>
+        <button id="bRungs" class="on">rungs</button>
+        <button id="bStart">back to the start</button>
+    </div>
+    <p class="sub" style="margin:10px 0 0">Keys: arrows push the gold, − = the radius, [ ] H, 0 the start.
+    Other demos: <a href="wedge-browse.html">browsing the wedge</a>, <a href="star-field-3d.html">the star field in 3D</a>,
+    <a href="zoom.html">H is a zoom</a>, <a href="demos.html">all demos</a>.</p>
+    </div>
+</div>
+<div id="hud" class="glass"></div>
+<div id="inset" class="glass"><div class="t"><b>Along the hand's ray</b>: each star at atan(d/H), the corner at d = H</div><canvas id="sweep" width="480" height="418"></canvas></div>
+
+<script>
+'use strict';
+const qs = new URLSearchParams(location.search);
+// ── the field: level j holds 8^(j+1) stars on Lambert's square of the octant, made from their cells ─────────────────
+const Q = Math.PI / 2, JMAX = 30, DMAX = 50, K_MIN = -4, K_MAX = 24, LW_MIN = -46;
+const Dof = j => Math.floor((3 * j + 3) / 2);                       // the depth of level j's leaves: 4^D cells, one solid angle
+const Mof = j => 2 ** (3 * j + 3 - 2 * Dof(j));                      // stars a leaf, 1 or 2
+const r0 = j => j === 0 ? 0 : 2 ** (j - 1), r1 = j => 2 ** j;
+const countBelow = j => 8n * (8n ** BigInt(j) - 1n) / 7n;
+function h32(a) { a |= 0; a ^= a >>> 16; a = Math.imul(a, 0x7feb352d); a ^= a >>> 15; a = Math.imul(a, 0x846ca68b); a ^= a >>> 16; return a >>> 0; }
+const lo = x => (x % 4294967296) >>> 0, hi = x => Math.floor(x / 4294967296) >>> 0, U = s => s / 4294967296;
+const seedOf = (j, i, k, t) => h32(Math.imul(j + 1, 0x9e3779b1) ^ h32(lo(i) ^ h32(hi(i) + 0x1234567)) ^ h32((lo(k) + 0x5678) ^ h32(hi(k) + 0x9abcdef)) ^ h32(t + 0x31415926));
+const dirOf = (u, y) => { const c = Math.sqrt(Math.max(0, 1 - y * y)), p = u * Q; return [c * Math.cos(p), y, c * Math.sin(p)]; };
+function star(j, i, k, t) {
+    const D = Dof(j), N = 2 ** D, s = seedOf(j, i, k, t), fu = U(h32(s + 1)), fy = U(h32(s + 2)), fr = U(h32(s + 3)), fc = U(h32(s + 4));
+    const u = (i + fu) / N, y = (k + fy) / N, a = r0(j) ** 3, b = r1(j) ** 3;
+    return { j, i, k, t, fu, fy, u, y, dir: dirOf(u, y), r: Math.cbrt(a + fr * (b - a)), c: fc };
+}
+const indexOf = s => countBelow(s.j) + (BigInt(s.k) * (1n << BigInt(Dof(s.j))) + BigInt(s.i)) * BigInt(Mof(s.j)) + BigInt(s.t);
+function fromIndex(I) {
+    I = BigInt(I); if (I < 0n) return null; let j = 0; while (j < JMAX && countBelow(j + 1) <= I) j++;
+    let rem = I - countBelow(j); const M = BigInt(Mof(j)), N = 1n << BigInt(Dof(j)); if (rem >= N * N * M) return null;
+    const t = Number(rem % M); rem /= M; return star(j, Number(rem % N), Number(rem / N), t);
+}
+const LEVEL0 = []; for (let k = 0; k < 2; k++) for (let i = 0; i < 2; i++) for (let t = 0; t < 2; t++) LEVEL0.push(star(0, i, k, t));
+
+// ── what H holds: n addresses across the near field, L levels past it; whole levels of the field, H a power of two ────
+const N_ADDR = 32, L_LEVELS = 6;
+const V = { mu1: 0, mu2: 0, lw: 1, lH: 0 };                          // w = 2^lw levels a rung, H = 2^lH u
+const Hof = () => 2 ** V.lH, W_ = () => 2 ** V.lw;
+function heldOf(k = V.lH) {                                         // full levels jA..jB, and level 0 star by star while k ≤ 4
+    return { jA: Math.max(1, k - 4), jB: Math.min(JMAX, k + 6), part0: k <= 4, cut: 2 ** (k - 5) };
+}
+let HELD = heldOf();
+// a cell of Lambert's square: depth d, column i (across, u), row k (up, y); exact counts of the held stars inside it
+const inNode = (s, n) => { const D = Dof(s.j);
+    if (n.d <= D) { const f = 2 ** (D - n.d); return Math.floor(s.i / f) === n.i && Math.floor(s.k / f) === n.k; }
+    const f = 2 ** (n.d - D); return s.i * f + Math.floor(s.fu * f) === n.i && s.k * f + Math.floor(s.fy * f) === n.k; };
+function levelCount(n, j, big) {                                    // level j's stars in the cell
+    const D = Dof(j), M = Mof(j);
+    if (n.d <= D) return big ? BigInt(M) << BigInt(2 * (D - n.d)) : M * 4 ** (D - n.d);
+    const f = 2 ** (n.d - D), li = Math.floor(n.i / f), lk = Math.floor(n.k / f); let c = 0;
+    for (let t = 0; t < M; t++) if (inNode(star(j, li, lk, t), n)) c++;
+    return big ? BigInt(c) : c;
+}
+function count(n, big = false, h = HELD) {
+    let c = big ? 0n : 0;
+    for (let j = h.jA; j <= h.jB; j++) c += levelCount(n, j, big);
+    if (h.part0) for (const s of LEVEL0) if (s.r > h.cut && inNode(s, n)) c += big ? 1n : 1;
+    return c;
+}
+function heldTotal(h = HELD) { let c = 0n; for (let j = h.jA; j <= h.jB; j++) c += 8n ** BigInt(j + 1); if (h.part0) for (const s of LEVEL0) if (s.r > h.cut) c++; return c; }
+function starsIn(n, h = HELD) {                                     // every held star of a small cell
+    const out = [];
+    for (let j = h.jA; j <= h.jB; j++) { const D = Dof(j), M = Mof(j);
+        if (n.d <= D) { const sp = 2 ** (D - n.d); for (let b = 0; b < sp; b++) for (let a = 0; a < sp; a++) for (let t = 0; t < M; t++) out.push(star(j, n.i * sp + a, n.k * sp + b, t)); }
+        else { const f = 2 ** (n.d - D), li = Math.floor(n.i / f), lk = Math.floor(n.k / f); for (let t = 0; t < M; t++) { const s = star(j, li, lk, t); if (inNode(s, n)) out.push(s); } } }
+    if (h.part0) for (const s of LEVEL0) if (s.r > h.cut && inNode(s, n)) out.push(s);
+    return out;
+}
+function sampleOf(n, want = 64, h = HELD) {                         // a sample of a cell's held stars, spread over its levels
+    const lv = h.jB - h.jA + 1, per = Math.max(2, Math.ceil(want / lv)), out = [];
+    for (let j = h.jA; j <= h.jB; j++) { const D = Dof(j), M = Mof(j);
+        if (n.d <= D && M * 4 ** (D - n.d) > per) { const sp = 2 ** (D - n.d);
+            for (let q = 0; q < per; q++) { const z = h32(Math.imul(q + 1, 0x2545f491) ^ h32(j * 977 + n.d) ^ h32(lo(n.i) + 31 * lo(n.k)));
+                out.push(star(j, n.i * sp + Math.floor(U(h32(z + 1)) * sp), n.k * sp + Math.floor(U(h32(z + 2)) * sp), Math.floor(U(h32(z + 3)) * M))); } }
+        else out.push(...starsIn(n, { jA: j, jB: j, part0: false })); }
+    if (h.part0) for (const s of LEVEL0) if (s.r > h.cut && inNode(s, n)) out.push(s);
+    return out;
+}
+function sampleFew(n, want, h = HELD) {                            // a total's few stars, each level by its share of the cell
+    const lv = []; let tot = 0;
+    for (let j = h.jA; j <= h.jB; j++) { const D = Dof(j); if (n.d <= D) { const c = Mof(j) * 4 ** (D - n.d); lv.push([j, c]); tot += c; } }
+    const out = [];
+    for (let q = 0; q < want && tot > 0; q++) { const z = h32(Math.imul(q + 7, 0x2545f491) ^ h32(n.d * 977 + 13) ^ h32(lo(n.i) + 0x9e37) ^ h32(lo(n.k) + 0x85eb));
+        let x = U(h32(z)) * tot, e = lv[lv.length - 1]; for (const L of lv) { if (x < L[1]) { e = L; break; } x -= L[1]; }
+        const j = e[0], D = Dof(j), sp = 2 ** (D - n.d);
+        out.push(star(j, n.i * sp + Math.floor(U(h32(z + 1)) * sp), n.k * sp + Math.floor(U(h32(z + 2)) * sp), Math.floor(U(h32(z + 3)) * Mof(j)))); }
+    return out;
+}
+const kidsOf = n => [[0, 0], [1, 0], [0, 1], [1, 1]].map(([a, b]) => ({ d: n.d + 1, i: 2 * n.i + a, k: 2 * n.k + b }));
+const ROOT = { d: 0, i: 0, k: 0 };
+
+// ── the view from home: the drawing μ, the radius w ───────────────────────────────────────────────────────────────
+if (qs.has('w')) V.lw = Math.max(LW_MIN, Math.min(3, +qs.get('w') || 0));
+if (qs.has('H')) V.lH = Math.max(K_MIN, Math.min(K_MAX, Math.round(+qs.get('H') || 0)));
+if (qs.has('mu')) { const [a, b] = qs.get('mu').split(',').map(Number); V.mu1 = a || 0; V.mu2 = b || 0; }
+HELD = heldOf();
+const lambdaOfDir = d => [Math.log2(d[1] / d[0]), Math.log2(d[2] / d[0])];
+function dispOfDir(d) {                                             // the displayed shares: each reading over the drawing, to the power 1/w
+    const w = W_(), e0 = Math.log2(d[0]) / w, e1 = (Math.log2(d[1]) - V.mu1) / w, e2 = (Math.log2(d[2]) - V.mu2) / w, m = Math.max(e0, e1, e2);
+    const x0 = 2 ** (e0 - m), x1 = 2 ** (e1 - m), x2 = 2 ** (e2 - m), t = x0 + x1 + x2; return [x0 / t, x1 / t, x2 / t];
+}
+function dispShares(l1, l2) {
+    const w = W_(), a = (l1 - V.mu1) / w, b = (l2 - V.mu2) / w, m = Math.max(0, a, b);
+    const x0 = 2 ** -m, x1 = 2 ** (a - m), x2 = 2 ** (b - m), t = x0 + x1 + x2; return [x0 / t, x1 / t, x2 / t];
+}
+const R15 = Math.sqrt(1.5), R2 = Math.SQRT2;
+const tanOf = s => [R15 * (s[2] - s[0]), (2 * s[1] - s[0] - s[2]) / R2];
+const sharesOfTan = (bx, by) => [1 / 3 - bx / Math.sqrt(6) - by / Math.sqrt(18), 1 / 3 + 2 * by / Math.sqrt(18), 1 / 3 + bx / Math.sqrt(6) - by / Math.sqrt(18)];
+function lambdaOfShares(s) {
+    const w = W_(), f = x => Math.max(1e-300, x);
+    return [Math.max(-60, Math.min(60, V.mu1 + w * Math.log2(f(s[1]) / f(s[0])))), Math.max(-60, Math.min(60, V.mu2 + w * Math.log2(f(s[2]) / f(s[0]))))];
+}
+const L = { f: 200, cx: 0, cy: 0 };
+const toPx = b => [L.cx + L.f * b[0], L.cy - L.f * b[1]];
+const pxOfDir = d => toPx(tanOf(dispOfDir(d)));
+const unitOfLambda = (l1, l2) => { const a = 2 ** l2, b = 2 ** l1, n = Math.hypot(1, a, b); return [Math.atan2(a, 1) / Q, b / n]; };   // → (u, y)
+function tanMax(ux, uy) {
+    const c = [-ux / Math.sqrt(6) - uy / Math.sqrt(18), 2 * uy / Math.sqrt(18), ux / Math.sqrt(6) - uy / Math.sqrt(18)];
+    let t = Infinity; for (const ci of c) if (ci < 0) t = Math.min(t, (1 / 3) / -ci); return t;
+}
+
+// ── the dial's two needles (wedge-browse.html) ────────────────────────────────────────────────────────────────────
+const THRUST = 0.4, SPRING_MS = 150, TAP_PX = 6;
+const G = { held: false, gx: 0, gy: 0, zx: 0, zy: 0, springAt: -1, sx: 0, sy: 0 };
+function bluePos() { const z = Math.hypot(G.zx, G.zy); if (z < 1e-15) return [0, 0];
+    const ux = G.zx / z, uy = G.zy / z, r = Math.min(Math.sinh(z), 0.9995 * tanMax(ux, uy)); return [ux * r, uy * r]; }
+const blueLambda = () => lambdaOfShares(sharesOfTan(...bluePos()));
+function push(dt) { if (!G.held) return; G.zx += THRUST * G.gx * dt; G.zy += THRUST * G.gy * dt;
+    const z = Math.hypot(G.zx, G.zy); if (z > 1e-15) { const zmax = Math.asinh(0.9995 * tanMax(G.zx / z, G.zy / z)); if (z > zmax) { G.zx *= zmax / z; G.zy *= zmax / z; } } }
+function placeBlue(l1, l2) { const b = tanOf(dispShares(l1, l2)), r = Math.hypot(...b); if (r < 1e-15) { G.zx = G.zy = 0; return; } const z = Math.asinh(r); G.zx = b[0] / r * z; G.zy = b[1] / r * z; }
+function recentre(l1, l2) { V.mu1 = l1; V.mu2 = l2; G.zx = G.zy = 0; dirty = true; }
+function release() { if (!G.held) return; G.held = false; G.springAt = performance.now(); G.sx = G.gx; G.sy = G.gy; const l = blueLambda(); recentre(l[0], l[1]); }
+function setRadius(lw) { const l = blueLambda(); V.lw = Math.max(LW_MIN, Math.min(3, lw)); placeBlue(l[0], l[1]); dirty = true;
+    const k = blueLambda(); if (Math.abs(k[0] - l[0]) + Math.abs(k[1] - l[1]) > 1e-6 * W_()) recentre(l[0], l[1]); }
+function setH(k) { V.lH = Math.max(K_MIN, Math.min(K_MAX, Math.round(k))); HELD = heldOf(); dirty = true; }
+
+// ── level of detail: open the cells largest on the screen first; the rest held as totals ─────────────────────────────
+const BUDGET = 6000, MIN_PX = 3, ENUM = 12, SAMPLE_CAP = 20000, SPARSE = 20;   // a cell's stars in full while one in 20 px² or sparser
+let drawn = { cells: [], items: [], total: 0n, held: 0n, opened: 0 }, dirty = true;
+function footprint(n) {
+    const s = 2 ** -n.d, u0 = n.i * s, u1 = u0 + s, y0 = n.k * s, y1 = y0 + s, um = (u0 + u1) / 2, ym = (y0 + y1) / 2;
+    const p = [[u0, y0], [um, y0], [u1, y0], [u1, ym], [u1, y1], [um, y1], [u0, y1], [u0, ym]].map(([u, y]) => pxOfDir(dirOf(u, y)));
+    let a = 0; for (let i = 0; i < 8; i++) { const q = p[i], r = p[(i + 1) % 8]; a += q[0] * r[1] - r[0] * q[1]; }
+    return Math.sqrt(Math.abs(a) / 2);
+}
+function rebuild() {
+    const heap = [], up = i => { while (i > 0) { const p = (i - 1) >> 1; if (heap[p].f >= heap[i].f) break; [heap[p], heap[i]] = [heap[i], heap[p]]; i = p; } };
+    const down = i => { for (;;) { const l = 2 * i + 1, r = l + 1; let m = i; if (l < heap.length && heap[l].f > heap[m].f) m = l; if (r < heap.length && heap[r].f > heap[m].f) m = r; if (m === i) break; [heap[m], heap[i]] = [heap[i], heap[m]]; i = m; } };
+    const pushH = n => { n.f = footprint(n); heap.push(n); up(heap.length - 1); };
+    const cells = [], items = []; let opened = 0;
+    const root = { ...ROOT }; root.cnt = count(root); pushH(root);
+    while (heap.length && heap[0].f >= MIN_PX && heap.length + cells.length + items.length < BUDGET) {
+        const n = heap[0], lastN = heap.pop(); if (heap.length) { heap[0] = lastN; down(0); }
+        if (n.cnt <= ENUM) { const full = n.cnt <= n.f * n.f / SPARSE; for (const s of starsIn(n)) { s.full = full; items.push(s); } continue; }
+        if (n.d >= DMAX) { cells.push(n); continue; }
+        opened++;
+        for (const c of kidsOf(n)) { c.cnt = count(c); if (c.cnt > 0) pushH(c); }
+    }
+    for (const n of heap) cells.push(n);
+    let total = BigInt(items.length); for (const c of cells) total += count(c, true);
+    // the totals drawn thinned: every held star in them shown with one chance, the same for all (one in `thin`)
+    let sum = 0; for (const c of cells) sum += c.cnt;
+    const p = Math.min(1, SAMPLE_CAP / Math.max(1, sum));
+    for (const c of cells) { const s = 2 ** -c.d; c.px = pxOfDir(dirOf((c.i + 0.5) * s, (c.k + 0.5) * s));
+        const k = Math.min(60, Math.floor(p * c.cnt + U(h32(c.d * 7919 ^ h32(lo(c.i) + 0x51ed) ^ h32(lo(c.k) + 0x27d4)))));
+        c.dots = sampleFew(c, k).map(s => ({ px: pxOfDir(s.dir), col: addrCol(addressOf(s.r)) })); }
+    for (const it of items) { it.px = pxOfDir(it.dir); it.shown = it.full || U(h32(seedOf(it.j, it.i, it.k, it.t) + 9)) < p; }
+    drawn = { cells, items, total, held: heldTotal(), opened, thin: 1 / p };
+    dirty = false;
+}
+// a star's distance address against H: near in proportion, or the level past the corner
+function addressOf(r) { const s = r / Hof(); if (s <= 1 / N_ADDR) return { kind: 'home', s }; if (s > 2 ** L_LEVELS) return { kind: 'past', s };
+    if (s <= 1) return { kind: 'near', s }; return { kind: 'far', s, level: Math.max(1, Math.ceil(Math.log2(s) - 1e-12)) }; }
+const addrCol = ad => ad.kind === 'far' ? `hsl(${38 - 4 * ad.level}, ${70 - 6 * ad.level}%, ${66 - 4 * ad.level}%)` : ad.kind === 'near' ? '#8ce6cd' : ad.kind === 'home' ? '#ece9f4' : '#6c6a78';
+
+// ── drawing ──────────────────────────────────────────────────────────────────────────────────────────────────────
+const cv = document.getElementById('stage'), ctx = cv.getContext('2d');
+let DPR = 1, rungsOn = true, sel = null, hov = null, frames = 0;
+function layout() {
+    DPR = Math.min(2, devicePixelRatio || 1); const W = innerWidth, H = innerHeight; cv.width = W * DPR; cv.height = H * DPR;
+    const mobile = W < 761, left = mobile ? 10 : 400, right = W >= 1100 ? 290 : 14, top = mobile ? 150 : 30, bottom = mobile ? H * 0.42 : 150;
+    const fw = (W - left - right) / (2 * R15 + 0.35), fh = (H - top - bottom) / (R2 + 1 / R2 + 0.3);
+    L.f = Math.max(60, Math.min(fw, fh)); L.cx = left + (W - left - right) / 2; L.cy = top + L.f * (R2 + 0.15);
+    dirty = true; drawRuler();
+}
+const fmtB = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+const fmtE = x => (x >= 1e5 || x < 1e-3) ? x.toExponential(2) : x.toPrecision(4);
+const fmtL = x => (x >= 0 ? '+' : '−') + Math.abs(x).toFixed(Math.abs(x) < 1e-3 ? 9 : Math.abs(x) < 1 ? 5 : 3);
+function draw(now) {
+    if (dirty) rebuild();
+    const W = innerWidth, H = innerHeight;
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0); ctx.clearRect(0, 0, W, H);
+    const V0 = toPx(tanOf([1, 0, 0])), V1 = toPx(tanOf([0, 1, 0])), V2 = toPx(tanOf([0, 0, 1]));
+    ctx.fillStyle = 'rgba(255,255,255,0.02)'; ctx.beginPath(); ctx.moveTo(...V0); ctx.lineTo(...V1); ctx.lineTo(...V2); ctx.closePath(); ctx.fill();
+    ctx.globalAlpha = 0.85;                                          // the totals, thinned: real stars, one in every `thin`
+    for (const c of drawn.cells) for (const d of c.dots) { ctx.fillStyle = d.col; ctx.fillRect(d.px[0] - 0.75, d.px[1] - 0.75, 1.5, 1.5); }
+    ctx.globalAlpha = 1;
+    if (rungsOn) {                                                  // the three pairs' dials, the medians the corners
+        const pen = [[V2, k => [1, 2 ** k, 0]], [V1, k => [1, 0, 2 ** k]], [V0, k => [0, 1, 2 ** k]]]; ctx.lineWidth = 1;
+        for (const [apex, edge] of pen) for (let k = -7; k <= 7; k++) { const e = edge(k), t = e[0] + e[1] + e[2], p = toPx(tanOf(e.map(x => x / t)));
+            ctx.strokeStyle = k === 0 ? 'rgba(212,160,82,0.6)' : `rgba(236,233,244,${(0.12 - 0.01 * Math.abs(k)).toFixed(3)})`;
+            ctx.setLineDash(k === 0 ? [6, 5] : []); ctx.beginPath(); ctx.moveTo(...apex); ctx.lineTo(...p); ctx.stroke(); }
+        ctx.setLineDash([]);
+    }
+    ctx.strokeStyle = 'rgba(236,233,244,0.55)'; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(...V0); ctx.lineTo(...V1); ctx.lineTo(...V2); ctx.closePath(); ctx.stroke();
+    ctx.font = '500 18px "DM Mono", monospace'; ctx.textAlign = 'center';
+    ctx.fillStyle = '#d4a052'; ctx.fillText('h', V0[0] - 14, V0[1] + 18); ctx.fillStyle = '#8ce6cd'; ctx.fillText('v', V1[0], V1[1] - 10); ctx.fillStyle = '#b59cf0'; ctx.fillText('v₂', V2[0] + 16, V2[1] + 18);
+    for (const it of drawn.items) { if (!it.shown) continue; const ad = addressOf(it.r), rad = ad.kind === 'near' ? 2.2 + 1.6 * Math.min(1, 1 - ad.s) : Math.max(1.2, 3 - 0.3 * ad.level);
+        ctx.fillStyle = addrCol(ad); ctx.beginPath(); ctx.arc(it.px[0], it.px[1], rad, 0, 7); ctx.fill(); }
+    for (const [m, col] of [[hov, 'rgba(140,230,205,0.9)'], [sel, '#ffffff']]) if (m) { const p = m.kind === 'star' ? pxOfDir(m.s.dir) : m.px;
+        ctx.strokeStyle = col; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(p[0], p[1], 8, 0, 7); ctx.stroke(); }
+    let gx = G.gx, gy = G.gy;
+    if (!G.held) { if (G.springAt >= 0) { const t = (now - G.springAt) / SPRING_MS; if (t >= 1) { G.springAt = -1; gx = gy = 0; } else { const k = (1 - t) ** 3; gx = G.sx * k; gy = G.sy * k; } } else gx = gy = 0; }
+    const hub = [L.cx, L.cy], gp = toPx([gx, gy]), bp = toPx(bluePos());
+    if (gx || gy) { ctx.strokeStyle = '#d4a052'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(...hub); ctx.lineTo(...gp); ctx.stroke(); ctx.fillStyle = '#d4a052'; ctx.beginPath(); ctx.arc(gp[0], gp[1], 6, 0, 7); ctx.fill(); }
+    ctx.strokeStyle = '#7fb2ff'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(...hub); ctx.lineTo(...bp); ctx.stroke();
+    ctx.fillStyle = '#7fb2ff'; ctx.beginPath(); ctx.arc(bp[0], bp[1], 5.5, 0, 7); ctx.fill();
+    ctx.fillStyle = '#ece9f4'; ctx.beginPath(); ctx.arc(hub[0], hub[1], 3.2, 0, 7); ctx.fill();
+    frames++;
+}
+function under(l1, l2) {                                            // the star or cell under a direction, among those drawn
+    const [u, y] = unitOfLambda(l1, l2);
+    for (const c of drawn.cells) { const s = 2 ** -c.d; if (u >= c.i * s && u < (c.i + 1) * s && y >= c.k * s && y < (c.k + 1) * s) return { kind: 'cell', c, px: c.px }; }
+    let best = null, bd = Infinity; const p = pxOfDir(dirOf(u, y));
+    for (const it of drawn.items) { const d = Math.hypot(it.px[0] - p[0], it.px[1] - p[1]); if (d < bd) { bd = d; best = it; } }
+    return best && bd < 12 ? { kind: 'star', s: best } : null;
+}
+function readAtPx(x, y) {
+    let best = null, bd = 14;
+    for (const it of drawn.items) { if (!it.shown) continue; const d = Math.hypot(it.px[0] - x, it.px[1] - y); if (d < bd) { bd = d; best = { kind: 'star', s: it }; } }
+    if (best) return best;
+    for (const c of drawn.cells) { const d = Math.hypot(c.px[0] - x, c.px[1] - y); if (d < bd) { bd = d; best = { kind: 'cell', c, px: c.px }; } }
+    return best;
+}
+// ── the inset: the hand's ray, each star at atan(d/H) ────────────────────────────────────────────────────────────
+const sc = document.getElementById('sweep'), sg = sc.getContext('2d');
+function drawSweep() {
+    const W = sc.width, Hh = sc.height, ox = 36, oy = Hh - 40, R = Math.min(W - ox - 30, oy - 24);
+    sg.clearRect(0, 0, W, Hh); sg.fillStyle = '#0b0b12'; sg.fillRect(0, 0, W, Hh);
+    const at = (a, rr = R) => [ox + rr * Math.cos(a), oy - rr * Math.sin(a)];
+    sg.strokeStyle = 'rgba(236,233,244,0.18)'; sg.lineWidth = 10; sg.beginPath(); sg.arc(ox, oy, R, -Math.atan(2 ** L_LEVELS), -Math.atan(1 / N_ADDR), false); sg.stroke();
+    sg.strokeStyle = 'rgba(236,233,244,0.45)'; sg.lineWidth = 2; sg.beginPath(); sg.arc(ox, oy, R, -Math.PI / 2, 0); sg.stroke();
+    for (let k = -5; k <= 6; k++) { const a = Math.atan(2 ** k), p = at(a), q = at(a, R - (k === 0 ? 22 : 10));
+        sg.strokeStyle = k === 0 ? '#8ce6cd' : 'rgba(236,233,244,0.35)'; sg.lineWidth = k === 0 ? 3 : 1.5; sg.beginPath(); sg.moveTo(...p); sg.lineTo(...q); sg.stroke(); }
+    sg.font = '18px "DM Mono", monospace'; sg.fillStyle = 'rgba(200,200,208,0.85)'; sg.textAlign = 'left';
+    sg.fillText('home', ox + R - 8, oy + 26); sg.fillText('horizon', ox - 26, oy - R - 8); const cp = at(Math.PI / 4); sg.fillStyle = '#8ce6cd'; sg.fillText('d = H', cp[0] + 10, cp[1] - 6);
+    const l = blueLambda(), u = under(l[0], l[1]);
+    let list = [], label = 'nothing held under the hand';
+    if (u && u.kind === 'cell') { list = sampleOf(u.c); label = `${list.length} of ${fmtB(count(u.c, true))} stars`; }
+    else if (u) { list = [u.s]; label = 'one star'; }
+    for (const s of list) { const a = Math.atan(s.r / Hof()), p = at(a), q = at(a, R + 12);
+        sg.strokeStyle = addrCol(addressOf(s.r)); sg.lineWidth = 2.5; sg.beginPath(); sg.moveTo(...p); sg.lineTo(...q); sg.stroke(); }
+    sg.fillStyle = 'rgba(200,200,208,0.85)'; sg.fillText(label, ox, Hh - 10);
+}
+// ── the ruler: H set along distance ──────────────────────────────────────────────────────────────────────────────
+const ru = document.getElementById('ruler'), rg = ru.getContext('2d'), RU_LO = -10, RU_HI = 31;
+function drawRuler() {
+    const W = ru.clientWidth || 340, Hh = ru.clientHeight || 92, d = Math.min(2, devicePixelRatio || 1);
+    if (ru.width !== Math.round(W * d)) { ru.width = Math.round(W * d); ru.height = Math.round(Hh * d); }
+    rg.setTransform(d, 0, 0, d, 0, 0); rg.clearRect(0, 0, W, Hh); rg.fillStyle = '#0b0b12'; rg.fillRect(0, 0, W, Hh);
+    const P = 10, X = e => P + (e - RU_LO) / (RU_HI - RU_LO) * (W - 2 * P), k = V.lH, y0 = 18, y1 = 52;
+    rg.fillStyle = 'rgba(236,233,244,0.10)'; rg.fillRect(X(RU_LO), y0, X(k - 5) - X(RU_LO), y1 - y0);
+    rg.fillStyle = 'rgba(140,230,205,0.30)'; rg.fillRect(X(k - 5), y0, X(k) - X(k - 5), y1 - y0);
+    rg.strokeStyle = 'rgba(140,230,205,0.85)'; rg.lineWidth = 1;
+    for (let m = 1; m <= N_ADDR; m++) { const x = X(k + Math.log2(m / N_ADDR)); rg.beginPath(); rg.moveTo(x, y0 + 4); rg.lineTo(x, y1 - 4); rg.stroke(); }
+    for (let l = 1; l <= L_LEVELS; l++) { rg.fillStyle = l % 2 ? 'rgba(212,160,82,0.42)' : 'rgba(212,160,82,0.26)'; rg.fillRect(X(k + l - 1), y0, X(k + l) - X(k + l - 1), y1 - y0); }
+    rg.fillStyle = 'rgba(108,106,120,0.22)'; rg.fillRect(X(k + L_LEVELS), y0, X(RU_HI) - X(k + L_LEVELS), y1 - y0);
+    rg.strokeStyle = '#d4a052'; rg.lineWidth = 2.5; rg.beginPath(); rg.moveTo(X(k), y0 - 8); rg.lineTo(X(k), y1 + 6); rg.stroke();
+    rg.font = '11px "DM Mono", monospace'; rg.fillStyle = '#d4a052'; rg.textAlign = X(k) > W - 90 ? 'right' : 'left'; rg.fillText(`H = 2^${k} u`, X(k) + (X(k) > W - 90 ? -5 : 5), y0 - 6);
+    rg.textAlign = 'left'; rg.fillStyle = '#8a8a96';
+    for (let e = -10; e <= 30; e += 10) { rg.fillRect(X(e), y1 + 2, 1, 5); rg.fillText(`2^${e}`, X(e) - 8, y1 + 18); }
+    rg.fillText('home', X(RU_LO) + 2, y1 + 32); rg.textAlign = 'right'; rg.fillText('past the held edge →', W - P, y1 + 32);
+    const h = HELD;
+    document.getElementById('rulerNote').textContent = `held: ${N_ADDR} addresses from H/32 to H in proportion, then ${L_LEVELS} doublings to 64H; ` +
+        `the field's levels ${h.part0 ? '0 (in part) to ' + h.jB : h.jA + ' to ' + h.jB}, ${fmtB(heldTotal())} stars. Drag or tap to set H.`;
+}
+let ruDrag = false;
+const ruAt = e => { const r = ru.getBoundingClientRect(), P = 10, f = (e.clientX - r.left - P) / (r.width - 2 * P); return RU_LO + f * (RU_HI - RU_LO); };
+ru.addEventListener('pointerdown', e => { ruDrag = true; ru.setPointerCapture(e.pointerId); setH(ruAt(e)); syncCtl(); });
+ru.addEventListener('pointermove', e => { if (ruDrag) { const k = Math.round(ruAt(e)); if (k !== V.lH) { setH(k); syncCtl(); } } });
+ru.addEventListener('pointerup', () => { ruDrag = false; }); ru.addEventListener('pointercancel', () => { ruDrag = false; });
+
+// ── HUD ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+function describeStar(s) { const ad = addressOf(s.r), lam = lambdaOfDir(s.dir);
+    return `star #${fmtB(indexOf(s))}: the reading [h : v : v₂] = [1 : 2^${lam[0].toFixed(4)} : 2^${lam[1].toFixed(4)}]; ` +
+        `d = ${fmtE(s.r)} u = ${fmtE(s.r / Hof())} H, ${ad.kind === 'near' ? 'near, inside the corner' : ad.kind === 'far' ? 'level ' + ad.level + ' past the corner' : ad.kind === 'home' ? 'merged into home' : 'past the held edge'}; the field's level ${s.j}`; }
+function hudText() {
+    const l = blueLambda(), u = under(l[0], l[1]), out = [];
+    out.push(`the hand: [h : v : v₂] = [1 : 2^${l[0].toFixed(4)} : 2^${l[1].toFixed(4)}], ${fmtL(l[0] - V.mu1)}, ${fmtL(l[1] - V.mu2)} levels from the drawing`);
+    if (u && u.kind === 'cell') { const s = 2 ** -u.c.d; out.push(`under it: a cell of ${fmtB(count(u.c, true))} held stars, ${u.c.d} quarterings deep (${fmtE(s * s * Q)} sr)`); }
+    else if (u) out.push(`under it: star #${fmtB(indexOf(u.s))}`);
+    else out.push('under it: no held star');
+    out.push(`the drawing: V = 2^${V.mu1.toFixed(3)}·H, V₂ = 2^${V.mu2.toFixed(3)}·H; one rung holds w = ${fmtE(W_())} levels; H = 2^${V.lH} u`);
+    out.push(`held, H/32 to 64H: ${fmtB(drawn.held)} stars; drawn as ${fmtB(drawn.cells.length)} totals and ${fmtB(drawn.items.length)} stars, adding to ${fmtB(drawn.total)}${drawn.total === drawn.held ? ', exactly' : ''}; the totals shown thinned, one star in ${fmtE(drawn.thin)}. Nearer merge into home; past 64H, without end, none drawn`);
+    const m = hov || sel;
+    if (m) out.push((m === sel && !hov ? 'read: ' : 'pointed at: ') + (m.kind === 'star' ? describeStar(m.s) : `a cell of ${fmtB(count(m.c, true))} held stars`));
+    return (innerWidth < 761 ? [out[0], out[3], out[4]].filter(Boolean) : out).join('\n');
+}
+// ── controls ─────────────────────────────────────────────────────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+function syncCtl() { $('lw').value = V.lw; $('lwo').textContent = fmtE(W_()) + ' lv'; $('bRungs').classList.toggle('on', rungsOn); drawRuler(); }
+$('lw').oninput = e => { setRadius(+e.target.value); syncCtl(); };
+$('hDown').onclick = () => { setH(V.lH - 1); syncCtl(); }; $('hUp').onclick = () => { setH(V.lH + 1); syncCtl(); };
+$('bRungs').onclick = () => { rungsOn = !rungsOn; syncCtl(); };
+$('bStart').onclick = () => { V.mu1 = V.mu2 = 0; G.zx = G.zy = 0; V.lw = 1; setH(0); sel = hov = null; dirty = true; syncCtl(); };
+function goTo(I) {                                                  // a star by its index: at the triple corner, H at its level
+    const s = fromIndex(I); if (!s) return null;
+    setH(Math.round(Math.log2(s.r)));
+    // the cell round it two quarterings below the densest held level's leaves holds a few held stars: open it on the screen
+    const dd = Math.min(DMAX, Dof(HELD.jB) + 2), f = 2 ** dd, ci = Math.floor(s.u * f), ck = Math.floor(s.y * f), e = 1 / f, lam = lambdaOfDir(s.dir);
+    const corners = [[ci * e, ck * e], [(ci + 1) * e, ck * e], [ci * e, (ck + 1) * e], [(ci + 1) * e, (ck + 1) * e]];
+    let spread = 1e-15; for (const [u, y] of corners) { const m = lambdaOfDir(dirOf(Math.min(u, 1 - 1e-16), Math.min(y, 1 - 1e-16))); spread = Math.max(spread, Math.abs(m[0] - lam[0]), Math.abs(m[1] - lam[1])); }
+    V.lw = Math.max(LW_MIN, Math.min(V.lw, Math.log2(spread * 4)));
+    recentre(lam[0], lam[1]); sel = { kind: 'star', s }; hov = null; syncCtl(); return s;
+}
+$('bGo').onclick = () => { const v = $('goto').value.replace(/[^0-9]/g, ''); if (v && !goTo(v)) $('goto').value = 'no star has that index'; };
+$('goto').onkeydown = e => { if (e.key === 'Enter') $('bGo').onclick(); };
+$('bSel').onclick = () => { if (!sel) return; if (sel.kind === 'star') goTo(indexOf(sel.s)); else { const s = 2 ** -sel.c.d, lam = lambdaOfDir(dirOf((sel.c.i + 0.5) * s, (sel.c.k + 0.5) * s)); recentre(lam[0], lam[1]); } };
+$('fold').onclick = () => { $('panel').classList.toggle('folded'); $('fold').textContent = $('panel').classList.contains('folded') ? '▴' : '▾'; };
+let down = null;
+const toTan = (x, y) => [(x - L.cx) / L.f, (L.cy - y) / L.f];
+cv.addEventListener('pointerdown', e => { down = { x: e.clientX, y: e.clientY, moved: false }; cv.setPointerCapture(e.pointerId); });
+cv.addEventListener('pointermove', e => {
+    if (!down) { if (e.pointerType === 'mouse') { const r = readAtPx(e.clientX, e.clientY); hov = r && r.kind === 'star' ? r : null; } return; }
+    if (!down.moved && Math.hypot(e.clientX - down.x, e.clientY - down.y) < TAP_PX) return;
+    down.moved = true; G.held = true; G.springAt = -1; hov = null;
+    const t = toTan(e.clientX, e.clientY), r = Math.hypot(...t), cap = 4; [G.gx, G.gy] = r > cap ? [t[0] * cap / r, t[1] * cap / r] : t;
+});
+const endPress = e => { if (!down) return; const d = down; down = null; if (d.moved) release(); else sel = readAtPx(e.clientX, e.clientY); };
+cv.addEventListener('pointerup', endPress); cv.addEventListener('pointercancel', () => { down = null; release(); });
+cv.addEventListener('pointerleave', () => { hov = null; });
+let wheelH = 0;
+cv.addEventListener('wheel', e => { e.preventDefault();
+    if (e.shiftKey) { wheelH += (e.deltaY || e.deltaX); if (Math.abs(wheelH) > 80) { setH(V.lH - Math.sign(wheelH)); wheelH = 0; } }
+    else setRadius(V.lw + e.deltaY * (e.ctrlKey ? 0.02 : 0.004));
+    syncCtl(); }, { passive: false });
+const keysDown = new Set(), DIRS = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, 1], ArrowDown: [0, -1] };
+addEventListener('keydown', e => {
+    if (e.target && e.target.tagName === 'INPUT') return;
+    if (DIRS[e.key]) { keysDown.add(e.key); G.held = true; G.springAt = -1; let x = 0, y = 0; for (const k of keysDown) { x += DIRS[k][0]; y += DIRS[k][1]; } const r = Math.hypot(x, y) || 1; G.gx = x / r; G.gy = y / r; e.preventDefault(); }
+    if (e.key === '-' || e.key === '_') { setRadius(V.lw + 0.5); syncCtl(); }
+    if (e.key === '=' || e.key === '+') { setRadius(V.lw - 0.5); syncCtl(); }
+    if (e.key === '[') { setH(V.lH - 1); syncCtl(); } if (e.key === ']') { setH(V.lH + 1); syncCtl(); }
+    if (e.key === '0') $('bStart').onclick();
+});
+addEventListener('keyup', e => { if (keysDown.delete(e.key) && !keysDown.size) release(); });
+addEventListener('resize', layout);
+let last = performance.now(), tick = 0;
+function loop(now) {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    push(dt); draw(now);
+    if ((tick++ % 6) === 0) { $('hud').textContent = hudText(); if (innerWidth >= 1100) drawSweep(); }
+    requestAnimationFrame(loop);
+}
+layout(); syncCtl();
+if (qs.has('star') && /^\d+$/.test(qs.get('star'))) goTo(qs.get('star'));
+if (innerWidth < 761) { $('panel').classList.add('folded'); $('fold').textContent = '▴'; }
+requestAnimationFrame(loop);
+
+// ── test hook ──────────────────────────────────────────────────────────────────────────────────────────────────────
+window.__starDial = {
+    Dof, Mof, star, LEVEL0, ROOT: { ...ROOT }, kidsOf, inNode, heldOf, sampleOf, starsIn, dispOfDir, dispShares, lambdaOfDir, dirOf, addressOf,
+    indexOf: s => indexOf(s).toString(), fromIndex: I => fromIndex(I), countBelow: j => countBelow(j).toString(),
+    count: (n, k) => count(n, true, k === undefined ? HELD : heldOf(k)).toString(), heldTotal: k => heldTotal(k === undefined ? HELD : heldOf(k)).toString(),
+    rebuild: () => { rebuild(); return this.__starDial.drawn; },
+    get drawn() { return { cells: drawn.cells.length, items: drawn.items.length, total: drawn.total.toString(), held: drawn.held.toString(), opened: drawn.opened }; },
+    screen: () => drawn.items.slice(0, 3000).map(it => [indexOf(it).toString(), it.px[0], it.px[1]]),
+    pxOfStar: s => pxOfDir(s.dir),
+    view: () => ({ mu1: V.mu1, mu2: V.mu2, w: W_(), lw: V.lw, H: Hof(), lH: V.lH, zeta: [G.zx, G.zy], held: G.held, blue: blueLambda(), bluePos: bluePos() }),
+    hold(gx, gy, seconds, dt = 1 / 60) { G.held = true; G.gx = gx; G.gy = gy; for (let t = 0; t < seconds - 1e-9; t += dt) push(dt); return this.view(); },
+    release() { release(); rebuild(); return this.view(); },
+    set(o) { if ('mu1' in o) V.mu1 = o.mu1; if ('mu2' in o) V.mu2 = o.mu2; if ('lH' in o) setH(o.lH); if ('lw' in o) setRadius(o.lw); dirty = true; rebuild(); syncCtl(); return this.view(); },
+    goTo(I) { const s = goTo(I); if (!s) return null; rebuild(); return { index: indexOf(s).toString(), j: s.j, r: s.r, dir: s.dir }; },
+    under: (l1, l2) => { const u = under(l1, l2); return u ? (u.kind === 'cell' ? { kind: 'cell', count: count(u.c, true).toString(), d: u.c.d } : { kind: 'star', index: indexOf(u.s).toString() }) : null; },
+    hud: () => hudText(), get frames() { return frames; }
+};
+</script>
+</body>
+</html>

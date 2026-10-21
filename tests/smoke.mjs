@@ -1360,6 +1360,39 @@ try {
     failures.push(`[${current}] ${JSON.stringify(s3)}`);
   console.log(`${failures.length === before47 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–30; the reader's view at N and 2N apart by at most ${s3.diff.map(d => d[0].toExponential(1)).join(', ')} at N = 2^18, 2^30, 2^40, every pair at its corner and the near field ${e30[4].toFixed(3)}; H from 1 to 64 u leaves the reader's view as it was and slides a star 6 ln 2 along its own ray; 8 and 2,097,152 stars inside the corner; 16 of 32 distance addresses inside H at H = 2^−4, 1, 2^12, the first ${s3.dist[0][1].toFixed(4)} H wide at each; star #98,765,432,101,234 found; WebGL drew ${s3.frames} frames)`);
 
+  // ── 48. star-dial.html: the dial on an infinite star field (21 Oct; Tom: "combine the dial with the wedge to browse an infinite
+  //    starfield. we also need a way to set H."): every star back from its index at levels 0–30, level j holding 8^(j+1);
+  //    every cell's four quarters adding to it exactly at three H; the drawn totals and stars adding to the held exactly in
+  //    every state; the gold at tan 1 for a second moves the hand 0.4 and letting go re-centres on it; doubling H holds eight
+  //    times the stars; a star found by its index at the triple corner, under the hand, and the same pixel at another H ──
+  current = 'star-dial.html';
+  const before48 = failures.length;
+  await page.goto(new URL('star-dial.html', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__starDial && __starDial.frames > 2, null, { timeout: 30000 });
+  const sd = await page.evaluate(() => { const S = __starDial, o = { bad: 0 };
+    for (const j of [0, 1, 2, 5, 10, 15, 20, 25, 30]) for (let q = 0; q < 6; q++) { const N = 2 ** S.Dof(j), i = Math.floor((q * 0.618 % 1) * N), k = Math.floor((q * 0.414 % 1) * N), t = q % S.Mof(j);
+      const s = S.star(j, i, k, t), s2 = S.fromIndex(S.indexOf(s)); if (!s2 || s2.j !== j || s2.i !== i || s2.k !== k || s2.t !== t) o.bad++; if (!(s.r > (j ? 2 ** (j - 1) : 0) && s.r <= 2 ** j)) o.bad++; }
+    o.levels = [0, 1, 7, 20].every(j => BigInt(S.countBelow(j + 1)) - BigInt(S.countBelow(j)) === 8n ** BigInt(j + 1) && 4 ** S.Dof(j) * S.Mof(j) === 8 ** (j + 1));
+    o.split = true; let seed = 7; const rnd = () => (seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648;
+    for (const k of [-4, 0, 12]) for (let r = 0; r < 12; r++) { let n = S.ROOT; for (let d = 0; d < 44; d++) { const kids = S.kidsOf(n), sum = kids.reduce((a, c) => a + BigInt(S.count(c, k)), 0n);
+      if (sum !== BigInt(S.count(n, k))) o.split = false; n = kids[Math.floor(rnd() * 4)]; } }
+    o.root = [-4, 0, 4, 5, 12, 24].every(k => S.count(S.ROOT, k) === S.heldTotal(k));
+    o.totals = []; const st = () => { const d = S.drawn; o.totals.push(d.total === d.held && BigInt(d.total) > 0n); };
+    S.set({ mu1: 0, mu2: 0, lw: 1, lH: 0 }); st();
+    const h = S.hold(1, 0, 1.0); o.zeta = Math.hypot(...h.zeta); const blue = h.blue, r = S.release();
+    o.recentre = Math.max(...S.dispShares(...blue).map(x => Math.abs(x - 1 / 3))); o.mu = Math.max(Math.abs(r.mu1 - blue[0]), Math.abs(r.mu2 - blue[1])); st();
+    S.set({ lw: -8 }); st(); S.set({ lH: 9 }); st();
+    o.ratio = Number(BigInt(S.heldTotal(13))) / Number(BigInt(S.heldTotal(12)));
+    const g = S.goTo('123456789012345'); o.goto = { centre: Math.max(...S.dispOfDir(g.dir).map(x => Math.abs(x - 1 / 3))), under: S.under(...S.lambdaOfDir(g.dir)), lH: S.view().lH }; st();
+    const at = () => S.screen().find(x => x[0] === '123456789012345'); const p0 = at(); S.set({ lH: 13 }); const p1 = at(); st();
+    o.still = !!(p0 && p1 && p0[1] === p1[1] && p0[2] === p1[2]); S.set({ lH: 14 });
+    o.hud = S.hud(); o.frames = S.frames; return o; });
+  if (sd.bad || !sd.levels || !sd.split || !sd.root || !sd.totals.every(Boolean) || Math.abs(sd.zeta - 0.4) > 1e-9 || sd.recentre > 1e-12 || sd.mu !== 0 ||
+    Math.abs(sd.ratio - 8) > 0.01 || sd.goto.centre > 1e-6 || !sd.goto.under || sd.goto.under.index !== '123456789012345' || sd.goto.lH !== 14 || !sd.still ||
+    !/adding to 10,540,996,612,321,181,696, exactly/.test(sd.hud) || !/read: star #123,456,789,012,345/.test(sd.hud) || !(sd.frames > 0))
+    failures.push(`[${current}] ${JSON.stringify({ ...sd, hud: sd.hud.slice(0, 400) })}`);
+  console.log(`${failures.length === before48 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–30, level j holding 8^(j+1); every cell's quarters adding to it exactly at H = 2^−4, 1, 2^12; the drawn totals and stars adding to the held exactly in ${sd.totals.length} states; the gold at tan 1 for a second moves the hand ${sd.zeta.toFixed(3)}, letting go re-centres on it; doubling H holds ${sd.ratio.toFixed(3)} times the stars; star #123,456,789,012,345 at the triple corner (${sd.goto.centre.toExponential(0)}) and under the hand, the same pixel at H = 2^14 and 2^13)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
