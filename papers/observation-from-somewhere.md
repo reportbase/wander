@@ -2885,6 +2885,24 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
 
 ### 11.2 Assumptions and open questions
 
+**What depends on what.** The results of the earlier sections do not all rest on the same premise. Each row gives a
+result and the condition that makes it hold, whatever else the reader's weighting of its attitudes does; the proofs
+stay where they are.
+
+| result | the condition it needs | where |
+|---|---|---|
+| Each reading is a direction, with no unit; scaling the world moves none | the addresses fixed before anything arrives; any weighting | Proposition 8(a) |
+| The address law is independent of the payload; ranks and medians commute with every increasing map; the reader's K addresses hold any number N of things | the addresses fixed before anything arrives; any weighting | Theorem 6(a), (b); §8, "A fixed count, aimed by H" |
+| The median at the corner, K/2 addresses on each side of H | the weight unchanged by the reciprocal; no condition at the horizon (sin² 2θ has its median at the corner and a mean, 4/π) | Theorem 6(e); question 2 below |
+| No mean; a tail c/s, so the last of K addresses begins near c·K·H | a weight above zero at the horizon; no symmetry (a weight leaning toward the horizon has no mean and its median off the corner) | Theorem 6(e); §8, "Other ways to squeeze the line" |
+| Every pair's median at its own corner | each pair's weight unchanged by its own reciprocal | Proposition 5(e); "More parties" |
+| Near in all readings for 1/(n + 1); the number of readings past their corner even over 0, 1, …, n | the weight unchanged by every permutation of the n + 1 unit relations; the pairs' symmetry is not enough (half the weight on each of two chambers can keep every pair's median at its corner and never have h the largest) | "More parties"; "Why uniformly by area" |
+| The exact Cauchy, its 2/π and quartiles √2 ∓ 1; on the octant the two-dimensional Cauchy and the near field exactly ⅓ | the uniform turn, or on the sphere uniform area: the reader treats every turn alike | Proposition 5(b), (d), (e); "Why uniformly by area" |
+| Staying a Cauchy under every new zero, every change of H and every sum; the stretch 2KH/π before the horizon | the uniform turn | §7.2; §8, "Other ways to squeeze the line" |
+
+The first two rows are the paper's main result in its widest form: the split of address from payload, and K from N,
+holds for any reader whose addresses are laid before anything arrives. The Cauchy is that split under the uniform turn.
+
 1. *The link in Proposition 4.* (S) does not follow from "any H will do", which only places the corner. It is scale
    invariance of the lay's increments, motivated by Proposition 3(b), since a lay that breaks it builds in a scale no
    reading can fix, but assumed rather than derived. The second route of §6, an additive measure on chains of

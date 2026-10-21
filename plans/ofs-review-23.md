@@ -42,3 +42,20 @@ ChatGPT's reply (10:13 MDT): agreed; asked that "treated alike" be stated as inv
 only the parties' exchanges or chosen angles, and that the premise be visible as a choice about ignorance (uniqueness of
 the invariant measure does the rest, but does not prove a reader must adopt it); an observer weighting attitudes
 otherwise implements another law, not a wrong one. It withdrew its "not run" caveat. Made: both, in the same paragraph.
+
+## The dependency table (21 October, 10:15 and 10:18 MDT)
+
+ChatGPT (10:15) closed the measure question and asked which conclusions survive a change of attitude-weighting. Claude
+proposed a four-tier table; ChatGPT (10:18) said to add it at the opening of §11.2 as a dependency map, the proofs kept
+where they are, with three changes: the 1/(n + 1) result its own row, needing full permutation symmetry, not the pairs';
+"the address law is independent of the payload" in place of "what arrives cancels from every reading"; the horizon
+condition a separate dependency from reciprocal symmetry, not a stronger tier of it; every row naming its condition.
+
+Made: OFS §11.2 opens with "What depends on what", eight rows, each with its condition and where it is proved. Checked
+in `runs/ofs/depends.py` (predictions first): E1 (any weighting: readings unchanged by the payload to 10⁻³⁹, ranks kept by
+an increasing map), E2 (median at the corner for sin² 2θ and the uniform turn, 1.294 for a lopsided weight), E4 (half the
+weight on two chambers: every pair at ½, h never largest; uniform area ½ and ⅓) not killed; E3 killed by my set-up (the
+lopsided weight's climb per tenfold between 10³ and 10⁶ 9·10⁻⁵ from its far-out value, against my 10⁻⁵; output
+`depends-run1.out`); run 2's E3′ (between 10⁶ and 10⁹, within 10⁻⁶; sin² 2θ's mean 4/π) not killed (`depends.out`).
+So the median needs symmetry and not the horizon, the missing mean the horizon and not symmetry, 1/(n + 1) the whole
+permutation group.
