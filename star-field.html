@@ -100,6 +100,24 @@
         <div id="rulerNote" class="note"></div>
     </div>
 
+    <div class="panel">
+        <h2>Both readers, one K: the reader's K × K</h2>
+        <div class="grid">
+            <canvas id="kgrid" width="900" height="900"></canvas>
+            <div>
+                <p class="cap">The address reader reads which of its K directions a star lies in (the rays, at equal angles; half
+                    either side of the corner, v = h, gold dashed). The payload reader reads which of its K amounts along that
+                    direction (the rings, at d = H·tan(kπ/2K), drawn on the in-place lay: d/H inside H, 2 − H/d past it, so the
+                    whole field is 2H across, the far rings mirroring the near ones about H and the horizon the outer edge).
+                    Every star falls in one cell of the K × K, whatever N is. Move H: no ray moves, so no star changes its
+                    direction address; the rings slide, so stars change their distance address. The reader interacts with K;
+                    the writer, who needs every star's distance, interacts with N. (Lines drawn are thinned to at most 64 a
+                    side; the cells counted are all K.)</p>
+                <div id="kgridNote" class="note"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="grid">
         <div class="panel">
             <h2>The writer's view</h2>
@@ -298,10 +316,40 @@ function drawRuler() { const cv = $('ruler'), g = cv.getContext('2d'), Wr = cv.w
         `${n / 2} past it, the last but one ending at ${sci(b[n - 1])} u and the last reaching the horizon. Halve H and every near address halves; ` +
         `the counts stay ${n / 2} and ${n / 2}, at every N.`; }
 
+// ── both readers, one K: the K × K polar grid on the in-place lay (radius d/H inside H, 2 − H/d past it; 2 the horizon) ──
+const inPlace = d => { const s = d / Hof(); return s <= 1 ? s : 2 - 1 / s; };
+function gridCell(st, K = S.n) { const i = Math.min(K - 1, Math.floor(st.th / Q * K));                 // the address reader's: direction only
+    const j = Math.min(K - 1, Math.floor(Math.atan(st.r / Hof()) / Q * K));                             // the payload reader's: d against H·tan(kπ/2K)
+    return { i, j }; }
+let gridSample = null, gridSampleN = null;
+function sampleWorld(N, m = 2500) { if (gridSampleN === String(N)) return gridSample; const out = [];
+    let x = 0x2545f491; const rnd = () => (x = h32(x + 0x9e3779b9)) / 4294967296;
+    const top = N === Infinity ? countBelow(INF_LEVELS) : worldOf(N).N;
+    for (let t = 0; t < m; t++) { const I = (top * BigInt(Math.floor(rnd() * 2 ** 26)) * BigInt(Math.floor(rnd() * 2 ** 26) + 1)) >> 52n; const st = fromIndex(I < top ? I : top - 1n); if (st) out.push(st); }
+    gridSample = out; gridSampleN = String(N); return out; }
+function drawGrid() { const cv = $('kgrid'), g = cv.getContext('2d'), Wg = cv.width, ox = 50, oy = Wg - 50, Rp = (Wg - 100) / 2, K = S.n, H = Hof();
+    g.fillStyle = '#000'; g.fillRect(0, 0, Wg, Wg);
+    const P = (rr, t) => [ox + rr * Rp * Math.cos(t), oy - rr * Rp * Math.sin(t)], step = Math.max(1, K / 64);
+    for (let k = step; k < K; k += step) { const t = k / K * Q, b = Math.tan(t), rr = b <= 1 ? b : 2 - 1 / b;      // ring k at H·tan(kπ/2K)
+        g.strokeStyle = k < K / 2 ? 'rgba(140,230,205,0.35)' : 'rgba(181,156,240,0.35)'; g.lineWidth = 1; g.beginPath(); g.arc(ox, oy, rr * Rp, -Q, 0); g.stroke(); }
+    for (let k = step; k < K; k += step) { const t = k / K * Q; g.strokeStyle = 'rgba(255,255,255,0.13)'; g.beginPath(); g.moveTo(ox, oy); g.lineTo(...P(2, t)); g.stroke(); }
+    g.strokeStyle = 'rgba(212,160,82,0.95)'; g.lineWidth = 2; g.beginPath(); g.arc(ox, oy, Rp, -Q, 0); g.stroke();
+    g.setLineDash([6, 6]); g.beginPath(); g.moveTo(ox, oy); g.lineTo(...P(2, Q / 2)); g.stroke(); g.setLineDash([]);
+    g.strokeStyle = 'rgba(255,255,255,0.6)'; g.beginPath(); g.arc(ox, oy, 2 * Rp, -Q, 0); g.stroke();
+    const w = S.inf ? null : worldOf(curN());
+    for (const st of sampleWorld(curN())) { const [x, y] = P(inPlace(st.r), st.th); g.fillStyle = css(colOf(st.c), 0.8); g.fillRect(x - 1, y - 1, 2, 2); }
+    const sel = hover || pinned; let msg = '';
+    if (sel) { const [x, y] = P(inPlace(sel.r), sel.th), c = gridCell(sel); g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath(); g.arc(x, y, 9, 0, 2 * Math.PI); g.stroke();
+        msg = `Star #${fmt(indexOf(sel))}: direction address ${c.i + 1} of ${K} (the address reader's; no H in it), distance address ${c.j + 1} of ${K} (the payload reader's, against H = 2^${S.k} u). `; }
+    g.fillStyle = '#8a8a96'; g.font = '14px DM Mono, monospace';
+    g.fillText('H', ox + Rp + 6, oy - 6); g.fillText('2H, the horizon', ox + 2 * Rp - 150, oy - 6); g.fillText('home', ox - 40, oy + 30); g.fillText('the corner', ...P(1.55, Q / 2 + 0.03));
+    $('kgridNote').textContent = msg + `K = ${K}: ${K / 2} directions either side of the corner and ${K / 2} distances either side of H, ${(K * K).toLocaleString()} cells, at every N` +
+        (S.inf ? '' : ` (here ${fmt(w.N)} stars, about ${sci(Number(w.N) / (K * K))} a cell)`) + '. The dots are 2,500 of the world\'s stars drawn at random.'; }
+
 // ── render ───────────────────────────────────────────────────────────────────────────────────────────────────────────
 let last = null;
 function render() {
-    drawMap(); drawRuler(); const [a, b] = drawReader(), N = curN(), w = worldOf(N);
+    drawMap(); drawRuler(); drawGrid(); const [a, b] = drawReader(), N = curN(), w = worldOf(N);
     const near = nearCount(S.k, N), Ne = N === Infinity ? null : w.N, far = Ne === null ? null : Ne - near;   // the writer's count past the corner (d > H)
     last = { N: String(N), Neff: Ne === null ? '∞' : Ne.toString(), n: S.n, a: { near: a.near, maxDev: a.maxDev }, b: { near: b.near, maxDev: b.maxDev },
         diff: Math.max(...a.share.map((x, k) => Math.abs(x - b.share[k]))), near: near.toString(), a0: a.share, far: far === null ? '∞' : far.toString(), drawnInfo, jN: w.jN };
@@ -346,7 +394,7 @@ map.addEventListener('pointermove', e => { const sx = e.offsetX * scale(), sy = 
         const m = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]; view.cx = pinch.mid[0] - (m[0] - W / 2) / view.z; view.cy = pinch.mid[1] + (m[1] - W / 2) / view.z; moved = true; render(); return; }
     if (drag) { const dx = sx - drag.x, dy = sy - drag.y; if (Math.hypot(dx, dy) > 3) moved = true;
         if (moved) { view.cx = drag.cx - dx / view.z; view.cy = drag.cy + dy / view.z; hover = null; render(); } return; }
-    hoverAddr = -1; hover = starNear(sx, sy); drawMap(); drawReader(); showInfo(); });
+    hoverAddr = -1; hover = starNear(sx, sy); drawMap(); drawReader(); drawGrid(); showInfo(); });
 const up = e => { ptrs.delete(e.pointerId); if (ptrs.size < 2) pinch = null;
     if (drag && !moved) { pinned = starNear(e.offsetX * scale(), e.offsetY * scale()); hover = null; render(); } if (ptrs.size === 0) drag = null; };
 map.addEventListener('pointerup', up); map.addEventListener('pointercancel', up);
@@ -369,7 +417,7 @@ if (q.has('star') && /^\d+$/.test(q.get('star'))) goTo(q.get('star'));
 window.__starField = { G, na, nr, star, indexOf: s => indexOf(s).toString(), fromIndex: I => fromIndex(I), countBelow: j => countBelow(j).toString(),
     worldOf: N => worldOf(N === Infinity ? N : BigInt(N)), counts: (N, n) => counts(N === Infinity ? N : BigInt(N), n),
     readerView: (N, n) => readerView(N === Infinity ? N : BigInt(N), n), nearCount: (k, N) => nearCount(k, N === Infinity ? N : BigInt(N)).toString(),
-    lay, distanceAddresses, starNear, toScr, toPic, view, set, goTo, fit, state: () => ({ ...S, last }) };
+    lay, distanceAddresses, gridCell, inPlace, starNear, toScr, toPic, view, set, goTo, fit, state: () => ({ ...S, last }) };
 </script>
 </body>
 </html>

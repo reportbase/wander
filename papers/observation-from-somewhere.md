@@ -2166,6 +2166,22 @@ distance; it never holds more than K at a time. The count is the level of detail
 section n counts the addresses across the near field on a lay, a different measure; on the turn's own addresses it is
 K/2.)
 
+**Two readers, one K.** The two readers of §3.1 hold the same count, and they use H differently.
+- The address reader reads directions only. Its K addresses are the turn's equal angles, split K/2 and K/2 at the
+  corner by the drawing V = H. The value of H appears in none of its readings, so no choice of H moves them (Theorem
+  6(a)): its split is fixed by the geometry.
+- The payload reader receives amounts along given directions, in a unit no reading fixes. Its K addresses are laid
+  along the amount, and there the value of H is the zoom: K/2 in proportion up to H, at an absolute grain, the first
+  about πH/2K wide, and K/2 past it at a relative grain, out to the horizon.
+- On the in-place lay the far boundaries are the near ones reflected about H, since 2 − cot θ_k = 2 − tan(π/2 − θ_k).
+  So the K addresses fill a ruler 2H long, K/2 on each side of H, with the horizon at its end. On the logarithmic lay
+  the far half has no end in length, only in count.
+- Where an address and a payload meet (§4, "The address points at the payload"), the two readers together hold a polar
+  grid of K × K cells. Every thing falls in exactly one, whatever the world's count N. H moves only the radial split.
+
+The reader interacts with K. The writer, which states every distance in amounts, interacts with N: its number line is
+alike everywhere and needs a mark for every thing it places.
+
 **More points, fewer told apart.** A reader taking its view at once looks side-on at N points spaced uniformly around a
 circle and reads each one's position across its view to a resolution ε, relative to the circle's radius. Neighbours at
 angle θ from the middle of the view are about (2π/N)·cos θ apart, so the reader separates those with cos θ ≥ εN/2π,
@@ -2979,7 +2995,7 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 | symbol | kind | meaning |
 |---|---|---|
 | h, v, v₂ | unit relations, from 0 to 1 | h relates to H, v to V, v₂ to V₂; a relation requires two, a circle has two, a sphere three; how many a system includes sets its shape |
-| K | the reader's capacity | its whole count of addresses, fixed and prior to H; H splits it, half inside the corner and half past it (§8) |
+| K | the reader's capacity | its whole count of addresses, fixed and prior to H; H splits it, half inside the corner and half past it; the address reader's split is the corner, the payload reader's the zoom; the reader interacts with K, the writer with N (§8) |
 | H | the starting value | the reader's breadth, its thumb: the one value it chooses to start the system, not a measured size; its value sets the zoom (§8) |
 | V, V₂ | drawn | the other parties' wholes as the reader draws them, at H (§5) |
 | V* | an amount | a party's true breadth: never read; estimated (§9) or supplied from outside |
