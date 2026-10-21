@@ -1382,11 +1382,16 @@ hyperbola's point (cosh ζ, sinh ζ) level with T, give
 and each angle is twice the area of its sector from A: the circle's (Archimedes) and the hyperbola's. So one reading is
 laid three ways, each an exact function of the others:
 
-| ruler | range | at the corner x = 1 | the reciprocal x ↦ 1/x |
-|---|---|---|---|
-| x itself, the writer's number line (§9) | unbounded | a point like any other | no symmetry of the ruler |
-| θ = arctan x, the turn | bounded, a quarter turn | the middle, 45° | θ ↦ π/2 − θ, a reflection |
-| ζ = asinh x, the hyperbolic angle, Mercator's height | unbounded | asinh 1 ≈ 0.881 | no reflection of the ruler |
+| ruler | room for the near field, x ≤ 1 | room for the far field, x ≥ 1 | the corner x = 1 | the reciprocal x ↦ 1/x |
+|---|---|---|---|---|
+| x itself, the writer's number line (§9) | 1, in proportion | unbounded, in proportion | a point like any other | no symmetry of the ruler |
+| θ = arctan x, the turn | 45° | 45° | the middle | θ ↦ π/2 − θ, a reflection |
+| ζ = asinh x, the hyperbolic angle, Mercator's height | asinh 1 ≈ 0.881, nearly in proportion | unbounded, about ln 2 a doubling | where proportion gives way to levels | no reflection of the ruler |
+
+So the one figure draws the near field and the far field three ways. On the turn they are halves, mirrored by the
+reciprocal. On the hyperbolic angle they are the two address spaces above, proportion giving way to levels. On the
+writer's line there is no split, only the point. The table "drawing of the same addresses" above compares the fisheye
+and the two lays in the same terms.
 
 The third is the reader's lay of Proposition 4 made smooth. ζ ≈ x inside the corner and ζ ≈ ln 2x past it, and the
 lay (x, then 1 + ln x) never exceeds it by more than 1 − ln 2 ≈ 0.307, approached far out (0.119 at the corner).

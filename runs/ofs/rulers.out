@@ -41,4 +41,12 @@ pass  dt/dz - cos t at x = 0.3333: 0.0
 pass  dt/dz - cos t at x = 1.0: 0.0
 pass  dt/dz - cos t at x = 3.0: -1.3364e-51
 pass  dt/dz - cos t at x = 1000.0: 1.1511e-51
+pass  turn: near room - pi/4: 0.0
+pass  turn: far room - pi/4 (to the horizon): 0.0
+      zeta room for the doubling 1.0 to 2.0: 0.562262
+      zeta room for the doubling 2.0 to 4.0: 0.651077
+      zeta room for the doubling 4.0 to 8.0: 0.68176
+      zeta room for the doubling 8.0 to 16.0: 0.690239
+      zeta room for the doubling 16.0 to 32.0: 0.692416
+pass  zeta room per doubling at x = 1e12 - ln 2: -1.875e-25
 ALL PASS

@@ -699,7 +699,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   writer", after calendar's `geometry.html` dial): OFS §6 after Mercator's map. The circle, the unit hyperbola and the
   tangent at the apex lay one reading x three ways, the writer's line x, the turn θ = arctan x, the hyperbolic angle
   ζ = asinh x (Mercator's height, the reader's lay made smooth, within 1 − ln 2), x = tan θ = sinh ζ, θ = gd ζ; all carry
-  the corner, only the turn makes it the median (uniform ζ on [0, Z]: sinh(Z/2)). §7.8's SR entry has one sentence
+  the corner, only the turn makes it the median (uniform ζ on [0, Z]: sinh(Z/2)). Its table gives each ruler's room for the near
+  and far fields (Tom: "it kind of captures the near field far, field split at the corner"): the turn 45° and 45°, ζ
+  0.881 and unbounded at about ln 2 a doubling, x 1 and unbounded. §7.8's SR entry has one sentence
   (celerity x, rapidity ζ, speed sin θ). Checked in `runs/ofs/rulers.py`.
   **Since R247 (review 9, `plans/ofs-review-9.md`)** OFS keeps two groups apart: the reader's ignorance (turns of θ,
   rescalings of κ = V*/H, and the exchange of the unit relations, which acts on readings and drawings, not on κ) and the

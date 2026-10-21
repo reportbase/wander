@@ -64,4 +64,13 @@ for x in xs:
     t, z = atan(x), asinh(x)
     check(f"dt/dz - cos t at x = {mp.nstr(x,4)}", diff(gd, z) - cos(t), mpf(10)**-30)
 
+# 7. Room for the near field (x <= 1) and the far field (x >= 1) on each ruler. The turn: pi/4 each. The hyperbolic
+#    angle: asinh 1 near, unbounded far, the room per doubling asinh(2x) - asinh(x) tending to ln 2. The writer's line:
+#    1 near, unbounded far.
+check("turn: near room - pi/4", atan(1) - atan(0) - pi/4, mpf(10)**-45)
+check("turn: far room - pi/4 (to the horizon)", pi/2 - atan(1) - pi/4, mpf(10)**-45)
+for x in [mpf(1), mpf(2), mpf(4), mpf(8), mpf(16)]:
+    print(f"      zeta room for the doubling {mp.nstr(x,3)} to {mp.nstr(2*x,3)}: {mp.nstr(asinh(2*x) - asinh(x), 6)}")
+check("zeta room per doubling at x = 1e12 - ln 2", asinh(2*mpf(10)**12) - asinh(mpf(10)**12) - log(2), mpf(10)**-20)
+
 print("ALL PASS" if ok else "SOME FAILED")
