@@ -19,3 +19,21 @@ interpretation read as a theorem's cause). Its points, checked against the text,
 
 Its closing recommendation (mark each claim derived, conditional, interpretive or empirical) is the paper's practice in
 words rather than marks; OFS keeps no standing marks (SPN R202).
+
+## Follow-up (21 October, 10:06 MDT)
+
+ChatGPT then read the audit (`runs/ofs/wedge_audit.py`, `.out`) and asked one question: is the uniform area on the orthant
+derived from the observer's stated principles, or does it enter as an axiom? It noted it had read the audit's text and
+outputs, not run the script; the script was run here (all 115 checks pass) and was written against the paper's current
+propositions.
+
+Checked: 5(e) stated the uniform area as its hypothesis and contrasted the sweep uniform in both angles, but did not say
+where the measure comes from. It comes from the same premise as the circle's uniform turn: the reader's attitudes are the
+turns of one rigid bar, treated alike. With three unit relations those turns are the rotations of the sphere, whose only
+invariant probability is uniform area (the invariant measure of a compact group acting transitively is unique; Haar 1933);
+its restriction to the octant is (e)'s law, and likewise in n + 1 dimensions. The parties' exchanges alone do not fix it
+(a finite group; the audit's counterexample shows pair corners do not either), and the two angles uniform is a chart, not
+the group's measure.
+
+Made: OFS "Why uniformly by area", after 5(e)'s proof: the measure selected by the stated ignorance, as the uniform turn
+is; not forced by bounded observation alone.

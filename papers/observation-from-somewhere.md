@@ -1457,6 +1457,17 @@ and v₂ is a symmetry of the sphere that keeps the octant and its area, so the 
 of them. In the drawing a uniform direction is (1, c₁s, c₂s₂) normalised, so (c₁s, c₂s₂) has the law above and each
 median is divided by its c. ∎
 
+**Why uniformly by area.** (e) takes the uniform area as its hypothesis. It enters where the uniform turn enters
+for the circle, from the same premise: the reader's attitudes are the turns of one rigid bar, and it treats them alike
+(§2). With three unit relations those turns are all the rotations of the sphere, and the only probability on the
+sphere that every rotation leaves unchanged is uniform area (the invariant measure of a compact group acting
+transitively is unique; Haar 1933). Its part on the octant is (e)'s law, and with n + 1 unit relations the same holds on
+the sphere in n + 1 dimensions. The exchanges of the parties alone do not fix it: they are a finite group, and many
+laws on the octant are unchanged by them. Nor is it the law of the two sweeps taken uniformly in both angles: that is a
+chart of the sphere, which a rotation changes, and it moves the near field to 0.233 (below). So the uniform area is
+selected by the stated ignorance, as the uniform turn is; it is not forced by bounded observation alone, and an
+observer that counts its attitudes another way has another law.
+
 The law of (e) is the Cauchy wedge, the sweep in three dimensions. Where two unit relations are swept by one uniform
 turn, three are swept uniformly over the octant's area, and every pair it holds is swept as the circle is; uniform over
 the area is not uniform in both angles, which keeps only the pairs each angle reads ("Swept by altitude and azimuth",
