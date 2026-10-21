@@ -2180,7 +2180,10 @@ K/2.)
   grid of K × K cells. Every thing falls in exactly one, whatever the world's count N. H moves only the radial split.
 
 The reader interacts with K. The writer, which states every distance in amounts, interacts with N: its number line is
-alike everywhere and needs a mark for every thing it places.
+alike everywhere and needs a mark for every thing it places. The Cauchy is what keeps the two apart. Its K quantiles are fixed by the turn alone, at
+H·tan(kπ/2K), with no reference to how many things there are or how far they reach. Its last address runs to the
+horizon, so a finite K covers an unbounded world, and whatever lies past every other address lands in that tail. N
+then enters only as the share each address holds, which is payload (Theorem 6(a)).
 
 **More points, fewer told apart.** A reader taking its view at once looks side-on at N points spaced uniformly around a
 circle and reads each one's position across its view to a resolution ε, relative to the circle's radius. Neighbours at

@@ -6635,6 +6635,10 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
   - Joined at one point (OFS §4, III.20): a K × K polar grid, every thing in one cell whatever N; H moves only the radial split (a log-polar map, Schwartz's V1's form, `plans/neighbours.md`).
   - The reader interacts with K; the writer interacts with N (its number line alike everywhere, a mark per thing; R405's "equal metres cost N").
   - Made: OFS §8 "Two readers, one K", after "A fixed count, aimed by H", and the notation row; `star-field.html`'s panel "Both readers, one K", the K × K on the in-place lay with 2,500 of the world's stars, a star's two addresses (direction unmoved by H, distance moved).
+- **R411** (21 Oct, 07:51): "The cauchy is the mechanism that splits splits K from N." Recorded:
+  - The reader's K addresses are the uniform turn's quantiles, H·tan(kπ/2K): set by the turn and H, with no reference to N or to the world's extent (R403: the Cauchy does not need N). The last runs to the horizon, so finite K covers an unbounded world, the rest carried by the tail (R405). N enters only as the share at each address, the payload (Theorem 6(a)). The writer's equal metres need the extent, so N.
+  - Claude's note on scope: any map of the unbounded line onto a bounded one would also give a finite K with a last address at the horizon (the in-place lay 2 − 1/s is one); what the Cauchy adds is that it is the turn's own, unchosen, with its median at H and its family kept by every turn (OFS §7.2). So the split rests on the turn; the Cauchy is its law on the line.
+  - Made: two sentences closing OFS §8 "Two readers, one K".
 
 ## Appendix B. Demos and computations
 
