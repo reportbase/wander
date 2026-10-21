@@ -6621,6 +6621,10 @@ Example: v = 3h reads h/v = ⅓, facing back, under R167, and v/(4h) = ¾, facin
   - The reader's n addresses laid along distance are d_k = H·tan(kπ/2n), k = 1 … n − 1: the uniform turn's quantiles, the Cauchy's with its scale at H. Half lie inside H whatever H is (the median at the corner); H only sets where the split falls.
   - A small H keeps half the addresses in the near field, each as wide as H in proportion (the first tan(π/2n)·H, 0.049 H at n = 32), so they cover a small stretch finely; past H the rest spread in levels toward the horizon. A large H gives the near field more length at the same count, so less detail per amount (R229).
   - Shown as a ruler on `star-field-3d.html` (a log scale of distance, near half teal, far half violet, H gold); the star counts at the reader's addresses are unmoved by H, as before.
+- **R408** (21 Oct, 07:34), of R407's ruler: "Yes.  Add to ofs also.   This idea supports the idea that the readers K, their total address space to observe, is fixed but they can us cauchy to focus on any N, but only K at a time.  Always k, it's invarient, but he can zoom his near or far field by adjusting his H, not K." Recorded:
+  - Tom's K is the reader's count of addresses (n in OFS §8 and on the pages; the pages' own K is the cells' grain, a different thing). It is fixed, the reader's own; it is not a choice made per world.
+  - It is aimed, not resized: the world's N never enters what is held (Theorem 6(a), R403, R406), so any N, 2N or ∞ is held at the same n addresses, each holding its share; H places the split between near and far (the median, d = H) and so where the finest addresses fall (the first tan(π/2n)·H wide). The level of detail is the count; the zoom is H.
+  - Made: OFS §8 "A fixed count, aimed by H", after "What a larger H gives and takes" (R229); `star-field.html` now has H (2^−4 to 2^12 u, sliding every star along its ray on the writer's map, the reader's view unmoved) and the same ruler as the 3D page.
 
 ## Appendix B. Demos and computations
 

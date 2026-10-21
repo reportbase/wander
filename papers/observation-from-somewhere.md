@@ -2150,6 +2150,19 @@ every H up to d. Placed on the quarter turn at arctan(x/H), two amounts are set 
 arcsin((r − 1)/(r + 1)) for a ratio r, when H is their geometric mean. The best H is the corner of what is read, as
 the best estimate of a size is the corner of what is known (Proposition 13).
 
+**A fixed count, aimed by H.** The reader's count of addresses is its own and does not change; what it looks at does.
+Lay the n addresses of a uniform turn along distance under the drawing V = H. Their boundaries fall at
+d_k = H·tan(kπ/2n), k = 1, …, n − 1, the quantiles of the Cauchy with its scale at H.
+- Since tan(π/4) = 1, the middle boundary is d = H whatever H is. Half the addresses lie inside the corner and half past
+  it, at every H (Proposition 5(d)). H moves the split; it never changes the count.
+- A small H gives the near half a short stretch of amounts, each address a fine one, the first tan(π/2n)·H ≈ πH/2n wide.
+  A large H gives the same half a long stretch, each address coarser, and carries the far half farther out.
+- The world's own count enters nowhere. Doubling or thinning what arrives moves no address (Theorem 6(a)), so a world of
+  N things, of 2N, or of infinitely many is held at the same n addresses, each holding its share.
+
+So a reader can turn its n addresses on any world and, by its choice of H, place its finest ones anywhere along
+distance; it never holds more than n at a time. The count is the level of detail, and H is the zoom.
+
 **More points, fewer told apart.** A reader taking its view at once looks side-on at N points spaced uniformly around a
 circle and reads each one's position across its view to a resolution ε, relative to the circle's radius. Neighbours at
 angle θ from the middle of the view are about (2π/N)·cos θ apart, so the reader separates those with cos θ ≥ εN/2π,

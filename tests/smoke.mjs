@@ -1312,12 +1312,16 @@ try {
     o.Ns = [F.worldOf(2n ** 24n).N.toString(), F.worldOf(2n ** 25n).N.toString()];
     F.set({ m: 6 }); const s = F.star(2, 3, 1), [sx, sy] = F.toScr(s.R * Math.cos(s.th), s.R * Math.sin(s.th)), h = F.starNear(sx, sy);
     o.hover = !!h && F.indexOf(h) === F.indexOf(s); F.set({ m: 24 });
+    F.set({ k: 0 }); const a0 = JSON.stringify(F.state().last.a0), st = F.star(12, 1000, 900), R0 = F.lay(st.r); o.near0 = F.state().last.near;
+    F.set({ k: 6 }); o.Hsame = JSON.stringify(F.state().last.a0) === a0; o.slid = R0 - F.lay(st.r); o.near6 = F.state().last.near; F.set({ k: 0 });
+    o.dist = [-4, 0, 12].map(k => { const H = 2 ** k, d = F.distanceAddresses(512, H); return [d.filter(x => x <= H * (1 + 1e-12)).length, d[0] / H]; });
     const g = F.goTo('123456789012'); o.goto = g && F.indexOf(g); o.info = document.getElementById('info').textContent; return o; });
   const [d20, d30, d40] = sf.diff;
   if (sf.bad || !(d20[0] < 0.02 && d30[0] < 1e-4 && d40[0] < 1e-7 && d30[0] < d20[0] && d40[0] < d30[0]) || sf.diff.some(d => d[1] !== 0.5 || d[2] !== 0.5 || d[3] !== d[4]) ||
-    sf.inf[0] !== 0.5 || !(sf.inf[1] < 1e-9) || !(BigInt(sf.Ns[1]) >= 2n * BigInt(sf.Ns[0]) - 2n * 3n * 2n ** 11n) || !sf.hover || sf.goto !== '123456789012' || !sf.info.includes('123,456,789,012'))
+    sf.inf[0] !== 0.5 || !(sf.inf[1] < 1e-9) || !(BigInt(sf.Ns[1]) >= 2n * BigInt(sf.Ns[0]) - 2n * 3n * 2n ** 11n) || !sf.hover || !sf.Hsame || !(Math.abs(sf.slid - 6 * Math.LN2) < 1e-9) || sf.near0 !== '4' || sf.near6 !== '16384' ||
+    sf.dist.some(([c, w]) => c !== 256 || Math.abs(w - Math.tan(Math.PI / 1024)) > 1e-12) || sf.goto !== '123456789012' || !sf.info.includes('123,456,789,012'))
     failures.push(`[${current}] ${JSON.stringify(sf)}`);
-  console.log(`${failures.length === before46 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–40; the reader's view at N and 2N apart by at most ${sf.diff.map(d => d[0].toExponential(1)).join(', ')} at N = 2^20, 2^30, 2^40, half past the corner at every N and at ∞; the writer counts ${sf.Ns.join(' then ')}; the star pointed at is the star there; star #123,456,789,012 found)`);
+  console.log(`${failures.length === before46 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–40; the reader's view at N and 2N apart by at most ${sf.diff.map(d => d[0].toExponential(1)).join(', ')} at N = 2^20, 2^30, 2^40, half past the corner at every N and at ∞; the writer counts ${sf.Ns.join(' then ')}; the star pointed at is the star there; H from 1 to 64 u leaves the reader's view as it was and slides a star 6 ln 2, 4 then 16,384 stars inside it; 256 of 512 distance addresses inside H at H = 2^−4, 1, 2^12; star #123,456,789,012 found)`);
 
   // ── 47. star-field-3d.html: the same in 3D, with H (SPN R405, R406): every star back from its index; the reader's view at
   //    N and 2N the same, ever closer as N grows, every pair at its corner and the near field a third; H moves nothing in

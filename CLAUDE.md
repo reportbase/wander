@@ -424,9 +424,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   counted exactly at the reader's n addresses (128, 512, 2048; whole columns where they fit an address, star by star in the
   near levels), each address a ray as long as its share × n on its unit circle, v/h then h/v in proportion, at N and at 2N:
   the same circle (apart by 10⁻², 10⁻⁵, 10⁻⁸ at 2^20, 2^30, 2^40), half past the corner. With fewer stars than addresses
-  the reader sees single stars. (The first build, 21 Oct, showed instead a sky lit by stars of size ρ, the lit share
-  1 − e^(−2^L/λ), Olbers; it put N into the reader's view and was replaced.) `?N=<log2 N>|inf&n=128|512|2048&star=<index>`;
-  hook `window.__starField` (`star`, `indexOf`, `fromIndex`, `countBelow`, `worldOf`, `counts`, `readerView`, `starNear`,
+  the reader sees single stars. H (R407, R408), 2^−4 to 2^12 u: the writer's map laid at d/H then 1 + ln(d/H), every star
+  sliding along its ray, the reader's view unmoved; a ruler of the reader's n addresses along distance, H·tan(kπ/2n),
+  half inside H at every H, the near ones' widths in proportion to H. (The first build, 21 Oct, showed instead a sky lit by stars of size ρ, the lit share
+  1 − e^(−2^L/λ), Olbers; it put N into the reader's view and was replaced.) `?N=<log2 N>|inf&H=<log2 H>&n=128|512|2048&star=<index>`;
+  hook `window.__starField` (`star`, `indexOf`, `fromIndex`, `countBelow`, `worldOf`, `counts`, `readerView`, `nearCount`,
+  `lay`, `distanceAddresses`, `starNear`,
   `toScr`, `toPic`, `view`, `set`, `goTo`, `fit`, `state`). Not in the flying page.
 - `star-field-3d.html`: **an infinite star field, in 3D** (21 Oct 2026, Tom: "in 3d .     let use change the size of H.";
   then the same correction as the 2D page; SPN R406), three.js like `payload-free-3d.html` (the same pinned CDN version and
@@ -704,7 +707,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Since R226, H is the value the reader chooses to start the system, not a measured size ((P1), §2, §8); V is the drawn
   whole and V* the true breadth throughout; "What the geometry needs: a shape and one H" follows Proposition 3. §8 has
   "What a larger H gives and takes" (R229: nΔ/H inside the corner, the lays parting past it, the best H the corner of
-  what is read) and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9's "What a unit
+  what is read), then "A fixed count, aimed by H" (R408; Tom: "the readers K, their total address space to observe, is
+  fixed but they can us cauchy to focus on any N, but only K at a time.  Always k, it's invarient, but he can zoom his
+  near or far field by adjusting his H, not K."): the n addresses along distance at H·tan(kπ/2n), half inside H at every
+  H, any N held at the same n, and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9's "What a unit
   is, and why a reader needs one" (R230; Tom: "A unit is needed, it injects physics into the relation"; "A unit is
   pre-measured relation. It says something like 5 ounces/ 1 foot"): a unit is a relation measured beforehand; within
   one reader its value is a zoom, needed because addresses are finite, where the world's scale first reaches the
@@ -2046,8 +2052,9 @@ In short:
       way, 256 addresses passed (eight rows), each meeting the room.
   46. **star-field.html:** every star comes back from its index at levels 0 to 40, inside its level's distances; the reader's
       view at N and 2N apart by under 0.02, 10⁻⁴, 10⁻⁷ at N = 2^20, 2^30, 2^40 (shrinking), exactly half past the corner at
-      every N and at ∞; the totals the world's N; the writer's count doubling; the star pointed at is the star there; star
-      #123,456,789,012 found by its index.
+      every N and at ∞; the totals the world's N; the writer's count doubling; the star pointed at is the star there; H from
+      1 to 64 u leaving the reader's view as it was and sliding a star exactly 6 ln 2, 4 then 16,384 stars inside it; 256 of
+      512 distance addresses inside H at H = 2^−4, 1 and 2^12, the first tan(π/1024)·H wide; star #123,456,789,012 found.
   47. **star-field-3d.html:** every star comes back from its index at levels 0 to 30; the reader's view at N and 2N apart by
       under 0.1, 10⁻⁴, 10⁻⁷ at N = 2^18, 2^30, 2^40, every pair at its corner (½) and the near field ⅓ within 0.01; H from 1
       to 64 u leaves the reader's view as it was and slides a star exactly 6 ln 2 along its own ray; 8 and 2,097,152 stars
