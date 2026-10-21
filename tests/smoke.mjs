@@ -1256,7 +1256,10 @@ try {
         if (n === 15 && s === 0) o.paints.add(P.readings(w, s, n).map(r => r.col).join()); } }
     o.paints = o.paints.size; const a = P.metresFan(1e3, 15), b = P.metresFan(1e6, 15);
     o.metresMove = Math.abs(a[0] - b[0]); o.metresNone = P.metresFan(null, 15) === null && P.metresFan(Infinity, 15) === null;
-    o.page = P.state().last; return o; });
+    o.page = P.state().last;
+    P.set({ sweep: 0.5 }); o.half = P.state().last; P.set({ sweep: 0 }); o.none = P.state().last; P.set({ sweep: 1 }); return o; });
+  // the sweep: half way, half the addresses passed and only their payloads seen; at zero nothing arrived; the readings unmoved
+  if (pf.half.shown !== 32 || !(pf.half.seen > 0 && pf.half.seen <= 32) || pf.none.shown !== 0 || pf.none.seen !== 0 || pf.half.worst > 1e-14) failures.push(`[${current}] sweep ${JSON.stringify([pf.half, pf.none])}`);
   if (pf.worst > 1e-14 || pf.med > 1e-12 || !pf.split || pf.paints < 7 || !(pf.metresMove > 1e-3) || !pf.metresNone ||
     pf.page.worst > 1e-14 || pf.page.metres !== null || pf.page.met !== 63)
     failures.push(`[${current}] ${JSON.stringify(pf)}`);
@@ -1282,7 +1285,10 @@ try {
       o.counts[n] = [...seen].map(x => JSON.parse(x)); }
     o.paints = o.paints.size; const a = P.metresScreen(10, 16), b = P.metresScreen(1e4, 16);
     o.metresMove = Math.abs(a[5][1] - b[5][1]) > 1; o.metresNone = P.metresScreen(null, 16) === null;
-    o.frames = P.frames; o.webgl = P.webgl; o.page = P.state().last; return o; });
+    o.frames = P.frames; o.webgl = P.webgl; o.page = P.state().last;
+    P.set({ sweep: 0.25 }); o.quarter = P.state().last; P.set({ sweep: 1 }); return o; });
+  // the sweep: a quarter of the way, the first eight rows passed, every one meeting a wall of the room, the rest not yet seen
+  if (p3.quarter.shown !== 256 || p3.quarter.seen !== 256 || p3.quarter.worst > 1e-14) failures.push(`[${current}] sweep ${JSON.stringify(p3.quarter)}`);
   const c32 = p3.counts[32];
   if (p3.worst > 1e-14 || p3.counts[16].length !== 1 || c32.length !== 1 || c32[0].v2LeH !== 0.5 || Math.abs(c32[0].vLeH - 0.5) > 0.01 ||
     Math.abs(c32[0].v2LeV - 0.5) > 0.01 || Math.abs(c32[0].near - 1 / 3) > 0.01 || p3.paints < 7 || !p3.metresMove || !p3.metresNone ||
