@@ -411,35 +411,37 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   hook `window.__payloadFree3d` (`grid`, `worldOf`, `hit`, `readings`, `counts`, `metresScreen`, `lay`, `WORLDS`, `set`,
   `state`, `frames`, `webgl`). Not in the flying page.
 - `star-field.html`: **an infinite star field** (21 Oct 2026, Tom: "Stars are a great way to show what the cauchy is doing.
-  At low N, the far field is sparse, at high N, the far field is dense, at infinite N, the far field is solid stars. letting
-  the user browse an infinite star field would really get the point home. also, mouse moving or clicking the star should
-  show its index."; after `payload-free.html` and `sky.html`), a standalone page, plain canvas. Stars evenly over the
-  quarter plane, made from their cells, never stored: level 0 the near field (d ≤ H, K × K cells, K = 2), level j ≥ 1
-  2^(j−1) < d ≤ 2^j (3K·2^(j−1) cells across by K·2^(j−1) out, even in area), one star a cell placed by a hash, so each
-  level four times the last; the index K²·4^(j−1) + row·across + place (BigInt, exact; `fromIndex` back); N = K²·4^L
-  within 2^L, or ∞. Each star a disc of radius ρ = π/(8K²·1024), the mean free path λ = 1024 H, so the lit share of a sky
-  reaching 2^L is about 1 − e^(−2^L/λ) (Olbers in 2D). The reader: 128, 512 or 2048 addresses at equal angles, the same at
-  every N, each painted by the first star met (the sky strip, with its level). The map on the reader's lay, pan and zoom
-  (wheel, drag, pinch) to any level; a level's stars drawn one by one where its cells are big enough, else shaded by stars
-  per pixel; point (map or strip) for a star's index, click to pin, type an index to fly there.
-  `?L=0..24|inf&n=128|512|2048&star=<index>`; hook `window.__starField` (`star`, `indexOf`, `fromIndex`, `countBelow`, `N`,
-  `meet`, `skyOf`, `expectedLit`, `addresses`, `starNear`, `toScr`, `toPic`, `view`, `set`, `goTo`, `fit`, `state`).
-  Not in the flying page.
-- `star-field-3d.html`: **an infinite star field, in 3D** (21 Oct 2026, Tom: "in 3d .     let use change the size of H."),
-  three.js like `payload-free-3d.html` (the same pinned CDN version and test route) for the scene only; the field, the index,
-  the sky and the hook are a plain script. Stars evenly through the octant: level 0 d ≤ 1 u (K³ cells, K = 2), level j ≥ 1
-  2^(j−1) < d ≤ 2^j u (7K·2^(j−1) round in azimuth × K·2^(j−1) up in height, Lambert's cells, × K·2^(j−1) out, even in
-  volume), one star a cell, eight times as many each level; index K³·8^(j−1) + ((out)·(up cells) + up)·(round cells) + round
-  (BigInt, `fromIndex` back); N = K³·8^L, or ∞ (levels to 30). Each star a ball of radius 1/√(6K³·1024) u, λ = 1024 u, the lit
-  share about 1 − e^(−2^L/λ). The reader: 16², 32² or 48² cells of Lambert's map, each painted by the first star met. H a
-  slider (2^−4 to 2^12 u): each star laid along its own ray at d/H to the corner then 1 + ln(d/H); a change of H slides every
-  star along its ray, changes which are inside the corner (the gold sphere; counted exactly), and leaves every address
-  meeting the same star. The scene: orbit, zoom toward the cursor; each level drawn whole where it fits, else the part about
-  where you look, thinned to a seeded random choice of its cells (real stars) when still too many; drawn about the point
-  looked at, so deep zooms keep their precision. Point at a star for its index, click to pin, type an index to fly to it;
-  hover the map for the star an address meets, click to fly there. `?L=0..20|inf&H=<log2 H>&n=16|32|48&star=<index>`; hook
-  `window.__starField3d` (`star`, `indexOf`, `fromIndex`, `countBelow`, `N`, `meet`, `skyOf`, `addresses`, `expectedLit`,
-  `nearCount`, `placeOf`, `lay`, `set`, `goTo`, `state`, `frames`, `webgl`, `drawn`, `thinned`). Not in the flying page.
+  … letting the user browse an infinite star field would really get the point home. also, mouse moving or clicking the star
+  should show its index."; then, of the first build: "the key point to drive home is that N is invisible to the reader. Its
+  always the same, N*2 is perceived the same as N. this demo does not show that. the far field gets dense, from the writer's
+  view, but from the readers view, his view never changes, its always the proportional near field."; SPN R406), a standalone
+  page, plain canvas. Stars evenly over the quarter plane, made from their cells, never stored: level 0 d ≤ H (K × K cells,
+  K = 2), level j ≥ 1 2^(j−1) < d ≤ 2^j (3K·2^(j−1) across by K·2^(j−1) out, even in area), one star a cell by a hash; the
+  index K²·4^(j−1) + row·across + place (BigInt, `fromIndex` back). A world of N stars is the first N by index rounded up to
+  whole rows (a row holds one star in every column, so where the count stops favours no direction), N = 2^m (2–60, ×2, ÷2)
+  or ∞. Two views. The writer's: the map on the reader's lay, pan and zoom to any level, stars one by one where they fit,
+  else shaded; point for the index, click to pin, type an index to fly there. The reader's: each star a direction only,
+  counted exactly at the reader's n addresses (128, 512, 2048; whole columns where they fit an address, star by star in the
+  near levels), each address a ray as long as its share × n on its unit circle, v/h then h/v in proportion, at N and at 2N:
+  the same circle (apart by 10⁻², 10⁻⁵, 10⁻⁸ at 2^20, 2^30, 2^40), half past the corner. With fewer stars than addresses
+  the reader sees single stars. (The first build, 21 Oct, showed instead a sky lit by stars of size ρ, the lit share
+  1 − e^(−2^L/λ), Olbers; it put N into the reader's view and was replaced.) `?N=<log2 N>|inf&n=128|512|2048&star=<index>`;
+  hook `window.__starField` (`star`, `indexOf`, `fromIndex`, `countBelow`, `worldOf`, `counts`, `readerView`, `starNear`,
+  `toScr`, `toPic`, `view`, `set`, `goTo`, `fit`, `state`). Not in the flying page.
+- `star-field-3d.html`: **an infinite star field, in 3D** (21 Oct 2026, Tom: "in 3d .     let use change the size of H.";
+  then the same correction as the 2D page; SPN R406), three.js like `payload-free-3d.html` (the same pinned CDN version and
+  test route) for the writer's scene only; the field, the index, the reader's view and the hook are a plain script. Stars
+  evenly through the octant: level 0 d ≤ 1 u (K³ cells), level j ≥ 1 (7K·2^(j−1) round in azimuth × K·2^(j−1) up in height,
+  Lambert's cells, × K·2^(j−1) out, even in volume), eight times as many each level; index K³·8^(j−1) + ((out)·(up cells) +
+  up)·(round cells) + round (BigInt); a world of N stars rounded up to whole rows, N = 2^m (3–60) or ∞. The writer's scene:
+  each star along its own ray at d/H, then 1 + ln(d/H) past the corner (the gold sphere); H a slider (2^−4 to 2^12 u) slides
+  every star along its ray; orbit, zoom toward the cursor, levels too full thinned to a seeded random choice of real stars,
+  drawn about the point looked at; point at a star for its index, click to pin, type an index to fly to it. The reader's
+  view: each star a direction only, counted exactly at n × n cells of Lambert's map (16, 32, 64), shaded by share (one flat
+  colour when even), at N and at 2N: the same map; every pair at its corner (½), the near field a third; H changes none of
+  it. `?N=<log2 N>|inf&H=<log2 H>&n=16|32|64&star=<index>`; hook `window.__starField3d` (`star`, `indexOf`, `fromIndex`,
+  `countBelow`, `worldOf`, `counts`, `readerView`, `nearCount`, `placeOf`, `lay`, `inWorld`, `set`, `goTo`, `state`,
+  `frames`, `webgl`, `drawn`, `thinned`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -2038,14 +2040,14 @@ In short:
       exactly ½, the near field within 0.01 of ⅓); the seven worlds paint differently; the equal-metres screen moves with
       the size and has none when it is unknown; in the room every ray meets a wall; WebGL drew frames; swept a quarter of the
       way, 256 addresses passed (eight rows), each meeting the room.
-  46. **star-field.html:** every star comes back from its index at levels 0 to 40, inside its level's distances; N = 4^(L+1)
-      (4, 262,144, 4,398,046,511,104 at L = 0, 8, 20); the lit share at L = 4, 8, 10, 12 within 0.05 of 1 − e^(−2^L/λ),
-      every address lit at N = ∞, the 512 addresses the same at every N; the star pointed at on the map is the star there;
-      star #123,456,789,012 found by its index.
-  47. **star-field-3d.html:** every star comes back from its index at levels 0 to 30, inside its level's distances; N = 8^(L+1)
-      (8, 134,217,728 at L = 0, 8); the lit share at L = 8, 12 within 0.05 of 1 − e^(−2^L/λ), every address lit at N = ∞;
-      H from 1 to 64 u slides a star exactly 6 ln 2 inward along its own ray and every address meets the same star; 8 and
-      2,097,152 stars inside the corner at H = 1 and 64 u; star #98,765,432,101,234 found; WebGL drew frames.
+  46. **star-field.html:** every star comes back from its index at levels 0 to 40, inside its level's distances; the reader's
+      view at N and 2N apart by under 0.02, 10⁻⁴, 10⁻⁷ at N = 2^20, 2^30, 2^40 (shrinking), exactly half past the corner at
+      every N and at ∞; the totals the world's N; the writer's count doubling; the star pointed at is the star there; star
+      #123,456,789,012 found by its index.
+  47. **star-field-3d.html:** every star comes back from its index at levels 0 to 30; the reader's view at N and 2N apart by
+      under 0.1, 10⁻⁴, 10⁻⁷ at N = 2^18, 2^30, 2^40, every pair at its corner (½) and the near field ⅓ within 0.01; H from 1
+      to 64 u leaves the reader's view as it was and slides a star exactly 6 ln 2 along its own ray; 8 and 2,097,152 stars
+      inside the corner; star #98,765,432,101,234 found; WebGL drew frames.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

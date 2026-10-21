@@ -1296,31 +1296,32 @@ try {
     failures.push(`[${current}] ${JSON.stringify(p3)}`);
   console.log(`${failures.length === before45 ? 'ok  ' : 'FAIL'} ${current} (${p3.cases} worlds, sizes and grids give back the sweep's own [h : v : v₂] to ${p3.worst.toExponential(1)}; one set of counts per grid, v ≤ h ${c32[0].vLeH}, v₂ ≤ h ${c32[0].v2LeH}, v₂ ≤ v ${c32[0].v2LeV}, the near field ${c32[0].near.toFixed(4)} at 32 × 32; ${p3.paints} paints; the equal-metres screen moves with the size and has none when it is unknown; WebGL drew ${p3.frames} frames)`);
 
-  // ── 46. star-field.html: an infinite star field (SPN R405): every star comes back from its index at levels 0 to 40; N
-  //    is K²·4^L; the lit share follows 1 − e^(−2^L/λ) and is whole at N = ∞, the addresses the same at every N; a star
-  //    pointed at on the map is the star there; a star found by index is shown with it ──
+  // ── 46. star-field.html: N is invisible to the reader (SPN R405, R406): every star back from its index; the reader's view
+  //    (its share at each address) at N and 2N the same, ever closer as N grows, half past the corner; the writer's count
+  //    doubles; the star pointed at is the star there; a star found by its index ──
   current = 'star-field.html';
   const before46 = failures.length;
-  await page.goto(new URL('star-field.html?L=6', base).href, { waitUntil: 'load' });
+  await page.goto(new URL('star-field.html?N=24', base).href, { waitUntil: 'load' });
   const sf = await page.evaluate(() => { const F = __starField, o = { bad: 0 };
     for (const j of [0, 1, 2, 5, 10, 20, 30, 40]) for (let k = 0; k < 12; k++) { const A = F.na(j), B = F.nr(j), ia = Math.floor((k * 0.618 % 1) * A), ir = Math.floor((k * 0.414 % 1) * B);
       const s = F.star(j, ia, ir), s2 = F.fromIndex(F.indexOf(s)); if (!s2 || s2.j !== j || s2.ia !== ia || s2.ir !== ir) o.bad++;
       if (!(s.r > (j ? 2 ** (j - 1) : 0) && s.r <= 2 ** j)) o.bad++; }
-    o.N = [F.N(0), F.N(8), F.N(20)]; o.below = F.countBelow(9);
-    o.lit = [4, 8, 10, 12].map(L => { const sk = F.skyOf(L, 512); return [sk.filter(s => s && !s.beyond).length / 512, F.expectedLit(L)]; });
-    const inf = F.skyOf(40, 512); o.litInf = inf.filter(s => s && !s.beyond).length / 512;
-    o.sameAddr = F.addresses(512).every((t, k) => t === (k + 0.5) / 512 * Math.PI / 2);
-    F.set({ L: 6 }); const s = F.star(5, 7, 3), [sx, sy] = F.toScr(s.R * Math.cos(s.th), s.R * Math.sin(s.th)), h = F.starNear(sx, sy);
-    o.hover = !!h && F.indexOf(h) === F.indexOf(s);
+    o.diff = [20, 30, 40].map(m => { const a = F.readerView(2n ** BigInt(m), 512), b = F.readerView(2n ** BigInt(m + 1), 512);
+      return [Math.max(...a.share.map((x, k) => Math.abs(x - b.share[k]))), a.near, b.near, a.total, Number(F.worldOf(2n ** BigInt(m)).N)]; });
+    const inf = F.readerView(Infinity, 512); o.inf = [inf.near, inf.maxDev];
+    o.Ns = [F.worldOf(2n ** 24n).N.toString(), F.worldOf(2n ** 25n).N.toString()];
+    F.set({ m: 6 }); const s = F.star(2, 3, 1), [sx, sy] = F.toScr(s.R * Math.cos(s.th), s.R * Math.sin(s.th)), h = F.starNear(sx, sy);
+    o.hover = !!h && F.indexOf(h) === F.indexOf(s); F.set({ m: 24 });
     const g = F.goTo('123456789012'); o.goto = g && F.indexOf(g); o.info = document.getElementById('info').textContent; return o; });
-  if (sf.bad || sf.N.join() !== '4,262144,4398046511104' || sf.below !== '262144' || sf.lit.some(([m, e]) => Math.abs(m - e) > 0.05) ||
-    !(sf.litInf === 1) || !sf.sameAddr || !sf.hover || sf.goto !== '123456789012' || !sf.info.includes('123,456,789,012'))
+  const [d20, d30, d40] = sf.diff;
+  if (sf.bad || !(d20[0] < 0.02 && d30[0] < 1e-4 && d40[0] < 1e-7 && d30[0] < d20[0] && d40[0] < d30[0]) || sf.diff.some(d => d[1] !== 0.5 || d[2] !== 0.5 || d[3] !== d[4]) ||
+    sf.inf[0] !== 0.5 || !(sf.inf[1] < 1e-9) || !(BigInt(sf.Ns[1]) >= 2n * BigInt(sf.Ns[0]) - 2n * 3n * 2n ** 11n) || !sf.hover || sf.goto !== '123456789012' || !sf.info.includes('123,456,789,012'))
     failures.push(`[${current}] ${JSON.stringify(sf)}`);
-  console.log(`${failures.length === before46 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–40; N = 4^(L+1); the lit share at L = 4, 8, 10, 12 ${sf.lit.map(([m]) => m.toFixed(3)).join(', ')} against 1 − e^(−2^L/λ) ${sf.lit.map(([, e]) => e.toFixed(3)).join(', ')}, whole at N = ∞; the same 512 addresses at every N; the star pointed at is the star there; star #123,456,789,012 found)`);
+  console.log(`${failures.length === before46 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–40; the reader's view at N and 2N apart by at most ${sf.diff.map(d => d[0].toExponential(1)).join(', ')} at N = 2^20, 2^30, 2^40, half past the corner at every N and at ∞; the writer counts ${sf.Ns.join(' then ')}; the star pointed at is the star there; star #123,456,789,012 found)`);
 
-  // ── 47. star-field-3d.html: the star field in 3D (SPN R405): every star back from its index; N = K³·8^L; the lit share
-  //    follows 1 − e^(−2^L/λ), whole at N = ∞; changing H slides each star along its own ray and leaves every address
-  //    meeting the same star; the stars inside the corner counted; WebGL drew frames (three.js served as for check 22) ──
+  // ── 47. star-field-3d.html: the same in 3D, with H (SPN R405, R406): every star back from its index; the reader's view at
+  //    N and 2N the same, ever closer as N grows, every pair at its corner and the near field a third; H moves nothing in
+  //    the reader's view and slides each star along its own ray; the stars inside the corner counted; WebGL drew frames ──
   current = 'star-field-3d.html';
   const before47 = failures.length;
   await page.route(/^https:\/\/cdn\.jsdelivr\.net\/npm\/three@0\.160\.0\//, async route => {
@@ -1328,26 +1329,26 @@ try {
     try { await route.fulfill({ status: 200, contentType: 'text/javascript', body: await readFile(join(ROOT, 'node_modules/three', rel)) }); }
     catch { await route.continue(); }
   });
-  await page.goto(new URL('star-field-3d.html?L=8&n=16', base).href, { waitUntil: 'load' });
+  await page.goto(new URL('star-field-3d.html?N=24', base).href, { waitUntil: 'load' });
   await page.waitForFunction(() => window.__starField3d && __starField3d.frames > 2, null, { timeout: 30000 }).catch(() => {});
   const s3 = await page.evaluate(() => { const F = __starField3d, o = { bad: 0 };
     for (const j of [0, 1, 3, 8, 15, 20, 30]) for (let k = 0; k < 8; k++) { const ip = Math.floor((k * 0.618 % 1) * F.nPsi(j)), iy = Math.floor((k * 0.414 % 1) * F.nY(j)), ir = Math.floor((k * 0.732 % 1) * F.nR(j));
       const s = F.star(j, ip, iy, ir), s2 = F.fromIndex(F.indexOf(s)); if (!s2 || s2.j !== j || s2.ip !== ip || s2.iy !== iy || s2.ir !== ir) o.bad++;
       if (!(s.r > (j ? 2 ** (j - 1) : 0) && s.r <= 2 ** j)) o.bad++; }
-    o.N = [F.N(0), F.N(8)];
-    o.lit = [8, 12].map(L => { const sk = F.skyOf(L, 32); return [sk.filter(s => s && !s.beyond).length / sk.length, F.expectedLit(L)]; });
-    o.litInf = F.skyOf(30, 16).filter(s => s && !s.beyond).length / 256;
-    F.set({ k: 0 }); const a = F.state().last.sig; F.set({ k: 6 }); const b = F.state().last.sig; o.sameMet = a === b && a.split(',').some(x => x !== '-');
+    o.diff = [18, 30, 40].map(m => { const a = F.readerView(2n ** BigInt(m), 32), b = F.readerView(2n ** BigInt(m + 1), 32);
+      return [Math.max(...a.share.map((x, k) => Math.abs(x - b.share[k]))), a.vh, a.v2h, a.v2v, a.near]; });
+    F.set({ k: 0 }); const a0 = JSON.stringify(F.state().last.a); F.set({ k: 6 }); o.Hsame = JSON.stringify(F.state().last.a) === a0; o.near6 = F.state().last.near; F.set({ k: 0 });
+    o.near0 = F.state().last.near;
     const st = F.star(12, 1000, 700, 900), p1 = F.placeOf(st, 1), p2 = F.placeOf(st, 64), n1 = Math.hypot(...p1), n2 = Math.hypot(...p2);
     o.sameRay = Math.max(...p1.map((x, i) => Math.abs(x / n1 - p2[i] / n2))); o.slid = n1 - n2;
-    o.near = [F.nearCount(0), F.nearCount(6)]; F.set({ k: 0 });
     const g = F.goTo('98765432101234'); o.goto = g && F.indexOf(g); o.info = document.getElementById('info').textContent;
     o.webgl = F.webgl; o.frames = F.frames; o.drawn = F.drawn; return o; });
-  if (s3.bad || s3.N.join() !== '8,134217728' || s3.lit.some(([m, e]) => Math.abs(m - e) > 0.05) || s3.litInf !== 1 || !s3.sameMet ||
-    s3.sameRay > 1e-12 || !(Math.abs(s3.slid - 6 * Math.LN2) < 1e-9) || s3.near.join() !== '8,2097152' || s3.goto !== '98765432101234' ||
-    !s3.info.includes('98,765,432,101,234') || !s3.webgl || !(s3.frames > 2) || !(s3.drawn > 0))
+  const [e18, e30, e40] = s3.diff;
+  if (s3.bad || !(e18[0] < 0.1 && e30[0] < 1e-4 && e40[0] < 1e-7) || s3.diff.slice(1).some(d => Math.abs(d[1] - 0.5) > 1e-6 || Math.abs(d[2] - 0.5) > 1e-6 || Math.abs(d[3] - 0.5) > 1e-6 || Math.abs(d[4] - 1 / 3) > 0.01) ||
+    !s3.Hsame || s3.near0 !== '8' || s3.near6 !== '2097152' || s3.sameRay > 1e-12 || !(Math.abs(s3.slid - 6 * Math.LN2) < 1e-9) ||
+    s3.goto !== '98765432101234' || !s3.info.includes('98,765,432,101,234') || !s3.webgl || !(s3.frames > 2) || !(s3.drawn > 0))
     failures.push(`[${current}] ${JSON.stringify(s3)}`);
-  console.log(`${failures.length === before47 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–30; N = 8^(L+1); the lit share at L = 8, 12 ${s3.lit.map(([m]) => m.toFixed(3)).join(', ')} against ${s3.lit.map(([, e]) => e.toFixed(3)).join(', ')}, whole at N = ∞; H from 1 to 64 u slides a star 6 ln 2 inward along its own ray and every address meets the same star; 8 and 2,097,152 stars inside the corner; star #98,765,432,101,234 found; WebGL drew ${s3.frames} frames, ${s3.drawn.toLocaleString()} stars)`);
+  console.log(`${failures.length === before47 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–30; the reader's view at N and 2N apart by at most ${s3.diff.map(d => d[0].toExponential(1)).join(', ')} at N = 2^18, 2^30, 2^40, every pair at its corner and the near field ${e30[4].toFixed(3)}; H from 1 to 64 u leaves the reader's view as it was and slides a star 6 ln 2 along its own ray; 8 and 2,097,152 stars inside the corner; star #98,765,432,101,234 found; WebGL drew ${s3.frames} frames)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
