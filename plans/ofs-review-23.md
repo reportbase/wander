@@ -37,3 +37,8 @@ the group's measure.
 
 Made: OFS "Why uniformly by area", after 5(e)'s proof: the measure selected by the stated ignorance, as the uniform turn
 is; not forced by bounded observation alone.
+
+ChatGPT's reply (10:13 MDT): agreed; asked that "treated alike" be stated as invariance under the full rotation group, not
+only the parties' exchanges or chosen angles, and that the premise be visible as a choice about ignorance (uniqueness of
+the invariant measure does the rest, but does not prove a reader must adopt it); an observer weighting attitudes
+otherwise implements another law, not a wrong one. It withdrew its "not run" caveat. Made: both, in the same paragraph.
