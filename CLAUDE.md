@@ -439,8 +439,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   drawn about the point looked at; point at a star for its index, click to pin, type an index to fly to it. The reader's
   view: each star a direction only, counted exactly at n × n cells of Lambert's map (16, 32, 64), shaded by share (one flat
   colour when even), at N and at 2N: the same map; every pair at its corner (½), the near field a third; H changes none of
-  it. `?N=<log2 N>|inf&H=<log2 H>&n=16|32|64&star=<index>`; hook `window.__starField3d` (`star`, `indexOf`, `fromIndex`,
-  `countBelow`, `worldOf`, `counts`, `readerView`, `nearCount`, `placeOf`, `lay`, `inWorld`, `set`, `goTo`, `state`,
+  it. The reader's addresses in distance (SPN R407; Tom: "Reader has fixed number addresses.  Setting H, splits them between
+  the near and far fields.   Small H still has 50% of the addresses but proportionally they are much smaller."): a ruler on
+  a log scale of distance, the n addresses at d = H·tan(kπ/2n), half inside H (teal) and half past it (violet) at every H,
+  the near ones' widths in proportion to H (the first 0.049 H at n = 32).
+  `?N=<log2 N>|inf&H=<log2 H>&n=16|32|64&star=<index>`; hook `window.__starField3d` (`star`, `indexOf`, `fromIndex`,
+  `countBelow`, `worldOf`, `counts`, `readerView`, `nearCount`, `placeOf`, `lay`, `inWorld`, `distanceAddresses`, `set`, `goTo`, `state`,
   `frames`, `webgl`, `drawn`, `thinned`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
@@ -2047,7 +2051,8 @@ In short:
   47. **star-field-3d.html:** every star comes back from its index at levels 0 to 30; the reader's view at N and 2N apart by
       under 0.1, 10⁻⁴, 10⁻⁷ at N = 2^18, 2^30, 2^40, every pair at its corner (½) and the near field ⅓ within 0.01; H from 1
       to 64 u leaves the reader's view as it was and slides a star exactly 6 ln 2 along its own ray; 8 and 2,097,152 stars
-      inside the corner; star #98,765,432,101,234 found; WebGL drew frames.
+      inside the corner; at H = 2^−4, 1 and 2^12 u, 16 of the 32 distance addresses inside H, the first one's width 0.049 H at
+      each; star #98,765,432,101,234 found; WebGL drew frames.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

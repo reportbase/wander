@@ -1339,16 +1339,18 @@ try {
       return [Math.max(...a.share.map((x, k) => Math.abs(x - b.share[k]))), a.vh, a.v2h, a.v2v, a.near]; });
     F.set({ k: 0 }); const a0 = JSON.stringify(F.state().last.a); F.set({ k: 6 }); o.Hsame = JSON.stringify(F.state().last.a) === a0; o.near6 = F.state().last.near; F.set({ k: 0 });
     o.near0 = F.state().last.near;
+    o.dist = [-4, 0, 12].map(k => { const H = 2 ** k, d = F.distanceAddresses(32, H); return [d.filter(x => x <= H * (1 + 1e-12)).length, d[0] / H]; });
     const st = F.star(12, 1000, 700, 900), p1 = F.placeOf(st, 1), p2 = F.placeOf(st, 64), n1 = Math.hypot(...p1), n2 = Math.hypot(...p2);
     o.sameRay = Math.max(...p1.map((x, i) => Math.abs(x / n1 - p2[i] / n2))); o.slid = n1 - n2;
     const g = F.goTo('98765432101234'); o.goto = g && F.indexOf(g); o.info = document.getElementById('info').textContent;
     o.webgl = F.webgl; o.frames = F.frames; o.drawn = F.drawn; return o; });
   const [e18, e30, e40] = s3.diff;
   if (s3.bad || !(e18[0] < 0.1 && e30[0] < 1e-4 && e40[0] < 1e-7) || s3.diff.slice(1).some(d => Math.abs(d[1] - 0.5) > 1e-6 || Math.abs(d[2] - 0.5) > 1e-6 || Math.abs(d[3] - 0.5) > 1e-6 || Math.abs(d[4] - 1 / 3) > 0.01) ||
+    s3.dist.some(([c, w]) => c !== 16 || Math.abs(w - Math.tan(Math.PI / 64)) > 1e-12) ||
     !s3.Hsame || s3.near0 !== '8' || s3.near6 !== '2097152' || s3.sameRay > 1e-12 || !(Math.abs(s3.slid - 6 * Math.LN2) < 1e-9) ||
     s3.goto !== '98765432101234' || !s3.info.includes('98,765,432,101,234') || !s3.webgl || !(s3.frames > 2) || !(s3.drawn > 0))
     failures.push(`[${current}] ${JSON.stringify(s3)}`);
-  console.log(`${failures.length === before47 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–30; the reader's view at N and 2N apart by at most ${s3.diff.map(d => d[0].toExponential(1)).join(', ')} at N = 2^18, 2^30, 2^40, every pair at its corner and the near field ${e30[4].toFixed(3)}; H from 1 to 64 u leaves the reader's view as it was and slides a star 6 ln 2 along its own ray; 8 and 2,097,152 stars inside the corner; star #98,765,432,101,234 found; WebGL drew ${s3.frames} frames)`);
+  console.log(`${failures.length === before47 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–30; the reader's view at N and 2N apart by at most ${s3.diff.map(d => d[0].toExponential(1)).join(', ')} at N = 2^18, 2^30, 2^40, every pair at its corner and the near field ${e30[4].toFixed(3)}; H from 1 to 64 u leaves the reader's view as it was and slides a star 6 ln 2 along its own ray; 8 and 2,097,152 stars inside the corner; 16 of 32 distance addresses inside H at H = 2^−4, 1, 2^12, the first ${s3.dist[0][1].toFixed(4)} H wide at each; star #98,765,432,101,234 found; WebGL drew ${s3.frames} frames)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
