@@ -1318,6 +1318,37 @@ try {
     failures.push(`[${current}] ${JSON.stringify(sf)}`);
   console.log(`${failures.length === before46 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–40; N = 4^(L+1); the lit share at L = 4, 8, 10, 12 ${sf.lit.map(([m]) => m.toFixed(3)).join(', ')} against 1 − e^(−2^L/λ) ${sf.lit.map(([, e]) => e.toFixed(3)).join(', ')}, whole at N = ∞; the same 512 addresses at every N; the star pointed at is the star there; star #123,456,789,012 found)`);
 
+  // ── 47. star-field-3d.html: the star field in 3D (SPN R405): every star back from its index; N = K³·8^L; the lit share
+  //    follows 1 − e^(−2^L/λ), whole at N = ∞; changing H slides each star along its own ray and leaves every address
+  //    meeting the same star; the stars inside the corner counted; WebGL drew frames (three.js served as for check 22) ──
+  current = 'star-field-3d.html';
+  const before47 = failures.length;
+  await page.route(/^https:\/\/cdn\.jsdelivr\.net\/npm\/three@0\.160\.0\//, async route => {
+    const rel = new URL(route.request().url()).pathname.replace('/npm/three@0.160.0/', '');
+    try { await route.fulfill({ status: 200, contentType: 'text/javascript', body: await readFile(join(ROOT, 'node_modules/three', rel)) }); }
+    catch { await route.continue(); }
+  });
+  await page.goto(new URL('star-field-3d.html?L=8&n=16', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__starField3d && __starField3d.frames > 2, null, { timeout: 30000 }).catch(() => {});
+  const s3 = await page.evaluate(() => { const F = __starField3d, o = { bad: 0 };
+    for (const j of [0, 1, 3, 8, 15, 20, 30]) for (let k = 0; k < 8; k++) { const ip = Math.floor((k * 0.618 % 1) * F.nPsi(j)), iy = Math.floor((k * 0.414 % 1) * F.nY(j)), ir = Math.floor((k * 0.732 % 1) * F.nR(j));
+      const s = F.star(j, ip, iy, ir), s2 = F.fromIndex(F.indexOf(s)); if (!s2 || s2.j !== j || s2.ip !== ip || s2.iy !== iy || s2.ir !== ir) o.bad++;
+      if (!(s.r > (j ? 2 ** (j - 1) : 0) && s.r <= 2 ** j)) o.bad++; }
+    o.N = [F.N(0), F.N(8)];
+    o.lit = [8, 12].map(L => { const sk = F.skyOf(L, 32); return [sk.filter(s => s && !s.beyond).length / sk.length, F.expectedLit(L)]; });
+    o.litInf = F.skyOf(30, 16).filter(s => s && !s.beyond).length / 256;
+    F.set({ k: 0 }); const a = F.state().last.sig; F.set({ k: 6 }); const b = F.state().last.sig; o.sameMet = a === b && a.split(',').some(x => x !== '-');
+    const st = F.star(12, 1000, 700, 900), p1 = F.placeOf(st, 1), p2 = F.placeOf(st, 64), n1 = Math.hypot(...p1), n2 = Math.hypot(...p2);
+    o.sameRay = Math.max(...p1.map((x, i) => Math.abs(x / n1 - p2[i] / n2))); o.slid = n1 - n2;
+    o.near = [F.nearCount(0), F.nearCount(6)]; F.set({ k: 0 });
+    const g = F.goTo('98765432101234'); o.goto = g && F.indexOf(g); o.info = document.getElementById('info').textContent;
+    o.webgl = F.webgl; o.frames = F.frames; o.drawn = F.drawn; return o; });
+  if (s3.bad || s3.N.join() !== '8,134217728' || s3.lit.some(([m, e]) => Math.abs(m - e) > 0.05) || s3.litInf !== 1 || !s3.sameMet ||
+    s3.sameRay > 1e-12 || !(Math.abs(s3.slid - 6 * Math.LN2) < 1e-9) || s3.near.join() !== '8,2097152' || s3.goto !== '98765432101234' ||
+    !s3.info.includes('98,765,432,101,234') || !s3.webgl || !(s3.frames > 2) || !(s3.drawn > 0))
+    failures.push(`[${current}] ${JSON.stringify(s3)}`);
+  console.log(`${failures.length === before47 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–30; N = 8^(L+1); the lit share at L = 8, 12 ${s3.lit.map(([m]) => m.toFixed(3)).join(', ')} against ${s3.lit.map(([, e]) => e.toFixed(3)).join(', ')}, whole at N = ∞; H from 1 to 64 u slides a star 6 ln 2 inward along its own ray and every address meets the same star; 8 and 2,097,152 stars inside the corner; star #98,765,432,101,234 found; WebGL drew ${s3.frames} frames, ${s3.drawn.toLocaleString()} stars)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

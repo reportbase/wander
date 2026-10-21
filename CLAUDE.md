@@ -425,6 +425,21 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `?L=0..24|inf&n=128|512|2048&star=<index>`; hook `window.__starField` (`star`, `indexOf`, `fromIndex`, `countBelow`, `N`,
   `meet`, `skyOf`, `expectedLit`, `addresses`, `starNear`, `toScr`, `toPic`, `view`, `set`, `goTo`, `fit`, `state`).
   Not in the flying page.
+- `star-field-3d.html`: **an infinite star field, in 3D** (21 Oct 2026, Tom: "in 3d .     let use change the size of H."),
+  three.js like `payload-free-3d.html` (the same pinned CDN version and test route) for the scene only; the field, the index,
+  the sky and the hook are a plain script. Stars evenly through the octant: level 0 d ≤ 1 u (K³ cells, K = 2), level j ≥ 1
+  2^(j−1) < d ≤ 2^j u (7K·2^(j−1) round in azimuth × K·2^(j−1) up in height, Lambert's cells, × K·2^(j−1) out, even in
+  volume), one star a cell, eight times as many each level; index K³·8^(j−1) + ((out)·(up cells) + up)·(round cells) + round
+  (BigInt, `fromIndex` back); N = K³·8^L, or ∞ (levels to 30). Each star a ball of radius 1/√(6K³·1024) u, λ = 1024 u, the lit
+  share about 1 − e^(−2^L/λ). The reader: 16², 32² or 48² cells of Lambert's map, each painted by the first star met. H a
+  slider (2^−4 to 2^12 u): each star laid along its own ray at d/H to the corner then 1 + ln(d/H); a change of H slides every
+  star along its ray, changes which are inside the corner (the gold sphere; counted exactly), and leaves every address
+  meeting the same star. The scene: orbit, zoom toward the cursor; each level drawn whole where it fits, else the part about
+  where you look, thinned to a seeded random choice of its cells (real stars) when still too many; drawn about the point
+  looked at, so deep zooms keep their precision. Point at a star for its index, click to pin, type an index to fly to it;
+  hover the map for the star an address meets, click to fly there. `?L=0..20|inf&H=<log2 H>&n=16|32|48&star=<index>`; hook
+  `window.__starField3d` (`star`, `indexOf`, `fromIndex`, `countBelow`, `N`, `meet`, `skyOf`, `addresses`, `expectedLit`,
+  `nearCount`, `placeOf`, `lay`, `set`, `goTo`, `state`, `frames`, `webgl`, `drawn`, `thinned`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -528,7 +543,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -2027,6 +2042,10 @@ In short:
       (4, 262,144, 4,398,046,511,104 at L = 0, 8, 20); the lit share at L = 4, 8, 10, 12 within 0.05 of 1 − e^(−2^L/λ),
       every address lit at N = ∞, the 512 addresses the same at every N; the star pointed at on the map is the star there;
       star #123,456,789,012 found by its index.
+  47. **star-field-3d.html:** every star comes back from its index at levels 0 to 30, inside its level's distances; N = 8^(L+1)
+      (8, 134,217,728 at L = 0, 8); the lit share at L = 8, 12 within 0.05 of 1 − e^(−2^L/λ), every address lit at N = ∞;
+      H from 1 to 64 u slides a star exactly 6 ln 2 inward along its own ray and every address meets the same star; 8 and
+      2,097,152 stars inside the corner at H = 1 and 64 u; star #98,765,432,101,234 found; WebGL drew frames.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
