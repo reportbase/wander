@@ -1,0 +1,142 @@
+1. Indexing.
+  Prop 3(d): 'n freedoms ... 2^n orthants: 4 quadrants for the circle, 8 octants for the sphere' -> there n counts unit relations (circle n=2).
+  'More parties': n other parties, n+1 unit relations, sphere S^n in R^(n+1), 2^(n+1) orthants.
+   n=1 other parties: 2 unit relations, sphere S^1 (dim 1) in R^2, readings in R^1, orthants 2^2=4; Prop 3(d) with n=1 would give 2
+   n=2 other parties: 3 unit relations, sphere S^2 (dim 2) in R^3, readings in R^2, orthants 2^3=8; Prop 3(d) with n=2 would give 4
+   n=3 other parties: 4 unit relations, sphere S^3 (dim 3) in R^4, readings in R^3, orthants 2^4=16; Prop 3(d) with n=3 would give 8
+   n=4 other parties: 5 unit relations, sphere S^4 (dim 4) in R^5, readings in R^4, orthants 2^5=32; Prop 3(d) with n=4 would give 16
+   n=5 other parties: 6 unit relations, sphere S^5 (dim 5) in R^6, readings in R^5, orthants 2^6=64; Prop 3(d) with n=5 would give 32
+  [ok] Z_1 = sweep's 2/pi (Prop 5(b)): got 0.636619772367581  want 0.636619772367581  |err| 0.0
+  [ok] Z_2 = 2/pi, the constant of 5(e): got 0.636619772367581  want 0.636619772367581  |err| 0.0
+2. Area element of the gnomonic map s -> (1,s)/r is r^-(n+1) (Gram determinant, numerical derivatives).
+  [ok] n=1 sqrt(det Gram) * r^(n+1): got 1.0  want 1  |err| 0.0
+  [ok] n=2 sqrt(det Gram) * r^(n+1): got 1.0  want 1  |err| 1.97e-31
+  [ok] n=3 sqrt(det Gram) * r^(n+1): got 1.0  want 1  |err| 9.86e-32
+  [ok] n=4 sqrt(det Gram) * r^(n+1): got 1.0  want 1  |err| 2.96e-31
+  [ok] n=5 sqrt(det Gram) * r^(n+1): got 1.0  want 1  |err| 3.94e-31
+3. Normalisation: Z_n * int_[0,inf)^n (1+|s|^2)^(-(n+1)/2) ds = 1, and the total area = orthant of S^n.
+  [ok] n=1 total (Gamma split): got 1.0  want 1  |err| 7.96e-18
+  [ok] n=1 unnormalised area (radial) = orthant of S^1: got 1.5707963267949  want 1.5707963267949  |err| 0.0
+  [ok] n=1 Z_n = 1/area: got 0.636619772367581  want 0.636619772367581  |err| 0.0
+  [ok] n=2 total (Gamma split): got 1.0  want 1  |err| 7.96e-18
+  [ok] n=2 unnormalised area (radial) = orthant of S^2: got 1.5707963267949  want 1.5707963267949  |err| 0.0
+  [ok] n=2 Z_n = 1/area: got 0.636619772367581  want 0.636619772367581  |err| 0.0
+  [ok] n=3 total (Gamma split): got 1.0  want 1  |err| 7.96e-18
+  [ok] n=3 unnormalised area (radial) = orthant of S^3: got 1.23370055013617  want 1.23370055013617  |err| 0.0
+  [ok] n=3 Z_n = 1/area: got 0.810569469138702  want 0.810569469138702  |err| 0.0
+  [ok] n=4 total (Gamma split): got 1.0  want 1  |err| 7.96e-18
+  [ok] n=4 unnormalised area (radial) = orthant of S^4: got 0.822467033424113  want 0.822467033424113  |err| 9.86e-32
+  [ok] n=4 Z_n = 1/area: got 1.21585420370805  want 1.21585420370805  |err| 0.0
+  [ok] n=5 total (Gamma split): got 1.0  want 1  |err| 7.96e-18
+  [ok] n=5 unnormalised area (radial) = orthant of S^5: got 0.484473073129685  want 0.484473073129685  |err| 4.93e-32
+  [ok] n=5 Z_n = 1/area: got 2.06409820372477  want 2.06409820372477  |err| 0.0
+4. One reading s_1 = v_1/h: marginal density 2/(pi(1+s^2)), CDF(1) = 1/2, reciprocal h/v_1 same law.
+  [ok] n=1 marginal at s=0.125: got 0.626825622023465  want 0.626825622023465  |err| 0.0
+  [ok] n=1 marginal at s=0.5: got 0.509295817894065  want 0.509295817894065  |err| 0.0
+  [ok] n=1 marginal at s=1: got 0.318309886183791  want 0.318309886183791  |err| 0.0
+  [ok] n=1 marginal at s=3: got 0.0636619772367581  want 0.0636619772367581  |err| 0.0
+  [ok] n=1 marginal at s=20: got 0.00158758047971965  want 0.00158758047971965  |err| 0.0
+  [ok] n=1 P(v_1/h <= 1): got 0.5  want 0.5  |err| 0.0
+  [ok] n=1 P(s_1<=3) = P(s_1>=1/3) (reciprocal-symmetric): got 0.795167235300867  want 0.795167235300867  |err| 7.96e-18
+  [ok] n=2 marginal at s=0.125: got 0.626825622023465  want 0.626825622023465  |err| 0.0
+  [ok] n=2 marginal at s=0.5: got 0.509295817894065  want 0.509295817894065  |err| 9.86e-32
+  [ok] n=2 marginal at s=1: got 0.318309886183791  want 0.318309886183791  |err| 0.0
+  [ok] n=2 marginal at s=3: got 0.0636619772367581  want 0.0636619772367581  |err| 1.23e-32
+  [ok] n=2 marginal at s=20: got 0.00158758047971965  want 0.00158758047971965  |err| 1.93e-34
+  [ok] n=2 P(v_1/h <= 1): got 0.5  want 0.5  |err| 9.86e-32
+  [ok] n=2 P(s_1<=3) = P(s_1>=1/3) (reciprocal-symmetric): got 0.795167235300867  want 0.795167235300867  |err| 7.96e-18
+  [ok] n=3 marginal at s=0.125: got 0.626825622023465  want 0.626825622023465  |err| 0.0
+  [ok] n=3 marginal at s=0.5: got 0.509295817894065  want 0.509295817894065  |err| 9.86e-32
+  [ok] n=3 marginal at s=1: got 0.318309886183791  want 0.318309886183791  |err| 0.0
+  [ok] n=3 marginal at s=3: got 0.0636619772367581  want 0.0636619772367581  |err| 1.23e-32
+  [ok] n=3 marginal at s=20: got 0.00158758047971965  want 0.00158758047971965  |err| 0.0
+  [ok] n=3 P(v_1/h <= 1): got 0.5  want 0.5  |err| 0.0
+  [ok] n=3 P(s_1<=3) = P(s_1>=1/3) (reciprocal-symmetric): got 0.795167235300867  want 0.795167235300867  |err| 7.96e-18
+  [ok] n=4 marginal at s=0.125: got 0.626825622023465  want 0.626825622023465  |err| 0.0
+  [ok] n=4 marginal at s=0.5: got 0.509295817894065  want 0.509295817894065  |err| 0.0
+  [ok] n=4 marginal at s=1: got 0.318309886183791  want 0.318309886183791  |err| 0.0
+  [ok] n=4 marginal at s=3: got 0.0636619772367581  want 0.0636619772367581  |err| 0.0
+  [ok] n=4 marginal at s=20: got 0.00158758047971965  want 0.00158758047971965  |err| 1.93e-34
+  [ok] n=4 P(v_1/h <= 1): got 0.5  want 0.5  |err| 9.86e-32
+  [ok] n=4 P(s_1<=3) = P(s_1>=1/3) (reciprocal-symmetric): got 0.795167235300867  want 0.795167235300867  |err| 7.96e-18
+  [ok] n=5 marginal at s=0.125: got 0.626825622023465  want 0.626825622023465  |err| 0.0
+  [ok] n=5 marginal at s=0.5: got 0.509295817894065  want 0.509295817894065  |err| 9.86e-32
+  [ok] n=5 marginal at s=1: got 0.318309886183791  want 0.318309886183791  |err| 0.0
+  [ok] n=5 marginal at s=3: got 0.0636619772367581  want 0.0636619772367581  |err| 1.23e-32
+  [ok] n=5 marginal at s=20: got 0.00158758047971965  want 0.00158758047971965  |err| 1.93e-34
+  [ok] n=5 P(v_1/h <= 1): got 0.5  want 0.5  |err| 9.86e-32
+  [ok] n=5 P(s_1<=3) = P(s_1>=1/3) (reciprocal-symmetric): got 0.795167235300867  want 0.795167235300867  |err| 7.96e-18
+5. Pairs: 2D marginal of (s_1,s_2) is 5(e)'s law; v_1/v_2 has CDF (2/pi)atan r, median 1.
+  [ok] n=2 2D marginal at (0.25,2): got 0.055889801689335  want 0.055889801689335  |err| 6.16e-33
+  [ok] n=2 2D marginal at (1,1): got 0.122517532315954  want 0.122517532315954  |err| 1.23e-32
+  [ok] n=2 2D marginal at (3,0.5): got 0.0193996692182075  want 0.0193996692182075  |err| 0.0
+  [ok] n=3 2D marginal at (0.25,2): got 0.055889801689335  want 0.055889801689335  |err| 6.16e-33
+  [ok] n=3 2D marginal at (1,1): got 0.122517532315954  want 0.122517532315954  |err| 0.0
+  [ok] n=3 2D marginal at (3,0.5): got 0.0193996692182075  want 0.0193996692182075  |err| 0.0
+  [ok] n=4 2D marginal at (0.25,2): got 0.055889801689335  want 0.055889801689335  |err| 6.16e-33
+  [ok] n=4 2D marginal at (1,1): got 0.122517532315954  want 0.122517532315954  |err| 1.23e-32
+  [ok] n=4 2D marginal at (3,0.5): got 0.0193996692182075  want 0.0193996692182075  |err| 0.0
+  [ok] n=5 2D marginal at (0.25,2): got 0.055889801689335  want 0.055889801689335  |err| 6.16e-33
+  [ok] n=5 2D marginal at (1,1): got 0.122517532315954  want 0.122517532315954  |err| 1.23e-32
+  [ok] n=5 2D marginal at (3,0.5): got 0.0193996692182075  want 0.0193996692182075  |err| 3.08e-33
+  [ok] P(v_1/v_2 <= 0.25) from 5(e)'s law: got 0.155958260754739  want 0.155958260754739  |err| 7.43e-29
+  [ok] P(v_1/v_2 <= 1) from 5(e)'s law: got 0.5  want 0.5  |err| 1.77e-26
+  [ok] P(v_1/v_2 <= 4) from 5(e)'s law: got 0.844041739245261  want 0.844041739245261  |err| 5.89e-24
+6. Near in all readings = {s_i <= 1 for all i} = {h >= every v_i} (the same event for every n): 1/(n+1); number past the corner uniform on 0..n.
+  [ok] n=1 P(near in all): got 0.5  want 0.5  |err| 0.0
+  [ok] n=1 P(exactly 0 past): got 0.5  want 0.5  |err| 0.0
+  [ok] n=1 P(exactly 1 past): got 0.5  want 0.5  |err| 7.96e-18
+  [ok] n=2 P(near in all): got 0.333333333333333  want 0.333333333333333  |err| 4.93e-32
+  [ok] n=2 P(exactly 0 past): got 0.333333333333333  want 0.333333333333333  |err| 4.93e-32
+  [ok] n=2 P(exactly 1 past): got 0.333333333333333  want 0.333333333333333  |err| 4.93e-32
+  [ok] n=2 P(exactly 2 past): got 0.333333333333333  want 0.333333333333333  |err| 7.96e-18
+  [ok] n=3 P(near in all): got 0.25  want 0.25  |err| 0.0
+  [ok] n=3 P(exactly 0 past): got 0.25  want 0.25  |err| 0.0
+  [ok] n=3 P(exactly 1 past): got 0.25  want 0.25  |err| 0.0
+  [ok] n=3 P(exactly 2 past): got 0.25  want 0.25  |err| 0.0
+  [ok] n=3 P(exactly 3 past): got 0.25  want 0.25  |err| 7.96e-18
+  [ok] n=4 P(near in all): got 0.2  want 0.2  |err| 4.93e-32
+  [ok] n=4 P(exactly 0 past): got 0.2  want 0.2  |err| 4.93e-32
+  [ok] n=4 P(exactly 1 past): got 0.2  want 0.2  |err| 4.93e-32
+  [ok] n=4 P(exactly 2 past): got 0.2  want 0.2  |err| 4.93e-32
+  [ok] n=4 P(exactly 3 past): got 0.2  want 0.2  |err| 4.93e-32
+  [ok] n=4 P(exactly 4 past): got 0.2  want 0.2  |err| 7.96e-18
+  [ok] n=5 P(near in all): got 0.166666666666667  want 0.166666666666667  |err| 2.47e-32
+  [ok] n=5 P(exactly 0 past): got 0.166666666666667  want 0.166666666666667  |err| 2.47e-32
+  [ok] n=5 P(exactly 1 past): got 0.166666666666667  want 0.166666666666667  |err| 2.47e-32
+  [ok] n=5 P(exactly 2 past): got 0.166666666666667  want 0.166666666666667  |err| 2.47e-32
+  [ok] n=5 P(exactly 3 past): got 0.166666666666667  want 0.166666666666667  |err| 2.47e-32
+  [ok] n=5 P(exactly 4 past): got 0.166666666666667  want 0.166666666666667  |err| 2.47e-32
+  [ok] n=5 P(exactly 5 past): got 0.166666666666667  want 0.166666666666667  |err| 7.96e-18
+7. Is permutation symmetry needed, or do pair corners suffice?
+  counterexample (n=2): mass 1/2 on chamber v2>h>v, 1/2 on v>h>v2:
+   P(v<=h)=1/2, P(v2<=h)=1/2, P(v<=v2)=1/2 (every pair at its corner), P(h largest)=0, not 1/3.
+  uniform in altitude and azimuth: P(v<=h)=0.342583 (paper 0.343), P(v2<=h)=0.5, near=0.232632 (paper 0.233)
+  [ok] altitude-azimuth P(v<=h) vs paper 0.343: got 0.342583477852475  want 0.343  |err| 0.000417
+  [ok] altitude-azimuth near vs paper 0.233: got 0.232631533384301  want 0.233  |err| 0.000368
+8. Height (one coordinate) on the uniform orthant of S^n: density prop. (1-t^2)^((n-2)/2).
+  [ok] S^1 (2 unit relations) height density at 0.3: got 0.667358854130295  want 0.667358854130295  |err| 4.24e-18
+  [ok] S^1 (2 unit relations) height density at 0.8: got 1.06103295394597  want 1.06103295394597  |err| 6.74e-18
+  [ok] S^2 (3 unit relations) height density at 0.3: got 1.0  want 1.0  |err| 0.0
+  [ok] S^2 (3 unit relations) height density at 0.8: got 1.0  want 1.0  |err| 0.0
+  [ok] S^3 (4 unit relations) height density at 0.3: got 1.21459311451714  want 1.21459311451714  |err| 0.0
+  [ok] S^3 (4 unit relations) height density at 0.8: got 0.763943726841098  want 0.763943726841098  |err| 0.0
+9. Cosine form: Z_n (1+|s|^2)^(-(n+1)/2) = Z_n cos^(n+1) alpha, alpha the angle off h.
+  [ok] n=1: got 0.9  want 0.9  |err| 0.0
+  [ok] n=2: got 0.515432395116818  want 0.515432395116818  |err| 9.86e-32
+  [ok] n=3: got 0.153119092627599  want 0.153119092627599  |err| 0.0
+  [ok] n=4: got 0.0255826044540672  want 0.0255826044540672  |err| 1.23e-32
+  [ok] n=5: got 0.00278091430664062  want 0.00278091430664062  |err| 3.85e-34
+10. 5(e) last bullet: drawn at c1, c2, medians 1/c1, 1/c2, c2/c1.
+   P(v/h <= 1) when drawn at c1=2: 0.7048327647 (1/2 only at c1 = 1)
+  [ok] (c1,c2)=(2,1) P(v/h <= 1/c1): got 0.5  want 0.5  |err| 9.86e-32
+   median v/v2 = c2/c1 = 0.5 (X/Y has median 1, item 5)
+   P(v/h <= 1) when drawn at c1=0.5: 0.2951672353 (1/2 only at c1 = 1)
+  [ok] (c1,c2)=(0.5,3) P(v/h <= 1/c1): got 0.5  want 0.5  |err| 9.86e-32
+   median v/v2 = c2/c1 = 6.0 (X/Y has median 1, item 5)
+11. Line 694 ('In n dimensions ... sqrt(pi)Gamma((n+1)/2)/Gamma(n/2)'): n is the ambient dimension = unit relations.
+  [ok] m=2 unit relations: got 1.5707963267949  want 1.5707963267949  |err| 0.0
+  [ok] m=3 unit relations: got 2.0  want 2.0  |err| 0.0
+  [ok] m=4 unit relations: got 2.35619449019234  want 2.35619449019234  |err| 0.0
+
+All checks passed.
