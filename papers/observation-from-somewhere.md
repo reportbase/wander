@@ -59,7 +59,7 @@ a reason for the Cauchy's best-known peculiarity. Its median exists and sits at 
 only on order, which is a property of addresses. Its mean does not exist: its tail makes the first moment diverge. Read
 in this paper's terms, that is no loss, since a mean is a sum of sizes, a question about the payload, and addresses
 carry no size. Three results are kept apart: any sweep that treats the two parties alike puts its median at the corner;
-if its weight also stays above zero at the horizon, it has no mean; and the uniform turn gives the Cauchy's exact
+if its weight also gives h a density bounded away from zero near the horizon, it has no mean; and the uniform turn gives the Cauchy's exact
 shape. The same split decides what reaches the payload reader. One stream of readings fixes the
 course of a relation, not its parties. The median is had only by a reader that holds its readings at once. Payloads
 closer together than the reader's resolution arrive as their centroid, a sum.
@@ -1754,7 +1754,7 @@ f(X) ≥ f(mean X) on every X, with equality only if f is affine on the smallest
 and √2 + 1, a reciprocal pair. Its mean does not exist: ∫₀^s x·2/(π(1 + x²)) dx = (1/π)·ln(1 + s²), which grows without
 bound.
 
-(e) *The median needs only reciprocal symmetry, and the missing mean a weight that stays above zero at the horizon.* Let the sweep
+(e) *The median needs only reciprocal symmetry, and the missing mean a density of h bounded away from zero near the horizon.* Let the sweep
 follow any path from all of h to all of v, with any weight, both unchanged by exchanging the two parties. Then the
 readings' law is unchanged by the reciprocal and its median is the corner. If moreover the weight gives h a density
 bounded away from 0 near the horizon, the mean does not exist. The uniform turn on the circle is the case that gives the
@@ -2894,11 +2894,11 @@ stay where they are.
 | Each reading is a direction, with no unit; scaling the world moves none | the addresses fixed before anything arrives; any weighting | Proposition 8(a) |
 | The address law is independent of the payload; ranks and medians commute with every increasing map; the reader's K addresses hold any number N of things | the addresses fixed before anything arrives; any weighting | Theorem 6(a), (b); §8, "A fixed count, aimed by H" |
 | The median at the corner, K/2 addresses on each side of H | the weight unchanged by the reciprocal; no condition at the horizon (sin² 2θ has its median at the corner and a mean, 4/π) | Theorem 6(e); question 2 below |
-| No mean; a tail c/s, so the last of K addresses begins near c·K·H | a weight above zero at the horizon; no symmetry (a weight leaning toward the horizon has no mean and its median off the corner) | Theorem 6(e); §8, "Other ways to squeeze the line" |
+| No mean; a tail c/s, so the last of K addresses begins near c·K·H | a density of h bounded away from zero near the horizon, at least f₀ > 0 where v stays above v₀ > 0, so that P(v/h > r) ≥ f₀·v₀/r far out; no symmetry (a weight leaning toward the horizon has no mean and its median off the corner) | Theorem 6(e); §8, "Other ways to squeeze the line" |
 | Every pair's median at its own corner | each pair's weight unchanged by its own reciprocal | Proposition 5(e); "More parties" |
 | Near in all readings for 1/(n + 1); the number of readings past their corner even over 0, 1, …, n | the weight unchanged by every permutation of the n + 1 unit relations; the pairs' symmetry is not enough (half the weight on each of two chambers can keep every pair's median at its corner and never have h the largest) | "More parties"; "Why uniformly by area" |
 | The exact Cauchy, its 2/π and quartiles √2 ∓ 1; on the octant the two-dimensional Cauchy and the near field exactly ⅓ | the uniform turn, or on the sphere uniform area: the reader treats every turn alike | Proposition 5(b), (d), (e); "Why uniformly by area" |
-| Staying a Cauchy under every new zero, every change of H and every sum; the stretch 2KH/π before the horizon | the uniform turn | §7.2; §8, "Other ways to squeeze the line" |
+| Staying a Cauchy under re-aiming (every new zero and every change of H, the Möbius maps of the reading line, z ↦ (az + b)/(cz + d) with a, b, c, d real and ad − bc > 0) and under sums (of independent readings, each a Cauchy); the stretch 2KH/π before the horizon | the uniform turn; for sums, independence | §7.2; §8, "Other ways to squeeze the line" |
 
 The first two rows are the paper's main result in its widest form: the split of address from payload, and K from N,
 holds for any reader whose addresses are laid before anything arrives. The Cauchy is that split under the uniform turn.
@@ -2939,7 +2939,7 @@ holds for any reader whose addresses are laid before anything arrives. The Cauch
    them free. Only the circle is uniform in the turn, and the uniform turn is what gives g = 2θ/π, the Cauchy's exact
    shape and the factor 2/π: the premise selects the geometry, and the circle supplies the factor. None of the
    three has a mean. The mean of the readings below s grows, far out, by a fixed amount each time s grows tenfold (the
-   last column), because each weight stays above zero at the horizon. The horizon condition does real work: the circle weighted by
+   last column), because each gives h a density bounded away from zero near the horizon. The horizon condition does real work: the circle weighted by
    sin² 2θ also treats the two parties alike and keeps its median at the corner, but it vanishes at zero and at the
    horizon, and its readings have a mean, 4/π.
 

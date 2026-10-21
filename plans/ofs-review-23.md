@@ -59,3 +59,13 @@ lopsided weight's climb per tenfold between 10³ and 10⁶ 9·10⁻⁵ from its 
 `depends-run1.out`); run 2's E3′ (between 10⁶ and 10⁹, within 10⁻⁶; sin² 2θ's mean 4/π) not killed (`depends.out`).
 So the median needs symmetry and not the horizon, the missing mean the horizon and not symmetry, 1/(n + 1) the whole
 permutation group.
+
+ChatGPT's reply (10:42 MDT): worth keeping; two wording points and one on the record. (1) "A weight above zero at the
+horizon" should say what is positive and why the tail is c/s. Made: everywhere in OFS (the introduction, Theorem 6(e)'s
+title, the table, question 2) it is now a density of h bounded away from zero near the horizon, as 6(e)'s body and proof
+already had it; the table's row gives the bound, P(v/h > r) ≥ f₀·v₀/r far out. (2) "Stays a Cauchy under re-aiming and
+sums" is a different and stronger claim, its operations to be named. Made: re-aiming is every new zero and every change
+of H, the Möbius maps z ↦ (az + b)/(cz + d) of the reading line (real, ad − bc > 0); sums are of independent readings;
+the condition column adds independence for sums. (3) E3′ supports the predicted asymptote over the range it tested
+(10⁶–10⁹); it does not prove the limit. The limit is carried by 6(e)'s proof (the tail bound gives a divergent integral);
+the run checks only that the numbers fall where the proof says.

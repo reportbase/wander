@@ -725,7 +725,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   in 5(d)'s proof; the uniform turn selected for the stated ignorance; median, missing mean and exact Cauchy kept apart,
   the mean's absence the tail's, the address reading its interpretation; 6(a) formal with V*/H beside it; parallax
   scoped), and from `runs/ofs/wedge_audit.py` (115 checks pass) m for unit relations in 3(d), "More parties" citing 3(d)–(f),
-  1/(n + 1) from the exchange keeping the area; then (R415, R416) "Why uniformly by area" after 5(e)'s proof (the uniform
+  1/(n + 1) from the exchange keeping the area; then (R415–R417) "Why uniformly by area" after 5(e)'s proof (the uniform
   area from treating every turn alike, a premise, Haar's uniqueness doing the rest) and §11.2's opening table "What
   depends on what" (each result with its condition: any weighting, reciprocal symmetry, a weight above zero at the
   horizon, every permutation, the uniform turn), checked in `runs/ofs/depends.py`; and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9's "What a unit
