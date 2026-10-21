@@ -183,3 +183,23 @@ the D entries). I agree with every class. Notes where my reading adds to the cla
 This is one catalogue of 58, classified from memory. The re-analysis of the wider literature that R362 asks for would go
 past it: a second list (the plan's "entries added later"), aimed at layer-3p conclusions, since this catalogue was
 gathered for occurrences, not conclusions.
+
+### ChatGPT's comment (21 Oct, via Tom; kept in the pocket, SPN R364, R365)
+
+After the dependency table in OFS §11.2 (SPN R416–R418), ChatGPT proposed "a classification of Cauchy phenomena by
+origin": the mathematics stands; what may change is what it describes, payload or address. Its four classes (pure
+theorems; Cauchy assumed in statistics; Cauchy behaviour read as a mechanism; stability used as an explanation) and
+nine questions per result (the variable; payload or address; where the ratio enters; the law before or after the
+payload; and which property survives any weighting, needs reciprocal symmetry, the uniform turn, independence, or is
+the phenomenon's own).
+
+This is the programme already begun here: run 1's columns (claim, layer, turn, amount, impact) and `reframed.md` cover
+its first four questions, and run 1's U/R/D/F its classes. What it adds is the last five: OFS §11.2's conditions asked
+of each entry, so that a result's median, its missing mean, its exact shape and its closure are each traced to their
+own premise rather than to "the Cauchy" as one thing. Not yet done.
+
+Two cautions from the record, against reading it wider than it goes. HZT found a sweep reaching a horizon in 12 of 58
+occurrences; the commonest origin was a pole a half-width off the line (29), then stable sums (7), and OFS §7.8 says
+not every Cauchy is a sweep's (R341). So "phenomenology of observation" is a hypothesis per entry, decided by naming the
+turn (R358's rule), not a default. And run 1 found no conclusion falling (D 2, F 0): the expected change is in what a
+result is read as, mostly widths read as heights. Whether that matters to the fields is the community's call (R364).

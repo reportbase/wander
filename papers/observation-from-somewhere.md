@@ -59,7 +59,7 @@ a reason for the Cauchy's best-known peculiarity. Its median exists and sits at 
 only on order, which is a property of addresses. Its mean does not exist: its tail makes the first moment diverge. Read
 in this paper's terms, that is no loss, since a mean is a sum of sizes, a question about the payload, and addresses
 carry no size. Three results are kept apart: any sweep that treats the two parties alike puts its median at the corner;
-if its weight also stays above zero at the horizon, it has no mean; and the uniform turn gives the Cauchy's exact
+if its weight also gives h a density bounded away from zero near the horizon, it has no mean; and the uniform turn gives the Cauchy's exact
 shape. The same split decides what reaches the payload reader. One stream of readings fixes the
 course of a relation, not its parties. The median is had only by a reader that holds its readings at once. Payloads
 closer together than the reader's resolution arrive as their centroid, a sum.
@@ -634,7 +634,7 @@ last stretch of both without arriving: the horizon, the same on both layouts. On
 are the quarter circle, held whole; 3 and 4 live on the unit line, and the two situated readers are the two ways of
 comparing the layouts, line over circle and circle over line, with 1 between them. The unit line is the address space,
 and the number line is what is addressed. Why the number line itself, unlike any reader's lay, has no corner is taken
-up in §9.
+up in §9; the line, the turn and the lay are drawn on one figure in §6 ("One figure, three rulers").
 
 ### 3.4 Three vantages, and the true breadth
 
@@ -1371,6 +1371,44 @@ keeps the division's local scale 1/h but accumulates it, and so lays the same re
 and logarithmically past it. Latitude is the Gudermannian of the map's height, φ = gd(y). It is the oldest instance we
 know of the two address spaces laid out.
 
+**One figure, three rulers.** The circle, the number line and Mercator's height fit in one figure, and the figure shows
+what each of them does with the corner. Draw the unit circle, the tangent line at its apex A = (1, 0), and the unit
+hyperbola u² − w² = 1, which touches the same line at A (u along the axis, w sideways). A reading x = v/h sits on the
+tangent at T = (1, x). The circle's point P = (cos θ, sin θ), whose ray from the centre passes through T, and the
+hyperbola's point (cosh ζ, sinh ζ) level with T, give
+
+  x = tan θ = sinh ζ,  so θ = gd(ζ),
+
+and each angle is twice the area of its sector from A: the circle's (Archimedes) and the hyperbola's. So one reading is
+laid three ways, each an exact function of the others:
+
+| ruler | room for the near field, x ≤ 1 | room for the far field, x ≥ 1 | the corner x = 1 | the reciprocal x ↦ 1/x |
+|---|---|---|---|---|
+| x itself, the writer's number line (§9) | 1, in proportion | unbounded, in proportion | a point like any other | no symmetry of the ruler |
+| θ = arctan x, the turn | 45° | 45° | the middle | θ ↦ π/2 − θ, a reflection |
+| ζ = asinh x, the hyperbolic angle, Mercator's height | asinh 1 ≈ 0.881, nearly in proportion | unbounded, about ln 2 a doubling | where proportion gives way to levels | no reflection of the ruler |
+
+So the one figure draws the near field and the far field three ways. On the turn they are halves, mirrored by the
+reciprocal. On the hyperbolic angle they are the two address spaces above, proportion giving way to levels. On the
+writer's line there is no split, only the point. The table "drawing of the same addresses" above compares the fisheye
+and the two lays in the same terms.
+
+The third is the reader's lay of Proposition 4 made smooth. ζ ≈ x inside the corner and ζ ≈ ln 2x past it, and the
+lay (x, then 1 + ln x) never exceeds it by more than 1 − ln 2 ≈ 0.307, approached far out (0.119 at the corner).
+
+All three carry the corner, since it is the reciprocal's fixed point (Proposition 1) and so a point of the reading
+itself. Only the turn gives it a role.
+- A measure uniform in θ puts its median at x = 1 with nothing else given (Proposition 5(d)), because the turn is
+  bounded.
+- The two unbounded rulers have no uniform measure until a range is given beforehand. A measure uniform in ζ over
+  [0, Z] puts its median at x = sinh(Z/2), at the corner only when Z = 2 asinh 1 ≈ 1.763. A measure uniform in x over
+  [0, X] puts it at X/2, at the corner only when X = 2. Either way the range, an amount, decides where the middle falls.
+
+So the corner's point is shared, and its role as the median belongs to the turn. This is the division of §9 drawn on
+one figure: the writer's ruler and the reader's lay hold the corner as a point, and only the reader's sweep makes it
+the median. The rulers' rates against one another are dθ/dx = 1/(1 + x²), the Cauchy's density shape, and
+dθ/dζ = cos θ.
+
 **The proportion is in the addresses.** Within a doubling past the corner the lay's addresses are uniform; how uniformly
 things arrive at them is up to the world. If what arrives is spread uniformly in direction, as a lighthouse's flashes
 are (§7.1, §7.8), the far share h/v has density proportional to 1/(1 + (h/v)²), so the arrivals thin toward the corner
@@ -1456,6 +1494,19 @@ ds₂/(1 + s² + s₂²)^(3/2) = 1/(1 + s²), which gives the law of (b) for s, 
 and v₂ is a symmetry of the sphere that keeps the octant and its area, so the six orderings have equal areas; h is the largest in two
 of them. In the drawing a uniform direction is (1, c₁s, c₂s₂) normalised, so (c₁s, c₂s₂) has the law above and each
 median is divided by its c. ∎
+
+**Why uniformly by area.** (e) takes the uniform area as its hypothesis. It enters where the uniform turn enters
+for the circle, from the same premise: the reader's attitudes are the turns of one rigid bar, and it treats them alike
+(§2). "Alike" means that the law of its attitude is unchanged by every turn, the whole group, not only by exchanging the
+named parties or by shifting chosen angles; that is a premise about its ignorance, a choice (§11.1), and nothing in the
+geometry compels it. Given it, the rest follows. With three unit relations those turns are all the rotations of the
+sphere, and the only probability on the sphere that every rotation leaves unchanged is uniform area (the invariant measure of a compact group acting
+transitively is unique; Haar 1933). Its part on the octant is (e)'s law, and with n + 1 unit relations the same holds on
+the sphere in n + 1 dimensions. The exchanges of the parties alone do not fix it: they are a finite group, and many
+laws on the octant are unchanged by them. Nor is it the law of the two sweeps taken uniformly in both angles: that is a
+chart of the sphere, which a rotation changes, and it moves the near field to 0.233 (below). So the uniform area is
+selected by the stated ignorance, as the uniform turn is; it is not forced by bounded observation alone. An observer
+that weights its attitudes another way is not wrong: it implements another law of observation, with other shares.
 
 The law of (e) is the Cauchy wedge, the sweep in three dimensions. Where two unit relations are swept by one uniform
 turn, three are swept uniformly over the octant's area, and every pair it holds is swept as the circle is; uniform over
@@ -1741,7 +1792,7 @@ f(X) ≥ f(mean X) on every X, with equality only if f is affine on the smallest
 and √2 + 1, a reciprocal pair. Its mean does not exist: ∫₀^s x·2/(π(1 + x²)) dx = (1/π)·ln(1 + s²), which grows without
 bound.
 
-(e) *The median needs only reciprocal symmetry, and the missing mean a weight that stays above zero at the horizon.* Let the sweep
+(e) *The median needs only reciprocal symmetry, and the missing mean a density of h bounded away from zero near the horizon.* Let the sweep
 follow any path from all of h to all of v, with any weight, both unchanged by exchanging the two parties. Then the
 readings' law is unchanged by the reciprocal and its median is the corner. If moreover the weight gives h a density
 bounded away from 0 near the horizon, the mean does not exist. The uniform turn on the circle is the case that gives the
@@ -1755,8 +1806,9 @@ satisfies the midpoint equation and commutes with the mean of every finite set w
 its equality case are Jensen's. (d) Over one quadrant the distribution function is (2/π)·arctan(v/h), which is ½ at
 v/h = 1 and ¼ and ¾ at tan(π/8) = √2 − 1 and tan(3π/8) = √2 + 1; the integral is elementary. (e) The exchange carries
 v/h to h/v and leaves path and weight unchanged, so v/h and 1/(v/h) have one law, F(1/x) = 1 − F(x), and by Proposition
-2(b) F(1) = ½. Near the horizon v stays above some v₀ > 0, so P(v/h > r) ≥ P(h < v₀/r) ≥ f₀·v₀/r for large r, where
-f₀ > 0 bounds the density of h there from below; then ∫ P(v/h > r) dr diverges, and so does the mean. ∎
+2(b) F(1) = ½. The path ends at all of v, so there are δ > 0 and v₀ > 0 with v ≥ v₀ wherever h < δ: on the path itself,
+not only with some probability. Then P(v/h > r) ≥ P(h < v₀/r) ≥ f₀·v₀/r once v₀/r < δ, where f₀ > 0 bounds the density
+of h below δ from below; then ∫ P(v/h > r) dr diverges, and so does the mean. ∎
 
 The theorem is elementary; its content is the reading. The Cauchy distribution is not a law of anything the reader
 meets. It is the reader's own layout of directions, counted. What arrives in each direction cancels from every single
@@ -2058,6 +2110,9 @@ follow every increasing map; those facts are part (d). The other parts of Theore
 
   The split is in the formulas, aberration apart from Doppler shift and beaming. It is not named there as a
   transformation of addresses and a weighting of payload. (We checked these identities exactly.)
+  The same theory runs on §6's three rulers. A velocity's celerity γβ is x, its rapidity η is ζ, its speed
+  β = tanh η = sin θ and γ = sec θ. Rapidities add along a line, and nothing in the theory turns uniformly in θ, so
+  its corner γβ = 1 (β = 1/√2) is where its two regimes hand over, not a median.
 - *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
   (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
   does so everywhere; and no chart keeps both angles and areas (Euler 1777; Gauss 1828). What is ours is the reading: the
@@ -2872,6 +2927,24 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
 
 ### 11.2 Assumptions and open questions
 
+**What depends on what.** The results of the earlier sections do not all rest on the same premise. Each row gives a
+result and the condition that makes it hold, whatever else the reader's weighting of its attitudes does; the proofs
+stay where they are.
+
+| result | the condition it needs | where |
+|---|---|---|
+| Each reading is a direction, with no unit; scaling the world moves none | the addresses fixed before anything arrives; any weighting | Proposition 8(a) |
+| The address law is independent of the payload; ranks and medians commute with every increasing map; the reader's K addresses hold any number N of things | the addresses fixed before anything arrives; any weighting | Theorem 6(a), (b); §8, "A fixed count, aimed by H" |
+| The median at the corner, K/2 addresses on each side of H | the weight unchanged by the reciprocal; no condition at the horizon (sin² 2θ has its median at the corner and a mean, 4/π) | Theorem 6(e); question 2 below |
+| No mean; a tail c/s, so the last of K addresses begins near c·K·H | a density of h bounded away from zero near the horizon, at least f₀ > 0 there; since the path ends at all of v, v ≥ v₀ > 0 wherever h is small, so P(v/h > r) ≥ f₀·v₀/r far out; no symmetry (a weight leaning toward the horizon has no mean and its median off the corner) | Theorem 6(e); §8, "Other ways to squeeze the line" |
+| Every pair's median at its own corner | each pair's weight unchanged by its own reciprocal | Proposition 5(e); "More parties" |
+| Near in all readings for 1/(n + 1); the number of readings past their corner even over 0, 1, …, n | the weight unchanged by every permutation of the n + 1 unit relations; the pairs' symmetry is not enough (half the weight on each of two chambers can keep every pair's median at its corner and never have h the largest) | "More parties"; "Why uniformly by area" |
+| The exact Cauchy, its 2/π and quartiles √2 ∓ 1; on the octant the two-dimensional Cauchy and the near field exactly ⅓ | the uniform turn, or on the sphere uniform area: the reader treats every turn alike | Proposition 5(b), (d), (e); "Why uniformly by area" |
+| Staying a Cauchy under re-aiming and under sums. Re-aiming: a new zero or a change of H acts on the signed reading over both quadrants (the projective line) as a real Möbius map g(x) = (ax + b)/(cx + d), and X distributed as C(z) gives g(X) as C(g(z)) for every such map with ad − bc > 0 (as C of the conjugate of g(z) when ad − bc < 0; the pole is one reading, of probability zero, sent to the horizon). Within one quadrant a turn does not keep the half-Cauchy. Sums: of independent readings, each Cauchy, the points m + iγ adding. The stretch 2KH/π before the horizon | the readings Cauchy to begin with, which the uniform turn gives; for sums, independence as well | §7.2 (McCullagh 1996); §8, "Other ways to squeeze the line" |
+
+The first two rows are the paper's main result in its widest form: the split of address from payload, and K from N,
+holds for any reader whose addresses are laid before anything arrives. The Cauchy is that split under the uniform turn.
+
 1. *The link in Proposition 4.* (S) does not follow from "any H will do", which only places the corner. It is scale
    invariance of the lay's increments, motivated by Proposition 3(b), since a lay that breaks it builds in a scale no
    reading can fix, but assumed rather than derived. The second route of §6, an additive measure on chains of
@@ -2908,7 +2981,7 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    them free. Only the circle is uniform in the turn, and the uniform turn is what gives g = 2θ/π, the Cauchy's exact
    shape and the factor 2/π: the premise selects the geometry, and the circle supplies the factor. None of the
    three has a mean. The mean of the readings below s grows, far out, by a fixed amount each time s grows tenfold (the
-   last column), because each weight stays above zero at the horizon. The horizon condition does real work: the circle weighted by
+   last column), because each gives h a density bounded away from zero near the horizon. The horizon condition does real work: the circle weighted by
    sin² 2θ also treats the two parties alike and keeps its median at the corner, but it vanishes at zero and at the
    horizon, and its readings have a mean, 4/π.
 

@@ -681,6 +681,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and the reader as the pivot, the hand in full, and the one number a reader lacks; never fold these into a short table.
   §10 is a worked example (a mountain range). Before rewriting it, check the new text against the old for anything lost.
   It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
+  **OFS is the working document and the single source of truth for publication** (21 Oct, SPN R421; Tom: "ofs is our
+  working document.    published documents will us this as single source of truth."): anything published (a shorter
+  paper, a companion, a submission) is drawn from OFS and says nothing OFS does not; a change is made in OFS first and
+  carried out to the published text, never the other way; where a published text differs from OFS, the published text
+  is the one to fix.
   **It builds on Jaynes** (14 Oct, SPN R243; Tom: "It would be nice to find and lean on one paper that well cited that has
   overlap with our ideas, and we just build on that."; "ok, if we find another great paper to lean on, we can just add
   it to Jaynes."): his principle of transformation groups (1968, 1973) is the method, stated in §2 ("What we build on:
@@ -690,6 +695,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   family's affine group has two (Jaynes's own eq. 49 group commutes; its measure coincides with the right-invariant one,
   which later work favours where the location or the scale is of interest; Ghosh 2011), cites Norton (2008: complete
   ignorance is not a probability) beside the pre-prior, and Liu and Adams (2019) beside the situated Bertrand.
+  **One figure, three rulers** (21 Oct, SPN R422; Tom: "we have show that the same math applies to the reader and
+  writer", after calendar's `geometry.html` dial): OFS §6 after Mercator's map. The circle, the unit hyperbola and the
+  tangent at the apex lay one reading x three ways, the writer's line x, the turn θ = arctan x, the hyperbolic angle
+  ζ = asinh x (Mercator's height, the reader's lay made smooth, within 1 − ln 2), x = tan θ = sinh ζ, θ = gd ζ; all carry
+  the corner, only the turn makes it the median (uniform ζ on [0, Z]: sinh(Z/2)). Its table gives each ruler's room for the near
+  and far fields (Tom: "it kind of captures the near field far, field split at the corner"): the turn 45° and 45°, ζ
+  0.881 and unbounded at about ln 2 a doubling, x 1 and unbounded. §7.8's SR entry has one sentence
+  (celerity x, rapidity ζ, speed sin θ). Checked in `runs/ofs/rulers.py`.
   **Since R247 (review 9, `plans/ofs-review-9.md`)** OFS keeps two groups apart: the reader's ignorance (turns of θ,
   rescalings of κ = V*/H, and the exchange of the unit relations, which acts on readings and drawings, not on κ) and the
   Möbius action on readings (turns and changes of the drawing, PSL(2,ℝ)), a fact about the family of drawings used only
@@ -725,7 +738,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   in 5(d)'s proof; the uniform turn selected for the stated ignorance; median, missing mean and exact Cauchy kept apart,
   the mean's absence the tail's, the address reading its interpretation; 6(a) formal with V*/H beside it; parallax
   scoped), and from `runs/ofs/wedge_audit.py` (115 checks pass) m for unit relations in 3(d), "More parties" citing 3(d)–(f),
-  1/(n + 1) from the exchange keeping the area; and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9's "What a unit
+  1/(n + 1) from the exchange keeping the area; then (R415–R418) "Why uniformly by area" after 5(e)'s proof (the uniform
+  area from treating every turn alike, a premise, Haar's uniqueness doing the rest) and §11.2's opening table "What
+  depends on what" (each result with its condition: any weighting, reciprocal symmetry, a weight above zero at the
+  horizon, every permutation, the uniform turn), checked in `runs/ofs/depends.py` and `runs/ofs/mobius.py`; and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9's "What a unit
   is, and why a reader needs one" (R230; Tom: "A unit is needed, it injects physics into the relation"; "A unit is
   pre-measured relation. It says something like 5 ounces/ 1 foot"): a unit is a relation measured beforehand; within
   one reader its value is a zoom, needed because addresses are finite, where the world's scale first reaches the

@@ -19,3 +19,82 @@ interpretation read as a theorem's cause). Its points, checked against the text,
 
 Its closing recommendation (mark each claim derived, conditional, interpretive or empirical) is the paper's practice in
 words rather than marks; OFS keeps no standing marks (SPN R202).
+
+## Follow-up (21 October, 10:06 MDT)
+
+ChatGPT then read the audit (`runs/ofs/wedge_audit.py`, `.out`) and asked one question: is the uniform area on the orthant
+derived from the observer's stated principles, or does it enter as an axiom? It noted it had read the audit's text and
+outputs, not run the script; the script was run here (all 115 checks pass) and was written against the paper's current
+propositions.
+
+Checked: 5(e) stated the uniform area as its hypothesis and contrasted the sweep uniform in both angles, but did not say
+where the measure comes from. It comes from the same premise as the circle's uniform turn: the reader's attitudes are the
+turns of one rigid bar, treated alike. With three unit relations those turns are the rotations of the sphere, whose only
+invariant probability is uniform area (the invariant measure of a compact group acting transitively is unique; Haar 1933);
+its restriction to the octant is (e)'s law, and likewise in n + 1 dimensions. The parties' exchanges alone do not fix it
+(a finite group; the audit's counterexample shows pair corners do not either), and the two angles uniform is a chart, not
+the group's measure.
+
+Made: OFS "Why uniformly by area", after 5(e)'s proof: the measure selected by the stated ignorance, as the uniform turn
+is; not forced by bounded observation alone.
+
+ChatGPT's reply (10:13 MDT): agreed; asked that "treated alike" be stated as invariance under the full rotation group, not
+only the parties' exchanges or chosen angles, and that the premise be visible as a choice about ignorance (uniqueness of
+the invariant measure does the rest, but does not prove a reader must adopt it); an observer weighting attitudes
+otherwise implements another law, not a wrong one. It withdrew its "not run" caveat. Made: both, in the same paragraph.
+
+## The dependency table (21 October, 10:15 and 10:18 MDT)
+
+ChatGPT (10:15) closed the measure question and asked which conclusions survive a change of attitude-weighting. Claude
+proposed a four-tier table; ChatGPT (10:18) said to add it at the opening of §11.2 as a dependency map, the proofs kept
+where they are, with three changes: the 1/(n + 1) result its own row, needing full permutation symmetry, not the pairs';
+"the address law is independent of the payload" in place of "what arrives cancels from every reading"; the horizon
+condition a separate dependency from reciprocal symmetry, not a stronger tier of it; every row naming its condition.
+
+Made: OFS §11.2 opens with "What depends on what", eight rows, each with its condition and where it is proved. Checked
+in `runs/ofs/depends.py` (predictions first): E1 (any weighting: readings unchanged by the payload to 10⁻³⁹, ranks kept by
+an increasing map), E2 (median at the corner for sin² 2θ and the uniform turn, 1.294 for a lopsided weight), E4 (half the
+weight on two chambers: every pair at ½, h never largest; uniform area ½ and ⅓) not killed; E3 killed by my set-up (the
+lopsided weight's climb per tenfold between 10³ and 10⁶ 9·10⁻⁵ from its far-out value, against my 10⁻⁵; output
+`depends-run1.out`); run 2's E3′ (between 10⁶ and 10⁹, within 10⁻⁶; sin² 2θ's mean 4/π) not killed (`depends.out`).
+So the median needs symmetry and not the horizon, the missing mean the horizon and not symmetry, 1/(n + 1) the whole
+permutation group.
+
+ChatGPT's reply (10:42 MDT): worth keeping; two wording points and one on the record. (1) "A weight above zero at the
+horizon" should say what is positive and why the tail is c/s. Made: everywhere in OFS (the introduction, Theorem 6(e)'s
+title, the table, question 2) it is now a density of h bounded away from zero near the horizon, as 6(e)'s body and proof
+already had it; the table's row gives the bound, P(v/h > r) ≥ f₀·v₀/r far out. (2) "Stays a Cauchy under re-aiming and
+sums" is a different and stronger claim, its operations to be named. Made: re-aiming is every new zero and every change
+of H, the Möbius maps z ↦ (az + b)/(cz + d) of the reading line (real, ad − bc > 0); sums are of independent readings;
+the condition column adds independence for sums. (3) E3′ supports the predicted asymptote over the range it tested
+(10⁶–10⁹); it does not prove the limit. The limit is carried by 6(e)'s proof (the tail bound gives a divergent integral);
+the run checks only that the numbers fall where the proof says.
+
+ChatGPT's next reply (10:53 MDT): the horizon bound needs the event v ≥ v₀ to have positive probability; and the closure
+row's "every real Möbius map" should be stress-tested (maps with poles), and sums need Cauchy summands, not independence
+alone. Answers: (1) v ≥ v₀ is not an event of the law but a fact of the path: the path ends at all of v, so h < δ forces
+v ≥ v₀ on the path itself. Made: 6(e)'s proof and the table row say so. (2) The claim holds for every real map, of
+either sign of ad − bc, poles included (McCullagh 1996's theorem: X ~ C(z) gives g(X) ~ C(g(z)), the conjugate when
+ad − bc < 0; the pole is one reading, of probability zero). Checked in `runs/ofs/mobius.py` (a check of a classical
+result, so no prediction): 200 random maps of both signs, worst 3·10⁻³¹; one det < 0 case by 2·10⁶ samples, 0.6076
+against 0.6072. What the row did overstate: it holds on the signed reading over both quadrants (the projective line);
+within one quadrant a turn does not keep the half-Cauchy. Made: the row says that, names the readings Cauchy to begin
+with as the condition (the uniform turn giving it), and sums of independent readings each Cauchy, the points m + iγ
+adding; McCullagh cited there.
+
+ChatGPT's framing comment (11:11 MDT, via Tom, no instruction): "Classical mathematics is correct. What it may omit is
+that the observer's geometry can generate the very relationships that classical mathematics subsequently describes",
+proposed as the sentence at the centre of the project. Not taken into OFS. It characterizes classical mathematics,
+which R335 and R336 took out ("we are not debating classical math"; ChatGPT's own reply then: "The paper should define
+its own problem"). In the corpus's terms, the writer's vantage is not one that leaves the observer out: the writer
+holds the true breadth because it walked the whole or carried an amount in. The reader's vantage is a second one beside
+it, not a detail the first omitted. Its second half also reads wider than the record. Per HZT and REA, the observer's
+sweep generates some Cauchy laws, while poles and stable sums generate most (R341). Its own qualification (each
+application must show the variable is an address) is R358's rule and is kept. Its closing question ("which classical
+interpretations change") is REA's, in the pocket (R364, R419).
+
+ChatGPT's publication comment (11:15 MDT, via Tom): publish the argument whole rather than keep expanding it; confident
+mathematics, explicit interpretation, restrained claims; leave the re-evaluation of Cauchy results to later papers.
+Claude agreed on stopping, kept R335's opening (its sample paragraph characterizes classical mathematics again), named
+the size (about 53,600 words) and offered a short companion, a freeze or a split. Tom (11:17): "ofs is our working
+document.    published documents will us this as single source of truth." (SPN R421.)

@@ -1,0 +1,19 @@
+E1  payload changed, readings and ranks
+    largest change of a reading under a new payload 1.47e-39; ranks kept by x³ + x: True
+E2, E3  median and mean of x = tan θ under each weight
+    L (lopsided)  median  1.29396524635   mean below 10³, 10⁶: 5.5695746, 11.432789   per tenfold 1.9544048 (predicted (2/π)·w̃(π/2)·ln 10 = 1.9544949)
+    S (sin² 2θ)   median            1.0   mean below 10³, 10⁶: 1.273237, 1.2732395   per tenfold 8.4882424e-7 (predicted (2/π)·w̃(π/2)·ln 10 = 5.0104905e-85)   full mean 1.27323954473516 (4/π = 1.27323954473516)
+    U (uniform)   median            1.0   mean below 10³, 10⁶: 4.3976139, 8.7952272   per tenfold 1.4658711 (predicted (2/π)·w̃(π/2)·ln 10 = 1.4658712)
+E4  three unit relations: pairs against the whole permutation group
+    P:            P(v ≤ h), P(v₂ ≤ h), P(v₂ ≤ v), P(h largest) = 0.5, 0.5, 0.5, 0
+    uniform area: P(v ≤ h), P(v₂ ≤ h), P(v₂ ≤ v), P(h largest) = 0.5, 0.5, 0.5, 0.333333
+
+E3′ (run 2) the climb per tenfold between 10⁶ and 10⁹
+    L (lopsided)  per tenfold 1.95449484037 (predicted 1.95449493035)
+    S (sin² 2θ)   mean below 10⁹ 1.27323954473516 (4/π 1.27323954473516)
+    U (uniform)   per tenfold 1.46587119776 (predicted 1.46587119776)
+E1 not killed
+E2 not killed
+E3 KILLED
+E4 not killed
+E3′ not killed
