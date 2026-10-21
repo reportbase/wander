@@ -720,7 +720,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   lay 2H long, far boundaries the near reflected about H; joined, a K × K polar grid whatever N; then (R411–R413) the Cauchy
   keeps K apart from N, all but about 2KH/π to the horizon, and "Other ways to squeeze the line": the three paths of §11.2
   q. 2 as K-squeezes (reach 0.64, 1, 0.5 of K·H), all fair, only the circle's unchanged by a new zero or a sum (the line
-  and the square 0.044 and 0.047 off at 30°; summed many times both tend to a Cauchy), checked in `runs/ofs/squeeze.py`; and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9's "What a unit
+  and the square 0.044 and 0.047 off at 30°; summed many times both tend to a Cauchy), checked in `runs/ofs/squeeze.py`.
+  Review 23 (ChatGPT's stress test of version 38, `plans/ofs-review-23.md`; SPN R414): scoping edits (the page reading
+  in 5(d)'s proof; the uniform turn selected for the stated ignorance; median, missing mean and exact Cauchy kept apart,
+  the mean's absence the tail's, the address reading its interpretation; 6(a) formal with V*/H beside it; parallax
+  scoped), and from `runs/ofs/wedge_audit.py` (115 checks pass) m for unit relations in 3(d), "More parties" citing 3(d)–(f),
+  1/(n + 1) from the exchange keeping the area; and §9, after Proposition 14, H of 0 and H of ∞ as its corner-free rulers (R228). §9's "What a unit
   is, and why a reader needs one" (R230; Tom: "A unit is needed, it injects physics into the relation"; "A unit is
   pre-measured relation. It says something like 5 ounces/ 1 foot"): a unit is a relation measured beforehand; within
   one reader its value is a zoom, needed because addresses are finite, where the world's scale first reaches the

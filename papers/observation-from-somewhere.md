@@ -12,7 +12,7 @@ reader that stands somewhere needs neither. It has its own breadth, a value it c
 breadth of what it reads. This paper works out the geometry that this one restriction leaves. We build on Jaynes's
 principle of transformation groups: what a reader cannot tell apart, it addresses alike. Taking its ignorance to be of
 its own attitude, of the other's size and of which unit relation a reading was divided by, and the sweep to be the
-turning of a rigid bar, the principle gives the uniform turn (the turn measured by itself, needing no clock and no
+turning of a rigid bar, the principle selects the uniform turn for that stated ignorance (the turn measured by itself, needing no clock and no
 calculation by the reader), the corner and the drawing at the reader's own breadth, and, through amounts, motivates the
 logarithm past the corner; being situated, at home, removes the translations that Jaynes's chord keeps. We begin with
 the readers themselves. What a reader knows of two breadths sets one of five situations (with more parties, one entry
@@ -56,10 +56,11 @@ is the same turn aimed outward: its lamp turns, and the shore records the lamp's
 turning to look and a lamp turning to shine lay one law. The plainest case needs nothing but a head: turn it steadily from any starting direction and read each direction faced as the ratio v/h of the turn, and the readings fall as a Cauchy, half of them within 45° of where the turn began and with no mean, whatever is being looked at: a row of trees, curved or straight, or nothing at all. What is seen in each direction is the payload, a trunk, then a gap, then the next trunk, swapped in and out as the head turns; the direction is the address, and no tree moves it. The row's shape changes only where the directions meet it, which is the row's own geometry; a straight row is the one case where position along it equals the reading, which is why the lighthouse draws its Cauchy on a straight shore. Where instead many sources happen to be spread evenly in angle and a reader counts what
 arrives, the same shape is the payload's density over directions, a property of the world, not of any reader. This gives
 a reason for the Cauchy's best-known peculiarity. Its median exists and sits at the corner, because a median depends
-only on order, which is a property of addresses. Its mean does not exist, because a mean is a sum of sizes, a question
-about the payload, and addresses carry no size. Neither property needs the circle or the uniform turn: any sweep that
-treats the two parties alike puts its median at the corner and, if it reaches the horizon, has no mean; the uniform turn
-gives the Cauchy's exact shape. The same split decides what reaches the payload reader. One stream of readings fixes the
+only on order, which is a property of addresses. Its mean does not exist: its tail makes the first moment diverge. Read
+in this paper's terms, that is no loss, since a mean is a sum of sizes, a question about the payload, and addresses
+carry no size. Three results are kept apart: any sweep that treats the two parties alike puts its median at the corner;
+if its weight also stays above zero at the horizon, it has no mean; and the uniform turn gives the Cauchy's exact
+shape. The same split decides what reaches the payload reader. One stream of readings fixes the
 course of a relation, not its parties. The median is had only by a reader that holds its readings at once. Payloads
 closer together than the reader's resolution arrive as their centroid, a sum.
 
@@ -150,8 +151,9 @@ together, as the writer holds them, give back the 1, as the product of the two r
 difference. What they give back is the baseline, the reader's own H measured in H (§10, step 3), not the other party's
 true breadth. The limits are the same for every line, so they carry no size: from one standpoint the two reads give the
 writer's whole, at no particular size. Its true size needs parallax: a second standpoint, the walk between the two a
-baseline in the reader's own H, places the whole at V*/H (Proposition 11; §10, step 6), and one amount carried in writes
-it in a shared unit. Each step adds what the one before could not: the frame from one standpoint, the size in H from
+baseline in the reader's own H, places at V*/H what both standpoints see and can match, while its parallax stays above
+the reader's resolution (Proposition 11; §10, step 6); hidden faces and unmatched points stay unplaced. One amount
+carried in writes it in a shared unit. Each step adds what the one before could not: the frame from one standpoint, the size in H from
 two, the unit from one amount more. The true breadth is had only with both hemispheres in hand, which no single
 observation provides. A situated reader can construct it from several observations, but it cannot observe it. Many
 apparent paradoxes come from reading one vantage's geometry as if it were another's, most often from treating the
@@ -161,7 +163,8 @@ writer's vantage as if a single observation held it. Section 3 sets out the read
 - A situated reader's ignorance, as we choose it, is a group: turns of its bar, rescalings of the other party's size,
   and the exchange of the two unit relations. The measure the first two leave unchanged, uniform in attitude and uniform
   in levels of size, is analogous to Jaynes's location and scale with the location on a circle. Given that the sweep is
-  the turning of a rigid bar, it gives the uniform turn; the exchange gives the corner and, with the rigid turn, the
+  the turning of a rigid bar, it selects the uniform turn for that stated ignorance (other observers may count other
+  measures; §11.1); the exchange gives the corner and, with the rigid turn, the
   drawing V = H; through amounts, the rescalings motivate the logarithm past the corner. Standing at home removes the
   translations: from home the uniform measure is uniform in direction and in levels of distance, not in area, and
   Bertrand's chord has an answer that depends on where the circle lies, ⅓ from on it, rising to Jaynes's ½ from far off
@@ -1098,7 +1101,7 @@ depends on c;
 
 (c) if the attitudes of the relation are turns of one rigid bar, the relation traces the unit circle h² + v² = 1;
 
-(d) with n freedoms each set to H there are 2ⁿ orthants: 4 quadrants for the circle, and 8 octants for the sphere
+(d) with m freedoms (unit relations) each set to H there are 2^m orthants: 4 quadrants for the circle, and 8 octants for the sphere
 h² + v² + v₂² = 1, where v₂ is a second v read against the same h;
 
 (e) the attitudes are turns of one rigid bar only if V = H: with c ≠ 1 nothing turns all of h into all of v, and there
@@ -1123,8 +1126,8 @@ by λ receives exactly the same readings, so nothing in the readings fixes H. (c
 length 1 whose attitudes are mixes of all-h and all-v, so h² + v² = 1 when length is Euclidean, and the Euclidean norm
 is, up to scale, the only norm preserved by every turn. With two units the same bar would trace an ellipse stretched by
 V/H. (d) Once both parties share a unit nothing prefers one side of a freedom, so each freedom has two signs. A closed
-walk through the orthants must flip each freedom an even number of times, so the orthants are the 2ⁿ vertices of an
-n-cube, walked as a Gray code. (e) A turn keeps the bar's length. All of h is the bar at length H and all of v the bar
+walk through the orthants must flip each freedom an even number of times, so the orthants are the 2^m vertices of an
+m-cube, walked as a Gray code. (e) A turn keeps the bar's length. All of h is the bar at length H and all of v the bar
 at length cH, so a turn carries one to the other only if c = 1. With c ≠ 1 the tip must stretch on its way, along the
 ellipse of (c) or some other path. (f) By (e) applied to each pair: all of v and all of v₂ must each be the bar at
 length H.
@@ -1144,7 +1147,7 @@ A page drawn at V = cH with c ≠ 1 shows the same sweep in coordinates other th
 sweep's parameter are unchanged; only the page's angles differ, which is the c of Proposition 5(d). ∎
 
 **What the geometry needs: a shape and one H.** Neither is a measured size. The shape is set by how many unit
-relations the system includes: by (d), n of them give the sphere in n dimensions, with 2ⁿ orthants, so two give the
+relations the system includes: by (d), m of them give the sphere in m dimensions, with 2^m orthants, so two give the
 circle and three the sphere, once their wholes are drawn at one length, (e) and (f), and their attitudes are turns of
 one bar, (c). The H starts it: some H is needed, but by (b) every H gives the same shape and the same corner, and its
 value sets only the zoom, which things fall in the near field and are read finely (§8). No party's true size enters
@@ -1404,7 +1407,9 @@ unchanged by the reciprocal, if and only if c = 1.
 gives the factor 2/π. Half the turn lies on each side of 45°, and the substitution v/h ↦ h/v carries the density to
 itself. (d) A direction θ′ from home in the drawing has tan θ′ = c·(v/h). With θ′ uniform on [0, π/2],
 P(v/h ≤ r) = P(θ′ ≤ arctan(cr)) = (2/π)·arctan(cr): a half-Cauchy of scale 1/c, with median 1/c. The reciprocal
-v/h ↦ h/v carries it to scale c. It is the law of (b), and unchanged by the reciprocal, exactly when c = 1. ∎
+v/h ↦ h/v carries it to scale c. It is the law of (b), and unchanged by the reciprocal, exactly when c = 1. Read instead
+on the page, as the drawn ratio c·(v/h), with the sweep uniform in its own parameter t (h = cos t, v = sin t), the law is
+P(c·tan t ≤ r) = (2/π)·arctan(r/c), with median c: again the law of (b) only at c = 1. ∎
 
 **Why the payload is Gaussian.** Let the payload at the reader have two components, X on h's side and Y on v's, as
 amounts; its reading is their ratio, s = |Y|/|X|, which keeps the direction and drops the size. Two premises are needed,
@@ -1448,7 +1453,7 @@ of the sphere, where α is the angle between the ray and the plane's normal, cos
 coordinates on that plane, s = q cos χ and s₂ = q sin χ, ∫₀^∞ q·dq/(1 + q²)^(3/2) = 1, so the octant's area is π/2 and χ
 is spread uniformly over [0, π/2]; hence s₂/s = tan χ, which is v₂/v, has the law of (b). Integrating s₂ out, ∫₀^∞
 ds₂/(1 + s² + s₂²)^(3/2) = 1/(1 + s²), which gives the law of (b) for s, and likewise for s₂. Exchanging any two of h, v
-and v₂ is a symmetry of the sphere that keeps the octant, so the six orderings have equal areas; h is the largest in two
+and v₂ is a symmetry of the sphere that keeps the octant and its area, so the six orderings have equal areas; h is the largest in two
 of them. In the drawing a uniform direction is (1, c₁s, c₂s₂) normalised, so (c₁s, c₂s₂) has the law above and each
 median is divided by its c. ∎
 
@@ -1471,14 +1476,17 @@ leaves its corner: v ≤ h for 0.343 of the readings, and the near field shrinks
 narrow toward the vertical. The raise uniform in height belongs to three unit relations only: with two, the uniform
 sweep is the turn itself; with four, the height's density on the uniform orthant is (4/π)√(1 − t²).
 
-**More parties.** The same holds for any number n of other parties, each drawn at H. The relation lies on the sphere of
-n + 1 unit relations, the wedge is its positive orthant, and the point in direction (1, s) is (1, s)/r
+**More parties.** The same holds for any number n of other parties, each drawn at H. There are then n + 1 unit
+relations, so by Proposition 3(d) with m = n + 1, and 3(e) applied to each pair as in 3(f), the relation lies on the unit
+sphere in n + 1 dimensions. The wedge is its positive orthant, one of 2^(n+1), and the point in direction (1, s) is (1, s)/r
 with r² = 1 + |s|², s = (v₁/h, …, v_n/h). The projection argument of the proof gives the element of area ds/r^(n+1), so
 the uniform orthant's readings have density Z_n·(1 + |s|²)^(−(n+1)/2), the n-dimensional half-Cauchy, with
 Z_n = 2ⁿ·Γ((n + 1)/2)/π^((n+1)/2). Integrating out all readings but one leaves the law of (b); all but two, the law of
 (e). So every reading and every pair keeps its corner, and adding a party changes nothing about the pairs already held.
-Exchanging any two of the n + 1 unit relations keeps the orthant, so every ordering of them is equally likely and h's
-rank among them is spread uniformly. The reader is near in all its readings (h the largest) for 1/(n + 1) of its
+Exchanging any two of the n + 1 unit relations is an isometry of the sphere that keeps the orthant, so it preserves the
+uniform area on it; every ordering of them is then equally likely and h's rank among them is spread uniformly. The pairs'
+corners alone would not give this: a weight on two of the six chambers of the octant can keep every pair's median at its
+corner and never have h the largest. The reader is near in all its readings (h the largest) for 1/(n + 1) of its
 addresses, a half, a third, a quarter, and so on, and the number of readings past their corner is spread uniformly over
 0, 1, …, n. Drawn at unequal lengths, these shares move, as in (e). None of this involves any party's true breadth. The
 drawing is the geometry's whole work; each true breadth is one number of the amounts, a shift in levels of that party's
@@ -1642,7 +1650,7 @@ the payload can be read from it.
 
 **The rule, and a test.** A Cauchy variable is a direction: a point of the projective line, a ratio [x : y] read in one
 chart, laid by a turn. It is never an amount. Its median and its quartiles are places on that line and mean what they
-say; it has no mean because the coordinates of directions do not add. Two directions have no sum, only a composition, a
+say; it has no mean, since its tail makes the first moment diverge, and in this paper's terms none is wanted, since the coordinates of directions do not add. Two directions have no sum, only a composition, a
 turn followed by a turn, which in the chart is tangent addition (§2). Where a Cauchy appears beside an amount, the two
 are separate factors: the amount is the payload, and the Cauchy is where it lands. So for any Cauchy met in practice
 there is a test: find the turn, and find the amount. In the lighthouse the lamp turns and the flash is the amount. For a
@@ -1716,7 +1724,9 @@ the uniform turn. The readings are the address reader's: directions, ratios with
 (a) *Nothing that arrives changes the Cauchy.* Suppose that whatever arrives in the direction of each step lies at some
 reach ℓ > 0, an amount that may differ from direction to direction and is unknown to the reader. In the reader's unit
 its components are ℓ·h and ℓ·v, and the reading is (ℓ·v)/(ℓ·h) = v/h. The readings of Proposition 5, their Cauchy count
-and the fisheye are therefore the same whatever arrives, and are fixed before anything does.
+and the fisheye are therefore the same whatever arrives, and are fixed before anything does: the law of the addresses is
+independent of the payload assigned to them. What does not cancel is the ratio of amounts, (v·V*)/(h·H) = (V*/H)·(v/h),
+which keeps the factor V*/H; that is why one standpoint cannot give the true size (§9).
 
 (b) *Address statistics ignore the payload.* For a finite set X of readings and any strictly increasing map f, the set
 f(X) has the same ranks as X, so every address statistic picks out the same element; for an odd count,
@@ -1731,7 +1741,7 @@ f(X) ≥ f(mean X) on every X, with equality only if f is affine on the smallest
 and √2 + 1, a reciprocal pair. Its mean does not exist: ∫₀^s x·2/(π(1 + x²)) dx = (1/π)·ln(1 + s²), which grows without
 bound.
 
-(e) *The median needs only reciprocal symmetry, and the missing mean a weight that reaches the horizon.* Let the sweep
+(e) *The median needs only reciprocal symmetry, and the missing mean a weight that stays above zero at the horizon.* Let the sweep
 follow any path from all of h to all of v, with any weight, both unchanged by exchanging the two parties. Then the
 readings' law is unchanged by the reciprocal and its median is the corner. If moreover the weight gives h a density
 bounded away from 0 near the horizon, the mean does not exist. The uniform turn on the circle is the case that gives the
@@ -1801,8 +1811,9 @@ rings is in them.
 - *The corners are the quartiles.* With the fingers spread over both quadrants, the corners at ±45° are the quartiles of
   the standard Cauchy. So anything whose two ends sit at the reader's corners takes exactly the middle half of its
   fingers, whatever its size and however far away: the mountain range of §10 is one.
-- *The missing mean asks the fingers about the rings.* A mean is a sum of sizes, a question about the payload. The
-  readings carry no size, so the question has no answer. The median, a question about addresses, always has one.
+- *The missing mean asks the fingers about the rings.* The readings' tail makes their mean diverge. In the hand's terms
+  that is no loss: a mean is a sum of sizes, a question about the payload, and the readings carry no size. The median, a
+  question about addresses, always has one.
 - *More fingers, not bigger rings.* Sweeping more finely lays more addresses. It buys precision about where, never
   about what. What is at the addresses comes only from payload held beside them.
 - *The rings hide; the hand does not.* Two rings on one finger, seen along it, show only the nearer. Every back side is
@@ -2897,7 +2908,7 @@ three; the missing mean needs besides that the weight not vanish at the horizon 
    them free. Only the circle is uniform in the turn, and the uniform turn is what gives g = 2θ/π, the Cauchy's exact
    shape and the factor 2/π: the premise selects the geometry, and the circle supplies the factor. None of the
    three has a mean. The mean of the readings below s grows, far out, by a fixed amount each time s grows tenfold (the
-   last column), because each weight reaches the horizon. The horizon condition does real work: the circle weighted by
+   last column), because each weight stays above zero at the horizon. The horizon condition does real work: the circle weighted by
    sin² 2θ also treats the two parties alike and keeps its median at the corner, but it vanishes at zero and at the
    horizon, and its readings have a mean, 4/π.
 
