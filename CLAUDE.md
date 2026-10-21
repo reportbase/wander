@@ -452,6 +452,23 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `?N=<log2 N>|inf&H=<log2 H>&n=16|32|64&star=<index>`; hook `window.__starField3d` (`star`, `indexOf`, `fromIndex`,
   `countBelow`, `worldOf`, `counts`, `readerView`, `nearCount`, `placeOf`, `lay`, `inWorld`, `distanceAddresses`, `set`, `goTo`, `state`,
   `frames`, `webgl`, `drawn`, `thinned`). Not in the flying page.
+- `star-dial.html`: **browsing the stars** (21 Oct 2026, Tom: "I would like to combine the dial with the wedge to browse an
+  infinite starfield.     we also need a way to set H."; SPN R423), a standalone page, plain canvas, after `wedge-browse.html`
+  (its view from home and the dial's two needles) and `star-field-3d.html`. Two zooms, one a reader: the dial moves the
+  directions (the gold a rate, the blue a place, letting go re-centres, the wheel the radius w, a tap reads), H the distances
+  (a ruler in the panel to drag or tap, ÷2 ×2, [ ], shift+wheel; H = 2^k u, k −4 to 24). The field, without end and never
+  stored: level 0 d ≤ 1 u, level j 2^(j−1) < d ≤ 2^j, 8^(j+1) stars (even in volume, level 0 7/8 as dense), on Lambert's
+  square of the octant cut in quarters, level j's leaves at depth ⌊(3j + 3)/2⌋ with 1 or 2 stars; index 8(8^j − 1)/7 +
+  (row·2^D + column)·(a leaf) + which (BigInt, `fromIndex`). H holds n = 32 addresses to H and 6 doublings past it
+  (H/32 to 64H, whole levels): nearer merged into home, farther past the held edge, without end and not drawn. Any cell's
+  count of held stars is exact, so the drawn totals and stars add to the held exactly at every H (2,396,744 at H = 1,
+  ~10¹⁹ at 2^14). LOD as `wedge-browse.html` (cells largest on screen first to 6,000; ≤ 12 stars opened into stars); the
+  totals drawn thinned, every held star with one chance (real stars, each level by its share), a cell's own stars in full
+  only where sparse on the screen. No star moves on the screen with H. The inset: the hand's ray, its stars at atan(d/H).
+  Go to a star: the drawing on it, H at its level, w so the cell round it opens. `?w=<log2 w>&H=&mu=μ₁,μ₂&star=<index>`;
+  hook `window.__starDial` (`star`, `indexOf`, `fromIndex`, `countBelow`, `Dof`, `Mof`, `kidsOf`, `count`, `heldTotal`,
+  `heldOf`, `starsIn`, `sampleOf`, `dispOfDir`, `dispShares`, `lambdaOfDir`, `dirOf`, `screen`, `drawn`, `view`, `hold`,
+  `release`, `set`, `goTo`, `under`, `hud`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -555,7 +572,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -2093,6 +2110,11 @@ In short:
       to 64 u leaves the reader's view as it was and slides a star exactly 6 ln 2 along its own ray; 8 and 2,097,152 stars
       inside the corner; at H = 2^−4, 1 and 2^12 u, 16 of the 32 distance addresses inside H, the first one's width 0.049 H at
       each; star #98,765,432,101,234 found; WebGL drew frames.
+  48. **star-dial.html:** every star back from its index at levels 0 to 30, level j holding 8^(j+1); every cell's four
+      quarters adding to it exactly at H = 2^−4, 1 and 2^12; the drawn totals and stars adding to the held exactly in
+      every state; the gold at tan 1 for a second moves the hand 0.4 and letting go re-centres on it; doubling H holds
+      eight times the stars; star #123,456,789,012,345 found by its index at the triple corner and under the hand, in the
+      same pixel at H = 2^14 and 2^13.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
