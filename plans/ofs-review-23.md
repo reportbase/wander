@@ -92,3 +92,9 @@ it, not a detail the first omitted. Its second half also reads wider than the re
 sweep generates some Cauchy laws, while poles and stable sums generate most (R341). Its own qualification (each
 application must show the variable is an address) is R358's rule and is kept. Its closing question ("which classical
 interpretations change") is REA's, in the pocket (R364, R419).
+
+ChatGPT's publication comment (11:15 MDT, via Tom): publish the argument whole rather than keep expanding it; confident
+mathematics, explicit interpretation, restrained claims; leave the re-evaluation of Cauchy results to later papers.
+Claude agreed on stopping, kept R335's opening (its sample paragraph characterizes classical mathematics again), named
+the size (about 53,600 words) and offered a short companion, a freeze or a split. Tom (11:17): "ofs is our working
+document.    published documents will us this as single source of truth." (SPN R421.)

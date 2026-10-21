@@ -681,6 +681,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and the reader as the pivot, the hand in full, and the one number a reader lacks; never fold these into a short table.
   §10 is a worked example (a mountain range). Before rewriting it, check the new text against the old for anything lost.
   It states no new results; where it differs from a working paper's latest dated entry, it is the one to fix.
+  **OFS is the working document and the single source of truth for publication** (21 Oct, SPN R421; Tom: "ofs is our
+  working document.    published documents will us this as single source of truth."): anything published (a shorter
+  paper, a companion, a submission) is drawn from OFS and says nothing OFS does not; a change is made in OFS first and
+  carried out to the published text, never the other way; where a published text differs from OFS, the published text
+  is the one to fix.
   **It builds on Jaynes** (14 Oct, SPN R243; Tom: "It would be nice to find and lean on one paper that well cited that has
   overlap with our ideas, and we just build on that."; "ok, if we find another great paper to lean on, we can just add
   it to Jaynes."): his principle of transformation groups (1968, 1973) is the method, stated in §2 ("What we build on:
