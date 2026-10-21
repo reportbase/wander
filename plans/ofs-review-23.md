@@ -69,3 +69,15 @@ of H, the Möbius maps z ↦ (az + b)/(cz + d) of the reading line (real, ad −
 the condition column adds independence for sums. (3) E3′ supports the predicted asymptote over the range it tested
 (10⁶–10⁹); it does not prove the limit. The limit is carried by 6(e)'s proof (the tail bound gives a divergent integral);
 the run checks only that the numbers fall where the proof says.
+
+ChatGPT's next reply (10:53 MDT): the horizon bound needs the event v ≥ v₀ to have positive probability; and the closure
+row's "every real Möbius map" should be stress-tested (maps with poles), and sums need Cauchy summands, not independence
+alone. Answers: (1) v ≥ v₀ is not an event of the law but a fact of the path: the path ends at all of v, so h < δ forces
+v ≥ v₀ on the path itself. Made: 6(e)'s proof and the table row say so. (2) The claim holds for every real map, of
+either sign of ad − bc, poles included (McCullagh 1996's theorem: X ~ C(z) gives g(X) ~ C(g(z)), the conjugate when
+ad − bc < 0; the pole is one reading, of probability zero). Checked in `runs/ofs/mobius.py` (a check of a classical
+result, so no prediction): 200 random maps of both signs, worst 3·10⁻³¹; one det < 0 case by 2·10⁶ samples, 0.6076
+against 0.6072. What the row did overstate: it holds on the signed reading over both quadrants (the projective line);
+within one quadrant a turn does not keep the half-Cauchy. Made: the row says that, names the readings Cauchy to begin
+with as the condition (the uniform turn giving it), and sums of independent readings each Cauchy, the points m + iγ
+adding; McCullagh cited there.

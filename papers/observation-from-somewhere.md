@@ -1768,8 +1768,9 @@ satisfies the midpoint equation and commutes with the mean of every finite set w
 its equality case are Jensen's. (d) Over one quadrant the distribution function is (2/π)·arctan(v/h), which is ½ at
 v/h = 1 and ¼ and ¾ at tan(π/8) = √2 − 1 and tan(3π/8) = √2 + 1; the integral is elementary. (e) The exchange carries
 v/h to h/v and leaves path and weight unchanged, so v/h and 1/(v/h) have one law, F(1/x) = 1 − F(x), and by Proposition
-2(b) F(1) = ½. Near the horizon v stays above some v₀ > 0, so P(v/h > r) ≥ P(h < v₀/r) ≥ f₀·v₀/r for large r, where
-f₀ > 0 bounds the density of h there from below; then ∫ P(v/h > r) dr diverges, and so does the mean. ∎
+2(b) F(1) = ½. The path ends at all of v, so there are δ > 0 and v₀ > 0 with v ≥ v₀ wherever h < δ: on the path itself,
+not only with some probability. Then P(v/h > r) ≥ P(h < v₀/r) ≥ f₀·v₀/r once v₀/r < δ, where f₀ > 0 bounds the density
+of h below δ from below; then ∫ P(v/h > r) dr diverges, and so does the mean. ∎
 
 The theorem is elementary; its content is the reading. The Cauchy distribution is not a law of anything the reader
 meets. It is the reader's own layout of directions, counted. What arrives in each direction cancels from every single
@@ -2894,11 +2895,11 @@ stay where they are.
 | Each reading is a direction, with no unit; scaling the world moves none | the addresses fixed before anything arrives; any weighting | Proposition 8(a) |
 | The address law is independent of the payload; ranks and medians commute with every increasing map; the reader's K addresses hold any number N of things | the addresses fixed before anything arrives; any weighting | Theorem 6(a), (b); §8, "A fixed count, aimed by H" |
 | The median at the corner, K/2 addresses on each side of H | the weight unchanged by the reciprocal; no condition at the horizon (sin² 2θ has its median at the corner and a mean, 4/π) | Theorem 6(e); question 2 below |
-| No mean; a tail c/s, so the last of K addresses begins near c·K·H | a density of h bounded away from zero near the horizon, at least f₀ > 0 where v stays above v₀ > 0, so that P(v/h > r) ≥ f₀·v₀/r far out; no symmetry (a weight leaning toward the horizon has no mean and its median off the corner) | Theorem 6(e); §8, "Other ways to squeeze the line" |
+| No mean; a tail c/s, so the last of K addresses begins near c·K·H | a density of h bounded away from zero near the horizon, at least f₀ > 0 there; since the path ends at all of v, v ≥ v₀ > 0 wherever h is small, so P(v/h > r) ≥ f₀·v₀/r far out; no symmetry (a weight leaning toward the horizon has no mean and its median off the corner) | Theorem 6(e); §8, "Other ways to squeeze the line" |
 | Every pair's median at its own corner | each pair's weight unchanged by its own reciprocal | Proposition 5(e); "More parties" |
 | Near in all readings for 1/(n + 1); the number of readings past their corner even over 0, 1, …, n | the weight unchanged by every permutation of the n + 1 unit relations; the pairs' symmetry is not enough (half the weight on each of two chambers can keep every pair's median at its corner and never have h the largest) | "More parties"; "Why uniformly by area" |
 | The exact Cauchy, its 2/π and quartiles √2 ∓ 1; on the octant the two-dimensional Cauchy and the near field exactly ⅓ | the uniform turn, or on the sphere uniform area: the reader treats every turn alike | Proposition 5(b), (d), (e); "Why uniformly by area" |
-| Staying a Cauchy under re-aiming (every new zero and every change of H, the Möbius maps of the reading line, z ↦ (az + b)/(cz + d) with a, b, c, d real and ad − bc > 0) and under sums (of independent readings, each a Cauchy); the stretch 2KH/π before the horizon | the uniform turn; for sums, independence | §7.2; §8, "Other ways to squeeze the line" |
+| Staying a Cauchy under re-aiming and under sums. Re-aiming: a new zero or a change of H acts on the signed reading over both quadrants (the projective line) as a real Möbius map g(x) = (ax + b)/(cx + d), and X distributed as C(z) gives g(X) as C(g(z)) for every such map with ad − bc > 0 (as C of the conjugate of g(z) when ad − bc < 0; the pole is one reading, of probability zero, sent to the horizon). Within one quadrant a turn does not keep the half-Cauchy. Sums: of independent readings, each Cauchy, the points m + iγ adding. The stretch 2KH/π before the horizon | the readings Cauchy to begin with, which the uniform turn gives; for sums, independence as well | §7.2 (McCullagh 1996); §8, "Other ways to squeeze the line" |
 
 The first two rows are the paper's main result in its widest form: the split of address from payload, and K from N,
 holds for any reader whose addresses are laid before anything arrives. The Cauchy is that split under the uniform turn.
