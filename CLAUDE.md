@@ -504,6 +504,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `?k=<log10 k>&at=living|kitchen|bedroom|bath|garage|shed|garden|back&home=living|kitchen|bedroom|garage|lot&write=1`;
   hook `window.__blueprint3d` (`world`, `cast`, `payload`, `addresses`, `counts`, `writer`, `writeFrom`, `strideOf`,
   `standAt`, `HOMES`, `SPOTS`, `GRID`, `SPHERE`, `CORNERS`, `set`, `state`, `last`, `frames`, `webgl`). Not in the flying page.
+  Since R426 (22 Oct; Tom: "the problem is that cauchy is passive, and furniture does not send signals."; "so the reader in
+  these demos is a sphere"; "yes, they should.     the writer then is the sphere around the entire system."): on both
+  pages the reader is a sphere (a circle in 2D) round one point, looking out, its radius H, every direction painted by the
+  light arriving from the first surface on its line (nothing in the property sends), no distance; ranges only with "send
+  a pulse" (`?pulse=1`), labelled as writing (the pulse carries the signal's speed and a clock, R388). The writer's sphere
+  (circle) is round the whole system, looking in, its radius the lot's half-diagonal, an amount (28.8 m at k = 1;
+  `writerSphere(k)` on the 3D page; the 2D plan is fitted to it). The corner reader's wedge is one octant of the reader's
+  sphere.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -2157,7 +2165,7 @@ In short:
   50. **blueprint-3d.html:** the world scaled by 1/100, 7 and 100 moves the payload reader's 2,048 ranges by k and not its
       shell; every address the same at every k from five homes, v ≤ h and v₂ ≤ v within 0.01 of ½, v₂ ≤ h exactly ½, the
       near field within 0.01 of ⅓; one counted stride writes the living room 12 × 8 × 2.7 m, the kitchen 12 × 6 × 2.7 m and
-      the garage 7 × 7 × 2.7 m to 10⁻⁹, in strides unmoved by k; WebGL drew frames.
+      the garage 7 × 7 × 2.7 m to 10⁻⁹, in strides unmoved by k; the writer's sphere 28.8 m × k; WebGL drew frames.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

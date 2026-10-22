@@ -13,26 +13,33 @@
     ("Inside a room: the two sweeps", "A survey: many readings, one amount"). three.js like wedge.html for the drawing only:
     the property, the casting, the readings and the test hook are a plain script, so the hook works without WebGL.
 
-    Keep the case. Amounts (metres, a range along a ray) are the writer's and the payload reader's; [h : v : v₂] is the
+    Keep the case. Amounts (metres, a range along a ray) are the writer's (and a pulse's, which writes); [h : v : v₂] is the
     address, three unit relations, every party drawn at H (V = V₂ = H).
       - THE WRITER holds the model: the lot, the house's rooms with their heights, the garage, the shed, the trees, the fence,
         a few pieces of furniture, every length an amount in metres. Orbit it. The metres need a unit measured beforehand
         (the scale bar).
-      - THE PAYLOAD READER stands in a room at eye height (1.6 m). The directions are given, 2,048 of them over the whole
-        sphere (a Fibonacci lattice); along each a range arrives, to a wall, the floor, the ceiling or a thing, in a unit
-        it never reads. It holds the shell r over the ranges' geometric mean: the room's shape, not its size.
+      - THE READER is a sphere (22 Oct; Tom: "the problem is that cauchy is passive, and furniture does not send signals.";
+        "so the reader in these demos is a sphere"; "yes, they should.     the writer then is the sphere around the entire
+        system."; SPN R426): round one point at eye height (1.6 m), looking out, its radius H, its own; 2,048 directions (a
+        Fibonacci lattice), each painted by the light arriving from the first surface on that line (the room lit; nothing in
+        it sends). No distance arrives, so every dot sits on the sphere. A range along each direction needs a pulse sent
+        out ("send a pulse"): a ranging reader carries in the signal's speed and a clock, so it writes (R388; CFH); its
+        ranges are drawn as the shell r over their geometric mean, the shape in the unit it carried in.
+      - THE WRITER'S SPHERE is round the whole system, looking in: its radius the lot's half-diagonal, an amount (28.8 m at
+        k = 1), holding both sides of every wall in one frame (R328's dual-hemispherical vantage; R220: the sphere that
+        places every place by direction and distance needs the size of what it holds).
       - THE ADDRESS READER stands in a floor corner, so the room is one wedge: h along one wall, v up, v₂ along the other.
         It sweeps the octant uniformly, 64 × 64 cells of Lambert's equal-area map (even in azimuth and in height), each
         address [h : v : v₂] painted by the first thing met. No distance. Shown from home as the triangle h + v + v₂ = 1
         and as Lambert's map: every pair at its corner (half the addresses either side), the near field a third, whatever
         the furniture.
-    SCALE THE WORLD (k from 1/100 to 100): every length × k, the readers' strides too. The writer's numbers and the payload
-    reader's ranges move by k; the shell and the addresses do not.
-    WRITE THE ROOM: the address reader takes one stride (0.7 m at k = 1, 30° off its first wall, along the floor) and reads
+    SCALE THE WORLD (k from 1/100 to 100): every length × k, the readers' strides too. The writer's numbers, its sphere's
+    radius and a pulse's ranges move by k; the reader's sphere, the shell and the addresses do not.
+    WRITE THE ROOM: the corner reader takes one stride (0.7 m at k = 1, 30° off its first wall, along the floor) and reads
     again. Each corner seen from both places is two rays that cross: its place in strides, no amount yet. Counting the
     stride, one amount carried in, writes every place in metres. Neither reader has that amount; the writer is the vantage
     that carries it.
-    ?k=<log10 k>&at=living|kitchen|bedroom|bath|garage|shed|garden|back&home=living|kitchen|bedroom|garage|lot&write=1;
+    ?k=<log10 k>&pulse=1&at=living|kitchen|bedroom|bath|garage|shed|garden|back&home=living|kitchen|bedroom|garage|lot&write=1;
     hook window.__blueprint3d.
     three.js 0.160.0 from jsDelivr, pinned, as wedge.html (the smoke test serves it from node_modules).
     -->
@@ -73,16 +80,16 @@
 <main>
     <h1>One blueprint in 3D</h1>
     <p class="lede">The same property in three dimensions. The <span class="w">writer</span> has the model, every length in
-        metres, heights too. The <span class="p">payload reader</span> stands in a room and receives a range along each of
-        2,048 directions, in a unit it never reads: a shell, the room's shape and not its size. The <span class="a">address
-        reader</span> stands in a floor corner, the room one wedge, and receives directions alone, [h : v : v₂]. Scale the
-        world and only the writer's numbers change. Write the room: one counted stride turns the address reader's two looks
+        metres, heights too. Its sphere is round the whole system, looking in, its radius an amount. The <span class="p">reader</span> is a sphere
+        round one point, looking out: nothing in the room sends, so it receives only the light the room scatters, each
+        direction painted by the first surface on its line, and no distance. Put in a floor corner, the room is one octant
+        of that sphere, the wedge, each address [h : v : v₂]. Scale the world and only the writer's numbers change. Write the room: one counted stride turns the corner reader's two looks
         into metres. <a href="blueprint.html">The plan in 2D</a>.</p>
     <div class="panel" style="margin-bottom:12px">
         <div class="row"><label for="k">scale the world, k</label><input id="k" type="range" min="-2" max="2" step="0.05" value="0"><span id="kv" style="min-width:9ch"></span></div>
-        <div class="row"><label for="at">payload reader in</label><select id="at"></select>
-            <label for="home">address reader at</label><select id="home"></select>
-            <button id="write">write the room: one stride</button><button id="roof">roof</button><button id="reset">reset</button></div>
+        <div class="row"><label for="at">the reader in</label><select id="at"></select>
+            <label for="home">the corner reader at</label><select id="home"></select>
+            <button id="pulse">send a pulse (ranging)</button><button id="write">write the room: one stride</button><button id="roof">roof</button><button id="reset">reset</button></div>
         <p class="cap" id="say" style="margin:0"></p>
     </div>
     <div class="grid">
@@ -91,26 +98,30 @@
             <canvas id="scene"></canvas>
             <div class="nogl" id="nogl1"></div>
             <p class="cap">Every length an amount, stated whole: each room's width, depth and height, the lot's extent. The
-                metres need a unit measured beforehand: the scale bar. Drag to turn, scroll or pinch to zoom, tap a floor to
-                stand the <span class="p">payload reader</span> there (teal); the <span class="a">address reader</span> is
-                at the gold corner, its three walls h, v (up) and v₂.</p>
+                writer's sphere (faint blue) is round the whole system and looks in; its radius is an amount, and the metres
+                need a unit measured beforehand: the scale bar. Drag to turn, scroll or pinch to zoom, tap a floor to stand
+                the <span class="p">reader</span> there (teal); the <span class="a">corner reader</span> is at the gold
+                corner, its three walls h, v (up) and v₂.</p>
             <p class="read" id="readW"></p>
         </div>
         <div class="stack">
             <div class="panel">
-                <p class="tag p">the payload reader</p><h2>A shell in an unread unit</h2>
+                <p class="tag p" id="shellTag">the reader</p><h2 id="shellHead">A sphere, painted by what arrives</h2>
                 <canvas id="shell"></canvas>
                 <div class="nogl" id="nogl2"></div>
-                <p class="cap">2,048 given directions; along each a range arrives, drawn over the ranges' geometric mean (the
-                    dashed sphere, its size never read), each dot the colour of what it met. Farther than 2.2 of the mean is
-                    drawn at 2.2; open sky, faint at the rim. Scale the world and nothing here moves.</p>
+                <p class="cap">Passive: 2,048 directions round one point, each dot the colour of the light arriving along it
+                    from the first surface on its line (dark where it is open sky). Nothing in the room sends, so no distance
+                    arrives and every dot sits on the sphere: the addresses, painted by the payload. Send a pulse and a range
+                    comes back along each direction, drawn over their geometric mean (the dashed sphere, farther than 2.2
+                    drawn at 2.2); but the pulse's ranges carry in the signal's speed and a clock: ranging is writing.
+                    Scale the world and nothing here moves.</p>
                 <p class="read" id="readP"></p>
             </div>
         </div>
     </div>
     <div class="grid2">
         <div class="panel">
-            <p class="tag a">the address reader</p><h2>From home: the triangle</h2>
+            <p class="tag a">the corner reader</p><h2>From home: the triangle</h2>
             <canvas id="tri"></canvas>
             <p class="cap">Looking out of the corner, the wedge is the triangle h + v + v₂ = 1, every address at its shares
                 (h bottom left, v at the top, v₂ bottom right). The dashed medians are the three pairs' corners: v = h
@@ -119,7 +130,7 @@
             <p class="read" id="readA"></p>
         </div>
         <div class="panel">
-            <p class="tag a">the address reader</p><h2>Lambert's map of the wedge</h2>
+            <p class="tag a">the corner reader</p><h2>Lambert's map of the wedge</h2>
             <canvas id="map"></canvas>
             <p class="cap">Azimuth across (h on the left, v₂ on the right), height v up: the 64 × 64 addresses even, one cell
                 each, painted by what each met. The corners dashed: v = h (gold), v₂ = h (the middle line), v₂ = v. Half the
@@ -127,9 +138,9 @@
             <p class="read" id="readM"></p>
         </div>
     </div>
-    <p class="cap" style="margin-top:12px">The writer is the vantage that writes: it needs the whole and a unit. The two readers
-        are what one turn of the head gives: the payload reader keeps the amount along each direction, the address reader the
-        direction itself. One stride counted is the amount that turns the address reader's looks into the writer's metres.
+    <p class="cap" style="margin-top:12px">The writer is the vantage that writes: it needs the whole and a unit. Its sphere is round
+        the whole, looking in; the reader's is round one point, looking out, painted by what arrives and holding no
+        distance. The corner reader's wedge is one octant of it. One stride counted is the amount that turns the corner reader's looks into the writer's metres.
         Other demos: <a href="blueprint.html">the blueprint</a>, <a href="room-ratios.html">the room in ratios</a>,
         <a href="wedge.html">the wedge</a>, <a href="demos.html">all demos</a>.</p>
 </main>
@@ -224,7 +235,7 @@ function cast(W, o, d) {                                            // nearest h
         if (D >= 0) take(-b - Math.sqrt(D), t); }
     return { s: best, what };
 }
-// the payload reader: 2,048 given directions over the sphere (a Fibonacci lattice); a range arrives along each
+// the reader's sphere: 2,048 directions (a Fibonacci lattice), each painted by the first surface on its line; a pulse sent brings a range back along each
 const NP = 2048, NG = 64, NA = NG * NG;
 const SPHERE = (() => { const out = [], ga = Math.PI * (3 - Math.sqrt(5));
     for (let i = 0; i < NP; i++) { const z = 1 - (2 * i + 1) / NP, r = Math.sqrt(1 - z * z), p = i * ga; out.push([r * Math.cos(p), r * Math.sin(p), z]); } return out; })();
@@ -245,6 +256,8 @@ function addresses(k, home) { const W = world(k), Hm = HOMES[home], o = originOf
 function counts(list) { const n = list.length, c = { vh: 0, v2h: 0, v2v: 0, near: 0, met: {} };
     for (const a of list) { if (a.v <= a.h) c.vh++; if (a.v2 <= a.h) c.v2h++; if (a.v2 <= a.v) c.v2v++; if (a.v <= a.h && a.v2 <= a.h) c.near++; c.met[a.what] = (c.met[a.what] || 0) + 1; }
     return { vh: c.vh / n, v2h: c.v2h / n, v2v: c.v2v / n, near: c.near / n, met: c.met }; }
+// the writer's sphere: round the whole system, looking in, its radius an amount (the lot's half-diagonal)
+function writerSphere(k) { return { c: [24 * k, 16 * k, 0], r: Math.hypot(24, 16) * k }; }
 // the writer's account: every length an amount, in metres × k
 function writer(k) { return { lot: LOT.map(x => x * k), rooms: ROOMS.map(R => ({ key: R.key, name: R.name, w: (R.r[2] - R.r[0]) * k, d: (R.r[3] - R.r[1]) * k, z: R.z * k })),
     trees: TREES.map(t => ({ what: t[3], across: 2 * t[2] * k, tall: (TRUNK_H + 1.7 * t[2]) * k })) }; }
@@ -283,11 +296,12 @@ function writeFrom(k, home) {
 
 // ── state, drawing ──────────────────────────────────────────────────────────────────────────────────────────────
 const q = new URLSearchParams(location.search);
-const S = { lk: 0, at: SPOTS.living[1].slice(), spot: 'living', home: 'living', write: false, roof: false, hover: null };
+const S = { lk: 0, at: SPOTS.living[1].slice(), spot: 'living', home: 'living', write: false, roof: false, pulse: false, hover: null };
 if (q.has('k')) S.lk = Math.max(-2, Math.min(2, +q.get('k') || 0));
 if (SPOTS[q.get('at')]) { S.spot = q.get('at'); S.at = SPOTS[S.spot][1].slice(); }
 if (HOMES[q.get('home')]) S.home = q.get('home');
 if (q.get('write') === '1') S.write = true;
+if (q.get('pulse') === '1') S.pulse = true;
 const K = () => 10 ** S.lk;
 for (const [key, [name]] of Object.entries(SPOTS)) $('at').add(new Option(name, key));
 for (const [key, H] of Object.entries(HOMES)) $('home').add(new Option(H.name, key));
@@ -325,21 +339,24 @@ function drawMap() {
 function render() {
     const k = K(); P = payload(k, S.at); A = addresses(k, S.home); C = counts(A); WR = S.write ? writeFrom(k, S.home) : null;
     $('kv').textContent = 'k = ' + (k >= 1 ? k.toPrecision(3) : k.toFixed(k < 0.1 ? 4 : 3)); $('home').value = S.home; $('at').value = SPOTS[S.spot] ? S.spot : '';
-    $('write').classList.toggle('on', S.write); $('roof').classList.toggle('on', S.roof);
+    $('write').classList.toggle('on', S.write); $('pulse').classList.toggle('on', S.pulse);
+    $('shellTag').textContent = S.pulse ? 'the reader, sending: writing' : 'the reader'; $('shellHead').textContent = S.pulse ? 'A pulse sent: ranges, in its unit' : 'A sphere, painted by what arrives'; $('roof').classList.toggle('on', S.roof);
     drawTri(); drawMap();
-    $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}, the rooms ${fmtM(2.7 * k)} high. The payload reader's ranges have geometric mean ` +
-        `${fmtM(P.gm)} in the writer's metres, a number it never receives. The address reader holds ${NA.toLocaleString('en')} directions: v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
+    $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}, the rooms ${fmtM(2.7 * k)} high, its sphere round the whole ${fmtM(writerSphere(k).r)} in radius. ` +
+        `The reader's sphere is the same at every k: its directions, and the colours arriving along them` + (S.pulse ? `; a pulse's ranges come back with geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in. ` : `, and no distance. `) + `The corner reader holds ${NA.toLocaleString('en')} directions: v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
         `v₂ ≤ h ${(100 * C.v2h).toFixed(1)}%, v₂ ≤ v ${(100 * C.v2v).toFixed(1)}%, the near field ${(100 * C.near).toFixed(1)}%, at every k and in every room.`;
     describe(); if (draw3d) draw3d();
 }
 function describe() {
     const k = K(), w = writer(k), t = S.hover, R = HOMES[S.home].room && w.rooms.find(r => r.key === HOMES[S.home].room);
     $('readW').textContent = (t ? `${nameOf(t)}. ` : '') + `The lot ${fmtM(w.lot[0])} × ${fmtM(w.lot[1])}; ` + (R ? `the ${R.name} ${fmtM(R.w)} × ${fmtM(R.d)} × ${fmtM(R.z)} high; ` : '') +
-        `the payload reader's eye ${fmtM(EYE * k)} up. Every one of these moves with k.` +
+        `the reader's eye ${fmtM(EYE * k)} up. Every one of these moves with k.` +
         (WR ? `\nWritten from one stride (${fmtM(WR.stride)}): ${WR.points.length} corners placed, ${WR.room} ${fmtM(WR.written[0])} × ${fmtM(WR.written[2])} × ${fmtM(WR.written[1])} high, the largest error ${WR.maxErr.toExponential(1)} of a length.` : '');
-    const pr = t ? P.rays.filter(o => o.what === t) : [];
-    $('readP').textContent = t ? (pr.length ? `${nameOf(t)}: ${pr.length} of ${NP} directions, ${pr.map(o => o.shape).reduce((a, b) => Math.min(a, b)).toFixed(3)} to ${pr.map(o => o.shape).reduce((a, b) => Math.max(a, b)).toFixed(3)} of the mean` : `${nameOf(t)}: not met from here`)
-        : `In ${SPOTS[S.spot] ? SPOTS[S.spot][0] : 'the spot tapped'}: ${NP - P.sky} ranges, the shell from ${Math.min(...P.rays.map(o => o.shape)).toFixed(3)} to ${Math.max(...P.rays.filter(o => isFinite(o.r)).map(o => o.shape)).toFixed(3)} of their mean${P.sky ? `, ${P.sky} to open sky` : ''}; the mean itself (a₀) never arrives.`;
+    const pr = t ? P.rays.filter(o => o.what === t) : [], sh = pr.filter(o => isFinite(o.r));
+    $('readP').textContent = t ? (pr.length ? `${nameOf(t)}: ${pr.length} of ${NP} directions on the sphere (${(100 * pr.length / NP).toFixed(1)}% of it, a share of the directions, not a size)` +
+            (S.pulse && sh.length ? `; the pulse's ranges ${Math.min(...sh.map(o => o.shape)).toFixed(3)} to ${Math.max(...sh.map(o => o.shape)).toFixed(3)} of their mean` : '') : `${nameOf(t)}: no light arrives from it here`)
+        : `In ${SPOTS[S.spot] ? SPOTS[S.spot][0] : 'the spot tapped'}: ${new Set(P.rays.map(o => o.what)).size} things paint the sphere${P.sky ? `, ${P.sky} directions open sky` : ''}; no distance on it.` +
+            (S.pulse ? ` A pulse sent: ${NP - P.sky} ranges back, the shell from ${Math.min(...P.rays.map(o => o.shape)).toFixed(3)} to ${Math.max(...P.rays.filter(o => isFinite(o.r)).map(o => o.shape)).toFixed(3)} of their mean; their unit the pulse's (speed × clock), carried in.` : ' Hover to see what each part of it is.');
     const met = Object.entries(C.met).sort((a, b) => b[1] - a[1]);
     $('readA').textContent = t ? (C.met[t] ? `${nameOf(t)}: ${C.met[t]} of ${NA} addresses (${(100 * C.met[t] / NA).toFixed(1)}% of the wedge's directions, a share of the turn, not a size); how far, never` : `${nameOf(t)}: not seen from ${HOMES[S.home].name}`)
         : `From ${HOMES[S.home].name}: ${met.length} things met. ` + met.slice(0, 6).map(([m, n]) => `${nameOf(m === 'null' ? null : m)} ${(100 * n / NA).toFixed(1)}%`).join(', ') + '.';
@@ -357,17 +374,18 @@ $('k').oninput = e => { S.lk = +e.target.value; render(); };
 $('at').onchange = e => { S.spot = e.target.value; S.at = SPOTS[S.spot][1].slice(); render(); };
 $('home').onchange = e => { S.home = e.target.value; render(); };
 $('write').onclick = () => { S.write = !S.write; render(); };
+$('pulse').onclick = () => { S.pulse = !S.pulse; render(); };
 $('roof').onclick = () => { S.roof = !S.roof; render(); };
-$('reset').onclick = () => { Object.assign(S, { lk: 0, spot: 'living', at: SPOTS.living[1].slice(), home: 'living', write: false }); $('k').value = 0; render(); };
+$('reset').onclick = () => { Object.assign(S, { lk: 0, spot: 'living', at: SPOTS.living[1].slice(), home: 'living', write: false, pulse: false }); $('k').value = 0; render(); };
 addEventListener('resize', () => { drawTri(); drawMap(); });
 $('k').value = S.lk; render();
-window.__blueprint3d = { THINGS, ROOMS, SEG, LINTELS, CEIL, BOXES, TREES, HOMES, SPOTS, GRID, SPHERE, CORNERS, world, cast, payload, addresses, counts, writer, writeFrom, strideOf,
+window.__blueprint3d = { THINGS, ROOMS, SEG, LINTELS, CEIL, BOXES, TREES, HOMES, SPOTS, GRID, SPHERE, CORNERS, world, cast, payload, addresses, counts, writer, writerSphere, writeFrom, strideOf,
     standAt(x, y) { S.at = [x, y]; S.spot = ''; render(); },
     set(o) { Object.assign(S, o); if (o.spot && SPOTS[o.spot]) S.at = SPOTS[o.spot][1].slice(); $('k').value = S.lk; render(); return this.state(); },
-    state: () => ({ lk: S.lk, k: K(), at: S.at.slice(), spot: S.spot, home: S.home, write: S.write, hover: S.hover, gm: P.gm, counts: C, written: WR && WR.written }),
+    state: () => ({ lk: S.lk, k: K(), at: S.at.slice(), spot: S.spot, home: S.home, write: S.write, pulse: S.pulse, hover: S.hover, gm: P.gm, counts: C, written: WR && WR.written }),
     last: () => ({ P, A, C, WR, S }), frames: 0, webgl: false };
 setTimeout(() => { if (!window.__blueprint3d.webgl) for (const id of ['nogl1', 'nogl2']) { $(id).style.display = 'block';
-    $(id).textContent = 'The 3D views need WebGL and three.js from cdn.jsdelivr.net; the address reader\'s views and the readouts still work.'; } }, 12000);
+    $(id).textContent = 'The 3D views need WebGL and three.js from cdn.jsdelivr.net; the corner reader\'s views and the readouts still work.'; } }, 12000);
 </script>
 
 <script type="module">
@@ -381,7 +399,7 @@ if (r1 && r2) {
     // ── the writer's model, at k = 1 (scaling the world is not seen: only the numbers on it change) ──
     const scene = new THREE.Scene(); scene.background = new THREE.Color(0x0a0d18);
     scene.add(new THREE.AmbientLight(0xffffff, 0.55)); const sun = new THREE.DirectionalLight(0xffffff, 0.9); sun.position.set(-20, -30, 50); scene.add(sun);
-    const cam = new THREE.PerspectiveCamera(42, 4 / 3, 0.1, 600); cam.up.set(0, 0, 1); cam.position.set(4, -22, 34);
+    const cam = new THREE.PerspectiveCamera(42, 4 / 3, 0.1, 600); cam.up.set(0, 0, 1); cam.position.set(-6, -48, 52);
     const ctl = new OrbitControls(cam, cv); ctl.target.set(20, 14, 0); ctl.enableDamping = true; ctl.update();
     const MAT = {}, mat = t => MAT[t] || (MAT[t] = new THREE.MeshLambertMaterial({ color: B.THINGS[t].col }));
     const meshes = [], add = (geo, t, pos, opts = {}) => { const m = new THREE.Mesh(geo, opts.mat || mat(t)); m.position.set(...pos); if (opts.rot) m.rotation.z = opts.rot; m.userData.what = t; scene.add(m); meshes.push(m); return m; };
@@ -394,6 +412,9 @@ if (r1 && r2) {
     for (const b of B.BOXES) add(new THREE.BoxGeometry(b[3] - b[0], b[4] - b[1], b[5] - b[2]), b[6], [(b[0] + b[3]) / 2, (b[1] + b[4]) / 2, (b[2] + b[5]) / 2]);
     for (const [cx, cy, r, t] of B.TREES) { const tr = add(new THREE.CylinderGeometry(0.22, 0.22, 2.2, 12), t, [cx, cy, 1.1]); tr.rotation.x = Math.PI / 2;
         add(new THREE.SphereGeometry(r, 20, 14), t, [cx, cy, 2.2 + 0.7 * r]); }
+    // the writer's sphere: round the whole system, looking in, its radius the lot's half-diagonal (an amount)
+    const ws = B.writerSphere(1), wsph = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.SphereGeometry(ws.r, 36, 18)), new THREE.LineBasicMaterial({ color: 0x7fb2ff, transparent: true, opacity: 0.1 }));
+    wsph.rotation.x = Math.PI / 2; wsph.position.set(...ws.c); scene.add(wsph);
     const roofMat = new THREE.MeshLambertMaterial({ color: B.THINGS.roof.col, transparent: true, opacity: 0.55, side: THREE.DoubleSide }), roofs = [];
     for (const c of B.CEIL) { const m = add(new THREE.PlaneGeometry(c[2] - c[0], c[3] - c[1]), 'roof', [(c[0] + c[2]) / 2, (c[1] + c[3]) / 2, c[4]], { mat: roofMat }); roofs.push(m); }
     // labels: each room's three lengths, the lot's, the scale bar (sprites redrawn when k changes)
@@ -403,6 +424,7 @@ if (r1 && r2) {
         g.fillStyle = 'rgba(10,13,24,0.6)'; const w = Math.min(768, g.measureText(txt).width + 24); g.fillRect(384 - w / 2, 18, w, 60); g.fillStyle = col; g.fillText(txt, 384, 64); s.material.map.needsUpdate = true; };
     const roomLab = B.ROOMS.map(R => { const s = sprite(0.9); s.position.set((R.r[0] + R.r[2]) / 2, (R.r[1] + R.r[3]) / 2, R.z + 0.6); return s; });
     const lotLab = sprite(1.3); lotLab.position.set(24, -2.2, 0.3); const lotLab2 = sprite(1.3); lotLab2.position.set(50.5, 16, 0.3);
+    const wsLab = sprite(1.6); wsLab.position.set(24 + ws.r * 0.62, 16 - ws.r * 0.3, ws.r * 0.72);
     const barLab = sprite(1); barLab.position.set(41, 1.8, 0.4);
     const barGeo = new THREE.BufferGeometry(), bar = new THREE.Line(barGeo, new THREE.LineBasicMaterial({ color: 0xe6e4ee })); scene.add(bar);
     let lastK = null, lastFocus = null;
@@ -410,7 +432,7 @@ if (r1 && r2) {
     const num = (x, f) => { const v = x * f; return v >= 100 ? v.toFixed(0) : v >= 10 ? v.toFixed(1).replace(/\.0$/, '') : v.toPrecision(2).replace(/\.0$/, ''); };
     const relabel = k => { const [f, u] = unitOf(k);
         B.ROOMS.forEach((R, i) => write(roomLab[i], `${R.name} ${num((R.r[2] - R.r[0]) * k, f)}×${num((R.r[3] - R.r[1]) * k, f)}×${num(R.z * k, f)} ${u}`));
-        write(lotLab, `${num(48 * k, f)} ${u}`, '#9fc3ff'); write(lotLab2, `${num(32 * k, f)} ${u}`, '#9fc3ff');
+        write(lotLab, `${num(48 * k, f)} ${u}`, '#9fc3ff'); write(wsLab, `the writer's sphere, radius ${num(B.writerSphere(k).r, f)} ${u}`, '#7fb2ff'); write(lotLab2, `${num(32 * k, f)} ${u}`, '#9fc3ff');
         const nice = x => { const e = 10 ** Math.floor(Math.log10(x)), m = x / e; return (m >= 5 ? 5 : m >= 2 ? 2 : 1) * e; }, len = nice(5 * k) / k;
         barGeo.setFromPoints([new THREE.Vector3(38, 1, 0.05), new THREE.Vector3(38 + len, 1, 0.05)]); barLab.position.set(38 + len / 2, 1.8, 0.4);
         const t = len * k; write(barLab, t >= 1000 ? `${t / 1000} km` : t >= 1 ? `${t} m` : t >= 0.01 ? `${+(t * 100).toPrecision(3)} cm` : `${+(t * 1000).toPrecision(3)} mm`, '#e6e4ee'); };
@@ -422,7 +444,7 @@ if (r1 && r2) {
     const ptsGeo = new THREE.BufferGeometry(), pts = new THREE.Points(ptsGeo, new THREE.PointsMaterial({ color: 0x8ce6cd, size: 0.28 })); pts.frustumCulled = false; scene.add(pts);
     // ── the payload reader's shell ──
     const scene2 = new THREE.Scene(); scene2.background = new THREE.Color(0x0b0f14);
-    const cam2 = new THREE.PerspectiveCamera(40, 1 / 0.9, 0.05, 50); cam2.up.set(0, 0, 1); cam2.position.set(3.4, -4.6, 2.8);
+    const cam2 = new THREE.PerspectiveCamera(40, 1 / 0.9, 0.05, 50); cam2.up.set(0, 0, 1); cam2.position.set(2.2, -3.0, 1.8);
     const ctl2 = new OrbitControls(cam2, cv2); ctl2.enableDamping = true; ctl2.update();
     const unitS = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.SphereGeometry(1, 24, 12)), new THREE.LineBasicMaterial({ color: 0x8ce6cd, transparent: true, opacity: 0.12 })); scene2.add(unitS);
     const ax2 = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints([[0, 0, 0], [2.4, 0, 0], [0, 0, 0], [0, 2.4, 0], [0, 0, 0], [0, 0, 2.4]].map(p => new THREE.Vector3(...p))), new THREE.LineBasicMaterial({ color: 0x8a8a96, transparent: true, opacity: 0.5 })); scene2.add(ax2);
@@ -452,7 +474,8 @@ if (r1 && r2) {
                 const m = o.metres, w = [Hm.at[0] + (m[0] * Hm.h[0] + m[2] * Hm.v2[0]) / k, Hm.at[1] + (m[0] * Hm.h[1] + m[2] * Hm.v2[1]) / k, m[1] / k]; pp.push(...w); }   // where the written metres put it
             crossA.geometry.setAttribute('position', new THREE.Float32BufferAttribute(pa, 3)); crossB.geometry.setAttribute('position', new THREE.Float32BufferAttribute(pb, 3));
             ptsGeo.setAttribute('position', new THREE.Float32BufferAttribute(pp, 3)); }
-        const sp = new Float32Array(3 * L.P.rays.length); L.P.rays.forEach((o, i) => { const r = isFinite(o.r) ? Math.min(CLIP, o.shape) : CLIP; sp.set(o.u.map(x => x * r), 3 * i); });
+        const sp = new Float32Array(3 * L.P.rays.length); L.P.rays.forEach((o, i) => { const r = !S.pulse ? 1 : isFinite(o.r) ? Math.min(CLIP, o.shape) : CLIP; sp.set(o.u.map(x => x * r), 3 * i); });
+        unitS.material.opacity = S.pulse ? 0.12 : 0.05; payRays.visible = S.pulse;
         shGeo.setAttribute('position', new THREE.BufferAttribute(sp, 3)); shellColours(); shGeo.computeBoundingSphere();
     }
     // hover and tap: what the pointer is on, in the model and on the shell

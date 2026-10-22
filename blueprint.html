@@ -12,23 +12,27 @@
     reader."). OFS "Three vantages: a writer and two readers", §3.4 and §9 (SPN R328, R332, R338; R424 for this page). A
     standalone page, plain canvas, after room.html, room-walk.html and writer-readers.html.
 
-    Keep the case. Amounts (metres, a range along a ray) are the writer's and the payload reader's; [h : v] is the address.
+    Keep the case. Amounts (metres, a range along a ray) are the writer's (and a pulse's, which writes); [h : v] is the address.
       - THE WRITER holds the blueprint: the lot, the house and its rooms, the garage, the shed, the trees, every length an
         amount in metres, stated whole, both sides of every wall. Its ruler is the number line, alike everywhere, with no
         corner; its metres need a unit measured beforehand (the scale bar).
-      - THE PAYLOAD READER stands inside, anywhere (tap the blueprint). From where it stands the directions are given, 128
-        of them all round, and along each a range arrives, an amount, but in a unit no reading fixes: it holds the shape,
-        r over the ranges' geometric mean, and not the size (ln r = a₀ + f(θ); a₀ never read).
+      - THE READER is a circle round one point (22 Oct; Tom: "the problem is that cauchy is passive, and furniture does
+        not send signals."; "so the reader in these demos is a sphere"; "the writer then is the sphere around the entire
+        system."; SPN R426), anywhere (tap the blueprint): 128 directions all round, each painted by the light arriving from
+        the first surface on its line. Nothing on the lot sends, so no distance arrives: every dot on the circle. "Send a
+        pulse" brings a range back along each, drawn over the ranges' geometric mean (the shape; a₀ never read), but a
+        ranging reader carries in the signal's speed and a clock, so it writes (R388). The writer's circle is round the
+        whole lot, looking in, its radius an amount.
       - THE ADDRESS READER stands at a corner (home), its two walls the two parties: h along one, v along the other. It
         sweeps the quarter turn uniformly, 256 directions, each read as [h : v], the ratio itself, and painted by the first
         thing met. No distance arrives. The turn's middle, v = h at 45°, is the corner of its sweep: half the addresses
         either side, whatever is there.
-    SCALE THE WORLD (k from 1/100 to 100): every length × k. The writer's numbers move by k; the payload reader's ranges move
-    by k but in no unit it holds, so its shape does not; no address moves. Hover a thing in any view to light it in all.
+    SCALE THE WORLD (k from 1/100 to 100): every length × k. The writer's numbers move by k, and a pulse's ranges; the reader's
+    circle, the pulse's shape and the addresses do not. Hover a thing in any view to light it in all.
     WRITE (22 Oct; SPN R425; Tom: "yes", to "write the room" on both pages): the address reader takes one stride (0.7 m at
     k = 1, 30° off its first wall) and reads again; each corner seen from both is two rays crossing, its place in strides;
     the stride counted, one amount carried in, writes every place in metres. blueprint-3d.html is the same in 3D.
-    ?k=<log10 k>&at=x,y&home=lot|living|garage|far&write=1; test hook window.__blueprint.
+    ?k=<log10 k>&at=x,y&home=lot|living|garage|far&write=1&pulse=1; test hook window.__blueprint.
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -44,7 +48,7 @@
     .stack { display: grid; gap: 12px }
     @media (max-width: 900px) { .grid { grid-template-columns: 1fr } }
     canvas { width: 100%; display: block; border-radius: 6px; background: #0a0d18; touch-action: none }
-    #plan { aspect-ratio: 48 / 34; cursor: crosshair }
+    #plan { aspect-ratio: 1 / 0.86; cursor: crosshair }
     #pay { aspect-ratio: 1 / 0.92 } #addr { aspect-ratio: 1 / 0.78 }
     .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 10px }
     label { color: var(--dim) }
@@ -62,8 +66,9 @@
 <main>
     <h1>One blueprint, three vantages</h1>
     <p class="lede">The same property held three ways. The <span class="w">writer</span> has the blueprint: every length in
-        metres, the whole of it. The <span class="p">payload reader</span> stands inside and receives a range along each
-        direction, in a unit it never reads: it holds the shape, not the size. The <span class="a">address reader</span>
+        metres, the whole of it. The <span class="p">reader</span> is a circle round one point: nothing on the lot sends,
+        so it receives the light the lot scatters, each direction painted by the first thing on its line, and no
+        distance. The <span class="a">address reader</span>
         stands at a corner and receives directions alone, each [h : v]: where things are, never how far. Scale the world and
         only the writer's numbers change. Write: one counted stride turns the address reader's two looks into the writer's
         metres.</p>
@@ -72,7 +77,7 @@
             <label for="home">address reader at</label><select id="home">
                 <option value="lot">the lot's corner</option><option value="far">the lot's far corner</option>
                 <option value="living">the living room's corner</option><option value="garage">the garage's corner</option></select>
-            <button id="write">write: one stride</button><button id="reset">reset</button></div>
+            <button id="pulse">send a pulse</button><button id="write">write: one stride</button><button id="reset">reset</button></div>
         <p class="cap" id="say" style="margin:0"></p>
     </div>
     <div class="grid">
@@ -81,17 +86,19 @@
             <canvas id="plan"></canvas>
             <p class="cap">Every length an amount, stated whole: both sides of every wall, the lot's full extent. Its ruler
                 is the number line, the same at every length, no corner. The metres need a unit measured beforehand: the scale
-                bar. Tap anywhere to stand the <span class="p">payload reader</span> there; the <span class="a">address
+                bar. Its circle (faint blue) is round the whole lot, looking in, its radius an amount. Tap anywhere to stand the
+                <span class="p">reader</span> there; the <span class="a">address
                 reader</span> is at the gold corner.</p>
             <p class="read" id="readW"></p>
         </div>
         <div class="stack">
             <div class="panel">
-                <p class="tag p">the payload reader</p><h2>Ranges in an unread unit</h2>
+                <p class="tag p" id="payTag">the reader</p><h2 id="payHead">A circle, painted by what arrives</h2>
                 <canvas id="pay"></canvas>
-                <p class="cap">Standing inside, the directions are given (128 all round); along each a range arrives, an
-                    amount, drawn over the ranges' geometric mean, since the unit is the one thing it never reads. The shape of
-                    the room around it, not its size: scale the world and nothing here moves.</p>
+                <p class="cap">Passive: 128 directions round one point, each dot the colour of what its line meets first.
+                    Nothing on the lot sends, so no distance arrives and every dot sits on the circle. Send a pulse and a
+                    range comes back along each direction, drawn over their geometric mean: the shape, but in the unit the
+                    pulse carried in (its speed and a clock), so ranging is writing. Scale the world and nothing here moves.</p>
                 <p class="read" id="readP"></p>
             </div>
             <div class="panel">
@@ -104,9 +111,8 @@
             </div>
         </div>
     </div>
-    <p class="cap" style="margin-top:12px">The writer is the vantage that writes: it needs the whole and a unit. The two readers
-        are what one turn of the head gives: the payload reader keeps the amount along each direction, the address reader the
-        direction itself. Other demos: <a href="room.html">the room</a>, <a href="room-walk.html">walking the room</a>,
+    <p class="cap" style="margin-top:12px">The writer is the vantage that writes: it needs the whole and a unit. Its circle is round
+        the whole, looking in; the reader's is round one point, looking out, painted by what arrives, holding no distance. Other demos: <a href="room.html">the room</a>, <a href="room-walk.html">walking the room</a>,
         <a href="writer-readers.html">the writer and two readers</a>, <a href="blueprint-3d.html">the blueprint in 3D</a>, <a href="demos.html">all demos</a>.</p>
 </main>
 <script>
@@ -164,7 +170,7 @@ function cast(W, ox, oy, dx, dy) {                                  // the neare
     }
     return { d: best, what };
 }
-// the payload reader: 128 given directions all round from where it stands; a range arrives along each
+// the reader: 128 directions all round from where it stands, each painted by what its line meets; a pulse sent brings a range back along each
 const NP = 128, NA = 256;
 function payload(k, at) { const W = world(k), out = [];
     for (let i = 0; i < NP; i++) { const a = (i + 0.5) / NP * 2 * Math.PI, h = cast(W, at[0] * k, at[1] * k, Math.cos(a), Math.sin(a)); out.push({ a, r: h.d, what: h.what }); }
@@ -208,7 +214,8 @@ function writer(k) { return { lot: LOT.map(x => x * k), rooms: ROOMS.map(r => ({
 
 // ── state, drawing ──────────────────────────────────────────────────────────────────────────────────────────────
 const q = new URLSearchParams(location.search);
-const S = { lk: 0, at: [12, 12], home: 'lot', hover: null, write: false };
+const S = { lk: 0, at: [12, 12], home: 'lot', hover: null, write: false, pulse: false };
+if (q.get('pulse') === '1') S.pulse = true;
 if (q.get('write') === '1') S.write = true;
 if (q.has('k')) S.lk = Math.max(-2, Math.min(2, +q.get('k') || 0));
 if (q.has('at')) { const [x, y] = q.get('at').split(',').map(Number); if (isFinite(x) && isFinite(y)) S.at = [Math.max(0.2, Math.min(47.8, x)), Math.max(0.2, Math.min(31.8, y))]; }
@@ -223,13 +230,17 @@ const colOf = (t, alpha = 1) => { const c = (THINGS[t] || { col: '#555' }).col; 
 const lit = t => S.hover && S.hover === t;
 let planMap = null;
 function drawPlan() {
-    const [g, W, H] = fit($('plan')), m = 18, s = Math.min((W - 2 * m) / 48, (H - 2 * m - 16) / 32), X = x => m + x * s, Y = y => H - m - 16 - y * s;
-    planMap = { m, s, H };
+    const [g, W, H] = fit($('plan')), WR0 = Math.hypot(24, 16), s = Math.min(W - 8, H - 8) / (2 * WR0 + 1), cx = W / 2, cy = H / 2,
+        X = x => cx + (x - 24) * s, Y = y => cy - (y - 16) * s;       // fitted to the writer's circle round the whole lot
+    planMap = { s, cx, cy };
     g.fillStyle = '#0a1226'; g.fillRect(0, 0, W, H);
     g.strokeStyle = 'rgba(127,178,255,0.07)'; g.lineWidth = 1;          // the writer's grid: a metre each, alike everywhere
     for (let x = 0; x <= 48; x++) { g.beginPath(); g.moveTo(X(x), Y(0)); g.lineTo(X(x), Y(32)); g.stroke(); }
     for (let y = 0; y <= 32; y++) { g.beginPath(); g.moveTo(X(0), Y(y)); g.lineTo(X(48), Y(y)); g.stroke(); }
     g.fillStyle = 'rgba(127,178,255,0.06)'; g.fillRect(X(21), Y(8), 3 * s, 8 * s);   // the drive, flat: no ray stops at it
+    g.save(); g.beginPath(); g.rect(0, 0, W, H); g.clip(); g.strokeStyle = 'rgba(127,178,255,0.35)'; g.setLineDash([3, 5]); g.lineWidth = 1.2;   // the writer's circle, round the whole
+    g.beginPath(); g.arc(X(24), Y(16), WR0 * s, 0, 7); g.stroke(); g.setLineDash([]); g.restore();
+    g.font = '11px "DM Mono", monospace'; g.fillStyle = 'rgba(127,178,255,0.8)'; g.textAlign = 'center'; g.fillText(`the writer's circle, radius ${fmtM(WR0 * K())}`, X(24), Y(16) - WR0 * s + 16); g.textAlign = 'left';
     for (const [x1, y1, x2, y2, t] of SEG) { g.strokeStyle = lit(t) ? '#ffffff' : colOf(t); g.lineWidth = t === 'fence' ? 1.5 : t === 'inner' ? 2 : 3; g.beginPath(); g.moveTo(X(x1), Y(y1)); g.lineTo(X(x2), Y(y2)); g.stroke(); }
     for (const [cx, cy, r, t] of TREES) { g.fillStyle = colOf(t, lit(t) ? 0.85 : 0.45); g.strokeStyle = lit(t) ? '#fff' : colOf(t); g.lineWidth = 1.5; g.beginPath(); g.arc(X(cx), Y(cy), r * s, 0, 7); g.fill(); g.stroke(); }
     const k = K(); g.font = '11px "DM Mono", monospace'; g.fillStyle = 'rgba(200,215,255,0.85)'; g.textAlign = 'center';
@@ -272,6 +283,14 @@ function drawPay() {
     g.beginPath(); P.rays.forEach((o, i) => { const r = Math.min(R, isFinite(o.shape) ? o.shape * f : R), x = cx + r * Math.cos(o.a), y = cy - r * Math.sin(o.a); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.closePath();
     g.fillStyle = 'rgba(140,230,205,0.08)'; g.fill();
     g.strokeStyle = 'rgba(140,230,205,0.15)'; g.beginPath(); g.arc(cx, cy, R, 0, 7); g.stroke();
+    if (!S.pulse) {                                                 // passive: every direction on the circle, painted by what it meets
+        g.fillStyle = '#0b0f14'; g.fillRect(0, 0, W, H); const rr = R * 0.8; payMap.f = rr;
+        g.strokeStyle = 'rgba(140,230,205,0.25)'; g.beginPath(); g.arc(cx, cy, rr, 0, 7); g.stroke();
+        for (const o of P.rays) { const a = o.a, w = Math.PI / NP * 0.9; g.strokeStyle = lit(o.what) ? '#ffffff' : colOf(o.what); g.lineWidth = 14; g.beginPath(); g.arc(cx, cy, rr, -(a + w), -(a - w)); g.stroke(); }
+        g.lineWidth = 1; g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(cx, cy, 4, 0, 7); g.fill();
+        g.font = '11px "DM Mono", monospace'; g.fillStyle = 'rgba(140,230,205,0.8)'; g.textAlign = 'center'; g.fillText('no distance: every direction at one radius', cx, cy + rr + 28); g.textAlign = 'left';
+        return;
+    }
     for (const o of P.rays) { const r = Math.min(R, isFinite(o.shape) ? o.shape * f : R); g.fillStyle = lit(o.what) ? '#ffffff' : colOf(o.what); g.beginPath(); g.arc(cx + r * Math.cos(o.a), cy - r * Math.sin(o.a), lit(o.what) ? 3.4 : 2.4, 0, 7); g.fill(); }
     g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(cx, cy, 4, 0, 7); g.fill();
 }
@@ -301,29 +320,31 @@ function drawAddr() {
 }
 function shareOf(list) { const c = {}; for (const o of list) c[o.what] = (c[o.what] || 0) + 1; return c; }
 function render() {
-    const k = K(); P = payload(k, S.at); A = addresses(k, S.home); WR = S.write ? writeFrom(k, S.home) : null; $('write').classList.toggle('on', S.write);
+    const k = K(); P = payload(k, S.at); A = addresses(k, S.home); WR = S.write ? writeFrom(k, S.home) : null; $('write').classList.toggle('on', S.write); $('pulse').classList.toggle('on', S.pulse);
+    $('payTag').textContent = S.pulse ? 'the reader, sending: writing' : 'the reader'; $('payHead').textContent = S.pulse ? 'A pulse sent: ranges, in its unit' : 'A circle, painted by what arrives';
     drawPlan(); drawPay(); drawAddr();
     $('kv').textContent = 'k = ' + (k >= 1 ? k.toPrecision(3) : k.toFixed(k < 0.1 ? 4 : 3)); $('home').value = S.home;
     const below = A.filter(o => o.ratio < 1).length;
-    $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}. The payload reader's ranges have geometric mean ${fmtM(P.gm)} in the writer's ` +
-        `metres, a number it never receives; the shape it holds is the same at every k. The address reader holds ${NA} directions: ${below} below v = h and ${NA - below} above, at every k.`;
+    $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}. Its circle round the whole is ${fmtM(Math.hypot(24, 16) * k)} in radius. ` +
+        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The reader's circle is the same at every k: its directions and what paints them, no distance.`) + ` The address reader holds ${NA} directions: ${below} below v = h and ${NA - below} above, at every k.`;
     describe();
 }
 function describe() {
     const k = K(), w = writer(k), t = S.hover;
     $('readW').textContent = (t ? `${THINGS[t].name}. ` : '') + `The lot ${fmtM(w.lot[0])} × ${fmtM(w.lot[1])}; the living room ${fmtM(w.rooms[0].w)} × ${fmtM(w.rooms[0].d)}; ` +
-        `the payload reader stands at (${fmtM(S.at[0] * k)}, ${fmtM(S.at[1] * k)}). Every one of these moves with k.` +
+        `the reader stands at (${fmtM(S.at[0] * k)}, ${fmtM(S.at[1] * k)}). Every one of these moves with k.` +
         (WR ? `\nWritten from one stride (${fmtM(WR.stride)}, counted): ${WR.points.length} corners seen from home and from the stride's end, each two rays crossing, ` +
             `out to ${fmtM(WR.span[0])} along h and ${fmtM(WR.span[1])} along v; the largest error ${WR.maxErr.toExponential(1)} of a length. In strides the same at every k; in metres by k.` : '');
     const pr = t ? P.rays.filter(o => o.what === t) : [];
-    $('readP').textContent = t ? (pr.length ? `${THINGS[t].name}: ${pr.length} of ${NP} directions, its shape ${pr.map(o => o.shape).reduce((a, b) => Math.min(a, b)).toFixed(3)} to ${pr.map(o => o.shape).reduce((a, b) => Math.max(a, b)).toFixed(3)} of the mean` : `${THINGS[t].name}: not met from here`)
-        : `${NP} ranges, the shape from ${Math.min(...P.rays.map(o => o.shape)).toFixed(3)} to ${Math.max(...P.rays.map(o => o.shape)).toFixed(3)} of their mean; the mean itself (a₀) never arrives.`;
+    $('readP').textContent = t ? (pr.length ? `${THINGS[t].name}: ${pr.length} of ${NP} directions on the circle (a share of the turn, not a size)` + (S.pulse ? `; the pulse's ranges ${pr.map(o => o.shape).reduce((a, b) => Math.min(a, b)).toFixed(3)} to ${pr.map(o => o.shape).reduce((a, b) => Math.max(a, b)).toFixed(3)} of their mean` : '') : `${THINGS[t].name}: nothing arrives from it here`)
+        : S.pulse ? `A pulse sent: ${NP} ranges back, the shape from ${Math.min(...P.rays.map(o => o.shape)).toFixed(3)} to ${Math.max(...P.rays.map(o => o.shape)).toFixed(3)} of their mean, in the unit the pulse carried in (its speed and a clock).`
+            : `${new Set(P.rays.map(o => o.what)).size} things paint the circle; no distance on it. Send a pulse for ranges, and the reader writes.`;
     const ar = t ? A.filter(o => o.what === t) : [];
     $('readA').textContent = t ? (ar.length ? `${THINGS[t].name}: addresses from [1 : ${ar[0].ratio.toPrecision(3)}] to [1 : ${ar[ar.length - 1].ratio.toPrecision(3)}], ${ar.length} of ${NA} (g ${ar[0].g.toFixed(3)} to ${ar[ar.length - 1].g.toFixed(3)}); how far, never` : `${THINGS[t].name}: not seen from ${HOMES[S.home].name}`)
         : `From ${HOMES[S.home].name}: ${Object.keys(shareOf(A)).length} things met, each a stretch of addresses; half the turn either side of v = h.`;
 }
 // ── input ──────────────────────────────────────────────────────────────────────────────────────────────────────────
-const planAt = e => { const r = $('plan').getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top, M = planMap; return [(x - M.m) / M.s, (M.H - M.m - 16 - y) / M.s]; };
+const planAt = e => { const r = $('plan').getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top, M = planMap; return [24 + (x - M.cx) / M.s, 16 - (y - M.cy) / M.s]; };
 function thingNearPlan(x, y) { let best = null, bd = 0.9;
     for (const [x1, y1, x2, y2, t] of SEG) { const ex = x2 - x1, ey = y2 - y1, L = ex * ex + ey * ey, u = Math.max(0, Math.min(1, ((x - x1) * ex + (y - y1) * ey) / L)), d = Math.hypot(x - x1 - u * ex, y - y1 - u * ey); if (d < bd) { bd = d; best = t; } }
     for (const [cx, cy, r, t] of TREES) if (Math.hypot(x - cx, y - cy) < r + 0.3) return t;
@@ -339,7 +360,8 @@ for (const id of ['plan', 'pay', 'addr']) $(id).addEventListener('pointerleave',
 $('k').oninput = e => { S.lk = +e.target.value; render(); };
 $('home').onchange = e => { S.home = e.target.value; render(); };
 $('write').onclick = () => { S.write = !S.write; render(); };
-$('reset').onclick = () => { S.lk = 0; S.at = [12, 12]; S.home = 'lot'; S.write = false; $('k').value = 0; render(); };
+$('pulse').onclick = () => { S.pulse = !S.pulse; render(); };
+$('reset').onclick = () => { S.lk = 0; S.at = [12, 12]; S.home = 'lot'; S.write = false; S.pulse = false; $('k').value = 0; render(); };
 addEventListener('resize', render);
 $('k').value = S.lk; render();
 window.__blueprint = { THINGS, ROOMS, SEG, TREES, HOMES, CORNERS, world, cast, payload, addresses, writer, writeFrom,
