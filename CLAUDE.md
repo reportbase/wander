@@ -785,6 +785,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   **One's own height as the base** (22 Oct, SPN R431, R433; Tom: "proceed"): OFS §9 after "A survey": Sedgwick's horizon
   ratio (2021, restating 1973 and 1986, which were not found open), the eye height the survey's base carried in the body,
   given a level plane and each object's contact; one eye height tall is the corner, V* = H. Notes in `plans/ofs-literature.md`.
+  Review 24 (22 Oct, SPN R435; Tom: "1,2"), a whole-paper read after the day's additions (`plans/ofs-review-24.md`): the
+  introduction's scope sentence now admits examples from physics and perception and §7.8's one restated case; §3.7's
+  payload reader receives its amounts (ranging is writing, so §3.1's lidar is a delay until the speed is carried in);
+  Theorem 6(e) the reciprocal-symmetric sweep's; Kato and McCullagh's published title is "Some properties of a Cauchy
+  family on the sphere derived from the Möbius transformations", *Bernoulli* 26(4), 3224–3248.
   **One figure, three rulers** (21 Oct, SPN R422; Tom: "we have show that the same math applies to the reader and
   writer", after calendar's `geometry.html` dial): OFS §6 after Mercator's map. The circle, the unit hyperbola and the
   tangent at the apex lay one reading x three ways, the writer's line x, the turn θ = arctan x, the hyperbolic angle
