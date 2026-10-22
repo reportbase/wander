@@ -2603,6 +2603,20 @@ to it. The costs fall where the geometry puts them: each angle needed only an in
 base needed the ground itself, crossed rod by rod, and one was enough to write the whole. The finished map is the
 written thing, the writer's representation, and its scale bar is the base.
 
+**The ground: one's own height as the base.** A reader standing on level ground carries a base with it. The horizon
+of a ground plane lies at the eye's height, so it cuts every object standing on that plane at the same height above
+the plane's surface: the part of the object below the horizon is one eye height tall. If the object's foot reads F
+below the horizon and its top E above, its height over the eye height is (tan E + tan F)/tan F, a ratio of readings
+(Sedgwick 2021, restating his horizon-ratio relation of 1973 and 1986). Without the eye height every object's size
+relative to every other is still read; with it, each is written in that one length. As Sedgwick puts it, without the
+eye height "the vertical extents of all those objects relative to each other are still visible even though their
+vertical extents relative to the observer are not", and he names the separation of the two eyes and the step of a
+moving eye as scale factors of the same kind: the baselines of "Turning in place" and §10's walk. Three things are
+added here, and none is read: a plane known to be level, the eye's height above it, and each object's contact with
+it. Given those, the eye height is the survey's base, carried in the body instead of measured with rods. An object
+exactly one eye height tall has its top on the horizon: on the pair (object, eye height) it is at the corner,
+V* = H.
+
 **The test: scale the world.** Whether a record is read or written can be checked without asking how it was made.
 Multiply every breadth and distance in the world by one factor k. A reading does not change: a direction, each angle of
 the survey, a photograph, the reader of ratios' [h : v], the shape the reader of the payload holds. A writing changes by
@@ -3411,6 +3425,8 @@ Siegler, R. S. and Opfer, J. E. (2003). The development of numerical estimation:
 numerical quantity. *Psychological Science* 14(3), 237–243.
 
 Sivia, D. S. and Skilling, J. (2006). *Data Analysis: A Bayesian Tutorial*, 2nd ed. Oxford University Press.
+
+Sedgwick, H. A. (2021). J. J. Gibson's "Ground Theory of Space Perception". *i-Perception* 12(3), 20416695211021111.
 
 Smart, W. M. (1977). *Textbook on Spherical Astronomy*, 6th ed., revised by R. M. Green. Cambridge University Press.
 

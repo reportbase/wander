@@ -352,3 +352,11 @@ Where it lands:
 Standing: confirmed, from Sedgwick's own text. A classical anchor for "the one amount a reader carries in is its own" to
 cite in OFS beside Gibson (§3.7) or in §9 ("one amount"), if Tom wants it there. Check before citing the 1973 and 1986
 originals: only the 2021 paper was read.
+
+**Cited in OFS (22 Oct, SPN R433; Tom: "proceed").** §9, after "A survey: many readings, one amount", as "The ground:
+one's own height as the base": the horizon ratio as a ratio of readings, relative sizes read and absolute sizes written
+in the eye height, his third quote, the eyes' separation and a moving eye's step, the three added premises (a level
+plane, the eye's height above it, each object's contact) and the corner V* = H. Cited as Sedgwick (2021), i-Perception
+12(3), doi:10.1177/20416695211021111 (checked on Crossref), "restating his horizon-ratio relation of 1973 and 1986". The
+1973 dissertation and the 1986 Handbook chapter (Boff, Kaufman and Thomas, eds., Wiley, pp. 21.1–21.57) were looked for
+and not found open; neither is quoted.

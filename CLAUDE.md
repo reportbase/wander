@@ -773,6 +773,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   scale-free readings, the Cauchy given a uniform sweep), free given a premise ((S), a fixed K) and the payload's
   (occlusion); the flat screen over-weights off-axis by sec³α (it was inverted); least squares only where the readings
   follow the turn's law; §3.7's sphere the address reader's, never held whole; §6 3.5° (not 3.6°); §7.8 uses χ.
+  **One's own height as the base** (22 Oct, SPN R431, R433; Tom: "proceed"): OFS §9 after "A survey": Sedgwick's horizon
+  ratio (2021, restating 1973 and 1986, which were not found open), the eye height the survey's base carried in the body,
+  given a level plane and each object's contact; one eye height tall is the corner, V* = H. Notes in `plans/ofs-literature.md`.
   **One figure, three rulers** (21 Oct, SPN R422; Tom: "we have show that the same math applies to the reader and
   writer", after calendar's `geometry.html` dial): OFS §6 after Mercator's map. The circle, the unit hyperbola and the
   tangent at the apex lay one reading x three ways, the writer's line x, the turn θ = arctan x, the hyperbolic angle
