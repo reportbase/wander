@@ -502,7 +502,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Hover links the model, the shell, the triangle and the map. Scale the world moves the writer's numbers and the ranges
   by k, the shell, the addresses and the places in strides not at all.
   `?k=<log10 k>&at=living|kitchen|bedroom|bath|garage|shed|garden|back&home=living|kitchen|bedroom|garage|lot&write=1`;
-  hook `window.__blueprint3d` (`world`, `cast`, `payload`, `addresses`, `counts`, `writer`, `writeFrom`, `strideOf`,
+  hook `window.__blueprint3d` (`world`, `cast`, `payload`, `addresses`, `counts`, `writer`, `wedgeHorizon`, `writeFrom`, `strideOf`,
   `standAt`, `HOMES`, `SPOTS`, `GRID`, `SPHERE`, `CORNERS`, `set`, `state`, `last`, `frames`, `webgl`). Not in the flying page.
   Since R426 (22 Oct; Tom: "the problem is that cauchy is passive, and furniture does not send signals."; "so the reader in
   these demos is a sphere"; "yes, they should.     the writer then is the sphere around the entire system."): on both
@@ -712,6 +712,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   stands inside the writer's sphere, its standpoint a place there and its H given a size there (both writings); from
   inside the writer's sphere is never seen (its radius arrives along no direction); two readers meet only as two points
   within it. What is inside is the standpoint, not the radius (H a chosen value, not a size).
+  **The wedges reach the writer's sphere** (22 Oct, SPN R444; Tom: "the writer is a sphere by definition. the readers are
+  small wedges within that sphere. the sphere is unknowably large. the wedges extend to the sphere boundry by definition in
+  the far field.", then "yes, proceed"): OFS §3.7 next: the reader's wedge reaches the writer's sphere in the far field,
+  its horizon that sphere seen from inside, reached along every direction and never measured, so the sphere's size (an
+  amount to the writer) is unknowable to the reader; what reaches it is the directions, the nearer thing on a line painting
+  first. "Unknowably large" is the reader's side; to the writer the radius is an amount. On `blueprint-3d.html` the corner
+  reader's wedge is drawn out to the writer's sphere (gold), hook `wedgeHorizon(home, k)`.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

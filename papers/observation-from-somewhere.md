@@ -901,7 +901,10 @@ read as the two-dimensional Cauchy, with every pair at its corner and the near f
 radius is an amount, the size of what it holds (§9). A second standpoint gives that radius in H; an amount carried
 in gives it in a unit shared with others. Every reader stands inside the writer's sphere: its standpoint is a place
 there and its H is given a size there, both writings. From inside, the writer's sphere is never seen, since its radius
-arrives along no direction, and two readers meet only as two points within it.
+arrives along no direction, and two readers meet only as two points within it. The reader's wedge opens from its standpoint
+and reaches the writer's sphere in the far field: its horizon is that sphere seen from inside, reached along every
+direction and never measured, so the sphere's size, an amount to the writer, is unknowable to the reader. What reaches
+it is the wedge's directions; along each, the nearer thing on the line paints the point first.
 
 ### 3.8 What the reader lacks is one number
 

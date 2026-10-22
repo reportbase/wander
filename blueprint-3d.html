@@ -101,7 +101,8 @@
                 writer's sphere (faint blue) is round the whole system and looks in; its radius is an amount, and the metres
                 need a unit measured beforehand: the scale bar. Drag to turn, scroll or pinch to zoom, tap a floor to stand
                 the <span class="p">reader</span> there (teal); the <span class="a">corner reader</span> is at the gold
-                corner, its three walls h, v (up) and v₂.</p>
+                corner, its three walls h, v (up) and v₂. Its wedge (gold, faint) runs out along every direction to the
+                writer's sphere: its horizon, that sphere seen from inside, reached and never measured.</p>
             <p class="read" id="readW"></p>
         </div>
         <div class="stack">
@@ -140,7 +141,8 @@
     </div>
     <p class="cap" style="margin-top:12px">The writer is the vantage that writes: it needs the whole and a unit. Its sphere is round
         the whole, looking in; the reader's is round one point, looking out, painted by what arrives and holding no
-        distance. The corner reader's wedge is one octant of it. One stride counted is the amount that turns the corner reader's looks into the writer's metres.
+        distance. The corner reader's wedge is one octant of it, and it stands inside the writer's sphere: in the far
+        field every direction of its wedge reaches that sphere, its horizon, whose size the reader never reads. One stride counted is the amount that turns the corner reader's looks into the writer's metres.
         Other demos: <a href="blueprint.html">the blueprint</a>, <a href="room-ratios.html">the room in ratios</a>,
         <a href="wedge.html">the wedge</a>, <a href="demos.html">all demos</a>.</p>
 </main>
@@ -258,6 +260,19 @@ function counts(list) { const n = list.length, c = { vh: 0, v2h: 0, v2v: 0, near
     return { vh: c.vh / n, v2h: c.v2h / n, v2v: c.v2v / n, near: c.near / n, met: c.met }; }
 // the writer's sphere: round the whole system, looking in, its radius an amount (the lot's half-diagonal)
 function writerSphere(k) { return { c: [24 * k, 16 * k, 0], r: Math.hypot(24, 16) * k }; }
+// the corner reader's wedge run out to the writer's sphere (SPN R444; Tom: "the writer is a sphere by definition. the readers
+// are small wedges within that sphere. the sphere is unknowably large. the wedges extend to the sphere boundry by definition
+// in the far field."): from home, along each direction of the octant's three faces, the point where it meets the writer's
+// sphere. That is the reader's horizon seen by the writer: every direction reaches it, none of the reader's readings
+// measures how far (the distance along each ray is the writer's, in metres × k). What reaches it is the directions; along
+// each, the first thing met paints the address before it gets there.
+function wedgeHorizon(home, k, n = 24) { const Hm = HOMES[home], ws = writerSphere(k), o = [Hm.at[0] * k, Hm.at[1] * k, 0];
+    const ax = [[Hm.h[0], Hm.h[1], 0], [0, 0, 1], [Hm.v2[0], Hm.v2[1], 0]];
+    const hit = d => { const m = d.map((x, i) => o[i] - ws.c[i]), b = d[0] * m[0] + d[1] * m[1] + d[2] * m[2], c = m[0] ** 2 + m[1] ** 2 + m[2] ** 2 - ws.r ** 2;
+        const t = Math.max(0, -b + Math.sqrt(Math.max(0, b * b - c))); return { t, p: o.map((x, i) => x + t * d[i]) }; };
+    const edges = ax.map(hit), arcs = [[0, 1], [1, 2], [2, 0]].map(([a, b]) => Array.from({ length: n + 1 }, (_, j) => {
+        const q = j / n * Math.PI / 2, d = ax[a].map((x, i) => Math.cos(q) * x + Math.sin(q) * ax[b][i]); return hit(d).p; }));
+    return { home: o, edges, arcs }; }
 // the writer's account: every length an amount, in metres × k
 function writer(k) { return { lot: LOT.map(x => x * k), rooms: ROOMS.map(R => ({ key: R.key, name: R.name, w: (R.r[2] - R.r[0]) * k, d: (R.r[3] - R.r[1]) * k, z: R.z * k })),
     trees: TREES.map(t => ({ what: t[3], across: 2 * t[2] * k, tall: (TRUNK_H + 1.7 * t[2]) * k })) }; }
@@ -379,7 +394,7 @@ $('roof').onclick = () => { S.roof = !S.roof; render(); };
 $('reset').onclick = () => { Object.assign(S, { lk: 0, spot: 'living', at: SPOTS.living[1].slice(), home: 'living', write: false, pulse: false }); $('k').value = 0; render(); };
 addEventListener('resize', () => { drawTri(); drawMap(); });
 $('k').value = S.lk; render();
-window.__blueprint3d = { THINGS, ROOMS, SEG, LINTELS, CEIL, BOXES, TREES, HOMES, SPOTS, GRID, SPHERE, CORNERS, world, cast, payload, addresses, counts, writer, writerSphere, writeFrom, strideOf,
+window.__blueprint3d = { THINGS, ROOMS, SEG, LINTELS, CEIL, BOXES, TREES, HOMES, SPOTS, GRID, SPHERE, CORNERS, world, cast, payload, addresses, counts, writer, writerSphere, wedgeHorizon, writeFrom, strideOf,
     standAt(x, y) { S.at = [x, y]; S.spot = ''; render(); },
     set(o) { Object.assign(S, o); if (o.spot && SPOTS[o.spot]) S.at = SPOTS[o.spot][1].slice(); $('k').value = S.lk; render(); return this.state(); },
     state: () => ({ lk: S.lk, k: K(), at: S.at.slice(), spot: S.spot, home: S.home, write: S.write, pulse: S.pulse, hover: S.hover, gm: P.gm, counts: C, written: WR && WR.written }),
@@ -440,6 +455,7 @@ if (r1 && r2) {
     const ball = (r, col) => { const m = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), new THREE.MeshBasicMaterial({ color: col })); scene.add(m); return m; };
     const payBall = ball(0.28, 0x8ce6cd), homeBall = ball(0.22, 0xd4a052), strideBall = ball(0.2, 0xffd890);
     const segs = (col, op) => { const g = new THREE.BufferGeometry(), l = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: op, vertexColors: col == null })); l.frustumCulled = false; scene.add(l); return l; };
+    const horizon = segs(0xd4a052, 0.75);                                  // the corner reader's wedge out to the writer's sphere (R444)
     const payRays = segs(0x8ce6cd, 0.13), axes = segs(0xd4a052, 0.95), crossA = segs(0xd4a052, 0.55), crossB = segs(0xffd890, 0.55);
     const ptsGeo = new THREE.BufferGeometry(), pts = new THREE.Points(ptsGeo, new THREE.PointsMaterial({ color: 0x8ce6cd, size: 0.28 })); pts.frustumCulled = false; scene.add(pts);
     // ── the payload reader's shell ──
@@ -468,6 +484,10 @@ if (r1 && r2) {
         payRays.geometry.setAttribute('position', new THREE.Float32BufferAttribute(pr, 3));
         const Hm = B.HOMES[S.home], h0 = [Hm.at[0], Hm.at[1], 0.02]; homeBall.position.set(...h0);
         axes.geometry.setAttribute('position', new THREE.Float32BufferAttribute([...h0, h0[0] + 2.5 * Hm.h[0], h0[1] + 2.5 * Hm.h[1], 0.02, ...h0, h0[0], h0[1], 2.5, ...h0, h0[0] + 2.5 * Hm.v2[0], h0[1] + 2.5 * Hm.v2[1], 0.02], 3));
+        { const Wh = B.wedgeHorizon(S.home, 1), hz = [];
+            for (const e of Wh.edges) hz.push(...h0, ...e.p);
+            for (const a of Wh.arcs) for (let j = 1; j < a.length; j++) hz.push(...a[j - 1], ...a[j]);
+            horizon.geometry.setAttribute('position', new THREE.Float32BufferAttribute(hz, 3)); }
         const W = L.WR; strideBall.visible = crossA.visible = crossB.visible = pts.visible = !!W;
         if (W) { const b = W.B.map(x => x / k); strideBall.position.set(b[0], b[1], 0.02);
             const pa = [], pb = [], pp = []; for (const o of W.points) { pa.push(...h0, ...o.p); pb.push(b[0], b[1], 0.02, ...o.p);
