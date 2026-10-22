@@ -158,3 +158,9 @@ and found no slip); none is new physics. All is classical SR (aberration, D = γ
   frequency carried in (a known kind): a **writing**, moved by exactly −ln f when the carried amount is off by f.
 - **EMC is all payload** (energies and momenta are amounts, c the bridge). Its corner pc = mc² is a regime hand-over,
   and mass is a stationary point (the least E over boosts), not a median.
+
+### Re-read, 22 October (EBD, `plans/ebd-plan.md`; SPN R440)
+Appended; nothing above is changed. "A reading (directions alone)" (P1, P5) holds for a census taken whatever the
+brightness, of sources uniform in their own frame. A flux-limited census adds the payload weighting D^(x(1+α)), read from the
+catalogue's own count slope and band ratio: still a reading (no rest frequency), but not of directions alone. On CatWISE
+that weighting is two thirds of the expected dipole.

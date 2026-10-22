@@ -194,6 +194,8 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | a loop's closure error | locates a misread link only through a network of loops whose routes cross different objects; a drift that fails to close belongs to the sample compared, not a rung | none | LTR P1(c), P4 |
 | the grid module ratio λ_{k+1}/λ_k, a reading; spacings in cm writings | the autocorrelogram method carries a bin, a smoothing width and an occupancy floor, and holds only within a band of them | the method's own amounts | GDR P1 |
 | √2 between modules: a doubling of area counted on a proportional (writer's) lattice; the reader's lay doubles distance (2 in every dimension); the turn's K addresses along scale step as cosh, flat over at most five modules | grid-cell module ratios (~1.42 measured) | none | GDR P2, P5 |
+| a moving reader's census with no payload cut: the addresses' Jacobian D², angles only | Ellis and Baldwin's "2", aberration: the dipole 3⟨cos θ′⟩ = 2β + (2/5)β³ + … | none | EBD P1 |
+| a census cut by payload: the weighting D^(x(1+α)) on the addresses, its exponent read as ratios from the same catalogue (x a count slope, α a two-band ratio); a colour cut adds nothing | the kinematic count dipole [2 + x(1 + α)]β, two thirds of it the payload's on CatWISE (x(1 + α) ≈ 3.97, 0.0074 expected); the flux slices agree on one β (2.7 times the CMB's), the colour slices do not | none (no rest frequency, no distance); the sources' isotropy in their own frame, a premise | EBD P2, P5–P7 |
 | V = H, the calibration | reading amounts with no unit of the other's | travel, a constant, a kind, a shared fact | LAD (in Wander's world) |
 | a reading over its own rate, x/ẋ (x = S/d, the pair's v/h) | time to contact, d/u (Lee's τ), exact at every distance; from the turn arctan x only far off | the reader's clock | MOT P1–P3 |
 | levels of an approach (the reading doubling) | each takes half the time to contact read at its start; infinitely many before contact | the reader's clock | MOT P4 |
@@ -232,7 +234,8 @@ reading and writing, and the two sweeps; each with a plan written first and an e
 `plans/wvr-plan.md`, `plans/tpr-plan.md`). Nothing below is new physics; what moves is where each piece falls, and some of
 the earlier wording, corrected here and in notes appended to each plan:
 - **Motion and relativity.** MOT run 3's "three pairs, three corners" are three kinds: the sky's a median (only in the frame
-  where the sky is uniform; from a boost the median moves to η, so the boost is a reading from directions alone), the
+  where the sky is uniform; from a boost the median moves to η, so the boost is a reading from directions alone, for a
+  census taken whatever the brightness: EBD below), the
   (β, 1/γ) pair's a regime hand-over, the Doppler pair's (rest) the fixed point of swapping who counts. k needs a clock's
   two intervals (or the sender's exchanged), and a Doppler factor read as a frequency needs a rest frequency: a writing,
   not "no bridge" (the rows below and in §1 that say so). Mass is the least value of E over boosts, the pair's geometric
@@ -278,6 +281,20 @@ Then (Tom: "pool, REF, GRD, LTH") four more, each a plan written first (`plans/p
   galaxies (LTR P4, post hoc: away from that overlap neither drifts more than 0.016 mag/mag), not to the rungs. Parallax
   angles, flux ratios of one kind, ratios between rungs and the flow's shape are readings; the au, the anchors, every Mpc
   and H₀ writings.
+
+Then (SPN R440; Tom: "proceed with recommended changes") a real-data test of the boost as a reading, EBD
+(`plans/ebd-plan.md` + `runs/ebd/`, Secrest et al. 2021's CatWISE quasars, Zenodo 8303800, CC BY 4.0):
+- **Exact.** With no flux limit a moving reader's census is D²/4π, its dipole 2β + (2/5)β³ + …, angles only (P1); cut at a
+  flux limit it is D^(2 + x(1+α)), a colour cut moving nothing (P2); no zero point or rest frequency enters (P5). So
+  Ellis and Baldwin's "2" is the addresses' and x(1 + α) the payload's weighting, read from the catalogue's own ratios: a
+  reading still, but "from directions alone" (SRR, §1) only for a census taken whatever the brightness, and every real
+  census is flux-limited. On CatWISE the payload is two thirds of the 0.0074 expected.
+- **Data.** Four disjoint W1 slices give one β, 3.31·10⁻³ ± 0.27·10⁻³, 2.7 times the CMB's (P6 not killed), as one boost
+  should; the colour terciles do not agree (P7 killed, p = 2.6·10⁻⁴; the reddest third 60° off the CMB), which no boost
+  can do, so part of the dipole is the sources' own anisotropy or a colour-dependent selection. The direction lies 21–28°
+  from the CMB's (P3 killed). My estimator missed Secrest's amplitude by 22% (P4 killed by my set-up: pixels kept by their
+  centres, the ecliptic term fitted jointly); their recipe, run after, gives 0.0156, 2.1 times the expected, to 0.3°.
+  The plan was written before the data were downloaded but first committed with run 1's output.
 
 ## 2. Results, by standing
 

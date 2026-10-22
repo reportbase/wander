@@ -138,3 +138,68 @@ Downloaded 22 October, before the run; only the column list and three rows were 
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (22 Oct; `runs/ebd/ebd.py`, output `runs/ebd/ebd-run1.txt`, 35 s)
+
+One attempt. Part A at 50 digits; part B on the 1,604,392 rows of the file (|b| ≥ 30° already, W1 − W2 ≥ 0.8, W1 to
+16.5; 288 sources lie inside a mask circle, so the file is masked at the source level but not quite fully).
+
+- **P1 not killed.** Worst quadrature miss 8.9·10⁻⁴⁶. With no flux limit the seen sky is D²/4π and its dipole
+  3⟨cos θ′⟩ = 2β + (2/5)β³ + (6/35)β⁵ + …: 0.0024672008 at the CMB's β (2β = 0.0024672). Only angles enter. The 40-term
+  series agrees to 8.9·10⁻⁴⁶. The series clause as first written (three terms to 10⁻⁴⁰) is killed by my set-up, as noted
+  before the run (the three terms miss by 4·10⁻²² there).
+- **P2 not killed.** Built from the aberration Jacobian (a numerical derivative) and I_ν/ν³ invariance, the seen count
+  above a fixed limit is D^(2 + x(1+α)) to 9·10⁻⁵¹ at every x, α, β tried; a colour moves by 4·10⁻⁵¹ (not at all). The
+  dipole against first order [2 + x(1 + α)]β: pure power law 1.30 β² relative, the curved count 1.55 β² (limit 10 β²);
+  at the CMB's β, 0.0072067 first order, 0.0072067 exact.
+- **P3 killed.** My estimator's axis is (234.7°, 42.2°), 21.4° from the CMB's; the Poisson bootstrap's 99% radius is
+  18.4° (68%: 8.0°). The other three mask and ecliptic choices give 18.4°–21.8° off against 14.1°–15.8°.
+- **P4 killed, by my set-up.** My estimator gave D = 0.01894 ± 0.00168 at (234.7°, 42.2°), 22% above Secrest's 0.01554
+  and 13.7° from their axis. x = 1.757 at W1 = 16.4 (N(<16.3) = 1,122,298, N(<16.5) = 1,551,074), mean α 1.261 (their
+  column; from W1 − W2 with Vega zero points 1.232, median difference per source 0.002), expectation 0.00737: these three
+  pass. Post hoc (`runs/ebd/ebd1-posthoc.py`, output `ebd1-posthoc.txt`): Secrest's own recipe, read from their notebook
+  (an nside-1024 mask degraded to nside 64 keeping only pixels wholly unmasked; the ecliptic trend fitted first and
+  subtracted; healpy's fit_dipole), gives D = 0.01558 ± 0.00172 at (238.5°, 28.6°), 0.3° from theirs. The miss is my
+  estimator's: pixels kept by their centres include part-masked pixels at |b| = 30° and at the circles (the catalogue is
+  cut at the source level), and my ecliptic term was fitted jointly with the dipole.
+- **P5 not killed.** With W1, W2 and the cut all moved by −0.37 mag, x moved by 0, the sample by 0 sources, the colour's
+  α by 0. No zero point, rest frequency or distance enters the expectation.
+- **P6 not killed.** p = 0.34 (χ² 3.34 on 3 dof). By W1 bin:
+
+  | W1 | N | x_eff | α | 2 + x_eff(1 + α) | D measured | β̂ / β_CMB |
+  |---|---|---|---|---|---|---|
+  | 9.0–15.0 | 177,792 | 1.635 | 1.316 | 5.786 | 0.0183 ± 0.0033 | 2.56 |
+  | 15.0–15.5 | 189,415 | 1.407 | 1.331 | 5.281 | 0.0231 ± 0.0040 | 3.54 |
+  | 15.5–16.0 | 362,768 | 1.475 | 1.310 | 5.407 | 0.0199 ± 0.0032 | 2.98 |
+  | 16.0–16.4 | 582,365 | 2.083 | 1.191 | 6.562 | 0.0192 ± 0.0026 | 2.37 |
+
+  The 2 is the same in every bin (0.00247 of the expectation); the payload's part runs from 3.28 to 4.56 times β, about
+  60–70% of the whole. One β fits all four: 3.31·10⁻³ ± 0.27·10⁻³, 2.68 times the CMB's. The axes wander (17°, 6°, 22°,
+  36° from the CMB).
+- **P7 killed.** p = 2.6·10⁻⁴ (χ² 16.5 on 2 dof). Terciles of α at 9 < W1 < 16.4: mean α 0.66, 1.17, 1.96; x 2.39, 1.63,
+  1.24; D 0.0172, 0.0190, 0.0320; β̂ 2.34, 2.78, 4.57 times the CMB's. The reddest third's dipole points to (195°, 27°),
+  60° from the CMB; the other two to (282°, 34°) and (270°, 47°). Post hoc, with Secrest's recipe the same (0.0142,
+  0.0155, 0.0295; the reddest at (199°, 18°)), and the reddest third's dipole is there in every W1 slice (0.021, 0.032,
+  0.035 at 9–15.5, 15.5–16.0, 16.0–16.4). Once its own payload weighting is divided out, a boost gives one β in every
+  slice, and a colour cut cannot change that (P2). So the reddest third's dipole is not our motion's. It is either
+  anisotropy of the sources in their own frame or a colour-dependent selection on the sky (the WISE scan, W2's depth,
+  confusion). This run cannot tell which. I did not look for it before the run.
+- **P8 (reported, not scored).** β̂ = 3.17·10⁻³ ± 0.28·10⁻³ from my estimator, 2.57 times the CMB's; with Secrest's
+  recipe 0.01558/5.971 = 2.61·10⁻³, 2.12 times. The framing says nothing about this.
+
+What the run says, read plainly:
+- The split is exact (P1, P2, P5): with no flux limit a moving reader's census is D² on the addresses, angles only, 2β to
+  first order. A flux limit multiplies it by D^(x(1+α)); x and α are ratios read from the same catalogue's payload. So
+  β from a count dipole is a reading in units of c, with no rest frequency, but it is not "from directions alone": two
+  thirds of the expected amplitude is the payload's.
+- No catalogue has no flux limit, so the 2 cannot be measured alone. The flux slices agree on one β (P6), as a boost
+  needs, at 2.7 times the CMB's. The colour slices do not (P7): part of the measured dipole is not a boost at all.
+- Errors: the jackknife (12 base pixels) gives 0.0029 on the amplitude against the Poisson bootstrap's 0.0017, so the
+  Poisson bootstrap understates, by about 1.7. P3's and P7's verdicts used the bootstrap, as fixed; they stand. Scaled by
+  1.7, P3's 99% radius would be about 31° and would not kill (post hoc, not a verdict).
+
+Earlier wording this bears on (not edited here): `papers/observation-from-somewhere.md` line 2136 ("A reader holding
+directions alone reads its own rapidity"), `papers/physics.md` lines 177 and 235, and `plans/srr-plan.md` lines 33 and
+146 say the boost is read from directions alone. That holds for a census whose membership does not depend on the payload,
+and for sources isotropic in their own frame. A real census is flux-limited (the payload's weighting is then 60–70% of the
+amplitude, read from x and α) and, here, not isotropic by colour.

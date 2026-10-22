@@ -2134,8 +2134,11 @@ follow every increasing map; those facts underlie parts (b) and (d). The other p
   So the motion can be read from the addresses alone. On the levels ξ = −ln tan(θ/2), the pseudorapidity, aberration is
   a shift by η exactly, and a sky uniform in the sources' frame lies as ½·sech²ξ, its median the transverse plane; seen
   from the moving frame it lies as ½·sech²(ξ′ − η), its median moved to η. A reader holding directions alone reads its
-  own rapidity, a reading, with no clock, no frequency and no c carried in. To read the Doppler factor as a frequency
-  needs a rest frequency carried in, a known kind: a writing.
+  own rapidity, a reading, with no clock, no frequency and no c carried in, provided every source is counted whatever
+  its brightness and the sources are uniform in their own frame. A census cut by brightness adds a weighting of the
+  addresses, D raised to a power read from the census's own ratios (the slope of its counts and a ratio of two bands):
+  still a reading, needing no rest frequency, but no longer of directions alone. To read the Doppler factor as a
+  frequency needs a rest frequency carried in, a known kind: a writing.
 
   The split is in the formulas, aberration apart from Doppler shift and beaming. It is not named there as a
   transformation of addresses and a weighting of payload. The identities are exact.

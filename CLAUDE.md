@@ -686,6 +686,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   distance; Hubble 1929's are not, P2 killed; the SN Ia–FP drift the 58 shared galaxies', P4 killed, not the rungs'; a
   network of loops locates a misread link). Corrections in `physics.md` §1½, its dictionary, `parallax.md` §7, and notes
   appended below the old plans' runs; the entries below for POL, REF, GRD, `grd-landscape.md` and LTH describe them before.
+  Then (22 Oct, SPN R440; Tom: "proceed with recommended changes"): OFS checked against R439 (nothing to change); EBD
+  (`plans/ebd-plan.md` + `runs/ebd/`, Secrest et al. 2021's CatWISE quasars, Zenodo 8303800): Ellis and Baldwin's "2" is
+  the addresses' (a census with no flux cut, D²/4π, angles only), x(1 + α) the payload's weighting read from the
+  catalogue's own ratios (two thirds of the 0.0074 expected), no rest frequency entering; four flux slices one β, 2.7
+  times the CMB's, the colour slices not (P7 killed), the direction 21–28° off (P3 killed), P4 killed by my set-up; so
+  "the boost read from directions alone" (R437, R438) holds only for a census taken whatever the brightness, and OFS
+  §7.8 says so. REF's full sha256s appended to `plans/ref-plan.md`.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

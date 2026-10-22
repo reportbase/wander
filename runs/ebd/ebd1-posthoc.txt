@@ -1,0 +1,15 @@
+Secrest's recipe (one-sided, wholly unmasked nside-64 pixels, ecliptic trend subtracted, fit_dipole):
+  one-sided, ecliptic subtract: N=1,316,681 pixels 23,298 D=0.01558+-0.00172 at (238.5, 28.6); 0.3 deg from Secrest's, 27.8 from the CMB, 99% radius 18.0
+  one-sided, ecliptic none    : N=1,316,681 pixels 23,298 D=0.01733+-0.00176 at (246.1, 23.6); 8.8 deg from Secrest's, 28.4 from the CMB, 99% radius 17.7
+  symmetric, ecliptic subtract: N=1,261,195 pixels 22,298 D=0.01526+-0.00181 at (233.9, 29.3); 3.8 deg from Secrest's, 29.8 from the CMB, 99% radius 21.1
+  symmetric, ecliptic none    : N=1,261,195 pixels 22,298 D=0.01556+-0.00189 at (233.9, 29.3); 3.8 deg from Secrest's, 29.8 from the CMB, 99% radius 18.1
+
+P7 again on this recipe (one-sided, ecliptic subtracted): alpha terciles
+  alpha -inf..0.89: N=439,477 D=0.01418+-0.00314 at (287, 20), 34 deg from the CMB
+  alpha 0.89..1.47: N=438,345 D=0.01552+-0.00287 at (272, 34), 15 deg from the CMB
+  alpha 1.47..inf: N=438,859 D=0.02945+-0.00303 at (199, 18), 60 deg from the CMB
+
+P7: the reddest tercile split by W1 (is it the faint end?)
+  W1 9-15.5: N=136,065 D=0.02096+-0.00456 at (201, 37)
+  W1 15.5-16.0: N=134,496 D=0.03217+-0.00506 at (201, 8)
+  W1 16.0-16.4: N=168,298 D=0.03548+-0.00477 at (197, 16)
