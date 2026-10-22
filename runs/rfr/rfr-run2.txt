@@ -1,0 +1,12 @@
+P4'(b): not killed. worst |coefficient - (R/d)^n| 5.74e-42
+  d/R 1.01 h/R 1e-5: shift/rho - 1 = 0.00024888, over hR/(2 ell^2) 1.0005
+  d/R 1.01 h/R 1e-4: shift/rho - 1 = 0.0025001, over hR/(2 ell^2) 1.00504
+  d/R 1.41421 h/R 1e-5: shift/rho - 1 = 5.0001e-6, over hR/(2 ell^2) 1.00001
+  d/R 1.41421 h/R 1e-4: shift/rho - 1 = 5.0007e-5, over hR/(2 ell^2) 1.00013
+  d/R 2.0 h/R 1e-5: shift/rho - 1 = 1.6667e-6, over hR/(2 ell^2) 1.00001
+  d/R 2.0 h/R 1e-4: shift/rho - 1 = 1.6668e-5, over hR/(2 ell^2) 1.00007
+  d/R 10.0 h/R 1e-5: shift/rho - 1 = 5.0505e-8, over hR/(2 ell^2) 1.0
+  d/R 10.0 h/R 1e-4: shift/rho - 1 = 5.0507e-7, over hR/(2 ell^2) 1.00003
+  d/R 1000.0 h/R 1e-5: shift/rho - 1 = 5.0e-12, over hR/(2 ell^2) 1.0
+  d/R 1000.0 h/R 1e-4: shift/rho - 1 = 5.0002e-11, over hR/(2 ell^2) 1.00003
+P5': not killed. (a) spread over k and K 0.0; (b) worst |ratio to hR/(2 ell^2) - 1| 0.00504
