@@ -660,6 +660,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   corner lives in the address count (NRF P3's −1.637 = −1 − 2/π, payload plus addresses); Lambert's cosine, not the turn,
   singles out D = 3; 1/d² a writing, counts by flux (3/2) a reading. P3 killed by my arithmetic (Lambertian per-axis
   median 1/√3, not √(2/3)).
+  Then (22 Oct, SPN R437; Tom: "1,2,3") three more revisits, each a plan written first and an exact run: SRR
+  (`plans/srr-plan.md` + `runs/srr/`: MOT run 3's three corners three kinds, the sky's a median only in the uniform frame
+  and the boost read from directions alone, the Doppler factor a payload weighting and its frequency a writing, mass E's
+  least value over boosts), WVR (`plans/wvr-plan.md` + `runs/wvr/`: the weak value the address, the Cauchy at
+  ⟨σz⟩ + iV; the Bloch point, V and the foot central readings; the twirl averages, a payload operation), TPR
+  (`plans/tpr-plan.md` + `runs/tpr/`: 2/π three things, a mean over the uniform turn (34), a share (10), the turn's length
+  (8, kept by every fair weight); not a fingerprint of the uniform turn). Corrections in `physics.md` §1½ and appended
+  below each old plan's runs.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

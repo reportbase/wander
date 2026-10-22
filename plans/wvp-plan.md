@@ -251,3 +251,9 @@ centred at 0. Run 4 removed those three errors, with predictions written first.
 Not tested: whether the corner itself is visible in the counts beyond the contrast. That would need a set where the
 two slits' shares vary (a slit partly covered), with the contrast falling as 2hv = sech of the levels between them.
 That is the next real-data test, if such data exist. The mean's climb is stated above, not run.
+
+### Re-read, 22 October (WVR, `plans/wvr-plan.md`; SPN R437)
+The fringe phase found from arg Σe^{iφ} (Q3, "the address found by count") is a central reading, a circular mean, not
+an address. Runs 1–2 drew uniform θ: that is the address law with no payload, so those draws are not arrivals; real
+arrivals are Born-weighted. Read as tan(φ/2), a fringe's arrivals are a share V on the payload's law and 1 − V on the bare
+turn's Cauchy, the mean climbing (1 − V)·(2/π)·ln 10 a decade (WVR P5).

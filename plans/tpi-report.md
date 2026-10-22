@@ -481,3 +481,11 @@ The constants are checked in `plans/tpi/tpi.py`. Formulas and sources are in `pl
 | C43 | Ideal-gas model of animal encounter | Animal ecology | turn | computes | at once |
 | C44 | Rotational broadening kernel (ε = 0) | Astrophysics | shape | infers | none |
 | C45 | Fabry–Pérot Airy linewidth | Optics / interferometry | turn | computes | in order |
+
+### Re-read, 22 October (TPR, `plans/tpr-plan.md`; SPN R437)
+"The inner reading 2/π" is not something the address reader holds (it has shares and medians, no means): 34 of the 65
+are a payload-side mean over the uniform turn's directions of a bounded projection (M), 10 a share of the turn (B: at the
+corner the exchange alone, elsewhere the uniform turn), 8 the turn's length or a square's mean (L: they keep 2/π under
+every fair weight, so need no evenness), 7 the circle as a shape, 6 other (sorted by Claude, not blind). A single 2/π
+does not fingerprint the uniform turn: a non-uniform fair weight can give E[cos θ] = 2/π exactly (TPR P3); E|cos(θ − φ)|
+is 2/π for every φ exactly when the facing 2θ is uniform (P4).

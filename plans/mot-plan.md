@@ -373,3 +373,11 @@ Seed 15, two seconds. P14 and P18 are in exact rationals; the rest are in floats
 
 All the physics here is standard (Bondi, Varićak and Robb, hyperbolic motion, the regimes either side of pc ~ mc²).
 What the run adds is the account: which pair, which corner, which kind, and where the switch is symmetric.
+
+### Re-read, 22 October (SRR, `plans/srr-plan.md`; SPN R437)
+Run 3's "three pairs, three corners" are three kinds: the sky's (tan(θ/2)) is a median, and only in the frame
+where the sky is uniform (seen from a boost it moves to the rapidity η: the boost is read from directions alone); the
+(β, 1/γ) corner is a regime hand-over, a median only under uniform χ; the Doppler pair's corner, rest, is the fixed point
+of swapping who counts (median D is γ counted by source, 1/γ by the observer's directions), not a median. k needs a
+clock's two intervals or the sender's exchanged, and D read as a frequency needs a rest frequency carried in (a writing),
+not "no bridge". Rapidity is the level of k, a payload ratio; directions enter only as the pan of ξ.

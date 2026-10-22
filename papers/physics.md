@@ -174,6 +174,15 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | reading from the outline, chords 2 sin φ | standing on a world: the horizon at home; the horizon's distance √(2Rh) | the radius R | HZN |
 | a ring thinner than a grain | a catalogue's or an instrument's limit: past it only the bright of a kind are read | the grain, an amount | MAG P3; HZN runs 1–3 |
 | a known kind | a standard candle; a spectral class | the kind's luminosity | MAG (the kind is about a level wide) |
+| the sky's levels ξ = −ln tan(θ/2); a uniform turn's law ½·sech²ξ, its median the corner | isotropic sources' pseudorapidity; seen from a boost the median and mean move to η, the boost's rapidity, read from directions alone | none | SRR P1, P5 |
+| the turn ruler's angle χ (β = sin χ) | the aberration of the seen median: half the sky within 90° − χ; 45° at γβ = 1 | none | SRR P2 |
+| a payload weighting on the addresses; the pair's corner the fixed point of swapping who counts | the Doppler factor D = cosh ξ′/cosh(ξ′ − η); unshifted at cos θ′ = ρ = tanh(η/2); median D γ by source, 1/γ by the observer's directions | a rest frequency (a known kind) | SRR P3, P4 |
+| the inscribed reading, an address, laid by a uniform turn | the weak value A_w = n_z − V·tan(θ_f − θ_i): under a uniform turn of the post-selection the Cauchy at ⟨σz⟩ + iV; superweak share ½ for pure states, (1/π)·arctan(2n_x/(1 − \|n\|²)) for mixed | none | WVR P1, P3 |
+| the central reading (the Bloch point, its height V and foot) and Born's weight carrying the address to the payload | the Born-weighted weak value has mean n_z and variance V², so V² + P² = ⟨σz²⟩ = 1 for a pure state | Born's rule | WVR P2 |
+| a payload law and the bare turn, mixed | a fringe's arrivals read as tan(φ/2): a share V on the payload's law, 1 − V on the Cauchy; the mean climbing (1 − V)·(2/π)·ln 10 a decade | Born's rule | WVR P5 |
+| a mean over the uniform turn's directions of a bounded amount (the shadow cos θ, or the central height sin 2θ) | 2/π in averaging meters, Buffon, fibre and canopy factors, a square wave's fundamental (34 of TPI's 65) | the turn's uniformity: any other fair weight moves it | TPR P1, P6 |
+| the turn's share below a direction, (2/π)θ, ½ at the corner | sign correlators, Kendall's τ, the arcsine law, Bell's local model (10 of 65) | none at the corner (the exchange alone); the uniform turn elsewhere | TPR P6 |
+| the turn's length, or a square's mean ½ | Flamant, Sato–Tate, the normal law's 1/2π, Kramers–Kronig's half residue (8 of 65): 2/π under every fair weight | none | TPR P6 |
 | the uniform turn aimed outward, laid on a flat receiver (the lighthouse; OFS's Cauchy wedge) | a point source's light on a plane, the cos³ law: half the (D − 1)-dimensional Cauchy of scale d; the inverse square its height on the axis | the source's power P | ISR P1 |
 | an arrival as address times payload; the corner in the address count | irradiance as radiance (the paint, constant per address) times the projected solid angle (the count); a line's (2/π)·arctan(b/d) at its corner, its 1/d the paint's | the source's size | ISR P2; NRF P3 re-read |
 | a reading (unchanged when the world is scaled) against a writing | log N–log S, the 3/2 slope of counts by flux, read with no distance; 1/d² itself a comparison of standpoints, needing a baseline or a standard candle | a baseline (parallax) or a kind (the candle) for 1/d²; none for the counts | ISR P5; MAG, CNT, GCN sorted |
@@ -206,6 +215,32 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | a payload held whole as a pattern, met one arrival at a time (R270, a reading: wave-like, particle-like) | an intensity pattern built by counted detections, independent draws at √N | the Born rule; one detection an event | WVP runs 1–2 (simulation), 3–4 (real photons; classical) |
 | the two sweeps of one point: the inscribed (a party's direction at θ, its reading the stereographic chart s = v/h) and the central (the pair's middle, at 2θ, the direction squared, ½(h + iv)²) (OFS §4) | a qubit: the state (a ray, amplitudes h and v, the complex ratio ζ = ψ₁/ψ₀ the Bloch sphere's stereographic chart) and its Bloch point at 2θ, (2hv, 0, h² − v²) on the real slice; Born's rule the foot h²; orthogonal states antipodal; a 2π state turn gives −ψ (720° of rotation to return); a pure state on the sphere, a mixture inside the ball | Born's rule | QBT (identities, exact) |
 | the reader's ignorance as a group (Jaynes): what cannot be fixed is averaged over; readings survive, amounts need an agreed unit | quantum reference frames (Bartlett, Rudolph and Spekkens 2007): the twirl over an unshared frame; without a phase reference the visibility 2hv is lost and the predictability h² − v² kept; without an orientation one qubit is I/2 and two copies keep only the overlap (1 + n₁·n₂)/2; a weak value pre-selected on the equator is the stereographic address tan(a/2)·sin b, even in height (law ½(1 + x²)^(−3/2), superweak 1 − 1/√2 past the corner), the foot (Born's weight) giving back ⟨σz⟩; two Gaussians' overlap 2k/(1 + k²) = sech(ln k), the reference width a zoom | the twirl; Born's rule; the width | QSO (exact; F4 killed twice by my set-up and arithmetic, F4″ not) |
+
+## 1½. Re-read on 22 October (SRR, WVR, TPR; SPN R437)
+
+Tom: "we've put physics aside writing the ofs paper. we have learned alot, lets revisit our physics results", then
+"1,2,3". The motion and relativity results, the wave results and the 2/π catalogue re-read with OFS's address and payload,
+reading and writing, and the two sweeps; each with a plan written first and an exact run (`plans/srr-plan.md`,
+`plans/wvr-plan.md`, `plans/tpr-plan.md`). Nothing below is new physics; what moves is where each piece falls, and some of
+the earlier wording, corrected here and in notes appended to each plan:
+- **Motion and relativity.** MOT run 3's "three pairs, three corners" are three kinds: the sky's a median (only in the frame
+  where the sky is uniform; from a boost the median moves to η, so the boost is a reading from directions alone), the
+  (β, 1/γ) pair's a regime hand-over, the Doppler pair's (rest) the fixed point of swapping who counts. k needs a clock's
+  two intervals (or the sender's exchanged), and a Doppler factor read as a frequency needs a rest frequency: a writing,
+  not "no bridge" (the rows below and in §1 that say so). Mass is the least value of E over boosts, the pair's geometric
+  mean; the corner is the rest frame.
+- **Waves.** The weak value is the address (the inscribed reading), the Cauchy at ⟨σz⟩ + iV under a uniform turn of the
+  post-selection; the Bloch point, its height V = 2hv and foot (predictability, Born's h²) are central readings; counted
+  arrivals are the payload, Born-weighted. The twirl averages (a payload operation) and changes no member's V, so "the
+  visibility lost as an amount, the predictability kept as a reading" (§1, QSO) misassigns both: both are central. The
+  fringe phase by circular mean (WVP Q3) is a central reading, not an address. "Wave-like, particle-like" (R270) is better
+  said as: payload arrivals, Born-weighted, whose directions are addresses.
+- **2/π.** Not "the inner reading" the address reader holds (that reader has shares and medians, no means). 34 of the 65
+  are a payload-side mean over the uniform turn's directions of a bounded amount; 10 a share of the turn (at the corner
+  the exchange alone suffices); 8 the turn's length, which keep 2/π under every fair weight and need no evenness; 7 the
+  circle as a shape; 6 other (Claude's sorting, not blind). A single 2/π does not fingerprint the uniform turn (TPR P3);
+  the even turn shows instead in every projection's mean being 2/π at every offset (P4). §2.2's TPI entry ("fifty-five
+  come from a turn taken evenly") is to be read so.
 
 ## 2. Results, by standing
 

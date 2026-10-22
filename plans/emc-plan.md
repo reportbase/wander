@@ -101,3 +101,8 @@ Newton at x is the ultra-relativistic form at 1/x, digit for digit.
   so their midpoint, mc², stays where it is. The circle's shares move with every boost; the midpoint never does. That
   is the reading of why mass is the same for every observer, and why rapidities add.
 - **All four are standard physics.** The run settles them exactly and in the corner's terms.
+
+### Re-read, 22 October (SRR, `plans/srr-plan.md`, P6; SPN R437)
+Mass is the stationary (least) value of E over boosts, E′ = mc²·cosh(η − η_b), and mc² the pair's geometric mean; the
+pair's corner is the rest frame. "Mass is the light-cone pair's corner" should read so. EMC concerns amounts only, with c
+the bridge; its pc = mc² is a hand-over between Newton's and the massless forms, not a median.

@@ -116,3 +116,71 @@ is the address reader's" to "a mean of amounts taken over the address reader's u
 say who reads any of the 65.
 
 ## Runs
+
+### Run 1 (22 October; `python3 runs/tpr/tpr.py | tee runs/tpr/tpr-run1.txt`, 4½ minutes)
+
+The first launch crashed before any P2 value: for a < 0, rounding left sin 2θ a hair below 0 at the quadrant's end and
+the power went complex. `abs()` was put round it (commented in the script) and the run made again from the start; P1's
+output was the same both times.
+
+- **P1 not killed.** All six stated means to 20+ digits (circle 2/π twice; line E[cos θ] 0.623225, E[sin 2θ] π/2 − 1
+  = 0.570796; square 0.647794 and ln 2 = 0.693147); E[cos²θ] = ½ and E[cos 2θ] = 0 (≤ 5·10⁻⁵²) and the median of cos θ
+  1/√2 on all three. The line and the square fall on opposite sides of 2/π for E[cos θ], and E[sin 2θ] likewise.
+- **P2 killed, by my set-up.** For a ≥ 0 every clause holds (medians at the corner and E[cos²θ] − ½ ≤ 7·10⁻⁵²; both
+  means strictly increasing over all seven a: E[cos θ] 0.5303, 0.5991, 2/π, 0.6555, 2/3, 0.6791, 0.6898 and E[sin 2θ]
+  0.1378, 0.4569, 2/π, 0.7295, π/4, 0.8488, 0.9054; neither at 2/π but at a = 0). At a = −0.9 the median was off by
+  3.8·10⁻⁶ and E[cos²θ] by 3.6·10⁻⁷, at a = −0.5 by 2·10⁻²⁶ and 7·10⁻²⁷, against 10⁻³⁰: the weight (sin 2θ)^a is
+  singular at both ends, and at the end π/2 the quadrature's nodes crowd within the rounding of π/2 itself, so sin 2θ
+  is computed with a large relative error there (TPI run 1's kill was the same kind). Both are identities for a
+  reciprocal-symmetric weight; the numbers say the quadrature, not the claim, failed.
+- **P3 not killed.** λ = 0.23989 of w₂ mixed into the line's weight gives E[cos θ] = 2/π exactly; there E[cos 4θ] =
+  −0.01232 (uniform 0) and E[sin 2θ] = 0.637493 (uniform 0.636620). 2/π alone does not identify the uniform turn.
+- **P4 not killed.** With w = 1 + ½cos θ the mean shadow is 2/π on every axis; with 1 + ½cos 2θ, 7/(3π) = 0.742723
+  at φ = 0 and 5/(3π) at π/2; with 1 + ½cos 4θ, 2/π − cos 4φ/(15π) (0.615399 at 0 and π/2, 0.650491 at 1).
+- **P5 not killed** (`runs/tpr/sorted.md`, sorted by me, not blind): M 34, L 8, B 10, S 7, O 6 (O at its edge; C6, the
+  Lebesgue constant's (2/π) per e-fold, is a log climb, a mean of cot over even angles, which I put in O).
+- **P6 not killed.** Every M representative moves under the line's, the square's and w₂'s weights (the mean |sin| and
+  |cos| by −0.0134, +0.0112, +0.0424; the half-angle chord −0.0032, +0.0027, +0.0101; (2/π)K(0.6) +0.0015, −0.0015,
+  −0.0052; the saturation function and the square-wave coefficient likewise); every L representative (Flamant, Sato–Tate,
+  Irwin) and every B value at the corner (K1 at s = 1, K4 at t = ½, Van Vleck and Bell a quarter turn apart, Kendall at
+  ρ = 0) stays to ≤ 1.3·10⁻⁵¹; every B value off the corner moves (by 0.015 to 0.28).
+
+**Reading (after the run; not ruled).** The 2/π of the 65 is three things. (1) **M, 34**: the mean over the turn's
+uniformly laid addresses of a bounded amount, the shadow cos θ (= the length along the inscribed ray to the point it
+addresses, THL P2) or the central point's height sin 2θ. It is a payload-side operation (a sum) taken over addresses;
+it changes under every other fair weight, while the median of the same amount stays at the corner, 1/√2. So "the
+inner reading 2/π" is not something the address reader holds: the address reader has the share and the median, never
+the mean. It is a writer's or payload reader's number about the inscribed vantage, true only if the turn is uniform.
+(2) **B, 10**: the share (2/π)·θ, the turn's own measure of a set of addresses; the address's quantity; its corner
+value ½ is the exchange's and survives every fair weight, its other values are the uniform turn's. (3) **L, 8**: the
+turn's length alone (with at most a square, whose mean ½ the exchange fixes); it survives every fair weight, so it does
+not mark uniformity at all. P3 and P4 bound the fingerprint: a single 2/π never identifies the uniform turn (a fair
+non-uniform weight hits it), and 2/π on every axis of the whole turn holds exactly when the facing 2θ is uniform.
+
+### Run 2: P2′ (written after run 1, before `runs/tpr/tpr2.py` exists)
+
+- **P2′.** On the same family, computed on [0, π/4] only, the upper half folded onto it by the exchange (θ ↦ π/2 − θ, so
+  both singular ends sit at an exactly represented 0): W(π/4) = ½ and E[cos²θ] = ½ to 10⁻³⁰ at a = −0.9 and −0.5, and
+  E[cos θ], E[sin 2θ] there agree with run 1's to 10⁻⁵ (they were not the failing clauses). *Killed* if any is not.
+
+### Run 2 (22 October; `python3 runs/tpr/tpr2.py | tee runs/tpr/tpr-run2.txt`, seconds)
+
+- **P2′ not killed.** Folded onto [0, π/4]: at a = −0.9, W(π/4) − ½ and E[cos²θ] − ½ = −7·10⁻⁵²; at a = −0.5, 0. The
+  means agree with run 1's to 4·10⁻⁷ (a = −0.9: E[cos θ] 0.5302697, E[sin 2θ] 0.1377983) and 10⁻¹⁵ (a = −0.5). The
+  check is close to an identity (the fold uses the exchange the clauses rest on); it shows that run 1's failure was the
+  quadrature at π/2. With P2′, every clause of P2 stands: on this family the median of every monotone amount is the
+  corner's and E[cos²θ] = ½, while both bounded means rise strictly with a and meet 2/π only at the uniform turn.
+
+**Earlier statements this bears on** (not edited here; for Tom):
+- `plans/tpi-plan.md` l. 10, l. 153; `plans/tpi-report.md` l. 50–51, l. 84; `papers/physics.md` l. 301: "the inner
+  reading", read since R328–R329 as the address reader's. By M and P6 it is a mean of amounts over the address reader's
+  uniformly laid addresses, not a reading the address reader holds (it has the share and the median, 1/√2, not a mean).
+- `plans/tpi-report.md` l. 98 ("The evenness is what gives the value") and `plans/tpi-plan.md` l. 69 (P4's title):
+  true of the M and B entries off the corner, false of the 8 L entries (Flamant, Sato–Tate, ARE, Struve twice,
+  Kramers–Kronig, Irwin, the Fourier prefactor), whose 2/π is a length or a square's normaliser; P6 checked three of
+  them (Flamant, Sato–Tate, Irwin), which survive every fair weight tried, and TPI's P4 tested none.
+- `plans/tpi-report.md` l. 16 and `plans/tpi-plan.md` l. 19, 78 ("a fingerprint of the even turn"): by P3 a single 2/π
+  does not identify the uniform turn (a fair, non-uniform weight hits it); it fingerprints the uniform turn only with
+  more of the law (P4: 2/π on every axis of the whole turn, which is the facing 2θ's uniformity).
+- `papers/physics.md` l. 133, 299–301 ("fifty-five come from a turn taken evenly"): of those 55, 8 are L and need no
+  evenness, and 10 are shares whose corner value ½ needs only the exchange.
