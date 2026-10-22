@@ -2162,8 +2162,9 @@ In short:
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
   recorded result. When this was set up, WOB, ELV and EQV were the killed ones.
-- Run `npm test` before every PR that changes a page, a script or the tests. Not for doc-only changes (papers, plans,
-  CLAUDE.md): Tom, 17 Oct 2026, "you don't need to run npmp test for doc only changes".
+- Run `npm test` only when Tom asks (22 Oct 2026: "npm test takes to long.  don't do it unless I ask."); CI runs it on the
+  PR. Check a change with a quick probe of what it touches instead. (Until then: before every PR that changes a page, a
+  script or the tests, not for doc-only changes.)
 
 ## Related repos
 games, draw, 3d and flare are the owner's other projects. wander doesn't depend
