@@ -426,13 +426,14 @@ assess your engineerred solutions."
 consequence of the drawing, not a part added to it:
 - the zoom: H's value (OFS §8);
 - the split between near and far: the corner v = h (OFS §4);
-- precision far off: the lay past the corner, 1 + ln s, or the in-place lay 2 − 1/s (OFS §6);
-- a level of detail: a fixed count K of addresses, split by H (OFS §8);
+- precision far off: the lay past the corner, 1 + ln s, or the in-place lay 2 − 1/s, given the premise (S) (OFS §6);
+- a level of detail, given a fixed count K of addresses, which H splits (OFS §8; K is a premise, prior to H);
 - addresses for any number of things, with no table and no count: the uniform turn's Cauchy (OFS §7, SPN R403);
 - readings unmoved by the world's size: every reading a ratio (OFS Theorem 6(a), "scale the world");
-- what hides what: the first thing on each line paints the reader's sphere (OFS §3.7).
+- not what hides what, which is the payload's (opaque surfaces), though the first thing on each line paints it.
 
-**[exact]**, each a proposition of OFS; **[reading]**, the word "free".
+**[exact]**, each a proposition of OFS, with its premise named; **[reading]**, the word "free". (Corrected 22 October
+after an adversarial read: K and (S) are premises, occlusion the payload's.)
 
 **The baseline.** The use of knowing them is the question they let one ask of an engineered solution: what did it add to
 the geometry, and what did that cost? Without the geometry a scheme can be seen to work; with it, what it is doing can be
@@ -443,10 +444,10 @@ named, and what it gave up.
 | the lay, its corner at H | the 24-bit depth buffer | the in-place lay with its corner at the near plane: setting the near plane is choosing H; far off every address is spent, which is where precision runs out | DPR **[exact]** |
 | the reader's lay past the corner | log depth; binary32 floats | log depth is the reader's lay with its corner at the near plane; a float is a reader's lay in base 2 (subnormals the proportional part, 2²³ addresses a level) | DPR **[exact]** |
 | the in-place lay's reciprocal | reversed-Z | the in-place lay turned round in a float: constant relative precision | DPR **[exact]** |
-| the uniform turn's addresses | a camera's flat screen | equal pixels on a plane, not equal turns: density (2/π)·cos³α over the octant; across one line of the screen the median falls at half its edge, not at the corner. A weighting added, usually unnamed | OFS §3.5; SPN R312 **[exact]** |
+| the uniform turn's addresses | a camera's flat screen | equal pixels on a plane, not equal turns: per unit of screen area the uniform turn has density (2/π)·cos³α, so equal pixels over-weight off-axis directions by sec³α; across one line of the screen the median falls at half its edge, not at the corner. A weighting added, usually unnamed | OFS §3.5; SPN R312 **[exact]** |
 | a fixed count K, split by H | LOD tiers, mipmaps, screen-size thresholds, geometry clipmaps (Losasso and Hoppe 2004) | the same rule (detail by size on the screen) set by hand per scene, often with fixed distances that slide as the view moves | `zoom.html`, `flight.html` **[illustration]**; REF run 2's note |
 | the Cauchy addresses, no N | an importance table rebuilt per view | the table needs the view and a count; it lost to the Cauchy alone under a strong boost (4,098 against 124.75 at η = 4); tabling only the payload, in its own frame, and addressing by the Cauchy beat both | IMS **[exact]** |
-| the median of the addresses | least squares on bearings | the mean of a law with none: it stalls under Cauchy bearings (×1.39 from K = 4 to 16) where the median of pairwise crossings keeps improving (×3.95). Real bearings are a narrow core plus wrong matches, not a Cauchy, so in practice the cost shows with wrong matches | AFM, BER **[simulation]**, **[data]** |
+| the median of the addresses | least squares on bearings | under Cauchy bearings, the mean of a law with none: it stalls (×1.39 from K = 4 to 16) where the median of pairwise crossings keeps improving (×3.95). Real bearings are a narrow core plus wrong matches, not a Cauchy, so in practice the cost shows with wrong matches | AFM, BER **[simulation]**, **[data]** |
 | the measure-free ratio between levels, 2^(1/D) | the grid cells' coding theories (√e, nested codes) | each departs from the baseline by the measure it adds | `plans/grd-landscape.md` **[reading]** |
 
 **What this claims, and what it does not.** It claims an origin: these structures fall out of one choice of H, and the

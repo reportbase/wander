@@ -769,6 +769,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   structures one choice of H gives and the geometry as the baseline a design is read against (the depth buffer as the
   in-place lay with H at the near plane, log depth, the flat screen's cos³, tables that need a count, least squares as a
   mean of a law with none); an origin, not performance. The evidence and its table are in `mapping.md` §9½.
+  Reviewed adversarially the same day (SPN R432; Tom: "1 and 2"): the list split into free outright (zoom, corner,
+  scale-free readings, the Cauchy given a uniform sweep), free given a premise ((S), a fixed K) and the payload's
+  (occlusion); the flat screen over-weights off-axis by sec³α (it was inverted); least squares only where the readings
+  follow the turn's law; §3.7's sphere the address reader's, never held whole; §6 3.5° (not 3.6°); §7.8 uses χ.
   **One figure, three rulers** (21 Oct, SPN R422; Tom: "we have show that the same math applies to the reader and
   writer", after calendar's `geometry.html` dial): OFS §6 after Mercator's map. The circle, the unit hyperbola and the
   tangent at the apex lay one reading x three ways, the writer's line x, the turn θ = arctan x, the hyperbolic angle

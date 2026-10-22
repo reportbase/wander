@@ -879,17 +879,21 @@ each finger the same address.
   sign. Joining them into the closed circle is the writer's work: it knows each one's size, so their ends can be made
   to meet. The sphere is every way a hand could face, its eight octants joined by the writer; no hand holds it.
 
-The same picture without the hand. Every direction from the point where the reader stands makes a sphere round that
-point: the reader's sphere, drawn at H, the same in every world. What arrives along each direction paints that point of
-the sphere. The paint is the payload; no distance is on the sphere, and two things on one line paint one point, the
-nearer. The reader sends nothing. It receives what the world puts there, and it holds an octant or a patch of the
-sphere at once, or turns to cover the rest. The picture is Gibson's ambient optic array: the light at a point of
-observation, "as distinguished from the radiant light, emitted from a point-source", arranged as "visual solid angles all
-having a common apex at the point of observation", one for each face that is not hidden from it (Gibson 1972; 1979).
-What the geometry adds is a measure on the sphere before any paint. Swept uniformly, its directions read as the Cauchy
-(§7.1), with the median at the corner, whatever paints them (Theorem 6). The writer's sphere is the other one. It is
-round the whole system, looking in, and its radius is an amount, the size of what it holds (§3.4, §9). The reader's
-sphere has no such radius. A second standpoint, or an amount carried in, is what turns the one into the other.
+The same picture without the hand. Every direction the address reader could face, from the point where it stands, makes
+a sphere round that point: the directions themselves, drawn at H (its radius is H, a value chosen, not an amount), the
+same in every world. What arrives along each direction paints that point. The paint is the payload; no distance is on
+these directions, and of two things on one line the nearer paints the point. The address reader need send nothing. It
+receives what the world puts there, and it never holds the sphere whole: it holds an octant or a patch at once, or turns
+to cover more, and joining its patches into one painted sphere in a common frame is the writer's work, as above. A
+payload reader is the other case: it puts an amount on each direction, as a ranging reader does, and that amount is
+carried in (§9). The picture is Gibson's ambient optic array, the light at a point of observation (Gibson 1979, ch. 5).
+In an earlier essay he sets it apart from "the radiant light, emitted from a point-source", and describes it as "visual
+solid angles all having a common apex at the point of observation", one for each face that is not hidden from it (Gibson
+1972). What the geometry adds is a measure on these directions before any paint. Swept uniformly over an octant, they
+read as the two-dimensional Cauchy, with every pair at its corner and the near field a third, whatever paints them
+(Proposition 5(e), Theorem 6). The writer's sphere is the other one. It is round the whole system, looking in, and its
+radius is an amount, the size of what it holds (§3.4, §9). A second standpoint gives that radius in H; an amount carried
+in gives it in a unit shared with others.
 
 ### 3.8 What the reader lacks is one number
 
@@ -1309,7 +1313,7 @@ area ln 2 (Saint-Vincent 1647). The rescaling (x, y) ↦ (x/√λ, √λ·y) sli
 scale is preferred. The two are one sweep, squeezed: read against ln(v/h), the turn is
 arctan(v/h) = π/4 + ½·gd(ln(v/h)), where gd(x) = arctan(sinh x) is the Gudermannian. It carries the whole unbounded
 logarithm into a quarter turn, nearly uniform at the corner and squeezed without end toward the edges, so that the turn
-per doubling past the corner falls 18.4°, 12.5°, 6.9°, 3.6°, 1.8°, …, by a ratio tending to 2. The bounded sweep is the
+per doubling past the corner falls 18.4°, 12.5°, 6.9°, 3.5°, 1.8°, …, by a ratio tending to 2. The bounded sweep is the
 logarithm seen whole from one side.
 
 **Two address spaces.** Inside the corner the addresses are proportional; past it they are logarithmic, each doubling
@@ -1384,21 +1388,21 @@ and logarithmically past it. Latitude is the Gudermannian of the map's height, �
 know of the two address spaces laid out.
 
 **One figure, three rulers.** The circle, the number line and Mercator's height fit in one figure, and the figure shows
-what each of them does with the corner. Draw the unit circle, the tangent line at its apex A = (1, 0), and the unit
+what each of them does with the corner. Draw the unit circle, the tangent line at A = (1, 0), and the unit
 hyperbola u² − w² = 1, which touches the same line at A (u along the axis, w sideways). A reading x = v/h sits on the
 tangent at T = (1, x). The circle's point P = (cos θ, sin θ), whose ray from the centre passes through T, and the
 hyperbola's point (cosh ζ, sinh ζ) level with T, give
 
   x = tan θ = sinh ζ,  so θ = gd(ζ),
 
-and each angle is twice the area of its sector from A: the circle's (Archimedes) and the hyperbola's. So one reading is
+and each angle is twice the area of its sector from A: the circle's (Archimedes) and the hyperbola's (Saint-Vincent and de Sarasa). So one reading is
 laid three ways, each an exact function of the others:
 
 | ruler | room for the near field, x ≤ 1 | room for the far field, x ≥ 1 | the corner x = 1 | the reciprocal x ↦ 1/x |
 |---|---|---|---|---|
 | x itself, the writer's number line (§9) | 1, in proportion | unbounded, in proportion | a point like any other | no symmetry of the ruler |
 | θ = arctan x, the turn | 45° | 45° | the middle | θ ↦ π/2 − θ, a reflection |
-| ζ = asinh x, the hyperbolic angle, Mercator's height | asinh 1 ≈ 0.881, nearly in proportion | unbounded, about ln 2 a doubling | where proportion gives way to levels | no reflection of the ruler |
+| ζ = asinh x, the hyperbolic angle, Mercator's height | asinh 1 ≈ 0.881, nearly in proportion | unbounded, about ln 2 a doubling | a point; proportion gives way to levels around it, gradually | no reflection of the ruler |
 
 So the one figure draws the near field and the far field three ways. On the turn they are halves, mirrored by the
 reciprocal. On the hyperbolic angle they are the two address spaces above, proportion giving way to levels. On the
@@ -1410,9 +1414,9 @@ lay (x, then 1 + ln x) never exceeds it by more than 1 − ln 2 ≈ 0.307, appro
 
 All three carry the corner, since it is the reciprocal's fixed point (Proposition 1) and so a point of the reading
 itself. Only the turn gives it a role.
-- A measure uniform in θ puts its median at x = 1 with nothing else given (Proposition 5(d)), because the turn is
-  bounded.
-- The two unbounded rulers have no uniform measure until a range is given beforehand. A measure uniform in ζ over
+- A measure uniform in θ puts its median at x = 1 with nothing else given (Proposition 5(d)), because the turn's range,
+  the quarter turn from home to the horizon, is fixed by the geometry and carried onto itself by θ ↦ π/2 − θ.
+- The two unbounded rulers have no uniform probability until a range is given beforehand. A measure uniform in ζ over
   [0, Z] puts its median at x = sinh(Z/2), at the corner only when Z = 2 asinh 1 ≈ 1.763. A measure uniform in x over
   [0, X] puts it at X/2, at the corner only when X = 2. Either way the range, an amount, decides where the middle falls.
 
@@ -2122,9 +2126,10 @@ follow every increasing map; those facts are part (d). The other parts of Theore
 
   The split is in the formulas, aberration apart from Doppler shift and beaming. It is not named there as a
   transformation of addresses and a weighting of payload. (We checked these identities exactly.)
-  The same theory runs on §6's three rulers. A velocity's celerity γβ is x, its rapidity η is ζ, its speed
-  β = tanh η = sin θ and γ = sec θ. Rapidities add along a line, and nothing in the theory turns uniformly in θ, so
-  its corner γβ = 1 (β = 1/√2) is where its two regimes hand over, not a median.
+  The same theory runs on §6's three rulers. A velocity's celerity γβ is x, its rapidity η is ζ, and with χ the turn
+  ruler's angle (not the aberration angles above), its speed β = tanh η = sin χ and γ = sec χ. Rapidities add along a
+  line, and uniform acceleration is uniform in η, not in χ, so its corner γβ = 1 (β = 1/√2) is where its two regimes
+  hand over, not a median.
 - *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
   (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
   does so everywhere; and no chart keeps both angles and areas (Euler 1777; Gauss 1828). What is ours is the reading: the
@@ -3117,32 +3122,38 @@ too wide to hold in proportion, and why the Cauchy has a median but no mean.
 ### 11.4 What the geometry gives free
 
 The last section left aside whether this is a better way to compute anything. What the geometry does offer engineering
-is narrower and, we think, more useful: a baseline. Once the reader chooses H and draws V = H, a number of structures
-follow with no further choice:
+is narrower and, we think, more useful: a baseline. Once the reader chooses H and draws V = H, some structures follow
+with no further choice:
 - a zoom, the value of H (§8);
 - a split between near and far, the corner v = h (§4);
-- precision far off, the lay past the corner, 1 + ln s or 2 − 1/s (§6);
-- a level of detail, a fixed count K of addresses that H divides between the near field and the far (§8);
-- addresses for any number of things, with no table and no count, the uniform turn's Cauchy (§7);
 - readings no change of the world's size can move, since every reading is a ratio (Theorem 6(a), §9);
-- which thing hides which, since the first thing on each line paints the reader's sphere (§3.7).
+- given that the sweep is uniform, addresses for any number of things with no table and no count, the uniform turn's
+  Cauchy (§7).
 
-None is added to the drawing; each is a consequence of it. Systems built to read or draw a world arrive at the same
-structures by design, and the geometry lets each design be read against them: what it adds, and what that costs.
-Four examples, each a matter of arithmetic:
+Others need one stated premise more, and are free once it is granted:
+- precision far off, the lay past the corner, 1 + ln s or 2 − 1/s, given (S) (§6);
+- a level of detail, given a fixed count K of addresses, which H then divides between the near field and the far (§8).
+
+What hides what is not among them: it is the payload's, set by which surfaces are opaque (§3.7). Some systems built to
+read or draw a world arrive at these structures by design, and the geometry lets each design be read against them: what
+it adds, and what that costs. Four examples:
 - *The depth buffer.* A perspective depth buffer stores (f/(f − n))·(1 − n/d) for a point at distance d between the
   near and far planes n and f. With H = n this is the in-place lay, 2 − n/d, less its constant 1, rescaled: setting the
   near plane is choosing H, the near field inside it is discarded, and precision runs out far off because every
-  address there has already been spent toward the horizon. Logarithmic depth, ln(d/n)/ln(f/n), is the reader's lay
-  past the corner with its corner at the near plane.
-- *The flat screen.* Equal pixels on a plane are not equal turns. Over the octant they weight the directions by
-  (2/π)·cos³α against the uniform turn's measure (Proposition 5(e)), and along one line of the screen they put the
-  median at half the screen's edge instead of at the corner (§3.5). The weighting is the design's, added to the geometry.
-- *Tables built for a count.* A sampling table or a grid of cells fixed in advance needs the count, or the extent, of
-  what it will hold. The uniform turn's addresses need neither (§8, "A fixed count, aimed by H"); what needs the count
-  is the payload or the writer.
-- *The mean of directions.* A least-squares fit to readings that are directions takes the mean of a law that has none
-  (Theorem 6), where the median is the law's own centre.
+  address there has already been spent toward the horizon. Logarithmic depth in its plain form, ln(d/n)/ln(f/n), is the
+  reader's lay past the corner with its corner at the near plane; the form ln(Cd + 1)/ln(Cf + 1), proportional below
+  d ≈ 1/C and logarithmic above, is the whole lay, near field and far, with its corner at H = 1/C. This one is
+  arithmetic.
+- *The flat screen.* Equal pixels on a plane are not equal turns. Per unit of screen area the uniform turn's directions
+  have density (2/π)·cos³α (Proposition 5(e)), so equal pixels over-weight the directions off the axis by sec³α, and
+  along one line of a screen of finite edge they put the median at half the edge instead of at the corner (§3.5). The
+  weighting is the design's, added to the geometry.
+- *Tables fixed in advance.* A sampling table or a grid of cells fixed in advance must know beforehand the extent it
+  covers and the resolution it needs, and is rebuilt when either changes. The uniform turn's addresses need neither (§8,
+  "A fixed count, aimed by H"); what needs them is the payload or the writer.
+- *The centre of directions.* Where the readings themselves fall as the uniform turn's law, as the addresses of a sweep
+  do, their tangent chart has no mean and the median is the law's own centre (Theorem 6); a fit that averages them on
+  that chart has nothing to settle on. Measurement errors are another law, which the geometry does not fix.
 
 This is a claim about where these structures come from, not about how well any system performs: a design that departs
 from the geometry may be right to, for reasons the geometry does not see. Two limits apply. What comes free is the
