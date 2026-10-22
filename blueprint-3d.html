@@ -80,7 +80,7 @@
 <main>
     <h1>One blueprint in 3D</h1>
     <p class="lede">The same property in three dimensions. The <span class="w">writer</span> has the model, every length in
-        metres, heights too. Its sphere is round the whole system, looking in, its radius an amount. The <span class="p">reader</span> is a sphere
+        metres, heights too. Its frame is a box, a number line on each axis held on both signs, each extent an amount. The <span class="p">reader</span> is a sphere
         round one point, looking out: nothing in the room sends, so it receives only the light the room scatters, each
         direction painted by the first surface on its line, and no distance. Put in a floor corner, the room is one octant
         of that sphere, the wedge, each address [h : v : v₂]. Scale the world and only the writer's numbers change. Write the room: one counted stride turns the corner reader's two looks
@@ -98,10 +98,12 @@
             <canvas id="scene"></canvas>
             <div class="nogl" id="nogl1"></div>
             <p class="cap">Every length an amount, stated whole: each room's width, depth and height, the lot's extent. The
-                writer's sphere (faint blue) is round the whole system and looks in; its radius is an amount, and the metres
+                writer's box (blue) is a number line on each axis, held on both signs, round everything it holds; each
+                extent is an amount, and the metres
                 need a unit measured beforehand: the scale bar. Drag to turn, scroll or pinch to zoom, tap a floor to stand
                 the <span class="p">reader</span> there (teal); the <span class="a">corner reader</span> is at the gold
-                corner, its three walls h, v (up) and v₂.</p>
+                corner, its three walls h, v (up) and v₂. Its wedge (gold) runs out along every direction to the
+                writer's box: its horizon, the box seen from inside, reached and never measured.</p>
             <p class="read" id="readW"></p>
         </div>
         <div class="stack">
@@ -138,9 +140,11 @@
             <p class="read" id="readM"></p>
         </div>
     </div>
-    <p class="cap" style="margin-top:12px">The writer is the vantage that writes: it needs the whole and a unit. Its sphere is round
-        the whole, looking in; the reader's is round one point, looking out, painted by what arrives and holding no
-        distance. The corner reader's wedge is one octant of it. One stride counted is the amount that turns the corner reader's looks into the writer's metres.
+    <p class="cap" style="margin-top:12px">The writer is the vantage that writes: it needs the whole and a unit. Its frame is a box,
+        one number line on each axis, both signs held, nothing round in it; the reader's is a sphere round one point, looking
+        out, painted by what arrives and holding no distance. The corner reader's wedge is one octant of it, and it stands
+        inside the writer's box: in the far field every direction of its wedge reaches the box, its horizon, whose size the
+        reader never reads. The writer holds three numbers a point, the reader two (a direction); the one between is the size. One stride counted is the amount that turns the corner reader's looks into the writer's metres.
         Other demos: <a href="blueprint.html">the blueprint</a>, <a href="room-ratios.html">the room in ratios</a>,
         <a href="wedge.html">the wedge</a>, <a href="demos.html">all demos</a>.</p>
 </main>
@@ -256,8 +260,29 @@ function addresses(k, home) { const W = world(k), Hm = HOMES[home], o = originOf
 function counts(list) { const n = list.length, c = { vh: 0, v2h: 0, v2v: 0, near: 0, met: {} };
     for (const a of list) { if (a.v <= a.h) c.vh++; if (a.v2 <= a.h) c.v2h++; if (a.v2 <= a.v) c.v2v++; if (a.v <= a.h && a.v2 <= a.h) c.near++; c.met[a.what] = (c.met[a.what] || 0) + 1; }
     return { vh: c.vh / n, v2h: c.v2h / n, v2v: c.v2v / n, near: c.near / n, met: c.met }; }
-// the writer's sphere: round the whole system, looking in, its radius an amount (the lot's half-diagonal)
+// the writer's sphere (R426), superseded by the writer's box below (R445): its radius the lot's half-diagonal
 function writerSphere(k) { return { c: [24 * k, 16 * k, 0], r: Math.hypot(24, 16) * k }; }
+// the writer's box (SPN R445; Tom: "that sounds like the writer is a cube actually."; "so the writer is the number line.
+// each dimension is just once instance of the number line."; "yes"): holding both hemispheres is holding both signs of every
+// axis, and each axis is one copy of the writer's number line, so the writer's frame is their product, a box round
+// everything it holds, each extent an amount: the lot's 48 × 32 m and the tallest crown's top (tree2, 2.2 + 1.7 × 1.8 m).
+// Drawn in unit relations (each axis over its own extent) it is the unit cube. Nothing in it is round: the sphere above
+// (R426) was a picture, kept for the record.
+const TOP = Math.max(...TREES.map(t => 2.2 + 1.7 * t[2]));
+function writerBox(k) { return { lo: [0, 0, 0], hi: [LOT[0] * k, LOT[1] * k, TOP * k] }; }
+// the corner reader's wedge run out to the writer's box (SPN R444, R445; Tom: "the readers are small wedges within that
+// sphere. the sphere is unknowably large. the wedges extend to the sphere boundry by definition in the far field."): from
+// home, along each direction of the octant's three faces, the point where it leaves the box. That is the reader's horizon
+// seen by the writer: every direction reaches it, none of the reader's readings measures how far (the distance along each
+// ray is the writer's, in metres × k). What reaches it is the directions; along each, the first thing met paints the
+// address before it gets there.
+function wedgeHorizon(home, k, n = 24) { const Hm = HOMES[home], bx = writerBox(k), o = [Hm.at[0] * k, Hm.at[1] * k, 0];
+    const ax = [[Hm.h[0], Hm.h[1], 0], [0, 0, 1], [Hm.v2[0], Hm.v2[1], 0]];
+    const hit = d => { let t = Infinity; for (let i = 0; i < 3; i++) { if (d[i] > 1e-12) t = Math.min(t, (bx.hi[i] - o[i]) / d[i]); else if (d[i] < -1e-12) t = Math.min(t, (bx.lo[i] - o[i]) / d[i]); }
+        t = Math.max(0, t); return { t, p: o.map((x, i) => x + t * d[i]) }; };
+    const edges = ax.map(hit), arcs = [[0, 1], [1, 2], [2, 0]].map(([a, b]) => Array.from({ length: n + 1 }, (_, j) => {
+        const q = j / n * Math.PI / 2, d = ax[a].map((x, i) => Math.cos(q) * x + Math.sin(q) * ax[b][i]); return hit(d).p; }));
+    return { home: o, edges, arcs }; }
 // the writer's account: every length an amount, in metres × k
 function writer(k) { return { lot: LOT.map(x => x * k), rooms: ROOMS.map(R => ({ key: R.key, name: R.name, w: (R.r[2] - R.r[0]) * k, d: (R.r[3] - R.r[1]) * k, z: R.z * k })),
     trees: TREES.map(t => ({ what: t[3], across: 2 * t[2] * k, tall: (TRUNK_H + 1.7 * t[2]) * k })) }; }
@@ -342,7 +367,7 @@ function render() {
     $('write').classList.toggle('on', S.write); $('pulse').classList.toggle('on', S.pulse);
     $('shellTag').textContent = S.pulse ? 'the reader, sending: writing' : 'the reader'; $('shellHead').textContent = S.pulse ? 'A pulse sent: ranges, in its unit' : 'A sphere, painted by what arrives'; $('roof').classList.toggle('on', S.roof);
     drawTri(); drawMap();
-    $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}, the rooms ${fmtM(2.7 * k)} high, its sphere round the whole ${fmtM(writerSphere(k).r)} in radius. ` +
+    $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}, the rooms ${fmtM(2.7 * k)} high, its box round everything ${fmtM(48 * k)} × ${fmtM(32 * k)} × ${fmtM(TOP * k)}, one number line a side. ` +
         `The reader's sphere is the same at every k: its directions, and the colours arriving along them` + (S.pulse ? `; a pulse's ranges come back with geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in. ` : `, and no distance. `) + `The corner reader holds ${NA.toLocaleString('en')} directions: v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
         `v₂ ≤ h ${(100 * C.v2h).toFixed(1)}%, v₂ ≤ v ${(100 * C.v2v).toFixed(1)}%, the near field ${(100 * C.near).toFixed(1)}%, at every k and in every room.`;
     describe(); if (draw3d) draw3d();
@@ -379,7 +404,7 @@ $('roof').onclick = () => { S.roof = !S.roof; render(); };
 $('reset').onclick = () => { Object.assign(S, { lk: 0, spot: 'living', at: SPOTS.living[1].slice(), home: 'living', write: false, pulse: false }); $('k').value = 0; render(); };
 addEventListener('resize', () => { drawTri(); drawMap(); });
 $('k').value = S.lk; render();
-window.__blueprint3d = { THINGS, ROOMS, SEG, LINTELS, CEIL, BOXES, TREES, HOMES, SPOTS, GRID, SPHERE, CORNERS, world, cast, payload, addresses, counts, writer, writerSphere, writeFrom, strideOf,
+window.__blueprint3d = { THINGS, ROOMS, SEG, LINTELS, CEIL, BOXES, TREES, HOMES, SPOTS, GRID, SPHERE, CORNERS, world, cast, payload, addresses, counts, writer, writerSphere, writerBox, wedgeHorizon, writeFrom, strideOf,
     standAt(x, y) { S.at = [x, y]; S.spot = ''; render(); },
     set(o) { Object.assign(S, o); if (o.spot && SPOTS[o.spot]) S.at = SPOTS[o.spot][1].slice(); $('k').value = S.lk; render(); return this.state(); },
     state: () => ({ lk: S.lk, k: K(), at: S.at.slice(), spot: S.spot, home: S.home, write: S.write, pulse: S.pulse, hover: S.hover, gm: P.gm, counts: C, written: WR && WR.written }),
@@ -412,9 +437,9 @@ if (r1 && r2) {
     for (const b of B.BOXES) add(new THREE.BoxGeometry(b[3] - b[0], b[4] - b[1], b[5] - b[2]), b[6], [(b[0] + b[3]) / 2, (b[1] + b[4]) / 2, (b[2] + b[5]) / 2]);
     for (const [cx, cy, r, t] of B.TREES) { const tr = add(new THREE.CylinderGeometry(0.22, 0.22, 2.2, 12), t, [cx, cy, 1.1]); tr.rotation.x = Math.PI / 2;
         add(new THREE.SphereGeometry(r, 20, 14), t, [cx, cy, 2.2 + 0.7 * r]); }
-    // the writer's sphere: round the whole system, looking in, its radius the lot's half-diagonal (an amount)
-    const ws = B.writerSphere(1), wsph = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.SphereGeometry(ws.r, 36, 18)), new THREE.LineBasicMaterial({ color: 0x7fb2ff, transparent: true, opacity: 0.1 }));
-    wsph.rotation.x = Math.PI / 2; wsph.position.set(...ws.c); scene.add(wsph);
+    // the writer's box: a number line on each axis, held on both signs, their product round everything held (R445)
+    const wb = B.writerBox(1), wbox = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(...wb.hi)), new THREE.LineBasicMaterial({ color: 0x7fb2ff, transparent: true, opacity: 0.55 }));
+    wbox.position.set(...wb.hi.map(x => x / 2)); scene.add(wbox);
     const roofMat = new THREE.MeshLambertMaterial({ color: B.THINGS.roof.col, transparent: true, opacity: 0.55, side: THREE.DoubleSide }), roofs = [];
     for (const c of B.CEIL) { const m = add(new THREE.PlaneGeometry(c[2] - c[0], c[3] - c[1]), 'roof', [(c[0] + c[2]) / 2, (c[1] + c[3]) / 2, c[4]], { mat: roofMat }); roofs.push(m); }
     // labels: each room's three lengths, the lot's, the scale bar (sprites redrawn when k changes)
@@ -424,7 +449,7 @@ if (r1 && r2) {
         g.fillStyle = 'rgba(10,13,24,0.6)'; const w = Math.min(768, g.measureText(txt).width + 24); g.fillRect(384 - w / 2, 18, w, 60); g.fillStyle = col; g.fillText(txt, 384, 64); s.material.map.needsUpdate = true; };
     const roomLab = B.ROOMS.map(R => { const s = sprite(0.9); s.position.set((R.r[0] + R.r[2]) / 2, (R.r[1] + R.r[3]) / 2, R.z + 0.6); return s; });
     const lotLab = sprite(1.3); lotLab.position.set(24, -2.2, 0.3); const lotLab2 = sprite(1.3); lotLab2.position.set(50.5, 16, 0.3);
-    const wsLab = sprite(1.6); wsLab.position.set(24 + ws.r * 0.62, 16 - ws.r * 0.3, ws.r * 0.72);
+    const wsLab = sprite(1.6); wsLab.position.set(24, 33.5, wb.hi[2] + 0.8);
     const barLab = sprite(1); barLab.position.set(41, 1.8, 0.4);
     const barGeo = new THREE.BufferGeometry(), bar = new THREE.Line(barGeo, new THREE.LineBasicMaterial({ color: 0xe6e4ee })); scene.add(bar);
     let lastK = null, lastFocus = null;
@@ -432,7 +457,7 @@ if (r1 && r2) {
     const num = (x, f) => { const v = x * f; return v >= 100 ? v.toFixed(0) : v >= 10 ? v.toFixed(1).replace(/\.0$/, '') : v.toPrecision(2).replace(/\.0$/, ''); };
     const relabel = k => { const [f, u] = unitOf(k);
         B.ROOMS.forEach((R, i) => write(roomLab[i], `${R.name} ${num((R.r[2] - R.r[0]) * k, f)}×${num((R.r[3] - R.r[1]) * k, f)}×${num(R.z * k, f)} ${u}`));
-        write(lotLab, `${num(48 * k, f)} ${u}`, '#9fc3ff'); write(wsLab, `the writer's sphere, radius ${num(B.writerSphere(k).r, f)} ${u}`, '#7fb2ff'); write(lotLab2, `${num(32 * k, f)} ${u}`, '#9fc3ff');
+        write(lotLab, `${num(48 * k, f)} ${u}`, '#9fc3ff'); write(wsLab, `the writer's box, ${num(48 * k, f)} × ${num(32 * k, f)} × ${num(B.writerBox(k).hi[2], f)} ${u}`, '#7fb2ff'); write(lotLab2, `${num(32 * k, f)} ${u}`, '#9fc3ff');
         const nice = x => { const e = 10 ** Math.floor(Math.log10(x)), m = x / e; return (m >= 5 ? 5 : m >= 2 ? 2 : 1) * e; }, len = nice(5 * k) / k;
         barGeo.setFromPoints([new THREE.Vector3(38, 1, 0.05), new THREE.Vector3(38 + len, 1, 0.05)]); barLab.position.set(38 + len / 2, 1.8, 0.4);
         const t = len * k; write(barLab, t >= 1000 ? `${t / 1000} km` : t >= 1 ? `${t} m` : t >= 0.01 ? `${+(t * 100).toPrecision(3)} cm` : `${+(t * 1000).toPrecision(3)} mm`, '#e6e4ee'); };
@@ -440,6 +465,7 @@ if (r1 && r2) {
     const ball = (r, col) => { const m = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), new THREE.MeshBasicMaterial({ color: col })); scene.add(m); return m; };
     const payBall = ball(0.28, 0x8ce6cd), homeBall = ball(0.22, 0xd4a052), strideBall = ball(0.2, 0xffd890);
     const segs = (col, op) => { const g = new THREE.BufferGeometry(), l = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: op, vertexColors: col == null })); l.frustumCulled = false; scene.add(l); return l; };
+    const horizon = segs(0xd4a052, 0.75);                                  // the corner reader's wedge out to the writer's box (R444, R445)
     const payRays = segs(0x8ce6cd, 0.13), axes = segs(0xd4a052, 0.95), crossA = segs(0xd4a052, 0.55), crossB = segs(0xffd890, 0.55);
     const ptsGeo = new THREE.BufferGeometry(), pts = new THREE.Points(ptsGeo, new THREE.PointsMaterial({ color: 0x8ce6cd, size: 0.28 })); pts.frustumCulled = false; scene.add(pts);
     // ── the payload reader's shell ──
@@ -468,6 +494,10 @@ if (r1 && r2) {
         payRays.geometry.setAttribute('position', new THREE.Float32BufferAttribute(pr, 3));
         const Hm = B.HOMES[S.home], h0 = [Hm.at[0], Hm.at[1], 0.02]; homeBall.position.set(...h0);
         axes.geometry.setAttribute('position', new THREE.Float32BufferAttribute([...h0, h0[0] + 2.5 * Hm.h[0], h0[1] + 2.5 * Hm.h[1], 0.02, ...h0, h0[0], h0[1], 2.5, ...h0, h0[0] + 2.5 * Hm.v2[0], h0[1] + 2.5 * Hm.v2[1], 0.02], 3));
+        { const Wh = B.wedgeHorizon(S.home, 1), hz = [];
+            for (const e of Wh.edges) hz.push(...h0, ...e.p);
+            for (const a of Wh.arcs) for (let j = 1; j < a.length; j++) hz.push(...a[j - 1], ...a[j]);
+            horizon.geometry.setAttribute('position', new THREE.Float32BufferAttribute(hz, 3)); }
         const W = L.WR; strideBall.visible = crossA.visible = crossB.visible = pts.visible = !!W;
         if (W) { const b = W.B.map(x => x / k); strideBall.position.set(b[0], b[1], 0.02);
             const pa = [], pb = [], pp = []; for (const o of W.points) { pa.push(...h0, ...o.p); pb.push(b[0], b[1], 0.02, ...o.p);

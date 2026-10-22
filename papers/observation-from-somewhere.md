@@ -897,9 +897,24 @@ In an earlier essay he sets it apart from "the radiant light, emitted from a poi
 solid angles all having a common apex at the point of observation", one for each face that is not hidden from it (Gibson
 1972). What the geometry adds is a measure on these directions before any paint. Swept uniformly over an octant, they
 read as the two-dimensional Cauchy, with every pair at its corner and the near field a third, whatever paints them
-(Proposition 5(e), Theorem 6). The writer's sphere is the other one. It is round the whole system, looking in, and its
-radius is an amount, the size of what it holds (§9). A second standpoint gives that radius in H; an amount carried
-in gives it in a unit shared with others.
+(Proposition 5(e), Theorem 6). The writer's frame is not a sphere. Holding both hemispheres means holding both signs of
+every axis, the front and back, left and right, above and below of everything, and an axis held on both signs is the
+writer's number line (§9), proportional on both sides of zero, with no corner and no horizon. Each dimension is one copy
+of it, independent of the others, so the writer's frame is their product, a box: Descartes' frame, its extent along each
+axis an amount, the size of what it holds (§9). Drawn in unit relations, each axis divided by its own extent, the box is
+the unit cube. Nothing in it is round, since roundness is the equal turn from a centre, and the writer has no centre to
+turn from; drawn, its faces are orthographic views, parallel rays from no standpoint, the front and the back of
+everything at once (the glass box of technical drawing; a blueprint is one face). A point is D amounts to the writer,
+one on each line, and D − 1 to the reader, a direction [h : v : v₂] whose parts are ratios of one another; the number
+between them is the size along the ray, the one number of §3.8. The two share the axes' squareness, an angle and so a
+reading; only the amounts along them are the writer's. The writer joins the reader's eight octants into the box, and
+every reader stands inside it: its standpoint is a place there and its H is given a size there, both writings. From
+inside, the box is never seen, since its extent arrives along no direction, and two readers meet only as two points
+within it. The reader's wedge opens from its standpoint and reaches the box's faces in the far field: its horizon is
+the box seen from inside, reached along every direction and never measured, so the box's size, an amount to the
+writer, is unknowable to the reader. What reaches it is the wedge's directions; along each, the nearer thing on the
+line paints the point first. A second standpoint gives the box's extent in H; an amount carried in gives it in a unit
+shared with others.
 
 ### 3.8 What the reader lacks is one number
 
@@ -2696,6 +2711,17 @@ computation but three acts of position: choosing H, and with it the drawing V =
 it (§5); holding what arrives, at once or in order, without which there is no median (§7.6); and taking standpoints, a
 second one for a loop to close or a known move for an amount to be written. The heavy lifting is done by the geometry
 and by being situated.
+
+**Recovered, not written.** A reader is not powerless. By taking standpoints, closing loops and carrying in one amount
+it can recover a thing exactly: its shape, its places, even its size (§10). What it recovers can be true and still
+partial. A loop that closes shows that the routes taken agree; it cannot show that no route remains untaken, and only a
+second route that disagrees reveals a gap (above). So completeness is never a reading: a reader can find its account
+incomplete, never prove it complete, and the correctness of what it has recovered does not settle how much it has
+recovered. Nor does recovering the truth make the reader the writer. The writer holds the whole by walking it or by
+carrying in its measure, and states it in amounts from a vantage that holds both hemispheres. A reader that reaches the
+same statement has reached it by cleverness, in where it stood, which routes it closed and what it carried in, and not
+by holding the whole. Reading does not turn into writing; what the reader recovers is exact where it is exact, and its
+completeness is not the reader's to know.
 
 **Inside a room: the two sweeps.** Each room is a hold, and drawing V = H gives it a unit circle on which both sweeps of
 §4 work. The inscribed sweep, from home on that circle, gives where the things in the room are: each is a direction

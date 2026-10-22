@@ -1442,13 +1442,17 @@ try {
     o.write = ['living', 'kitchen', 'garage'].map(h => { const w = ks.map(k => B.writeFrom(k, h));
       return { h, n: w[1].points.length, room: w[1].written.map(x => +x.toFixed(4)), err: Math.max(...w.map(x => x.maxErr)),
         steps: Math.max(0, ...w.map(x => Math.max(0, ...x.points.map((p, i) => Math.hypot(...p.steps.map((z, j) => z - w[1].points[i].steps[j])))))) }; });
-    o.ws = ks.map(k => B.writerSphere(k).r / k);
+    o.ws = ks.map(k => B.writerBox(k).hi.map(x => x / k));
+    o.hz = 0;                                                // every point of every wedge's horizon on a face of the writer's box
+    for (const h of Object.keys(B.HOMES)) for (const k of ks) { const W = B.wedgeHorizon(h, k), bx = B.writerBox(k);
+      for (const p of W.edges.map(e => e.p).concat(W.arcs.flat())) { let m = Infinity;
+        for (let i = 0; i < 3; i++) m = Math.min(m, Math.abs(p[i] - bx.lo[i]), Math.abs(p[i] - bx.hi[i])); o.hz = Math.max(o.hz, m / k); } }
     o.frames = B.frames; o.webgl = B.webgl; return o; });
   const rooms3 = { living: [12, 2.7, 8], kitchen: [12, 2.7, 6], garage: [7, 2.7, 7] };
   if (!(b3.shape < 1e-12) || !(b3.radii < 1e-12) || b3.homes.some(c => !c.same || Math.abs(c.vh - 0.5) > 0.01 || c.v2h !== 0.5 || Math.abs(c.v2v - 0.5) > 0.01 || Math.abs(c.near - 1 / 3) > 0.01 || c.met < 3) ||
-    b3.write.some(w => w.n < 6 || !(w.err < 1e-9) || !(w.steps < 1e-9) || w.room.some((x, i) => Math.abs(x - rooms3[w.h][i]) > 1e-4)) || b3.ws.some(r => Math.abs(r - Math.hypot(24, 16)) > 1e-9) || !(b3.frames > 0) || !b3.webgl)
+    b3.write.some(w => w.n < 6 || !(w.err < 1e-9) || !(w.steps < 1e-9) || w.room.some((x, i) => Math.abs(x - rooms3[w.h][i]) > 1e-4)) || b3.ws.some(r => Math.abs(r[0] - 48) > 1e-9 || Math.abs(r[1] - 32) > 1e-9 || Math.abs(r[2] - 5.26) > 1e-9) || !(b3.hz < 1e-9) || !(b3.frames > 0) || !b3.webgl)
     failures.push(`[${current}] ${JSON.stringify(b3)}`);
-  console.log(`${failures.length === before50 ? 'ok  ' : 'FAIL'} ${current} (the world scaled by 1/100, 7 and 100: the payload reader's 2,048 ranges by k (${b3.radii.toExponential(0)}), its shell unmoved (${b3.shape.toExponential(0)}); every address the same at every k from five homes, v ≤ h ${b3.homes[0].vh.toFixed(3)}, v₂ ≤ h ½, v₂ ≤ v ${b3.homes[0].v2v.toFixed(3)}, the near field ${b3.homes[0].near.toFixed(4)}; one counted stride writes ${b3.write.map(w => `the ${w.h} ${w.room[0]} × ${w.room[2]} × ${w.room[1]} m (${w.n} corners)`).join(', ')}, to ${Math.max(...b3.write.map(w => w.err)).toExponential(0)}, in strides unmoved by k; the writer's sphere round the whole 28.8 m × k; WebGL drew ${b3.frames} frames)`);
+  console.log(`${failures.length === before50 ? 'ok  ' : 'FAIL'} ${current} (the world scaled by 1/100, 7 and 100: the payload reader's 2,048 ranges by k (${b3.radii.toExponential(0)}), its shell unmoved (${b3.shape.toExponential(0)}); every address the same at every k from five homes, v ≤ h ${b3.homes[0].vh.toFixed(3)}, v₂ ≤ h ½, v₂ ≤ v ${b3.homes[0].v2v.toFixed(3)}, the near field ${b3.homes[0].near.toFixed(4)}; one counted stride writes ${b3.write.map(w => `the ${w.h} ${w.room[0]} × ${w.room[2]} × ${w.room[1]} m (${w.n} corners)`).join(', ')}, to ${Math.max(...b3.write.map(w => w.err)).toExponential(0)}, in strides unmoved by k; the writer's box 48 × 32 × 5.26 m × k, every wedge reaching its faces; WebGL drew ${b3.frames} frames)`);
 
   // ── 51. ground.html: one's own height as the base (Sedgwick's horizon ratio; SPN R433, R434): on level ground every thing's
   //    (tan E + tan F)/tan F is its V*/H and 1/tan F its d/H, exactly; the twin (one eye height) at the corner; scaling the world
@@ -1471,6 +1475,34 @@ try {
     Math.abs(gr.crouchTwin - 2) > 1e-12 || !(gr.crouchMetres < 1e-12) || !(gr.tiltErr > 0.1) || !(gr.liftErr > 0.5) || !(gr.liftOthers < 1e-12))
     failures.push(`[${current}] ${JSON.stringify(gr)}`);
   console.log(`${failures.length === before51 ? 'ok  ' : 'FAIL'} ${current} (level ground: every thing's (tan E + tan F)/tan F its V*/H and 1/tan F its d/H to ${gr.exact.toExponential(0)}; one eye height tall at the corner, its top on the horizon; the world scaled by 1/100, 7 and 100 moves no reading (${gr.move.toExponential(0)}), the metres by k; crouched to half height the twin reads 2 and the metres stay; a plane tilted ½° misreads by up to ${(100 * gr.tiltErr).toFixed(0)}%, the ball thrown up by ${(100 * gr.liftErr).toFixed(0)}%)`);
+
+  // ── 52. writer-box.html: the writer's box and a reader's wedge inside it (SPN R445, R446): moving, turning, resizing and
+  //    scaling the world change where the addresses land, never the addresses; every landing on a face of the box; the
+  //    landings move by k exactly; at 32 × 32 every pair at its corner and the near field a third; a real drag of the
+  //    gold ball moves the wedge; WebGL drew frames ──
+  current = 'writer-box.html';
+  const before52 = failures.length;
+  await page.goto(new URL('writer-box.html', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__writerBox && __writerBox.ready && __writerBox.frames > 2, null, { timeout: 30000 }).catch(() => {});
+  const wbx = await page.evaluate(() => { const W = __writerBox, o = { same: 0, face: 0, moved: 0 };
+    const b0 = W.readAt({ n: 32 }), cases = [{ P: [4, 2, 3] }, { R: W.rotOf(-120, -20, 77) }, { R: W.octantRot([-1, 1, -1]) }, { k: 1e-3 }, { k: 1e3 }, { E: [3, 20, 5], P: [0.5, -7, 1] }];
+    for (const c of cases) { const r = W.readAt({ n: 32, ...c }), k = c.k ?? 1, E = (c.E || W.state().E).map(x => x * k);
+      for (const [i, a] of r.list.entries()) { const z = b0.list[i]; o.same = Math.max(o.same, Math.abs(a.h - z.h) + Math.abs(a.v - z.v) + Math.abs(a.v2 - z.v2));
+        let m = Infinity; for (let q = 0; q < 3; q++) m = Math.min(m, Math.abs(Math.abs(a.p[q]) - E[q] / 2)); o.face = Math.max(o.face, m / k);
+        if (!c.k) o.moved = Math.max(o.moved, Math.hypot(...a.p.map((x, q) => x - z.p[q]))); } }
+    const k7 = W.readAt({ n: 16, k: 7 }), k1 = W.readAt({ n: 16, k: 1 }); o.kScale = Math.max(...k7.list.map((a, i) => Math.max(...a.p.map((x, q) => Math.abs(x - 7 * k1.list[i].p[q])))));
+    o.c = b0.counts;
+    // the three vantages (R447): the payload reader's shell unmoved by k, its mean by k; each view its camera
+    const s1 = W.shellAt({ k: 1 }), s3 = W.shellAt({ k: 1e3 }); o.shell = Math.max(...s1.rel.map((x, i) => Math.abs(x - s3.rel[i]))); o.gm = s3.gm / s1.gm;
+    o.cams = ['address', 'payload', 'writer'].map(v => { W.set({ view: v }); const c = W.camera(); return [v, c.kind, c.kind === 'perspective' && v === 'address' ? Math.hypot(...c.at.map((x, i) => x - W.state().P[i])) : null]; });
+    o.p0 = W.state().P; o.ap = W.apexScreen(); o.frames = W.frames; o.webgl = W.webgl; return o; });
+  await page.mouse.move(wbx.ap[0], wbx.ap[1]); await page.mouse.down(); await page.mouse.move(wbx.ap[0] + 50, wbx.ap[1] - 30, { steps: 5 }); await page.mouse.up();
+  wbx.dragged = await page.evaluate(p0 => Math.hypot(...__writerBox.state().P.map((x, i) => x - p0[i])), wbx.p0);
+  if (!(wbx.same === 0) || !(wbx.face < 1e-12) || !(wbx.moved > 1) || !(wbx.kScale < 1e-9) || wbx.c.vh !== 0.5 || wbx.c.v2h !== 0.5 || wbx.c.v2v !== 0.5 ||
+    Math.abs(wbx.c.near - 1 / 3) > 0.01 || !(wbx.dragged > 0.3) || !(wbx.frames > 0) || !wbx.webgl ||
+    !(wbx.shell < 1e-9) || Math.abs(wbx.gm / 1e3 - 1) > 1e-9 || wbx.cams[0][1] !== 'perspective' || !(wbx.cams[0][2] < 1e-9) || wbx.cams[2][1] !== 'orthographic')
+    failures.push(`[${current}] ${JSON.stringify(wbx)}`);
+  console.log(`${failures.length === before52 ? 'ok  ' : 'FAIL'} ${current} (moved, turned, resized and the world scaled by 10⁻³ and 10³: the 1,024 addresses unchanged, every landing on a face of the box (${wbx.face.toExponential(0)}), the landings moved by up to ${wbx.moved.toFixed(1)} and by k exactly; v ≤ h, v₂ ≤ h, v₂ ≤ v ½, the near field ${wbx.c.near.toFixed(4)}; a real drag moved the wedge ${wbx.dragged.toFixed(2)}; the three vantages: the writer's parallel rays, the address reader's camera at its standpoint, the payload reader's shell unmoved by k (${wbx.shell.toExponential(0)}) and its mean by k; WebGL drew frames)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
