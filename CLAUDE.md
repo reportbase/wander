@@ -771,9 +771,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   opposite directions."; "You walk the chord while you face the arc. when A and B meet in the middle of the chord, they are
   facing opposite directions."; "yes"): OFS §4 "Why the corner sits at 45°" closes with it: two readers walk the chord from
   its ends, each facing its own half of the circle (above and below), each the other turned through the middle, so their
-  facings always opposite (AF = −BF, SPN's names only) and their arcs congruent, never the same; they meet at the middle,
+  facings always opposite (±VF in SPN's names) and their arcs congruent, never the same; they meet at the middle,
   the corner, square to the chord, facing away; neither facing defined except against the other; both arcs the writer's.
-  "Facing" keeps R313's sense in OFS.
+  "Facing" keeps R313's sense in OFS. Then (Tom: "lets use HF and VF for facing. HF carves out 2/PI. VF carves out PI/2.";
+  "VF covers twice the angular .distance."): in SPN the ends are H and V, AF/BF renamed; VF the radius's facing, 2θ, a half
+  turn, the walkers' pair its two senses (±VF), reading π/2; HF the ray from H, θ, a quarter turn, reading 2/π; product 1.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
