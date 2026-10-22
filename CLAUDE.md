@@ -668,6 +668,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (`plans/tpr-plan.md` + `runs/tpr/`: 2/π three things, a mean over the uniform turn (34), a share (10), the turn's length
   (8, kept by every fair weight); not a fingerprint of the uniform turn). Corrections in `physics.md` §1½ and appended
   below each old plan's runs.
+  Carried into OFS (22 Oct, SPN R438; Tom: "yes, proceed"): §3.4 "Where the numbers come from" says 2/π (and π/2) is a
+  ratio of two sums over the turn, taken by whoever adds the projections; the address reader holds directions, shares and
+  the median, no mean; 2/π is the uniform turn's, the corner any fair weight's. §7.8's SR entry: the boost read from
+  directions alone (the uniform sky's median on the pseudorapidity moved to η), the Doppler frequency a writing.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

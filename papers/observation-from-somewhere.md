@@ -145,7 +145,7 @@ where the truth would lie: a system's true breadths, as shares of their whole, w
 the breadths themselves, amounts the reader does not read. A reader's drawing, every party at its own H, is the sum's
 centre, where every pair is at its corner; the geometry follows from there, and the truth lies off the centre by the
 ratios the reader lacks. The three read the same thing differently: a line of true breadth 1 reads 1 to the writer, π/2
-to the payload reader and 2/π to the address reader. That is why the vantages are named so: the names follow the sweep.
+to the payload reader and 2/π to the address reader (a mean over its directions, taken by whoever adds them; §3.4). That is why the vantages are named so: the names follow the sweep.
 The writer knows the line as 1; each reader holds one hemisphere and reads it as π/2 or 2/π; the two hemispheres
 together, as the writer holds them, give back the 1, as the product of the two readings, π/2 · 2/π = 1, not their
 difference. What they give back is the baseline, the reader's own H measured in H (§10, step 3), not the other party's
@@ -684,6 +684,11 @@ the turn is equally likely; weight the turn otherwise and it changes.
 Both readings come from the same two integrals over the quarter turn: the arc the turn draws, ∫₀^{π/2} dθ = π/2 (the
 central reader's half turn, on radius ½, draws the same arc), and the projection it casts on the line, ∫₀^{π/2} cos θ
 dθ = 1. The central reading is the turn over the projection, π/2; the inscribed is the projection over the turn, 2/π.
+Each is a ratio of two sums over the turn, so each is taken by whoever adds the projections up, the payload reader or
+the writer. The address reader holds its directions, their shares and their median, the corner at ½, and no mean: its
+2/π is the mean projection of its own directions under the uniform turn, a mean its directions make possible and it does
+not hold. Other weightings of the turn keep the median at the corner (Theorem 6(e)) and in general move this mean, so
+the 2/π, unlike the corner, is the uniform turn's.
 Taken to any turn θ, the same two give the table's θ/sin θ and sin θ/θ. The projection is the line itself: the steps of
 the turn, each casting cos θ dθ, cover the breadth exactly once. Each reading sets it against the turn, one way up or
 the other, so their product is 1. Without angles the turn is ∫₀^∞ ds/(1 + s²) over every relation s = v/h, and the
@@ -2125,6 +2130,12 @@ follow every increasing map; those facts underlie parts (b) and (d). The other p
   The second is a weighting of the payload at each address, and it moves no address.
   - Of the D⁴ by which an isotropic sky's intensity brightens ahead (Rybicki and Lightman 1979), D² is the addresses'
     crowding, and D² is the payload: energy and arrival rate, D each.
+
+  So the motion can be read from the addresses alone. On the levels ξ = −ln tan(θ/2), the pseudorapidity, aberration is
+  a shift by η exactly, and a sky uniform in the sources' frame lies as ½·sech²ξ, its median the transverse plane; seen
+  from the moving frame it lies as ½·sech²(ξ′ − η), its median moved to η. A reader holding directions alone reads its
+  own rapidity, a reading, with no clock, no frequency and no c carried in. To read the Doppler factor as a frequency
+  needs a rest frequency carried in, a known kind: a writing.
 
   The split is in the formulas, aberration apart from Doppler shift and beaming. It is not named there as a
   transformation of addresses and a weighting of payload. The identities are exact.
