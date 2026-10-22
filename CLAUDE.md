@@ -693,6 +693,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   times the CMB's, the colour slices not (P7 killed), the direction 21–28° off (P3 killed), P4 killed by my set-up; so
   "the boost read from directions alone" (R437, R438) holds only for a census taken whatever the brightness, and OFS
   §7.8 says so. REF's full sha256s appended to `plans/ref-plan.md`.
+  Since R441 (22 Oct; Tom: "the situated reading and writing is about the observer not about the world. it is not new
+  physics. the interesting part is that known physics can be recovered from it."; "physics already is mix of reading and
+  writing observers, just that its boundries are not well understood."): `physics.md` opens with "What the meeting is":
+  known physics recovered from the observer's geometry (the form from what a reader can read, the values across a named
+  bridge), physics already a mix of reading and writing observers with the boundary unmarked, the scale-the-world test
+  placing it per quantity, the dictionary that boundary drawn. Claim no new physics; that a misplaced boundary causes a
+  known difficulty is shown only for Lutz–Kelker, otherwise open.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

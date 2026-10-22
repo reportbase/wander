@@ -11,6 +11,23 @@ geometry: unit relations, the sweep, the corner, the levels. Physics is amounts:
 collects where the two meet, and tests each meeting on real measurements or on exact arithmetic. The flying page and its
 bodies are pictures. They are never evidence here.
 
+**What the meeting is** (22 October; SPN R441; Tom: "the situated reading and writing is about the observer not about the
+world. it is not new physics. the interesting part is that known physics can be recovered from it."; then "physics
+already is mix of reading and writing observers, just that its boundries are not well understood."). Reading and
+writing describe the observer, not the world, so nothing here is new physics. What follows is known physics recovered
+from the observer's geometry: the form of a law from what a reader can and cannot read, its values carried in across a
+named bridge (c, a rest frequency, Born's rule, a kind, a baseline). Physics is already a mix of reading and writing
+observers, often within one formula, and the boundary between them is not marked: Ellis and Baldwin's dipole adds an
+aberration (a reading of directions) to a payload weighting read from a catalogue's own ratios, and is set against a
+speed found from a Doppler frequency (a writing); a parallax is an angle read and a distance written through the au, and
+inverting noisy parallaxes as if they were distances is Lutz and Kelker's bias; a distance ladder treats each rung as one
+written factor, and Hubble's brightest-star rung was a ruler of another lay; the inverse square is written as 1/d², while
+counts by flux read the same law with no distance. What the geometry adds is a test that places the boundary for each
+quantity: scale the world, and a reading does not move while a writing moves with it (OFS §9). The dictionary (§1) is
+that boundary drawn quantity by quantity, its bridge column naming what crosses it. A claim about where to look: the
+runs show the mix in place; that a misplaced boundary is what causes a known difficulty is shown here only for Lutz and
+Kelker's case, and is otherwise open.
+
 **Iterations**
 
 - 10 October, first: the paper started, from the four tests of the day (ISQ, HZN, REF, MAG) and the physics labs before
@@ -136,6 +153,10 @@ bodies are pictures. They are never evidence here.
   results such as the inverse square law"; SPN R436): the revisit begins with the inverse square (ISR,
   `papers/inverse-square.md`, "The law as addresses and payload"). Three dictionary rows added; the star results sorted
   into readings (CNT, GCN by light) and writings (MAG, GCN by distance).
+- 22 October, later: SRR, WVR, TPR (R437); POR, RFR, GDR, LTR (R439); EBD, the Ellis–Baldwin dipole on CatWISE (R440),
+  in §1½. Then (SPN R441) the paper's framing, "What the meeting is", above: known physics recovered from the observer's
+  geometry, physics already a mix of reading and writing observers with the boundary unmarked, the dictionary that
+  boundary drawn.
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
