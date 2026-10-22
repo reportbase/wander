@@ -1476,6 +1476,29 @@ try {
     failures.push(`[${current}] ${JSON.stringify(gr)}`);
   console.log(`${failures.length === before51 ? 'ok  ' : 'FAIL'} ${current} (level ground: every thing's (tan E + tan F)/tan F its V*/H and 1/tan F its d/H to ${gr.exact.toExponential(0)}; one eye height tall at the corner, its top on the horizon; the world scaled by 1/100, 7 and 100 moves no reading (${gr.move.toExponential(0)}), the metres by k; crouched to half height the twin reads 2 and the metres stay; a plane tilted ½° misreads by up to ${(100 * gr.tiltErr).toFixed(0)}%, the ball thrown up by ${(100 * gr.liftErr).toFixed(0)}%)`);
 
+  // ── 52. writer-box.html: the writer's box and a reader's wedge inside it (SPN R445, R446): moving, turning, resizing and
+  //    scaling the world change where the addresses land, never the addresses; every landing on a face of the box; the
+  //    landings move by k exactly; at 32 × 32 every pair at its corner and the near field a third; a real drag of the
+  //    gold ball moves the wedge; WebGL drew frames ──
+  current = 'writer-box.html';
+  const before52 = failures.length;
+  await page.goto(new URL('writer-box.html', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__writerBox && __writerBox.ready && __writerBox.frames > 2, null, { timeout: 30000 }).catch(() => {});
+  const wbx = await page.evaluate(() => { const W = __writerBox, o = { same: 0, face: 0, moved: 0 };
+    const b0 = W.readAt({ n: 32 }), cases = [{ P: [4, 2, 3] }, { R: W.rotOf(-120, -20, 77) }, { R: W.octantRot([-1, 1, -1]) }, { k: 1e-3 }, { k: 1e3 }, { E: [3, 20, 5], P: [0.5, -7, 1] }];
+    for (const c of cases) { const r = W.readAt({ n: 32, ...c }), k = c.k ?? 1, E = (c.E || W.state().E).map(x => x * k);
+      for (const [i, a] of r.list.entries()) { const z = b0.list[i]; o.same = Math.max(o.same, Math.abs(a.h - z.h) + Math.abs(a.v - z.v) + Math.abs(a.v2 - z.v2));
+        let m = Infinity; for (let q = 0; q < 3; q++) m = Math.min(m, Math.abs(Math.abs(a.p[q]) - E[q] / 2)); o.face = Math.max(o.face, m / k);
+        if (!c.k) o.moved = Math.max(o.moved, Math.hypot(...a.p.map((x, q) => x - z.p[q]))); } }
+    const k7 = W.readAt({ n: 16, k: 7 }), k1 = W.readAt({ n: 16, k: 1 }); o.kScale = Math.max(...k7.list.map((a, i) => Math.max(...a.p.map((x, q) => Math.abs(x - 7 * k1.list[i].p[q])))));
+    o.c = b0.counts; o.p0 = W.state().P; o.ap = W.apexScreen(); o.frames = W.frames; o.webgl = W.webgl; return o; });
+  await page.mouse.move(wbx.ap[0], wbx.ap[1]); await page.mouse.down(); await page.mouse.move(wbx.ap[0] + 50, wbx.ap[1] - 30, { steps: 5 }); await page.mouse.up();
+  wbx.dragged = await page.evaluate(p0 => Math.hypot(...__writerBox.state().P.map((x, i) => x - p0[i])), wbx.p0);
+  if (!(wbx.same === 0) || !(wbx.face < 1e-12) || !(wbx.moved > 1) || !(wbx.kScale < 1e-9) || wbx.c.vh !== 0.5 || wbx.c.v2h !== 0.5 || wbx.c.v2v !== 0.5 ||
+    Math.abs(wbx.c.near - 1 / 3) > 0.01 || !(wbx.dragged > 0.3) || !(wbx.frames > 0) || !wbx.webgl)
+    failures.push(`[${current}] ${JSON.stringify(wbx)}`);
+  console.log(`${failures.length === before52 ? 'ok  ' : 'FAIL'} ${current} (moved, turned, resized and the world scaled by 10⁻³ and 10³: the 1,024 addresses unchanged, every landing on a face of the box (${wbx.face.toExponential(0)}), the landings moved by up to ${wbx.moved.toFixed(1)} and by k exactly; v ≤ h, v₂ ≤ h, v₂ ≤ v ½, the near field ${wbx.c.near.toFixed(4)}; a real drag moved the wedge ${wbx.dragged.toFixed(2)}; WebGL drew frames)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

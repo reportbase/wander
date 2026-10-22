@@ -512,6 +512,24 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (circle) is round the whole system, looking in, its radius the lot's half-diagonal, an amount (28.8 m at k = 1;
   `writerSphere(k)` on the 3D page; the 2D plan is fitted to it). The corner reader's wedge is one octant of the reader's
   sphere.
+- `writer-box.html`: **the writer's box** (22 Oct 2026, Tom: "lets create a new demo, full screen, with a 3d box "writer" and
+  a 3d wedge inside it. let the user move the wedge around in 3d space, show the 3d wedge as part of a larger sphere. the
+  wedge is the addresses to points on the box."; SPN R445, R446; OFS §3.7), full screen, three.js like `wedge.html` (the
+  same pinned CDN version and test route) for the drawing only: the geometry and the hook are a plain script. The writer a
+  box (14 × 7 × 10 by default, `?box=`), its three number lines through the middle with ticks on both signs, nothing round.
+  A reader inside it: a sphere of radius H round its standpoint, the other seven octants faint, one octant the wedge
+  (translucent, coloured by address), its edges h, v (its own up), v₂ run out to the box's faces and the arcs its faces
+  trace there (its horizon). The addresses: n × n cells of Lambert's map of the octant (8, 16, 32), uniform over it, each a
+  direction [h : v : v₂] (two numbers), its ray landing on a point of a face (three numbers, the writer's); the one between,
+  the distance, shown and never read. Colour h²·teal + v²·gold + v₂²·violet, the same on the sphere and on the box. Drag the
+  gold ball (or arrows, page up/down, sliders) to move the wedge; turn it by its triple corner's longitude and latitude and
+  a turn about it, an octant of the box, anywhere, spin; wander walks it through the box. Resize the box, H (the sphere's
+  radius) and scale the world (k, numbers only): the landings change, the addresses and their shares never (v ≤ h, v₂ ≤ h,
+  v₂ ≤ v ½ and the near field 0.334 at 32 × 32). The inset: Lambert's map painted by the face each address meets (the
+  addresses fixed, the paint the world's), the corners dashed; point at a dot or a cell for its address, where it lands and
+  the distance. `?x=&y=&z=&lon=&lat=&roll=&oct=+-+&H=&k=<log10 k>&box=X,Y,Z&n=8|16|32&rays=0&spin=1`; hook
+  `window.__writerBox` (`rotOf`, `anglesOfRot`, `octantRot`, `addresses`, `hitBox`, `read`, `readAt`, `counts`, `horizon`,
+  `set`, `state`, `hud`, `apexScreen`, `frames`, `webgl`). Not in the flying page.
 - `ground.html`: **one's own height** (22 Oct 2026, Tom: "1,2", the second a demo of OFS §9's "The ground: one's own height as
   the base"; SPN R433, R434; after Sedgwick's horizon ratio), a standalone page, plain canvas. A reader on level ground, its
   eye at H (1.6 m); ten things (dog, child, door, ball, a twin one eye height tall, lamp post, car, tree, house, tower). The
@@ -624,7 +642,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -2282,6 +2300,10 @@ In short:
   51. **ground.html:** on level ground every thing's (tan E + tan F)/tan F its V*/H and 1/tan F its d/H to rounding; one eye
       height tall at the corner, its top on the horizon; scaling the world by 1/100, 7 and 100 moves no reading, the metres by
       k; crouched to half height the twin reads 2 and the metres stay; a ½° tilt and a thrown ball misread.
+
+  52. **writer-box.html:** moved, turned, resized and the world scaled by 10⁻³ and 10³, the 1,024 addresses unchanged and
+      every landing on a face of the box (to 10⁻¹²), the landings moved by k exactly; v ≤ h, v₂ ≤ h, v₂ ≤ v ½ and the near
+      field within 0.01 of ⅓; a real drag of the gold ball moves the wedge; WebGL drew frames.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
