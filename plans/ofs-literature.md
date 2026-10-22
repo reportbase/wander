@@ -262,3 +262,46 @@ Three found, each classical, and each splitting what arrives into where (a law f
 
 None of the three is put as "the Cauchy is the address, not the payload". Each carries the split in its equations and
 its picture, unnamed. Searched, not surveyed.
+
+### The reader a sphere, the world painting it: Gibson (22 Oct, SPN R427)
+
+Tom (22 Oct): "i think this is pretty cool.   the reader is a sphere and the world paints it is a powerful metaphor cause
+that how it actually works.", then "yes" to checking Gibson first. Read in full: two of Gibson's unpublished essays, the
+Purple Perils (archive.ecological-psychology.com/purpleperils; "References to these essays must cite them explicitly as
+unpublished manuscripts"): "On the Concept of the 'Visual Angle' in an Optic Array and its History" (October 1972) and
+"A Further Note on Occlusion" (March 1969). The 1979 book (*The Ecological Approach to Visual Perception*, ch. 5, "The
+Ambient Optic Array") not read here: the only full text found online is an unauthorised copy, not used; what is said of
+the book is from the essays and Wikipedia's summary.
+
+What Gibson says, verbatim, and where it lands:
+
+| Gibson | the corpus |
+|---|---|
+| "Ecological optics is concerned with the ambient light at a point of observation as distinguished from the radiant light, emitted from a point-source" (1972) | the passive reader (R426): what arrives is light the world scatters, not light the reader or the furniture sends; a pulse sent is the other optics, and writes (R388) |
+| "visual solid angles all having a common apex at the point of observation ... The set of solid angles is 'closed,' i.e., returns upon itself, and the ambient array is unbounded" (1972) | the reader's sphere round one point |
+| the components "correspond to ... all components that are not hidden (occluded) at the point of observation" (1972) | each direction painted by the first surface on its line |
+| "Each is a unit in the sense of a 'form' but this is not to be confused with a metric unit in the sense of degrees, minutes, and seconds of arc" (1972) | close to: an address carries no unit; Gibson's point is the array's units are forms, not that a direction is a ratio |
+| "The units of the ambient array are nested ... this subdivision has no limit" (1972) | levels of detail; but OFS's reader holds finitely many addresses, and the count is the level of detail (§8) |
+| Koffka's "double representation": "two surfaces at different distances but in the same direction-from-here" (1969) | one address, two payloads; the nearer paints it, the farther is hidden |
+| "the transformations of the optic array, not its form, contain the information about the objective layout of the world. Perception is only achieved over time" (1969) | one standpoint gives no layout in amounts; writing needs movement (R297), the stride (R425) |
+| Euclid's "visual pyramid", Ptolemy's "visual cone", "natural perspective" (1972) | the picture is ancient; Gibson's own history says so |
+
+So the sphere painted by what arrives is Gibson's ambient optic array, in his words, down to the passive/active split
+(ambient against radiant light). Known beforehand; the corpus had cited it only at second hand (SPN, "Separating the
+geometry of access from what is accessed", Gibson 1979 beside Adelson and Bergen 1991).
+
+What Gibson does not have, as far as these essays and the summaries go:
+- **No measure on the directions.** The array is a set of solid angles bounded by contrasts, structured by the world. No
+  law for a uniform turn, so no Cauchy, no corner, no median at v = h. OFS's addresses are the sphere's own, before any
+  contrast; Gibson's array is the sphere already painted.
+- **The other sphere.** His "objective layout" is the writer's account, but he holds it is picked up directly from the
+  array's invariants over time, not written with an amount carried in. OFS: one amount is needed (Proposition 8), whatever
+  the invariants. The known ecological answer is that the amount is the observer's own eye height: distances along the
+  ground and sizes against the horizon in eye-heights (Sedgwick's horizon-ratio relation, 1973/1980; Warren's
+  eye-height-scaled affordances, 1984; from memory, to check). That is H, the reader's own breadth, carried in as the
+  unit: a writing, in OFS's terms, cheap because the reader carries it.
+- **Direct pickup** (no inference) is a claim about perceivers, which OFS leaves open (§11.2 question 6, R261).
+
+Standing: a known anchor for the picture, to cite in OFS beside the hand if the picture goes in (Gibson 1979 for the
+array; the 1972 essay for ambient against radiant light, cited as an unpublished manuscript). Check before citing: the
+book's chapter 5 in a library copy; Sedgwick and Warren.
