@@ -1003,7 +1003,11 @@ farthest from the segment, by 1 − 1/√2. Two readers can walk the chord toget
 one the arc above the chord, the other the arc below. Each is the other turned through the chord's middle, so their
 facings are always opposite and the arcs they draw are congruent but never the same. They meet at the middle, the
 corner, square to the chord and facing away from each other. Neither facing is defined except against the other; the
-closed circle, both arcs at once, is the writer's.
+closed circle, both arcs at once, is the writer's. The walkers' facings are the two senses of the radius's facing. As
+a walker crosses the chord from one end to the other, a distance of 1, that facing turns through a half turn, and the ray
+from the end it started at turns through half that angle, a quarter turn, ending at the same point of the arc. The arc
+carved on the way is π/2: the facing reads it against the distance walked as π/2, the ray reads the distance walked
+against it as 2/π, and their product is 1, the chord.
 
 **The arc from the chord.** The arc can be had from the chord AB without turning a bar. Stand the two parties at its
 ends, and from each end sweep a ray: from A a ray reading v/h, from horizontal along AB up to vertical, and from B a ray

@@ -775,7 +775,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the corner, square to the chord, facing away; neither facing defined except against the other; both arcs the writer's.
   "Facing" keeps R313's sense in OFS. Then (Tom: "lets use HF and VF for facing. HF carves out 2/PI. VF carves out PI/2.";
   "VF covers twice the angular .distance."): in SPN the ends are H and V, AF/BF renamed; VF the radius's facing, 2θ, a half
-  turn, the walkers' pair its two senses (±VF), reading π/2; HF the ray from H, θ, a quarter turn, reading 2/π; product 1.
+  turn, the walkers' pair its two senses (±VF), reading π/2; HF the ray from H, θ, a quarter turn, reading 2/π; product 1. OFS §4
+  says so after the walkers ("they are also walking the distance": the arc π/2 read against the chord walked, 1).
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
