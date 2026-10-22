@@ -760,6 +760,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   with its own writer (a box, its own extents) and its two readers; the readers alike at every level (no reading carries a
   scale), the writers not; each level written from the one outside it by a ratio read one level up, one amount at the top;
   nesting, not recursion (each reader's lay one corner and plain doublings, R188). Not "fractal".
+  **Within one box, exterior to the rest** (22 Oct, SPN R449; Tom: "there is no way to test those claims."; "Every reader
+  is both inside and outsider. they share the indside vantage with all the other objects of their parent writer, but are
+  outside of each other."; "Yes"): OFS §9 next: every reader within its parent's box with all it holds (one writer, number
+  lines, faces the common horizon), exterior to each sibling (its outline and directions read, never its interior or its
+  writer's amounts), siblings compared by ratios in their common box, the one view a reader cannot take of itself from
+  outside, which a sibling can; closed by the scope: how an account of nested systems is held, not a claim that the world
+  is so arranged. Containment words, not R304's withdrawn inside/outside of the hemispheres.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

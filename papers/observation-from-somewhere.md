@@ -2707,6 +2707,14 @@ link between levels is a ratio read one level up, so every inner writer is writt
 hierarchy needs one amount, at the top. This is nesting, not recursion: each reader's lay keeps one corner and plain
 doublings, whatever system it stands in.
 
+**Within one box, exterior to the rest.** Every reader stands within its parent's box, together with everything else that
+box holds: the same writer, the same number lines, the box's faces its common horizon. To each of those things it is
+exterior. It reads a sibling's outline and directions, never its interior or its writer's amounts, and is read the same way
+in return; so siblings are compared by ratios read within their common box, and the one view a reader cannot take is of
+itself from outside, which another reader in the box can. This describes how an account of nested systems is held, not a
+claim that the world is so arranged: the geometry proves what follows from the holding, and no reading can confirm the
+arrangement.
+
 **Closing a loop, and what is left to the reader.** A tree of readings, each thing read against only the one length that
 holds it, cannot find its own error: room B misread moves everything in B together, and every reading inside B still
 agrees. A second route finds it. Read a₁ directly against b₁ as well, from a standpoint where both are in view: the
