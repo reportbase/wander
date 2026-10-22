@@ -707,6 +707,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   is never a reading (only a disagreeing route shows a gap); recovery does not make the reader the writer; a reader that
   reaches the writer's statement did it by cleverness (standpoints, routes, the amount carried in). OFS judges no
   physical theory's completeness (R364).
+  **The reader within the writer's sphere** (22 Oct, SPN R443; Tom: "so have a readers sphere and a writers sphere. the
+  reader exists within the writers sphere.", then "yes"): OFS §3.7 closes its sphere paragraph with it: every reader
+  stands inside the writer's sphere, its standpoint a place there and its H given a size there (both writings); from
+  inside the writer's sphere is never seen (its radius arrives along no direction); two readers meet only as two points
+  within it. What is inside is the standpoint, not the radius (H a chosen value, not a size).
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

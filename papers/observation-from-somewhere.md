@@ -899,7 +899,9 @@ solid angles all having a common apex at the point of observation", one for each
 read as the two-dimensional Cauchy, with every pair at its corner and the near field a third, whatever paints them
 (Proposition 5(e), Theorem 6). The writer's sphere is the other one. It is round the whole system, looking in, and its
 radius is an amount, the size of what it holds (§9). A second standpoint gives that radius in H; an amount carried
-in gives it in a unit shared with others.
+in gives it in a unit shared with others. Every reader stands inside the writer's sphere: its standpoint is a place
+there and its H is given a size there, both writings. From inside, the writer's sphere is never seen, since its radius
+arrives along no direction, and two readers meet only as two points within it.
 
 ### 3.8 What the reader lacks is one number
 
