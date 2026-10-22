@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>One blueprint in 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    blueprint-3d.html: one property, three vantages, in three dimensions (22 October 2026; Tom: "good. how can we improve
+    this, how about a 3d view", then "yes"). After blueprint.html (SPN R424; R425 for this page); OFS "Three vantages: a
+    writer and two readers", Proposition 5(e) (the uniform wedge: every pair at its corner, the near field a third), §9
+    ("Inside a room: the two sweeps", "A survey: many readings, one amount"). three.js like wedge.html for the drawing only:
+    the property, the casting, the readings and the test hook are a plain script, so the hook works without WebGL.
+
+    Keep the case. Amounts (metres, a range along a ray) are the writer's and the payload reader's; [h : v : v₂] is the
+    address, three unit relations, every party drawn at H (V = V₂ = H).
+      - THE WRITER holds the model: the lot, the house's rooms with their heights, the garage, the shed, the trees, the fence,
+        a few pieces of furniture, every length an amount in metres. Orbit it. The metres need a unit measured beforehand
+        (the scale bar).
+      - THE PAYLOAD READER stands in a room at eye height (1.6 m). The directions are given, 2,048 of them over the whole
+        sphere (a Fibonacci lattice); along each a range arrives, to a wall, the floor, the ceiling or a thing, in a unit
+        it never reads. It holds the shell r over the ranges' geometric mean: the room's shape, not its size.
+      - THE ADDRESS READER stands in a floor corner, so the room is one wedge: h along one wall, v up, v₂ along the other.
+        It sweeps the octant uniformly, 64 × 64 cells of Lambert's equal-area map (even in azimuth and in height), each
+        address [h : v : v₂] painted by the first thing met. No distance. Shown from home as the triangle h + v + v₂ = 1
+        and as Lambert's map: every pair at its corner (half the addresses either side), the near field a third, whatever
+        the furniture.
+    SCALE THE WORLD (k from 1/100 to 100): every length × k, the readers' strides too. The writer's numbers and the payload
+    reader's ranges move by k; the shell and the addresses do not.
+    WRITE THE ROOM: the address reader takes one stride (0.7 m at k = 1, 30° off its first wall, along the floor) and reads
+    again. Each corner seen from both places is two rays that cross: its place in strides, no amount yet. Counting the
+    stride, one amount carried in, writes every place in metres. Neither reader has that amount; the writer is the vantage
+    that carries it.
+    ?k=<log10 k>&at=living|kitchen|bedroom|bath|garage|shed|garden|back&home=living|kitchen|bedroom|garage|lot&write=1;
+    hook window.__blueprint3d.
+    three.js 0.160.0 from jsDelivr, pinned, as wedge.html (the smoke test serves it from node_modules).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --blue: #7fb2ff; --red: #d96e5b }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1240px; margin: 0 auto; padding: 22px 16px 44px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 19px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 4px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 92ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; min-width: 0 }
+    .grid { display: grid; grid-template-columns: 7fr 5fr; gap: 12px; align-items: start }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px }
+    .stack { display: grid; gap: 12px }
+    @media (max-width: 900px) { .grid, .grid2 { grid-template-columns: 1fr } }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #0a0d18; touch-action: none }
+    #scene { aspect-ratio: 4 / 3; cursor: grab } #shell { aspect-ratio: 1 / 0.9; cursor: grab }
+    #tri { aspect-ratio: 1 / 0.9 } #map { aspect-ratio: 1 / 0.9 }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 10px }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 200px; min-width: 0; accent-color: var(--gold) }
+    select, button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; cursor: pointer }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    .cap { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    .read { color: var(--bright); font-size: 12.5px; margin: 6px 0 0; min-height: 3.2em; white-space: pre-wrap; overflow-wrap: anywhere }
+    .tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 2px }
+    .w { color: #9fc3ff } .p { color: var(--teal) } .a { color: var(--gold) }
+    a { color: var(--teal) }
+    .nogl { display: none; color: var(--red); font-size: 13px; padding: 6px 0 0 }
+    </style>
+    <script type="importmap">{ "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body>
+<main>
+    <h1>One blueprint in 3D</h1>
+    <p class="lede">The same property in three dimensions. The <span class="w">writer</span> has the model, every length in
+        metres, heights too. The <span class="p">payload reader</span> stands in a room and receives a range along each of
+        2,048 directions, in a unit it never reads: a shell, the room's shape and not its size. The <span class="a">address
+        reader</span> stands in a floor corner, the room one wedge, and receives directions alone, [h : v : v₂]. Scale the
+        world and only the writer's numbers change. Write the room: one counted stride turns the address reader's two looks
+        into metres. <a href="blueprint.html">The plan in 2D</a>.</p>
+    <div class="panel" style="margin-bottom:12px">
+        <div class="row"><label for="k">scale the world, k</label><input id="k" type="range" min="-2" max="2" step="0.05" value="0"><span id="kv" style="min-width:9ch"></span></div>
+        <div class="row"><label for="at">payload reader in</label><select id="at"></select>
+            <label for="home">address reader at</label><select id="home"></select>
+            <button id="write">write the room: one stride</button><button id="roof">roof</button><button id="reset">reset</button></div>
+        <p class="cap" id="say" style="margin:0"></p>
+    </div>
+    <div class="grid">
+        <div class="panel">
+            <p class="tag w">the writer</p><h2>The model, in metres</h2>
+            <canvas id="scene"></canvas>
+            <div class="nogl" id="nogl1"></div>
+            <p class="cap">Every length an amount, stated whole: each room's width, depth and height, the lot's extent. The
+                metres need a unit measured beforehand: the scale bar. Drag to turn, scroll or pinch to zoom, tap a floor to
+                stand the <span class="p">payload reader</span> there (teal); the <span class="a">address reader</span> is
+                at the gold corner, its three walls h, v (up) and v₂.</p>
+            <p class="read" id="readW"></p>
+        </div>
+        <div class="stack">
+            <div class="panel">
+                <p class="tag p">the payload reader</p><h2>A shell in an unread unit</h2>
+                <canvas id="shell"></canvas>
+                <div class="nogl" id="nogl2"></div>
+                <p class="cap">2,048 given directions; along each a range arrives, drawn over the ranges' geometric mean (the
+                    dashed sphere, its size never read), each dot the colour of what it met. Farther than 2.2 of the mean is
+                    drawn at 2.2; open sky, faint at the rim. Scale the world and nothing here moves.</p>
+                <p class="read" id="readP"></p>
+            </div>
+        </div>
+    </div>
+    <div class="grid2">
+        <div class="panel">
+            <p class="tag a">the address reader</p><h2>From home: the triangle</h2>
+            <canvas id="tri"></canvas>
+            <p class="cap">Looking out of the corner, the wedge is the triangle h + v + v₂ = 1, every address at its shares
+                (h bottom left, v at the top, v₂ bottom right). The dashed medians are the three pairs' corners: v = h
+                gold, v₂ = h white, v₂ = v violet. The near field, v and v₂ both at most h, is the part outlined in teal by
+                home; it holds a third. The dots never move; their colours are the payload.</p>
+            <p class="read" id="readA"></p>
+        </div>
+        <div class="panel">
+            <p class="tag a">the address reader</p><h2>Lambert's map of the wedge</h2>
+            <canvas id="map"></canvas>
+            <p class="cap">Azimuth across (h on the left, v₂ on the right), height v up: the 64 × 64 addresses even, one cell
+                each, painted by what each met. The corners dashed: v = h (gold), v₂ = h (the middle line), v₂ = v. Half the
+                cells either side of each, in every room.</p>
+            <p class="read" id="readM"></p>
+        </div>
+    </div>
+    <p class="cap" style="margin-top:12px">The writer is the vantage that writes: it needs the whole and a unit. The two readers
+        are what one turn of the head gives: the payload reader keeps the amount along each direction, the address reader the
+        direction itself. One stride counted is the amount that turns the address reader's looks into the writer's metres.
+        Other demos: <a href="blueprint.html">the blueprint</a>, <a href="room-ratios.html">the room in ratios</a>,
+        <a href="wedge.html">the wedge</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+// ── the property, in metres (the writer's own account): x east, y north, z up ───────────────────────────────────────
+const LOT = [48, 32], HT = { house: 2.7, inner: 2.7, garage: 2.7, shed: 2.2, fence: 1.2 }, EYE = 1.6, STRIDE = 0.7, STRIDE_ANG = 30;
+const THINGS = {
+    fence:  { name: 'the fence', col: '#8a8a96' }, house: { name: "the house's outer wall", col: '#9fc3ff' },
+    inner:  { name: 'an inside wall', col: '#b48ce0' }, garage: { name: "the garage's wall", col: '#c49a6c' },
+    shed:   { name: 'the shed', col: '#d4a052' },
+    floor:  { name: 'a floor', col: '#5d6680' }, ground: { name: 'the ground', col: '#3f5b44' },
+    ceiling: { name: 'a ceiling', col: '#46506e' }, roof: { name: 'a roof', col: '#6b5a4e' },
+    sofa: { name: 'the sofa', col: '#e08a6a' }, table: { name: 'a table', col: '#e6c27a' }, bed: { name: 'a bed', col: '#e38fb4' },
+    counter: { name: 'the counter', col: '#d8d0b0' }, car: { name: 'the car', col: '#d96e5b' },
+    tree1: { name: 'the oak', col: '#7fc48a' }, tree2: { name: 'the maple', col: '#5fae74' },
+    tree3: { name: 'the birch', col: '#a6d49a' }, tree4: { name: 'the pine', col: '#4f9a66' },
+};
+const ROOMS = [
+    { key: 'living', name: 'living room', r: [6, 8, 18, 16], z: 2.7 }, { key: 'kitchen', name: 'kitchen', r: [18, 8, 30, 14], z: 2.7 },
+    { key: 'bedroom', name: 'bedroom', r: [6, 16, 12, 22], z: 2.7 }, { key: 'bedroom2', name: 'bedroom', r: [12, 16, 18, 22], z: 2.7 },
+    { key: 'bath', name: 'bath', r: [18, 14, 22, 22], z: 2.7 }, { key: 'bedroom3', name: 'bedroom', r: [22, 14, 30, 22], z: 2.7 },
+    { key: 'garage', name: 'garage', r: [30, 8, 37, 15], z: 2.7 }, { key: 'shed', name: 'shed', r: [40, 25, 45, 29], z: 2.2 },
+];
+const SEG = [];                                                     // walls [x1, y1, x2, y2, thing], doors left open as gaps
+const wall = (x1, y1, x2, y2, t, gaps = []) => {
+    const L = Math.hypot(x2 - x1, y2 - y1), ux = (x2 - x1) / L, uy = (y2 - y1) / L; let s = 0;
+    for (const [a, b] of [...gaps].sort((p, q) => p[0] - q[0]).concat([[L, L]])) { if (a > s) SEG.push([x1 + ux * s, y1 + uy * s, x1 + ux * a, y1 + uy * a, t]); s = b; }
+};
+wall(0, 0, 48, 0, 'fence', [[20, 24]]); wall(48, 0, 48, 32, 'fence'); wall(48, 32, 0, 32, 'fence'); wall(0, 32, 0, 0, 'fence');
+wall(6, 8, 30, 8, 'house', [[4, 5]]); wall(30, 22, 6, 22, 'house'); wall(6, 22, 6, 8, 'house'); wall(30, 15, 30, 22, 'house');
+wall(30, 8, 30, 15, 'inner', [[2, 2.9]]);
+wall(30, 8, 37, 8, 'garage', [[1, 6]]); wall(37, 8, 37, 15, 'garage'); wall(37, 15, 30, 15, 'garage');
+wall(18, 8, 18, 16, 'inner', [[2.5, 3.4]]); wall(6, 16, 18, 16, 'inner', [[2, 2.9], [8, 8.9]]);
+wall(12, 16, 12, 22, 'inner'); wall(18, 14, 30, 14, 'inner', [[1, 1.9], [8, 8.9]]); wall(18, 16, 18, 22, 'inner'); wall(22, 14, 22, 22, 'inner');
+wall(40, 25, 45, 25, 'shed', [[2, 3]]); wall(45, 25, 45, 29, 'shed'); wall(45, 29, 40, 29, 'shed'); wall(40, 29, 40, 25, 'shed');
+// doors are open to the ceiling's height less 0.6 m: a lintel above each gap (so the room is closed above the door)
+const LINTEL = 2.1;
+const GAPS = [[6, 8, 30, 8, [[4, 5]], 'house'], [30, 8, 30, 15, [[2, 2.9]], 'inner'], [18, 8, 18, 16, [[2.5, 3.4]], 'inner'],
+    [6, 16, 18, 16, [[2, 2.9], [8, 8.9]], 'inner'], [18, 14, 30, 14, [[1, 1.9], [8, 8.9]], 'inner'], [40, 25, 45, 25, [[2, 3]], 'shed']];
+const LINTELS = [];                                                 // [x1, y1, x2, y2, thing, zFrom, zTo]
+for (const [x1, y1, x2, y2, gaps, t] of GAPS) { const L = Math.hypot(x2 - x1, y2 - y1), ux = (x2 - x1) / L, uy = (y2 - y1) / L;
+    for (const [a, b] of gaps) LINTELS.push([x1 + ux * a, y1 + uy * a, x1 + ux * b, y1 + uy * b, t, t === 'shed' ? 1.9 : LINTEL, HT[t]]); }
+const CEIL = [[6, 8, 30, 22, 2.7], [30, 8, 37, 15, 2.7], [40, 25, 45, 29, 2.2]];      // ceilings, the roofs above them
+const BOXES = [                                                     // furniture [x1, y1, z1, x2, y2, z2, thing]
+    [7, 13.6, 0, 10, 15.2, 0.85, 'sofa'], [12, 10, 0, 14, 11.4, 0.75, 'table'], [26.6, 8.2, 0, 29.8, 9, 0.9, 'counter'],
+    [22, 10, 0, 24.4, 11.2, 0.75, 'table'], [9.8, 16.2, 0, 11.8, 19.8, 0.55, 'bed'], [15.6, 18.2, 0, 17.6, 21.8, 0.55, 'bed'],
+    [26, 18, 0, 29.6, 20, 0.55, 'bed'], [31.2, 9.2, 0, 35.8, 13.4, 1.45, 'car']];
+const TREES = [[4, 27, 1.5, 'tree1'], [13, 28.5, 1.8, 'tree2'], [43, 4.5, 1.4, 'tree3'], [26, 27, 1.6, 'tree4']];  // crown radius
+const TRUNK = 0.22, TRUNK_H = 2.2;
+const SPOTS = { living: ['the living room', [10.5, 12]], kitchen: ['the kitchen', [21, 11.5]], bedroom: ['a bedroom', [10, 19.5]],
+    bath: ['the bath', [20, 18]], garage: ['the garage', [33.5, 14.3]], shed: ['the shed', [42.5, 27]],
+    garden: ['the front garden', [12, 4]], back: ['the back garden', [22, 28]] };
+const HOMES = {                                                     // a floor corner: h along one wall, v up, v₂ along the other
+    living: { at: [6, 8], h: [1, 0], v2: [0, 1], room: 'living', name: "the living room's corner" },
+    kitchen: { at: [30, 14], h: [-1, 0], v2: [0, -1], room: 'kitchen', name: "the kitchen's far corner" },
+    bedroom: { at: [6, 22], h: [1, 0], v2: [0, -1], room: 'bedroom', name: "a bedroom's corner" },
+    garage: { at: [37, 15], h: [-1, 0], v2: [0, -1], room: 'garage', name: "the garage's back corner" },
+    lot: { at: [0, 0], h: [1, 0], v2: [0, 1], room: null, name: "the lot's corner" },
+};
+// ── the world scaled by k, and the first thing a ray meets ──────────────────────────────────────────────────────────
+const inside = (x, y, r) => x >= r[0] && x <= r[2] && y >= r[1] && y <= r[3];
+const FOOT = [[6, 8, 30, 22], [30, 8, 37, 15], [40, 25, 45, 29]];
+function world(k) { return { k,
+    seg: SEG.map(s => [s[0] * k, s[1] * k, s[2] * k, s[3] * k, s[4], 0, HT[s[4]] * k]).concat(LINTELS.map(s => [s[0] * k, s[1] * k, s[2] * k, s[3] * k, s[4], s[5] * k, s[6] * k])),
+    ceil: CEIL.map(c => [c[0] * k, c[1] * k, c[2] * k, c[3] * k, c[4] * k]), foot: FOOT.map(f => f.map(x => x * k)),
+    box: BOXES.map(b => [...b.slice(0, 6).map(x => x * k), b[6]]),
+    trees: TREES.map(t => [t[0] * k, t[1] * k, t[2] * k, t[3], TRUNK * k, TRUNK_H * k]) }; }
+function cast(W, o, d) {                                            // nearest hit along the unit d from o: {s, what}
+    let best = Infinity, what = null; const eps = 1e-9 * W.k, [ox, oy, oz] = o, [dx, dy, dz] = d;
+    const take = (s, t) => { if (s > eps && s < best) { best = s; what = t; } };
+    for (const [x1, y1, x2, y2, t, z0, z1] of W.seg) {               // a wall: a vertical rectangle over its segment
+        const ex = x2 - x1, ey = y2 - y1, den = dx * ey - dy * ex; if (Math.abs(den) < 1e-15) continue;
+        const wx = x1 - ox, wy = y1 - oy, s = (wx * ey - wy * ex) / den, u = (wx * dy - wy * dx) / den;
+        if (u < 0 || u > 1 || !(s > eps && s < best)) continue; const z = oz + s * dz; if (z >= z0 && z <= z1) take(s, t); }
+    if (Math.abs(dz) > 1e-15) {
+        for (const [x1, y1, x2, y2, z] of W.ceil) { const s = (z - oz) / dz; if (s > eps && s < best && inside(ox + s * dx, oy + s * dy, [x1, y1, x2, y2])) take(s, dz > 0 ? 'ceiling' : 'roof'); }
+        if (dz < 0) { const s = -oz / dz, x = ox + s * dx, y = oy + s * dy; take(s, W.foot.some(f => inside(x, y, f)) ? 'floor' : 'ground'); }
+    }
+    for (const b of W.box) {                                        // a box, by its slabs
+        let t0 = -Infinity, t1 = Infinity;
+        for (let i = 0; i < 3; i++) { const oi = o[i], di = d[i], lo = b[i], hi = b[i + 3];
+            if (Math.abs(di) < 1e-15) { if (oi < lo || oi > hi) { t0 = Infinity; break; } continue; }
+            let a = (lo - oi) / di, c = (hi - oi) / di; if (a > c) [a, c] = [c, a]; t0 = Math.max(t0, a); t1 = Math.min(t1, c); }
+        if (t0 <= t1) take(t0, b[6]); }
+    for (const [cx, cy, r, t, tr, th] of W.trees) {
+        const fx = ox - cx, fy = oy - cy, A2 = dx * dx + dy * dy;      // the trunk: a vertical cylinder from the ground to th
+        if (A2 > 1e-15) { const B = fx * dx + fy * dy, C = fx * fx + fy * fy - tr * tr, D = B * B - A2 * C;
+            if (D >= 0) { const s = (-B - Math.sqrt(D)) / A2, z = oz + s * dz; if (z >= 0 && z <= th) take(s, t); } }
+        const cz = th + 0.7 * r, gz = oz - cz, b = fx * dx + fy * dy + gz * dz, c = fx * fx + fy * fy + gz * gz - r * r, D = b * b - c;   // the crown
+        if (D >= 0) take(-b - Math.sqrt(D), t); }
+    return { s: best, what };
+}
+// the payload reader: 2,048 given directions over the sphere (a Fibonacci lattice); a range arrives along each
+const NP = 2048, NG = 64, NA = NG * NG;
+const SPHERE = (() => { const out = [], ga = Math.PI * (3 - Math.sqrt(5));
+    for (let i = 0; i < NP; i++) { const z = 1 - (2 * i + 1) / NP, r = Math.sqrt(1 - z * z), p = i * ga; out.push([r * Math.cos(p), r * Math.sin(p), z]); } return out; })();
+function payload(k, at) { const W = world(k), o = [at[0] * k, at[1] * k, EYE * k], rays = SPHERE.map(u => { const h = cast(W, o, u); return { u, r: h.s, what: h.what }; });
+    const fin = rays.filter(x => isFinite(x.r)), gm = Math.exp(fin.reduce((s, x) => s + Math.log(x.r), 0) / Math.max(1, fin.length));
+    for (const x of rays) x.shape = x.r / gm;                       // the shell: each range over the geometric mean
+    return { rays, gm, a0: Math.log(gm), sky: rays.length - fin.length };
+}
+// the address reader: the octant swept uniformly, NG × NG cells of Lambert's map (even in azimuth ψ and in height)
+const GRID = (() => { const out = [];
+    for (let j = 0; j < NG; j++) for (let i = 0; i < NG; i++) { const psi = (i + 0.5) / NG * Math.PI / 2, v = (j + 0.5) / NG, c = Math.sqrt(1 - v * v);
+        out.push({ i, j, h: c * Math.cos(psi), v, v2: c * Math.sin(psi) }); } return out; })();
+const dirOf = (Hm, a) => [Hm.h[0] * a.h + Hm.v2[0] * a.v2, Hm.h[1] * a.h + Hm.v2[1] * a.v2, a.v];   // [h : v : v₂] into the world
+function originOf(Hm, k) { const e = 1e-6 * k; return [Hm.at[0] * k + (Hm.h[0] + Hm.v2[0]) * e, Hm.at[1] * k + (Hm.h[1] + Hm.v2[1]) * e, e]; }
+function addresses(k, home) { const W = world(k), Hm = HOMES[home], o = originOf(Hm, k);
+    return GRID.map(a => ({ i: a.i, j: a.j, h: a.h, v: a.v, v2: a.v2, what: cast(W, o, dirOf(Hm, a)).what }));   // no distance kept: none arrives
+}
+function counts(list) { const n = list.length, c = { vh: 0, v2h: 0, v2v: 0, near: 0, met: {} };
+    for (const a of list) { if (a.v <= a.h) c.vh++; if (a.v2 <= a.h) c.v2h++; if (a.v2 <= a.v) c.v2v++; if (a.v <= a.h && a.v2 <= a.h) c.near++; c.met[a.what] = (c.met[a.what] || 0) + 1; }
+    return { vh: c.vh / n, v2h: c.v2h / n, v2v: c.v2v / n, near: c.near / n, met: c.met }; }
+// the writer's account: every length an amount, in metres × k
+function writer(k) { return { lot: LOT.map(x => x * k), rooms: ROOMS.map(R => ({ key: R.key, name: R.name, w: (R.r[2] - R.r[0]) * k, d: (R.r[3] - R.r[1]) * k, z: R.z * k })),
+    trees: TREES.map(t => ({ what: t[3], across: 2 * t[2] * k, tall: (TRUNK_H + 1.7 * t[2]) * k })) }; }
+// ── write the room: one stride, two looks, every corner seen from both crossed; one amount (the stride) writes metres ──
+const CORNERS = (() => { const P = [], add = (x, y, z, t) => P.push([x, y, z, t]);
+    for (const [x1, y1, x2, y2, t] of SEG) for (const z of [0, HT[t]]) { add(x1, y1, z, t); add(x2, y2, z, t); }
+    for (const [x1, y1, x2, y2, t, z0] of LINTELS) { add(x1, y1, z0, t); add(x2, y2, z0, t); }
+    for (const b of BOXES) for (const x of [b[0], b[3]]) for (const y of [b[1], b[4]]) add(x, y, b[5], b[6]);   // a box's top corners
+    const seen = new Map(); for (const p of P) { const key = p.slice(0, 3).map(x => x.toFixed(4)).join(','); if (!seen.has(key)) seen.set(key, p); }
+    return [...seen.values()]; })();
+function strideOf(Hm, k) { const a = STRIDE_ANG * Math.PI / 180, ch = Math.cos(a), cs = Math.sin(a), o = originOf(Hm, k);
+    return [o[0] + STRIDE * k * (Hm.h[0] * ch + Hm.v2[0] * cs), o[1] + STRIDE * k * (Hm.h[1] * ch + Hm.v2[1] * cs), o[2]]; }
+const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]], dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2], nrm = a => Math.hypot(...a), unit = a => { const L = nrm(a); return a.map(x => x / L); };
+function seesIt(W, o, p) { const d = sub(p, o), L = nrm(d); if (L < 1e-6 * W.k) return false; const h = cast(W, o, d.map(x => x / L)); return h.s >= L * (1 - 1e-6); }
+function toFrame(Hm, d) { return [d[0] * Hm.h[0] + d[1] * Hm.h[1], d[2], d[0] * Hm.v2[0] + d[1] * Hm.v2[1]]; }   // world → (h, v, v₂)
+function writeFrom(k, home) {
+    const W = world(k), Hm = HOMES[home], A = originOf(Hm, k), B = strideOf(Hm, k), base = sub(B, A), step = nrm(base), out = [];
+    const ab = toFrame(Hm, base).map(x => x / step);                // the stride in the reader's frame, in strides: its known direction
+    for (const c of CORNERS) { const p = [c[0] * k, c[1] * k, c[2] * k], f = toFrame(Hm, sub(p, A));
+        if (f[0] < -1e-9 * k || f[2] < -1e-9 * k || Math.hypot(...f) < 0.05 * k) continue;        // only what the wedge faces
+        if (!seesIt(W, A, p) || !seesIt(W, B, p)) continue;
+        // the reader holds two directions in its own frame, and the stride's direction; the crossing is solved in strides
+        const a = unit(toFrame(Hm, sub(p, A))), b = unit(toFrame(Hm, sub(p, B)));
+        const w0 = ab.map(x => -x), aa = 1, bb = 1, abd = dot(a, b), d1 = dot(a, w0), e1 = dot(b, w0), den = aa * bb - abd * abd;
+        if (den < 1e-10) continue;                                  // on the stride's own line: no crossing
+        const s = (abd * e1 - bb * d1) / den, t = (aa * e1 - abd * d1) / den;
+        const pa = a.map(x => x * s), pb = b.map((x, i) => ab[i] + x * t), steps = pa.map((x, i) => (x + pb[i]) / 2);
+        const metres = steps.map(x => x * STRIDE * k);              // one amount carried in: the stride counted
+        const truth = f, err = Math.hypot(...metres.map((x, i) => x - truth[i])) / (k * Math.max(1, nrm(truth) / k));
+        out.push({ p: c.slice(0, 3), what: c[3], steps, metres, truth, err, gamma: Math.acos(Math.max(-1, Math.min(1, abd))) });
+    }
+    const R = Hm.room && ROOMS.find(r => r.key === Hm.room), inRoom = R ? out.filter(o => inside(o.p[0], o.p[1], R.r) && o.p[2] <= R.z + 1e-9) : out;
+    const ext = i => inRoom.length ? Math.max(...inRoom.map(o => o.metres[i])) - Math.min(0, ...inRoom.map(o => o.metres[i])) : 0;
+    return { A, B, stride: step, points: out, room: R ? R.name : 'the lot', written: [ext(0), ext(1), ext(2)], maxErr: Math.max(0, ...out.map(o => o.err)) };
+}
+
+// ── state, drawing ──────────────────────────────────────────────────────────────────────────────────────────────
+const q = new URLSearchParams(location.search);
+const S = { lk: 0, at: SPOTS.living[1].slice(), spot: 'living', home: 'living', write: false, roof: false, hover: null };
+if (q.has('k')) S.lk = Math.max(-2, Math.min(2, +q.get('k') || 0));
+if (SPOTS[q.get('at')]) { S.spot = q.get('at'); S.at = SPOTS[S.spot][1].slice(); }
+if (HOMES[q.get('home')]) S.home = q.get('home');
+if (q.get('write') === '1') S.write = true;
+const K = () => 10 ** S.lk;
+for (const [key, [name]] of Object.entries(SPOTS)) $('at').add(new Option(name, key));
+for (const [key, H] of Object.entries(HOMES)) $('home').add(new Option(H.name, key));
+const fmtM = x => x >= 1000 ? (x / 1000).toPrecision(3) + ' km' : x >= 1 ? x.toPrecision(3) + ' m' : x >= 0.01 ? (x * 100).toPrecision(3) + ' cm' : (x * 1000).toPrecision(3) + ' mm';
+const colOf = (t, alpha = 1) => { const c = (THINGS[t] || { col: '#333' }).col; if (alpha === 1) return c; const n = parseInt(c.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${alpha})`; };
+const nameOf = t => t ? THINGS[t].name : 'open sky';
+const lit = t => S.hover && S.hover === t;
+let P = null, A = null, C = null, WR = null, draw3d = null;
+function fit(cv) { const d = Math.min(2, devicePixelRatio || 1), w = cv.clientWidth || 500, h = cv.clientHeight || 450; if (cv.width !== Math.round(w * d)) { cv.width = Math.round(w * d); cv.height = Math.round(h * d); } const g = cv.getContext('2d'); g.setTransform(d, 0, 0, d, 0, 0); return [g, w, h]; }
+let triMap = null, mapMap = null;
+function drawTri() {
+    const [g, W, H] = fit($('tri')), pad = 26, side = Math.min(W - 2 * pad, (H - 2 * pad) / 0.866), x0 = (W - side) / 2, y0 = H - pad;
+    const vh = [x0, y0], vv = [x0 + side / 2, y0 - side * 0.866], v2 = [x0 + side, y0];
+    const pt = (a, b, c) => { const s = a + b + c; return [(a * vh[0] + b * vv[0] + c * v2[0]) / s, (a * vh[1] + b * vv[1] + c * v2[1]) / s]; };
+    triMap = { pt }; g.fillStyle = '#100e0b'; g.fillRect(0, 0, W, H);
+    g.strokeStyle = 'rgba(255,255,255,0.25)'; g.beginPath(); g.moveTo(...vh); g.lineTo(...vv); g.lineTo(...v2); g.closePath(); g.stroke();
+    const r = Math.max(1.2, side / 150);
+    for (const a of A) { const [x, y] = pt(a.h, a.v, a.v2); g.fillStyle = lit(a.what) ? '#ffffff' : colOf(a.what, a.what ? 1 : 0.25); g.fillRect(x - r, y - r, 2 * r, 2 * r); }
+    g.setLineDash([5, 4]); g.lineWidth = 1.4;                       // the medians: v = h, v₂ = h, v₂ = v
+    for (const [p, q2, c] of [[v2, pt(1, 1, 0), '#d4a052'], [vv, pt(1, 0, 1), '#e6e4ee'], [vh, pt(0, 1, 1), '#b59cf0']]) { g.strokeStyle = c; g.beginPath(); g.moveTo(...p); g.lineTo(...q2); g.stroke(); }
+    g.setLineDash([]); g.strokeStyle = 'rgba(140,230,205,0.9)'; g.beginPath(); g.moveTo(...vh); g.lineTo(...pt(1, 1, 0)); g.lineTo(...pt(1, 1, 1)); g.lineTo(...pt(1, 0, 1)); g.closePath(); g.stroke();
+    g.font = '12px "DM Mono", monospace'; g.fillStyle = '#c8c8d0'; g.fillText('h', vh[0] - 12, vh[1] + 4); g.fillText('v', vv[0] - 4, vv[1] - 6); g.fillText('v₂', v2[0] + 4, v2[1] + 4);
+    g.fillStyle = '#8ce6cd'; const nf = pt(4, 1, 1); g.fillText('near field', nf[0] - 20, nf[1] - 4);
+}
+function drawMap() {
+    const [g, W, H] = fit($('map')), pad = 22, sz = Math.min(W - 2 * pad, H - 2 * pad), x0 = (W - sz) / 2, y0 = (H - sz) / 2, c = sz / NG;
+    mapMap = { x0, y0, sz }; g.fillStyle = '#100e0b'; g.fillRect(0, 0, W, H);
+    for (const a of A) { g.fillStyle = lit(a.what) ? '#ffffff' : colOf(a.what, a.what ? 1 : 0.2); g.fillRect(x0 + a.i * c, y0 + sz - (a.j + 1) * c, c + 0.5, c + 0.5); }
+    const X = p => x0 + p / (Math.PI / 2) * sz, Y = s => y0 + sz - s * sz;
+    const curve = (f, col) => { g.strokeStyle = col; g.setLineDash([5, 4]); g.lineWidth = 1.4; g.beginPath(); for (let n = 0; n <= 64; n++) { const p = n / 64 * Math.PI / 2, ta = f(p), s = ta / Math.sqrt(1 + ta * ta); n ? g.lineTo(X(p), Y(s)) : g.moveTo(X(p), Y(s)); } g.stroke(); };
+    curve(p => Math.cos(p), '#d4a052'); curve(p => Math.sin(p), '#b59cf0');            // v = h: tan a = cos ψ; v₂ = v: tan a = sin ψ
+    g.strokeStyle = '#e6e4ee'; g.beginPath(); g.moveTo(X(Math.PI / 4), Y(0)); g.lineTo(X(Math.PI / 4), Y(1)); g.stroke(); g.setLineDash([]);
+    g.font = '11px "DM Mono", monospace'; g.fillStyle = '#c8c8d0'; g.fillText('h', x0 - 12, y0 + sz + 4); g.fillText('v₂', x0 + sz + 3, y0 + sz + 4); g.fillText('v', x0 - 12, y0 + 8);
+}
+function render() {
+    const k = K(); P = payload(k, S.at); A = addresses(k, S.home); C = counts(A); WR = S.write ? writeFrom(k, S.home) : null;
+    $('kv').textContent = 'k = ' + (k >= 1 ? k.toPrecision(3) : k.toFixed(k < 0.1 ? 4 : 3)); $('home').value = S.home; $('at').value = SPOTS[S.spot] ? S.spot : '';
+    $('write').classList.toggle('on', S.write); $('roof').classList.toggle('on', S.roof);
+    drawTri(); drawMap();
+    $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}, the rooms ${fmtM(2.7 * k)} high. The payload reader's ranges have geometric mean ` +
+        `${fmtM(P.gm)} in the writer's metres, a number it never receives. The address reader holds ${NA.toLocaleString('en')} directions: v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
+        `v₂ ≤ h ${(100 * C.v2h).toFixed(1)}%, v₂ ≤ v ${(100 * C.v2v).toFixed(1)}%, the near field ${(100 * C.near).toFixed(1)}%, at every k and in every room.`;
+    describe(); if (draw3d) draw3d();
+}
+function describe() {
+    const k = K(), w = writer(k), t = S.hover, R = HOMES[S.home].room && w.rooms.find(r => r.key === HOMES[S.home].room);
+    $('readW').textContent = (t ? `${nameOf(t)}. ` : '') + `The lot ${fmtM(w.lot[0])} × ${fmtM(w.lot[1])}; ` + (R ? `the ${R.name} ${fmtM(R.w)} × ${fmtM(R.d)} × ${fmtM(R.z)} high; ` : '') +
+        `the payload reader's eye ${fmtM(EYE * k)} up. Every one of these moves with k.` +
+        (WR ? `\nWritten from one stride (${fmtM(WR.stride)}): ${WR.points.length} corners placed, ${WR.room} ${fmtM(WR.written[0])} × ${fmtM(WR.written[2])} × ${fmtM(WR.written[1])} high, the largest error ${WR.maxErr.toExponential(1)} of a length.` : '');
+    const pr = t ? P.rays.filter(o => o.what === t) : [];
+    $('readP').textContent = t ? (pr.length ? `${nameOf(t)}: ${pr.length} of ${NP} directions, ${pr.map(o => o.shape).reduce((a, b) => Math.min(a, b)).toFixed(3)} to ${pr.map(o => o.shape).reduce((a, b) => Math.max(a, b)).toFixed(3)} of the mean` : `${nameOf(t)}: not met from here`)
+        : `In ${SPOTS[S.spot] ? SPOTS[S.spot][0] : 'the spot tapped'}: ${NP - P.sky} ranges, the shell from ${Math.min(...P.rays.map(o => o.shape)).toFixed(3)} to ${Math.max(...P.rays.filter(o => isFinite(o.r)).map(o => o.shape)).toFixed(3)} of their mean${P.sky ? `, ${P.sky} to open sky` : ''}; the mean itself (a₀) never arrives.`;
+    const met = Object.entries(C.met).sort((a, b) => b[1] - a[1]);
+    $('readA').textContent = t ? (C.met[t] ? `${nameOf(t)}: ${C.met[t]} of ${NA} addresses (${(100 * C.met[t] / NA).toFixed(1)}% of the wedge's directions, a share of the turn, not a size); how far, never` : `${nameOf(t)}: not seen from ${HOMES[S.home].name}`)
+        : `From ${HOMES[S.home].name}: ${met.length} things met. ` + met.slice(0, 6).map(([m, n]) => `${nameOf(m === 'null' ? null : m)} ${(100 * n / NA).toFixed(1)}%`).join(', ') + '.';
+    $('readM').textContent = `v ≤ h ${(100 * C.vh).toFixed(2)}%, v₂ ≤ h ${(100 * C.v2h).toFixed(2)}%, v₂ ≤ v ${(100 * C.v2v).toFixed(2)}%, near field ${(100 * C.near).toFixed(2)}% (a third is 33.33%): the grid's, whatever it met.` +
+        (WR ? `\nWrite: from home and one stride on, ${WR.points.length} corners seen from both; each two rays crossing, its place in strides (the stride's direction known, its length not); one stride counted writes them in metres.` : '');
+}
+// ── input ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+const hoverTo = t => { if (t !== S.hover) { S.hover = t; drawTri(); drawMap(); describe(); if (draw3d) draw3d(true); } };
+$('tri').addEventListener('pointermove', e => { const r = $('tri').getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top; let best = null, bd = 64;
+    for (const a of A) { const [px, py] = triMap.pt(a.h, a.v, a.v2), d = (px - x) ** 2 + (py - y) ** 2; if (d < bd) { bd = d; best = a; } } hoverTo(best ? best.what : null); });
+$('map').addEventListener('pointermove', e => { const r = $('map').getBoundingClientRect(), M = mapMap, i = Math.floor((e.clientX - r.left - M.x0) / M.sz * NG), j = Math.floor((M.y0 + M.sz - (e.clientY - r.top)) / M.sz * NG);
+    hoverTo(i >= 0 && i < NG && j >= 0 && j < NG ? A[j * NG + i].what : null); });
+for (const id of ['tri', 'map']) $(id).addEventListener('pointerleave', () => hoverTo(null));
+$('k').oninput = e => { S.lk = +e.target.value; render(); };
+$('at').onchange = e => { S.spot = e.target.value; S.at = SPOTS[S.spot][1].slice(); render(); };
+$('home').onchange = e => { S.home = e.target.value; render(); };
+$('write').onclick = () => { S.write = !S.write; render(); };
+$('roof').onclick = () => { S.roof = !S.roof; render(); };
+$('reset').onclick = () => { Object.assign(S, { lk: 0, spot: 'living', at: SPOTS.living[1].slice(), home: 'living', write: false }); $('k').value = 0; render(); };
+addEventListener('resize', () => { drawTri(); drawMap(); });
+$('k').value = S.lk; render();
+window.__blueprint3d = { THINGS, ROOMS, SEG, LINTELS, CEIL, BOXES, TREES, HOMES, SPOTS, GRID, SPHERE, CORNERS, world, cast, payload, addresses, counts, writer, writeFrom, strideOf,
+    standAt(x, y) { S.at = [x, y]; S.spot = ''; render(); },
+    set(o) { Object.assign(S, o); if (o.spot && SPOTS[o.spot]) S.at = SPOTS[o.spot][1].slice(); $('k').value = S.lk; render(); return this.state(); },
+    state: () => ({ lk: S.lk, k: K(), at: S.at.slice(), spot: S.spot, home: S.home, write: S.write, hover: S.hover, gm: P.gm, counts: C, written: WR && WR.written }),
+    last: () => ({ P, A, C, WR, S }), frames: 0, webgl: false };
+setTimeout(() => { if (!window.__blueprint3d.webgl) for (const id of ['nogl1', 'nogl2']) { $(id).style.display = 'block';
+    $(id).textContent = 'The 3D views need WebGL and three.js from cdn.jsdelivr.net; the address reader\'s views and the readouts still work.'; } }, 12000);
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+const B = window.__blueprint3d, cv = document.getElementById('scene'), cv2 = document.getElementById('shell');
+let r1, r2;
+try { r1 = new THREE.WebGLRenderer({ canvas: cv, antialias: true }); r2 = new THREE.WebGLRenderer({ canvas: cv2, antialias: true }); } catch (e) { r1 = r2 = null; }
+if (r1 && r2) {
+    for (const r of [r1, r2]) r.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+    // ── the writer's model, at k = 1 (scaling the world is not seen: only the numbers on it change) ──
+    const scene = new THREE.Scene(); scene.background = new THREE.Color(0x0a0d18);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.55)); const sun = new THREE.DirectionalLight(0xffffff, 0.9); sun.position.set(-20, -30, 50); scene.add(sun);
+    const cam = new THREE.PerspectiveCamera(42, 4 / 3, 0.1, 600); cam.up.set(0, 0, 1); cam.position.set(4, -22, 34);
+    const ctl = new OrbitControls(cam, cv); ctl.target.set(20, 14, 0); ctl.enableDamping = true; ctl.update();
+    const MAT = {}, mat = t => MAT[t] || (MAT[t] = new THREE.MeshLambertMaterial({ color: B.THINGS[t].col }));
+    const meshes = [], add = (geo, t, pos, opts = {}) => { const m = new THREE.Mesh(geo, opts.mat || mat(t)); m.position.set(...pos); if (opts.rot) m.rotation.z = opts.rot; m.userData.what = t; scene.add(m); meshes.push(m); return m; };
+    const ground = add(new THREE.PlaneGeometry(56, 40), 'ground', [24, 16, -0.01]);
+    for (const f of [[6, 8, 30, 22], [30, 8, 37, 15], [40, 25, 45, 29]]) add(new THREE.PlaneGeometry(f[2] - f[0], f[3] - f[1]), 'floor', [(f[0] + f[2]) / 2, (f[1] + f[3]) / 2, 0.005]);
+    const slab = (x1, y1, x2, y2, t, z0, z1, th) => { const L = Math.hypot(x2 - x1, y2 - y1); add(new THREE.BoxGeometry(L, th, z1 - z0), t, [(x1 + x2) / 2, (y1 + y2) / 2, (z0 + z1) / 2], { rot: Math.atan2(y2 - y1, x2 - x1) }); };
+    const TH = { fence: 0.06, house: 0.2, inner: 0.1, garage: 0.16, shed: 0.12 };
+    for (const [x1, y1, x2, y2, t] of B.SEG) slab(x1, y1, x2, y2, t, 0, { house: 2.7, inner: 2.7, garage: 2.7, shed: 2.2, fence: 1.2 }[t], TH[t]);
+    for (const [x1, y1, x2, y2, t, z0, z1] of B.LINTELS) slab(x1, y1, x2, y2, t, z0, z1, TH[t]);
+    for (const b of B.BOXES) add(new THREE.BoxGeometry(b[3] - b[0], b[4] - b[1], b[5] - b[2]), b[6], [(b[0] + b[3]) / 2, (b[1] + b[4]) / 2, (b[2] + b[5]) / 2]);
+    for (const [cx, cy, r, t] of B.TREES) { const tr = add(new THREE.CylinderGeometry(0.22, 0.22, 2.2, 12), t, [cx, cy, 1.1]); tr.rotation.x = Math.PI / 2;
+        add(new THREE.SphereGeometry(r, 20, 14), t, [cx, cy, 2.2 + 0.7 * r]); }
+    const roofMat = new THREE.MeshLambertMaterial({ color: B.THINGS.roof.col, transparent: true, opacity: 0.55, side: THREE.DoubleSide }), roofs = [];
+    for (const c of B.CEIL) { const m = add(new THREE.PlaneGeometry(c[2] - c[0], c[3] - c[1]), 'roof', [(c[0] + c[2]) / 2, (c[1] + c[3]) / 2, c[4]], { mat: roofMat }); roofs.push(m); }
+    // labels: each room's three lengths, the lot's, the scale bar (sprites redrawn when k changes)
+    const sprite = (scale) => { const c = document.createElement('canvas'); c.width = 768; c.height = 96; const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(c), transparent: true, depthTest: false }));
+        s.scale.set(scale * 8, scale, 1); s.renderOrder = 5; scene.add(s); s.userData.c = c; return s; };
+    const write = (s, txt, col = '#dbe6ff') => { const c = s.userData.c, g = c.getContext('2d'); g.clearRect(0, 0, 768, 96); g.font = '44px DM Mono, monospace'; g.textAlign = 'center';
+        g.fillStyle = 'rgba(10,13,24,0.6)'; const w = Math.min(768, g.measureText(txt).width + 24); g.fillRect(384 - w / 2, 18, w, 60); g.fillStyle = col; g.fillText(txt, 384, 64); s.material.map.needsUpdate = true; };
+    const roomLab = B.ROOMS.map(R => { const s = sprite(0.9); s.position.set((R.r[0] + R.r[2]) / 2, (R.r[1] + R.r[3]) / 2, R.z + 0.6); return s; });
+    const lotLab = sprite(1.3); lotLab.position.set(24, -2.2, 0.3); const lotLab2 = sprite(1.3); lotLab2.position.set(50.5, 16, 0.3);
+    const barLab = sprite(1); barLab.position.set(41, 1.8, 0.4);
+    const barGeo = new THREE.BufferGeometry(), bar = new THREE.Line(barGeo, new THREE.LineBasicMaterial({ color: 0xe6e4ee })); scene.add(bar);
+    let lastK = null, lastFocus = null;
+    const unitOf = k => { const L = 48 * k; return L >= 2000 ? [1e-3, 'km'] : L >= 2 ? [1, 'm'] : L >= 0.02 ? [100, 'cm'] : [1000, 'mm']; };
+    const num = (x, f) => { const v = x * f; return v >= 100 ? v.toFixed(0) : v >= 10 ? v.toFixed(1).replace(/\.0$/, '') : v.toPrecision(2).replace(/\.0$/, ''); };
+    const relabel = k => { const [f, u] = unitOf(k);
+        B.ROOMS.forEach((R, i) => write(roomLab[i], `${R.name} ${num((R.r[2] - R.r[0]) * k, f)}×${num((R.r[3] - R.r[1]) * k, f)}×${num(R.z * k, f)} ${u}`));
+        write(lotLab, `${num(48 * k, f)} ${u}`, '#9fc3ff'); write(lotLab2, `${num(32 * k, f)} ${u}`, '#9fc3ff');
+        const nice = x => { const e = 10 ** Math.floor(Math.log10(x)), m = x / e; return (m >= 5 ? 5 : m >= 2 ? 2 : 1) * e; }, len = nice(5 * k) / k;
+        barGeo.setFromPoints([new THREE.Vector3(38, 1, 0.05), new THREE.Vector3(38 + len, 1, 0.05)]); barLab.position.set(38 + len / 2, 1.8, 0.4);
+        const t = len * k; write(barLab, t >= 1000 ? `${t / 1000} km` : t >= 1 ? `${t} m` : t >= 0.01 ? `${+(t * 100).toPrecision(3)} cm` : `${+(t * 1000).toPrecision(3)} mm`, '#e6e4ee'); };
+    // the readers in the model: the payload reader (teal) with a few of its rays; the address reader's corner and three walls (gold); the stride and the crossings
+    const ball = (r, col) => { const m = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), new THREE.MeshBasicMaterial({ color: col })); scene.add(m); return m; };
+    const payBall = ball(0.28, 0x8ce6cd), homeBall = ball(0.22, 0xd4a052), strideBall = ball(0.2, 0xffd890);
+    const segs = (col, op) => { const g = new THREE.BufferGeometry(), l = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: op, vertexColors: col == null })); l.frustumCulled = false; scene.add(l); return l; };
+    const payRays = segs(0x8ce6cd, 0.13), axes = segs(0xd4a052, 0.95), crossA = segs(0xd4a052, 0.55), crossB = segs(0xffd890, 0.55);
+    const ptsGeo = new THREE.BufferGeometry(), pts = new THREE.Points(ptsGeo, new THREE.PointsMaterial({ color: 0x8ce6cd, size: 0.28 })); pts.frustumCulled = false; scene.add(pts);
+    // ── the payload reader's shell ──
+    const scene2 = new THREE.Scene(); scene2.background = new THREE.Color(0x0b0f14);
+    const cam2 = new THREE.PerspectiveCamera(40, 1 / 0.9, 0.05, 50); cam2.up.set(0, 0, 1); cam2.position.set(3.4, -4.6, 2.8);
+    const ctl2 = new OrbitControls(cam2, cv2); ctl2.enableDamping = true; ctl2.update();
+    const unitS = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.SphereGeometry(1, 24, 12)), new THREE.LineBasicMaterial({ color: 0x8ce6cd, transparent: true, opacity: 0.12 })); scene2.add(unitS);
+    const ax2 = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints([[0, 0, 0], [2.4, 0, 0], [0, 0, 0], [0, 2.4, 0], [0, 0, 0], [0, 0, 2.4]].map(p => new THREE.Vector3(...p))), new THREE.LineBasicMaterial({ color: 0x8a8a96, transparent: true, opacity: 0.5 })); scene2.add(ax2);
+    const shGeo = new THREE.BufferGeometry(), shell = new THREE.Points(shGeo, new THREE.PointsMaterial({ vertexColors: true, size: 0.09 })); scene2.add(shell);
+    scene2.add(new THREE.Mesh(new THREE.SphereGeometry(0.05, 12, 8), new THREE.MeshBasicMaterial({ color: 0x8ce6cd })));
+    const rgb = (t, f = 1) => { const c = new THREE.Color(t ? B.THINGS[t].col : '#2a2f3c'); return [c.r * f, c.g * f, c.b * f]; };
+    const CLIP = 2.2;
+    function shellColours() { const L = B.last(), col = new Float32Array(3 * L.P.rays.length);
+        L.P.rays.forEach((o, i) => col.set(L.S.hover && o.what === L.S.hover ? [1, 1, 1] : rgb(o.what, isFinite(o.r) ? 1 : 0.6), 3 * i)); shGeo.setAttribute('color', new THREE.BufferAttribute(col, 3)); }
+    function draw(hoverOnly) {
+        const L = B.last(), k = 10 ** L.S.lk, S = L.S;
+        for (const [t, m] of Object.entries(MAT)) m.emissive.set(S.hover === t ? 0x777777 : 0x000000);
+        shellColours(); if (hoverOnly) return;
+        if (k !== lastK) { relabel(k); lastK = k; }
+        const focus = S.home + (S.write ? '+w' : '');
+        if (focus !== lastFocus) { if (lastFocus !== null || S.write) { const R = B.ROOMS.find(r => r.key === B.HOMES[S.home].room), c = R ? [(R.r[0] + R.r[2]) / 2, (R.r[1] + R.r[3]) / 2] : [20, 14], sz = R ? Math.max(R.r[2] - R.r[0], R.r[3] - R.r[1]) : 40;
+            const off = cam.position.clone().sub(ctl.target).normalize().multiplyScalar(sz * 1.9 + 4); ctl.target.set(c[0], c[1], 0.8); cam.position.copy(ctl.target).add(off); ctl.update(); } lastFocus = focus; }
+        for (const r of roofs) r.visible = S.roof;
+        payBall.position.set(S.at[0], S.at[1], 1.6);
+        const pr = []; L.P.rays.forEach((o, i) => { if (i % 6) return; const d = Math.min(isFinite(o.r) ? o.r / k : 60, 60); pr.push(S.at[0], S.at[1], 1.6, S.at[0] + o.u[0] * d, S.at[1] + o.u[1] * d, 1.6 + o.u[2] * d); });
+        payRays.geometry.setAttribute('position', new THREE.Float32BufferAttribute(pr, 3));
+        const Hm = B.HOMES[S.home], h0 = [Hm.at[0], Hm.at[1], 0.02]; homeBall.position.set(...h0);
+        axes.geometry.setAttribute('position', new THREE.Float32BufferAttribute([...h0, h0[0] + 2.5 * Hm.h[0], h0[1] + 2.5 * Hm.h[1], 0.02, ...h0, h0[0], h0[1], 2.5, ...h0, h0[0] + 2.5 * Hm.v2[0], h0[1] + 2.5 * Hm.v2[1], 0.02], 3));
+        const W = L.WR; strideBall.visible = crossA.visible = crossB.visible = pts.visible = !!W;
+        if (W) { const b = W.B.map(x => x / k); strideBall.position.set(b[0], b[1], 0.02);
+            const pa = [], pb = [], pp = []; for (const o of W.points) { pa.push(...h0, ...o.p); pb.push(b[0], b[1], 0.02, ...o.p);
+                const m = o.metres, w = [Hm.at[0] + (m[0] * Hm.h[0] + m[2] * Hm.v2[0]) / k, Hm.at[1] + (m[0] * Hm.h[1] + m[2] * Hm.v2[1]) / k, m[1] / k]; pp.push(...w); }   // where the written metres put it
+            crossA.geometry.setAttribute('position', new THREE.Float32BufferAttribute(pa, 3)); crossB.geometry.setAttribute('position', new THREE.Float32BufferAttribute(pb, 3));
+            ptsGeo.setAttribute('position', new THREE.Float32BufferAttribute(pp, 3)); }
+        const sp = new Float32Array(3 * L.P.rays.length); L.P.rays.forEach((o, i) => { const r = isFinite(o.r) ? Math.min(CLIP, o.shape) : CLIP; sp.set(o.u.map(x => x * r), 3 * i); });
+        shGeo.setAttribute('position', new THREE.BufferAttribute(sp, 3)); shellColours(); shGeo.computeBoundingSphere();
+    }
+    // hover and tap: what the pointer is on, in the model and on the shell
+    const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(); ray.params.Points.threshold = 0.06;
+    const pick = (e, c, camera, list) => { const r = c.getBoundingClientRect(); ndc.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1); ray.setFromCamera(ndc, camera); return ray.intersectObjects(list, false)[0]; };
+    const hover = t => { const L = B.last(); if (L.S.hover !== t) { L.S.hover = t; window.dispatchEvent(new CustomEvent('bp3-hover', { detail: t })); } };
+    cv.addEventListener('pointermove', e => { const h = pick(e, cv, cam, meshes.filter(m => m.visible)); hover(h ? h.object.userData.what : null); });
+    cv2.addEventListener('pointermove', e => { const h = pick(e, cv2, cam2, [shell]); hover(h ? B.last().P.rays[h.index].what : null); });
+    for (const c of [cv, cv2]) c.addEventListener('pointerleave', () => hover(null));
+    let down = null; cv.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY]; });
+    cv.addEventListener('pointerup', e => { if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 5) return; down = null;     // a tap, not a turn: stand on the floor tapped
+        const h = pick(e, cv, cam, meshes.filter(m => m.visible && (m.userData.what === 'floor' || m.userData.what === 'ground')));
+        if (h && h.point.x > 0.2 && h.point.x < 47.8 && h.point.y > 0.2 && h.point.y < 31.8) B.standAt(h.point.x, h.point.y); });
+    const size = (r, c, camera, asp) => { const w = c.clientWidth || 600, h = Math.round(w / asp); if (c.width !== Math.round(w * r.getPixelRatio())) { r.setSize(w, h, false); camera.aspect = asp; camera.updateProjectionMatrix(); } };
+    const loop = () => { size(r1, cv, cam, 4 / 3); size(r2, cv2, cam2, 1 / 0.9); ctl.update(); ctl2.update(); r1.render(scene, cam); r2.render(scene2, cam2); B.frames++; requestAnimationFrame(loop); };
+    B.webgl = true; B.draw = draw; loop();
+    window.dispatchEvent(new Event('scene-ready'));
+}
+</script>
+<script>
+// the plain script renders before three.js arrives; once the scenes are ready they draw every later reading too
+window.addEventListener('scene-ready', () => { draw3d = hoverOnly => window.__blueprint3d.draw(hoverOnly); render(); });
+window.addEventListener('bp3-hover', () => { drawTri(); drawMap(); describe(); if (draw3d) draw3d(true); });
+</script>
+</body>
+</html>
