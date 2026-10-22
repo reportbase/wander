@@ -502,7 +502,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Hover links the model, the shell, the triangle and the map. Scale the world moves the writer's numbers and the ranges
   by k, the shell, the addresses and the places in strides not at all.
   `?k=<log10 k>&at=living|kitchen|bedroom|bath|garage|shed|garden|back&home=living|kitchen|bedroom|garage|lot&write=1`;
-  hook `window.__blueprint3d` (`world`, `cast`, `payload`, `addresses`, `counts`, `writer`, `wedgeHorizon`, `writeFrom`, `strideOf`,
+  hook `window.__blueprint3d` (`world`, `cast`, `payload`, `addresses`, `counts`, `writer`, `writerBox`, `wedgeHorizon`, `writeFrom`, `strideOf`,
   `standAt`, `HOMES`, `SPOTS`, `GRID`, `SPHERE`, `CORNERS`, `set`, `state`, `last`, `frames`, `webgl`). Not in the flying page.
   Since R426 (22 Oct; Tom: "the problem is that cauchy is passive, and furniture does not send signals."; "so the reader in
   these demos is a sphere"; "yes, they should.     the writer then is the sphere around the entire system."): on both
@@ -719,6 +719,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   amount to the writer) is unknowable to the reader; what reaches it is the directions, the nearer thing on a line painting
   first. "Unknowably large" is the reader's side; to the writer the radius is an amount. On `blueprint-3d.html` the corner
   reader's wedge is drawn out to the writer's sphere (gold), hook `wedgeHorizon(home, k)`.
+  **The writer is a box: the number line on each axis** (22 Oct, SPN R445; Tom: "the writer's vantage is 3 dimensional
+  and can see the front and back of everything. that sounds like the writer is a cube actually."; "so the writer is the
+  number line. each dimension is just once instance of the number line."; "yes"): supersedes "the writer's sphere" of
+  R426, R443 and R444 (the entries above describe the text before). Holding both hemispheres is holding both signs of
+  every axis; each axis one copy of the writer's number line, so the frame is their product, a box (Descartes'), each
+  extent an amount, the unit cube in unit relations; nothing round (roundness the equal turn from a centre, a reader's);
+  its faces orthographic views from no standpoint (the glass box of technical drawing, a blueprint one face). The writer
+  holds D numbers a point, the reader D − 1 (a direction); the one between is the size, §3.8's one number. The readers
+  stand inside the box and their wedges reach its faces in the far field. OFS §3.7 rewritten; `blueprint-3d.html` draws
+  the box (`writerBox(k)`, 48 × 32 × 5.26 m × k) and the wedge out to its faces; `blueprint.html`'s circle left as it was.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -2266,7 +2276,8 @@ In short:
   50. **blueprint-3d.html:** the world scaled by 1/100, 7 and 100 moves the payload reader's 2,048 ranges by k and not its
       shell; every address the same at every k from five homes, v ≤ h and v₂ ≤ v within 0.01 of ½, v₂ ≤ h exactly ½, the
       near field within 0.01 of ⅓; one counted stride writes the living room 12 × 8 × 2.7 m, the kitchen 12 × 6 × 2.7 m and
-      the garage 7 × 7 × 2.7 m to 10⁻⁹, in strides unmoved by k; the writer's sphere 28.8 m × k; WebGL drew frames.
+      the garage 7 × 7 × 2.7 m to 10⁻⁹, in strides unmoved by k; the writer's box 48 × 32 × 5.26 m × k (R445; the
+      writer's sphere, 28.8 m × k, until then), every corner reader's wedge reaching its faces; WebGL drew frames.
 
   51. **ground.html:** on level ground every thing's (tan E + tan F)/tan F its V*/H and 1/tan F its d/H to rounding; one eye
       height tall at the corner, its top on the horizon; scaling the world by 1/100, 7 and 100 moves no reading, the metres by
