@@ -1442,12 +1442,13 @@ try {
     o.write = ['living', 'kitchen', 'garage'].map(h => { const w = ks.map(k => B.writeFrom(k, h));
       return { h, n: w[1].points.length, room: w[1].written.map(x => +x.toFixed(4)), err: Math.max(...w.map(x => x.maxErr)),
         steps: Math.max(0, ...w.map(x => Math.max(0, ...x.points.map((p, i) => Math.hypot(...p.steps.map((z, j) => z - w[1].points[i].steps[j])))))) }; });
+    o.ws = ks.map(k => B.writerSphere(k).r / k);
     o.frames = B.frames; o.webgl = B.webgl; return o; });
   const rooms3 = { living: [12, 2.7, 8], kitchen: [12, 2.7, 6], garage: [7, 2.7, 7] };
   if (!(b3.shape < 1e-12) || !(b3.radii < 1e-12) || b3.homes.some(c => !c.same || Math.abs(c.vh - 0.5) > 0.01 || c.v2h !== 0.5 || Math.abs(c.v2v - 0.5) > 0.01 || Math.abs(c.near - 1 / 3) > 0.01 || c.met < 3) ||
-    b3.write.some(w => w.n < 6 || !(w.err < 1e-9) || !(w.steps < 1e-9) || w.room.some((x, i) => Math.abs(x - rooms3[w.h][i]) > 1e-4)) || !(b3.frames > 0) || !b3.webgl)
+    b3.write.some(w => w.n < 6 || !(w.err < 1e-9) || !(w.steps < 1e-9) || w.room.some((x, i) => Math.abs(x - rooms3[w.h][i]) > 1e-4)) || b3.ws.some(r => Math.abs(r - Math.hypot(24, 16)) > 1e-9) || !(b3.frames > 0) || !b3.webgl)
     failures.push(`[${current}] ${JSON.stringify(b3)}`);
-  console.log(`${failures.length === before50 ? 'ok  ' : 'FAIL'} ${current} (the world scaled by 1/100, 7 and 100: the payload reader's 2,048 ranges by k (${b3.radii.toExponential(0)}), its shell unmoved (${b3.shape.toExponential(0)}); every address the same at every k from five homes, v ≤ h ${b3.homes[0].vh.toFixed(3)}, v₂ ≤ h ½, v₂ ≤ v ${b3.homes[0].v2v.toFixed(3)}, the near field ${b3.homes[0].near.toFixed(4)}; one counted stride writes ${b3.write.map(w => `the ${w.h} ${w.room[0]} × ${w.room[2]} × ${w.room[1]} m (${w.n} corners)`).join(', ')}, to ${Math.max(...b3.write.map(w => w.err)).toExponential(0)}, in strides unmoved by k; WebGL drew ${b3.frames} frames)`);
+  console.log(`${failures.length === before50 ? 'ok  ' : 'FAIL'} ${current} (the world scaled by 1/100, 7 and 100: the payload reader's 2,048 ranges by k (${b3.radii.toExponential(0)}), its shell unmoved (${b3.shape.toExponential(0)}); every address the same at every k from five homes, v ≤ h ${b3.homes[0].vh.toFixed(3)}, v₂ ≤ h ½, v₂ ≤ v ${b3.homes[0].v2v.toFixed(3)}, the near field ${b3.homes[0].near.toFixed(4)}; one counted stride writes ${b3.write.map(w => `the ${w.h} ${w.room[0]} × ${w.room[2]} × ${w.room[1]} m (${w.n} corners)`).join(', ')}, to ${Math.max(...b3.write.map(w => w.err)).toExponential(0)}, in strides unmoved by k; the writer's sphere round the whole 28.8 m × k; WebGL drew ${b3.frames} frames)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
