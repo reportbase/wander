@@ -33,9 +33,9 @@ NORM_A = {}
 def w_pow(a):           # w_a ∝ sin^a(2θ), normalised to mean 1 on the quadrant
     a = mpf(a)
     if a not in NORM_A:
-        NORM_A[a] = (pi / 2) / Q(lambda t: sin(2 * t) ** a, [0, Q4, pi / 2])
+        NORM_A[a] = (pi / 2) / Q(lambda t: abs(sin(2 * t)) ** a, [0, Q4, pi / 2])
     c = NORM_A[a]
-    return lambda th: c * sin(2 * fold(th)) ** a if a != 0 else mpf(1)
+    return lambda th: c * abs(sin(2 * fold(th))) ** a if a != 0 else mpf(1)   # (abs: rounding left sin(2θ) a hair below 0 at an end, and a negative a then gave a complex power; the first launch crashed there, before any P2 value)
 def w_unif(th): return mpf(1)
 
 def E(f, w, extra=()):  # mean over the quadrant under w
