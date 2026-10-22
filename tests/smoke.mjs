@@ -1411,11 +1411,43 @@ try {
     o.east = B.cast(B.world(1), 12, 12, 1, 0);
     o.open = pays.every(p => p.rays.every(r => isFinite(r.r) && r.what)) && Object.keys(B.HOMES).every(h => B.addresses(1, h).every(x => x.what));
     o.met = new Set(B.addresses(1, 'lot').map(x => x.what)).size;
+    o.write = Object.keys(B.HOMES).map(h => { const w = ks.map(k => B.writeFrom(k, h));
+      return { n: w[1].points.length, err: Math.max(...w.map(x => x.maxErr)), steps: Math.max(0, ...w.map(x => Math.max(0, ...x.points.map((p, i) => Math.hypot(p.steps[0] - w[1].points[i].steps[0], p.steps[1] - w[1].points[i].steps[1]))))),
+        same: w.every(x => x.points.length === w[1].points.length) }; });
     return o; });
   if (!(bp.shape < 1e-12) || !(bp.radii < 1e-12) || !bp.addr || bp.half.some(n => n !== 128) || bp.writer.some(x => Math.abs(x - 48) > 1e-9) ||
-    Math.abs(bp.east.d - 6) > 1e-12 || bp.east.what !== 'inner' || !bp.open || bp.met < 4)
+    Math.abs(bp.east.d - 6) > 1e-12 || bp.east.what !== 'inner' || !bp.open || bp.met < 4 ||
+    bp.write.some(w => w.n < 4 || !(w.err < 1e-9) || !(w.steps < 1e-9) || !w.same))
     failures.push(`[${current}] ${JSON.stringify(bp)}`);
-  console.log(`${failures.length === before49 ? 'ok  ' : 'FAIL'} ${current} (the world scaled by 1/100, 7 and 100: the writer's lot 48 m × k, the payload reader's ranges by k (${bp.radii.toExponential(0)}) and its shape unmoved (${bp.shape.toExponential(0)}), no address moved; 128 of 256 addresses below v = h from every home; the kitchen wall 6 m east of the living room's middle; ${bp.met} things met from the lot's corner)`);
+  console.log(`${failures.length === before49 ? 'ok  ' : 'FAIL'} ${current} (the world scaled by 1/100, 7 and 100: the writer's lot 48 m × k, the payload reader's ranges by k (${bp.radii.toExponential(0)}) and its shape unmoved (${bp.shape.toExponential(0)}), no address moved; 128 of 256 addresses below v = h from every home; the kitchen wall 6 m east of the living room's middle; ${bp.met} things met from the lot's corner; one counted stride writes ${bp.write.map(w => w.n).join(', ')} corners from the four homes in metres to ${Math.max(...bp.write.map(w => w.err)).toExponential(0)}, their places in strides unmoved by k)`);
+
+  // ── 50. blueprint-3d.html: the same in 3D (SPN R425): the payload reader's shell unmoved by k and its ranges by k; every
+  //    address the same at every k, and the grid's counts (v ≤ h, v₂ ≤ h, v₂ ≤ v a half, the near field a third) from every
+  //    home; one counted stride writing each room, in strides unmoved by k; WebGL drew frames ──
+  current = 'blueprint-3d.html';
+  const before50 = failures.length;
+  await page.route(/^https:\/\/cdn\.jsdelivr\.net\/npm\/three@0\.160\.0\//, async route => {
+    const rel = new URL(route.request().url()).pathname.replace('/npm/three@0.160.0/', '');
+    try { await route.fulfill({ status: 200, contentType: 'text/javascript', body: await readFile(join(ROOT, 'node_modules/three', rel)) }); }
+    catch { await route.continue(); }
+  });
+  await page.goto(new URL('blueprint-3d.html?write=1', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__blueprint3d && __blueprint3d.frames > 2, null, { timeout: 30000 }).catch(() => {});
+  const b3 = await page.evaluate(() => { const B = __blueprint3d, o = {}, ks = [0.01, 1, 7, 100];
+    const pays = ks.map(k => B.payload(k, B.SPOTS.living[1]));
+    o.shape = Math.max(...pays.map(p => Math.max(0, ...p.rays.map((r, i) => isFinite(r.r) ? Math.abs(r.shape - pays[1].rays[i].shape) / pays[1].rays[i].shape : 0))));
+    o.radii = Math.max(...pays.map((p, j) => Math.max(0, ...p.rays.map((r, i) => isFinite(r.r) ? Math.abs(r.r / ks[j] - pays[1].rays[i].r) / pays[1].rays[i].r : 0))));
+    o.homes = Object.keys(B.HOMES).map(h => { const a = [1, 100, 0.01].map(k => B.addresses(k, h)), c = B.counts(a[0]);
+      return { h, same: a.every(x => x.every((y, i) => y.what === a[0][i].what)), vh: c.vh, v2h: c.v2h, v2v: c.v2v, near: c.near, met: Object.keys(c.met).length }; });
+    o.write = ['living', 'kitchen', 'garage'].map(h => { const w = ks.map(k => B.writeFrom(k, h));
+      return { h, n: w[1].points.length, room: w[1].written.map(x => +x.toFixed(4)), err: Math.max(...w.map(x => x.maxErr)),
+        steps: Math.max(0, ...w.map(x => Math.max(0, ...x.points.map((p, i) => Math.hypot(...p.steps.map((z, j) => z - w[1].points[i].steps[j])))))) }; });
+    o.frames = B.frames; o.webgl = B.webgl; return o; });
+  const rooms3 = { living: [12, 2.7, 8], kitchen: [12, 2.7, 6], garage: [7, 2.7, 7] };
+  if (!(b3.shape < 1e-12) || !(b3.radii < 1e-12) || b3.homes.some(c => !c.same || Math.abs(c.vh - 0.5) > 0.01 || c.v2h !== 0.5 || Math.abs(c.v2v - 0.5) > 0.01 || Math.abs(c.near - 1 / 3) > 0.01 || c.met < 3) ||
+    b3.write.some(w => w.n < 6 || !(w.err < 1e-9) || !(w.steps < 1e-9) || w.room.some((x, i) => Math.abs(x - rooms3[w.h][i]) > 1e-4)) || !(b3.frames > 0) || !b3.webgl)
+    failures.push(`[${current}] ${JSON.stringify(b3)}`);
+  console.log(`${failures.length === before50 ? 'ok  ' : 'FAIL'} ${current} (the world scaled by 1/100, 7 and 100: the payload reader's 2,048 ranges by k (${b3.radii.toExponential(0)}), its shell unmoved (${b3.shape.toExponential(0)}); every address the same at every k from five homes, v ≤ h ${b3.homes[0].vh.toFixed(3)}, v₂ ≤ h ½, v₂ ≤ v ${b3.homes[0].v2v.toFixed(3)}, the near field ${b3.homes[0].near.toFixed(4)}; one counted stride writes ${b3.write.map(w => `the ${w.h} ${w.room[0]} × ${w.room[2]} × ${w.room[1]} m (${w.n} corners)`).join(', ')}, to ${Math.max(...b3.write.map(w => w.err)).toExponential(0)}, in strides unmoved by k; WebGL drew ${b3.frames} frames)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
