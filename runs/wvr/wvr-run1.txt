@@ -1,0 +1,76 @@
+== P1: the weak value is a relative address; its Cauchy's point is the Bloch point ==
+identity A_w = n_z - V tan(tf - ti), worst over 30: 8.55e-50
+  ti=0.1 n_z=0.980067 V=0.198669  CDF at Cauchy quantiles ['0.1', '0.25', '0.5', '0.75', '0.9']  superweak 0.5
+  ti=0.3 n_z=0.825336 V=0.564642  CDF at Cauchy quantiles ['0.1', '0.25', '0.5', '0.75', '0.9']  superweak 0.5
+  ti=0.5 n_z=0.540302 V=0.841471  CDF at Cauchy quantiles ['0.1', '0.25', '0.5', '0.75', '0.9']  superweak 0.5
+  ti=0.7 n_z=0.169967 V=0.98545  CDF at Cauchy quantiles ['0.1', '0.25', '0.5', '0.75', '0.9']  superweak 0.5
+  ti=0.7854 n_z=2.16742e-51 V=1.0  CDF at Cauchy quantiles ['0.1', '0.25', '0.5', '0.75', '0.9']  superweak 0.5
+  ti=0.9 n_z=-0.227202 V=0.973848  CDF at Cauchy quantiles ['0.1', '0.25', '0.5', '0.75', '0.9']  superweak 0.5
+  ti=1.2 n_z=-0.737394 V=0.675463  CDF at Cauchy quantiles ['0.1', '0.25', '0.5', '0.75', '0.9']  superweak 0.5
+  ti=1.45 n_z=-0.970958 V=0.239249  CDF at Cauchy quantiles ['0.1', '0.25', '0.5', '0.75', '0.9']  superweak 0.5
+worst quantile miss 2.67e-51  worst superweak miss from 1/2 2.67e-51
+  sample ti=0.3 q=0.25: 0.263563 vs 0.260693  (+1.87 se)
+  sample ti=0.3 q=0.5: 0.825515 vs 0.825336  (+0.20 se)
+  sample ti=0.3 q=0.75: 1.389423 vs 1.389978  (-0.36 se)
+  sample superweak share 0.49929 (se 0.00050)
+  sample ti=0.9 q=0.25: -1.202512 vs -1.201050  (-0.55 se)
+  sample ti=0.9 q=0.5: -0.226784 vs -0.227202  (+0.27 se)
+  sample ti=0.9 q=0.75: 0.748364 vs 0.746646  (+0.65 se)
+  sample superweak share 0.50024 (se 0.00050)
+P1 not killed
+
+== P2: Born's weight makes the address a payload; V^2 + P^2 = 1 as its second moment ==
+  ti=0.1: Born mean 0.980066577841 (n_z 0.980066577841), var 0.0394695029986 (V^2 0.0394695029986), <A_w^2> 1.0, density miss 1.34e-51
+  ti=0.3: Born mean 0.82533561491 (n_z 0.82533561491), var 0.318821122762 (V^2 0.318821122762), <A_w^2> 1.0, density miss 1.34e-51
+  ti=0.5: Born mean 0.540302305868 (n_z 0.540302305868), var 0.708073418274 (V^2 0.708073418274), <A_w^2> 1.0, density miss 6.68e-52
+  ti=0.7: Born mean 0.1699671429 (n_z 0.1699671429), var 0.971111170334 (V^2 0.971111170334), <A_w^2> 1.0, density miss 6.68e-52
+  ti=0.7854: Born mean 1.88993239025e-51 (n_z 2.16741684132e-51), var 1.0 (V^2 1.0), <A_w^2> 1.0, density miss 1.34e-51
+  ti=0.9: Born mean -0.227202094693 (n_z -0.227202094693), var 0.948379208167 (V^2 0.948379208167), <A_w^2> 1.0, density miss 2.0e-51
+  ti=1.2: Born mean -0.737393715541 (n_z -0.737393715541), var 0.45625050828 (V^2 0.45625050828), <A_w^2> 1.0, density miss 1.34e-51
+  ti=1.45: Born mean -0.97095816515 (n_z -0.97095816515), var 0.0572402415293 (V^2 0.0572402415293), <A_w^2> 1.0, density miss 1.34e-51
+worst 2.0e-51
+P2 not killed
+
+== P3: a mixture loses the address's horizon, not its median ==
+  |n|=0.68824 n_x=0.36437 n_z=0.58387: max|A_w| 1.1190393 (bound 5.08043), share<=n_z 0.5, superweak 0.300897814741 vs 0.300897814741, Born mean-n_z 0.0, Born <A_w^2> 0.6626179347
+  |n|=0.67715 n_x=0.53772 n_z=0.41158: max|A_w| 1.2385445 (bound 4.37228), share<=n_z 0.5, superweak 0.351529903724 vs 0.351529903724, Born mean-n_z 0.0, Born <A_w^2> 0.6174577012
+  |n|=0.9148 n_x=0.86025 n_z=0.31118: max|A_w| 2.3529541 (bound 15.3904), share<=n_z 0.5, superweak 0.469908891053 vs 0.469908891053, Born mean-n_z 0.0, Born <A_w^2> 0.7321476998
+  |n|=0.801 n_x=0.55088 n_z=0.58149: max|A_w| 1.3589528 (bound 7.94724), share<=n_z 0.5, superweak 0.399892748086 vs 0.399892748086, Born mean-n_z 0.0, Born <A_w^2> 0.7047277957
+  |n|=0.40003 n_x=0.30872 n_z=-0.25439: max|A_w| 1.0552083 (bound 2.09076), share<=n_z 0.5, superweak 0.201768594136 vs 0.201768594136, Born mean-n_z 0.0, Born <A_w^2> 0.537932308
+  |n|=0.89893 n_x=0.16541 n_z=0.88358: max|A_w| 1.0689023 (bound 18.6366), share<=n_z 0.5, superweak 0.33266377757 vs 0.33266377757, Born mean-n_z 0.0, Born <A_w^2> 0.8607477065
+  |n|=0.15789 n_x=0.15754 n_z=-0.010565: max|A_w| 1.0126466 (bound 1.20004), share<=n_z 0.5, superweak 0.099485672179 vs 0.099485672179, Born mean-n_z 0.0, Born <A_w^2> 0.5031836388
+  |n|=0.81141 n_x=0.69324 n_z=-0.42167: max|A_w| 1.5513807 (bound 7.53834), share<=n_z 0.5, superweak 0.423102806989 vs 0.423102806989, Born mean-n_z 0.0, Born <A_w^2> 0.6725160386
+  |n|=0.27455 n_x=0.27167 n_z=-0.039701: max|A_w| 1.0391438 (bound 1.43319), share<=n_z 0.5, superweak 0.169109679285 vs 0.169109679285, Born mean-n_z 0.0, Born <A_w^2> 0.5101890703
+  |n|=0.71785 n_x=0.60585 n_z=0.38504: max|A_w| 1.3256245 (bound 4.90884), share<=n_z 0.5, superweak 0.378877084087 vs 0.378877084087, Born mean-n_z 0.0, Born <A_w^2> 0.6254281442
+  |n|=0.36077 n_x=0.33402 n_z=0.13632: max|A_w| 1.0621963 (bound 1.77763), share<=n_z 0.5, superweak 0.208466114902 vs 0.208466114902, Born mean-n_z 0.0, Born <A_w^2> 0.5220627734
+  |n|=0.13432 n_x=0.13421 n_z=0.0052335: max|A_w| 1.0091304 (bound 1.1612), share<=n_z 0.5, superweak 0.0849377000705 vs 0.0849377000705, Born mean-n_z 0.0, Born <A_w^2> 0.5022825048
+worst: {'max': True, 'med': '2.67e-51', 'sw': '6.85e-51', 'mean': '0.0'} all Born <A_w^2> < 1: True
+  equator |n|=0.5: superweak 0.295167235301, (2/pi)atan|n| 0.295167235301
+  equator |n|=0.9: superweak 0.466524583287, (2/pi)atan|n| 0.466524583287
+  equator |n|=0.99: superweak 0.496800932594, (2/pi)atan|n| 0.496800932594
+  equator |n|=0.999: superweak 0.499681530906, (2/pi)atan|n| 0.499681530906
+P3 not killed
+
+== P4: without a phase reference the weak value adds levels ==
+identity to tanh(artanh m_z + artanh n_z), worst: 4.01e-51
+  n_z=-0.8: superweak share 0.0, share <= n_z 0.5
+  n_z=-0.3: superweak share 0.0, share <= n_z 0.5
+  n_z=0.0: superweak share 0.0, share <= n_z 0.5
+  n_z=0.5: superweak share 0.0, share <= n_z 0.5
+  n_z=0.9: superweak share 0.0, share <= n_z 0.5
+P4 not killed
+
+== P5: a fringe's arrivals read as addresses split by the visibility ==
+  V=0.0: density miss 0.0, share t<=0 0.5, climb 1e8->1e9 1.46587119776 vs 1.46587119776 (off -3.15e-17)
+  V=0.3: density miss 6.68e-52, share t<=0 0.5, climb 1e8->1e9 1.02610983843 vs 1.02610983843 (off -3.15e-18)
+  V=0.7: density miss 1.67e-52, share t<=0 0.5, climb 1e8->1e9 0.439761359328 vs 0.439761359328 (off 3.47e-17)
+  V=1.0: density miss 4.18e-53, share t<=0 0.5, climb 1e8->1e9 6.30253574644e-17 vs 0.0 (off 6.3e-17)
+P5 not killed
+
+== P6: the re-sort's bookkeeping ==
+  s: share <= 1 0.5, climb 1.46587119776 vs (2/pi)ln10 1.46587119776
+  V mean 0.636619772367581, P mean 0.636619772367581 (2/pi 0.636619772367581); mean squares 0.5, 0.5
+  twirl: every member's |n_perp| = V and the average n_perp = 0, worst 2.43e-51
+P6 not killed
+
+verdicts: {'P1': 'not killed', 'P2': 'not killed', 'P3': 'not killed', 'P4': 'not killed', 'P5': 'not killed', 'P6': 'not killed'}
