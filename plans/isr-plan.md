@@ -61,3 +61,20 @@ slope in levels of light), it can move.
   slope leaves (−3/2, −1).
 
 ## Runs
+
+### Run 1 (22 October; `runs/isr/isr.py`, output `runs/isr/isr-run1.txt`, 2 min 25 s)
+- **P1 not killed.** For D = 2, 3, 4, 5 the point source's light on the receiver, P·cos θ/(|S^{D−1}|·R^{D−1}), equals
+  (P/2)·C_{D−1}(x; d) to 5·10⁻⁵¹; the height on the axis is P/(|S^{D−1}|·d^{D−1}); the receiver catches exactly half.
+- **P2 not killed** (to 1.3·10⁻⁵¹). The line's light, integrated along it, is (λ/(4πd))·2·arctan(b/d); the received power
+  per unit angle is λ/(4πd) at every address it paints; (2/π)·arctan(s) + (2/π)·arctan(1/s) = 1. The disc's E = πL·sin²θ.
+  NRF's σ(1) = −1.63661977236758 = −1 − 2/π, the address factor's own slope −2/π.
+- **P3 killed, by my arithmetic.** The isotropic pairs at their corners (P(|x|/d < 1) = ½, |y/x| by the uniform azimuth)
+  and the radial medians (√3 isotropic, 1 cos-weighted) all exact; but the cos-weighted per-axis median is 1/√3 =
+  0.5774, not my √(2/3) = 0.8165. The marginal is d²/(2(d² + x²)^(3/2)), whose distribution function is t/√(1 + t²);
+  I had used a Student t's marginal at the wrong scale. P3′, the corrected value, is not a prediction any more and is
+  recorded as a fact of the run.
+- **P4 not killed.** The cos-weighted share at the corner, sin^(D−1)(45°): 0.7071, 0.5, 0.3536, 0.25, 0.1768 for
+  D = 2 … 6, so reciprocal-symmetric at D = 3 alone; the uniform emission's one-axis marginal is the Cauchy in every D
+  (to 7·10⁻⁵²).
+- **P5 not killed.** The homogeneous population's slope −3/2 at every S (to 10⁻⁵⁰), unmoved by scaling every length
+  (2.7·10⁻⁵¹); the slab's slope runs monotonically from −1.0 (faint) to −1.5 (bright).

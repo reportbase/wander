@@ -1,0 +1,25 @@
+P1  the inverse square as the Cauchy's height
+   D = 2: receiver catches 0.5 of P (half)
+   D = 3: receiver catches 0.5 of P (half)
+   D = 4: receiver catches 0.5 of P (half)
+   D = 5: receiver catches 0.5 of P (half)
+   worst miss 5.2054e-51
+P2  the corner in the address count, the fall-off in the payload
+   line: sigma(1) = -1.63661977236758 (-1 - 2/pi = -1.63661977236758); address factor alone -0.636619772367581 (-2/pi)
+   worst miss 1.3364e-51
+P3  every pair at its corner on the receiver
+   isotropic: P(|x|/d < 1) = 0.5; P(r/d < sqrt 3) = 0.5
+   cos-weighted: P(r/d < 1) = 0.5; median |x|/d = 0.57735026918962576451 (predicted sqrt(2/3) = 0.81649658092772603273; 1/sqrt 3 = 0.57735026918962576451)
+   isotropic pairs and radial, Lambertian radial: worst miss 0.0; Lambertian per-axis: miss 0.23915
+P4  the weighting and the dimension
+   cos-weighted share at the corner s = 1: D=2: 0.707107, D=3: 0.5, D=4: 0.353553, D=5: 0.25, D=6: 0.176777
+   reciprocal-symmetric only at D = [3]; uniform emission's 1-D marginal: worst miss from the Cauchy 6.6819e-52
+P5  counts by flux
+   homogeneous: slopes ['-1.5', '-1.5', '-1.5']; scaling moves N by 2.6728e-51
+   slab: slope -1.0 at small S, -1.5 at large S, monotone True, within (-3/2, -1): True
+
+P1: not killed
+P2: not killed
+P3: KILLED
+P4: not killed
+P5: not killed

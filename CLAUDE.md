@@ -653,6 +653,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   as physics holds it (derived from conservation and three dimensions; tested as a bound on the exponent), in levels
   (2 of light, 3 of number per level of distance), the reader's two regimes, the near field (NRF: the pair's corner exact
   where the light is a share), the lay's form (ISQ), each claim marked physics / exact / data / reading / illustration.
+  Since 22 Oct (SPN R436; Tom: "we've put physics aside writing the ofs paper. we have learned alot, lets revisit our
+  physics results such as the inverse square law"): "The law as addresses and payload", checked in ISR
+  (`plans/isr-plan.md` + `runs/isr/isr.py`, exact): the paint per address constant, the law in the count of addresses; a
+  point source on a flat receiver is half the (D − 1)-dimensional Cauchy of scale d, the inverse square its height; the
+  corner lives in the address count (NRF P3's −1.637 = −1 − 2/π, payload plus addresses); Lambert's cosine, not the turn,
+  singles out D = 3; 1/d² a writing, counts by flux (3/2) a reading. P3 killed by my arithmetic (Lambertian per-axis
+  median 1/√3, not √(2/3)).
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

@@ -132,6 +132,11 @@ bodies are pictures. They are never evidence here.
   the situated situation."). Sixty-five occurrences, each constant computed from its derivation (§2.2); fifty-five come
   from an even turn read as a shadow or a share, eight do not (§3).
 
+- 22 October (Tom: "we've put physics aside writing the ofs paper. we have learned alot, lets revisit our physics
+  results such as the inverse square law"; SPN R436): the revisit begins with the inverse square (ISR,
+  `papers/inverse-square.md`, "The law as addresses and payload"). Three dictionary rows added; the star results sorted
+  into readings (CNT, GCN by light) and writings (MAG, GCN by distance).
+
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 
 Moved to its own paper, `papers/inverse-square.md` (Tom, 10 October: "lets give the inverse square law its own paper to
@@ -169,6 +174,9 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | reading from the outline, chords 2 sin φ | standing on a world: the horizon at home; the horizon's distance √(2Rh) | the radius R | HZN |
 | a ring thinner than a grain | a catalogue's or an instrument's limit: past it only the bright of a kind are read | the grain, an amount | MAG P3; HZN runs 1–3 |
 | a known kind | a standard candle; a spectral class | the kind's luminosity | MAG (the kind is about a level wide) |
+| the uniform turn aimed outward, laid on a flat receiver (the lighthouse; OFS's Cauchy wedge) | a point source's light on a plane, the cos³ law: half the (D − 1)-dimensional Cauchy of scale d; the inverse square its height on the axis | the source's power P | ISR P1 |
+| an arrival as address times payload; the corner in the address count | irradiance as radiance (the paint, constant per address) times the projected solid angle (the count); a line's (2/π)·arctan(b/d) at its corner, its 1/d the paint's | the source's size | ISR P2; NRF P3 re-read |
+| a reading (unchanged when the world is scaled) against a writing | log N–log S, the 3/2 slope of counts by flux, read with no distance; 1/d² itself a comparison of standpoints, needing a baseline or a standard candle | a baseline (parallax) or a kind (the candle) for 1/d²; none for the counts | ISR P5; MAG, CNT, GCN sorted |
 | V = H, the calibration | reading amounts with no unit of the other's | travel, a constant, a kind, a shared fact | LAD (in Wander's world) |
 | a reading over its own rate, x/ẋ (x = S/d, the pair's v/h) | time to contact, d/u (Lee's τ), exact at every distance; from the turn arctan x only far off | the reader's clock | MOT P1–P3 |
 | levels of an approach (the reading doubling) | each takes half the time to contact read at its start; infinitely many before contact | the reader's clock | MOT P4 |
