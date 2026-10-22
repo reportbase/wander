@@ -519,7 +519,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the chosen thing from the side (F and E); the readings on the reader's lay, V*/H = (tan E + tan F)/tan F with the
   corner at 1, d/H = 1/tan F. "My eye height known" writes metres; scale the world (k on every length, the eye included)
   moves no reading, the metres by k; crouching moves every reading, not the metres; the premises break by a ½° tilt (the
-  far things misread) and a ball thrown 1.2 m up (reads 4 times too tall). `?H=&k=<log10 k>&known=1&tilt=1&lift=1&truth=1&sel=`;
+  far things misread) and a ball thrown 1.2 m up (reads 4 times too tall and 4 times too far). `?H=&k=<log10 k>&known=1&tilt=1&lift=1&truth=1&sel=`;
   hook `window.__ground` (`OBJECTS`, `read`, `table`, `set`, `state`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
