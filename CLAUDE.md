@@ -770,13 +770,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   **The writer walks, the reader faces** (22 Oct, SPN R450; Tom: "A always faces in. B always faces out."; "lets use HF and
   VF for facing."; "VF covers twice the angular .distance."; "the writer walks the chord and faces the arc, from two
   directions."; "the reader only faces the arc, does not walk the chord. thats where the numbers PI/2 and 2/PI come
-  from."): OFS §4 "Why the corner sits at 45°" closes with it: the writer walks the chord from both ends facing the arc,
-  the two facings opposite (each the other turned through the middle), the arcs congruent, never the same, meeting at the
-  corner square to the chord; having walked it, the writer holds the chord as 1. The situated reader does not walk: it
-  faces the arc and turns, a quarter turn from an end, a half from the middle, ending at one point; facing without walking
-  is where π/2 and 2/π come from, the writer's 1 read through the half turn and the quarter, their product the 1. SPN's
-  names: the ends H and V, the facings HF (the ray from H, θ, 2/π) and VF (the radius, 2θ, π/2; the writer's two facings
-  its two senses, ±VF). "Facing" keeps R313's sense in OFS.
+  from."; "the writer than does not face the arc, it only walks the chord."; "VF faces the outer arc and HF faces the inner
+  arc."): OFS §4 "Why the corner sits at 45°" closes with it: the chord and the arc different vantages; the writer walks
+  the chord and faces nothing (both directions held at once, the chord's length 1); the situated reader faces the arc and
+  turns, never walks; a facing's two senses (above, below) opposite, each the other turned through the middle, meeting at
+  the corner square to the chord, both at once the writer's join; the two readers, central (from the centre, a half turn)
+  and inscribed (from a point of the circle, a quarter turn), the only standpoints where equal turns carve equal arcs;
+  facing without walking is where π/2 and 2/π come from, their product the writer's 1. SPN's names: the ends H and V, VF
+  the radius's facing (central, 2θ, π/2, the outer arc), HF the ray from H (inscribed, θ, 2/π, the inner arc); OFS says
+  central and inscribed, not outer and inner. "Facing" keeps R313's sense in OFS.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

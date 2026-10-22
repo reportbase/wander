@@ -999,15 +999,17 @@ The arc is drawn by that turning, not walked: the reader's position crosses the 
 (§3.4). If the bar pivots at a point of the circle, as in Thales' configuration, a turn of θ moves its far end through a central
 angle of 2θ (the inscribed-angle theorem), so the facing turns twice as fast as the sweep, from facing B at A to facing A
 at B. At the corner, θ = 45° and the facing is 90°: square to AB, leaning toward neither party. There the arc stands
-farthest from the segment, by 1 − 1/√2. The writer can walk the chord from both ends at once, facing the arc: from one end
-it faces the half of the circle above the chord, from the other the half below. Each facing is the other turned through
-the chord's middle, so the two are always opposite and the arcs they draw are congruent but never the same; they meet at
-the middle, the corner, square to the chord and facing away from each other. Having walked the whole chord from both
-directions, the writer holds its length as 1. A situated reader does not walk the chord; it only faces the arc and
-turns. From an end the ray turns through a quarter turn; from the middle the radius turns through a half; both end at
-the same point of the arc. Facing the arc without walking the chord is where the readings π/2 and 2/π come from: the
-writer's 1 is read through the half turn as the arc, π/2, and through the quarter turn as 2/π, and only their product
-gives back the 1.
+farthest from the segment, by 1 − 1/√2. The chord and the arc belong to different vantages. The writer walks the chord and
+faces nothing: holding both its directions at once, it holds the chord's length as 1 and no facing. A situated reader
+does not walk the chord; it faces the arc and turns. A facing has two senses, toward the half of the circle above the
+chord or the half below; each is the other turned through the chord's middle, so the two are always opposite and the
+arcs they face are congruent but never the same, meeting at the middle, the corner, square to the chord. Neither sense
+is defined except against the other, and both at once, the closed circle, is the writer's join. From an end the ray
+turns through a quarter turn, from the middle the radius through a half, both ending at the same point of the arc.
+These are the two readers: the central one faces the arc from its centre and turns a half turn, the inscribed one faces
+it from a point of the circle and turns a quarter, and they are the only two standpoints from which equal turns carve
+equal arcs. Facing the arc without walking the chord is where π/2 and 2/π come from: the writer's 1 is read through the
+half turn as the arc, π/2, and through the quarter turn as 2/π, and only their product gives back the 1.
 
 **The arc from the chord.** The arc can be had from the chord AB without turning a bar. Stand the two parties at its
 ends, and from each end sweep a ray: from A a ray reading v/h, from horizontal along AB up to vertical, and from B a ray
