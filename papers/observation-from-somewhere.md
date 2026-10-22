@@ -651,8 +651,8 @@ two this paper follows through, and not the only ones.
 | payload reader, hemispherical, central: a radius of the Thales circle | 3, on 1 | one quadrant: amounts along directions given in advance | a half turn: the facing, from one end of the line to the other | θ/sin θ | π/2 |
 | address reader, hemispherical, inscribed: a ray from home | 4, on 1 | one quadrant: directions from home | a quarter turn: a bar, from zero to the horizon | sin θ/θ | 2/π |
 
-**Where the numbers come from.** A situated reader measures by turning. Its position crosses the line once, and its
-facing turns; the arc is drawn by that turning, not walked. The two situated vantages turn by different amounts, and the
+**Where the numbers come from.** A situated reader measures by turning. It stays where it stands;
+the point it reads crosses the line once while its facing turns, and the arc is drawn by that turning, not walked. The two situated vantages turn by different amounts, and the
 unsituated one not at all. The inscribed reader turns a bar of length 1 from home: at angle θ the bar's end has drawn an
 arc θ, and the line it covers, its projection, is sin θ. The central reader's facing turns twice as far, 2θ (§4, "Why
 the corner sits at 45°"): it faces the far end of the line at the start, is square to the line at the corner, and faces
@@ -995,8 +995,8 @@ division; only the size of D depends on scale.
 
 **Why the corner sits at 45°.** A straight segment from A to B passes once through every ratio of the two, as the
 quarter arc does. The arc has a second degree of freedom that the segment lacks: the direction it faces along the way.
-The arc is drawn by that turning, not walked: the reader's position crosses the segment once while its facing turns
-(§3.4). If the bar pivots at a point of the circle, as in Thales' configuration, a turn of θ moves its far end through a central
+The arc is drawn by that turning, not walked: the reader stays where it stands, and the point it reads crosses the
+segment once while its facing turns (§3.4). If the bar pivots at a point of the circle, as in Thales' configuration, a turn of θ moves its far end through a central
 angle of 2θ (the inscribed-angle theorem), so the facing turns twice as fast as the sweep, from facing B at A to facing A
 at B. At the corner, θ = 45° and the facing is 90°: square to AB, leaning toward neither party. There the arc stands
 farthest from the segment, by 1 − 1/√2. The chord and the arc belong to different vantages. The writer walks the chord and

@@ -778,7 +778,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and inscribed (from a point of the circle, a quarter turn), the only standpoints where equal turns carve equal arcs;
   facing without walking is where π/2 and 2/π come from, their product the writer's 1. SPN's names: the ends H and V, VF
   the radius's facing (central, 2θ, π/2, the outer arc), HF the ray from H (inscribed, θ, 2/π, the inner arc); OFS says
-  central and inscribed, not outer and inner. "Facing" keeps R313's sense in OFS.
+  central and inscribed, not outer and inner. "Facing" keeps R313's sense in OFS. Then (Tom: "HV and VF are just rotations, no
+  walking."; "its at H."; "VF and HF have different unit circles."; "different horizons"): OFS §3.4 and §4's "its
+  position crosses the line" now say the reader stays where it stands and the point it reads crosses; in SPN, with the
+  chord 2H, VF stands at H (the corner), HF's unit circle centred at home and VF's at the corner, both radius H, each
+  through the other's centre (the vesica piscis); both end at home, HF tangent (a horizon, ∞, no mean), VF at a point (a
+  bounded chart, means). OFS wording for these drafted, awaiting Tom.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
