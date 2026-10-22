@@ -26,7 +26,8 @@ counts by flux read the same law with no distance. What the geometry adds is a t
 quantity: scale the world, and a reading does not move while a writing moves with it (OFS §9). The dictionary (§1) is
 that boundary drawn quantity by quantity, its bridge column naming what crosses it. A claim about where to look: the
 runs show the mix in place; that a misplaced boundary is what causes a known difficulty is shown here only for Lutz and
-Kelker's case, and is otherwise open.
+Kelker's case, and is otherwise open. And recovered physics can be exact and still partial: no recovery establishes
+its own completeness, and only a second route that disagrees shows a gap (SPN R442; OFS §9, "Recovered, not written").
 
 **Iterations**
 

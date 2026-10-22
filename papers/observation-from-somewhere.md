@@ -2697,6 +2697,17 @@ it (§5); holding what arrives, at once or in order, without which there is no m
 second one for a loop to close or a known move for an amount to be written. The heavy lifting is done by the geometry
 and by being situated.
 
+**Recovered, not written.** A reader is not powerless. By taking standpoints, closing loops and carrying in one amount
+it can recover a thing exactly: its shape, its places, even its size (§10). What it recovers can be true and still
+partial. A loop that closes shows that the routes taken agree; it cannot show that no route remains untaken, and only a
+second route that disagrees reveals a gap (above). So completeness is never a reading: a reader can find its account
+incomplete, never prove it complete, and the correctness of what it has recovered does not settle how much it has
+recovered. Nor does recovering the truth make the reader the writer. The writer holds the whole by walking it or by
+carrying in its measure, and states it in amounts from a vantage that holds both hemispheres. A reader that reaches the
+same statement has reached it by cleverness, in where it stood, which routes it closed and what it carried in, and not
+by holding the whole. Reading does not turn into writing; what the reader recovers is exact where it is exact, and its
+completeness is not the reader's to know.
+
 **Inside a room: the two sweeps.** Each room is a hold, and drawing V = H gives it a unit circle on which both sweeps of
 §4 work. The inscribed sweep, from home on that circle, gives where the things in the room are: each is a direction
 [h : v], an address, and together they are the room's layout, with no amount in it. The central sweep, from each thing's

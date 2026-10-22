@@ -700,6 +700,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   bridge), physics already a mix of reading and writing observers with the boundary unmarked, the scale-the-world test
   placing it per quantity, the dictionary that boundary drawn. Claim no new physics; that a misplaced boundary causes a
   known difficulty is shown only for Lutz–Kelker, otherwise open.
+  **Recovered, not written** (22 Oct, SPN R442; ChatGPT review 25, `plans/ofs-review-25.md`; Tom: "add it to OFS just to
+  complete the idea that recovering a truth, is not necessarily the complete truth, a reader can't become a writer, but
+  they are not powerless. a cleaver reader might recover the truth, but because he's not the writer, he did it through
+  cleaverness."): OFS §9 after "Closing a loop": a reader can recover a thing exactly and still partially; completeness
+  is never a reading (only a disagreeing route shows a gap); recovery does not make the reader the writer; a reader that
+  reaches the writer's statement did it by cleverness (standpoints, routes, the amount carried in). OFS judges no
+  physical theory's completeness (R364).
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
