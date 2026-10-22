@@ -1,0 +1,18 @@
+  k = 2: rack readings max |Δ| 0.000e+0, field readings 0.000e+0, referee positions/k vs k = 1 0.000e+0; count mismatches (rack readings, rack contacts, field readings, field contacts, sunk) 0, 0, 0, 0, 0; bitwise true
+  k = 7: rack readings max |Δ| 2.928e-13, field readings 4.693e-6, referee positions/k vs k = 1 3.985e-12; count mismatches (rack readings, rack contacts, field readings, field contacts, sunk) 0, 0, 0, 0, 0; bitwise false
+  k = 0.001: rack readings max |Δ| 1.337e-12, field readings 6.207e-7, referee positions/k vs k = 1 8.229e-12; count mismatches (rack readings, rack contacts, field readings, field contacts, sunk) 0, 0, 0, 0, 0; bitwise false
+P1: KILLED. 2181420 rack and 7946156 field reading pairs compared at each k; contacts 188 and 265
+  k = 2, c = 100: E/k 2.342e-2, 3.619e-2, 2.342e-2 | k = 1, c = 50: 2.342e-2, 3.619e-2, 2.342e-2 | largest relative difference 0.000e+0; lateness 4.32 ticks; median E/k 2.342e-2
+  k = 2, c = 200: E/k 1.533e-2, 3.167e-2, 1.533e-2 | k = 1, c = 100: 1.533e-2, 3.167e-2, 1.533e-2 | largest relative difference 0.000e+0; lateness 2.16 ticks; median E/k 1.533e-2
+  k = 2, c = 400: E/k 8.080e-5, 3.935e-4, 8.080e-5 | k = 1, c = 200: 8.080e-5, 3.935e-4, 8.080e-5 | largest relative difference 0.000e+0; lateness 1.08 ticks; median E/k 8.080e-5
+  k = 0.5, c = 100: E/k 8.080e-5, 3.935e-4, 8.080e-5 | k = 1, c = 200: 8.080e-5, 3.935e-4, 8.080e-5 | largest relative difference 0.000e+0; lateness 1.08 ticks; median E/k 8.080e-5
+  k = 0.5, c = 200: E/k 3.725e-5, 3.086e-5, 3.725e-5 | k = 1, c = 400: 3.725e-5, 3.086e-5, 3.725e-5 | largest relative difference 0.000e+0; lateness 0.54 ticks; median E/k 3.725e-5
+  k = 0.5, c = 400: E/k 1.779e-5, 1.479e-5, 1.779e-5 | k = 1, c = 800: 1.779e-5, 1.479e-5, 1.779e-5 | largest relative difference 0.000e+0; lateness 0.27 ticks; median E/k 1.779e-5
+P2: not killed. at c = 200: median E/k 8.080e-5 at k = 1 (1.08 ticks), 1.533e-2 at k = 2 (2.16 ticks)
+  K = 1: v* = 0.40825; decisions compared 684, differing 55; skipped (size) 26,69,43,56,56 (address) 20,61,38,46,35; level-0 E size 2.321e+0, 5.071e+0, 3.225e+0, 2.075e+0, 6.088e-1; address 2.321e+0, 5.071e+0, 3.225e+0, 2.075e+0, 6.088e-1; identical false
+  K = 2: v* = 0.25820; decisions compared 612, differing 4; skipped (size) 12,19,19,33,20 (address) 11,15,19,33,19; level-0 E size 2.174e-1, 1.948e-1, 1.155e+0, 8.221e-1, 6.088e-1; address 2.174e-1, 1.948e-1, 1.155e+0, 8.221e-1, 6.088e-1; identical false
+  K = 3: v* = 0.14907; decisions compared 576, differing 0; skipped (size) 4,8,9,7,10 (address) 4,8,9,7,10; level-0 E size 1.088e-1, 1.265e-1, 9.995e-1, 2.384e-1, 1.438e-1; address 1.088e-1, 1.265e-1, 9.995e-1, 2.384e-1, 1.438e-1; identical true
+P3: KILLED. measured: the largest reading at a pushing response over its contact value, log2(h + v), 1.8783 levels
+  j = 1: v at contact 0.33333, half-span 19.471°, share of a full turn 0.10817, momentum share skipped (1+e)/(1+8^j) 0.21778
+  j = 2: v at contact 0.20000, half-span 11.537°, share of a full turn 0.06409, momentum share skipped (1+e)/(1+8^j) 0.03015
+  j = 3: v at contact 0.11111, half-span 6.379°, share of a full turn 0.03544, momentum share skipped (1+e)/(1+8^j) 0.00382
