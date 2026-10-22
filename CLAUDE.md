@@ -755,6 +755,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   family's affine group has two (Jaynes's own eq. 49 group commutes; its measure coincides with the right-invariant one,
   which later work favours where the location or the scale is of interest; Ghosh 2011), cites Norton (2008: complete
   ignorance is not a probability) beside the pre-prior, and Liu and Adams (2019) beside the situated Bertrand.
+  **The reader's sphere, after Gibson** (22 Oct, SPN R426–R428; Tom: "the reader is a sphere and the world paints it is a
+  powerful metaphor cause that how it actually works."): OFS §3.7 after the hand's list: the reader's sphere round its
+  standpoint, painted by what arrives, no distance on it, sending nothing; Gibson's ambient optic array the picture
+  (Gibson 1972, an unpublished manuscript, quoted; 1979, the book, cited, its chapter 5 to check in a library copy); the
+  geometry adds the measure before any paint; the writer's sphere round the whole, its radius an amount.
   **One figure, three rulers** (21 Oct, SPN R422; Tom: "we have show that the same math applies to the reader and
   writer", after calendar's `geometry.html` dial): OFS §6 after Mercator's map. The circle, the unit hyperbola and the
   tangent at the apex lay one reading x three ways, the writer's line x, the turn θ = arctan x, the hyperbolic angle

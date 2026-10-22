@@ -879,6 +879,18 @@ each finger the same address.
   sign. Joining them into the closed circle is the writer's work: it knows each one's size, so their ends can be made
   to meet. The sphere is every way a hand could face, its eight octants joined by the writer; no hand holds it.
 
+The same picture without the hand. Every direction from the point where the reader stands makes a sphere round that
+point: the reader's sphere, drawn at H, the same in every world. What arrives along each direction paints that point of
+the sphere. The paint is the payload; no distance is on the sphere, and two things on one line paint one point, the
+nearer. The reader sends nothing. It receives what the world puts there, and it holds an octant or a patch of the
+sphere at once, or turns to cover the rest. The picture is Gibson's ambient optic array: the light at a point of
+observation, "as distinguished from the radiant light, emitted from a point-source", arranged as "visual solid angles all
+having a common apex at the point of observation", one for each face that is not hidden from it (Gibson 1972; 1979).
+What the geometry adds is a measure on the sphere before any paint. Swept uniformly, its directions read as the Cauchy
+(§7.1), with the median at the corner, whatever paints them (Theorem 6). The writer's sphere is the other one. It is
+round the whole system, looking in, and its radius is an amount, the size of what it holds (§3.4, §9). The reader's
+sphere has no such radius. A second standpoint, or an amount carried in, is what turns the one into the other.
+
 ### 3.8 What the reader lacks is one number
 
 The situations can be written in terms of one another. A situated reader, 3 or 4, is a shape of situation 2, read
@@ -3220,6 +3232,11 @@ Gerville-Réache, L. (2016). Mettre de l'eau dans du vin, un paradoxe de l'indif
 philosophiques*, 12 December 2016.
 
 Ghosh, M. (2011). Objective priors: an introduction for frequentists. *Statistical Science* 26(2), 187–202.
+
+Gibson, J. J. (1972). On the concept of the "visual angle" in an optic array and its history. Unpublished manuscript
+(the "Purple Perils"), Cornell University.
+
+Gibson, J. J. (1979). *The Ecological Approach to Visual Perception*. Houghton Mifflin, Boston.
 
 Gilinsky, A. S. (1951). Perceived size and distance in visual space. *Psychological Review* 58, 460–482.
 
