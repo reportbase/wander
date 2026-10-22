@@ -99,3 +99,67 @@ point, that the address's horizon belongs to the pure state only, and that a fri
 arrivals that carry payload weight.
 
 ## Runs
+
+### Run 1 (22 Oct about 11:00, `runs/wvr/wvr.py`, output in `runs/wvr/wvr-run1.txt`; 45 s)
+
+A first start stopped on a ZeroDivisionError before any verdict was printed: at θ_i = π/4 the bisection in the share
+routine landed exactly on the weak value's pole. The routine now returns a huge value there (a pole is a boundary like a
+root); no prediction or tolerance changed. The output file is the second start's.
+
+- **P1 not killed.** A_w = n_z − V·tan(θ_f − θ_i) to 9·10⁻⁵⁰ at 30 pairs. At 8 pre-selections the shares of the uniform
+  turn below Cauchy(n_z, V)'s quantiles, found by root-finding on A_w itself, are 0.1, 0.25, 0.5, 0.75, 0.9 to 3·10⁻⁵¹,
+  and the superweak share is ½ to 3·10⁻⁵¹ at every one, from V = 0.20 (θ_i = 0.1) to V = 1. Samples (10⁶ each): the
+  median and quartiles within 1.9 se; superweak 0.49929 and 0.50024 (se 0.0005).
+- **P2 not killed.** Born-weighted, the law of t is (2/π)/(1 + t²)² to 2·10⁻⁵¹; the mean n_z, the variance V², and
+  ⟨A_w²⟩ = 1 at every θ_i (worst 2·10⁻⁵¹).
+- **P3 not killed.** At 12 mixed states (|n| 0.13–0.91) the largest |A_w| is finite (1.009–2.35, under the bound); the
+  share at or below n_z is ½ (3·10⁻⁵¹); the superweak share is (1/π)·arctan(2n_x/(1 − |n|²)) to 7·10⁻⁵¹ (0.085–0.470),
+  and on the equator (2/π)·arctan|n| (0.2952, 0.4665, 0.4968, 0.4997 at |n| = 0.5, 0.9, 0.99, 0.999); the Born mean is
+  n_z; Born ⟨A_w²⟩ is 0.502–0.861, all below 1.
+- **P4 not killed.** After the phase twirl A_w = tanh(artanh m_z + artanh n_z) to 4·10⁻⁵¹; no superweak values; median n_z.
+- **P5 not killed.** The fringe's arrivals read as t = tan(φ/2) have the split density to 7·10⁻⁵²; median 0; the truncated
+  mean of |t| climbs 1.46587, 1.02611, 0.43976 and 6·10⁻¹⁷ a decade at V = 0, 0.3, 0.7, 1: (1 − V)·(2/π)·ln 10 to 10⁻¹⁶.
+- **P6 not killed.** s: median 1, climb (2/π)·ln 10; V and P: means 2/π, mean squares ½; the phase twirl keeps every
+  member's |n_⊥| = V and averages n_⊥ to 0 (to 2·10⁻⁵¹).
+
+Post hoc, not predicted: Born ⟨A_w²⟩ for a mixture is ½ at |n| → 0 and rises toward 1 only as the state turns pure; I did
+not fit its form.
+
+## What run 1 shows
+
+Nothing here is new quantum mechanics (the weak-value sum rules are Dressel et al.'s; the Möbius closure of the Cauchy is
+McCullagh's). What is new is where each piece falls once the address and the central reading are kept apart.
+
+1. **The weak value is an address, and its law's point is the Bloch point.** On the real slice, A_w = n_z − V·tan(θ_f − θ_i):
+   the relative address of the post-selection against the pre-selection, carried by one fixed map. Laid by a uniform turn
+   it is Cauchy with z = m + iγ = ⟨σz⟩ + i·V: the central point (foot offset and height) is the address law's standpoint.
+   Its median is the expectation; its half-width is the visibility; it has no mean. The superweak share is ½ for every
+   pure state: the spectrum's edge |A_w| = 1 is the median of |A_w|, the corner. (QSO's ½(1 + x²)^(−3/2) and 1 − 1/√2
+   are the same weak value under a sphere uniform in height, not under the turn; QSO said in passing the turn "would give
+   the Cauchy", and it does, centred on the Bloch point.)
+2. **Born's rule is the bridge from address to payload.** Weighted by the foot |⟨f|i⟩|² the same weak values have a mean
+   (n_z) and a variance (V²), and ⟨A_w²⟩ = 1. The duality equality V² + P² = 1 is that second moment split into variance
+   and squared mean: the visibility is the spread of the weighted addresses, the predictability their mean.
+3. **The horizon belongs to the pure state.** A mixture (its central point inside the circle) has bounded weak values,
+   keeps the median at n_z and the Born mean at n_z, loses the tail: its superweak share is (1/π)·arctan(2n_x/(1 − |n|²)),
+   on the equator (2/π)·arctan|n|, the uniform turn's own share g at the Bloch length, ½ only at |n| = 1.
+4. **A missing phase reference is a mean, and leaves levels adding.** The twirl changes no member's V; it averages n_⊥ to
+   0 (a payload operation). What is left of the weak value is the rapidity sum tanh(artanh m_z + artanh n_z): the two
+   predictabilities' levels added, bounded, no superweak values.
+5. **A fringe's visibility is the share of arrivals carrying payload weight.** Real arrivals are Born-weighted. Read per
+   arrival as the inscribed reading tan(φ/2), a fraction V of them follows the payload's law (with a mean) and 1 − V the
+   bare turn's Cauchy (none), so the mean climbs (1 − V)·(2/π)·ln 10 a decade, as WVP stated without running.
+
+### The re-sort
+
+| quantity | sort | why |
+|---|---|---|
+| s = v/h, ζ = ψ₁/ψ₀ (QBT Q5) | address | the stereographic chart, unbounded, median, no mean |
+| the weak value A_w (QSO W1–W4; P1) | address | a Möbius image of the relative address tan(θ_f − θ_i) |
+| the Bloch point n, at 2θ (QBT Q1) | central | the square ½(h + iv)², bounded, means |
+| visibility V = 2hv = sin 2θ = sech ξ (DUO, WVP Q4′) | central | the Bloch point's height (doubled); the address law's half-width |
+| predictability P = \|h² − v²\| (DUO) | central | the foot's offset from the middle (doubled); its signed form n_z the address law's median |
+| Born's P(0) = h² (QBT Q2), an overlap \|⟨f\|i⟩\|² (QSO F3) | central, the bridge | the foot; a frequency only through Born's rule |
+| counted arrivals, a fringe pattern 1 + V cos φ (WVP runs 3–4, DUO) | payload | Born-weighted; read per arrival, V of them payload and 1 − V bare turn |
+| the fringe phase φ estimated by arg Σ e^{iφ} (WVP Q3′) | central | the angle at the centre, read by a circular mean |
+| WVP runs 1–2's uniform draws of θ | address law alone | no payload at all; their squares h² are the central foot under the turn (arcsine) |
