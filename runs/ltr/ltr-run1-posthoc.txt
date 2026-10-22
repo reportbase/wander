@@ -1,0 +1,15 @@
+overlap SNIa&FP (n 58): SNIa against the flow slope -0.1286 +- 0.0362
+overlap SNIa&FP (n 58): FP against the flow slope +0.1428 +- 0.0709
+SNIa outside the overlap (n 854): slope -0.0164 +- 0.0053
+FP outside the overlap (n 41973): slope +0.0112 +- 0.0024
+FP - flow, mu_flow 33-35: n  2173 mean -0.057
+FP - flow, mu_flow 35-36: n  5951 mean -0.029
+FP - flow, mu_flow 36-37: n 11050 mean -0.043
+FP - flow, mu_flow 37-38.5: n 22857 mean -0.020
+SNIa - flow, mu_flow 33-35: n   301 mean +0.007
+SNIa - flow, mu_flow 35-36: n   287 mean -0.002
+SNIa - flow, mu_flow 36-37: n   167 mean -0.056
+SNIa - flow, mu_flow 37-38.5: n   157 mean -0.053
+rung (a), Shapley's Clouds: r mean 0.755, values 0.954, 0.556
+rung (a), NGC 6822, M 33, M 31: r mean 1.458, values 1.162, 1.701, 1.510
+rung (a), Hubble's own three alone: slope 0.408 +- 0.130
