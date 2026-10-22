@@ -527,9 +527,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   radius) and scale the world (k, numbers only): the landings change, the addresses and their shares never (v ≤ h, v₂ ≤ h,
   v₂ ≤ v ½ and the near field 0.334 at 32 × 32). The inset: Lambert's map painted by the face each address meets (the
   addresses fixed, the paint the world's), the corners dashed; point at a dot or a cell for its address, where it lands and
-  the distance. `?x=&y=&z=&lon=&lat=&roll=&oct=+-+&H=&k=<log10 k>&box=X,Y,Z&n=8|16|32&rays=0&spin=1`; hook
+  the distance. Three vantages (SPN R447; Tom: "we have three situations. The perfect demo would be able toggle between all
+  three, the writers vantage, the inside hemisphrical vangate, and the outside hemisphrical vantage."), toggled in the
+  panel, keys 1–3 or `?view=`: the writer (an orthographic camera, parallel rays from no standpoint, the box whole, every
+  landing three amounts); the address reader (inscribed, the inner hemisphere: the camera at the standpoint looking down
+  the triple corner, so the wedge is the triangle h + v + v₂ = 1 with the pairs' corners its medians, each address painted
+  by the face its ray meets, no box, no distance); the payload reader (central, the outer hemisphere: an amount along each
+  given direction, drawn over their geometric mean, clipped at 2.2: the box's corner as a shape, unmoved by k, the mean by
+  k). `?x=&y=&z=&lon=&lat=&roll=&oct=+-+&H=&k=<log10 k>&box=X,Y,Z&n=8|16|32&rays=0&spin=1&view=writer|address|payload`; hook
   `window.__writerBox` (`rotOf`, `anglesOfRot`, `octantRot`, `addresses`, `hitBox`, `read`, `readAt`, `counts`, `horizon`,
-  `set`, `state`, `hud`, `apexScreen`, `frames`, `webgl`). Not in the flying page.
+  `shellAt`, `camera`, `set` (with `view`), `state`, `hud`, `apexScreen`, `frames`, `webgl`). Not in the flying page.
 - `ground.html`: **one's own height** (22 Oct 2026, Tom: "1,2", the second a demo of OFS §9's "The ground: one's own height as
   the base"; SPN R433, R434; after Sedgwick's horizon ratio), a standalone page, plain canvas. A reader on level ground, its
   eye at H (1.6 m); ten things (dog, child, door, ball, a twin one eye height tall, lamp post, car, tree, house, tower). The
@@ -2303,7 +2310,9 @@ In short:
 
   52. **writer-box.html:** moved, turned, resized and the world scaled by 10⁻³ and 10³, the 1,024 addresses unchanged and
       every landing on a face of the box (to 10⁻¹²), the landings moved by k exactly; v ≤ h, v₂ ≤ h, v₂ ≤ v ½ and the near
-      field within 0.01 of ⅓; a real drag of the gold ball moves the wedge; WebGL drew frames.
+      field within 0.01 of ⅓; a real drag of the gold ball moves the wedge; the three vantages: the writer's camera
+      orthographic, the address reader's at its standpoint, the payload reader's shell unmoved by k = 10³ and its mean
+      moved by k; WebGL drew frames.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

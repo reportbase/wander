@@ -27,6 +27,18 @@
         three numbers (x, y, z), the writer's. The one between is the distance along the ray, the writer's, never read.
       - Moving or turning the wedge, resizing the box, changing H or scaling the world (k on every amount) changes which
         points of the box the addresses reach (the payload, the writer's), never the addresses themselves.
+      - Three vantages (22 October; Tom: "we have three situations. The perfect demo would be able toggle between all
+        three, the writers vantage, the inside hemisphrical vangate, and the outside hemisphrical vantage."; SPN R447), one
+        scene, three cameras, three readouts:
+        the writer (dual-hemispherical, situation 2): the box whole, front and back of everything, drawn with parallel
+          rays (an orthographic camera, no standpoint), every landing three amounts, the distance along a ray an amount;
+        the address reader (inscribed, the inner hemisphere, situation 4): the camera at the standpoint looking out down
+          the wedge's triple corner; it holds directions only, each painted by what arrives (the colour of the face its
+          ray meets), no box, no number line, no distance;
+        the payload reader (central, the outer hemisphere, situation 3): the same directions given, an amount arriving
+          along each (the range), in a unit no reading fixes, drawn over the amounts' geometric mean (clipped at 2.2 of it):
+          the shape of the corner of the box seen from there, not its size; scaling the world moves the amounts by k and
+          the shell not at all.
       - Colour: an address's colour is h²·teal + v²·gold + v₂²·violet (h² + v² + v₂² = 1), the same on the sphere and where
         it lands on the box. The inset is the address map painted by the face each address meets: the addresses fixed,
         the paint the world's.
@@ -34,7 +46,7 @@
     serves the same version from node_modules. The geometry and the hook are a plain script, so they work without WebGL.
     Links: ?x=&y=&z= (the standpoint, amounts at k = 1, from the box's middle) &lon=&lat=&roll= (degrees: where the wedge's
            triple corner points and the turn about it; 45, 35.26, 0 is the box's own first octant) &oct=+++|+-+|… &H=
-           &k=<log10 k> &box=X,Y,Z &n=8|16|32 &rays=0 &spin=1
+           &k=<log10 k> &box=X,Y,Z &n=8|16|32 &rays=0 &spin=1 &view=writer|address|payload
     Test hook: window.__writerBox.
     -->
     <style>
@@ -72,6 +84,10 @@
     #hint { position: fixed; right: 14px; top: 14px; padding: 7px 11px; font-size: 11.5px; color: var(--dim); z-index: 2; max-width: 300px }
     #nogl { position: fixed; inset: 0; display: none; place-items: center; color: var(--bright); padding: 24px; text-align: center }
     #fold { display: none }
+    .vant { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin: 2px 0 6px }
+    .vant button { padding: 5px 4px; font-size: 12px }
+    #vcap { margin: 0 0 6px; font-size: 12px; color: var(--ink); min-height: 6.2em }
+    #vcap b { color: var(--bright); font-weight: 500 }
     a { color: var(--teal) }
     @media (max-width: 1099px) { #inset { display: none } #hud { max-width: calc(100vw - 412px) } }
     @media (max-width: 760px) {
@@ -96,6 +112,8 @@
         A <b class="gold">reader</b> stands inside it: a sphere round one point, and one octant of it, the wedge, its
         addresses. Each address is a direction, two numbers; it points at a point of the box, three numbers. The one
         between is the distance, the writer's, never read.</p>
+    <div class="vant" id="vant"><button data-v="writer">the writer</button><button data-v="address">the address reader</button><button data-v="payload">the payload reader</button></div>
+    <p id="vcap"></p>
     <div class="more">
         <h3>the wedge's place (amounts, from the box's middle)</h3>
         <div class="ctl"><label for="px">x</label><input id="px" type="range" min="-1" max="1" step="0.001"><output id="pxo"></output></div>
@@ -189,7 +207,7 @@ const colourOf = a => { const w = [a.h * a.h, a.v * a.v, a.v2 * a.v2];
 // ── state ─────────────────────────────────────────────────────────────────────────────────────────────────────────────
 const DEF = { E: [14, 7, 10], P: [-3.5, -1.8, -2.5], ang: { lon: 45, lat: G.LAT0, roll: 0 }, lgH: 0.2, lk: 0, n: 16 };
 const S = { E: DEF.E.slice(), P: DEF.P.slice(), R: G.rotOf(DEF.ang.lon, DEF.ang.lat, DEF.ang.roll), lgH: DEF.lgH, lk: DEF.lk, n: DEF.n,
-    rays: true, sphere: true, spin: false, wander: false, hover: null };
+    rays: true, sphere: true, spin: false, wander: false, hover: null, view: 'writer' };
 const H = () => 10 ** S.lgH, K = () => 10 ** S.lk;
 const st = () => ({ E: S.E, P: S.P, R: S.R, k: K(), n: S.n });
 const keepInside = () => { S.P = S.P.map((x, i) => clamp(x, -S.E[i] / 2 + 0.05, S.E[i] / 2 - 0.05)); };
@@ -201,17 +219,23 @@ if (qs.has('H')) S.lgH = clamp(Math.log10(+qs.get('H') || 1.6), -0.7, 0.9);
 if (qs.has('k')) S.lk = clamp(+qs.get('k') || 0, -3, 3);
 if (['8', '16', '32'].includes(qs.get('n'))) S.n = +qs.get('n');
 if (qs.get('rays') === '0') S.rays = false;
+if (['writer', 'address', 'payload'].includes(qs.get('view'))) S.view = qs.get('view');
 keepInside();
 
 // ── the scene, drawn at k = 1 (scaling the world changes only the numbers on it) ─────────────────────────────────────────
 const canvas = $('stage');
 let renderer = null; try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); } catch (e) { $('nogl').style.display = 'grid'; }
-const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(42, innerWidth / innerHeight, 0.05, 400);
-camera.position.set(19, 14, 27);
+// three vantages, three cameras: the writer's parallel rays (no standpoint), the readers' from the standpoint
+const scene = new THREE.Scene();
+const camW = new THREE.OrthographicCamera(-1, 1, 1, -1, -400, 400); camW.position.set(19, 14, 27); camW.zoom = 1;
+const camR = new THREE.PerspectiveCamera(42, innerWidth / innerHeight, 0.01, 400); camR.position.set(4, 3, 6);
+let camera = camW;
 scene.add(new THREE.AmbientLight(0xffffff, 0.7)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); sun.position.set(5, 12, 8); scene.add(sun);
-let controls = null;
+let controls = null, ctlW = null, ctlP = null;
 if (renderer) { renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1)); renderer.outputColorSpace = THREE.SRGBColorSpace;
-    controls = new OrbitControls(camera, canvas); controls.enableDamping = true; controls.dampingFactor = 0.08; controls.minDistance = 4; controls.maxDistance = 90; }
+    ctlW = new OrbitControls(camW, canvas); ctlW.enableDamping = true; ctlW.dampingFactor = 0.08; ctlW.minZoom = 0.3; ctlW.maxZoom = 8;
+    ctlP = new OrbitControls(camR, canvas); ctlP.enableDamping = true; ctlP.dampingFactor = 0.08; ctlP.minDistance = 0.5; ctlP.maxDistance = 40; ctlP.enabled = false;
+    controls = ctlW; }
 const lines = (col, op, vc = false) => { const l = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: vc ? 0xffffff : col, vertexColors: vc, transparent: true, opacity: op, depthWrite: false })); l.frustumCulled = false; scene.add(l); return l; };
 const setPos = (obj, arr) => { obj.geometry.setAttribute('position', new THREE.Float32BufferAttribute(arr, 3)); obj.geometry.computeBoundingSphere(); };
 // labels as sprites
@@ -248,6 +272,13 @@ const homeAxes = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.Li
 homeAxes.geometry.setAttribute('position', new THREE.Float32BufferAttribute([0, 0, 0, 1.25, 0, 0, 0, 0, 0, 0, 1.25, 0, 0, 0, 0, 0, 0, 1.25], 3));
 homeAxes.geometry.setAttribute('color', new THREE.Float32BufferAttribute([TEAL.r, TEAL.g, TEAL.b, TEAL.r, TEAL.g, TEAL.b, GOLD.r, GOLD.g, GOLD.b, GOLD.r, GOLD.g, GOLD.b, VIOLET.r, VIOLET.g, VIOLET.b, VIOLET.r, VIOLET.g, VIOLET.b], 3));
 wedgeG.add(homeAxes);
+// each pair's corner on the wedge (v = h, v₂ = h, v₂ = v): three arcs of great circles, from home the medians
+const cornersG = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineDashedMaterial({ color: 0xffffff, transparent: true, opacity: 0.55, dashSize: 0.05, gapSize: 0.04, depthWrite: false }));
+{ const g = [], m = 48, arcs = [[[0, 0, 1], [1, 1, 0]], [[0, 1, 0], [1, 0, 1]], [[1, 0, 0], [0, 1, 1]]];
+  for (const [a, b0] of arcs) { const n = Math.hypot(...b0), b = b0.map(x => x / n);
+      for (let j = 0; j < m; j++) for (const q of [j, j + 1]) { const t = q / m * Math.PI / 2; g.push(...a.map((x, i) => Math.cos(t) * x + Math.sin(t) * b[i])); } }
+  cornersG.geometry.setAttribute('position', new THREE.Float32BufferAttribute(g, 3)); cornersG.computeLineDistances(); }
+wedgeG.add(cornersG);
 const apex = new THREE.Mesh(new THREE.SphereGeometry(0.22, 20, 14), new THREE.MeshLambertMaterial({ color: 0xd4a052, emissive: 0x3a2a10 })); scene.add(apex);
 const axTag = ['h', 'v', 'v₂'].map(() => sprite(0.42));
 // the addresses on the sphere (dots at radius H), their rays, where they land on the box, and the wedge's horizon on the box
@@ -255,6 +286,10 @@ const dotMat = new THREE.PointsMaterial({ vertexColors: true, size: 0.13, sizeAt
 const sphDots = new THREE.Points(new THREE.BufferGeometry(), dotMat); sphDots.frustumCulled = false; scene.add(sphDots);
 const hitDots = new THREE.Points(new THREE.BufferGeometry(), new THREE.PointsMaterial({ vertexColors: true, size: 0.2, sizeAttenuation: true })); hitDots.frustumCulled = false; scene.add(hitDots);
 const rays = lines(0, 0.16, true), horizonL = lines(0xd4a052, 0.85), edgeL = lines(0xd4a052, 0.9), hoverL = lines(0xffffff, 0.95);
+// the payload reader's shell: each given direction scaled by its amount over the amounts' geometric mean, times H
+const shellPts = new THREE.Points(new THREE.BufferGeometry(), new THREE.PointsMaterial({ vertexColors: true, size: 0.13, sizeAttenuation: true })); shellPts.frustumCulled = false; scene.add(shellPts);
+const shellRays = lines(0, 0.22, true);
+const SHELL_CLIP = 2.2;
 const hoverBall = new THREE.Mesh(new THREE.SphereGeometry(0.17, 14, 10), new THREE.MeshBasicMaterial({ color: 0xffffff })); hoverBall.visible = false; scene.add(hoverBall);
 
 // ── drawing ───────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -292,20 +327,75 @@ function draw() {
     for (const arc of hz.arcs) for (let j = 1; j < arc.length; j++) hl.push(...arc[j - 1].map(x => x / k), ...arc[j].map(x => x / k));
     for (const e of hz.edges) el.push(...P, ...e.p.map(x => x / k));
     setPos(horizonL, hl); setPos(edgeL, el);
-    const hv = S.hover != null ? L[S.hover] : null; hoverL.visible = hoverBall.visible = !!hv;
-    if (hv) { const q = hv.p.map(x => x / k); setPos(hoverL, [...P, ...q]); hoverBall.position.set(...q); }
+    // the payload reader's amounts: the ranges (in whatever unit, k times the writer's at k = 1), over their geometric mean
+    SH = shellOf(L); const shp = [], shc = [], shr = [], shrc = [];
+    for (const [i, a] of L.entries()) { const r = Math.min(SHELL_CLIP, SH.rel[i]) * Hr, q = P.map((x, j) => x + a.d[j] * r), c = colourOf(a);
+        shp.push(...q); shc.push(c.r, c.g, c.b); shr.push(...P, ...q); shrc.push(c.r, c.g, c.b, c.r, c.g, c.b); }
+    setPos(shellPts, shp); shellPts.geometry.setAttribute('color', new THREE.Float32BufferAttribute(shc, 3));
+    setPos(shellRays, shr); shellRays.geometry.setAttribute('color', new THREE.Float32BufferAttribute(shrc, 3));
+    shellPts.material.size = 0.1 * Hr;
+    // the address reader's paint: what arrives along each address, the colour of the face its ray meets
+    if (S.view === 'address') { const pc = []; for (const a of L) { const c = new THREE.Color(a.face >= 0 ? FACE_COL[a.face] : '#222'); pc.push(c.r, c.g, c.b); }
+        sphDots.geometry.setAttribute('color', new THREE.Float32BufferAttribute(pc, 3)); }
+    dotMat.size = S.view === 'address' ? 1.15 * Hr / S.n : 0.13;
+    applyView();
+    const hv = S.hover != null ? L[S.hover] : null; hoverL.visible = hoverBall.visible = !!hv && S.view !== 'address';
+    if (hv) { const q = S.view === 'payload' ? P.map((x, j) => x + hv.d[j] * Math.min(SHELL_CLIP, SH.rel[S.hover]) * Hr) : hv.p.map(x => x / k);
+        setPos(hoverL, [...P, ...q]); hoverBall.position.set(...q); hoverBall.scale.setScalar(S.view === 'payload' ? Math.min(1, Hr) : 1); }
     hud(); drawMap(); syncCtl();
 }
+let SH = { gm: 1, rel: [] };
+function shellOf(list) { let s = 0; for (const a of list) s += Math.log(a.t); const gm = Math.exp(s / list.length); return { gm, rel: list.map(a => a.t / gm) }; }
+// what each vantage shows, and from where
+const WRITER_ONLY = () => [boxEdges, boxFaces, numLines, ticks, zeroLab, boxLab, hitDots, horizonL, edgeL, ...axLab.flat()];
+let lastView = null, lastP = null;
+function applyView() { const v = S.view, P = S.P, Hr = H();
+    for (const o of WRITER_ONLY()) o.visible = v === 'writer';
+    rays.visible = v === 'writer' && S.rays; shellPts.visible = shellRays.visible = v === 'payload';
+    sphDots.visible = v !== 'payload'; apex.visible = v !== 'address'; homeAxes.visible = v !== 'address';
+    for (const t of axTag) t.visible = v !== 'address';
+    apex.scale.setScalar(v === 'payload' ? Math.min(1, 0.25 * Hr) : 1);
+    sphereW.visible = S.sphere && v !== 'address'; greatG.visible = S.sphere; patch.material.opacity = v === 'address' ? 0.12 : 0.33;
+    if (v === 'writer') { camera = camW; controls = ctlW; }
+    else if (v === 'payload') { camera = camR; controls = ctlP; camR.fov = 50;
+        if (lastView !== 'payload') { const c = G.apply(S.R, G.C0); camR.position.set(...P.map((x, i) => x - 4.6 * Hr * c[i] + (i === 1 ? 2.2 * Hr : 0))); ctlP.target.set(...P); }
+        else if (lastP) { const d = P.map((x, i) => x - lastP[i]); camR.position.add(new THREE.Vector3(...d)); ctlP.target.set(...P); } }
+    else { camera = camR; controls = null; camR.fov = 118; const c = G.apply(S.R, G.C0), up = Math.abs(c[1]) > 0.98 ? [0, 0, 1] : [0, 1, 0];
+        camR.position.set(...P); camR.up.set(...up); camR.lookAt(P[0] + c[0], P[1] + c[1], P[2] + c[2]); }
+    if (ctlW) { ctlW.enabled = v === 'writer'; ctlP.enabled = v === 'payload'; }
+    if (v !== 'address') camR.up.set(0, 1, 0);
+    camR.updateProjectionMatrix(); lastView = v; lastP = P.slice();
+    ray.params.Points.threshold = v === 'address' ? 0.6 * Hr / S.n : 0.18 * (v === 'payload' ? Math.min(1, Hr) : 1);
+    for (const b of document.querySelectorAll('#vant button')) b.classList.toggle('on', b.dataset.v === v);
+    $('vcap').innerHTML = VCAP[v]; $('hint').innerHTML = HINT[v]; }
+const VCAP = {
+    writer: `<b class="blue">The writer</b>, both hemispheres: the box whole, front and back of everything, drawn with parallel rays from no standpoint. Every point is three amounts on three number lines; the distance along each ray is one of them.`,
+    address: `<b class="gold">The address reader</b>, inscribed, the inner hemisphere: from its standpoint, looking out down the wedge. It holds directions only, [h : v : v₂], each painted by what arrives (here the colour of the face its ray meets). No distance arrives, and no box.`,
+    payload: `<b class="teal">The payload reader</b>, central, the outer hemisphere: the same directions given, an amount arriving along each, in a unit no reading fixes. Over their geometric mean it holds the shape of the box's corner seen from here, not its size.` };
+const HINT = {
+    writer: 'Drag the gold ball to move the wedge (arrows, page up/down too). Drag elsewhere to turn the view, scroll to zoom. Point at a dot for its address and where it lands.',
+    address: 'You stand where the reader stands. Move it with the arrows or the sliders, turn it, scale the world: the addresses stay; only the paint changes. Point at a dot for its address.',
+    payload: 'Drag to turn round the reader, scroll to zoom. Scale the world: every amount moves by k, the shell not at all. Point at a dot for its amount.' };
 
 // ── the readout ───────────────────────────────────────────────────────────────────────────────────────────────────────
 const pct = x => (100 * x).toFixed(1) + '%';
-function hud() { const k = K(), a = G.anglesOfRot(S.R), c = CN, n = L.length;
-    let s = `the wedge stands at (${S.P.map(x => fmt(x * k)).join(', ')}), amounts from the box's middle: the writer's numbers\n` +
+function hud() { const k = K(), a = G.anglesOfRot(S.R), c = CN, n = L.length, hv = S.hover != null ? L[S.hover] : null;
+    if (S.view === 'address') { let s = `the address reader holds ${n.toLocaleString('en')} directions [h : v : v₂], two numbers each, and the paint that arrives along them\n` +
+            `v ≤ h ${pct(c.vh)}, v₂ ≤ h ${pct(c.v2h)}, v₂ ≤ v ${pct(c.v2v)}, the near field ${pct(c.near)}: the same wherever it stands or turns, whatever the box, H and k\n` +
+            `the paint (what arrives, the world's): ` + c.faces.map((x, i) => x > 0 ? `${G.FACES[i]} ${pct(x)}` : null).filter(Boolean).join(', ') + `\nno distance arrives: a near wall and a far one paint alike`;
+        if (hv) { const m = Math.max(hv.h, hv.v, hv.v2); s += `\n\naddress [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}], painted ${G.FACES[hv.face]}; how far, never`; }
+        $('hud').textContent = s; return; }
+    if (S.view === 'payload') { const rel = SH.rel, mx = Math.max(...rel), mn = Math.min(...rel);
+        let s = `the payload reader holds ${n.toLocaleString('en')} amounts, one along each given direction, in a unit no reading fixes\n` +
+            `drawn over their geometric mean (${fmt(SH.gm)} in the writer's units at k = ${fmt(k)}; the reader never reads it): the shell, nearest ${mn.toFixed(3)}, farthest ${mx.toFixed(3)} of it\n` +
+            `the shape of the box's corner seen from here, not its size: scale the world and every amount moves by k, the shell not at all`;
+        if (hv) s += `\n\nalong [${[hv.h, hv.v, hv.v2].map(x => (x / Math.max(hv.h, hv.v, hv.v2)).toFixed(3)).join(' : ')}] (given): ${rel[S.hover].toFixed(4)} of the mean (the shape); ${fmt(hv.t)} in the writer's units (a writing)`;
+        $('hud').textContent = s; return; }
+    let s = `the writer holds the box, ${S.E.map(x => fmt(x * k)).join(' × ')}, and the reader's standpoint in it, (${S.P.map(x => fmt(x * k)).join(', ')}), from its middle: amounts\n` +
         `its triple corner points at longitude ${a.lon.toFixed(1)}°, latitude ${a.lat.toFixed(1)}°, turned ${a.roll.toFixed(1)}°; H = ${fmt(H())}, the zoom\n` +
         `${n.toLocaleString('en')} addresses (the reader's): v ≤ h ${pct(c.vh)}, v₂ ≤ h ${pct(c.v2h)}, v₂ ≤ v ${pct(c.v2v)}, the near field ${pct(c.near)},\n` +
         `  the same wherever the wedge stands or turns, whatever the box, H and k\n` +
         `where they land (the box's faces, the writer's): ` + c.faces.map((x, i) => x > 0 ? `${G.FACES[i]} ${pct(x)}` : null).filter(Boolean).join(', ');
-    const hv = S.hover != null ? L[S.hover] : null;
     if (hv) { const m = Math.max(hv.h, hv.v, hv.v2), r = [hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3));
         s += `\n\naddress [h : v : v₂] = [${r.join(' : ')}], two numbers (the reader's; [h : v : v₂] holds no size)\n` +
             `→ the point (${hv.p.map(fmt).join(', ')}) on face ${G.FACES[hv.face]}, three numbers (the writer's)\n` +
@@ -359,27 +449,33 @@ addEventListener('keydown', e => { if (e.target.tagName === 'INPUT') return; con
 const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(); ray.params.Points.threshold = 0.18;
 const toNdc = e => { const r = canvas.getBoundingClientRect(); ndc.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1); ray.setFromCamera(ndc, camera); };
 let drag = null;
-canvas.addEventListener('pointerdown', e => { toNdc(e); if (ray.intersectObject(apex).length) {
+canvas.addEventListener('pointerdown', e => { toNdc(e); if (S.view === 'writer' && ray.intersectObject(apex).length) {
     const n = camera.getWorldDirection(new THREE.Vector3()), pl = new THREE.Plane().setFromNormalAndCoplanarPoint(n, apex.position.clone()), at = ray.ray.intersectPlane(pl, new THREE.Vector3());
     drag = { pl, off: apex.position.clone().sub(at || apex.position) }; if (controls) controls.enabled = false; canvas.setPointerCapture(e.pointerId); S.wander = false; } });
 canvas.addEventListener('pointermove', e => { toNdc(e);
     if (drag) { const at = ray.ray.intersectPlane(drag.pl, new THREE.Vector3()); if (at) { at.add(drag.off); S.P = [at.x, at.y, at.z]; dirty = true; } return; }
-    const h = ray.intersectObjects([hitDots, sphDots], false)[0], idx = h ? h.index : null; if (idx !== S.hover) { S.hover = idx; dirty = true; }
-    canvas.style.cursor = ray.intersectObject(apex).length ? 'move' : 'grab'; });
+    const pick = S.view === 'writer' ? [hitDots, sphDots] : S.view === 'payload' ? [shellPts] : [sphDots];
+    const h = ray.intersectObjects(pick, false)[0], idx = h ? h.index : null; if (idx !== S.hover) { S.hover = idx; dirty = true; }
+    canvas.style.cursor = S.view === 'writer' && ray.intersectObject(apex).length ? 'move' : S.view === 'address' ? 'crosshair' : 'grab'; });
 canvas.addEventListener('pointerup', () => { if (drag) { drag = null; if (controls) controls.enabled = true; } });
+const setView = v => { if (v === S.view) return; S.view = v; S.hover = null; dirty = true; };
+for (const b of document.querySelectorAll('#vant button')) b.onclick = () => setView(b.dataset.v);
+addEventListener('keydown', e => { if (e.target.tagName === 'INPUT') return; const v = { '1': 'writer', '2': 'address', '3': 'payload' }[e.key]; if (v) setView(v); });
 canvas.addEventListener('pointerleave', () => { if (S.hover != null && !drag) { S.hover = null; dirty = true; } });
 
 // ── animation: spin turns the wedge about the box's up; wander walks it through the box ──────────────────────────────
 let wanderT = 0, wanderFrom = S.P.slice(), last = performance.now();
 function animate(dt) { if (S.spin) { const a = G.anglesOfRot(S.R); S.R = G.rotOf(((a.lon + 24 * dt + 180) % 360) - 180, a.lat, a.roll); dirty = true; }
     if (S.wander) { wanderT += dt; const t = wanderT * 0.35; S.P = [0.36 * S.E[0] * Math.sin(t), 0.32 * S.E[1] * Math.sin(1.7 * t + 0.6), 0.36 * S.E[2] * Math.sin(1.3 * t + 1.1)].map((x, i) => wanderT < 1 ? wanderFrom[i] + (x - wanderFrom[i]) * wanderT : x); dirty = true; } }
-function resize() { const w = innerWidth, h = innerHeight; if (renderer) renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); dirty = true; }
+function resize() { const w = innerWidth, h = innerHeight; if (renderer) renderer.setSize(w, h, false);
+    camR.aspect = w / h; camR.updateProjectionMatrix();
+    const half = 0.62 * Math.max(...DEF.E); camW.left = -half * w / h; camW.right = half * w / h; camW.top = half; camW.bottom = -half; camW.updateProjectionMatrix(); dirty = true; }
 addEventListener('resize', resize);
 function loop(now) { const dt = Math.min(0.05, (now - last) / 1000); last = now; animate(dt);
     if (dirty) { draw(); dirty = false; }
     if (controls) controls.update(); if (renderer) { renderer.render(scene, camera); frames++; }
     requestAnimationFrame(loop); }
-if (controls) { controls.target.set(0, 0, 0); controls.update(); }
+if (ctlW) { ctlW.target.set(0, 0, 0); ctlW.update(); }
 if (innerWidth < 760) { $('panel').classList.add('folded'); $('fold').textContent = '▴'; }
 if (qs.get('spin') === '1') S.spin = true;
 resize(); draw();
@@ -392,8 +488,11 @@ window.__writerBox = { ...G, ready: true,
     readAt(o = {}) { const s = { E: o.E || S.E, P: o.P || S.P, R: o.R || S.R, k: o.k ?? K(), n: o.n || S.n }; const list = G.read(s); return { list, counts: G.counts(list) }; },
     set(o) { if (o.P) S.P = o.P.slice(); if (o.E) S.E = o.E.slice(); if (o.R) S.R = o.R; if (o.ang) S.R = G.rotOf(o.ang.lon, o.ang.lat, o.ang.roll);
         if (o.oct) S.R = G.octantRot(o.oct); if (o.lgH != null) S.lgH = o.lgH; if (o.lk != null) S.lk = o.lk; if (o.n) S.n = o.n; if (o.spin != null) S.spin = o.spin; if (o.wander != null) S.wander = o.wander;
-        if (o.hover !== undefined) S.hover = o.hover; lastBoxKey = ''; draw(); return this.state(); },
-    state: () => ({ E: S.E.slice(), P: S.P.slice(), R: S.R.map(r => r.slice()), ang: G.anglesOfRot(S.R), H: H(), k: K(), n: S.n, hover: S.hover, counts: CN }),
+        if (o.hover !== undefined) S.hover = o.hover; if (o.view) { S.view = o.view; S.hover = null; } lastBoxKey = ''; draw(); return this.state(); },
+    // the payload reader's shell at a state: the amounts over their geometric mean, and the mean itself (the writer's)
+    shellAt(o = {}) { const r = this.readAt(o); return shellOf(r.list); },
+    camera: () => ({ kind: camera.isOrthographicCamera ? 'orthographic' : 'perspective', at: camera.position.toArray(), fov: camera.fov }),
+    state: () => ({ E: S.E.slice(), P: S.P.slice(), R: S.R.map(r => r.slice()), ang: G.anglesOfRot(S.R), H: H(), k: K(), n: S.n, hover: S.hover, counts: CN, view: S.view }),
     hud: () => $('hud').textContent, apexScreen() { const v = apex.position.clone().project(camera), r = canvas.getBoundingClientRect(); return [r.left + (v.x + 1) / 2 * r.width, r.top + (1 - v.y) / 2 * r.height]; },
     get frames() { return frames; }, get webgl() { return !!renderer; } };
 </script>

@@ -1491,13 +1491,18 @@ try {
         let m = Infinity; for (let q = 0; q < 3; q++) m = Math.min(m, Math.abs(Math.abs(a.p[q]) - E[q] / 2)); o.face = Math.max(o.face, m / k);
         if (!c.k) o.moved = Math.max(o.moved, Math.hypot(...a.p.map((x, q) => x - z.p[q]))); } }
     const k7 = W.readAt({ n: 16, k: 7 }), k1 = W.readAt({ n: 16, k: 1 }); o.kScale = Math.max(...k7.list.map((a, i) => Math.max(...a.p.map((x, q) => Math.abs(x - 7 * k1.list[i].p[q])))));
-    o.c = b0.counts; o.p0 = W.state().P; o.ap = W.apexScreen(); o.frames = W.frames; o.webgl = W.webgl; return o; });
+    o.c = b0.counts;
+    // the three vantages (R447): the payload reader's shell unmoved by k, its mean by k; each view its camera
+    const s1 = W.shellAt({ k: 1 }), s3 = W.shellAt({ k: 1e3 }); o.shell = Math.max(...s1.rel.map((x, i) => Math.abs(x - s3.rel[i]))); o.gm = s3.gm / s1.gm;
+    o.cams = ['address', 'payload', 'writer'].map(v => { W.set({ view: v }); const c = W.camera(); return [v, c.kind, c.kind === 'perspective' && v === 'address' ? Math.hypot(...c.at.map((x, i) => x - W.state().P[i])) : null]; });
+    o.p0 = W.state().P; o.ap = W.apexScreen(); o.frames = W.frames; o.webgl = W.webgl; return o; });
   await page.mouse.move(wbx.ap[0], wbx.ap[1]); await page.mouse.down(); await page.mouse.move(wbx.ap[0] + 50, wbx.ap[1] - 30, { steps: 5 }); await page.mouse.up();
   wbx.dragged = await page.evaluate(p0 => Math.hypot(...__writerBox.state().P.map((x, i) => x - p0[i])), wbx.p0);
   if (!(wbx.same === 0) || !(wbx.face < 1e-12) || !(wbx.moved > 1) || !(wbx.kScale < 1e-9) || wbx.c.vh !== 0.5 || wbx.c.v2h !== 0.5 || wbx.c.v2v !== 0.5 ||
-    Math.abs(wbx.c.near - 1 / 3) > 0.01 || !(wbx.dragged > 0.3) || !(wbx.frames > 0) || !wbx.webgl)
+    Math.abs(wbx.c.near - 1 / 3) > 0.01 || !(wbx.dragged > 0.3) || !(wbx.frames > 0) || !wbx.webgl ||
+    !(wbx.shell < 1e-9) || Math.abs(wbx.gm / 1e3 - 1) > 1e-9 || wbx.cams[0][1] !== 'perspective' || !(wbx.cams[0][2] < 1e-9) || wbx.cams[2][1] !== 'orthographic')
     failures.push(`[${current}] ${JSON.stringify(wbx)}`);
-  console.log(`${failures.length === before52 ? 'ok  ' : 'FAIL'} ${current} (moved, turned, resized and the world scaled by 10⁻³ and 10³: the 1,024 addresses unchanged, every landing on a face of the box (${wbx.face.toExponential(0)}), the landings moved by up to ${wbx.moved.toFixed(1)} and by k exactly; v ≤ h, v₂ ≤ h, v₂ ≤ v ½, the near field ${wbx.c.near.toFixed(4)}; a real drag moved the wedge ${wbx.dragged.toFixed(2)}; WebGL drew frames)`);
+  console.log(`${failures.length === before52 ? 'ok  ' : 'FAIL'} ${current} (moved, turned, resized and the world scaled by 10⁻³ and 10³: the 1,024 addresses unchanged, every landing on a face of the box (${wbx.face.toExponential(0)}), the landings moved by up to ${wbx.moved.toFixed(1)} and by k exactly; v ≤ h, v₂ ≤ h, v₂ ≤ v ½, the near field ${wbx.c.near.toFixed(4)}; a real drag moved the wedge ${wbx.dragged.toFixed(2)}; the three vantages: the writer's parallel rays, the address reader's camera at its standpoint, the payload reader's shell unmoved by k (${wbx.shell.toExponential(0)}) and its mean by k; WebGL drew frames)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
