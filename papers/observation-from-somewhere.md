@@ -3114,6 +3114,42 @@ to compute anything is an engineering question we do not take up. The aim is to 
 well understood: why near and far seem to obey different mathematics, why logarithmic scales appear wherever a range is
 too wide to hold in proportion, and why the Cauchy has a median but no mean.
 
+### 11.4 What the geometry gives free
+
+The last section left aside whether this is a better way to compute anything. What the geometry does offer engineering
+is narrower and, we think, more useful: a baseline. Once the reader chooses H and draws V = H, a number of structures
+follow with no further choice:
+- a zoom, the value of H (§8);
+- a split between near and far, the corner v = h (§4);
+- precision far off, the lay past the corner, 1 + ln s or 2 − 1/s (§6);
+- a level of detail, a fixed count K of addresses that H divides between the near field and the far (§8);
+- addresses for any number of things, with no table and no count, the uniform turn's Cauchy (§7);
+- readings no change of the world's size can move, since every reading is a ratio (Theorem 6(a), §9);
+- which thing hides which, since the first thing on each line paints the reader's sphere (§3.7).
+
+None is added to the drawing; each is a consequence of it. Systems built to read or draw a world arrive at the same
+structures by design, and the geometry lets each design be read against them: what it adds, and what that costs.
+Four examples, each a matter of arithmetic:
+- *The depth buffer.* A perspective depth buffer stores (f/(f − n))·(1 − n/d) for a point at distance d between the
+  near and far planes n and f. With H = n this is the in-place lay, 2 − n/d, less its constant 1, rescaled: setting the
+  near plane is choosing H, the near field inside it is discarded, and precision runs out far off because every
+  address there has already been spent toward the horizon. Logarithmic depth, ln(d/n)/ln(f/n), is the reader's lay
+  past the corner with its corner at the near plane.
+- *The flat screen.* Equal pixels on a plane are not equal turns. Over the octant they weight the directions by
+  (2/π)·cos³α against the uniform turn's measure (Proposition 5(e)), and along one line of the screen they put the
+  median at half the screen's edge instead of at the corner (§3.5). The weighting is the design's, added to the geometry.
+- *Tables built for a count.* A sampling table or a grid of cells fixed in advance needs the count, or the extent, of
+  what it will hold. The uniform turn's addresses need neither (§8, "A fixed count, aimed by H"); what needs the count
+  is the payload or the writer.
+- *The mean of directions.* A least-squares fit to readings that are directions takes the mean of a law that has none
+  (Theorem 6), where the median is the law's own centre.
+
+This is a claim about where these structures come from, not about how well any system performs: a design that departs
+from the geometry may be right to, for reasons the geometry does not see. Two limits apply. What comes free is the
+readings, not the amounts: metres still cost one amount carried in (§9), and the geometry says only which amount and
+why one is enough. And whether a given departure is worth its cost is the designer's question; the geometry only makes
+it one that can be asked.
+
 ## Appendix: notation
 
 | symbol | kind | meaning |

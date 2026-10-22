@@ -765,6 +765,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   standpoint, painted by what arrives, no distance on it, sending nothing; Gibson's ambient optic array the picture
   (Gibson 1972, an unpublished manuscript, quoted; 1979, the book, cited, its chapter 5 to check in a library copy); the
   geometry adds the measure before any paint; the writer's sphere round the whole, its radius an amount.
+  **What the geometry gives free** (22 Oct, SPN R429, R430; Tom: "add the free vs engineered to ofs"): OFS §11.4, the
+  structures one choice of H gives and the geometry as the baseline a design is read against (the depth buffer as the
+  in-place lay with H at the near plane, log depth, the flat screen's cos³, tables that need a count, least squares as a
+  mean of a law with none); an origin, not performance. The evidence and its table are in `mapping.md` §9½.
   **One figure, three rulers** (21 Oct, SPN R422; Tom: "we have show that the same math applies to the reader and
   writer", after calendar's `geometry.html` dial): OFS §6 after Mercator's map. The circle, the unit hyperbola and the
   tangent at the apex lay one reading x three ways, the writer's line x, the turn θ = arctan x, the hyperbolic angle
