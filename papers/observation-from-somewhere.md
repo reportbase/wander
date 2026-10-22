@@ -999,7 +999,11 @@ The arc is drawn by that turning, not walked: the reader's position crosses the 
 (§3.4). If the bar pivots at a point of the circle, as in Thales' configuration, a turn of θ moves its far end through a central
 angle of 2θ (the inscribed-angle theorem), so the facing turns twice as fast as the sweep, from facing B at A to facing A
 at B. At the corner, θ = 45° and the facing is 90°: square to AB, leaning toward neither party. There the arc stands
-farthest from the segment, by 1 − 1/√2.
+farthest from the segment, by 1 − 1/√2. Two readers can walk the chord together, one from each end, each facing its own half of the circle:
+one the arc above the chord, the other the arc below. Each is the other turned through the chord's middle, so their
+facings are always opposite and the arcs they draw are congruent but never the same. They meet at the middle, the
+corner, square to the chord and facing away from each other. Neither facing is defined except against the other; the
+closed circle, both arcs at once, is the writer's.
 
 **The arc from the chord.** The arc can be had from the chord AB without turning a bar. Stand the two parties at its
 ends, and from each end sweep a ray: from A a ray reading v/h, from horizontal along AB up to vertical, and from B a ray

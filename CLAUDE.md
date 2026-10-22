@@ -767,6 +767,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   writer's amounts), siblings compared by ratios in their common box, the one view a reader cannot take of itself from
   outside, which a sibling can; closed by the scope: how an account of nested systems is held, not a claim that the world
   is so arranged. Containment words, not R304's withdrawn inside/outside of the hemispheres.
+  **Two walkers, opposite facings** (22 Oct, SPN R450; Tom: "A always faces in. B always faces out. A and B always face
+  opposite directions."; "You walk the chord while you face the arc. when A and B meet in the middle of the chord, they are
+  facing opposite directions."; "yes"): OFS §4 "Why the corner sits at 45°" closes with it: two readers walk the chord from
+  its ends, each facing its own half of the circle (above and below), each the other turned through the middle, so their
+  facings always opposite (AF = −BF, SPN's names only) and their arcs congruent, never the same; they meet at the middle,
+  the corner, square to the chord, facing away; neither facing defined except against the other; both arcs the writer's.
+  "Facing" keeps R313's sense in OFS.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
