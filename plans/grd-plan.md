@@ -169,3 +169,11 @@ map's area, the plan's second reading, which was available to be chosen after th
 run); it is not a test of the dimension, and two rats are not a population. P2 and P3 need more animals: a further run
 needs a dataset with five or more animals with two modules (Stensola et al. 2012's recordings, if released, or the
 Giocomo lab's on DANDI), with its own data section fixed before it is opened.
+
+### Re-read, 22 October (GDR, `plans/gdr-plan.md`; SPN R439)
+Appended; nothing above is changed. "Either is a halving in D.1's sense, in its own dimension: 2^(1/D)": OFS's lay doubles
+distance, 2 in every dimension; √2 needs levels counted by area on a proportional (writer's) plane, which is itself an
+added choice. The ratio is a reading, but the autocorrelogram method carries a bin, a smoothing and an occupancy floor and
+holds only within a band of them (GDR P1 (b) killed: +0.13 at twice the scale, rat Q's small module 58 cm against 136);
+run 1 sat inside the band. Five animals is the right size (GDR P4); only the step profile across six or more modules in
+one animal tells √2, √e and the turn's layout (cosh-growing steps, flat over at most five modules) apart.

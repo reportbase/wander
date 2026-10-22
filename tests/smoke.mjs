@@ -1450,6 +1450,28 @@ try {
     failures.push(`[${current}] ${JSON.stringify(b3)}`);
   console.log(`${failures.length === before50 ? 'ok  ' : 'FAIL'} ${current} (the world scaled by 1/100, 7 and 100: the payload reader's 2,048 ranges by k (${b3.radii.toExponential(0)}), its shell unmoved (${b3.shape.toExponential(0)}); every address the same at every k from five homes, v ≤ h ${b3.homes[0].vh.toFixed(3)}, v₂ ≤ h ½, v₂ ≤ v ${b3.homes[0].v2v.toFixed(3)}, the near field ${b3.homes[0].near.toFixed(4)}; one counted stride writes ${b3.write.map(w => `the ${w.h} ${w.room[0]} × ${w.room[2]} × ${w.room[1]} m (${w.n} corners)`).join(', ')}, to ${Math.max(...b3.write.map(w => w.err)).toExponential(0)}, in strides unmoved by k; the writer's sphere round the whole 28.8 m × k; WebGL drew ${b3.frames} frames)`);
 
+  // ── 51. ground.html: one's own height as the base (Sedgwick's horizon ratio; SPN R433, R434): on level ground every thing's
+  //    (tan E + tan F)/tan F is its V*/H and 1/tan F its d/H, exactly; the twin (one eye height) at the corner; scaling the world
+  //    moves no reading, the metres by k; crouching moves the readings, not the metres; a tilted plane or a lifted foot misreads ──
+  current = 'ground.html';
+  const before51 = failures.length;
+  await page.goto(new URL('ground.html', base).href, { waitUntil: 'load' });
+  const gr = await page.evaluate(() => { const G = __ground, o = {}, ks = [0.01, 1, 7, 100];
+    const tabs = ks.map(k => G.set({ k, H: 1.6, known: true, tilt: false, lift: false }));
+    o.move = Math.max(...tabs.map(t => Math.max(...t.map((x, i) => Math.abs(x.ratio - tabs[1][i].ratio) + Math.abs(x.dist - tabs[1][i].dist)))));
+    o.exact = Math.max(...tabs[1].map(x => x.err + x.distErr));
+    const tw = tabs[1].find(x => x.name === 'a twin'); o.twin = [tw.ratio, tw.E];
+    o.metres = Math.max(...tabs.map((t, j) => Math.max(...t.map((x, i) => Math.abs(x.written / (ks[j] * G.OBJECTS[i].V) - 1)))));
+    const low = G.set({ k: 1, H: 0.8 }); o.crouchTwin = low.find(x => x.name === 'a twin').ratio;
+    o.crouchMetres = Math.max(...low.map((x, i) => Math.abs(x.written - G.OBJECTS[i].V)));
+    o.tiltErr = Math.max(...G.set({ H: 1.6, tilt: true }).map(x => x.err));
+    const li = G.set({ tilt: false, lift: true }); o.liftErr = li.find(x => x.name === 'ball').err; o.liftOthers = Math.max(...li.filter(x => x.name !== 'ball').map(x => x.err));
+    G.set({ lift: false, known: false }); return o; });
+  if (!(gr.move < 1e-12) || !(gr.exact < 1e-12) || Math.abs(gr.twin[0] - 1) > 1e-12 || Math.abs(gr.twin[1]) > 1e-12 || !(gr.metres < 1e-12) ||
+    Math.abs(gr.crouchTwin - 2) > 1e-12 || !(gr.crouchMetres < 1e-12) || !(gr.tiltErr > 0.1) || !(gr.liftErr > 0.5) || !(gr.liftOthers < 1e-12))
+    failures.push(`[${current}] ${JSON.stringify(gr)}`);
+  console.log(`${failures.length === before51 ? 'ok  ' : 'FAIL'} ${current} (level ground: every thing's (tan E + tan F)/tan F its V*/H and 1/tan F its d/H to ${gr.exact.toExponential(0)}; one eye height tall at the corner, its top on the horizon; the world scaled by 1/100, 7 and 100 moves no reading (${gr.move.toExponential(0)}), the metres by k; crouched to half height the twin reads 2 and the metres stay; a plane tilted ½° misreads by up to ${(100 * gr.tiltErr).toFixed(0)}%, the ball thrown up by ${(100 * gr.liftErr).toFixed(0)}%)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

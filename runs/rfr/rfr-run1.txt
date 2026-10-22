@@ -1,0 +1,21 @@
+P1: not killed. geometric mean over uniform directions vs exp(a0): rel 5.89e-40; depth change under k = 1e-3, 7, 1e6: 1.47e-39 levels; rbar/(k*rbar0) - 1: 4.13e-40. (27 terms, degrees 1-6, 192 nodes)
+  Earth: L = log2(a/c) 0.00482602; median at mu 0.5; median sphere above the geometric-mean sphere by 0.000401291 levels; dL/L 0.0831516 (band 0.99-1.0)  <-- outside; arithmetic mean above geometric by 7.18e-7 levels
+  Mars: L = log2(a/c) 0.00852105; median at mu 0.5; median sphere above the geometric-mean sphere by 0.000707347 levels; dL/L 0.0830117 (band 0.99-1.0)  <-- outside; arithmetic mean above geometric by 2.24e-6 levels
+  Moon: L = log2(a/c) 0.00174414; median at mu 0.5; median sphere above the geometric-mean sphere by 0.000145231 levels; dL/L 0.0832678 (band 0.99-1.0)  <-- outside; arithmetic mean above geometric by 9.374e-8 levels
+  Jupiter: L = log2(a/c) 0.0967679; median at mu 0.5; median sphere above the geometric-mean sphere by 0.00769081 levels; dL/L 0.0794768 (band 0.88-0.99)  <-- outside; arithmetic mean above geometric by 0.0002927 levels
+  Saturn: L = log2(a/c) 0.148741; median at mu 0.5; median sphere above the geometric-mean sphere by 0.0114862 levels; dL/L 0.0772227 (band 0.88-0.99)  <-- outside; arithmetic mean above geometric by 0.0006966 levels
+P2: KILLED. the median sphere at latitude 30 deg (mu = 1/2) on every spheroid; the corner sphere (geometric mean, a0) below it by about L/12
+  a/R 1e-3: footprint/(a eps) - 1 = 3.34e-13; a/R 1e-1: footprint/(a eps) - 1 = 3.85e-13; a/R 1: footprint/(a eps) - 1 = 1.0e-12; a/R 10: footprint/(a eps) - 1 = 2.2e-11; a/R 1e3: footprint/(a eps) - 1 = 1.67e-7
+  disc rule (run 2): octaves per level of altitude at a = R -0.551328895422 (-sqrt3/pi = -0.551328895422); at a = 1000R -0.99900133; l_disc/l* at a = R 0.5235987756 (pi/6)
+    a/R  1e-3: l_disc/l* = 0.00152609, disc rule octaves per level of altitude -0.0146339, per level of distance d -14.6486
+    a/R  1e-2: l_disc/l* = 0.0142996, disc rule octaves per level of altitude -0.0488379, per level of distance d -4.93262
+    a/R   0.1: l_disc/l* = 0.11411, disc rule octaves per level of altitude -0.17385, per level of distance d -1.91235
+    a/R     1: l_disc/l* = 0.523599, disc rule octaves per level of altitude -0.551329, per level of distance d -1.10266
+    a/R    10: l_disc/l* = 0.910348, disc rule octaves per level of altitude -0.911611, per level of distance d -1.00277
+    a/R   100: l_disc/l* = 0.990115, disc rule octaves per level of altitude -0.990131, per level of distance d -1.00003
+P3: not killed. the foot's held degree l* = pi R/(a eps) halves exactly per level of altitude, through a = R; run 2's disc rule is its far-field form
+  (a) planar e^(-la/R) at (l, a) vs (2l, a/2): 0.0; (b) exterior Poisson coefficients vs (R/d)^n, n 1-8, d/R 1.5, 3, 10: 0.667; (c) K-address cut over planar cut at K = 512: 1024.0 = 2K, log2 10.0 octaves
+  world's own Cauchy, octaves its 1/e cut moves per level of altitude: a/R 1e-4 0.99993, a/R 1e-2 0.99288, a/R 0.05 0.96604, a/R 0.1 0.93578, a/R 0.25 0.86161, a/R 1 0.66445, a/R 10 0.34445, a/R 100 0.20052, a/R 1e4 0.10467
+P4: KILLED. one octave per level from the height only on the plane; the world's own Cauchy drops 0.66445 at a = R and 0.2005 at a = 100R
+P5: KILLED. outline shift at first hold over run 2's rho, worst |ratio - 1| over d/R 1.01..1000, k 3..9, h/R 1e-5, 1e-4: 0.0025; so rho_k = 2 RMS_k/lambda_k, free of d and K
+  bookkeeping: run 2's printed rho = 2 RMS/lambda for 55 octaves, worst difference 0.00007 (printed to 0.0001)

@@ -1,0 +1,78 @@
+## node runs/por/por1.mjs (P1–P3, POL's engine)
+  k = 2: rack readings max |Δ| 0.000e+0, field readings 0.000e+0, referee positions/k vs k = 1 0.000e+0; count mismatches (rack readings, rack contacts, field readings, field contacts, sunk) 0, 0, 0, 0, 0; bitwise true
+  k = 7: rack readings max |Δ| 2.928e-13, field readings 4.693e-6, referee positions/k vs k = 1 3.985e-12; count mismatches (rack readings, rack contacts, field readings, field contacts, sunk) 0, 0, 0, 0, 0; bitwise false
+  k = 0.001: rack readings max |Δ| 1.337e-12, field readings 6.207e-7, referee positions/k vs k = 1 8.229e-12; count mismatches (rack readings, rack contacts, field readings, field contacts, sunk) 0, 0, 0, 0, 0; bitwise false
+P1: KILLED. 2181420 rack and 7946156 field reading pairs compared at each k; contacts 188 and 265
+  k = 2, c = 100: E/k 2.342e-2, 3.619e-2, 2.342e-2 | k = 1, c = 50: 2.342e-2, 3.619e-2, 2.342e-2 | largest relative difference 0.000e+0; lateness 4.32 ticks; median E/k 2.342e-2
+  k = 2, c = 200: E/k 1.533e-2, 3.167e-2, 1.533e-2 | k = 1, c = 100: 1.533e-2, 3.167e-2, 1.533e-2 | largest relative difference 0.000e+0; lateness 2.16 ticks; median E/k 1.533e-2
+  k = 2, c = 400: E/k 8.080e-5, 3.935e-4, 8.080e-5 | k = 1, c = 200: 8.080e-5, 3.935e-4, 8.080e-5 | largest relative difference 0.000e+0; lateness 1.08 ticks; median E/k 8.080e-5
+  k = 0.5, c = 100: E/k 8.080e-5, 3.935e-4, 8.080e-5 | k = 1, c = 200: 8.080e-5, 3.935e-4, 8.080e-5 | largest relative difference 0.000e+0; lateness 1.08 ticks; median E/k 8.080e-5
+  k = 0.5, c = 200: E/k 3.725e-5, 3.086e-5, 3.725e-5 | k = 1, c = 400: 3.725e-5, 3.086e-5, 3.725e-5 | largest relative difference 0.000e+0; lateness 0.54 ticks; median E/k 3.725e-5
+  k = 0.5, c = 400: E/k 1.779e-5, 1.479e-5, 1.779e-5 | k = 1, c = 800: 1.779e-5, 1.479e-5, 1.779e-5 | largest relative difference 0.000e+0; lateness 0.27 ticks; median E/k 1.779e-5
+P2: not killed. at c = 200: median E/k 8.080e-5 at k = 1 (1.08 ticks), 1.533e-2 at k = 2 (2.16 ticks)
+  K = 1: v* = 0.40825; decisions compared 684, differing 55; skipped (size) 26,69,43,56,56 (address) 20,61,38,46,35; level-0 E size 2.321e+0, 5.071e+0, 3.225e+0, 2.075e+0, 6.088e-1; address 2.321e+0, 5.071e+0, 3.225e+0, 2.075e+0, 6.088e-1; identical false
+  K = 2: v* = 0.25820; decisions compared 612, differing 4; skipped (size) 12,19,19,33,20 (address) 11,15,19,33,19; level-0 E size 2.174e-1, 1.948e-1, 1.155e+0, 8.221e-1, 6.088e-1; address 2.174e-1, 1.948e-1, 1.155e+0, 8.221e-1, 6.088e-1; identical false
+  K = 3: v* = 0.14907; decisions compared 576, differing 0; skipped (size) 4,8,9,7,10 (address) 4,8,9,7,10; level-0 E size 1.088e-1, 1.265e-1, 9.995e-1, 2.384e-1, 1.438e-1; address 1.088e-1, 1.265e-1, 9.995e-1, 2.384e-1, 1.438e-1; identical true
+P3: KILLED. measured: the largest reading at a pushing response over its contact value, log2(h + v), 1.8783 levels
+  j = 1: v at contact 0.33333, half-span 19.471°, share of a full turn 0.10817, momentum share skipped (1+e)/(1+8^j) 0.21778
+  j = 2: v at contact 0.20000, half-span 11.537°, share of a full turn 0.06409, momentum share skipped (1+e)/(1+8^j) 0.03015
+  j = 3: v at contact 0.11111, half-span 6.379°, share of a full turn 0.03544, momentum share skipped (1+e)/(1+8^j) 0.00382
+
+## python3 runs/por/por1.py (corner identities, P4–P5)
+identity e=1.0: q(r)+q(1/r)-(1+e) 0.0; dq/dlnr at 1 1.5 (3(1+e)/4 = 1.5); T at 1 1.0, dT/dlnr 0.0, d2T -4.5 (-(9/8)(1+e)^2 = -4.5); T(r)=T(1/r) 2.87e-42
+identity e=0.96: q(r)+q(1/r)-(1+e) 2.3e-41; dq/dlnr at 1 1.47 (3(1+e)/4 = 1.47); T at 1 0.9604, dT/dlnr 0.0, d2T -4.3218 (-(9/8)(1+e)^2 = -4.3218); T(r)=T(1/r) 0.0
+identity e=0.8: q(r)+q(1/r)-(1+e) 0.0; dq/dlnr at 1 1.35 (3(1+e)/4 = 1.35); T at 1 0.81, dT/dlnr 0.0, d2T -3.645 (-(9/8)(1+e)^2 = -3.645); T(r)=T(1/r) 1.43e-42
+
+P4 (one dimension; sigma = 1/8, m = 12, H = 1; readings over the truth's largest average over [0, 1/12])
+(a) folded at birth: slope -0.9903 (band [-1.03, -0.97])
+    p = 6: median 5.98390e-02; plan's sqrt(2pi)sigma m/2^(p-1) 1.17498e-01 (ratio 0.5093); over the birth cell's actual breadth 2^p/m: 5.87491e-02 (ratio 1.0186)
+    p = 7: median 2.99195e-02; plan's sqrt(2pi)sigma m/2^(p-1) 5.87491e-02 (ratio 0.5093); over the birth cell's actual breadth 2^p/m: 2.93746e-02 (ratio 1.0186)
+    p = 8: median 1.49598e-02; plan's sqrt(2pi)sigma m/2^(p-1) 2.93746e-02 (ratio 0.5093); over the birth cell's actual breadth 2^p/m: 1.46873e-02 (ratio 1.0186)
+    p = 9: median 7.47988e-03; plan's sqrt(2pi)sigma m/2^(p-1) 1.46873e-02 (ratio 0.5093); over the birth cell's actual breadth 2^p/m: 7.34364e-03 (ratio 1.0186)
+    p = 10: median 3.73994e-03; plan's sqrt(2pi)sigma m/2^(p-1) 7.34364e-03 (ratio 0.5093); over the birth cell's actual breadth 2^p/m: 3.67182e-03 (ratio 1.0186)
+    p = 11: median 1.86997e-03; plan's sqrt(2pi)sigma m/2^(p-1) 3.67182e-03 (ratio 0.5093); over the birth cell's actual breadth 2^p/m: 1.83591e-03 (ratio 1.0186)
+    p = 12: median 9.34984e-04; plan's sqrt(2pi)sigma m/2^(p-1) 1.83591e-03 (ratio 0.5093); over the birth cell's actual breadth 2^p/m: 9.17955e-04 (ratio 1.0186)
+(a) KILLED (slope in band: True; medians within 3%: False)
+    p = 6, D0 =    67.360: (a) 5.98390e-02  (b) 1.63442e-02 in 177 steps  (c, from D0/2) 1.89335e-02  (c, from birth) off 1.7e-15  (d) off 0.0e+00
+    p = 6, D0 =    69.413: (a) 4.42134e-02  (b) 1.45411e-02 in 178 steps  (c, from D0/2) 1.64376e-02  (c, from birth) off 1.6e-15  (d) off 2.0e-16
+    p = 6, D0 =    64.061: (a) 4.11373e-02  (b) 1.57213e-02 in 176 steps  (c, from D0/2) 1.75932e-02  (c, from birth) off 4.4e-16  (d) off 2.2e-16
+    p = 6, D0 =    71.836: (a) 5.98390e-02  (b) 1.45771e-02 in 181 steps  (c, from D0/2) 1.69718e-02  (c, from birth) off 1.1e-16  (d) off 0.0e+00
+    p = 6, D0 =    71.260: (a) 5.98390e-02  (b) 1.45362e-02 in 181 steps  (c, from D0/2) 1.69239e-02  (c, from birth) off 4.4e-16  (d) off 0.0e+00
+    p = 6, D0 =    67.665: (a) 5.98390e-02  (b) 1.63442e-02 in 180 steps  (c, from D0/2) 1.89335e-02  (c, from birth) off 2.2e-16  (d) off 0.0e+00
+    p = 7, D0 =   138.550: (a) 2.46523e-02  (b) 7.87520e-03 in 205 steps  (c, from D0/2) 8.92436e-03  (c, from birth) off 2.2e-16  (d) off 0.0e+00
+    p = 7, D0 =   143.872: (a) 2.99195e-02  (b) 7.28913e-03 in 205 steps  (c, from D0/2) 8.48812e-03  (c, from birth) off 2.8e-15  (d) off 0.0e+00
+    p = 7, D0 =   140.281: (a) 2.99195e-02  (b) 7.19626e-03 in 203 steps  (c, from D0/2) 8.31449e-03  (c, from birth) off 5.6e-16  (d) off 0.0e+00
+    p = 7, D0 =   140.481: (a) 2.99195e-02  (b) 7.19716e-03 in 204 steps  (c, from D0/2) 8.32501e-03  (c, from birth) off 0.0e+00  (d) off 0.0e+00
+    p = 7, D0 =   129.917: (a) 2.99195e-02  (b) 7.71696e-03 in 202 steps  (c, from D0/2) 8.76804e-03  (c, from birth) off 1.3e-15  (d) off 0.0e+00
+    p = 7, D0 =   132.573: (a) 2.99195e-02  (b) 7.82637e-03 in 203 steps  (c, from D0/2) 9.05785e-03  (c, from birth) off 1.6e-15  (d) off 0.0e+00
+    p = 8, D0 =   265.308: (a) 1.49598e-02  (b) 3.91319e-03 in 228 steps  (c, from D0/2) 4.53210e-03  (c, from birth) off 8.9e-16  (d) off 0.0e+00
+    p = 8, D0 =   263.542: (a) 1.49598e-02  (b) 3.90324e-03 in 226 steps  (c, from D0/2) 4.50576e-03  (c, from birth) off 4.4e-16  (d) off 0.0e+00
+    p = 8, D0 =   270.336: (a) 1.49598e-02  (b) 4.08605e-03 in 225 steps  (c, from D0/2) 4.73339e-03  (c, from birth) off 6.7e-16  (d) off 0.0e+00
+    p = 8, D0 =   272.460: (a) 1.49598e-02  (b) 4.13205e-03 in 226 steps  (c, from D0/2) 4.73339e-03  (c, from birth) off 1.0e-15  (d) off 0.0e+00
+    p = 8, D0 =   287.335: (a) 1.49598e-02  (b) 3.64456e-03 in 227 steps  (c, from D0/2) 4.24296e-03  (c, from birth) off 1.1e-16  (d) off 0.0e+00
+    p = 8, D0 =   259.387: (a) 1.49598e-02  (b) 3.85582e-03 in 224 steps  (c, from D0/2) 4.37700e-03  (c, from birth) off 8.9e-16  (d) off 0.0e+00
+    p = 9, D0 =   562.064: (a) 7.47988e-03  (b) 1.79946e-03 in 250 steps  (c, from D0/2) 2.08255e-03  (c, from birth) off 2.7e-15  (d) off 0.0e+00
+    p = 9, D0 =   515.612: (a) 7.47988e-03  (b) 1.91501e-03 in 248 steps  (c, from D0/2) 2.17180e-03  (c, from birth) off 1.9e-15  (d) off 0.0e+00
+    p = 9, D0 =   536.791: (a) 7.47988e-03  (b) 2.03804e-03 in 248 steps  (c, from D0/2) 2.36669e-03  (c, from birth) off 5.8e-15  (d) off 0.0e+00
+    p = 9, D0 =   532.951: (a) 7.47988e-03  (b) 1.95786e-03 in 251 steps  (c, from D0/2) 2.27230e-03  (c, from birth) off 2.9e-15  (d) off 0.0e+00
+    p = 9, D0 =   553.536: (a) 7.47988e-03  (b) 2.07254e-03 in 250 steps  (c, from D0/2) 2.36669e-03  (c, from birth) off 9.1e-15  (d) off 0.0e+00
+    p = 9, D0 =   565.878: (a) 7.47988e-03  (b) 1.81604e-03 in 250 steps  (c, from D0/2) 2.10542e-03  (c, from birth) off 5.1e-15  (d) off 0.0e+00
+(b) not killed: never above (a): True; slope -0.9962 (band [-1.3, -0.7])
+(c) not killed; (d) not killed
+
+P5 (two dimensions; polar cells, radially as P4, 96 angles)
+    p = 6: median largest cell average over the blob's height 3.90625e-03
+    p = 7: median largest cell average over the blob's height 1.05469e-03
+    p = 8: median largest cell average over the blob's height 2.63672e-04
+    p = 9: median largest cell average over the blob's height 6.59180e-05
+    p = 10: median largest cell average over the blob's height 1.64795e-05
+    p = 11: median largest cell average over the blob's height 4.11987e-06
+    p = 12: median largest cell average over the blob's height 9.91821e-07
+P5: not killed. slope -1.9882 (band [-2.06, -1.94])
+
+## node runs/por/por1-posthoc.mjs (after the run, not a test)
+K = 1: 55 differing of 684; log2(h + v) at all pushing responses: median 0.1253, 90% 0.5138, max 1.8783
+  at the differing ones: min 0.2937, median 0.5004; size said skip / address said keep 55, the other way 0; levels (reader, other) 2>3 1>2
+K = 2: 4 differing of 612; log2(h + v) at all pushing responses: median 0.1069, 90% 0.4747, max 1.4122
+  at the differing ones: min 0.4068, median 0.4117; size said skip / address said keep 4, the other way 0; levels (reader, other) 1>3
+field seed 1, k = 7 against k = 1, largest |Δv| by eighths of the second: 1.9e-15 1.9e-15 1.9e-15 5.2e-14 1.5e-12 8.4e-12 9.3e-12 7.4e-12

@@ -1,0 +1,54 @@
+P1: the three paths, each swept uniformly along its own length
+  circle: E[cos θ] = 0.63661977236758134308 (stated 0.63661977236758134308); E[sin 2θ] = 0.63661977236758134308 (stated 0.63661977236758134308)
+          E[cos²θ] = 0.5, E[cos 2θ] = -3.2171e-52, median θ = 0.78539816339744830962, median cos θ = 0.7071067811865475244
+  line  : E[cos θ] = 0.62322524014023051339 (stated 0.62322524014023051339); E[sin 2θ] = 0.57079632679489661923 (stated 0.57079632679489661923)
+          E[cos²θ] = 0.5, E[cos 2θ] = -5.0535e-52, median θ = 0.78539816339744830962, median cos θ = 0.7071067811865475244
+  square: E[cos θ] = 0.64779357469631903702 (stated 0.64779357469631903702); E[sin 2θ] = 0.69314718055994530942 (stated 0.69314718055994530942)
+          E[cos²θ] = 0.5, E[cos 2θ] = -2.5267e-52, median θ = 0.78539816339744830962, median cos θ = 0.7071067811865475244
+P1: not killed
+
+P2: the family w_a ∝ sin^a(2θ)
+  a =  -0.9: median off the corner by 3.84e-6; E[cos²θ] − ½ = -3.6e-7; E[cos θ] = 0.530269309463401; E[sin 2θ] = 0.137798178978904
+  a =  -0.5: median off the corner by 1.81e-26; E[cos²θ] − ½ = -6.89e-27; E[cos θ] = 0.599070117367796; E[sin 2θ] = 0.456946581044464
+  a =     0: median off the corner by 6.68e-52; E[cos²θ] − ½ = 0.0; E[cos θ] = 0.636619772367581; E[sin 2θ] = 0.636619772367581
+  a =   0.5: median off the corner by 6.68e-52; E[cos²θ] − ½ = 0.0; E[cos θ] = 0.65551438857303; E[sin 2θ] = 0.729479871742159
+  a =     1: median off the corner by 6.68e-52; E[cos²θ] − ½ = 0.0; E[cos θ] = 0.666666666666667; E[sin 2θ] = 0.785398163397448
+  a =     2: median off the corner by 6.68e-52; E[cos²θ] − ½ = 0.0; E[cos θ] = 0.67906109052542; E[sin 2θ] = 0.848826363156775
+  a =     4: median off the corner by 6.68e-52; E[cos²θ] − ½ = -6.68e-52; E[cos θ] = 0.689839837994078; E[sin 2θ] = 0.905414787367227
+  both means strictly increasing in a: True
+P2: KILLED
+
+P3: a fair, non-uniform weight with E[cos θ] = 2/π
+  λ = 0.23989125507979580287; E_mix[cos θ] − 2/π = 0.0; E_mix[cos 4θ] = -0.0123198133298389 (uniform 0); E_mix[sin 2θ] = 0.637493301167629 (uniform 0.636619772367581)
+P3: not killed
+
+P4: the whole turn, the mean shadow on the axis at φ, E|cos(θ − φ)|
+  w = 1 + ½cos θ  : φ = 0, 0.3, 1, π/2 → 0.636619772367581, 0.636619772367581, 0.636619772367581, 0.636619772367581
+  w = 1 + ½cos 2θ : φ = 0, 0.3, 1, π/2 → 0.742723067762178, 0.724190600916024, 0.592465221641893, 0.530516476972984
+  w = 1 + ½cos 4θ : φ = 0, 0.3, 1, π/2 → 0.615399113288662, 0.628930301995229, 0.650490520805038, 0.615399113288662
+P4: not killed
+
+P6: the catalogue's constants under three fair, non-uniform weights (line, square, w₂)
+  [M ] K5/C14/C34 mean |sin| (full turn): uniform 0.636619772368 (matches as written); shift line -0.01339, square 0.01117, w2 0.04244 → predicted moves: yes
+  [M ] K2/K6/C20/C33 mean |cos| (full turn): uniform 0.636619772368 (matches as written); shift line -0.01339, square 0.01117, w2 0.04244 → predicted moves: yes
+  [M ] C15/C43/K12 mean half-angle chord, heading on [0, π]: uniform 0.636619772368 (matches as written); shift line -0.003202, square 0.002653, w2 0.01011 → predicted moves: yes
+  [M ] C9 (2/π)K(0.6) as a mean = 1/agm: uniform 1.11456448748 (matches as written); shift line 0.001469, square -0.00146, w2 -0.005171 → predicted moves: yes
+  [M ] C35 saturation describing function, T/A = ½: uniform 0.608997781044 (matches as written); shift line -0.01565, square 0.0152, w2 0.05513 → predicted moves: yes
+  [M ] C3 square-wave coefficient ∫sin/(2∫sin²) on [0, π]: uniform 0.636619772368 (matches as written); shift line -0.01339, square 0.01117, w2 0.04244 → predicted moves: yes
+  [L ] K15 Flamant 1/∫cos² over the half turn: uniform 0.636619772368 (matches as written); shift line 0.0, square 0.0, w2 0.0 → predicted stays: yes
+  [L ] K18 Sato–Tate 1/∫sin² on [0, π]: uniform 0.636619772368 (matches as written); shift line 0.0, square 0.0, w2 0.0 → predicted stays: yes
+  [L ] C28 Irwin 1/∫dφ over the quarter turn: uniform 0.636619772368 (matches as written); shift line 0.0, square 0.0, w2 1.336e-51 → predicted stays: yes
+  [Bc] K1 half-Cauchy P(v/h ≤ 1): uniform 0.5 (matches as written); shift line 0.0, square 0.0, w2 0.0 → predicted stays: yes
+  [Bc] K4 arcsine P(x ≤ ½): uniform 0.5 (matches as written); shift line 0.0, square -6.682e-52, w2 -6.682e-52 → predicted stays: yes
+  [Bc] K7 Van Vleck E[sgn sgn] at ρ = 0: uniform 0.0 (matches as written); shift line 0.0, square 0.0, w2 0.0 → predicted stays: yes
+  [Bc] C21 Bell P + 1 at θ = π/2: uniform 1.0 (matches as written); shift line 0.0, square 0.0, w2 0.0 → predicted stays: yes
+  [Bc] C13 Kendall's τ at ρ = 0: uniform 0.0 (matches as written); shift line 0.0, square 0.0, w2 0.0 → predicted stays: yes
+  [Bo] K1 half-Cauchy P(v/h ≤ 3): uniform 0.795167235301 (matches as written); shift line -0.04517, square 0.03817, w2 0.1528 → predicted moves: yes
+  [Bo] K4 arcsine P(x ≤ 0.3): uniform 0.369010119566 (matches as written); shift line 0.02663, square -0.04168, w2 -0.1167 → predicted moves: yes
+  [Bo] K7 Van Vleck at α = 0.9: uniform 0.427042204869 (matches as written); shift line 0.0154, square -0.03027, w2 -0.07043 → predicted moves: yes
+  [Bo] C21 Bell P + 1 at θ = 1.1: uniform 0.700281749604 (matches as written); shift line -0.03758, square 0.04523, w2 0.1515 → predicted moves: yes
+  [Bo] C13 Kendall's τ at ρ = ½: uniform 0.333333333333 (matches as written); shift line 0.08932, square -0.06538, w2 -0.2757 → predicted moves: yes
+P6: not killed
+
+verdicts: P1 not killed, P2 KILLED, P3 not killed, P4 not killed, P6 not killed
+(P5 is the classification count, scored in runs/tpr/sorted.md)

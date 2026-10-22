@@ -158,3 +158,9 @@ All of it is known quantum mechanics; what it shows is that three pieces of our 
 
 What is new is at most the reading of point 2's corner and the even-in-height law as the address. None of this touches
 entanglement as a resource, Bell's theorem, contextuality or the measurement problem.
+
+### Re-read, 22 October (WVR, `plans/wvr-plan.md`; SPN R437)
+The twirl changes no member's visibility; it averages n⊥ to zero, a payload operation. The visibility V = 2hv and the
+predictability h² − v² are both central readings (the Bloch point's height and foot), so "visibility lost, predictability
+kept" is not an amount-against-reading pair; the overlap is a central foot of the relative address. The weak value is the
+address: A_w = n_z − V·tan(θ_f − θ_i), under a uniform turn of the post-selection the Cauchy at ⟨σz⟩ + iV (WVR P1).

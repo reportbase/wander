@@ -1720,3 +1720,14 @@ What runs 1–18 say about level of detail is in SPN §3.3, "Level of detail tri
 Claude's reading for Tom to rule, with its open items in SPN §14, "From the pool runs". `papers/physics.md` places them
 by standing (the contact identities in §2.2, the infinite table in a new §2.4, the pulse in §3), and
 `papers/v-and-h.md` gathers them as items 426–429 (§8p; first numbered 404–407, renumbered when main's §8o took those numbers). Nothing above is changed.
+
+### Re-read, 22 October (POR, `plans/por-plan.md`; SPN R439)
+Appended; nothing above is changed. "All balls alike, the calibration V = H" (P3) is V* = H, the true breadths equal, not
+the drawing V = H, which OFS requires of every reader. The three corners "each of a named pair" are three kinds: contact
+(the momentum share hands over, the energy passed is stationary at equal sizes), the cushion (a swap's fixed point by
+construction) and time (a corner of two amounts, the tick and the signal's speed, which moves when the world is scaled:
+POR P2). "A ball's level reads its momentum" (run 10) carries a bridge, one material and the clock. "A signal must be held
+at its own size until it arrives" (runs 16–18): folding a payload into address cells is an irreversible mean imposing
+1/D^dim, and refining by time to arrival recovers nothing (POR P4 (c)); the remedy is the payload's own grain or a known
+kind. POR P3 adds: under a fixed tick, ignoring by one reading at contact parts from ignoring by size (overlapping small
+balls read as larger).

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>One's own height</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    ground.html: the ground, one's own height as the base (22 October 2026, Tom: "1,2", the second a demo of OFS §9's
+    "The ground: one's own height as the base"; SPN R431, R433, R434). After Sedgwick's horizon-ratio relation (Sedgwick
+    2021, restating 1973 and 1986). A standalone page, plain canvas. A reader stands on level ground, its eye at height H.
+    The horizon of the plane lies at the eye's height, so it cuts every thing standing on the plane one eye height above
+    the plane: the part below the horizon is one eye height tall. With the foot read F below the horizon and the top E
+    above it (both angles in the picture's vertical), V*/H = (tan E + tan F)/tan F and d/H = 1/tan F: ratios of readings.
+    Without the eye height every thing's size against every other is read; with it (an amount carried in, the survey's
+    base in the body) each is written in metres. A thing one eye height tall has its top on the horizon: the corner,
+    V* = H. Three premises, none read: a level plane (tilt it by half a degree and the far things misread), the eye's height above it, and
+    each thing's contact (throw the ball up and it reads too tall and too far). Scale the world (k multiplies every
+    length, the eye height included) and no reading moves; the metres move by k. Change your own height (crouch or stand
+    on a box) and every reading moves while the metres, with the new eye height carried in, do not.
+    Links: ?H=<m>&k=<log10 k>&known=1&tilt=1&lift=1&truth=1&sel=<index>. Test hook: window.__ground (OBJECTS, read, table,
+    set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button, select { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    .grid > * { min-width: 0 }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } table { font-size: 11.5px } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15;
+        overflow-wrap: anywhere }
+    table { border-collapse: collapse; font-size: 13px; width: 100% }
+    td, th { text-align: left; padding: 3px 6px; border-bottom: 1px solid var(--line) }
+    th { color: var(--dim); font-weight: 400 }
+    tr.sel td { background: rgba(212,160,82,0.08) }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>One's own height</h1>
+    <p class="lede">Stand on level ground. The horizon is at your eye's height, so it cuts every thing standing on the
+    ground at the same height: the part of it below the horizon is exactly one eye height tall. Read the foot and the top,
+    and the thing's height over yours is a ratio of two readings. Nothing in that needs a metre. Carry in your own height
+    and every thing is written in metres at once: the survey's base, carried in the body.</p>
+    <div class="panel">
+        <div class="row"><label for="H">your eye height</label><input id="H" type="range" min="0.4" max="3" step="0.01" value="1.6">
+            <span id="Hv" class="b"></span></div>
+        <div class="row"><label for="k">scale the world</label><input id="k" type="range" min="-2" max="2" step="0.01" value="0">
+            <span id="kv" class="b"></span></div>
+        <div class="row"><button id="known">my eye height known (write metres)</button><button id="truth">the referee</button>
+            <button id="tilt">tilt the ground ½°</button><button id="lift">throw the ball up</button></div>
+        <canvas id="cv1" height="420"></canvas>
+        <p class="cap">What the eye sees: the horizon (gold, dashed) at eye level, the ground's distance lines below it. Each
+        thing's part below the horizon (teal) is one eye height; the part above (gold) is the rest. Tap a thing to choose it.</p>
+        <div class="grid">
+            <div><canvas id="cv2" height="300"></canvas><p class="cap">The chosen thing from the side: the eye at its height,
+            the horizon line out to the thing, the foot F below and the top E above.</p></div>
+            <div><canvas id="cv3" height="300"></canvas><p class="cap">The readings laid on the reader's lay (in proportion
+            to 1, then 1 + ln): heights in eye heights, the corner at 1, one eye height tall; distances in eye heights, the
+            foot's corner at d = H, 45° down. Rings where the referee puts them.</p></div>
+        </div>
+        <div class="read" id="say"></div>
+        <div style="overflow-x:auto"><table id="tab"></table></div>
+    </div>
+    <p class="note">After Sedgwick's horizon-ratio relation (Sedgwick 2021, <i>i-Perception</i> 12(3), restating his 1973 and 1986
+    work); Observation from Somewhere §9, "The ground: one's own height as the base". Related: <a href="head-turn.html">turning
+    the head</a> (the eye's step as a base), <a href="writer-readers.html">the writer and two readers</a>, <a href="pinhole.html">the
+    pinhole</a>. <a href="demos.html">All the demos</a>.</p>
+</main>
+<script>
+(function () {
+    'use strict';
+    const $ = id => document.getElementById(id), P = new URLSearchParams(location.search);
+    const deg = a => a * 180 / Math.PI;
+    // the things on the ground, at k = 1: name, height V* (m), distance ahead d (m), offset across x (m), width (m)
+    const OBJECTS = [
+        { name: 'dog', V: 0.6, d: 5, x: -1.6, w: 0.8 },
+        { name: 'child', V: 1.1, d: 7, x: 1.5, w: 0.4 },
+        { name: 'door', V: 2.1, d: 4.2, x: -3.2, w: 0.9 },
+        { name: 'ball', V: 0.4, d: 9, x: -0.4, w: 0.4, ball: true },
+        { name: 'a twin', V: 1.6, d: 11, x: 0.6, w: 0.45, twin: true },
+        { name: 'lamp post', V: 4.5, d: 14, x: 1.4, w: 0.25 },
+        { name: 'car', V: 1.45, d: 18, x: 6, w: 1.8 },
+        { name: 'tree', V: 8, d: 26, x: -7, w: 4 },
+        { name: 'house', V: 7, d: 40, x: 12, w: 9 },
+        { name: 'tower', V: 30, d: 90, x: -40, w: 6 }
+    ];
+    const H0 = 1.6, TILT = 0.5 * Math.PI / 180, LIFT = 1.2;
+    const st = { H: H0, lk: 0, known: false, truth: false, tilt: false, lift: false, sel: 4 };
+    const kOf = (o = st) => Math.pow(10, o.lk);
+
+    // one thing read from the eye: the world's lengths times k, the eye at H·k; the ground rises ahead by tan σ when tilted;
+    // the ball's foot lifted when thrown. F and E are the foot's and the top's angles below and above eye level.
+    function read(i, o = st) {
+        const ob = OBJECTS[i], k = kOf(o), H = o.H * k, d = ob.d * k, V = ob.V * k;
+        const g = o.tilt ? d * Math.tan(TILT) : 0, b = o.lift && ob.ball ? LIFT * k : 0;
+        const tF = (H - g - b) / d, tE = (g + b + V - H) / d;          // tan F (foot below), tan E (top above; negative if below)
+        const ratio = (tE + tF) / tF, dist = 1 / tF;                    // V*/H and d/H, read
+        const trueRatio = V / H, trueDist = d / H;
+        return { name: ob.name, F: Math.atan(tF), E: Math.atan(tE), ratio, dist, trueRatio, trueDist,
+            written: o.known ? ratio * H : null, writtenD: o.known ? dist * H : null, trueV: V, trueD: d,
+            err: Math.abs(ratio / trueRatio - 1), distErr: Math.abs(dist / trueDist - 1) };
+    }
+    const table = (o = st) => OBJECTS.map((_, i) => read(i, o));
+
+    function fit(cv, ratio) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth,
+            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * ratio));
+        cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr);
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return { g, w, h: hh };
+    }
+    // the eye's picture: a pinhole looking straight ahead, level; a point (x, z, d) lands at (x/d, (z − H)/d)
+    let pick = [];
+    function drawPicture() {
+        const { g, w, h } = fit($('cv1'), $('cv1').clientWidth < 600 ? 0.95 : 0.62); g.clearRect(0, 0, w, h);
+        const k = kOf(), H = st.H * k, s = Math.min(w / 1.5, h / 0.92), cx = w / 2, cy = h * 0.5;
+        const X = (u, y) => [cx + s * u, cy - s * y];
+        // sky and ground
+        const tilted = st.tilt ? Math.tan(TILT) : 0;
+        g.fillStyle = '#0d1018'; g.fillRect(0, 0, w, h);
+        g.fillStyle = '#11140f'; g.beginPath(); g.moveTo(0, X(0, tilted)[1]); g.lineTo(w, X(0, tilted)[1]); g.lineTo(w, h); g.lineTo(0, h); g.fill();
+        g.font = '11px DM Mono, monospace';
+        // the ground's distance lines (each a distance ahead, in eye heights) and its lines straight ahead
+        let lastY = -1e9;
+        for (const n of [1, 2, 3, 5, 10, 20, 50]) { const d = n * H, y = (d * tilted - H) / d, py = X(0, y)[1];
+            if (py > h) continue;
+            g.strokeStyle = 'rgba(140,230,205,0.14)'; g.beginPath(); g.moveTo(0, py); g.lineTo(w, py); g.stroke();
+            if (Math.abs(py - lastY) > 14) { g.fillStyle = 'rgba(138,138,150,0.8)'; g.fillText(n + ' H', 6, py - 2); lastY = py; } }
+        for (let xx = -12; xx <= 12; xx += 2) { g.strokeStyle = 'rgba(140,230,205,0.08)'; g.beginPath();
+            const near = 0.6 * H, far = 1e4 * H; g.moveTo(...X(xx * H / near, (near * tilted - H) / near)); g.lineTo(...X(xx * H / far, (far * tilted - H) / far)); g.stroke(); }
+        // the horizon at eye level; if the ground tilts, its own vanishing line too
+        g.strokeStyle = '#d4a052'; g.setLineDash([6, 5]); g.beginPath(); g.moveTo(0, cy); g.lineTo(w, cy); g.stroke(); g.setLineDash([]);
+        g.fillStyle = '#d4a052'; g.fillText('eye level', w - 76, cy - 5);
+        if (st.tilt) { g.strokeStyle = 'rgba(217,110,91,0.8)'; g.setLineDash([2, 4]); g.beginPath(); g.moveTo(0, X(0, tilted)[1]); g.lineTo(w, X(0, tilted)[1]); g.stroke(); g.setLineDash([]);
+            g.fillStyle = '#d96e5b'; g.fillText('the tilted ground\'s horizon', w - 210, X(0, tilted)[1] - 5); }
+        // the things, farthest first
+        pick = [];
+        const order = OBJECTS.map((_, i) => i).sort((a, b) => OBJECTS[b].d - OBJECTS[a].d);
+        for (const i of order) {
+            const ob = OBJECTS[i], d = ob.d * k, gnd = st.tilt ? d * Math.tan(TILT) : 0, b = st.lift && ob.ball ? LIFT * k : 0;
+            const z0 = gnd + b, z1 = z0 + ob.V * k, u0 = (ob.x - ob.w / 2) * k / d, u1 = (ob.x + ob.w / 2) * k / d;
+            const y0 = (z0 - H) / d, y1 = (z1 - H) / d, yh = Math.min(Math.max(0, y0), y1);
+            const [ax, ay0] = X(u0, y0), [bx, ay1] = X(u1, y1), [, ayh] = X(0, yh), wd = Math.max(2, bx - ax);
+            if (ob.ball) {
+                const r = Math.max(2, (bx - ax) / 2), cxb = (ax + bx) / 2, cyb = (ay0 + ay1) / 2;
+                g.fillStyle = '#c86a4a'; g.beginPath(); g.arc(cxb, cyb, r, 0, 2 * Math.PI); g.fill();
+                if (b) { g.strokeStyle = 'rgba(217,110,91,0.5)'; g.setLineDash([2, 3]); g.beginPath(); g.moveTo(cxb, cyb + r); g.lineTo(cxb, X(0, (gnd - H) / d)[1]); g.stroke(); g.setLineDash([]); }
+            } else {
+                g.fillStyle = 'rgba(140,230,205,0.55)'; g.fillRect(ax, Math.min(ay0, ayh), wd, Math.abs(ay0 - ayh));   // below the horizon
+                if (y1 > 0) { g.fillStyle = 'rgba(212,160,82,0.55)'; g.fillRect(ax, ay1, wd, ayh - ay1); }        // above it
+            }
+            if (i === st.sel) { g.strokeStyle = '#e6e4ee'; g.lineWidth = 1.5; g.strokeRect(ax - 2, ay1 - 2, wd + 4, ay0 - ay1 + 4); g.lineWidth = 1; }
+            g.fillStyle = i === st.sel ? '#e6e4ee' : '#8a8a96'; g.fillText(ob.name, ax, ay1 - 5);
+            pick.push({ i, x0: ax - 6, x1: ax + wd + 6, y0: ay1 - 14, y1: ay0 + 6 });
+        }
+    }
+    // the chosen thing from the side, fitted to the canvas
+    function drawSide() {
+        const { g, w, h } = fit($('cv2'), 0.7); g.clearRect(0, 0, w, h);
+        const r = read(st.sel), ob = OBJECTS[st.sel], k = kOf(), H = st.H * k, d = ob.d * k, V = ob.V * k;
+        const gnd = st.tilt ? d * Math.tan(TILT) : 0, b = st.lift && ob.ball ? LIFT * k : 0;
+        const top = Math.max(H, gnd + b + V) * 1.15, pad = 30, sx = (w - 2 * pad) / d, sy = (h - 2 * pad) / top, s = Math.min(sx, sy * 6);
+        const vx = s, vy = Math.min(sy, s * 6), X = (x, z) => [pad + vx * x, h - pad - vy * z];
+        g.font = '11px DM Mono, monospace';
+        g.strokeStyle = 'rgba(230,228,238,0.35)'; g.beginPath(); g.moveTo(...X(0, 0)); g.lineTo(...X(d * 1.08, st.tilt ? d * 1.08 * Math.tan(TILT) : 0)); g.stroke();
+        // the eye and the horizon line
+        g.fillStyle = '#e6e4ee'; g.fillRect(X(0, 0)[0] - 2, X(0, H)[1], 4, X(0, 0)[1] - X(0, H)[1]);
+        g.beginPath(); g.arc(...X(0, H), 4, 0, 2 * Math.PI); g.fill();
+        g.strokeStyle = '#d4a052'; g.setLineDash([6, 5]); g.beginPath(); g.moveTo(...X(0, H)); g.lineTo(...X(d * 1.08, H)); g.stroke(); g.setLineDash([]);
+        // the thing
+        const [ox, oy0] = X(d, gnd + b), [, oy1] = X(d, gnd + b + V), [, oyh] = X(d, H);
+        g.fillStyle = 'rgba(140,230,205,0.6)'; g.fillRect(ox - 4, Math.min(oy0, oyh), 8, Math.abs(oy0 - Math.max(oyh, oy1)));
+        if (oy1 < oyh) { g.fillStyle = 'rgba(212,160,82,0.6)'; g.fillRect(ox - 4, oy1, 8, oyh - oy1); }
+        // the two rays
+        g.strokeStyle = 'rgba(140,230,205,0.8)'; g.beginPath(); g.moveTo(...X(0, H)); g.lineTo(ox, oy0); g.stroke();
+        g.strokeStyle = 'rgba(212,160,82,0.8)'; g.beginPath(); g.moveTo(...X(0, H)); g.lineTo(ox, oy1); g.stroke();
+        g.fillStyle = '#8ce6cd'; g.fillText(`F ${deg(r.F).toFixed(2)}°`, X(0, H)[0] + 14, X(0, H)[1] + 16);
+        g.fillStyle = '#d4a052'; g.fillText(`E ${deg(r.E).toFixed(2)}°`, X(0, H)[0] + 14, X(0, H)[1] - 8);
+        g.fillStyle = '#e6e4ee'; const nw = g.measureText(ob.name).width; g.fillText(ob.name, ox + 8 + nw < w ? ox + 8 : ox - nw - 8, oy1 + 4);
+        g.fillStyle = '#8ce6cd'; g.fillText(b || st.tilt ? 'below the horizon: not one eye height' : 'below the horizon: one eye height', ox - 250 > 10 ? ox - 250 : 10, (oyh + oy0) / 2 + 4);
+        g.fillStyle = '#8a8a96'; g.fillText('not to scale across: heights stretched', 8, 14);
+    }
+    const lay = s => s <= 1 ? s : 1 + Math.log(s);
+    function drawLay() {
+        const { g, w, h } = fit($('cv3'), 0.7); g.clearRect(0, 0, w, h);
+        const t = table(), pad = 18, maxL = lay(80), X = s => pad + (w - 2 * pad) * lay(s) / maxL;
+        g.font = '11px DM Mono, monospace';
+        const ruler = (y, title, key, truthKey) => {
+            g.strokeStyle = 'rgba(230,228,238,0.35)'; g.beginPath(); g.moveTo(pad, y); g.lineTo(w - pad, y); g.stroke();
+            for (const s of [0.5, 1, 2, 5, 10, 20, 50]) { const x = X(s); g.strokeStyle = s === 1 ? '#d4a052' : 'rgba(230,228,238,0.3)';
+                g.beginPath(); g.moveTo(x, y - (s === 1 ? 10 : 4)); g.lineTo(x, y + 4); g.stroke(); g.fillStyle = s === 1 ? '#d4a052' : '#8a8a96'; g.fillText(String(s), x - 6, y + 16); }
+            g.fillStyle = '#c8c8d0'; g.fillText(title, pad, y - 54);
+            t.forEach((r, i) => { const v = r[key], tv = r[truthKey], x = X(Math.max(1e-3, v)), yy = y - 14 - 9 * (i % 4);
+                const bad = Math.abs(v / tv - 1) > 1e-9;
+                if (st.truth || bad) { g.strokeStyle = 'rgba(230,228,238,0.6)'; g.beginPath(); g.arc(X(tv), yy, 4.5, 0, 2 * Math.PI); g.stroke(); }
+                g.fillStyle = bad ? '#d96e5b' : i === st.sel ? '#e6e4ee' : '#8ce6cd'; g.beginPath(); g.arc(x, yy, 3, 0, 2 * Math.PI); g.fill();
+                if (i === st.sel) g.fillText(OBJECTS[i].name, x + 6, yy - 4); });
+        };
+        ruler(h * 0.42, 'height over your eye height, V*/H', 'ratio', 'trueRatio');
+        ruler(h * 0.88, 'distance in eye heights, d/H', 'dist', 'trueDist');
+    }
+    const f3 = x => !isFinite(x) ? '∞' : Math.abs(x) >= 100 ? x.toFixed(0) : Math.abs(x) >= 10 ? x.toFixed(1) : x.toFixed(3);
+    const mfmt = x => x == null ? '—' : x >= 1000 ? (x / 1000).toPrecision(3) + ' km' : x >= 1 ? x.toPrecision(3) + ' m' : x >= 0.01 ? (x * 100).toPrecision(3) + ' cm' : (x * 1000).toPrecision(3) + ' mm';
+    function hud() {
+        const k = kOf(), t = table(), r = t[st.sel], bad = t.filter(x => x.err > 1e-9);
+        $('Hv').textContent = st.H.toFixed(2) + ' m'; $('kv').textContent = '× ' + (k >= 10 || k < 0.1 ? k.toExponential(1) : k.toFixed(2));
+        for (const id of ['known', 'truth', 'tilt', 'lift']) $(id).classList.toggle('on', st[id]);
+        let s = `<span class="b">${r.name}</span>: foot ${deg(r.F).toFixed(3)}° below the horizon, top ${Math.abs(deg(r.E)).toFixed(3)}° ${r.E >= 0 ? 'above' : 'below'} it. `
+            + `Read: V*/H = (tan E + tan F)/tan F = <span class="r">${f3(r.ratio)}</span>, d/H = 1/tan F = <span class="r">${f3(r.dist)}</span>`
+            + (r.err < 1e-9 && Math.abs(r.ratio - 1) < 1e-9 ? ': <span class="g">the corner</span>, its top on the horizon, one eye height tall.' : '.');
+        s += st.known ? `\n<span class="w">Written</span> with your eye height ${mfmt(st.H * k)} carried in: ${mfmt(r.written)} tall, ${mfmt(r.writtenD)} away.`
+            : `\nNo metre anywhere yet: every height and distance is in your eye heights. Carry in your eye height to write metres.`;
+        if (bad.length) { const worst = bad.reduce((a, x) => x.err > a.err ? x : a);
+            s += `\n<span class="x">${[st.tilt && 'The ground is not level', st.lift && 'the ball is off the ground'].filter(Boolean).join('; ')}:</span> `
+            + `${bad.length} of ${t.length} things misread, the worst the ${worst.name}, ${(100 * (worst.ratio / worst.trueRatio - 1)).toFixed(0)}% in height`
+            + (r.err > 1e-9 ? `; the ${r.name} ${(100 * (r.ratio / r.trueRatio - 1)).toFixed(1)}% in height, ${(100 * (r.dist / r.trueDist - 1)).toFixed(1)}% in distance` : '')
+            + '. The relation needs a level plane, the eye\'s height above it, and each thing\'s contact; none of these is read.'; }
+        if (Math.abs(st.lk) > 1e-9) s += `\nThe world is ${k >= 10 || k < 0.1 ? k.toExponential(1) : k.toFixed(2)} times as large, your eye height with it: no reading moved${st.known ? ', the metres did' : ''}.`;
+        $('say').innerHTML = s;
+        const head = ['thing', 'F', 'E', 'V*/H read', 'd/H read'].concat(st.truth ? ['V*/H true', 'd/H true'] : []).concat(st.known ? ['written'] : []).concat(st.truth ? ['true'] : []);
+        const rows = t.map((x, i) => `<tr${i === st.sel ? ' class="sel"' : ''}>` + [x.name, deg(x.F).toFixed(2) + '°', deg(x.E).toFixed(2) + '°',
+            `<span class="${x.err > 1e-9 ? 'x' : 'r'}">${f3(x.ratio)}</span>`, `<span class="${x.distErr > 1e-9 ? 'x' : 'r'}">${f3(x.dist)}</span>`]
+            .concat(st.truth ? [f3(x.trueRatio), f3(x.trueDist)] : [])
+            .concat(st.known ? [`${mfmt(x.written)}, ${mfmt(x.writtenD)}`] : [])
+            .concat(st.truth ? [`${mfmt(x.trueV)}, ${mfmt(x.trueD)}`] : []).map(c => `<td>${c}</td>`).join('') + '</tr>');
+        $('tab').innerHTML = `<tr>${head.map(c => `<th>${c}</th>`).join('')}</tr>` + rows.join('');
+        [...$('tab').querySelectorAll('tr')].slice(1).forEach((tr, i) => tr.onclick = () => { st.sel = i; draw(); });
+    }
+    function draw() { drawPicture(); drawSide(); drawLay(); hud(); $('H').value = st.H; $('k').value = st.lk; }
+    $('H').oninput = e => { st.H = +e.target.value; draw(); };
+    $('k').oninput = e => { st.lk = +e.target.value; draw(); };
+    for (const id of ['known', 'truth', 'tilt', 'lift']) $(id).onclick = () => { st[id] = !st[id]; draw(); };
+    $('cv1').addEventListener('click', e => {
+        const b = $('cv1').getBoundingClientRect(), x = e.clientX - b.left, y = e.clientY - b.top;
+        const hit = pick.slice().reverse().find(p => x >= p.x0 && x <= p.x1 && y >= p.y0 && y <= p.y1);
+        if (hit) { st.sel = hit.i; draw(); }
+    });
+    window.addEventListener('resize', draw);
+    function set(o) {
+        if ('H' in o) st.H = Math.max(0.4, Math.min(3, +o.H));
+        if ('k' in o) st.lk = Math.log10(+o.k);
+        if ('lk' in o) st.lk = +o.lk;
+        if ('sel' in o) st.sel = Math.max(0, Math.min(OBJECTS.length - 1, o.sel | 0));
+        for (const key of ['known', 'truth', 'tilt', 'lift']) if (key in o) st[key] = !!o[key];
+        draw(); return table();
+    }
+    if (P.has('H')) st.H = Math.max(0.4, Math.min(3, +P.get('H')));
+    if (P.has('k')) st.lk = Math.max(-2, Math.min(2, +P.get('k')));
+    if (P.has('sel')) st.sel = Math.max(0, Math.min(OBJECTS.length - 1, +P.get('sel') | 0));
+    for (const key of ['known', 'truth', 'tilt', 'lift']) st[key] = P.get(key) === '1';
+    draw();
+    window.__ground = { OBJECTS, H0, TILT, LIFT, read, table, set, state: () => Object.assign({}, st) };
+})();
+</script>
+</body>
+</html>

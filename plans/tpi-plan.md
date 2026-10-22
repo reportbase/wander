@@ -359,3 +359,11 @@ report is `plans/tpi-report.md`. Its §6 reads the suggestion (OFS Theorem 6(e):
 gives the median at the corner and no mean on every path; 2/π is the circle's measure of it) and proposes a test on the
 unbounded face (occurrences of the Cauchy and its kin, classified for a sweep reaching a horizon and for whose sweep it
 is). Not run; predictions to be written first if Tom says to run it.
+
+### Re-read, 22 October (TPR, `plans/tpr-plan.md`; SPN R437)
+"The inner reading 2/π" is not something the address reader holds (it has shares and medians, no means): 34 of the 65
+are a payload-side mean over the uniform turn's directions of a bounded projection (M), 10 a share of the turn (B: at the
+corner the exchange alone, elsewhere the uniform turn), 8 the turn's length or a square's mean (L: they keep 2/π under
+every fair weight, so need no evenness), 7 the circle as a shape, 6 other (sorted by Claude, not blind). A single 2/π
+does not fingerprint the uniform turn: a non-uniform fair weight can give E[cos θ] = 2/π exactly (TPR P3); E|cos(θ − φ)|
+is 2/π for every φ exactly when the facing 2θ is uniform (P4).

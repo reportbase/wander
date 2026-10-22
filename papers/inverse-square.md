@@ -19,6 +19,12 @@ the case and name the bridge. A result goes into SPN only once it has been teste
 - 11 October: SPN Proposition 1.2 (R190; Tom: "reality = 2H", "same length, not addresses"): the in-place lay is reality
   drawn by length, the near field in the first H and the whole far field in the second, and it is the reader's own;
   the logarithm counts its addresses, the same number per doubling. The lay's 1/s² form (ISQ) is the reader's.
+- 22 October (Tom: "we've put physics aside writing the ofs paper. we have learned alot, lets revisit our physics
+  results such as the inverse square law"; ISR, SPN R436): "The law as addresses and payload" added after the brief, from
+  what OFS has since settled (the address and payload split, reading and writing, the reader's and the writer's spheres,
+  the emitter as the turn aimed outward, K), with five exact checks; §6 and §7 updated. Sections 0–5 keep the words of 10
+  October: their "flip" is OFS's reciprocal, "fair" is reciprocal-symmetric, and "the source's view from nowhere" is the
+  writer's vantage.
 
 **Standing marks.** Each claim carries one:
 - **[physics]**: established outside this corpus, quoted;
@@ -100,6 +106,62 @@ law, with two bridges to physics named. [reading; each step's physics is in §1�
   how to read the fall-off, not how steep it is.
 
 So this is an explanation of the law in SPN's terms, not a derivation of it.
+
+## The law as addresses and payload (22 October)
+
+Since this paper was started, OFS has settled four things that bear on the law: every arrival is an address (a direction,
+laid by a turn) and a payload (what comes along it); a reading is unchanged when the whole world is scaled, a writing is
+not; the reader's sphere is painted by what arrives and the writer's sphere goes round the whole; and an emitter's even
+spread is the same uniform turn as a reader's, aimed outward (the lighthouse). Re-read with these, the law sorts cleanly.
+Each claim marked [exact] is checked in ISR (`plans/isr-plan.md`, `runs/isr/isr.py`, 50 digits).
+
+1. **The paint per address does not carry the law.** Along each address a source paints, the brightness is the same at
+   every distance (the radiance theorem, §0). The payload per address is constant; the law is not in it. [physics]
+2. **The law is in how many addresses a source paints.** The share of the reader's sphere a source covers is its solid
+   angle, about π(Δ/d)² far off: a reading of the pair (Δ, d), a ratio of amounts. Irradiance is the paint times that
+   count (projected, for a flat receiver). Distance changes the count, never the paint. [physics, read]
+3. **The emitter's turn, laid on a receiver, is the Cauchy, and the law is its height.** A source that sends alike in
+   every direction is the uniform turn aimed outward. Laid on a flat receiver at distance d, its power per unit area is
+   (P/2)·C_{D−1}(x; d), the (D − 1)-dimensional Cauchy whose scale, the standpoint's height, is the distance. On the
+   axis this is P/(|S^{D−1}|·d^{D−1}): the inverse (D − 1)-th power, 1/d² in three dimensions, 1/d in two (the
+   lighthouse). The inverse square is the height of the emitter's Cauchy. The receiver catches exactly half. [exact, P1;
+   the cos³ law of illumination, a change of variable]
+4. **The corner lives in the address count; a slope in levels of light mixes in the payload.** An isotropic line of
+   half-length b at distance d gives E = (λ/(4πd))·2·arctan(b/d). Its paint is λ/(4πd) on every address it covers (the
+   payload, falling as 1/d); its address count is the Cauchy share (2/π)·arctan(b/d), reciprocal-symmetric with its
+   median exactly at b = d. NRF's P3 was killed by the line's slope in levels, σ(1) = −1.637: that is −1 from the paint
+   and −2/π from the addresses. Judged by the address count alone the line is exactly at its corner. The Lambertian disc
+   is the same split: paint L, projected count sin²θ, reciprocal-symmetric. NRF's rule ("the corner is exact where the
+   light counted is a share") restated: where the address count is reciprocal-symmetric, its median is the corner
+   (OFS Theorem 6(e)); the slope test is a test of the payload. [exact, P2]
+5. **Which pair is at its corner depends on the weighting.** The isotropic source's light on a plane puts each pair of
+   unit relations at its own corner, the medians of |x|/d, |y|/d and |y/x| all 1, as OFS Proposition 5(e); the radial
+   r/d is not such a pair, and its median is √3 (60°). A Lambertian emitter weights its directions by the cosine, a
+   count against a flat surface: its radial median is 1 (45°) and its per-axis median 1/√3. [exact, P3; the per-axis
+   prediction √(2/3) killed by my arithmetic]
+6. **The dimension.** The cos-weighted share, sin^(D−1)θ, is reciprocal-symmetric only in three dimensions; the uniform
+   turn's one-axis marginal is the Cauchy, at its corner, in every dimension. So "D − 1 and the flip" (§7) is answered:
+   D = 3 is singled out by Lambert's cosine, not by the turn. [exact, P4]
+7. **The law is a writing; counts by flux are a reading.** Scale every length by k with the paint fixed: every solid
+   angle, irradiance and flux is unchanged. So "1/d²" is not something one standpoint reads. It compares standpoints with
+   the source's size held fixed, and needs d as an amount: a baseline walked (parallax, as in MAG) or a kind carried in
+   (a standard candle, the source's luminosity known, as the eye height is in OFS §9). The count of sources brighter
+   than a flux, by contrast, needs no distance: for any homogeneous population it rises 3/2 levels per level of flux,
+   unchanged by scaling (log N–log S), and a layer's thickness, an amount, turns it toward 1. Of the corpus's data, MAG
+   and GCN by distance are writings (parallax); CNT and GCN by light are readings. CNT's 1.2 is then a reading of the
+   world's shape, between the ball's 1.5 and the slab's 1.0, with no distance in it (dust lowers it too, §2; which
+   does how much is untested). [exact, P5; the sorting of the data a reading]
+8. **Two spheres, one law.** The writer's sphere round the source, its radius d an amount, holds all of P: E = P/(4πd²),
+   conservation. The reader's sphere round the eye holds the paint per address, unchanged: E = L·Ω. The law is where the
+   two meet, and the bridge between them is the source's size, which turns P into L. [reading]
+9. **The resolution limit is K's, not H's.** The step is one of the reader's fixed count of addresses (OFS §8, "A fixed
+   count"). Below it the paint of every address the source would cover arrives summed in one, and sums are the
+   payload's (Theorem 6(c)): there the textbook 1/d² in one address's brightness. H moves no direction, so it moves
+   neither the step nor the switch. [reading]
+
+What changes from 10 October. The 2 is still physics (three dimensions), and conservation still a bridge. What is new is
+where the corner sits (in the address count, not in levels of light), that the law's form across a receiver is the
+Cauchy, and which of the corpus's star results are readings and which are writings.
 
 ## 1. The law as physics holds it
 
@@ -249,6 +311,12 @@ ISQ (`plans/isq-plan.md`) [exact]:
 | the lay as angular size, light as its square | reading | ISQ |
 | the law in SPN's words: where its switches are, near and far as one law, levels past the corner | reading, with conservation and the exponent as bridges from physics | "In SPN's words" |
 | the 2 as the sweep's two parties | withdrawn 9 October | SPN §3.3 |
+| the paint per address constant; the law in the count of addresses painted | physics, read | "As addresses and payload" 1–2 |
+| a point source's light on a flat receiver is half the (D − 1)-dimensional Cauchy of scale d; the law its height | exact | ISR P1 |
+| the line's corner exact in its address count; NRF's σ(1) = −1 − 2/π, payload plus addresses | exact | ISR P2 |
+| isotropic light puts every pair of unit relations at its corner on the receiver; Lambert's cosine puts the radial pair | exact | ISR P3 (per-axis value killed, my arithmetic) |
+| the cos-weighted share reciprocal-symmetric only for D = 3; the turn's pairs at their corners in every D | exact | ISR P4 |
+| 1/d² a writing (needs d or a kind); counts by flux a reading (3/2, scale-free; a slab toward 1) | exact; the sorting a reading | ISR P5 |
 
 ## 7. Open
 
@@ -256,7 +324,10 @@ ISQ (`plans/isq-plan.md`) [exact]:
   share's fairness into Pythagoras. Is that general? Is every Lambertian source of any shape, seen by a flat patch, a
   share in some ratio of the pair? An exact test: sources of other shapes (an annulus, a square, an ellipse off axis),
   with predictions first.
-- **The Cauchy shape.** The disc's light against distance, 1/(1 + (d/a)²), is the Cauchy density's shape in d/a. SPN
+- **The Cauchy shape** (answered 22 October, ISR). The Cauchy that matters is the point source's light across a
+  receiver, in x/d: the emitter's uniform turn ("As addresses and payload" 3). The disc's 1/(1 + (d/a)²) on the axis is
+  sin²θ, the projected share, which in the address a/d is s²/(1 + s²), not a Cauchy: a likeness of form. The original
+  question: the disc's light against distance, 1/(1 + (d/a)²), is the Cauchy density's shape in d/a. SPN
   §2.2 and `plans/normalizations.md` have a Cauchy on v/h. Is it the same object, or a coincidence of form? This needs
   the case kept: d/a is a ratio of amounts, v/h of unit relations.
 - **One dimension against two.** ISQ's reading has angular size falling one level per level of distance, and light two.
@@ -264,6 +335,6 @@ ISQ (`plans/isq-plan.md`) [exact]:
   §4).
 - **The two limits together.** The resolution limit (one address across) and the photon limit (a few quanta) each end a
   reading. Where both act, which ends it first, and is the boundary between them a pair's corner?
-- **D − 1 and the flip.** In D dimensions the law is −(D − 1) levels per level, and the disc's share would be a power of
+- **D − 1 and the flip** (answered 22 October, ISR P4: Lambert's cosine singles out D = 3; the turn does not). In D dimensions the law is −(D − 1) levels per level, and the disc's share would be a power of
   sin θ. Only the square is fair (§4). Does the flip's fairness single out D = 3 for light on a surface? This is to be
   worked in exact arithmetic before anything is claimed.

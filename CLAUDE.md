@@ -512,6 +512,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (circle) is round the whole system, looking in, its radius the lot's half-diagonal, an amount (28.8 m at k = 1;
   `writerSphere(k)` on the 3D page; the 2D plan is fitted to it). The corner reader's wedge is one octant of the reader's
   sphere.
+- `ground.html`: **one's own height** (22 Oct 2026, Tom: "1,2", the second a demo of OFS §9's "The ground: one's own height as
+  the base"; SPN R433, R434; after Sedgwick's horizon ratio), a standalone page, plain canvas. A reader on level ground, its
+  eye at H (1.6 m); ten things (dog, child, door, ball, a twin one eye height tall, lamp post, car, tree, house, tower). The
+  eye's picture (a level pinhole): the horizon at eye level cuts every thing one eye height up (teal below, gold above);
+  the chosen thing from the side (F and E); the readings on the reader's lay, V*/H = (tan E + tan F)/tan F with the
+  corner at 1, d/H = 1/tan F. "My eye height known" writes metres; scale the world (k on every length, the eye included)
+  moves no reading, the metres by k; crouching moves every reading, not the metres; the premises break by a ½° tilt (the
+  far things misread) and a ball thrown 1.2 m up (reads 4 times too tall and 4 times too far). `?H=&k=<log10 k>&known=1&tilt=1&lift=1&truth=1&sel=`;
+  hook `window.__ground` (`OBJECTS`, `read`, `table`, `set`, `state`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -615,7 +624,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -644,6 +653,46 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   as physics holds it (derived from conservation and three dimensions; tested as a bound on the exponent), in levels
   (2 of light, 3 of number per level of distance), the reader's two regimes, the near field (NRF: the pair's corner exact
   where the light is a share), the lay's form (ISQ), each claim marked physics / exact / data / reading / illustration.
+  Since 22 Oct (SPN R436; Tom: "we've put physics aside writing the ofs paper. we have learned alot, lets revisit our
+  physics results such as the inverse square law"): "The law as addresses and payload", checked in ISR
+  (`plans/isr-plan.md` + `runs/isr/isr.py`, exact): the paint per address constant, the law in the count of addresses; a
+  point source on a flat receiver is half the (D − 1)-dimensional Cauchy of scale d, the inverse square its height; the
+  corner lives in the address count (NRF P3's −1.637 = −1 − 2/π, payload plus addresses); Lambert's cosine, not the turn,
+  singles out D = 3; 1/d² a writing, counts by flux (3/2) a reading. P3 killed by my arithmetic (Lambertian per-axis
+  median 1/√3, not √(2/3)).
+  Then (22 Oct, SPN R437; Tom: "1,2,3") three more revisits, each a plan written first and an exact run: SRR
+  (`plans/srr-plan.md` + `runs/srr/`: MOT run 3's three corners three kinds, the sky's a median only in the uniform frame
+  and the boost read from directions alone, the Doppler factor a payload weighting and its frequency a writing, mass E's
+  least value over boosts), WVR (`plans/wvr-plan.md` + `runs/wvr/`: the weak value the address, the Cauchy at
+  ⟨σz⟩ + iV; the Bloch point, V and the foot central readings; the twirl averages, a payload operation), TPR
+  (`plans/tpr-plan.md` + `runs/tpr/`: 2/π three things, a mean over the uniform turn (34), a share (10), the turn's length
+  (8, kept by every fair weight); not a fingerprint of the uniform turn). Corrections in `physics.md` §1½ and appended
+  below each old plan's runs.
+  Carried into OFS (22 Oct, SPN R438; Tom: "yes, proceed"): §3.4 "Where the numbers come from" says 2/π (and π/2) is a
+  ratio of two sums over the turn, taken by whoever adds the projections; the address reader holds directions, shares and
+  the median, no mean; 2/π is the uniform turn's, the corner any fair weight's. §7.8's SR entry: the boost read from
+  directions alone (the uniform sky's median on the pseudorapidity moved to η), the Doppler frequency a writing.
+  Then (22 Oct, SPN R439; Tom: "pool, REF, GRD, LTH") four lighter revisits, each a plan written first and a run: POR
+  (`plans/por-plan.md` + `runs/por/`, `pool.html`'s own script run in node with every length scaled: the inside table a
+  reading; contact h + v = 1 the sum cut of two standpoints' readings; POL's three corners three kinds, the time corner of
+  two amounts that moves with k; "all balls alike, V = H" is V* = H; a payload folded into address cells falls as 1/D^dim
+  and time to arrival rescues nothing, the remedy its own grain or a kind; P1 killed by my tolerance, P3 by the tick, P4 (a)
+  by my arithmetic), RFR (`plans/rfr-plan.md` + `runs/rfr/`, exact: REF's corner sphere exp(a₀) a mean of log-radii, not a
+  median; one octave per level exact only per level of altitude under the reader; ρ_k = 2·RMS_k/λ_k, the world's; P2, P4,
+  P5 killed by my set-up, code and threshold), GDR (`plans/gdr-plan.md` + `runs/gdr/`, GRD's data: the ratio a reading but
+  the method's bin, smoothing and floor hold only within a band, P1 (b) killed; √2 an area count on a proportional plane,
+  OFS's lay 2 in every dimension, so 2^(1/D) is not measure-free; the turn's K = 9 addresses step 1.42 at the corner and
+  grow as cosh), LTR (`plans/ltr-plan.md` + `runs/ltr/`, Cosmicflows-4: a rung a pan only if flat against an independent
+  distance; Hubble 1929's are not, P2 killed; the SN Ia–FP drift the 58 shared galaxies', P4 killed, not the rungs'; a
+  network of loops locates a misread link). Corrections in `physics.md` §1½, its dictionary, `parallax.md` §7, and notes
+  appended below the old plans' runs; the entries below for POL, REF, GRD, `grd-landscape.md` and LTH describe them before.
+  Then (22 Oct, SPN R440; Tom: "proceed with recommended changes"): OFS checked against R439 (nothing to change); EBD
+  (`plans/ebd-plan.md` + `runs/ebd/`, Secrest et al. 2021's CatWISE quasars, Zenodo 8303800): Ellis and Baldwin's "2" is
+  the addresses' (a census with no flux cut, D²/4π, angles only), x(1 + α) the payload's weighting read from the
+  catalogue's own ratios (two thirds of the 0.0074 expected), no rest frequency entering; four flux slices one β, 2.7
+  times the CMB's, the colour slices not (P7 killed), the direction 21–28° off (P3 killed), P4 killed by my set-up; so
+  "the boost read from directions alone" (R437, R438) holds only for a census taken whatever the brightness, and OFS
+  §7.8 says so. REF's full sha256s appended to `plans/ref-plan.md`.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -674,6 +723,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   that clarification is needed."): §5 "Passive and active readers": the Cauchy belongs to the uniform turn, whether it aims
   a receiver or an emitter (the lighthouse is active); a ranging reader carries in the signal's speed and a clock and is a
   writer (CFH); passive gives directions only from one place, active a range per direction.
+  Since R429 (22 Oct; Tom: "the advantage of ofs is that is free, provided by geometry"; "fighting geometry never wins,
+  but if you don' even know the geomeotry, you can't assess your engineerred solutions."): §9½ "Free and engineered: the
+  geometry as the baseline": what one choice of H gives free, a table of engineered versions (depth buffers, log depth and
+  floats, reversed-Z, a camera's flat screen, LOD tiers, per-view tables, least squares on bearings, grid-cell codes) with
+  what each adds or departs from and its evidence; an origin claimed, not a better result.
   Since R396 (Tom: "do a thought expirment, what would be needed to turn the two readers into something that could map a
   room."; "both"): §7½ "What it takes to map": the two readers, four acts (turn, hold, step, match) and one amount; the
   address says where, the payload says which (identity, not geometry), each checking the other (rays of a wrong match do
@@ -760,6 +814,22 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   standpoint, painted by what arrives, no distance on it, sending nothing; Gibson's ambient optic array the picture
   (Gibson 1972, an unpublished manuscript, quoted; 1979, the book, cited, its chapter 5 to check in a library copy); the
   geometry adds the measure before any paint; the writer's sphere round the whole, its radius an amount.
+  **What the geometry gives free** (22 Oct, SPN R429, R430; Tom: "add the free vs engineered to ofs"): OFS §11.4, the
+  structures one choice of H gives and the geometry as the baseline a design is read against (the depth buffer as the
+  in-place lay with H at the near plane, log depth, the flat screen's cos³, tables that need a count, least squares as a
+  mean of a law with none); an origin, not performance. The evidence and its table are in `mapping.md` §9½.
+  Reviewed adversarially the same day (SPN R432; Tom: "1 and 2"): the list split into free outright (zoom, corner,
+  scale-free readings, the Cauchy given a uniform sweep), free given a premise ((S), a fixed K) and the payload's
+  (occlusion); the flat screen over-weights off-axis by sec³α (it was inverted); least squares only where the readings
+  follow the turn's law; §3.7's sphere the address reader's, never held whole; §6 3.5° (not 3.6°); §7.8 uses χ.
+  **One's own height as the base** (22 Oct, SPN R431, R433; Tom: "proceed"): OFS §9 after "A survey": Sedgwick's horizon
+  ratio (2021, restating 1973 and 1986, which were not found open), the eye height the survey's base carried in the body,
+  given a level plane and each object's contact; one eye height tall is the corner, V* = H. Notes in `plans/ofs-literature.md`.
+  Review 24 (22 Oct, SPN R435; Tom: "1,2"), a whole-paper read after the day's additions (`plans/ofs-review-24.md`): the
+  introduction's scope sentence now admits examples from physics and perception and §7.8's one restated case; §3.7's
+  payload reader receives its amounts (ranging is writing, so §3.1's lidar is a delay until the speed is carried in);
+  Theorem 6(e) the reciprocal-symmetric sweep's; Kato and McCullagh's published title is "Some properties of a Cauchy
+  family on the sphere derived from the Möbius transformations", *Bernoulli* 26(4), 3224–3248.
   **One figure, three rulers** (21 Oct, SPN R422; Tom: "we have show that the same math applies to the reader and
   writer", after calendar's `geometry.html` dial): OFS §6 after Mercator's map. The circle, the unit hyperbola and the
   tangent at the apex lay one reading x three ways, the writer's line x, the turn θ = arctan x, the hyperbolic angle
@@ -2171,6 +2241,10 @@ In short:
       shell; every address the same at every k from five homes, v ≤ h and v₂ ≤ v within 0.01 of ½, v₂ ≤ h exactly ½, the
       near field within 0.01 of ⅓; one counted stride writes the living room 12 × 8 × 2.7 m, the kitchen 12 × 6 × 2.7 m and
       the garage 7 × 7 × 2.7 m to 10⁻⁹, in strides unmoved by k; the writer's sphere 28.8 m × k; WebGL drew frames.
+
+  51. **ground.html:** on level ground every thing's (tan E + tan F)/tan F its V*/H and 1/tan F its d/H to rounding; one eye
+      height tall at the corner, its top on the horizon; scaling the world by 1/100, 7 and 100 moves no reading, the metres by
+      k; crouched to half height the twin reads 2 and the metres stay; a ½° tilt and a thrown ball misread.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

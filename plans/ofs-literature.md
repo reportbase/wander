@@ -305,3 +305,58 @@ What Gibson does not have, as far as these essays and the summaries go:
 Standing: a known anchor for the picture, to cite in OFS beside the hand if the picture goes in (Gibson 1979 for the
 array; the 1972 essay for ambient against radiant light, cited as an unpublished manuscript). Check before citing: the
 book's chapter 5 in a library copy; Sedgwick and Warren.
+
+### The amount a reader carries: eye height (22 Oct, SPN R431)
+
+Tom (22 Oct): "1 and 2", the second being to check, before using it, the claim in the Gibson section above that the
+ecological literature's carried-in amount is the observer's eye height. Read in full: Sedgwick, H. A. (2021), "J. J.
+Gibson's 'Ground Theory of Space Perception'", *i-Perception* 12(3), doi:10.1177/20416695211021111 (open access; Europe
+PMC PMC8334293, full text). Read as abstracts: Warren (1984), *JEP: HPP* 10(5), 683–703; Wraga and Proffitt (2000),
+*Perception* 29(11), 1361–1383, doi:10.1068/p2837. Sedgwick's 1973 dissertation and 1986 handbook chapter not read; what
+is said of them is from the 2021 paper.
+
+What Sedgwick says, verbatim:
+- "the line of regard to the horizon is thus always the same and is always equal to the height of the eye above the
+  ground. This establishes a scale factor across the entire ground. For any object resting on the ground, the portion of
+  the object below the horizon is equal to the eye height."
+- "The height (v) of every object standing on the ground surface relative to the height (h) of the point of observation
+  is specified by the optic array angles E and F: v/h = (tanE+tanF)/tanF." He calls the small-angle form the
+  horizon-ratio relation, and cites Warren (1984), Mark (1987), Warren and Whang (1987), Wraga (1999a, b), Dixon et al.
+  (2000) and Leyrer et al. (2015) as evidence that it is used.
+- "even if the observer's eye-height is not perceptually available, the horizon still determines a relative scale for
+  all objects resting on the ground. Thus, the vertical extents of all those objects relative to each other are still
+  visible even though their vertical extents relative to the observer are not."
+- "The size of the separation between the two eyes, or between the successive positions of a moving eye, establish scale
+  factors analogous to the scale factor established by the eye-height of the observer in the horizon-ratio relation."
+
+Keep the case. Sedgwick's v and h are amounts, an object's height and the eye's height: in the corpus's notation V* and
+H. His v/h is our V*/H, not our unit relations' v/h. The coincidence of letters is only that.
+
+Where it lands:
+- **The claim checks.** The eye height is the scale factor, and it is the observer's own: H, carried in by standing on
+  the ground. Warren's affordances scale the same way by the body (a stair is climbable up to a riser of 0.88 of leg
+  length, preferred near 0.26), and Wraga and Proffitt find eye height used to scale heights over a zone of about 0.2 to
+  2.5 eye heights.
+- **Not a reading that gives V*/H from nothing.** One standpoint gives no V*/H (OFS Proposition 8). The horizon ratio
+  gives it because the ground adds what a bare standpoint lacks: a known surface, the eye a known height H above it, and
+  each object's contact with it. The ground carries H out to every object; that is the one amount, and the reader always
+  has it. Sedgwick's third quote is OFS's reading and writing exactly: relative heights free (ratios among objects),
+  heights relative to the observer only with the eye height.
+- **The corner.** An object exactly one eye height tall has its top on the horizon: v = h in Sedgwick's letters, V* = H in
+  ours. The horizon is where every object at its own distance stands at the reader's corner. A reading, unruled.
+- **Baselines.** His fourth quote names the other ways in: the eyes' separation and a moving eye's step, OFS's stride and
+  head turn (§9), "analogous" to the eye height. Three forms of one carried-in amount.
+- **What is not there.** As with Gibson, no measure on the directions: the horizon ratio is a relation between two
+  angles of one object, not a law over all directions.
+
+Standing: confirmed, from Sedgwick's own text. A classical anchor for "the one amount a reader carries in is its own" to
+cite in OFS beside Gibson (§3.7) or in §9 ("one amount"), if Tom wants it there. Check before citing the 1973 and 1986
+originals: only the 2021 paper was read.
+
+**Cited in OFS (22 Oct, SPN R433; Tom: "proceed").** §9, after "A survey: many readings, one amount", as "The ground:
+one's own height as the base": the horizon ratio as a ratio of readings, relative sizes read and absolute sizes written
+in the eye height, his third quote, the eyes' separation and a moving eye's step, the three added premises (a level
+plane, the eye's height above it, each object's contact) and the corner V* = H. Cited as Sedgwick (2021), i-Perception
+12(3), doi:10.1177/20416695211021111 (checked on Crossref), "restating his horizon-ratio relation of 1973 and 1986". The
+1973 dissertation and the 1986 Handbook chapter (Boff, Kaufman and Thomas, eds., Wiley, pp. 21.1–21.57) were looked for
+and not found open; neither is quoted.

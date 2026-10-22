@@ -1,0 +1,47 @@
+== P2: the turn's K addresses, boundaries H*tan(k*pi/2K), adjacent ratios ==
+K nearest sqrt2 at the corner: K=9 central 1.42028 (off 0.00606), K=10 central 1.37638 (off -0.0378), K=11 central 1.33186 (off -0.0824), K=8 central 1.49661 (off 0.0824)
+K=8: ratios 2.0824, 1.6131, 1.4966, 1.4966, 1.6131, 2.0824; longest run within 0.07 of sqrt2: 0; outermost 2.0824
+K=9: ratios 2.0642, 1.5863, 1.4534, 1.4203, 1.4534, 1.5863, 2.0642; longest run within 0.07 of sqrt2: 3; outermost 2.0642
+K=10: ratios 2.0515, 1.5682, 1.4259, 1.3764, 1.3764, 1.4259, 1.5682, 2.0515; longest run within 0.07 of sqrt2: 4; outermost 2.0515
+K=11: ratios 2.0422, 1.5553, 1.4072, 1.3483, 1.3319, 1.3483, 1.4072, 1.5553, 2.0422; longest run within 0.07 of sqrt2: 2; outermost 2.0422
+K=9 log-steps over the central log-step: 2.066, 1.315, 1.066, 1.0, 1.066, 1.315, 2.066
+P2: not killed
+
+== P3: modules to span 0.3-10 m (range 100/3), ends included ==
+r=sqrt2 (1.41421): 10.1178 steps, 11 modules (predicted 11)
+r=3/2 (1.5): 8.64824 steps, 9 modules (predicted 9)
+r=sqrt e (1.64872): 7.01312 steps, 8 modules (predicted 8)
+r=1.7 (1.7): 6.60831 steps, 7 modules (predicted 7)
+r=2 (2.0): 5.05889 steps, 6 modules (predicted 6)
+turn K=9, H = sqrt(0.3*10) = 1.73205 m: boundaries 0.3054, 0.6304, 1.0, 1.453, 2.064, 3.0, 4.759, 9.823; inside 8 of 8
+   span of K=9's interior boundaries tan(80)/tan(10) = 32.1634 against 100/3
+P3: not killed
+
+== P4: independent first steps n for 1.96*sigma/sqrt(n) < half the log2 distance from sqrt2 (sigma 0.045) ==
+3/2: log2 distance 0.084963, n >= 5 (predicted 5)
+sqrt e: log2 distance 0.22135, n >= 1 (predicted 1)
+1.7: log2 distance 0.26553, n >= 1 (predicted 1)
+2: log2 distance 0.5, n >= 1 (predicted 1)
+for information: K=9's step past the central three (1.5863) sits 0.1656 in log2 off sqrt2, n >= 2 steps of that rank
+P4: not killed
+
+== P5: which count gives sqrt2 ==
+(a) proportional plane, d=0.5: doubling ratio 1.4142135623730950488
+(a) proportional plane, d=1: doubling ratio 1.4142135623730950488
+(a) proportional plane, d=3: doubling ratio 1.4142135623730950488
+(a) proportional plane, d=100: doubling ratio 1.4142135623730950488
+(b) reader's lay, s=1.0: count doubles at s'=2.7182818, ratio 2.7182818; one level more at ratio 2.0
+(b) reader's lay, s=2.0: count doubles at s'=10.873127, ratio 5.4365637; one level more at ratio 2.0
+(b) reader's lay, s=10.0: count doubles at s'=271.82818, ratio 27.182818; one level more at ratio 2.0
+(b) reader's lay, s=100.0: count doubles at s'=27182.818, ratio 271.82818; one level more at ratio 2.0
+(c) equal addresses per level: the lay is along distance alone (1 + ln s per ray, any number of directions), so a level is ln s += ln 2: ratio 2 in the plane and the wedge alike
+P5: not killed
+
+== P1: GRD run 1's method with positions scaled by k ==
+k=1, bin 2.5 cm: Q 68.01, 95.03; R 56.18, 83.55, 118.00; S 54.72; first steps 1.3974, 1.4872, gm 1.4416
+   (bin edges here laid from the minimum by index, not np.arange as in run 1; run 1's values were Q 68.0, 95.0; R 56.2, 83.6, 118.0; S 54.7)
+(a) k=0.5, bin 1.25 cm: max |spacing/(k*base) - 1| = 0.00e+00; max relative ratio change 0.00e+00
+(a) k=7.0, bin 17.5 cm: max |spacing/(k*base) - 1| = 2.22e-16; max relative ratio change 2.22e-16
+(b) k=0.5, bin 2.5 cm fixed: Q 34.00, 48.31; R 28.28, 42.50, 60.88; S 28.50; first steps 1.4209, 1.5026, gm 1.4612, moved +0.0195
+(b) k=2.0, bin 2.5 cm fixed: Q 58.05, 97.53; R 111.44, 164.46, 213.03; S 104.43; first steps 1.6801, 1.4758, gm 1.5746, moved +0.1330
+P1: (a) not killed; (b) KILLED

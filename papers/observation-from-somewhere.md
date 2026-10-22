@@ -2,7 +2,7 @@
 
 **Addresses, payloads and the geometry of a situated reader**
 
-*Tom Brinkman, with Claude. Draft for external review, 15 October 2026.*
+*Tom Brinkman, with Claude. Draft for external review, 22 October 2026.*
 
 ## Abstract
 
@@ -145,7 +145,7 @@ where the truth would lie: a system's true breadths, as shares of their whole, w
 the breadths themselves, amounts the reader does not read. A reader's drawing, every party at its own H, is the sum's
 centre, where every pair is at its corner; the geometry follows from there, and the truth lies off the centre by the
 ratios the reader lacks. The three read the same thing differently: a line of true breadth 1 reads 1 to the writer, π/2
-to the payload reader and 2/π to the address reader. That is why the vantages are named so: the names follow the sweep.
+to the payload reader and 2/π to the address reader (a mean over its directions, taken by whoever adds them; §3.4). That is why the vantages are named so: the names follow the sweep.
 The writer knows the line as 1; each reader holds one hemisphere and reads it as π/2 or 2/π; the two hemispheres
 together, as the writer holds them, give back the 1, as the product of the two readings, π/2 · 2/π = 1, not their
 difference. What they give back is the baseline, the reader's own H measured in H (§10, step 3), not the other party's
@@ -198,7 +198,7 @@ writer's vantage as if a single observation held it. Section 3 sets out the read
   payload. Whatever is met in each direction cancels from the reading. Order survives every
   change of payload and sums do not, which is why the Cauchy has a median, at the corner, and no mean (§7). The median
   at the corner needs only that the sweep treat the two parties alike, and the missing mean only that, besides, its
-  weight not vanish at the horizon; the circle and the uniform turn give the Cauchy's exact shape (§7.2). As a rule: a
+  density of h stay above zero near the horizon; the circle and the uniform turn give the Cauchy's exact shape (§7.2). As a rule: a
   Cauchy variable is a direction, read by its order, never an amount, and where one appears beside an amount, as a
   spectral line's profile beside its strength, the two are separate factors (§7.2).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
@@ -225,7 +225,8 @@ writer's vantage as if a single observation held it. Section 3 sets out the read
 Section 2 states the principle these rest on, Jaynes's, and Section 11 returns to it. The geometry is claimed as
 necessary relative to a stated ignorance, not absolutely, and each relaxation of that ignorance gives a named
 alternative; Section 11 also lists the assumptions and related work.
-The paper is geometry only. It makes no claim about physics, perception or the structure of spacetime.
+The paper is geometry. It draws examples from physics and perception, and restates one physical case, special
+relativity's sky (§7.8), in its terms; it makes no new claim about physics, perception or the structure of spacetime.
 
 ## 2. Setting
 
@@ -553,7 +554,7 @@ readings, 2 and ½, are the vantages' own.
 |---|---|---|
 | both known (1 or 2 each) | the sphere, or another solid, held whole by the writer | a solid's equation; a three-dimensional array |
 | one known, the other 3 or 4 | half-situated: one pair held, its corner computed; the other swept from home, its corner found | a sailor who knows a lighthouse's height but not how far the coast runs |
-| 3, 3 | amounts along directions given in both angles | a lidar or sonar scan: a range returned along each pointed beam |
+| 3, 3 | amounts along directions given in both angles | a lidar or sonar scan: a return along each pointed beam, its delay an amount in a unit no reading fixes (in metres only once the signal's speed is carried in, which is writing, §9) |
 | 4, 4 | directions in both angles, and no amount | a camera's frame, held at once; a single-pixel scanner, taken in order |
 | 3, 4 | an amount along the aimed line to V, a direction to V₂ | a surveyor's total station: a distance along its aimed line, an angle across it |
 | 4, 3 | a direction to V, an amount along the aimed line to V₂ | the same, with the two parties exchanged |
@@ -683,6 +684,11 @@ the turn is equally likely; weight the turn otherwise and it changes.
 Both readings come from the same two integrals over the quarter turn: the arc the turn draws, ∫₀^{π/2} dθ = π/2 (the
 central reader's half turn, on radius ½, draws the same arc), and the projection it casts on the line, ∫₀^{π/2} cos θ
 dθ = 1. The central reading is the turn over the projection, π/2; the inscribed is the projection over the turn, 2/π.
+Each is a ratio of two sums over the turn, so each is taken by whoever adds the projections up, the payload reader or
+the writer. The address reader holds its directions, their shares and their median, the corner at ½, and no mean: its
+2/π is the mean projection of its own directions under the uniform turn, a mean its directions make possible and it does
+not hold. Other weightings of the turn keep the median at the corner (Theorem 6(e)) and in general move this mean, so
+the 2/π, unlike the corner, is the uniform turn's.
 Taken to any turn θ, the same two give the table's θ/sin θ and sin θ/θ. The projection is the line itself: the steps of
 the turn, each casting cos θ dθ, cover the breadth exactly once. Each reading sets it against the turn, one way up or
 the other, so their product is 1. Without angles the turn is ∫₀^∞ ds/(1 + s²) over every relation s = v/h, and the
@@ -805,7 +811,7 @@ holding. A reader that holds at once, a camera or an eye, still has every addres
 its receptors instead of turned through, and each direction [h : v] arrives together, so the corner is still found, as
 the median of what the frame holds. What sets the count is then the receptors' spacing, not a turn: receptors at equal
 angles count as the turn does, and give the Cauchy with its median at the corner; a flat screen of equal pixels counts
-evenly in v/h out to its edge, and puts the median at half the edge's reading instead. The read is the same; only the
+in equal steps of v/h out to its edge, and puts the median at half the edge's reading instead. The read is the same; only the
 count differs. A reader that takes one direction at a time has, without turning, one address: one reading from one zero,
 with no law, no median and no corner, since the corner is met by passing through it. Either way, with no motion the
 reader has no parallax, so no V*/H (§9), and no change, so looking again tells it nothing new: a near small thing and a
@@ -879,17 +885,21 @@ each finger the same address.
   sign. Joining them into the closed circle is the writer's work: it knows each one's size, so their ends can be made
   to meet. The sphere is every way a hand could face, its eight octants joined by the writer; no hand holds it.
 
-The same picture without the hand. Every direction from the point where the reader stands makes a sphere round that
-point: the reader's sphere, drawn at H, the same in every world. What arrives along each direction paints that point of
-the sphere. The paint is the payload; no distance is on the sphere, and two things on one line paint one point, the
-nearer. The reader sends nothing. It receives what the world puts there, and it holds an octant or a patch of the
-sphere at once, or turns to cover the rest. The picture is Gibson's ambient optic array: the light at a point of
-observation, "as distinguished from the radiant light, emitted from a point-source", arranged as "visual solid angles all
-having a common apex at the point of observation", one for each face that is not hidden from it (Gibson 1972; 1979).
-What the geometry adds is a measure on the sphere before any paint. Swept uniformly, its directions read as the Cauchy
-(§7.1), with the median at the corner, whatever paints them (Theorem 6). The writer's sphere is the other one. It is
-round the whole system, looking in, and its radius is an amount, the size of what it holds (§3.4, §9). The reader's
-sphere has no such radius. A second standpoint, or an amount carried in, is what turns the one into the other.
+The same picture without the hand. Every direction the address reader could face, from the point where it stands, makes
+a sphere round that point: the directions themselves, drawn at H (its radius is H, a value chosen, not an amount), the
+same in every world. What arrives along each direction paints that point. The paint is the payload; no distance is on
+these directions, and of two things on one line the nearer paints the point. The address reader need send nothing. It
+receives what the world puts there, and it never holds the sphere whole: it holds an octant or a patch at once, or turns
+to cover more, and joining its patches into one painted sphere in a common frame is the writer's work, as above. A
+payload reader is the other case: it receives an amount along each given direction, in a unit no reading fixes; a
+ranging reader, which carries in the signal's speed to fix that unit, is a writer (§9). The picture is Gibson's ambient optic array, the light at a point of observation (Gibson 1979, ch. 5).
+In an earlier essay he sets it apart from "the radiant light, emitted from a point-source", and describes it as "visual
+solid angles all having a common apex at the point of observation", one for each face that is not hidden from it (Gibson
+1972). What the geometry adds is a measure on these directions before any paint. Swept uniformly over an octant, they
+read as the two-dimensional Cauchy, with every pair at its corner and the near field a third, whatever paints them
+(Proposition 5(e), Theorem 6). The writer's sphere is the other one. It is round the whole system, looking in, and its
+radius is an amount, the size of what it holds (§9). A second standpoint gives that radius in H; an amount carried
+in gives it in a unit shared with others.
 
 ### 3.8 What the reader lacks is one number
 
@@ -931,7 +941,7 @@ alike, f(1/x) = 1 − f(x). Then f(1) = ½, and f maps the near side below ½ an
 *Proof.* (a) The registers take values in [0, a] and (0, 1/a); both lie in [0, 1] exactly when a ≤ 1 and 1/a ≤ 1.
 (b) At x = 1 the condition reads f(1) = 1 − f(1); the rest follows from monotonicity. ∎
 
-Part (b) assumes the reading is *reciprocal-symmetric* (log-symmetric, as Jones 2008 has it): it treats the two sides
+Part (b) assumes the reading is *reciprocal-symmetric* (log-symmetric, as Jones 2008b has it): it treats the two sides
 alike, although the reader's knowledge does not, since it knows H and not V. Without that symmetry a bounded reading
 such as x/(2 + x) has its middle at x = 2. Reciprocal-symmetric readings include the line's share v/(v + h) = x/(1 + x)
 and the arc's v²/(h² + v²) = x²/(1 + x²).
@@ -1236,7 +1246,7 @@ reaches them only through the measure on directions that "sweeping uniformly" us
 the same readings (§7.4). Swept uniformly along their own paths, the square and the line give other laws, with the same
 median at the corner and no mean (Theorem 6(e)). What the circle and the uniform turn add is the Cauchy's exact shape.
 
-**What the count of orthants borrows.** The count 2ⁿ needs no angle. That the orthants tile the circle or the sphere in
+**What the count of orthants borrows.** The count 2^m needs no angle. That the orthants tile the circle or the sphere in
 equal shares, a quarter turn each or π/2 of the sphere's area each, is the Euclidean measure of (c), not part of the
 count.
 
@@ -1309,7 +1319,7 @@ area ln 2 (Saint-Vincent 1647). The rescaling (x, y) ↦ (x/√λ, √λ·y) sli
 scale is preferred. The two are one sweep, squeezed: read against ln(v/h), the turn is
 arctan(v/h) = π/4 + ½·gd(ln(v/h)), where gd(x) = arctan(sinh x) is the Gudermannian. It carries the whole unbounded
 logarithm into a quarter turn, nearly uniform at the corner and squeezed without end toward the edges, so that the turn
-per doubling past the corner falls 18.4°, 12.5°, 6.9°, 3.6°, 1.8°, …, by a ratio tending to 2. The bounded sweep is the
+per doubling past the corner falls 18.4°, 12.5°, 6.9°, 3.5°, 1.8°, …, by a ratio tending to 2. The bounded sweep is the
 logarithm seen whole from one side.
 
 **Two address spaces.** Inside the corner the addresses are proportional; past it they are logarithmic, each doubling
@@ -1384,21 +1394,21 @@ and logarithmically past it. Latitude is the Gudermannian of the map's height, �
 know of the two address spaces laid out.
 
 **One figure, three rulers.** The circle, the number line and Mercator's height fit in one figure, and the figure shows
-what each of them does with the corner. Draw the unit circle, the tangent line at its apex A = (1, 0), and the unit
+what each of them does with the corner. Draw the unit circle, the tangent line at A = (1, 0), and the unit
 hyperbola u² − w² = 1, which touches the same line at A (u along the axis, w sideways). A reading x = v/h sits on the
 tangent at T = (1, x). The circle's point P = (cos θ, sin θ), whose ray from the centre passes through T, and the
 hyperbola's point (cosh ζ, sinh ζ) level with T, give
 
   x = tan θ = sinh ζ,  so θ = gd(ζ),
 
-and each angle is twice the area of its sector from A: the circle's (Archimedes) and the hyperbola's. So one reading is
+and each angle is twice the area of its sector from A: the circle's (Archimedes) and the hyperbola's (Saint-Vincent 1647; de Sarasa 1649). So one reading is
 laid three ways, each an exact function of the others:
 
 | ruler | room for the near field, x ≤ 1 | room for the far field, x ≥ 1 | the corner x = 1 | the reciprocal x ↦ 1/x |
 |---|---|---|---|---|
 | x itself, the writer's number line (§9) | 1, in proportion | unbounded, in proportion | a point like any other | no symmetry of the ruler |
 | θ = arctan x, the turn | 45° | 45° | the middle | θ ↦ π/2 − θ, a reflection |
-| ζ = asinh x, the hyperbolic angle, Mercator's height | asinh 1 ≈ 0.881, nearly in proportion | unbounded, about ln 2 a doubling | where proportion gives way to levels | no reflection of the ruler |
+| ζ = asinh x, the hyperbolic angle, Mercator's height | asinh 1 ≈ 0.881, nearly in proportion | unbounded, about ln 2 a doubling | a point; proportion gives way to levels around it, gradually | no reflection of the ruler |
 
 So the one figure draws the near field and the far field three ways. On the turn they are halves, mirrored by the
 reciprocal. On the hyperbolic angle they are the two address spaces above, proportion giving way to levels. On the
@@ -1410,9 +1420,9 @@ lay (x, then 1 + ln x) never exceeds it by more than 1 − ln 2 ≈ 0.307, appro
 
 All three carry the corner, since it is the reciprocal's fixed point (Proposition 1) and so a point of the reading
 itself. Only the turn gives it a role.
-- A measure uniform in θ puts its median at x = 1 with nothing else given (Proposition 5(d)), because the turn is
-  bounded.
-- The two unbounded rulers have no uniform measure until a range is given beforehand. A measure uniform in ζ over
+- A measure uniform in θ puts its median at x = 1 with nothing else given (Proposition 5(b), (d)), because the turn's range,
+  the quarter turn from home to the horizon, is fixed by the geometry and carried onto itself by θ ↦ π/2 − θ.
+- The two unbounded rulers have no uniform probability until a range is given beforehand. A measure uniform in ζ over
   [0, Z] puts its median at x = sinh(Z/2), at the corner only when Z = 2 asinh 1 ≈ 1.763. A measure uniform in x over
   [0, X] puts it at X/2, at the corner only when X = 2. Either way the range, an amount, decides where the middle falls.
 
@@ -1781,8 +1791,9 @@ any sum).
 
 **Theorem 6.** Parts (a) and (d) concern the readings of Proposition 5: the other party drawn at V = H and the circle
 swept uniformly by direction. Parts (b) and (c) hold for any finite set of readings. Part (e) drops both the circle and
-the uniform turn. The readings are the address reader's: directions, ratios with no amount in them, so what (a), (d) and
-(e) find is a property of the uniform turn that lays them, whoever makes it, and not of what is read; the payload reader's amounts are what (c) concerns.
+the uniform turn. The readings are the address reader's: directions, ratios with no amount in them, so what (a) and (d) find
+is a property of the uniform turn that lays them, whoever makes it, and what (e) finds a property of any
+reciprocal-symmetric sweep, and neither is a property of what is read; the payload reader's amounts are what (c) concerns.
 
 (a) *Nothing that arrives changes the Cauchy.* Suppose that whatever arrives in the direction of each step lies at some
 reach ℓ > 0, an amount that may differ from direction to direction and is unknown to the reader. In the reader's unit
@@ -1842,14 +1853,14 @@ it is formed from a reading.
 
 Third, a sweep is uniform by definition, a turn measured by itself (§2), so the uniformity is never in question; what
 can differ is what is counted. Counted along the sweep, the law is the sweeping reader's addresses, as step 1 defines
-them. Counted as arrivals from sources that happen to be spread evenly in direction, the same shape is the payload's
+them. Counted as arrivals from sources that happen to be spread uniformly in direction, the same shape is the payload's
 density over directions, a property of the world, and "addresses" would be the wrong name for it. What does not depend
 on what is counted:
 - the reach cancels from every single reading, not on average (Theorem 6(a));
 - order survives every change of payload (Theorem 6(b));
 - only an affine map commutes with the mean on every set (Theorem 6(c));
-- the median at the corner and the missing mean, for any weight that treats the two parties alike and does not vanish
-  at the horizon (Theorem 6(e)). Only the Cauchy's exact shape needs the uniform turn.
+- the median at the corner for any weight that treats the two parties alike, and the missing mean for any whose density
+  of h also stays above zero near the horizon (Theorem 6(e)). Only the Cauchy's exact shape needs the uniform turn.
 
 These give a reader a reason to prefer order whatever the uniformity is: order is what survives a payload it does not
 know.
@@ -1912,16 +1923,16 @@ addresses follow the uniform turn is Proposition 5's, not the array's.
   one, with N setting the band. That method assumes a model of the signal; it is an analogy to the reader's coarser
   level, not the same mechanism.
 - *One array per facing.* A circle has four facings, the quadrants, and can be stored as four arrays on one lattice.
-  - Each array has its places at ψ_k = (k + ½)·(π/2)/N, read as tan ψ_k: the N evenly spaced quantiles of the
+  - Each array has its places at θ_k = (k + ½)·(π/2)/N, read as tan θ_k: the N evenly spaced quantiles of the
     half-Cauchy.
   - The circle stores one value everywhere, its radius. A shape stores others (§7.4).
   - The size is the one value no reading fixes (Proposition 8).
   - Within an array, its middle is the corner, and reading it backwards is the reciprocal:
-    tan ψ_k · tan ψ_(N−1−k) = 1.
+    tan θ_k · tan θ_(N−1−k) = 1.
   - A closed curve stored as 4N samples over the full turn is these four arrays laid end to end.
   - A sphere is eight arrays, one per octant, each two-dimensional, uniform in azimuth and in height.
 - *The reader reads the arrays; the writer joins them.*
-  - A reading carries no sign, and composed turns repeat after a half turn (tangent addition). So from inside, every
+  - A reading carries no sign, and composed turns repeat after a half turn (tangent addition). So from a standpoint, every
     facing is the same array, and a reader reads within one.
   - To join two arrays, their values must meet at the shared end in one unit. That needs each array's size, its extent
     in amounts.
@@ -2076,7 +2087,7 @@ The same split appears in familiar places.
 The Cauchy as the image of a uniform angle (the gnomonic projection of uniform measure on a hemisphere), its invariance
 under Möbius maps and its missing mean are classical (Knight 1976; McCullagh 1996; Pitman and Williams 1967; Cuadras
 2002; Stigler 1974), as are the facts that the mean of n Cauchy variates is again Cauchy and that order statistics
-follow every increasing map; those facts are part (d). The other parts of Theorem 6 are in print too.
+follow every increasing map; those facts underlie parts (b) and (d). The other parts of Theorem 6 are in print too.
 - *Part (a).* The ratio of two components of any spherically symmetric vector is Cauchy, whatever its radial law, since
   its direction is uniform and independent of its length (Jones 1999). In more dimensions the tangents of the polar
   angle are multivariate Cauchy (Cacoullos 2014), the law of Proposition 5(e). Under elliptical symmetry the ratio is a
@@ -2120,11 +2131,21 @@ follow every increasing map; those facts are part (d). The other parts of Theore
   - Of the D⁴ by which an isotropic sky's intensity brightens ahead (Rybicki and Lightman 1979), D² is the addresses'
     crowding, and D² is the payload: energy and arrival rate, D each.
 
+  So the motion can be read from the addresses alone. On the levels ξ = −ln tan(θ/2), the pseudorapidity, aberration is
+  a shift by η exactly, and a sky uniform in the sources' frame lies as ½·sech²ξ, its median the transverse plane; seen
+  from the moving frame it lies as ½·sech²(ξ′ − η), its median moved to η. A reader holding directions alone reads its
+  own rapidity, a reading, with no clock, no frequency and no c carried in, provided every source is counted whatever
+  its brightness and the sources are uniform in their own frame. A census cut by brightness adds a weighting of the
+  addresses, D raised to a power read from the census's own ratios (the slope of its counts and a ratio of two bands):
+  still a reading, needing no rest frequency, but no longer of directions alone. To read the Doppler factor as a
+  frequency needs a rest frequency carried in, a known kind: a writing.
+
   The split is in the formulas, aberration apart from Doppler shift and beaming. It is not named there as a
-  transformation of addresses and a weighting of payload. (We checked these identities exactly.)
-  The same theory runs on §6's three rulers. A velocity's celerity γβ is x, its rapidity η is ζ, its speed
-  β = tanh η = sin θ and γ = sec θ. Rapidities add along a line, and nothing in the theory turns uniformly in θ, so
-  its corner γβ = 1 (β = 1/√2) is where its two regimes hand over, not a median.
+  transformation of addresses and a weighting of payload. The identities are exact.
+  The same theory runs on §6's three rulers. A velocity's celerity γβ is x, its rapidity η is ζ, and with χ the turn
+  ruler's angle (not the aberration angles above), its speed β = tanh η = sin χ and γ = sec χ (γ here the Lorentz factor, not a Cauchy half-width). Rapidities add along a
+  line, and uniform acceleration is uniform in η, not in χ, so its corner γβ = 1 (β = 1/√2) is where its two regimes
+  hand over, not a median.
 - *Proposition 5(g)* is classical cartography. A chart's two scales at a place are the axes of Tissot's indicatrix
   (Tissot 1881), which is a circle exactly where the chart keeps angles; Mercator's map is the cylindrical chart that
   does so everywhere; and no chart keeps both angles and areas (Euler 1777; Gauss 1828). What is ours is the reading: the
@@ -2598,6 +2619,20 @@ to it. The costs fall where the geometry puts them: each angle needed only an in
 base needed the ground itself, crossed rod by rod, and one was enough to write the whole. The finished map is the
 written thing, the writer's representation, and its scale bar is the base.
 
+**The ground: one's own height as the base.** A reader standing on level ground carries a base with it. The horizon
+of a ground plane lies at the eye's height, so it cuts every object standing on that plane at the same height above
+the plane's surface: the part of the object below the horizon is one eye height tall. If the object's foot reads F
+below the horizon and its top E above, its height over the eye height is (tan E + tan F)/tan F, a ratio of readings
+(Sedgwick 2021, restating his horizon-ratio relation of 1973 and 1986; Sedgwick 1973, 1986). Without the eye height every object's size
+relative to every other is still read; with it, each is written in that one length. As Sedgwick puts it, without the
+eye height "the vertical extents of all those objects relative to each other are still visible even though their
+vertical extents relative to the observer are not", and he names the separation of the two eyes and the step of a
+moving eye as scale factors of the same kind: the baselines of "Turning in place" below and §10's walk. Three things are
+added here, and none is read: a plane known to be level, the eye's height above it, and each object's contact with
+it. Given those, the eye height is the survey's base, carried in the body instead of measured with rods. An object
+exactly one eye height tall has its top on the horizon: it is at the corner of the pair (object, eye height), its
+true breadth equal to the eye height.
+
 **The test: scale the world.** Whether a record is read or written can be checked without asking how it was made.
 Multiply every breadth and distance in the world by one factor k. A reading does not change: a direction, each angle of
 the survey, a photograph, the reader of ratios' [h : v], the shape the reader of the payload holds. A writing changes by
@@ -2935,7 +2970,7 @@ rescalings). Each relaxation gives a named alternative rather than no geometry:
 - a preferred scale gives a lay that stops there (§8, §11.2 question 1).
 
 The main result's core, order surviving and sums failing, with the median at the corner, needs only the first of the
-three; the missing mean needs besides that the weight not vanish at the horizon (Theorem 6(e)).
+three; the missing mean needs besides a density of h bounded away from zero near the horizon (Theorem 6(e)).
 
 ### 11.2 Assumptions and open questions
 
@@ -2950,7 +2985,7 @@ stay where they are.
 | The median at the corner, K/2 addresses on each side of H | the weight unchanged by the reciprocal; no condition at the horizon (sin² 2θ has its median at the corner and a mean, 4/π) | Theorem 6(e); question 2 below |
 | No mean; a tail c/s, so the last of K addresses begins near c·K·H | a density of h bounded away from zero near the horizon, at least f₀ > 0 there; since the path ends at all of v, v ≥ v₀ > 0 wherever h is small, so P(v/h > r) ≥ f₀·v₀/r far out; no symmetry (a weight leaning toward the horizon has no mean and its median off the corner) | Theorem 6(e); §8, "Other ways to squeeze the line" |
 | Every pair's median at its own corner | each pair's weight unchanged by its own reciprocal | Proposition 5(e); "More parties" |
-| Near in all readings for 1/(n + 1); the number of readings past their corner even over 0, 1, …, n | the weight unchanged by every permutation of the n + 1 unit relations; the pairs' symmetry is not enough (half the weight on each of two chambers can keep every pair's median at its corner and never have h the largest) | "More parties"; "Why uniformly by area" |
+| Near in all readings for 1/(n + 1); the number of readings past their corner uniform over 0, 1, …, n | the weight unchanged by every permutation of the n + 1 unit relations; the pairs' symmetry is not enough (half the weight on each of two chambers can keep every pair's median at its corner and never have h the largest) | "More parties"; "Why uniformly by area" |
 | The exact Cauchy, its 2/π and quartiles √2 ∓ 1; on the octant the two-dimensional Cauchy and the near field exactly ⅓ | the uniform turn, or on the sphere uniform area: the reader treats every turn alike | Proposition 5(b), (d), (e); "Why uniformly by area" |
 | Staying a Cauchy under re-aiming and under sums. Re-aiming: a new zero or a change of H acts on the signed reading over both quadrants (the projective line) as a real Möbius map g(x) = (ax + b)/(cx + d), and X distributed as C(z) gives g(X) as C(g(z)) for every such map with ad − bc > 0 (as C of the conjugate of g(z) when ad − bc < 0; the pole is one reading, of probability zero, sent to the horizon). Within one quadrant a turn does not keep the half-Cauchy. Sums: of independent readings, each Cauchy, the points m + iγ adding. The stretch 2KH/π before the horizon | the readings Cauchy to begin with, which the uniform turn gives; for sums, independence as well | §7.2 (McCullagh 1996); §8, "Other ways to squeeze the line" |
 
@@ -3114,6 +3149,48 @@ to compute anything is an engineering question we do not take up. The aim is to 
 well understood: why near and far seem to obey different mathematics, why logarithmic scales appear wherever a range is
 too wide to hold in proportion, and why the Cauchy has a median but no mean.
 
+### 11.4 What the geometry gives free
+
+The last section left aside whether this is a better way to compute anything. What the geometry does offer engineering
+is narrower and, we think, more useful: a baseline. Once the reader chooses H and draws V = H, some structures follow
+with no further choice:
+- a zoom, the value of H (§8);
+- a split between near and far, the corner v = h, at 45° only with V = H drawn (§4);
+- readings no change of the world's size can move, since every reading is a ratio (Theorem 6(a), §9);
+- given that the sweep is uniform, addresses for any number of things with no table and no count, the uniform turn's
+  Cauchy (§7).
+
+Others need one stated premise more, and are free once it is granted:
+- precision far off, the lay past the corner, 1 + ln s or 2 − 1/s, given (S) (§6);
+- a level of detail, given a fixed count K of addresses, which H then divides between the near field and the far (§8).
+
+What hides what is not among them: it is the payload's, set by which surfaces are opaque (§3.7). Some systems built to
+read or draw a world arrive at these structures by design, and the geometry lets each design be read against them: what
+it adds, and what that costs. Four examples:
+- *The depth buffer.* A perspective depth buffer stores (f/(f − n))·(1 − n/d) for a point at distance d between the
+  near and far planes n and f. With H = n this is the in-place lay, 2 − n/d, less its constant 1, rescaled: setting the
+  near plane is choosing H, the near field inside it is discarded, and precision runs out far off because every
+  address there has already been spent toward the horizon. Logarithmic depth in its plain form, ln(d/n)/ln(f/n), is the
+  reader's lay past the corner with its corner at the near plane; the form ln(Cd + 1)/ln(Cf + 1), proportional below
+  d ≈ 1/C and logarithmic above, is a smooth form of the whole lay, near field and far, turning at d ≈ 1/C, as §6's
+  hyperbolic angle smooths the reader's lay.
+- *The flat screen.* Equal pixels on a plane are not equal turns. Per unit of screen area the uniform turn's directions
+  have density (2/π)·cos³α (Proposition 5(e)), so equal pixels over-weight the directions off the axis by sec³α, and
+  along one line of a screen of finite edge they put the median at half the edge instead of at the corner (§3.5). The
+  weighting is the design's, added to the geometry.
+- *Tables fixed in advance.* A sampling table or a grid of cells fixed in advance must know beforehand the extent it
+  covers and the resolution it needs, and is rebuilt when either changes. The uniform turn's addresses need neither (§8,
+  "A fixed count, aimed by H"); what needs them is the payload or the writer.
+- *The centre of directions.* Where the readings themselves fall as the uniform turn's law, as the addresses of a sweep
+  do, their tangent chart has no mean and the median is the law's own centre (Theorem 6); a fit that averages them on
+  that chart has nothing to settle on. Measurement errors are another law, which the geometry does not fix.
+
+This is a claim about where these structures come from, not about how well any system performs: a design that departs
+from the geometry may be right to, for reasons the geometry does not see. Two limits apply. What comes free is the
+readings, not the amounts: metres still cost one amount carried in (§9), and the geometry says only which amount and
+why one is enough. And whether a given departure is worth its cost is the designer's question; the geometry only makes
+it one that can be asked.
+
 ## Appendix: notation
 
 | symbol | kind | meaning |
@@ -3199,6 +3276,8 @@ Cuadras, C. M. (2002). Geometrical understanding of the Cauchy distribution. *Q�
 Dawid, A. P., Stone, M. and Zidek, J. V. (1973). Marginalization paradoxes in Bayesian and structural inference.
 *Journal of the Royal Statistical Society B* 35(2), 189–233.
 
+de Sarasa, A. A. (1649). *Solutio problematis a R. P. Marino Mersenne Minimo propositi*. Antwerp.
+
 Deakin, M. A. B. (2006). The wine/water paradox: background, provenance and proposed resolutions. *Gazette of the
 Australian Mathematical Society* 33(3), 200.
 
@@ -3283,7 +3362,8 @@ Jones, M. C. (2008b). On reciprocal symmetry. *Journal of Statistical Planning a
 Kakutani, S. (1944). Two-dimensional Brownian motion and harmonic functions. *Proceedings of the Imperial Academy
 Tokyo* 20(10), 706–714.
 
-Kato, S. and McCullagh, P. (2020). Möbius transformation and a Cauchy family on the sphere. *Bernoulli* 26(4).
+Kato, S. and McCullagh, P. (2020). Some properties of a Cauchy family on the sphere derived from the Möbius
+transformations. *Bernoulli* 26(4), 3224–3248.
 
 Kellogg, O. D. (1929). *Foundations of Potential Theory*. Springer, Berlin.
 
@@ -3357,6 +3437,14 @@ Saint-Vincent, G. de (1647). *Opus geometricum quadraturae circuli et sectionum 
 Schwartz, E. L. (1977). Spatial mapping in the primate sensory projection: analytic structure and relevance to
 perception. *Biological Cybernetics* 25, 181–194.
 
+Sedgwick, H. A. (1973). *The Visible Horizon: A Potential Source of Visual Information for the Perception of Size
+and Distance*. Doctoral dissertation, Cornell University.
+
+Sedgwick, H. A. (1986). Space perception. In K. R. Boff, L. Kaufman and J. P. Thomas (eds.), *Handbook of Perception
+and Human Performance*, vol. 1, 21.1–21.57. Wiley, New York.
+
+Sedgwick, H. A. (2021). J. J. Gibson's "Ground Theory of Space Perception". *i-Perception* 12(3), 20416695211021111.
+
 Seshadri, V. (1965). On random variables which have the same distribution as their reciprocal. *Canadian
 Mathematical Bulletin* 8, 819–824.
 
@@ -3369,11 +3457,11 @@ Smart, W. M. (1977). *Textbook on Spherical Astronomy*, 6th ed., revised by R. M
 
 Snellius, W. (1617). *Eratosthenes Batavus, de terrae ambitus vera quantitate*. Leiden.
 
-Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Fincke,
-Berlin.
-
 Spitzer, F. (1958). Some theorems concerning 2-dimensional Brownian motion. *Transactions of the American
 Mathematical Society* 87, 187–197.
+
+Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Fincke,
+Berlin.
 
 Stevens, S. S. (1946). On the theory of scales of measurement. *Science* 103(2684), 677–680.
 

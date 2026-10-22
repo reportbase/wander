@@ -1,0 +1,50 @@
+P1: the sky's corner is a median only where the sky is uniform
+  beta=0.1: eta=0.100335347731 median=0.100335347731 mean=0.100335347731 (|mean-eta|=0.0) share ahead=0.55
+  beta=0.6: eta=0.69314718056 median=0.69314718056 mean=0.69314718056 (|mean-eta|=0.0) share ahead=0.8
+  beta=0.707107: eta=0.88137358702 median=0.88137358702 mean=0.88137358702 (|mean-eta|=0.0) share ahead=0.853553390593
+  beta=0.99: eta=2.64665241236 median=2.64665241236 mean=2.64665241236 (|mean-eta|=0.0) share ahead=0.995
+  worst identity miss 7.81e-49
+P2: chi is the aberration of the seen median
+  beta=0.1: median cap 84.2608295227332 deg, 90-chi 84.2608295227332
+  beta=0.6: median cap 53.130102354156 deg, 90-chi 53.130102354156
+  beta=0.707107: median cap 45.0 deg, 90-chi 45.0
+  beta=0.99: median cap 8.10961445599418 deg, 90-chi 8.10961445599418
+  uniform in eta on [0,1.5]: share below w=1 0.587582391346362
+  uniform in eta on [0,2.0]: share below w=1 0.440686793509772
+  uniform in eta on [0,3.0]: share below w=1 0.293791195673181
+  uniform in eta on [0,1.7627472]: share below w=1 0.5
+  2*asinh(1) = 1.76274717403909; worst miss 2.0e-51
+P3: D a payload function on the addresses; the Doppler swap a reflection about eta/2
+  beta=0.1: D=1 at xi'=0.0501676738655378 (eta/2=0.0501676738655378), theta'=87.12680897 deg; D(+60)/k-1=0.0
+  beta=0.6: D=1 at xi'=0.346573590279973 (eta/2=0.346573590279973), theta'=70.52877937 deg; D(+60)/k-1=0.0
+  beta=0.707107: D=1 at xi'=0.440686793509772 (eta/2=0.440686793509772), theta'=65.53019948 deg; D(+60)/k-1=0.0
+  beta=0.99: D=1 at xi'=1.32332620618112 (eta/2=1.32332620618112), theta'=29.81806385 deg; D(+60)/k-1=1.34e-50
+  worst miss 1.09e-48
+P4: the Doppler corner is the swap of who counts
+  beta=0.1: median D by source 1.00503781526 (gamma 1.00503781526), by address 0.994987437107; product 1.0; blue by source 0.525062814467, by address 0.474937185533
+    sampled: z = 0.04, 0.68, 0.36, 0.73
+  beta=0.6: median D by source 1.25 (gamma 1.25), by address 0.8; product 1.0; blue by source 0.666666666667, by address 0.333333333333
+    sampled: z = 0.85, 0.79, 0.47, 1.05
+  beta=0.707107: median D by source 1.41421356237 (gamma 1.41421356237), by address 0.707106781187; product 1.0; blue by source 0.707106781187, by address 0.292893218813
+    sampled: z = 0.93, 0.66, 1.93, 1.12
+  beta=0.99: median D by source 7.08881205008 (gamma 7.08881205008), by address 0.141067359797; product 1.0; blue by source 0.933804363739, by address 0.0661956362609
+    sampled: z = 0.27, 1.74, 0.71, 0.85
+  worst identity miss 1.07e-49; worst z 1.93
+P5: the boost read from addresses alone
+  beta=0.1000: RMS median 0.02265 (pred 0.02236, +0.013), mean 0.02037 (pred 0.02028, +0.004), ratio 1.1122; scaling moved 1.0e-14; frequency estimate's move vs -ln f off by 1.1e-16
+  beta=0.6000: RMS median 0.02244 (pred 0.02236, +0.003), mean 0.02094 (pred 0.02028, +0.032), ratio 1.0716; scaling moved 3.4e-13; frequency estimate's move vs -ln f off by 1.1e-16
+  beta=0.7071: RMS median 0.02191 (pred 0.02236, -0.020), mean 0.01989 (pred 0.02028, -0.019), ratio 1.1012; scaling moved 1.4e-13; frequency estimate's move vs -ln f off by 1.1e-16
+  beta=0.9900: RMS median 0.02175 (pred 0.02236, -0.027), mean 0.02028 (pred 0.02028, +0.000), ratio 1.0721; scaling moved 3.9e-13; frequency estimate's move vs -ln f off by 2.2e-16
+P6: EMC's mass a stationary point; the Newton/massless hand-over
+  crossings found: ['1.0']
+  rapidity uniform on [0,1.5]: Newton better in 0.587582391346362
+  rapidity uniform on [0,3.0]: Newton better in 0.293791195673181
+  rapidity uniform on [0,1.7627472]: Newton better in 0.5
+  chi uniform on [0,pi/2]: Newton better in 0.5; worst miss 4.14e-49
+
+P1 not killed
+P2 not killed
+P3 not killed
+P4 not killed
+P5 not killed
+P6 not killed
