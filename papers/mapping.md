@@ -41,6 +41,11 @@ goes into OFS only once it has been worked out here or in a plan.*
   capabilities. its not the reader, its not the writer, its the turn itself." §9 now opens with it.
 - 19 October, later (SPN R389). Tom: "in draw.html we use the shape library to test cauchy against a. variety of shape,
   and it always returns a unit circle.", then "yes". §9 cites draw's SMP and RCC labs as the principle's controlled test.
+- 22 October (SPN R429). Tom: "I think the advantage of ofs is that is free, provided by geometry. much of what i see
+  with the alterntaives is engineered, not that is bad, but its not pure geometry. for example, you get zoom for free
+  with H.", then "geometry is the foundation, fighting geometry never wins, but if you don' even know the geomeotry, you
+  can't assess your engineerred solutions.", then "yes". Added §9½: what is free, what is engineered, and the geometry as
+  the baseline an engineered choice is assessed against.
 
 **Standing marks.** Each claim carries one:
 - **[classical]**: established outside this corpus (surveying, photogrammetry, computer vision, robotics), quoted;
@@ -409,6 +414,50 @@ classical is good news actually."). The Cauchy addresses without a count of read
 mean, a table, an extent) is the payload's or the writer's. Here that sorts the tests: AFM's ties with least squares and
 bundle adjustment show correctness only, since neither needs N either; where a classical method must know N (a table rebuilt
 per view, IMS; a depth buffer told its far plane, DPR) a tie comes free. **[reading]**, on IMS and DPR's **[exact]** numbers.
+
+## 9½. Free and engineered: the geometry as the baseline
+
+Tom (22 October, SPN R429): "I think the advantage of ofs is that is free, provided by geometry. much of what i see with
+the alterntaives is engineered, not that is bad, but its not pure geometry. for example, you get zoom for free with H.";
+then "geometry is the foundation, fighting geometry never wins, but if you don' even know the geomeotry, you can't
+assess your engineerred solutions."
+
+**What is free.** Once the reader chooses H and draws V = H, the following come with no further choice. Each is a
+consequence of the drawing, not a part added to it:
+- the zoom: H's value (OFS §8);
+- the split between near and far: the corner v = h (OFS §4);
+- precision far off: the lay past the corner, 1 + ln s, or the in-place lay 2 − 1/s (OFS §6);
+- a level of detail: a fixed count K of addresses, split by H (OFS §8);
+- addresses for any number of things, with no table and no count: the uniform turn's Cauchy (OFS §7, SPN R403);
+- readings unmoved by the world's size: every reading a ratio (OFS Theorem 6(a), "scale the world");
+- what hides what: the first thing on each line paints the reader's sphere (OFS §3.7).
+
+**[exact]**, each a proposition of OFS; **[reading]**, the word "free".
+
+**The baseline.** The use of knowing them is the question they let one ask of an engineered solution: what did it add to
+the geometry, and what did that cost? Without the geometry a scheme can be seen to work; with it, what it is doing can be
+named, and what it gave up.
+
+| the free structure | the engineered version | what the engineering adds or departs from | evidence |
+|---|---|---|---|
+| the lay, its corner at H | the 24-bit depth buffer | the in-place lay with its corner at the near plane: setting the near plane is choosing H; far off every address is spent, which is where precision runs out | DPR **[exact]** |
+| the reader's lay past the corner | log depth; binary32 floats | log depth is the reader's lay with its corner at the near plane; a float is a reader's lay in base 2 (subnormals the proportional part, 2²³ addresses a level) | DPR **[exact]** |
+| the in-place lay's reciprocal | reversed-Z | the in-place lay turned round in a float: constant relative precision | DPR **[exact]** |
+| the uniform turn's addresses | a camera's flat screen | equal pixels on a plane, not equal turns: density (2/π)·cos³α over the octant, the median at half the screen's edge, not at the corner. A weighting added, usually unnamed | OFS §3.5; SPN R312 **[exact]** |
+| a fixed count K, split by H | LOD tiers, mipmaps, screen-size thresholds, geometry clipmaps (Losasso and Hoppe 2004) | the same rule (detail by size on the screen) set by hand per scene, often with fixed distances that slide as the view moves | `zoom.html`, `flight.html` **[illustration]**; REF run 2's note |
+| the Cauchy addresses, no N | an importance table rebuilt per view | the table needs the view and a count; it lost to the Cauchy alone under a strong boost (4,098 against 124.75 at η = 4); tabling only the payload, in its own frame, and addressing by the Cauchy beat both | IMS **[exact]** |
+| the median of the addresses | least squares on bearings | the mean of a law with none: it stalls under Cauchy bearings (×1.39 from K = 4 to 16) where the median of pairwise crossings keeps improving (×3.95). Real bearings are a narrow core plus wrong matches, not a Cauchy, so in practice the cost shows with wrong matches | AFM, BER **[simulation]**, **[data]** |
+| the measure-free ratio between levels, 2^(1/D) | the grid cells' coding theories (√e, nested codes) | each departs from the baseline by the measure it adds | `plans/grd-landscape.md` **[reading]** |
+
+**What this claims, and what it does not.** It claims an origin: these structures fall out of one choice of H, and the
+engineered schemes are found to sit on them, or to depart from them by something that can be named. It does not claim the
+geometry does better on a task. AFM, IMS and DPR came out as ties or trade-offs, and DPR's own verdict stands: the geometry
+names these schemes and adds none. What it adds is the name and the baseline. Two limits:
+- free covers the readings, not the amounts. Metres still cost one amount carried in (§6); the geometry says which one and
+  why one suffices;
+- whether a given engineered departure is worth its cost is the engineer's question; the geometry only makes it askable.
+
+**[reading]**, the section's framing; **[exact]** or **[simulation]**, each row's evidence as marked.
 
 ## 10. What stands on what
 

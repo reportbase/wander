@@ -674,6 +674,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   that clarification is needed."): §5 "Passive and active readers": the Cauchy belongs to the uniform turn, whether it aims
   a receiver or an emitter (the lighthouse is active); a ranging reader carries in the signal's speed and a clock and is a
   writer (CFH); passive gives directions only from one place, active a range per direction.
+  Since R429 (22 Oct; Tom: "the advantage of ofs is that is free, provided by geometry"; "fighting geometry never wins,
+  but if you don' even know the geomeotry, you can't assess your engineerred solutions."): §9½ "Free and engineered: the
+  geometry as the baseline": what one choice of H gives free, a table of engineered versions (depth buffers, log depth and
+  floats, reversed-Z, a camera's flat screen, LOD tiers, per-view tables, least squares on bearings, grid-cell codes) with
+  what each adds or departs from and its evidence; an origin claimed, not a better result.
   Since R396 (Tom: "do a thought expirment, what would be needed to turn the two readers into something that could map a
   room."; "both"): §7½ "What it takes to map": the two readers, four acts (turn, hold, step, match) and one amount; the
   address says where, the payload says which (identity, not geometry), each checking the other (rays of a wrong match do
