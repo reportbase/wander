@@ -280,3 +280,33 @@ km and heights are writings. "l_max = πa/2 … inside the corner the octaves he
 of altitude (l* = πR/(aε), doubling to the surface, no corner at a = R); per level of distance 1.10 octaves at a = R and
 14.6 at 10⁻³R. ρ_k (0.0002–0.07) is the world's relief over wavelength, 2·RMS_k/λ_k, the same at every K. The sha256s
 above are recorded to 8 hex digits only, too few to verify a fresh download.
+
+### Checksums in full (22 October)
+Appended; nothing above is changed. Each file downloaded afresh (22 October) and hashed; every one under 40 MB, so no
+published checksum was used in place of a download. The Zenodo URLs are the records' versions as pyshtools lists them
+(SHTOOLS `pyshtools/datasets`, commit 98c15ef); its registry's sha256 agrees with each download below, and each
+Zenodo file's md5 agrees with the record's API. Earth2014 is V1.1 from Curtin (no published checksum there).
+- Mars, Zenodo 10.5281/zenodo.10820719 (version 1.0.1),
+  https://zenodo.org/records/10820719/files/Mars_MOLA_shape_1439.bshc.gz
+  sha256 f12bcd824dcd2118bc2fb540d37985299735f6f57070ee775fc2487b97a5857c (prefix f12bcd82 matches)
+- Moon, Zenodo 10.5281/zenodo.10820774 (version 1.0.1),
+  https://zenodo.org/records/10820774/files/Moon_LOLA_shape_1439.bshc.gz
+  sha256 f5e8f1b7acaab626db5828f9dc6f9ea1ce948bb5000e5bfcf1ff69b3141f1845 (prefix f5e8f1b7 matches)
+- Mercury, Zenodo 10.5281/zenodo.10809345 (no version given),
+  https://zenodo.org/records/10809345/files/Mercury_shape_1439.sh.gz
+  sha256 48d5ee575b5ffe97fd84b1c1dd2a0c1be0b59d476f52df23373bfd9810d59288 (prefix 48d5ee57 matches)
+- Venus, Zenodo 10.5281/zenodo.3870926 (no version given),
+  https://zenodo.org/records/3870926/files/VenusTopo719.shape.gz
+  sha256 9fcb04fb21eb7090df68e42458f6d7495a27ff62687b46534057ed608786cf3b (prefix 9fcb04fb matches)
+- Earth (surface), Curtin,
+  https://ddfe.curtin.edu.au/models/Earth2014/data_5min/shcs_to2160/Earth2014.SUR2014.degree2160.bshc
+  sha256 5694260d135c17427270ed18d48af23f4788e5fbc1dfb9dcb19f1cf9b401c9ce (prefix 5694260d matches)
+- Vesta, Zenodo 10.5281/zenodo.10820681 (version 1.0.2),
+  https://zenodo.org/records/10820681/files/Vesta_DLR_SPG_shape_1439.bshc.gz
+  sha256 99eae34532e93a4611be51436de7e3e9be8c3f64a799bc43444013ecf73ca6d3 (prefix 99eae345 matches)
+- Ceres, Zenodo 10.5281/zenodo.10820608 (version 1.0.1),
+  https://zenodo.org/records/10820608/files/Ceres_DLR_SPG_shape_1439.bshc.gz
+  sha256 ae3e99187ccfae9c986772f4d0f9e932d51ea292f9d60214589468aae12d8f8e (prefix ae3e9918 matches)
+- For information, Earth's bedrock, Curtin,
+  https://ddfe.curtin.edu.au/models/Earth2014/data_5min/shcs_to2160/Earth2014.BED2014.degree2160.bshc
+  sha256 146dcc80f17d201352d391aa90f487f5ed16006a6a3966add2d023b998727af7 (prefix 146dcc80 matches)
