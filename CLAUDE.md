@@ -512,6 +512,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (circle) is round the whole system, looking in, its radius the lot's half-diagonal, an amount (28.8 m at k = 1;
   `writerSphere(k)` on the 3D page; the 2D plan is fitted to it). The corner reader's wedge is one octant of the reader's
   sphere.
+- `ground.html`: **one's own height** (22 Oct 2026, Tom: "1,2", the second a demo of OFS §9's "The ground: one's own height as
+  the base"; SPN R433, R434; after Sedgwick's horizon ratio), a standalone page, plain canvas. A reader on level ground, its
+  eye at H (1.6 m); ten things (dog, child, door, ball, a twin one eye height tall, lamp post, car, tree, house, tower). The
+  eye's picture (a level pinhole): the horizon at eye level cuts every thing one eye height up (teal below, gold above);
+  the chosen thing from the side (F and E); the readings on the reader's lay, V*/H = (tan E + tan F)/tan F with the
+  corner at 1, d/H = 1/tan F. "My eye height known" writes metres; scale the world (k on every length, the eye included)
+  moves no reading, the metres by k; crouching moves every reading, not the metres; the premises break by a ½° tilt (the
+  far things misread) and a ball thrown 1.2 m up (reads 4 times too tall). `?H=&k=<log10 k>&known=1&tilt=1&lift=1&truth=1&sel=`;
+  hook `window.__ground` (`OBJECTS`, `read`, `table`, `set`, `state`). Not in the flying page.
 - `pool.html`: **pool from inside** (10 Oct 2026, Tom, sharing "Pool from Somewhere", an app from an earlier session: "each pool
   ball can explore its situation"; "Ours is most situated math, and could be all situated math"), a standalone page. Two tables,
   one rack, one strike: the referee (unsituated, world positions, d < r_a + r_b) and the table played from inside: each ball
@@ -615,7 +624,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -2187,6 +2196,10 @@ In short:
       shell; every address the same at every k from five homes, v ≤ h and v₂ ≤ v within 0.01 of ½, v₂ ≤ h exactly ½, the
       near field within 0.01 of ⅓; one counted stride writes the living room 12 × 8 × 2.7 m, the kitchen 12 × 6 × 2.7 m and
       the garage 7 × 7 × 2.7 m to 10⁻⁹, in strides unmoved by k; the writer's sphere 28.8 m × k; WebGL drew frames.
+
+  51. **ground.html:** on level ground every thing's (tan E + tan F)/tan F its V*/H and 1/tan F its d/H to rounding; one eye
+      height tall at the corner, its top on the horizon; scaling the world by 1/100, 7 and 100 moves no reading, the metres by
+      k; crouched to half height the twin reads 2 and the metres stay; a ½° tilt and a thrown ball misread.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
