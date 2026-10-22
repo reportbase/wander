@@ -767,16 +767,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   writer's amounts), siblings compared by ratios in their common box, the one view a reader cannot take of itself from
   outside, which a sibling can; closed by the scope: how an account of nested systems is held, not a claim that the world
   is so arranged. Containment words, not R304's withdrawn inside/outside of the hemispheres.
-  **Two walkers, opposite facings** (22 Oct, SPN R450; Tom: "A always faces in. B always faces out. A and B always face
-  opposite directions."; "You walk the chord while you face the arc. when A and B meet in the middle of the chord, they are
-  facing opposite directions."; "yes"): OFS §4 "Why the corner sits at 45°" closes with it: two readers walk the chord from
-  its ends, each facing its own half of the circle (above and below), each the other turned through the middle, so their
-  facings always opposite (±VF in SPN's names) and their arcs congruent, never the same; they meet at the middle,
-  the corner, square to the chord, facing away; neither facing defined except against the other; both arcs the writer's.
-  "Facing" keeps R313's sense in OFS. Then (Tom: "lets use HF and VF for facing. HF carves out 2/PI. VF carves out PI/2.";
-  "VF covers twice the angular .distance."): in SPN the ends are H and V, AF/BF renamed; VF the radius's facing, 2θ, a half
-  turn, the walkers' pair its two senses (±VF), reading π/2; HF the ray from H, θ, a quarter turn, reading 2/π; product 1. OFS §4
-  says so after the walkers ("they are also walking the distance": the arc π/2 read against the chord walked, 1).
+  **The writer walks, the reader faces** (22 Oct, SPN R450; Tom: "A always faces in. B always faces out."; "lets use HF and
+  VF for facing."; "VF covers twice the angular .distance."; "the writer walks the chord and faces the arc, from two
+  directions."; "the reader only faces the arc, does not walk the chord. thats where the numbers PI/2 and 2/PI come
+  from."): OFS §4 "Why the corner sits at 45°" closes with it: the writer walks the chord from both ends facing the arc,
+  the two facings opposite (each the other turned through the middle), the arcs congruent, never the same, meeting at the
+  corner square to the chord; having walked it, the writer holds the chord as 1. The situated reader does not walk: it
+  faces the arc and turns, a quarter turn from an end, a half from the middle, ending at one point; facing without walking
+  is where π/2 and 2/π come from, the writer's 1 read through the half turn and the quarter, their product the 1. SPN's
+  names: the ends H and V, the facings HF (the ray from H, θ, 2/π) and VF (the radius, 2θ, π/2; the writer's two facings
+  its two senses, ±VF). "Facing" keeps R313's sense in OFS.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
