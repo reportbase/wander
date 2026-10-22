@@ -754,6 +754,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   holds D numbers a point, the reader D − 1 (a direction); the one between is the size, §3.8's one number. The readers
   stand inside the box and their wedges reach its faces in the far field. OFS §3.7 rewritten; `blueprint-3d.html` draws
   the box (`writerBox(k)`, 48 × 32 × 5.26 m × k) and the wedge out to its faces; `blueprint.html`'s circle left as it was.
+  **Writers within writers, readers all the way down** (22 Oct, SPN R448; Tom: "there are systems within systems. Each
+  system has its own writer, and then two types of readers."; "writers within writers, and readers all the way down, seems
+  a very conservative and accurate stateemnt."; "yes"): OFS §9 after "A worked example of the tower": systems nest, each
+  with its own writer (a box, its own extents) and its two readers; the readers alike at every level (no reading carries a
+  scale), the writers not; each level written from the one outside it by a ratio read one level up, one amount at the top;
+  nesting, not recursion (each reader's lay one corner and plain doublings, R188). Not "fractal".
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

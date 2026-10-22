@@ -2700,6 +2700,13 @@ instead of 1/3, everything in room B moves by one factor, 9/10, its ratio b₁/b
 and a₁/b₁ is off by that one factor, 10/9. A whole hierarchy is held in six ratios, and one amount anywhere in it writes
 the rest; an error in a link is shared by everything the link holds.
 
+**Writers within writers, readers all the way down.** Systems nest: a cabinet in a room, a room in a house, a house in a
+lot. Each has its own writer, a box with its own extents, and its own readers, a payload reader and an address reader. The
+readers are alike at every level, since no reading carries a scale. The writers are not: each box has its own size. The
+link between levels is a ratio read one level up, so every inner writer is written from the one outside it, and the
+hierarchy needs one amount, at the top. This is nesting, not recursion: each reader's lay keeps one corner and plain
+doublings, whatever system it stands in.
+
 **Closing a loop, and what is left to the reader.** A tree of readings, each thing read against only the one length that
 holds it, cannot find its own error: room B misread moves everything in B together, and every reading inside B still
 agrees. A second route finds it. Read a₁ directly against b₁ as well, from a standpoint where both are in view: the
