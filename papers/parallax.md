@@ -311,6 +311,14 @@ holds, and OFS §9, "Units within units"):
   method against method: killed. After a bias of my set-up is removed most pairs differ by one constant factor, but the
   Fundamental Plane and SBF drift against the supernovae by about 0.1 mag per magnitude of distance; one constant factor
   per rung is a property of some rungs, not all. **[data]**
+  *Re-read 22 October (LTR, `plans/ltr-plan.md`; SPN R439).* Both runs tested a rung's mean, which cannot tell a pan (one
+  factor) from a stretch (an offset linear in distance: another lay, with a hidden pivot amount). Against modern distances
+  Hubble's 1929 rungs are not one factor each: slopes 0.79 ± 0.05 (the Cepheid rung, itself two links: Shapley's Clouds
+  off 0.76 levels, Hubble's own Cepheid galaxies 1.46) and 0.16 ± 0.23 (brightest stars, a stretch). And the FP and SBF
+  drift belongs to the overlap samples, not the rungs: against the Hubble flow (52,813 galaxies) every method is within
+  0.03 mag/mag of flat, and the SN Ia–FP pair's drift lives in their 58 shared galaxies (away from them neither drifts
+  more than 0.016). A loop's closure locates a misread link only through a network of loops (four methods, six links:
+  12 of 12; three methods: none). **[data]**, **[exact]** for the loops.
 - **Parallax sets the tower's pitch.** A tower of holds does not say how many levels one hold can carry. Proposition 4
   does: a rung read to a step ε holds about log₂(2/ε) levels each side of its corner, and past the far edge a place is a
   ray, so a new hold is needed, a longer baseline or a kind, calibrated inside the band. The two meet best where both
@@ -341,8 +349,8 @@ holds, and OFS §9, "Units within units"):
 | the baseline as a second zoom | reading | §5 |
 | the eyes and the stars at their corners | illustration | §5 |
 | the ladder a tower of holds: ratios between rungs, one amount at the bottom, errors adding by rung | exact (given independent errors), reading | §7; LTH |
-| Hubble 1929 off by one factor per rung, compounding; SH0ES anchors consistent with one bottom hold | data | LTH run 1 |
-| one constant factor per rung fails for FP and SBF against SN Ia in Cosmicflows-4 | data (killed) | LTH run 2 |
+| Hubble 1929 off by one factor per rung, compounding (re-read: rung means only; against modern distances the brightest-star rung is a stretch, not a factor); SH0ES anchors consistent with one bottom hold | data | LTH run 1; LTR P2 |
+| one constant factor per rung fails for FP and SBF against SN Ia in Cosmicflows-4 (re-read: the drift is the overlap sample's; against the flow every method is within 0.03 mag/mag of flat) | data (killed; re-read) | LTH run 2; LTR P3, P4 |
 
 ## 9. Open questions
 

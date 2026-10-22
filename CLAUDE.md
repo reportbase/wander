@@ -672,6 +672,20 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   ratio of two sums over the turn, taken by whoever adds the projections; the address reader holds directions, shares and
   the median, no mean; 2/π is the uniform turn's, the corner any fair weight's. §7.8's SR entry: the boost read from
   directions alone (the uniform sky's median on the pseudorapidity moved to η), the Doppler frequency a writing.
+  Then (22 Oct, SPN R439; Tom: "pool, REF, GRD, LTH") four lighter revisits, each a plan written first and a run: POR
+  (`plans/por-plan.md` + `runs/por/`, `pool.html`'s own script run in node with every length scaled: the inside table a
+  reading; contact h + v = 1 the sum cut of two standpoints' readings; POL's three corners three kinds, the time corner of
+  two amounts that moves with k; "all balls alike, V = H" is V* = H; a payload folded into address cells falls as 1/D^dim
+  and time to arrival rescues nothing, the remedy its own grain or a kind; P1 killed by my tolerance, P3 by the tick, P4 (a)
+  by my arithmetic), RFR (`plans/rfr-plan.md` + `runs/rfr/`, exact: REF's corner sphere exp(a₀) a mean of log-radii, not a
+  median; one octave per level exact only per level of altitude under the reader; ρ_k = 2·RMS_k/λ_k, the world's; P2, P4,
+  P5 killed by my set-up, code and threshold), GDR (`plans/gdr-plan.md` + `runs/gdr/`, GRD's data: the ratio a reading but
+  the method's bin, smoothing and floor hold only within a band, P1 (b) killed; √2 an area count on a proportional plane,
+  OFS's lay 2 in every dimension, so 2^(1/D) is not measure-free; the turn's K = 9 addresses step 1.42 at the corner and
+  grow as cosh), LTR (`plans/ltr-plan.md` + `runs/ltr/`, Cosmicflows-4: a rung a pan only if flat against an independent
+  distance; Hubble 1929's are not, P2 killed; the SN Ia–FP drift the 58 shared galaxies', P4 killed, not the rungs'; a
+  network of loops locates a misread link). Corrections in `physics.md` §1½, its dictionary, `parallax.md` §7, and notes
+  appended below the old plans' runs; the entries below for POL, REF, GRD, `grd-landscape.md` and LTH describe them before.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

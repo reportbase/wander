@@ -271,3 +271,12 @@ models are themselves pre-read signals (each a modeller's reading of altimetry o
 shows how real relief fills such levels: not in equal shares, not in self-similar ones, and not alike from body to
 body. (Claude's reading, unruled: a pre-read signal holds a whole approach at once, each prefix of the series what a
 reader holds at one distance; SPN §3.3's levels existing whole, a thing's level set by its size.)
+
+### Re-read, 22 October (RFR, `plans/rfr-plan.md`; SPN R439)
+Appended; nothing above is changed. The "corner" sphere is exp(a₀), the mean of the log-radii, not a median (on a
+spheroid the median sphere, at latitude 30°, lies about L/12 above it). The depth log₂(r/r̄) is a reading of shape; r̄ in
+km and heights are writings. "l_max = πa/2 … inside the corner the octaves held do not change. Nothing to test" and run
+2's "one octave of degree per level of distance (exact)" are angular: exact only at the point under the reader, per level
+of altitude (l* = πR/(aε), doubling to the surface, no corner at a = R); per level of distance 1.10 octaves at a = R and
+14.6 at 10⁻³R. ρ_k (0.0002–0.07) is the world's relief over wavelength, 2·RMS_k/λ_k, the same at every K. The sha256s
+above are recorded to 8 hex digits only, too few to verify a fresh download.

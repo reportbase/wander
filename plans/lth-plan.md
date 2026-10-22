@@ -270,3 +270,12 @@ by the ReadMe's byte positions.
 removed, for most method pairs in Cosmicflows-4; it fails for the Fundamental Plane and SBF against the supernovae,
 whose offsets drift with distance. The tower's arithmetic (factors, ratios, one written amount) is untouched; the
 premise that each rung's error is one constant factor is a property of a rung, true of some and not others.
+
+### Re-read, 22 October (LTR, `plans/ltr-plan.md`; SPN R439)
+Appended; nothing above is changed. Run 1's P2 and P3 tested a rung's mean, which cannot tell a pan (one factor) from a
+stretch (an offset linear in distance, a ruler of another lay with a hidden pivot amount); against modern distances
+Hubble's rungs are not one factor each (slopes 0.79 ± 0.05 and 0.16 ± 0.23; the brightest-star rung a stretch; the Cepheid
+rung two links, Shapley's Clouds off 0.76 levels and Hubble's own Cepheid galaxies 1.46). Run 2's "FP and SBF drift against
+the supernovae" belongs to the overlap samples compared: against the Hubble flow every method is within 0.03 mag/mag of
+flat, and the SN Ia–FP drift lives in their 58 shared galaxies. So the standing above ("one factor per rung shared by its
+members"; "fails for the Fundamental Plane and SBF") is to be read so.

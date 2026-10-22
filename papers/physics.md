@@ -170,7 +170,7 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | the in-place lay past the corner, 2 − 1/s: reality in 2H by length, the reader's own (SPN Prop 1.2) | an angular size, Δ/d, counted down from the horizon | Δ | ISQ |
 | the logarithmic lay past the corner, 1 + ln s: the same addresses by count, each doubling the same number (SPN Prop 1.2 (g)) | log₂ of an amount ratio: the level count of magnitudes, decibels, octaves | a zero point | MAG |
 | the lay's room per unit s, 1/s² | how fast an angular size shrinks with distance (one dimension); light's 1/d² is its square (two) | Δ | ISQ; MAG |
-| depth from the corner, log₂(r/r̄) | height above a world's own reference sphere | the size r̄ | REF |
+| depth from the reference sphere, log₂(r/r̄), r̄ = exp(a₀) the mean of the log-radii (not a median: on a spheroid the median sphere, at latitude 30°, lies about L/12 above it) | height above a world's own reference sphere; the depth a reading of shape, r̄ in km and heights in metres writings | none for the depth; r̄ to write heights | REF P4–P5; RFR P1–P2 |
 | reading from the outline, chords 2 sin φ | standing on a world: the horizon at home; the horizon's distance √(2Rh) | the radius R | HZN |
 | a ring thinner than a grain | a catalogue's or an instrument's limit: past it only the bright of a kind are read | the grain, an amount | MAG P3; HZN runs 1–3 |
 | a known kind | a standard candle; a spectral class | the kind's luminosity | MAG (the kind is about a level wide) |
@@ -186,6 +186,14 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | the uniform turn aimed outward, laid on a flat receiver (the lighthouse; OFS's Cauchy wedge) | a point source's light on a plane, the cos³ law: half the (D − 1)-dimensional Cauchy of scale d; the inverse square its height on the axis | the source's power P | ISR P1 |
 | an arrival as address times payload; the corner in the address count | irradiance as radiance (the paint, constant per address) times the projected solid angle (the count); a line's (2/π)·arctan(b/d) at its corner, its 1/d the paint's | the source's size | ISR P2; NRF P3 re-read |
 | a reading (unchanged when the world is scaled) against a writing | log N–log S, the 3/2 slope of counts by flux, read with no distance; 1/d² itself a comparison of standpoints, needing a baseline or a standard candle | a baseline (parallax) or a kind (the candle) for 1/d²; none for the counts | ISR P5; MAG, CNT, GCN sorted |
+| the finest degree held at the point under the reader, πR/(aε): one octave per level of altitude, exact | the finest relief a pass at altitude a resolves; per level of distance only far off (1.10 octaves at a = R, 14.6 at a = 10⁻³R); the Cauchy height e^(−κa) the same law, log₂(2K) octaves coarser on the plane, the multipole cut (R/d)ⁿ from far off | none (a ratio) | RFR P3–P4 |
+| REF's ρ_k, relief at its first hold in the reader's addresses | 2·RMS_k/λ_k: the world's own relief over wavelength, the same at every K and, to first order, every distance | none | RFR P5′ |
+| the ℓ₁ cut h + v = 1 of two standpoints' readings, joined by their exchange (neither an inscribed nor a central reading) | hard-ball contact d = r_a + r_b; the momentum share hands over at equal sizes (q(ρ) + q(1/ρ) = 1 + e) and the energy passed is stationary there ((1 + e)²/4) | none for contact; one material (a known kind) for masses | POL P1–P2; POR identities, P1 |
+| a payload folded into address cells of breadth in proportion to distance (a mean, irreversible) | an apparent 1/D^dim fall-off of a signal held by distance; its peak lost; refining by time to arrival recovers nothing | the signal's own grain σ, or a known kind (its shape) | POR P4–P5; POL runs 16–18 re-read |
+| a rung's error as a pan (one factor, a zoom) against a stretch (an offset linear in distance: another lay, a hidden pivot amount) | a distance-ladder rung calibrated against an independent distance; Hubble 1929's brightest-star rung a stretch, not a factor | the pivot distance, for a stretch | LTR P1–P3 |
+| a loop's closure error | locates a misread link only through a network of loops whose routes cross different objects; a drift that fails to close belongs to the sample compared, not a rung | none | LTR P1(c), P4 |
+| the grid module ratio λ_{k+1}/λ_k, a reading; spacings in cm writings | the autocorrelogram method carries a bin, a smoothing width and an occupancy floor, and holds only within a band of them | the method's own amounts | GDR P1 |
+| √2 between modules: a doubling of area counted on a proportional (writer's) lattice; the reader's lay doubles distance (2 in every dimension); the turn's K addresses along scale step as cosh, flat over at most five modules | grid-cell module ratios (~1.42 measured) | none | GDR P2, P5 |
 | V = H, the calibration | reading amounts with no unit of the other's | travel, a constant, a kind, a shared fact | LAD (in Wander's world) |
 | a reading over its own rate, x/ẋ (x = S/d, the pair's v/h) | time to contact, d/u (Lee's τ), exact at every distance; from the turn arctan x only far off | the reader's clock | MOT P1–P3 |
 | levels of an approach (the reading doubling) | each takes half the time to contact read at its start; infinitely many before contact | the reader's clock | MOT P4 |
@@ -216,7 +224,7 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | the two sweeps of one point: the inscribed (a party's direction at θ, its reading the stereographic chart s = v/h) and the central (the pair's middle, at 2θ, the direction squared, ½(h + iv)²) (OFS §4) | a qubit: the state (a ray, amplitudes h and v, the complex ratio ζ = ψ₁/ψ₀ the Bloch sphere's stereographic chart) and its Bloch point at 2θ, (2hv, 0, h² − v²) on the real slice; Born's rule the foot h²; orthogonal states antipodal; a 2π state turn gives −ψ (720° of rotation to return); a pure state on the sphere, a mixture inside the ball | Born's rule | QBT (identities, exact) |
 | the reader's ignorance as a group (Jaynes): what cannot be fixed is averaged over; readings survive, amounts need an agreed unit | quantum reference frames (Bartlett, Rudolph and Spekkens 2007): the twirl over an unshared frame; without a phase reference the visibility 2hv is lost and the predictability h² − v² kept; without an orientation one qubit is I/2 and two copies keep only the overlap (1 + n₁·n₂)/2; a weak value pre-selected on the equator is the stereographic address tan(a/2)·sin b, even in height (law ½(1 + x²)^(−3/2), superweak 1 − 1/√2 past the corner), the foot (Born's weight) giving back ⟨σz⟩; two Gaussians' overlap 2k/(1 + k²) = sech(ln k), the reference width a zoom | the twirl; Born's rule; the width | QSO (exact; F4 killed twice by my set-up and arithmetic, F4″ not) |
 
-## 1½. Re-read on 22 October (SRR, WVR, TPR; SPN R437)
+## 1½. Re-read on 22 October (SRR, WVR, TPR, SPN R437; POR, RFR, GDR, LTR, SPN R439)
 
 Tom: "we've put physics aside writing the ofs paper. we have learned alot, lets revisit our physics results", then
 "1,2,3". The motion and relativity results, the wave results and the 2/π catalogue re-read with OFS's address and payload,
@@ -241,6 +249,35 @@ the earlier wording, corrected here and in notes appended to each plan:
   circle as a shape; 6 other (Claude's sorting, not blind). A single 2/π does not fingerprint the uniform turn (TPR P3);
   the even turn shows instead in every projection's mean being 2/π at every offset (P4). §2.2's TPI entry ("fifty-five
   come from a turn taken evenly") is to be read so.
+
+Then (Tom: "pool, REF, GRD, LTH") four more, each a plan written first (`plans/por-plan.md`, `plans/rfr-plan.md`,
+`plans/gdr-plan.md`, `plans/ltr-plan.md`):
+- **Pool.** The table played from inside is a reading (doubling the world moves no reading and no contact, bit for bit;
+  P1 killed only by my tolerance on the 116-ball field's chaos). Contact h + v = 1 is the sum cut of two standpoints'
+  readings, not one reader's address. POL's three corners are three kinds: contact (the momentum share hands over, the
+  energy passed is stationary), the cushion (a swap's fixed point by construction) and time (a corner of two amounts, the
+  tick and the signal's speed, which moves when the world is scaled: P2). "All balls alike, the calibration V = H" (POL
+  P3, SPN §3.3) is V* = H, the true breadths equal, not the drawing. Ignoring by one reading at contact parts from ignoring
+  by size under a fixed tick (P3 killed: overlapping small balls read as larger), so the ratio is the robust one. "A ball's
+  level reads its momentum" needs its bridge named: one material and the clock. "Hold a signal at its own size until it
+  arrives" is the address and payload split: folding a payload into address cells is an irreversible mean imposing 1/D^dim
+  (P4, P5), and time to arrival rescues nothing (P4 (c)); the remedy is the payload's own grain or a known kind, not "what is
+  coming is near" (§2.4, §3 below).
+- **REF.** Its "corner" is the reference sphere exp(a₀), a mean of log-amounts, not a median. The depth is a reading of
+  shape; r̄ in km and heights are writings. "One octave of degree per level of distance" (run 2) is exact only at the
+  point under the reader per level of altitude; per level of distance only far off (RFR P3). REF's ρ (0.0002–0.07) is the
+  world's relief over wavelength, not relief in the reader's addresses (P5′).
+- **GRD.** The module ratio is a reading, but the method that measures it carries three amounts and holds only within a
+  band (GDR P1 (b) killed: the geometric mean moves +0.13 at twice the scale). √2 is a doubling of area counted on a
+  proportional plane, a writer's lattice; OFS's lay doubles distance, 2 in every dimension, so "D.1's measure-free baseline
+  2^(1/D)" (§2.1, §4, `plans/grd-landscape.md`) is not measure-free: counting by area is the choice. Five animals is the
+  right size (P4); only the step profile across six or more modules in one animal tells √2, √e and the turn's layout apart.
+- **LTH.** A rung's error is a pan only if flat against an independent distance. Hubble 1929's rungs are not (P2 killed:
+  slopes 0.79 and 0.16 against 1), and his brightest-star rung is a stretch, a ruler of another lay. LTH run 1 tested
+  rung means and could not tell a pan from a stretch. Run 2's "FP and SBF drift against SN Ia" belongs to their 58 shared
+  galaxies (LTR P4, post hoc: away from that overlap neither drifts more than 0.016 mag/mag), not to the rungs. Parallax
+  angles, flux ratios of one kind, ratios between rungs and the flow's shape are readings; the au, the anchors, every Mpc
+  and H₀ writings.
 
 ## 2. Results, by standing
 
@@ -273,14 +310,15 @@ the earlier wording, corrected here and in notes appended to each plan:
   - Post hoc, rat R's second day: the first step repeats (1.487, 1.491), the step to the largest module does not
     (1.412, 1.141). The largest module, about 0.8 of the 1.5 m box, is not measured reliably by this method.
 
-  Two rats, the reliable steps 1.40 and 1.49: consistent with a halving of a map's area, D.1's 2^(1/D) with D = 2, and
+  Two rats, the reliable steps 1.40 and 1.49: consistent with a halving of a map's area, D.1's 2^(1/D) with D = 2 (a
+  doubling of area counted on a proportional plane, not OFS's lay, which doubles distance; GDR, §1½), and
   with Stensola et al.'s published mean of about 1.42, which was known beforehand. Weak evidence; more animals needed.
-- **Real worlds are their corner within a hundredth of a level** (REF, `plans/ref-plan.md`, P4 and P5). By published
+- **Real worlds are their reference sphere (REF's "corner", a mean of log-radii, §1½) within a hundredth of a level** (REF, `plans/ref-plan.md`, P4 and P5). By published
   radii:
   - the rocky worlds' flattening: Earth 0.0048 levels, Mars 0.0085, the Moon 0.0017;
   - the spinning giants about a tenth: Jupiter 0.097, Saturn 0.149;
   - Earth's relief, Challenger Deep to Everest, 0.0045; with its flattening the whole Earth is within 0.0093 levels.
-- **A reader drops one octave of a world's relief per level of distance; how much each octave holds is the world's**
+- **A reader drops one octave of a world's relief per level of altitude (exact under it; per level of distance only far off, RFR); how much each octave holds is the world's**
   (REF run 2, `plans/ref-plan.md`). Published spherical-harmonic models of seven physical surfaces (Mercury, Venus,
   Earth, the Moon, Mars, Vesta, Ceres), relief by octave of degree from 8 to 1023:
   - Earth, Mars and Venus hold one power law over six or seven octaves (within 0.11, 0.11, 0.25 levels), each octave
@@ -291,7 +329,8 @@ the earlier wording, corrected here and in notes appended to each plan:
     size from 260 to 2,440 km (post hoc);
   - at the level where a band is first held its relief is 0.0002 to 0.07 of one of the reader's addresses, so dropping
     bands by distance moves no world's outline by as much as an address; on five of the seven each nearer level shows
-    more relief in the reader's addresses, not the same.
+    more relief in the reader's addresses, not the same (RFR P5′: this ratio is the world's relief over wavelength,
+    2·RMS/λ, and "more each nearer level" restates a slope above −1).
 
   The octave packing is a reader's, done ahead of time in the models (a pre-read signal, SPN R250: a real signal
   arrives unpacked); the share in each octave is read from the world, not fixed by the geometry.
@@ -554,7 +593,8 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   pooltool keeps but does not use; measured data must decide.
 - **A world held by distance loses a signal on its way** (runs 16–18; §3). Level of detail by distance holds for what
   stays put and averages out; what travels toward the reader must be held at its own size until it arrives. Adaptive
-  mesh refinement already does this, by gradients. In SPN's terms: what is coming is near, whatever its distance.
+  mesh refinement already does this, by gradients. In SPN's terms (corrected by POR, §1½): the payload must not be folded
+  into the address cells; hold it at its own grain, or carry in its kind; time to arrival rescues nothing once folded.
 
 - **Haff's law counted in contacts** (MRB part 1, runs 1–2; 500 smooth inelastic spheres, event-driven, contact found
   at h + v = 1). Two decades of cooling at three densities and four restitutions: −d ln T per contact per marble is
@@ -643,7 +683,7 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   across, 60 units off, was averaged into a level-3 cell 60 units wide before it moved. Diffusion cannot carry sound;
   a fluid on the cells first never ran (a setting overwritten), then filled the window (its wall pushed nothing back),
   then, with the wall's push, kept the window steady but delivered 22% of the peak, inside the noise. What it taught: a
-  signal must be held at its own size until it arrives.
+  signal must be held at its own size until it arrives (POR P4: at its own grain, whatever its time to arrival).
 - **CUE P1–P3: a constant grip between balls.** The published fit falls threefold from slow to fast; one number is right
   only near a medium hit. Replaced by the fit in run 2. **CUE P6: the slow cushion** bounces 0.62 in the engine against
   0.80 in Han's model with a constant restitution; which a real cushion does is for measured data. **CUE P10** was my
@@ -674,10 +714,12 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
 
 - **The ratio between levels, in a measured reader, on more animals** (GRD, `plans/grd-plan.md`; run 1 on two rats,
   §2.1). Grid cells map place in discrete modules, each coarser than the last by a measured ratio no physics law sets.
-  D.1 allows only a halving without an added measure: 2 along a line, or √2 if a level doubles a map's area. Run 1 found
+  D.1 allows only a halving without an added measure: 2 along a line, or √2 if a level doubles a map's area (counting
+  by area is itself the added choice; OFS's lay gives 2: GDR, §1½). Run 1 found
   √2 in two rats; P2 and P3 need a dataset with five or more animals with two modules (Stensola et al. 2012's, if
   released, or the Giocomo lab's on DANDI), its data section fixed before it is opened, and a box large enough for the
-  largest module or a method that does not need it.
+  largest module or a method that does not need it, the method's bin, smoothing and floor checked by scaling the
+  positions (GDR P1), and six or more modules in one animal to read the step profile (GDR P2).
 - **Why the counts give 1.2.** GCN's exploration (not a result) points to a thin layer of luminous stars seen through
   dust: 71% of the stars Hipparcos counts are past 100 pc, and even in the disc's middle the luminous ones stop rising
   with volume past about 125 pc. A test needs a bright all-sky Gaia sample (G ≤ 10) with parallaxes and extinctions, and

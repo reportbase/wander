@@ -70,3 +70,8 @@ Items marked (to verify) come from memory or search snippets and were not read i
 - Kang and Balasubramanian, "A geometric attractor mechanism for self-organization of entorhinal grid modules", *eLife*
   2019.
 - Stensola et al., "The entorhinal grid map is discretized", *Nature* 492, 2012.
+
+## Re-read, 22 October (GDR; SPN R439)
+"SPN's baseline 2^(1/D)" is not measure-free: counting levels by area is itself the added choice. On OFS's lay a level
+doubles distance, 2 in every dimension; √2 is the area count on a proportional (writer's) plane. Where this note calls
+2^(1/D) the measure-free slot, read it as the area-counting slot (`plans/gdr-plan.md`, appended note).
