@@ -1393,6 +1393,30 @@ try {
     failures.push(`[${current}] ${JSON.stringify({ ...sd, hud: sd.hud.slice(0, 400) })}`);
   console.log(`${failures.length === before48 ? 'ok  ' : 'FAIL'} ${current} (every star back from its index at levels 0–30, level j holding 8^(j+1); every cell's quarters adding to it exactly at H = 2^−4, 1, 2^12; the drawn totals and stars adding to the held exactly in ${sd.totals.length} states; the gold at tan 1 for a second moves the hand ${sd.zeta.toFixed(3)}, letting go re-centres on it; doubling H holds ${sd.ratio.toFixed(3)} times the stars; star #123,456,789,012,345 at the triple corner (${sd.goto.centre.toExponential(0)}) and under the hand, the same pixel at H = 2^14 and 2^13)`);
 
+  // ── 49. blueprint.html: one property, three vantages (22 Oct; Tom: "show the three observer vies, as a writer, a payload
+  //    reader and the address reader"): scaling the world by 1/100, 7 and 100 moves the writer's lengths by k, the payload
+  //    reader's ranges by k and its shape not at all, and no address; from every home half the turn lies either side of
+  //    v = h; a ray from the living room's middle meets the kitchen wall 6 m east; every ray meets something ──
+  current = 'blueprint.html';
+  const before49 = failures.length;
+  await page.goto(new URL('blueprint.html', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__blueprint, null, { timeout: 30000 });
+  const bp = await page.evaluate(() => { const B = __blueprint, o = {}, ks = [0.01, 1, 7, 100];
+    const pays = ks.map(k => B.payload(k, [12, 12]));
+    o.shape = Math.max(...pays.map(p => Math.max(...p.rays.map((r, i) => Math.abs(r.shape - pays[1].rays[i].shape) / pays[1].rays[i].shape))));
+    o.radii = Math.max(...pays.map((p, j) => Math.max(...p.rays.map((r, i) => Math.abs(r.r / ks[j] - pays[1].rays[i].r) / pays[1].rays[i].r))));
+    o.addr = Object.keys(B.HOMES).every(h => { const a = ks.map(k => JSON.stringify(B.addresses(k, h).map(x => [x.what, x.ratio]))); return a.every(x => x === a[1]); });
+    o.half = Object.keys(B.HOMES).map(h => B.addresses(1, h).filter(x => x.ratio < 1).length);
+    o.writer = ks.map(k => B.writer(k).lot[0] / k);
+    o.east = B.cast(B.world(1), 12, 12, 1, 0);
+    o.open = pays.every(p => p.rays.every(r => isFinite(r.r) && r.what)) && Object.keys(B.HOMES).every(h => B.addresses(1, h).every(x => x.what));
+    o.met = new Set(B.addresses(1, 'lot').map(x => x.what)).size;
+    return o; });
+  if (!(bp.shape < 1e-12) || !(bp.radii < 1e-12) || !bp.addr || bp.half.some(n => n !== 128) || bp.writer.some(x => Math.abs(x - 48) > 1e-9) ||
+    Math.abs(bp.east.d - 6) > 1e-12 || bp.east.what !== 'inner' || !bp.open || bp.met < 4)
+    failures.push(`[${current}] ${JSON.stringify(bp)}`);
+  console.log(`${failures.length === before49 ? 'ok  ' : 'FAIL'} ${current} (the world scaled by 1/100, 7 and 100: the writer's lot 48 m × k, the payload reader's ranges by k (${bp.radii.toExponential(0)}) and its shape unmoved (${bp.shape.toExponential(0)}), no address moved; 128 of 256 addresses below v = h from every home; the kitchen wall 6 m east of the living room's middle; ${bp.met} things met from the lot's corner)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>One blueprint, three vantages</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    blueprint.html: one property, three vantages (22 October 2026; Tom: "maybe the better way to show the reader and writer
+    is with a large real estate blueprint.   show the three observer vies, as a writer, a payload reader and the address
+    reader."). OFS "Three vantages: a writer and two readers", §3.4 and §9 (SPN R328, R332, R338; R424 for this page). A
+    standalone page, plain canvas, after room.html, room-walk.html and writer-readers.html.
+
+    Keep the case. Amounts (metres, a range along a ray) are the writer's and the payload reader's; [h : v] is the address.
+      - THE WRITER holds the blueprint: the lot, the house and its rooms, the garage, the shed, the trees, every length an
+        amount in metres, stated whole, both sides of every wall. Its ruler is the number line, alike everywhere, with no
+        corner; its metres need a unit measured beforehand (the scale bar).
+      - THE PAYLOAD READER stands inside, anywhere (tap the blueprint). From where it stands the directions are given, 128
+        of them all round, and along each a range arrives, an amount, but in a unit no reading fixes: it holds the shape,
+        r over the ranges' geometric mean, and not the size (ln r = a₀ + f(θ); a₀ never read).
+      - THE ADDRESS READER stands at a corner (home), its two walls the two parties: h along one, v along the other. It
+        sweeps the quarter turn uniformly, 256 directions, each read as [h : v], the ratio itself, and painted by the first
+        thing met. No distance arrives. The turn's middle, v = h at 45°, is the corner of its sweep: half the addresses
+        either side, whatever is there.
+    SCALE THE WORLD (k from 1/100 to 100): every length × k. The writer's numbers move by k; the payload reader's ranges move
+    by k but in no unit it holds, so its shape does not; no address moves. Hover a thing in any view to light it in all.
+    ?k=<log10 k>&at=x,y&home=lot|living|garage|far; test hook window.__blueprint.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --blue: #7fb2ff; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1240px; margin: 0 auto; padding: 22px 16px 44px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 19px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 4px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 92ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; min-width: 0 }
+    .grid { display: grid; grid-template-columns: 7fr 5fr; gap: 12px; align-items: start }
+    .stack { display: grid; gap: 12px }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr } }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #0a0d18; touch-action: none }
+    #plan { aspect-ratio: 48 / 34; cursor: crosshair }
+    #pay { aspect-ratio: 1 / 0.92 } #addr { aspect-ratio: 1 / 0.78 }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 10px }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 200px; min-width: 0; accent-color: var(--gold) }
+    select, button { font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px }
+    .cap { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    .read { color: var(--bright); font-size: 12.5px; margin: 6px 0 0; min-height: 3.2em; white-space: pre-wrap; overflow-wrap: anywhere }
+    .tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 2px }
+    .w { color: #9fc3ff } .p { color: var(--teal) } .a { color: var(--gold) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>One blueprint, three vantages</h1>
+    <p class="lede">The same property held three ways. The <span class="w">writer</span> has the blueprint: every length in
+        metres, the whole of it. The <span class="p">payload reader</span> stands inside and receives a range along each
+        direction, in a unit it never reads: it holds the shape, not the size. The <span class="a">address reader</span>
+        stands at a corner and receives directions alone, each [h : v]: where things are, never how far. Scale the world and
+        only the writer's numbers change.</p>
+    <div class="panel" style="margin-bottom:12px">
+        <div class="row"><label for="k">scale the world, k</label><input id="k" type="range" min="-2" max="2" step="0.05" value="0"><span id="kv" style="min-width:9ch"></span>
+            <label for="home">address reader at</label><select id="home">
+                <option value="lot">the lot's corner</option><option value="far">the lot's far corner</option>
+                <option value="living">the living room's corner</option><option value="garage">the garage's corner</option></select>
+            <button id="reset">reset</button></div>
+        <p class="cap" id="say" style="margin:0"></p>
+    </div>
+    <div class="grid">
+        <div class="panel">
+            <p class="tag w">the writer</p><h2>The blueprint, in metres</h2>
+            <canvas id="plan"></canvas>
+            <p class="cap">Every length an amount, stated whole: both sides of every wall, the lot's full extent. Its ruler
+                is the number line, the same at every length, no corner. The metres need a unit measured beforehand: the scale
+                bar. Tap anywhere to stand the <span class="p">payload reader</span> there; the <span class="a">address
+                reader</span> is at the gold corner.</p>
+            <p class="read" id="readW"></p>
+        </div>
+        <div class="stack">
+            <div class="panel">
+                <p class="tag p">the payload reader</p><h2>Ranges in an unread unit</h2>
+                <canvas id="pay"></canvas>
+                <p class="cap">Standing inside, the directions are given (128 all round); along each a range arrives, an
+                    amount, drawn over the ranges' geometric mean, since the unit is the one thing it never reads. The shape of
+                    the room around it, not its size: scale the world and nothing here moves.</p>
+                <p class="read" id="readP"></p>
+            </div>
+            <div class="panel">
+                <p class="tag a">the address reader</p><h2>Directions alone, from home</h2>
+                <canvas id="addr"></canvas>
+                <p class="cap">At home, a corner, the quarter turn from one wall (h) to the other (v), 256 directions, each
+                    painted by the first thing met: the fan, then the same laid straight, g = (2/π)·arctan(v/h). No distance
+                    arrives; the turn's middle, v = h, has half the addresses either side, whatever is there.</p>
+                <p class="read" id="readA"></p>
+            </div>
+        </div>
+    </div>
+    <p class="cap" style="margin-top:12px">The writer is the vantage that writes: it needs the whole and a unit. The two readers
+        are what one turn of the head gives: the payload reader keeps the amount along each direction, the address reader the
+        direction itself. Other demos: <a href="room.html">the room</a>, <a href="room-walk.html">walking the room</a>,
+        <a href="writer-readers.html">the writer and two readers</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+// ── the property, in metres (the writer's own account) ─────────────────────────────────────────────────────────────
+const LOT = [48, 32];
+const THINGS = {
+    fence:  { name: 'the fence', col: '#8a8a96' },
+    house:  { name: "the house's outer wall", col: '#9fc3ff' },
+    inner:  { name: 'an inside wall', col: '#b48ce0' },
+    garage: { name: 'the garage', col: '#c49a6c' },
+    shed:   { name: 'the shed', col: '#d4a052' },
+    tree1:  { name: 'the oak', col: '#7fc48a' }, tree2: { name: 'the maple', col: '#5fae74' },
+    tree3:  { name: 'the birch', col: '#a6d49a' }, tree4: { name: 'the pine', col: '#4f9a66' },
+};
+const ROOMS = [
+    { name: 'living room', r: [6, 8, 18, 16] }, { name: 'kitchen', r: [18, 8, 30, 14] },
+    { name: 'bedroom', r: [6, 16, 12, 22] }, { name: 'bedroom', r: [12, 16, 18, 22] },
+    { name: 'bath', r: [18, 14, 22, 22] }, { name: 'bedroom', r: [22, 14, 30, 22] },
+    { name: 'garage', r: [30, 8, 37, 15] },
+];
+// walls as segments [x1, y1, x2, y2, thing], doors left open as gaps
+const SEG = [];
+const wall = (x1, y1, x2, y2, t, gaps = []) => {                    // a straight wall with door gaps [from, to] along it
+    const L = Math.hypot(x2 - x1, y2 - y1), ux = (x2 - x1) / L, uy = (y2 - y1) / L; let s = 0;
+    for (const [a, b] of [...gaps].sort((p, q) => p[0] - q[0]).concat([[L, L]])) { if (a > s) SEG.push([x1 + ux * s, y1 + uy * s, x1 + ux * a, y1 + uy * a, t]); s = b; }
+};
+wall(0, 0, 48, 0, 'fence', [[20, 24]]); wall(48, 0, 48, 32, 'fence'); wall(48, 32, 0, 32, 'fence'); wall(0, 32, 0, 0, 'fence');
+wall(6, 8, 30, 8, 'house', [[4, 5]]); wall(30, 22, 6, 22, 'house'); wall(6, 22, 6, 8, 'house'); wall(30, 15, 30, 22, 'house');
+wall(30, 8, 30, 15, 'inner', [[2, 2.9]]);                           // the kitchen's door to the garage
+wall(30, 8, 37, 8, 'garage', [[1, 6]]); wall(37, 8, 37, 15, 'garage'); wall(37, 15, 30, 15, 'garage');
+wall(18, 8, 18, 16, 'inner', [[2.5, 3.4]]); wall(6, 16, 18, 16, 'inner', [[2, 2.9], [8, 8.9]]);
+wall(12, 16, 12, 22, 'inner'); wall(18, 14, 30, 14, 'inner', [[1, 1.9], [8, 8.9]]); wall(18, 16, 18, 22, 'inner'); wall(22, 14, 22, 22, 'inner');
+wall(40, 25, 45, 25, 'shed', [[2, 3]]); wall(45, 25, 45, 29, 'shed'); wall(45, 29, 40, 29, 'shed'); wall(40, 29, 40, 25, 'shed');
+const TREES = [[4, 27, 1.5, 'tree1'], [13, 28.5, 1.8, 'tree2'], [43, 4.5, 1.4, 'tree3'], [26, 27, 1.6, 'tree4']];
+const HOMES = {                                                     // a corner, and its two walls' directions: h first, then v
+    lot: { at: [0, 0], h: [1, 0], v: [0, 1], name: "the lot's corner" },
+    far: { at: [48, 32], h: [-1, 0], v: [0, -1], name: "the lot's far corner" },
+    living: { at: [6, 8], h: [1, 0], v: [0, 1], name: "the living room's corner" },
+    garage: { at: [37, 15], h: [-1, 0], v: [0, -1], name: "the garage's back corner" },
+};
+// ── the world scaled by k, and the first thing a ray meets ──────────────────────────────────────────────────────────
+function world(k) { return { k, seg: SEG.map(s => [s[0] * k, s[1] * k, s[2] * k, s[3] * k, s[4]]), trees: TREES.map(t => [t[0] * k, t[1] * k, t[2] * k, t[3]]) }; }
+function cast(W, ox, oy, dx, dy) {                                  // the nearest hit along (dx, dy) from (ox, oy): distance and thing
+    let best = Infinity, what = null;
+    for (const [x1, y1, x2, y2, t] of W.seg) {
+        const ex = x2 - x1, ey = y2 - y1, den = dx * ey - dy * ex; if (Math.abs(den) < 1e-15) continue;
+        const wx = x1 - ox, wy = y1 - oy, s = (wx * ey - wy * ex) / den, u = (wx * dy - wy * dx) / den;
+        if (s > 1e-9 * W.k && u >= 0 && u <= 1 && s < best) { best = s; what = t; }
+    }
+    for (const [cx, cy, r, t] of W.trees) {
+        const fx = ox - cx, fy = oy - cy, b = fx * dx + fy * dy, c = fx * fx + fy * fy - r * r, disc = b * b - c;
+        if (disc < 0) continue; const s = -b - Math.sqrt(disc); if (s > 1e-9 * W.k && s < best) { best = s; what = t; }
+    }
+    return { d: best, what };
+}
+// the payload reader: 128 given directions all round from where it stands; a range arrives along each
+const NP = 128, NA = 256;
+function payload(k, at) { const W = world(k), out = [];
+    for (let i = 0; i < NP; i++) { const a = (i + 0.5) / NP * 2 * Math.PI, h = cast(W, at[0] * k, at[1] * k, Math.cos(a), Math.sin(a)); out.push({ a, r: h.d, what: h.what }); }
+    const finite = out.filter(o => isFinite(o.r)), gm = Math.exp(finite.reduce((s, o) => s + Math.log(o.r), 0) / Math.max(1, finite.length));
+    for (const o of out) o.shape = o.r / gm;                        // the shape: each range over the geometric mean
+    return { rays: out, gm, a0: Math.log(gm) };
+}
+// the address reader: home a corner, the quarter turn from h to v, 256 uniform directions, each the ratio [h : v]
+function addresses(k, home) { const W = world(k), H = HOMES[home], e = 1e-6 * k, ox = H.at[0] * k + (H.h[0] + H.v[0]) * e, oy = H.at[1] * k + (H.h[1] + H.v[1]) * e, out = [];
+    for (let i = 0; i < NA; i++) { const t = (i + 0.5) / NA * Math.PI / 2, ch = Math.cos(t), cv = Math.sin(t);
+        const dx = H.h[0] * ch + H.v[0] * cv, dy = H.h[1] * ch + H.v[1] * cv, hit = cast(W, ox, oy, dx, dy);
+        out.push({ t, h: ch, v: cv, ratio: cv / ch, g: 2 * t / Math.PI, what: hit.what }); }     // the distance is not kept: none arrives
+    return out;
+}
+// the writer's account: every length an amount, in metres × k
+function writer(k) { return { lot: LOT.map(x => x * k), rooms: ROOMS.map(r => ({ name: r.name, w: (r.r[2] - r.r[0]) * k, d: (r.r[3] - r.r[1]) * k })), trees: TREES.map(t => ({ what: t[3], across: 2 * t[2] * k })) }; }
+
+// ── state, drawing ──────────────────────────────────────────────────────────────────────────────────────────────
+const q = new URLSearchParams(location.search);
+const S = { lk: 0, at: [12, 12], home: 'lot', hover: null };
+if (q.has('k')) S.lk = Math.max(-2, Math.min(2, +q.get('k') || 0));
+if (q.has('at')) { const [x, y] = q.get('at').split(',').map(Number); if (isFinite(x) && isFinite(y)) S.at = [Math.max(0.2, Math.min(47.8, x)), Math.max(0.2, Math.min(31.8, y))]; }
+if (HOMES[q.get('home')]) S.home = q.get('home');
+const K = () => 10 ** S.lk;
+const unitOf = k => { const L = 48 * k; return L >= 2000 ? [1e-3, 'km'] : L >= 2 ? [1, 'm'] : L >= 0.02 ? [100, 'cm'] : [1000, 'mm']; };   // one unit for the whole plan
+const dims = (a, b) => { const [f] = unitOf(K()), t = x => { const v = x * f; return v >= 100 ? v.toFixed(0) : v >= 10 ? v.toFixed(1).replace(/\.0$/, '') : v.toPrecision(2).replace(/\.0$/, ''); }; return `${t(a)} × ${t(b)}`; };
+const fmtM = x => x >= 1000 ? (x / 1000).toPrecision(3) + ' km' : x >= 1 ? x.toPrecision(3) + ' m' : x >= 0.01 ? (x * 100).toPrecision(3) + ' cm' : (x * 1000).toPrecision(3) + ' mm';
+let P = null, A = null;
+function fit(cv) { const d = Math.min(2, devicePixelRatio || 1), w = cv.clientWidth || 600, h = cv.clientHeight || 400; if (cv.width !== Math.round(w * d)) { cv.width = Math.round(w * d); cv.height = Math.round(h * d); } const g = cv.getContext('2d'); g.setTransform(d, 0, 0, d, 0, 0); return [g, w, h]; }
+const colOf = (t, alpha = 1) => { const c = (THINGS[t] || { col: '#555' }).col; if (alpha === 1) return c; const n = parseInt(c.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${alpha})`; };
+const lit = t => S.hover && S.hover === t;
+let planMap = null;
+function drawPlan() {
+    const [g, W, H] = fit($('plan')), m = 18, s = Math.min((W - 2 * m) / 48, (H - 2 * m - 16) / 32), X = x => m + x * s, Y = y => H - m - 16 - y * s;
+    planMap = { m, s, H };
+    g.fillStyle = '#0a1226'; g.fillRect(0, 0, W, H);
+    g.strokeStyle = 'rgba(127,178,255,0.07)'; g.lineWidth = 1;          // the writer's grid: a metre each, alike everywhere
+    for (let x = 0; x <= 48; x++) { g.beginPath(); g.moveTo(X(x), Y(0)); g.lineTo(X(x), Y(32)); g.stroke(); }
+    for (let y = 0; y <= 32; y++) { g.beginPath(); g.moveTo(X(0), Y(y)); g.lineTo(X(48), Y(y)); g.stroke(); }
+    g.fillStyle = 'rgba(127,178,255,0.06)'; g.fillRect(X(21), Y(8), 3 * s, 8 * s);   // the drive, flat: no ray stops at it
+    for (const [x1, y1, x2, y2, t] of SEG) { g.strokeStyle = lit(t) ? '#ffffff' : colOf(t); g.lineWidth = t === 'fence' ? 1.5 : t === 'inner' ? 2 : 3; g.beginPath(); g.moveTo(X(x1), Y(y1)); g.lineTo(X(x2), Y(y2)); g.stroke(); }
+    for (const [cx, cy, r, t] of TREES) { g.fillStyle = colOf(t, lit(t) ? 0.85 : 0.45); g.strokeStyle = lit(t) ? '#fff' : colOf(t); g.lineWidth = 1.5; g.beginPath(); g.arc(X(cx), Y(cy), r * s, 0, 7); g.fill(); g.stroke(); }
+    const k = K(); g.font = '11px "DM Mono", monospace'; g.fillStyle = 'rgba(200,215,255,0.85)'; g.textAlign = 'center';
+    for (const R of ROOMS) { const [x1, y1, x2, y2] = R.r; g.fillText(R.name, X((x1 + x2) / 2), Y((y1 + y2) / 2) - 2);
+        g.fillStyle = 'rgba(159,195,255,0.75)'; g.fillText(dims((x2 - x1) * k, (y2 - y1) * k), X((x1 + x2) / 2), Y((y1 + y2) / 2) + 11); g.fillStyle = 'rgba(200,215,255,0.85)'; }
+    g.fillText('shed', X(42.5), Y(27) + 4);
+    g.textAlign = 'left'; g.fillStyle = 'rgba(159,195,255,0.75)'; g.fillText(`rooms in ${unitOf(k)[1]}`, X(0.6), Y(32) + 12); g.textAlign = 'center';
+    // the lot's dimensions, and the scale bar: the unit measured beforehand
+    g.strokeStyle = 'rgba(159,195,255,0.6)'; g.lineWidth = 1; g.beginPath(); g.moveTo(X(0), Y(0) + 9); g.lineTo(X(48), Y(0) + 9); g.stroke();
+    g.fillStyle = '#9fc3ff'; g.fillText(`${fmtM(48 * k)}`, X(24), Y(0) + 13);
+    g.textAlign = 'left'; g.fillText(`${fmtM(32 * k)} deep`, X(48) - 64, Y(32) + 12);
+    const nice = x => { const e = 10 ** Math.floor(Math.log10(x)), m = x / e; return (m >= 5 ? 5 : m >= 2 ? 2 : 1) * e; }, bar = nice(10 * k) / k;   // a round length
+    g.strokeStyle = '#e6e4ee'; g.lineWidth = 2; g.beginPath(); g.moveTo(X(36), Y(1.2)); g.lineTo(X(36 + bar), Y(1.2)); g.stroke();
+    g.fillStyle = '#e6e4ee'; g.fillText(fmtM(bar * k), X(36) + 2, Y(1.2) - 5);
+    // the address reader's home and quarter turn; the payload reader where it stands, with its rays faint
+    const Hm = HOMES[S.home], R0 = 3.2 * s, a0 = Math.atan2(Hm.h[1], Hm.h[0]), a1 = Math.atan2(Hm.v[1], Hm.v[0]);
+    g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.arc(X(Hm.at[0]), Y(Hm.at[1]), R0, -a0, -a1, (a1 - a0 + 2 * Math.PI) % (2 * Math.PI) < Math.PI); g.stroke();
+    const mid = Math.atan2(Hm.h[1] + Hm.v[1], Hm.h[0] + Hm.v[0]); g.setLineDash([4, 4]); g.beginPath(); g.moveTo(X(Hm.at[0]), Y(Hm.at[1])); g.lineTo(X(Hm.at[0]) + 2 * R0 * Math.cos(mid), Y(Hm.at[1]) - 2 * R0 * Math.sin(mid)); g.stroke(); g.setLineDash([]);
+    g.fillStyle = '#d4a052'; g.beginPath(); g.arc(X(Hm.at[0]), Y(Hm.at[1]), 5, 0, 7); g.fill();
+    g.strokeStyle = 'rgba(140,230,205,0.16)'; g.lineWidth = 1;
+    for (const o of P.rays) { if (!isFinite(o.r)) continue; const r = o.r / k; g.strokeStyle = lit(o.what) ? 'rgba(255,255,255,0.4)' : 'rgba(140,230,205,0.16)';
+        g.beginPath(); g.moveTo(X(S.at[0]), Y(S.at[1])); g.lineTo(X(S.at[0] + r * Math.cos(o.a)), Y(S.at[1] + r * Math.sin(o.a))); g.stroke(); }
+    g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(X(S.at[0]), Y(S.at[1]), 5, 0, 7); g.fill();
+}
+let payMap = null;
+function drawPay() {
+    const [g, W, H] = fit($('pay')), cx = W / 2, cy = H / 2, R = Math.min(W, H) * 0.42, sm = Math.max(...P.rays.map(o => isFinite(o.shape) ? o.shape : 0)), f = R / Math.min(2.2, Math.max(1.5, sm));   // farther than the rim: drawn at it
+    payMap = { cx, cy, f };
+    g.fillStyle = '#0b0f14'; g.fillRect(0, 0, W, H);
+    g.strokeStyle = 'rgba(140,230,205,0.35)'; g.setLineDash([3, 5]); g.beginPath(); g.arc(cx, cy, f, 0, 7); g.stroke(); g.setLineDash([]);
+    g.fillStyle = 'rgba(140,230,205,0.7)'; g.font = '11px "DM Mono", monospace'; g.fillText('the geometric mean (its size never read)', cx - f * 0.7, cy - f - 6);
+    g.beginPath(); P.rays.forEach((o, i) => { const r = Math.min(R, isFinite(o.shape) ? o.shape * f : R), x = cx + r * Math.cos(o.a), y = cy - r * Math.sin(o.a); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.closePath();
+    g.fillStyle = 'rgba(140,230,205,0.08)'; g.fill();
+    g.strokeStyle = 'rgba(140,230,205,0.15)'; g.beginPath(); g.arc(cx, cy, R, 0, 7); g.stroke();
+    for (const o of P.rays) { const r = Math.min(R, isFinite(o.shape) ? o.shape * f : R); g.fillStyle = lit(o.what) ? '#ffffff' : colOf(o.what); g.beginPath(); g.arc(cx + r * Math.cos(o.a), cy - r * Math.sin(o.a), lit(o.what) ? 3.4 : 2.4, 0, 7); g.fill(); }
+    g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(cx, cy, 4, 0, 7); g.fill();
+}
+let addrMap = null;
+function drawAddr() {
+    const [g, W, H] = fit($('addr')), ox = 18, oy = H * 0.62, R = Math.min(W * 0.52, H * 0.56), sx0 = 18, sx1 = W - 18, sy = H - 26;
+    addrMap = { ox, oy, R, sx0, sx1, sy };
+    g.fillStyle = '#100e0b'; g.fillRect(0, 0, W, H);
+    for (const o of A) {                                             // the fan: each direction at one radius, painted by what it meets
+        const a = o.t, w = 1.6 * Math.PI / 2 / NA; g.fillStyle = lit(o.what) ? '#ffffff' : colOf(o.what);
+        g.beginPath(); g.moveTo(ox + R * 0.55 * Math.cos(a - w / 2), oy - R * 0.55 * Math.sin(a - w / 2)); g.arc(ox, oy, R, -(a - w / 2), -(a + w / 2), true);
+        g.arc(ox, oy, R * 0.55, -(a + w / 2), -(a - w / 2), false); g.closePath(); g.fill(); }
+    g.strokeStyle = '#d4a052'; g.setLineDash([5, 4]); g.lineWidth = 1.5; g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + R * 1.04 * Math.SQRT1_2, oy - R * 1.04 * Math.SQRT1_2); g.stroke(); g.setLineDash([]);
+    g.font = '11px "DM Mono", monospace'; g.fillStyle = '#d4a052'; g.fillText('v = h', ox + R * 0.76, oy - R * 0.80);
+    g.fillStyle = '#c8c8d0'; g.fillText('h', ox + R + 4, oy + 4); g.fillText('v', ox - 4, oy - R - 6); g.fillText('home', ox - 8, oy + 16);
+    g.fillStyle = '#8a8a96'; g.fillText('no distance: every address at one radius', ox + R * 0.2, oy + 30);
+    // what was met: each thing's share of the addresses (a stretch of the turn, not a size)
+    const met = shareOf(A); let ly = 22; g.textAlign = 'left';
+    for (const [t, n] of Object.entries(met).sort((a, b) => b[1] - a[1])) { const lx = ox + R + 24; g.fillStyle = lit(t) ? '#ffffff' : colOf(t); g.fillRect(lx, ly - 9, 10, 10);
+        g.fillStyle = '#c8c8d0'; g.fillText(`${THINGS[t] ? THINGS[t].name : 'nothing'}  ${(100 * n / NA).toFixed(1)}%`, lx + 16, ly); ly += 16; }
+    // the same laid straight on g = (2/π)·arctan(v/h)
+    const SW = sx1 - sx0; for (const o of A) { g.fillStyle = lit(o.what) ? '#ffffff' : colOf(o.what); g.fillRect(sx0 + (o.g - 0.5 / NA) * SW, sy - 12, SW / NA + 0.6, 12); }
+    g.fillStyle = '#c8c8d0'; g.textAlign = 'center';
+    for (const [r, lab] of [[0, 'h'], [1 / 4, '¼'], [1 / 2, '½'], [1, '1'], [2, '2'], [4, '4'], [Infinity, 'v']]) { const gg = 2 / Math.PI * Math.atan(r), x = sx0 + gg * SW;
+        g.fillStyle = r === 1 ? '#d4a052' : '#8a8a96'; g.fillRect(x - 0.5, sy, 1, 5); g.fillText(lab, x, sy + 16); }
+    g.textAlign = 'left';
+}
+function shareOf(list) { const c = {}; for (const o of list) c[o.what] = (c[o.what] || 0) + 1; return c; }
+function render() {
+    const k = K(); P = payload(k, S.at); A = addresses(k, S.home);
+    drawPlan(); drawPay(); drawAddr();
+    $('kv').textContent = 'k = ' + (k >= 1 ? k.toPrecision(3) : k.toFixed(k < 0.1 ? 4 : 3)); $('home').value = S.home;
+    const below = A.filter(o => o.ratio < 1).length;
+    $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}. The payload reader's ranges have geometric mean ${fmtM(P.gm)} in the writer's ` +
+        `metres, a number it never receives; the shape it holds is the same at every k. The address reader holds ${NA} directions: ${below} below v = h and ${NA - below} above, at every k.`;
+    describe();
+}
+function describe() {
+    const k = K(), w = writer(k), t = S.hover;
+    $('readW').textContent = (t ? `${THINGS[t].name}. ` : '') + `The lot ${fmtM(w.lot[0])} × ${fmtM(w.lot[1])}; the living room ${fmtM(w.rooms[0].w)} × ${fmtM(w.rooms[0].d)}; ` +
+        `the payload reader stands at (${fmtM(S.at[0] * k)}, ${fmtM(S.at[1] * k)}). Every one of these moves with k.`;
+    const pr = t ? P.rays.filter(o => o.what === t) : [];
+    $('readP').textContent = t ? (pr.length ? `${THINGS[t].name}: ${pr.length} of ${NP} directions, its shape ${pr.map(o => o.shape).reduce((a, b) => Math.min(a, b)).toFixed(3)} to ${pr.map(o => o.shape).reduce((a, b) => Math.max(a, b)).toFixed(3)} of the mean` : `${THINGS[t].name}: not met from here`)
+        : `${NP} ranges, the shape from ${Math.min(...P.rays.map(o => o.shape)).toFixed(3)} to ${Math.max(...P.rays.map(o => o.shape)).toFixed(3)} of their mean; the mean itself (a₀) never arrives.`;
+    const ar = t ? A.filter(o => o.what === t) : [];
+    $('readA').textContent = t ? (ar.length ? `${THINGS[t].name}: addresses from [1 : ${ar[0].ratio.toPrecision(3)}] to [1 : ${ar[ar.length - 1].ratio.toPrecision(3)}], ${ar.length} of ${NA} (g ${ar[0].g.toFixed(3)} to ${ar[ar.length - 1].g.toFixed(3)}); how far, never` : `${THINGS[t].name}: not seen from ${HOMES[S.home].name}`)
+        : `From ${HOMES[S.home].name}: ${Object.keys(shareOf(A)).length} things met, each a stretch of addresses; half the turn either side of v = h.`;
+}
+// ── input ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+const planAt = e => { const r = $('plan').getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top, M = planMap; return [(x - M.m) / M.s, (M.H - M.m - 16 - y) / M.s]; };
+function thingNearPlan(x, y) { let best = null, bd = 0.9;
+    for (const [x1, y1, x2, y2, t] of SEG) { const ex = x2 - x1, ey = y2 - y1, L = ex * ex + ey * ey, u = Math.max(0, Math.min(1, ((x - x1) * ex + (y - y1) * ey) / L)), d = Math.hypot(x - x1 - u * ex, y - y1 - u * ey); if (d < bd) { bd = d; best = t; } }
+    for (const [cx, cy, r, t] of TREES) if (Math.hypot(x - cx, y - cy) < r + 0.3) return t;
+    return best; }
+$('plan').addEventListener('pointermove', e => { const [x, y] = planAt(e); const t = thingNearPlan(x, y); if (t !== S.hover) { S.hover = t; drawPlan(); drawPay(); drawAddr(); describe(); } });
+$('plan').addEventListener('pointerdown', e => { const [x, y] = planAt(e); if (x > 0.1 && x < 47.9 && y > 0.1 && y < 31.9) { S.at = [x, y]; render(); } });
+$('pay').addEventListener('pointermove', e => { const r = $('pay').getBoundingClientRect(), x = e.clientX - r.left - payMap.cx, y = payMap.cy - (e.clientY - r.top);
+    const a = (Math.atan2(y, x) + 2 * Math.PI) % (2 * Math.PI), i = Math.min(NP - 1, Math.floor(a / (2 * Math.PI) * NP)), t = P.rays[i].what; if (t !== S.hover) { S.hover = t; drawPlan(); drawPay(); drawAddr(); describe(); } });
+$('addr').addEventListener('pointermove', e => { const r = $('addr').getBoundingClientRect(), M = addrMap, x = e.clientX - r.left, y = e.clientY - r.top; let gg;
+    if (y > M.sy - 20) gg = (x - M.sx0) / (M.sx1 - M.sx0); else gg = Math.atan2(M.oy - y, x - M.ox) / (Math.PI / 2);
+    if (!(gg >= 0 && gg < 1)) return; const t = A[Math.min(NA - 1, Math.floor(gg * NA))].what; if (t !== S.hover) { S.hover = t; drawPlan(); drawPay(); drawAddr(); describe(); } });
+for (const id of ['plan', 'pay', 'addr']) $(id).addEventListener('pointerleave', () => { S.hover = null; drawPlan(); drawPay(); drawAddr(); describe(); });
+$('k').oninput = e => { S.lk = +e.target.value; render(); };
+$('home').onchange = e => { S.home = e.target.value; render(); };
+$('reset').onclick = () => { S.lk = 0; S.at = [12, 12]; S.home = 'lot'; $('k').value = 0; render(); };
+addEventListener('resize', render);
+$('k').value = S.lk; render();
+window.__blueprint = { THINGS, ROOMS, SEG, TREES, HOMES, world, cast, payload, addresses, writer,
+    set(o) { Object.assign(S, o); $('k').value = S.lk; render(); return { lk: S.lk, at: S.at.slice(), home: S.home }; },
+    state: () => ({ lk: S.lk, k: K(), at: S.at.slice(), home: S.home, hover: S.hover, gm: P.gm }) };
+</script>
+</body>
+</html>
