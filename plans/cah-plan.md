@@ -137,3 +137,30 @@ numbers. Its models: softmax and Cauchy K = 163, seed 42, the scale above (400 s
 every offset of 200 batches, about 1.6 million overlapping triples) and to return the purity before the retrofit (the
 script returns the product under the name `purity_before`). Random embeddings: Gaussian, the trained embeddings' own
 standard deviation, put in the Cauchy model's place.
+
+**The paper behind the script** (Tom, before the probe's run: "here is an old session paper that describes the
+script"; *2/π: The Universal Semantic Horizon in Representation Learning*, Tom Brinkman, tangent.fit, December 2025,
+not committed). It does not describe the horizon sweep or the Circle probe (they came in February); it is where their
+2/π comes from: ψ₁ = 2/π, "the S¹ access bound", read as a threshold on cosine similarity ("Above ψ₁, concepts share
+semantic direction"), with ψ₂ = (2/π)·ln 2 an admission threshold. Read through the framework, before the probe runs:
+
+- Its derivation, E|cos θ| = (2/π)∫₀^{π/2} cos θ dθ = 2/π for θ uniform on the quarter turn, is OFS's 2/π: the mean
+  projection over a uniform turn, the circle's. It is a **mean**, not a boundary. The uniform turn's boundary, the place
+  that splits it in half, is the corner: θ = 45°, cos θ = 1/√2 = 0.7071 (OFS §4). A threshold read off a law's mean is
+  not where the law divides.
+- Its Lemma ("the expected absolute projection of a random uniform direction onto any fixed axis equals 2/π", "a
+  geometric necessity of high-dimensional projection") holds only in two dimensions. For a direction uniform on the
+  sphere in d dimensions E|cos θ| = Γ(d/2)/(√π·Γ((d + 1)/2)), checked here to 20 digits: d = 2 gives 0.63662 (2/π),
+  d = 3 gives ½ (Archimedes), d = 8 0.2910, d = 384 0.04074, d = 768 0.02880, falling as √(2/(πd)). In the embedding
+  dimensions it cites (100–768) random directions sit near 0.03–0.08, not 2/π; this is the hemisphere's √π·Γ((n + 1)/2)/Γ(n/2)
+  of SIT run 1, read the other way. So 2/π is the circle's number, and in a space of many directions it is not the
+  number a uniform direction gives.
+- Its synthetic check (noise raised "until mean cosine similarity matches 2/π") would match any target; its measured
+  means range from 0.76 to 1.08 of 2/π across word models, 0.34 within topic for sentences, and CLIP's best threshold is
+  0.74, which it reports itself ("the constant depends on training objective").
+- What carries forward is not the constant but two of its "prizes", which OFS now states with their conditions: a reader's
+  count of addresses K is apart from the world's N ("When N changes, you don't notice"; OFS §8, "A fixed count, aimed by
+  H", and the Cauchy keeping K apart from N), and readings are scale-free (Theorem 6(a)). Its S¹ and S² (the line called
+  S²) are not the standard spheres.
+
+This changes no prediction: the plan's reading of the script's 2/π already stood on the first two points.
