@@ -1547,6 +1547,29 @@ try {
     failures.push(`[${current}] ${JSON.stringify(cr)}`);
   console.log(`${failures.length === before53 ? 'ok  ' : 'FAIL'} ${current} (the hand: the fingers' readings the same at three looks, their median at the corner, 12 of 24 at v/h ≤ 1, the light on them different at each; the shape unmoved by k (${cr.sh.toExponential(0)}), every amount by k; a circle flat from its centre; the modes 0.15, 0.08, 0.05 at n = 2, 3, 6, unmoved by k; harmonic measure: arcs (2α − arc)/2π to ${cr.arc.toExponential(0)}, its mean z, twice the even turn's landings less the uniform to ${cr.comb.toExponential(0)}; ray and radius meet on the circle on the chord; arc over chord π/2 at the end; a real drag moved the reader ${cr.dragged.toFixed(2)})`);
 
+  // ── 54. glass-box.html: the stained-glass box (SPN R461): at 32 × 32 every pair at its corner and the near field a third;
+  //    a ghost box g times as large about the reader, its pictures with it, paints every address alike (g = ¼, ½, 2, 4);
+  //    scaling the world changes no colour; moving the reader or turning the wedge changes most colours and no address;
+  //    the paint the page drew is the paint computed; the two views' cameras; WebGL drew frames ──
+  current = 'glass-box.html';
+  const before54 = failures.length;
+  await page.goto(new URL('glass-box.html', base).href, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__glassBox && __glassBox.ready && __glassBox.frames > 2, null, { timeout: 30000 }).catch(() => {});
+  const gbx = await page.evaluate(() => { const W = __glassBox, o = {};
+    o.c = W.readAt({ n: 32 }).counts;
+    o.ghost = [0.25, 0.5, 2, 4].map(g => W.ghostAt(g, { n: 64 })).reduce((m, r) => m + r.differ, 0);
+    const k1 = W.readAt({ n: 64 }); o.kPaint = [1e-3, 7, 1e3].map(k => W.readAt({ n: 64, k }).list.filter((a, i) => a.rgb.some((c, q) => c !== k1.list[i].rgb[q])).length).reduce((a, b) => a + b, 0);
+    const s0 = { ...W.state(), n: 64 }; o.move = W.changed(s0, { ...s0, P: [1, 0.5, 2] }); o.turn = W.changed(s0, { ...s0, R: W.rotOf(-100, 10, 30) });
+    W.set({ n: 32 }); const px = W.painted(), L = W.readAt({ n: 32 }).list; o.drawn = 0;
+    for (const a of L) { const q = 4 * ((31 - a.i) * 32 + a.j); if (a.rgb.some((c, i) => c !== px[q + i])) o.drawn++; }
+    W.set({ view: 'reader' }); const c = W.camera(); o.readerCam = c.kind === 'perspective' && Math.hypot(...c.at.map((x, i) => x - W.state().P[i])) < 1e-9;
+    W.set({ view: 'writer', n: 64 }); o.writerCam = W.camera().kind === 'orthographic'; o.frames = W.frames; o.webgl = W.webgl; return o; });
+  if (gbx.c.vh !== 0.5 || gbx.c.v2h !== 0.5 || gbx.c.v2v !== 0.5 || Math.abs(gbx.c.near - 1 / 3) > 0.01 || gbx.ghost !== 0 || gbx.kPaint !== 0 ||
+    !(gbx.move.changed > 0.5) || gbx.move.addressMoved !== 0 || !(gbx.turn.changed > 0.5) || gbx.turn.addressMoved !== 0 || gbx.drawn !== 0 ||
+    !gbx.readerCam || !gbx.writerCam || !(gbx.frames > 0) || !gbx.webgl)
+    failures.push(`[${current}] ${JSON.stringify(gbx)}`);
+  console.log(`${failures.length === before54 ? 'ok  ' : 'FAIL'} ${current} (v ≤ h, v₂ ≤ h, v₂ ≤ v ½, the near field ${gbx.c.near.toFixed(4)}; a ghost box ¼, ½, 2 and 4 times as large painting all 4,096 addresses alike; the world scaled by 10⁻³, 7 and 10³ changing no colour; the reader moved or the wedge turned changing ${(100 * gbx.move.changed).toFixed(0)}% and ${(100 * gbx.turn.changed).toFixed(0)}% of the colours and no address; the paint drawn the paint computed; the reader's camera at its standpoint, the writer's orthographic; WebGL drew frames)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

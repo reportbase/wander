@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The stained-glass box</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    glass-box.html: the stained-glass box (23 October 2026; Tom: "it might be possible to create a 3d cube with a sphere
+    inside, the cube could contain an image of some kind and the images rays pass through the wedge to the reader.", then
+    "make a new demo for this."). SPN R461; OFS §1's picture (a hand held up to a stained-glass window, each finger lit by
+    the pane it lines up with; R460), §3.7 (the writer's box, the reader's sphere and its wedge), Theorem 6 (the separation
+    of address and payload); after writer-box.html, whose geometry this page repeats.
+
+    Keep the case. h, v and v₂ are unit relations, 0 to 1; H is the reader's breadth, chosen, its size only the zoom (the
+    sphere's radius here); X, Y, Z are the writer's extents, amounts; a point of the box is three amounts.
+      - The writer: a box with a picture on each face (stained glass, a labelled grid, or a picture of your own). It holds
+        the box, the pictures and the reader's standpoint: amounts and pixels.
+      - The reader: a standpoint inside the box, a sphere round it of radius H, and one octant of the sphere, the wedge.
+      - The addresses: n × n cells of Lambert's equal-area map of the octant, uniform over it (OFS Proposition 5(e)), given.
+        Each is a direction [h : v : v₂]; the light from the pixel its ray meets travels in along that direction, through
+        the wedge, to the reader, and paints the address that colour. The colour carries no distance.
+      - So the wedge holds the pictures as received: one colour per address. Turning the wedge or moving the reader changes
+        the colours (the payload), never the addresses. Scaling the world changes neither.
+      - The ghost: the box made g times as large about the reader, its pictures g times as large with it. Every address is
+        painted exactly as before, so the reader cannot tell the near small box from the far large one; only walking
+        (parallax) or ranging (a writing) can. A face nearer than H paints like one far past it: the radius H is the
+        drawing's unit, not a surface the light must cross.
+    three.js 0.160.0 (MIT) loads from the jsDelivr CDN, pinned, through an import map, as in writer-box.html; the smoke test
+    serves the same version from node_modules. The geometry, the pictures and the paint are a plain script, so the hook
+    works without WebGL.
+    Links: ?pic=glass|grid &x=&y=&z= (the standpoint, amounts at k = 1, from the box's middle) &lon=&lat=&roll= (degrees:
+           where the wedge's triple corner points and the turn about it) &H= &k=<log10 k> &box=X,Y,Z &n=16|32|64|128
+           &ghost=<g> &view=writer|reader &rays=0 &light=0 &spin=1
+    Test hook: window.__glassBox.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #07070b; --panel: rgba(18,18,26,0.84); --line: rgba(255,255,255,0.10);
+        --ink: #c8c8d0; --dim: #8a8a96; --bright: #ece9f4; --gold: #d4a052; --teal: #8ce6cd; --violet: #b59cf0; --blue: #7fb2ff }
+    * { box-sizing: border-box }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground) }
+    body { color: var(--ink); font: 13px/1.5 'DM Mono', ui-monospace, monospace;
+        background: radial-gradient(120% 90% at 62% 38%, #15151f 0%, #0a0a10 55%, #050508 100%) }
+    #stage { position: fixed; inset: 0; display: block; width: 100vw; height: 100vh; touch-action: none; cursor: grab }
+    .glass { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+        -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.45) }
+    #panel { position: fixed; top: 14px; left: 14px; width: min(370px, calc(100vw - 28px)); max-height: calc(100vh - 28px);
+        overflow: auto; padding: 14px 16px 12px; z-index: 3 }
+    h1 { font: 400 26px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 4px }
+    .sub { color: var(--dim); margin: 0 0 10px; font-size: 12px }
+    .sub b { color: var(--bright); font-weight: 500 }
+    button { font: inherit; color: var(--bright); background: rgba(255,255,255,0.04); border: 1px solid var(--line);
+        border-radius: 7px; padding: 5px 9px; cursor: pointer; touch-action: manipulation; min-height: 32px }
+    button:hover { border-color: rgba(255,255,255,0.25) }
+    button.on { border-color: var(--gold); color: var(--gold); background: rgba(212,160,82,0.08) }
+    .ctl { display: grid; grid-template-columns: 6.6em 1fr 5.4em; gap: 6px 8px; align-items: center; margin: 5px 0 }
+    .ctl label { color: var(--dim) }
+    .ctl output { color: var(--bright); text-align: right; font-size: 12px }
+    input[type=range] { width: 100%; min-width: 0; accent-color: var(--gold) }
+    h3 { font: 500 11px/1 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); margin: 12px 0 4px }
+    .row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .violet { color: var(--violet) } .blue { color: var(--blue) } .dim { color: var(--dim) }
+    #hud { position: fixed; left: 398px; bottom: 14px; max-width: calc(100vw - 690px); padding: 10px 13px;
+        white-space: pre-wrap; font-size: 12px; color: var(--bright); z-index: 2 }
+    #inset { position: fixed; right: 14px; bottom: 14px; width: 262px; padding: 10px 10px 8px; z-index: 2 }
+    #inset canvas { width: 100%; aspect-ratio: 1; display: block; border-radius: 6px; background: #0b0b12; cursor: crosshair; touch-action: none; image-rendering: pixelated }
+    #inset .t { font-size: 11.5px; color: var(--dim); margin: 0 0 6px }
+    #inset .t b { color: var(--bright); font-weight: 500 }
+    #hint { position: fixed; right: 14px; top: 14px; padding: 7px 11px; font-size: 11.5px; color: var(--dim); z-index: 2; max-width: 300px }
+    #nogl { position: fixed; inset: 0; display: none; place-items: center; color: var(--bright); padding: 24px; text-align: center }
+    #fold { display: none }
+    .vant { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin: 2px 0 6px }
+    .vant button { padding: 5px 4px; font-size: 12px }
+    #vcap { margin: 0 0 6px; font-size: 12px; color: var(--ink); min-height: 5em }
+    #vcap b { color: var(--bright); font-weight: 500 }
+    #own { display: none }
+    a { color: var(--teal) }
+    @media (max-width: 1099px) { #inset { display: none } #hud { max-width: calc(100vw - 412px) } }
+    @media (max-width: 760px) {
+        #panel { top: auto; bottom: 10px; left: 10px; width: calc(100vw - 20px); max-height: 52vh; padding: 10px 12px }
+        #panel.folded .more { display: none }
+        #fold { display: inline-block; float: right; min-height: 28px; padding: 2px 8px }
+        h1 { font-size: 21px }
+        #hud { top: 10px; bottom: auto; left: 10px; max-width: calc(100vw - 20px); font-size: 11px; padding: 7px 9px }
+        #hint { display: none }
+    }
+    </style>
+    <script type="importmap">{ "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body>
+<canvas id="stage" aria-label="A box with pictures on its faces, and inside it a reader's wedge whose addresses are painted by the light from the pictures"></canvas>
+<div id="panel" class="glass">
+    <button id="fold" aria-label="fold the panel">▾</button>
+    <h1>The stained-glass box</h1>
+    <p class="sub">The <b class="blue">writer</b> holds a box with a picture on every face. A <b class="gold">reader</b>
+        stands inside it: a sphere of radius H round one point, and one octant of it, the wedge, its addresses. Light from
+        each pixel travels in along one direction, through the wedge, to the reader, and paints the address it arrives
+        along. The addresses are given; the colours are the world's. No colour says how far it came.</p>
+    <div class="vant" id="vant"><button data-v="writer">the writer</button><button data-v="reader">the reader, from home</button></div>
+    <p id="vcap"></p>
+    <div class="more">
+        <h3>the pictures</h3>
+        <div class="row" id="pics"><button data-p="glass">stained glass</button><button data-p="grid">a labelled grid</button><button data-p="own">your own picture…</button></div>
+        <input id="own" type="file" accept="image/*">
+        <h3>the reader's place (amounts, from the box's middle)</h3>
+        <div class="ctl"><label for="px">x</label><input id="px" type="range" min="-1" max="1" step="0.001"><output id="pxo"></output></div>
+        <div class="ctl"><label for="py">y (up)</label><input id="py" type="range" min="-1" max="1" step="0.001"><output id="pyo"></output></div>
+        <div class="ctl"><label for="pz">z</label><input id="pz" type="range" min="-1" max="1" step="0.001"><output id="pzo"></output></div>
+        <h3>where the wedge faces</h3>
+        <div class="ctl"><label for="lon">longitude</label><input id="lon" type="range" min="-180" max="180" step="0.5"><output id="lono"></output></div>
+        <div class="ctl"><label for="lat">latitude</label><input id="lat" type="range" min="-90" max="90" step="0.5"><output id="lato"></output></div>
+        <div class="ctl"><label for="roll">turned</label><input id="roll" type="range" min="-180" max="180" step="0.5"><output id="rollo"></output></div>
+        <div class="row"><button id="bOct">an octant of the box</button><button id="bAny">anywhere</button><button id="bSpin">spin</button><button id="bWander">wander</button></div>
+        <h3>the ghost: the same box, larger or smaller about the reader</h3>
+        <div class="ctl"><label for="lg">g</label><input id="lg" type="range" min="-0.7" max="0.7" step="0.01"><output id="lgo"></output></div>
+        <div class="row"><button id="bGhost">show the ghost</button></div>
+        <h3>the reader and the writer</h3>
+        <div class="ctl"><label for="lgH">H, the zoom</label><input id="lgH" type="range" min="-0.7" max="0.9" step="0.01"><output id="lgHo"></output></div>
+        <div class="ctl"><label for="bx">X</label><input id="bx" type="range" min="2" max="24" step="0.5"><output id="bxo"></output></div>
+        <div class="ctl"><label for="by">Y</label><input id="by" type="range" min="2" max="24" step="0.5"><output id="byo"></output></div>
+        <div class="ctl"><label for="bz">Z</label><input id="bz" type="range" min="2" max="24" step="0.5"><output id="bzo"></output></div>
+        <div class="ctl"><label for="lk">scale the world</label><input id="lk" type="range" min="-3" max="3" step="0.01"><output id="lko"></output></div>
+        <div class="row"><button id="bN">addresses 64 × 64</button><button id="bRays" class="on">rays</button><button id="bLight" class="on">light</button><button id="bReset">reset</button></div>
+        <p class="dim" style="font-size:11.5px;margin:10px 0 0">Other demos: <a href="writer-box.html">the writer's box</a>,
+            <a href="payload-free-3d.html">the payload doesn't matter, in 3D</a>, <a href="wedge.html">the wedge</a>, <a href="demos.html">all demos</a>.</p>
+    </div>
+</div>
+<div id="hud" class="glass"></div>
+<div id="inset" class="glass"><p class="t"><b>The addresses, painted</b>: Lambert's map of the wedge (azimuth across, height
+    up), each cell the colour that arrived along it; the pairs' corners dashed.</p><canvas id="map" width="512" height="512"></canvas></div>
+<div id="hint" class="glass"></div>
+<div id="nogl"><div>This page needs WebGL to draw the box.<br>The arithmetic still runs: see the test hook.</div></div>
+
+<script>
+// ── the geometry, the pictures and the paint, without drawing: the hook works without WebGL ──────────────────────────
+(() => {
+const RAD = Math.PI / 180;
+const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+const unit = a => { const n = Math.hypot(...a); return a.map(x => x / n); };
+// a turn as its three rows: where the wedge's h, v and v₂ point in the box's frame (as writer-box.html)
+const apply = (R, d) => [R[0][0] * d[0] + R[1][0] * d[1] + R[2][0] * d[2], R[0][1] * d[0] + R[1][1] * d[1] + R[2][1] * d[2], R[0][2] * d[0] + R[1][2] * d[1] + R[2][2] * d[2]];
+const rodrigues = (k, th, v) => { const c = Math.cos(th), s = Math.sin(th), kv = cross(k, v), kd = dot(k, v);
+    return [0, 1, 2].map(i => v[i] * c + kv[i] * s + k[i] * kd * (1 - c)); };
+const C0 = unit([1, 1, 1]), LAT0 = Math.asin(1 / Math.sqrt(3)) / RAD, IDENT = [[1, 0, 0], [0, 1, 0], [0, 0, 1]];
+const cornerDir = (lon, lat) => [Math.cos(lat * RAD) * Math.cos(lon * RAD), Math.sin(lat * RAD), Math.cos(lat * RAD) * Math.sin(lon * RAD)];
+function rotOf(lon, lat, roll) { const c = cornerDir(lon, lat), ax = cross(C0, c), s = Math.hypot(...ax), co = dot(C0, c);
+    let k, th; if (s < 1e-12) { if (co > 0) { k = C0; th = 0; } else { k = unit([1, -1, 0]); th = Math.PI; } } else { k = ax.map(x => x / s); th = Math.atan2(s, co); }
+    return IDENT.map(e => rodrigues(c, roll * RAD, rodrigues(k, th, e))); }
+function anglesOfRot(R) { const c = apply(R, C0), lat = Math.asin(Math.max(-1, Math.min(1, c[1]))) / RAD, lon = Math.atan2(c[2], c[0]) / RAD;
+    const R0 = rotOf(lon, lat, 0), a = R0[0], b = R[0], pa = a.map((x, i) => x - dot(a, c) * c[i]), pb = b.map((x, i) => x - dot(b, c) * c[i]);
+    return { lon, lat, roll: Math.atan2(dot(c, cross(pa, pb)), dot(pa, pb)) / RAD }; }
+function octantRot(sg) { const ax = [[sg[0], 0, 0], [0, sg[1], 0], [0, 0, sg[2]]];
+    return sg[0] * sg[1] * sg[2] > 0 ? ax : [ax[2], ax[1], ax[0]]; }
+// the addresses: n × n cells of Lambert's equal-area map of the octant, uniform in azimuth and in height
+function addresses(n) { const out = [];
+    for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) { const v = (i + 0.5) / n, ps = (j + 0.5) / n * Math.PI / 2, c = Math.sqrt(1 - v * v);
+        out.push({ i, j, h: c * Math.cos(ps), v, v2: c * Math.sin(ps) }); }
+    return out; }
+// the first face a ray from o meets, the box centred on the origin with extents E
+function hitBox(o, d, E) { let t = Infinity, face = -1;
+    for (let a = 0; a < 3; a++) { if (Math.abs(d[a]) < 1e-15) continue; const tt = ((d[a] > 0 ? 1 : -1) * E[a] / 2 - o[a]) / d[a];
+        if (tt < t) { t = tt; face = 2 * a + (d[a] > 0 ? 0 : 1); } }
+    t = Math.max(0, t); return { t, p: o.map((x, a) => x + t * d[a]), face }; }
+const FACES = ['+x', '−x', '+y (up)', '−y', '+z', '−z'];
+// each face's picture as seen from inside, facing it: its outward normal, and its right and up in the box's frame
+const FACE_BASIS = [0, 1, 2, 3, 4, 5].map(f => { const a = f >> 1, s = f & 1 ? -1 : 1, n = [0, 0, 0]; n[a] = s;
+    const up = a === 1 ? [0, 0, 1] : [0, 1, 0], right = cross(n, up); return { a, s, n, up, right }; });
+const axisOf = v => { const a = v.findIndex(x => Math.abs(x) > 0.5); return [a, Math.sign(v[a])]; };
+// where on its face's picture a point of the box falls: (u, w) in [0, 1]², u to the right and w up, seen from inside
+function uvOf(face, p, E) { const B = FACE_BASIS[face], [ar, sr] = axisOf(B.right), [au, su] = axisOf(B.up);
+    return [(sr * p[ar] + E[ar] / 2) / E[ar], (su * p[au] + E[au] / 2) / E[au]]; }
+
+// the pictures: six canvases, one a face, and their pixels for reading the paint
+const PIC_PX = 512, mulberry = s => () => { s |= 0; s = s + 0x6D2B79F5 | 0; let t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+const hsl = (h, s, l) => { const f = n => { const k = (n + h / 30) % 12, a = s * Math.min(l, 1 - l); return l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1)); }; return [f(0), f(8), f(4)].map(x => Math.round(255 * x)); };
+const newCanvas = () => { const c = document.createElement('canvas'); c.width = c.height = PIC_PX; return c; };
+// stained glass: panes round seeded points, each pane a colour of the face's family, the lead between them dark
+function glassFace(f) { const c = newCanvas(), g = c.getContext('2d'), img = g.createImageData(PIC_PX, PIC_PX), rnd = mulberry(9173 + 131 * f);
+    const base = [205, 25, 45, 150, 280, 330][f], pts = [], m = 7;
+    for (let i = 0; i < m; i++) for (let j = 0; j < m; j++) pts.push([(j + 0.15 + 0.7 * rnd()) / m, (i + 0.15 + 0.7 * rnd()) / m]);
+    const cols = pts.map(([x, y]) => { const r = Math.hypot(x - 0.5, y - 0.5), h = (base + (rnd() - 0.5) * 70 + (r < 0.18 ? 180 : 0) + 360) % 360;
+        return hsl(h, 0.55 + 0.35 * rnd(), 0.36 + 0.26 * rnd()); });
+    const d = img.data;
+    for (let y = 0; y < PIC_PX; y++) for (let x = 0; x < PIC_PX; x++) { const u = (x + 0.5) / PIC_PX, w = (y + 0.5) / PIC_PX;
+        let d1 = Infinity, d2 = Infinity, k1 = 0;
+        for (let k = 0; k < pts.length; k++) { const dx = u - pts[k][0], dy = w - pts[k][1], q = dx * dx + dy * dy; if (q < d1) { d2 = d1; d1 = q; k1 = k; } else if (q < d2) d2 = q; }
+        const lead = Math.sqrt(d2) - Math.sqrt(d1) < 0.011 || u < 0.012 || u > 0.988 || w < 0.012 || w > 0.988, o = 4 * (y * PIC_PX + x);
+        const shade = 1 - 0.35 * Math.min(1, Math.hypot(u - 0.5, w - 0.5) * 1.3), cc = cols[k1];
+        d[o] = lead ? 22 : cc[0] * shade; d[o + 1] = lead ? 18 : cc[1] * shade; d[o + 2] = lead ? 14 : cc[2] * shade; d[o + 3] = 255; }
+    g.putImageData(img, 0, 0); return c; }
+// a labelled grid: 4 × 4 squares, each named by its column letter and row number, the face's name in the middle
+function gridFace(f) { const c = newCanvas(), g = c.getContext('2d'), s = PIC_PX / 4, base = [205, 25, 45, 150, 280, 330][f];
+    for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) { const col = hsl(base, 0.5, (i + j) % 2 ? 0.30 : 0.52);
+        g.fillStyle = `rgb(${col})`; g.fillRect(j * s, i * s, s, s); g.fillStyle = 'rgba(255,255,255,0.85)'; g.font = `500 ${s * 0.34}px DM Mono, monospace`;
+        g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('ABCD'[j] + (4 - i), j * s + s / 4, i * s + s / 4); }
+    g.fillStyle = 'rgba(10,10,16,0.75)'; g.fillRect(PIC_PX * 0.3, PIC_PX * 0.4, PIC_PX * 0.4, PIC_PX * 0.2);
+    g.fillStyle = '#fff'; g.font = `500 ${PIC_PX * 0.11}px DM Mono, monospace`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(FACES[f].split(' ')[0], PIC_PX / 2, PIC_PX / 2);
+    return c; }
+// a picture of one's own on every face, cropped to fill it
+function ownFace(img) { const c = newCanvas(), g = c.getContext('2d'), w = img.naturalWidth || img.width, h = img.naturalHeight || img.height, s = Math.max(PIC_PX / w, PIC_PX / h);
+    g.drawImage(img, (PIC_PX - w * s) / 2, (PIC_PX - h * s) / 2, w * s, h * s); return c; }
+const PICS = { kind: '', canvases: [], pixels: [] };
+function setPictures(kind, img) { PICS.kind = kind; PICS.canvases = [0, 1, 2, 3, 4, 5].map(f => kind === 'grid' ? gridFace(f) : kind === 'own' && img ? ownFace(img) : glassFace(f));
+    PICS.pixels = PICS.canvases.map(c => c.getContext('2d').getImageData(0, 0, PIC_PX, PIC_PX).data); PICS.version = (PICS.version || 0) + 1; }
+// the colour at (u, w) of a face's picture: the pixel the point falls in
+function pixelAt(face, uv) { const x = Math.min(PIC_PX - 1, Math.max(0, Math.floor(uv[0] * PIC_PX))), y = Math.min(PIC_PX - 1, Math.max(0, Math.floor((1 - uv[1]) * PIC_PX)));
+    const d = PICS.pixels[face], o = 4 * (y * PIC_PX + x); return [d[o], d[o + 1], d[o + 2]]; }
+
+// every address read from P with the wedge turned by R, in a box E, the world scaled by k: the address, the face and point
+// its ray meets, how far (the writer's), and the colour that arrives along it (the paint)
+function read(st) { const k = st.k, E = st.E.map(x => x * k), P = st.P.map(x => x * k);
+    return addresses(st.n).map(a => { const d = apply(st.R, [a.h, a.v, a.v2]), hit = hitBox(P, d, E), uv = uvOf(hit.face, hit.p, E);
+        return { ...a, d, p: hit.p, t: hit.t, face: hit.face, uv, rgb: pixelAt(hit.face, uv) }; }); }
+function counts(list, Hr = 1, k = 1) { const n = list.length, c = { vh: 0, v2h: 0, v2v: 0, near: 0, within: 0, faces: [0, 0, 0, 0, 0, 0] };
+    for (const a of list) { if (a.v <= a.h) c.vh++; if (a.v2 <= a.h) c.v2h++; if (a.v2 <= a.v) c.v2v++; if (a.v <= a.h && a.v2 <= a.h) c.near++;
+        if (a.t / k < Hr) c.within++; if (a.face >= 0) c.faces[a.face]++; }
+    return { vh: c.vh / n, v2h: c.v2h / n, v2v: c.v2v / n, near: c.near / n, within: c.within / n, faces: c.faces.map(x => x / n) }; }
+// the ghost: the box made g times as large about the reader, its pictures with it (every point P + g·(p − P)). Each
+// address's ray meets the ghost at the same face and the same place of its picture, g times as far: the paint is the same
+function ghost(st, g) { const k = st.k, E = st.E.map(x => x * k), P = st.P.map(x => x * k), Eg = E.map(x => x * g), Pg = P.map(x => x * g);
+    const L = read(st); let differ = 0, uv = 0, far = 0;
+    for (const a of L) { const hit = hitBox(Pg, a.d, Eg), q = uvOf(hit.face, hit.p, Eg), rgb = pixelAt(hit.face, q);
+        if (hit.face !== a.face || rgb.some((x, i) => x !== a.rgb[i])) differ++;
+        uv = Math.max(uv, Math.abs(q[0] - a.uv[0]), Math.abs(q[1] - a.uv[1])); far = Math.max(far, Math.abs(hit.t / (g * a.t) - 1)); }
+    return { n: L.length, differ, uv, far }; }
+// how many addresses change colour between two states: the payload moving while the addresses stay
+function changed(stA, stB) { const A = read(stA), B = read(stB); let n = 0, same = 0;
+    for (let i = 0; i < A.length; i++) { if (A[i].rgb.some((x, q) => x !== B[i].rgb[q])) n++; same = Math.max(same, Math.abs(A[i].h - B[i].h) + Math.abs(A[i].v - B[i].v) + Math.abs(A[i].v2 - B[i].v2)); }
+    return { changed: n / A.length, addressMoved: same }; }
+window.__GB = { RAD, LAT0, C0, dot, cross, unit, apply, rotOf, anglesOfRot, octantRot, addresses, hitBox, FACES, FACE_BASIS, uvOf,
+    PICS, PIC_PX, setPictures, pixelAt, read, counts, ghost, changed };
+setPictures('glass');
+})();
+setTimeout(() => { if (!window.__glassBox || !window.__glassBox.ready) { const n = document.getElementById('nogl');
+    n.firstElementChild.innerHTML = 'three.js could not be loaded from cdn.jsdelivr.net.<br>Check the connection and reload.'; n.style.display = 'grid'; } }, 12000);
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+const G = window.__GB, $ = id => document.getElementById(id), qs = new URLSearchParams(location.search);
+const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+
+// ── state ─────────────────────────────────────────────────────────────────────────────────────────────────────────────
+const DEF = { E: [10, 10, 10], P: [-2.5, -2.5, -2.5], ang: { lon: 45, lat: G.LAT0, roll: 0 }, lgH: 0.2, lk: 0, n: 64, lg: Math.log10(2) };
+const S = { E: DEF.E.slice(), P: DEF.P.slice(), R: G.rotOf(DEF.ang.lon, DEF.ang.lat, DEF.ang.roll), lgH: DEF.lgH, lk: DEF.lk, n: DEF.n, lg: DEF.lg,
+    ghost: false, rays: true, light: true, spin: false, wander: false, hover: null, view: 'writer' };
+const H = () => 10 ** S.lgH, K = () => 10 ** S.lk, GG = () => 10 ** S.lg;
+const st = () => ({ E: S.E, P: S.P, R: S.R, k: K(), n: S.n });
+const keepInside = () => { S.P = S.P.map((x, i) => clamp(x, -S.E[i] / 2 + 0.05, S.E[i] / 2 - 0.05)); };
+if (qs.has('box')) { const b = qs.get('box').split(',').map(Number); if (b.length === 3 && b.every(x => x >= 2 && x <= 24)) S.E = b; }
+for (const [i, a] of ['x', 'y', 'z'].entries()) if (qs.has(a)) S.P[i] = +qs.get(a) || 0;
+if (qs.has('lon') || qs.has('lat') || qs.has('roll')) S.R = G.rotOf(qs.has('lon') ? +qs.get('lon') : 45, qs.has('lat') ? +qs.get('lat') : G.LAT0, +qs.get('roll') || 0);
+if (qs.has('H')) S.lgH = clamp(Math.log10(+qs.get('H') || 1.6), -0.7, 0.9);
+if (qs.has('k')) S.lk = clamp(+qs.get('k') || 0, -3, 3);
+if (['16', '32', '64', '128'].includes(qs.get('n'))) S.n = +qs.get('n');
+if (qs.has('ghost')) { S.ghost = true; S.lg = clamp(Math.log10(+qs.get('ghost') || 2), -0.7, 0.7); }
+if (qs.get('rays') === '0') S.rays = false;
+if (qs.get('light') === '0') S.light = false;
+if (['writer', 'reader'].includes(qs.get('view'))) S.view = qs.get('view');
+if (qs.get('pic') === 'grid') G.setPictures('grid');
+keepInside();
+
+// ── the scene, drawn at k = 1 (scaling the world changes only the numbers on it) ─────────────────────────────────────────
+const canvas = $('stage');
+let renderer = null; try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); } catch (e) { $('nogl').style.display = 'grid'; }
+const scene = new THREE.Scene();
+const camW = new THREE.OrthographicCamera(-1, 1, 1, -1, -400, 400); camW.position.set(19, 14, 27);
+const camR = new THREE.PerspectiveCamera(118, innerWidth / innerHeight, 0.01, 400);
+let camera = camW, controls = null;
+if (renderer) { renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1)); renderer.outputColorSpace = THREE.SRGBColorSpace;
+    controls = new OrbitControls(camW, canvas); controls.enableDamping = true; controls.dampingFactor = 0.08; controls.minZoom = 0.3; controls.maxZoom = 8; }
+const lines = (col, op, vc = false) => { const l = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: vc ? 0xffffff : col, vertexColors: vc, transparent: true, opacity: op, depthWrite: false })); l.frustumCulled = false; scene.add(l); return l; };
+const setPos = (obj, arr) => { obj.geometry.setAttribute('position', new THREE.Float32BufferAttribute(arr, 3)); obj.geometry.computeBoundingSphere(); };
+const sprite = (h = 0.55, wide = 1) => { const c = document.createElement('canvas'); c.width = 512 * wide; c.height = 64;
+    const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(c), transparent: true, depthTest: false }));
+    s.scale.set(h * 8 * wide, h, 1); s.renderOrder = 6; s.userData.c = c; scene.add(s); return s; };
+const write = (s, txt, col = '#dbe6ff') => { const c = s.userData.c, g = c.getContext('2d'), W = c.width; g.clearRect(0, 0, W, 64);
+    g.font = '30px DM Mono, monospace'; g.textAlign = 'center'; g.fillStyle = 'rgba(10,13,24,0.55)'; const w = Math.min(W, g.measureText(txt).width + 18);
+    g.fillRect(W / 2 - w / 2, 10, w, 44); g.fillStyle = col; g.fillText(txt, W / 2, 43); s.material.map.needsUpdate = true; };
+
+// the writer: the box, its six pictures (each face as seen from inside), its edges; a face turned toward the writer's eye
+// is left out so the inside shows (a cut-away), its outline kept
+const boxEdges = lines(0x7fb2ff, 0.75), ghostEdges = lines(0xffffff, 0.35);
+const faceTex = [], faceMesh = [];
+for (let f = 0; f < 6; f++) { const tex = new THREE.CanvasTexture(G.PICS.canvases[f]); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4; faceTex.push(tex);
+    const m = new THREE.Mesh(new THREE.BufferGeometry(), new THREE.MeshBasicMaterial({ map: tex, side: THREE.DoubleSide })); scene.add(m); faceMesh.push(m); }
+let picVersion = G.PICS.version;
+function faceGeometry(f, E) { const B = G.FACE_BASIS[f], c = B.n.map((x, i) => x * E[i] / 2), [ar] = [B.right.findIndex(x => x)], [au] = [B.up.findIndex(x => x)];
+    const at = (u, w) => c.map((x, i) => x + (u - 0.5) * E[ar] * B.right[i] + (w - 0.5) * E[au] * B.up[i]);
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute([...at(0, 0), ...at(1, 0), ...at(1, 1), ...at(0, 1)], 3));
+    g.setAttribute('uv', new THREE.Float32BufferAttribute([0, 0, 1, 0, 1, 1, 0, 1], 2)); g.setIndex([0, 1, 2, 0, 2, 3]); return g; }
+const boxLab = sprite(0.6, 2);
+// the reader: a group at P, turned by R, scaled by H; the sphere faint, the wedge's patch painted by what arrives
+const wedgeG = new THREE.Group(); scene.add(wedgeG);
+const sphereW = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.SphereGeometry(1, 32, 16)), new THREE.LineBasicMaterial({ color: 0x8a8a96, transparent: true, opacity: 0.14, depthWrite: false }));
+wedgeG.add(sphereW);
+// the painted addresses: an n × n canvas laid on the octant by Lambert's map (u the azimuth's share, w the height)
+const paintC = document.createElement('canvas'), paintTex = new THREE.CanvasTexture(paintC);
+paintTex.colorSpace = THREE.SRGBColorSpace; paintTex.magFilter = THREE.NearestFilter; paintTex.minFilter = THREE.NearestFilter; paintTex.generateMipmaps = false;
+const patch = (() => { const m = 64, pos = [], uv = [], idx = [];
+    for (let i = 0; i <= m; i++) for (let j = 0; j <= m; j++) { const v = i / m, ps = j / m * Math.PI / 2, c = Math.sqrt(1 - v * v);
+        pos.push(c * Math.cos(ps), v, c * Math.sin(ps)); uv.push(j / m, i / m); }
+    for (let i = 0; i < m; i++) for (let j = 0; j < m; j++) { const p = i * (m + 1) + j; idx.push(p, p + 1, p + m + 1, p + 1, p + m + 2, p + m + 1); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(idx);
+    return new THREE.Mesh(g, new THREE.MeshBasicMaterial({ map: paintTex, side: THREE.DoubleSide })); })();
+wedgeG.add(patch);
+const homeAxes = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ vertexColors: true }));
+{ const T = new THREE.Color('#8ce6cd'), Gd = new THREE.Color('#d4a052'), V = new THREE.Color('#b59cf0');
+  homeAxes.geometry.setAttribute('position', new THREE.Float32BufferAttribute([0, 0, 0, 1.25, 0, 0, 0, 0, 0, 0, 1.25, 0, 0, 0, 0, 0, 0, 1.25], 3));
+  homeAxes.geometry.setAttribute('color', new THREE.Float32BufferAttribute([T.r, T.g, T.b, T.r, T.g, T.b, Gd.r, Gd.g, Gd.b, Gd.r, Gd.g, Gd.b, V.r, V.g, V.b, V.r, V.g, V.b], 3)); }
+wedgeG.add(homeAxes);
+// each pair's corner (v = h, v₂ = h, v₂ = v): arcs of great circles, from home the triangle's medians; and the wedge's edges
+const cornersG = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineDashedMaterial({ color: 0xffffff, transparent: true, opacity: 0.6, dashSize: 0.05, gapSize: 0.04, depthTest: false }));
+const rimG = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: 0xd4a052, transparent: true, opacity: 0.9, depthTest: false }));
+{ const g = [], r = [], m = 48, arc = (a, b0, out) => { const n = Math.hypot(...b0), b = b0.map(x => x / n);
+      for (let j = 0; j < m; j++) for (const q of [j, j + 1]) { const t = q / m * Math.PI / 2; out.push(...a.map((x, i) => Math.cos(t) * x + Math.sin(t) * b[i])); } };
+  arc([0, 0, 1], [1, 1, 0], g); arc([0, 1, 0], [1, 0, 1], g); arc([1, 0, 0], [0, 1, 1], g);
+  arc([1, 0, 0], [0, 1, 0], r); arc([0, 1, 0], [0, 0, 1], r); arc([0, 0, 1], [1, 0, 0], r);
+  cornersG.geometry.setAttribute('position', new THREE.Float32BufferAttribute(g, 3)); cornersG.computeLineDistances();
+  rimG.geometry.setAttribute('position', new THREE.Float32BufferAttribute(r, 3)); }
+cornersG.renderOrder = rimG.renderOrder = 4; wedgeG.add(cornersG, rimG);
+const apex = new THREE.Mesh(new THREE.SphereGeometry(0.22, 20, 14), new THREE.MeshBasicMaterial({ color: 0xd4a052 })); scene.add(apex);
+// the light: rays from the pixel each address meets, in to the reader, and points of light travelling along them
+const rays = lines(0, 0.28, true), ghostRays = lines(0xffffff, 0.12);
+const photons = new THREE.Points(new THREE.BufferGeometry(), new THREE.PointsMaterial({ vertexColors: true, size: 0.2, sizeAttenuation: true, transparent: true, opacity: 0.95, depthWrite: false }));
+photons.frustumCulled = false; scene.add(photons);
+const hoverL = lines(0xffffff, 0.95), hoverBall = new THREE.Mesh(new THREE.SphereGeometry(0.15, 14, 10), new THREE.MeshBasicMaterial({ color: 0xffffff }));
+hoverBall.visible = false; scene.add(hoverBall);
+
+// ── drawing ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+let L = [], CN = null, GH = null, frames = 0, SUB = [];
+const fmt = x => { const a = Math.abs(x); return a >= 1000 || (a > 0 && a < 0.01) ? x.toExponential(2) : x.toFixed(a >= 100 ? 1 : 2); };
+let lastBoxKey = '';
+function drawBox() { const E = S.E, k = K(), key = E.join() + '|' + S.lk + '|' + S.lg; if (key === lastBoxKey) return; lastBoxKey = key;
+    const edges = (c, sc) => { const [a, b, cc] = E.map(x => x * sc / 2), v = [[-a, -b, -cc], [a, -b, -cc], [a, b, -cc], [-a, b, -cc], [-a, -b, cc], [a, -b, cc], [a, b, cc], [-a, b, cc]].map(p => p.map((x, i) => x + c[i])), ed = [];
+        for (const [i, j] of [[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4], [0, 4], [1, 5], [2, 6], [3, 7]]) ed.push(...v[i], ...v[j]); return ed; };
+    setPos(boxEdges, edges([0, 0, 0], 1));
+    for (let f = 0; f < 6; f++) { faceMesh[f].geometry.dispose(); faceMesh[f].geometry = faceGeometry(f, E); }
+    boxLab.position.set(0, E[1] / 2 + 0.9, -E[2] / 2); write(boxLab, `the writer's box, ${fmt(E[0] * k)} × ${fmt(E[1] * k)} × ${fmt(E[2] * k)}`, '#7fb2ff'); }
+function drawGhost() { const g = GG(), P = S.P, E = S.E, c = P.map(x => x * (1 - g));
+    const [a, b, cc] = E.map(x => x * g / 2), v = [[-a, -b, -cc], [a, -b, -cc], [a, b, -cc], [-a, b, -cc], [-a, -b, cc], [a, -b, cc], [a, b, cc], [-a, b, cc]].map(p => p.map((x, i) => x + c[i])), ed = [];
+    for (const [i, j] of [[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4], [0, 4], [1, 5], [2, 6], [3, 7]]) ed.push(...v[i], ...v[j]);
+    setPos(ghostEdges, ed); const gr = [];
+    for (const i of SUB) { const a = L[i], q = a.p.map(x => x / K()); gr.push(...q, ...P.map((x, j) => x + g * (q[j] - x))); }
+    setPos(ghostRays, gr); }
+function paint() { const n = S.n; paintC.width = paintC.height = n; const g = paintC.getContext('2d'), img = g.createImageData(n, n);
+    for (const a of L) { const o = 4 * ((n - 1 - a.i) * n + a.j); img.data[o] = a.rgb[0]; img.data[o + 1] = a.rgb[1]; img.data[o + 2] = a.rgb[2]; img.data[o + 3] = 255; }
+    g.putImageData(img, 0, 0); paintTex.dispose(); paintTex.image = paintC; paintTex.needsUpdate = true; }
+function draw() {
+    if (picVersion !== G.PICS.version) { picVersion = G.PICS.version; for (let f = 0; f < 6; f++) { faceTex[f].image = G.PICS.canvases[f]; faceTex[f].needsUpdate = true; } }
+    drawBox(); keepInside();
+    const k = K(), Hr = H(), P = S.P, R = S.R;
+    L = G.read(st()); CN = G.counts(L, Hr, k); GH = S.ghost ? G.ghost(st(), GG()) : null; paint();
+    wedgeG.position.set(...P); wedgeG.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(new THREE.Vector3(...R[0]), new THREE.Vector3(...R[1]), new THREE.Vector3(...R[2])));
+    wedgeG.scale.setScalar(Hr); apex.position.set(...P);
+    // a few hundred of the rays, spread evenly over the addresses
+    const step = Math.max(1, Math.round(S.n / 18)); SUB = [];
+    for (const a of L) if (a.i % step === Math.floor(step / 2) && a.j % step === Math.floor(step / 2)) SUB.push(a.i * S.n + a.j);
+    const rp = [], rc = [];
+    for (const i of SUB) { const a = L[i], q = a.p.map(x => x / k), c = a.rgb.map(x => x / 255); rp.push(...q, ...P); rc.push(...c, ...c); }
+    setPos(rays, rp); rays.geometry.setAttribute('color', new THREE.Float32BufferAttribute(rc, 3));
+    const pc = []; for (const i of SUB) pc.push(...L[i].rgb.map(x => x / 255)); photons.geometry.setAttribute('color', new THREE.Float32BufferAttribute(pc, 3));
+    setPos(photons, new Array(SUB.length * 3).fill(0));
+    if (S.ghost) drawGhost();
+    applyView();
+    const hv = S.hover != null ? L[S.hover] : null; hoverL.visible = hoverBall.visible = !!hv && S.view === 'writer';
+    if (hv) { const q = hv.p.map(x => x / k); setPos(hoverL, [...P, ...q]); hoverBall.position.set(...q); }
+    hud(); drawMap(); syncCtl();
+}
+function applyView() { const v = S.view, P = S.P;
+    for (const o of [boxEdges, boxLab, ...faceMesh]) o.visible = v === 'writer';
+    rays.visible = v === 'writer' && S.rays; photons.visible = v === 'writer' && S.light;
+    ghostEdges.visible = ghostRays.visible = v === 'writer' && S.ghost;
+    sphereW.visible = homeAxes.visible = apex.visible = v === 'writer';
+    if (v === 'writer') { camera = camW; if (controls) controls.enabled = true; }
+    else { camera = camR; if (controls) controls.enabled = false; const c = G.apply(S.R, G.C0), up = Math.abs(c[1]) > 0.98 ? [0, 0, 1] : [0, 1, 0];
+        camR.position.set(...P); camR.up.set(...up); camR.lookAt(P[0] + c[0], P[1] + c[1], P[2] + c[2]); camR.updateProjectionMatrix(); }
+    ray.params.Points.threshold = 0.18;
+    for (const b of document.querySelectorAll('#vant button')) b.classList.toggle('on', b.dataset.v === v);
+    for (const b of document.querySelectorAll('#pics button')) b.classList.toggle('on', b.dataset.p === G.PICS.kind);
+    $('vcap').innerHTML = VCAP[v]; $('hint').innerHTML = HINT[v]; }
+// the cut-away: a face whose outside is turned toward the writer's eye is not drawn, so the inside shows
+function cutAway() { if (S.view !== 'writer') return; const d = camW.getWorldDirection(new THREE.Vector3());
+    for (let f = 0; f < 6; f++) { const n = G.FACE_BASIS[f].n; faceMesh[f].visible = n[0] * d.x + n[1] * d.y + n[2] * d.z > 0.02; } }
+const VCAP = {
+    writer: `<b class="blue">The writer</b>: the box whole, its pictures, the reader's place in it, every point three amounts. The faces turned toward you are cut away. Light leaves each pixel and travels in, through the wedge, to the reader; it paints the address it arrives along.`,
+    reader: `<b class="gold">The reader</b>, from its standpoint, looking out down the wedge: the triangle h + v + v₂ = 1, its medians the pairs' corners. Each address holds the colour that arrived along it. No box, no number line, no distance: the same picture from a box g times as large.` };
+const HINT = {
+    writer: 'Drag the gold ball to move the reader (arrows, page up/down too). Drag elsewhere to turn the view, scroll to zoom. Point at the wedge for an address, where its light came from and how far.',
+    reader: 'You stand where the reader stands. Move it with the arrows or the sliders, turn the wedge, scale the world, show the ghost: the addresses stay, only the colours change, and the ghost changes none.' };
+
+// ── the readout ───────────────────────────────────────────────────────────────────────────────────────────────────────
+const pct = x => (100 * x).toFixed(1) + '%';
+const rgbTxt = c => `rgb(${c.join(', ')})`;
+function hud() { const k = K(), c = CN, n = L.length, hv = S.hover != null ? L[S.hover] : null, g = GG();
+    const shares = `v ≤ h ${pct(c.vh)}, v₂ ≤ h ${pct(c.v2h)}, v₂ ≤ v ${pct(c.v2v)}, the near field ${pct(c.near)}`;
+    const gh = GH ? `\nthe ghost, ${fmt(g)} times the box about the reader, its pictures with it: ${(GH.n - GH.differ).toLocaleString('en')} of ${GH.n.toLocaleString('en')} addresses painted alike` : '';
+    if (S.view === 'reader') { let s = `from home the reader holds ${n.toLocaleString('en')} addresses [h : v : v₂], given, and a colour arriving along each\n` +
+            `${shares}: the same wherever it stands or faces, whatever the box, H and k\n` +
+            `no distance arrives: the light of ${pct(c.within)} of the addresses started within H of the reader, painted like the rest${gh}`;
+        if (hv) { const m = Math.max(hv.h, hv.v, hv.v2); s += `\n\naddress [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}], painted ${rgbTxt(hv.rgb)}; from how far, never`; }
+        $('hud').textContent = s; return; }
+    let s = `the writer holds the box, ${S.E.map(x => fmt(x * k)).join(' × ')}, its pictures, and the reader at (${S.P.map(x => fmt(x * k)).join(', ')}): amounts and pixels\n` +
+        `the reader holds ${n.toLocaleString('en')} addresses (given): ${shares}\n` +
+        `each painted by the pixel its ray meets: ` + c.faces.map((x, i) => x > 0 ? `${G.FACES[i]} ${pct(x)}` : null).filter(Boolean).join(', ') + '\n' +
+        `the light of ${pct(c.within)} of them started within H = ${fmt(H())} of the reader, painted the same way${gh}`;
+    if (hv) { const m = Math.max(hv.h, hv.v, hv.v2);
+        s += `\n\naddress [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}] (the reader's), painted ${rgbTxt(hv.rgb)}\n` +
+            `its light left face ${G.FACES[hv.face]} at (${hv.p.map(fmt).join(', ')}), pixel (${hv.uv.map(x => x.toFixed(3)).join(', ')}) of its picture\n` +
+            `and came ${fmt(hv.t)} to the reader: the writer's amount; no colour carries it`; }
+    $('hud').textContent = s; }
+// the inset: Lambert's map of the wedge, each cell the colour that arrived; the pairs' corners dashed
+const map = $('map'), mg = map.getContext('2d');
+function drawMap() { if (innerWidth < 1100) return; const W = map.width; mg.imageSmoothingEnabled = false; mg.clearRect(0, 0, W, W); mg.drawImage(paintC, 0, 0, W, W);
+    mg.setLineDash([7, 6]); mg.lineWidth = 2;
+    const curve = (f, col) => { mg.strokeStyle = col; mg.beginPath(); for (let q = 0; q <= 64; q++) { const ps = q / 64 * Math.PI / 2, v = f(ps); q ? mg.lineTo(q / 64 * W, W - v * W) : mg.moveTo(0, W - v * W); } mg.stroke(); };
+    curve(ps => Math.cos(ps) / Math.sqrt(1 + Math.cos(ps) ** 2), 'rgba(255,255,255,0.85)');
+    curve(ps => Math.sin(ps) / Math.sqrt(1 + Math.sin(ps) ** 2), 'rgba(255,255,255,0.6)');
+    mg.strokeStyle = 'rgba(255,255,255,0.6)'; mg.beginPath(); mg.moveTo(W / 2, 0); mg.lineTo(W / 2, W); mg.stroke(); mg.setLineDash([]);
+    const hv = S.hover != null ? L[S.hover] : null, c = W / S.n; if (hv) { mg.strokeStyle = '#fff'; mg.lineWidth = 3; mg.strokeRect(hv.j * c, W - (hv.i + 1) * c, c, c); } }
+map.addEventListener('pointermove', e => { const r = map.getBoundingClientRect(), j = Math.floor((e.clientX - r.left) / r.width * S.n), i = Math.floor((1 - (e.clientY - r.top) / r.height) * S.n);
+    const idx = i >= 0 && i < S.n && j >= 0 && j < S.n ? i * S.n + j : null; if (idx !== S.hover) { S.hover = idx; dirty = true; } });
+map.addEventListener('pointerleave', () => { S.hover = null; dirty = true; });
+
+// ── controls ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+let dirty = true;
+const out = (id, txt) => { $(id).textContent = txt; };
+function syncCtl() { const k = K(), a = G.anglesOfRot(S.R);
+    ['px', 'py', 'pz'].forEach((id, i) => { const el = $(id); el.min = -S.E[i] / 2 + 0.05; el.max = S.E[i] / 2 - 0.05; if (document.activeElement !== el) el.value = S.P[i]; out(id + 'o', fmt(S.P[i] * k)); });
+    for (const [id, v] of [['lon', a.lon], ['lat', a.lat], ['roll', a.roll]]) { if (document.activeElement !== $(id)) $(id).value = v; out(id + 'o', v.toFixed(1) + '°'); }
+    if (document.activeElement !== $('lgH')) $('lgH').value = S.lgH; out('lgHo', fmt(H()));
+    if (document.activeElement !== $('lg')) $('lg').value = S.lg; out('lgo', fmt(GG()) + '×');
+    ['bx', 'by', 'bz'].forEach((id, i) => { if (document.activeElement !== $(id)) $(id).value = S.E[i]; out(id + 'o', fmt(S.E[i] * k)); });
+    if (document.activeElement !== $('lk')) $('lk').value = S.lk; out('lko', 'k = ' + (k >= 100 || k < 0.01 ? k.toExponential(1) : k.toFixed(2)));
+    $('bN').textContent = `addresses ${S.n} × ${S.n}`; $('bRays').classList.toggle('on', S.rays); $('bLight').classList.toggle('on', S.light);
+    $('bGhost').classList.toggle('on', S.ghost); $('bSpin').classList.toggle('on', S.spin); $('bWander').classList.toggle('on', S.wander); }
+['px', 'py', 'pz'].forEach((id, i) => $(id).addEventListener('input', e => { S.P[i] = +e.target.value; dirty = true; }));
+const turnFromSliders = () => { S.R = G.rotOf(+$('lon').value, +$('lat').value, +$('roll').value); dirty = true; };
+['lon', 'lat', 'roll'].forEach(id => $(id).addEventListener('input', turnFromSliders));
+$('lgH').addEventListener('input', e => { S.lgH = +e.target.value; dirty = true; });
+$('lg').addEventListener('input', e => { S.lg = +e.target.value; S.ghost = true; lastBoxKey = ''; dirty = true; });
+['bx', 'by', 'bz'].forEach((id, i) => $(id).addEventListener('input', e => { S.E[i] = +e.target.value; dirty = true; }));
+$('lk').addEventListener('input', e => { S.lk = +e.target.value; lastBoxKey = ''; dirty = true; });
+let octI = 0; const OCTS = [[1, 1, 1], [-1, 1, 1], [-1, 1, -1], [1, 1, -1], [1, -1, 1], [-1, -1, 1], [-1, -1, -1], [1, -1, -1]];
+$('bOct').onclick = () => { octI = (octI + 1) % 8; S.R = G.octantRot(OCTS[octI]); S.spin = false; dirty = true; };
+$('bAny').onclick = () => { const u = Math.random(), lat = Math.asin(2 * u - 1) / G.RAD; S.R = G.rotOf(360 * Math.random() - 180, lat, 360 * Math.random() - 180); S.spin = false; dirty = true; };
+$('bSpin').onclick = () => { S.spin = !S.spin; dirty = true; };
+$('bWander').onclick = () => { S.wander = !S.wander; wanderT = 0; wanderFrom = S.P.slice(); dirty = true; };
+$('bGhost').onclick = () => { S.ghost = !S.ghost; lastBoxKey = ''; dirty = true; };
+$('bN').onclick = () => { S.n = S.n === 16 ? 32 : S.n === 32 ? 64 : S.n === 64 ? 128 : 16; S.hover = null; dirty = true; };
+$('bRays').onclick = () => { S.rays = !S.rays; dirty = true; };
+$('bLight').onclick = () => { S.light = !S.light; dirty = true; };
+$('bReset').onclick = () => { Object.assign(S, { E: DEF.E.slice(), P: DEF.P.slice(), R: G.rotOf(DEF.ang.lon, DEF.ang.lat, DEF.ang.roll), lgH: DEF.lgH, lk: DEF.lk, n: DEF.n, lg: DEF.lg,
+    ghost: false, rays: true, light: true, spin: false, wander: false, hover: null }); lastBoxKey = ''; dirty = true; };
+for (const b of document.querySelectorAll('#pics button')) b.onclick = () => { if (b.dataset.p === 'own') { $('own').click(); return; } G.setPictures(b.dataset.p); dirty = true; };
+$('own').addEventListener('change', e => { const f = e.target.files && e.target.files[0]; if (!f) return; const img = new Image(), url = URL.createObjectURL(f);
+    img.onload = () => { G.setPictures('own', img); URL.revokeObjectURL(url); dirty = true; }; img.src = url; });
+$('fold').onclick = () => { const p = $('panel'); p.classList.toggle('folded'); $('fold').textContent = p.classList.contains('folded') ? '▴' : '▾'; };
+addEventListener('keydown', e => { if (e.target.tagName === 'INPUT') return; const s = 0.25, m = { ArrowLeft: [0, -s], ArrowRight: [0, s], ArrowUp: [2, -s], ArrowDown: [2, s], PageUp: [1, s], PageDown: [1, -s] }[e.key];
+    if (m) { S.P[m[0]] += m[1]; dirty = true; e.preventDefault(); }
+    const v = { '1': 'writer', '2': 'reader' }[e.key]; if (v) setView(v); });
+// drag the gold ball: move the reader in the plane through it facing the camera; elsewhere the view turns; point at the wedge
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+const toNdc = e => { const r = canvas.getBoundingClientRect(); ndc.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1); ray.setFromCamera(ndc, camera); };
+let drag = null;
+canvas.addEventListener('pointerdown', e => { toNdc(e); if (S.view === 'writer' && ray.intersectObject(apex).length) {
+    const n = camera.getWorldDirection(new THREE.Vector3()), pl = new THREE.Plane().setFromNormalAndCoplanarPoint(n, apex.position.clone()), at = ray.ray.intersectPlane(pl, new THREE.Vector3());
+    drag = { pl, off: apex.position.clone().sub(at || apex.position) }; if (controls) controls.enabled = false; canvas.setPointerCapture(e.pointerId); S.wander = false; } });
+canvas.addEventListener('pointermove', e => { toNdc(e);
+    if (drag) { const at = ray.ray.intersectPlane(drag.pl, new THREE.Vector3()); if (at) { at.add(drag.off); S.P = [at.x, at.y, at.z]; dirty = true; } return; }
+    const h = ray.intersectObject(patch, false)[0]; let idx = null;
+    if (h && h.uv) { const j = Math.min(S.n - 1, Math.floor(h.uv.x * S.n)), i = Math.min(S.n - 1, Math.floor(h.uv.y * S.n)); idx = i * S.n + j; }
+    if (idx !== S.hover) { S.hover = idx; dirty = true; }
+    canvas.style.cursor = S.view === 'writer' && ray.intersectObject(apex).length ? 'move' : S.view === 'reader' ? 'crosshair' : 'grab'; });
+canvas.addEventListener('pointerup', () => { if (drag) { drag = null; if (controls) controls.enabled = true; } });
+canvas.addEventListener('pointerleave', () => { if (S.hover != null && !drag) { S.hover = null; dirty = true; } });
+const setView = v => { if (v === S.view) return; S.view = v; S.hover = null; dirty = true; };
+for (const b of document.querySelectorAll('#vant button')) b.onclick = () => setView(b.dataset.v);
+
+// ── animation: the light travelling in; spin turns the wedge; wander walks the reader through the box ─────────────────
+let wanderT = 0, wanderFrom = S.P.slice(), last = performance.now(), lightT = 0;
+function animate(dt) { if (S.spin) { const a = G.anglesOfRot(S.R); S.R = G.rotOf(((a.lon + 24 * dt + 180) % 360) - 180, a.lat, a.roll); dirty = true; }
+    if (S.wander) { wanderT += dt; const t = wanderT * 0.3; S.P = [0.36 * S.E[0] * Math.sin(t), 0.36 * S.E[1] * Math.sin(1.7 * t + 0.6), 0.36 * S.E[2] * Math.sin(1.3 * t + 1.1)].map((x, i) => wanderT < 1 ? wanderFrom[i] + (x - wanderFrom[i]) * wanderT : x); dirty = true; }
+    lightT += dt; }
+function moveLight() { if (!photons.visible || !SUB.length) return; const P = S.P, k = K(), pos = photons.geometry.attributes.position;
+    for (let q = 0; q < SUB.length; q++) { const a = L[SUB[q]], s = (lightT * 0.45 + ((q * 0.618034) % 1)) % 1, from = a.p.map(x => x / k);
+        pos.setXYZ(q, from[0] + s * (P[0] - from[0]), from[1] + s * (P[1] - from[1]), from[2] + s * (P[2] - from[2])); }
+    pos.needsUpdate = true; }
+function resize() { const w = innerWidth, h = innerHeight; if (renderer) renderer.setSize(w, h, false);
+    camR.aspect = w / h; camR.updateProjectionMatrix();
+    const half = 0.85 * Math.max(...DEF.E); camW.left = -half * w / h; camW.right = half * w / h; camW.top = half; camW.bottom = -half; camW.updateProjectionMatrix(); dirty = true; }
+addEventListener('resize', resize);
+function loop(now) { const dt = Math.min(0.05, (now - last) / 1000); last = now; animate(dt);
+    if (dirty) { draw(); dirty = false; }
+    if (controls && S.view === 'writer') controls.update(); cutAway(); moveLight();
+    if (renderer) { renderer.render(scene, camera); frames++; }
+    requestAnimationFrame(loop); }
+if (controls) { controls.target.set(0, 0, 0); controls.update(); }
+if (innerWidth < 760) { $('panel').classList.add('folded'); $('fold').textContent = '▴'; }
+if (qs.get('spin') === '1') S.spin = true;
+resize(); draw();
+document.fonts?.ready.then(() => { if (G.PICS.kind === 'grid') G.setPictures('grid'); lastBoxKey = ''; dirty = true; });
+requestAnimationFrame(loop);
+
+// ── test hook ─────────────────────────────────────────────────────────────────────────────────────────────────────────
+window.__glassBox = { ...G, ready: true,
+    // the addresses, where their light comes from and its colour, in the state given (or the page's): { list, counts }
+    readAt(o = {}) { const s = { E: o.E || S.E, P: o.P || S.P, R: o.R || S.R, k: o.k ?? K(), n: o.n || S.n }; const list = G.read(s); return { list, counts: G.counts(list, o.H ?? H(), s.k) }; },
+    ghostAt(g, o = {}) { return G.ghost({ E: o.E || S.E, P: o.P || S.P, R: o.R || S.R, k: o.k ?? K(), n: o.n || S.n }, g); },
+    set(o) { if (o.P) S.P = o.P.slice(); if (o.E) S.E = o.E.slice(); if (o.R) S.R = o.R; if (o.ang) S.R = G.rotOf(o.ang.lon, o.ang.lat, o.ang.roll);
+        if (o.oct) S.R = G.octantRot(o.oct); if (o.lgH != null) S.lgH = o.lgH; if (o.lk != null) S.lk = o.lk; if (o.n) S.n = o.n; if (o.pic) G.setPictures(o.pic);
+        if (o.ghost != null) S.ghost = !!o.ghost; if (o.g != null) S.lg = Math.log10(o.g); if (o.spin != null) S.spin = o.spin; if (o.wander != null) S.wander = o.wander;
+        if (o.hover !== undefined) S.hover = o.hover; if (o.view) { S.view = o.view; S.hover = null; } lastBoxKey = ''; draw(); return this.state(); },
+    state: () => ({ E: S.E.slice(), P: S.P.slice(), R: S.R.map(r => r.slice()), ang: G.anglesOfRot(S.R), H: H(), k: K(), n: S.n, g: GG(), ghost: S.ghost,
+        pic: G.PICS.kind, hover: S.hover, counts: CN, ghostCheck: GH, view: S.view }),
+    camera: () => ({ kind: camera.isOrthographicCamera ? 'orthographic' : 'perspective', at: camera.position.toArray(), fov: camera.fov }),
+    // the paint as the page drew it: the n × n canvas's pixels (Lambert's map, top row the highest addresses)
+    painted() { const g = paintC.getContext('2d'); return Array.from(g.getImageData(0, 0, paintC.width, paintC.height).data); },
+    hud: () => $('hud').textContent, apexScreen() { const v = apex.position.clone().project(camera), r = canvas.getBoundingClientRect(); return [r.left + (v.x + 1) / 2 * r.width, r.top + (1 - v.y) / 2 * r.height]; },
+    get frames() { return frames; }, get webgl() { return !!renderer; } };
+</script>
+</body>
+</html>
