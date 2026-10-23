@@ -888,6 +888,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   reading as the addresses ours; V = H "within this construction"; III.20 gives the meeting, the payload there our
   reading; the 1 returned is H in H. §2 "An address, its reading and its law" (a direction; a coordinate on it; a measure
   on the readings). The abstract closes on the one-sentence thesis (address scheme and magnitude distinct roles).
+  **A computer-science companion** (23 Oct, SPN R463; Tom: "lets write the same paper but for computer science. That is my
+  background and where the motivating ideas of this paper were discovered."): `papers/observation-from-somewhere-cs.md`,
+  "Addresses Given, Payloads Met … for computer science", drawn from OFS under R421 (nothing OFS does not say; where they
+  differ, OFS stands and the companion is fixed): index and value, a measure not a loop, Theorem 6 as order against sum
+  statistics, the array and the floor, floats as Proposition 4, LOD and H as a zoom, K apart from N, OFS §11.4. A change
+  to OFS that touches these is carried out to it.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
