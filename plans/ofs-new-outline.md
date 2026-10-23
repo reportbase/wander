@@ -169,7 +169,7 @@ Ticked when the new text has them. From the record (OFS) and from SPN's rulings 
 ## 4. Order of work
 
 1. Tom approves this outline, and rules on open points A–E (or leaves them to be settled while writing).
-2. The new §1–§3 are written first, since they carry the frame. Tom reads them before the rest.
+2. The new §1–§3 are written first, since they carry the frame. Tom reads them before the rest. (Done 23 Oct, R456: A–F taken as recommended, D as no inside/outside.)
 3. §4–§11 are carried over with the frame's edits, section by section, each checked against the record.
 4. When the draft is whole, the checklist is ticked and the new paper takes over from the record (R421).
 5. The demos that name two readers (central-reader, two-readers, room, room-walk, moon, from-home, blueprint,

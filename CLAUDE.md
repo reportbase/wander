@@ -836,6 +836,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and outside implies a recursive situation, but that can only be speculated about."): the new OFS keeps to the geometry;
   holding, instruments, the head and the reader's acts leave its body (outline point F); writers within writers (R448,
   R449) go to the discussion as speculation (point G); R188's no recursion in the levels stands.
+  **The new OFS begun** (23 Oct, SPN R456; Tom: "proceed"): `papers/observation-from-somewhere.md` now holds the new
+  abstract, §1, §2 and §3 (one reader, the inscribed and central sweeps as geometry, the situations 3 and 4 the paint and
+  the addresses, §3.5 "What the geometry leaves to the reader", no "inside"/"outside"), and §4–§11 carried over from the
+  record unchanged, a draft line at the head saying so. Next: §4–§11 brought into the frame, section by section, each
+  checked against the record; then the draft line goes and the paper is the source of truth again.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
