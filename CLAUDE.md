@@ -816,7 +816,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Cauchy, there wherever the reader looks, laid by looking (it computes, sends and turns through nothing); the rings are
   the world's light along each finger; to read the payload is to read what the light drew, from the same standpoint. The
   payload reader is not a second standpoint or a radius per direction (that is ranging, a writing); R451's "at the centre
-  of what it reads" withdrawn. "The situations in the hand" bullet left for Tom. `central-reader.html` opens with the hand.
+  of what it reads" withdrawn. "The situations in the hand" now has 3 as "the rings, what the light drew on the fingers" (Tom: "yes"). `central-reader.html` opens with the hand.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

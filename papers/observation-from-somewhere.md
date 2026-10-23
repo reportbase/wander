@@ -875,8 +875,8 @@ each finger the same address.
 - *The far field's doublings are fingers.* Past the corner the levels are doublings (§6), addresses laid before
   anything arrives; what lands on them is rings. The fingers sit side by side on one hand, not one inside another.
 - *The situations in the hand.* 0: no hand, nothing to point with and nothing pointed at. 1 and 2: the rings held
-  whole, all at once, with no hand needed to reach them; in 1 every ring is alike, in 2 they differ. 3: the central
-  sweep, which gets the rings, the payloads. 4: the inscribed sweep, which lays the fingers, the addresses to the rings.
+  whole, all at once, with no hand needed to reach them; in 1 every ring is alike, in 2 they differ. 3: the rings,
+  what the light drew on the fingers, the payloads. 4: the inscribed sweep, which lays the fingers, the addresses to the rings.
 - *The hand has two sweeps.* Raised, it sweeps from flat to upright, from H to V: the altitude. Turned, it sweeps
   round from pointing at the other party to pointing square to it, which brings in a second other party, V₂: the
   azimuth. Every way the hand can point, within the positive octant, is one altitude and one azimuth, as every
