@@ -127,3 +127,13 @@ blocks, 1.6 million token positions, two thirds of one pass over WikiText-2's 2.
 step 400. These models are far from trained (the script's ran one pass over about 60,000 steps); a difference between
 horizons that only appears with training would not be seen here, and C1's "within noise" is then weak evidence.
 Nothing else changes.
+
+**What is run, and what is not** (Tom, after the plan: "is this test still worth running. what will it prove?", then
+"yes, proceed" to my answer). The sweep (C1–C4, C7) is not run: the framework makes no prediction about a horizon over
+token positions, so neither outcome would bear on it (the reading above), and the February result is not in hand to
+check. Only the Circle probe's purity (C5, C6) is run, since it is the one place the script claims one of the framework's
+numbers. Its models: softmax and Cauchy K = 163, seed 42, the scale above (400 steps). The probe is the script's
+`probe_circle_attention` copied, changed only to take a cap on the training triples (20,000, as C6 says; the script reads
+every offset of 200 batches, about 1.6 million overlapping triples) and to return the purity before the retrofit (the
+script returns the product under the name `purity_before`). Random embeddings: Gaussian, the trained embeddings' own
+standard deviation, put in the Cauchy model's place.
