@@ -883,6 +883,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   **The stained-glass box** (23 Oct, SPN R461; Tom: "make a new demo for this."): `glass-box.html`. The reader's sphere is
   radius H, the unit sphere in H; light from nearer than H paints like light from far past it (H the drawing's unit, not a
   surface crossed); the picture held is one wedge at a time, given, painted, no depth. Nothing added to OFS.
+  **What is proved and what is read** (23 Oct, SPN R462; ChatGPT review 26, `plans/ofs-review-26.md`, of version 42; Tom:
+  "Proceed with your proposed edits."): the abstract now keeps its interpretations marked: the measure standard, its
+  reading as the addresses ours; V = H "within this construction"; III.20 gives the meeting, the payload there our
+  reading; the 1 returned is H in H. §2 "An address, its reading and its law" (a direction; a coordinate on it; a measure
+  on the readings). The abstract closes on the one-sentence thesis (address scheme and magnitude distinct roles).
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

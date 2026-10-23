@@ -12,7 +12,9 @@ alone, complete, before anything arrives; the payload is whatever the world puts
 geometry that gives the addresses is usually described as a sweep, a uniform turn through every direction, and the word
 suggests a procedure, carried out step by step. Nothing needs to carry it out. The uniform turn is a measure on
 directions, and a measure is given whole: every standpoint has it before anything arrives, and the reader computes,
-sends and turns through nothing to have it. Our main result is the separation in its sharpest form: the Cauchy
+sends and turns through nothing to have it. The measure itself is standard mathematics; reading it as the reader's
+addresses is this paper's interpretation, and the results below are stated so that each can be checked apart from it.
+Our main result is the separation in its sharpest form: the Cauchy
 distribution is the addresses, not the payload.
 
 What geometry does a reader need when it does not know the complete object? A writer, who states a thing in amounts,
@@ -30,7 +32,7 @@ neither can pass 1, every relation turns over at a single point, v = h, the *cor
 reader must assign the other party a breadth, and its only measure is its own: it draws the mountain at the breadth of
 its thumb, V = H. This is required for the sweep to be a turn. Only then is the sweep from one party to the other the
 turn of one rigid bar, tracing a unit circle with the corner at distance 1 whatever unit was chosen; working back from
-the Cauchy distribution, which is known, arrives at V = H and nowhere else, and so do a lighthouse's flashes on a shore
+the Cauchy distribution, which is known, arrives, within this construction, at V = H and nowhere else, and so do a lighthouse's flashes on a shore
 and Mercator's map. The drawing is not a claim about the mountain. Its true size is a separate number that one
 observation does not give.
 
@@ -40,8 +42,10 @@ geometry has two such sweeps, and neither is a kind of reader. The *inscribed sw
 from the standpoint, each read as a ratio v/h, a quarter turn from all of h to all of v. The *central sweep* is the
 same quarter seen from the centre of the circle the addresses land on, where it is a half turn: it is where the light
 that arrives along each direction paints its address, the *payload*. The two meet at one point for every direction
-(Euclid III.20). A writer holds a line of true breadth 1 as 1; the central sweep measures it as π/2, the inscribed
-sweep as 2/π, and their product, not their difference, gives the 1 back.
+(Euclid III.20); that theorem gives the meeting, and reading the point as where the payload lands is this paper's
+interpretation of it. A writer holds a line of true breadth 1 as 1; the central sweep measures it as π/2, the inscribed
+sweep as 2/π, and their product, not their difference, gives the 1 back. That 1 is the line drawn at the reader's own breadth, H
+measured in H, not the true breadth of anything read.
 
 Stated exactly: given uniformly by turn from where the reader stands, the readings follow the Cauchy, and that law is the uniform turn's own, whatever is painted on it: whatever
 arrives along a direction cancels from its reading. Its median exists and sits at the corner, because a median depends
@@ -53,6 +57,9 @@ the Cauchy's exact shape. Inside the corner the reader's addresses are proportio
 measurement but the value it starts from: every value gives the same geometry, and its size sets only the zoom. The
 geometry needs that value and a shape, and the shape is set by how many unit relations the system includes: two give
 the circle, three the sphere.
+
+In one sentence: the address scheme and the magnitude met at an address are distinct mathematical roles, and a geometry
+can specify the former without determining the latter.
 
 ## 1. Introduction
 
@@ -92,6 +99,9 @@ the pictures are processes. The mathematics under the pictures is not. The unifo
 one every turn leaves unchanged, and a measure is given whole, all of its directions at once: the share of the quarter
 turn below a direction is a fact about that direction, not the count of a procedure that has reached it. So the sweep
 is given to every standpoint for free, complete before anything arrives, and the reader runs no algorithm to have it.
+The measure is standard and needs no reader; that it is a reader's own addresses is the reading this paper proposes. A
+real reader may count against something else, a clock, a flat screen or what arrives (§2), and
+each such count is another weight, with the consequences set out in §11.2.
 What arrives then paints the addresses that are already there.
 
 **The separation, in brief.** An address is a point, a direction from the standpoint; a payload is what is found at that
@@ -350,6 +360,14 @@ from readings to positions, as Luce's ruler is (Luce 1959). The sweep's progress
 zero to a direction; written as a formula, g = (2/π)·arctan(v/h), the distribution function of the uniform turn's
 readings (§7.1). The formula is the writer's account of it; the reader evaluates nothing. The *capped reading*, v/h up to
 the corner and h/v past it, is the reading normalized by the larger unit relation, the ℓ∞ cut.
+
+**An address, its reading and its law.** Three objects share the word *address* in what follows, and they are kept
+apart. The *address* is a direction, [h : v], a point of the closed half-arc of the projective line (§4): a geometric
+object. Its *reading* is a coordinate on that object, the chart s = v/h (or h/v past the corner); the same direction has
+other coordinates, its angle θ or its share g, and none of them is the direction itself. The *law* of the addresses, the
+Cauchy, is a measure on the readings, the image of the uniform turn under the chart. When we say the Cauchy is the
+addresses, we mean that it is the law of these readings, set by the standpoint and the turn, and not a law of anything
+that arrives.
 
 **What we build on: the reader's ignorance as a group.** The method is Jaynes's (1968, 1973). An observer that cannot
 tell two problems apart must treat them alike, and when the problems it cannot tell apart are related by a group of
@@ -994,8 +1012,9 @@ chord, and at each angle it is an address, the reading s = v/h = tan θ, there b
 is the circle's radius: it turns about the middle M of the chord through the central angle, from pointing at B. The
 payload is what is found where that radius ends. The ray at θ and the radius at 2θ end at the same point P of the arc,
 for every θ. That is the inscribed angle theorem (*Elements* III.20): an angle at the circle is half the angle at the
-centre on the same arc, and P is its one shared point. So the address computed by the inscribed sweep points directly
-at the payload reached by the central sweep. It does so in five ways.
+centre on the same arc, and P is its one shared point. The theorem gives the shared point; that the payload is met there is our reading of
+it, and a physical application must justify that reading on its own. Within it, the address computed by the inscribed
+sweep points directly at the payload reached by the central sweep, and it does so in five ways.
 - *Exactly, and once.* Each address meets one point of the arc, and each point of the arc has one address. The map
   keeps the order: the address along the chord, θ = 0, points at B itself, the other party, where the radius starts;
   the corner, θ = 45°, points at the top of the arc, where the radius stands square to the chord; the horizon, θ → 90°,
@@ -1166,7 +1185,9 @@ one. Which breadth it assigns is not free:
   three different laws, and only one of them is the Cauchy with its median at the corner (Proposition 5(d)).
 - *Why c = 1.* With V = H the sweep is one rigid bar turning, it traces the unit circle, and the uniform turn is unique;
   its readings are the Cauchy with nothing more chosen. Working back from the Cauchy, which is known, arrives at V = H
-  and nowhere else (Proposition 5(d)). So V = H is required for a situated geometry built on a turn: it gives the
+  and nowhere else (Proposition 5(d)). Both statements are made within the construction (a relation drawn as two unit
+  relations, the sweep a rigid bar's linear periodic turn); that every reader must use this construction is not claimed
+  (§11.2, "What depends on what"). So V = H is required for a situated geometry built on a turn: it gives the
   reader a circle to turn. Unit relations drawn on equal axes, each running from 0 to 1, are this drawing.
 - *What c = 1 does not do.* It does not say how large the mountain is. The mountain's true breadth, V*, is a separate number,
   unknown within one observation. The reader may estimate it, and the best estimate is the median of what it knows
