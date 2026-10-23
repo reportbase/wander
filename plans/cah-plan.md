@@ -119,3 +119,11 @@ since it is pure Python) on the Cauchy K = 163 model's embeddings, the purity is
 not killed unless C1 is.
 
 ## Runs
+
+**Before run 1 (the cut the plan allowed).** Five timed steps took 3.4 s (softmax) and 2.4 s (Cauchy, K = 163) a step,
+and an evaluation 52 s; 1,500 steps a run would be about 30 hours for 24 runs. S is cut to **400 steps** a run (6,400
+blocks, 1.6 million token positions, two thirds of one pass over WikiText-2's 2.43 million training tokens; validation
+257,233 tokens, 1,004 blocks), about 20 minutes a run, 8 hours in all; the warm-up stays at 100 and the decay runs to
+step 400. These models are far from trained (the script's ran one pass over about 60,000 steps); a difference between
+horizons that only appears with training would not be seen here, and C1's "within noise" is then weak evidence.
+Nothing else changes.
