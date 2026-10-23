@@ -128,49 +128,49 @@ three-vantages paragraph.
 Ticked when the new text has them. From the record (OFS) and from SPN's rulings since the last rewrite.
 
 **The reader and the writer**
-- [ ] The writer states amounts and needs the true breadth (walked or carried in); the reader needs neither (R335).
-- [ ] The writer is the number line on each axis, a box, no corner (R338, R445); every reader stands inside it, its
+- [x] The writer states amounts and needs the true breadth (walked or carried in); the reader needs neither (R335).
+- [x] The writer is the number line on each axis, a box, no corner (R338, R445); every reader stands inside it, its
   wedge reaching the faces (R443, R444, R449).
-- [ ] Writers within writers, readers all the way down (R448): as speculation in §11 (point G).
-- [ ] Reading is free; writing needs movement or interaction (R297); RWT's counts (one move, one number, one notch).
-- [ ] Recovered, not written (R442).
-- [ ] The test: scale the world; growth (R314, R315).
-- [ ] The chord before the circle; the writer walks the chord and faces nothing, the reader faces the arc (R234, R450).
+- [x] Writers within writers, readers all the way down (R448): as speculation in §11 (point G).
+- [x] Reading is free; writing needs movement or interaction (R297); RWT's counts (one move, one number, one notch).
+- [x] Recovered, not written (R442).
+- [x] The test: scale the world; growth (R314, R315).
+- [x] The chord before the circle; the writer walks the chord and faces nothing, the reader faces the arc (R234, R450).
 
 **The geometry**
-- [ ] The corner, the reciprocal's fixed point; Propositions 1–2; the reader's line closed (R366).
-- [ ] V = H required for the turn; Propositions 3(e), 3(g), 5(d); should, not does (R215, R262, R263).
-- [ ] Two choices (H free, c = 1 not), neither can be declined (R260, R264).
-- [ ] H is a value chosen, a zoom; K prior to H; the best H the corner of what is read (R226, R229, R408, R409).
-- [ ] Two address spaces; (S); reality in 2H; why halving (Prop D.1); one figure, three rulers (R422).
-- [ ] With more parties: the wedge, the two-dimensional Cauchy, near field ⅓, 1/(n + 1); altitude and azimuth; the sum
+- [x] The corner, the reciprocal's fixed point; Propositions 1–2; the reader's line closed (R366).
+- [x] V = H required for the turn; Propositions 3(e), 3(g), 5(d); should, not does (R215, R262, R263).
+- [x] Two choices (H free, c = 1 not), neither can be declined (R260, R264).
+- [x] H is a value chosen, a zoom; K prior to H; the best H the corner of what is read (R226, R229, R408, R409).
+- [x] Two address spaces; (S); reality in 2H; why halving (Prop D.1); one figure, three rulers (R422).
+- [x] With more parties: the wedge, the two-dimensional Cauchy, near field ⅓, 1/(n + 1); altitude and azimuth; the sum
   and the drawing at its centre (R220, R225, R237, R238, R312).
-- [ ] The lighthouse and Mercator require V = H (R258); Mercator and Lambert by what each keeps (R372).
-- [ ] III.20: the address points at what the paint reaches; the two pivots the only ones with equal arcs (R273, R284).
+- [x] The lighthouse and Mercator require V = H (R258); Mercator and Lambert by what each keeps (R372).
+- [x] III.20: the address points at what the paint reaches; the two pivots the only ones with equal arcs (R273, R284).
 
 **The main result**
-- [ ] The Cauchy is the uniform turn's law, the addresses, not the payload (R200, R389).
-- [ ] Theorem 6 (a)–(e), with (c) for strictly increasing f; the median needs only reciprocal symmetry, the missing
+- [x] The Cauchy is the uniform turn's law, the addresses, not the payload (R200, R389).
+- [x] Theorem 6 (a)–(e), with (c) for strictly increasing f; the median needs only reciprocal symmetry, the missing
   mean a weight at the horizon (R217, R259).
-- [ ] An address is not a payload (R393); the rule and the test; once a Cauchy, always one; what breaks it; three
+- [x] An address is not a payload (R393); the rule and the test; once a Cauchy, always one; what breaks it; three
   properties (R358, R359, R404).
-- [ ] The same law without a sweep (poles, stable sums) (R341).
-- [ ] The array picture: the index the address, four arrays a circle, the writer joins them, the floor's depth (R367–R373).
-- [ ] What the height fixes (R380).
-- [ ] The fingers are free; the light draws on them (R453); the sphere after Gibson (R426).
+- [x] The same law without a sweep (poles, stable sums) (R341).
+- [x] The array picture: the index the address, four arrays a circle, the writer joins them, the floor's depth (R367–R373).
+- [x] What the height fixes (R380).
+- [x] The fingers are free; the light draws on them (R453); the sphere after Gibson (R426).
 
 **Discussion and scope**
-- [ ] Jaynes as the method; the reader's group commutes; Norton; water and wine; the marginalization paradox (R243–R247).
-- [ ] The table of what depends on what (R415–R418).
-- [ ] What the geometry gives free, split three ways (R429–R432).
-- [ ] V = H shown for the construction, open for readers (R261).
-- [ ] The geometry is enough for this paper (R343).
+- [x] Jaynes as the method; the reader's group commutes; Norton; water and wine; the marginalization paradox (R243–R247).
+- [x] The table of what depends on what (R415–R418).
+- [x] What the geometry gives free, split three ways (R429–R432).
+- [x] V = H shown for the construction, open for readers (R261).
+- [x] The geometry is enough for this paper (R343).
 
 ## 4. Order of work
 
 1. Tom approves this outline, and rules on open points A–E (or leaves them to be settled while writing).
 2. The new §1–§3 are written first, since they carry the frame. Tom reads them before the rest. (Done 23 Oct, R456: A–F taken as recommended, D as no inside/outside.)
-3. §4–§11 are carried over with the frame's edits, section by section, each checked against the record.
-4. When the draft is whole, the checklist is ticked and the new paper takes over from the record (R421).
+3. §4–§11 are carried over with the frame's edits, section by section, each checked against the record. (Done 23 Oct, R457.)
+4. When the draft is whole, the checklist is ticked and the new paper takes over from the record (R421). (Done 23 Oct, R457: every item found in the new text.)
 5. The demos that name two readers (central-reader, two-readers, room, room-walk, moon, from-home, blueprint,
    writer-box) are reread afterwards, in a separate pass.

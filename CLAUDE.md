@@ -841,6 +841,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the addresses, §3.5 "What the geometry leaves to the reader", no "inside"/"outside"), and §4–§11 carried over from the
   record unchanged, a draft line at the head saying so. Next: §4–§11 brought into the frame, section by section, each
   checked against the record; then the draft line goes and the paper is the source of truth again.
+  **The new OFS whole** (23 Oct, SPN R457; Tom: "proceed"): §4–§11 brought into the frame and the draft line removed; the
+  outline's checklist all found, so the new OFS is the single source of truth again (R421) and the record is frozen. One
+  reader with two sweeps throughout: "Two charts" (§7), "One K, in direction and in distance" (§8), "The central sweep
+  places the paint; the amount is written" (§9: a shape about a centre is an amount per direction, by ranging, a writing,
+  or from further standpoints), "Inside a room", "Far off, parallax in place of the shape", "One standpoint gives no
+  parallax" (the head and the camera out), §10 step 3 as geometry; "Order needs the readings together" (the one-slot
+  reference out); writers within writers and "within one box" now §11.2 question 8, "Systems within systems: a
+  speculation" (the old question 8, holding, moot). The demos that name two readers wait for a later pass.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
