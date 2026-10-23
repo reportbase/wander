@@ -117,11 +117,13 @@ Cauchy, the corner, and the drawing at the reader's own breadth; carried to amou
 motivates the logarithm past the corner (§2). What is ours is the choice of group, the near field, and the reading of
 the measure as the reader's addresses rather than its belief.
 
-**A picture.** Hold your hand out, palm down, with the fingers spread between flat and upright. Each finger is a
-direction in which you can look, an address. The fingers are there before anything is seen, and they are the same
-wherever you point the hand: nothing has to move to lay them, and nothing has to be worked out. Now let light fall on
-them from the world, a ring on each finger. The rings are what arrives along each direction, the *payload*. Swapping the
-rings for others does not change the fingers, and pointing the hand somewhere else does not change them either. Much of
+**A picture.** Hold your hand up to a stained-glass window, with the fingers spread between flat and upright. Each
+finger is a direction in which you can look, an address, and each is lit by the pane it lines up with, in that pane's
+colour. The fingers are there before any light reaches them, and they are the same wherever you hold the hand: nothing
+has to move to lay them, and nothing has to be worked out. The coloured light is what arrives along each direction, the
+*payload*. Put another window in its place and the fingers stay as they were; only the colours change. Hold the hand
+somewhere else and the same is true. The colour says nothing about how far off its pane is, or how big: two panes on
+one line show only the nearer. To learn that, you have to walk, so that the panes slide across one another. Much of
 what follows is the mathematics of the fingers alone, and the main result is that one well-known distribution, the
 Cauchy, is entirely fingers.
 
@@ -314,7 +316,7 @@ is taken up in §7.1.
 addresses is fixed by the geometry before anything arrives, and an address is taken from it when something does. The
 *payload* is what arrives: a wave of some kind, sent out or shaped by the things read, not the things themselves; it
 paints the address it arrives along. A reader reads what arrives and reaches the things only through it. In the picture
-of §1 the fingers are addresses and the rings are payload. The addresses do not depend on what arrives at them; every
+of §1 the fingers are addresses and the coloured light on them is payload. The addresses do not depend on what arrives at them; every
 "if" belongs to the payload, including which side of the corner a given reading falls on. Nothing in the paint is a
 distance: of two things on one line the nearer paints the address, and how far it lies does not arrive with it. A *lay*
 is a rule that places each reading at a position in a drawing; the *room* a stretch of readings receives is measured
@@ -805,23 +807,28 @@ stays put. Changing the focus rescales every reading, and nothing in the world c
 Hold your hand out flat: that is h, zero. Point it straight up: that is v, toward the horizon. Every direction between
 is a relation of the two, and the hand treats them alike because they share one denominator, the hand itself: the
 reader's V = H (§5) is its own hand. Spread the fingers between flat and upright: each finger is an address, one ray of
-the relation. Put a ring on each finger: the ring is what that address holds, the payload. Replace the rings with
-others, and the fingers are the same fingers, each the same address.
+the relation. Hold the hand up to a stained-glass window: each finger is lit by the pane it lines up with, and that
+coloured light is what the address holds, the payload. Put another window there, and the fingers are the same fingers,
+each the same address; only the colours change.
 - *The thumb is H.* The hand's own measure is its thumb, the reader's breadth, the value it starts from; the mountain it
   looks at is V. Setting V = H is reading the mountain in thumbs.
-- *The geometry is the hand, not the rings.* Dividing v by h keeps the finger and drops the ring.
-- *The fingers are free; the light draws on them.* The fingers are the geometry of the uniform turn, the Cauchy, and
-  they are there wherever the reader looks: they are laid by looking, and the reader computes nothing, sends nothing
-  and turns through nothing. The rings are the light the world sends along each finger, laid on it as it arrives. To
-  read the payload is to read what the light drew on the fingers, from the same standpoint.
-- *The rings hide; the hand does not.* Two rings on one finger, seen along it, show only the nearer: the ring behind is
-  the back side. The hand hid nothing; the rings did.
+- *The geometry is the hand, not the glass.* Dividing v by h keeps the finger and drops the colour.
+- *The fingers are free; the light colours them.* The fingers are the geometry of the uniform turn, the Cauchy, and
+  they are there wherever the reader looks: they are given, and the reader computes nothing, sends nothing and turns
+  through nothing. The colour on each finger is the light the world sends along it, from the first pane on its line. To
+  read the payload is to read the colours on the fingers, from the same standpoint.
+- *The colour carries no distance.* A finger lit red does not say whether its pane is near or far, small or large.
+  Moving the hand changes the colours, never the fingers: that is reading. Walking to another place makes the panes slide
+  across one another, so a pane lit along two fingers from two places can be placed, in steps: that is the way to
+  writing (§9).
+- *The glass hides; the hand does not.* Two panes on one finger's line show only the nearer: the pane behind is the back
+  side. The hand hid nothing; the glass did.
 - *The far field's doublings are fingers.* Past the corner the levels are doublings (§6), addresses laid before
-  anything arrives; what lands on them is rings. The fingers sit side by side on one hand, not one inside another.
-- *The situations in the hand.* 0: no hand, nothing to point with and nothing pointed at. 1 and 2: the rings held
-  whole, all at once, with no hand needed to reach them; in 1 every ring is alike, in 2 they differ. 3: the rings, what
-  the light drew on the fingers, the payloads. 4: the inscribed sweep, the fingers themselves, the addresses to the
-  rings.
+  anything arrives; what lands on them is coloured light. The fingers sit side by side on one hand, not one inside another.
+- *The situations in the hand.* 0: no hand, nothing to point with and nothing pointed at. 1 and 2: the window held
+  whole, every pane at once, as its maker holds its drawing, with no hand needed to reach it; in 1 every pane is alike, in
+  2 they differ. 3: the colours, the light on the fingers, the payloads. 4: the inscribed sweep, the fingers themselves,
+  the addresses the colours land on.
 - *The hand has two angles.* Raised, it runs from flat to upright, from H to V: the altitude. Turned, it runs round
   from pointing at the other party to pointing square to it, which brings in a second other party, V₂: the azimuth.
   Every way the hand can point, within the positive octant, is one altitude and one azimuth, as every point of an
@@ -1853,19 +1860,19 @@ scale is that length, not 1 by assumption.
 ### 7.3 In the picture of the hand
 
 Spread the fingers uniformly by turn and read each one as v over h: the readings are the Cauchy, and nothing of the
-rings is in them.
+colours is in them.
 - *The median is a finger.* Of five fingers spread uniformly from flat to upright, the middle one, at 45°, is the
-  corner. Order, ranks, quartiles and the corner are address statistics, and they ignore the rings.
+  corner. Order, ranks, quartiles and the corner are address statistics, and they ignore the colours.
 - *The corners are the quartiles.* With the fingers spread over both quadrants, the corners at ±45° are the quartiles of
   the standard Cauchy. So anything whose two ends sit at the reader's corners takes exactly the middle half of its
   fingers, whatever its size and however far away: the mountain range of §10 is one.
-- *The missing mean asks the fingers about the rings.* The readings' tail makes their mean diverge. In the hand's terms
+- *The missing mean asks the fingers about the colours.* The readings' tail makes their mean diverge. In the hand's terms
   that is no loss: a mean is a sum of sizes, a question about the payload, and the readings carry no size. The median, a
   question about addresses, always has one.
-- *More fingers, not bigger rings.* A finer count of the sweep lays more addresses. It buys precision about where, never
+- *More fingers, not brighter glass.* A finer count of the sweep lays more addresses. It buys precision about where, never
   about what. What is at the addresses comes only from payload held beside them.
-- *The rings hide; the hand does not.* Two rings on one finger, seen along it, show only the nearer. Every back side is
-  made by the payload; the addresses hide nothing.
+- *The glass hides; the hand does not.* Two panes on one finger's line show only the nearer. Every back side is made
+  by the payload; the addresses hide nothing.
 - *Three breadths.* In space the fingers spread through a solid wedge and, spread uniformly, give the two-variable
   Cauchy, with density proportional to (1 + |s|²)^(−3/2). Each pair of readings keeps its median at its own corner
   (Proposition 5(e)), but the radius |s| does not: only 1 − 1/√2 ≈ 0.29 of the addresses have |s| ≤ 1, and the median of
@@ -1984,7 +1991,7 @@ was.
 
 The addresses with their payloads give the shape back, up to scale, exactly when the shape is star-shaped from the
 standpoint, so that each direction meets the outline once. Otherwise some direction meets it more than once and the
-parts behind are hidden: rings behind rings on one finger.
+parts behind are hidden: panes behind panes on one finger's line.
 
 Two examples show the reach and the limit. An ellipse with semi-axes 2 and 1, read from its centre, meets each
 direction θ once, at r(θ) = 2/√(cos²θ + 4·sin²θ). One value per address holds it completely, and doubling the ellipse
@@ -2395,7 +2402,7 @@ So there are two centres, and they must not be confused:
 - **The unresolved payload's centre is its centroid,** a weighted mean. It arrives first and exactly; the payload's
   arrangement reaches the reader only through the spread, faintly, until its parts lie the resolution apart.
 
-Fingers order; rings add.
+Fingers order; colours add.
 
 **The best estimate of the true size.** The geometry requires the drawing V = H (Proposition 3(e), Proposition 5(d)),
 and the drawing says nothing about the world. To read amounts, the reader also needs an estimate of the other party's
@@ -2813,7 +2820,7 @@ width, and no one stands anywhere in it.
    why. With fingers spread uniformly over the half-turn, the range takes exactly the middle half of them, between the
    Cauchy's quartiles, which are its corners (§7.3), and the median finger points at its middle. On each finger the
    ridge's elevation is a second direction, read by the altitude sweep (§3.7). Together they give the range's skyline, a
-   curve of directions, up to scale. The far slopes are hidden, rings behind rings.
+   curve of directions, up to scale. The far slopes are hidden, panes behind panes.
 3. *The two sweeps, on the thumb.* The one breadth the reader holds is its thumb, the H it started from, and the two
    sweeps of §3.4 measure it by the turn from the reader's standpoint. Each side of the half-turn is a quarter turn,
    from home to the limb, where a finger runs parallel to the range and never meets it. On the thumb's circle that
@@ -2844,7 +2851,7 @@ width, and no one stands anywhere in it.
       Joined by their product the two sweeps return H in H. Joined by their rates they return the reader's own place.
    Neither form reads the 20, and scaling the world moves neither.
 4. *What it cannot read.* A range 20 miles wide at 10 miles, 2 miles wide at 1 or 2,000 miles wide at 1,000 gives the
-   same fingers and the same rings. The reach cancels from every reading (Theorem 6).
+   same fingers and the same colours. The reach cancels from every reading (Theorem 6).
 5. *Mountain equals thumb.* Not knowing the mountain's size, the reader sets V = H: it takes the range to be one thumb,
    1 mile, wide, and the width-to-distance reading of 2 then puts it half a mile away. Every amount is off by V*/H = 20,
    the number of thumbs the mountain really is, by the same factor on both sides of the
@@ -3176,7 +3183,7 @@ it one that can be asked.
 | zero, the horizon | geometry | v/h = 0, all h, pointing at the other party; v/h → ∞, never reached |
 | g | geometry | the sweep's progress, (2/π)·arctan(v/h), the uniform turn's distribution function: 0 at zero, ½ at the corner, 1 at the horizon |
 | reading, writing | what an observer does | reading: in the unit relations h and v, with V unknown (situations 3, 4); writing: in amounts, with the breadths H and V known (situations 1, 2); situation 1 is common to both, the baseline of every vantage (§9); the writer's vantage dual-hemispherical, a reader's hemispherical, one reader with two sweeps, the inscribed (the addresses) and the central (where the paint lands) |
-| address, payload | geometry; what arrives | a place laid before anything arrives; what arrives there: the finger and the ring |
+| address, payload | geometry; what arrives | a place laid before anything arrives; what arrives there: the finger and the coloured light on it |
 | situations 0 to 4 | what a reader knows | §3.1: nothing; the circle; a shape; the central sweep, where the paint lands; the inscribed sweep, the addresses; with more parties, one entry per party |
 | ℓ | an amount | the reach of what arrives along a ray (Theorem 6); it cancels from every reading |
 | ε | a resolution | the reader's resolution, the least difference it tells apart, relative to what it reads (§8) |

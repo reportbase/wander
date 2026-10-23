@@ -861,6 +861,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `writer-readers.html` "The writer and the reader", `sweep-zero.html` "Counting from zero", `blueprint.html` "One
   blueprint, two vantages"; `writer-box.html`'s views the writer, the reader from home, ranges (a writing); the payload-free
   pages' button "reveal in order". The page entries above describe the older wording.
+  **The stained-glass window** (23 Oct, SPN R460; Tom: "yes, proceed with the stained glass window metaphore"): OFS's
+  picture is a hand held up to a stained-glass window, each finger lit by the pane it lines up with: the fingers the
+  addresses, the coloured light the payload, no distance in a colour, walking the way to distance; the rings are gone
+  (§1, §2, §3.7, §7.3, §9, §10, notation). "Sweep" stays the geometry's word; the hand is "held" or "moved". The fingers
+  are coloured, never colour (painting on is writing). `central-reader.html` step 1 speaks of the window.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

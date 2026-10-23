@@ -63,19 +63,19 @@
 <body>
 <main>
     <h1>The central sweep</h1>
-    <p class="lede">One reader, one standpoint, two sweeps. The fingers are free; the light draws on them. Wherever the
-    reader looks, its fingers are there: the uniform turn's directions, the Cauchy, given before anything arrives (the
+    <p class="lede">One reader, one standpoint, two sweeps. Hold your hand up to a stained-glass window: each finger is
+    lit by the pane it lines up with. Wherever the reader holds the hand, its fingers are there: the uniform turn's directions, the Cauchy, given before anything arrives (the
     inscribed sweep, the addresses). It sends nothing, turns through nothing and computes nothing. The
-    <span class="gold">payload</span> is the light the world sends along each finger, the paint, and it carries no
-    distance (step 1). The central sweep is the same directions counted from the centre of the circle they land on, where
-    each address's paint lands (step 6). Steps 2–5 are the classical pieces from a shape's own centre: an amount along each
+    <span class="gold">payload</span> is the coloured light the world sends along each finger, and it carries no
+    distance: a finger lit red does not say how far off its pane is (step 1). The central sweep is the same directions counted from the centre of the circle they land on, where
+    each address's colour lands (step 6). Steps 2–5 are the classical pieces from a shape's own centre: an amount along each
     direction is had only by ranging (a writing) or from more standpoints, and its size is never read.</p>
     <div class="panel">
         <div class="row" id="steps"></div>
         <div id="say"></div>
         <div class="row" style="margin-top:8px" id="c-look">
-            <label for="look">look, the wedge's first edge</label><input id="look" type="range" min="0" max="360" step="0.5" value="20">
-            <span id="lookv" class="gold"></span><button id="lookplay">look around</button>
+            <label for="look">hold the hand toward</label><input id="look" type="range" min="0" max="360" step="0.5" value="20">
+            <span id="lookv" class="gold"></span><button id="lookplay">move the hand</button>
         </div>
         <div class="row" style="margin-top:8px" id="c-shape">
             <label for="shape">shape</label>
@@ -105,7 +105,7 @@
         </div>
         <div id="hud"></div>
     </div>
-    <p class="note">Behind it: <i>Observation from Somewhere</i> §3.7, the hand ("The fingers are free; the light draws on
+    <p class="note">Behind it: <i>Observation from Somewhere</i> §3.7, the hand ("The fingers are free; the light colours
     them"); §9, "The central sweep places the paint; the amount is written"; §4, "The address
     points at the payload" (Euclid III.20); §7.4, the shape as a perturbation of the circle. The off-centre law is harmonic
     measure: Kakutani (1944); Garnett and Marshall, <i>Harmonic Measure</i> (2005); the wrapped Cauchy as the Möbius image of
@@ -240,7 +240,7 @@
     const dot = (g, x, y, r, c) => { g.fillStyle = c; g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill(); };
     const GOLD = '#d4a052', TEAL = '#8ce6cd', VIOLET = '#b59cf0', BRIGHT = '#e6e4ee', RED = '#d96e5b';
     const STEPS = [
-        ['the hand', 'The reader at home, looking. Its fingers are the uniform turn from flat (h) to upright (v), read v/h: the Cauchy, given, before anything arrives. Turn where it looks: the fingers, their readings and their median at the corner (v/h = 1) do not change. What changes is the light. The world\'s rays arrive along the fingers and draw on them, each finger the colour of the first thing on its line; the reader sends nothing, turns through nothing and computes nothing. To read the payload is to read what the light drew; no distance comes with it.'],
+        ['the hand', 'The reader at home, its hand held up to the world as to a stained-glass window, each thing a pane of its own colour. Its fingers are the uniform turn from flat (h) to upright (v), read v/h: the Cauchy, given, before anything arrives. Move the hand: the fingers, their readings and their median at the corner (v/h = 1) do not change. What changes is the colours. Each finger is lit by the first pane on its line; the reader sends nothing, turns through nothing and computes nothing. To read the payload is to read the colours on the fingers; no distance comes with them. To learn how far off a pane is, walk.'],
         ['the baseline', 'A circle seen from its own centre. From there the directions (gold) are given evenly, equal turns cutting equal arcs. Suppose an amount is had along each, by ranging (a writing: the signal\'s speed carried in) or from more standpoints: on the circle it is the same along every one. That constant is its baseline: it says the outline is round, and nothing about how big it is.'],
         ['a shape', 'Now a shape, its radius r(θ) from its centre, ln r = a₀ + f(θ). With an amount along each given direction (written, or from more standpoints), each is a point: the direction it already had, and how far. Two numbers in the plane, where a direction from home is one. Scale the world: every amount moves by k together, and the shape, each amount over their geometric mean, does not move at all. The shape is had in full; its size a₀ never.'],
         ['the modes', 'What it can recover is the shape\'s departure from its baseline circle: the modes of ln r, read from ratios of its radii. The size, the common term a₀ = ln k, is never among them. Keep the modes in order of n and the outline comes back broad form first: its level of detail.'],
@@ -267,7 +267,7 @@
         g.strokeStyle = GOLD; g.setLineDash([4, 4]); g.lineWidth = 1; g.beginPath(); g.moveTo(cx, cy);
         g.lineTo(cx + Math.cos(a0 + Math.PI / 4) * 0.48 * Math.min(W, H), cy - Math.sin(a0 + Math.PI / 4) * 0.48 * Math.min(W, H)); g.stroke(); g.setLineDash([]);
         dot(g, cx, cy, 6, TEAL); txt(g, 'home', cx + 9, cy + 16, TEAL);
-        txt(g, 'the world, as only the writer sees it; the wedge where the reader looks', 10, 18);
+        txt(g, 'the window, as only the writer sees it: every pane and how far; the wedge where the hand is held', 10, 18);
         // the side: the hand itself, the same at every look, and what the light drew on it
         [g, W, H] = fit($('side'));
         const x0 = 30, x1 = W - 14, X = gv => x0 + (x1 - x0) * gv;
@@ -279,7 +279,7 @@
             txt(g, lab, X(gv) - (gv === 1 ? 8 : gv === 0.5 ? 30 : 12), yF + 24, '#8a8a96', 11); }
         txt(g, 'readings v/h at the quartiles and the median: the Cauchy\'s', x0, yF + 42, '#8a8a96', 11);
         const yP = 160, hP = 90;
-        txt(g, 'what the light drew on them (changes with the look)', 10, yP - 12, TEAL);
+        txt(g, 'the colour on each finger (changes as the hand moves)', 10, yP - 12, TEAL);
         const bw = (x1 - x0) / H1.fingers.length;
         H1.fingers.forEach((f, i) => { g.fillStyle = f.col; g.fillRect(x0 + i * bw + 1, yP, bw - 2, hP); });
         g.strokeStyle = GOLD; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(X(0.5), yP - 4); g.lineTo(X(0.5), yP + hP + 4); g.stroke(); g.setLineDash([]);
@@ -290,11 +290,11 @@
             `look ${p.look.toFixed(1)}°: ${NF} fingers, uniform by turn over the quarter turn from h to v`,
             `their readings v/h: ${H1.readings.slice(0, 3).map(r => r.toFixed(4)).join(', ')} … ${H1.readings.slice(-2).map(r => r.toFixed(3)).join(', ')}  (the Cauchy's quantiles)`,
             `median ${H1.median.toFixed(6)} (the corner); ${H1.below} of ${NF} at v/h ≤ 1; the same at every look (off by ${same.toExponential(0)})`,
-            `the light drawn on them: ${Object.keys(counts).length} kinds — ${Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(', ')}`,
-            `the reader sends nothing, turns through nothing, computes nothing; no distance reaches it, only light on a finger`
+            `the colours on them: ${Object.keys(counts).length} panes — ${Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(', ')}`,
+            `the reader sends nothing, turns through nothing, computes nothing; no distance reaches it, only a pane's colour on a finger`
         ].join('\n');
-        $('cap1').textContent = 'The world from no standpoint (the writer\'s picture). The reader at home; its fingers in the wedge where it looks, each the colour of the first thing on its line; the corner dashed.';
-        $('cap2').textContent = 'Top: the hand, the same wherever the reader looks. Bottom: the light on each finger, which is all that changes.';
+        $('cap1').textContent = 'The window from no standpoint (the writer\'s picture). The reader at home; its fingers in the wedge where the hand is held, each lit by the first pane on its line; the corner dashed.';
+        $('cap2').textContent = 'Top: the hand, the same wherever it is held. Bottom: the colour on each finger, which is all that changes.';
     }
     function draw() {
         if (S.step === 1) return drawHand();
@@ -474,7 +474,7 @@
     $('play').addEventListener('click', () => { playing = !playing; $('play').classList.toggle('on', playing); $('play').textContent = playing ? 'pause' : 'play the turn'; last = 0; requestAnimationFrame(tick); });
     function tick(ts) { if (!playing) return; if (last) set({ t: (S.t + (ts - last) * 0.02) % 90.05 }); last = ts; requestAnimationFrame(tick); }
     let looking = false, lastL = 0;
-    $('lookplay').addEventListener('click', () => { looking = !looking; $('lookplay').classList.toggle('on', looking); $('lookplay').textContent = looking ? 'pause' : 'look around'; lastL = 0; requestAnimationFrame(tickL); });
+    $('lookplay').addEventListener('click', () => { looking = !looking; $('lookplay').classList.toggle('on', looking); $('lookplay').textContent = looking ? 'pause' : 'move the hand'; lastL = 0; requestAnimationFrame(tickL); });
     function tickL(ts) { if (!looking) return; if (lastL) set({ look: S.look + (ts - lastL) * 0.02 }); lastL = ts; requestAnimationFrame(tickL); }
     window.addEventListener('resize', draw);
     const q = new URLSearchParams(location.search), init = {};
