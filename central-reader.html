@@ -11,7 +11,12 @@
     understand it better."; SPN R451: "just use classical results for the central reader"). A standalone page like
     two-readers.html, plain canvas. Every piece is classical (polar coordinates; Euclid III.20; a shape as its log-radius
     and its Fourier modes, up to scale; harmonic measure and the Poisson kernel, the wrapped Cauchy); the page only shows
-    them from the central reader's side. Five steps:
+    them from the central reader's side. Since SPN R453 (Tom: "the fingers are laid by cauchy, the fingers are the inscribed
+    sweep. the light rays of the world are the payloads, they draw on the readers fingers"; "the fingers are pure cauchy
+    geometry, the readers does nothing, it is free. where ever he looks, this geometry is created.") it opens with the hand:
+      0. the hand: the reader at home; its fingers the uniform turn's directions, read v/h, the Cauchy, the same wherever it
+         looks; the world's light draws on them (each finger painted by the first thing on its line); the reader sends
+         nothing, turns through nothing, computes nothing. The steps after it are the classical pieces, as before:
       1. the baseline: a circle read from its own centre, the same amount along every given direction;
       2. a shape, ln r = a₀ + ρ·f(θ): each direction given, an amount along it, a point (two numbers in the plane);
          scale the world (k) and every amount moves by k, the shape (each over the geometric mean) not at all;
@@ -24,9 +29,9 @@
          unbounded) and the radius from the middle turning 2θ (the payload, the point (h², hv), bounded) meet at one point
          of the circle on the chord (III.20); the arc carved over the chord to it, θ/sin θ, π/2 at the end; there the ray
          is tangent (a horizon) and the radius ends at a point.
-    Where the central reader stands is not ruled (SPN R451): it is drawn at the centre of what it reads, as the other
-    demos draw it. Geometry only; no physics.
-    Links: ?step=1..5&shape=circle|egg|star|lumpy&rho=&k=<log10 k>&L=&z=x,y&t=<degrees>. Test hook: window.__centralReader.
+    Steps 2–6 (the five above) draw the classical polar reading from the centre of a shape; since R453 the payload reader is
+    not a second standpoint there: it is the same fingers read for what the light drew on them (step 1). Geometry only.
+    Links: ?step=1..6&look=<degrees>&shape=circle|egg|star|lumpy&rho=&k=<log10 k>&L=&z=x,y&t=<degrees>. Test hook: window.__centralReader.
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -58,13 +63,18 @@
 <body>
 <main>
     <h1>The central reader</h1>
-    <p class="lede">The payload reader, on its own. Its directions are given to it before anything arrives, evenly round a
-    centre; what arrives along each is an amount, how far the outline lies. So it holds a <span class="gold">point</span>,
-    a direction and an amount, where the address reader holds only a direction. Everything here is classical; the page
-    only looks at it from this reader's side.</p>
+    <p class="lede">The fingers are free; the light draws on them. Wherever the reader looks, its fingers are there: the
+    uniform turn's directions, the Cauchy, laid by looking. It sends nothing, turns through nothing and computes nothing.
+    The <span class="gold">payload</span> is the light the world sends along each finger; to read it is to read what the
+    light drew on the fingers, from the same standpoint (step 1). The steps after it are the classical pieces of reading a
+    shape from its centre, shown as before.</p>
     <div class="panel">
         <div class="row" id="steps"></div>
         <div id="say"></div>
+        <div class="row" style="margin-top:8px" id="c-look">
+            <label for="look">look, the wedge's first edge</label><input id="look" type="range" min="0" max="360" step="0.5" value="20">
+            <span id="lookv" class="gold"></span><button id="lookplay">look around</button>
+        </div>
         <div class="row" style="margin-top:8px" id="c-shape">
             <label for="shape">shape</label>
             <select id="shape"><option value="circle">circle</option><option value="egg">egg</option>
@@ -93,11 +103,12 @@
         </div>
         <div id="hud"></div>
     </div>
-    <p class="note">Behind it: <i>Observation from Somewhere</i> §9, "The central reading is an amount"; §4, "The address
+    <p class="note">Behind it: <i>Observation from Somewhere</i> §3.7, the hand ("The fingers are free; the light draws on
+    them"); §9, "The central reading is an amount"; §4, "The address
     points at the payload" (Euclid III.20); §7.4, the shape as a perturbation of the circle. The off-centre law is harmonic
     measure: Kakutani (1944); Garnett and Marshall, <i>Harmonic Measure</i> (2005); the wrapped Cauchy as the Möbius image of
-    the Cauchy, McCullagh (1996). Where the central reader stands is left open in the papers; it is drawn here at the centre
-    of what it reads. Other demos: <a href="two-readers.html">two readers</a>, <a href="one-read.html">one turn, one read</a>,
+    the Cauchy, McCullagh (1996). Steps 2–6 draw the classical polar reading from a shape's centre; the payload reader itself is
+    the hand of step 1, at home. Other demos: <a href="two-readers.html">two readers</a>, <a href="one-read.html">one turn, one read</a>,
     <a href="demos.html">all demos</a>.</p>
 </main>
 <script>
@@ -110,7 +121,36 @@
         lumpy: t => 0.15 * Math.cos(2 * t) + 0.08 * Math.cos(3 * t + 0.4) + 0.05 * Math.cos(6 * t + 1)
     };
     const NC = 32;
-    const S = { step: 1, shape: 'lumpy', rho: 1, k: 0, L: 8, z: [0.45, 0.2], t: 30 };
+    const S = { step: 1, shape: 'lumpy', rho: 1, k: 0, L: 8, z: [0.45, 0.2], t: 30, look: 20 };
+
+    // ── step 1, the hand: fingers laid by the uniform turn, the light drawing on them ──
+    // the world about the reader at home (0, 0), in the writer's unit, which the reader never reads: things at every
+    // distance and in every direction, each sending its own light; a finger takes the light of the first thing on its line
+    const THINGS = [
+        { name: 'tree', x: 1.2, y: 0.9, r: 0.35, col: '#6fbf73' }, { name: 'house', x: -1.6, y: 1.4, r: 0.6, col: '#d9895b' },
+        { name: 'pond', x: -0.9, y: -1.1, r: 0.45, col: '#5b9bd9' }, { name: 'rock', x: 0.6, y: -0.5, r: 0.18, col: '#a4a4ae' },
+        { name: 'hill', x: 3.4, y: -2.2, r: 1.3, col: '#b9a25b' }, { name: 'tower', x: 0.3, y: 3.6, r: 0.4, col: '#c86fd9' },
+        { name: 'moon', x: -4.6, y: -0.6, r: 0.5, col: '#e6e4ee' }, { name: 'barn', x: 2.6, y: 2.4, r: 0.55, col: '#d96e5b' },
+        { name: 'wood', x: -2.8, y: -3.2, r: 1.1, col: '#3f8f5f' }, { name: 'post', x: 1.8, y: -0.1, r: 0.12, col: '#e8c46a' }
+    ];
+    const SKY = { name: 'sky', col: '#1b2233' };
+    const NF = 24;
+    function lightOn(ang) {          // the first thing on the line from home at this world angle, or the sky
+        const c = Math.cos(ang), s = Math.sin(ang); let best = Infinity, hit = SKY;
+        for (const T of THINGS) { const b = T.x * c + T.y * s, q = b * b - (T.x * T.x + T.y * T.y - T.r * T.r);
+            if (q < 0) continue; const d = b - Math.sqrt(q); if (d > 0 && d < best) { best = d; hit = T; } }
+        return { thing: hit, dist: best };
+    }
+    // the fingers: n directions uniform by turn over the quarter turn from h (flat) to v (upright), read v/h; they are the
+    // same at every look. look turns the whole wedge in the world; only the light on the fingers changes.
+    function hand(lookDeg = S.look, n = NF) {
+        const fingers = [];
+        for (let i = 0; i < n; i++) { const psi = (i + 0.5) / n * Math.PI / 2, ang = lookDeg * Math.PI / 180 + psi, L = lightOn(ang);
+            fingers.push({ psi, reading: Math.tan(psi), g: (2 / Math.PI) * psi, ang, paint: L.thing.name, col: L.thing.col, dist: L.dist }); }
+        const rd = fingers.map(f => f.reading).sort((a, b) => a - b), med = n % 2 ? rd[(n - 1) / 2] : Math.sqrt(rd[n / 2 - 1] * rd[n / 2]);
+        return { look: lookDeg, fingers, readings: fingers.map(f => f.reading), paint: fingers.map(f => f.paint), median: med,
+            below: fingers.filter(f => f.reading <= 1).length };
+    }
     const params = o => ({ shape: 'lumpy', rho: 1, k: 0, ...o });
 
     // ── the central reader's geometry (a plain script, so the hook works without drawing) ──
@@ -198,6 +238,7 @@
     const dot = (g, x, y, r, c) => { g.fillStyle = c; g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill(); };
     const GOLD = '#d4a052', TEAL = '#8ce6cd', VIOLET = '#b59cf0', BRIGHT = '#e6e4ee', RED = '#d96e5b';
     const STEPS = [
+        ['the hand', 'The reader at home, looking. Its fingers are the uniform turn from flat (h) to upright (v), read v/h: the Cauchy, laid by looking, before anything arrives. Turn where it looks: the fingers, their readings and their median at the corner (v/h = 1) do not change. What changes is the light. The world\'s rays arrive along the fingers and draw on them, each finger the colour of the first thing on its line; the reader sends nothing, turns through nothing and computes nothing. To read the payload is to read what the light drew.'],
         ['the baseline', 'A circle read from its own centre. Its directions (gold) are laid out evenly before anything arrives, and along every one the same amount arrives. That constant is its baseline: it says the outline is round, and nothing about how big it is.'],
         ['a shape', 'Now a shape. Each given direction brings a different amount, so each reading is a point: the direction it already had, and how far. Two numbers in the plane, where the address reader gets one. Scale the world: every amount moves by k together, and the shape, each amount over their geometric mean, does not move at all. It holds the shape in full, up to one factor.'],
         ['the modes', 'What it can recover is the shape\'s departure from its baseline circle: the modes of ln r, read from ratios of its radii. The size, the common term a₀ = ln k, is never among them. Keep the modes in order of n and the outline comes back broad form first: its level of detail.'],
@@ -205,15 +246,65 @@
         ['one read', 'With the address reader, on a chord of 1. From home the ray turns θ and reads a ratio, v/h, which runs off to ∞. From the middle the radius turns 2θ and reaches a point, (h², hv), which stays on its circle. Ray and radius end at the same point every moment (Euclid III.20). The arc carved over the chord to it is θ/sin θ: π/2 at the end. There the ray is tangent, a horizon; the radius just ends.']
     ];
     let dragging = false;
+    function drawHand() {
+        const p = S, H1 = hand(p.look);
+        $('lookv').textContent = `${p.look.toFixed(1)}°`;
+        for (const id of ['c-shape', 'c-k', 'c-L', 'c-z', 'c-t']) $(id).classList.add('hide');
+        $('c-look').classList.remove('hide');
+        [...$('steps').children].forEach((b, i) => b.classList.toggle('on', i === 0));
+        $('say').textContent = STEPS[0][1];
+        let [g, W, H] = fit($('main'));
+        const cx = W / 2, cy = H / 2, sc = Math.min(W, H) / 11, P = ([x, y]) => [cx + x * sc, cy - y * sc], a0 = p.look * Math.PI / 180;
+        // the wedge, out to the edge of the picture
+        g.fillStyle = 'rgba(212,160,82,0.07)'; g.beginPath(); g.moveTo(cx, cy); g.arc(cx, cy, Math.hypot(W, H), -a0 - Math.PI / 2, -a0, false); g.closePath(); g.fill();
+        THINGS.forEach(T => { g.fillStyle = T.col; g.globalAlpha = 0.85; g.beginPath(); g.arc(...P([T.x, T.y]), T.r * sc, 0, TAU); g.fill(); g.globalAlpha = 1;
+            txt(g, T.name, P([T.x, T.y])[0] - 12, P([T.x, T.y])[1] - T.r * sc - 4, '#8a8a96', 10); });
+        H1.fingers.forEach(f => { const d = isFinite(f.dist) ? f.dist : 20, c = Math.cos(f.ang), s = Math.sin(f.ang);
+            g.strokeStyle = f.col; g.globalAlpha = 0.9; g.lineWidth = 1.5; g.beginPath(); g.moveTo(cx, cy); g.lineTo(...P([c * d, s * d])); g.stroke(); g.globalAlpha = 1; });
+        // the corner finger direction, v = h
+        g.strokeStyle = GOLD; g.setLineDash([4, 4]); g.lineWidth = 1; g.beginPath(); g.moveTo(cx, cy);
+        g.lineTo(cx + Math.cos(a0 + Math.PI / 4) * 0.48 * Math.min(W, H), cy - Math.sin(a0 + Math.PI / 4) * 0.48 * Math.min(W, H)); g.stroke(); g.setLineDash([]);
+        dot(g, cx, cy, 6, TEAL); txt(g, 'home', cx + 9, cy + 16, TEAL);
+        txt(g, 'the world, as only the writer sees it; the wedge where the reader looks', 10, 18);
+        // the side: the hand itself, the same at every look, and what the light drew on it
+        [g, W, H] = fit($('side'));
+        const x0 = 30, x1 = W - 14, X = gv => x0 + (x1 - x0) * gv;
+        txt(g, 'the fingers, laid evenly by turn (g = (2/π)·arctan(v/h))', 10, 18, GOLD);
+        const yF = 70; g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(x0, yF); g.lineTo(x1, yF); g.stroke();
+        H1.fingers.forEach(f => { g.strokeStyle = GOLD; g.lineWidth = 2; g.beginPath(); g.moveTo(X(f.g), yF - 14); g.lineTo(X(f.g), yF + 4); g.stroke(); });
+        for (const [gv, lab] of [[0, 'h'], [0.25, '0.414'], [0.5, '1, the corner'], [0.75, '2.414'], [1, 'v']]) {
+            g.strokeStyle = 'rgba(255,255,255,0.5)'; g.beginPath(); g.moveTo(X(gv), yF + 4); g.lineTo(X(gv), yF + 10); g.stroke();
+            txt(g, lab, X(gv) - (gv === 1 ? 8 : gv === 0.5 ? 30 : 12), yF + 24, '#8a8a96', 11); }
+        txt(g, 'readings v/h at the quartiles and the median: the Cauchy\'s', x0, yF + 42, '#8a8a96', 11);
+        const yP = 160, hP = 90;
+        txt(g, 'what the light drew on them (changes with the look)', 10, yP - 12, TEAL);
+        const bw = (x1 - x0) / H1.fingers.length;
+        H1.fingers.forEach((f, i) => { g.fillStyle = f.col; g.fillRect(x0 + i * bw + 1, yP, bw - 2, hP); });
+        g.strokeStyle = GOLD; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(X(0.5), yP - 4); g.lineTo(X(0.5), yP + hP + 4); g.stroke(); g.setLineDash([]);
+        const counts = {}; H1.paint.forEach(n => { counts[n] = (counts[n] || 0) + 1; });
+        txt(g, Object.entries(counts).map(([k, v]) => `${k} ${v}`).join('  '), x0, yP + hP + 22, '#c8c8d0', 11);
+        const ref = hand(0), same = Math.max(...H1.readings.map((r, i) => Math.abs(r - ref.readings[i])));
+        $('hud').textContent = [
+            `look ${p.look.toFixed(1)}°: ${NF} fingers, uniform by turn over the quarter turn from h to v`,
+            `their readings v/h: ${H1.readings.slice(0, 3).map(r => r.toFixed(4)).join(', ')} … ${H1.readings.slice(-2).map(r => r.toFixed(3)).join(', ')}  (the Cauchy's quantiles)`,
+            `median ${H1.median.toFixed(6)} (the corner); ${H1.below} of ${NF} at v/h ≤ 1; the same at every look (off by ${same.toExponential(0)})`,
+            `the light drawn on them: ${Object.keys(counts).length} kinds — ${Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(', ')}`,
+            `the reader sends nothing, turns through nothing, computes nothing; no distance reaches it, only light on a finger`
+        ].join('\n');
+        $('cap1').textContent = 'The world from no standpoint (the writer\'s picture). The reader at home; its fingers in the wedge where it looks, each the colour of the first thing on its line; the corner dashed.';
+        $('cap2').textContent = 'Top: the hand, the same wherever the reader looks. Bottom: the light on each finger, which is all that changes.';
+    }
     function draw() {
-        const p = S, st = S.step;
+        if (S.step === 1) return drawHand();
+        $('c-look').classList.add('hide');
+        const p = S, st = S.step - 1;
         $('kv').textContent = `k = ${Math.pow(10, p.k).toPrecision(3)}`;
         $('Lv').textContent = p.L === 0 ? 'none (the circle)' : String(p.L);
         $('tv').textContent = `${p.t.toFixed(1)}°`;
         for (const [id, on] of [['c-shape', st === 2 || st === 3], ['c-k', st <= 3], ['c-L', st === 3], ['c-z', st === 4], ['c-t', st === 5]])
             $(id).classList.toggle('hide', !on);
-        [...$('steps').children].forEach((b, i) => b.classList.toggle('on', i + 1 === st));
-        $('say').textContent = STEPS[st - 1][1];
+        [...$('steps').children].forEach((b, i) => b.classList.toggle('on', i === st));
+        $('say').textContent = STEPS[st][1];
         const lines = [];
         if (st <= 3) {
             const q = st === 1 ? params({ shape: 'circle', rho: 0, k: p.k }) : p;
@@ -353,7 +444,8 @@
         $('hud').textContent = lines.join('\n');
     }
     function set(o) {
-        if (o.step != null) S.step = Math.max(1, Math.min(5, Math.round(+o.step)));
+        if (o.step != null) S.step = Math.max(1, Math.min(6, Math.round(+o.step)));
+        if (o.look != null) { S.look = ((+o.look % 360) + 360) % 360; $('look').value = S.look; }
         if (o.shape && SHAPES[o.shape]) { S.shape = o.shape; $('shape').value = o.shape; }
         if (o.rho != null) { S.rho = +o.rho; $('rho').value = S.rho; }
         if (o.k != null) { S.k = +o.k; $('k').value = S.k; }
@@ -368,22 +460,26 @@
     $('k').addEventListener('input', () => set({ k: $('k').value }));
     $('L').addEventListener('input', () => set({ L: $('L').value }));
     $('t').addEventListener('input', () => set({ t: $('t').value }));
+    $('look').addEventListener('input', () => set({ look: $('look').value }));
     $('zc').addEventListener('click', () => set({ z: [0, 0] }));
-    // dragging the reader in step 4
+    // dragging the reader in step 5
     const toZ = e => { const cv = $('main'), b = cv.getBoundingClientRect(), W = b.width, H = b.height, sc = Math.min(W, H) * 0.42;
         return [(e.clientX - b.left - W / 2) / sc, -(e.clientY - b.top - H / 2) / sc]; };
-    $('main').addEventListener('pointerdown', e => { if (S.step !== 4) return; dragging = true; $('main').setPointerCapture(e.pointerId); set({ z: toZ(e) }); });
+    $('main').addEventListener('pointerdown', e => { if (S.step !== 5) return; dragging = true; $('main').setPointerCapture(e.pointerId); set({ z: toZ(e) }); });
     $('main').addEventListener('pointermove', e => { if (dragging) set({ z: toZ(e) }); });
     $('main').addEventListener('pointerup', () => { dragging = false; });
     let playing = false, last = 0;
     $('play').addEventListener('click', () => { playing = !playing; $('play').classList.toggle('on', playing); $('play').textContent = playing ? 'pause' : 'play the turn'; last = 0; requestAnimationFrame(tick); });
     function tick(ts) { if (!playing) return; if (last) set({ t: (S.t + (ts - last) * 0.02) % 90.05 }); last = ts; requestAnimationFrame(tick); }
+    let looking = false, lastL = 0;
+    $('lookplay').addEventListener('click', () => { looking = !looking; $('lookplay').classList.toggle('on', looking); $('lookplay').textContent = looking ? 'pause' : 'look around'; lastL = 0; requestAnimationFrame(tickL); });
+    function tickL(ts) { if (!looking) return; if (lastL) set({ look: S.look + (ts - lastL) * 0.02 }); lastL = ts; requestAnimationFrame(tickL); }
     window.addEventListener('resize', draw);
     const q = new URLSearchParams(location.search), init = {};
-    for (const key of ['step', 'shape', 'rho', 'k', 'L', 't']) if (q.has(key)) init[key] = q.get(key);
+    for (const key of ['step', 'shape', 'rho', 'k', 'L', 't', 'look']) if (q.has(key)) init[key] = q.get(key);
     if (q.has('z')) init.z = q.get('z').split(',');
     set(init);
-    window.__centralReader = { radius, point, central, modes, rebuilt, land, landingDensity, poisson, arcMeasure, poissonMean,
+    window.__centralReader = { hand, lightOn, THINGS, radius, point, central, modes, rebuilt, land, landingDensity, poisson, arcMeasure, poissonMean,
         oneRead, set, state: () => JSON.parse(JSON.stringify(S)), params, hud: () => $('hud').textContent };
 })();
 </script>

@@ -538,7 +538,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `window.__writerBox` (`rotOf`, `anglesOfRot`, `octantRot`, `addresses`, `hitBox`, `read`, `readAt`, `counts`, `horizon`,
   `shellAt`, `camera`, `set` (with `view`), `state`, `hud`, `apexScreen`, `frames`, `webgl`). Not in the flying page.
 - `central-reader.html`: **the central reader** (23 Oct 2026, Tom: "create a demo of the central reader so I can understand it
-  better."; SPN R451, R452: classical results only), a standalone page, plain canvas, after `two-readers.html`. Five steps:
+  better."; SPN R451, R452: classical results only), a standalone page, plain canvas, after `two-readers.html`. Since R453
+  it opens with the hand (step 1; Tom: "the fingers are pure cauchy geometry, the readers does nothing, it is free. where
+  ever he looks, this geometry is created."): the reader at home, 24 fingers uniform by turn over the quarter turn, read
+  v/h (the Cauchy, median 1), the same at every look; ten things about it, each finger painted by the light of the first
+  on its line, the paint all that changes with the look (`?look=`). Then the classical pieces as steps 2–6:
   the baseline (a circle read from its centre, the same amount along every given direction); a shape, ln r = a₀ + ρ·f(θ)
   (32 given directions, an amount along each, a point of two numbers; scale the world k moves every amount by k and the
   shape, each over the geometric mean, not at all); the modes (Fourier modes of ln r, n ≥ 1, from ratios of radii, a₀
@@ -546,8 +550,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   even turn lands unevenly, the circle's law from z the Poisson kernel, harmonic measure, arcs (2α − arc)/2π, mean z, equal
   to twice the landing density less the uniform); one read (on a chord of 1, the ray from home at θ and the radius from
   the middle at 2θ meet, III.20; the address v/h unbounded, the point (h², hv) on its circle; arc over chord θ/sin θ to
-  π/2). Drawn at the centre of what it reads; where it stands is not ruled (R451).
-  `?step=1..5&shape=circle|egg|star|lumpy&rho=&k=<log10 k>&L=&z=x,y&t=<degrees>`; hook `window.__centralReader` (`radius`,
+  π/2). Steps 2–6 draw the classical polar reading from a shape's centre; since R453 the payload reader is the hand at home.
+  `?step=1..6&look=<degrees>&shape=circle|egg|star|lumpy&rho=&k=<log10 k>&L=&z=x,y&t=<degrees>`; hook `window.__centralReader` (`hand`, `lightOn`, `THINGS`, `radius`,
   `point`, `central`, `modes`, `rebuilt`, `land`, `landingDensity`, `poisson`, `arcMeasure`, `poissonMean`, `oneRead`, `set`,
   `state`, `params`, `hud`). Not in the flying page.
 - `ground.html`: **one's own height** (22 Oct 2026, Tom: "1,2", the second a demo of OFS §9's "The ground: one's own height as
@@ -805,6 +809,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   turn from an interior point lays the wrapped Cauchy": that is the rates' combination (2·dθ/dφ − 1)/2π, (2α − arc)/2π.
   **The central reader, a demo** (23 Oct, SPN R452; Tom: "create a demo of the central reader so I can understand it
   better."): `central-reader.html`, classical results only, nothing added to OFS.
+  **The fingers are free; the light draws on them** (23 Oct, SPN R453; Tom: "the reader is not a radar."; "the fingers are
+  laid by cauchy, the fingers are the inscribed sweep. the light rays of the world are the payloads, they draw on the
+  readers fingers"; "the fingers are pure cauchy geometry, the readers does nothing, it is free. where ever he looks, this
+  geometry is created."; "yes"): one hand. OFS §3.7's hand bullet now says the fingers are the uniform turn's geometry, the
+  Cauchy, there wherever the reader looks, laid by looking (it computes, sends and turns through nothing); the rings are
+  the world's light along each finger; to read the payload is to read what the light drew, from the same standpoint. The
+  payload reader is not a second standpoint or a radius per direction (that is ranging, a writing); R451's "at the centre
+  of what it reads" withdrawn. "The situations in the hand" bullet left for Tom. `central-reader.html` opens with the hand.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -2365,7 +2377,8 @@ In short:
       orthographic, the address reader's at its standpoint, the payload reader's shell unmoved by k = 10³ and its mean
       moved by k; WebGL drew frames.
 
-  53. **central-reader.html:** the shape unmoved by k = 10⁻², 10^0.5, 10², every amount by k; a circle flat from its
+  53. **central-reader.html:** the hand: the fingers' readings the same at three looks, median 1, 12 of 24 at v/h ≤ 1, the
+      light on them different at each; the shape unmoved by k = 10⁻², 10^0.5, 10², every amount by k; a circle flat from its
       centre; the modes of ln r 0.15, 0.08, 0.05 at n = 2, 3, 6, unmoved by k; harmonic measure: arcs (2α − arc)/2π to
       10⁻⁷, the Poisson kernel's mean z, the kernel twice the even turn's landings less the uniform one; ray and radius meet
       on the circle on the chord; arc over chord π/2 at 90°, v/h 1 at 45°; a real drag moves the reader.

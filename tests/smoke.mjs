@@ -1504,7 +1504,8 @@ try {
     failures.push(`[${current}] ${JSON.stringify(wbx)}`);
   console.log(`${failures.length === before52 ? 'ok  ' : 'FAIL'} ${current} (moved, turned, resized and the world scaled by 10⁻³ and 10³: the 1,024 addresses unchanged, every landing on a face of the box (${wbx.face.toExponential(0)}), the landings moved by up to ${wbx.moved.toFixed(1)} and by k exactly; v ≤ h, v₂ ≤ h, v₂ ≤ v ½, the near field ${wbx.c.near.toFixed(4)}; a real drag moved the wedge ${wbx.dragged.toFixed(2)}; the three vantages: the writer's parallel rays, the address reader's camera at its standpoint, the payload reader's shell unmoved by k (${wbx.shell.toExponential(0)}) and its mean by k; WebGL drew frames)`);
 
-  // ── 53. central-reader.html: the payload reader on its own (SPN R451, R452), classical results only: the shape (each
+  // ── 53. central-reader.html: the hand (SPN R453): the fingers' readings unmoved by where the reader looks, their median
+  //    at the corner, the light drawn on them changing; then the classical pieces (SPN R451, R452): the shape (each
   //    amount over the geometric mean) unmoved by scaling the world, every amount moved by k; a circle read from its centre
   //    flat; the modes of ln r recovered (0.15, 0.08, 0.05 at n = 2, 3, 6) and unmoved by k; harmonic measure: the
   //    Poisson kernel's arcs (2α − arc)/2π, its mean z, and twice the even turn's landings less the uniform one; the ray
@@ -1530,7 +1531,10 @@ try {
     o.offCentre = Math.abs(C.landingDensity([0.45, 0.2], 0.4) - C.poisson([0.45, 0.2], 0.4)) * 2 * Math.PI;
     for (let d = 0; d <= 90; d += 0.5) { const r = C.oneRead(d); o.meet = Math.max(o.meet, r.meet); o.onCircle = Math.max(o.onCircle, Math.abs(r.fromMiddle - 0.5)); }
     o.end = C.oneRead(90).arcOverChord; o.corner = C.oneRead(45).address; o.far = C.oneRead(89.99).address;
-    C.set({ step: 4, z: [0, 0] }); return o; });
+    const h0 = C.hand(0), h1 = C.hand(137), h2 = C.hand(250);
+    o.handSame = Math.max(...h0.readings.map((r, i) => Math.max(Math.abs(r - h1.readings[i]), Math.abs(r - h2.readings[i]))));
+    o.handMedian = h0.median; o.handBelow = h0.below; o.handPaint = h0.paint.join() !== h1.paint.join() && h1.paint.join() !== h2.paint.join();
+    C.set({ step: 5, z: [0, 0] }); return o; });
   { const box = await page.locator('#main').boundingBox();
     await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2); await page.mouse.down();
     await page.mouse.move(box.x + box.width / 2 + 60, box.y + box.height / 2 - 30, { steps: 5 }); await page.mouse.up();
@@ -1539,9 +1543,9 @@ try {
   if (!(cr.sh < 1e-12) || !(cr.fac < 1e-12) || !(cr.flat < 1e-12) || cr.amps.some((a, i) => Math.abs(a - crAmp[i]) > 1e-9) ||
     !(cr.ampK < 1e-12) || !(cr.arc < 1e-7) || !(cr.mean < 1e-9) || !(cr.comb < 1e-7) || !(cr.offCentre > 0.05) ||
     !(cr.meet < 1e-12) || !(cr.onCircle < 1e-12) || Math.abs(cr.end - Math.PI / 2) > 1e-12 || Math.abs(cr.corner - 1) > 1e-12 ||
-    !(cr.far > 1000) || !(cr.dragged > 0.1))
+    !(cr.far > 1000) || !(cr.dragged > 0.1) || !(cr.handSame < 1e-15) || Math.abs(cr.handMedian - 1) > 1e-12 || cr.handBelow !== 12 || !cr.handPaint)
     failures.push(`[${current}] ${JSON.stringify(cr)}`);
-  console.log(`${failures.length === before53 ? 'ok  ' : 'FAIL'} ${current} (the shape unmoved by k (${cr.sh.toExponential(0)}), every amount by k; a circle flat from its centre; the modes 0.15, 0.08, 0.05 at n = 2, 3, 6, unmoved by k; harmonic measure: arcs (2α − arc)/2π to ${cr.arc.toExponential(0)}, its mean z, twice the even turn's landings less the uniform to ${cr.comb.toExponential(0)}; ray and radius meet on the circle on the chord; arc over chord π/2 at the end; a real drag moved the reader ${cr.dragged.toFixed(2)})`);
+  console.log(`${failures.length === before53 ? 'ok  ' : 'FAIL'} ${current} (the hand: the fingers' readings the same at three looks, their median at the corner, 12 of 24 at v/h ≤ 1, the light on them different at each; the shape unmoved by k (${cr.sh.toExponential(0)}), every amount by k; a circle flat from its centre; the modes 0.15, 0.08, 0.05 at n = 2, 3, 6, unmoved by k; harmonic measure: arcs (2α − arc)/2π to ${cr.arc.toExponential(0)}, its mean z, twice the even turn's landings less the uniform to ${cr.comb.toExponential(0)}; ray and radius meet on the circle on the chord; arc over chord π/2 at the end; a real drag moved the reader ${cr.dragged.toFixed(2)})`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';

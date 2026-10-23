@@ -865,9 +865,11 @@ each finger the same address.
 - *The thumb is H.* The hand's own measure is its thumb, the reader's breadth, the value it starts from; the mountain it looks at is V. Setting
   V = H is reading the mountain in thumbs.
 - *The geometry is the hand, not the rings.* Dividing v by h keeps the finger and drops the ring.
-- *The inscribed reader is the hand and its fingers; the central reader holds the rings.* One receives the addresses,
-  the fingers' directions; the other receives the magnitudes along fingers it already had. Either may hold what it
-  receives at once or take it in order (§3.5).
+- *The fingers are free; the light draws on them.* The fingers are the geometry of the uniform turn, the Cauchy, and they
+  are there wherever the reader looks: it lays them by looking, computes nothing, sends nothing and turns through
+  nothing. The rings are the light the world sends along each finger, laid on it as it arrives. To read the payload is
+  to read what the light drew on the fingers, from the same standpoint. Either may be held at once or taken in order
+  (§3.5).
 - *The rings hide; the hand does not.* Two rings on one finger, seen along it, show only the nearer: the ring behind is
   the back side. The hand hid nothing; the rings did.
 - *The far field's doublings are fingers.* Past the corner the levels are doublings (§6), addresses laid before
