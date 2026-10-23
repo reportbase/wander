@@ -2035,6 +2035,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `plans/rea/linewidth-note.md`, the attribution as the error (numbers kept, attribution corrected), ChatGPT's comments
   (generate or reveal; reconstruct the inference), the pole revealed and the Lorentzian its trace on the reader's line;
   the run not taken.
+  `lgo-plan.md` (+ `runs/lgo/lgo.py`, `lgo2.py`, 23 Oct; SPN R468; Tom, of another session's `cauchy_test.py`: "lets complete
+  those tests, through the lense of our mathmatical framework."): LIGO H1 and L1 whitened noise, GWOSC open data (gwosc.org's
+  chain needs certifi's bundle joined to the proxy's; sha256s in the plan). The old Cauchy-over-Gaussian at N = 1 is the
+  payload (a t of ν 15.9 and one transient); its move toward the Gaussian the amounts' central limit (n^(−½) through the
+  whitened band); the Cauchy is the direction [H1 : L1] (corner at the drawing's c = 0.932, 0.999 drawn by IQR, angle
+  uniform, averages flat). G1, G3, G6, G7, G9 killed, G1, G6, G9 by my set-up.
   `dyh-plan.md` (+ `runs/dyh/dyh.py`, 18 Oct; SPN R374; Tom: "we are throwing away alot of data … its another dimension
   actually, maybe we could use multi-dimensional arrays", then "both"): exact, nothing killed. The cell (j, k) is
   z = (k + ½)2^−j + i·2^−(j+1): from it C(m, γ) puts ½ in the cell, ¼ in each half (D1); parent to child arcosh 3/2,

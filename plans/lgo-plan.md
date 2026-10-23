@@ -120,3 +120,31 @@ Run 1 informs these, which is said here: the band edge of G1 and the 7% of G3 we
 - **G9 (the transient is payload: it moves no address).** Remove the loudest 0.1% of H1's samples (by |H1|) and the same
   instants from L1. The angle's Kolmogorov distance from uniform changes by less than 0.005, while H1's excess kurtosis
   falls by more than a factor of 100. *Killed* otherwise.
+
+### Run 2 (23 Oct, `python3 runs/lgo/lgo2.py`; output `runs/lgo/lgo-run2.txt`)
+
+- **G1′ not killed.** Over N = 1 … 64 the block means' IQR falls with slope −0.521 (H1) and −0.501 (L1).
+- **G3′ not killed.** c = IQR(L1)/IQR(H1) = 0.9323; median |r| 0.9315, quartiles −0.9302 and +0.9327, each within 0.2% of
+  c. The ratio's corner is where the two channels' drawings put it, measured from their own readings.
+- **G8 not killed.** With each channel divided by its own IQR, a drawing made from order: median |r| 0.9990, quartiles
+  −0.9977 and +1.0004, and the block means' IQR slope −0.006 over N = 1 … 1024. The direction of the two detectors is the
+  standard Cauchy at its corner once V = H is drawn, and averaging it gains nothing.
+- **G9 killed in its letter, by my set-up.** Removing the loudest 0.1% of H1's samples moves the angle's distance from
+  uniform from 0.00866 to 0.00857 (as predicted), and H1's excess kurtosis from 74,305 to −0.057. My test was a ratio
+  above 100, and the second value went below zero, so the ratio is negative; a kurtosis can cross zero, and a ratio was
+  the wrong measure. What it was for stands: the transient is the whole of the heavy tail and moves no address. (The
+  slightly negative value is partly the cut itself, which removes a tail.)
+
+**Where LGO stands.** Read through the framework, the old test sorts this way:
+- its N = 1 preference for the Cauchy over the Gaussian is a finite-variance tail (a t with ν = 15.9) made by one loud
+  transient: the payload's;
+- its transition toward the Gaussian is the amounts' central limit (the means shrink as n^(−½) through the whitened
+  band): an amount with a spread, which a Cauchy could not be, since averaging Cauchy readings changes nothing;
+- the Cauchy is in the data where the turn is: the direction [H1 : L1] of the two detectors read at one instant, the
+  standard Cauchy once each is drawn at one length by its own readings (V = H), its angle uniform to 0.009, its averages
+  not shrinking at all, and the transient leaving it where it was.
+
+The old test was right that something in LIGO's noise is a Cauchy; it looked for it in the amount, where it is not, and
+its "transition" is the evidence that it is not. Nothing here is new physics: ratios of independent centred normals,
+the central limit theorem and the stable law of index 1 are classical, and so is LIGO's transient noise. What is ours is
+the sort.
