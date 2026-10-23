@@ -72,3 +72,51 @@ independent at the same instant, which is what their separation is for; correlat
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+### Run 1 (23 Oct, `python3 runs/lgo/lgo.py`; output `runs/lgo/lgo-run1.txt`)
+
+Data: H1 and L1, GPS 1257000000–1257000512, 2,097,152 samples each at 4096 Hz; sha256 of the float64 strain as fetched,
+H1 `291a4b24ebc777f8ac416e1f052edf63d276140ccbefc1b45716454a613f90dc`, L1
+`1f0f37d45750f4b0a1d9103e0c36fe18574ec85632015067b9dc785689a9023c`. After whitening and trimming, 2,080,768 samples each;
+H1's sd 2.31 and excess kurtosis 74,305 (a loud transient in the window), L1's sd 1.03.
+
+- **G0 not killed.** The old comparison reproduces: ΔLL (Cauchy − Gaussian) +1,149,014 at N = 1, falling through +604 at
+  N = 128, and negative from N = 256 (−1,275, then −704, −343, −188).
+- **G1 killed in its letter, by my set-up.** The IQR of H1's block means falls from 1.494 to 0.0183 over N = 1 … 1024, a
+  slope of −0.611. Over N = 1 … 64 it is −0.510, as predicted; past N = 64 it steepens (−0.82 from 64 to 1024). A block of
+  64 samples is 16 ms, and the means past it sit below the band the whitening keeps, so the whitened noise has less
+  there than a flat spectrum would: the range I chose ran past the whitening's own low-frequency edge. What the
+  prediction was for stands: the amounts' means shrink, eightyfold, as a Cauchy's never would.
+- **G2 not killed.** A Student-t at N = 1 has ν = 15.9 (finite variance), and beats the Cauchy by 363,188 in
+  log-likelihood and the Gaussian by 1,512,202. The old N = 1 result says "heavier than Gaussian", which here is a t with
+  sixteen degrees of freedom and a loud transient, not a Cauchy.
+- **G3 killed.** For r = L1/H1 the median |r| is 0.9315 and the quartiles −0.9302 and +0.9327: a Cauchy shape, centred,
+  its quartiles a reciprocal-symmetric pair about the median, but at 0.93 and not 1. The two whitenings are not quite
+  the same drawing: each channel was divided by its own spectrum's estimate, and H1's estimate carries the transient, so
+  H1's core is drawn about 7% larger than L1's. That is V = cH with c ≈ 0.93, and Proposition 5(d)'s median at 1/c… at c
+  for this ratio: the corner moves with the drawing, as the proposition says. My prediction assumed the whitening drew
+  them at one length.
+- **G4 not killed.** The angle atan2(L1, H1) is 0.0087 in Kolmogorov distance from the uniform.
+- **G5 not killed.** The IQR of block means of r stays 1.86 from N = 1 to 1,024 (1.863, 1.861, … 1.777): slope −0.006.
+  Averaging the direction gains nothing, while averaging the amount (G1) shrinks it eightyfold over the same blocks.
+- **G6 killed by my set-up.** Rescaling L1 by c = ½ and 2 moves the median |c·r| to 0.4657 and 1.8629, which is
+  0.49995 and 1.99989 of the unscaled 0.9315: exactly c times, as Proposition 5(d) says. The kill is the prediction's
+  reference, 1, which assumed G3.
+- **G7 killed,** since G1 was. Post hoc, what was meant stands: the old N = 1 preference is a finite-variance tail with a
+  transient (G2), the amounts shrink under averaging (G1 over its proper range), the direction is a Cauchy whose median
+  sits where the drawing puts it (G3, G6) and whose averages do not shrink (G5).
+
+### Run 2: predictions (23 Oct, before the run, after reading run 1)
+
+Run 1 informs these, which is said here: the band edge of G1 and the 7% of G3 were seen first.
+
+- **G1′.** The IQR of H1's block means over N = 1 … 64 has slope within 0.05 of −½; and L1's the same. *Killed* otherwise.
+- **G3′ (the drawing measured, not assumed).** Let c = IQR(L1)/IQR(H1) at N = 1, each read by its order statistics.
+  The median |r| is within 1% of c, and the quartiles of r within 1% of ∓c. *Killed* otherwise.
+- **G8 (V = H drawn by order).** Divide each channel by its own IQR before the ratio, a drawing made from the readings'
+  order and not from a spectrum the transient inflates. Then the median |r| is within 0.01 of 1 and the quartiles within
+  0.01 of ∓1, and averaging still gains nothing (the IQR of r's block means over N = 1 … 1024 has slope within 0.1 of 0).
+  *Killed* otherwise.
+- **G9 (the transient is payload: it moves no address).** Remove the loudest 0.1% of H1's samples (by |H1|) and the same
+  instants from L1. The angle's Kolmogorov distance from uniform changes by less than 0.005, while H1's excess kurtosis
+  falls by more than a factor of 100. *Killed* otherwise.
