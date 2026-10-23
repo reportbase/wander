@@ -740,6 +740,12 @@ stays above the reader's resolution; past that distance a point is only a ray. O
 step in an agreed unit, writes it all in that unit. Each step adds what the one before could not: the frame from one
 standpoint, the size in H from two, the unit from one amount more.
 
+**Distance cues in the payload.** What arrives can carry cues to distance: an echo's delay, or how faint a thing of a
+known kind looks. Each turns into a distance only with an amount carried in, the signal's speed and a clock, or how
+bright or large such a thing truly is. Scaling the world by k moves the distance so stated, so by the test above it is a
+writing, not a reading. The picture of §1.3, where a colour says nothing of how far off its pane is, is the reading
+alone: an address, and a payload with no amount carried in beside it.
+
 **The best estimate is the median.** If the reader must guess the other's true size, and knows only V₋ ≤ V* ≤ V₊, the
 guess whose worst error in levels is least is √(V₋V₊), the corner of the bounds; holding a distribution, the guess of
 least expected error is its median, the same for every increasing measure of error; knowing nothing either way, it is
