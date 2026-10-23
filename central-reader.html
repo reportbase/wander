@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The central reader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    central-reader.html: the payload reader on its own (23 October 2026, Tom: "create a demo of the central reader so I can
+    understand it better."; SPN R451: "just use classical results for the central reader"). A standalone page like
+    two-readers.html, plain canvas. Every piece is classical (polar coordinates; Euclid III.20; a shape as its log-radius
+    and its Fourier modes, up to scale; harmonic measure and the Poisson kernel, the wrapped Cauchy); the page only shows
+    them from the central reader's side. Five steps:
+      1. the baseline: a circle read from its own centre, the same amount along every given direction;
+      2. a shape, ln r = a₀ + ρ·f(θ): each direction given, an amount along it, a point (two numbers in the plane);
+         scale the world (k) and every amount moves by k, the shape (each over the geometric mean) not at all;
+      3. the modes: the shape's Fourier modes of ln r, n ≥ 1, read from ratios of radii, a₀ never; kept in order of n they
+         are its level of detail, broad form first;
+      4. off the centre: a reader at z inside a circle; its uniform turn lands unevenly; the circle's own law from z is
+         the Poisson kernel (the wrapped Cauchy, harmonic measure), whose arc measure is (2α − arc)/2π, α the angle the arc
+         subtends at z, and whose mean is z; it equals twice the landing density less the uniform one (classical);
+      5. one read with the address reader: on a chord of 1, the ray from home turning θ (the address, v/h = tan θ,
+         unbounded) and the radius from the middle turning 2θ (the payload, the point (h², hv), bounded) meet at one point
+         of the circle on the chord (III.20); the arc carved over the chord to it, θ/sin θ, π/2 at the end; there the ray
+         is tangent (a horizon) and the radius ends at a point.
+    Where the central reader stands is not ruled (SPN R451): it is drawn at the centre of what it reads, as the other
+    demos draw it. Geometry only; no physics.
+    Links: ?step=1..5&shape=circle|egg|star|lumpy&rho=&k=<log10 k>&L=&z=x,y&t=<degrees>. Test hook: window.__centralReader.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 76ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button, select { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 180px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    #say { color: var(--ink); margin: 8px 0 0; max-width: 90ch }
+    .note { color: var(--dim); font-size: 12.5px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    .gold { color: var(--gold) } .teal { color: var(--teal) } .violet { color: var(--violet) }
+    .hide { display: none }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The central reader</h1>
+    <p class="lede">The payload reader, on its own. Its directions are given to it before anything arrives, evenly round a
+    centre; what arrives along each is an amount, how far the outline lies. So it holds a <span class="gold">point</span>,
+    a direction and an amount, where the address reader holds only a direction. Everything here is classical; the page
+    only looks at it from this reader's side.</p>
+    <div class="panel">
+        <div class="row" id="steps"></div>
+        <div id="say"></div>
+        <div class="row" style="margin-top:8px" id="c-shape">
+            <label for="shape">shape</label>
+            <select id="shape"><option value="circle">circle</option><option value="egg">egg</option>
+                <option value="star">star</option><option value="lumpy" selected>lumpy</option></select>
+            <label for="rho">ρ</label><input id="rho" type="range" min="0" max="1" step="0.01" value="1">
+        </div>
+        <div class="row" style="margin-top:6px" id="c-k">
+            <label for="k">scale the world, k</label><input id="k" type="range" min="-2" max="2" step="0.01" value="0">
+            <span id="kv" class="gold"></span>
+        </div>
+        <div class="row" style="margin-top:6px" id="c-L">
+            <label for="L">modes kept, n ≤</label><input id="L" type="range" min="0" max="8" step="1" value="8">
+            <span id="Lv" class="gold"></span>
+        </div>
+        <div class="row" style="margin-top:6px" id="c-z">
+            <span class="note">drag the reader (violet) inside the circle</span>
+            <button id="zc">back to the centre</button>
+        </div>
+        <div class="row" style="margin-top:6px" id="c-t">
+            <label for="t">turn, θ</label><input id="t" type="range" min="0" max="90" step="0.1" value="30">
+            <span id="tv" class="gold"></span><button id="play">play the turn</button>
+        </div>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="main" height="380"></canvas><p class="cap" id="cap1"></p></div>
+            <div><canvas id="side" height="380"></canvas><p class="cap" id="cap2"></p></div>
+        </div>
+        <div id="hud"></div>
+    </div>
+    <p class="note">Behind it: <i>Observation from Somewhere</i> §9, "The central reading is an amount"; §4, "The address
+    points at the payload" (Euclid III.20); §7.4, the shape as a perturbation of the circle. The off-centre law is harmonic
+    measure: Kakutani (1944); Garnett and Marshall, <i>Harmonic Measure</i> (2005); the wrapped Cauchy as the Möbius image of
+    the Cauchy, McCullagh (1996). Where the central reader stands is left open in the papers; it is drawn here at the centre
+    of what it reads. Other demos: <a href="two-readers.html">two readers</a>, <a href="one-read.html">one turn, one read</a>,
+    <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), TAU = 2 * Math.PI;
+    const SHAPES = {
+        circle: () => 0,
+        egg: t => 0.22 * Math.cos(t) + 0.06 * Math.cos(2 * t),
+        star: t => 0.2 * Math.cos(5 * t),
+        lumpy: t => 0.15 * Math.cos(2 * t) + 0.08 * Math.cos(3 * t + 0.4) + 0.05 * Math.cos(6 * t + 1)
+    };
+    const NC = 32;
+    const S = { step: 1, shape: 'lumpy', rho: 1, k: 0, L: 8, z: [0.45, 0.2], t: 30 };
+    const params = o => ({ shape: 'lumpy', rho: 1, k: 0, ...o });
+
+    // ── the central reader's geometry (a plain script, so the hook works without drawing) ──
+    // the outline about its centre C: r(θ) = k·exp(ρ·f(θ)), k the world's scale (a₀ = ln k), never read
+    const radius = (p, t) => Math.pow(10, p.k) * Math.exp(p.rho * SHAPES[p.shape](t));
+    const point = (p, t) => { const r = radius(p, t); return [r * Math.cos(t), r * Math.sin(t)]; };
+    // what it receives: n given directions, an amount along each; what it can hold is the shape, each over their
+    // geometric mean, since the one common factor is not read
+    function central(p, n = NC) {
+        const dirs = [], raw = [];
+        for (let i = 0; i < n; i++) { dirs.push(TAU * i / n); raw.push(radius(p, TAU * i / n)); }
+        const gm = Math.exp(raw.reduce((s, r) => s + Math.log(r), 0) / n);
+        return { dirs, raw, gm, shape: raw.map(r => r / gm) };
+    }
+    // the modes of ln r about its mean: amplitude and phase of each n ≥ 1, from ratios of radii (a₀ drops out)
+    function modes(p, n = 256, top = 8) {
+        const lr = [];
+        for (let i = 0; i < n; i++) lr.push(Math.log(radius(p, TAU * i / n)));
+        const mean = lr.reduce((s, x) => s + x, 0) / n, out = [];
+        for (let m = 1; m <= top; m++) {
+            let a = 0, b = 0;
+            for (let i = 0; i < n; i++) { const t = TAU * i / n; a += (lr[i] - mean) * Math.cos(m * t); b += (lr[i] - mean) * Math.sin(m * t); }
+            a *= 2 / n; b *= 2 / n;
+            out.push({ n: m, a, b, amp: Math.hypot(a, b) });
+        }
+        return { mean, modes: out };
+    }
+    // the shape from its modes n ≤ L, over the geometric mean (the size not read)
+    function rebuilt(p, L, t) {
+        const M = modes(p).modes; let s = 0;
+        for (const m of M) if (m.n <= L) s += m.a * Math.cos(m.n * t) + m.b * Math.sin(m.n * t);
+        return Math.exp(s);
+    }
+    // off the centre: a reader at z inside the unit circle turns uniformly; where does each ray land?
+    function land(z, phi) {
+        const [x, y] = z, c = Math.cos(phi), s = Math.sin(phi), b = x * c + y * s, q = 1 - x * x - y * y;
+        const tt = -b + Math.sqrt(b * b + q);
+        return Math.atan2(y + tt * s, x + tt * c);
+    }
+    const wrap = a => { a %= TAU; return a < 0 ? a + TAU : a; };
+    // the landing density of the uniform turn from z, per unit angle on the circle (dφ/dθ / 2π), by the chain rule
+    function landingDensity(z, th) {
+        // φ as a function of θ: the direction from z to e^{iθ}
+        const phi = t => Math.atan2(Math.sin(t) - z[1], Math.cos(t) - z[0]);
+        const h = 1e-6; let d = phi(th + h) - phi(th - h);
+        if (d > Math.PI) d -= TAU; if (d < -Math.PI) d += TAU;
+        return d / (2 * h) / TAU;
+    }
+    // the circle's own law from z: the Poisson kernel, the wrapped Cauchy, harmonic measure's density
+    const poisson = (z, th) => { const q = 1 - z[0] * z[0] - z[1] * z[1], dx = Math.cos(th) - z[0], dy = Math.sin(th) - z[1];
+        return q / (dx * dx + dy * dy) / TAU; };
+    // harmonic measure of the arc [a, b] two ways: the Poisson kernel integrated, and the classical (2α − arc)/2π
+    function arcMeasure(z, a, b, m = 4000) {
+        let s = 0; for (let i = 0; i < m; i++) { const t = a + (b - a) * (i + 0.5) / m; s += poisson(z, t); }
+        const integral = s * (b - a) / m;
+        const ang = t => Math.atan2(Math.sin(t) - z[1], Math.cos(t) - z[0]);
+        let alpha = ang(b) - ang(a); while (alpha < 0) alpha += TAU; while (alpha > TAU) alpha -= TAU;
+        return { integral, classical: (2 * alpha - (b - a)) / TAU, alpha };
+    }
+    // the mean of the circle's law from z: ∫ e^{iθ} P dθ, which is z
+    function poissonMean(z, m = 8000) {
+        let sx = 0, sy = 0;
+        for (let i = 0; i < m; i++) { const t = TAU * (i + 0.5) / m, w = poisson(z, t) * TAU / m; sx += w * Math.cos(t); sy += w * Math.sin(t); }
+        return [sx, sy];
+    }
+    // one read with the address reader, on a chord of 1 from home A = (0, 0) to B = (1, 0), its middle O = (½, 0)
+    function oneRead(tDeg) {
+        const t = tDeg * Math.PI / 180, h = Math.cos(t), v = Math.sin(t);
+        const ray = [h * h, h * v];                                  // A's ray at θ, cut at the circle on the chord
+        const rad = [0.5 + 0.5 * Math.cos(2 * t), 0.5 * Math.sin(2 * t)];  // O's radius at 2θ
+        const meet = Math.hypot(ray[0] - rad[0], ray[1] - rad[1]);
+        const arc = t;                       // the arc from B carved so far: ½ · 2θ
+        const chord = v;                     // from B to the point: sin θ (A to it is cos θ, the angle at it square)
+        return { t, address: v / h, point: { foot: h * h, height: h * v }, ray, rad, meet, arc, chord,
+            arcOverChord: chord > 0 ? arc / chord : 1, chordOverArc: arc > 0 ? chord / arc : 1, fromMiddle: Math.hypot(rad[0] - 0.5, rad[1]) };
+    }
+
+    // ── drawing ──
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.fillStyle = '#000'; g.fillRect(0, 0, w, hh); return [g, w, hh];
+    }
+    const txt = (g, s, x, y, c = '#8a8a96', size = 12) => { g.fillStyle = c; g.font = `${size}px DM Mono, monospace`; g.fillText(s, x, y); };
+    const dot = (g, x, y, r, c) => { g.fillStyle = c; g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill(); };
+    const GOLD = '#d4a052', TEAL = '#8ce6cd', VIOLET = '#b59cf0', BRIGHT = '#e6e4ee', RED = '#d96e5b';
+    const STEPS = [
+        ['the baseline', 'A circle read from its own centre. Its directions (gold) are laid out evenly before anything arrives, and along every one the same amount arrives. That constant is its baseline: it says the outline is round, and nothing about how big it is.'],
+        ['a shape', 'Now a shape. Each given direction brings a different amount, so each reading is a point: the direction it already had, and how far. Two numbers in the plane, where the address reader gets one. Scale the world: every amount moves by k together, and the shape, each amount over their geometric mean, does not move at all. It holds the shape in full, up to one factor.'],
+        ['the modes', 'What it can recover is the shape\'s departure from its baseline circle: the modes of ln r, read from ratios of its radii. The size, the common term a₀ = ln k, is never among them. Keep the modes in order of n and the outline comes back broad form first: its level of detail.'],
+        ['off the centre', 'Move the reader off the centre of a circle. Its turn is still even, but its rays land unevenly (gold, dashed). The circle\'s own law seen from the reader is the Poisson kernel (violet), the wrapped Cauchy: harmonic measure. It gives an arc the measure (2α − arc)/2π, α the angle the arc spans at the reader, and its mean is the reader\'s place, z. A mean exists because the circle closes: there is no horizon.'],
+        ['one read', 'With the address reader, on a chord of 1. From home the ray turns θ and reads a ratio, v/h, which runs off to ∞. From the middle the radius turns 2θ and reaches a point, (h², hv), which stays on its circle. Ray and radius end at the same point every moment (Euclid III.20). The arc carved over the chord to it is θ/sin θ: π/2 at the end. There the ray is tangent, a horizon; the radius just ends.']
+    ];
+    let dragging = false;
+    function draw() {
+        const p = S, st = S.step;
+        $('kv').textContent = `k = ${Math.pow(10, p.k).toPrecision(3)}`;
+        $('Lv').textContent = p.L === 0 ? 'none (the circle)' : String(p.L);
+        $('tv').textContent = `${p.t.toFixed(1)}°`;
+        for (const [id, on] of [['c-shape', st === 2 || st === 3], ['c-k', st <= 3], ['c-L', st === 3], ['c-z', st === 4], ['c-t', st === 5]])
+            $(id).classList.toggle('hide', !on);
+        [...$('steps').children].forEach((b, i) => b.classList.toggle('on', i + 1 === st));
+        $('say').textContent = STEPS[st - 1][1];
+        const lines = [];
+        if (st <= 3) {
+            const q = st === 1 ? params({ shape: 'circle', rho: 0, k: p.k }) : p;
+            // the world, at a fixed screen scale so that scaling it shows
+            let [g, W, H] = fit($('main'));
+            const cx = W / 2, cy = H / 2, sc = Math.min(W, H) * 0.3, P = ([x, y]) => [cx + x * sc, cy - y * sc];
+            g.strokeStyle = 'rgba(255,255,255,0.1)'; g.lineWidth = 1;
+            for (let r = 1; r <= 3; r++) { g.beginPath(); g.arc(cx, cy, r * sc, 0, TAU); g.stroke(); }
+            const c = central(q);
+            g.strokeStyle = 'rgba(212,160,82,0.55)';
+            c.dirs.forEach(t => { g.beginPath(); g.moveTo(cx, cy); g.lineTo(...P(point(q, t))); g.stroke(); });
+            g.strokeStyle = BRIGHT; g.lineWidth = 2; g.beginPath();
+            for (let i = 0; i <= 360; i++) { const pt = P(point(q, TAU * i / 360)); i ? g.lineTo(...pt) : g.moveTo(...pt); } g.stroke();
+            c.dirs.forEach(t => dot(g, ...P(point(q, t)), 2.5, GOLD));
+            if (st === 3) {   // the outline rebuilt from the modes kept, at the true scale only for the eye
+                g.strokeStyle = TEAL; g.lineWidth = 1.5; g.setLineDash([5, 4]); g.beginPath();
+                for (let i = 0; i <= 360; i++) { const t = TAU * i / 360, r = c.gm * rebuilt(q, p.L, t), pt = P([r * Math.cos(t), r * Math.sin(t)]); i ? g.lineTo(...pt) : g.moveTo(...pt); }
+                g.stroke(); g.setLineDash([]);
+            }
+            dot(g, cx, cy, 5, GOLD); txt(g, 'C', cx + 8, cy + 15, GOLD);
+            txt(g, 'the world, as only the writer sees it (rings 1, 2, 3 in its unit)', 10, 18);
+            // the side panel: what it holds
+            [g, W, H] = fit($('side'));
+            if (st < 3) {
+                const x0 = 40, x1 = W - 14, y0 = H - 40, y1 = 30, ymax = 2, Y = v => y0 - (y0 - y1) * v / ymax, X = t => x0 + (x1 - x0) * t / TAU;
+                g.strokeStyle = 'rgba(255,255,255,0.25)'; g.beginPath(); g.moveTo(x0, y1); g.lineTo(x0, y0); g.lineTo(x1, y0); g.stroke();
+                g.strokeStyle = 'rgba(212,160,82,0.4)'; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(x0, Y(1)); g.lineTo(x1, Y(1)); g.stroke(); g.setLineDash([]);
+                txt(g, '1', x0 - 14, Y(1) + 4); txt(g, '0', x0 - 14, y0 + 4); txt(g, '2', x0 - 14, Y(2) + 4);
+                txt(g, 'given direction →', x1 - 140, y0 + 20); txt(g, 'amount ÷ geometric mean (no unit)', 10, 18, GOLD);
+                c.shape.forEach((s, i) => { const x = X(c.dirs[i]); g.strokeStyle = GOLD; g.lineWidth = 3; g.beginPath(); g.moveTo(x, y0); g.lineTo(x, Y(s)); g.stroke(); });
+            } else {
+                const M = modes(q).modes, x0 = 30, x1 = W - 14, y0 = H - 40, y1 = 34, amax = Math.max(0.25, ...M.map(m => m.amp));
+                g.strokeStyle = 'rgba(255,255,255,0.25)'; g.beginPath(); g.moveTo(x0, y0); g.lineTo(x1, y0); g.stroke();
+                txt(g, 'modes of ln r, read from ratios of radii', 10, 18, GOLD);
+                const bw = (x1 - x0) / (M.length + 1);
+                txt(g, 'a₀', x0 + bw * 0.25, y0 + 18, RED);
+                txt(g, 'never', x0 + bw * 0.05, y0 - 10, RED, 10);
+                M.forEach((m, i) => { const x = x0 + bw * (i + 1), hgt = (y0 - y1) * m.amp / amax;
+                    g.fillStyle = m.n <= p.L ? TEAL : 'rgba(140,230,205,0.25)'; g.fillRect(x + bw * 0.2, y0 - hgt, bw * 0.6, hgt);
+                    txt(g, `n=${m.n}`, x + bw * 0.12, y0 + 18, m.n <= p.L ? TEAL : '#8a8a96', 11); });
+            }
+            const mm = modes(q);
+            lines.push(`given directions: ${NC}, evenly round C (rate 1: equal turns, equal arcs)`);
+            lines.push(`each reading: a direction (given) + an amount → a point, 2 numbers in the plane`);
+            lines.push(`the amounts:  min ${Math.min(...c.raw).toPrecision(4)}  max ${Math.max(...c.raw).toPrecision(4)}   (move by k)`);
+            lines.push(`the shape:    min ${Math.min(...c.shape).toFixed(4)}  max ${Math.max(...c.shape).toFixed(4)}   (each over the geometric mean; no k in it)`);
+            lines.push(`geometric mean ${c.gm.toPrecision(4)} = e^a₀: the size, the one term no reading fixes`);
+            if (st === 3) lines.push(`modes kept n ≤ ${p.L}: ${mm.modes.filter(m => m.n <= p.L && m.amp > 1e-9).map(m => `n=${m.n} ${m.amp.toFixed(3)}`).join(', ') || 'none: the circle'}`);
+            $('cap1').textContent = st === 3 ? 'The outline (white), and rebuilt from the modes kept (teal, dashed), drawn at the true size for the eye only.' : 'The outline (white) and the reader\'s given directions from C (gold), each ending where an amount arrives.';
+            $('cap2').textContent = st === 3 ? 'The shape\'s modes. The size a₀ is not one of them. Fewer modes kept: a coarser outline, the broad form first.' : 'What the central reader holds: along each given direction, an amount. Shown over their geometric mean, since the unit is not read; on the circle every bar is 1.';
+        } else if (st === 4) {
+            const z = p.z;
+            let [g, W, H] = fit($('main'));
+            const cx = W / 2, cy = H / 2, sc = Math.min(W, H) * 0.42, P = ([x, y]) => [cx + x * sc, cy - y * sc];
+            g.strokeStyle = 'rgba(212,160,82,0.35)'; g.lineWidth = 1;
+            for (let i = 0; i < 48; i++) { const th = land(z, TAU * i / 48); g.beginPath(); g.moveTo(...P(z)); g.lineTo(...P([Math.cos(th), Math.sin(th)])); g.stroke(); }
+            g.strokeStyle = BRIGHT; g.lineWidth = 2; g.beginPath(); g.arc(cx, cy, sc, 0, TAU); g.stroke();
+            for (let i = 0; i < 48; i++) { const th = land(z, TAU * i / 48); dot(g, ...P([Math.cos(th), Math.sin(th)]), 2.5, GOLD); }
+            // the Poisson kernel as a band round the circle
+            g.strokeStyle = VIOLET; g.lineWidth = 2; g.beginPath();
+            for (let i = 0; i <= 360; i++) { const th = TAU * i / 360, r = 1 + 0.5 * poisson(z, th) * TAU / 4, pt = P([r * Math.cos(th), r * Math.sin(th)]); i ? g.lineTo(...pt) : g.moveTo(...pt); }
+            g.stroke();
+            dot(g, cx, cy, 3, 'rgba(255,255,255,0.5)');
+            const mean = poissonMean(z);
+            g.strokeStyle = VIOLET; g.lineWidth = 1.5; g.beginPath(); g.arc(...P(mean), 9, 0, TAU); g.stroke();
+            dot(g, ...P(z), 6, VIOLET); txt(g, 'z', P(z)[0] + 9, P(z)[1] - 8, VIOLET);
+            txt(g, 'the reader at z; its even turn (gold)', 10, 18);
+            // side: densities against the angle round the circle
+            [g, W, H] = fit($('side'));
+            const x0 = 40, x1 = W - 14, y0 = H - 40, y1 = 30;
+            let ymax = 0; for (let i = 0; i <= 360; i++) ymax = Math.max(ymax, poisson(z, TAU * i / 360) * TAU);
+            ymax = Math.max(2, Math.min(12, ymax * 1.05));
+            const X = t => x0 + (x1 - x0) * t / TAU, Y = v => y0 - (y0 - y1) * v / ymax;
+            g.strokeStyle = 'rgba(255,255,255,0.25)'; g.beginPath(); g.moveTo(x0, y1); g.lineTo(x0, y0); g.lineTo(x1, y0); g.stroke();
+            const curve = (f, col, dash) => { g.strokeStyle = col; g.lineWidth = 2; g.setLineDash(dash); g.beginPath();
+                for (let i = 0; i <= 360; i++) { const t = TAU * i / 360, pt = [X(t), Y(Math.min(ymax, f(t) * TAU))]; i ? g.lineTo(...pt) : g.moveTo(...pt); } g.stroke(); g.setLineDash([]); };
+            curve(() => 1 / TAU, 'rgba(255,255,255,0.45)', [2, 4]);
+            curve(t => landingDensity(z, t), GOLD, [6, 4]);
+            curve(t => poisson(z, t), VIOLET, []);
+            txt(g, 'density round the circle (× 2π)', 10, 18);
+            txt(g, 'from the centre (1)', x0 + 6, Y(1) - 6, 'rgba(255,255,255,0.6)', 11);
+            txt(g, 'even turn from z lands', x1 - 190, 36, GOLD, 11); txt(g, 'Poisson kernel = harmonic measure', x1 - 250, 52, VIOLET, 11);
+            const am = arcMeasure(z, 0, Math.PI / 2);
+            let gap = 0, dev = 0; for (let i = 0; i < 360; i++) { const t = TAU * (i + 0.5) / 360;
+                gap = Math.max(gap, Math.abs(poisson(z, t) - (2 * landingDensity(z, t) - 1 / TAU)));
+                dev = Math.max(dev, Math.abs(landingDensity(z, t) - poisson(z, t)) * TAU); }
+            lines.push(`the reader at z = (${z[0].toFixed(3)}, ${z[1].toFixed(3)}), |z| = ${Math.hypot(...z).toFixed(3)}  (in units of the radius)`);
+            lines.push(`its law's mean: (${mean[0].toFixed(4)}, ${mean[1].toFixed(4)})  = z: a mean exists, the circle closes`);
+            lines.push(`the first quarter arc: harmonic measure ${am.integral.toFixed(5)};  (2α − arc)/2π = ${am.classical.toFixed(5)}  (α = ${(am.alpha * 180 / Math.PI).toFixed(2)}°)`);
+            lines.push(`Poisson = 2 × (where the even turn lands) − uniform, to ${gap.toExponential(1)}  (classical; the two rates of §4)`);
+            lines.push(`the even turn's landings differ from the law by up to ${dev.toFixed(3)} (× 2π): equal only at the centre`);
+            $('cap1').textContent = 'A circle of radius 1. Equal turns from z (gold) land unevenly; the violet band is the circle\'s own law from z, the ring the mean of it, which sits on z.';
+            $('cap2').textContent = 'Round the circle: the reader at the centre (flat), where z\'s even turn lands (gold), and the Poisson kernel (violet). The kernel is twice the gold less the flat line, at every angle.';
+        } else {
+            const r = oneRead(p.t);
+            let [g, W, H] = fit($('main'));
+            const sc = Math.min(W * 0.8, H * 1.4), ox = (W - sc) / 2, oy = H * 0.8, P = ([x, y]) => [ox + x * sc, oy - y * sc];
+            g.strokeStyle = 'rgba(255,255,255,0.18)'; g.lineWidth = 1; g.beginPath();
+            g.arc(...P([0.5, 0]), sc / 2, Math.PI, TAU); g.stroke();
+            g.strokeStyle = BRIGHT; g.lineWidth = 2; g.beginPath(); g.moveTo(...P([0, 0])); g.lineTo(...P([1, 0])); g.stroke();
+            // the arc carved so far, from B to the point
+            g.strokeStyle = GOLD; g.lineWidth = 3; g.beginPath(); g.arc(...P([0.5, 0]), sc / 2, -2 * r.t, 0); g.stroke();
+            g.strokeStyle = TEAL; g.lineWidth = 2; g.beginPath(); g.moveTo(...P([0, 0])); g.lineTo(...P(r.ray)); g.stroke();
+            g.strokeStyle = 'rgba(140,230,205,0.35)'; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(...P(r.ray));
+            g.lineTo(...P([r.ray[0] * 1.6, r.ray[1] * 1.6])); g.stroke(); g.setLineDash([]);
+            g.strokeStyle = GOLD; g.lineWidth = 2; g.beginPath(); g.moveTo(...P([0.5, 0])); g.lineTo(...P(r.rad)); g.stroke();
+            dot(g, ...P(r.rad), 6, BRIGHT);
+            dot(g, ...P([0, 0]), 5, TEAL); txt(g, 'home', P([0, 0])[0] - 18, P([0, 0])[1] + 20, TEAL);
+            dot(g, ...P([0.5, 0]), 5, GOLD); txt(g, 'middle', P([0.5, 0])[0] - 22, P([0.5, 0])[1] + 20, GOLD);
+            txt(g, 'B', P([1, 0])[0] + 6, P([1, 0])[1] + 16);
+            txt(g, 'the address reader turns θ (teal), the central reader 2θ (gold)', 10, 18);
+            [g, W, H] = fit($('side'));
+            const x0 = 40, x1 = W - 14, y0 = H - 40, y1 = 30, X = d => x0 + (x1 - x0) * d / 90;
+            g.strokeStyle = 'rgba(255,255,255,0.25)'; g.beginPath(); g.moveTo(x0, y1); g.lineTo(x0, y0); g.lineTo(x1, y0); g.stroke();
+            const ymax = 4, Y = v => y0 - (y0 - y1) * Math.min(v, ymax) / ymax;
+            const curve = (f, col) => { g.strokeStyle = col; g.lineWidth = 2; g.beginPath();
+                for (let i = 0; i <= 180; i++) { const d = i / 2, pt = [X(d), Y(f(d))]; i ? g.lineTo(...pt) : g.moveTo(...pt); } g.stroke(); };
+            curve(d => oneRead(d).address, TEAL);
+            curve(d => oneRead(d).arcOverChord, GOLD);
+            curve(d => 2 * oneRead(d).fromMiddle, 'rgba(255,255,255,0.5)');
+            g.strokeStyle = 'rgba(212,160,82,0.4)'; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(x0, Y(Math.PI / 2)); g.lineTo(x1, Y(Math.PI / 2)); g.stroke(); g.setLineDash([]);
+            txt(g, 'π/2', x0 - 34, Y(Math.PI / 2) + 4, GOLD, 11);
+            g.strokeStyle = 'rgba(255,255,255,0.6)'; g.beginPath(); g.moveTo(X(p.t), y1); g.lineTo(X(p.t), y0); g.stroke();
+            txt(g, 'v/h, the address: runs off', x0 + 8, y1 + 4, TEAL, 11);
+            txt(g, 'arc over chord: θ/sin θ → π/2', x0 + 8, y1 + 20, GOLD, 11);
+            txt(g, 'the point stays on its circle (2|OP| = 1)', x0 + 8, y1 + 36, 'rgba(255,255,255,0.7)', 11);
+            txt(g, '0°', x0 - 6, y0 + 18); txt(g, '90°', x1 - 22, y0 + 18); txt(g, 'θ', (x0 + x1) / 2, y0 + 18);
+            lines.push(`θ = ${p.t.toFixed(1)}°: the address reader's ray from home, the central reader's radius from the middle at 2θ = ${(2 * p.t).toFixed(1)}°`);
+            lines.push(`they meet: |ray end − radius end| = ${r.meet.toExponential(1)}   (Euclid III.20)`);
+            lines.push(`address: v/h = ${isFinite(r.address) && r.address < 1e9 ? r.address.toFixed(4) : '∞'}   (one number, unbounded)`);
+            lines.push(`payload: the point (foot h², height hv) = (${r.point.foot.toFixed(4)}, ${r.point.height.toFixed(4)})   (two numbers, bounded)`);
+            lines.push(`arc carved from B ${r.arc.toFixed(4)}, chord to it ${r.chord.toFixed(4)}: arc/chord ${r.arcOverChord.toFixed(4)}, chord/arc ${r.chordOverArc.toFixed(4)}, product 1`);
+            lines.push(p.t >= 89.95 ? 'at the end: the ray lies along the tangent at home, a horizon; the radius simply points at home, a place' : 'at 90° the ray becomes tangent (the horizon) and the radius ends at home');
+            $('cap1').textContent = 'The circle on a chord of 1. Teal: the ray from home at θ (the address). Gold: the radius from the middle at 2θ (the payload) and the arc it has carved from B.';
+            $('cap2').textContent = 'Against θ: the address v/h runs off to ∞; the arc over the chord settles at π/2; the radius stays on its circle the whole way.';
+        }
+        $('hud').textContent = lines.join('\n');
+    }
+    function set(o) {
+        if (o.step != null) S.step = Math.max(1, Math.min(5, Math.round(+o.step)));
+        if (o.shape && SHAPES[o.shape]) { S.shape = o.shape; $('shape').value = o.shape; }
+        if (o.rho != null) { S.rho = +o.rho; $('rho').value = S.rho; }
+        if (o.k != null) { S.k = +o.k; $('k').value = S.k; }
+        if (o.L != null) { S.L = Math.max(0, Math.min(8, Math.round(+o.L))); $('L').value = S.L; }
+        if (o.z) { let [x, y] = o.z.map(Number); const m = Math.hypot(x, y); if (m > 0.95) { x *= 0.95 / m; y *= 0.95 / m; } S.z = [x, y]; }
+        if (o.t != null) { S.t = Math.max(0, Math.min(90, +o.t)); $('t').value = S.t; }
+        draw();
+    }
+    STEPS.forEach((s, i) => { const b = document.createElement('button'); b.textContent = `${i + 1}. ${s[0]}`; b.addEventListener('click', () => set({ step: i + 1 })); $('steps').appendChild(b); });
+    $('shape').addEventListener('change', () => set({ shape: $('shape').value }));
+    $('rho').addEventListener('input', () => set({ rho: $('rho').value }));
+    $('k').addEventListener('input', () => set({ k: $('k').value }));
+    $('L').addEventListener('input', () => set({ L: $('L').value }));
+    $('t').addEventListener('input', () => set({ t: $('t').value }));
+    $('zc').addEventListener('click', () => set({ z: [0, 0] }));
+    // dragging the reader in step 4
+    const toZ = e => { const cv = $('main'), b = cv.getBoundingClientRect(), W = b.width, H = b.height, sc = Math.min(W, H) * 0.42;
+        return [(e.clientX - b.left - W / 2) / sc, -(e.clientY - b.top - H / 2) / sc]; };
+    $('main').addEventListener('pointerdown', e => { if (S.step !== 4) return; dragging = true; $('main').setPointerCapture(e.pointerId); set({ z: toZ(e) }); });
+    $('main').addEventListener('pointermove', e => { if (dragging) set({ z: toZ(e) }); });
+    $('main').addEventListener('pointerup', () => { dragging = false; });
+    let playing = false, last = 0;
+    $('play').addEventListener('click', () => { playing = !playing; $('play').classList.toggle('on', playing); $('play').textContent = playing ? 'pause' : 'play the turn'; last = 0; requestAnimationFrame(tick); });
+    function tick(ts) { if (!playing) return; if (last) set({ t: (S.t + (ts - last) * 0.02) % 90.05 }); last = ts; requestAnimationFrame(tick); }
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search), init = {};
+    for (const key of ['step', 'shape', 'rho', 'k', 'L', 't']) if (q.has(key)) init[key] = q.get(key);
+    if (q.has('z')) init.z = q.get('z').split(',');
+    set(init);
+    window.__centralReader = { radius, point, central, modes, rebuilt, land, landingDensity, poisson, arcMeasure, poissonMean,
+        oneRead, set, state: () => JSON.parse(JSON.stringify(S)), params, hud: () => $('hud').textContent };
+})();
+</script>
+</body>
+</html>

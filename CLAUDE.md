@@ -537,6 +537,19 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   k). `?x=&y=&z=&lon=&lat=&roll=&oct=+-+&H=&k=<log10 k>&box=X,Y,Z&n=8|16|32&rays=0&spin=1&view=writer|address|payload`; hook
   `window.__writerBox` (`rotOf`, `anglesOfRot`, `octantRot`, `addresses`, `hitBox`, `read`, `readAt`, `counts`, `horizon`,
   `shellAt`, `camera`, `set` (with `view`), `state`, `hud`, `apexScreen`, `frames`, `webgl`). Not in the flying page.
+- `central-reader.html`: **the central reader** (23 Oct 2026, Tom: "create a demo of the central reader so I can understand it
+  better."; SPN R451, R452: classical results only), a standalone page, plain canvas, after `two-readers.html`. Five steps:
+  the baseline (a circle read from its centre, the same amount along every given direction); a shape, ln r = a₀ + ρ·f(θ)
+  (32 given directions, an amount along each, a point of two numbers; scale the world k moves every amount by k and the
+  shape, each over the geometric mean, not at all); the modes (Fourier modes of ln r, n ≥ 1, from ratios of radii, a₀
+  never; kept n ≤ L the outline comes back broad form first); off the centre (a reader at z, dragged, inside a circle: its
+  even turn lands unevenly, the circle's law from z the Poisson kernel, harmonic measure, arcs (2α − arc)/2π, mean z, equal
+  to twice the landing density less the uniform); one read (on a chord of 1, the ray from home at θ and the radius from
+  the middle at 2θ meet, III.20; the address v/h unbounded, the point (h², hv) on its circle; arc over chord θ/sin θ to
+  π/2). Drawn at the centre of what it reads; where it stands is not ruled (R451).
+  `?step=1..5&shape=circle|egg|star|lumpy&rho=&k=<log10 k>&L=&z=x,y&t=<degrees>`; hook `window.__centralReader` (`radius`,
+  `point`, `central`, `modes`, `rebuilt`, `land`, `landingDensity`, `poisson`, `arcMeasure`, `poissonMean`, `oneRead`, `set`,
+  `state`, `params`, `hud`). Not in the flying page.
 - `ground.html`: **one's own height** (22 Oct 2026, Tom: "1,2", the second a demo of OFS §9's "The ground: one's own height as
   the base"; SPN R433, R434; after Sedgwick's horizon ratio), a standalone page, plain canvas. A reader on level ground, its
   eye at H (1.6 m); ten things (dog, child, door, ball, a twin one eye height tall, lamp post, car, tree, house, tower). The
@@ -649,7 +662,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -790,6 +803,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   of what it reads) is open; a section drafted and not taken. Its pieces are classical (III.20, polar coordinates, shape up
   to similarity, harmonic measure: the disc's Poisson kernel the wrapped Cauchy, the half-plane's the Cauchy). Not "a uniform
   turn from an interior point lays the wrapped Cauchy": that is the rates' combination (2·dθ/dφ − 1)/2π, (2α − arc)/2π.
+  **The central reader, a demo** (23 Oct, SPN R452; Tom: "create a demo of the central reader so I can understand it
+  better."): `central-reader.html`, classical results only, nothing added to OFS.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -2349,6 +2364,11 @@ In short:
       field within 0.01 of ⅓; a real drag of the gold ball moves the wedge; the three vantages: the writer's camera
       orthographic, the address reader's at its standpoint, the payload reader's shell unmoved by k = 10³ and its mean
       moved by k; WebGL drew frames.
+
+  53. **central-reader.html:** the shape unmoved by k = 10⁻², 10^0.5, 10², every amount by k; a circle flat from its
+      centre; the modes of ln r 0.15, 0.08, 0.05 at n = 2, 3, 6, unmoved by k; harmonic measure: arcs (2α − arc)/2π to
+      10⁻⁷, the Poisson kernel's mean z, the kernel twice the even turn's landings less the uniform one; ray and radius meet
+      on the circle on the chord; arc over chord π/2 at 90°, v/h 1 at 45°; a real drag moves the reader.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
