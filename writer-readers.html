@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <title>The writer and two readers</title>
+    <title>The writer and the reader</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
     <!--
@@ -55,9 +55,9 @@
 </head>
 <body>
 <main>
-    <h1>The writer and the two readers</h1>
-    <p class="lede">The readers stand on one side of the box and read; the writer walks all the way round it. From one
-    standpoint the two reads give the frame, the writer's 1, at no size. A second standpoint, one step away, places the box
+    <h1>The writer and the reader</h1>
+    <p class="lede">The reader stands on one side of the box; the writer walks all the way round it. From one
+    standpoint the two sweeps, inscribed and central, give the frame, the writer's 1, at no size. A second standpoint, one step away, places the box
     and sizes it in that step. One amount carried in, the step counted in strides, writes it in metres. The writer needs no
     reading at all: it walks the whole thing, and writes on the number line, where every stride is laid alike and
     there is no corner. Scale the world, and see what moves.</p>
@@ -69,7 +69,7 @@
         <div class="grid">
             <div><canvas id="cv" height="460"></canvas><p class="cap">The plan, drawn in the reader's own step H (so it
             does not move with k); the metre bar does. Gold: rays read from the first standpoint A; teal: from the second, B.
-            Faint boxes: what one standpoint cannot tell apart. Dashed: the back of the box, turned away from the readers.</p></div>
+            Faint boxes: what one standpoint cannot tell apart. Dashed: the back of the box, turned away from the reader.</p></div>
             <div>
                 <div class="read" id="say"></div>
                 <div style="overflow-x:auto"><table id="tab"></table></div>
@@ -210,9 +210,9 @@
         $('kv').textContent = k >= 10 ? k.toFixed(0) : k.toPrecision(3);
         document.querySelectorAll('[data-s]').forEach(b => b.classList.toggle('on', b.dataset.s === s));
         const say = {
-            '1': `<span class="g">One standpoint.</span> Turning once, A reads the box's edges as directions: [h : v] = `
+            '1': `<span class="g">One standpoint.</span> From A the box's edges are addresses, directions given before anything arrives: [h : v] = `
                 + `[${f3(r1.left.h)} : ${f3(r1.left.v)}] and [${f3(r1.right.h)} : ${f3(r1.right.v)}], ${r1.across.toFixed(2)}° across.\n`
-                + `The payload reader reads the writer's 1 as π/2, the address reader as 2/π; their product gives the 1 back: the frame.\n`
+                + `The central sweep measures the writer's 1 as π/2, the inscribed sweep as 2/π; their product gives the 1 back: the frame.\n`
                 + `No size: every faint box lies along the same two rays and reads exactly alike.`,
             '2': `<span class="r">A second standpoint.</span> A steps once, the step's length H its unit (never measured); from B `
                 + `the edges are read again. The rays cross: the box is placed and sized in H.\n`

@@ -45,8 +45,9 @@
 <main>
     <h1>Wander demos</h1>
     <p class="lede">Wander is a world of solids you fly through, and a lab that compares what a reader can recover from
-    arriving signals against known physics. These are its pages: the world, the lab, three small demos of one idea
-    each, and three on the physics correspondence.</p>
+    arriving signals against known physics. These are its pages: the world, the lab, the demos of the geometry (one
+    situated reader, its addresses given by where it stands, and what arrives painting them), three on the physics
+    correspondence, and gameplay sketches.</p>
 
     <section class="card" id="world">
         <div class="tag">the world</div>
@@ -69,9 +70,9 @@
         <div class="tag">a demo: the sweep</div>
         <h2><a href="sweep.html">The sweep device</a></h2>
         <p>Pairs of amounts, each divided by its own second amount, laid on the unit sweep g = (2/π)·atan(v/h): from 0 at home through
-        ½ at the corner toward 1 at the horizon. A cursor reads them one at a time (serial) or all at once (parallel),
+        ½ at the corner toward 1 at the horizon. A cursor shows them one at a time, or all are shown at once,
         with the quarter circle, divided by the whole, beside it.</p>
-        <p class="try">Try: <a href="sweep.html?ex=planets">planets</a><a href="sweep.html?ex=shape">a shape</a><a href="sweep.html?ex=spread">a spread</a><a href="sweep.html?ex=line">the number line</a><a href="sweep.html?mode=parallel">parallel</a></p>
+        <p class="try">Try: <a href="sweep.html?ex=planets">planets</a><a href="sweep.html?ex=shape">a shape</a><a href="sweep.html?ex=spread">a spread</a><a href="sweep.html?ex=line">the number line</a><a href="sweep.html?mode=parallel">all at once</a></p>
     </section>
 
     <section class="card" id="dial">
@@ -96,17 +97,18 @@
     <section class="card" id="facing">
         <div class="tag">a demo: the second degree of freedom</div>
         <h2><a href="facing.html">The facing</a></h2>
-        <p>One sweep from A to B. The straight line holds only where you are; the facing turns from toward B, through square
-        to the line, to toward A. The corner is where it is square, equally between them: 45° of the sweep, 90° of the
-        facing. Beside it, the quarter arc standing off the line, most at the corner.</p>
+        <p>The quarter turn from A to B, given whole. The straight line holds only where you are; the facing turns from toward
+        B, through square to the line, to toward A. The corner is where it is square, equally between them: 45° of the
+        turn, 90° of the facing. Beside it, the quarter arc standing off the line, most at the corner.</p>
         <p class="try">Try: <a href="facing.html?t=0">at A</a><a href="facing.html?t=45">the corner</a><a href="facing.html?t=90">at B</a></p>
     </section>
 
     <section class="card" id="paths">
         <div class="tag">a demo: what fairness fixes</div>
         <h2><a href="paths.html">One sweep, three paths</a></h2>
-        <p>From all of h to all of v along a circle, a straight line or a square's two edges, each swept evenly along its own
-        length. The reading v/h is the direction alone, the same on every path; how much of the sweep is done differs. All
+        <p>From all of h to all of v along a circle, a straight line or a square's two edges, each taken uniformly along its
+        own length. The reading v/h is the direction alone, the same on every path; the share of the path up to a
+        direction differs. All
         three agree at home, the corner and the horizon and part in between; none has a mean. Only the circle is even in the
         turn, and gives 2/π: the turn and its shadow, π/2 and 2/π at the horizon.</p>
         <p class="try">Try: <a href="paths.html?t=22.5">the circle at 22.5°</a><a href="paths.html?path=line&amp;t=22.5">the line</a><a href="paths.html?path=square&amp;t=22.5">the square</a><a href="paths.html?t=90">at the horizon</a></p>
@@ -114,10 +116,11 @@
 
     <section class="card" id="two-readers">
         <div class="tag">a demo: reading and writing</div>
-        <h2><a href="two-readers.html">Two readers</a></h2>
-        <p>One shape, two places to stand. From the centre the directions are laid out in advance, and what arrives along
-        each is the radius, an amount. From a point of the outline what arrives is the direction, a ratio, and no amount.
-        Scale the world and neither reading moves: neither gets the unit. The writer draws the shape at its size only with
+        <h2><a href="two-readers.html">The angle and the radius</a></h2>
+        <p>One shape, the two sweeps of one geometry. From a point of the outline (home) the directions are the addresses,
+        given before anything arrives, each a ratio, no amount. From the centre the directions are the central sweep's,
+        and an amount along each, the radius, is a range: a writing, in a unit nothing reads. Scale the world and neither
+        moves: neither gets the unit. The writer draws the shape at its size only with
         the addresses, the amounts and one amount carried in.</p>
         <p class="try">Try: <a href="two-readers.html?shape=circle&amp;rho=0">the circle</a><a href="two-readers.html?shape=star">a star</a><a href="two-readers.html?writer=addresses,amounts,unit">the writer with all three</a></p>
     </section>
@@ -127,15 +130,16 @@
         <h2><a href="pinhole.html">The pinhole</a></h2>
         <p>The reader never divides: the ray through the pinhole is the reading, a direction, which is already a ratio. Make
         the thing bigger and farther together and nothing moves; send its breadth to infinity and it arrives as the horizon,
-        off the flat screen and bounded on the turn. The division V*/d is the writer's account. A ruler reader that divides
-        two amounts touches breadths: it writes first.</p>
+        off the flat screen and bounded on the turn. The division V*/d is the writer's account. A ruler that divides two
+        amounts touches breadths: that is writing.</p>
         <p class="try">Try: <a href="pinhole.html?account=1">the writer's account</a><a href="pinhole.html?V=inf">an infinite breadth</a><a href="pinhole.html?V=1&amp;d=1">at the corner</a></p>
     </section>
 
     <section class="card" id="room">
         <h2><a href="room.html">The room</a></h2>
-        <p>A wireframe room read from its corner. The inscribed sweep, the hand turned from one wall to the other, lays out
-        where things are, by direction only. The central sweep, from a thing's own centre, gives its shape and not its size.
+        <p>A wireframe room seen from its floor corner, one wedge. The inscribed sweep is the addresses, the directions from
+        the corner from one wall to the other, given whole: where things are, by direction only. About a thing's own
+        centre, an amount per direction (a range, a writing) gives its shape over their geometric mean, and not its size.
         Holding a thing and the wall at once gives its size in the room's units. To put a thing at a place in metres the
         reader must take a known step: one step writes the room.</p>
         <p class="try">Try: <a href="room.html?step=3">the inscribed sweep</a><a href="room.html?step=4&amp;thing=table">the table's shape</a><a href="room.html?step=6">writing</a></p>
@@ -143,9 +147,9 @@
 
     <section class="card" id="room-walk">
         <h2><a href="room-walk.html">Walking the room</a></h2>
-        <p>The reader walks the floor and does both sweeps wherever it stands: the inscribed, its hand once round,
-        directions only; the central, from each thing's centre toward the reader, the radius along it, so walking round a
-        thing collects its shape. From two standpoints the bearings place every thing in the walk's first leg; counting
+        <p>The reader walks the floor, and wherever it stands the geometry gives both sweeps: the inscribed, the directions
+        once round, given, no amount; the central, from each thing's centre toward the reader, with a radius along it in a
+        unit nothing reads (a range, a writing), so walking round a thing collects its shape. From two standpoints the bearings place every thing in the walk's first leg; counting
         that leg in strides writes the room in metres. A readout keeps what is read, held and written. Through the window a
         tree: moved away, it can no longer be walked round, so it loses its shape and is placed by parallax alone; further
         still, only a direction.</p>
@@ -153,8 +157,8 @@
     </section>
     <section class="card" id="room-ratios">
         <h2><a href="room-ratios.html">The room in ratios</a></h2>
-        <p>The inscribed sweep is two sweeps, left–right and up–down, and each returns a ratio: every corner of every thing
-        in the room is an address. From one place that is a picture, every direction and angle, with half-size and
+        <p>From one place the addresses have two angles, left–right (azimuth) and up–down (altitude), each a ratio, given
+        before anything arrives: every corner of every thing in the room is an address. From one place that is a picture, every direction and angle, with half-size and
         double-size ghosts on the same rays. One step to the right, its length never measured, and each corner's two rays
         cross: every place and size in steps, the map. One counted stride writes it in metres; scaling the world moves no
         address and no ratio.</p>
@@ -171,19 +175,21 @@
 
     <section class="card" id="payload-free">
         <h2><a href="payload-free.html">The payload doesn't matter</a></h2>
-        <p>One fan of rays at equal angles, a head turned evenly through a quarter turn. Behind it the world changes: a row
+        <p>One fan of rays at equal angles, the addresses given uniformly by turn over a quarter turn. Behind it the world
+            changes: a row
             of trees, a wall, a curved wall, stars at every distance, one sun, noise, nothing at all, at any size or of
             unknown size. Each ray is painted by what it meets; the readings taken back from where they landed are the
-            turn's own to rounding, the median at the corner. Beside it a reader spacing its addresses in equal metres,
-            which needs the world's size and has nothing to space against when it is unknown.</p>
+            turn's own to rounding, the median at the corner. A marker shows the given addresses in the turn's order, the
+            paint revealed behind it. Beside it addresses spaced in equal metres, a writer's layout, which needs the
+            world's size and has nothing to space against when it is unknown.</p>
         <p class="try">Try: <a href="payload-free.html?play=1">play through the worlds</a><a href="payload-free.html?world=stars&amp;s=unknown">stars, of unknown size</a><a href="payload-free.html?world=empty&amp;n=255">nothing at all, 255 rays</a></p>
     </section>
     <section class="card" id="payload-free-3d">
         <h2><a href="payload-free-3d.html">The payload doesn't matter, in 3D</a></h2>
-        <p>The same in three dimensions: one sweep uniform over a whole octant, its addresses [h : v : v₂] fixed, while a
+        <p>The same in three dimensions: directions given uniformly over a whole octant, the addresses [h : v : v₂] fixed, while a
             forest, a room, a dome, stars, a sun, noise or nothing stands behind it, at any size or of unknown size. Orbit the
             scene; see the wedge from home as the triangle h + v + v₂ = 1 and on Lambert's equal-area map, painted by what each
-            ray met. Every reading is the sweep's own, every count the same (a half each side of every corner, the near field a
+            ray met. Every reading is the grid's own, every count the same (a half each side of every corner, the near field a
             third); a flat screen in equal metres needs the world's size.</p>
         <p class="try">Try: <a href="payload-free-3d.html?world=room">a room</a><a href="payload-free-3d.html?world=stars&amp;s=unknown&amp;n=64">stars, of unknown size</a><a href="payload-free-3d.html?play=1">play through the worlds</a></p>
     </section>
@@ -205,12 +211,13 @@
         <p class="try">Try: <a href="star-field-3d.html?N=24">2^24, and × 2</a><a href="star-field-3d.html?N=inf&amp;H=8">N infinite, H = 2⁸ u</a><a href="star-field-3d.html?N=inf&amp;star=98765432101234">star #98,765,432,101,234</a></p>
     </section>
     <section class="card" id="blueprint">
-        <h2><a href="blueprint.html">One blueprint, three vantages</a></h2>
-        <p>A property held three ways. The writer has the blueprint, every length in metres, and its circle is round the
-            whole lot, looking in, its radius an amount. The reader is a circle round one point, looking out: nothing on the
-            lot sends, so each direction is painted by the light from the first thing on its line, and no distance arrives
-            (send a pulse for ranges, and the reader writes). The address reader at a corner sweeps the quarter turn, each
-            [h : v], half the turn either side of v = h. Write: one counted stride, and two looks place every corner in
+        <h2><a href="blueprint.html">One blueprint, two vantages</a></h2>
+        <p>A property held by the writer and by the reader. The writer has the blueprint, every length in metres, and its
+            circle is round the whole lot, looking in, its radius an amount. The reader is a circle round one point,
+            looking out: nothing on the lot sends, so each direction is painted by the light from the first thing on its
+            line, and no distance arrives (send a pulse for ranges: that is writing). At a home corner the reader's
+            addresses are the quarter turn, each [h : v], half of them either side of v = h, given before anything is
+            painted. Write: one counted stride, and two looks place every corner in
             metres.</p>
         <p class="try">Try: <a href="blueprint.html">the lot's corner</a><a href="blueprint.html?home=living">inside the living room</a><a href="blueprint.html?pulse=1">send a pulse</a><a href="blueprint.html?write=1">write: one stride</a></p>
     </section>
@@ -232,14 +239,25 @@
             directions, two numbers each, and each points at a point of the box's faces, three numbers. The one between is
             the distance, never read. Drag the wedge anywhere, turn it, resize the box, change H or scale the world: the
             points it reaches change, the addresses and their shares (every pair at its corner, the near field a third)
-            never do. Three vantages: the writer (the box whole, drawn with parallel rays from no standpoint), the
-            address reader (from its standpoint, directions painted by what arrives, no distance) and the payload reader
-            (an amount along each direction, drawn over their geometric mean: the box's corner as a shape, not a size).</p>
-        <p class="try">Try: <a href="writer-box.html">the writer</a><a href="writer-box.html?view=address">the address reader</a><a href="writer-box.html?view=payload">the payload reader</a><a href="writer-box.html?spin=1">spinning</a><a href="writer-box.html?oct=-+-&amp;x=3&amp;y=-1&amp;z=2&amp;n=32">another octant, 32 × 32</a><a href="writer-box.html?box=4,20,4&amp;y=-8">a tall narrow box</a></p>
+            never do. Two vantages, three views: the writer (the box whole, drawn with parallel rays from no standpoint);
+            the reader's addresses from home (directions painted by what arrives, no distance); and ranges along each
+            direction, which are writing (an amount each, drawn over their geometric mean: the box's corner as a shape, not
+            a size).</p>
+        <p class="try">Try: <a href="writer-box.html">the writer</a><a href="writer-box.html?view=address">the addresses from home</a><a href="writer-box.html?view=payload">ranges, a writing</a><a href="writer-box.html?spin=1">spinning</a><a href="writer-box.html?oct=-+-&amp;x=3&amp;y=-1&amp;z=2&amp;n=32">another octant, 32 × 32</a><a href="writer-box.html?box=4,20,4&amp;y=-8">a tall narrow box</a></p>
+    </section>
+    <section class="card" id="central-reader">
+        <h2><a href="central-reader.html">The central sweep</a></h2>
+        <p>The central sweep on its own, with classical results only. It opens with the hand: the fingers are the
+            directions from home, uniform by turn, given wherever the reader looks; the light paints them, and only the
+            paint changes with the look. Then from a shape's centre: a circle is flat; a shape, an amount per direction (a
+            range, a writing), is its departure from that, read in modes from ratios of radii, never its size. Off the
+            centre, the circle's own law is the Poisson kernel, harmonic measure, which has a mean; the ray from home and the
+            radius from the centre meet at one point (Euclid III.20), and the arc over the chord comes to π/2.</p>
+        <p class="try">Try: <a href="central-reader.html">the hand</a><a href="central-reader.html?step=1&amp;look=200">looking elsewhere</a><a href="central-reader.html?step=2">the baseline</a><a href="central-reader.html?step=3&amp;shape=star">a star</a><a href="central-reader.html?step=4&amp;L=2">two modes kept</a><a href="central-reader.html?step=5&amp;z=0.6,0.3">off the centre</a><a href="central-reader.html?step=6&amp;t=45">one read at the corner</a></p>
     </section>
     <section class="card" id="star-dial">
         <h2><a href="star-dial.html">Browsing the stars</a></h2>
-        <p>The dial on the wedge, over a star field without end. Two zooms, one for each reader: the dial moves the
+        <p>The dial on the wedge, over a star field without end. Two zooms for one reader: the dial moves the
             directions (the gold thumb a rate, the blue hand a place, the radius how many levels a rung holds), and H moves
             the distances (a ruler to drag: the near field in proportion, six doublings past it, nearer merged into home,
             farther past the held edge). No star moves on the screen with H; what changes is which are held. Every count
@@ -248,29 +266,30 @@
     </section>
 
     <section class="card" id="one-read">
-        <div class="tag">a demo: the two reads</div>
+        <div class="tag">a demo: the two sweeps</div>
         <h2><a href="one-read.html">One turn, one read</a></h2>
-        <p>Turn the head and nothing else: the line of sight meets one point of the circle drawn on the chord. Kept as a
-        direction from home it is the address read; kept as an amount along the radius from the centre, turned twice as
-        far, it is the payload read; both end at the same point. Over the turn the payload reader reads the line as π/2,
-        the address reader as 2/π, their product 1. Draw the other party at any V other than H and the two part.</p>
+        <p>One direction from home meets one point of the circle drawn on the chord. As a direction from home it is the
+        address (the inscribed sweep); seen from the centre, at twice the angle, it is where the paint lands (the central
+        sweep); both end at the same point (Euclid III.20). Over the quarter the central sweep measures the line as π/2,
+        the inscribed as 2/π, their product 1. Draw the other party at any V other than H and the two part.</p>
         <p class="try">Try: <a href="one-read.html?t=45">the corner</a><a href="one-read.html?t=90">the end of the turn</a><a href="one-read.html?t=40&amp;c=2">drawn at V = 2H</a></p>
     </section>
 
     <section class="card" id="sweep-zero">
         <div class="tag">a demo: the sweep</div>
-        <h2><a href="sweep-zero.html">Sweeping from zero</a></h2>
-        <p>A reader cannot go to a spot on the curve; it turns on from where it is, its zero. Counted by its own turning,
-        what it passes is the Cauchy, the median at the corner. Count the same turn against a clock, a flat screen or what
-        arrives, and the count changes, not the turn. Stop, and that is the new zero: the old one is a reading behind, the
+        <h2><a href="sweep-zero.html">Counting from zero</a></h2>
+        <p>Zero is where the reader faces; its directions are given, all at once, and the page shows them in the order of
+        the turn from zero. Counted by the turn itself, the readings are the Cauchy, the median at the corner. Count the
+        same directions against a clock, a flat screen or what arrives, and the count changes, not the directions. Face
+        another way, and that is the new zero: the old one is a reading behind, the
         legs compose by tangent addition, and once round composes to no turn.</p>
-        <p class="try">Try: <a href="sweep-zero.html?play=1">sweep</a><a href="sweep-zero.html?count=screen&amp;t=90">a flat screen</a><a href="sweep-zero.html?legs=50,80,70,85,75">once round</a></p>
+        <p class="try">Try: <a href="sweep-zero.html?play=1">in order</a><a href="sweep-zero.html?count=screen&amp;t=90">a flat screen</a><a href="sweep-zero.html?legs=50,80,70,85,75">once round</a></p>
     </section>
 
     <section class="card" id="writer-readers">
-        <div class="tag">a demo: the three vantages</div>
-        <h2><a href="writer-readers.html">The writer and two readers</a></h2>
-        <p>Readers on one side of a box, a writer that walks all the way round it. One standpoint gives the frame, the
+        <div class="tag">a demo: the two vantages</div>
+        <h2><a href="writer-readers.html">The writer and the reader</a></h2>
+        <p>A reader on one side of a box, at one standpoint or two; a writer that walks all the way round it. One standpoint gives the frame, the
         writer's 1 as π/2 times 2/π, and no size: every box along the same rays reads alike. A second standpoint one step
         away sizes it in that step; the step counted in strides writes metres. The writer's ruler is the number line, every
         stride laid alike with no corner; a reader's lay turns at its corner. Scale the world: nothing read moves, the
@@ -281,7 +300,7 @@
     <section class="card" id="head-turn">
         <div class="tag">a demo: parallax</div>
         <h2><a href="head-turn.html">Turning the head</a></h2>
-        <p>Turning about the point you see from moves every direction alike, so nothing gets a distance. A head is not a
+        <p>A turn about the point seen from moves every direction alike, so nothing gets a distance. A head is not a
         pure turn: the eye sits in front of the neck, and a turn carries it along a chord, a baseline. Posts from half a
         metre to 500 m are placed while their parallax is above the resolution, out to r·sin Δ/ε, the eye's sideways step
         over ε: 100 m for the head's quarter turn, a few metres for the eye's own turn. Set the offset to zero and nothing
@@ -303,21 +322,22 @@
     <section class="card" id="recover">
         <div class="tag">a demo: recovery</div>
         <h2><a href="recover.html">Recovering a body</a></h2>
-        <p>A lumpy body, as the games page's Levels draws it. One reader at its centre reads only directions: drawn at one
-        length they are the unit sphere, the same for every body. The wedge on that sphere is one observation, an eighth of
-        the directions, with its own [h : v : v₂]. Three readers inside, holding only directions, cross their rays and give
-        the body back up to its size, stretch and every bump; one length between two of them gives the size. Then many bodies at once: from one standpoint a painting of the sky;
-        three readers on pixels ε wide lay the field, near bodies with their shape, farther ones as places, past B/ε as
+        <p>A lumpy body, as the games page's Levels draws it. From a standpoint at its centre the addresses are only
+        directions: drawn at one length they are the unit sphere, the same for every body. The wedge on that sphere is one
+        observation, an eighth of the directions, with its own [h : v : v₂]. From three standpoints inside, directions only,
+        the rays cross and give the body back up to its size, stretch and every bump; one length between two of them gives
+        the size. Then many bodies at once: from one standpoint a painting of the sky; three standpoints on pixels ε wide
+        lay the field, near bodies with their shape, farther ones as places, past B/ε as
         directions, and exactly at ε = 0.</p>
-        <p class="try">Try: <a href="recover.html?step=2">one reader</a><a href="recover.html?step=3">the wedge</a><a href="recover.html?step=4">three readers</a><a href="recover.html?step=5&amp;body=7">one length</a><a href="recover.html?step=6">many bodies</a><a href="recover.html?step=6&amp;eps=0">many, exact</a><a href="recover.html?step=7">the inscribed reader</a><a href="recover.html?step=7&amp;mirror=1">mirrored</a></p>
+        <p class="try">Try: <a href="recover.html?step=2">one standpoint</a><a href="recover.html?step=3">the wedge</a><a href="recover.html?step=4">three standpoints</a><a href="recover.html?step=5&amp;body=7">one length</a><a href="recover.html?step=6">many bodies</a><a href="recover.html?step=6&amp;eps=0">many, exact</a><a href="recover.html?step=7">the whole wedge's addresses</a><a href="recover.html?step=7&amp;mirror=1">mirrored</a></p>
     </section>
 
     <section class="card" id="moon">
         <div class="tag">a demo: the two sweeps</div>
         <h2><a href="moon.html">One moon</a></h2>
-        <p>A single moon crossing the sky. The inscribed sweep covers the whole wedge every tick and only detects which of
-        its addresses the moon meets: a small patch moving over addresses that stay put, giving the moon's turn, its time to
-        contact and its path's angle in ratios and ticks, never sizes. The central sweep paints the face, the radius from the
+        <p>A single moon crossing the sky. The inscribed sweep is the whole wedge's addresses, given at every tick; the moon
+        paints a small patch of them, moving over addresses that stay put, giving its turn, its time to contact and its
+        path's angle in ratios and ticks, never sizes. The central sweep places the paint on the face, the radius from the
         moon's centre in a unit nothing reads, more of it as the moon crosses. One amount carried in writes distance and speed.</p>
         <p class="try">Try: <a href="moon.html?t=20">mid-pass</a><a href="moon.html?t=20&amp;truth=1">with the referee</a><a href="moon.html?t=20&amp;known=1&amp;smooth=1">radius known, smooth</a></p>
     </section>
@@ -325,10 +345,10 @@
     <section class="card" id="from-home">
         <div class="tag">a demo: the two sweeps</div>
         <h2><a href="from-home.html">The face from home</a></h2>
-        <p>Can a reader at home have the moon's central sweep too? On a slice through the moon's middle: with ranges (each ray
-        bringing back how far it went, the signal's speed carried in) every hit is a point on the moon, the face comes out and
+        <p>From home, can the moon's face be had? On a slice through the moon's middle: with ranges (each ray bringing back
+        how far it went, the signal's speed carried in: a writing) every hit is a point on the moon, the face comes out and
         so do distance and speed; with silhouettes alone the edges wrap the moon as the line of sight turns, and the hull they
-        leave hugs it only where an edge grazed it, up to size. Looking gives outlines; ranging gives faces.</p>
+        leave hugs it only where an edge grazed it, up to size. The addresses give outlines; ranging, a writing, gives faces.</p>
         <p class="try">Try: <a href="from-home.html?t=10">early</a><a href="from-home.html?hull=0">ranges only</a><a href="from-home.html?ranges=0">silhouettes only</a><a href="from-home.html?fit=1">centres from the readings</a><a href="from-home.html?smooth=1">smooth moon</a></p>
     </section>
 
@@ -347,8 +367,8 @@
     <section class="card" id="theorem6">
         <div class="tag">a demo: the main result</div>
         <h2><a href="theorem6.html">Theorem 6 at a glance</a></h2>
-        <p>The Cauchy belongs to the address reader. Scale, reshape, reshuffle or thin what arrives along each direction and
-        no address moves. A strictly increasing change keeps the median and not the mean. The addresses' median sits at
+        <p>The Cauchy is the addresses' law, the uniform turn's own, not the payload's. Scale, reshape, reshuffle or thin what
+        arrives along each direction and no address moves. A strictly increasing change keeps the median and not the mean. The addresses' median sits at
         the corner while their mean climbs (2/π)·ln 10 a decade; the line and the square's edges alike, and a lopsided
         weight moves the median.</p>
         <p class="try">Try: <a href="theorem6.html?op=reshape&amp;f=cube">reshaped, cubed</a><a href="theorem6.html?path=square">the square's edges</a><a href="theorem6.html?path=lopsided">a lopsided weight</a></p>
@@ -377,7 +397,7 @@
         <div class="tag">a demo: the chain from H</div>
         <h2><a href="h-chain.html">The chain from H</a></h2>
         <p>Six steps with one H: picking it makes the unit relational space; the number of other parties sets the shape;
-        one observation sweeps only the Cauchy fisheye of one facing and gives back the unit circle, never the figure; the
+        one standpoint is given only the Cauchy fisheye of one facing, the unit circle for every figure, never the figure; the
         shape is joined over many observations; standpoints a baseline 2H apart build the figure, best for things near
         the corner circle (parallax); and physics assigns the values last, moving nothing.</p>
         <p class="try">Try: <a href="h-chain.html?step=1">pick an H</a><a href="h-chain.html?step=3">the Cauchy fisheye</a><a href="h-chain.html?step=5">parallax</a><a href="h-chain.html?step=5&amp;h=0">H of 0</a><a href="h-chain.html?step=6&amp;unit=mi">physics assigns</a></p>
@@ -386,7 +406,7 @@
     <section class="card" id="walk">
         <div class="tag">a demo: the sweep as a walk</div>
         <h2><a href="walk.html">The walk</a></h2>
-        <p>I am the horizontal, you are the vertical, and the sweep is my walk to you. The sweep's angle is the angle at
+        <p>I am the horizontal, you are the vertical, and the sweep is laid along my walk to you. Its angle is the angle at
         which I look up at you: 0° on my horizon, 45° at the corner, where the distance equals your height, 90° at your
         foot. Far off, each level nearer costs twice the steps of the one after it, and the steps bunch toward the
         horizon, which is never reached; near, past the corner, the walk is in proportion.</p>
@@ -396,8 +416,8 @@
     <section class="card" id="mountain">
         <div class="tag">a demo: the paper's worked example</div>
         <h2><a href="mountain.html">The mountain and the thumb</a></h2>
-        <p>A reader's thumb is its one measure, H; a mountain range 20 miles wide stands 10 miles off. From nowhere every
-        amount is held. From where the reader stands it has only directions: the range's ends sit exactly at its corners,
+        <p>A reader's thumb is its one measure, H; a mountain range 20 miles wide stands 10 miles off. The writer holds every
+        amount. From where the reader stands it has only directions: the range's ends sit exactly at its corners,
         and half its fingers carry a ring, the ridge's elevation. Scale the whole world and the reader's view does not move.
         To speak in miles it must set the mountain equal to its thumb, and is then off by twenty, a shift of 4.32
         doublings; one walk of a thumb's length recovers the true distance and width.</p>
@@ -423,7 +443,7 @@
         diameter, where the baseline is seen at a right angle: on the bisector, there its depth is read best and its error
         is round. Away from it the error grows, about doubling per level far off, and stretches, until past a band set by
         the step a point is a ray again, what one standpoint holds alone. Parallax needs situated observation, and returns to it.</p>
-        <p class="try">Try: <a href="parallax.html">both readers</a><a href="parallax.html?mode=A">one reader alone</a><a href="parallax.html?preset=eyes">two eyes</a><a href="parallax.html?preset=hipparcos">Earth's orbit, Hipparcos</a></p>
+        <p class="try">Try: <a href="parallax.html">both standpoints</a><a href="parallax.html?mode=A">one standpoint alone</a><a href="parallax.html?preset=eyes">two eyes</a><a href="parallax.html?preset=hipparcos">Earth's orbit, Hipparcos</a></p>
     </section>
 
     <section class="card" id="sphere-cube">
@@ -433,27 +453,27 @@
         point of the sphere is a direction from the centre: an address. Its ray lands on one point of an inner cube, on the
         face of its largest component, whatever the cube's size and however the sphere is turned; a point inside is a share
         t of the way along. The address is the same at every size; the point in amounts needs the cube's extent, and a
-        reader without it draws the cube at its own breadth. One observation makes one wedge, and swept evenly its readings
-        are the two-dimensional Cauchy: each of its three faces takes a third. The hand reaches the wedge by two sweeps, an
-        observer's altitude and azimuth: raised from H to V, and turned round the horizontal to bring in V₂, each with its
-        corner at 45°. Swept evenly over the wedge the height is even, not the altitude (Archimedes' hat-box).</p>
-        <p class="try">Try: <a href="sphere-cube.html">every point points</a><a href="sphere-cube.html?step=4">any size</a><a href="sphere-cube.html?step=5">the extent unknown</a><a href="sphere-cube.html?step=6">the wedge</a><a href="sphere-cube.html?step=7">two sweeps</a><a href="sphere-cube.html?step=7&amp;even=area">swept evenly over the wedge</a></p>
+        reader without it draws the cube at its own breadth. One observation is given one wedge, and uniform over it its
+        readings are the two-dimensional Cauchy: each of its three faces takes a third. Its directions have two angles, an
+        observer's altitude and azimuth: from H up to V, and round the horizontal to bring in V₂, each with its corner at
+        45°. Uniform over the wedge the height is even, not the altitude (Archimedes' hat-box).</p>
+        <p class="try">Try: <a href="sphere-cube.html">every point points</a><a href="sphere-cube.html?step=4">any size</a><a href="sphere-cube.html?step=5">the extent unknown</a><a href="sphere-cube.html?step=6">the wedge</a><a href="sphere-cube.html?step=7">two sweeps</a><a href="sphere-cube.html?step=7&amp;even=area">uniform over the wedge</a></p>
     </section>
 
     <section class="card" id="wedge">
         <div class="tag">a demo in 3D: the wedge</div>
         <h2><a href="wedge.html">The wedge</a></h2>
         <p>Not a sphere: the reader's own space. Three unit relations, h, v and v₂, each from 0 to 1, every party drawn at
-        H; every [h, v, v₂] is a point of the unit cube and its directions are one octant, the wedge, made by one
+        H; every [h, v, v₂] is a point of the unit cube and its directions are one octant, the wedge, given to one
         observation. A relation is never negative, so a sphere's other seven octants are only this wedge faced another
         way. Seen from home, the apex, through a flat screen the wedge is the triangle h + v + v₂ = 1: each direction lands
-        at its shares, each pair's corner is a median, and the six chambers are its six small triangles. The hand points
-        by altitude and azimuth; Lambert's map shows the wedge equal-area. A world is laid along the rays, in proportion
+        at its shares, each pair's corner is a median, and the six chambers are its six small triangles. A direction is pointed
+        at by altitude and azimuth; Lambert's map shows the wedge equal-area. A world is laid along the rays, in proportion
         to the corner and in levels past it, and H, the zoom, slides each thing along its own ray, never across it. The
         situations are ways of holding the wedge, at once or in order: a camera's frame, a slit panoramic camera, a line
         camera tipped up, a single-pixel scanner.
-        Two motions: the wedge is first placed anywhere on the sphere by one rotation, then the hand sweeps inside it; the
-        readings are the same wherever it is placed, and only the sphere's own frame records where.</p>
+        Position, then the addresses: one rotation places the wedge anywhere on the sphere, and the hand points within it;
+        the readings are the same wherever it is placed, and only the sphere's own frame records where.</p>
         <p class="try">Try: <a href="wedge.html">the wedge</a><a href="wedge.html?step=2">from home</a><a href="wedge.html?step=4">a world</a><a href="wedge.html?step=5">H is a zoom</a><a href="wedge.html?step=6&amp;V=once&amp;V2=once">a camera's frame</a><a href="wedge.html?step=6&amp;V=order&amp;V2=order">a single-pixel scanner</a><a href="wedge.html?step=4&amp;world=decades&amp;view=home">a world of decades, from home</a><a href="wedge.html?step=7">position, then sweep</a></p>
     </section>
 
@@ -475,7 +495,7 @@
         <p>Every ball reads every other: its direction, and how much of its view the other fills. Two balls touch when their two
         readings add to one, h + v = 1, the straight line of the facing; equal balls touch at the corner, each filling 60° of
         the other's view. The table is played from inside, each ball in its own size, beside a referee that plays it from
-        nowhere, and the two games are the same. A cushion, which has no size, is met as the ball's own mirror image, at the
+        the writer's vantage, and the two games are the same. A cushion, which has no size, is met as the ball's own mirror image, at the
         corner again; a pocket takes a ball when it fills its whole view. Stand on any ball to see its pairs and its view.</p>
         <p class="try">Try: <a href="pool.html?break=4">the break</a><a href="pool.html?break=0&amp;heavy=0">all balls alike</a></p>
     </section>
@@ -506,7 +526,7 @@
     </section>
 
     <h2 style="margin:26px 0 4px">The physics correspondence</h2>
-    <p class="lede">The labs take results known from the view from nowhere and show they also come out for a reader who
+    <p class="lede">The labs take results known from the writer's vantage and show they also come out for a reader who
     holds only what arrives. These three pages explain one line of that, the inverse square: the same signal, caught in a
     smaller share, and the reader's grain deciding how the loss shows.</p>
 
@@ -617,7 +637,7 @@
         <p>Why the ground turns into sky so awkwardly in flight sims. Level flight over a wireframe grid: the corner, the
         ground as far ahead as you are high, stays on one row of the screen at any height. Before it the ground reads
         evenly; past it each doubling of distance gets half the room. Level of detail by metres, the engine's way, slides as you
-        climb; by v/h, levels split at the corner, 2v, 4v …, plain doublings, nothing on the screen moves. A few posts are recovered from the sweep alone:
+        climb; by v/h, levels split at the corner, 2v, 4v …, plain doublings, nothing on the screen moves. A few posts are recovered from directions alone:
         readings a second of travel apart cross at each post's place, shown on a plan, until the screen's step runs out.</p>
         <p class="try">Try: <a href="flight.html">fly</a><a href="flight.html?lod=metres">LOD by metres</a><a href="flight.html?lod=vh">LOD by v/h</a><a href="flight.html?lod=vh&amp;v=2000">by v/h, at 2 km</a></p>
     </section>

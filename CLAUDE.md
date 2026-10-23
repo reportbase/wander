@@ -537,6 +537,23 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   k). `?x=&y=&z=&lon=&lat=&roll=&oct=+-+&H=&k=<log10 k>&box=X,Y,Z&n=8|16|32&rays=0&spin=1&view=writer|address|payload`; hook
   `window.__writerBox` (`rotOf`, `anglesOfRot`, `octantRot`, `addresses`, `hitBox`, `read`, `readAt`, `counts`, `horizon`,
   `shellAt`, `camera`, `set` (with `view`), `state`, `hud`, `apexScreen`, `frames`, `webgl`). Not in the flying page.
+- `central-reader.html`: **the central reader** (23 Oct 2026, Tom: "create a demo of the central reader so I can understand it
+  better."; SPN R451, R452: classical results only), a standalone page, plain canvas, after `two-readers.html`. Since R453
+  it opens with the hand (step 1; Tom: "the fingers are pure cauchy geometry, the readers does nothing, it is free. where
+  ever he looks, this geometry is created."): the reader at home, 24 fingers uniform by turn over the quarter turn, read
+  v/h (the Cauchy, median 1), the same at every look; ten things about it, each finger painted by the light of the first
+  on its line, the paint all that changes with the look (`?look=`). Then the classical pieces as steps 2–6:
+  the baseline (a circle read from its centre, the same amount along every given direction); a shape, ln r = a₀ + ρ·f(θ)
+  (32 given directions, an amount along each, a point of two numbers; scale the world k moves every amount by k and the
+  shape, each over the geometric mean, not at all); the modes (Fourier modes of ln r, n ≥ 1, from ratios of radii, a₀
+  never; kept n ≤ L the outline comes back broad form first); off the centre (a reader at z, dragged, inside a circle: its
+  even turn lands unevenly, the circle's law from z the Poisson kernel, harmonic measure, arcs (2α − arc)/2π, mean z, equal
+  to twice the landing density less the uniform); one read (on a chord of 1, the ray from home at θ and the radius from
+  the middle at 2θ meet, III.20; the address v/h unbounded, the point (h², hv) on its circle; arc over chord θ/sin θ to
+  π/2). Steps 2–6 draw the classical polar reading from a shape's centre; since R453 the payload reader is the hand at home.
+  `?step=1..6&look=<degrees>&shape=circle|egg|star|lumpy&rho=&k=<log10 k>&L=&z=x,y&t=<degrees>`; hook `window.__centralReader` (`hand`, `lightOn`, `THINGS`, `radius`,
+  `point`, `central`, `modes`, `rebuilt`, `land`, `landingDensity`, `poisson`, `arcMeasure`, `poissonMean`, `oneRead`, `set`,
+  `state`, `params`, `hud`). Not in the flying page.
 - `ground.html`: **one's own height** (22 Oct 2026, Tom: "1,2", the second a demo of OFS §9's "The ground: one's own height as
   the base"; SPN R433, R434; after Sedgwick's horizon ratio), a standalone page, plain canvas. A reader on level ground, its
   eye at H (1.6 m); ten things (dog, child, door, ball, a twin one eye height tall, lamp post, car, tree, house, tower). The
@@ -649,7 +666,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -767,6 +784,88 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   writer's amounts), siblings compared by ratios in their common box, the one view a reader cannot take of itself from
   outside, which a sibling can; closed by the scope: how an account of nested systems is held, not a claim that the world
   is so arranged. Containment words, not R304's withdrawn inside/outside of the hemispheres.
+  **The writer walks, the reader faces** (22 Oct, SPN R450; Tom: "A always faces in. B always faces out."; "lets use HF and
+  VF for facing."; "VF covers twice the angular .distance."; "the writer walks the chord and faces the arc, from two
+  directions."; "the reader only faces the arc, does not walk the chord. thats where the numbers PI/2 and 2/PI come
+  from."; "the writer than does not face the arc, it only walks the chord."; "VF faces the outer arc and HF faces the inner
+  arc."): OFS §4 "Why the corner sits at 45°" closes with it: the chord and the arc different vantages; the writer walks
+  the chord and faces nothing (both directions held at once, the chord's length 1); the situated reader faces the arc and
+  turns, never walks; a facing's two senses (above, below) opposite, each the other turned through the middle, meeting at
+  the corner square to the chord, both at once the writer's join; the two readers, central (from the centre, a half turn)
+  and inscribed (from a point of the circle, a quarter turn), the only standpoints where equal turns carve equal arcs;
+  facing without walking is where π/2 and 2/π come from, their product the writer's 1. SPN's names: the ends H and V, VF
+  the radius's facing (central, 2θ, π/2, the outer arc), HF the ray from H (inscribed, θ, 2/π, the inner arc); OFS says
+  central and inscribed, not outer and inner. "Facing" keeps R313's sense in OFS. Then (Tom: "HV and VF are just rotations, no
+  walking."; "its at H."; "VF and HF have different unit circles."; "different horizons"): OFS §3.4 and §4's "its
+  position crosses the line" now say the reader stays where it stands and the point it reads crosses. Tom: "the chord is
+  1, not 2H.": VF stands at the chord's middle (½), its circle the circle on the chord (radius ½); HF's unit circle centred
+  at home, radius 1; different centres and radii (SPN's "VF at H" and vesica, from a 2H reading, withdrawn). Both end at
+  home, HF tangent (a horizon, ∞, no mean), VF at a point (a bounded chart, means).
+  **The central reader: classical results only** (23 Oct, SPN R451; Tom: "VF is two dimensional."; "just use classical
+  results for the central reader. we don't need to add anything at this time."): nothing added to OFS. The payload reader
+  holds a point (a given direction and the amount along it, D numbers up to a₀); where it stands (at home, or at the centre
+  of what it reads) is open; a section drafted and not taken. Its pieces are classical (III.20, polar coordinates, shape up
+  to similarity, harmonic measure: the disc's Poisson kernel the wrapped Cauchy, the half-plane's the Cauchy). Not "a uniform
+  turn from an interior point lays the wrapped Cauchy": that is the rates' combination (2·dθ/dφ − 1)/2π, (2α − arc)/2π.
+  **The central reader, a demo** (23 Oct, SPN R452; Tom: "create a demo of the central reader so I can understand it
+  better."): `central-reader.html`, classical results only, nothing added to OFS.
+  **The fingers are free; the light draws on them** (23 Oct, SPN R453; Tom: "the reader is not a radar."; "the fingers are
+  laid by cauchy, the fingers are the inscribed sweep. the light rays of the world are the payloads, they draw on the
+  readers fingers"; "the fingers are pure cauchy geometry, the readers does nothing, it is free. where ever he looks, this
+  geometry is created."; "yes"): one hand. OFS §3.7's hand bullet now says the fingers are the uniform turn's geometry, the
+  Cauchy, there wherever the reader looks, laid by looking (it computes, sends and turns through nothing); the rings are
+  the world's light along each finger; to read the payload is to read what the light drew, from the same standpoint. The
+  payload reader is not a second standpoint or a radius per direction (that is ranging, a writing); R451's "at the centre
+  of what it reads" withdrawn. "The situations in the hand" now has 3 as "the rings, what the light drew on the fingers" (Tom: "yes"). `central-reader.html` opens with the hand.
+  **Two geometric sweeps, one reader; OFS archived, a new paper begun** (23 Oct, SPN R454; Tom: "the laying of the address is
+  inside, the drawing on thise addresses outside. there is no sweeping going on, the sweep is just a term that describes
+  what the geometry does for free."; "this paper has been treating the address reader and the paylad reader as two
+  different types of readers … the sweeps are geometric, and describe the inside sweep of addresses, and the outside sweep
+  of painting of those addreses."; "archive this paper, and start a new paper with our new framing. I don't want to lose
+  any of the major insights of the last two iterations, but our understanding about what it all means is still
+  evolving."): a sweep is the geometry's, never an act; one situated reader, not an address reader and a payload reader;
+  the inside sweep lays the addresses (inscribed, the Cauchy, 2/π), the outside sweep is the world's light painting them
+  (central, III.20, π/2). OFS as it stood is frozen as `papers/observation-from-somewhere-record.md` (**a frozen record,
+  never edited**, like SPN's; section numbers cited before 23 Oct are the record's). The new paper is written into
+  `papers/observation-from-somewhere.md` from `plans/ofs-new-outline.md` (the record's sections mapped, five open points,
+  a checklist of insights to keep), once Tom approves it; it becomes the single source of truth (R421) when its first draft
+  is whole, and until then the record stands. Everything above about OFS describes the record. The demos that name two
+  readers wait for a later pass.
+  **The geometry, not reader adaptations; recursion noted, not claimed** (23 Oct, SPN R455; Tom: "This paper is about the
+  geometry, not reader adaptations. The recursive, fractal nature of observation is noted, but not well understood, inside
+  and outside implies a recursive situation, but that can only be speculated about."): the new OFS keeps to the geometry;
+  holding, instruments, the head and the reader's acts leave its body (outline point F); writers within writers (R448,
+  R449) go to the discussion as speculation (point G); R188's no recursion in the levels stands.
+  **The new OFS begun** (23 Oct, SPN R456; Tom: "proceed"): `papers/observation-from-somewhere.md` now holds the new
+  abstract, §1, §2 and §3 (one reader, the inscribed and central sweeps as geometry, the situations 3 and 4 the paint and
+  the addresses, §3.5 "What the geometry leaves to the reader", no "inside"/"outside"), and §4–§11 carried over from the
+  record unchanged, a draft line at the head saying so. Next: §4–§11 brought into the frame, section by section, each
+  checked against the record; then the draft line goes and the paper is the source of truth again.
+  **The new OFS whole** (23 Oct, SPN R457; Tom: "proceed"): §4–§11 brought into the frame and the draft line removed; the
+  outline's checklist all found, so the new OFS is the single source of truth again (R421) and the record is frozen. One
+  reader with two sweeps throughout: "Two charts" (§7), "One K, in direction and in distance" (§8), "The central sweep
+  places the paint; the amount is written" (§9: a shape about a centre is an amount per direction, by ranging, a writing,
+  or from further standpoints), "Inside a room", "Far off, parallax in place of the shape", "One standpoint gives no
+  parallax" (the head and the camera out), §10 step 3 as geometry; "Order needs the readings together" (the one-slot
+  reference out); writers within writers and "within one box" now §11.2 question 8, "Systems within systems: a
+  speculation" (the old question 8, holding, moot). The demos that name two readers wait for a later pass.
+  **The separation of address and payload, given not performed** (23 Oct, SPN R458; Tom: "the paper should focus on the
+  seperation of the payload and the address … geometry is actually pre-computed, not algorothimic … geometry provides it
+  for free."; "yes, proceed"): OFS's subtitle "Addresses given, payloads met"; the abstract, §1 ("The addresses are given,
+  not performed", "The separation, in brief") and the Results lead with it; §2 "Given, not performed" (the uniform turn a
+  measure, given whole; "steps", "swept", "counted" said of the measure, never an act; no algorithm); §7.1 "The circle,
+  uniform by turn"; Theorem 6 "the separation of address and payload". Say "given", not "precomputed"; OFS still does not
+  characterize classical mathematics (the pictures read as a process, the measure does not).
+  **The demos in the new frame** (23 Oct, SPN R459; Tom: "Update the demos"): visible wording only, hooks, params, ids
+  and file names kept: `central-reader.html` "The central sweep", `two-readers.html` "The angle and the radius",
+  `writer-readers.html` "The writer and the reader", `sweep-zero.html` "Counting from zero", `blueprint.html` "One
+  blueprint, two vantages"; `writer-box.html`'s views the writer, the reader from home, ranges (a writing); the payload-free
+  pages' button "reveal in order". The page entries above describe the older wording.
+  **The stained-glass window** (23 Oct, SPN R460; Tom: "yes, proceed with the stained glass window metaphore"): OFS's
+  picture is a hand held up to a stained-glass window, each finger lit by the pane it lines up with: the fingers the
+  addresses, the coloured light the payload, no distance in a colour, walking the way to distance; the rings are gone
+  (§1, §2, §3.7, §7.3, §9, §10, notation). "Sweep" stays the geometry's word; the hand is "held" or "moved". The fingers
+  are coloured, never colour (painting on is writing). `central-reader.html` step 1 speaks of the window.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -2326,6 +2425,12 @@ In short:
       field within 0.01 of ⅓; a real drag of the gold ball moves the wedge; the three vantages: the writer's camera
       orthographic, the address reader's at its standpoint, the payload reader's shell unmoved by k = 10³ and its mean
       moved by k; WebGL drew frames.
+
+  53. **central-reader.html:** the hand: the fingers' readings the same at three looks, median 1, 12 of 24 at v/h ≤ 1, the
+      light on them different at each; the shape unmoved by k = 10⁻², 10^0.5, 10², every amount by k; a circle flat from its
+      centre; the modes of ln r 0.15, 0.08, 0.05 at n = 2, 3, 6, unmoved by k; harmonic measure: arcs (2α − arc)/2π to
+      10⁻⁷, the Poisson kernel's mean z, the kernel twice the even turn's landings less the uniform one; ray and radius meet
+      on the circle on the chord; arc over chord π/2 at 90°, v/h 1 at 45°; a real drag moves the reader.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

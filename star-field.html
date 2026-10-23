@@ -101,13 +101,14 @@
     </div>
 
     <div class="panel">
-        <h2>Both readers, one K: the reader's K × K</h2>
+        <h2>One K, in direction and in distance: the K × K</h2>
         <div class="grid">
             <canvas id="kgrid" width="900" height="900"></canvas>
             <div>
-                <p class="cap">The address reader reads which of its K directions a star lies in (the rays, at equal angles; half
-                    either side of the corner, v = h, gold dashed). The payload reader reads which of its K amounts along that
-                    direction (the rings, at d = H·tan(kπ/2K), drawn on the in-place lay: d/H inside H, 2 − H/d past it, so the
+                <p class="cap">The reader's addresses say which of its K directions a star lies in (the rays, at equal angles,
+                    given; half either side of the corner, v = h, gold dashed). Which of its K distances along that direction
+                    it lies at needs the star's distance, an amount, had only by ranging (a writing) or from further
+                    standpoints (the rings, at d = H·tan(kπ/2K), drawn on the in-place lay: d/H inside H, 2 − H/d past it, so the
                     whole field is 2H across, the far rings mirroring the near ones about H and the horizon the outer edge).
                     Every star falls in one cell of the K × K, whatever N is. Move H: no ray moves, so no star changes its
                     direction address; the rings slide, so stars change their distance address. The reader interacts with K;
@@ -340,7 +341,7 @@ function drawGrid() { const cv = $('kgrid'), g = cv.getContext('2d'), Wg = cv.wi
     for (const st of sampleWorld(curN())) { const [x, y] = P(inPlace(st.r), st.th); g.fillStyle = css(colOf(st.c), 0.8); g.fillRect(x - 1, y - 1, 2, 2); }
     const sel = hover || pinned; let msg = '';
     if (sel) { const [x, y] = P(inPlace(sel.r), sel.th), c = gridCell(sel); g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath(); g.arc(x, y, 9, 0, 2 * Math.PI); g.stroke();
-        msg = `Star #${fmt(indexOf(sel))}: direction address ${c.i + 1} of ${K} (the address reader's; no H in it), distance address ${c.j + 1} of ${K} (the payload reader's, against H = 2^${S.k} u). `; }
+        msg = `Star #${fmt(indexOf(sel))}: direction address ${c.i + 1} of ${K} (the reader's; no H in it), distance address ${c.j + 1} of ${K} (its distance written against H = 2^${S.k} u). `; }
     g.fillStyle = '#8a8a96'; g.font = '14px DM Mono, monospace';
     g.fillText('H', ox + Rp + 6, oy - 6); g.fillText('2H, the horizon', ox + 2 * Rp - 150, oy - 6); g.fillText('home', ox - 40, oy + 30); g.fillText('the corner', ...P(1.55, Q / 2 + 0.03));
     $('kgridNote').textContent = msg + `K = ${K}: ${K / 2} directions either side of the corner and ${K / 2} distances either side of H, ${(K * K).toLocaleString()} cells, at every N` +

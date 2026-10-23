@@ -27,15 +27,15 @@
         three numbers (x, y, z), the writer's. The one between is the distance along the ray, the writer's, never read.
       - Moving or turning the wedge, resizing the box, changing H or scaling the world (k on every amount) changes which
         points of the box the addresses reach (the payload, the writer's), never the addresses themselves.
-      - Three vantages (22 October; Tom: "we have three situations. The perfect demo would be able toggle between all
+      - Three views, two vantages (since SPN R454, 23 Oct: one reader; the third view is ranging, a writing) (22 October; Tom: "we have three situations. The perfect demo would be able toggle between all
         three, the writers vantage, the inside hemisphrical vangate, and the outside hemisphrical vantage."; SPN R447), one
         scene, three cameras, three readouts:
         the writer (dual-hemispherical, situation 2): the box whole, front and back of everything, drawn with parallel
           rays (an orthographic camera, no standpoint), every landing three amounts, the distance along a ray an amount;
-        the address reader (inscribed, the inner hemisphere, situation 4): the camera at the standpoint looking out down
+        the reader from home (its addresses, the inscribed sweep, situation 4): the camera at the standpoint looking out down
           the wedge's triple corner; it holds directions only, each painted by what arrives (the colour of the face its
           ray meets), no box, no number line, no distance;
-        the payload reader (central, the outer hemisphere, situation 3): the same directions given, an amount arriving
+        ranges, a writing (a pulse carries in the speed): the same directions given, an amount arriving
           along each (the range), in a unit no reading fixes, drawn over the amounts' geometric mean (clipped at 2.2 of it):
           the shape of the corner of the box seen from there, not its size; scaling the world moves the amounts by k and
           the shell not at all.
@@ -111,8 +111,9 @@
     <p class="sub">The <b class="blue">writer</b> is a box: one number line on each axis, both signs, every extent an amount.
         A <b class="gold">reader</b> stands inside it: a sphere round one point, and one octant of it, the wedge, its
         addresses. Each address is a direction, two numbers; it points at a point of the box, three numbers. The one
-        between is the distance, the writer's, never read.</p>
-    <div class="vant" id="vant"><button data-v="writer">the writer</button><button data-v="address">the address reader</button><button data-v="payload">the payload reader</button></div>
+        between is the distance, the writer's, never read. Two vantages, the writer's and the reader's; the third view is
+        ranging, a writing.</p>
+    <div class="vant" id="vant"><button data-v="writer">the writer</button><button data-v="address">the reader, from home</button><button data-v="payload">ranges, a writing</button></div>
     <p id="vcap"></p>
     <div class="more">
         <h3>the wedge's place (amounts, from the box's middle)</h3>
@@ -370,24 +371,24 @@ function applyView() { const v = S.view, P = S.P, Hr = H();
     $('vcap').innerHTML = VCAP[v]; $('hint').innerHTML = HINT[v]; }
 const VCAP = {
     writer: `<b class="blue">The writer</b>, both hemispheres: the box whole, front and back of everything, drawn with parallel rays from no standpoint. Every point is three amounts on three number lines; the distance along each ray is one of them.`,
-    address: `<b class="gold">The address reader</b>, inscribed, the inner hemisphere: from its standpoint, looking out down the wedge. It holds directions only, [h : v : v₂], each painted by what arrives (here the colour of the face its ray meets). No distance arrives, and no box.`,
-    payload: `<b class="teal">The payload reader</b>, central, the outer hemisphere: the same directions given, an amount arriving along each, in a unit no reading fixes. Over their geometric mean it holds the shape of the box's corner seen from here, not its size.` };
+    address: `<b class="gold">The reader</b>, from its standpoint (home), looking out down the wedge: its addresses, the inscribed sweep, given before anything arrives. It holds directions only, [h : v : v₂], each painted by what arrives (here the colour of the face its ray meets). No distance arrives, and no box.`,
+    payload: `<b class="teal">Ranges, a writing</b>: a pulse sent along each given direction brings back an amount, in a unit the pulse carries in (the signal's speed and a clock), so ranging is writing, not reading. Over their geometric mean the ranges give the shape of the box's corner seen from here, not its size.` };
 const HINT = {
     writer: 'Drag the gold ball to move the wedge (arrows, page up/down too). Drag elsewhere to turn the view, scroll to zoom. Point at a dot for its address and where it lands.',
     address: 'You stand where the reader stands. Move it with the arrows or the sliders, turn it, scale the world: the addresses stay; only the paint changes. Point at a dot for its address.',
-    payload: 'Drag to turn round the reader, scroll to zoom. Scale the world: every amount moves by k, the shell not at all. Point at a dot for its amount.' };
+    payload: 'Drag to turn round the standpoint, scroll to zoom. Scale the world: every amount moves by k, the shell not at all. Point at a dot for its amount.' };
 
 // ── the readout ───────────────────────────────────────────────────────────────────────────────────────────────────────
 const pct = x => (100 * x).toFixed(1) + '%';
 function hud() { const k = K(), a = G.anglesOfRot(S.R), c = CN, n = L.length, hv = S.hover != null ? L[S.hover] : null;
-    if (S.view === 'address') { let s = `the address reader holds ${n.toLocaleString('en')} directions [h : v : v₂], two numbers each, and the paint that arrives along them\n` +
+    if (S.view === 'address') { let s = `from home the reader holds ${n.toLocaleString('en')} addresses [h : v : v₂], two numbers each, given, and the paint that arrives along them\n` +
             `v ≤ h ${pct(c.vh)}, v₂ ≤ h ${pct(c.v2h)}, v₂ ≤ v ${pct(c.v2v)}, the near field ${pct(c.near)}: the same wherever it stands or turns, whatever the box, H and k\n` +
             `the paint (what arrives, the world's): ` + c.faces.map((x, i) => x > 0 ? `${G.FACES[i]} ${pct(x)}` : null).filter(Boolean).join(', ') + `\nno distance arrives: a near wall and a far one paint alike`;
         if (hv) { const m = Math.max(hv.h, hv.v, hv.v2); s += `\n\naddress [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}], painted ${G.FACES[hv.face]}; how far, never`; }
         $('hud').textContent = s; return; }
     if (S.view === 'payload') { const rel = SH.rel, mx = Math.max(...rel), mn = Math.min(...rel);
-        let s = `the payload reader holds ${n.toLocaleString('en')} amounts, one along each given direction, in a unit no reading fixes\n` +
-            `drawn over their geometric mean (${fmt(SH.gm)} in the writer's units at k = ${fmt(k)}; the reader never reads it): the shell, nearest ${mn.toFixed(3)}, farthest ${mx.toFixed(3)} of it\n` +
+        let s = `ranging (a writing) gives ${n.toLocaleString('en')} amounts, one along each given direction, in the unit the pulse carries in\n` +
+            `drawn over their geometric mean (${fmt(SH.gm)} in the writer's units at k = ${fmt(k)}; no reading gives it): the shell, nearest ${mn.toFixed(3)}, farthest ${mx.toFixed(3)} of it\n` +
             `the shape of the box's corner seen from here, not its size: scale the world and every amount moves by k, the shell not at all`;
         if (hv) s += `\n\nalong [${[hv.h, hv.v, hv.v2].map(x => (x / Math.max(hv.h, hv.v, hv.v2)).toFixed(3)).join(' : ')}] (given): ${rel[S.hover].toFixed(4)} of the mean (the shape); ${fmt(hv.t)} in the writer's units (a writing)`;
         $('hud').textContent = s; return; }

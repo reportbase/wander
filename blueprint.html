@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>One blueprint, three vantages</title>
+    <title>One blueprint, two vantages</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
     <!--
     blueprint.html: one property, three vantages (22 October 2026; Tom: "maybe the better way to show the reader and writer
     is with a large real estate blueprint.   show the three observer vies, as a writer, a payload reader and the address
-    reader."). OFS "Three vantages: a writer and two readers", §3.4 and §9 (SPN R328, R332, R338; R424 for this page). A
+    reader."). Since SPN R454 (23 Oct) one reader and two vantages: the writer and the reader; ranges are a writing. OFS §3.4 and §9 (SPN R328, R332, R338; R424 for this page). A
     standalone page, plain canvas, after room.html, room-walk.html and writer-readers.html.
 
     Keep the case. Amounts (metres, a range along a ray) are the writer's (and a pulse's, which writes); [h : v] is the address.
@@ -23,13 +23,13 @@
         pulse" brings a range back along each, drawn over the ranges' geometric mean (the shape; a₀ never read), but a
         ranging reader carries in the signal's speed and a clock, so it writes (R388). The writer's circle is round the
         whole lot, looking in, its radius an amount.
-      - THE ADDRESS READER stands at a corner (home), its two walls the two parties: h along one, v along the other. It
-        sweeps the quarter turn uniformly, 256 directions, each read as [h : v], the ratio itself, and painted by the first
+      - THE READER AT HOME stands at a corner, its two walls the two parties: h along one, v along the other. Its
+        addresses are given, the quarter turn uniformly (the inscribed sweep, the geometry's, not an act), 256 directions, each read as [h : v], the ratio itself, and painted by the first
         thing met. No distance arrives. The turn's middle, v = h at 45°, is the corner of its sweep: half the addresses
         either side, whatever is there.
     SCALE THE WORLD (k from 1/100 to 100): every length × k. The writer's numbers move by k, and a pulse's ranges; the reader's
     circle, the pulse's shape and the addresses do not. Hover a thing in any view to light it in all.
-    WRITE (22 Oct; SPN R425; Tom: "yes", to "write the room" on both pages): the address reader takes one stride (0.7 m at
+    WRITE (22 Oct; SPN R425; Tom: "yes", to "write the room" on both pages): the reader takes one stride from home (0.7 m at
     k = 1, 30° off its first wall) and reads again; each corner seen from both is two rays crossing, its place in strides;
     the stride counted, one amount carried in, writes every place in metres. blueprint-3d.html is the same in 3D.
     ?k=<log10 k>&at=x,y&home=lot|living|garage|far&write=1&pulse=1; test hook window.__blueprint.
@@ -64,17 +64,16 @@
 </head>
 <body>
 <main>
-    <h1>One blueprint, three vantages</h1>
-    <p class="lede">The same property held three ways. The <span class="w">writer</span> has the blueprint: every length in
-        metres, the whole of it. The <span class="p">reader</span> is a circle round one point: nothing on the lot sends,
-        so it receives the light the lot scatters, each direction painted by the first thing on its line, and no
-        distance. The <span class="a">address reader</span>
-        stands at a corner and receives directions alone, each [h : v]: where things are, never how far. Scale the world and
-        only the writer's numbers change. Write: one counted stride turns the address reader's two looks into the writer's
-        metres.</p>
+    <h1>One blueprint, two vantages</h1>
+    <p class="lede">The same property from two vantages. The <span class="w">writer</span> has the blueprint: every length in
+        metres, the whole of it. The <span class="p">reader</span> stands at one point, and its directions are given
+        there, a circle round it: nothing on the lot sends, so the light the lot scatters paints each direction with the
+        first thing on its line, and no distance arrives. Stood at a <span class="a">corner</span> (home), the reader's
+        addresses are the quarter turn, each [h : v]: where things are, never how far. Scale the world and only the
+        writer's numbers change. Write: one counted stride turns two looks from home into the writer's metres.</p>
     <div class="panel" style="margin-bottom:12px">
         <div class="row"><label for="k">scale the world, k</label><input id="k" type="range" min="-2" max="2" step="0.05" value="0"><span id="kv" style="min-width:9ch"></span>
-            <label for="home">address reader at</label><select id="home">
+            <label for="home">home at</label><select id="home">
                 <option value="lot">the lot's corner</option><option value="far">the lot's far corner</option>
                 <option value="living">the living room's corner</option><option value="garage">the garage's corner</option></select>
             <button id="pulse">send a pulse</button><button id="write">write: one stride</button><button id="reset">reset</button></div>
@@ -87,33 +86,34 @@
             <p class="cap">Every length an amount, stated whole: both sides of every wall, the lot's full extent. Its ruler
                 is the number line, the same at every length, no corner. The metres need a unit measured beforehand: the scale
                 bar. Its circle (faint blue) is round the whole lot, looking in, its radius an amount. Tap anywhere to stand the
-                <span class="p">reader</span> there; the <span class="a">address
-                reader</span> is at the gold corner.</p>
+                <span class="p">reader</span> there; its home, for the
+                <span class="a">addresses</span>, is the gold corner.</p>
             <p class="read" id="readW"></p>
         </div>
         <div class="stack">
             <div class="panel">
                 <p class="tag p" id="payTag">the reader</p><h2 id="payHead">A circle, painted by what arrives</h2>
                 <canvas id="pay"></canvas>
-                <p class="cap">Passive: 128 directions round one point, each dot the colour of what its line meets first.
+                <p class="cap">Passive: 128 directions given round one point, each dot the colour of what its line meets first.
                     Nothing on the lot sends, so no distance arrives and every dot sits on the circle. Send a pulse and a
                     range comes back along each direction, drawn over their geometric mean: the shape, but in the unit the
                     pulse carried in (its speed and a clock), so ranging is writing. Scale the world and nothing here moves.</p>
                 <p class="read" id="readP"></p>
             </div>
             <div class="panel">
-                <p class="tag a">the address reader</p><h2>Directions alone, from home</h2>
+                <p class="tag a">the reader at home: its addresses</p><h2>Directions alone, from home</h2>
                 <canvas id="addr"></canvas>
-                <p class="cap">At home, a corner, the quarter turn from one wall (h) to the other (v), 256 directions, each
-                    painted by the first thing met: the fan, then the same laid straight, g = (2/π)·arctan(v/h). No distance
+                <p class="cap">At home, a corner, the quarter turn from one wall (h) to the other (v): 256 directions given
+                    (the inscribed sweep), each painted by the first thing met: the fan, then the same laid straight, g = (2/π)·arctan(v/h). No distance
                     arrives; the turn's middle, v = h, has half the addresses either side, whatever is there.</p>
                 <p class="read" id="readA"></p>
             </div>
         </div>
     </div>
-    <p class="cap" style="margin-top:12px">The writer is the vantage that writes: it needs the whole and a unit. Its circle is round
-        the whole, looking in; the reader's is round one point, looking out, painted by what arrives, holding no distance. Other demos: <a href="room.html">the room</a>, <a href="room-walk.html">walking the room</a>,
-        <a href="writer-readers.html">the writer and two readers</a>, <a href="blueprint-3d.html">the blueprint in 3D</a>, <a href="demos.html">all demos</a>.</p>
+    <p class="cap" style="margin-top:12px">Two vantages. The writer writes: it needs the whole and a unit. Its circle is round
+        the whole, looking in; the reader's is round one point, looking out, its directions given and painted by what
+        arrives, holding no distance. A pulse's ranges are a writing. Other demos: <a href="room.html">the room</a>, <a href="room-walk.html">walking the room</a>,
+        <a href="writer-readers.html">the writer and two standpoints</a>, <a href="blueprint-3d.html">the blueprint in 3D</a>, <a href="demos.html">all demos</a>.</p>
 </main>
 <script>
 'use strict';
@@ -326,7 +326,7 @@ function render() {
     $('kv').textContent = 'k = ' + (k >= 1 ? k.toPrecision(3) : k.toFixed(k < 0.1 ? 4 : 3)); $('home').value = S.home;
     const below = A.filter(o => o.ratio < 1).length;
     $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}. Its circle round the whole is ${fmtM(Math.hypot(24, 16) * k)} in radius. ` +
-        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The reader's circle is the same at every k: its directions and what paints them, no distance.`) + ` The address reader holds ${NA} directions: ${below} below v = h and ${NA - below} above, at every k.`;
+        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The reader's circle is the same at every k: its directions and what paints them, no distance.`) + ` From home the reader holds ${NA} addresses: ${below} below v = h and ${NA - below} above, at every k.`;
     describe();
 }
 function describe() {

@@ -10,9 +10,10 @@
     payload-free.html: the payload doesn't matter (20 October 2026, Tom: "how can we visualize this?", then "but the amazing
     thing is that the payloads are irrelevent.", then "yes"; SPN R403–R405, OFS §7.2 and Theorem 6(a)). A standalone page,
     plain canvas, no libraries.
-    One reader at home turns uniformly through the quarter turn, from all of h (along the ground, right) to all of v (up),
-    n rays at equal angles (n odd, so the middle ray lies on the corner, 45°). That fan is the reader's addresses, and it is
-    drawn once and never changes. Behind it the world cycles: a row of trees, a straight wall, a curved wall round home,
+    One reader at home; its directions are given uniformly by turn over the quarter turn, from all of h (along the ground,
+    right) to all of v (up), n rays at equal angles (n odd, so the middle ray lies on the corner, 45°). That fan is the
+    reader's addresses, given by the standpoint alone before anything arrives (OFS §2, "Given, not performed"); it is drawn
+    once and never changes. Behind it the world cycles: a row of trees, a straight wall, a curved wall round home,
     stars at every distance, one sun, noise, or nothing at all; any of them scaled by a size S from 1 to 10¹², or unknown.
     Each ray is painted with whatever it meets first (the payload), and the reading is taken back from the place it met:
     v/h = y/x of the hit, or the ray's own direction when it meets nothing and runs to the horizon. The readout compares
@@ -20,13 +21,14 @@
     That is Theorem 6(a) shown, not proved: the address is the turn's, and no payload enters it. What the payload does change
     is the paint on each ray, the strip at the bottom.
     The world is drawn on the reader's lay of distances, d to the corner (H = 1), then 1 + ln d, so a world 10¹² across fits.
-    Beside it, smaller, an equal-metres reader for contrast: its n addresses spaced evenly up a line one H away, out to the
-    world's extent. It must be told N (the extent), its rays move with every size, and with an unknown or empty world it has
+    Beside it, smaller, equal-metres addresses for contrast: n spaced evenly up a line one H away, out to the world's
+    extent (a writer's layout, in amounts). It must be told N (the extent), its rays move with every size, and with an unknown or empty world it has
     nothing to space against.
-    The sweep (20 October; Tom: "we should be able to sweep the payloads", "the sweep would just show as we sweep, new
-    payloads become visible over the sweep."): the hand passes the addresses in order from zero; every address is drawn
-    from the start, faint, and what arrived at it shows only once the hand has passed. ?sweep=0 sweeps as the page opens,
-    any other value stops the hand that share of the way.
+    The order of the turn (20 October; Tom: "we should be able to sweep the payloads", "the sweep would just show as we
+    sweep, new payloads become visible over the sweep."; reworded 23 October, SPN R458: the sweep is the geometry's, never
+    an act): a gold marker runs over the given addresses in the turn's order from zero; every address is drawn from the
+    start, faint, and the paint on it is revealed once the marker has passed. The animation shows the order, not something
+    the reader does. ?sweep=0 runs it as the page opens, any other value stops the marker that share of the way.
     Links: ?world=trees|wall|curve|stars|sun|noise|empty&s=<log10 size>|unknown&n=15|63|255&play=1&sweep=<0..1>. Test hook:
     window.__payloadFree.
     -->
@@ -58,8 +60,8 @@
 <body>
 <main>
     <h1>The payload doesn't matter</h1>
-    <p class="lede">A reader turns its head evenly through a quarter turn. Where each ray points is its address: fixed by
-        the turn alone, before anything arrives. Change the world behind it to anything, any size, or nothing at all, and the
+    <p class="lede">One reader stands at home. Its directions are given, uniformly by turn over a quarter turn, before
+        anything arrives; where each ray points is its address, fixed by the standpoint alone. Change the world behind it to anything, any size, or nothing at all, and the
         addresses do not move. Only what each ray finds there, the payload, changes.</p>
 
     <div class="panel">
@@ -67,7 +69,7 @@
         <div class="row"><label for="size">world size S</label><input id="size" type="range" min="0" max="12" step="0.5" value="0">
             <span id="sizeVal" style="min-width:9ch"></span><button id="unknown">unknown</button></div>
         <div class="row"><label>rays</label><span id="ns"></span><button id="play">play</button></div>
-        <div class="row"><button id="sweep">sweep</button><label for="swept">swept</label><input id="swept" type="range" min="0" max="1" step="0.001" value="1">
+        <div class="row"><button id="sweep" title="run a marker over the given addresses in the turn's order, revealing the paint">reveal in order</button><label for="swept">revealed</label><input id="swept" type="range" min="0" max="1" step="0.001" value="1">
             <span id="sweptVal" style="min-width:9ch"></span></div>
         <p id="say"></p>
     </div>
@@ -76,14 +78,14 @@
         <div class="panel">
             <canvas id="fan" width="900" height="900"></canvas>
             <p class="cap">The reader at home (bottom left), h to the right, v up. Its rays at equal angles; the corner, v = h,
-                dashed at 45°. The world on the reader's lay: in proportion out to one H (the gold ring), then each tenfold
+                dashed at 45°. The world on the reader's lay of distances (the writer's picture; no distance arrives): in proportion out to one H (the gold ring), then each tenfold
                 the same width (rings at 10, 10³, 10⁶, 10⁹, 10¹²). A dot where a ray meets something, in its colour; a ray
                 that meets nothing runs to the horizon.</p>
         </div>
         <div class="panel">
             <canvas id="metres" width="450" height="450"></canvas>
-            <p class="cap">For contrast, an equal-metres reader: the same number of addresses spaced evenly up a line one
-                H away, out to the world's size. It needs that size. Its rays move with every S, and with an unknown or
+            <p class="cap">For contrast, equal-metres addresses: the same number spaced evenly up a line one H away, out
+                to the world's size, a writer's layout. It needs that size. Its rays move with every S, and with an unknown or
                 empty world it has none.</p>
             <div id="compare" class="note"></div>
         </div>
@@ -153,7 +155,7 @@ function readings(kind, s, n) {
     return A.map(th => { const h = hit(W, th); return h ? { v_h: h.y / h.x, d: h.t, col: h.col } : { v_h: Math.tan(th), d: null, col: null }; });
 }
 function median(xs) { const a = xs.slice().sort((p, q) => p - q); return a[(a.length - 1) / 2]; }
-// THE EQUAL-METRES READER: n addresses evenly up a line one H away, out to the world's extent L. It needs L.
+// EQUAL-METRES ADDRESSES (a writer's layout): n evenly up a line one H away, out to the world's extent L. It needs L.
 function metresFan(extent, n) { if (!extent || !isFinite(extent)) return null; const a = [];
     for (let k = 0; k < n; k++) a.push(Math.atan((k + 0.5) * extent / n)); return a; }
 
@@ -169,12 +171,12 @@ function drawFan(R, shown) {
     g.setLineDash([6, 6]); g.strokeStyle = 'rgba(212,160,82,0.7)'; g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + RMAX * sc, oy - RMAX * sc); g.stroke(); g.setLineDash([]);
     const A = fan(S.n);
     A.forEach((th, k) => { const r = R[k], end = (r.d == null ? RMAX : Math.min(RMAX, lay(r.d))) * sc;
-        if (k >= shown) { g.strokeStyle = 'rgba(140,230,205,0.07)'; g.lineWidth = 1; g.beginPath(); g.moveTo(ox, oy);   // an address not yet swept: there, nothing arrived
+        if (k >= shown) { g.strokeStyle = 'rgba(140,230,205,0.07)'; g.lineWidth = 1; g.beginPath(); g.moveTo(ox, oy);   // an address not yet revealed: given, its paint not yet shown
             g.lineTo(ox + RMAX * sc * Math.cos(th), oy - RMAX * sc * Math.sin(th)); g.stroke(); return; }
         g.strokeStyle = r.d == null ? 'rgba(140,230,205,0.18)' : 'rgba(140,230,205,0.55)'; g.lineWidth = S.n > 100 ? 0.6 : 1.1;
         g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + end * Math.cos(th), oy - end * Math.sin(th)); g.stroke();
         if (r.d != null) { g.fillStyle = r.col; g.beginPath(); g.arc(ox + end * Math.cos(th), oy - end * Math.sin(th), S.n > 100 ? 2.5 : 4.5, 0, 2 * Math.PI); g.fill(); } });
-    if (shown > 0 && shown < A.length) { const th = A[shown - 1]; g.strokeStyle = '#d4a052'; g.lineWidth = 2.5;   // the hand, where the sweep is now
+    if (shown > 0 && shown < A.length) { const th = A[shown - 1]; g.strokeStyle = '#d4a052'; g.lineWidth = 2.5;   // the marker: how far through the turn's order the paint is revealed
         g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + RMAX * sc * Math.cos(th), oy - RMAX * sc * Math.sin(th)); g.stroke(); }
     g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(ox, oy, 5, 0, 2 * Math.PI); g.fill();
     g.fillStyle = '#8a8a96'; g.font = '14px DM Mono, monospace'; g.fillText('home', ox + 8, oy - 8); g.fillText('horizon', ox + 6, P + 4);
@@ -198,7 +200,7 @@ function drawStrip(R, shown) {
     const cx = P + (0 - lo) / (hi - lo) * (W - 2 * P); g.strokeStyle = '#d4a052'; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(cx, 4); g.lineTo(cx, 34); g.stroke(); g.setLineDash([]);
     const base = Hh - 14, top = 52, dmax = 16;
     R.forEach((r, k) => { const x = P + k * w;
-        if (k >= shown) return;                              // not swept yet: nothing has arrived there
+        if (k >= shown) return;                              // not yet revealed in the turn's order
         if (r.d == null) { g.fillStyle = '#16161d'; g.fillRect(x, top, Math.max(1, w - 1), base - top); return; }
         const hgt = Math.max(3, (Math.log10(Math.max(r.d, 1e-3)) + 3) / (dmax + 3) * (base - top));
         g.fillStyle = r.col; g.fillRect(x, base - hgt, Math.max(1, w - 1), hgt); });
@@ -219,19 +221,20 @@ function render() {
     last = { worst, med, below, above, met, nearMetres: nearM, metres: M, shown, seen };
     $('sizeVal').textContent = S.unknown ? 'unknown' : 'S = 10^' + S.s;
     $('say').textContent = `${WORLDS.find(w => w[0] === S.world)[1]}, ${S.unknown ? 'of unknown size' : 'size 10^' + S.s}: ` +
-        (shown < S.n ? `swept ${shown} of ${S.n} addresses, ${seen} payloads seen so far. The addresses were all there before the sweep.`
+        (shown < S.n ? `revealed ${shown} of ${S.n} addresses in the turn's order, ${seen} with paint. All ${S.n} addresses were given before anything arrived.`
         : `${met} of ${S.n} rays meet something, ${S.n - met} run to the horizon. The rays have not moved.`);
     $('swept').value = S.sweep; $('sweptVal').textContent = `${shown} of ${S.n}`; $('sweep').classList.toggle('on', !!sweeping);
     $('check').innerHTML = `<span class="ok">Every reading, taken back from where its ray landed, against the turn's own (tan of its angle, no world at all): largest relative difference ${worst.toExponential(1)}.</span> ` +
         `Median v/h = ${med.toPrecision(12)} (the corner, 1); ${below} rays below it, ${above} above.`;
-    $('compare').innerHTML = M ? `Equal-metres reader, told the size: ${nearM} of ${S.n} addresses inside the corner (v ≤ h), against the turn's ${below + 1}. Change S and its rays move.`
-        : `<span class="bad">Equal-metres reader: no size to space against.</span> The turn's reader keeps all ${S.n}.`;
+    $('compare').innerHTML = M ? `Equal-metres addresses, told the size: ${nearM} of ${S.n} addresses inside the corner (v ≤ h), against the turn's ${below + 1}. Change S and its rays move.`
+        : `<span class="bad">Equal-metres addresses: no size to space against.</span> The turn's addresses keep all ${S.n}.`;
     document.querySelectorAll('[data-w]').forEach(b => b.classList.toggle('on', b.dataset.w === S.world));
     document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
     $('unknown').classList.toggle('on', S.unknown);
 }
 let last = null, sweeping = null;
-// the sweep: the hand passes the addresses in order from zero, and what has arrived shows behind it
+// the reveal: a marker runs over the given addresses in the turn's order from zero, the paint shown behind it (the order
+// of the given addresses, not an act of the reader's)
 function sweep() { if (sweeping) { cancelAnimationFrame(sweeping); sweeping = null; render(); return; }
     const T = 5000, t0 = performance.now() - (S.sweep < 1 ? S.sweep * T : 0);
     const go = now => { S.sweep = Math.min(1, (now - t0) / T); sweeping = S.sweep < 1 ? requestAnimationFrame(go) : null; render(); };
@@ -256,7 +259,7 @@ if (q.get('s') === 'unknown') S.unknown = true; else if (q.has('s')) S.s = Math.
 if (['15', '63', '255'].includes(q.get('n'))) S.n = +q.get('n');
 if (q.has('sweep') && isFinite(+q.get('sweep'))) S.sweep = Math.min(1, Math.max(0, +q.get('sweep')));
 $('size').value = S.s; render(); if (q.get('play') === '1') play(true);
-if (q.get('sweep') === '0') sweep();                         // ?sweep=0 sweeps from zero as the page opens
+if (q.get('sweep') === '0') sweep();                         // ?sweep=0 runs the reveal from zero as the page opens
 window.__payloadFree = { fan, worldOf, hit, readings, median, metresFan, lay, WORLDS, set, state: () => ({ ...S, last }) };
 </script>
 </body>

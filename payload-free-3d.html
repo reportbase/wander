@@ -17,7 +17,8 @@
     d is a distance, an amount; S scales every place and size in the world.
       - The addresses: n × n directions uniform over the octant, even in azimuth ψ (round the horizontal from h to v₂) and
         in height (the v component), the cell centres of Lambert's equal-area map (Archimedes' hat-box): the wedge's uniform
-        sweep. Nothing about the world is passed in; the grid is the turn's alone, drawn once.
+        measure, given by the standpoint alone before anything arrives (OFS §2, "Given, not performed"). Nothing about the
+        world is passed in; the grid is the turn's alone, drawn once.
       - The worlds behind it: a forest of trunks, a room with home in its floor corner, a dome round home, stars at every
         distance, one sun, noise, nothing at all; any of them scaled by S from 1 to 10¹², or of unknown size (drawn at 10¹⁵).
         Each ray stops at the first thing it meets and is painted by it (the payload). The reading [h : v : v₂] is taken
@@ -26,13 +27,15 @@
       - Three views of one reading: the scene (three.js, orbit it), on the reader's lay of distances (d to H, then 1 + ln d,
         so a world 10¹² across fits); the wedge from home, the triangle h + v + v₂ = 1, each address at its shares, the
         medians the pairs' corners; Lambert's map, where the grid is even and the paint is a picture of the world.
-      - For contrast, an equal-metres reader: a flat screen one H away along h, its n × n pixels spaced evenly out to the
+      - For contrast, equal-metres addresses (a writer's layout, in amounts): a flat screen one H away along h, its n × n pixels spaced evenly out to the
         world's extent. It must be told that extent, its addresses move with every S, and with an unknown or empty world it
         has nothing to space against. Its near field holds (1/E)² of its pixels, where the turn's holds a third.
-    The sweep (20 October; Tom: "we should be able to sweep the payloads", "the sweep would just show as we sweep, new
-    payloads become visible over the sweep."): the hand passes the addresses in order, round in azimuth along a row of
-    height, then up a row; every address is drawn from the start, faint, and what arrived at it shows only once the hand has
-    passed. ?sweep=0 sweeps as the page opens, any other value stops the hand that share of the way.
+    The order of the addresses (20 October; Tom: "we should be able to sweep the payloads", "the sweep would just show as we
+    sweep, new payloads become visible over the sweep."; reworded 23 October, SPN R458: the sweep is the geometry's, never
+    an act): a gold marker runs over the given addresses in order, round in azimuth along a row of height, then up a row;
+    every address is drawn from the start, faint, and its paint is revealed once the marker has passed. The animation shows
+    an order on the given addresses, not something the reader does. ?sweep=0 runs it as the page opens, any other value
+    stops the marker that share of the way.
     Links: ?world=forest|room|dome|stars|sun|noise|empty&s=<log10 size>|unknown&n=16|32|64&play=1&sweep=<0..1>. Test hook:
     window.__payloadFree3d (the arithmetic works without WebGL; `frames` and `webgl` say whether the scene drew).
     three.js 0.160.0 from jsDelivr, pinned, as wedge.html (the smoke test serves it from node_modules).
@@ -71,8 +74,9 @@
 <body>
 <main>
     <h1>The payload doesn't matter, in 3D</h1>
-    <p class="lede">The reader sweeps evenly over a whole octant: up from h toward v, round from h toward v₂. Where each ray
-        points is its address, [h : v : v₂], fixed by the sweep alone. Put anything behind it, at any size, or nothing at
+    <p class="lede">One reader stands at home. Its directions are given, uniformly over a whole octant: up from h toward v,
+        round from h toward v₂, before anything arrives. Where each ray points is its address, [h : v : v₂], fixed by the
+        standpoint alone. Put anything behind it, at any size, or nothing at
         all: the addresses do not move. Only what each ray finds, the payload, changes. <a href="payload-free.html">The same
         in 2D</a>.</p>
 
@@ -81,7 +85,7 @@
         <div class="row"><label for="size">world size S</label><input id="size" type="range" min="0" max="12" step="0.5" value="0">
             <span id="sizeVal" style="min-width:9ch"></span><button id="unknown">unknown</button></div>
         <div class="row"><label>rays</label><span id="ns"></span><button id="play">play</button></div>
-        <div class="row"><button id="sweep">sweep</button><label for="swept">swept</label><input id="swept" type="range" min="0" max="1" step="0.0005" value="1">
+        <div class="row"><button id="sweep" title="run a marker over the given addresses in order, revealing the paint">reveal in order</button><label for="swept">revealed</label><input id="swept" type="range" min="0" max="1" step="0.0005" value="1">
             <span id="sweptVal" style="min-width:12ch"></span></div>
         <p id="say"></p>
     </div>
@@ -90,8 +94,8 @@
         <div class="panel">
             <canvas id="scene"></canvas>
             <p class="cap">Home at the corner where the three axes meet: h, v (up) and v₂. Drag to turn, scroll or pinch to
-                zoom. Each ray of the sweep, and a dot where it meets something, in its colour; a ray that meets nothing runs
-                to the horizon. Distances on the reader's lay: in proportion out to H (the gold arcs), then each tenfold the
+                zoom. Each given direction, and a dot where it meets something, in its colour; a ray that meets nothing runs
+                to the horizon. Distances (the writer's picture; no distance arrives) on the reader's lay: in proportion out to H (the gold arcs), then each tenfold the
                 same width (arcs at 10, 10³, 10⁶, 10⁹, 10¹²).</p>
             <div id="nogl"></div>
         </div>
@@ -107,20 +111,20 @@
         <div class="panel">
             <canvas id="map" width="560" height="560"></canvas>
             <p class="cap">Lambert's equal-area map of the wedge: azimuth across (h on the left, v₂ on the right), height v
-                up. The sweep's grid is even here, one cell per address, the corners dashed. Painted, it is a picture of
+                up. The addresses' grid is even here, one cell per address, the corners dashed. Painted, it is a picture of
                 whatever the rays met; the cells themselves are the same in every world.</p>
             <div id="check" class="note"></div>
         </div>
         <div class="panel">
             <canvas id="metres" width="560" height="504"></canvas>
-            <p class="cap">For contrast, an equal-metres reader: a flat screen one H away along h, its pixels spaced evenly
+            <p class="cap">For contrast, equal-metres addresses (a writer's layout): a flat screen one H away along h, its pixels spaced evenly
                 out to the world's size, shown from home. It needs that size. Every S moves its addresses, and with an
                 unknown or empty world it has none.</p>
             <div id="compare" class="note"></div>
         </div>
     </div>
 
-    <p class="note">The address is the sweep's; whatever arrives can be swapped at every address and no address moves
+    <p class="note">The address is the standpoint's, given by the uniform turn; whatever arrives can be swapped at every address and no address moves
         (Observation from Somewhere, Theorem 6(a), Proposition 5(e)). So nothing the addresses say is about the payload,
         and the world's size never enters them: equal angles are free, equal metres cost N. <a href="demos.html">All demos</a>.</p>
 </main>
@@ -189,7 +193,7 @@ function readings(kind, s, n) { const W = worldOf(kind, Math.pow(10, s));
         return { vh: p[1] / p[0], v2h: p[2] / p[0], p, d: h ? h.t : null, col: h ? h.col : null }; }); }
 function counts(R) { const n = R.length, f = x => R.filter(x).length / n;
     return { vLeH: f(r => r.vh <= 1), v2LeH: f(r => r.v2h <= 1), v2LeV: f(r => r.v2h <= r.vh), near: f(r => r.vh <= 1 && r.v2h <= 1) }; }
-// THE EQUAL-METRES READER: a flat screen one H away along h, n × n pixels evenly over [0, E]², E the world's extent. It needs E.
+// EQUAL-METRES ADDRESSES (a writer's layout): a flat screen one H away along h, n × n pixels evenly over [0, E]², E the world's extent. It needs E.
 function metresScreen(extent, n) { if (!extent || !isFinite(extent)) return null; const out = [];
     for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) out.push([1, (j + 0.5) * extent / n, (i + 0.5) * extent / n]);
     return out; }
@@ -251,23 +255,23 @@ function render() {
     if (draw3d) draw3d(R, shown);
     $('sizeVal').textContent = S.unknown ? 'unknown' : 'S = 10^' + S.s;
     $('say').textContent = `${WORLDS.find(w => w[0] === S.world)[1]}, ${S.unknown ? 'of unknown size' : 'size 10^' + S.s}: ` +
-        (shown < N ? `swept ${shown} of ${N} addresses, ${seen} payloads seen so far. The addresses were all there before the sweep.`
+        (shown < N ? `revealed ${shown} of ${N} addresses in order, ${seen} with paint. All ${N} addresses were given before anything arrived.`
         : `${met} of ${N} rays meet something, ${N - met} run to the horizon. The rays have not moved.`);
     $('swept').value = S.sweep; $('sweptVal').textContent = `${shown} of ${N}`; $('sweep').classList.toggle('on', !!sweeping);
     const pc = x => (100 * x).toFixed(1) + '%';
-    $('check').innerHTML = `<span class="ok">Every reading [h : v : v₂], taken back from where its ray landed, against the sweep's own: ` +
+    $('check').innerHTML = `<span class="ok">Every reading [h : v : v₂], taken back from where its ray landed, against the grid's own: ` +
         `largest relative difference ${worst.toExponential(1)}.</span> So in every world v ≤ h for ${pc(C.vLeH)}, v₂ ≤ h for ${pc(C.v2LeH)}, ` +
         `v₂ ≤ v for ${pc(C.v2LeV)} of the addresses (a half each, on this grid), and the near field in both holds ${pc(C.near)} (a third).`;
-    $('compare').innerHTML = M ? `Equal-metres screen, told the size: ${pc(nearM)} of its pixels in the near field, against the sweep's ${pc(C.near)}. Change S and they move.`
-        : `<span class="bad">Equal-metres screen: no size to space against.</span> The sweep keeps all ${N}.`;
+    $('compare').innerHTML = M ? `Equal-metres screen, told the size: ${pc(nearM)} of its pixels in the near field, against the given addresses' ${pc(C.near)}. Change S and they move.`
+        : `<span class="bad">Equal-metres screen: no size to space against.</span> The given addresses keep all ${N}.`;
     document.querySelectorAll('[data-w]').forEach(b => b.classList.toggle('on', b.dataset.w === S.world));
     document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
     $('unknown').classList.toggle('on', S.unknown); $('play').classList.toggle('on', S.play);
     $('size').value = S.s; $('size').disabled = S.unknown;
 }
 function set(o) { Object.assign(S, o); render(); }
-// the sweep: the hand passes the addresses in order, round in azimuth along a row of height, then up a row; every address is
-// there from the start, and what arrived at it shows once the hand has passed
+// the reveal: a marker runs over the given addresses in order, round in azimuth along a row of height, then up a row; every
+// address is there from the start, and its paint shows once the marker has passed (an order, not the reader's act)
 function sweep() { if (sweeping) { cancelAnimationFrame(sweeping); sweeping = null; render(); return; }
     const T = 9000, t0 = performance.now() - (S.sweep < 1 ? S.sweep * T : 0);
     const go = now => { S.sweep = Math.min(1, (now - t0) / T); sweeping = S.sweep < 1 ? requestAnimationFrame(go) : null; render(); };
@@ -291,7 +295,7 @@ if (q.get('s') === 'unknown') S.unknown = true; else if (q.has('s') && isFinite(
 if (NS.includes(+q.get('n'))) S.n = +q.get('n');
 if (q.has('sweep') && isFinite(+q.get('sweep'))) S.sweep = Math.min(1, Math.max(0, +q.get('sweep')));
 render();
-if (q.get('sweep') === '0') sweep();                         // ?sweep=0 sweeps from zero as the page opens
+if (q.get('sweep') === '0') sweep();                         // ?sweep=0 runs the reveal from zero as the page opens
 if (q.get('play') === '1') play(true);
 
 window.__payloadFree3d = { grid, worldOf, hit, readings, counts, metresScreen, lay, WORLDS, set, frames: 0, webgl: false,
@@ -345,7 +349,7 @@ if (renderer) {
         rayGeo.setAttribute('position', new THREE.BufferAttribute(rp, 3)); rayGeo.setAttribute('color', new THREE.BufferAttribute(rc, 3));
         dotGeo.setAttribute('position', new THREE.Float32BufferAttribute(dp, 3)); dotGeo.setAttribute('color', new THREE.Float32BufferAttribute(dc, 3));
         dots.material.size = list.length > 2000 ? 0.35 : 0.55;
-        hand.visible = shown > 0 && shown < n;               // the hand, where the sweep is now
+        hand.visible = shown > 0 && shown < n;               // the marker: how far through the order the paint is revealed
         if (hand.visible) { const p = list[shown - 1].p, L = Math.hypot(...p); handGeo.setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(...p.map(x => x / L * R))]); }
     };
     const size = () => { const w = cv.clientWidth || 600; if (cv.width !== Math.round(w * renderer.getPixelRatio())) { renderer.setSize(w, w, false); cam.aspect = 1; cam.updateProjectionMatrix(); } };

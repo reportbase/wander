@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <title>Two readers</title>
+    <title>The angle and the radius</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
     <!--
@@ -49,12 +49,13 @@
 </head>
 <body>
 <main>
-    <h1>Two readers</h1>
-    <p class="lede">One shape, two places to stand. From the centre, every direction is laid out before anything arrives, so a
-    direction says nothing; what arrives along it is how far the outline lies, an amount. From a point of the outline,
-    what arrives is the direction itself, a ratio, and no amount. <span class="gold">The central reader</span> gets the
-    radius, <span class="teal">the inscribed reader</span> the angle. Neither gets the unit: scale the world and neither
-    reading moves. Only the writer, holding all three, draws the thing at its size.</p>
+    <h1>The angle and the radius</h1>
+    <p class="lede">One shape, two places to stand. From a point of the outline, home, the addresses are given: each
+    direction, a ratio, and no amount; what arrives paints it and carries no distance. From the centre the directions are
+    given too, and the radius along each, how far the outline lies, is an amount, had only by ranging (a writing) or from
+    more standpoints. <span class="teal">The inscribed sweep</span> gives the angle, <span class="gold">the radius from the
+    centre</span> an amount. Neither gives the unit: scale the world and neither the addresses nor the shape moves. Only
+    the writer, holding all three, draws the thing at its size.</p>
     <div class="panel">
         <div class="row">
             <label for="shape">shape</label>
@@ -67,13 +68,13 @@
             <button id="play">play the scale</button>
         </div>
         <div class="grid" style="margin-top:10px">
-            <div><canvas id="world" height="340"></canvas><p class="cap">The world, as only the view from nowhere sees it:
+            <div><canvas id="world" height="340"></canvas><p class="cap">The world, as only the writer sees it:
             the outline, the centre C with its fixed directions (gold) and home A with its rays (teal).</p></div>
             <div>
-                <canvas id="insc" height="150"></canvas><p class="cap">What the inscribed reader receives: directions,
+                <canvas id="insc" height="150"></canvas><p class="cap">The addresses from home, the inscribed sweep: directions,
                 laid by v/h on the turn, (2/π)·arctan(v/h), the corner at ½. No lengths anywhere.</p>
-                <canvas id="cent" height="150" style="margin-top:8px"></canvas><p class="cap">What the central reader
-                receives: an amount along each of its directions. The axis has no unit: the common factor is not read, so
+                <canvas id="cent" height="150" style="margin-top:8px"></canvas><p class="cap">From the centre: an
+                amount along each given direction (ranged, a writing, or from more standpoints). The axis has no unit: the common factor is not read, so
                 it holds the shape in amounts (each over their geometric mean), not the size.</p>
             </div>
         </div>
@@ -86,7 +87,7 @@
             <button id="w-unit">one amount carried in</button>
         </div>
         <div class="grid" style="margin-top:10px">
-            <div><canvas id="writer" height="260"></canvas><p class="cap">The writer, from nowhere: the outline at its true
+            <div><canvas id="writer" height="260"></canvas><p class="cap">The writer: the outline at its true
             size in the reader's own H, only with all three. The unit is one amount carried in from outside, the radius
             along one direction in H, as one known move gives it.</p></div>
             <div><canvas id="stats" height="260"></canvas><p class="cap">A uniform sweep from each pivot (log of the count
@@ -96,9 +97,9 @@
         <div id="hud"></div>
     </div>
     <p class="note">Polar coordinates about a pivot split a point into an angle and a radius; the two sweeps take one each.
-    The inscribed reading is the ratio itself: the projection through the standpoint has done the dividing. The central
-    reading is an amount, in a unit no reading fixes. Behind it: <i>Observation from Somewhere</i> §9, "The inscribed
-    reading is the ratio itself" and "The central reading is an amount", and §7.4 on the shape as a perturbation of the
+    The address is the ratio itself: the projection through the standpoint has done the dividing. The radius from a
+    centre is an amount, written or had from more standpoints, in a unit no reading fixes. Behind it: <i>Observation from
+    Somewhere</i> §2, "The two sweeps", §9, "The central sweep places the paint; the amount is written", and §7.4 on the shape as a perturbation of the
     circle. Other demos: <a href="pinhole.html">the projection does the dividing</a>, <a href="write.html">writing costs
     one amount a step</a>, <a href="demos.html">all demos</a>.</p>
 </main>
@@ -186,7 +187,7 @@
         for (let k = 0; k <= 360; k++) { const q = P(point(p, TAU * k / 360)); k ? g.lineTo(...q) : g.moveTo(...q); } g.stroke();
         g.fillStyle = '#d4a052'; g.beginPath(); g.arc(cx, cy, 5, 0, TAU); g.fill(); txt(g, 'C', cx + 7, cy + 14, '#d4a052');
         g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(...P(A), 5, 0, TAU); g.fill(); txt(g, 'A', P(A)[0] - 16, P(A)[1] + 4, '#8ce6cd');
-        txt(g, `the world from nowhere: V*/H = e^a₀ = ${Math.exp(p.a0).toFixed(3)}`, 10, 18);
+        txt(g, `the world, the writer's: V*/H = e^a₀ = ${Math.exp(p.a0).toFixed(3)}`, 10, 18);
 
         // the inscribed reader: directions only, laid by (2/π)·arctan(v/h)
         [g, W, H] = fit($('insc'));
@@ -196,7 +197,7 @@
         txt(g, 'v/h = 1', (x0 + x1) / 2 - 22, y + 36, '#d4a052', 11); txt(g, '0', x0 - 4, y + 36, '#8a8a96', 11); txt(g, '∞', x1 - 4, y + 36, '#8a8a96', 11);
         g.strokeStyle = '#8ce6cd'; g.lineWidth = 2;
         for (const r of ins) { const u = r.alpha / (Math.PI / 2), xx = x0 + (x1 - x0) * u; g.beginPath(); g.moveTo(xx, y - 22); g.lineTo(xx, y + 8); g.stroke(); }
-        txt(g, 'inscribed reader: ratios, no amounts', 10, 18, '#8ce6cd');
+        txt(g, 'inscribed sweep, from home: ratios, no amounts', 10, 18, '#8ce6cd');
 
         // the central reader: amounts on its fixed directions, over their geometric mean
         [g, W, H] = fit($('cent'));
@@ -205,7 +206,7 @@
         const y1 = base - (base - top) / gmax; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(15, y1); g.lineTo(W - 15, y1); g.stroke(); g.setLineDash([]);
         g.fillStyle = '#d4a052';
         c.shape.forEach((s, k) => { const hgt = Math.min(base - top, (base - top) * s / gmax); g.fillRect(15 + k * bw + 1, base - hgt, bw - 2, hgt); });
-        txt(g, 'central reader: amounts, no ratio', 10, 18, '#d4a052'); txt(g, 'the common factor not read', 10, 34, '#8a8a96', 11);
+        txt(g, 'from the centre: amounts (written), no ratio', 10, 18, '#d4a052'); txt(g, 'the common factor not read', 10, 34, '#8a8a96', 11);
         txt(g, 'geometric mean', W - 118, y1 - 4, '#8a8a96', 10);
 
         // the writer

@@ -55,12 +55,13 @@
 <body>
 <main>
     <h1>One moon</h1>
-    <p class="lede">A single moon crossing the sky, nothing else. The <span class="teal">inscribed sweep</span> covers the
-    whole wedge every tick and only <b>detects</b> which of its addresses the moon meets: a small patch, moving over
-    addresses that stay put. From the patch alone come the moon's track, its turn per tick, its time to contact and its
-    path's angle, all ratios and ticks. The <span class="violet">central sweep</span> <b>paints</b> it: the radius
-    arriving along fixed directions from its centre, an amount in a unit nothing reads, over the face it turns toward you.
-    One amount carried in writes its distance and speed.</p>
+    <p class="lede">A single moon crossing the sky, nothing else. The reader's addresses, the <span class="teal">inscribed
+    sweep</span>, cover the whole wedge, given before anything arrives; each tick the moon's light paints a few of them: a
+    small patch, moving over addresses that stay put. From the patch alone come the moon's track, its turn per tick, its
+    time to contact and its path's angle, all ratios and ticks. Its <span class="violet">shape about its own centre</span>
+    is a radius along each direction from that centre, an amount in a unit nothing reads, had only by ranging (a writing)
+    or from further standpoints; shown here over the face it turns toward you. One amount carried in writes its distance
+    and speed.</p>
     <div class="panel">
         <div class="row">
             <button id="play">play</button>
@@ -72,19 +73,19 @@
         </div>
         <div class="grid" style="margin-top:10px">
             <div><canvas id="map" width="512" height="512"></canvas><p class="cap">The inscribed sweep: the whole wedge, Lambert's
-            equal-area map (azimuth across from h to v₂, height up to v), every cell an equal share. Gold: the corners. White:
-            the moon detected this tick; teal: its track.</p></div>
+            equal-area map (azimuth across from h to v₂, height up to v), every cell an equal share, given. Gold: the corners.
+            White: the addresses the moon paints this tick; teal: its track.</p></div>
             <div><canvas id="near" width="512" height="512"></canvas><p class="cap">The same addresses near the moon, one pixel a
-            cell. Nothing here is a size: the patch is its share of the sweep.</p></div>
-            <div><canvas id="face" width="512" height="512"></canvas><p class="cap">The central sweep paints: from the moon's
-            centre, the radius over its geometric mean along the directions seen from home (bright), and all painted so far
-            (dim), seen from the start.</p></div>
+            cell. Nothing here is a size: the patch is its share of the turn.</p></div>
+            <div><canvas id="face" width="512" height="512"></canvas><p class="cap">The shape about the moon's centre (radii, a writing,
+            over their geometric mean) along the directions seen from home (bright), and all seen so far (dim), viewed from
+            the start.</p></div>
         </div>
         <div id="hud"></div>
     </div>
     <p class="cap">The test is MON (run 2: detections unmoved by scaling; ω exact; τ and the path angle exact for the smooth
     moon, off by up to 9% for the one with relief, whose turning profile its share takes in). Other demos:
-    <a href="recover.html?step=7">the inscribed reader among many bodies</a>, <a href="demos.html">all demos</a>.</p>
+    <a href="recover.html?step=7">the inscribed sweep among many bodies</a>, <a href="demos.html">all demos</a>.</p>
 </main>
 <script>
 const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]], add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
@@ -207,17 +208,17 @@ function drawFace(){
         else if (ever.has(p.i)) col = 'rgba(181,156,240,0.28)'; else if (p.z > 0) col = 'rgba(70,70,90,0.35)'; else continue;
         g.fillStyle = col; g.beginPath(); g.arc(X, Y, p.z > 0 ? 3.2 : 2.2, 0, 2 * Math.PI); g.fill(); }
     g.fillStyle = '#8a8a96'; g.font = '13px DM Mono, monospace';
-    g.fillText(`held now ${(P.held.length / LAT.length).toFixed(3)}, painted so far ${((new Set([...ever, ...now])).size / LAT.length).toFixed(3)}`, 8, 18);
+    g.fillText(`held now ${(P.held.length / LAT.length).toFixed(3)}, seen so far ${((new Set([...ever, ...now])).size / LAT.length).toFixed(3)}`, 8, 18);
 }
 const PAINTS = new Map(); function paintOf(t){ const key = t + ':' + S.smooth; if (!PAINTS.has(key)) PAINTS.set(key, paint(t, 1, S.smooth)); return PAINTS.get(key); }
 function hud(){
     const r = readout(S.t, S.smooth), k = 10 ** S.lgk, D1 = detect(S.t, 1, S.smooth), Dk = detect(S.t, k, S.smooth);
     const a = new Set(D1.det); let diff = 0; for (const x of Dk.det) if (!a.has(x)) diff++; diff += D1.det.length - (Dk.det.length - diff);
     const f = (x, p = 3) => x.toFixed(p), deg = x => (x / RAD).toFixed(2) + '°', L = [];
-    L.push(`tick ${S.t}: the inscribed sweep detects ${D1.det.length} addresses, a share ${D1.share.toExponential(3)} of the octant's π/2 (a solid angle)`);
+    L.push(`tick ${S.t}: the moon paints ${D1.det.length} of the inscribed sweep's addresses, a share ${D1.share.toExponential(3)} of the octant's π/2 (a solid angle)`);
     L.push(`from the detections alone: turning ω ${r.om.toExponential(3)} a tick, time to contact τ ${f(r.tau, 1)} ticks, the path ${deg(r.beta)} off the line of sight`);
-    if (S.truth) L.push(`the referee: ω ${r.truth.om.toExponential(3)}, τ ${f(r.truth.tau, 1)}, the path ${deg(r.truth.beta)}; distance ${f(r.truth.d, 2)} (no reader has it)`);
-    L.push(`scale the world ×${k >= 100 || k < 0.01 ? k.toExponential(0) : k.toPrecision(3)}: ${diff} detections changed; the painting the same, its radii ×k`);
+    if (S.truth) L.push(`the referee: ω ${r.truth.om.toExponential(3)}, τ ${f(r.truth.tau, 1)}, the path ${deg(r.truth.beta)}; distance ${f(r.truth.d, 2)} (no reading gives it)`);
+    L.push(`scale the world ×${k >= 100 || k < 0.01 ? k.toExponential(0) : k.toPrecision(3)}: ${diff} detections changed; the shape the same, its radii ×k`);
     const kmPer = 1737.4 / r.rbar;
     if (S.known) L.push(`radius known (1,737 km): distance ${(r.dE * kmPer).toFixed(0)} km${S.truth ? ` (true ${(r.truth.d * kmPer).toFixed(0)})` : ''}, speed ${(r.speedE * kmPer).toFixed(0)} km a tick${S.truth ? ` (true ${kmPer.toFixed(0)})` : ''}`);
     else L.push('distance, size and speed: not read (carry one amount in: "radius known")');

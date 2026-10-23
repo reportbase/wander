@@ -9,7 +9,7 @@
     <!--
     blueprint-3d.html: one property, three vantages, in three dimensions (22 October 2026; Tom: "good. how can we improve
     this, how about a 3d view", then "yes"). After blueprint.html (SPN R424; R425 for this page); OFS "Three vantages: a
-    writer and two readers", Proposition 5(e) (the uniform wedge: every pair at its corner, the near field a third), §9
+    writer and two readers" (since SPN R454, 23 Oct: one reader, two vantages; ranges a writing), Proposition 5(e) (the uniform wedge: every pair at its corner, the near field a third), §9
     ("Inside a room: the two sweeps", "A survey: many readings, one amount"). three.js like wedge.html for the drawing only:
     the property, the casting, the readings and the test hook are a plain script, so the hook works without WebGL.
 
@@ -28,14 +28,14 @@
       - THE WRITER'S SPHERE is round the whole system, looking in: its radius the lot's half-diagonal, an amount (28.8 m at
         k = 1), holding both sides of every wall in one frame (R328's dual-hemispherical vantage; R220: the sphere that
         places every place by direction and distance needs the size of what it holds).
-      - THE ADDRESS READER stands in a floor corner, so the room is one wedge: h along one wall, v up, v₂ along the other.
-        It sweeps the octant uniformly, 64 × 64 cells of Lambert's equal-area map (even in azimuth and in height), each
+      - THE READER AT HOME stands in a floor corner, so the room is one wedge: h along one wall, v up, v₂ along the other.
+        Its addresses are given (the inscribed sweep, the geometry's, not an act), the octant uniformly, 64 × 64 cells of Lambert's equal-area map (even in azimuth and in height), each
         address [h : v : v₂] painted by the first thing met. No distance. Shown from home as the triangle h + v + v₂ = 1
         and as Lambert's map: every pair at its corner (half the addresses either side), the near field a third, whatever
         the furniture.
     SCALE THE WORLD (k from 1/100 to 100): every length × k, the readers' strides too. The writer's numbers, its sphere's
     radius and a pulse's ranges move by k; the reader's sphere, the shell and the addresses do not.
-    WRITE THE ROOM: the corner reader takes one stride (0.7 m at k = 1, 30° off its first wall, along the floor) and reads
+    WRITE THE ROOM: the reader takes one stride from home (0.7 m at k = 1, 30° off its first wall, along the floor) and reads
     again. Each corner seen from both places is two rays that cross: its place in strides, no amount yet. Counting the
     stride, one amount carried in, writes every place in metres. Neither reader has that amount; the writer is the vantage
     that carries it.
@@ -83,12 +83,13 @@
         metres, heights too. Its frame is a box, a number line on each axis held on both signs, each extent an amount. The <span class="p">reader</span> is a sphere
         round one point, looking out: nothing in the room sends, so it receives only the light the room scatters, each
         direction painted by the first surface on its line, and no distance. Put in a floor corner, the room is one octant
-        of that sphere, the wedge, each address [h : v : v₂]. Scale the world and only the writer's numbers change. Write the room: one counted stride turns the corner reader's two looks
-        into metres. <a href="blueprint.html">The plan in 2D</a>.</p>
+        of that sphere, the wedge, each address [h : v : v₂], given before anything arrives. Two vantages, the writer's and
+        the reader's. Scale the world and only the writer's numbers change. Write the room: one counted stride turns two
+        looks from home into metres. <a href="blueprint.html">The plan in 2D</a>.</p>
     <div class="panel" style="margin-bottom:12px">
         <div class="row"><label for="k">scale the world, k</label><input id="k" type="range" min="-2" max="2" step="0.05" value="0"><span id="kv" style="min-width:9ch"></span></div>
         <div class="row"><label for="at">the reader in</label><select id="at"></select>
-            <label for="home">the corner reader at</label><select id="home"></select>
+            <label for="home">home, a corner, in</label><select id="home"></select>
             <button id="pulse">send a pulse (ranging)</button><button id="write">write the room: one stride</button><button id="roof">roof</button><button id="reset">reset</button></div>
         <p class="cap" id="say" style="margin:0"></p>
     </div>
@@ -101,7 +102,7 @@
                 writer's box (blue) is a number line on each axis, held on both signs, round everything it holds; each
                 extent is an amount, and the metres
                 need a unit measured beforehand: the scale bar. Drag to turn, scroll or pinch to zoom, tap a floor to stand
-                the <span class="p">reader</span> there (teal); the <span class="a">corner reader</span> is at the gold
+                the <span class="p">reader</span> there (teal); its <span class="a">home</span> for the addresses is the gold
                 corner, its three walls h, v (up) and v₂. Its wedge (gold) runs out along every direction to the
                 writer's box: its horizon, the box seen from inside, reached and never measured.</p>
             <p class="read" id="readW"></p>
@@ -111,7 +112,7 @@
                 <p class="tag p" id="shellTag">the reader</p><h2 id="shellHead">A sphere, painted by what arrives</h2>
                 <canvas id="shell"></canvas>
                 <div class="nogl" id="nogl2"></div>
-                <p class="cap">Passive: 2,048 directions round one point, each dot the colour of the light arriving along it
+                <p class="cap">Passive: 2,048 directions given round one point, each dot the colour of the light arriving along it
                     from the first surface on its line (dark where it is open sky). Nothing in the room sends, so no distance
                     arrives and every dot sits on the sphere: the addresses, painted by the payload. Send a pulse and a range
                     comes back along each direction, drawn over their geometric mean (the dashed sphere, farther than 2.2
@@ -123,7 +124,7 @@
     </div>
     <div class="grid2">
         <div class="panel">
-            <p class="tag a">the corner reader</p><h2>From home: the triangle</h2>
+            <p class="tag a">the reader at home: its addresses</p><h2>From home: the triangle</h2>
             <canvas id="tri"></canvas>
             <p class="cap">Looking out of the corner, the wedge is the triangle h + v + v₂ = 1, every address at its shares
                 (h bottom left, v at the top, v₂ bottom right). The dashed medians are the three pairs' corners: v = h
@@ -132,7 +133,7 @@
             <p class="read" id="readA"></p>
         </div>
         <div class="panel">
-            <p class="tag a">the corner reader</p><h2>Lambert's map of the wedge</h2>
+            <p class="tag a">the reader at home: its addresses</p><h2>Lambert's map of the wedge</h2>
             <canvas id="map"></canvas>
             <p class="cap">Azimuth across (h on the left, v₂ on the right), height v up: the 64 × 64 addresses even, one cell
                 each, painted by what each met. The corners dashed: v = h (gold), v₂ = h (the middle line), v₂ = v. Half the
@@ -140,11 +141,11 @@
             <p class="read" id="readM"></p>
         </div>
     </div>
-    <p class="cap" style="margin-top:12px">The writer is the vantage that writes: it needs the whole and a unit. Its frame is a box,
+    <p class="cap" style="margin-top:12px">Two vantages. The writer writes: it needs the whole and a unit. Its frame is a box,
         one number line on each axis, both signs held, nothing round in it; the reader's is a sphere round one point, looking
-        out, painted by what arrives and holding no distance. The corner reader's wedge is one octant of it, and it stands
+        out, its directions given and painted by what arrives, holding no distance; a pulse's ranges are a writing. From a corner its wedge is one octant of it, and it stands
         inside the writer's box: in the far field every direction of its wedge reaches the box, its horizon, whose size the
-        reader never reads. The writer holds three numbers a point, the reader two (a direction); the one between is the size. One stride counted is the amount that turns the corner reader's looks into the writer's metres.
+        reader never reads. The writer holds three numbers a point, the reader two (a direction); the one between is the size. One stride counted is the amount that turns the looks from home into the writer's metres.
         Other demos: <a href="blueprint.html">the blueprint</a>, <a href="room-ratios.html">the room in ratios</a>,
         <a href="wedge.html">the wedge</a>, <a href="demos.html">all demos</a>.</p>
 </main>
@@ -368,7 +369,7 @@ function render() {
     $('shellTag').textContent = S.pulse ? 'the reader, sending: writing' : 'the reader'; $('shellHead').textContent = S.pulse ? 'A pulse sent: ranges, in its unit' : 'A sphere, painted by what arrives'; $('roof').classList.toggle('on', S.roof);
     drawTri(); drawMap();
     $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}, the rooms ${fmtM(2.7 * k)} high, its box round everything ${fmtM(48 * k)} × ${fmtM(32 * k)} × ${fmtM(TOP * k)}, one number line a side. ` +
-        `The reader's sphere is the same at every k: its directions, and the colours arriving along them` + (S.pulse ? `; a pulse's ranges come back with geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in. ` : `, and no distance. `) + `The corner reader holds ${NA.toLocaleString('en')} directions: v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
+        `The reader's sphere is the same at every k: its directions, and the colours arriving along them` + (S.pulse ? `; a pulse's ranges come back with geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in. ` : `, and no distance. `) + `From home the reader holds ${NA.toLocaleString('en')} addresses: v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
         `v₂ ≤ h ${(100 * C.v2h).toFixed(1)}%, v₂ ≤ v ${(100 * C.v2v).toFixed(1)}%, the near field ${(100 * C.near).toFixed(1)}%, at every k and in every room.`;
     describe(); if (draw3d) draw3d();
 }
@@ -410,7 +411,7 @@ window.__blueprint3d = { THINGS, ROOMS, SEG, LINTELS, CEIL, BOXES, TREES, HOMES,
     state: () => ({ lk: S.lk, k: K(), at: S.at.slice(), spot: S.spot, home: S.home, write: S.write, pulse: S.pulse, hover: S.hover, gm: P.gm, counts: C, written: WR && WR.written }),
     last: () => ({ P, A, C, WR, S }), frames: 0, webgl: false };
 setTimeout(() => { if (!window.__blueprint3d.webgl) for (const id of ['nogl1', 'nogl2']) { $(id).style.display = 'block';
-    $(id).textContent = 'The 3D views need WebGL and three.js from cdn.jsdelivr.net; the corner reader\'s views and the readouts still work.'; } }, 12000);
+    $(id).textContent = 'The 3D views need WebGL and three.js from cdn.jsdelivr.net; the views from home and the readouts still work.'; } }, 12000);
 </script>
 
 <script type="module">

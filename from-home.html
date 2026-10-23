@@ -58,12 +58,12 @@
 <body>
 <main>
     <h1>The face from home</h1>
-    <p class="lede">Standing at home, every ray of your sweep reports one thing: did it meet the moon. That is the
-    inscribed sweep, directions only. The moon's face, its hills and hollows, is an amount along each direction: how far
+    <p class="lede">Standing at home, your directions are given before anything arrives, and each is painted or not by
+    the moon's light. That is the inscribed sweep, directions only. The moon's face, its hills and hollows, is an amount along each direction: how far
     out the surface is. Can home earn it? Two ways, shown here on a slice through the moon's middle as it crosses the sky.</p>
     <div class="two">
-        <div class="panel"><h2 class="teal">Ranges: looking plus a known signal speed</h2><p>Each ray also brings back how far
-        it went before it hit, as radar or lidar does. Every hit is then a point on the moon, in a real unit. The face comes
+        <div class="panel"><h2 class="teal">Ranges: looking plus a known signal speed</h2><p>A pulse sent along each ray brings
+        back how far it went before it hit, as radar or lidar does. Every hit is then a point on the moon, in a real unit. The face comes
         out, and so do the moon's distance and speed: the signal's speed is an amount carried in, so ranging writes.</p></div>
         <div class="panel"><h2 class="violet">Silhouettes: looking alone</h2><p>Only the patch's two edges each tick. As the
         line of sight turns, the edges wrap the moon from many sides; keep what stayed between them every time (the visual
@@ -88,9 +88,9 @@
             <span class="gold">edges</span> graze it and go on.</p></div>
             <div><canvas id="frame" width="560" height="560"></canvas><p class="cap">In the moon's own frame, every tick so
             far: <span class="teal">ranged points</span>; the <span class="gold">edge rays</span> and the
-            <span class="violet">hull</span> they leave; the true outline dashed; all drawn by the referee where it really lies, with + where each reader puts the centre when it fits it.</p></div>
-            <div><canvas id="chart" width="560" height="560"></canvas><p class="cap">The face as a painting: radius over its
-            geometric mean, round the moon. White the truth, shaded where it has been seen from home; teal from ranges,
+            <span class="violet">hull</span> they leave; the true outline dashed; all drawn by the referee where it really lies, with + where the centre is put when it is fitted from the readings.</p></div>
+            <div><canvas id="chart" width="560" height="560"></canvas><p class="cap">The face: radius over its
+            geometric mean, round the moon (an amount, so had only by ranging or from the hull). White the truth, shaded where it has been seen from home; teal from ranges,
             violet from the hull.</p></div>
         </div>
         <div id="hud"></div>
@@ -98,7 +98,7 @@
     <p class="cap">The test is CFH (run 1, in three dimensions on the whole moon: ranges with the centre given give the face
     exactly, with it fitted to 4% rms, and write distance and speed to 0.25%; the hull contains the moon, is tight on the rim
     to about one address and keeps none of the face elsewhere; nothing in it moves when the world is scaled). Other demos:
-    <a href="moon.html">one moon</a>, <a href="recover.html?step=7">the inscribed reader among many bodies</a>,
+    <a href="moon.html">one moon</a>, <a href="recover.html?step=7">the inscribed sweep among many bodies</a>,
     <a href="demos.html">all demos</a>.</p>
 </main>
 <script>
@@ -237,7 +237,7 @@ function drawFrame(R){ const cv = document.getElementById('frame'), g = cv.getCo
         if (S.fit) cross(g, X(sub(rAt(S.t), ct(S.t))), C.teal); }
     const toHome = mul(centre(S.t), -1 / len(centre(S.t))); g.strokeStyle = C.dim; g.beginPath(); g.moveTo(...X(mul(toHome, 0.9 * k))); g.lineTo(...X(mul(toHome, 1.25 * k))); g.stroke();
     g.fillStyle = C.dim; g.font = '12px DM Mono, monospace'; g.fillText('home now', ...X(mul(toHome, 1.3 * k)));
-    g.fillText(S.fit ? 'centres fitted from the readings: + where each reader puts it' : 'centre given (the referee\'s)', 10, 18); }
+    g.fillText(S.fit ? 'centres fitted from the readings: + where each puts it' : 'centre given (the referee\'s)', 10, 18); }
 function cross(g, p, col){ g.strokeStyle = col; g.lineWidth = 2; g.beginPath(); g.moveTo(p[0] - 7, p[1]); g.lineTo(p[0] + 7, p[1]); g.moveTo(p[0], p[1] - 7); g.lineTo(p[0], p[1] + 7); g.stroke(); }
 function drawChart(R){ const cv = document.getElementById('chart'), g = cv.getContext('2d'), W = cv.width, m = 34; g.clearRect(0, 0, W, W);
     const lo = 0.6, hi = 1.4, X = i => m + i / NPHI * (W - 2 * m), Y = v => W - m - (v - lo) / (hi - lo) * (W - 2 * m);

@@ -3,19 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <title>Sweeping from zero</title>
+    <title>Counting from zero</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
     <!--
-    sweep-zero.html: sweeping from zero (17 October 2026, Tom: "lets continue to create visuals to help visualize the
+    sweep-zero.html: counting from zero (once "sweeping from zero"; reworded 23 October 2026, SPN R458: the sweep is the
+    geometry's, never an act; first built 17 October 2026, Tom: "lets continue to create visuals to help visualize the
     math", "all four"; SPN R337; after R327, R331, R334; OFS §2, "Sweeping from zero"). A standalone page, plain canvas.
-    The reader can only sweep forward from where it is, its zero (v/h = 0); it cannot go to a spot on the curve. A turn
-    measured by itself is uniform: the share of the sweep already passed, g, is the turn so far over the quarter turn, and
-    the readings v/h it passes are the Cauchy, median 1 at the corner, met and not computed (the arctangent is the writer's
-    formula for g). Counted against something else the same turn gives another law: a clock that runs alike on both
+    Zero (v/h = 0) is where the reader faces; its directions are given, all of them, before anything arrives, and the
+    animation only shows them in the order of the turn from zero. The turn measured by itself is uniform: the share of
+    the quarter turn from zero to a direction, g, is the angle over the quarter turn, and the readings v/h in that order
+    are the Cauchy, median 1 at the corner, given and not computed (the arctangent is the writer's formula for g). Counted against something else the same turn gives another law: a clock that runs alike on both
     sides of the corner (the median stays at 1, the law changes), a lopsided clock (the median moves), a flat screen of
     equal pixels (uniform in v/h up to the frame's edge, median at half of it), or what arrives (the payload's density,
-    the median its median direction). Stopping makes a new zero: the old one is now a reading behind, v/h = −tan Δ, and
+    the median its median direction). Facing another way makes a new zero: the old one is now a reading behind, v/h = −tan Δ, and
     the legs compose by tangent addition, (s + t)/(1 − st), the turns adding; legs that go once round compose to no turn.
     Every turn carries the uniform turn, and so the Cauchy, onto itself.
     Links: ?count=turn|even|lopsided|screen|payload&t=<θ in degrees>&legs=a,b,…&play=1.
@@ -49,15 +50,16 @@
 </head>
 <body>
 <main>
-    <h1>Sweeping from zero</h1>
-    <p class="lede">You cannot go to a spot on the curve; you can only turn on from where you are. Where you start is zero.
-    Turning, you pass every reading v/h once, in order, and the share of the sweep already passed is the turn so far: the
-    turn measured by itself cannot be uneven. Counted by its own turning, what it passes is the Cauchy, half of it below the
-    corner. Count the same turn against a clock, a screen or what arrives, and the count changes, not the turn. Stop, and
-    where you stopped is the new zero.</p>
+    <h1>Counting from zero</h1>
+    <p class="lede">Where the reader faces is zero, v/h = 0. Its directions are given, every reading v/h at once, before
+    anything arrives; nothing is performed. Put them in the order of the turn from zero and the share of the quarter turn
+    up to a direction is that direction's angle over 90°: the turn measured by itself cannot be uneven. Counted by its own
+    turn, the readings are the Cauchy, half of them below the corner. Count the same directions against a clock, a screen
+    or what arrives, and the count changes, not the directions. Face another way, and that direction is the new zero. The
+    animation shows the order of the given directions, not something the reader does.</p>
     <div class="panel">
-        <div class="row"><button id="play">sweep</button><button id="stop">stop here: a new zero</button>
-            <button id="round">go once round</button><button id="reset">start again</button></div>
+        <div class="row"><button id="play" title="show the given directions in the order of the turn from zero">show in order</button><button id="stop">face here: a new zero</button>
+            <button id="round">face once round</button><button id="reset">start again</button></div>
         <div class="row"><label for="count">count the readings against</label>
             <select id="count">
                 <option value="turn">the turn itself</option>
@@ -67,11 +69,12 @@
                 <option value="payload">what arrives (a room's things)</option>
             </select></div>
         <div class="grid">
-            <div><canvas id="cv1" height="420"></canvas><p class="cap">Home at the middle; zero to the right, the hand
-            turned through θ (gold). Each tick on the quarter is one count of the readings (teal once passed); where they
+            <div><canvas id="cv1" height="420"></canvas><p class="cap">Home at the middle; zero, where the reader faces, to the right;
+            the gold marker at θ from it, how far through the turn's order the counts are shown. Each tick on the quarter is
+            one count of the readings (teal up to the marker); where they
             bunch, the count is denser per degree. Faint rays: the earlier zeros, behind.</p></div>
-            <div><canvas id="cv2" height="300"></canvas><p class="cap">The counts so far by level, ln(v/h) (bars), the
-            law they fill (teal), the turn's own count, the Cauchy (dashed white), and the median so far (gold).</p>
+            <div><canvas id="cv2" height="300"></canvas><p class="cap">The counts up to θ by level, ln(v/h) (bars), the
+            law they fill (teal), the turn's own count, the Cauchy (dashed white), and the median up to θ (gold).</p>
                 <div class="read" id="now"></div>
                 <div class="read" id="legs"></div>
             </div>
@@ -127,7 +130,7 @@
         return Q * (lo + f) / M;
     }
     const median = mode => Math.tan(quantile(mode, 0.5));
-    // the counts passed by a sweep from zero to θ: N of them at the law's quantiles, each a reading v/h
+    // the counts from zero up to θ in the turn's order: N of them at the law's quantiles, each a reading v/h
     function tally(mode, tDeg) {
         const t = rad(tDeg), out = [];
         for (let i = 0; i < N; i++) { const ti = quantile(mode, (i + 0.5) / N); if (ti <= t + 1e-12) out.push(Math.tan(ti)); }
@@ -190,7 +193,7 @@
         g.strokeStyle = 'rgba(230,228,238,0.3)'; g.setLineDash([2, 3]); g.beginPath(); g.moveTo(cx, cy); g.lineTo(...X(Q / 2, R)); g.stroke(); g.setLineDash([]);
         const cp = X(Q / 2, R * 1.06); g.fillStyle = '#8a8a96'; g.fillText('corner', cp[0], cp[1]);
         if (st.mode === 'screen') { const e = Math.atan(SCREEN), p = X(e, R * 1.06); g.fillStyle = '#d96e5b'; g.fillText("frame's edge", p[0] - 6, p[1] - 4); }
-        // the sweep so far and the hand
+        // the marker: how far through the turn's order from zero
         g.strokeStyle = 'rgba(212,160,82,0.5)'; g.lineWidth = 6; g.beginPath(); g.arc(cx, cy, R * 0.3, -t, 0); g.stroke();
         g.strokeStyle = '#d4a052'; g.lineWidth = 2.5; g.beginPath(); g.moveTo(cx, cy); g.lineTo(...X(t, R * 1.02)); g.stroke();
         g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(cx, cy, 4, 0, 2 * Math.PI); g.fill();
@@ -219,19 +222,19 @@
     const f4 = x => !isFinite(x) ? (x > 0 ? '∞' : '−∞') : x.toFixed(4);
     function hud() {
         const ty = tally(st.mode, st.t), t = rad(st.t), m = median(st.mode);
-        $('now').innerHTML = `Turned θ = ${st.t.toFixed(1)}° from this zero; the reading there v/h = <span class="g">${f4(Math.tan(t))}</span>.\n`
-            + `The share of the sweep passed, g = ${f4(ty.g)}.\nCounted against ${NAME[st.mode]}: ${ty.n} of ${N} counts passed, `
+        $('now').innerHTML = `At θ = ${st.t.toFixed(1)}° from this zero; the reading there v/h = <span class="g">${f4(Math.tan(t))}</span>.\n`
+            + `The share of the quarter turn from zero, g = ${f4(ty.g)}.\nCounted against ${NAME[st.mode]}: ${ty.n} of ${N} counts up to θ, `
             + `a share ${f4(ty.share)}${st.mode === 'turn' ? ' (the same: the turn counted by itself)' : ''}.\n`
-            + `Median so far ${ty.n ? f4(ty.median) : '—'}; the law's median <span class="r">${f4(m)}</span>`
+            + `Median up to θ ${ty.n ? f4(ty.median) : '—'}; the law's median <span class="r">${f4(m)}</span>`
             + (st.mode === 'turn' || st.mode === 'even' ? ' (the corner)' : st.mode === 'screen' ? ` (half the frame's edge, ${SCREEN})` : ' (moved off the corner)');
         const c = compose(st.legs);
         $('legs').innerHTML = st.legs.length
-            ? `<span class="w">Legs</span>, each a sweep from its own zero: ${st.legs.map(d => d.toFixed(1) + '°').join(', ')}\n`
+            ? `<span class="w">Legs</span>, each measured from its own zero: ${st.legs.map(d => d.toFixed(1) + '°').join(', ')}\n`
               + `Each old zero read from the next: v/h = ${st.legs.map(d => f4(-Math.tan(rad(d)))).join(', ')} (behind).\n`
               + `Composed by tangent addition: ${c.chain.slice(1).map(f4).join(' → ')}\n`
-              + `From the first zero: turned ${c.total.toFixed(1)}°, [h : v] = [${f4(c.h)} : ${f4(c.v)}]`
+              + `From the first zero: ${c.total.toFixed(1)}°, [h : v] = [${f4(c.h)} : ${f4(c.v)}]`
               + (c.closed && c.total > 0 ? '\n<span class="b">Once round: the legs compose to no turn.</span>' : '')
-            : `<span class="w">No stop yet.</span> Stop, and where you stopped is the next zero; the legs then compose.`;
+            : `<span class="w">One zero yet.</span> Face here, and this direction is the next zero; the legs then compose.`;
     }
     function draw() { draw1(); draw2(); hud(); $('count').value = st.mode; }
     function play() {
