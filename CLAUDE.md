@@ -784,6 +784,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   1, not 2H.": VF stands at the chord's middle (½), its circle the circle on the chord (radius ½); HF's unit circle centred
   at home, radius 1; different centres and radii (SPN's "VF at H" and vesica, from a 2H reading, withdrawn). Both end at
   home, HF tangent (a horizon, ∞, no mean), VF at a point (a bounded chart, means).
+  **The central reader: classical results only** (23 Oct, SPN R451; Tom: "VF is two dimensional."; "just use classical
+  results for the central reader. we don't need to add anything at this time."): nothing added to OFS. The payload reader
+  holds a point (a given direction and the amount along it, D numbers up to a₀); where it stands (at home, or at the centre
+  of what it reads) is open; a section drafted and not taken. Its pieces are classical (III.20, polar coordinates, shape up
+  to similarity, harmonic measure: the disc's Poisson kernel the wrapped Cauchy, the half-plane's the Cauchy). Not "a uniform
+  turn from an interior point lays the wrapped Cauchy": that is the rates' combination (2·dθ/dφ − 1)/2π, (2α − arc)/2π.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
