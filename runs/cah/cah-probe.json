@@ -1,0 +1,58 @@
+{
+ "C5": {
+  "cauchy-K163 D=4": {
+   "purity_before": 0.1962,
+   "purity_before_raw": 0.1249,
+   "n_buckets_before": 16,
+   "purity_after": 0.1249,
+   "product_after": 0.1962,
+   "n_commits": 0,
+   "n_total": 500,
+   "commit_rate": 0.0,
+   "circle_acc": 0,
+   "cauchy_acc": 0,
+   "delta": 0
+  },
+  "softmax D=4": {
+   "purity_before": 0.1883,
+   "purity_before_raw": 0.1198,
+   "n_buckets_before": 16,
+   "purity_after": 0.1198,
+   "product_after": 0.1883,
+   "n_commits": 0,
+   "n_total": 500,
+   "commit_rate": 0.0,
+   "circle_acc": 0,
+   "cauchy_acc": 0,
+   "delta": 0
+  },
+  "random D=4": {
+   "purity_before": 0.2022,
+   "purity_before_raw": 0.1287,
+   "n_buckets_before": 16,
+   "purity_after": 0.1287,
+   "product_after": 0.2022,
+   "n_commits": 56,
+   "n_total": 500,
+   "commit_rate": 0.112,
+   "circle_acc": 0.5714,
+   "cauchy_acc": 0.0,
+   "delta": 0.5714
+  },
+  "cauchy-K163 D=6": {
+   "purity_before": 0.2713,
+   "purity_before_raw": 0.1727,
+   "n_buckets_before": 64,
+   "purity_after": 0.1727,
+   "product_after": 0.2713,
+   "n_commits": 84,
+   "n_total": 500,
+   "commit_rate": 0.168,
+   "circle_acc": 0.5833,
+   "cauchy_acc": 0.619,
+   "delta": -0.0357
+  }
+ },
+ "C6": null,
+ "two_over_pi": 0.6366197723675814
+}
