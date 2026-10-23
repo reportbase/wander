@@ -900,6 +900,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   coordinate; the cells tile the hyperbolic plane, the Cauchy's parameter space; a tree loses the plane, sideways links keep
   it; the floor's wall against the reader's soft cut; who sets the depth; what it means. The companion's §7 "What
   Math.floor throws away" gives it the space (its later sections renumbered 8–12).
+  **A dial over a list without end** (23 Oct, SPN R466; Tom: "the dials let you create UI that scrolls infinity. that is
+  of interest to computer science."): OFS §11.4 gains the dial (§6's rulers as a control: push ζ at a rate, place sinh ζ,
+  screen gd ζ; any place up to N in about ln(2N)/rate; the end the horizon; letting go a new zero; content from the place;
+  in 2D true boosts turn the frame, Thomas 1926), with Igarashi–Hinckley, Furnas–Bederson and van Wijk–Nuij cited; the
+  companion's new §10 "A dial: scrolling without end" (later sections 11–13).
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
