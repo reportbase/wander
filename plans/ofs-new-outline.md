@@ -68,6 +68,25 @@ What that gives:
 - **E. "One read, two breakdowns" (R332).** Kept as: one finger, its address and its paint, meeting at one point
   (III.20).
 
+- **F. Scope: the geometry, not reader adaptations (R455).** Tom: "This paper is about the geometry, not reader
+  adaptations." Proposed as adaptations, and so moved out of the body, kept in SPN and the plans or reduced to a sentence
+  that names the condition a result needs:
+  - holding, at once or in order (§3.5, §7.6 "Order needs holding", the holding clauses in §3.1);
+  - the instruments in "Two other parties" (camera, lidar, scanner, total station) and §3.5's "with no motion at all";
+  - the head and the eye (§9 "Turning in place gives no parallax"), the robotics paragraph, "More points, fewer told
+    apart" (§8);
+  - the reader's acts as acts ("chooses", "takes standpoints"), where the geometry can say "given a standpoint and H".
+
+  Kept as geometry: the writer's propositions on amounts (7–14), scale the world, the tower, the room and the survey as
+  worked cases. These are open to Tom's ruling item by item.
+- **G. Recursion, noted and not claimed (R455).** Tom: "The recursive, fractal nature of observation is noted, but not
+  well understood, inside and outside implies a recursive situation, but that can only be speculated about."
+  Proposed: "Writers within writers" and "Within one box, exterior to the rest" (record §9) leave the body. One paragraph
+  in §11's open questions notes the nesting that inside and outside suggest, as speculation. This is a different sense
+  from R188's ruling that the levels do not recurse (plain doublings), which stands. Open point D is affected: if
+  "inside" and "outside" name the sweeps, the paper says once that the words describe where each sweep comes from, not a
+  nesting.
+
 ## 2. Proposed structure, with the record's sections mapped
 
 C = carried over, the mathematics and most of the words. R = rewritten in the new frame. M = moved elsewhere in the
@@ -82,11 +101,11 @@ paper. D = dropped, with where it went.
 | 2, "The sweep" | §2 "The sweep", "Sweeping from zero" | the sweep as the geometry's, not an act; the zero is where the reader faces; a new zero changes no law; tangent addition; "Sweeping from zero" becomes "Holding from zero" | R |
 | 2, "Inside and outside" (new) | — | the two sweeps defined: the addresses from the standpoint, the paint from the world | new |
 | 3 The reader | §3 | one reader: its standpoint, its H, where it looks, how it holds | R |
-| 3.1 The situations | §3.1 | 0, 1, 2 unchanged; 3 and 4 per open point A; the rule; "Two other parties" (camera, lidar as writing, total station) reread | R |
+| 3.1 The situations | §3.1 | 0, 1, 2 unchanged; 3 and 4 per open point A; the rule; "Two other parties" as geometry (one entry per party), its instruments out (open point F) | R |
 | 3.2 Which division | §3.2 | divide by H, by the sum, by the length | C |
 | 3.3 The number line laid twice | §3.3 | the table and the unit line; 3 and 4 as the two sweeps' measures | C, bullets R |
 | 3.4 Two vantages, and the true breadth | §3.4 | writer and reader; the two sweeps' turns (quarter and half), θ/sin θ and sin θ/θ, product 1; Buffon; three unit relations (2 and ½); Archimedes and Viète; the seven steps, rephrased for the sweeps; why only two routes to the true breadth; what the writer's vantage costs | R; the arithmetic C |
-| 3.5 At once or in order | §3.5 | holding as the reader's axis; static and dynamic; with no motion at all (the frame laid across the receptors) | C, small edits |
+| — | §3.5 | holding, static and dynamic, with no motion at all: reader adaptations (open point F); a sentence where a result needs a holding | M to SPN |
 | 3.6 What a situated reader holds | §3.6 | relations, addresses, g, capped reading, magnitudes; "the reader sweeps" becomes "the geometry lays"; the pivot; h as the focus | R lightly |
 | 3.7 The hand | §3.7 | already in the new frame (R453); the sphere after Gibson; the writer's box; the reader inside it | C |
 | 3.8 One number | §3.8 | V*/H, an offset in doublings | C |
@@ -97,10 +116,10 @@ paper. D = dropped, with where it went.
 | 8 Level of detail and H | §8 | the count; size sets the level; a resolution, not cells; what the height fixes; from far off the centroid; H a zoom; a larger H; K fixed, aimed by H; "Two readers, one K" becomes the two sweeps' use of one K (the addresses split at the corner, the paint's distances zoomed); other squeezes; more points, fewer told apart | C; "two readers, one K" R |
 | 9 Amounts | §9 | geometry first; the amounts' error; Propositions 7–14; a sphere in a cube; a unit; two ways to represent; reading and writing; the inscribed reading is the ratio itself; the central reading per open point B; the survey; the ground; scale the world; growth; units within units; the tower; nesting; within one box; closing a loop; recovered, not written; a room ("the two sweeps" there reread: the layout from the addresses, the shapes from what the paint and a second standpoint give); to move the furniture is to write; far off, parallax in place of the shape; turning in place gives no parallax; from one place the outline is free; the number line as shared unit | C mostly; the room and the central reading R |
 | 10 Worked example | §10 | the mountain range; step 3 (π/2 · 2/π, the rates joined, the wrapped Cauchy) told as the two sweeps' geometry | C, step 3 R |
-| 11 Discussion | §11 | Jaynes; what is claimed; assumptions and open questions (the table of what depends on what; questions 2, 6, 7, 8 reread: 8 was "which mechanism", now moot); related work; what the geometry gives free | C; question 8 R |
+| 11 Discussion | §11 | Jaynes; what is claimed; assumptions and open questions (the table of what depends on what; questions 2, 6, 7, 8 reread: 8 was "which mechanism", now moot; a new one, nesting, as speculation, open point G); related work; what the geometry gives free | C; question 8 R; nesting new |
 | Appendix, References | same | notation (drop "address reader", "payload reader"; add inside and outside sweeps); references unchanged | R lightly |
 
-Nothing is dropped outright. What leaves the body is the reader-type framing, in roughly 80 sentences: "address reader"
+Nothing is dropped outright: what leaves the body goes to SPN and the plans (points F and G). What leaves the body is the reader-type framing, in roughly 80 sentences: "address reader"
 18 times, "payload reader" 18, "two readers" 14, "two types" 4, "central sweep" as a reader's name about 15, and the
 three-vantages paragraph.
 
@@ -112,7 +131,7 @@ Ticked when the new text has them. From the record (OFS) and from SPN's rulings 
 - [ ] The writer states amounts and needs the true breadth (walked or carried in); the reader needs neither (R335).
 - [ ] The writer is the number line on each axis, a box, no corner (R338, R445); every reader stands inside it, its
   wedge reaching the faces (R443, R444, R449).
-- [ ] Writers within writers, readers all the way down (R448).
+- [ ] Writers within writers, readers all the way down (R448): as speculation in §11 (point G).
 - [ ] Reading is free; writing needs movement or interaction (R297); RWT's counts (one move, one number, one notch).
 - [ ] Recovered, not written (R442).
 - [ ] The test: scale the world; growth (R314, R315).

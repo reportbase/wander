@@ -831,6 +831,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   a checklist of insights to keep), once Tom approves it; it becomes the single source of truth (R421) when its first draft
   is whole, and until then the record stands. Everything above about OFS describes the record. The demos that name two
   readers wait for a later pass.
+  **The geometry, not reader adaptations; recursion noted, not claimed** (23 Oct, SPN R455; Tom: "This paper is about the
+  geometry, not reader adaptations. The recursive, fractal nature of observation is noted, but not well understood, inside
+  and outside implies a recursive situation, but that can only be speculated about."): the new OFS keeps to the geometry;
+  holding, instruments, the head and the reader's acts leave its body (outline point F); writers within writers (R448,
+  R449) go to the discussion as speculation (point G); R188's no recursion in the levels stands.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
