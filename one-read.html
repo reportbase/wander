@@ -49,32 +49,32 @@
 <body>
 <main>
     <h1>One turn, one read</h1>
-    <p class="lede">Turn your head and nothing else. Your line of sight meets one point, and that one read breaks down two
-    ways. Kept as a <span class="g">direction</span> from where you stand, it is the address read; kept as an
-    <span class="r">amount</span> along a direction from the centre, it is the payload read. Both end at the same point:
-    the address points at the payload. Over the whole turn the two readers read the line as π/2 and 2/π; together, their
-    product, the 1 that only the writer holds.</p>
+    <p class="lede">One direction from home, given before anything arrives, meets one point, and that one read breaks down
+    two ways. Counted as a <span class="g">direction</span> from where you stand, it is the address, the inscribed sweep;
+    counted from the centre of the circle on the chord, it is the <span class="r">point</span> where the paint lands, the
+    central sweep. Both end at the same point: the address points at the payload. Over the whole quarter turn the two
+    sweeps measure the line as π/2 and 2/π; their product is the 1 that only the writer holds.</p>
     <div class="panel">
-        <div class="row"><label for="t">the head's turn θ</label><input id="t" type="range" min="0" max="90" step="0.1" value="30">
-            <span id="tv" class="b"></span><button id="play">turn</button></div>
+        <div class="row"><label for="t">the direction θ</label><input id="t" type="range" min="0" max="90" step="0.1" value="30">
+            <span id="tv" class="b"></span><button id="play">play θ</button></div>
         <div class="row"><label for="c">the other drawn at V = cH, c</label><input id="c" type="range" min="-1" max="1" step="0.01" value="0">
             <span id="cv" class="b"></span><button id="one">V = H</button></div>
         <div class="grid">
             <div><canvas id="cv1" height="440"></canvas><p class="cap">The chord from home A to B, and the circle drawn on it.
-            Gold: the address, A's ray at θ. Teal: the payload, the radius from the centre at 2θ. Violet: the arc from B
+            Gold: the address, A's ray at θ. Teal: where the paint lands, the radius from the centre at 2θ. Violet: the arc from B
             already turned through, over its chord.</p></div>
             <div>
                 <div class="read" id="addr"></div>
                 <div class="read" id="pay"></div>
                 <div class="read" id="both"></div>
-                <canvas id="cv2" height="200"></canvas><p class="cap">Over the turn: the payload reader's arc over chord
-                (teal, rising to π/2), the address reader's chord over arc (gold, falling to 2/π), and their product
+                <canvas id="cv2" height="200"></canvas><p class="cap">Over the quarter turn: the central sweep's arc over chord
+                (teal, rising to π/2), the inscribed sweep's chord over arc (gold, falling to 2/π), and their product
                 (white), 1 throughout.</p>
             </div>
         </div>
     </div>
     <p class="note">Related: <a href="facing.html">the facing</a>, <a href="paths.html">one sweep, three paths</a>,
-    <a href="two-readers.html">two readers</a>. <a href="demos.html">All the demos</a>.</p>
+    <a href="two-readers.html">the angle and the radius</a>. <a href="demos.html">All the demos</a>.</p>
 </main>
 <script>
 (function () {
@@ -162,12 +162,12 @@
         const r = read(st.t), cc = c();
         $('tv').textContent = st.t.toFixed(1) + '°';
         $('cv').textContent = cc.toFixed(3);
-        $('addr').innerHTML = `<span class="g">The address read</span> (the inscribed sweep, from home): a direction, no amount.\n`
+        $('addr').innerHTML = `<span class="g">The address</span> (the inscribed sweep, from home): a direction, no amount.\n`
             + `  [h : v] = [${f4(r.h)} : ${f4(r.v)}], so v/h = ${f4(r.ratio)}\n  the sweep's share so far, g = ${f4(r.g)}${Math.abs(st.t - 45) < 0.05 ? '  (the corner: the arms read alike)' : ''}`;
-        $('pay').innerHTML = `<span class="r">The payload read</span> (the central sweep, from the centre): an amount along a direction given in advance.\n`
-            + `  facing turned 2θ = ${(2 * st.t).toFixed(1)}°; the point's foot h² = ${f4(r.foot)}, height hv = ${f4(r.height)}`;
+        $('pay').innerHTML = `<span class="r">Where the paint lands</span> (the central sweep, from the centre): a point of the circle, bounded, no distance to anything.\n`
+            + `  the radius at 2θ = ${(2 * st.t).toFixed(1)}°; the point's foot h² = ${f4(r.foot)}, height hv = ${f4(r.height)}`;
         $('both').innerHTML = `<span class="w">The arc turned through</span> θ = ${f4(r.arc)} over its chord sin θ = ${f4(r.chord)}:\n`
-            + `  payload reader, arc over chord: <span class="r">${f4(r.payload)}</span>\n  address reader, chord over arc: <span class="g">${f4(r.address)}</span>\n`
+            + `  central sweep, arc over chord: <span class="r">${f4(r.payload)}</span>\n  inscribed sweep, chord over arc: <span class="g">${f4(r.address)}</span>\n`
             + `  their product: <span class="b">${f4(r.product)}</span>, the writer's 1` + (st.t >= 89.95 ? '\n  at the end of the turn: π/2 and 2/π' : '')
             + (Math.abs(cc - 1) > 1e-9 ? `\n<span class="x">Drawn at V = ${cc.toFixed(2)}H: the ray at θ and the radius at 2θ part, by ${gap(st.t).toFixed(4)}.</span>` : '');
     }

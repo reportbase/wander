@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <title>The central reader</title>
+    <title>The central sweep</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
     <!--
@@ -62,12 +62,14 @@
 </head>
 <body>
 <main>
-    <h1>The central reader</h1>
-    <p class="lede">The fingers are free; the light draws on them. Wherever the reader looks, its fingers are there: the
-    uniform turn's directions, the Cauchy, laid by looking. It sends nothing, turns through nothing and computes nothing.
-    The <span class="gold">payload</span> is the light the world sends along each finger; to read it is to read what the
-    light drew on the fingers, from the same standpoint (step 1). The steps after it are the classical pieces of reading a
-    shape from its centre, shown as before.</p>
+    <h1>The central sweep</h1>
+    <p class="lede">One reader, one standpoint, two sweeps. The fingers are free; the light draws on them. Wherever the
+    reader looks, its fingers are there: the uniform turn's directions, the Cauchy, given before anything arrives (the
+    inscribed sweep, the addresses). It sends nothing, turns through nothing and computes nothing. The
+    <span class="gold">payload</span> is the light the world sends along each finger, the paint, and it carries no
+    distance (step 1). The central sweep is the same directions counted from the centre of the circle they land on, where
+    each address's paint lands (step 6). Steps 2–5 are the classical pieces from a shape's own centre: an amount along each
+    direction is had only by ranging (a writing) or from more standpoints, and its size is never read.</p>
     <div class="panel">
         <div class="row" id="steps"></div>
         <div id="say"></div>
@@ -90,7 +92,7 @@
             <span id="Lv" class="gold"></span>
         </div>
         <div class="row" style="margin-top:6px" id="c-z">
-            <span class="note">drag the reader (violet) inside the circle</span>
+            <span class="note">drag the standpoint (violet) inside the circle</span>
             <button id="zc">back to the centre</button>
         </div>
         <div class="row" style="margin-top:6px" id="c-t">
@@ -104,11 +106,11 @@
         <div id="hud"></div>
     </div>
     <p class="note">Behind it: <i>Observation from Somewhere</i> §3.7, the hand ("The fingers are free; the light draws on
-    them"); §9, "The central reading is an amount"; §4, "The address
+    them"); §9, "The central sweep places the paint; the amount is written"; §4, "The address
     points at the payload" (Euclid III.20); §7.4, the shape as a perturbation of the circle. The off-centre law is harmonic
     measure: Kakutani (1944); Garnett and Marshall, <i>Harmonic Measure</i> (2005); the wrapped Cauchy as the Möbius image of
-    the Cauchy, McCullagh (1996). Steps 2–6 draw the classical polar reading from a shape's centre; the payload reader itself is
-    the hand of step 1, at home. Other demos: <a href="two-readers.html">two readers</a>, <a href="one-read.html">one turn, one read</a>,
+    the Cauchy, McCullagh (1996). Steps 2–5 draw the classical polar coordinates about a shape's centre, amounts that are written or had from
+    more standpoints; the reader itself stands at home, step 1. Other demos: <a href="two-readers.html">the angle and the radius</a>, <a href="one-read.html">one turn, one read</a>,
     <a href="demos.html">all demos</a>.</p>
 </main>
 <script>
@@ -238,12 +240,12 @@
     const dot = (g, x, y, r, c) => { g.fillStyle = c; g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill(); };
     const GOLD = '#d4a052', TEAL = '#8ce6cd', VIOLET = '#b59cf0', BRIGHT = '#e6e4ee', RED = '#d96e5b';
     const STEPS = [
-        ['the hand', 'The reader at home, looking. Its fingers are the uniform turn from flat (h) to upright (v), read v/h: the Cauchy, laid by looking, before anything arrives. Turn where it looks: the fingers, their readings and their median at the corner (v/h = 1) do not change. What changes is the light. The world\'s rays arrive along the fingers and draw on them, each finger the colour of the first thing on its line; the reader sends nothing, turns through nothing and computes nothing. To read the payload is to read what the light drew.'],
-        ['the baseline', 'A circle read from its own centre. Its directions (gold) are laid out evenly before anything arrives, and along every one the same amount arrives. That constant is its baseline: it says the outline is round, and nothing about how big it is.'],
-        ['a shape', 'Now a shape. Each given direction brings a different amount, so each reading is a point: the direction it already had, and how far. Two numbers in the plane, where the address reader gets one. Scale the world: every amount moves by k together, and the shape, each amount over their geometric mean, does not move at all. It holds the shape in full, up to one factor.'],
+        ['the hand', 'The reader at home, looking. Its fingers are the uniform turn from flat (h) to upright (v), read v/h: the Cauchy, given, before anything arrives. Turn where it looks: the fingers, their readings and their median at the corner (v/h = 1) do not change. What changes is the light. The world\'s rays arrive along the fingers and draw on them, each finger the colour of the first thing on its line; the reader sends nothing, turns through nothing and computes nothing. To read the payload is to read what the light drew; no distance comes with it.'],
+        ['the baseline', 'A circle seen from its own centre. From there the directions (gold) are given evenly, equal turns cutting equal arcs. Suppose an amount is had along each, by ranging (a writing: the signal\'s speed carried in) or from more standpoints: on the circle it is the same along every one. That constant is its baseline: it says the outline is round, and nothing about how big it is.'],
+        ['a shape', 'Now a shape, its radius r(θ) from its centre, ln r = a₀ + f(θ). With an amount along each given direction (written, or from more standpoints), each is a point: the direction it already had, and how far. Two numbers in the plane, where a direction from home is one. Scale the world: every amount moves by k together, and the shape, each amount over their geometric mean, does not move at all. The shape is had in full; its size a₀ never.'],
         ['the modes', 'What it can recover is the shape\'s departure from its baseline circle: the modes of ln r, read from ratios of its radii. The size, the common term a₀ = ln k, is never among them. Keep the modes in order of n and the outline comes back broad form first: its level of detail.'],
-        ['off the centre', 'Move the reader off the centre of a circle. Its turn is still even, but its rays land unevenly (gold, dashed). The circle\'s own law seen from the reader is the Poisson kernel (violet), the wrapped Cauchy: harmonic measure. It gives an arc the measure (2α − arc)/2π, α the angle the arc spans at the reader, and its mean is the reader\'s place, z. A mean exists because the circle closes: there is no horizon.'],
-        ['one read', 'With the address reader, on a chord of 1. From home the ray turns θ and reads a ratio, v/h, which runs off to ∞. From the middle the radius turns 2θ and reaches a point, (h², hv), which stays on its circle. Ray and radius end at the same point every moment (Euclid III.20). The arc carved over the chord to it is θ/sin θ: π/2 at the end. There the ray is tangent, a horizon; the radius just ends.']
+        ['off the centre', 'Move the standpoint off the centre of a circle. Its directions are still uniform by turn, but they land unevenly (gold, dashed). The circle\'s own law seen from there is the Poisson kernel (violet), the wrapped Cauchy: harmonic measure. It gives an arc the measure (2α − arc)/2π, α the angle the arc spans at the standpoint, and its mean is the standpoint\'s place, z. A mean exists because the circle closes: there is no horizon.'],
+        ['one read', 'The two sweeps, on a chord of 1. From home (the inscribed sweep) the ray at θ is the address, a ratio, v/h, which runs off to ∞. From the middle (the central sweep) the radius at 2θ reaches the point where its paint lands, (h², hv), which stays on its circle. Ray and radius end at the same point every moment (Euclid III.20). The arc carved over the chord to it is θ/sin θ: π/2 at the end. There the ray is tangent, a horizon; the radius just ends.']
     ];
     let dragging = false;
     function drawHand() {
@@ -353,8 +355,8 @@
             lines.push(`the shape:    min ${Math.min(...c.shape).toFixed(4)}  max ${Math.max(...c.shape).toFixed(4)}   (each over the geometric mean; no k in it)`);
             lines.push(`geometric mean ${c.gm.toPrecision(4)} = e^a₀: the size, the one term no reading fixes`);
             if (st === 3) lines.push(`modes kept n ≤ ${p.L}: ${mm.modes.filter(m => m.n <= p.L && m.amp > 1e-9).map(m => `n=${m.n} ${m.amp.toFixed(3)}`).join(', ') || 'none: the circle'}`);
-            $('cap1').textContent = st === 3 ? 'The outline (white), and rebuilt from the modes kept (teal, dashed), drawn at the true size for the eye only.' : 'The outline (white) and the reader\'s given directions from C (gold), each ending where an amount arrives.';
-            $('cap2').textContent = st === 3 ? 'The shape\'s modes. The size a₀ is not one of them. Fewer modes kept: a coarser outline, the broad form first.' : 'What the central reader holds: along each given direction, an amount. Shown over their geometric mean, since the unit is not read; on the circle every bar is 1.';
+            $('cap1').textContent = st === 3 ? 'The outline (white), and rebuilt from the modes kept (teal, dashed), drawn at the true size for the eye only.' : 'The outline (white) and the given directions from C (gold), each ending where an amount is had (ranged, or from more standpoints).';
+            $('cap2').textContent = st === 3 ? 'The shape\'s modes. The size a₀ is not one of them. Fewer modes kept: a coarser outline, the broad form first.' : 'Along each given direction from C, an amount (a writing, or from more standpoints). Shown over their geometric mean, since the unit is not read; on the circle every bar is 1.';
         } else if (st === 4) {
             const z = p.z;
             let [g, W, H] = fit($('main'));
@@ -371,7 +373,7 @@
             const mean = poissonMean(z);
             g.strokeStyle = VIOLET; g.lineWidth = 1.5; g.beginPath(); g.arc(...P(mean), 9, 0, TAU); g.stroke();
             dot(g, ...P(z), 6, VIOLET); txt(g, 'z', P(z)[0] + 9, P(z)[1] - 8, VIOLET);
-            txt(g, 'the reader at z; its even turn (gold)', 10, 18);
+            txt(g, 'a standpoint at z; its uniform turn (gold)', 10, 18);
             // side: densities against the angle round the circle
             [g, W, H] = fit($('side'));
             const x0 = 40, x1 = W - 14, y0 = H - 40, y1 = 30;
@@ -391,13 +393,13 @@
             let gap = 0, dev = 0; for (let i = 0; i < 360; i++) { const t = TAU * (i + 0.5) / 360;
                 gap = Math.max(gap, Math.abs(poisson(z, t) - (2 * landingDensity(z, t) - 1 / TAU)));
                 dev = Math.max(dev, Math.abs(landingDensity(z, t) - poisson(z, t)) * TAU); }
-            lines.push(`the reader at z = (${z[0].toFixed(3)}, ${z[1].toFixed(3)}), |z| = ${Math.hypot(...z).toFixed(3)}  (in units of the radius)`);
+            lines.push(`the standpoint at z = (${z[0].toFixed(3)}, ${z[1].toFixed(3)}), |z| = ${Math.hypot(...z).toFixed(3)}  (in units of the radius)`);
             lines.push(`its law's mean: (${mean[0].toFixed(4)}, ${mean[1].toFixed(4)})  = z: a mean exists, the circle closes`);
             lines.push(`the first quarter arc: harmonic measure ${am.integral.toFixed(5)};  (2α − arc)/2π = ${am.classical.toFixed(5)}  (α = ${(am.alpha * 180 / Math.PI).toFixed(2)}°)`);
             lines.push(`Poisson = 2 × (where the even turn lands) − uniform, to ${gap.toExponential(1)}  (classical; the two rates of §4)`);
             lines.push(`the even turn's landings differ from the law by up to ${dev.toFixed(3)} (× 2π): equal only at the centre`);
             $('cap1').textContent = 'A circle of radius 1. Equal turns from z (gold) land unevenly; the violet band is the circle\'s own law from z, the ring the mean of it, which sits on z.';
-            $('cap2').textContent = 'Round the circle: the reader at the centre (flat), where z\'s even turn lands (gold), and the Poisson kernel (violet). The kernel is twice the gold less the flat line, at every angle.';
+            $('cap2').textContent = 'Round the circle: from the centre (flat), where z\'s even turn lands (gold), and the Poisson kernel (violet). The kernel is twice the gold less the flat line, at every angle.';
         } else {
             const r = oneRead(p.t);
             let [g, W, H] = fit($('main'));
@@ -415,7 +417,7 @@
             dot(g, ...P([0, 0]), 5, TEAL); txt(g, 'home', P([0, 0])[0] - 18, P([0, 0])[1] + 20, TEAL);
             dot(g, ...P([0.5, 0]), 5, GOLD); txt(g, 'middle', P([0.5, 0])[0] - 22, P([0.5, 0])[1] + 20, GOLD);
             txt(g, 'B', P([1, 0])[0] + 6, P([1, 0])[1] + 16);
-            txt(g, 'the address reader turns θ (teal), the central reader 2θ (gold)', 10, 18);
+            txt(g, 'from home, the address at θ (teal); from the middle, the radius at 2θ (gold)', 10, 18);
             [g, W, H] = fit($('side'));
             const x0 = 40, x1 = W - 14, y0 = H - 40, y1 = 30, X = d => x0 + (x1 - x0) * d / 90;
             g.strokeStyle = 'rgba(255,255,255,0.25)'; g.beginPath(); g.moveTo(x0, y1); g.lineTo(x0, y0); g.lineTo(x1, y0); g.stroke();
@@ -432,13 +434,13 @@
             txt(g, 'arc over chord: θ/sin θ → π/2', x0 + 8, y1 + 20, GOLD, 11);
             txt(g, 'the point stays on its circle (2|OP| = 1)', x0 + 8, y1 + 36, 'rgba(255,255,255,0.7)', 11);
             txt(g, '0°', x0 - 6, y0 + 18); txt(g, '90°', x1 - 22, y0 + 18); txt(g, 'θ', (x0 + x1) / 2, y0 + 18);
-            lines.push(`θ = ${p.t.toFixed(1)}°: the address reader's ray from home, the central reader's radius from the middle at 2θ = ${(2 * p.t).toFixed(1)}°`);
+            lines.push(`θ = ${p.t.toFixed(1)}°: the inscribed sweep's ray from home, the central sweep's radius from the middle at 2θ = ${(2 * p.t).toFixed(1)}°`);
             lines.push(`they meet: |ray end − radius end| = ${r.meet.toExponential(1)}   (Euclid III.20)`);
             lines.push(`address: v/h = ${isFinite(r.address) && r.address < 1e9 ? r.address.toFixed(4) : '∞'}   (one number, unbounded)`);
             lines.push(`payload: the point (foot h², height hv) = (${r.point.foot.toFixed(4)}, ${r.point.height.toFixed(4)})   (two numbers, bounded)`);
             lines.push(`arc carved from B ${r.arc.toFixed(4)}, chord to it ${r.chord.toFixed(4)}: arc/chord ${r.arcOverChord.toFixed(4)}, chord/arc ${r.chordOverArc.toFixed(4)}, product 1`);
             lines.push(p.t >= 89.95 ? 'at the end: the ray lies along the tangent at home, a horizon; the radius simply points at home, a place' : 'at 90° the ray becomes tangent (the horizon) and the radius ends at home');
-            $('cap1').textContent = 'The circle on a chord of 1. Teal: the ray from home at θ (the address). Gold: the radius from the middle at 2θ (the payload) and the arc it has carved from B.';
+            $('cap1').textContent = 'The circle on a chord of 1. Teal: the ray from home at θ (the address). Gold: the radius from the middle at 2θ (where the paint lands) and the arc it has carved from B.';
             $('cap2').textContent = 'Against θ: the address v/h runs off to ∞; the arc over the chord settles at π/2; the radius stays on its circle the whole way.';
         }
         $('hud').textContent = lines.join('\n');

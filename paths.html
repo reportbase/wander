@@ -75,7 +75,7 @@
     </div>
     <div class="grid">
         <div class="panel"><h2>Three paths, one direction</h2><canvas id="plane" height="340"></canvas>
-            <p class="cap">The reader stands at the corner of the axes and reads directions. The chosen path is cut into 24
+            <p class="cap">Home is the corner of the axes; the directions from it are the addresses. The chosen path is cut into 24
             equal lengths, and each cut's direction is drawn: even on the circle; on the line, sparse near the corner and
             crowded at the ends; on the square, the other way round. The ray at θ meets all three at one reading.</p></div>
         <div class="panel"><h2>How much of the sweep is done</h2><canvas id="share" height="340"></canvas>
@@ -85,7 +85,7 @@
         <div class="panel"><h2>The turn and its shadow, on the circle</h2><canvas id="turn" height="300"></canvas>
             <div id="vant"></div>
             <p class="cap">Equal steps of turn cast unequal pieces of shadow on the line across the view, and the pieces cover
-            it exactly once. The central reading is the turn over its shadow, the inscribed the shadow over the turn: π/2 and 2/π
+            it exactly once. The central sweep measures the turn over its shadow, the inscribed sweep the shadow over the turn: π/2 and 2/π
             at the horizon. In parallax the same ratio is the relative distance error over the relative parallax error,
             γ/sin γ, with γ the pair's facing, twice its sweep angle: π/2 on the Thales circle (<a href="parallax.html">parallax
             from the corner</a>).</p></div>
@@ -256,7 +256,7 @@
         text(g, `turn ${th.toFixed(3)}`, ...P(Math.cos(th / 2) * 1.04, Math.sin(th / 2) * 1.04), COL.circle, 11.5);
         const v = vantages(t);
         $('vant').textContent = `turn θ = ${v.turn.toFixed(4)}   its shadow sin θ = ${v.shadow.toFixed(4)}\n` +
-            `outer, the turn over its shadow, θ/sin θ = ${v.outer.toFixed(4)}   inner, the shadow over the turn, sin θ/θ = ${v.inner.toFixed(4)}   product ${v.product.toFixed(4)}` +
+            `central, the turn over its shadow, θ/sin θ = ${v.outer.toFixed(4)}   inscribed, the shadow over the turn, sin θ/θ = ${v.inner.toFixed(4)}   product ${v.product.toFixed(4)}` +
             (t >= 89.95 ? `\nat the horizon: π/2 = ${(Math.PI / 2).toFixed(4)} and 2/π = ${(2 / Math.PI).toFixed(4)}, the even turn's mean shadow (Buffon)` : '');
     }
 

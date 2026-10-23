@@ -60,7 +60,7 @@
 <main>
     <h1>The chain from H</h1>
     <p class="lede">One value starts everything. Pick an H and every whole is drawn at it; the count of other parties
-    sets the shape; one observation sweeps only the Cauchy fisheye of one facing; the shape, and any figure in it, is
+    sets the shape; one observation is given only the Cauchy fisheye of one facing; the shape, and any figure in it, is
     built over many observations from standpoints a baseline apart, which is parallax; and only then does physics
     assign the values. Step through it, keeping one H.</p>
     <div class="panel">
@@ -104,12 +104,12 @@
           say: 'Every whole is drawn at the H you pick, so every unit relation runs from 0 to 1 on equal axes: that square is the unit relational space, and it is the same at every H. What H decides is only where amounts land. On the right, a world of amounts from a thousandth to a thousand, placed at arctan(x/H): only an H among them spreads them over the turn. At H of 0 they all run out to the horizon; at H of ∞ they all sit at home.' },
         { title: '2. The number of V\'s sets the shape', show: [], opts: ['n'],
           say: 'The shape is set by how many unit relations the system holds, once their wholes are drawn at one H: the reader\'s h and one v per other party. One other party gives the circle, four facings; two give the sphere, eight; n give the sphere of n + 1 unit relations, 2^(n+1) facings, and the reader is near in all its readings for 1/(n + 1) of its addresses.' },
-        { title: '3. One observation sweeps the Cauchy fisheye', show: [], opts: ['fig', 'scale'],
-          say: 'One observation does not sweep the shape. A reader at a figure\'s centre turns evenly through one facing and reads v/h in each direction. Whatever the figure reaches out to cancels from every reading: v/h = tan a. So the readings are the Cauchy, bunched toward home and spreading past the corner, and laid back out they give the unit circle, the shape the count of V\'s set, for every figure and at every size. One observation returns the census, never the figure.' },
+        { title: '3. One observation: the Cauchy fisheye', show: [], opts: ['fig', 'scale'],
+          say: 'One observation is not given the shape. From a figure\'s centre the directions of one facing are given, uniform by turn, each read as v/h. Whatever the figure reaches out to cancels from every reading: v/h = tan a. So the readings are the Cauchy, bunched toward home and spreading past the corner, and laid back out they give the unit circle, the shape the count of V\'s set, for every figure and at every size. One observation returns the census, never the figure.' },
         { title: '4. The shape is built over many observations', show: [], opts: ['n', 'again', 'play'],
-          say: 'Each observation sweeps one facing. The whole circle has four, the sphere eight, and no single observation holds them: the shape is joined together over observations, virtually. The reader never stands where the whole is held; that is the view from nowhere.' },
+          say: 'Each observation is given one facing. The whole circle has four, the sphere eight, and no single observation holds them: the shape is joined together over observations, virtually. The reader never stands where the whole is held; that is the writer\'s vantage.' },
         { title: '5. Standpoints build the figure: parallax', show: ['hrow', 'best'], opts: ['fig', 'sp', 'eps'],
-          say: 'The figure itself needs standpoints. Two readers a baseline 2H apart each read only directions; crossing them puts each point back, in units of H. The circle on which the baseline is seen square, radius H, is the corner circle, now a place in the world: points near it come back best. Make H tiny and the two standpoints merge into one, leaving rays; make it huge and every point lies along the baseline, where the rays barely cross. The best H for this figure is the geometric middle of its distances.' },
+          say: 'The figure itself needs standpoints. Two standpoints a baseline 2H apart each give only directions; crossing them puts each point back, in units of H. The circle on which the baseline is seen square, radius H, is the corner circle, now a place in the world: points near it come back best. Make H tiny and the two standpoints merge into one, leaving rays; make it huge and every point lies along the baseline, where the rays barely cross. The best H for this figure is the geometric middle of its distances.' },
         { title: '6. Physics assigns the values', show: ['hrow'], opts: ['unit'],
           say: 'Everything so far is in units of H, a value nobody measured. Physics now assigns it: one outside amount, say that H is a mile. Every amount is multiplied by it, the labels change, and nothing in the figure, the corner or the addresses moves. The geometry is agnostic to this last step.' },
     ];
@@ -362,7 +362,7 @@
             `H = ${fmtH()}: the corner is the amount ${fmtH()}; the world takes ${((Math.atan(1e3 / H) - Math.atan(1e-3 / H)) / D).toFixed(1)}° of the quarter turn`;
         if (state.step === 2) { const n = state.n; return `${n} other ${n === 1 ? 'party' : 'parties'}: ${n + 1} unit relations, ${2 ** (n + 1)} facings, near in all readings for 1/${n + 1} of the addresses`; }
         if (state.step === 3) { const fe = fisheye(); return `readings v/h = tan a in every direction, whatever the figure reaches: given back as the unit circle to ${fe.worst.toExponential(1)}`; }
-        if (state.step === 4) return `observations so far: ${state.facings}; each one sweeps one facing`;
+        if (state.step === 4) return `observations so far: ${state.facings}; each one gives one facing`;
         const b = bestH();
         const base = dg === 'zero' || state.sp === 1 ? 'one standpoint: directions only, every point a ray' : dg === 'inf' ? 'standpoints at ∞ along the baseline: the rays never cross' :
             `baseline 2H = ${fmt(2 * H)}; median error ${isFinite(tr.median) ? (100 * tr.median).toFixed(2) + '%' : '—'} at a step of ${state.eps}°`;
