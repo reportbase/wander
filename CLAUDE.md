@@ -817,6 +817,20 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the world's light along each finger; to read the payload is to read what the light drew, from the same standpoint. The
   payload reader is not a second standpoint or a radius per direction (that is ranging, a writing); R451's "at the centre
   of what it reads" withdrawn. "The situations in the hand" now has 3 as "the rings, what the light drew on the fingers" (Tom: "yes"). `central-reader.html` opens with the hand.
+  **Two geometric sweeps, one reader; OFS archived, a new paper begun** (23 Oct, SPN R454; Tom: "the laying of the address is
+  inside, the drawing on thise addresses outside. there is no sweeping going on, the sweep is just a term that describes
+  what the geometry does for free."; "this paper has been treating the address reader and the paylad reader as two
+  different types of readers … the sweeps are geometric, and describe the inside sweep of addresses, and the outside sweep
+  of painting of those addreses."; "archive this paper, and start a new paper with our new framing. I don't want to lose
+  any of the major insights of the last two iterations, but our understanding about what it all means is still
+  evolving."): a sweep is the geometry's, never an act; one situated reader, not an address reader and a payload reader;
+  the inside sweep lays the addresses (inscribed, the Cauchy, 2/π), the outside sweep is the world's light painting them
+  (central, III.20, π/2). OFS as it stood is frozen as `papers/observation-from-somewhere-record.md` (**a frozen record,
+  never edited**, like SPN's; section numbers cited before 23 Oct are the record's). The new paper is written into
+  `papers/observation-from-somewhere.md` from `plans/ofs-new-outline.md` (the record's sections mapped, five open points,
+  a checklist of insights to keep), once Tom approves it; it becomes the single source of truth (R421) when its first draft
+  is whole, and until then the record stands. Everything above about OFS describes the record. The demos that name two
+  readers wait for a later pass.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
