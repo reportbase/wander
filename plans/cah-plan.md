@@ -164,3 +164,58 @@ semantic direction"), with ψ₂ = (2/π)·ln 2 an admission threshold. Read thr
   S²) are not the standard spheres.
 
 This changes no prediction: the plan's reading of the script's 2/π already stood on the first two points.
+
+### Run 1 (23 October 2026)
+
+`python3 runs/cah/cah.py` (the two models only, as above), then `python3 runs/cah/probe.py`; outputs
+`runs/cah/cah-results.json`, `runs/cah/cah-probe.json`. Checkpoints kept outside the repo.
+
+**The models.** Cauchy K = 163: validation loss 5.0472, perplexity 155.6 (12.0 min). Softmax: 5.0510, 156.2 (11.0 min).
+One seed each, 400 steps; the two are level at this scale, which the sweep would not have resolved (C3 is not tested by
+one seed; recorded only).
+
+**C5, purity before the retrofit** (the script's projection, cells π/4, D = 4, 6, 8; 20,000 training triples):
+
+| D | Cauchy K = 163 | softmax | random | occupied cells (of 5^D) |
+|---|---|---|---|---|
+| 4 | 0.1249 | 0.1198 | 0.1287 | 16, 16, 16 |
+| 6 | 0.1727 | 0.1708 | 0.1566 | 64, 64, 64 |
+| 8 | 0.3688 | 0.3715 | 0.2325 | 236, 237, 256 |
+
+C5 is **not killed** by its kill condition: the Cauchy model's purity is nowhere near 2/π (0.12–0.37) at any D. Its
+body was wrong in one clause, recorded as such: the trained purities move 0.24 across D, but the random one only 0.10,
+and at D = 8 the random lands below the trained (0.23 against 0.37); its "same range" holds at D = 4 and 6 only. Post
+hoc, the occupied cells explain the numbers: the projection starts with rows of norm 1.5 against embeddings of sd 0.069,
+so W·x stays within ±0.33, θ = (π/2)(1 + tanh(W·x)) within [1.08, 2.02], and every angle lands in one of the two cells
+either side of π/2: exactly 2^D cells are used, and the purity is the share of each of 2^D cells' commonest next token,
+rising as D splits the triples finer (at D = 8 random embeddings fill all 256, trained ones 236, so the trained cells
+hold more alike triples). The Cauchy kernel and softmax give the same purity to 0.005 at every D: nothing of the kernel
+shows in it.
+
+**C6, after the retrofit** (D = 6, five epochs): purity 0.5450 after one epoch, 0.5757 after five, "product" 0.9044;
+**not killed** (0.061 from 2/π, and still rising with the epochs: a fitted statistic, which the InfoNCE moves toward
+whatever the training reaches, not a value the geometry fixes). The script's own verdict line printed "CIRCLE
+MATCHES/BEATS CAUCHY" (Circle 0.539 against the Cauchy model's 0.461 on the 141 of 500 held-out triples it committed to).
+Post hoc, that comparison is not one: the script's triples come from the validation text read at every offset, so 200
+batches of 32 give 1,632,000 triples of only 5,039 distinct ones (6,655 tokens of text); after the shuffle, 97% of the
+500 held-out triples are among the 20,000 the cells were filled from (98.2% of their two-token contexts). The Circle's
+cells are a lookup of answers it was shown; the Cauchy model is a 256-token language model given two tokens. The same
+holds in the script at its own scale: its triples too are read at every offset of the first 200 batches.
+
+**C7** is not tested (the sweep was not run).
+
+### Where CAH stands
+
+The script's 2/π has no footing in the framework, and where it can be measured here it is not found. In the horizon,
+2/π is a fraction of a token count, with no turn to be the mean of. In the paper behind it, it is a mean read as a
+boundary, and the circle's value used in hundreds of dimensions, where a uniform direction gives √(2/(πd)). In the Circle
+probe, the purity is a count over 2^D cells, 0.12–0.37 before the retrofit, trained and random alike, and after it a
+fitted value still climbing (0.58 at five epochs). The probe's "Circle beats Cauchy" reads held-out triples that were
+97% in its own table. Tom's comment, on the paper: "so we fell into the same trap that we have now identified": 2/π is
+the turn's (an address-side number, the uniform sweep's mean projection, there whatever is looked at) and was read as a
+property of the payload, a constant of meaning, as linewidths were read as a system's own (`plans/rea/linewidth-note.md`).
+The Cauchy kernel is that trap the other way: the address law's shape used as a weight on an amount, ‖q − k‖.
+
+What carried forward from that work is not the constant but two of its prizes, now stated with their conditions in OFS:
+K kept apart from N, and scale-free readings. A test of the framework in attention would put the Cauchy on a direction
+(the angle between q and k, or the distance back laid on a reader's lay with its corner at H); not taken up.

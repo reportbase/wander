@@ -2041,6 +2041,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   payload (a t of ν 15.9 and one transient); its move toward the Gaussian the amounts' central limit (n^(−½) through the
   whitened band); the Cauchy is the direction [H1 : L1] (corner at the drawing's c = 0.932, 0.999 drawn by IQR, angle
   uniform, averages flat). G1, G3, G6, G7, G9 killed, G1, G6, G9 by my set-up.
+  `cah-plan.md` (+ `runs/cah/cah.py`, `probe.py`, 23 Oct; SPN R469; Tom: "Wrong script. this is the one."): the Cauchy
+  attention horizon sweep (`cauchy_horizon_sweep_2.py`, February 2026, Tom's, not committed) and its paper (*2/π: The
+  Universal Semantic Horizon*, December 2025). The kernel the Cauchy's shape on an amount, ‖q − k‖; K = (2/π)N a fraction
+  of a count with no turn; 2/π a mean read as a threshold, and the circle's (in d dimensions √(2/(πd))). The sweep not
+  run (Tom: "is this test still worth running"); the Circle probe's purity on two 400-step models: 0.12–0.37 before the
+  retrofit, Cauchy, softmax and random alike, a count over 2^D cells; 0.58 after five epochs and climbing; its "Circle
+  beats Cauchy" on held-out triples 97% in its own table. Tom: "so we fell into the same trap that we have now
+  identified": the turn's number read as the payload's.
   `dyh-plan.md` (+ `runs/dyh/dyh.py`, 18 Oct; SPN R374; Tom: "we are throwing away alot of data … its another dimension
   actually, maybe we could use multi-dimensional arrays", then "both"): exact, nothing killed. The cell (j, k) is
   z = (k + ½)2^−j + i·2^−(j+1): from it C(m, γ) puts ½ in the cell, ¼ in each half (D1); parent to child arcosh 3/2,
