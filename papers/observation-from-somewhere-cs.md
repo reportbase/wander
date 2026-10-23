@@ -72,7 +72,7 @@ advanced to. So throughout, "in equal steps of turn", "swept uniformly" and "cou
 order it puts on directions, never of an act. Nothing in this paper is an algorithm a reader runs.
 
 A real reader may count against something else: a clock, the equal pixels of a flat screen, or whatever happens to
-arrive. Each of those is another weight, with its own consequences (§11, §12).
+arrive. Each of those is another weight, with its own consequences (§12, §13).
 
 ### 1.3 A picture
 
@@ -94,7 +94,7 @@ That coordinates depend on the observer is old. The pieces used here are classic
 as the projection of a uniform angle and its invariance under Möbius maps, Cauchy's functional equation, Jaynes's
 transformation groups. What is new is where the reader's scheme comes from (the relations available at its standpoint,
 before any payload arrives) and the reading of these pieces as one structure, in which the Cauchy is the index and not
-the data. Whether this is a better way to compute anything is a question this paper does not take up; §11 says what it
+the data. Whether this is a better way to compute anything is a question this paper does not take up; §12 says what it
 offers instead, a baseline against which existing designs can be read.
 
 ### 1.5 Results
@@ -118,9 +118,12 @@ offers instead, a baseline against which existing designs can be read.
   and the floor's loss of detail is a wall where a reader's is a soft cut (§7).
 - **A fixed count.** A reader's K addresses cover a world of any size N, with no table and no knowledge of N; H is a
   zoom that places them and changes no reading (§9).
-- **Amounts.** No reading fixes scale; one amount supplied from outside fixes it everywhere it is linked (§10).
+- **A dial.** A held push adds to the hyperbolic angle; the place is its sinh and the screen its turn. The whole list
+  stays on a bounded screen, its end the horizon, and any place up to N is reached in about ln(2N)/rate, with no
+  table and no count in the control (§10).
+- **Amounts.** No reading fixes scale; one amount supplied from outside fixes it everywhere it is linked (§11).
 - **What comes free.** A depth buffer is the in-place lay with H at the near plane; equal pixels on a flat screen
-  over-weight directions off the axis; tables fixed in advance need what the uniform turn does not (§11).
+  over-weight directions off the axis; tables fixed in advance need what the uniform turn does not (§12).
 
 ## 2. The model
 
@@ -263,7 +266,7 @@ So V = H is not a convenience laid over the Cauchy. Within this construction (tw
 periodic turn) it is what the Cauchy requires, and working back from the Cauchy arrives at it and nowhere else. It is a
 rule of representation, not a claim about the world: the reader uses its own breadth as the unit for the other party
 because it is the only measure it has. Where the true V* differs from H, every amount the reader reads is off by V*/H
-(§10). The addresses are exact; the amounts are not.
+(§11). The addresses are exact; the amounts are not.
 
 The parent paper shows the same drawing forced in two familiar pictures: a lighthouse whose flashes land on a straight
 shore, and Mercator's chart, which draws every compass bearing true only because it stretches north–south exactly as
@@ -398,7 +401,7 @@ array holds an end, and joined arrays never claim the same element.
 
 **The reader reads the arrays; the writer joins them.** A reading carries no sign, so from a standpoint every facing is
 the same array, and a reader reads within one. To join two arrays their values must meet at the shared end in one unit,
-and that needs each array's size, its extent in amounts, which no reading fixes (§10). The writer knows the sizes, and
+and that needs each array's size, its extent in amounts, which no reading fixes (§11). The writer knows the sizes, and
 which facing each array is, so it can join the four into the closed circle. The reader cannot tell whether two ends
 meet.
 
@@ -524,7 +527,7 @@ mountain and a grain of sand. The geometry sets each thing's level by its span (
 held to about log₂ n levels, and a thing between two addresses is held at the coarser one, not rounded to either. So
 the floor imposes a level of detail; the reader reads one off what it meets.
 
-There is a second difference, which the scale-the-world test of §10 finds at once. Where the floor is taken of an
+There is a second difference, which the scale-the-world test of §11 finds at once. Where the floor is taken of an
 amount, `Math.floor(x / w)`, the cell width w is an amount too, and multiplying every amount in the world by k moves the
 key unless w is multiplied with it. By the test, the key is then a writing: its grain had to be carried in. A floor
 taken of a share of the turn, `Math.floor(θ / Δθ)` with Δθ a fraction of the quarter turn, carries no amount, and no
@@ -681,7 +684,7 @@ interacts with N, since its number line needs a mark for every thing it places.
 
 **One K in direction and in distance.** In direction, the K addresses are the turn's equal angles, split K/2 and K/2 at
 the corner, and the value of H appears in none of them. In distance the same K quantiles fall at H·tan(kπ/2K), and
-there H is the zoom (distance itself has to be had from a second standpoint or an amount carried in, §10). On the
+there H is the zoom (distance itself has to be had from a second standpoint or an amount carried in, §11). On the
 in-place lay the far boundaries are the near ones reflected about H, so the K addresses fill a ruler 2H long. A
 direction's K addresses and a distance's K together make a polar grid of K × K cells; every thing falls in exactly one,
 whatever N.
@@ -712,7 +715,92 @@ more power of the reading. On the sphere r = q every term is the same size and n
 pair (q, r); inversion in that sphere exchanges the outer and inner series term by term. This is level of detail by
 distance, with the corner as its seam.
 
-## 10. What the geometry does not give: amounts
+## 10. A dial: scrolling without end
+
+Every scrolling interface meets the same wall. A scrollbar maps the list's length onto the screen's height, so a list
+of a billion rows leaves each pixel of the bar a million rows wide. A flick scrolls at a speed, so the far end of a long
+list takes as long to reach as the list is long. And the code keeps a scroll offset that grows with the list. The
+geometry of §8 and §9 gives a control with none of these: the whole list on a bounded screen, any place reached in
+time that grows with the logarithm of its distance, and no count kept anywhere in the control.
+
+### 10.1 Three rulers, run as a control
+
+§8's figure lays one reading x three ways: as itself (the number line), as the turn θ = arctan x, and as the hyperbolic
+angle ζ = asinh x, with
+
+  x = tan θ = sinh ζ,  θ = gd(ζ).
+
+A dial runs the three as one control:
+- **The push is ζ.** A held thumb adds to ζ at a steady rate r. Pushes add in ζ, as rapidities do in special
+  relativity, where ζ has that name.
+- **The place is x.** The hand is at record x = sinh ζ, in units of the window.
+- **The screen is θ.** The hand is drawn at the turn θ = gd(ζ), which never leaves the quarter turn however far it has
+  gone. The corner, one unit from home, is at 45°; the rungs at x = 2^k fall in levels past it (§8's two address
+  spaces).
+
+```
+// one frame of a held push
+zeta += rate * dt;                    // the push adds, unbounded
+const x = Math.sinh(zeta);            // the place: records from home, in window units
+const theta = Math.atan(x);           // the screen: always inside the quarter turn
+```
+
+### 10.2 Any place, in time logarithmic in its distance
+
+Held at a steady rate, the hand is at x after
+
+  t(x) = asinh(x)/r,
+
+so near home it moves in proportion (x ≈ rt) and far off each doubling costs the same time, ln 2/r. Any place up to N
+is reached in about ln(2N)/r. A list of 2⁵³ records, the largest a double counts exactly, is crossed in 37.4/r: at a
+rate of 2 a second, under twenty seconds of holding, against 2⁵³ rows at any fixed scrolling speed. Nothing about the
+list's length was set in advance; the same push crosses a thousand records in 7.6/r and a googol in 231/r.
+
+### 10.3 The whole list on the screen
+
+The screen shows θ, a quarter turn, whatever the list's length. Inside the corner, within one window of the hand,
+records are laid in proportion, each its own row; past it, they are laid in levels, the rungs at 2, 4, 8 … windows
+crowding toward the edge. The far end of the list is the horizon, θ = 90°, at the edge of the screen and never drawn,
+as a road's end is its vanishing point. So the screen holds K addresses (§9) whether the list has a thousand records or
+no end, and a scrollbar's question, how long is the list, is never asked. The list's length is N; the control
+interacts with K.
+
+### 10.4 Letting go: a new zero
+
+When the thumb lets go, the place reached becomes home: ζ returns to 0, and the rungs are drawn again about the new
+place (§2.4's new zero). Pushes compose by adding in ζ, and a release folds the sum into the place, so the control
+holds no growing number: the only number that grows is the record's own index, which the list needs anyway. The
+window, how many records one rung holds, is a zoom, as H is (§9): it changes how much of the list the corner holds in
+proportion and moves no record's place in the list.
+
+### 10.5 Content made from the address
+
+Because the addresses do not depend on N, what is shown at a place can be made from the place itself, a function of
+the index, and nothing need be stored. A dial can walk a road of quadrillions of records whose country is made from each
+record's index, or browse 2⁵³ − 1 items in two dimensions made the same way, with cells opened largest-on-screen first
+and every drawn total adding exactly to the whole. The payload is
+a function on the addresses (§2.3), and here the function is the program.
+
+### 10.6 In two dimensions
+
+The same control works over two sweeps. The thumb points in a direction from the centre, adds to
+a two-dimensional push at a rate set by how far it is tilted, and the hand sits at sinh of the push inside the
+triangle of §2.2's sum cut, nearing its edge and never reaching it. The two coordinates there are log-ratios, which add,
+so pushes in two directions commute. A dial built from true two-dimensional boosts does not: pushed round a loop and
+brought back to rest, its frame comes home turned by the area the loop enclosed, as special relativity's frames do
+(Thomas precession; Thomas 1926). For a list in two dimensions that turn is a design choice, to show as the record of the path or to
+cancel.
+
+### 10.7 What is the design's and what is the geometry's
+
+The place, the corner, the levels past it and the horizon are the geometry's: the three rulers and their one figure.
+The design adds two numbers, the rate and the window. Zooming interfaces have arrived at relatives of this: speed
+coupled to zoom, so that scrolling fast zooms out (Igarashi and Hinckley 2000); views as points of position and scale
+(Furnas and Bederson 1995); and smooth zoom-and-pan paths written in the hyperbolic functions (van Wijk and Nuij 2003).
+What the geometry adds is where those choices come from, and a control whose reach is the logarithm of the list
+because its push is the hyperbolic angle.
+
+## 11. What the geometry does not give: amounts
 
 **Proposition 8 (scale cannot be read).** Let a reader's observations be any collection of readings, each a ratio of
 two amounts in the scene. Then (a) multiplying every amount by one factor λ > 0 leaves every observation unchanged, so no
@@ -740,17 +828,23 @@ stays above the reader's resolution; past that distance a point is only a ray. O
 step in an agreed unit, writes it all in that unit. Each step adds what the one before could not: the frame from one
 standpoint, the size in H from two, the unit from one amount more.
 
+**Distance cues in the payload.** What arrives can carry cues to distance: an echo's delay, or how faint a thing of a
+known kind looks. Each turns into a distance only with an amount carried in, the signal's speed and a clock, or how
+bright or large such a thing truly is. Scaling the world by k moves the distance so stated, so by the test above it is a
+writing, not a reading. The picture of §1.3, where a colour says nothing of how far off its pane is, is the reading
+alone: an address, and a payload with no amount carried in beside it.
+
 **The best estimate is the median.** If the reader must guess the other's true size, and knows only V₋ ≤ V* ≤ V₊, the
 guess whose worst error in levels is least is √(V₋V₊), the corner of the bounds; holding a distribution, the guess of
 least expected error is its median, the same for every increasing measure of error; knowing nothing either way, it is
 H itself. The mean, best under squared error in amounts, changes with the measure and need not exist.
 
-## 11. What the geometry gives free
+## 12. What the geometry gives free
 
 Once the reader chooses H and draws V = H, some structures follow with no further choice:
 - a zoom, the value of H (§9);
 - a split between near and far, the corner v = h (§3);
-- readings no change of the world's size can move (Theorem 6(a), §10);
+- readings no change of the world's size can move (Theorem 6(a), §11);
 - given that the directions are uniform, addresses for any number of things with no table and no count (§9).
 
 Others need one stated premise more:
@@ -776,13 +870,15 @@ or draw a world arrive at these structures by design, and the geometry lets each
 - **The centre of directions.** Where readings fall as the uniform turn's law, their tangent chart has no mean and the
   median is the law's own centre (Theorem 6); a fit that averages them on that chart has nothing to settle on.
   Measurement errors are another law, which the geometry does not fix.
+- **A dial over a list without end.** The place, the corner and the horizon are the geometry's; the rate and the window
+  are the design's (§10).
 
 This is a claim about where these structures come from, not about how well any system performs: a design that departs
 from the geometry may be right to, for reasons the geometry does not see. What comes free is the readings, not the
-amounts: metres still cost one amount carried in (§10). Whether a given departure is worth its cost is the designer's
+amounts: metres still cost one amount carried in (§11). Whether a given departure is worth its cost is the designer's
 question; the geometry only makes it one that can be asked.
 
-## 12. Assumptions and related work
+## 13. Assumptions and related work
 
 **What depends on what.** The results do not all rest on the same premise.
 
@@ -835,7 +931,13 @@ Multivariate Analysis* 128, 147–153.
 Cacoullos, T. and Papadatos, N. (2013). Self-inverse and exchangeable random variables. *Statistics & Probability
 Letters* 83(1), 9–12.
 
+Furnas, G. W. and Bederson, B. B. (1995). Space-scale diagrams: understanding multiscale interfaces. *Proceedings of
+CHI '95*, 234–241.
+
 Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *Annals of Mathematics* 34(1), 147–169.
+
+Igarashi, T. and Hinckley, K. (2000). Speed-dependent automatic zooming for browsing large documents. *Proceedings
+of UIST 2000*, 139–148.
 
 Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 
@@ -868,5 +970,10 @@ Microsoft. Bing Maps Tile System (documentation).
 
 Schwartz, E. L. (1977). Spatial mapping in the primate sensory projection: analytic structure and relevance to
 perception. *Biological Cybernetics* 25, 181–194.
+
+Thomas, L. H. (1926). The motion of the spinning electron. *Nature* 117, 514.
+
+van Wijk, J. J. and Nuij, W. A. A. (2003). Smooth and efficient zooming and panning. *Proceedings of IEEE InfoVis
+2003*, 15–23.
 
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.

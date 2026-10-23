@@ -3249,6 +3249,19 @@ it adds, and what that costs. Four examples:
 - *The centre of directions.* Where the readings themselves fall as the uniform turn's law, as the addresses of a sweep
   do, their tangent chart has no mean and the median is the law's own centre (Theorem 6); a fit that averages them on
   that chart has nothing to settle on. Measurement errors are another law, which the geometry does not fix.
+- *A dial over a list without end.* The three rulers of §6 can be run as a control. Let a held push add to the
+  hyperbolic angle ζ at a steady rate r, and place the hand at the reading x = sinh ζ = tan θ, drawn at the turn θ = gd ζ.
+  The screen holds the turn, a quarter turn whatever the list's length; the hand is at x after asinh(x)/r, so each
+  doubling far out costs the same ln 2/r of holding, and any place up to N is reached in about ln(2N)/r (a list of 2⁵³,
+  37.4/r). The far end is the horizon, at the edge of the turn and never drawn. Letting go makes the place reached the
+  new zero, and pushes compose by adding in ζ, so no count accumulates in the control. The window, how many places one
+  rung holds, is a zoom, as H is (§8). What the list holds at each place can be made from the place itself, since the
+  addresses do not depend on N. In two dimensions, pushes that are true boosts do not commute: a loop of them brought
+  back to rest leaves the frame turned by the area it enclosed (Thomas 1926), a turn the design must show or cancel;
+  pushes in log-ratios, which add, commute. The design adds the rate and the window; the place, the corner and the horizon are the
+  geometry's. Zooming interfaces arrive at relatives of this: speed coupled to zoom (Igarashi and Hinckley 2000),
+  views as points of position and scale (Furnas and Bederson 1995), and smooth zoom-and-pan paths written in the
+  hyperbolic functions (van Wijk and Nuij 2003).
 
 This is a claim about where these structures come from, not about how well any system performs: a design that departs
 from the geometry may be right to, for reasons the geometry does not see. Two limits apply. What comes free is the
@@ -3370,6 +3383,9 @@ Frank, S. A. (2014). How to read probability distributions as statements about p
 
 Frank, S. A. and Smith, D. E. (2010). Measurement invariance, entropy, and probability. *Entropy* 12(3), 289–303.
 
+Furnas, G. W. and Bederson, B. B. (1995). Space-scale diagrams: understanding multiscale interfaces. *Proceedings of
+CHI '95*, 234–241.
+
 Gauss, C. F. (1828). *Disquisitiones generales circa superficies curvas*. Göttingen.
 
 Gerville-Réache, L. (2016). Mettre de l'eau dans du vin, un paradoxe de l'indifférence ? *Implications
@@ -3396,6 +3412,9 @@ Haldane, J. B. S. (1932). A note on inverse probability. *Proceedings of the Cam
 55–61.
 
 Herschel, J. F. W. (1850). Quetelet on probabilities. *Edinburgh Review* 92, 1–57.
+
+Igarashi, T. and Hinckley, K. (2000). Speed-dependent automatic zooming for browsing large documents. *Proceedings
+of UIST 2000*, 139–148.
 
 ISO 68-1 (1998). *ISO general purpose screw threads — Basic profile — Part 1: Metric screw threads*. International
 Organization for Standardization, Geneva.
@@ -3538,6 +3557,8 @@ problems. *Biometrika* 59(2), 369–375.
 
 Terrell, J. (1959). Invisibility of the Lorentz contraction. *Physical Review* 116(4), 1041–1045.
 
+Thomas, L. H. (1926). The motion of the spinning electron. *Nature* 117, 514.
+
 Tissot, N. A. (1881). *Mémoire sur la représentation des surfaces et les projections des cartes géographiques*.
 Gauthier-Villars, Paris.
 
@@ -3551,5 +3572,8 @@ math/0310006.
 
 Weisskopf, V. and Wigner, E. (1930). Berechnung der natürlichen Linienbreite auf Grund der Diracschen Lichttheorie.
 *Zeitschrift für Physik* 63, 54–73.
+
+van Wijk, J. J. and Nuij, W. A. A. (2003). Smooth and efficient zooming and panning. *Proceedings of IEEE InfoVis
+2003*, 15–23.
 
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.
