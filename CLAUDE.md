@@ -537,6 +537,20 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   k). `?x=&y=&z=&lon=&lat=&roll=&oct=+-+&H=&k=<log10 k>&box=X,Y,Z&n=8|16|32&rays=0&spin=1&view=writer|address|payload`; hook
   `window.__writerBox` (`rotOf`, `anglesOfRot`, `octantRot`, `addresses`, `hitBox`, `read`, `readAt`, `counts`, `horizon`,
   `shellAt`, `camera`, `set` (with `view`), `state`, `hud`, `apexScreen`, `frames`, `webgl`). Not in the flying page.
+- `glass-box.html`: **the stained-glass box** (23 Oct 2026, Tom: "it might be possible to create a 3d cube with a sphere
+  inside, the cube could contain an image of some kind and the images rays pass through the wedge to the reader.", then
+  "make a new demo for this."; SPN R461; OFS §1's window, R460), full screen, three.js like `writer-box.html` (the same
+  pinned CDN version and test route) for the drawing only: the geometry, the pictures and the paint are a plain script.
+  The writer's box (10 × 10 × 10 by default) with a picture on every face, each as seen from inside facing it (stained glass
+  seeded per face, a labelled 4 × 4 grid, or one's own, cropped to fill); the reader inside, a sphere of radius H and its
+  wedge; n × n cells of Lambert's map (16–128), each address painted by the pixel its ray meets, the wedge's patch textured
+  with that paint, a few hundred rays with light travelling in. Two views: the writer (orthographic, the faces turned toward
+  the eye cut away) and the reader from home (the triangle painted). The ghost: the box g times as large about the reader
+  (0.2 to 5), its pictures with it, paints every address alike; the share of addresses whose light started within H shown.
+  Scaling the world changes no colour; moving or turning changes the colours, never the addresses. Inset: Lambert's map
+  painted. `?pic=glass|grid&x=&y=&z=&lon=&lat=&roll=&H=&k=<log10 k>&box=X,Y,Z&n=16|32|64|128&ghost=<g>&view=writer|reader&rays=0&light=0&spin=1`;
+  hook `window.__glassBox` (`read`, `readAt`, `ghost`, `ghostAt`, `changed`, `uvOf`, `pixelAt`, `setPictures`, `painted`,
+  `counts`, `set`, `state`, `camera`, `hud`, `apexScreen`, `frames`, `webgl`). Not in the flying page.
 - `central-reader.html`: **the central reader** (23 Oct 2026, Tom: "create a demo of the central reader so I can understand it
   better."; SPN R451, R452: classical results only), a standalone page, plain canvas, after `two-readers.html`. Since R453
   it opens with the hand (step 1; Tom: "the fingers are pure cauchy geometry, the readers does nothing, it is free. where
@@ -666,7 +680,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -866,6 +880,26 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   addresses, the coloured light the payload, no distance in a colour, walking the way to distance; the rings are gone
   (§1, §2, §3.7, §7.3, §9, §10, notation). "Sweep" stays the geometry's word; the hand is "held" or "moved". The fingers
   are coloured, never colour (painting on is writing). `central-reader.html` step 1 speaks of the window.
+  **The stained-glass box** (23 Oct, SPN R461; Tom: "make a new demo for this."): `glass-box.html`. The reader's sphere is
+  radius H, the unit sphere in H; light from nearer than H paints like light from far past it (H the drawing's unit, not a
+  surface crossed); the picture held is one wedge at a time, given, painted, no depth. Nothing added to OFS.
+  **What is proved and what is read** (23 Oct, SPN R462; ChatGPT review 26, `plans/ofs-review-26.md`, of version 42; Tom:
+  "Proceed with your proposed edits."): the abstract now keeps its interpretations marked: the measure standard, its
+  reading as the addresses ours; V = H "within this construction"; III.20 gives the meeting, the payload there our
+  reading; the 1 returned is H in H. §2 "An address, its reading and its law" (a direction; a coordinate on it; a measure
+  on the readings). The abstract closes on the one-sentence thesis (address scheme and magnitude distinct roles).
+  **A computer-science companion** (23 Oct, SPN R463; Tom: "lets write the same paper but for computer science. That is my
+  background and where the motivating ideas of this paper were discovered."): `papers/observation-from-somewhere-cs.md`,
+  "Addresses Given, Payloads Met … for computer science", drawn from OFS under R421 (nothing OFS does not say; where they
+  differ, OFS stands and the companion is fixed): index and value, a measure not a loop, Theorem 6 as order against sum
+  statistics, the array and the floor, floats as Proposition 4, LOD and H as a zoom, K apart from N, OFS §11.4. A change
+  to OFS that touches these is carried out to it.
+  **What the floor discards** (23 Oct, SPN R464; Tom: "that is mathmatically profound. this paper should give
+  significant space to that why that act is so profound, what it means."): OFS §8 opens a section before "What the height
+  fixes" (from DYH runs 1–2): the floor's remainder is address, not payload; its digits the finer levels, a second
+  coordinate; the cells tile the hyperbolic plane, the Cauchy's parameter space; a tree loses the plane, sideways links keep
+  it; the floor's wall against the reader's soft cut; who sets the depth; what it means. The companion's §7 "What
+  Math.floor throws away" gives it the space (its later sections renumbered 8–12).
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -2431,6 +2465,11 @@ In short:
       centre; the modes of ln r 0.15, 0.08, 0.05 at n = 2, 3, 6, unmoved by k; harmonic measure: arcs (2α − arc)/2π to
       10⁻⁷, the Poisson kernel's mean z, the kernel twice the even turn's landings less the uniform one; ray and radius meet
       on the circle on the chord; arc over chord π/2 at 90°, v/h 1 at 45°; a real drag moves the reader.
+
+  54. **glass-box.html:** v ≤ h, v₂ ≤ h, v₂ ≤ v ½ and the near field within 0.01 of ⅓; a ghost box ¼, ½, 2 and 4 times as
+      large about the reader, its pictures with it, painting all 4,096 addresses alike; the world scaled by 10⁻³, 7 and 10³
+      changing no colour; the reader moved or the wedge turned changing over half the colours and no address; the paint
+      drawn the paint computed; the reader's camera at its standpoint, the writer's orthographic; WebGL drew frames.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

@@ -12,7 +12,9 @@ alone, complete, before anything arrives; the payload is whatever the world puts
 geometry that gives the addresses is usually described as a sweep, a uniform turn through every direction, and the word
 suggests a procedure, carried out step by step. Nothing needs to carry it out. The uniform turn is a measure on
 directions, and a measure is given whole: every standpoint has it before anything arrives, and the reader computes,
-sends and turns through nothing to have it. Our main result is the separation in its sharpest form: the Cauchy
+sends and turns through nothing to have it. The measure itself is standard mathematics; reading it as the reader's
+addresses is this paper's interpretation, and the results below are stated so that each can be checked apart from it.
+Our main result is the separation in its sharpest form: the Cauchy
 distribution is the addresses, not the payload.
 
 What geometry does a reader need when it does not know the complete object? A writer, who states a thing in amounts,
@@ -30,7 +32,7 @@ neither can pass 1, every relation turns over at a single point, v = h, the *cor
 reader must assign the other party a breadth, and its only measure is its own: it draws the mountain at the breadth of
 its thumb, V = H. This is required for the sweep to be a turn. Only then is the sweep from one party to the other the
 turn of one rigid bar, tracing a unit circle with the corner at distance 1 whatever unit was chosen; working back from
-the Cauchy distribution, which is known, arrives at V = H and nowhere else, and so do a lighthouse's flashes on a shore
+the Cauchy distribution, which is known, arrives, within this construction, at V = H and nowhere else, and so do a lighthouse's flashes on a shore
 and Mercator's map. The drawing is not a claim about the mountain. Its true size is a separate number that one
 observation does not give.
 
@@ -40,8 +42,10 @@ geometry has two such sweeps, and neither is a kind of reader. The *inscribed sw
 from the standpoint, each read as a ratio v/h, a quarter turn from all of h to all of v. The *central sweep* is the
 same quarter seen from the centre of the circle the addresses land on, where it is a half turn: it is where the light
 that arrives along each direction paints its address, the *payload*. The two meet at one point for every direction
-(Euclid III.20). A writer holds a line of true breadth 1 as 1; the central sweep measures it as π/2, the inscribed
-sweep as 2/π, and their product, not their difference, gives the 1 back.
+(Euclid III.20); that theorem gives the meeting, and reading the point as where the payload lands is this paper's
+interpretation of it. A writer holds a line of true breadth 1 as 1; the central sweep measures it as π/2, the inscribed
+sweep as 2/π, and their product, not their difference, gives the 1 back. That 1 is the line drawn at the reader's own breadth, H
+measured in H, not the true breadth of anything read.
 
 Stated exactly: given uniformly by turn from where the reader stands, the readings follow the Cauchy, and that law is the uniform turn's own, whatever is painted on it: whatever
 arrives along a direction cancels from its reading. Its median exists and sits at the corner, because a median depends
@@ -53,6 +57,9 @@ the Cauchy's exact shape. Inside the corner the reader's addresses are proportio
 measurement but the value it starts from: every value gives the same geometry, and its size sets only the zoom. The
 geometry needs that value and a shape, and the shape is set by how many unit relations the system includes: two give
 the circle, three the sphere.
+
+In one sentence: the address scheme and the magnitude met at an address are distinct mathematical roles, and a geometry
+can specify the former without determining the latter.
 
 ## 1. Introduction
 
@@ -92,6 +99,9 @@ the pictures are processes. The mathematics under the pictures is not. The unifo
 one every turn leaves unchanged, and a measure is given whole, all of its directions at once: the share of the quarter
 turn below a direction is a fact about that direction, not the count of a procedure that has reached it. So the sweep
 is given to every standpoint for free, complete before anything arrives, and the reader runs no algorithm to have it.
+The measure is standard and needs no reader; that it is a reader's own addresses is the reading this paper proposes. A
+real reader may count against something else, a clock, a flat screen or what arrives (§2), and
+each such count is another weight, with the consequences set out in §11.2.
 What arrives then paints the addresses that are already there.
 
 **The separation, in brief.** An address is a point, a direction from the standpoint; a payload is what is found at that
@@ -202,7 +212,9 @@ often from treating the writer's vantage as if a single observation held it. Sec
 - Inside the corner the addresses are proportional; past it, if no scale is preferred, only a logarithmic layout is
   consistent. The reader has two address spaces joined at one corner (§6).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
-  A larger H gives the near less detail and reaches the far; the best H is the corner of what is read. An H of 0 or
+  A larger H gives the near less detail and reaches the far; the best H is the corner of what is read. The fraction an
+  array's floor discards is the address's second coordinate, its depth: the dyadic cells tile the hyperbolic plane, the
+  space of the Cauchy's own parameters, every level alike and every cell of one room (§8). An H of 0 or
   of ∞ leaves one of the rulers that favour no amount, and no corner (§9).
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
   outside fixes the scale, and a fact shared between two readers supplies exactly one ratio. The best estimate of the
@@ -350,6 +362,14 @@ from readings to positions, as Luce's ruler is (Luce 1959). The sweep's progress
 zero to a direction; written as a formula, g = (2/π)·arctan(v/h), the distribution function of the uniform turn's
 readings (§7.1). The formula is the writer's account of it; the reader evaluates nothing. The *capped reading*, v/h up to
 the corner and h/v past it, is the reading normalized by the larger unit relation, the ℓ∞ cut.
+
+**An address, its reading and its law.** Three objects share the word *address* in what follows, and they are kept
+apart. The *address* is a direction, [h : v], a point of the closed half-arc of the projective line (§4): a geometric
+object. Its *reading* is a coordinate on that object, the chart s = v/h (or h/v past the corner); the same direction has
+other coordinates, its angle θ or its share g, and none of them is the direction itself. The *law* of the addresses, the
+Cauchy, is a measure on the readings, the image of the uniform turn under the chart. When we say the Cauchy is the
+addresses, we mean that it is the law of these readings, set by the standpoint and the turn, and not a law of anything
+that arrives.
 
 **What we build on: the reader's ignorance as a group.** The method is Jaynes's (1968, 1973). An observer that cannot
 tell two problems apart must treat them alike, and when the problems it cannot tell apart are related by a group of
@@ -994,8 +1014,9 @@ chord, and at each angle it is an address, the reading s = v/h = tan θ, there b
 is the circle's radius: it turns about the middle M of the chord through the central angle, from pointing at B. The
 payload is what is found where that radius ends. The ray at θ and the radius at 2θ end at the same point P of the arc,
 for every θ. That is the inscribed angle theorem (*Elements* III.20): an angle at the circle is half the angle at the
-centre on the same arc, and P is its one shared point. So the address computed by the inscribed sweep points directly
-at the payload reached by the central sweep. It does so in five ways.
+centre on the same arc, and P is its one shared point. The theorem gives the shared point; that the payload is met there is our reading of
+it, and a physical application must justify that reading on its own. Within it, the address computed by the inscribed
+sweep points directly at the payload reached by the central sweep, and it does so in five ways.
 - *Exactly, and once.* Each address meets one point of the arc, and each point of the arc has one address. The map
   keeps the order: the address along the chord, θ = 0, points at B itself, the other party, where the radius starts;
   the corner, θ = 45°, points at the top of the arc, where the radius stands square to the chord; the horizon, θ → 90°,
@@ -1166,7 +1187,9 @@ one. Which breadth it assigns is not free:
   three different laws, and only one of them is the Cauchy with its median at the corner (Proposition 5(d)).
 - *Why c = 1.* With V = H the sweep is one rigid bar turning, it traces the unit circle, and the uniform turn is unique;
   its readings are the Cauchy with nothing more chosen. Working back from the Cauchy, which is known, arrives at V = H
-  and nowhere else (Proposition 5(d)). So V = H is required for a situated geometry built on a turn: it gives the
+  and nowhere else (Proposition 5(d)). Both statements are made within the construction (a relation drawn as two unit
+  relations, the sweep a rigid bar's linear periodic turn); that every reader must use this construction is not claimed
+  (§11.2, "What depends on what"). So V = H is required for a situated geometry built on a turn: it gives the
   reader a circle to turn. Unit relations drawn on equal axes, each running from 0 to 1, are this drawing.
 - *What c = 1 does not do.* It does not say how large the mountain is. The mountain's true breadth, V*, is a separate number,
   unknown within one observation. The reader may estimate it, and the best estimate is the median of what it knows
@@ -2156,27 +2179,96 @@ the span sets the level. How many addresses a thing spans depends on amounts, wh
   distinguishable.
 - Rounding to cells is a device of storage, not of reading.
 
-**What the height fixes, and what it does not.** Give the dyadic cell [kw, (k + 1)w), w = 2^(−j), the point m + iγ of the
-upper half-plane, with m its middle and γ = w/2 its half-width. The fraction the floor discards is this height.
-- Each binary digit is one step down, and every step is alike. The map z ↦ 2z is an isometry of the half-plane carrying
-  each level onto the next, and every cell's tile [kw, (k + 1)w] × [w/2, w] has the same hyperbolic area,
-  ∫∫ dx·dy/y² = 1. The cells are Böröczky's binary tiling (Böröczky 1974).
-- From its point, the Cauchy C(m, γ) puts exactly half its weight in the cell: (1/π)(arctan 1 − arctan(−1)) = ½. So the
-  height fixes an address window, 2γ wide, before anything arrives, and no payload enters it. Only the line changes it.
-  On a closed line of length 1 the window is (2/π)·arctan(tanh πγ), close to 2γ for a low reader and half the line for a
-  high one.
+**What the floor discards.** An array finds a cell by the floor: x = ⌊x⌋ + {x}, a key and a remainder, and it keeps the
+key. The remainder looks like a leftover, the part that did not fit, and it is usually thrown away as such. It is not a
+leftover, and it is not payload. Nothing stored at the cell is lost: the cell keeps its value. What is lost is where in
+the cell the place is, and that is address. Written in binary, the remainder is 0.b₁b₂b₃…, and each digit says which half
+of the cell before it the place lies in: b₁ the half of the cell, b₂ the half of that half, and so on. The digits are the
+finer levels of the address, one level a digit, without end. So the floor does not round one number. It takes an address
+that runs through every level and keeps it at one, discarding all the finer ones in a single step.
+
+*The remainder is a second coordinate.* The levels it holds are not a list kept beside the address; they are the
+address's other dimension. Give the dyadic cell [kw, (k + 1)w), w = 2^(−j), the point z = m + iγ of the upper half-plane,
+with m its middle and γ = w/2 its half-width. A place is then two numbers: where it is along the line, m, and how far down
+it is held, γ. The floor keeps m at one height and forgets that the height was a coordinate at all. The plane the two
+numbers make has a geometry of its own, and it is a familiar one.
+- *Every level is the next.* The map z ↦ 2z is an isometry of the half-plane (its metric is ds² = (dx² + dy²)/y²), and it
+  carries each level of cells onto the next. Each binary digit is one step down, and every step is alike: a step of ln 2
+  in height.
+- *Every cell has the same room.* The tile [kw, (k + 1)w] × [w/2, w] has hyperbolic area ∫∫ dx·dy/y² = w·(2/w − 1/w) = 1,
+  at every level. A cell a million levels down has exactly the room of the first. The tiles are Böröczky's binary tiling
+  (Böröczky 1974).
+- *Distances are fixed by the levels.* With cosh d = 1 + |z₁ − z₂|²/(2γ₁γ₂), a parent and either child are arcosh(3/2)
+  apart, two siblings arcosh 3, and two cells n apart on one level arcosh(1 + 2n²), at every level and every place.
+- *A point of this plane is a Cauchy law.* Each z = m + iγ is the Cauchy C(m, γ), and from its cell's point the Cauchy
+  puts exactly half its weight in the cell: (1/π)(arctan 1 − arctan(−1)) = ½. The cell is its interquartile range. So the
+  plane the floor's remainder lives in is the space of the address law's own parameters, the standpoint's foot and height
+  of §7.2, and a dyadic cell is one Cauchy, read from its own point.
+
+*A tree keeps the levels and loses the plane.* The usual way to keep the finer levels is a tree: a quadtree, an image
+pyramid, mipmaps, each cell joined to its parent and its children. A tree keeps the depth but measures it wrongly. The two
+cells either side of the middle of level j, k = 2^(j−1) − 1 and 2^(j−1), touch, and in the plane they are arcosh 3 apart
+at every level; in the tree their nearest common ancestor is the root, so they are 2j steps apart, 60 at level 30. Add
+the sideways neighbours, each cell joined to the cells beside it on its level, and the graph measures the plane: its step
+count g between any two cells is within a bounded amount of the hyperbolic distance d over ln 2 (for all 523,776 pairs at
+level 10, |d − g·ln 2| ≤ 2.19), the shortest way between two cells is always up, across and down, and d/g tends to ln 2.
+An array indexed by (level, index), with links across as well as up and down, is a discrete copy of the half-plane; a
+tree is not.
+
+*Two ways to lose depth.* Every reader with a finite resolution loses the finer levels; the floor and a reader at a height
+lose them differently.
+- *The floor.* A cell average multiplies a wave e^{ikx} by |sin(kw/2)/(kw/2)|. It keeps every level coarser than the cell
+  whole and none finer: a cut at one level, with zeros and side lobes past it, so finer detail, once each cell is kept
+  as one value, can come back as coarser (aliasing).
+- *A reader at height γ.* The Cauchy from z multiplies the same wave by e^{−kγ}: smooth, never zero, and composing as
+  heights add (from γ₁ then γ₂ is from γ₁ + γ₂). No γ brings the two within 0.22 of each other, so keeping binary digits
+  is not reading from a height. For a step detail, a reader at its own cell's point keeps the shares below, by the level
+  read against its own (negative is coarser):
+
+  | level read, against the reader's own | −7 | −6 | −5 | −4 | −3 | −2 | −1 | 0 | +1 | +2 |
+  |---|---|---|---|---|---|---|---|---|---|---|
+  | share of the step kept | 0.927 | 0.874 | 0.789 | 0.660 | 0.482 | 0.279 | 0.110 | 0.027 | 0.0044 | 0.0006 |
+
+  It keeps half of the step 3.09 levels coarser than its own cell and takes 5.5 levels to go from 90% kept to 10%: one
+  soft cut over the levels, the same at every depth, where the floor at the same level keeps every coarser level whole
+  and none of its own.
+
+*Who sets the depth.* The floor sets one depth for everything, the cell's, chosen by the store before anything is read.
+The geometry sets each thing's level by its span, as above: a thing spanning n addresses is held to about log₂ n levels,
+and a thing between two addresses at the coarser one. So the floor imposes a level of detail; the reader reads one off
+what it meets. Where the floor is taken of an amount, ⌊x/w⌋, the cell width w is an amount too, and scaling the world by
+k moves the key unless w is scaled with it: by the test of §9 the key is then a writing, its grain carried in. A floor
+taken of a share of the turn carries no amount, and scaling moves no key.
+
+*What it means.* Three things follow, each from the pieces above.
+- The address is continuous and hierarchical at once. The levels of detail are not a structure kept beside the address,
+  a pyramid built and stored; they are the address's second coordinate, the height, and they come with it. Pyramids,
+  mipmaps and quadtrees can each be read as a way of keeping some of that coordinate after the floor has dropped it.
+- The hierarchy is not a convenience of storage but a geometry, the hyperbolic plane: every level alike, every cell of
+  one room, distances fixed by the levels. That plane is the one the Cauchy's parameters live in, so the reader's law and
+  the store's hierarchy share it, and differ only as filters on it.
+- The separation of address and payload reaches down into the depth. The floor discards address, not payload; and from a
+  height the window 2γ is the address's, fixed before anything arrives, while what survives inside it is the payload's
+  (below).
+
+Not shown: that the world stores anything this way; that a reader's level of detail is a dyadic depth rather than a
+continuous height; anything about physics. The mathematics is classical (Böröczky, the Poisson kernel, the sinc of a box);
+the reading is ours.
+
+**What the height fixes, and what it does not.** Seen from a cell's point m + iγ:
+- The height fixes an address window, 2γ wide, the cell itself, before anything arrives, and no payload enters it. Only
+  the line changes it. On a closed line of length 1 the window is (2/π)·arctan(tanh πγ), close to 2γ for a low reader and
+  half the line for a high one.
 - What is kept of a payload's variation depends on the payload. For a detail a cell of width w′ wide, the share kept
-  depends only on γ/w′, by the same isometries. So the reader's loss of detail is one soft cut over the levels, the same
-  at every depth. Its form is the detail's: near the reader a step loses (12/π)·u·ln(1/u) at u = γ/w′, a smooth detail
-  an amount in proportion to u, and far off the detail's vanishing moments set how fast it falls.
+  depends only on u = γ/w′, by the isometries above. So the reader's loss of detail is one soft cut over the levels, the
+  same at every depth. Its form is the detail's: near the reader a step loses (12/π)·u·ln(1/u), a smooth detail an amount
+  in proportion to u, and far off the detail's vanishing moments set how fast it falls.
 - Whether two payloads read as two depends on the kernel and on the payloads. Two equal Cauchy profiles of height γ
   show two maxima only when more than 2γ/√3 apart, and two equal Gaussians of width σ only when more than 2σ apart.
   Cusped profiles show two at any separation, and unequal amplitudes raise every threshold.
 
 So the height alone fixes where the reader's window falls, and what survives inside it is the payload's: the division
-of Theorem 6, at the level of detail. Keeping binary digits is not reading from a height. A cell average multiplies
-e^{ikx} by |sin(kw/2)/(kw/2)|, which has zeros, and the Cauchy multiplies it by e^{−kγ}, which has none; no γ brings the
-two within 0.22 of each other.
+of Theorem 6, at the level of detail.
 
 **From far off, a thing is its total at its centroid.** Take payloads w_i at points r_i about a centre, each at
 distance q_i from it, read from a standpoint at distance r with every q_i < r. The reciprocal of the distance to each
