@@ -93,8 +93,8 @@ H1's sd 2.31 and excess kurtosis 74,305 (a loud transient in the window), L1's s
 - **G3 killed.** For r = L1/H1 the median |r| is 0.9315 and the quartiles −0.9302 and +0.9327: a Cauchy shape, centred,
   its quartiles a reciprocal-symmetric pair about the median, but at 0.93 and not 1. The two whitenings are not quite
   the same drawing: each channel was divided by its own spectrum's estimate, and H1's estimate carries the transient, so
-  H1's core is drawn about 7% larger than L1's. That is V = cH with c ≈ 0.93, and Proposition 5(d)'s median at 1/c… at c
-  for this ratio: the corner moves with the drawing, as the proposition says. My prediction assumed the whitening drew
+  H1's core is drawn about 7% larger than L1's. That is a drawing at c ≈ 0.93 for this ratio's two parties, and the median sits at c: the corner
+  moves with the drawing, as Proposition 5(d) says. My prediction assumed the whitening drew
   them at one length.
 - **G4 not killed.** The angle atan2(L1, H1) is 0.0087 in Kolmogorov distance from the uniform.
 - **G5 not killed.** The IQR of block means of r stays 1.86 from N = 1 to 1,024 (1.863, 1.861, … 1.777): slope −0.006.
