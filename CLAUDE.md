@@ -849,6 +849,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   parallax" (the head and the camera out), §10 step 3 as geometry; "Order needs the readings together" (the one-slot
   reference out); writers within writers and "within one box" now §11.2 question 8, "Systems within systems: a
   speculation" (the old question 8, holding, moot). The demos that name two readers wait for a later pass.
+  **The separation of address and payload, given not performed** (23 Oct, SPN R458; Tom: "the paper should focus on the
+  seperation of the payload and the address … geometry is actually pre-computed, not algorothimic … geometry provides it
+  for free."; "yes, proceed"): OFS's subtitle "Addresses given, payloads met"; the abstract, §1 ("The addresses are given,
+  not performed", "The separation, in brief") and the Results lead with it; §2 "Given, not performed" (the uniform turn a
+  measure, given whole; "steps", "swept", "counted" said of the measure, never an act; no algorithm); §7.1 "The circle,
+  uniform by turn"; Theorem 6 "the separation of address and payload". Say "given", not "precomputed"; OFS still does not
+  characterize classical mathematics (the pictures read as a process, the measure does not).
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

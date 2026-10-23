@@ -1,10 +1,19 @@
 # Observation from Somewhere
 
-**Addresses, payloads and the geometry of a situated reader**
+**Addresses given, payloads met: the geometry of a situated reader**
 
 *Tom Brinkman, with Claude. Draft for external review, 23 October 2026.*
 
 ## Abstract
+
+A reader that stands somewhere holds two different things: where a reading can be put, its *address*, and what is met
+there, its *payload*. This paper is about keeping them apart. The addresses are given by the geometry of the standpoint
+alone, complete, before anything arrives; the payload is whatever the world puts on them, and it moves no address. The
+geometry that gives the addresses is usually described as a sweep, a uniform turn through every direction, and the word
+suggests a procedure, carried out step by step. Nothing needs to carry it out. The uniform turn is a measure on
+directions, and a measure is given whole: every standpoint has it before anything arrives, and the reader computes,
+sends and turns through nothing to have it. Our main result is the separation in its sharpest form: the Cauchy
+distribution is the addresses, not the payload.
 
 What geometry does a reader need when it does not know the complete object? A writer, who states a thing in amounts,
 needs its true breadth, and gets it by walking the whole object or by carrying in an amount measured beforehand. A
@@ -26,7 +35,7 @@ and Mercator's map. The drawing is not a claim about the mountain. Its true size
 observation does not give.
 
 The sweep is not something the reader does. It is what the geometry gives a standpoint for free: wherever the reader
-looks, its directions are laid out, uniformly by turn, before anything arrives, and nothing moves to lay them. The
+looks, its directions are there, uniform by turn, before anything arrives, and nothing moves to lay them. The
 geometry has two such sweeps, and neither is a kind of reader. The *inscribed sweep* lays the addresses: the directions
 from the standpoint, each read as a ratio v/h, a quarter turn from all of h to all of v. The *central sweep* is the
 same quarter seen from the centre of the circle the addresses land on, where it is a half turn: it is where the light
@@ -34,8 +43,7 @@ that arrives along each direction paints its address, the *payload*. The two mee
 (Euclid III.20). A writer holds a line of true breadth 1 as 1; the central sweep measures it as π/2, the inscribed
 sweep as 2/π, and their product, not their difference, gives the 1 back.
 
-Our main result is that the Cauchy distribution is the addresses, not the payload. Laid uniformly from where the reader
-stands, the readings follow the Cauchy, and that law is the uniform turn's own, whatever is painted on it: whatever
+Stated exactly: given uniformly by turn from where the reader stands, the readings follow the Cauchy, and that law is the uniform turn's own, whatever is painted on it: whatever
 arrives along a direction cancels from its reading. Its median exists and sits at the corner, because a median depends
 only on order, which belongs to the addresses; its mean does not exist, which is no loss, since a mean is a sum of
 sizes, a question about the payload. Three results are kept apart: any sweep that treats the two parties alike puts its
@@ -59,8 +67,8 @@ This paper asks what geometry such a reader needs when it does not know the comp
 > A situated observer does not possess a coordinate system for the world; it constructs an addressing scheme from
 > relations available at its standpoint, and uses those addresses to encounter the world's magnitudes.
 
-Put another way, geometry is not shapes. It is the sweep of addresses that point to a magnitude, and it says nothing
-about what the magnitudes are. The magnitudes are not irrelevant: they make the back sides and everything hidden. But
+Put another way, geometry is not shapes. It is the addresses, given whole, that point to a magnitude, and it says
+nothing about what the magnitudes are. The magnitudes are not irrelevant: they make the back sides and everything hidden. But
 they are met at the addresses, not built into them. The geometry that follows is therefore not a new geometry of the
 world. It is a geometry of the reader's own *addresses*: the places where readings can be put, which exist before
 anything is read and do not depend on what is found there.
@@ -75,7 +83,25 @@ arrives. Three things then have to be kept apart:
 
 A change of coordinates moves addresses and payloads together. The separation here lets either change without the other.
 Changing what arrives leaves every address in place (Theorem 6), and changing the standpoint changes the addresses
-without touching the object. The contribution is a construction of a bounded observer's representation that does not
+without touching the object. That separation is the subject of this paper; the rest is what it takes to state it
+exactly.
+
+**The addresses are given, not performed.** Nothing the reader does produces them. Classical results describe them
+as a sweep: a ray turned uniformly through a quadrant, a lamp turning on a shore, a needle dropped at random angles, and
+the pictures are processes. The mathematics under the pictures is not. The uniform turn is a measure on directions, the
+one every turn leaves unchanged, and a measure is given whole, all of its directions at once: the share of the quarter
+turn below a direction is a fact about that direction, not the count of a procedure that has reached it. So the sweep
+is given to every standpoint for free, complete before anything arrives, and the reader runs no algorithm to have it.
+What arrives then paints the addresses that are already there.
+
+**The separation, in brief.** An address is a point, a direction from the standpoint; a payload is what is found at that
+point, an amount. The law of the addresses, the Cauchy, is fixed by the standpoint and the turn alone, and any payload
+can be swapped for any other at any address without moving one address (Theorem 6(a)). So a Cauchy variable is a
+direction, read by its order, and never an amount; where one appears beside an amount, as a spectral line's profile
+beside its strength, the two are separate factors, and the test is to find the turn and find the amount. Every operation
+on directions (a new zero, the reciprocal, a zoom, a relay through a standpoint between) keeps the law a Cauchy, moving
+only where the standpoint is; only an amount entering breaks it, and then from its centre outward, the tails last
+(§7.2). The contribution is a construction of a bounded observer's representation that does not
 presuppose the whole, together with an exact account of what that construction can recover and what it cannot. The
 writer's geometry, with the whole already in hand, is not in question here; this paper concerns what a reader needs
 without it.
@@ -91,7 +117,7 @@ Cauchy, the corner, and the drawing at the reader's own breadth; carried to amou
 motivates the logarithm past the corner (§2). What is ours is the choice of group, the near field, and the reading of
 the measure as the reader's addresses rather than its belief.
 
-**A picture.** Hold your hand out, palm down, and spread the fingers between flat and upright. Each finger is a
+**A picture.** Hold your hand out, palm down, with the fingers spread between flat and upright. Each finger is a
 direction in which you can look, an address. The fingers are there before anything is seen, and they are the same
 wherever you point the hand: nothing has to move to lay them, and nothing has to be worked out. Now let light fall on
 them from the world, a ring on each finger. The rings are what arrives along each direction, the *payload*. Swapping the
@@ -114,8 +140,8 @@ one way, and holds the directions from there. The corner, where a lay turns from
 it sits where the reader's own unit falls.
 
 The reader's geometry has two sweeps, and neither is something the reader does or a kind of reader it could be. Both are
-what the geometry gives a standpoint for free. The *inscribed sweep* lays the addresses: the directions from the
-standpoint, a quarter turn from all of h to all of v, each a ratio, laid uniformly by turn. The *central sweep* is
+what the geometry gives a standpoint for free. The *inscribed sweep* is the addresses: the directions from the
+standpoint, a quarter turn from all of h to all of v, each a ratio, uniform by turn. The *central sweep* is
 where those addresses land: on the circle drawn on the chord between the two parties, each direction from the
 standpoint meets one point, which the circle's centre sees at twice the angle (Euclid III.20). There what arrives along
 the direction, the payload, paints the address. A direction and its paint are one read, broken down two ways.
@@ -136,6 +162,14 @@ ratios the reader lacks. Many apparent paradoxes come from reading one vantage's
 often from treating the writer's vantage as if a single observation held it. Section 3 sets out the reader in full.
 
 **Results.**
+- **Main result: the separation.** The addresses are given by the geometry before anything arrives, and no payload moves them. Given uniformly from home, the addresses are the Cauchy distribution. The Cauchy is the law of the
+  uniform turn itself, whatever turns and whether it receives or sends: the addresses, not the payload. Whatever is
+  met in each direction cancels from the reading. Order survives every change of payload and sums do not, which is why
+  the Cauchy has a median, at the corner, and no mean (§7). The median at the corner needs only that the sweep treat the
+  two parties alike, and the missing mean only that, besides, its density of h stay above zero near the horizon; the
+  circle and the uniform turn give the Cauchy's exact shape (§7.2). As a rule: a Cauchy variable is a direction, read by
+  its order, never an amount, and where one appears beside an amount, as a spectral line's profile beside its strength,
+  the two are separate factors (§7.2).
 - A situated reader's ignorance, as we choose it, is a group: turns of its bar, rescalings of the other party's size,
   and the exchange of the two unit relations. The measure the first two leave unchanged, uniform in attitude and uniform
   in levels of size, is analogous to Jaynes's location and scale with the location on a circle. Given that the sweep is
@@ -165,14 +199,6 @@ often from treating the writer's vantage as if a single observation held it. Sec
   work; no party's true size enters it.
 - Inside the corner the addresses are proportional; past it, if no scale is preferred, only a logarithmic layout is
   consistent. The reader has two address spaces joined at one corner (§6).
-- **Main result.** Laid uniformly from home, the addresses are the Cauchy distribution. The Cauchy is the law of the
-  uniform turn itself, whatever turns and whether it receives or sends: the addresses, not the payload. Whatever is
-  met in each direction cancels from the reading. Order survives every change of payload and sums do not, which is why
-  the Cauchy has a median, at the corner, and no mean (§7). The median at the corner needs only that the sweep treat the
-  two parties alike, and the missing mean only that, besides, its density of h stay above zero near the horizon; the
-  circle and the uniform turn give the Cauchy's exact shape (§7.2). As a rule: a Cauchy variable is a direction, read by
-  its order, never an amount, and where one appears beside an amount, as a spectral line's profile beside its strength,
-  the two are separate factors (§7.2).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
   A larger H gives the near less detail and reaches the far; the best H is the corner of what is read. An H of 0 or
   of ∞ leaves one of the rulers that favour no amount, and no corner (§9).
@@ -221,11 +247,19 @@ reaches 1, at v = h. After that the relation can continue only by h falling agai
 the first half and h/v on the second, each in [0, 1]. Exchanging the two parties, the *reciprocal*, sends v/h to h/v.
 The limit v/h → ∞, where h empties, is the *horizon*; it is never reached.
 
-The sweep is a name for what the geometry does, not for anything the reader does. Every relation from all of h to all
-of v is there at once, from the standpoint alone, before anything arrives; nothing moves to lay them, no beam goes out
-and no head need turn. To speak of the sweep as uniform is to speak of the measure the turn puts on these directions,
-which every standpoint has for free. A turning head and a turning lamp are pictures of it, and a lamp does turn; but
-the geometry is the same whether anything turns or not.
+**Given, not performed.** The sweep is a name for what the geometry gives, not for anything done. Every relation from
+all of h to all of v is there at once, from the standpoint alone, before anything arrives; nothing moves to lay them,
+no beam goes out and no head need turn. "Uniform" names the measure on these directions that every turn leaves
+unchanged, and a measure is given whole. The share of the quarter turn below a direction, (2/π)·arctan(v/h), is a fact
+about that direction, not the count of a process that has reached it. The classical results used here are of the same
+kind: ∫₀^{π/2} dθ = π/2 and ∫₀^{π/2} cos θ dθ = 1 are sums over a set of directions taken together, Buffon's 2/π is a
+measure on a needle's angles, and the invariant measure on turns is fixed before any turn is made. Their pictures are
+processes (a lamp turning, a needle dropped again and again, a ray stepped across a quadrant), and the word "sweep"
+carries the picture with it; the mathematics does not need it. So throughout, "in equal steps of turn", "swept
+uniformly", "counted" and "from zero to the horizon" are said of the measure and of the order it puts on the
+directions, never of an act, and nothing in this paper is an algorithm a reader runs. A lamp does turn, and its flashes
+are made in time; the law they leave on a shore is the same measure, which the lamp's turning realizes and does not
+create.
 
 **The wedge, and its drawings.** Every pair of unit relations is a ray from the origin into the quarter-plane between
 the two axes; with a third unit relation v₂, read against the same h, it is a ray into the solid wedge between three
@@ -940,8 +974,8 @@ and the lines through B are paired by a projective correspondence, slope s with 
 itself, so corresponding lines meet along a conic through A and B. It is a circle because the pairing turns each line
 through a right angle, and that needs h and v drawn at one length: drawn with v at c times h, the same readings cross on
 the ellipse x² − x + y²/c² = 0. Paired at equal angles instead of by the reciprocal, the rays meet on the perpendicular
-bisector, a line. Sweeping A's ray in equal steps moves P in equal steps along the arc, so the uniform sweep of one ray
-is the uniform turn of §7, and its readings are the Cauchy's. Over two amounts x₁ and x₂ laid end to end, the crossing
+bisector, a line. Equal angles of A's ray give equal arcs of P, so the uniform measure on one ray's directions is the
+uniform turn of §7, and its readings are the Cauchy's. Over two amounts x₁ and x₂ laid end to end, the crossing
 above the join stands at √(x₁x₂), Euclid's mean proportional (*Elements* VI.13), which is the H that sets the two
 furthest apart (§8). The chord comes first; the arc is where the two parties' rays cross. With three parties at the
 corners of the triangle h + v + v₂ = 1, rays meeting with every pair square meet only at the cube's corner, the reader's
@@ -949,7 +983,7 @@ home, and its mirror across the triangle: the arc of two parties becomes, for th
 
 **The address points at the payload.** The two sweeps of §3.1 meet on this arc, one point at a time. The inscribed
 sweep is A's ray: from home, a point of the Thales circle, it turns through the inscribed angle θ from along the
-chord, and at each step it is an address, the reading s = v/h = tan θ, laid before anything arrives. The central sweep
+chord, and at each angle it is an address, the reading s = v/h = tan θ, there before anything arrives. The central sweep
 is the circle's radius: it turns about the middle M of the chord through the central angle, from pointing at B. The
 payload is what is found where that radius ends. The ray at θ and the radius at 2θ end at the same point P of the arc,
 for every θ. That is the inscribed angle theorem (*Elements* III.20): an angle at the circle is half the angle at the
@@ -1379,11 +1413,12 @@ sources' spread, it is the world's.
 
 ## 7. The Cauchy distribution is the address, not the payload
 
-### 7.1 Sweeping the circle uniformly
+### 7.1 The circle, uniform by turn
 
-With V = H the relation is a bar of length 1 about home. Its directions from flat (all h) to upright (all v), counted
-in equal steps of turn, are the inscribed sweep, and each step is one reading, v/h. The steps are a count, not a motion:
-the directions are there together, and nothing turns through them (§2, §3.5).
+With V = H the relation is a bar of length 1 about home. Its directions from flat (all h) to upright (all v), under
+the uniform measure on turn, are the inscribed sweep, and each direction is one reading, v/h. The "steps" below are
+pieces of that measure, not a motion: the directions are there together, and nothing turns through them (§2, "Given,
+not performed").
 
 **Proposition 5.** (a) Equal steps of turn give unequal readings. Near zero a step barely changes v/h; the corner is
 halfway through the turn; near upright each step changes v/h by more and more, without bound.
@@ -1392,7 +1427,7 @@ halfway through the turn; near upright each step changes v/h by more and more, w
 median is the corner, and the reciprocal leaves it unchanged. Over both quadrants, with v/h signed, it is the standard
 Cauchy 1/(π(1 + (v/h)²)), with its median at zero and its quartiles at the corners ±1.
 
-(c) Placing each reading at its step of turn, rather than at its value, gives the *fisheye*: true scale near home,
+(c) Placing each reading at its angle of turn, rather than at its value, gives the *fisheye*: true scale near home,
 compressed gently toward the corner and increasingly past it, with the horizon at the edge of the turn, never reached.
 
 (d) *Conversely, the Cauchy requires V = H.* Let the reader draw all of v at c times the length of all of h, V = cH, and
@@ -1726,13 +1761,13 @@ Call a statistic of a set of readings an *address statistic* if it depends only 
 the quartiles, which side of the corner each lies on), and a *payload statistic* if it depends on their sizes (the mean,
 any sum).
 
-**Theorem 6.** Parts (a) and (d) concern the readings of Proposition 5: the other party drawn at V = H and the circle
+**Theorem 6 (the separation of address and payload).** Parts (a) and (d) concern the readings of Proposition 5: the other party drawn at V = H and the circle
 swept uniformly by direction. Parts (b) and (c) hold for any finite set of readings. Part (e) drops both the circle and
 the uniform turn. The readings are the addresses: directions, ratios with no amount in them, so what (a) and (d) find
 is a property of the uniform turn that lays them, and what (e) finds a property of any reciprocal-symmetric sweep, and
 neither is a property of what is read; the amounts that arrive along them, the payload, are what (c) concerns.
 
-(a) *Nothing that arrives changes the Cauchy.* Suppose that whatever arrives in the direction of each step lies at some
+(a) *Nothing that arrives changes the Cauchy.* Suppose that whatever arrives along each direction lies at some
 reach ℓ > 0, an amount that may differ from direction to direction and is unknown to the reader. In the reader's unit
 its components are ℓ·h and ℓ·v, and the reading is (ℓ·v)/(ℓ·h) = v/h. The readings of Proposition 5, their Cauchy count
 and the fisheye are therefore the same whatever arrives, and are fixed before anything does: the law of the addresses is
@@ -1770,13 +1805,14 @@ v/h to h/v and leaves path and weight unchanged, so v/h and 1/(v/h) have one law
 not only with some probability. Then P(v/h > r) ≥ P(h < v₀/r) ≥ f₀·v₀/r once v₀/r < δ, where f₀ > 0 bounds the density
 of h below δ from below; then ∫ P(v/h > r) dr diverges, and so does the mean. ∎
 
-The theorem is elementary; its content is the reading. The Cauchy distribution is not a law of anything the reader
-meets. It is the reader's own layout of directions, counted. What arrives in each direction cancels from every single
+The theorem is elementary; its content is the reading. The addresses are given before anything arrives, and nothing that
+arrives moves them: (a) for every single reading, (b) for every statistic of their order, and (c) says why no statistic
+of size can be read from them. The Cauchy distribution is not a law of anything the reader meets. It is the reader's own layout of directions, counted. What arrives in each direction cancels from every single
 reading, not merely on average, so the readings tell rays apart, not points. The Cauchy is where the reader can put what
 arrives, never what arrives.
 
 **What the result establishes, and what it does not.** The argument has three steps.
-1. The sweep is defined without any reference to what arrives: equal steps of turn, from home.
+1. The addresses are given without any reference to what arrives: the uniform measure on directions from home.
 2. Changing what arrives, while keeping the sweep, leaves the readings and their distribution exactly as they were
    (Theorem 6(a)).
 3. So the Cauchy is a property of the sweep, the uniform turn itself, and finding it is no
@@ -1966,7 +2002,7 @@ Cauchy when counted and the fisheye when drawn. Home, the corner and the horizon
 from somewhere. Situated geometry is the arc, read as the Cauchy; unsituated geometry is the chord, with the circle
 drawn on it whole. The chord needs no turn, and the circle is what a turn traces.
 
-Proposition 5 assumes the turn is stepped uniformly, which is a choice of weight on the sweep. It is not a weight chosen
+Proposition 5 assumes the measure on the turn is uniform, which is a choice of weight on the sweep. It is not a weight chosen
 to produce the Cauchy: stepping the turn uniformly is what makes the circle uniform in the first place, so one
 assumption, uniformity, lies behind both. The two are still distinct: the circle's symmetry under turns is one thing,
 and counting a standpoint's directions in equal turns is another. Other weights symmetric under the reciprocal exist, such as
@@ -2027,7 +2063,7 @@ follow every increasing map; those facts underlie parts (b) and (d). The other p
   exchangeable (Cacoullos and Papadatos 2013).
 - *The textbook case* is the lighthouse (Gull 1988; Sivia and Skilling 2006): flashes sent at uniformly spread angles
   land along the shore as a Cauchy, and the lamp's position is found from the median or the likelihood, never the mean.
-  There the lamp is the one sweeping, and the shore records its addresses laid on a line; our claim is that this law
+  There the lamp turns, in time, and the shore records its addresses laid on a line; our claim is that this law
   belongs to the uniform turn, the lamp's or a standpoint's, and not to what the turn meets. That half the landings fall within
   the lamp's distance of its foot only when shore and sea are drawn at one length is Proposition 5(f), which is
   elementary.
