@@ -30,7 +30,9 @@ register and a far register at one point, v = h, which needs no division to find
 that point and, if no scale is preferred, logarithmic past it, the layout floating-point numbers already use; a fixed
 count of addresses, K, that covers a world of any size N with no table built for N; and H as a zoom, which decides
 where the finest of the K addresses fall and changes no reading. The uniform turn is a measure, not a procedure: no
-loop runs to produce the addresses. The measure is standard mathematics; reading it as a reader's addresses is the
+loop runs to produce the addresses. And the fraction that `Math.floor` throws away turns out to be address, not data: its digits are
+the finer levels, a second coordinate of the address, and the cells they pick out tile the hyperbolic plane in which the
+Cauchy's own parameters live. The measure is standard mathematics; reading it as a reader's addresses is the
 paper's interpretation, and every result is stated so that it can be checked apart from that reading.
 
 In one sentence: the address scheme and the magnitude met at an address are distinct mathematical roles, and a geometry
@@ -70,7 +72,7 @@ advanced to. So throughout, "in equal steps of turn", "swept uniformly" and "cou
 order it puts on directions, never of an act. Nothing in this paper is an algorithm a reader runs.
 
 A real reader may count against something else: a clock, the equal pixels of a flat screen, or whatever happens to
-arrive. Each of those is another weight, with its own consequences (§10, §11).
+arrive. Each of those is another weight, with its own consequences (§11, §12).
 
 ### 1.3 A picture
 
@@ -92,7 +94,7 @@ That coordinates depend on the observer is old. The pieces used here are classic
 as the projection of a uniform angle and its invariance under Möbius maps, Cauchy's functional equation, Jaynes's
 transformation groups. What is new is where the reader's scheme comes from (the relations available at its standpoint,
 before any payload arrives) and the reading of these pieces as one structure, in which the Cauchy is the index and not
-the data. Whether this is a better way to compute anything is a question this paper does not take up; §10 says what it
+the data. Whether this is a better way to compute anything is a question this paper does not take up; §11 says what it
 offers instead, a baseline against which existing designs can be read.
 
 ### 1.5 Results
@@ -109,12 +111,16 @@ offers instead, a baseline against which existing designs can be read.
   spaced quantiles of the Cauchy. The index is the address and the stored values are the payload; the floor function
   is where an array is not a reader (§6).
 - **Two address spaces.** Inside the corner the addresses are proportional; past it, if no scale is preferred, only a
-  logarithmic layout is consistent. Floating-point numbers are an instance (§7).
+  logarithmic layout is consistent. Floating-point numbers are an instance (§8).
+- **What Math.floor throws away.** The fraction the floor drops is not data but address: its binary digits are the
+  finer levels, and they are the address's second coordinate. The dyadic cells tile the hyperbolic plane, the space of
+  the Cauchy's own parameters, every level alike and every cell of one room; a tree keeps the levels but not the plane,
+  and the floor's loss of detail is a wall where a reader's is a soft cut (§7).
 - **A fixed count.** A reader's K addresses cover a world of any size N, with no table and no knowledge of N; H is a
-  zoom that places them and changes no reading (§8).
-- **Amounts.** No reading fixes scale; one amount supplied from outside fixes it everywhere it is linked (§9).
+  zoom that places them and changes no reading (§9).
+- **Amounts.** No reading fixes scale; one amount supplied from outside fixes it everywhere it is linked (§10).
 - **What comes free.** A depth buffer is the in-place lay with H at the near plane; equal pixels on a flat screen
-  over-weight directions off the axis; tables fixed in advance need what the uniform turn does not (§10).
+  over-weight directions off the axis; tables fixed in advance need what the uniform turn does not (§11).
 
 ## 2. The model
 
@@ -257,7 +263,7 @@ So V = H is not a convenience laid over the Cauchy. Within this construction (tw
 periodic turn) it is what the Cauchy requires, and working back from the Cauchy arrives at it and nowhere else. It is a
 rule of representation, not a claim about the world: the reader uses its own breadth as the unit for the other party
 because it is the only measure it has. Where the true V* differs from H, every amount the reader reads is off by V*/H
-(§9). The addresses are exact; the amounts are not.
+(§10). The addresses are exact; the amounts are not.
 
 The parent paper shows the same drawing forced in two familiar pictures: a lighthouse whose flashes land on a straight
 shore, and Mercator's chart, which draws every compass bearing true only because it stretches north–south exactly as
@@ -378,10 +384,9 @@ untouched by anything stored (Theorem 6(a)). The offset from one place to anothe
 slopes: places compose without angles.
 
 **Where the array is not the reader.** An array index is ⌊x⌋. The floor keeps the cell and discards the fractional
-part, which locates the place within the cell. In binary that fraction is a sequence of halvings, each digit one finer
-level below the indexed cell. By indexing alone, an array keeps the levels across its indices but not this hierarchy
-within a cell. A reader has no floor: it uses the continuous address and keeps as much of the finer structure as its
-resolution supports, rather than discarding every finer level at once (§8). One thing an array can do that resembles
+part, which locates the place within the cell; its binary digits are the finer levels of the address. A reader has no
+floor: it uses the continuous address and keeps as much of the finer structure as its resolution supports, rather than
+discarding every finer level at once. What the floor discards, and why it matters, is the subject of §7. One thing an array can do that resembles
 this is band-limited reconstruction, which spreads a value over every sample by weights that sum to one; that assumes a
 model of the signal, and is an analogy, not the same mechanism.
 
@@ -393,7 +398,7 @@ array holds an end, and joined arrays never claim the same element.
 
 **The reader reads the arrays; the writer joins them.** A reading carries no sign, so from a standpoint every facing is
 the same array, and a reader reads within one. To join two arrays their values must meet at the shared end in one unit,
-and that needs each array's size, its extent in amounts, which no reading fixes (§9). The writer knows the sizes, and
+and that needs each array's size, its extent in amounts, which no reading fixes (§10). The writer knows the sizes, and
 which facing each array is, so it can join the four into the closed circle. The reader cannot tell whether two ends
 meet.
 
@@ -410,7 +415,141 @@ beforehand, and it is a written amount carried into every address. A timestamp i
 notation is stable for the same reason. Read against its own contents, a list re-addresses itself as it grows; written
 against an agreed radix, it never does, and the price is the slots held empty.
 
-## 7. Two address spaces
+## 7. What Math.floor throws away
+
+Every programmer has written it:
+
+```
+const i = Math.floor(x / w);   // which cell
+const f = x / w - i;           // where in the cell, in [0, 1)
+```
+
+and then kept `i` and dropped `f`. The cell's value is read from `a[i]`, and `f` is gone. It looks like rounding: a
+small leftover, the part of x that did not fit the grid. This section is about why it is not, and why the act of
+dropping it is one of the most consequential things in the whole construction.
+
+### 7.1 The remainder is address, not data
+
+Start with what is not lost. The value stored in the cell is untouched: `a[i]` is exactly what it was. Nothing of the
+payload goes. What goes is where in the cell the place was, and that is address. So the floor is not a lossy operation
+on data at all. It is a lossy operation on the index.
+
+Write the remainder in binary, f = 0.b₁b₂b₃… Each digit answers one question: b₁ which half of the cell, b₂ which half
+of that half, b₃ which half of that, without end. So the digits of f are the finer levels of the address, one level a
+digit. Appending a digit to the key and dropping it from the remainder is moving one level down:
+`Math.floor(2 * x / w)` is the key one level finer, and its low bit is b₁. Every level of detail is a floor taken at a
+different depth.
+
+So `Math.floor` does not round one number. It takes an address that runs through every level at once and keeps it at
+exactly one, discarding every finer level in a single step. A double holds 53 significant bits; every one of them below
+the cell's own is one of these levels, and the floor keeps none.
+
+### 7.2 The remainder is a second dimension
+
+The levels in the remainder are not a list to be stored beside the index; they are the index's other coordinate. Give
+the cell of level j and index k, [kw, (k + 1)w) with w = 2^(−j), the point
+
+  z = m + iγ,  m = (k + ½)·w its middle,  γ = w/2 its half-width,
+
+in the upper half-plane. A place is then two numbers: where it is along the line, m, and how far down it is held, γ. In
+these terms the floor keeps m at one fixed height and forgets that the height was a coordinate at all. The plane the two
+numbers make has a geometry of its own, and it is a classical one, the hyperbolic plane, with metric
+ds² = (dx² + dy²)/y².
+- **Every level is the next.** z ↦ 2z is an isometry of that plane, and it carries each level of cells onto the next.
+  Each binary digit is one step down, and every step is the same: ln 2 in height. There is no privileged level; level
+  50 is as good a place to stand as level 0.
+- **Every cell has the same room.** The tile [kw, (k + 1)w] × [w/2, w] has hyperbolic area
+  ∫∫ dx·dy/y² = w·(2/w − 1/w) = 1, at every level. A cell fifty levels down, 2⁻⁵⁰ wide on the line, has exactly the room
+  of the first. The tiles are Böröczky's binary tiling (Böröczky 1974).
+- **Distances are fixed by the levels.** With cosh d = 1 + |z₁ − z₂|²/(2γ₁γ₂): a parent and either child are
+  arcosh(3/2) ≈ 0.962 apart, two siblings arcosh 3 ≈ 1.763, two cells n apart on one level arcosh(1 + 2n²), the same at
+  every level and every place.
+- **A point of the plane is a Cauchy law.** Each z = m + iγ is the Cauchy C(m, γ), the law of §5 with its foot and
+  height, and from its cell's point the Cauchy puts exactly half its weight in the cell:
+  (1/π)(arctan 1 − arctan(−1)) = ½. The cell is that law's interquartile range.
+
+So the plane the floor's remainder lives in is the space of the address law's own parameters. A dyadic cell is not just
+like a Cauchy: it is one, read from its own point. The array's grid and the reader's law live in the same plane.
+
+### 7.3 A tree keeps the levels and loses the plane
+
+The usual way to keep the finer levels is a tree: a quadtree, an image pyramid, a mipmap chain, each cell linked to its
+parent and its children. A tree keeps the depth. It measures it wrongly.
+
+Take the two cells either side of the middle of level j, k = 2^(j−1) − 1 and k = 2^(j−1). They touch. In the plane they
+are arcosh 3 apart, at every level. In the tree their nearest common ancestor is the root, so they are 2j steps apart:
+60 at level 30, for two cells side by side. A neighbour search in a quadtree that climbs to the root is meeting this.
+
+Add the sideways links, each cell joined to the cells beside it on its own level, and the graph measures the plane.
+Counting g steps (up, down or across), over all 523,776 pairs of cells at level 10, |d − g·ln 2| never exceeds 2.19; the
+shortest way between two cells is always up, across and down, in closed form min over s of 2s + |⌊k₂/2^s⌋ − ⌊k₁/2^s⌋|;
+and d/g tends to ln 2. An array indexed by (level, index), with links across as well as up and down, is a discrete copy
+of the half-plane. A tree is not.
+
+This is the precise sense of "another dimension". A two-dimensional array `cells[level][index]`, read with its
+neighbours, is not a stack of separate resolutions; it is the address plane itself, sampled.
+
+### 7.4 Two ways to lose depth
+
+Every reader with finite resolution loses the finer levels somewhere. The floor and a reader at a height lose them in
+different ways, and the difference is exact.
+- **The floor.** Averaging over a cell of width w multiplies a wave e^{ikx} by |sin(kw/2)/(kw/2)|. It keeps every level
+  coarser than the cell whole and none finer: a cut at one level, with zeros and side lobes past it, so that finer
+  detail, once each cell is kept as one value, can come back as coarser (aliasing).
+- **A reader at height γ.** The Cauchy from z multiplies the same wave by e^{−kγ}: smooth, never zero, and composing as
+  heights add (reading from γ₁ and then from γ₂ is reading from γ₁ + γ₂, a semigroup).
+
+No γ brings the two within 0.22 of each other, so keeping binary digits is not the same as reading from a height. For a
+step detail (the Haar wavelet), a reader standing at its own cell's point keeps these shares of each level, by the level
+read against its own (negative is coarser):
+
+| level read, against the reader's own | −7 | −6 | −5 | −4 | −3 | −2 | −1 | 0 | +1 | +2 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| reader at a height: share of the step kept | 0.927 | 0.874 | 0.789 | 0.660 | 0.482 | 0.279 | 0.110 | 0.027 | 0.0044 | 0.0006 |
+| the floor at the same level | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 0 | 0 |
+
+The reader keeps half of the step 3.09 levels coarser than its own cell and takes 5.5 levels to go from 90% kept to 10%.
+The share depends only on u = γ/w′, the reader's height in the detail's own width, so it is one soft cut over the
+levels, the same at every depth. The floor's row is a wall.
+
+What the reader keeps also depends on the detail, which is the payload's: near the reader a step loses
+(12/π)·u·ln(1/u) and a smooth detail an amount in proportion to u, and far off the detail's vanishing moments set how
+fast it falls (u⁻³ for one, u⁻⁵ for two). The window itself does not: from height γ the address window is 2γ wide, the
+cell, before anything arrives.
+
+### 7.5 Who sets the depth
+
+The floor sets one depth for everything: the cell's, chosen by the store, before anything is read, the same for a
+mountain and a grain of sand. The geometry sets each thing's level by its span (§9): a thing that spans n addresses is
+held to about log₂ n levels, and a thing between two addresses is held at the coarser one, not rounded to either. So
+the floor imposes a level of detail; the reader reads one off what it meets.
+
+There is a second difference, which the scale-the-world test of §10 finds at once. Where the floor is taken of an
+amount, `Math.floor(x / w)`, the cell width w is an amount too, and multiplying every amount in the world by k moves the
+key unless w is multiplied with it. By the test, the key is then a writing: its grain had to be carried in. A floor
+taken of a share of the turn, `Math.floor(θ / Δθ)` with Δθ a fraction of the quarter turn, carries no amount, and no
+scaling moves its key.
+
+### 7.6 Why this matters
+
+Three things follow, each from the pieces above.
+- **The address is continuous and hierarchical at once.** Level of detail is not a structure kept beside the address,
+  a pyramid built, stored and kept in sync; it is the address's second coordinate, the height, and it comes with the
+  address for free. The engineered hierarchies (pyramids, mipmaps, quadtrees, tile keys that gain a digit a level) can
+  each be read as a way of keeping some of that coordinate after the floor has dropped it.
+- **The hierarchy is a geometry, not a convenience.** It is the hyperbolic plane: every level alike, every cell of one
+  room, distances fixed by the levels. That is why "zoom in one level" is the same operation everywhere, and why a
+  structure that links only up and down gets its distances wrong. And that plane is the one the Cauchy's parameters live
+  in, so the reader's law and the store's hierarchy share a plane and differ only as filters on it.
+- **The separation of address and payload reaches into the depth.** The floor discards address, never payload. From a
+  height, the window 2γ is the address's, fixed before anything arrives; what survives inside it, and whether two things
+  in it read as two, is the payload's. The split of §5 holds at every level.
+
+**What is not shown.** That the world stores anything this way; that a reader's level of detail is a dyadic depth rather
+than a continuous height; anything about physics. The mathematics is classical (Böröczky's tiling, the Poisson kernel,
+the sinc of a box); the reading is the paper's.
+
+## 8. Two address spaces
 
 Inside the corner the reader holds its unit and can lay readings in proportion. Past it the reciprocal makes the
 reading h/v ∈ [0, 1], but does not say how it should be laid out. Let a lay place a far reading x = v/h ≥ 1 at
@@ -484,7 +623,7 @@ proportion inside the corner and about ln 2 a doubling past it: the logarithmic 
 because only its range is fixed by the geometry. A measure uniform in x or in ζ needs a range given beforehand, an
 amount, and that range decides where the middle falls.
 
-## 8. Level of detail, and H as a zoom
+## 9. Level of detail, and H as a zoom
 
 **The count is the level of detail.** The forms of the two address spaces are fixed; their counts are not. Laying the
 near field in proportion means dividing H into some number of parts, and the geometry neither knows nor uses that
@@ -498,18 +637,12 @@ finest detail held has faded. Seen from height γ, a pattern's mode of frequency
 kernel), each mode fading, faster the finer it is, none cut off. Rounding to cells is a device of storage, not of
 reading.
 
-**The floor's fraction is a height.** Give the dyadic cell [kw, (k + 1)w), w = 2^(−j), the point m + iγ of the upper
-half-plane, m its middle and γ = w/2 its half-width. The fraction the floor discards is this height.
-- Each binary digit is one step down, every step alike: z ↦ 2z carries each level onto the next, and every cell's tile
-  has hyperbolic area 1. The cells are Böröczky's binary tiling.
-- From its point the Cauchy C(m, γ) puts exactly half its weight in the cell. So the height fixes an address window, 2γ
-  wide, before anything arrives, and no payload enters it.
-- What survives inside the window is the payload's: the share of a detail kept depends only on γ over the detail's
-  width, so the loss of detail is one soft cut over the levels, the same at every depth; whether two payloads read as
-  two depends on the kernel and on the payloads (two equal Cauchy profiles of height γ part only when more than 2γ/√3
-  apart, two equal Gaussians of width σ only when more than 2σ).
-- A cell average multiplies e^{ikx} by |sin(kw/2)/(kw/2)|, which has zeros, and the Cauchy multiplies it by e^{−kγ},
-  which has none; no γ brings the two within 0.22 of each other. Keeping binary digits is not reading from a height.
+**What the height fixes.** From a cell's point m + iγ (§7.2) the height fixes an address window, 2γ wide, before
+anything arrives, and no payload enters it; only the line changes it (on a closed line of length 1 the window is
+(2/π)·arctan(tanh πγ)). What survives inside the window is the payload's: how much of a detail is kept (§7.4), and
+whether two payloads read as two, which depends on the kernel and the payloads (two equal Cauchy profiles of height γ
+part only when more than 2γ/√3 apart, two equal Gaussians of width σ only when more than 2σ; cusped profiles part at
+any separation).
 
 **H is a zoom, not an escape.** H is the value the reader chooses to start from, and nothing in the geometry fixes it.
 Any H gives the same circle and corner, so a reader could choose a very large H and hold everything in the near field,
@@ -548,7 +681,7 @@ interacts with N, since its number line needs a mark for every thing it places.
 
 **One K in direction and in distance.** In direction, the K addresses are the turn's equal angles, split K/2 and K/2 at
 the corner, and the value of H appears in none of them. In distance the same K quantiles fall at H·tan(kπ/2K), and
-there H is the zoom (distance itself has to be had from a second standpoint or an amount carried in, §9). On the
+there H is the zoom (distance itself has to be had from a second standpoint or an amount carried in, §10). On the
 in-place lay the far boundaries are the near ones reflected about H, so the K addresses fill a ruler 2H long. A
 direction's K addresses and a distance's K together make a polar grid of K × K cells; every thing falls in exactly one,
 whatever N.
@@ -579,7 +712,7 @@ more power of the reading. On the sphere r = q every term is the same size and n
 pair (q, r); inversion in that sphere exchanges the outer and inner series term by term. This is level of detail by
 distance, with the corner as its seam.
 
-## 9. What the geometry does not give: amounts
+## 10. What the geometry does not give: amounts
 
 **Proposition 8 (scale cannot be read).** Let a reader's observations be any collection of readings, each a ratio of
 two amounts in the scene. Then (a) multiplying every amount by one factor λ > 0 leaves every observation unchanged, so no
@@ -612,17 +745,17 @@ guess whose worst error in levels is least is √(V₋V₊), the corner of the b
 least expected error is its median, the same for every increasing measure of error; knowing nothing either way, it is
 H itself. The mean, best under squared error in amounts, changes with the measure and need not exist.
 
-## 10. What the geometry gives free
+## 11. What the geometry gives free
 
 Once the reader chooses H and draws V = H, some structures follow with no further choice:
-- a zoom, the value of H (§8);
+- a zoom, the value of H (§9);
 - a split between near and far, the corner v = h (§3);
-- readings no change of the world's size can move (Theorem 6(a), §9);
-- given that the directions are uniform, addresses for any number of things with no table and no count (§8).
+- readings no change of the world's size can move (Theorem 6(a), §10);
+- given that the directions are uniform, addresses for any number of things with no table and no count (§9).
 
 Others need one stated premise more:
-- precision far off, the lay past the corner, 1 + ln s or 2 − 1/s, given (S) (§7);
-- a level of detail, given a fixed count K of addresses, which H then divides between the near field and the far (§8).
+- precision far off, the lay past the corner, 1 + ln s or 2 − 1/s, given (S) (§8);
+- a level of detail, given a fixed count K of addresses, which H then divides between the near field and the far (§9).
 
 What hides what is not among them; it is the payload's, set by which surfaces are opaque. Some systems built to read
 or draw a world arrive at these structures by design, and the geometry lets each design be read against them.
@@ -638,7 +771,7 @@ or draw a world arrive at these structures by design, and the geometry lets each
   line of a screen of finite edge they put the median at half the edge instead of at the corner. The weighting is the
   design's, added to the geometry.
 - **Tables fixed in advance.** A sampling table or grid of cells fixed in advance must know the extent it covers and the
-  resolution it needs, and is rebuilt when either changes. The uniform turn's addresses need neither (§8); what needs
+  resolution it needs, and is rebuilt when either changes. The uniform turn's addresses need neither (§9); what needs
   them is the payload or the writer.
 - **The centre of directions.** Where readings fall as the uniform turn's law, their tangent chart has no mean and the
   median is the law's own centre (Theorem 6); a fit that averages them on that chart has nothing to settle on.
@@ -646,10 +779,10 @@ or draw a world arrive at these structures by design, and the geometry lets each
 
 This is a claim about where these structures come from, not about how well any system performs: a design that departs
 from the geometry may be right to, for reasons the geometry does not see. What comes free is the readings, not the
-amounts: metres still cost one amount carried in (§9). Whether a given departure is worth its cost is the designer's
+amounts: metres still cost one amount carried in (§10). Whether a given departure is worth its cost is the designer's
 question; the geometry only makes it one that can be asked.
 
-## 11. Assumptions and related work
+## 12. Assumptions and related work
 
 **What depends on what.** The results do not all rest on the same premise.
 

@@ -212,7 +212,9 @@ often from treating the writer's vantage as if a single observation held it. Sec
 - Inside the corner the addresses are proportional; past it, if no scale is preferred, only a logarithmic layout is
   consistent. The reader has two address spaces joined at one corner (§6).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
-  A larger H gives the near less detail and reaches the far; the best H is the corner of what is read. An H of 0 or
+  A larger H gives the near less detail and reaches the far; the best H is the corner of what is read. The fraction an
+  array's floor discards is the address's second coordinate, its depth: the dyadic cells tile the hyperbolic plane, the
+  space of the Cauchy's own parameters, every level alike and every cell of one room (§8). An H of 0 or
   of ∞ leaves one of the rulers that favour no amount, and no corner (§9).
 - The geometry does not supply amounts. A common rescaling leaves every reading unchanged, one amount supplied from
   outside fixes the scale, and a fact shared between two readers supplies exactly one ratio. The best estimate of the
@@ -2177,27 +2179,96 @@ the span sets the level. How many addresses a thing spans depends on amounts, wh
   distinguishable.
 - Rounding to cells is a device of storage, not of reading.
 
-**What the height fixes, and what it does not.** Give the dyadic cell [kw, (k + 1)w), w = 2^(−j), the point m + iγ of the
-upper half-plane, with m its middle and γ = w/2 its half-width. The fraction the floor discards is this height.
-- Each binary digit is one step down, and every step is alike. The map z ↦ 2z is an isometry of the half-plane carrying
-  each level onto the next, and every cell's tile [kw, (k + 1)w] × [w/2, w] has the same hyperbolic area,
-  ∫∫ dx·dy/y² = 1. The cells are Böröczky's binary tiling (Böröczky 1974).
-- From its point, the Cauchy C(m, γ) puts exactly half its weight in the cell: (1/π)(arctan 1 − arctan(−1)) = ½. So the
-  height fixes an address window, 2γ wide, before anything arrives, and no payload enters it. Only the line changes it.
-  On a closed line of length 1 the window is (2/π)·arctan(tanh πγ), close to 2γ for a low reader and half the line for a
-  high one.
+**What the floor discards.** An array finds a cell by the floor: x = ⌊x⌋ + {x}, a key and a remainder, and it keeps the
+key. The remainder looks like a leftover, the part that did not fit, and it is usually thrown away as such. It is not a
+leftover, and it is not payload. Nothing stored at the cell is lost: the cell keeps its value. What is lost is where in
+the cell the place is, and that is address. Written in binary, the remainder is 0.b₁b₂b₃…, and each digit says which half
+of the cell before it the place lies in: b₁ the half of the cell, b₂ the half of that half, and so on. The digits are the
+finer levels of the address, one level a digit, without end. So the floor does not round one number. It takes an address
+that runs through every level and keeps it at one, discarding all the finer ones in a single step.
+
+*The remainder is a second coordinate.* The levels it holds are not a list kept beside the address; they are the
+address's other dimension. Give the dyadic cell [kw, (k + 1)w), w = 2^(−j), the point z = m + iγ of the upper half-plane,
+with m its middle and γ = w/2 its half-width. A place is then two numbers: where it is along the line, m, and how far down
+it is held, γ. The floor keeps m at one height and forgets that the height was a coordinate at all. The plane the two
+numbers make has a geometry of its own, and it is a familiar one.
+- *Every level is the next.* The map z ↦ 2z is an isometry of the half-plane (its metric is ds² = (dx² + dy²)/y²), and it
+  carries each level of cells onto the next. Each binary digit is one step down, and every step is alike: a step of ln 2
+  in height.
+- *Every cell has the same room.* The tile [kw, (k + 1)w] × [w/2, w] has hyperbolic area ∫∫ dx·dy/y² = w·(2/w − 1/w) = 1,
+  at every level. A cell a million levels down has exactly the room of the first. The tiles are Böröczky's binary tiling
+  (Böröczky 1974).
+- *Distances are fixed by the levels.* With cosh d = 1 + |z₁ − z₂|²/(2γ₁γ₂), a parent and either child are arcosh(3/2)
+  apart, two siblings arcosh 3, and two cells n apart on one level arcosh(1 + 2n²), at every level and every place.
+- *A point of this plane is a Cauchy law.* Each z = m + iγ is the Cauchy C(m, γ), and from its cell's point the Cauchy
+  puts exactly half its weight in the cell: (1/π)(arctan 1 − arctan(−1)) = ½. The cell is its interquartile range. So the
+  plane the floor's remainder lives in is the space of the address law's own parameters, the standpoint's foot and height
+  of §7.2, and a dyadic cell is one Cauchy, read from its own point.
+
+*A tree keeps the levels and loses the plane.* The usual way to keep the finer levels is a tree: a quadtree, an image
+pyramid, mipmaps, each cell joined to its parent and its children. A tree keeps the depth but measures it wrongly. The two
+cells either side of the middle of level j, k = 2^(j−1) − 1 and 2^(j−1), touch, and in the plane they are arcosh 3 apart
+at every level; in the tree their nearest common ancestor is the root, so they are 2j steps apart, 60 at level 30. Add
+the sideways neighbours, each cell joined to the cells beside it on its level, and the graph measures the plane: its step
+count g between any two cells is within a bounded amount of the hyperbolic distance d over ln 2 (for all 523,776 pairs at
+level 10, |d − g·ln 2| ≤ 2.19), the shortest way between two cells is always up, across and down, and d/g tends to ln 2.
+An array indexed by (level, index), with links across as well as up and down, is a discrete copy of the half-plane; a
+tree is not.
+
+*Two ways to lose depth.* Every reader with a finite resolution loses the finer levels; the floor and a reader at a height
+lose them differently.
+- *The floor.* A cell average multiplies a wave e^{ikx} by |sin(kw/2)/(kw/2)|. It keeps every level coarser than the cell
+  whole and none finer: a cut at one level, with zeros and side lobes past it, so finer detail, once each cell is kept
+  as one value, can come back as coarser (aliasing).
+- *A reader at height γ.* The Cauchy from z multiplies the same wave by e^{−kγ}: smooth, never zero, and composing as
+  heights add (from γ₁ then γ₂ is from γ₁ + γ₂). No γ brings the two within 0.22 of each other, so keeping binary digits
+  is not reading from a height. For a step detail, a reader at its own cell's point keeps the shares below, by the level
+  read against its own (negative is coarser):
+
+  | level read, against the reader's own | −7 | −6 | −5 | −4 | −3 | −2 | −1 | 0 | +1 | +2 |
+  |---|---|---|---|---|---|---|---|---|---|---|
+  | share of the step kept | 0.927 | 0.874 | 0.789 | 0.660 | 0.482 | 0.279 | 0.110 | 0.027 | 0.0044 | 0.0006 |
+
+  It keeps half of the step 3.09 levels coarser than its own cell and takes 5.5 levels to go from 90% kept to 10%: one
+  soft cut over the levels, the same at every depth, where the floor at the same level keeps every coarser level whole
+  and none of its own.
+
+*Who sets the depth.* The floor sets one depth for everything, the cell's, chosen by the store before anything is read.
+The geometry sets each thing's level by its span, as above: a thing spanning n addresses is held to about log₂ n levels,
+and a thing between two addresses at the coarser one. So the floor imposes a level of detail; the reader reads one off
+what it meets. Where the floor is taken of an amount, ⌊x/w⌋, the cell width w is an amount too, and scaling the world by
+k moves the key unless w is scaled with it: by the test of §9 the key is then a writing, its grain carried in. A floor
+taken of a share of the turn carries no amount, and scaling moves no key.
+
+*What it means.* Three things follow, each from the pieces above.
+- The address is continuous and hierarchical at once. The levels of detail are not a structure kept beside the address,
+  a pyramid built and stored; they are the address's second coordinate, the height, and they come with it. Pyramids,
+  mipmaps and quadtrees can each be read as a way of keeping some of that coordinate after the floor has dropped it.
+- The hierarchy is not a convenience of storage but a geometry, the hyperbolic plane: every level alike, every cell of
+  one room, distances fixed by the levels. That plane is the one the Cauchy's parameters live in, so the reader's law and
+  the store's hierarchy share it, and differ only as filters on it.
+- The separation of address and payload reaches down into the depth. The floor discards address, not payload; and from a
+  height the window 2γ is the address's, fixed before anything arrives, while what survives inside it is the payload's
+  (below).
+
+Not shown: that the world stores anything this way; that a reader's level of detail is a dyadic depth rather than a
+continuous height; anything about physics. The mathematics is classical (Böröczky, the Poisson kernel, the sinc of a box);
+the reading is ours.
+
+**What the height fixes, and what it does not.** Seen from a cell's point m + iγ:
+- The height fixes an address window, 2γ wide, the cell itself, before anything arrives, and no payload enters it. Only
+  the line changes it. On a closed line of length 1 the window is (2/π)·arctan(tanh πγ), close to 2γ for a low reader and
+  half the line for a high one.
 - What is kept of a payload's variation depends on the payload. For a detail a cell of width w′ wide, the share kept
-  depends only on γ/w′, by the same isometries. So the reader's loss of detail is one soft cut over the levels, the same
-  at every depth. Its form is the detail's: near the reader a step loses (12/π)·u·ln(1/u) at u = γ/w′, a smooth detail
-  an amount in proportion to u, and far off the detail's vanishing moments set how fast it falls.
+  depends only on u = γ/w′, by the isometries above. So the reader's loss of detail is one soft cut over the levels, the
+  same at every depth. Its form is the detail's: near the reader a step loses (12/π)·u·ln(1/u), a smooth detail an amount
+  in proportion to u, and far off the detail's vanishing moments set how fast it falls.
 - Whether two payloads read as two depends on the kernel and on the payloads. Two equal Cauchy profiles of height γ
   show two maxima only when more than 2γ/√3 apart, and two equal Gaussians of width σ only when more than 2σ apart.
   Cusped profiles show two at any separation, and unequal amplitudes raise every threshold.
 
 So the height alone fixes where the reader's window falls, and what survives inside it is the payload's: the division
-of Theorem 6, at the level of detail. Keeping binary digits is not reading from a height. A cell average multiplies
-e^{ikx} by |sin(kw/2)/(kw/2)|, which has zeros, and the Cauchy multiplies it by e^{−kγ}, which has none; no γ brings the
-two within 0.22 of each other.
+of Theorem 6, at the level of detail.
 
 **From far off, a thing is its total at its centroid.** Take payloads w_i at points r_i about a centre, each at
 distance q_i from it, read from a standpoint at distance r with every q_i < r. The reciprocal of the distance to each
