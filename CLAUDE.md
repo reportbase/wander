@@ -856,6 +856,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   measure, given whole; "steps", "swept", "counted" said of the measure, never an act; no algorithm); §7.1 "The circle,
   uniform by turn"; Theorem 6 "the separation of address and payload". Say "given", not "precomputed"; OFS still does not
   characterize classical mathematics (the pictures read as a process, the measure does not).
+  **The demos in the new frame** (23 Oct, SPN R459; Tom: "Update the demos"): visible wording only, hooks, params, ids
+  and file names kept: `central-reader.html` "The central sweep", `two-readers.html` "The angle and the radius",
+  `writer-readers.html` "The writer and the reader", `sweep-zero.html` "Counting from zero", `blueprint.html` "One
+  blueprint, two vantages"; `writer-box.html`'s views the writer, the reader from home, ranges (a writing); the payload-free
+  pages' button "reveal in order". The page entries above describe the older wording.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

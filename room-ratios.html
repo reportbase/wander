@@ -61,7 +61,7 @@
 <main>
     <h1>The room in ratios</h1>
     <p class="lede">The reader's inscribed sweep is two sweeps: <span class="g">left–right</span> (the azimuth) and
-    <span class="g">up–down</span> (the altitude). Each returns a ratio, so every point looked at is an address:
+    <span class="g">up–down</span> (the altitude), both the geometry's, given before anything arrives. Each gives a ratio, so every point in view is an address:
     how far across against how far ahead, and how far up against how far out. From one place that is a picture, every
     direction and every angle, but no distance. One step, its length never measured, makes it a map: every place and size
     as so many steps. One counted stride writes it in metres.</p>
@@ -69,12 +69,13 @@
         <div class="row" id="steps"></div>
         <div class="row" id="things"></div>
         <div class="row"><label for="lk">scale the world k</label><input id="lk" type="range" min="-1" max="1" step="0.01" value="0">
-            <span id="kv" class="cap"></span><button id="truth">the referee</button><button id="play">sweep</button></div>
+            <span id="kv" class="cap"></span><button id="truth">the referee</button><button id="play">show the order</button></div>
         <div id="say"></div>
         <div class="grid">
             <div><canvas id="room" height="430"></canvas><p class="cap" id="roomcap">The room. Drag to look round it.</p></div>
-            <div><canvas id="chart" height="250"></canvas><p class="cap">What the reader receives from A: the two sweeps,
-            left–right across, up–down up the side (even in height). The dashed lines are each sweep's corner, 45°, where
+            <div><canvas id="chart" height="250"></canvas><p class="cap">The reader's addresses from A: the two sweeps,
+            left–right across, up–down up the side (even in height), given whole; what arrives paints them. "Show the
+            order" steps through them in the order of the turn. The dashed lines are each sweep's corner, 45°, where
             the ratio is 1.</p>
             <canvas id="plan" height="200"></canvas><p class="cap" id="plancap">The reader's own map.</p></div>
         </div>

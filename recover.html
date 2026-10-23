@@ -95,12 +95,12 @@
         "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
 </head>
 <body>
-<canvas id="stage" aria-label="A body, the unit sphere its one reader reads, the wedge on the sphere, and the body recovered from directions"></canvas>
+<canvas id="stage" aria-label="A body, the unit sphere of directions from one standpoint, the wedge on the sphere, and the body recovered from directions"></canvas>
 <div id="labels"></div>
 <div id="panel" class="glass">
     <button id="fold" aria-label="fold the panel">▾</button>
     <h1>Recovering a body</h1>
-    <p class="sub">One reader reads only directions: a sphere, the same for every body. Three readers' directions give the body back.</p>
+    <p class="sub">One standpoint gives only directions: a sphere, the same for every body. Directions from three standpoints give the body back.</p>
     <div class="steps" id="steps"></div>
     <div id="caption"></div>
     <div class="more">
@@ -526,11 +526,11 @@ function hudInscribed(W, RS, eps, k){
     let dk = 0; if (k !== 1){ const Mk = mapPaint(W, k); for (let i = 0; i < M.paint.length; i++) if (Mk.paint[i] !== M.paint[i]) dk++; }
     const met = M.cnt.filter(c => c > 0).length, near = W.dist.map((d, b) => [d, b]).sort((x, y) => x[0] - y[0])[0][1];
     const f = x => x.toExponential(0), lines = [];
-    lines.push(`the inscribed reader: ${MB.NG * MB.NG} addresses, even in azimuth and height, each an equal share of the sweep`);
+    lines.push(`the inscribed sweep: ${MB.NG * MB.NG} addresses, given, even in azimuth and height, each an equal share of the turn`);
     lines.push(`all addresses: v ≤ h ${M.all.vh.toFixed(3)} (½), the near field in both ${M.all.both.toFixed(3)} (⅓), whatever the bodies`);
     lines.push(`${W.kind === 'mirror' ? 'the mirrored field' : 'the field'}: ${M.painted.n} addresses met, by ${met} bodies; among them v ≤ h ${M.painted.vh.toFixed(3)}${W.kind === 'mirror' ? ' (symmetric: the corner)' : ' (where the bodies lie)'}`);
     lines.push(`a body's share × π/2 is its solid angle: the nearest, ${M.cnt[near]} addresses at d ${W.dist[near].toFixed(1)}; breadth over distance, no size`);
-    lines.push(`three readers, equal-angle pixels ε = ${eps ? eps.toExponential(0) : '0 (exact)'}: shape ${cnt.shape}, place ${cnt.place}, direction only ${cnt.direction}, hidden ${cnt.hidden}`);
+    lines.push(`three standpoints, equal-angle pixels ε = ${eps ? eps.toExponential(0) : '0 (exact)'}: shape ${cnt.shape}, place ${cnt.place}, direction only ${cnt.direction}, hidden ${cnt.hidden}`);
     lines.push(`at ε = 0 every seen point in |AB| to ${f(Math.max(e0, 1e-17))} of its distance; scale the world ×${k >= 1e3 || k < 1e-2 ? k.toExponential(1) : k.toPrecision(3)}: ${dk} addresses painted otherwise`);
     document.getElementById('hud').textContent = lines.join('\n');
     S._last = { cnt, all: M.all, painted: M.painted, e0, dk, met };
@@ -546,7 +546,7 @@ function hudMany(W, RS, eps, k, inW){
     const f = x => x.toExponential(0), lines = [];
     lines.push(`many bodies: ${MB.M} in one wedge, d ${Math.min(...W.dist).toFixed(1)} … ${Math.max(...W.dist).toFixed(0)}; ${inWedge} in the wedge you placed`);
     lines.push(`one standpoint: ${painted} of ${MB.NCAP} directions painted, by ${seenCensus} bodies; ${W.hides.size} pairs ordered by what hides what, none sized`);
-    lines.push(`three readers |AB| = 1 apart, pixels ε = ${eps ? eps.toExponential(0) : '0 (exact)'}${eps ? ` (B/ε = ${(1 / eps).toPrecision(2)})` : ''}:`);
+    lines.push(`three standpoints |AB| = 1 apart, pixels ε = ${eps ? eps.toExponential(0) : '0 (exact)'}${eps ? ` (B/ε = ${(1 / eps).toPrecision(2)})` : ''}:`);
     lines.push(`  shape ${cnt.shape} (out to ${reach('shape').toFixed(0)}), place ${cnt.place} (to ${reach('place').toFixed(0)}), direction only ${cnt.direction}, hidden ${cnt.hidden}`);
     lines.push(`at ε = 0 every seen point in |AB| to ${f(Math.max(e0, 1e-17))} of its distance: the geometry has no bands; one length |AB| writes the field`);
     lines.push(`scale the world ×${k >= 1e3 || k < 1e-2 ? k.toExponential(1) : k.toPrecision(3)}: points in |AB| moved ${f(Math.max(dq, 1e-17))}`);
@@ -557,12 +557,12 @@ function hudMany(W, RS, eps, k, inW){
 // ── words ─────────────────────────────────────────────────────────────────────────────────────────────────────
 const STEPS = [
     ['The body', 'A body, as Levels draws it (its id ' + '<span id="bid"></span>): a ball with relief in four bands, stretched by axis. Its true shape and size are the world\'s; no reader holds them. Drag to look round it.'],
-    ['One reader', '<b>One reader at its centre</b> sweeps every direction evenly. Each direction meets the surface once, and what it reads is the direction itself. Drawn at the one length H, the readings are the <span class="gold">unit sphere</span> (left): <b>the same sphere for every body</b>. Change the body; the sphere does not move.'],
+    ['One standpoint', '<b>A reader at its centre</b>: its directions are given there, uniform, before anything arrives. Each direction meets the surface once, and what it reads is the direction itself. Drawn at the one length H, the readings are the <span class="gold">unit sphere</span> (left): <b>the same sphere for every body</b>. Change the body; the sphere does not move.'],
     ['The wedge', '<b>The wedge on the sphere</b>: one observation is one octant of directions, h, v, v₂ ≥ 0 in its own frame, placed by where its triple corner points. Its readings are [h : v : v₂]; v ≤ h for half of them, the near field in both for a third. On the body it picks out the part its rays meet. Move it with the sliders.'],
-    ['Three readers', '<b>Three readers inside</b> (red), each holding only directions. Where two of their rays cross is the place. Knowing only the shape of their own triangle, they give the body back <b>up to its size</b> (<span class="violet">violet</span>, right, drawn at a size of their choosing): the stretch and every bump come back; the wedge\'s part is bright.'],
-    ['One length', '<b>One length carried in</b>, |AB|, how far apart two readers stand, and the readers\' body lands on the true one (<span class="teal">teal</span>, on it). Scaling the world moves no reading and no point in |AB|; only the length carried in changes.'],
-    ['Many bodies', '<b>Many bodies at once.</b> From one standpoint (left) the field is a <b>painting of the sky</b>: each direction one body or none, each patch its breadth over its distance; what hides what orders them, never sizes them. Three readers a length 1 apart, reading on pixels ε wide, lay the field (right, on the reader\'s lay, the corner in <span class="gold">gold</span>): near, <span class="teal">the shape</span> (drawn larger than it is); farther, <span class="gold">the place</span> alone; past about B/ε, <span class="red">a direction</span>. Faint: where the bodies truly are. With ε = 0 every body is placed exactly: the bands are the pixels\', not the geometry\'s. The wedge picks out some.'],
-    ['The inscribed reader', '<b>The inscribed reader among the bodies.</b> One reader at home sweeps the whole wedge evenly (left: Lambert\'s equal-area map, azimuth across from h to v₂, height up to v; each cell an equal share of the sweep). Each address is painted by the first body it meets. The addresses are the sweep\'s own, the Cauchy wedge, whatever is met: v ≤ h for half, the near field in both a third, the <span class="gold">corners</span> where they always are. A body takes a share equal to its solid angle, breadth over distance; what is met moves only the median of what arrives, and a <b>mirrored field</b> keeps it at the corner. The three readers now count their own turns: pixels ε in altitude and azimuth (right).'],
+    ['Three standpoints', '<b>Three standpoints inside</b> (red), each holding only directions. Where two of their rays cross is the place. Knowing only the shape of their own triangle, they give the body back <b>up to its size</b> (<span class="violet">violet</span>, right, drawn at a size of their choosing): the stretch and every bump come back; the wedge\'s part is bright.'],
+    ['One length', '<b>One length carried in</b>, |AB|, how far apart two standpoints are, and the body from their directions lands on the true one (<span class="teal">teal</span>, on it). Scaling the world moves no reading and no point in |AB|; only the length carried in changes.'],
+    ['Many bodies', '<b>Many bodies at once.</b> From one standpoint (left) the field is a <b>painting of the sky</b>: each direction one body or none, each patch its breadth over its distance; what hides what orders them, never sizes them. Three standpoints a length 1 apart, reading on pixels ε wide, lay the field (right, on the reader\'s lay, the corner in <span class="gold">gold</span>): near, <span class="teal">the shape</span> (drawn larger than it is); farther, <span class="gold">the place</span> alone; past about B/ε, <span class="red">a direction</span>. Faint: where the bodies truly are. With ε = 0 every body is placed exactly: the bands are the pixels\', not the geometry\'s. The wedge picks out some.'],
+    ['The inscribed sweep', '<b>The inscribed sweep among the bodies.</b> From home the reader\'s addresses cover the whole wedge evenly, given before anything arrives (left: Lambert\'s equal-area map, azimuth across from h to v₂, height up to v; each cell an equal share of the turn). Each address is painted by the first body it meets. The addresses are the sweep\'s own, the Cauchy wedge, whatever is met: v ≤ h for half, the near field in both a third, the <span class="gold">corners</span> where they always are. A body takes a share equal to its solid angle, breadth over distance; what is met moves only the median of what arrives, and a <b>mirrored field</b> keeps it at the corner. The three standpoints now read on pixels ε in altitude and azimuth (right).'],
 ];
 const stepsEl = document.getElementById('steps');
 STEPS.forEach((s, i) => { const b = document.createElement('button'); b.textContent = (i + 1) + ' ' + s[0]; b.onclick = () => set({ step: i + 1 }); stepsEl.appendChild(b); });
@@ -573,9 +573,9 @@ function hud(q){
     for (let i = 0; i < N; i++){ for (let j = 0; j < 3; j++){ dr = Math.max(dr, Math.abs(RK.reads[i][j] - R.reads[i][j])); if (RK.rec[i] && R.rec[i]) dq = Math.max(dq, Math.abs(RK.rec[i][j] - R.rec[i][j])); } }
     const f = x => x.toExponential(0), lines = [];
     lines.push(`body ${S.body}: stretch ${R.F.s.map(x => x.toFixed(3)).join(' × ')}, mean radius ${(R.meanR * k).toPrecision(3)} (world units)`);
-    if (S.step >= 2) lines.push(`one reader: ${N} readings, each the sweep's own direction to ${f(Math.max(R.rdErr, 1e-17))}; the census a unit sphere, the same for every body`);
+    if (S.step >= 2) lines.push(`one standpoint: ${N} readings, each the given direction itself to ${f(Math.max(R.rdErr, 1e-17))}; the census a unit sphere, the same for every body`);
     if (S.step >= 3) lines.push(`the wedge: ${W.n} of ${N} directions (${(W.n / N).toFixed(3)}, an eighth is 0.125); v ≤ h ${W.vh.toFixed(3)} (½), the near field in both ${W.both.toFixed(3)} (⅓)`);
-    if (S.step >= 4) lines.push(`three readers, directions only: every point to ${f(Math.max(R.recErr, 1e-17))} of the mean radius in |AB|; seen by at least ${R.fewest} readers`);
+    if (S.step >= 4) lines.push(`three standpoints, directions only: every point to ${f(Math.max(R.recErr, 1e-17))} of the mean radius in |AB|; seen from at least ${R.fewest} standpoints`);
     if (S.step >= 5) lines.push(`|AB| carried in = ${(R.AB * k).toPrecision(4)} world units: the body itself`);
     lines.push(`scale the world ×${k >= 1e3 || k < 1e-2 ? k.toExponential(1) : k.toPrecision(3)}: readings moved ${f(Math.max(dr, 1e-17))}, points in |AB| ${f(Math.max(dq, 1e-17))}`);
     document.getElementById('hud').textContent = lines.join('\n');
@@ -595,7 +595,7 @@ function caption(){
     document.getElementById('bSolid').classList.toggle('on', S.solid); document.getElementById('bSpin').classList.toggle('on', S.spin);
 }
 // labels under the three places
-const LAB = [['census: one reader', PL.census, 'gold'], ['the body', PL.body, ''], ['recovered, in |AB|', PL.rec, 'violet']].map(([t, p, cl]) => {
+const LAB = [['census: one standpoint', PL.census, 'gold'], ['the body', PL.body, ''], ['recovered, in |AB|', PL.rec, 'violet']].map(([t, p, cl]) => {
     const d = document.createElement('div'); d.textContent = t; if (cl) d.className = cl; document.getElementById('labels').appendChild(d); return { d, p }; });
 function labels(){ const w = canvas.clientWidth, h = canvas.clientHeight, v = new THREE.Vector3();
     LAB.forEach(({ d, p }, i) => { v.copy(p).add(new THREE.Vector3(0, -0.85, 0)); ROOT.localToWorld(v); v.project(camera);

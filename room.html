@@ -23,6 +23,8 @@
     metres; its address changes, its shape does not.
     "Scale the world" (k) multiplies every true size: no reading, address, shape or room-unit size moves; written amounts
     move by k. Drag the 3D view to turn it.
+    Since SPN R454 (23 Oct): one reader; the sweeps are the geometry's, not acts, the addresses given; step 4's radii are
+    amounts, a shape about a centre had by ranging (a writing) or from further standpoints, and the page now says so.
     Links: ?step=1..6&thing=table|chair|ball|cabinet|picture&alt=&az=&k=<log10 k>. Test hook: window.__room.
     -->
     <style>
@@ -52,10 +54,11 @@
 <body>
 <main>
     <h1>The room</h1>
-    <p class="lede">A reader stands at home, the room's corner, and reads the room by pointing. The inscribed sweep, the
-    hand turned from one wall to the other, gives where things are: directions, no amounts. The central sweep, from a
-    thing's own centre, gives what the thing is: its shape, not its size. Holding a thing and the wall at once gives its
-    size in the room's units. To put a thing at a place in metres the reader must become a writer and move.</p>
+    <p class="lede">A reader stands at home, the room's corner. Its addresses are given there, before anything arrives:
+    the inscribed sweep, every direction from one wall to the other, gives where things are: directions, no amounts. A
+    thing's shape about its own centre is a radius per direction, an amount, had only by ranging (a writing) or from
+    further standpoints: its shape, not its size. Holding a thing and the wall at once gives its size in the room's
+    units. To put a thing at a place in metres the reader must become a writer and move.</p>
     <div class="panel">
         <div class="row" id="steps"></div>
         <div class="row" id="things"></div>
@@ -65,15 +68,15 @@
         </div>
         <div class="row">
             <label for="lk">scale the world k</label><input id="lk" type="range" min="-2" max="2" step="0.01" value="0">
-            <button id="play">sweep</button><button id="reshape">reshape</button><button id="move">move it</button>
+            <button id="play">show the order</button><button id="reshape">reshape</button><button id="move">move it</button>
             <button id="stepb">take a known step (1 m)</button><button id="place">put it 1 m from the wall</button>
         </div>
         <div class="grid">
             <div><canvas id="v3" height="440"></canvas><p class="cap">The room (drag to turn it). Home is the corner
-            marked ◆; the gold ray is the hand.</p></div>
+            marked ◆; the gold ray is the hand, one direction of the given ones.</p></div>
             <div><canvas id="plan" height="260"></canvas><p class="cap">From above: the writer's floor plan. Lengths
             show only once written.</p><canvas id="strip" height="170"></canvas><p class="cap" id="stripcap">The
-            sweep's progress, g = (2/π)ψ.</p></div>
+            inscribed sweep, g = (2/π)ψ.</p></div>
         </div>
         <div id="hud"></div>
         <p class="note" id="note"></p>
@@ -272,16 +275,16 @@
         for (const o of sweepOrder()) { if (st.step === 3 && st.sweep && o.g > cur) continue;
             g.fillStyle = BASE[o.name].col; g.beginPath(); g.arc(x(o.g), y0, 4, 0, 2 * Math.PI); g.fill(); g.fillText(o.name, x(o.g) - 14, y0 - 12 - 12 * (NAMES.indexOf(o.name) % 2)); }
         if (st.step >= 2) { g.strokeStyle = '#d4a052'; g.beginPath(); g.moveTo(x(cur), y0 - 30); g.lineTo(x(cur), y0 + 4); g.stroke(); }
-        $('stripcap').textContent = 'The inscribed sweep\'s progress, g = (2/π)ψ: where each thing is, by direction only. The corner at ½.';
+        $('stripcap').textContent = 'The inscribed sweep, g = (2/π)ψ: where each thing is, by direction only. The corner at ½.';
     }
     function currentAz() { return (st.step === 3 && st.sweep) ? st.sweep.az : st.az; }
     function sweepDir() { const a = st.alt * Math.PI / 180, p = st.sweep.az * Math.PI / 180; return [Math.cos(a) * Math.cos(p), Math.sin(a), Math.cos(a) * Math.sin(p)]; }
 
     const NOTES = {
         1: 'Home is the room\'s floor corner, so the whole room is one wedge: every direction in it has h, v and v₂ at or above 0.',
-        2: 'Point the hand (altitude and azimuth). What arrives is a direction: two ratios, v₂/h and v/√(h² + v₂²). No length arrives.',
-        3: 'The inscribed sweep: the hand turned from along the first wall (all h) to along the second (all v₂). Each thing is laid where the hand passes it. That is the layout, and it holds no amount.',
-        4: 'The central sweep, from the chosen thing\'s own centre: directions fixed in advance, a radius arriving along each. The radii give the shape; their common factor, the size, is not read.',
+        2: 'Choose a direction (altitude and azimuth). Its address is two ratios, v₂/h and v/√(h² + v₂²), given before anything arrives; what arrives along it is paint. No length arrives.',
+        3: 'The inscribed sweep: every direction from along the first wall (all h) to along the second (all v₂), given at once; "show the order" steps through them in the order of the turn. Each thing lies where its directions are. That is the layout, and it holds no amount.',
+        4: 'A thing\'s shape about its own centre: given directions from the centre, a radius along each. A radius is an amount, had only by ranging (a writing: a pulse carries the speed) or from further standpoints. The radii give the shape; their common factor, the size, is not read.',
         5: 'Holding: the thing and the room\'s width read at once, at one distance. Their ratio is the thing\'s size in the room\'s units, and the distance cancels.',
         6: 'To put a thing at a place in metres, the reader must write: take a known step and read again. One step writes the room. Then move the thing; its address changes, its shape does not.'
     };
@@ -293,7 +296,7 @@
             const tp = Math.tan(currentAz() * Math.PI / 180), ta = Math.tan(st.alt * Math.PI / 180);
             lines.push(`the hand: v₂/h = tan ψ = ${tp.toFixed(3)}   v/√(h² + v₂²) = tan a = ${ta.toFixed(3)}   g = ${(currentAz() / 90).toFixed(3)}`);
             lines.push(hh ? `it meets the ${hh.name}` : 'it meets a wall');
-            if (st.step === 3) lines.push('swept so far: ' + sweepOrder().filter(o => o.g <= currentAz() / 90).map(o => `${o.name} at g ${o.g.toFixed(3)}`).join(', '));
+            if (st.step === 3) lines.push('passed so far, in the order of the turn: ' + sweepOrder().filter(o => o.g <= currentAz() / 90).map(o => `${o.name} at g ${o.g.toFixed(3)}`).join(', '));
         }
         if (st.step === 4) { const s = shape(st.thing); lines.push(`the ${st.thing}'s shape (radii over their geometric mean): ` + s.slice(0, 5).map(x => x.toFixed(3)).join(' ') + ' …');
             lines.push('its size: not read (scale the world, reshape, or move it: only reshaping changes these)'); }
@@ -312,7 +315,7 @@
         for (const b of $('things').children) b.classList.toggle('on', b.dataset.n === st.thing); }
 
     // ---- controls ----
-    const STEP_NAMES = ['', 'the room', 'point', 'the inscribed sweep', 'the central sweep', 'holding', 'writing'];
+    const STEP_NAMES = ['', 'the room', 'point', 'the inscribed sweep', 'a shape, by ranging', 'holding', 'writing'];
     for (let s = 1; s <= 6; s++) { const b = document.createElement('button'); b.textContent = `${s}. ${STEP_NAMES[s]}`; b.dataset.s = s; b.onclick = () => set({ step: s }); $('steps').appendChild(b); }
     for (const n of NAMES) { const b = document.createElement('button'); b.textContent = n; b.dataset.n = n; b.onclick = () => set({ thing: n }); $('things').appendChild(b); }
     $('alt').oninput = e => set({ alt: +e.target.value }); $('az').oninput = e => set({ az: +e.target.value });
