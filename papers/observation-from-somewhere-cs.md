@@ -435,7 +435,9 @@ dropping it is one of the most consequential things in the whole construction.
 
 Start with what is not lost. The value stored in the cell is untouched: `a[i]` is exactly what it was. Nothing of the
 payload goes. What goes is where in the cell the place was, and that is address. So the floor is not a lossy operation
-on data at all. It is a lossy operation on the index.
+on data at all. It is a lossy operation on the index. So the claim is not that the floor is lossless, nor that flooring
+is wrong: where only the cell's value is wanted, dropping where in the cell is exactly right; where the place within
+the cell matters, what was dropped was address, not data.
 
 Write the remainder in binary, f = 0.b₁b₂b₃… Each digit answers one question: b₁ which half of the cell, b₂ which half
 of that half, b₃ which half of that, without end. So the digits of f are the finer levels of the address, one level a

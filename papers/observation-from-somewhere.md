@@ -2185,7 +2185,9 @@ leftover, and it is not payload. Nothing stored at the cell is lost: the cell ke
 the cell the place is, and that is address. Written in binary, the remainder is 0.b₁b₂b₃…, and each digit says which half
 of the cell before it the place lies in: b₁ the half of the cell, b₂ the half of that half, and so on. The digits are the
 finer levels of the address, one level a digit, without end. So the floor does not round one number. It takes an address
-that runs through every level and keeps it at one, discarding all the finer ones in a single step.
+that runs through every level and keeps it at one, discarding all the finer ones in a single step. The floor is not
+lossless, and flooring is not wrong: where only the cell's value is wanted, dropping where in the cell is exactly right;
+where the place within the cell matters, what was dropped was address, not payload.
 
 *The remainder is a second coordinate.* The levels it holds are not a list kept beside the address; they are the
 address's other dimension. Give the dyadic cell [kw, (k + 1)w), w = 2^(−j), the point z = m + iγ of the upper half-plane,
