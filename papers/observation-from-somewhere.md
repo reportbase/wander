@@ -437,7 +437,10 @@ unimodular and the measures unchanged by composing on the left and on the right 
 counted from it. Facing another way gives a new zero and changes nothing in the law: every turn leaves the standard
 Cauchy where it is, so the readings from the new zero have the same law, and no zero is preferred. The old zero
 survives only as one reading from the new one. Readings from two zeros compose as turns compose, by tangent addition,
-s ⊕ t = (s + t)/(1 − st); a full round composes to no turn, a check like the closed loop of §9. Repeating one step t from zero comes back to zero
+s ⊕ t = (s + t)/(1 − st); a full round composes to no turn, a check like the closed loop of §9. Tangent addition counts
+turns only modulo a half turn, so readings composed round a loop close in the same way after one round as after two:
+the count of rounds, the loop's winding number, is in no reading, and only a count of passes through the horizon keeps
+it. Repeating one step t from zero comes back to zero
 after finitely many steps only if arctan t is a rational multiple of π, and for a rational t that holds only at home, the
 corner and the horizon, t = 0, 1 and ∞ (Niven 1956); every other rational step never closes, and its multiples spread
 uniformly round the turn (Weyl 1916). With two other parties the composition is of another kind. The directions
@@ -445,7 +448,10 @@ uniformly round the turn (Weyl 1916). With two other parties the composition is 
 dimension has Euler characteristic 0 and the projective plane has 1; so a new zero there is a turn of space, composed in
 the rotation group and acting on the directions, not a sum of directions. A frame that seems fixed,
 a wall or a far point, is one that keeps its reading from each new zero. The corner is not computed: it is the
-direction at which the two unit relations read alike, and that it halves the quarter turn is the geometry's.
+direction at which the two unit relations read alike, and that it halves the quarter turn is the geometry's. It is a
+crossing, not a turning point: v − h = √2·sin(θ − 45°) changes sign there at its steepest, while the arc's height off
+the chord, sin 2θ, is flat there at its greatest. A small error ε in what is read moves a crossing by about ε, and a
+peak by about √ε, so the corner is held at first order (at ε = 10⁻³, a fifteenth of the peak's error).
 
 The method is not ours. Three things in its use here are. The first is the group. Which transformations a situated
 reader cannot detect is a statement about its situation, and we choose it as a statement of ignorance rather than derive
@@ -964,7 +970,10 @@ and it fixes one point, the corner [1 : 1]. The results so far, and those to com
 - *A chart that sends an end to infinity: the missing mean* (Theorem 6(d), (e)). The readings' law has no mean in x,
   which runs to infinity at the horizon, nor in y, which does so at home. On a bounded chart of the same arc, the angle
   θ or the capped share x/(1 + x), the same law has one: π/4 and ½ for the uniform turn. So the missing mean is a fact
-  about the chart in which directions are counted as numbers, not about the arc. A mean asks for the readings to be
+  about the chart in which directions are counted as numbers, not about the arc. Being unbounded is not enough to lose
+  it: on the level chart ξ = ln(v/h), which runs to infinity at both ends, the same law is (1/π)·sech ξ and has every
+  moment, its mean 0 at the corner and its variance π²/4 (Talacko 1956). What loses the mean is how the chart stretches
+  the end, the tail falling as 1/x² on x against e^(−|ξ|) on the levels. A mean asks for the readings to be
   amounts on some chart; the arc holds them as directions.
 
 **The corner, fixed by home and the horizon.** On the whole projective line the exchange has a second fixed point, −1,
@@ -976,7 +985,12 @@ projective too. Of two readings [h₁ : v₁] and [h₂ : v₂], the second lies
 D = v₂h₁ − v₁h₂ is positive. D is zero when the two are one direction, and a linear change of the drawing multiplies it by
 its determinant, so the order survives every drawing that keeps the sign. With the dot product it accounts for the pair:
 D² + (h₁h₂ + v₁v₂)² = (h₁² + v₁²)(h₂² + v₂²), Lagrange's identity in two dimensions, and only D's sign tells which way
-round the two lie.
+round the two lie. The order chains without a quotient: for three readings A, B, C,
+D(A, C)·h_B = D(A, B)·h_C + D(B, C)·h_A (the three-term Plücker relation among 2 × 2 minors; Plücker 1865), so with every
+h above zero, B past A and C past B put C past A. Home and the horizon fix a distance as well as the corner: the
+logarithm of the cross ratio of two readings x and y against home and the horizon is ln(x/y), Hilbert's projective
+metric on the open arc (Cayley 1859; Klein 1871; Hilbert 1895). It gives the levels' distance its form, a count by
+ratio, and fixes it only up to a factor: no projective fact supplies the base.
 
 **Series stop at the corner.** The expansion 1/(1 + x²) = 1 − x² + x⁴ − … converges for x < 1 and diverges for x > 1;
 past the corner the expansion in 1/x converges instead. The singularities at x = ±i lie at distance one from zero, so no
@@ -1417,7 +1431,10 @@ doublings. Any ratio can be matched, then, but by the argument above every ratio
 added to the level, carried in the reader's resolution. A layout whose levels are uneven, as a calendar's are (100
 years, 12 months, about 30 days, 24 hours, 60 minutes, 60 seconds), matches no single factor and costs a table of its
 levels, which a reader given nothing does not have. Uniformity can be free; variation has to be represented somewhere,
-in the reader's resolution or in information handed to it.
+in the reader's resolution or in information handed to it. Levels given by a ratio must be one ratio repeated: every
+discrete set of rescalings closed under composing is the powers of one factor g, since under the logarithm it is a
+discrete subgroup of the line, the multiples of one step. Two factors whose logarithms are incommensurable, 2 and 3,
+generate rescalings dense in every range, and no levels at all. The levels' form is forced; which g is not.
 
 **A familiar instance.** Floating-point numbers lay their addresses this way. The exponent counts levels and the
 significand is a plain share within the level; below the smallest normal number, the subnormals lay one stretch in
@@ -2063,7 +2080,12 @@ q² has two kinds of solution, r = q, the circle centred on the one who sweeps, 
 it. These are the two pivots of §4, the centre and a point of the circle, and no other shape gives either. Which circle
 depends on the sweep: the circle centred on the pivot for the central sweep, the circle through it for the inscribed;
 with the pivot at home, these are the reader's unit circle and the Thales circle. The uniqueness is relative to the
-construction, a uniform lay by direction from one pivot, not a claim that no other geometry can be drawn. Read as the
+construction, a uniform lay by direction from one pivot, not a claim that no other geometry can be drawn. Nor do two smooth outlines read alike along their length: if
+r₁, r₂ > 0 have the same √(r² + r′²) at every direction, then where |r₁ − r₂| is greatest its derivative is zero, and
+(r₁ − r₂)(r₁ + r₂) + (r₁′ − r₂′)(r₁′ + r₂′) = 0 leaves (r₁ − r₂)(r₁ + r₂) = 0 there, so r₁ = r₂ everywhere. The law laid
+along a smooth outline fixes the outline, its size included once the length per turn is an amount; as a share, the
+size a₀ stays unread. Smoothness is needed: three arcs of circles through the pivot, joined at corners, have length 1
+per unit of turn throughout, as the unit circle has. Read as the
 reader's ignorance (§2), a reader who does not know the shape needs a law that every radial map leaves unchanged, and
 only a law on directions alone is one; the rescalings of κ are the radial maps with λ constant. So a reader can begin at
 the unit circle and read the shape without knowing V*: in ln r = a₀ + f(θ), the unknown size is the constant term alone,
@@ -2392,6 +2414,9 @@ the quantiles of the Cauchy with its scale at H.
   A large H gives the same half a long stretch, each address coarser, and carries the far half farther out.
 - The world's own count enters nowhere. Doubling or thinning what arrives moves no address (Theorem 6(a)), so a world of
   N things, of 2N, or of infinitely many is held at the same K addresses, each holding its share.
+- For even K the corner is a boundary between two addresses; for odd K one address is centred on it, its ends reciprocal
+  (K = 9: from 0.8391 to 1.1918 H). The two are the mid-rise and mid-tread quantizers (Gersho and Gray 1992), and both
+  are unchanged by the exchange.
 
 The same points are known in numerical analysis. Boyd's collocation points for a function on the whole line,
 L·cot((2j − 1)π/2N), j = 1, …, N, are the midpoints of N equal shares of the Cauchy of scale L, and their positive half
@@ -3472,6 +3497,9 @@ surfaces. *Comptes Rendus de l'Académie des Sciences* 13, 1060–1065.
 Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal für die reine und angewandte Mathematik*
 32, 119–123.
 
+Cayley, A. (1859). A sixth memoir upon quantics. *Philosophical Transactions of the Royal Society of London* 149,
+61–90.
+
 Civera, J., Davison, A. J. and Montiel, J. M. M. (2008). Inverse depth parametrization for monocular SLAM. *IEEE
 Transactions on Robotics* 24(5), 932–945.
 
@@ -3522,6 +3550,8 @@ CHI '95*, 234–241.
 
 Gauss, C. F. (1828). *Disquisitiones generales circa superficies curvas*. Göttingen.
 
+Gersho, A. and Gray, R. M. (1992). *Vector Quantization and Signal Compression*. Kluwer, Boston.
+
 Gerville-Réache, L. (2016). Mettre de l'eau dans du vin, un paradoxe de l'indifférence ? *Implications
 philosophiques*, 12 December 2016.
 
@@ -3546,6 +3576,9 @@ Haldane, J. B. S. (1932). A note on inverse probability. *Proceedings of the Cam
 55–61.
 
 Herschel, J. F. W. (1850). Quetelet on probabilities. *Edinburgh Review* 92, 1–57.
+
+Hilbert, D. (1895). Über die gerade Linie als kürzeste Verbindung zweier Punkte. *Mathematische Annalen* 46,
+91–96.
 
 Igarashi, T. and Hinckley, K. (2000). Speed-dependent automatic zooming for browsing large documents. *Proceedings
 of UIST 2000*, 139–148.
@@ -3596,6 +3629,8 @@ Keller, J. B. and Vakil, R. (2009). π_p, the value of π in ℓ_p. *The America
 931–935.
 
 Kellogg, O. D. (1929). *Foundations of Potential Theory*. Springer, Berlin.
+
+Klein, F. (1871). Über die sogenannte Nicht-Euklidische Geometrie. *Mathematische Annalen* 4, 573–625.
 
 Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen* (the Erlangen programme).
 
@@ -3668,6 +3703,9 @@ Penrose, R. and Rindler, W. (1984). *Spinors and Space-Time*, Vol. 1. Cambridge 
 Pitman, E. J. G. and Williams, E. J. (1967). Cauchy-distributed functions of Cauchy variates. *Annals of Mathematical
 Statistics* 38(3), 916–918.
 
+Plücker, J. (1865). On a new geometry of space. *Philosophical Transactions of the Royal Society of London* 155,
+725–791.
+
 Polyak, B. T. and Juditsky, A. B. (1992). Acceleration of stochastic approximation by averaging. *SIAM Journal on
 Control and Optimization* 30(4), 838–855.
 
@@ -3722,6 +3760,9 @@ Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the
 
 Stone, M. and Dawid, A. P. (1972). Un-Bayesian implications of improper Bayes inference in routine statistical
 problems. *Biometrika* 59(2), 369–375.
+
+Talacko, J. (1956). Perks' distributions and their role in the theory of Wiener's stochastic variables.
+*Trabajos de Estadística* 7, 159–174.
 
 Terrell, J. (1959). Invisibility of the Lorentz contraction. *Physical Review* 116(4), 1041–1045.
 

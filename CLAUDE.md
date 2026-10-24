@@ -934,6 +934,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   addresses (L = H) and one turn read by cosine (Chebyshev's nodes) and by tangent (the Cauchy), §3.4 Cauchy's mean width
   (2/π the turn's on every convex figure), §6 the angle doubling keeping the Cauchy without being Möbius, §9 the rim a
   fold (Whitney, Koenderink), §11.4 consistent hashing and order-maintenance labels (also in the companion).
+  Then four more (R477; sent, then "yes"): *The Unit Rule*, *The Cauchy*, *What a Relation Is Made Of*, *The Relation
+  Space* of 1 Sep; OFS §2 the winding number in no reading and the corner a crossing, §4 the missing mean the tail's (the
+  level chart has every moment; a correction), the bracket transitive (Plücker) and the levels as Hilbert's metric, §5
+  levels one ratio repeated, §7.4 an outline fixed by its length per turn, §8 odd and even K; the companion §2.4, §12.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -1612,7 +1616,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   papers kept as received, never edited: *Reader Geometry as Addressing* (rulings R1–R151 only; R152–R187 are
   quoted in SPN Appendix A), *The Relation Space*, *Browsing the Fisheye*, *The Radix*, *The Order of Limits*, *One
   Reader*, *Degrees of Freedom*; and since 11 Oct an eighth, *Special Relativity, Through the Fisheye* (4 Sep; Tom: "here is
-  a earlier paper on SR"); and since 24 Oct a ninth, *Observation Is a Sphere* (`observation-is-a-sphere.md`, R470), and a tenth, *The Algebra of Discrete Observation* (`algebra-of-discrete-observation.md`, R472), and an eleventh, *The Balance* (`the-balance.md`, R473); and the August originals *The Bounded Observer in Motion* and *The Cauchy Distribution as the Measure* (R475), and *The Cauchy, Inside and Out* (`the-cauchy-inside-and-out.md`, R476), its numbers rechecked in `runs/srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
+  a earlier paper on SR"); and since 24 Oct a ninth, *Observation Is a Sphere* (`observation-is-a-sphere.md`, R470), and a tenth, *The Algebra of Discrete Observation* (`algebra-of-discrete-observation.md`, R472), and an eleventh, *The Balance* (`the-balance.md`, R473); and the August originals *The Bounded Observer in Motion* and *The Cauchy Distribution as the Measure* (R475), and *The Cauchy, Inside and Out* (`the-cauchy-inside-and-out.md`, R476), and *The Unit Rule*, *The Cauchy*, *What a Relation Is Made Of* and *The Relation Space* as of 1 September (`the-unit-rule.md`, `the-cauchy.md`, `what-a-relation-is-made-of.md`, `the-relation-space-1-sep.md`, R477), its numbers rechecked in `runs/srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
   dimensions), its gems and one link to MOT run 2 (γ even, γβ odd in ln k; 1/γ = 2k/(1 + k²)) in `plans/archive-gems.md`.
   They predate 9 Oct: check every term (density, view from everywhere, inside/outside,
   fulcrum, arctan, h and v as breadths, recursive corners, depth, old situation numbers) before pulling anything forward.

@@ -189,7 +189,11 @@ rational step never closes, and its multiples spread uniformly round the turn (W
 Comparing two directions needs no division either. Of [h₁ : v₁] and [h₂ : v₂], the second is farther from home exactly
 when the bracket `D = v2*h1 - v1*h2` is positive: a cross product, exact in integers, zero when the two are one direction.
 Its square and the dot product's add to the product of the norms, D² + (h₁h₂ + v₁v₂)² = (h₁² + v₁²)(h₂² + v₂²) (Lagrange's
-identity in two dimensions), and only D's sign says which way round the two lie.
+identity in two dimensions), and only D's sign says which way round the two lie. The comparison is transitive with no
+quotient: D(A, C)·h_B = D(A, B)·h_C + D(B, C)·h_A (the three-term Plücker relation; Plücker 1865), so a sort by the
+bracket alone is a sort. Tangent addition, though, counts turns only modulo a half turn: readings composed round a loop
+close alike after one round and after two, and a program that needs the winding number must count passes through the
+horizon itself.
 
 ## 3. The corner
 
@@ -900,6 +904,13 @@ or draw a world arrive at these structures by design, and the geometry lets each
   gap takes about log₂ M insertions before labels must be reassigned (Itai, Konheim and Rodeh 1981; Dietz 1982). A count
   of addresses fixed beforehand runs out where the world's count grows; the turn's addresses do not, and pay with a
   horizon (§9).
+- **One stream is not an address.** A direction is two numbers, [h : v]. A single stream of amounts can be given a
+  partner by the Hilbert transform (Gabor's analytic signal; Gabor 1946), but the partner is the stream's own quadrature
+  only when its envelope's spectrum lies below the carrier (Bedrosian 1963): a premise about the payload, added.
+- **Relative steps on a lattice.** If every reading is rounded to whole levels and each step is coded against the last
+  rounded value, the held value is round(x) at every step, since round(x − n) + n = round(x) for whole n: the steps
+  telescope, and no error builds up whatever the route (DPCM with its predictor in the rounded domain). A k-tap
+  extrapolating predictor codes the k-th backward difference instead, and one isolated step then costs 2^(k−1) units.
 - **A spectral grid on the whole line.** Boyd's rational Chebyshev collocation points, L·cot((2j − 1)π/2N), are the
   midpoints of N equal shares of the Cauchy of scale L: the reader's addresses with L = H, and Boyd's rule for L, the
   scale of the feature to be resolved, is the best H at the corner of what is read (Boyd 1982, 1987). The same equal
@@ -964,6 +975,8 @@ unknown count, the order a program with finite memory lives in.
 
 ## References
 
+Bedrosian, E. (1963). A product theorem for Hilbert transforms. *Proceedings of the IEEE* 51(5), 868–869.
+
 Boyd, J. P. (1982). The optimization of convergence for Chebyshev polynomial methods in an unbounded domain.
 *Journal of Computational Physics* 45, 43–79.
 
@@ -983,6 +996,9 @@ Computing*, 122–127.
 
 Furnas, G. W. and Bederson, B. B. (1995). Space-scale diagrams: understanding multiscale interfaces. *Proceedings of
 CHI '95*, 234–241.
+
+Gabor, D. (1946). Theory of communication. *Journal of the Institution of Electrical Engineers* 93(26), Part III,
+429–457.
 
 Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *Annals of Mathematics* 34(1), 147–169.
 
@@ -1034,6 +1050,9 @@ Munro, J. I. and Paterson, M. S. (1980). Selection and sorting with limited stor
 12(3), 315–323.
 
 Niven, I. (1956). *Irrational Numbers*. Carus Mathematical Monographs 11, Mathematical Association of America.
+
+Plücker, J. (1865). On a new geometry of space. *Philosophical Transactions of the Royal Society of London* 155,
+725–791.
 
 Polyak, B. T. and Juditsky, A. B. (1992). Acceleration of stochastic approximation by averaging. *SIAM Journal on
 Control and Optimization* 30(4), 838–855.

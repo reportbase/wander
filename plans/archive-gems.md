@@ -421,3 +421,54 @@ Thomas–Wigner, Crofton, the bracket, the seam, growth); the second half's two 
   a mean" (L2510): the residue measured is ρ (0.5, 2, 3.7), not 2/π.
 - v = sin(blue) read as β with no bridge (L858–877).
 
+## The Unit Rule, What a Relation Is Made Of, and The Cauchy (added 24 Oct)
+
+Three August papers (21–22 Aug), companions to *The Relation Space*, filed as received in `papers/archive/`
+(`the-unit-rule.md`, `what-a-relation-is-made-of.md`, `the-cauchy.md`); one reader each, the numbers below checked again.
+*The Relation Space* as of 1 September came with them, filed as `the-relation-space-1-sep.md` beside the revised
+1 October text mined above; nothing new in it. Held already: the bracket and Lagrange, the harmonic conjugate (the
+papers' "anti-fulcrum" −1), tangent addition, Niven and Weyl, Robbins–Monro (the Unit Rule's side bit), Wantzel, √n
+times the median's spread to π/2, only circles with r² + r′² constant, ½·sech ξ, the angle doubling keeping the Cauchy.
+
+**Taken into OFS (R477):**
+- *An outline is fixed by its length per turn* (The Cauchy §12, L932–1080): two smooth r₁, r₂ > 0 with the same
+  √(r² + r′²) are one outline (at the greatest |r₁ − r₂|, (r₁ − r₂)(r₁ + r₂) = 0); three circle arcs through the pivot,
+  joined at corners, read as the unit circle (|r² + r′² − 1| ≤ 5·10⁻¹¹ off the joins); an egg refitted from 200 seeds,
+  179 positive solutions, all within 2.3·10⁻¹¹ of it. No classical source found. OFS §7.4.
+- *The level chart has every moment* (The Cauchy §6, L180–187): (1/π)·sech ξ, mean 0, variance π²/4 (2.4674011 by
+  quadrature), excess kurtosis 2 (Talacko 1956). A correction to OFS §4's "a chart that sends an end to infinity": the
+  missing mean is the tail's, 1/x² against e^(−|ξ|).
+- *Order is transitive without dividing* (Six Things L245–253): D(A, C)·h_B = D(A, B)·h_C + D(B, C)·h_A (to 2·10⁻¹⁶ over
+  10⁴ triples; Plücker 1865). OFS §4; the CS companion §2.4.
+- *Composition cannot count turns* (Six Things L205–222, L647–664): tan(π/12) twelve and twenty-four times both compose to
+  0 (−2·10⁻¹⁶, −4·10⁻¹⁶), horizon passes 1 and 2. OFS §2; the companion §2.4.
+- *The levels as Hilbert's metric* (Six Things L1175–1186): ln CR(0, ∞; x, y) = ln(x/y) (2.1758334 at 3.7, 0.42; Cayley
+  1859, Klein 1871, Hilbert 1895), form without base. OFS §4.
+- *The corner a crossing, not a peak* (Six Things L463–478): at noise 10⁻³ the crossing's rms 0.0007 rad, the peak's
+  0.010 (Claude's rerun; the reader had 9.8·10⁻⁴ and 1.45·10⁻²). OFS §2.
+- *Levels are one ratio repeated* (Unit Rule L268–276): discrete subgroups of (ℝ>0, ×) are {gⁿ}; 2 and 3 dense (51 points
+  of [0, 1) in log₂, largest gap 0.036). OFS §5 after "What another ratio costs".
+- *Odd and even K* (Unit Rule §8, L839–867): K = 8 a boundary at the corner, K = 9 an address [0.8391, 1.1918] about it,
+  ends reciprocal (mid-rise and mid-tread; Gersho and Gray 1992). OFS §8.
+- *For the CS companion* §12: one stream is no address (Gabor 1946; Bedrosian 1963: a slow envelope's Hilbert error 0, a
+  fast one's 0.50, phase 0.52 rad); rounded relative steps telescope (10⁴ Cauchy-walk samples exact, sum −1765 the end
+  rung); a k-tap extrapolator's isolated step 2^(k−1) (1, 2, 4, 8, 16).
+
+**Kept here:** "homogeneity is unoccupiable" (The Cauchy §14: no continuous section of ℝ → S¹, the classical name for a
+chart's zero and cut); the Unit Rule's detection lateness at top and bottom (threshold over slope).
+
+**Errors, not to pull forward:**
+- "Fulcrum" for the corner throughout; recursive corners ("each rung is the corner again", Unit Rule L242–250, Six Things
+  L1212–1223) and the base taken from the reader's grain (against R188, R189).
+- Six Things L1019–1021: the half-Cauchy's mean to 1, 10, 10³, 10⁶ given as 0.441, 2.50, 8.35, 17.1, twice the true
+  0.2206, 1.248, 4.177, 8.575 ((2/π)·ln 10 a decade).
+- The Cauchy as arrivals or a body's payload (Six Things L796–804, L1139–1145; The Cauchy §10a: a mass-weighted disk's
+  directions are not Cauchy, KS 0.108 at distance 20, bounded at |t| ≤ 0.050).
+- The Cauchy L838, "the family survives the Möbius maps and nothing wider": tan(3·arctan s) keeps it (KS 0.0009).
+- The Unit Rule L789–791, rapidity's corners "at equal steps": asinh steps 0.562, 0.651, 0.682, 0.690, 0.692.
+- The Unit Rule L531–538, "exactly 2/π at the fulcrum": the aperture scaled by 4/π; ψ₁ there numerology.
+- Six Things L1319–1322, "a change of scale cannot forge a crossing": empty (a rescaling moves no reading; V = cH moves
+  the crossing to 1/c).
+- Uppercase V, H as fullnesses on [0, 1], the census V² + H² = 1; serial and parallel as the definition; the signed half
+  turn's quartiles read as the corner and home; 2/π "a density per unit of arc".
+
