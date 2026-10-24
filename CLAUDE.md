@@ -926,6 +926,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Then *The Balance* (R473; "any gems", "yes"): filed; OFS §7.1 "Why a turn and not a boost" (only the elliptic flow keeps
   a spread probability, the Cauchy), §4 Bohlin's square (a centred ellipse to a focal conic), §7.6 a median in two
   registers (Robbins–Monro with averaging), the last carried to the CS companion.
+  Then the old SR and Cauchy papers (R475; "if you agree, yes"): filed; OFS §7.1 Beltrami (the gnomonic chart the only one
+  keeping lines straight), §7.8 the cross ratio of four stars unmoved by boosts (Penrose–Rindler), §11.4 the capped charts'
+  worst reading and the Kalman steady state (a reciprocal pair about √(qr); also in the companion); `physics.md` §1 the
+  thermal sky's k² and radar's ratio and product.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -1604,7 +1608,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   papers kept as received, never edited: *Reader Geometry as Addressing* (rulings R1–R151 only; R152–R187 are
   quoted in SPN Appendix A), *The Relation Space*, *Browsing the Fisheye*, *The Radix*, *The Order of Limits*, *One
   Reader*, *Degrees of Freedom*; and since 11 Oct an eighth, *Special Relativity, Through the Fisheye* (4 Sep; Tom: "here is
-  a earlier paper on SR"); and since 24 Oct a ninth, *Observation Is a Sphere* (`observation-is-a-sphere.md`, R470), and a tenth, *The Algebra of Discrete Observation* (`algebra-of-discrete-observation.md`, R472), and an eleventh, *The Balance* (`the-balance.md`, R473), its numbers rechecked in `runs/srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
+  a earlier paper on SR"); and since 24 Oct a ninth, *Observation Is a Sphere* (`observation-is-a-sphere.md`, R470), and a tenth, *The Algebra of Discrete Observation* (`algebra-of-discrete-observation.md`, R472), and an eleventh, *The Balance* (`the-balance.md`, R473); and the August originals *The Bounded Observer in Motion* and *The Cauchy Distribution as the Measure* (R475), its numbers rechecked in `runs/srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
   dimensions), its gems and one link to MOT run 2 (γ even, γβ odd in ln k; 1/γ = 2k/(1 + k²)) in `plans/archive-gems.md`.
   They predate 9 Oct: check every term (density, view from everywhere, inside/outside,
   fulcrum, arctan, h and v as breadths, recursive corners, depth, old situation numbers) before pulling anything forward.

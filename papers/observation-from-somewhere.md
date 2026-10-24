@@ -1618,7 +1618,9 @@ drawing is the geometry's whole work; each true breadth is one number of the amo
 amounts alone.
 
 In classical terms the readings are the tangent of a uniformly distributed angle: the gnomonic projection of a uniform
-direction. For two other parties the gnomonic projection of a uniform direction on the sphere is the multivariate Cauchy
+direction. It is also the one chart that keeps lines straight: a map from part of the sphere to the plane that sends every
+great circle to a straight line is the gnomonic projection followed by a projective map (Beltrami 1865), so asking that
+things in one line read as one line forces the reading v/h, up to a projective change of the drawing. For two other parties the gnomonic projection of a uniform direction on the sphere is the multivariate Cauchy
 (the multivariate t with one degree of freedom), whose marginals are Cauchy (Cacoullos 2014). The gnomonic projection is
 the image plane of a pinhole: a direction (1, s, s₂) lands at (s, s₂) on a flat screen one unit along h, so the Cauchy
 wedge is what such a screen records of directions arriving uniformly over the octant, with no reader dividing anything
@@ -2173,6 +2175,9 @@ follow every increasing map; those facts underlie parts (b) and (d). The other p
   - Its parameter is ρ = tanh(η/2), where η is the rapidity. With one dimension fewer it is the wrapped Cauchy with the
     same ρ.
   - That density is D²/4π: the crowding of addresses toward the motion.
+  - It keeps the cross ratio of any four sources' places, read as complex numbers in that chart, and three sources seen
+    in both frames fix the whole boost and turn: the Möbius maps of the sphere are the Lorentz group, and a Möbius map
+    is fixed by three points (Penrose and Rindler 1984).
 
   The second is a weighting of the payload at each address, and it moves no address.
   - Of the D⁴ by which an isotropic sky's intensity brightens ahead (Rybicki and Lightman 1979), D² is the addresses'
@@ -3301,7 +3306,14 @@ it adds, and what that costs. Four examples:
   along one line of a screen of finite edge they put the median at half the edge instead of at the corner (§3.5). The
   weighting is the design's, added to the geometry. Laid by turn instead, an arctangent on each coordinate of a cube's
   face (the equi-angular cubemap), the cells' solid angles vary by a factor of √2 across a face, against 3√3 ≈ 5.2 for
-  equal pixels.
+  equal pixels. However the faces are laid, a direction in d + 1 dimensions is never more than arccos(1/√(d + 1)) from
+  the axis of the face it falls on (45°, 54.74° and 60° for one, two and three other parties), since its largest
+  component is at least 1/√(d + 1); every capped reading lies within √d of its face's centre.
+- *A filter's steady state.* A Kalman filter tracking a random walk, with process noise q and measurement noise r,
+  settles with its predicted and updated variances at √(qr)·μ and √(qr)/μ, μ = (n + √(n² + 4))/2 with n = √(q/r)
+  (Kalman 1960): a reciprocal pair about √(qr), the corner of the two noises, their product qr whatever n. For matrices
+  the same holds as P⁻ # P = Q # R, with # the matrix geometric mean. The design supplies the noises; that its two
+  variances sit at reciprocal readings about their geometric mean is the geometry's.
 - *Exact composition.* Readings composed by tangent addition can be held exactly as Gaussian integers, the step v/h as
   h + iv, reduced after each product. The register then grows by ½·log₂ of the odd part of h² + v² bits a step, and not
   at all only at home, the corner and the horizon: every other step costs storage without end, the arithmetic face of
@@ -3382,6 +3394,9 @@ Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation
 shift. *Developmental Science* 14(1), 125–135.
 
 Beardon, A. F. (1983). *The Geometry of Discrete Groups*. Graduate Texts in Mathematics 91. Springer, New York.
+
+Beltrami, E. (1865). Risoluzione del problema: riportare i punti di una superficie sopra un piano in modo che le
+linee geodetiche vengano rappresentate da linee rette. *Annali di Matematica Pura ed Applicata* 7, 185–204.
 
 Benford, F. (1938). The law of anomalous numbers. *Proceedings of the American Philosophical Society* 78(4), 551–572.
 
@@ -3523,6 +3538,9 @@ Jones, M. C. (2008b). On reciprocal symmetry. *Journal of Statistical Planning a
 Kakutani, S. (1944). Two-dimensional Brownian motion and harmonic functions. *Proceedings of the Imperial Academy
 Tokyo* 20(10), 706–714.
 
+Kalman, R. E. (1960). A new approach to linear filtering and prediction problems. *Journal of Basic Engineering*
+82(1), 35–45.
+
 Kato, S. and McCullagh, P. (2020). Some properties of a Cauchy family on the sphere derived from the Möbius
 transformations. *Bernoulli* 26(4), 3224–3248.
 
@@ -3594,6 +3612,8 @@ Parker, M. C. and Jeynes, C. (2023). A maximum entropy resolution to the wine/wa
 
 Penrose, R. (1959). The apparent shape of a relativistically moving sphere. *Proceedings of the Cambridge
 Philosophical Society* 55, 137–139.
+
+Penrose, R. and Rindler, W. (1984). *Spinors and Space-Time*, Vol. 1. Cambridge University Press.
 
 Pitman, E. J. G. and Williams, E. J. (1967). Cauchy-distributed functions of Cauchy variates. *Annals of Mathematical
 Statistics* 38(3), 916–918.

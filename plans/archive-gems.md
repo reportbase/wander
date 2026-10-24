@@ -332,3 +332,46 @@ three taken re-checked by Claude. A reading, not a ruling.*
   step), its ratios single-run noise; L1388–1390 and its table still say "total = πρ₀ = K", fixed only at §31.2 to (π/2)ρ₀.
 - L1489–1491 calls Lagrange's identity "the Born rule" (conceded at its §34); L1474, L1485 "provably no fourth" and
   "nothing else is observable" overclaim the first fundamental theorem; appendix Y1's "exactly 3 gaps" is at most 3.
+
+## The Bounded Observer in Motion, and The Cauchy Distribution as the Measure (added 24 October)
+
+*Tom: "here are our old sr and cauchy papers", then "if you agree, yes". Both archived August 2026 (gbo framework), kept as
+received: `papers/archive/the-bounded-observer-in-motion.md` (the SR paper, v9; *SR Through the Fisheye*, archived 11 Oct,
+built on it) and `papers/archive/cauchy-as-the-measure.md`. One reader each, every claim checked numerically; the Kalman
+and cross-ratio items re-checked by Claude. A reading, not a ruling.*
+
+**Taken (SPN R475):**
+- *Beltrami's theorem* (Cauchy paper L163): a map from part of the sphere to the plane sending great circles to lines is
+  the gnomonic projection up to a projective map (Beltrami 1865; 500 great circles collinear to 9·10⁻¹⁶). OFS §7.1 where
+  the gnomonic projection is named.
+- *The cross ratio of four stars* (SR paper L270, L389): unchanged by every boost and turn in the stereographic chart, and
+  three correspondences fix the transformation (PSL(2,ℂ) ≅ SO⁺(3,1), sharply 3-transitive; 500 cases to 7·10⁻¹⁴; Penrose
+  and Rindler 1984). OFS §7.8's SR entry.
+- *The capped charts' worst reading* (Cauchy paper L169): within arccos(1/√(d + 1)) of a face's axis, readings within √d
+  (sampled: least largest component 0.57739 against 1/√3). OFS §11.4 beside the equi-angular cubemap.
+- *The Kalman steady state* (SR paper L464–509): P⁻ = √(qr)·μₙ, P = √(qr)/μₙ, μₙ = (n + √(n² + 4))/2, n = √(q/r), product
+  qr (Claude: at q = 2, r = ½, 1 + √2 and √2 − 1); matrices P⁻ # P = Q # R (Claude: to 9·10⁻¹⁵ at d = 2, 3; Kubo–Ando
+  for #); (1 − K)² = μ⁻⁴; smoothed √(qr)/(μ + 1/μ). OFS §11.4 and the CS companion §12.
+- *The thermal sky's k²* (SR paper L336) and *radar's ratio and product* (L361–371, L451): `physics.md` §1's dictionary.
+
+**Kept here:**
+- The Wigner angle for any angle θ between the boosts: tan(Ω/2) = ab·sin θ/(1 + ab·cos θ), a = tanh(ζ₁/2),
+  b = tanh(ζ₂/2) (200 cases to 10⁻¹¹ against polar decomposition; Rhodes and Semon 2004, to check). It generalizes the
+  perpendicular case of the Algebra paper's entry above.
+- Rindler (SR paper L593–627): echoes from a static mirror return only for emissions before τ = (1/a)·ln(2a·x_m); between
+  rungs the redshift x_em/x_rec; radar rods x₁·ln(x₂/x₁) and x₂·ln(x₂/x₁); Tolman T·x = 1/2π; a dropped probe crosses
+  the horizon after proper time 1/a. Physics, for `physics.md` if wanted.
+- Composition is addition near home to third order: r ⊕ t − (r + t) = rt(r + t)/(1 − rt) (Cauchy paper L216).
+- Checked and holding: the twins' 0.8; Bell's 1.25L; k = sec θ + tan θ; k(arctan(n/2)) = μₙ; the mean of Ω² over the
+  sky 1; exact boost composition's bits a step; the free-fall rapidity arccosh(x₀/x_R).
+
+**Errors, not to pull forward:**
+- Both: 0 and ∞ "one address" (SR L311, Cauchy L121–124, L234). The reciprocal swaps them; the projective line joins +∞
+  to −∞, not 0 to ∞.
+- Cauchy paper: the mode "at the corner" (L234; it is at home); the missing mean blamed on no privileged point (L230–234;
+  it is the tail's); the foveal falloff as a Cauchy (L262; cortical magnification goes as 1/(E + E₂)); Lévy's stability
+  under sums run together with Möbius composition (L277).
+- SR paper: "1827, Cauchy" (L694; Poisson 1824, Cauchy 1853); rapidity "1905, Einstein" (L696; Varićak 1910, Robb 1911);
+  Mercator's formula (L691; Wright 1599, Bond c. 1645); "walks β out to its balance and no further" (L311; β → 1); the
+  conformal algebra of S² is so(3,1) (L13, L260) only for the global Möbius group; a float's exponent "in its first byte"
+  (L697; bits 30–23, across two bytes).

@@ -883,6 +883,10 @@ or draw a world arrive at these structures by design, and the geometry lets each
   line of a screen of finite edge they put the median at half the edge instead of at the corner. The weighting is the
   design's, added to the geometry. Laid by turn instead, an arctangent on each coordinate of a cube's face (the
   equi-angular cubemap), the cells' solid angles vary by a factor of √2 across a face, against 3√3 ≈ 5.2 for equal pixels.
+- **A filter's steady state.** A Kalman filter tracking a random walk (process noise q, measurement noise r) settles
+  with predicted and updated variances √(qr)·μ and √(qr)/μ, μ = (n + √(n² + 4))/2, n = √(q/r) (Kalman 1960): a
+  reciprocal pair about √(qr), their product qr at every n; for matrices P⁻ # P = Q # R, # the matrix geometric mean.
+  The noises are the design's; the corner the two variances meet about is the geometric mean's.
 - **Exact composition.** Readings composed by tangent addition can be held exactly as Gaussian integers, the step v/h
   as h + iv, reduced after each product by the gcd of its parts. The register grows by ½·log₂ of the odd part of
   h² + v² bits a step, and not at all only at home, the corner and the horizon: every other step costs storage without
@@ -973,6 +977,9 @@ Jones, M. C. (1999). Distributional relationships arising from simple trigonomet
 Statistician* 53(2), 99–102.
 
 Jones, M. C. (2008b). On reciprocal symmetry. *Journal of Statistical Planning and Inference* 138(10), 3039–3043.
+
+Kalman, R. E. (1960). A new approach to linear filtering and prediction problems. *Journal of Basic Engineering*
+82(1), 35–45.
 
 Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen*.
 
