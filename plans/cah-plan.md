@@ -254,7 +254,7 @@ radius 4 to 5.2): slope under 0.1. Killed if any is not.
 **The February results, read** (the document's own numbers):
 - The answer to its open question is the second: with keys spread over a set of dimension above 2 about the query, the
   Cauchy kernel's effective keys grow without bound, in proportion to N past 4 dimensions. Its own table (121, 308, 623,
-  2,037 effective keys at N = 500 … 5,000, slope 1.08) is the D′ > 4 case. A trained W_k could only hold the count by putting
+  2,037 effective keys at N = 500 … 5,000, slope 1.21 on log axes, a little steeper than N) is the D′ > 4 case. A trained W_k could only hold the count by putting
   each query's keys on a set of dimension below 2; the Gaussian holds it at any dimension once N outreaches the kernel.
 - "Candidates plateau … O(K·D) confirmed": the union of K nearest in each of D sorted lists holds at most K·D keys by
   construction, so its plateau is the index's bound, not a finding about the kernel ("the viewport mechanism is
