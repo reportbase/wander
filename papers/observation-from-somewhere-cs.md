@@ -435,6 +435,16 @@ Not knowing it, the reader must draw the other party at its own H, and v = h bec
 median of its readings. With no size, the array's far end is no amount, only a direction, [0 : 1], where the chart v/h
 runs out: the horizon. Both are the reader's because the size is missing.
 
+**Four kinds of array.** What is known of the two breadths gives four kinds of array. A circle, both breadths known
+and equal, is a constant array of known length, every entry the radius drawn at H, so it needs no storing: it is the
+equation h² + v² = 1. A shape with its breadths known is an ordinary array of known length, an amount at every index,
+which the writer can join into a closed shape. Without the length there are two more. The values without the length
+are an amount at each given index known only up to one common factor, like samples from a sensor of unknown gain: they
+can be ranked and averaged, not sized. The index alone is allocated before any value arrives and has no length, its
+slots the Cauchy's quantiles, its middle the corner, its last slot running to the horizon, K slots for any N, as a hash
+ring's are. The writer's arrays have the length; the reader's are the index and the payload on it, without the length,
+and that one number is what writing supplies.
+
 **Growth.** The same split shows when a world grows rather than scales. An address made by dividing a thing's place in
 a list by the list's length is a ratio, a reading of the list's own contents, and it moves as soon as the list grows.
 An address made of slots, a fixed number to each level whatever the level holds, does not move: the radix was agreed

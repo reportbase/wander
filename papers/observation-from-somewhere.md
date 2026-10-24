@@ -1925,6 +1925,18 @@ addresses follow the uniform turn is Proposition 5's, not the array's.
   - With no size, the array's far end is no amount, only a direction, [0 : 1], where the chart v/h runs out: the horizon
     (§4).
   - Both are the reader's because the size is missing; the writer, holding it, has neither.
+- *The situations as arrays* (§3.1).
+  - Situation 1 is a constant array of known length: every entry the radius, drawn at H. Its one value needs no
+    storing, so the array is the equation h² + v² = 1.
+  - Situation 2 is an ordinary array of known length, a breadth in amounts at every index, which the writer joins into
+    the closed shape.
+  - Situation 3 is the values without the length: an amount at each given index, known only up to the one common
+    factor a₀, so the values are relative to one another, can be ranked and averaged, and cannot be sized.
+  - Situation 4 is the index alone, laid before any value arrives and with no length: its places the Cauchy's
+    quantiles, its middle the corner, its last place running to the horizon, K places for any N.
+  - Situation 0 has no array: H, but no index and no relation to store.
+  So the writer's arrays are 1 and 2, with the length known; the reader's are 3 and 4, the payload on the index and the
+  index itself, with the length missing. That one number is what writing supplies.
 
 ### 7.4 The shape is payload
 

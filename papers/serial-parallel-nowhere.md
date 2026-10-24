@@ -6752,6 +6752,8 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 
 - **R482** (24 Oct): ChatGPT's review 28 (`plans/ofs-review-28.md`, 8.8/10: "proceed toward external review after the narrow V = H qualification in the abstract and a final check that the shape examples are clearly distinguished from the general proof"). The abstract's qualifier was already made (R479–R480; the review read an older draft). OFS §7.4's "The lay, not the shape" now says the table and the 73 shapes illustrate results proved elsewhere (Theorem 6(a) for the lay by direction, the shape being payload; Theorem 6(e) for the corner under an exchange-symmetric lay), not their proof. Next: external review.
 
+- **R483** (24 Oct): Tom: "the array of known length is situation 2. what kind of array is situation 1, 3, 4", then "yes, add it." OFS §7.3's array picture closes with "The situations as arrays": 1 a constant array of known length (every entry the radius at H, so no storing: the equation), 2 an ordinary array of known length (a breadth in amounts at each index, joined by the writer), 3 the values without the length (an amount at each given index up to the one factor a₀: ranked and averaged, never sized), 4 the index alone, with no length (the Cauchy's quantiles, the middle the corner, the last place to the horizon, K places for any N), 0 no array; the writer's arrays 1 and 2 with the length, the reader's 3 and 4 without it, the one number writing supplies. The CS companion §6 likewise ("Four kinds of array", a sensor of unknown gain, a hash ring).
+
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |
