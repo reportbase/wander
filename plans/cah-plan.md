@@ -219,3 +219,31 @@ The Cauchy kernel is that trap the other way: the address law's shape used as a 
 What carried forward from that work is not the constant but two of its prizes, now stated with their conditions in OFS:
 K kept apart from N, and scale-free readings. A test of the framework in attention would put the Cauchy on a direction
 (the angle between q and k, or the distance back laid on a reader's lay with its corner at H); not taken up.
+
+**The February results** (Tom, after run 1, without comment: `attention_results.md`, 7 February 2026, "Projected
+Attention: Complete Results & Next Steps"; not committed). Seven C++ programs: a viewport over per-dimension sorted key
+indices (K nearest a dimension, the union weighted by the kernel), Cauchy and Gaussian kernels, keys "direct" or through a
+random W_k. Its open question: "Does a trained Cauchy model produce attention patterns where effective keys stay bounded
+as context grows? Or does Cauchy's nature mean effective keys always grow with N?"
+
+*Prediction before a check* (from the kernel alone, no run yet): for keys spread with fixed density over a set of
+dimension D′ about the query, the kernel's far weight is ∫ r^(D′−1)/(1 + r²/γ²) dr, which converges only for D′ < 2. So
+with N keys the weight beyond any fixed radius grows as N^((D′−2)/D′) for D′ > 2 (as ln N at D′ = 2), the share held by
+the nearest keys falls as its inverse, and the effective number of keys (Σw)²/Σw² grows without bound: at D′ = 32 nearly
+in proportion to N. A Gaussian kernel's far weight converges in every dimension, so its effective keys stay bounded. So
+the answer to the open question is the second, unless trained keys lie on a set of dimension below 2 about each query.
+**CH1:** in a seeded check (keys Gaussian about the query at fixed density, N = 500 … 8,000, γ the median nearest-key
+distance), the effective-key count's slope against N on log axes is within 0.1 of (D′ − 2)/D′ for D′ = 4 and 8, and
+under 0.1 at D′ = 1 (bounded). Killed if not.
+
+*CH1, the check* (`runs/cah/effkeys.py`, `effkeys.txt`; 20 repeats a point, γ = 1 at unit density). Slopes of the
+effective-key count against N: Cauchy +0.012 at D′ = 1 (−0.012, bounded), +0.236 at 2, +0.904 at 4, +0.993 at 8;
+Gaussian −0.015 at 4 and +0.726 at 8. **Killed**, by my arithmetic: I predicted the slope of the far *weight*, not of the
+effective count (Σw)²/Σw², whose denominator also grows: Σw² = ∫ r^(D′−1)/(1 + r²)² dr converges only for D′ < 4. So the
+count grows as N^(2(D′−2)/D′) for 2 < D′ < 4, as N/ln N at 4, in proportion to N past 4, and as (ln N)² at 2. The
+Gaussian at D′ = 8 killed it by my set-up too: at unit density the ball's radius N^(1/8) (2.2 to 3.1) had not passed the
+Gaussian's reach in eight dimensions (its mass peaks near √7 = 2.6), so it had not settled.
+
+**CH1′** (written after the check, from the corrected count): Cauchy slope at D′ = 3 within 0.1 of 2/3; at 4 within 0.1
+of 1 − 1/ln N̄ (0.88 at the run's middle N); at 8 within 0.05 of 1. Gaussian at D′ = 8 with N from 65,536 to 524,288 (ball
+radius 4 to 5.2): slope under 0.1. Killed if any is not.
