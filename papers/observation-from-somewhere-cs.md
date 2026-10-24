@@ -462,7 +462,9 @@ numbers make has a geometry of its own, and it is a classical one, the hyperboli
 ds² = (dx² + dy²)/y².
 - **Every level is the next.** z ↦ 2z is an isometry of that plane, and it carries each level of cells onto the next.
   Each binary digit is one step down, and every step is the same: ln 2 in height. There is no privileged level; level
-  50 is as good a place to stand as level 0.
+  50 is as good a place to stand as level 0. On the line alone the step is the doubling map x ↦ 2x mod 1, which moves
+  the first digit of the remainder into the index: `floor(2*x)` is that digit and `2*x - floor(2*x)` the rest. Its
+  Lyapunov exponent, the rate at which it forgets where it started, is ln 2: one level a step (the Bernoulli shift).
 - **Every cell has the same room.** The tile [kw, (k + 1)w] × [w/2, w] has hyperbolic area
   ∫∫ dx·dy/y² = w·(2/w − 1/w) = 1, at every level. A cell fifty levels down, 2⁻⁵⁰ wide on the line, has exactly the room
   of the first. The tiles are Böröczky's binary tiling (Böröczky 1974).

@@ -198,3 +198,42 @@ k, the tangent half-angle); the reading is ours. A MOT run 3 would put it to pre
 `physics.md` §1 and §2.2: the three pairs and their corners (§4), pseudorapidity as a direction's level (§5), β below the
 corner and rapidity above it (§4, tested as rapidity being the reader's lay smoothed), and the link above. The fourth
 star, the Breit–Wigner line and the Rindler gearing are not moved.
+
+## Observation Is a Sphere: The Handshake at the Horizon (added 24 October)
+
+*Tom: "here is an old paper. Any gems?", then "yes" to filing it and pulling these forward. `papers/archive/observation-is-a-sphere.md`,
+kept as received (undated; its own sections place it after the December 2025 *Universal Semantic Horizon* paper, which
+CAH read). It is the source of ψ₁ψ₂ = (2/π)(1/2) = 1/π, the Ω_m share `plans/omm-plan.md` set aside. Read by Claude,
+every number below checked exactly before sorting; a reading, not a ruling.*
+
+**Gems:**
+- **The Cayley transform** (its Appendix C): w = (z − i)/(z + i) sends the reading s = tan θ to w = −e^(2iθ), the circle's
+  point 2θ round from home's image, and i to the centre (checked to 10⁻¹⁶ at three θ). The inscribed θ and the central
+  2θ (III.20) are one point under the map; the uniform turn about the centre is carried to the Cauchy on the line, the
+  harmonic measure from i. **Went to** OFS §4, after "What each sweep reads", with Cayley 1846 cited (SPN R470).
+- **The handshake, π/2 · 2/π = 1**: in the paper a number times its reciprocal labelled inside and outside; its intuition
+  (one boundary, two vantages) is what OFS kept, with content: one turn from its two pivots (R223, R329, R450).
+- **ψ by dimension**: its 2/π (S¹), ½ (S²), 4/(3π) (S³) are E|cos θ| for a uniform direction in 2, 3, 4 dimensions,
+  Γ(d/2)/(√π·Γ((d + 1)/2)), SIT run 1's hemisphere numbers inverted. Its "S² is the only rational one" is wrong: every
+  odd d gives a rational (3/8 at d = 5, 5/16 at d = 7).
+- **ln 2 and the floor**: the doubling map x ↦ 2x mod 1 (Lyapunov exponent ln 2, the Bernoulli shift) moves one binary
+  digit from the remainder into the key a step: the floor's remainder (R464) as dynamics, one level a step. **Went to**
+  OFS §8's "Every level is the next" and the CS companion's §7.2 (SPN R470). The paper gives ln 2 to every Chebyshev
+  T_n; T_n has ln n, only T₂ ln 2.
+- **π_p least at p = 2**: in the p-norms "π" runs from 4 down to π, least for the circle (Adler and Tanton 2000, *College
+  Mathematics Journal* 31(2), 102–106; to check before citing). Bears on OFS's Euclidean choice; not moved. The paper's
+  L₁ value 2.83 is wrong (4).
+- **K and N**: "K finite, N unbounded"; "K is discrete to its creator, but continuous to its observer". Early forms of K
+  apart from N (OFS §8) and writers within writers (OFS §11.2 question 8). Already in OFS in their present form.
+
+**Not to pull forward:**
+- The extraction rate: ∫₋₁¹ dx/(1 + x²) = π/2, not 2, so the share captured by the aperture [−1, 1] is ½ (the corner),
+  not 2/π.
+- 1/π = (2/π) × ½ multiplies means from two dimensions as if sequential filters; with it Ω_m (stays set aside, OMM).
+- The drift section argues against itself (§14: only exactly 2/π avoids drift; §15: near-misses cancel); Weyl's theorem
+  does not cancel a wrong rate's linear drift; Beatty's theorem is true and unrelated; "3 looks 95.5%, 4 looks 127%" is
+  3/π and 4/π.
+- Slepian–Pollak's 2/π is a units conversion (c = πWT against the Shannon number 2WT).
+- Appendix B's biology: retinal ganglion density does not fall as 1/(1 + ρ²) (cortical magnification goes roughly as
+  1/(E + E₂)); the fish-drift and bee-dance figures look unverifiable. Check every citation before any use.
+- Its terms predate 9 October throughout (inside/outside, extraction, S¹ "odd", S² as "the line"): check before reuse.

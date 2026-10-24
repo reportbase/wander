@@ -905,6 +905,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   screen gd ζ; any place up to N in about ln(2N)/rate; the end the horizon; letting go a new zero; content from the place;
   in 2D true boosts turn the frame, Thomas 1926), with Igarashi–Hinckley, Furnas–Bederson and van Wijk–Nuij cited; the
   companion's new §10 "A dial: scrolling without end" (later sections 11–13).
+  **Two old pieces from an archived paper** (24 Oct, SPN R470; Tom: "here is an old paper. Any gems?", then "yes"):
+  *Observation Is a Sphere* (the ψ₁ψ₂ = 1/π source) filed in `papers/archive/`, its gems in `plans/archive-gems.md`.
+  OFS §4 now names the Cayley transform (tan θ ↦ −e^(2iθ), i ↦ the centre: the two sweeps one classical map, the Cauchy
+  the harmonic measure from i; Cayley 1846); OFS §8 and the companion's §7.2 the doubling map (x ↦ 2x mod 1, Lyapunov
+  ln 2, one digit of the floor's remainder a step).
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -1583,7 +1588,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   papers kept as received, never edited: *Reader Geometry as Addressing* (rulings R1–R151 only; R152–R187 are
   quoted in SPN Appendix A), *The Relation Space*, *Browsing the Fisheye*, *The Radix*, *The Order of Limits*, *One
   Reader*, *Degrees of Freedom*; and since 11 Oct an eighth, *Special Relativity, Through the Fisheye* (4 Sep; Tom: "here is
-  a earlier paper on SR"), its numbers rechecked in `runs/srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
+  a earlier paper on SR"); and since 24 Oct a ninth, *Observation Is a Sphere* (`observation-is-a-sphere.md`, R470), its numbers rechecked in `runs/srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
   dimensions), its gems and one link to MOT run 2 (γ even, γβ odd in ln k; 1/γ = 2k/(1 + k²)) in `plans/archive-gems.md`.
   They predate 9 Oct: check every term (density, view from everywhere, inside/outside,
   fulcrum, arctan, h and v as breadths, recursive corners, depth, old situation numbers) before pulling anything forward.

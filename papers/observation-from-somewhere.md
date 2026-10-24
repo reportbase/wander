@@ -1087,7 +1087,12 @@ to: one function, a density of addresses on the one side and an amount of the pa
 corner. The sweep about a party gives ratios, of the first degree, unbounded, held by the median. The sweep about the
 pair's middle gives squares, of the second degree, bounded, with means. Both rates are exact only on the circle. Drawn on the
 ellipse of a stretched drawing, the inscribed angle theorem fails and neither pivot turns a uniform sweep into a uniform
-arc. So the two sweeps, like the pointing, need the drawing V = H (Proposition 3(e)).
+arc. So the two sweeps, like the pointing, need the drawing V = H (Proposition 3(e)). The two sweeps are also one classical map. The Cayley transform
+w = (z − i)/(z + i) carries the upper half-plane onto the disc and the line onto the circle (Cayley 1846). It sends the
+reading s = tan θ to w = −e^(2iθ), the point of the circle 2θ round from the image of home, and the standpoint i to the
+centre. So the inscribed reading at θ and the central angle 2θ are one point under the map, and the uniform turn about
+the centre is carried onto the Cauchy law on the line: the Cauchy is the harmonic measure from i, the circle's uniform
+measure seen from its centre, written in the line's coordinate.
 
 **What the reciprocal gives, and what it does not.** The reciprocal proves that the corner is the one point it leaves
 fixed, that every sweep passes through it, that a reading kept within [0, 1] on both sides must change register there
@@ -2196,7 +2201,9 @@ it is held, γ. The floor keeps m at one height and forgets that the height was 
 numbers make has a geometry of its own, and it is a familiar one.
 - *Every level is the next.* The map z ↦ 2z is an isometry of the half-plane (its metric is ds² = (dx² + dy²)/y²), and it
   carries each level of cells onto the next. Each binary digit is one step down, and every step is alike: a step of ln 2
-  in height.
+  in height. Read on the line alone, the step is the doubling map x ↦ 2x mod 1: each step moves the first digit of the
+  remainder into the key, and the rate at which the map forgets where it started, its Lyapunov exponent, is ln 2, one
+  level a step (the Bernoulli shift).
 - *Every cell has the same room.* The tile [kw, (k + 1)w] × [w/2, w] has hyperbolic area ∫∫ dx·dy/y² = w·(2/w − 1/w) = 1,
   at every level. A cell a million levels down has exactly the room of the first. The tiles are Böröczky's binary tiling
   (Böröczky 1974).
@@ -3344,6 +3351,9 @@ Multivariate Analysis* 128, 147–153.
 
 Cacoullos, T. and Papadatos, N. (2013). Self-inverse and exchangeable random variables. *Statistics & Probability
 Letters* 83(1), 9–12.
+
+Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal für die reine und angewandte Mathematik*
+32, 119–123.
 
 Civera, J., Davison, A. J. and Montiel, J. M. M. (2008). Inverse depth parametrization for monocular SLAM. *IEEE
 Transactions on Robotics* 24(5), 932–945.
