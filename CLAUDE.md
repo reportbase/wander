@@ -756,6 +756,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   bridge), physics already a mix of reading and writing observers with the boundary unmarked, the scale-the-world test
   placing it per quantity, the dictionary that boundary drawn. Claim no new physics; that a misplaced boundary causes a
   known difficulty is shown only for Lutz–Kelker, otherwise open.
+  **Two drafts received** (24 Oct, SPN R474; Tom: "Add these to physics papers."): D6's status note (Ω_m = 1/π, 23 Sep),
+  its upcoming surveys and a draft on the Born rule, kept as received in `papers/archive/` (`d6-dark-energy.md`,
+  `d6-upcoming.md`, `born-rule-draft.md`), placed in `physics.md` §5: D6 a registered prediction (2.4σ from DESI DR2 BAO,
+  0.4σ from Planck), its derivation not accepted, tested against the 2027–2028 surveys (queued, kill past 3σ); the Born
+  draft not usable as written (the step an identity, address density and payload foot run together).
   **Recovered, not written** (22 Oct, SPN R442; ChatGPT review 25, `plans/ofs-review-25.md`; Tom: "add it to OFS just to
   complete the idea that recovering a truth, is not necessarily the complete truth, a reader can't become a writer, but
   they are not powerless. a cleaver reader might recover the truth, but because he's not the writer, he did it through
@@ -905,6 +910,37 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   screen gd ζ; any place up to N in about ln(2N)/rate; the end the horizon; letting go a new zero; content from the place;
   in 2D true boosts turn the frame, Thomas 1926), with Igarashi–Hinckley, Furnas–Bederson and van Wijk–Nuij cited; the
   companion's new §10 "A dial: scrolling without end" (later sections 11–13).
+  **Two old pieces from an archived paper** (24 Oct, SPN R470; Tom: "here is an old paper. Any gems?", then "yes"):
+  *Observation Is a Sphere* (the ψ₁ψ₂ = 1/π source) filed in `papers/archive/`, its gems in `plans/archive-gems.md`.
+  OFS §4 now names the Cayley transform (tan θ ↦ −e^(2iθ), i ↦ the centre: the two sweeps one classical map, the Cauchy
+  the harmonic measure from i; Cayley 1846); OFS §8 and the companion's §7.2 the doubling map (x ↦ 2x mod 1, Lyapunov
+  ln 2, one digit of the floor's remainder a step).
+  Then (R471; Tom: "proceed") OFS §5's "The Euclidean choice" closes on π_p (Adler and Tanton 2000; Keller and Vakil
+  2009): least, π, at p = 2, 4 for the sum and largest-component norms, a dual pair; the Euclidean norm its own dual.
+  **A second archived paper** (24 Oct, SPN R472; Tom: "here is an old paper. any gems?", then "yes"): *The Algebra of
+  Discrete Observation* filed in `papers/archive/`, its gems and errors in `plans/archive-gems.md`. OFS now has §4 "The
+  corner, fixed by home and the horizon" (harmonic conjugates, the bracket, Lagrange), Niven's closure and no group law
+  on the projective plane in §2, Wantzel in §5's "Why halving", the three rulers as the complex, split-complex and dual
+  numbers (Yaglom) in §6, and in §11.4 the equi-angular cubemap, exact composition in Gaussian integers and Fibonacci
+  hashing; the CS companion §2.4 and §12 carry Niven, the bracket and those three.
+  Then *The Balance* (R473; "any gems", "yes"): filed; OFS §7.1 "Why a turn and not a boost" (only the elliptic flow keeps
+  a spread probability, the Cauchy), §4 Bohlin's square (a centred ellipse to a focal conic), §7.6 a median in two
+  registers (Robbins–Monro with averaging), the last carried to the CS companion.
+  Then the old SR and Cauchy papers (R475; "if you agree, yes"): filed; OFS §7.1 Beltrami (the gnomonic chart the only one
+  keeping lines straight), §7.8 the cross ratio of four stars unmoved by boosts (Penrose–Rindler), §11.4 the capped charts'
+  worst reading and the Kalman steady state (a reciprocal pair about √(qr); also in the companion); `physics.md` §1 the
+  thermal sky's k² and radar's ratio and product.
+  Then *The Cauchy, Inside and Out* (R476; sent, then "yes"): filed; OFS §8 Boyd's rational Chebyshev points as the K
+  addresses (L = H) and one turn read by cosine (Chebyshev's nodes) and by tangent (the Cauchy), §3.4 Cauchy's mean width
+  (2/π the turn's on every convex figure), §6 the angle doubling keeping the Cauchy without being Möbius, §9 the rim a
+  fold (Whitney, Koenderink), §11.4 consistent hashing and order-maintenance labels (also in the companion).
+  Then four more (R477; sent, then "yes"): *The Unit Rule*, *The Cauchy*, *What a Relation Is Made Of*, *The Relation
+  Space* of 1 Sep; OFS §2 the winding number in no reading and the corner a crossing, §4 the missing mean the tail's (the
+  level chart has every moment; a correction), the bracket transitive (Plücker) and the levels as Hilbert's metric, §5
+  levels one ratio repeated, §7.4 an outline fixed by its length per turn, §8 odd and even K; the companion §2.4, §12.
+  **No criticism of the number line** (R478; Tom: "don't subtly criticize the number line in ofs, no need to go there."):
+  OFS says what the number line is and does (the writer's ruler, the readers' shared unit), never what it lacks or
+  costs against the reader's addresses; four passages and the companion's two neutralized.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -1583,7 +1619,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   papers kept as received, never edited: *Reader Geometry as Addressing* (rulings R1–R151 only; R152–R187 are
   quoted in SPN Appendix A), *The Relation Space*, *Browsing the Fisheye*, *The Radix*, *The Order of Limits*, *One
   Reader*, *Degrees of Freedom*; and since 11 Oct an eighth, *Special Relativity, Through the Fisheye* (4 Sep; Tom: "here is
-  a earlier paper on SR"), its numbers rechecked in `runs/srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
+  a earlier paper on SR"); and since 24 Oct a ninth, *Observation Is a Sphere* (`observation-is-a-sphere.md`, R470), and a tenth, *The Algebra of Discrete Observation* (`algebra-of-discrete-observation.md`, R472), and an eleventh, *The Balance* (`the-balance.md`, R473); and the August originals *The Bounded Observer in Motion* and *The Cauchy Distribution as the Measure* (R475), and *The Cauchy, Inside and Out* (`the-cauchy-inside-and-out.md`, R476), and *The Unit Rule*, *The Cauchy*, *What a Relation Is Made Of* and *The Relation Space* as of 1 September (`the-unit-rule.md`, `the-cauchy.md`, `what-a-relation-is-made-of.md`, `the-relation-space-1-sep.md`, R477), its numbers rechecked in `runs/srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
   dimensions), its gems and one link to MOT run 2 (γ even, γβ odd in ln k; 1/γ = 2k/(1 + k²)) in `plans/archive-gems.md`.
   They predate 9 Oct: check every term (density, view from everywhere, inside/outside,
   fulcrum, arctan, h and v as breadths, recursive corners, depth, old situation numbers) before pulling anything forward.
@@ -2035,6 +2071,22 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `plans/rea/linewidth-note.md`, the attribution as the error (numbers kept, attribution corrected), ChatGPT's comments
   (generate or reveal; reconstruct the inference), the pole revealed and the Lorentzian its trace on the reader's line;
   the run not taken.
+  `lgo-plan.md` (+ `runs/lgo/lgo.py`, `lgo2.py`, 23 Oct; SPN R468; Tom, of another session's `cauchy_test.py`: "lets complete
+  those tests, through the lense of our mathmatical framework."): LIGO H1 and L1 whitened noise, GWOSC open data (gwosc.org's
+  chain needs certifi's bundle joined to the proxy's; sha256s in the plan). The old Cauchy-over-Gaussian at N = 1 is the
+  payload (a t of ν 15.9 and one transient); its move toward the Gaussian the amounts' central limit (n^(−½) through the
+  whitened band); the Cauchy is the direction [H1 : L1] (corner at the drawing's c = 0.932, 0.999 drawn by IQR, angle
+  uniform, averages flat). G1, G3, G6, G7, G9 killed, G1, G6, G9 by my set-up.
+  `cah-plan.md` (+ `runs/cah/cah.py`, `probe.py`, 23 Oct; SPN R469; Tom: "Wrong script. this is the one."): the Cauchy
+  attention horizon sweep (`cauchy_horizon_sweep_2.py`, February 2026, Tom's, not committed) and its paper (*2/π: The
+  Universal Semantic Horizon*, December 2025). The kernel the Cauchy's shape on an amount, ‖q − k‖; K = (2/π)N a fraction
+  of a count with no turn; 2/π a mean read as a threshold, and the circle's (in d dimensions √(2/(πd))). The sweep not
+  run (Tom: "is this test still worth running"); the Circle probe's purity on two 400-step models: 0.12–0.37 before the
+  retrofit, Cauchy, softmax and random alike, a count over 2^D cells; 0.58 after five epochs and climbing; its "Circle
+  beats Cauchy" on held-out triples 97% in its own table. Tom: "so we fell into the same trap that we have now
+  identified": the turn's number read as the payload's. The February results (`attention_results.md`): a Cauchy kernel's
+  effective keys grow without bound for keys on a set of dimension above 2 (as N past 4; CH1 killed by my arithmetic,
+  CH1′ not, `runs/cah/effkeys2.py`), a Gaussian's stay bounded; the viewport's plateau is its own K·D bound.
   `dyh-plan.md` (+ `runs/dyh/dyh.py`, 18 Oct; SPN R374; Tom: "we are throwing away alot of data … its another dimension
   actually, maybe we could use multi-dimensional arrays", then "both"): exact, nothing killed. The cell (j, k) is
   z = (k + ½)2^−j + i·2^−(j+1): from it C(m, γ) puts ½ in the cell, ¼ in each half (D1); parent to child arcosh 3/2,

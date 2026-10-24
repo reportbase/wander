@@ -197,6 +197,8 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | a ring thinner than a grain | a catalogue's or an instrument's limit: past it only the bright of a kind are read | the grain, an amount | MAG P3; HZN runs 1–3 |
 | a known kind | a standard candle; a spectral class | the kind's luminosity | MAG (the kind is about a level wide) |
 | the sky's levels ξ = −ln tan(θ/2); a uniform turn's law ½·sech²ξ, its median the corner | isotropic sources' pseudorapidity; seen from a boost the median and mean move to η, the boost's rapidity, read from directions alone | none | SRR P1, P5 |
+| a payload weighting read as a ratio of two directions' paint | a thermal sky seen in motion: each direction a blackbody at T₀·D, the hottest over the coldest exactly (1 + β)/(1 − β) = k² at every speed, while a linear dipole fit reads β = 0.6 as 0.67 (Peebles and Wilkinson 1968) | none for the ratio; T₀ for the temperatures | the archived SR paper, checked numerically (R475) |
+| a reading and a writing from one pair of stamps | radar: two echo times t₁, t₂ give the Doppler factor as their ratio, t₂/t₁ = k², and the interval as their product, t₁t₂ = τ² (ds² = du·dv); a common rescale of both stamps leaves the ratio and moves the product; the clock at √(t₁t₂), Einstein's assigned time at (t₁ + t₂)/2, Reichenbach's ε entering only the additive quantities (Bondi 1964) | the clock's unit, for the product only | the archived SR paper, checked numerically (R475) |
 | the turn ruler's angle χ (β = sin χ) | the aberration of the seen median: half the sky within 90° − χ; 45° at γβ = 1 | none | SRR P2 |
 | a payload weighting on the addresses; the pair's corner the fixed point of swapping who counts | the Doppler factor D = cosh ξ′/cosh(ξ′ − η); unshifted at cos θ′ = ρ = tanh(η/2); median D γ by source, 1/γ by the observer's directions | a rest frequency (a known kind) | SRR P3, P4 |
 | the inscribed reading, an address, laid by a uniform turn | the weak value A_w = n_z − V·tan(θ_f − θ_i): under a uniform turn of the post-selection the Cauchy at ⟨σz⟩ + iV; superweak share ½ for pure states, (1/π)·arctan(2n_x/(1 − \|n\|²)) for mixed | none | WVR P1, P3 |
@@ -751,6 +753,11 @@ that holds less of it can be tested against the referee exactly. That is evidenc
 
 Tests that could be run next, each on real data or exact arithmetic. Each would need its plan written first.
 
+- **D6's registered numbers against the next surveys** (§5.1). Ω_m = 1/π, z_eq = 0.2890, z_acc = 0.6240, w = −1, written
+  23 September 2026: against DESI's five-year BAO with Euclid (2027) and Roman's and Rubin's supernovae and growth
+  (2027–2028). The plan, with its kill line (more than 3σ from 1/π in the best combination), to be committed before those
+  results are released.
+
 - **The ratio between levels, in a measured reader, on more animals** (GRD, `plans/grd-plan.md`; run 1 on two rats,
   §2.1). Grid cells map place in discrete modules, each coarser than the last by a measured ratio no physics law sets.
   D.1 allows only a halving without an added measure: 2 along a line, or √2 if a level doubles a map's area (counting
@@ -800,3 +807,57 @@ Tests that could be run next, each on real data or exact arithmetic. Each would 
 - **One dimension against two.** ISQ's reading separates an angular size (falling one level per level of distance) from
   its square, the light (two levels). Stars with measured angular diameters (interferometry) and parallaxes would test
   the one-level half directly.
+
+## 5. Two drafts received (24 October): D6 and the Born rule
+
+*Tom: "Add these to physics papers." Three documents, kept as received in `papers/archive/`: D6's status note of 23
+September 2026 (`d6-dark-energy.md`), its list of upcoming measurements (`d6-upcoming.md`), and *The Born Rule as the
+Density of Addresses of a Situated Reader* (draft, October 2026; `born-rule-draft.md`). Both predate this paper's
+current terms (they speak of the flip, chord and arc content, and parallel and serial vantages). Each is placed here by
+the rules of §0; neither is a result of this paper yet.*
+
+### 5.1 D6: Ω_m = 1/π, a registered prediction
+
+- **What it predicts, with no free parameter:** Ω_m = 1/π = 0.3183, Ω_Λ = 1 − 1/π, w = −1, and through Friedmann's
+  equations (the bridge: expansion, matter diluting as (1 + z)³) z_eq = (π − 1)^⅓ − 1 = 0.2890 and
+  z_acc = (2(π − 1))^⅓ − 1 = 0.6240 (both rechecked). Ω_total = 1 is built in, since Ω_Λ is defined as 1 − Ω_m.
+- **Standing: a prediction on record, its derivation not accepted.** The numbers were written on 23 September, before
+  DESI's five-year analyses (expected 2027), so they are a fair test of the number whatever its origin. The derivation
+  is not this paper's: it rests on ψ₁ψ₂ = (2/π)·(½), and 2/π and ½ are the mean projection of a uniform direction in two
+  dimensions and in three, two different spaces, multiplied as if they were filters in sequence (`plans/archive-gems.md`,
+  R470). `plans/omm-plan.md` asks whether today's geometry gives the share by another route; its stages are not worked.
+- **Against data, as the note states it and as checked here.** Planck 2018 gives Ω_m = 0.3153 ± 0.0073, 0.4σ from 1/π.
+  DESI DR2's BAO alone gives 0.2975 ± 0.0086, **2.4σ** below 1/π (the note's "1–2σ" understates it); its Lyα
+  Alcock–Paczyński value, 0.325 ± 0.018, is 0.4σ above. The note's other figures (the combinations, the 2.8–4.2σ
+  preference for w₀w_a) are its own and not rechecked here.
+- **Its escape is not yet a prediction.** The note answers w ≠ −1 with an l = 2 back-reaction from structure growth
+  (its item M2), not calculated. Until it is, any measured w(z) can be absorbed by it, so its falsification conditions
+  (a) and (b) have no content yet. Condition (c), dark energy that clusters, stands as stated.
+- **The test (queued, §4).** DESI's five-year BAO with Euclid's clustering (2027), Roman's and Rubin's supernovae and
+  growth (2027–2028), as `d6-upcoming.md` lists them: Ω_m to about 1%. If the best combination sits more than 3σ from
+  1/π, the number is killed, whatever M2 later says; if within 1σ, it survives as a coincidence until a derivation that
+  stands is found.
+
+### 5.2 The Born rule as the density of addresses
+
+- **What it claims:** equal steps of turn read as x = tan θ give the Cauchy density on the line; its inverse Jacobian,
+  cos²θ = 1/(1 + x²), evaluated at the angle to an outcome, is the Born probability: cos²(θ/2) = |⟨0|ψ⟩|² for a qubit,
+  cos²(d_FS) = |⟨k|ψ⟩|² on CPⁿ⁻¹; one identification (an outcome is a chord coordinate) is the only physics.
+- **Standing: not usable as written; one reading in it agrees with this paper.**
+  - *The Born step is an identity.* 1/(1 + tan²α) = cos²α for any α. Evaluating the Cauchy's density at one point gives
+    a density, not a probability; that its value at tan(θ/2) equals cos²(θ/2) is the identity, not a derivation (as for
+    Grok's note, `plans/grok-born-note.md`, SPN R288).
+  - *Its angular density is not the pushforward.* The pushforward of dθ/π to θ is uniform; cos²θ/(π/2) is dθ/dx written
+    as a density in θ, another law.
+  - *It runs the address and the payload together.* In this paper's dictionary (§1, QBT) Born's weight is the foot h² of
+    the central sweep's point at 2θ, a share of the payload's point, while 2/(π(1 + s²)) = (2/π)·h² is the density of the
+    addresses: one shape, two things (SPN R289). The draft's square is the second read as the first.
+  - *Fubini–Study is circular here*: d_FS is defined from |⟨k|ψ⟩|, so cos²(d_FS) = |⟨k|ψ⟩|² assumes the overlap.
+  - *Gleason's qubit gap* is already closed with generalized measurements (Busch 2003; Caves, Fuchs, Manne and Renes
+    2004), with additivity assumed; the draft assumes none and derives none.
+  - *Entanglement as shared arc content* is a local hidden-variable picture, which Bell's theorem and its experiments
+    exclude unless the sharing is nonlocal.
+  - *"Single-shot Cauchy, accumulated Gaussian"* contradicts the Cauchy's stability: a mean of Cauchy readings is the
+    same Cauchy (OFS §7.2); a move toward the Gaussian marks amounts (LGO, SPN R468).
+  - *What agrees:* the measured weight as a central reading of one point, and a measurement changing what the reader
+    holds rather than the state (QBT, QSO); both already here, classical, the reading ours.

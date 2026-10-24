@@ -182,7 +182,18 @@ nothing in the law. Readings from two zeros compose as turns compose, by tangent
 
   s ⊕ t = (s + t)/(1 − st),
 
-and a full round composes to no turn, a closure check. Directions have no sum, only this composition.
+and a full round composes to no turn, a closure check. Directions have no sum, only this composition. Repeating one
+step t comes back to zero after finitely many steps only for t = 0, 1 and ∞ among the rationals (Niven 1956); every other
+rational step never closes, and its multiples spread uniformly round the turn (Weyl 1916).
+
+Comparing two directions needs no division either. Of [h₁ : v₁] and [h₂ : v₂], the second is farther from home exactly
+when the bracket `D = v2*h1 - v1*h2` is positive: a cross product, exact in integers, zero when the two are one direction.
+Its square and the dot product's add to the product of the norms, D² + (h₁h₂ + v₁v₂)² = (h₁² + v₁²)(h₂² + v₂²) (Lagrange's
+identity in two dimensions), and only D's sign says which way round the two lie. The comparison is transitive with no
+quotient: D(A, C)·h_B = D(A, B)·h_C + D(B, C)·h_A (the three-term Plücker relation; Plücker 1865), so a sort by the
+bracket alone is a sort. Tangent addition, though, counts turns only modulo a half turn: readings composed round a loop
+close alike after one round and after two, and a program that needs the winding number must count passes through the
+horizon itself.
 
 ## 3. The corner
 
@@ -329,6 +340,13 @@ says why no statistic of size can be read from them. So nothing the Cauchy says 
 mean) is a statement about the payload, and nothing in the payload can be read from it. Finding a Cauchy is, by itself,
 no evidence that anything in the world is distributed that way.
 
+**A median in two registers.** An exact median of n readings taken one at a time needs storage that grows with n
+(Munro and Paterson 1980). To a stated accuracy it needs two registers: move an estimate by the sign of each comparison
+alone, `m += a_k * sign(x_k - m)` with steps a_k falling more slowly than 1/k (k^(−0.6), say), and keep a running average
+of m. The average reaches the sample median's own accuracy (Robbins and Monro 1951; Polyak and Juditsky 1992); for a
+Cauchy, √n times its spread tends to π/2 in the scale's unit. It reads order only, a comparison's sign, which is all
+Theorem 6 says a median needs.
+
 **What it does not claim.** It does not show that every real observer counts by the turn rather than by a clock, a flat
 sensor or what arrives; it shows what the turn's count gives. Nor does it show that every Cauchy met in data has this
 origin: a resonance's profile and a stable sum of index 1 are Cauchy laws that are facts about a system. The claim is
@@ -406,7 +424,7 @@ which facing each array is, so it can join the four into the closed circle. The 
 meet.
 
 **Not knowing the size makes the corner and the horizon.** Knowing an array's size, the writer has its end at an
-amount, V*; its ruler is the number line, and the point where the two parties are equal is computed and marks nothing.
+amount, V*; its ruler is the number line, on which the point where the two parties are equal is computed.
 Not knowing it, the reader must draw the other party at its own H, and v = h becomes its split of near from far and the
 median of its readings. With no size, the array's far end is no amount, only a direction, [0 : 1], where the chart v/h
 runs out: the horizon. Both are the reader's because the size is missing.
@@ -435,7 +453,9 @@ dropping it is one of the most consequential things in the whole construction.
 
 Start with what is not lost. The value stored in the cell is untouched: `a[i]` is exactly what it was. Nothing of the
 payload goes. What goes is where in the cell the place was, and that is address. So the floor is not a lossy operation
-on data at all. It is a lossy operation on the index.
+on data at all. It is a lossy operation on the index. So the claim is not that the floor is lossless, nor that flooring
+is wrong: where only the cell's value is wanted, dropping where in the cell is exactly right; where the place within
+the cell matters, what was dropped was address, not data.
 
 Write the remainder in binary, f = 0.b₁b₂b₃… Each digit answers one question: b₁ which half of the cell, b₂ which half
 of that half, b₃ which half of that, without end. So the digits of f are the finer levels of the address, one level a
@@ -460,7 +480,9 @@ numbers make has a geometry of its own, and it is a classical one, the hyperboli
 ds² = (dx² + dy²)/y².
 - **Every level is the next.** z ↦ 2z is an isometry of that plane, and it carries each level of cells onto the next.
   Each binary digit is one step down, and every step is the same: ln 2 in height. There is no privileged level; level
-  50 is as good a place to stand as level 0.
+  50 is as good a place to stand as level 0. On the line alone the step is the doubling map x ↦ 2x mod 1, which moves
+  the first digit of the remainder into the index: `floor(2*x)` is that digit and `2*x - floor(2*x)` the rest. Its
+  Lyapunov exponent, the rate at which it forgets where it started, is ln 2: one level a step (the Bernoulli shift).
 - **Every cell has the same room.** The tile [kw, (k + 1)w] × [w/2, w] has hyperbolic area
   ∫∫ dx·dy/y² = w·(2/w − 1/w) = 1, at every level. A cell fifty levels down, 2⁻⁵⁰ wide on the line, has exactly the room
   of the first. The tiles are Böröczky's binary tiling (Böröczky 1974).
@@ -680,7 +702,7 @@ For a programmer this is the useful part. The addresses are a closed-form functi
 nothing is precomputed for N, and nothing is rebuilt when N changes. The last address runs to the horizon, so a finite K
 covers an unbounded world, and whatever lies past every other address lands in that tail. N enters only as the share
 each address holds, which is payload. The reader interacts with K; the writer, which states every distance in amounts,
-interacts with N, since its number line needs a mark for every thing it places.
+interacts with N, placing each thing at its amount on its number line.
 
 **One K in direction and in distance.** In direction, the K addresses are the turn's equal angles, split K/2 and K/2 at
 the corner, and the value of H appears in none of them. In distance the same K quantiles fall at H·tan(kπ/2K), and
@@ -863,7 +885,37 @@ or draw a world arrive at these structures by design, and the geometry lets each
 - **The flat screen.** Equal pixels on a plane are not equal turns. Per unit of screen area the uniform turn's
   directions have density (2/π)·cos³α, so equal pixels over-weight the directions off the axis by sec³α, and along one
   line of a screen of finite edge they put the median at half the edge instead of at the corner. The weighting is the
-  design's, added to the geometry.
+  design's, added to the geometry. Laid by turn instead, an arctangent on each coordinate of a cube's face (the
+  equi-angular cubemap), the cells' solid angles vary by a factor of √2 across a face, against 3√3 ≈ 5.2 for equal pixels.
+- **A filter's steady state.** A Kalman filter tracking a random walk (process noise q, measurement noise r) settles
+  with predicted and updated variances √(qr)·μ and √(qr)/μ, μ = (n + √(n² + 4))/2, n = √(q/r) (Kalman 1960): a
+  reciprocal pair about √(qr), their product qr at every n; for matrices P⁻ # P = Q # R, # the matrix geometric mean.
+  The noises are the design's; the corner the two variances meet about is the geometric mean's.
+- **Exact composition.** Readings composed by tangent addition can be held exactly as Gaussian integers, the step v/h
+  as h + iv, reduced after each product by the gcd of its parts. The register grows by ½·log₂ of the odd part of
+  h² + v² bits a step, and not at all only at home, the corner and the horizon: every other step costs storage without
+  end, the arithmetic face of the steps that never close (§2.4).
+- **A step that never closes.** Fibonacci hashing multiplies by ⌊2³²/φ⌋ = 2,654,435,769, a golden fraction of the turn
+  (Knuth 1998, §6.4): a step that never closes, whose multiples spread round the turn leaving at most three sizes of gap
+  at every count (the three-distance theorem; Sós 1958).
+- **Addresses on a turn, not by a count.** Consistent hashing puts keys and machines on a circle by angle, each key
+  served by the next machine round (Karger et al. 1997): adding a machine moves about one key in n + 1, where
+  `hash(key) % n` moves nearly all of them. Order-maintenance labels drawn from a fixed count M are the other side: one
+  gap takes about log₂ M insertions before labels must be reassigned (Itai, Konheim and Rodeh 1981; Dietz 1982). A count
+  of addresses fixed beforehand runs out where the world's count grows; the turn's addresses do not, and pay with a
+  horizon (§9).
+- **One stream is not an address.** A direction is two numbers, [h : v]. A single stream of amounts can be given a
+  partner by the Hilbert transform (Gabor's analytic signal; Gabor 1946), but the partner is the stream's own quadrature
+  only when its envelope's spectrum lies below the carrier (Bedrosian 1963): a premise about the payload, added.
+- **Relative steps on a lattice.** If every reading is rounded to whole levels and each step is coded against the last
+  rounded value, the held value is round(x) at every step, since round(x − n) + n = round(x) for whole n: the steps
+  telescope, and no error builds up whatever the route (DPCM with its predictor in the rounded domain). A k-tap
+  extrapolating predictor codes the k-th backward difference instead, and one isolated step then costs 2^(k−1) units.
+- **A spectral grid on the whole line.** Boyd's rational Chebyshev collocation points, L·cot((2j − 1)π/2N), are the
+  midpoints of N equal shares of the Cauchy of scale L: the reader's addresses with L = H, and Boyd's rule for L, the
+  scale of the feature to be resolved, is the best H at the corner of what is read (Boyd 1982, 1987). The same equal
+  angles read by their cosine are Chebyshev's nodes, crowded at the ends of the chord; by their tangent, spread to the
+  horizon.
 - **Tables fixed in advance.** A sampling table or grid of cells fixed in advance must know the extent it covers and the
   resolution it needs, and is rebuilt when either changes. The uniform turn's addresses need neither (§9); what needs
   them is the payload or the writer.
@@ -923,6 +975,14 @@ unknown count, the order a program with finite memory lives in.
 
 ## References
 
+Bedrosian, E. (1963). A product theorem for Hilbert transforms. *Proceedings of the IEEE* 51(5), 868–869.
+
+Boyd, J. P. (1982). The optimization of convergence for Chebyshev polynomial methods in an unbounded domain.
+*Journal of Computational Physics* 45, 43–79.
+
+Boyd, J. P. (1987). Spectral methods using rational basis functions on an infinite interval. *Journal of
+Computational Physics* 69, 112–142.
+
 Böröczky, K. (1974). Gömbkitöltések állandó görbületű terekben I. *Matematikai Lapok* 25, 265–306.
 
 Cacoullos, T. (2014). Polar angle tangent vectors follow Cauchy distributions under spherical symmetry. *Journal of
@@ -931,13 +991,22 @@ Multivariate Analysis* 128, 147–153.
 Cacoullos, T. and Papadatos, N. (2013). Self-inverse and exchangeable random variables. *Statistics & Probability
 Letters* 83(1), 9–12.
 
+Dietz, P. F. (1982). Maintaining order in a linked list. *Proceedings of the 14th ACM Symposium on Theory of
+Computing*, 122–127.
+
 Furnas, G. W. and Bederson, B. B. (1995). Space-scale diagrams: understanding multiscale interfaces. *Proceedings of
 CHI '95*, 234–241.
+
+Gabor, D. (1946). Theory of communication. *Journal of the Institution of Electrical Engineers* 93(26), Part III,
+429–457.
 
 Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *Annals of Mathematics* 34(1), 147–169.
 
 Igarashi, T. and Hinckley, K. (2000). Speed-dependent automatic zooming for browsing large documents. *Proceedings
 of UIST 2000*, 139–148.
+
+Itai, A., Konheim, A. G. and Rodeh, M. (1981). A sparse table implementation of priority queues. *Automata,
+Languages and Programming (ICALP 1981)*, Lecture Notes in Computer Science 115, 417–431.
 
 Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 
@@ -948,10 +1017,19 @@ Statistician* 53(2), 99–102.
 
 Jones, M. C. (2008b). On reciprocal symmetry. *Journal of Statistical Planning and Inference* 138(10), 3039–3043.
 
+Kalman, R. E. (1960). A new approach to linear filtering and prediction problems. *Journal of Basic Engineering*
+82(1), 35–45.
+
+Karger, D., Lehman, E., Leighton, T., Panigrahy, R., Levine, M. and Lewin, D. (1997). Consistent hashing and random
+trees. *Proceedings of the 29th ACM Symposium on Theory of Computing*, 654–663.
+
 Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen*.
 
 Knight, F. B. (1976). A characterization of the Cauchy type. *Proceedings of the American Mathematical Society* 55,
 130–135.
+
+Knuth, D. E. (1998). *The Art of Computer Programming*, Vol. 3: *Sorting and Searching*, 2nd ed. Addison-Wesley,
+Reading, MA.
 
 Lamping, J., Rao, R. and Pirolli, P. (1995). A focus+context technique based on hyperbolic geometry for visualizing
 large hierarchies. *Proceedings of CHI '95*, 401–408.
@@ -968,12 +1046,31 @@ Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium 
 
 Microsoft. Bing Maps Tile System (documentation).
 
+Munro, J. I. and Paterson, M. S. (1980). Selection and sorting with limited storage. *Theoretical Computer Science*
+12(3), 315–323.
+
+Niven, I. (1956). *Irrational Numbers*. Carus Mathematical Monographs 11, Mathematical Association of America.
+
+Plücker, J. (1865). On a new geometry of space. *Philosophical Transactions of the Royal Society of London* 155,
+725–791.
+
+Polyak, B. T. and Juditsky, A. B. (1992). Acceleration of stochastic approximation by averaging. *SIAM Journal on
+Control and Optimization* 30(4), 838–855.
+
+Robbins, H. and Monro, S. (1951). A stochastic approximation method. *The Annals of Mathematical Statistics* 22(3),
+400–407.
+
 Schwartz, E. L. (1977). Spatial mapping in the primate sensory projection: analytic structure and relevance to
 perception. *Biological Cybernetics* 25, 181–194.
+
+Sós, V. T. (1958). On the distribution mod 1 of the sequence nα. *Annales Universitatis Scientiarum Budapestinensis
+de Rolando Eötvös Nominatae, Sectio Mathematica* 1, 127–134.
 
 Thomas, L. H. (1926). The motion of the spinning electron. *Nature* 117, 514.
 
 van Wijk, J. J. and Nuij, W. A. A. (2003). Smooth and efficient zooming and panning. *Proceedings of IEEE InfoVis
 2003*, 15–23.
+
+Weyl, H. (1916). Über die Gleichverteilung von Zahlen mod. Eins. *Mathematische Annalen* 77, 313–352.
 
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.

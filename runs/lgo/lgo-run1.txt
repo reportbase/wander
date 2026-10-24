@@ -1,0 +1,39 @@
+H1: 2097152 samples at 4096.0 Hz, sha256 of float64 strain 291a4b24ebc777f8ac416e1f052edf63d276140ccbefc1b45716454a613f90dc
+L1: 2097152 samples at 4096.0 Hz, sha256 of float64 strain 1f0f37d45750f4b0a1d9103e0c36fe18574ec85632015067b9dc785689a9023c
+whitened and trimmed: 2080768 samples each; H1 sd 2.3121, L1 sd 1.0330
+
+G0, the old comparison (H1): N, ΔLL Cauchy − Gaussian
+      1   2080768  +1149013.8
+      2   1040384  +840251.4
+      4    520192  +579484.1
+      8    260096  +392573.0
+     16    130048  +225553.7
+     32     65024  +114298.0
+     64     32512  +49945.2
+    128     16256  +603.7
+    256      8128  -1274.6
+    512      4064  -704.1
+   1024      2032  -342.7
+   2048      1016  -188.0
+G0 not killed: ΔLL at N = 1 is +1149013.8
+
+G1, IQR of H1 block means: 1:1.494, 2:1.088, 4:0.7651, 8:0.4839, 16:0.3447, 32:0.2495, 64:0.179, 128:0.1196, 256:0.07325, 512:0.0324, 1024:0.01825
+G1 KILLED: slope -0.6108 (predicted −0.5 ± 0.05; killed above −0.4)
+
+G2, H1 at N = 1: t ν = 15.899, scale 0.4536; LL t − Cauchy +363188.3, t − Gaussian +1512202.1; excess kurtosis 74304.994
+G2 not killed
+
+G3, r = L1/H1: median |r| 0.9315, quartiles -0.9302, 0.9327
+G3 KILLED
+
+G4, φ = atan2(L1, H1): Kolmogorov distance from uniform 0.00866
+G4 not killed
+
+G5, IQR of r block means: 1:1.863, 2:1.861, 4:1.861, 8:1.853, 16:1.853, 32:1.849, 64:1.819, 128:1.818, 256:1.837, 512:1.811, 1024:1.777
+G5 not killed: slope -0.0058 (predicted 0 ± 0.1)
+G6, c = 0.5: median |c·r| 0.4657
+G6, c = 2.0: median |c·r| 1.8629
+G6 KILLED
+
+G7 (the verdict) KILLED
+summary: G0 ok, G1 killed, G2 ok, G3 killed, G4 ok, G5 ok, G6 killed, G7 killed

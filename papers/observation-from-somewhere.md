@@ -437,9 +437,21 @@ unimodular and the measures unchanged by composing on the left and on the right 
 counted from it. Facing another way gives a new zero and changes nothing in the law: every turn leaves the standard
 Cauchy where it is, so the readings from the new zero have the same law, and no zero is preferred. The old zero
 survives only as one reading from the new one. Readings from two zeros compose as turns compose, by tangent addition,
-s ⊕ t = (s + t)/(1 − st); a full round composes to no turn, a check like the closed loop of §9. A frame that seems fixed,
+s ⊕ t = (s + t)/(1 − st); a full round composes to no turn, a check like the closed loop of §9. Tangent addition counts
+turns only modulo a half turn, so readings composed round a loop close in the same way after one round as after two:
+the count of rounds, the loop's winding number, is in no reading, and only a count of passes through the horizon keeps
+it. Repeating one step t from zero comes back to zero
+after finitely many steps only if arctan t is a rational multiple of π, and for a rational t that holds only at home, the
+corner and the horizon, t = 0, 1 and ∞ (Niven 1956); every other rational step never closes, and its multiples spread
+uniformly round the turn (Weyl 1916). With two other parties the composition is of another kind. The directions
+[h : v : v₂] form a projective plane, and no continuous group law lives on it, since a compact Lie group of positive
+dimension has Euler characteristic 0 and the projective plane has 1; so a new zero there is a turn of space, composed in
+the rotation group and acting on the directions, not a sum of directions. A frame that seems fixed,
 a wall or a far point, is one that keeps its reading from each new zero. The corner is not computed: it is the
-direction at which the two unit relations read alike, and that it halves the quarter turn is the geometry's.
+direction at which the two unit relations read alike, and that it halves the quarter turn is the geometry's. It is a
+crossing, not a turning point: v − h = √2·sin(θ − 45°) changes sign there at its steepest, while the arc's height off
+the chord, sin 2θ, is flat there at its greatest. A small error ε in what is read moves a crossing by about ε, and a
+peak by about √ε, so the corner is held at first order (at ε = 10⁻³, a fifteenth of the peak's error).
 
 The method is not ours. Three things in its use here are. The first is the group. Which transformations a situated
 reader cannot detect is a statement about its situation, and we choose it as a statement of ignorance rather than derive
@@ -671,6 +683,11 @@ quarter turn, and its average projection over the turn is (2/π)∫₀^{π/2} co
 and the inscribed less, but as ratios the two lie equally far either side of 1, π/2 above it by the factor that 2/π is
 below it, and it is their product, not their difference, that returns the line: the arc's excess over the line,
 π/2 − 1, and the projection's shortfall, 1 − 2/π, add to 0.934, not to 1.
+
+The 2/π is the uniform turn's, not the circle's. Over a uniform turn of directions, the width of any convex figure,
+its projection on the line of sight, averages to its perimeter over π (Cauchy 1841; Barbier 1860 for figures of
+constant width): the width is half the outline's length weighed by |cos| of each piece against the direction, and the
+turn's mean of |cos| is 2/π, whatever the figure. The circle of diameter 1, perimeter π, gives width 1.
 
 The average projection is Buffon's needle (Buffon 1777): a needle as long as the gap between parallel lines, dropped at
 random, crosses one with probability 2/π. Crofton's formula, which measures a curve by the random lines that cross it,
@@ -953,8 +970,27 @@ and it fixes one point, the corner [1 : 1]. The results so far, and those to com
 - *A chart that sends an end to infinity: the missing mean* (Theorem 6(d), (e)). The readings' law has no mean in x,
   which runs to infinity at the horizon, nor in y, which does so at home. On a bounded chart of the same arc, the angle
   θ or the capped share x/(1 + x), the same law has one: π/4 and ½ for the uniform turn. So the missing mean is a fact
-  about the chart in which directions are counted as numbers, not about the arc. A mean asks for the readings to be
+  about the chart in which directions are counted as numbers, not about the arc. Being unbounded is not enough to lose
+  it: on the level chart ξ = ln(v/h), which runs to infinity at both ends, the same law is (1/π)·sech ξ and has every
+  moment, its mean 0 at the corner and its variance π²/4 (Talacko 1956). What loses the mean is how the chart stretches
+  the end, the tail falling as 1/x² on x against e^(−|ξ|) on the levels. A mean asks for the readings to be
   amounts on some chart; the arc holds them as directions.
+
+**The corner, fixed by home and the horizon.** On the whole projective line the exchange has a second fixed point, −1,
+off the reader's arc. For every pair it swaps, the cross ratio (1, −1; x, 1/x) is −1: the two fixed points are harmonic
+conjugates with respect to every swapped pair, home and the horizon (0, ∞) among them, as the fixed points of any
+involution of the line are (Coxeter 1987). So once home and the horizon are given, the corner is fixed by the line's
+projective structure alone, with no measure; the uniform turn adds only that it is the median. Order on the arc is
+projective too. Of two readings [h₁ : v₁] and [h₂ : v₂], the second lies farther from home exactly when the bracket
+D = v₂h₁ − v₁h₂ is positive. D is zero when the two are one direction, and a linear change of the drawing multiplies it by
+its determinant, so the order survives every drawing that keeps the sign. With the dot product it accounts for the pair:
+D² + (h₁h₂ + v₁v₂)² = (h₁² + v₁²)(h₂² + v₂²), Lagrange's identity in two dimensions, and only D's sign tells which way
+round the two lie. The order chains without a quotient: for three readings A, B, C,
+D(A, C)·h_B = D(A, B)·h_C + D(B, C)·h_A (the three-term Plücker relation among 2 × 2 minors; Plücker 1865), so with every
+h above zero, B past A and C past B put C past A. Home and the horizon fix a distance as well as the corner: the
+logarithm of the cross ratio of two readings x and y against home and the horizon is ln(x/y), Hilbert's projective
+metric on the open arc (Cayley 1859; Klein 1871; Hilbert 1895). It gives the levels' distance its form, a count by
+ratio, and fixes it only up to a factor: no projective fact supplies the base.
 
 **Series stop at the corner.** The expansion 1/(1 + x²) = 1 − x² + x⁴ − … converges for x < 1 and diverges for x > 1;
 past the corner the expansion in 1/x converges instead. The singularities at x = ±i lie at distance one from zero, so no
@@ -1087,7 +1123,16 @@ to: one function, a density of addresses on the one side and an amount of the pa
 corner. The sweep about a party gives ratios, of the first degree, unbounded, held by the median. The sweep about the
 pair's middle gives squares, of the second degree, bounded, with means. Both rates are exact only on the circle. Drawn on the
 ellipse of a stretched drawing, the inscribed angle theorem fails and neither pivot turns a uniform sweep into a uniform
-arc. So the two sweeps, like the pointing, need the drawing V = H (Proposition 3(e)).
+arc. So the two sweeps, like the pointing, need the drawing V = H (Proposition 3(e)). The two sweeps are also one classical map. The Cayley transform
+w = (z − i)/(z + i) carries the upper half-plane onto the disc and the line onto the circle (Cayley 1846). It sends the
+reading s = tan θ to w = −e^(2iθ), the point of the circle 2θ round from the image of home, and the standpoint i to the
+centre. So the inscribed reading at θ and the central angle 2θ are one point under the map, and the uniform turn about
+the centre is carried onto the Cauchy law on the line: the Cauchy is the harmonic measure from i, the circle's uniform
+measure seen from its centre, written in the line's coordinate. The square
+that carries θ to 2θ also carries one figure to another. Under w = z² an ellipse centred at the origin, z = a cos t +
+i b sin t, becomes a conic with a focus at the origin, |w| = ℓ + e·Re w with ℓ = 2a²b²/(a² + b²) and
+e = (a² − b²)/(a² + b²), w going round once while z goes round twice (Bohlin 1911; Levi-Civita 1920). The doubling of the
+angle that separates the two sweeps is the same square that takes a figure's centre to its focus.
 
 **What the reciprocal gives, and what it does not.** The reciprocal proves that the corner is the one point it leaves
 fixed, that every sweep passes through it, that a reading kept within [0, 1] on both sides must change register there
@@ -1246,6 +1291,11 @@ ellipse. Less rests on the Euclidean choice than it seems. The readings are dire
 reaches them only through the measure on directions that "sweeping uniformly" uses; laid by direction, every path gives
 the same readings (§7.4). Swept uniformly along their own paths, the square and the line give other laws, with the same
 median at the corner and no mean (Theorem 6(e)). What the circle and the uniform turn add is the Cauchy's exact shape.
+Among the p-norms the circle is also the extreme case. Measured in its own norm, the unit circle of ℓ_p has
+half-perimeter π_p, which is 4 at p = 1 and as p → ∞ (the line's norm and the square's) and least, π, at p = 2 (Adler
+and Tanton 2000); and π_p = π_q whenever 1/p + 1/q = 1 (Keller and Vakil 2009). The sum norm and the largest-component
+norm are such a pair, dual to each other, and both give 4; the Euclidean norm is the one that is its own dual. This is
+classical and nothing here rests on it; it says that the norm the rigid bar needs is the one fixed point of that pairing.
 
 **What the count of orthants borrows.** The count 2^m needs no angle. That the orthants tile the circle or the sphere in
 equal shares, a quarter turn each or π/2 of the sphere's area each, is the Euclidean measure of (c), not part of the
@@ -1328,7 +1378,10 @@ receiving the same number. The corner is where one gives way to the other, witho
 corner intrinsic to the relation, the one fixed point of the reciprocal; a particular reader's layout may have other
 thresholds of its own. Past it the levels are plain doublings laid side by side, with no corners of their own and nothing nested inside
 them. They are doublings of scale, v/h ↦ 2·v/h. (Doubling the angle of the sweep instead sends v/h to
-2(v/h)/(1 − (v/h)²); the two agree near zero and part at the corner, which the angle doubling sends to the horizon.)
+2(v/h)/(1 − (v/h)²); the two agree near zero and part at the corner, which the angle doubling sends to the horizon. The
+angle doubling carries the uniform turn's law onto itself, since it doubles a uniform angle, yet it is two to one and
+moves cross ratios: it keeps the Cauchy without being a Möbius map (Pitman and Williams 1967), while the doubling of
+scale is one of them.)
 
 **Reality in 2H.** Measured by length rather than by count, the far field fits in one more H. The *in-place lay* puts a
 far reading at length 2 − h/v from home. Level j past the corner, where v/h runs from 2^(j−1) to 2^j, then has length
@@ -1366,7 +1419,11 @@ half by an order-preserving map that commutes with the reciprocal. Applied again
 halvings. Three parts, or any other number, need an added measure. This is Klein's criterion, that a geometry supplies
 what its symmetries keep, applied to the points of a level. Halving is a branching into two; it is not by itself a ratio
 of 2 between level edges, since where the edges fall depends on how the readings are laid out. On the lays of this
-section they fall at the doublings of v/h.
+section they fall at the doublings of v/h. The constructions agree. Halving a turn needs one square root,
+tan(θ/2) = (√(1 + t²) − 1)/t, so square roots reach tan(π/2ᵏ) from the corner at every level; other divisions are not all
+in reach, since tan(π/7) and tan(π/9) have degree 6 over the rationals and no ruler and compass divide a half turn into
+seven or nine (Wantzel 1837, completing Gauss). The halvings, factor by factor, are also what give 2/π (Viète's product,
+§3.4).
 
 *What another ratio costs.* A reader whose own resolution multiplies by r from level to level matches levels that are
 powers of r exactly, one level per factor: a reader with r = 3 matches levels of three as one with r = 2 matches
@@ -1374,7 +1431,10 @@ doublings. Any ratio can be matched, then, but by the argument above every ratio
 added to the level, carried in the reader's resolution. A layout whose levels are uneven, as a calendar's are (100
 years, 12 months, about 30 days, 24 hours, 60 minutes, 60 seconds), matches no single factor and costs a table of its
 levels, which a reader given nothing does not have. Uniformity can be free; variation has to be represented somewhere,
-in the reader's resolution or in information handed to it.
+in the reader's resolution or in information handed to it. Levels given by a ratio must be one ratio repeated: every
+discrete set of rescalings closed under composing is the powers of one factor g, since under the logarithm it is a
+discrete subgroup of the line, the multiples of one step. Two factors whose logarithms are incommensurable, 2 and 3,
+generate rescalings dense in every range, and no levels at all. The levels' form is forced; which g is not.
 
 **A familiar instance.** Floating-point numbers lay their addresses this way. The exponent counts levels and the
 significand is a plain share within the level; below the smallest normal number, the subnormals lay one stretch in
@@ -1407,7 +1467,7 @@ laid three ways, each an exact function of the others:
 
 | ruler | room for the near field, x ≤ 1 | room for the far field, x ≥ 1 | the corner x = 1 | the reciprocal x ↦ 1/x |
 |---|---|---|---|---|
-| x itself, the writer's number line (§9) | 1, in proportion | unbounded, in proportion | a point like any other | no symmetry of the ruler |
+| x itself, the writer's number line (§9) | 1, in proportion | unbounded, in proportion | a point | not a reflection of the ruler |
 | θ = arctan x, the turn | 45° | 45° | the middle | θ ↦ π/2 − θ, a reflection |
 | ζ = asinh x, the hyperbolic angle, Mercator's height | asinh 1 ≈ 0.881, nearly in proportion | unbounded, about ln 2 a doubling | a point; proportion gives way to levels around it, gradually | no reflection of the ruler |
 
@@ -1418,6 +1478,12 @@ and the two lays in the same terms.
 
 The third is the reader's lay of Proposition 4 made smooth. ζ ≈ x inside the corner and ζ ≈ ln 2x past it, and the
 lay (x, then 1 + ln x) never exceeds it by more than 1 − ln 2 ≈ 0.307, approached far out (0.119 at the corner).
+
+The three curves are the unit sets of the only three real number systems of two dimensions with a unit: the complex
+numbers (j² = −1), whose units e^(jθ) = cos θ + j sin θ run round the circle; the split-complex numbers (j² = +1),
+e^(jζ) = cosh ζ + j sinh ζ on the hyperbola; and the dual numbers (j² = 0), e^(jx) = 1 + jx on the tangent line. In each,
+multiplying units adds the ruler's own coordinate, θ, ζ or x (Yaglom 1968). So each ruler is the one along which its own
+numbers multiply by adding: the writer's line is the flat case, the turn and the hyperbolic angle the two curved ones.
 
 All three carry the corner, since it is the reciprocal's fixed point (Proposition 1) and so a point of the reading
 itself. Only the turn gives it a role.
@@ -1498,6 +1564,15 @@ payload's law is taken to be unchanged by turns, with independent components, it
 the Cauchy the addresses already were. The central limit theorem is a third matter: it makes a sum of many independent
 contributions normal, and says nothing about a single payload averaged over the quadrant.
 
+**Why a turn and not a boost.** The Möbius maps of the reader's line come in three kinds of one-parameter flow: the
+elliptic, a turn, with no fixed point on the line; the hyperbolic, a boost, which fixes two points; the parabolic, a
+translation, which fixes one. Only the turn leaves unchanged a probability spread over the whole line, and that
+probability is the Cauchy, the only one it keeps (the turns are the compact subgroup, and the measure they keep is its
+Haar measure). Under a boost or a translation every point off the fixed points moves monotonically toward one of them, so
+any probability they keep sits on the fixed points alone. So a measure on directions that treats every place alike and
+is unchanged by its own motion can only come from a turn, and is the Cauchy; a sweep by boosts has no such measure to
+give.
+
 **Proposition 5, continued: two other parties.** (e) Let the reader assign two other parties V = V₂ = H, so that the
 relation lies on the sphere of Proposition 3(f), and sweep the positive octant h, v, v₂ ≥ 0,
 uniformly by area. Write s = v/h and s₂ = v₂/h. Then:
@@ -1568,7 +1643,9 @@ drawing is the geometry's whole work; each true breadth is one number of the amo
 amounts alone.
 
 In classical terms the readings are the tangent of a uniformly distributed angle: the gnomonic projection of a uniform
-direction. For two other parties the gnomonic projection of a uniform direction on the sphere is the multivariate Cauchy
+direction. It is also the one chart that keeps lines straight: a map from part of the sphere to the plane that sends every
+great circle to a straight line is the gnomonic projection followed by a projective map (Beltrami 1865), so asking that
+things in one line read as one line forces the reading v/h, up to a projective change of the drawing. For two other parties the gnomonic projection of a uniform direction on the sphere is the multivariate Cauchy
 (the multivariate t with one degree of freedom), whose marginals are Cauchy (Cacoullos 2014). The gnomonic projection is
 the image plane of a pinhole: a direction (1, s, s₂) lands at (s, s₂) on a flat screen one unit along h, so the Cauchy
 wedge is what such a screen records of directions arriving uniformly over the octant, with no reader dividing anything
@@ -1946,7 +2023,7 @@ addresses follow the uniform turn is Proposition 5's, not the array's.
   - Since the places sit at midpoints, no array holds an end, and joined arrays never claim the same element.
 - *Not knowing the size makes the corner and the horizon.*
   - Knowing an array's size, the writer has its end at an amount, the other party's whole V*. Its ruler is the number
-    line, and the point where the two parties are equal is computed and marks nothing (§10, the writer's map; §9).
+    line, on which the point where the two parties are equal is computed (§10, the writer's map; §9).
   - Not knowing it, the reader must draw the other party at its own H, and v = h becomes its split of near from far and
     the median of its readings, the corner (Propositions 3(e), 5(d)).
   - With no size, the array's far end is no amount, only a direction, [0 : 1], where the chart v/h runs out: the horizon
@@ -2003,7 +2080,12 @@ q² has two kinds of solution, r = q, the circle centred on the one who sweeps, 
 it. These are the two pivots of §4, the centre and a point of the circle, and no other shape gives either. Which circle
 depends on the sweep: the circle centred on the pivot for the central sweep, the circle through it for the inscribed;
 with the pivot at home, these are the reader's unit circle and the Thales circle. The uniqueness is relative to the
-construction, a uniform lay by direction from one pivot, not a claim that no other geometry can be drawn. Read as the
+construction, a uniform lay by direction from one pivot, not a claim that no other geometry can be drawn. Nor do two smooth outlines read alike along their length: if
+r₁, r₂ > 0 have the same √(r² + r′²) at every direction, then where |r₁ − r₂| is greatest its derivative is zero, and
+(r₁ − r₂)(r₁ + r₂) + (r₁′ − r₂′)(r₁′ + r₂′) = 0 leaves (r₁ − r₂)(r₁ + r₂) = 0 there, so r₁ = r₂ everywhere. The law laid
+along a smooth outline fixes the outline, its size included once the length per turn is an amount; as a share, the
+size a₀ stays unread. Smoothness is needed: three arcs of circles through the pivot, joined at corners, have length 1
+per unit of turn throughout, as the unit circle has. Read as the
 reader's ignorance (§2), a reader who does not know the shape needs a law that every radial map leaves unchanged, and
 only a law on directions alone is one; the rescalings of κ are the radial maps with λ constant. So a reader can begin at
 the unit circle and read the shape without knowing V*: in ln r = a₀ + f(θ), the unknown size is the constant term alone,
@@ -2051,8 +2133,11 @@ sums, and the Cauchy is the extreme case: an order law with no sum.
 **Order needs the readings together.** The median of the addresses, the corner, is laid with them, before anything
 arrives (§3.1). The median of what arrives survives every change of it (Theorem 6), but it is had only where the
 arrivals are held together, since a median compares every reading with every other: finding the exact median of n
-arrivals taken one at a time needs storage that grows in proportion to n (Munro and Paterson 1980). How a reader holds
-them is its own (§3.5).
+arrivals taken one at a time needs storage that grows in proportion to n (Munro and Paterson 1980). To a stated accuracy
+less is needed: a running estimate moved by the sign of each comparison alone, m ← m + a_k·sign(x_k − m) with steps a_k
+falling more slowly than 1/k, and averaged as it goes, reaches the sample median's own accuracy with two registers
+(Robbins and Monro 1951; Polyak and Juditsky 1992; for the Cauchy √n times its spread tends to π/2 in the scale's unit).
+It uses order only, as Theorem 6 says a median does. How a reader holds them is its own (§3.5).
 
 ### 7.7 Other addresses and payloads
 
@@ -2120,6 +2205,9 @@ follow every increasing map; those facts underlie parts (b) and (d). The other p
   - Its parameter is ρ = tanh(η/2), where η is the rapidity. With one dimension fewer it is the wrapped Cauchy with the
     same ρ.
   - That density is D²/4π: the crowding of addresses toward the motion.
+  - It keeps the cross ratio of any four sources' places, read as complex numbers in that chart, and three sources seen
+    in both frames fix the whole boost and turn: the Möbius maps of the sphere are the Lorentz group, and a Möbius map
+    is fixed by three points (Penrose and Rindler 1984).
 
   The second is a weighting of the payload at each address, and it moves no address.
   - Of the D⁴ by which an isotropic sky's intensity brightens ahead (Rybicki and Lightman 1979), D² is the addresses'
@@ -2185,7 +2273,9 @@ leftover, and it is not payload. Nothing stored at the cell is lost: the cell ke
 the cell the place is, and that is address. Written in binary, the remainder is 0.b₁b₂b₃…, and each digit says which half
 of the cell before it the place lies in: b₁ the half of the cell, b₂ the half of that half, and so on. The digits are the
 finer levels of the address, one level a digit, without end. So the floor does not round one number. It takes an address
-that runs through every level and keeps it at one, discarding all the finer ones in a single step.
+that runs through every level and keeps it at one, discarding all the finer ones in a single step. The floor is not
+lossless, and flooring is not wrong: where only the cell's value is wanted, dropping where in the cell is exactly right;
+where the place within the cell matters, what was dropped was address, not payload.
 
 *The remainder is a second coordinate.* The levels it holds are not a list kept beside the address; they are the
 address's other dimension. Give the dyadic cell [kw, (k + 1)w), w = 2^(−j), the point z = m + iγ of the upper half-plane,
@@ -2194,7 +2284,9 @@ it is held, γ. The floor keeps m at one height and forgets that the height was 
 numbers make has a geometry of its own, and it is a familiar one.
 - *Every level is the next.* The map z ↦ 2z is an isometry of the half-plane (its metric is ds² = (dx² + dy²)/y²), and it
   carries each level of cells onto the next. Each binary digit is one step down, and every step is alike: a step of ln 2
-  in height.
+  in height. Read on the line alone, the step is the doubling map x ↦ 2x mod 1: each step moves the first digit of the
+  remainder into the key, and the rate at which the map forgets where it started, its Lyapunov exponent, is ln 2, one
+  level a step (the Bernoulli shift).
 - *Every cell has the same room.* The tile [kw, (k + 1)w] × [w/2, w] has hyperbolic area ∫∫ dx·dy/y² = w·(2/w − 1/w) = 1,
   at every level. A cell a million levels down has exactly the room of the first. The tiles are Böröczky's binary tiling
   (Böröczky 1974).
@@ -2322,6 +2414,18 @@ the quantiles of the Cauchy with its scale at H.
   A large H gives the same half a long stretch, each address coarser, and carries the far half farther out.
 - The world's own count enters nowhere. Doubling or thinning what arrives moves no address (Theorem 6(a)), so a world of
   N things, of 2N, or of infinitely many is held at the same K addresses, each holding its share.
+- For even K the corner is a boundary between two addresses; for odd K one address is centred on it, its ends reciprocal
+  (K = 9: from 0.8391 to 1.1918 H). The two are the mid-rise and mid-tread quantizers (Gersho and Gray 1992), and both
+  are unchanged by the exchange.
+
+The same points are known in numerical analysis. Boyd's collocation points for a function on the whole line,
+L·cot((2j − 1)π/2N), j = 1, …, N, are the midpoints of N equal shares of the Cauchy of scale L, and their positive half
+are the K addresses' midpoints along distance, H·tan((2k − 1)π/4K), with L = H and N = 2K; doubling L lays the grid
+again at twice the length. His rule for L, set it at the scale of the feature to be resolved (Boyd 1982), is the rule
+above that the best H puts the thing read at the corner. His basis is Chebyshev's on the turn,
+T_n(y/√(y² + L²)) (Boyd 1987): the same equal angles read by their cosine are Chebyshev's nodes, crowded at the ends of
+the chord (the last gap about π²/N², the middle ones π/N; Rivlin 1974), and read by their tangent are the Cauchy's,
+spread out to the horizon. The law is the turn's; the chart decides where the addresses crowd.
 
 So a reader's K addresses fall on any world, and its choice of H places the finest of them anywhere along distance;
 it never has more than K at a time. The count is the level of detail, and H is the zoom. (Elsewhere in this
@@ -2341,8 +2445,8 @@ K/2.)
   the far half has no end in length, only in count.
 - A direction's K addresses and a distance's K together make a polar grid of K × K cells. Every thing falls in exactly one, whatever the world's count N. H moves only the radial split.
 
-The reader interacts with K. The writer, which states every distance in amounts, interacts with N: its number line is
-alike everywhere and needs a mark for every thing it places. The Cauchy is what keeps the two apart. Its K quantiles are fixed by the turn alone, at
+The reader interacts with K. The writer, which states every distance in amounts, interacts with N: it places each
+thing at its amount on its number line. The Cauchy is what keeps the two apart. Its K quantiles are fixed by the turn alone, at
 H·tan(kπ/2K), with no reference to how many things there are or how far they reach. Its last address runs to the
 horizon, so a finite K covers an unbounded world, and whatever lies past every other address lands in that tail. N
 then enters only as the share each address holds, which is payload (Theorem 6(a)).
@@ -2815,7 +2919,11 @@ from many sides when the thing crosses its view. Each look gives the directions 
 thing, and the two at the edges of that set are lines that touch it. Over the crossing these lines close in on it from
 every side the line of sight turned through, and what lies within them at every look is the thing's visual hull
 (Laurentini 1994). The hull contains the thing, meets it wherever some edge touched it, and elsewhere only spans it: a
-hollow that no edge reached is bridged over. It is built of directions alone, so it is the outline up to the common
+hollow that no edge reached is bridged over. Where an edge grazes a smooth surface, the map from the surface to
+directions folds (Whitney 1955): points just either side of the rim meet the same directions, so the outline's
+directions do not say which side is which. What the outline gives beyond the hull is its curvature, whose sign is the
+sign of the surface's Gaussian curvature at the rim, convex where it bends out, saddle-shaped where it bends in
+(Koenderink 1984). It is built of directions alone, so it is the outline up to the common
 scale, and nothing in it moves when the world is scaled; the thing's track across the view, which the hull needs, is
 itself known from the looks only up to that scale. The face needs more: along each direction, how far the surface lies, an
 amount, in a unit. A range gives both: the time for a signal to go out and return, times the signal's speed, which is an
@@ -2862,10 +2970,8 @@ form a shared ruler must have.
   only the logarithm (Proposition 4). Where the range is wide, people share the other ruler Proposition 14 allows, one
   whose notches are levels: decibels, stellar magnitudes, pH. Scientific notation, 3.2 × 10⁶, writes both at once, a
   count of levels with a plain ruler inside one.
-- *It has the same grain everywhere.* It cannot know who will read it or how finely, so it is notched alike throughout,
-  whether or not a given reader needs the detail there.
-- *It is not a reader; it is the writer's.* It reads nothing and has no standpoint, so it has no situation. A reading
-  passes through it, from one reader's relations to another's, and nobody reads on it. The writer writes on it, and
+- *It is not a reader; it is the writer's.* It has no standpoint, so it has no situation. A reading
+  passes through it, from one reader's relations to another's. The writer writes on it, and
   needs it as it is: to write is to state amounts, counted out in a unit and added, a breadth walked as so many strides,
   and a sum of equal steps is laid in proportion, the power p = 1, with each step alike wherever it falls. A corner
   would lay the steps on one side of it differently from those on the other, so the amount written would depend on where
@@ -2874,10 +2980,8 @@ form a shared ruler must have.
   exchanged by the reciprocal. They are the far and near sides of whatever unit a reader holds against the line (§3.3,
   §4), not two separate properties of the line.
 
-So the number line is not the structure of observation, and it need not be. It is the writer's ruler, and the interface
-readers agree on so that amounts can pass between them, made after the geometry and the readings, and its plainness,
-uniform and without a corner, is what lets it favour no one. In order: the world, a reading, a relation, an address and
-then, between readers, the number line.
+So the number line is the writer's ruler, and the interface readers agree on so that amounts can pass between them; its
+uniformity, without a corner, is what lets it favour no one.
 
 ## 10. A worked example: a mountain range
 
@@ -3242,7 +3346,29 @@ it adds, and what that costs. Four examples:
 - *The flat screen.* Equal pixels on a plane are not equal turns. Per unit of screen area the uniform turn's directions
   have density (2/π)·cos³α (Proposition 5(e)), so equal pixels over-weight the directions off the axis by sec³α, and
   along one line of a screen of finite edge they put the median at half the edge instead of at the corner (§3.5). The
-  weighting is the design's, added to the geometry.
+  weighting is the design's, added to the geometry. Laid by turn instead, an arctangent on each coordinate of a cube's
+  face (the equi-angular cubemap), the cells' solid angles vary by a factor of √2 across a face, against 3√3 ≈ 5.2 for
+  equal pixels. However the faces are laid, a direction in d + 1 dimensions is never more than arccos(1/√(d + 1)) from
+  the axis of the face it falls on (45°, 54.74° and 60° for one, two and three other parties), since its largest
+  component is at least 1/√(d + 1); every capped reading lies within √d of its face's centre.
+- *A filter's steady state.* A Kalman filter tracking a random walk, with process noise q and measurement noise r,
+  settles with its predicted and updated variances at √(qr)·μ and √(qr)/μ, μ = (n + √(n² + 4))/2 with n = √(q/r)
+  (Kalman 1960): a reciprocal pair about √(qr), the corner of the two noises, their product qr whatever n. For matrices
+  the same holds as P⁻ # P = Q # R, with # the matrix geometric mean. The design supplies the noises; that its two
+  variances sit at reciprocal readings about their geometric mean is the geometry's.
+- *Exact composition.* Readings composed by tangent addition can be held exactly as Gaussian integers, the step v/h as
+  h + iv, reduced after each product. The register then grows by ½·log₂ of the odd part of h² + v² bits a step, and not
+  at all only at home, the corner and the horizon: every other step costs storage without end, the arithmetic face of
+  the steps that never close (§2, "Zero, and a new zero").
+- *A step that never closes.* Hashing by an irrational fraction of a turn, the golden one in Fibonacci hashing
+  (⌊2³²/φ⌋ = 2,654,435,769; Knuth 1998, §6.4), uses just such steps: their multiples spread round the turn, leaving at
+  most three sizes of gap at every count (the three-distance theorem; Sós 1958).
+- *Addresses on a turn, not by a count.* Consistent hashing puts keys and machines on a circle by angle, each key served
+  by the next machine round (Karger et al. 1997); adding a machine moves about one key in n + 1, where placing keys by
+  their remainder on division by n moves nearly all of them. Labels drawn from a fixed count M are the other side: kept
+  in order with new items put between, one gap can take about log₂ M before labels must be given out again (Itai,
+  Konheim and Rodeh 1981; Dietz 1982). A count of addresses fixed beforehand runs out where the world's count grows; the
+  turn's addresses do not, and pay with a horizon (§8).
 - *Tables fixed in advance.* A sampling table or a grid of cells fixed in advance must know beforehand the extent it
   covers and the resolution it needs, and is rebuilt when either changes. The uniform turn's addresses need neither (§8,
   "A fixed count, aimed by H"); what needs them is the payload or the writer.
@@ -3305,14 +3431,23 @@ it one that can be asked.
 Aczél, J., Roberts, F. S. and Rosenbaum, Z. (1986). On scientific laws without dimensional constants. *Journal of
 Mathematical Analysis and Applications* 119, 389–416.
 
+Adler, C. L. and Tanton, J. (2000). π is the minimum value for pi. *The College Mathematics Journal* 31(2),
+102–106.
+
 Archimedes (c. 250 BC). *Measurement of a Circle*.
 
 Archimedes (c. 225 BC). *On the Sphere and Cylinder*.
+
+Barbier, E. (1860). Note sur le problème de l'aiguille et le jeu du joint couvert. *Journal de Mathématiques
+Pures et Appliquées* (2) 5, 273–286.
 
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.
 
 Beardon, A. F. (1983). *The Geometry of Discrete Groups*. Graduate Texts in Mathematics 91. Springer, New York.
+
+Beltrami, E. (1865). Risoluzione del problema: riportare i punti di una superficie sopra un piano in modo che le
+linee geodetiche vengano rappresentate da linee rette. *Annali di Matematica Pura ed Applicata* 7, 185–204.
 
 Benford, F. (1938). The law of anomalous numbers. *Proceedings of the American Philosophical Society* 78(4), 551–572.
 
@@ -3321,8 +3456,17 @@ Society B* 41(2), 113–128.
 
 Bertrand, J. (1889). *Calcul des probabilités*. Gauthier-Villars, Paris.
 
+Bohlin, K. (1911). Note sur le problème des deux corps et sur une intégration nouvelle dans le problème des trois
+corps. *Bulletin Astronomique* 28, 113–119.
+
 Böröczky, K. (1974). Gömbkitöltések állandó görbületű terekben I [Sphere packings in spaces of constant curvature I].
 *Matematikai Lapok* 25, 265–306.
+
+Boyd, J. P. (1982). The optimization of convergence for Chebyshev polynomial methods in an unbounded domain.
+*Journal of Computational Physics* 45, 43–79.
+
+Boyd, J. P. (1987). Spectral methods using rational basis functions on an infinite interval. *Journal of
+Computational Physics* 69, 112–142.
 
 Bramon, A., Garbarino, G. and Hiesmayr, B. C. (2004). Quantitative complementarity in two-path interferometry.
 *Physical Review A* 69, 022112.
@@ -3343,8 +3487,19 @@ Multivariate Analysis* 128, 147–153.
 Cacoullos, T. and Papadatos, N. (2013). Self-inverse and exchangeable random variables. *Statistics & Probability
 Letters* 83(1), 9–12.
 
+Cauchy, A.-L. (1841). Note sur divers théorèmes relatifs à la rectification des courbes et à la quadrature des
+surfaces. *Comptes Rendus de l'Académie des Sciences* 13, 1060–1065.
+
+Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal für die reine und angewandte Mathematik*
+32, 119–123.
+
+Cayley, A. (1859). A sixth memoir upon quantics. *Philosophical Transactions of the Royal Society of London* 149,
+61–90.
+
 Civera, J., Davison, A. J. and Montiel, J. M. M. (2008). Inverse depth parametrization for monocular SLAM. *IEEE
 Transactions on Robotics* 24(5), 932–945.
+
+Coxeter, H. S. M. (1987). *Projective Geometry*, 2nd ed. Springer, New York.
 
 Crofton, M. W. (1868). On the theory of local probability, applied to straight lines drawn at random in a plane.
 *Philosophical Transactions of the Royal Society of London* 158, 181–199.
@@ -3361,6 +3516,9 @@ Australian Mathematical Society* 33(3), 200.
 
 Dehaene, S., Izard, V., Spelke, E. and Pica, P. (2008). Log or linear? Distinct intuitions of the number scale in Western
 and Amazonian indigene cultures. *Science* 320, 1217–1220.
+
+Dietz, P. F. (1982). Maintaining order in a linked list. *Proceedings of the 14th ACM Symposium on Theory of
+Computing*, 122–127.
 
 Doyle, P. G. and Snell, J. L. (1984). *Random Walks and Electric Networks*. Carus Mathematical Monographs 22.
 Mathematical Association of America, Washington.
@@ -3388,6 +3546,8 @@ CHI '95*, 234–241.
 
 Gauss, C. F. (1828). *Disquisitiones generales circa superficies curvas*. Göttingen.
 
+Gersho, A. and Gray, R. M. (1992). *Vector Quantization and Signal Compression*. Kluwer, Boston.
+
 Gerville-Réache, L. (2016). Mettre de l'eau dans du vin, un paradoxe de l'indifférence ? *Implications
 philosophiques*, 12 December 2016.
 
@@ -3413,6 +3573,9 @@ Haldane, J. B. S. (1932). A note on inverse probability. *Proceedings of the Cam
 
 Herschel, J. F. W. (1850). Quetelet on probabilities. *Edinburgh Review* 92, 1–57.
 
+Hilbert, D. (1895). Über die gerade Linie als kürzeste Verbindung zweier Punkte. *Mathematische Annalen* 46,
+91–96.
+
 Igarashi, T. and Hinckley, K. (2000). Speed-dependent automatic zooming for browsing large documents. *Proceedings
 of UIST 2000*, 139–148.
 
@@ -3421,6 +3584,9 @@ Organization for Standardization, Geneva.
 
 ISO 261 (1998). *ISO general purpose metric screw threads — General plan*. International Organization for
 Standardization, Geneva.
+
+Itai, A., Konheim, A. G. and Rodeh, M. (1981). A sparse table implementation of priority queues. *Automata,
+Languages and Programming (ICALP 1981)*, Lecture Notes in Computer Science 115, 417–431.
 
 Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 
@@ -3446,15 +3612,31 @@ Jones, M. C. (2008b). On reciprocal symmetry. *Journal of Statistical Planning a
 Kakutani, S. (1944). Two-dimensional Brownian motion and harmonic functions. *Proceedings of the Imperial Academy
 Tokyo* 20(10), 706–714.
 
+Kalman, R. E. (1960). A new approach to linear filtering and prediction problems. *Journal of Basic Engineering*
+82(1), 35–45.
+
+Karger, D., Lehman, E., Leighton, T., Panigrahy, R., Levine, M. and Lewin, D. (1997). Consistent hashing and random
+trees. *Proceedings of the 29th ACM Symposium on Theory of Computing*, 654–663.
+
 Kato, S. and McCullagh, P. (2020). Some properties of a Cauchy family on the sphere derived from the Möbius
 transformations. *Bernoulli* 26(4), 3224–3248.
 
+Keller, J. B. and Vakil, R. (2009). π_p, the value of π in ℓ_p. *The American Mathematical Monthly* 116(10),
+931–935.
+
 Kellogg, O. D. (1929). *Foundations of Potential Theory*. Springer, Berlin.
+
+Klein, F. (1871). Über die sogenannte Nicht-Euklidische Geometrie. *Mathematische Annalen* 4, 573–625.
 
 Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen* (the Erlangen programme).
 
 Knight, F. B. (1976). A characterization of the Cauchy type. *Proceedings of the American Mathematical Society* 55,
 130–135.
+
+Knuth, D. E. (1998). *The Art of Computer Programming*, Vol. 3: *Sorting and Searching*, 2nd ed. Addison-Wesley,
+Reading, MA.
+
+Koenderink, J. J. (1984). What does the occluding contour tell us about solid shape? *Perception* 13(3), 321–330.
 
 Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten*. Berlin.
 
@@ -3468,6 +3650,8 @@ Lee, D. N. (1976). A theory of visual control of braking based on information ab
 5(4), 437–459.
 
 Leonard, D. (2011). Estimating a bivariate linear relationship. *Bayesian Analysis* 6(4), 727–754.
+
+Levi-Civita, T. (1920). Sur la régularisation du problème des trois corps. *Acta Mathematica* 42, 99–144.
 
 Lévy, P. (1925). *Calcul des probabilités*. Gauthier-Villars, Paris.
 
@@ -3501,6 +3685,8 @@ Möbius, A. F. (1827). *Der barycentrische Calcul*. Barth, Leipzig.
 Munro, J. I. and Paterson, M. S. (1980). Selection and sorting with limited storage. *Theoretical Computer Science*
 12(3), 315–323.
 
+Niven, I. (1956). *Irrational Numbers*. Carus Mathematical Monographs 11, Mathematical Association of America.
+
 Norton, J. D. (2008). Ignorance and indifference. *Philosophy of Science* 75(1), 45–68.
 
 Parker, M. C. and Jeynes, C. (2023). A maximum entropy resolution to the wine/water paradox. *Entropy* 25(8), 1242.
@@ -3508,8 +3694,21 @@ Parker, M. C. and Jeynes, C. (2023). A maximum entropy resolution to the wine/wa
 Penrose, R. (1959). The apparent shape of a relativistically moving sphere. *Proceedings of the Cambridge
 Philosophical Society* 55, 137–139.
 
+Penrose, R. and Rindler, W. (1984). *Spinors and Space-Time*, Vol. 1. Cambridge University Press.
+
 Pitman, E. J. G. and Williams, E. J. (1967). Cauchy-distributed functions of Cauchy variates. *Annals of Mathematical
 Statistics* 38(3), 916–918.
+
+Plücker, J. (1865). On a new geometry of space. *Philosophical Transactions of the Royal Society of London* 155,
+725–791.
+
+Polyak, B. T. and Juditsky, A. B. (1992). Acceleration of stochastic approximation by averaging. *SIAM Journal on
+Control and Optimization* 30(4), 838–855.
+
+Rivlin, T. J. (1974). *The Chebyshev Polynomials*. Wiley, New York.
+
+Robbins, H. and Monro, S. (1951). A stochastic approximation method. *The Annals of Mathematical Statistics* 22(3),
+400–407.
 
 Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions of the Royal
 Society of London* 75.
@@ -3541,6 +3740,9 @@ Smart, W. M. (1977). *Textbook on Spherical Astronomy*, 6th ed., revised by R. M
 
 Snellius, W. (1617). *Eratosthenes Batavus, de terrae ambitus vera quantitate*. Leiden.
 
+Sós, V. T. (1958). On the distribution mod 1 of the sequence nα. *Annales Universitatis Scientiarum Budapestinensis
+de Rolando Eötvös Nominatae, Sectio Mathematica* 1, 127–134.
+
 Spitzer, F. (1958). Some theorems concerning 2-dimensional Brownian motion. *Transactions of the American
 Mathematical Society* 87, 187–197.
 
@@ -3554,6 +3756,9 @@ Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the
 
 Stone, M. and Dawid, A. P. (1972). Un-Bayesian implications of improper Bayes inference in routine statistical
 problems. *Biometrika* 59(2), 369–375.
+
+Talacko, J. (1956). Perks' distributions and their role in the theory of Wiener's stochastic variables.
+*Trabajos de Estadística* 7, 159–174.
 
 Terrell, J. (1959). Invisibility of the Lorentz contraction. *Physical Review* 116(4), 1041–1045.
 
@@ -3570,10 +3775,20 @@ Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII*. Tour
 Wallstrom, T. C. (2003). The marginalization paradox does not imply inconsistency for improper priors. arXiv
 math/0310006.
 
+Wantzel, P. L. (1837). Recherches sur les moyens de reconnaître si un problème de géométrie peut se résoudre avec
+la règle et le compas. *Journal de Mathématiques Pures et Appliquées* 2, 366–372.
+
 Weisskopf, V. and Wigner, E. (1930). Berechnung der natürlichen Linienbreite auf Grund der Diracschen Lichttheorie.
 *Zeitschrift für Physik* 63, 54–73.
 
 van Wijk, J. J. and Nuij, W. A. A. (2003). Smooth and efficient zooming and panning. *Proceedings of IEEE InfoVis
 2003*, 15–23.
 
+Weyl, H. (1916). Über die Gleichverteilung von Zahlen mod. Eins. *Mathematische Annalen* 77, 313–352.
+
+Whitney, H. (1955). On singularities of mappings of Euclidean spaces. I. Mappings of the plane into the plane.
+*Annals of Mathematics* 62(3), 374–410.
+
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.
+
+Yaglom, I. M. (1968). *Complex Numbers in Geometry*. Academic Press, New York.
