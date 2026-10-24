@@ -1251,6 +1251,11 @@ ellipse. Less rests on the Euclidean choice than it seems. The readings are dire
 reaches them only through the measure on directions that "sweeping uniformly" uses; laid by direction, every path gives
 the same readings (§7.4). Swept uniformly along their own paths, the square and the line give other laws, with the same
 median at the corner and no mean (Theorem 6(e)). What the circle and the uniform turn add is the Cauchy's exact shape.
+Among the p-norms the circle is also the extreme case. Measured in its own norm, the unit circle of ℓ_p has
+half-perimeter π_p, which is 4 at p = 1 and as p → ∞ (the line's norm and the square's) and least, π, at p = 2 (Adler
+and Tanton 2000); and π_p = π_q whenever 1/p + 1/q = 1 (Keller and Vakil 2009). The sum norm and the largest-component
+norm are such a pair, dual to each other, and both give 4; the Euclidean norm is the one that is its own dual. This is
+classical and nothing here rests on it; it says that the norm the rigid bar needs is the one fixed point of that pairing.
 
 **What the count of orthants borrows.** The count 2^m needs no angle. That the orthants tile the circle or the sphere in
 equal shares, a quarter turn each or π/2 of the sphere's area each, is the Euclidean measure of (c), not part of the
@@ -3314,6 +3319,9 @@ it one that can be asked.
 Aczél, J., Roberts, F. S. and Rosenbaum, Z. (1986). On scientific laws without dimensional constants. *Journal of
 Mathematical Analysis and Applications* 119, 389–416.
 
+Adler, C. L. and Tanton, J. (2000). π is the minimum value for pi. *The College Mathematics Journal* 31(2),
+102–106.
+
 Archimedes (c. 250 BC). *Measurement of a Circle*.
 
 Archimedes (c. 225 BC). *On the Sphere and Cylinder*.
@@ -3460,6 +3468,9 @@ Tokyo* 20(10), 706–714.
 
 Kato, S. and McCullagh, P. (2020). Some properties of a Cauchy family on the sphere derived from the Möbius
 transformations. *Bernoulli* 26(4), 3224–3248.
+
+Keller, J. B. and Vakil, R. (2009). π_p, the value of π in ℓ_p. *The American Mathematical Monthly* 116(10),
+931–935.
 
 Kellogg, O. D. (1929). *Foundations of Potential Theory*. Springer, Berlin.
 

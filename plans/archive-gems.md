@@ -221,7 +221,7 @@ every number below checked exactly before sorting; a reading, not a ruling.*
   OFS §8's "Every level is the next" and the CS companion's §7.2 (SPN R470). The paper gives ln 2 to every Chebyshev
   T_n; T_n has ln n, only T₂ ln 2.
 - **π_p least at p = 2**: in the p-norms "π" runs from 4 down to π, least for the circle (Adler and Tanton 2000, *College
-  Mathematics Journal* 31(2), 102–106; to check before citing). Bears on OFS's Euclidean choice; not moved. The paper's
+  Mathematics Journal* 31(2), 102–106, checked). Bears on OFS's Euclidean choice. **Went to** OFS §5, "The Euclidean choice" (R471), with Keller and Vakil 2009 (π_p = π_q for conjugate p, q). The paper's
   L₁ value 2.83 is wrong (4).
 - **K and N**: "K finite, N unbounded"; "K is discrete to its creator, but continuous to its observer". Early forms of K
   apart from N (OFS §8) and writers within writers (OFS §11.2 question 8). Already in OFS in their present form.

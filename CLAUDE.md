@@ -910,6 +910,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   OFS §4 now names the Cayley transform (tan θ ↦ −e^(2iθ), i ↦ the centre: the two sweeps one classical map, the Cauchy
   the harmonic measure from i; Cayley 1846); OFS §8 and the companion's §7.2 the doubling map (x ↦ 2x mod 1, Lyapunov
   ln 2, one digit of the floor's remainder a step).
+  Then (R471; Tom: "proceed") OFS §5's "The Euclidean choice" closes on π_p (Adler and Tanton 2000; Keller and Vakil
+  2009): least, π, at p = 2, 4 for the sum and largest-component norms, a dual pair; the Euclidean norm its own dual.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
