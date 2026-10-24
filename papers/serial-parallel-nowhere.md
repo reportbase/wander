@@ -6758,6 +6758,8 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 
 - **R485** (24 Oct): Tom: "add worked examples about how these arrays can be laid on the situated and situated sweeps. and can use arctan(angle) * 2/Pi to pull out the index." Read as the inscribed and central sweeps, and the index as k = ⌊K·(2/π)·arctan(v/h)⌋ (arctan of the reading, not of an angle; atan2 in code, the horizon clamped to the last place). Checked in `runs/ofs/arrays.py` (part 4): at K = 8 the boundaries tan(kπ/16) and middles (the half-Cauchy's quantiles); readings 0.1 … 1000 to places 0, 2, 4, 5, 6, 7, 7; s and 1/s to k and 7 − k; scaling moves none; the central sweep's ⌊K·φ/π⌋ at φ = 2θ the same place (III.20); the writer's ⌊N·x/X⌋ (0, 4, 7 for 10, 50, 99 of 100) against the turn index at H = 10 and 50 (4, 6, 7 and 1, 4, 5). OFS §7.3 "Laid on the sweeps: a worked example" (a table and the four arrays laid); the CS companion §6 "Laid on the sweeps, in code" (`turnIndex`).
 
+- **R486** (24 Oct): Tom: "create a demo of the arrays on the sweeps". `array-sweeps.html`: K places on the quarter turn, a direction's place ⌊K·(2/π)·arctan(v/h)⌋; on the Thales circle the places from home and from the centre at twice the angle, the lit place the same by both (III.20); the array strip for the four kinds (the index alone, the values on it as their log-shape, a constant array, known length against the turn index at H); scale the world and H. Smoke test 55; a card in `demos.html`. Nothing added to OFS.
+
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |

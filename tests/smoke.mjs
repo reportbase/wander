@@ -1570,6 +1570,31 @@ try {
     failures.push(`[${current}] ${JSON.stringify(gbx)}`);
   console.log(`${failures.length === before54 ? 'ok  ' : 'FAIL'} ${current} (v ≤ h, v₂ ≤ h, v₂ ≤ v ½, the near field ${gbx.c.near.toFixed(4)}; a ghost box ¼, ½, 2 and 4 times as large painting all 4,096 addresses alike; the world scaled by 10⁻³, 7 and 10³ changing no colour; the reader moved or the wedge turned changing ${(100 * gbx.move.changed).toFixed(0)}% and ${(100 * gbx.turn.changed).toFixed(0)}% of the colours and no address; the paint drawn the paint computed; the reader's camera at its standpoint, the writer's orthographic; WebGL drew frames)`);
 
+  // ── 55. array-sweeps.html: the arrays on the sweeps (SPN R486): at K = 8 the index ⌊K·(2/π)·arctan(v/h)⌋ puts the readings
+  //    0.1 … 1000 at 0, 2, 4, 5, 6, 7, 7 and the horizon in the last place; the central sweep's ⌊K·φ/π⌋ the same place at
+  //    every θ; scaling the world moves no index; the values' log-shape unmoved by k, its mean by ln k; the writer's count
+  //    index against the turn index at H = 10 and 50 ──
+  current = 'array-sweeps.html';
+  const before55 = failures.length;
+  await page.goto(new URL('array-sweeps.html', base).href, { waitUntil: 'load' });
+  const asw = await page.evaluate(() => {
+    const A = __arraySweeps, o = {};
+    o.idx = [0.1, 0.5, 1, 2, 3, 10, 1000].map(s => A.turnIndex(s, 1, 8)).join(',');
+    o.hor = A.turnIndex(1, 0, 8);
+    o.same = true; for (let t = 0.25; t < 90; t += 0.5) { const q = A.set({ K: 8, t, k: 1 }); if (q.index !== q.central) o.same = false; }
+    o.scale = [1e-3, 7, 1e3].map(k => A.set({ t: 71.565, k }).index).join(',');
+    const s1 = A.shapeValues(8, 1), s2 = A.shapeValues(8, 1000);
+    o.shape = Math.max(...s1.shape.map((x, i) => Math.abs(x - s2.shape[i]))); o.dc = Math.abs(s2.logMean - s1.logMean - Math.log(1000));
+    o.count = [10, 50, 99].map(x => A.countIndex(x, 100, 8)).join(',');
+    o.h10 = [10, 50, 99].map(x => A.turnIndex(x, 10, 8)).join(','); o.h50 = [10, 50, 99].map(x => A.turnIndex(x, 50, 8)).join(',');
+    for (const kind of ['index', 'values', 'constant', 'length']) A.set({ kind, k: 1 });
+    return o;
+  });
+  const aswOk = asw.idx === '0,2,4,5,6,7,7' && asw.hor === 7 && asw.same && asw.scale === '6,6,6' && asw.shape < 1e-12 && asw.dc < 1e-12 &&
+    asw.count === '0,4,7' && asw.h10 === '4,6,7' && asw.h50 === '1,4,5';
+  if (!aswOk) failures.push(`[array-sweeps.html] ${JSON.stringify(asw)}`);
+  console.log(`${failures.length === before55 ? 'ok  ' : 'FAIL'} array-sweeps.html (at K = 8 the readings 0.1 … 1000 at places ${asw.idx}, the horizon in the last; the central sweep's index the same place at every θ; scaling the world moves no index; the values' log-shape unmoved by k = 10³ (${asw.shape.toExponential(0)}), its mean by ln k; the writer's count index ${asw.count} against the turn index ${asw.h10} at H = 10 and ${asw.h50} at H = 50)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

@@ -290,6 +290,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   10⁶ on the circle, the line, the square's edges and a lopsided weight. `?n=&op=&f=&path=&seed=`; hook
   `window.__theorem6` (`addresses`, `payload`, `apply`, `readingsWith`, `stats`, `commute`, `meanAt`, `medianAt`,
   `quartiles`, `readingAt`, `set`, `state`). Not in the flying page.
+- `array-sweeps.html`: **arrays on the sweeps** (24 Oct 2026, Tom: "create a demo of the arrays on the sweeps"; SPN R483–R486;
+  OFS §7.3 "The situations as arrays" and "Laid on the sweeps"), a standalone page like `one-read.html`, plain canvas. K places
+  on the quarter turn (4, 8, 9, 16, 32); a direction's place ⌊K·(2/π)·arctan(v/h)⌋ (atan2, the horizon in the last place),
+  no length; on the Thales circle the places from home (gold) and from the centre at twice the angle (teal), the lit place
+  the same by both (III.20). The array strip, four kinds: the index alone (boundaries tan(kπ/2K), middles the half-Cauchy's
+  quantiles, the corner a boundary for even K, a place for odd), the values on it (a shape from its centre, kept as ln r less
+  the mean, the mean moving by ln k), a constant array, known length (the writer's ⌊N·x/X⌋ against the turn index at H).
+  Scale the world k; H for known length. `?K=&t=&kind=index|values|constant|length&H=<log10 H>&k=<log10 k>`; hook
+  `window.__arraySweeps` (`turnIndex`, `centralIndex`, `bounds`, `middles`, `countIndex`, `shapeValues`, `read`, `set`,
+  `state`). Not in the flying page.
 - `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
   "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
   carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
@@ -680,7 +690,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, arrays on the sweeps, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -2536,6 +2546,10 @@ In short:
       large about the reader, its pictures with it, painting all 4,096 addresses alike; the world scaled by 10⁻³, 7 and 10³
       changing no colour; the reader moved or the wedge turned changing over half the colours and no address; the paint
       drawn the paint computed; the reader's camera at its standpoint, the writer's orthographic; WebGL drew frames.
+
+  55. **array-sweeps.html:** at K = 8 the readings 0.1 … 1000 at places 0, 2, 4, 5, 6, 7, 7 and the horizon in the last; the
+      central sweep's index the same place at every θ; scaling the world moves no index; the values' log-shape unmoved by
+      k = 10³, its mean by ln k; the writer's count index 0, 4, 7 against the turn index 4, 6, 7 at H = 10 and 1, 4, 5 at 50.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
