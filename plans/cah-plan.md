@@ -247,3 +247,21 @@ Gaussian's reach in eight dimensions (its mass peaks near √7 = 2.6), so it had
 **CH1′** (written after the check, from the corrected count): Cauchy slope at D′ = 3 within 0.1 of 2/3; at 4 within 0.1
 of 1 − 1/ln N̄ (0.88 at the run's middle N); at 8 within 0.05 of 1. Gaussian at D′ = 8 with N from 65,536 to 524,288 (ball
 radius 4 to 5.2): slope under 0.1. Killed if any is not.
+
+*CH1′, the run* (`runs/cah/effkeys2.py`, `effkeys2.txt`): Cauchy slopes 0.731 at D′ = 3 (predicted 0.667), 0.895 at 4
+(0.868), 0.993 at 8 (1); the Gaussian at D′ = 8 settled at about 6,000 effective keys, slope 0.039. **Not killed.**
+
+**The February results, read** (the document's own numbers):
+- The answer to its open question is the second: with keys spread over a set of dimension above 2 about the query, the
+  Cauchy kernel's effective keys grow without bound, in proportion to N past 4 dimensions. Its own table (121, 308, 623,
+  2,037 effective keys at N = 500 … 5,000, slope 1.08) is the D′ > 4 case. A trained W_k could only hold the count by putting
+  each query's keys on a set of dimension below 2; the Gaussian holds it at any dimension once N outreaches the kernel.
+- "Candidates plateau … O(K·D) confirmed": the union of K nearest in each of D sorted lists holds at most K·D keys by
+  construction, so its plateau is the index's bound, not a finding about the kernel ("the viewport mechanism is
+  kernel-independent", as it says). What a viewport costs is the weight left outside it, which for the Cauchy grows with N
+  as above (its 62% captured at N = 5,000 and the falling top-1 down the scale table).
+- "Cauchy is stable under linear projection": a sum of independent Cauchys is a Cauchy (Lévy's stable laws), classical.
+  The kurtoses quoted (39–503) are of samples from a law with no variance, so they measure the sample, not the law.
+- The framework's reading: here the Cauchy is a law on amounts twice over, on the keys' coordinates and as a weight on a
+  distance, and its tail, which on a turn ends at the horizon of a closed arc, becomes unbounded far weight in D′
+  dimensions. 2/π appears nowhere in these tests ("Cauchy (2/π) is not invalidated" tests nothing about 2/π).

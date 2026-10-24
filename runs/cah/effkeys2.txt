@@ -1,0 +1,5 @@
+Cauchy D'=3: eff 204.0 325.4 506.3 1003.8 1463.5; slope 0.731, predicted 0.667 ± 0.1: ok
+Cauchy D'=4: eff 347.3 618.2 1177.8 2203.0 4096.9; slope 0.895, predicted 0.868 ± 0.1: ok
+Cauchy D'=8: eff 476.6 949.6 1889.5 3761.1 7479.5; slope 0.993, predicted 1.000 ± 0.05: ok
+Gaussian D'=8: eff 5598.7 5997.9 6175.9 6067.2; slope 0.039, predicted < 0.1: ok
+CH1' not killed

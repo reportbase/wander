@@ -2048,7 +2048,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   run (Tom: "is this test still worth running"); the Circle probe's purity on two 400-step models: 0.12–0.37 before the
   retrofit, Cauchy, softmax and random alike, a count over 2^D cells; 0.58 after five epochs and climbing; its "Circle
   beats Cauchy" on held-out triples 97% in its own table. Tom: "so we fell into the same trap that we have now
-  identified": the turn's number read as the payload's.
+  identified": the turn's number read as the payload's. The February results (`attention_results.md`): a Cauchy kernel's
+  effective keys grow without bound for keys on a set of dimension above 2 (as N past 4; CH1 killed by my arithmetic,
+  CH1′ not, `runs/cah/effkeys2.py`), a Gaussian's stay bounded; the viewport's plateau is its own K·D bound.
   `dyh-plan.md` (+ `runs/dyh/dyh.py`, 18 Oct; SPN R374; Tom: "we are throwing away alot of data … its another dimension
   actually, maybe we could use multi-dimensional arrays", then "both"): exact, nothing killed. The cell (j, k) is
   z = (k + ½)2^−j + i·2^−(j+1): from it C(m, γ) puts ½ in the cell, ¼ in each half (D1); parent to child arcosh 3/2,
