@@ -336,6 +336,13 @@ says why no statistic of size can be read from them. So nothing the Cauchy says 
 mean) is a statement about the payload, and nothing in the payload can be read from it. Finding a Cauchy is, by itself,
 no evidence that anything in the world is distributed that way.
 
+**A median in two registers.** An exact median of n readings taken one at a time needs storage that grows with n
+(Munro and Paterson 1980). To a stated accuracy it needs two registers: move an estimate by the sign of each comparison
+alone, `m += a_k * sign(x_k - m)` with steps a_k falling more slowly than 1/k (k^(−0.6), say), and keep a running average
+of m. The average reaches the sample median's own accuracy (Robbins and Monro 1951; Polyak and Juditsky 1992); for a
+Cauchy, √n times its spread tends to π/2 in the scale's unit. It reads order only, a comparison's sign, which is all
+Theorem 6 says a median needs.
+
 **What it does not claim.** It does not show that every real observer counts by the turn rather than by a clock, a flat
 sensor or what arrives; it shows what the turn's count gives. Nor does it show that every Cauchy met in data has this
 origin: a resonance's profile and a stable sum of index 1 are Cauchy laws that are facts about a system. The claim is
@@ -990,7 +997,16 @@ Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium 
 
 Microsoft. Bing Maps Tile System (documentation).
 
+Munro, J. I. and Paterson, M. S. (1980). Selection and sorting with limited storage. *Theoretical Computer Science*
+12(3), 315–323.
+
 Niven, I. (1956). *Irrational Numbers*. Carus Mathematical Monographs 11, Mathematical Association of America.
+
+Polyak, B. T. and Juditsky, A. B. (1992). Acceleration of stochastic approximation by averaging. *SIAM Journal on
+Control and Optimization* 30(4), 838–855.
+
+Robbins, H. and Monro, S. (1951). A stochastic approximation method. *The Annals of Mathematical Statistics* 22(3),
+400–407.
 
 Schwartz, E. L. (1977). Spatial mapping in the primate sensory projection: analytic structure and relevance to
 perception. *Biological Cybernetics* 25, 181–194.

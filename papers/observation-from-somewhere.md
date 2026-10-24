@@ -1109,7 +1109,11 @@ w = (z − i)/(z + i) carries the upper half-plane onto the disc and the line on
 reading s = tan θ to w = −e^(2iθ), the point of the circle 2θ round from the image of home, and the standpoint i to the
 centre. So the inscribed reading at θ and the central angle 2θ are one point under the map, and the uniform turn about
 the centre is carried onto the Cauchy law on the line: the Cauchy is the harmonic measure from i, the circle's uniform
-measure seen from its centre, written in the line's coordinate.
+measure seen from its centre, written in the line's coordinate. The square
+that carries θ to 2θ also carries one figure to another. Under w = z² an ellipse centred at the origin, z = a cos t +
+i b sin t, becomes a conic with a focus at the origin, |w| = ℓ + e·Re w with ℓ = 2a²b²/(a² + b²) and
+e = (a² − b²)/(a² + b²), w going round once while z goes round twice (Bohlin 1911; Levi-Civita 1920). The doubling of the
+angle that separates the two sweeps is the same square that takes a figure's centre to its focus.
 
 **What the reciprocal gives, and what it does not.** The reciprocal proves that the corner is the one point it leaves
 fixed, that every sweep passes through it, that a reading kept within [0, 1] on both sides must change register there
@@ -1534,6 +1538,15 @@ consistent with the addresses, not their cause. The paper does not claim that pa
 payload's law is taken to be unchanged by turns, with independent components, it is the normal, and its ratio is then
 the Cauchy the addresses already were. The central limit theorem is a third matter: it makes a sum of many independent
 contributions normal, and says nothing about a single payload averaged over the quadrant.
+
+**Why a turn and not a boost.** The Möbius maps of the reader's line come in three kinds of one-parameter flow: the
+elliptic, a turn, with no fixed point on the line; the hyperbolic, a boost, which fixes two points; the parabolic, a
+translation, which fixes one. Only the turn leaves unchanged a probability spread over the whole line, and that
+probability is the Cauchy, the only one it keeps (the turns are the compact subgroup, and the measure they keep is its
+Haar measure). Under a boost or a translation every point off the fixed points moves monotonically toward one of them, so
+any probability they keep sits on the fixed points alone. So a measure on directions that treats every place alike and
+is unchanged by its own motion can only come from a turn, and is the Cauchy; a sweep by boosts has no such measure to
+give.
 
 **Proposition 5, continued: two other parties.** (e) Let the reader assign two other parties V = V₂ = H, so that the
 relation lies on the sphere of Proposition 3(f), and sweep the positive octant h, v, v₂ ≥ 0,
@@ -2088,8 +2101,11 @@ sums, and the Cauchy is the extreme case: an order law with no sum.
 **Order needs the readings together.** The median of the addresses, the corner, is laid with them, before anything
 arrives (§3.1). The median of what arrives survives every change of it (Theorem 6), but it is had only where the
 arrivals are held together, since a median compares every reading with every other: finding the exact median of n
-arrivals taken one at a time needs storage that grows in proportion to n (Munro and Paterson 1980). How a reader holds
-them is its own (§3.5).
+arrivals taken one at a time needs storage that grows in proportion to n (Munro and Paterson 1980). To a stated accuracy
+less is needed: a running estimate moved by the sign of each comparison alone, m ← m + a_k·sign(x_k − m) with steps a_k
+falling more slowly than 1/k, and averaged as it goes, reaches the sample median's own accuracy with two registers
+(Robbins and Monro 1951; Polyak and Juditsky 1992; for the Cauchy √n times its spread tends to π/2 in the scale's unit).
+It uses order only, as Theorem 6 says a median does. How a reader holds them is its own (§3.5).
 
 ### 7.7 Other addresses and payloads
 
@@ -3374,6 +3390,9 @@ Society B* 41(2), 113–128.
 
 Bertrand, J. (1889). *Calcul des probabilités*. Gauthier-Villars, Paris.
 
+Bohlin, K. (1911). Note sur le problème des deux corps et sur une intégration nouvelle dans le problème des trois
+corps. *Bulletin Astronomique* 28, 113–119.
+
 Böröczky, K. (1974). Gömbkitöltések állandó görbületű terekben I [Sphere packings in spaces of constant curvature I].
 *Matematikai Lapok* 25, 265–306.
 
@@ -3533,6 +3552,8 @@ Lee, D. N. (1976). A theory of visual control of braking based on information ab
 
 Leonard, D. (2011). Estimating a bivariate linear relationship. *Bayesian Analysis* 6(4), 727–754.
 
+Levi-Civita, T. (1920). Sur la régularisation du problème des trois corps. *Acta Mathematica* 42, 99–144.
+
 Lévy, P. (1925). *Calcul des probabilités*. Gauthier-Villars, Paris.
 
 Liu, Z. and Adams, C. S. (2019). Experimental tests of Bertrand's question and the Duhem–Quine problem. *European
@@ -3576,6 +3597,12 @@ Philosophical Society* 55, 137–139.
 
 Pitman, E. J. G. and Williams, E. J. (1967). Cauchy-distributed functions of Cauchy variates. *Annals of Mathematical
 Statistics* 38(3), 916–918.
+
+Polyak, B. T. and Juditsky, A. B. (1992). Acceleration of stochastic approximation by averaging. *SIAM Journal on
+Control and Optimization* 30(4), 838–855.
+
+Robbins, H. and Monro, S. (1951). A stochastic approximation method. *The Annals of Mathematical Statistics* 22(3),
+400–407.
 
 Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions of the Royal
 Society of London* 75.

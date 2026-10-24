@@ -291,3 +291,44 @@ a ruling.*
   §15 audit; its conclusion still states it.
 - Its terms (the atom, registers, "the chart is never asked for", the two zeros) predate the current frame: check before
   reuse.
+
+## The Balance (added 24 October)
+
+*Tom: "any gems", then "yes". `papers/archive/the-balance.md` ("a working paper on the centre of gravity as the primitive
+read", 234 KB, kept as received). Read by two readers in parallel (lines 1–1350, 1350–2680), every claim checked; the
+three taken re-checked by Claude. A reading, not a ruling.*
+
+**Taken into OFS (SPN R473):**
+- *Why a turn and not a boost* (its §27, L1142; §31, L1686–1695; found by both readers): of the three one-parameter
+  Möbius flows on the line only the elliptic (a turn) keeps a probability of full support, the Cauchy, uniquely; under a
+  hyperbolic or parabolic flow every point drifts monotonically to a fixed point, so their invariant probabilities sit on
+  the fixed points. OFS §7.1, after Proposition 5's first parts.
+- *The square takes a centred conic to a focal one* (its L427–439): w = z² carries z = a cos t + i b sin t to
+  |w| = ℓ + e·Re w, ℓ = 2a²b²/(a² + b²), e = (a² − b²)/(a² + b²) (at a = 2, b = 1: 1.6 and 0.6, residual 2·10⁻¹⁵), w
+  once round as z goes twice (Bohlin 1911; Levi-Civita 1920; Arnold 1990). OFS §4, after the Cayley transform. The physics
+  (Hooke's and Newton's laws, the two Bertrand keeps) left out.
+- *A median in two registers* (its §37.2, L2180–2191, corrected): the sign of each comparison with steps k^(−0.6) and a
+  running average (Robbins and Monro 1951; Polyak and Juditsky 1992) reaches the sample median's accuracy, √n·sd → π/2
+  for the Cauchy (Claude: 1.592 over 40 runs at n = 10⁵; reader: 1.586). OFS §7.6 "Order needs the readings together";
+  the CS companion after Theorem 6.
+
+**Kept here:**
+- The two reads' sensitivities: through the dot product and the bracket, Fisher informations sin²Δ/σ² and cos²Δ/σ²,
+  summing to 1/σ², equal at the corner; the dot product blind at home (its estimate ∝ √σ, sd ≈ 0.48·√(2σ)).
+- Rational group laws on the line are conjugate to x + y, (x + y)/(1 − xy) or (x + y)/(1 + xy) (the additive group, the
+  norm-one torus, the multiplicative group): Yaglom's three algebras as algebraic groups.
+- The correlation bound (r₁₃ within 0.3 ∓ 0.6928 for r₁₂ = r₂₃ = 0.6, and so on), statistics.
+
+**Errors, not to pull forward:**
+- L120–128: both curved cases "open at order Kd²"; its own hyperbolic column scales as d³.
+- L142–156: the "centre of gravity" a force-weighted mean of positions (gap L²/2R); the usual centre of gravity gives
+  3L²/(8R).
+- L412–425: near-circular orbits close whenever √(3 + p) is rational, so "Bertrand's cut is exactly covering degree at
+  most two" overstates.
+- L1142: "no finite invariant measure at all" is false; point masses at the fixed points are invariant.
+- L1219–1225: "charged by the room, not the cargo" fails in ℝ⁴ (a 2-plane onto a 2-plane 0.332, against 4/(3π) = 0.424);
+  L1055 labels chord/arc = 1 "the corner", where in that pairing it is θ = 0.
+- L1508–1512: its "√(2σ) prediction" column is 0.4795·√(2σ); L2184–2191's "sign-and-halve, M = 1" freezes early (a halved
+  step), its ratios single-run noise; L1388–1390 and its table still say "total = πρ₀ = K", fixed only at §31.2 to (π/2)ρ₀.
+- L1489–1491 calls Lagrange's identity "the Born rule" (conceded at its §34); L1474, L1485 "provably no fourth" and
+  "nothing else is observable" overclaim the first fundamental theorem; appendix Y1's "exactly 3 gaps" is at most 3.
