@@ -375,3 +375,49 @@ and cross-ratio items re-checked by Claude. A reading, not a ruling.*
   Mercator's formula (L691; Wright 1599, Bond c. 1645); "walks β out to its balance and no further" (L311; β → 1); the
   conformal algebra of S² is so(3,1) (L13, L260) only for the global Möbius group; a float's exponent "in its first byte"
   (L697; bits 30–23, across two bytes).
+
+## The Cauchy, Inside and Out (added 24 Oct)
+
+Sep 22–24 2026, a research paper and session record ("the order of limits: fixed fidelity, unknown N, and the horizon two
+readers share"), filed as received in `papers/archive/the-cauchy-inside-and-out.md`; read by two readers (lines 1–1500,
+1500–3039), every number below checked again. Much of the first half is *The Order of Limits* and *One Reader*, mined
+above (the tower of bits, an index with no unit, the three counts, the order of limits, the hyperbolic browser, Lévy,
+Thomas–Wigner, Crofton, the bracket, the seam, growth); the second half's two octaves, ceiling (CEI) and √(x₁x₂) are held.
+
+**Taken into OFS (R476):**
+- *Boyd's points are the addresses* (L1883–1899): L·cot((2j − 1)π/2N) are the midpoints of N equal shares of the Cauchy
+  of scale L (to 6·10⁻¹⁴ at N = 16, L = 3); their positive half the K addresses' midpoints with L = H, N = 2K; Boyd's rule
+  for L the best H at the corner (Boyd 1982, 1987). OFS §8 "A fixed count, aimed by H"; the CS companion §12.
+- *One turn, two projections* (L1817–1836): TB_n(y) = T_n(y/√(y² + L²)) (to 6·10⁻¹⁵); equal angles by cosine are
+  Chebyshev's nodes (end gap·N² → π², 9.8695 at N = 400; middle gap·N → π), by tangent the Cauchy (Rivlin 1974). OFS §8.
+- *Cauchy's mean width* (behind L1225–1283's identity WIDTH = ARC·⟨h⟩): over a uniform turn the width of any convex
+  figure averages to perimeter/π (a 4,000-point hull: 2.505695945 against 2.505695944; Cauchy 1841, Barbier 1860), so
+  2/π is the turn's mean of |cos|, not the circle's. OFS §3.4 "Where the numbers come from".
+- *The angle doubling keeps the Cauchy but is no Möbius map* (L1868–1872): s ↦ 2s/(1 − s²) of a standard Cauchy is one
+  (10⁶ samples: KS 0.0011), two to one (0.7 from 0.3152 and −3.1724), cross ratios moved (×1.009). OFS §6's parenthesis.
+- *The rim is a fold* (L1704–1715): either side of the limb the same directions; the contour's curvature carries the
+  sign of the Gaussian curvature (Whitney 1955; Koenderink 1984). OFS §9 "From one place: the outline is free".
+- *Consistent hashing and list labelling* (L541, L544): adding a node to 100 moves 0.78% of 100,000 keys on the circle,
+  99.0% by mod n (Karger et al. 1997); one gap of 2²⁰ labels takes 20 insertions (Itai, Konheim and Rodeh 1981; Dietz
+  1982). OFS §11.4; the CS companion §12.
+
+**Kept here:**
+- The fixed-unit layout (L218–226, L321–326): θᵢ = arctan(i/c) holds entries apart to i ≈ √(c/ε − c²), the longest run
+  1/(2ε) at c = 1/(2ε), names up to about c/ε (checked at ε = 10⁻³: 99, 300, 500).
+- A boost's readable octaves (L751–754): log₂(2/ε), the same as asinh(cot ε)/ln 2 (7.6439, 10.9658, 14.2877).
+- A count read from an angle, δn/n = ((1 + s²)/s)·δθ, least 2δθ at the corner: OFS's cosh bell, 2·cosh(ln s).
+- The Lebesgue constant of Chebyshev's nodes, (2/π)·ln n + 0.9625 (Λ₃₂ 3.169): one more mean over the turn, if wanted;
+  the paper's tie to "the exchange rate" is numerology.
+
+**Errors, not to pull forward:**
+- "Density" as the reader's (§6a.1, L2705–2726); "the view from everywhere" holding N (L72–95, L1515, L2510); inside and
+  outside readers defined as serial and parallel (L1431–1440, L1578–1602), the outside one an orthographic far reader,
+  not the central sweep.
+- Case: "v is the count, h is the unit" (L240–253, amounts as unit relations); h signed, "the side where h < 0"
+  (L1669–1676).
+- "The mean is gone because the run is never finished" (L1137–1146): the tail's, however many readings; "the law is its
+  N-known shadow" (L1126).
+- "⟨h⟩ is a mean, so it is everywhere's", "2/π a density quantity" (L1244, L1289–1292); "2/π … this residue written as
+  a mean" (L2510): the residue measured is ρ (0.5, 2, 3.7), not 2/π.
+- v = sin(blue) read as β with no bridge (L858–877).
+

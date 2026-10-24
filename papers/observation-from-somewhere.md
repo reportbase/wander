@@ -678,6 +678,11 @@ and the inscribed less, but as ratios the two lie equally far either side of 1, 
 below it, and it is their product, not their difference, that returns the line: the arc's excess over the line,
 π/2 − 1, and the projection's shortfall, 1 − 2/π, add to 0.934, not to 1.
 
+The 2/π is the uniform turn's, not the circle's. Over a uniform turn of directions, the width of any convex figure,
+its projection on the line of sight, averages to its perimeter over π (Cauchy 1841; Barbier 1860 for figures of
+constant width): the width is half the outline's length weighed by |cos| of each piece against the direction, and the
+turn's mean of |cos| is 2/π, whatever the figure. The circle of diameter 1, perimeter π, gives width 1.
+
 The average projection is Buffon's needle (Buffon 1777): a needle as long as the gap between parallel lines, dropped at
 random, crosses one with probability 2/π. Crofton's formula, which measures a curve by the random lines that cross it,
 grew from the same problem (Crofton 1868). Buffon's number, like the inscribed measure, holds only when every angle of
@@ -1359,7 +1364,10 @@ receiving the same number. The corner is where one gives way to the other, witho
 corner intrinsic to the relation, the one fixed point of the reciprocal; a particular reader's layout may have other
 thresholds of its own. Past it the levels are plain doublings laid side by side, with no corners of their own and nothing nested inside
 them. They are doublings of scale, v/h ↦ 2·v/h. (Doubling the angle of the sweep instead sends v/h to
-2(v/h)/(1 − (v/h)²); the two agree near zero and part at the corner, which the angle doubling sends to the horizon.)
+2(v/h)/(1 − (v/h)²); the two agree near zero and part at the corner, which the angle doubling sends to the horizon. The
+angle doubling carries the uniform turn's law onto itself, since it doubles a uniform angle, yet it is two to one and
+moves cross ratios: it keeps the Cauchy without being a Möbius map (Pitman and Williams 1967), while the doubling of
+scale is one of them.)
 
 **Reality in 2H.** Measured by length rather than by count, the far field fits in one more H. The *in-place lay* puts a
 far reading at length 2 − h/v from home. Level j past the corner, where v/h runs from 2^(j−1) to 2^j, then has length
@@ -2385,6 +2393,15 @@ the quantiles of the Cauchy with its scale at H.
 - The world's own count enters nowhere. Doubling or thinning what arrives moves no address (Theorem 6(a)), so a world of
   N things, of 2N, or of infinitely many is held at the same K addresses, each holding its share.
 
+The same points are known in numerical analysis. Boyd's collocation points for a function on the whole line,
+L·cot((2j − 1)π/2N), j = 1, …, N, are the midpoints of N equal shares of the Cauchy of scale L, and their positive half
+are the K addresses' midpoints along distance, H·tan((2k − 1)π/4K), with L = H and N = 2K; doubling L lays the grid
+again at twice the length. His rule for L, set it at the scale of the feature to be resolved (Boyd 1982), is the rule
+above that the best H puts the thing read at the corner. His basis is Chebyshev's on the turn,
+T_n(y/√(y² + L²)) (Boyd 1987): the same equal angles read by their cosine are Chebyshev's nodes, crowded at the ends of
+the chord (the last gap about π²/N², the middle ones π/N; Rivlin 1974), and read by their tangent are the Cauchy's,
+spread out to the horizon. The law is the turn's; the chart decides where the addresses crowd.
+
 So a reader's K addresses fall on any world, and its choice of H places the finest of them anywhere along distance;
 it never has more than K at a time. The count is the level of detail, and H is the zoom. (Elsewhere in this
 section n counts the addresses across the near field on a lay, a different measure; on the turn's own addresses it is
@@ -2877,7 +2894,11 @@ from many sides when the thing crosses its view. Each look gives the directions 
 thing, and the two at the edges of that set are lines that touch it. Over the crossing these lines close in on it from
 every side the line of sight turned through, and what lies within them at every look is the thing's visual hull
 (Laurentini 1994). The hull contains the thing, meets it wherever some edge touched it, and elsewhere only spans it: a
-hollow that no edge reached is bridged over. It is built of directions alone, so it is the outline up to the common
+hollow that no edge reached is bridged over. Where an edge grazes a smooth surface, the map from the surface to
+directions folds (Whitney 1955): points just either side of the rim meet the same directions, so the outline's
+directions do not say which side is which. What the outline gives beyond the hull is its curvature, whose sign is the
+sign of the surface's Gaussian curvature at the rim, convex where it bends out, saddle-shaped where it bends in
+(Koenderink 1984). It is built of directions alone, so it is the outline up to the common
 scale, and nothing in it moves when the world is scaled; the thing's track across the view, which the hull needs, is
 itself known from the looks only up to that scale. The face needs more: along each direction, how far the surface lies, an
 amount, in a unit. A range gives both: the time for a signal to go out and return, times the signal's speed, which is an
@@ -3321,6 +3342,12 @@ it adds, and what that costs. Four examples:
 - *A step that never closes.* Hashing by an irrational fraction of a turn, the golden one in Fibonacci hashing
   (⌊2³²/φ⌋ = 2,654,435,769; Knuth 1998, §6.4), uses just such steps: their multiples spread round the turn, leaving at
   most three sizes of gap at every count (the three-distance theorem; Sós 1958).
+- *Addresses on a turn, not by a count.* Consistent hashing puts keys and machines on a circle by angle, each key served
+  by the next machine round (Karger et al. 1997); adding a machine moves about one key in n + 1, where placing keys by
+  their remainder on division by n moves nearly all of them. Labels drawn from a fixed count M are the other side: kept
+  in order with new items put between, one gap can take about log₂ M before labels must be given out again (Itai,
+  Konheim and Rodeh 1981; Dietz 1982). A count of addresses fixed beforehand runs out where the world's count grows; the
+  turn's addresses do not, and pay with a horizon (§8).
 - *Tables fixed in advance.* A sampling table or a grid of cells fixed in advance must know beforehand the extent it
   covers and the resolution it needs, and is rebuilt when either changes. The uniform turn's addresses need neither (§8,
   "A fixed count, aimed by H"); what needs them is the payload or the writer.
@@ -3390,6 +3417,9 @@ Archimedes (c. 250 BC). *Measurement of a Circle*.
 
 Archimedes (c. 225 BC). *On the Sphere and Cylinder*.
 
+Barbier, E. (1860). Note sur le problème de l'aiguille et le jeu du joint couvert. *Journal de Mathématiques
+Pures et Appliquées* (2) 5, 273–286.
+
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.
 
@@ -3411,6 +3441,12 @@ corps. *Bulletin Astronomique* 28, 113–119.
 Böröczky, K. (1974). Gömbkitöltések állandó görbületű terekben I [Sphere packings in spaces of constant curvature I].
 *Matematikai Lapok* 25, 265–306.
 
+Boyd, J. P. (1982). The optimization of convergence for Chebyshev polynomial methods in an unbounded domain.
+*Journal of Computational Physics* 45, 43–79.
+
+Boyd, J. P. (1987). Spectral methods using rational basis functions on an infinite interval. *Journal of
+Computational Physics* 69, 112–142.
+
 Bramon, A., Garbarino, G. and Hiesmayr, B. C. (2004). Quantitative complementarity in two-path interferometry.
 *Physical Review A* 69, 022112.
 
@@ -3429,6 +3465,9 @@ Multivariate Analysis* 128, 147–153.
 
 Cacoullos, T. and Papadatos, N. (2013). Self-inverse and exchangeable random variables. *Statistics & Probability
 Letters* 83(1), 9–12.
+
+Cauchy, A.-L. (1841). Note sur divers théorèmes relatifs à la rectification des courbes et à la quadrature des
+surfaces. *Comptes Rendus de l'Académie des Sciences* 13, 1060–1065.
 
 Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal für die reine und angewandte Mathematik*
 32, 119–123.
@@ -3453,6 +3492,9 @@ Australian Mathematical Society* 33(3), 200.
 
 Dehaene, S., Izard, V., Spelke, E. and Pica, P. (2008). Log or linear? Distinct intuitions of the number scale in Western
 and Amazonian indigene cultures. *Science* 320, 1217–1220.
+
+Dietz, P. F. (1982). Maintaining order in a linked list. *Proceedings of the 14th ACM Symposium on Theory of
+Computing*, 122–127.
 
 Doyle, P. G. and Snell, J. L. (1984). *Random Walks and Electric Networks*. Carus Mathematical Monographs 22.
 Mathematical Association of America, Washington.
@@ -3514,6 +3556,9 @@ Organization for Standardization, Geneva.
 ISO 261 (1998). *ISO general purpose metric screw threads — General plan*. International Organization for
 Standardization, Geneva.
 
+Itai, A., Konheim, A. G. and Rodeh, M. (1981). A sparse table implementation of priority queues. *Automata,
+Languages and Programming (ICALP 1981)*, Lecture Notes in Computer Science 115, 417–431.
+
 Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 
 Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3(4), 477–493.
@@ -3541,6 +3586,9 @@ Tokyo* 20(10), 706–714.
 Kalman, R. E. (1960). A new approach to linear filtering and prediction problems. *Journal of Basic Engineering*
 82(1), 35–45.
 
+Karger, D., Lehman, E., Leighton, T., Panigrahy, R., Levine, M. and Lewin, D. (1997). Consistent hashing and random
+trees. *Proceedings of the 29th ACM Symposium on Theory of Computing*, 654–663.
+
 Kato, S. and McCullagh, P. (2020). Some properties of a Cauchy family on the sphere derived from the Möbius
 transformations. *Bernoulli* 26(4), 3224–3248.
 
@@ -3556,6 +3604,8 @@ Knight, F. B. (1976). A characterization of the Cauchy type. *Proceedings of the
 
 Knuth, D. E. (1998). *The Art of Computer Programming*, Vol. 3: *Sorting and Searching*, 2nd ed. Addison-Wesley,
 Reading, MA.
+
+Koenderink, J. J. (1984). What does the occluding contour tell us about solid shape? *Perception* 13(3), 321–330.
 
 Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten*. Berlin.
 
@@ -3620,6 +3670,8 @@ Statistics* 38(3), 916–918.
 
 Polyak, B. T. and Juditsky, A. B. (1992). Acceleration of stochastic approximation by averaging. *SIAM Journal on
 Control and Optimization* 30(4), 838–855.
+
+Rivlin, T. J. (1974). *The Chebyshev Polynomials*. Wiley, New York.
 
 Robbins, H. and Monro, S. (1951). A stochastic approximation method. *The Annals of Mathematical Statistics* 22(3),
 400–407.
@@ -3696,6 +3748,9 @@ van Wijk, J. J. and Nuij, W. A. A. (2003). Smooth and efficient zooming and pann
 2003*, 15–23.
 
 Weyl, H. (1916). Über die Gleichverteilung von Zahlen mod. Eins. *Mathematische Annalen* 77, 313–352.
+
+Whitney, H. (1955). On singularities of mappings of Euclidean spaces. I. Mappings of the plane into the plane.
+*Annals of Mathematics* 62(3), 374–410.
 
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.
 

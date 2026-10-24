@@ -894,6 +894,17 @@ or draw a world arrive at these structures by design, and the geometry lets each
 - **A step that never closes.** Fibonacci hashing multiplies by ⌊2³²/φ⌋ = 2,654,435,769, a golden fraction of the turn
   (Knuth 1998, §6.4): a step that never closes, whose multiples spread round the turn leaving at most three sizes of gap
   at every count (the three-distance theorem; Sós 1958).
+- **Addresses on a turn, not by a count.** Consistent hashing puts keys and machines on a circle by angle, each key
+  served by the next machine round (Karger et al. 1997): adding a machine moves about one key in n + 1, where
+  `hash(key) % n` moves nearly all of them. Order-maintenance labels drawn from a fixed count M are the other side: one
+  gap takes about log₂ M insertions before labels must be reassigned (Itai, Konheim and Rodeh 1981; Dietz 1982). A count
+  of addresses fixed beforehand runs out where the world's count grows; the turn's addresses do not, and pay with a
+  horizon (§9).
+- **A spectral grid on the whole line.** Boyd's rational Chebyshev collocation points, L·cot((2j − 1)π/2N), are the
+  midpoints of N equal shares of the Cauchy of scale L: the reader's addresses with L = H, and Boyd's rule for L, the
+  scale of the feature to be resolved, is the best H at the corner of what is read (Boyd 1982, 1987). The same equal
+  angles read by their cosine are Chebyshev's nodes, crowded at the ends of the chord; by their tangent, spread to the
+  horizon.
 - **Tables fixed in advance.** A sampling table or grid of cells fixed in advance must know the extent it covers and the
   resolution it needs, and is rebuilt when either changes. The uniform turn's addresses need neither (§9); what needs
   them is the payload or the writer.
@@ -953,6 +964,12 @@ unknown count, the order a program with finite memory lives in.
 
 ## References
 
+Boyd, J. P. (1982). The optimization of convergence for Chebyshev polynomial methods in an unbounded domain.
+*Journal of Computational Physics* 45, 43–79.
+
+Boyd, J. P. (1987). Spectral methods using rational basis functions on an infinite interval. *Journal of
+Computational Physics* 69, 112–142.
+
 Böröczky, K. (1974). Gömbkitöltések állandó görbületű terekben I. *Matematikai Lapok* 25, 265–306.
 
 Cacoullos, T. (2014). Polar angle tangent vectors follow Cauchy distributions under spherical symmetry. *Journal of
@@ -961,6 +978,9 @@ Multivariate Analysis* 128, 147–153.
 Cacoullos, T. and Papadatos, N. (2013). Self-inverse and exchangeable random variables. *Statistics & Probability
 Letters* 83(1), 9–12.
 
+Dietz, P. F. (1982). Maintaining order in a linked list. *Proceedings of the 14th ACM Symposium on Theory of
+Computing*, 122–127.
+
 Furnas, G. W. and Bederson, B. B. (1995). Space-scale diagrams: understanding multiscale interfaces. *Proceedings of
 CHI '95*, 234–241.
 
@@ -968,6 +988,9 @@ Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *A
 
 Igarashi, T. and Hinckley, K. (2000). Speed-dependent automatic zooming for browsing large documents. *Proceedings
 of UIST 2000*, 139–148.
+
+Itai, A., Konheim, A. G. and Rodeh, M. (1981). A sparse table implementation of priority queues. *Automata,
+Languages and Programming (ICALP 1981)*, Lecture Notes in Computer Science 115, 417–431.
 
 Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 
@@ -980,6 +1003,9 @@ Jones, M. C. (2008b). On reciprocal symmetry. *Journal of Statistical Planning a
 
 Kalman, R. E. (1960). A new approach to linear filtering and prediction problems. *Journal of Basic Engineering*
 82(1), 35–45.
+
+Karger, D., Lehman, E., Leighton, T., Panigrahy, R., Levine, M. and Lewin, D. (1997). Consistent hashing and random
+trees. *Proceedings of the 29th ACM Symposium on Theory of Computing*, 654–663.
 
 Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen*.
 
