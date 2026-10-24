@@ -944,6 +944,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Review 27 (24 Oct, SPN R479; ChatGPT, 8.5/10, `plans/ofs-review-27.md`; Tom: "yes"): the standard Cauchy (median at the
   corner) is what V = H gives, V = cH a Cauchy of scale 1/c; the separation familiar, its construction ours; R358's rule
   marked as this paper's, a test; §7.8's D² × D² a reading. Next: the tightening pass, a cut list to Tom first.
+  **The tightening pass** (24 Oct, SPN R480; Tom: "yes"; `plans/ofs-tighten.md`): OFS reordered, nothing deleted. The
+  abstract three paragraphs; §11 "Applications" (after the mountain: the survey, the ground, the towers, closing a loop,
+  the room, parallax far off, the outline from one place, special relativity's sky); the Discussion §12 (references
+  before 24 Oct to OFS §11.x mean §12.x now); Appendix A "Where the geometry already appears" (the classical
+  confirmations, one entry each), Appendix B the engineering list, Appendix C notation. New classical connections go to
+  Appendix A, not the body.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

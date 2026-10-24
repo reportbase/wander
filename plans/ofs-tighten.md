@@ -84,3 +84,10 @@ marks it as ours, before an outside reader sees it.
 The body from about 3,400 lines to about 2,900, and the main line visible in the order review 27 asks; the appendices
 about 450 lines. Nothing is lost: each moved paragraph is pointed to from where it was by one sentence. The CS
 companion takes the same order after OFS settles (R421).
+
+## Made (24 Oct, SPN R480)
+
+As listed, with these kept in the body: "What the floor discards" (R464), "Other ways to squeeze the line" and "Why a
+turn and not a boost" (the necessity argument), the floats' instance, "Diameter 2", Cauchy's mean width. The cross ratio
+stays with the special relativity sky in §11. §7.2's three paragraphs on the family were not folded together. The
+length-per-turn uniqueness is marked as ours. Body (§1–§10) 3,009 lines to 2,708.
