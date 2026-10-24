@@ -499,6 +499,11 @@ on these places.
 - *An array of known length.* `Math.floor(N * x / X)` needs the extent X: with N = 8 and X = 100 the amounts 10, 50, 99
   go to 0, 4, 7. `turnIndex(x, H, 8)` needs only H, the zoom: 4, 6, 7 at H = 10 and 1, 4, 5 at H = 50.
 
+An interactive version of this example is at https://reportbase.github.io/wander/array-sweeps.html. It draws the K
+places from home and from the centre of the circle on the chord, lights the place a chosen direction falls in by both
+sweeps, and lays the four kinds of array on those places; K, the direction, the scale of the world and H can be changed,
+and the page's functions (`turnIndex`, `centralIndex`, `countIndex`) are the ones above.
+
 **Growth.** The same split shows when a world grows rather than scales. An address made by dividing a thing's place in
 a list by the list's length is a ratio, a reading of the list's own contents, and it moves as soon as the list grows.
 An address made of slots, a fixed number to each level whatever the level holds, does not move: the radix was agreed

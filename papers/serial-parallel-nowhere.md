@@ -6760,6 +6760,8 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 
 - **R486** (24 Oct): Tom: "create a demo of the arrays on the sweeps". `array-sweeps.html`: K places on the quarter turn, a direction's place ⌊K·(2/π)·arctan(v/h)⌋; on the Thales circle the places from home and from the centre at twice the angle, the lit place the same by both (III.20); the array strip for the four kinds (the index alone, the values on it as their log-shape, a constant array, known length against the turn index at H); scale the world and H. Smoke test 55; a card in `demos.html`. Nothing added to OFS.
 
+- **R487** (24 Oct): Tom: "add the demo to the cs companion". The CS companion §6, after "Laid on the sweeps, in code", points to `array-sweeps.html` on the public site (https://reportbase.github.io/wander/array-sweeps.html) as an interactive version of the example, its functions the paper's. The first demo either paper links; OFS stays without links (R202).
+
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |
