@@ -182,7 +182,14 @@ nothing in the law. Readings from two zeros compose as turns compose, by tangent
 
   s ⊕ t = (s + t)/(1 − st),
 
-and a full round composes to no turn, a closure check. Directions have no sum, only this composition.
+and a full round composes to no turn, a closure check. Directions have no sum, only this composition. Repeating one
+step t comes back to zero after finitely many steps only for t = 0, 1 and ∞ among the rationals (Niven 1956); every other
+rational step never closes, and its multiples spread uniformly round the turn (Weyl 1916).
+
+Comparing two directions needs no division either. Of [h₁ : v₁] and [h₂ : v₂], the second is farther from home exactly
+when the bracket `D = v2*h1 - v1*h2` is positive: a cross product, exact in integers, zero when the two are one direction.
+Its square and the dot product's add to the product of the norms, D² + (h₁h₂ + v₁v₂)² = (h₁² + v₁²)(h₂² + v₂²) (Lagrange's
+identity in two dimensions), and only D's sign says which way round the two lie.
 
 ## 3. The corner
 
@@ -867,7 +874,15 @@ or draw a world arrive at these structures by design, and the geometry lets each
 - **The flat screen.** Equal pixels on a plane are not equal turns. Per unit of screen area the uniform turn's
   directions have density (2/π)·cos³α, so equal pixels over-weight the directions off the axis by sec³α, and along one
   line of a screen of finite edge they put the median at half the edge instead of at the corner. The weighting is the
-  design's, added to the geometry.
+  design's, added to the geometry. Laid by turn instead, an arctangent on each coordinate of a cube's face (the
+  equi-angular cubemap), the cells' solid angles vary by a factor of √2 across a face, against 3√3 ≈ 5.2 for equal pixels.
+- **Exact composition.** Readings composed by tangent addition can be held exactly as Gaussian integers, the step v/h
+  as h + iv, reduced after each product by the gcd of its parts. The register grows by ½·log₂ of the odd part of
+  h² + v² bits a step, and not at all only at home, the corner and the horizon: every other step costs storage without
+  end, the arithmetic face of the steps that never close (§2.4).
+- **A step that never closes.** Fibonacci hashing multiplies by ⌊2³²/φ⌋ = 2,654,435,769, a golden fraction of the turn
+  (Knuth 1998, §6.4): a step that never closes, whose multiples spread round the turn leaving at most three sizes of gap
+  at every count (the three-distance theorem; Sós 1958).
 - **Tables fixed in advance.** A sampling table or grid of cells fixed in advance must know the extent it covers and the
   resolution it needs, and is rebuilt when either changes. The uniform turn's addresses need neither (§9); what needs
   them is the payload or the writer.
@@ -957,6 +972,9 @@ Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschu
 Knight, F. B. (1976). A characterization of the Cauchy type. *Proceedings of the American Mathematical Society* 55,
 130–135.
 
+Knuth, D. E. (1998). *The Art of Computer Programming*, Vol. 3: *Sorting and Searching*, 2nd ed. Addison-Wesley,
+Reading, MA.
+
 Lamping, J., Rao, R. and Pirolli, P. (1995). A focus+context technique based on hyperbolic geometry for visualizing
 large hierarchies. *Proceedings of CHI '95*, 401–408.
 
@@ -972,12 +990,19 @@ Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium 
 
 Microsoft. Bing Maps Tile System (documentation).
 
+Niven, I. (1956). *Irrational Numbers*. Carus Mathematical Monographs 11, Mathematical Association of America.
+
 Schwartz, E. L. (1977). Spatial mapping in the primate sensory projection: analytic structure and relevance to
 perception. *Biological Cybernetics* 25, 181–194.
+
+Sós, V. T. (1958). On the distribution mod 1 of the sequence nα. *Annales Universitatis Scientiarum Budapestinensis
+de Rolando Eötvös Nominatae, Sectio Mathematica* 1, 127–134.
 
 Thomas, L. H. (1926). The motion of the spinning electron. *Nature* 117, 514.
 
 van Wijk, J. J. and Nuij, W. A. A. (2003). Smooth and efficient zooming and panning. *Proceedings of IEEE InfoVis
 2003*, 15–23.
+
+Weyl, H. (1916). Über die Gleichverteilung von Zahlen mod. Eins. *Mathematische Annalen* 77, 313–352.
 
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.

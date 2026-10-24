@@ -912,6 +912,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   ln 2, one digit of the floor's remainder a step).
   Then (R471; Tom: "proceed") OFS §5's "The Euclidean choice" closes on π_p (Adler and Tanton 2000; Keller and Vakil
   2009): least, π, at p = 2, 4 for the sum and largest-component norms, a dual pair; the Euclidean norm its own dual.
+  **A second archived paper** (24 Oct, SPN R472; Tom: "here is an old paper. any gems?", then "yes"): *The Algebra of
+  Discrete Observation* filed in `papers/archive/`, its gems and errors in `plans/archive-gems.md`. OFS now has §4 "The
+  corner, fixed by home and the horizon" (harmonic conjugates, the bracket, Lagrange), Niven's closure and no group law
+  on the projective plane in §2, Wantzel in §5's "Why halving", the three rulers as the complex, split-complex and dual
+  numbers (Yaglom) in §6, and in §11.4 the equi-angular cubemap, exact composition in Gaussian integers and Fibonacci
+  hashing; the CS companion §2.4 and §12 carry Niven, the bracket and those three.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -1590,7 +1596,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   papers kept as received, never edited: *Reader Geometry as Addressing* (rulings R1–R151 only; R152–R187 are
   quoted in SPN Appendix A), *The Relation Space*, *Browsing the Fisheye*, *The Radix*, *The Order of Limits*, *One
   Reader*, *Degrees of Freedom*; and since 11 Oct an eighth, *Special Relativity, Through the Fisheye* (4 Sep; Tom: "here is
-  a earlier paper on SR"); and since 24 Oct a ninth, *Observation Is a Sphere* (`observation-is-a-sphere.md`, R470), its numbers rechecked in `runs/srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
+  a earlier paper on SR"); and since 24 Oct a ninth, *Observation Is a Sphere* (`observation-is-a-sphere.md`, R470), and a tenth, *The Algebra of Discrete Observation* (`algebra-of-discrete-observation.md`, R472), its numbers rechecked in `runs/srf/check.py` (all agree but C1, a Cauchy sky only in 2+1
   dimensions), its gems and one link to MOT run 2 (γ even, γβ odd in ln k; 1/γ = 2k/(1 + k²)) in `plans/archive-gems.md`.
   They predate 9 Oct: check every term (density, view from everywhere, inside/outside,
   fulcrum, arctan, h and v as breadths, recursive corners, depth, old situation numbers) before pulling anything forward.

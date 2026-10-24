@@ -437,7 +437,13 @@ unimodular and the measures unchanged by composing on the left and on the right 
 counted from it. Facing another way gives a new zero and changes nothing in the law: every turn leaves the standard
 Cauchy where it is, so the readings from the new zero have the same law, and no zero is preferred. The old zero
 survives only as one reading from the new one. Readings from two zeros compose as turns compose, by tangent addition,
-s ⊕ t = (s + t)/(1 − st); a full round composes to no turn, a check like the closed loop of §9. A frame that seems fixed,
+s ⊕ t = (s + t)/(1 − st); a full round composes to no turn, a check like the closed loop of §9. Repeating one step t from zero comes back to zero
+after finitely many steps only if arctan t is a rational multiple of π, and for a rational t that holds only at home, the
+corner and the horizon, t = 0, 1 and ∞ (Niven 1956); every other rational step never closes, and its multiples spread
+uniformly round the turn (Weyl 1916). With two other parties the composition is of another kind. The directions
+[h : v : v₂] form a projective plane, and no continuous group law lives on it, since a compact Lie group of positive
+dimension has Euler characteristic 0 and the projective plane has 1; so a new zero there is a turn of space, composed in
+the rotation group and acting on the directions, not a sum of directions. A frame that seems fixed,
 a wall or a far point, is one that keeps its reading from each new zero. The corner is not computed: it is the
 direction at which the two unit relations read alike, and that it halves the quarter turn is the geometry's.
 
@@ -956,6 +962,17 @@ and it fixes one point, the corner [1 : 1]. The results so far, and those to com
   about the chart in which directions are counted as numbers, not about the arc. A mean asks for the readings to be
   amounts on some chart; the arc holds them as directions.
 
+**The corner, fixed by home and the horizon.** On the whole projective line the exchange has a second fixed point, −1,
+off the reader's arc. For every pair it swaps, the cross ratio (1, −1; x, 1/x) is −1: the two fixed points are harmonic
+conjugates with respect to every swapped pair, home and the horizon (0, ∞) among them, as the fixed points of any
+involution of the line are (Coxeter 1987). So once home and the horizon are given, the corner is fixed by the line's
+projective structure alone, with no measure; the uniform turn adds only that it is the median. Order on the arc is
+projective too. Of two readings [h₁ : v₁] and [h₂ : v₂], the second lies farther from home exactly when the bracket
+D = v₂h₁ − v₁h₂ is positive. D is zero when the two are one direction, and a linear change of the drawing multiplies it by
+its determinant, so the order survives every drawing that keeps the sign. With the dot product it accounts for the pair:
+D² + (h₁h₂ + v₁v₂)² = (h₁² + v₁²)(h₂² + v₂²), Lagrange's identity in two dimensions, and only D's sign tells which way
+round the two lie.
+
 **Series stop at the corner.** The expansion 1/(1 + x²) = 1 − x² + x⁴ − … converges for x < 1 and diverges for x > 1;
 past the corner the expansion in 1/x converges instead. The singularities at x = ±i lie at distance one from zero, so no
 expansion about zero reaches past the corner. This is a property of expansions, not a break in the function, but it is
@@ -1376,7 +1393,11 @@ half by an order-preserving map that commutes with the reciprocal. Applied again
 halvings. Three parts, or any other number, need an added measure. This is Klein's criterion, that a geometry supplies
 what its symmetries keep, applied to the points of a level. Halving is a branching into two; it is not by itself a ratio
 of 2 between level edges, since where the edges fall depends on how the readings are laid out. On the lays of this
-section they fall at the doublings of v/h.
+section they fall at the doublings of v/h. The constructions agree. Halving a turn needs one square root,
+tan(θ/2) = (√(1 + t²) − 1)/t, so square roots reach tan(π/2ᵏ) from the corner at every level; other divisions are not all
+in reach, since tan(π/7) and tan(π/9) have degree 6 over the rationals and no ruler and compass divide a half turn into
+seven or nine (Wantzel 1837, completing Gauss). The halvings, factor by factor, are also what give 2/π (Viète's product,
+§3.4).
 
 *What another ratio costs.* A reader whose own resolution multiplies by r from level to level matches levels that are
 powers of r exactly, one level per factor: a reader with r = 3 matches levels of three as one with r = 2 matches
@@ -1428,6 +1449,12 @@ and the two lays in the same terms.
 
 The third is the reader's lay of Proposition 4 made smooth. ζ ≈ x inside the corner and ζ ≈ ln 2x past it, and the
 lay (x, then 1 + ln x) never exceeds it by more than 1 − ln 2 ≈ 0.307, approached far out (0.119 at the corner).
+
+The three curves are the unit sets of the only three real number systems of two dimensions with a unit: the complex
+numbers (j² = −1), whose units e^(jθ) = cos θ + j sin θ run round the circle; the split-complex numbers (j² = +1),
+e^(jζ) = cosh ζ + j sinh ζ on the hyperbola; and the dual numbers (j² = 0), e^(jx) = 1 + jx on the tangent line. In each,
+multiplying units adds the ruler's own coordinate, θ, ζ or x (Yaglom 1968). So each ruler is the one along which its own
+numbers multiply by adding: the writer's line is the flat case, the turn and the hyperbolic angle the two curved ones.
 
 All three carry the corner, since it is the reciprocal's fixed point (Proposition 1) and so a point of the reading
 itself. Only the turn gives it a role.
@@ -3256,7 +3283,16 @@ it adds, and what that costs. Four examples:
 - *The flat screen.* Equal pixels on a plane are not equal turns. Per unit of screen area the uniform turn's directions
   have density (2/π)·cos³α (Proposition 5(e)), so equal pixels over-weight the directions off the axis by sec³α, and
   along one line of a screen of finite edge they put the median at half the edge instead of at the corner (§3.5). The
-  weighting is the design's, added to the geometry.
+  weighting is the design's, added to the geometry. Laid by turn instead, an arctangent on each coordinate of a cube's
+  face (the equi-angular cubemap), the cells' solid angles vary by a factor of √2 across a face, against 3√3 ≈ 5.2 for
+  equal pixels.
+- *Exact composition.* Readings composed by tangent addition can be held exactly as Gaussian integers, the step v/h as
+  h + iv, reduced after each product. The register then grows by ½·log₂ of the odd part of h² + v² bits a step, and not
+  at all only at home, the corner and the horizon: every other step costs storage without end, the arithmetic face of
+  the steps that never close (§2, "Zero, and a new zero").
+- *A step that never closes.* Hashing by an irrational fraction of a turn, the golden one in Fibonacci hashing
+  (⌊2³²/φ⌋ = 2,654,435,769; Knuth 1998, §6.4), uses just such steps: their multiples spread round the turn, leaving at
+  most three sizes of gap at every count (the three-distance theorem; Sós 1958).
 - *Tables fixed in advance.* A sampling table or a grid of cells fixed in advance must know beforehand the extent it
   covers and the resolution it needs, and is rebuilt when either changes. The uniform turn's addresses need neither (§8,
   "A fixed count, aimed by H"); what needs them is the payload or the writer.
@@ -3365,6 +3401,8 @@ Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal
 
 Civera, J., Davison, A. J. and Montiel, J. M. M. (2008). Inverse depth parametrization for monocular SLAM. *IEEE
 Transactions on Robotics* 24(5), 932–945.
+
+Coxeter, H. S. M. (1987). *Projective Geometry*, 2nd ed. Springer, New York.
 
 Crofton, M. W. (1868). On the theory of local probability, applied to straight lines drawn at random in a plane.
 *Philosophical Transactions of the Royal Society of London* 158, 181–199.
@@ -3479,6 +3517,9 @@ Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschu
 Knight, F. B. (1976). A characterization of the Cauchy type. *Proceedings of the American Mathematical Society* 55,
 130–135.
 
+Knuth, D. E. (1998). *The Art of Computer Programming*, Vol. 3: *Sorting and Searching*, 2nd ed. Addison-Wesley,
+Reading, MA.
+
 Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten*. Berlin.
 
 Lamping, J., Rao, R. and Pirolli, P. (1995). A focus+context technique based on hyperbolic geometry for visualizing
@@ -3524,6 +3565,8 @@ Möbius, A. F. (1827). *Der barycentrische Calcul*. Barth, Leipzig.
 Munro, J. I. and Paterson, M. S. (1980). Selection and sorting with limited storage. *Theoretical Computer Science*
 12(3), 315–323.
 
+Niven, I. (1956). *Irrational Numbers*. Carus Mathematical Monographs 11, Mathematical Association of America.
+
 Norton, J. D. (2008). Ignorance and indifference. *Philosophy of Science* 75(1), 45–68.
 
 Parker, M. C. and Jeynes, C. (2023). A maximum entropy resolution to the wine/water paradox. *Entropy* 25(8), 1242.
@@ -3564,6 +3607,9 @@ Smart, W. M. (1977). *Textbook on Spherical Astronomy*, 6th ed., revised by R. M
 
 Snellius, W. (1617). *Eratosthenes Batavus, de terrae ambitus vera quantitate*. Leiden.
 
+Sós, V. T. (1958). On the distribution mod 1 of the sequence nα. *Annales Universitatis Scientiarum Budapestinensis
+de Rolando Eötvös Nominatae, Sectio Mathematica* 1, 127–134.
+
 Spitzer, F. (1958). Some theorems concerning 2-dimensional Brownian motion. *Transactions of the American
 Mathematical Society* 87, 187–197.
 
@@ -3593,10 +3639,17 @@ Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII*. Tour
 Wallstrom, T. C. (2003). The marginalization paradox does not imply inconsistency for improper priors. arXiv
 math/0310006.
 
+Wantzel, P. L. (1837). Recherches sur les moyens de reconnaître si un problème de géométrie peut se résoudre avec
+la règle et le compas. *Journal de Mathématiques Pures et Appliquées* 2, 366–372.
+
 Weisskopf, V. and Wigner, E. (1930). Berechnung der natürlichen Linienbreite auf Grund der Diracschen Lichttheorie.
 *Zeitschrift für Physik* 63, 54–73.
 
 van Wijk, J. J. and Nuij, W. A. A. (2003). Smooth and efficient zooming and panning. *Proceedings of IEEE InfoVis
 2003*, 15–23.
 
+Weyl, H. (1916). Über die Gleichverteilung von Zahlen mod. Eins. *Mathematische Annalen* 77, 313–352.
+
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.
+
+Yaglom, I. M. (1968). *Complex Numbers in Geometry*. Academic Press, New York.

@@ -237,3 +237,57 @@ every number below checked exactly before sorting; a reading, not a ruling.*
 - Appendix B's biology: retinal ganglion density does not fall as 1/(1 + ρ²) (cortical magnification goes roughly as
   1/(E + E₂)); the fish-drift and bee-dance figures look unverifiable. Check every citation before any use.
 - Its terms predate 9 October throughout (inside/outside, extraction, S¹ "odd", S² as "the line"): check before reuse.
+
+## The Algebra of Discrete Observation (added 24 October)
+
+*Tom: "here is an old paper. any gems?", then "yes". `papers/archive/algebra-of-discrete-observation.md` (1.1 MB, kept as
+received; it audits itself in §15 and retracts much of its §13 physics). Read by three readers in parallel (lines 1–1000,
+1000–2110, 2110–3441), each checking every claim with sympy or mpmath; the main ones re-checked by Claude. A reading, not
+a ruling.*
+
+**Taken into OFS (SPN R472):**
+- *The corner fixed by home and the horizon* (its §8.5, L1443): (1, −1; x, 1/x) = −1 for every x (exact fractions), the
+  reciprocal's fixed points harmonic conjugates of every pair it swaps, (0, ∞) among them. OFS §4, after "The reader's
+  line, closed", with the bracket D = v₂h₁ − v₁h₂ (order by sign, zero on one direction, scaled by a drawing's
+  determinant) and Lagrange's identity D² + dot² = |a|²|b|² (its §1.07, L332–346, L241). Coxeter 1987.
+- *Niven's closure* (its §10.1, L1787): repeating a rational step closes only at t = 0, 1, ∞; other steps equidistribute
+  (Weyl). OFS §2, "Zero, and a new zero"; the CS companion §2.4.
+- *No group law on three parties' directions* (its §12.4a, L2172): χ(RP²) = 1, a compact Lie group's χ = 0; a new zero
+  in the wedge is a rotation in SO(3). OFS §2.
+- *Halving by square roots* (its §10.1, L1781): tan(π/7), tan(π/9) of degree 6 (sympy), so no ruler and compass divide a
+  half turn into seven or nine; halving reaches every tan(π/2ᵏ). OFS §5, "Why halving" (Wantzel 1837), pointing to
+  Viète's product, already in OFS §3.4.
+- *The three rulers as the three 2D number systems* (its §15, L3260–3266): complex, split-complex and dual numbers, unit
+  sets the circle, the hyperbola and the tangent line, each multiplying by adding its ruler's coordinate (Yaglom 1968).
+  OFS §6, after "One figure, three rulers".
+- *For engineering* (its L730, L975, L1824): the equi-angular cubemap (solid angle within √2 across a face, against 3√3
+  for the gnomonic, computed); exact tangent addition in Gaussian integers, ½·log₂ of the odd part of h² + v² bits a step
+  (400 exact steps: 1.1609 against 1.1610 at (3, 1), 1.8499 against 1.8502 at (5, 1), 0 at the corner); Fibonacci
+  hashing, ⌊2³²/φ⌋ = 2,654,435,769 (Knuth), with the three-distance theorem (Sós 1958). OFS §11.4 and the companion §12.
+
+**Kept here, not moved:**
+- The exact Thomas angle: a circular velocity loop turns the frame by 2π(γ − 1), the hyperbolic disc's area (one turn
+  at v = √3/2, checked); perpendicular boosts tan ω = sinh a·sinh b/(cosh a + cosh b) (to 10⁻¹⁶). OFS §11.4 cites Thomas
+  only qualitatively. Aravind 1997 to check before citing.
+- Bondi's k-calculus: β = (k² − 1)/(k² + 1), γ = (k + 1/k)/2, γ ≥ 1 by AM–GM (Bondi 1964), for OFS §7.8 if wanted.
+- Gołąb 1932: over all norms the half-perimeter in the own norm runs over [3, 4] (hexagon to parallelogram); a footnote to
+  π_p.
+- The tilt b = (r − 1)/(r + 1) = tanh(½ ln r) and G = 4r/(1 + r)² = sech²(½ ln r); visible lattice points (v, h) in a disc
+  give the Cauchy's quartiles (√2 − 1, 1, √2 + 1 at R = 600, a count-only uniform turn); Maxwell's fish-eye (index
+  2/(1 + r²), the stereographic factor; rays circles to 2·10⁻¹¹); the interpolation kernel in slope form,
+  Im[(1 + ir)ᴺ]/(N r (1 + r²)^(N/2)) = sin Nφ/(N tan φ); Sturm–Prüfer nodes as horizon passages and a Maslov ¾ (physics).
+
+**Errors, not to pull forward:**
+- "Over L_p norms π ranges across [3, 4]" (L1706): [π, 4]; [3, 4] is Gołąb's over all norms.
+- The "absorber" refutation (L644) uses tanh addition (det 1 − g²); the paper's own ⊕ is tangent addition (det 1 + g²).
+- "[0, 1) is a group under (a + b)/(1 + ab)" (L1061): no inverses; the group is on (−1, 1).
+- The corner set's stabiliser has order 8, not 4 (L1013; the Cayley map (1 + r)/(1 − r) is in it).
+- "71% wrong after a thousand conversions" (L1900): 1.001¹⁰⁰⁰ = 2.717, about 172%.
+- "No identification of a torus yields a sphere" (L2519): the pillowcase T²/(z ↦ −z) is S².
+- ζᴺ = −1 lands on the horizon, not home (L1477); the Prüfer node direction reversed (L2614); Fisher–Rao for a Cauchy
+  location is uniform, not 1/(1 + s²) (L1362); the beam reads tanh only with pans hung below the pivot (L410); the
+  "toll indexed by ambient dimension alone" (L2189) fails in ℝ⁴.
+- §13–14's physics (Born's rule, spin-½, "quantization is compactness", anyons from π₁(SO(2))) retracted by the paper's own
+  §15 audit; its conclusion still states it.
+- Its terms (the atom, registers, "the chart is never asked for", the two zeros) predate the current frame: check before
+  reuse.
