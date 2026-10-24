@@ -1467,7 +1467,7 @@ laid three ways, each an exact function of the others:
 
 | ruler | room for the near field, x ≤ 1 | room for the far field, x ≥ 1 | the corner x = 1 | the reciprocal x ↦ 1/x |
 |---|---|---|---|---|
-| x itself, the writer's number line (§9) | 1, in proportion | unbounded, in proportion | a point like any other | no symmetry of the ruler |
+| x itself, the writer's number line (§9) | 1, in proportion | unbounded, in proportion | a point | not a reflection of the ruler |
 | θ = arctan x, the turn | 45° | 45° | the middle | θ ↦ π/2 − θ, a reflection |
 | ζ = asinh x, the hyperbolic angle, Mercator's height | asinh 1 ≈ 0.881, nearly in proportion | unbounded, about ln 2 a doubling | a point; proportion gives way to levels around it, gradually | no reflection of the ruler |
 
@@ -2023,7 +2023,7 @@ addresses follow the uniform turn is Proposition 5's, not the array's.
   - Since the places sit at midpoints, no array holds an end, and joined arrays never claim the same element.
 - *Not knowing the size makes the corner and the horizon.*
   - Knowing an array's size, the writer has its end at an amount, the other party's whole V*. Its ruler is the number
-    line, and the point where the two parties are equal is computed and marks nothing (§10, the writer's map; §9).
+    line, on which the point where the two parties are equal is computed (§10, the writer's map; §9).
   - Not knowing it, the reader must draw the other party at its own H, and v = h becomes its split of near from far and
     the median of its readings, the corner (Propositions 3(e), 5(d)).
   - With no size, the array's far end is no amount, only a direction, [0 : 1], where the chart v/h runs out: the horizon
@@ -2445,8 +2445,8 @@ K/2.)
   the far half has no end in length, only in count.
 - A direction's K addresses and a distance's K together make a polar grid of K × K cells. Every thing falls in exactly one, whatever the world's count N. H moves only the radial split.
 
-The reader interacts with K. The writer, which states every distance in amounts, interacts with N: its number line is
-alike everywhere and needs a mark for every thing it places. The Cauchy is what keeps the two apart. Its K quantiles are fixed by the turn alone, at
+The reader interacts with K. The writer, which states every distance in amounts, interacts with N: it places each
+thing at its amount on its number line. The Cauchy is what keeps the two apart. Its K quantiles are fixed by the turn alone, at
 H·tan(kπ/2K), with no reference to how many things there are or how far they reach. Its last address runs to the
 horizon, so a finite K covers an unbounded world, and whatever lies past every other address lands in that tail. N
 then enters only as the share each address holds, which is payload (Theorem 6(a)).
@@ -2970,10 +2970,8 @@ form a shared ruler must have.
   only the logarithm (Proposition 4). Where the range is wide, people share the other ruler Proposition 14 allows, one
   whose notches are levels: decibels, stellar magnitudes, pH. Scientific notation, 3.2 × 10⁶, writes both at once, a
   count of levels with a plain ruler inside one.
-- *It has the same grain everywhere.* It cannot know who will read it or how finely, so it is notched alike throughout,
-  whether or not a given reader needs the detail there.
-- *It is not a reader; it is the writer's.* It reads nothing and has no standpoint, so it has no situation. A reading
-  passes through it, from one reader's relations to another's, and nobody reads on it. The writer writes on it, and
+- *It is not a reader; it is the writer's.* It has no standpoint, so it has no situation. A reading
+  passes through it, from one reader's relations to another's. The writer writes on it, and
   needs it as it is: to write is to state amounts, counted out in a unit and added, a breadth walked as so many strides,
   and a sum of equal steps is laid in proportion, the power p = 1, with each step alike wherever it falls. A corner
   would lay the steps on one side of it differently from those on the other, so the amount written would depend on where
@@ -2982,10 +2980,8 @@ form a shared ruler must have.
   exchanged by the reciprocal. They are the far and near sides of whatever unit a reader holds against the line (§3.3,
   §4), not two separate properties of the line.
 
-So the number line is not the structure of observation, and it need not be. It is the writer's ruler, and the interface
-readers agree on so that amounts can pass between them, made after the geometry and the readings, and its plainness,
-uniform and without a corner, is what lets it favour no one. In order: the world, a reading, a relation, an address and
-then, between readers, the number line.
+So the number line is the writer's ruler, and the interface readers agree on so that amounts can pass between them; its
+uniformity, without a corner, is what lets it favour no one.
 
 ## 10. A worked example: a mountain range
 

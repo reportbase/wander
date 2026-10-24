@@ -424,7 +424,7 @@ which facing each array is, so it can join the four into the closed circle. The 
 meet.
 
 **Not knowing the size makes the corner and the horizon.** Knowing an array's size, the writer has its end at an
-amount, V*; its ruler is the number line, and the point where the two parties are equal is computed and marks nothing.
+amount, V*; its ruler is the number line, on which the point where the two parties are equal is computed.
 Not knowing it, the reader must draw the other party at its own H, and v = h becomes its split of near from far and the
 median of its readings. With no size, the array's far end is no amount, only a direction, [0 : 1], where the chart v/h
 runs out: the horizon. Both are the reader's because the size is missing.
@@ -702,7 +702,7 @@ For a programmer this is the useful part. The addresses are a closed-form functi
 nothing is precomputed for N, and nothing is rebuilt when N changes. The last address runs to the horizon, so a finite K
 covers an unbounded world, and whatever lies past every other address lands in that tail. N enters only as the share
 each address holds, which is payload. The reader interacts with K; the writer, which states every distance in amounts,
-interacts with N, since its number line needs a mark for every thing it places.
+interacts with N, placing each thing at its amount on its number line.
 
 **One K in direction and in distance.** In direction, the K addresses are the turn's equal angles, split K/2 and K/2 at
 the corner, and the value of H appears in none of them. In distance the same K quantiles fall at H·tan(kπ/2K), and

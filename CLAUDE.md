@@ -938,6 +938,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Space* of 1 Sep; OFS §2 the winding number in no reading and the corner a crossing, §4 the missing mean the tail's (the
   level chart has every moment; a correction), the bracket transitive (Plücker) and the levels as Hilbert's metric, §5
   levels one ratio repeated, §7.4 an outline fixed by its length per turn, §8 odd and even K; the companion §2.4, §12.
+  **No criticism of the number line** (R478; Tom: "don't subtly criticize the number line in ofs, no need to go there."):
+  OFS says what the number line is and does (the writer's ruler, the readers' shared unit), never what it lacks or
+  costs against the reader's addresses; four passages and the companion's two neutralized.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
