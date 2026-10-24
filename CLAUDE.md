@@ -756,6 +756,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   bridge), physics already a mix of reading and writing observers with the boundary unmarked, the scale-the-world test
   placing it per quantity, the dictionary that boundary drawn. Claim no new physics; that a misplaced boundary causes a
   known difficulty is shown only for Lutz–Kelker, otherwise open.
+  **Two drafts received** (24 Oct, SPN R474; Tom: "Add these to physics papers."): D6's status note (Ω_m = 1/π, 23 Sep),
+  its upcoming surveys and a draft on the Born rule, kept as received in `papers/archive/` (`d6-dark-energy.md`,
+  `d6-upcoming.md`, `born-rule-draft.md`), placed in `physics.md` §5: D6 a registered prediction (2.4σ from DESI DR2 BAO,
+  0.4σ from Planck), its derivation not accepted, tested against the 2027–2028 surveys (queued, kill past 3σ); the Born
+  draft not usable as written (the step an identity, address density and payload foot run together).
   **Recovered, not written** (22 Oct, SPN R442; ChatGPT review 25, `plans/ofs-review-25.md`; Tom: "add it to OFS just to
   complete the idea that recovering a truth, is not necessarily the complete truth, a reader can't become a writer, but
   they are not powerless. a cleaver reader might recover the truth, but because he's not the writer, he did it through

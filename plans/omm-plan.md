@@ -145,3 +145,9 @@ Two readings of where the share 1/π belongs, under reading X (matter the payloa
   why the reader's home falls at the epoch where the payload's share is 1/π.
 - **For stage 3:** only (iii) survives, so stage 3 compares today's Ω_m with 1/π, as planned. Agreement there would show a
   number, not a reason; B5 stays open until something in the geometry says why the reader's home is now.
+
+*Note (24 October), not a run.* D6's status note of 23 September and its list of upcoming measurements are now in the
+repo as received (`papers/archive/d6-dark-energy.md`, `d6-upcoming.md`; Tom: "Add these to physics papers"); `physics.md`
+§5.1 places them. Since this plan was written the product ψ₁ψ₂ has been read as two dimensions' means multiplied
+(`plans/archive-gems.md`, R470), which bears on stage 1's S1a–S1b. Checked against DESI DR2 BAO alone, 1/π sits 2.4σ
+above 0.2975 ± 0.0086. No stage of this plan has been worked.
