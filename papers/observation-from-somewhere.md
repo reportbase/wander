@@ -3401,6 +3401,18 @@ the turn, T_n(y/√(y² + L²)) (Boyd 1987): the same equal angles read by their
 the ends of the chord (the last gap about π²/N², the middle ones π/N; Rivlin 1974), and read by their tangent are the
 Cauchy's, spread out to the horizon. The law is the turn's; the chart decides where the addresses crowd.
 
+**An unnormalized density** (§7.3). A weight vector known only up to its normalizing constant is an array of the
+third kind, its values without their common factor. The sampling algorithms built for it use only ratios of entries:
+Metropolis's acceptance test compares p(x′)/p(x), so the constant cancels and rescaling every weight changes no step of
+the chain (Metropolis et al. 1953; Hastings 1970). Computing the constant, an evidence or a partition function, is the
+writing step. Ranks and ratios survive the unknown factor and sums need it, as Theorem 6 says.
+
+**Geometric growth** (§5, §7.3). A dynamic array that grows its capacity by a factor g at each reallocation copies in
+all fewer than gN/(g − 1) elements over N appends, whatever g > 1 is: its reallocations fall at the levels g, g², …,
+and their costs form a geometric series. Growth by a fixed step copies in proportion to N per element. So the levels
+must be one ratio repeated for the cost per element to stay constant, and which ratio is a choice: implementations use
+2 or 1.5.
+
 ## Appendix B. Engineering read against the geometry
 
 The structures of §12.4 met in systems built to read or draw a world, each with what it adds:
@@ -3634,6 +3646,9 @@ Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *A
 Haldane, J. B. S. (1932). A note on inverse probability. *Proceedings of the Cambridge Philosophical Society* 28(1),
 55–61.
 
+Hastings, W. K. (1970). Monte Carlo sampling methods using Markov chains and their applications. *Biometrika* 57(1),
+97–109.
+
 Herschel, J. F. W. (1850). Quetelet on probabilities. *Edinburgh Review* 92, 1–57.
 
 Hilbert, D. (1895). Über die gerade Linie als kürzeste Verbindung zweier Punkte. *Mathematische Annalen* 46,
@@ -3735,6 +3750,9 @@ Maxwell, J. C. (1860). Illustrations of the dynamical theory of gases. *Philosop
 McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *The Annals of Statistics* 24, 787–808.
 
 Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata*. Duisburg.
+
+Metropolis, N., Rosenbluth, A. W., Rosenbluth, M. N., Teller, A. H. and Teller, E. (1953). Equation of state
+calculations by fast computing machines. *The Journal of Chemical Physics* 21(6), 1087–1092.
 
 Microsoft. Bing Maps Tile System (documentation).
 

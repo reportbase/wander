@@ -445,6 +445,39 @@ slots the Cauchy's quantiles, its middle the corner, its last slot running to th
 ring's are. The writer's arrays have the length; the reader's are the index and the payload on it, without the length,
 and that one number is what writing supplies.
 
+**What the length decides.** The length is the line between the writer's arrays and the reader's, so it sorts the
+operations on an array.
+- *Writing needs the length.* Normalizing an index as i/N, indexing from the end, a percentile index p·N, a mean over
+  the array, concatenation and a bounds check all use `length`. Comparing two elements, ranking, the median of what is
+  present, the ratio of two entries and the step to the next index do not. Whether an operation touches `length` is the
+  scale-the-world test of §10 applied to code.
+- *An unnormalized density is the payload without its factor.* A weight vector known only up to its normalizing
+  constant Z is the third kind of array, and the algorithms built for it use only ratios of entries: Metropolis's
+  acceptance test compares p(x′)/p(x), so Z cancels and rescaling every weight changes no step of the chain (Metropolis
+  et al. 1953; Hastings 1970). Computing Z itself, an evidence or a partition function, is the writing step, and it is
+  the hard one. Ranks, ratios and medians survive the unknown factor; sums need it (§5).
+- *In logarithms the unknown factor is the DC term.* A common factor k becomes an added constant ln k, so the payload
+  without its size is the log-values less their mean, unchanged by k, while the mean moves by exactly ln k. The size is
+  the zeroth Fourier coefficient of ln r, the shape the modes n ≥ 1, and a shape is stored most cheaply as the circle's
+  one constant plus the residual.
+
+**Static and dynamic arrays.** A static array writes its length once. A dynamic array is still a writer, but every
+growth rewrites the one number, and what moves when it does is exactly what divided by it.
+- *Growth moves what divides by the length.* An index counted from the start survives an append: it is a count of
+  slots, one slot agreed beforehand. An index from the end moves, and so does any position normalized as i/N, a
+  percentile, a scroll fraction or a progress bar; an insertion in the middle moves everything after it, the
+  order-maintenance problem of §12. An index laid by turn never moves, since it never used N: K slots for any N, the far
+  end at the horizon.
+- *Amortized growth is the levels, its base free.* A dynamic array grows its capacity by a factor g at each
+  reallocation, so the reallocations fall at levels g, g², g³, … and the total copying over N appends stays under
+  gN/(g − 1): 2N at g = 2, 3N at g = 1.5, 5N at g = 1.25. Any g > 1 gives a constant cost per element, and
+  implementations choose 2 or 1.5; growth by a fixed step instead copies in proportion to N per element. The logarithm
+  is forced and the base is not, as for the reader's levels (§8).
+- *Static is held at once, dynamic in order.* A static array has every value present, and its exact median is one
+  selection away. Read as it grows, the exact median needs storage in proportion to n (§5), and to a stated accuracy
+  two registers. A running mean needs the count n, an amount; a running median needs only order. So even online the
+  median is the reading's and the mean the writing's.
+
 **Growth.** The same split shows when a world grows rather than scales. An address made by dividing a thing's place in
 a list by the list's length is a ratio, a reading of the list's own contents, and it moves as soon as the list grows.
 An address made of slots, a fixed number to each level whatever the level holds, does not move: the radix was agreed
@@ -1018,6 +1051,9 @@ Gabor, D. (1946). Theory of communication. *Journal of the Institution of Electr
 
 Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *Annals of Mathematics* 34(1), 147–169.
 
+Hastings, W. K. (1970). Monte Carlo sampling methods using Markov chains and their applications. *Biometrika* 57(1),
+97–109.
+
 Igarashi, T. and Hinckley, K. (2000). Speed-dependent automatic zooming for browsing large documents. *Proceedings
 of UIST 2000*, 139–148.
 
@@ -1059,6 +1095,9 @@ magnitudes, colors, and errors even for low signal-to-noise ratio measurements. 
 McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *The Annals of Statistics* 24, 787–808.
 
 Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata*. Duisburg.
+
+Metropolis, N., Rosenbluth, A. W., Rosenbluth, M. N., Teller, A. H. and Teller, E. (1953). Equation of state
+calculations by fast computing machines. *The Journal of Chemical Physics* 21(6), 1087–1092.
 
 Microsoft. Bing Maps Tile System (documentation).
 
