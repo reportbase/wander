@@ -1938,6 +1938,36 @@ addresses follow the uniform turn is Proposition 5's, not the array's.
   So the writer's arrays are 1 and 2, with the length known; the reader's are 3 and 4, the payload on the index and the
   index itself, with the length missing. That one number is what writing supplies.
 
+**Laid on the sweeps: a worked example.** Take K = 8 places on the quarter turn. The inscribed sweep's reading of a
+direction is s = v/h, and its share of the turn is g = (2/π)·arctan s, so the index is
+
+  k = ⌊K·g⌋ = ⌊8·(2/π)·arctan(v/h)⌋,
+
+with the horizon, v/h unbounded, kept in the last place. No length enters: the places' boundaries are tan(kπ/16),
+0, 0.199, 0.414, 0.668, 1, 1.497, 2.414, 5.027 and the horizon, and their middles tan((k + ½)π/16), 0.099, 0.303, 0.535,
+0.821, 1.219, 1.871, 3.297, 10.15, are the eight evenly spaced quantiles of the half-Cauchy.
+
+| reading v/h | 0.1 | 0.5 | 1 | 2 | 3 | 10 | 1000 | horizon |
+|---|---|---|---|---|---|---|---|---|
+| share of the turn g | 0.064 | 0.295 | 0.500 | 0.705 | 0.795 | 0.937 | 0.999 | 1 |
+| index k | 0 | 2 | 4 | 5 | 6 | 7 | 7 | 7 |
+
+The four arrays lay on these places as follows.
+- *The index alone* (situation 4). The table is the whole array: eight places and nothing stored. The corner is the
+  boundary between places 3 and 4, found with no length, since K is even (for odd K one place is centred on it). The
+  reciprocal reverses the order, a reading s and its reciprocal 1/s going to places k and 7 − k (at s = 2 and ½, places
+  5 and 2). Scaling the world moves nothing: v and h scaled together by 10⁻³, 7 or 10⁶ leave s = 3 in place 6.
+- *The values on the index* (situation 3). The central sweep meets the same point at the central angle φ = 2θ (Euclid
+  III.20), and indexes it by ⌊K·φ/π⌋ over its half turn; that is the same k, place for place (2, 5 and 7 at s = ½, 2
+  and 10). So one index serves both sweeps: the inscribed sweep's ratio and the central sweep's amount found there are
+  stored at one place. The amounts are known up to one factor, so what is kept is ln of each amount less their mean.
+- *A constant array* (situation 1). Every place holds the radius drawn at H, 1, so nothing is stored: the value at place
+  k is a function of k alone.
+- *An array of known length* (situation 2). The writer places an amount x on [0, X] at ⌊N·x/X⌋, which needs X. With
+  N = 8 and X = 100, the amounts 10, 50 and 99 go to places 0, 4 and 7. Read from home at a distance laid by H,
+  ⌊8·(2/π)·arctan(x/H)⌋, they go to places 4, 6 and 7 with H = 10, and to 1, 4 and 5 with H = 50: H moves them, as a
+  zoom, and X never enters. The count index needs the extent; the turn index needs only the zoom.
+
 ### 7.4 The shape is payload
 
 The sweep opens a closed shape out, with zero in the middle of the opening and the two ends running toward the horizon

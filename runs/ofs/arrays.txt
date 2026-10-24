@@ -11,3 +11,23 @@ g=1.25: worst copies/N 4.9955, bound g/(g-1) = 5.0000
 fixed step 64, N=10000: copies/N 78.4
 fixed step 64, N=20000: copies/N 156.2
 fixed step 64, N=40000: copies/N 312.0
+bounds tan(k*pi/16): [0.0, 0.1989, 0.4142, 0.6682, 1.0, 1.4966, 2.4142, 5.0273, 'inf']
+slot middles (Cauchy quantiles): [0.0985, 0.3033, 0.5345, 0.8207, 1.2185, 1.8709, 3.2966, 10.1532]
+s=0.1: g=0.0635 k=0  reciprocal 1/s -> k=7  sum 7
+s=0.5: g=0.2952 k=2  reciprocal 1/s -> k=5  sum 7
+s=1: g=0.5000 k=4  reciprocal 1/s -> k=4  sum 8
+s=2: g=0.7048 k=5  reciprocal 1/s -> k=2  sum 7
+s=3: g=0.7952 k=6  reciprocal 1/s -> k=1  sum 7
+s=10: g=0.9365 k=7  reciprocal 1/s -> k=0  sum 7
+s=1000: g=0.9994 k=7  reciprocal 1/s -> k=0  sum 7
+horizon v=1,h=0 -> 7 ; home v=0,h=1 -> 0
+scaled by 0.001: s=3 -> 6
+scaled by 7: s=3 -> 6
+scaled by 1e+06: s=3 -> 6
+s=0.1: inscribed k=0, central floor(K*phi/pi)=0
+s=0.5: inscribed k=2, central floor(K*phi/pi)=2
+s=2: inscribed k=5, central floor(K*phi/pi)=5
+s=10: inscribed k=7, central floor(K*phi/pi)=7
+x=10: count index 0, turn index at H=10 4, at H=50 1
+x=50: count index 4, turn index at H=10 6, at H=50 4
+x=99: count index 7, turn index at H=10 7, at H=50 5

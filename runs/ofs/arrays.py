@@ -50,3 +50,23 @@ def copies_add(N, step):
     return c
 for N in (10000, 20000, 40000):
     print(f"fixed step 64, N={N}: copies/N {copies_add(N, 64)/N:.1f}")
+
+# 4. Worked example (R485): K = 8 slots laid by the uniform turn; index from a reading s = v/h by
+#    k = floor(K * (2/pi) * atan2(v, h)), the horizon clamped to the last slot.
+K = 8
+def idx(v, h): return min(K - 1, math.floor(K * (2 / math.pi) * math.atan2(v, h)))
+print("bounds tan(k*pi/16):", [round(math.tan(k * math.pi / (2 * K)), 4) for k in range(K + 1)][:-1] + ['inf'])
+print("slot middles (Cauchy quantiles):", [round(math.tan((k + 0.5) * math.pi / (2 * K)), 4) for k in range(K)])
+for s in (0.1, 0.5, 1.0, 2.0, 3.0, 10.0, 1000.0):
+    g = (2 / math.pi) * math.atan(s)
+    print(f"s={s:g}: g={g:.4f} k={idx(s,1)}  reciprocal 1/s -> k={idx(1,s)}  sum {idx(s,1)+idx(1,s)}")
+print("horizon v=1,h=0 ->", idx(1, 0), "; home v=0,h=1 ->", idx(0, 1))
+for kk in (1e-3, 7, 1e6): print(f"scaled by {kk:g}: s=3 ->", idx(3 * kk, kk))
+# the central sweep: the same point at central angle phi = 2*theta, index floor(K*phi/pi)
+for s in (0.1, 0.5, 2.0, 10.0):
+    th = math.atan(s); phi = 2 * th
+    print(f"s={s:g}: inscribed k={idx(s,1)}, central floor(K*phi/pi)={min(K-1, math.floor(K*phi/math.pi))}")
+# situation 2 against the turn: amounts x on [0, X], count index floor(N x/X) needs X; turn index needs H
+N, X, H = 8, 100.0, 10.0
+for x in (10, 50, 99):
+    print(f"x={x}: count index {math.floor(N*x/X)}, turn index at H=10 {idx(x, H)}, at H=50 {idx(x, 50)}")

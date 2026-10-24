@@ -478,6 +478,27 @@ growth rewrites the one number, and what moves when it does is exactly what divi
   two registers. A running mean needs the count n, an amount; a running median needs only order. So even online the
   median is the reading's and the mean the writing's.
 
+**Laid on the sweeps, in code.** With K places on the quarter turn, the index of a direction (h, v) is its share of the
+turn times K:
+
+```js
+const turnIndex = (v, h, K) => Math.min(K - 1, Math.floor(K * (2 / Math.PI) * Math.atan2(v, h)));
+```
+
+`atan2` takes the horizon, h = 0, without dividing, and the clamp keeps it in the last place. No length enters. At
+K = 8 the readings 0.1, 0.5, 1, 2, 3, 10, 1000 and the horizon go to places 0, 2, 4, 5, 6, 7, 7, 7; the boundaries are
+tan(kπ/16) and the places' middles the half-Cauchy's eight evenly spaced quantiles, 0.099 … 10.15. The four arrays lay
+on these places.
+- *The index alone.* The places are the whole array. The corner is the boundary between places 3 and 4, found with no
+  length; a reading and its reciprocal go to places k and K − 1 − k; scaling v and h together moves no index.
+- *The values on the index.* The central sweep meets the same point at twice the angle and indexes it by
+  `Math.floor(K * phi / Math.PI)` over its half turn, the same place: one index serves both sweeps, the ratio and the
+  amount found there stored together. The amounts are known up to one factor, so keep their logs less their mean.
+- *A constant array.* Every place holds the radius drawn at H, so the value is a function of the index and nothing is
+  stored.
+- *An array of known length.* `Math.floor(N * x / X)` needs the extent X: with N = 8 and X = 100 the amounts 10, 50, 99
+  go to 0, 4, 7. `turnIndex(x, H, 8)` needs only H, the zoom: 4, 6, 7 at H = 10 and 1, 4, 5 at H = 50.
+
 **Growth.** The same split shows when a world grows rather than scales. An address made by dividing a thing's place in
 a list by the list's length is a ratio, a reading of the list's own contents, and it moves as soon as the list grows.
 An address made of slots, a fixed number to each level whatever the level holds, does not move: the radix was agreed
