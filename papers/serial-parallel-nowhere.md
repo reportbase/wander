@@ -6750,6 +6750,8 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 
 - **R481** (24 Oct): Tom: "yes", to bringing the CS companion into OFS's order (R480). The companion was already compact (about 14,000 words) and kept its own sections; "What the geometry does not give: amounts" now comes before the dial (§10, the dial §11, with every reference swapped), so the main line (model, corner, drawing, main result, array and floor, two address spaces, level of detail, amounts) precedes the applications (the dial, existing designs read against the geometry); the Results list in the same order; the abstract keeps the three results apart (median by exchange symmetry, no mean by the horizon, the standard Cauchy's shape by the uniform turn with V = H). Its classical items (Niven, Plücker, Fibonacci and consistent hashing, labels, Kalman) stay in its body, since for its readers they are the point.
 
+- **R482** (24 Oct): ChatGPT's review 28 (`plans/ofs-review-28.md`, 8.8/10: "proceed toward external review after the narrow V = H qualification in the abstract and a final check that the shape examples are clearly distinguished from the general proof"). The abstract's qualifier was already made (R479–R480; the review read an older draft). OFS §7.4's "The lay, not the shape" now says the table and the 73 shapes illustrate results proved elsewhere (Theorem 6(a) for the lay by direction, the shape being payload; Theorem 6(e) for the corner under an exchange-symmetric lay), not their proof. Next: external review.
+
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |

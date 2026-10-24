@@ -1955,7 +1955,9 @@ has a mean, since each keeps a share of order 1/s or more beyond s (Theorem 6(e)
 astroid's cusps make its ends heavy, the square's flat sides make them light. The ellipse, which the exchange alters,
 moves its corner as well. Over 73 single-outline shapes from a drawing library the pattern is the same, with ends from
 0.27 for a gear to about 3.1 for the astroid. The test would have failed had any shape laid by direction departed from
-the circle's numbers, or had a shape unchanged by the exchange moved its corner off the middle. The Cauchy is what a
+the circle's numbers, or had a shape unchanged by the exchange moved its corner off the middle. The table and the 73 are illustrations of
+results proved elsewhere, not their proof: that every shape laid by direction reads alike is Theorem 6(a), the shape
+being payload, and that a lay unchanged by the exchange keeps its median at the corner is Theorem 6(e). The Cauchy is what a
 uniform lay by direction gives, whatever the shape; a lay taken from the outline brings the shape into the distribution.
 The Cauchy belongs to how the addresses are laid.
 
