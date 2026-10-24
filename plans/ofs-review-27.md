@@ -73,3 +73,7 @@ B. §1, "The separation, in brief": one sentence of prior art (locations and val
 C. §1's rule: "this paper's rule, a test proposed" (or scoped to the construction), per Tom.
 D. §7.8: the D² × D² split marked as the paper's reading of the standard D⁴.
 E. The tightening pass, in the review's order, applications marked as such.
+
+## Made (OFS, SPN R479)
+
+A–D as proposed (Tom: "yes"), in OFS and the CS companion; §7.2's statement of the rule marked too. E next, a cut list first.

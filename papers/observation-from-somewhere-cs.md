@@ -90,7 +90,8 @@ V = H, and read the mountain in thumbs.
 
 ### 1.4 What is new, and what is not
 
-That coordinates depend on the observer is old. The pieces used here are classical: the reciprocal x ↦ 1/x, the Cauchy
+That coordinates depend on the observer is old, and so is keeping a location apart from its value: an array's index and
+its contents, a function's domain and its values, a sampling grid and its samples. The pieces used here are classical: the reciprocal x ↦ 1/x, the Cauchy
 as the projection of a uniform angle and its invariance under Möbius maps, Cauchy's functional equation, Jaynes's
 transformation groups. What is new is where the reader's scheme comes from (the relations available at its standpoint,
 before any payload arrives) and the reading of these pieces as one structure, in which the Cauchy is the index and not
@@ -106,7 +107,8 @@ offers instead, a baseline against which existing designs can be read.
   the two parties leaves fixed. Two registers, v/h below it and h/v above it, both stay within [0, 1] only if the
   switch is there. Sameness, order and the corner need no division (§3).
 - **One drawing.** For the directions to be one uniform turn, the reader must draw the other party at its own breadth,
-  V = H. Working back from the known Cauchy arrives at the same drawing (§4).
+  V = H. Working back from the known standard Cauchy, its median at the corner, arrives at the same drawing (§4);
+  drawn at V = cH the turn gives a Cauchy of scale 1/c.
 - **Arrays.** For an even-length array indexed at equal steps of turn, the slopes of its places are exactly the evenly
   spaced quantiles of the Cauchy. The index is the address and the stored values are the payload; the floor function
   is where an array is not a reader (§6).
@@ -274,7 +276,8 @@ V = cH, a uniform direction θ′ has tan θ′ = c·(v/h), so P(v/h ≤ r) = (2
 the law of (b) exactly when c = 1. ∎
 
 So V = H is not a convenience laid over the Cauchy. Within this construction (two unit relations, a rigid bar's linear
-periodic turn) it is what the Cauchy requires, and working back from the Cauchy arrives at it and nowhere else. It is a
+periodic turn) it is what the standard Cauchy, its median at the corner, requires, and working back from it arrives
+at V = H and nowhere else. It is a
 rule of representation, not a claim about the world: the reader uses its own breadth as the unit for the other party
 because it is the only measure it has. Where the true V* differs from H, every amount the reader reads is off by V*/H
 (§11). The addresses are exact; the amounts are not.
@@ -352,7 +355,7 @@ sensor or what arrives; it shows what the turn's count gives. Nor does it show t
 origin: a resonance's profile and a stable sum of index 1 are Cauchy laws that are facts about a system. The claim is
 only that a reader's uniform turn lays its own addresses this way.
 
-**The rule, and a test.** A Cauchy variable is a direction, a ratio read in one chart, laid by a turn; never an amount.
+**The rule, and a test.** This paper's rule, offered as a test: a Cauchy variable is a direction, a ratio read in one chart, laid by a turn; never an amount.
 Its median and quartiles are places on the line and mean what they say. Where a Cauchy appears beside an amount, the two
 are separate factors: the amount is the payload, the Cauchy is where it lands. So for any Cauchy met in practice there is
 a test: find the turn, and find the amount. A spectral line is the plainest case: spectroscopy writes it as a strength,

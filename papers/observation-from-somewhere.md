@@ -32,7 +32,7 @@ neither can pass 1, every relation turns over at a single point, v = h, the *cor
 reader must assign the other party a breadth, and its only measure is its own: it draws the mountain at the breadth of
 its thumb, V = H. This is required for the sweep to be a turn. Only then is the sweep from one party to the other the
 turn of one rigid bar, tracing a unit circle with the corner at distance 1 whatever unit was chosen; working back from
-the Cauchy distribution, which is known, arrives, within this construction, at V = H and nowhere else, and so do a lighthouse's flashes on a shore
+the standard Cauchy distribution, which is known, with its median at the corner, arrives, within this construction, at V = H and nowhere else (drawn at V = cH a uniform turn gives a Cauchy of scale 1/c), and so do a lighthouse's flashes on a shore
 and Mercator's map. The drawing is not a claim about the mountain. Its true size is a separate number that one
 observation does not give.
 
@@ -106,8 +106,10 @@ What arrives then paints the addresses that are already there.
 
 **The separation, in brief.** An address is a point, a direction from the standpoint; a payload is what is found at that
 point, an amount. The law of the addresses, the Cauchy, is fixed by the standpoint and the turn alone, and any payload
-can be swapped for any other at any address without moving one address (Theorem 6(a)). So a Cauchy variable is a
-direction, read by its order, and never an amount; where one appears beside an amount, as a spectral line's profile
+can be swapped for any other at any address without moving one address (Theorem 6(a)). The separation itself is familiar:
+coordinates, sampling grids and a function's domain already keep a location apart from the value found there. What is
+proposed here is a construction of it for a reader at a standpoint, and what follows from that construction. Its rule,
+this paper's and offered as a test, is that a Cauchy variable is a direction, read by its order, and never an amount; where one appears beside an amount, as a spectral line's profile
 beside its strength, the two are separate factors, and the test is to find the turn and find the amount. Every operation
 on directions (a new zero, the reciprocal, a zoom, a relay through a standpoint between) keeps the law a Cauchy, moving
 only where the standpoint is; only an amount entering breaks it, and then from its centre outward, the tails last
@@ -198,7 +200,8 @@ often from treating the writer's vantage as if a single observation held it. Sec
 - A reader that holds one breadth must assign the other party a breadth in its own unit. For the sweep to be a turn,
   that breadth must be its own, V = H: only then does the sweep trace a unit circle with the corner at distance 1
   whatever unit is chosen, and only then is there one uniform turn. Sweeps that are not turns keep the corner and the
-  missing mean but not the Cauchy's shape (Theorem 6(e), §11.2). Working back from the Cauchy arrives at V = H (§5,
+  missing mean but not the Cauchy's shape (Theorem 6(e), §11.2). Working back from the standard Cauchy, its median at
+  the corner, arrives at V = H (§5,
   §7.1). So do the lighthouse's flashes on a shore and Mercator's chart, which draws every compass course true only
   because it stretches north–south as much as east–west. What the paper shows is that a reader should draw V = H, since
   only that drawing gives it these; whether readers do is an empirical question it leaves open (§11.2). The other
@@ -1231,8 +1234,8 @@ one. Which breadth it assigns is not free:
   "sweeping uniformly" no longer names one sweep: uniform steps of direction, of the curve and of its parameter give
   three different laws, and only one of them is the Cauchy with its median at the corner (Proposition 5(d)).
 - *Why c = 1.* With V = H the sweep is one rigid bar turning, it traces the unit circle, and the uniform turn is unique;
-  its readings are the Cauchy with nothing more chosen. Working back from the Cauchy, which is known, arrives at V = H
-  and nowhere else (Proposition 5(d)). Both statements are made within the construction (a relation drawn as two unit
+  its readings are the Cauchy with nothing more chosen. Working back from the standard Cauchy, which is known, its median
+  at the corner, arrives at V = H and nowhere else (Proposition 5(d); V = cH gives the Cauchy of scale 1/c). Both statements are made within the construction (a relation drawn as two unit
   relations, the sweep a rigid bar's linear periodic turn); that every reader must use this construction is not claimed
   (§11.2, "What depends on what"). So V = H is required for a situated geometry built on a turn: it gives the
   reader a circle to turn. Unit relations drawn on equal axes, each running from 0 to 1, are this drawing.
@@ -1665,7 +1668,7 @@ from the known law to what it needs, each step is forced by the one before.
    parameter is the turn of the circle drawn with V = H, stretched afterwards.
 4. With V = H the sweep is one rigid bar turning, and it traces the unit circle (Proposition 3(c), (e)).
 
-So V = H is not a convenience laid over the Cauchy. It is what the Cauchy requires, and, forward through Proposition 3
+So V = H is not a convenience laid over the Cauchy. It is what the standard Cauchy, its median at the corner, requires, and, forward through Proposition 3
 and parts (a) to (c), it is also enough. Every link of the chain, from the reader's one breadth to the Cauchy and back,
 passes through V = H.
 
@@ -1800,7 +1803,7 @@ arrives can be swapped for anything else, at any address, and the addresses and 
 So nothing the Cauchy says (its median, its scale, its missing mean) is a statement about the payload, and nothing in
 the payload can be read from it.
 
-**The rule, and a test.** A Cauchy variable is a direction: a point of the projective line, a ratio [x : y] read in one
+**The rule, and a test.** The rule is this paper's, offered as a test: a Cauchy variable is a direction, a point of the projective line, a ratio [x : y] read in one
 chart, laid by a turn. It is never an amount. Its median and its quartiles are places on that line and mean what they
 say; it has no mean, since its tail makes the first moment diverge, and in this paper's terms none is wanted, since the coordinates of directions do not add. Two directions have no sum, only a composition, a
 turn followed by a turn, which in the chart is tangent addition (§2). Where a Cauchy appears beside an amount, the two
@@ -2210,8 +2213,9 @@ follow every increasing map; those facts underlie parts (b) and (d). The other p
     is fixed by three points (Penrose and Rindler 1984).
 
   The second is a weighting of the payload at each address, and it moves no address.
-  - Of the D⁴ by which an isotropic sky's intensity brightens ahead (Rybicki and Lightman 1979), D² is the addresses'
-    crowding, and D² is the payload: energy and arrival rate, D each.
+  - Of the D⁴ by which an isotropic sky's intensity brightens ahead (Rybicki and Lightman 1979), D² is read here as the
+    addresses' crowding and D² as the payload, energy and arrival rate, D each; the D⁴ is standard, the split this
+    paper's reading.
 
   So the motion can be read from the addresses alone. On the levels ξ = −ln tan(θ/2), the pseudorapidity, aberration is
   a shift by η exactly, and a sky uniform in the sources' frame lies as ½·sech²ξ, its median the transverse plane; seen

@@ -941,6 +941,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   **No criticism of the number line** (R478; Tom: "don't subtly criticize the number line in ofs, no need to go there."):
   OFS says what the number line is and does (the writer's ruler, the readers' shared unit), never what it lacks or
   costs against the reader's addresses; four passages and the companion's two neutralized.
+  Review 27 (24 Oct, SPN R479; ChatGPT, 8.5/10, `plans/ofs-review-27.md`; Tom: "yes"): the standard Cauchy (median at the
+  corner) is what V = H gives, V = cH a Cauchy of scale 1/c; the separation familiar, its construction ours; R358's rule
+  marked as this paper's, a test; §7.8's D² × D² a reading. Next: the tightening pass, a cut list to Tom first.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
