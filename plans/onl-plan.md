@@ -145,3 +145,48 @@ Where only one cost is counted (the array's copying, galloping's comparisons) th
 runs to an end; a corner at 2 needs both sides of the exchange priced. The near and far fields hold as predicted in every
 case computed: a chosen scale, the guarantee absolute inside it and relative past it, the far constant unmoved by the
 scale. All of this is classical arithmetic; what is read is the arrangement.
+
+### The search (25 Oct), by a fresh agent given the three claims, not the predictions
+
+Access: arXiv PDFs read in full through the proxy; the rest seen only as search results. Not reached: Beck and Newman
+1970, Karlin et al. 1988 and 1994, Baeza-Yates, Culberson and Rawlins 1993, Gal 1980, Gal and Chazan 1976, Alpern and
+Gal 2003, Kao, Reif and Tate 1996, the 2006 SIGACT column.
+
+- **Read.** Chrobak, Kenyon, Noga and Young, "Incremental medians via online bidding", *Algorithmica* 2008 (arXiv
+  cs/0504103). Online bidding (bid until a bid reaches an unknown threshold, paying the sum of the bids): deterministic 4
+  by doubling, randomized e by a uniform offset on the log scale. Its lower bound uses y = (sum after a bid)/(sum before)
+  and needs y²/(y − 1). With y = 1 + 1/r, r = (sum before)/(next bid), that is exactly 2 + r + 1/r (checked here in
+  fractions at r = 1/3, 1/2, 1, 2, 3). So the sunk-over-next ratio is in print, but not in the reciprocal form and not
+  called a symmetry. Bids are positive integers, s_j ≥ j: the unit enters as an assumption.
+- **Read.** Demaine, Fekete and Gal, "Online searching with turn cost", *TCS* 2006 (arXiv cs/0406045). "Under certain
+  assumptions, any unbounded optimal search trajectory has to be a geometric sequence" (Gal 1972; Gal and Chazan 1976).
+  Geometric trajectories "start with an infinite sequence of infinitesimal steps"; quoting López-Ortiz and Schuierer
+  2001, "we assume that a lower bound of one for the distance to the target t is known". With a turn cost d, 9·OPT + 2d,
+  the additive term tied to the scale d. "9 for large OPT".
+- **Read.** Angelopoulos, Dürr and Jin, "Best-of-two-worlds analysis of online search", STACS 2019 (arXiv 1810.08109):
+  "the standard assumption that the target must be at distance at least 1 from O, since no strategy can have bounded
+  competitive ratio if this distance can be arbitrarily small"; its Theorem 3 (Gal 1980, Schuierer 2001) is the general
+  theorem, with scale invariance F(λX) = F(X) an explicit hypothesis, the optimum then a geometric sequence; infinitely
+  many strategies achieve 9.
+- **Search results only.** Ski rental's ratio (TR + B)/min{(T + 1)R, B} in lecture notes, break-even best, nowhere called
+  reciprocal-symmetric; a multi-shop ski rental case max{b/x, x/b}, the symmetry unnamed; online bounded analysis (Boyar
+  et al. 2016) restricting the offline adversary, no standpoint language.
+
+Against the predictions: **S1 found in part** (predicted in part): the ratios standard, the reciprocal form and break-even
+as the fixed point of an exchange not found. **S2 found in part** (predicted in part): the cumulative-over-next ratio and
+its 2 + r + 1/r in online bidding's proof; the cow path's 5 + 2(r + 1/r) and "each leg equals all before it" as the
+reason for b = 2 not found (the cow path's own sources not reached). **S3 found in part, strongly** (predicted: as α and
+"distance ≥ 1", not as near/far): the unit's necessity, an additive term tied to a scale, a large-OPT regime are explicit;
+a named absolute-inside, relative-outside split not found. **S4 not found** (predicted not found; the search brief).
+
+Missing from my "Known beforehand": **Gal's theorem** (Gal 1972, 1980; Gal and Chazan 1976; Schuierer 2001): with a
+scale-invariant cost, the optimal unbounded search is geometric. It is claim 2's first half, in print with its
+hypothesis; the claim is classical, ours only as the reading (the reader's dκ/κ is that invariance).
+
+**What is left to us, after run 1 and the search.** Not the corner's numbers, not the levels (Gal), not the unit's
+necessity or the additive term. What is not found: (a) the worst case written as one reciprocal-symmetric function of
+the sunk-to-committed ratio across problems (ski rental, the cow path, online bidding), with the corner as the exchange's
+fixed point and the 2 fixed only when both sides are priced (run 1's O6 kill: one side alone gives no corner); (b) the
+additive and multiplicative terms read as the near and far fields of one chosen scale, the same split as a reader's
+lay. Both are readings of known results; nothing new is proved. Tom rules on OFS Appendix A and the companion.
+
