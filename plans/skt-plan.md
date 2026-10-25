@@ -180,3 +180,36 @@ drift is the data's.
 - The narrow claim stands: the reader's structure is ⌊K·F(x/H)⌋ with order per cell. The wider claim, that each column's
   behaviour follows from F alone, needs the horizon's representative named as a second choice.
 - A run 2 would need predictions that name that representative first.
+
+### The search (25 October 2026, a fresh agent given the claim, not the predictions)
+
+Sources were read in full unless marked as a snippet.
+
+- **T1: found in part, as predicted.**
+  - Hartmann and Schlossnagle 2020 (circllhist, arXiv:2001.06561) is the nearest prior work. It gives an abstract theory
+    of binning maps and coarsening, covering HdrHistogram and DDSketch. Its log-linear binning is log first, linear
+    inside each decade. It has no single F with a scale H and no arctangent.
+  - DDSketch's paper (arXiv:1908.10693) treats its index mapping as swappable, but every option approximates the
+    logarithm.
+  - t-digest's scale functions k₀–k₃ (Dunning and Ertl, arXiv:1902.04023) are a family, but they act on the rank q,
+    not on x.
+  - No source writes ⌊K·F(x/H)⌋ with F as the design choice and the turn among its options.
+- **T2: found in part, as predicted (rare).** The only tan-spaced grids with a chosen scale are Boyd's rational
+  Chebyshev maps (r = L·cot²(t/2); L sets "the frontier between both regimes"). Those are spectral grids for
+  interpolation, not bins for counting. Nothing was found that bins, sketches or compands by the arctangent.
+- **T3: found, as predicted.**
+  - circllhist proves (Proposition 3.11) that log-linear bin boundaries are the floating-point numbers, and that
+    HdrHistogram is a log-linear histogram in base 2.
+  - A-law's formula is linear to 1/A, then 1 + ln. A patent reads an A-law code as a float with 4 mantissa and 3
+    exponent bits (a snippet).
+  - Not found: any statement that HdrHistogram is A-law, or that subnormals are the proportional part of a logarithmic
+    layout.
+- **T4: half killed.** I predicted "not found".
+  - Known against unknown extent is an axis in the literature: "fixed-universe" methods (q-digest) against the rest in
+    Chen and Zhang's survey (arXiv:2004.08255). Cormode et al. (arXiv:2004.01668) note that q-digest "requires prior
+    knowledge of the data universe U". DDSketch criticizes HdrHistogram's bounded range.
+  - The reader–writer framing, as the axis of a survey, was not found.
+
+What the search leaves ours is narrow. One F-family in value space with a scale H, with the turn (the arctangent) as one
+member, and with its horizon cell. Each piece beside it is in print: the log and log-linear layouts, floats as
+HdrHistogram, A-law, and the known-universe axis.
