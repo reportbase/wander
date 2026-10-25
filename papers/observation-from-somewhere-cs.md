@@ -794,6 +794,15 @@ in-place lay the far boundaries are the near ones reflected about H, so the K ad
 direction's K addresses and a distance's K together make a polar grid of K × K cells; every thing falls in exactly one,
 whatever N.
 
+**The corner follows the focus.** H is the reader's choice, and on the turn's addresses a cell's width relative to its
+distance is (π/2K)(s + 1/s), least at s = 1: the finest relative grain is at the corner, so the corner goes on what is
+looked at. Near and far are then nearer and farther than the focus, held alike, since the next look may fall on either
+side; their job is to show where to look next. Turning carries the corner in direction, designating the focus puts it
+at the corner of distance, and how far the focus really is (a day's walk or a month's) is its size against H, carried
+in. The fields are cheap: with cells no wider than δ across a focus of extent F and cells within a factor ρ past it,
+the fewest addresses are ⌈F/δ⌉ + ⌈log_ρ(X/F)⌉, proportion on the focus and levels past its edge (six for the field at
+X/F = 64, ρ = 2, whatever K is); the reader's lay is the case where the field's first cell matches the focus's grain.
+
 **Other ways to squeeze the line.** Other paths from all of h to all of v, each swept uniformly along its own length,
 also squeeze the line into K addresses:
 

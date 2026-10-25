@@ -2361,6 +2361,31 @@ H·tan(kπ/2K), with no reference to how many things there are or how far they r
 horizon, so a finite K covers an unbounded world, and whatever lies past every other address lands in that tail. N
 then enters only as the share each address holds, which is payload (Theorem 6(a)).
 
+**The corner follows the focus.** Nothing in the geometry fixes where the reader puts its corner; H is its own choice.
+On the turn's addresses a cell's width relative to its distance is (π/2K)(s + 1/s), least at s = 1, so the finest
+relative grain is at the corner, and a reader should put the corner on what it is looking at. Near and far then mean
+nearer than and farther than that, and the two are held alike, since the next look may fall on either: the reader does
+not know on which side of the corner the next thing will be, and the exchange (§2) favours neither. The rest of the
+field is not lost. Every direction is still held, coarser away from the corner, which is enough to show that something
+is there and where to look next; moving the corner there is a new zero (§2).
+- *Two corners, both free.* Turning the head carries the corner in direction to what is looked at, which is then read
+  at the finest grain, with no distance (a turn in place gives no parallax, §11). Designating it draws it at H, which
+  puts it at the corner of distance too, as the mountain is drawn equal to the thumb (§10).
+- *How far it is lies outside every reading.* Whether a range of hills is a day's walk off or a month's is its size
+  against H (Proposition 8), needed only roughly, in levels, and carried in: a baseline, a known kind, the horizon.
+  No field holds it, near or far.
+- *What the fields cost.* Ask for cells no wider than δ across an extent F about the focus, and past it for cells
+  that each place a thing within a factor ρ. The fewest addresses that do it are ⌈F/δ⌉ cells of one width across F and
+  ⌈log_ρ(X/F)⌉ of ratio ρ past it, X the field's extent: proportion on the focus, levels past its edge, the corner at
+  the edge. The field then costs about log_ρ(X/F) addresses, six at X/F = 64 and ρ = 2, whatever K is, and every other
+  address goes to the focus. The reader's lay of Proposition 4, proportion and then levels, is the case in which the
+  field's first cell matches the focus's grain. The turn, which gives the fields half of K, gives them more than this
+  least.
+- *Where the levels lie.* Laid on the angle from the gaze, the field's extent X is fixed by the geometry and needs no
+  amount. Laid on distance it needs the distances. The picture itself is the turn, its far field in proportion to the
+  reciprocal of distance (§6, "What Mercator's map is, and what it is not"); levels in distance belong to distance
+  laid by a count of addresses.
+
 **Other ways to squeeze the line.** The three paths of §12.2 (question 2) each squeeze the reader's line into K
 addresses, each swept uniformly along its own length and read as the signed reading s = v/h:
 

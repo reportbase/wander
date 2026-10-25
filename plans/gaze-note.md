@@ -42,7 +42,7 @@ geometry." A neighbour, not evidence; check Schwartz 1977, 1980 and Horton and H
 
 So Mercator's logarithm is real, but it is the angle's, laid about the gaze, not the distance's laid about the reader.
 
-## A draft paragraph for OFS (not yet placed)
+## A draft paragraph for OFS (placed 25 October, R498)
 
 *Where it would go: after Proposition 13 in §8, or as a closing paragraph of "A fixed count, aimed by H". Normal paper
 voice, no ruling numbers, no file paths.*
@@ -113,3 +113,11 @@ From ChatGPT's reply, taken: "The map represents the field. The reader observes 
 new paragraph), and the map's focus being its reader's, not the projection's. Not taken: "the near field is the focus"
 (the focus is at the corner, and near and far are both fields) and "the task decides the allocation" (R496: held alike).
 The draft paragraph above (gaze, FOV) is still unplaced; the first open point is answered by R497.
+
+## Placed (R498)
+
+Tom: "place the gaze paragraph in ofs". It is OFS §8's "The corner follows the focus", after "One K, in direction and
+in distance", with R496's two changes, as a lead paragraph and four bullets (two corners; how far; what the fields
+cost; where the levels lie), its Mercator sentence pointing to §6's "What Mercator's map is, and what it is not". The
+CS companion's §9 has a short version. Still open: the `flight.html` lay, and whether levels on angle from the gaze
+replace or stand beside the levels on distance in §8 (OFS now has them side by side).

@@ -2146,6 +2146,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   it carries to what is looked at; "The map represents the field; the reader observes from somewhere within it."), a
   room-per-level column in "One figure, three rulers", §7.1's "Mercator's choice" qualified; the CS companion likewise;
   `runs/ofs/rulers.py` section 8.
+  Placed (R498; Tom: "place the gaze paragraph in ofs"): OFS §8 "The corner follows the focus" after "One K, in direction
+  and in distance" (the turn's relative cell least at the corner; near and far held alike; two corners, both free; how
+  far is the sizing, carried in; FOV's least count; levels on the gaze's angle need no amount); the companion's §9 too.
   Then (SPN R496; Tom: "so it is logical that a reader would give benefit from equal attention to the near and far
   fields."): turning moves the direction corner, designating the distance corner, both free; how far the focus is is
   the sizing, only as levels, carried in; the fields need only direction grain, held alike near and far.
