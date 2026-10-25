@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Online, at the corner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    online-corner.html: online decisions read as the reader's geometry (25 October 2026, Tom: "could you create two demos,
+    one for each, to show them in action with our framing."; SPN R488–R491; OFS Appendix A, "Online decisions"; ONL,
+    plans/onl-plan.md). A standalone page, plain canvas. The decision is made now; the future it cannot see decides the
+    cost; the offline optimum, shown on demand, is in the writer's place.
+    Ski rental (the price 1): buy once the rent paid is s; the future stops at T. Online cost T if T < s, else s + 1;
+    the writer's min(T, 1). The worst over every future is 1 + max(s, 1/s), the same at s and 1/s, least at the corner
+    s = 1, plotted on the levels of s.
+    Two-ray search: legs d₀·bⁱ alternating sides, a target at x on one side; the path drawn on the reader's lay of
+    distance (x/d₀ inside the first leg, 1 + ln(x/d₀) past it), so every turn point is ln b further out. The worst ratio
+    1 + 2b²/(b − 1) = 5 + 2(r + 1/r), r = 1/(b − 1) the distance walked before a leg over the leg, 9 at b = 2, r = 1.
+    The near field: behind the start the extra walking is exactly 2d₀, an amount, and the ratio unbounded as x → 0; the
+    far field: the ratio under that constant, whatever the distance. d₀ is H: changing it moves where the turns fall,
+    never the far constant.
+    Links: ?p=ski|cow&s=<log2 s>&T=<log2 T>&b=&d0=&x=<log2 x/d₀>&side=0|1&writer=1.
+    Test hook: window.__onlineCorner (skiCost, skiWorst, walk, cowWorst, cowForm, lay, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 22px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15 }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    code { color: var(--bright) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Online, at the corner</h1>
+    <p class="lede">An online decision is made now, and a future it cannot see decides what it costs. The offline optimum
+    sees the whole future: it stands in the <span class="w">writer's</span> place. When the decision weighs what it has
+    already <span class="g">spent</span> against what it is about to <span class="r">commit</span>, the worst future charges
+    for the larger of the two, so the worst case depends only on their ratio, is the same at r and 1/r, and is least at
+    the corner, r = 1. When the unknown is a scale, the turn points are levels, and one scale must be supplied: the
+    guarantee is an amount inside it and a ratio past it.</p>
+    <div class="row"><button data-p="ski">ski rental: when to buy</button><button data-p="cow">two-ray search: how far to go</button>
+        <button id="writer">show the writer's cost</button></div>
+
+    <div class="panel" id="skiP">
+        <h2>Ski rental</h2>
+        <div class="row"><label for="s">buy once the rent paid is s × the price</label><input id="s" type="range" min="-3" max="3" step="0.01" value="0">
+            <span id="sv" class="b"></span><button id="s1">s = 1, the corner</button></div>
+        <div class="row"><label for="T">the future: skiing stops at T</label><input id="T" type="range" min="-4" max="3.3" step="0.01" value="0.5">
+            <span id="Tv" class="b"></span><button id="Tworst">the worst future</button></div>
+        <div class="grid">
+            <div><canvas id="ski1" height="300"></canvas><p class="cap">Time runs right, in units of the price. Gold: the
+            rent paid until buying at s, then the price; red: the day the future stops. The dashed line is the writer's
+            corner, T = 1: before it renting is best, after it buying on the first day.</p></div>
+            <div><canvas id="ski2" height="300"></canvas><p class="cap">The worst ratio over every future against the
+            levels of s (each tick a doubling). It is 1 + max(s, 1/s), the same at s and 1/s, least at the corner: 2.</p></div>
+        </div>
+        <div class="read" id="skiR"></div>
+    </div>
+
+    <div class="panel" id="cowP">
+        <h2>Two-ray search</h2>
+        <div class="row"><label for="b">each leg b × the last</label><input id="b" type="range" min="1.2" max="6" step="0.01" value="2">
+            <span id="bv" class="b"></span><button id="b2">b = 2, r = 1</button></div>
+        <div class="row"><label for="d0">the first leg d₀ (the supplied scale, H)</label><input id="d0" type="range" min="-2" max="2" step="0.01" value="0">
+            <span id="d0v" class="b"></span></div>
+        <div class="row"><label for="x">the target, x</label><input id="x" type="range" min="-6" max="9" step="0.01" value="3.2">
+            <span id="xv" class="b"></span><button data-side="0">on the right</button><button data-side="1">on the left</button>
+            <button id="xworst">just past a turn</button></div>
+        <canvas id="cow1" height="320"></canvas><p class="cap">The two rays on the reader's lay of distance: in proportion
+        inside the first leg d₀ (the circle round the start), 1 + ln(x/d₀) past it, so every turn point sits ln b further out,
+        one level a turn. The path runs down the page, leg by leg, until it meets the target.</p>
+        <div class="grid">
+            <div><canvas id="cow2" height="280"></canvas><p class="cap">The ratio for every target on the lay, right (teal)
+            and left (violet). Inside d₀ behind the start it climbs without bound: the extra walking there is exactly 2d₀, an
+            amount. Past d₀ it stays under the dashed constant: a ratio.</p></div>
+            <div><canvas id="cow3" height="280"></canvas><p class="cap">The worst ratio against the levels of r, the
+            distance walked before a leg over the leg: 5 + 2(r + 1/r), the same at r and 1/r, 9 at the corner r = 1, b = 2.</p></div>
+        </div>
+        <div class="read" id="cowR"></div>
+    </div>
+    <p class="note">Related: <a href="dynamic-array.html">a dynamic array</a>, <a href="zoom.html">H is a zoom</a>,
+    <a href="h-limits.html">what is H?</a>, <a href="sweep-zero.html">counting from zero</a>. <a href="demos.html">All the demos</a>.</p>
+</main>
+<script>
+(function () {
+    'use strict';
+    const $ = id => document.getElementById(id), P = new URLSearchParams(location.search);
+    const st = { p: 'ski', ls: 0, lT: 0.5, b: 2, ld0: 0, lx: 3.2, side: 0, writer: false };
+
+    // ── ski rental, the price 1 ──────────────────────────────────────────────────────────────────────────────────────
+    function skiCost(s, T) {
+        const online = T < s ? T : s + 1, writer = Math.min(T, 1);
+        return { online, writer, ratio: online / writer };
+    }
+    const skiWorst = s => 1 + Math.max(s, 1 / s);
+    // the worst future, found by scanning stops on a fine grid of levels (not from the formula)
+    function skiWorstScan(s) {
+        let w = 0, at = 0;
+        for (let i = -4000; i <= 4000; i++) { const T = Math.pow(2, i / 400); const c = skiCost(s, T).ratio; if (c > w) { w = c; at = T; } }
+        const c = skiCost(s, s).ratio; if (c >= w) { w = c; at = s; }
+        return { worst: w, at };
+    }
+
+    // ── two-ray search ───────────────────────────────────────────────────────────────────────────────────────────────
+    function walk(b, d0, x, side, legs = 400) {
+        let cost = 0; const path = [];
+        for (let i = 0; i < legs; i++) {
+            const reach = d0 * Math.pow(b, i), sd = i % 2;
+            if (sd === side && reach >= x) { path.push({ side: sd, to: x, hit: true }); return { cost: cost + x, path, legs: i + 1 }; }
+            path.push({ side: sd, to: reach, hit: false }); cost += 2 * reach;
+        }
+        return { cost: Infinity, path, legs };
+    }
+    const cowForm = b => { const r = 1 / (b - 1); return { r, c: 1 + 2 * b * b / (b - 1), cr: 5 + 2 * (r + 1 / r) }; };
+    function cowWorst(b, d0 = 1, K = 40) {
+        let w = 0, at = 0;
+        for (let k = 0; k < K; k++) { const x = d0 * Math.pow(b, k) * (1 + 1e-12), q = walk(b, d0, x, k % 2).cost / x; if (q > w) { w = q; at = x; } }
+        return { worst: w, at };
+    }
+    // the reader's lay of distance with H = d0: in proportion inside, 1 + ln past
+    const lay = (x, d0) => x <= d0 ? x / d0 : 1 + Math.log(x / d0);
+
+    // ── drawing ──────────────────────────────────────────────────────────────────────────────────────────────────────
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth,
+            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * 0.75));
+        cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr);
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.font = '11px DM Mono, monospace'; return { g, w, h: hh };
+    }
+    const GOLD = '#d4a052', TEAL = '#8ce6cd', RED = '#d96e5b', VIO = '#b59cf0', INK = '#e6e4ee', DIM = '#8a8a96';
+    const sOf = () => Math.pow(2, st.ls), TOf = () => Math.pow(2, st.lT), d0Of = () => Math.pow(2, st.ld0), xOf = () => d0Of() * Math.pow(2, st.lx);
+    const fx = (v, n = 3) => !isFinite(v) ? '∞' : Math.abs(v) >= 1e4 || (Math.abs(v) < 1e-3 && v) ? v.toExponential(2) : (+v.toFixed(n)).toString();
+
+    function drawSki1() {
+        const { g, w, h } = fit($('ski1')); const s = sOf(), T = TOf(), c = skiCost(s, T);
+        const xmax = Math.max(2.4, s * 1.25, Math.min(T, 9) * 1.15), pad = 30, X = t => pad + (w - 2 * pad) * t / xmax;
+        const ymax = Math.max(s + 1, Math.min(T, xmax)) * 1.15, Y = v => h - 34 - (h - 70) * v / ymax;
+        g.strokeStyle = 'rgba(255,255,255,0.25)'; g.beginPath(); g.moveTo(pad, Y(0)); g.lineTo(w - pad, Y(0)); g.stroke();
+        for (let t = 0; t <= xmax; t += 1) { g.fillStyle = DIM; g.fillText(String(t), X(t) - 3, Y(0) + 14); }
+        // the writer's corner
+        g.strokeStyle = 'rgba(181,156,240,0.6)'; g.setLineDash([4, 3]); g.beginPath(); g.moveTo(X(1), Y(0)); g.lineTo(X(1), 18); g.stroke(); g.setLineDash([]);
+        g.fillStyle = VIO; g.fillText('T = 1, the corner', X(1) + 4, 46);
+        // online cost as the future runs: rent until s, a jump of the price at s
+        g.strokeStyle = GOLD; g.lineWidth = 2; g.beginPath(); g.moveTo(X(0), Y(0)); g.lineTo(X(Math.min(s, xmax)), Y(Math.min(s, xmax)));
+        if (s < xmax) { g.lineTo(X(s), Y(s + 1)); g.lineTo(X(xmax), Y(s + 1)); } g.stroke();
+        g.fillStyle = GOLD; g.fillText(`buy at s = ${fx(s)}`, Math.min(w - 110, X(s) + 4), Y(s + 1) - 6);
+        if (st.writer) { g.strokeStyle = VIO; g.lineWidth = 2; g.beginPath(); g.moveTo(X(0), Y(0)); g.lineTo(X(1), Y(1)); g.lineTo(X(xmax), Y(1)); g.stroke(); }
+        g.lineWidth = 1;
+        const tt = Math.min(T, xmax);
+        g.strokeStyle = RED; g.beginPath(); g.moveTo(X(tt), Y(0)); g.lineTo(X(tt), 18); g.stroke();
+        g.fillStyle = RED; g.fillText(T > xmax ? `stops at T = ${fx(T)} →` : `stops at T = ${fx(T)}`, Math.max(pad, Math.min(w - 130, X(tt) - 40)), 14);
+        const dot = (x, y, col) => { g.fillStyle = col; g.beginPath(); g.arc(x, y, 4.5, 0, 2 * Math.PI); g.fill(); };
+        dot(X(tt), Y(Math.min(c.online, ymax)), GOLD); if (st.writer) dot(X(tt), Y(c.writer), VIO);
+    }
+    function drawSki2() {
+        const { g, w, h } = fit($('ski2')); const s = sOf(), pad = 30;
+        const X = l => pad + (w - 2 * pad) * (l + 3) / 6, Y = v => h - 30 - (h - 60) * (v - 1) / 8;
+        g.strokeStyle = 'rgba(255,255,255,0.2)';
+        for (let l = -3; l <= 3; l++) { g.beginPath(); g.moveTo(X(l), Y(1)); g.lineTo(X(l), Y(9)); g.stroke(); g.fillStyle = DIM; g.fillText(l === 0 ? '1' : (l > 0 ? String(2 ** l) : '1/' + 2 ** -l), X(l) - 8, h - 12); }
+        for (let v = 2; v <= 9; v += 1) { g.fillStyle = DIM; g.fillText(String(v), 6, Y(v) + 4); }
+        g.strokeStyle = GOLD; g.lineWidth = 2; g.beginPath();
+        for (let i = 0; i <= 300; i++) { const l = -3 + 6 * i / 300, v = skiWorst(Math.pow(2, l)); i ? g.lineTo(X(l), Y(v)) : g.moveTo(X(l), Y(v)); } g.stroke();
+        g.strokeStyle = 'rgba(212,160,82,0.7)'; g.setLineDash([4, 3]); g.lineWidth = 1; g.beginPath(); g.moveTo(X(0), Y(1)); g.lineTo(X(0), Y(9)); g.stroke(); g.setLineDash([]);
+        g.fillStyle = GOLD; g.fillText('the corner, 2', X(0) + 5, Y(2) + 14);
+        const v = skiWorst(s); g.fillStyle = INK; g.beginPath(); g.arc(X(st.ls), Y(Math.min(9, v)), 5, 0, 2 * Math.PI); g.fill();
+        const m = skiWorst(1 / s); g.strokeStyle = INK; g.beginPath(); g.arc(X(-st.ls), Y(Math.min(9, m)), 5, 0, 2 * Math.PI); g.stroke();
+        g.fillStyle = DIM; g.fillText('filled: s; ring: 1/s', pad, 16);
+    }
+    function drawCow1() {
+        const { g, w, h } = fit($('cow1')); const b = st.b, d0 = d0Of(), x = xOf(), W = walk(b, d0, x, st.side);
+        const L = Math.max(lay(x, d0), ...W.path.map(p => lay(p.to, d0))) * 1.1 + 0.3;
+        const mid = w / 2, sc = (w / 2 - 20) / L, PX = (side, dist) => mid + (side === 0 ? 1 : -1) * sc * lay(dist, d0);
+        const top = 30, rows = W.path.length, dy = Math.min(26, (h - top - 30) / Math.max(1, rows));
+        // rays and the corner
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(20, top - 8); g.lineTo(w - 20, top - 8); g.stroke();
+        g.strokeStyle = 'rgba(212,160,82,0.5)'; g.setLineDash([3, 3]);
+        for (const sd of [0, 1]) { const p = PX(sd, d0); g.beginPath(); g.moveTo(p, top - 14); g.lineTo(p, h - 10); g.stroke(); }
+        g.setLineDash([]);
+        // turn points' levels
+        g.fillStyle = DIM;
+        for (let i = 0; i < Math.min(rows + 2, 60); i++) { const sd = i % 2, p = PX(sd, d0 * Math.pow(b, i)); if (p > 16 && p < w - 16) { g.fillRect(p - 1, top - 12, 2, 8); } }
+        g.fillStyle = GOLD; g.fillText('d₀', PX(0, d0) + 3, top - 16); g.fillText('d₀', PX(1, d0) - 16, top - 16);
+        g.fillStyle = INK; g.fillText('start', mid - 16, top - 16);
+        // the path
+        let y = top;
+        for (const [i, p] of W.path.entries()) {
+            const end = PX(p.side, p.to);
+            g.strokeStyle = p.hit ? TEAL : (i % 2 ? VIO : 'rgba(140,230,205,0.6)'); g.lineWidth = 2;
+            g.beginPath(); g.moveTo(mid, y); g.lineTo(end, y); g.stroke();
+            if (!p.hit) { g.strokeStyle = 'rgba(255,255,255,0.18)'; g.lineWidth = 1; g.beginPath(); g.moveTo(end, y); g.lineTo(end, y + dy); g.lineTo(mid, y + dy); g.stroke(); }
+            y += dy;
+        }
+        const tp = PX(st.side, x); g.fillStyle = RED; g.beginPath(); g.arc(tp, top - 8, 6, 0, 2 * Math.PI); g.fill();
+        g.fillText('target', Math.max(4, Math.min(w - 50, tp - 18)), top + 8 > h ? h - 4 : 18);
+    }
+    function drawCow2() {
+        const { g, w, h } = fit($('cow2')); const b = st.b, d0 = d0Of(), c = cowForm(b).c;
+        const Lmax = 1 + Math.log(Math.pow(2, 9)), mid = w / 2, sc = (w / 2 - 16) / Lmax, ymax = Math.max(12, c * 1.3);
+        const Y = v => h - 22 - (h - 40) * Math.min(v, ymax) / ymax;
+        g.strokeStyle = 'rgba(255,255,255,0.2)'; g.beginPath(); g.moveTo(10, Y(1)); g.lineTo(w - 10, Y(1)); g.stroke();
+        g.strokeStyle = 'rgba(212,160,82,0.6)'; g.setLineDash([4, 3]); g.beginPath(); g.moveTo(10, Y(c)); g.lineTo(w - 10, Y(c)); g.stroke();
+        for (const sgn of [1, -1]) { g.beginPath(); g.moveTo(mid + sgn * sc, Y(0)); g.lineTo(mid + sgn * sc, 14); g.stroke(); }
+        g.setLineDash([]);
+        g.fillStyle = GOLD; g.fillText(`worst ${fx(c, 3)}`, 12, Y(c) - 4);
+        for (const side of [0, 1]) {
+            g.strokeStyle = side ? VIO : TEAL; g.lineWidth = 1.5; g.beginPath(); let first = true;
+            for (let i = 1; i <= 700; i++) {
+                const L = Lmax * i / 700, xx = L <= 1 ? L * d0 : d0 * Math.exp(L - 1);
+                const q = walk(b, d0, xx, side).cost / xx, px = mid + (side ? -1 : 1) * sc * L;
+                first ? g.moveTo(px, Y(q)) : g.lineTo(px, Y(q)); first = false;
+            }
+            g.stroke();
+        }
+        const L = lay(xOf(), d0), q = walk(b, d0, xOf(), st.side).cost / xOf();
+        g.fillStyle = RED; g.beginPath(); g.arc(mid + (st.side ? -1 : 1) * sc * L, Y(q), 4.5, 0, 2 * Math.PI); g.fill();
+        g.fillStyle = DIM; g.fillText('left', 12, h - 6); g.fillText('right', w - 44, h - 6); g.fillText('d₀', mid + sc + 3, h - 6); g.fillText('d₀', mid - sc - 16, h - 6);
+    }
+    function drawCow3() {
+        const { g, w, h } = fit($('cow3')); const pad = 30, lr0 = -3, lr1 = 3;
+        const X = l => pad + (w - 2 * pad) * (l - lr0) / (lr1 - lr0), Y = v => h - 30 - (h - 60) * (v - 8) / 12;
+        g.strokeStyle = 'rgba(255,255,255,0.2)';
+        for (let l = lr0; l <= lr1; l++) { g.beginPath(); g.moveTo(X(l), Y(8)); g.lineTo(X(l), Y(20)); g.stroke(); g.fillStyle = DIM; g.fillText(l === 0 ? '1' : (l > 0 ? String(2 ** l) : '1/' + 2 ** -l), X(l) - 8, h - 12); }
+        for (let v = 9; v <= 20; v += 2) { g.fillStyle = DIM; g.fillText(String(v), 6, Y(v) + 4); }
+        g.strokeStyle = GOLD; g.lineWidth = 2; g.beginPath();
+        for (let i = 0; i <= 300; i++) { const l = lr0 + (lr1 - lr0) * i / 300, r = Math.pow(2, l), v = 5 + 2 * (r + 1 / r); i ? g.lineTo(X(l), Y(Math.min(20, v))) : g.moveTo(X(l), Y(Math.min(20, v))); } g.stroke();
+        g.strokeStyle = 'rgba(212,160,82,0.7)'; g.setLineDash([4, 3]); g.lineWidth = 1; g.beginPath(); g.moveTo(X(0), Y(8)); g.lineTo(X(0), Y(20)); g.stroke(); g.setLineDash([]);
+        g.fillStyle = GOLD; g.fillText('r = 1, b = 2: 9', X(0) + 5, Y(9) + 14);
+        const f = cowForm(st.b), l = Math.log2(f.r);
+        if (l >= lr0 && l <= lr1) { g.fillStyle = INK; g.beginPath(); g.arc(X(l), Y(Math.min(20, f.cr)), 5, 0, 2 * Math.PI); g.fill(); }
+        g.fillStyle = DIM; g.fillText('r = walked before ÷ next leg', pad, 16);
+    }
+    function hud() {
+        const s = sOf(), T = TOf(), c = skiCost(s, T), wst = skiWorstScan(s);
+        $('sv').textContent = fx(s); $('Tv').textContent = fx(T);
+        $('skiR').innerHTML = `<span class="g">Spent</span> before buying: s = ${fx(s)} of the price; <span class="r">committed</span> on buying: the price, 1.\n`
+            + `This future (T = ${fx(T)}): you pay ${fx(c.online)}${st.writer ? `, the <span class="w">writer</span>, who knew T, pays ${fx(c.writer)}` : ''}; ratio <span class="b">${fx(c.ratio)}</span>.\n`
+            + `The worst future, found by scanning every stop: ${fx(wst.worst, 4)}, at T = ${fx(wst.at)}, just as you buy. `
+            + `1 + max(s, 1/s) = ${fx(skiWorst(s), 4)}; at 1/s = ${fx(1 / s)} it is ${fx(skiWorst(1 / s), 4)}, the same.\n`
+            + (s < 1 ? 'Buying early, the risk is the spent side: you buy and the skiing stops.' : s > 1 ? 'Buying late, the risk is the committed side: you rent on past the price.' : 'At the corner neither side is the larger: the worst is 2, the least.')
+            + `\nInside the corner (T ≤ 1) the writer rents all the way; past it the writer buys on day one and every later stop costs it the same 1: the far field is flat.`;
+        const b = st.b, d0 = d0Of(), x = xOf(), W = walk(b, d0, x, st.side), f = cowForm(b), cw = cowWorst(b, d0);
+        $('bv').textContent = fx(b); $('d0v').textContent = fx(d0); $('xv').textContent = `${fx(x)} (${fx(x / d0)} d₀)`;
+        const near = x < d0;
+        $('cowR').innerHTML = `Walked ${fx(W.cost)} in ${W.legs} legs to a target ${fx(x)} away${st.writer ? `; the <span class="w">writer</span>, who knew where, walks ${fx(x)}` : ''}: ratio <span class="b">${fx(W.cost / x)}</span>, extra ${fx(W.cost - x)}.\n`
+            + `r = (walked before a leg) ÷ (that leg) = 1/(b − 1) = ${fx(f.r)}; the worst ratio 1 + 2b²/(b − 1) = 5 + 2(r + 1/r) = ${fx(f.cr, 4)}`
+            + `; found by walking to targets just past each turn: ${fx(cw.worst, 4)}.\n`
+            + (near ? (st.side === 1 ? `Near field: the target is inside d₀ behind the start. The extra walking is exactly 2d₀ = ${fx(2 * d0)}, an amount, so the ratio grows without bound as x shrinks.`
+                : `Near field: the target is inside the first leg, found on the way out: no extra walking.`)
+                : `Far field: past d₀ the ratio stays under ${fx(f.c, 4)} whatever the distance; each turn is ln b = ${fx(Math.log(b))} further out on the lay, one level a turn.`)
+            + `\nd₀ is the supplied scale, the H: changing it moves where the turns fall and the near amount 2d₀, never the far constant.`;
+    }
+    function draw() {
+        $('skiP').style.display = st.p === 'ski' ? '' : 'none'; $('cowP').style.display = st.p === 'cow' ? '' : 'none';
+        if (st.p === 'ski') { drawSki1(); drawSki2(); } else { drawCow1(); drawCow2(); drawCow3(); }
+        hud();
+        $('s').value = st.ls; $('T').value = st.lT; $('b').value = st.b; $('d0').value = st.ld0; $('x').value = st.lx;
+        document.querySelectorAll('[data-p]').forEach(e => e.classList.toggle('on', e.dataset.p === st.p));
+        document.querySelectorAll('[data-side]').forEach(e => e.classList.toggle('on', +e.dataset.side === st.side));
+        $('writer').classList.toggle('on', st.writer);
+    }
+    $('s').oninput = e => { st.ls = +e.target.value; draw(); };
+    $('T').oninput = e => { st.lT = +e.target.value; draw(); };
+    $('b').oninput = e => { st.b = +e.target.value; draw(); };
+    $('d0').oninput = e => { st.ld0 = +e.target.value; draw(); };
+    $('x').oninput = e => { st.lx = +e.target.value; draw(); };
+    $('s1').onclick = () => { st.ls = 0; draw(); };
+    $('b2').onclick = () => { st.b = 2; draw(); };
+    $('Tworst').onclick = () => { st.lT = Math.log2(skiWorstScan(sOf()).at); draw(); };
+    $('xworst').onclick = () => {
+        // the turn point on the target's side nearest its present distance, and the target just past it
+        const b = st.b, d0 = d0Of(); let k = st.side, best = k;
+        for (; k < 80; k += 2) if (Math.abs(Math.log(d0 * Math.pow(b, k)) - Math.log(xOf())) < Math.abs(Math.log(d0 * Math.pow(b, best)) - Math.log(xOf()))) best = k;
+        st.lx = Math.log2(Math.pow(b, best) * 1.0001); draw();
+    };
+    $('writer').onclick = () => { st.writer = !st.writer; draw(); };
+    document.querySelectorAll('[data-p]').forEach(e => e.onclick = () => { st.p = e.dataset.p; draw(); });
+    document.querySelectorAll('[data-side]').forEach(e => e.onclick = () => { st.side = +e.dataset.side; draw(); });
+    window.addEventListener('resize', draw);
+    function set(o) {
+        if ('p' in o) st.p = o.p; if ('s' in o) st.ls = Math.log2(+o.s); if ('T' in o) st.lT = Math.log2(+o.T);
+        if ('b' in o) st.b = +o.b; if ('d0' in o) st.ld0 = Math.log2(+o.d0); if ('x' in o) st.lx = Math.log2(+o.x / d0Of());
+        if ('side' in o) st.side = +o.side; if ('writer' in o) st.writer = !!o.writer;
+        draw(); return state();
+    }
+    function state() {
+        const s = sOf(), T = TOf(), b = st.b, d0 = d0Of(), x = xOf(), W = walk(b, d0, x, st.side);
+        return { p: st.p, s, T, ski: skiCost(s, T), skiWorst: skiWorstScan(s).worst, b, d0, x, side: st.side,
+            walked: W.cost, legs: W.legs, ratio: W.cost / x, extra: W.cost - x, cow: cowForm(b), writer: st.writer };
+    }
+    if (P.get('p') === 'cow') st.p = 'cow';
+    const num = (k, lo, hi) => P.has(k) && isFinite(+P.get(k)) ? Math.max(lo, Math.min(hi, +P.get(k))) : null;
+    { const v = num('s', -3, 3); if (v !== null) st.ls = v; } { const v = num('T', -4, 3.3); if (v !== null) st.lT = v; }
+    { const v = num('b', 1.2, 6); if (v !== null) st.b = v; } { const v = num('d0', -2, 2); if (v !== null) st.ld0 = v; }
+    { const v = num('x', -6, 9); if (v !== null) st.lx = v; } if (P.get('side') === '1') st.side = 1; if (P.get('writer') === '1') st.writer = true;
+    draw();
+    window.__onlineCorner = { skiCost, skiWorst, skiWorstScan, walk, cowWorst, cowForm, lay, set, state };
+})();
+</script>
+</body>
+</html>

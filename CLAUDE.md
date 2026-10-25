@@ -300,6 +300,20 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Scale the world k; H for known length. `?K=&t=&kind=index|values|constant|length&H=<log10 H>&k=<log10 k>`; hook
   `window.__arraySweeps` (`turnIndex`, `centralIndex`, `bounds`, `middles`, `countIndex`, `shapeValues`, `read`, `set`,
   `state`). Not in the flying page.
+- `online-corner.html`, `dynamic-array.html`: **online decisions** (25 Oct 2026, Tom: "could you create two demos, one for
+  each, to show them in action with our framing."; SPN R488–R491; ONL), standalone pages, plain canvas, one for OFS
+  Appendix A's "Online decisions", one for the CS companion §6. `online-corner.html`: ski rental (buy once the rent paid is
+  s × the price; the future's stop T; the worst over every T, scanned, 1 + max(s, 1/s) on the levels of s, least at the
+  corner) and two-ray search (legs d₀·bⁱ alternating sides, drawn on the reader's lay with H = d₀; the ratio for every
+  target, 2d₀ of extra walking behind the start, under 5 + 2(r + 1/r) past d₀; the worst against the levels of r); the
+  writer's cost on demand. `?p=ski|cow&s=<log2>&T=<log2>&b=&d0=<log2>&x=<log2 x/d₀>&side=0|1&writer=1`; hook
+  `window.__onlineCorner` (`skiCost`, `skiWorst`, `skiWorstScan`, `walk`, `cowWorst`, `cowForm`, `lay`, `set`, `state`).
+  `dynamic-array.html`: the past written (size, copies), the future situated (push, pop, a random future, the worst one);
+  g 1.5–4; shrink at 1/g² (the band), 1/g (the thrash) or never; C₀ the supplied scale; panels: the array, the load on the
+  levels with the band and its landing at 1/g, copies per operation, capacity against size (C₀ the near field, one
+  reallocation a level past it), copying alone against time × space. `?g=&rule=band|thrash|never&C0=&p=&n=&play=1`; hook
+  `window.__dynamicArray` (`make`, `push`, `pop`, `step`, `state`, `thrash`, `staircase`, `product`, `copiesAlone`, `set`).
+  The companion links both. Not in the flying page.
 - `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
   "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
   carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
@@ -690,7 +704,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, arrays on the sweeps, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, arrays on the sweeps, online decisions at the corner and a dynamic array, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -2560,6 +2574,13 @@ In short:
   55. **array-sweeps.html:** at K = 8 the readings 0.1 … 1000 at places 0, 2, 4, 5, 6, 7, 7 and the horizon in the last; the
       central sweep's index the same place at every θ; scaling the world moves no index; the values' log-shape unmoved by
       k = 10³, its mean by ln k; the writer's count index 0, 4, 7 against the turn index 4, 6, 7 at H = 10 and 1, 4, 5 at 50.
+
+  56. **online-corner.html:** ski rental's worst, scanned over every stop, 1 + max(s, 1/s), the same at s and 1/s, 2 at the
+      corner; the two-ray search walked to 10, 9, 10, 35/3 at b = 3/2, 2, 3, 4, each 5 + 2(r + 1/r); behind the start the
+      extra walking exactly 2d₀, ahead none; the far constant the same at d₀ = 1 and 4.
+  57. **dynamic-array.html:** in the band every resize lands at ½ (g = 2); shrinking at 1/g a push and a pop at the edge copy
+      2N; pushes from C₀ make ⌈log₂(N/C₀)⌉ reallocations, doubling C₀ one fewer, none inside C₀; copying alone 3, 2, 1.5,
+      times the waste 4.5, 4, 4.5, 5.33, least at g = 2; a random future under 2 copies an operation.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

@@ -505,6 +505,10 @@ the paper's shape.
   ALG ≤ c·OPT + α, as §9's grain is absolute inside the corner and relative past it. The scale is a zoom: doubling C₀
   takes one reallocation off and changes no far constant.
 
+Two pages run these on the public site: a dynamic array as it grows and shrinks under an unknown future
+(https://reportbase.github.io/wander/dynamic-array.html), and ski rental and two-ray search at the corner
+(https://reportbase.github.io/wander/online-corner.html).
+
 **Laid on the sweeps, in code.** With K places on the quarter turn, the index of a direction (h, v) is its share of the
 turn times K:
 
