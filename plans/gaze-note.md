@@ -95,3 +95,21 @@ needed only roughly, is carried in."
   reworded (point 1).
 - `flight.html` draws the 1 + ln lay of ground distance at bottom left; the picture's own lay could go beside it.
 - Whether the levels on angle from the gaze replace, or stand beside, the levels on distance in §8.
+
+## Into OFS (R497)
+
+Tom: "the mercator map gives equal attention to far and near fields, it has not focal point.", then "update that mercator
+map section with our description in this chat." OFS §6 now has "What Mercator's map is, and what it is not" after "An
+older instance", a column of room per unit of ln x in "One figure, three rulers", and §7.1's "Mercator's choice" says
+"in its drawing" and "It is not the reader's view". The room per level, exact (`runs/ofs/rulers.py` section 8):
+
+| ruler | room per unit of ln x | focus |
+|---|---|---|
+| x, the writer's line | x | none; each level more than the last |
+| θ = arctan x, the turn | ½·sech(ln x) | at the corner, ½; total π/2 |
+| ζ = asinh x, Mercator's height | x/√(1 + x²) | none; every far level 1 (ln 2 a doubling) |
+
+From ChatGPT's reply, taken: "The map represents the field. The reader observes from somewhere within it." (closing the
+new paragraph), and the map's focus being its reader's, not the projection's. Not taken: "the near field is the focus"
+(the focus is at the corner, and near and far are both fields) and "the task decides the allocation" (R496: held alike).
+The draft paragraph above (gaze, FOV) is still unplaced; the first open point is answered by R497.

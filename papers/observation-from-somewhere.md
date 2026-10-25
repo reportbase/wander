@@ -1377,6 +1377,23 @@ keeps the division's local scale 1/h but accumulates it, and so lays the same re
 and logarithmically past it. Latitude is the Gudermannian of the map's height, φ = gd(y). It is the oldest instance we
 know of the two address spaces laid out.
 
+**What Mercator's map is, and what it is not.** The map is a chart of the whole globe, drawn once to be read from
+anywhere on it. Past the corner it lays every level alike, each doubling of v/h the same height, about ln 2, and so it
+favours no place: it has no focus. Where a navigator's attention falls on it is the navigator's, not the projection's.
+A reader looking out from a standpoint is laid the other way on both counts.
+- *Its picture is the turn.* Level ground seen from an eye one height H above it appears at arctan(H/d) below the
+  horizon at distance d: 26.6°, 14.0° and 7.1° at 2H, 4H and 8H. Each doubling past the corner takes half the room of
+  the last, the far field in proportion in h/v (θ ≈ π/2 − h/v), not in levels.
+- *Its turn has a focus.* The turn's room per level is greatest at the corner and falls alike toward home and toward
+  the horizon (the table below). Turning the head carries the corner, and the most room with it, to whatever is looked
+  at; the near and the far field are held alike about it, each with enough to choose where to look next.
+- *Mercator's levels belong elsewhere in its account.* They are distance laid by a count of addresses (Proposition 4),
+  where every level is held alike because none is known beforehand to matter more, and direction laid about a point of
+  gaze. How many levels off a thing lies, a day's walk or a month's, is not in the picture at all: it is the thing's
+  size against H, which no reading fixes (Proposition 8) and which is carried in.
+
+The map represents the field; the reader observes from somewhere within it.
+
 **One figure, three rulers.** The circle, the number line and Mercator's height fit in one figure, and the figure shows
 what each of them does with the corner. Draw the unit circle, the tangent line at A = (1, 0), and the unit
 hyperbola u² − w² = 1, which touches the same line at A (u along the axis, w sideways). A reading x = v/h sits on the
@@ -1388,16 +1405,18 @@ hyperbola's point (cosh ζ, sinh ζ) level with T, give
 and each angle is twice the area of its sector from A: the circle's (Archimedes) and the hyperbola's (Saint-Vincent 1647; de Sarasa 1649). So one reading is
 laid three ways, each an exact function of the others:
 
-| ruler | room for the near field, x ≤ 1 | room for the far field, x ≥ 1 | the corner x = 1 | the reciprocal x ↦ 1/x |
-|---|---|---|---|---|
-| x itself, the writer's number line (§9) | 1, in proportion | unbounded, in proportion | a point | not a reflection of the ruler |
-| θ = arctan x, the turn | 45° | 45° | the middle | θ ↦ π/2 − θ, a reflection |
-| ζ = asinh x, the hyperbolic angle, Mercator's height | asinh 1 ≈ 0.881, nearly in proportion | unbounded, about ln 2 a doubling | a point; proportion gives way to levels around it, gradually | no reflection of the ruler |
+| ruler | room for the near field, x ≤ 1 | room for the far field, x ≥ 1 | room per level, per unit of ln x | the corner x = 1 | the reciprocal x ↦ 1/x |
+|---|---|---|---|---|---|
+| x itself, the writer's number line (§9) | 1, in proportion | unbounded, in proportion | x, more each level than the last | a point | not a reflection of the ruler |
+| θ = arctan x, the turn | 45° | 45° | ½·sech(ln x), most at the corner, falling alike on both sides | the middle | θ ↦ π/2 − θ, a reflection |
+| ζ = asinh x, the hyperbolic angle, Mercator's height | asinh 1 ≈ 0.881, nearly in proportion | unbounded, about ln 2 a doubling | x/√(1 + x²), rising to 1, every far level alike | a point; proportion gives way to levels around it, gradually | no reflection of the ruler |
 
 So the one figure draws the near field and the far field three ways. On the turn they are halves, mirrored by the
 reciprocal. On the hyperbolic angle they are the two address spaces above, proportion giving way to levels. On the
-writer's line there is no split, only the point. The table "drawing of the same addresses" above compares the fisheye
-and the two lays in the same terms.
+writer's line there is no split, only the point. Only the turn has a focus: its room per level is greatest at the
+corner, ½ a radian per unit of ln x, and adds up over all the levels to the quarter turn; the hyperbolic angle gives
+every far level the same room and has no greatest, and the writer's line gives each level more than the last. The
+table "drawing of the same addresses" above compares the fisheye and the two lays in the same terms.
 
 The third is the reader's lay of Proposition 4 made smooth. ζ ≈ x inside the corner and ζ ≈ ln 2x past it, and the
 lay (x, then 1 + ln x) never exceeds it by more than 1 − ln 2 ≈ 0.307, approached far out (0.119 at the corner).
@@ -1659,8 +1678,10 @@ scale sec φ, which Mercator lets grow toward the poles. Both are zooms, which c
 the distinction this paper draws throughout: the drawing V = H is required for the turn and its readings, and the true
 size is one number the readings do not fix.
 
-Mercator's choice (keep the angles, give up the areas) is the one this paper's reader makes: it keeps the drawing and
-leaves the size to be estimated. The familiar complaint about his map, that it draws Greenland as large as Africa, is a
+Mercator's choice (keep the angles, give up the areas) is the one this paper's reader makes in its drawing: it keeps
+V = H and leaves the size to be estimated. It is not the reader's view. The chart lays the far field in levels, all
+alike, with no focus; the reader's turn is centred on what it looks at, its far field in proportion (§6, "What
+Mercator's map is, and what it is not"). The familiar complaint about his map, that it draws Greenland as large as Africa, is a
 complaint about the zoom, not about the drawing.
 
 The two pictures meet on a chart. A lighthouse charted on Mercator's map is drawn true at every latitude. On a plate

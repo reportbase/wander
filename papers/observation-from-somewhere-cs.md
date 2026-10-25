@@ -723,6 +723,14 @@ proportion inside the corner and about ln 2 a doubling past it: the logarithmic 
 because only its range is fixed by the geometry. A measure uniform in x or in ζ needs a range given beforehand, an
 amount, and that range decides where the middle falls.
 
+Only the turn has a focus. Its room per unit of ln x is ½·sech(ln x), most at the corner and falling alike on both
+sides; ζ gives every far level the same room, about ln 2 a doubling, and favours none; x gives each level more than the
+last. So Mercator's map, a chart of the whole globe, lays the far field in levels all alike and has no focus: where its
+reader looks is the reader's. A picture seen from a standpoint is the turn instead, its far field in proportion in h/v
+(each doubling half the room of the last), centred on whatever the corner is turned to. The levels belong to distance
+counted by a fixed number of addresses, where no level is known beforehand to matter more. The map represents the field;
+the reader observes from somewhere within it.
+
 ## 9. Level of detail, and H as a zoom
 
 **The count is the level of detail.** The forms of the two address spaces are fixed; their counts are not. Laying the
