@@ -1,0 +1,109 @@
+# ONL: online decisions read as the reader's geometry
+
+*25 October 2026. Tom: "its interesing to frame a dynamic array as a situated observer."; "a dynamic array is grows and
+shrinks, but you you know its size at any point in time. however, it could grow or shrink unknowably."; "I wonder if our
+framing would offer a geometric insight into those patterns and why they work."; "i'm interested if it helps Ofs and the
+geometry."; "does it say anything about the near and far fields"; then "yes" to this plan. Exact arithmetic (fractions)
+and one literature search; no physics, no page.*
+
+## The reading, before any run
+
+An online decision is made now, with the future unknown. The *offline* optimum knows the whole sequence: the writer. The
+online algorithm does not: a reader situated in time, its standpoint "now", the unknown future the other party whose
+breadth it never reads. A dynamic array is a writer of its past (its size now is an amount, exactly held) and situated
+about its future (it may grow or shrink without bound, and cannot know which).
+
+Three claims, each to be checked:
+1. **The corner.** Where the decision trades an amount already sunk against an amount about to be committed, and the
+   future charges for whichever turns out larger, the worst case depends only on their ratio r and is reciprocal-symmetric,
+   f(r) = f(1/r). So the best place to stand is the corner, r = 1 (OFS Proposition 13's median of the bounds, in time).
+2. **The levels.** Where the unknown is a scale (a distance, a final size), a strategy with the same guarantee at every
+   scale steps by a fixed ratio, so its turn points are a geometric sequence: the reader's levels from dκ/κ (OFS §2, §8).
+   The ratio is free unless a cost is added; where a cost is added and it is of the sunk-against-committed kind, the corner
+   fixes the ratio (SPN Proposition D.1: other bases need an added measure).
+3. **Near and far.** Each such algorithm needs one chosen scale, its H (the first leg, the start capacity, the price), and
+   without it the guarantee fails near home (OFS: H of 0 loses what is read). Inside the corner its guarantee is absolute (a
+   fixed amount, set by H); past it, relative (a fixed ratio). This is OFS §8's "detail absolute inside the corner,
+   relative past it" as a cost bound. H is a zoom: it moves where the levels fall, not the far-field constant.
+
+## Known beforehand
+
+These are classical and are not tested as new:
+- Competitive analysis (Sleator and Tarjan 1985; Karlin, Manasse, Rudolph and Sleator 1988; Borodin and El-Yaniv 1998).
+  An algorithm is c-competitive if ALG ≤ c·OPT + α for every input; the additive constant α is in the definition.
+  *So claim 3's split is already the definition's two terms; what would be ours is only that α is set by a chosen H and
+  that the split falls at the corner.*
+- Ski rental: rent until the rent paid equals the price, then buy, 2-competitive (2 − 1/B in whole days); randomized,
+  e/(e − 1) (Karlin, Manasse, McGeoch and Owicki 1994).
+- The cow path (linear search on two rays): doubling turn points give 9, optimal among deterministic strategies (Beck and
+  Newman 1970; Baeza-Yates, Culberson and Rawlins 1993), assuming the target is at least a unit away.
+- Table expansion and contraction (Cormen et al., §17.4): double at load 1, halve at load ¼, amortized O(1); halving at ½
+  thrashes. Geometric growth by g copies under gN/(g − 1) in all.
+- "Each doubling step costs as much as all before it" is folklore of the doubling trick.
+- MOT run 2 (`plans/mot-plan.md`): a quantity unchanged by swapping its pair has f′(1) = 0 at the corner.
+- Claude's checks in conversation (25 Oct, exact fractions): the cow path's 1 + 2b²/(b − 1) equals 5 + 2(r + 1/r) with
+  r = 1/(b − 1) at b = 3/2, 2, 3, 4 (10, 9, 10, 35/3); ski rental's worst ratio is 1 + max(s, 1/s) at s = ½, 1, 2 (3, 2,
+  3); the dynamic array's past copying over the new copy tends to 1/(g − 1). These are stated here, so they are not
+  predictions.
+
+## Predictions
+
+*Each with its kill condition. Written before `runs/onl/onl.py` exists.*
+
+- **O1, ski rental at the corner.** Continuous: buying after paying sB in rent has worst ratio exactly 1 + max(s, 1/s),
+  least at s = 1 and the same at s and 1/s for every rational s tried. Whole days, price B: buying on day B gives
+  2 − 1/B, the least over every day of buying, for B = 1 … 50. *Killed* if any tried s breaks the symmetry or any B has a
+  better day than B.
+- **O2, the cow path's 2 is the corner.** With first leg d₀ = 1 and turn points bᵏ alternating sides, the supremum of
+  (distance walked)/(distance to target) over targets x ≥ 1 equals 1 + 2b²/(b − 1) = 5 + 2(r + 1/r), approached just past
+  a turn point and not attained, for b = 3/2, 2, 3, 4 (computed by the walk, not the formula). Least at r = 1 (b = 2),
+  9. *Killed* if the walk's supremum differs from the formula at any b.
+- **O3, near and far on the cow path.** For targets 0 < x < 1 behind the start, the ratio is unbounded as x → 0, and the
+  excess walking (distance walked − x) is exactly 2d₀ behind the start and 0 ahead of it (a fixed amount). For x ≥ d₀ the excess is at most
+  (c − 1)·x with c the O2 constant (a fixed ratio). Doubling d₀ leaves the far-field constant unchanged and doubles the
+  near-field bound. *Killed* if the near-field excess grows with x → 0 or the far constant moves with d₀.
+- **O4, the dynamic array's band.** Grow by g at load 1, shrink by g at load 1/g²: both resizes land at load 1/g, the
+  geometric middle of [1/g², 1], for g = 3/2, 2, 3, 4. Shrinking at 1/g instead: alternating push and pop at the boundary
+  costs at least N element copies per pair of operations, for N up to 2¹⁶. Over 10⁵ seeded random pushes and pops (several
+  mixes, and runs of pushes then pops), at g = 2 the copies per operation never exceed 2 (Cormen et al.'s amortized cost
+  3 per operation, less the operation's own 1); at the other g, the copies per operation are bounded by one constant for
+  every N from 2⁸ to 2¹⁶. *Killed* if either resize lands elsewhere,
+  shrinking at 1/g does not thrash, or any sequence breaks the bound.
+- **O5, the array's near and far.** With start capacity C₀ and never shrinking below it: for N ≤ C₀ no copying at all
+  and the waste (capacity − size) at most C₀ slots (absolute); past C₀, reallocations number ⌈log_g(N/C₀)⌉, one a level,
+  and the waste at most a factor g² of the size (relative, g without shrinking). Doubling C₀ shifts the reallocations by
+  one level and changes no far-field constant. *Killed* if any count or bound fails.
+- **O6, which problems reduce.** Written as a worst case over the unknown future in one ratio r of two amounts:
+  ski rental, the cow path and the dynamic array's past/new copying reduce to a reciprocal-symmetric f(r). Predicted
+  *not* to reduce: randomized ski rental (e/(e − 1), not at a corner), paging (LRU's k, no sunk-against-committed ratio),
+  online bin packing (First Fit's 1.7), and exponential (galloping) search, whose leading cost 1 + 1/log₂ b falls as b
+  grows and has no interior corner. *Killed* if one predicted to reduce does not, or one predicted not to does.
+- **O7, the time-times-space reason for 2.** For geometric growth without shrinking, copying per element (1 + r) times
+  worst waste factor (1 + 1/r), r = 1/(g − 1), is 2 + r + 1/r, least at g = 2. This objective is Claude's choice, not
+  the problem's; the test is only of the algebra. *Killed* if the product computed from the simulated array differs.
+
+## The search
+
+A fresh agent, given the three claims (not the predictions), searches for prior statements:
+- S1: competitive ratios written as a reciprocal-symmetric function of a sunk-to-committed ratio, or break-even read as
+  a fixed point of an exchange.
+- S2: the cow path's 9 written in r = (walked before)/(next leg), or b = 2 derived as "each leg equals all before it".
+- S3: the additive constant α tied to a chosen unit or scale (a minimum distance, an initial capacity), with the
+  additive/multiplicative split read as near/far.
+- S4: online algorithms framed as situated observers, or offline/online as writer/reader, in any field.
+
+Predicted before the search: S1 and S2 found in part (break-even and the doubling folklore are common, the symmetric
+form in r rarer); S3 found as the definition's α and as "assume distance ≥ 1", not read as near/far; S4 not found.
+Each source to be seen in full or marked as seen only as a search result.
+
+## What would follow
+
+If the runs stand and the search does not find the reading: one paragraph in OFS Appendix A, "Online decisions: the
+corner and the near field in time" (the corner as the best place to stand, the 2 fixed only by a cost, absolute inside
+and relative past, pointing to Proposition 13 and §8), and a section in the CS companion (the dynamic array as a writer
+of its past and situated about its future). Not OFS's body: an online algorithm is a reader's decision, and OFS keeps
+the reader's acts out of its body (R455). Tom rules.
+
+## Runs
+
+*(none yet)*

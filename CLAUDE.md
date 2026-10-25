@@ -2090,6 +2090,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `plans/rea/linewidth-note.md`, the attribution as the error (numbers kept, attribution corrected), ChatGPT's comments
   (generate or reveal; reconstruct the inference), the pole revealed and the Lorentzian its trace on the reader's line;
   the run not taken.
+  `onl-plan.md` (25 Oct; SPN R488; Tom: "its interesing to frame a dynamic array as a situated observer.", then "yes"):
+  online decisions read as the reader's geometry, the offline optimum the writer, a dynamic array a writer of its past and
+  situated about its future. Claims: a sunk-against-committed worst case reciprocal-symmetric in one ratio, so the corner
+  (ski rental, the cow path's 2); an unknown scale gives the levels; a chosen H, absolute inside the corner and relative
+  past it (the additive α and ratio c). Predictions O1–O7 (exact, `runs/onl/`) and a search S1–S4 written first; not run.
   `lgo-plan.md` (+ `runs/lgo/lgo.py`, `lgo2.py`, 23 Oct; SPN R468; Tom, of another session's `cauchy_test.py`: "lets complete
   those tests, through the lense of our mathmatical framework."): LIGO H1 and L1 whitened noise, GWOSC open data (gwosc.org's
   chain needs certifi's bundle joined to the proxy's; sha256s in the plan). The old Cauchy-over-Gaussian at N = 1 is the
