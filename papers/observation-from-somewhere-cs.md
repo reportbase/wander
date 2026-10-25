@@ -796,7 +796,8 @@ whatever N.
 
 **The corner follows the focus.** H is the reader's choice, and on the turn's addresses a cell's width relative to its
 distance is (π/2K)(s + 1/s), least at s = 1: the finest relative grain is at the corner, so the corner goes on what is
-looked at. Near and far are then nearer and farther than the focus, held alike, since the next look may fall on either
+looked at: the corner is the addresses' median, their finest relative grain and the reciprocal's fixed point, the
+roles a focus wants. Near and far are then nearer and farther than the focus, held alike, since the next look may fall on either
 side; their job is to show where to look next. Turning carries the corner in direction, designating the focus puts it
 at the corner of distance, and how far the focus really is (a day's walk or a month's) is its size against H, carried
 in. The fields are cheap: with cells no wider than δ across a focus of extent F and cells within a factor ρ past it,

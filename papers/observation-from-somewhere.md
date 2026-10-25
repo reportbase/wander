@@ -2367,7 +2367,11 @@ relative grain is at the corner, and a reader should put the corner on what it i
 nearer than and farther than that, and the two are held alike, since the next look may fall on either: the reader does
 not know on which side of the corner the next thing will be, and the exchange (§2) favours neither. The rest of the
 field is not lost. Every direction is still held, coarser away from the corner, which is enough to show that something
-is there and where to look next; moving the corner there is a new zero (§2).
+is there and where to look next; moving the corner there is a new zero (§2). So the corner's roles are the ones a
+focus wants: the median of the addresses, half on either side (Proposition 5(d)); their finest relative grain; and the
+reciprocal's fixed point (Proposition 1), the one reading the exchange leaves where it is. In three dimensions the same
+holds at the triple corner [1 : 1 : 1], down which the wedge is seen from home, every pair's corner a median through it
+(Proposition 5(e)). This is what a reader should do with its corner, not a claim about what any eye does.
 - *Two corners, both free.* Turning the head carries the corner in direction to what is looked at, which is then read
   at the finest grain, with no distance (a turn in place gives no parallax, §11). Designating it draws it at H, which
   puts it at the corner of distance too, as the mountain is drawn equal to the thumb (§10).

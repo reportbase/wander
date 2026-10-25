@@ -2149,6 +2149,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Placed (R498; Tom: "place the gaze paragraph in ofs"): OFS §8 "The corner follows the focus" after "One K, in direction
   and in distance" (the turn's relative cell least at the corner; near and far held alike; two corners, both free; how
   far is the sizing, carried in; FOV's least count; levels on the gaze's angle need no amount); the companion's §9 too.
+  Then (R499; Tom: "if the corner is our gaze point, every thing does seem to fall into place nicely.", "yes, do both."):
+  the corner's roles are a focus's (the median, the finest relative grain, the reciprocal's fixed point), in 3D the triple
+  corner; a "should", not a claim about eyes. One sentence in OFS §8's paragraph, one clause in the companion.
   Then (SPN R496; Tom: "so it is logical that a reader would give benefit from equal attention to the near and far
   fields."): turning moves the direction corner, designating the distance corner, both free; how far the focus is is
   the sizing, only as levels, carried in; the fields need only direction grain, held alike near and far.
