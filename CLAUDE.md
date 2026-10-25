@@ -2152,6 +2152,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Then (R499; Tom: "if the corner is our gaze point, every thing does seem to fall into place nicely.", "yes, do both."):
   the corner's roles are a focus's (the median, the finest relative grain, the reciprocal's fixed point), in 3D the triple
   corner; a "should", not a claim about eyes. One sentence in OFS §8's paragraph, one clause in the companion.
+  Then (R500; Tom: "how do we prove the focus point is the corner", "Yes"): OFS §8 Corollary 6.1 "the corner is the best
+  focus" (grain, the reciprocal's fixed point, least expected travel to the next look on every ruler, a lopsided law moving
+  it to its median), checked in `runs/ofs/focus.py`; the focus at the corner itself a construction, not a theorem.
   Then (SPN R496; Tom: "so it is logical that a reader would give benefit from equal attention to the near and far
   fields."): turning moves the direction corner, designating the distance corner, both free; how far the focus is is
   the sizing, only as levels, carried in; the fields need only direction grain, held alike near and far.

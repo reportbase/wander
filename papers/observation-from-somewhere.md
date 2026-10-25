@@ -2365,7 +2365,8 @@ then enters only as the share each address holds, which is payload (Theorem 6(a)
 On the turn's addresses a cell's width relative to its distance is (π/2K)(s + 1/s), least at s = 1, so the finest
 relative grain is at the corner, and a reader should put the corner on what it is looking at. Near and far then mean
 nearer than and farther than that, and the two are held alike, since the next look may fall on either: the reader does
-not know on which side of the corner the next thing will be, and the exchange (§2) favours neither. The rest of the
+not know on which side of the corner the next thing will be, and the exchange (§2) favours neither (Corollary 6.1
+below). The rest of the
 field is not lost. Every direction is still held, coarser away from the corner, which is enough to show that something
 is there and where to look next; moving the corner there is a new zero (§2). So the corner's roles are the ones a
 focus wants: the median of the addresses, half on either side (Proposition 5(d)); their finest relative grain; and the
@@ -2389,6 +2390,33 @@ holds at the triple corner [1 : 1 : 1], down which the wedge is seen from home, 
   amount. Laid on distance it needs the distances. The picture itself is the turn, its far field in proportion to the
   reciprocal of distance (§6, "What Mercator's map is, and what it is not"); levels in distance belong to distance
   laid by a count of addresses.
+
+**Corollary 6.1 (the corner is the best focus).** Let the reader lay the turn's K addresses with its corner at s = 1.
+(a) *Grain.* A cell's width relative to its place is (π/2K)(s + 1/s), least at s = 1 and only there; in K discrete cells
+the two beside the corner are the finest. More generally, any cost f with f(s) = f(1/s) and convex in ln s is least at
+the corner.
+(b) *Symmetry.* A choice of focus that does not depend on which unit relation a reading was divided by, v/h or h/v, is
+unchanged by the reciprocal, and the reciprocal's only fixed point is s = 1.
+(c) *Travel to the next look.* Let the place X of the next thing to be looked at follow a law, and measure the travel
+from a focus c on any increasing ruler g: the angle, the levels ln s, the in-place lay. Wherever the expected travel
+E|g(X) − g(c)| is finite it is least at the median of X, the same c on every ruler. If the law is reciprocal-symmetric,
+which is all the reader's not knowing on which side the next thing lies allows, that median is the corner.
+(d) *A lopsided law moves it.* If the next look is more likely on one side, the best focus moves to that law's median,
+off the corner and toward the likelier side, still the same on every ruler.
+
+*Proof.* (a) At d = H·tan θ, d(ln d)/dθ = sec²θ/tan θ = s + 1/s, and the addresses are π/2K apart in θ; s + 1/s ≥ 2,
+with equality only at 1. A function of ξ = ln s that is even and convex is least at ξ = 0; evenness alone is not enough
+(an even cost such as (ξ² − 1)² is least at ξ = ±1). (b) is Proposition 1. (c) The expected distance E|Y − c| of a law
+Y with a finite first moment is least at Y's median, a classical fact; with Y = g(X) for increasing g, the median of
+g(X) is g(median X) (Theorem 6(b)). On a ruler where the expected travel is infinite, as on v/h itself under the turn's
+law, the difference E(|X − c| − |X − 1|) is finite and is least at the same point. A reciprocal-symmetric law has its
+median at the corner (Theorem 6(e)). (d) is (c) with the median of the lopsided law. ∎
+
+Under the uniform turn with a weight 1 + a·cos 2θ (a > 0 favouring the near side), the best focus is tan θ_m, where
+θ_m + (a/2)·sin 2θ_m = π/4: 0.821 at a = 0.2 and 0.627 at a = 0.5, a quarter of a level and two thirds of a level
+nearer than the corner. The corollary says where a focus should go and why; it does not say that any reader puts it
+there, and (c) rests on a premise, that the reader has no reason to expect the next look on one side rather than the
+other.
 
 **Other ways to squeeze the line.** The three paths of §12.2 (question 2) each squeeze the reader's line into K
 addresses, each swept uniformly along its own length and read as the signed reading s = v/h:
