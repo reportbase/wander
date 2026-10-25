@@ -314,6 +314,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   reallocation a level past it), copying alone against time × space. `?g=&rule=band|thrash|never&C0=&p=&n=&play=1`; hook
   `window.__dynamicArray` (`make`, `push`, `pop`, `step`, `state`, `thrash`, `staircase`, `product`, `copiesAlone`, `set`).
   No paper links them now. Not in the flying page.
+- `focus.html`: **the focus is the corner** (25 Oct 2026, Tom: "could you create a demo of the idea the point of focus
+  defines the corner."; SPN R501; OFS §8 "The corner follows the focus" and Corollary 6.1), a standalone page, plain canvas.
+  Nine things from 0.6 to 9,000 units off over the half turn; the reader's frame a quarter turn (its K equal-angle addresses,
+  the corner its bisector) and its K distance addresses at H·tan(kπ/2K) on the reader's lay. Tap a thing: "look at it"
+  turns the frame onto it and draws it at H, so it reads v/h = 1 and d/H = 1 and its cells are the finest, π/K relative
+  to their place; "look past it" leaves the corner where it was (the grain (π/2K)(s + 1/s), outside the quarter turn
+  another facing). The grain curve serves both corners. Below, the travel E|g(X) − g(c)| to the next look, X uniform by
+  turn weighted 1 + a·cos 2θ, on the angle, the levels and the in-place lay, all least at the law's median (1 at a = 0,
+  0.821 at 0.2, 0.627 at 0.5), as `runs/ofs/focus.py`. A "should", no claim about readers. `?focus=&K=8|16|32&a=&mode=past`;
+  hook `window.__focus` (`relCell`, `median`, `travel`, `bestFocus`, `things`, `readingsOf`, `set`, `state`). Not in the
+  flying page.
 - `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
   "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
   carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
@@ -704,7 +715,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, arrays on the sweeps, online decisions at the corner and a dynamic array, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, arrays on the sweeps, online decisions at the corner and a dynamic array, the focus is the corner, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -2625,6 +2636,9 @@ In short:
   57. **dynamic-array.html:** in the band every resize lands at ½ (g = 2); shrinking at 1/g a push and a pop at the edge copy
       2N; pushes from C₀ make ⌈log₂(N/C₀)⌉ reallocations, doubling C₀ one fewer, none inside C₀; copying alone 3, 2, 1.5,
       times the waste 4.5, 4, 4.5, 5.33, least at g = 2; a random future under 2 copies an operation.
+  58. **focus.html:** the finest relative cell π/K at the corner (K = 8, 16, 32); every thing looked at reads v/h = 1 and
+      d/H = 1 at the finest cells, looked past coarser; the least travel to the next look at its median on the angle, the
+      levels and the in-place lay: 1, 0.821 and 0.627 at a = 0, 0.2, 0.5.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

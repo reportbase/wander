@@ -1645,6 +1645,29 @@ try {
   if (!dyaOk) failures.push(`[dynamic-array.html] ${JSON.stringify(dya)}`);
   console.log(`${failures.length === before57 ? 'ok  ' : 'FAIL'} dynamic-array.html (in the band every resize landed at ${dya.lands.join(', ')}; shrinking at 1/g, a push and a pop at the edge copy ${dya.thr[0]}N; pushes from C₀ = 8 make ⌈log₂(N/C₀)⌉ reallocations, from 16 one fewer, none inside C₀; copying alone ${dya.alone.map(v => v.toFixed(2)).join(', ')}, times the waste ${dya.prod.map(p => p.product.toFixed(2)).join(', ')}, least at g = 2; a random future ${dya.rand.toFixed(3)} copies an operation)`);
 
+  // ── 58. focus.html (SPN R501; OFS §8 Corollary 6.1): the finest relative cell π/K at the corner; a thing looked at sits
+  //    at both corners (v/h = 1, d/H = 1, its cells the finest); looked past, coarser; the least travel to the next look
+  //    at the median on the angle, the levels and the in-place lay, 1 when a = 0, 0.821 at a = 0.2, 0.627 at a = 0.5 ──
+  current = 'focus.html';
+  const before58 = failures.length;
+  await page.goto(new URL('focus.html', base).href, { waitUntil: 'load' });
+  const foc = await page.evaluate(() => {
+    const F = __focus, o = {};
+    o.rel = [8, 16, 32].map(K => F.relCell(1, K) * K / Math.PI);
+    o.look = F.things.map((T, i) => F.set({ mode: 'look', focus: i }).reading);
+    F.set({ mode: 'look', focus: 3 }); F.set({ mode: 'past' });
+    o.past = [0, 7].map(i => F.set({ focus: i }).reading);
+    o.best = [0, 0.2, 0.5].map(a => { const s = F.set({ a }); return [s.median, ...Object.values(s.best)]; });
+    F.set({ a: 0, K: 32 });
+    return o;
+  });
+  const focOk = foc.rel.every(v => Math.abs(v - 1) < 1e-12) &&
+    foc.look.every(r => Math.abs(r.sDir - 1) < 1e-9 && Math.abs(r.sDist - 1) < 1e-9 && Math.abs(r.dirCell - 1) < 1e-9 && Math.abs(r.distCell - 1) < 1e-9) &&
+    foc.past.every(r => r.distCell > 1.5) &&
+    [1, 0.82083, 0.62738].every((m, i) => foc.best[i].every(v => Math.abs(v - m) < 1e-3));
+  if (!focOk) failures.push(`[focus.html] ${JSON.stringify(foc)}`);
+  console.log(`${failures.length === before58 ? 'ok  ' : 'FAIL'} focus.html (the finest relative cell π/K at the corner for K = 8, 16, 32; every thing looked at reads v/h = 1 and d/H = 1 at the finest cells; looked past, ${foc.past.map(r => '×' + r.distCell.toFixed(1)).join(' and ')}; the least travel at the median on three rulers, ${foc.best.map(b => b[0].toFixed(3)).join(', ')} at a = 0, 0.2, 0.5)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
