@@ -54,4 +54,24 @@ its edge, the corner at the focus's edge, the field costing log_ρ(X/F) addresse
 
 ## Runs
 
-*(none yet)*
+### Run 1 (25 October 2026, `runs/fov/fov.py`, output `runs/fov/fov.txt`, exact, 0.3 s)
+
+All four not killed.
+
+- **F1.** In all eight cases the greedy cover, the formula ⌈F/δ⌉ + ⌈log_ρ(X/F)⌉ and a grid dynamic program agree:
+  12, 15, 20, 23 at X = 16 and 15, 20, 23, 28 at X = 90. The grid is a quarter or half of δ.
+- **F2.** At ρ = 2 the field takes 6 cells at X/F = 64 and 7 at X/F = 90, at K = 64 and at K = 256 alike. Every other
+  address goes to the focus (δ = F/58, F/250, F/57, F/249), and the switch is exactly at F. One address more for the
+  focus (δ = F/59) needs 65 cells.
+- **F3.** The matched-grain field costs n·ln(X/F) plus 1.8 to 3.0 cells, within the bound (2.4 to 3.25) at every
+  n and X/F tried.
+- **F4.** The turn's widest focus cell is 0.04792 F, 2.779 times the optimum's F/58. That is a little under the
+  first-order π(K − 6)/K = 2.847; at the centre the ratio is 1.424. Its factor of 2 first breaks at the cell from
+  s = 20.36 to 40.74 (ratio 2.0007, at the edge), and the horizon cell from 40.74 takes everything past it.
+
+**What it says.** Tom's allocation is exact and simple: proportional across the focus, levels of ratio ρ past its edge,
+the corner at the focus's edge. The fields cost log_ρ(X/F) addresses however large K is, so every address beyond those
+few goes to the focus. The reader's lay, 1 + ln s, is the case where the field's first cell matches the focus's grain.
+The turn spends about half of K past the corner and gives the focus about a third of the fidelity. Laid on the angle from
+the gaze, X is the field's angular extent, known with no amount. Classical in kind: a cover by a nondecreasing reach,
+the absolute-then-relative layout of floats.

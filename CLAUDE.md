@@ -2128,6 +2128,18 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   log-linear bins); t-digest's family on the rank; known against unknown universe already a survey axis (T4 half killed).
   Then (SPN R494; Tom: "it seems like a writer thing not a reader thing"): a sketch bins amounts against a chosen unit, a
   writer's act; a reader's structure is indexed by direction. Never in the papers; `plans/onl-skt-note.md`.
+  `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
+  enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
+  nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
+  ⌈F/δ⌉ + ⌈log_ρ(X/F)⌉ (greedy = formula = grid DP in eight cases): proportional on the focus, levels past its edge, the
+  corner at the edge; the field 6 addresses at X/F = 64, ρ = 2, whatever K (δ = F/58 at K = 64); the reader's lay the
+  matched-grain case (n·ln(X/F) + 1.8 to 3.0); the turn 2.78 times coarser at the focus's edge, factor 2 broken near 2K/π.
+  `gaze-note.md` (25 Oct; SPN R495; Tom: "visually, our far field looks proportional, it does not look like the merkator
+  map."; "its highly likely that the corner is constanly adjusted to follow our point of gaze."; "the far and near
+  fields, are useful as a signal about what to focus on next."): the picture's far field the turn's (proportional in
+  v/h), Mercator's logarithm the lay of distance by address count; the corner on the gaze (the finest relative grain);
+  the fields a signal for the next look; FOV's allocation; laid on angle from the gaze, X free, Schwartz's log-polar map
+  a neighbour (Tom, 8 Oct: the eye "engineering more than fundemental geometry"). A draft OFS paragraph, not yet placed.
   `lgo-plan.md` (+ `runs/lgo/lgo.py`, `lgo2.py`, 23 Oct; SPN R468; Tom, of another session's `cauchy_test.py`: "lets complete
   those tests, through the lense of our mathmatical framework."): LIGO H1 and L1 whitened noise, GWOSC open data (gwosc.org's
   chain needs certifi's bundle joined to the proxy's; sha256s in the plan). The old Cauchy-over-Gaussian at N = 1 is the
