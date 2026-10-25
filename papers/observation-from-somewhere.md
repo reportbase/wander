@@ -1377,6 +1377,23 @@ keeps the division's local scale 1/h but accumulates it, and so lays the same re
 and logarithmically past it. Latitude is the Gudermannian of the map's height, φ = gd(y). It is the oldest instance we
 know of the two address spaces laid out.
 
+**What Mercator's map is, and what it is not.** The map is a chart of the whole globe, drawn once to be read from
+anywhere on it. Past the corner it lays every level alike, each doubling of v/h the same height, about ln 2, and so it
+favours no place: it has no focus. Where a navigator's attention falls on it is the navigator's, not the projection's.
+A reader looking out from a standpoint is laid the other way on both counts.
+- *Its picture is the turn.* Level ground seen from an eye one height H above it appears at arctan(H/d) below the
+  horizon at distance d: 26.6°, 14.0° and 7.1° at 2H, 4H and 8H. Each doubling past the corner takes half the room of
+  the last, the far field in proportion in h/v (θ ≈ π/2 − h/v), not in levels.
+- *Its turn has a focus.* The turn's room per level is greatest at the corner and falls alike toward home and toward
+  the horizon (the table below). Turning the head carries the corner, and the most room with it, to whatever is looked
+  at; the near and the far field are held alike about it, each with enough to choose where to look next.
+- *Mercator's levels belong elsewhere in its account.* They are distance laid by a count of addresses (Proposition 4),
+  where every level is held alike because none is known beforehand to matter more, and direction laid about a point of
+  gaze. How many levels off a thing lies, a day's walk or a month's, is not in the picture at all: it is the thing's
+  size against H, which no reading fixes (Proposition 8) and which is carried in.
+
+The map represents the field; the reader observes from somewhere within it.
+
 **One figure, three rulers.** The circle, the number line and Mercator's height fit in one figure, and the figure shows
 what each of them does with the corner. Draw the unit circle, the tangent line at A = (1, 0), and the unit
 hyperbola u² − w² = 1, which touches the same line at A (u along the axis, w sideways). A reading x = v/h sits on the
@@ -1388,16 +1405,18 @@ hyperbola's point (cosh ζ, sinh ζ) level with T, give
 and each angle is twice the area of its sector from A: the circle's (Archimedes) and the hyperbola's (Saint-Vincent 1647; de Sarasa 1649). So one reading is
 laid three ways, each an exact function of the others:
 
-| ruler | room for the near field, x ≤ 1 | room for the far field, x ≥ 1 | the corner x = 1 | the reciprocal x ↦ 1/x |
-|---|---|---|---|---|
-| x itself, the writer's number line (§9) | 1, in proportion | unbounded, in proportion | a point | not a reflection of the ruler |
-| θ = arctan x, the turn | 45° | 45° | the middle | θ ↦ π/2 − θ, a reflection |
-| ζ = asinh x, the hyperbolic angle, Mercator's height | asinh 1 ≈ 0.881, nearly in proportion | unbounded, about ln 2 a doubling | a point; proportion gives way to levels around it, gradually | no reflection of the ruler |
+| ruler | room for the near field, x ≤ 1 | room for the far field, x ≥ 1 | room per level, per unit of ln x | the corner x = 1 | the reciprocal x ↦ 1/x |
+|---|---|---|---|---|---|
+| x itself, the writer's number line (§9) | 1, in proportion | unbounded, in proportion | x, more each level than the last | a point | not a reflection of the ruler |
+| θ = arctan x, the turn | 45° | 45° | ½·sech(ln x), most at the corner, falling alike on both sides | the middle | θ ↦ π/2 − θ, a reflection |
+| ζ = asinh x, the hyperbolic angle, Mercator's height | asinh 1 ≈ 0.881, nearly in proportion | unbounded, about ln 2 a doubling | x/√(1 + x²), rising to 1, every far level alike | a point; proportion gives way to levels around it, gradually | no reflection of the ruler |
 
 So the one figure draws the near field and the far field three ways. On the turn they are halves, mirrored by the
 reciprocal. On the hyperbolic angle they are the two address spaces above, proportion giving way to levels. On the
-writer's line there is no split, only the point. The table "drawing of the same addresses" above compares the fisheye
-and the two lays in the same terms.
+writer's line there is no split, only the point. Only the turn has a focus: its room per level is greatest at the
+corner, ½ a radian per unit of ln x, and adds up over all the levels to the quarter turn; the hyperbolic angle gives
+every far level the same room and has no greatest, and the writer's line gives each level more than the last. The
+table "drawing of the same addresses" above compares the fisheye and the two lays in the same terms.
 
 The third is the reader's lay of Proposition 4 made smooth. ζ ≈ x inside the corner and ζ ≈ ln 2x past it, and the
 lay (x, then 1 + ln x) never exceeds it by more than 1 − ln 2 ≈ 0.307, approached far out (0.119 at the corner).
@@ -1659,8 +1678,10 @@ scale sec φ, which Mercator lets grow toward the poles. Both are zooms, which c
 the distinction this paper draws throughout: the drawing V = H is required for the turn and its readings, and the true
 size is one number the readings do not fix.
 
-Mercator's choice (keep the angles, give up the areas) is the one this paper's reader makes: it keeps the drawing and
-leaves the size to be estimated. The familiar complaint about his map, that it draws Greenland as large as Africa, is a
+Mercator's choice (keep the angles, give up the areas) is the one this paper's reader makes in its drawing: it keeps
+V = H and leaves the size to be estimated. It is not the reader's view. The chart lays the far field in levels, all
+alike, with no focus; the reader's turn is centred on what it looks at, its far field in proportion (§6, "What
+Mercator's map is, and what it is not"). The familiar complaint about his map, that it draws Greenland as large as Africa, is a
 complaint about the zoom, not about the drawing.
 
 The two pictures meet on a chart. A lighthouse charted on Mercator's map is drawn true at every latitude. On a plate
@@ -2339,6 +2360,35 @@ thing at its amount on its number line. The Cauchy is what keeps the two apart. 
 H·tan(kπ/2K), with no reference to how many things there are or how far they reach. Its last address runs to the
 horizon, so a finite K covers an unbounded world, and whatever lies past every other address lands in that tail. N
 then enters only as the share each address holds, which is payload (Theorem 6(a)).
+
+**The corner follows the focus.** Nothing in the geometry fixes where the reader puts its corner; H is its own choice.
+On the turn's addresses a cell's width relative to its distance is (π/2K)(s + 1/s), least at s = 1, so the finest
+relative grain is at the corner, and a reader should put the corner on what it is looking at. Near and far then mean
+nearer than and farther than that, and the two are held alike, since the next look may fall on either: the reader does
+not know on which side of the corner the next thing will be, and the exchange (§2) favours neither. The rest of the
+field is not lost. Every direction is still held, coarser away from the corner, which is enough to show that something
+is there and where to look next; moving the corner there is a new zero (§2). So the corner's roles are the ones a
+focus wants: the median of the addresses, half on either side (Proposition 5(d)); their finest relative grain; and the
+reciprocal's fixed point (Proposition 1), the one reading the exchange leaves where it is. In three dimensions the same
+holds at the triple corner [1 : 1 : 1], down which the wedge is seen from home, every pair's corner a median through it
+(Proposition 5(e)). This is what a reader should do with its corner, not a claim about what any eye does.
+- *Two corners, both free.* Turning the head carries the corner in direction to what is looked at, which is then read
+  at the finest grain, with no distance (a turn in place gives no parallax, §11). Designating it draws it at H, which
+  puts it at the corner of distance too, as the mountain is drawn equal to the thumb (§10).
+- *How far it is lies outside every reading.* Whether a range of hills is a day's walk off or a month's is its size
+  against H (Proposition 8), needed only roughly, in levels, and carried in: a baseline, a known kind, the horizon.
+  No field holds it, near or far.
+- *What the fields cost.* Ask for cells no wider than δ across an extent F about the focus, and past it for cells
+  that each place a thing within a factor ρ. The fewest addresses that do it are ⌈F/δ⌉ cells of one width across F and
+  ⌈log_ρ(X/F)⌉ of ratio ρ past it, X the field's extent: proportion on the focus, levels past its edge, the corner at
+  the edge. The field then costs about log_ρ(X/F) addresses, six at X/F = 64 and ρ = 2, whatever K is, and every other
+  address goes to the focus. The reader's lay of Proposition 4, proportion and then levels, is the case in which the
+  field's first cell matches the focus's grain. The turn, which gives the fields half of K, gives them more than this
+  least.
+- *Where the levels lie.* Laid on the angle from the gaze, the field's extent X is fixed by the geometry and needs no
+  amount. Laid on distance it needs the distances. The picture itself is the turn, its far field in proportion to the
+  reciprocal of distance (§6, "What Mercator's map is, and what it is not"); levels in distance belong to distance
+  laid by a count of addresses.
 
 **Other ways to squeeze the line.** The three paths of §12.2 (question 2) each squeeze the reader's line into K
 addresses, each swept uniformly along its own length and read as the signed reading s = v/h:
@@ -3443,23 +3493,6 @@ and their costs form a geometric series. Growth by a fixed step copies in propor
 must be one ratio repeated for the cost per element to stay constant, and which ratio is a choice: implementations use
 2 or 1.5.
 
-**Online decisions** (§8, §9). An online algorithm decides now without the input still to come; the offline optimum,
-which has the whole input, is in the writer's place. Two of the field's patterns are this paper's layout in time. Where
-a decision trades an amount already spent against one about to be committed, and the future charges for whichever turns
-out larger, the worst case is one function of their ratio r, the same at r and 1/r, and so least at the corner. Renting
-skis until the rent paid equals the price of buying is 2-competitive (Karlin et al. 1988): buying once the rent paid is
-s times the price has worst ratio 1 + max(s, 1/s). Searching two rays for a point at an unknown distance, each leg b
-times the last, has worst ratio 1 + 2b²/(b − 1) = 5 + 2(r + 1/r), with r = 1/(b − 1) the distance walked before a leg
-over that leg; it is least at r = 1, b = 2, ratio 9 (Beck and Newman 1970), and online bidding's lower bound carries the
-same 2 + r + 1/r (Chrobak et al. 2008). Doubling is break-even taken again at every leg. Where only one side is priced,
-as in a dynamic array's copying alone (the entry above), the cost is monotone in r and the factor stays free: the 2 is
-fixed only once both sides are. And that a cost unchanged by rescaling makes the optimal search geometric is Gal's
-theorem (Gal 1980), the levels of §8 from not knowing the scale. Each such algorithm needs one scale supplied, a least
-distance to the target or a first capacity, without which nothing near the start is bounded; within it the guarantee
-is an amount, past it a ratio, the additive and multiplicative terms of a competitive bound, as §8's grain is absolute
-inside the corner and relative past it. The estimate at the corner of the bounds (Proposition 13) is the same choice
-made in size rather than in time.
-
 ## Appendix B. Engineering read against the geometry
 
 The structures of §12.4 met in systems built to read or draw a world, each with what it adds:
@@ -3568,9 +3601,6 @@ shift. *Developmental Science* 14(1), 125–135.
 
 Beardon, A. F. (1983). *The Geometry of Discrete Groups*. Graduate Texts in Mathematics 91. Springer, New York.
 
-Beck, A. and Newman, D. J. (1970). Yet more on the linear search problem. *Israel Journal of Mathematics* 8,
-419–429.
-
 Beltrami, E. (1865). Risoluzione del problema: riportare i punti di una superficie sopra un piano in modo che le
 linee geodetiche vengano rappresentate da linee rette. *Annali di Matematica Pura ed Applicata* 7, 185–204.
 
@@ -3621,9 +3651,6 @@ Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal
 Cayley, A. (1859). A sixth memoir upon quantics. *Philosophical Transactions of the Royal Society of London* 149,
 61–90.
 
-Chrobak, M., Kenyon, C., Noga, J. and Young, N. E. (2008). Incremental medians via online bidding. *Algorithmica*
-50(4), 455–478.
-
 Civera, J., Davison, A. J. and Montiel, J. M. M. (2008). Inverse depth parametrization for monocular SLAM. *IEEE
 Transactions on Robotics* 24(5), 932–945.
 
@@ -3662,11 +3689,6 @@ University Press.
 
 Euler, L. (1777). De repraesentatione superficiei sphaericae super plano. *Acta Academiae Scientiarum Imperialis
 Petropolitanae* 1777(1), 107–132.
-
-Gal, S. (1980). *Search Games*. Academic Press, New York.
-
-Karlin, A. R., Manasse, M. S., Rudolph, L. and Sleator, D. D. (1988). Competitive snoopy caching. *Algorithmica* 3,
-79–119.
 
 van Fraassen, B. C. (2008). *Scientific Representation: Paradoxes of Perspective*. Oxford University Press.
 

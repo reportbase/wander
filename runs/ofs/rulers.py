@@ -8,7 +8,7 @@ Run 1 (rulers-run1.out) failed one check by my set-up: an absolute 1e-45 on tan 
 error is 1e-48 relative. Run 2 checks it relative to x.
 Run from the repository's root: python3 runs/ofs/rulers.py
 """
-from mpmath import mp, mpf, atan, asinh, sinh, tan, cosh, sin, cos, log, pi, quad, findroot, diff
+from mpmath import mp, mpf, atan, asinh, sinh, tan, cosh, sin, cos, log, pi, quad, findroot, diff, exp, sech, sqrt, inf
 mp.dps = 50
 ok = True
 def check(name, err, tol):
@@ -72,5 +72,22 @@ check("turn: far room - pi/4 (to the horizon)", pi/2 - atan(1) - pi/4, mpf(10)**
 for x in [mpf(1), mpf(2), mpf(4), mpf(8), mpf(16)]:
     print(f"      zeta room for the doubling {mp.nstr(x,3)} to {mp.nstr(2*x,3)}: {mp.nstr(asinh(2*x) - asinh(x), 6)}")
 check("zeta room per doubling at x = 1e12 - ln 2", asinh(2*mpf(10)**12) - asinh(mpf(10)**12) - log(2), mpf(10)**-20)
+
+# 8. Room per level (per unit of xi = ln x) on each ruler, for the paragraph after the table (25 Oct). The turn:
+#    dtheta/dxi = (1/2) sech xi, most at the corner (1/2) and falling alike on both sides, so it has a focus. The
+#    hyperbolic angle: dzeta/dxi = 1/sqrt(1 + e^(-2 xi)), rising to 1 far out (every level alike, ln 2 a doubling), no
+#    focus. The writer's line: dx/dxi = e^xi. Far out the turn's room for the doubling x to 2x tends to 1/(2x), half the
+#    last: proportional in h/v.
+for xi in [mpf(-6), mpf(-2), mpf(0), mpf(1)/3, mpf(2), mpf(6)]:
+    x = exp(xi)
+    check(f"turn: dtheta/dxi - sech(xi)/2 at xi = {mp.nstr(xi,3)}", diff(lambda u: atan(exp(u)), xi) - sech(xi)/2, mpf(10)**-30)
+    check(f"zeta: dzeta/dxi - 1/sqrt(1+e^-2xi) at xi = {mp.nstr(xi,3)}", diff(lambda u: asinh(exp(u)), xi) - 1/sqrt(1 + exp(-2*xi)), mpf(10)**-30)
+    check(f"line: dx/dxi - e^xi at xi = {mp.nstr(xi,3)}", diff(lambda u: exp(u), xi) - x, mpf(10)**-30)
+check("turn: room per level greatest at the corner (sech'(0) = 0)", diff(lambda u: sech(u)/2, mpf(0)), mpf(10)**-30)
+for x in [mpf(8), mpf(64), mpf(10)**6]:
+    r = (atan(2*x) - atan(x)) * 2*x
+    print(f"      turn's room for the doubling {mp.nstr(x,3)} to {mp.nstr(2*x,3)}, times 2x: {mp.nstr(r, 10)}")
+check("turn's far doubling x..2x times 2x - 1 at x = 1e6", (atan(2*mpf(10)**6) - atan(mpf(10)**6))*2*mpf(10)**6 - 1, mpf(10)**-11)
+check("turn's room per level: total over all levels - pi/2", quad(lambda u: sech(u)/2, [-inf, 0, inf]) - pi/2, mpf(10)**-30)
 
 print("ALL PASS" if ok else "SOME FAILED")

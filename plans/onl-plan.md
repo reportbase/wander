@@ -190,3 +190,9 @@ fixed point and the 2 fixed only when both sides are priced (run 1's O6 kill: on
 additive and multiplicative terms read as the near and far fields of one chosen scale, the same split as a reader's
 lay. Both are readings of known results; nothing new is proved. Tom rules on OFS Appendix A and the companion.
 
+
+### A note added after the runs (25 October 2026, SPN R494)
+
+Tom: "it seems like a writer thing not a reader thing". The online player counts amounts and the dynamic array
+writes its past: writers with one unknown amount, not readers. Removed from OFS Appendix A and the companion §6; see
+`plans/onl-skt-note.md`. The runs and verdicts above stand.

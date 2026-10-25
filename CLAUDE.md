@@ -301,8 +301,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `window.__arraySweeps` (`turnIndex`, `centralIndex`, `bounds`, `middles`, `countIndex`, `shapeValues`, `read`, `set`,
   `state`). Not in the flying page.
 - `online-corner.html`, `dynamic-array.html`: **online decisions** (25 Oct 2026, Tom: "could you create two demos, one for
-  each, to show them in action with our framing."; SPN R488–R491; ONL), standalone pages, plain canvas, one for OFS
-  Appendix A's "Online decisions", one for the CS companion §6. `online-corner.html`: ski rental (buy once the rent paid is
+  each, to show them in action with our framing."; SPN R488–R491; ONL), standalone pages, plain canvas, made for OFS
+  Appendix A's "Online decisions" and the CS companion §6, both removed since (SPN R494; `plans/onl-skt-note.md`). `online-corner.html`: ski rental (buy once the rent paid is
   s × the price; the future's stop T; the worst over every T, scanned, 1 + max(s, 1/s) on the levels of s, least at the
   corner) and two-ray search (legs d₀·bⁱ alternating sides, drawn on the reader's lay with H = d₀; the ratio for every
   target, 2d₀ of extra walking behind the start, under 5 + 2(r + 1/r) past d₀; the worst against the levels of r); the
@@ -313,7 +313,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   levels with the band and its landing at 1/g, copies per operation, capacity against size (C₀ the near field, one
   reallocation a level past it), copying alone against time × space. `?g=&rule=band|thrash|never&C0=&p=&n=&play=1`; hook
   `window.__dynamicArray` (`make`, `push`, `pop`, `step`, `state`, `thrash`, `staircase`, `product`, `copiesAlone`, `set`).
-  The companion links both. Not in the flying page.
+  No paper links them now. Not in the flying page.
 - `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
   "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
   carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
@@ -2113,7 +2113,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   priced); the search found Gal's theorem (claim 2 classical), online bidding's 2 + r + 1/r unnamed, the unit's necessity
   explicit; the reciprocal form across problems and the near/far reading not found. Two readings of known results.
   Carried in (SPN R490; Tom: "yes, add it."): OFS Appendix A "Online decisions" and the CS companion §6 "A writer of its
-  past, situated about its future", not OFS's body.
+  past, situated about its future", not OFS's body. Removed (SPN R494; Tom: "also it seems like a writer thing not a
+  reader thing", "remove them from the papers and into a note."): the online player counts amounts, a writer with one
+  unknown amount; the text kept verbatim in `plans/onl-skt-note.md`.
   `skt-plan.md` (25 Oct; SPN R492; Tom: "what data structure is best fit for situated reader and unsituated writer", then
   "yes,write the plan"): the writer's dense array over a known extent against the reader's claimed one design
   ⌊K·F(x/H)⌋ (the turn, the lay = HdrHistogram's and the float's layout, DDSketch's logarithm), fixed K, order per cell.
@@ -2124,6 +2126,35 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   settles, its horizon cell capping the tail) killed: the turn's horizon representative is a second choice beside F.
   The search: circllhist (2020) the nearest prior work (one binning theory for HdrHistogram and DDSketch, floats as
   log-linear bins); t-digest's family on the rank; known against unknown universe already a survey axis (T4 half killed).
+  Then (SPN R494; Tom: "it seems like a writer thing not a reader thing"): a sketch bins amounts against a chosen unit, a
+  writer's act; a reader's structure is indexed by direction. Never in the papers; `plans/onl-skt-note.md`.
+  `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
+  enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
+  nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
+  ⌈F/δ⌉ + ⌈log_ρ(X/F)⌉ (greedy = formula = grid DP in eight cases): proportional on the focus, levels past its edge, the
+  corner at the edge; the field 6 addresses at X/F = 64, ρ = 2, whatever K (δ = F/58 at K = 64); the reader's lay the
+  matched-grain case (n·ln(X/F) + 1.8 to 3.0); the turn 2.78 times coarser at the focus's edge, factor 2 broken near 2K/π.
+  `gaze-note.md` (25 Oct; SPN R495; Tom: "visually, our far field looks proportional, it does not look like the merkator
+  map."; "its highly likely that the corner is constanly adjusted to follow our point of gaze."; "the far and near
+  fields, are useful as a signal about what to focus on next."): the picture's far field the turn's (proportional in
+  v/h), Mercator's logarithm the lay of distance by address count; the corner on the gaze (the finest relative grain);
+  the fields a signal for the next look; FOV's allocation; laid on angle from the gaze, X free, Schwartz's log-polar map
+  a neighbour (Tom, 8 Oct: the eye "engineering more than fundemental geometry"). A draft OFS paragraph, not yet placed.
+  Since R497 (Tom: "the mercator map gives equal attention to far and near fields, it has not focal point."; "update that
+  mercator map section"): OFS §6 "What Mercator's map is, and what it is not" (a chart of the whole field, every far level
+  alike, no focus; the reader's picture the turn, proportional far, its room per level ½·sech(ln x) most at the corner
+  it carries to what is looked at; "The map represents the field; the reader observes from somewhere within it."), a
+  room-per-level column in "One figure, three rulers", §7.1's "Mercator's choice" qualified; the CS companion likewise;
+  `runs/ofs/rulers.py` section 8.
+  Placed (R498; Tom: "place the gaze paragraph in ofs"): OFS §8 "The corner follows the focus" after "One K, in direction
+  and in distance" (the turn's relative cell least at the corner; near and far held alike; two corners, both free; how
+  far is the sizing, carried in; FOV's least count; levels on the gaze's angle need no amount); the companion's §9 too.
+  Then (R499; Tom: "if the corner is our gaze point, every thing does seem to fall into place nicely.", "yes, do both."):
+  the corner's roles are a focus's (the median, the finest relative grain, the reciprocal's fixed point), in 3D the triple
+  corner; a "should", not a claim about eyes. One sentence in OFS §8's paragraph, one clause in the companion.
+  Then (SPN R496; Tom: "so it is logical that a reader would give benefit from equal attention to the near and far
+  fields."): turning moves the direction corner, designating the distance corner, both free; how far the focus is is
+  the sizing, only as levels, carried in; the fields need only direction grain, held alike near and far.
   `lgo-plan.md` (+ `runs/lgo/lgo.py`, `lgo2.py`, 23 Oct; SPN R468; Tom, of another session's `cauchy_test.py`: "lets complete
   those tests, through the lense of our mathmatical framework."): LIGO H1 and L1 whitened noise, GWOSC open data (gwosc.org's
   chain needs certifi's bundle joined to the proxy's; sha256s in the plan). The old Cauchy-over-Gaussian at N = 1 is the

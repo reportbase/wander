@@ -213,3 +213,10 @@ Sources were read in full unless marked as a snippet.
 What the search leaves ours is narrow. One F-family in value space with a scale H, with the turn (the arctangent) as one
 member, and with its horizon cell. Each piece beside it is in print: the log and log-linear layouts, floats as
 HdrHistogram, A-law, and the known-universe axis.
+
+
+### A note added after the runs (25 October 2026, SPN R494)
+
+Tom: "it seems like a writer thing not a reader thing". The sketches bin amounts against a chosen unit, a writer's act;
+a reader's structure is indexed by direction. Kept out of the papers; see `plans/onl-skt-note.md`. The runs and verdicts
+above stand.

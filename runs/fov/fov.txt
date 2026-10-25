@@ -1,0 +1,33 @@
+F1  the fewest cells: greedy against a grid DP and the formula
+    X=16 δ=1/8 ρ=2: greedy 12, formula 12, grid DP (step 1/32) 12
+    X=16 δ=1/8 ρ=3/2: greedy 15, formula 15, grid DP (step 1/32) 15
+    X=16 δ=1/16 ρ=2: greedy 20, formula 20, grid DP (step 1/64) 20
+    X=16 δ=1/16 ρ=3/2: greedy 23, formula 23, grid DP (step 1/64) 23
+    X=90 δ=1/8 ρ=2: greedy 15, formula 15, grid DP (step 1/16) 15
+    X=90 δ=1/8 ρ=3/2: greedy 20, formula 20, grid DP (step 1/16) 20
+    X=90 δ=1/16 ρ=2: greedy 23, formula 23, grid DP (step 1/32) 23
+    X=90 δ=1/16 ρ=3/2: greedy 28, formula 28, grid DP (step 1/32) 28
+F2  K fixed: the best δ, the switch, the field's count (ρ = 2)
+    X/F=64 K=64: field 6 cells (predicted 6), focus 58 cells of δ = F/58, switch at 1·F, total 64
+    X/F=64 K=256: field 6 cells (predicted 6), focus 250 cells of δ = F/250, switch at 1·F, total 256
+    X/F=90 K=64: field 7 cells (predicted 7), focus 57 cells of δ = F/57, switch at 1·F, total 64
+    X/F=90 K=256: field 7 cells (predicted 7), focus 249 cells of δ = F/249, switch at 1·F, total 256
+    one address fewer in the field is impossible: δ = F/59 at X/F = 64 needs 65 > 64
+F3  grain matched at the corner (ρ = 1 + δ/F): the reader's lay
+    n=8 X/F=16: field 24 cells, n·ln(X/F) = 22.18, off +1.82 (bound 2.39)
+    n=8 X/F=64: field 36 cells, n·ln(X/F) = 33.27, off +2.73 (bound 3.08)
+    n=8 X/F=90: field 39 cells, n·ln(X/F) = 36.00, off +3.00 (bound 3.25)
+    n=32 X/F=16: field 91 cells, n·ln(X/F) = 88.72, off +2.28 (bound 2.39)
+    n=32 X/F=64: field 136 cells, n·ln(X/F) = 133.08, off +2.92 (bound 3.08)
+    n=32 X/F=90: field 147 cells, n·ln(X/F) = 143.99, off +3.01 (bound 3.25)
+    n=128 X/F=16: field 357 cells, n·ln(X/F) = 354.89, off +2.11 (bound 2.39)
+    n=128 X/F=64: field 535 cells, n·ln(X/F) = 532.34, off +2.66 (bound 3.08)
+    n=128 X/F=90: field 579 cells, n·ln(X/F) = 575.98, off +3.02 (bound 3.25)
+F4  the turn with its corner at F, K = 64, X/F = 64
+    widest focus cell 0.04792 F against the optimum δ = F/58 = 0.01724 F: ratio 2.779 (π(K−6)/K = 2.847); at the centre 1.424
+    factor 2 first broken at the cell from s = 20.36 to 40.74 (predicted near 2K/π = 40.7); 1 cells below s = 64 break it
+
+F1: not killed
+F2: not killed
+F3: not killed
+F4: not killed
