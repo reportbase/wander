@@ -2117,7 +2117,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `skt-plan.md` (25 Oct; SPN R492; Tom: "what data structure is best fit for situated reader and unsituated writer", then
   "yes,write the plan"): the writer's dense array over a known extent against the reader's claimed one design
   ⌊K·F(x/H)⌋ (the turn, the lay = HdrHistogram's and the float's layout, DDSketch's logarithm), fixed K, order per cell.
-  Predictions K1–K7 (seeded streams of unknown scale, K = 256) and a search T1–T4 written first; not run.
+  Predictions K1–K7 (seeded streams of unknown scale, K = 256) and a search T1–T4 written first. Run 1 (`runs/skt/skt.py`,
+  SPN R493; Tom: "yes"): K1, K2, K3, K5 not killed (HdrHistogram's index the float lay's floor form exactly, its gap
+  0.0860713 of a doubling; scaling separates the columns as their F says; the writer right only with X moved); K4 killed in
+  its quartile clause, K6 (the minimax best H ×1.7 to ×1175 off the geometric middle) and K7 (the turn's midpoint mean
+  settles, its horizon cell capping the tail) killed: the turn's horizon representative is a second choice beside F.
   `lgo-plan.md` (+ `runs/lgo/lgo.py`, `lgo2.py`, 23 Oct; SPN R468; Tom, of another session's `cauchy_test.py`: "lets complete
   those tests, through the lense of our mathmatical framework."): LIGO H1 and L1 whitened noise, GWOSC open data (gwosc.org's
   chain needs certifi's bundle joined to the proxy's; sha256s in the plan). The old Cauchy-over-Gaussian at N = 1 is the

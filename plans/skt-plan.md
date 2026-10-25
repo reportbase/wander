@@ -110,4 +110,73 @@ helps to see. Tom rules.
 
 ## Runs
 
-*(none yet)*
+### Run 1 (25 October 2026, `runs/skt/skt.py`, output `runs/skt/skt.txt`, 21.6 s, seeded)
+
+**K1 not killed.** HdrHistogram's integer bucket and sub-bucket index (S = 16 sub-buckets in each doubling, written from its
+published rule) equals the floor form of the float-like lay on all 71,492 integer values from 0 to 10⁶. DDSketch's ⌈log_γ x⌉ is
+⌈K·ln x/(K ln γ)⌉, the same form, on 200,000 values. The turn and the lay take this form by construction, so for those two the
+check proves nothing.
+
+**K2 not killed.** The largest gap from the smooth base-2 lay is 0.0860713 of a doubling, at f = 0.44269. The bound is
+0.0860713, at f = 0.44270.
+
+**K3 not killed, with two weaknesses in my set-up.** On every stream, every quantile's error lies inside its cell. But the
+quantiles that fall in the horizon cell have an infinite width, so the check passes there trivially, and that includes the
+two-cluster clause. The mirror line (k ↔ K − 2 − k) shows a mismatch of 0.60: my pairing of cells was wrong. That line only
+reported a number and decided no verdict. The same-at-s-and-1/s clause is therefore untested here; it is exact
+algebraically.
+
+**K4 KILLED, in one clause.**
+- On the narrow lognormal the turn beats DDSketch by 26.5, 8.7 and 26.0 times at the quartiles and the median. That holds.
+- On 12 decades, DDSketch beats the turn at every quantile except the median. That holds.
+- The lay past H is level to 3.7% across 16 doublings. Inside H its error at s ≈ 1/64, 1/16 and 1/4 is 0.499, 0.244 and
+  0.056, which is ×4 a step, as 1/s. That holds.
+- The clause that fails: the turn's error at the quartiles is 2.08 at q 0.25 but 0.672 at q 0.75, not over 1 at both.
+
+Post hoc: q 0.75 (s ≈ 10³) falls in the horizon cell, which begins near 163 H. That cell's representative (≈ 326 H) is
+nearer to s = 10³ than the cell rule implies. Past the last finite boundary the error depends on the representative chosen
+for the horizon, not on (π/2K)(s + 1/s). My prediction ignored the horizon cell.
+
+**K5 not killed.**
+- With H fixed, the world scaled by 10⁻³ or 10³ moves DDSketch's errors by about 10⁻¹⁵ (a bucket is 0.108). The turn's and
+  the lay's errors change enormously.
+- With H moved with the world, nothing moves by more than 1.8·10⁻¹².
+- The writer's array gives the same cells only with X moved with the world. With X ×10 its median error is 1.96·10⁴; with
+  X ×0.1 it is 195, and 83,242 values fall past the extent.
+- With X exact, its median error is already 1.96·10³: 256 uniform cells cannot resolve log-uniform data at all, so the
+  writer needs more than the extent here.
+
+**K6 KILLED.** For the turn, the H that minimizes the largest relative error is off from √(q_lo·q_hi) by these factors:
+
+| Stream | Quartiles and median | q 0.01 to 0.99 |
+|---|---|---|
+| Pareto | ×4.80 | ×6.51 |
+| lognormal σ = 3 | ×2.52 | ×1.79 |
+| log-uniform | ×1.71 | ×1175 |
+
+Only one of the six comes within 1.5. Post hoc: a minimax over a few quantiles is set by whichever quantile lands in the
+widest cell, or in the horizon cell. As H moves it is jagged, with one cell boundary crossing after another, and its
+minimum sits wherever a boundary or the horizon's representative happens to fall. The geometric middle is where the cells
+are finest on both sides at once. It is not where the worst of a few points is least. The prediction ran the two together.
+
+**K7 KILLED, in its mean clause.** All three structures keep the Pareto median inside its cell. The turn's midpoint mean
+does not drift:
+
+| N | 10⁵ | 2·10⁵ | 5·10⁵ | 10⁶ |
+|---|---|---|---|---|
+| turn | 7.716 | 7.728 | 7.755 | 7.767 |
+
+Its last step is 0.16%. Post hoc: the turn's horizon cell has a finite representative, so it caps every value past about
+163 H. The capped mean of an α = 1 Pareto grows only as the count past the cap, which barely moves. The turn settles the
+mean by throwing away the tail's amounts, which is the turn's bounded chart at work, not a mean of the data. The lay (last
+step 2.83%) and DDSketch (13.4%) still drift. DDSketch tracks the sample's own mean (10.83, 16.27, 15.31, 17.8), whose
+drift is the data's.
+
+**What run 1 says.**
+- The family holds as a form. One floor of K·F(x/H) builds each structure (K1, K2), and scaling separates them exactly as
+  their F predicts (K5).
+- What the family does not give is a simple rule for where each column wins, or for the best H, once the turn's horizon
+  cell is in play. That cell holds everything past the last boundary. It caps the mean and it sets the minimax.
+- The narrow claim stands: the reader's structure is ⌊K·F(x/H)⌋ with order per cell. The wider claim, that each column's
+  behaviour follows from F alone, needs the horizon's representative named as a second choice.
+- A run 2 would need predictions that name that representative first.
