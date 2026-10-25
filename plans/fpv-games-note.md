@@ -1,6 +1,6 @@
 # Where the corner on the focus might be useful: games and simulations
 
-*25 October 2026. SPN R502–R505. Tom: "the insight might be useful for FPV games."; "i'm intrested in the geometry, not
+*25 October 2026. SPN R502–R506. Tom: "the insight might be useful for FPV games."; "i'm intrested in the geometry, not
 realism."; of OFS: "No, keep it out ofs. this is just a playground to see how it might be used. what is worth
 exploring?"; then "proceed. create a note that saves your insights about where this might be useful in games and
 simulations."*
@@ -102,9 +102,21 @@ focus: H = the focus's distance, the crosshair the direction corner. Then:
 - A game could switch on the ratio alone (a single test, d₂/d₁ > 7.55), with some hysteresis (§7). *(guess)*
 
 ### 7. When to move the focus
-- Moving H every time the crosshair flickers churns every cell. Hysteresis, only moving past some number of levels or
-  easing H toward the target, is the practical question a game faces. It is the time version of the next-look rule.
-  *(guess)*
+- Moving H every time the crosshair flickers churns every cell: a move re-lays all K. *(shown, G5)*
+- **Hold it, and move only when the look lands more than a band L away.**
+  - With the band at three to four times the gaze's depth jitter (in levels), re-lays fall about twentyfold for about
+    1% of grain.
+  - Past that, re-lays stop falling: the jumps between targets set the floor. *(shown, FPV run 5, on a seeded trace)*
+- **Easing toward the look** re-lays every frame and trails every jump.
+- **The median of recent looks** is a lag, and much worse.
+- Corollary 6.1's median is for placing the corner before the next look is known (prefetch, §5), not for following a look
+  already seen. *(shown, run 5)*
+- **The one-or-two-corners switch of §6 takes a band too.** ±0.25 nats around D* cut the switches 8.7 times for 0.17% of
+  grain. *(shown, run 5)*
+- Hysteresis itself is classical (a Schmitt trigger, LOD switching with a dead band). What the geometry adds is where to
+  put the band: in levels, against the jitter. *(known; the placing shown)*
+- The trace was a model (uniform targets, normal jitter), not recorded gaze or crosshair data. *(guess that it carries
+  over)*
 
 ### 8. Volumes
 - Games already slice the view volume into a 3D grid of cells for clustered lighting and volumetric fog, usually with
@@ -132,6 +144,6 @@ All guesses, listed for where the same geometry would apply.
 ## Next in the playground
 In order:
 1. ~~two targets, one corner or two~~ (done: FPV runs 3–4, D* = 2.02 nats);
-2. refocus policy over a gaze trace (churn against grain);
+2. ~~refocus policy over a gaze trace~~ (done: FPV run 5, hold with a band of 3–4 jitters);
 3. the focus cube in 3D;
 4. a small game with 8–16 depth bands.

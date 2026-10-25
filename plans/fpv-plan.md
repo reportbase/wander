@@ -309,3 +309,98 @@ Nothing killed.
   exactly where one corner is finest. That matters if the next look is likely to fall between the two targets (the
   next-look median, Corollary 6.1(c)) rather than on either.
 - Classical in its pieces: HKO's √(x₁x₂), and the turn's grain.
+
+### Run 5: when to move the focus (predictions written 25 October 2026, before the run)
+
+*Tom: "Yes", to the playground's next step: a refocus policy over a gaze trace (the cost of re-laying against the
+grain).*
+
+**Set-up.** Everything is in levels, x = ln d.
+- **The gaze trace** is seeded, N = 200,000 looks.
+  - The eye fixes on a target uniform on [0, 8] nats (a range of about 3,000), stays a geometric number of looks
+    (mean 20, so a jump with p = 0.05 a look), then jumps to a fresh target.
+  - Each look is the target plus a normal jitter of σ = 0.1 nats.
+- **A policy** sees the look x_t and sets the corner c_t before that frame is laid.
+- **Two costs:**
+  - **G**, the mean grain at the look, (π/K)·cosh(x_t − c_t), in units of π/K (1 is best).
+  - **R**, the share of looks on which the corner moves.
+  - A move re-lays every cell whatever its size (the turn's edges all move), so R counts moves, not distance. The levels
+    slid, S per look, are reported beside it.
+- **Policies:**
+  - **follow**, c = x_t;
+  - **hold L**, hysteresis: move to x_t only when |x_t − c| > L, else stay;
+  - **ease α**: c ← c + α(x_t − c);
+  - **median m**: c = the median of the last m looks.
+
+**Predictions.**
+- **F1. follow.** G = 1 exactly, R = 1, and S is the trace's mean |x_t − x_{t−1}|.
+- **F2. hold, L = 0.4 nats (four σ).**
+  - R is in [0.04, 0.06]. The prediction is about 0.045 from the jumps (90% of jumps are larger than L), plus about 0.005
+    from jitter crossing L. That is about twenty times fewer re-lays than follow.
+  - G is in [1.005, 1.02]. The prediction is e^{σ²} = 1.010 from jitter about the look the corner was set on, plus a little
+    from jumps smaller than L, which are never followed.
+  - In short: about a 1% coarser grain for about 5% of the re-lays.
+- **F3. ease, α = 0.5.**
+  - It moves every look (R = 1).
+  - Each jump leaves a geometric tail of large errors, so G is in [1.05, 1.2].
+  - It is worse than hold 0.4 on both costs.
+- **F4. median, m = 5.**
+  - It lags two looks behind every jump, at the jump's whole error (E cosh J over a uniform range of 8 nats is in the
+    hundreds), so G > 2.
+  - Corollary 6.1's median is the best place to wait before a look is known. Once the look is seen it is only a lag.
+- **F5. The one-or-two-corners switch with a band.**
+  - The rule is: two corners once D > D* + b, one corner once D < D* − b, and keep the current layout inside the band.
+  - Within the band, the worst loss against the better layout is within 5% of s·b, where s is the slope of the difference
+    of the two grains at D*: s = sinh(D*/2)/2 − (2/π)·e^{D*/2}/(1 + e^{D*}) ≈ 0.391 (in π/K per nat).
+  - On a seeded random walk of D (step sd 0.05 nats, reflected in [1, 3], 200,000 steps), b = 0.25 switches at least ten
+    times less often than b = 0.
+
+*Killed* if F1 is off by more than 10⁻¹², or any interval or inequality above fails.
+
+#### Run 5 (25 October 2026, `runs/fpv/fpv5.py`, output `runs/fpv/fpv-run5.txt`, seeded, 17 s)
+
+**Killed**: F1 and F3 in their R clause by my set-up, and F5 in both clauses, by my arithmetic and my guess. F2 and F4
+not killed. The trace had 9,914 jumps in 200,000 looks.
+- **F1.** follow's G = 1 to 10⁻¹⁵, and S = 0.2386 levels a look. **Killed by my set-up**: R = 0.999995, not 1, because
+  the corner starts on the first look, so that look is no move.
+- **F2.** hold 0.4 re-lays on 5.09% of looks, 19.6 times fewer than follow, at G = 1.0098 (e^{σ²} = 1.0100). Not
+  killed.
+- **F3.** ease 0.5: G = 1.131, worse than hold 0.4 on both costs. **Killed by the same set-up** in its R clause
+  (0.999995).
+- **F4.** median 5: G = 4.93. It re-lays on 63% of looks: a lag, as predicted. Not killed.
+- **F5.** D* = 2.02094 and s = 0.3911. **Both clauses killed:**
+  - The worst in-band loss is 0.1128 against s·b = 0.0978 (+15%). I left out the second-order term. With
+    κ = cosh(D*/2)/4 − (1/π)·u(1 − u²)/(1 + u²)² = 0.467 (u = e^{D*/2}), s·b + κb²/2 = 0.1124, within 0.3%. That is
+    post hoc, not a prediction.
+  - The band cut the switches from 3,905 to 451, 8.7 times fewer, against my 10. The mean extra grain is 0.0027 π/K
+    (0.17% of the 1.56 at D*).
+
+The frontier of hold L (not predicted):
+
+| L (nats) | G | R | S |
+|---|---|---|---|
+| 0.1 | 1.0008 | 0.505 | 0.215 |
+| 0.2 | 1.0041 | 0.198 | 0.171 |
+| 0.3 | 1.0077 | 0.080 | 0.143 |
+| 0.4 | 1.0098 | 0.051 | 0.133 |
+| 0.6 | 1.0133 | 0.044 | 0.130 |
+| 0.8 | 1.0203 | 0.042 | 0.129 |
+| 1.0 | 1.0329 | 0.040 | 0.128 |
+| 1.5 | 1.1077 | 0.034 | 0.121 |
+
+The other policies, beside it:
+- ease 0.25 has G = 1.68, and ease 0.75 has 1.020; both re-lay every look.
+- median 3 has G = 3.05 and median 9 has 8.26; both re-lay on 60–68% of looks.
+
+**What run 5 says.**
+- **Hold the corner, and move it only past a band of three to four times the gaze's jitter** (in levels). Here that is
+  20 times fewer re-lays for 1% of grain.
+  - Past that, R stops falling: it reaches the floor set by the jumps themselves (p = 0.05), and only G keeps growing.
+  - The knee is where the band clears the jitter. The jumps set the floor.
+- **Easing toward the look** re-lays every frame and trails every jump.
+- **The median of recent looks** is worse still: a lag. Corollary 6.1's median is for choosing a corner before the look
+  is known, not after it is seen.
+- **The one-or-two-corners switch takes a band too.** At b = 0.25 nats it switches 8.7 times less often, for 0.17% of
+  the grain.
+- Hysteresis is classical (Schmitt triggers, LOD switching with a dead band). What the geometry adds is where to set the
+  band: in levels, against the jitter.

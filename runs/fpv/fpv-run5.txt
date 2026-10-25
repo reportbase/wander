@@ -1,0 +1,26 @@
+trace: 200000 looks, 9914 jumps, jitter sd 0.1, targets on [0, 8.0] nats
+  FAIL F1: follow: G = 1.000000000000000, R = 0.999995, S = 0.2386 levels a look (the trace's mean step)
+  ok   F2: hold 0.4: R = 0.0509 (19.6 times fewer re-lays than follow)
+  ok   F2: hold 0.4: G = 1.00979 (e^(sigma^2) = 1.01005); S = 0.1333
+  FAIL F3: ease 0.5: G = 1.1314, R = 0.999995, S = 0.1579; worse than hold 0.4 on both
+  ok   F4: median 5: G = 4.93, R = 0.6273, S = 0.1381
+
+  the frontier (not predicted): hold L for several L
+      L = 0.1 : G = 1.00078  R = 0.5048  S = 0.2148
+      L = 0.2 : G = 1.00409  R = 0.1976  S = 0.1708
+      L = 0.3 : G = 1.00768  R = 0.0796  S = 0.1427
+      L = 0.4 : G = 1.00979  R = 0.0509  S = 0.1333
+      L = 0.6 : G = 1.01328  R = 0.0444  S = 0.1304
+      L = 0.8 : G = 1.02030  R = 0.0420  S = 0.1292
+      L = 1.0 : G = 1.03289  R = 0.0397  S = 0.1275
+      L = 1.5 : G = 1.10772  R = 0.0342  S = 0.1214
+      ease 0.25: G = 1.6807  R = 1.0000
+      ease 0.75: G = 1.0200  R = 1.0000
+      median 3: G = 3.05  R = 0.6814
+      median 9: G = 8.26  R = 0.6042
+
+F5, the one-or-two-corners switch
+  FAIL F5: D* = 2.020936, s = 0.3911; worst in-band loss 0.11275 against s b = 0.09777 (+15.32%)
+  FAIL F5: switches: 3905 with no band, 451 with b = 0.25 (8.7 times fewer); mean extra grain 0.00000 and 0.00268 pi/K
+
+KILLED
