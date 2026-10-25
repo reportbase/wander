@@ -2168,7 +2168,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   coarsest (G8). G2 killed in two clauses by my set-up (the continuum past |x| = 3.75; Z's ties within a cell). Run 2
   (`runs/fpv/fpv2.py`, R504), flying at the focus with H locked on it: the target held at ½, the level flow
   u/d − u·cos β/D (1/τ far beyond), the address flow (1/π)·sech x·dx/dt, so the world beyond streams through the corner
-  at K/(πτ) cells a unit time, things between toward home; nothing killed. Kept out of OFS (Tom: "this is just a
+  at K/(πτ) cells a unit time, things between toward home; nothing killed. Runs 3–4 (`runs/fpv/fpv3.py`, `fpv4.py`,
+  R505; Tom: "Yes, continue"), two targets D nats apart: one corner at √(f₁f₂) gives each (π/K)·cosh(D/2), two corners
+  (K split at the geometric mean) 4·atan(e^{D/2})/K, equal at D* = 2.021 nats (a ratio 7.55); splitting costs to first
+  order, one corner to second; two corners coarsest between the targets, where one corner is finest. Run 3 killed by my
+  set-up (B5, a derivative across the join) and my tolerance (B6 at K = 32); run 4 not. Kept out of OFS (Tom: "this is just a
   playground to see how it might be used"); `plans/fpv-games-note.md` the insights for games and simulations.
   `gaze-note.md` (25 Oct; SPN R495; Tom: "visually, our far field looks proportional, it does not look like the merkator
   map."; "its highly likely that the corner is constanly adjusted to follow our point of gaze."; "the far and near

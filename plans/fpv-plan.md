@@ -223,3 +223,89 @@ Nothing killed.
 - A game holding detail by these cells would refresh fastest at the crosshair, at a rate it can read off its own τ. That
   is a budget known in advance, not a measurement.
 - Classical in its pieces: Lee's τ, the derivative of atan.
+
+### Run 3: two targets, one corner or two (predictions written 25 October 2026, before the run)
+
+*Tom: "Yes, continue", to the playground's next step in `plans/fpv-games-note.md`: two targets, one corner or two.*
+
+Two things matter at once, at f₁ < f₂, their separation D = ln(f₂/f₁) nats. The reader still has K depth addresses.
+The measure is the worse of the two targets' relative cells (cell width over its geometric middle), in the continuum
+first. Two ways:
+- **One corner**, the turn about some H.
+- **Two corners**, K split evenly at m = √(f₁f₂): below m a turn about f₁, its K/2 cells spread over [0, m]; above m a
+  turn about f₂, its K/2 cells over [m, ∞). Each turn's angle there is atan(e^{D/2}), so the two halves are mirror images
+  about m.
+
+Predictions:
+- **B1. One corner.** The best H is √(f₁f₂) (HKO's), and both targets' relative cell is then (π/K)·cosh(D/2). Exact.
+- **B2. Two corners.** Each target's relative cell is 4·atan(e^{D/2})/K. Exact.
+- **B3. The crossover.** The two are equal at the D* solving π·cosh(D/2) = 4·atan(e^{D/2}). From a hand estimate, D* is
+  about 2.0 nats, a distance ratio of about 7.4 (2.9 doublings).
+  - Below D*, one corner at the geometric mean is strictly better for both targets.
+  - Above D*, two corners are.
+- **B4. The limits.**
+  - At D = 0 both are π/K.
+  - Near 0, one corner's excess is second order, (π/K)(1 + D²/8). Two corners' is first order, (π/K)(1 + D/π): splitting
+    costs at once.
+  - As D → ∞, two corners tend to 2π/K, the price of halving K. One corner grows as (π/2K)·e^{D/2}.
+- **B5. Between the targets.**
+  - The two-corner lay's relative grain is continuous at m.
+  - m is its coarsest point between the targets: 4·atan(e^{D/2})·cosh(D/2)/K.
+  - The one-corner lay is finest there, π/K.
+- **B6. Discrete cells.**
+  - The cell holding each target matches the continuum within 5% at K = 32 for D ≤ 4, and at K = 1024 for D ≤ 8.
+  - The crossover, read off the discrete cells, lies within 0.2 nats of D* at K = 1024.
+
+*Killed* if any identity is off by more than 10⁻²⁰ at 40 digits, if D* falls outside [1.9, 2.1], or if B6 misses its
+tolerances.
+
+#### Run 3 (25 October 2026, `runs/fpv/fpv3.py`, output `runs/fpv/fpv-run3.txt`, under a second)
+
+**Killed**, both times by my set-up; the rest not killed. The script's first try stopped with an error before any
+verdict: it inverted the lays numerically and the root finder failed on the two-corner lay. The lays now carry their
+inverses in closed form, and that run is the one recorded.
+- **B1.** One corner's best H is √(f₁f₂) to 10⁻⁴⁰, and both targets' relative cell is (π/K)·cosh(D/2) to 10⁻³⁸ at 32
+  separations from 0.25 to 8 nats.
+- **B2.** With two corners each target's relative cell is 4·atan(e^{D/2})/K, to 10⁻⁴¹.
+- **B3.** D* = 2.02093620370845 nats, a distance ratio of 7.5454 (2.916 doublings); the cell there is 1.5555 × π/K. One
+  corner is strictly better below it and two above it.
+- **B4.** Both are π/K at D = 0. Near 0 the excesses are (1 + D²/8) and (1 + D/π), to 10⁻⁷. As D → ∞, two corners tend
+  to 2π/K and one corner to (π/2K)·e^{D/2} (within 10⁻¹⁵ at D = 80).
+- **B5.** The grain is continuous at m (jump 10⁻⁴⁰). **Killed by my set-up** in its second clause: the check took a
+  numerical derivative at a = ½ itself, straddling the two halves of the piecewise lay. That gave nonsense at m (41 in
+  place of 0.235 at D = 2), so a neighbouring grid point came out coarsest. On either side the grain rises toward m:
+  0.2037, 0.2107, 0.2182, 0.2263 (×1 at K = 32, D = 2) coming in from below, the same mirrored from above.
+- **B6.** At K = 1024 for D ≤ 8 the cells holding the targets are within 3.9% of the continuum, and the crossover read
+  off the cells is at D = 2.018 (D* = 2.021). **Killed by my tolerance** at K = 32: one corner's cells were off by up
+  to 13.7% (at D = 3.25), against my 5%. There a cell is 27% of its own distance wide, the target can sit anywhere in it,
+  and the grain changes across one cell by about its own width. Two corners stayed within 5% at K = 32.
+
+### Run 4: B5 and B6 again (predictions written 25 October 2026, before the run)
+
+- **B5′.** Take the grain on each half by its own closed form, a one-sided derivative. Then m is the coarsest of 41
+  points evenly spaced in levels between the targets, at 4·atan(e^{D/2})·cosh(D/2)/K, and one corner is finest there,
+  at π/K. This holds at every D from 0.25 to 8.
+- **B6′.** At K = 32 and D ≤ 4, the cell holding each target is off from the continuum by no more than the continuum
+  relative cell itself (the grain's change across one cell). Written after seeing run 3's K = 32 deviations, so a
+  weaker test than B6.
+
+*Killed* as for run 3.
+
+#### Run 4 (25 October 2026, `runs/fpv/fpv4.py`, output `runs/fpv/fpv-run4.txt`)
+
+Nothing killed.
+- **B5′.** With each half's slope one-sided, m is the coarsest point between the targets at every D: 4·atan(e^{D/2})·
+  cosh(D/2)/K, to 10⁻⁴⁰. In units of π/K it is 1.47, 2.39, 6.88 and 54.0 at D = 1, 2, 4 and 8, where one corner gives 1.
+- **B6′.** At K = 32 the worst target cell is off the continuum by 0.53 of the continuum relative cell.
+- B1–B4 and B6's K = 1024 clauses come out as in run 3.
+
+**What runs 3–4 say.**
+- **One corner at the geometric mean** serves two targets better than two corners until they are D* = 2.02 nats apart:
+  a distance ratio of 7.55, about three doublings.
+  - At D*, both ways give each target 1.56 × π/K.
+  - Past D*, one corner's cells grow as e^{D/2}, while two corners never get coarser than 2π/K at the targets.
+- **Splitting costs at once and pays only slowly.** Two corners lose to first order in D, one corner only to second.
+- **The two ways put their worst grain in opposite places.** Two corners make the space between the targets coarsest,
+  exactly where one corner is finest. That matters if the next look is likely to fall between the two targets (the
+  next-look median, Corollary 6.1(c)) rather than on either.
+- Classical in its pieces: HKO's √(x₁x₂), and the turn's grain.

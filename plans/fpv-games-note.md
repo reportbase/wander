@@ -1,6 +1,6 @@
 # Where the corner on the focus might be useful: games and simulations
 
-*25 October 2026. SPN R502–R504. Tom: "the insight might be useful for FPV games."; "i'm intrested in the geometry, not
+*25 October 2026. SPN R502–R505. Tom: "the insight might be useful for FPV games."; "i'm intrested in the geometry, not
 realism."; of OFS: "No, keep it out ofs. this is just a playground to see how it might be used. what is worth
 exploring?"; then "proceed. create a note that saves your insights about where this might be useful in games and
 simulations."*
@@ -89,9 +89,17 @@ focus: H = the focus's distance, the crosshair the direction corner. Then:
   G4)*
 
 ### 6. Two things at once
-- With one corner and two targets (the crosshair and a tracked enemy), HKO's best H for telling two amounts apart is
-  √(d₁d₂), their geometric mean. Whether to split K between two corners instead is open; there should be a crossover in
-  how many levels apart the targets are. *(known geometry; the crossover a guess)*
+- With one corner and two targets (the crosshair and a tracked enemy), the best H is their geometric mean √(d₁d₂)
+  (HKO's). Each target then gets (π/K)·cosh(D/2), with D = ln(d₂/d₁). *(shown, FPV run 3)*
+- Two corners, K split at the geometric mean, give each target 4·atan(e^{D/2})/K, never worse than 2π/K. *(shown)*
+- **The crossover is at D* = 2.02 nats, a distance ratio of 7.55, about three doublings.** *(shown, FPV runs 3–4)*
+  - Nearer together, keep one corner between them.
+  - Farther apart, split.
+  - Splitting costs at once (first order in D); one corner loses only slowly (second order).
+- The two put their worst grain in opposite places: two corners are coarsest between the targets, where one corner is
+  finest. If the next look tends to fall between them, one corner keeps its advantage past D*. *(shown as geometry;
+  guess as policy)*
+- A game could switch on the ratio alone (a single test, d₂/d₁ > 7.55), with some hysteresis (§7). *(guess)*
 
 ### 7. When to move the focus
 - Moving H every time the crosshair flickers churns every cell. Hysteresis, only moving past some number of levels or
@@ -123,7 +131,7 @@ All guesses, listed for where the same geometry would apply.
 
 ## Next in the playground
 In order:
-1. two targets, one corner or two (the crossover);
+1. ~~two targets, one corner or two~~ (done: FPV runs 3–4, D* = 2.02 nats);
 2. refocus policy over a gaze trace (churn against grain);
 3. the focus cube in 3D;
 4. a small game with 8–16 depth bands.

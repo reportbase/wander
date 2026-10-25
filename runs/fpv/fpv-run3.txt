@@ -1,0 +1,30 @@
+B1, one corner
+  ok   B1: the H equalising the two targets is sqrt(f1 f2) (worst 2.3e-41), the minimax since one target's cell grows and the other's shrinks as H moves
+  ok   B1: both targets' relative cell (pi/K) cosh(D/2) (worst 5.51e-39)
+
+B2, two corners
+  ok   B2: each target's relative cell 4 atan(e^(D/2))/K (worst 8.61e-42)
+
+B3, the crossover
+  ok   B3: D* = 2.02093620370845 nats, a distance ratio 7.5453856, 2.91559 doublings; the cell there 1.5554675 x pi/K
+  ok   B3: one corner strictly better below D* (19 points), two corners above (39 points to D* + 9.75)
+
+B4, the limits
+  ok   B4: at D = 0 both pi/K
+  ok   B4: near 0: one corner 1 + 0.125 D^2, two corners 1 + 0.3183098862 D (1/8 and 1/pi = 0.3183098862)
+  ok   B4: as D -> inf, two corners -> 2 pi/K, one corner ~ (pi/2K) e^(D/2) (both within 1e-15 at D = 80)
+
+B5, between the targets
+  ok   B5: the two-corner grain continuous at m (worst jump 9.18e-41)
+  FAIL B5: m its coarsest point between the targets, 4 atan(e^(D/2)) cosh(D/2)/K; one corner finest there, pi/K (worst 9.18e-41)
+      D = 1.0: at the targets one 1.1276, two 1.3058; at m one 1, two 1.4725  (x pi/K)
+      D = 2.0: at the targets one 1.5431, two 1.5512; at m one 1, two 2.3936  (x pi/K)
+      D = 4.0: at the targets one 3.7622, two 1.8287; at m one 1, two 6.88  (x pi/K)
+      D = 8.0: at the targets one 27.308, two 1.9767; at m one 1, two 53.98  (x pi/K)
+
+B6, discrete cells
+  FAIL B6: K = 32, D <= 4: the cells holding the targets within 13.7% of the continuum
+  ok   B6: K = 1024, D <= 8: the cells holding the targets within 3.91% of the continuum
+  ok   B6: K = 1024: two corners first better on the cells at D = 2.018 (D* = 2.02094)
+
+KILLED
