@@ -1696,6 +1696,38 @@ try {
   if (!fpvOk) failures.push(`[fpv.html] ${JSON.stringify(fpv)}`);
   console.log(`${failures.length === before59 ? 'ok  ' : 'FAIL'} fpv.html (the turn's cell at the focus π/K to ${Math.max(...fpv.rel.map(v => Math.abs(v - 1))).toFixed(4)} at K = 16, 32, 64 over 10³ and 10⁷; edges mirrored about the focus; log over turn ln(X/n)/π; twins told apart when looked at ${fpv.twins.join(', ')} of 8, log depth ${fpv.logTwins}; the focus at address ½; flown at for 4 s its distance ${fpv.fly.half.toFixed(3)} of the start, still at ½)`);
 
+  // ── 60. fpv-game.html (SPN R507): a pair 1.25 apart about the focus told apart by the turn at K = 8, 12, 16 and mostly not
+  //    by log depth at K = 16 (in ln 1.25 over its band, 47% of places); the steady bot reads the turn nearly as well as true depth and far better than log depth or
+  //    the standard buffer, shooting no friend; a real click on a foe in front scores ──
+  current = 'fpv-game.html';
+  const before60 = failures.length;
+  await page.goto(new URL('fpv-game.html', base).href, { waitUntil: 'load' });
+  const fg = await page.evaluate(() => {
+    const G = __fpvGame, o = {}, r = Math.sqrt(1.25);
+    o.turnTold = [8, 12, 16].map(K => [3, 30, 300].every(H => G.cellOf(H * r, 'turn', K, H) !== G.cellOf(H / r, 'turn', K, H)));
+    let told = 0; const n = 400;
+    for (let i = 0; i < n; i++) { const d = 3 * Math.pow(500, (i + 0.5) / n); if (G.cellOf(d * r, 'log', 16, 1) !== G.cellOf(d / r, 'log', 16, 1)) told++; }
+    o.logShare = told / n;
+    o.bot = ['turn', 'log', 'z', 'true'].map(s => G.bot(s, 16, 60, 7));
+    G.set({ seed: 7, scheme: 'turn', K: 16 });
+    const p = G.world.pairs[0];
+    let t = (1.5 * Math.PI - p.ph) / p.w; while (t < 0) t += 2 * Math.PI / p.w;
+    G.set({ yaw: p.az, pitch: p.el, t, H: p.d0 });
+    o.front = G.frontAt(G.world, 0, 0, 0, 'turn', 16, 0);
+    o.before = G.state().hits;
+    return o;
+  });
+  const gb = await page.locator('#cv').boundingBox();
+  await page.mouse.click(gb.x + gb.width / 2, gb.y + gb.height / 2);
+  await page.waitForTimeout(100);
+  fg.after = await page.evaluate(() => __fpvGame.state());
+  const [bT, bL, bZ, bTr] = fg.bot;
+  const fgOk = fg.turnTold.every(Boolean) && Math.abs(fg.logShare - Math.log(1.25) / (Math.log(2000) / 16)) < 0.01 && fg.bot.every(b => b.wrongs === 0) &&
+    bT.hits >= 0.8 * bTr.hits && bT.hits > 4 * bL.hits && bT.hits > 4 * bZ.hits &&
+    fg.front && fg.front.colour === 'red' && !fg.front.fight && fg.after.hits === fg.before + 1;
+  if (!fgOk) failures.push(`[fpv-game.html] ${JSON.stringify(fg)}`);
+  console.log(`${failures.length === before60 ? 'ok  ' : 'FAIL'} fpv-game.html (a pair 1.25 apart about the focus told apart by the turn at K = 8, 12, 16, by log depth at K = 16 in ${(100 * fg.logShare).toFixed(0)}% of places; the bot's foes in 60 s: the turn ${bT.hits}, log ${bL.hits}, the standard buffer ${bZ.hits}, true depth ${bTr.hits}, no friend shot; a real click on a foe in front scored)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

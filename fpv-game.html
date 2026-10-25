@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Friend or foe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    fpv-game.html: a small game with K depth bands (25 October 2026, Tom: "3", to "a small game with 8–16 depth bands", the
+    games note's last step; SPN R507; after fpv.html and FPV runs 1–5). Geometry, not realism. A first-person view at equal
+    angles (±50° across), turned by a drag or the arrow keys. Pairs float about the eye: a red foe and a blue friend on
+    nearly one line of sight, each the same size on the screen (drawn by angle, so nearer is not bigger), slowly swapping
+    which is nearer (the log of their ratio swings ±ln 1.35 / 2 each way). Only occlusion says which is in front, and the
+    depth test sees only K bands (8, 12, 16). Two discs in one band cannot be ordered: they z-fight, drawn in shimmering
+    stripes. A shot (a tap, or space) hits whatever is drawn at the crosshair: a foe +1, a friend −1.
+    The schemes: the turn about the focus, (2/π)·atan(d/H), H held on the pair under the crosshair and moved only when it is
+    more than 0.4 nats off (FPV run 5's hold); log depth over [1, 2000]; the standard buffer over [1, 2000]; and true depth,
+    the reference. At K = 16 the turn's cell at the focus is 1.10 of its distance, log depth's 1.61 everywhere, so a pair
+    1.25 apart is told apart at the crosshair by the turn and mostly not by log depth.
+    A steady bot (turns 180° a second, reacts in 0.15 s, shoots only a foe it sees clearly in front, never into stripes)
+    plays any scheme on a seeded round. It measures how often pairs are readable when looked at; it is not a player.
+    Links: ?scheme=turn|log|z|true&K=8|12|16&seed=&bot=1.
+    Test hook: window.__fpvGame (cellOf, addr, makeWorld, pairsAt, frontAt, resolvedAt, focus, bot, step, shoot, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --blue: #7aa7ff; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 82ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 4fr 1fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15 }
+    .g { color: var(--gold) } .r { color: var(--red) } .bl { color: var(--blue) } .t { color: var(--teal) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    table { border-collapse: collapse; font-size: 13px } td, th { padding: 2px 10px 2px 0; text-align: right } th { color: var(--dim); font-weight: 400 }
+    td:first-child, th:first-child { text-align: left }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Friend or foe</h1>
+    <p class="lede">A small first-person game with only K depth bands. Each pair is a <span class="r">red foe</span> and a
+    <span class="bl">blue friend</span> on nearly one line of sight, the same size on the screen, slowly swapping which is
+    nearer. Only which one covers the other tells you which is in front, and the depth test sees only K bands: two discs in
+    one band cannot be ordered and shimmer in stripes. Shoot a foe in front (+1), never a friend (−1). Laid by the
+    <span class="t">turn about the focus</span>, the pair under the crosshair gets the finest band there is; laid by log
+    depth or the standard buffer, it gets what it gets.</p>
+    <div class="panel">
+        <div class="row"><label>depth laid by</label>
+            <button data-s="turn">the turn about the focus</button>
+            <button data-s="log">log depth</button>
+            <button data-s="z">the standard buffer</button>
+            <button data-s="true">true depth</button></div>
+        <div class="row"><label>K bands</label>
+            <button data-K="8">8</button><button data-K="12">12</button><button data-K="16">16</button>
+            <label style="margin-left:10px">round</label>
+            <button id="start">start a 60 s round</button>
+            <button id="botBtn">let the bot play</button>
+            <button id="botAll">the bot on every scheme</button></div>
+        <div class="grid">
+            <div><canvas id="cv" height="560"></canvas>
+                <p class="cap">Drag (or the arrow keys) to turn; tap the view (or space) to shoot at the crosshair. A pair in
+                one band z-fights: stripes, which colour shows at the crosshair flickering.</p></div>
+            <div><canvas id="bands" height="560"></canvas>
+                <p class="cap">The K bands along depth (home at the bottom), each pair in view a column, red and blue at
+                their addresses; a pair in one band boxed. Gold: the focus H.</p></div>
+        </div>
+        <div class="read" id="readout"></div>
+        <div id="botOut"></div>
+        <p class="note">Geometry, not realism: drawn by angle, so a disc's size says nothing of its distance; no fog, no
+        shading. The bot is a fixed policy, not a person: it shows how often the pair it is looking at can be read, not
+        whether a player would notice. FPV runs 1–5 in <code>plans/fpv-plan.md</code>; where this might be used, in
+        <code>plans/fpv-games-note.md</code>.</p>
+    </div>
+</main>
+<script>
+(() => {
+    const N0 = 1, X = 2000, NP = 16, RHO = 0.035, SWING = Math.log(1.35) / 2, HOLD = 0.4, HF = 50 * Math.PI / 180;
+    const ROUND = 60, TURN_V = Math.PI, REACT = 0.15, COOL = 0.6;
+    const q = new URLSearchParams(location.search);
+    let scheme = ['turn', 'log', 'z', 'true'].includes(q.get('scheme')) ? q.get('scheme') : 'turn';
+    let K = [8, 12, 16].includes(+q.get('K')) ? +q.get('K') : 16;
+    const seed0 = +q.get('seed') || 7;
+
+    function rng(seed) {                                    // mulberry32, so a seed gives one world
+        let a = seed >>> 0;
+        return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1);
+            t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+    }
+    const wrap = a => { a = (a + Math.PI) % (2 * Math.PI); if (a < 0) a += 2 * Math.PI; return a - Math.PI; };
+
+    // The address of a distance, in [0, 1), and its band. True depth has no bands.
+    function addr(d, s, H) {
+        if (s === 'turn') return (2 / Math.PI) * Math.atan(d / H);
+        if (s === 'log') return Math.min(Math.max(Math.log(d / N0) / Math.log(X / N0), 0), 1 - 1e-12);
+        if (s === 'z') return Math.min(Math.max((1 / N0 - 1 / d) / (1 / N0 - 1 / X), 0), 1 - 1e-12);
+        return d;
+    }
+    function cellOf(d, s, k, H) { return s === 'true' ? d : Math.min(k - 1, Math.floor(k * addr(d, s, H))); }
+
+    function newPair(r) {
+        const off = r() * 2 * Math.PI;
+        return { az: (r() * 2 - 1) * Math.PI, el: (r() * 2 - 1) * 0.25, d0: 3 * Math.pow(500, r()),
+            w: 2 * Math.PI / (4 + 5 * r()), ph: r() * 2 * Math.PI, ox: Math.cos(off) * 0.3 * RHO, oy: Math.sin(off) * 0.3 * RHO };
+    }
+    function makeWorld(seed) {
+        const r = rng(seed);
+        const w = { r, t: 0, yaw: 0, pitch: 0, H: 30, pairs: [], score: 0, hits: 0, wrongs: 0, shots: 0, cool: {}, aim: -1, aimT: 0 };
+        for (let i = 0; i < NP; i++) w.pairs.push(newPair(r));
+        return w;
+    }
+    // Red sits on +offset, blue on −offset; each pair's log-ratio swings, so which is nearer swaps twice a period.
+    function dists(p, t) { const l = SWING * Math.sin(p.w * t + p.ph); return { red: p.d0 * Math.exp(l), blue: p.d0 * Math.exp(-l) }; }
+    function rel(w, p) { return { x: wrap(p.az - w.yaw), y: p.el - w.pitch }; }       // angles from the crosshair
+    function covers(w, p, which, x, y) {
+        const c = rel(w, p), sg = which === 'red' ? 1 : -1;
+        return Math.hypot(c.x + sg * p.ox - x, c.y + sg * p.oy - y) <= RHO;
+    }
+    function pairsAt(w, x = 0, y = 0) {                      // pairs with a disc at (x, y), nearest first
+        return w.pairs.map((p, i) => i).filter(i => covers(w, w.pairs[i], 'red', x, y) || covers(w, w.pairs[i], 'blue', x, y))
+            .sort((a, b) => w.pairs[a].d0 - w.pairs[b].d0);
+    }
+    function resolvedAt(w, i, s = scheme, k = K) {
+        const p = w.pairs[i], d = dists(p, w.t);
+        return s === 'true' || cellOf(d.red, s, k, w.H) !== cellOf(d.blue, s, k, w.H);
+    }
+    const stripeOn = (yPix, t) => (Math.floor(yPix / 3) + (Math.floor(t / 0.07) % 2)) % 2 === 0;
+    // What is drawn at (x, y) for pair i: 'red', 'blue', or 'fight' where both cover it in one band (the stripe decides
+    // which colour a pixel shows; frontAt gives that colour and says it fought).
+    function frontAt(w, i, x = 0, y = 0, s = scheme, k = K, yPix = 0) {
+        const p = w.pairs[i], cr = covers(w, p, 'red', x, y), cb = covers(w, p, 'blue', x, y);
+        if (!cr && !cb) return null;
+        if (cr !== cb) return { colour: cr ? 'red' : 'blue', fight: false };
+        const d = dists(p, w.t);
+        if (s === 'true') return { colour: d.red < d.blue ? 'red' : 'blue', fight: false };
+        const a = cellOf(d.red, s, k, w.H), b = cellOf(d.blue, s, k, w.H);
+        if (a !== b) return { colour: a < b ? 'red' : 'blue', fight: false };
+        return { colour: stripeOn(yPix, w.t) ? 'red' : 'blue', fight: true };
+    }
+    // The turn's focus: H held on the pair under the crosshair, moved only past the band (FPV run 5's hold).
+    function focus(w) {
+        const at = pairsAt(w);
+        if (at.length) { const d = w.pairs[at[0]].d0; if (Math.abs(Math.log(d / w.H)) > HOLD) w.H = d; }
+    }
+    function shoot(w, s = scheme, k = K) {
+        w.shots++;
+        const at = pairsAt(w);
+        if (!at.length) return 'miss';
+        const i = at[0], f = frontAt(w, i, 0, 0, s, k, crossRow());
+        if (f.colour === 'red') { w.score++; w.hits++; } else { w.score--; w.wrongs++; }
+        w.pairs[i] = newPair(w.r);
+        return f.colour;
+    }
+    // The steady bot: turn toward the nearest pair in angle not lately declined, wait REACT, shoot a foe clearly in front.
+    function botStep(w, dt, s, k) {
+        for (const key in w.cool) if (w.cool[key] <= w.t) delete w.cool[key];
+        let best = -1, bd = Infinity;
+        w.pairs.forEach((p, i) => {
+            if (w.cool[i]) return;
+            const c = rel(w, p), dd = Math.hypot(c.x, c.y);
+            if (dd < bd) { bd = dd; best = i; }
+        });
+        if (best < 0) return;
+        if (best !== w.aim) { w.aim = best; w.aimT = 0; }
+        const c = rel(w, w.pairs[best]), dist = Math.hypot(c.x, c.y), stepA = TURN_V * dt;
+        if (dist > 0.1 * RHO) {
+            const f = Math.min(1, stepA / dist);
+            w.yaw = wrap(w.yaw + c.x * f); w.pitch += c.y * f; w.aimT = 0; return;
+        }
+        w.aimT += dt;
+        if (w.aimT < REACT) return;
+        const at = pairsAt(w), look = at.length ? at[0] : best;       // what a shot would hit, read as drawn
+        const fr = frontAt(w, look, 0, 0, s, k, crossRow());
+        if (fr && !fr.fight && fr.colour === 'red') { shoot(w, s, k); w.aim = -1; }
+        else { w.cool[best] = w.t + COOL; w.cool[look] = w.t + COOL; w.aim = -1; }
+    }
+    function crossRow() { const c = document.getElementById('cv'); return c ? Math.floor(c.height / 2) : 0; }
+    function step(w, dt, s = scheme, k = K, withBot = false) {
+        w.t += dt;
+        if (s === 'turn') focus(w);
+        if (withBot) botStep(w, dt, s, k);
+    }
+    function bot(s, k, seconds = ROUND, seed = seed0) {
+        const w = makeWorld(seed), dt = 1 / 60;
+        let looked = 0, clear = 0;
+        for (let n = 0; n < seconds * 60; n++) {
+            step(w, dt, s, k, true);
+            const at = pairsAt(w);
+            if (at.length) { looked++; if (resolvedAt(w, at[0], s, k)) clear++; }
+        }
+        return { scheme: s, K: k, hits: w.hits, wrongs: w.wrongs, shots: w.shots, score: w.score, clearShare: clear / Math.max(looked, 1) };
+    }
+
+    // ---- the page ----
+    const cv = document.getElementById('cv'), cx = cv.getContext('2d');
+    const bv = document.getElementById('bands'), bx = bv.getContext('2d');
+    let world = makeWorld(seed0), playing = false, botOn = q.get('bot') === '1', last = performance.now(), flash = null;
+    let roundLeft = 0;
+    function size() {
+        const w = cv.clientWidth || 800; cv.width = Math.round(w * devicePixelRatio); cv.height = Math.round(w * 0.6 * devicePixelRatio);
+        const bw = bv.clientWidth || 200; bv.width = Math.round(bw * devicePixelRatio); bv.height = cv.height;
+    }
+    function draw() {
+        const W = cv.width, Hh = cv.height, s = (W / 2) / HF, c0 = W / 2, c1 = Hh / 2;
+        const g = cx.createLinearGradient(0, 0, 0, Hh); g.addColorStop(0, '#0b0d16'); g.addColorStop(1, '#05060a');
+        cx.fillStyle = g; cx.fillRect(0, 0, W, Hh);
+        cx.strokeStyle = 'rgba(255,255,255,0.08)'; cx.lineWidth = 1;
+        const yh = c1 + world.pitch * s; cx.beginPath(); cx.moveTo(0, yh); cx.lineTo(W, yh); cx.stroke();
+        for (let deg = -180; deg < 180; deg += 30) {                     // compass ticks on the horizon
+            const x = c0 + wrap(deg * Math.PI / 180 - world.yaw) * s;
+            cx.beginPath(); cx.moveTo(x, yh - 4); cx.lineTo(x, yh + 4); cx.stroke();
+        }
+        const order = world.pairs.map((p, i) => i).sort((a, b) => world.pairs[b].d0 - world.pairs[a].d0);
+        for (const i of order) {
+            const p = world.pairs[i], c = rel(world, p);
+            if (Math.abs(c.x) > HF + 0.1 || Math.abs(c.y) > HF) continue;
+            const d = dists(p, world.t);
+            const disc = (sg, col) => { cx.beginPath(); cx.arc(c0 + (c.x + sg * p.ox) * s, c1 - (c.y + sg * p.oy) * s, RHO * s, 0, 2 * Math.PI);
+                cx.fillStyle = col; cx.fill(); cx.strokeStyle = 'rgba(0,0,0,0.6)'; cx.lineWidth = 1.5; cx.stroke(); };
+            const R = '#d96e5b', B = '#7aa7ff';
+            let fight = false, redFront;
+            if (scheme === 'true') redFront = d.red < d.blue;
+            else { const a = cellOf(d.red, scheme, K, world.H), b = cellOf(d.blue, scheme, K, world.H); fight = a === b; redFront = a < b; }
+            if (!fight) { if (redFront) { disc(-1, B); disc(1, R); } else { disc(1, R); disc(-1, B); } }
+            else {
+                disc(-1, B); disc(1, R);                                   // red whole, then blue in stripes over it
+                cx.save(); cx.beginPath();
+                for (let y = 0; y < Hh; y += 3) if (!stripeOn(y, world.t)) cx.rect(0, y, W, 3);
+                cx.clip(); disc(-1, B); cx.restore();
+            }
+        }
+        cx.strokeStyle = '#d4a052'; cx.lineWidth = 2;                       // the crosshair
+        cx.beginPath(); cx.moveTo(c0 - 12, c1); cx.lineTo(c0 - 4, c1); cx.moveTo(c0 + 4, c1); cx.lineTo(c0 + 12, c1);
+        cx.moveTo(c0, c1 - 12); cx.lineTo(c0, c1 - 4); cx.moveTo(c0, c1 + 4); cx.lineTo(c0, c1 + 12); cx.stroke();
+        if (flash && flash.until > world.t) {
+            cx.fillStyle = flash.colour === 'red' ? 'rgba(140,230,205,0.9)' : flash.colour === 'blue' ? 'rgba(217,110,91,0.9)' : 'rgba(200,200,208,0.6)';
+            cx.font = `${14 * devicePixelRatio}px DM Mono, monospace`; cx.textAlign = 'center';
+            cx.fillText(flash.colour === 'red' ? '+1 foe' : flash.colour === 'blue' ? '−1 friend' : 'miss', c0, c1 - 22 * devicePixelRatio);
+        }
+        drawBands();
+    }
+    function drawBands() {
+        const W = bv.width, Hh = bv.height, pad = 10 * devicePixelRatio, top = pad, bot0 = Hh - pad, hgt = bot0 - top;
+        bx.fillStyle = '#05060a'; bx.fillRect(0, 0, W, Hh);
+        const vis = world.pairs.map((p, i) => i).filter(i => { const c = rel(world, world.pairs[i]); return Math.abs(c.x) <= HF && Math.abs(c.y) <= HF; });
+        const y = a => bot0 - a * hgt;
+        if (scheme === 'true') {
+            const la = d => Math.log(d / N0) / Math.log(X / N0);
+            bx.strokeStyle = 'rgba(255,255,255,0.08)';
+            for (const d of [1, 10, 100, 1000]) { bx.beginPath(); bx.moveTo(0, y(la(d))); bx.lineTo(W, y(la(d))); bx.stroke(); }
+            vis.forEach((i, j) => { const d = dists(world.pairs[i], world.t), x = pad + (j + 0.5) * (W - 2 * pad) / Math.max(vis.length, 1);
+                dot(x, y(la(d.red)), '#d96e5b'); dot(x, y(la(d.blue)), '#7aa7ff'); });
+            return;
+        }
+        for (let k = 0; k <= K; k++) { bx.strokeStyle = 'rgba(255,255,255,0.12)'; bx.beginPath(); bx.moveTo(0, y(k / K)); bx.lineTo(W, y(k / K)); bx.stroke(); }
+        if (scheme === 'turn') { bx.strokeStyle = '#d4a052'; bx.lineWidth = 2; bx.beginPath(); bx.moveTo(0, y(0.5)); bx.lineTo(W, y(0.5)); bx.stroke(); bx.lineWidth = 1; }
+        vis.forEach((i, j) => {
+            const d = dists(world.pairs[i], world.t), x = pad + (j + 0.5) * (W - 2 * pad) / Math.max(vis.length, 1);
+            const ar = addr(d.red, scheme, world.H), ab = addr(d.blue, scheme, world.H);
+            if (!resolvedAt(world, i)) { const k = cellOf(d.red, scheme, K, world.H); bx.strokeStyle = '#d96e5b';
+                bx.strokeRect(x - 7 * devicePixelRatio, y((k + 1) / K), 14 * devicePixelRatio, hgt / K); }
+            dot(x - 2 * devicePixelRatio, y(ar), '#d96e5b'); dot(x + 2 * devicePixelRatio, y(ab), '#7aa7ff');
+        });
+    }
+    function dot(x, yy, col) { bx.fillStyle = col; bx.beginPath(); bx.arc(x, yy, 3 * devicePixelRatio, 0, 2 * Math.PI); bx.fill(); }
+    const NAMES = { turn: 'the turn about the focus', log: 'log depth', z: 'the standard buffer', true: 'true depth' };
+    function cellRatio(s, k, d) {                                       // the band's width over its place, at distance d
+        if (s === 'true') return 0;
+        const a = cellOf(d, s, k, world.H), inv = u => s === 'turn' ? world.H * Math.tan(u * Math.PI / 2)
+            : s === 'log' ? N0 * Math.pow(X / N0, u) : 1 / (1 / N0 - u * (1 / N0 - 1 / X));
+        const lo = inv(a / k), hi = a + 1 >= k ? Infinity : inv((a + 1) / k);
+        return hi / lo;
+    }
+    function readout() {
+        const at = pairsAt(world), i = at[0];
+        let line = 'under the crosshair: nothing';
+        if (i !== undefined) {
+            const p = world.pairs[i], d = dists(p, world.t), r = cellRatio(scheme, K, p.d0);
+            line = `under the crosshair: a pair at ${p.d0.toFixed(1)}, the two ${Math.exp(2 * Math.abs(Math.log(d.red / p.d0))).toFixed(3)} apart; ` +
+                (scheme === 'true' ? 'true depth orders them' : `its band ${isFinite(r) ? r.toFixed(2) : '∞'} of its distance wide; ` +
+                (resolvedAt(world, i) ? '<span class="t">told apart</span>' : '<span class="r">one band: they fight</span>'));
+        }
+        const vis = world.pairs.map((p, j) => j).filter(j => { const c = rel(world, world.pairs[j]); return Math.abs(c.x) <= HF && Math.abs(c.y) <= HF; });
+        const told = vis.filter(j => resolvedAt(world, j)).length;
+        document.getElementById('readout').innerHTML =
+            `<span class="b">${NAMES[scheme]}</span>, K = ${K}${scheme === 'turn' ? `, the focus H = <span class="g">${world.H.toFixed(1)}</span> (moved past ${HOLD} nats)` : ''}\n` +
+            `${line}\npairs in view told apart: ${told} of ${vis.length}\n` +
+            `score <span class="b">${world.score}</span>  (foes ${world.hits}, friends ${world.wrongs}, shots ${world.shots})` +
+            (playing ? `  ·  ${Math.max(0, roundLeft).toFixed(0)} s left` : botOn ? '  ·  the bot is playing' : '');
+    }
+    function frame(now) {
+        const dt = Math.min(0.05, (now - last) / 1000); last = now;
+        if (playing || botOn) {
+            step(world, dt, scheme, K, botOn);
+            if (playing) { roundLeft -= dt; if (roundLeft <= 0) { playing = false; botOn = false; } }
+        } else world.t += dt;
+        draw(); readout(); requestAnimationFrame(frame);
+    }
+    function doShoot() { if (botOn) return; const r = shoot(world); flash = { colour: r, until: world.t + 0.5 }; }
+    let drag = null;
+    cv.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY, moved: 0 }; cv.setPointerCapture(e.pointerId); });
+    cv.addEventListener('pointermove', e => {
+        if (!drag) return; const k = HF / (cv.clientWidth / 2);
+        const dx = e.clientX - drag.x, dy = e.clientY - drag.y; drag.moved += Math.abs(dx) + Math.abs(dy);
+        world.yaw = wrap(world.yaw - dx * k); world.pitch = Math.max(-0.5, Math.min(0.5, world.pitch - dy * k));
+        drag.x = e.clientX; drag.y = e.clientY;
+    });
+    cv.addEventListener('pointerup', () => { if (drag && drag.moved < 6) doShoot(); drag = null; });
+    addEventListener('keydown', e => {
+        const a = 0.05;
+        if (e.key === 'ArrowLeft') world.yaw = wrap(world.yaw - a); else if (e.key === 'ArrowRight') world.yaw = wrap(world.yaw + a);
+        else if (e.key === 'ArrowUp') world.pitch = Math.min(0.5, world.pitch + a); else if (e.key === 'ArrowDown') world.pitch = Math.max(-0.5, world.pitch - a);
+        else if (e.key === ' ') doShoot(); else return;
+        e.preventDefault();
+    });
+    function mark() {
+        document.querySelectorAll('[data-s]').forEach(b => b.classList.toggle('on', b.dataset.s === scheme));
+        document.querySelectorAll('[data-K]').forEach(b => b.classList.toggle('on', +b.dataset.K === K));
+        document.getElementById('botBtn').classList.toggle('on', botOn);
+    }
+    document.querySelectorAll('[data-s]').forEach(b => b.onclick = () => { scheme = b.dataset.s; mark(); });
+    document.querySelectorAll('[data-K]').forEach(b => b.onclick = () => { K = +b.dataset.K; mark(); });
+    document.getElementById('start').onclick = () => { world = makeWorld(seed0); playing = true; botOn = false; roundLeft = ROUND; mark(); };
+    document.getElementById('botBtn').onclick = () => { botOn = !botOn; if (botOn) world = makeWorld(seed0); mark(); };
+    document.getElementById('botAll').onclick = () => {
+        const rows = [];
+        for (const s of ['turn', 'log', 'z', 'true']) for (const k of [8, 12, 16]) { if (s === 'true' && k !== 16) continue; rows.push(bot(s, k)); }
+        document.getElementById('botOut').innerHTML = '<table><tr><th>scheme</th><th>K</th><th>foes</th><th>friends</th>' +
+            '<th>looks told apart</th></tr>' + rows.map(r => `<tr><td>${NAMES[r.scheme]}</td><td>${r.scheme === 'true' ? '∞' : r.K}</td>` +
+            `<td>${r.hits}</td><td>${r.wrongs}</td><td>${(100 * r.clearShare).toFixed(0)}%</td></tr>`).join('') +
+            '</table><p class="note">The steady bot, one seeded 60 s round each: it shoots only a foe it sees clearly in front.</p>';
+    };
+    addEventListener('resize', size);
+    size(); mark(); requestAnimationFrame(frame);
+
+    window.__fpvGame = {
+        cellOf, addr, makeWorld, pairsAt, frontAt, resolvedAt, focus, bot, step, shoot, dists, NAMES,
+        get world() { return world; },
+        set(o) {
+            if (o.scheme) scheme = o.scheme; if (o.K) K = o.K;
+            if (o.seed !== undefined) world = makeWorld(o.seed);
+            if (o.yaw !== undefined) world.yaw = o.yaw; if (o.pitch !== undefined) world.pitch = o.pitch;
+            if (o.t !== undefined) world.t = o.t; if (o.H !== undefined) world.H = o.H;
+            if (o.bot !== undefined) botOn = o.bot; if (o.play) { playing = true; roundLeft = ROUND; }
+            mark(); return this.state();
+        },
+        state() { return { scheme, K, H: world.H, yaw: world.yaw, pitch: world.pitch, t: world.t, score: world.score,
+            hits: world.hits, wrongs: world.wrongs, shots: world.shots, playing, botOn, under: pairsAt(world) }; },
+    };
+})();
+</script>
+</body>
+</html>

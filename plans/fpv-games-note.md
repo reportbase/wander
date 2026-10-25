@@ -1,6 +1,6 @@
 # Where the corner on the focus might be useful: games and simulations
 
-*25 October 2026. SPN R502–R506. Tom: "the insight might be useful for FPV games."; "i'm intrested in the geometry, not
+*25 October 2026. SPN R502–R507. Tom: "the insight might be useful for FPV games."; "i'm intrested in the geometry, not
 realism."; of OFS: "No, keep it out ofs. this is just a playground to see how it might be used. what is worth
 exploring?"; then "proceed. create a note that saves your insights about where this might be useful in games and
 simulations."*
@@ -134,6 +134,28 @@ focus: H = the focus's distance, the crosshair the direction corner. Then:
 
 All guesses, listed for where the same geometry would apply.
 
+### 10. A small game: friend or foe (`fpv-game.html`)
+- A first-person view with only K depth bands (8, 12 or 16).
+- Each pair is a red foe and a blue friend on nearly one line of sight, the same size on the screen, slowly swapping
+  which is nearer. Only occlusion says which is in front.
+- Two discs in one band cannot be ordered, so they z-fight. A shot hits whatever is drawn at the crosshair.
+- **What a steady bot reads** (one seeded 60 s round at K = 16, not a player; the numbers measured after building, no
+  prediction written first):
+
+  | Scheme | Foes shot | Looks told apart |
+  |---|---|---|
+  | The turn about the focus (with run 5's hold) | 98 | 91% |
+  | Log depth over [1, 2000] | 17 | 13% |
+  | The standard buffer | 0 | 0% |
+  | True depth | 94 | 100% |
+
+  - On three more seeds, the turn's count was 83–108% of true depth's (bot timing moves them about).
+  - No friend was shot in any scheme.
+- **Why** (shown, run 1): the turn's band at the focus is 1.10 of its distance at K = 16, and 1.22 at K = 8. Log depth's
+  band is 1.61 everywhere. So a pair 1.25 apart is told apart at the crosshair by the turn, and by log depth only where it
+  straddles a band edge (ln 1.25 over its band, 47% of places).
+- **The game asks what a player sees, and that has not been tried.** *(guess that it shows)*
+
 ## What it does not claim
 - It does not claim any game would look or play better; nothing was rendered, timed or played.
 - It makes no claim about eyes. The corner on the gaze is a "should" (OFS §8, Corollary 6.1), and FOV's allocation is a
@@ -146,4 +168,4 @@ In order:
 1. ~~two targets, one corner or two~~ (done: FPV runs 3–4, D* = 2.02 nats);
 2. ~~refocus policy over a gaze trace~~ (done: FPV run 5, hold with a band of 3–4 jitters);
 3. the focus cube in 3D;
-4. a small game with 8–16 depth bands.
+4. ~~a small game with 8–16 depth bands~~ (done: `fpv-game.html`, §10).

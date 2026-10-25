@@ -339,6 +339,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the mirror pair and twins told apart. `?focus=&scheme=turn|log|z&K=16|32|64&X=3|7&yaw=&f=`; hook `window.__fpv`
   (`addr`, `cellOf`, `edge`, `rel`, `things`, `twins`, `twinsApart`, `flowAt`, `set` (with `home`, `fly` seconds), `state`).
   Where this might be used in games and simulations: `plans/fpv-games-note.md` (R504; a playground, not OFS). Not in the flying page.
+- `fpv-game.html`: **friend or foe** (25 Oct 2026, Tom: "3", to "a small game with 8–16 depth bands", the games note's last
+  step; SPN R507), a standalone page, plain canvas, geometry not realism. A first-person view at equal angles (±50°), turned by
+  a drag or the arrow keys; 16 pairs about the eye, each a red foe and a blue friend on nearly one line of sight, drawn by
+  angle (the same size whatever the distance), their log-ratio swinging ±ln 1.35/2 so which is nearer swaps; depth seen in K
+  bands (8, 12, 16), a pair in one band z-fighting in stripes; a shot (tap, space) hits what is drawn at the crosshair (foe
+  +1, friend −1). Schemes: the turn about the focus (H held on the pair under the crosshair, moved past 0.4 nats, FPV run 5),
+  log depth and the standard buffer over [1, 2000], true depth. A steady bot (180° a second, 0.15 s to react, shoots only a
+  foe clearly in front) on a seeded 60 s round: at K = 16 the turn 98 foes, log depth 17, the standard buffer 0, true depth
+  94 (looks told apart 91%, 13%, 0%, 100%). A bot, not a player. `?scheme=turn|log|z|true&K=8|12|16&seed=&bot=1`; hook
+  `window.__fpvGame` (`cellOf`, `addr`, `makeWorld`, `pairsAt`, `frontAt`, `resolvedAt`, `focus`, `bot`, `step`, `shoot`,
+  `set`, `state`). Not in the flying page.
 - `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
   "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
   carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
@@ -729,7 +740,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, arrays on the sweeps, online decisions at the corner and a dynamic array, the focus is the corner, the crosshair is the corner, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, arrays on the sweeps, online decisions at the corner and a dynamic array, the focus is the corner, the crosshair is the corner, friend or foe, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -2677,6 +2688,9 @@ In short:
   59. **fpv.html:** the turn's cell at the focus π/K within 1% at K = 16, 32, 64 over 10³ and 10⁷; its edges mirror
       images about the focus; log depth's over the turn's ln(X/n)/π; every twin told apart when looked at, at every K,
       fewer by log depth; the thing looked at at address ½; flown at for 4 s, half its distance and still at ½.
+  60. **fpv-game.html:** a pair 1.25 apart about the focus told apart by the turn at K = 8, 12, 16, by log depth at K = 16 in
+      ln 1.25 of its band (47% of places); the steady bot's foes in 60 s, the turn at least 0.8 of true depth's and over 4
+      times log depth's and the standard buffer's, no friend shot; a real click on a foe in front scores.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
