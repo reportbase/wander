@@ -1,0 +1,69 @@
+O1  ski rental
+    s = 1/5: worst 6  1 + max(s, 1/s) = 6  at 1/s 6
+    s = 1/4: worst 5  1 + max(s, 1/s) = 5  at 1/s 5
+    s = 1/2: worst 3  1 + max(s, 1/s) = 3  at 1/s 3
+    s = 2/3: worst 5/2  1 + max(s, 1/s) = 5/2  at 1/s 5/2
+    s = 1: worst 2  1 + max(s, 1/s) = 2  at 1/s 2
+    s = 3/2: worst 5/2  1 + max(s, 1/s) = 5/2  at 1/s 5/2
+    s = 2: worst 3  1 + max(s, 1/s) = 3  at 1/s 3
+    s = 4: worst 5  1 + max(s, 1/s) = 5  at 1/s 5
+    s = 5: worst 6  1 + max(s, 1/s) = 6  at 1/s 6
+    whole days: day B gives 2 − 1/B and nothing better, for B = 1 … 50: yes
+O2  the cow path, walked
+    b = 3/2: walked sup 10.000000000  1 + 2b²/(b − 1) = 10 = 5 + 2(r + 1/r) = 10 (r = 2); below it: True; gap 1.6e-10
+    b = 2: walked sup 9.000000000  1 + 2b²/(b − 1) = 9 = 5 + 2(r + 1/r) = 9 (r = 1); below it: True; gap 3.6e-12
+    b = 3: walked sup 10.000000000  1 + 2b²/(b − 1) = 10 = 5 + 2(r + 1/r) = 10 (r = 1/2); below it: True; gap 9.0e-15
+    b = 4: walked sup 11.666666667  1 + 2b²/(b − 1) = 35/3 = 5 + 2(r + 1/r) = 35/3 (r = 1/3); below it: True; gap 1.1e-14
+O3  near and far on the cow path
+    d0 = 1, b = 2: excess behind the start [Fraction(2, 1)], ahead [Fraction(0, 1)]; ratio at x = d0·1e-9 2.000e+09; far excess/x at most 7.9022 < c − 1 = 8
+    d0 = 1, b = 3: excess behind the start [Fraction(2, 1)], ahead [Fraction(0, 1)]; ratio at x = d0·1e-9 2.000e+09; far excess/x at most 8.9158 < c − 1 = 9
+    d0 = 2, b = 2: excess behind the start [Fraction(4, 1)], ahead [Fraction(0, 1)]; ratio at x = d0·1e-9 2.000e+09; far excess/x at most 7.9022 < c − 1 = 8
+    d0 = 2, b = 3: excess behind the start [Fraction(4, 1)], ahead [Fraction(0, 1)]; ratio at x = d0·1e-9 2.000e+09; far excess/x at most 8.9158 < c − 1 = 9
+    doubling d0 leaves the far constant: True
+O4  the dynamic array's band
+    g = 3/2: grow lands 2/3, shrink at the threshold lands 2/3, √(1/g² · 1) = 2/3
+    g = 2: grow lands 1/2, shrink at the threshold lands 1/2, √(1/g² · 1) = 1/2
+    g = 3: grow lands 1/3, shrink at the threshold lands 1/3, √(1/g² · 1) = 1/3
+    g = 4: grow lands 1/4, shrink at the threshold lands 1/4, √(1/g² · 1) = 1/4
+    g = 2, 4096 pushes then 4000 pops: every resize landed at [Fraction(1, 2)]
+    shrinking at 1/g (g = 2): copies per push–pop pair at the boundary [32, 64, 128] … (65536, 131072)
+    g = 2, copies per operation at its worst over every prefix:
+      C0 = 1: [0.6667, 0.9714, 0.9714, 0.6774, 1.9993]
+      C0 = 16: [0.1121, 0.4571, 0.4571, 0.0225, 1.9956]
+    other g, the worst copies per operation over pushes to N then the mixes:
+      g = 3/2: N = 2^8, 2^12, 2^16 → [2.9692, 2.9964, 2.9997]
+      g = 3: N = 2^8, 2^12, 2^16 → [1.4918, 1.4991, 1.5]
+      g = 4: N = 2^8, 2^12, 2^16 → [1.3268, 1.3329, 1.3333]
+O5  the array's near and far
+    g = 3/2, C0 = 8: near field no copying and waste ≤ C0: True; reallocations ⌈log_g(N/C0)⌉ exactly: True; worst C/N past C0 1.5000 < g
+    g = 3/2, C0 = 16: near field no copying and waste ≤ C0: True; reallocations ⌈log_g(N/C0)⌉ exactly: True; worst C/N past C0 1.5000 < g
+    g = 2, C0 = 8: near field no copying and waste ≤ C0: True; reallocations ⌈log_g(N/C0)⌉ exactly: True; worst C/N past C0 1.9999 < g
+    g = 2, C0 = 16: near field no copying and waste ≤ C0: True; reallocations ⌈log_g(N/C0)⌉ exactly: True; worst C/N past C0 1.9999 < g
+    g = 3, C0 = 8: near field no copying and waste ≤ C0: True; reallocations ⌈log_g(N/C0)⌉ exactly: True; worst C/N past C0 2.9998 < g
+    g = 3, C0 = 16: near field no copying and waste ≤ C0: True; reallocations ⌈log_g(N/C0)⌉ exactly: True; worst C/N past C0 2.9997 < g
+    g = 3/2, with shrinking: least load past C0 0.4445 > 1/g² = 0.4444
+    g = 2, with shrinking: least load past C0 0.2505 > 1/g² = 0.2500
+    g = 3, with shrinking: least load past C0 0.1116 > 1/g² = 0.1111
+    doubling C0 (8 → 16) at g = 2: one reallocation fewer at N = 17, 100, 1000, 5000: True
+O6  which problems reduce to a reciprocal-symmetric f(r)
+    array, copying alone: g = 3/2 (r = 2): worst copies per element 2.9999 against 1 + r = 3.0000
+    array, copying alone: g = 2 (r = 1): worst copies per element 2.0000 against 1 + r = 2.0000
+    array, copying alone: g = 3 (r = 1/2): worst copies per element 1.5000 against 1 + r = 1.5000
+    ski rental symmetric: True; cow path symmetric in r: True; the array's copying alone the same at r = 2 and r = 1/2: False
+    randomized ski rental: ratio at T = 0.1 … 10 within 0.0e+00 of e/(e − 1) = 1.581977, every buy time inside the corner (s ≤ 1): not at the corner, does not reduce
+    galloping search, worst comparisons over log2 i (i 2^20 … 2^40): {2: 2.1, 3: 1.7711, 4: 1.7, 8: 1.5714, 16: 1.55, 256: 1.5417}
+    galloping falls as b grows, no interior corner: True
+    paging (LRU k) and online bin packing (First Fit 1.7): not computed; no sunk-against-committed ratio enters their bounds, by their definitions
+O7  the time-times-space product
+    g = 3/2: copies per element × waste factor 4.4999, (1 + r)(1 + 1/r) = 2 + r + 1/r = 4.5000
+    g = 2: copies per element × waste factor 3.9999, (1 + r)(1 + 1/r) = 2 + r + 1/r = 4.0000
+    g = 3: copies per element × waste factor 4.4999, (1 + r)(1 + 1/r) = 2 + r + 1/r = 4.5000
+    g = 4: copies per element × waste factor 5.3332, (1 + r)(1 + 1/r) = 2 + r + 1/r = 5.3333
+
+O1: not killed
+O2: not killed
+O3: not killed
+O4: not killed
+O5: not killed
+O6: KILLED
+O7: not killed

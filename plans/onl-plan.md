@@ -106,4 +106,42 @@ the reader's acts out of its body (R455). Tom rules.
 
 ## Runs
 
-*(none yet)*
+### Run 1 (25 Oct): `runs/onl/onl.py`, output `runs/onl/onl.txt`, 14 s
+
+- **O1 not killed.** Ski rental's worst ratio, scanned over the adversary's stop on a grid of 1/200 that contains the buy
+  time, is exactly 1 + max(s, 1/s) at all nine s (1/5 … 5) and the same at s and 1/s; least at s = 1, 2. In whole days,
+  buying on day B gives 2 − 1/B and no day does better, for every B from 1 to 50.
+- **O2 not killed.** The cow path walked (turn points bᵏ alternating sides, a target just past each turn point): the
+  supremum is 10, 9, 10 and 35/3 at b = 3/2, 2, 3, 4, below the formula by 10⁻¹⁰ to 10⁻¹⁴ and never above it; each equals
+  5 + 2(r + 1/r), r = 1/(b − 1) = 2, 1, ½, ⅓. Least at b = 2.
+- **O3 not killed.** Behind the start the excess walking is exactly 2d₀ for every target nearer than d₀ (2, or 4 at
+  d₀ = 2), ahead of it 0; the ratio at x = 10⁻⁹·d₀ is 2·10⁹, unbounded as x → 0. Past d₀ the excess over x stays under
+  c − 1 (at most 7.90 against 8 at b = 2, 8.92 against 9 at b = 3). Doubling d₀ doubles the near excess and leaves the
+  far supremum exactly as it was.
+- **O4 not killed.** Grow at 1 and shrink at 1/g² both land at 1/g, √(1/g²·1), at g = 3/2, 2, 3, 4; in a real run at g = 2
+  (4,096 pushes, 4,000 pops) every resize landed at ½. Shrinking at 1/g thrashes: one push–pop pair at the boundary costs
+  2N copies, N = 16 … 65,536. At g = 2 the worst copies per operation over every prefix of five mixes of 10⁵ operations is
+  at most 1.9993 (start capacity 1) and 1.9956 (16), under 2; the runs of pushes then pops come nearest. At g = 3/2, 3, 4
+  the worst per operation settles to 3, 1.5, 1.333 (that is, 1 + r) from N = 2⁸ to 2¹⁶.
+- **O5 not killed.** With start capacity C₀ = 8 or 16 and pushes only: up to C₀ no copying and the waste at most C₀; past
+  it the reallocations are ⌈log_g(N/C₀)⌉ exactly at every N to 20,000, and the waste factor C/N under g (1.5000, 1.9999,
+  2.9998). With shrinking the least load past C₀ stays above 1/g² (0.4445, 0.2505, 0.1116). Doubling C₀ at g = 2 takes
+  exactly one reallocation off at N = 17, 100, 1,000, 5,000.
+- **O6 killed, by my clause on the array.** Ski rental and the cow path reduce as predicted. The dynamic array's copying
+  alone does not: its worst copies per element is 1 + r (3, 2, 1.5 at r = 2, 1, ½), monotone, not the same at r and 1/r,
+  so it has no corner and favours a large g. Its corner appears only once the waste factor 1 + 1/r is multiplied in (O7).
+  So my prediction folded O7's objective into O6; the array's base is free under copying alone, as OFS says of the levels.
+  The rest of O6 stands: randomized ski rental's optimal mixture (buy time with density ∝ eˢ on [0, 1]) has ratio
+  e/(e − 1) at every stop T from 0.1 to 10 (to 40 digits), all its buy times inside the corner, so it is not at the
+  corner; galloping search's worst comparisons over log₂ i (i to 2⁴⁰) fall as b grows, 2.10, 1.77, 1.70, 1.57, 1.55, 1.54
+  at b = 2, 3, 4, 8, 16, 256, with no interior corner. Paging and bin packing were classified by their definitions, not
+  computed.
+- **O7 not killed.** From the simulated array (pushes only, N to 2·10⁵): copies per element times waste factor is 4.50,
+  4.00, 4.50, 5.33 at g = 3/2, 2, 3, 4, against 2 + r + 1/r to 10⁻⁴; least at g = 2. The objective is mine.
+
+**Reading.** The corner holds where a decision trades a sunk amount against a committed one and the future charges for
+the larger (ski rental, the cow path): the worst case is one reciprocal-symmetric function of their ratio, least at 1.
+Where only one cost is counted (the array's copying, galloping's comparisons) there is no corner and the base is free or
+runs to an end; a corner at 2 needs both sides of the exchange priced. The near and far fields hold as predicted in every
+case computed: a chosen scale, the guarantee absolute inside it and relative past it, the far constant unmoved by the
+scale. All of this is classical arithmetic; what is read is the arrangement.
