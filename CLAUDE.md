@@ -2098,6 +2098,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (SPN R489): O1–O5, O7 not killed, O6 killed by its array clause (copying alone has no corner; both sides must be
   priced); the search found Gal's theorem (claim 2 classical), online bidding's 2 + r + 1/r unnamed, the unit's necessity
   explicit; the reciprocal form across problems and the near/far reading not found. Two readings of known results.
+  Carried in (SPN R490; Tom: "yes, add it."): OFS Appendix A "Online decisions" and the CS companion §6 "A writer of its
+  past, situated about its future", not OFS's body.
   `lgo-plan.md` (+ `runs/lgo/lgo.py`, `lgo2.py`, 23 Oct; SPN R468; Tom, of another session's `cauchy_test.py`: "lets complete
   those tests, through the lense of our mathmatical framework."): LIGO H1 and L1 whitened noise, GWOSC open data (gwosc.org's
   chain needs certifi's bundle joined to the proxy's; sha256s in the plan). The old Cauchy-over-Gaussian at N = 1 is the
