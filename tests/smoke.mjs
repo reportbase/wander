@@ -1685,12 +1685,16 @@ try {
       return F.twins.filter(([a, b]) => { F.set({ focus: a }); return F.cellOf(F.things[a].d, K, 'turn') !== F.cellOf(F.things[b].d, K, 'turn'); }).length; });
     o.addr = F.set({ K: 32, focus: 7 }).focusAddr;
     o.logTwins = F.state().twins.log;
+    const a = F.set({ K: 32, X: 7, home: true, focus: 30 }), b = F.set({ fly: 4 });
+    o.fly = { half: b.focusD / a.focusD, addr: b.focusAddr, flow: F.flowAt(0, b.tau, 32) * Math.PI * b.tau / 32 };
+    F.set({ home: true });
     return o;
   });
   const fpvOk = fpv.rel.every(v => Math.abs(v - 1) < 0.01) && fpv.mirror < 1e-12 && Math.abs(fpv.ratio - 1) < 0.01 &&
-    fpv.twins.every(c => c === 8) && Math.abs(fpv.addr - 0.5) < 1e-12 && fpv.logTwins < 8;
+    fpv.twins.every(c => c === 8) && Math.abs(fpv.addr - 0.5) < 1e-12 && fpv.logTwins < 8 &&
+    Math.abs(fpv.fly.half - 0.5) < 1e-9 && Math.abs(fpv.fly.addr - 0.5) < 1e-12 && Math.abs(fpv.fly.flow - 1) < 1e-12;
   if (!fpvOk) failures.push(`[fpv.html] ${JSON.stringify(fpv)}`);
-  console.log(`${failures.length === before59 ? 'ok  ' : 'FAIL'} fpv.html (the turn's cell at the focus π/K to ${Math.max(...fpv.rel.map(v => Math.abs(v - 1))).toFixed(4)} at K = 16, 32, 64 over 10³ and 10⁷; edges mirrored about the focus; log over turn ln(X/n)/π; twins told apart when looked at ${fpv.twins.join(', ')} of 8, log depth ${fpv.logTwins}; the focus at address ½)`);
+  console.log(`${failures.length === before59 ? 'ok  ' : 'FAIL'} fpv.html (the turn's cell at the focus π/K to ${Math.max(...fpv.rel.map(v => Math.abs(v - 1))).toFixed(4)} at K = 16, 32, 64 over 10³ and 10⁷; edges mirrored about the focus; log over turn ln(X/n)/π; twins told apart when looked at ${fpv.twins.join(', ')} of 8, log depth ${fpv.logTwins}; the focus at address ½; flown at for 4 s its distance ${fpv.fly.half.toFixed(3)} of the start, still at ½)`);
 
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';

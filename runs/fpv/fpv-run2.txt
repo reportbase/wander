@@ -1,0 +1,17 @@
+A1, the level flow
+  ok   A1: dx/dt = u/d - u cos(beta)/D at four things (worst 1.79e-43)
+  ok   A1: far beyond the focus dx/dt -> 1/tau: 0.993120139546, 0.999931393405, 0.999999313953, 0.999999999314 tau^-1 at D = 1e5, 1e7, 1e9, 1e12
+  ok   A1: a thing on the line nearer than the focus slides toward home: dx/dt = -6.0/tau
+
+A2, the address flow
+  ok   A2: da/dt = (1/pi) sech(x) dx/dt (worst 1.12e-44)
+  ok   A2: for one level rate 1/tau, cells a unit time: x = 0: 1.3969, x = 1: 0.90528, x = 2: 0.37131, x = 4: 0.051154  (K/(pi tau) = 1.3969, tau = 233.3)
+
+A3, the focus stays put
+  ok   A3: the target's address at t = 0, 50, 200, 330: off 1/2 by at most 5.74e-42
+
+A4, halving
+  ok   A4: d0 to d0/2 takes 166.667 = tau0/2 = 166.667
+  ok   A4: a thing far beyond moves 0.693147180559 nats over that halving (ln 2 = 0.69314718056)
+
+ALL NOT KILLED

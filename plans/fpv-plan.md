@@ -182,3 +182,44 @@ prediction says to one address. Both were fixed in the code before the run recor
   sits on the scene's edge.
 - Classical in its pieces: the tangent's mirror, the arcsine, cosh. What is new here is only the choice of H at the
   focus.
+
+### Run 2: flying at the focus (predictions written 25 October 2026, before the run)
+
+*Tom: "proceed", to the approach first among the playground's next steps ("Fly at a thing with H locked on it").*
+
+The eye moves straight at the focused thing at a steady speed u, and H stays its distance d, so τ = d/u is its time to
+contact. Another thing at distance D has s = D/d and level x = ln s. The turn's address is a = (2/π)·atan(s).
+
+- **A1. The level flow.** dx/dt = u/d − u·cos β/D, where β is the angle between the thing and the line of flight.
+  - For a thing far beyond the focus (D/d → ∞), this tends to 1/τ: one nat per τ.
+  - A thing on the line of flight, nearer than the focus, has dx/dt < 0: it slides toward home in levels.
+  - Exact, by differentiating the closed form.
+- **A2. The address flow.** da/dt = (1/π)·sech(x)·dx/dt. For things sliding at one level rate it is fastest at the corner.
+  For things far beyond the focus it is K/(πτ) cells per unit time at x = 0, falling as sech x away from it. Exact.
+- **A3. The focus stays put.** The thing flown at keeps address ½ at every moment of the approach, to rounding.
+- **A4. Halving.** Each halving of the target's distance takes τ/2 of the τ read at its start, as MOT run 1 found.
+  - A thing fixed in the world, far beyond the focus, crosses one level of x per halving of d.
+  - So the world behind the target passes through the corner's cells at K/(πτ), growing as the eye closes.
+
+*Killed* if any identity is off by more than 10⁻²⁰ at 40 digits, or A3's address leaves ½ by more than 10⁻¹².
+
+#### Run 2 (25 October 2026, `runs/fpv/fpv2.py`, output `runs/fpv/fpv-run2.txt`)
+
+Nothing killed.
+- **A1.** The level flow, dx/dt = u/d − u·cos β/D, holds at four things to 10⁻⁴³.
+  - Far beyond the focus it tends to 1/τ: 0.99312, 0.99993, 0.9999993 and 1 − 7·10⁻¹⁰ (in units of 1/τ) at D = 10⁵,
+    10⁷, 10⁹ and 10¹² with d = 700.
+  - A thing on the line at 400, nearer than the focus, slides toward home at −6.0/τ.
+- **A2.** The address flow da/dt = (1/π)·sech(x)·dx/dt holds to 10⁻⁴⁴. At one level rate 1/τ the cells crossed a unit
+  time are 1.397 at the corner (K/(πτ), K = 1024, τ = 233), 0.905 one nat off, 0.371 two off and 0.051 four off.
+- **A3.** The target keeps address ½ throughout, to 10⁻⁴¹.
+- **A4.** A halving of the target's distance takes τ₀/2, and a thing far beyond moves ln 2 over it, to 10⁻¹².
+
+**What it says.**
+- Flying at the focus with H locked on it, the target never moves in the addresses.
+- The world beyond the target streams through the corner at one nat per τ: the fastest cell turnover is at the focus,
+  K/(πτ), and it falls as sech away.
+- Things between the eye and the target stream the other way, toward home.
+- A game holding detail by these cells would refresh fastest at the crosshair, at a rate it can read off its own τ. That
+  is a budget known in advance, not a measurement.
+- Classical in its pieces: Lee's τ, the derivative of atan.

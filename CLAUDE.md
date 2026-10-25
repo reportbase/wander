@@ -331,11 +331,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (equal angles, ±60°); up, each thing's depth address in K cells (16, 32, 64), every cell the same room on the screen, by
   the turn about the focus ((2/π)·atan(d/f), the focus at ½), log depth or the standard buffer; 140 things over 10³ or
   10⁷ and eight pairs of twins 1.25 apart (in one cell drawn as one); each thing coloured by its cell over π/K. Tap a thing
-  to look at it (the view turns onto it, H its distance, a slide in levels); turn ±20°, focus ÷2 ×2. The strip: the
+  to look at it (the view turns onto it, H its distance, a slide in levels); turn ±20°, focus ÷2 ×2; "fly at it" (R504, FPV
+  run 2) moves the eye straight at the focus at d₀/8 a second with H locked on it, the target held at ½ while the world
+  beyond streams through the corner at K/(πτ) cells a second, and "back home" returns. The strip: the
   three schemes' edges along ln d (the turn's mirrored about f) and their relative cells, the band where the turn is
   finer than log depth (±acosh(ln(X/n)/π) nats) shaded; the readout gives the focus's cell under each scheme, the band,
   the mirror pair and twins told apart. `?focus=&scheme=turn|log|z&K=16|32|64&X=3|7&yaw=&f=`; hook `window.__fpv`
-  (`addr`, `cellOf`, `edge`, `rel`, `things`, `twins`, `twinsApart`, `set`, `state`). Not in the flying page.
+  (`addr`, `cellOf`, `edge`, `rel`, `things`, `twins`, `twinsApart`, `flowAt`, `set` (with `home`, `fly` seconds), `state`).
+  Where this might be used in games and simulations: `plans/fpv-games-note.md` (R504; a playground, not OFS). Not in the flying page.
 - `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
   "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
   carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
@@ -2162,7 +2165,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   mirror images about f, d ↦ f²/d (G2); better than log by ln(X/n)/π at the focus, within ±acosh(ln(X/n)/π) nats (G3) and
   in expectation for next looks within ±3.61 nats (G4); refocusing a slide in levels (G5); waste under 2% for f in
   [64n, X/64] (G6); at 32 bits 97 times reversed-Z at the focus for 7.3 doublings (G7); the flat screen's crosshair
-  coarsest (G8). G2 killed in two clauses by my set-up (the continuum past |x| = 3.75; Z's ties within a cell).
+  coarsest (G8). G2 killed in two clauses by my set-up (the continuum past |x| = 3.75; Z's ties within a cell). Run 2
+  (`runs/fpv/fpv2.py`, R504), flying at the focus with H locked on it: the target held at ½, the level flow
+  u/d − u·cos β/D (1/τ far beyond), the address flow (1/π)·sech x·dx/dt, so the world beyond streams through the corner
+  at K/(πτ) cells a unit time, things between toward home; nothing killed. Kept out of OFS (Tom: "this is just a
+  playground to see how it might be used"); `plans/fpv-games-note.md` the insights for games and simulations.
   `gaze-note.md` (25 Oct; SPN R495; Tom: "visually, our far field looks proportional, it does not look like the merkator
   map."; "its highly likely that the corner is constanly adjusted to follow our point of gaze."; "the far and near
   fields, are useful as a signal about what to focus on next."): the picture's far field the turn's (proportional in
@@ -2659,7 +2666,7 @@ In short:
       levels and the in-place lay: 1, 0.821 and 0.627 at a = 0, 0.2, 0.5.
   59. **fpv.html:** the turn's cell at the focus π/K within 1% at K = 16, 32, 64 over 10³ and 10⁷; its edges mirror
       images about the focus; log depth's over the turn's ln(X/n)/π; every twin told apart when looked at, at every K,
-      fewer by log depth; the thing looked at at address ½.
+      fewer by log depth; the thing looked at at address ½; flown at for 4 s, half its distance and still at ½.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
