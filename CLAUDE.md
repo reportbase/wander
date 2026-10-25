@@ -301,8 +301,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `window.__arraySweeps` (`turnIndex`, `centralIndex`, `bounds`, `middles`, `countIndex`, `shapeValues`, `read`, `set`,
   `state`). Not in the flying page.
 - `online-corner.html`, `dynamic-array.html`: **online decisions** (25 Oct 2026, Tom: "could you create two demos, one for
-  each, to show them in action with our framing."; SPN R488–R491; ONL), standalone pages, plain canvas, one for OFS
-  Appendix A's "Online decisions", one for the CS companion §6. `online-corner.html`: ski rental (buy once the rent paid is
+  each, to show them in action with our framing."; SPN R488–R491; ONL), standalone pages, plain canvas, made for OFS
+  Appendix A's "Online decisions" and the CS companion §6, both removed since (SPN R494; `plans/onl-skt-note.md`). `online-corner.html`: ski rental (buy once the rent paid is
   s × the price; the future's stop T; the worst over every T, scanned, 1 + max(s, 1/s) on the levels of s, least at the
   corner) and two-ray search (legs d₀·bⁱ alternating sides, drawn on the reader's lay with H = d₀; the ratio for every
   target, 2d₀ of extra walking behind the start, under 5 + 2(r + 1/r) past d₀; the worst against the levels of r); the
@@ -313,7 +313,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   levels with the band and its landing at 1/g, copies per operation, capacity against size (C₀ the near field, one
   reallocation a level past it), copying alone against time × space. `?g=&rule=band|thrash|never&C0=&p=&n=&play=1`; hook
   `window.__dynamicArray` (`make`, `push`, `pop`, `step`, `state`, `thrash`, `staircase`, `product`, `copiesAlone`, `set`).
-  The companion links both. Not in the flying page.
+  No paper links them now. Not in the flying page.
 - `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
   "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
   carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
@@ -2113,7 +2113,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   priced); the search found Gal's theorem (claim 2 classical), online bidding's 2 + r + 1/r unnamed, the unit's necessity
   explicit; the reciprocal form across problems and the near/far reading not found. Two readings of known results.
   Carried in (SPN R490; Tom: "yes, add it."): OFS Appendix A "Online decisions" and the CS companion §6 "A writer of its
-  past, situated about its future", not OFS's body.
+  past, situated about its future", not OFS's body. Removed (SPN R494; Tom: "also it seems like a writer thing not a
+  reader thing", "remove them from the papers and into a note."): the online player counts amounts, a writer with one
+  unknown amount; the text kept verbatim in `plans/onl-skt-note.md`.
   `skt-plan.md` (25 Oct; SPN R492; Tom: "what data structure is best fit for situated reader and unsituated writer", then
   "yes,write the plan"): the writer's dense array over a known extent against the reader's claimed one design
   ⌊K·F(x/H)⌋ (the turn, the lay = HdrHistogram's and the float's layout, DDSketch's logarithm), fixed K, order per cell.
@@ -2124,6 +2126,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   settles, its horizon cell capping the tail) killed: the turn's horizon representative is a second choice beside F.
   The search: circllhist (2020) the nearest prior work (one binning theory for HdrHistogram and DDSketch, floats as
   log-linear bins); t-digest's family on the rank; known against unknown universe already a survey axis (T4 half killed).
+  Then (SPN R494; Tom: "it seems like a writer thing not a reader thing"): a sketch bins amounts against a chosen unit, a
+  writer's act; a reader's structure is indexed by direction. Never in the papers; `plans/onl-skt-note.md`.
   `lgo-plan.md` (+ `runs/lgo/lgo.py`, `lgo2.py`, 23 Oct; SPN R468; Tom, of another session's `cauchy_test.py`: "lets complete
   those tests, through the lense of our mathmatical framework."): LIGO H1 and L1 whitened noise, GWOSC open data (gwosc.org's
   chain needs certifi's bundle joined to the proxy's; sha256s in the plan). The old Cauchy-over-Gaussian at N = 1 is the

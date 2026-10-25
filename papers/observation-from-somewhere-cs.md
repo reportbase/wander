@@ -478,37 +478,6 @@ growth rewrites the one number, and what moves when it does is exactly what divi
   two registers. A running mean needs the count n, an amount; a running median needs only order. So even online the
   median is the reading's and the mean the writing's.
 
-**A writer of its past, situated about its future.** A dynamic array always knows its size, an amount, so of its
-past it is a writer; whether it will grow or shrink next, and how far, it cannot know, so of its future it is situated.
-That is the online setting: the algorithm decides now, the offline optimum, which sees the whole sequence of operations,
-is in the writer's place, and the competitive ratio is the price of standing at now. Three of the field's patterns have
-the paper's shape.
-- *The shrink band rests at the corner.* Doubling at load 1 and halving at load ¼ (Cormen et al. 2009, the table's
-  expansion and contraction) leaves the load at ½ after either resize: the geometric middle of ¼ and 1, one level from
-  each threshold. For a factor g, growing at 1 and shrinking at 1/g² both land at 1/g. Shrinking at ½ instead rests on a
-  threshold, and a push and a pop alternating there copy 2N elements a pair. Not knowing which way the next run goes, the
-  array rests where both are one level away. The symmetry is in levels, not counts: from ½, C/2 pushes reach the growth
-  and C/4 pops the shrink.
-- *Break-even is the corner.* Where a decision trades what it has spent against what it is about to commit, and the
-  future charges for the larger, the worst case is a function of their ratio r alone, the same at r and 1/r, least at
-  r = 1. Ski rental, renting until the rent equals the price of buying (Karlin et al. 1988): 1 + max(s, 1/s), 2 at the
-  corner. Search on two rays with legs growing by b: 1 + 2b²/(b − 1) = 5 + 2(r + 1/r), r = 1/(b − 1), 9 at b = 2, each
-  leg as long as all before it (Beck and Newman 1970); online bidding's lower bound is the same 2 + r + 1/r (Chrobak et
-  al. 2008). Doubling is break-even at every step. A dynamic array's copying alone is 1 + r per element, monotone,
-  favouring a large g; the 2 appears only when the waste factor 1 + 1/r is priced too, (1 + r)(1 + 1/r) = 2 + r + 1/r,
-  least at g = 2. Price one side and the factor is free; price both and the corner fixes it.
-- *One scale, near and far.* With the scale unknown, a strategy equally good at every scale steps by a fixed ratio: its
-  turn points are levels (Gal 1980). Each needs one scale supplied, the first leg or a least distance to the target, the
-  first capacity, and without it nothing near the start is bounded: a target at x just behind the start costs 2d₀ + x
-  against x. Inside that scale the guarantee is an amount (2d₀ of extra walking; no copying and at most C₀ empty slots up
-  to C₀), past it a ratio (8x; a waste factor g and log_g(N/C₀) reallocations): the additive α and the ratio c of
-  ALG ≤ c·OPT + α, as §9's grain is absolute inside the corner and relative past it. The scale is a zoom: doubling C₀
-  takes one reallocation off and changes no far constant.
-
-Two pages run these on the public site: a dynamic array as it grows and shrinks under an unknown future
-(https://reportbase.github.io/wander/dynamic-array.html), and ski rental and two-ray search at the corner
-(https://reportbase.github.io/wander/online-corner.html).
-
 **Laid on the sweeps, in code.** With K places on the quarter turn, the index of a direction (h, v) is its share of the
 turn times K:
 
@@ -1081,9 +1050,6 @@ unknown count, the order a program with finite memory lives in.
 
 ## References
 
-Beck, A. and Newman, D. J. (1970). Yet more on the linear search problem. *Israel Journal of Mathematics* 8,
-419–429.
-
 Bedrosian, E. (1963). A product theorem for Hilbert transforms. *Proceedings of the IEEE* 51(5), 868–869.
 
 Boyd, J. P. (1982). The optimization of convergence for Chebyshev polynomial methods in an unbounded domain.
@@ -1100,12 +1066,6 @@ Multivariate Analysis* 128, 147–153.
 Cacoullos, T. and Papadatos, N. (2013). Self-inverse and exchangeable random variables. *Statistics & Probability
 Letters* 83(1), 9–12.
 
-Chrobak, M., Kenyon, C., Noga, J. and Young, N. E. (2008). Incremental medians via online bidding. *Algorithmica*
-50(4), 455–478.
-
-Cormen, T. H., Leiserson, C. E., Rivest, R. L. and Stein, C. (2009). *Introduction to Algorithms*, 3rd ed.,
-§17.4. MIT Press, Cambridge, MA.
-
 Dietz, P. F. (1982). Maintaining order in a linked list. *Proceedings of the 14th ACM Symposium on Theory of
 Computing*, 122–127.
 
@@ -1114,8 +1074,6 @@ CHI '95*, 234–241.
 
 Gabor, D. (1946). Theory of communication. *Journal of the Institution of Electrical Engineers* 93(26), Part III,
 429–457.
-
-Gal, S. (1980). *Search Games*. Academic Press, New York.
 
 Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *Annals of Mathematics* 34(1), 147–169.
 
@@ -1142,9 +1100,6 @@ Kalman, R. E. (1960). A new approach to linear filtering and prediction problems
 
 Karger, D., Lehman, E., Leighton, T., Panigrahy, R., Levine, M. and Lewin, D. (1997). Consistent hashing and random
 trees. *Proceedings of the 29th ACM Symposium on Theory of Computing*, 654–663.
-
-Karlin, A. R., Manasse, M. S., Rudolph, L. and Sleator, D. D. (1988). Competitive snoopy caching. *Algorithmica* 3,
-79–119.
 
 Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen*.
 

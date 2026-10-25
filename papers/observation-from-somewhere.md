@@ -3443,23 +3443,6 @@ and their costs form a geometric series. Growth by a fixed step copies in propor
 must be one ratio repeated for the cost per element to stay constant, and which ratio is a choice: implementations use
 2 or 1.5.
 
-**Online decisions** (§8, §9). An online algorithm decides now without the input still to come; the offline optimum,
-which has the whole input, is in the writer's place. Two of the field's patterns are this paper's layout in time. Where
-a decision trades an amount already spent against one about to be committed, and the future charges for whichever turns
-out larger, the worst case is one function of their ratio r, the same at r and 1/r, and so least at the corner. Renting
-skis until the rent paid equals the price of buying is 2-competitive (Karlin et al. 1988): buying once the rent paid is
-s times the price has worst ratio 1 + max(s, 1/s). Searching two rays for a point at an unknown distance, each leg b
-times the last, has worst ratio 1 + 2b²/(b − 1) = 5 + 2(r + 1/r), with r = 1/(b − 1) the distance walked before a leg
-over that leg; it is least at r = 1, b = 2, ratio 9 (Beck and Newman 1970), and online bidding's lower bound carries the
-same 2 + r + 1/r (Chrobak et al. 2008). Doubling is break-even taken again at every leg. Where only one side is priced,
-as in a dynamic array's copying alone (the entry above), the cost is monotone in r and the factor stays free: the 2 is
-fixed only once both sides are. And that a cost unchanged by rescaling makes the optimal search geometric is Gal's
-theorem (Gal 1980), the levels of §8 from not knowing the scale. Each such algorithm needs one scale supplied, a least
-distance to the target or a first capacity, without which nothing near the start is bounded; within it the guarantee
-is an amount, past it a ratio, the additive and multiplicative terms of a competitive bound, as §8's grain is absolute
-inside the corner and relative past it. The estimate at the corner of the bounds (Proposition 13) is the same choice
-made in size rather than in time.
-
 ## Appendix B. Engineering read against the geometry
 
 The structures of §12.4 met in systems built to read or draw a world, each with what it adds:
@@ -3568,9 +3551,6 @@ shift. *Developmental Science* 14(1), 125–135.
 
 Beardon, A. F. (1983). *The Geometry of Discrete Groups*. Graduate Texts in Mathematics 91. Springer, New York.
 
-Beck, A. and Newman, D. J. (1970). Yet more on the linear search problem. *Israel Journal of Mathematics* 8,
-419–429.
-
 Beltrami, E. (1865). Risoluzione del problema: riportare i punti di una superficie sopra un piano in modo che le
 linee geodetiche vengano rappresentate da linee rette. *Annali di Matematica Pura ed Applicata* 7, 185–204.
 
@@ -3621,9 +3601,6 @@ Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal
 Cayley, A. (1859). A sixth memoir upon quantics. *Philosophical Transactions of the Royal Society of London* 149,
 61–90.
 
-Chrobak, M., Kenyon, C., Noga, J. and Young, N. E. (2008). Incremental medians via online bidding. *Algorithmica*
-50(4), 455–478.
-
 Civera, J., Davison, A. J. and Montiel, J. M. M. (2008). Inverse depth parametrization for monocular SLAM. *IEEE
 Transactions on Robotics* 24(5), 932–945.
 
@@ -3662,11 +3639,6 @@ University Press.
 
 Euler, L. (1777). De repraesentatione superficiei sphaericae super plano. *Acta Academiae Scientiarum Imperialis
 Petropolitanae* 1777(1), 107–132.
-
-Gal, S. (1980). *Search Games*. Academic Press, New York.
-
-Karlin, A. R., Manasse, M. S., Rudolph, L. and Sleator, D. D. (1988). Competitive snoopy caching. *Algorithmica* 3,
-79–119.
 
 van Fraassen, B. C. (2008). *Scientific Representation: Paradoxes of Perspective*. Oxford University Press.
 
