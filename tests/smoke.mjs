@@ -1668,6 +1668,30 @@ try {
   if (!focOk) failures.push(`[focus.html] ${JSON.stringify(foc)}`);
   console.log(`${failures.length === before58 ? 'ok  ' : 'FAIL'} focus.html (the finest relative cell π/K at the corner for K = 8, 16, 32; every thing looked at reads v/h = 1 and d/H = 1 at the finest cells; looked past, ${foc.past.map(r => '×' + r.distCell.toFixed(1)).join(' and ')}; the least travel at the median on three rulers, ${foc.best.map(b => b[0].toFixed(3)).join(', ')} at a = 0, 0.2, 0.5)`);
 
+  // ── 59. fpv.html (SPN R503; FPV): the turn's cell at the focus π/K whatever the range (K = 16, 32, 64; X = 10³, 10⁷);
+  //    its edges mirror images about the focus; log depth's over the turn's ln(X/n)/π; every twin told apart when looked
+  //    at, at every K; the thing looked at at address ½ ──
+  current = 'fpv.html';
+  const before59 = failures.length;
+  await page.goto(new URL('fpv.html', base).href, { waitUntil: 'load' });
+  const fpv = await page.evaluate(() => {
+    const F = __fpv, o = {};
+    o.rel = [16, 32, 64].flatMap(K => [3, 7].map(X => F.set({ K, X, f: 100 }).rFocus.turn * K / Math.PI));
+    const fv = 3162;
+    o.mirror = Math.max(...Array.from({ length: 63 }, (_, i) => { const k = i + 1;
+      return Math.abs((fv * fv / F.edge(k, 64, 'turn', fv)) / F.edge(64 - k, 64, 'turn', fv) - 1); }));
+    const s7 = F.set({ K: 64, X: 7, f: 1000 }); o.ratio = s7.rFocus.log / s7.rFocus.turn / (Math.log(1e7) / Math.PI);
+    o.twins = [16, 32, 64].map(K => { F.set({ K, X: 7 });
+      return F.twins.filter(([a, b]) => { F.set({ focus: a }); return F.cellOf(F.things[a].d, K, 'turn') !== F.cellOf(F.things[b].d, K, 'turn'); }).length; });
+    o.addr = F.set({ K: 32, focus: 7 }).focusAddr;
+    o.logTwins = F.state().twins.log;
+    return o;
+  });
+  const fpvOk = fpv.rel.every(v => Math.abs(v - 1) < 0.01) && fpv.mirror < 1e-12 && Math.abs(fpv.ratio - 1) < 0.01 &&
+    fpv.twins.every(c => c === 8) && Math.abs(fpv.addr - 0.5) < 1e-12 && fpv.logTwins < 8;
+  if (!fpvOk) failures.push(`[fpv.html] ${JSON.stringify(fpv)}`);
+  console.log(`${failures.length === before59 ? 'ok  ' : 'FAIL'} fpv.html (the turn's cell at the focus π/K to ${Math.max(...fpv.rel.map(v => Math.abs(v - 1))).toFixed(4)} at K = 16, 32, 64 over 10³ and 10⁷; edges mirrored about the focus; log over turn ln(X/n)/π; twins told apart when looked at ${fpv.twins.join(', ')} of 8, log depth ${fpv.logTwins}; the focus at address ½)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
