@@ -2145,6 +2145,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   ⌈F/δ⌉ + ⌈log_ρ(X/F)⌉ (greedy = formula = grid DP in eight cases): proportional on the focus, levels past its edge, the
   corner at the edge; the field 6 addresses at X/F = 64, ρ = 2, whatever K (δ = F/58 at K = 64); the reader's lay the
   matched-grain case (n·ln(X/F) + 1.8 to 3.0); the turn 2.78 times coarser at the focus's edge, factor 2 broken near 2K/π.
+  `fpv-plan.md` (+ `runs/fpv/fpv.py`, 25 Oct; SPN R502; Tom: "the insight might be useful for FPV games.", then "yes, lets
+  push this idea. i'm intrested in the geometry, not realism."): exact. Depth laid by the turn with H at the focus distance
+  against log depth and the standard buffer (n = 1, X = 10⁷): the focus's cell π/K whatever the range (G1); the edges
+  mirror images about f, d ↦ f²/d (G2); better than log by ln(X/n)/π at the focus, within ±acosh(ln(X/n)/π) nats (G3) and
+  in expectation for next looks within ±3.61 nats (G4); refocusing a slide in levels (G5); waste under 2% for f in
+  [64n, X/64] (G6); at 32 bits 97 times reversed-Z at the focus for 7.3 doublings (G7); the flat screen's crosshair
+  coarsest (G8). G2 killed in two clauses by my set-up (the continuum past |x| = 3.75; Z's ties within a cell).
   `gaze-note.md` (25 Oct; SPN R495; Tom: "visually, our far field looks proportional, it does not look like the merkator
   map."; "its highly likely that the corner is constanly adjusted to follow our point of gaze."; "the far and near
   fields, are useful as a signal about what to focus on next."): the picture's far field the turn's (proportional in

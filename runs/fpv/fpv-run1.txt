@@ -1,0 +1,77 @@
+G1, the focus grain is range-free
+  ok   G1: K = 256: cell below the focus r = 0.012272231, pi/K = 0.012271846, off 3.14e-5
+  ok   G1: K = 1024: cell below the focus r = 0.0030679676, pi/K = 0.0030679616, off 1.96e-6
+  ok   G1: K = 4096: cell below the focus r = 0.00076699049, pi/K = 0.00076699039, off 1.23e-7
+  ok   G1: the same at f = 1, 10^3.5, 10^6, 37 (spread 1.02e-51); no n or X enters
+  ok   G1: X/n = 1.0e+7: LOG/T at the focus 5.1306, ln(X/n)/pi 5.1305
+  ok   G1: X/n = 1.0e+3: LOG/T at the focus 2.1988, ln(X/n)/pi 2.1988
+      f = 1.0: Z 0.00097704 against T 0.003068  (Z finer; Z/T 0.3185)
+      f = 3.0: Z 0.0029283 against T 0.003068  (Z finer; Z/T 0.9545)
+      f = 4.0: Z 0.0039139 against T 0.003068  (T finer; Z/T 1.276)
+      f = 100.0: Z 0.095345 against T 0.003068  (T finer; Z/T 31.08)
+      f = 3162.3: Z 98.816 against T 0.003068  (T finer; Z/T 3.221e+4)
+  ok   G1: T finer than Z at the focus for f >= 4, Z finer for f <= 3; at f = n Z is 3.14 times finer
+
+G2, both sides alike
+  ok   G2: every edge's mirror f^2/d is an edge (worst 8.01e-49)
+  ok   G2: r(f e^x) = r(f e^-x) for x = 0.25 ... 6 (worst 1.55e-48)
+  FAIL G2: continuum (pi/K) cosh x within 1% for |x| <= 6; off at x = 3.75 (-0.0106), 4.0 (0.0391), 4.25 (-0.0199), 4.5 (-0.0323), 4.75 (0.0297), 5.0 (-0.0178), 5.25 (-0.0125), 5.5 (0.0876), 5.75 (-0.153), 6.0 (0.143)
+      x = 1.0: cell r 0.0047393, (pi/K)cosh x 0.0047341, cell spans 0.004739 nats
+      x = 3.0: cell r 0.030824, (pi/K)cosh x 0.030887, cell spans 0.03082 nats
+      x = 5.0: cell r 0.22361, (pi/K)cosh x 0.22767, cell spans 0.2232 nats
+      x = 5.5: cell r 0.40825, (pi/K)cosh x 0.37536, cell spans 0.4055 nats
+      x = 6.0: cell r 0.70711, (pi/K)cosh x 0.61886, cell spans 0.6931 nats
+  FAIL G2: Z rises with d everywhere (strictly; it never falls: True, 15 of 26 steps share a cell); LOG constant
+
+G3, the band where the turn wins (X/n = 1e7, f = sqrt(nX), K = 1024)
+  ok   G3: T first coarser than LOG at x = 2.31779 (cell from there 0.0158 nats); formula acosh(ln(X/n)/pi) = 2.31872 = 3.345 doublings
+  ok   G3: below the focus at x = -2.31779; the band 6.688 doublings of the scene's 23.25
+
+G4, the next look
+  ok   G4: L* = 3.61386 nats = 5.214 doublings each side
+  ok   G4: L = 1.0: discrete mean 0.00360548, (pi/K) sinh L/L 0.00360547, LOG 0.0157405
+  ok   G4: L = 2.0: discrete mean 0.00556361, (pi/K) sinh L/L 0.00556353, LOG 0.0157405
+  ok   G4: L = 3.614: discrete mean 0.015746, (pi/K) sinh L/L 0.0157403, LOG 0.0157405
+  ok   G4: the least mean at H = f e^-7.25e-68 (the spread's middle)
+      discrete: H moved 0.05 nats either way raises the mean by 0.00122, 0.00122
+
+G5, refocusing changes the grain only
+  ok   G5: f 10.0 -> 5.0e+3: a slide of -6.2146 nats; cross ratio 1.0649174 both; level differences kept
+  ok   G5: f 0.3 -> 1.0e+6: a slide of -15.019 nats; cross ratio 1.0649174 both; level differences kept
+  ok   G5: pair 2.0, 50.0: most addresses between at f = 10.0 (sqrt 10.0), 766.6362 = (2K/pi) asin((r-1)/(r+1)); discrete edges 767
+  ok   G5: pair 100.0, 1.0e+5: most addresses between at f = 3162.2777 (sqrt 3162.2777), 982.784 = (2K/pi) asin((r-1)/(r+1)); discrete edges 983
+
+G6, what the turn wastes (n = 1, X = 1e7, K = 1024)
+      f = 1.0: 513 of 1024 wholly outside [n, X] (0.501); formula 0.5
+      f = 64.0: 11 of 1024 wholly outside [n, X] (0.01074); formula 0.00995
+      f = 3162.28: 1 of 1024 wholly outside [n, X] (0.0009766); formula 0.0004026
+      f = 156250.0: 11 of 1024 wholly outside [n, X] (0.01074); formula 0.00995
+      f = 1.0e+7: 513 of 1024 wholly outside [n, X] (0.501); formula 0.5
+  ok   G6: the discrete waste within one address of the formula
+  ok   G6: under 2% for every f in [64n, X/64] (most 0.01074); about 4e-4 at sqrt(nX), about 1/2 at n and X
+  ok   G6: at sqrt(nX): 1 address(es), the formula 0.412 (about 4e-4 of K), within one address
+  ok   G6: at n and at X
+
+G7, the same 32 bits (f = sqrt(nX))
+      x = +0: T32 7.3146e-10, RZ32 7.1054e-8, RZ/T 97.14
+      x = +5: T32 5.4282e-8, RZ32 8.2386e-8, RZ/T 1.5178
+      x = -5: T32 5.4282e-8, RZ32 6.1281e-8, RZ/T 1.129
+      x = +6: T32 1.4755e-7, RZ32 1.1197e-7, RZ/T 0.75891
+      x = -6: T32 1.4755e-7, RZ32 9.0176e-8, RZ/T 0.61117
+  ok   G7: at the focus T32 7.3146e-10 (pi/2^32 7.3146e-10), RZ32/T32 = 97.14
+  ok   G7: T32 crosses 2^-24 at |x| = 5.0936 nats (7.348 doublings), within 0.05 either side
+  ok   G7: T32 crosses 2^-23 at |x| = 5.7867 nats (8.348 doublings), within 0.05 either side
+
+G8, the crosshair in direction (K = 1024 pixels)
+  ok   G8: 90 deg: flat screen at the crosshair 1.2732 x equal-angle (tan a/a 1.2732); edge/crosshair 0.50049 (cos^2 a 0.5)
+  ok   G8: 120 deg: flat screen at the crosshair 1.654 x equal-angle (tan a/a 1.654); edge/crosshair 0.25037 (cos^2 a 0.25)
+
+Verdicts:
+  G1: not killed
+  G2: KILLED
+  G3: not killed
+  G4: not killed
+  G5: not killed
+  G6: not killed
+  G7: not killed
+  G8: not killed
