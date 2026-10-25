@@ -91,10 +91,13 @@
     const rad = d => d * Math.PI / 180;
     const kOf = () => Math.pow(10, st.lk), HOf = () => Math.pow(10, st.lH);
 
+    // a place is [k, k + 1) of its share times K; a reading on a boundary belongs to the upper place, so the floor is
+    // taken a hair above, or atan2's last bit (0.9999999999999999 for 1 at 11.25°, K = 8) puts it in the lower one
+    const place = (x, K) => Math.min(K - 1, Math.floor(x + 1e-9));
     // the index from a direction: its share of the turn times K; the horizon kept in the last place
-    const turnIndex = (v, h, K) => Math.min(K - 1, Math.floor(K * (2 / Math.PI) * Math.atan2(v, h)));
+    const turnIndex = (v, h, K) => place(K * (2 / Math.PI) * Math.atan2(v, h), K);
     // the central sweep meets the same point at φ = 2θ and indexes it over its half turn
-    const centralIndex = (phi, K) => Math.min(K - 1, Math.floor(K * phi / Math.PI));
+    const centralIndex = (phi, K) => place(K * phi / Math.PI, K);
     const bounds = K => Array.from({ length: K + 1 }, (_, i) => i === K ? Infinity : Math.tan(i * Math.PI / (2 * K)));
     const middles = K => Array.from({ length: K }, (_, i) => Math.tan((i + 0.5) * Math.PI / (2 * K)));
     // the writer's count index needs the extent X

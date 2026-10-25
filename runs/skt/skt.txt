@@ -1,0 +1,47 @@
+K1  every index rule one form ⌊K·F(x/H)⌋ + c
+    HdrHistogram, 71492 integer values 0 … 10⁶: its bucket/sub-bucket index equals the float lay's ⌊·⌋ form at every one: True
+    DDSketch ⌈log_γ x⌉ = ⌈K·ln(x)/(K ln γ)⌉ on 200,000 values: True; the turn and the lay are ⌊K·F⌋ by construction
+K2  HdrHistogram's continuous position against the smooth base-2 lay
+    the largest gap 0.0860713 of a doubling at f = 0.44269 (bound 0.0860713 at f = 0.44270)
+K3  the turn's quantile errors inside its cells
+    loguniform: errors 3e+03, 2.3e+03, 2.1, 0.0062, 0.67, 1, 1; cell widths 5.9e+03, 4.6e+03, 6.2, 0.012, inf, inf, inf
+    lognormal3: errors 30, 2.3, 0.0084, 0.0062, 0.003, 0.69, 0.97; cell widths 62, 6.5, 0.047, 0.012, 0.047, inf, inf
+    pareto1: errors 0.00089, 0.0054, 0.0032, 0.0062, 0.00045, 0.083, 0.35; cell widths 0.015, 0.015, 0.013, 0.012, 0.015, 0.27, inf
+    twoclusters: errors 0.0012, 0.0045, 0.0066, 0.0062, 1, 1, 1; cell widths 0.016, 0.015, 0.014, 0.012, inf, inf, inf
+    lognormal03: errors 0.006, 0.0033, 0.0015, 0.0062, 0.0016, 0.0031, 0.0049; cell widths 0.018, 0.015, 0.013, 0.012, 0.013, 0.015, 0.018
+    the cells' relative widths about their middles mirror about the corner (k ↔ K − 2 − k): largest mismatch 6.0e-01
+    two clusters at H·10⁻³ and H·10³ (H = 0.00162): errors 0.00665 and 0.999, cell inf: within one cell True
+K4  where each wins (H at the median)
+    narrow lognormal, q = 0.25, 0.5, 0.75: turn 1.49e-03, 6.15e-03, 1.59e-03; DDSketch 3.95e-02, 5.36e-02, 4.13e-02; ratio 26.5, 8.7, 26.0
+    log-uniform over 12 decades: q 0.001: turn 2.97e+03, DD 0.0255, lay 1.51e+04; q 0.01: turn 2.31e+03, DD 0.00833, lay 1.18e+04; q 0.25: turn 2.08, DD 0.0437, lay 14.7; q 0.5: turn 0.00615, DD 0.0482, lay 0.0251; q 0.75: turn 0.672, DD 0.0419, lay 0.00555; q 0.99: turn 1, DD 0.0108, lay 0.916; q 0.999: turn 1, DD 0.0262, lay 0.935; DDSketch collapsed: False
+    the lay past H, largest error per doubling: 0.0250, 0.0244, 0.0244, 0.0247, 0.0248, 0.0251, 0.0248, 0.0249, 0.0250, 0.0246, 0.0246, 0.0247, 0.0250, 0.0242, 0.0245, 0.0241 (spread 3.7%)
+    inside H, largest error at s ≈ 1/64, 1/16, 1/4: 0.499, 0.244, 0.056 (growing as 1/s: ×4 a step)
+    turn ≥ 5× DDSketch on the narrow stream: True; DDSketch better at every quantile but the median on 12 decades: True; the turn over 1 at the quartiles: False; the lay level to 10%: True
+K5  scaling the world
+    loguniform, k = 0.001: H fixed: DDSketch moves 9.09e-16 (a bucket 0.108), turn 2.98e+06, lay 1.52e+07; H moved with the world: at most 1.82e-12
+    loguniform, k = 1000: H fixed: DDSketch moves 9.28e-16 (a bucket 0.108), turn 2.98e+03, lay 1.52e+04; H moved with the world: at most 4.55e-13
+    lognormal3, k = 0.001: H fixed: DDSketch moves 9.54e-16 (a bucket 0.108), turn 3.12e+04, lay 1.59e+05; H moved with the world: at most 2.84e-14
+    lognormal3, k = 1000: H fixed: DDSketch moves 8.71e-16 (a bucket 0.108), turn 30.2, lay 158; H moved with the world: at most 2.84e-14
+    the writer, X exact: median error 1.96e+03, values past the extent 1
+    the writer, X ×10: median error 1.96e+04, values past the extent 0
+    the writer, X ×0.1: median error 195, values past the extent 83242
+    the writer with X moved with the world (×10³): the same cells True
+K6  the best H for the turn
+    pareto1, q 0.25–0.75: best H 0.4816 against √(q_lo·q_hi) = 2.311 (median 2.002): off by ×4.80
+    pareto1, q 0.01–0.99: best H 1.557 against √(q_lo·q_hi) = 10.13 (median 2.002): off by ×6.51
+    lognormal3, q 0.25–0.75: best H 2.516 against √(q_lo·q_hi) = 0.9967 (median 0.9993): off by ×2.52
+    lognormal3, q 0.01–0.99: best H 0.5571 against √(q_lo·q_hi) = 0.9982 (median 0.9993): off by ×1.79
+    loguniform, q 0.25–0.75: best H 0.5792 against √(q_lo·q_hi) = 0.9884 (median 0.994): off by ×1.71
+    loguniform, q 0.01–0.99: best H 0.0008489 against √(q_lo·q_hi) = 0.9973 (median 0.994): off by ×1174.89
+K7  the Pareto stream: medians within a cell, the midpoint mean
+    turn: median in its cell True; midpoint mean at N = 10⁵, 2·10⁵, 5·10⁵, 10⁶: 7.716, 7.728, 7.755, 7.767 (last step 0.16%)
+    lay: median in its cell True; midpoint mean at N = 10⁵, 2·10⁵, 5·10⁵, 10⁶: 10.82, 12.3, 13.15, 13.54 (last step 2.83%)
+    DDSketch: median in its cell True; midpoint mean 10.8, 16.35, 15.33, 17.71 (last step 13.40%); the exact mean of the sample 10.83, 16.27, 15.31, 17.8
+
+K1: not killed
+K2: not killed
+K3: not killed
+K4: KILLED
+K5: not killed
+K6: KILLED
+K7: KILLED

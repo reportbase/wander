@@ -300,6 +300,20 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Scale the world k; H for known length. `?K=&t=&kind=index|values|constant|length&H=<log10 H>&k=<log10 k>`; hook
   `window.__arraySweeps` (`turnIndex`, `centralIndex`, `bounds`, `middles`, `countIndex`, `shapeValues`, `read`, `set`,
   `state`). Not in the flying page.
+- `online-corner.html`, `dynamic-array.html`: **online decisions** (25 Oct 2026, Tom: "could you create two demos, one for
+  each, to show them in action with our framing."; SPN R488–R491; ONL), standalone pages, plain canvas, one for OFS
+  Appendix A's "Online decisions", one for the CS companion §6. `online-corner.html`: ski rental (buy once the rent paid is
+  s × the price; the future's stop T; the worst over every T, scanned, 1 + max(s, 1/s) on the levels of s, least at the
+  corner) and two-ray search (legs d₀·bⁱ alternating sides, drawn on the reader's lay with H = d₀; the ratio for every
+  target, 2d₀ of extra walking behind the start, under 5 + 2(r + 1/r) past d₀; the worst against the levels of r); the
+  writer's cost on demand. `?p=ski|cow&s=<log2>&T=<log2>&b=&d0=<log2>&x=<log2 x/d₀>&side=0|1&writer=1`; hook
+  `window.__onlineCorner` (`skiCost`, `skiWorst`, `skiWorstScan`, `walk`, `cowWorst`, `cowForm`, `lay`, `set`, `state`).
+  `dynamic-array.html`: the past written (size, copies), the future situated (push, pop, a random future, the worst one);
+  g 1.5–4; shrink at 1/g² (the band), 1/g (the thrash) or never; C₀ the supplied scale; panels: the array, the load on the
+  levels with the band and its landing at 1/g, copies per operation, capacity against size (C₀ the near field, one
+  reallocation a level past it), copying alone against time × space. `?g=&rule=band|thrash|never&C0=&p=&n=&play=1`; hook
+  `window.__dynamicArray` (`make`, `push`, `pop`, `step`, `state`, `thrash`, `staircase`, `product`, `copiesAlone`, `set`).
+  The companion links both. Not in the flying page.
 - `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
   "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
   carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
@@ -690,7 +704,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, arrays on the sweeps, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, arrays on the sweeps, online decisions at the corner and a dynamic array, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -2090,6 +2104,26 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `plans/rea/linewidth-note.md`, the attribution as the error (numbers kept, attribution corrected), ChatGPT's comments
   (generate or reveal; reconstruct the inference), the pole revealed and the Lorentzian its trace on the reader's line;
   the run not taken.
+  `onl-plan.md` (25 Oct; SPN R488; Tom: "its interesing to frame a dynamic array as a situated observer.", then "yes"):
+  online decisions read as the reader's geometry, the offline optimum the writer, a dynamic array a writer of its past and
+  situated about its future. Claims: a sunk-against-committed worst case reciprocal-symmetric in one ratio, so the corner
+  (ski rental, the cow path's 2); an unknown scale gives the levels; a chosen H, absolute inside the corner and relative
+  past it (the additive α and ratio c). Predictions O1–O7 (exact, `runs/onl/`) and a search S1–S4 written first. Run 1
+  (SPN R489): O1–O5, O7 not killed, O6 killed by its array clause (copying alone has no corner; both sides must be
+  priced); the search found Gal's theorem (claim 2 classical), online bidding's 2 + r + 1/r unnamed, the unit's necessity
+  explicit; the reciprocal form across problems and the near/far reading not found. Two readings of known results.
+  Carried in (SPN R490; Tom: "yes, add it."): OFS Appendix A "Online decisions" and the CS companion §6 "A writer of its
+  past, situated about its future", not OFS's body.
+  `skt-plan.md` (25 Oct; SPN R492; Tom: "what data structure is best fit for situated reader and unsituated writer", then
+  "yes,write the plan"): the writer's dense array over a known extent against the reader's claimed one design
+  ⌊K·F(x/H)⌋ (the turn, the lay = HdrHistogram's and the float's layout, DDSketch's logarithm), fixed K, order per cell.
+  Predictions K1–K7 (seeded streams of unknown scale, K = 256) and a search T1–T4 written first. Run 1 (`runs/skt/skt.py`,
+  SPN R493; Tom: "yes"): K1, K2, K3, K5 not killed (HdrHistogram's index the float lay's floor form exactly, its gap
+  0.0860713 of a doubling; scaling separates the columns as their F says; the writer right only with X moved); K4 killed in
+  its quartile clause, K6 (the minimax best H ×1.7 to ×1175 off the geometric middle) and K7 (the turn's midpoint mean
+  settles, its horizon cell capping the tail) killed: the turn's horizon representative is a second choice beside F.
+  The search: circllhist (2020) the nearest prior work (one binning theory for HdrHistogram and DDSketch, floats as
+  log-linear bins); t-digest's family on the rank; known against unknown universe already a survey axis (T4 half killed).
   `lgo-plan.md` (+ `runs/lgo/lgo.py`, `lgo2.py`, 23 Oct; SPN R468; Tom, of another session's `cauchy_test.py`: "lets complete
   those tests, through the lense of our mathmatical framework."): LIGO H1 and L1 whitened noise, GWOSC open data (gwosc.org's
   chain needs certifi's bundle joined to the proxy's; sha256s in the plan). The old Cauchy-over-Gaussian at N = 1 is the
@@ -2550,6 +2584,13 @@ In short:
   55. **array-sweeps.html:** at K = 8 the readings 0.1 … 1000 at places 0, 2, 4, 5, 6, 7, 7 and the horizon in the last; the
       central sweep's index the same place at every θ; scaling the world moves no index; the values' log-shape unmoved by
       k = 10³, its mean by ln k; the writer's count index 0, 4, 7 against the turn index 4, 6, 7 at H = 10 and 1, 4, 5 at 50.
+
+  56. **online-corner.html:** ski rental's worst, scanned over every stop, 1 + max(s, 1/s), the same at s and 1/s, 2 at the
+      corner; the two-ray search walked to 10, 9, 10, 35/3 at b = 3/2, 2, 3, 4, each 5 + 2(r + 1/r); behind the start the
+      extra walking exactly 2d₀, ahead none; the far constant the same at d₀ = 1 and 4.
+  57. **dynamic-array.html:** in the band every resize lands at ½ (g = 2); shrinking at 1/g a push and a pop at the edge copy
+      2N; pushes from C₀ make ⌈log₂(N/C₀)⌉ reallocations, doubling C₀ one fewer, none inside C₀; copying alone 3, 2, 1.5,
+      times the waste 4.5, 4, 4.5, 5.33, least at g = 2; a random future under 2 copies an operation.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

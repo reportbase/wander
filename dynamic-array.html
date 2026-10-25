@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>A dynamic array</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    dynamic-array.html: a dynamic array as a writer of its past and situated about its future (25 October 2026, Tom:
+    "could you create two demos, one for each, to show them in action with our framing."; "a dynamic array is grows and
+    shrinks, but you you know its size at any point in time. however, it could grow or shrink unknowably."; SPN R488–R491;
+    the CS companion §6, "A writer of its past, situated about its future"; ONL). A standalone page, plain canvas.
+    Its size is an amount, always exact (the past, written); whether it grows or shrinks next it cannot know (the future,
+    situated). It holds its load, size over capacity, a unit relation. Grow by g at load 1; shrink by g at load 1/g² (the
+    band), at 1/g (the thrash) or never. In the band both resizes land at 1/g, the geometric middle of [1/g², 1], one
+    level from each threshold: the corner of what it cannot know. The near field: up to the first capacity C₀ nothing is
+    copied and at most C₀ slots stand empty, an amount; past it one reallocation a level, ⌈log_g(N/C₀)⌉, and the waste at
+    most a factor, a ratio. Copying alone is 1 + r a element (r = 1/(g − 1)), monotone; times the waste factor 1 + 1/r it
+    is 2 + r + 1/r, least at g = 2.
+    Links: ?g=1.5|2|3|4&rule=band|thrash|never&C0=<power of 2>&p=<chance of a push>&n=<pushes to start>&play=1.
+    Test hook: window.__dynamicArray (make, push, pop, step, state, thrash, staircase, product, copiesAlone, set).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15 }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>A dynamic array</h1>
+    <p class="lede">A dynamic array always knows its size: that is an amount, its <span class="w">past, written</span>.
+    Whether it will grow or shrink next, and how far, it cannot know: of its <span class="r">future it is situated</span>.
+    What it holds is its load, size over capacity, a number between 0 and 1. It grows by g when full and shrinks when the
+    load falls far enough. Not knowing which way the future runs, the band rests it at the corner of what it cannot know.</p>
+    <div class="panel">
+        <div class="row"><label>growth factor g</label><button data-g="1.5">1.5</button><button data-g="2">2</button><button data-g="3">3</button><button data-g="4">4</button>
+            <label>shrink</label><button data-rule="band">at 1/g² (the band)</button><button data-rule="thrash">at 1/g</button><button data-rule="never">never</button></div>
+        <div class="row"><label for="C0">first capacity C₀ (the supplied scale)</label><input id="C0" type="range" min="0" max="8" step="1" value="3">
+            <span id="C0v" class="b"></span></div>
+        <div class="row"><button id="push1">push</button><button id="pop1">pop</button><button id="push">push ×100</button><button id="pop">pop ×100</button>
+            <button id="play">the unknown future: play</button><label for="p">chance of a push</label><input id="p" type="range" min="0" max="1" step="0.01" value="0.5">
+            <span id="pv" class="b"></span><button id="adv">the worst future</button><button id="reset">reset</button></div>
+        <canvas id="cv1" height="150"></canvas><p class="cap" id="cap1"></p>
+        <div class="grid">
+            <div><canvas id="cv2" height="300"></canvas><p class="cap">The load on the levels (each line a halving). Shaded:
+            the band between the shrink and the grow; gold: where a resize lands. In the band both land at 1/g, the geometric
+            middle, one level from each edge. The trace is the last 600 operations, each resize a tick.</p></div>
+            <div><canvas id="cv3" height="300"></canvas><p class="cap">Copies so far per operation. The band keeps it
+            under the dashed line whatever the future does; shrinking at 1/g, the worst future (a push and a pop at the edge)
+            copies the whole array every time.</p></div>
+        </div>
+        <div class="grid">
+            <div><canvas id="cv4" height="300"></canvas><p class="cap">Near and far: capacity against size, both on
+            doublings, pushes only. Inside C₀ the capacity stays C₀: no copying, at most C₀ empty, an amount. Past it one
+            reallocation a level of g, and the capacity within a factor g of the size: a ratio. White: where the array is now.</p></div>
+            <div><canvas id="cv5" height="300"></canvas><p class="cap">Against the levels of r = 1/(g − 1): copying alone,
+            1 + r a element (teal), falls without end and has no corner. Times the waste factor 1 + 1/r it is 2 + r + 1/r
+            (gold), the same at r and 1/r, least at the corner, g = 2. Price one side and g is free; price both and the
+            corner fixes it.</p></div>
+        </div>
+        <div class="read" id="r1"></div>
+    </div>
+    <p class="note">Related: <a href="online-corner.html">online, at the corner</a>, <a href="array-sweeps.html">arrays on
+    the sweeps</a>, <a href="zoom.html">H is a zoom</a>. <a href="demos.html">All the demos</a>.</p>
+</main>
+<script>
+(function () {
+    'use strict';
+    const $ = id => document.getElementById(id), P = new URLSearchParams(location.search);
+    const st = { g: 2, rule: 'band', lC0: 3, p: 0.5, play: false };
+    let A = null, hist = [], rngState = 12345;
+    const rnd = () => { rngState = (rngState * 1103515245 + 12345) % 2147483648; return rngState / 2147483648; };
+
+    // the array: capacity a whole number of slots (grown by g, rounded up; shrunk by g, rounded up, never below C₀)
+    function make(g = st.g, C0 = 2 ** st.lC0, rule = st.rule) {
+        return { g, C0, rule, C: C0, N: 0, copies: 0, ops: 0, reallocs: 0, landed: [] };
+    }
+    const shrinkAt = a => a.rule === 'band' ? 1 / (a.g * a.g) : a.rule === 'thrash' ? 1 / a.g : 0;
+    function push1(a) {
+        a.ops++;
+        if (a.N >= a.C) { a.copies += a.N; a.C = Math.ceil(a.C * a.g - 1e-9); a.reallocs++; a.landed.push({ kind: 'grow', load: a.N / a.C, at: a.ops }); }
+        a.N++;
+    }
+    function pop1(a) {
+        if (a.N === 0) return; a.ops++; a.N--;
+        const lo = shrinkAt(a);
+        if (lo && a.C > a.C0 && a.N / a.C <= lo + 1e-12) {
+            a.copies += a.N; a.C = Math.max(a.C0, Math.ceil(a.C / a.g - 1e-9)); a.reallocs++; a.landed.push({ kind: 'shrink', load: a.N / a.C, at: a.ops });
+        }
+    }
+    function step(a, isPush) { isPush ? push1(a) : pop1(a); hist.push({ load: a.C ? a.N / a.C : 0, resized: a.landed.length && a.landed[a.landed.length - 1].at === a.ops }); if (hist.length > 600) hist.shift(); }
+    // the worst future at the edge: a push and a pop alternating where a resize sits; copies per pair
+    function thrash(N, g = 2, rule = 'thrash') {
+        const a = make(g, 1, rule); for (let i = 0; i < N; i++) push1(a);
+        const c0 = a.copies; push1(a); pop1(a); return a.copies - c0;
+    }
+    // pushes only from C₀ to N: reallocations, and the worst waste factor past C₀
+    function staircase(g, C0, N) {
+        const a = make(g, C0, 'never'); let worst = 0, nearCopies = 0, nearWaste = 0;
+        for (let n = 1; n <= N; n++) {
+            push1(a);
+            if (n <= C0) { nearCopies = a.copies; nearWaste = Math.max(nearWaste, a.C - n); } else worst = Math.max(worst, a.C / n);
+        }
+        return { reallocs: a.reallocs, worstFactor: worst, nearCopies, nearWaste, C: a.C };
+    }
+    // copies per element at its worst over pushes, and the waste factor: their product
+    function copiesAlone(g, N = 50000) { const a = make(g, 1, 'never'); let w = 0; for (let n = 1; n <= N; n++) { push1(a); w = Math.max(w, a.copies / n); } return w; }
+    function product(g, N = 50000) {
+        const a = make(g, 1, 'never'); let wc = 0, ws = 0;
+        for (let n = 1; n <= N; n++) { push1(a); wc = Math.max(wc, a.copies / n); if (n > 4) ws = Math.max(ws, a.C / n); }
+        return { copies: wc, waste: ws, product: wc * ws, form: (r => 2 + r + 1 / r)(1 / (g - 1)) };
+    }
+
+    // ── drawing ──────────────────────────────────────────────────────────────────────────────────────────────────────
+    const GOLD = '#d4a052', TEAL = '#8ce6cd', RED = '#d96e5b', VIO = '#b59cf0', INK = '#e6e4ee', DIM = '#8a8a96';
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth,
+            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * 0.8));
+        cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr);
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.font = '11px DM Mono, monospace'; return { g, w, h: hh };
+    }
+    const fx = (v, n = 3) => !isFinite(v) ? '∞' : (+v.toFixed(n)).toString();
+    function draw1() {
+        const { g, w, h } = fit($('cv1')), a = A, pad = 14, y = 44, bh = Math.min(48, h - 80);
+        if (a.C <= 128) {
+            const cw = (w - 2 * pad) / a.C;
+            for (let i = 0; i < a.C; i++) {
+                g.fillStyle = i < a.N ? 'rgba(181,156,240,0.7)' : 'rgba(255,255,255,0.05)'; g.fillRect(pad + i * cw + (cw > 4 ? 1 : 0), y, Math.max(1, cw - (cw > 4 ? 2 : 0)), bh);
+            }
+        } else {
+            g.fillStyle = 'rgba(255,255,255,0.05)'; g.fillRect(pad, y, w - 2 * pad, bh);
+            g.fillStyle = 'rgba(181,156,240,0.7)'; g.fillRect(pad, y, (w - 2 * pad) * a.N / a.C, bh);
+        }
+        const xn = pad + (w - 2 * pad) * a.N / a.C;
+        g.strokeStyle = TEAL; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(xn, y - 6); g.lineTo(xn, y + bh + 6); g.stroke(); g.setLineDash([]);
+        g.fillStyle = VIO; g.fillText(`the past, written: size ${a.N}`, pad, 20);
+        g.fillStyle = TEAL; g.fillText('the future: unknown →', Math.min(w - 170, Math.max(pad + 200, xn + 6)), 20);
+        g.fillStyle = DIM; g.fillText(`capacity ${a.C}${a.C > 128 ? ' (drawn as a bar)' : ''}`, pad, y + bh + 20);
+        $('cap1').textContent = `Load ${fx(a.N / a.C, 4)}. ${a.ops} operations, ${a.copies} elements copied, ${a.reallocs} resizes.`;
+    }
+    function draw2() {
+        const { g, w, h } = fit($('cv2')), a = A, pad = 34, L0 = -5;
+        const Y = l => 14 + (h - 30) * (0 - l) / (0 - L0);           // l = log2 load, 0 at the top
+        const lg = Math.log2(a.g), lo = shrinkAt(a);
+        if (lo) { g.fillStyle = 'rgba(212,160,82,0.08)'; g.fillRect(pad, Y(0), w - pad - 8, Y(Math.log2(lo)) - Y(0)); }
+        g.strokeStyle = 'rgba(255,255,255,0.15)';
+        for (let l = 0; l >= L0; l--) { g.beginPath(); g.moveTo(pad, Y(l)); g.lineTo(w - 8, Y(l)); g.stroke(); g.fillStyle = DIM; g.fillText(l === 0 ? '1' : '1/' + 2 ** -l, 4, Y(l) + 4); }
+        g.strokeStyle = GOLD; g.lineWidth = 1.5; g.setLineDash([5, 3]); g.beginPath(); g.moveTo(pad, Y(-lg)); g.lineTo(w - 8, Y(-lg)); g.stroke(); g.setLineDash([]); g.lineWidth = 1;
+        g.fillStyle = GOLD; g.fillText(`1/g, where a grow lands${a.rule === 'band' ? ' and a shrink' : ''}`, pad + 4, Y(-lg) - 5);
+        if (lo) { g.fillStyle = a.rule === 'thrash' ? RED : DIM; g.fillText(a.rule === 'thrash' ? 'shrink at 1/g: on the landing itself' : 'shrink at 1/g²', pad + 4, Y(Math.log2(lo)) + 13); }
+        const n = hist.length, dx = (w - pad - 8) / 600;
+        g.strokeStyle = VIO; g.beginPath();
+        hist.forEach((q, i) => { const yy = Y(Math.max(L0, Math.log2(Math.max(q.load, 1e-9)))), xx = pad + (600 - n + i) * dx; i ? g.lineTo(xx, yy) : g.moveTo(xx, yy); }); g.stroke();
+        g.fillStyle = GOLD; hist.forEach((q, i) => { if (q.resized) g.fillRect(pad + (600 - n + i) * dx - 1, 14, 2, 6); });
+    }
+    let perOpHist = [];
+    function draw3() {
+        const { g, w, h } = fit($('cv3')), a = A, pad = 30, r = 1 / (a.g - 1);
+        const bound = a.rule === 'band' ? 1 + r : null, ymax = Math.max(4, bound ? bound * 1.6 : 0, ...perOpHist.map(v => Math.min(v, 60)));
+        const Y = v => h - 20 - (h - 36) * Math.min(v, ymax) / ymax;
+        g.strokeStyle = 'rgba(255,255,255,0.15)';
+        for (let v = 0; v <= ymax; v += ymax > 20 ? 10 : 1) { g.beginPath(); g.moveTo(pad, Y(v)); g.lineTo(w - 8, Y(v)); g.stroke(); g.fillStyle = DIM; g.fillText(String(v), 4, Y(v) + 4); }
+        if (bound) { g.strokeStyle = GOLD; g.setLineDash([5, 3]); g.beginPath(); g.moveTo(pad, Y(bound)); g.lineTo(w - 8, Y(bound)); g.stroke(); g.setLineDash([]); g.fillStyle = GOLD; g.fillText(`1 + r = ${fx(bound)}`, pad + 4, Y(bound) - 5); }
+        const n = perOpHist.length, dx = (w - pad - 8) / Math.max(1, n - 1);
+        g.strokeStyle = a.rule === 'thrash' ? RED : TEAL; g.beginPath();
+        perOpHist.forEach((v, i) => { const xx = pad + i * dx, yy = Y(v); i ? g.lineTo(xx, yy) : g.moveTo(xx, yy); }); g.stroke();
+    }
+    let stairCache = null;
+    function draw4() {
+        const { g, w, h } = fit($('cv4')), a = A, pad = 30, Nmax = 1 << 16, Lx = 16;
+        const key = `${a.g}|${a.C0}`;
+        if (!stairCache || stairCache.key !== key) {
+            const b = make(a.g, a.C0, 'never'), pts = [];
+            for (let n = 1; n <= Nmax; n++) { push1(b); if (n === 1 || b.N >= b.C || (n & (n - 1)) === 0) pts.push([n, b.C]); }
+            stairCache = { key, pts };
+        }
+        const X = n => pad + (w - pad - 10) * Math.log2(n) / Lx, Y = c => h - 22 - (h - 36) * Math.log2(c) / (Lx + 2);
+        g.fillStyle = 'rgba(140,230,205,0.08)'; g.fillRect(pad, 0, X(a.C0) - pad, h - 22);
+        g.strokeStyle = 'rgba(255,255,255,0.15)';
+        for (let l = 0; l <= Lx; l += 2) { g.beginPath(); g.moveTo(X(2 ** l), 6); g.lineTo(X(2 ** l), h - 22); g.stroke(); g.fillStyle = DIM; g.fillText(String(2 ** l >= 1024 ? (2 ** l / 1024) + 'k' : 2 ** l), X(2 ** l) - 6, h - 8); }
+        g.strokeStyle = 'rgba(255,255,255,0.4)'; g.beginPath(); g.moveTo(X(1), Y(1)); g.lineTo(X(Nmax), Y(Nmax)); g.stroke();
+        g.strokeStyle = 'rgba(255,255,255,0.18)'; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(X(1), Y(a.g)); g.lineTo(X(Nmax), Y(Nmax * a.g)); g.stroke(); g.setLineDash([]);
+        g.strokeStyle = GOLD; g.lineWidth = 1.8; g.beginPath(); let prev = null;
+        for (const [n, c] of stairCache.pts) { if (!prev) g.moveTo(X(n), Y(c)); else { g.lineTo(X(n), Y(prev[1])); g.lineTo(X(n), Y(c)); } prev = [n, c]; } g.stroke(); g.lineWidth = 1;
+        g.fillStyle = TEAL; g.fillText('near: C₀, an amount', pad + 3, 16);
+        g.fillStyle = DIM; g.fillText('C = N', X(Nmax) - 50, Y(Nmax) + 14); g.fillText('C = gN', X(Nmax) - 60, Y(Nmax * a.g) - 6);
+        if (a.N > 0) { g.fillStyle = INK; g.beginPath(); g.arc(X(a.N), Y(a.C), 5, 0, 2 * Math.PI); g.fill(); }
+    }
+    function draw5() {
+        const { g, w, h } = fit($('cv5')), pad = 30, l0 = -3, l1 = 3, ymax = 12;
+        const X = l => pad + (w - pad - 10) * (l - l0) / (l1 - l0), Y = v => h - 22 - (h - 36) * v / ymax;
+        g.strokeStyle = 'rgba(255,255,255,0.15)';
+        for (let l = l0; l <= l1; l++) { g.beginPath(); g.moveTo(X(l), 6); g.lineTo(X(l), h - 22); g.stroke(); g.fillStyle = DIM; g.fillText(l === 0 ? '1' : l > 0 ? String(2 ** l) : '1/' + 2 ** -l, X(l) - 8, h - 8); }
+        for (let v = 0; v <= ymax; v += 2) { g.fillStyle = DIM; g.fillText(String(v), 4, Y(v) + 4); }
+        const curve = (f, col) => { g.strokeStyle = col; g.lineWidth = 2; g.beginPath(); for (let i = 0; i <= 300; i++) { const l = l0 + (l1 - l0) * i / 300, r = 2 ** l, v = Math.min(ymax, f(r)); i ? g.lineTo(X(l), Y(v)) : g.moveTo(X(l), Y(v)); } g.stroke(); g.lineWidth = 1; };
+        curve(r => 1 + r, TEAL); curve(r => 2 + r + 1 / r, GOLD);
+        g.strokeStyle = 'rgba(212,160,82,0.6)'; g.setLineDash([4, 3]); g.beginPath(); g.moveTo(X(0), 6); g.lineTo(X(0), h - 22); g.stroke(); g.setLineDash([]);
+        g.fillStyle = GOLD; g.fillText('time × space, least at r = 1, g = 2', pad + 4, 16); g.fillStyle = TEAL; g.fillText('copying alone', X(l1) - 92, Y(Math.min(ymax, 1 + 2 ** l1)) + 14);
+        const r = 1 / (A.g - 1), l = Math.log2(r);
+        g.fillStyle = INK; g.beginPath(); g.arc(X(l), Y(2 + r + 1 / r), 5, 0, 2 * Math.PI); g.fill();
+        g.strokeStyle = INK; g.beginPath(); g.arc(X(l), Y(1 + r), 5, 0, 2 * Math.PI); g.stroke();
+        g.fillStyle = DIM; g.fillText(`g = ${A.g}: r = ${fx(r)}`, X(l) + 7, Y(2 + r + 1 / r) - 6);
+    }
+    function hud() {
+        const a = A, r = 1 / (a.g - 1), last = a.landed[a.landed.length - 1], S = staircase(a.g, a.C0, Math.max(a.N, 1));
+        $('C0v').textContent = String(a.C0); $('pv').textContent = st.p.toFixed(2);
+        const near = a.N <= a.C0;
+        $('r1').innerHTML = `<span class="w">The past, written</span>: size ${a.N}, capacity ${a.C}, ${a.copies} copied in ${a.ops} operations (${fx(a.ops ? a.copies / a.ops : 0)} an operation).\n`
+            + `<span class="r">The future, situated</span>: the next operation may be a push or a pop, any run of either. The array holds only its load, ${fx(a.N / a.C, 4)}.\n`
+            + (a.rule === 'band' ? `The band [1/g², 1] = [${fx(1 / a.g ** 2, 4)}, 1]: a grow from 1 lands at 1/g = ${fx(1 / a.g, 4)}, a shrink from 1/g² lands at g·(1/g²) = ${fx(1 / a.g, 4)}, √(1/g² · 1). One level from each edge: neither run of the future is nearer.`
+                : a.rule === 'thrash' ? `Shrinking at 1/g = ${fx(1 / a.g, 4)}: a grow lands right on the shrink's edge, so a pop after a push undoes it. The worst future copies the whole array a pair: ${thrash(1 << 12, a.g)} for 4,096 elements.`
+                : `Never shrinking: after a long run of pops the array keeps its largest capacity, the waste unbounded.`)
+            + (last ? `\nThe last resize: ${last.kind}, landing at load ${fx(last.load, 4)}.` : '')
+            + `\n${near ? `Near field: size ≤ C₀ = ${a.C0}. Nothing copied on the way here, at most C₀ empty: an amount.`
+                : `Far field: past C₀. Pushes alone from empty make ⌈log_g(N/C₀)⌉ = ${S.reallocs} reallocations to here, one a level, the capacity within a factor ${fx(S.worstFactor, 3)} < g of the size: a ratio.`}`
+            + `\nr = 1/(g − 1) = ${fx(r)}: copying alone 1 + r = ${fx(1 + r)} an element; times the waste factor 1 + 1/r = ${fx(1 + 1 / r)}, the product ${fx(2 + r + 1 / r)}.`;
+    }
+    function draw() {
+        draw1(); draw2(); draw3(); draw4(); draw5(); hud();
+        $('C0').value = st.lC0; $('p').value = st.p;
+        document.querySelectorAll('[data-g]').forEach(b => b.classList.toggle('on', +b.dataset.g === st.g));
+        document.querySelectorAll('[data-rule]').forEach(b => b.classList.toggle('on', b.dataset.rule === st.rule));
+        $('play').classList.toggle('on', st.play); $('play').textContent = st.play ? 'the unknown future: pause' : 'the unknown future: play';
+    }
+    function record() { perOpHist.push(A.ops ? A.copies / A.ops : 0); if (perOpHist.length > 600) perOpHist.shift(); }
+    function doOps(n, isPush) { for (let i = 0; i < n; i++) { step(A, typeof isPush === 'function' ? isPush() : isPush); record(); } }
+    function reset() { A = make(); hist = []; perOpHist = []; rngState = 12345; }
+    $('push1').onclick = () => { doOps(1, true); draw(); };
+    $('pop1').onclick = () => { doOps(1, false); draw(); };
+    $('push').onclick = () => { doOps(100, true); draw(); };
+    $('pop').onclick = () => { doOps(100, false); draw(); };
+    $('adv').onclick = () => {
+        // stand at the edge where a grow happens, then a push and a pop alternating
+        st.play = false; if (A.N < A.C) doOps(A.C - A.N, true);
+        for (let i = 0; i < 40; i++) { doOps(1, true); doOps(1, false); } draw();
+    };
+    $('reset').onclick = () => { st.play = false; reset(); draw(); };
+    $('play').onclick = () => { st.play = !st.play; draw(); if (st.play) tick(); };
+    $('p').oninput = e => { st.p = +e.target.value; draw(); };
+    $('C0').oninput = e => { st.lC0 = +e.target.value; reset(); draw(); };
+    document.querySelectorAll('[data-g]').forEach(b => b.onclick = () => { st.g = +b.dataset.g; reset(); draw(); });
+    document.querySelectorAll('[data-rule]').forEach(b => b.onclick = () => { st.rule = b.dataset.rule; reset(); draw(); });
+    function tick() { if (!st.play) return; doOps(6, () => rnd() < st.p); draw(); requestAnimationFrame(tick); }
+    window.addEventListener('resize', draw);
+    function state() {
+        const a = A; return { g: a.g, rule: a.rule, C0: a.C0, N: a.N, C: a.C, load: a.N / a.C, copies: a.copies, ops: a.ops,
+            reallocs: a.reallocs, landed: a.landed.map(q => ({ ...q })), perOp: a.ops ? a.copies / a.ops : 0 };
+    }
+    function set(o) {
+        if ('g' in o) st.g = +o.g; if ('rule' in o) st.rule = o.rule; if ('C0' in o) st.lC0 = Math.log2(+o.C0); if ('p' in o) st.p = +o.p;
+        if ('g' in o || 'rule' in o || 'C0' in o || o.reset) reset();
+        if (o.push) doOps(o.push, true); if (o.pop) doOps(o.pop, false); if (o.random) doOps(o.random, () => rnd() < st.p);
+        draw(); return state();
+    }
+    if ([1.5, 2, 3, 4].includes(+P.get('g'))) st.g = +P.get('g');
+    if (['band', 'thrash', 'never'].includes(P.get('rule'))) st.rule = P.get('rule');
+    if (P.has('C0')) { const c = Math.round(Math.log2(+P.get('C0'))); if (isFinite(c)) st.lC0 = Math.max(0, Math.min(8, c)); }
+    if (P.has('p') && isFinite(+P.get('p'))) st.p = Math.max(0, Math.min(1, +P.get('p')));
+    reset();
+    if (P.has('n')) { const n = Math.max(0, Math.min(100000, Math.round(+P.get('n')) || 0)); doOps(n, true); }
+    draw();
+    if (P.get('play') === '1') { st.play = true; draw(); tick(); }
+    window.__dynamicArray = { make, push: push1, pop: pop1, step, state, thrash, staircase, product, copiesAlone, set };
+})();
+</script>
+</body>
+</html>

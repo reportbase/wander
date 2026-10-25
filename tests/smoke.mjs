@@ -1595,6 +1595,56 @@ try {
   if (!aswOk) failures.push(`[array-sweeps.html] ${JSON.stringify(asw)}`);
   console.log(`${failures.length === before55 ? 'ok  ' : 'FAIL'} array-sweeps.html (at K = 8 the readings 0.1 … 1000 at places ${asw.idx}, the horizon in the last; the central sweep's index the same place at every θ; scaling the world moves no index; the values' log-shape unmoved by k = 10³ (${asw.shape.toExponential(0)}), its mean by ln k; the writer's count index ${asw.count} against the turn index ${asw.h10} at H = 10 and ${asw.h50} at H = 50)`);
 
+  // ── 56. online-corner.html (SPN R491; OFS Appendix A, "Online decisions"; ONL): ski rental's worst, found by scanning
+  //    every stop, 1 + max(s, 1/s) and the same at s and 1/s; the two-ray search walked to its worst 10, 9, 10, 35/3 at
+  //    b = 3/2, 2, 3, 4, each 5 + 2(r + 1/r); behind the start the extra walking exactly 2d₀, ahead none; doubling d₀ moves
+  //    no far constant ──
+  current = 'online-corner.html';
+  const before56 = failures.length;
+  await page.goto(new URL('online-corner.html', base).href, { waitUntil: 'load' });
+  const onc = await page.evaluate(() => {
+    const O = __onlineCorner, o = {};
+    o.ski = [0.25, 0.5, 1, 2, 4].map(s => [O.skiWorstScan(s).worst, O.skiWorst(s), O.skiWorstScan(1 / s).worst]);
+    o.cow = [1.5, 2, 3, 4].map(b => [O.cowWorst(b).worst, O.cowForm(b).c, O.cowForm(b).cr]);
+    o.behind = [0.5, 0.01, 1e-6].map(x => O.walk(2, 1, x, 1).cost - x); o.ahead = O.walk(2, 1, 0.5, 0).cost - 0.5;
+    o.d0 = [O.cowWorst(2, 1).worst, O.cowWorst(2, 4).worst];
+    for (const p of ['ski', 'cow']) O.set({ p, writer: true });
+    return o;
+  });
+  const oncOk = onc.ski.every(([w, f, m]) => Math.abs(w - f) < 1e-9 && Math.abs(m - f) < 1e-9) && onc.ski[2][0] === 2 &&
+    onc.cow.every(([w, c, cr]) => w < c && c - w < 1e-5 && Math.abs(c - cr) < 1e-9) && Math.abs(onc.cow[1][1] - 9) < 1e-12 &&
+    onc.behind.every(e => Math.abs(e - 2) < 1e-9) && onc.ahead === 0 && Math.abs(onc.d0[0] - onc.d0[1]) < 1e-9;
+  if (!oncOk) failures.push(`[online-corner.html] ${JSON.stringify(onc)}`);
+  console.log(`${failures.length === before56 ? 'ok  ' : 'FAIL'} online-corner.html (ski rental's worst, scanned, 1 + max(s, 1/s) and the same at 1/s, 2 at the corner; the two-ray search walked to ${onc.cow.map(c => c[0].toFixed(3)).join(', ')} at b = 3/2, 2, 3, 4, each 5 + 2(r + 1/r); behind the start the extra walking 2d₀, ahead none; the far constant the same at d₀ = 1 and 4)`);
+
+  // ── 57. dynamic-array.html (SPN R491; the CS companion §6): in the band every resize lands at ½ (g = 2); shrinking at
+  //    1/g a push and a pop at the edge copy 2N; pushes only from C₀ make ⌈log₂(N/C₀)⌉ reallocations, doubling C₀ one fewer,
+  //    and inside C₀ copy nothing; copying alone 3, 2, 1.5 an element at g = 3/2, 2, 3, times the waste factor 4.5, 4, 4.5,
+  //    5.33, least at g = 2; a random future at g = 2 under 2 copies an operation ──
+  current = 'dynamic-array.html';
+  const before57 = failures.length;
+  await page.goto(new URL('dynamic-array.html', base).href, { waitUntil: 'load' });
+  const dya = await page.evaluate(() => {
+    const D = __dynamicArray, o = {};
+    D.set({ g: 2, rule: 'band', C0: 1, push: 4096 }); const s = D.set({ pop: 4000 });
+    o.lands = [...new Set(s.landed.map(q => q.load))];
+    o.thr = [16, 1024, 4096].map(N => D.thrash(N, 2) / N);
+    o.stair = [17, 100, 1000, 5000].map(N => [D.staircase(2, 8, N).reallocs, Math.ceil(Math.log2(N / 8) - 1e-12), D.staircase(2, 16, N).reallocs]);
+    o.near = D.staircase(2, 16, 16);
+    o.alone = [1.5, 2, 3].map(g => D.copiesAlone(g));
+    o.prod = [1.5, 2, 3, 4].map(g => D.product(g));
+    o.rand = D.set({ g: 2, rule: 'band', C0: 1, p: 0.55, random: 20000 }).perOp;
+    for (const rule of ['thrash', 'never', 'band']) D.set({ rule, push: 300 });
+    return o;
+  });
+  const dyaOk = dya.lands.length === 1 && dya.lands[0] === 0.5 && dya.thr.every(v => v === 2) &&
+    dya.stair.every(([a, k, b]) => a === k && b === a - 1) && dya.near.nearCopies === 0 && dya.near.nearWaste <= 16 &&
+    [3, 2, 1.5].every((v, i) => Math.abs(dya.alone[i] - v) < 0.01) &&
+    dya.prod.every(p => Math.abs(p.product - p.form) < 0.01) && dya.prod[1].product < Math.min(dya.prod[0].product, dya.prod[2].product, dya.prod[3].product) &&
+    dya.rand < 2;
+  if (!dyaOk) failures.push(`[dynamic-array.html] ${JSON.stringify(dya)}`);
+  console.log(`${failures.length === before57 ? 'ok  ' : 'FAIL'} dynamic-array.html (in the band every resize landed at ${dya.lands.join(', ')}; shrinking at 1/g, a push and a pop at the edge copy ${dya.thr[0]}N; pushes from C₀ = 8 make ⌈log₂(N/C₀)⌉ reallocations, from 16 one fewer, none inside C₀; copying alone ${dya.alone.map(v => v.toFixed(2)).join(', ')}, times the waste ${dya.prod.map(p => p.product.toFixed(2)).join(', ')}, least at g = 2; a random future ${dya.rand.toFixed(3)} copies an operation)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
