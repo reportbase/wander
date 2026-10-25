@@ -2114,6 +2114,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   explicit; the reciprocal form across problems and the near/far reading not found. Two readings of known results.
   Carried in (SPN R490; Tom: "yes, add it."): OFS Appendix A "Online decisions" and the CS companion §6 "A writer of its
   past, situated about its future", not OFS's body.
+  `skt-plan.md` (25 Oct; SPN R492; Tom: "what data structure is best fit for situated reader and unsituated writer", then
+  "yes,write the plan"): the writer's dense array over a known extent against the reader's claimed one design
+  ⌊K·F(x/H)⌋ (the turn, the lay = HdrHistogram's and the float's layout, DDSketch's logarithm), fixed K, order per cell.
+  Predictions K1–K7 (seeded streams of unknown scale, K = 256) and a search T1–T4 written first; not run.
   `lgo-plan.md` (+ `runs/lgo/lgo.py`, `lgo2.py`, 23 Oct; SPN R468; Tom, of another session's `cauchy_test.py`: "lets complete
   those tests, through the lense of our mathmatical framework."): LIGO H1 and L1 whitened noise, GWOSC open data (gwosc.org's
   chain needs certifi's bundle joined to the proxy's; sha256s in the plan). The old Cauchy-over-Gaussian at N = 1 is the
