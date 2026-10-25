@@ -2140,6 +2140,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   v/h), Mercator's logarithm the lay of distance by address count; the corner on the gaze (the finest relative grain);
   the fields a signal for the next look; FOV's allocation; laid on angle from the gaze, X free, Schwartz's log-polar map
   a neighbour (Tom, 8 Oct: the eye "engineering more than fundemental geometry"). A draft OFS paragraph, not yet placed.
+  Then (SPN R496; Tom: "so it is logical that a reader would give benefit from equal attention to the near and far
+  fields."): turning moves the direction corner, designating the distance corner, both free; how far the focus is is
+  the sizing, only as levels, carried in; the fields need only direction grain, held alike near and far.
   `lgo-plan.md` (+ `runs/lgo/lgo.py`, `lgo2.py`, 23 Oct; SPN R468; Tom, of another session's `cauchy_test.py`: "lets complete
   those tests, through the lense of our mathmatical framework."): LIGO H1 and L1 whitened noise, GWOSC open data (gwosc.org's
   chain needs certifi's bundle joined to the proxy's; sha256s in the plan). The old Cauchy-over-Gaussian at N = 1 is the

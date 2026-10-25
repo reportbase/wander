@@ -60,6 +60,35 @@ voice, no ruling numbers, no file paths.*
 > reciprocal of distance, each doubling of distance given half the room of the last. The logarithmic far field belongs
 > to distance laid by the count of addresses, which needs the distances.
 
+## Near and far held alike (25 October, later; SPN R496)
+
+Tom: "the cauchy supports maximim fidelity at the focus point, however, it does so evenly acrros the far and near
+fields, and they are very different."; "it is useful to know roughly how far away the mountain range is. is it a 1 day
+hike or a 1 month hike."; "but you could just turn your head to move you focused corner to the mountain range."; then
+"yes, so it is logical that a reader would give benefit from equal attention to the near and far fields. they are
+maintained at enougth fidelity know know where to look next."
+
+- **The two corners.** Turning the head moves the corner in direction: the range comes to the focus and its outline,
+  ridges and width over height are read at full fidelity, free. It gives no distance (a turn in place has no parallax).
+  Designating the range draws it at H, which puts it at the corner of distance too, free, but as mountain equals thumb.
+- **How far is the sizing, not grain.** Whether the range is a day's hike (about 30 km) or a month's (about 900 km) is
+  V*/H, a factor of 30, about 5 doublings: needed only as levels, and always carried in (a baseline of about 2εd, 18 m
+  and 540 m at ε = 1 arcmin for a factor of 2; a known kind, mountains 1 to 5 km tall; or the horizon, a 3 km peak gone
+  past about 200 km). No field holds it, near or far.
+- **So the fields need only direction grain, and they are held alike.** Their one job is to say where to look next.
+  The reader does not know on which side the next thing will be, so nothing favours one side: the exchange, the
+  reader's ignorance of which side a reading falls on, gives them equal attention. The Cauchy's evenness across near
+  and far is then what the fields should have, not a fault. The differences between near and far (room, occlusion,
+  count, change) are the world's, met in the payload and in the sizing, not in how the addresses are spread.
+- **How much the fields get in all is FOV's question, a separate one.** FOV run 1: they need only about log_ρ(X/F)
+  addresses to place a thing within a factor ρ, whatever K is. The turn gives them half of K, which is more than
+  enough. Equal attention between near and far does not require half of everything for the fields together.
+
+The draft paragraph above stands, with two changes: "near and far then mean nearer than and farther than that" is
+followed by "and the two are held alike, since the next look may fall on either"; and the last sentence on distance is
+replaced by "How far the focus is lies outside every reading: designating it puts it at the corner, and its distance,
+needed only roughly, is carried in."
+
 ## Open, for Tom
 
 - Placing the paragraph, and whether OFS §6's framing of Mercator's height as the reader's lay of distance should be
