@@ -1645,6 +1645,89 @@ try {
   if (!dyaOk) failures.push(`[dynamic-array.html] ${JSON.stringify(dya)}`);
   console.log(`${failures.length === before57 ? 'ok  ' : 'FAIL'} dynamic-array.html (in the band every resize landed at ${dya.lands.join(', ')}; shrinking at 1/g, a push and a pop at the edge copy ${dya.thr[0]}N; pushes from C₀ = 8 make ⌈log₂(N/C₀)⌉ reallocations, from 16 one fewer, none inside C₀; copying alone ${dya.alone.map(v => v.toFixed(2)).join(', ')}, times the waste ${dya.prod.map(p => p.product.toFixed(2)).join(', ')}, least at g = 2; a random future ${dya.rand.toFixed(3)} copies an operation)`);
 
+  // ── 58. focus.html (SPN R501; OFS §8 Corollary 6.1): the finest relative cell π/K at the corner; a thing looked at sits
+  //    at both corners (v/h = 1, d/H = 1, its cells the finest); looked past, coarser; the least travel to the next look
+  //    at the median on the angle, the levels and the in-place lay, 1 when a = 0, 0.821 at a = 0.2, 0.627 at a = 0.5 ──
+  current = 'focus.html';
+  const before58 = failures.length;
+  await page.goto(new URL('focus.html', base).href, { waitUntil: 'load' });
+  const foc = await page.evaluate(() => {
+    const F = __focus, o = {};
+    o.rel = [8, 16, 32].map(K => F.relCell(1, K) * K / Math.PI);
+    o.look = F.things.map((T, i) => F.set({ mode: 'look', focus: i }).reading);
+    F.set({ mode: 'look', focus: 3 }); F.set({ mode: 'past' });
+    o.past = [0, 7].map(i => F.set({ focus: i }).reading);
+    o.best = [0, 0.2, 0.5].map(a => { const s = F.set({ a }); return [s.median, ...Object.values(s.best)]; });
+    F.set({ a: 0, K: 32 });
+    return o;
+  });
+  const focOk = foc.rel.every(v => Math.abs(v - 1) < 1e-12) &&
+    foc.look.every(r => Math.abs(r.sDir - 1) < 1e-9 && Math.abs(r.sDist - 1) < 1e-9 && Math.abs(r.dirCell - 1) < 1e-9 && Math.abs(r.distCell - 1) < 1e-9) &&
+    foc.past.every(r => r.distCell > 1.5) &&
+    [1, 0.82083, 0.62738].every((m, i) => foc.best[i].every(v => Math.abs(v - m) < 1e-3));
+  if (!focOk) failures.push(`[focus.html] ${JSON.stringify(foc)}`);
+  console.log(`${failures.length === before58 ? 'ok  ' : 'FAIL'} focus.html (the finest relative cell π/K at the corner for K = 8, 16, 32; every thing looked at reads v/h = 1 and d/H = 1 at the finest cells; looked past, ${foc.past.map(r => '×' + r.distCell.toFixed(1)).join(' and ')}; the least travel at the median on three rulers, ${foc.best.map(b => b[0].toFixed(3)).join(', ')} at a = 0, 0.2, 0.5)`);
+
+  // ── 59. fpv.html (SPN R503; FPV): the turn's cell at the focus π/K whatever the range (K = 16, 32, 64; X = 10³, 10⁷);
+  //    its edges mirror images about the focus; log depth's over the turn's ln(X/n)/π; every twin told apart when looked
+  //    at, at every K; the thing looked at at address ½ ──
+  current = 'fpv.html';
+  const before59 = failures.length;
+  await page.goto(new URL('fpv.html', base).href, { waitUntil: 'load' });
+  const fpv = await page.evaluate(() => {
+    const F = __fpv, o = {};
+    o.rel = [16, 32, 64].flatMap(K => [3, 7].map(X => F.set({ K, X, f: 100 }).rFocus.turn * K / Math.PI));
+    const fv = 3162;
+    o.mirror = Math.max(...Array.from({ length: 63 }, (_, i) => { const k = i + 1;
+      return Math.abs((fv * fv / F.edge(k, 64, 'turn', fv)) / F.edge(64 - k, 64, 'turn', fv) - 1); }));
+    const s7 = F.set({ K: 64, X: 7, f: 1000 }); o.ratio = s7.rFocus.log / s7.rFocus.turn / (Math.log(1e7) / Math.PI);
+    o.twins = [16, 32, 64].map(K => { F.set({ K, X: 7 });
+      return F.twins.filter(([a, b]) => { F.set({ focus: a }); return F.cellOf(F.things[a].d, K, 'turn') !== F.cellOf(F.things[b].d, K, 'turn'); }).length; });
+    o.addr = F.set({ K: 32, focus: 7 }).focusAddr;
+    o.logTwins = F.state().twins.log;
+    const a = F.set({ K: 32, X: 7, home: true, focus: 30 }), b = F.set({ fly: 4 });
+    o.fly = { half: b.focusD / a.focusD, addr: b.focusAddr, flow: F.flowAt(0, b.tau, 32) * Math.PI * b.tau / 32 };
+    F.set({ home: true });
+    return o;
+  });
+  const fpvOk = fpv.rel.every(v => Math.abs(v - 1) < 0.01) && fpv.mirror < 1e-12 && Math.abs(fpv.ratio - 1) < 0.01 &&
+    fpv.twins.every(c => c === 8) && Math.abs(fpv.addr - 0.5) < 1e-12 && fpv.logTwins < 8 &&
+    Math.abs(fpv.fly.half - 0.5) < 1e-9 && Math.abs(fpv.fly.addr - 0.5) < 1e-12 && Math.abs(fpv.fly.flow - 1) < 1e-12;
+  if (!fpvOk) failures.push(`[fpv.html] ${JSON.stringify(fpv)}`);
+  console.log(`${failures.length === before59 ? 'ok  ' : 'FAIL'} fpv.html (the turn's cell at the focus π/K to ${Math.max(...fpv.rel.map(v => Math.abs(v - 1))).toFixed(4)} at K = 16, 32, 64 over 10³ and 10⁷; edges mirrored about the focus; log over turn ln(X/n)/π; twins told apart when looked at ${fpv.twins.join(', ')} of 8, log depth ${fpv.logTwins}; the focus at address ½; flown at for 4 s its distance ${fpv.fly.half.toFixed(3)} of the start, still at ½)`);
+
+  // ── 60. fpv-game.html (SPN R507): a pair 1.25 apart about the focus told apart by the turn at K = 8, 12, 16 and mostly not
+  //    by log depth at K = 16 (in ln 1.25 over its band, 47% of places); the steady bot reads the turn nearly as well as true depth and far better than log depth or
+  //    the standard buffer, shooting no friend; a real click on a foe in front scores ──
+  current = 'fpv-game.html';
+  const before60 = failures.length;
+  await page.goto(new URL('fpv-game.html', base).href, { waitUntil: 'load' });
+  const fg = await page.evaluate(() => {
+    const G = __fpvGame, o = {}, r = Math.sqrt(1.25);
+    o.turnTold = [8, 12, 16].map(K => [3, 30, 300].every(H => G.cellOf(H * r, 'turn', K, H) !== G.cellOf(H / r, 'turn', K, H)));
+    let told = 0; const n = 400;
+    for (let i = 0; i < n; i++) { const d = 3 * Math.pow(500, (i + 0.5) / n); if (G.cellOf(d * r, 'log', 16, 1) !== G.cellOf(d / r, 'log', 16, 1)) told++; }
+    o.logShare = told / n;
+    o.bot = ['turn', 'log', 'z', 'true'].map(s => G.bot(s, 16, 60, 7));
+    G.set({ seed: 7, scheme: 'turn', K: 16 });
+    const p = G.world.pairs[0];
+    let t = (1.5 * Math.PI - p.ph) / p.w; while (t < 0) t += 2 * Math.PI / p.w;
+    G.set({ yaw: p.az, pitch: p.el, t, H: p.d0 });
+    o.front = G.frontAt(G.world, 0, 0, 0, 'turn', 16, 0);
+    o.before = G.state().hits;
+    return o;
+  });
+  const gb = await page.locator('#cv').boundingBox();
+  await page.mouse.click(gb.x + gb.width / 2, gb.y + gb.height / 2);
+  await page.waitForTimeout(100);
+  fg.after = await page.evaluate(() => __fpvGame.state());
+  const [bT, bL, bZ, bTr] = fg.bot;
+  const fgOk = fg.turnTold.every(Boolean) && Math.abs(fg.logShare - Math.log(1.25) / (Math.log(2000) / 16)) < 0.01 && fg.bot.every(b => b.wrongs === 0) &&
+    bT.hits >= 0.8 * bTr.hits && bT.hits > 4 * bL.hits && bT.hits > 4 * bZ.hits &&
+    fg.front && fg.front.colour === 'red' && !fg.front.fight && fg.after.hits === fg.before + 1;
+  if (!fgOk) failures.push(`[fpv-game.html] ${JSON.stringify(fg)}`);
+  console.log(`${failures.length === before60 ? 'ok  ' : 'FAIL'} fpv-game.html (a pair 1.25 apart about the focus told apart by the turn at K = 8, 12, 16, by log depth at K = 16 in ${(100 * fg.logShare).toFixed(0)}% of places; the bot's foes in 60 s: the turn ${bT.hits}, log ${bL.hits}, the standard buffer ${bZ.hits}, true depth ${bTr.hits}, no friend shot; a real click on a foe in front scored)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

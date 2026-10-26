@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The focus is the corner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    focus.html: the point of focus defines the corner (25 October 2026, Tom: "could you create a demo of the idea the point
+    of focus defines the corner."; SPN R498–R501; OFS §8, "The corner follows the focus" and Corollary 6.1). A standalone
+    page, plain canvas. A world of things round home, each at a direction and a distance, drawn on the reader's lay (d/H
+    to the corner circle, then 1 + ln(d/H)), the frame's quarter turn (h, v) with its K equal-angle addresses and the K
+    distance addresses at H·tan(kπ/2K). Tap a thing: in "look at it" the frame turns so its corner (v = h, the bisector)
+    points at the thing and H becomes its distance (designating it draws it at H), so it sits at the corner in direction
+    and in distance; in "look past it" the corner stays where it was and the thing keeps whatever grain it had. The grain
+    panel: a cell's width relative to its place, (π/2K)(s + 1/s), the same formula for the reading v/h in direction and for
+    d/H in distance, least at s = 1. The travel panel: the next look's place drawn from the uniform turn weighted by
+    1 + a·cos 2θ; the expected travel E|g(X) − g(c)| from a focus c on three rulers (the angle, the levels ln s, the
+    in-place lay) is least at the law's median on all three, the corner when a = 0 (Corollary 6.1(c), (d)).
+    Links: ?focus=<thing index>&K=8|16|32&a=<-0.6..0.6>&mode=look|past.
+    Test hook: window.__focus (relCell, median, travel, bestFocus, things, readingsOf, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15 }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    code { color: var(--bright) }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The focus is the corner</h1>
+    <p class="lede">Nothing in the geometry says where the reader's corner goes; H is its own choice. Look at a thing and
+    the choice is made: turning carries the corner, the direction where v = h, onto it, and designating it draws it at H,
+    which puts it at the corner of distance too. Both are free. And the corner is where a focus should be: the
+    <span class="g">finest relative grain</span>, the <span class="r">reciprocal's fixed point</span>, and the place from
+    which the <span class="w">next look is nearest on average</span>. How far the thing really is stays outside every
+    reading.</p>
+    <div class="panel">
+        <div class="row"><label>tap a thing to</label>
+            <button data-mode="look">look at it (the corner goes there)</button>
+            <button data-mode="past">look past it (the corner stays)</button></div>
+        <div class="row"><label>K addresses</label>
+            <button data-K="8">8</button><button data-K="16">16</button><button data-K="32">32</button>
+            <span class="cap" style="margin:0">(the things: </span><span id="names" class="cap" style="margin:0"></span><span class="cap" style="margin:0">)</span></div>
+        <div class="grid">
+            <div><canvas id="cv1" height="460"></canvas><p class="cap">From above, home at the bottom. The frame's quarter
+            turn from <span class="b">h</span> to <span class="b">v</span>, its K equal-angle addresses (gold) and its corner
+            (the dashed bisector, v = h); the K distance addresses at H·tan(kπ/2K) (teal rings), drawn on the reader's lay:
+            in proportion inside the corner circle (radius H), then 1 + ln(d/H). Things outside the quarter turn belong to
+            another facing and are dim.</p></div>
+            <div>
+                <div class="read" id="r1"></div>
+                <canvas id="cv2" height="250"></canvas><p class="cap">The grain. A cell's width relative to its place,
+                (π/2K)(s + 1/s), against the levels of s, over its least, π/K. One curve serves both corners: s = v/h in
+                direction (gold dots) and s = d/H in distance (teal dots). The ring is the thing tapped.</p>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="row"><label for="a">the next look, lopsided by a</label><input id="a" type="range" min="-0.6" max="0.6" step="0.01" value="0">
+            <span id="av" class="b"></span><button id="a0">a = 0</button></div>
+        <div class="grid">
+            <div><canvas id="cv3" height="300"></canvas><p class="cap">The travel to the next look. Its place X follows the
+            uniform turn weighted by 1 + a·cos 2θ (a &gt; 0 nearer, a &lt; 0 farther). For a focus at c, the expected
+            travel E|g(X) − g(c)| on three rulers: the <span class="g">angle</span>, the <span class="r">levels ln s</span>
+            and the <span class="w">in-place lay</span>, each drawn over its own least. All three are least at the same c,
+            the law's median: the corner when a = 0.</p></div>
+            <div class="read" id="r2"></div>
+        </div>
+    </div>
+    <p class="note">Related: <a href="zoom.html">H is a zoom</a>, <a href="mountain.html">the mountain and the thumb</a>,
+    <a href="sweep-zero.html">counting from zero</a>, <a href="star-field-3d.html">an infinite star field</a>.
+    <a href="demos.html">All the demos</a>.</p>
+</main>
+<script>
+(function () {
+    'use strict';
+    const $ = id => document.getElementById(id), P = new URLSearchParams(location.search);
+    const rad = d => d * Math.PI / 180, deg = r => r * 180 / Math.PI, LN2 = Math.LN2;
+
+    // the world: a direction φ (degrees from the right, counterclockwise) and a distance d, in one unit no reading fixes
+    const THINGS = [
+        { name: 'a stone', phi: 120, d: 0.6 }, { name: 'a chair', phi: 64, d: 2.2 }, { name: 'a dog', phi: 150, d: 5 },
+        { name: 'a tree', phi: 40, d: 14 }, { name: 'a house', phi: 95, d: 45 }, { name: 'a tower', phi: 20, d: 160 },
+        { name: 'a hill', phi: 132, d: 700 }, { name: 'a mountain', phi: 75, d: 3000 }, { name: 'a cloud', phi: 165, d: 9000 },
+    ];
+    const st = { K: 16, mode: 'look', a: 0, focus: -1, alpha: 90, lH: Math.log(14), anim: null };
+
+    // a cell's width relative to its place, for the turn's K addresses: (π/2K)(s + 1/s), least π/K at s = 1
+    const relCell = (s, K) => (Math.PI / (2 * K)) * (s + 1 / s);
+    // the next look's law on the quarter turn: density (2/π)(1 + a cos 2θ); its median solves θ + (a/2) sin 2θ = π/4
+    function median(a) {
+        let t = Math.PI / 4;
+        for (let i = 0; i < 60; i++) { const f = t + (a / 2) * Math.sin(2 * t) - Math.PI / 4, fp = 1 + a * Math.cos(2 * t); t -= f / fp; }
+        return Math.tan(t);
+    }
+    const RULERS = {
+        angle: th => th,
+        levels: th => Math.log(Math.tan(th)),
+        inplace: th => { const s = Math.tan(th); return s <= 1 ? s : 2 - 1 / s; },
+    };
+    // expected travel from a focus at angle φ (c = g(φ)): a midpoint rule split at φ, where the integrand has its kink
+    function travelAt(phi, a, ruler, N) {
+        const g = RULERS[ruler], c = g(phi), dens = t => (2 / Math.PI) * (1 + a * Math.cos(2 * t));
+        N = N || 4000;
+        let sum = 0;
+        const part = (lo, hi, n) => { const w = (hi - lo) / n; for (let i = 0; i < n; i++) { const t = lo + (i + 0.5) * w; sum += Math.abs(g(t) - c) * dens(t) * w; } };
+        const n1 = Math.max(8, Math.round(N * phi / (Math.PI / 2))), n2 = Math.max(8, N - n1);
+        part(0, phi, n1); part(phi, Math.PI / 2, n2);
+        return sum;
+    }
+    const travel = (c, a, ruler, N) => travelAt(Math.atan(c), a, ruler, N);
+    // the best focus by golden section over the focus's angle, mapped back to s = tan φ
+    function bestFocus(a, ruler, N) {
+        let lo = 0.03, hi = Math.PI / 2 - 0.03;
+        const r = (Math.sqrt(5) - 1) / 2;
+        let x1 = hi - r * (hi - lo), x2 = lo + r * (hi - lo), f1 = travelAt(x1, a, ruler, N), f2 = travelAt(x2, a, ruler, N);
+        for (let i = 0; i < 60; i++) {
+            if (f1 < f2) { hi = x2; x2 = x1; f2 = f1; x1 = hi - r * (hi - lo); f1 = travelAt(x1, a, ruler, N); }
+            else { lo = x1; x1 = x2; f1 = f2; x2 = lo + r * (hi - lo); f2 = travelAt(x2, a, ruler, N); }
+        }
+        return Math.tan((lo + hi) / 2);
+    }
+    // a thing's two readings in the frame: its direction off the h axis (ψ, in the quarter turn or not) and d/H
+    function readingsOf(i, alpha, lH) {
+        alpha = alpha == null ? st.alpha : alpha; lH = lH == null ? st.lH : lH;
+        const T = THINGS[i], psi = T.phi - (alpha - 45), inFacing = psi >= 0 && psi <= 90;
+        const sDir = inFacing ? Math.tan(rad(psi)) : NaN, sDist = T.d / Math.exp(lH);
+        return { name: T.name, psi, inFacing, sDir, sDist,
+            dirCell: inFacing ? relCell(sDir, st.K) / (Math.PI / st.K) : NaN, distCell: relCell(sDist, st.K) / (Math.PI / st.K) };
+    }
+    const lay = s => s <= 1 ? s : 1 + Math.log(s);
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth,
+            base = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))),
+            hh = Math.min(base, Math.round(w * (cv.id === 'cv1' ? 0.95 : 0.62)));
+        cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr);
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return { g, w, h: hh };
+    }
+    const RMAX = 6.2;
+    let geo = null;
+    function draw1() {
+        const { g, w, h } = fit($('cv1')); g.clearRect(0, 0, w, h);
+        const sc = Math.min((w - 20) / (2 * RMAX), (h - 30) / RMAX), ox = w / 2, oy = h - 16;
+        geo = { ox, oy, sc };
+        const P2 = (ang, r) => [ox + sc * r * Math.cos(rad(ang)), oy - sc * r * Math.sin(rad(ang))];
+        const H = Math.exp(st.lH), K = st.K, a0 = st.alpha - 45, a1 = st.alpha + 45;
+        // the quarter turn's wedge
+        g.fillStyle = 'rgba(212,160,82,0.06)'; g.beginPath(); g.moveTo(ox, oy);
+        for (let i = 0; i <= 40; i++) g.lineTo(...P2(a0 + 90 * i / 40, RMAX)); g.closePath(); g.fill();
+        // distance addresses: rings at H·tan(kπ/2K), on the lay
+        g.lineWidth = 1;
+        for (let k = 1; k < K; k++) {
+            const r = lay(Math.tan(k * Math.PI / (2 * K)));
+            if (r > RMAX) break;
+            g.strokeStyle = k === K / 2 ? 'rgba(140,230,205,0.85)' : 'rgba(140,230,205,0.22)';
+            g.beginPath(); g.arc(ox, oy, sc * r, Math.PI, 2 * Math.PI); g.stroke();
+        }
+        // level edges past the corner, faint violet: 2H, 4H, …
+        g.setLineDash([2, 5]); g.strokeStyle = 'rgba(181,156,240,0.25)';
+        for (let j = 1; 1 + j * LN2 < RMAX; j++) { g.beginPath(); g.arc(ox, oy, sc * (1 + j * LN2), Math.PI, 2 * Math.PI); g.stroke(); }
+        g.setLineDash([]);
+        // direction addresses: K equal angles across the quarter turn
+        for (let k = 0; k <= K; k++) {
+            g.strokeStyle = k === 0 || k === K ? 'rgba(230,228,238,0.7)' : 'rgba(212,160,82,0.28)';
+            g.beginPath(); g.moveTo(ox, oy); g.lineTo(...P2(a0 + 90 * k / K, RMAX)); g.stroke();
+        }
+        // the corner, v = h, the bisector
+        g.setLineDash([6, 4]); g.strokeStyle = '#d4a052'; g.lineWidth = 1.6;
+        g.beginPath(); g.moveTo(ox, oy); g.lineTo(...P2(st.alpha, RMAX)); g.stroke(); g.setLineDash([]); g.lineWidth = 1;
+        g.fillStyle = '#e6e4ee'; g.font = '12px DM Mono, monospace';
+        const ph = P2(a0, RMAX * 0.98), pv = P2(a1, RMAX * 0.98);
+        g.fillText('h', ph[0] + 4, ph[1]); g.fillText('v', pv[0] - 12, pv[1]);
+        const pc = P2(st.alpha, RMAX * 0.9); g.fillStyle = '#d4a052'; g.fillText('v = h', pc[0] + 6, pc[1]);
+        g.fillStyle = 'rgba(140,230,205,0.9)'; const pH = P2(st.alpha + 8, 1); g.fillText('H', pH[0] - 14, pH[1]);
+        // the things
+        THINGS.forEach((T, i) => {
+            const rd = readingsOf(i), r = Math.min(RMAX, lay(rd.sDist)), p = P2(T.phi, r), past = lay(rd.sDist) > RMAX;
+            g.globalAlpha = rd.inFacing ? 1 : 0.35;
+            g.fillStyle = i === st.focus ? '#d4a052' : '#e6e4ee';
+            g.beginPath(); g.arc(p[0], p[1], i === st.focus ? 6 : 4, 0, 2 * Math.PI); g.fill();
+            if (i === st.focus) { g.strokeStyle = '#d4a052'; g.beginPath(); g.arc(p[0], p[1], 11, 0, 2 * Math.PI); g.stroke(); }
+            g.fillStyle = '#8a8a96'; g.fillText(T.name + (past ? ' ›' : ''), p[0] + 8, p[1] - 6);
+            g.globalAlpha = 1;
+        });
+        g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(ox, oy, 3, 0, 2 * Math.PI); g.fill();
+    }
+    function draw2() {
+        const { g, w, h } = fit($('cv2')); g.clearRect(0, 0, w, h);
+        const L = 6, Ymax = 6, x = l => 30 + (w - 44) * (l + L) / (2 * L), y = q => h - 22 - (h - 34) * Math.min(q, Ymax) / Ymax;
+        g.strokeStyle = 'rgba(255,255,255,0.12)'; g.fillStyle = '#8a8a96'; g.font = '11px DM Mono, monospace';
+        for (let l = -L; l <= L; l += 2) { g.beginPath(); g.moveTo(x(l), 10); g.lineTo(x(l), h - 22); g.stroke(); g.fillText(l === 0 ? 's = 1' : (l > 0 ? '2^' + l : '2^' + l), x(l) - 14, h - 6); }
+        for (let q = 0; q <= Ymax; q += 2) { g.beginPath(); g.moveTo(30, y(q)); g.lineTo(w - 14, y(q)); g.stroke(); g.fillText('×' + Math.pow(2, q), 2, y(q) + 4); }
+        // the curve, in levels of the ratio to its least: log2((s + 1/s)/2)
+        g.strokeStyle = '#e6e4ee'; g.lineWidth = 1.6; g.beginPath();
+        for (let i = 0; i <= 240; i++) { const l = -L + 2 * L * i / 240, s = Math.pow(2, l), q = Math.log2((s + 1 / s) / 2); i ? g.lineTo(x(l), y(q)) : g.moveTo(x(l), y(q)); }
+        g.stroke(); g.lineWidth = 1;
+        const dot = (s, col, ring) => {
+            const l = Math.log2(s); if (!(l > -L && l < L)) return;
+            const q = Math.log2((s + 1 / s) / 2); g.fillStyle = col; g.beginPath(); g.arc(x(l), y(q), 4, 0, 2 * Math.PI); g.fill();
+            if (ring) { g.strokeStyle = col; g.beginPath(); g.arc(x(l), y(q), 9, 0, 2 * Math.PI); g.stroke(); }
+        };
+        THINGS.forEach((T, i) => { const rd = readingsOf(i); dot(rd.sDist, '#8ce6cd', i === st.focus); if (rd.inFacing) dot(rd.sDir, '#d4a052', i === st.focus); });
+    }
+    let curves = null;
+    function computeCurves() {
+        const out = { c: [], rulers: {} };
+        for (let i = 0; i <= 96; i++) out.c.push(Math.pow(2, -4 + 8 * i / 96));
+        for (const r of Object.keys(RULERS)) {
+            const T = out.c.map(c => travel(c, st.a, r, 900)), m = Math.min(...T), M = Math.max(...T);
+            out.rulers[r] = { y: T.map(t => (t - m) / (M - m || 1)), best: bestFocus(st.a, r, 2000) };
+        }
+        out.median = median(st.a); curves = out;
+    }
+    function draw3() {
+        if (!curves) computeCurves();
+        const { g, w, h } = fit($('cv3')); g.clearRect(0, 0, w, h);
+        const x = c => 30 + (w - 44) * (Math.log2(c) + 4) / 8, y = q => h - 22 - (h - 34) * q;
+        g.strokeStyle = 'rgba(255,255,255,0.12)'; g.fillStyle = '#8a8a96'; g.font = '11px DM Mono, monospace';
+        for (let l = -4; l <= 4; l += 2) { const c = Math.pow(2, l); g.beginPath(); g.moveTo(x(c), 10); g.lineTo(x(c), h - 22); g.stroke(); g.fillText(l === 0 ? 'c = 1' : '2^' + l, x(c) - 14, h - 6); }
+        const cols = { angle: '#d4a052', levels: '#8ce6cd', inplace: '#b59cf0' };
+        for (const [r, col] of Object.entries(cols)) {
+            g.strokeStyle = col; g.lineWidth = 1.6; g.beginPath();
+            curves.c.forEach((c, i) => { const q = curves.rulers[r].y[i]; i ? g.lineTo(x(c), y(q)) : g.moveTo(x(c), y(q)); });
+            g.stroke(); g.lineWidth = 1;
+            g.fillStyle = col; g.beginPath(); g.arc(x(curves.rulers[r].best), y(0), 5, 0, 2 * Math.PI); g.fill();
+        }
+        g.setLineDash([4, 4]); g.strokeStyle = '#e6e4ee'; g.beginPath(); g.moveTo(x(curves.median), 10); g.lineTo(x(curves.median), h - 22); g.stroke(); g.setLineDash([]);
+        g.fillStyle = '#e6e4ee'; g.fillText('the median', x(curves.median) + 5, 20);
+    }
+    function readout() {
+        const K = st.K, H = Math.exp(st.lH);
+        let s = `<span class="b">K = ${K}</span>: the finest relative cell is π/K = ${(Math.PI / K).toFixed(4)}, at the corner.\n`;
+        s += `the corner points at ${st.alpha.toFixed(1)}°; H = ${H.toPrecision(3)} (in the world's unit, which no reading fixes)\n\n`;
+        if (st.focus < 0) s += 'Tap a thing.';
+        else {
+            const rd = readingsOf(st.focus);
+            s += `<span class="g">${rd.name}</span>` + (st.mode === 'look' ? ' (looked at: the corner put on it)\n' : ' (looked past: the corner left where it was)\n');
+            s += rd.inFacing
+                ? `  direction: v/h = ${rd.sDir.toPrecision(4)}, ${(rd.psi - 45).toFixed(1)}° off the corner; its cell ×${rd.dirCell.toFixed(2)} the finest\n`
+                : `  direction: outside this quarter turn, ${(rd.psi - 45).toFixed(1)}° off the corner; another facing\n`;
+            s += `  distance: d/H = ${rd.sDist.toPrecision(4)} (${Math.log2(rd.sDist).toFixed(2)} levels off the corner); its cell ×${rd.distCell.toFixed(2)} the finest\n`;
+            s += st.mode === 'look'
+                ? '  At the corner in both: the finest grain the K addresses give, on what is looked at.\n  Its true distance is still unread: d/H = 1 is the drawing, not a measurement.'
+                : '  Off the corner: the same K addresses, coarser here. Tap "look at it" and tap again.';
+        }
+        $('r1').innerHTML = s;
+        const m = curves.median, lv = Math.log2(m);
+        let t = `<span class="b">a = ${st.a.toFixed(2)}</span>: the next look's median s = ${m.toFixed(4)} (${lv >= 0 ? '+' : ''}${lv.toFixed(3)} levels)\n\n`;
+        t += 'the best focus, least expected travel, on each ruler:\n';
+        t += `  <span class="g">angle θ</span>        s = ${curves.rulers.angle.best.toFixed(4)}\n`;
+        t += `  <span class="r">levels ln s</span>    s = ${curves.rulers.levels.best.toFixed(4)}\n`;
+        t += `  <span class="w">in-place lay</span>   s = ${curves.rulers.inplace.best.toFixed(4)}\n\n`;
+        t += st.a === 0
+            ? 'With no reason to expect the next look on one side, the law is reciprocal-symmetric and its median is the\ncorner: the focus is best at s = 1 on every ruler.'
+            : `Expecting the next look ${st.a > 0 ? 'nearer' : 'farther'}, the best focus moves to the law's median, the same on every\nruler. The corner is best only when neither side is favoured.`;
+        $('r2').innerHTML = t;
+    }
+    function draw() { draw1(); draw2(); draw3(); readout(); }
+    function tween(alpha, lH) {
+        const a0 = st.alpha, l0 = st.lH, t0 = performance.now(), T = 500;
+        if (st.anim) cancelAnimationFrame(st.anim);
+        const step = now => {
+            const u = Math.min(1, (now - t0) / T), e = u * u * (3 - 2 * u);
+            st.alpha = a0 + (alpha - a0) * e; st.lH = l0 + (lH - l0) * e; draw1(); draw2(); readout();
+            st.anim = u < 1 ? requestAnimationFrame(step) : null;
+        };
+        st.anim = requestAnimationFrame(step);
+    }
+    function focusOn(i, instant) {
+        st.focus = i;
+        if (st.mode === 'look' && i >= 0) {
+            const T = THINGS[i];
+            if (instant) { st.alpha = T.phi; st.lH = Math.log(T.d); draw(); } else { readout(); tween(T.phi, Math.log(T.d)); }
+        } else draw();
+    }
+    function set(o) {
+        o = o || {};
+        if (o.K) st.K = o.K;
+        if (o.mode) st.mode = o.mode;
+        if (o.a != null && o.a !== st.a) { st.a = o.a; curves = null; }
+        if (o.alpha != null) st.alpha = o.alpha;
+        if (o.H != null) st.lH = Math.log(o.H);
+        if (o.focus != null) { st.focus = o.focus; if (st.mode === 'look' && o.focus >= 0) { st.alpha = THINGS[o.focus].phi; st.lH = Math.log(THINGS[o.focus].d); } }
+        syncUi(); if (!curves) computeCurves(); draw();
+        return state();
+    }
+    function state() {
+        return { K: st.K, mode: st.mode, a: st.a, focus: st.focus, alpha: st.alpha, H: Math.exp(st.lH),
+            reading: st.focus >= 0 ? readingsOf(st.focus) : null, median: curves && curves.median,
+            best: curves && Object.fromEntries(Object.entries(curves.rulers).map(([k, v]) => [k, v.best])) };
+    }
+    function syncUi() {
+        document.querySelectorAll('[data-K]').forEach(b => b.classList.toggle('on', +b.dataset.K === st.K));
+        document.querySelectorAll('[data-mode]').forEach(b => b.classList.toggle('on', b.dataset.mode === st.mode));
+        $('a').value = st.a; $('av').textContent = st.a.toFixed(2);
+    }
+    // a tap picks the nearest thing on the screen
+    $('cv1').addEventListener('click', ev => {
+        if (!geo) return;
+        const rc = $('cv1').getBoundingClientRect(), px = ev.clientX - rc.left, py = ev.clientY - rc.top;
+        let best = -1, bd = 26;
+        THINGS.forEach((T, i) => {
+            const r = Math.min(RMAX, lay(readingsOf(i).sDist)), x = geo.ox + geo.sc * r * Math.cos(rad(T.phi)), y = geo.oy - geo.sc * r * Math.sin(rad(T.phi));
+            const dd = Math.hypot(x - px, y - py); if (dd < bd) { bd = dd; best = i; }
+        });
+        if (best >= 0) focusOn(best);
+    });
+    document.querySelectorAll('[data-K]').forEach(b => b.onclick = () => { st.K = +b.dataset.K; syncUi(); draw(); });
+    document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { st.mode = b.dataset.mode; syncUi(); if (st.mode === 'look' && st.focus >= 0) focusOn(st.focus); else draw(); });
+    $('a').oninput = () => { st.a = +$('a').value; $('av').textContent = st.a.toFixed(2); curves = null; draw3(); readout(); };
+    $('a0').onclick = () => set({ a: 0 });
+    $('names').textContent = THINGS.map(T => T.name.replace(/^an? /, '')).join(', ');
+    window.addEventListener('resize', draw);
+
+    if (P.get('K')) st.K = +P.get('K') || 16;
+    if (P.get('mode') === 'past') st.mode = 'past';
+    if (P.get('a') != null) st.a = Math.max(-0.6, Math.min(0.6, +P.get('a') || 0));
+    syncUi(); computeCurves();
+    const f0 = P.get('focus');
+    if (f0 != null && THINGS[+f0]) focusOn(+f0, true); else draw();
+
+    window.__focus = { relCell, median, travel, bestFocus, things: THINGS, readingsOf, set, state };
+})();
+</script>
+</body>
+</html>

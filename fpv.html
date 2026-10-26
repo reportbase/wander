@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The crosshair is the corner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    fpv.html: the corner on the crosshair, a first-person view laid by its addresses (25 October 2026, Tom: "the insight
+    might be useful for FPV games."; "yes, lets push this idea. i'm intrested in the geometry, not realism."; then "yes,
+    build the demo"; SPN R502, R503; FPV, plans/fpv-plan.md). A standalone page, plain canvas, geometry only. The view is
+    not a picture: across, the direction from the crosshair at equal angles (±60°); up, each thing's depth address in
+    [0, 1], laid by one of three schemes with K cells: the turn about the focus, (2/π)·atan(d/f), its corner (address ½)
+    on the thing looked at; log depth, ln(d/n)/ln(X/n); the standard buffer, (1/n − 1/d)/(1/n − 1/X). So every cell has the
+    same room on the screen, and what differs is how much distance each holds. A thing is coloured by its cell's width
+    relative to its place, (b − a)/√(ab), over π/K (teal 1, gold about 5, red 30 and more). Eight pairs of twins (1.25
+    apart in distance, 1.5° apart in direction) show what a scheme tells apart: a pair in one cell is drawn as one.
+    Tap a thing to look at it: the view turns onto it and H becomes its distance, everything sliding in levels. The strip
+    below: the three schemes' cell edges along the levels ln d, and their relative cells against the levels, the band
+    where the turn is finer than log depth (±acosh(ln(X/n)/π) nats) shaded.
+    Fly at it (FPV run 2, SPN R504): the eye moves straight at the thing looked at, H locked on its distance, so it keeps
+    address ½ while the world beyond streams through the corner at K/(πτ) cells a unit time (τ its time to contact), falling
+    as sech away from the corner, and things between stream toward home; back home returns the eye.
+    Links: ?focus=<thing index>&scheme=turn|log|z&K=16|32|64&X=3|7 (log10 X)&yaw=<degrees>&f=<distance>.
+    Test hook: window.__fpv (addr, cellOf, edge, rel, things, twins, twinsApart, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 82ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 3fr 2fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15 }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The crosshair is the corner</h1>
+    <p class="lede">A first-person view, laid by its addresses instead of drawn as a picture. Across: the direction from
+    the crosshair. Up: each thing's depth address, from home at the bottom to the horizon at the top. Every one of the K
+    depth cells has the same room on the screen; what differs is how much distance each holds. Lay depth by the
+    <span class="r">turn about the focus</span> and the thing under the crosshair sits at the corner, address ½, in the
+    finest cell there is, π/K of its own distance, whatever the scene's range. Things nearer and farther coarsen alike, in
+    mirror image. Tap a thing to look at it.</p>
+    <div class="panel">
+        <div class="row"><label>depth laid by</label>
+            <button data-s="turn">the turn about the focus</button>
+            <button data-s="log">log depth</button>
+            <button data-s="z">the standard buffer</button></div>
+        <div class="row"><label>K cells</label>
+            <button data-K="16">16</button><button data-K="32">32</button><button data-K="64">64</button>
+            <label style="margin-left:10px">scene</label>
+            <button data-X="3">1 to 10³</button><button data-X="7">1 to 10⁷</button>
+            <label style="margin-left:10px">turn</label>
+            <button id="left">◀ 20°</button><button id="right">20° ▶</button>
+            <label style="margin-left:10px">focus</label>
+            <button id="nearer">nearer ÷2</button><button id="farther">farther ×2</button>
+            <button id="fly">fly at it</button><button id="home">back home</button></div>
+        <div class="grid">
+            <div><canvas id="cv1" height="480"></canvas>
+                <p class="cap">The view laid by its addresses. Across, the direction from the crosshair (equal angles,
+                ±60°); up, the depth address, one band a cell. A thing is coloured by its cell's width relative to its
+                place, over π/K: <span class="r">1</span>, <span class="g">5</span>, <span class="x">30 and more</span>.
+                Twins (1.25 apart in distance) in one cell are drawn as one, ringed in red. The gold line is the
+                corner (address ½); with the turn, the focus sits on it. Fly at it: the eye moves straight at the
+                focus, which stays on the corner while the world beyond streams up through it, fastest there.</p></div>
+            <div><div class="read" id="r1"></div></div>
+        </div>
+    </div>
+    <div class="panel">
+        <canvas id="cv2" height="330"></canvas>
+        <p class="cap">Along the levels, ln d from the near plane n = 1 to the scene's far end X. Top: each scheme's K cell
+        edges (<span class="r">turn</span>, <span class="g">log</span>, <span class="w">standard</span>); the turn's are
+        mirror images about the focus, d ↦ f²/d. Below: each scheme's relative cell over π/K, in doublings, the band
+        where the turn is finer than log depth shaded, ±acosh(ln(X/n)/π) nats about the focus. Ticks along the bottom are
+        the things.</p>
+        <p class="note">The numbers are <code>runs/fpv/fpv.py</code>'s (FPV, exact): at the focus the turn's cell is π/K
+        whatever the range; log depth's is ln(X/n)/K, 5.13 times coarser over 10⁷; at 32 bits the turn is 97 times finer
+        than reversed-Z there, for about 7 doublings either way. Geometry, not a renderer: no claim that a game should, only
+        what the corner gives where it is put. See also <a href="focus.html">the focus is the corner</a>,
+        <a href="zoom.html">H is a zoom</a>, <a href="flight.html">the corner in flight</a>,
+        <a href="demos.html">all the demos</a>.</p>
+    </div>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    const P = new URLSearchParams(location.search);
+    const n = 1;
+    const st = { scheme: 'turn', K: 32, lX: 7, yaw: 0, lf: Math.log(1000), focus: -1, anim: null };
+    const X = () => Math.pow(10, st.lX);
+    const f = () => Math.exp(st.lf);
+    const rad = d => d * Math.PI / 180, deg = r => r * 180 / Math.PI;
+    const wrap = a => ((a + 180) % 360 + 360) % 360 - 180;
+
+    // the three schemes: a depth's address in [0, 1], and back
+    function addr(d, s = st.scheme, F = f(), Xs = X()) {
+        if (s === 'turn') return (2 / Math.PI) * Math.atan(d / F);
+        if (s === 'log') return Math.log(d / n) / Math.log(Xs / n);
+        return (1 / n - 1 / d) / (1 / n - 1 / Xs);
+    }
+    function edge(k, K = st.K, s = st.scheme, F = f(), Xs = X()) {
+        const u = k / K;
+        if (s === 'turn') return u >= 1 ? Infinity : F * Math.tan(u * Math.PI / 2);
+        if (s === 'log') return n * Math.pow(Xs / n, u);
+        return u >= 1 ? Xs : 1 / (1 / n - u * (1 / n - 1 / Xs));
+    }
+    function cellOf(d, K = st.K, s = st.scheme, F = f(), Xs = X()) {
+        return Math.max(0, Math.min(K - 1, Math.floor(K * addr(d, s, F, Xs))));
+    }
+    function rel(d, K = st.K, s = st.scheme, F = f(), Xs = X()) {
+        const k = cellOf(d, K, s, F, Xs), a = edge(k, K, s, F, Xs), b = edge(k + 1, K, s, F, Xs);
+        return isFinite(b) ? (b - a) / Math.sqrt(a * b) : Infinity;
+    }
+
+    // the world: things at every distance and direction (seeded), and eight pairs of twins
+    function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+    let things = [], twins = [];
+    function makeWorld() {
+        const R = rng(20261025), Xs = X();
+        things = [];
+        for (let i = 0; i < 140; i++) things.push({ phi: R() * 360 - 180, d: Math.exp(Math.log(1.3) + R() * Math.log(Xs / 1.7)) });
+        twins = [];
+        for (let j = 0; j < 8; j++) {
+            const d = Math.pow(Xs, (j + 0.5) / 8) * 1.05, phi = -150 + j * 40 + (R() - 0.5) * 8;
+            const a = things.length; things.push({ phi, d, twin: j }); things.push({ phi: phi + 1.5, d: d * 1.25, twin: j });
+            twins.push([a, a + 1]);
+        }
+        things.forEach(t => { t.wx = t.d * Math.cos(rad(t.phi)); t.wy = t.d * Math.sin(rad(t.phi)); });
+        eye.x = 0; eye.y = 0;
+    }
+    // the eye moves; each thing's direction and distance are read from where it stands
+    const eye = { x: 0, y: 0 };
+    function placeAll() { things.forEach(t => { const dx = t.wx - eye.x, dy = t.wy - eye.y;
+        t.d = Math.max(1e-9, Math.hypot(dx, dy)); t.phi = deg(Math.atan2(dy, dx)); }); }
+    // fly at the focus: the eye moves straight at the thing looked at, H locked on it (FPV run 2)
+    const fly = { on: false, u: 0, t0: 0, d0: 0, last: 0 };
+    function flyStep(dt) {
+        if (st.focus < 0) return false;
+        const T = things[st.focus], dx = T.wx - eye.x, dy = T.wy - eye.y, d = Math.hypot(dx, dy);
+        const step = Math.min(fly.u * dt, d - fly.d0 / 64);
+        if (step <= 0) { fly.on = false; return false; }
+        eye.x += dx / d * step; eye.y += dy / d * step; placeAll();
+        st.yaw = T.phi; st.lf = Math.log(T.d); return true;
+    }
+    function flyStart() {
+        if (st.focus < 0) return; if (st.anim) { cancelAnimationFrame(st.anim); st.anim = null; }
+        const T = things[st.focus]; fly.d0 = T.d; fly.u = T.d / 8; fly.on = true; fly.last = performance.now();
+        const loop = now => { if (!fly.on) return; const dt = Math.min(0.1, (now - fly.last) / 1000); fly.last = now;
+            const more = flyStep(dt); draw(); if (more && fly.on) requestAnimationFrame(loop); else { fly.on = false; syncFly(); } };
+        syncFly(); requestAnimationFrame(loop);
+    }
+    function syncFly() { const b = $('fly'); if (b) { b.textContent = fly.on ? 'stop' : 'fly at it'; b.classList.toggle('on', fly.on); } }
+    // A2: the turn's cells crossed a unit time at level x, for things sliding at 1/τ
+    const flowAt = (x, tau, K = st.K) => K * (1 / Math.PI) / Math.cosh(x) / tau;
+    function twinsApart(s = st.scheme, K = st.K, F = f()) {
+        return twins.filter(([a, b]) => cellOf(things[a].d, K, s, F) !== cellOf(things[b].d, K, s, F)).length;
+    }
+
+    // drawing
+    function fit(cv) { const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1, h = +cv.getAttribute('height');
+        cv.width = Math.round(r.width * dpr); cv.height = Math.round(h * dpr); const g = cv.getContext('2d');
+        g.setTransform(dpr, 0, 0, dpr, 0, 0); return { g, W: r.width, H: h }; }
+    function grainColour(q) {           // q = r/(π/K): 1 teal, 5 gold, 30+ red
+        if (!isFinite(q)) return '#d96e5b';
+        const t = Math.max(0, Math.min(1, Math.log(q) / Math.log(30)));
+        const c = t < 0.47 ? mix([140, 230, 205], [212, 160, 82], t / 0.47) : mix([212, 160, 82], [217, 110, 91], (t - 0.47) / 0.53);
+        return `rgb(${c.join(',')})`;
+    }
+    function mix(a, b, t) { return a.map((v, i) => Math.round(v + (b[i] - v) * t)); }
+    const fmt = d => !isFinite(d) ? '∞' : d >= 1e4 ? '10^' + Math.log10(d).toFixed(1) : d >= 10 ? d.toFixed(0) : d.toPrecision(2);
+    let geo = null;
+    function draw1() {
+        const { g, W, H } = fit($('cv1')), L = 46, R = 8, T = 18, B = 22, w = W - L - R, h = H - T - B, K = st.K;
+        geo = { L, T, w, h };
+        const xOf = phi => L + w / 2 + (wrap(phi - st.yaw) / 60) * (w / 2), yOf = u => T + h * (1 - u);
+        for (let k = 0; k < K; k++) { g.fillStyle = k % 2 ? '#0d0d13' : '#11111a'; g.fillRect(L, yOf((k + 1) / K), w, h / K); }
+        g.fillStyle = '#8a8a96'; g.font = '11px DM Mono, monospace'; g.textAlign = 'right';
+        const step = K >= 64 ? 8 : K >= 32 ? 4 : 2;
+        for (let k = 0; k <= K; k += step) g.fillText(k === 0 ? 'home' : fmt(edge(k)), L - 4, yOf(k / K) + 4);
+        g.textAlign = 'left'; g.fillText('horizon', L + 4, T - 5);
+        // the corner, address ½
+        g.strokeStyle = '#d4a052'; g.setLineDash([6, 5]); g.beginPath(); g.moveTo(L, yOf(0.5)); g.lineTo(L + w, yOf(0.5)); g.stroke(); g.setLineDash([]);
+        // the crosshair
+        const cx = L + w / 2, fu = st.focus >= 0 ? (Math.floor(K * addr(things[st.focus].d)) + 0.5) / K : 0.5;
+        g.strokeStyle = 'rgba(230,228,238,0.5)'; g.beginPath(); g.moveTo(cx, T); g.lineTo(cx, T + h); g.stroke();
+        // things, each snapped to its cell; twins in one cell drawn as one
+        const merged = new Set();
+        twins.forEach(([a, b]) => { if (cellOf(things[a].d) === cellOf(things[b].d)) merged.add(b); });
+        things.forEach((t, i) => {
+            if (Math.abs(wrap(t.phi - st.yaw)) > 60 || merged.has(i)) return;
+            const k = cellOf(t.d), x = xOf(t.phi), y = yOf((k + 0.5) / K), q = rel(t.d) / (Math.PI / K);
+            const r = t.twin != null ? 4.5 : 3;
+            g.fillStyle = grainColour(q); g.beginPath(); g.arc(x, y, r, 0, 7); g.fill();
+            if (t.twin != null && merged.has(i + 1)) { g.strokeStyle = '#d96e5b'; g.lineWidth = 1.5; g.beginPath(); g.arc(x, y, 8, 0, 7); g.stroke(); g.lineWidth = 1; }
+            if (i === st.focus) { g.strokeStyle = '#e6e4ee'; g.beginPath(); g.arc(x, y, 9, 0, 7); g.stroke(); }
+        });
+        g.strokeStyle = '#e6e4ee'; g.beginPath(); g.moveTo(cx - 10, yOf(fu)); g.lineTo(cx + 10, yOf(fu)); g.stroke();
+        g.fillStyle = '#8a8a96'; g.textAlign = 'center'; g.fillText('−60°', L + 14, H - 6); g.fillText('+60°', L + w - 16, H - 6);
+    }
+    function draw2() {
+        const { g, W, H } = fit($('cv2')), L = 46, R = 10, Xs = X(), K = st.K, ln = Math.log;
+        const x0 = 0, x1 = ln(Xs / n), xOf = x => L + (x - x0) / (x1 - x0) * (W - L - R);
+        const rows = [['turn', '#8ce6cd'], ['log', '#d4a052'], ['z', '#b59cf0']];
+        rows.forEach(([s, c], j) => {
+            const y = 14 + j * 16; g.strokeStyle = c; g.globalAlpha = 0.8;
+            for (let k = 0; k <= K; k++) { const e = edge(k, K, s); if (e < n || e > Xs || !isFinite(e)) continue;
+                const x = xOf(ln(e)); g.beginPath(); g.moveTo(x, y - 6); g.lineTo(x, y + 6); g.stroke(); }
+            g.globalAlpha = 1; g.fillStyle = c; g.font = '11px DM Mono, monospace'; g.textAlign = 'right';
+            g.fillText(s === 'z' ? 'std' : s, L - 6, y + 4);
+        });
+        // grain curves
+        const top = 66, bot = H - 26, ymax = 8, yOf = q => bot - Math.min(ymax, Math.max(0, Math.log2(q))) / ymax * (bot - top);
+        const fx = ln(f()), bandHalf = Math.acosh(Math.max(1, ln(Xs / n) / Math.PI));
+        g.fillStyle = 'rgba(140,230,205,0.08)'; g.fillRect(xOf(fx - bandHalf), top, xOf(fx + bandHalf) - xOf(fx - bandHalf), bot - top);
+        g.strokeStyle = 'rgba(255,255,255,0.08)'; g.fillStyle = '#8a8a96'; g.textAlign = 'right';
+        for (let q = 0; q <= ymax; q += 2) { const y = yOf(Math.pow(2, q)); g.beginPath(); g.moveTo(L, y); g.lineTo(W - R, y); g.stroke(); g.fillText('×' + Math.pow(2, q), L - 6, y + 4); }
+        rows.forEach(([s, c]) => {
+            g.strokeStyle = c; g.lineWidth = 1.6; g.beginPath(); let started = false;
+            for (let i = 0; i <= 600; i++) { const x = x0 + (x1 - x0) * i / 600, q = rel(Math.exp(x) * (1 + 1e-12), K, s) / (Math.PI / K);
+                const y = yOf(isFinite(q) ? q : 1e9); if (!started) { g.moveTo(xOf(x), y); started = true; } else g.lineTo(xOf(x), y); }
+            g.stroke(); g.lineWidth = 1;
+        });
+        g.strokeStyle = '#e6e4ee'; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(xOf(fx), 8); g.lineTo(xOf(fx), bot); g.stroke(); g.setLineDash([]);
+        g.fillStyle = '#e6e4ee'; g.textAlign = 'center'; g.fillText('focus', Math.min(W - 30, Math.max(L + 20, xOf(fx))), bot + 22);
+        things.forEach(t => { const x = xOf(ln(t.d)); g.strokeStyle = t.twin != null ? '#d96e5b' : 'rgba(200,200,208,0.5)';
+            g.beginPath(); g.moveTo(x, bot + 2); g.lineTo(x, bot + 8); g.stroke(); });
+        g.fillStyle = '#8a8a96'; g.textAlign = 'left'; g.fillText('n = 1', L, H - 2); g.textAlign = 'right'; g.fillText('X = ' + fmt(Xs), W - R, H - 2);
+    }
+    function readout() {
+        const K = st.K, Xs = X(), F = f(), q = s => rel(F * (1 + 1e-12), K, s);
+        const bandHalf = Math.acosh(Math.max(1, Math.log(Xs / n) / Math.PI));
+        const name = st.focus >= 0 ? (things[st.focus].twin != null ? `a twin (pair ${things[st.focus].twin + 1})` : `thing ${st.focus}`) : 'nothing in particular';
+        let s = `<span class="b">looking at</span> ${name}, ${fmt(F)} away, ${wrap(st.yaw).toFixed(0)}° round\n`;
+        s += `depth laid by <span class="b">${{ turn: 'the turn about the focus', log: 'log depth', z: 'the standard buffer' }[st.scheme]}</span>, K = ${K}\n\n`;
+        s += `cell at the focus, relative to its distance:\n`;
+        s += `  <span class="r">turn</span>      ${q('turn').toFixed(4)}  (π/K = ${(Math.PI / K).toFixed(4)}, any range)\n`;
+        s += `  <span class="g">log</span>       ${q('log').toFixed(4)}  (ln(X/n)/K, ${(q('log') / q('turn')).toFixed(2)}× the turn's)\n`;
+        s += `  <span class="w">standard</span>  ${q('z') > 99 ? q('z').toExponential(2) : q('z').toFixed(4)}  (${(q('z') / q('turn')).toPrecision(3)}× the turn's)\n\n`;
+        s += `the turn finer than log within ±${bandHalf.toFixed(2)} nats (${(bandHalf / Math.LN2).toFixed(2)} doublings) of the focus\n`;
+        const md = F / 4, mf = F * 4;
+        s += `mirror: ${fmt(md)} and ${fmt(mf)} (a quarter and four times) hold ${(rel(md, K, 'turn') / (Math.PI / K)).toFixed(3)} and ${(rel(mf, K, 'turn') / (Math.PI / K)).toFixed(3)} × π/K\n\n`;
+        s += `twins told apart (of 8):  <span class="r">turn ${twinsApart('turn')}</span>  <span class="g">log ${twinsApart('log')}</span>  <span class="w">standard ${twinsApart('z')}</span>\n`;
+        if (st.focus >= 0) { const tau = F / Math.max(1e-9, fly.u || F / 8);
+            s += `\n<span class="b">flying at it</span> (${fly.on ? 'flying' : 'press fly'}): τ = ${tau.toFixed(2)} s; the world beyond streams through the corner at ${flowAt(0, tau).toFixed(1)} cells a second (K/(πτ)), ${flowAt(2, tau).toFixed(1)} two nats off; the focus stays at ½\n`; }
+        s += `<span class="note">look at a twin and the turn separates it: the cell at the corner spans (1 + tan(π/4K))/(1 − tan(π/4K)), under 1.25 for K ≥ 16</span>`;
+        $('r1').innerHTML = s;
+    }
+    function draw() { draw1(); draw2(); readout(); }
+    function sync() {
+        document.querySelectorAll('[data-s]').forEach(b => b.classList.toggle('on', b.dataset.s === st.scheme));
+        document.querySelectorAll('[data-K]').forEach(b => b.classList.toggle('on', +b.dataset.K === st.K));
+        document.querySelectorAll('[data-X]').forEach(b => b.classList.toggle('on', +b.dataset.X === st.lX));
+    }
+    function tween(yaw, lf) {
+        const y0 = st.yaw, l0 = st.lf, dy = wrap(yaw - y0), t0 = performance.now(), T = 550;
+        if (st.anim) cancelAnimationFrame(st.anim);
+        const step = now => { const u = Math.min(1, (now - t0) / T), e = u * u * (3 - 2 * u);
+            st.yaw = y0 + dy * e; st.lf = l0 + (lf - l0) * e; draw(); st.anim = u < 1 ? requestAnimationFrame(step) : null; };
+        st.anim = requestAnimationFrame(step);
+    }
+    function lookAt(i, instant) {
+        st.focus = i; const t = things[i];
+        if (instant) { st.yaw = t.phi; st.lf = Math.log(t.d); draw(); } else tween(t.phi, Math.log(t.d));
+    }
+    function set(o = {}) {
+        if (st.anim) { cancelAnimationFrame(st.anim); st.anim = null; }
+        if (o.scheme) st.scheme = o.scheme;
+        if (o.K) st.K = o.K;
+        if (o.X != null && o.X !== st.lX) { st.lX = o.X; makeWorld(); st.focus = -1; }
+        if (o.yaw != null) st.yaw = o.yaw;
+        if (o.f != null) { st.lf = Math.log(o.f); st.focus = -1; }
+        if (o.home) { eye.x = 0; eye.y = 0; placeAll(); }
+        if (o.focus != null && things[o.focus]) lookAt(o.focus, true);
+        if (o.fly) { fly.d0 = things[st.focus].d; fly.u = fly.d0 / 8; for (let i = 0; i < Math.round(o.fly * 60); i++) flyStep(1 / 60); }
+        sync(); draw(); return state();
+    }
+    function state() {
+        const K = st.K, F = f(), q = s => rel(F * (1 + 1e-12), K, s);
+        const t = st.focus >= 0 ? things[st.focus] : null;
+        return { scheme: st.scheme, K, X: X(), f: F, yaw: st.yaw, focus: st.focus,
+            rFocus: { turn: q('turn'), log: q('log'), z: q('z') },
+            band: Math.acosh(Math.max(1, Math.log(X() / n) / Math.PI)),
+            twins: { turn: twinsApart('turn'), log: twinsApart('log'), z: twinsApart('z') },
+            focusAddr: t ? addr(t.d, 'turn') : null, eye: { x: eye.x, y: eye.y }, focusD: t ? t.d : null,
+            tau: t ? t.d / (fly.u || t.d / 8) : null };
+    }
+
+    $('cv1').addEventListener('click', ev => {
+        if (!geo) return;
+        const rc = $('cv1').getBoundingClientRect(), px = ev.clientX - rc.left, py = ev.clientY - rc.top, K = st.K;
+        let best = -1, bd = 22;
+        things.forEach((t, i) => { if (Math.abs(wrap(t.phi - st.yaw)) > 60) return;
+            const x = geo.L + geo.w / 2 + (wrap(t.phi - st.yaw) / 60) * (geo.w / 2), y = geo.T + geo.h * (1 - (cellOf(t.d) + 0.5) / K);
+            const dd = Math.hypot(x - px, y - py); if (dd < bd) { bd = dd; best = i; } });
+        if (best >= 0) lookAt(best);
+    });
+    document.querySelectorAll('[data-s]').forEach(b => b.onclick = () => { st.scheme = b.dataset.s; sync(); draw(); });
+    document.querySelectorAll('[data-K]').forEach(b => b.onclick = () => { st.K = +b.dataset.K; sync(); draw(); });
+    document.querySelectorAll('[data-X]').forEach(b => b.onclick = () => set({ X: +b.dataset.X }));
+    $('left').onclick = () => tween(st.yaw - 20, st.lf);
+    $('right').onclick = () => tween(st.yaw + 20, st.lf);
+    $('fly').onclick = () => { if (fly.on) { fly.on = false; syncFly(); } else flyStart(); };
+    $('home').onclick = () => { fly.on = false; syncFly(); eye.x = 0; eye.y = 0; placeAll(); if (st.focus >= 0) lookAt(st.focus, true); else draw(); };
+    $('nearer').onclick = () => { st.focus = -1; tween(st.yaw, st.lf - Math.LN2); };
+    $('farther').onclick = () => { st.focus = -1; tween(st.yaw, st.lf + Math.LN2); };
+    window.addEventListener('resize', draw);
+
+    if (P.get('X') === '3') st.lX = 3;
+    if (['turn', 'log', 'z'].includes(P.get('scheme'))) st.scheme = P.get('scheme');
+    if ([16, 32, 64].includes(+P.get('K'))) st.K = +P.get('K');
+    makeWorld();
+    if (P.get('yaw') != null) st.yaw = +P.get('yaw') || 0;
+    if (P.get('f') != null && +P.get('f') > 0) st.lf = Math.log(+P.get('f'));
+    sync();
+    const f0 = P.get('focus');
+    if (f0 != null && things[+f0]) lookAt(+f0, true);
+    else lookAt(things.length - 4, true);
+    window.__fpv = { addr, cellOf, edge, rel, get things() { return things; }, get twins() { return twins; }, twinsApart, flowAt, set, state };
+})();
+</script>
+</body>
+</html>

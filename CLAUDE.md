@@ -314,6 +314,42 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   reallocation a level past it), copying alone against time × space. `?g=&rule=band|thrash|never&C0=&p=&n=&play=1`; hook
   `window.__dynamicArray` (`make`, `push`, `pop`, `step`, `state`, `thrash`, `staircase`, `product`, `copiesAlone`, `set`).
   No paper links them now. Not in the flying page.
+- `focus.html`: **the focus is the corner** (25 Oct 2026, Tom: "could you create a demo of the idea the point of focus
+  defines the corner."; SPN R501; OFS §8 "The corner follows the focus" and Corollary 6.1), a standalone page, plain canvas.
+  Nine things from 0.6 to 9,000 units off over the half turn; the reader's frame a quarter turn (its K equal-angle addresses,
+  the corner its bisector) and its K distance addresses at H·tan(kπ/2K) on the reader's lay. Tap a thing: "look at it"
+  turns the frame onto it and draws it at H, so it reads v/h = 1 and d/H = 1 and its cells are the finest, π/K relative
+  to their place; "look past it" leaves the corner where it was (the grain (π/2K)(s + 1/s), outside the quarter turn
+  another facing). The grain curve serves both corners. Below, the travel E|g(X) − g(c)| to the next look, X uniform by
+  turn weighted 1 + a·cos 2θ, on the angle, the levels and the in-place lay, all least at the law's median (1 at a = 0,
+  0.821 at 0.2, 0.627 at 0.5), as `runs/ofs/focus.py`. A "should", no claim about readers. `?focus=&K=8|16|32&a=&mode=past`;
+  hook `window.__focus` (`relCell`, `median`, `travel`, `bestFocus`, `things`, `readingsOf`, `set`, `state`). Not in the
+  flying page.
+- `fpv.html`: **the crosshair is the corner** (25 Oct 2026, Tom: "the insight might be useful for FPV games."; "yes, lets
+  push this idea. i'm intrested in the geometry, not realism."; "yes, build the demo"; SPN R502, R503; FPV), a standalone
+  page, plain canvas, geometry only. A first-person view laid by its addresses: across, the direction from the crosshair
+  (equal angles, ±60°); up, each thing's depth address in K cells (16, 32, 64), every cell the same room on the screen, by
+  the turn about the focus ((2/π)·atan(d/f), the focus at ½), log depth or the standard buffer; 140 things over 10³ or
+  10⁷ and eight pairs of twins 1.25 apart (in one cell drawn as one); each thing coloured by its cell over π/K. Tap a thing
+  to look at it (the view turns onto it, H its distance, a slide in levels); turn ±20°, focus ÷2 ×2; "fly at it" (R504, FPV
+  run 2) moves the eye straight at the focus at d₀/8 a second with H locked on it, the target held at ½ while the world
+  beyond streams through the corner at K/(πτ) cells a second, and "back home" returns. The strip: the
+  three schemes' edges along ln d (the turn's mirrored about f) and their relative cells, the band where the turn is
+  finer than log depth (±acosh(ln(X/n)/π) nats) shaded; the readout gives the focus's cell under each scheme, the band,
+  the mirror pair and twins told apart. `?focus=&scheme=turn|log|z&K=16|32|64&X=3|7&yaw=&f=`; hook `window.__fpv`
+  (`addr`, `cellOf`, `edge`, `rel`, `things`, `twins`, `twinsApart`, `flowAt`, `set` (with `home`, `fly` seconds), `state`).
+  Where this might be used in games and simulations: `plans/fpv-games-note.md` (R504; a playground, not OFS). Not in the flying page.
+- `fpv-game.html`: **friend or foe** (25 Oct 2026, Tom: "3", to "a small game with 8–16 depth bands", the games note's last
+  step; SPN R507), a standalone page, plain canvas, geometry not realism. A first-person view at equal angles (±50°), turned by
+  a drag or the arrow keys; 16 pairs about the eye, each a red foe and a blue friend on nearly one line of sight, drawn by
+  angle (the same size whatever the distance), their log-ratio swinging ±ln 1.35/2 so which is nearer swaps; depth seen in K
+  bands (8, 12, 16), a pair in one band z-fighting in stripes; a shot (tap, space) hits what is drawn at the crosshair (foe
+  +1, friend −1). Schemes: the turn about the focus (H held on the pair under the crosshair, moved past 0.4 nats, FPV run 5),
+  log depth and the standard buffer over [1, 2000], true depth. A steady bot (180° a second, 0.15 s to react, shoots only a
+  foe clearly in front) on a seeded 60 s round: at K = 16 the turn 98 foes, log depth 17, the standard buffer 0, true depth
+  94 (looks told apart 91%, 13%, 0%, 100%). A bot, not a player. `?scheme=turn|log|z|true&K=8|12|16&seed=&bot=1`; hook
+  `window.__fpvGame` (`cellOf`, `addr`, `makeWorld`, `pairsAt`, `frontAt`, `resolvedAt`, `focus`, `bot`, `step`, `shoot`,
+  `set`, `state`). Not in the flying page.
 - `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
   "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
   carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
@@ -704,7 +740,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, arrays on the sweeps, online decisions at the corner and a dynamic array, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, arrays on the sweeps, online decisions at the corner and a dynamic array, the focus is the corner, the crosshair is the corner, friend or foe, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -2134,6 +2170,27 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   ⌈F/δ⌉ + ⌈log_ρ(X/F)⌉ (greedy = formula = grid DP in eight cases): proportional on the focus, levels past its edge, the
   corner at the edge; the field 6 addresses at X/F = 64, ρ = 2, whatever K (δ = F/58 at K = 64); the reader's lay the
   matched-grain case (n·ln(X/F) + 1.8 to 3.0); the turn 2.78 times coarser at the focus's edge, factor 2 broken near 2K/π.
+  `fpv-plan.md` (+ `runs/fpv/fpv.py`, 25 Oct; SPN R502; Tom: "the insight might be useful for FPV games.", then "yes, lets
+  push this idea. i'm intrested in the geometry, not realism."): exact. Depth laid by the turn with H at the focus distance
+  against log depth and the standard buffer (n = 1, X = 10⁷): the focus's cell π/K whatever the range (G1); the edges
+  mirror images about f, d ↦ f²/d (G2); better than log by ln(X/n)/π at the focus, within ±acosh(ln(X/n)/π) nats (G3) and
+  in expectation for next looks within ±3.61 nats (G4); refocusing a slide in levels (G5); waste under 2% for f in
+  [64n, X/64] (G6); at 32 bits 97 times reversed-Z at the focus for 7.3 doublings (G7); the flat screen's crosshair
+  coarsest (G8). G2 killed in two clauses by my set-up (the continuum past |x| = 3.75; Z's ties within a cell). Run 2
+  (`runs/fpv/fpv2.py`, R504), flying at the focus with H locked on it: the target held at ½, the level flow
+  u/d − u·cos β/D (1/τ far beyond), the address flow (1/π)·sech x·dx/dt, so the world beyond streams through the corner
+  at K/(πτ) cells a unit time, things between toward home; nothing killed. Runs 3–4 (`runs/fpv/fpv3.py`, `fpv4.py`,
+  R505; Tom: "Yes, continue"), two targets D nats apart: one corner at √(f₁f₂) gives each (π/K)·cosh(D/2), two corners
+  (K split at the geometric mean) 4·atan(e^{D/2})/K, equal at D* = 2.021 nats (a ratio 7.55); splitting costs to first
+  order, one corner to second; two corners coarsest between the targets, where one corner is finest. Run 3 killed by my
+  set-up (B5, a derivative across the join) and my tolerance (B6 at K = 32); run 4 not. Run 5 (`runs/fpv/fpv5.py`, R506;
+  Tom: "Yes"), when to move the focus on a seeded gaze trace (targets on 8 nats, jitter 0.1, a jump in 20 looks): hold
+  the corner until the look is more than L away; L = 0.4 re-lays on 5% of looks (follow: all) for G = 1.0098, the knee
+  at 3–4 jitters, the jumps the floor; easing re-lays every look and trails jumps (G 1.13 at α = ½), the median of
+  recent looks lags (G 4.9); the one-or-two switch with a ±0.25 band 8.7 times fewer switches for 0.17% of grain.
+  Killed by my set-up (R 0.999995, the first look no move) and in F5 (a second-order term left out; 8.7 against my 10).
+  Kept out of OFS (Tom: "this is just a
+  playground to see how it might be used"); `plans/fpv-games-note.md` the insights for games and simulations.
   `gaze-note.md` (25 Oct; SPN R495; Tom: "visually, our far field looks proportional, it does not look like the merkator
   map."; "its highly likely that the corner is constanly adjusted to follow our point of gaze."; "the far and near
   fields, are useful as a signal about what to focus on next."): the picture's far field the turn's (proportional in
@@ -2625,6 +2682,15 @@ In short:
   57. **dynamic-array.html:** in the band every resize lands at ½ (g = 2); shrinking at 1/g a push and a pop at the edge copy
       2N; pushes from C₀ make ⌈log₂(N/C₀)⌉ reallocations, doubling C₀ one fewer, none inside C₀; copying alone 3, 2, 1.5,
       times the waste 4.5, 4, 4.5, 5.33, least at g = 2; a random future under 2 copies an operation.
+  58. **focus.html:** the finest relative cell π/K at the corner (K = 8, 16, 32); every thing looked at reads v/h = 1 and
+      d/H = 1 at the finest cells, looked past coarser; the least travel to the next look at its median on the angle, the
+      levels and the in-place lay: 1, 0.821 and 0.627 at a = 0, 0.2, 0.5.
+  59. **fpv.html:** the turn's cell at the focus π/K within 1% at K = 16, 32, 64 over 10³ and 10⁷; its edges mirror
+      images about the focus; log depth's over the turn's ln(X/n)/π; every twin told apart when looked at, at every K,
+      fewer by log depth; the thing looked at at address ½; flown at for 4 s, half its distance and still at ½.
+  60. **fpv-game.html:** a pair 1.25 apart about the focus told apart by the turn at K = 8, 12, 16, by log depth at K = 16 in
+      ln 1.25 of its band (47% of places); the steady bot's foes in 60 s, the turn at least 0.8 of true depth's and over 4
+      times log depth's and the standard buffer's, no friend shot; a real click on a foe in front scores.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
