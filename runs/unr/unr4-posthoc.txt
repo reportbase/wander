@@ -1,0 +1,57 @@
+San Francisco
+  D every 6 min: reports per interval between NOAA turns: 0 in 6, 1 in 99, 2+ in 12 (extra reports 17); first interval (before the first turn) 0
+    after turn   6 (L    867 mm), reports 2, ranges to neighbours [585, 1128]
+    after turn   7 (HH  1995 mm), reports 0, ranges to neighbours [1128, 1667]
+    after turn  10 (L   1070 mm), reports 2, ranges to neighbours [323, 991]
+    after turn  11 (HH  2061 mm), reports 0, ranges to neighbours [991, 1755]
+    after turn  13 (H   1425 mm), reports 4, ranges to neighbours [1119, 202]
+    after turn  14 (L   1223 mm), reports 0, ranges to neighbours [202, 794]
+    after turn  16 (LL   171 mm), reports 3, ranges to neighbours [1846, 1307]
+    after turn  18 (L   1224 mm), reports 3, ranges to neighbours [254, 798]
+    after turn  25 (H   1624 mm), reports 2, ranges to neighbours [1646, 628]
+    after turn  26 (L    996 mm), reports 0, ranges to neighbours [628, 1131]
+    after turn  64 (L   1219 mm), reports 2, ranges to neighbours [229, 613]
+    after turn  65 (HH  1832 mm), reports 0, ranges to neighbours [613, 1405]
+    after turn  66 (LL   427 mm), reports 2, ranges to neighbours [1405, 999]
+    after turn  67 (H   1426 mm), reports 2, ranges to neighbours [999, 119]
+    after turn  71 (H   1482 mm), reports 3, ranges to neighbours [1074, 169]
+    after turn 108 (LL   181 mm), reports 2, ranges to neighbours [1881, 1476]
+    after turn 109 (H   1657 mm), reports 2, ranges to neighbours [1476, 828]
+  D every 18 min: reports per interval between NOAA turns: 0 in 1, 1 in 116, 2+ in 0 (extra reports 0); first interval (before the first turn) 0
+  UA 100, gaps over 3 looks between the rates: 24
+    turn   2 L    684 mm: 6 min  14.0, 18 min  19.0 looks late; ranges to neighbours [868, 1272]
+    turn   3 HH  1956 mm: 6 min  12.0, 18 min  16.0 looks late; ranges to neighbours [1272, 1596]
+    turn  13 H   1425 mm: 6 min  22.0, 18 min  31.0 looks late; ranges to neighbours [1119, 202]
+    turn  20 LL    75 mm: 6 min  13.0, 18 min  18.0 looks late; ranges to neighbours [1947, 1476]
+    turn  22 L   1128 mm: 6 min  14.0, 18 min  18.0 looks late; ranges to neighbours [423, 931]
+    turn  43 H   1935 mm: 6 min  10.0, 18 min  14.0 looks late; ranges to neighbours [1473, 1536]
+    turn  60 L   1083 mm: 6 min  15.0, 18 min  23.0 looks late; ranges to neighbours [429, 816]
+    turn  61 HH  1899 mm: 6 min  13.0, 18 min  17.0 looks late; ranges to neighbours [816, 1467]
+    turn  63 H   1448 mm: 6 min  19.0, 18 min  26.0 looks late; ranges to neighbours [1016, 229]
+    turn  67 H   1426 mm: 6 min  28.0, 18 min  32.0 looks late; ranges to neighbours [999, 119]
+    turn  69 HH  1767 mm: 6 min  15.0, 18 min  20.0 looks late; ranges to neighbours [460, 1359]
+    turn  70 LL   408 mm: 6 min  22.0, 18 min  17.0 looks late; ranges to neighbours [1359, 1074]
+    turn  72 L   1313 mm: 6 min  16.0, 18 min   1.0 looks late; ranges to neighbours [169, 452]
+    turn  76 L   1235 mm: 6 min  17.0, 18 min  23.0 looks late; ranges to neighbours [301, 510]
+    turn  77 HH  1745 mm: 6 min  11.0, 18 min  16.0 looks late; ranges to neighbours [510, 1414]
+    turn  81 HH  1811 mm: 6 min  12.0, 18 min  16.0 looks late; ranges to neighbours [681, 1495]
+    turn  86 LL   308 mm: 6 min  14.0, 18 min  18.0 looks late; ranges to neighbours [1569, 1411]
+    turn  91 H   1776 mm: 6 min  10.0, 18 min  14.0 looks late; ranges to neighbours [1462, 1062]
+    turn  94 LL   331 mm: 6 min  11.0, 18 min  15.0 looks late; ranges to neighbours [1531, 1494]
+    turn 100 LL   414 mm: 6 min  11.0, 18 min  17.0 looks late; ranges to neighbours [1516, 1374]
+    turn 108 LL   181 mm: 6 min  12.0, 18 min  17.0 looks late; ranges to neighbours [1881, 1476]
+    turn 112 LL   186 mm: 6 min  14.0, 18 min  18.0 looks late; ranges to neighbours [1980, 1471]
+    turn 113 H   1657 mm: 6 min  12.0, 18 min  17.0 looks late; ranges to neighbours [1471, 619]
+    turn 115 HH  2190 mm: 6 min  14.0, 18 min  10.0 looks late; ranges to neighbours [1152]
+
+Boston
+  D every 6 min: reports per interval between NOAA turns: 0 in 1, 1 in 116, 2+ in 0 (extra reports 0); first interval (before the first turn) 0
+  D every 18 min: reports per interval between NOAA turns: 0 in 1, 1 in 116, 2+ in 0 (extra reports 0); first interval (before the first turn) 0
+  UA 100, gaps over 3 looks between the rates: 6
+    turn  20 LL   470 mm: 6 min   8.0, 18 min  12.0 looks late; ranges to neighbours [2944, 2469]
+    turn  21 H   2939 mm: 6 min  10.0, 18 min  14.0 looks late; ranges to neighbours [2469, 2346]
+    turn  24 LL   285 mm: 6 min   7.0, 18 min  11.0 looks late; ranges to neighbours [3120, 2621]
+    turn  81 HH  2879 mm: 6 min   8.0, 18 min  12.0 looks late; ranges to neighbours [2005, 2183]
+    turn  86 LL   492 mm: 6 min   8.0, 18 min  12.0 looks late; ranges to neighbours [2445, 2295]
+    turn 112 LL    84 mm: 6 min   6.0, 18 min  10.0 looks late; ranges to neighbours [3561, 3220]
+

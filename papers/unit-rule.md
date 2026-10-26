@@ -319,10 +319,7 @@ Same machine, same landmark logic; only the carry differs. Error in the corner's
 | bursts of 20 | **1.72%** | 23.41% | 2.56% |
 | bursts of 200 | **1.66%** | 11.24% | 2.51% |
 
-Tested exactly since (UNR, `plans/unr-plan.md`, 26 Oct): the unit rule's turns are unchanged by every strictly
-increasing change of what arrives, a trend rule's are not; each carry's turns move under exactly the maps its reference
-does not commute with. With noise and a threshold (UNR run 3): an order-only debounce keeps that invariance and pays in
-noise; a threshold in levels keeps only the scale of the world, one in amounts neither. The unit rule is flat across burst length. The structural reason: **a carry that extrapolates is most wrong exactly at
+Since tested, exactly and on recorded tides (UNR; "Tested since" below). The unit rule is flat across burst length. The structural reason: **a carry that extrapolates is most wrong exactly at
 a turn**, the one place where "it went on as it was" is false by construction. The unit rule's carry grows wrong in
 size across a gap but asserts no direction, and direction is all a turn needs.
 
@@ -370,6 +367,69 @@ median of one facing.
 
 And the frame is exact over any arrivals at all: white noise gives a crossing and a cross ratio as cleanly as a tone.
 **Its exactness is no evidence that it refers to anything.**
+
+### Tested since: UNR, runs 1–7
+
+*Added 26 October 2026 (Tom: "Yes update unit rule"). Unlike the rest of this paper, these were run here, each with its
+predictions written first: `plans/unr-plan.md`, `runs/unr/`, SPN R509–R514. Five carries were raced: the unit rule,
+the median of three, an additive trend, a ratio trend and a blend.*
+
+**Why the rule wins in the gaps** (runs 1–2, exact, noise-free streams under gaps). A carry's turns are unchanged by
+exactly the changes of what arrives that its reference commutes with:
+- the unit rule and the median of three hold order alone, so no strictly increasing map moves a turn they report;
+- the ratio trend holds the ratio's motion, so powers leave it and other maps move it;
+- the additive trend and the blend hold amounts, so every map that is not affine moves them.
+
+The unit rule reports every turn once, with no false flip, within the two received intervals after it, whatever the
+gaps. The trend rules report inflections instead, a fixed fraction of a cycle off. So the archived 7–14× in the gaps is
+not tuning. It is OFS Theorem 6(c) in a stream: a turn is an order statistic of the arrivals, and a reference built
+from amounts answers a different question. Scaling the world does not separate the rules, since every one is
+homogeneous; the order test does. (Run 1 was killed by floating-point ties, my bounds and my scoring window; run 2, at
+60 digits, killed nothing.)
+
+**Noise and a threshold** (run 3). A threshold is an amount, and the unit it is written in decides which maps it
+costs:
+- an order-only debounce (three opposite signs in a row) keeps every increasing map;
+- a threshold in levels keeps only the scale of the world;
+- a threshold in amounts keeps neither.
+
+The price of order alone is noise: it makes false turns once the noise is a few percent of a look's change, where a
+threshold in levels makes none at five times the noise or more.
+
+**A recorded tide** (run 4, NOAA six-minute water level, September 2026, San Francisco and Boston). The split held
+exactly on data no one made for the test:
+- order alone gave the same turns under a change of datum, metres to feet, and a cube;
+- a threshold in amounts kept the datum and lost the unit;
+- a threshold in levels kept the unit and lost the datum.
+
+Order alone, with no threshold, reported exactly one turn between each pair of NOAA's highs and lows at Boston every
+6 minutes and at both stations every 18 minutes. It was the earliest of the detectors there. Where the water wiggled
+more per look than the tide moved (San Francisco at 6 minutes), it made extra reports. Looking less often bought order
+back with no threshold.
+
+**How often to look** (runs 5–7). **A rate is a choice of looks, not an amount, so it costs no invariance.** Runs 5–7
+asked which rate makes order alone exact.
+- **Run 5** (five stations, one-minute data read every 1–30 minutes): a rule from the noise's size and persistence was
+  right where the noise held its direction (Honolulu and Los Angeles never exact, San Francisco from 20 minutes). It
+  was 4–5 times too pessimistic where the noise was new every minute (Seattle, Boston), since order is not fooled by
+  noise that keeps no direction. Temperature from °C to °F: only order kept the turns.
+- **Run 6**: a persistence rule fitted on September failed on August, even in the fitting month. Each station's
+  behaviour was stable across months, and after the fact it lined up with the wiggle in the 10–60 minute band against
+  how sharply the tide turns.
+- **Run 7**: that band rule was fitted on September and August, then tested on July at ten stations, five of them new.
+  B is the standard deviation of the 10–60 minute band over the tide's sharpness at its turns. The rule says never
+  exact if B > 211, otherwise exact from about 0.10·B minutes. Results:
+  - the class was right at 9 of 10 stations; the miss, The Battery, sat just under the threshold;
+  - the starting rate was within a factor 2 at all 5 stations both called exact, and equal at 3;
+  - the rank correlation was 0.93;
+  - one late report, at one of Juneau's ten offsets at 10 minutes, killed the clause "exact at every rate past the
+    start".
+
+> **Holding order alone with one slot keeps every increasing change of what arrives, on real data as on exact streams.
+> Its one setting is how often it looks. The part of the noise at the scale of a few looks near a turn, against how
+> sharply the signal turns, says which rate.**
+
+The rule for the rate is fitted on tides. It is untested on any other signal.
 
 ### Every rule's corner marks what that rule believes
 
@@ -441,9 +501,12 @@ Theorem 6(c), not a missing mean.
 
 ## 10. Open, as the archived paper left it
 
-The machinery is closed; its use is not. Three tests would decide it, and none has been run:
+The machinery is closed; its use is not. Three tests would decide it. None had been run when this was written; the second is partly answered since:
 1. Does the corner found this way follow a change in the world, or only in the sampling?
-2. Do two readers at different rates agree, once each counts in levels from its own corner?
+2. Do two readers at different rates agree, once each counts in levels from its own corner? *Partly answered for
+   turns (UNR runs 4–7, §7): readers holding order alone at any rate inside a station's exact window report the same
+   turns, one between each pair of the tide's highs and lows; the window is predicted by the 10–60 minute band. Counts
+   in levels from each reader's corner were not compared.*
 3. Does the frame earn anything where a unit is available anyway?
 
 To these, OFS's frame adds a fourth:

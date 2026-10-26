@@ -1,0 +1,18 @@
+UNR run 7: D on July 2026, every r minutes from every offset, first interval left out.
+
+Honolulu (1612340): B 437.0; predicted []; measured []; class right
+Seattle (9447130): B 41.6; predicted [4, 5, 6, 8, 10, 12, 15, 20, 24, 30]; measured [4, 5, 6, 8, 10, 12, 15, 20, 24, 30]; class right; smallest within 2× True
+Los Angeles (9410660): B 447.9; predicted []; measured []; class right
+San Francisco (9414290): B 183.0; predicted [20, 24, 30]; measured [15, 20, 24, 30]; class right; smallest within 2× True
+Boston (8443970): B 85.7; predicted [8, 10, 12, 15, 20, 24, 30]; measured [8, 10, 12, 15, 20, 24, 30]; class right; smallest within 2× True
+The Battery (8518750): B 202.1; predicted [20, 24, 30]; measured []; class wrong
+Charleston (8665530): B 106.8; predicted [10, 12, 15, 20, 24, 30]; measured [10, 12, 15, 20, 24, 30]; class right; smallest within 2× True
+Key West (8724580): B 322.7; predicted []; measured []; class right
+San Diego (9410170): B 337.0; predicted []; measured []; class right
+Juneau (9452210): B 36.7; predicted [4, 5, 6, 8, 10, 12, 15, 20, 24, 30]; measured [5, 6, 8, 12, 15, 20, 24, 30]; class right; smallest within 2× True
+
+class right 9 of 10; within 2× 5 of 5; one unbroken run 9 of 10; Spearman 0.925
+Y1 not killed
+Y2 not killed
+Y3 KILLED
+Y4 not killed

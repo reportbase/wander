@@ -1,0 +1,91 @@
+UNR run 5: D (order only, M = 3) on one-minute water level, every r minutes from every offset.
+
+Honolulu (1612340): 109 intervals scored; predicted r_low None, r_high 30
+  r  1: exact at  0 of  1 offsets; intervals off by count {2: 3, 3: 3, 4: 4, 5: 1, 6: 10, 7: 7, 8: 12, 9: 3, 10: 11, 11: 11, 12: 8, 13: 8, 14: 3, 15: 7, 16: 4, 17: 2, 19: 2, 20: 1, 21: 1, 23: 2, 24: 1, 26: 2, 31: 1, 32: 1, 40: 1}
+  r  2: exact at  0 of  2 offsets; intervals off by count {0: 2, 2: 12, 3: 25, 4: 20, 5: 27, 6: 23, 7: 24, 8: 15, 9: 16, 10: 14, 11: 11, 12: 2, 13: 8, 14: 2, 15: 2, 18: 1, 19: 2, 21: 1, 26: 1, 28: 1, 33: 1}
+  r  3: exact at  0 of  3 offsets; intervals off by count {0: 14, 2: 39, 3: 52, 4: 39, 5: 43, 6: 19, 7: 28, 8: 14, 9: 10, 10: 8, 11: 7, 12: 4, 13: 2, 15: 1, 18: 3, 21: 1, 27: 1}
+  r  4: exact at  0 of  4 offsets; intervals off by count {0: 23, 2: 75, 3: 103, 4: 45, 5: 36, 6: 15, 7: 13, 8: 4, 9: 2, 10: 2, 11: 1, 17: 1, 18: 1}
+  r  5: exact at  0 of  5 offsets; intervals off by count {0: 39, 2: 87, 3: 85, 4: 15, 5: 16, 6: 2, 7: 2, 8: 5, 9: 1}
+  r  6: exact at  0 of  6 offsets; intervals off by count {0: 59, 2: 75, 3: 32, 4: 6, 5: 3, 7: 1}
+  r  8: exact at  0 of  8 offsets; intervals off by count {0: 52, 2: 57, 3: 29, 4: 3}
+  r 10: exact at  0 of 10 offsets; intervals off by count {0: 70, 2: 46, 3: 12, 4: 1, 5: 1, 6: 1}
+  r 12: exact at  0 of 12 offsets; intervals off by count {0: 76, 2: 44, 3: 8, 4: 4, 5: 1}
+  r 15: exact at  0 of 15 offsets; intervals off by count {0: 115, 2: 25, 3: 7, 4: 1, 5: 1}
+  r 20: exact at  0 of 20 offsets; intervals off by count {0: 82, 2: 16, 3: 10}
+  r 24: exact at  0 of 24 offsets; intervals off by count {0: 125, 2: 15, 3: 3}
+  r 30: exact at  0 of 30 offsets; intervals off by count {0: 210, 2: 14}
+  measured exact at [] (0 unbroken runs)
+
+Seattle (9447130): 113 intervals scored; predicted r_low 30, r_high 30
+  r  1: exact at  0 of  1 offsets; intervals off by count {0: 5, 2: 14, 3: 10, 4: 7, 5: 5, 6: 1, 8: 1}
+  r  2: exact at  0 of  2 offsets; intervals off by count {0: 4, 2: 6, 3: 4, 4: 1}
+  r  3: exact at  1 of  3 offsets; intervals off by count {2: 2, 3: 1}
+  r  4: exact at  3 of  4 offsets; intervals off by count {3: 1}
+  r  5: exact at  3 of  5 offsets; intervals off by count {0: 2, 2: 2}
+  r  6: exact at  6 of  6 offsets; intervals off by count {}
+  r  8: exact at  8 of  8 offsets; intervals off by count {}
+  r 10: exact at 10 of 10 offsets; intervals off by count {}
+  r 12: exact at 12 of 12 offsets; intervals off by count {}
+  r 15: exact at 15 of 15 offsets; intervals off by count {}
+  r 20: exact at 20 of 20 offsets; intervals off by count {}
+  r 24: exact at 24 of 24 offsets; intervals off by count {}
+  r 30: exact at 30 of 30 offsets; intervals off by count {}
+  measured exact at [6, 8, 10, 12, 15, 20, 24, 30] (1 unbroken run)
+
+Los Angeles (9410660): 85 intervals scored; predicted r_low None, r_high 30
+  r  1: exact at  0 of  1 offsets; intervals off by count {2: 5, 3: 14, 4: 7, 5: 16, 6: 5, 7: 5, 8: 4, 9: 6, 10: 4, 11: 3, 14: 1, 17: 2, 28: 1, 29: 1, 30: 1, 32: 1}
+  r  2: exact at  0 of  2 offsets; intervals off by count {0: 3, 2: 23, 3: 40, 4: 16, 5: 18, 6: 8, 7: 6, 8: 4, 9: 4, 10: 1, 11: 2, 12: 1, 16: 2, 18: 1, 19: 2, 22: 1, 28: 1}
+  r  3: exact at  0 of  3 offsets; intervals off by count {0: 10, 2: 41, 3: 47, 4: 23, 5: 26, 6: 12, 7: 4, 8: 6, 9: 2, 10: 1, 11: 1, 12: 3, 14: 1, 15: 2, 17: 2, 18: 1, 19: 1, 22: 1, 23: 1}
+  r  4: exact at  0 of  4 offsets; intervals off by count {0: 13, 2: 57, 3: 64, 4: 28, 5: 17, 6: 10, 7: 9, 8: 3, 9: 2, 10: 1, 11: 2, 12: 1, 13: 2, 14: 2, 15: 1, 16: 1, 17: 1, 20: 1}
+  r  5: exact at  0 of  5 offsets; intervals off by count {0: 16, 2: 73, 3: 64, 4: 19, 5: 11, 6: 9, 7: 10, 8: 2, 9: 6, 10: 1, 11: 3, 12: 2}
+  r  6: exact at  0 of  6 offsets; intervals off by count {0: 22, 2: 98, 3: 73, 4: 21, 5: 18, 6: 4, 7: 6, 8: 2, 9: 5, 10: 1, 11: 2, 13: 1}
+  r  8: exact at  0 of  8 offsets; intervals off by count {0: 33, 2: 76, 3: 64, 4: 3, 5: 12, 6: 2, 7: 2, 9: 1}
+  r 10: exact at  0 of 10 offsets; intervals off by count {0: 34, 2: 62, 3: 39, 5: 9, 7: 2}
+  r 12: exact at  0 of 12 offsets; intervals off by count {0: 25, 2: 28, 3: 23, 4: 1, 5: 10, 7: 1}
+  r 15: exact at  1 of 15 offsets; intervals off by count {0: 9, 2: 1, 3: 24}
+  r 20: exact at  4 of 20 offsets; intervals off by count {0: 24, 3: 13}
+  r 24: exact at  5 of 24 offsets; intervals off by count {0: 15, 2: 1, 3: 17}
+  r 30: exact at  7 of 30 offsets; intervals off by count {0: 25, 2: 1, 3: 21}
+  measured exact at [] (0 unbroken runs)
+
+San Francisco (9414290): 115 intervals scored; predicted r_low 30, r_high 30
+  r  1: exact at  0 of  1 offsets; intervals off by count {0: 5, 2: 20, 3: 24, 4: 21, 5: 9, 6: 5, 7: 3, 8: 2, 9: 2, 10: 1, 11: 1, 16: 1}
+  r  2: exact at  0 of  2 offsets; intervals off by count {0: 17, 2: 58, 3: 36, 4: 17, 5: 9, 6: 2, 7: 2, 8: 3, 9: 2, 12: 1}
+  r  3: exact at  0 of  3 offsets; intervals off by count {0: 20, 2: 61, 3: 53, 4: 11, 5: 9, 6: 4, 10: 1}
+  r  4: exact at  0 of  4 offsets; intervals off by count {0: 15, 2: 56, 3: 42, 4: 12, 5: 4, 6: 1}
+  r  5: exact at  0 of  5 offsets; intervals off by count {0: 23, 2: 45, 3: 44, 4: 2, 5: 1, 6: 2}
+  r  6: exact at  0 of  6 offsets; intervals off by count {0: 14, 2: 34, 3: 14, 4: 4, 5: 3, 6: 2}
+  r  8: exact at  0 of  8 offsets; intervals off by count {0: 12, 2: 14, 3: 8}
+  r 10: exact at  4 of 10 offsets; intervals off by count {0: 3, 2: 5, 3: 3}
+  r 12: exact at  7 of 12 offsets; intervals off by count {0: 4, 2: 6}
+  r 15: exact at 10 of 15 offsets; intervals off by count {0: 5, 2: 5}
+  r 20: exact at 20 of 20 offsets; intervals off by count {}
+  r 24: exact at 24 of 24 offsets; intervals off by count {}
+  r 30: exact at 30 of 30 offsets; intervals off by count {}
+  measured exact at [20, 24, 30] (1 unbroken run)
+
+Boston (8443970): 112 intervals scored; predicted r_low 20, r_high 30
+  r  1: exact at  0 of  1 offsets; intervals off by count {0: 3, 2: 17, 3: 21, 4: 6, 5: 7, 6: 4, 8: 2}
+  r  2: exact at  0 of  2 offsets; intervals off by count {0: 5, 2: 22, 3: 13, 4: 1, 5: 1}
+  r  3: exact at  0 of  3 offsets; intervals off by count {0: 8, 2: 10, 3: 5}
+  r  4: exact at  2 of  4 offsets; intervals off by count {0: 2, 2: 2}
+  r  5: exact at  4 of  5 offsets; intervals off by count {0: 1}
+  r  6: exact at  5 of  6 offsets; intervals off by count {0: 1}
+  r  8: exact at  7 of  8 offsets; intervals off by count {0: 1}
+  r 10: exact at 10 of 10 offsets; intervals off by count {}
+  r 12: exact at 12 of 12 offsets; intervals off by count {}
+  r 15: exact at 11 of 15 offsets; intervals off by count {0: 4}
+  r 20: exact at 11 of 20 offsets; intervals off by count {0: 9}
+  r 24: exact at  8 of 24 offsets; intervals off by count {0: 16}
+  r 30: exact at  2 of 30 offsets; intervals off by count {0: 28}
+  measured exact at [10, 12] (1 unbroken run)
+
+W1 KILLED
+W2 KILLED
+W3 not killed
+W4 not killed
+
+Side prediction: Boston air temperature, September 2026, six-minute.
+  every 6 min: looks 7184; D turns 190, same in °F True; UA 0.5 changed True; UT on K and °R same True; UT on reading + 50 changed True
+  every 18 min: looks 2395; D turns 119, same in °F True; UA 0.5 changed True; UT on K and °R same True; UT on reading + 50 changed True
+  T1 not killed; T2 not killed; T3 not killed; T4 not killed

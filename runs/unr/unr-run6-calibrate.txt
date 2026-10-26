@@ -1,0 +1,79 @@
+UNR run 6, calibration on September 2026 (run 5's record; first interval left out at every station).
+
+Honolulu (1612340): 108 intervals scored, τ_min 120 min
+  r  1: q 0.0761  s  12.6  E       3236  3r<τ_min True  measured exact False
+  r  2: q 0.1136  s  13.1  E       2415  3r<τ_min True  measured exact False
+  r  3: q 0.1277  s  12.0  E       1810  3r<τ_min True  measured exact False
+  r  4: q 0.1310  s  12.1  E       1351  3r<τ_min True  measured exact False
+  r  5: q 0.0941  s  14.7  E      770.5  3r<τ_min True  measured exact False
+  r  6: q 0.0767  s  14.8  E      489.7  3r<τ_min True  measured exact False
+  r  8: q 0.0976  s  14.8  E      393.7  3r<τ_min True  measured exact False
+  r 10: q 0.1087  s  15.6  E      312.4  3r<τ_min True  measured exact False
+  r 12: q 0.1234  s  15.5  E      254.4  3r<τ_min True  measured exact False
+  r 15: q 0.1427  s  15.5  E      195.7  3r<τ_min True  measured exact False
+  r 20: q 0.2129  s  14.9  E      163.6  3r<τ_min True  measured exact False
+  r 24: q 0.2214  s  16.3  E      129.7  3r<τ_min True  measured exact False
+  r 30: q 0.2253  s  17.8  E      92.58  3r<τ_min True  measured exact False
+
+Seattle (9447130): 112 intervals scored, τ_min 186 min
+  r  1: q 0.0895  s  19.7  E       3702  3r<τ_min True  measured exact False
+  r  2: q 0.1314  s  19.8  E       1894  3r<τ_min True  measured exact False
+  r  3: q 0.1579  s  20.0  E       1107  3r<τ_min True  measured exact False
+  r  4: q 0.1778  s  20.1  E      727.5  3r<τ_min True  measured exact False
+  r  5: q 0.2066  s  20.2  E      553.2  3r<τ_min True  measured exact False
+  r  6: q 0.2363  s  20.4  E      447.5  3r<τ_min True  measured exact True
+  r  8: q 0.3035  s  20.6  E      331.1  3r<τ_min True  measured exact True
+  r 10: q 0.3599  s  20.9  E      256.3  3r<τ_min True  measured exact True
+  r 12: q 0.4143  s  21.2  E      208.7  3r<τ_min True  measured exact True
+  r 15: q 0.4773  s  21.7  E      157.5  3r<τ_min True  measured exact True
+  r 20: q 0.5150  s  23.0  E      100.9  3r<τ_min True  measured exact True
+  r 24: q 0.5234  s  24.0  E      74.62  3r<τ_min True  measured exact True
+  r 30: q 0.5029  s  25.9  E       49.5  3r<τ_min True  measured exact True
+
+Los Angeles (9410660): 84 intervals scored, τ_min 192 min
+  r  1: q 0.1061  s  10.2  E       3616  3r<τ_min True  measured exact False
+  r  2: q 0.1806  s  11.2  E       2414  3r<τ_min True  measured exact False
+  r  3: q 0.2341  s  11.6  E       1582  3r<τ_min True  measured exact False
+  r  4: q 0.2630  s  12.0  E       1073  3r<τ_min True  measured exact False
+  r  5: q 0.2462  s  14.1  E      757.6  3r<τ_min True  measured exact False
+  r  6: q 0.2509  s  14.6  E      558.8  3r<τ_min True  measured exact False
+  r  8: q 0.2213  s  16.3  E      311.5  3r<τ_min True  measured exact False
+  r 10: q 0.1915  s  18.1  E      192.8  3r<τ_min True  measured exact False
+  r 12: q 0.1524  s  20.1  E      118.2  3r<τ_min True  measured exact False
+  r 15: q 0.1006  s  22.5  E      56.12  3r<τ_min True  measured exact False
+  r 20: q 0.0554  s  25.1  E      19.45  3r<τ_min True  measured exact False
+  r 24: q 0.0673  s  26.2  E      17.12  3r<τ_min True  measured exact False
+  r 30: q 0.0627  s  27.7  E      10.78  3r<τ_min True  measured exact False
+
+San Francisco (9414290): 114 intervals scored, τ_min 234 min
+  r  1: q 0.0753  s   6.2  E       2440  3r<τ_min True  measured exact False
+  r  2: q 0.1427  s   6.4  E       1348  3r<τ_min True  measured exact False
+  r  3: q 0.1977  s   6.5  E      859.1  3r<τ_min True  measured exact False
+  r  4: q 0.1846  s   7.8  E      539.9  3r<τ_min True  measured exact False
+  r  5: q 0.1905  s   8.5  E      389.9  3r<τ_min True  measured exact False
+  r  6: q 0.1987  s   8.8  E      292.2  3r<τ_min True  measured exact False
+  r  8: q 0.1874  s  10.3  E      180.8  3r<τ_min True  measured exact False
+  r 10: q 0.1827  s  11.2  E      123.3  3r<τ_min True  measured exact False
+  r 12: q 0.1703  s  12.2  E      86.84  3r<τ_min True  measured exact False
+  r 15: q 0.1658  s  13.4  E      59.55  3r<τ_min True  measured exact False
+  r 20: q 0.1746  s  15.0  E      39.39  3r<τ_min True  measured exact True
+  r 24: q 0.1855  s  16.2  E      31.35  3r<τ_min True  measured exact True
+  r 30: q 0.2096  s  17.4  E       24.4  3r<τ_min True  measured exact True
+
+Boston (8443970): 111 intervals scored, τ_min 330 min
+  r  1: q 0.1986  s  27.5  E       8212  3r<τ_min True  measured exact False
+  r  2: q 0.2403  s  27.8  E       3832  3r<τ_min True  measured exact False
+  r  3: q 0.2659  s  28.0  E       1936  3r<τ_min True  measured exact False
+  r  4: q 0.2843  s  28.2  E       1173  3r<τ_min True  measured exact False
+  r  5: q 0.3001  s  28.5  E      801.2  3r<τ_min True  measured exact True
+  r  6: q 0.3137  s  28.9  E      588.2  3r<τ_min True  measured exact True
+  r  8: q 0.3435  s  29.4  E      368.8  3r<τ_min True  measured exact True
+  r 10: q 0.3782  s  30.0  E      265.3  3r<τ_min True  measured exact True
+  r 12: q 0.3982  s  30.6  E      197.7  3r<τ_min True  measured exact True
+  r 15: q 0.3910  s  31.8  E      129.2  3r<τ_min True  measured exact True
+  r 20: q 0.3531  s  34.0  E      70.13  3r<τ_min True  measured exact True
+  r 24: q 0.3333  s  35.7  E      48.26  3r<τ_min True  measured exact True
+  r 30: q 0.3000  s  38.5  E      30.01  3r<τ_min True  measured exact True
+
+c = 52.7071 (not separated; 17 misclassified); largest E exact 801.2, smallest E inexact 10.78
+misclassified (station, r): [('Seattle', 6), ('Seattle', 8), ('Seattle', 10), ('Seattle', 12), ('Seattle', 15), ('Seattle', 20), ('Seattle', 24), ('Los Angeles', 20), ('Los Angeles', 24), ('Los Angeles', 30), ('Boston', 5), ('Boston', 6), ('Boston', 8), ('Boston', 10), ('Boston', 12), ('Boston', 15), ('Boston', 20)]

@@ -1,0 +1,11 @@
+sd of the residual's parts (mm): fast (< 10 min), band (10–60 min), slow (> 60 min); median two-leg κ
+  Honolulu      sep: fast   8.4  band   4.6  slow   48.9  κ median 0.0135
+  Honolulu      aug: fast   6.5  band   4.4  slow   36.6  κ median 0.0132
+  Seattle       sep: fast  13.4  band   4.7  slow   78.8  κ median 0.0805
+  Seattle       aug: fast   3.1  band   2.7  slow   68.3  κ median 0.0781
+  Los Angeles   sep: fast   7.3  band  12.1  slow   39.2  κ median 0.0349
+  Los Angeles   aug: fast   7.0  band  12.1  slow   43.4  κ median 0.0456
+  San Francisco sep: fast   4.3  band   6.5  slow   36.6  κ median 0.0429
+  San Francisco aug: fast   3.9  band   7.1  slow   35.3  κ median 0.0424
+  Boston        sep: fast  18.7  band   8.9  slow  127.4  κ median 0.1003
+  Boston        aug: fast  18.4  band   8.4  slow   62.4  κ median 0.1004

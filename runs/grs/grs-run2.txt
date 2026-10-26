@@ -1,0 +1,55 @@
+Q0  ∫∫|cos x − cos y| over [0, π/2]² = 4 - pi;  E|a1 − a2| = 4*(4 - pi)/pi**2;  P(straddle) = pi/4
+    k = 1: P(j inside), j = 0..1: 1/2 ≈ 0.500000, 1/2 ≈ 0.500000   (0.0 s)
+    k = 2: P(j inside), j = 0..2: 1/2 - pi/8 ≈ 0.107301, pi/4 ≈ 0.785398, 1/2 - pi/8 ≈ 0.107301   (0.3 s)
+    k = 3: P(j inside), j = 0..3: (-3 + pi)/(4*pi) ≈ 0.011268, (3 + pi)/(4*pi) ≈ 0.488732, (3 + pi)/(4*pi) ≈ 0.488732, (-3 + pi)/(4*pi) ≈ 0.011268   (3.2 s)
+    k = 4: P(j inside), j = 0..4: 19/256 - 3*pi/128 ≈ 0.000588, 3*pi/64 ≈ 0.147262, 109/128 - 3*pi/64 ≈ 0.704300, 3*pi/64 ≈ 0.147262, 19/256 - 3*pi/128 ≈ 0.000588   (45.4 s)
+Q3  counts symmetric about k/2: True
+Q4  P_in: k=1 0.500000, k=2 0.107301, k=3 0.011268, k=4 0.000588
+Q1  (k, n) = (2, 4): exact
+Q1  (k, n) = (3, 6): exact
+Q1  (k, n) = (4, 8): exact
+Q1  (k, n) = (3, 7): exact
+Q2  (1,2) j = 0 inside: exact 0.500000, MC 0.499672, z -0.66
+Q2  (1,2) j = 1 inside: exact 0.500000, MC 0.500328, z +0.66
+Q5  (1,2) P(∏t ≤ 1) 0.50033 (z +0.66); ln|det X| mean -0.0025, variance 2.4710 ± 0.0050
+Q2  (2,4) j = 0 inside: exact 0.107301, MC 0.106980, z -1.04
+Q2  (2,4) j = 1 inside: exact 0.785398, MC 0.785794, z +0.96
+Q2  (2,4) j = 2 inside: exact 0.107301, MC 0.107226, z -0.24
+Q5  (2,4) P(∏t ≤ 1) 0.49973 (z -0.53); ln|det X| mean +0.0005, variance 3.2930 ± 0.0059
+Q2  (3,6) j = 0 inside: exact 0.011268, MC 0.011284, z +0.16
+Q2  (3,6) j = 1 inside: exact 0.488732, MC 0.488774, z +0.08
+Q2  (3,6) j = 2 inside: exact 0.488732, MC 0.488639, z -0.19
+Q2  (3,6) j = 3 inside: exact 0.011268, MC 0.011303, z +0.34
+Q5  (3,6) P(∏t ≤ 1) 0.49954 (z -0.92); ln|det X| mean +0.0005, variance 3.7581 ± 0.0064
+Q7  (3,6) det X against the Cauchy: KS p 0.00e+00
+Q6  (3,6) x00: KS p 0.424
+Q6  (3,6) x02: KS p 0.811
+Q6  (3,6) x20: KS p 0.227
+Q6  (3,6) x22: KS p 0.237
+Q2  (4,8) j = 0 inside: exact 0.000588, MC 0.000571, z -0.69
+Q2  (4,8) j = 1 inside: exact 0.147262, MC 0.147770, z +1.43
+Q2  (4,8) j = 2 inside: exact 0.704300, MC 0.703866, z -0.95
+Q2  (4,8) j = 3 inside: exact 0.147262, MC 0.147211, z -0.14
+Q2  (4,8) j = 4 inside: exact 0.000588, MC 0.000582, z -0.23
+Q5  (4,8) P(∏t ≤ 1) 0.50006 (z +0.11); ln|det X| mean -0.0001, variance 4.0747 ± 0.0068
+Q6  (4,8) x00: KS p 0.282
+Q6  (4,8) x03: KS p 0.508
+Q6  (4,8) x30: KS p 0.270
+Q6  (4,8) x33: KS p 0.511
+Q8  (3,7) P(∏t ≤ 1) 0.22814 (z against ½ -543.7); median ∏t 2.9749
+Q6  (3,7) x00: KS p 0.530
+Q6  (3,7) x02: KS p 0.052
+Q6  (3,7) x30: KS p 0.970
+Q6  (3,7) x32: KS p 0.691
+Q7  Var ln|det X|: k=1 2.4710 (π²/4 2.4674), k=2 3.2930 (π²/3 3.2899), k=3 3.7581, k=4 4.0747
+
+Q0: not killed
+Q1: not killed
+Q2: not killed
+Q3: not killed
+Q4: not killed
+Q5: not killed
+Q6: not killed
+Q7: not killed
+Q8: not killed
+(70 s)

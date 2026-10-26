@@ -1,0 +1,27 @@
+Boston: D every 30 min, intervals with no report, by offset
+  offset  0: missed 0; first (turn, height mm, interval min, next report after it min) []
+  offset  5: missed 1; first (turn, height mm, interval min, next report after it min) [(0, 139, 372, 467)]
+  offset 10: missed 1; first (turn, height mm, interval min, next report after it min) [(0, 139, 372, 472)]
+  offset 15: missed 1; first (turn, height mm, interval min, next report after it min) [(0, 139, 372, 447)]
+  offset 20: missed 1; first (turn, height mm, interval min, next report after it min) [(0, 139, 372, 452)]
+  offset 25: missed 1; first (turn, height mm, interval min, next report after it min) [(0, 139, 372, 457)]
+  D's lateness after each NOAA turn (min), every 10 and 30 min, median and largest: 10: 32, 62; 30: 90, 120
+
+Sharpness at the turns: the two-leg estimate κ against a parabola fitted ±30 min, mm/min²
+  Seattle       two-leg min 0.0198 median 0.0805;  fitted min 0.0066 median 0.0838;  fitted at the two-leg flattest turn 0.0185
+  San Francisco two-leg min 0.0141 median 0.0429;  fitted min 0.0011 median 0.0425;  fitted at the two-leg flattest turn 0.0364
+  Boston        two-leg min 0.0605 median 0.1003;  fitted min 0.0122 median 0.1357;  fitted at the two-leg flattest turn 0.0122
+  Honolulu      two-leg min 0.0033 median 0.0135;  fitted min 0.0003 median 0.0150;  fitted at the two-leg flattest turn 0.0109
+  Los Angeles   two-leg min 0.0113 median 0.0349;  fitted min 0.0013 median 0.0465;  fitted at the two-leg flattest turn 0.0220
+
+Where s_1 comes from: sd of second differences x(t+1) − 2x(t) + x(t−1), mm
+  Seattle       observed  34.00   predicted   0.71
+  San Francisco observed  10.50   predicted   0.71
+  Boston        observed  47.44   predicted   0.71
+  Honolulu      observed  21.57   predicted   0.70
+  Los Angeles   observed  17.01   predicted   0.70
+
+Exact offsets per rate with every station's first interval left out (no look before the first turn)
+  Boston        1:0/1  2:0/2  3:0/3  4:2/4  5:5/5  6:6/6  8:8/8  10:10/10  12:12/12  15:15/15  20:20/20  24:24/24  30:30/30
+  Seattle       1:0/1  2:0/2  3:1/3  4:3/4  5:3/5  6:6/6  8:8/8  10:10/10  12:12/12  15:15/15  20:20/20  24:24/24  30:30/30
+  San Francisco 1:0/1  2:0/2  3:0/3  4:0/4  5:0/5  6:0/6  8:0/8  10:4/10  12:7/12  15:10/15  20:20/20  24:24/24  30:30/30

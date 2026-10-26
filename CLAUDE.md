@@ -1015,6 +1015,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the direction [hold : arrival], the levels one step repeated, odd K to name stillness, the corner a crossing (no
   "fulcrum"), one corner then plain levels, the record a projection, two checksums; the races and the landmark machine
   quoted as measured there, not rerun; its §0 lists what was restated and dropped. Where it and OFS differ, OFS stands.
+  Since 26 Oct (Tom: "Yes update unit rule") §7 has "Tested since: UNR, runs 1–7" (the only results there run here: order
+  alone keeps every increasing map, exact and on recorded tides; how often to look, from the 10–60 minute band against the
+  tide's sharpness, tested on July at ten stations), and §10's second open test is marked partly answered.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -2176,7 +2179,30 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the payload its reference commutes with (U and M every increasing map, Tr powers, Ta and E neither; all kx), every U
   flip within its turn's two received intervals. Theorem 6(c) in a stream. Run 3 (R510), noise and a threshold: an order-only
   debounce keeps every increasing map with noise and makes false turns as noise grows; a threshold in levels keeps kx
-  only, one in amounts neither; R4 killed by my false-turn count (cumulatively none at T ≥ 5σ). Recorded signals next.
+  only, one in amounts neither; R4 killed by my false-turn count (cumulatively none at T ≥ 5σ). Run 4 (R511), a recorded tide (NOAA verified six-minute
+  water level, September 2026, San Francisco and Boston, two datums; sha256s in the plan): the split held exactly (order
+  unchanged by datum, feet and a cube; amounts keep the datum, levels keep the unit); order alone exact and earliest where
+  the tide outruns its wiggles (Boston at 6 min, both at 18); V3 killed by Boston, V6 by my set-up, V7 by my reasoning.
+  Run 5 (R512), five stations' one-minute water level read every 1–30 min, the window of exact rates predicted from the
+  record first: right where the noise holds its direction (Honolulu, Los Angeles never exact, San Francisco from 20 min),
+  4–5 times too slow where it is new every minute (Seattle, Boston exact from 6 and 5); W2 killed by my set-up (a turn
+  before any look); °C to °F, only order keeps the turns.
+  Run 6 (R513), a persistence rule fitted on September, tested on August: not separable even in fitting, X1, X2
+  killed; each station's behaviour stable across months; post hoc the 10–60 min band over the tide's sharpness orders them.
+  Run 7 (R514), that band rule fitted on September and August and tested on July at ten stations (five new): class right
+  9 of 10, the starting rate within 2× at all 5, Spearman 0.93; Y3 killed by one late report at one Juneau offset.
+  `grs-plan.md` (+ `runs/grs/`, 26 Oct; SPN R515; Tom: "are you familiar with the grassmannian.", then "yes, check
+  k = 2"): readings are Gr(1, n), its uniform measure the Cauchy family det(I + XᵀX)^(−n/2); run 1 at k = 2, nothing
+  killed: invariance exact to (2, 5); Gr(2, 3) the wedge by duality; Gr(2, 4)'s exchange X ↦ X⁻¹ puts the tangents'
+  product's median at 1; every entry of X Cauchy; det X (Plücker p₃₄/p₁₂) corner at 1 but the diamond's ½(1 + |r|)⁻²;
+  near field (1 − π/4)/2 each side, straddling π/4; Gr(2, 5) the corner the product's lower quartile. Not in OFS.
+  Run 2 (R516; Tom: "1"): Gr(k, 2k) to k = 4, nothing killed: angles' density ∏|cos²θ_i − cos²θ_j| at every k; π/4
+  proved (∫∫|cos x − cos y| = 4 − π); entries Cauchy at every (k, n); all angles inside ½, ½ − π/8, (π − 3)/(4π),
+  19/256 − 3π/128; the corner the product's median wherever n = 2k, 0.228 in Gr(3, 7).
+  Run 3 (R517; Tom: "find the. general formula"): the count's law a ratio of Pfaffians (de Bruijn), Σ P_j z^j =
+  Pf A_k(z)/Pf A_k(1); P_in(k) exact to k = 8 (ℚ + ℚπ even, ℚ + ℚ/π odd), 2^(−k²/2) to leading order (log-gas; fitted
+  0.346595 against ln2/2), nothing killed.
+  OFS Appendix A "Planes of directions" (R518) states it: the corner from the exchange, the Cauchy from directions.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
