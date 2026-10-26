@@ -212,3 +212,39 @@ order from both, as R1–R2 predicted. The price is noise: the order-only deboun
 few percent of a look's change (101, 456), the level threshold none at five times the noise or more. Holding order alone
 is free of the payload and not free of the noise; buying noise robustness spends some invariance, and the unit in which
 the threshold is written decides which.
+
+### Run 4: predictions (26 Oct; Tom: "yes", to a run on a recorded signal), written before any data was fetched
+
+**The signal.** NOAA CO-OPS water level, verified six-minute heights (`product=water_level`, `units=metric`,
+`time_zone=gmt`), at San Francisco (9414290, mixed tides) and Boston (8443970, semidiurnal, a range near 3 m), for
+September 2026; if NOAA has not yet verified September 2026 at either station, September 2025 at both, decided on the
+API's answer before any value is looked at. Each fetched in two datums, MLLW and STND (the station's own zero), the same
+heights a constant apart. The independent turns are NOAA's verified highs and lows (`product=high_low`, MLLW), from
+their own fit to the six-minute series, not from mine. Heights are read as whole millimetres (integers), so a datum
+shift is exact. Looks missing from the verified series are left out (a real gap); a look's index is its minute over 6.
+Licence: U.S. Government work (public domain); source, retrieval date and sha256 of each file recorded below; the data
+not committed.
+
+**The detectors** (run 3's, unchanged): D, order only, M = 3; UA, a threshold in amounts, T_a = 30 and 100 in the
+numbers' own unit (mm as fetched); UT, a threshold in levels on ln(x + 2 m) with x in MLLW (the 2 m keeps it positive),
+T = 0.01 and 0.03. Every look (6 min), and every third look (18 min). Lateness of a report: the minutes from the last
+NOAA turn before it, over 6. A report is in excess (run 3's cumulative count) when the reports up to it outnumber the
+NOAA turns before it. A NOAA turn is missed when no report falls after it and at or before the next NOAA turn.
+
+**Predictions.**
+- V1. D's turns are unchanged, at both stations and both rates, by the datum (MLLW to STND), by feet (× 3.28084) and
+  by (x + 5 m)³. Killed if any turn moves.
+- V2. UA's turns are unchanged by the datum and changed by feet in at least one of the eight cases (two stations, two
+  rates, two T_a). UT's are unchanged by feet with its 2 m converted too (ln(3.28084(x + 2)) has the same differences)
+  and changed by the datum shift (ln of the STND height + 2 m) in at least one case. The split of run 3, on a recorded
+  signal: order keeps every increasing map, amounts keep a shift, levels keep a scale. Killed if any clause fails.
+- V3. At 6 min D has an excess above 0 at both stations (the millimetre rounding and the harbour's own short waves
+  turn the order often); UA 100 and UT 0.03 have none. Killed otherwise.
+- V4. UA 100's median lateness at 6 min is 5 to 15 looks at each station (estimated from x near a turn,
+  A − Aω²t²/2: √(2T/Aω²) to √(4T/Aω²) with A 0.5–1.5 m, ω = 2π/124 looks, about 6 to 14). Killed outside.
+- V5. D's excess at 18 min is at most a quarter of its excess at 6 min at each station (the tide's change per look
+  triples, the noise does not). Killed if more.
+- V6. Every NOAA turn that UA 100 misses (6 min) has a range to one of its neighbouring NOAA turns under 250 mm.
+  Killed by one that does not.
+- V7. For the NOAA turns UA 100 reports at both rates (the first report after each), the two reports lie within 18 min
+  of each other for at least 90% of them, at each station. Killed below.
