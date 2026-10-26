@@ -463,7 +463,7 @@ inexact ones. q_r rose with r at Seattle and Boston (to 0.52 and 0.40): the incr
 protocol said, c was committed and August predicted with it anyway.
 
 August data, retrieved 26 Oct 2026 from the same API (MLLW, metric, gmt; one-minute in four-day pieces, joined). Every
-station had verified highs and lows, none dropped; Los Angeles misses 11,521 of 44,640 minutes (the gap rule as in run 5).
+station had verified highs and lows, none dropped; Los Angeles misses 14,300 of 44,640 minutes (the gap rule as in run 5).
 Public domain, not committed:
 
 | file | sha256 |
