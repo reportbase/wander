@@ -454,3 +454,59 @@ sha256s recorded, not committed. The predicted exact rates per station committed
   predicted never exact is exact at no rate, and one predicted exact somewhere is exact somewhere.
 - X2. At each station, the predicted and measured exactness agree at 11 or more of the 13 grid rates.
 - X3. The measured exact rates are one unbroken run at each station (W3 again).
+
+### Run 6 (26 Oct; `runs/unr/unr6.py`, outputs `runs/unr/unr-run6-calibrate.txt` and `runs/unr/unr-run6-predict.txt`, each committed before the next step, and `runs/unr/unr-run6.txt`)
+
+Calibration (September, run 5's record): **the rule did not separate** exact from inexact; the best c, 52.7, still
+misclassified 17 of 65 (station, rate) pairs, all of Seattle's and Boston's exact rates but 30 and three of Los Angeles's
+inexact ones. q_r rose with r at Seattle and Boston (to 0.52 and 0.40): the increments keep their sign over hours. As the
+protocol said, c was committed and August predicted with it anyway.
+
+August data, retrieved 26 Oct 2026 from the same API (MLLW, metric, gmt; one-minute in four-day pieces, joined). Every
+station had verified highs and lows, none dropped; Los Angeles misses 11,521 of 44,640 minutes (the gap rule as in run 5).
+Public domain, not committed:
+
+| file | sha256 |
+|---|---|
+| `om_1612340.csv` (Aug) | `c537ac5fb71cb77878dcd4dd50311ffe52ac990f0b2447f2c834c4db13c8f7bd` |
+| `om_9447130.csv` (Aug) | `fdb638e696e6b8666bccda2f4c138129eaa1dad7bbbfefd79f77c4da376e35c2` |
+| `om_9410660.csv` (Aug) | `04b4817f553e87069e7605dbfcef36655694269ed105fcec290d90ec51f991e3` |
+| `om_9414290.csv` (Aug) | `125c1508b54b9e784db8fd2b1fe9e7076880437aaf04cbd5978b4d6d5302944c` |
+| `om_8443970.csv` (Aug) | `53cc83c8bd19da949f8ea26948fc19d44fe5836342d926cc12938256d039a7bb` |
+| `pr_1612340.csv` (Aug) | `d069a081b241aea6fc5e2352a9a462fd98d667881a4857fc8ff14a46b312835b` |
+| `pr_9447130.csv` (Aug) | `f027d72b52fc76fda72ab9436cf7caf788ddbd472cd8417e0a5608345c7893c0` |
+| `pr_9410660.csv` (Aug) | `30ef4a9a4a466e1510acdd016a1e11ec1086aab287ad3f5e05bbcde73c90f6ae` |
+| `pr_9414290.csv` (Aug) | `53bf51e1ac6dd2c89aadef45ffd009e328a496298a2f51ba75533de7b518ebdc` |
+| `pr_8443970.csv` (Aug) | `ab74d2865e77f33cf9cc5e59c1d44bd782e1d1819f26ced35357757b5ebb8916` |
+| `hl_1612340.csv` (Aug) | `d030a0cb7f06816c6f03304d1038c248f89a4ca1ae78328e6a4c3110650d57a6` |
+| `hl_9447130.csv` (Aug) | `e721c0919802b8944fd873f2042a056cf3005f219724b0ec2a02d9a891f71327` |
+| `hl_9410660.csv` (Aug) | `4c1c2d413638c50128c87faa992410d5e05df5c1cb978548bdda8b428ad8170b` |
+| `hl_9414290.csv` (Aug) | `f93ab97374dc6f6f5d8f4e293714d0d3ac57c32be32f2e83e75fac1b8cf47460` |
+| `hl_8443970.csv` (Aug) | `f79c5ec5373c076484e1563c85b6ba868a5da3eae9cd3ab3e28092df3e1116a2` |
+
+Predicted (August's own record, c from September): Honolulu 30; Seattle 24, 30; Los Angeles 15–30; San Francisco 20–30;
+Boston 24, 30. Measured: Honolulu and Los Angeles none; Seattle 6–30; San Francisco 12–30; Boston 10–30.
+
+**X1 killed** at four stations of five (San Francisco held: 12 against 20). **X2 killed**: agreement 12, 7, 9, 11 and 9 of
+13. **X3 not killed**: each station's exact rates one unbroken run.
+
+Measured, not predicted: the stations kept their behaviour from September to August. Honolulu and Los Angeles were exact at
+no rate in either month, Seattle from 6 min in both, San Francisco from 20 and then 12, Boston from 5 and then 10.
+
+### After run 6 (post hoc; `runs/unr/unr6-posthoc.py`, `runs/unr/unr6-posthoc.txt`)
+
+The rule counted the wrong persistence. Its q_r is high wherever the residual has a slow surge, and a surge keeping its
+sign for hours only shifts a turn a little; it cannot make three false steps against the tide. Split by running means,
+the residual's fast part (under 10 min) is largest at Boston (18 mm) and its slow part largest there too, yet Boston is
+exact early. The band between, 10 to 60 minutes (a harbour's seiches), over the tide's median sharpness κ orders the
+stations as their exactness: Seattle 58 and 35 (Sept, Aug), Boston 89 and 84, San Francisco 151 and 167, Los Angeles 347
+and 265, Honolulu 340 and 333. A reading from five stations and two months, after the fact; a candidate for run 7, not
+a result.
+
+## What run 6 says
+
+A rule written from one month's hindsight did not survive the next month: the persistence it measured was the slow
+surge's, which order alone does not mind. What the two months do show is that each station's behaviour is its own and
+stable, and that it lines up with the wiggle in the 10 to 60 minute band against how sharp the tide turns. The reader's
+setting, how often to look, is set by the part of the noise that lives at the scale of a few looks near a turn, which is
+not the fastest part and not the slowest.

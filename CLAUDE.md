@@ -2184,6 +2184,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   record first: right where the noise holds its direction (Honolulu, Los Angeles never exact, San Francisco from 20 min),
   4–5 times too slow where it is new every minute (Seattle, Boston exact from 6 and 5); W2 killed by my set-up (a turn
   before any look); °C to °F, only order keeps the turns.
+  Run 6 (R513), a persistence rule fitted on September, tested on August: not separable even in fitting, X1, X2
+  killed; each station's behaviour stable across months; post hoc the 10–60 min band over the tide's sharpness orders them.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

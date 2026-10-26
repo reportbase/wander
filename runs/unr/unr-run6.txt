@@ -1,0 +1,11 @@
+UNR run 6: D on August 2026, every r minutes from every offset, first interval left out.
+
+Honolulu (1612340): predicted [30]; measured []; agree at 12 of 13; 0 unbroken runs; X1 failed
+Seattle (9447130): predicted [24, 30]; measured [6, 8, 10, 12, 15, 20, 24, 30]; agree at 7 of 13; 1 unbroken run; X1 failed
+Los Angeles (9410660): predicted [15, 20, 24, 30]; measured []; agree at 9 of 13; 0 unbroken runs; X1 failed
+San Francisco (9414290): predicted [20, 24, 30]; measured [12, 15, 20, 24, 30]; agree at 11 of 13; 1 unbroken run; X1 held
+Boston (8443970): predicted [24, 30]; measured [10, 12, 15, 20, 24, 30]; agree at 9 of 13; 1 unbroken run; X1 failed
+
+X1 KILLED
+X2 KILLED
+X3 not killed
