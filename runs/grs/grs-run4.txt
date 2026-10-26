@@ -1,3 +1,18 @@
 ∫ ln w dμ: [−1, 1] 0.6931471805599453094172321 (ln 2 0.6931471805599453094172321); [0, 1] 0.5049207741003475936018549 (ln(1 + √2) 0.8813735870195430252326093): NOT AS DERIVED
   the difference [0, 1] − [−1, 1]: -0.1882264064595977158153772 (ln 2 − ln(1 + √2) -0.1882264064595977158153772): as used for b
-  1400 digits done (1337 s)
+  every −ln P_in computed (61 s)
+−ln P_in at 300 and 400 digits, k = 20, 40, 60: largest difference 0.0
+  k = 20: −ln P_in = 149.06248331494842677
+  k = 30: −ln P_in = 327.69579048157198626
+  k = 40: −ln P_in = 575.64456155536700502
+  k = 50: −ln P_in = 892.90834819531066764
+  k = 60: −ln P_in = 1279.4870013821405296
+S1  a fixed: b = 0.5347996167 (derived 0.5347999967, off -3.8e-7), d = 4.4154433e-5, c = -0.26758344, e = 0.0901196; rms 2.03e-8
+S2  free: a = 0.346573594402 (ln2/2 0.34657359028, off 4.12e-9), b = 0.5347986979, d = 7.6816614e-5; rms 3.34e-9
+S3  a, b fixed: c = -0.2674159088, d = 2.942589847e-6, e = 0.088695849, f = 0.00783382; rms 5.43e-9
+
+the plan's two integrals are not as written: by the plan's letter S1–S3 are void; the difference b uses is as used, so they are reported as run
+S1: not killed
+S2: not killed
+S3: not killed
+(61 s)

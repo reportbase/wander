@@ -2202,6 +2202,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Run 3 (R517; Tom: "find the. general formula"): the count's law a ratio of Pfaffians (de Bruijn), Σ P_j z^j =
   Pf A_k(z)/Pf A_k(1); P_in(k) exact to k = 8 (ℚ + ℚπ even, ℚ + ℚ/π odd), 2^(−k²/2) to leading order (log-gas; fitted
   0.346595 against ln2/2), nothing killed.
+  Run 4 (R519; Tom: "2,1,3", the linear term): −ln P_in = (ln2/2)k² + ln(1 + 1/√2)·k − 0.2674 + 0.089/k, no ln k; b derived
+  (entropy (ln 2)/2, the weight ln(1 + √2) − ln 2) after run 3's fit was seen, found to 4·10⁻⁷; a slip in one integral caught
+  by the check (void by the letter, reported as run); 300 digits ample (the 1,400-digit route stopped).
   OFS Appendix A "Planes of directions" (R518) states it: the corner from the exchange, the Cauchy from directions.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
