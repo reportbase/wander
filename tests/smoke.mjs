@@ -1728,6 +1728,28 @@ try {
   if (!fgOk) failures.push(`[fpv-game.html] ${JSON.stringify(fg)}`);
   console.log(`${failures.length === before60 ? 'ok  ' : 'FAIL'} fpv-game.html (a pair 1.25 apart about the focus told apart by the turn at K = 8, 12, 16, by log depth at K = 16 in ${(100 * fg.logShare).toFixed(0)}% of places; the bot's foes in 60 s: the turn ${bT.hits}, log ${bL.hits}, the standard buffer ${bZ.hits}, true depth ${bTr.hits}, no friend shot; a real click on a foe in front scored)`);
 
+  // ── 61. grassmannian.html (SPN R515–R519): the exact laws sum to 1; a sample of Gr(3, 6) on the exact law; the tangents'
+  // product's median at 1 with the exchange (n = 2k) and ¼ in Gr(2, 5); every entry a Cauchy; P(all inside) on its curve
+  current = 'grassmannian.html';
+  const before61 = failures.length;
+  await page.goto(new URL('grassmannian.html', base).href, { waitUntil: 'load' });
+  const gm = await page.evaluate(() => {
+    const G = window.__grassmann, N = 20000;
+    const sums = [1, 2, 3, 4, 5, 6].map(k => G.exactLaw(k).reduce((a, x) => a + x, 0));
+    const law3 = G.exactLaw(3), s3 = G.stats(3, 6, N, 5);
+    const z3 = Math.max(...s3.law.map((p, j) => Math.abs(p - law3[j]) / Math.sqrt(law3[j] * (1 - law3[j]) / N)));
+    const prod = [[1, 2], [2, 4], [3, 6]].map(([k, n]) => G.stats(k, n, N, 9).pProdLe1), p25 = G.stats(2, 5, N, 9).pProdLe1;
+    const entry = [[1, 2], [3, 6], [2, 5], [4, 9]].map(([k, n]) => G.stats(k, n, N, 3).entryInside);
+    const asym = [8, 20, 60].map(k => Math.abs(G.lnPinAsym(k) - G.lnPin(k)));
+    const st = G.set({ k: 1 });
+    return { sums, z3, prod, p25, entry, asym, st };
+  });
+  const gmOk = gm.sums.every(x => Math.abs(x - 1) < 1e-12) && gm.z3 < 4 && gm.prod.every(p => Math.abs(p - 0.5) < 0.02)
+    && Math.abs(gm.p25 - 0.25) < 0.02 && gm.entry.every(p => Math.abs(p - 0.5) < 0.02) && gm.asym.every(x => x < 0.02)
+    && gm.st.n === 2 && gm.st.tangents.length === 1;
+  if (!gmOk) failures.push(`[grassmannian.html] ${JSON.stringify(gm)}`);
+  console.log(`${failures.length === before61 ? 'ok  ' : 'FAIL'} grassmannian.html (the exact laws sum to 1; Gr(3, 6) sampled on its law (largest z ${gm.z3.toFixed(2)}); the tangents' product ≤ 1 half the time with the exchange, ${gm.p25.toFixed(3)} in Gr(2, 5); one entry inside |x| ≤ 1 half the time at every (k, n); P(all inside) on its curve at k = 8, 20, 60)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

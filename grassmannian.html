@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Planes of directions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    grassmannian.html: what the Grassmannian is and what it says about OFS (26 October 2026, Tom: "do a demo about what the
+    grassmannin is and what does it say about ofs."; SPN R515–R519; GRS runs 1–4, plans/grs-plan.md; OFS Appendix A, "Planes
+    of directions"). A standalone page, plain canvas, unit relations only.
+    Gr(k, n) is every k-dimensional plane through home in n dimensions. A reading [h : v] is a line through home, a point of
+    Gr(1, 2); OFS's addresses live on the simplest Grassmannian. A k-plane is drawn uniformly (every turn alike) by taking
+    the span of k Gaussian vectors; in the chart [I ; X] (X = B·A⁻¹) its law is the matrix-variate Cauchy det(I + XᵀX)^(−n/2).
+    Against the home plane (the first k axes) a k-plane meets at k principal angles θ_i, their tangents the singular values
+    of X; each angle is a direction, inside the corner when θ_i ≤ 45°. The page draws a plane's angles as k fingers on a
+    quarter turn; counts how many are inside (the exact law from de Bruijn's Pfaffian, GRS run 3, against a seeded sample);
+    shows the tangents' product with its median at 1 only when the exchange X ↦ X⁻¹ is a symmetry (n = 2k), every entry of X
+    a standard Cauchy and det X not (k = 2: ½(1 + |r|)⁻²); and P(all k inside) ≈ 1.3066·2^(−k²/2)·(1 + 1/√2)^(−k) (GRS run 4).
+    Links: ?k=1..6&n=even|odd&seed=. Test hook: window.__grassmann (sample, tangents, exactLaw, pin, pinAsym, stats, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 21px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15; overflow-x: auto }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    ul { margin: 4px 0 0; padding-left: 20px } li { margin: 0 0 6px }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Planes of directions</h1>
+    <p class="lede">A reading [h : v] is a line through home: one direction, no amount. The Grassmannian Gr(k, n) is the
+    next thing up: every <span class="b">k-dimensional plane</span> through home in n dimensions, a reader holding k
+    directions at once. Two planes meet not at one angle but at k of them, the <span class="b">principal angles</span>
+    (Jordan, 1875), each a direction with its own corner at 45°. Gr(1, 2) is OFS's own space of readings, the quarter turn.</p>
+
+    <div class="panel">
+        <h2>One plane, k angles</h2>
+        <div class="row"><label>k, the plane's dimension</label>
+            <span id="kbtns"></span>
+            <label>in n =</label><button id="nEven">2k</button><button id="nOdd">2k + 1</button>
+            <button id="another">another plane</button></div>
+        <div class="grid">
+            <div><canvas id="cvA" height="360"></canvas><p class="cap">The plane drawn uniformly (every turn alike), against
+            the home plane (the first k axes). Its k principal angles laid as fingers on the quarter turn from home:
+            <span class="r">teal</span> inside the corner (θ ≤ 45°, tan θ ≤ 1), <span class="w">violet</span> past it.
+            The dashed line is the corner.</p></div>
+            <div><div class="read" id="readA"></div></div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>How many angles are inside the corner</h2>
+        <div class="row"><button id="draw">draw 20,000 planes</button><button id="clear">clear</button><span id="nDrawn" class="b"></span></div>
+        <div class="grid">
+            <div><canvas id="cvB" height="300"></canvas><p class="cap">Bars: the exact law of the number inside (de Bruijn's
+            Pfaffian, n = 2k). Gold ticks: the planes drawn here. Each angle alone is inside half the time; together they
+            repel, so the count bunches in the middle and both ends grow thin.</p></div>
+            <div><div class="read" id="readB"></div></div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>The Cauchy is the directions'; the corner is the exchange's</h2>
+        <div class="grid">
+            <div><canvas id="cvC1" height="260"></canvas><p class="cap">One entry of X, a single direction's reading, against
+            the standard Cauchy (teal curve): the same at every k and n. Violet: det X, the plane read as one number; at
+            k = 2 its law is ½(1 + |r|)⁻² (dashed), not a Cauchy.</p></div>
+            <div><canvas id="cvC2" height="260"></canvas><p class="cap">The tangents' product, ln ∏ tan θᵢ. Gold line: its
+            median; white: zero, the corner of the whole plane. With n = 2k swapping the plane for its complement
+            (X ↦ X⁻¹) changes nothing, and the median sits on the corner. With n = 2k + 1 there is no such swap and it
+            drifts off.</p></div>
+        </div>
+        <div class="read" id="readC"></div>
+    </div>
+
+    <div class="panel">
+        <h2>All k at once</h2>
+        <div class="grid">
+            <div><canvas id="cvD" height="300"></canvas><p class="cap">ln P(all k angles inside the corner) against k. Dots:
+            exact (k ≤ 8 in closed form, 20 … 60 from 300-digit Pfaffians). Curve: −(ln 2/2)k² − ln(1 + 1/√2)·k + 0.2674,
+            both leading terms derived (the angles' repulsion squeezed into half the room; the room's entropy and the
+            arcsine weight losing an end).</p></div>
+            <div><div class="read" id="readD"></div></div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>What it says about OFS</h2>
+        <ul>
+            <li><span class="b">The addresses are the first Grassmannian.</span> A reading [h : v] is a point of Gr(1, 2),
+            [h : v : v₂] of Gr(1, 3). The uniform turn is the only measure on it every turn leaves alone; in the chart v/h it is
+            the Cauchy (Proposition 5(d)), in two charts the wedge's (5(e)).</li>
+            <li><span class="b">The Cauchy belongs to directions.</span> Go up to planes and the uniform measure is still a
+            Cauchy, the matrix-variate one (Dickey, 1967), and every single entry, one direction's reading, is the standard
+            Cauchy at every k and n. Read the plane as one number (det X) and it is not: an amount entering breaks the family.</li>
+            <li><span class="b">The corner comes from the exchange, not from the law.</span> The product of the tangents has
+            its median at 1 exactly when swapping the plane for its complement is a symmetry (n = 2k): Theorem 6(e)'s
+            reciprocal symmetry, one level up. Without it (Gr(2, 5)) the corner is the lower quartile.</li>
+            <li><span class="b">Directions held together repel.</span> Each angle is inside the corner half the time; all k at
+            once only about 1.31·2<sup>−k²/2</sup>·(1 + 1/√2)<sup>−k</sup>: ½, 0.107, 0.011, 6·10⁻⁴ … The near field is a
+            property of one direction at a time.</li>
+        </ul>
+        <p class="note">Classical throughout (Jordan's angles, Dickey's Cauchy, de Bruijn's Pfaffian, the log-gas); the reading
+        as a reader's addresses is ours. In OFS only as Appendix A's "Planes of directions".</p>
+    </div>
+    <p class="note">Related: <a href="wedge.html">the wedge</a>, <a href="theorem6.html">Theorem 6 at a glance</a>,
+    <a href="sweep-zero.html">counting from zero</a>, <a href="one-read.html">one turn, one read</a>. <a href="demos.html">All the demos</a>.</p>
+</main>
+<script>
+(function () {
+    'use strict';
+    const $ = id => document.getElementById(id), P = new URLSearchParams(location.search);
+    const DEG = 180 / Math.PI;
+
+    // ------------------------------------------------------------ exact numbers (GRS runs 1–4)
+    const pi = Math.PI;
+    // the law of the number of angles inside the corner, n = 2k, j = 0 … k (run 3, symmetric)
+    const LAW = {
+        1: [1 / 2, 1 / 2],
+        2: [1 / 2 - pi / 8, pi / 4, 1 / 2 - pi / 8],
+        3: [(pi - 3) / (4 * pi), (pi + 3) / (4 * pi), (pi + 3) / (4 * pi), (pi - 3) / (4 * pi)],
+        4: [19 / 256 - 3 * pi / 128, 3 * pi / 64, 109 / 128 - 3 * pi / 64, 3 * pi / 64, 19 / 256 - 3 * pi / 128],
+        5: [(51 * pi - 160) / (4608 * pi), (51 * pi + 160) / (4608 * pi), 367 / 768, 367 / 768, (51 * pi + 160) / (4608 * pi), (51 * pi - 160) / (4608 * pi)],
+        6: [109 / 131072 - 555 * pi / 2097152, 555 * pi / 1048576, 65427 / 131072 - 222165 * pi / 2097152, 110805 * pi / 524288,
+            65427 / 131072 - 222165 * pi / 2097152, 555 * pi / 1048576, 109 / 131072 - 555 * pi / 2097152],
+    };
+    const PIN_TXT = { 1: '1/2', 2: '1/2 − π/8', 3: '1/4 − 3/(4π)', 4: '19/256 − 3π/128', 5: '17/1536 − 5/(144π)',
+        6: '109/131072 − 555π/2097152', 7: '41/1310720 − 161/(1638400π)', 8: '(2529 − 805π)/2³²' };
+    const PIN = { 1: 1 / 2, 2: 1 / 2 - pi / 8, 3: 1 / 4 - 3 / (4 * pi), 4: 19 / 256 - 3 * pi / 128, 5: 17 / 1536 - 5 / (144 * pi),
+        6: 109 / 131072 - 555 * pi / 2097152, 7: 41 / 1310720 - 161 / (1638400 * pi), 8: (2529 - 805 * pi) / 4294967296 };
+    // −ln P_in at large k, 300-digit Pfaffians (run 4, runs/grs/grs4-values.txt)
+    const BIG = { 20: 149.06248331494843, 30: 327.69579048157199, 40: 575.64456155536701, 50: 892.90834819531067, 60: 1279.4870013821405 };
+    const A2 = Math.log(2) / 2, B1 = Math.log(1 + 1 / Math.SQRT2), C0 = -0.26742;
+    const lnPinAsym = k => -(A2 * k * k + B1 * k + C0), pinAsym = k => Math.exp(lnPinAsym(k));
+    const lnPin = k => PIN[k] ? Math.log(PIN[k]) : BIG[k] ? -BIG[k] : null;
+    const pin = k => PIN[k] || (BIG[k] ? Math.exp(-BIG[k]) : null);
+    const exactLaw = k => LAW[k] ? LAW[k].slice() : null;
+
+    // ------------------------------------------------------------ the sampler: a uniform k-plane in n dimensions
+    function rng(seed) {
+        let a = seed >>> 0;
+        const u = () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+        let spare = null;
+        const n = () => { if (spare !== null) { const s = spare; spare = null; return s; }
+            let x, y, r; do { x = 2 * u() - 1; y = 2 * u() - 1; r = x * x + y * y; } while (r >= 1 || r === 0);
+            const f = Math.sqrt(-2 * Math.log(r) / r); spare = y * f; return x * f; };
+        return { u, n };
+    }
+    // X = B·A⁻¹, A k × k and B (n − k) × k Gaussian: the plane spanned by the columns of [A ; B] in the chart [I ; X]
+    function sample(k, n, R) {
+        const A = [], B = [];
+        for (let i = 0; i < k; i++) { A.push([]); for (let j = 0; j < k; j++) A[i].push(R.n()); }
+        for (let i = 0; i < n - k; i++) { B.push([]); for (let j = 0; j < k; j++) B[i].push(R.n()); }
+        const Ai = inv(A);
+        return B.map(row => Ai[0].map((_, j) => row.reduce((s, b, m) => s + b * Ai[m][j], 0)));
+    }
+    function inv(M) {
+        const k = M.length, a = M.map((r, i) => r.concat(r.map((_, j) => +(i === j))));
+        for (let c = 0; c < k; c++) {
+            let p = c; for (let r = c + 1; r < k; r++) if (Math.abs(a[r][c]) > Math.abs(a[p][c])) p = r;
+            [a[c], a[p]] = [a[p], a[c]];
+            const d = a[c][c]; for (let j = 0; j < 2 * k; j++) a[c][j] /= d;
+            for (let r = 0; r < k; r++) if (r !== c) { const f = a[r][c]; if (f) for (let j = 0; j < 2 * k; j++) a[r][j] -= f * a[c][j]; }
+        }
+        return a.map(r => r.slice(k));
+    }
+    function det(M) {
+        const k = M.length, a = M.map(r => r.slice()); let d = 1;
+        for (let c = 0; c < k; c++) {
+            let p = c; for (let r = c + 1; r < k; r++) if (Math.abs(a[r][c]) > Math.abs(a[p][c])) p = r;
+            if (p !== c) { [a[c], a[p]] = [a[p], a[c]]; d = -d; }
+            const piv = a[c][c]; if (piv === 0) return 0; d *= piv;
+            for (let r = c + 1; r < k; r++) { const f = a[r][c] / piv; for (let j = c; j < k; j++) a[r][j] -= f * a[c][j]; }
+        }
+        return d;
+    }
+    // the tangents of the principal angles: the singular values of X, from Jacobi on XᵀX
+    function tangents(X) {
+        const k = X[0].length, S = [];
+        for (let i = 0; i < k; i++) { S.push([]); for (let j = 0; j < k; j++) S[i].push(X.reduce((s, r) => s + r[i] * r[j], 0)); }
+        for (let sweep = 0; sweep < 60; sweep++) {
+            let off = 0;
+            for (let p = 0; p < k; p++) for (let q = p + 1; q < k; q++) off += S[p][q] * S[p][q];
+            if (off < 1e-30) break;
+            for (let p = 0; p < k; p++) for (let q = p + 1; q < k; q++) {
+                if (Math.abs(S[p][q]) < 1e-300) continue;
+                const th = (S[q][q] - S[p][p]) / (2 * S[p][q]), t = Math.sign(th || 1) / (Math.abs(th) + Math.sqrt(th * th + 1)),
+                    c = 1 / Math.sqrt(t * t + 1), s = t * c;
+                for (let r = 0; r < k; r++) { const a = S[r][p], b = S[r][q]; S[r][p] = c * a - s * b; S[r][q] = s * a + c * b; }
+                for (let r = 0; r < k; r++) { const a = S[p][r], b = S[q][r]; S[p][r] = c * a - s * b; S[q][r] = s * a + c * b; }
+            }
+        }
+        return S.map((r, i) => Math.sqrt(Math.max(0, r[i]))).sort((a, b) => a - b);
+    }
+
+    // ------------------------------------------------------------ statistics over many planes
+    function stats(k, n, N, seed) {
+        const R = rng(seed == null ? 20261026 : seed), counts = new Array(k + 1).fill(0), lp = [], e = [], d = [];
+        for (let s = 0; s < N; s++) {
+            const X = sample(k, n, R), t = tangents(X);
+            counts[t.filter(x => x <= 1).length]++;
+            lp.push(t.reduce((a, x) => a + Math.log(x), 0));
+            e.push(X[0][0]);
+            if (n === 2 * k) d.push(det(X));
+        }
+        const sorted = lp.slice().sort((a, b) => a - b);
+        return { N, counts, law: counts.map(c => c / N), lnProd: lp, entries: e, dets: d,
+            medianLnProd: sorted[Math.floor(N / 2)], pProdLe1: lp.filter(x => x <= 0).length / N,
+            entryInside: e.filter(x => Math.abs(x) <= 1).length / N };
+    }
+
+    // ------------------------------------------------------------ state and drawing
+    const st = { k: 2, odd: false, seed: 20261026, plane: null, acc: null, cstats: null };
+    const nOf = () => 2 * st.k + (st.odd ? 1 : 0);
+    let R = rng(st.seed);
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth,
+            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * 0.9));
+        cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr);
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.font = '11px DM Mono, monospace'; return { g, w, h: hh };
+    }
+    const f3 = x => !isFinite(x) ? '∞' : Math.abs(x) >= 1e4 || (Math.abs(x) < 1e-3 && x !== 0) ? x.toExponential(2) : x.toFixed(3);
+
+    function newPlane() { const X = sample(st.k, nOf(), R); st.plane = { X, t: tangents(X) }; }
+
+    function drawA() {
+        const { g, w, h } = fit($('cvA')); g.clearRect(0, 0, w, h);
+        const r = Math.min(w - 50, h - 50), ox = 30, oy = h - 26;
+        // the quarter turn
+        g.strokeStyle = 'rgba(230,228,238,0.3)'; g.lineWidth = 1; g.beginPath(); g.arc(ox, oy, r, -pi / 2, 0); g.stroke();
+        g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + r, oy); g.moveTo(ox, oy); g.lineTo(ox, oy - r); g.stroke();
+        g.setLineDash([5, 5]); g.strokeStyle = 'rgba(212,160,82,0.7)'; g.beginPath(); g.moveTo(ox, oy);
+        g.lineTo(ox + r * Math.cos(pi / 4), oy - r * Math.sin(pi / 4)); g.stroke(); g.setLineDash([]);
+        g.fillStyle = '#8a8a96'; g.fillText('home: h', ox + r - 50, oy + 16); g.fillText('v', ox - 14, oy - r + 6);
+        g.fillStyle = '#d4a052'; g.fillText('the corner, 45°', ox + r * 0.72 + 6, oy - r * 0.72);
+        // the fingers
+        st.plane.t.forEach((t, i) => {
+            const th = Math.atan(t), inside = t <= 1, col = inside ? '#8ce6cd' : '#b59cf0', rr = r * (0.97 - 0.04 * i);
+            g.strokeStyle = col; g.lineWidth = 2.5; g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + rr * Math.cos(th), oy - rr * Math.sin(th)); g.stroke();
+            g.fillStyle = col; g.beginPath(); g.arc(ox + rr * Math.cos(th), oy - rr * Math.sin(th), 4, 0, 2 * pi); g.fill();
+            g.fillText(`θ${i + 1}`, ox + (rr + 8) * Math.cos(th), oy - (rr + 8) * Math.sin(th));
+        });
+    }
+    function readA() {
+        const { X, t } = st.plane, k = st.k, n = nOf(), inside = t.filter(x => x <= 1).length;
+        const rows = X.map(r => '  [ ' + r.map(x => f3(x).padStart(8)).join(' ') + ' ]').join('\n');
+        const prod = t.reduce((a, x) => a * x, 1);
+        $('readA').innerHTML = `A <span class="b">${k}-plane</span> in ${n} dimensions: a point of Gr(${k}, ${n}).\n`
+            + (k === 1 && n === 2 ? `With k = 1 and n = 2 it is a single line through home, OFS's own reading [h : v]:\nX is the one number v/h.\n` : '')
+            + `In the chart [I ; X], X (${n - k} × ${k}):\n${rows}\n`
+            + `Each entry is one direction's reading, a standard Cauchy.\n\n`
+            + `The principal angles against the home plane (tan θ = the singular values of X):\n`
+            + t.map((x, i) => `  θ${i + 1} = ${(Math.atan(x) * DEG).toFixed(1).padStart(5)}°  tan ${f3(x).padStart(8)}  ${x <= 1 ? '<span class="r">inside</span>' : '<span class="w">past the corner</span>'}`).join('\n')
+            + `\n\n${inside} of ${k} inside the corner; the tangents' product ${f3(prod)}`;
+    }
+
+    function drawB() {
+        const { g, w, h } = fit($('cvB')); g.clearRect(0, 0, w, h);
+        const k = st.k, law = st.odd ? null : exactLaw(k), acc = st.acc, pad = 30;
+        const bw = (w - 2 * pad) / (k + 1), Y = p => h - pad - (h - 2 * pad) * p;
+        g.strokeStyle = 'rgba(255,255,255,0.08)'; for (const p of [0.25, 0.5, 0.75, 1]) { g.beginPath(); g.moveTo(pad, Y(p)); g.lineTo(w - pad, Y(p)); g.stroke(); }
+        g.fillStyle = '#8a8a96'; for (const p of [0.5, 1]) g.fillText(p.toFixed(1), 4, Y(p) + 4);
+        for (let j = 0; j <= k; j++) {
+            const x = pad + j * bw;
+            if (law) { g.fillStyle = 'rgba(140,230,205,0.35)'; g.fillRect(x + bw * 0.15, Y(law[j]), bw * 0.7, Y(0) - Y(law[j])); }
+            if (acc && acc.N) { const p = acc.counts[j] / acc.N; g.fillStyle = '#d4a052'; g.fillRect(x + bw * 0.1, Y(p) - 1.5, bw * 0.8, 3); }
+            g.fillStyle = '#c8c8d0'; g.fillText(String(j), x + bw / 2 - 3, h - 10);
+        }
+        g.fillStyle = '#8a8a96'; g.fillText('angles inside the corner', w / 2 - 70, 14);
+        if (!law) { g.fillStyle = '#d96e5b'; g.fillText('n = 2k + 1: no exact law drawn here', pad, 30); }
+    }
+    function readB() {
+        const k = st.k, law = st.odd ? null : exactLaw(k), acc = st.acc;
+        let s = `k = ${k}, n = ${nOf()}.\n`;
+        s += law ? `Exact law (n = 2k):\n` + law.map((p, j) => `  ${j} inside: ${p.toFixed(6)}` + (acc && acc.N ? `   drawn ${(acc.counts[j] / acc.N).toFixed(6)}` : '')).join('\n')
+            : `Drawn:\n` + (acc && acc.N ? acc.counts.map((c, j) => `  ${j} inside: ${(c / acc.N).toFixed(6)}`).join('\n') : '  none yet');
+        s += `\n\nAll ${k} inside: P = ${PIN_TXT[k]} = ${f3(PIN[k])}` + (st.odd ? ' (for n = 2k)' : '');
+        s += `\nEvery angle alone: ½. If the angles were independent, all ${k} would be 2^−${k} = ${f3(Math.pow(2, -k))};`
+            + `\nthey repel, so it is ${(PIN[k] / Math.pow(2, -k)).toFixed(3)} times that.`;
+        $('readB').innerHTML = s;
+        $('nDrawn').textContent = acc && acc.N ? `${acc.N.toLocaleString()} planes drawn` : '';
+    }
+
+    function hist(g, x0, y0, w, h, vals, lo, hi, bins, col) {
+        const c = new Array(bins).fill(0); let n = 0;
+        for (const v of vals) { if (v >= lo && v < hi) c[Math.floor((v - lo) / (hi - lo) * bins)]++; n++; }
+        const dens = c.map(x => x / n / ((hi - lo) / bins)), mx = Math.max(...dens, 1e-9);
+        return { dens, draw: (scale) => { g.fillStyle = col; dens.forEach((d, i) => { const bh = Math.min(h, h * d / scale); g.fillRect(x0 + i * w / bins + 0.5, y0 + h - bh, w / bins - 1, bh); }); }, mx };
+    }
+    function drawC() {
+        const S = st.cstats, k = st.k, n = nOf();
+        { // one entry, and det X
+            const { g, w, h } = fit($('cvC1')); g.clearRect(0, 0, w, h);
+            const pad = 22, x0 = pad, y0 = pad, W = w - 2 * pad, H = h - 2 * pad, lo = -5, hi = 5;
+            const he = hist(g, x0, y0, W, H, S.entries, lo, hi, 50, 'rgba(140,230,205,0.35)');
+            const scale = 0.4;
+            he.draw(scale);
+            if (S.dets.length) { const hd = hist(g, x0, y0, W, H, S.dets, lo, hi, 50, 'rgba(181,156,240,0.35)'); hd.draw(scale); }
+            const X = x => x0 + W * (x - lo) / (hi - lo), Y = d => y0 + H - H * d / scale;
+            const curve = (f, col, dash) => { g.strokeStyle = col; g.lineWidth = 2; g.setLineDash(dash || []); g.beginPath();
+                for (let i = 0; i <= 200; i++) { const x = lo + (hi - lo) * i / 200, y = Y(Math.min(f(x), scale * 1.1)); i ? g.lineTo(X(x), y) : g.moveTo(X(x), y); } g.stroke(); g.setLineDash([]); };
+            curve(x => 1 / (pi * (1 + x * x)), '#8ce6cd');
+            if (k === 2 && n === 4) curve(x => 0.5 / Math.pow(1 + Math.abs(x), 2), '#b59cf0', [5, 4]);
+            g.fillStyle = '#8a8a96'; for (const x of [-4, -1, 0, 1, 4]) g.fillText(String(x), X(x) - 4, h - 4);
+        }
+        { // ln of the product
+            const { g, w, h } = fit($('cvC2')); g.clearRect(0, 0, w, h);
+            const pad = 22, x0 = pad, y0 = pad, W = w - 2 * pad, H = h - 2 * pad, lo = -8, hi = 8;
+            const hp = hist(g, x0, y0, W, H, S.lnProd, lo, hi, 64, 'rgba(230,228,238,0.3)'); hp.draw(hp.mx * 1.1);
+            const X = x => x0 + W * (x - lo) / (hi - lo);
+            g.fillStyle = '#e6e4ee'; g.fillRect(X(0) - 0.5, y0, 1, H);
+            g.fillStyle = '#d4a052'; g.fillRect(X(S.medianLnProd) - 1, y0, 2, H);
+            g.fillStyle = '#8a8a96'; for (const x of [-6, -3, 0, 3, 6]) g.fillText(String(x), X(x) - 4, h - 4);
+            g.fillStyle = '#d4a052'; g.fillText('median', X(S.medianLnProd) + 4, y0 + 10);
+        }
+        $('readC').innerHTML = `Gr(${k}, ${n}), ${S.N.toLocaleString()} planes drawn.\n`
+            + `One entry of X inside |x| ≤ 1: ${S.entryInside.toFixed(4)} (the standard Cauchy's ½: a direction's own corner).\n`
+            + `The tangents' product ≤ 1: ${S.pProdLe1.toFixed(4)}; its median ${f3(Math.exp(S.medianLnProd))}. `
+            + (st.odd ? `<span class="x">No exchange (n = 2k + 1): the corner is off the median${k === 2 ? ', at the lower quartile (exactly ¼ in Gr(2, 5))' : k === 3 ? ' (0.228 in Gr(3, 7))' : ''}.</span>`
+                : `<span class="r">The exchange X ↦ X⁻¹ (n = 2k): the median is the corner, 1.</span>`)
+            + (S.dets.length ? `\ndet X, the plane as one number: inside |r| ≤ 1 ${(S.dets.filter(x => Math.abs(x) <= 1).length / S.N).toFixed(4)}` + (k === 1 ? ' (at k = 1 it is the entry itself)' : k === 2 ? ', law ½(1 + |r|)⁻², the diamond: not a Cauchy' : ', not a Cauchy') : '');
+    }
+
+    function drawD() {
+        const { g, w, h } = fit($('cvD')); g.clearRect(0, 0, w, h);
+        const pad = 34, K = 60, X = k => pad + (w - 2 * pad) * Math.sqrt(k) / Math.sqrt(K), lo = -1300,
+            Y = y => pad / 2 + (h - 1.5 * pad) * (-y) / (-lo);
+        g.strokeStyle = 'rgba(255,255,255,0.08)'; g.fillStyle = '#8a8a96';
+        for (const y of [0, -250, -500, -750, -1000, -1250]) { g.beginPath(); g.moveTo(pad, Y(y)); g.lineTo(w - pad, Y(y)); g.stroke(); g.fillText(String(y), 2, Y(y) + 4); }
+        for (const k of [1, 4, 8, 20, 40, 60]) g.fillText('k=' + k, X(k) - 10, h - 6);
+        g.strokeStyle = '#d4a052'; g.lineWidth = 1.5; g.beginPath();
+        for (let i = 0; i <= 300; i++) { const k = 1 + (K - 1) * i / 300, y = lnPinAsym(k); i ? g.lineTo(X(k), Y(y)) : g.moveTo(X(k), Y(y)); } g.stroke();
+        for (const k of [1, 2, 3, 4, 5, 6, 7, 8, 20, 30, 40, 50, 60]) {
+            g.fillStyle = k === st.k ? '#e6e4ee' : '#8ce6cd'; g.beginPath(); g.arc(X(k), Y(lnPin(k)), k === st.k ? 5 : 3.5, 0, 2 * pi); g.fill();
+        }
+        g.fillStyle = '#8a8a96'; g.fillText('(k on a square-root scale)', w - pad - 170, Y(0) + 14);
+        const rows = [1, 2, 3, 4, 5, 6, 7, 8, 20, 40, 60].map(k => {
+            const ex = lnPin(k), as = lnPinAsym(k);
+            return `  k = ${String(k).padStart(2)}: ln P ${ex.toFixed(4).padStart(11)}   curve ${as.toFixed(4).padStart(11)}   off ${(as - ex).toExponential(1)}`;
+        });
+        $('readD').innerHTML = `P(all k inside) ≈ 1.3066 · 2^(−k²/2) · (1 + 1/√2)^(−k)\n\n` + rows.join('\n')
+            + `\n\nThe k² term: k charges that repel, squeezed from the whole quarter turn into its first half.`
+            + `\nThe k term: the half room's entropy, (ln 2)/2 an angle, and the arcsine weight keeping only one of its ends,`
+            + `\nln(1 + √2) − ln 2 an angle. The constant and the 1/k term are measured.`;
+    }
+
+    function recompute() { st.cstats = stats(st.k, nOf(), 20000, st.seed + 7 * st.k + (st.odd ? 1 : 0)); }
+    function draw() {
+        document.querySelectorAll('#kbtns button').forEach(b => b.classList.toggle('on', +b.dataset.k === st.k));
+        $('nEven').classList.toggle('on', !st.odd); $('nOdd').classList.toggle('on', st.odd);
+        drawA(); readA(); drawB(); readB(); drawC(); drawD();
+    }
+    function set(o) {
+        let fresh = false;
+        if ('k' in o) { st.k = Math.max(1, Math.min(6, Math.round(+o.k))); fresh = true; }
+        if ('odd' in o) { st.odd = !!o.odd; fresh = true; }
+        if ('seed' in o) { st.seed = +o.seed >>> 0; R = rng(st.seed); fresh = true; }
+        if (fresh) { st.acc = null; newPlane(); recompute(); }
+        draw(); return state();
+    }
+    const state = () => ({ k: st.k, n: nOf(), tangents: st.plane.t.slice(), inside: st.plane.t.filter(x => x <= 1).length,
+        drawn: st.acc ? { N: st.acc.N, counts: st.acc.counts.slice() } : null,
+        pProdLe1: st.cstats.pProdLe1, entryInside: st.cstats.entryInside });
+
+    const kb = $('kbtns');
+    for (let k = 1; k <= 6; k++) { const b = document.createElement('button'); b.textContent = k; b.dataset.k = k; b.onclick = () => set({ k }); kb.appendChild(b); }
+    $('nEven').onclick = () => set({ odd: false });
+    $('nOdd').onclick = () => set({ odd: true });
+    $('another').onclick = () => { newPlane(); draw(); };
+    $('draw').onclick = () => {
+        const k = st.k, n = nOf(), add = stats(k, n, 20000, (st.seed ^ (st.acc ? st.acc.N + 1 : 0x9e37)) >>> 0);
+        if (!st.acc) st.acc = { N: 0, counts: new Array(k + 1).fill(0) };
+        st.acc.N += add.N; add.counts.forEach((c, j) => st.acc.counts[j] += c); draw();
+    };
+    $('clear').onclick = () => { st.acc = null; draw(); };
+    window.addEventListener('resize', draw);
+
+    if (P.has('k')) st.k = Math.max(1, Math.min(6, +P.get('k') || 2));
+    if (P.get('n') === 'odd') st.odd = true;
+    if (P.has('seed')) { st.seed = +P.get('seed') >>> 0; R = rng(st.seed); }
+    newPlane(); recompute(); draw();
+    window.__grassmann = { sample: (k, n, seed) => sample(k, n, rng(seed == null ? 1 : seed)), tangents, det, exactLaw, pin,
+        pinAsym, lnPinAsym, lnPin, stats, set, state };
+})();
+</script>
+</body>
+</html>
