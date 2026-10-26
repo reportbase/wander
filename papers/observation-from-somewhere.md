@@ -1213,6 +1213,13 @@ falls into the first address, or past the levels held (§9). So some H must be c
 The estimate of the true size is not left open either: with nothing known either way, it is H itself (Proposition
 13(c)).
 
+**Already drawn, under other names.** The drawing c = 1 is not new. Wherever directions or ratios are read and the
+answer must not depend on units, it has been made: statistics standardizes and whitens its variables, charts keep
+bearings true, graphs are drawn with equal axes, cameras with square pixels. Each field found it for its own reason. The
+geometry gives the common one: it is the only drawing that makes the sweep a turn, and so the only one that puts the
+median of every pair's readings on the corner. Where it is skipped on purpose, amounts are being read, not directions.
+Appendix A lists the cases.
+
 **The Euclidean choice.** Part (c) is where an assumption enters. One unit makes the axes commensurable, but "a bar of
 fixed length" also needs a norm: under the largest-component norm the bar traces the square, under the sum norm the
 line. The circle follows if the sweep is the turning of a rigid bar. The facing of §4 motivates that; it does not prove
@@ -3446,6 +3453,32 @@ under composing is the powers of one factor g, since under the logarithm it is a
 multiples of one step. Two factors whose logarithms are incommensurable, 2 and 3, generate rescalings dense in every
 range, and no levels at all. The levels' form is forced; which g is not.
 
+**V = H under other names** (§5). Every field that reads directions draws its parties at one length, under its own
+name:
+- *Standardizing.* The correlation coefficient (Pearson 1896) divides each variable by its own spread before the two
+  are compared, and the z-score does the same for one. For two normal variables of spreads σ_i and σ_j, at any
+  correlation, the ratio X_j/X_i is a Cauchy whose absolute value has its median at σ_j/σ_i: the drawing V = cH with
+  c = σ_j/σ_i, the corner moved to c. Standardized, the median is 1 at every correlation, since the standardized pair is
+  unchanged by exchanging the two variables, and Theorem 6(e) does the rest.
+- *Whitening.* Mahalanobis's distance (1936), and the map x ↦ Σ^(−1/2)x, draw every axis at one length and at right
+  angles, the inner product of Proposition 3(g). Whitening is unique only up to a turn, which is the part of the
+  reader's ignorance the drawing leaves free.
+- *Principal components and canonical correlations.* Components are taken from the correlation matrix, the standardized
+  variables, when units differ (Hotelling 1933); from the covariance matrix the axis drawn longest takes the first
+  component. Canonical correlations (Hotelling 1936) whiten each set before reading the angles between them, and so are
+  unchanged by every change of units within a set.
+- *Charts and lamps.* Mercator's chart is the one that keeps every bearing true, and a lighthouse's 45° flash marks the
+  corner of its landings, both only at c = 1 (Proposition 5(g), (f)).
+- *Graphs.* A line at 45° means "equal" only on equal axes. Cleveland, McGill and McGill (1988) chose a graph's aspect
+  ratio so that the orientations of its segments centre on 45°, "banking to 45°", for the eye's accuracy in judging
+  slopes: choosing the drawing so that the middle direction is the corner.
+- *Instruments.* Square pixels, and the two cameras of a stereo pair calibrated alike, draw the two directions, or the
+  two standpoints, at one length.
+
+Where the drawing is skipped on purpose, amounts are being read. Variables already in one shared unit need no
+standardizing, since the unit has made c = 1. An equal-area map keeps areas, not bearings. A weighting of features
+chosen for a task sets c on purpose. Each field found c = 1 for its own purpose; the common reason is the one of §5.
+
 **Three numbers, three rulers** (§6). The three curves are the unit sets of the only three real number systems of two
 dimensions with a unit: the complex numbers (j² = −1), whose units e^(jθ) = cos θ + j sin θ run round the circle; the
 split-complex numbers (j² = +1), e^(jζ) = cosh ζ + j sinh ζ on the hyperbola; and the dual numbers (j² = 0), e^(jx) = 1
@@ -3699,6 +3732,9 @@ Cayley, A. (1859). A sixth memoir upon quantics. *Philosophical Transactions of 
 Civera, J., Davison, A. J. and Montiel, J. M. M. (2008). Inverse depth parametrization for monocular SLAM. *IEEE
 Transactions on Robotics* 24(5), 932–945.
 
+Cleveland, W. S., McGill, M. E. and McGill, R. (1988). The shape parameter of a two-variable graph. *Journal of the
+American Statistical Association* 83(402), 289–300.
+
 Coxeter, H. S. M. (1987). *Projective Geometry*, 2nd ed. Springer, New York.
 
 Crofton, M. W. (1868). On the theory of local probability, applied to straight lines drawn at random in a plane.
@@ -3787,6 +3823,11 @@ Herschel, J. F. W. (1850). Quetelet on probabilities. *Edinburgh Review* 92, 1�
 
 Hilbert, D. (1895). Über die gerade Linie als kürzeste Verbindung zweier Punkte. *Mathematische Annalen* 46,
 91–96.
+
+Hotelling, H. (1933). Analysis of a complex of statistical variables into principal components. *Journal of
+Educational Psychology* 24, 417–441, 498–520.
+
+Hotelling, H. (1936). Relations between two sets of variates. *Biometrika* 28(3–4), 321–377.
 
 Igarashi, T. and Hinckley, K. (2000). Speed-dependent automatic zooming for browsing large documents. *Proceedings
 of UIST 2000*, 139–148.
@@ -3882,6 +3923,9 @@ Lupton, R. H., Gunn, J. E. and Szalay, A. S. (1999). A modified magnitude system
 magnitudes, colors, and errors even for low signal-to-noise ratio measurements. *The Astronomical Journal* 118(3),
 1406–1410.
 
+Mahalanobis, P. C. (1936). On the generalised distance in statistics. *Proceedings of the National Institute of
+Sciences of India* 2(1), 49–55.
+
 Maxwell, J. C. (1860). Illustrations of the dynamical theory of gases. *Philosophical Magazine* 19, 19–32.
 
 McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *The Annals of Statistics* 24, 787–808.
@@ -3908,6 +3952,9 @@ Niven, I. (1956). *Irrational Numbers*. Carus Mathematical Monographs 11, Mathem
 Norton, J. D. (2008). Ignorance and indifference. *Philosophy of Science* 75(1), 45–68.
 
 Parker, M. C. and Jeynes, C. (2023). A maximum entropy resolution to the wine/water paradox. *Entropy* 25(8), 1242.
+
+Pearson, K. (1896). Mathematical contributions to the theory of evolution. III. Regression, heredity, and panmixia.
+*Philosophical Transactions of the Royal Society of London, Series A* 187, 253–318.
 
 Penrose, R. (1959). The apparent shape of a relativistically moving sphere. *Proceedings of the Cambridge
 Philosophical Society* 55, 137–139.
