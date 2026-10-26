@@ -104,3 +104,38 @@ One rank up, the shape OFS gives the k = 1 case survives where the exchange does
 - **The near field shrinks.** The two angles repel (|cos²θ₁ − cos²θ₂|), so both inside the corner happens
   (1 − π/4)/2 ≈ 0.107 of the time, the same both outside, and straddling π/4 ≈ 0.785. At k = 1 the near field is ½.
 - **k = 2, n = 3 is the wedge again**, by duality (a plane is its normal line).
+
+### Run 2: predictions (26 Oct; Tom: "1", to finishing the Grassmannian), written before any run-2 script
+
+**Derived before the run (by hand, to be checked exactly).** For Gr(k, 2k) the SVD Jacobian gives the chart measure
+∏_{i<j}|t_i² − t_j²|·∏(1 + t_i²)^(−k)·dt; with t = tan θ every power of cos θ cancels, so the principal angles have density
+∝ ∏_{i<j}|cos²θ_i − cos²θ_j| for every k (run 1's k = 2 form). With u = cos 2θ = cos φ, φ uniform on [0, π], it is
+∝ ∏|u_i − u_j|: arcsine-distributed u's repelling linearly (a Jacobi ensemble, β = 1). For k = 2, write a = |u|
+(a = cos ψ, ψ uniform on [0, π/2], E a = 2/π): opposite signs give |u₁ − u₂| = a₁ + a₂, the same sign |a₁ − a₂|, and
+∫∫|cos x − cos y| over [0, π/2]² = 4 − π, so E|a₁ − a₂| = 16/π² − 4/π. Then
+P(straddle) = ½·(4/π) / (½·(4/π) + ½·(16/π² − 4/π)) = (2/π)/(8/π²) = π/4.
+
+Also derived: one entry of X = B·A⁻¹ is b·c with c = A⁻¹e₁; c is orthogonal to rows 2…k of A and a₁·c = 1, so
+|c| = 1/|Z′| (the part of a₁ off the other rows, one standard normal), and b·c = |c|·Z: every entry is Z/|Z′|, a standard
+Cauchy, for every k and n.
+
+- **Q0.** P(straddle) for Gr(2, 4) is π/4 exactly (the integral 4 − π symbolic; the share to 50 digits). Kill: either not.
+- **Q1.** The chart density det(I + XᵀX)^(−n/2) is rotation invariant for (k, n) = (3, 6), (4, 8), (3, 7), exactly, by
+  the Jacobian of X ↦ (C + DX)(A + BX)⁻¹ as the linear map dX ↦ (D − X′B)·dX·(A + BX)⁻¹ (determinant det(D − X′B)^k ·
+  det(A + BX)^(−m)), at 5 rational Cayley rotations × 5 rational points. Kill: any inequality.
+- **Q2.** For n = 2k the principal angles' law is ∏_{i<j}|cos²θ_i − cos²θ_j|: at k = 3 and 4 the Monte Carlo
+  (N = 10⁶) matches the exact count of angles inside the corner (below) within 4 SE in every count. Kill: any outside.
+- **Q3.** The exchange makes the number of angles inside the corner symmetric about k/2 (exact). Kill: not exact.
+- **Q4.** The near field (every angle inside the corner) shrinks fast: P_in(1) = ½, P_in(2) = (1 − π/4)/2 = 0.1073,
+  P_in(3) < 0.054, P_in(4) < P_in(3)/2. Kill: any of the three inequalities fails.
+- **Q5.** For n = 2k the product of the tangents (|det X|) has its median at 1 (exactly by the exchange; Monte Carlo
+  within 4 SE at k = 3, 4). Kill: off.
+- **Q6.** Every entry of X is a standard Cauchy at (3, 6), (4, 8), (3, 7): KS p ≥ 0.001 for each of four entries at each.
+  Kill: any below.
+- **Q7.** The plane's own number is not a Cauchy, and spreads in levels as k grows: ln|det X| symmetric about 0, its
+  variance π²/4 = 2.467 at k = 1, π²/3 = 3.290 at k = 2 (the logistic, from run 1's ½(1 + |r|)⁻²), and strictly larger
+  at k = 3 and again at k = 4. Kill: k = 2 off π²/3 by 4 SE, or not increasing, or det X at k = 3 with KS p > 10⁻⁶
+  against the Cauchy.
+- **Q8.** Without the exchange (Gr(3, 7)) the corner is not the median: P(∏t ≤ 1) < ½. Kill: ≥ ½ − 4 SE.
+
+Exact counts: P(j of the k angles inside) by symbolic integration over the ordered φ's (sympy), for k = 2, 3, 4.
