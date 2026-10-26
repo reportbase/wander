@@ -2236,6 +2236,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Carried into OFS (SPN R523; Tom: "add it to ofs, with classical examples."): §5 "Already drawn, under other names" and
   Appendix A "V = H under other names" (standardizing, whitening, PCA and CCA, Mercator and the lighthouse, banking to
   45°, square pixels and stereo pairs; skipped on purpose where amounts are read).
+  Then (SPN R524; Tom: "if a reader does not use V = H, why? could he deciede not to do that"): OFS §5 "Can a reader decline
+  V = H?": not really (3(g); the exchange); a departure is writing, uncalibrated, the estimate taken for the drawing, or no
+  turn, each with its signature.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

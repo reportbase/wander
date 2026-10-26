@@ -1220,6 +1220,22 @@ geometry gives the common one: it is the only drawing that makes the sweep a tur
 median of every pair's readings on the corner. Where it is skipped on purpose, amounts are being read, not directions.
 Appendix A lists the cases.
 
+**Can a reader decline V = H?** For a reader of directions, not really. A sweep that is uniform and returns after a full
+turn already has V = H in its own measure (part (g)); writing V = cH with c ≠ 1 describes the same sweep in coordinates
+not its own, which hides the turn's symmetry without removing it, and gives up the corner as the median, true bearings
+and the rigid bar (Proposition 5(d), (f), (g)). And drawing c ≠ 1 asserts that one party is c times the other, which is
+knowledge of the world: the reader's ignorance includes the exchange of the two unit relations (§2), and the exchange
+gives c = 1. So V = H is the default of any turning reader, and a departure from it needs a reason carried in from
+outside. When a reader appears not to draw it, one of four things is the case, each with its own signature:
+- *It is writing, not reading.* It wants amounts in a shared unit, so c is the ratio of real units, measured, not chosen.
+  An equal-area map or a weighting of features keeps amounts on purpose (§9).
+- *It is uncalibrated.* Unequal gains, pixels that are not square, variables left in their own units: c is imposed by the
+  instrument. The median of its readings sits at c instead of on the corner, and standardizing restores it.
+- *It has taken its estimate for its drawing.* What it knows or guesses of the other's true size, κ = V*/H, belongs to the
+  amounts, a shift in levels (Proposition 13); redrawing the circle with it runs κ together with c.
+- *It does not turn.* If its measure is not a turn (a boost, or another group), the question does not arise: it has
+  another geometry, with no corner at its median and other tails (§7.1, "Why a turn and not a boost").
+
 **The Euclidean choice.** Part (c) is where an assumption enters. One unit makes the axes commensurable, but "a bar of
 fixed length" also needs a norm: under the largest-component norm the bar traces the square, under the sum norm the
 line. The circle follows if the sweep is the turning of a rigid bar. The facing of §4 motivates that; it does not prove
