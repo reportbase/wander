@@ -2191,6 +2191,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   killed; each station's behaviour stable across months; post hoc the 10–60 min band over the tide's sharpness orders them.
   Run 7 (R514), that band rule fitted on September and August and tested on July at ten stations (five new): class right
   9 of 10, the starting rate within 2× at all 5, Spearman 0.93; Y3 killed by one late report at one Juneau offset.
+  `grs-plan.md` (+ `runs/grs/`, 26 Oct; SPN R515; Tom: "are you familiar with the grassmannian.", then "yes, check
+  k = 2"): readings are Gr(1, n), its uniform measure the Cauchy family det(I + XᵀX)^(−n/2); run 1 at k = 2, nothing
+  killed: invariance exact to (2, 5); Gr(2, 3) the wedge by duality; Gr(2, 4)'s exchange X ↦ X⁻¹ puts the tangents'
+  product's median at 1; every entry of X Cauchy; det X (Plücker p₃₄/p₁₂) corner at 1 but the diamond's ½(1 + |r|)⁻²;
+  near field (1 − π/4)/2 each side, straddling π/4; Gr(2, 5) the corner the product's lower quartile. Not in OFS.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

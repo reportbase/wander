@@ -62,3 +62,45 @@ That a reader holds planes; that k = 2 belongs in OFS. This asks only whether th
 it one rank up.
 
 ## Runs
+
+### Run 1 (26 Oct; `runs/grs/grs.py`, output `runs/grs/grs-run1.txt`, 3 minutes)
+
+Nothing killed.
+
+- **G1 not killed.** det(I + XᵀX)^(−n/2)·dX unchanged, exactly, by five rational rotations at five rational points each,
+  for (k, n) = (1, 2), (1, 3), (2, 3), (2, 4), (2, 5).
+- **G2 not killed.** Gr(2, 3): det(I + XᵀX) = 1 + a² + b², the wedge's law; the plane's principal angle is its normal's
+  angle from the third axis.
+- **G3 not killed.** Gr(2, 4): X ↦ X⁻¹ has |J| = |det X|⁻⁴ and det(I + X⁻ᵀX⁻¹) = det(I + XᵀX)/det(X)², so the law is
+  kept; the principal angles' density ∝ |cos²θ₁ − cos²θ₂| is unchanged by θ ↦ π/2 − θ (to 6·10⁻⁵⁵);
+  E[cos²θ₁cos²θ₂] = 0.1666666667 (Monte Carlo z −0.29), E|cos²θ₁ − cos²θ₂| = 0.6168502751 (z −0.17).
+- **G4 not killed.** P(both t ≤ 1) = P(both t ≥ 1) = 0.107300918301276, straddling the corner 0.785398163397448
+  (Monte Carlo 0.10718, 0.10716).
+- **G5 not killed.** median t₁ 0.355357, median t₂ 2.814071, product 1 (to 10⁻²⁰); P(t₁t₂ ≤ 1) = ½; Monte Carlo
+  median(t₁t₂) 0.99827.
+- **G6 not killed.** Each entry of X against the Cauchy: KS p 0.632, 0.034, 0.799, 0.677; quartiles within 0.006 of ±1.
+- **G7 not killed.** det X against ½(1 + |r|)⁻²: KS p 0.719; against the Cauchy p < 10⁻³⁰⁰. P(|det X| ≤ ⅓) 0.2499
+  (the diamond's ¼; the Cauchy's 0.2048); median |det X| 0.998.
+- **G8 not killed.** Gr(2, 5): P(t₁t₂ ≤ 1) = 0.25 (Monte Carlo 0.25023), median(t₁t₂) 2.41.
+
+### After run 1 (post hoc; `runs/grs/grs1-posthoc.py`, `runs/grs/grs1-posthoc.txt`)
+
+Closed forms suggested by the numbers, checked to 50 digits, not predicted: the straddling share is π/4, so the near field
+and the far field are each (1 − π/4)/2; E|cos²θ₁ − cos²θ₂| = π²/16; E[cos²θ₁cos²θ₂] = 1/6; in Gr(2, 5),
+P(t₁t₂ ≤ 1) = ¼ exactly.
+
+## What run 1 says
+
+One rank up, the shape OFS gives the k = 1 case survives where the exchange does, and changes where it should.
+
+- **Every coordinate keeps its corner.** Each entry of X is a standard Cauchy: holding a plane, every ratio of an
+  isotropic pair is still the turn's law, median at the corner.
+- **The exchange keeps the corner as the median of the whole.** For n = 2k (Gr(2, 4)) the exchange sends X to X⁻¹ and
+  each angle θ to π/2 − θ, so the product of the two tangents has its median at 1 and the two medians are reciprocal.
+  Without it (Gr(2, 5)) the corner is only the lower quartile of the product.
+- **A plane's own number is not the Cauchy.** det X = ±t₁t₂, the Plücker ratio p₃₄/p₁₂, has its corner at its median and
+  no mean, but its law is the uniform diamond's ½(1 + |r|)⁻², not the turn's. The Cauchy belongs to directions; a plane's
+  "how far turned as a whole" is a different, still reciprocal-symmetric, law (OFS Theorem 6(e)'s family, not 5(d)'s).
+- **The near field shrinks.** The two angles repel (|cos²θ₁ − cos²θ₂|), so both inside the corner happens
+  (1 − π/4)/2 ≈ 0.107 of the time, the same both outside, and straddling π/4 ≈ 0.785. At k = 1 the near field is ½.
+- **k = 2, n = 3 is the wedge again**, by duality (a plane is its normal line).

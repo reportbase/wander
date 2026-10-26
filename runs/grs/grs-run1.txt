@@ -1,0 +1,29 @@
+G1  chart density det(I + X^T X)^(-n/2) unchanged by rational rotations
+    (k, n) = (1, 2): exact
+    (k, n) = (1, 3): exact
+    (k, n) = (2, 3): exact
+    (k, n) = (2, 4): exact
+    (k, n) = (2, 5): exact
+G2  Gr(2,3): det(I + X^T X) = a**2 + b**2 + 1; the normal's angle from the third axis is the plane's principal angle: True
+G3  X -> X^-1: |J| = |det X|^-4 and det(I + X^-T X^-1) = det(I + X^T X)/det(X)^2, so the law is kept: True
+    density ∝ |cos²θ1 − cos²θ2|: unchanged by θ -> π/2 − θ (difference 5.85e-55);
+    E[cos²θ1 cos²θ2] 0.1666666667 (MC 0.166610, z -0.29); E|cos²θ1 − cos²θ2| 0.6168502751 (MC 0.616807, z -0.17)
+G4  P(both t ≤ 1) 0.107300918301276, P(both ≥ 1) 0.107300918301276, straddling 0.785398163397448
+    (1/2 − 1/π = 0.181690113816209); MC 0.10718, 0.10716 (z -0.40, -0.46)
+G5  median t1 0.355357034426, median t2 2.81407121043, product 1.0
+    P(t1 t2 ≤ 1) 0.5; MC median(t1 t2) 0.99827
+G6  x00: KS p 0.632, quartiles -0.9974 +0.9994
+G6  x01: KS p 0.034, quartiles -1.0005 +0.9943
+G6  x10: KS p 0.799, quartiles -0.9987 +1.0008
+G6  x11: KS p 0.677, quartiles -1.0002 +0.9999
+G7  det X: KS p against ½(1 + |r|)^-2 0.719, against the Cauchy 0.00e+00; median |det X| 0.99827; P(|det X| ≤ 1/3) 0.2499 (diamond 0.25, Cauchy 0.2048)
+G8  Gr(2,5): P(t1 t2 ≤ 1) 0.249999999982 (MC 0.25023, z +0.52); median(t1 t2) 2.4102
+
+G1: not killed
+G2: not killed
+G3: not killed
+G4: not killed
+G5: not killed
+G6: not killed
+G7: not killed
+G8: not killed
