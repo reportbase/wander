@@ -1,0 +1,15 @@
+UNR run 7, the rule fitted on September and August 2026 (runs 5–6's records).
+
+  Honolulu      sep: band  4.63 mm  κ_med 0.0135  B   342.9  smallest exact never
+  Seattle       sep: band  4.72 mm  κ_med 0.0805  B    58.6  smallest exact 6
+  Los Angeles   sep: band 12.15 mm  κ_med 0.0349  B   347.7  smallest exact never
+  San Francisco sep: band  6.50 mm  κ_med 0.0429  B   151.7  smallest exact 20
+  Boston        sep: band  8.86 mm  κ_med 0.1003  B    88.4  smallest exact 5
+  Honolulu      aug: band  4.45 mm  κ_med 0.0132  B   336.1  smallest exact never
+  Seattle       aug: band  2.73 mm  κ_med 0.0781  B    35.0  smallest exact 6
+  Los Angeles   aug: band 12.07 mm  κ_med 0.0456  B   264.5  smallest exact never
+  San Francisco aug: band  7.12 mm  κ_med 0.0424  B   168.1  smallest exact 12
+  Boston        aug: band  8.43 mm  κ_med 0.1004  B    83.9  smallest exact 10
+
+B* = 210.874 (separated: largest exact 168.1, smallest never 264.5)
+a = 0.101813
