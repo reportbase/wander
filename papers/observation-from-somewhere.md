@@ -3487,6 +3487,23 @@ a map from part of the sphere to the plane that sends every great circle to a st
 followed by a projective map (Beltrami 1865), so asking that things in one line read as one line forces the reading v/h,
 up to a projective change of the drawing.
 
+**Planes of directions** (§7.1, §7.2). A reading of one direction is a point of projective space, the Grassmannian of
+lines through home; a frame of k directions held at once is a plane through home, a point of the Grassmannian of
+k-planes. Its rotation-invariant measure, in the chart where a k-plane is the column space of [I ; X], has density
+proportional to det(I + XᵀX)^(−n/2), the matrix-variate Cauchy (Dickey 1967); for k = 1 it is the law of
+Proposition 5(e) and "More parties". One rank up the two halves of the main result come apart. Every entry of X is a
+standard Cauchy for every k and n (it is a normal divided by the length of an independent normal), so every coordinate
+keeps the turn's law. The plane's own readings are the tangents of its principal angles θ_i to a reference plane (Jordan
+1875), and they keep the corner only through the exchange: where the plane is half the space (n = 2k), swapping the
+reference plane with its complement sends each θ_i to π/2 − θ_i, so the product of the tangents has its median at 1;
+that product is not a Cauchy (for k = 2 its law is ½(1 + |r|)⁻²), and without the exchange the corner is not its median.
+The corner as median is Theorem 6(e)'s, from a reciprocal symmetry; the exact Cauchy belongs to single directions. The
+principal angles have density proportional to ∏_{i<j}|cos²θ_i − cos²θ_j| (from the singular-value Jacobian), and the
+chance that all k lie inside the corner is a ratio of two Pfaffians of elementary integrals (de Bruijn 1955): ½,
+½ − π/8, ¼ − 3/(4π), 19/256 − 3π/128 for k = 1 to 4, falling as 2^(−k²/2) to leading order, the rate of a repelling gas
+confined to half its range, by the Coulomb-gas method of Dean and Majumdar (2006). A frame keeps its near field whole less often the more it holds at
+once, faster than geometrically.
+
 **A median in two registers** (§7.6). To a stated accuracy less is needed: a running estimate moved by the sign of each
 comparison alone, m ← m + a_k·sign(x_k − m) with steps a_k falling more slowly than 1/k, and averaged as it goes,
 reaches the sample median's own accuracy with two registers (Robbins and Monro 1951; Polyak and Juditsky 1992; for the
@@ -3692,13 +3709,22 @@ Cuadras, C. M. (2002). Geometrical understanding of the Cauchy distribution. *Q�
 Dawid, A. P., Stone, M. and Zidek, J. V. (1973). Marginalization paradoxes in Bayesian and structural inference.
 *Journal of the Royal Statistical Society B* 35(2), 189–233.
 
+de Bruijn, N. G. (1955). On some multiple integrals involving determinants. *Journal of the Indian Mathematical
+Society* 19, 133–151.
+
 de Sarasa, A. A. (1649). *Solutio problematis a R. P. Marino Mersenne Minimo propositi*. Antwerp.
 
 Deakin, M. A. B. (2006). The wine/water paradox: background, provenance and proposed resolutions. *Gazette of the
 Australian Mathematical Society* 33(3), 200.
 
+Dean, D. S. and Majumdar, S. N. (2006). Large deviations of extreme eigenvalues of random matrices. *Physical Review
+Letters* 97(16), 160201.
+
 Dehaene, S., Izard, V., Spelke, E. and Pica, P. (2008). Log or linear? Distinct intuitions of the number scale in Western
 and Amazonian indigene cultures. *Science* 320, 1217–1220.
+
+Dickey, J. M. (1967). Matricvariate generalizations of the multivariate t distribution and the inverted multivariate
+t distribution. *The Annals of Mathematical Statistics* 38(2), 511–518.
 
 Dietz, P. F. (1982). Maintaining order in a linked list. *Proceedings of the 14th ACM Symposium on Theory of
 Computing*, 122–127.
@@ -3794,6 +3820,9 @@ Jones, M. C. (2008a). The distribution of the ratio X/Y for all centred elliptic
 *Journal of Multivariate Analysis* 99(3), 572–573.
 
 Jones, M. C. (2008b). On reciprocal symmetry. *Journal of Statistical Planning and Inference* 138(10), 3039–3043.
+
+Jordan, C. (1875). Essai sur la géométrie à n dimensions. *Bulletin de la Société Mathématique de France* 3,
+103–174.
 
 Kakutani, S. (1944). Two-dimensional Brownian motion and harmonic functions. *Proceedings of the Imperial Academy
 Tokyo* 20(10), 706–714.
