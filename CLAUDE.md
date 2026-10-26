@@ -2229,6 +2229,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the circle of directions; the "exclusive" set the arc through the slope chart's ±∞ (a third of random cases); the whole
   line exactly when home is in the ellipse, set by the distance from home alone; the delta interval 0.99 → 0 toward the
   vertical, alike at every direction in the angle chart. A reading; not in OFS (R364).
+  `wht-plan.md` (+ `runs/wht/`, 26 Oct; SPN R522; Tom: "so whitening is setting V = H", then "do the whitening test"):
+  on UCI Wine and Wisconsin Diagnostic (sha256 in the plan, not committed), c = σ_j/σ_i places every pair's raw median
+  ratio (corr 0.999) and standardizing puts it within √2 of the corner (W1; exact at every correlation for a normal
+  pair, W0); the long axes take raw PCA over, none standardized (W2); W3 killed: nearest neighbours not placed by c alone.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

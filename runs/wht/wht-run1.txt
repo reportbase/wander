@@ -1,0 +1,17 @@
+W0  normal pairs, 25 (r, c): median |X_j/X_i| / c − 1, median |Z_j/Z_i| − 1, P(|X_j/X_i| ≤ c) − ½: largest 5.74e-42
+
+wine.data: 178 × 13; σ from 0.124 to 314 (ratio 2.53e+03)
+W1  78 pairs: identity off by 3.3e-16; standardized medians within a factor √2 of 1 in 1.000 (from 0.831 to 1.375); raw medians span 0.00931 … 2.37e+03; corr(log raw median, log c) 0.99915
+W2  features with σ ≥ σ_max/10: 1 of 13; raw PC1's squared loading on them 0.99965 (explained variance 0.9981); standardized PC1's largest |loading| 0.423 (explained 0.3620)
+W3  leave-one-out 1-NN: raw 0.7697, long axes only 0.6685, standardized 0.9551
+
+wdbc.data: 569 × 30; σ from 0.00264 to 569 (ratio 2.15e+05)
+W1  435 pairs: identity off by 4.4e-16; standardized medians within a factor √2 of 1 in 0.970 (from 0.681 to 1.563); raw medians span 6.32e-06 … 2.5e+05; corr(log raw median, log c) 0.99951
+W2  features with σ ≥ σ_max/10: 2 of 30; raw PC1's squared loading on them 0.99312 (explained variance 0.9820); standardized PC1's largest |loading| 0.261 (explained 0.4427)
+W3  leave-one-out 1-NN: raw 0.9156, long axes only 0.9121, standardized 0.9508
+
+W0: not killed
+W1: not killed
+W2: not killed
+W3: KILLED
+(1 s)
