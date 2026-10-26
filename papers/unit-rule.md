@@ -321,7 +321,8 @@ Same machine, same landmark logic; only the carry differs. Error in the corner's
 
 Tested exactly since (UNR, `plans/unr-plan.md`, 26 Oct): the unit rule's turns are unchanged by every strictly
 increasing change of what arrives, a trend rule's are not; each carry's turns move under exactly the maps its reference
-does not commute with. The unit rule is flat across burst length. The structural reason: **a carry that extrapolates is most wrong exactly at
+does not commute with. With noise and a threshold (UNR run 3): an order-only debounce keeps that invariance and pays in
+noise; a threshold in levels keeps only the scale of the world, one in amounts neither. The unit rule is flat across burst length. The structural reason: **a carry that extrapolates is most wrong exactly at
 a turn**, the one place where "it went on as it was" is false by construction. The unit rule's carry grows wrong in
 size across a gap but asserts no direction, and direction is all a turn needs.
 

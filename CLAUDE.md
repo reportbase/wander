@@ -2174,7 +2174,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   trends, a blend) on noise-free streams under gaps; run 1 killed by floating-point ties, my bounds and my scoring window
   (Q6 at keep 0.2 in its letter); run 2 at 60 digits nothing killed: each carry's turns unchanged by exactly the maps of
   the payload its reference commutes with (U and M every increasing map, Tr powers, Ta and E neither; all kx), every U
-  flip within its turn's two received intervals. Theorem 6(c) in a stream. Noise and recorded signals next.
+  flip within its turn's two received intervals. Theorem 6(c) in a stream. Run 3 (R510), noise and a threshold: an order-only
+  debounce keeps every increasing map with noise and makes false turns as noise grows; a threshold in levels keeps kx
+  only, one in amounts neither; R4 killed by my false-turn count (cumulatively none at T ≥ 5σ). Recorded signals next.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

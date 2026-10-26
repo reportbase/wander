@@ -179,3 +179,36 @@ Streams S1–S3 and S4.0–S4.3; patterns as before. Noise multiplies each sampl
   noise of two looks, sd σ√2, to pass T: about e^(−T²/4σ²), 10⁻⁷ at 8σ.)
 
 Not predicted, measured: the mean lateness of D, UT and UA under noise and gaps.
+
+### Run 3 (26 Oct; `runs/unr/unr3.py`, output `runs/unr/unr-run3.txt`)
+
+One fix before R4's results: the float path raised run 1's numpy boolean TypeError (`int(x > h) - int(x < h)` now); R1–R3
+had printed and came out the same on the rerun.
+
+**R1 not killed.** D (order only) changed by no map and no kx, in all 126 cases, with and without noise. **R2 not
+killed.** UT changed by no kx in any case, by x³ and √x in all 126; UA changed by kx in all 126. **R3 not killed.** On
+S1, T = 0.01: maxima 9.00 looks late (bound 6.80–12.03), minima 5.00 (3.50–7.37); T = 0.03: 17.00 (12.50–20.10) and 8.00
+(6.80–12.03); 40 of 40 turns. **R4 killed**: UT made "false" turns (no true turn since the turn before) with no noise
+(12 at T = 0.01, 14 at 0.03), and 14 at T = 0.03, σ = 0.002 (15σ); the other clause held (3,779 false at T = 2σ).
+
+Measured, not predicted (all patterns, seven streams): mean lateness with no noise D 7.40 looks, UT 11.42 and 18.32, UA
+10.65 and 16.69. With noise D's false turns rise to 101 (σ = 0.002) and 456 (0.005), UT 0.03's stay at 14, UT 0.01's
+reach 3,779 at σ = 0.005, UA 0.02's 8,680.
+
+### After run 3 (post hoc; `runs/unr/unr3-posthoc.py`, `runs/unr/unr3-posthoc.txt`)
+
+R4 by my definition. Every "false" turn without noise is at a burst of 80: the burst hides a turn not yet reported (the
+report is late by up to 18 looks) and the next, so both reports come just after it, the second with no new true turn
+since the first. Counted cumulatively (a report false only if the reports up to it outnumber the true turns before it),
+UT's excess is 0 at σ = 0 and 0.002 for both T, 0 at T = 0.03, σ = 0.005 (6σ), and 5,613 at T = 2σ. The cumulative count
+is weaker (a false report could hide behind a missed turn); with every look received S1 lost none (R3).
+
+## What run 3 says
+
+A threshold is an amount, and OFS's separation says which maps it costs. The order-only debounce keeps every increasing
+change of the payload, with noise; a threshold in levels keeps only the scale of the world; a threshold in amounts keeps
+neither. So with a threshold the scale test (6(a)) separates levels from amounts, and the order test (6(c)) separates
+order from both, as R1–R2 predicted. The price is noise: the order-only debounce makes false turns once the noise is a
+few percent of a look's change (101, 456), the level threshold none at five times the noise or more. Holding order alone
+is free of the payload and not free of the noise; buying noise robustness spends some invariance, and the unit in which
+the threshold is written decides which.

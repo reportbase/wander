@@ -1,0 +1,12 @@
+sigma 0.0 T 0.01: false turns after a gap that hid two turns 5; other false turns 7
+sigma 0.0 T 0.03: false turns after a gap that hid two turns 5; other false turns 9
+sigma 0.002 T 0.01: false turns after a gap that hid two turns 5; other false turns 7
+sigma 0.002 T 0.03: false turns after a gap that hid two turns 5; other false turns 9
+sigma 0.005 T 0.01: false turns after a gap that hid two turns 4; other false turns 3775
+sigma 0.005 T 0.03: false turns after a gap that hid two turns 5; other false turns 9
+
+Counted the other way: a report is false only if, up to it, the reports outnumber the true turns before it
+(a late report and the next one both after one turn is then not false). Excess reports, summed:
+  sigma 0.0: T 0.01: 0; T 0.03: 0
+  sigma 0.002: T 0.01: 0; T 0.03: 0
+  sigma 0.005: T 0.01: 5613; T 0.03: 0
