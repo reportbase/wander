@@ -1,0 +1,125 @@
+UNR run 1 (plans/unr-plan.md). N = 4000 looks, P = 200, match window P/8 = 25 looks.
+
+Q1–Q3. Flips changed by a map of the payload (count of stream × pattern cases changed, of 78)
+  x^3      U   0   M   0   Ta  78   Tr   0   E  67
+  sqrt x   U   1   M   3   Ta  72   Tr   0   E  41
+  e^x      U   0   M   0   Ta  78   Tr  73   E  71
+  ln(1+x)  U   0   M   3   Ta  72   Tr  72   E  50
+  k=1e-3   U   0   M   0   Ta   5   Tr   0   E   0
+  k=7      U   0   M   0   Ta   9   Tr   0   E   0
+  k=1e3    U   0   M   0   Ta   7   Tr   0   E   0
+  least |arrival − ref|/|arrival| over every comparison: 0; ties: 158
+  Q1 KILLED; Q2 not killed; Q3 KILLED
+
+Q4. Every look received: per rule, turns found / turns, worst and mean error, false flips
+  S1 U  found 40/40  worst   1.00  mean   1.00  false   0
+  S1 M  found 40/40  worst   2.00  mean   1.93  false   0
+  S1 Ta found  0/40  worst    nan  mean    nan  false  39
+  S1 Tr found  0/40  worst    nan  mean    nan  false  40
+  S1 E  found 40/40  worst   5.00  mean   5.00  false   0
+  S2 U  found 39/39  worst   1.00  mean   1.00  false   0
+  S2 M  found 39/39  worst   2.00  mean   1.87  false   0
+  S2 Ta found 19/39  worst   1.00  mean   1.00  false   0
+  S2 Tr found 19/39  worst   1.00  mean   1.00  false   0
+  S2 E  found 39/39  worst   5.00  mean   4.51  false   0
+  S3 U  found 40/40  worst   1.05  mean   1.00  false   0
+  S3 M  found 40/40  worst   1.95  mean   1.50  false   0
+  S3 Ta found 40/40  worst  22.05  mean  20.55  false  39
+  S3 Tr found 20/40  worst  15.05  mean  15.05  false  40
+  S3 E  found 40/40  worst   5.05  mean   5.00  false   0
+  S1: Ta's flips within 2.00 looks of the inflections (39 flips); Tr's within 1.67 of sin = −½ (40 flips)
+  S1: turns found by Ta 0, by Tr 0; E's errors 5.00–5.00; M's worst 2.00
+  Q4 KILLED
+
+Q5. U under every pattern: false flips, turns past the bound n2 − m1, turns excluded (two in one interval)
+  S1     keep 0.2   false 1 over 0 missed 1 excluded 0
+  S1     bursts 80  false 7 over 0 missed 7 excluded 0
+  S2     bursts 80  false 3 over 0 missed 3 excluded 0
+  S3     bursts 80  false 2 over 0 missed 3 excluded 2
+  S4.0   bursts 80  false 3 over 0 missed 4 excluded 2
+  S4.1   bursts 80  false 1 over 0 missed 7 excluded 6
+  S4.2   keep 0.2   false 1 over 0 missed 1 excluded 0
+  S4.2   bursts 80  false 4 over 0 missed 5 excluded 4
+  S4.3   bursts 80  false 2 over 0 missed 3 excluded 0
+  S4.4   bursts 80  false 1 over 0 missed 6 excluded 6
+  S4.5   bursts 80  false 4 over 0 missed 4 excluded 0
+  S4.6   bursts 80  false 6 over 0 missed 7 excluded 0
+  S4.7   bursts 80  false 2 over 0 missed 5 excluded 2
+  S4.8   all        false 1 over 0 missed 0 excluded 0
+  S4.8   keep 0.8   false 1 over 0 missed 0 excluded 0
+  S4.8   keep 0.5   false 1 over 0 missed 0 excluded 0
+  S4.8   keep 0.2   false 1 over 0 missed 0 excluded 0
+  S4.8   bursts 20  false 1 over 0 missed 0 excluded 0
+  S4.8   bursts 80  false 1 over 0 missed 3 excluded 14
+  S4.9   bursts 80  false 3 over 0 missed 3 excluded 0
+  (cases not listed: no false flip, none over, none missed)
+  Q5 KILLED
+
+Q6. Mean error in looks under gaps (a missed turn counted as P/8), per stream and pattern
+  stream pattern            U       M      Ta      Tr       E
+  S1     keep 0.8       1.52    2.20   25.00   25.00    6.38
+  S1     keep 0.5       2.45    3.58   25.00   25.00   10.57
+  S1     keep 0.2       6.85    8.60   25.00   23.55   21.82
+  S1     bursts 20      3.70    4.53   25.00   23.88    8.62
+  S1     bursts 80      5.78    6.53   24.05   24.05    9.38
+  S2     keep 0.8       1.51    2.13   13.46   13.46    5.67
+  S2     keep 0.5       2.23    3.49   13.64   13.64    9.13
+  S2     keep 0.2       7.08    9.95   15.23   15.90   20.62   <-
+  S2     bursts 20      4.62    5.31   13.85   13.85    8.13
+  S2     bursts 80      4.23    5.05   14.00   14.00    9.03
+  S3     keep 0.8       1.30    1.92   20.94   19.80    6.07
+  S3     keep 0.5       2.05    3.47   20.51   18.75    9.87
+  S3     keep 0.2       5.40    8.50   15.05   15.26   19.46   <-
+  S3     bursts 20      2.52    3.05   19.26   18.54    7.45
+  S3     bursts 80      3.90    4.35   20.14   19.64    8.10
+  S4.0   keep 0.8       1.26    1.83   23.55   23.53    6.28
+  S4.0   keep 0.5       2.30    3.89   23.39   23.43   10.83
+  S4.0   keep 0.2       6.72    8.42   22.52   21.86   21.43
+  S4.0   bursts 20      2.36    2.90   22.98   22.13    8.78
+  S4.0   bursts 80      4.64    5.13   21.95   21.93    8.59
+  S4.1   keep 0.8       1.34    1.95   24.07   23.20    6.39
+  S4.1   keep 0.5       2.30    3.63   23.00   22.46    9.62
+  S4.1   keep 0.2       7.18    9.59   18.01   18.65   19.08   <-
+  S4.1   bursts 20      3.95    5.01   22.85   22.15    9.07
+  S4.1   bursts 80      5.07    5.48   22.28   21.65    8.11
+  S4.2   keep 0.8       1.57    2.01   23.45   23.41    6.38
+  S4.2   keep 0.5       2.74    3.57   23.19   23.04   10.20
+  S4.2   keep 0.2       6.96    9.44   21.67   20.88   20.75
+  S4.2   bursts 20      3.39    3.88   21.83   21.80    8.31
+  S4.2   bursts 80      5.03    5.79   22.55   22.51    8.74
+  S4.3   keep 0.8       1.57    1.88   25.00   24.97    6.57
+  S4.3   keep 0.5       2.22    3.20   24.98   25.00   10.37
+  S4.3   keep 0.2       6.25    9.42   24.33   24.45   21.23
+  S4.3   bursts 20      3.57    4.00   24.48   24.48    8.91
+  S4.3   bursts 80      4.63    4.96   22.96   22.96    9.60
+  S4.4   keep 0.8       1.37    1.98   21.31   21.34    6.47
+  S4.4   keep 0.5       3.01    3.93   21.06   21.08   10.79
+  S4.4   keep 0.2       6.53    9.29   18.78   18.20   20.76   <-
+  S4.4   bursts 20      3.12    4.00   21.13   21.26    9.19
+  S4.4   bursts 80      5.60    6.03   20.31   20.33    9.57
+  S4.5   keep 0.8       1.36    2.04   23.38   23.24    7.11
+  S4.5   keep 0.5       2.57    3.44   23.09   23.06   11.40
+  S4.5   keep 0.2       6.11    8.25   21.13   21.09   20.69
+  S4.5   bursts 20      4.77    5.29   22.86   22.83   11.39
+  S4.5   bursts 80      4.32    4.89   21.91   21.90    9.33
+  S4.6   keep 0.8       1.40    1.76   24.91   24.91    6.40
+  S4.6   keep 0.5       2.76    3.62   24.91   24.91   10.23
+  S4.6   keep 0.2       5.88    8.37   24.58   24.29   21.78
+  S4.6   bursts 20      2.59    3.13   24.93   24.74    8.39
+  S4.6   bursts 80      5.61    5.98   23.16   23.16    9.51
+  S4.7   keep 0.8       1.34    1.95   22.25   22.29    6.24
+  S4.7   keep 0.5       2.68    3.63   22.15   22.15   12.51
+  S4.7   keep 0.2       7.36    9.00   22.51   22.43   21.62
+  S4.7   bursts 20      2.78    3.17   21.97   22.00    8.87
+  S4.7   bursts 80      5.70    6.04   22.62   22.69    9.47
+  S4.8   keep 0.8       1.38    2.00   19.21   19.02    6.08
+  S4.8   keep 0.5       2.55    3.43   18.46   17.85    9.52
+  S4.8   keep 0.2       6.34    8.27   12.92   12.66   17.45   <-
+  S4.8   bursts 20      3.74    4.16   17.67   17.53    7.56
+  S4.8   bursts 80      5.06    5.68   19.10   19.01    8.65
+  S4.9   keep 0.8       1.40    1.98   25.00   25.00    6.56
+  S4.9   keep 0.5       2.14    3.47   25.00   25.00   10.72
+  S4.9   keep 0.2       7.27   11.50   25.00   25.00   22.35
+  S4.9   bursts 20      2.05    2.60   25.00   25.00    8.07
+  S4.9   bursts 80      3.85    4.30   23.48   23.20    8.85
+  Q6 KILLED

@@ -78,3 +78,54 @@ which are counted and reported. A run with noise (a threshold, the archived pape
 predictions. These are synthetic streams, as the archived paper's rod was; the test is of the reading, not of any reader.
 
 ## Runs
+
+### Run 1 (26 Oct; `runs/unr/unr.py`, output `runs/unr/unr-run1.txt`)
+
+One fix before any result: a numpy boolean subtraction raised a TypeError on the first call (the sign is now
+`int(d > 0) - int(d < 0)`), and the median of three is taken by comparisons rather than `np.median`, for speed.
+
+**Q1 killed.** U's flips changed under √x in 1 of 78 cases, M's under √x and ln(1 + x) in 3 each; none under x³ or eˣ.
+**Q2 not killed.** Tr unchanged under x³ and √x in all 78 cases, changed under eˣ (73) and ln(1 + x) (72); Ta changed
+under x³ in all 78, E in 67. **Q3 killed.** Ta's flips changed under kx in 5, 9 and 7 cases; no other rule's. **Q4
+killed**: U on S3 worst 1.05 looks (not within 1); E on S3 up to 5.05 looks (not within 5). The other clauses held: U
+found every turn of S1–S3 with no false flip, Ta's 39 flips on S1 within 2.00 looks of the inflections and Tr's 40 within
+1.67 of sin = −½, neither finding a turn of S1, M's worst 2.00. **Q5 killed**: U had false flips and missed turns in 20 of
+78 cases (19 of them bursts of 80 or keep 0.2, and S4.8 at every pattern), none past its bound. **Q6 killed** at keep 0.2
+on five streams (Ta 2.0–2.9 × U); held at every other pattern, U the least of the five everywhere.
+
+### After run 1 (post hoc; `runs/unr/unr1-posthoc.py`, `runs/unr/unr1-posthoc.txt`)
+
+- Q1 and Q3 by my set-up. Every comparison whose sign a map or a scale changed had an original difference of at most
+  2.2·10⁻¹⁶ of the arrival, or exactly 0: ties in double precision (158 exact ties in the run). √x and ln(1 + x) round
+  differently from x itself near a tie; Ta's second difference passes through zero at every inflection, at rounding size.
+  Mathematically U and M commute with every increasing map and every rule with kx; the floats do not keep the ties.
+- Q4 by my set-up and my arithmetic. A turn between two looks puts U's flip up to 2 looks after it (S3, 0.953–1.047), so
+  "within 1" held only for turns on a look (S1, S2: exactly 1.000). E's reference is the blend before the update, a look
+  later than the continuous lag I used: S1 5.000 exactly, S3 4.953–5.047, S2 4.0–5.0 (the cusps).
+- Q5 by my scoring. The P/8 window pairs a flip with its nearest turn; a turn inside a burst of 80 is flipped up to 80
+  looks later, outside the window, and scored false and missed. S4.8's one false flip at every pattern is at look 4, from
+  a turn before the first comparison. Attributing each U flip to the last turn before it: all 3,836 flips within their
+  turn's bound n₂ − m₁, none with no turn before it; 13 turns with two flips, every one a burst holding two turns (both
+  flipped at its end) or, once, a min and a max in consecutive intervals (each flipped once, the first credited to the
+  second); 2 turns with none, the same cases. No false flip in any case.
+- Q6 stands as killed: at keep 0.2, Ta and Tr miss nearly every turn, scored P/8 each, and U's own error is 5–7 looks, so
+  the ratio could not reach 3. Ta and Tr missed most turns at every pattern (means 12.7–25 against U's 1.3–7.2).
+
+What run 1 shows of the reading: the maps each rule's flips are unchanged by are the maps its reference commutes with,
+exactly as predicted, but floating-point ties hide it. U and M (order) are unchanged by every increasing map, Tr (the
+ratio's motion) by powers and not by eˣ or ln(1 + x), and Ta and E (amounts) by neither. Every rule passes the scale test
+alike, so it is the order test (6(c)) that separates them, not the scale test (6(a)).
+
+### Run 2: predictions (written after run 1, before run 2)
+
+Run 2 repeats Q1–Q3 and Q5 with run 1's set-up errors removed: mpmath at 60 digits, a difference under 10⁻⁴⁰ of the
+arrival counted as a tie (a tie is unchanged by every increasing map), and each U flip attributed to the last turn before
+it. To keep it short: N = 1,000, streams S1–S3 and S4.0–S4.3, the same six patterns (seeded as run 1, on the first 1,000
+looks), the same maps. Q4 and Q6 are not repeated: their numbers have been seen.
+
+- **Q1′.** U's and M's flips are identical under x³, √x, eˣ and ln(1 + x), in every case. *Kill:* any differing flip.
+- **Q2′.** Tr's identical under x³ and √x in every case, different under eˣ and ln(1 + x) in at least one each; Ta's and
+  E's different under x³ in at least one. *Kill:* any clause off.
+- **Q3′.** Every rule's flips identical under kx, k = 10⁻³, 7, 10³, in every case. *Kill:* any differing flip.
+- **Q5′.** Every U flip has a turn before it and lies within that turn's bound n₂ − m₁; every turn whose received
+  interval holds no other turn gets exactly one flip. *Kill:* one flip or one such turn off.

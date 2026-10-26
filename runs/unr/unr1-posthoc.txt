@@ -1,0 +1,79 @@
+1. Every case a map changed, for U, M (any map) and Ta (scaling): the comparisons whose sign differs
+  sqrt x   U  S1     keep 0.5   signs differing 2, largest original |diff|/|x| among them 2.22e-16
+  sqrt x   M  S1     all        signs differing 10, largest original |diff|/|x| among them 2.22e-16
+  sqrt x   M  S1     bursts 20  signs differing 7, largest original |diff|/|x| among them 2.22e-16
+  sqrt x   M  S1     bursts 80  signs differing 8, largest original |diff|/|x| among them 2.22e-16
+  ln(1+x)  M  S1     all        signs differing 9, largest original |diff|/|x| among them 1.48e-16
+  ln(1+x)  M  S1     bursts 20  signs differing 6, largest original |diff|/|x| among them 1.48e-16
+  ln(1+x)  M  S1     bursts 80  signs differing 7, largest original |diff|/|x| among them 1.48e-16
+  k=1e-3   Ta S1     all        signs differing 5, largest original |diff|/|x| among them 1.13e-16
+  k=1e-3   Ta S1     keep 0.8   signs differing 2, largest original |diff|/|x| among them 1.13e-16
+  k=1e-3   Ta S1     keep 0.5   signs differing 2, largest original |diff|/|x| among them 1.13e-16
+  k=1e-3   Ta S1     bursts 20  signs differing 3, largest original |diff|/|x| among them 1.13e-16
+  k=1e-3   Ta S1     bursts 80  signs differing 4, largest original |diff|/|x| among them 1.13e-16
+  k=7      Ta S1     all        signs differing 9, largest original |diff|/|x| among them 2.19e-16
+  k=7      Ta S1     keep 0.8   signs differing 3, largest original |diff|/|x| among them 1.13e-16
+  k=7      Ta S1     bursts 20  signs differing 5, largest original |diff|/|x| among them 2.19e-16
+  k=7      Ta S1     bursts 80  signs differing 6, largest original |diff|/|x| among them 2.19e-16
+  k=7      Ta S3     all        signs differing 7, largest original |diff|/|x| among them 1.11e-16
+  k=7      Ta S3     keep 0.8   signs differing 4, largest original |diff|/|x| among them 1.11e-16
+  k=7      Ta S3     keep 0.5   signs differing 2, largest original |diff|/|x| among them 1.11e-16
+  k=7      Ta S3     bursts 20  signs differing 5, largest original |diff|/|x| among them 1.11e-16
+  k=7      Ta S3     bursts 80  signs differing 3, largest original |diff|/|x| among them 0.00e+00
+  k=1e3    Ta S1     all        signs differing 6, largest original |diff|/|x| among them 0.00e+00
+  k=1e3    Ta S1     keep 0.8   signs differing 1, largest original |diff|/|x| among them 0.00e+00
+  k=1e3    Ta S1     bursts 80  signs differing 4, largest original |diff|/|x| among them 0.00e+00
+  k=1e3    Ta S3     all        signs differing 4, largest original |diff|/|x| among them 0.00e+00
+  k=1e3    Ta S3     keep 0.8   signs differing 3, largest original |diff|/|x| among them 0.00e+00
+  k=1e3    Ta S3     bursts 20  signs differing 2, largest original |diff|/|x| among them 0.00e+00
+  k=1e3    Ta S3     bursts 80  signs differing 2, largest original |diff|/|x| among them 0.00e+00
+
+2. Q4: the errors exactly
+  S1 U: errors 1.0000 … 1.0000
+  S1 E: errors 5.0000 … 5.0000
+  S2 U: errors 1.0000 … 1.0000
+  S2 E: errors 4.0000 … 5.0000
+  S3 U: errors 0.9530 … 1.0470
+  S3 E: errors 4.9530 … 5.0470
+
+3. Q5: U's 'false' flips and 'missed' turns. For each false flip: the nearest turn, and whether the flip
+   lies within that turn's bound n2 − m1 (a turn inside a long gap, flipped after the window)
+  S1     keep 0.2   false 1: within the turn's bound 1; other []
+  S1     bursts 80  false 7: within the turn's bound 2; other [(1203, 1250.0, 2.0), (1920, 1950.0, 1.0), (2102, 2150.0, 2.0), (2710, 2750.0, 1.0), (3919, 3950.0, 1.0)]
+  S2     bursts 80  false 3: within the turn's bound 1; other [(172, 200.0, 1.0), (2551, 2600.0, 2.0)]
+  S3     bursts 80  false 2: within the turn's bound 1; other [(2102, 2172.047, 0.0)]
+  S4.0   bursts 80  false 3: within the turn's bound 1; other [(172, 207.287, 2.0), (1585, 1613.579, 2.0)]
+  S4.1   bursts 80  false 1: within the turn's bound 0; other [(3919, 3948.128, 2.0)]
+  S4.2   keep 0.2   false 1: within the turn's bound 1; other []
+  S4.2   bursts 80  false 4: within the turn's bound 3; other [(2103, 2132.147, 2.0)]
+  S4.3   bursts 80  false 2: within the turn's bound 2; other []
+  S4.4   bursts 80  false 1: within the turn's bound 0; other [(173, 208.65, 2.0)]
+  S4.5   bursts 80  false 4: within the turn's bound 3; other [(3919, 3948.524, 2.0)]
+  S4.6   bursts 80  false 6: within the turn's bound 4; other [(172, 214.135, 2.0), (2551, 2587.378, 1.0)]
+  S4.7   bursts 80  false 2: within the turn's bound 1; other [(172, 201.297, 1.0)]
+  S4.8   all        false 1: within the turn's bound 0; other [(4, 54.13, 2.0)]
+  S4.8   keep 0.8   false 1: within the turn's bound 0; other [(4, 54.13, 2.0)]
+  S4.8   keep 0.5   false 1: within the turn's bound 0; other [(6, 54.13, 2.0)]
+  S4.8   keep 0.2   false 1: within the turn's bound 0; other [(4, 54.13, 2.0)]
+  S4.8   bursts 20  false 1: within the turn's bound 0; other [(4, 54.13, 2.0)]
+  S4.8   bursts 80  false 1: within the turn's bound 0; other [(4, 54.13, 2.0)]
+  S4.9   bursts 80  false 3: within the turn's bound 2; other [(3236, 3279.483, 1.0)]
+
+4. Q5 again, each U flip attributed to the last true turn before it (U can only flip after a turn):
+   is every flip within that turn's bound n2 − m1, and does every turn get exactly one flip?
+   flips 3836; outside the bound or with no turn before them 0; turns with two flips 13; lone turns with no flip 2
+
+5. The turns with two flips or none: does each share a received interval, or its neighbour's, with another turn?
+  S3     bursts 80  turn 3227.953 flips [3236, 3237]; received 3155..3237; turns there [3172.05, 3227.95]
+  S4.0   bursts 80  turn 3235.990 flips [3236, 3237]; received 3155..3237; turns there [3156.28, 3235.99]
+  S4.1   bursts 80  turn 1909.312 flips [1920, 1921]; received 1839..1921; turns there [1852.81, 1909.31]
+  S4.1   bursts 80  turn 2092.447 flips [2102, 2103]; received 2021..2103; turns there [2020.76, 2092.45]
+  S4.1   bursts 80  turn 2549.907 flips [2551, 2552]; received 2470..2552; turns there [2497.46, 2549.91]
+  S4.2   bursts 80  turn 2709.097 flips [2710, 2711]; received 2629..2711; turns there [2639.02, 2709.1]
+  S4.4   bursts 80  turn 1579.090 flips [1585, 1586]; received 1504..1586; turns there [1528.87, 1579.09]
+  S4.7   keep 0.2   turn 3823.662 flips [3828, 3836]; received 3818..3836; turns there [3823.66]
+  S4.8   bursts 80  turn  266.985 flips [295, 296]; received 214..296; turns there [219.0, 266.98]
+  S4.8   bursts 80  turn 1181.181 flips [1203, 1204]; received 1122..1204; turns there [1136.19, 1181.18]
+  S4.8   bursts 80  turn 1577.940 flips [1585, 1586]; received 1504..1586; turns there [1533.1, 1577.94]
+  S4.8   bursts 80  turn 2095.757 flips [2102, 2103]; received 2021..2103; turns there [2054.27, 2095.76]
+  S4.8   bursts 80  turn 3888.459 flips [3919, 3920]; received 3838..3920; turns there [3843.12, 3888.46]
