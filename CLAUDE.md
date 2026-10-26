@@ -2176,7 +2176,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the payload its reference commutes with (U and M every increasing map, Tr powers, Ta and E neither; all kx), every U
   flip within its turn's two received intervals. Theorem 6(c) in a stream. Run 3 (R510), noise and a threshold: an order-only
   debounce keeps every increasing map with noise and makes false turns as noise grows; a threshold in levels keeps kx
-  only, one in amounts neither; R4 killed by my false-turn count (cumulatively none at T ≥ 5σ). Recorded signals next.
+  only, one in amounts neither; R4 killed by my false-turn count (cumulatively none at T ≥ 5σ). Run 4 (R511), a recorded tide (NOAA verified six-minute
+  water level, September 2026, San Francisco and Boston, two datums; sha256s in the plan): the split held exactly (order
+  unchanged by datum, feet and a cube; amounts keep the datum, levels keep the unit); order alone exact and earliest where
+  the tide outruns its wiggles (Boston at 6 min, both at 18); V3 killed by Boston, V6 by my set-up, V7 by my reasoning.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

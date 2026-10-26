@@ -248,3 +248,61 @@ NOAA turns before it. A NOAA turn is missed when no report falls after it and at
   Killed by one that does not.
 - V7. For the NOAA turns UA 100 reports at both rates (the first report after each), the two reports lie within 18 min
   of each other for at least 90% of them, at each station. Killed below.
+
+### Run 4 (26 Oct; `runs/unr/unr4.py`, output `runs/unr/unr-run4.txt`)
+
+Data, retrieved 26 Oct 2026 from `https://api.tidesandcurrents.noaa.gov/api/prod/datagetter` (format csv, gmt, metric,
+1–30 September 2026). September 2026 was verified at both stations (every row flagged `v`), so no fallback; 7,200 looks
+each, none missing; NOAA's highs and lows, 116 at each. STND − MLLW exactly 1,822 mm (San Francisco) and 1,074 mm
+(Boston) at every look.
+
+| file | sha256 |
+|---|---|
+| `wl_9414290_MLLW_2026.csv` | `3eb5429bc5766f09a426d6ca298483ad7dc69011540d8e776beb063a273dbcd1` |
+| `wl_9414290_STND_2026.csv` | `f0a9bfc16c4b1954f8b5aef84bb91ff72aad1604d0fbe931360913c1f96830f4` |
+| `hl_9414290_MLLW_2026.csv` | `4b03d2e8e04b13ae30558be7166db241a4fd02c3e6b655f27fb56e20184e1faf` |
+| `wl_8443970_MLLW_2026.csv` | `8547da683536d9dc4a9703c3f47ef40c963dc204885f079687d4be9bbdcd84c0` |
+| `wl_8443970_STND_2026.csv` | `573a98bb0abf7eaa8cb46cce6a7d022e3c09849f89e7f3663e6b18888062397f` |
+| `hl_8443970_MLLW_2026.csv` | `5dbe3aadc437163f43260ffceb5deb602ba9f52e4f826c76da719be5e11a1498` |
+
+**V1 not killed.** D's turns the same under the datum, feet and (x + 5 m)³ at both stations and both rates. **V2 not
+killed.** UA's unchanged by the datum in all 8 cases and changed by feet in all 8; UT's unchanged by feet in all 8 and
+changed by the datum in all 8. **V3 killed**: D's excess at 6 min is 116 at San Francisco but 0 at Boston. **V4 not
+killed**: UA 100's median lateness 14 looks (San Francisco), 9 (Boston). **V5 not killed**: D's excess at 18 min 0 at
+both. **V6 killed**: Boston's first NOAA turn, a lower low 18 minutes into the month (range to the next 3,033 mm), missed
+by UA 100 (and by every detector). **V7 killed**: at San Francisco 91 of 115 (0.791) within 18 min, the largest gap 15
+looks; Boston 109 of 115 (0.948).
+
+Measured, not predicted: D, with no threshold, reported exactly one turn between each pair of NOAA turns at Boston at
+6 min and at both stations at 18 min, with median lateness 3 looks (Boston, 6 min), 10 and 9 (18 min), the least of any
+detector at that rate.
+
+### After run 4 (post hoc; `runs/unr/unr4-posthoc.py`, `runs/unr/unr4-posthoc.txt`)
+
+V6 by my set-up: the turn was 18 minutes after the series began, before any detector had a direction to turn from; "a
+NOAA turn missed" should have started at the second turn. Excluding it, nothing was missed with a range of 250 mm or
+more.
+
+V3 by the station, and my cumulative count overstated what it did find. Counted per interval between NOAA turns, D at
+San Francisco at 6 min made 17 extra reports in 12 of 117 intervals and none in 6. Once one early extra report gets
+ahead of the turns, the cumulative count marks every later report until a turn is missed, hence 116. The extras sit
+by the mixed tide's small, flat turns and its 6-minute wiggles; Boston's tide changes enough per look that the order
+never wavered.
+
+V7 by my reasoning. I took the coarser rate to cost at most one coarse look. The hold, though, is set at whichever look
+crosses T, so where it sits below the peak (anywhere in [peak − T, peak]) differs between the rates, and so does the
+drop needed to report: a spread of √(4T/κ) − √(2T/κ), the same as V4's band. On San Francisco's slow small turns (κ
+small) that is 4–9 looks. 18 of its 24 gaps over 3 looks have the 18-min report later.
+
+## What run 4 says
+
+On a recorded tide, with its own rounding and short waves, the separation held exactly. The turns read by order alone
+are unchanged by every increasing change of the numbers (the datum, the unit, a cube). The turns read with a threshold
+in amounts keep the datum and lose the unit. Those read with a threshold in levels keep the unit and lose the datum.
+Which changes a reading survives is set by the unit its threshold is written in, as in run 3, now on data no one made
+for the test.
+
+The noise is where the reader looks from. Order alone was the earliest and exact wherever the tide changed more per look
+than the water wiggled: Boston at 6 min, both stations at 18 min. Where it did not (San Francisco at 6 min), it made
+extra reports. Looking less often bought order back with no threshold: a rate is a choice of looks, not an amount. A
+threshold buys robustness at any rate, at the price of an invariance and of lateness.

@@ -1,0 +1,71 @@
+UNR run 4 (plans/unr-plan.md): NOAA verified six-minute water level, September 2026.
+
+San Francisco (9414290): 7200 looks, 0 missing; STND − MLLW [1822] mm; NOAA turns 116; MLLW range -33–2192 mm
+  every 6 min: changed by a map (turns reported, MLLW)
+    D         128   STND same   feet same   (x+5m)^3 same
+    UA 30     116   STND same   feet CHANGED   (x+5m)^3 CHANGED
+    UA 100    116   STND same   feet CHANGED   (x+5m)^3 CHANGED
+    UT 0.01   116   STND CHANGED   feet same
+    UT 0.03   114   STND CHANGED   feet same
+  every 6 min: excess, missed, lateness in looks (from the last NOAA turn) against 116 NOAA turns
+    D        reports  128  excess  116  missed   5  lateness median   4.00  (6-min looks)
+    UA 30    reports  116  excess    0  missed   0  lateness median   7.00  (6-min looks)
+    UA 100   reports  116  excess    0  missed   0  lateness median  14.00  (6-min looks)
+    UT 0.01  reports  116  excess    0  missed   0  lateness median   7.00  (6-min looks)
+    UT 0.03  reports  114  excess    0  missed   2  lateness median  14.00  (6-min looks)
+  every 18 min: changed by a map (turns reported, MLLW)
+    D         116   STND same   feet same   (x+5m)^3 same
+    UA 30     116   STND same   feet CHANGED   (x+5m)^3 CHANGED
+    UA 100    116   STND same   feet CHANGED   (x+5m)^3 CHANGED
+    UT 0.01   116   STND CHANGED   feet same
+    UT 0.03   116   STND CHANGED   feet same
+  every 18 min: excess, missed, lateness in looks (from the last NOAA turn) against 116 NOAA turns
+    D        reports  116  excess    0  missed   0  lateness median  10.00  (6-min looks)
+    UA 30    reports  116  excess    0  missed   0  lateness median   8.00  (6-min looks)
+    UA 100   reports  116  excess    0  missed   1  lateness median  15.00  (6-min looks)
+    UT 0.01  reports  116  excess    0  missed   0  lateness median   9.00  (6-min looks)
+    UT 0.03  reports  116  excess    0  missed   0  lateness median  15.00  (6-min looks)
+  V3: D's excess 116, UA 100's 0, UT 0.03's 0
+  V4: UA 100's median lateness 14.00 looks
+  V5: D's excess at 18 min 0 against 116 at 6 min
+  V7: reported at both rates 115, within 18 min 91 (0.791); largest gap 15 looks
+
+Boston (8443970): 7200 looks, 0 missing; STND − MLLW [1074] mm; NOAA turns 116; MLLW range -79–3801 mm
+  every 6 min: changed by a map (turns reported, MLLW)
+    D         116   STND same   feet same   (x+5m)^3 same
+    UA 30     115   STND same   feet CHANGED   (x+5m)^3 CHANGED
+    UA 100    115   STND same   feet CHANGED   (x+5m)^3 CHANGED
+    UT 0.01   115   STND CHANGED   feet same
+    UT 0.03   115   STND CHANGED   feet same
+  every 6 min: excess, missed, lateness in looks (from the last NOAA turn) against 116 NOAA turns
+    D        reports  116  excess    0  missed   0  lateness median   3.00  (6-min looks)
+    UA 30    reports  115  excess    0  missed   1  lateness median   5.00  (6-min looks)
+    UA 100   reports  115  excess    0  missed   1  lateness median   9.00  (6-min looks)
+    UT 0.01  reports  115  excess    0  missed   1  lateness median   5.00  (6-min looks)
+    UT 0.03  reports  115  excess    0  missed   1  lateness median  10.00  (6-min looks)
+  every 18 min: changed by a map (turns reported, MLLW)
+    D         116   STND same   feet same   (x+5m)^3 same
+    UA 30     115   STND same   feet CHANGED   (x+5m)^3 CHANGED
+    UA 100    115   STND same   feet CHANGED   (x+5m)^3 CHANGED
+    UT 0.01   115   STND CHANGED   feet same
+    UT 0.03   115   STND CHANGED   feet same
+  every 18 min: excess, missed, lateness in looks (from the last NOAA turn) against 116 NOAA turns
+    D        reports  116  excess    0  missed   0  lateness median   9.00  (6-min looks)
+    UA 30    reports  115  excess    0  missed   1  lateness median   6.00  (6-min looks)
+    UA 100   reports  115  excess    0  missed   1  lateness median   9.00  (6-min looks)
+    UT 0.01  reports  115  excess    0  missed   1  lateness median   6.00  (6-min looks)
+    UT 0.03  reports  115  excess    0  missed   1  lateness median  10.00  (6-min looks)
+  V3: D's excess 0, UA 100's 0, UT 0.03's 0
+  V4: UA 100's median lateness 9.00 looks
+  V5: D's excess at 18 min 0 against 0 at 6 min
+  V6: missed LL at look 3.0, 139 mm, ranges to neighbours [3033] mm
+  V7: reported at both rates 115, within 18 min 109 (0.948); largest gap 4 looks
+
+UA changed by feet in 8 of 8 cases; UT changed by the datum in 8 of 8
+V1 not killed
+V2 not killed (UA by the datum and feet True, UT by feet True, UT by the datum True)
+V3 KILLED
+V4 not killed
+V5 not killed
+V6 KILLED
+V7 KILLED
