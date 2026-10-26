@@ -2239,6 +2239,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Then (SPN R524; Tom: "if a reader does not use V = H, why? could he deciede not to do that"): OFS §5 "Can a reader decline
   V = H?": not really (3(g); the exchange); a departure is writing, uncalibrated, the estimate taken for the drawing, or no
   turn, each with its signature.
+  Review 29 (SPN R525; ChatGPT's referee report of the 23 Oct draft, 7.8/10, `plans/ofs-review-29.md`; Tom: "Yes"): V = H
+  stated as conditional uniqueness beside "Working back from the Cauchy"; the domain/value novelty in "The separation,
+  in brief"; the logarithm's conditions named up front; a finite K not lossless (sharing an address, one payload);
+  universal wording scoped; §5's "decline" paragraph scoped to a reader whose sweep is a turn.
+  Review 30 (SPN R526; a fresh referee review of version 42, `plans/ofs-review-30.md`; Tom: "yes"): Proposition 12's
+  "exactly" corrected (total and centroid exact, the arrangement in the spread and higher moments, one payload at the
+  centroid an approximation); §6's (S) on x = d/H; address, landing point, payload in §4; a fixed K a capacity model.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

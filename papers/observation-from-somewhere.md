@@ -39,9 +39,10 @@ What one standpoint cannot give is the size. A writer holds a line of true bread
 it as π/2, the inscribed as 2/π, and their product gives the 1 back, but that 1 is the line drawn at the reader's own
 breadth, H measured in H, not the true breadth of anything read. Every reading is a ratio, unmoved when the world is
 scaled; an amount needs one amount carried in, and more standpoints bring back the figure but not its size. Inside the
-corner the reader's addresses are proportional; past it, if no scale is preferred (a premise we assume, not derive),
-the only consistent layout is logarithmic. H is not a measurement but the value the reader starts from: every value
-gives the same geometry, its size sets only the zoom, and a fixed count of addresses holds any number of things. The geometry needs that value and a shape, set by how
+corner the reader's addresses are proportional; past it, if no scale is preferred (a premise we assume, not derive:
+every doubling given the same room, the layout increasing), the only consistent layout is logarithmic. H is not a
+measurement but the value the reader starts from: every value gives the same geometry, its size sets only the zoom, and
+a fixed count of addresses holds any number of things, though things sharing an address arrive there as one. The geometry needs that value and a shape, set by how
 many unit relations the system includes: two give the circle, three the sphere. In one
 sentence: the address scheme and the magnitude met at an address are distinct mathematical roles, and a geometry can
 specify the former without determining the latter.
@@ -59,7 +60,7 @@ This paper asks what geometry such a reader needs when it does not know the comp
 > A situated observer does not possess a coordinate system for the world; it constructs an addressing scheme from
 > relations available at its standpoint, and uses those addresses to encounter the world's magnitudes.
 
-Put another way, geometry is not shapes. It is the addresses, given whole, that point to a magnitude, and it says
+Put another way, the geometry built here is not shapes. It is the addresses, given whole, that point to a magnitude, and it says
 nothing about what the magnitudes are. The magnitudes are not irrelevant: they make the back sides and everything hidden. But
 they are met at the addresses, not built into them. The geometry that follows is therefore not a new geometry of the
 world. It is a geometry of the reader's own *addresses*: the places where readings can be put, which exist before
@@ -93,7 +94,11 @@ What arrives then paints the addresses that are already there.
 point, an amount. The law of the addresses, the Cauchy, is fixed by the standpoint and the turn alone, and any payload
 can be swapped for any other at any address without moving one address (Theorem 6(a)). The separation itself is familiar:
 coordinates, sampling grids and a function's domain already keep a location apart from the value found there. What is
-proposed here is a construction of it for a reader at a standpoint, and what follows from that construction. Its rule,
+proposed here is a construction of it for a reader at a standpoint, and what follows from that construction. That is
+more than a domain and its values: the addresses are built from bounded relations available at the standpoint (unit
+relations in [0, 1]), which fix a corner and a horizon with no amount; a measure on them, the turn's, gives their law;
+and the construction says which magnitude it loses in the building, the one size no reading carries, and what restores
+it, one amount carried in (Proposition 8). Its rule,
 this paper's and offered as a test, is that a Cauchy variable is a direction, read by its order, and never an amount; where one appears beside an amount, as a spectral line's profile
 beside its strength, the two are separate factors, and the test is to find the turn and find the amount. Every operation
 on directions (a new zero, the reciprocal, a zoom, a relay through a standpoint between) keeps the law a Cauchy, moving
@@ -197,8 +202,8 @@ often from treating the writer's vantage as if a single observation held it. Sec
   a wedge. Laid uniformly, they are the two-dimensional Cauchy: every pair keeps its corner, and the near field in both
   readings is a third, not a half (§7.1). With n other parties it is 1/(n + 1). The drawing is the geometry's whole
   work; no party's true size enters it.
-- Inside the corner the addresses are proportional; past it, if no scale is preferred, only a logarithmic layout is
-  consistent. The reader has two address spaces joined at one corner (§6).
+- Inside the corner the addresses are proportional; past it, if no scale is preferred (every doubling the same room,
+  the layout increasing), only a logarithmic layout is consistent (Cauchy's functional equation, Proposition 4). The reader has two address spaces joined at one corner (§6).
 - How finely a reader reads is a count the geometry leaves open, and the choice of unit is a zoom, not an escape (§8).
   A larger H gives the near less detail and reaches the far; the best H is the corner of what is read. The fraction an
   array's floor discards is the address's second coordinate, its depth: the dyadic cells tile the hyperbolic plane, the
@@ -993,7 +998,9 @@ chord, and at each angle it is an address, the reading s = v/h = tan θ, there b
 is the circle's radius: it turns about the middle M of the chord through the central angle, from pointing at B. The
 payload is what is found where that radius ends. The ray at θ and the radius at 2θ end at the same point P of the arc,
 for every θ. That is the inscribed angle theorem (*Elements* III.20): an angle at the circle is half the angle at the
-centre on the same arc, and P is its one shared point. The theorem gives the shared point; that the payload is met there is our reading of
+centre on the same arc, and P is its one shared point. Three things are kept apart here: the *address*, the direction
+of the ray from home; the *landing point* P, where the radius ends; and the *payload*, what arrives at P. The theorem
+gives the shared point; that the payload is met there is our reading of
 it, and a physical application must justify that reading on its own. Within it, the address computed by the inscribed
 sweep points directly at the payload reached by the central sweep, and it does so in five ways.
 - *Exactly, and once.* Each address meets one point of the arc, and each point of the arc has one address. The map
@@ -1009,7 +1016,7 @@ sweep points directly at the payload reached by the central sweep, and it does s
   land.
 - *In the two readings.* Read along the ray, line over arc, the inscribed sweep gives sin θ/θ, 2/π over the whole
   turn; read along the arc, arc over line, the central sweep gives θ/sin θ, π/2 (§3.4). One point, named twice: by its
-  direction from home, its address, and by the facing of the radius that reaches it, the payload's place.
+  direction from home, its address, and by the facing of the radius that reaches it, the landing point.
 - *Only with V = H.* Drawn with v at c times h, the same rays cross on the ellipse x² − x + y²/c² = 0 (above). Each
   address still meets one point, but the radius no longer turns twice the address's angle, and the corner no longer
   points at the top. The direct pointing is a property of the circle, so of the drawing V = H (Proposition 3(e)).
@@ -1060,9 +1067,9 @@ Read at one address, the two are easily confused. The inscribed sweep's addresse
 to. The two have one shape, but they are different things. The density must be summed over a stretch of addresses to
 give a share, and summed it is the arctangent, not h². The foot is already a share of the chord. At the corner the
 density is 1/π and the foot ½. On the level axis ξ = ln(v/h) the same pairing returns. There the addresses' density is
-½·sech ξ = hv, its total π/2 and its running area the fisheye (§7.1), while the payload's point ½(h² − v², 2hv) has
+½·sech ξ = hv, its total π/2 and its running area the fisheye (§7.1), while the landing point ½(h² − v², 2hv) has
 height 2hv = sin 2θ = sech ξ and foot h² = ½(1 − tanh ξ). The density is half the height of the point its address points
-to: one function, a density of addresses on the one side and an amount of the payload on the other, ½ and 1 at the
+to: one function, a density of addresses on the one side and a coordinate of the landing point on the other, ½ and 1 at the
 corner. The sweep about a party gives ratios, of the first degree, unbounded, held by the median. The sweep about the
 pair's middle gives squares, of the second degree, bounded, with means. Both rates are exact only on the circle. Drawn on the
 ellipse of a stretched drawing, the inscribed angle theorem fails and neither pivot turns a uniform sweep into a uniform
@@ -1220,7 +1227,7 @@ geometry gives the common one: it is the only drawing that makes the sweep a tur
 median of every pair's readings on the corner. Where it is skipped on purpose, amounts are being read, not directions.
 Appendix A lists the cases.
 
-**Can a reader decline V = H?** For a reader of directions, not really. A sweep that is uniform and returns after a full
+**Can a reader decline V = H?** For a reader whose sweep is a turn, not really. A sweep that is uniform and returns after a full
 turn already has V = H in its own measure (part (g)); writing V = cH with c ≠ 1 describes the same sweep in coordinates
 not its own, which hides the turn's symmetry without removing it, and gives up the corner as the median, true bearings
 and the rigid bar (Proposition 5(d), (f), (g)). And drawing c ≠ 1 asserts that one party is c times the other, which is
@@ -1273,7 +1280,8 @@ Past the corner the reciprocal makes the reading h/v ∈ [0, 1], but it does not
 Let a lay place a far reading x = v/h ≥ 1 at position L(x), counting addresses from home, with L increasing and
 L(1) = 1.
 
-Choosing a different H multiplies every far reading, taken as an amount, by one common factor. A lay whose room depended
+Here x is the far amount in units of H, x = d/H, which the lay places; the reading v/h itself does not change with H.
+Choosing a different H multiplies every such x by one common factor. A lay whose room depended
 on where a reading sits, and not only on ratios, would then depend on the arbitrary choice of H. Premise (P2) points the
 same way: no measure is carried past the corner, so nothing supplies a scale for the room to depend on. We therefore
 require that no scale be preferred:
@@ -1605,7 +1613,10 @@ from the known law to what it needs, each step is forced by the one before.
 
 So V = H is not a convenience laid over the Cauchy. It is what the standard Cauchy, its median at the corner, requires, and, forward through Proposition 3
 and parts (a) to (c), it is also enough. Every link of the chain, from the reader's one breadth to the Cauchy and back,
-passes through V = H.
+passes through V = H. Stated as uniqueness, and no more: among the drawings V = cH whose sweep is a rigid turn and whose
+readings are reciprocal-symmetric, the equal-breadth drawing c = 1 is the only one, and it gives the standard Cauchy
+with its median at the corner. That a reader sweeps by a turn at all is not this result; it is the premise of
+Proposition 3(g).
 
 **Proposition 5, continued: two familiar pictures.** The best-known pictures of a turn laid out on a straight line
 are a lighthouse's flashes on a shore and Mercator's chart of the globe. Each requires V = H, and each separates it
@@ -1741,7 +1752,7 @@ So nothing the Cauchy says (its median, its scale, its missing mean) is a statem
 the payload can be read from it.
 
 **The rule, and a test.** The rule is this paper's, offered as a test: a Cauchy variable is a direction, a point of the projective line, a ratio [x : y] read in one
-chart, laid by a turn. It is never an amount. Its median and its quartiles are places on that line and mean what they
+chart, laid by a turn. In this construction it is never an amount. Its median and its quartiles are places on that line and mean what they
 say; it has no mean, since its tail makes the first moment diverge, and in this paper's terms none is wanted, since the coordinates of directions do not add. Two directions have no sum, only a composition, a
 turn followed by a turn, which in the chart is tangent addition (§2). Where a Cauchy appears beside an amount, the two
 are separate factors: the amount is the payload, and the Cauchy is where it lands. So for any Cauchy met in practice
@@ -1964,7 +1975,7 @@ addresses follow the uniform turn is Proposition 5's, not the array's.
 - *Not knowing the size makes the corner and the horizon.*
   - Knowing an array's size, the writer has its end at an amount, the other party's whole V*. Its ruler is the number
     line, on which the point where the two parties are equal is computed (§10, the writer's map; §9).
-  - Not knowing it, the reader must draw the other party at its own H, and v = h becomes its split of near from far and
+  - Not knowing it, a reader whose sweep is a turn must draw the other party at its own H, and v = h becomes its split of near from far and
     the median of its readings, the corner (Propositions 3(e), 5(d)).
   - With no size, the array's far end is no amount, only a direction, [0 : 1], where the chart v/h runs out: the horizon
     (§4).
@@ -2348,7 +2359,8 @@ arcsin((r − 1)/(r + 1)) for a ratio r, when H is their geometric mean. The bes
 the best estimate of a size is the corner of what is known (Proposition 13).
 
 **A fixed count, aimed by H.** Call the reader's whole count of addresses K: its fixed capacity to observe, its own,
-the same whatever it looks at. K comes before H. Choosing H does not change K; it splits it in two. Lay the K addresses
+the same whatever it looks at. The turn's addresses are continuous; a fixed K is a model of a reader's finite
+capacity added to them, not something the turn supplies, and what follows holds for whatever K a reader has. K comes before H. Choosing H does not change K; it splits it in two. Lay the K addresses
 of a uniform turn along distance under the drawing V = H. Their boundaries fall at d_k = H·tan(kπ/2K), k = 1, …, K − 1,
 the quantiles of the Cauchy with its scale at H.
 - Since tan(π/4) = 1, the middle boundary is d = H whatever H is. Half the addresses lie inside the corner and half past
@@ -2357,6 +2369,9 @@ the quantiles of the Cauchy with its scale at H.
   A large H gives the same half a long stretch, each address coarser, and carries the far half farther out.
 - The world's own count enters nowhere. Doubling or thinning what arrives moves no address (Theorem 6(a)), so a world of
   N things, of 2N, or of infinitely many is held at the same K addresses, each holding its share.
+- Holding is not telling apart. Things that share an address arrive there as one payload, their sum or the nearest's
+  paint, and only a finer count or another standpoint separates them: a finite K is a level of detail, not a lossless
+  store.
 
 The same points, and their parity at the corner, are known in numerical analysis and in quantization (Appendix A).
 
@@ -2578,15 +2593,17 @@ are read at a resolution: a kernel τ of total 1, mean 0 and spread σ². The re
 *Proof.* Integrate the sum of shifted kernels: ∫ f = W; ∫ x f = Σ w_i x_i, since τ has mean 0; and
 ∫ (x − x̄)² f = Σ w_i (σ² + (x_i − x̄)²). ∎
 
-Payloads closer together than the resolution arrive as their total and their centroid, exactly, however close they are.
-Their arrangement enters only the spread, where it is smaller than the kernel's own by the square of the separation over
-the resolution: two payloads with shares w and 1 − w at separation Δ add w(1 − w)Δ² to σ².
+Payloads closer together than the resolution arrive with their total and their centroid exact, however close they are.
+Their arrangement does not vanish: it enters the spread, where it is smaller than the kernel's own by the square of the
+separation over the resolution (two payloads with shares w and 1 − w at separation Δ add w(1 − w)Δ² to σ²), and the
+third and higher moments at higher powers of Δ, fainter still (the same pair adds w(1 − w)(1 − 2w)Δ³ to the third).
+So reading them as one payload at the centroid is an approximation, good to the second order in Δ/σ; it is exact only
+in the total and the centroid.
 
 So there are two centres, and they must not be confused:
 - **The addresses' centre is the median,** an order statistic that a mean cannot replace (§7.6), had only by a reader
   that holds its readings.
-- **The unresolved payload's centre is its centroid,** a weighted mean. It arrives first and exactly; the payload's
-  arrangement reaches the reader only through the spread, faintly, until its parts lie the resolution apart.
+- **The unresolved payload's centre is its centroid,** a weighted mean. It arrives first and exactly; the payload's arrangement reaches the reader only through the spread and the higher moments, faintly, until its parts lie the resolution apart.
 
 Fingers order; colours add.
 
@@ -3180,7 +3197,7 @@ stay where they are.
 | result | the condition it needs | where |
 |---|---|---|
 | Each reading is a direction, with no unit; scaling the world moves none | the addresses fixed before anything arrives; any weighting | Proposition 8(a) |
-| The address law is independent of the payload; ranks and medians commute with every increasing map; the reader's K addresses hold any number N of things | the addresses fixed before anything arrives; any weighting | Theorem 6(a), (b); §8, "A fixed count, aimed by H" |
+| The address law is independent of the payload; ranks and medians commute with every increasing map; the reader's K addresses hold any number N of things, those sharing an address arriving as one | the addresses fixed before anything arrives; any weighting | Theorem 6(a), (b); §8, "A fixed count, aimed by H" |
 | The median at the corner, K/2 addresses on each side of H | the weight unchanged by the reciprocal; no condition at the horizon (sin² 2θ has its median at the corner and a mean, 4/π) | Theorem 6(e); question 2 below |
 | No mean; a tail c/s, so the last of K addresses begins near c·K·H | a density of h bounded away from zero near the horizon, at least f₀ > 0 there; since the path ends at all of v, v ≥ v₀ > 0 wherever h is small, so P(v/h > r) ≥ f₀·v₀/r far out; no symmetry (a weight leaning toward the horizon has no mean and its median off the corner) | Theorem 6(e); §8, "Other ways to squeeze the line" |
 | Every pair's median at its own corner | each pair's weight unchanged by its own reciprocal | Proposition 5(e); "More parties" |
