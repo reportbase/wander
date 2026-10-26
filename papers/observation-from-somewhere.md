@@ -998,7 +998,9 @@ chord, and at each angle it is an address, the reading s = v/h = tan θ, there b
 is the circle's radius: it turns about the middle M of the chord through the central angle, from pointing at B. The
 payload is what is found where that radius ends. The ray at θ and the radius at 2θ end at the same point P of the arc,
 for every θ. That is the inscribed angle theorem (*Elements* III.20): an angle at the circle is half the angle at the
-centre on the same arc, and P is its one shared point. The theorem gives the shared point; that the payload is met there is our reading of
+centre on the same arc, and P is its one shared point. Three things are kept apart here: the *address*, the direction
+of the ray from home; the *landing point* P, where the radius ends; and the *payload*, what arrives at P. The theorem
+gives the shared point; that the payload is met there is our reading of
 it, and a physical application must justify that reading on its own. Within it, the address computed by the inscribed
 sweep points directly at the payload reached by the central sweep, and it does so in five ways.
 - *Exactly, and once.* Each address meets one point of the arc, and each point of the arc has one address. The map
@@ -1014,7 +1016,7 @@ sweep points directly at the payload reached by the central sweep, and it does s
   land.
 - *In the two readings.* Read along the ray, line over arc, the inscribed sweep gives sin θ/θ, 2/π over the whole
   turn; read along the arc, arc over line, the central sweep gives θ/sin θ, π/2 (§3.4). One point, named twice: by its
-  direction from home, its address, and by the facing of the radius that reaches it, the payload's place.
+  direction from home, its address, and by the facing of the radius that reaches it, the landing point.
 - *Only with V = H.* Drawn with v at c times h, the same rays cross on the ellipse x² − x + y²/c² = 0 (above). Each
   address still meets one point, but the radius no longer turns twice the address's angle, and the corner no longer
   points at the top. The direct pointing is a property of the circle, so of the drawing V = H (Proposition 3(e)).
@@ -1065,9 +1067,9 @@ Read at one address, the two are easily confused. The inscribed sweep's addresse
 to. The two have one shape, but they are different things. The density must be summed over a stretch of addresses to
 give a share, and summed it is the arctangent, not h². The foot is already a share of the chord. At the corner the
 density is 1/π and the foot ½. On the level axis ξ = ln(v/h) the same pairing returns. There the addresses' density is
-½·sech ξ = hv, its total π/2 and its running area the fisheye (§7.1), while the payload's point ½(h² − v², 2hv) has
+½·sech ξ = hv, its total π/2 and its running area the fisheye (§7.1), while the landing point ½(h² − v², 2hv) has
 height 2hv = sin 2θ = sech ξ and foot h² = ½(1 − tanh ξ). The density is half the height of the point its address points
-to: one function, a density of addresses on the one side and an amount of the payload on the other, ½ and 1 at the
+to: one function, a density of addresses on the one side and a coordinate of the landing point on the other, ½ and 1 at the
 corner. The sweep about a party gives ratios, of the first degree, unbounded, held by the median. The sweep about the
 pair's middle gives squares, of the second degree, bounded, with means. Both rates are exact only on the circle. Drawn on the
 ellipse of a stretched drawing, the inscribed angle theorem fails and neither pivot turns a uniform sweep into a uniform
@@ -1278,7 +1280,8 @@ Past the corner the reciprocal makes the reading h/v ∈ [0, 1], but it does not
 Let a lay place a far reading x = v/h ≥ 1 at position L(x), counting addresses from home, with L increasing and
 L(1) = 1.
 
-Choosing a different H multiplies every far reading, taken as an amount, by one common factor. A lay whose room depended
+Here x is the far amount in units of H, x = d/H, which the lay places; the reading v/h itself does not change with H.
+Choosing a different H multiplies every such x by one common factor. A lay whose room depended
 on where a reading sits, and not only on ratios, would then depend on the arbitrary choice of H. Premise (P2) points the
 same way: no measure is carried past the corner, so nothing supplies a scale for the room to depend on. We therefore
 require that no scale be preferred:
@@ -1749,7 +1752,7 @@ So nothing the Cauchy says (its median, its scale, its missing mean) is a statem
 the payload can be read from it.
 
 **The rule, and a test.** The rule is this paper's, offered as a test: a Cauchy variable is a direction, a point of the projective line, a ratio [x : y] read in one
-chart, laid by a turn. It is never an amount. Its median and its quartiles are places on that line and mean what they
+chart, laid by a turn. In this construction it is never an amount. Its median and its quartiles are places on that line and mean what they
 say; it has no mean, since its tail makes the first moment diverge, and in this paper's terms none is wanted, since the coordinates of directions do not add. Two directions have no sum, only a composition, a
 turn followed by a turn, which in the chart is tangent addition (§2). Where a Cauchy appears beside an amount, the two
 are separate factors: the amount is the payload, and the Cauchy is where it lands. So for any Cauchy met in practice
@@ -2356,7 +2359,8 @@ arcsin((r − 1)/(r + 1)) for a ratio r, when H is their geometric mean. The bes
 the best estimate of a size is the corner of what is known (Proposition 13).
 
 **A fixed count, aimed by H.** Call the reader's whole count of addresses K: its fixed capacity to observe, its own,
-the same whatever it looks at. K comes before H. Choosing H does not change K; it splits it in two. Lay the K addresses
+the same whatever it looks at. The turn's addresses are continuous; a fixed K is a model of a reader's finite
+capacity added to them, not something the turn supplies, and what follows holds for whatever K a reader has. K comes before H. Choosing H does not change K; it splits it in two. Lay the K addresses
 of a uniform turn along distance under the drawing V = H. Their boundaries fall at d_k = H·tan(kπ/2K), k = 1, …, K − 1,
 the quantiles of the Cauchy with its scale at H.
 - Since tan(π/4) = 1, the middle boundary is d = H whatever H is. Half the addresses lie inside the corner and half past
@@ -2589,15 +2593,17 @@ are read at a resolution: a kernel τ of total 1, mean 0 and spread σ². The re
 *Proof.* Integrate the sum of shifted kernels: ∫ f = W; ∫ x f = Σ w_i x_i, since τ has mean 0; and
 ∫ (x − x̄)² f = Σ w_i (σ² + (x_i − x̄)²). ∎
 
-Payloads closer together than the resolution arrive as their total and their centroid, exactly, however close they are.
-Their arrangement enters only the spread, where it is smaller than the kernel's own by the square of the separation over
-the resolution: two payloads with shares w and 1 − w at separation Δ add w(1 − w)Δ² to σ².
+Payloads closer together than the resolution arrive with their total and their centroid exact, however close they are.
+Their arrangement does not vanish: it enters the spread, where it is smaller than the kernel's own by the square of the
+separation over the resolution (two payloads with shares w and 1 − w at separation Δ add w(1 − w)Δ² to σ²), and the
+third and higher moments at higher powers of Δ, fainter still (the same pair adds w(1 − w)(1 − 2w)Δ³ to the third).
+So reading them as one payload at the centroid is an approximation, good to the second order in Δ/σ; it is exact only
+in the total and the centroid.
 
 So there are two centres, and they must not be confused:
 - **The addresses' centre is the median,** an order statistic that a mean cannot replace (§7.6), had only by a reader
   that holds its readings.
-- **The unresolved payload's centre is its centroid,** a weighted mean. It arrives first and exactly; the payload's
-  arrangement reaches the reader only through the spread, faintly, until its parts lie the resolution apart.
+- **The unresolved payload's centre is its centroid,** a weighted mean. It arrives first and exactly; the payload's arrangement reaches the reader only through the spread and the higher moments, faintly, until its parts lie the resolution apart.
 
 Fingers order; colours add.
 
