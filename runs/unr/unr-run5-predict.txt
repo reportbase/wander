@@ -1,0 +1,32 @@
+UNR run 5, the prediction from the record alone (D not run). r in minutes; s_r in mm; κ in mm/min².
+
+Honolulu (1612340): intervals scored 109 of 109; long gaps 0
+  s_r: 1:12.6  2:13.1  3:12.0  4:12.1  5:14.7  6:14.8  8:14.8  10:15.6  12:15.5  15:15.5  20:14.9  24:16.3  30:17.8
+  flat zone 2s_r/(κ_min r²): 1:7.8e+03  2:2e+03  3:8.2e+02  4:4.6e+02  5:3.6e+02  6:2.5e+02  8:1.4e+02  10:96  12:66  15:42  20:23  24:17  30:12
+  κ_min 0.003252 (median 0.01349); τ_min 120 min
+  r_low None, r_high 30; predicted exact at []
+
+Seattle (9447130): intervals scored 113 of 115; long gaps 1
+  s_r: 1:19.7  2:19.8  3:20.0  4:20.1  5:20.2  6:20.4  8:20.6  10:20.9  12:21.2  15:21.7  20:23.0  24:24.0  30:25.9
+  flat zone 2s_r/(κ_min r²): 1:2e+03  2:5e+02  3:2.2e+02  4:1.3e+02  5:82  6:57  8:33  10:21  12:15  15:9.8  20:5.8  24:4.2  30:2.9
+  κ_min 0.01978 (median 0.08048); τ_min 186 min
+  r_low 30, r_high 30; predicted exact at [30]
+
+Los Angeles (9410660): intervals scored 85 of 107; long gaps 1
+  s_r: 1:10.2  2:11.2  3:11.6  4:12.0  5:14.1  6:14.6  8:16.3  10:18.1  12:20.1  15:22.5  20:25.1  24:26.2  30:27.7
+  flat zone 2s_r/(κ_min r²): 1:1.8e+03  2:4.9e+02  3:2.3e+02  4:1.3e+02  5:1e+02  6:72  8:45  10:32  12:25  15:18  20:11  24:8  30:5.4
+  κ_min 0.01135 (median 0.03493); τ_min 192 min
+  r_low None, r_high 30; predicted exact at []
+
+San Francisco (9414290): intervals scored 115 of 115; long gaps 0
+  s_r: 1:6.2  2:6.4  3:6.5  4:7.8  5:8.5  6:8.8  8:10.3  10:11.2  12:12.2  15:13.4  20:15.0  24:16.2  30:17.4
+  flat zone 2s_r/(κ_min r²): 1:8.7e+02  2:2.3e+02  3:1e+02  4:69  5:48  6:35  8:23  10:16  12:12  15:8.5  20:5.3  24:4  30:2.7
+  κ_min 0.01412 (median 0.04289); τ_min 234 min
+  r_low 30, r_high 30; predicted exact at [30]
+
+Boston (8443970): intervals scored 112 of 115; long gaps 1
+  s_r: 1:27.5  2:27.8  3:28.0  4:28.2  5:28.5  6:28.9  8:29.4  10:30.0  12:30.6  15:31.8  20:34.0  24:35.7  30:38.5
+  flat zone 2s_r/(κ_min r²): 1:9.1e+02  2:2.3e+02  3:1e+02  4:58  5:38  6:27  8:15  10:9.9  12:7  15:4.7  20:2.8  24:2  30:1.4
+  κ_min 0.0605 (median 0.1003); τ_min 330 min
+  r_low 20, r_high 30; predicted exact at [20, 24, 30]
+
