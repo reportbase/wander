@@ -1015,6 +1015,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the direction [hold : arrival], the levels one step repeated, odd K to name stillness, the corner a crossing (no
   "fulcrum"), one corner then plain levels, the record a projection, two checksums; the races and the landmark machine
   quoted as measured there, not rerun; its §0 lists what was restated and dropped. Where it and OFS differ, OFS stands.
+  Since 26 Oct (Tom: "Yes update unit rule") §7 has "Tested since: UNR, runs 1–7" (the only results there run here: order
+  alone keeps every increasing map, exact and on recorded tides; how often to look, from the 10–60 minute band against the
+  tide's sharpness, tested on July at ten stations), and §10's second open test is marked partly answered.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
