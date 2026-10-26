@@ -1010,6 +1010,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   before 24 Oct to OFS §11.x mean §12.x now); Appendix A "Where the geometry already appears" (the classical
   confirmations, one entry each), Appendix B the engineering list, Appendix C notation. New classical connections go to
   Appendix A, not the body.
+  `unit-rule.md` (26 Oct 2026, SPN R508; Tom: "lets clean it up with our new framing from ofs.") restates the archived
+  *The Unit Rule* (21 Aug) in OFS's frame, the archive file untouched: one slot holding in order, the hold and the arrival
+  the direction [hold : arrival], the levels one step repeated, odd K to name stillness, the corner a crossing (no
+  "fulcrum"), one corner then plain levels, the record a projection, two checksums; the races and the landmark machine
+  quoted as measured there, not rerun; its §0 lists what was restated and dropped. Where it and OFS differ, OFS stands.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and

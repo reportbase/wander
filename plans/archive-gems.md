@@ -457,6 +457,9 @@ times the median's spread to π/2, only circles with r² + r′² constant, ½·
 **Kept here:** "homogeneity is unoccupiable" (The Cauchy §14: no continuous section of ℝ → S¹, the classical name for a
 chart's zero and cut); the Unit Rule's detection lateness at top and bottom (threshold over slope).
 
+**Restated whole** (26 Oct, SPN R508): *The Unit Rule* in OFS's frame as `papers/unit-rule.md`; the errors below are
+corrected there, its §0.
+
 **Errors, not to pull forward:**
 - "Fulcrum" for the corner throughout; recursive corners ("each rung is the corner again", Unit Rule L242–250, Six Things
   L1212–1223) and the base taken from the reader's grain (against R188, R189).
