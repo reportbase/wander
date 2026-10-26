@@ -2246,6 +2246,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Review 30 (SPN R526; a fresh referee review of version 42, `plans/ofs-review-30.md`; Tom: "yes"): Proposition 12's
   "exactly" corrected (total and centroid exact, the arrangement in the spread and higher moments, one payload at the
   centroid an approximation); §6's (S) on x = d/H; address, landing point, payload in §4; a fixed K a capacity model.
+  Then (SPN R527; Tom: "they have absolutetly no connection whatsoever"; "Unless it is not clearly distinguished, there
+  can be no other conclusion."): §7.2's "in this construction" withdrawn; address and payload share only the landing
+  point, nothing passing between; "Why the distinction has to be stated" (an unmarked number holds both as one; a
+  statement about the representation, not about anyone's intentions or results).
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

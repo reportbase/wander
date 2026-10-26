@@ -92,7 +92,9 @@ What arrives then paints the addresses that are already there.
 
 **The separation, in brief.** An address is a point, a direction from the standpoint; a payload is what is found at that
 point, an amount. The law of the addresses, the Cauchy, is fixed by the standpoint and the turn alone, and any payload
-can be swapped for any other at any address without moving one address (Theorem 6(a)). The separation itself is familiar:
+can be swapped for any other at any address without moving one address (Theorem 6(a)). The two have no connection;
+they share only a place, and the distinction has to be stated, since a number that does not mark it holds them as one
+(§7.2). The separation itself is familiar:
 coordinates, sampling grids and a function's domain already keep a location apart from the value found there. What is
 proposed here is a construction of it for a reader at a standpoint, and what follows from that construction. That is
 more than a domain and its values: the addresses are built from bounded relations available at the standpoint (unit
@@ -1749,10 +1751,22 @@ point: an amount, a function on the addresses. The law of the addresses, the Cau
 uniform turn carried onto them; it is fixed by the standpoint and the turn alone, and no payload enters it. Whatever
 arrives can be swapped for anything else, at any address, and the addresses and their law do not move (Theorem 6(a)).
 So nothing the Cauchy says (its median, its scale, its missing mean) is a statement about the payload, and nothing in
-the payload can be read from it.
+the payload can be read from it. The two have no connection. They share one place, the landing point where the ray from
+home meets the radius (§4), and nothing passes between them there: the address carries none of the payload, and the
+payload none of the address or its law.
+
+**Why the distinction has to be stated.** A number on the real line carries no mark of which it is, an address or a
+payload. A representation that does not mark the difference holds the two as one object; there is no third case, in
+which the distinction is present but unstated. Mathematics separates direction from magnitude in many places: polar
+coordinates, a unit vector and its norm, the projective line. A Cauchy variable written as a value x = tan θ on the real
+line is not among them. There one number is both where a reading is made and what is read, so the law of the turn is
+read as a law of amounts, and a mean is asked of it. This is a statement about that representation, not about anyone's
+intentions or results. Unmarked, the two cannot be told apart; marked, they separate exactly: the address is a point of
+the projective line, where its law has a median and its missing mean belongs to the chart (§4), and Theorem 6(a) shows
+that no payload moves it.
 
 **The rule, and a test.** The rule is this paper's, offered as a test: a Cauchy variable is a direction, a point of the projective line, a ratio [x : y] read in one
-chart, laid by a turn. In this construction it is never an amount. Its median and its quartiles are places on that line and mean what they
+chart, laid by a turn. It is never an amount. Its median and its quartiles are places on that line and mean what they
 say; it has no mean, since its tail makes the first moment diverge, and in this paper's terms none is wanted, since the coordinates of directions do not add. Two directions have no sum, only a composition, a
 turn followed by a turn, which in the chart is tangent addition (§2). Where a Cauchy appears beside an amount, the two
 are separate factors: the amount is the payload, and the Cauchy is where it lands. So for any Cauchy met in practice
