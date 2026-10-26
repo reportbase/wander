@@ -139,3 +139,46 @@ Cauchy, for every k and n.
 - **Q8.** Without the exchange (Gr(3, 7)) the corner is not the median: P(∏t ≤ 1) < ½. Kill: ≥ ½ − 4 SE.
 
 Exact counts: P(j of the k angles inside) by symbolic integration over the ordered φ's (sympy), for k = 2, 3, 4.
+
+### Run 2 (26 Oct; `runs/grs/grs2.py`, output `runs/grs/grs-run2.txt`, 70 s)
+
+Nothing killed.
+
+- **Q0 not killed.** ∫∫|cos x − cos y| over [0, π/2]² = 4 − π, E|a₁ − a₂| = 4(4 − π)/π², P(straddle) = π/4,
+  symbolically; the exact count for k = 2 gives the same.
+- **Q1 not killed.** The chart density is rotation invariant exactly at (2, 4), (3, 6), (4, 8), (3, 7) (the Jacobian as
+  det(D − X′B)^k·det(A + BX)^(−m)).
+- **Q2 not killed.** Exact counts of angles inside the corner against the Monte Carlo: every z within ±1.43.
+- **Q3 not killed.** Every count symmetric about k/2, exactly.
+- **Q4 not killed.** P(all k angles inside the corner):
+
+  | k | exact | ≈ |
+  |---|---|---|
+  | 1 | 1/2 | 0.500000 |
+  | 2 | 1/2 − π/8 | 0.107301 |
+  | 3 | (π − 3)/(4π) | 0.011268 |
+  | 4 | 19/256 − 3π/128 | 0.000588 |
+
+  The full laws of the number inside: k = 3 (0.0113, 0.4887, 0.4887, 0.0113); k = 4 (0.0006, 3π/64 = 0.1473,
+  109/128 − 3π/64 = 0.7043, 0.1473, 0.0006).
+- **Q5 not killed.** P(∏t ≤ 1) 0.50033, 0.49973, 0.49954, 0.50006 at k = 1 … 4 (|z| ≤ 0.92).
+- **Q6 not killed.** Every entry tested a standard Cauchy at (3, 6), (4, 8), (3, 7): KS p 0.052 to 0.970.
+- **Q7 not killed.** Var ln|det X| = 2.4710 (π²/4 = 2.4674), 3.2930 (π²/3 = 3.2899), 3.7581, 4.0747 at k = 1 … 4,
+  each about ±0.006; det X at k = 3 against the Cauchy KS p < 10⁻³⁰⁰.
+- **Q8 not killed.** Gr(3, 7): P(∏t ≤ 1) = 0.228, median ∏t = 2.97.
+
+## What run 2 says
+
+Run 1's split holds at every rank tried. The exchange, which exists when the plane is half the space (n = 2k), keeps
+the corner as the median of the whole (the product of the tangents) and keeps every count symmetric; without it
+(Gr(3, 7)) the corner falls to under a quarter. The exact Cauchy stays with directions: every chart entry is a standard
+Cauchy at every (k, n), by a one-line argument (an entry is a normal over the length of a normal's part off the other
+rows), while the plane's own number is never one. Its spread in levels grows with k and slows (+0.82, +0.47, +0.32).
+
+The near field shrinks faster than geometrically: ½, 0.107, 0.0113, 0.0006, each step a smaller fraction of the last
+(0.21, 0.105, 0.052), because the angles repel (∏|cos²θ_i − cos²θ_j|, the β = 1 Jacobi ensemble on the arcsine law).
+A reader holding a k-plane almost never has the whole plane inside the corner; the common case is about half its
+angles inside, as the exchange makes it on average. Every share is a rational plus a rational multiple of π (π enters
+through the arcsine law of each u = cos 2θ).
+
+Not shown here: a general formula for P_in(k); why the variance of ln|det X| grows as it does.
