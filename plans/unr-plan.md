@@ -306,3 +306,48 @@ The noise is where the reader looks from. Order alone was the earliest and exact
 than the water wiggled: Boston at 6 min, both stations at 18 min. Where it did not (San Francisco at 6 min), it made
 extra reports. Looking less often bought order back with no threshold: a rate is a choice of looks, not an amount. A
 threshold buys robustness at any rate, at the price of an invariance and of lateness.
+
+### Run 5: predictions (26 Oct; Tom: "yes", to predicting when order alone is exact), written before any data was fetched
+
+Run 4 found, unpredicted, that D (order only, M = 3, no threshold) reported exactly one turn between each pair of NOAA
+turns wherever the tide changed more per look than the water wiggled between looks. Run 5 predicts that from the record
+before the detector is run, and varies the rate of looking.
+
+**The signal.** NOAA CO-OPS one-minute water level (`product=one_minute_water_level`, MLLW, metric, gmt; preliminary, the
+only one-minute product), NOAA's one-minute harmonic predictions (`product=predictions`, `interval=1`), and NOAA's
+verified highs and lows (`product=high_low`), September 2026, at Honolulu (1612340, a small range), Seattle (9447130,
+strongly mixed), Los Angeles (9410660, a harbour with short waves), San Francisco (9414290) and Boston (8443970). A station
+without one-minute data or verified highs and lows for the month is dropped and said so; if fewer than three remain,
+August 2026 for all. Heights in whole millimetres; missing minutes left out. Source, licence (public domain), retrieval
+date and sha256s recorded; the data not committed.
+
+**Looks.** Every r minutes, r in {1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30}, from every offset 0 … r − 1. D is
+**exact at r** when, at every offset, it reports exactly one turn between each pair of consecutive NOAA turns (the stretch
+before the first NOAA turn and after the last left out).
+
+**The prediction, from the record alone** (computed and committed before D is run):
+- The noise between looks: s_r, the standard deviation of res(t + r) − res(t), res = observed − predicted (one-minute).
+- Each NOAA turn's sharpness: from its two legs (range R, duration τ), κ = (R/2)(π/τ)² for each, averaged; κ_min the
+  flattest turn's.
+- The flat zone: near a turn the tide changes κ·t·r a look at t minutes from it, under the noise s_r for |t| < s_r/(κ r),
+  2·s_r/(κ r²) looks. D's three opposite signs can be noise there. **r_low**: the smallest grid r with
+  2·s_r/(κ_min r²) ≤ 3.
+- The shortest leg: D reports a turn 2 to 3 looks after it, so a report reaches its own interval only while
+  3r < τ_min, the shortest time between consecutive NOAA turns. **r_high**: the largest grid r with 3r < τ_min.
+- Predicted: D exact at every grid r from r_low to r_high, and at no other.
+
+**Kill conditions.**
+- W1. At each station the smallest rate at which D is exact lies within a factor 2 of r_low (if r_low ≤ r_high). Killed
+  by a station outside it, or one never exact where the window is not empty.
+- W2. Where r_high < 30, the largest exact rate lies within a factor 2 of r_high; where r_high ≥ 30, D is exact at 30.
+- W3. The exact rates are one unbroken run on the grid at each station.
+- W4. Where the predicted window is empty, D is exact at no rate.
+
+**Side prediction: temperature.** NOAA air temperature (`product=air_temperature`, six-minute, metric) at Boston for
+September 2026 (San Francisco if Boston has none), in tenths of a degree C as integers; °F computed exactly as
+F × 100 = 18·C₁₀ + 3200 (not NOAA's separately rounded °F); K and °R likewise exact. Every look and every third.
+- T1. D's turns are the same in °C and °F (an increasing map).
+- T2. UA, a threshold of 0.5 in the numbers' own unit, changes from °C to °F in at least one of the two rates.
+- T3. UT, a threshold of 0.003 in levels on the absolute temperature, is the same in K and °R (a scale).
+- T4. UT, the same threshold on ln(reading + 50) in the units reported, changes from °C to °F in at least one rate (a
+  shift and a scale together: neither amounts nor levels keep it, only order).
