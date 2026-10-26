@@ -510,3 +510,28 @@ surge's, which order alone does not mind. What the two months do show is that ea
 stable, and that it lines up with the wiggle in the 10 to 60 minute band against how sharp the tide turns. The reader's
 setting, how often to look, is set by the part of the noise that lives at the scale of a few looks near a turn, which is
 not the fastest part and not the slowest.
+
+### Run 7: predictions (26 Oct; Tom: "yes", to predicting from the 10–60 minute band on a fresh month), written before the rule was fitted or any July data fetched
+
+**The predictor.** B = sd(band) / κ_med (minutes², roughly): band the residual (observed − predicted, one-minute)
+smoothed over 10 minutes less the same smoothed over 60 (running means, a window kept where 80% of its minutes are
+present), κ_med the median two-leg sharpness of the scored turns (as in runs 5–6, first interval left out, the 30-minute
+gap rule).
+
+**The rule, fitted on September and August (runs 5–6, seen, used only to fit):**
+- never exact (at any grid rate to 30 min) when B > B*, B* the geometric mean of the largest B among station-months
+  exact somewhere and the smallest among those exact nowhere;
+- otherwise exact from r_pred = a·B, a the geometric mean of (smallest exact rate)/B over the station-months exact
+  somewhere, taken to the grid rate nearest in log, and up to the largest grid rate with 3r < τ_min.
+B* and a are committed before July is fetched.
+
+**The test: July 2026**, the five stations of runs 5–6 and five not used before: The Battery, New York (8518750),
+Charleston (8665530), Key West (8724580), San Diego (9410170), Juneau (9452210). One-minute water level and predictions,
+verified highs and lows; a station without one-minute data or verified highs and lows for July is dropped and said so.
+Sources and sha256s recorded, not committed. Each station's B and predicted window committed before D is run.
+- Y1. The rule's class (never exact, or exact somewhere) is right at 9 or more of the station-months kept.
+- Y2. Where predicted and measured exact somewhere, the smallest measured exact rate is within a factor 2 of r_pred at
+  all but at most two.
+- Y3. The measured exact rates are one unbroken run at every station.
+- Y4. Across the stations kept, B and the smallest measured exact rate (never exact ranked last) have Spearman's rank
+  correlation 0.6 or more.
