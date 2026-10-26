@@ -2224,6 +2224,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "sharing over half its variance" 89–99.95% at N = 2k + 1 (C3), Λ against ∏ r² at the corner only when N − 1 = p + q
   (C4), r = 1 forced past p + q > N − 1 (C5), association an angle (C6), Bartlett's χ² the horizon's chart (C7).
   "Shared variance" reads the foot cos² θ, a direction, as an amount. A reading; not in OFS (R364).
+  `flr-plan.md` (+ `runs/flr/`, 26 Oct; SPN R521; Tom: "why do they think cauchy creates a mean?", then "yes"): Fieller's
+  theorem for a ratio of means, nothing killed: the set is the cone from home tangent to the confidence ellipse, one arc on
+  the circle of directions; the "exclusive" set the arc through the slope chart's ±∞ (a third of random cases); the whole
+  line exactly when home is in the ellipse, set by the distance from home alone; the delta interval 0.99 → 0 toward the
+  vertical, alike at every direction in the angle chart. A reading; not in OFS (R364).
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

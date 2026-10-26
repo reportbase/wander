@@ -79,3 +79,60 @@ Fieller's theorem is exact and Gleser and Hwang's proof right; nothing about any
 question is only what the ratio is: an amount, or a direction written in a chart that puts one direction at infinity.
 
 ## Runs
+
+### Run 1 (26 Oct; `runs/flr/flr.py`, output `runs/flr/flr-run1.txt`, 12 s)
+
+Nothing killed.
+
+- **F1 not killed.** On 10,000 cases × 3,600 directions, θ is in Fieller's set exactly when its line through home meets
+  the ellipse: no disagreement away from the boundary.
+- **F2 not killed.** Of 100,000 cases, 45,091 bounded, 35,246 exclusive, 19,663 whole; every one a single arc on the
+  circle of directions (or the whole circle), bounded exactly when the arc misses 90°, exclusive exactly when it holds 90°.
+- **F3 not killed.** The whole line exactly when home lies inside the ellipse, in all 100,000.
+- **F4 not killed.** V = I, |μ| = 3:
+
+  | true direction | Fieller | delta, slope chart | delta, angle chart |
+  |---|---|---|---|
+  | 0° | 0.9505 | 0.9885 | 0.9346 |
+  | 45° | 0.9507 | 0.9295 | 0.9349 |
+  | 80° | 0.9497 | 0.6884 | 0.9336 |
+  | 89° | 0.9490 | 0.2471 | 0.9328 |
+  | 90° (ρ = ±∞) | 0.9503 | 0 | 0.9335 |
+
+  Fieller 95% at every direction, the vertical included; the slope chart's delta interval falls from 0.99 to 0 as the
+  direction nears the vertical; the angle chart's delta interval is the same at every direction (0.933–0.935: below 95%
+  only by its own first-order error at |μ| = 3, which depends on the distance from home, not on the direction).
+- **F5 not killed.** |μ| = 2: the whole line 0.379–0.382 at every direction, against P(χ²₂(4) ≤ t²) = 0.3800; the
+  exclusive set 0.103, 0.326, 0.557, 0.568, 0.570 from 0° to 90°.
+
+## What Fieller says, followed to its conclusion
+
+1. **"The ratio of two means."** What is estimated is the direction of the point (μ_b, μ_a) from home, [μ_b : μ_a],
+   written in the chart ρ = tan θ, which puts the vertical direction at ±∞.
+2. **"Fieller's interval."** It is the cone from home tangent to the confidence ellipse (F1): the directions whose line
+   could pass through the point. On the circle of directions it is always one arc (F2).
+3. **"Sometimes the interval is two rays, an interval containing infinity."** That is the one arc holding the vertical
+   direction, seen in the slope chart: the chart cuts the circle at its horizon and lays the two halves at the line's two
+   ends (F2). Nothing strange happens to the arc. In random cases it is a third of all outcomes (35,246 of 100,000), and
+   with |μ| = 2 more than half near the vertical (F5): common, not a corner case.
+4. **"Sometimes the interval is the whole line: the data say nothing about the ratio."** Exactly when home lies inside
+   the ellipse (F3): the point may be at home, where there is no direction. Its rate depends on the distance from home
+   only, the same at every direction (F5). It is not a small denominator; a direction near the vertical (μ_b near 0) is
+   read as well as any other.
+5. **"The delta interval is a usable approximation when the denominator is well away from zero."** Its trouble is the
+   chart: at the same distance from home it covers 99%, 93%, 69%, 25% and 0% as the direction goes from 0° to 90° (F4);
+   the same first-order method in the angle chart covers alike at every direction. "Well away from zero" names the
+   chart's cut, not the data.
+6. **"Bounded confidence sets for a ratio must fail somewhere" (Gleser and Hwang).** A bounded set in the slope chart is
+   an arc that may not hold the horizon; a direction can be the vertical, so some set must hold it. True, and what it says
+   is that the ratio is a direction.
+7. **The conclusion, about the payload (how big the ratio is, and when the data cannot tell).** Read as addresses: the
+   data place a direction to within an arc; they fail only when the point cannot be told from home, which is set by its
+   distance from home in the noise's units. "How big" is the slope chart's word for "which direction"; "infinite" is one
+   direction among the rest.
+
+Classical throughout (Fieller; Gleser and Hwang; the cone, von Luxburg and Franz). The reading is ours: the ratio an
+address, the strange set an arc through the chart's horizon, and the honest limit distance from home. Not claimed:
+anything about studies that reported ratios (R364). The same chart answers Tom's question: averaging the slope of a
+direction treats the chart's ±∞ as an amount's end, which is why the Cauchy's mean is missing and Fieller's intervals
+look strange; on the circle of directions neither is.

@@ -1,0 +1,22 @@
+F1  10,000 cases × 3,600 directions: θ in Fieller's set ≠ its line meets the ellipse in 0 places (away from the boundary)
+F2  100,000 cases: 45091 bounded, 35246 exclusive, 19663 whole; not one arc, or a shape not matching where 90° lies: 0
+F3  the whole line ≠ home inside the ellipse (zᵀV⁻¹z ≤ t²) in 0 cases
+F4  V = I, |μ| = 3: coverage of the true direction
+     0°: Fieller 0.9505   delta in the slope chart 0.9885   delta in the angle chart 0.9346
+    45°: Fieller 0.9507   delta in the slope chart 0.9295   delta in the angle chart 0.9349
+    80°: Fieller 0.9497   delta in the slope chart 0.6884   delta in the angle chart 0.9336
+    89°: Fieller 0.9490   delta in the slope chart 0.2471   delta in the angle chart 0.9328
+    90°: Fieller 0.9503   delta in the slope chart 0.0000   delta in the angle chart 0.9335
+    (a) True, (b) True, (c) True (angle chart pooled 0.9339)
+F5   0°, |μ| = 2: whole line 0.3817 (noncentral χ²₂ 0.3800, z +1.08), exclusive 0.1033
+F5  45°, |μ| = 2: whole line 0.3817 (noncentral χ²₂ 0.3800, z +1.09), exclusive 0.3257
+F5  80°, |μ| = 2: whole line 0.3787 (noncentral χ²₂ 0.3800, z -0.83), exclusive 0.5569
+F5  89°, |μ| = 2: whole line 0.3811 (noncentral χ²₂ 0.3800, z +0.70), exclusive 0.5684
+F5  90°, |μ| = 2: whole line 0.3790 (noncentral χ²₂ 0.3800, z -0.66), exclusive 0.5703
+
+F1: not killed
+F2: not killed
+F3: not killed
+F4: not killed
+F5: not killed
+(12 s)
