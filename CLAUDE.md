@@ -2180,6 +2180,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   water level, September 2026, San Francisco and Boston, two datums; sha256s in the plan): the split held exactly (order
   unchanged by datum, feet and a cube; amounts keep the datum, levels keep the unit); order alone exact and earliest where
   the tide outruns its wiggles (Boston at 6 min, both at 18); V3 killed by Boston, V6 by my set-up, V7 by my reasoning.
+  Run 5 (R512), five stations' one-minute water level read every 1–30 min, the window of exact rates predicted from the
+  record first: right where the noise holds its direction (Honolulu, Los Angeles never exact, San Francisco from 20 min),
+  4–5 times too slow where it is new every minute (Seattle, Boston exact from 6 and 5); W2 killed by my set-up (a turn
+  before any look); °C to °F, only order keeps the turns.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

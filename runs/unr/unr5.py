@@ -120,24 +120,48 @@ def exact_at(x, tt, scored, r):
     return ok, bad
 
 
+def windows():
+    """r_low and r_high per station, read back from the committed prediction."""
+    out, cur = {}, None
+    for line in open("runs/unr/unr-run5-predict.txt"):
+        if "(" in line and line[0] != " " and "):" in line:
+            cur = line.split("(")[1].split(")")[0]
+        if line.strip().startswith("r_low"):
+            a, b = line.split(";")[0].replace("r_low", "").split(", r_high")
+            out[cur] = (None if a.strip() == "None" else int(a), None if b.strip() == "None" else int(b))
+    return out
+
+
 def run(d):
     print("UNR run 5: D (order only, M = 3) on one-minute water level, every r minutes from every offset.\n")
-    pred = {}
-    for line in open("runs/unr/unr-run5-predict.txt"):
-        pass
-    verdict = {"W1": True, "W2": True, "W3": True, "W4": True}
+    win = windows()
+    ok = {"W1": True, "W2": True, "W3": True, "W4": True}
     for st, name in STATIONS:
         x, p, tt, big, scored = load(d, st)
-        ex = []
-        print(f"{name} ({st}): {len(scored)} intervals scored")
+        exact = []
+        print(f"{name} ({st}): {len(scored)} intervals scored; predicted r_low {win[st][0]}, r_high {win[st][1]}")
         for r in GRID:
-            ok, bad = exact_at(x, tt, scored, r)
-            ex.append(ok == r)
-            print(f"  r {r:2d}: exact at {ok:2d} of {r:2d} offsets; intervals off "
-                  f"{dict(sorted(bad.items()))}")
-        pred[st] = ex
-        print()
-    return pred
+            good, bad = exact_at(x, tt, scored, r)
+            if good == r:
+                exact.append(r)
+            print(f"  r {r:2d}: exact at {good:2d} of {r:2d} offsets; intervals off by count {dict(sorted(bad.items()))}")
+        lo, hi = win[st]
+        empty = lo is None or hi is None or lo > hi
+        runs = sum(1 for i, r in enumerate(GRID) if r in exact and (i == 0 or GRID[i - 1] not in exact))
+        if empty:
+            ok["W4"] &= not exact
+        else:
+            if not exact or not (lo / 2 <= exact[0] <= lo * 2):
+                ok["W1"] = False
+            if hi < 30:
+                ok["W2"] &= bool(exact) and hi / 2 <= exact[-1] <= hi * 2
+            else:
+                ok["W2"] &= 30 in exact
+        ok["W3"] &= runs <= 1
+        print(f"  measured exact at {exact} ({runs} unbroken run{'s' if runs != 1 else ''})\n")
+    for k, v in ok.items():
+        print(f"{k} {'not killed' if v else 'KILLED'}")
+    print()
 
 
 def temperature(d):
@@ -153,7 +177,7 @@ def temperature(d):
     C = [c10.get(i) for i in range(n)]
     F = [None if v is None else 18 * v + 3200 for v in C]              # °F × 100, exact
     K = [None if v is None else 10 * v + 27315 for v in C]             # K × 100
-    R = [None if v is None else 18 * k for k in K]                     # °R × 1000
+    R = [None if k is None else 18 * k for k in K]                     # °R × 1000
     out = {}
     for rate in (1, 3):
         idx = [i for i in range(0, n, rate) if C[i] is not None]

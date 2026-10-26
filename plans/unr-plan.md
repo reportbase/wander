@@ -358,3 +358,69 @@ data for September 2026, so none is dropped. Los Angeles misses 7,421 of 43,200 
 an interval between consecutive NOAA turns is scored only if it and the interval before it hold no gap longer than 30
 minutes; shorter gaps are simply looks not received. s_r is taken over pairs of minutes both present. κ and τ come from
 NOAA's turns, unaffected. The counts of intervals scored are reported per station.
+
+### Run 5 (26 Oct; `runs/unr/unr5.py`, outputs `runs/unr/unr-run5-predict.txt`, committed before D was run, and `runs/unr/unr-run5.txt`)
+
+Data, retrieved 26 Oct 2026 from `https://api.tidesandcurrents.noaa.gov/api/prod/datagetter` (csv, gmt, metric, MLLW;
+one-minute water level and one-minute predictions fetched in four-day pieces and joined; air temperature six-minute,
+Boston). Public domain. Every station had one-minute data, so none was dropped; the gaps are in the amendment above. Not
+committed; sha256 of each joined file:
+
+| file | sha256 |
+|---|---|
+| `om_1612340.csv` | `0aaeb26262bb1757f25bd22a3f972213ef8e94ec787d5cd7ea5cf4e19a97904c` |
+| `pr_1612340.csv` | `9a15444641920501305ad6754ac6b2ab07253a5c6e93d70b7d1e81e9ad79407c` |
+| `hl_1612340.csv` | `77def9b5c6ba2b04a418e9a3b05db6851713a98c87a3d358b4eafd3c6ef990b1` |
+| `om_9447130.csv` | `b3a7a6d3a199a9158f7bb4305da0a6c004f422a69b485b478ac6b81765ca8301` |
+| `pr_9447130.csv` | `c0f607e2f6d878decf4f61f9c0c671903051072473b30bead1d1f2844578db4c` |
+| `hl_9447130.csv` | `631cd840032e688cf7df51ccb73248d84a100c0cc91e997d798a1d02f889898f` |
+| `om_9410660.csv` | `49f52e81a8e51cb4a59b6a40fcec9a73f930951bd287ab3d2d3288aa3adb6d8c` |
+| `pr_9410660.csv` | `ece7d6b84411f8a20697b121996ba95ad7da5a24aa0bb059bb312ad0b95d298c` |
+| `hl_9410660.csv` | `31960992ddd7a27f5ace3618bac7a1e30480d6035ef7a5c69ab0baee2e0008df` |
+| `om_9414290.csv` | `4b1357c28e4398073b04916851f1ff4bf86b9bd1b67bbfbfa9acae2433f52529` |
+| `pr_9414290.csv` | `b2adf82266ab44a167f25efe3aeb0c8b19dbac455c98043042c6c55e649d28dd` |
+| `hl_9414290.csv` | `4b03d2e8e04b13ae30558be7166db241a4fd02c3e6b655f27fb56e20184e1faf` |
+| `om_8443970.csv` | `ebe519765c1f6786da4c3d0a5c3794ea9f0856f8129f730690a24fce490b8f3e` |
+| `pr_8443970.csv` | `8deea187b55706fb1bc266d492fec654b786a240be3de8e8a1efc74175f2fdb9` |
+| `hl_8443970.csv` | `5dbe3aadc437163f43260ffceb5deb602ba9f52e4f826c76da719be5e11a1498` |
+| `at_8443970.csv` | `005aaa9f339c37c86fce78d2dde1cba6363dabe2bf0b63d63d1c507bdb6baa1d` |
+
+Predicted (from the record alone): Honolulu and Los Angeles exact at no rate, Seattle and San Francisco at 30 min only,
+Boston at 20, 24 and 30. Measured: Honolulu and Los Angeles at none; Seattle at 6 to 30; San Francisco at 20, 24, 30;
+Boston at 10 and 12.
+
+**W1 killed** by Seattle, exact from 6 min against r_low 30. **W2 killed** by Boston, not exact at 15 to 30. **W3 not
+killed**: the exact rates one unbroken run at every station. **W4 not killed**: Honolulu and Los Angeles exact at no rate
+(Los Angeles exact at 7 of 30 offsets at 30 min). San Francisco matched (20 against r_low 30, and 30).
+
+**T1–T4 not killed** (Boston air temperature, 7,184 looks; 190 order turns every 6 min, 119 every 18): D's turns the
+same in °C and °F; UA 0.5 changed; UT on K and °R the same; UT on reading + 50 changed, at both rates.
+
+One fix before the side prediction printed: my °R line named the wrong variable (a NameError); D's results came out the
+same on the rerun.
+
+### After run 5 (post hoc; `runs/unr/unr5-posthoc.py`, `runs/unr/unr5-posthoc.txt`)
+
+W2 by my set-up. Boston's slow-rate misses are all but one the interval after its first NOAA turn, a lower low 18
+minutes into the month (run 4's V6 again): at a slow rate no look falls before it, so D has no direction to turn from.
+My gap rule scored that interval because the stretch before the first turn had no gap. Left out (every station's
+first interval), Boston is exact at every rate from 5 to 30 min: W2 holds, but its smallest exact rate, 5 against r_low
+20, is a factor 4, so Boston too would kill W1. Seattle and San Francisco are unchanged by it (6 and 20).
+
+W1 by my model of the noise. Seattle's two-leg κ is right (a parabola fitted ±30 min at its flattest turn gives 0.0185
+against 0.0198), and the noise is in the water, not the predictions (second differences 34 mm observed, 0.7 predicted).
+What my rule got wrong is what noise does to order. The flat zone treated each look as a coin toss, but D reports a turn
+only after three steps the same way in a row. Noise that is new every minute (white) makes three falls in a row 1 time in
+24; Seattle's and Boston's s_r are nearly flat in r (19.7 to 25.9, 27.5 to 38.5), so their noise is close to white, and D
+was exact from 6 and 5 min. Noise
+that keeps its direction for minutes (a seiche, a harbour's slow wiggle) makes three in a row easily: San Francisco's,
+Honolulu's and Los Angeles's s_r roughly double from 1 to 30 min. So what fools order alone is how long the wiggle holds
+its direction, against the look, not how large it is.
+
+## What run 5 says
+
+Where the noise held its direction for several minutes, the flat-zone rule was right: Honolulu and Los Angeles never
+exact, San Francisco exact from 20 min, as predicted. Where the noise was new every minute (Seattle, Boston) it was too pessimistic, by a factor 4 to 5 in the rate,
+because order is not fooled by noise that doesn't keep a direction. The reader's one setting, how often to look, works by
+looking past the wiggle's own persistence: the right rate depends on how long the noise keeps its sign, not on its size.
+The temperature check repeats run 4's split on a shift and a scale together: only order keeps °C to °F.
