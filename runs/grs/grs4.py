@@ -56,12 +56,17 @@ def pin(k):
 # ---------------------------------------------------------------- the derivation's two integrals
 mp.mp.dps = 60
 # arcsine law on [−1, 1]: x = cos t, t uniform on [0, π]; on [0, 1]: x = (1 + cos t)/2
-lw = lambda x: -mp.log(1 - x * x) / 2
-I_full = mp.quad(lambda t: lw(mp.cos(t)), [0, mp.pi / 2, mp.pi]) / mp.pi
-I_half = mp.quad(lambda t: lw((1 + mp.cos(t)) / 2), [0, mp.pi / 2, mp.pi]) / mp.pi
+# ln w = −½ ln(1 − x²), with 1 − x² written so the endpoints do not round to ln 0 (the first launch did: +inf):
+# x = cos t gives sin²t; x = (1 + cos t)/2 = cos²(t/2) gives sin²(t/2)·(1 + cos²(t/2))
+I_full = mp.quad(lambda t: -mp.log(mp.sin(t)), [0, mp.pi / 2, mp.pi]) / mp.pi
+I_half = mp.quad(lambda t: -mp.log(mp.sin(t / 2)) - mp.log(1 + mp.cos(t / 2) ** 2) / 2, [0, mp.pi / 2, mp.pi]) / mp.pi
 ok_int = abs(I_full - mp.log(2)) < mp.mpf(10) ** -30 and abs(I_half - mp.log(1 + mp.sqrt(2))) < mp.mpf(10) ** -30
 say(f"∫ ln w dμ: [−1, 1] {mp.nstr(I_full, 25)} (ln 2 {mp.nstr(mp.log(2), 25)}); "
     f"[0, 1] {mp.nstr(I_half, 25)} (ln(1 + √2) {mp.nstr(mp.log(1 + mp.sqrt(2)), 25)}): {'as derived' if ok_int else 'NOT AS DERIVED'}")
+# the derivation uses only the difference, ln 2 − ln(1 + √2); checked apart from the plan's two values
+ok_diff = abs((I_half - I_full) - (mp.log(2) - mp.log(1 + mp.sqrt(2)))) < mp.mpf(10) ** -30
+say(f"  the difference [0, 1] − [−1, 1]: {mp.nstr(I_half - I_full, 25)} (ln 2 − ln(1 + √2) "
+    f"{mp.nstr(mp.log(2) - mp.log(1 + mp.sqrt(2)), 25)}): {'as used for b' if ok_diff else 'NOT AS USED'}")
 
 # ---------------------------------------------------------------- the Pfaffians
 y = {}
@@ -111,7 +116,8 @@ say(f"S3  a, b fixed: c = {mp.nstr(sol[0], 10)}, d = {mp.nstr(sol[1], 10)}, e = 
 
 say("")
 if not ok_int:
-    say("the derivation's integrals are not as written: S1–S3 void")
+    say("the plan's two integrals are not as written: by the plan's letter S1–S3 are void; "
+        f"the difference b uses is {'as used' if ok_diff else 'ALSO WRONG'}, so they are reported as run")
 for kk in ["S1", "S2", "S3"]:
     say(f"{kk}: {'not killed' if verdict[kk] else 'KILLED'}")
 say(f"({time.time() - T0:.0f} s)")
