@@ -1,0 +1,17 @@
+UNR run 2 (plans/unr-plan.md). 60 digits, ties |d| < 1e-40·|x|, N = 1000.
+
+ties in the unmapped streams: 143
+
+Flips changed (cases of 42)
+  x^3      U  0   M  0   Ta 42   Tr  0   E 28
+  sqrt x   U  0   M  0   Ta 36   Tr  0   E 15
+  e^x      U  0   M  0   Ta 42   Tr 37   E 30
+  ln(1+x)  U  0   M  0   Ta 36   Tr 36   E 14
+  k=1e-3   U  0   M  0   Ta  0   Tr  0   E  0
+  k=7      U  0   M  0   Ta  0   Tr  0   E  0
+  k=1e3    U  0   M  0   Ta  0   Tr  0   E  0
+  Q1′ not killed; Q2′ not killed; Q3′ not killed
+
+Q5′. U's flips attributed to the last turn before each
+  flips 511; off their bound 0; lone turns without exactly one flip 0
+  Q5′ not killed

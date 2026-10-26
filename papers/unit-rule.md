@@ -319,7 +319,9 @@ Same machine, same landmark logic; only the carry differs. Error in the corner's
 | bursts of 20 | **1.72%** | 23.41% | 2.56% |
 | bursts of 200 | **1.66%** | 11.24% | 2.51% |
 
-The unit rule is flat across burst length. The structural reason: **a carry that extrapolates is most wrong exactly at
+Tested exactly since (UNR, `plans/unr-plan.md`, 26 Oct): the unit rule's turns are unchanged by every strictly
+increasing change of what arrives, a trend rule's are not; each carry's turns move under exactly the maps its reference
+does not commute with. The unit rule is flat across burst length. The structural reason: **a carry that extrapolates is most wrong exactly at
 a turn**, the one place where "it went on as it was" is false by construction. The unit rule's carry grows wrong in
 size across a gap but asserts no direction, and direction is all a turn needs.
 

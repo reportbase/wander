@@ -129,3 +129,27 @@ looks), the same maps. Q4 and Q6 are not repeated: their numbers have been seen.
 - **Q3′.** Every rule's flips identical under kx, k = 10⁻³, 7, 10³, in every case. *Kill:* any differing flip.
 - **Q5′.** Every U flip has a turn before it and lies within that turn's bound n₂ − m₁; every turn whose received
   interval holds no other turn gets exactly one flip. *Kill:* one flip or one such turn off.
+
+### Run 2 (26 Oct; `runs/unr/unr2.py`, output `runs/unr/unr-run2.txt`)
+
+Nothing killed. 42 cases (7 streams × 6 patterns), 143 ties in the unmapped streams, each unchanged by every map.
+**Q1′:** U and M changed by none of x³, √x, eˣ, ln(1 + x). **Q2′:** Tr changed by neither power, by eˣ in 37 and
+ln(1 + x) in 36; Ta by x³ in 42 and √x in 36; E by x³ in 28 and √x in 15. **Q3′:** no rule changed by kx.
+**Q5′:** 511 flips, every one within its turn's bound n₂ − m₁, every lone turn flipped exactly once.
+
+## What UNR says
+
+A carry's turns are unchanged by exactly the changes of payload its reference commutes with. The unit rule and the
+median of three hold order only, so no strictly increasing change of what arrives moves a turn they report. The ratio
+trend holds the ratio's motion, so powers leave it and other maps move it. The additive trend and the blend hold
+amounts, so every non-affine map moves them. On noise-free streams the unit rule reports every turn once, with no false
+flip, within the two received intervals after it, whatever the gaps; the trend rules report inflections or the zeros of
+(ln x)″ instead, a fixed fraction of a cycle off (run 1 Q4).
+
+So the archived paper's 7–14× is not a matter of tuning. It is Theorem 6(c) in a stream: the turn is an order statistic of
+the arrivals, and a reference built from amounts answers a different question. The scale test (6(a)) does not separate the
+rules (every one is homogeneous); the order test does.
+
+Standing: exact on synthetic noise-free streams; the archived races were on recorded signals with noise and a threshold,
+which this does not test. Next, with its own predictions: noise and a threshold (the archived lateness, threshold over
+slope), and a recorded signal.

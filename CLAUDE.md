@@ -2169,6 +2169,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   log-linear bins); t-digest's family on the rank; known against unknown universe already a survey axis (T4 half killed).
   Then (SPN R494; Tom: "it seems like a writer thing not a reader thing"): a sketch bins amounts against a chosen unit, a
   writer's act; a reader's structure is indexed by direction. Never in the papers; `plans/onl-skt-note.md`.
+  `unr-plan.md` (+ `runs/unr/`, 26 Oct; SPN R509; Tom: "thats an interesting result considering our ofs paper.", then
+  "yes"): *The Unit Rule*'s landmark race tested against OFS. Five carries (unit rule, median of three, additive and ratio
+  trends, a blend) on noise-free streams under gaps; run 1 killed by floating-point ties, my bounds and my scoring window
+  (Q6 at keep 0.2 in its letter); run 2 at 60 digits nothing killed: each carry's turns unchanged by exactly the maps of
+  the payload its reference commutes with (U and M every increasing map, Tr powers, Ta and E neither; all kx), every U
+  flip within its turn's two received intervals. Theorem 6(c) in a stream. Noise and recorded signals next.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
