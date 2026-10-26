@@ -212,3 +212,46 @@ equilibrium on [−1, 1] is the arcsine law (capacity ½, energy ln 2), confined
   4 SE of every coefficient. Kill: any outside.
 - **R5.** −ln P_in(k)/k² → (ln 2)/2 = 0.3466: a fit a·k² + b·k + c to −ln P_in(k) over k = 10 … 24 (50-digit
   Pfaffians) gives a within 0.02 of 0.3466. Kill: outside.
+
+### Run 3 (26 Oct; `runs/grs/grs3.py`, output `runs/grs/grs-run3.txt`, 105 s)
+
+Nothing killed.
+
+- **R1 not killed.** The Pfaffian G_k(z) gives run 2's counts for k = 1 … 4, every coefficient symbolically.
+- **R2 not killed.** G_k(1) = 1 and z^k·G_k(1/z) = G_k(z) for k ≤ 8.
+- **R3 not killed.** P(all k angles inside the corner):
+
+  | k | P_in(k) | ≈ |
+  |---|---|---|
+  | 1 | 1/2 | 0.5 |
+  | 2 | 1/2 − π/8 | 0.107301 |
+  | 3 | 1/4 − 3/(4π) | 0.0112676 |
+  | 4 | 19/256 − 3π/128 | 5.877·10⁻⁴ |
+  | 5 | 17/1536 − 5/(144π) | 1.528·10⁻⁵ |
+  | 6 | 109/131072 − 555π/2097152 | 1.97·10⁻⁷ |
+  | 7 | 41/1310720 − 161/(1638400π) | 1.3·10⁻⁹ |
+  | 8 | (2529 − 805π)/2³² | 4.2·10⁻¹² |
+
+  Even k in ℚ + ℚπ, odd k in ℚ + ℚ/π, every k ≤ 8. The full laws of the count are in the output (k = 5: 367/768 for
+  two and for three inside; k = 6: 110805π/524288 for three inside).
+- **R4 not killed.** The formula against the Monte Carlo at k = 5 and 6: every z within ±1.80.
+- **R5 not killed.** 80-digit Pfaffians for k = 10 … 24 (checked against the symbolic values at k = 5 … 8 to 7·10⁻⁸³):
+  −ln P_in(k) ≈ a·k² + b·k + c with a = 0.346595, against (ln 2)/2 = 0.346574; b = 0.5337, c = −0.250.
+
+## What run 3 says
+
+The general formula is a ratio of two Pfaffians of elementary integrals. With φ = 2θ (uniform on [0, π]) and
+w(φ) = z below π/2 and 1 above,
+
+  Σ_j P(j of the k principal angles inside the corner)·z^j = Pf A_k(z) / Pf A_k(1),
+  A_k(z)_rs = ∫₀^π∫₀^π sign(ψ − φ)·w(φ)w(ψ)·cos rφ·cos sψ dφ dψ, r, s = 0 … k − 1,
+
+bordered by b_r = ∫₀^π w(φ)·cos rφ dφ for odd k (de Bruijn 1955 on the β = 1 Jacobi ensemble with the arcsine weight).
+The near field P_in(k) is its top coefficient: the Pfaffian on [0, π/2] over the Pfaffian on [0, π]. Every value is a
+rational plus a rational times π (even k) or 1/π (odd k), as each entry carries at most one π from the r = 0 row and its
+border. For large k, P_in(k) = 2^(−k²/2)·e^(−0.534k + 0.25 + …): the leading term is the log-gas's (the arcsine law confined
+from [−1, 1] to [0, 1], its energy rising by ln 2, at β = 1), confirmed to 6·10⁻⁵ in the coefficient; the linear and
+constant terms are measured, not derived.
+
+Classical: de Bruijn's identity, the Jacobi ensemble, the Coulomb-gas large deviation (Dean and Majumdar's method for
+the probability that all eigenvalues lie on one side). The reading as a reader's near field is ours.
