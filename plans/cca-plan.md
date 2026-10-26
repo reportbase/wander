@@ -101,3 +101,40 @@ right, and its null distribution is the right one. The question is only what the
 
 - **C1′.** In 60-digit arithmetic (mpmath), the same 1,000 kinds of transform (column scales 10⁻³ … 10³, shifts 10³)
   change no r_i by more than 10⁻⁴⁰. Kill: more.
+
+### Run 2 (26 Oct; `runs/cca/cca2.py`, output `runs/cca/cca-run2.txt`, 8 s)
+
+- **C1′ not killed.** In 60 digits the largest change in any r_i under the same transforms is 5·10⁻⁵⁵.
+
+## What CCA says, followed to its conclusion
+
+The classical chain, each step with what it says and what it computes:
+
+1. **"The canonical correlation is the strength of the linear association."** What is computed is the cosine of an angle
+   between two planes: the plane the x-data span and the plane the y-data span. No amount survives into it: every unit,
+   scale, shift and mixing within a set leaves it to 5·10⁻⁵⁵ (C1′), and with association present the sample law depends
+   only on the population's angles (C6). A strength with no amount in it is a direction.
+2. **"r² is the share of variance the pair has in common."** r² = cos² θ is the foot of the projection, a share of a unit
+   vector's length (OFS §4's h²), not a share of any variance: no variance enters it. With no association at all the
+   turn alone puts it where it falls: at N = 2k + 1 the first pair "shares more than half its variance" in 50%, 89%,
+   98.9% and 99.95% of noise datasets for k = 1 … 4 (C3).
+3. **"Under independence the r_i have a null distribution depending only on N, p, q."** That distribution is the uniform
+   Grassmannian's (C2): "no association" is the addresses laid uniformly, every plane as likely as every other. The
+   classical null is correct because it is the geometry's; it says nothing about the data's amounts.
+4. **"Wilks' Λ = ∏(1 − r_i²)."** Λ = ∏ sin² θ_i; set against ∏ r_i² = ∏ cos² θ_i it is the tangents' product, whose median
+   sits at the corner exactly when the plane can be swapped for its complement, N − 1 = p + q (C4), and nowhere else.
+5. **"Canonical correlations reach 1 when there are too few observations."** Two planes of dimensions p and q in a space
+   of N − 1 must share p + q − (N − 1) directions (C5), with or without association: a fact of dimension, not of data.
+6. **"With many observations, Bartlett's χ²."** In a large space random planes are nearly perpendicular (82.7° … 90° at
+   N = 2,001), at the horizon of the reading; (N − 1)·Σ r² ≈ (N − 1)·Σ cot² θ is the turn's chart there, χ²_pq (C7).
+   "No association" is "at the horizon"; association is a move toward home.
+7. **The conclusion, "the sets share r₁² of their variance."** What was read is where two planes sit, a direction in a
+   Grassmannian; no amount was read, and so no variance can be said to be shared. A claim in amounts (how much of y's
+   variance, in y's units, x carries) needs what CCA divides out: the within-set covariances and the coefficients, the
+   writer's amounts. Read as addresses the chain is exact from start to finish; the payload words are added at steps 1, 2
+   and 7 and are not computed at any step.
+
+A reading, as classical as its parts (Hotelling, Wilks, Bartlett, Björck and Golub, Anderson): the mathematics is right
+and the null law right; what the numbers are is a direction. Not claimed: anything about studies that used it, or about
+the field (R364). The redundancy index (Stewart and Love 1968), which averages squared correlations over the y-variables
+as listed, would reintroduce a basis, a count of variables chosen, and so a writing; noted, not tested.

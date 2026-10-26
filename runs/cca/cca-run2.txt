@@ -1,0 +1,4 @@
+C1′ 60 digits, 1,000 datasets, column scales 10⁻³ … 10³, shifts 10³: largest change in any r_i 5.08e-55
+
+C1′: not killed
+(8 s)

@@ -2217,6 +2217,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (entropy (ln 2)/2, the weight ln(1 + √2) − ln 2) after run 3's fit was seen, found to 4·10⁻⁷; a slip in one integral caught
   by the check (void by the letter, reported as run); 300 digits ample (the 1,400-digit route stopped).
   OFS Appendix A "Planes of directions" (R518) states it: the corner from the exchange, the Cauchy from directions.
+  `cca-plan.md` (+ `runs/cca/`, 26 Oct; SPN R520; Tom: "do a deeper dive into a classical result that sees it as payloads, and
+  follow their logic all the way to their conclusion … when it is actually addresses."): canonical correlation analysis
+  (Hotelling; Wilks' Λ; Bartlett's χ²) step by step. The r_i are cosines of principal angles between the two data planes:
+  every amount cancels (C1′, 60 digits; C1 killed by my float tolerance), the null the uniform Grassmannian (C2), noise
+  "sharing over half its variance" 89–99.95% at N = 2k + 1 (C3), Λ against ∏ r² at the corner only when N − 1 = p + q
+  (C4), r = 1 forced past p + q > N − 1 (C5), association an angle (C6), Bartlett's χ² the horizon's chart (C7).
+  "Shared variance" reads the foot cos² θ, a direction, as an amount. A reading; not in OFS (R364).
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
