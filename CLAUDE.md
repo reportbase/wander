@@ -300,6 +300,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Scale the world k; H for known length. `?K=&t=&kind=index|values|constant|length&H=<log10 H>&k=<log10 k>`; hook
   `window.__arraySweeps` (`turnIndex`, `centralIndex`, `bounds`, `middles`, `countIndex`, `shapeValues`, `read`, `set`,
   `state`). Not in the flying page.
+- `grassmannian.html`: **planes of directions** (26 Oct 2026, Tom: "do a demo about what the grassmannin is and what does it
+  say about ofs."; SPN R515–R519; GRS runs 1–4; OFS Appendix A "Planes of directions"), a standalone page like `one-read.html`,
+  plain canvas. A reading [h : v] is a point of Gr(1, 2); a uniform k-plane in n = 2k or 2k + 1 dimensions (Gaussian span,
+  the chart X = B·A⁻¹) meets the home plane at k principal angles, drawn as fingers on the quarter turn (teal inside the
+  corner, violet past it). Panels: one plane and its angles; the count inside against the exact law (de Bruijn's Pfaffian,
+  k ≤ 6, a seeded sample of 20,000 at a button); one entry of X against the standard Cauchy and det X (the diamond at
+  k = 2), and the tangents' product with its median at 1 only with the exchange (Gr(2, 5) ¼); ln P(all inside) against k,
+  exact to k = 8 and at 20 … 60, with 1.3066·2^(−k²/2)·(1 + 1/√2)^(−k); then what it says about OFS (the addresses the first
+  Grassmannian, the Cauchy the directions', the corner the exchange's, directions held together repel). `?k=1..6&n=odd&seed=`;
+  hook `window.__grassmann` (`sample`, `tangents`, `det`, `exactLaw`, `pin`, `pinAsym`, `lnPinAsym`, `lnPin`, `stats`, `set`,
+  `state`). Not in the flying page.
 - `online-corner.html`, `dynamic-array.html`: **online decisions** (25 Oct 2026, Tom: "could you create two demos, one for
   each, to show them in action with our framing."; SPN R488–R491; ONL), standalone pages, plain canvas, made for OFS
   Appendix A's "Online decisions" and the CS companion §6, both removed since (SPN R494; `plans/onl-skt-note.md`). `online-corner.html`: ski rental (buy once the rent paid is
@@ -740,7 +751,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, arrays on the sweeps, online decisions at the corner and a dynamic array, the focus is the corner, the crosshair is the corner, friend or foe, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, planes of directions, arrays on the sweeps, online decisions at the corner and a dynamic array, the focus is the corner, the crosshair is the corner, friend or foe, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
@@ -2202,6 +2213,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Run 3 (R517; Tom: "find the. general formula"): the count's law a ratio of Pfaffians (de Bruijn), Σ P_j z^j =
   Pf A_k(z)/Pf A_k(1); P_in(k) exact to k = 8 (ℚ + ℚπ even, ℚ + ℚ/π odd), 2^(−k²/2) to leading order (log-gas; fitted
   0.346595 against ln2/2), nothing killed.
+  Run 4 (R519; Tom: "2,1,3", the linear term): −ln P_in = (ln2/2)k² + ln(1 + 1/√2)·k − 0.2674 + 0.089/k, no ln k; b derived
+  (entropy (ln 2)/2, the weight ln(1 + √2) − ln 2) after run 3's fit was seen, found to 4·10⁻⁷; a slip in one integral caught
+  by the check (void by the letter, reported as run); 300 digits ample (the 1,400-digit route stopped).
   OFS Appendix A "Planes of directions" (R518) states it: the corner from the exchange, the Cauchy from directions.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
@@ -2730,6 +2744,10 @@ In short:
   60. **fpv-game.html:** a pair 1.25 apart about the focus told apart by the turn at K = 8, 12, 16, by log depth at K = 16 in
       ln 1.25 of its band (47% of places); the steady bot's foes in 60 s, the turn at least 0.8 of true depth's and over 4
       times log depth's and the standard buffer's, no friend shot; a real click on a foe in front scores.
+  61. **grassmannian.html:** the exact laws of the count inside the corner sum to 1 (k ≤ 6); 20,000 planes of Gr(3, 6) on
+      the exact law within 4 standard errors; the tangents' product ≤ 1 half the time in Gr(1, 2), Gr(2, 4), Gr(3, 6), a
+      quarter in Gr(2, 5); one entry inside |x| ≤ 1 half the time at every (k, n) tried; ln P(all inside) within 0.02 of
+      its curve at k = 8, 20, 60.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

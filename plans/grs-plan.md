@@ -255,3 +255,68 @@ constant terms are measured, not derived.
 
 Classical: de Bruijn's identity, the Jacobi ensemble, the Coulomb-gas large deviation (Dean and Majumdar's method for
 the probability that all eigenvalues lie on one side). The reading as a reader's near field is ours.
+
+### Run 4: predictions (26 Oct; Tom: "2,1,3", the third the linear term of the asymptotic), written before any run-4 script
+
+**Disclosed first:** the closed form for b below was derived *after* run 3's fitted b = 0.5337 was seen. Run 3's fit
+(k = 10 … 24, three terms, no ln k) cannot tell it apart from nearby numbers; run 4 is the test, at larger k and with the
+terms the expansion says are there.
+
+**The derivation.** In x = cos φ the angles are a β = 1 ensemble with weight w(x) = (1 − x²)^(−1/2), on [−1, 1] (the whole)
+or [0, 1] (all inside the corner). For such an ensemble the expansion of the log of the partition function is
+
+  ln Z_k = (β/2)·k²·E[μ] + k·[(1 − β/2)·S[μ] + ∫ ln w dμ] + O(ln k),
+
+with μ the equilibrium law (the arcsine law on the interval), E[μ] = ∫∫ ln|x − y| dμ dμ = ln(L/4) and S[μ] = −∫ μ ln μ =
+ln(πL/4) for an interval of length L. P_in = Z_k[0, 1]/Z_k[−1, 1], so, at β = 1:
+
+- k²: ½·(ln ¼ − ln ½) = −(ln 2)/2 (run 3's leading term);
+- k, entropy: ½·(ln(π/4) − ln(π/2)) = −(ln 2)/2;
+- k, weight: ∫ ln w dμ is ln 2 on [−1, 1] and ln(1 + √2) on [0, 1] (by the arcsine law there), a change of ln(1 + √2) − ln 2.
+
+So −ln P_in(k) = (ln 2/2)·k² + b·k + O(ln k), b = ln 2 − ln(1 + √2) + (ln 2)/2 … taken with the signs above,
+
+  **b = ln(1 + √2) − (ln 2)/2 = ln(1 + 1/√2) = 0.534800**,
+
+and the script computes the two integrals ∫ ln w dμ numerically as a check on this paragraph's arithmetic (kill if they
+are not ln 2 and ln(1 + √2) to 10⁻³⁰; then the predictions below are void, not tested).
+
+- **S1.** With a fixed at (ln 2)/2, a fit of −ln P_in(k) − (ln 2/2)·k² = b·k + d·ln k + c + e/k over k = 20 … 60 (Pfaffians
+  in closed-form entries at enough digits, checked by recomputing at more) gives |b − 0.534800| ≤ 0.002. Kill: outside.
+- **S2.** A free fit a·k² + b·k + d·ln k + c + e/k over the same k gives |a − (ln 2)/2| ≤ 10⁻⁴. Kill: outside.
+- **S3.** With a and b fixed at the derived values, the rest, c + d·ln k + e/k + f/k², fits k = 20 … 60 with an rms
+  residual under 10⁻⁶. Kill: over.
+
+Not claimed: d and c (the ln k and constant terms; edge exponents and the β = 1 constants enter there); these are
+reported as measured.
+
+### Run 4 (26 Oct; `runs/grs/grs4b.py`, output `runs/grs/grs-run4.txt`, values `runs/grs/grs4-values.txt`, 61 s)
+
+How it ran, first. The derivation's check failed in its letter: the arcsine law's ∫ ln w over [0, 1] is
+2 ln 2 − ln(1 + √2) = 0.50492, not ln(1 + √2) as written above (my arithmetic slip in the paragraph). The difference the
+derivation uses, ln 2 − ln(1 + √2) = −0.18823, is as used, to 25 digits, so b is unchanged; by the plan's letter S1–S3 are
+void, and they are reported as run. The check's first launch returned +inf (the quadrature reached ln 0 at an endpoint;
+1 − x² now written as sin²t), my set-up. The first route (`runs/grs/grs4.py`, one process, every k at 1,400 and 1,800
+digits) ran past an hour and was stopped; a test at 100 and 140 digits agreed at k = 60 to 2·10⁻¹⁴, so the second route
+uses 300 digits for k = 20 … 60, three processes, checked at 400 for k = 20, 40, 60 (no difference at 60 digits).
+
+- **S1 not killed.** With a = (ln 2)/2 fixed: b = 0.5347996, against ln(1 + 1/√2) = 0.5347999967, off 3.8·10⁻⁷ (the bound
+  was 0.002); d (ln k) = 4·10⁻⁵, c = −0.2676, e = 0.090; rms 2·10⁻⁸.
+- **S2 not killed.** Free: a = 0.346573594, off (ln 2)/2 by 4·10⁻⁹; b = 0.5347987.
+- **S3 not killed.** With a and b fixed: c = −0.26742, d = 3·10⁻⁶, e = 0.0887; rms 5·10⁻⁹.
+
+Post hoc: the ln k term is absent (d within 10⁻⁴ of 0 in every fit). In x = cos φ both ensembles have the arcsine
+weight's inverse-square-root edge at x = 1; the other edge is the same kind at x = −1 for the whole and a plain wall at
+x = 0 for the corner, and whatever those edges contribute in ln k cancels to this precision. Not predicted; measured, as are
+c ≈ −0.2674 and e ≈ 0.089.
+
+## What run 4 says
+
+  −ln P_in(k) = (ln 2/2)·k² + ln(1 + 1/√2)·k − 0.2674 + 0.089/k + …, no ln k term,
+
+so P_in(k) ≈ 1.3066·2^(−k²/2)·(1 + 1/√2)^(−k). Both leading terms are derived. The k² is the charges' energy (the arcsine
+law squeezed into half the room). The k has two parts, both costs: the entropy of half the room, (ln 2)/2 = 0.3466 an
+angle, and the weight, ln(1 + √2) − ln 2 = 0.1882 an angle (the arcsine weight (1 − x²)^(−1/2) is largest at the ends,
+and the corner's interval keeps only one end); together ln(1 + 1/√2) = 0.5348. The constant and the 1/k term are measured.
+Classical machinery (the β-ensemble's expansion). The derivation of b came after run 3's fit had been seen, and an
+arithmetic slip in it was caught by the check written beforehand.
