@@ -1,0 +1,49 @@
+C1  r_i under X ↦ XA + shift, Y ↦ YB + shift (scales 10⁻³ … 10³), 1,000 datasets: largest change 6.76e-09
+C2  k = 2, N = 5, within-set covariances identity:
+    0 of 2 with r ≥ 1/√2: exact 0.107301, drawn 0.106220, z -1.56
+    1 of 2 with r ≥ 1/√2: exact 0.785398, drawn 0.786520, z +1.22
+    2 of 2 with r ≥ 1/√2: exact 0.107301, drawn 0.107260, z -0.06
+C2  k = 2, N = 5, within-set covariances spread 10⁴:
+    0 of 2 with r ≥ 1/√2: exact 0.107301, drawn 0.107625, z +0.47
+    1 of 2 with r ≥ 1/√2: exact 0.785398, drawn 0.783940, z -1.59
+    2 of 2 with r ≥ 1/√2: exact 0.107301, drawn 0.108435, z +1.64
+C2  k = 3, N = 7, within-set covariances identity:
+    0 of 3 with r ≥ 1/√2: exact 0.011268, drawn 0.011300, z +0.14
+    1 of 3 with r ≥ 1/√2: exact 0.488732, drawn 0.488745, z +0.01
+    2 of 3 with r ≥ 1/√2: exact 0.488732, drawn 0.488675, z -0.05
+    3 of 3 with r ≥ 1/√2: exact 0.011268, drawn 0.011280, z +0.05
+C2  k = 3, N = 7, within-set covariances spread 10⁴:
+    0 of 3 with r ≥ 1/√2: exact 0.011268, drawn 0.011360, z +0.39
+    1 of 3 with r ≥ 1/√2: exact 0.488732, drawn 0.489165, z +0.39
+    2 of 3 with r ≥ 1/√2: exact 0.488732, drawn 0.488105, z -0.56
+    3 of 3 with r ≥ 1/√2: exact 0.011268, drawn 0.011370, z +0.43
+    C3  k = 1, N = 3: P(r₁² ≥ ½) under H₀: exact 0.500000, drawn 0.499370, z -0.56
+    C3  k = 2, N = 5: P(r₁² ≥ ½) under H₀: exact 0.892699, drawn 0.892975, z +0.40
+    C3  k = 3, N = 7: P(r₁² ≥ ½) under H₀: exact 0.988732, drawn 0.988600, z -0.56
+    C3  k = 4, N = 9: P(r₁² ≥ ½) under H₀: exact 0.999412, drawn 0.999480, z +1.25
+    C4  N − 1 = 2k = 2: P(Λ ≤ ∏r²): exact 0.500000, drawn 0.500305, z +0.27
+    C4  N − 1 = 2k = 4: P(Λ ≤ ∏r²): exact 0.500000, drawn 0.499095, z -0.81
+    C4  N − 1 = 2k = 6: P(Λ ≤ ∏r²): exact 0.500000, drawn 0.497895, z -1.88
+    C4  N − 1 = 2k = 8: P(Λ ≤ ∏r²): exact 0.500000, drawn 0.500970, z +0.87
+    C4  N − 1 = 2k + 1 = 5: P(Λ ≤ ∏r²): exact 0.250000, drawn 0.250060, z +0.06
+    C4  N − 1 = 7: P(Λ ≤ ∏r²) drawn 0.22673 against run 2's 0.228, z -1.25
+C5  N = 6, p = 3, q = 4: r_i = 1 exactly in 2 places in 1.0000 of datasets (largest r ≠ 1 kept: 0.9971)
+C5  N = 6, p = 3, q = 4 with association: r_i = 1 exactly in 2 places in 1.0000 of datasets (largest r ≠ 1 kept: 0.9990)
+C5  N = 5, p = 3, q = 3: r_i = 1 exactly in 2 places in 1.0000 of datasets (largest r ≠ 1 kept: 0.9952)
+C5  N = 5, p = 3, q = 3 with association: r_i = 1 exactly in 2 places in 1.0000 of datasets (largest r ≠ 1 kept: 0.9976)
+C5  N = 10, p = 5, q = 6: r_i = 1 exactly in 2 places in 1.0000 of datasets (largest r ≠ 1 kept: 0.9986)
+C5  N = 10, p = 5, q = 6 with association: r_i = 1 exactly in 2 places in 1.0000 of datasets (largest r ≠ 1 kept: 0.9998)
+C5  N = 8, p = 4, q = 4: r_i = 1 exactly in 1 places in 1.0000 of datasets (largest r ≠ 1 kept: 0.9999)
+C5  N = 8, p = 4, q = 4 with association: r_i = 1 exactly in 1 places in 1.0000 of datasets (largest r ≠ 1 kept: 1.0000)
+C6  ρ = (0.8, 0.3), N = 30: two different (Σ₁₁, Σ₂₂), KS on r₁ p = 0.957, on r₂ p = 0.444; against ρ = (0.6, 0.3), KS on r₁ p = 0.0e+00
+    median r₁ 0.8223 and 0.8222 (ρ₁ = 0.8); 0.6549 (ρ₁ = 0.6)
+C7  N = 2001, p = 3, q = 4: the angles sit at 82.7° … 90.0° (median 87.91°); (N − 1)·Σ r² against χ²₁₂, KS p = 0.701, mean 11.954 (12)
+
+C1: KILLED
+C2: not killed
+C3: not killed
+C4: not killed
+C5: not killed
+C6: not killed
+C7: not killed
+(37 s)
