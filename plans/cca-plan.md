@@ -78,3 +78,26 @@ Nothing about any study that used canonical correlation, and nothing about the f
 right, and its null distribution is the right one. The question is only what the numbers are: amounts or directions.
 
 ## Runs
+
+### Run 1 (26 Oct; `runs/cca/cca.py`, output `runs/cca/cca-run1.txt`, 37 s)
+
+- **C1 killed, by my set-up.** The largest change in any r_i under X ↦ XA + shift, Y ↦ YB + shift was 6.8·10⁻⁹, over my
+  10⁻⁹: the transforms had column scales from 10⁻³ to 10³ and shifts of 10³, so double precision loses up to about
+  10⁻¹⁶ times their condition. Not a change in the r_i; a test of the arithmetic. C1′ below.
+- **C2 not killed.** With no association and N = 2k + 1, the count of r_i ≥ 1/√2 follows the uniform Grassmannian's
+  exact law at k = 2 and 3, the same with identity covariances and with eigenvalues spread over 10⁴ (every |z| < 1.7).
+- **C3 not killed.** With no association, P(r₁² ≥ ½) is 0.4994, 0.8930, 0.9886, 0.99948 for k = 1 … 4 (N = 3, 5, 7, 9),
+  against 1 − P(none inside) = ½, 0.8927, 0.98873, 0.99941. Seven observations of three and three noise variables report a
+  first pair "sharing more than half its variance" 98.9% of the time.
+- **C4 not killed.** P(Λ ≤ ∏ r²) = 0.5003, 0.4991, 0.4979, 0.5010 for N − 1 = 2, 4, 6, 8 (the exchange); 0.2501 for
+  N − 1 = 5, k = 2 (Gr(2, 5)'s ¼); 0.2267 for N − 1 = 7, k = 3 (run 2's 0.228, itself a Monte Carlo value).
+- **C5 not killed.** p + q − (N − 1) of the r_i are 1 in every dataset, with or without association, in all four shapes.
+- **C6 not killed.** With ρ = (0.8, 0.3), identity and spread covariances give one law (KS p 0.957 on r₁, 0.444 on r₂;
+  medians 0.8223 and 0.8222); ρ₁ = 0.6 another (p < 10⁻³⁰⁰, median 0.6549).
+- **C7 not killed.** At N = 2,001 the angles sit at 82.7° … 90.0°, median 87.9°: random planes in a large space are
+  nearly perpendicular, at the horizon of the reading; (N − 1)·Σ r² against χ²₁₂ KS p 0.701, mean 11.954.
+
+### C1′: predictions (written before the run-2 script)
+
+- **C1′.** In 60-digit arithmetic (mpmath), the same 1,000 kinds of transform (column scales 10⁻³ … 10³, shifts 10³)
+  change no r_i by more than 10⁻⁴⁰. Kill: more.
