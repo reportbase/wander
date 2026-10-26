@@ -1,0 +1,43 @@
+UNR run 3 (plans/unr-plan.md). M = 3; T in levels [0.01, 0.03]; T_a in amounts [0.02, 0.06]; sigma [0.0, 0.002, 0.005].
+
+R1–R2. Turns changed by a map (cases of 126: streams × patterns × noise levels)
+  map               D   UT 0.01   UT 0.03   UA 0.02   UA 0.06
+  x^3               0       126       126       126       126
+  sqrt x            0       126       126       126       126
+  e^x               0       125       126       126       126
+  ln(1+x)           0       126       126       126       126
+  k=1e-3            0         0         0       126       126
+  k=7               0         0         0       126       126
+  k=1e3             0         0         0       126       126
+  R1 not killed; R2 not killed
+
+R3. UT on S1, no noise, every look: lateness against [sqrt(2T/kappa) - 1, sqrt(4T/kappa) + 1]
+  T 0.01: maxs lateness 9.00–9.00 looks, bound 6.80–12.03
+  T 0.01: mins lateness 5.00–5.00 looks, bound 3.50–7.37
+  T 0.01: turns 40 of 40, outside the bound 0
+  T 0.03: maxs lateness 17.00–17.00 looks, bound 12.50–20.10
+  T 0.03: mins lateness 8.00–8.00 looks, bound 6.80–12.03
+  T 0.03: turns 40 of 40, outside the bound 0
+  R3 not killed
+
+R4. False turns (no true turn since the turn before), per detector, summed over streams and patterns;
+    and the mean lateness of the turns that are not false, in looks
+  sigma 0.0:
+    D        turns   1983  false      0  mean lateness    7.40
+    UT 0.01  turns   1936  false     12  mean lateness   11.42
+    UT 0.03  turns   1908  false     14  mean lateness   18.32
+    UA 0.02  turns   1942  false     11  mean lateness   10.65
+    UA 0.06  turns   1928  false     14  mean lateness   16.69
+  sigma 0.002:
+    D        turns   2029  false    101  mean lateness   10.26
+    UT 0.01  turns   1956  false     12  mean lateness   10.72
+    UT 0.03  turns   1916  false     14  mean lateness   17.83
+    UA 0.02  turns   2074  false    121  mean lateness    9.63
+    UA 0.06  turns   1936  false     13  mean lateness   16.25
+  sigma 0.005:
+    D        turns   2324  false    456  mean lateness   13.04
+    UT 0.01  turns   5706  false   3779  mean lateness    8.34
+    UT 0.03  turns   1934  false     14  mean lateness   16.69
+    UA 0.02  turns  10639  false   8680  mean lateness    7.54
+    UA 0.06  turns   2028  false    100  mean lateness   14.44
+  R4 KILLED

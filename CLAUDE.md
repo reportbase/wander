@@ -1010,6 +1010,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   before 24 Oct to OFS §11.x mean §12.x now); Appendix A "Where the geometry already appears" (the classical
   confirmations, one entry each), Appendix B the engineering list, Appendix C notation. New classical connections go to
   Appendix A, not the body.
+  `unit-rule.md` (26 Oct 2026, SPN R508; Tom: "lets clean it up with our new framing from ofs.") restates the archived
+  *The Unit Rule* (21 Aug) in OFS's frame, the archive file untouched: one slot holding in order, the hold and the arrival
+  the direction [hold : arrival], the levels one step repeated, odd K to name stillness, the corner a crossing (no
+  "fulcrum"), one corner then plain levels, the record a projection, two checksums; the races and the landmark machine
+  quoted as measured there, not rerun; its §0 lists what was restated and dropped. Where it and OFS differ, OFS stands.
   `parallax.md` (12 Oct 2026, Tom: "put it in a parallax paper and lets iterate there"; SPN R219) is the working paper on
   parallax, a calibration case like `inverse-square.md`: what is known already (triangulation, the inscribed angle,
   strength of figure, stereo's d² error, stellar parallax), the pair (half-baseline, distance) with γ/2 its sweep angle and
@@ -2164,6 +2169,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   log-linear bins); t-digest's family on the rank; known against unknown universe already a survey axis (T4 half killed).
   Then (SPN R494; Tom: "it seems like a writer thing not a reader thing"): a sketch bins amounts against a chosen unit, a
   writer's act; a reader's structure is indexed by direction. Never in the papers; `plans/onl-skt-note.md`.
+  `unr-plan.md` (+ `runs/unr/`, 26 Oct; SPN R509; Tom: "thats an interesting result considering our ofs paper.", then
+  "yes"): *The Unit Rule*'s landmark race tested against OFS. Five carries (unit rule, median of three, additive and ratio
+  trends, a blend) on noise-free streams under gaps; run 1 killed by floating-point ties, my bounds and my scoring window
+  (Q6 at keep 0.2 in its letter); run 2 at 60 digits nothing killed: each carry's turns unchanged by exactly the maps of
+  the payload its reference commutes with (U and M every increasing map, Tr powers, Ta and E neither; all kx), every U
+  flip within its turn's two received intervals. Theorem 6(c) in a stream. Run 3 (R510), noise and a threshold: an order-only
+  debounce keeps every increasing map with noise and makes false turns as noise grows; a threshold in levels keeps kx
+  only, one in amounts neither; R4 killed by my false-turn count (cumulatively none at T ≥ 5σ). Recorded signals next.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
