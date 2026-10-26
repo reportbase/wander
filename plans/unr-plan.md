@@ -351,3 +351,10 @@ F × 100 = 18·C₁₀ + 3200 (not NOAA's separately rounded °F); K and °R lik
 - T3. UT, a threshold of 0.003 in levels on the absolute temperature, is the same in K and °R (a scale).
 - T4. UT, the same threshold on ln(reading + 50) in the units reported, changes from °C to °F in at least one rate (a
   shift and a scale together: neither amounts nor levels keep it, only order).
+
+**Amendment, written after the fetch and before any number below was computed.** All five stations have one-minute
+data for September 2026, so none is dropped. Los Angeles misses 7,421 of 43,200 minutes, many in runs of hours; the others
+7 to 87, the longest 68 minutes. A gap of hours hides whole turns, so D could not be exact there at any rate. The rule:
+an interval between consecutive NOAA turns is scored only if it and the interval before it hold no gap longer than 30
+minutes; shorter gaps are simply looks not received. s_r is taken over pairs of minutes both present. κ and τ come from
+NOAA's turns, unaffected. The counts of intervals scored are reported per station.
