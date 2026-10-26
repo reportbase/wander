@@ -153,3 +153,29 @@ rules (every one is homogeneous); the order test does.
 Standing: exact on synthetic noise-free streams; the archived races were on recorded signals with noise and a threshold,
 which this does not test. Next, with its own predictions: noise and a threshold (the archived lateness, threshold over
 slope), and a recorded signal.
+
+### Run 3: predictions (26 Oct; Tom: "proceed"), written before run 3
+
+Noise, and a threshold to declare a turn. A threshold is a size, so it brings an amount back into the reader; OFS says
+which maps of the payload each kind of threshold keeps. Three turn detectors, each holding one value and a direction bit:
+- **D** (order only): a turn when the sign of arrival − hold has been opposite to the direction for m = 3 received looks
+  running; the hold is the last arrival (the unit rule).
+- **UT** (a threshold in levels): the hold moves to the arrival when |ln x − ln hold| > T; a turn when it moves against
+  the direction bit. T = 0.01, 0.03.
+- **UA** (a threshold in amounts): the same with |x − hold| > T_a, T_a = 0.02, 0.06 (the same sizes on S1's scale, x ≈ 2).
+Streams S1–S3 and S4.0–S4.3; patterns as before. Noise multiplies each sample by e^(σz), z standard normal, seeded,
+σ = 0, 0.002, 0.005; the maps act on the noisy samples. Turns are matched to the last true turn before them, as Q5′.
+
+- **R1.** D's turns are unchanged by x³, √x, eˣ, ln(1 + x) and kx, with and without noise, in every case (60 digits).
+  *Kill:* any change.
+- **R2.** UT's turns are unchanged by kx in every case, and changed by x³ or √x in at least one; UA's are changed by kx
+  in at least one. *Kill:* any clause off. (With a threshold, the scale test separates levels from amounts (6(a)), and
+  the order test still separates order from both (6(c)).)
+- **R3.** Without noise and with every look received, UT's lateness at each turn of S1 lies between
+  √(2T/κ) − 1 and √(4T/κ) + 1 looks, κ = |(ln x)″| at the turn: the hold sits within T of the extreme when it turns, and
+  the arrival must fall T below the hold. *Kill:* a turn outside.
+- **R4.** With noise, UT makes no false turn (a turn with no true turn since its last one) at T ≥ 8σ, on every stream
+  and pattern; at T = 2σ (T = 0.01, σ = 0.005) it makes false turns. *Kill:* either clause off. (A false flip needs the
+  noise of two looks, sd σ√2, to pass T: about e^(−T²/4σ²), 10⁻⁷ at 8σ.)
+
+Not predicted, measured: the mean lateness of D, UT and UA under noise and gaps.
