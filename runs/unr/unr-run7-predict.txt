@@ -1,0 +1,32 @@
+UNR run 7, July 2026 predicted from its own record with B* = 210.874, a = 0.101813 (D not run).
+
+Honolulu (1612340): 112 intervals scored; band 4.54 mm, κ_med 0.0104, B 437.0, τ_min 132
+  predicted exact at []
+
+Seattle (9447130): 118 intervals scored; band 3.02 mm, κ_med 0.0727, B 41.6, τ_min 228
+  predicted exact at [4, 5, 6, 8, 10, 12, 15, 20, 24, 30]
+
+Los Angeles (9410660): 100 intervals scored; band 14.20 mm, κ_med 0.0317, B 447.9, τ_min 186
+  predicted exact at []
+
+San Francisco (9414290): 118 intervals scored; band 7.13 mm, κ_med 0.0389, B 183.0, τ_min 228
+  predicted exact at [20, 24, 30]
+
+Boston (8443970): 118 intervals scored; band 8.16 mm, κ_med 0.0952, B 85.7, τ_min 342
+  predicted exact at [8, 10, 12, 15, 20, 24, 30]
+
+The Battery (8518750): 108 intervals scored; band 9.24 mm, κ_med 0.0457, B 202.1, τ_min 312
+  predicted exact at [20, 24, 30]
+
+Charleston (8665530): 118 intervals scored; band 5.63 mm, κ_med 0.0527, B 106.8, τ_min 318
+  predicted exact at [10, 12, 15, 20, 24, 30]
+
+Key West (8724580): 118 intervals scored; band 4.32 mm, κ_med 0.0134, B 322.7, τ_min 150
+  predicted exact at []
+
+San Diego (9410170): 118 intervals scored; band 12.72 mm, κ_med 0.0378, B 337.0, τ_min 216
+  predicted exact at []
+
+Juneau (9452210): 118 intervals scored; band 5.23 mm, κ_med 0.1427, B 36.7, τ_min 306
+  predicted exact at [4, 5, 6, 8, 10, 12, 15, 20, 24, 30]
+
