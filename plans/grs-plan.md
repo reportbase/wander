@@ -182,3 +182,33 @@ angles inside, as the exchange makes it on average. Every share is a rational pl
 through the arcsine law of each u = cos 2θ).
 
 Not shown here: a general formula for P_in(k); why the variance of ln|det X| grows as it does.
+
+### Run 3: predictions (26 Oct; Tom: "find the. general formula"), written before any run-3 script
+
+**The formula, derived before the run.** With φ_i = 2θ_i uniform on [0, π] and the density ∏_{i<j}|cos φ_i − cos φ_j|, order
+the φ's; the product is then ± a Vandermonde determinant det[c_r(cos φ_j)] for any polynomial basis c_r of degree r, and
+Chebyshev's T_r(cos φ) = cos rφ is the natural one. Mark each angle inside the corner (φ < π/2) with a weight z. De
+Bruijn's identity (1955) turns the ordered k-fold integral of a determinant into a Pfaffian, so the generating function
+of the number j of angles inside the corner is
+
+  G_k(z) = Σ_j P(j inside)·z^j = Pf A_k(z) / Pf A_k(1),
+
+  A_k(z)_{rs} = ∫₀^π ∫₀^π sign(ψ − φ)·w(φ)·w(ψ)·cos rφ·cos sψ dφ dψ, r, s = 0 … k − 1, w = z on [0, π/2), 1 on [π/2, π],
+
+for even k; for odd k, A_k is bordered by the column b_r = ∫₀^π w(φ)·cos rφ dφ (and −b_r as the row), a (k + 1) × (k + 1)
+Pfaffian. Every entry is elementary (sines and cosines of multiples of π/2, polynomials in z, and π from the r = 0 row).
+P_in(k) is the coefficient of z^k: the same Pfaffian with w = 1[φ < π/2], i.e. A on [0, π/2]² over A on [0, π]².
+
+The leading asymptotic, by the log-gas (Coulomb gas) picture: for large k the arcsine weight is lower order, the charges'
+equilibrium on [−1, 1] is the arcsine law (capacity ½, energy ln 2), confined to [0, 1] it is the arcsine law there
+(capacity ¼, energy ln 4), and β = 1, so P_in(k) = exp(−(ln 2/2)·k² + O(k)) = 2^(−k²/2 + O(k)).
+
+- **R1.** G_k(z) from the Pfaffian reproduces run 2's exact counts for k = 1 … 4, every coefficient symbolically. Kill:
+  any differs.
+- **R2.** G_k(1) = 1 and G_k(z) = z^k·G_k(1/z) (the exchange) for k ≤ 8, symbolically. Kill: either fails.
+- **R3.** P_in(k) lies in ℚ + ℚ·π for even k and ℚ + ℚ/π for odd k, for k ≤ 8 (as at k ≤ 4). Kill: any other form
+  (a π², 1/π² or mixed term surviving).
+- **R4.** Brute-force check of the formula at k = 5 and 6: the Monte Carlo of the Grassmannian (N = 10⁶, seeded) within
+  4 SE of every coefficient. Kill: any outside.
+- **R5.** −ln P_in(k)/k² → (ln 2)/2 = 0.3466: a fit a·k² + b·k + c to −ln P_in(k) over k = 10 … 24 (50-digit
+  Pfaffians) gives a within 0.02 of 0.3466. Kill: outside.
