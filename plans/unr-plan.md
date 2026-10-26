@@ -424,3 +424,33 @@ exact, San Francisco exact from 20 min, as predicted. Where the noise was new ev
 because order is not fooled by noise that doesn't keep a direction. The reader's one setting, how often to look, works by
 looking past the wiggle's own persistence: the right rate depends on how long the noise keeps its sign, not on its size.
 The temperature check repeats run 4's split on a shift and a scale together: only order keeps °C to °F.
+
+### Run 6: predictions (26 Oct; Tom: "yes", to a rule from the noise's persistence, calibrated on September and tested on August), written before the rule was calibrated or any August data fetched
+
+Run 5 found, after the fact, that what fools D is noise that keeps its direction for three looks, not noise that is
+large. Run 6 states that as a rule with one constant, fits the constant on run 5's September record (seen, so used only
+to fit), and predicts August 2026 at the same five stations from August's own record before D is run on it.
+
+**The rule.** At a rate r (looks every r minutes, from every offset):
+- res = observed − predicted (one-minute, mm); its increments between consecutive looks present.
+- q_r: the share of places where three consecutive increments have one sign (zeros break a run), averaged over offsets.
+  It is 1/12 for noise new at every look; noise that keeps its direction raises it.
+- For each scored NOAA turn i (its interval and the one before free of gaps over 30 min; **every station's first
+  interval left out**, run 5's set-up kill): κ_i from its two legs as in run 5, s_r as in run 5, and its flat zone
+  Z_i = min(2·s_r/(κ_i r²), τ_i/r) looks, τ_i the interval it reports into.
+- E_r = q_r · Σ_i Z_i, the expected number of false three-runs near turns in the month.
+- **D exact at r** predicted when E_r < c and 3r < τ_min.
+
+**Calibrating c** (on September only): for each station and grid rate, E_r and run 5's measured exactness with the first
+interval left out (Boston 5–30, Seattle 6–30, San Francisco 20–30, Honolulu and Los Angeles none). If the exact and
+inexact (station, r) pairs are separated by E_r, c is the geometric mean of the largest E_r among the exact and the
+smallest among the inexact; if not, the c (from the observed E_r values' geometric midpoints) misclassifying fewest pairs,
+ties to the smaller c. c and its misclassifications are committed before August is fetched.
+
+**The August test.** NOAA one-minute water level and one-minute predictions, and verified highs and lows, 1–31 August
+2026, the same five stations (a station without verified highs and lows for August is dropped and said so). Sources and
+sha256s recorded, not committed. The predicted exact rates per station committed before D is run.
+- X1. At each station, the smallest exact rate measured lies within a factor 2 of the smallest predicted; a station
+  predicted never exact is exact at no rate, and one predicted exact somewhere is exact somewhere.
+- X2. At each station, the predicted and measured exactness agree at 11 or more of the 13 grid rates.
+- X3. The measured exact rates are one unbroken run at each station (W3 again).
