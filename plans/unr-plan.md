@@ -535,3 +535,76 @@ Sources and sha256s recorded, not committed. Each station's B and predicted wind
 - Y3. The measured exact rates are one unbroken run at every station.
 - Y4. Across the stations kept, B and the smallest measured exact rate (never exact ranked last) have Spearman's rank
   correlation 0.6 or more.
+
+### Run 7 (26 Oct; `runs/unr/unr7.py`, outputs `runs/unr/unr-run7-fit.txt` and `runs/unr/unr-run7-predict.txt`, each committed before the next step, and `runs/unr/unr-run7.txt`)
+
+Fit (September and August, runs 5–6's records): the classes separated, the largest B exact somewhere 168.1 (San Francisco,
+August), the smallest exact nowhere 264.5 (Los Angeles, August), so **B* = 210.874**; **a = 0.101813**.
+
+July 2026, retrieved 26 Oct from the same API (one-minute in four-day pieces, joined). Every station had one-minute data
+and verified highs and lows, none dropped. Public domain, not committed:
+
+| file | sha256 |
+|---|---|
+| `om_1612340.csv` (Jul) | `46cf4b333d7089543e74fbbe3638b298079657d3883c054c7a56e922ba4e8318` |
+| `pr_1612340.csv` (Jul) | `014e7f0df28ee100e3f7b340d9e067c134e51378f5cd0bb6e8a0f7ac56f0e455` |
+| `hl_1612340.csv` (Jul) | `13faedcc8235c14f906a2067ece904b8a612c1073a5d188a764a85878686e217` |
+| `om_9447130.csv` (Jul) | `b5c6b46072bd20a7c6dbc689db27d564cea03ce60f5d2f0fe3a7a6514d925e19` |
+| `pr_9447130.csv` (Jul) | `aa9043307f6086c070fe80769498478371577a6fb02e15b1bfa86eda115a043b` |
+| `hl_9447130.csv` (Jul) | `b33554ba83312861b6d4f935eb34f685bd56a1f0310baea3b550fe6f99f06ed4` |
+| `om_9410660.csv` (Jul) | `d21860b5ff0b9fa9d5f80cbabb59186287222e59934b8dd8c31329f457756ccd` |
+| `pr_9410660.csv` (Jul) | `48147a8697a440c57953af816772886bc6dba70bac4a11f970da322ff6a17203` |
+| `hl_9410660.csv` (Jul) | `4aaec8af9f4a76b88b8c1274722547bf566a58103bb5f9766dce7e7e701b23b9` |
+| `om_9414290.csv` (Jul) | `faee385a8a07c586a1eaea8af18d6c4e82db7c621edba6f3998b7bcc990913ff` |
+| `pr_9414290.csv` (Jul) | `e51d4287087456f8473e8f0b507a45f94c8bf3de35d3cc089c9cf339df10e417` |
+| `hl_9414290.csv` (Jul) | `bba10474b0a9b68509137a3b3e9c52aa55151e7ab6adcaeb9fd3733f955a278e` |
+| `om_8443970.csv` (Jul) | `d8415f3d64d9ef1ce61c10e2f172b6e16125e195e59127e4c9e9877b839105a5` |
+| `pr_8443970.csv` (Jul) | `688b9aea5df45de46a06e918b7b9f852d8e9ad6bc1a5aebe7fc1d5c40574351d` |
+| `hl_8443970.csv` (Jul) | `399660d1d0f8778fd0ef119e525a8c1d8ea15e96823202c1591367019ca4646d` |
+| `om_8518750.csv` (Jul) | `a92c4fab807dc72dab2728abd253ad081216af7b6b6389f0efb7519533b47c26` |
+| `pr_8518750.csv` (Jul) | `538b5ebef54ce5c90af8be4ed92ce50cdc60b74bc0ba239083f1d36025f502aa` |
+| `hl_8518750.csv` (Jul) | `2aa9055be81b00e1882e8aee11a83ccfbaf0d47a578561a089e39f6df9c936b2` |
+| `om_8665530.csv` (Jul) | `67b1f7129d2b4e041b85c0f603d9ffa634ae948c8db13c3cb3ecb7fe1c751814` |
+| `pr_8665530.csv` (Jul) | `4309b7ee6f1bc1f4e8d1ee54c499f4ce0d8b159007020d4433ea0aeddab5ca5b` |
+| `hl_8665530.csv` (Jul) | `698b80e30534275319344185ba766e7fc11ad152281bffea9e2b57bd3155a2d0` |
+| `om_8724580.csv` (Jul) | `883912a8434ba5ce48d6f90cc1c9d040c03c9e3443caa7b079479959439371a5` |
+| `pr_8724580.csv` (Jul) | `2b45c2d4b181b763eadac3041091ad94b9e47128cfaa86325c848b21754de0bd` |
+| `hl_8724580.csv` (Jul) | `ea1b3f6b7d2b84c88e19f4c13b4c98d8f89178d92ca5ae76de4433ed646afc16` |
+| `om_9410170.csv` (Jul) | `0d9b55966b17b1414494335857bcac61f1caf982a9514487c4294109d563369a` |
+| `pr_9410170.csv` (Jul) | `bcbb021bfa6820cd43ec20e35991a777a2d67d8b0e68ee8b81c6673fe8221f3c` |
+| `hl_9410170.csv` (Jul) | `0ae70656c548d6309e9ecca033d7030e73ae4676d3608faf13e920414eee8bb4` |
+| `om_9452210.csv` (Jul) | `e8685b67b155ac7929504d341d3346cc5e1ec7673ed52dd2f8435c724a967e99` |
+| `pr_9452210.csv` (Jul) | `c785c6ceba7920a07d8684cdaf425c57d18e9dadbc20e3f572bdda8f7f9828d9` |
+| `hl_9452210.csv` (Jul) | `fc31d3871379960871c87d7e7c6cd1d60779ca65ce470bba9a79861f6e3b3203` |
+
+| station | B | predicted exact from | measured exact |
+|---|---|---|---|
+| Honolulu | 437.0 | never | never |
+| Seattle | 41.6 | 4 | 4–30 |
+| Los Angeles | 447.9 | never | never |
+| San Francisco | 183.0 | 20 | 15–30 |
+| Boston | 85.7 | 8 | 8–30 |
+| The Battery (new) | 202.1 | 20 | never |
+| Charleston (new) | 106.8 | 10 | 10–30 |
+| Key West (new) | 322.7 | never | never |
+| San Diego (new) | 337.0 | never | never |
+| Juneau (new) | 36.7 | 4 | 5, 6, 8, 12–30 |
+
+**Y1 not killed**: the class right at 9 of 10 (The Battery wrong, its B 202.1 just under B* 210.9). **Y2 not killed**: the
+smallest exact rate within a factor 2 at all 5 where both say exact (equal at Seattle, Boston, Charleston). **Y3
+killed** by Juneau, not exact at 10 min. **Y4 not killed**: Spearman 0.925.
+
+### After run 7 (post hoc; `runs/unr/unr7-posthoc.py`, `runs/unr/unr7-posthoc.txt`)
+
+Y3 by one event. At 10 min, Juneau's offset 3 put one report into the interval after its own (counts 2 then 0, day
+20.6, a 2.9 m tide): 2 of 1,180 interval-offsets off, none at 8 or 12 min. A late report at the edge of its interval,
+not a false turn; my "every station" clause had no room for one.
+
+## What run 7 says
+
+The rule found after the fact in run 6, written down with two constants fitted on September and August, predicted July
+at ten stations, half of them new: which harbours are never exact by order alone, which are, and from what rate, within a
+factor 2 wherever both said exact, and in the right order (rank correlation 0.93). The one wrong class sat at the
+threshold. What decides how often a reader must look for order alone to be exact is the part of the noise at the scale
+of a few looks, the 10 to 60 minute band, against how sharply the signal turns: r ≈ 0.1 · sd(band)/κ minutes, and never
+past B ≈ 210. A rate is the reader's to choose and costs no invariance; this says which rate.
