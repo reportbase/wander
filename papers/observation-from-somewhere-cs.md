@@ -292,7 +292,10 @@ all of h into all of v, and there is no circle. So the reader's circle, written 
 (g) The bar can be derived rather than assumed: a sweep that is continuous and uniform (every step the same linear map of the plane),
 returns to its start after one full turn, and carries all of h into all of v in a quarter of it, preserves an inner
 product unique up to a positive factor. In that inner product every attitude has one length and
-(h, v) = (cos ωt, sin ωt). The one factor left free is that length, H.
+(h, v) = (cos ωt, sin ωt). The one factor left free is that length, H. With more unit relations the same holds if the sweeps together
+stay bounded (a compact group): an inner product averaged over its Haar measure (Haar 1933) is preserved, unique up to a
+factor when the group carries every direction to every other; sweeps that each return in their own inner product can
+compose to a map that grows without bound.
 
 (The proofs are in the parent paper. Part (g) is linear algebra: exp(TA) = I forces A to be conjugate to a rotation
 generator, and any symmetric form it preserves is a multiple of one.)

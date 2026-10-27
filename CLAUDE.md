@@ -2345,6 +2345,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   continuity; Appendix A's Cauchy entry keeps apart the assumed (continuity, composition, return), the derived (the
   imaginary rate, the inner product, not assumed, Euler's form) and the reading (i the generator of the reader's
   returning turn); Euler used, not derived. Both in the CS companion.
+  Review 35 (27 Oct, SPN R548; Gemini as a skeptical referee, `plans/ofs-review-35.md`; Tom: "yes"): Appendix A's 1853
+  Bienaymé sentence cites Stigler 1974; §6 opens on x = d/H; after 3(g), the sphere's case needs the sweeps together
+  bounded (a compact group), since sweeps each returning in their own inner product can compose without bound
+  (`runs/ofs/compact.py`). The last also in the CS companion.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
