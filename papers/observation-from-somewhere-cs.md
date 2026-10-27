@@ -257,7 +257,8 @@ piecemeal, and each remedy keeps the pair:
 
 The rule that follows is a representation's, not a numerical trick: where a value is a direction, keep the pair and
 divide last, if at all; where it is an amount over an amount, a zero denominator is a real absence (a rate over no
-elapsed time, a mean of no items), not a horizon, and no closure of the line repairs it.
+elapsed time, a mean of no items), not a horizon, and no closure of the line repairs it. That zero belongs to
+the sums of amounts a blueprint adds (§10, capability 3); the readings, which run on ratios, have only the chart's.
 
 **Comparing without dividing.** For readings (h₁, v₁) and (h₂, v₂) let
 

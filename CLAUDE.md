@@ -2308,7 +2308,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
-  remedies keep the pair (homogeneous coordinates, `atan2`, IEEE 754's ±∞ and NaN, the 8087's projective mode, posits).
+  remedies keep the pair (homogeneous coordinates, `atan2`, IEEE 754's ±∞ and NaN, the 8087's projective mode, posits);
+  a zero among amounts is the blueprint's (§10, capability 3), the readings have only the chart's.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
