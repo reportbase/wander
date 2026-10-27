@@ -59,7 +59,7 @@
 <body>
 <main>
     <h1>The chain from H</h1>
-    <p class="lede">One value starts everything. Pick an H and every whole is drawn at it; the count of other parties
+    <p class="lede">One value starts everything. Pick an H, the reader's one length, and every unit relation is a share of it; the count of other parties
     sets the shape; one observation is given only the Cauchy fisheye of one facing; the shape, and any figure in it, is
     built over many observations from standpoints a baseline apart, which is parallax; and only then does physics
     assign the values. Step through it, keeping one H.</p>
@@ -101,9 +101,9 @@
     const $ = id => document.getElementById(id), D = Math.PI / 180, BIG = 30;
     const STEPS = [
         { title: '1. Pick an H', show: ['hrow'], opts: [],
-          say: 'Every whole is drawn at the H you pick, so every unit relation runs from 0 to 1 on equal axes: that square is the unit relational space, and it is the same at every H. What H decides is only where amounts land. On the right, a world of amounts from a thousandth to a thousand, placed at arctan(x/H): only an H among them spreads them over the turn. At H of 0 they all run out to the horizon; at H of ∞ they all sit at home.' },
+          say: 'The reader holds one length, the H you pick, and every unit relation is a share of it, so each runs from 0 to 1 on equal axes: that square is the unit relational space, and it is the same at every H. What H decides is only where amounts land. On the right, a world of amounts from a thousandth to a thousand, placed at arctan(x/H): only an H among them spreads them over the turn. At H of 0 they all run out to the horizon; at H of ∞ they all sit at home.' },
         { title: '2. The number of V\'s sets the shape', show: [], opts: ['n'],
-          say: 'The shape is set by how many unit relations the system holds, once their wholes are drawn at one H: the reader\'s h and one v per other party. One other party gives the circle, four facings; two give the sphere, eight; n give the sphere of n + 1 unit relations, 2^(n+1) facings, and the reader is near in all its readings for 1/(n + 1) of its addresses.' },
+          say: 'The shape is set by how many unit relations the system holds, all of them shares of the one H: the reader\'s h and one v per other party. One other party gives the circle, four facings; two give the sphere, eight; n give the sphere of n + 1 unit relations, 2^(n+1) facings, and the reader is near in all its readings for 1/(n + 1) of its addresses.' },
         { title: '3. One observation: the Cauchy fisheye', show: [], opts: ['fig', 'scale'],
           say: 'One observation is not given the shape. From a figure\'s centre the directions of one facing are given, uniform by turn, each read as v/h. Whatever the figure reaches out to cancels from every reading: v/h = tan a. So the readings are the Cauchy, bunched toward home and spreading past the corner, and laid back out they give the unit circle, the shape the count of V\'s set, for every figure and at every size. One observation returns the census, never the figure.' },
         { title: '4. The shape is built over many observations', show: [], opts: ['n', 'again', 'play'],
@@ -209,7 +209,7 @@
         g.strokeStyle = '#b59cf0'; g.lineWidth = 1.5; g.strokeRect(ox, oy - s, s, s);
         g.strokeStyle = 'rgba(181,156,240,0.6)'; g.beginPath(); g.arc(...P(0, 0), s, -Math.PI / 2, 0); g.stroke();
         line(g, P(0, 0), P(1, 1), 'rgba(212,160,82,0.8)', 1.2, [5, 5]);
-        text(g, 'h: 0 … 1, all of h drawn at H', ox, oy + 18, '#e6e4ee'); text(g, 'v: 0 … 1, all of v drawn at H', ox, oy - s - 8, '#e6e4ee');
+        text(g, 'h: 0 … 1, a share of H', ox, oy + 18, '#e6e4ee'); text(g, 'v: 0 … 1, a share of the same H', ox, oy - s - 8, '#e6e4ee');
         text(g, 'the corner', ...P(0.62, 0.55), '#d4a052');
         const dg = degenerate();
         text(g, dg ? `H = ${fmtH()}: no whole to draw at` : 'the same square at every H', ox, 18, dg ? '#e0826c' : '#8a8a96');

@@ -269,13 +269,13 @@ const e = () => 2 ** state.lgE;
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const CAPTIONS = {
-    1: ['the unit cube', '<b>The unit cube.</b> The reader holds one breadth, H, and draws every party at it: h, v and v₂ each run from 0 to 1 out to the cube\'s faces (V = V₂ = H). The cube is the reader\'s frame, not a thing in the world; it has no size of its own.'],
+    1: ['the unit cube', '<b>The unit cube.</b> The reader holds one length, H, and nothing else: h, v and v₂ are shares of it, each from 0 to 1 out to the cube\'s faces (a writer would write V = V₂ = H). The cube is the reader\'s frame, not a thing in the world; it has no size of its own.'],
     2: ['a sphere inside', '<b>A sphere inside, free to turn.</b> Each point on it is a direction from the centre: an address, with no distance in it. The points painted on it are spread evenly. Drag the sphere to turn it; tap it to choose the point that is followed.'],
     3: ['every point points', '<b>Every point points.</b> The ray from the centre through each point meets the inner cube once, on the face of its largest component. Turn the sphere any way: every point still lands, and every point of the cube\'s surface is landed on by exactly one.'],
     4: ['any size', '<b>Any size, the extent known.</b> A point inside the cube is t of the way along its ray, t from 0 to 1: a unit relation. The address (the direction and t) is the same at every size of the cube; the point in amounts is the extent e times it.'],
-    5: ['extent unknown', '<b>The extent unknown.</b> A reader that does not know e draws the cube at its own breadth, e = H: the mountain set equal to the thumb. Every address is still right; every amount is off by the true e/H, the same number of levels everywhere.'],
-    6: ['the wedge', '<b>The wedge.</b> One observation makes one wedge, h, v, v₂ ≥ 0, with V = V₂ = H. Swept evenly, its readings (v/h, v₂/h) are the two-dimensional Cauchy: its three faces take a third each, so the reader is near in both readings a third of the time, and a face\'s middle quarter takes 38% of its points.'],
-    7: ['two sweeps', '<b>Two sweeps: altitude and azimuth.</b> The hand reaches the wedge as an observer reaches its sky: raised from the horizontal to the vertical, the <span class="teal">altitude</span>, the sweep from H to V; turned round the horizontal from h to v₂, the <span class="violet">azimuth</span>, which brings in V₂. Each has its corner at 45°. The flat triangle h + v + v₂ = 1 needs no sweep: the truth is a point of it, and the reader\'s drawing, V = V₂ = H, its centre. Swept evenly in both angles, the pair neither sweep reads leaves its corner; swept evenly over the wedge, the height is even (Archimedes) and every pair keeps it.']
+    5: ['extent unknown', '<b>The extent unknown.</b> A reader that does not know e has only its own length: read off its circle, the cube comes out e = H, what a writer calls the mountain equal to the thumb. Every address is still right; every amount is off by the true e/H, the same number of levels everywhere.'],
+    6: ['the wedge', '<b>The wedge.</b> One observation makes one wedge, h, v, v₂ ≥ 0, every party read on the one length H. Swept evenly, its readings (v/h, v₂/h) are the two-dimensional Cauchy: its three faces take a third each, so the reader is near in both readings a third of the time, and a face\'s middle quarter takes 38% of its points.'],
+    7: ['two sweeps', '<b>Two sweeps: altitude and azimuth.</b> The hand reaches the wedge as an observer reaches its sky: raised from the horizontal to the vertical, the <span class="teal">altitude</span>, the sweep from all of h to all of v; turned round the horizontal from h to v₂, the <span class="violet">azimuth</span>, which brings in v₂. Each has its corner at 45°. The flat triangle h + v + v₂ = 1 needs no sweep: the truth is a point of it, and the reader\'s drawing, one length for every party (V = V₂ = H, as a writer writes it), its centre. Swept evenly in both angles, the pair neither sweep reads leaves its corner; swept evenly over the wedge, the height is even (Archimedes) and every pair keeps it.']
 };
 const STEP_SET = {
     1: { rays: false, wedge: false, known: true, turn: false },
@@ -491,7 +491,7 @@ sweepG.add(labAz, labAlt);
 const centreBead = bead(0.028, 0xece9f4); centreBead.position.set(...CENTRE); sweepG.add(centreBead);
 const truthBead = bead(0.03, 0xe8826d); sweepG.add(truthBead);
 const truthRod = rod(0xe8826d, 0.006, 0.9); sweepG.add(truthRod);
-const labCentre = label('V = V₂ = H: the reader\'s drawing', '#ece9f4', 0.052); sweepG.add(labCentre);
+const labCentre = label('the reader\'s one length (V = V₂ = H)', '#ece9f4', 0.052); sweepG.add(labCentre);
 const labTruth = label(`the truth: V*/H = ${+state.vs.toFixed(2)}, V₂*/H = ${+state.v2s.toFixed(2)}`, '#f09a86', 0.058); sweepG.add(labTruth);
 function placeTruth() {
     const t = truthPoint(state.vs, state.v2s);
@@ -605,7 +605,7 @@ function hudText() {
     const rA = `${nm(rd.p)}/${nm(rd.axis)}`, rB = `${nm(rd.q)}/${nm(rd.axis)}`;
     const L = [];
     if (state.step === 7) return sweepHud();
-    if (state.step === 1) return 'the unit cube: h, v and v₂ each from 0 at the centre to 1 at a face, every party drawn at H\nits size is the reader\'s own breadth; nothing in it is an amount of the world';
+    if (state.step === 1) return 'the unit cube: h, v and v₂ each from 0 at the centre to 1 at a face, every party a share of the reader\'s one length H\nits size is that length; nothing in it is an amount of the world';
     L.push(`address: the direction ${f3(d)}  (h, v, v₂)`);
     if (state.step >= 3) L.push(`lands on face ${faceName([rd.axis, rd.sign])}: readings ${rA} = ${rd.ra.toFixed(3)}, ${rB} = ${rd.rb.toFixed(3)}`);
     if (state.step >= 4) L.push(`t = ${state.t.toFixed(2)} along the ray: a unit relation, the cube's inside held in proportion`);
@@ -613,7 +613,7 @@ function hudText() {
     if (state.step >= 4 && state.known) L.push(`the point, in amounts: e × address = ${f3(pt)} H, with e = ${E.toPrecision(3)} H (${lev.toFixed(2)} levels)`);
     if (!state.known) {
         const drawn = point(state.sel, state.t, 1);
-        L.push(`extent unknown: drawn at H (e = 1), the point read as ${f3(drawn)} H`);
+        L.push(`extent unknown: read on the one length H (e = 1), the point read as ${f3(drawn)} H`);
         L.push(`the address is right; the amount is off by e/H = ${E.toPrecision(3)}, ${Math.abs(lev).toFixed(2)} levels, the same for every point`);
     }
     if (state.wedge) {
@@ -631,7 +631,7 @@ function sweepHud() {
         `azimuth reads v₂/h = tan z = ${fmtR(r.az)}${Math.abs(state.az - 45) < 0.26 ? ' (its corner)' : ''}; altitude reads v/√(h² + v₂²) = tan a = ${fmtR(r.alt)}${Math.abs(state.alt - 45) < 0.26 ? ' (its corner)' : ''}`,
         (state.even === 'area' ? 'swept evenly over the wedge (azimuth even, height v even: Archimedes\' hat-box)' : 'swept evenly in both angles') +
         `: v ≤ h ${pc(ex.vh)}, v₂ ≤ h ${pc(ex.v2h)}, v₂ ≤ v ${pc(ex.v2v)}, h largest ${pc(ex.near)} (the ${ct.n} drawn: ${pc(ct.vh)}, ${pc(ct.v2h)}, ${pc(ct.v2v)}, ${pc(ct.near)})`,
-        `h + v + v₂ = 1 needs no sweep; the truth is a point of it, ${f3(truthPoint(state.vs, state.v2s))} for V*/H = ${+state.vs.toFixed(3)}, V₂*/H = ${+state.v2s.toFixed(3)}; the drawing V = V₂ = H is its centre (⅓, ⅓, ⅓), off the truth by the ratios the reader lacks`];
+        `h + v + v₂ = 1 needs no sweep; the truth is a point of it, ${f3(truthPoint(state.vs, state.v2s))} for V*/H = ${+state.vs.toFixed(3)}, V₂*/H = ${+state.v2s.toFixed(3)}; the reader\'s one length (V = V₂ = H to a writer) is its centre (⅓, ⅓, ⅓), off the truth by the ratios the reader lacks`];
     return (innerWidth < 760 ? [L[0], L[2]] : L).join('\n');
 }
 const fc = document.getElementById('face'), fg = fc.getContext('2d');

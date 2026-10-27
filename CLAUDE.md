@@ -2295,8 +2295,21 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   names", "One choice, and two numbers that are not the reader's", "Where c ≠ 1 comes from"), and every "the reader
   draws V = H" elsewhere; §12.2 question 6 is dissolved for readers (open: whether a reader's sweep is a turn, whether
   its instrument imposes a c). No mathematics changed. The CS companion matches. Outline `plans/ofs-only-h.md`. Entries
-  above that say the reader "draws", "sets" or "assigns" V = H describe the text before. The demos' visible "V = H"
-  wording waits for a later pass.
+  above that say the reader "draws", "sets" or "assigns" V = H describe the text before. The demos' visible wording
+  followed (27 Oct, Tom: "update the demos"): `sphere-cube.html`, `wedge.html`, `room.html`, `room-walk.html`,
+  `mountain.html`, `h-chain.html`, `zoom.html`, `one-read.html` (the slider "a page with v drawn at c times h", the button
+  "c = 1, one length"), `array-sweeps.html` and `demos.html` now say the reader holds one length and every party is a
+  share of it, V = H the writer's name; hooks, params, ids and file names kept. The page entries above describe the
+  older wording.
+  Review 31 (27 Oct, SPN R534; ChatGPT, core 9/10, `plans/ofs-review-31.md`): the quarter turn's law is the half-Cauchy
+  (median at the corner), the standard Cauchy only signed over two quadrants; the chain's ingredients named (H the
+  length, the turn the circle, s = v/h the reading, the uniform measure the law); V = cH other external drawings, never
+  the reader's choice. OFS and the CS companion.
+  The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
+  obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
+  is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
+  remedies keep the pair (homogeneous coordinates, `atan2`, IEEE 754's ±∞ and NaN, the 8087's projective mode, posits);
+  a zero among amounts is the blueprint's (§10, capability 3), the readings have only the chart's.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

@@ -62,8 +62,9 @@
     <h1>The mountain and the thumb</h1>
     <p class="lede">A reader looks at a mountain range, face on. Its thumb is its one measure, <span class="gold">H = 1 mile</span>.
     From nowhere we also know the <span class="teal">mountain, V = 20 miles wide</span>, and its distance, 10 miles. The reader
-    knows only its thumb. Read from where it stands, the range's ends sit exactly at its corners; to say anything in miles it
-    must set the mountain equal to its thumb, and it is then off by twenty; one walk of a thumb's length gives it the truth.</p>
+    knows only its thumb. Read from where it stands, the range's ends sit exactly at its corners; it sets nothing, holding no
+    second length; to say anything in miles it has only its thumb, so read off its circle the mountain comes out one
+    thumb wide (mountain equals thumb), and is then off by twenty; one walk of a thumb's length gives it the truth.</p>
     <div class="panel">
         <div class="row">
             <button id="paper">the paper's example</button>
@@ -86,7 +87,7 @@
         <h2 style="margin-top:14px">Mountain equals thumb</h2>
         <canvas id="lay" height="170"></canvas>
         <p class="cap">The reader's lay of distances, in thumbs: proportional inside the corner (one thumb), one equal step per
-        doubling past it. Gold: where the reader puts the range when it sets the mountain equal to its thumb. Teal: where it
+        doubling past it. Gold: where the range lands when amounts are read off the reader's circle, which holds only the thumb (a writer would say it set the mountain equal to its thumb, V = H). Teal: where it
         truly is. The gap is V/H, the number of thumbs the mountain really is.</p>
         <div id="hud"></div>
     </div>
@@ -228,7 +229,7 @@
             `  pairs: half-width/distance ${r.endsVH.toFixed(3)}${r.atCorner ? ' (at its corner)' : ''}; width/distance ${r.widthToDistance.toFixed(3)}; distance/thumb ${fmt(dt / H)} (${Math.log2(dt / H).toFixed(2)} doublings); mountain/thumb ${fmt(Vt / H)} (${e.doublings.toFixed(2)} doublings)`,
             `from the reader: ends at v/h = ±${r.endsVH.toFixed(3)} (±${r.alpha.toFixed(1)}°); ${r.fingersOn} of ${FINGERS} fingers on the range, share ${r.share.toFixed(3)}; the same at every scale`,
             `the two vantages, on the thumb: central (the radius, a half turn) π/2 = ${vt.limb.outer.toFixed(4)}, inscribed (the ray from home, the fingers' mean shadow) ${vt.limb.innerFingers.toFixed(4)} for ${2 * vt.limb.fingers} fingers (2/π = ${vt.limb.inner.toFixed(4)}): product 1, H in H, the starting value returned; to the ends (${vt.ends.deg.toFixed(1)}°) ${vt.ends.outer.toFixed(4)} × ${vt.ends.inner.toFixed(4)} = 1; the mountain never enters`,
-            `mountain equals thumb: read ${e.Vread} mi wide at ${fmt(e.dRead)} mi; truly ${fmt(Vt)} at ${fmt(dt)}: off by V/H = ${fmt(e.factor)}, ${e.doublings.toFixed(2)} doublings, the same on both sides of the corner`,
+            `mountain equals thumb (amounts read off the thumb's circle): read ${e.Vread} mi wide at ${fmt(e.dRead)} mi; truly ${fmt(Vt)} at ${fmt(dt)}: off by V/H = ${fmt(e.factor)}, ${e.doublings.toFixed(2)} doublings, the same on both sides of the corner`,
             w ? `walked one thumb: half-angle ${w.a1.toFixed(1)}° → ${w.a2.toFixed(1)}°, s ${w.s1.toFixed(3)} → ${w.s2.toFixed(3)}; d = H·s₂/(s₂ − s₁) = ${fmt(w.d)} mi, V = 2·s₁·d = ${fmt(w.V)} mi`
               : (walked ? 'too near to walk a whole thumb toward it' : 'walk one thumb toward the range to construct the true distance and width')];
         $('hud').textContent = lines.join('\n');

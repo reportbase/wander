@@ -291,7 +291,7 @@
     function hud() {
         const lines = [], k = kOf(), a = address(st.thing);
         const H = (st.step === 3 && st.sweep) ? sweepDir() : handDir(), hh = hit(H);
-        if (st.step === 1) lines.push(`room: ${NAMES.length} things; the reader holds H, the room's own breadth, drawn V = V₂ = H`);
+        if (st.step === 1) lines.push(`room: ${NAMES.length} things; the reader holds one length, H, and reads every party on it (a writer would write V = V₂ = H)`);
         if (st.step === 2 || st.step === 3) {
             const tp = Math.tan(currentAz() * Math.PI / 180), ta = Math.tan(st.alt * Math.PI / 180);
             lines.push(`the hand: v₂/h = tan ψ = ${tp.toFixed(3)}   v/√(h² + v₂²) = tan a = ${ta.toFixed(3)}   g = ${(currentAz() / 90).toFixed(3)}`);
