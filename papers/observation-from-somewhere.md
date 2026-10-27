@@ -14,8 +14,9 @@ principle of transformation groups: what a reader cannot tell apart, it addresse
 parties is a pair of unit relations, h and v, each between 0 and 1, and since neither can pass 1 every relation turns
 over at one point, v = h, the *corner*. The reader holds one length, H, and nothing else to measure with. Turned
 uniformly, that one length traces a circle, since its length is fixed, with the corner at distance 1; no second breadth
-is needed, and the reader has none. The readings of that turn follow the standard Cauchy distribution, its median at the
-corner and its quartiles a reciprocal pair, so the Cauchy is not a law laid on a circle but the measure of the addresses
+is needed, and the reader has none. The readings of that turn follow the Cauchy distribution: on the quarter turn the
+half-Cauchy, its median at the corner and its quartiles a reciprocal pair (signed over two quadrants, the standard
+Cauchy), so the Cauchy is not a law laid on a circle but the measure of the addresses
 the one-length turn makes. The other party's breadth, V, is held only by a writer, who holds both hemispheres; looking at
 the reader's circle the writer can draw a second axis and find V = H, and in a drawing that does have two axes (a page, a
 shore, a chart, an instrument) V = cH with c ≠ 1 is no turn, and a uniform turn of direction there gives a Cauchy of scale 1/c, which is why a lighthouse's
@@ -202,8 +203,8 @@ often from treating the writer's vantage as if a single observation held it. Sec
 - Every relation between two parties turns over at one point, the corner v = h, the only point left fixed when the two
   parties are exchanged. Near and far are one geometry, read from either side of it (§4).
 - A reader holds one length, H, and no other. Turned uniformly, it traces a circle, because the length is fixed, with
-  the corner at distance 1 whatever H is, and the readings of that turn are the standard Cauchy, its median at the
-  corner (§5, §7.1). No breadth is given to the other party: its breadth, V, is held only by a writer, who holds both
+  the corner at distance 1 whatever H is, and the readings of that turn are the half-Cauchy on one quadrant, its median
+  at the corner, and the standard Cauchy signed over two (§5, §7.1). No breadth is given to the other party: its breadth, V, is held only by a writer, who holds both
   hemispheres, and V = H is the writer's name for the circle the reader makes. Where a drawing does have two axes (a
   page, a shore, a chart, an instrument), V = cH with c ≠ 1 is not a turn and moves the median log₂ c levels off the
   corner (Proposition 5(d)); the lighthouse's flashes on a shore and Mercator's chart, which draws every compass course
@@ -1189,11 +1190,14 @@ sweep's parameter are unchanged; only the page's angles differ, which is the c o
 
 **The order of the chain.** Read in the order the reader has them, the parts run: one length, H (P1); turned uniformly
 and returning, it is a rigid bar in its own measure, every attitude of that one length (g); a fixed length turned traces
-a circle (c), with the corner at distance 1 (b); and the uniform turn's readings are the Cauchy, its median at the corner
-(Proposition 5(a)–(c)). No second length enters anywhere, and none is needed: the orbit is a circle because the length
+a circle (c), with the corner at distance 1 (b); and the uniform turn's readings are the Cauchy, the half-Cauchy on one quadrant
+with its median at the corner (Proposition 5(a)–(c)). No second length enters anywhere, and none is needed: the orbit is a circle because the length
 is fixed. The Cauchy is not a law laid on a circle that already held a V; it is the measure of the addresses the
-one-length turn makes. Parts (a), (e) and (f), and Proposition 5(d), (f) and (g), belong to drawings with two axes, a
-writer's page, a shore, a chart or an instrument: there c is real, and c = 1 is the drawing that has the reader's circle.
+one-length turn makes. Each ingredient is named: H supplies the one length, the turn supplies the circle, the chart
+s = v/h supplies the reading, and the uniform measure on the turn supplies the law. That the reader holds H alone means only
+that no second length enters, not that H by itself gives the distribution. Parts (a), (e) and (f), and Proposition 5(d), (f) and (g), belong to drawings with two axes, a
+writer's page, a shore, a chart or an instrument: there c is real, and c = 1 is the drawing that has the reader's circle. The family V = cH describes other external
+drawings; none of it is a choice the reader makes to set up its own geometry.
 
 **What the geometry needs: a shape and one H.** Neither is a measured size. The shape is set by how many unit
 relations the system includes: by (d), m of them give the sphere in m dimensions, with 2^m orthants, so two give the
@@ -1216,8 +1220,8 @@ world. Step (a) is close to a definition; we claim only that a situated reader h
   steps of direction, of the curve and of its parameter give three different laws, and only one of them is the Cauchy
   with its median at the corner (Proposition 5(d)).
 - *Why the circle.* With one length the sweep is one rigid bar turning, it traces the unit circle, and the uniform turn
-  is unique; its readings are the Cauchy with nothing more chosen. Working back from the standard Cauchy, which is known,
-  its median at the corner, arrives at a turn of one length and, on a page with two axes, at c = 1 and nowhere else
+  is unique; its readings are the Cauchy with nothing more chosen. Working back from the Cauchy, which is known, on one
+  quadrant the half-Cauchy with its median at the corner, arrives at a turn of one length and, on a page with two axes, at c = 1 and nowhere else
   (Proposition 5(d); V = cH gives the Cauchy of scale 1/c). Both statements are made within the construction (a relation
   as two unit relations, the sweep a rigid bar's linear periodic turn); that every reader must use this construction is
   not claimed (§12.2, "What depends on what"). Unit relations drawn on equal axes, each running from 0 to 1, are this
@@ -1654,12 +1658,12 @@ from the known law to what it needs, each step is forced by the one before.
    parameter is the turn of the circle of one length, stretched afterwards.
 4. With one length the sweep is one rigid bar turning, and it traces the unit circle (Proposition 3(c), (e)).
 
-So the one length is not a convenience laid under the Cauchy. It is what the standard Cauchy, its median at the corner,
-requires, and, forward through Proposition 3 and parts (a) to (c), it is also enough. Every link of the chain, from the
+So the one length is not a convenience laid under the Cauchy. It is what the Cauchy, on one quadrant the half-Cauchy with its median at
+the corner, requires, and, forward through Proposition 3 and parts (a) to (c), it is also enough. Every link of the chain, from the
 reader's one length to the Cauchy and back, passes through a turn of that length, and nowhere through a second one.
 Stated as uniqueness, and no more: among the two-axis drawings V = cH whose sweep is a rigid turn and whose readings are
-reciprocal-symmetric, the equal-length drawing c = 1, the reader's circle, is the only one, and it gives the standard Cauchy
-with its median at the corner. That a reader sweeps by a turn at all is not this result; it is the premise of
+reciprocal-symmetric, the equal-length drawing c = 1, the reader's circle, is the only one, and it gives the half-Cauchy
+with its median at the corner (the standard Cauchy signed over two quadrants). That a reader sweeps by a turn at all is not this result; it is the premise of
 Proposition 3(g).
 
 **Proposition 5, continued: two familiar pictures.** The best-known pictures of a turn laid out on a straight line

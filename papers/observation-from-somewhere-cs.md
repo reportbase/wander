@@ -113,8 +113,9 @@ offers instead, a baseline against which existing designs can be read.
   the two parties leaves fixed. Two registers, v/h below it and h/v above it, both stay within [0, 1] only if the
   switch is there. Sameness, order and the corner need no division (§3).
 - **One length.** The reader holds one length, H, and turns it; the orbit is a circle because the length is fixed, and
-  the uniform turn's readings are the standard Cauchy. No breadth is given to the other party: V belongs to a writer,
-  and V = H is the writer's name for the reader's circle. Working back from the standard Cauchy, its median at the
+  the uniform turn's readings are the half-Cauchy on one quadrant, its median at the corner (the standard Cauchy
+  signed over two). No breadth is given to the other party: V belongs to a writer,
+  and V = H is the writer's name for the reader's circle. Working back from the Cauchy, on one quadrant its median at the
   corner, arrives at a turn of one length (§4); a drawing with two axes at V = cH gives a Cauchy of scale 1/c.
 - **Arrays.** For an even-length array indexed at equal steps of turn, the slopes of its places are exactly the evenly
   spaced quantiles of the Cauchy. The index is the address and the stored values are the payload; the floor function
@@ -288,7 +289,7 @@ the law of (b) exactly when c = 1. ∎
 
 So the order is: hold H, turn it, obtain the circle, and with the uniform measure obtain the Cauchy. The Cauchy is not a
 law laid on a circle that already held a V; it is the measure of the addresses the one-length turn makes. Within this
-construction (two unit relations, a rigid bar's linear periodic turn) working back from the standard Cauchy arrives at
+construction (two unit relations, a rigid bar's linear periodic turn) working back from the Cauchy (the half-Cauchy on one quadrant) arrives at
 a turn of one length, and on a page with two axes at c = 1 and nowhere else. "V = H is still a choice" is a writer's
 objection: only one who holds both axes sees c as a number to set, and the reader holds one. It is not a claim about
 the world either: where the true V* differs from H, every amount taken from the reader's circle is off by V*/H (§10).

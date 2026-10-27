@@ -2301,6 +2301,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "c = 1, one length"), `array-sweeps.html` and `demos.html` now say the reader holds one length and every party is a
   share of it, V = H the writer's name; hooks, params, ids and file names kept. The page entries above describe the
   older wording.
+  Review 31 (27 Oct, SPN R534; ChatGPT, core 9/10, `plans/ofs-review-31.md`): the quarter turn's law is the half-Cauchy
+  (median at the corner), the standard Cauchy only signed over two quadrants; the chain's ingredients named (H the
+  length, the turn the circle, s = v/h the reading, the uniform measure the law); V = cH other external drawings, never
+  the reader's choice. OFS and the CS companion.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
