@@ -2305,6 +2305,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (median at the corner), the standard Cauchy only signed over two quadrants; the chain's ingredients named (H the
   length, the turn the circle, s = v/h the reading, the uniform measure the law); V = cH other external drawings, never
   the reader's choice. OFS and the CS companion.
+  The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
+  obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
+  is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
+  remedies keep the pair (homogeneous coordinates, `atan2`, IEEE 754's ±∞ and NaN, the 8087's projective mode, posits).
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

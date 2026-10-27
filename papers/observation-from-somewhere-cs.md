@@ -237,6 +237,28 @@ end to infinity has no mean for the uniform law; a bounded chart of the same arc
 has one (π/4 and ½). So the missing mean of §5 is a fact about the chart in which directions are written as numbers,
 not about the directions.
 
+**Division by zero.** The same holds for the oldest singularity in computing. A program that keeps a direction as one
+number, a slope v/h, has chosen the chart x, and x sends the horizon to infinity. Dividing by zero is that chart reaching
+its own end, not anything in the direction: as a pair, [0 : 1] is as ordinary as home, [1 : 0], and the chart y sends
+home to infinity instead. The reader holds the pair and divides nothing; the reading is the ratio itself, and a quotient
+appears only when a direction is written as one amount over another, as a writer writes it. Computing has met this
+piecemeal, and each remedy keeps the pair:
+
+- *Homogeneous coordinates.* A graphics pipeline carries [x : y : z : w] and divides by w last, after clipping; w = 0 is a
+  point at infinity, a direction, held like any other point.
+- *`atan2(v, h)`.* It takes the pair, so the horizon is the end of the quarter turn and not a fault (§6's `turnIndex`
+  relies on it). The bracket D of the next paragraph compares two directions with no quotient at all.
+- *Floating point's infinities.* IEEE 754 gives 1/0 = +∞ and −1/0 = −∞, closing the line at two ends, its affine
+  closure, and 0/0 = NaN, which is [0 : 0], the one pair that names no direction (§2.2 leaves it out). The 8087 also
+  offered a projective mode, one unsigned infinity, which closes the line as a circle of directions does; the 1985
+  standard kept only the affine one (IEEE 1985). Posits close it again with a single point at infinity (Gustafson and
+  Yonemoto 2017).
+- *Integers* have no infinity and trap: they are amounts alone.
+
+The rule that follows is a representation's, not a numerical trick: where a value is a direction, keep the pair and
+divide last, if at all; where it is an amount over an amount, a zero denominator is a real absence (a rate over no
+elapsed time, a mean of no items), not a horizon, and no closure of the line repairs it.
+
 **Comparing without dividing.** For readings (h₁, v₁) and (h₂, v₂) let
 
   D = v₁·h₂ − v₂·h₁,
@@ -1125,10 +1147,16 @@ CHI '95*, 234–241.
 Gabor, D. (1946). Theory of communication. *Journal of the Institution of Electrical Engineers* 93(26), Part III,
 429–457.
 
+Gustafson, J. L. and Yonemoto, I. T. (2017). Beating floating point at its own game: posit arithmetic.
+*Supercomputing Frontiers and Innovations* 4(2), 71–86.
+
 Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *Annals of Mathematics* 34(1), 147–169.
 
 Hastings, W. K. (1970). Monte Carlo sampling methods using Markov chains and their applications. *Biometrika* 57(1),
 97–109.
+
+IEEE (1985). *IEEE Standard for Binary Floating-Point Arithmetic*, ANSI/IEEE Std 754-1985. Institute of Electrical
+and Electronics Engineers, New York.
 
 Igarashi, T. and Hinckley, K. (2000). Speed-dependent automatic zooming for browsing large documents. *Proceedings
 of UIST 2000*, 139–148.
