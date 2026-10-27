@@ -129,4 +129,63 @@ contact.
 
 ## Runs
 
-(none yet)
+### Run 1 (27 October, `runs/ckd/ckd.py`, output `runs/ckd/ckd-run1.txt`)
+
+The script first stopped on a fault of mine before printing any verdict. The fold test's grid began at s = 0, where
+1/s is undefined. The grid was set to s in (0, 2), ends excluded, and the run was then made once, as below.
+
+- **P1 not killed.** BAL's s = a/d stays in [0, 1] from outside, so contact (α = 90°) is the end of the limb's sweep.
+  - At the limb's corner (α = 45°, s = 1/√2) the share in BAL's lay is 0.202094.
+  - At α = 90° the share is 1; share/s² at s = 10⁻¹⁰ is 1/π to 1.2·10⁻²¹.
+  - The middle, half the addresses filled (what BAL left to read): α = 68.905°, s = 0.93298, d/a = 1.07183, past the
+    corner as predicted.
+  - BAL's own count (n = 1200) agrees: 0.19682 at s = 0.7.
+- **P2 not killed.** min(s, 1/s) is even under the swap; its slopes at 1 are +1 and −1, in s and in ln s.
+- **P3 not killed.** The shares are even with a kink. The energy ∝ s − 1 flips sign under the swap and is not odd in value:
+  (1/s − 1) = −(s − 1)/s, symbolically.
+- **P4 not killed.** The fold holds exactly; f(s) = f(1/s) and the complement both fail (f(½) = ½, f(2) = 0).
+- **P5 killed by my tolerance.** The separation is right: 10.96578 levels from d = B/2 to the give-out at ε = 10⁻³
+  (PXC's form 10.96578). But the give-out distance (B/2)·cot(ε/2) does not double exactly when ε halves. It goes up by
+  2.0000125 at ε = 10⁻², 2.000000125 at 10⁻³ and 2.00000000125 at 10⁻⁴. I asked for 10⁻⁶ relative, and the first is
+  6·10⁻⁶ off. The doubling is first order only, which I wrote as exact.
+- **P6 not killed.** f(s) + f(1/s) = 1 symbolically; f(1) = ½, f′(1) = −½; f equals sin² of the rim's angle to 2.7·10⁻⁵¹.
+- **P7 not killed.** No kind fits. f(1) = 1 − 1/e = 0.632121.
+  - The plan's "1.269 at s = 2, as COR found" was COR's measured sky, not the form 1 − e^(−s). The form gives
+    f(2) + f(½) = 1.258.
+  - That number was not a kill condition. It was a wrong quote of mine in the prediction, and is recorded as such.
+- **P8 killed**, since it required every case to sort as predicted and P5 was killed.
+  - The other six sorted as predicted: BAL's contact E; two loops C-even, kinked; escape C (shares even and kinked, the
+    energy a regime); sampling F (and E at Nyquist); the disc C-odd and a direction; the sky N.
+  - Parallax's kind was left unsorted by the kill, not shown to be other than R.
+
+### Run 2: predictions (27 October, written before run 2)
+
+- **P5′. Parallax's give-out moves with ε as cot(ε/2).**
+  - Halving ε multiplies the give-out distance by exactly tan(ε/2)/tan(ε/4) = 2/(1 − tan²(ε/4)): to 10⁻⁴⁰ at
+    ε = 10⁻², 10⁻³, 10⁻⁴.
+  - That factor exceeds 2 by ε²/16 to leading order: within 1% of ε²/16 at each.
+  - The separation from the pair's corner is still 10.966 levels at ε = 10⁻³ (to 10⁻³).
+  - The pair's own corner, d = B/2, does not depend on ε at all. So s = 1 moves with ε and the corner does not: kind R.
+  - **Killed if** any of these fails.
+- **P8′.** The sort as in P8, with parallax R. **Killed if** P5′ is killed or any other case's run-1 verdict is changed.
+
+### Run 2 (27 October, `runs/ckd/ckd.py`, output `runs/ckd/ckd-run2.txt`; run 1's output reprinted above it)
+
+- **P5′ not killed.**
+  - Halving ε multiplies the give-out distance by exactly 2/(1 − tan²(ε/4)), to 5·10⁻⁵¹.
+  - The excess over 2 is ε²/16 times 1.0000104, 1.0000001 and 1.000000001 at ε = 10⁻², 10⁻³ and 10⁻⁴.
+  - The separation from d = B/2 is 10.96578 levels at ε = 10⁻³, and d = B/2 itself has no ε in it. Kind R.
+- **P8′ not killed.** The sort stands as predicted:
+
+  | Case | Kind |
+  |---|---|
+  | BAL's contact | an end |
+  | two loops | a hand-over (even, kinked) |
+  | escape | the shares a hand-over by definition, the energy a change of regime |
+  | sampling | a fold, and an end at Nyquist |
+  | parallax | a resolution limit |
+  | the disc | a complement, and the one case whose s is a direction the reader reads |
+  | the sky | none |
+
+  Of COR's six, the three with a far side at 1/s are corners of their named pairs. BAL's own corner is the limb at
+  45°, s = 1/√2, where its share is 0.202; its middle is at s = 0.933 (d/a = 1.072).
