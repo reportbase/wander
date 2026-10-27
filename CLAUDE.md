@@ -982,6 +982,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   differ, OFS stands and the companion is fixed): index and value, a measure not a loop, Theorem 6 as order against sum
   statistics, the array and the floor, floats as Proposition 4, LOD and H as a zoom, K apart from N, OFS §11.4. A change
   to OFS that touches these is carried out to it.
+  **A physics companion** (27 Oct, SPN R542; Tom: "write the OFS physics paper to put all this in one place. tie it to OFS
+  if possible."): `papers/observation-from-somewhere-physics.md`, *What a Reader Recovers: known physics read from a
+  standpoint*. A normal paper like OFS; lab codes and standings only in its Appendix A. Its geometry is OFS's (nothing OFS
+  does not say; where they differ, OFS stands); its physics comes from `physics.md` (still the working record),
+  `inverse-square.md`, `parallax.md` and the labs, each result marked [exact], [data], [world] (Wander, illustration) or
+  [simulation] (our own, against a full referee). The labs' test for convention is OFS's scale test generalised; the seven
+  conventions are what a writer carries in. A new physics result goes into `physics.md` first and is carried out to it.
   **What the floor discards** (23 Oct, SPN R464; Tom: "that is mathmatically profound. this paper should give
   significant space to that why that act is so profound, what it means."): OFS §8 opens a section before "What the height
   fixes" (from DYH runs 1–2): the floor's remainder is address, not payload; its digits the finer levels, a second
