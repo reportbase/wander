@@ -282,6 +282,44 @@ to it at once, checked against division to 10⁻¹⁵), a chain laid end to end 
 ends; a loop to no gap; a misread link a remainder the loop shows but cannot place; small errors on every link adding),
 the circular rule (a new zero, tangent subtraction to 10⁻¹⁵), and scaling the world moving no reading.
 
+## 2⅞⅞⅞½. What a pure ratio system has over one designed in units, and where it stops
+
+27 Oct. Tom: "does a pure ratio system have any advantanges over a similar system designed with units.", then "yes,
+add these to the note."
+
+**One property behind them all.** A pure ratio system holds only relations, so scaling the world by k changes none of
+its numbers ("scale the world", OFS §11). What that buys:
+
+1. **Every size, one design.** The design is the same at every scale, only drawn larger or smaller: ISO 216 is one rule
+   (halving keeps the shape, √2) and one amount, A0 to A10 one design (MOD); a piece of music transposes into any key;
+   relative units (`em`, `%`) lay a page out on any screen.
+2. **Nothing to calibrate.** No standard to agree, keep or drift; a stretched ruler or a misread unit cannot corrupt it,
+   and the whole class of unit-mismatch errors cannot happen inside it, since there is no second unit to mismatch.
+3. **Smaller and self-consistent.** n parts hold n − 1 ratios: one degree of freedom fewer, the one no one needs until an
+   outside amount must be met. Chains telescope (§2⅞⅞⅞), so a hierarchy of any depth stays consistent.
+4. **Errors kept apart.** A wrong amount at the top moves everything together, a uniform rescaling with every relation
+   kept; a misread link shows as a remainder round a loop. Where every part is written in units, each measurement brings
+   its own error and the shape itself can come out distorted. STC found the same split: more readings sharpened the
+   shape, never the scale.
+5. **Results carry across scales.** Similarity laws and dimensionless numbers: a wind-tunnel model at the same Reynolds
+   number speaks for the full-size aircraft; Buckingham's π groups are the part of a law no unit enters (BPI).
+6. **Constant relative precision.** Laid on the levels, a ratio system spends the same relative grain at every size
+   (the reader's lay, the float, log depth): a wide range for a fixed count.
+
+**Where it stops: the world is not scale-free.** Gravity, the strength of materials, a wavelength, a hand's size each
+carry an amount. Galileo's square–cube argument (*Two New Sciences*, 1638, the second day; check the passage) is the
+classic case: an animal scaled up in perfect proportion breaks its bones, since weight grows as k³ and the bones'
+strength as k². A pure ratio design is right only where what it depends on is scale-free too; wherever physics fixes an
+amount, a unit must enter, which is where "a unit injects physics into the relation" (R230). Beside that, the seven
+capabilities a blueprint adds (OFS §9): the size; parts made apart meeting out of view; sums and budgets; the join;
+stating a thing before it exists; completeness stated; a far field kept in proportion for readers whose corners differ.
+
+**In practice, ratios inside and one amount where the outside meets it.** Write once, then read again (§2⅞): one amount
+at the top of the tower, everything below it in ratios, keeping 1–6. Parametric CAD (a model driven by one dimension),
+modular scales in typography and ISO 216 work this way. A reading; the claims about practice are not tested here
+(R364). A test to queue: a scaled design that keeps every ratio fails exactly where a physical amount enters (the
+square–cube law on published load tables), and nowhere else.
+
 ## 3. Classical ideas to build on
 
 Each with what it gives, what the tower adds, and its standing. "Check" marks a citation from memory.
@@ -357,3 +395,5 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
   corners, direction composed exactly, distance unlinked unless a step or a kind carries each link; in steps with a
   dead band (FPV run 5). OFS unchanged.
 - 27 Oct: §2⅞⅞⅞, cascades of cancellation and ratios as places, the reader a slide rule; `slide-rule.html` (SPN R536).
+- 27 Oct: §2⅞⅞⅞½, what a pure ratio system has over one in units (six, from scale invariance) and where it stops
+  (the square–cube law; the seven capabilities); one amount where the outside meets it (SPN R537).
