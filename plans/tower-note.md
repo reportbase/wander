@@ -49,6 +49,56 @@ readers is an agreement" holds only where they share no view.
 If this holds, writing is not something a reader needs for its own geometry; it is how a reader meets the amounts of
 others: other readers it cannot see, and instruments that state amounts.
 
+## 2½. Each system is its own unit
+
+27 Oct. Tom: "lets keep to the tower of ratios. for example, it seems to me that each system is self defined by its own
+ratios. the system may have used physics as it constraints, why it used one breadth for another, or why it standardized
+on a specific set of breaths. systems seem to be somewhat constrained, and consistent in their units, but they are their
+units, based on its constraints."
+
+The reading, stated so it can be checked:
+
+- **A system's unit is one of its own breadths** (its module), and every other breadth in it is a ratio to that one.
+  Nothing outside the system is needed to state the system.
+- **The constraint chooses the ratios.** Why this breadth and not another, and why a standard set of breadths, is
+  answered by what the system must do (physics, use, manufacture), not by any outside unit. The constraint is stated in
+  the system's own terms, so it yields ratios.
+- **Consistent within, different between.** One system's breadths agree with each other because they come from one
+  module and one set of constraints; two systems' modules are unrelated until a link is read between them (a ratio, where
+  both are in view) or an amount is written (where they are not).
+- **The tower is systems nested.** A level of the tower is a system; its module is a breadth of the level above (or a
+  constraint's answer there); the link between levels is the ratio of the two modules.
+- **One amount at the top.** Tying a system to the outside (to metres) is one written number for the module; the system
+  does not change when it is written.
+
+Cases to work through (exact where the constraint is mathematical; checked against the standards before use):
+
+1. **Paper, ISO 216.** The constraint: a sheet halved keeps its shape. So its sides' ratio r satisfies r = 2/r, r = √2,
+   and the series is one doubling of area a step. The module is the sheet itself; the written amount is A0's area, 1 m².
+   Halving swaps the long side and the short (the exchange), and √2 is the ratio fixed by it.
+2. **Preferred numbers, Renard (ISO 3).** The constraint: equal steps in ratio across a range. R5 is 10^(1/5) a step
+   (1, 1.6, 2.5, 4, 6.3), R10 10^(1/10): sizes laid evenly on the levels, the standard breadths a geometric series
+   whatever the unit they are later written in.
+3. **The classical orders, Vitruvius.** The module is the column's own diameter (or half of it); every other part of the
+   order (height, entablature, spacing) is stated in modules. A temple is stated without a foot; the foot enters only to
+   build it. (Check Book III–IV for each order's module.)
+4. **Screw threads (ISO 68-1, ISO 261).** The profile in units of the pitch, the pitch against the diameter: already OFS's
+   "Units within units". The constraint is strength and making.
+5. **Music.** Intervals are ratios (2:1, 3:2, 4:3, or 2^(k/12)); a scale is stated with no frequency; concert pitch (A at
+   440 Hz, ISO 16) is the one written amount, and older pitches show the system unchanged by it.
+6. **Brick bonds.** A brick's length is about two widths and a joint, so a bond closes at corners and returns: the
+   brick's breadths are each other's units, chosen by the bond.
+7. **Gears.** The module (pitch diameter over the number of teeth) makes gears that mesh share one breadth; the tooth is
+   stated in modules.
+8. **Type.** The em, the size of the type itself; spacing and leading stated in ems.
+
+Questions this raises:
+
+- Is every standard set of breadths a constraint read as ratios plus one written amount? Find a counter-case.
+- When two systems meet (a page in a book in a shelf; a screw in a gear in a machine), is the link between them always a
+  ratio of modules that the joining constraint fixes?
+- Which constraints give the levels (Renard), which the exchange (paper), which a small whole-number ratio (music, bricks)?
+
 ## 3. Classical ideas to build on
 
 Each with what it gives, what the tower adds, and its standing. "Check" marks a citation from memory.
@@ -102,3 +152,5 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
 ## 5. Log
 
 - 27 Oct: note started; TWR planned (`plans/twr-plan.md`), predictions written, not run.
+- 27 Oct: §2½, each system its own unit (Tom: "they are their units, based on its constraints"); eight cases listed,
+  none worked yet.
