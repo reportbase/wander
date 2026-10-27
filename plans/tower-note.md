@@ -133,6 +133,30 @@ Checked against the corpus:
   (thread to nut across factories, paper to printer across countries). Joined in view, a ratio read between them does
   (one shared link, §2). That is testable on standards: every standard amount should sit at such a meeting.
 
+## 2⅞. Write once, then read again
+
+27 Oct. A passage pasted by Tom (ChatGPT): the number line "is necessary for some operations and over-used for others";
+needed "when the near-field extents are not shared and the systems must still exchange absolute amounts"; not needed "once
+a system has its baseline and is working inside its own constraints", when "the subsequent construction, adjustment, and
+checking can return to ratios"; human practice "often does not return to it", re-expressing local comparisons as metres,
+"a failure to hand the system back to its ratios after the baseline has been set".
+
+Checked against the corpus:
+
+- **Kept: write once, then read.** One amount writes a whole tower ("A worked example of the tower"), and after it every
+  relation inside is still a ratio; the amount fixes the scale and changes no ratio. So the writing step can be taken
+  once, where an outside amount must be met, and the work after it can go on in ratios against the baseline it gave.
+  That is already OFS's arithmetic; the passage names it as a practice.
+- **Not kept: "over-used", "failure", "paid for continuously".** These are claims about how engineering is done and what it
+  costs, with no measurement behind them (R364), and they speak against the number line (R478). OFS stays out of both.
+- **One error.** "Loss of the direct proportional comparisons inside the corner": the number line is proportional on
+  both sides of 1 (Proposition 14), so it loses no proportion inside the corner or anywhere; what it lacks is the corner
+  itself, a reader's.
+- **A question it raises, testable.** Do standards state their internal relations as ratios to a module (ISO 216's √2,
+  ISO 68-1's profile in P) or as amounts (ISO 261's pitches by size)? MOD found both. Counting which a set of standards
+  does, and whether the amounts sit exactly at meetings out of view, would test the passage's claim about practice
+  without asserting it.
+
 ## 3. Classical ideas to build on
 
 Each with what it gives, what the tower adds, and its standing. "Check" marks a citation from memory.
@@ -195,3 +219,5 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
 - 27 Oct: §2¾, building without a blueprint (a pasted passage): agrees with §2; situation 1 shared, not the writer's
   alone; the builders' unit their own body; OFS's "lacks" measured from the writer's side, a one-clause edit proposed,
   not made; the biology (stigmergy) to check; a candidate rule for where writing is needed.
+- 27 Oct: §2⅞, write once, then read again (a pasted passage): kept the practice, not "over-used"; one error
+  corrected; a counting test on standards proposed.
