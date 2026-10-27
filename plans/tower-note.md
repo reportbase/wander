@@ -320,6 +320,36 @@ modular scales in typography and ISO 216 work this way. A reading; the claims ab
 (R364). A test to queue: a scaled design that keeps every ratio fails exactly where a physical amount enters (the
 square–cube law on published load tables), and nowhere else.
 
+## 2⅞⅞⅞¾. Touch: reading, writing in one's own unit, and writing
+
+27 Oct. Tom: "if you reach out and touch the world, is that writing?", then "yes".
+
+Touch does three things, and only some are writing.
+
+1. **Contact alone is a reading.** The moment two things meet, with nothing measured, is "they meet": in `pool.html`
+   h + v = 1, a sum of two readings with no unit in it.
+2. **Touching to find where a thing is writes, in one's own unit.** The hand meeting a thing gives its direction and that
+   it lies at one's reach: a range, ruled by the arm. One known move writes in the reader's own H (RWT); ranging carries an
+   amount in. So touch writes, but the amount carried in is one's own body: the thing placed "at one arm", no public unit.
+   Metres need the arm's length carried in from outside, as counting strides does on `room-walk.html`. With reach as H,
+   whatever is touched at full reach sits at d/H = 1, the corner: reach is the body's own split of near from far (within
+   it things are in proportion to the arm; beyond it, directions until a step gives parallax). The eye-height case on
+   `ground.html` is the same, one eye height tall at the corner.
+3. **Touching to push writes in the full sense.** Moving a thing changes the world ("to move the furniture is to write",
+   OFS §11; R346, only writers change the world). A reader only receives; putting a thing at a stated place on purpose
+   needs the amounts: how far, which way, how hard.
+
+So seeing is reading, touching with the arm as ruler is writing in one's own H, and pushing is writing.
+
+**Classical anchors (from memory; check before citing).**
+- Berkeley, *An Essay Towards a New Theory of Vision* (1709): distance is not seen but learned by touch and movement, and
+  sight comes to stand for it. Read here: the eye reads directions; touch supplies the amount that makes them distances,
+  the writing sight then borrows.
+- Descartes, *La Dioptrique* (1637), the blind man with two sticks: distance from the angle between the sticks where both
+  meet the thing, a triangulation with his own body as the baseline.
+- Peripersonal space (the space within reach coded apart from the space beyond it; Rizzolatti and colleagues, Previc,
+  check): an empirical claim about brains, so it stays here, not in OFS (R364, R455).
+
 ## 3. Classical ideas to build on
 
 Each with what it gives, what the tower adds, and its standing. "Check" marks a citation from memory.
@@ -397,3 +427,5 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
 - 27 Oct: §2⅞⅞⅞, cascades of cancellation and ratios as places, the reader a slide rule; `slide-rule.html` (SPN R536).
 - 27 Oct: §2⅞⅞⅞½, what a pure ratio system has over one in units (six, from scale invariance) and where it stops
   (the square–cube law; the seven capabilities); one amount where the outside meets it (SPN R537).
+- 27 Oct: §2⅞⅞⅞¾, touch: contact a reading, touch as ruler writing in one's own H (reach the body's corner), a push
+  writing; Berkeley, Descartes's two sticks, peripersonal space (SPN R538).

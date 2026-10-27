@@ -2328,6 +2328,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   A pure ratio system against one in units (27 Oct, SPN R537; Tom: "does a pure ratio system have any advantanges over a
   similar system designed with units."; "yes, add these to the note."): tower note §2⅞⅞⅞½, six advantages from scale
   invariance, the limit where physics fixes an amount (Galileo's square–cube law), one amount where the outside meets it.
+  Touch (27 Oct, SPN R538; Tom: "if you reach out and touch the world, is that writing?"; "yes"): tower note §2⅞⅞⅞¾,
+  contact a reading, touch as ruler writing in one's own H (reach the body's corner), a push writing.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
