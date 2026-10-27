@@ -257,3 +257,6 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
   corrected; a counting test on standards proposed.
 - 27 Oct: §2⅞½, what `papers/number-line.md` already held (seven items, the ruler a bridge carrying H_A/H_B, units as a
   body made public, the ant and the mountain); its older terms listed, the paper not edited. §2⅞ stays in the note (Tom).
+- 27 Oct: TWR run (`plans/twr-plan.md`, runs 1–4): T1, T2′, T3 (b), T4, T6 not killed; T3 (a) killed by the walk (held
+  set unchanged at two steps); T5 killed three ways by my set-up and model (least squares flipped the scale; the median
+  did not, closure as a bridge, but drift i^0.26, not a random walk).

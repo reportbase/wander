@@ -141,3 +141,27 @@ T6(b)'s routes: 61 features. The walk: 32 stops round a rectangle (3, 3)–(17, 
 - **T5″.** Each leg the median of the per-feature leg estimates (each placed feature seen from the new stop gives one,
   cross(b, X − P)/cross(b, u)), rays kept 8 stops, everything else as run 3. No walk of the 400 flips a leg's sign (kill
   if any does), p = 0.5 ± 0.1 over i = 4 … 16, and the two closure ratios 1/√2 ± 0.1 and 0.5 ± 0.1.
+
+### Run 4 (`runs/twr/twr-run4.txt`; the median leg, 60 digits, rays kept 8 stops)
+
+- **T5″ killed, by my prediction of the growth.** No walk of the 400 flips a sign, and the log scale's sd is 0.0065,
+  0.0072, 0.0082, 0.0100 at stops 4, 8, 16, 32 (about 30 times smaller than run 3's at 16). Closing the loop leaves
+  0.649 of the open chain's sd at the middle (1/√2 = 0.707, within 0.1) and 0.531 of its sd at the end (0.5, within
+  0.1). But the sd grows as i^0.26, not i^0.5. Post hoc: with rays kept 8 stops, neighbouring legs are read against
+  mostly the same features, so their errors are not independent steps, and a random walk was the wrong model for this
+  chain; the closure still spreads its error as a bridge would.
+- T1, T2, T3 (b), T4, T6 as in run 3.
+
+## What TWR says
+
+A reader walking with nothing but its own turns and the directions to what it can see builds the whole map exactly in
+units of its first leg (T1), and nothing it holds moves when the world is scaled (T2′). Its addresses change at every
+step and its links do not: every ratio of lengths read from any two consecutive stops is the referee's (T3 (b)). The
+held set need not change at every step (T3 (a)'s second clause, killed by this walk). With too little memory the chain
+of legs breaks into pieces, each exact in its own unit, and one thing seen by two pieces rejoins them by a ratio, with
+no amount (T4). Everything it does from where it stands, comparing sizes, choosing routes, finding home, counting steps,
+needs no amount; an amount in seconds needs one carried in, and two readers that share one thing align with none (T6).
+With noise, how the scale drifts depends on the estimator: least squares followed badly placed features and flipped the
+scale (runs 2–3); the median did not, and closing the loop then shared out the drift as a bridge would, though the drift
+itself grew more slowly than a random walk (run 4). The exact parts restate bearing rigidity and the scale ambiguity of
+structure from motion; the reading (the tower, its churn and its links, writing as the one amount) is ours.

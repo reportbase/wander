@@ -1,0 +1,30 @@
+world: 61 features (12 things, 9 room corners, 4 door points); walk: 32 stops
+T1: legs solved 31/31, breaks []; features placed 61/61 seen; worst leg 2.07e-59, stop 5.49e-59, feature 8.21e-59
+T2: k = 0.001: map 9.28e-58, legs 3.06e-58, links 1.4e-58
+T2: k = 7.0: map 9.35e-59, legs 1.59e-59, links 2.77e-59
+T2: k = 1.0e+3: map 1.58e-58, legs 2.43e-59, links 3.48e-59
+T3 (a): every direction changed at every step: False; held 11–21 a stop, added+dropped 0–10 a step
+T3 (b): 77 link readings from 31 consecutive pairs, 37 distinct links; worst 1.67e-56
+T4 M =  2: breaks [3, 8, 11, 16, 25] (rule agrees: True), pieces 6; (a) 25 links, worst 2.77e-57; (b) 8 rejoinings, worst 3.67e-58; (c) 13 re-readings, worst 2.81e-57
+T4 M =  3: breaks [9] (rule agrees: True), pieces 2; (a) 36 links, worst 4.14e-58; (b) 1 rejoinings, worst 1.11e-58; (c) 6 re-readings, worst 4.13e-58
+T4 M =  4: breaks [] (rule agrees: True), pieces 1; (a) 37 links, worst 3.33e-59; (b) 0 rejoinings, worst 0.0; (c) 0 re-readings, worst 0.0
+T4 M =  6: breaks [] (rule agrees: True), pieces 1; (a) 37 links, worst 5.62e-59; (b) 0 rejoinings, worst 0.0; (c) 0 re-readings, worst 0.0
+T4 M =  8: breaks [] (rule agrees: True), pieces 1; (a) 37 links, worst 4.74e-59; (b) 0 rejoinings, worst 0.0; (c) 0 re-readings, worst 0.0
+T4 M = 12: breaks [] (rule agrees: True), pieces 1; (a) 37 links, worst 4.88e-59; (b) 0 rejoinings, worst 0.0; (c) 0 re-readings, worst 0.0
+T6 k = 1.0: (a) 66 pairs agree True; (b) 18 routes agree True; (c) home 2.34e-59; (d) steps 6.97e-59; (e) seconds with L0 carried 4.08e-59
+T6 k = 0.001: (a) 66 pairs agree True; (b) 18 routes agree True; (c) home 2.69e-58; (d) steps 5.64e-58; (e) seconds with L0 carried 4.28e-61
+T6 k = 7.0: (a) 66 pairs agree True; (b) 18 routes agree True; (c) home 3.29e-59; (d) steps 7.34e-59; (e) seconds with L0 carried 3.63e-58
+T6 k = 1.0e+3: (a) 66 pairs agree True; (b) 18 routes agree True; (c) home 2.37e-59; (d) steps 1.74e-58; (e) seconds with L0 carried 1.21e-55
+T6 (e): readings at k = 1 and 7 identical True, seconds 7 times apart: nullity 1 without an amount, 0 with L0 carried
+T6 (f): readers A (32 stops) and B (20 stops) share 42 features; aligned by T10 alone: other features 1.63e-58; H_B/H_A read 1.69566788164 against 1.69566788164 (2.57e-59)
+T6 (f): nothing in common (B's own world scaled by 7): B's map unchanged True: the ratio of H's undetermined, nullity 1
+T5: 400 walks, eps 0.001, rays kept 8 stops (an open chain); sd of the log scale at i = 4, 8, 16, 32: 0.00652, 0.00724, 0.00822, 0.01005
+T5: growth exponent p = 0.259 (4…16); closed at the loop, sd at i = 16 0.00533: over the open chain there 0.649 (1/√2 = 0.707), over the open chain at its end 0.531 (0.5)
+T5: walks with a leg flipped in sign: 0 []
+
+T1 not killed
+T2 not killed
+T3 KILLED
+T4 not killed
+T5 KILLED
+T6 not killed

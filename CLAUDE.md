@@ -2260,7 +2260,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   legs), addresses churning and links standing, steps adding links, loops checking them; a lone reader builds with ratios
   only, writing needed only for an outside amount or a reader with nothing in view in common; classical anchors (Euclid V
   and Eudoxus, Descartes' unit segment, Thales, Klein and Kendall, bearing rigidity, SfM scale drift, cycle consistency,
-  Kuipers, bees and ants), citations from memory until checked. Tested by `twr-plan.md` (predictions T1–T6, not run).
+  Kuipers, bees and ants), citations from memory until checked. Tested by `twr-plan.md` (+ `runs/twr/twr.py`, SPN R532;
+  Tom: "run the test"): runs 1–4, T1, T2′, T3 (b), T4, T6 not killed (the map exact in the first leg, links standing
+  while every direction churns, pieces rejoined by one shared thing, writing needed only for seconds); T3 (a)'s second
+  clause killed by the walk; T5 killed by my least squares (scale flips) and then my random-walk model (median: drift
+  i^0.26; closure as a bridge in its bands). Run as `python3 runs/twr/twr.py 60 8 median`.
   §2½ (Tom: "each system is self defined by its own ratios … they are their units, based on its constraints."): a system's
   module, its constraint's ratios, one written amount. `mod-plan.md` (+ `runs/mod/`, SPN R529; "yes, work out the exact
   cases"), exact on Wikipedia's tables (sha256 in the plan): paper (√2, all 66 A/B/C sizes from three amounts and the
