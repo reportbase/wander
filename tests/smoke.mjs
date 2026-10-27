@@ -952,12 +952,17 @@ try {
       prod = Math.max(prod, Math.abs(O.read(t).product - 1)); }
     const e = O.read(90), c = O.read(45), r = O.set({ t: 30, c: 1 });
     return { gap1, gap2, gapHalf, prod, pay: Math.abs(e.payload - Math.PI / 2), addr: Math.abs(e.address - 2 / Math.PI), ratio: c.ratio, g: c.g,
-      foot: Math.abs(r.foot - 0.75), height: Math.abs(r.height - Math.sqrt(3) / 4) };
+      foot: Math.abs(r.foot - 0.75), height: Math.abs(r.height - Math.sqrt(3) / 4),
+      // the landing point e^(2iθ) at +1, i, −1 and the Cayley image −e^(2iθ) of tan θ (OFS review 32)
+      land: Math.max(...[[0, [1, 0]], [45, [0, 1]], [90, [-1, 0]]].map(([t, q]) => Math.hypot(O.landing(t)[0] - q[0], O.landing(t)[1] - q[1]))),
+      cay: Math.max(...[5, 30, 45, 60, 85].map(t => { const w = O.cayley(Math.tan(t * Math.PI / 180)), l = O.landing(t); return Math.hypot(w[0] + l[0], w[1] + l[1]); }),
+        Math.hypot(O.cayley(0)[0] + 1, O.cayley(0)[1]), Math.hypot(O.cayley(Infinity)[0] - 1, O.cayley(Infinity)[1])) };
   });
   const orOk = orr.gap1 < 1e-12 && orr.gap2 > 1e-4 && orr.gapHalf > 1e-4 && orr.prod < 1e-12 && orr.pay < 1e-12 && orr.addr < 1e-12 &&
-    Math.abs(orr.ratio - 1) < 1e-12 && Math.abs(orr.g - 0.5) < 1e-12 && orr.foot < 1e-12 && orr.height < 1e-12;
+    Math.abs(orr.ratio - 1) < 1e-12 && Math.abs(orr.g - 0.5) < 1e-12 && orr.foot < 1e-12 && orr.height < 1e-12 &&
+    orr.land < 1e-12 && orr.cay < 1e-12;
   if (!orOk) failures.push(`[one-read.html] ${JSON.stringify(orr)}`);
-  console.log(`${failures.length === before33 ? 'ok  ' : 'FAIL'} one-read.html (at V = H the ray at θ and the radius at 2θ meet at one point at every θ (${orr.gap1.toExponential(0)}), at V = 2H and V = H/2 they part; arc over chord times chord over arc 1 throughout, π/2 and 2/π at the end of the turn; at 45° v/h = 1 and g = ½; at 30° foot ¾, height √3/4)`);
+  console.log(`${failures.length === before33 ? 'ok  ' : 'FAIL'} one-read.html (at V = H the ray at θ and the radius at 2θ meet at one point at every θ (${orr.gap1.toExponential(0)}), at V = 2H and V = H/2 they part; arc over chord times chord over arc 1 throughout, π/2 and 2/π at the end of the turn; at 45° v/h = 1 and g = ½; at 30° foot ¾, height √3/4; the landing point e^(2iθ) at +1, i and e^(iπ) = −1, and on the Cayley disc −e^(2iθ), zero at −1 and the horizon at +1)`);
 
   // ── 34. sweep-zero.html: counted by its own turn the readings are the Cauchy, median 1; a clock alike on both sides
   //    keeps the median, a lopsided one moves it, a flat screen puts it at half the frame; the legs compose by tangent

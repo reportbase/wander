@@ -18,7 +18,13 @@
     arc, sin θ/θ, their product 1, the writer's value; at the end of the turn π/2 and 2/π. With the other party drawn at
     V = cH the circle is an ellipse, the radius at 2θ and the ray at θ part, and the two breakdowns no longer meet: only
     V = H keeps them one read.
-    Links: ?t=<θ in degrees>&c=<V/H>&play=1. Test hook: window.__oneRead (at, read, gap, set, state).
+    The landing point in complex form (28 Oct 2026, Tom: "update the demos", after OFS review 32; SPN R543, R544): from
+    the centre it is ½(h + iv)² = ½e^(2iθ), the address squared, at +1 (B) at zero, i (the top of the arc) at the corner
+    and e^(iπ) = −1 (home) at the horizon, the half turn. A third panel lays the same reading on the Cayley disc,
+    w = (s − i)/(s + i) = −e^(2iθ): there zero lands at −1, the corner at −i and the horizon at +1, the Thales landmarks
+    turned a half turn,
+    and the standpoint i at the centre (OFS Appendix A).
+    Links: ?t=<θ in degrees>&c=<V/H>&play=1. Test hook: window.__oneRead (at, read, gap, landing, cayley, set, state).
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -53,7 +59,9 @@
     two ways. Counted as a <span class="g">direction</span> from where you stand, it is the address, the inscribed sweep;
     counted from the centre of the circle on the chord, it is the <span class="r">point</span> where the paint lands, the
     central sweep. Both end at the same point: the address points at the payload. Over the whole quarter turn the two
-    sweeps measure the line as π/2 and 2/π; their product is the 1 that only the writer holds.</p>
+    sweeps measure the line as π/2 and 2/π; their product is the 1 that only the writer holds. In complex form the point
+    is the direction squared, ½e^(2iθ) from the centre: where the address runs off to ∞ at the horizon, the radius has made
+    its half turn to home, e^(iπ) = −1.</p>
     <div class="panel">
         <div class="row"><label for="t">the direction θ</label><input id="t" type="range" min="0" max="90" step="0.1" value="30">
             <span id="tv" class="b"></span><button id="play">play θ</button></div>
@@ -70,6 +78,9 @@
                 <canvas id="cv2" height="200"></canvas><p class="cap">Over the quarter turn: the central sweep's arc over chord
                 (teal, rising to π/2), the inscribed sweep's chord over arc (gold, falling to 2/π), and their product
                 (white), 1 throughout.</p>
+                <canvas id="cv3" height="220"></canvas><p class="cap">The same read on the Cayley disc,
+                w = (s − i)/(s + i) = −e^(2iθ) for the reading s = tan θ: the standpoint i goes to the centre, zero to −1,
+                the corner to −i, the horizon to +1. The Thales circle's landmarks, turned a half turn.</p>
             </div>
         </div>
     </div>
@@ -105,9 +116,19 @@
             arc, chord, payload: payR, address: addrR, product: payR * addrR };
     }
 
+    // the landing point from the centre, ½e^(2iθ), as [re, im] of e^(2iθ); and the Cayley image of the reading tan θ
+    function landing(tDeg) { const t = rad(tDeg); return [Math.cos(2 * t), Math.sin(2 * t)]; }
+    function cayley(sv) {
+        if (!isFinite(sv)) return [1, 0];
+        const d = sv * sv + 1;           // (s − i)/(s + i) = (s² − 1 − 2is)/(s² + 1)
+        return [(sv * sv - 1) / d, -2 * sv / d];
+    }
+    const mark = tDeg => tDeg < 0.05 ? 'zero: +1, the other party B' : Math.abs(tDeg - 45) < 0.05 ? 'the corner: i, the top of the arc'
+        : tDeg > 89.95 ? 'the horizon: e^(iπ) = −1, home itself' : '';
+
     function fit(cv) {
         const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth,
-            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * (cv.id === 'cv2' ? 0.5 : 0.9)));
+            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * (cv.id === 'cv1' ? 0.9 : cv.id === 'cv3' ? 0.62 : 0.5)));
         cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr);
         const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return { g, w, h: hh };
     }
@@ -139,6 +160,10 @@
         dot(X(a.addr), '#d4a052', 6); dot(X(a.pay), '#8ce6cd', 4);
         dot(A, '#e6e4ee', 4); dot(B, '#e6e4ee', 3); dot(O, '#8a8a96', 3);
         g.fillStyle = '#e6e4ee'; g.fillText('A, home', A[0] - 8, A[1] + 18); g.fillText('B', B[0] - 4, B[1] + 18); g.fillText('centre', O[0] - 22, O[1] + 18);
+        if (Math.abs(cc - 1) < 1e-9) {   // the landing point's three landmarks, from the centre: +1, i, −1
+            const T = X([0.5, 0.5]); g.fillStyle = 'rgba(140,230,205,0.85)';
+            g.fillText('+1', B[0] + 6, B[1] - 6); g.fillText('i', T[0] - 3, T[1] - 8); g.fillText('−1 = e^(iπ)', A[0] + 6, A[1] - 30);
+        }
         // the angles
         g.strokeStyle = 'rgba(212,160,82,0.6)'; g.beginPath(); g.arc(A[0], A[1], 34, -t, 0); g.stroke(); g.fillStyle = '#d4a052'; g.fillText('θ', A[0] + 38, A[1] - 6);
         if (Math.abs(cc - 1) < 1e-9) { g.strokeStyle = 'rgba(140,230,205,0.6)'; g.beginPath(); g.arc(O[0], O[1], 22, -2 * t, 0); g.stroke(); g.fillStyle = '#8ce6cd'; g.fillText('2θ', O[0] + 26, O[1] - 14); }
@@ -157,6 +182,30 @@
         line(r => r.payload, '#8ce6cd'); line(r => r.address, '#d4a052'); line(r => r.product, '#e6e4ee');
         g.fillStyle = '#d4a052'; g.fillRect(X(st.t) - 1, pad, 2, h - 2 * pad);
     }
+    function draw3() {
+        const { g, w, h } = fit($('cv3')); g.clearRect(0, 0, w, h);
+        const R0 = Math.min(w * 0.3, (h - 40) / 2), cx = w - R0 - 18, cy = h / 2;
+        const D = q => [cx + R0 * q[0], cy - R0 * q[1]];
+        g.font = '11px DM Mono, monospace';
+        // the line of readings s ≥ 0, laid as arctan so the horizon has a place
+        const lx0 = 14, lx1 = Math.max(lx0 + 60, cx - R0 - 30), L = sv => lx0 + (lx1 - lx0) * (isFinite(sv) ? Math.atan(sv) / (Math.PI / 2) : 1);
+        g.strokeStyle = 'rgba(212,160,82,0.6)'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(lx0, cy); g.lineTo(lx1, cy); g.stroke();
+        g.fillStyle = '#8a8a96'; for (const [sv, lab] of [[0, '0'], [1, '1'], [Infinity, '∞']]) { g.fillRect(L(sv) - 0.5, cy - 4, 1, 8); g.fillText(lab, L(sv) - 3, cy + 18); }
+        g.fillText('s = tan θ', lx0, cy - 12);
+        // the disc
+        g.strokeStyle = 'rgba(230,228,238,0.4)'; g.lineWidth = 1; g.beginPath(); g.arc(cx, cy, R0, 0, 2 * Math.PI); g.stroke();
+        g.strokeStyle = 'rgba(140,230,205,0.7)'; g.lineWidth = 2.5; g.beginPath();
+        for (let i = 0; i <= 120; i++) { const d = st.t * i / 120, q = D(cayley(Math.tan(rad(d)))); i ? g.lineTo(...q) : g.moveTo(...q); }
+        if (st.t > 0) g.stroke();
+        const sv = st.t >= 89.95 ? Infinity : Math.tan(rad(st.t)), wq = cayley(sv);
+        const dot = (p, col, r) => { g.fillStyle = col; g.beginPath(); g.arc(p[0], p[1], r, 0, 2 * Math.PI); g.fill(); };
+        dot([L(sv), cy], '#d4a052', 5); dot(D(wq), '#8ce6cd', 5); dot(D([0, 0]), '#e6e4ee', 3);
+        g.fillStyle = '#8a8a96'; g.textAlign = 'left'; g.fillText('−1, zero', D([-1, 0])[0] + 8, cy - 8);
+        g.textAlign = 'right'; g.fillText('horizon, +1', D([1, 0])[0] - 8, cy - 8); g.textAlign = 'left';
+        g.fillText('−i, corner', D([0, -1])[0] - 30, D([0, -1])[1] + 14); g.textAlign = 'center'; g.fillText('i ↦ centre', cx, cy + 16); g.textAlign = 'left';
+        g.fillStyle = '#8ce6cd'; const z = x => Math.abs(x) < 5e-4 ? 0 : x;
+        g.fillText(`w = −e^(2iθ) = ${z(wq[0]).toFixed(3)} ${z(wq[1]) < 0 ? '−' : '+'} ${Math.abs(z(wq[1])).toFixed(3)}i`, lx0, 16);
+    }
     const f4 = x => !isFinite(x) ? '∞' : x.toFixed(4);
     function hud() {
         const r = read(st.t), cc = c();
@@ -165,13 +214,15 @@
         $('addr').innerHTML = `<span class="g">The address</span> (the inscribed sweep, from home): a direction, no amount.\n`
             + `  [h : v] = [${f4(r.h)} : ${f4(r.v)}], so v/h = ${f4(r.ratio)}\n  the sweep's share so far, g = ${f4(r.g)}${Math.abs(st.t - 45) < 0.05 ? '  (the corner: the arms read alike)' : ''}`;
         $('pay').innerHTML = `<span class="r">Where the paint lands</span> (the central sweep, from the centre): a point of the circle, bounded, no distance to anything.\n`
-            + `  the radius at 2θ = ${(2 * st.t).toFixed(1)}°; the point's foot h² = ${f4(r.foot)}, height hv = ${f4(r.height)}`;
+            + `  the radius at 2θ = ${(2 * st.t).toFixed(1)}°; the point's foot h² = ${f4(r.foot)}, height hv = ${f4(r.height)}\n`
+            + `  from the centre ½(h + iv)² = ½e^(2iθ), e^(2iθ) = ${f4(landing(st.t)[0])} ${landing(st.t)[1] < 0 ? '−' : '+'} ${f4(Math.abs(landing(st.t)[1]))}i`
+            + (mark(st.t) ? `\n  ${mark(st.t)}` : '');
         $('both').innerHTML = `<span class="w">The arc turned through</span> θ = ${f4(r.arc)} over its chord sin θ = ${f4(r.chord)}:\n`
             + `  central sweep, arc over chord: <span class="r">${f4(r.payload)}</span>\n  inscribed sweep, chord over arc: <span class="g">${f4(r.address)}</span>\n`
             + `  their product: <span class="b">${f4(r.product)}</span>, the writer's 1` + (st.t >= 89.95 ? '\n  at the end of the turn: π/2 and 2/π' : '')
             + (Math.abs(cc - 1) > 1e-9 ? `\n<span class="x">Drawn at V = ${cc.toFixed(2)}H: the ray at θ and the radius at 2θ part, by ${gap(st.t).toFixed(4)}.</span>` : '');
     }
-    function draw() { draw1(); draw2(); hud(); $('t').value = st.t; $('c').value = st.lc; }
+    function draw() { draw1(); draw2(); draw3(); hud(); $('t').value = st.t; $('c').value = st.lc; }
     function play() {
         if (st.anim) { cancelAnimationFrame(st.anim); st.anim = null; return; }
         const t0 = performance.now(), from = st.t >= 89.9 ? 0 : st.t;
@@ -188,7 +239,7 @@
     if (P.has('c')) st.lc = Math.log10(Math.max(0.1, Math.min(10, +P.get('c'))));
     draw();
     if (P.get('play') === '1') play();
-    window.__oneRead = { at, read, gap, set, state: () => ({ t: st.t, c: c() }) };
+    window.__oneRead = { at, read, gap, landing, cayley, set, state: () => ({ t: st.t, c: c() }) };
 })();
 </script>
 </body>

@@ -272,7 +272,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   continue to create visuals to help visualize the math, what do you suggest", then "all four"; SPN R337), standalone pages
   like `facing.html`. `one-read.html` (R332): one head turn θ from home on the chord's Thales circle meets one point; the
   address (A's ray at θ) and the payload (the radius at 2θ) end there (III.20); arc over chord θ/sin θ and chord over arc,
-  product 1, π/2 and 2/π at the end; at V = cH the ellipse parts them. `?t=&c=&play=1`; hook `window.__oneRead` (`at`, `read`,
+  product 1, π/2 and 2/π at the end; at V = cH the ellipse parts them. Since 28 Oct (Tom: "update the
+  demos", after OFS review 32; SPN R545): the landing point as ½e^(2iθ), +1, i and e^(iπ) = −1 (home) at zero, the corner
+  and the horizon, and a Cayley-disc panel, −e^(2iθ): zero at −1, the corner at −i, the horizon at +1; `central-reader.html`'s
+  one-read step names the half turn e^(iπ) = −1. `?t=&c=&play=1`; hook `window.__oneRead` (`at`, `read`, `landing`, `cayley`,
   `gap`, `set`, `state`). `sweep-zero.html` (R327, R331, R334): the sweep only forward from zero; N = 201 counts at the law's
   quantiles; counted against the turn itself (the Cauchy, median 1), a clock alike on both sides (median 1), a lopsided clock
   (median moved), a flat screen of equal pixels to v/h = 4 (median 2), what arrives (its median direction); "stop" a new zero,
@@ -2761,7 +2764,8 @@ In short:
       facing three ways, the map the room's turned, exactly.
 
   33. **one-read.html:** at V = H the ray at θ and the radius at 2θ meet at every θ, at V = 2H and H/2 they part; arc over
-      chord times chord over arc 1 throughout, π/2 and 2/π at the end; at 45° v/h = 1 and g = ½; at 30° foot ¾, height √3/4.
+      chord times chord over arc 1 throughout, π/2 and 2/π at the end; at 45° v/h = 1 and g = ½; at 30° foot ¾, height √3/4; the landing
+      point e^(2iθ) at +1, i and −1, and the Cayley disc's −e^(2iθ), zero at −1 and the horizon at +1.
   34. **sweep-zero.html:** counted by its own turn the share counted is the share turned and the median 1; a clock alike on
       both sides keeps it, a lopsided one moves it, a flat screen to 2, half its edge; a stop is a new zero; 30° then 40°
       compose to tan 70°, once round to no turn; a turn carries the Cauchy onto itself.
