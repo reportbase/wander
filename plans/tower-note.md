@@ -191,6 +191,28 @@ serial (R266, R268, R309), unit relations called breadths in §8, the unsituated
 writer's box, R445, and the writer's vantage, R335), the rings as payload (R460), and a few lines on the far field that
 read against the number line (R478), which the spine now counts as its seventh capability. The paper is not edited here.
 
+## 2⅞¾. Two lines, or three rulers
+
+A pasted passage (ChatGPT, 27 Oct) put the paper as "at bottom … about those two lines": the reader's line, with a
+corner, proportional to H inside and logarithmic past it; and the writer's number line, with no corner. Kept here, not
+in OFS (Tom: "note."). Three corrections:
+
+1. **The reader has two structures, not one line.** Its directions are the turn: bounded, the Cauchy, the corner at the
+   median; this is OFS §4's reader's line, the closed half-arc. Its lay of distances is proportional to H and then
+   logarithmic (§6), which rests on the assumed premise (S). The passage runs the two together, and the main result is
+   about the first.
+2. **Address and payload are missing.** The main result (abstract, §7, Theorem 6) is that the turn's law is the
+   addresses' and whatever arrives cancels from every reading. "Ratios suffice" rests on that cancelling; a summary in
+   two lines leaves out why.
+3. **OFS §6 already draws it, with three rulers.** "One figure, three rulers": the writer's line x, the turn
+   θ = arctan x and ζ = asinh x. All three carry the corner at 1; only the turn makes it the median; the number line has
+   no corner, which is why readers whose H differ can share it (the seventh capability).
+
+Kept from the passage, as the spine already says it: the geometry is the account of how the reader's rulers and the
+writer's line differ, and of how one amount carries a structure from one to the other, after which the reader can go
+back to ratios. Its closing claim, that this is how biological construction actually occurs, is empirical and stays out
+of OFS (R364, R455), as §2¾'s biology does.
+
 ## 3. Classical ideas to build on
 
 Each with what it gives, what the tower adds, and its standing. "Check" marks a citation from memory.
@@ -260,3 +282,5 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
 - 27 Oct: TWR run (`plans/twr-plan.md`, runs 1–4): T1, T2′, T3 (b), T4, T6 not killed; T3 (a) killed by the walk (held
   set unchanged at two steps); T5 killed three ways by my set-up and model (least squares flipped the scale; the median
   did not, closure as a bridge, but drift i^0.26, not a random walk).
+- 27 Oct: §2⅞¾, two lines or three rulers (a pasted passage): the reader's turn and its lay kept apart, address and
+  payload put back, OFS §6's three rulers the picture; nothing carried into OFS (Tom: "note.").
