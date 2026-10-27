@@ -99,6 +99,40 @@ Questions this raises:
   ratio of modules that the joining constraint fixes?
 - Which constraints give the levels (Renard), which the exchange (paper), which a small whole-number ratio (music, bricks)?
 
+## 2¾. Building without a blueprint
+
+27 Oct. A passage pasted by Tom (its author not named): "A blueprint is a dual-hemispherical object: every length held at
+once, at true scale, with no standpoint, no order of arrival, and no horizon. Nothing in the construction of an ant nest,
+a termite mound, a beaver dam, a bird's nest, or a spider's web begins from such an object. The builders start from local
+ratios … and the finished structure is the set of ratios those local constraints have stabilized." It goes on: readers are
+"not incomplete writers waiting for the missing amount. They are the ordinary case"; writing is needed "only when the
+structure must meet a frame that already exists outside it"; and "the draft's language sometimes treats the writer's
+geometry as the fuller or more complete one … The natural distribution of building runs the other way."
+
+Checked against the corpus:
+
+- **It agrees with §2.** A lone reader builds from ratios in its own unit, and writing enters only where an outside
+  amount must be met (a surveyed plot, a clearance in metres, a mating part to a standard). The passage adds the reverse
+  emphasis: that mode is not a fallback but the common one.
+- **One slip.** Situation 1 is not the writer's alone: the circle V = H is the reader's drawing and the writer's equation,
+  one circle held two ways (SPN R299). Situation 2 is the writer's.
+- **The builders still have a unit, their own.** A body length, a stride, a leg span is the system's module (§2½), an H,
+  not an outside amount. "Ratio-only" means ratios to the builder's own breadth, not ratios to nothing.
+- **What OFS says now.** It names the writer's knowledge as the complete object (abstract, §1) and has a section "What the
+  reader lacks is one number" (§3.8). The arithmetic there is right; the word "lacks" is measured from the writer's side.
+  The passage's point would be met by one clause saying the number matters only where the reader must meet an amount
+  from outside, and that most of what a reader does never meets one. Not made: OFS changes are Tom's to approve, and the
+  claim about building is empirical (below), outside OFS's scope (geometry, not readers' adaptations, R455).
+- **The biology is a claim to check, not a result.** The classical anchor is stigmergy (Grassé 1959, check): building
+  steered by the state of the work, with no plan held. Cases to look up before anything rests on them: termite and ant
+  building by local cues and templates (Bonabeau, Theraulaz and others, check), orb-web spacing set by the spider's own
+  legs (check), beavers plugging where they hear running water (check), wasp combs and bird nests. Each would be a
+  builder whose module is its own body and whose constraints are local; none is evidence for OFS's geometry.
+- **The question it sharpens.** Which built things needed a blueprint, and why? Candidate answer from MOD: a structure
+  needs writing exactly where two systems with independent modules must meet without either being in view of the other
+  (thread to nut across factories, paper to printer across countries). Joined in view, a ratio read between them does
+  (one shared link, §2). That is testable on standards: every standard amount should sit at such a meeting.
+
 ## 3. Classical ideas to build on
 
 Each with what it gives, what the tower adds, and its standing. "Check" marks a citation from memory.
@@ -158,3 +192,6 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
   and music are each one constraint's ratios plus one written amount (Renard none); the halving map r ↦ 2/r puts ISO
   paper at its corner (√2), Letter alternating about it. Threads are the counter-case: ratios within the profile (in the
   pitch), amounts between pitch and diameter (P ∝ D^0.79), so the link between those two levels is written, not read.
+- 27 Oct: §2¾, building without a blueprint (a pasted passage): agrees with §2; situation 1 shared, not the writer's
+  alone; the builders' unit their own body; OFS's "lacks" measured from the writer's side, a one-clause edit proposed,
+  not made; the biology (stigmergy) to check; a candidate rule for where writing is needed.
