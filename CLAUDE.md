@@ -2250,6 +2250,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   can be no other conclusion."): §7.2's "in this construction" withdrawn; address and payload share only the landing
   point, nothing passing between; "Why the distinction has to be stated" (an unmarked number holds both as one; a
   statement about the representation, not about anyone's intentions or results).
+  `bpi-plan.md` (+ `runs/bpi/`, 27 Oct; SPN R528; Tom: "are you familiar with Buckingham pi theory", then "yes"): exact.
+  With one base unit the π groups are exactly the wedge's directions (B1); the dimension matrix's rank r the amounts to
+  carry in, r − 1 independent leaving one family (B2′; B2 killed by my set-up); no law on the groups (B3); one wedge per
+  unit only when each quantity has one base unit (B4). OFS Appendix A "Buckingham's π theorem" (§9).
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
