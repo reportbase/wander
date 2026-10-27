@@ -328,18 +328,42 @@ Touch does three things, and only some are writing.
 
 1. **Contact alone is a reading.** The moment two things meet, with nothing measured, is "they meet": in `pool.html`
    h + v = 1, a sum of two readings with no unit in it.
-2. **Touching to find where a thing is writes, in one's own unit.** The hand meeting a thing gives its direction and that
-   it lies at one's reach: a range, ruled by the arm. One known move writes in the reader's own H (RWT); ranging carries an
-   amount in. So touch writes, but the amount carried in is one's own body: the thing placed "at one arm", no public unit.
-   Metres need the arm's length carried in from outside, as counting strides does on `room-walk.html`. With reach as H,
-   whatever is touched at full reach sits at d/H = 1, the corner: reach is the body's own split of near from far (within
-   it things are in proportion to the arm; beyond it, directions until a step gives parallax). The eye-height case on
-   `ground.html` is the same, one eye height tall at the corner.
+2. **Touching to find where a thing is: guided, a reading; blind, writing in one's own unit.** Tom: "you need the ratios
+   of what your looking at." *Guided* (the eyes open): hand and thing are both in view, and the reach is steered by
+   ratios: the gap between them as a share of the hand's own size, and its rate of closing (Lee's τ, a ratio of an angle
+   to its rate; the grip opening in proportion to the thing seen, Jeannerod, check). No amount enters; the hand stops at
+   contact, h + v = 1. So guided reaching is a reading. *Blind* (in the dark, or reaching past what is seen): the hand
+   meeting a thing gives its direction and that it lies at one's reach: a range, ruled by the arm. One known move writes
+   in the reader's own H (RWT); ranging carries an amount in. So blind touch writes, but the amount carried in is one's
+   own body: the thing placed "at one arm", no public unit. Metres need the arm's length carried in from outside, as
+   counting strides does on `room-walk.html`. With reach as H, whatever is touched at full reach sits at d/H = 1, the
+   corner: reach is the body's own split of near from far (within it things are in proportion to the arm; beyond it,
+   directions until a step gives parallax). The eye-height case on `ground.html` is the same, one eye height tall at the
+   corner.
 3. **Touching to push writes in the full sense.** Moving a thing changes the world ("to move the furniture is to write",
    OFS §11; R346, only writers change the world). A reader only receives; putting a thing at a stated place on purpose
    needs the amounts: how far, which way, how hard.
 
 So seeing is reading, touching with the arm as ruler is writing in one's own H, and pushing is writing.
+
+**Feeling a room blindfolded** (Tom: "seem like feeling the room with a blind fold is what its like. your only
+processing what your touching. you could feel around the object with your hand."). Blindfolded, the reader's whole view
+is the hand: no far field, no horizon, nothing arriving from a distance; every reading is at contact, one place at a
+time. Sight gives every direction at once and no amount; touch gives one place at a time, with an amount (the reach) in
+one's own unit. Three scales:
+- *One object, held.* Feeling round a cup is the central sweep made by hand: going round a thing collects its outline.
+  The fingers closing on it, or one part compared with another, give ratios: its shape, and its size against the hand.
+  A reading, with the hand as H. (Haptic exploratory procedures: contour following, enclosure, pressure, lifting, the
+  first the slow one that gives exact shape; Lederman and Klatzky 1987, check.)
+- *One object, traced by the arm.* Counting the hand's travel along it, felt by the arm, adds an amount: its size in
+  hand-spans or arm-lengths. Writing in one's own H, as the counted stride.
+- *The room.* Out of reach, getting from the table to the wall is a move, and each move is carried in (steps, arm
+  swings). The blindfolded room is a tower of moves, not of readings; it drifts as SfM's scale does (§3 item 6), and the
+  only check is a loop: coming back to the table and finding it where expected, or not. The closure's remainder is the
+  error in the body's own count.
+
+So the blindfold pulls apart what sight hides: sight, directions free and no amounts; touch on one object, the shape
+free and amounts in one's own unit; touch across a room, every link written by moving and checked only by closing a loop.
 
 **Classical anchors (from memory; check before citing).**
 - Berkeley, *An Essay Towards a New Theory of Vision* (1709): distance is not seen but learned by touch and movement, and
@@ -429,3 +453,5 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
   (the square–cube law; the seven capabilities); one amount where the outside meets it (SPN R537).
 - 27 Oct: §2⅞⅞⅞¾, touch: contact a reading, touch as ruler writing in one's own H (reach the body's corner), a push
   writing; Berkeley, Descartes's two sticks, peripersonal space (SPN R538).
+- 27 Oct: §2⅞⅞⅞¾ revised: guided reaching a reading (ratios, τ, grip), blind reaching writing in one's own H; feeling a
+  room blindfolded (one object a reading, traced writing in own H, the room a tower of moves checked by loops) (R539).

@@ -2330,6 +2330,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   invariance, the limit where physics fixes an amount (Galileo's square–cube law), one amount where the outside meets it.
   Touch (27 Oct, SPN R538; Tom: "if you reach out and touch the world, is that writing?"; "yes"): tower note §2⅞⅞⅞¾,
   contact a reading, touch as ruler writing in one's own H (reach the body's corner), a push writing.
+  Guided and blind (27 Oct, SPN R539; Tom: "you need the ratios of what your looking at."; "feeling the room with a blind
+  fold"): guided reaching a reading by ratios, blind reaching writing in one's own H; blindfolded, one object felt round a
+  reading, the room a tower of moves checked by loops. Tower note §2⅞⅞⅞¾.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
