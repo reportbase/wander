@@ -253,6 +253,35 @@ re-laying the corner on every look is not best; holding it until the look is mor
 do not: every ratio within a look is read); they matter only when two looks' distances must be compared, which is the
 first capability a blueprint adds (the size), at the scale of one link.
 
+## 2⅞⅞⅞. Cascades of cancellation; the reader is a slide rule
+
+27 Oct. Tom: "the interesting thing about a tower of relations is that there are cascades of cancelelations."; "what
+i'm wondering if the sweep of addresses, is the same as the sweep of ratios. im wondering if there is a simplyfing
+connection, that would reduce complexity of sheer volume of ratios. I doubt readers spend much time do ratio math."
+
+**What cancels, floor by floor.** Within a reading the reach cancels between its two legs (Theorem 6(a)). Along a chain
+the links telescope, (a/b)(b/c)(c/d) = a/d: every middle amount cancels, the ends survive, which is why a tower of any
+height costs one amount at the top. In time the legs telescope the same way to the last over the first, and the first
+is H. Round a loop everything cancels to 1, and what does not is the error. Scaling the world cancels from every ratio
+at once. What cancels is what the reader did not need; errors do not cancel (in levels they add, TWR's drift), and only a
+loop shows them.
+
+**Ratios as places.** An address already is a ratio, v/h, nothing divided. Laid on the levels (log₂ v/h), a ratio
+between two things is the gap between their places, and multiplying ratios is adding gaps: N places hold all
+N(N − 1)/2 ratios, the address set a basis, the ratios implicit. A chain telescopes because a sum of gaps is end minus
+start; nothing is computed. The same holds for directions on the turn: a new zero subtracts angles, and tangent
+subtraction is the writer's formula for it. So the reader is a slide rule, straight on the levels, circular on the
+turn (Napier; the two charts of OFS §6's three rulers), and does no ratio arithmetic.
+
+**Where it stops.** Within one standpoint, directions and the readings' ratios are places. A ratio of distances or of
+true sizes needs a second standpoint: each such step adds one floor (a parallax crossing, not a gap on one chart), after
+which its ratios are places again. So the tower's work is in its steps, not in its arithmetic.
+
+**Shown.** `slide-rule.html` (SPN R536): the straight rule (the slide's 1, the corner, on any thing reads every ratio
+to it at once, checked against division to 10⁻¹⁵), a chain laid end to end (the middle places struck out, the chain its
+ends; a loop to no gap; a misread link a remainder the loop shows but cannot place; small errors on every link adding),
+the circular rule (a new zero, tangent subtraction to 10⁻¹⁵), and scaling the world moving no reading.
+
 ## 3. Classical ideas to build on
 
 Each with what it gives, what the tower adds, and its standing. "Check" marks a citation from memory.
@@ -327,3 +356,4 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
 - 27 Oct: §2⅞⅞, the corner on the next look (Tom; a ChatGPT reply): already OFS §8 and Corollary 6.1; two towers of
   corners, direction composed exactly, distance unlinked unless a step or a kind carries each link; in steps with a
   dead band (FPV run 5). OFS unchanged.
+- 27 Oct: §2⅞⅞⅞, cascades of cancellation and ratios as places, the reader a slide rule; `slide-rule.html` (SPN R536).
