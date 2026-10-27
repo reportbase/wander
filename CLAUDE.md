@@ -2260,7 +2260,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   legs), addresses churning and links standing, steps adding links, loops checking them; a lone reader builds with ratios
   only, writing needed only for an outside amount or a reader with nothing in view in common; classical anchors (Euclid V
   and Eudoxus, Descartes' unit segment, Thales, Klein and Kendall, bearing rigidity, SfM scale drift, cycle consistency,
-  Kuipers, bees and ants), citations from memory until checked. Tested by `twr-plan.md` (predictions T1–T6, not run).
+  Kuipers, bees and ants), citations from memory until checked. Tested by `twr-plan.md` (+ `runs/twr/twr.py`, SPN R532;
+  Tom: "run the test"): runs 1–4, T1, T2′, T3 (b), T4, T6 not killed (the map exact in the first leg, links standing
+  while every direction churns, pieces rejoined by one shared thing, writing needed only for seconds); T3 (a)'s second
+  clause killed by the walk; T5 killed by my least squares (scale flips) and then my random-walk model (median: drift
+  i^0.26; closure as a bridge in its bands). Run as `python3 runs/twr/twr.py 60 8 median`.
   §2½ (Tom: "each system is self defined by its own ratios … they are their units, based on its constraints."): a system's
   module, its constraint's ratios, one written amount. `mod-plan.md` (+ `runs/mod/`, SPN R529; "yes, work out the exact
   cases"), exact on Wikipedia's tables (sha256 in the plan): paper (√2, all 66 A/B/C sizes from three amounts and the
@@ -2278,6 +2282,21 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   A seventh capability (R531; Tom: "the number line keeps the far field proportional. which is useful when there is no
   agreement about what the near fields extent actually is."): a far field kept in proportion, common to readers whose
   corners (H) differ, since the number line has no corner (Proposition 14).
+  **The reader holds only H; OFS archived again, a new OFS** (27 Oct, SPN R533; Tom: "The reader has no concept of V,
+  let alone c. It only holds H. V is only known if you hold both hemispheres. So the reader creates circles without V,
+  only H."; "now is the time to rewrite the OFS paper with this new insight througout. Archive the current paper"):
+  the reader's one length H, turned uniformly, traces the circle because the length is fixed, and the turn's readings
+  are the Cauchy, the measure of the addresses the one-length turn makes. V and c (V = cH) are a writer's; V = H is the
+  writer's name for the reader's circle, never something the reader draws, sets or chooses ("V = H is still a choice"
+  is a writer's objection). Proposition 3(e), (f), 5(d), (f), (g) concern drawings with two axes (a page, a shore, a
+  chart, an instrument), where c is real and c = 1 has the reader's circle; 3(g) is the reader's own derivation. OFS as
+  of 27 Oct morning is frozen as `papers/observation-from-somewhere-record-2.md` (**a frozen record, never edited**,
+  like the first record); the new OFS rewrites (P0), Proposition 3 and §5 ("The order of the chain", "What V = H
+  names", "One choice, and two numbers that are not the reader's", "Where c ≠ 1 comes from"), and every "the reader
+  draws V = H" elsewhere; §12.2 question 6 is dissolved for readers (open: whether a reader's sweep is a turn, whether
+  its instrument imposes a c). No mathematics changed. The CS companion matches. Outline `plans/ofs-only-h.md`. Entries
+  above that say the reader "draws", "sets" or "assigns" V = H describe the text before. The demos' visible "V = H"
+  wording waits for a later pass.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
@@ -2452,8 +2471,9 @@ Uppercase **H, V** are breadths, written with the amounts (H the reader's, V the
 reader's step **ε**, the physics. Since 13 Oct (SPN R226; Tom: "Even H is not a real breadth, Its the value needed to
 kick off the system"; "how many relations are included in the systems definition, determine its shape"): no breadth in
 the geometry is a measured size. H is the one value the reader chooses to start the system, any value, its size setting
-only the zoom (small H fine near, large H fine far); V is the other party's whole as drawn, at H; **V*** is a party's
-true breadth, an amount never read. The geometry is a shape and one H, the shape set by how many unit relations the
+only the zoom (small H fine near, large H fine far). Since 27 Oct (SPN R533) the reader holds H alone and has no V: V is
+the other party's breadth as a writer holds it (both hemispheres), and V = H is the writer's name for the circle the
+reader's one length traces; **V*** is a party's true breadth, an amount never read. The geometry is a shape and one H, the shape set by how many unit relations the
 system includes (two the circle, three the sphere, n + 1 the sphere in n + 1 dimensions). Never read v as V or v/h as V/H ((v·V)/(h·H) = (v/h)·(V/H)); the only bridge is a fill
 level times its breadth, where that breadth is known. Before verifying, editing or summarising any paper, plan or lab,
 check each symbol's case and domain, and name the bridge for any conclusion that crosses from geometry to physics. Text
@@ -2465,7 +2485,9 @@ Where things stand (SPN §1 opens with "The settled view, 9 October"; read it be
   empties against a full v. Any two parties have a sweep: name the pair before saying "the corner".
 - The corner h = v is found by every reader (geometry). It is at 45° because the facing (the second degree of freedom a
   straight line lacks) is square to the line there; facing = 2θ (`facing.html`).
-- V = H is a calibration a situated reader must set to read amounts, not part of the geometry; under it amounts equal fill
+- (*27 October*, R533, supersedes the reader's side of what follows: the reader holds only H; its circle is that one
+  length turned; V and c belong to a writer or a two-axis drawing, and V = H names the reader's circle.)
+  V = H is a calibration a situated reader must set to read amounts, not part of the geometry; under it amounts equal fill
   levels numerically, which is why the conflation is easy. (*10 October*, R188: Tom restores 8 October's reading, V = H
   creates the unit circle, and that is why the levels are plain doublings; R189: "v needs no V" stands, v and h on [0, 1]
   invariant, and there is one circle, its shape from the unit relations, its unit from V = H; SPN §1, "The settled view,
