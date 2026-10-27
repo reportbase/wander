@@ -2254,6 +2254,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   With one base unit the π groups are exactly the wedge's directions (B1); the dimension matrix's rank r the amounts to
   carry in, r − 1 independent leaving one family (B2′; B2 killed by my set-up); no law on the groups (B3); one wedge per
   unit only when each quantity has one base unit (B4). OFS Appendix A "Buckingham's π theorem" (§9).
+  `tower-note.md` (27 Oct; Tom: "When I think situated geometry, I think a tower of ratios, and as i move around, new
+  ratios are added and old ones are removed."; "create a note that we can iterate over … would it be possible for a reader
+  to build with ratios only, and not care about writing."): a working note, a reading. Two towers (scale: links; time:
+  legs), addresses churning and links standing, steps adding links, loops checking them; a lone reader builds with ratios
+  only, writing needed only for an outside amount or a reader with nothing in view in common; classical anchors (Euclid V
+  and Eudoxus, Descartes' unit segment, Thales, Klein and Kendall, bearing rigidity, SfM scale drift, cycle consistency,
+  Kuipers, bees and ants), citations from memory until checked. Tested by `twr-plan.md` (predictions T1–T6, not run).
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
