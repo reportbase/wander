@@ -2,7 +2,7 @@
 
 **The geometry of a situated reader, for computer science**
 
-*Tom Brinkman, with Claude. A companion to "Observation from Somewhere", 23 October 2026.*
+*Tom Brinkman, with Claude. A companion to "Observation from Somewhere", 27 October 2026.*
 
 *This paper restates "Observation from Somewhere" for readers whose background is computing. It is drawn from that
 paper and claims nothing it does not; where the two differ, that paper stands and this one is to be fixed.*
@@ -23,8 +23,8 @@ whatever is stored at the directions. Whatever arrives along a direction cancels
 exists and sits at v/h = 1, because a median depends only on order, which belongs to the addresses; its mean does not
 exist, which costs nothing, since a mean is a sum of sizes, a question about the payload. The three are kept apart:
 any sweep that treats the two parties alike puts its median at v = h; if its weight also stays above zero near the
-horizon, it has no mean; and only the uniform turn, with the other party drawn at the reader's own breadth, gives the
-standard Cauchy's exact shape. In the vocabulary of
+horizon, it has no mean; and only the uniform turn of the reader's one length gives the standard Cauchy's exact
+shape. In the vocabulary of
 computing, order statistics are index statistics and sums are value statistics, and this is a theorem rather than a
 convention.
 
@@ -89,9 +89,10 @@ off its pane is: two panes on one line show only the nearer, and to learn the di
 panes slide across one another. Much of what follows is the mathematics of the fingers alone, and the main result is
 that the Cauchy distribution is entirely fingers.
 
-Your thumb is your own breadth, H: the one measure you hold up, chosen because it is to hand. The mountain you look at
-has a true breadth of its own, V*, which you may not know. Not knowing it, you set the mountain equal to your thumb,
-V = H, and read the mountain in thumbs.
+Your thumb is your own breadth, H: the one measure you hold up, chosen because it is to hand, and the only length you
+have. The mountain you look at has a true breadth of its own, V*, which you may not know. Not knowing it, you set
+nothing, having no second length: the mountain arrives as directions on the circle your thumb traces, read in thumbs. A
+writer looking at your drawing would say you had drawn the mountain at your thumb, V = H.
 
 ### 1.4 What is new, and what is not
 
@@ -111,9 +112,10 @@ offers instead, a baseline against which existing designs can be read.
 - **The corner.** Every relation between two parties turns over at one point, v = h, the only point the exchange of
   the two parties leaves fixed. Two registers, v/h below it and h/v above it, both stay within [0, 1] only if the
   switch is there. Sameness, order and the corner need no division (§3).
-- **One drawing.** For the directions to be one uniform turn, the reader must draw the other party at its own breadth,
-  V = H. Working back from the known standard Cauchy, its median at the corner, arrives at the same drawing (§4);
-  drawn at V = cH the turn gives a Cauchy of scale 1/c.
+- **One length.** The reader holds one length, H, and turns it; the orbit is a circle because the length is fixed, and
+  the uniform turn's readings are the standard Cauchy. No breadth is given to the other party: V belongs to a writer,
+  and V = H is the writer's name for the reader's circle. Working back from the standard Cauchy, its median at the
+  corner, arrives at a turn of one length (§4); a drawing with two axes at V = cH gives a Cauchy of scale 1/c.
 - **Arrays.** For an even-length array indexed at equal steps of turn, the slopes of its places are exactly the evenly
   spaced quantiles of the Cauchy. The index is the address and the stored values are the payload; the floor function
   is where an array is not a reader (§6).
@@ -247,54 +249,57 @@ past the corner the expansion in 1/x converges instead, since the singularities 
 This is a property of expansions, not a break in the function, but it is one reason near and far seem to obey different
 mathematics, and one reason a numerical routine evaluates them by different formulas.
 
-## 4. One drawing: V = H
+## 4. One length: the reader's circle
 
 We assume three things.
-- **(P0)** A relation needs two unit relations, one for each party, each relating it to an assigned breadth.
-- **(P1)** A situated reader chooses exactly one breadth, H, and holds no whole of the system. H is not a measured
-  size, and any H will do.
+- **(P0)** A relation needs two unit relations, one for each party. For a writer, who holds both hemispheres, each
+  relates its party to that party's breadth; a situated reader has no V, and for it both are shares of its one length.
+- **(P1)** A situated reader holds exactly one length, H, and no whole of the system. H is not a measured size, and any
+  H will do.
 - **(P2)** A level carries no measure: nothing on it but its two ends, their order and the reciprocal between them.
 
 **Proposition 3 (the reader's circle), in part.** Under (P0) and (P1):
-(a) the reader must assign V in its own unit, V = cH for some c > 0, and no unit relation and no single reading
-depends on c;
-(b) with V = H the corner lies at distance 1 from home whatever H was chosen, and a reader with unit λH in a world
+(a) the reader holds no breadth for the other party, so it has no c; a writer can write the reader's drawing with two
+axes as V = cH, and no unit relation and no single reading depends on c;
+(b) the corner lies at distance 1 from home, in H, whatever H was chosen, and a reader with unit λH in a world
 scaled by λ receives exactly the same readings;
-(e) the attitudes of the relation are turns of one rigid bar only if V = H: with c ≠ 1 nothing turns all of h into all
-of v, and there is no circle.
+(e) on a page with two axes, V = cH, the attitudes are turns of one rigid bar only if c = 1: with c ≠ 1 nothing turns
+all of h into all of v, and there is no circle. So the reader's circle, written with two axes, is V = H.
 (g) The bar can be derived rather than assumed: a sweep that is uniform (every step the same linear map of the plane),
 returns to its start after one full turn, and carries all of h into all of v in a quarter of it, preserves an inner
-product unique up to a positive factor. In that inner product V = H and (h, v) = (cos ωt, sin ωt). The one factor left
-free is H.
+product unique up to a positive factor. In that inner product every attitude has one length and
+(h, v) = (cos ωt, sin ωt). The one factor left free is that length, H.
 
 (The proofs are in the parent paper. Part (g) is linear algebra: exp(TA) = I forces A to be conjugate to a rotation
 generator, and any symmetric form it preserves is a multiple of one.)
 
-**Proposition 5, in part.** Draw V = H and take directions uniformly by turn on the quarter circle. Then:
+**Proposition 5, in part.** Take the reader's one length turned, and directions uniformly by turn on the quarter
+circle. Then:
 (a) equal steps of turn give unequal readings: near zero a step barely changes v/h, and near upright each step changes
 it without bound;
 (b) per unit of v/h the directions have density 2/(π(1 + (v/h)²)) on [0, ∞), the half-Cauchy, with its median at the
 corner and unchanged by the reciprocal; signed over two quadrants it is the standard Cauchy, quartiles at ±1;
-(d) conversely, drawn at V = cH and taken uniformly by direction in the drawing, the readings follow the law of (b)
+(d) conversely, on a page or an instrument drawn at V = cH and taken uniformly by direction in the drawing, the readings follow the law of (b)
 if and only if c = 1.
 
 *Proof of (b) and (d).* When the bar turns by dθ, v/h changes by dθ/h², and on the circle 1/h² = 1 + (v/h)². Drawn at
 V = cH, a uniform direction θ′ has tan θ′ = c·(v/h), so P(v/h ≤ r) = (2/π)·arctan(cr): a half-Cauchy of scale 1/c,
 the law of (b) exactly when c = 1. ∎
 
-So V = H is not a convenience laid over the Cauchy. Within this construction (two unit relations, a rigid bar's linear
-periodic turn) it is what the standard Cauchy, its median at the corner, requires, and working back from it arrives
-at V = H and nowhere else. It is a
-rule of representation, not a claim about the world: the reader uses its own breadth as the unit for the other party
-because it is the only measure it has. Where the true V* differs from H, every amount the reader reads is off by V*/H
-(§10). The addresses are exact; the amounts are not.
+So the order is: hold H, turn it, obtain the circle, and with the uniform measure obtain the Cauchy. The Cauchy is not a
+law laid on a circle that already held a V; it is the measure of the addresses the one-length turn makes. Within this
+construction (two unit relations, a rigid bar's linear periodic turn) working back from the standard Cauchy arrives at
+a turn of one length, and on a page with two axes at c = 1 and nowhere else. "V = H is still a choice" is a writer's
+objection: only one who holds both axes sees c as a number to set, and the reader holds one. It is not a claim about
+the world either: where the true V* differs from H, every amount taken from the reader's circle is off by V*/H (§10).
+The addresses are exact; the amounts are not.
 
-The parent paper shows the same drawing forced in two familiar pictures: a lighthouse whose flashes land on a straight
+The parent paper shows c = 1 required in two familiar drawings with two axes: a lighthouse whose flashes land on a straight
 shore, and Mercator's chart, which draws every compass bearing true only because it stretches north–south exactly as
 much as east–west.
 
 **Three parties.** With a third unit relation v₂, read against the same h, the directions fill one octant of the sphere,
-a *wedge*. Drawn at V = V₂ = H and taken uniformly by area (Proposition 5(e)), the readings (s, s₂) = (v/h, v₂/h) have
+a *wedge*. Read on the one length H (a writer would write V = V₂ = H) and taken uniformly by area (Proposition 5(e)), the readings (s, s₂) = (v/h, v₂/h) have
 density 2/(π(1 + s² + s₂²)^(3/2)), the two-dimensional Cauchy. Each of v/h, v₂/h and v/v₂ alone has the law of (b) with
 its median at its own corner; the six orderings of h, v and v₂ are equally likely, so h is the largest for a third of
 the octant. With n other parties it is 1/(n + 1). Uniform area is the only probability on the sphere every rotation
@@ -309,8 +314,8 @@ Call a statistic of a set of readings an *address statistic* if it depends only 
 the quartiles, which side of the corner each lies on), and a *payload statistic* if it depends on their sizes (the mean,
 any sum). In computing terms, the first kind can be computed from a sort, and the second needs the values.
 
-**Theorem 6 (the separation of address and payload).** Parts (a) and (d) concern the readings of Proposition 5 (V = H,
-directions uniform by turn). Parts (b) and (c) hold for any finite set of readings. Part (e) drops both the circle and
+**Theorem 6 (the separation of address and payload).** Parts (a) and (d) concern the readings of Proposition 5 (the
+reader's one length, directions uniform by turn). Parts (b) and (c) hold for any finite set of readings. Part (e) drops both the circle and
 the uniform turn.
 
 (a) *Nothing that arrives changes the Cauchy.* Suppose whatever arrives along each direction lies at some reach ℓ > 0,
@@ -440,7 +445,7 @@ median of its readings. With no size, the array's far end is no amount, only a d
 runs out: the horizon. Both are the reader's because the size is missing.
 
 **Four kinds of array.** What is known of the two breadths gives four kinds of array. A circle, both breadths known
-and equal, is a constant array of known length, every entry the radius drawn at H, so it needs no storing: it is the
+and equal, is a constant array of known length, every entry the radius, of length H, so it needs no storing: it is the
 equation h² + v² = 1. A shape with its breadths known is an ordinary array of known length, an amount at every index,
 which the writer can join into a closed shape. Without the length there are two more. The values without the length
 are an amount at each given index known only up to one common factor, like samples from a sensor of unknown gain: they
@@ -498,7 +503,7 @@ on these places.
 - *The values on the index.* The central sweep meets the same point at twice the angle and indexes it by
   `Math.floor(K * phi / Math.PI)` over its half turn, the same place: one index serves both sweeps, the ratio and the
   amount found there stored together. The amounts are known up to one factor, so keep their logs less their mean.
-- *A constant array.* Every place holds the radius drawn at H, so the value is a function of the index and nothing is
+- *A constant array.* Every place holds the radius, of length H, so the value is a function of the index and nothing is
   stored.
 - *An array of known length.* `Math.floor(N * x / X)` needs the extent X: with N = 8 and X = 100 the amounts 10, 50, 99
   go to 0, 4, 7. `turnIndex(x, H, 8)` needs only H, the zoom: 4, 6, 7 at H = 10 and 1, 4, 5 at H = 50.
@@ -772,8 +777,8 @@ with H, and is largest when H = √(d(d + Δ)), the corner of the object's own t
 at arctan(x/H), are furthest apart, at arcsin((r − 1)/(r + 1)), when H is their geometric mean.
 
 **A fixed count, aimed by H.** Call the reader's whole count of addresses K: its fixed capacity, the same whatever it
-looks at. K comes before H; choosing H does not change K, it splits it. Lay the K addresses of the uniform turn along
-distance under V = H. Their boundaries fall at
+looks at. K comes before H; choosing H does not change K, it splits it. Lay the K addresses of the uniform turn of the
+reader's one length along distance. Their boundaries fall at
 
   d_k = H·tan(kπ/2K),  k = 1, …, K − 1,
 
@@ -982,7 +987,7 @@ because its push is the hyperbolic angle.
 
 ## 12. What the geometry gives free
 
-Once the reader chooses H and draws V = H, some structures follow with no further choice:
+Once the reader chooses H, its one length, some structures follow with no further choice:
 - a zoom, the value of H (§9);
 - a split between near and far, the corner v = h (§3);
 - readings no change of the world's size can move (Theorem 6(a), §10);
@@ -1068,15 +1073,15 @@ reader whose addresses are laid before anything arrives. The Cauchy is that spli
 **Premises named.** The logarithm past the corner rests on (S), assumed, not derived; real readers have preferred
 scales, their own resolution among them, and here a preferred scale sets where the lay stops, not its form. The
 Cauchy's exact shape rests on the uniform turn, which is selected by treating every attitude alike, a stated ignorance
-(below), not forced. V = H is required within the construction, a rigid bar's linear periodic turn; that every reader
-uses this construction is not claimed, and whether real eyes, brains or instruments draw it is an empirical question
-left open. The paper's claim is normative: a reader should draw V = H, since only that drawing gives it a turn, the
-Cauchy with its median at the corner, and true angles.
+(below), not forced. The reader's circle is its one length turned, a rigid bar's linear periodic turn; that every reader
+uses this construction is not claimed, and whether real eyes, brains or instruments sweep by such a turn, with nothing
+imposing a c, is an empirical question left open. The paper's claim is normative: a reader should, since only that gives
+it a turn, the Cauchy with its median at the corner, and true angles.
 
 **What we build on.** The method is Jaynes's (1968, 1973): state an observer's ignorance as a group of transformations,
 and take the measure the group leaves unchanged. We choose the group: turns of the reader's bar, rescalings of the
 other party's size, and the exchange of the two unit relations. Given that the sweep is the turning of a rigid bar,
-these select the uniform turn and its Cauchy, the corner and the drawing V = H; through amounts, the same indifference
+these select the uniform turn and its Cauchy, and the corner; through amounts, the same indifference
 to scale motivates the logarithm past the corner. The geometry is claimed as necessary relative to that stated
 ignorance, not absolutely. What is ours is the choice of group, the near field, and reading the measure as a reader's
 addresses rather than its belief.

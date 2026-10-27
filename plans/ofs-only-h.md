@@ -96,3 +96,16 @@ reach is unchanged: nothing about what eyes or builders do.
 1. §5 (the chain itself), then the abstract, §1 and Results, checked against the old text for anything lost.
 2. The sections listed, then every remaining occurrence read in place.
 3. CS companion, SPN ruling, CLAUDE.md.
+
+## Done (27 Oct, SPN R533; Tom: "yes, now is the time to rewrite the OFS paper with this new insight througout. Archive the current paper as we have done in the past and create a new OFS paper.")
+
+OFS as it stood frozen as `papers/observation-from-somewhere-record-2.md`. The new OFS, dated 27 October: the abstract,
+§1 (the thumb, Results), §2 (unit relations, the sum, altitude, the bar, "Uniform in θ", "Uniform in log κ"), §3 (the
+relations first, "Thumb and mountain", the hand, the table of vantages), §4 (the pointing and the two sweeps on the
+circle of one length), §5 rewritten whole ((P0), Proposition 3 and its proof, "The order of the chain", "What V = H
+names", "One choice, and two numbers that are not the reader's", "H cannot be declined", "Where c ≠ 1 comes from"), §6,
+§7.1 (Proposition 5(d), (e), "More parties", "Working back from the Cauchy", the lighthouse and Mercator), §7.2, §7.3,
+§8, §9 (Proposition 13 as a writer's question, "Designating and sizing", "Reading and writing"), §10 step 5, §11,
+§12.1, §12.2 question 6 and "Where the conclusions do not follow", §12.4, Appendix A, Appendix C. Every "the reader
+draws (sets, assigns) V = H" read in place; what is about a page, a chart, a shore, an instrument or standardizing kept
+with its c. No proposition's mathematics or number changed. The CS companion carried out to match.
