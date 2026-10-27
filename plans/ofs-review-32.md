@@ -568,3 +568,20 @@ You now have the complete set of edits across the manuscript, each tailored to t
 6. **Appendix C (Notation):** Defines `e^(iθ), e^(i2θ)` right above `m + iγ`.
 
 Would you like to check if any of the references in the bibliography need an entry for Cauchy's 1821 *Cours d'Analyse* (where Cauchy's functional equations first appeared), or are you all set to merge these into your draft?
+
+## Gemini's closing summary (pasted after R544)
+
+Gemini summarised "where we landed". It is not quite where OFS landed, and nothing in OFS changes for it. It restores
+three of the points the response declined:
+- **Its notation.** It writes Cauchy's equation as H(θ₁ + θ₂) = H(θ₁)H(θ₂), which uses OFS's H for a function.
+- **The overclaim.** "Because the reader has no second scale V to stretch or deform this orbit, the one length H turned
+  uniformly must trace the unit circle." Its own first sentence has it right: the return makes the rate imaginary. The
+  circle is the sweep's own inner product, and H fixes only that inner product's factor (OFS Appendix A, "Cauchy's
+  functional equation, twice").
+- **The reading laid on the identity.** "e^(iπ) + 1 = 0 is the statement that the horizon does not vanish into a void."
+  What OFS states is narrower: on the Thales circle, the half turn that brings the horizon's landing point to home is
+  e^(iπ) = −1 (§4). The Cayley disc puts the horizon at +1, not at home's −1 (Appendix A), so the "closure" is the
+  Thales picture's, not the map's.
+
+Its account of the two sweeps, the square, and the tangent chart's unbounded reading as the source of the missing mean
+agrees with OFS.
