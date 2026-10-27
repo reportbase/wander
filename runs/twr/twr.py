@@ -3,7 +3,10 @@ Exact parts in mpmath at 50 digits; the noisy runs (T5) in mpmath at 20 digits w
 import math, random, itertools, sys
 import mpmath as mp
 
-mp.mp.dps = 50
+DPS = int(sys.argv[1]) if len(sys.argv) > 1 else 50      # run 3: 60
+W_RAYS = int(sys.argv[2]) if len(sys.argv) > 2 else 4   # run 3: 8
+mp.mp.dps = DPS
+MEDIAN = len(sys.argv) > 3 and sys.argv[3] == 'median'   # run 4
 EXACT = mp.mpf(10) ** -40
 ok = {}
 
@@ -139,9 +142,13 @@ def build(rd, M=None, window=None, tiny=mp.mpf(10) ** -20):
         cand = [f for f in rd.held[nxt] if f in X and abs(cross(rd.b[nxt][f], u)) > tiny]
         rule.append((nxt, len(cand) == 0))
         if cand:
-            num = sum(cross(rd.b[nxt][f], sub(X[f], P[k])) * cross(rd.b[nxt][f], u) for f in cand)
-            den = sum(cross(rd.b[nxt][f], u) ** 2 for f in cand)
-            L[k] = num / den
+            if MEDIAN:        # run 4: the median of the per-feature leg estimates
+                est = sorted(cross(rd.b[nxt][f], sub(X[f], P[k])) / cross(rd.b[nxt][f], u) for f in cand)
+                L[k] = est[len(est) // 2] if len(est) % 2 else (est[len(est) // 2 - 1] + est[len(est) // 2]) / 2
+            else:
+                num = sum(cross(rd.b[nxt][f], sub(X[f], P[k])) * cross(rd.b[nxt][f], u) for f in cand)
+                den = sum(cross(rd.b[nxt][f], u) ** 2 for f in cand)
+                L[k] = num / den
             P[nxt] = add(P[k], mul(u, L[k]))
             piece[nxt] = cur_piece
         else:
@@ -349,13 +356,16 @@ ok['T6'] = t6
 
 # ---------------------------------------------------------------- T5 (noise)
 mp.mp.dps = 20
-EPS, NW, W = 1e-3, 400, 4
+EPS, NW, W = 1e-3, 400, W_RAYS
 E = []
+FLIPS = []
 for s in range(NW):
     rng = random.Random(1000 + s)
     rn = Readings(feats, stops, eps=EPS, rng=rng, extra=2)            # stops 32, 33 are stops 0, 1 again
     rr = build(rn, window=W)
     if rr['breaks']: print('T5: walk', s, 'broke at', rr['breaks']); continue
+    flipped = [i for i in rr['L'] if not isinstance(rr['L'][i], mp.mpf) or rr['L'][i] <= 0]
+    if flipped: FLIPS.append((s, flipped[0])); continue
     E.append([float(mp.log(rr['L'][i] / rn.true_legs[i])) for i in range(rn.n - 1)])
 def sd(xs): m = sum(xs) / len(xs); return math.sqrt(sum((x - m) ** 2 for x in xs) / (len(xs) - 1))
 open_sd = [sd([e[i] for e in E]) for i in range(len(E[0]))]
@@ -369,7 +379,8 @@ print(f'T5: {len(E)} walks, eps {EPS}, rays kept {W} stops (an open chain); sd o
       + ', '.join(f'{open_sd[i]:.5f}' for i in (4, 8, 16, 32)))
 print(f'T5: growth exponent p = {p:.3f} (4…16); closed at the loop, sd at i = 16 {mid_closed:.5f}: over the open chain there '
       f'{r_mid:.3f} (1/√2 = 0.707), over the open chain at its end {r_end:.3f} (0.5)')
-ok['T5'] = abs(p - 0.5) <= 0.1 and abs(r_mid - 1 / math.sqrt(2)) <= 0.1 and abs(r_end - 0.5) <= 0.1
+print(f'T5: walks with a leg flipped in sign: {len(FLIPS)} {FLIPS[:10]}')
+ok['T5'] = not FLIPS and abs(p - 0.5) <= 0.1 and abs(r_mid - 1 / math.sqrt(2)) <= 0.1 and abs(r_end - 0.5) <= 0.1
 
 print()
 for k in ('T1', 'T2', 'T3', 'T4', 'T5', 'T6'):

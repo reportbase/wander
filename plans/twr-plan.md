@@ -123,3 +123,21 @@ T6(b)'s routes: 61 features. The walk: 32 stops round a rectangle (3, 3)–(17, 
   and, as before, p = 0.5 ± 0.1 over i = 4 … 16, the sd at the loop's middle after closure 1/√2 ± 0.1 of the open
   chain's there and 0.5 ± 0.1 of the open chain's at its end.
 
+### Run 3 (`runs/twr/twr-run3.txt`; 60 digits, rays kept 8 stops)
+
+- **T2′ not killed.** At k = 10⁻³, 7, 10³ nothing moves beyond 3·10⁻⁵⁵.
+- **T6(f)′ not killed.** B's map unmoved when only B's world is scaled (to 10⁻⁵⁵): the ratio of the two H's is
+  undetermined with nothing in common, read exactly with one thing in common.
+- T1, T3, T4 and T6's other clauses as in run 2, at 10⁻⁵⁵ (T3 (a)'s second clause killed again by the walk).
+- **T5′ killed.** 23 of 400 walks still flip a leg's sign, always at legs 13 or 29; over the 377 clean walks the
+  log scale's sd is 0.021, 0.020, 0.183, 0.274 at stops 4, 8, 16, 32, a jump between 8 and 16, so p = 1.83, not ½. The
+  closure ratios land in their bands (0.679 against 0.707, 0.453 against 0.5). Post hoc, those legs are not badly
+  conditioned overall (9 and 13 candidate features, parallax up to 63° and 83°); the likely cause is my estimator: a
+  feature placed from two nearby stops with little parallax lands far off, and least squares on the leg, blind to
+  that, follows it. The chain is then not a sum of small independent steps.
+
+### Run 4: prediction (written before it)
+
+- **T5″.** Each leg the median of the per-feature leg estimates (each placed feature seen from the new stop gives one,
+  cross(b, X − P)/cross(b, u)), rays kept 8 stops, everything else as run 3. No walk of the 400 flips a leg's sign (kill
+  if any does), p = 0.5 ± 0.1 over i = 4 … 16, and the two closure ratios 1/√2 ± 0.1 and 0.5 ± 0.1.
