@@ -1,0 +1,24 @@
+M1 (a) r = 2/r only at sqrt2: True
+   (b) 66 listed values from the halving rule; mismatches: ['A2', 'B2', 'C2', 'A3', 'B3', 'C3', 'A4', 'B4', 'C4', 'A5', 'B5', 'C5', 'A6', 'B6', 'C6', 'A7', 'B7', 'C7', 'A8', 'B8', 'C8', 'A9', 'B9', 'C9', 'A10', 'B10', 'C10']
+   (c) worst |listed - exact| mm: 4175.34
+   (d) A:C:B:A(n-1) = 1 : 2^(1/8) : 2^(1/4) : 2^(1/2): True ; A0, C0, B0 areas m^2: ['1.0', '1.1892071', '1.4142136']
+M2 halving r -> 2/r: True ; in units of sqrt2 the reciprocal: True ; Letter [1.2941, 1.5455, 1.2941, 1.5455] geometric mean sqrt(2)
+M3 (a) nested: True [5, 10, 20, 40]
+   (b) R5: largest deviation 0.9532% at 8/5
+   (b) R10: largest deviation 0.9532% at 8/5
+   (b) R20: largest deviation 1.221% at 9/5
+   (b) R40: largest deviation 1.263% at 17/10
+   (c) products and quotients: worst 2.4% against 3*delta 2.86%
+   (d) R10 values of the form 2^i*10^j: 8 ['1', '5/4', '8/5', '2', '5/2', '4', '5', '8'] ; 2^10/10^3 = 128/125
+M4 (a) modes give p/q whatever f1: True
+   (b) 3^k != 2^m (k<200): True ; comma 531441/524288 23.46 cents
+   (c) 12-ET fifth -1.955 major third 13.686 minor third -15.641 ; convergent denominators [1, 1, 2, 5, 12, 41, 53, 306, 665] ; 53-ET fifth -0.06821
+   (d) intervals moved by a new A: 3.42e-48 ; 440*2^(-1/12) = 415.3047
+M5 (a) 3sqrt3/8 = 0.64951905  5sqrt3/8 = 1.0825318  as listed: True
+   (b) first choice 21 sizes (1.0, 0.25) … (64.0, 6.0) ; P/D 0.25 … 0.0938 ; fitted P ~ D^a, a = 0.7941
+
+M1 KILLED
+M2 not killed
+M3 KILLED
+M4 KILLED
+M5 not killed

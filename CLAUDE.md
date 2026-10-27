@@ -2254,6 +2254,30 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   With one base unit the π groups are exactly the wedge's directions (B1); the dimension matrix's rank r the amounts to
   carry in, r − 1 independent leaving one family (B2′; B2 killed by my set-up); no law on the groups (B3); one wedge per
   unit only when each quantity has one base unit (B4). OFS Appendix A "Buckingham's π theorem" (§9).
+  `tower-note.md` (27 Oct; Tom: "When I think situated geometry, I think a tower of ratios, and as i move around, new
+  ratios are added and old ones are removed."; "create a note that we can iterate over … would it be possible for a reader
+  to build with ratios only, and not care about writing."): a working note, a reading. Two towers (scale: links; time:
+  legs), addresses churning and links standing, steps adding links, loops checking them; a lone reader builds with ratios
+  only, writing needed only for an outside amount or a reader with nothing in view in common; classical anchors (Euclid V
+  and Eudoxus, Descartes' unit segment, Thales, Klein and Kendall, bearing rigidity, SfM scale drift, cycle consistency,
+  Kuipers, bees and ants), citations from memory until checked. Tested by `twr-plan.md` (predictions T1–T6, not run).
+  §2½ (Tom: "each system is self defined by its own ratios … they are their units, based on its constraints."): a system's
+  module, its constraint's ratios, one written amount. `mod-plan.md` (+ `runs/mod/`, SPN R529; "yes, work out the exact
+  cases"), exact on Wikipedia's tables (sha256 in the plan): paper (√2, all 66 A/B/C sizes from three amounts and the
+  halving rule; halving r ↦ 2/r with √2 its corner), Renard (no amount; 8 of 10 R10 values 2^i·10^j), music (modes,
+  equal steps from twelve keys, concert pitch the amount), threads the counter-case (P ∝ D^0.79, a table of amounts
+  between levels). Runs 1–2 killed by my code, run 3 not.
+  §2¾ (a pasted passage on building without a blueprint), then **the spine** (SPN R530; Tom: "my goal is to use this as
+  the papers spine. to make the point that ratios work just fine, but for sophisticated intricate systems, a blue print
+  provides new capabilities, but not strictly necessary."; "yes, proceed" to `plans/ofs-spine.md`): OFS §9 "What a
+  blueprint adds" opens with "Ratios suffice" and the six capabilities (the size, meeting out of view, sums of amounts,
+  the join, before the thing, completeness stated), each with the result showing no reading supplies it; §3.8 "The one
+  number a blueprint adds"; "lacks" measured from the reader's side; abstract, §1, Results; Appendix A Euclid V,
+  Descartes's unit segment, ISO 216; the CS companion's §10 likewise. Keep OFS saying the blueprint is a capability, not a
+  condition, and nothing against the writer or the number line (R478); claims about real builders stay in the note.
+  A seventh capability (R531; Tom: "the number line keeps the far field proportional. which is useful when there is no
+  agreement about what the near fields extent actually is."): a far field kept in proportion, common to readers whose
+  corners (H) differ, since the number line has no corner (Proposition 14).
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

@@ -39,7 +39,9 @@ Cauchy's own parameters live. The measure is standard mathematics; reading it as
 paper's interpretation, and every result is stated so that it can be checked apart from that reading.
 
 In one sentence: the address scheme and the magnitude met at an address are distinct mathematical roles, and a geometry
-can specify the former without determining the latter.
+can specify the former without determining the latter. So ratios suffice for everything a reader does from where it
+stands; a blueprint, a statement in amounts, adds capabilities an intricate system of many parts may need and a reader
+does not.
 
 ## 1. Introduction
 
@@ -123,7 +125,9 @@ offers instead, a baseline against which existing designs can be read.
   and the floor's loss of detail is a wall where a reader's is a soft cut (§7).
 - **A fixed count.** A reader's K addresses cover a world of any size N, with no table and no knowledge of N; H is a
   zoom that places them and changes no reading (§9).
-- **Amounts.** No reading fixes scale; one amount supplied from outside fixes it everywhere it is linked (§10).
+- **Ratios suffice; a blueprint adds.** Everything a reader does from where it stands runs on ratios; a blueprint, the
+  writer's statement in amounts, adds the size, parts that meet out of view, sums, the join, a statement made in
+  advance and a far field in proportion common to every reader. No reading fixes scale; one amount supplied from outside fixes it everywhere it is linked (§10).
 - **A dial.** A held push adds to the hyperbolic angle; the place is its sinh and the screen its turn. The whole list
   stays on a bounded screen, its end the horizon, and any place up to N is reached in about ln(2N)/rate, with no
   table and no count in the control (§11).
@@ -832,7 +836,27 @@ more power of the reading. On the sphere r = q every term is the same size and n
 pair (q, r); inversion in that sphere exchanges the outer and inner series term by term. This is level of detail by
 distance, with the corner as its seam.
 
-## 10. What the geometry does not give: amounts
+## 10. What a blueprint adds
+
+**Ratios suffice.** Everything a reader does from where it stands is done in ratios: every reading is a ratio with no
+unit in it (Proposition 8 below), the index and its law are given before any value arrives (§5), near and far are laid
+by count (§8), order statistics survive every change of value (§5), more standpoints bring back the figure up to its
+size, one step taken places everything in the reader's own H, and two readers that see one thing in common are aligned
+by it (Proposition 7 below). A system that builds, places, compares, orders and checks from where it stands needs
+nothing more.
+
+**What a blueprint adds.** A blueprint is the writer's statement in amounts: every length at once, to one scale, from no
+standpoint. It gives seven things the ratios do not: (1) the size, V*/H, which no reading carries; (2) meeting out of view,
+parts made apart that fit only through a unit agreed beforehand, where parts seen together need only a ratio read between
+them; (3) sums of amounts, totals, means and budgets, where the readings have a median and no mean (§5); (4) the join,
+every facing and both signs held at once; (5) a statement before the thing exists, to be built to, where a reader reads
+what arrives; (6) completeness stated, where a reader can recover a thing exactly and not know that it has all of it; (7) a far field
+kept in proportion, the number line's, with no corner, so two readers whose corners (their H) differ need not agree where
+either near field ends.
+None is needed to build, place, compare, order or check from a standpoint; each becomes needed when parts made apart must
+meet, when amounts must be added, or when the whole must be stated in advance, the needs of an intricate system of many
+parts. In a program's terms: an index and its order statistics run on ratios; a schema with units, a sum or an interface
+between separately built components needs the amount.
 
 **Proposition 8 (scale cannot be read).** Let a reader's observations be any collection of readings, each a ratio of
 two amounts in the scene. Then (a) multiplying every amount by one factor λ > 0 leaves every observation unchanged, so no
