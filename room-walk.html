@@ -412,7 +412,7 @@
             c.samples.forEach((s, i) => { const x = cx + R0 * s.shape * Math.cos(s.phi), y = cy + R0 * s.shape * Math.sin(s.phi); i ? g.lineTo(x, y) : g.moveTo(x, y); });
             g.closePath(); g.stroke(); }
         $('shapecap').textContent = `The ${st.thing}'s shape about its centre: ${c.covered} of ${NC} directions from its centre, each radius (ranged, a writing) over `
-            + `their geometric mean (dashed: the unit circle, V = H). Its shape, not its size.${st.truth ? ' Red: the referee\'s outline.' : ''}`;
+            + `their geometric mean (dashed: the unit circle, the reader's one length). Its shape, not its size.${st.truth ? ' Red: the referee\'s outline.' : ''}`;
     }
     function drawStrip(ap) {
         const { g, w, h } = fit($('strip')); g.clearRect(0, 0, w, h);

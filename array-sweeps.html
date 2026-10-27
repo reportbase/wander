@@ -213,7 +213,7 @@
             cap = `The values on the index: a shape read from its centre, one amount r a place (r at place ${rd.index}: ${sv.amounts[rd.index].toPrecision(4)}). Kept as ln r less their mean: these bars, unmoved by scaling the world. The mean of ln r is ${sv.logMean.toFixed(4)}; it moves by ln k = ${Math.log(k).toFixed(4)}, the one number no reading gives.`;
         } else if (st.kind === 'constant') {
             for (let i = 0; i < K; i++) { const x = pad + i * cw; g.fillStyle = 'rgba(181,156,240,0.7)'; g.fillRect(x + cw * 0.2, top + 10, cw * 0.6, ch - 20); }
-            cap = `A constant array: every place holds the radius drawn at H, 1. Nothing is stored; the value is a function of the index alone, and the array is the equation h² + v² = 1.`;
+            cap = `A constant array: every place holds the radius, the reader's one length H, 1. Nothing is stored; the value is a function of the index alone, and the array is the equation h² + v² = 1.`;
         } else {
             const X = X0 * k, H = HOf(), y0 = top + ch + 62;
             // the writer's line [0, X] in N = K cells
