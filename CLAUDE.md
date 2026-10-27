@@ -2336,6 +2336,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   reading of e^(iπ) + 1 = 0, front-matter grafts (R480). Proposed E1–E4 (an Appendix A entry on Cauchy's equation
   twice, one clause in §4, a slip in OFS's Cayley entry: "the image of home" for "of zero", Cauchy 1821). Made (SPN R544; Tom pasted Gemini's reply approving E1–E4): OFS Appendix A "Cauchy's functional
   equation, twice", §4's clause, the Cayley entry fixed, Cauchy 1821; E1 and E4 in the CS companion.
+  Review 33 (27 Oct, SPN R546; ChatGPT, a fresh referee review, 8.6/10, `plans/ofs-review-33.md`; Tom: "if you agree,
+  make the small proposed changes."): no errors; three scoping edits: Theorem 6(a)'s cancellation an identity about the
+  stated representation (the address reading ours, an instrument's arrivals its own question); "for free" in §1 and §2
+  given the one length and the uniform measure (§12.4); Theorem 6(e)'s condition a density ≥ f₀ > 0 on (0, δ). The CS
+  companion carries the first and last.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

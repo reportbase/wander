@@ -57,3 +57,11 @@ with where OFS already stands and what is proposed. SPN R546.
 
 Not proposed: a technical audit beyond these (the propositions carry their checks in `runs/ofs/`), any new empirical
 claim, a rewrite. The CS companion carries R1 and R3 where it states Theorem 6 (its §5).
+
+### Made (27 Oct, SPN R546; Tom: "if you agree, make the small proposed changes.")
+
+- R1: OFS Theorem 6(a), the sentence after it; the CS companion's §5 likewise.
+- R2: OFS §1 ("The addresses are given, not performed") and §2's two-sweeps paragraph, conditional on the one length and
+  the uniform measure, with the pointer to §12.4.
+- R3: Theorem 6(e)'s condition, "the law of h has a density at least f₀ > 0 on some interval (0, δ)", in OFS and the CS
+  companion.

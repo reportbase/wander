@@ -94,8 +94,9 @@ exactly.
 as a sweep: a ray turned uniformly through a quadrant, a lamp turning on a shore, a needle dropped at random angles, and
 the pictures are processes. The mathematics under the pictures is not. The uniform turn is a measure on directions, the
 one every turn leaves unchanged, and a measure is given whole, all of its directions at once: the share of the quarter
-turn below a direction is a fact about that direction, not the count of a procedure that has reached it. So the sweep
-is given to every standpoint for free, complete before anything arrives, and the reader runs no algorithm to have it.
+turn below a direction is a fact about that direction, not the count of a procedure that has reached it. So, once the one
+length and the uniform measure on directions are granted, the sweep is given to every standpoint for free (§12.4 says
+what each part of that rests on), complete before anything arrives, and the reader runs no algorithm to have it.
 The measure is standard and needs no reader; that it is a reader's own addresses is the reading this paper proposes. A
 real reader may count against something else, a clock, a flat screen or what arrives (§2), and
 each such count is another weight, with the consequences set out in §12.2.
@@ -159,7 +160,7 @@ one way, and holds the directions from there. The corner, where a lay turns from
 it sits where the reader's own unit falls.
 
 The reader's geometry has two sweeps, and neither is something the reader does or a kind of reader it could be. Both are
-what the geometry gives a standpoint for free. The *inscribed sweep* is the addresses: the directions from the
+what the geometry gives a standpoint for free, given the one length and the uniform measure on directions. The *inscribed sweep* is the addresses: the directions from the
 standpoint, a quarter turn from all of h to all of v, each a ratio, uniform by turn. The *central sweep* is
 where those addresses land: on the circle drawn on the chord between the two parties, each direction from the
 standpoint meets one point, which the circle's centre sees at twice the angle (Euclid III.20). There what arrives along
@@ -1893,7 +1894,10 @@ reach ℓ > 0, an amount that may differ from direction to direction and is unkn
 its components are ℓ·h and ℓ·v, and the reading is (ℓ·v)/(ℓ·h) = v/h. The readings of Proposition 5, their Cauchy count
 and the fisheye are therefore the same whatever arrives, and are fixed before anything does: the law of the addresses is
 independent of the payload assigned to them. What does not cancel is the ratio of amounts, (v·V*)/(h·H) = (V*/H)·(v/h),
-which keeps the factor V*/H; that is why one standpoint cannot give the true size (§9).
+which keeps the factor V*/H; that is why one standpoint cannot give the true size (§9). The cancellation is an identity
+about this representation of what arrives, an amount along a given direction; that the directions are the reader's
+addresses is this paper's reading of it, and whether a particular instrument's arrivals have this form is a question
+about that instrument (§12.2).
 
 (b) *Address statistics ignore the payload.* For a finite set X of readings and any strictly increasing map f, the set
 f(X) has the same ranks as X, so every address statistic picks out the same element; for an odd count,
@@ -1910,8 +1914,8 @@ bound.
 
 (e) *The median needs only reciprocal symmetry, and the missing mean a density of h bounded away from zero near the horizon.* Let the sweep
 follow any path from all of h to all of v, with any weight, both unchanged by exchanging the two parties. Then the
-readings' law is unchanged by the reciprocal and its median is the corner. If moreover the weight gives h a density
-bounded away from 0 near the horizon, the mean does not exist. The uniform turn on the circle is the case that gives the
+readings' law is unchanged by the reciprocal and its median is the corner. If moreover the law of h has a density at
+least f₀ > 0 on some interval (0, δ), the mean does not exist. The uniform turn on the circle is the case that gives the
 Cauchy of (d).
 
 *Proof.* (a) is the cancellation shown. (b) Strictly increasing maps preserve ranks; the converse follows by monotone

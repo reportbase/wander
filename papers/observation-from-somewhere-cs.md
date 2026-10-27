@@ -345,7 +345,10 @@ the uniform turn.
 (a) *Nothing that arrives changes the Cauchy.* Suppose whatever arrives along each direction lies at some reach ℓ > 0,
 an amount that may differ from direction to direction and is unknown to the reader. Its components are ℓ·h and ℓ·v, and
 the reading is (ℓ·v)/(ℓ·h) = v/h. The readings and their law are therefore the same whatever arrives, and are fixed
-before anything does. What does not cancel is the ratio of amounts, (v·V*)/(h·H), which keeps the factor V*/H.
+before anything does. What does not cancel is the ratio of amounts, (v·V*)/(h·H), which keeps the factor V*/H. The cancellation is an
+identity about this representation of what arrives, an amount along a given direction; that the directions are the
+reader's addresses is the paper's reading of it, and whether a particular instrument's arrivals have this form is a
+question about that instrument.
 
 (b) *Address statistics ignore the payload.* For a finite set X of readings and any strictly increasing map f, f(X) has
 the same ranks as X, so every address statistic picks out the same element; for an odd count,
@@ -362,8 +365,8 @@ bound.
 
 (e) *The median needs only reciprocal symmetry, and the missing mean a density of h bounded away from zero near the
 horizon.* Let the directions follow any path from all of h to all of v, with any weight, both unchanged by exchanging
-the two parties. Then the median is the corner. If moreover the weight gives h a density bounded away from 0 near the
-horizon, the mean does not exist. The uniform turn on the circle is the case that gives the Cauchy of (d).
+the two parties. Then the median is the corner. If moreover the law of h has a density at least f₀ > 0 on some interval
+(0, δ), the mean does not exist. The uniform turn on the circle is the case that gives the Cauchy of (d).
 
 *Proof.* (a) is the cancellation shown. (b) Strictly increasing maps preserve ranks; the converse is monotone
 interpolation between matched points. (c) A strictly increasing f satisfying f((a + b)/2) = (f(a) + f(b))/2 for all
