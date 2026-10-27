@@ -27,6 +27,23 @@ No proposition's mathematics changes. What changes is who holds which number, an
 | Working back from the Cauchy | Step 3: "only if both breadths are drawn at one length, V = H" | Only if all of h and all of v are one length: for the reader automatic (one bar), for a page or an instrument the condition c = 1 |
 | 5(f), (g) | The lighthouse and Mercator require V = H | Unchanged: both are written drawings (a shore, a chart), so c is theirs, and c = 1 is what makes them the lamp's turn and true bearings |
 
+## The order of the chain (27 Oct, a pasted passage, agreed)
+
+Hold H; turn it uniformly; the orbit is a circle because the one length is fixed; the uniform turn's readings
+s = tan θ are the Cauchy, median at the corner, quartiles a reciprocal pair, the tail reaching the horizon. The Cauchy
+is then not a law laid on a circle that already held a V: it is the measure of the addresses the one-length turn
+makes. A writer can later add a second axis and see that it coincides with H.
+
+Two precisions for the text:
+- Where tan θ is a length: on the tangent to the circle at all of h, one H from home, the bar's line meets it at height
+  H·tan θ, so s is a ratio of two lengths both in H (the flat screen one H away, the lighthouse's shore at β = H). On the
+  Thales circle it is the inscribed ray at θ, the radius at 2θ (§4). In neither does a second length enter.
+- "Uniform" stays what §2 says: the turn measured by itself (R327); the Cauchy is the uniform turn's, and other weights
+  keep the corner and the missing mean but not its shape (Theorem 6(e)).
+
+So §5 and §7.1 read in this order: (P1) one H; the turn (3(g), uniform and returning, its one length H); the circle
+(3(c)); the readings and their law (5(a)–(c)); then, for drawings with two axes, c and 3(e), 5(d), (f), (g).
+
 ## Sections to rewrite
 
 1. **Abstract.** "For there to be a relation the reader must give the other party a breadth, and its only measure is its
