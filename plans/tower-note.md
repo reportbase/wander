@@ -213,6 +213,46 @@ writer's line differ, and of how one amount carries a structure from one to the 
 back to ratios. Its closing claim, that this is how biological construction actually occurs, is empirical and stays out
 of OFS (R364, R455), as §2¾'s biology does.
 
+## 2⅞⅞. The corner on the next look
+
+Tom (27 Oct): "The reader's line is optimized for reading. the reader is always focused at the corner, and the near and
+far fields are different, they are optimized for the next look to deciede where to look next. bring the corner in to
+focus on somewhere in the near field, extend the corner out to focus somewhere in the far field. but that next look
+defines the next corner, and the process continues." With a ChatGPT reply that moved H alone.
+
+**Already in OFS.** §8, "The corner follows the focus": the corner on what is looked at (the finest relative grain);
+near and far held alike since the next look may fall on either; the coarse rest of the field "enough to show that
+something is there and where to look next"; "moving the corner there is a new zero (§2)", which is the cycle. Corollary
+6.1 proves the corner the best focus (grain, the reciprocal's fixed point, least expected travel to the next look; a
+lopsided expectation moves it to that law's median). OFS left as it is.
+
+**Corrections to the reply.**
+1. Two corners, not one. Moving H moves the corner in distance; turning the head moves the corner in direction, free,
+   exact and with no distance. Most looking is turning.
+2. "Finest" is relative: a cell's width over its place, (π/2K)(s + 1/s), least at s = 1. In absolute width the turn's
+   cells are finest near home.
+3. "Logarithmic reach beyond" is the lay of distances; the picture is the turn, its far field in proportion (OFS §6,
+   "What Mercator's map is, and what it is not").
+4. "Always focused" stays a "should" (R499), not a claim about eyes.
+
+**What it adds to the tower: two towers of corners.** Each look installs the next corner, so the looks build a tower of
+corners, and it behaves differently in the two senses.
+- *In direction*, each corner is a new zero and successive legs compose exactly by tangent addition (R327, OFS §2):
+  every link between corners is read, and the tower holds itself together.
+- *In distance*, moving the corner onto a thing draws it at a new H, and the ratio of the new H to the old is the
+  thing's distance against the old H, which no look from one place reads (OFS §8, "How far it is lies outside every
+  reading"; Proposition 8). Successive distance corners are unlinked unless something carries the ratio in: a step
+  (parallax), a known kind, the horizon. Each link kept costs one of those; the rest of the distance tower is pieces,
+  each in its own H, as TWR's pieces after a break (T4).
+
+**In steps, not continuously.** FPV run 5 (`plans/fpv-plan.md`, a playground, not OFS): on a seeded gaze trace,
+re-laying the corner on every look is not best; holding it until the look is more than about 0.4 levels away re-lays on
+5% of looks for 1% of grain, and easing or a median of recent looks lags. So the cycle runs with a dead band.
+
+**Open.** Whether the distance tower's missing links matter to a reader that only ever compares within one look (they
+do not: every ratio within a look is read); they matter only when two looks' distances must be compared, which is the
+first capability a blueprint adds (the size), at the scale of one link.
+
 ## 3. Classical ideas to build on
 
 Each with what it gives, what the tower adds, and its standing. "Check" marks a citation from memory.
@@ -284,3 +324,6 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
   did not, closure as a bridge, but drift i^0.26, not a random walk).
 - 27 Oct: §2⅞¾, two lines or three rulers (a pasted passage): the reader's turn and its lay kept apart, address and
   payload put back, OFS §6's three rulers the picture; nothing carried into OFS (Tom: "note.").
+- 27 Oct: §2⅞⅞, the corner on the next look (Tom; a ChatGPT reply): already OFS §8 and Corollary 6.1; two towers of
+  corners, direction composed exactly, distance unlinked unless a step or a kind carries each link; in steps with a
+  dead band (FPV run 5). OFS unchanged.
