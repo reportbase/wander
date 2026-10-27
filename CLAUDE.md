@@ -2333,6 +2333,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Guided and blind (27 Oct, SPN R539; Tom: "you need the ratios of what your looking at."; "feeling the room with a blind
   fold"): guided reaching a reading by ratios, blind reaching writing in one's own H; blindfolded, one object felt round a
   reading, the room a tower of moves checked by loops. Tower note §2⅞⅞⅞¾.
+  `ckd-plan.md` (+ `runs/ckd/ckd.py`, 27 Oct; SPN R540; Tom: "yes", then "yes, rule it"): the corner's kinds for COR's six
+  cases and BAL's contact, exact. s = 1 is a corner only with a far side at 1/s (two loops, escape, the disc); an end at
+  BAL's contact and sampling's Nyquist, a resolution limit for parallax (moves with ε), none for the sky. BAL's corner the
+  limb at 45°, s = 1/√2. Run 1's P5 killed by my tolerance, P5′ not. Notes below BAL's and COR's runs in `labs.html`.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
