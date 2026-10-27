@@ -2337,6 +2337,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   cases and BAL's contact, exact. s = 1 is a corner only with a far side at 1/s (two loops, escape, the disc); an end at
   BAL's contact and sampling's Nyquist, a resolution limit for parallax (moves with ε), none for the sky. BAL's corner the
   limb at 45°, s = 1/√2. Run 1's P5 killed by my tolerance, P5′ not. Notes below BAL's and COR's runs in `labs.html`.
+  `rnr-plan.md` (+ `runs/rnr/rnr.py`, 27 Oct; SPN R541; Tom: "move to RNG", "yes"): lay the range first, revisited, exact.
+  RNG's gap is the payload's median direction against the turn's corner: b only with the arrivals even in the ellipse's
+  parameter (a kind carried in); even along the outline g(b), g(1/b) = 1/g(b); even by turn 1. L's addresses the same in
+  every world; B reads 1 by construction. Run 1's Q6 killed by my code, Q6′ not. A note below RNG's runs in `labs.html`.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
