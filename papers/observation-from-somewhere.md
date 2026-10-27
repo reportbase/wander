@@ -1086,8 +1086,9 @@ pair's middle. Neither is made by anyone: each is what the geometry of the one s
   unbounded: as the ray turns toward the tangent at A, square to the chord, s runs to the horizon. A uniform turn laid
   on that line is the Cauchy law (§7.1): its median is at the corner, and it has no mean.
 - *From the pair's middle.* The radius at 2θ ends at ½(cos 2θ, sin 2θ) = ½(h² − v², 2hv). With h + iv for A's direction,
-  that end is ½(h + iv)²: the central sweep's point is the inscribed sweep's direction squared. Its coordinates are
-  bounded by the radius, so every average over a uniform turn exists: cos 2θ averages 0 and sin 2θ averages 2/π.
+  that end is ½(h + iv)²: the central sweep's point is the inscribed sweep's direction squared, ½e^(2iθ) in complex
+  form, so the half turn that brings the horizon's landing point to home is e^(iπ) = −1. Its coordinates are bounded by
+  the radius, so every average over a uniform turn exists: cos 2θ averages 0 and sin 2θ averages 2/π.
 
 The factor of two between the sweeps is that square. It is why the radius turns twice as fast as the ray, why the
 address at θ points at the payload at 2θ (above), and why one sweep's readings are ratios and the other's are squares.
@@ -1339,8 +1340,8 @@ the same number of addresses, k·ln 2. If the far lay also joins the near lay L(
 k = 1.
 
 *Proof.* Let f(λ) = L(λ) − 1. Comparing (S) at x = μ with (S) at x = 1 gives L(λμ) − L(μ) = f(λ), so
-f(λμ) = f(λ) + f(μ) for all λ, μ ≥ 1. This is Cauchy's functional equation in multiplicative form, and its only
-increasing solutions are f(λ) = k·ln λ. At x = 1 the near lay has slope 1 and the far lay slope k. ∎
+f(λμ) = f(λ) + f(μ) for all λ, μ ≥ 1. This is Cauchy's functional equation in multiplicative form (Cauchy 1821),
+and its only increasing solutions are f(λ) = k·ln λ. At x = 1 the near lay has slope 1 and the far lay slope k. ∎
 
 Room here is the number of addresses a doubling receives, not its length.
 
@@ -3572,14 +3573,26 @@ form, a count by ratio, and fixes it only up to a factor: no projective fact sup
 
 **The Cayley transform, and the square that takes a centre to a focus** (§4). The two sweeps are also one classical map.
 The Cayley transform w = (z − i)/(z + i) carries the upper half-plane onto the disc and the line onto the circle (Cayley
-1846). It sends the reading s = tan θ to w = −e^(2iθ), the point of the circle 2θ round from the image of home, and the
-standpoint i to the centre. So the inscribed reading at θ and the central angle 2θ are one point under the map, and the
+1846). It sends the reading s = tan θ to w = −e^(2iθ), the point of the circle 2θ round from the image of zero, and the
+standpoint i to the centre (zero, s = 0, lands at −1 and the horizon at +1: the landmarks of the Thales circle turned a
+half turn). So the inscribed reading at θ and the central angle 2θ are one point under the map, and the
 uniform turn about the centre is carried onto the Cauchy law on the line: the Cauchy is the harmonic measure from i, the
 circle's uniform measure seen from its centre, written in the line's coordinate. The square that carries θ to 2θ also
 carries one figure to another. Under w = z² an ellipse centred at the origin, z = a cos t + i b sin t, becomes a conic
 with a focus at the origin, |w| = ℓ + e·Re w with ℓ = 2a²b²/(a² + b²) and e = (a² − b²)/(a² + b²), w going round once
 while z goes round twice (Bohlin 1911; Levi-Civita 1920). The doubling of the angle that separates the two sweeps is the
 same square that takes a figure's centre to its focus.
+
+**Cauchy's functional equation, twice** (§5, §6). Two steps of the main line are Cauchy's functional equations
+(Cauchy 1821). The uniform sweep of Proposition 3(g) is a one-parameter group, Φ(t₁ + t₂) = Φ(t₁)Φ(t₂), the equation in
+its exponential form for matrices, whose continuous solutions are Φ(t) = exp(tA). Because the sweep returns after a full
+turn, exp(TA) = I, the rate is imaginary, ±iω, and in the sweep's own inner product the bar's attitude is
+h + iv = e^(iωt), Euler's formula. It is the return that makes the rate imaginary; the one length fixes only the factor
+left free in that inner product. The scale invariance (S) of Proposition 4 gives f(λμ) = f(λ) + f(μ), the equation in
+its logarithmic form, whose increasing solutions are k·ln λ. Each needs its regularity condition, continuity of the
+sweep in the one and monotonicity of the lay in the other; without it the equation has other solutions, as the
+Hamel-basis example in Theorem 6's proof shows for the additive form. The Cauchy distribution's name has another
+origin, his exchange with Bienaymé in 1853.
 
 **π_p** (§5). Among the p-norms the circle is also the extreme case. Measured in its own norm, the unit circle of ℓ_p
 has half-perimeter π_p, which is 4 at p = 1 and as p → ∞ (the line's norm and the square's) and least, π, at p = 2
@@ -3901,6 +3914,9 @@ Multivariate Analysis* 128, 147–153.
 
 Cacoullos, T. and Papadatos, N. (2013). Self-inverse and exchangeable random variables. *Statistics & Probability
 Letters* 83(1), 9–12.
+
+Cauchy, A.-L. (1821). *Cours d'analyse de l'École royale polytechnique. Première partie: Analyse algébrique*.
+Paris: Debure, ch. 5.
 
 Cauchy, A.-L. (1841). Note sur divers théorèmes relatifs à la rectification des courbes et à la quadrature des
 surfaces. *Comptes Rendus de l'Académie des Sciences* 13, 1060–1065.

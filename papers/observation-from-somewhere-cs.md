@@ -699,8 +699,14 @@ the same number of addresses, k·ln 2. If the far lay also joins the near lay L(
 k = 1.
 
 *Proof.* With f(λ) = L(λ) − 1, (S) gives f(λμ) = f(λ) + f(μ) for λ, μ ≥ 1: Cauchy's functional equation in
-multiplicative form, whose only increasing solutions are k·ln λ. At x = 1 the near lay has slope 1 and the far lay
-slope k. ∎
+multiplicative form (Cauchy 1821), whose only increasing solutions are k·ln λ. At x = 1 the near lay has slope 1 and the
+far lay slope k. ∎
+
+The reader's circle rests on the same equation in its exponential form. A uniform sweep is a one-parameter group,
+Φ(t₁ + t₂) = Φ(t₁)Φ(t₂), so Φ(t) = exp(tA); because it returns after a full turn its rate is imaginary, and in its own
+inner product the bar's attitude is h + iv = e^(iωt), Euler's formula. The return makes the rate imaginary; the one
+length fixes only the scale of that inner product. Each form needs its regularity condition, continuity of the sweep or
+monotonicity of the lay.
 
 (S) does the work, and it is assumed, not derived: scale invariance of the lay's increments, motivated by the fact that
 no reading can fix a scale. Monotonicity, a fixed corner and a matched slope are not enough by themselves:
@@ -1138,6 +1144,9 @@ Multivariate Analysis* 128, 147–153.
 
 Cacoullos, T. and Papadatos, N. (2013). Self-inverse and exchangeable random variables. *Statistics & Probability
 Letters* 83(1), 9–12.
+
+Cauchy, A.-L. (1821). *Cours d'analyse de l'École royale polytechnique. Première partie: Analyse algébrique*.
+Paris: Debure, ch. 5.
 
 Dietz, P. F. (1982). Maintaining order in a linked list. *Proceedings of the 14th ACM Symposium on Theory of
 Computing*, 122–127.

@@ -2331,7 +2331,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   taken: "one length forces c = i" (the return gives the imaginary rate, not the absence of V; review 31's concern 2),
   its H(x + y) and c = i (clash with OFS's H and c), "Cauchy's name twice for one reason" (false), a symbol-by-symbol
   reading of e^(iπ) + 1 = 0, front-matter grafts (R480). Proposed E1–E4 (an Appendix A entry on Cauchy's equation
-  twice, one clause in §4, a slip in OFS's Cayley entry: "the image of home" for "of zero", Cauchy 1821), awaiting Tom.
+  twice, one clause in §4, a slip in OFS's Cayley entry: "the image of home" for "of zero", Cauchy 1821). Made (SPN R544; Tom pasted Gemini's reply approving E1–E4): OFS Appendix A "Cauchy's functional
+  equation, twice", §4's clause, the Cayley entry fixed, Cauchy 1821; E1 and E4 in the CS companion.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

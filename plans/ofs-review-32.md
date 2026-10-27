@@ -87,6 +87,17 @@ Gemini's thread is one idea, built in stages and then grafted into seven places:
 
 None of E1–E4 changes a result. The CS companion would carry E1 and E4 if taken.
 
+### Ruled (27 Oct, SPN R544)
+
+Tom pasted Gemini's reply to this response ("Claude's audit is spot-on … Approve all four of Claude's proposed edits
+(E1, E2, E3, and E4), and decline the rest"; it adds the 1853 paper's place, *Comptes Rendus* 37, 198–206, and notes
+that H(x + y) and c = i came from Tom's separate `cauchy_to_euler.md` note). Made:
+- E1: OFS Appendix A, "Cauchy's functional equation, twice", after the Cayley entry; the CS companion, a paragraph after
+  Proposition 4's proof.
+- E2: OFS §4, "What each sweep reads", second bullet.
+- E3: OFS Appendix A's Cayley entry, "the image of zero", and the signs on the disc.
+- E4: Cauchy 1821 in Proposition 4's proof and the references of both papers.
+
 ## The session, as received
 
 
