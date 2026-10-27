@@ -2267,6 +2267,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   halving rule; halving r ↦ 2/r with √2 its corner), Renard (no amount; 8 of 10 R10 values 2^i·10^j), music (modes,
   equal steps from twelve keys, concert pitch the amount), threads the counter-case (P ∝ D^0.79, a table of amounts
   between levels). Runs 1–2 killed by my code, run 3 not.
+  §2¾ (a pasted passage on building without a blueprint), then **the spine** (SPN R530; Tom: "my goal is to use this as
+  the papers spine. to make the point that ratios work just fine, but for sophisticated intricate systems, a blue print
+  provides new capabilities, but not strictly necessary."; "yes, proceed" to `plans/ofs-spine.md`): OFS §9 "What a
+  blueprint adds" opens with "Ratios suffice" and the six capabilities (the size, meeting out of view, sums of amounts,
+  the join, before the thing, completeness stated), each with the result showing no reading supplies it; §3.8 "The one
+  number a blueprint adds"; "lacks" measured from the reader's side; abstract, §1, Results; Appendix A Euclid V,
+  Descartes's unit segment, ISO 216; the CS companion's §10 likewise. Keep OFS saying the blueprint is a capability, not a
+  condition, and nothing against the writer or the number line (R478); claims about real builders stay in the note.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

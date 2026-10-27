@@ -45,7 +45,9 @@ measurement but the value the reader starts from: every value gives the same geo
 a fixed count of addresses holds any number of things, though things sharing an address arrive there as one. The geometry needs that value and a shape, set by how
 many unit relations the system includes: two give the circle, three the sphere. In one
 sentence: the address scheme and the magnitude met at an address are distinct mathematical roles, and a geometry can
-specify the former without determining the latter.
+specify the former without determining the latter. So ratios suffice for everything a reader does from where it stands;
+a blueprint, the writer's statement in amounts, adds capabilities the ratios cannot give (the size, parts that meet out
+of view, sums, the whole joined and stated before it exists), which an intricate system may need and a reader does not.
 
 ## 1. Introduction
 
@@ -65,6 +67,12 @@ nothing about what the magnitudes are. The magnitudes are not irrelevant: they m
 they are met at the addresses, not built into them. The geometry that follows is therefore not a new geometry of the
 world. It is a geometry of the reader's own *addresses*: the places where readings can be put, which exist before
 anything is read and do not depend on what is found there.
+
+The paper's argument runs on one line. Ratios suffice: a reader that builds, places, compares, orders and checks from
+where it stands does all of it in ratios to its own breadth, and no amount is needed. A blueprint adds: the writer's
+statement in amounts gives the size, lets parts made apart meet, lets amounts be added, and states the whole before it
+exists, which intricate systems of many parts may need. It is a capability added to the ratios, not a condition of them.
+Section 9 sets the two side by side.
 
 **What is new, and what is not.** That coordinates depend on the observer is old: a coordinate system is a choice, and a
 change of coordinates changes every coordinate. What is new here is where this reader's scheme comes from: it is built
@@ -164,7 +172,7 @@ could not: the frame from one standpoint, the size in H from two, the unit from 
 The sum of the unit relations is where the truth would lie: a system's true breadths, as shares of their whole, would be
 one point of it, found only with the breadths themselves. The reader's drawing, every party at its own H, is the sum's
 centre, where every pair is at its corner; the geometry follows from there, and the truth lies off the centre by the
-ratios the reader lacks. Many apparent paradoxes come from reading one vantage's geometry as if it were another's, most
+ratios a blueprint would add. Many apparent paradoxes come from reading one vantage's geometry as if it were another's, most
 often from treating the writer's vantage as if a single observation held it. Section 3 sets out the reader in full.
 
 **Results.**
@@ -186,7 +194,7 @@ often from treating the writer's vantage as if a single observation held it. Sec
   it, rising to Jaynes's ½ from far off (§2).
 - What is known of the breadths sets the situation, one of five: nothing related, the circle or another shape held
   whole by a writer, or a reading from somewhere, which has its two sweeps, the addresses and their paint. A situated
-  reader can divide only by its own breadth, and what it lacks is a single number (§3).
+  reader can divide only by its own breadth, and what a blueprint would add is a single number (§3).
 - Every relation between two parties turns over at one point, the corner v = h, the only point left fixed when the two
   parties are exchanged. Near and far are one geometry, read from either side of it (§4).
 - A reader that holds one breadth must assign the other party a breadth in its own unit. For the sweep to be a turn,
@@ -222,6 +230,10 @@ often from treating the writer's vantage as if a single observation held it. Sec
 - What one standpoint's readings fix, and what more standpoints add (§9): one stream fixes the course of a relation, not
   its parties; readings against one denominator give payloads relative to each other; further standpoints bring back a
   figure up to its scale; payloads closer than the resolution arrive as their centroid.
+- Ratios suffice, and a blueprint adds (§9): everything a reader builds, places, compares, orders and checks from where it
+  stands is done in ratios to its own H; a blueprint, the writer's statement in amounts, adds six things no reading
+  supplies (the size, meeting out of view, sums of amounts, the join, a statement before the thing, completeness stated),
+  which intricate systems of many parts may need and a reader does not.
 - A worked example, a mountain range written by the writer and read from where the reader stands, puts the pieces
   together (§10); applications follow (§11).
 
@@ -307,8 +319,8 @@ breadths, taken as shares of their whole, would be one point of it, and no commo
 needs the true breadths, which are amounts, and normalizing the unit relations by their sum does not supply them. A
 situated reader does not have that point. It has H, which sets only its zoom (§8), and every other party drawn at it,
 V = V₂ = H: equal shares, the triangle's centre (⅓, ⅓, ⅓), which is the triple corner, where every pair is at its
-corner. The rest of the geometry follows from that drawing. The true point lies off the centre by the two ratios the
-reader lacks, V*/H and V₂*/H (§3.8); amounts brought from outside move the reader's amounts toward it and redraw nothing
+corner. The rest of the geometry follows from that drawing. The true point lies off the centre by two ratios no
+reading carries, V*/H and V₂*/H (§3.8); amounts brought from outside move the reader's amounts toward it and redraw nothing
 (§9).
 
 **Altitude and azimuth.** With three unit relations the wedge's directions are given by two angles, the coordinates an
@@ -541,7 +553,7 @@ given is the thumb: V = H, mountain equals thumb (§5), the mountain read in thu
 required: only then is the sweep a turn and its readings the Cauchy (§5, §7.1). How many thumbs the mountain really is,
 is a separate estimate. It changes no reading, only the amounts, and one thumb is the best estimate when nothing says
 bigger or smaller (Proposition 13, §9). The corner v = h is still found exactly, but the amounts there are the
-estimate's. The mountain's true size, V*/H thumbs, is the one number the situated reader lacks (§3.8).
+estimate's. The mountain's true size, V*/H thumbs, is the one number a blueprint adds to the situated reading (§3.8).
 
 - **0, nothing.** The reader has its breadth H, as it always does, but no h: nothing is related to it, so there is
   nothing to read and no home to lay from.
@@ -865,7 +877,7 @@ unknowable to the reader. What reaches it is the wedge's directions; along each,
 point first. A second standpoint gives the box's extent in H; an amount carried in gives it in a unit shared with
 others.
 
-### 3.8 What the reader lacks is one number
+### 3.8 The one number a blueprint adds
 
 The situations can be written in terms of one another. A situated reading, 3 and 4, is a shape of situation 2, read
 through situation 1's drawing, with situation 0's unknown on one side only. The world is a shape like any other, with
@@ -880,8 +892,9 @@ for κ = 2 are those for κ = 1 slid up exactly one doubling, every doubling's s
 | κ = 1 | 0.139 | 0.205 | 0.205 | 0.139 | 0.077 |
 | κ = 2 | 0.077 | 0.139 | 0.205 | 0.205 | 0.139 |
 
-So what a situated reader lacks is one number, how many thumbs the mountain is, V*/H; on the count of doublings it is an
-offset, log₂(V*/H), not a change of pattern. Situation 2 knows the number; a situated reading does not; known within
+So what a blueprint adds to a situated reading is one number, how many thumbs the mountain is, V*/H; on the count of
+doublings it is an offset, log₂(V*/H), not a change of pattern. The number matters only where the reader must meet an
+amount from outside; everything it reads, places and orders from where it stands is done without it (§9). Situation 2 knows the number; a situated reading does not; known within
 bounds, it is known within bounds. Assuming it clarifies the reading; it does not simplify it.
 
 ## 4. The corner
@@ -1563,7 +1576,7 @@ the area is not uniform in both angles, which keeps only the pairs each angle re
 below). The wedge is made at each observation, not taken from a sphere the reader holds: the whole sphere, every octant
 drawn together, is the writer's. A sphere that placed every place by its direction and its distance would need every
 distance, which no situated reader has. The wedge needs no size: the readings are ratios, laid by the two-dimensional
-Cauchy. What it lacks is what the circle lacks, once per party: V*/H and V₂*/H. On the circle near and far were halves;
+Cauchy. What a blueprint would add is what it adds to the circle, once per party: V*/H and V₂*/H. On the circle near and far were halves;
 with three parties the reader is near in both readings for a third of its addresses.
 
 **Swept by altitude and azimuth.** Reached by the two sweeps of §2, the uniform octant is uniform in azimuth and uniform
@@ -2501,7 +2514,41 @@ angle θ from the middle of the view are about (2π/N)·cos θ apart, so the rea
 which is R(N) = (N/π)·arccos(εN/2π) of them. This peaks at about 1.12/ε points, where εN/2π ≈ 0.65, and falls to
 none at N = 2π/ε: past the peak, more points mean fewer told apart. The addresses never overflow; the resolution does.
 
-## 9. What the geometry does not give: amounts
+## 9. What a blueprint adds
+
+**Ratios suffice.** Everything a reader does from where it stands is done in ratios. Every reading is a ratio, and none
+contains a unit (Proposition 8(a)); the addresses, their law and the corner are given before anything arrives (§2, §4,
+Proposition 5, Theorem 6(a)); near and far are laid by their count (§6), and the level of detail with them (§8); order
+and the median survive every change of payload (Theorem 6(b), (c), (e)); more standpoints bring back the figure up to
+its size (Proposition 11), and one step taken places every thing in the reader's own H (§10, step 6); a hierarchy of
+any depth is held in ratios read one level up ("Units within units", §11), an error is found by closing a loop, with no
+amount ("Closing a loop", §11), and two readers that see one thing in common are aligned by it (Proposition 7). All of
+it is in the reader's own unit, H, a value it chose; none of it needs a breadth from outside. A reader that builds, places,
+compares, orders and checks from where it stands needs nothing more than its ratios.
+
+**What a blueprint adds.** A blueprint is the writer's statement of a thing in amounts: every length at once, to one
+scale, from no standpoint (§1, §3.4). It gives six things the ratios do not, and for each a result here shows that no
+reading can supply it.
+
+1. *The size.* How many of the reader's H the other is, V*/H: one number, carried by no reading (Proposition 8; §3.8).
+2. *Meeting out of view.* Two systems that never see each other fit only through an amount agreed beforehand, a unit
+   ("What a unit is", below); seen together, one ratio read between them suffices (Proposition 7). Parts made apart and
+   joined later are this case.
+3. *Sums of amounts.* A total, a mean or a budget adds amounts. The readings can be ordered and not added: they have a
+   median and no mean (Theorem 6(b), (c); §7.6).
+4. *The join.* Both hemispheres, every facing, the back and the inside, held at once; a reader holds one facing at a
+   time and no reading carries a sign (§3.7; §7.3).
+5. *Before the thing.* A blueprint can state what does not yet exist, and be built to; a reader reads what arrives
+   (Proposition 9). To put a thing at a stated place is to write ("To move the furniture is to write", §11).
+6. *Completeness, stated.* A reader can recover a thing exactly and still not know that it has all of it ("Recovered,
+   not written", §11); a blueprint states the whole by construction.
+
+None of the six is needed to build, place, compare, order or check from a standpoint. Each becomes needed when parts
+made apart must meet, when amounts must be added, or when the whole must be stated before it exists, and those are the
+needs of an intricate system of many parts. So the blueprint is a capability added to the ratios, not a condition of
+them: a reader is not a writer short of an amount, and a writer is a reader that has carried one in. This is a statement
+about what the mathematics makes possible, not about how any builder works. The rest of this section sets out what the
+amount is and what it costs.
 
 **Geometry first, then values.** Once the geometry is defined, a shape and one H (§5), physics assigns the values of
 its placeholders, and the geometry is agnostic to that step. The values enter as multipliers on the amounts: V*/H on
@@ -3606,6 +3653,27 @@ the turn, T_n(y/√(y² + L²)) (Boyd 1987): the same equal angles read by their
 the ends of the chord (the last gap about π²/N², the middle ones π/N; Rivlin 1974), and read by their tangent are the
 Cauchy's, spread out to the horizon. The law is the turn's; the chart decides where the addresses crowd.
 
+**Euclid's Book V: a geometry of ratios** (§9). Euclid's *Elements* never assigns a number to a length. A ratio is
+"a sort of relation in respect of size between two magnitudes of the same kind" (Book V, definition 3), and the theory
+of proportion that Book V owes to Eudoxus (definition 5) compares ratios without measuring either term; the plane and
+solid geometry of the *Elements* is built on it. So a whole classical geometry was carried in ratios, with no unit
+length, which is the regime §9 calls sufficient: magnitudes of one kind compared with each other, nothing compared with
+an amount from outside.
+
+**Descartes's unit segment** (§9). In *La Géométrie* (1637), Book I, Descartes chooses one line as unity so that the
+product of two lines is again a line rather than an area, and the quotient a line rather than a ratio; with it, lengths
+are handled as numbers, added and multiplied. The unit enters to do arithmetic on lengths: sums of amounts and products
+read as lengths, the third of the capabilities §9 lists, bought with one chosen length.
+
+**Paper sizes, ISO 216** (§9). One constraint states the system: a sheet cut in half across its long side keeps its
+shape. Halving sends a sheet's aspect r to 2/r, so in units of √2 it is the reciprocal, and the only shape it keeps is
+its fixed point, r = √2, the corner of that exchange; a sheet off it alternates between two shapes whose geometric mean
+is √2. Every breadth of the series is then a ratio to the sheet, and the series is written by one amount, A0's area of
+1 m²; the B series is the same system written with a second amount (B0's short side 1 m) and the C series with their
+geometric mean. All 33 listed sizes of each series come from those amounts and one rule, the long side halved and
+rounded down to the millimetre (ISO 216; ISO 269). Ratios state the system; the amounts let sheets, envelopes and
+machines made apart meet, the second capability of §9.
+
 **Buckingham's π theorem** (§9). A law among n quantities whose units come from base units of rank r in the
 dimension matrix is a law among n − r dimensionless groups, the invariants of the unit changes (Buckingham 1914;
 Bridgman 1922; Barenblatt 1996). With one base unit, length, the change is x ↦ λx, and its invariants are exactly the
@@ -3822,6 +3890,9 @@ Letters* 97(16), 160201.
 Dehaene, S., Izard, V., Spelke, E. and Pica, P. (2008). Log or linear? Distinct intuitions of the number scale in Western
 and Amazonian indigene cultures. *Science* 320, 1217–1220.
 
+Descartes, R. (1637). *La Géométrie*. Appendix to *Discours de la méthode*. Leiden. Translated by D. E. Smith and
+M. L. Latham (1925), *The Geometry of René Descartes*. Open Court, Chicago.
+
 Dickey, J. M. (1967). Matricvariate generalizations of the multivariate t distribution and the inverted multivariate
 t distribution. *The Annals of Mathematical Statistics* 38(2), 511–518.
 
@@ -3895,8 +3966,14 @@ Hotelling, H. (1936). Relations between two sets of variates. *Biometrika* 28(3�
 Igarashi, T. and Hinckley, K. (2000). Speed-dependent automatic zooming for browsing large documents. *Proceedings
 of UIST 2000*, 139–148.
 
+ISO 269 (1985). *Correspondence envelopes — Designation and sizes*. International Organization for Standardization,
+Geneva.
+
 ISO 68-1 (1998). *ISO general purpose screw threads — Basic profile — Part 1: Metric screw threads*. International
 Organization for Standardization, Geneva.
+
+ISO 216 (2007). *Writing paper and certain classes of printed matter — Trimmed sizes — A and B series, and indication
+of machine direction*. International Organization for Standardization, Geneva.
 
 ISO 261 (1998). *ISO general purpose metric screw threads — General plan*. International Organization for
 Standardization, Geneva.

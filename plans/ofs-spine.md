@@ -93,3 +93,11 @@ view) stays a candidate in the note. The walking test TWR stays planned.
 2. The wording changes above, each checked against its old text for anything lost.
 3. Appendix A's three entries.
 4. The CS companion carried out to match (R421), SPN ruling, CLAUDE.md.
+
+## Done (27 Oct, SPN R530; Tom: "yes, proceed")
+
+All four steps made as outlined: OFS §9 retitled "What a blueprint adds" with "Ratios suffice" and the six capabilities
+at its head (the old opening, "Geometry first, then values", follows them); §3.8 retitled; the "lacks" passages at the
+abstract's results, "The sum", "Thumb and mountain" and "More parties" measured from the reader's side ("the missing
+mean" and "nothing the reader lacks" kept, they are not that sense); the spine sentence in the abstract, §1 and Results;
+Appendix A's three entries before Buckingham's; the CS companion's §10, Results and abstract.
