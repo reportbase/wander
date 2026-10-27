@@ -101,3 +101,7 @@ at its head (the old opening, "Geometry first, then values", follows them); §3.
 abstract's results, "The sum", "Thumb and mountain" and "More parties" measured from the reader's side ("the missing
 mean" and "nothing the reader lacks" kept, they are not that sense); the spine sentence in the abstract, §1 and Results;
 Appendix A's three entries before Buckingham's; the CS companion's §10, Results and abstract.
+
+Then (27 Oct, SPN R531; Tom: "the number line keeps the far field proportional. which is useful when there is no
+agreement about what the near fields extent actually is."): a seventh capability, "A far field kept in proportion", in
+OFS §9 and the CS companion; the counts made seven.

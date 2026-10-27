@@ -47,7 +47,7 @@ many unit relations the system includes: two give the circle, three the sphere. 
 sentence: the address scheme and the magnitude met at an address are distinct mathematical roles, and a geometry can
 specify the former without determining the latter. So ratios suffice for everything a reader does from where it stands;
 a blueprint, the writer's statement in amounts, adds capabilities the ratios cannot give (the size, parts that meet out
-of view, sums, the whole joined and stated before it exists), which an intricate system may need and a reader does not.
+of view, sums, the whole joined and stated before it exists, a far field in proportion common to every reader), which an intricate system may need and a reader does not.
 
 ## 1. Introduction
 
@@ -70,8 +70,8 @@ anything is read and do not depend on what is found there.
 
 The paper's argument runs on one line. Ratios suffice: a reader that builds, places, compares, orders and checks from
 where it stands does all of it in ratios to its own breadth, and no amount is needed. A blueprint adds: the writer's
-statement in amounts gives the size, lets parts made apart meet, lets amounts be added, and states the whole before it
-exists, which intricate systems of many parts may need. It is a capability added to the ratios, not a condition of them.
+statement in amounts gives the size, lets parts made apart meet, lets amounts be added, keeps the far field in proportion
+for readers whose near fields differ, and states the whole before it exists, which intricate systems of many parts may need. It is a capability added to the ratios, not a condition of them.
 Section 9 sets the two side by side.
 
 **What is new, and what is not.** That coordinates depend on the observer is old: a coordinate system is a choice, and a
@@ -231,9 +231,9 @@ often from treating the writer's vantage as if a single observation held it. Sec
   its parties; readings against one denominator give payloads relative to each other; further standpoints bring back a
   figure up to its scale; payloads closer than the resolution arrive as their centroid.
 - Ratios suffice, and a blueprint adds (§9): everything a reader builds, places, compares, orders and checks from where it
-  stands is done in ratios to its own H; a blueprint, the writer's statement in amounts, adds six things no reading
-  supplies (the size, meeting out of view, sums of amounts, the join, a statement before the thing, completeness stated),
-  which intricate systems of many parts may need and a reader does not.
+  stands is done in ratios to its own H; a blueprint, the writer's statement in amounts, adds seven things no reading
+  supplies (the size, meeting out of view, sums of amounts, the join, a statement before the thing, completeness stated,
+  and a far field kept in proportion, common to readers whose corners differ), which intricate systems of many parts may need and a reader does not.
 - A worked example, a mountain range written by the writer and read from where the reader stands, puts the pieces
   together (§10); applications follow (§11).
 
@@ -2527,7 +2527,7 @@ it is in the reader's own unit, H, a value it chose; none of it needs a breadth 
 compares, orders and checks from where it stands needs nothing more than its ratios.
 
 **What a blueprint adds.** A blueprint is the writer's statement of a thing in amounts: every length at once, to one
-scale, from no standpoint (§1, §3.4). It gives six things the ratios do not, and for each a result here shows that no
+scale, from no standpoint (§1, §3.4). It gives seven things the ratios do not, and for each a result here shows that no
 reading can supply it.
 
 1. *The size.* How many of the reader's H the other is, V*/H: one number, carried by no reading (Proposition 8; §3.8).
@@ -2542,9 +2542,17 @@ reading can supply it.
    (Proposition 9). To put a thing at a stated place is to write ("To move the furniture is to write", §11).
 6. *Completeness, stated.* A reader can recover a thing exactly and still not know that it has all of it ("Recovered,
    not written", §11); a blueprint states the whole by construction.
+7. *A far field kept in proportion.* A reader lays amounts in proportion only up to its corner, at its own H, and in
+   levels past it (§6). Two readers with different H therefore lay the amounts between their two corners differently,
+   one in proportion and the other in levels, and nothing in either reading says where the other's near field ends. The
+   number line has no corner (Proposition 14): every amount, however far past any reader's H, is laid in proportion,
+   so nothing about the extent of a near field has to be agreed. It is the common far field none of the readers' own
+   lays has ("The number line is a shared unit, and the writer's ruler", below), and it is what lets amounts pass
+   between readers whose corners do not coincide.
 
-None of the six is needed to build, place, compare, order or check from a standpoint. Each becomes needed when parts
-made apart must meet, when amounts must be added, or when the whole must be stated before it exists, and those are the
+None of the seven is needed to build, place, compare, order or check from a standpoint. Each becomes needed when parts
+made apart must meet, when amounts must be added or compared across readers whose near fields differ, or when the whole
+must be stated before it exists, and those are the
 needs of an intricate system of many parts. So the blueprint is a capability added to the ratios, not a condition of
 them: a reader is not a writer short of an amount, and a writer is a reader that has carried one in. This is a statement
 about what the mathematics makes possible, not about how any builder works. The rest of this section sets out what the

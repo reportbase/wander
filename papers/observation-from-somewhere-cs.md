@@ -126,8 +126,8 @@ offers instead, a baseline against which existing designs can be read.
 - **A fixed count.** A reader's K addresses cover a world of any size N, with no table and no knowledge of N; H is a
   zoom that places them and changes no reading (§9).
 - **Ratios suffice; a blueprint adds.** Everything a reader does from where it stands runs on ratios; a blueprint, the
-  writer's statement in amounts, adds the size, parts that meet out of view, sums, the join and a statement made in
-  advance. No reading fixes scale; one amount supplied from outside fixes it everywhere it is linked (§10).
+  writer's statement in amounts, adds the size, parts that meet out of view, sums, the join, a statement made in
+  advance and a far field in proportion common to every reader. No reading fixes scale; one amount supplied from outside fixes it everywhere it is linked (§10).
 - **A dial.** A held push adds to the hyperbolic angle; the place is its sinh and the screen its turn. The whole list
   stays on a bounded screen, its end the horizon, and any place up to N is reached in about ln(2N)/rate, with no
   table and no count in the control (§11).
@@ -846,11 +846,13 @@ by it (Proposition 7 below). A system that builds, places, compares, orders and 
 nothing more.
 
 **What a blueprint adds.** A blueprint is the writer's statement in amounts: every length at once, to one scale, from no
-standpoint. It gives six things the ratios do not: (1) the size, V*/H, which no reading carries; (2) meeting out of view,
+standpoint. It gives seven things the ratios do not: (1) the size, V*/H, which no reading carries; (2) meeting out of view,
 parts made apart that fit only through a unit agreed beforehand, where parts seen together need only a ratio read between
 them; (3) sums of amounts, totals, means and budgets, where the readings have a median and no mean (§5); (4) the join,
 every facing and both signs held at once; (5) a statement before the thing exists, to be built to, where a reader reads
-what arrives; (6) completeness stated, where a reader can recover a thing exactly and not know that it has all of it.
+what arrives; (6) completeness stated, where a reader can recover a thing exactly and not know that it has all of it; (7) a far field
+kept in proportion, the number line's, with no corner, so two readers whose corners (their H) differ need not agree where
+either near field ends.
 None is needed to build, place, compare, order or check from a standpoint; each becomes needed when parts made apart must
 meet, when amounts must be added, or when the whole must be stated in advance, the needs of an intricate system of many
 parts. In a program's terms: an index and its order statistics run on ratios; a schema with units, a sum or an interface

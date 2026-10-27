@@ -2275,6 +2275,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   number a blueprint adds"; "lacks" measured from the reader's side; abstract, §1, Results; Appendix A Euclid V,
   Descartes's unit segment, ISO 216; the CS companion's §10 likewise. Keep OFS saying the blueprint is a capability, not a
   condition, and nothing against the writer or the number line (R478); claims about real builders stay in the note.
+  A seventh capability (R531; Tom: "the number line keeps the far field proportional. which is useful when there is no
+  agreement about what the near fields extent actually is."): a far field kept in proportion, common to readers whose
+  corners (H) differ, since the number line has no corner (Proposition 14).
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
