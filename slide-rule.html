@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The reader is a slide rule</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    slide-rule.html: the reader is a slide rule (27 October 2026, Tom: "the interesting thing about a tower of relations is
+    that there are cascades of cancelelations."; "what i'm wondering if the sweep of addresses, is the same as the sweep of
+    ratios. im wondering if there is a simplyfing connection, that would reduce complexity of sheer volume of ratios. I
+    doubt readers spend much time do ratio math."; "lets see this in action in a demo"; SPN R536; plans/tower-note.md).
+    A standalone page, plain canvas. N things in view from home, each at a direction (uniform by turn) and a distance a
+    writer would give it; each address is a reading, v/h, and nothing is divided to get it. Laid on the levels
+    (log₂ v/h), every ratio between two things is the gap between their places, so N places hold all N(N − 1)/2 ratios.
+    The straight rule: put the slide's 1 (the corner) on any thing and every other thing's ratio to it is read off at
+    once, nothing computed. A chain of links (a tower) laid end to end telescopes: every middle place drops out, the chain
+    is the gap between its ends; a loop closes to no gap, and a misread link leaves a remainder that shows something is
+    off, not where; small errors on every link add along the chain. The circular rule: zero the turn on a thing and every
+    other direction's turn from it is read off; tangent subtraction is the writer's formula for it. Scaling the world
+    moves every distance and no reading.
+    Links: ?N=6|12|24&seed=&k=<log10 k>&zero=<thing>&chain=i,j,…&loop=1&misread=<percent>&noise=<levels>&turn=<thing>.
+    Test hook: window.__slideRule (things, reading, level, ratio, divide, slideRead, chain, turn, counts, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 20px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15;
+        overflow-x: auto }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    s { color: var(--dim); text-decoration-color: var(--red) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The reader is a slide rule</h1>
+    <p class="lede">Every address is already a ratio: a direction from home reads v/h, and nothing is divided to get it.
+    Lay the addresses on the <span class="g">levels</span> (log₂ of v/h) and every ratio between two things becomes the
+    <span class="b">gap between their places</span>. N things hold N(N − 1)/2 ratios, but the reader keeps only N places;
+    the ratios are read off as distances, the way a slide rule multiplies by laying lengths end to end. A tower of links
+    telescopes for the same reason: every middle place drops out. The reader places; it does no ratio arithmetic.</p>
+
+    <div class="panel">
+        <h2>The things, and their places</h2>
+        <div class="row"><label>things in view</label>
+            <button data-N="6">6</button><button data-N="12">12</button><button data-N="24">24</button>
+            <button id="another">another world</button></div>
+        <div class="row"><label for="k">scale the world, k</label><input id="k" type="range" min="-2" max="2" step="0.01" value="0">
+            <span id="kv" class="b"></span></div>
+        <div class="grid">
+            <div><canvas id="cv1" height="380"></canvas><p class="cap">From home, the quarter turn from <span class="b">h</span>
+            to <span class="b">v</span>, the corner (v = h) dashed. Each thing sits on its own ray at the distance a writer
+            would give it, drawn on the reader's lay (in proportion to the corner circle, then 1 + ln). Scaling the world
+            slides every thing along its ray and moves no reading.</p></div>
+            <div class="read" id="r1"></div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>The straight rule: ratios are gaps</h2>
+        <p class="cap" style="margin-top:0">Top, the stock: each thing at its level, log₂(v/h). Below, the slide, a second
+        scale of levels whose <span class="g">1</span> is the corner. Drag the slide, or tap a thing to put the slide's 1
+        under it: every other thing's ratio to it is read straight off the slide beneath it, all at once. Nothing is divided;
+        the readout checks each against division.</p>
+        <canvas id="cv2" height="230"></canvas>
+        <div class="read" id="r2"></div>
+    </div>
+
+    <div class="panel">
+        <h2>A tower: links laid end to end</h2>
+        <div class="row"><button id="newChain">a new chain</button><button id="loopBtn">close the loop</button>
+            <button id="clearChain">clear</button><label>or tap things on the scale to build a chain</label></div>
+        <div class="row"><label for="mis">misread the second link by</label><input id="mis" type="range" min="0" max="50" step="1" value="0">
+            <span id="misv" class="b"></span></div>
+        <div class="row"><label for="noi">a small error on every link (levels)</label><input id="noi" type="range" min="0" max="0.3" step="0.01" value="0">
+            <span id="noiv" class="b"></span></div>
+        <canvas id="cv3" height="270"></canvas>
+        <p class="cap">Each link is one thing in units of the next, a gap on the levels. Laid end to end from the last thing,
+        the chain lands on the first: the middle places cancel, and the chain is the gap between its ends
+        (<span class="r">teal</span>). Closed into a loop it lands where it began. A misread link, or an error on every
+        link, leaves a <span class="x">remainder</span>: along an open chain nothing shows it; round a loop it shows, but
+        not which link it is in.</p>
+        <div class="read" id="r3"></div>
+    </div>
+
+    <div class="panel">
+        <h2>The circular rule: directions are turns</h2>
+        <div class="grid">
+            <div><canvas id="cv4" height="300"></canvas><p class="cap">Tap a thing to make its direction the new zero (the
+            head turned to it). Every other direction is then read off as a turn from it, on the same dial. The writer's
+            formula for the new reading is tangent subtraction, (s − t)/(1 + st); the turn gives it without the formula.</p></div>
+            <div class="read" id="r4"></div>
+        </div>
+    </div>
+    <p class="note">Two rules, one sweep: the straight rule lays the readings on the levels, where ratios of readings are
+    gaps; the circular rule lays them on the turn, where directions from a new zero are differences of angle. At the corner
+    the two agree. What neither gives without a step is a ratio of distances or of true sizes: that needs a second
+    standpoint, and each such step adds one floor to the tower, after which its ratios are places again.</p>
+    <p class="note">Related: <a href="focus.html">the focus is the corner</a>, <a href="sweep-zero.html">counting from
+    zero</a>, <a href="room-ratios.html">the room in ratios</a>, <a href="theorem6.html">Theorem 6 at a glance</a>.
+    <a href="demos.html">All the demos</a>.</p>
+</main>
+<script>
+(function () {
+    'use strict';
+    const $ = id => document.getElementById(id), P = new URLSearchParams(location.search);
+    const rad = d => d * Math.PI / 180, deg = r => r * 180 / Math.PI;
+    const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    function rng(seed) {
+        let a = seed >>> 0;
+        return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1);
+            t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+    }
+    const st = { N: 12, seed: 7, lk: 0, zero: -1, o: 0, chain: [], loop: false, misread: 0, noise: 0, turn: -1, things: [] };
+
+    // the world: each thing a direction, uniform by turn over the quarter turn (kept off its two ends), and a distance a
+    // writer would give it, in a unit no reading fixes
+    function makeWorld() {
+        const r = rng(st.seed * 9973 + st.N), T = [];
+        for (let i = 0; i < st.N; i++) T.push({ name: LETTERS[i], theta: 4 + 82 * r(), d: Math.exp(Math.log(60) * r()) });
+        st.things = T;
+    }
+    // the address: a reading v/h, the direction itself; its place on the levels
+    const reading = i => Math.tan(rad(st.things[i].theta));
+    const level = i => Math.log2(reading(i));
+    // a ratio read as a gap, against the same ratio by division (the writer's way, for the check)
+    const ratio = (i, j) => Math.pow(2, level(i) - level(j));
+    const divide = (i, j) => reading(i) / reading(j);
+    // the slide's 1 at level o: every thing read off the slide beneath it
+    const slideRead = o => st.things.map((T, j) => Math.pow(2, level(j) - o));
+    // a seeded normal per link, so the same chain always carries the same small errors
+    function linkNoise(k) {
+        const r = rng(st.seed * 31 + k * 977 + 5);
+        return Math.sqrt(-2 * Math.log(r() || 1e-12)) * Math.cos(2 * Math.PI * r());
+    }
+    // a chain of links, ids[0] in units of ids[1], ids[1] in units of ids[2], …; each link's gap as read, its error,
+    // the sum laid end to end, and the gap between the chain's ends
+    function chain(ids, opts) {
+        opts = opts || {};
+        const mis = opts.misread != null ? opts.misread : st.misread, noise = opts.noise != null ? opts.noise : st.noise;
+        const links = [];
+        for (let k = 0; k + 1 < ids.length; k++) {
+            const a = ids[k], b = ids[k + 1], gap = level(a) - level(b);
+            let err = noise * linkNoise(k);
+            if (k === 1 && mis) err += Math.log2(1 + mis / 100);
+            links.push({ a, b, gap, err, read: gap + err, ratio: Math.pow(2, gap + err), divide: divide(a, b) });
+        }
+        const sum = links.reduce((s, L) => s + L.read, 0), clean = links.reduce((s, L) => s + L.gap, 0);
+        const ends = ids.length ? level(ids[0]) - level(ids[ids.length - 1]) : 0;
+        const closed = ids.length > 2 && ids[0] === ids[ids.length - 1];
+        return { ids: ids.slice(), links, sum, clean, ends, closed, remainder: sum - ends,
+            product: Math.pow(2, sum), endRatio: Math.pow(2, ends) };
+    }
+    // the circular rule: zero on thing i, thing j read as a turn from it, against tangent subtraction
+    function turn(i, j) {
+        const a = rad(st.things[i].theta), b = rad(st.things[j].theta), s = Math.tan(b), t = Math.tan(a);
+        return { byTurn: Math.tan(b - a), byFormula: (s - t) / (1 + s * t), angle: deg(b - a) };
+    }
+    const counts = N => ({ places: N, ratios: N * (N - 1) / 2 });
+    const lay = s => s <= 1 ? s : 1 + Math.log(s);
+
+    function fit(cv, aspect) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth,
+            base = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), hh = Math.min(base, Math.round(w * aspect));
+        cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr);
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.font = '11px DM Mono, monospace';
+        return { g, w, h: hh };
+    }
+    const colOf = i => i === st.zero ? '#d4a052' : (st.chain.includes(i) ? '#8ce6cd' : '#e6e4ee');
+
+    // ── panel 1: the things from home ──
+    let geo1 = null;
+    function draw1() {
+        const { g, w, h } = fit($('cv1'), 0.95); g.clearRect(0, 0, w, h);
+        const k = Math.pow(10, st.lk), RMAX = 1 + Math.log(60 * 100) + 0.2;
+        const ox = 18, oy = h - 18, sc = Math.min((w - 40) / RMAX, (h - 36) / RMAX);
+        geo1 = { ox, oy, sc, k };
+        const P2 = (a, r) => [ox + sc * r * Math.cos(rad(a)), oy - sc * r * Math.sin(rad(a))];
+        g.strokeStyle = 'rgba(140,230,205,0.4)'; g.beginPath(); g.arc(ox, oy, sc, -Math.PI / 2, 0); g.stroke();
+        g.setLineDash([2, 5]); g.strokeStyle = 'rgba(181,156,240,0.22)';
+        for (let j = 1; 1 + j * Math.LN2 < RMAX; j++) { g.beginPath(); g.arc(ox, oy, sc * (1 + j * Math.LN2), -Math.PI / 2, 0); g.stroke(); }
+        g.setLineDash([6, 4]); g.strokeStyle = '#d4a052';
+        g.beginPath(); g.moveTo(ox, oy); g.lineTo(...P2(45, RMAX)); g.stroke(); g.setLineDash([]);
+        g.strokeStyle = 'rgba(230,228,238,0.6)'; g.beginPath(); g.moveTo(...P2(0, RMAX)); g.lineTo(ox, oy); g.lineTo(...P2(90, RMAX)); g.stroke();
+        g.fillStyle = '#e6e4ee'; const ph = P2(0, RMAX); g.fillText('h', ph[0] - 10, ph[1] - 4); const pv = P2(90, RMAX); g.fillText('v', pv[0] + 5, pv[1] + 10);
+        st.things.forEach((T, i) => {
+            const r = Math.min(RMAX, lay(T.d * k)), p = P2(T.theta, r);
+            g.strokeStyle = 'rgba(230,228,238,0.12)'; g.beginPath(); g.moveTo(ox, oy); g.lineTo(...P2(T.theta, RMAX)); g.stroke();
+            g.fillStyle = colOf(i); g.beginPath(); g.arc(p[0], p[1], 4, 0, 2 * Math.PI); g.fill();
+            g.fillText(T.name, p[0] + 6, p[1] - 5);
+        });
+    }
+    function read1() {
+        const c = counts(st.N), k = Math.pow(10, st.lk);
+        let s = `<span class="b">${st.N} things</span>: ${c.places} places on the levels hold all ${c.ratios} ratios between them.\n\n`;
+        s += 'thing  turn     v/h (its address)   level     distance (a writer\'s, ×k)\n';
+        st.things.forEach((T, i) => {
+            s += `  ${T.name}    ${T.theta.toFixed(1).padStart(5)}°   ${reading(i).toPrecision(4).padStart(9)}        ${(level(i) >= 0 ? '+' : '') + level(i).toFixed(3)}`
+                + `    ${(T.d * k).toPrecision(3)}\n`;
+        });
+        s += `\nk = ${k.toPrecision(3)}: every distance ×k, no address, no level and no ratio moved.`;
+        $('r1').innerHTML = s;
+    }
+
+    // ── panel 2: the straight rule ──
+    const L2 = 5.2;
+    let geo2 = null;
+    function draw2() {
+        const { g, w, h } = fit($('cv2'), 0.42); g.clearRect(0, 0, w, h);
+        const pad = 18, x = l => pad + (w - 2 * pad) * (l + L2) / (2 * L2), yS = 46, yR = h - 64;
+        geo2 = { x, pad, w, yS, yR, per: (w - 2 * pad) / (2 * L2) };
+        // the stock: levels and the things
+        g.fillStyle = '#16161f'; g.fillRect(pad - 6, 14, w - 2 * pad + 12, yS + 8 - 14);
+        g.strokeStyle = 'rgba(255,255,255,0.25)'; g.fillStyle = '#8a8a96';
+        for (let l = -5; l <= 5; l++) {
+            g.beginPath(); g.moveTo(x(l), yS - 6); g.lineTo(x(l), yS + 8); g.stroke();
+            const lab = l === 0 ? '1' : (l > 0 ? '' + Math.pow(2, l) : '1/' + Math.pow(2, -l)); g.fillText(lab, x(l) - 6, yS + 20);
+        }
+        st.things.forEach((T, i) => {
+            const X = x(level(i)); g.strokeStyle = colOf(i); g.lineWidth = i === st.zero ? 2 : 1.2;
+            g.beginPath(); g.moveTo(X, 18); g.lineTo(X, yS); g.stroke(); g.lineWidth = 1;
+            g.fillStyle = colOf(i); g.fillText(T.name, X - 3, 14 + (i % 2) * 0);
+            // the hairline down to the slide
+            g.strokeStyle = 'rgba(230,228,238,0.13)'; g.setLineDash([2, 3]); g.beginPath(); g.moveTo(X, yS + 22); g.lineTo(X, yR); g.stroke(); g.setLineDash([]);
+        });
+        // the slide: a scale of levels whose 1 sits at st.o
+        g.fillStyle = '#1c1a14'; g.fillRect(pad - 6, yR - 4, w - 2 * pad + 12, 46);
+        g.strokeStyle = 'rgba(212,160,82,0.5)'; g.fillStyle = '#b8935a';
+        for (let q = -12; q <= 12; q++) {
+            const X = x(st.o + q); if (X < pad - 6 || X > w - pad + 6) continue;
+            g.beginPath(); g.moveTo(X, yR); g.lineTo(X, yR + 12); g.stroke();
+            if (q) g.fillText(q > 0 ? '×' + Math.pow(2, q) : '÷' + Math.pow(2, -q), X - 8, yR + 26);
+            for (const f of [Math.log2(1.5), Math.log2(1.25), Math.log2(1.75)]) {
+                const Xm = x(st.o + q + f); if (Xm > pad - 6 && Xm < w - pad + 6) { g.beginPath(); g.moveTo(Xm, yR); g.lineTo(Xm, yR + 5); g.stroke(); }
+            }
+        }
+        const X0 = x(st.o); g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.moveTo(X0, yR - 10); g.lineTo(X0, yR + 14); g.stroke(); g.lineWidth = 1;
+        g.fillStyle = '#d4a052'; g.font = '13px DM Mono, monospace'; g.fillText('1', X0 - 3, yR + 30);
+        g.font = '11px DM Mono, monospace'; g.fillStyle = '#8a8a96'; g.fillText('the slide (drag it)', pad, h - 6);
+        g.fillText('the stock: each thing at log₂(v/h)', pad, yS + 34);
+    }
+    function read2() {
+        const vals = slideRead(st.o), z = st.zero;
+        let s = z >= 0
+            ? `the slide's 1 under <span class="g">${st.things[z].name}</span>: every thing read in ${st.things[z].name}'s units, at once\n\n`
+            : `the slide's 1 at level ${st.o.toFixed(2)}, under no thing: every thing read against that place (any H puts the corner anywhere)\n\n`;
+        let worst = 0;
+        st.things.forEach((T, j) => {
+            const v = vals[j], div = z >= 0 ? divide(j, z) : reading(j) / Math.pow(2, st.o);
+            worst = Math.max(worst, Math.abs(v / div - 1));
+            if (j === z) return;
+            s += `  ${T.name}  read off the slide ${v.toPrecision(5).padStart(10)}` + (z >= 0 ? `    ${T.name}/${st.things[z].name} by division ${div.toPrecision(5)}` : '') + '\n';
+        });
+        s += `\n${st.N - (z >= 0 ? 1 : 0)} ratios read with one placing; largest difference from division ${worst.toExponential(1)}.`;
+        $('r2').innerHTML = s;
+    }
+
+    // ── panel 3: a chain, laid end to end ──
+    let geo3 = null;
+    function curChain() { const ids = st.chain.slice(); if (st.loop && ids.length > 1) ids.push(ids[0]); return ids; }
+    function draw3() {
+        const { g, w, h } = fit($('cv3'), 0.5); g.clearRect(0, 0, w, h);
+        const pad = 18, x = l => pad + (w - 2 * pad) * (l + L2) / (2 * L2), yS = 34;
+        geo3 = { x, yS };
+        g.strokeStyle = 'rgba(255,255,255,0.2)'; g.fillStyle = '#8a8a96';
+        g.beginPath(); g.moveTo(x(-L2), yS); g.lineTo(x(L2), yS); g.stroke();
+        for (let l = -5; l <= 5; l++) { g.beginPath(); g.moveTo(x(l), yS - 4); g.lineTo(x(l), yS + 4); g.stroke(); }
+        st.things.forEach((T, i) => { const X = x(level(i)); g.fillStyle = colOf(i); g.beginPath(); g.arc(X, yS, st.chain.includes(i) ? 4 : 2.5, 0, 2 * Math.PI); g.fill(); g.fillText(T.name, X - 3, yS - 9); });
+        const ids = curChain();
+        if (ids.length < 2) { g.fillStyle = '#8a8a96'; g.fillText('tap things on the scale, or "a new chain"', pad, yS + 40); return; }
+        const C = chain(ids), last = ids[ids.length - 1];
+        // laid end to end from the last thing's place: the links in reverse, each its gap as read
+        let at = level(last), row = 0;
+        const dy = Math.min(24, (h - yS - 70) / Math.max(1, C.links.length)), arrow = (x0, x1, y, col, lab) => {
+            g.strokeStyle = col; g.fillStyle = col; g.lineWidth = 2; g.beginPath(); g.moveTo(x0, y); g.lineTo(x1, y); g.stroke(); g.lineWidth = 1;
+            const sgn = Math.sign(x1 - x0) || 1; g.beginPath(); g.moveTo(x1, y); g.lineTo(x1 - 7 * sgn, y - 4); g.lineTo(x1 - 7 * sgn, y + 4); g.closePath(); g.fill();
+            if (lab) g.fillText(lab, Math.min(x0, x1) + Math.abs(x1 - x0) / 2 - 10, y - 5);
+        };
+        for (let k = C.links.length - 1; k >= 0; k--) {
+            const Lk = C.links[k], y = yS + 30 + row * dy, a2 = at + Lk.read;
+            g.strokeStyle = 'rgba(230,228,238,0.12)'; g.setLineDash([2, 3]); g.beginPath(); g.moveTo(x(at), yS); g.lineTo(x(at), y); g.stroke(); g.setLineDash([]);
+            arrow(x(at), x(a2), y, Lk.err ? '#e6c48a' : '#e6e4ee', st.things[Lk.a].name + '/' + st.things[Lk.b].name);
+            at = a2; row++;
+        }
+        const yE = yS + 30 + row * dy + 10, first = ids[0];
+        g.strokeStyle = 'rgba(230,228,238,0.12)'; g.setLineDash([2, 3]); g.beginPath(); g.moveTo(x(at), yS); g.lineTo(x(at), yE); g.stroke(); g.setLineDash([]);
+        if (C.closed) {
+            g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(x(level(first)), yE, 5, 0, 2 * Math.PI); g.fill();
+            g.fillText('the loop: no gap', x(level(first)) + 8, yE + 4);
+        } else arrow(x(level(last)), x(level(first)), yE, '#8ce6cd', st.things[first].name + '/' + st.things[last].name + ', the ends');
+        if (Math.abs(C.remainder) > 1e-9) {
+            const xr0 = x(level(first)), xr1 = x(at);
+            g.strokeStyle = '#d96e5b'; g.lineWidth = 3; g.beginPath(); g.moveTo(xr0, yE + 12); g.lineTo(xr1, yE + 12); g.stroke(); g.lineWidth = 1;
+            g.fillStyle = '#d96e5b'; g.fillText('remainder', Math.min(xr0, xr1), yE + 26);
+        }
+    }
+    function read3() {
+        const ids = curChain();
+        if (ids.length < 2) { $('r3').innerHTML = 'No chain yet.'; return; }
+        const C = chain(ids), nm = i => st.things[i].name;
+        // the fraction with the middle places struck through
+        const parts = C.links.map((L, k) => {
+            const num = k === 0 ? nm(L.a) : `<s>${nm(L.a)}</s>`, den = (k === C.links.length - 1 && !C.closed) ? nm(L.b) : `<s>${nm(L.b)}</s>`;
+            return `(${num}/${den})`;
+        });
+        let s = parts.join('·') + ' = ' + (C.closed ? '1' : `${nm(ids[0])}/${nm(ids[ids.length - 1])}`) + '\n\n';
+        C.links.forEach((L, k) => {
+            s += `  link ${k + 1}: ${nm(L.a)} in ${nm(L.b)}'s units ${L.ratio.toPrecision(5).padStart(9)}  gap ${(L.read >= 0 ? '+' : '') + L.read.toFixed(4)}`
+                + (L.err ? `  <span class="x">(off by ${(L.err >= 0 ? '+' : '') + L.err.toFixed(4)} levels)</span>` : '') + '\n';
+        });
+        s += `\nthe links laid end to end: ${(C.sum >= 0 ? '+' : '') + C.sum.toFixed(4)} levels, a ratio of ${C.product.toPrecision(6)}\n`;
+        s += C.closed ? 'round the loop the ends are one place: 0 levels, a ratio of 1\n'
+            : `the gap between the ends: ${(C.ends >= 0 ? '+' : '') + C.ends.toFixed(4)} levels, ${nm(ids[0])}/${nm(ids[ids.length - 1])} = ${C.endRatio.toPrecision(6)}\n`;
+        if (Math.abs(C.remainder) < 1e-9) s += `\n<span class="r">The ${C.links.length - 1} middle place${C.links.length === 2 ? '' : 's'} cancelled: the chain is its ends.</span>`;
+        else s += C.closed
+            ? `\n<span class="x">remainder ${(C.remainder >= 0 ? '+' : '') + C.remainder.toFixed(4)} levels (×${Math.pow(2, C.remainder).toPrecision(4)})</span>: the loop shows that a link is off. Every link\nlooks the same from inside the loop, so not which one; a second loop through it would tell.`
+            : `\n<span class="x">off by ${(C.remainder >= 0 ? '+' : '') + C.remainder.toFixed(4)} levels</span> at the far end, and nothing in an open chain shows it. Close the loop.`;
+        $('r3').innerHTML = s;
+    }
+
+    // ── panel 4: the circular rule ──
+    let geo4 = null;
+    function draw4() {
+        const { g, w, h } = fit($('cv4'), 0.95); g.clearRect(0, 0, w, h);
+        const ox = 20, oy = h - 20, R = Math.min(w - 50, h - 50);
+        geo4 = { ox, oy, R };
+        const P2 = (a, r) => [ox + r * Math.cos(rad(a)), oy - r * Math.sin(rad(a))];
+        g.strokeStyle = 'rgba(230,228,238,0.5)'; g.beginPath(); g.arc(ox, oy, R, -Math.PI / 2, 0); g.stroke();
+        g.beginPath(); g.moveTo(...P2(0, R)); g.lineTo(ox, oy); g.lineTo(...P2(90, R)); g.stroke();
+        g.setLineDash([6, 4]); g.strokeStyle = 'rgba(212,160,82,0.5)'; g.beginPath(); g.moveTo(ox, oy); g.lineTo(...P2(45, R)); g.stroke(); g.setLineDash([]);
+        const z = st.turn;
+        // the turned dial: ticks every 10° from the new zero, both ways
+        if (z >= 0) {
+            const a0 = st.things[z].theta;
+            g.strokeStyle = 'rgba(212,160,82,0.7)'; g.fillStyle = '#d4a052';
+            for (let q = -9; q <= 9; q++) {
+                const a = a0 + 10 * q; if (a < 0 || a > 90) continue;
+                const p1 = P2(a, R + 2), p2 = P2(a, R + (q % 3 ? 7 : 12)); g.beginPath(); g.moveTo(...p1); g.lineTo(...p2); g.stroke();
+                if (q && q % 3 === 0) { const pl = P2(a, R + 22); g.fillText((q > 0 ? '+' : '') + 10 * q + '°', pl[0] - 12, pl[1] + 4); }
+            }
+            g.lineWidth = 2; g.beginPath(); g.moveTo(ox, oy); g.lineTo(...P2(a0, R + 12)); g.stroke(); g.lineWidth = 1;
+        }
+        st.things.forEach((T, i) => {
+            const p = P2(T.theta, R * 0.82);
+            g.strokeStyle = i === z ? '#d4a052' : 'rgba(230,228,238,0.25)'; g.beginPath(); g.moveTo(ox, oy); g.lineTo(...P2(T.theta, R)); g.stroke();
+            g.fillStyle = i === z ? '#d4a052' : '#e6e4ee'; g.beginPath(); g.arc(p[0], p[1], 3.5, 0, 2 * Math.PI); g.fill();
+            const pl = P2(T.theta, R * 0.82 + 12); g.fillText(T.name, pl[0] - 3, pl[1] + 4);
+        });
+    }
+    function read4() {
+        const z = st.turn;
+        if (z < 0) { $('r4').innerHTML = 'Tap a thing on the dial to turn the zero to it.'; return; }
+        const Z = st.things[z];
+        let s = `zero turned to <span class="g">${Z.name}</span> (${Z.theta.toFixed(1)}° from h)\n\n  thing  turn from ${Z.name}   read off the turn   tangent subtraction\n`;
+        let worst = 0;
+        st.things.forEach((T, j) => {
+            if (j === z) return;
+            const t = turn(z, j); worst = Math.max(worst, Math.abs(t.byTurn - t.byFormula) / (1 + Math.abs(t.byFormula)));
+            s += `  ${T.name}      ${((t.angle >= 0 ? '+' : '') + t.angle.toFixed(1)).padStart(6)}°      ${t.byTurn.toPrecision(5).padStart(10)}       ${t.byFormula.toPrecision(5).padStart(10)}\n`;
+        });
+        s += `\nlargest difference ${worst.toExponential(1)}. The head turns; the formula is\nhow a writer would say what the turn did. Directions behind\nthe new zero read negative: the other facing.`;
+        $('r4').innerHTML = s;
+    }
+
+    function draw() { draw1(); read1(); draw2(); read2(); draw3(); read3(); draw4(); read4(); }
+    function randomChain() {
+        const r = rng(st.seed * 7 + st.chain.length * 13 + Date.now() % 1000), ids = [];
+        const n = Math.min(st.N, 4 + Math.floor(3 * r()));
+        while (ids.length < n) { const i = Math.floor(r() * st.N); if (!ids.includes(i)) ids.push(i); }
+        return ids;
+    }
+    function set(o) {
+        o = o || {};
+        let rebuild = false;
+        if (o.N && o.N !== st.N) { st.N = o.N; rebuild = true; }
+        if (o.seed != null && o.seed !== st.seed) { st.seed = o.seed; rebuild = true; }
+        if (rebuild) { makeWorld(); st.zero = -1; st.o = 0; st.turn = -1; st.chain = st.chain.filter(i => i < st.N); }
+        if (o.k != null) st.lk = Math.log10(o.k);
+        if (o.zero != null) { st.zero = o.zero; if (o.zero >= 0) st.o = level(o.zero); }
+        if (o.o != null) { st.o = o.o; st.zero = -1; }
+        if (o.chain) st.chain = o.chain.slice();
+        if (o.loop != null) st.loop = !!o.loop;
+        if (o.misread != null) st.misread = o.misread;
+        if (o.noise != null) st.noise = o.noise;
+        if (o.turn != null) st.turn = o.turn;
+        syncUi(); draw(); return state();
+    }
+    function state() {
+        const ids = curChain();
+        return { N: st.N, seed: st.seed, k: Math.pow(10, st.lk), zero: st.zero, o: st.o, chain: ids, loop: st.loop,
+            misread: st.misread, noise: st.noise, turn: st.turn, counts: counts(st.N),
+            readings: st.things.map((T, i) => reading(i)), slide: slideRead(st.o), result: ids.length > 1 ? chain(ids) : null };
+    }
+    function syncUi() {
+        document.querySelectorAll('[data-N]').forEach(b => b.classList.toggle('on', +b.dataset.N === st.N));
+        $('k').value = st.lk; $('kv').textContent = '×' + Math.pow(10, st.lk).toPrecision(3);
+        $('mis').value = st.misread; $('misv').textContent = st.misread + '%';
+        $('noi').value = st.noise; $('noiv').textContent = '±' + st.noise.toFixed(2);
+        $('loopBtn').classList.toggle('on', st.loop);
+    }
+
+    // input: the slide drags, a tap snaps its 1 to the nearest thing
+    let drag = null;
+    $('cv2').addEventListener('pointerdown', ev => { drag = { x: ev.clientX, o: st.o, moved: false }; $('cv2').setPointerCapture(ev.pointerId); });
+    $('cv2').addEventListener('pointermove', ev => {
+        if (!drag || !geo2) return;
+        const dx = ev.clientX - drag.x; if (Math.abs(dx) > 3) drag.moved = true;
+        if (drag.moved) { st.o = drag.o + dx / geo2.per; st.zero = -1; draw2(); read2(); draw1(); }
+    });
+    $('cv2').addEventListener('pointerup', ev => {
+        if (!drag || !geo2) return;
+        const rc = $('cv2').getBoundingClientRect(), px = (drag.moved ? geo2.x(st.o) : ev.clientX - rc.left);
+        let best = -1, bd = drag.moved ? 8 : 18;
+        st.things.forEach((T, i) => { const d = Math.abs(geo2.x(level(i)) - px); if (d < bd) { bd = d; best = i; } });
+        if (best >= 0) { st.zero = best; st.o = level(best); }
+        drag = null; draw();
+    });
+    $('cv3').addEventListener('click', ev => {
+        if (!geo3) return;
+        const rc = $('cv3').getBoundingClientRect(), px = ev.clientX - rc.left;
+        let best = -1, bd = 14;
+        st.things.forEach((T, i) => { const d = Math.abs(geo3.x(level(i)) - px); if (d < bd) { bd = d; best = i; } });
+        if (best < 0) return;
+        if (st.chain[st.chain.length - 1] === best) return;
+        if (st.chain.includes(best) || st.chain.length >= 10) { st.chain = []; st.loop = false; }
+        st.chain.push(best); syncUi(); draw();
+    });
+    $('cv4').addEventListener('click', ev => {
+        if (!geo4) return;
+        const rc = $('cv4').getBoundingClientRect(), px = ev.clientX - rc.left - geo4.ox, py = geo4.oy - (ev.clientY - rc.top);
+        const a = deg(Math.atan2(py, px));
+        let best = -1, bd = 6;
+        st.things.forEach((T, i) => { const d = Math.abs(T.theta - a); if (d < bd) { bd = d; best = i; } });
+        if (best >= 0) { st.turn = best; draw4(); read4(); }
+    });
+    document.querySelectorAll('[data-N]').forEach(b => b.onclick = () => set({ N: +b.dataset.N, chain: [] }));
+    $('another').onclick = () => set({ seed: (st.seed * 48271 + 11) % 100003, chain: [] });
+    $('k').oninput = () => { st.lk = +$('k').value; syncUi(); draw1(); read1(); };
+    $('mis').oninput = () => { st.misread = +$('mis').value; syncUi(); draw3(); read3(); };
+    $('noi').oninput = () => { st.noise = +$('noi').value; syncUi(); draw3(); read3(); };
+    $('newChain').onclick = () => { st.chain = randomChain(); st.loop = false; syncUi(); draw(); };
+    $('loopBtn').onclick = () => { st.loop = !st.loop; syncUi(); draw3(); read3(); };
+    $('clearChain').onclick = () => { st.chain = []; st.loop = false; syncUi(); draw(); };
+    window.addEventListener('resize', draw);
+
+    if (P.get('N')) st.N = [6, 12, 24].includes(+P.get('N')) ? +P.get('N') : 12;
+    if (P.get('seed')) st.seed = +P.get('seed') || 7;
+    makeWorld();
+    if (P.get('k')) st.lk = Math.max(-2, Math.min(2, +P.get('k') || 0));
+    const okIdx = v => v != null && v !== '' && +v >= 0 && +v < st.N;
+    if (okIdx(P.get('zero'))) { st.zero = +P.get('zero'); st.o = level(st.zero); }
+    st.chain = P.get('chain') ? P.get('chain').split(',').filter(okIdx).map(Number) : [0, 3, 5, 8].filter(i => i < st.N);
+    if (P.get('loop') === '1') st.loop = true;
+    if (P.get('misread')) st.misread = Math.max(0, Math.min(50, +P.get('misread') || 0));
+    if (P.get('noise')) st.noise = Math.max(0, Math.min(0.3, +P.get('noise') || 0));
+    if (okIdx(P.get('turn'))) st.turn = +P.get('turn');
+    syncUi(); draw();
+
+    window.__slideRule = { get things() { return st.things; }, reading, level, ratio, divide, slideRead, chain, turn, counts, set, state };
+})();
+</script>
+</body>
+</html>

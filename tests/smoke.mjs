@@ -1750,6 +1750,30 @@ try {
   if (!gmOk) failures.push(`[grassmannian.html] ${JSON.stringify(gm)}`);
   console.log(`${failures.length === before61 ? 'ok  ' : 'FAIL'} grassmannian.html (the exact laws sum to 1; Gr(3, 6) sampled on its law (largest z ${gm.z3.toFixed(2)}); the tangents' product ≤ 1 half the time with the exchange, ${gm.p25.toFixed(3)} in Gr(2, 5); one entry inside |x| ≤ 1 half the time at every (k, n); P(all inside) on its curve at k = 8, 20, 60)`);
 
+  // ── 62. slide-rule.html (SPN R536): ratios read as gaps between places equal division; the slide reads each ratio to a
+  // thing at once; a chain telescopes to its ends, a loop to 0, a misread link leaves its remainder; the turn from a new zero
+  // is tangent subtraction; scaling the world moves no reading
+  current = 'slide-rule.html';
+  const before62 = failures.length;
+  await page.goto(new URL('slide-rule.html', base).href, { waitUntil: 'load' });
+  const sr = await page.evaluate(() => {
+    const S = window.__slideRule;
+    S.set({ N: 24, seed: 7, misread: 0, noise: 0 });
+    const n = S.things.length;
+    let gap = 0, slide = 0, turnD = 0;
+    for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) gap = Math.max(gap, Math.abs(S.ratio(i, j) / S.divide(i, j) - 1));
+    for (let z = 0; z < n; z += 5) { const v = S.slideRead(S.level(z)); v.forEach((x, j) => { slide = Math.max(slide, Math.abs(x / S.divide(j, z) - 1)); }); }
+    for (let i = 0; i < n; i += 3) for (let j = 0; j < n; j++) { const t = S.turn(i, j); turnD = Math.max(turnD, Math.abs(t.byTurn - t.byFormula) / (1 + Math.abs(t.byFormula))); }
+    const c = S.chain([0, 3, 5, 8, 11]), lp = S.chain([0, 3, 5, 8, 0]), mis = S.chain([0, 3, 5, 8, 0], { misread: 20 });
+    const r0 = S.set({ k: 0.01 }).readings, r1 = S.set({ k: 100 }).readings;
+    return { gap, slide, turnD, chainD: Math.abs(c.sum - c.ends), loop: Math.abs(lp.sum), mis: mis.remainder,
+      kmove: Math.max(...r0.map((x, i) => Math.abs(x - r1[i]))), counts: S.counts(24) };
+  });
+  const srOk = sr.gap < 1e-12 && sr.slide < 1e-12 && sr.turnD < 1e-12 && sr.chainD < 1e-12 && sr.loop < 1e-12
+    && Math.abs(sr.mis - Math.log2(1.2)) < 1e-12 && sr.kmove === 0 && sr.counts.ratios === 276;
+  if (!srOk) failures.push(`[slide-rule.html] ${JSON.stringify(sr)}`);
+  console.log(`${failures.length === before62 ? 'ok  ' : 'FAIL'} slide-rule.html (every ratio between 24 things read as a gap equals division to ${sr.gap.toExponential(0)}, the slide's to ${sr.slide.toExponential(0)}; a chain telescopes to its ends, a loop to 0, a 20% misread link leaves log₂ 1.2; tangent subtraction the turn; k moves no reading; 24 places for 276 ratios)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

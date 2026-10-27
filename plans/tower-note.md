@@ -253,6 +253,127 @@ re-laying the corner on every look is not best; holding it until the look is mor
 do not: every ratio within a look is read); they matter only when two looks' distances must be compared, which is the
 first capability a blueprint adds (the size), at the scale of one link.
 
+## 2⅞⅞⅞. Cascades of cancellation; the reader is a slide rule
+
+27 Oct. Tom: "the interesting thing about a tower of relations is that there are cascades of cancelelations."; "what
+i'm wondering if the sweep of addresses, is the same as the sweep of ratios. im wondering if there is a simplyfing
+connection, that would reduce complexity of sheer volume of ratios. I doubt readers spend much time do ratio math."
+
+**What cancels, floor by floor.** Within a reading the reach cancels between its two legs (Theorem 6(a)). Along a chain
+the links telescope, (a/b)(b/c)(c/d) = a/d: every middle amount cancels, the ends survive, which is why a tower of any
+height costs one amount at the top. In time the legs telescope the same way to the last over the first, and the first
+is H. Round a loop everything cancels to 1, and what does not is the error. Scaling the world cancels from every ratio
+at once. What cancels is what the reader did not need; errors do not cancel (in levels they add, TWR's drift), and only a
+loop shows them.
+
+**Ratios as places.** An address already is a ratio, v/h, nothing divided. Laid on the levels (log₂ v/h), a ratio
+between two things is the gap between their places, and multiplying ratios is adding gaps: N places hold all
+N(N − 1)/2 ratios, the address set a basis, the ratios implicit. A chain telescopes because a sum of gaps is end minus
+start; nothing is computed. The same holds for directions on the turn: a new zero subtracts angles, and tangent
+subtraction is the writer's formula for it. So the reader is a slide rule, straight on the levels, circular on the
+turn (Napier; the two charts of OFS §6's three rulers), and does no ratio arithmetic.
+
+**Where it stops.** Within one standpoint, directions and the readings' ratios are places. A ratio of distances or of
+true sizes needs a second standpoint: each such step adds one floor (a parallax crossing, not a gap on one chart), after
+which its ratios are places again. So the tower's work is in its steps, not in its arithmetic.
+
+**Shown.** `slide-rule.html` (SPN R536): the straight rule (the slide's 1, the corner, on any thing reads every ratio
+to it at once, checked against division to 10⁻¹⁵), a chain laid end to end (the middle places struck out, the chain its
+ends; a loop to no gap; a misread link a remainder the loop shows but cannot place; small errors on every link adding),
+the circular rule (a new zero, tangent subtraction to 10⁻¹⁵), and scaling the world moving no reading.
+
+## 2⅞⅞⅞½. What a pure ratio system has over one designed in units, and where it stops
+
+27 Oct. Tom: "does a pure ratio system have any advantanges over a similar system designed with units.", then "yes,
+add these to the note."
+
+**One property behind them all.** A pure ratio system holds only relations, so scaling the world by k changes none of
+its numbers ("scale the world", OFS §11). What that buys:
+
+1. **Every size, one design.** The design is the same at every scale, only drawn larger or smaller: ISO 216 is one rule
+   (halving keeps the shape, √2) and one amount, A0 to A10 one design (MOD); a piece of music transposes into any key;
+   relative units (`em`, `%`) lay a page out on any screen.
+2. **Nothing to calibrate.** No standard to agree, keep or drift; a stretched ruler or a misread unit cannot corrupt it,
+   and the whole class of unit-mismatch errors cannot happen inside it, since there is no second unit to mismatch.
+3. **Smaller and self-consistent.** n parts hold n − 1 ratios: one degree of freedom fewer, the one no one needs until an
+   outside amount must be met. Chains telescope (§2⅞⅞⅞), so a hierarchy of any depth stays consistent.
+4. **Errors kept apart.** A wrong amount at the top moves everything together, a uniform rescaling with every relation
+   kept; a misread link shows as a remainder round a loop. Where every part is written in units, each measurement brings
+   its own error and the shape itself can come out distorted. STC found the same split: more readings sharpened the
+   shape, never the scale.
+5. **Results carry across scales.** Similarity laws and dimensionless numbers: a wind-tunnel model at the same Reynolds
+   number speaks for the full-size aircraft; Buckingham's π groups are the part of a law no unit enters (BPI).
+6. **Constant relative precision.** Laid on the levels, a ratio system spends the same relative grain at every size
+   (the reader's lay, the float, log depth): a wide range for a fixed count.
+
+**Where it stops: the world is not scale-free.** Gravity, the strength of materials, a wavelength, a hand's size each
+carry an amount. Galileo's square–cube argument (*Two New Sciences*, 1638, the second day; check the passage) is the
+classic case: an animal scaled up in perfect proportion breaks its bones, since weight grows as k³ and the bones'
+strength as k². A pure ratio design is right only where what it depends on is scale-free too; wherever physics fixes an
+amount, a unit must enter, which is where "a unit injects physics into the relation" (R230). Beside that, the seven
+capabilities a blueprint adds (OFS §9): the size; parts made apart meeting out of view; sums and budgets; the join;
+stating a thing before it exists; completeness stated; a far field kept in proportion for readers whose corners differ.
+
+**In practice, ratios inside and one amount where the outside meets it.** Write once, then read again (§2⅞): one amount
+at the top of the tower, everything below it in ratios, keeping 1–6. Parametric CAD (a model driven by one dimension),
+modular scales in typography and ISO 216 work this way. A reading; the claims about practice are not tested here
+(R364). A test to queue: a scaled design that keeps every ratio fails exactly where a physical amount enters (the
+square–cube law on published load tables), and nowhere else.
+
+## 2⅞⅞⅞¾. Touch: reading, writing in one's own unit, and writing
+
+27 Oct. Tom: "if you reach out and touch the world, is that writing?", then "yes".
+
+Touch does three things, and only some are writing.
+
+1. **Contact alone is a reading.** The moment two things meet, with nothing measured, is "they meet": in `pool.html`
+   h + v = 1, a sum of two readings with no unit in it.
+2. **Touching to find where a thing is: guided, a reading; blind, writing in one's own unit.** Tom: "you need the ratios
+   of what your looking at." *Guided* (the eyes open): hand and thing are both in view, and the reach is steered by
+   ratios: the gap between them as a share of the hand's own size, and its rate of closing (Lee's τ, a ratio of an angle
+   to its rate; the grip opening in proportion to the thing seen, Jeannerod, check). No amount enters; the hand stops at
+   contact, h + v = 1. So guided reaching is a reading. *Blind* (in the dark, or reaching past what is seen): the hand
+   meeting a thing gives its direction and that it lies at one's reach: a range, ruled by the arm. One known move writes
+   in the reader's own H (RWT); ranging carries an amount in. So blind touch writes, but the amount carried in is one's
+   own body: the thing placed "at one arm", no public unit. Metres need the arm's length carried in from outside, as
+   counting strides does on `room-walk.html`. With reach as H, whatever is touched at full reach sits at d/H = 1, the
+   corner: reach is the body's own split of near from far (within it things are in proportion to the arm; beyond it,
+   directions until a step gives parallax). The eye-height case on `ground.html` is the same, one eye height tall at the
+   corner.
+3. **Touching to push writes in the full sense.** Moving a thing changes the world ("to move the furniture is to write",
+   OFS §11; R346, only writers change the world). A reader only receives; putting a thing at a stated place on purpose
+   needs the amounts: how far, which way, how hard.
+
+So seeing is reading, touching with the arm as ruler is writing in one's own H, and pushing is writing.
+
+**Feeling a room blindfolded** (Tom: "seem like feeling the room with a blind fold is what its like. your only
+processing what your touching. you could feel around the object with your hand."). Blindfolded, the reader's whole view
+is the hand: no far field, no horizon, nothing arriving from a distance; every reading is at contact, one place at a
+time. Sight gives every direction at once and no amount; touch gives one place at a time, with an amount (the reach) in
+one's own unit. Three scales:
+- *One object, held.* Feeling round a cup is the central sweep made by hand: going round a thing collects its outline.
+  The fingers closing on it, or one part compared with another, give ratios: its shape, and its size against the hand.
+  A reading, with the hand as H. (Haptic exploratory procedures: contour following, enclosure, pressure, lifting, the
+  first the slow one that gives exact shape; Lederman and Klatzky 1987, check.)
+- *One object, traced by the arm.* Counting the hand's travel along it, felt by the arm, adds an amount: its size in
+  hand-spans or arm-lengths. Writing in one's own H, as the counted stride.
+- *The room.* Out of reach, getting from the table to the wall is a move, and each move is carried in (steps, arm
+  swings). The blindfolded room is a tower of moves, not of readings; it drifts as SfM's scale does (§3 item 6), and the
+  only check is a loop: coming back to the table and finding it where expected, or not. The closure's remainder is the
+  error in the body's own count.
+
+So the blindfold pulls apart what sight hides: sight, directions free and no amounts; touch on one object, the shape
+free and amounts in one's own unit; touch across a room, every link written by moving and checked only by closing a loop.
+
+**Classical anchors (from memory; check before citing).**
+- Berkeley, *An Essay Towards a New Theory of Vision* (1709): distance is not seen but learned by touch and movement, and
+  sight comes to stand for it. Read here: the eye reads directions; touch supplies the amount that makes them distances,
+  the writing sight then borrows.
+- Descartes, *La Dioptrique* (1637), the blind man with two sticks: distance from the angle between the sticks where both
+  meet the thing, a triangulation with his own body as the baseline.
+- Peripersonal space (the space within reach coded apart from the space beyond it; Rizzolatti and colleagues, Previc,
+  check): an empirical claim about brains, so it stays here, not in OFS (R364, R455).
+
 ## 3. Classical ideas to build on
 
 Each with what it gives, what the tower adds, and its standing. "Check" marks a citation from memory.
@@ -327,3 +448,10 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
 - 27 Oct: §2⅞⅞, the corner on the next look (Tom; a ChatGPT reply): already OFS §8 and Corollary 6.1; two towers of
   corners, direction composed exactly, distance unlinked unless a step or a kind carries each link; in steps with a
   dead band (FPV run 5). OFS unchanged.
+- 27 Oct: §2⅞⅞⅞, cascades of cancellation and ratios as places, the reader a slide rule; `slide-rule.html` (SPN R536).
+- 27 Oct: §2⅞⅞⅞½, what a pure ratio system has over one in units (six, from scale invariance) and where it stops
+  (the square–cube law; the seven capabilities); one amount where the outside meets it (SPN R537).
+- 27 Oct: §2⅞⅞⅞¾, touch: contact a reading, touch as ruler writing in one's own H (reach the body's corner), a push
+  writing; Berkeley, Descartes's two sticks, peripersonal space (SPN R538).
+- 27 Oct: §2⅞⅞⅞¾ revised: guided reaching a reading (ratios, τ, grip), blind reaching writing in one's own H; feeling a
+  room blindfolded (one object a reading, traced writing in own H, the room a tower of moves checked by loops) (R539).

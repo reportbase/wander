@@ -361,6 +361,18 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   94 (looks told apart 91%, 13%, 0%, 100%). A bot, not a player. `?scheme=turn|log|z|true&K=8|12|16&seed=&bot=1`; hook
   `window.__fpvGame` (`cellOf`, `addr`, `makeWorld`, `pairsAt`, `frontAt`, `resolvedAt`, `focus`, `bot`, `step`, `shoot`,
   `set`, `state`). Not in the flying page.
+- `slide-rule.html`: **the reader is a slide rule** (27 Oct 2026, Tom: "the interesting thing about a tower of relations is
+  that there are cascades of cancelelations."; "I doubt readers spend much time do ratio math."; "lets see this in action in
+  a demo"; SPN R536; `plans/tower-note.md` §2⅞⅞⅞), a standalone page like `focus.html`, plain canvas. N things (6, 12, 24)
+  uniform by turn over the quarter turn, each with a writer's distance (scale the world k moves every distance, no
+  reading). The straight rule: the stock lays each reading v/h at its level, log₂; the slide's 1 (the corner), dragged or
+  snapped to a thing, reads every ratio to it at once, checked against division; N places for N(N − 1)/2 ratios. A tower:
+  a chain of links laid end to end from its last thing lands on its first, the middle places struck out; closed into a
+  loop, no gap; a misread second link or a small seeded error on every link leaves a remainder the loop shows but cannot
+  place. The circular rule: a new zero on a thing reads every direction as a turn from it, against tangent subtraction.
+  `?N=6|12|24&seed=&k=<log10 k>&zero=&chain=i,j,…&loop=1&misread=<percent>&noise=<levels>&turn=`; hook
+  `window.__slideRule` (`things`, `reading`, `level`, `ratio`, `divide`, `slideRead`, `chain`, `turn`, `counts`, `set`,
+  `state`). Not in the flying page.
 - `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
   "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
   carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
@@ -2310,6 +2322,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
   remedies keep the pair (homogeneous coordinates, `atan2`, IEEE 754's ±∞ and NaN, the 8087's projective mode, posits);
   a zero among amounts is the blueprint's (§10, capability 3), the readings have only the chart's.
+  Cascades of cancellation; the reader is a slide rule (27 Oct, SPN R536; Tom: "I doubt readers spend much time do ratio
+  math."; "lets see this in action in a demo"): a reading in `plans/tower-note.md` §2⅞⅞⅞, not OFS; ratios as gaps between
+  places on the levels, directions as turns; `slide-rule.html`.
+  A pure ratio system against one in units (27 Oct, SPN R537; Tom: "does a pure ratio system have any advantanges over a
+  similar system designed with units."; "yes, add these to the note."): tower note §2⅞⅞⅞½, six advantages from scale
+  invariance, the limit where physics fixes an amount (Galileo's square–cube law), one amount where the outside meets it.
+  Touch (27 Oct, SPN R538; Tom: "if you reach out and touch the world, is that writing?"; "yes"): tower note §2⅞⅞⅞¾,
+  contact a reading, touch as ruler writing in one's own H (reach the body's corner), a push writing.
+  Guided and blind (27 Oct, SPN R539; Tom: "you need the ratios of what your looking at."; "feeling the room with a blind
+  fold"): guided reaching a reading by ratios, blind reaching writing in one's own H; blindfolded, one object felt round a
+  reading, the room a tower of moves checked by loops. Tower note §2⅞⅞⅞¾.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
@@ -2844,6 +2867,11 @@ In short:
       the exact law within 4 standard errors; the tangents' product ≤ 1 half the time in Gr(1, 2), Gr(2, 4), Gr(3, 6), a
       quarter in Gr(2, 5); one entry inside |x| ≤ 1 half the time at every (k, n) tried; ln P(all inside) within 0.02 of
       its curve at k = 8, 20, 60.
+
+  62. **slide-rule.html:** every ratio between 24 things read as a gap equals division to 10⁻¹², and the slide's 1 on a
+      thing reads each the same; a chain's links laid end to end equal its ends, a loop closes to 0, a 20% misread link
+      leaves log₂ 1.2; tangent subtraction equals the turn from a new zero; scaling the world by 10⁻² and 10² moves no
+      reading; 24 places for 276 ratios.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a
