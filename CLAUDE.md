@@ -2324,6 +2324,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (median at the corner), the standard Cauchy only signed over two quadrants; the chain's ingredients named (H the
   length, the turn the circle, s = v/h the reading, the uniform measure the law); V = cH other external drawings, never
   the reader's choice. OFS and the CS companion.
+  Review 32 (27 Oct, SPN R543; Gemini, a chat session pasted in eleven parts, `plans/ofs-review-32.md`, checked in
+  `runs/ofs/euler.py`): 3(g)'s group law as Cauchy's exponential functional equation, e^(iθ), the central point
+  (h + iv)² = e^(2iθ) landing +1, i, −1 (Euler's identity at the horizon), and grafts for the abstract, Results, §2, §4,
+  §5, Appendix A and the notation. The mathematics checks; most of it is already in OFS (§4's landmarks in words). Not
+  taken: "one length forces c = i" (the return gives the imaginary rate, not the absence of V; review 31's concern 2),
+  its H(x + y) and c = i (clash with OFS's H and c), "Cauchy's name twice for one reason" (false), a symbol-by-symbol
+  reading of e^(iπ) + 1 = 0, front-matter grafts (R480). Proposed E1–E4 (an Appendix A entry on Cauchy's equation
+  twice, one clause in §4, a slip in OFS's Cayley entry: "the image of home" for "of zero", Cauchy 1821). Made (SPN R544; Tom pasted Gemini's reply approving E1–E4): OFS Appendix A "Cauchy's functional
+  equation, twice", §4's clause, the Cayley entry fixed, Cauchy 1821; E1 and E4 in the CS companion.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
