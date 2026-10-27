@@ -154,3 +154,7 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
 - 27 Oct: note started; TWR planned (`plans/twr-plan.md`), predictions written, not run.
 - 27 Oct: §2½, each system its own unit (Tom: "they are their units, based on its constraints"); eight cases listed,
   none worked yet.
+- 27 Oct: MOD (`plans/mod-plan.md`, `runs/mod/`) works paper, preferred numbers, music and threads exactly. Paper, Renard
+  and music are each one constraint's ratios plus one written amount (Renard none); the halving map r ↦ 2/r puts ISO
+  paper at its corner (√2), Letter alternating about it. Threads are the counter-case: ratios within the profile (in the
+  pitch), amounts between pitch and diameter (P ∝ D^0.79), so the link between those two levels is written, not read.

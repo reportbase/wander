@@ -72,4 +72,46 @@ the reading (module, constraint, one amount) is ours.
 
 ## Runs
 
-(none yet)
+### Run 1 (27 Oct; `runs/mod/mod.py`, output `runs/mod/mod-run1.txt`)
+
+Killed by my code in three places, nothing about the predictions: the A2 row ends `&nbsp;||` with no space, so my pattern
+skipped it and every later size was compared with the next one's (M1); the R10 value 1.60 held as the fraction 8/5 was
+compared with the string '1.60' (M3); the convergents' denominators were compared as a list, where the continued fraction
+gives 1 twice (0/1, 1/1) and the prediction listed distinct values (M4). The numbers M2 and M5 rest on were right.
+
+### Run 2 (`runs/mod/mod-run2.txt`)
+
+M1, M2, M4, M5 not killed. M3 killed by my code again (3.15 and 6.30 held as 63/20 and 63/10, compared as strings).
+
+### Run 3 (`runs/mod/mod-run3.txt`; the numbers identical to run 2's)
+
+- **M1 not killed.** √2 is the only aspect halving keeps. All 66 listed A, B and C sizes come out of three written
+  amounts (A0 1 m², B0's short side 1 m, C0 their geometric mean), rounded to the mm, and one rule (the next size's long
+  side the last one's short side, its short side the last one's long side halved and rounded down); the worst listed
+  value is 0.78 mm from the exact size. A, C, B and the next A stand at 1 : 2^(1/8) : 2^(1/4) : 2^(1/2); the three
+  series are one system written with areas 1, 1.1892 and 1.4142 m².
+- **M2 not killed.** Halving sends r to 2/r; in units of √2 that is the reciprocal, fixed only at √2. US Letter
+  alternates 1.2941 and 1.5455, and their geometric mean is √2 exactly.
+- **M3 not killed.** The four series are nested; the largest deviations from 10^(k/n) are 0.95% (1.60, in R5 and R10),
+  1.22% (1.80, R20) and 1.26% (1.70, R40); products and quotients of R10 values land within 2.4% of R10 (bound 2.86%);
+  8 of the 10 R10 values are 2^i·10^j, all but 3.15 and 6.30 (2^10/10^3 = 128/125).
+- **M4 not killed.** A string's modes give p/q whatever its fundamental; no pure fifths close on octaves; the comma
+  23.460 cents; twelve equal steps leave the fifth 1.955 cents flat, the major third 13.686 sharp and the minor third
+  15.641 flat; the convergents of log₂(3/2) have denominators 1, 2, 5, 12, 41, 53, 306, and 53 steps leave the fifth
+  0.068 cents flat; a new A moves no interval (3·10⁻⁴⁸); 440·2^(−1/12) = 415.305 Hz.
+- **M5 not killed.** ISO 68-1's 0.649519 and 1.082532 are 3√3/8 and 5√3/8: the profile is stated in the pitch alone.
+  The 21 first-choice coarse pitches fall from P/D = 0.25 (M1) to 0.094 (M64), fitted P ∝ D^0.794: not one ratio.
+
+## What MOD says
+
+In three of the four cases the system is stated by its own constraint in its own terms, every breadth a ratio, and one
+written amount ties it to the outside without changing it. Paper's constraint (a half keeps the shape) gives √2, and the
+sheet is the module; A, B and C are one system written three times. The halving map is r ↦ 2/r, so in units of √2 it
+is the reciprocal and √2 its fixed point: the standard sits at the halving's corner, and a sheet off it (Letter)
+alternates between two shapes whose geometric mean is that corner. Preferred numbers need no written amount at all: equal
+steps in ratio, the same list in any unit; their decades and doublings nearly coincide (2^10 ≈ 10^3), which is why most
+of R10 is 2^i·10^j. Music's ratios come from the string's own modes, whatever its length; closing twelve keys forces
+equal steps; concert pitch is the one amount, and moving it moves no interval. Threads are the counter-case Tom asked
+for: the profile is ratios of the pitch (the thread's module), but the pitch against the diameter is a table of
+amounts, one a size, P ∝ D^0.79, not one constraint's ratio. A system can be ratios within a level and amounts between
+levels: there the link between levels is written, not read.

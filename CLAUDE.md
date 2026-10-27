@@ -2261,6 +2261,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   only, writing needed only for an outside amount or a reader with nothing in view in common; classical anchors (Euclid V
   and Eudoxus, Descartes' unit segment, Thales, Klein and Kendall, bearing rigidity, SfM scale drift, cycle consistency,
   Kuipers, bees and ants), citations from memory until checked. Tested by `twr-plan.md` (predictions T1–T6, not run).
+  §2½ (Tom: "each system is self defined by its own ratios … they are their units, based on its constraints."): a system's
+  module, its constraint's ratios, one written amount. `mod-plan.md` (+ `runs/mod/`, SPN R529; "yes, work out the exact
+  cases"), exact on Wikipedia's tables (sha256 in the plan): paper (√2, all 66 A/B/C sizes from three amounts and the
+  halving rule; halving r ↦ 2/r with √2 its corner), Renard (no amount; 8 of 10 R10 values 2^i·10^j), music (modes,
+  equal steps from twelve keys, concert pitch the amount), threads the counter-case (P ∝ D^0.79, a table of amounts
+  between levels). Runs 1–2 killed by my code, run 3 not.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are
