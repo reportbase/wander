@@ -157,6 +157,40 @@ Checked against the corpus:
   does, and whether the amounts sit exactly at meetings out of view, would test the passage's claim about practice
   without asserting it.
 
+## 2⅞½. The number-line paper already had much of this
+
+27 Oct. Tom: "we also have a number line paper that is an earlier draft of these ideas." `papers/number-line.md` (7–11
+Oct) was read for the spine. It says its purpose is "not criticize the number line, just correctly explain what it is"
+(Tom, 8 Oct), and its order of operations is the spine's: "the geometry is compile time, the readings are runtime, and
+the ruler is agreed on after both, between readers" (its opening). What it already holds, by value:
+
+1. **Writing between readers is one factor.** "It puts back the scale division took out": x = r_A·H_A = r_B·H_B, so the
+   trip through the ruler carries exactly the ratio of the two H's (§1, "What the ruler is for"), and "the ruler is a
+   bridge, not a place". This makes §2's agreement concrete: an agreed unit carries what TGT's closure recovers when two
+   readers share a view.
+2. **Units began as one reader's body made public.** "The foot, the cubit and at last the metre were each one reader's
+   body or object, made into a public notch." A module (§2½), a builder's own body (§2¾), promoted to the one written
+   amount: how a module becomes the outside amount.
+3. **The seventh capability, worked.** "Five metres is far field for an ant and near field for a mountain. The ruler
+   carries the magnitude; near or far … each receiver decides again", and "the ordinary number line is the near-field
+   ruler, extended across the corner so that every reader can share it" (§1). No agreement on a near field's extent is
+   needed because each receiver places the amount against its own corner.
+4. **Bounded against open lines** (§5, §6): a line with both ends given is a held whole, read by its midpoint; an open
+   line is read against one's own unit. A possible signature of reading a blueprint against reading from where one
+   stands; NLE run 1's kill on bounded lines fits it, and the open-ended test is unrun.
+5. **Level rulers and scientific notation** (§1): "a plain ruler inside a level count", one number holding a module
+   inside a level and a count of levels, a two-floor tower; it bears on §2⅞'s question of how standards state things.
+6. **The ruler's grain caps what can be exchanged** ("Depth cannot cross finer than the notches", §1, to be restated as
+   grain): a limit on what writing can carry, worth setting beside the seven capabilities.
+7. **"n breadths leave n − 1 relations, and exactly one thing is lost: the scale"** (§8): the general form of "one amount
+   at the top", the same count as Buckingham's rank (BPI).
+
+Its terms predate 9 Oct and later rulings, so nothing comes over without restating: recursion in the levels (rejected,
+R188; §4 is marked superseded but earlier and later passages are not), "octave", the old situations with parallel and
+serial (R266, R268, R309), unit relations called breadths in §8, the unsituated sphere "seen from nowhere" (now the
+writer's box, R445, and the writer's vantage, R335), the rings as payload (R460), and a few lines on the far field that
+read against the number line (R478), which the spine now counts as its seventh capability. The paper is not edited here.
+
 ## 3. Classical ideas to build on
 
 Each with what it gives, what the tower adds, and its standing. "Check" marks a citation from memory.
@@ -221,3 +255,5 @@ Each with what it gives, what the tower adds, and its standing. "Check" marks a 
   not made; the biology (stigmergy) to check; a candidate rule for where writing is needed.
 - 27 Oct: §2⅞, write once, then read again (a pasted passage): kept the practice, not "over-used"; one error
   corrected; a counting test on standards proposed.
+- 27 Oct: §2⅞½, what `papers/number-line.md` already held (seven items, the ruler a bridge carrying H_A/H_B, units as a
+  body made public, the ant and the mountain); its older terms listed, the paper not edited. §2⅞ stays in the note (Tom).
