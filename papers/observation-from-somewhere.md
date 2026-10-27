@@ -3606,6 +3606,18 @@ the turn, T_n(y/√(y² + L²)) (Boyd 1987): the same equal angles read by their
 the ends of the chord (the last gap about π²/N², the middle ones π/N; Rivlin 1974), and read by their tangent are the
 Cauchy's, spread out to the horizon. The law is the turn's; the chart decides where the addresses crowd.
 
+**Buckingham's π theorem** (§9). A law among n quantities whose units come from base units of rank r in the
+dimension matrix is a law among n − r dimensionless groups, the invariants of the unit changes (Buckingham 1914;
+Bridgman 1922; Barenblatt 1996). With one base unit, length, the change is x ↦ λx, and its invariants are exactly the
+directions [x₁ : … : xₙ]: the positive orthant's projective space, the wedge of §2. So in one dimension the π groups
+are the addresses, and Proposition 8 is the theorem read from a standpoint. The rank counts the amounts to carry in:
+r of them, independent in the dimension matrix, write every quantity; with fewer a family of worlds is left with the
+same groups. In this paper's geometry r = 1, the one amount of §9. The theorem says nothing about the law on the groups:
+unit changes act trivially there, so every law on the directions is equally scale-invariant, and the uniform turn's
+Cauchy, with its median at the corner, comes from the turns and the exchange (§2), not from dimensional analysis. With
+several base units the groups split into one wedge per unit only when each quantity carries a single base unit; in
+general they mix units.
+
 **An unnormalized density** (§7.3). A weight vector known only up to its normalizing constant is an array of the
 third kind, its values without their common factor. The sampling algorithms built for it use only ratios of entries:
 Metropolis's acceptance test compares p(x′)/p(x), so the constant cancels and rescaling every weight changes no step of
@@ -3721,6 +3733,8 @@ Archimedes (c. 225 BC). *On the Sphere and Cylinder*.
 Barbier, E. (1860). Note sur le problème de l'aiguille et le jeu du joint couvert. *Journal de Mathématiques
 Pures et Appliquées* (2) 5, 273–286.
 
+Barenblatt, G. I. (1996). *Scaling, Self-Similarity, and Intermediate Asymptotics*. Cambridge University Press.
+
 Barth, H. C. and Paladino, A. M. (2011). The development of numerical estimation: evidence against a representational
 shift. *Developmental Science* 14(1), 125–135.
 
@@ -3752,6 +3766,8 @@ Bramon, A., Garbarino, G. and Hiesmayr, B. C. (2004). Quantitative complementari
 *Physical Review A* 69, 022112.
 
 Breit, G. and Wigner, E. (1936). Capture of slow neutrons. *Physical Review* 49(7), 519–531.
+
+Bridgman, P. W. (1922). *Dimensional Analysis*. Yale University Press, New Haven.
 
 Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
 Review* 4(4), 345–376.

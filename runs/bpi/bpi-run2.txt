@@ -1,0 +1,6 @@
+pendulum: n=4, r=3, sets of r-1 = 6, failures []
+drag: n=5, r=3, sets of r-1 = 10, failures []
+range: n=4, r=2, sets of r-1 = 4, failures []
+conduction: n=5, r=3, sets of r-1 = 10, failures []
+single-unit: n=6, r=3, sets of r-1 = 15, failures []
+B2prime not killed

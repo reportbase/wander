@@ -1,0 +1,26 @@
+B1 n=2: rank 1, lattice e_j-e_1 True, invariant True, separates rays True
+B1 n=3: rank 2, lattice e_j-e_1 True, invariant True, separates rays True
+B1 n=4: rank 3, lattice e_j-e_1 True, invariant True, separates rays True
+B1 n=5: rank 4, lattice e_j-e_1 True, invariant True, separates rays True
+B1 n=6: rank 5, lattice e_j-e_1 True, invariant True, separates rays True
+pendulum: n=4, rank D=3, pi groups=1 [l^-1 g^1 T^2]
+   B2 r carried (independent) write all, dependent not: True; r-1 leave one family: True
+   B4 count n-r: True; single-unit columns False, lattice splits by unit False
+drag: n=5, rank D=3, pi groups=2 [F^-1 rho^1 v^2 D^2] [F^-1 rho^-1 mu^2]
+   B2 r carried (independent) write all, dependent not: True; r-1 leave one family: True
+   B4 count n-r: True; single-unit columns False, lattice splits by unit False
+range: n=4, rank D=2, pi groups=2 [R^1 v^-2 g^1] [theta^1]
+   B2 r carried (independent) write all, dependent not: True; r-1 leave one family: False
+   B4 count n-r: True; single-unit columns False, lattice splits by unit False
+conduction: n=5, rank D=3, pi groups=2 [t^1 Lr^-2 alpha^1] [t^-1 Lr^2 kappa^-1 rhoc^1]
+   B2 r carried (independent) write all, dependent not: True; r-1 leave one family: True
+   B4 count n-r: True; single-unit columns False, lattice splits by unit False
+single-unit: n=6, rank D=3, pi groups=3 [a^-1 b^1] [a^-2 c^1] [p^-1 q^1]
+   B2 r carried (independent) write all, dependent not: True; r-1 leave one family: False
+   B4 count n-r: True; single-unit columns True, lattice splits by unit True
+B3: direction unchanged by x->lam x: True; medians [1] and tan(pi/(2*sqrt2)) = 2.01798867191 (F2 there = 1/2: True); laws differ: True
+
+B1 not killed
+B2 KILLED
+B4 not killed
+B3 not killed
