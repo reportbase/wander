@@ -84,4 +84,54 @@ L's addresses are K = 10⁴ even by turn over the quarter, its corner at the 5,0
 
 ## Runs
 
-(none yet)
+### Run 1 (27 October, `runs/rnr/rnr.py`, output `runs/rnr/rnr-run1.txt`)
+
+- **Q1 not killed.** L's 10,001 boundaries are the same in all 15 worlds and under both scalings; the corner is tan 45° = 1.
+- **Q2 not killed.** The gap is the median of the spread's directions:
+
+  | Spread | b = ¼ | b = ½ | b = 1 | b = 2 | b = 4 |
+  |---|---|---|---|---|---|
+  | (i) even in t | 0.25 | 0.5 | 1 | 2 | 4 |
+  | (ii) even along the arc | 0.395591 | 0.676328 | 1 | 1.478572 | 2.527861 |
+  | (iii) even by turn | 1 | 1 | 1 | 1 | 1 |
+
+  - (i) is b exactly and (iii) is 1 exactly.
+  - (ii) is neither b nor 1. g(b)·g(1/b) = 1 to the last of 50 digits at b = ¼ and ½, and 1 < g(2) < 2.
+- **Q3 not killed.** Scaling the world by 10⁻³ and 10³ moves no gap (largest 2·10⁻⁵⁰).
+- **Q4 not killed** (by construction, as predicted).
+- **Q5 not killed.** The counted gaps miss the exact median by at most 0.234 of a cell (arc, b = ½ and 2). RNG's
+  0.5000, 2.0001 and 4.0002 are this grain.
+- **Q6 killed by my code.**
+  - (a) and (c) hold, and so does (b)'s evenness at every 2^m (m ≤ 10) and its order lost from the third address.
+  - (b)'s "not even at 2^m + 1" came out false. That is because my test left out the gap that closes the span (from the
+    last place round to the first), which the evenness test above it included. At three addresses, 0, ¼ and ½, the two
+    inner gaps are equal and the closing gap is ½.
+  - The claim is untouched, but the check was wrong.
+
+### Run 2: prediction (27 October, written before run 2)
+
+- **Q6′.** As Q6, with (b)'s "not even at 2^m + 1" tested over every gap including the closing one, as the evenness at
+  2^m is. **Killed if** any part fails in exact fractions, for m up to 10 and n up to 1,025.
+
+### Run 2 (27 October, `runs/rnr/rnr.py`, output `runs/rnr/rnr-run2.txt`; Q1–Q5 reprinted as in run 1)
+
+- **Q6′ not killed.** Halving places is even at every 2^m and uneven at every 2^m + 1 (closing gap included), m ≤ 10; its
+  order of placement is lost from the third address; re-laying moves the first address at every n; the gaps of an
+  increasing bounded sequence go to zero.
+
+### What it says
+
+- **The gap is the payload's median direction, read against the turn's corner.** It equals the shape's aspect b only
+  when the arrivals are known to come evenly in the ellipse's own parameter. That is a known kind carried in about how the
+  world sends, not something laying the range supplies.
+- **The same shape gives other gaps under other spreads.** Even along the outline it gives g(b) (1.479 at b = 2), keeping
+  the exchange g(1/b) = 1/g(b). Even by turn it gives 1 for every shape: the arrivals then carry no trace of the shape in
+  their median.
+- **What laying the range first does give is a fixed thing to read against.** L's addresses and corner are the same in
+  every world and at every scale, and the payload's median moves against them. B has nothing that stays put, so it reads
+  1 whatever arrives.
+- **This is the separation OFS states** (Theorem 6(a): no address moves with what arrives), in RNG's set-up. RNG's
+  "reads a shape's breadth ratio" holds only with the kind named. SPN §4.2's caution, that the rival's failure is by
+  construction and optimality stays open, stands.
+- Classical in its parts: a median against a fixed reference, a known distribution carried in, van der Corput's
+  sequence. Nothing for OFS.
