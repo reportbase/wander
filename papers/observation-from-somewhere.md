@@ -1152,7 +1152,7 @@ writer with two axes, is V = H;
 (f) with two other parties, written on three axes V = cH and V₂ = c₂H, the attitudes are the directions of one rigid
 bar, the sphere h² + v² + v₂² = 1, only if V = V₂ = H;
 
-(g) the bar can be derived rather than assumed. Take a sweep that is uniform (every step the same linear map of the
+(g) the bar can be derived rather than assumed. Take a sweep that is continuous and uniform (every step the same linear map of the
 plane of all-h and all-v), that returns to its start after one full turn, and that carries all of h into all of v in a
 quarter of it. Such a sweep preserves an inner product, unique up to a positive factor.
 - In that inner product, all of h, all of v and every attitude between them have one length, and all of v is square to
@@ -1176,7 +1176,8 @@ all of v the bar at length cH, so a turn carries one to the other only if c = 1.
 way, along the ellipse of (c) or some other path. (f) By (e) applied to each pair: all of v and all of v₂ must each be
 the bar at length H.
 
-(g) Write the sweep as Φ(t) = exp(tA), with A ≠ 0 and T the least time with Φ(T) = I.
+(g) Continuous and uniform, the sweep is a continuous one-parameter group of linear maps, so Φ(t) = exp(tA), with A ≠ 0
+and T the least time with Φ(T) = I.
 1. A real 2 × 2 matrix with exp(TA) = I has eigenvalues ±iω, with ω = 2π/T. A pair of zeros would make A nilpotent,
    and then exp(TA) = I + TA ≠ I.
 2. So A = U(ωJ)U⁻¹, with J the generator of turns, and Φ(t) = U·R(ωt)·U⁻¹. This preserves Q(x) = |U⁻¹x|².
@@ -3595,7 +3596,12 @@ h + iv = e^(iωt), Euler's formula. It is the return that makes the rate imagina
 left free in that inner product. The scale invariance (S) of Proposition 4 gives f(λμ) = f(λ) + f(μ), the equation in
 its logarithmic form, whose increasing solutions are k·ln λ. Each needs its regularity condition, continuity of the
 sweep in the one and monotonicity of the lay in the other; without it the equation has other solutions, as the
-Hamel-basis example in Theorem 6's proof shows for the additive form. The Cauchy distribution's name has another
+Hamel-basis example in Theorem 6's proof shows for the additive form. In the exponential form three layers are kept
+apart. Assumed: the sweep is continuous, composes (every step the same linear map) and returns. Derived from these: the
+imaginary rate, an inner product the sweep preserves, unique up to its factor (it is not assumed, Proposition 3(g),
+step 3), and Euler's form. This paper's reading: the return is what the reader's turn supplies, so i enters as the
+generator of a returning turn, not as an added ingredient. That a returning one-parameter group has an imaginary
+generator is classical; Euler's formula and identity are used, not derived. The Cauchy distribution's name has another
 origin, his exchange with Bienaymé in 1853.
 
 **π_p** (§5). Among the p-norms the circle is also the extreme case. Measured in its own norm, the unit circle of ℓ_p

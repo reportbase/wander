@@ -289,7 +289,7 @@ axes as V = cH, and no unit relation and no single reading depends on c;
 scaled by λ receives exactly the same readings;
 (e) on a page with two axes, V = cH, the attitudes are turns of one rigid bar only if c = 1: with c ≠ 1 nothing turns
 all of h into all of v, and there is no circle. So the reader's circle, written with two axes, is V = H.
-(g) The bar can be derived rather than assumed: a sweep that is uniform (every step the same linear map of the plane),
+(g) The bar can be derived rather than assumed: a sweep that is continuous and uniform (every step the same linear map of the plane),
 returns to its start after one full turn, and carries all of h into all of v in a quarter of it, preserves an inner
 product unique up to a positive factor. In that inner product every attitude has one length and
 (h, v) = (cos ωt, sin ωt). The one factor left free is that length, H.
@@ -709,7 +709,10 @@ The reader's circle rests on the same equation in its exponential form. A unifor
 Φ(t₁ + t₂) = Φ(t₁)Φ(t₂), so Φ(t) = exp(tA); because it returns after a full turn its rate is imaginary, and in its own
 inner product the bar's attitude is h + iv = e^(iωt), Euler's formula. The return makes the rate imaginary; the one
 length fixes only the scale of that inner product. Each form needs its regularity condition, continuity of the sweep or
-monotonicity of the lay.
+monotonicity of the lay. Kept apart: continuity, composition and the return are assumed; the imaginary rate, the inner
+product (unique up to its factor, not assumed) and Euler's form follow; that i is the generator of the reader's
+returning turn, not an added ingredient, is the reading. The algebra is classical, and Euler's identity is used, not
+derived.
 
 (S) does the work, and it is assumed, not derived: scale invariance of the lay's increments, motivated by the fact that
 no reading can fix a scale. Monotonicity, a fixed corner and a matched slope are not enough by themselves:

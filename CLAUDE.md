@@ -2341,6 +2341,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   stated representation (the address reading ours, an instrument's arrivals its own question); "for free" in §1 and §2
   given the one length and the uniform measure (§12.4); Theorem 6(e)'s condition a density ≥ f₀ > 0 on (0, δ). The CS
   companion carries the first and last.
+  Review 34 (27 Oct, SPN R547; ChatGPT on Euler, `plans/ofs-review-34.md`; Tom: "yes"): Proposition 3(g) names
+  continuity; Appendix A's Cauchy entry keeps apart the assumed (continuity, composition, return), the derived (the
+  imaginary rate, the inner product, not assumed, Euler's form) and the reading (i the generator of the reader's
+  returning turn); Euler used, not derived. Both in the CS companion.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
