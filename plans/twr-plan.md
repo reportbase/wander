@@ -85,4 +85,41 @@ radius stands in for the held window and occlusion and is the referee's, not a r
 
 ## Runs
 
-(none yet)
+### Run 1 (27 Oct; `runs/twr/twr.py`, output `runs/twr/twr-run1.txt`)
+
+Crashed in T3 on my code (a set combined with a bool), after T1 and T2 had printed. No verdicts.
+
+Set-up as built, differing from the text above: the room corners are the 9 distinct points of the 3 × 3 grid (the "16"
+above counted shared corners twice), and four door points (the middles of the shared walls) were added as features for
+T6(b)'s routes: 61 features. The walk: 32 stops round a rectangle (3, 3)–(17, 13) m, jitter ±0.5 m (seed 2).
+
+### Run 2 (`runs/twr/twr-run2.txt`; the crash fixed, nothing else)
+
+- **T1 not killed.** All 31 legs solved, no break, all 61 features placed; the map in units of the first leg equals the
+  referee's to 1.5·10⁻⁴⁵ (legs 4·10⁻⁴⁶).
+- **T2 killed, by my tolerance.** At k = 10⁻³, 7, 10³ the map moved by up to 5.4·10⁻⁴⁵, the legs 1.5·10⁻⁴⁵, the links
+  8·10⁻⁴⁶: rounding at 50 digits, above my 10⁻⁴⁵. Nothing moved beyond rounding.
+- **T3 killed in (a)'s second clause, by the walk.** No direction survived a step (the first clause holds), but at stops 5
+  and 19 the held set did not change (a 6 m cut and steps of about 1.5 m). (b) not killed: 77 link readings from all 31
+  consecutive pairs (37 distinct links), each the referee's to 1.5·10⁻⁴⁵.
+- **T4 not killed.** M = 2 breaks the chain 5 times (6 pieces), M = 3 once, M ≥ 4 never. Within pieces every link the
+  referee's (to 6·10⁻⁴⁶); 8 rejoinings at M = 2 and 1 at M = 3 give the ratio of two pieces' H from one thing, exact
+  (to 5·10⁻⁴⁸); 13 links forgotten and read again equal their first reading. The rule's agreement is by construction
+  (the reader breaks exactly when it finds no remembered, placed feature off the leg's line), a consistency check only.
+- **T6 killed in (f)'s second clause, by my tolerance.** (a) all 66 pairs, (b) all 18 routes agree at every k; (c) home
+  and (d) steps to 5·10⁻⁴⁵; (e) the readings identical at k = 1 and 7 while the seconds differ sevenfold (nullity 1),
+  and with the first leg's metres carried in the seconds exact (3.6·10⁻⁴² at k = 10³); (f) two readers sharing 42
+  features aligned by one thing alone, every other feature to 3·10⁻⁴⁵, H_B/H_A read 1.69566788164 against the true
+  1.69566788164. The check that B's map is unmoved when only B's world is scaled failed at 1.6·10⁻⁴⁵ against my
+  10⁻⁴⁵: rounding.
+- **T5 crashed, no verdict; killed by my set-up.** With rays kept 4 stops (to keep the chain open), the least-squares
+  leg flips sign at legs 13 or 29 in about one walk in twenty (walks 1, 2, 16, 34, 74, 103, 115, 167, 169, 199 of the
+  first 200), so the log of the scale is undefined there; the legs are not short (1.0 and 1.9 m).
+
+### Run 3: predictions (written before it)
+
+- **T2′, T6(f)′.** The same claims at 60 digits, the bound 10⁻⁴⁵ unchanged. Kill: as before.
+- **T5′.** Rays kept 8 stops (more parallax for each leg). No walk of the 400 flips a leg's sign (kill if any does),
+  and, as before, p = 0.5 ± 0.1 over i = 4 … 16, the sd at the loop's middle after closure 1/√2 ± 0.1 of the open
+  chain's there and 0.5 ± 0.1 of the open chain's at its end.
+

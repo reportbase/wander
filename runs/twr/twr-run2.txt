@@ -1,0 +1,25 @@
+world: 61 features (12 things, 9 room corners, 4 door points); walk: 32 stops
+T1: legs solved 31/31, breaks []; features placed 61/61 seen; worst leg 3.95e-46, stop 1.17e-45, feature 1.48e-45
+T2: k = 0.001: map 2.92e-45, legs 7.85e-46, links 4.45e-46
+T2: k = 7.0: map 4.19e-45, legs 1.13e-45, links 6.26e-46
+T2: k = 1.0e+3: map 5.45e-45, legs 1.47e-45, links 8.04e-46
+T3 (a): every direction changed at every step: False; held 11–21 a stop, added+dropped 0–10 a step
+T3 (b): 77 link readings from 31 consecutive pairs, 37 distinct links; worst 1.5e-45
+T4 M =  2: breaks [3, 8, 11, 16, 25] (rule agrees: True), pieces 6; (a) 25 links, worst 3.1e-47; (b) 8 rejoinings, worst 4.66e-48; (c) 13 re-readings, worst 3.1e-47
+T4 M =  3: breaks [9] (rule agrees: True), pieces 2; (a) 36 links, worst 1.1e-47; (b) 1 rejoinings, worst 5.72e-49; (c) 6 re-readings, worst 1.1e-47
+T4 M =  4: breaks [] (rule agrees: True), pieces 1; (a) 37 links, worst 7.9e-48; (b) 0 rejoinings, worst 0.0; (c) 0 re-readings, worst 0.0
+T4 M =  6: breaks [] (rule agrees: True), pieces 1; (a) 37 links, worst 8.66e-47; (b) 0 rejoinings, worst 0.0; (c) 0 re-readings, worst 0.0
+T4 M =  8: breaks [] (rule agrees: True), pieces 1; (a) 37 links, worst 1.82e-46; (b) 0 rejoinings, worst 0.0; (c) 0 re-readings, worst 0.0
+T4 M = 12: breaks [] (rule agrees: True), pieces 1; (a) 37 links, worst 6.49e-46; (b) 0 rejoinings, worst 0.0; (c) 0 re-readings, worst 0.0
+T6 k = 1.0: (a) 66 pairs agree True; (b) 18 routes agree True; (c) home 3.27e-46; (d) steps 1.14e-45; (e) seconds with L0 carried 7.5e-46
+T6 k = 0.001: (a) 66 pairs agree True; (b) 18 routes agree True; (c) home 9.66e-46; (d) steps 3.39e-45; (e) seconds with L0 carried 2.23e-48
+T6 k = 7.0: (a) 66 pairs agree True; (b) 18 routes agree True; (c) home 5.96e-46; (d) steps 2.12e-45; (e) seconds with L0 carried 9.85e-45
+T6 k = 1.0e+3: (a) 66 pairs agree True; (b) 18 routes agree True; (c) home 1.52e-45; (d) steps 5.45e-45; (e) seconds with L0 carried 3.61e-42
+T6 (e): readings at k = 1 and 7 identical True, seconds 7 times apart: nullity 1 without an amount, 0 with L0 carried
+T6 (f): readers A (32 stops) and B (20 stops) share 42 features; aligned by T10 alone: other features 3.08e-45; H_B/H_A read 1.69566788164 against 1.69566788164 (2.84e-46)
+T6 (f): nothing in common (B's own world scaled by 7): B's map unchanged False: the ratio of H's undetermined, nullity 1
+Traceback (most recent call last):
+  File "/home/user/wander/runs/twr/twr.py", line 359, in <module>
+    E.append([float(mp.log(rr['L'][i] / rn.true_legs[i])) for i in range(rn.n - 1)])
+              ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'mpc'

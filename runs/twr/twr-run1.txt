@@ -1,0 +1,9 @@
+world: 61 features (12 things, 9 room corners, 4 door points); walk: 32 stops
+T1: legs solved 31/31, breaks []; features placed 61/61 seen; worst leg 5.17e-46, stop 1.53e-45, feature 1.95e-45
+T2: k = 0.001: map 1.93e-45, legs 5.22e-46, links 3.0e-46
+T2: k = 7.0: map 4.05e-45, legs 1.09e-45, links 6.05e-46
+T2: k = 1.0e+3: map 4.26e-45, legs 1.13e-45, links 6.27e-46
+Traceback (most recent call last):
+  File "/home/user/wander/runs/twr/twr.py", line 231, in <module>
+    churn &= not same and (added or dropped)
+TypeError: unsupported operand type(s) for &=: 'bool' and 'set'
