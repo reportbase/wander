@@ -1160,7 +1160,11 @@ quarter of it. Such a sweep preserves an inner product, unique up to a positive 
 - At the sweep's own parameter t, the unit relations are (h, v) = (cos ωt, sin ωt): the unit circle of (c).
 
 So the sweep is the turning of a rigid bar in its own measure, every attitude of one length. The one factor left free is
-that length, and it is H. Written on a page with two axes, it is V = H.
+that length, and it is H. Written on a page with two axes, it is V = H. With more unit relations the same holds on one
+condition: the sweeps together must stay bounded (generate a compact group of linear maps). Then an inner product is
+preserved, any one averaged over the group's Haar measure (Haar 1933), and it is unique up to a factor when the group
+carries every direction to every other, as the turns of the sphere do. Each sweep returning on its own is not enough:
+two sweeps that each return, but each in its own inner product, can compose to a map that grows without bound.
 
 *Proof.* (a) By (P1) the reader's only length is H, and by (P0) its v is a share of it, not of any breadth of the other
 party's; a reading v/h is a ratio of two shares of one length. A writer who holds the other's breadth V can set it
@@ -1325,11 +1329,11 @@ has no home and no horizon; read from home it is the fisheye of §7.
 ## 6. Two address spaces
 
 Inside the corner the reader holds its unit and can lay its readings out in proportion: the near field at true scale.
-Past the corner the reciprocal makes the reading h/v ∈ [0, 1], but it does not say how that reading should be laid out.
-Let a lay place a far reading x = v/h ≥ 1 at position L(x), counting addresses from home, with L increasing and
-L(1) = 1.
+Past the corner the reciprocal makes the reading h/v ∈ [0, 1], but it does not say how far things should be laid out.
+Let a lay place a far amount x = d/H ≥ 1 at position L(x), counting addresses from home, with L increasing and
+L(1) = 1. Here x is a distance in units of H, which a reader has only from a second standpoint or an amount carried in
+(§9); the reading v/h itself does not change with H.
 
-Here x is the far amount in units of H, x = d/H, which the lay places; the reading v/h itself does not change with H.
 Choosing a different H multiplies every such x by one common factor. A lay whose room depended
 on where a reading sits, and not only on ratios, would then depend on the arbitrary choice of H. Premise (P2) points the
 same way: no measure is carried past the corner, so nothing supplies a scale for the room to depend on. We therefore
@@ -3602,7 +3606,7 @@ imaginary rate, an inner product the sweep preserves, unique up to its factor (i
 step 3), and Euler's form. This paper's reading: the return is what the reader's turn supplies, so i enters as the
 generator of a returning turn, not as an added ingredient. That a returning one-parameter group has an imaginary
 generator is classical; Euler's formula and identity are used, not derived. The Cauchy distribution's name has another
-origin, his exchange with Bienaymé in 1853.
+origin, his exchange with Bienaymé in 1853 (Stigler 1974).
 
 **π_p** (§5). Among the p-norms the circle is also the extreme case. Measured in its own norm, the unit circle of ℓ_p
 has half-perimeter π_p, which is 4 at p = 1 and as p → ∞ (the line's norm and the square's) and least, π, at p = 2

@@ -120,12 +120,12 @@ offers instead, a baseline against which existing designs can be read.
 - **Arrays.** For an even-length array indexed at equal steps of turn, the slopes of its places are exactly the evenly
   spaced quantiles of the Cauchy. The index is the address and the stored values are the payload; the floor function
   is where an array is not a reader (§6).
-- **Two address spaces.** Inside the corner the addresses are proportional; past it, if no scale is preferred, only a
-  logarithmic layout is consistent. Floating-point numbers are an instance (§8).
 - **What Math.floor throws away.** The fraction the floor drops is not data but address: its binary digits are the
   finer levels, and they are the address's second coordinate. The dyadic cells tile the hyperbolic plane, the space of
   the Cauchy's own parameters, every level alike and every cell of one room; a tree keeps the levels but not the plane,
   and the floor's loss of detail is a wall where a reader's is a soft cut (§7).
+- **Two address spaces.** Inside the corner the addresses are proportional; past it, if no scale is preferred, only a
+  logarithmic layout is consistent. Floating-point numbers are an instance (§8).
 - **A fixed count.** A reader's K addresses cover a world of any size N, with no table and no knowledge of N; H is a
   zoom that places them and changes no reading (§9).
 - **Ratios suffice; a blueprint adds.** Everything a reader does from where it stands runs on ratios; a blueprint, the
@@ -145,9 +145,9 @@ Everything is built from the *unit relation*: a number from 0 to 1 relating a pa
 day gone or the share of a road behind. A relation needs two of them, one for each party. Draw one horizontally and one
 vertically and call them h and v. They have no units, and neither knows the other's whole.
 
-The wholes are the *breadths* H and V, written in uppercase. H is the reader's own, the one value it chooses to start
-from; V is the length at which the reader draws the other party; V* is the other party's true size, an amount the
-reader does not have. The amounts are h·H and v·V*, so
+The wholes are the *breadths*, written in uppercase. The reader holds one, H, the value it chooses to start from, and
+no other; a writer, who holds both hemispheres, also holds a breadth for the other party, V, and writes v against it,
+while the reader has no V; V* is the other party's true size, an amount the reader does not have. The amounts are h·H and v·V*, so
 
   (v·V*)/(h·H) = (v/h)·(V*/H).
 
@@ -198,8 +198,8 @@ and a full round composes to no turn, a closure check. Directions have no sum, o
 step t comes back to zero after finitely many steps only for t = 0, 1 and ∞ among the rationals (Niven 1956); every other
 rational step never closes, and its multiples spread uniformly round the turn (Weyl 1916).
 
-Comparing two directions needs no division either. Of [h₁ : v₁] and [h₂ : v₂], the second is farther from home exactly
-when the bracket `D = v2*h1 - v1*h2` is positive: a cross product, exact in integers, zero when the two are one direction.
+Comparing two directions needs no division either. Of [h₁ : v₁] and [h₂ : v₂], the first is farther from home exactly
+when the bracket `D = v1*h2 - v2*h1` is positive: a cross product, exact in integers, zero when the two are one direction.
 Its square and the dot product's add to the product of the norms, D² + (h₁h₂ + v₁v₂)² = (h₁² + v₁²)(h₂² + v₂²) (Lagrange's
 identity in two dimensions), and only D's sign says which way round the two lie. The comparison is transitive with no
 quotient: D(A, C)·h_B = D(A, B)·h_C + D(B, C)·h_A (the three-term Plücker relation; Plücker 1865), so a sort by the
@@ -247,7 +247,7 @@ piecemeal, and each remedy keeps the pair:
 - *Homogeneous coordinates.* A graphics pipeline carries [x : y : z : w] and divides by w last, after clipping; w = 0 is a
   point at infinity, a direction, held like any other point.
 - *`atan2(v, h)`.* It takes the pair, so the horizon is the end of the quarter turn and not a fault (§6's `turnIndex`
-  relies on it). The bracket D of the next paragraph compares two directions with no quotient at all.
+  relies on it). The bracket D of §2.4 compares two directions with no quotient at all.
 - *Floating point's infinities.* IEEE 754 gives 1/0 = +∞ and −1/0 = −∞, closing the line at two ends, its affine
   closure, and 0/0 = NaN, which is [0 : 0], the one pair that names no direction (§2.2 leaves it out). The 8087 also
   offered a projective mode, one unsigned infinity, which closes the line as a circle of directions does; the 1985
@@ -260,11 +260,11 @@ divide last, if at all; where it is an amount over an amount, a zero denominator
 elapsed time, a mean of no items), not a horizon, and no closure of the line repairs it. That zero belongs to
 the sums of amounts a blueprint adds (§10, capability 3); the readings, which run on ratios, have only the chart's.
 
-**Comparing without dividing.** For readings (h₁, v₁) and (h₂, v₂) let
+**Comparing without dividing.** For readings (h₁, v₁) and (h₂, v₂), the bracket of §2.4,
 
   D = v₁·h₂ − v₂·h₁,
 
-the 2 × 2 determinant of the two pairs. With h₁, h₂ > 0, D = 0 exactly when the ratios agree, and D > 0 exactly when
+is the 2 × 2 determinant of the two pairs. With h₁, h₂ > 0, D = 0 exactly when the ratios agree, and D > 0 exactly when
 v₁/h₁ > v₂/h₂. Comparing a reading with its own reciprocal gives D = v² − h², zero exactly at the corner. Sameness,
 order and the corner need no division; only the size of D depends on scale.
 
@@ -292,7 +292,10 @@ all of h into all of v, and there is no circle. So the reader's circle, written 
 (g) The bar can be derived rather than assumed: a sweep that is continuous and uniform (every step the same linear map of the plane),
 returns to its start after one full turn, and carries all of h into all of v in a quarter of it, preserves an inner
 product unique up to a positive factor. In that inner product every attitude has one length and
-(h, v) = (cos ωt, sin ωt). The one factor left free is that length, H.
+(h, v) = (cos ωt, sin ωt). The one factor left free is that length, H. With more unit relations the same holds if the sweeps together
+stay bounded (a compact group): an inner product averaged over its Haar measure (Haar 1933) is preserved, unique up to a
+factor when the group carries every direction to every other; sweeps that each return in their own inner product can
+compose to a map that grows without bound.
 
 (The proofs are in the parent paper. Part (g) is linear algebra: exp(TA) = I forces A to be conjugate to a rotation
 generator, and any symmetric form it preserves is a multiple of one.)
@@ -527,8 +530,10 @@ tan(kπ/16) and the places' middles the half-Cauchy's eight evenly spaced quanti
 on these places.
 - *The index alone.* The places are the whole array. The corner is the boundary between places 3 and 4, found with no
   length; a reading and its reciprocal go to places k and K − 1 − k; scaling v and h together moves no index.
-- *The values on the index.* The central sweep meets the same point at twice the angle and indexes it by
-  `Math.floor(K * phi / Math.PI)` over its half turn, the same place: one index serves both sweeps, the ratio and the
+- *The values on the index.* On the circle drawn on the chord between home and the other party, the ray from home at
+  θ meets the point that the circle's centre sees at φ = 2θ (Euclid III.20). The parent paper calls that turn about the
+  centre the *central sweep* and reads the point as where the payload lands, which is its interpretation. Indexing φ
+  over its half turn by `Math.floor(K * phi / Math.PI)` gives the same place: one index serves both sweeps, the ratio and the
   amount found there stored together. The amounts are known up to one factor, so keep their logs less their mean.
 - *A constant array.* Every place holds the radius, of length H, so the value is a function of the index and nothing is
   stored.
@@ -1156,6 +1161,9 @@ Paris: Debure, ch. 5.
 
 Dietz, P. F. (1982). Maintaining order in a linked list. *Proceedings of the 14th ACM Symposium on Theory of
 Computing*, 122–127.
+
+Euclid (c. 300 BC). *Elements*. Translated by T. L. Heath (1908), *The Thirteen Books of Euclid's Elements*. Cambridge
+University Press.
 
 Furnas, G. W. and Bederson, B. B. (1995). Space-scale diagrams: understanding multiscale interfaces. *Proceedings of
 CHI '95*, 234–241.
