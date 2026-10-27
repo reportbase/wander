@@ -158,6 +158,9 @@ its own completeness, and only a second route that disagrees shows a gap (SPN R4
   in §1½. Then (SPN R441) the paper's framing, "What the meeting is", above: known physics recovered from the observer's
   geometry, physics already a mix of reading and writing observers with the boundary unmarked, the dictionary that
   boundary drawn.
+- 27 October (SPN R542; Tom: "write the OFS physics paper to put all this in one place. tie it to OFS if possible."):
+  the results gathered as a companion to OFS, `papers/observation-from-somewhere-physics.md` (*What a Reader Recovers*),
+  with the labs of 3 October re-read through OFS. This paper stays the working record.
 
 ## How physics holds the inverse square (10 October, at Tom's "lets make sure we solid with the math")
 

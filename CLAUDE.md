@@ -982,6 +982,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   differ, OFS stands and the companion is fixed): index and value, a measure not a loop, Theorem 6 as order against sum
   statistics, the array and the floor, floats as Proposition 4, LOD and H as a zoom, K apart from N, OFS §11.4. A change
   to OFS that touches these is carried out to it.
+  **A physics companion** (27 Oct, SPN R542; Tom: "write the OFS physics paper to put all this in one place. tie it to OFS
+  if possible."): `papers/observation-from-somewhere-physics.md`, *What a Reader Recovers: known physics read from a
+  standpoint*. A normal paper like OFS; lab codes and standings only in its Appendix A. Its geometry is OFS's (nothing OFS
+  does not say; where they differ, OFS stands); its physics comes from `physics.md` (still the working record),
+  `inverse-square.md`, `parallax.md` and the labs, each result marked [exact], [data], [world] (Wander, illustration) or
+  [simulation] (our own, against a full referee). The labs' test for convention is OFS's scale test generalised; the seven
+  conventions are what a writer carries in. A new physics result goes into `physics.md` first and is carried out to it.
   **What the floor discards** (23 Oct, SPN R464; Tom: "that is mathmatically profound. this paper should give
   significant space to that why that act is so profound, what it means."): OFS §8 opens a section before "What the height
   fixes" (from DYH runs 1–2): the floor's remainder is address, not payload; its digits the finer levels, a second
@@ -2333,6 +2340,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Guided and blind (27 Oct, SPN R539; Tom: "you need the ratios of what your looking at."; "feeling the room with a blind
   fold"): guided reaching a reading by ratios, blind reaching writing in one's own H; blindfolded, one object felt round a
   reading, the room a tower of moves checked by loops. Tower note §2⅞⅞⅞¾.
+  `ckd-plan.md` (+ `runs/ckd/ckd.py`, 27 Oct; SPN R540; Tom: "yes", then "yes, rule it"): the corner's kinds for COR's six
+  cases and BAL's contact, exact. s = 1 is a corner only with a far side at 1/s (two loops, escape, the disc); an end at
+  BAL's contact and sampling's Nyquist, a resolution limit for parallax (moves with ε), none for the sky. BAL's corner the
+  limb at 45°, s = 1/√2. Run 1's P5 killed by my tolerance, P5′ not. Notes below BAL's and COR's runs in `labs.html`.
+  `rnr-plan.md` (+ `runs/rnr/rnr.py`, 27 Oct; SPN R541; Tom: "move to RNG", "yes"): lay the range first, revisited, exact.
+  RNG's gap is the payload's median direction against the turn's corner: b only with the arrivals even in the ellipse's
+  parameter (a kind carried in); even along the outline g(b), g(1/b) = 1/g(b); even by turn 1. L's addresses the same in
+  every world; B reads 1 by construction. Run 1's Q6 killed by my code, Q6′ not. A note below RNG's runs in `labs.html`.
   `fov-plan.md` (+ `runs/fov/fov.py`, 25 Oct; SPN R495; Tom: "what we are focused on, we want maximum possible fidelity. only
   enough fidelity in the near and far fields to discriminate about where to focus next.", then "yes, 1,2,3"): exact,
   nothing killed. With every focus cell ≤ δ and every field cell within a factor ρ, the fewest cells are

@@ -1,0 +1,43 @@
+Q1  L's 10,001 boundaries identical across 15 worlds × 2 scalings: True ; corner tan 45° = 1.0
+Q2  the gap = tan of the arrivals' median direction over tan 45°
+    param b = 0.25  gap 0.25   moved by k: 0.0
+    param b = 0.5   gap 0.5   moved by k: 0.0
+    param b = 1.0   gap 1.0   moved by k: 0.0
+    param b = 2.0   gap 2.0   moved by k: 0.0
+    param b = 4.0   gap 4.0   moved by k: 0.0
+    arc   b = 0.25  gap 0.3955913690344187118630142   moved by k: 1.34e-51
+    arc   b = 0.5   gap 0.6763283533625238020717196   moved by k: 0.0
+    arc   b = 1.0   gap 1.0   moved by k: 0.0
+    arc   b = 2.0   gap 1.478571754427072712045897   moved by k: 5.35e-51
+    arc   b = 4.0   gap 2.527861015878216190466838   moved by k: 2.14e-50
+    turn  b = 0.25  gap 1.0   moved by k: 0.0
+    turn  b = 0.5   gap 1.0   moved by k: 0.0
+    turn  b = 1.0   gap 1.0   moved by k: 0.0
+    turn  b = 2.0   gap 1.0   moved by k: 0.0
+    turn  b = 4.0   gap 1.0   moved by k: 0.0
+    arc: g(b)·g(1/b) at b = 0.25 : 1.0
+    arc: g(b)·g(1/b) at b = 0.5 : 1.0
+Q3  scaling the world moved no gap: True
+Q4  B reads its arrivals' middle over its arrivals' middle: 1 in all 15, by construction
+Q5  counted gap against the exact median, in cells
+    param b = 0.25  counted 0.249986 exact 0.250000  miss 0.083 cells
+    param b = 0.5   counted 0.499966 exact 0.500000  miss 0.172 cells
+    param b = 1.0   counted 1.000000 exact 1.000000  miss 0.000 cells
+    param b = 2.0   counted 2.000135 exact 2.000000  miss 0.172 cells
+    param b = 4.0   counted 4.000221 exact 4.000000  miss 0.083 cells
+    arc   b = 0.25  counted 0.395565 exact 0.395591  miss 0.147 cells
+    arc   b = 0.5   counted 0.676275 exact 0.676328  miss 0.234 cells
+    arc   b = 1.0   counted 1.000000 exact 1.000000  miss 0.000 cells
+    arc   b = 2.0   counted 1.478689 exact 1.478572  miss 0.234 cells
+    arc   b = 4.0   counted 2.528032 exact 2.527861  miss 0.147 cells
+    turn  b = 0.25  counted 1.000000 exact 1.000000  miss 0.000 cells
+    turn  b = 0.5   counted 1.000000 exact 1.000000  miss 0.000 cells
+    turn  b = 1.0   counted 1.000000 exact 1.000000  miss 0.000 cells
+    turn  b = 2.0   counted 1.000000 exact 1.000000  miss 0.000 cells
+    turn  b = 4.0   counted 1.000000 exact 1.000000  miss 0.000 cells
+Q6  Proposition 5.4
+    (a) gaps of 1 − 2⁻ⁿ halve each time, → 0: True
+    (b) halving even at every 2^m (m ≤ 10): True ; not even at 2^m + 1: True ; order lost from the 3rd: True
+    (c) re-laying evenly moves the first address at every n ≥ 2: True
+
+verdicts: {'Q1': 'not killed', 'Q2': 'not killed', 'Q3': 'not killed', 'Q4': 'not killed', 'Q5': 'not killed', 'Q6': 'not killed'}

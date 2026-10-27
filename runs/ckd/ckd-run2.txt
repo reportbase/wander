@@ -1,0 +1,51 @@
+P1  BAL
+   s = a/d ranges [0, 1]; contact is α = 90°, the end of the limb's sweep (no s > 1 seen from outside)
+   the limb's corner: tan α = 1, s = 0.7071067811865475244 (1/√2)
+   share at α = 45°: 0.20209384104209450797
+   share at α = 90°: 1.0
+   share/s² at s = 1e-10 against 1/π: 0.3183098861837906715389612 0.3183098861837906715377675  diff 1.19e-21
+   the middle (share ½): α = 68.9045687767846 °, s = 0.93298223807601 , d/a = 1.07183176612472
+   check against BAL's own count (n = 1200) at s = 0.7: 0.1968187188
+   P1 not killed
+P2  two loops: f = min(s, 1/s)
+   {'even': True, 'complement': False, 'sign_flip': False, 'fold': False}  slopes in s 1.0 -1.0  in ln s 1.0 -1.0
+   P2 not killed
+P3  escape
+   shares {'even': True, 'complement': False, 'sign_flip': False, 'fold': False} ; energy sign flips True , odd in value False
+   symbolic: (1/s − 1) + (s − 1)/s = 0
+   P3 not killed
+P4  sampling
+   {'even': False, 'complement': False, 'sign_flip': False, 'fold': True}  f(½) = 0.5  f(2) = 0.0
+   P4 not killed
+P5  parallax
+   ε 0.01  give-out d 199.998333331  ratio when ε halves 2.00001250013021
+   ε 0.001  give-out d 1999.99983333  ratio when ε halves 2.00000012500001
+   ε 0.0001  give-out d 19999.9999833  ratio when ε halves 2.00000000125
+   levels from the corner (d = B/2) to the give-out at ε = 1e-3: 10.96578416 ; PXC acosh(1/ε)/ln 2: 10.96578392
+   P5 KILLED
+P6  the disc
+   {'even': False, 'complement': True, 'sign_flip': False, 'fold': False}  f(1) = 0.5  f'(1) = -1/2  max |f − sin²(rim)| 2.67e-51
+   symbolic: f(s) + f(1/s) = 1
+   P6 not killed
+P7  the filling sky
+   {'even': False, 'complement': False, 'sign_flip': False, 'fold': False}  f(1) = 0.632120558829  f(2) + f(½) = 1.25813
+   P7 not killed
+P8  the sort
+    BAL contact  E
+    two loops    C-even kinked
+    escape       C (shares even kinked; energy regime)
+    sampling     F (and E at Nyquist)
+    parallax     ?
+    disc         C-odd, a direction
+    sky          N
+   P8 KILLED
+
+verdicts: {'P1': 'not killed', 'P2': 'not killed', 'P3': 'not killed', 'P4': 'not killed', 'P5': 'KILLED', 'P6': 'not killed', 'P7': 'not killed', 'P8': 'KILLED'}
+
+RUN 2  P5′  parallax: the give-out moves with ε as cot(ε/2)
+   ε 0.01  ratio − exact form 0.0  (ratio/2 − 1)/(ε²/16) 1.00001041677
+   ε 0.001  ratio − exact form 5.35e-51  (ratio/2 − 1)/(ε²/16) 1.00000010417
+   ε 0.0001  ratio − exact form 0.0  (ratio/2 − 1)/(ε²/16) 1.00000000104
+   separation at ε = 1e-3: 10.96578416 ; the corner d = B/2 = 1.0 whatever ε
+   P5′ not killed
+   P8′ not killed (parallax R)
