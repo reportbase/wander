@@ -2352,6 +2352,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Review 36 (27 Oct, SPN R549; Gemini's audit of the CS companion, `plans/ofs-review-36.md`; Tom: "yes"): the
   companion's §2.1 no longer gives the reader a V; one sign for the bracket D (§2.4, §3); §6 defines the central sweep
   (φ = 2θ, Euclid III.20); §1.5 in section order.
+  **A submission version** (27 Oct, SPN R550; Tom: "go with suggestions"): `papers/ofs-submission.md`, *Addresses Given,
+  Payloads Met*, about 9,300 words, drawn from OFS under R421 (OFS stands where they differ; a change goes into OFS first
+  and is carried out to it). Outline, decisions and the proposition mapping in `plans/ofs-submission-outline.md`. For a
+  mathematics or probability journal; author Tom Brinkman, AI assistance disclosed; OFS cited as the long version.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
