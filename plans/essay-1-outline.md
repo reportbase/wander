@@ -24,15 +24,14 @@ who must agree with you. Reading and writing are two acts; one test tells them a
 About 8,000–10,000 words in nine sections, each opening on a scene and ending on what it showed. The case of h, v, H
 and V is kept throughout, and there are no symbols before §4.
 
-### 1. Waking up a thousand times larger
-- **Scene:** Poincaré, *Science and Method* (1914 translation), pp. 94–95 [checked]: "Suppose that in one night all the
-  dimensions of the universe became a thousand times larger … I shall not notice anything at all." He credits
-  Delbeuf.
-- His aside does the work: "my distance from the Pantheon will be equal to the same number of times the length of my
-  body". The body is already the ruler.
-- **Point:** what survived the night is every ratio; what changed is every amount. Name the two acts. Reading states
-  what survives; writing states amounts.
-- **Demo:** `mountain.html`, "scale the world": the blueprint moves, the reader's view does not.
+### 1. What a reader can do with no unit at all
+- **Scene:** a reader with no ruler maps a room. Two rooms, one stride between two standpoints: every corner is placed,
+  every thing sized against every other, all in strides (`room-ratios.html`).
+- **Point:** none of this needed a unit. Everything read was a ratio, and the map is complete up to one number. Name the
+  two acts: reading gets all of this for free; writing (saying how many metres) costs that one number, carried in.
+- Tom, 28 Oct: Poincaré's universe that doubles overnight is "rather mundane". The invariance is not the point; what a
+  reader can build without a unit, and what writing costs, is. Poincaré gets one line of credit in §4.
+- **Demo:** `room-ratios.html`, steps 1–3.
 
 ### 2. What a reader reads
 - **Scene:** a thumb held up against a mountain range (OFS §10).
@@ -65,6 +64,7 @@ and V is kept throughout, and there are no symbols before §4.
   - Nothing else can happen to a length-like quantity.
 - Worked through at k = 1/10, 1 and 100 on the mountain range (OFS "Two tests").
 - **History:**
+  - Poincaré 1914, pp. 94–95, the universe a thousand times larger [checked], one line;
   - Bridgman 1922, p. 20, "the requirement of the absolute significance of relative magnitude" [checked];
   - Stevens's ratio scale and permissible statistics;
   - meaningfulness as invariance (Narens [checked from his papers]).
@@ -120,8 +120,8 @@ and V is kept throughout, and there are no symbols before §4.
   - a question to ask of any quantity (did it survive the night?);
   - a count of what must be brought in;
   - a reason a lone reader can do so much with no unit at all.
-- **Close:** Poincaré again. He would not notice, because reading is all he ever did from where he lay; to tell anyone
-  how far the Pantheon is in metres, he has to bring the metre with him.
+- **Close:** back in the room. The map in strides was finished long before anyone asked for metres; the metre is the
+  one thing it had to be handed.
 
 ## Sources the essay uses (only these)
 
@@ -141,7 +141,7 @@ That is eleven, each doing work. Krantz et al. are cited only for the Π theorem
 
 ## Open choices for Tom
 
-1. **Opening scene:** Poincaré (history first), or the thumb and the mountain (the reader's own experience first).
+1. **Opening scene:** settled (Tom, 28 Oct): what a reader can do with no unit, not Poincaré.
 2. **Where the second test goes:** in this essay (§8), or held for essay 3, where the address and payload belong.
 3. **Symbols:** none, or the ratio v/h from §4 on.
 4. **Form:** a page on the site with the demos inline, or Markdown in `papers/` first.
