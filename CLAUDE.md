@@ -1143,7 +1143,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   specifically helpful to the core themes of the paper"; "dont just add tests just to add tests"): no failed tests (SPN
   R206, R207: "they are in other papers"), no checks of results that already have proofs; the record (rulings, standings, kills, sources) stays in the
   working papers and plans. **A geometry paper** (SPN
-  R201): no physics (bridges, the inverse square, the near field, worlds, the matter fraction are in `physics.md`,
+  R201; relaxed 28 Oct by R558, Tom: "Lets relax the know physics rule, they seem to want the physics.": its results stay
+  geometry, it may draw on physics and data to show what the reading does, and claims no new physics): no physics (bridges, the inverse square, the near field, worlds, the matter fraction are in `physics.md`,
   `inverse-square.md` and SPN Part II). **Its main result** (SPN R200: "it is the primary result"): the Cauchy is the
   reader's addresses, not its payload (R47; SPN §4.3; its Theorem 6: the reach of whatever arrives cancels from every
   reading, order survives every change of payload, sums do not), introduced by the hand (fingers addresses, rings
@@ -2384,7 +2385,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   predicts" after the worked cases (the observed law the turn's weighted by the spread of what arrives, in words, no ρ;
   the test that can fail); O(2) for unimodularity; "invariant measure", not "reference measure".
   A case in data (R557; Tom: "yes"): LIGO open data (LGO) after "What is observed": the amount's tail a t and a
-  transient, the Cauchy in the direction [H1 : L1]; R201 bent for one data case, Tom's to veto.
+  transient, the Cauchy in the direction [H1 : L1]. Then R558 (Tom: "Lets relax the know physics rule"): OFS may draw
+  on physics and data; no new physics claimed; the data tests may be redone blind later.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

@@ -122,7 +122,8 @@ belong to the addresses and which to what is met at them (§6).
   known (§8).
 - Past the corner, if no scale is preferred (a premise), only a logarithmic layout is consistent (Proposition 9).
 
-The paper is geometry. It makes no claim about how real observers or instruments read, and no claim about physics. A
+The paper's results are geometry. It makes no claim about how real observers or instruments read; it draws on physics
+and data to show what the reading does (one case in data, §6), and claims no new physics. A
 longer version, with the full account of the reader, further applications and classical connections, is Brinkman
 (2026).
 

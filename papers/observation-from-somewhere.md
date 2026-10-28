@@ -298,10 +298,10 @@ necessary relative to a stated ignorance, not absolutely, and each relaxation of
 alternative; Section 12 also lists the assumptions and related work. Section 11 applies the propositions to familiar
 cases (a survey, one's own height, towers of units, a room, parallax far off, the outline from one place, special
 relativity's sky), and two appendices gather the classical results that confirm steps of the main line and the
-engineered systems read against it. The paper is geometry. It is about what the
-geometry gives a reader, not about how readers or instruments make use of it, and it draws examples from physics and
-perception only to illustrate; it restates one physical case, special relativity's sky (§11), in its terms, and makes
-no new claim about physics, perception or the structure of spacetime.
+engineered systems read against it. The paper's results are geometry: what the geometry gives a reader, not how
+readers or instruments make use of it. It draws on physics and perception to show what the reading does, restating
+special relativity's sky (§11) in its terms and sorting one case in data, LIGO's noise (§7.2), and it claims no new
+physics, perception or structure of spacetime.
 
 ## 2. Setting
 
