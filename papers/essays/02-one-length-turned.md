@@ -328,6 +328,28 @@ variables before comparing directions. Charts that must keep compass bearings tr
 Mercator's projection does. Graphs of slopes are drawn with equal axes, and cameras have square pixels. The geometry gives
 the one reason underneath: c = 1 is the only two-axis drawing that has the reader's circle on it.
 
+### Circular mathematics without V
+
+That raises a fair question. The circle's equation seems to need V. On a page it reads (x/H)² + (y/V)² = 1, and it is a
+circle only when V equals H. If the reader never knows V, how can it do circular mathematics at all?
+
+The answer is that the equation on the page is the writer's. It describes a drawing with two axes, each with its own
+extent, and that drawing does need two lengths. The circle itself needs only one. Its classical definition is everything
+at one distance from a centre, and that is one length. Turn the length and its tip traces the circle, as section 2 showed.
+The turn's two parts are h = cos θ and v = sin θ, the across and up shares of the same length. So h² + v² = 1 is a fact
+about the shares of one length. The v in it is the turned length's own up share, not a share of some second party's
+breadth. Reading it as the second is where the confusion comes from.
+
+And circular mathematics was always ratio mathematics. Sine, cosine and tangent are sides over the hypotenuse. A radian
+is arc over radius. π is circumference over diameter, a ratio, so π itself is a reading. e^(iθ) is the unit circle, any
+circle divided by its own radius. The corner, π/2 and 2/π, and the Cauchy are ratios too. None of them moves when the
+world is scaled, which is the test for a reading. Trigonometry is the reader's mathematics.
+
+What the reader cannot do without an amount carried in is place a point at (x, y) in metres, state the circumference as
+2π times so many metres or the area as so many square metres, or say how large another party's circle is beside its own.
+Those are amounts, and amounts are writing. The reader does every part of circular mathematics except the parts that
+state a size.
+
 ---
 
 ## 10. What it comes to

@@ -2417,6 +2417,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   step counted, ranging, an agreed unit), each moved by scaling the world; a reader that comes to know V has written, not
   read better; the reader's geometry needs V unknown (horizon, corner as median, missing mean), a writer knowing V has a
   closed circle and no horizon. OFS §3.8 closing paragraph and Appendix A's Cauchy entry; essay 1 §4.
+  **Circular mathematics without V** (28 Oct, SPN R566; Tom: "V is required in circles equations. How than is it possible
+  to do circular math with out a circle.", then "Yes add to both"): (x/H)² + (y/V)² = 1 is a two-axis drawing's, a
+  writer's; the circle needs one length (|r| = H), turned; h = cos θ, v = sin θ the shares of one H, v its own up share;
+  trigonometry, radians, π, e^(iθ), the corner, π/2 and 2/π, the Cauchy all ratios, all reading; what needs an amount is
+  a point in a unit, the circumference or area as amounts, another party's circle beside one's own. OFS §5 after "What
+  V = H names"; essay 2 §9.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

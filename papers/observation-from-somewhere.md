@@ -1317,6 +1317,18 @@ world. Step (a) is close to a definition; we claim only that a situated reader h
   known (Proposition 13, §9); it enters only the amounts, as a shift of every one of them by the same number of levels,
   and never redraws the circle.
 
+**Circular mathematics without V.** The circle's usual equation seems to need V: on a page, (x/H)² + (y/V)² = 1 is a
+circle only when V = H. But that is the equation of a drawing with two axes, each with its extent, a writer's. The
+classical definition needs one length: everything at the distance H from a centre, |r| = H. The reader's circle is that
+length turned (Proposition 3(g) derives it from the turn alone). Its parts h = cos θ and v = sin θ are the across and up
+shares of the same H, and h² + v² = 1 is a fact about the shares of one length; the v in it is the turned length's own
+up share, not a share of a second party's breadth. Circular mathematics was always ratio mathematics in this sense: sine,
+cosine and tangent are sides over the hypotenuse, the radian is arc over radius, π is circumference over diameter,
+e^(iθ) is any circle over its own radius, and the corner, π/2 and 2/π and the Cauchy are ratios too; none moves when the
+world is scaled (§9), so all of it is reading. What the reader cannot do without an amount carried in is place a point at
+(x, y) in a unit, state the circumference or the area as so many units, or set its circle beside another party's: those
+are writings. The reader does every part of circular mathematics except the parts that state a size.
+
 **One choice, and two numbers that are not the reader's.**
 - *H, the reference.* The reader's one choice, and free. Every H gives the same circle and the same corner (part (b)),
   and its value sets only the zoom (§8).
