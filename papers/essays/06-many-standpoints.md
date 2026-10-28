@@ -215,6 +215,21 @@ and with it the face, the thing's distance and its speed.
 From one place, then, the addresses, their paint and the outline come free. The face needs an amount along each
 direction, written, or further standpoints.
 
+Holding an outline as one radius per direction, r(θ) on the unit circle, is classical. It is the outline's radial
+function, its polar coordinates. So is describing it by the Fourier series of that function, or of its tangent angle along
+the outline, made blind to size, position and turn by normalising (Fourier descriptors; Zahn and Roskies 1972), and so is
+taking a shape as what is left when position, scale and rotation are removed (Kendall 1984). For a convex body the
+support function plays the same part, and the areas carried by its outward normals fix it up to translation (the
+Minkowski problem, 1903; in vision, Horn's extended Gaussian image, 1984). Planets and asteroids are described by series
+of spherical harmonics in the radius.
+
+What the reading adds is where each part of that function comes from. The directions are the addresses, the same for
+every shape. The radius along each is an amount, the payload, had only by ranging, which is writing, or from further
+standpoints. Write the outline as ln r = a₀ + f(θ): the constant a₀ is the one term no ratio of radii reads, so the
+normalisation the descriptors make by choice is here what reading leaves out. The terms of f, taken in order, are a
+level of detail, the broad form first. The classical treatments begin with r(θ) in hand; the reading says what it cost
+to get it.
+
 *Demos: the face from home (ranges against silhouettes); one moon.*
 
 ---
@@ -305,11 +320,18 @@ is the length every place is found in.
 - International Astronomical Union (2012). Resolution B2, on the re-definition of the astronomical unit of length.
 - Laurentini, A. (1994). The visual hull concept for silhouette-based image understanding. *IEEE Transactions on Pattern
   Analysis and Machine Intelligence* 16(2), 150–162.
+- Zahn, C. T. and Roskies, R. Z. (1972). Fourier descriptors for plane closed curves. *IEEE Transactions on Computers*
+  C-21(3), 269–281.
+- Kendall, D. G. (1984). Shape manifolds, Procrustean metrics, and complex projective spaces. *Bulletin of the London
+  Mathematical Society* 16(2), 81–121.
+- Minkowski, H. (1903). Volumen und Oberfläche. *Mathematische Annalen* 57, 447–495.
+- Horn, B. K. P. (1984). Extended Gaussian images. *Proceedings of the IEEE* 72(12), 1671–1686.
 - Civera, J., Davison, A. J. and Montiel, J. M. M. (2008). Inverse depth parametrization for monocular SLAM. *IEEE
   Transactions on Robotics* 24(5), 932–945.
 - Triggs, B., McLauchlan, P. F., Hartley, R. I. and Fitzgibbon, A. W. (2000). Bundle adjustment — a modern synthesis. In
   *Vision Algorithms: Theory and Practice*, LNCS 1883, 298–372.
 
 The geometry is set out with proofs in *Observation from Somewhere*, §9 (Propositions 9–12, "Inside a room", "To move the
-furniture is to write", "Far off", "One standpoint gives no parallax", "From one place"), and the parallax results in the
+furniture is to write", "Far off", "One standpoint gives no parallax", "From one place"; the classical side of a shape in Appendix A, "A shape as a
+function on the circle"), and the parallax results in the
 working paper `parallax.md` (§3–§6).
