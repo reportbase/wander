@@ -216,6 +216,37 @@ it is simply not yet passed, and at a horizon never will be.
 So the construction is a faithful writer's picture of the reader's turn, the same quantiles, the same corner, drawn by
 someone who holds N. The reader has the turn itself: the share passed so far, the corner when it is met, and no end.
 
+**The reader's situation, recreated in code.** A computer is a writer: it holds amounts, positions and counts. So a
+program cannot be a reader. What it can do is recreate a reader's situation, by splitting itself in three and letting
+only one part touch N.
+
+- *The world* is the writer's array, given as a generator rather than an array, so that nothing across the boundary can
+  ask its length. It may have no end.
+- *The reader* holds an array of its own: K slots, one per equal step of its turn, fixed before anything arrives. K is
+  the reader's own count, the one it does hold; laying its own K on its own quarter turn is the construction above done
+  honestly. Each slot keeps the first paint that reaches it, since a direction is painted by the first thing on its line.
+  The reader is handed a slot number and a paint, never a position.
+- *The geometry* sits between them. It takes each element's position and the reader's H and works out which slot its
+  direction falls in, ⌊K·(2/π)·arctan(pos/H)⌋. This is where the arctangent lives. In the world the geometry gives the
+  Cauchy free; in a program somebody has to simulate it, and the simulation is the writer's part, done on the writer's
+  side of the boundary. It is not the reader computing anything.
+
+Run with K = 32 and H = 10, on a world whose slots are numbered positions 0, 1, 2, …, and four things show:
+
+- *The size is invisible.* A world of a million elements, of two million, and one without end give the reader the same
+  32 slots, identically painted. The geometry stops after 205 elements whatever the world holds, because everything from
+  about 204 onward falls in the last slot, already painted by the first thing met there.
+- *The scale is invisible.* Spread the world's positions seven times as far and take H seven times as large, and the
+  reader's slots are unchanged.
+- *H is a zoom.* Change H alone and different elements land in the slots; the slots themselves do not move.
+- *The payload is not the address.* Repaint every element and every slot keeps its place. Six of the 32 near home stay
+  unpainted, because no element of a world laid in whole steps lies in their narrow cones: directions with nothing on
+  them, as real as the painted ones.
+
+And where the world does end, the paint stops. A world of 100 elements leaves the reader's last painted slot at 29, which
+reads N/H as between 6.7 and 10.2 (the truth, 99/10, inside). The reader reads N/H to its slot's width, never N. The
+script is `runs/arr/reader.mjs`.
+
 ---
 
 ## 7. The array, read twice

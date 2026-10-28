@@ -2472,6 +2472,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   array's end, the angle as a computed number (tan, arctan) and the floor; all held by the writer. The reader lays
   nothing: its turn runs from home toward a horizon never reached, the share passed met by turning (the arctangent the
   writer's formula for it, R327), no last slot. Essay 12 §6 rewritten ("Laying an array on the quarter turn, and who can").
+  **The reader's situation recreated in code** (28 Oct, SPN R573; Tom: "so how do you recreate the readers situation with
+  arrays?", then "agree, you would have simulate the cauchy somehow."): essay 12 §6, `runs/arr/reader.mjs`. A computer is a
+  writer, so a program recreates the reader's situation by a boundary: the world a generator (no length across), the
+  reader K slots of its own (first paint met kept, handed slot and paint only), the geometry between them simulating the
+  Cauchy (⌊K·(2/π)·arctan(pos/H)⌋), the writer's part. K = 32, H = 10: a world of 10⁶, 2·10⁶ or without end gives
+  identical slots (205 elements read); scaled by 7 with H, unchanged; H alone moves which elements land; repainting moves
+  no slot; 6 near slots empty (whole-step world); a world of 100 stops paint at slot 29, N/H read in [6.7, 10.2].
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
