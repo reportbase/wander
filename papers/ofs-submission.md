@@ -523,12 +523,29 @@ profile, is the law of something observed. The reading relates them. Counted aga
 the turn's law weighted by how what arrives is spread over the directions (§2). It is the Cauchy exactly when what
 arrives is spread evenly over the reader's addresses, as a pair of independent centred normal amounts of equal spread
 is, its direction uniform by turn. So the reading makes a claim the usual readings do not: an observed law of Cauchy
-type has a uniform turn behind it, a rotation or a phase advancing steadily, and its departure from the Cauchy is the
+type has a uniform turn behind it (a rotation, a phase advancing steadily, or the direction of a pair of
+independent amounts of one spread), and its departure from the Cauchy is the
 spread of what arrives over directions, which can be measured on its own. Its median stays at the corner exactly when
 that spread weighs the two sides of the corner alike (Theorem 5(e)), and moves only by the part that does not. That is the test,
 and it can fail: a Cauchy-type law met in practice with no uniform turn to be named behind it, or whose departure from
 the Cauchy the independently measured spread of what arrives does not account for, counts against the reading. Writing a
 law as the tangent of some uniform variable does not pass the test; the turn has to be there.
+
+**A case in data.** Open data from the LIGO detectors show the sort (Abbott et al. 2023): 512 s from GPS 1257000000,
+Hanford (H1) and Livingston (L1), each whitened, 2,080,768 samples each. Taken one detector at a time, the whitened strain
+is an amount, and fitted sample by sample a Cauchy beats a Gaussian by a wide margin; read as the law of what is
+measured, that suggests a Cauchy in the noise. Read the other way it is a tail of finite spread made by one loud
+transient (a Student-t with about 16 degrees of freedom fits far better than either), and the block means of the amounts
+shrink as n^(−1/2) through the whitened band, which nothing with a Cauchy law could do. The Cauchy is elsewhere: in the
+direction [H1 : L1] of the two detectors read at one instant, a pair of nearly independent noises whose direction is
+uniform (its angle within 0.009 of the uniform law in Kolmogorov distance). Drawn at one length by each channel's own
+interquartile range, the median of |L1/H1| is 0.999 and the quartiles of L1/H1 are −0.998 and +1.000; averaged over
+blocks of up to 1,024 samples its spread does not shrink; scaling one channel by c moves the median to c exactly; and
+removing the loudest 0.1% of samples, which takes the whole of the heavy tail, leaves the angle's law where it was.
+Whitened instead by each channel's own spectrum, one of them inflated by the transient, the median sits at 0.93: that
+offset is the drawing c, not anything in the detectors. Nothing here is new physics; ratios of independent centred
+normals, the central limit theorem and transient detector noise are all known. What the reading supplies is where to
+look, in the direction and not in the amount, and what a departure from the Cauchy is evidence of.
 
 ## 7. The two sweeps meet at one point
 
@@ -780,6 +797,9 @@ Drafting, checking and editing were done with the assistance of an AI system (Cl
 direction; the numerical claims were checked by exact computation, and the author takes responsibility for the content.
 
 ## References
+
+Abbott, R. et al. (LIGO Scientific Collaboration, Virgo Collaboration and KAGRA Collaboration) (2023). Open data from
+the third observing run of LIGO, Virgo, KAGRA and GEO. *Astrophysical Journal Supplement Series* 267, 29.
 
 Archimedes (c. 225 BC). *On the Sphere and Cylinder*.
 

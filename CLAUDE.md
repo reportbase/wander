@@ -2383,6 +2383,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "yes"): "directions have no sum, so no mean" corrected (the chart's); "What is observed, and what the reading
   predicts" after the worked cases (the observed law the turn's weighted by the spread of what arrives, in words, no ρ;
   the test that can fail); O(2) for unimodularity; "invariant measure", not "reference measure".
+  A case in data (R557; Tom: "yes"): LIGO open data (LGO) after "What is observed": the amount's tail a t and a
+  transient, the Cauchy in the direction [H1 : L1]; R201 bent for one data case, Tom's to veto.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
