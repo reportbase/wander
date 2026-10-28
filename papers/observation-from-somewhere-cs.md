@@ -210,7 +210,7 @@ horizon itself.
 ## 3. The corner
 
 **Proposition 1.** Let x = v/h ∈ [0, ∞). Then x = 1 is the only point fixed by the reciprocal x ↦ 1/x. The reciprocal
-carries [0, 1) onto (1, ∞) point for point, and every sweep from v = 0 passes through x = 1. This point depends on
+carries (0, 1) onto (1, ∞) point for point, and every sweep from v = 0 passes through x = 1. This point depends on
 neither H nor V.
 
 *Proof.* The reciprocal is its own inverse and reverses order, so x < 1 exactly when 1/x > 1, and x = 1/x gives x = 1
@@ -337,9 +337,10 @@ observation alone.
 
 > **The Cauchy is not the payload; it is the address to the payload.**
 
-Call a statistic of a set of readings an *address statistic* if it depends only on their order (the ranks, the median,
-the quartiles, which side of the corner each lies on), and a *payload statistic* if it depends on their sizes (the mean,
-any sum). In computing terms, the first kind can be computed from a sort, and the second needs the values.
+Call a statistic of a set of readings an *address statistic* if it depends only on their order, so that for every
+strictly increasing f it picks out of f(X) the image of what it picks out of X (the ranks, the median, the quartiles),
+and a *payload statistic* if it depends on their sizes (the mean, any sum). Which side of the corner a reading lies on
+is kept only by the increasing maps that fix 1; it belongs to the exchange, not to order alone. In computing terms, the first kind can be computed from a sort, and the second needs the values.
 
 **Theorem 6 (the separation of address and payload).** Parts (a) and (d) concern the readings of Proposition 5 (the
 reader's one length, directions uniform by turn). Parts (b) and (c) hold for any finite set of readings. Part (e) drops both the circle and
@@ -358,7 +359,7 @@ the same ranks as X, so every address statistic picks out the same element; for 
 median f(X) = f(median X). Conversely, two sets with the same ranks are carried onto one another by some strictly
 increasing f, so ranks keep exactly what survives every such change, and nothing more.
 
-(c) *Payload statistics do not.* Among strictly increasing maps, only an affine f commutes with the mean on every set:
+(c) *Payload statistics do not, the mean among them.* Among strictly increasing maps, only an affine f commutes with the mean on every set:
 for any f that is not affine there is a set X with mean f(X) ≠ f(mean X). For convex f, mean f(X) ≥ f(mean X), with
 equality only if f is affine on the range of X.
 
@@ -367,16 +368,18 @@ and √2 + 1, a reciprocal pair. Its mean does not exist: ∫₀^s x·2/(π(1 + 
 bound.
 
 (e) *The median needs only reciprocal symmetry, and the missing mean a density of h bounded away from zero near the
-horizon.* Let the directions follow any path from all of h to all of v, with any weight, both unchanged by exchanging
-the two parties. Then the median is the corner. If moreover the law of h has a density at least f₀ > 0 on some interval
+horizon.* Let the directions follow any continuous path from all of h to all of v that comes near h = 0 only at its
+end, with any weight, both unchanged by exchanging the two parties. Then the corner is a median, the only one where the
+law increases strictly through 1. If moreover the law of h has a density at least f₀ > 0 on some interval
 (0, δ), the mean does not exist. The uniform turn on the circle is the case that gives the Cauchy of (d).
 
-*Proof.* (a) is the cancellation shown. (b) Strictly increasing maps preserve ranks; the converse is monotone
+*Proof.* (a) holds by construction, a reading being a direction; it is stated so that (b)–(e) can be read against it. (b) Strictly increasing maps preserve ranks; the converse is monotone
 interpolation between matched points. (c) A strictly increasing f satisfying f((a + b)/2) = (f(a) + f(b))/2 for all
 a, b is affine, so a non-affine f fails for some pair, and X = {a, b} is the set required. (Monotonicity is needed: an
 additive function built on a Hamel basis commutes with every finite mean without being affine.) The inequality is
 Jensen's. (d) The distribution function is (2/π)·arctan(v/h); the integral is elementary. (e) The exchange gives
-F(1/x) = 1 − F(x), so F(1) = ½ by Proposition 2(b). The path ends at all of v, so v ≥ v₀ > 0 wherever h < δ; then
+v/h and h/v one law, so P(v/h < 1) = P(v/h > 1) and 1 is a median (for a continuous law, F(1/x) = 1 − F(x) and
+Proposition 2(b)). The path ends at all of v and comes near h = 0 only there, so v ≥ v₀ > 0 wherever h < δ; then
 P(v/h > r) ≥ f₀·v₀/r for large r, and ∫ P(v/h > r) dr diverges. ∎
 
 The theorem is elementary; its content is the reading. The addresses are given before anything arrives, and nothing
@@ -419,7 +422,9 @@ moves only its one point m + iγ, the standpoint's foot and height above the lin
 The closures are classical (Knight 1976; McCullagh 1996; Lévy 1925). For a programmer they say that the family is a
 closed type: every operation on directions returns a value of the same type, and the whole state of a law is two
 numbers. Averaging is the exception that proves the point: the mean of n independent standard Cauchy readings is a
-standard Cauchy reading, so averaging buys nothing, as it should not, since it is an operation on amounts.
+standard Cauchy reading, so averaging buys nothing, as it should not, since it is an operation on amounts. The table is
+about the signed reading over two quadrants; the reader's half-Cauchy on one quadrant is carried off its arc by a turn,
+and its average grows like (2/π)·ln n.
 
 **What breaks it.** Only operations that are not operations on directions, each of which brings an amount in:
 - squaring, X², which is not a reading of any turn;
