@@ -172,16 +172,16 @@ the amounts, a shift in levels of that party's amounts alone.
 
 ---
 
-## 9. The situations, with a second party
+## 9. Reading and writing, with a second party
 
-The first essay sorted readings into five situations by asking about the other's breadth. With a second other party the
-same question is asked of each, and a situation is one answer per party.
+The first essay sorted readings into the writer's and the reader's by asking about the other's breadth. With a second
+other party the same question is asked of each: each party's breadth is known, and written, or not, and read.
 
 - **Both known.** The writer's view in three dimensions: the solid held whole, its corners computed, no horizon. The
   truth is one point of the triangle.
 - **One known, one not.** One pair is held as a writer holds it; the other is read from somewhere. With V known, the
   corner of h and v is computed and V's amounts are exact. V₂ is read on the reader's length, its corner with h found,
-  and its amounts known up to one missing ratio. Written in one freedom, situated in the other.
+  and its amounts known up to one missing ratio. Written in one freedom, read in the other.
 - **Both read.** Every direction of the octant is an address [h : v : v₂], two numbers, laid evenly by area and painted
   by whatever arrives along it.
 
@@ -254,7 +254,7 @@ third of where you can look.
 - Cacoullos, T. (2014). Polar angle tangent vectors follow Cauchy distributions under spherical symmetry. *Journal of
   Multivariate Analysis* 128, 147–153.
 
-The geometry is set out with proofs in *Observation from Somewhere*: the cuts, the sum and the two angles in §2, the
-situations with two parties in §3.1, the reader's sphere in §5 (Proposition 3(f)), the Cauchy wedge in §7.1
+The geometry is set out with proofs in *Observation from Somewhere*: the cuts, the sum and the two angles in §2, readers
+and writers with two parties in §3.1, the reader's sphere in §5 (Proposition 3(f)), the Cauchy wedge in §7.1
 (Proposition 5(e), "Why uniformly by area", "Swept by altitude and azimuth", "More parties"), and the sphere in a cube in
 §9.

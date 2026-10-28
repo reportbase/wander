@@ -82,18 +82,19 @@ is a turn has only its own one length, and v = h becomes its split of near from 
 corner. With no size, the array's far end is no amount at all, only a direction, [0 : 1], where the chart v/h runs out:
 the horizon. Both are the reader's because the size is missing. The writer, holding the size, has neither.
 
-**The situations as arrays.** The first essay's five situations become five kinds of array.
-- **Situation 1** is a constant array of known length, every entry the radius. Its one value needs no storing, so the
+**Readers' and writers' arrays.** The first essay's two vantages give four kinds of array, two each.
+- **The writer's circle** is a constant array of known length, every entry the radius. Its one value needs no storing, so the
   array is the equation h² + v² = 1.
-- **Situation 2** is an ordinary array of known length, a breadth in amounts at every index, which the writer joins into
+- **The writer's shape** is an ordinary array of known length, a breadth in amounts at every index, which the writer joins into
   the closed shape.
-- **Situation 3** is the values without the length: an amount at each given index, known only up to one common factor.
+- **The reader's central sweep** gives the values without the length: an amount at each given index, known only up to one common factor.
   The values can be ranked and averaged against each other, and cannot be sized.
-- **Situation 4** is the index alone, laid before any value arrives and with no length: its places the Cauchy's
+- **The reader's inscribed sweep** gives the index alone, laid before any value arrives and with no length: its places the Cauchy's
   quantiles, its middle the corner, its last place running to the horizon, K places for any N.
-- **Situation 0** has no array: a length H, but no index and no relation to store.
 
-The writer's arrays are 1 and 2, with the length known. The reader's are 3 and 4, the payload on the index and the index
+With nothing related there is no array: a length H, but no index and no relation to store.
+
+The writer's arrays are the circle and the shape, with the length known. The reader's are the payload on the index and the index
 itself, with the length missing. That one number is what writing supplies.
 
 **Laid on the sweeps.** Take K = 8 places on the quarter turn. A direction's share of the turn is g = (2/π)·arctan(v/h),
@@ -288,7 +289,7 @@ transform are exact, and checked.
 address, laid before anything is stored, the Cauchy's quantiles. Its values are the payload, and storing them moves no
 place. Its length is what the writer has and the reader lacks, and the lack is what makes the corner and the horizon.
 The four kinds of array, the constant, the known-length, the values without the length and the index alone, are the
-five situations with situation 0 the empty one. Joining arrays into a closed circle is a writer's act; reading within one
+writer's two and the reader's one read, counted two ways. Joining arrays into a closed circle is a writer's act; reading within one
 is a reader's.
 
 **The Cauchy.** With two places on a circle, the kernel that carries each stored value round the circle is the Cauchy's
@@ -312,6 +313,6 @@ cascade, Fejér's cure), and *TVF — The Tangent Vector Format* (`tvf.md`). The
 Lebesgue's lemma, Jackson's estimate, Erdős and Turán's bound on the Lebesgue constant, Faber's theorem, Fejér's
 summation and the Cooley–Tukey factorization, as presented there.
 
-The array picture, its four facings, the situations as arrays and the worked example with K = 8 are set out in
+The array picture, its four facings, readers' and writers' arrays and the worked example with K = 8 are set out in
 *Observation from Somewhere*, §7.3 ("In the picture of an array", "Laid on the sweeps"), and for programmers in the
 computer-science companion, §6 ("The array").

@@ -2506,6 +2506,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   payloads."; "yes, Its passive, the reader must do something useful with those painted fingers, but were not concerned
   about that."): OFS §3.7's hand bullet says the reader is passive, nothing sent out; what it does with the painted
   fingers is not the paper's concern (R455). Restates R453, R454, R458.
+  **The situations dropped: readers and writers** (28 Oct, SPN R578; Tom: "its just one reader, with two ways of
+  converting the payload into useful information, the central and inscribed way."; "lets drop it completely.     there
+  are readers and writers."): OFS §3.1 is "Readers and writers", two questions and two vantages (the writer holds V, the
+  circle or a shape; the reader holds H, a standpoint, the addresses and their paint, one read with two sweeps, two
+  charts of one place). No numbered situations remain in OFS or the essays; entries above that cite situations 0–4
+  describe the text before. SPN keeps its numbers as the record; the demos' wording waits.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

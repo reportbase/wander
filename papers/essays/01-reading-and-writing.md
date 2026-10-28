@@ -47,17 +47,17 @@ The second act is **writing**. To say how many metres the table is, you must be 
 readings: the stride measured once against a rule. Writing cost that one number, and nothing your eyes could do would
 have supplied it.
 
-The rest of the essay takes these two acts apart. They have a structure, and the structure has five parts.
+The rest of the essay takes these two acts apart. They have a structure, and the structure has two sides.
 
 *Demo: the room in ratios, steps 1–3: one place, one step to the right, the stride counted.*
 
 ---
 
-## 2. Three questions, five situations
+## 2. Two questions, two vantages
 
-Every reading you could ever take can be sorted by asking three questions about it. Each question has two answers, and
+Every reading you could ever take can be sorted by asking two questions about it. Each question has two answers, and
 each answer either ends the sorting or leads to the next question. So every reading lands in exactly one place, and the
-places do not overlap. There are five of them, and we will call them the five *situations*.
+places do not overlap. There are two of them: the writer's and the reader's.
 
 Before the questions, a little language. You, the reader, have a length of your own. It might be your stride, your
 thumb held at arm's length, your eye height above the floor, or the length of a rod you happen to be carrying. Call it
@@ -70,66 +70,57 @@ Keeping the two apart is most of the work.
 Now the questions.
 
 **First: is anything related to you at all?** If nothing is, if there is no h because nothing is set against your
-length, then there is nothing to read. That is **situation 0**: you have your own length and nothing to hold it
-against. It sounds empty, and it is. But it is worth naming, because it shows that having a length is not the same as
-having a reading. A ruler in a dark room measures nothing.
+length, then there is nothing to read. You have your own length and nothing to hold it against. Having a length is not
+the same as having a reading. A ruler in a dark room measures nothing.
 
 **Second: is the other's breadth V known?** If it is, the whole thing is in your hands: both lengths, both amounts, and
-everything that follows from them. There are two cases. If V equals H in every direction, the whole is a circle, and
-that is **situation 1**: the equation h² + v² = 1, held whole. If V is known but differs from H, or differs from one
-direction to another, the whole is some other shape, an ellipse, a coastline, a floor plan, a breadth given in every
-direction. That is **situation 2**.
+everything that follows from them. That is the **writer**. If V equals H in every direction, the whole is a circle, the
+equation h² + v² = 1, held whole. If V is known but differs from H, or differs from one direction to another, the whole
+is some other shape, an ellipse, a coastline, a floor plan, a breadth given in every direction.
 
-**Third: if V is not known, what do you have?** You have a standpoint. You are somewhere, looking out, and what you
-have is what arrives at that place. It comes in two parts. One part is the directions themselves, the places on your
-view where something can be: each one a ratio of v to h and nothing more. That is **situation 4**, the *addresses*.
-The other part is what arrives along each direction, its colour, brightness and texture, laid onto those addresses.
-That is **situation 3**, the *paint*. The paint never comes without its address, because whatever arrives arrives
-along some direction. The addresses can come without the paint: a direction along which nothing arrives is still a
-direction.
+If V is not known, you have a standpoint, and you are the **reader**. You are somewhere, looking out, and what you have
+is what arrives at that place. It comes in two parts. One part is the directions themselves, the places on your view
+where something can be: each one a ratio of v to h and nothing more. These are the *addresses*. The other part is what
+arrives along each direction, its colour, brightness and texture, laid onto those addresses: the *paint*. The paint
+never comes without its address, because whatever arrives arrives along some direction. The addresses can come without
+the paint: a direction along which nothing arrives is still a direction. Addresses and paint are not two kinds of reader.
+They are one reader's one read, and the geometry gives two ways of reading where the paint sits, which later essays call
+the inscribed and the central sweeps.
 
-| situation | what you know | what you have | a picture of it |
+| vantage | what you know | what you have | a picture of it |
 |---|---|---|---|
-| 0 | your length H, and nothing related to it | nothing to read | a ruler in the dark |
-| 1 | the other's breadth V, equal to H | the whole, as a circle | the equation h² + v² = 1 |
-| 2 | V, unequal to H or varying | the whole, as a shape | a blueprint |
-| 3 | not V; a standpoint | what arrives along each direction | a stained-glass window, each pane lit |
-| 4 | not V; a standpoint | the directions alone | the fingers of a hand held up, no amount |
+| the writer | the other's breadth V, equal to H or not | the whole, as a circle or a shape | the equation h² + v² = 1; a blueprint |
+| the reader | your length H, and a standpoint; never V | the directions, and what arrives along each | a hand held up to a stained-glass window |
 
-Each situation has a scene that fits it.
+Each has a scene that fits it.
 
-Situation 1 is the circle in a geometry book: centre, radius, the equation, every point at once.
+The writer has the circle in a geometry book, centre, radius, the equation, every point at once; or an architect's
+drawing, every wall drawn to scale, front and back, from no particular place, every length marked in one unit.
 
-Situation 2 is an architect's drawing: every wall drawn to scale, front and back, from no particular place, every
-length marked in one unit.
+The reader has a stained-glass window seen from inside a church, with its own hand held up against it, fingers spread.
+Each finger points in one direction. The fingers are there whether the light is bright or dim, red or blue, or out
+altogether. They are the places the colour can be put. They are not the colour. Each pane lights the finger it lines up
+with, and the window tells you nothing about how far away the sun is.
 
-Situation 3 is a stained-glass window seen from inside a church. Each pane is a direction, and each is lit by whatever
-light comes through it. What you see is colour laid on a pattern of directions. The window tells you nothing about how
-far away the sun is.
+### Things that look like a third vantage
 
-Situation 4 is your own hand held up against the window, fingers spread. Each finger points in one direction. The
-fingers are there whether the light is bright or dim, red or blue, or out altogether. They are the places the colour
-can be put. They are not the colour.
-
-### Things that look like a sixth situation
-
-People sometimes think of a case the five leave out. Each turns out to be one of the five.
+People sometimes think of a case the two leave out. Each turns out to be one of the two.
 
 - **You know V only roughly**, say "the mountain is somewhere between ten and thirty miles wide". This is a reading
-  from a standpoint, situation 3 or 4, with its one missing number known within bounds. The bounds narrow the guess;
-  they do not change what was read.
-- **Several readers.** Each has a situation of its own. What passes between them is a separate matter, which the essay
+  from a standpoint, with its one missing number known within bounds. The bounds narrow the guess; they do not change
+  what was read.
+- **Several readers.** Each has a standpoint of its own. What passes between them is a separate matter, which the essay
   comes to in section 6.
-- **A system that changes over time.** At any one reading it is in one situation. It can move between them, as the
-  reader in the room moved from 4 to something like 2 the moment the stride was measured.
+- **A system that changes over time.** At any one reading it is the reader's or the writer's. It can move between them,
+  as the reader in the room moved to the writer's side the moment the stride was measured.
 - **Directions along which nothing arrives.** These are still addresses, with nothing painted on them. That is a fact
-  about what arrives, not about the situation.
+  about what arrives, not about the vantage.
 - **Your own length changes between readings.** This changes no reading. Every reading is a ratio, and your unit
   cancels from every ratio. Each reading is then a reader of its own, and joining them is the business of several
   readers again.
 
-The five are exhaustive. That is a strong claim, and it matters. It means that anything you could record about the
-world can be asked: which situation was this read in? The answer settles what the record can and cannot contain.
+The two are exhaustive. That is a strong claim, and it matters. It means that anything you could record about the
+world can be asked: was this read or written? The answer settles what the record can and cannot contain.
 
 *Demo: the writer's box, its three views: the writer's, the reader's from home, and ranges.*
 
@@ -137,35 +128,33 @@ world can be asked: which situation was this read in? The answer settles what th
 
 ## 3. Reading and writing, sorted
 
-The five situations divide cleanly between the two acts of the first section.
+The two vantages divide cleanly between the two acts of the first section.
 
-**Situation 2 is writing alone.** A blueprint states amounts: this wall is four metres, that door is ninety
+**The writer's shapes are writing alone.** A blueprint states amounts: this wall is four metres, that door is ninety
 centimetres. To make one, you must hold every breadth, and holding every breadth means holding the whole, front and
 back, from no standpoint at all. An architect's drawing is not a view from anywhere. It is what you would have if you
 could stand nowhere and see everything. Its natural frame is a box, one number line along each axis, both signs, every
 extent an amount. Nothing in it is round, because roundness, as we will see, belongs to turning from a point, and the
 blueprint has no point to turn from.
 
-**Situations 3 and 4 are reading alone.** They are what a standpoint has: directions, and what arrives along them. No
-second breadth is known, and none is needed to read.
+**The addresses and their paint are reading alone.** They are what a standpoint has: directions, and what arrives along
+them. No second breadth is known, and none is needed to read.
 
-**Situation 1 is shared, and that is why the whole distinction is so easy to miss.** The circle is the most familiar
+**The circle is shared, and that is why the whole distinction is so easy to miss.** The circle is the most familiar
 object in mathematics, and it belongs to both sides. A writer holds it as an equation, h² + v² = 1, with V known to
 equal H. A reader holds it in a quite different way, as its own single length turned round, which section 4 will
 explain. The two hold the same circle. Because of that, the line between reading and writing runs straight through the
-middle of the thing everyone starts from, and it is very hard to see. Classical geometry works almost entirely in
-situations 1 and 2, the writer's side. It never needs to say so, because the circle it begins with looks the same from
-both sides.
+middle of the thing everyone starts from, and it is very hard to see. Classical geometry works almost entirely on the
+writer's side. It never needs to say so, because the circle it begins with looks the same from both sides.
 
 So the map is simple:
 
-| situation | whose |
+| what | whose |
 |---|---|
-| 0 | no one's: nothing to read |
-| 1 | both: the writer's equation, the reader's turned length |
-| 2 | the writer's alone |
-| 3 | the reader's alone: the paint |
-| 4 | the reader's alone: the addresses |
+| nothing related | no one's: nothing to read |
+| the circle | both: the writer's equation, the reader's turned length |
+| any other shape, in amounts | the writer's alone |
+| the addresses and their paint | the reader's alone |
 
 ### What writing needs
 
@@ -207,7 +196,7 @@ are, not how many units. Neither ruler is better. They are made for different ac
 
 Here is the part of the story that seems to me the most surprising.
 
-Look again at situation 1, the circle, the place where reader and writer meet. The writer's circle is an equation in
+Look again at the circle, the place where reader and writer meet. The writer's circle is an equation in
 two breadths. To write h² + v² = 1, and to mean it as a statement about lengths, you must know V and know that it
 equals H. Two amounts, and a claim about how they compare.
 
@@ -358,8 +347,8 @@ Scale by a hundred, so the range is two thousand miles wide, a thousand miles aw
 large. The view is still the same. The mountain's width in miles changed every time. Its width against your thumb never
 did.
 
-Try it on the five situations. Situations 3 and 4, the paint and the addresses, never move: they are what a standpoint
-has, and a standpoint has only directions. Situation 2, the blueprint, moves by k in every number it states. Situation 1
+Try it on the two vantages. The reader's paint and addresses never move: they are what a standpoint has, and a
+standpoint has only directions. The writer's blueprint moves by k in every number it states. The circle
 splits down the middle: the writer's equation, read as amounts, moves; the reader's turned length, read as directions,
 does not.
 
@@ -538,7 +527,7 @@ a small symmetric error becomes, once turned upside down into a distance, a dist
 catalogues that treat the distances as if they were the measurements come out biased (astronomers know the effect as
 the Lutz–Kelker bias). Keeping the reading and the writing apart is most of the cure.
 
-**It asks one question of any quantity.** Which situation was this read in? Was it a direction, something painted on a
+**It asks one question of any quantity.** Was it read or written? Was it a direction, something painted on a
 direction, a shape held whole, or an amount stated in a unit? The answer says what the quantity can and cannot contain.
 A record that scaling the world would leave unchanged cannot contain the world's size, however carefully it was made.
 
@@ -589,6 +578,6 @@ The essay draws on these; each is cited for something it uses.
 - Warren, W. H. (1984). Perceiving affordances: visual guidance of stair climbing. *Journal of Experimental
   Psychology: Human Perception and Performance* 10(5), 683–703.
 
-The geometry is set out with proofs in *Observation from Somewhere*, in the same collection: the five situations in
+The geometry is set out with proofs in *Observation from Somewhere*, in the same collection: readers and writers in
 §3.1, the reader's circle in §5, the Cauchy as the law of the uniform turn in §7, reading and writing in §9, and the classical pieces in Appendix A
 ("The Cauchy from one length").
