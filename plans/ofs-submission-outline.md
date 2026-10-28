@@ -73,3 +73,27 @@ Total about 14,000 words with the appendix; the cut to 12,000 comes from §5 and
    disclosure line; your call.
 5. **Where the long version lives.** Citing OFS as "the long version" works best if it is public with a stable link
    (arXiv, Zenodo, or the GitHub file at a tagged commit).
+
+## Decisions (27 October; Tom: "go with suggestions")
+
+1. Venue: a mathematics or probability journal with a foundations interest.
+2. Spine: the separation; "ratios suffice, a blueprint adds" one paragraph (§8).
+3. §3's account of the reader: two paragraphs in the submission; OFS keeps it whole.
+4. Author line "Tom Brinkman", AI assistance disclosed in the acknowledgements.
+5. The long version cited at its GitHub path on `main`; a tagged commit or an arXiv copy is for Tom to make.
+
+## Drafted
+
+`papers/ofs-submission.md`, about 9,300 words before the references (39 entries), drawn from OFS under R421. Its section
+order differs a little from the outline: the separation (§6) comes before the two sweeps (§7), and what no reading carries
+(§8) before the lay past the corner (§9). Propositions are numbered in order, so they differ from OFS's:
+
+| submission | OFS |
+|---|---|
+| Propositions 1, 2, 3 | Propositions 1, 2, 3 (3's parts (a)–(c), (e), (g) as (a)–(e)) |
+| Proposition 4 | Proposition 5 ((a)–(b), (d) as (c), (e) as (d)) |
+| Theorem 5 | Theorem 6 |
+| Propositions 6, 7, 8 | Propositions 8, 11, 13 |
+| Proposition 9 | Proposition 4 |
+
+Nothing in it is new to OFS; where they differ, OFS stands and the submission is fixed.

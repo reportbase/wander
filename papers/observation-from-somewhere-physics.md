@@ -100,7 +100,8 @@ Every result below carries one of four marks.
 
 What follows is OFS's, stated only as far as this paper needs.
 
-**Unit relations.** Any relation between two parties is a pair h, v, each between 0 and 1, a share of its own breadth.
+**Unit relations.** Any relation between two parties is a pair h, v, each between 0 and 1. For the reader both are shares
+of its one length H; a writer, who holds both hemispheres, takes each as a share of its own party's breadth.
 The reading is the ratio v/h, a direction. Neither unit relation can pass 1, so every relation turns over at one point,
 v = h, the *corner*, the only reading fixed by the reciprocal x ↦ 1/x (OFS Proposition 1). Lowercase h and v are
 geometry and carry no unit; uppercase H, V and the distance d are amounts. A conclusion crosses from one to the other only
@@ -125,8 +126,8 @@ carried in.
 
 **The two sweeps** (OFS §4). From home the directions are laid by the *inscribed* sweep, at angle θ; the same quarter seen
 from the centre of the circle they land on is the *central* sweep, at 2θ. The two meet at one point for every direction
-(Euclid III.20). The central point is (h², hv) on the circle over the line; its height 2hv and foot h² are bounded
-quantities with means.
+(Euclid III.20). The central point is ½(h² − v², 2hv) from the chord's middle, at (h², hv) over the chord of length 1;
+its height 2hv = sin 2θ (in the radius) and its foot h² on the chord are bounded quantities with means.
 
 **What a blueprint adds** (OFS §9). Ratios suffice for everything a reader does from where it stands. A blueprint, the
 writer's statement in amounts, adds seven things no reading supplies, the first two being the size and a unit agreed
@@ -188,7 +189,7 @@ a single standpoint reads it.
 | the paint per address constant; the count of addresses a source covers | the radiance theorem; irradiance as radiance times projected solid angle | the source's size, to state 1/d² |
 | the uniform turn aimed outward, laid on a flat receiver | a point source on a plane, the cos³ law: half the 2-dimensional Cauchy of scale d | the source's power |
 | a census of directions with no payload cut | Ellis and Baldwin's "2", the aberration term of the count dipole | none |
-| the parallel reader's bell, sech of the levels from the corner | parallax's relative error per unit angle, cosh(ln k) | the baseline |
+| the central sweep's height, sin 2θ = sech of the levels from the corner | parallax's relative error per unit angle, cosh(ln k) | the baseline |
 | the inscribed reading, laid by a uniform turn | a weak value under a uniform turn of the post-selection: the Cauchy at ⟨σz⟩ + iV | none |
 | the central point at 2θ, its foot h² and height 2hv | the Bloch point; Born's weight; interference's visibility 2hv | Born's rule |
 | the sum cut h + v = 1 of two standpoints' readings | hard-ball contact, d = r_a + r_b | none |
@@ -243,7 +244,7 @@ Every length below is in the reader's own lengths; every time on its own clock.
 | temperature, equilibrium, the second law | from outside the box, from tags' rates alone: the speeds along the line flat at first (kurtosis 1.79) and a bell late (2.89), temperature to 3–4%, and the spread of what the reader lays on its sky rising by 0.63–0.64 against ln 2 as balls are let into the whole, at every grain the count fills. |
 | Gibbs | identical balls kept apart from unnamed arrivals: 100% when laid at depth and read faster than they touch, whatever depth the reader guesses; 80% on the sky only; none when read slowly. |
 | triangulation, radar, synchrony, the metre by light | two readers who never move, joined by round trips, a far star both see and two-way ticks, place every still body exactly in signal-seconds; a moving reader's distances are the company's times one number for all bodies, 20.00000, the signals' speed in its own lengths. Company stands in for travel, up to the unit. |
-| Bell, CHSH, independent clocks joined afterwards | alone, an even share at every setting whatever the other does; joined by the rhythm of the clicks alone, \|S\| = 2.840 ± 0.014 when the world draws on demand, 2.001 ± 0.017 when every value is held in advance. The world's draw is built in. |
+| Bell, CHSH, independent clocks joined afterwards (Bell 1964; Clauser et al. 1969) | alone, an even share at every setting whatever the other does; joined by the rhythm of the clicks alone, \|S\| = 2.840 ± 0.014 when the world draws on demand, 2.001 ± 0.017 when every value is held in advance. The world's draw is built in. |
 | one quantum at a time; which way; erasure | fringes of visibility 1.008 ± 0.012 built up in clicks, the wavelength read as 0.04991 against 0.05; a which-way mark takes them from the screen alone (0.021); sorted by the erasing marker in company they return as fringes and anti-fringes 0.500 of a spacing apart. An overall phase moves no click. Built in: the world's draw. |
 | Hong, Ou and Mandel (1987) | identical quanta arriving together leave together: both readers click for 12 pairs in 4,000, where apart in time or marked they do for half; the dip's width on the readers' own clocks is the quanta's own duration. Unlike the balls, no record says which quantum is which: identity here is the world's. Built in: the world's draw. |
 
@@ -511,14 +512,14 @@ Three experiments in Wander met the law's two halves.
 
 ### 7.4 Light and number on the stars [data]
 
-- **Two levels of light per level of distance.** On the Hipparcos stars, with distance from parallax and kind from the
-  spectrum: G0–G5 dwarfs within 23 pc lose 2.02 levels of light per level of distance (83 stars), K0 giants where the
-  catalogue is complete 1.93 (533). A known kind is a bridge about a level wide: K0 III scatters 1.4 levels, and about
-  one in ten so labelled is something fainter.
-- **Within 100 pc, three levels of number per level of distance.** On the Gaia Catalogue of Nearby Stars, main-sequence
-  stars by colour: 2.93 to 3.00 for each kind once no cut that depends on distance is used, plane and poles alike; by
-  light, inside each kind's complete volume, about 1.5. The even spread holds within 100 pc. (Read after a run whose four
-  predictions were killed, §12.)
+- **Two levels of light per level of distance.** On the Hipparcos stars (ESA 1997), with distance from parallax and
+  kind from the spectrum: G0–G5 dwarfs within 23 pc lose 2.02 levels of light per level of distance (83 stars), K0
+  giants where the catalogue is complete 1.93 (533). A known kind is a bridge about a level wide: K0 III scatters 1.4
+  levels, and about one in ten so labelled is something fainter.
+- **Within 100 pc, three levels of number per level of distance.** On the Gaia Catalogue of Nearby Stars (Gaia
+  Collaboration, Smart et al. 2021), main-sequence stars by colour: 2.93 to 3.00 for each kind once no cut that
+  depends on distance is used, plane and poles alike; by light, inside each kind's complete volume, about 1.5. The
+  even spread holds within 100 pc. (Read after a run whose four predictions were killed, §12.)
 - **Hipparcos counts rise 1.2 levels per level of light, not 1.5,** alike in the plane (1.229) and toward the poles
   (1.227). A count by light is a reading, with no distance in it: CNT's 1.2 reads the world's shape, between a sphere's
   1.5 and a slab's 1.0. Most of the stars counted lie past 100 pc in a thin layer of luminous kinds seen through dust;
@@ -534,7 +535,7 @@ Two standpoints a baseline B apart read the parallax angle γ of a point at dist
 (B/2, d), with ratio k = (B/2)/d; its corner is the Thales circle on the baseline, where γ = 90°.
 
 - The relative distance error per unit angle is cosh(ln k), least at the corner, and the same at k and 1/k; sin γ =
-  sech(ln k), the parallel reader's bell.
+  sech(ln k), the central sweep's height sin 2θ (OFS §4).
 - With angles read to a step ε, the band in which the relative error stays under one (ε·cosh(ln k) ≤ 1) runs
   acosh(1/ε)/ln 2 levels each side of the corner: 10.966 at ε = 10⁻³. Its far edge is about B/ε. Past it a point is only a ray: parallax needs a situated
   observation, and returns to one.
@@ -573,13 +574,14 @@ against payload. All known in metrology and astronomy; the sorting is OFS's.
 
 ### 8.3 The distance ladder as a tower [data]
 
-A rung's error is one factor, a shift in levels, only if it is flat against an independent distance. On Cosmicflows-4,
-Hubble's 1929 rungs are not (slopes 0.79 and 0.16 against 1): his brightest-star rung is a stretch, a ruler of another
-layout, not a factor. A drift that fails to close between two rungs belongs to the sample they share, not to the rungs: the
-apparent drift of the fundamental plane and surface-brightness fluctuations against type Ia supernovae is their 58
-shared galaxies', and away from that overlap neither drifts more than 0.016 mag per mag. A network of loops whose routes
-cross different objects locates a misread link; a single comparison cannot. The angles, flux ratios of one kind and ratios
-between rungs are readings; the astronomical unit, the anchors, every megaparsec and H₀ are writings.
+A rung's error is one factor, a shift in levels, only if it is flat against an independent distance. On Cosmicflows-4
+(Tully et al. 2023), Hubble's rungs (Hubble 1929) are not (slopes 0.79 and 0.16 against 1): his brightest-star rung is a
+stretch, a ruler of another layout, not a factor. A drift that fails to close between two rungs belongs to the sample
+they share, not to the rungs: the apparent drift of the fundamental plane and surface-brightness fluctuations against
+type Ia supernovae is their 58 shared galaxies', and away from that overlap neither drifts more than 0.016 mag per mag.
+A network of loops whose routes cross different objects locates a misread link; a single comparison cannot. The angles,
+flux ratios of one kind and ratios between rungs are readings; the astronomical unit, the anchors, every megaparsec and
+H₀ are writings.
 
 ## 9. Waves and the qubit
 
@@ -589,7 +591,7 @@ A qubit's state is a ray with amplitudes h and v: a direction at θ, the inscrib
 (2hv, 0, h² − v²) on the real slice: the central sweep's point. Born's rule is the foot h². Orthogonal states are
 antipodal on the sphere; a turn of the state by 2π gives −ψ, so 720° returns it; the complex ratio ψ₁/ψ₀ is the Bloch
 sphere's stereographic chart; a pure state is on the sphere and a mixture inside. All textbook; the reading is OFS's.
-Entanglement, Bell's theorem and measurement are not touched.
+Entanglement, Bell's theorem (Bell 1964) and measurement are not touched.
 
 ### 9.2 Interference's duality relation is the facing [exact, data]
 
@@ -612,10 +614,11 @@ amplitude is the square root of a share of the counts.
 
 ### 9.3 Weak values and missing frames [exact]
 
-- **A weak value is an address.** Under a uniform turn of the post-selection, the weak value n_z − V·tan(θ_f − θ_i)
-  follows the Cauchy at ⟨σz⟩ + iV: the inscribed reading, laid by the turn. Its share past the corner ("superweak") is ½
-  for a pure state. Born-weighted, its mean is n_z and its variance V², so V² + P² = ⟨σz²⟩ = 1: the central point's
-  height and foot.
+- **A weak value is an address** (Aharonov, Albert and Vaidman 1988). A state pre-selected at angle θ_i and
+  post-selected at θ_f has the weak value of σz ⟨σz⟩ − V·tan(θ_f − θ_i), where ⟨σz⟩ = h² − v² = cos 2θ_i and V = 2hv =
+  sin 2θ_i. Under a uniform turn of the post-selection it follows the Cauchy at ⟨σz⟩ + iV: the inscribed reading, laid
+  by the turn. Its share past the corner ("superweak") is ½ for a pure state. Born-weighted, its mean is ⟨σz⟩ and its
+  variance V², so V² + P² = ⟨σz²⟩ = 1: the central point's height and foot.
 - **A missing frame is a twirl.** Without a shared phase reference (Bartlett, Rudolph and Spekkens 2007) the reader
   averages over what it cannot fix, which is Jaynes's group, the method OFS builds on. The twirl is an operation on the
   payload: it lowers the ensemble's visibility and changes no member's. Without an orientation, one qubit is I/2 and two
@@ -667,13 +670,13 @@ size, a game of pool equals the referee's to rounding, and doubling the world mo
 
 ### 10.4 Holding a world by level of detail [simulation]
 
-A hard-disc gas held as a window of discs round the reader and, beyond it, totals in cells whose breadth grows with their
-distance. Against a referee computing every disc (Enskog's contact rate to 0.1%, Rayleigh's speeds, Henderson's equation
-of state) the view's density, warmth and contacts were the referee's within 0.3%, for the work of the window, for a world
-256 times larger. It needed what open systems already need: the outside's pressure, a reservoir at fixed chemical
-potential, and books kept where pushes balance. And it lost a pulse travelling toward the reader: folding the payload into
-cells by distance is an irreversible mean. A signal must be held at its own grain, or its kind carried in, whatever its
-time to arrival; adaptive mesh refinement already does this by gradients.
+A hard-disc gas held as a window of discs round the reader and, beyond it, totals in cells whose breadth grows with
+their distance. Against a referee computing every disc (Enskog's contact rate to 0.1%, Rayleigh's speeds, Henderson's
+equation of state, Henderson 1975) the view's density, warmth and contacts were the referee's within 0.3%, for the work
+of the window, for a world 256 times larger. It needed what open systems already need: the outside's pressure, a
+reservoir at fixed chemical potential, and books kept where pushes balance. And it lost a pulse travelling toward the
+reader: folding the payload into cells by distance is an irreversible mean. A signal must be held at its own grain, or
+its kind carried in, whatever its time to arrival; adaptive mesh refinement already does this by gradients.
 
 ### 10.5 Ranging is writing [simulation]
 
@@ -881,7 +884,12 @@ theories. *Physical Review Letters* 23, 880.
 Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
 Royal Astronomical Society* 206, 377.
 
+ESA (1997). *The Hipparcos and Tycho Catalogues*. ESA SP-1200.
+
 Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77, 2154.
+
+Gaia Collaboration, Smart, R. L. et al. (2021). Gaia Early Data Release 3: the Gaia Catalogue of Nearby Stars.
+*Astronomy and Astrophysics* 649, A6.
 
 Gardner, R. J. et al. (2022). Toroidal topology of population activity in grid cells. *Nature* 602, 123.
 
@@ -889,6 +897,11 @@ Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledg
 Letters A* 128, 391.
 
 Haff, P. K. (1983). Grain flow as a fluid-mechanical phenomenon. *Journal of Fluid Mechanics* 134, 401.
+
+Henderson, D. (1975). A simple equation of state for hard discs. *Molecular Physics* 30, 971.
+
+Hubble, E. (1929). A relation between distance and radial velocity among extra-galactic nebulae. *Proceedings of the
+National Academy of Sciences* 15, 168.
 
 Hong, C. K., Ou, Z. Y. and Mandel, L. (1987). Measurement of subpicosecond time intervals between two photons by
 interference. *Physical Review Letters* 59, 2044.
@@ -929,3 +942,5 @@ Summhammer, J., Rauch, H. and Tuppinger, D. (1987). Stochastic and deterministic
 experiments. *Physical Review A* 36, 4447.
 
 Terrell, J. (1959). Invisibility of the Lorentz contraction. *Physical Review* 116, 1041.
+
+Tully, R. B. et al. (2023). Cosmicflows-4. *Astrophysical Journal* 944, 94.
