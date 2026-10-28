@@ -1,0 +1,92 @@
+  1240000000: not available (GetExceptionGroup)
+  1240000512: not available (GetExceptionGroup)
+  1240001024: not available (GetExceptionGroup)
+  1240001536: not available (GetExceptionGroup)
+  1240002048: not available (GetExceptionGroup)
+  1240002560: not available (GetExceptionGroup)
+  1240003072: not available (GetExceptionGroup)
+  1240003584: not available (GetExceptionGroup)
+  1240004096: not available (GetExceptionGroup)
+  1240004608: not available (GetExceptionGroup)
+  1240005120: not available (GetExceptionGroup)
+  1240005632: not available (GetExceptionGroup)
+  1240006144: not available (GetExceptionGroup)
+  1240006656: not available (GetExceptionGroup)
+  1240007168: not available (GetExceptionGroup)
+  1240007680: not available (GetExceptionGroup)
+  1240008192: not available (GetExceptionGroup)
+  1240008704: not available (GetExceptionGroup)
+  1240009216: not available (GetExceptionGroup)
+  1240009728: not available (GetExceptionGroup)
+  1240010240: not available (GetExceptionGroup)
+  1240010752: not available (GetExceptionGroup)
+  1240011264: not available (GetExceptionGroup)
+  1240011776: not available (GetExceptionGroup)
+  1240012288: not available (GetExceptionGroup)
+  1240012800: not available (GetExceptionGroup)
+  1240013312: not available (GetExceptionGroup)
+  1240013824: not available (GetExceptionGroup)
+  1240014336: not available (GetExceptionGroup)
+  1240014848: not available (GetExceptionGroup)
+  1240015360: not available (GetExceptionGroup)
+  1240015872: not available (GetExceptionGroup)
+  1240016384: not available (GetExceptionGroup)
+  1240016896: not available (GetExceptionGroup)
+  1240017408: not available (GetExceptionGroup)
+  1240017920: not available (GetExceptionGroup)
+  1240018432: not available (GetExceptionGroup)
+  1240018944: not available (GetExceptionGroup)
+  1240019456: not available (GetExceptionGroup)
+  1240019968: not available (GetExceptionGroup)
+segment from 1240000000: none found in 40 tries
+  1250000000: not available (GetExceptionGroup)
+  1250000512: not available (GetExceptionGroup)
+  1250001024: not available (GetExceptionGroup)
+  1250001536: not available (GetExceptionGroup)
+  1250002048: not available (GetExceptionGroup)
+  1250002560: not available (GetExceptionGroup)
+  1250003072: not available (GetExceptionGroup)
+  1250003584: not available (GetExceptionGroup)
+  1250004096: not available (GetExceptionGroup)
+  1250004608: not available (GetExceptionGroup)
+  1250005120: not available (GetExceptionGroup)
+  1250005632: not available (GetExceptionGroup)
+  1250006144: not available (GetExceptionGroup)
+  1250006656: not available (GetExceptionGroup)
+  1250007168: not available (GetExceptionGroup)
+  1250007680: not available (GetExceptionGroup)
+  1250008192: not available (GetExceptionGroup)
+  1250008704: not available (GetExceptionGroup)
+  1250009216: not available (GetExceptionGroup)
+  1250009728: not available (GetExceptionGroup)
+  1250010240: not available (GetExceptionGroup)
+  1250010752: not available (GetExceptionGroup)
+  1250011264: not available (GetExceptionGroup)
+  1250011776: not available (GetExceptionGroup)
+  1250012288: not available (GetExceptionGroup)
+  1250012800: not available (GetExceptionGroup)
+  1250013312: not available (GetExceptionGroup)
+  1250013824: not available (GetExceptionGroup)
+  1250014336: not available (GetExceptionGroup)
+  1250014848: not available (GetExceptionGroup)
+  1250015360: not available (GetExceptionGroup)
+  1250015872: not available (GetExceptionGroup)
+  1250016384: not available (GetExceptionGroup)
+  1250016896: not available (GetExceptionGroup)
+segment 1250017408: H1 sha256 e53d6f1ccfe6f7b0a14de33f6f4d635442784b38cdb6b6c91251605f780e8aee
+segment 1250017408: L1 sha256 a69e45659304d43a6878d5b3e5781a81e6ff365bcb98b61be8f95dac529b4061
+  L1: block-mean IQR slope N=1..64, H1 -0.5357, L1 -0.4830
+  L2: block-mean IQR slope of r, N=1..1024, -0.0017
+  L3: drawn, median |r| 1.0010, quartiles -1.0033, 0.9988
+  L4: c 0.8694; undrawn median |r| 0.8702, quartiles -0.8722, 0.8683
+  L5: D_sim 0.00764, D_shift 0.00774, |diff| 0.00009, two-sample 0.00051; 1.36/sqrt(N) = 0.00094
+  segment 1250017408: L1 not killed, L2 not killed, L3 not killed, L4 not killed, L5 not killed
+segment 1262000000: H1 sha256 b519186ab440176e3f646a4196e1f88185592bb1484e1f615e98ab8d21af99ea
+segment 1262000000: L1 sha256 3b8f1d925e5ef13e77b85de462dc57676c29b34ad0e039159a8e959a6d614413
+  L1: block-mean IQR slope N=1..64, H1 -0.5179, L1 -0.5022
+  L2: block-mean IQR slope of r, N=1..1024, -0.0081
+  L3: drawn, median |r| 0.9996, quartiles -0.9999, 0.9993
+  L4: c 0.9468; undrawn median |r| 0.9464, quartiles -0.9467, 0.9461
+  L5: D_sim 0.00613, D_shift 0.00608, |diff| 0.00005, two-sample 0.00039; 1.36/sqrt(N) = 0.00094
+  segment 1262000000: L1 not killed, L2 not killed, L3 not killed, L4 not killed, L5 not killed
+summary: 1240000000: no data; 1250017408: L1 ok, L2 ok, L3 ok, L4 ok, L5 ok; 1262000000: L1 ok, L2 ok, L3 ok, L4 ok, L5 ok

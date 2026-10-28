@@ -192,3 +192,30 @@ What would not be shown: anything about gravitational waves or the detectors. A 
 corner and its departure from the uniform turn are accounted for by the two channels' own laws; it does not say that a
 classical analysis would predict otherwise (it would not: this is a test that the reading's claim holds, not that a rival
 fails). L5 is the one that can fail for a reason the reading did not build in: a shared disturbance at one instant.
+
+### Run 3 (28 Oct, `python3 runs/lgo/lgo3.py`; output `runs/lgo/lgo-run3.txt`)
+
+The segment rule found two of the three segments. From GPS 1240000000 none of the 40 starts (1240000000 … 1240019968)
+had data: GWOSC holds no H1 dataset there ("Cannot find a GWOSC dataset for H1 covering [1240000000, 1240000512)"), a gap
+in the run, not a failed prediction. The run therefore has two segments, not the three planned; nothing was substituted.
+- **Segment 1250017408** (the rule's 35th start from 1250000000). sha256 of the strain as fetched: H1
+  `e53d6f1ccfe6f7b0a14de33f6f4d635442784b38cdb6b6c91251605f780e8aee`, L1
+  `a69e45659304d43a6878d5b3e5781a81e6ff365bcb98b61be8f95dac529b4061`.
+  L1 not killed (slopes −0.536, −0.483); L2 not killed (−0.002); L3 not killed (median |r| 1.0010, quartiles −1.0033,
+  0.9988); L4 not killed (c = 0.8694; median 0.8702, quartiles −0.8722, 0.8683); L5 not killed (D_sim 0.00764, D_shift
+  0.00774, difference 0.00009; two-sample 0.00051).
+- **Segment 1262000000** (the rule's first start). sha256: H1
+  `b519186ab440176e3f646a4196e1f88185592bb1484e1f615e98ab8d21af99ea`, L1
+  `3b8f1d925e5ef13e77b85de462dc57676c29b34ad0e039159a8e959a6d614413`.
+  L1 not killed (−0.518, −0.502); L2 not killed (−0.008); L3 not killed (0.9996; −0.9999, 0.9993); L4 not killed
+  (c = 0.9468; 0.9464; −0.9467, 0.9461); L5 not killed (D_sim 0.00613, D_shift 0.00608, difference 0.00005; two-sample
+  0.00039).
+
+**Where run 3 stands.** On data not seen when the predictions were written, every prediction held on both segments. The
+angle is detectably not uniform in each (0.0076 and 0.0061 against a sampling scale of 0.00094), and pairing each H1
+sample with the L1 sample 8 s away, which keeps each channel's own law and destroys their joint timing, reproduces that
+departure to 0.0001, the two sets of angles indistinguishable at 0.0005. So the direction's law, its corner and its
+departure from the uniform turn are accounted for by the two channels' own laws, measured separately, as the paper's
+claim says. L5 could have failed, through a disturbance shared at one instant; it did not. As the predictions said, a
+classical analysis would not predict otherwise: this shows the claim holds where it can be checked, not that a rival
+fails. Two segments, not three.

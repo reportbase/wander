@@ -541,7 +541,12 @@ transient (a Student-t with about 16 degrees of freedom fits far better than eit
 shrink as n^(−1/2) through the whitened band, which nothing with a Cauchy law could do. The Cauchy is elsewhere: in the
 direction [H1 : L1] of the two detectors read at one instant, a pair of nearly independent noises whose direction is
 close to uniform: its angle is 0.009 from the uniform law in Kolmogorov distance, small but, at two million samples, more
-than sampling explains, as the channels' unequal spreads and the transient lead one to expect. Drawn at one length by each channel's own
+than sampling explains, as the channels' unequal spreads and the transient lead one to expect. On two further
+segments, with the predictions written down before the data were fetched, all of what follows held again, and the
+reading's test, which could have failed, did not: pairing each sample of one detector with the other's 8 s away, which
+keeps each channel's own law and loses their joint timing, reproduces the angle's departure from uniform (0.0076 and
+0.0061, against a sampling scale of 0.0009) to within 0.0001. The departure is the spread of what arrives, measured from
+each channel alone. Drawn at one length by each channel's own
 interquartile range, the median of |L1/H1| is 0.999 and the quartiles of L1/H1 are −0.998 and +1.000; averaged over
 blocks of up to 1,024 samples its spread does not shrink; scaling one channel by c moves the median to c exactly; and
 removing the loudest 0.1% of samples, which takes the whole of the heavy tail, leaves the angle's law where it was.
