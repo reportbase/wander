@@ -19,7 +19,7 @@ runs out of anything to size it, there is a horizon. And from where the reader s
 expression, `a[i]`, comes apart into two things that share only a place.
 
 This essay takes the array apart in that order: the writer's array, an apple held in the hand, the reader's sweep, the
-horizon, the two numbers at the end of the sweep, any array laid on the quarter turn, and then the array again, read
+horizon, the two numbers at the end of the sweep, an array laid on the quarter turn (and who can lay it), and then the array again, read
 twice.
 
 *Demos: `array-sweeps.html` (K places on the quarter turn, the index alone, the values on it, an array of known length);
@@ -184,35 +184,37 @@ So the three vantages have three numbers for the one chord:
 
 ---
 
-## 6. Laying any array on the quarter turn
+## 6. Laying an array on the quarter turn, and who can
 
-Here is the move that makes the rest of this essay concrete. Take any array, of any length, and lay it on the quarter
-turn: its first slot just past 0°, its last just short of 90°. Slot k of N goes to the angle
+There is a neat construction that seems to give the reader its way into any array. It turns out to be the writer's,
+and seeing why is the point of this section.
+
+**The construction.** Take any array and lay it on the quarter turn: its first slot just past 0°, its last just short
+of 90°. Slot k of N goes to the angle
 
   θ_k = (k + ½)·(π/2)/N.
 
-An array of ten slots and an array of ten billion now span the same turn. Each slot has stopped being one number on a
-line and become a direction, [h : v] = [cos θ_k : sin θ_k], two shares where there was one index. That is what stepping
-off the array means: the index lived on a line, and a direction lives in the plane. Two ways into the array come with
-it, one each way.
+Arrays of ten slots and of ten billion now span the same turn, each slot a direction [cos θ_k : sin θ_k] in place of
+one index. Two formulas move between them. The tangent takes a slot to a ratio: for ten slots the boundaries fall at 0,
+0.158, 0.325, 0.510, 0.727, 1, 1.376, 1.963, 3.078, 6.314 and ∞, the half-Cauchy's quantiles, the middle of the array at
+the corner. The arctangent takes any ratio x back to its slot, k = ⌊N·(2/π)·arctan x⌋: x = ½ to slot 2, x = 1 to the
+corner, x = 3 to slot 7, and everything from about 6.3 upward to slot 9, the last.
 
-**Tangent: from a slot to a reading.** Slot k carries the ratio tan θ_k. For ten slots the boundaries between them fall
-at 0, 0.158, 0.325, 0.510, 0.727, 1, 1.376, 1.963, 3.078, 6.314 and ∞. These are the half-Cauchy's quantiles: half the
-slots lie below 1 and half above, and the middle of the array, the boundary between slots 4 and 5, is the corner.
+**Every step of it is the writer's.** To lay the array the writer needs N: the step is 90°/N. To put the last slot just
+short of 90° it needs to know that the array ends, and where. To use the tangent and the arctangent it needs the angle as
+a number it can compute with, a turn measured from outside. And the floor, ⌊N·g⌋, needs `sizeof` again. All of this is
+done holding the array whole, with both of its ends in hand. It is the writer stepping off its own array and drawing it
+on a quarter circle, and it works because the writer knows everything the drawing uses.
 
-**Arctangent: from a reading to a slot.** Any ratio x, from 0 to ∞, finds its slot at
+**What the reader has instead.** The reader lays nothing. It has its own turn from home, and the turn is not a range it
+knows to run from 0° to 90°: 0 is where it stands, and 90° is the horizon, which it never reaches and which no slot sits
+next to. It does not compute an arctangent. The share of its turn already passed is what the turning gives it, met as it
+goes; the arctangent is the writer's formula for that share, not something the reader works out. There is no last slot
+for it either, because a last slot is where an N ends. Whatever lies past what it has swept is not "the horizon's slot";
+it is simply not yet passed, and at a horizon never will be.
 
-  k = ⌊N·(2/π)·arctan x⌋.
-
-For ten slots, x = ½ lands in slot 2, x = 1 at the corner in slot 5, x = 3 in slot 7, and every x from about 6.3 upward
-in slot 9, the last. An unbounded key falls into a bounded array and never runs off its end; whatever is too large to
-place falls into the last slot, the horizon's. And arctan keeps order, so the slots keep the keys' order.
-
-**Where N comes in, and where it does not.** The share g = (2/π)·arctan x needs no N. It is the same number for every
-array: x = 3 is at g ≈ 0.795 whether the array has ten slots or a thousand, and so it is a reading. N comes in only at the
-last step, ⌊N·g⌋, which turns the share into a slot number. That is the floor, and it is the writer's: it needs `sizeof`.
-So the two sides meet cleanly. The sweep gives the address with no N in it, and the writer's multiply-and-floor picks the
-slot. A reader that holds the shares and never takes the floor holds every array alike.
+So the construction is a faithful writer's picture of the reader's turn, the same quantiles, the same corner, drawn by
+someone who holds N. The reader has the turn itself: the share passed so far, the corner when it is met, and no end.
 
 ---
 
@@ -272,9 +274,9 @@ of a known total, and every one of those moves when the world is scaled. That is
 
 Read from where one stands, the same array is something else. The reader adds one degree of freedom, its standpoint off
 the line, and gets exactly two things: a density, the Cauchy laid over the slots by its turn, and a breadth, its own H.
-It reads a sweep, not the array. Laid on the quarter turn, every array of any length becomes the same turn, reached by
-its tangent and found by its arctangent, the share free of N and the slot the writer's floor. Where an N exists it reads
-N only as N/H. Where none does, or none could, the sweep runs
+It reads a sweep, not the array. A writer can lay any array on the quarter turn and move between slots and ratios by
+tangent and arctangent, but that drawing needs N; the reader has only its turn, the share passed and no end. Where an N
+exists it reads N only as N/H. Where none does, or none could, the sweep runs
 to a horizon, and at a horizon there is no inside, no outside and no half of anything, only the two ends 0 and ∞ of the
 projective line, the reciprocal that swaps them, and the corner it fixes. The central sweep's π/2 is reached at a
 point; the inscribed sweep's 2/π only at the horizon; and their product is the writer's 1.

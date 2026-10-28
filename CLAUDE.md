@@ -2467,6 +2467,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   half-Cauchy's quantiles, the corner the middle); arctan from any reading x ∈ [0, ∞] to slot ⌊N·(2/π)·arctan x⌋, order
   kept, never off the end (the last slot the horizon's: from 6.31 up at N = 10); the share g needs no N, only the floor
   does (the writer's). As OFS §7.3 "Laid on the sweeps" and `array-sweeps.html`.
+  **Laying an array on the quarter turn is the writer's** (28 Oct, SPN R572; Tom: "but all this is from the writers vantage,
+  where N is known and it is known to range between 0 to 90dgrees."): corrects R571. The lay needs N (the step 90°/N), the
+  array's end, the angle as a computed number (tan, arctan) and the floor; all held by the writer. The reader lays
+  nothing: its turn runs from home toward a horizon never reached, the share passed met by turning (the arctangent the
+  writer's formula for it, R327), no last slot. Essay 12 §6 rewritten ("Laying an array on the quarter turn, and who can").
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
