@@ -1204,6 +1204,18 @@ ellipse of a stretched drawing, the inscribed angle theorem fails and neither pi
 arc. So the two sweeps, like the pointing, need the circle, which the reader's one length gives (Proposition 3(e)). The two sweeps are also one classical map, the Cayley transform,
 under which the Cauchy is the harmonic measure from the standpoint (Appendix A).
 
+**One measure, two charts, and no Gaussian in either.** The uniform turn is one measure on the directions, the turn's
+own, and belongs to neither pivot. The Cauchy is that measure written in the inscribed chart: its long tails and its
+missing mean are the chart's, from v/h running to the horizon, and its median at the corner is the turn's halfway point
+read as a ratio. Written in the central chart, the same measure is uniform: the landing point moves evenly along the half
+turn about the centre, and a mean exists because the chart is bounded. The landing point's foot, h² = cos²θ, follows the
+arcsine law, 1/(π√(x(1 − x))), crowded at the chord's two ends and least, 2/π, at its middle. The Cayley transform takes
+the one chart to the other, losing nothing. Neither chart is Gaussian. A normal law enters only as a model of the
+payload: strengths along two axes taken to be independent and unchanged by turns are jointly an isotropic normal, whose
+direction is uniform and whose ratio is therefore the Cauchy (§7.1, "Why the payload is Gaussian"). That is a payload
+which happens to make a uniform turn, under two premises; it is not the central chart, and the means the central chart
+allows are means of whatever is averaged there, normal only if that is modelled so.
+
 **What the reciprocal gives, and what it does not.** The reciprocal proves that the corner is the one point it leaves
 fixed, that every sweep passes through it, that a reading kept within [0, 1] on both sides must change register there
 (Proposition 2(a)), that a reciprocal-symmetric reading puts it at the middle (Proposition 2(b)), and that expansions

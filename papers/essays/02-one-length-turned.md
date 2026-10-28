@@ -228,6 +228,14 @@ turn, it sits at B. At the corner, it sits at the top of the arc, in the directi
 a half turn and sits back at A, home. That half turn is e to the power iπ, which equals −1. Euler's identity is the
 central sweep's half turn, seen from the middle of the chord, while the reader's own ray has made only a quarter.
 
+**One turn, two charts.** The even turn belongs to neither sweep. Written as the inscribed sweep's ratio, it is the
+Cauchy: the long tails and the missing mean come from the ratio running off to infinity. Written as the central sweep's
+point, the very same turn is spread evenly along the half circle, and it has a mean because the half circle is bounded.
+Neither is a bell curve. The bell, the Gaussian, belongs to what arrives, and only as a model: if the light's strengths
+along two axes vary independently and look the same however the axes are turned, together they make a round bell, and
+the direction of that bell's samples is an even turn, which is why its ratio is a Cauchy. That is a fact about one kind
+of paint, not about either sweep.
+
 ### Address, landing, payload
 
 Three things meet at that one point of the arc, and the series keeps them apart.
