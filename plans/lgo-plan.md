@@ -148,3 +148,47 @@ The old test was right that something in LIGO's noise is a Cauchy; it looked for
 its "transition" is the evidence that it is not. Nothing here is new physics: ratios of independent centred normals,
 the central limit theorem and the stable law of index 1 are classical, and so is LIGO's transient noise. What is ours is
 the sort.
+
+### Run 3: predictions (28 October 2026, written and committed before any new data is fetched; SPN R560)
+
+Tom: "fix the errors and design and run the test". The fourth referee read of the submission objected that the paper's
+test cannot fail as stated, and that its LIGO case reported a direction as uniform when, at two million samples, a
+Kolmogorov distance of 0.009 rejects uniformity. This run takes the claim the paper now makes, "counted against what
+arrives, the readings' law is the turn's law weighted by how what arrives is spread over the directions, and that spread
+can be measured on its own", and tests it on data not yet seen.
+
+**Known beforehand.** Runs 1–2's segment (GPS 1257000000) and its numbers, read above, including the angle's distance
+0.0087 there. While deciding the design I estimated, for that segment only, that unequal Gaussian spreads at c = 0.93
+alone would give a distance near 0.006, below the 0.0087 observed: so something besides the two spreads shapes the angle
+there (the channels' non-Gaussian shapes, or a joint dependence). Nothing below uses any new data.
+
+**The claim made operational.** "Measured on its own" is taken to mean: from each detector's readings separately, with no
+use of which H1 sample goes with which L1 sample. Pairing H1 with L1 shifted in time by 8 s keeps both channels' own laws
+and destroys their joint timing. If the angle's law is the turn's law weighted only by the spread of what arrives, as the
+two channels' own laws give it, then the simultaneous pair and the shifted pair have the same angle law. If the two
+detectors' noises share something at one instant, the simultaneous pair's angle law differs, and the claim in that form
+fails.
+
+**Data.** Three new segments, chosen by a rule fixed now: for each start S in 1240000000, 1250000000 and 1262000000 (O3a,
+O3a, O3b), the first of S, S + 512, S + 1024, … (at most 40 tries) for which 512 s of both H1 and L1 fetch from GWOSC with
+no gap or NaN. Each is whitened as in runs 1–2 (fftlength 4 s, overlap 2 s, 2 s trimmed each end). Drawn at one length:
+each channel divided by its own interquartile range.
+
+**Predictions, for each of the three segments** (all three must hold; any one segment's failure kills):
+- **L1 (the amounts shrink).** The IQR of each channel's block means over N = 1 … 64 falls with log-log slope within 0.07
+  of −½. *Killed* otherwise.
+- **L2 (the direction does not).** The IQR of the block means of r = L1/H1 (drawn) over N = 1 … 1024 has slope within 0.1
+  of 0. *Killed* otherwise.
+- **L3 (the corner, drawn at one length).** Median |r| within 0.01 of 1; quartiles of r within 0.01 of −1 and +1. *Killed*
+  otherwise.
+- **L4 (the drawing sets the corner).** Undrawn, with c = IQR(L1)/IQR(H1) from each channel alone: median |L1/H1| and the
+  quartiles within 1% of c and ∓c. *Killed* otherwise.
+- **L5 (the angle's law is the spread of what arrives, from each channel alone).** With φ = atan2(L1, H1) on the drawn
+  pair, D_sim its Kolmogorov distance from the uniform law and D_shift the same with L1 shifted circularly by 8 s:
+  |D_sim − D_shift| ≤ 0.001, and the two-sample Kolmogorov distance between the two sets of angles ≤ 0.003. *Killed*
+  otherwise.
+
+What would not be shown: anything about gravitational waves or the detectors. A pass says the direction's law, its
+corner and its departure from the uniform turn are accounted for by the two channels' own laws; it does not say that a
+classical analysis would predict otherwise (it would not: this is a test that the reading's claim holds, not that a rival
+fails). L5 is the one that can fail for a reason the reading did not build in: a shared disturbance at one instant.
