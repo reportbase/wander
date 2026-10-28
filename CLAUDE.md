@@ -2407,6 +2407,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   is that classical?", then "add that to OFS"): OFS Appendix A names the classical side of §7.4 (the radial function,
   Fourier descriptors, Zahn and Roskies 1972, Kendall's shape 1984, the Minkowski problem 1903 and Horn's extended
   Gaussian image 1984) and what §7.4 adds: where each part comes from, the radius payload, a₀ the term reading leaves.
+  **The Cauchy from one length** (28 Oct, SPN R564; Tom: "what about the idea that cauchy is the cirlce with only H, no V
+  needed.", then "merge and add to OFS"): OFS Appendix A names the classical pieces (one length turned, the lighthouse,
+  stereographic projection, Möbius closure) and the reading that is ours (R533: no V for the reader; the Cauchy's features
+  the circle's, surviving without V; the missing mean the absent V's trace).
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
