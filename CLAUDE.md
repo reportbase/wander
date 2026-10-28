@@ -2387,6 +2387,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   A case in data (R557; Tom: "yes"): LIGO open data (LGO) after "What is observed": the amount's tail a t and a
   transient, the Cauchy in the direction [H1 : L1]. Then R558 (Tom: "Lets relax the know physics rule"): OFS may draw
   on physics and data; no new physics claimed; the data tests may be redone blind later.
+  Then (R559; Tom: "yes add them") two more cases in data after LIGO: the quasar dipole (EBD) and one photon at a
+  time (WVP), each sorting address from payload.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

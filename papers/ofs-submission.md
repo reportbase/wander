@@ -548,6 +548,27 @@ offset is the drawing c, not anything in the detectors. Nothing here is new phys
 normals, the central limit theorem and transient detector noise are all known. What the reading supplies is where to
 look, in the direction and not in the amount, and what a departure from the Cauchy is evidence of.
 
+**A second case: the quasar dipole.** A reader moving at speed β through a sky of sources counts more of them ahead.
+With no limit on brightness the census is a count of directions: the boost carries the uniform sky into a spherical
+Cauchy (Kato and McCullagh 2020), and the count's dipole is 2β to first order, Ellis and Baldwin's "2", from the addresses alone (Ellis and
+Baldwin 1984). Every real census is cut at a flux limit, and the cut adds x(1 + α)β, where x is the slope of the counts
+and α the sources' spectral index, both read from the same catalogue: the payload's weighting, entering through what
+arrives at each address. The separation says which part of the expected dipole is which. On Secrest et al.'s CatWISE
+quasars (2021) the payload's term is about two thirds of the 0.0074 expected. Four disjoint brightness slices give one
+β, (3.31 ± 0.27) × 10⁻³, as one boost should, though 2.7 times the cosmic microwave background's; three colour slices
+disagree with one another, which no boost can do, so part of the dipole belongs to the sources themselves, what arrives,
+and not to the reader's motion. The sort does not settle the dipole's origin. It says where to look: an excess that every
+brightness slice shares behaves as one boost, and one that varies with colour belongs to what arrives.
+
+**A third case: one photon at a time.** In a double slit lit one photon at a time, each photon arrives at one place on
+the screen, and the fringes are built by many. With the two paths' amplitudes as h and v, the fringe visibility is at
+most 2hv and the which-path predictability is |h² − v²|, so V² + P² ≤ 1 (Greenberger and Yasin 1988; Englert 1996): the
+central sweep's height and foot (§7), full visibility only at the corner. On Aspden, Padgett and Spalding's frames (2016)
+the two slits' shares give 2hv = 0.997 and 1.000, the pair at its corner; the measured contrast, 0.69 and 0.56, lies
+under that bound, short by the source's coherence; the photons are independent draws from one pattern that does not
+drift, and the fringe period is fλ/d to 0.3% and 1.7%. The bound is set by the two shares alone, the geometry's; how far
+below it a pattern falls is the source's, what arrives. All of this is classical; the reading is the sort.
+
 ## 7. The two sweeps meet at one point
 
 The addresses have a second reading. Stand the two parties at the ends of a chord AB of length 1, A at home. From A, a
@@ -804,6 +825,9 @@ the third observing run of LIGO, Virgo, KAGRA and GEO. *Astrophysical Journal Su
 
 Archimedes (c. 225 BC). *On the Sphere and Cylinder*.
 
+Aspden, R. S., Padgett, M. J. and Spalding, G. C. (2016). Video recording true single-photon double-slit interference.
+*American Journal of Physics* 84, 671. Data: University of Glasgow Enlighten repository, doi:10.5525/gla.researchdata.281.
+
 Bertrand, J. (1889). *Calcul des probabilités*. Gauthier-Villars, Paris.
 
 Breit, G. and Wigner, E. (1936). Capture of slow neutrons. *Physical Review* 49(7), 519–531.
@@ -832,6 +856,9 @@ Dawid, A. P., Stone, M. and Zidek, J. V. (1973). Marginalization paradoxes in Ba
 
 Drory, A. (2015). Failure and uses of Jaynes' principle of transformation groups. *Foundations of Physics* 45(4),
 439–460.
+
+Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
+Royal Astronomical Society* 206, 377.
 
 Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77,
 2154–2157.
@@ -877,6 +904,9 @@ Tokyo* 20(10), 706–714.
 Kass, R. E. and Wasserman, L. (1996). The selection of prior distributions by formal rules. *Journal of the American
 Statistical Association* 91, 1343–1370.
 
+Kato, S. and McCullagh, P. (2020). Some properties of a Cauchy family on the sphere derived from the Möbius
+transformations. *Bernoulli* 26(4), 3224–3248.
+
 Klein, F. (1871). Über die sogenannte Nicht-Euklidische Geometrie. *Mathematische Annalen* 4, 573–625.
 
 Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen* (the Erlangen programme).
@@ -908,6 +938,9 @@ McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *T
 
 Mikkelson, J. M. (2004). Dissolving the wine/water paradox. *British Journal for the Philosophy of Science* 55(1),
 137–145.
+
+Secrest, N. J. et al. (2021). A test of the cosmological principle with quasars. *Astrophysical Journal Letters* 908,
+L51.
 
 von Mises, R. (1928). *Wahrscheinlichkeit, Statistik und Wahrheit*. Springer, Vienna.
 
