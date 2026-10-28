@@ -227,9 +227,8 @@ only one part touch N.
   honestly. Each slot keeps the first paint that reaches it, since a direction is painted by the first thing on its line.
   The reader is handed a slot number and a paint, never a position.
 - *The geometry* sits between them. It takes each element's position and the reader's H and works out which slot its
-  direction falls in, ⌊K·(2/π)·arctan(pos/H)⌋. This is where the arctangent lives. In the world the geometry gives the
-  Cauchy free; in a program somebody has to simulate it, and the simulation is the writer's part, done on the writer's
-  side of the boundary. It is not the reader computing anything.
+  direction falls in, ⌊K·(2/π)·arctan(pos/H)⌋. This is where the arctangent lives. It is the writer's part, done on the
+  writer's side of the boundary, and it is not the reader computing anything.
 
 Run with K = 32 and H = 10, on a world whose slots are numbered positions 0, 1, 2, …, and four things show:
 
@@ -246,6 +245,18 @@ Run with K = 32 and H = 10, on a world whose slots are numbered positions 0, 1, 
 And where the world does end, the paint stops. A world of 100 elements leaves the reader's last painted slot at 29, which
 reads N/H as between 6.7 and 10.2 (the truth, 99/10, inside). The reader reads N/H to its slot's width, never N. The
 script is `runs/arr/reader.mjs`.
+
+**What the program does not have: the Cauchy itself.** The program recreates the reader's K addresses, a finite picture
+of the Cauchy cut into K quantiles. It does not recreate the Cauchy, because the Cauchy handles a true infinity and a
+computer cannot. In the program the whole tail past the last boundary is one slot, and the code stops there by fiat: it
+never holds the tail as a tail, only a token for it. The arithmetic shows the same edge. The largest double is about
+1.8·10³⁰⁸, and past it there is only the symbol +∞; `Math.atan(Infinity)` returns π/2, but no element ever sits there,
+and `Math.tan(Math.PI/2)` returns about 1.6·10¹⁶, not infinity, because π/2 itself is not a double. A Cauchy drawn the
+usual way, tan(π(U − ½)) with U a uniform double, never exceeds about 2·10¹⁵, so a computer's "Cauchy" is truncated, and
+a truncated Cauchy has a mean: its readings' sizes average about 23. The true Cauchy has none. Its missing mean is the
+trace of a horizon that is never reached, and a machine that must stop somewhere has a horizon it reaches. So a program
+can recreate where a reader's addresses fall and what paints them, never the horizon. That the geometry gives the
+Cauchy free is not a figure of speech: it gives what no computation can.
 
 ---
 

@@ -2479,6 +2479,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Cauchy (⌊K·(2/π)·arctan(pos/H)⌋), the writer's part. K = 32, H = 10: a world of 10⁶, 2·10⁶ or without end gives
   identical slots (205 elements read); scaled by 7 with H, unchanged; H alone moves which elements land; repainting moves
   no slot; 6 near slots empty (whole-step world); a world of 100 stops paint at slot 29, N/H read in [6.7, 10.2].
+  **A program cannot simulate the Cauchy** (28 Oct, SPN R574; Tom: "but you can't actually simulate the cauchy, cauchy
+  handles true infinity. computer can't handle true infinity."): corrects R573's "the geometry simulating the Cauchy".
+  The program recreates the reader's K addresses, a finite picture cut into K quantiles; the tail past the last boundary
+  is one slot, stopped by fiat. Doubles end near 1.8·10³⁰⁸ (then the symbol +∞; atan(∞) = π/2, tan(π/2 as a double)
+  ≈ 1.6·10¹⁶); tan(π(U − ½)) never exceeds ≈ 2·10¹⁵, so a computer's Cauchy is truncated and has a mean (sizes ≈ 22.7,
+  (1/π)·ln(1 + M²)); the true Cauchy has none. The geometry gives what no computation can. Essay 12 §6.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
