@@ -103,3 +103,12 @@ Nothing in it is new to OFS; where they differ, OFS stands and the submission is
 A fresh referee read of the draft alone (`plans/ofs-review-38.md`): 4/10 as a mathematics paper, the theorems elementary
 and classical, the contribution the reading. Tom, with the recommendation: aim it at a foundations of probability or
 philosophy-of-probability journal. The errors it found were fixed in OFS first and carried here.
+
+## A reading paper (28 October)
+
+Tom: "Maybe, because this is a reading paper, not an original math paper, it needs more background, context and
+discussion of the potential impact of the new framing." Plan, OFS first each time: (1) background, how the Cauchy is
+usually read and the indifference debate (done, R554); (2) "What the reading changes", worked cases (water and wine, the
+marginalization paradox, Bertrand from a standpoint, median not mean for directions); (3) a discussion of consequences,
+phrased as consequences and open questions (R364). Target about 13,000 words; proofs may move to an appendix. The
+lighthouse and Mercator appendix stays out (Tom: "leave light house and mercator out.").

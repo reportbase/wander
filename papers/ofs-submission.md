@@ -53,6 +53,54 @@ ignorance: turns of its attitude, rescalings of the other party's size, and the 
 (§2). What is ours is the choice of group, the near field and the corner, and the reading of the measure as addresses
 rather than belief.
 
+**Background: how the Cauchy is usually read.** The Cauchy law has been read in five main ways, each correct on its
+own terms. This paper adds another, and it helps to have the five in view first.
+
+- *A counterexample.* The law entered probability as an exception. Poisson met it in 1824 as a case where the average
+  of many observations is no better than one: the mean of n independent Cauchy variables has the law of a single one,
+  so the law of large numbers fails. Cauchy returned to it in 1853, in his exchange with Bienaymé over least squares
+  (Stigler 1974). Textbooks keep it in that role, as the standard example of a law with no mean and no variance, to
+  which the central limit theorem does not apply and whose sample mean never settles (Feller 1971). "Pathological" is
+  the word often used.
+- *A stable law, and a ratio.* It is the stable law of index 1 (Lévy 1925): sums of independent copies keep its shape,
+  and only the scale grows. It is the law of the ratio of two independent centred normal variables, and Student's t with
+  one degree of freedom. In these readings it is a law of amounts, values that add, divide and are averaged and that
+  happen to have heavy tails.
+- *A tail to guard against.* In statistics it is the standard stress test for estimators. The sample mean fails on it;
+  the median, and the estimators that bound the influence of any one observation, do not (Huber 1964). The heavy tail is
+  read as a fact about the data, outliers that come with them, and the remedy is to read the data by their order.
+- *A line shape.* In physics it is the Lorentzian, the profile of a resonance or of a decaying state's spectral line,
+  at half its height one half-width from the centre (Weisskopf and Wigner 1930; Breit and Wigner 1936). There it is read
+  as a property of the system: the line is broad because the state decays.
+- *The tangent of a uniform angle.* Geometrically it is the tangent of an angle turned uniformly, a lamp turning on a
+  shore and flashing onto a straight beach, the lighthouse problem of Bayesian textbooks (Gull 1988; Sivia and Skilling
+  2006). As the image of the uniform law on the circle under the projective map it is carried into itself by every
+  Möbius map of the line (Knight 1976; McCullagh 1996), and as harmonic measure it is where a Brownian path from a point
+  above a line first meets the line (Kakutani 1944). This reading is the nearest to ours. It makes the law a fact about
+  directions, but about the directions of a lamp or a path, not about the places at which a reader meets what it reads.
+
+**Background: indifference and Bertrand.** The second strand is the principle of indifference. Bertrand (1889) drew a
+chord "at random" in a circle in three ways, got three answers for the chance that it is longer than the side of the
+inscribed triangle (⅓, ½ and ¼), and concluded that "at random" means nothing until a procedure is named. Jaynes (1973)
+answered that if the problem is posed so that its answer must not change when the circle is turned, resized or moved,
+one measure survives and the answer is ½, and straws he tossed onto a circle agreed. The answer has not settled the
+question. Van Fraassen (1989) argues that symmetry cannot fix a unique answer in general, Marinoff (1994) that each
+answer belongs to a differently specified problem, Shackel (2007) that the attempts to save indifference fail, and Drory
+(2015) that Jaynes's symmetries, imposed in different ways, give different measures; Seidenfeld (1979) presses the wider
+objection against objective priors. Each treats the measure as a probability over outcomes: a belief about the chord, or
+the frequency of chords.
+
+**What the readings share, and what this paper adds.** In every reading above the Cauchy is a law of what is measured:
+values that lack a mean, data with outliers, a system's response, a lamp's flashes, or a belief about chords. Its missing
+mean is then an anomaly in what is measured, to be managed by robust methods or explained by the system. Jaynes points to
+a different status. The measure his groups fix, his invariant measure m(x) (Jaynes 1968), is a reference, prior to any
+data, against which distributions are measured. This paper puts the Cauchy in that place: as the reference measure of the
+directions from a standpoint, the law of the reader's addresses, fixed by the standpoint and the turn before anything
+arrives. On that reading the missing mean is not an anomaly of anything measured. Directions have no sum, only a
+composition, and a law of directions has a median and no mean for that reason (§6). What arrives at the addresses is a
+separate thing, with a law of its own. The earlier readings stay correct; the reading here says which of their facts
+belong to the addresses and which to what is met at them (§6).
+
 **Results.**
 - Every relation between two parties turns over at one point, the corner v = h, the only point fixed by exchanging them
   (Proposition 1).
@@ -640,7 +688,7 @@ outside Theorem 5(a), which assumes that what arrives is the same whichever addr
 **Related work.** The pieces are classical: the reciprocal, the Cauchy as the projection of a uniform angle and its
 Möbius invariance (Knight 1976; McCullagh 1996), the multivariate Cauchy's marginals (Cacoullos 2014), log-symmetric
 laws (Jones 2008), Cauchy's functional equation, Klein's programme (1872) and the invariant priors of Jeffreys (1939)
-and Jaynes, on which this paper builds. On Bertrand's problem and the principle of indifference the literature is long: van Fraassen (1989) argues that symmetry fixes no unique answer, Marinoff (1994) that each answer belongs to a differently specified problem, and Shackel (2007) that the attempts to save indifference fail; Seidenfeld (1979) presses the objection against objective Bayesian priors, and Kass and Wasserman (1996) review the formal rules for choosing them. Our use of Jaynes is conditional in their sense: the group is chosen, and with it the measure. What is ours is the group, and the reading of its invariant measure as the reader's addresses rather than as a belief. Leonard (2011) puts the Cauchy, the slope's law invariant under turns, on the
+and Jaynes, on which this paper builds. Our use of Jaynes is conditional in the sense of the critics named in §1: the group is chosen, and with it the measure. What is ours is the group, and the reading of its invariant measure as the reader's addresses rather than as a belief. Leonard (2011) puts the Cauchy, the slope's law invariant under turns, on the
 slope of a line fitted with error in both coordinates, with inference unchanged by exchanging and rescaling the
 coordinates, the nearest use we know of these three transformations together. Scales linear near a unit and logarithmic
 far from it are common, astronomy's asinh magnitudes among them (Lupton, Gunn and Szalay 1999); what §9 adds is the
@@ -667,6 +715,8 @@ direction; the numerical claims were checked by exact computation, and the autho
 Archimedes (c. 225 BC). *On the Sphere and Cylinder*.
 
 Bertrand, J. (1889). *Calcul des probabilités*. Gauthier-Villars, Paris.
+
+Breit, G. and Wigner, E. (1936). Capture of slow neutrons. *Physical Review* 49(7), 519–531.
 
 Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met* (long version). https://github.com/reportbase/wander/blob/main/papers/observation-from-somewhere.md
 
@@ -699,6 +749,8 @@ Englert, B.-G. (1996). Fringe visibility and which-way information: an inequalit
 Euclid (c. 300 BC). *Elements*. Translated by T. L. Heath (1908), *The Thirteen Books of Euclid's Elements*. Cambridge
 University Press.
 
+Feller, W. (1971). *An Introduction to Probability Theory and Its Applications*, vol. II, 2nd ed. Wiley, New York.
+
 van Fraassen, B. C. (1989). *Laws and Symmetry*. Oxford University Press.
 
 Ghosh, M. (2011). Objective priors: an introduction for frequentists. *Statistical Science* 26(2), 187–202.
@@ -708,7 +760,12 @@ Gilinsky, A. S. (1951). Perceived size and distance in visual space. *Psychologi
 Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
 *Physics Letters A* 128, 391–394.
 
+Gull, S. F. (1988). Bayesian inductive inference and maximum entropy. In G. J. Erickson and C. R. Smith (eds),
+*Maximum-Entropy and Bayesian Methods in Science and Engineering*, vol. 1, 53–74. Kluwer, Dordrecht.
+
 Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *Annals of Mathematics* 34(1), 147–169.
+
+Huber, P. J. (1964). Robust estimation of a location parameter. *Annals of Mathematical Statistics* 35(1), 73–101.
 
 Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 
@@ -721,6 +778,9 @@ Rosenkrantz (ed.) (1989), *E. T. Jaynes: Papers on Probability, Statistics and S
 Jeffreys, H. (1939). *Theory of Probability*. Oxford University Press.
 
 Jones, M. C. (2008). On reciprocal symmetry. *Journal of Statistical Planning and Inference* 138(10), 3039–3043.
+
+Kakutani, S. (1944). Two-dimensional Brownian motion and harmonic functions. *Proceedings of the Imperial Academy
+Tokyo* 20(10), 706–714.
 
 Kass, R. E. and Wasserman, L. (1996). The selection of prior distributions by formal rules. *Journal of the American
 Statistical Association* 91, 1343–1370.
@@ -765,10 +825,18 @@ Decision* 11, 413–440.
 
 Shackel, N. (2007). Bertrand's paradox and the principle of indifference. *Philosophy of Science* 74, 150–175.
 
+Sivia, D. S. and Skilling, J. (2006). *Data Analysis: A Bayesian Tutorial*, 2nd ed. Oxford University Press.
+
 Snellius, W. (1617). *Eratosthenes Batavus, de terrae ambitus vera quantitate*. Leiden.
+
+Stigler, S. M. (1974). Cauchy and the witch of Agnesi: an historical note on the Cauchy distribution. *Biometrika*
+61(2), 375–380.
 
 Stone, M. and Dawid, A. P. (1972). Un-Bayesian implications of improper Bayes inference in routine statistical
 problems. *Biometrika* 59(2), 369–375.
 
 Talacko, J. (1956). Perks' distributions and their role in the theory of Wiener's stochastic variables.
 *Trabajos de Estadística* 7, 159–174.
+
+Weisskopf, V. and Wigner, E. (1930). Berechnung der natürlichen Linienbreite auf Grund der Diracschen Lichttheorie.
+*Zeitschrift für Physik* 63, 54–73.
