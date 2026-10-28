@@ -2370,6 +2370,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Cauchy" (the reader's parameter the flow's t, the c = 2 laws a writer's page's); the address law Jaynes's (1968)
   invariant measure m(x), a reference measure (OFS §2, submission, CS companion); related work on Bertrand and
   indifference; the rule a reading, not a test.
+  **A reading paper needs its background** (28 Oct, SPN R554; Tom: "this is a reading paper, not an original math
+  paper, it needs more background, context and discussion of the potential impact of the new framing."): OFS §1 and the
+  submission's §1 open with how the Cauchy is usually read (five readings, each correct on its own terms), the
+  indifference and Bertrand debate, and what the readings share (a law of what is measured) against this paper's (Jaynes's
+  m(x), the reference measure of the reader's directions). Next: worked cases of what the reading changes, then a
+  discussion of consequences. The lighthouse and Mercator stay out of the submission.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

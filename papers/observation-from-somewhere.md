@@ -133,6 +133,54 @@ Cauchy, and the corner; carried to amounts, the same indifference to scale
 motivates the logarithm past the corner (§2). What is ours is the choice of group, the near field, and the reading of
 the measure as the reader's addresses rather than its belief.
 
+**Background: how the Cauchy is usually read.** The Cauchy law has been read in five main ways, each correct on its
+own terms. This paper adds another, and it helps to have the five in view first.
+
+- *A counterexample.* The law entered probability as an exception. Poisson met it in 1824 as a case where the average
+  of many observations is no better than one: the mean of n independent Cauchy variables has the law of a single one,
+  so the law of large numbers fails. Cauchy returned to it in 1853, in his exchange with Bienaymé over least squares
+  (Stigler 1974). Textbooks keep it in that role, as the standard example of a law with no mean and no variance, to
+  which the central limit theorem does not apply and whose sample mean never settles (Feller 1971). "Pathological" is
+  the word often used.
+- *A stable law, and a ratio.* It is the stable law of index 1 (Lévy 1925): sums of independent copies keep its shape,
+  and only the scale grows. It is the law of the ratio of two independent centred normal variables, and Student's t with
+  one degree of freedom. In these readings it is a law of amounts, values that add, divide and are averaged and that
+  happen to have heavy tails.
+- *A tail to guard against.* In statistics it is the standard stress test for estimators. The sample mean fails on it;
+  the median, and the estimators that bound the influence of any one observation, do not (Huber 1964). The heavy tail is
+  read as a fact about the data, outliers that come with them, and the remedy is to read the data by their order.
+- *A line shape.* In physics it is the Lorentzian, the profile of a resonance or of a decaying state's spectral line,
+  at half its height one half-width from the centre (Weisskopf and Wigner 1930; Breit and Wigner 1936). There it is read
+  as a property of the system: the line is broad because the state decays.
+- *The tangent of a uniform angle.* Geometrically it is the tangent of an angle turned uniformly, a lamp turning on a
+  shore and flashing onto a straight beach, the lighthouse problem of Bayesian textbooks (Gull 1988; Sivia and Skilling
+  2006). As the image of the uniform law on the circle under the projective map it is carried into itself by every
+  Möbius map of the line (Knight 1976; McCullagh 1996), and as harmonic measure it is where a Brownian path from a point
+  above a line first meets the line (Kakutani 1944). This reading is the nearest to ours. It makes the law a fact about
+  directions, but about the directions of a lamp or a path, not about the places at which a reader meets what it reads.
+
+**Background: indifference and Bertrand.** The second strand is the principle of indifference. Bertrand (1889) drew a
+chord "at random" in a circle in three ways, got three answers for the chance that it is longer than the side of the
+inscribed triangle (⅓, ½ and ¼), and concluded that "at random" means nothing until a procedure is named. Jaynes (1973)
+answered that if the problem is posed so that its answer must not change when the circle is turned, resized or moved,
+one measure survives and the answer is ½, and straws he tossed onto a circle agreed. The answer has not settled the
+question. Van Fraassen (1989) argues that symmetry cannot fix a unique answer in general, Marinoff (1994) that each
+answer belongs to a differently specified problem, Shackel (2007) that the attempts to save indifference fail, and Drory
+(2015) that Jaynes's symmetries, imposed in different ways, give different measures; Seidenfeld (1979) presses the wider
+objection against objective priors. Each treats the measure as a probability over outcomes: a belief about the chord, or
+the frequency of chords.
+
+**What the readings share, and what this paper adds.** In every reading above the Cauchy is a law of what is measured:
+values that lack a mean, data with outliers, a system's response, a lamp's flashes, or a belief about chords. Its missing
+mean is then an anomaly in what is measured, to be managed by robust methods or explained by the system. Jaynes points to
+a different status. The measure his groups fix, his invariant measure m(x) (Jaynes 1968), is a reference, prior to any
+data, against which distributions are measured. This paper puts the Cauchy in that place: as the reference measure of the
+directions from a standpoint, the law of the reader's addresses, fixed by the standpoint and the turn before anything
+arrives. On that reading the missing mean is not an anomaly of anything measured. Directions have no sum, only a
+composition, and a law of directions has a median and no mean for that reason (§4, §7.2). What arrives at the addresses is a
+separate thing, with a law of its own. The earlier readings stay correct; the reading here says which of their facts
+belong to the addresses and which to what is met at them (§7.2, "The rule, and a test").
+
 **A picture.** Hold your hand up to a stained-glass window, with the fingers spread between flat and upright. Each
 finger is a direction in which you can look, an address, and each is lit by the pane it lines up with, in that pane's
 colour. The fingers are there before any light reaches them, and they are the same wherever you hold the hand: nothing
@@ -3505,7 +3553,7 @@ three transformations.
 
 The pieces are classical: the reciprocal x ↦ 1/x, the Cauchy as the projection of a uniform angle and its Möbius
 invariance, Cauchy's functional equation, Klein's Erlangen programme (1872), and Jaynes's and Jeffreys's invariant
-priors, the first of which this paper builds on (§2). On Bertrand's problem and the principle of indifference the literature is long: van Fraassen (1989) argues that symmetry fixes no unique answer, Marinoff (1994) that each answer belongs to a differently specified problem, and Shackel (2007) that the attempts to save indifference fail; Seidenfeld (1979) presses the objection against objective Bayesian priors, and Kass and Wasserman (1996) review the formal rules for choosing them. Our use of Jaynes is conditional in their sense: the group is chosen, and with it the measure. What is ours is the group, and the reading of its invariant measure as the reader's addresses rather than as a belief. Near neighbours in measured perception include Gilinsky's
+priors, the first of which this paper builds on (§2). Our use of Jaynes is conditional in the sense of the critics named in §1: the group is chosen, and with it the measure. What is ours is the group, and the reading of its invariant measure as the reader's addresses rather than as a belief. Near neighbours in measured perception include Gilinsky's
 perceived distance with a finite horizon (1951), Schwartz's log-polar map of visual cortex, proportional near the fovea
 and logarithmic beyond (1977), and the number-line literature, from logarithmic-to-linear shifts (Siegler and Opfer
 2003; Dehaene et al. 2008) to proportion judgment on bounded lines (Barth and Paladino 2011). Scales that are linear
@@ -4028,6 +4076,8 @@ University Press.
 Euler, L. (1777). De repraesentatione superficiei sphaericae super plano. *Acta Academiae Scientiarum Imperialis
 Petropolitanae* 1777(1), 107–132.
 
+Feller, W. (1971). *An Introduction to Probability Theory and Its Applications*, vol. II, 2nd ed. Wiley, New York.
+
 van Fraassen, B. C. (1989). *Laws and Symmetry*. Oxford University Press.
 
 van Fraassen, B. C. (2008). *Scientific Representation: Paradoxes of Perspective*. Oxford University Press.
@@ -4078,6 +4128,8 @@ Hotelling, H. (1933). Analysis of a complex of statistical variables into princi
 Educational Psychology* 24, 417–441, 498–520.
 
 Hotelling, H. (1936). Relations between two sets of variates. *Biometrika* 28(3–4), 321–377.
+
+Huber, P. J. (1964). Robust estimation of a location parameter. *Annals of Mathematical Statistics* 35(1), 73–101.
 
 Igarashi, T. and Hinckley, K. (2000). Speed-dependent automatic zooming for browsing large documents. *Proceedings
 of UIST 2000*, 139–148.
