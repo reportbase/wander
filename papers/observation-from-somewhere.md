@@ -122,6 +122,17 @@ presuppose the whole, together with an exact account of what that construction c
 writer's geometry, with the whole already in hand, is not in question here; this paper concerns what a reader needs
 without it.
 
+**The reader never sees a shape.** A reader sees the sweep: the addresses, the same for every world, and the paint on
+them. A thing appears to it as the addresses it paints and what it paints them with: a patch of directions, which thing
+is in front of which, its colour. Its shape, how far its surface lies along each direction, is amounts, and the
+geometry removes amounts before anything is read (§3.8). Every way to the shape is a writing: ranging, which carries in a
+signal's speed; standpoints a counted step apart; a blueprint handed over (§9). So shape is a writer's, and the reader
+has the Cauchy sweep and its paint, never the shape. That an image does not determine the shape that made it is old:
+Helmholtz's perception as inference (1867), inverse optics as an ill-posed problem (Poggio, Torre and Koch 1985),
+Gibson's optic array (1979). Those accounts treat the reader's side as too little, to be made up by inference. Here it
+is whole on its own terms: a geometry fixed before anything arrives, the same for every shape, with the Cauchy as its
+law; and the shape was never the reader's to lack.
+
 **What we build on.** The method is not new either. Jaynes (1968, 1973) showed how to choose a measure from what an
 observer does not know: state its ignorance as a group of transformations, and take the measure the group leaves
 unchanged. His cases give the classical priors, uniform in a location and uniform in the logarithm of a scale, and one
@@ -979,6 +990,21 @@ doublings it is an offset, log₂(V*/H), not a change of pattern. The number mat
 amount from outside; everything it reads, places and orders from where it stands is done without it (§9). Situation 2 knows the number; a situated reading does not; known within
 bounds, it is known within bounds. Assuming it clarifies the reading; it does not simplify it.
 
+The reader does not merely do without V; it never knows V. Every reading is a ratio, and a ratio cancels the amount V
+would be, so no reading, however many, carries it (Proposition 8). V is known only by writing: by walking a baseline,
+counting a step, ranging with a signal's speed, or being handed an agreed unit, each an amount carried in from outside,
+and each moved when the world is scaled (§9). A reader that comes to know V has written; it has not read better but
+taken the writer's vantage. And the reader's geometry needs V unknown: the horizon is there because the far end is
+never an amount, the corner is the median because nothing sizes either side, and the missing mean is the absent V's
+trace (§4, Theorem 6(d)). A writer, knowing V, has a closed circle, its corner only a point, and no horizon.
+
+The same holds for what arrives. The geometry removes the scale before anything is read: the projection divides, not the
+reader (§9), so a direction arrives with every amount along it already gone, and the paint on a direction arrives as
+paint, never as a number of units (Theorem 6(a)). The reader manages no magnitudes, neither the other party's breadth nor
+the size of what arrives. It holds no unit to manage them in: its one length H is its own unit, H in H is 1, and the
+value of H in anything else is a writing. So the geometry creates the reader, and the reader has no scale whatsoever.
+Every magnitude, with its unit, is a writer's.
+
 ## 4. The corner
 
 **Proposition 1.** Let x = v/h ∈ [0, ∞). Then x = 1 is the only point fixed by the reciprocal x ↦ 1/x. The reciprocal
@@ -1066,7 +1092,11 @@ These are the two sweeps of one standpoint, not two readers: the central sweep, 
 through a half turn, and the inscribed sweep, the ray from a point of the circle through a quarter, the only two pivots
 at which equal turns carve equal arcs (below). The arc faced, not the chord held, is where π/2 and 2/π come from: the
 writer's 1 is had through the half turn as the arc, π/2, and through the quarter turn as 2/π, and only their product
-gives back the 1.
+gives back the 1. Both are values at the end of the sweep, as θ reaches 90°. Along the way the central sweep reads arc
+over chord, θ/sin θ, from 1 through 1.1107 at the corner, and the inscribed sweep chord over arc, sin θ/θ, from 1
+through 0.9003, their product 1 at every θ. The two ends are not alike. The radius, its half turn done, lands back on
+home, a point, so π/2 is attained there. The ray goes tangent to the circle as v/h runs without bound, the horizon, so
+2/π is a limit, approached and never reached: it is the horizon's number.
 
 **The arc from the chord.** The arc can be had from the chord AB without turning a bar. Stand the two parties at its
 ends, and from each end sweep a ray: from A a ray reading v/h, from horizontal along AB up to vertical, and from B a ray
@@ -1308,6 +1338,18 @@ world. Step (a) is close to a definition; we claim only that a situated reader h
   separate number, unknown within one observation. An estimate of it is an amount, the best being the median of what is
   known (Proposition 13, §9); it enters only the amounts, as a shift of every one of them by the same number of levels,
   and never redraws the circle.
+
+**Circular mathematics without V.** The circle's usual equation seems to need V: on a page, (x/H)² + (y/V)² = 1 is a
+circle only when V = H. But that is the equation of a drawing with two axes, each with its extent, a writer's. The
+classical definition needs one length: everything at the distance H from a centre, |r| = H. The reader's circle is that
+length turned (Proposition 3(g) derives it from the turn alone). Its parts h = cos θ and v = sin θ are the across and up
+shares of the same H, and h² + v² = 1 is a fact about the shares of one length; the v in it is the turned length's own
+up share, not a share of a second party's breadth. Circular mathematics was always ratio mathematics in this sense: sine,
+cosine and tangent are sides over the hypotenuse, the radian is arc over radius, π is circumference over diameter,
+e^(iθ) is any circle over its own radius, and the corner, π/2 and 2/π and the Cauchy are ratios too; none moves when the
+world is scaled (§9), so all of it is reading. What the reader cannot do without an amount carried in is place a point at
+(x, y) in a unit, state the circumference or the area as so many units, or set its circle beside another party's: those
+are writings. The reader does every part of circular mathematics except the parts that state a size.
 
 **One choice, and two numbers that are not the reader's.**
 - *H, the reference.* The reader's one choice, and free. Every H gives the same circle and the same corner (part (b)),
@@ -3079,6 +3121,17 @@ shape over their geometric mean does not move. This is Proposition 8 used as a t
 what it moves, in a named unit, is an amount that had to be carried in. A record that scaling would not change cannot
 contain the world's size, however carefully it was made.
 
+Sorted by the test, reading and writing are the scale-invariant and the scale-variant: what does not move under k, and
+what does. That is the old distinction of dimensional analysis, the absolute significance of relative magnitude
+(Bridgman 1922) and the dimensionless groups of Buckingham's theorem (Appendix A), and the readings are such groups. We
+keep the names reading and writing because they say more than the distinction does. They name the act: a writing is
+made by carrying an amount in, since any function of scale-invariant quantities is scale-invariant, so no reading, however
+many, yields a scale-variant number without at least one taken from outside. They name the vantage: the reader is handed
+its invariants by the geometry, which removes the scale before anything is read (§3.8), while the writer holds the
+variant quantities and can form invariants from them. And they name who can do what: a ratio of two lengths on a
+blueprint is scale-invariant, a reading by the test, yet a writer formed it; the test sorts quantities, the names sort
+vantages. Beside it the second test is a second invariance, under a change of what arrives.
+
 **Two tests.** The paper's two distinctions can be applied without accepting its reading, by two tests anyone can run
 on any quantity.
 - *Scale the world.* Multiply every breadth and distance by one factor k. A quantity that does not change is a reading:
@@ -3853,7 +3906,7 @@ Skilling 2006). Projecting the circle from one of its own points onto a line, th
 uniform measure to the Cauchy (§4), and the family is closed under the Möbius maps of the line (Knight 1976; McCullagh
 1996); its median, its symmetry under the reciprocal and its missing mean are textbook facts. None of these mentions a
 second breadth, and none needs one: the slope v/h is already a ratio of two shares of one radius, so its absence is
-never remarked. What this paper adds is the reading of who holds what. The reader holds one length, H, and no V; V
+never remarked. What this paper adds is the reading of who holds what. The reader holds one length, H, and never knows V (§3.8): V
 and c belong to a writer or to a drawing with two axes, and V = H is the writer's name for the reader's circle (§5).
 Each feature of the Cauchy is then a feature of the circle that survives without V: the corner is the median, the
 near and far halves are mirrored by the reciprocal, and the missing mean is what the absent V leaves, the far end being
@@ -4080,6 +4133,18 @@ The structures of §12.4 met in systems built to read or draw a world, each with
   geometry's. Zooming interfaces arrive at relatives of this: speed coupled to zoom (Igarashi and Hinckley 2000),
   views as points of position and scale (Furnas and Bederson 1995), and smooth zoom-and-pan paths written in the
   hyperbolic functions (van Wijk and Nuij 2003).
+- *Machine arithmetic and the infinite.* Everything a finite machine does to a number is monotone: rounding to the
+  nearest representable value, overflow to the largest or to ∞, a tail cut at the largest draw. None reverses an order;
+  each only merges values, most at the ends. So a machine's world is a monotone image of the one it stands for, and by
+  Theorem 6(c) a statistic computed there is the true one, rounded, exactly when it commutes with increasing maps: the
+  median, the quartiles, ranks and comparisons, up to ties at the machine's resolution. Sums and means do not commute, so
+  on a machine they answer for its squashed world. The Cauchy shows the difference at small n. Its infinity is in the
+  chart v/h, not in the turn: the angle θ lies in [0, π/2], a machine holds it to its resolution, and its mean π/4 is
+  computed correctly; only the tangent chart sends an end to ∞. A draw tan((π/2)U) from a uniform double never exceeds
+  about 3.5·10¹⁵, so the machine's half-Cauchy is truncated and has a mean, (1/π)·ln(1 + M²) ≈ 22.8, where the true one
+  has none. A computation is faithful to an unbounded reality where the infinity is a horizon, a direction kept as the
+  pair [h : v] or the angle, and the operations keep to order; it is unfaithful exactly where the infinity sits in a sum
+  of amounts.
 
 ## Appendix C. Notation
 
@@ -4297,6 +4362,8 @@ Haldane, J. B. S. (1932). A note on inverse probability. *Proceedings of the Cam
 Hastings, W. K. (1970). Monte Carlo sampling methods using Markov chains and their applications. *Biometrika* 57(1),
 97–109.
 
+Helmholtz, H. von (1867). *Handbuch der physiologischen Optik*. Voss, Leipzig.
+
 Herschel, J. F. W. (1850). Quetelet on probabilities. *Edinburgh Review* 92, 1–57.
 
 Hilbert, D. (1895). Über die gerade Linie als kürzeste Verbindung zweier Punkte. *Mathematische Annalen* 46,
@@ -4469,6 +4536,8 @@ Statistics* 38(3), 916–918.
 
 Plücker, J. (1865). On a new geometry of space. *Philosophical Transactions of the Royal Society of London* 155,
 725–791.
+
+Poggio, T., Torre, V. and Koch, C. (1985). Computational vision and regularization theory. *Nature* 317, 314–319.
 
 Polyak, B. T. and Juditsky, A. B. (1992). Acceleration of stochastic approximation by averaging. *SIAM Journal on
 Control and Optimization* 30(4), 838–855.

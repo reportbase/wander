@@ -211,8 +211,11 @@ Look again at situation 1, the circle, the place where reader and writer meet. T
 two breadths. To write h² + v² = 1, and to mean it as a statement about lengths, you must know V and know that it
 equals H. Two amounts, and a claim about how they compare.
 
-The reader has no V. It has never been given one, and it cannot read one. Yet the reader has a circle too. Where does
-it come from?
+The reader has no V. More than that, it never knows V. Every reading is a ratio, and a ratio cancels the very amount V
+would be, so no reading, however many, carries it. V is known only by writing: by walking a baseline, counting a step,
+timing a signal of known speed, or being handed an agreed unit, each an amount carried in from outside. A reader that
+comes to know V has not read better. It has written, and taken the writer's vantage. Yet the reader has a circle too.
+Where does it come from?
 
 It comes from turning. Take your one length, H, and turn it about one end, steadily, like the beam of a lighthouse
 sweeping the sea, or your gaze sweeping along a row of trees. The free end traces a circle, and it traces a circle for
@@ -276,7 +279,7 @@ not there. The median, sitting at the corner, is perfectly well defined. It is w
 on the size of anything.
 
 There is a neat way to say all this. Not knowing the size of the far end is exactly what gives the corner its job and
-creates the horizon. A writer holding V has neither. Its corner is just a point on the circle, and its circle has no
+creates the horizon. The reader's geometry needs V unknown. A writer holding V has neither. Its corner is just a point on the circle, and its circle has no
 horizon, because it closes.
 
 ### What it means
@@ -302,6 +305,22 @@ One more point, about a phrase that appears often in the writings this essay dra
 reader's circle sees the reader's one length turned, and describes it in the writer's own terms: two breadths, both
 equal to H. The phrase is the writer's name for the reader's circle. The reader never sets V equal to H. It has no V to
 set.
+
+### What is old and what is new
+
+Every piece of the mathematics here is classical. A circle needs one length: it is everything at a fixed distance from a
+centre, and one length turned about its end traces it. The tangent of an angle turned uniformly is Cauchy; that is the
+lighthouse problem of the Bayesian textbooks (Gull 1988; Sivia and Skilling 2006). Projecting the circle from one of its
+own points onto a line, the stereographic projection, carries its uniform measure to the Cauchy, and the family is closed
+under the Möbius maps of the line (Knight 1976; McCullagh 1996). Its median, its symmetry under the reciprocal and its
+missing mean are textbook facts.
+
+None of these mentions a second breadth, and none needs one. The slope v/h is already a ratio of two shares of one
+radius, so the absence of a V is never remarked. What is new is the reading of who holds what: the reader holds one
+length and never knows V, and each feature of the Cauchy is a feature of the circle that survives without V. The corner is the
+median, the near and far halves are mirrored by the reciprocal, and the missing mean is what the absent V leaves. A
+writer, holding V, has its far end as an amount: no horizon, and the corner only a point. We did not find this assembly
+in print; the pieces are classical.
 
 The Cauchy's own story is long, and it has its own essay, the third: how its addresses are kept apart from what arrives,
 why it is the law a reasoner ignorant of scale must assign, and a second test to go with the one below. For now the
@@ -547,8 +566,13 @@ The essay draws on these; each is cited for something it uses.
 - Bridgman, P. W. (1922). *Dimensional Analysis*. Yale University Press. "The absolute significance of relative
   magnitude", pp. 18–20 and 73.
 - Buckingham, E. (1914). On physically similar systems. *Physical Review* 4, 345–376.
+- Gull, S. F. (1988). Bayesian inductive inference and maximum entropy. In G. J. Erickson and C. R. Smith (eds),
+  *Maximum-Entropy and Bayesian Methods in Science and Engineering*, vol. 1, 53–74. Kluwer, Dordrecht.
+- Knight, F. B. (1976). A characterization of the Cauchy type. *Proceedings of the American Mathematical Society* 55,
+  130–135.
 - Martens, N. C. M. (2021). The (un)detectability of absolute Newtonian masses. *Synthese* 198(3), 2511–2550.
   "Kinematic comparativism", §4.
+- McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *Annals of Statistics* 24(2), 787–808.
 - Narens, L. (2002). *Theories of Meaningfulness*. Lawrence Erlbaum. Also Narens and Luce, "Meaningfulness and
   invariance".
 - Poincaré, H. (1914). *Science and Method*, trans. F. Maitland. Thomas Nelson. Book II, ch. I, pp. 94–95.
@@ -557,6 +581,7 @@ The essay draws on these; each is cited for something it uses.
 - Sedgwick, H. A. (1973). *The Visible Horizon: A Potential Source of Visual Information for the Perception of Size and
   Distance*. Doctoral dissertation, Cornell University. And (2021), J. J. Gibson's "Ground Theory of Space Perception",
   *i-Perception* 12(3), the source of the quotation.
+- Sivia, D. S. and Skilling, J. (2006). *Data Analysis: A Bayesian Tutorial*, 2nd ed. Oxford University Press.
 - Snellius, W. (1617). *Eratosthenes Batavus, de terrae ambitus vera quantitate*. Leiden.
 - Stevens, S. S. (1946). On the theory of scales of measurement. *Science* 103, 677–680.
 - Triggs, B., McLauchlan, P., Hartley, R. and Fitzgibbon, A. (2000). Bundle adjustment: a modern synthesis. In *Vision
@@ -565,4 +590,5 @@ The essay draws on these; each is cited for something it uses.
   Psychology: Human Perception and Performance* 10(5), 683–703.
 
 The geometry is set out with proofs in *Observation from Somewhere*, in the same collection: the five situations in
-§3.1, the reader's circle in §5, the Cauchy as the law of the uniform turn in §7, and reading and writing in §9.
+§3.1, the reader's circle in §5, the Cauchy as the law of the uniform turn in §7, reading and writing in §9, and the classical pieces in Appendix A
+("The Cauchy from one length").

@@ -2411,6 +2411,97 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   needed.", then "merge and add to OFS"): OFS Appendix A names the classical pieces (one length turned, the lighthouse,
   stereographic projection, Möbius closure) and the reading that is ours (R533: no V for the reader; the Cauchy's features
   the circle's, surviving without V; the missing mean the absent V's trace).
+  **Readers never know V** (28 Oct, SPN R565; Tom: "The fact that readers don't need V is a critical insight. But it's
+  more than that, they don't ever know V, for knowing V, is only known by writers.", then "Yes"): not a lack but a
+  boundary. Every reading a ratio, cancelling V, so no reading carries it; V known only by writing (a baseline walked, a
+  step counted, ranging, an agreed unit), each moved by scaling the world; a reader that comes to know V has written, not
+  read better; the reader's geometry needs V unknown (horizon, corner as median, missing mean), a writer knowing V has a
+  closed circle and no horizon. OFS §3.8 closing paragraph and Appendix A's Cauchy entry; essay 1 §4.
+  **Circular mathematics without V** (28 Oct, SPN R566; Tom: "V is required in circles equations. How than is it possible
+  to do circular math with out a circle.", then "Yes add to both"): (x/H)² + (y/V)² = 1 is a two-axis drawing's, a
+  writer's; the circle needs one length (|r| = H), turned; h = cos θ, v = sin θ the shares of one H, v its own up share;
+  trigonometry, radians, π, e^(iθ), the corner, π/2 and 2/π, the Cauchy all ratios, all reading; what needs an amount is
+  a point in a unit, the circumference or area as amounts, another party's circle beside one's own. OFS §5 after "What
+  V = H names"; essay 2 §9.
+  **Geometry creates the reader; the reader has no scale** (28 Oct, SPN R567; Tom: "The reader is scale free, and by
+  definition, payloads magnitudes sizes have now meaning."; "The geometry remove the scale for readers. The don't manage
+  magnitude."; "Yes. That is very important distinction. Geometry creates the reader. The reader has no scale
+  whatsoever."): the geometry removes the scale before anything is read (the projection divides, R306); a direction
+  arrives with every amount along it gone, paint as paint; the reader manages no magnitudes, of the other party or of
+  what arrives, and holds no unit (H in H is 1, H in anything else a writing); every magnitude with its unit a writer's.
+  Not "the reader compares magnitudes" (Claude's first wording, withdrawn). OFS §3.8 after "never knows V"; essay 3 §5.
+  **Reading and writing are scale-invariant and scale-variant; the names are better** (28 Oct, SPN R568; Tom: "So really
+  the reader writer metaphor is just the scale invarient / scale variant distinction.", then "Yes add it. But the reader
+  writer metaphor is much better."): as a sorting of quantities, exactly (Bridgman 1922, Buckingham); the names add the
+  act (a function of invariants is invariant, so a writing needs an amount carried in), the vantage (the reader handed
+  its invariants, R567; the writer holds variant quantities and forms invariants) and that the test sorts quantities, the
+  names vantages. Keep "reading" and "writing" as the names. OFS §9 after "The test: scale the world"; essays README.
+  **The reader never sees a shape** (28 Oct, SPN R569; Tom: "the reader does not see the actual shape, only writers do.
+  Readers only see the cauchy Sweep. That's not a small idea."; "Yes. that is what we should say clearly, without
+  equivocation."): a thing is to the reader the addresses it paints and the paint; its shape is amounts, removed before
+  reading (R567); every way to it a writing (ranging, a counted step, a blueprint). Said without hedging. Helmholtz 1867,
+  Poggio, Torre and Koch 1985 and Gibson 1979 named as history (an image underdetermines its shape, a shortfall made up by
+  inference); ours: the reader's side whole, the shape never the reader's to lack. OFS §1 after "The separation, in
+  brief"; essay 6 §8.
+  **What an array is; the horizon; π/2 attained, 2/π approached** (28 Oct, SPN R570; Tom: "sizeof(array) = 10. that is
+  the true breadth. the writer's breadth. computer science takes the writers vantage."; "as a reader, we add a degree of
+  freedom. that means we now have a density and a breadth."; "the reader reads a sweep of the array, not the complete
+  array. when you don't know the complete size, it creates a horizon."; "use the correct math, the towards and away is
+  sneaking in the idea of inside and outside."; "holding a apple, is a writers activity. The writer, can know N, just by
+  rotating it."; "a horizon occurs when the size of the apple is completely unknown to you, and could never be known. in
+  that situation, there is no inside or outside, because that would imply you knew N."; "PI/2 is the limit, if you were
+  able to walk the sweep from central position. and 2/PI is the limit, from the home position."; "yes, update ofs and
+  create an essay"): essay 12, `papers/essays/12-what-an-array-is.md`. The array as known is the writer's (`sizeof` held,
+  index an amount, scale-variant); holding and turning an apple is writing (the hand holds the back, the turn known), its
+  rim an edge, halves and inside/outside writer's words; the reader adds its standpoint z = m + iγ, getting a density (the
+  Cauchy over the slots) and a breadth (its own H), reading a sweep, N only as N/γ where an N exists; a horizon where no N
+  could be, no inside, outside or halves, only the projective line's two ends 0 and ∞ (the dilations' fixed points), the
+  reciprocal swapping them, the corner its fixed point; unknown length and unknown fineness read alike. OFS §4 "Why the
+  corner sits at 45°": π/2 (θ/sin θ, the central sweep) attained at a point, 2/π (sin θ/θ, the inscribed) a limit at the
+  horizon, product 1 at every θ. Not "toward/away" or "the apple's horizon" (Claude's first wordings, withdrawn).
+  **Any array laid on the quarter turn** (28 Oct, SPN R571; Tom: "the key point is that you can take any array and lay it
+  down on the sweep 90deg. … your saying the array, of any length, starts at 0 degrees and ends at 90 degrees. That
+  essentially the same as saying you have stepped off the array and now have two degrees of freedom. At this point you
+  can access the array in two additional ways, using tangent or arctangent.", then "yes"): essay 12 §6. Slot k of N at
+  θ_k = (k + ½)(π/2)/N, a direction [cos θ_k : sin θ_k]; tan from slot to reading (the boundaries tan(kπ/2N), the
+  half-Cauchy's quantiles, the corner the middle); arctan from any reading x ∈ [0, ∞] to slot ⌊N·(2/π)·arctan x⌋, order
+  kept, never off the end (the last slot the horizon's: from 6.31 up at N = 10); the share g needs no N, only the floor
+  does (the writer's). As OFS §7.3 "Laid on the sweeps" and `array-sweeps.html`.
+  **Laying an array on the quarter turn is the writer's** (28 Oct, SPN R572; Tom: "but all this is from the writers vantage,
+  where N is known and it is known to range between 0 to 90dgrees."): corrects R571. The lay needs N (the step 90°/N), the
+  array's end, the angle as a computed number (tan, arctan) and the floor; all held by the writer. The reader lays
+  nothing: its turn runs from home toward a horizon never reached, the share passed met by turning (the arctangent the
+  writer's formula for it, R327), no last slot. Essay 12 §6 rewritten ("Laying an array on the quarter turn, and who can").
+  **The reader's situation recreated in code** (28 Oct, SPN R573; Tom: "so how do you recreate the readers situation with
+  arrays?", then "agree, you would have simulate the cauchy somehow."): essay 12 §6, `runs/arr/reader.mjs`. A computer is a
+  writer, so a program recreates the reader's situation by a boundary: the world a generator (no length across), the
+  reader K slots of its own (first paint met kept, handed slot and paint only), the geometry between them simulating the
+  Cauchy (⌊K·(2/π)·arctan(pos/H)⌋), the writer's part. K = 32, H = 10: a world of 10⁶, 2·10⁶ or without end gives
+  identical slots (205 elements read); scaled by 7 with H, unchanged; H alone moves which elements land; repainting moves
+  no slot; 6 near slots empty (whole-step world); a world of 100 stops paint at slot 29, N/H read in [6.7, 10.2].
+  **A program cannot simulate the Cauchy** (28 Oct, SPN R574; Tom: "but you can't actually simulate the cauchy, cauchy
+  handles true infinity. computer can't handle true infinity."): corrects R573's "the geometry simulating the Cauchy".
+  The program recreates the reader's K addresses, a finite picture cut into K quantiles; the tail past the last boundary
+  is one slot, stopped by fiat. Doubles end near 1.8·10³⁰⁸ (then the symbol +∞; atan(∞) = π/2, tan(π/2 as a double)
+  ≈ 1.6·10¹⁶); tan(π(U − ½)) never exceeds ≈ 2·10¹⁵, so a computer's Cauchy is truncated and has a mean (sizes ≈ 22.7,
+  (1/π)·ln(1 + M²)); the true Cauchy has none. The geometry gives what no computation can. Essay 12 §6.
+  **What computer science can make real** (28 Oct, SPN R575; Tom: "this is where computer science can step up and put the
+  abstract ideas of geometry and make them real and operational.", then "yes"): essay 12 §9. Not simulating the infinity
+  but representing it: keep the pair [h : v] (the horizon [0 : 1] finite; homogeneous coordinates, atan2, IEEE ±∞);
+  compute with order (medians and quartiles exact, means the operations that need the true tail); reading and writing as
+  a type boundary (a direction type with no length, unit or addition; an amount carrying its unit); the world held lazily
+  (generators); the dial. No new claims beyond the CS companion's §3, §5, §7, §11.
+  **What "computers can't hold infinity" means operationally** (28 Oct, SPN R576; Tom: "everyone knows computation and
+  computers not capapble of representing the infinities of reality, but i don't think has explained preciscly what that
+  means operationally."; "the cauchy gives a new lense into this question."; "yes"): every machine operation on numbers is
+  monotone (rounding, overflow, truncation), so by Theorem 6(c) order statistics come out as the true ones rounded and sums
+  do not; the Cauchy's infinity is in the chart v/h, not the turn (the angle bounded, its mean π/4 computed right); a
+  double's draw tan((π/2)U) tops at ≈ 3.5·10¹⁵, so a machine's Cauchy has a mean (≈ 22.8). Faithful where the infinity is a
+  horizon kept as a pair or angle and the operations keep to order; unfaithful where it sits in a sum of amounts.
+  `runs/arr/infinity.mjs` (10⁷ draws: angle mean 0.78565, median v/h 1.0003, mean v/h 1.78, 3.68, 14.3, 13.0; caps at 10,
+  10³, 65,504 move the mean to 2.10, 5.07, 7.74 and not the median; float32's median the rounded median). OFS Appendix B
+  "Machine arithmetic and the infinite"; essay 12 §9. Well-studied neighbours (computable analysis, monotone rounding,
+  quantile equivariance) noted, no claim about other work's gaps.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
