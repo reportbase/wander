@@ -49,6 +49,42 @@ Long is allowed. Explaining comes before compressing. The case of h, v, H, V is 
 | 7 | **Where it shows up** | the lighthouse | `boost-sky.html`, `pinhole.html`, `ground.html`, `moon.html` | Lighthouse problem, Mercator, aberration, LIGO |
 | 8 | **What the geometry gives free** | scrolling a list without end | `wedge-browse.html`, `star-dial.html`, `fpv.html` | depth buffers, level of detail, fisheye views |
 
+## What already exists (Tom, 28 Oct: "we also have essays cauchy, computer science application, physics and the
+number line, tangent bridge, among others.")
+
+The series starts from these, rewritten in the present frame (one length H, the two tests, addresses and payloads),
+not from nothing. Each older piece predates some rulings, so every term is checked first (CLAUDE.md, "check every
+term"); where one differs from OFS, OFS stands.
+
+| existing work | where | essay it feeds |
+|---|---|---|
+| *The Cauchy*, *The Cauchy, Inside and Out*, *The Cauchy Distribution as the Measure* | `papers/archive/` | 3 Addresses given, payloads met |
+| the computer-science companion | `papers/observation-from-somewhere-cs.md` | 8 What the geometry gives free (and a CS essay of its own) |
+| the physics companion, `physics.md`, `inverse-square.md`, `parallax.md` | `papers/` | 6 Many standpoints, 7 Where it shows up |
+| *The number line* | `papers/number-line.md` | 1 Reading and writing (the writer's ruler), 4 Near and far |
+| *The Tangent Bridge Theorem* (algebra, classical, spectral) and *TVF* | reportbase/draw `papers/` | a new essay, "Arrays and the circle": a finite set of readings carrying a signal, the kernel at N = 2 the Cauchy |
+| *The Unit Rule* | `papers/unit-rule.md` | the essay on holding in order (time) |
+| *Each Sees the Other Smaller* | `papers/denominator-paradox.md` | 1 Reading and writing (two readers, one exchanged number) |
+| `vantages.md` (paradoxes as vantage conflations) | `papers/` | 9 (below) |
+| *The dial's geometry*, *Special relativity, sorted* | reportbase/calendar `GEOMETRY.md`, `RELATIVITY.md` | 4 Near and far (three rulers), 7 (the boosted sky) |
+| *Special Relativity, Through the Fisheye*, *Browsing the Fisheye*, *The Radix* | `papers/archive/` | 7, 8 |
+| `mapping.md` | `papers/` | 6 Many standpoints |
+
+So the sequence grows to about eleven:
+1. Reading and writing
+2. One length turned
+3. Addresses given, payloads met
+4. Near and far
+5. Three parties
+6. Many standpoints
+7. Where it shows up
+8. What the geometry gives free
+9. Paradoxes as vantages
+10. Arrays and the circle (the Tangent Bridge)
+11. Holding in order (the Unit Rule)
+
+Some of these may stand as existing essays lightly reframed rather than new writing. Which of them come first is Tom's.
+
 ## Short papers to pull out later
 
 Each only once its essay argues it well. Candidates:
