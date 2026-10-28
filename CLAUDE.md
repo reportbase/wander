@@ -2459,6 +2459,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   reciprocal swapping them, the corner its fixed point; unknown length and unknown fineness read alike. OFS §4 "Why the
   corner sits at 45°": π/2 (θ/sin θ, the central sweep) attained at a point, 2/π (sin θ/θ, the inscribed) a limit at the
   horizon, product 1 at every θ. Not "toward/away" or "the apple's horizon" (Claude's first wordings, withdrawn).
+  **Any array laid on the quarter turn** (28 Oct, SPN R571; Tom: "the key point is that you can take any array and lay it
+  down on the sweep 90deg. … your saying the array, of any length, starts at 0 degrees and ends at 90 degrees. That
+  essentially the same as saying you have stepped off the array and now have two degrees of freedom. At this point you
+  can access the array in two additional ways, using tangent or arctangent.", then "yes"): essay 12 §6. Slot k of N at
+  θ_k = (k + ½)(π/2)/N, a direction [cos θ_k : sin θ_k]; tan from slot to reading (the boundaries tan(kπ/2N), the
+  half-Cauchy's quantiles, the corner the middle); arctan from any reading x ∈ [0, ∞] to slot ⌊N·(2/π)·arctan x⌋, order
+  kept, never off the end (the last slot the horizon's: from 6.31 up at N = 10); the share g needs no N, only the floor
+  does (the writer's). As OFS §7.3 "Laid on the sweeps" and `array-sweeps.html`.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
