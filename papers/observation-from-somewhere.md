@@ -916,7 +916,8 @@ each the same address; only the colours change.
 - *The geometry is the hand, not the glass.* Dividing v by h keeps the finger and drops the colour.
 - *The fingers are free; the light colours them.* The fingers are the geometry of the uniform turn, the Cauchy, and
   they are there wherever the reader looks: they are given, and the reader computes nothing, sends nothing and turns
-  through nothing. The colour on each finger is the light the world sends along it, from the first pane on its line. To
+  through nothing. It is passive, not a radar: nothing is sent out to find what is there. What the reader does with the
+  painted fingers is its own affair and not this paper's. The colour on each finger is the light the world sends along it, from the first pane on its line. To
   read the payload is to read the colours on the fingers, from the same standpoint.
 - *The colour carries no distance.* A finger lit red does not say whether its pane is near or far, small or large.
   Moving the hand changes the colours, never the fingers: that is reading. Walking to another place makes the panes slide

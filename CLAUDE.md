@@ -2502,6 +2502,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   10³, 65,504 move the mean to 2.10, 5.07, 7.74 and not the median; float32's median the rounded median). OFS Appendix B
   "Machine arithmetic and the infinite"; essay 12 §9. Well-studied neighbours (computable analysis, monotone rounding,
   quantile equivariance) noted, no claim about other work's gaps.
+  **Passive, not a radar** (28 Oct, SPN R577; Tom: "its not pinging, its just addresses that are swept to catch
+  payloads."; "yes, Its passive, the reader must do something useful with those painted fingers, but were not concerned
+  about that."): OFS §3.7's hand bullet says the reader is passive, nothing sent out; what it does with the painted
+  fingers is not the paper's concern (R455). Restates R453, R454, R458.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
