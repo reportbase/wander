@@ -3846,6 +3846,20 @@ under composing is the powers of one factor g, since under the logarithm it is a
 multiples of one step. Two factors whose logarithms are incommensurable, 2 and 3, generate rescalings dense in every
 range, and no levels at all. The levels' form is forced; which g is not.
 
+**The Cauchy from one length** (§5, §7.1). Every piece of the mathematics here is classical. A circle needs one length:
+it is everything at a fixed distance from a centre, and one length turned about its end traces it. The tangent of an
+angle turned uniformly is Cauchy; that is the lighthouse problem of the Bayesian textbooks (Gull 1988; Sivia and
+Skilling 2006). Projecting the circle from one of its own points onto a line, the stereographic projection, carries its
+uniform measure to the Cauchy (§4), and the family is closed under the Möbius maps of the line (Knight 1976; McCullagh
+1996); its median, its symmetry under the reciprocal and its missing mean are textbook facts. None of these mentions a
+second breadth, and none needs one: the slope v/h is already a ratio of two shares of one radius, so its absence is
+never remarked. What this paper adds is the reading of who holds what. The reader holds one length, H, and no V; V
+and c belong to a writer or to a drawing with two axes, and V = H is the writer's name for the reader's circle (§5).
+Each feature of the Cauchy is then a feature of the circle that survives without V: the corner is the median, the
+near and far halves are mirrored by the reciprocal, and the missing mean is what the absent V leaves, the far end being
+the horizon, a direction and not a place, with nothing to average toward. A writer, holding V, has its far end as an
+amount: no horizon, and the corner only a point. We did not find this assembly in print; the pieces are classical.
+
 **V = H under other names** (§5). Every field that reads directions through something with two axes draws its parties
 at one length, the reader's circle written with two axes, under its own name:
 - *Standardizing.* The correlation coefficient (Pearson 1896) divides each variable by its own spread before the two
