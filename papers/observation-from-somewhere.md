@@ -1092,7 +1092,11 @@ These are the two sweeps of one standpoint, not two readers: the central sweep, 
 through a half turn, and the inscribed sweep, the ray from a point of the circle through a quarter, the only two pivots
 at which equal turns carve equal arcs (below). The arc faced, not the chord held, is where π/2 and 2/π come from: the
 writer's 1 is had through the half turn as the arc, π/2, and through the quarter turn as 2/π, and only their product
-gives back the 1.
+gives back the 1. Both are values at the end of the sweep, as θ reaches 90°. Along the way the central sweep reads arc
+over chord, θ/sin θ, from 1 through 1.1107 at the corner, and the inscribed sweep chord over arc, sin θ/θ, from 1
+through 0.9003, their product 1 at every θ. The two ends are not alike. The radius, its half turn done, lands back on
+home, a point, so π/2 is attained there. The ray goes tangent to the circle as v/h runs without bound, the horizon, so
+2/π is a limit, approached and never reached: it is the horizon's number.
 
 **The arc from the chord.** The arc can be had from the chord AB without turning a bar. Stand the two parties at its
 ends, and from each end sweep a ray: from A a ray reading v/h, from horizontal along AB up to vertical, and from B a ray

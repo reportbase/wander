@@ -2443,6 +2443,22 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Poggio, Torre and Koch 1985 and Gibson 1979 named as history (an image underdetermines its shape, a shortfall made up by
   inference); ours: the reader's side whole, the shape never the reader's to lack. OFS §1 after "The separation, in
   brief"; essay 6 §8.
+  **What an array is; the horizon; π/2 attained, 2/π approached** (28 Oct, SPN R570; Tom: "sizeof(array) = 10. that is
+  the true breadth. the writer's breadth. computer science takes the writers vantage."; "as a reader, we add a degree of
+  freedom. that means we now have a density and a breadth."; "the reader reads a sweep of the array, not the complete
+  array. when you don't know the complete size, it creates a horizon."; "use the correct math, the towards and away is
+  sneaking in the idea of inside and outside."; "holding a apple, is a writers activity. The writer, can know N, just by
+  rotating it."; "a horizon occurs when the size of the apple is completely unknown to you, and could never be known. in
+  that situation, there is no inside or outside, because that would imply you knew N."; "PI/2 is the limit, if you were
+  able to walk the sweep from central position. and 2/PI is the limit, from the home position."; "yes, update ofs and
+  create an essay"): essay 12, `papers/essays/12-what-an-array-is.md`. The array as known is the writer's (`sizeof` held,
+  index an amount, scale-variant); holding and turning an apple is writing (the hand holds the back, the turn known), its
+  rim an edge, halves and inside/outside writer's words; the reader adds its standpoint z = m + iγ, getting a density (the
+  Cauchy over the slots) and a breadth (its own H), reading a sweep, N only as N/γ where an N exists; a horizon where no N
+  could be, no inside, outside or halves, only the projective line's two ends 0 and ∞ (the dilations' fixed points), the
+  reciprocal swapping them, the corner its fixed point; unknown length and unknown fineness read alike. OFS §4 "Why the
+  corner sits at 45°": π/2 (θ/sin θ, the central sweep) attained at a point, 2/π (sin θ/θ, the inscribed) a limit at the
+  horizon, product 1 at every θ. Not "toward/away" or "the apple's horizon" (Claude's first wordings, withdrawn).
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
