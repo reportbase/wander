@@ -2356,6 +2356,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Payloads Met*, about 9,300 words, drawn from OFS under R421 (OFS stands where they differ; a change goes into OFS first
   and is carried out to it). Outline, decisions and the proposition mapping in `plans/ofs-submission-outline.md`. For a
   mathematics or probability journal; author Tom Brinkman, AI assistance disclosed; OFS cited as the long version.
+  Review 37 (28 Oct, SPN R551; a consistency audit pasted by Tom, `plans/ofs-review-37.md`): the CS and OFS items were
+  already made (R548, R549); the physics companion's h and v the reader's shares of H, its central point as OFS §4, "the
+  parallel reader's bell" retired, the weak value in ⟨σz⟩, and its data sources cited (ESA 1997, Smart et al. 2021,
+  Tully et al. 2023, Hubble 1929, Henderson 1975).
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
