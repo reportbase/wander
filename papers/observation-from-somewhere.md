@@ -3106,6 +3106,17 @@ shape over their geometric mean does not move. This is Proposition 8 used as a t
 what it moves, in a named unit, is an amount that had to be carried in. A record that scaling would not change cannot
 contain the world's size, however carefully it was made.
 
+Sorted by the test, reading and writing are the scale-invariant and the scale-variant: what does not move under k, and
+what does. That is the old distinction of dimensional analysis, the absolute significance of relative magnitude
+(Bridgman 1922) and the dimensionless groups of Buckingham's theorem (Appendix A), and the readings are such groups. We
+keep the names reading and writing because they say more than the distinction does. They name the act: a writing is
+made by carrying an amount in, since any function of scale-invariant quantities is scale-invariant, so no reading, however
+many, yields a scale-variant number without at least one taken from outside. They name the vantage: the reader is handed
+its invariants by the geometry, which removes the scale before anything is read (§3.8), while the writer holds the
+variant quantities and can form invariants from them. And they name who can do what: a ratio of two lengths on a
+blueprint is scale-invariant, a reading by the test, yet a writer formed it; the test sorts quantities, the names sort
+vantages. Beside it the second test is a second invariance, under a change of what arrives.
+
 **Two tests.** The paper's two distinctions can be applied without accepting its reading, by two tests anyone can run
 on any quantity.
 - *Scale the world.* Multiply every breadth and distance by one factor k. A quantity that does not change is a reading:

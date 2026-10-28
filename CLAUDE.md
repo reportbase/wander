@@ -2430,6 +2430,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   arrives with every amount along it gone, paint as paint; the reader manages no magnitudes, of the other party or of
   what arrives, and holds no unit (H in H is 1, H in anything else a writing); every magnitude with its unit a writer's.
   Not "the reader compares magnitudes" (Claude's first wording, withdrawn). OFS §3.8 after "never knows V"; essay 3 §5.
+  **Reading and writing are scale-invariant and scale-variant; the names are better** (28 Oct, SPN R568; Tom: "So really
+  the reader writer metaphor is just the scale invarient / scale variant distinction.", then "Yes add it. But the reader
+  writer metaphor is much better."): as a sorting of quantities, exactly (Bridgman 1922, Buckingham); the names add the
+  act (a function of invariants is invariant, so a writing needs an amount carried in), the vantage (the reader handed
+  its invariants, R567; the writer holds variant quantities and forms invariants) and that the test sorts quantities, the
+  names vantages. Keep "reading" and "writing" as the names. OFS §9 after "The test: scale the world"; essays README.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

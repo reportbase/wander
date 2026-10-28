@@ -11,6 +11,9 @@ Two ideas run through all of them:
   median the corner, its far end the horizon, its missing mean the trace of the V it lacks.
 
 Two tests sort any quantity: **scale the world** (reading or writing?) and **change what arrives** (address or payload?).
+Each is an invariance. By the first, reading and writing are the scale-invariant and the scale-variant, the old
+distinction of dimensional analysis; the names say more, since they name the act that turns one into the other (an
+amount carried in, as no function of invariants can vary) and the vantage that holds each.
 
 | # | essay | opens on | what it does |
 |---|---|---|---|
