@@ -700,8 +700,8 @@ computed from the step where π enters matches its source. Sorted:
 | the circle as a shape (a semicircle's area, the arcsine integral) | 7 | an extent given in advance |
 | other (a pole; a dimension; a convention) | 6 | |
 
-So 2/π is not one thing, and a single 2/π does not fingerprint the uniform turn. The address reader of OFS holds shares
-and medians, not means, so most of these 2/π belong to the payload's side: a mean taken over the turn. The even turn shows
+So 2/π is not one thing, and a single 2/π does not fingerprint the uniform turn. OFS's reader, counting by its inscribed
+sweep, holds shares and medians, not means, so most of these 2/π belong to the payload's side: a mean taken over the turn. The even turn shows
 instead in every projection's mean being 2/π at every offset. OFS's π/2 · 2/π = 1, the two sweeps' readings of one line
 whose product returns the reader's own H, is one more: a ratio of two sums over the turn.
 
