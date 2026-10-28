@@ -182,6 +182,16 @@ chart that sends the horizon to infinity, not to anything measured (§4, §7.2).
 separate thing, with a law of its own. The earlier readings stay correct; the reading here says which of their facts
 belong to the addresses and which to what is met at them (§7.2, "The rule, and a test").
 
+**What the paper is for.** Practice already reads Cauchy-type quantities correctly. No one reports the mean of a Cauchy
+sample: the median and the quartiles, or the centre and half-width of a line, are what statisticians, spectroscopists
+and astronomers report, and robust methods were built to do the same where the tails are heavy. This paper does not
+correct that practice. It gives a reason for it. The usual reasons, that the mean does not exist and that the median is
+robust, say that the median works. The reading says what makes it the right summary: the quantity is a direction read
+from a standpoint, its law has a median and no mean on the chart in which it is reported, and the median is the corner,
+where the two parties' readings meet. It also says when the median stops being the right summary: when what arrives
+weighs the two sides of the corner unequally the median moves off the corner by that weighting, and when an amount
+enters, the law stops being a Cauchy from its centre outward (§7.2).
+
 **A picture.** Hold your hand up to a stained-glass window, with the fingers spread between flat and upright. Each
 finger is a direction in which you can look, an address, and each is lit by the pane it lines up with, in that pane's
 colour. The fingers are there before any light reaches them, and they are the same wherever you hold the hand: nothing
@@ -3068,6 +3078,23 @@ shape's radii from its centre also move by k, but in a unit no reading received 
 shape over their geometric mean does not move. This is Proposition 8 used as a test: what scaling leaves unchanged is geometry, and
 what it moves, in a named unit, is an amount that had to be carried in. A record that scaling would not change cannot
 contain the world's size, however carefully it was made.
+
+**Two tests.** The paper's two distinctions can be applied without accepting its reading, by two tests anyone can run
+on any quantity.
+- *Scale the world.* Multiply every breadth and distance by one factor k. A quantity that does not change is a reading:
+  a direction, an angle, a ratio of two breadths, a shape held over its own mean. A quantity that changes by k is a
+  writing, an amount in a named unit, and somewhere an amount was carried in to state it (Proposition 8). In the worked example
+  (§10) every reading of the mountain range is the same at k = 1/10, 1 and 100 (a range 2, 20 or 2,000 miles wide); its width and distance in miles move by
+  k, and are had only once one thumb is walked.
+- *Change what arrives.* Replace what arrives along each direction by something else, keeping the directions. A quantity
+  that does not change belongs to the addresses; one that changes belongs to the payload (Theorem 6(a)). On data the replacement
+  can be made by pairing each reading of one detector with another instant's reading of the other, which keeps each
+  channel's own law and changes what arrives together: in LIGO's noise the direction's law did not change, so its
+  departure from the uniform turn belongs to each channel's own spread, not to anything the two share (§7.2, "A case in data").
+
+Together the tests sort a fact four ways: readings of the addresses (the corner, the quartiles of directions), readings
+of what arrives (a colour, a ratio of intensities), and writings of either (a range in metres, a flux in a unit). Neither
+test needs the paper's vocabulary to be run.
 
 **Proposition 14 (a ruler that favours no unit).** Let a ruler lay each amount x > 0 at a place L(x), with L continuous
 and not constant. Say the ruler favours no unit if changing the unit by any factor λ > 0 changes the layout only by a
