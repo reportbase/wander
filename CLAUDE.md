@@ -2396,6 +2396,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   is the why."): "What the paper is for" in §1 (practice already takes the median; the paper says why, and when it
   stops being right) and "Two tests" (scale the world: reading or writing; change what arrives: address or payload),
   OFS §9 and the submission's §8. Don't look for practitioners who average a Cauchy: the paper explains practice.
+  **Long essays first, journals second** (28 Oct, SPN R562; Tom: "go bigger, longer essays, that actually explain the
+  situation"; short targeted papers "not the priority, and only if well argued in the mani paper/book"): the priority is a
+  series of long essays read in order (a book written in public), each opening on something everyone knows, showing the
+  geometry in full with its demos, saying which old paper saw which piece, and ending with what it changes. A short
+  journal paper is pulled out only once an essay argues its one thing well; the submission waits. OFS stays the source of
+  truth. Citations go in as history, never as defence; no new ones unless Tom asks or a referee names one. Plan and
+  first sequence in `plans/essays-plan.md`; essay 1, Reading and writing, outlined to Tom first.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
