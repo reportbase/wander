@@ -211,8 +211,11 @@ Look again at situation 1, the circle, the place where reader and writer meet. T
 two breadths. To write h² + v² = 1, and to mean it as a statement about lengths, you must know V and know that it
 equals H. Two amounts, and a claim about how they compare.
 
-The reader has no V. It has never been given one, and it cannot read one. Yet the reader has a circle too. Where does
-it come from?
+The reader has no V. More than that, it never knows V. Every reading is a ratio, and a ratio cancels the very amount V
+would be, so no reading, however many, carries it. V is known only by writing: by walking a baseline, counting a step,
+timing a signal of known speed, or being handed an agreed unit, each an amount carried in from outside. A reader that
+comes to know V has not read better. It has written, and taken the writer's vantage. Yet the reader has a circle too.
+Where does it come from?
 
 It comes from turning. Take your one length, H, and turn it about one end, steadily, like the beam of a lighthouse
 sweeping the sea, or your gaze sweeping along a row of trees. The free end traces a circle, and it traces a circle for
@@ -276,7 +279,7 @@ not there. The median, sitting at the corner, is perfectly well defined. It is w
 on the size of anything.
 
 There is a neat way to say all this. Not knowing the size of the far end is exactly what gives the corner its job and
-creates the horizon. A writer holding V has neither. Its corner is just a point on the circle, and its circle has no
+creates the horizon. The reader's geometry needs V unknown. A writer holding V has neither. Its corner is just a point on the circle, and its circle has no
 horizon, because it closes.
 
 ### What it means
@@ -314,7 +317,7 @@ missing mean are textbook facts.
 
 None of these mentions a second breadth, and none needs one. The slope v/h is already a ratio of two shares of one
 radius, so the absence of a V is never remarked. What is new is the reading of who holds what: the reader holds one
-length and no V, and each feature of the Cauchy is a feature of the circle that survives without V. The corner is the
+length and never knows V, and each feature of the Cauchy is a feature of the circle that survives without V. The corner is the
 median, the near and far halves are mirrored by the reciprocal, and the missing mean is what the absent V leaves. A
 writer, holding V, has its far end as an amount: no horizon, and the corner only a point. We did not find this assembly
 in print; the pieces are classical.

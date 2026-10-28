@@ -2411,6 +2411,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   needed.", then "merge and add to OFS"): OFS Appendix A names the classical pieces (one length turned, the lighthouse,
   stereographic projection, Möbius closure) and the reading that is ours (R533: no V for the reader; the Cauchy's features
   the circle's, surviving without V; the missing mean the absent V's trace).
+  **Readers never know V** (28 Oct, SPN R565; Tom: "The fact that readers don't need V is a critical insight. But it's
+  more than that, they don't ever know V, for knowing V, is only known by writers.", then "Yes"): not a lack but a
+  boundary. Every reading a ratio, cancelling V, so no reading carries it; V known only by writing (a baseline walked, a
+  step counted, ranging, an agreed unit), each moved by scaling the world; a reader that comes to know V has written, not
+  read better; the reader's geometry needs V unknown (horizon, corner as median, missing mean), a writer knowing V has a
+  closed circle and no horizon. OFS §3.8 closing paragraph and Appendix A's Cauchy entry; essay 1 §4.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

@@ -979,6 +979,14 @@ doublings it is an offset, log₂(V*/H), not a change of pattern. The number mat
 amount from outside; everything it reads, places and orders from where it stands is done without it (§9). Situation 2 knows the number; a situated reading does not; known within
 bounds, it is known within bounds. Assuming it clarifies the reading; it does not simplify it.
 
+The reader does not merely do without V; it never knows V. Every reading is a ratio, and a ratio cancels the amount V
+would be, so no reading, however many, carries it (Proposition 8). V is known only by writing: by walking a baseline,
+counting a step, ranging with a signal's speed, or being handed an agreed unit, each an amount carried in from outside,
+and each moved when the world is scaled (§9). A reader that comes to know V has written; it has not read better but
+taken the writer's vantage. And the reader's geometry needs V unknown: the horizon is there because the far end is
+never an amount, the corner is the median because nothing sizes either side, and the missing mean is the absent V's
+trace (§4, Theorem 6(d)). A writer, knowing V, has a closed circle, its corner only a point, and no horizon.
+
 ## 4. The corner
 
 **Proposition 1.** Let x = v/h ∈ [0, ∞). Then x = 1 is the only point fixed by the reciprocal x ↦ 1/x. The reciprocal
@@ -3853,7 +3861,7 @@ Skilling 2006). Projecting the circle from one of its own points onto a line, th
 uniform measure to the Cauchy (§4), and the family is closed under the Möbius maps of the line (Knight 1976; McCullagh
 1996); its median, its symmetry under the reciprocal and its missing mean are textbook facts. None of these mentions a
 second breadth, and none needs one: the slope v/h is already a ratio of two shares of one radius, so its absence is
-never remarked. What this paper adds is the reading of who holds what. The reader holds one length, H, and no V; V
+never remarked. What this paper adds is the reading of who holds what. The reader holds one length, H, and never knows V (§3.8): V
 and c belong to a writer or to a drawing with two axes, and V = H is the writer's name for the reader's circle (§5).
 Each feature of the Cauchy is then a feature of the circle that survives without V: the corner is the median, the
 near and far halves are mirrored by the reciprocal, and the missing mean is what the absent V leaves, the far end being
