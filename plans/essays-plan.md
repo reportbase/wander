@@ -9,6 +9,15 @@
 - "in the process, we can pull out very short targeted paper that say one thing and sumbit them to journals, thats what
   they like, but that is not the priority, and only if well argued in the mani paper/book."
 
+## The unifying ideas
+
+Tom, 28 Oct: "reader/writer/cauchy should be the unifiying ideas." Every essay is read through two ideas:
+- **Reader and writer:** what a standpoint reads free (ratios, directions), and what writing an amount costs (one
+  carried in, counted).
+- **The Cauchy:** the measure of the reader's directions, its addresses, apart from what arrives (the payload).
+
+An essay that does not bear on one of them waits.
+
 ## What changes
 
 - **The priority is a long work that explains.** It is a series of long essays read in order, a book written in
