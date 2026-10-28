@@ -8,13 +8,14 @@
 
 A reader that stands somewhere, holds one length of its own and does not know the size of what it reads holds two
 different things: where a reading can be put, its *address*, and what is met there, its *payload*. We construct the
-addresses from that restriction alone. Any relation between two parties is a pair of unit relations h and v in [0, 1],
+addresses from that restriction and the uniform measure on the reader's turn. Any relation between two parties is a pair of unit relations h and v in [0, 1],
 and every relation turns over at one point, v = h, the corner. The reader's one length, turned uniformly, traces a
-circle; a sweep that is continuous, composes and returns after a full turn has its own Euclidean measure, unique up to
-that length. Read as v/h, the uniform turn's directions are the half-Cauchy on a quadrant, its median at the corner and
+circle; a continuous linear sweep that composes, carries h into v in a quarter turn and returns after a full turn
+preserves an inner product of its own, unique up to that length. Read as v/h, the uniform turn's directions are the half-Cauchy on a quadrant, its median at the corner and
 its quartiles a reciprocal pair. Following Jaynes's principle of transformation groups, with a group we state as the
-reader's ignorance, this law is the turn's own: whatever arrives along a direction cancels from its reading, order
-survives every change of what arrives and sums do not. Hence the median at the corner for any sweep that treats the two
+reader's ignorance, this law is the group's invariant measure, a reference measure in Jaynes's sense rather than a
+belief about what arrives. Whatever arrives along a direction cancels from its reading, by construction; order survives
+every change of what arrives, and sums do not. Hence the median at the corner for any sweep that treats the two
 parties alike, the missing mean wherever the sweep's weight stays above zero near the horizon, and the Cauchy's exact
 shape only for the uniform turn. No reading fixes the size of what is read; one amount carried in does. In one
 sentence: an address scheme and the magnitude met at an address are distinct mathematical roles, and a geometry can
@@ -55,8 +56,9 @@ rather than belief.
 **Results.**
 - Every relation between two parties turns over at one point, the corner v = h, the only point fixed by exchanging them
   (Proposition 1).
-- A reader holding one length traces a circle when that length is turned; a sweep that is continuous, composes and
-  returns after a full turn has its own Euclidean measure, unique up to that length (Proposition 3).
+- A reader holding one length traces a circle when that length is turned; a continuous linear sweep that composes,
+  carries h into v in a quarter turn and returns after a full turn preserves an inner product of its own, unique up to
+  that length (Proposition 3).
 - The uniform turn's readings v/h are the half-Cauchy on a quadrant, its median at the corner (Proposition 4); on a
   drawing with two axes, a page or an instrument that draws v at c times h, they are a Cauchy of scale 1/c, with the
   corner at the median only for c = 1.
@@ -94,11 +96,21 @@ all of v (h = 0). Leaving zero, v rises against h held at 1 until it too reaches
 v held at 1. The reading is v/h on the first half and h/v on the second. Exchanging the two parties, the *reciprocal*,
 sends v/h to h/v. The limit v/h → ∞ is the *horizon*.
 
+This describes h and v on the *capped chart*, the edges of the unit square, the larger always held at 1. The paper's
+main picture is the reader's circle (§4), on which the same direction is (h, v) = (cos θ, sin θ), with h² + v² = 1. A
+reading, being a ratio, is the same on both; where an amount of h or v enters (a distance, a foot, a height) we work on
+the circle unless the capped chart is named.
+
 A reading is a direction, [h : v] with h, v ≥ 0, not both zero: a point of the closed half-arc of the projective line,
-with two ends, *home* [1 : 0] and the horizon [0 : 1], and two charts, x = v/h (defined but at the horizon) and y = h/v
-(defined but at home). The *address* is the direction; its *reading* is a coordinate on it (v/h, its angle θ, or its
+with two ends, *home* [1 : 0] and the horizon [0 : 1], and two charts, x = v/h (defined except at the horizon) and y = h/v
+(defined except at home). The *address* is the direction; its *reading* is a coordinate on it (v/h, its angle θ, or its
 share g of the quarter turn); the *law* of the addresses is a measure on the readings. With a third unit relation v₂,
 read against the same h, the directions fill the positive octant, the *wedge*.
+
+**Near field, levels, lay and zoom.** The *near field* is the readings up to the corner, v/h ≤ 1; with three unit
+relations, those in which h is the largest. A *level* is a doubling, from 2^(j−1) to 2^j in a reading or a distance;
+levels are counted in log₂. A *lay* places amounts along a line of addresses (§9); a *zoom* is a change of the reader's
+H, which moves where every amount lies on the lay and changes no reading.
 
 **Addresses and payload.** An address is a place where a reading can be put; the range of addresses is fixed by the
 geometry before anything arrives. The *payload* is what arrives along an address: a wave of some kind, sent out or
@@ -117,17 +129,29 @@ by. We take its ignorance to be this group:
    on κ.
 
 The turns and rescalings act on separate unknowns and commute; the measure they leave unchanged is dθ·dκ/κ, their Haar
-measure (Haar 1933), unique up to a constant factor. The location-and-scale family's affine group, x ↦ b + ax, does not
-commute and has two invariant measures (Ghosh 2011); the reader's group has one. What it gives: uniform in θ, once the
+measure (Haar 1933), unique up to a constant factor. The exchange does not commute with the turns but is a reflection,
+so the whole group is unimodular and its left and right invariant measures coincide. The location-and-scale family's
+affine group, x ↦ b + ax, is not, and has two invariant measures (Ghosh 2011); the reader's group has one. The turns act
+on the whole circle of directions; the reader's quarter is that measure restricted, which the exchange carries onto
+itself. What it gives: uniform in θ, once the
 sweep is taken to be the turning of a bar (§4, §5); uniform in log κ, every level of the other's size alike, which governs
 the estimate of the size (Proposition 8) and touches no reading; and the exchange's fixed point, the corner.
+
+**What kind of measure this is.** The address law is neither a belief about what arrives nor a frequency of
+arrivals. It is what Jaynes (1968) calls the invariant measure m(x): the measure fixed by the transformation group
+alone, which enters his continuous entropy −∫ p·ln(p/m) dx as the reference against which any distribution is
+measured, before any data. The Cauchy here is that m for the reader's group, the reference measure of its directions.
+What a reader observes, the readings of whatever arrives, has a law of its own, which depends on what arrives; the
+reference measure does not. Medians, means and samples are applied to it as to any measure, and what they say is said
+of the reference, not of the world.
 
 Being situated removes the translations Jaynes's straw-thrower keeps. A situated reader's lines all pass through home,
 and the transformations that keep home are the turns and dilations about it; the measure they leave on the plane is
 dx·dy/(x² + y²) = dθ·dr/r, uniform in direction and in levels of distance, not in area. Read from home, Bertrand's chord
 has no single answer: for a circle of radius R whose centre is at distance D ≥ R, the share of uniformly turned rays
 cutting a chord longer than the inscribed triangle's side is arcsin(R/2D)/arcsin(R/D), ⅓ from a home on the circle and
-rising to Jaynes's ½ as the circle recedes, consistent with straws tossed since (Liu and Adams 2019).
+rising to Jaynes's ½ as the circle recedes; straws tossed since show a similar dependence on a ratio of two lengths
+(Liu and Adams 2019).
 
 The group is chosen, not derived. Jaynes's measure is a "pre-prior" on which a prior is built (1968), and Norton (2008)
 argues that complete ignorance is not a probability at all. Here the measure is not built on: it is read as the reader's
@@ -136,7 +160,7 @@ addresses, and its main consequence is that the Cauchy belongs to them and not t
 ## 3. The corner
 
 **Proposition 1.** Let x = v/h ∈ [0, ∞). Then x = 1 is the only point fixed by the reciprocal x ↦ 1/x. The reciprocal
-carries [0, 1) onto (1, ∞) point for point, and every sweep from home passes through x = 1. This point depends on
+carries (0, 1) onto (1, ∞) point for point, and every sweep from home passes through x = 1. This point depends on
 neither H nor V.
 
 *Proof.* The reciprocal is its own inverse and reverses order, so x < 1 exactly when 1/x > 1, and for x > 0, x = 1/x
@@ -146,10 +170,12 @@ comparison of two unit relations, unchanged when both are scaled together. ∎
 We call this point the *corner*. It separates two ways of reading: before it, v in terms of h; past it, h in terms of
 v. On the whole projective line the exchange has a second fixed point, −1, off the reader's arc, and the two fixed
 points are harmonic conjugates with respect to every pair the exchange swaps, home and the horizon among them (Coxeter
-1987): once home and the horizon are given, the corner is fixed by projective structure alone, with no measure.
+1987): once the exchange is given, the corner is fixed by projective structure alone, with no measure. Home and the
+horizon do not fix it by themselves, since the maps x ↦ λx keep both and move 1; the exchange does, and swapping h with
+v asks only that both be shares of one length, the reader's H.
 
 **Proposition 2.** (a) Let a reader hold x in two registers: x itself where x ≤ a, and 1/x where x > a. Both registers
-stay within [0, 1] if and only if a = 1. (b) Let f : [0, ∞) → [0, 1] be strictly increasing with f(1/x) = 1 − f(x).
+stay within [0, 1] if and only if a = 1. (b) Let f : (0, ∞) → [0, 1] be strictly increasing with f(1/x) = 1 − f(x).
 Then f(1) = ½, and f maps the near side below ½ and the far side above it.
 
 *Proof.* (a) The registers take values in [0, a] and (0, 1/a); both lie in [0, 1] exactly when a ≤ 1 and 1/a ≤ 1.
@@ -278,8 +304,17 @@ all of h and all of v are one length, by (c); for the reader they are. With one 
 and it traces the circle (Proposition 3). Stated as uniqueness and no more: among two-axis drawings V = cH whose sweep is
 a rigid turn and whose readings are reciprocal-symmetric, the equal-length drawing c = 1 is the only one, and it gives
 the half-Cauchy with its median at the corner. That a reader sweeps by a turn at all is the premise of Proposition 3(e),
-not this result. On a page drawn at c = 2, uniform steps along the stretched curve give quartiles of v/h at 0.316, 0.739
-and 1.673, not a reciprocal pair.
+not this result.
+
+**Uniform in what.** Bertrand's lesson is that "uniform" needs a parameter, and different parameters give different
+laws. On a page drawn at c = 2, uniform in the angle drawn on the page puts the quartiles of v/h at 0.207, 0.5 and
+1.207, and uniform along the stretched curve at 0.316, 0.739 and 1.673. For the reader the parameter is fixed by
+Proposition 3(e): its sweep is a flow Φ(t), one motion repeated, and in that flow's own inner product
+(h, v) = (cos ωt, sin ωt). Uniform means uniform in t, the one parameter the flow carries, and then the readings are
+the half-Cauchy, whatever page a writer later draws them on. The competing laws belong to the page, each uniform in a
+parameter a writer's drawing adds: an angle measured on the stretched page, a length along its curve. So the exact law
+is forced given the premises of Proposition 3(e) (a sweep that is continuous, linear and returning); whether a reader's
+sweep is such a flow is the open question it leaves (§11, open question 2).
 
 **Why a turn and not a boost.** The Möbius maps of the reader's line come in three kinds of one-parameter flow: the
 elliptic (a turn), with no fixed point on the line; the hyperbolic (a boost), with two; the parabolic (a translation),
@@ -297,9 +332,10 @@ density (2/π)·cos³α at angle α off the axis.
 
 > **The Cauchy is not the payload; it is the address to the payload.**
 
-Call a statistic of a set of readings an *address statistic* if it depends only on their order (the ranks, the median,
-the quartiles, which side of the corner each lies on), and a *payload statistic* if it depends on their sizes (the
-mean, any sum).
+Call a statistic of a set of readings an *address statistic* if it depends only on their order so that for every strictly
+increasing f it picks out of f(X) the image of what it picks out of X (the ranks, the median, the quartiles), and a
+*payload statistic* if it depends on their sizes (the mean, any sum). Which side of the corner a reading lies on is kept
+only by the increasing maps that fix 1; it belongs to the exchange, not to order alone.
 
 **Theorem 5 (the separation of address and payload).** Parts (a) and (d) concern the readings of Proposition 4; parts
 (b) and (c) hold for any finite set of readings; part (e) drops both the circle and the uniform turn.
@@ -315,7 +351,7 @@ has the same ranks as X, so every address statistic picks out the same element; 
 median f(X) = f(median X). Conversely, two sets with the same ranks are carried onto one another by some strictly
 increasing f, so the ranks keep exactly what survives every such change, and nothing more.
 
-(c) *Payload statistics do not.* Among the strictly increasing maps of (b), only an affine f commutes with the mean on
+(c) *Payload statistics do not, the mean among them.* Among the strictly increasing maps of (b), only an affine f commutes with the mean on
 every set of readings. For convex f, mean f(X) ≥ f(mean X), with equality only if f is affine on the smallest interval
 containing X.
 
@@ -323,17 +359,19 @@ containing X.
 reciprocal pair. Its mean does not exist: ∫₀^s x·2/(π(1 + x²)) dx = (1/π)·ln(1 + s²) grows without bound.
 
 (e) *The median needs only reciprocal symmetry, and the missing mean a density of h bounded away from zero near the
-horizon.* Let the sweep follow any path from all of h to all of v, with any weight, both unchanged by exchanging the two
-parties. Then the readings' law is unchanged by the reciprocal and its median is the corner. If moreover the law of h
+horizon.* Let the sweep follow any continuous path from all of h to all of v that comes near h = 0 only at its end,
+with any weight, both unchanged by exchanging the two parties. Then the readings' law is unchanged by the reciprocal and
+the corner is a median of it, the only one where the law increases strictly through 1. If moreover the law of h
 has a density at least f₀ > 0 on some interval (0, δ), the mean does not exist.
 
-*Proof.* (a) is the cancellation shown. (b) Strictly increasing maps preserve ranks; the converse follows by monotone
+*Proof.* (a) holds by construction, a reading being a direction; it is stated so that (b)–(e) can be read against it. (b) Strictly increasing maps preserve ranks; the converse follows by monotone
 interpolation between matched points. (c) A strictly increasing f with f((a + b)/2) = (f(a) + f(b))/2 for all a, b is
 affine, so a non-affine f fails it for some pair, and X = {a, b} is the set required. Monotonicity, or another
 regularity, is needed: an additive function built on a Hamel basis commutes with the mean of every finite set without
 being affine. The inequality is Jensen's. (d) The distribution function is (2/π)·arctan(v/h). (e) The exchange carries
-v/h to h/v and leaves path and weight unchanged, so F(1/x) = 1 − F(x) and F(1) = ½ by Proposition 2(b). The path ends
-at all of v, so there are δ > 0 and v₀ > 0 with v ≥ v₀ wherever h < δ. Then P(v/h > r) ≥ P(h < v₀/r) ≥ f₀·v₀/r once
+v/h to h/v and leaves path and weight unchanged, so v/h and h/v have one law: P(v/h < 1) = P(v/h > 1), each at most ½,
+and 1 is a median (for a continuous law, F(1/x) = 1 − F(x) and Proposition 2(b)). The path ends at all of v and comes
+near h = 0 only there, so there are δ > 0 and v₀ > 0 with v ≥ v₀ wherever h < δ. Then P(v/h > r) ≥ P(h < v₀/r) ≥ f₀·v₀/r once
 v₀/r < δ, so ∫ P(v/h > r) dr diverges, and so does the mean. ∎
 
 The theorem is elementary; its content is the reading. The cancellation in (a) is an identity about this representation
@@ -382,8 +420,10 @@ the chart x = v/h, not about the arc.
 half-plane, a turn acts on the signed reading as a real Möbius map, and carries the law at z to the law at the image of
 z (Knight 1976; McCullagh 1996). A new zero, the reciprocal and a zoom keep the family, moving only the point. A sum of
 independent Cauchy variables is again Cauchy, the points m + iγ adding (Lévy 1925); read as addresses it is a relay of
-standpoints, a uniform turn from height γ₁ + γ₂ landing at height γ₂ and turned again, which lands as one turn from
-height γ₁ + γ₂. Averaging n readings gives the same Cauchy. What breaks the family is an amount entering: squaring, a
+standpoints: a uniform turn from height γ₁ + γ₂, landed on a line at height γ₂ and turned again from there down to the
+base line, lands exactly as one turn from height γ₁ + γ₂ straight to the base line would. Averaging n signed readings gives the same Cauchy. All of this concerns the signed reading over two
+quadrants; the reader's half-Cauchy on one quadrant is carried off its arc by a turn, and its average grows like
+(2/π)·ln n. What breaks the family is an amount entering: squaring, a
 cut at an edge, a random multiplier, an added amount (a Voigt profile), pooled standpoints, or a count against something
 other than the turn. Even then an added amount of finite spread leaves the tails ~ γ/(πx²), so the Cauchy is lost first
 near its centre and last at the horizon.
@@ -392,7 +432,7 @@ The plainest instance in practice is a spectral line, written as a strength time
 strength is an amount; the strengths of separate lines add. The profile of a resonance is the Lorentzian,
 φ(ν) = (1/π)·dδ/dν, with tan δ = γ/(ν₀ − ν): the frequency line laid by a uniform turn of the phase δ through half a
 turn. Spectroscopy reads the profile by its centre and half-width and the strength by its integral: the address by its
-order and the amount by its sum, as Theorem 5 says each must be read. We offer the rule, as a test: a Cauchy variable is
+order and the amount by its sum, as Theorem 5 says each must be read. We offer the rule as a reading, not a law of nature: a Cauchy variable is
 a direction, read by its order, never an amount; where it appears beside an amount, find the turn and find the amount.
 
 ## 7. The two sweeps meet at one point
@@ -406,9 +446,10 @@ the chord at h², its height hv (*Elements* VI.8).
 
 So one direction has two readings. The *inscribed sweep*, from a point of the circle through a quarter turn, gives the
 address. The *central sweep*, from the centre through a half turn, reaches the landing point P. These are the only two
-pivots from which equal turns cut equal arcs: from a pivot inside the circle at distance p from the centre, a step of
+kinds of pivot from which equal turns cut equal arcs: taking the radius as 1, from a pivot inside the circle at distance p from the centre, a step of
 turn moves the point ahead by 2t/(t + t′) of arc, t and t′ the distances ahead and behind, which is constant only at
-p = 0 or with t′ = 0, the pivot on the circle. Three things are kept apart: the address, the direction of the ray; the
+p = 0 or with t′ = 0, the pivot on the circle; from a pivot outside the circle the rate grows without bound toward the
+two rays that graze it. Three things are kept apart: the address, the direction of the ray; the
 landing point P; and the payload, what arrives at P. The theorem gives the shared point; reading the payload as met
 there is our interpretation.
 
@@ -416,7 +457,8 @@ there is our interpretation.
 ½(cos 2θ, sin 2θ) = ½(h² − v², 2hv) = ½(h + iv)² = ½e^(2iθ). The sweep about a party gives ratios, of the first degree,
 unbounded, held by the median; the sweep about the pair's middle gives squares, of the second degree, bounded, with
 means (cos 2θ averages 0 and sin 2θ averages 2/π over a uniform turn). At zero, the corner and the horizon the landing
-point is at +1, i and −1 (times ½): the half turn that brings the horizon's landing point to home is e^(iπ) = −1. The
+point is at +1, i and −1 (times ½): the half turn from zero's landing point, B, to the horizon's, which is home, is
+e^(iπ) = −1. The
 two are one classical map, the Cayley transform w = (s − i)/(s + i), which sends the reading s = tan θ to −e^(2iθ) and
 the standpoint i to the centre of the disc (Cayley 1846); under it the Cauchy is the harmonic measure from i.
 
@@ -445,8 +487,8 @@ A survey is (b) in use: thousands of angles read, one base walked, every side wr
 scale (Snellius 1617; Roy 1785).
 
 **Proposition 7 (standpoints bring back the figure).** Each reader reads only directions. Then: (a) one reader fixes,
-for each place, only a line through it; (b) two readers whose placement relative to each other is known up to scale fix
-every place both see, up to one common scale; (c) one agreed length between them fixes the scale.
+for each place, only a line through it; (b) two readers whose placement relative to each other is known up to scale, reading
+directions in one frame, fix every place both see that is not in line with them both, up to one common scale; (c) one agreed length between them fixes the scale.
 
 *Proof.* (a) A direction from a known point is a line. (b) Two non-parallel lines from different points meet in one
 point, and moving both readers by a common similarity moves every meeting point by the same similarity. (c) By
@@ -460,17 +502,19 @@ triangulation; that two views fix a scene up to its scale is the basis of recons
 **Proposition 8 (the best estimate is the median).** Measure the error of an estimate ĉH of the other party's size V*
 by |f(V*) − f(ĉH)| for an increasing f.
 
-(a) If the reader knows only V₋ ≤ V* ≤ V₊, the estimate whose worst error in levels (f = log) is least is
+(a) If the reader knows only V₋ ≤ V* ≤ V₊, the estimate whose worst error in levels (f = log₂) is least is
 ĉH = √(V₋·V₊), the corner of the pair of bounds, with worst error ½·log(V₊/V₋).
 
 (b) If the reader holds a distribution for V*, the estimate whose expected error is least is a median of it, the same
 median for every increasing f. The mean, best under squared error in amounts, changes with f and need not exist.
 
-(c) If nothing the reader knows makes the other larger rather than smaller, both give ĉH = H.
+(c) If nothing the reader knows makes the other larger rather than smaller, as bounds H/R ≤ V* ≤ H·R for some R ≥ 1 or
+as a proper law for log(V*/H) symmetric about 0, both give ĉH = H. The improper dκ/κ alone has no median and gives no
+estimate.
 
 *Proof.* (a) The worst error is least when log ĉH is midway between log V₋ and log V₊. (b) E|X − m| is least at a median
-of X, and medians commute with increasing maps (Theorem 5(b)). (c) The bounds are H/R and H·R, and log(V*/H) has
-median 0. ∎
+of X, and medians commute with increasing maps (Theorem 5(b)). (c) The bounds H/R and H·R have geometric mean H,
+and a proper law symmetric in log(V*/H) has median 0. ∎
 
 So designating the other party, reading it on the reader's one length, is free and gives the geometry; sizing it is the
 one guessed number, corrected by a shift in levels when an amount arrives. The estimate rests on measuring error by order
@@ -511,8 +555,9 @@ the corner falling 18.4°, 12.5°, 6.9°, 3.5°, 1.8°, … by a ratio tending t
 the far field fits in one more H: the in-place lay 2 − h/v gives level j past the corner length 2^(−j), the room per unit
 of v/h being (h/v)², the Jacobian of the reciprocal.
 
-**A fixed count, aimed by H.** Let the reader hold a fixed number K of addresses, laid at equal steps of the turn. They
-lie along distance at H·tan(kπ/2K), half of them inside H at every H; a larger H gives the near field less detail and
+**A fixed count, aimed by H.** Let the reader hold a fixed number K of addresses, laid at equal steps of the turn. Read a
+distance d against H as a pair, the direction [H : d], as the reader reads any pair; once d/H is had (§8), the K
+address boundaries lie along distance at H·tan(kπ/2K), k = 1, …, K − 1, the last address running to the horizon, half of them inside H at every H; a larger H gives the near field less detail and
 reaches farther, a smaller H the reverse. Every H gives the same geometry; its value sets only the zoom. The K
 addresses hold any number of things, with no table and no count of them, though things sharing an address arrive there
 as one. H cannot be declined: without a length there is no relation, and an H that favours no value is H at 0 or ∞,
@@ -532,8 +577,8 @@ reader knows only its thumb.
    uniformly over the half turn, the range takes exactly the middle half of them, between the Cauchy's quartiles, and
    the median points at its middle.
 3. *The two sweeps, on the thumb.* On the thumb's circle each quarter turn is an arc of π/2 thumbs over a projection of
-   1 thumb. Read by the central sweep the half turn gives π/2, by the inscribed sweep 2/π (with 36 directions the mean
-   projection is 0.6368); their product is 1, the thumb measured in thumbs. A range 2 miles wide at 1 mile gives the
+   1 thumb. Read by the central sweep the half turn gives π/2, by the inscribed sweep 2/π (with 36 directions at the midpoints of 36 equal steps
+   of the half turn the mean projection is 0.6368; 0.6367 over a quarter); their product is 1, the thumb measured in thumbs. A range 2 miles wide at 1 mile gives the
    same directions and the same products.
 4. *What it cannot read.* A range 20 miles wide at 10 miles, 2 at 1 or 2,000 at 1,000 gives the same readings
    (Theorem 5(a)).
@@ -562,9 +607,9 @@ The main result's core, order surviving and sums failing with the median at the 
 the missing mean needs besides a density bounded away from zero near the horizon.
 
 On the reading itself a different group acts and should not be confused with the reader's ignorance: turns and changes
-of a two-axis drawing generate PSL(2,ℝ) on the signed reading, the Cauchy family is the one family it carries into
-itself (Knight 1976; McCullagh 1996), and as points m + iγ that family is the hyperbolic plane on which it acts. The
-drawings V = cH are the points i/c, at distance |ln(c′/c)| apart. The reader holds no c, so this group is not part of
+of a two-axis drawing generate PSL(2,ℝ) on the signed reading, the Cauchy family is the orbit of the standard Cauchy,
+on which it acts transitively (Knight 1976; McCullagh 1996), and as points m + iγ that family is the hyperbolic plane on which it acts. The
+drawings V = cH are the points i/c, at distance |ln(c′/c)| apart in the Cayley–Klein metric (Cayley 1859; Klein 1871). The reader holds no c, so this group is not part of
 its ignorance; its one use here is to measure distances.
 
 **Open questions.**
@@ -572,13 +617,13 @@ its ignorance; its one use here is to measure distances.
    about situated readers from which it follows? Real readers have preferred scales, their own resolution among them;
    here a preferred scale sets where the lay stops, and (S) is claimed only within that range.
 2. *Why the uniform turn?* The readings are directions only, so the norm enters only through the measure on directions.
-   Proposition 3(e) answers part of it: a sweep that is continuous, linear and returning has its own Euclidean measure.
+   Proposition 3(e) answers part of it: a sweep that is continuous, linear and returning preserves an inner product of its own.
    Drory (2015) objects to Jaynes's chord that the same symmetries imposed in different ways give different measures,
    depending on how the random selection is made. We grant it: which selection is made is a choice of what the turn is
    counted against (the turn itself, a clock, a flat screen, a count of arrivals). The core survives the choice: any
    selection that treats the two parties alike keeps the median at the corner (Theorem 5(e)).
 3. *Whether real readers sweep by a turn.* That a reader should sweep by a turn of its one length, with nothing imposing
-   a c, is what the propositions show, in Jaynes's normative sense. Whether a particular eye, brain or instrument does,
+   a c, is what the propositions show given the stated group and premises, a conditional in the sense of Jaynes's principle. Whether a particular eye, brain or instrument does,
    and whether what its readings pass through imposes a c (unequal gains, pixels that are not square), is empirical, and
    not taken up here.
 4. *Measures that cannot be normalized.* The reader's dκ/κ has no total, and such measures on a nuisance can produce
@@ -595,7 +640,7 @@ outside Theorem 5(a), which assumes that what arrives is the same whichever addr
 **Related work.** The pieces are classical: the reciprocal, the Cauchy as the projection of a uniform angle and its
 Möbius invariance (Knight 1976; McCullagh 1996), the multivariate Cauchy's marginals (Cacoullos 2014), log-symmetric
 laws (Jones 2008), Cauchy's functional equation, Klein's programme (1872) and the invariant priors of Jeffreys (1939)
-and Jaynes, on which this paper builds. Leonard (2011) puts the Cauchy, the slope's law invariant under turns, on the
+and Jaynes, on which this paper builds. On Bertrand's problem and the principle of indifference the literature is long: van Fraassen (1989) argues that symmetry fixes no unique answer, Marinoff (1994) that each answer belongs to a differently specified problem, and Shackel (2007) that the attempts to save indifference fail; Seidenfeld (1979) presses the objection against objective Bayesian priors, and Kass and Wasserman (1996) review the formal rules for choosing them. Our use of Jaynes is conditional in their sense: the group is chosen, and with it the measure. What is ours is the group, and the reading of its invariant measure as the reader's addresses rather than as a belief. Leonard (2011) puts the Cauchy, the slope's law invariant under turns, on the
 slope of a line fitted with error in both coordinates, with inference unchanged by exchanging and rescaling the
 coordinates, the nearest use we know of these three transformations together. Scales linear near a unit and logarithmic
 far from it are common, astronomy's asinh magnitudes among them (Lupton, Gunn and Szalay 1999); what §9 adds is the
@@ -654,6 +699,8 @@ Englert, B.-G. (1996). Fringe visibility and which-way information: an inequalit
 Euclid (c. 300 BC). *Elements*. Translated by T. L. Heath (1908), *The Thirteen Books of Euclid's Elements*. Cambridge
 University Press.
 
+van Fraassen, B. C. (1989). *Laws and Symmetry*. Oxford University Press.
+
 Ghosh, M. (2011). Objective priors: an introduction for frequentists. *Statistical Science* 26(2), 187–202.
 
 Gilinsky, A. S. (1951). Perceived size and distance in visual space. *Psychological Review* 58, 460–482.
@@ -674,6 +721,9 @@ Rosenkrantz (ed.) (1989), *E. T. Jaynes: Papers on Probability, Statistics and S
 Jeffreys, H. (1939). *Theory of Probability*. Oxford University Press.
 
 Jones, M. C. (2008). On reciprocal symmetry. *Journal of Statistical Planning and Inference* 138(10), 3039–3043.
+
+Kass, R. E. and Wasserman, L. (1996). The selection of prior distributions by formal rules. *Journal of the American
+Statistical Association* 91, 1343–1370.
 
 Klein, F. (1871). Über die sogenannte Nicht-Euklidische Geometrie. *Mathematische Annalen* 4, 573–625.
 
@@ -698,6 +748,8 @@ magnitudes, colors, and errors even for low signal-to-noise ratio measurements. 
 
 Lévy, P. (1925). *Calcul des probabilités*. Gauthier-Villars, Paris.
 
+Marinoff, L. (1994). A resolution of Bertrand's paradox. *Philosophy of Science* 61, 1–24.
+
 McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *The Annals of Statistics* 24, 787–808.
 
 Norton, J. D. (2008). Ignorance and indifference. *Philosophy of Science* 75(1), 45–68.
@@ -707,6 +759,11 @@ Society of London* 75.
 
 Schwartz, E. L. (1977). Spatial mapping in the primate sensory projection: analytic structure and relevance to
 perception. *Biological Cybernetics* 25, 181–194.
+
+Seidenfeld, T. (1979). Why I am not an objective Bayesian; some reflections prompted by Rosenkrantz. *Theory and
+Decision* 11, 413–440.
+
+Shackel, N. (2007). Bertrand's paradox and the principle of indifference. *Philosophy of Science* 74, 150–175.
 
 Snellius, W. (1617). *Eratosthenes Batavus, de terrae ambitus vera quantitate*. Leiden.
 

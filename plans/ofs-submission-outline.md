@@ -97,3 +97,9 @@ order differs a little from the outline: the separation (§6) comes before the t
 | Proposition 9 | Proposition 4 |
 
 Nothing in it is new to OFS; where they differ, OFS stands and the submission is fixed.
+
+## Review 38 (28 October)
+
+A fresh referee read of the draft alone (`plans/ofs-review-38.md`): 4/10 as a mathematics paper, the theorems elementary
+and classical, the contribution the reading. Tom, with the recommendation: aim it at a foundations of probability or
+philosophy-of-probability journal. The errors it found were fixed in OFS first and carried here.

@@ -2360,6 +2360,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   already made (R548, R549); the physics companion's h and v the reader's shares of H, its central point as OFS §4, "the
   parallel reader's bell" retired, the weak value in ⟨σz⟩, and its data sources cited (ESA 1997, Smart et al. 2021,
   Tully et al. 2023, Hubble 1929, Henderson 1975).
+  Review 38 (28 Oct, SPN R552; a fresh referee read of the submission alone, 4/10, `plans/ofs-review-38.md`; Tom: "yes,
+  go with your recommendations"): OFS first, then the submission and CS companion: the corner fixed by the exchange
+  (§4's heading), address statistics those commuting with increasing maps, the signed reading's closures scoped, 13(c),
+  11(b), 6(e) and the half turn's landing point fixed; the submission's capped chart named, its terms defined, its venue
+  a foundations of probability journal.
+  Review 39 (28 Oct, SPN R553; a second fresh referee read for a foundations of probability journal, 4/10,
+  `plans/ofs-review-39.md`; Tom: "yes, go with your recommendations"): "Uniform in what" after "Working back from the
+  Cauchy" (the reader's parameter the flow's t, the c = 2 laws a writer's page's); the address law Jaynes's (1968)
+  invariant measure m(x), a reference measure (OFS §2, submission, CS companion); related work on Bertrand and
+  indifference; the rule a reading, not a test.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
