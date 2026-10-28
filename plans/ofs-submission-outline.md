@@ -112,3 +112,4 @@ usually read and the indifference debate (done, R554); (2) "What the reading cha
 marginalization paradox, Bertrand from a standpoint, median not mean for directions); (3) a discussion of consequences,
 phrased as consequences and open questions (R364). Target about 13,000 words; proofs may move to an appendix. The
 lighthouse and Mercator appendix stays out (Tom: "leave light house and mercator out.").
+Steps 2 and 3 done (R555): "What the reading changes" at the end of §6, "What would follow" in §11; about 12,900 words.

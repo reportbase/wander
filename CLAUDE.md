@@ -2376,6 +2376,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   indifference and Bertrand debate, and what the readings share (a law of what is measured) against this paper's (Jaynes's
   m(x), the reference measure of the reader's directions). Next: worked cases of what the reading changes, then a
   discussion of consequences. The lighthouse and Mercator stay out of the submission.
+  Then (R555; Tom: "proceed"): OFS §7.2 closes with "What the reading changes" (water and wine, the marginalization
+  paradox, Bertrand from a standpoint, directions read by their order) and §12.1 with "What would follow" (consequences as
+  questions, and the test that can fail: a Cauchy-type law with no turn to be found); both in the submission.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

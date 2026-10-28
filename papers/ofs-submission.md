@@ -483,6 +483,40 @@ turn. Spectroscopy reads the profile by its centre and half-width and the streng
 order and the amount by its sum, as Theorem 5 says each must be read. We offer the rule as a reading, not a law of nature: a Cauchy variable is
 a direction, read by its order, never an amount; where it appears beside an amount, find the turn and find the amount.
 
+**What the reading changes.** The theorem is classical in its parts; what the reading adds shows in what it lets one
+say. Four cases, each short and checkable, where reading a Cauchy-type law as the law of addresses gives a sharper
+answer than reading it as a law of what is measured. None says the usual treatment is wrong; each says where its facts
+belong.
+
+- *Water and wine.* Von Mises's problem: a liquid is wine and water, the ratio x of wine to water between 1/3 and 3;
+  what is the chance that x ≤ 2 (von Mises 1928, in Mikkelson's 2004 form)? Indifference over x gives 5/8, over 1/x
+  15/16, and the problem is the standard case of indifference contradicting itself; Jaynes left it open as
+  overdetermined (1973, §8). Read as an address, x is a direction [water : wine]. The exchange of the two liquids
+  carries it to its reciprocal, so every answer that treats them alike puts the chance of x ≤ 1 at ½, the corner,
+  whatever else it assumes. A change of one liquid's unit multiplies x by a constant and moves no direction; if one law
+  is to hold on every range of x, as Jaynes required of the chord, the only law left by both is dx/x, uniform in
+  levels, and the answer is ln 6/ln 9 ≈ 0.8155 (the answers treating the liquids alike all agree at the corner and part past it: 5/6 uniform in the share of wine, 0.815 in levels).
+- *The marginalization paradox.* Under an improper prior on a scale nuisance, integrating it out of the data and
+  reasoning from statistics free of it can disagree (Stone and Dawid 1972; Dawid, Stone and Zidek 1973). Read with the
+  reader's own measure on the other's size, dη/η, they cannot. For amounts y = η·w, n of them, the first reasoner's
+  likelihood ∫ η^(−n−1) f(y/η | ζ) dη and the second's, from the direction u = y/|y| alone, ∫ r^(n−1) f(r·u | ζ) dr,
+  differ by the factor |y|^n, which carries no ζ: the same conclusion from the same prior, whatever the law f. Reading
+  the data's direction is reading its address, and the scale's invariant measure is what makes the two agree (§11, open question 4).
+- *Bertrand from a standpoint.* Bertrand's chord has as many answers as procedures; Jaynes's ½ comes from a group that
+  includes translations, a circle that may lie anywhere. A reader that stands somewhere has no translations: its lines
+  all pass through home, and its measure is uniform in direction and in levels of distance. For a circle of radius R
+  whose centre is D ≥ R away, the share of rays cutting a chord longer than the inscribed triangle's side is
+  arcsin(R/2D)/arcsin(R/D): ⅓ from a point of the circle, rising to ½ as the circle recedes. Jaynes's answer is the far
+  reader's, Bertrand's chord between two random ends the near reader's, and the answer depends on where the circle lies
+  relative to the one who asks (§2).
+- *Directions are read by their order.* Robust statistics treats a Cauchy tail as outliers in the data, to be resisted by
+  medians and bounded-influence estimators (Huber 1964). Read as addresses the same readings need no defence: a ratio of
+  two amounts (a slope, a ratio estimate, the tangent of a bearing) is a direction, directions have no sum, and their
+  law has a median and no mean for that reason. Over a uniform turn the readings' median stays at 1 while the mean's
+  integral up to s, (1/π)·ln(1 + s²), grows by (2/π)·ln 10 for every tenfold of s. To summarize directions, take the median or the
+  quartiles; to combine two, compose them by tangent addition; to average, average the angle, which is bounded. The mean
+  belongs to amounts, the median to addresses (Theorem 5(b), (c)).
+
 ## 7. The two sweeps meet at one point
 
 The addresses have a second reading. Stand the two parties at the ends of a chord AB of length 1, A at home. From A, a
@@ -660,6 +694,30 @@ on which it acts transitively (Knight 1976; McCullagh 1996), and as points m + i
 drawings V = cH are the points i/c, at distance |ln(c′/c)| apart in the Cayley–Klein metric (Cayley 1859; Klein 1871). The reader holds no c, so this group is not part of
 its ignorance; its one use here is to measure distances.
 
+**What would follow.** If the reading is right, it changes less what is computed than what the results are taken to say. We state the
+consequences as such, and as questions, not as claims about anyone's results.
+
+- *What a missing mean is evidence of.* A law with no mean is usually taken as a fact about what was measured: heavy
+  tails, outliers, an unruly system. On this reading it is first a question: is the variable a direction, a ratio of two
+  amounts whose common scale the reading does not carry? If so, the missing mean says nothing about the system; it is
+  what any law of directions does, and the median and the quartiles are the summaries that mean something. Ratio
+  estimates, slopes fitted with error in both coordinates, and bearings are the obvious places to ask.
+- *Which part of a line shape belongs to the source.* Where a Cauchy appears as a profile beside a strength, the reading
+  splits them: the strength is the amount, the profile a law of addresses fixed by a standpoint m + iγ. A change in the
+  profile is then a change of where the turn is made from, and is to be explained as such before it is read as a change
+  in what is emitted.
+- *What an invariant prior is.* Jaynes's invariant measure, read as a reference for directions rather than a belief, has
+  a plain job: it lays the addresses before anything arrives, and the posterior lives on what arrives at them. Problems
+  of the Bertrand kind then become questions of standpoint: the answer depends on where the one who asks stands, and an
+  answer that ignores the standpoint is the far reader's.
+- *What an address scheme costs.* A reader's addresses are given by its one length and the turn, with no table, no
+  count of what will arrive and no knowledge of how far it reaches. Systems that index directions (cameras, depth
+  buffers, samplers, maps) can be read against that baseline: what they add to it, and what they pay for it.
+
+The reading predicts no new number. What it offers is a test that can fail: for any Cauchy met in practice, find the
+turn and find the amount. A Cauchy-type law for which no turn can be found, read from no standpoint, laying no
+directions, counts against it.
+
 **Open questions.**
 1. *The premise (S).* It is scale invariance of the lay's increments, motivated and assumed. Is there a thinner premise
    about situated readers from which it follows? Real readers have preferred scales, their own resolution among them;
@@ -811,6 +869,11 @@ Lévy, P. (1925). *Calcul des probabilités*. Gauthier-Villars, Paris.
 Marinoff, L. (1994). A resolution of Bertrand's paradox. *Philosophy of Science* 61, 1–24.
 
 McCullagh, P. (1996). Möbius transformation and Cauchy parameter estimation. *The Annals of Statistics* 24, 787–808.
+
+Mikkelson, J. M. (2004). Dissolving the wine/water paradox. *British Journal for the Philosophy of Science* 55(1),
+137–145.
+
+von Mises, R. (1928). *Wahrscheinlichkeit, Statistik und Wahrheit*. Springer, Vienna.
 
 Norton, J. D. (2008). Ignorance and indifference. *Philosophy of Science* 75(1), 45–68.
 
