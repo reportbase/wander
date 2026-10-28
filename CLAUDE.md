@@ -2379,6 +2379,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Then (R555; Tom: "proceed"): OFS §7.2 closes with "What the reading changes" (water and wine, the marginalization
   paradox, Bertrand from a standpoint, directions read by their order) and §12.1 with "What would follow" (consequences as
   questions, and the test that can fail: a Cauchy-type law with no turn to be found); both in the submission.
+  Review 40 (28 Oct, SPN R556; a third fresh referee read as a reading paper, 4/10, `plans/ofs-review-40.md`; Tom:
+  "yes"): "directions have no sum, so no mean" corrected (the chart's); "What is observed, and what the reading
+  predicts" after the worked cases (the observed law the turn's weighted by the spread of what arrives, in words, no ρ;
+  the test that can fail); O(2) for unimodularity; "invariant measure", not "reference measure".
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

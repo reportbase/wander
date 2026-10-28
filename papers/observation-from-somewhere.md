@@ -167,17 +167,18 @@ one measure survives and the answer is ½, and straws he tossed onto a circle ag
 question. Van Fraassen (1989) argues that symmetry cannot fix a unique answer in general, Marinoff (1994) that each
 answer belongs to a differently specified problem, Shackel (2007) that the attempts to save indifference fail, and Drory
 (2015) that Jaynes's symmetries, imposed in different ways, give different measures; Seidenfeld (1979) presses the wider
-objection against objective priors. Each treats the measure as a probability over outcomes: a belief about the chord, or
+objection against objective priors, and Kass and Wasserman (1996) review the formal rules for choosing them. Each treats the measure as a probability over outcomes: a belief about the chord, or
 the frequency of chords.
 
 **What the readings share, and what this paper adds.** In every reading above the Cauchy is a law of what is measured:
 values that lack a mean, data with outliers, a system's response, a lamp's flashes, or a belief about chords. Its missing
 mean is then an anomaly in what is measured, to be managed by robust methods or explained by the system. Jaynes points to
 a different status. The measure his groups fix, his invariant measure m(x) (Jaynes 1968), is a reference, prior to any
-data, against which distributions are measured. This paper puts the Cauchy in that place: as the reference measure of the
+data, against which distributions are measured. This paper puts the Cauchy in that place: as the invariant measure of the
 directions from a standpoint, the law of the reader's addresses, fixed by the standpoint and the turn before anything
-arrives. On that reading the missing mean is not an anomaly of anything measured. Directions have no sum, only a
-composition, and a law of directions has a median and no mean for that reason (§4, §7.2). What arrives at the addresses is a
+arrives. On that reading the missing mean is not an anomaly of anything measured. Read in the unbounded chart v/h, a
+law of directions has a median and no mean; on a bounded chart, the angle, it has both. The missing mean belongs to the
+chart that sends the horizon to infinity, not to anything measured (§4, §7.2). What arrives at the addresses is a
 separate thing, with a law of its own. The earlier readings stay correct; the reading here says which of their facts
 belong to the addresses and which to what is met at them (§7.2, "The rule, and a test").
 
@@ -471,8 +472,8 @@ invariant measures: dμ·dσ/σ, the right-invariant one, which coincides with J
 one, Jeffreys's general rule. Later work has favoured the right-invariant one where the location or the scale is of
 interest and the other a nuisance: it is then Bernardo's reference prior (Bernardo 1979) and gives frequentist coverage
 exactly (as reviewed by Ghosh 2011); with other quantities of interest the left one can be the better (§12.2, question
-7). The reader's group has one: its turns and rescalings commute, and its exchange is a reflection, so the group is
-unimodular and the measures unchanged by composing on the left and on the right coincide. The turns act on the whole
+7). The reader's group has one: its turns and exchange form the compact group O(2) and its rescalings an abelian group, so the
+group is unimodular and the measures unchanged by composing on the left and on the right coincide. The turns act on the whole
 circle of directions; the reader's quarter is that measure restricted, which the exchange carries onto itself. What the
 measure gives:
 - *Uniform in θ*: once the sweep is taken to be the turning of the bar, a uniform turn (§7.1). That is not a rate
@@ -505,9 +506,9 @@ measure gives:
 **What kind of measure this is.** The address law is neither a belief about what arrives nor a frequency of
 arrivals. It is what Jaynes (1968) calls the invariant measure m(x): the measure fixed by the transformation group
 alone, which enters his continuous entropy −∫ p·ln(p/m) dx as the reference against which any distribution is
-measured, before any data. The Cauchy here is that m for the reader's group, the reference measure of its directions.
+measured, before any data. The Cauchy here is that m for the reader's group, the invariant measure of its directions.
 What a reader observes, the readings of whatever arrives, has a law of its own, which depends on what arrives; the
-reference measure does not. Medians, means and samples are applied to it as to any measure, and what they say is said
+invariant measure does not. Medians, means and samples are applied to it as to any measure, and what they say is said
 of the reference, not of the world.
 
 **Zero, and a new zero.** Zero is the direction the reader faces, the start of the quarter turn; every direction is
@@ -2059,9 +2060,8 @@ rather than laid as addresses, an amount has been formed from the reading by a k
 scale is that length, not 1 by assumption.
 
 **What the reading changes.** The theorem is classical in its parts; what the reading adds shows in what it lets one
-say. Four cases, each short and checkable, where reading a Cauchy-type law as the law of addresses gives a sharper
-answer than reading it as a law of what is measured. None says the usual treatment is wrong; each says where its facts
-belong.
+say. Four cases, each short and checkable. Their answers are known; what the reading adds is where each answer's facts
+belong, to the addresses or to what arrives, and none says the usual treatment is wrong.
 
 - *Water and wine.* Von Mises's problem: a liquid is wine and water, the ratio x of wine to water between 1/3 and 3;
   what is the chance that x ≤ 2 (von Mises 1928, in Mikkelson's 2004 form)? Indifference over x gives 5/8, over 1/x
@@ -2086,11 +2086,24 @@ belong.
   relative to the one who asks (§2).
 - *Directions are read by their order.* Robust statistics treats a Cauchy tail as outliers in the data, to be resisted by
   medians and bounded-influence estimators (Huber 1964). Read as addresses the same readings need no defence: a ratio of
-  two amounts (a slope, a ratio estimate, the tangent of a bearing) is a direction, directions have no sum, and their
-  law has a median and no mean for that reason. Over a uniform turn the readings' median stays at 1 while the mean's
+  two amounts (a slope, a ratio estimate, the tangent of a bearing) is a direction, and read in that chart its law
+  has a median and no mean; the mean belongs to a bounded chart, the angle. Over a uniform turn the readings' median stays at 1 while the mean's
   integral up to s, (1/π)·ln(1 + s²), grows by (2/π)·ln 10 for every tenfold of s. To summarize directions, take the median or the
   quartiles; to combine two, compose them by tangent addition; to average, average the angle, which is bounded. The mean
   belongs to amounts, the median to addresses (Theorem 6(b), (c)).
+
+**What is observed, and what the reading predicts.** The address law is not the law of anything observed, and the two
+are easily run together: every Cauchy met in practice, a ratio of two normal amounts, a heavy-tailed sample, a line's
+profile, is the law of something observed. The reading relates them. Counted against what arrives, the readings' law is
+the turn's law weighted by how what arrives is spread over the directions (§2). It is the Cauchy exactly when what
+arrives is spread evenly over the reader's addresses, as a pair of independent centred normal amounts of equal spread
+is, its direction uniform by turn. So the reading makes a claim the usual readings do not: an observed law of Cauchy
+type has a uniform turn behind it, a rotation or a phase advancing steadily, and its departure from the Cauchy is the
+spread of what arrives over directions, which can be measured on its own. Its median stays at the corner exactly when
+that spread weighs the two sides of the corner alike (Theorem 6(e)), and moves only by the part that does not. That is the test,
+and it can fail: a Cauchy-type law met in practice with no uniform turn to be named behind it, or whose departure from
+the Cauchy the independently measured spread of what arrives does not account for, counts against the reading. Writing a
+law as the tangent of some uniform variable does not pass the test; the turn has to be there.
 
 ### 7.3 In the picture of the hand
 
@@ -3425,13 +3438,13 @@ consequences as such, and as questions, not as claims about anyone's results.
 
 - *What a missing mean is evidence of.* A law with no mean is usually taken as a fact about what was measured: heavy
   tails, outliers, an unruly system. On this reading it is first a question: is the variable a direction, a ratio of two
-  amounts whose common scale the reading does not carry? If so, the missing mean says nothing about the system; it is
+  amounts whose common scale the reading does not carry? If so, the missing mean need say nothing about the system; it is
   what any law of directions does, and the median and the quartiles are the summaries that mean something. Ratio
   estimates, slopes fitted with error in both coordinates, and bearings are the obvious places to ask.
 - *Which part of a line shape belongs to the source.* Where a Cauchy appears as a profile beside a strength, the reading
   splits them: the strength is the amount, the profile a law of addresses fixed by a standpoint m + iγ. A change in the
-  profile is then a change of where the turn is made from, and is to be explained as such before it is read as a change
-  in what is emitted.
+  profile is then a change of where the turn is made from, and that is worth asking before it is read as a change in
+  what is emitted.
 - *What an invariant prior is.* Jaynes's invariant measure, read as a reference for directions rather than a belief, has
   a plain job: it lays the addresses before anything arrives, and the posterior lives on what arrives at them. Problems
   of the Bertrand kind then become questions of standpoint: the answer depends on where the one who asks stands, and an
@@ -3440,9 +3453,7 @@ consequences as such, and as questions, not as claims about anyone's results.
   count of what will arrive and no knowledge of how far it reaches. Systems that index directions (cameras, depth
   buffers, samplers, maps) can be read against that baseline: what they add to it, and what they pay for it.
 
-The reading predicts no new number. What it offers is a test that can fail: for any Cauchy met in practice, find the
-turn and find the amount. A Cauchy-type law for which no turn can be found, read from no standpoint, laying no
-directions, counts against it.
+The reading predicts no new number, but it makes a claim that can fail (§7.2, "What is observed, and what the reading predicts").
 
 ### 12.2 Assumptions and open questions
 
@@ -3611,7 +3622,7 @@ three transformations.
 
 The pieces are classical: the reciprocal x ↦ 1/x, the Cauchy as the projection of a uniform angle and its Möbius
 invariance, Cauchy's functional equation, Klein's Erlangen programme (1872), and Jaynes's and Jeffreys's invariant
-priors, the first of which this paper builds on (§2). Our use of Jaynes is conditional in the sense of the critics named in §1: the group is chosen, and with it the measure. What is ours is the group, and the reading of its invariant measure as the reader's addresses rather than as a belief. Near neighbours in measured perception include Gilinsky's
+priors, the first of which this paper builds on (§2). Our use of Jaynes is conditional in the sense of the critics named in §1: the group is chosen, and with it the measure. What is ours is the group, and the reading of its invariant measure as the reader's addresses rather than as a belief. Directional statistics reads directions on bounded charts, where mean directions exist (Mardia and Jupp 2000); structural inference builds inference on the group that generates the data (Fraser 1968). Near neighbours in measured perception include Gilinsky's
 perceived distance with a finite horizon (1951), Schwartz's log-polar map of visual cortex, proportional near the fovea
 and logarithmic beyond (1977), and the number-line literature, from logarithmic-to-linear shifts (Siegler and Opfer
 2003; Dehaene et al. 2008) to proportion judgment on bounded lines (Barth and Paladino 2011). Scales that are linear
@@ -4144,6 +4155,8 @@ Frank, S. A. (2014). How to read probability distributions as statements about p
 
 Frank, S. A. and Smith, D. E. (2010). Measurement invariance, entropy, and probability. *Entropy* 12(3), 289–303.
 
+Fraser, D. A. S. (1968). *The Structure of Inference*. Wiley, New York.
+
 Furnas, G. W. and Bederson, B. B. (1995). Space-scale diagrams: understanding multiscale interfaces. *Proceedings of
 CHI '95*, 234–241.
 
@@ -4294,6 +4307,8 @@ magnitudes, colors, and errors even for low signal-to-noise ratio measurements. 
 
 Mahalanobis, P. C. (1936). On the generalised distance in statistics. *Proceedings of the National Institute of
 Sciences of India* 2(1), 49–55.
+
+Mardia, K. V. and Jupp, P. E. (2000). *Directional Statistics*. Wiley, Chichester.
 
 Marinoff, L. (1994). A resolution of Bertrand's paradox. *Philosophy of Science* 61, 1–24.
 
