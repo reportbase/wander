@@ -113,7 +113,7 @@ more than a domain and its values: the addresses are built from bounded relation
 relations in [0, 1]), which fix a corner and a horizon with no amount; a measure on them, the turn's, gives their law;
 and the construction says which magnitude it loses in the building, the one size no reading carries, and what restores
 it, one amount carried in (Proposition 8). Its rule,
-this paper's and offered as a test, is that a Cauchy variable is a direction, read by its order, and never an amount; where one appears beside an amount, as a spectral line's profile
+this paper's and offered as a reading, is that a Cauchy variable is a direction, read by its order, and never an amount; where one appears beside an amount, as a spectral line's profile
 beside its strength, the two are separate factors, and the test is to find the turn and find the amount. Every operation
 on directions (a new zero, the reciprocal, a zoom, a relay through a standpoint between) keeps the law a Cauchy, moving
 only where the standpoint is; only an amount entering breaks it, and then from its centre outward, the tails last
@@ -187,7 +187,7 @@ often from treating the writer's vantage as if a single observation held it. Sec
   met in each direction cancels from the reading. Order survives every change of payload and sums do not, which is why
   the Cauchy has a median, at the corner, and no mean (§7). The median at the corner needs only that the sweep treat the
   two parties alike, and the missing mean only that, besides, its density of h stay above zero near the horizon; the
-  circle and the uniform turn give the Cauchy's exact shape (§7.2). As this paper's rule, offered as a test: a Cauchy variable is a direction, read by
+  circle and the uniform turn give the Cauchy's exact shape (§7.2). As this paper's rule, offered as a reading: a Cauchy variable is a direction, read by
   its order, never an amount, and where one appears beside an amount, as a spectral line's profile beside its strength,
   the two are separate factors (§7.2).
 - A situated reader's ignorance, as we choose it, is a group: turns of its bar, rescalings of the other party's size,
@@ -453,6 +453,14 @@ measure gives:
   same reading: the uniform turn is the measure on attitudes, the lay how far readings are placed, taken as amounts in
   H, past the reader's own breadth.
 - *The exchange's fixed point*: v = h, θ = 45°, the corner (Proposition 1).
+
+**What kind of measure this is.** The address law is neither a belief about what arrives nor a frequency of
+arrivals. It is what Jaynes (1968) calls the invariant measure m(x): the measure fixed by the transformation group
+alone, which enters his continuous entropy −∫ p·ln(p/m) dx as the reference against which any distribution is
+measured, before any data. The Cauchy here is that m for the reader's group, the reference measure of its directions.
+What a reader observes, the readings of whatever arrives, has a law of its own, which depends on what arrives; the
+reference measure does not. Medians, means and samples are applied to it as to any measure, and what they say is said
+of the reference, not of the world.
 
 **Zero, and a new zero.** Zero is the direction the reader faces, the start of the quarter turn; every direction is
 counted from it. Facing another way gives a new zero and changes nothing in the law: every turn leaves the standard
@@ -927,7 +935,7 @@ that. Its importance is that it separates two ways of reading: before it, v is r
 of v. Near and far are one geometry, read from either side.
 
 **Proposition 2.** (a) Let a reader hold x in two registers: x itself where x ≤ a, and 1/x where x > a. Both registers
-stay within [0, 1] if and only if a = 1. (b) Let f : [0, ∞) → [0, 1] be strictly increasing and treat the two sides
+stay within [0, 1] if and only if a = 1. (b) Let f : (0, ∞) → [0, 1] be strictly increasing and treat the two sides
 alike, f(1/x) = 1 − f(x). Then f(1) = ½, and f maps the near side below ½ and the far side above it.
 
 *Proof.* (a) The registers take values in [0, a] and (0, 1/a); both lie in [0, 1] exactly when a ≤ 1 and 1/a ≤ 1.
@@ -1677,6 +1685,16 @@ reciprocal-symmetric, the equal-length drawing c = 1, the reader's circle, is th
 with its median at the corner (the standard Cauchy signed over two quadrants). That a reader sweeps by a turn at all is not this result; it is the premise of
 Proposition 3(g).
 
+**Uniform in what.** Bertrand's lesson is that "uniform" needs a parameter, and different parameters give different
+laws. On a page drawn at c = 2, uniform in the angle drawn on the page puts the quartiles of v/h at 0.207, 0.5 and
+1.207, and uniform along the stretched curve at 0.316, 0.739 and 1.673. For the reader the parameter is fixed by
+Proposition 3(g): its sweep is a flow Φ(t), one motion repeated, and in that flow's own inner product
+(h, v) = (cos ωt, sin ωt). Uniform means uniform in t, the one parameter the flow carries, and then the readings are
+the half-Cauchy, whatever page a writer later draws them on. The competing laws belong to the page, each uniform in a
+parameter a writer's drawing adds: an angle measured on the stretched page, a length along its curve. So the exact law
+is forced given the premises of Proposition 3(g) (a sweep that is continuous, linear and returning); whether a reader's
+sweep is such a flow is the open question it leaves (§12.2, question 2).
+
 **Proposition 5, continued: two familiar pictures.** The best-known pictures of a turn laid out on a straight line
 are a lighthouse's flashes on a shore and Mercator's chart of the globe. Each is a drawing with two axes, so each has a
 c; each requires c = 1, and each separates it from the size, which stays free.
@@ -1824,7 +1842,7 @@ intentions or results. Unmarked, the two cannot be told apart; marked, they sepa
 the projective line, where its law has a median and its missing mean belongs to the chart (§4), and Theorem 6(a) shows
 that no payload moves it.
 
-**The rule, and a test.** The rule is this paper's, offered as a test: a Cauchy variable is a direction, a point of the projective line, a ratio [x : y] read in one
+**The rule, and a test.** The rule is this paper's, offered as a reading, not a law of nature: a Cauchy variable is a direction, a point of the projective line, a ratio [x : y] read in one
 chart, laid by a turn. It is never an amount. Its median and its quartiles are places on that line and mean what they
 say; it has no mean, since its tail makes the first moment diverge, and in this paper's terms none is wanted, since the coordinates of directions do not add. Two directions have no sum, only a composition, a
 turn followed by a turn, which in the chart is tangent addition (§2). Where a Cauchy appears beside an amount, the two
@@ -3004,7 +3022,7 @@ width, and no one stands anywhere in it.
    central sweep, limb to limb, the whole half-turn is an arc of π thumbs over a projection of 2, and the central
    reading, the turn over its projection, is π/2. Read by the inscribed sweep, from home, the inscribed reading, the
    projection over the turn, is 2/π: the fingers' mean projection (0.6368 with 36 fingers at the midpoints of 36 equal
-   steps). Their product is 1: H
+   steps of the half turn; 0.6367 over a quarter). Their product is 1: H
    measured in H, the value the reader started from, which neither sweep reads alone. Out to the
    range's ends, at 45°, the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, the row of §3.4 at 45°, and
    their product is 1 again. None of this involves the mountain: a range 2 miles wide at 1 mile gives the same fingers
@@ -3487,7 +3505,7 @@ three transformations.
 
 The pieces are classical: the reciprocal x ↦ 1/x, the Cauchy as the projection of a uniform angle and its Möbius
 invariance, Cauchy's functional equation, Klein's Erlangen programme (1872), and Jaynes's and Jeffreys's invariant
-priors, the first of which this paper builds on (§2). Near neighbours in measured perception include Gilinsky's
+priors, the first of which this paper builds on (§2). On Bertrand's problem and the principle of indifference the literature is long: van Fraassen (1989) argues that symmetry fixes no unique answer, Marinoff (1994) that each answer belongs to a differently specified problem, and Shackel (2007) that the attempts to save indifference fail; Seidenfeld (1979) presses the objection against objective Bayesian priors, and Kass and Wasserman (1996) review the formal rules for choosing them. Our use of Jaynes is conditional in their sense: the group is chosen, and with it the measure. What is ours is the group, and the reading of its invariant measure as the reader's addresses rather than as a belief. Near neighbours in measured perception include Gilinsky's
 perceived distance with a finite horizon (1951), Schwartz's log-polar map of visual cortex, proportional near the fovea
 and logarithmic beyond (1977), and the number-line literature, from logarithmic-to-linear shifts (Siegler and Opfer
 2003; Dehaene et al. 2008) to proportion judgment on bounded lines (Barth and Paladino 2011). Scales that are linear
@@ -4010,6 +4028,8 @@ University Press.
 Euler, L. (1777). De repraesentatione superficiei sphaericae super plano. *Acta Academiae Scientiarum Imperialis
 Petropolitanae* 1777(1), 107–132.
 
+van Fraassen, B. C. (1989). *Laws and Symmetry*. Oxford University Press.
+
 van Fraassen, B. C. (2008). *Scientific Representation: Paradoxes of Perspective*. Oxford University Press.
 
 Frank, S. A. (2014). How to read probability distributions as statements about process. *Entropy* 16(11), 6059–6098.
@@ -4110,6 +4130,9 @@ Kalman, R. E. (1960). A new approach to linear filtering and prediction problems
 Karger, D., Lehman, E., Leighton, T., Panigrahy, R., Levine, M. and Lewin, D. (1997). Consistent hashing and random
 trees. *Proceedings of the 29th ACM Symposium on Theory of Computing*, 654–663.
 
+Kass, R. E. and Wasserman, L. (1996). The selection of prior distributions by formal rules. *Journal of the American
+Statistical Association* 91, 1343–1370.
+
 Kato, S. and McCullagh, P. (2020). Some properties of a Cauchy family on the sphere derived from the Möbius
 transformations. *Bernoulli* 26(4), 3224–3248.
 
@@ -4161,6 +4184,8 @@ magnitudes, colors, and errors even for low signal-to-noise ratio measurements. 
 
 Mahalanobis, P. C. (1936). On the generalised distance in statistics. *Proceedings of the National Institute of
 Sciences of India* 2(1), 49–55.
+
+Marinoff, L. (1994). A resolution of Bertrand's paradox. *Philosophy of Science* 61, 1–24.
 
 Maxwell, J. C. (1860). Illustrations of the dynamical theory of gases. *Philosophical Magazine* 19, 19–32.
 
@@ -4228,6 +4253,11 @@ Sedgwick, H. A. (1986). Space perception. In K. R. Boff, L. Kaufman and J. P. Th
 and Human Performance*, vol. 1, 21.1–21.57. Wiley, New York.
 
 Sedgwick, H. A. (2021). J. J. Gibson's "Ground Theory of Space Perception". *i-Perception* 12(3), 20416695211021111.
+
+Seidenfeld, T. (1979). Why I am not an objective Bayesian; some reflections prompted by Rosenkrantz. *Theory and
+Decision* 11, 413–440.
+
+Shackel, N. (2007). Bertrand's paradox and the principle of indifference. *Philosophy of Science* 74, 150–175.
 
 Seshadri, V. (1965). On random variables which have the same distribution as their reciprocal. *Canadian
 Mathematical Bulletin* 8, 819–824.

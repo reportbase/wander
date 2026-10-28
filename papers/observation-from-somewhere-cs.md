@@ -221,7 +221,7 @@ This point is the *corner*. It is ordinary arithmetic. Its importance is that it
 it, v is read in terms of h; past it, h in terms of v.
 
 **Proposition 2.** (a) Let a reader hold x in two registers: x itself where x ≤ a, and 1/x where x > a. Both registers
-stay within [0, 1] if and only if a = 1. (b) Let f : [0, ∞) → [0, 1] be strictly increasing and *reciprocal-symmetric*,
+stay within [0, 1] if and only if a = 1. (b) Let f : (0, ∞) → [0, 1] be strictly increasing and *reciprocal-symmetric*,
 f(1/x) = 1 − f(x). Then f(1) = ½, and f maps the near side below ½ and the far side above it.
 
 *Proof.* (a) The registers take values in [0, a] and (0, 1/a); both lie in [0, 1] exactly when a ≤ 1 and 1/a ≤ 1.
@@ -400,7 +400,7 @@ sensor or what arrives; it shows what the turn's count gives. Nor does it show t
 origin: a resonance's profile and a stable sum of index 1 are Cauchy laws that are facts about a system. The claim is
 only that a reader's uniform turn lays its own addresses this way.
 
-**The rule, and a test.** This paper's rule, offered as a test: a Cauchy variable is a direction, a ratio read in one chart, laid by a turn; never an amount.
+**The rule, and a test.** This paper's rule, offered as a reading: a Cauchy variable is a direction, a ratio read in one chart, laid by a turn; never an amount.
 Its median and quartiles are places on the line and mean what they say. Where a Cauchy appears beside an amount, the two
 are separate factors: the amount is the payload, the Cauchy is where it lands. So for any Cauchy met in practice there is
 a test: find the turn, and find the amount. A spectral line is the plainest case: spectroscopy writes it as a strength,
@@ -1121,7 +1121,7 @@ scales, their own resolution among them, and here a preferred scale sets where t
 Cauchy's exact shape rests on the uniform turn, which is selected by treating every attitude alike, a stated ignorance
 (below), not forced. The reader's circle is its one length turned, a rigid bar's linear periodic turn; that every reader
 uses this construction is not claimed, and whether real eyes, brains or instruments sweep by such a turn, with nothing
-imposing a c, is an empirical question left open. The paper's claim is normative: a reader should, since only that gives
+imposing a c, is an empirical question left open. The paper's claim is conditional on the stated group and premises: a reader should, since only that gives
 it a turn, the Cauchy with its median at the corner, and true angles.
 
 **What we build on.** The method is Jaynes's (1968, 1973): state an observer's ignorance as a group of transformations,
@@ -1130,7 +1130,10 @@ other party's size, and the exchange of the two unit relations. Given that the s
 these select the uniform turn and its Cauchy, and the corner; through amounts, the same indifference
 to scale motivates the logarithm past the corner. The geometry is claimed as necessary relative to that stated
 ignorance, not absolutely. What is ours is the choice of group, the near field, and reading the measure as a reader's
-addresses rather than its belief.
+addresses rather than its belief. In Jaynes's (1968) terms the address law is the invariant measure m(x), the
+reference against which his continuous entropy measures any distribution: neither a belief about what arrives nor a
+frequency of arrivals. What a reader observes has a law of its own, which depends on what arrives; the reference does
+not.
 
 **Related work.** The pieces are classical: the Cauchy as the projection of a uniform angle (Jones 1999; Cacoullos
 2014), its Möbius invariance (Knight 1976; McCullagh 1996), its stability (Lévy 1925), reciprocal symmetry (Jones
