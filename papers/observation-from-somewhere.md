@@ -987,6 +987,13 @@ taken the writer's vantage. And the reader's geometry needs V unknown: the horiz
 never an amount, the corner is the median because nothing sizes either side, and the missing mean is the absent V's
 trace (§4, Theorem 6(d)). A writer, knowing V, has a closed circle, its corner only a point, and no horizon.
 
+The same holds for what arrives. The geometry removes the scale before anything is read: the projection divides, not the
+reader (§9), so a direction arrives with every amount along it already gone, and the paint on a direction arrives as
+paint, never as a number of units (Theorem 6(a)). The reader manages no magnitudes, neither the other party's breadth nor
+the size of what arrives. It holds no unit to manage them in: its one length H is its own unit, H in H is 1, and the
+value of H in anything else is a writing. So the geometry creates the reader, and the reader has no scale whatsoever.
+Every magnitude, with its unit, is a writer's.
+
 ## 4. The corner
 
 **Proposition 1.** Let x = v/h ∈ [0, ∞). Then x = 1 is the only point fixed by the reciprocal x ↦ 1/x. The reciprocal

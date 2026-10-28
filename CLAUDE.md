@@ -2423,6 +2423,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   trigonometry, radians, π, e^(iθ), the corner, π/2 and 2/π, the Cauchy all ratios, all reading; what needs an amount is
   a point in a unit, the circumference or area as amounts, another party's circle beside one's own. OFS §5 after "What
   V = H names"; essay 2 §9.
+  **Geometry creates the reader; the reader has no scale** (28 Oct, SPN R567; Tom: "The reader is scale free, and by
+  definition, payloads magnitudes sizes have now meaning."; "The geometry remove the scale for readers. The don't manage
+  magnitude."; "Yes. That is very important distinction. Geometry creates the reader. The reader has no scale
+  whatsoever."): the geometry removes the scale before anything is read (the projection divides, R306); a direction
+  arrives with every amount along it gone, paint as paint; the reader manages no magnitudes, of the other party or of
+  what arrives, and holds no unit (H in H is 1, H in anything else a writing); every magnitude with its unit a writer's.
+  Not "the reader compares magnitudes" (Claude's first wording, withdrawn). OFS §3.8 after "never knows V"; essay 3 §5.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
