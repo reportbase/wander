@@ -54,8 +54,7 @@ are untouched by anything stored. That is the third essay's main theorem, met in
 and the addresses stand.
 
 **Places compose without angles.** The offset from one place to another is the tangent subtraction of their slopes,
-(s₁ − s₂)/(1 + s₁s₂), which is a turn composed. The second essay's steps that close and steps that never close are
-the same steps here.
+(s₁ − s₂)/(1 + s₁s₂), which is a turn composed.
 
 ---
 
@@ -76,8 +75,8 @@ in amounts. The reader holds each array only up to its own factor, the size no r
 two ends meet. The writer knows the sizes, and which facing each array is, and so it can join the four into the closed
 circle or the eight into the sphere.
 
-**Not knowing the size makes the corner and the horizon.** This is the array's way of saying what the second essay
-said about V. Knowing an array's size, the writer has its far end at an amount, the other party's whole. Its ruler is the
+**Not knowing the size makes the corner and the horizon.** This is the array's way of saying what the first essay
+said about the missing V. Knowing an array's size, the writer has its far end at an amount, the other party's whole. Its ruler is the
 number line, on which the point where the two parties are equal is simply computed. Not knowing it, a reader whose sweep
 is a turn has only its own one length, and v = h becomes its split of near from far and the median of its readings: the
 corner. With no size, the array's far end is no amount at all, only a direction, [0 : 1], where the chart v/h runs out:
@@ -186,8 +185,8 @@ wearing the tangent's normalization.
 
   K_2 = Im[(1 + is)²]/(2s(1 + s²)) = 2s/(2s(1 + s²)) = 1/(1 + s²).
 
-That is the Cauchy's curve, π times its density. It is also h², the foot that the second essay found the reading v/h
-pointing to, since h = 1/√(1 + s²) on the reader's circle. With two places, at opposite ends of a diameter, each stored
+That is the Cauchy's curve, π times its density. It is also h², the piece of the chord that, in the second essay, the
+crossing for slope s cut off beneath it, since h = 1/√(1 + s²) on the reader's circle. With two places, at opposite ends of a diameter, each stored
 value is carried round the circle with weight h² from its own end and v² from the other's, and the two add to one. The
 higher kernels follow from it:
 
@@ -199,13 +198,13 @@ each the Cauchy's curve raised to a power, times a polynomial in s that puts its
 is s ↦ s/(1 + √(1 + s²)), one square root. Adding two turns is tangent addition, rational. So the whole lattice at
 N = 2^(d+1) is built by bisection and tangent addition from the corner, s = 1, and the papers rerun the round trip with
 every kernel value computed only as the rational function above of these constructed slopes, with no trigonometric call
-anywhere, exact to 10⁻¹⁶ at N up to 64. The second essay's "what square roots reach" is the reason this can be done:
-halving needs one square root and nothing more.
+anywhere, exact to 10⁻¹⁶ at N up to 64. That it can be done at all rests on one fact: halving a turn needs one square
+root and nothing more.
 
 **Two charts, one circle.** So the reconstruction theorem is proved in one coordinate and run in another. The proof uses
 the angle: Fourier modes, the Lebesgue constant, Jackson's estimate, the language classical approximation theory already
 speaks. The operation uses the slope: ratios, the reciprocal, tangent addition, halving, the Cauchy's curve. They are the
-same closed line, the second essay's projective line of directions, read through s = tan(φ/2). The angle chart needs the
+same closed line, the third essay's projective line of directions, read through s = tan(φ/2). The angle chart needs the
 whole circle at once, every period and every closed identity defined on a finished turn, and the proof is right to use
 it. The slope chart is the chart of one reading at a time, and the operation, which reads one point, never needs more.
 

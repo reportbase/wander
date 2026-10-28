@@ -46,7 +46,7 @@ a balance. Whatever settles each comparison decides *that* a result occurs and c
 ## 2. One slot
 
 To read an arrival against something, the reader must already hold something. Call it **the hold**. Each look states one
-reading: the arrival in terms of the hold. In the second essay's notation that is a direction,
+reading: the arrival in terms of the hold. In the third essay's notation that is a direction,
 
   [hold : arrival],  with v/h = arrival ÷ hold.
 
@@ -83,7 +83,7 @@ log_g(arrival ÷ hold). The run of those numbers is the record.
   and costs levels.
 - **One step, repeated, is the only discrete design.** Every discrete set of ratios closed under multiplication is the
   powers of one ratio. Two unrelated ratios together, 2 and 3, are dense: their products come as close as you like to any
-  ratio at all. The fourth essay's "levels are one ratio repeated" is this.
+  ratio at all. That is why levels, wherever they appear, are one ratio repeated.
 - **The count of levels is a logarithm in whole numbers.** "How many steps of g from the hold to the arrival" is log_g,
   rounded. The reader computes no logarithm. The logarithm is what its count becomes when the steps are made fine. This
   is the fourth essay's lay past the corner, 1 + ln s by count of addresses, met in time.
@@ -93,8 +93,8 @@ log_g(arrival ÷ hold). The run of those numbers is the record.
   where it was. The reader's count of levels is fixed beforehand, the fourth essay's K, apart from whatever N the stream
   has.
 
-**Odd and even K.** The fourth essay noted that with an even number of levels the corner, v/h = 1, falls on a boundary,
-and with an odd number one level is centred on it. For this reader the choice is not a matter of taste. Show a one-slot
+**Odd and even K.** With an even number of levels the corner, v/h = 1, falls on a boundary between two of them; with an
+odd number one level is centred on it. For this reader the choice is not a matter of taste. Show a one-slot
 reader a still scene and it is handed its own hold, look after look, with its reading sitting exactly on the corner. With
 31 levels it returns the hold times 1.00000. With 32 it must round half a step one way or the other, and returns the hold
 times 1.01815: a twitch on every look of a scene that is not moving. A reader that must be able to say "nothing changed"

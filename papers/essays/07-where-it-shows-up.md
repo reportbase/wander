@@ -188,7 +188,8 @@ reading has and an amount lacks.
 
 **Whitening.** Mahalanobis's distance (Mahalanobis 1936), and the map that sends each data point x to Σ^(−1/2)x, go one
 step further: they draw every axis at one length and also at right angles, undoing the correlations as well as the
-spreads. That is the inner product the second essay found in a turn that returns. Whitening is unique only up to a turn,
+spreads. That is the one measure of length the second essay found a returning turn leaves unchanged, every direction at one
+length and forward square to up. Whitening is unique only up to a turn,
 and that turn is exactly the part of a reader's ignorance the drawing leaves free.
 
 **Principal components and canonical correlations.** Harold Hotelling's principal components (Hotelling 1933) are taken
@@ -220,14 +221,9 @@ so it is the only one in which the sweep is a turn and the median of every pair'
 
 ## 5. Where c ≠ 1 comes from
 
-The cases above invite an objection that the second essay answered once, and that is worth answering again with
-examples in hand. "V = H is still a choice," the objection runs. "Someone decided to draw both axes at one length, and
-could have decided otherwise."
-
-That is a writer's objection. It supposes someone who holds both axes, sees c as a free number, and decides to set it to
-1. A reader whose sweep is a turn never stands there. It holds one length, and there is no c for it to know, set or
-decline. A uniform sweep that returns after a full turn has one length in its own measure. Writing it with c ≠ 1 describes
-the same sweep in coordinates not its own, which hides the turn's symmetry without removing it.
+The cases above invite an objection: "V = H is still a choice. Someone decided to draw both axes at one length, and
+could have decided otherwise." The second essay answered it. It is a writer's objection, supposing someone who holds both
+axes and sets c; a reader whose sweep is a turn holds one length and has no c to set.
 
 But a c ≠ 1 can still appear in what a reader's readings are taken through, imposed rather than chosen. When it does, it
 has a signature, and the cases above sort into four.
