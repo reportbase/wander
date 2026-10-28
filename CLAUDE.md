@@ -2389,6 +2389,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   on physics and data; no new physics claimed; the data tests may be redone blind later.
   Then (R559; Tom: "yes add them") two more cases in data after LIGO: the quasar dipole (EBD) and one photon at a
   time (WVP), each sorting address from payload.
+  LGO run 3 (R560; Tom: "fix the errors and design and run the test"): predictions committed before the data; on
+  two new segments every prediction held, the angle's departure from uniform reproduced from each channel alone (an 8 s
+  shift) to 0.0001. The fourth referee read's errors fixed (the angle near uniform, not uniform).
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

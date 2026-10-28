@@ -148,3 +148,74 @@ The old test was right that something in LIGO's noise is a Cauchy; it looked for
 its "transition" is the evidence that it is not. Nothing here is new physics: ratios of independent centred normals,
 the central limit theorem and the stable law of index 1 are classical, and so is LIGO's transient noise. What is ours is
 the sort.
+
+### Run 3: predictions (28 October 2026, written and committed before any new data is fetched; SPN R560)
+
+Tom: "fix the errors and design and run the test". The fourth referee read of the submission objected that the paper's
+test cannot fail as stated, and that its LIGO case reported a direction as uniform when, at two million samples, a
+Kolmogorov distance of 0.009 rejects uniformity. This run takes the claim the paper now makes, "counted against what
+arrives, the readings' law is the turn's law weighted by how what arrives is spread over the directions, and that spread
+can be measured on its own", and tests it on data not yet seen.
+
+**Known beforehand.** Runs 1–2's segment (GPS 1257000000) and its numbers, read above, including the angle's distance
+0.0087 there. While deciding the design I estimated, for that segment only, that unequal Gaussian spreads at c = 0.93
+alone would give a distance near 0.006, below the 0.0087 observed: so something besides the two spreads shapes the angle
+there (the channels' non-Gaussian shapes, or a joint dependence). Nothing below uses any new data.
+
+**The claim made operational.** "Measured on its own" is taken to mean: from each detector's readings separately, with no
+use of which H1 sample goes with which L1 sample. Pairing H1 with L1 shifted in time by 8 s keeps both channels' own laws
+and destroys their joint timing. If the angle's law is the turn's law weighted only by the spread of what arrives, as the
+two channels' own laws give it, then the simultaneous pair and the shifted pair have the same angle law. If the two
+detectors' noises share something at one instant, the simultaneous pair's angle law differs, and the claim in that form
+fails.
+
+**Data.** Three new segments, chosen by a rule fixed now: for each start S in 1240000000, 1250000000 and 1262000000 (O3a,
+O3a, O3b), the first of S, S + 512, S + 1024, … (at most 40 tries) for which 512 s of both H1 and L1 fetch from GWOSC with
+no gap or NaN. Each is whitened as in runs 1–2 (fftlength 4 s, overlap 2 s, 2 s trimmed each end). Drawn at one length:
+each channel divided by its own interquartile range.
+
+**Predictions, for each of the three segments** (all three must hold; any one segment's failure kills):
+- **L1 (the amounts shrink).** The IQR of each channel's block means over N = 1 … 64 falls with log-log slope within 0.07
+  of −½. *Killed* otherwise.
+- **L2 (the direction does not).** The IQR of the block means of r = L1/H1 (drawn) over N = 1 … 1024 has slope within 0.1
+  of 0. *Killed* otherwise.
+- **L3 (the corner, drawn at one length).** Median |r| within 0.01 of 1; quartiles of r within 0.01 of −1 and +1. *Killed*
+  otherwise.
+- **L4 (the drawing sets the corner).** Undrawn, with c = IQR(L1)/IQR(H1) from each channel alone: median |L1/H1| and the
+  quartiles within 1% of c and ∓c. *Killed* otherwise.
+- **L5 (the angle's law is the spread of what arrives, from each channel alone).** With φ = atan2(L1, H1) on the drawn
+  pair, D_sim its Kolmogorov distance from the uniform law and D_shift the same with L1 shifted circularly by 8 s:
+  |D_sim − D_shift| ≤ 0.001, and the two-sample Kolmogorov distance between the two sets of angles ≤ 0.003. *Killed*
+  otherwise.
+
+What would not be shown: anything about gravitational waves or the detectors. A pass says the direction's law, its
+corner and its departure from the uniform turn are accounted for by the two channels' own laws; it does not say that a
+classical analysis would predict otherwise (it would not: this is a test that the reading's claim holds, not that a rival
+fails). L5 is the one that can fail for a reason the reading did not build in: a shared disturbance at one instant.
+
+### Run 3 (28 Oct, `python3 runs/lgo/lgo3.py`; output `runs/lgo/lgo-run3.txt`)
+
+The segment rule found two of the three segments. From GPS 1240000000 none of the 40 starts (1240000000 … 1240019968)
+had data: GWOSC holds no H1 dataset there ("Cannot find a GWOSC dataset for H1 covering [1240000000, 1240000512)"), a gap
+in the run, not a failed prediction. The run therefore has two segments, not the three planned; nothing was substituted.
+- **Segment 1250017408** (the rule's 35th start from 1250000000). sha256 of the strain as fetched: H1
+  `e53d6f1ccfe6f7b0a14de33f6f4d635442784b38cdb6b6c91251605f780e8aee`, L1
+  `a69e45659304d43a6878d5b3e5781a81e6ff365bcb98b61be8f95dac529b4061`.
+  L1 not killed (slopes −0.536, −0.483); L2 not killed (−0.002); L3 not killed (median |r| 1.0010, quartiles −1.0033,
+  0.9988); L4 not killed (c = 0.8694; median 0.8702, quartiles −0.8722, 0.8683); L5 not killed (D_sim 0.00764, D_shift
+  0.00774, difference 0.00009; two-sample 0.00051).
+- **Segment 1262000000** (the rule's first start). sha256: H1
+  `b519186ab440176e3f646a4196e1f88185592bb1484e1f615e98ab8d21af99ea`, L1
+  `3b8f1d925e5ef13e77b85de462dc57676c29b34ad0e039159a8e959a6d614413`.
+  L1 not killed (−0.518, −0.502); L2 not killed (−0.008); L3 not killed (0.9996; −0.9999, 0.9993); L4 not killed
+  (c = 0.9468; 0.9464; −0.9467, 0.9461); L5 not killed (D_sim 0.00613, D_shift 0.00608, difference 0.00005; two-sample
+  0.00039).
+
+**Where run 3 stands.** On data not seen when the predictions were written, every prediction held on both segments. The
+angle is detectably not uniform in each (0.0076 and 0.0061 against a sampling scale of 0.00094), and pairing each H1
+sample with the L1 sample 8 s away, which keeps each channel's own law and destroys their joint timing, reproduces that
+departure to 0.0001, the two sets of angles indistinguishable at 0.0005. So the direction's law, its corner and its
+departure from the uniform turn are accounted for by the two channels' own laws, measured separately, as the paper's
+claim says. L5 could have failed, through a disturbance shared at one instant; it did not. As the predictions said, a
+classical analysis would not predict otherwise: this shows the claim holds where it can be checked, not that a rival
+fails. Two segments, not three.

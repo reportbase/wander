@@ -19,7 +19,8 @@ every change of what arrives, and sums do not. Hence the median at the corner fo
 parties alike, the missing mean wherever the sweep's weight stays above zero near the horizon, and the Cauchy's exact
 shape only for the uniform turn. No reading fixes the size of what is read; one amount carried in does. In one
 sentence: an address scheme and the magnitude met at an address are distinct mathematical roles, and a geometry can
-specify the former without determining the latter.
+specify the former without determining the latter. Three cases in published data (detector noise from LIGO, the quasar
+number-count dipole and single-photon interference) show where the address law lies in each.
 
 ## 1. Introduction
 
@@ -56,7 +57,7 @@ rather than belief.
 **Background: how the Cauchy is usually read.** The Cauchy law has been read in five main ways, each correct on its
 own terms. This paper adds another, and it helps to have the five in view first.
 
-- *A counterexample.* The law entered probability as an exception. Poisson met it in 1824 as a case where the average
+- *A counterexample.* The law entered probability as an exception. Poisson met it in 1824 (as Stigler 1974 recounts) as a case where the average
   of many observations is no better than one: the mean of n independent Cauchy variables has the law of a single one,
   so the law of large numbers fails. Cauchy returned to it in 1853, in his exchange with Bienaymé over least squares
   (Stigler 1974). Textbooks keep it in that role, as the standard example of a law with no mean and no variance, to
@@ -123,7 +124,7 @@ belong to the addresses and which to what is met at them (§6).
 - Past the corner, if no scale is preferred (a premise), only a logarithmic layout is consistent (Proposition 9).
 
 The paper's results are geometry. It makes no claim about how real observers or instruments read; it draws on physics
-and data to show what the reading does (one case in data, §6), and claims no new physics. A
+and data to show what the reading does (three cases in data, §6), and claims no new physics. A
 longer version, with the full account of the reader, further applications and classical connections, is Brinkman
 (2026).
 
@@ -539,7 +540,13 @@ measured, that suggests a Cauchy in the noise. Read the other way it is a tail o
 transient (a Student-t with about 16 degrees of freedom fits far better than either), and the block means of the amounts
 shrink as n^(−1/2) through the whitened band, which nothing with a Cauchy law could do. The Cauchy is elsewhere: in the
 direction [H1 : L1] of the two detectors read at one instant, a pair of nearly independent noises whose direction is
-uniform (its angle within 0.009 of the uniform law in Kolmogorov distance). Drawn at one length by each channel's own
+close to uniform: its angle is 0.009 from the uniform law in Kolmogorov distance, small but, at two million samples, more
+than sampling explains, as the channels' unequal spreads and the transient lead one to expect. On two further
+segments, with the predictions written down before the data were fetched, all of what follows held again, and the
+reading's test, which could have failed, did not: pairing each sample of one detector with the other's 8 s away, which
+keeps each channel's own law and loses their joint timing, reproduces the angle's departure from uniform (0.0076 and
+0.0061, against a sampling scale of 0.0009) to within 0.0001. The departure is the spread of what arrives, measured from
+each channel alone. Drawn at one length by each channel's own
 interquartile range, the median of |L1/H1| is 0.999 and the quartiles of L1/H1 are −0.998 and +1.000; averaged over
 blocks of up to 1,024 samples its spread does not shrink; scaling one channel by c moves the median to c exactly; and
 removing the loudest 0.1% of samples, which takes the whole of the heavy tail, leaves the angle's law where it was.
