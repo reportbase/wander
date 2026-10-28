@@ -2436,6 +2436,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   act (a function of invariants is invariant, so a writing needs an amount carried in), the vantage (the reader handed
   its invariants, R567; the writer holds variant quantities and forms invariants) and that the test sorts quantities, the
   names vantages. Keep "reading" and "writing" as the names. OFS §9 after "The test: scale the world"; essays README.
+  **The reader never sees a shape** (28 Oct, SPN R569; Tom: "the reader does not see the actual shape, only writers do.
+  Readers only see the cauchy Sweep. That's not a small idea."; "Yes. that is what we should say clearly, without
+  equivocation."): a thing is to the reader the addresses it paints and the paint; its shape is amounts, removed before
+  reading (R567); every way to it a writing (ranging, a counted step, a blueprint). Said without hedging. Helmholtz 1867,
+  Poggio, Torre and Koch 1985 and Gibson 1979 named as history (an image underdetermines its shape, a shortfall made up by
+  inference); ours: the reader's side whole, the shape never the reader's to lack. OFS §1 after "The separation, in
+  brief"; essay 6 §8.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

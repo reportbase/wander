@@ -215,6 +215,18 @@ and with it the face, the thing's distance and its speed.
 From one place, then, the addresses, their paint and the outline come free. The face needs an amount along each
 direction, written, or further standpoints.
 
+Say it plainly: **the reader never sees a shape.** It sees the sweep, the same addresses for every world, and the paint
+on them. A thing is to it the addresses it paints and what it paints them with: a patch of directions, what is in front
+of what, a colour. How far the surface lies along each direction is an amount, and the geometry has removed every amount
+before anything is read. Every way to the shape is a writing: ranging, a counted step between standpoints, a blueprint
+handed over. Shape is the writer's. The reader has the Cauchy sweep and its paint.
+
+That an image does not settle the shape that made it is an old observation: Helmholtz's perception as unconscious
+inference, inverse optics as an ill-posed problem (Poggio, Torre and Koch 1985), Gibson's optic array. Those accounts
+treat the reader's side as a shortfall, too little information, to be made up by inference. Here the reader's side is
+complete on its own terms. Its geometry is fixed before anything arrives, the same whatever shape is out there, and its
+law is the Cauchy. The shape was never the reader's to lack.
+
 Holding an outline as one radius per direction, r(θ) on the unit circle, is classical. It is the outline's radial
 function, its polar coordinates. So is describing it by the Fourier series of that function, or of its tangent angle along
 the outline, made blind to size, position and turn by normalising (Fourier descriptors; Zahn and Roskies 1972), and so is
@@ -326,6 +338,9 @@ is the length every place is found in.
   Mathematical Society* 16(2), 81–121.
 - Minkowski, H. (1903). Volumen und Oberfläche. *Mathematische Annalen* 57, 447–495.
 - Horn, B. K. P. (1984). Extended Gaussian images. *Proceedings of the IEEE* 72(12), 1671–1686.
+- Helmholtz, H. von (1867). *Handbuch der physiologischen Optik*. Voss, Leipzig.
+- Poggio, T., Torre, V. and Koch, C. (1985). Computational vision and regularization theory. *Nature* 317, 314–319.
+- Gibson, J. J. (1979). *The Ecological Approach to Visual Perception*. Houghton Mifflin, Boston.
 - Civera, J., Davison, A. J. and Montiel, J. M. M. (2008). Inverse depth parametrization for monocular SLAM. *IEEE
   Transactions on Robotics* 24(5), 932–945.
 - Triggs, B., McLauchlan, P. F., Hartley, R. I. and Fitzgibbon, A. W. (2000). Bundle adjustment — a modern synthesis. In

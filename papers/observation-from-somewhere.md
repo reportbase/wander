@@ -122,6 +122,17 @@ presuppose the whole, together with an exact account of what that construction c
 writer's geometry, with the whole already in hand, is not in question here; this paper concerns what a reader needs
 without it.
 
+**The reader never sees a shape.** A reader sees the sweep: the addresses, the same for every world, and the paint on
+them. A thing appears to it as the addresses it paints and what it paints them with: a patch of directions, which thing
+is in front of which, its colour. Its shape, how far its surface lies along each direction, is amounts, and the
+geometry removes amounts before anything is read (§3.8). Every way to the shape is a writing: ranging, which carries in a
+signal's speed; standpoints a counted step apart; a blueprint handed over (§9). So shape is a writer's, and the reader
+has the Cauchy sweep and its paint, never the shape. That an image does not determine the shape that made it is old:
+Helmholtz's perception as inference (1867), inverse optics as an ill-posed problem (Poggio, Torre and Koch 1985),
+Gibson's optic array (1979). Those accounts treat the reader's side as too little, to be made up by inference. Here it
+is whole on its own terms: a geometry fixed before anything arrives, the same for every shape, with the Cauchy as its
+law; and the shape was never the reader's to lack.
+
 **What we build on.** The method is not new either. Jaynes (1968, 1973) showed how to choose a measure from what an
 observer does not know: state its ignorance as a group of transformations, and take the measure the group leaves
 unchanged. His cases give the classical priors, uniform in a location and uniform in the logarithm of a scale, and one
@@ -4335,6 +4346,8 @@ Haldane, J. B. S. (1932). A note on inverse probability. *Proceedings of the Cam
 Hastings, W. K. (1970). Monte Carlo sampling methods using Markov chains and their applications. *Biometrika* 57(1),
 97–109.
 
+Helmholtz, H. von (1867). *Handbuch der physiologischen Optik*. Voss, Leipzig.
+
 Herschel, J. F. W. (1850). Quetelet on probabilities. *Edinburgh Review* 92, 1–57.
 
 Hilbert, D. (1895). Über die gerade Linie als kürzeste Verbindung zweier Punkte. *Mathematische Annalen* 46,
@@ -4507,6 +4520,8 @@ Statistics* 38(3), 916–918.
 
 Plücker, J. (1865). On a new geometry of space. *Philosophical Transactions of the Royal Society of London* 155,
 725–791.
+
+Poggio, T., Torre, V. and Koch, C. (1985). Computational vision and regularization theory. *Nature* 317, 314–319.
 
 Polyak, B. T. and Juditsky, A. B. (1992). Acceleration of stochastic approximation by averaging. *SIAM Journal on
 Control and Optimization* 30(4), 838–855.
