@@ -2485,6 +2485,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   is one slot, stopped by fiat. Doubles end near 1.8·10³⁰⁸ (then the symbol +∞; atan(∞) = π/2, tan(π/2 as a double)
   ≈ 1.6·10¹⁶); tan(π(U − ½)) never exceeds ≈ 2·10¹⁵, so a computer's Cauchy is truncated and has a mean (sizes ≈ 22.7,
   (1/π)·ln(1 + M²)); the true Cauchy has none. The geometry gives what no computation can. Essay 12 §6.
+  **What computer science can make real** (28 Oct, SPN R575; Tom: "this is where computer science can step up and put the
+  abstract ideas of geometry and make them real and operational.", then "yes"): essay 12 §9. Not simulating the infinity
+  but representing it: keep the pair [h : v] (the horizon [0 : 1] finite; homogeneous coordinates, atan2, IEEE ±∞);
+  compute with order (medians and quartiles exact, means the operations that need the true tail); reading and writing as
+  a type boundary (a direction type with no length, unit or addition; an amount carrying its unit); the world held lazily
+  (generators); the dial. No new claims beyond the CS companion's §3, §5, §7, §11.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

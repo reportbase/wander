@@ -309,7 +309,48 @@ cannot follow. With no N there is no array to write. The reader loses nothing: i
 
 ---
 
-## 9. What it comes to
+## 9. What computer science can make real
+
+Section 6 ended on a limit: a program cannot hold the Cauchy, because the Cauchy handles a true infinity and a machine
+must stop somewhere. That is where computer science can step in, not by simulating the infinity but by representing it,
+so that the program never has to reach it. The pieces already exist. What the geometry adds is which of them to use, and
+why.
+
+**Keep the pair, not the ratio.** A computer cannot hold v/h at the horizon. It can hold the direction [h : v] as two
+finite numbers, and then the horizon is [0 : 1]: exact, finite and ordinary. The infinity belonged to one chart, the one
+that divides v by h, and the pair has not chosen that chart. Homogeneous coordinates, `atan2(v, h)` in place of
+`atan(v/h)`, and the signed infinities of IEEE 754 are all this one move. A direction kept as a pair never overflows,
+because it was never an amount.
+
+**Compute with order, not sums.** Medians, quartiles, ranks and comparisons are exact and finite on directions, and none
+of them needs to know how far the tail goes. Means are the operations that need the true infinity, and they are the ones
+a truncated Cauchy gets wrong. A program that keeps to order on its addresses is therefore faithful to the true Cauchy
+even though it cannot draw from its tail: the median of its readings is the true median, the quartiles the true
+quartiles. The third essay's theorem, that order survives every change of what arrives and sums do not, becomes a rule
+for code.
+
+**Make reading and writing a type boundary.** Give a direction a type with no length, no unit and no addition, and an
+amount a type that carries its unit. Then a function from a direction to an amount can be written only where an amount
+is passed in, which is the cost of writing stated as a signature. The three-part split of section 6, world, geometry and
+reader, stops being a convention and becomes an interface the compiler checks: no code on the reader's side can ask for
+`sizeof`, because the type it holds has none.
+
+**Hold the world lazily.** A generator, a stream or a cursor is how a program already holds a list it cannot measure.
+Put one on the writer's side and K slots of the reader's own on the other, and the reader's situation is running, as
+`runs/arr/reader.mjs` shows: a world of a million and a world without end give the reader the same slots.
+
+**Steer by rate and place.** The dial of the computer-science companion scrolls a list without end: one control sets a
+rate, another a place, and any place up to N is reached in about ln(2N) of the rate's time, the end never drawn. It is the
+horizon made into a control.
+
+None of this simulates the Cauchy. Together it does something better: it represents directions so that the horizon is a
+finite point, and computes only with operations the true Cauchy also supports. A program built that way never meets the
+edge that truncation exposes, because it never asks a question whose answer lies past it. That is how the geometry's
+abstract gifts, given free in the world, become operational in a machine.
+
+---
+
+## 10. What it comes to
 
 An array, as programmers know it, is a writer's object. Its size is held, its index is an amount, its shares are shares
 of a known total, and every one of those moves when the world is scaled. That is exactly right for whoever made it.
@@ -324,7 +365,8 @@ projective line, the reciprocal that swaps them, and the corner it fixes. The ce
 point; the inscribed sweep's 2/π only at the horizon; and their product is the writer's 1.
 
 Holding is how a reader becomes the writer of a thing: the hand holds the back and knows the turn. What cannot be held
-(a street, the sky, a list too long to iterate) can only be swept. And `a[i]`, the most ordinary expression in
+(a street, the sky, a list too long to iterate) can only be swept, and a program can hold such a sweep faithfully: keep
+directions as pairs, compute with their order, and let the type system keep the writer's N on the writer's side. And `a[i]`, the most ordinary expression in
 programming, is the place where an address meets a payload, two things that share a point and nothing else. The writer
 writes them as one. The reader, standing somewhere, never could.
 
@@ -343,4 +385,5 @@ The geometry is set out with proofs in *Observation from Somewhere*: the reading
 a blueprint adds and the reader that never knows V in §3.8, the corner and the two sweeps in §4 ("Why the corner sits at
 45°", with π/2 attained at a point and 2/π a limit at the horizon), the readings as the projective line in §4, the array
 picture in §7.3, and what the floor discards in §8. For programmers, the computer-science companion's §6 ("The array")
-and §7 ("What Math.floor throws away").
+§3 ("Division by zero"), §5 (index statistics and value statistics), §7 ("What Math.floor throws
+away") and §11 ("A dial: scrolling without end").
