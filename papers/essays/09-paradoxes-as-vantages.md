@@ -113,7 +113,7 @@ frames, where it does not hold.
 
 **Thomas precession.** Carry a gyroscope round a closed loop of velocity changes and it comes back turned, though every
 leg looked free of rotation (Thomas 1926). The eighth essay met this in the dial built from true boosts. The residue
-belongs to the loop, not to any leg: the closing of a loop that the sixth essay used to find a misread link.
+belongs to the loop, not to any leg: the closing of a loop that the first essay used to find a misread link.
 
 **Simpson's paradox.** In a much-taught study of kidney-stone treatments (Charig et al. 1986), treatment A succeeded more
 often than B for small stones, 93% against 87%, and for large stones, 73% against 69%. Pooled, A succeeded 78% of the time
@@ -140,7 +140,7 @@ square root of a product of two readings taken from two seats. It is how nationa
 **Currency arbitrage.** Exchange rates are ratios: dollars per euro, euros per yen, yen per dollar. Honest rates multiply
 round the triangle to 1. If one is off, no single rate shows it, since any one looks plausible, but the loop does: the
 product comes out 1.01, and that 1% is free money until traders close the loop. A misread link is found only by a second
-route, which is exactly what the sixth essay's closing of a loop said. Two parties alone cannot see it; a third closing
+route, which is exactly what the first and sixth essays' closing of a loop said. Two parties alone cannot see it; a third closing
 the loop can.
 
 **What the family has in common.** In every case the claim that sounds absolute ("slower", "older", "fits",

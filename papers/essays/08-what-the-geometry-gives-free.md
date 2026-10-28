@@ -58,8 +58,8 @@ scrollbar's question, how long is the list, is never asked. The list's length is
 own fixed count of places, K.
 
 **Letting go: a new zero.** When the thumb lets go, the place reached becomes home: ζ returns to 0 and the rungs are drawn
-again about the new place. The second essay called this a new zero; the third showed it costs nothing, because a new zero
-on a Cauchy is another Cauchy. Pushes compose by adding in ζ, and a release folds the sum into the place, so the control
+again about the new place. The third essay called this a new zero and showed it costs nothing, because a new zero on a
+Cauchy is another Cauchy. Pushes compose by adding in ζ, and a release folds the sum into the place, so the control
 holds no growing number. The only number that grows is the record's own index, which the list needs anyway.
 
 **The window is a zoom.** How many records one rung holds is the window, and the window plays H. It changes how much of
@@ -105,7 +105,7 @@ Once the reader chooses H, its one length, these follow with no further choice:
 
 Two more need one stated premise each, and are free once it is granted:
 - **precision far off**, the lay past the corner, 1 + ln s on the reader's lay or 2 − 1/s on the in-place lay. The
-  premise is the fourth essay's (S): that no level past the corner is preferred to another.
+  premise is the fourth essay's: that no level past the corner is preferred to another.
 - **a level of detail**, given a fixed count K of addresses. H then divides the K between the near field and the far, half
   inside H at every H.
 
@@ -315,12 +315,12 @@ run out and have to be given out again (Itai, Konheim and Rodeh 1981; Dietz 1982
 fixed number of notches, and a list that grows in one place exhausts them there.
 
 **A step that never closes.** Fibonacci hashing multiplies a key by ⌊2³²/φ⌋ = 2,654,435,769, a golden fraction of the turn
-(Knuth 1998, §6.4). The second essay met steps that never close: a step that is not a rational fraction of the turn never
-returns to zero. Its multiples spread round the turn, and at every count they leave at most three sizes of gap, which is the
+(Knuth 1998, §6.4). A step that is not a rational fraction of the turn never closes: however many times it is taken, it
+never returns to zero. Its multiples spread round the turn, and at every count they leave at most three sizes of gap, which is the
 three-distance theorem (Sós 1958). The golden fraction is the step whose gaps stay most even.
 
-**Exact composition.** The second essay composed readings by tangent addition, and the third used a new zero as the
-everyday act. Readings composed that way can be held exactly as Gaussian integers: the step v/h as the complex integer
+**Exact composition.** Two readings s₁ and s₂ compose as turns by tangent addition, (s₁ + s₂)/(1 − s₁s₂), and the third
+essay's new zero is one such composition. Readings composed that way can be held exactly as Gaussian integers: the step v/h as the complex integer
 h + iv, multiplied, and reduced after each product. The register then grows by ½·log₂ of the odd part of h² + v² bits a
 step. It does not grow at all only at home, the corner and the horizon. Every other step costs storage without end. That
 is the arithmetic face of the steps that never close.
@@ -341,7 +341,7 @@ map of the addresses and carries the Cauchy onto itself. So the directions can b
 boost, with no table at all, and only the payload, the sky's own light in its own frame, needs tabling, once. The
 `boost-sky.html` demo compares the samplers. What needs a table is the payload or the writer, never the addresses.
 
-That is also the third essay's point that the Cauchy does not need to know N. Whatever is tied to a count, a table's size,
+That is also the fourth essay's point that the Cauchy does not need to know N. Whatever is tied to a count, a table's size,
 a grid's resolution, a far plane, is the payload's or the writer's. A method that ties with a classical one has shown it is
 correct; where the classical one needed N and the turn's addresses did not, the tie comes free.
 
@@ -411,7 +411,8 @@ carried in: the near plane's distance, the cell width of a floor taken of an amo
 Engineering keeps rediscovering which numbers it must carry in, often one at a time and by trouble. The geometry says in
 advance: one length H for the zoom, a count K if one is wanted, and an amount for each thing to be written.
 
-**The Cauchy.** Its superpower, in the third essay's word, is that its addresses need no count. That is what the dial
+**The Cauchy.** The property this essay has leaned on most is the one the fourth essay found: its addresses need no
+count. That is what the dial
 uses to cross a list of any length, what consistent hashing uses to add a machine and move almost nothing, what a sampler
 uses to drop its table, and what `Math.floor` throws away when it keeps one level of the address and drops the rest. The
 horizon is the price: a turn's addresses never run out, and they never reach the end.
