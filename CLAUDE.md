@@ -2392,6 +2392,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   LGO run 3 (R560; Tom: "fix the errors and design and run the test"): predictions committed before the data; on
   two new segments every prediction held, the angle's departure from uniform reproduced from each channel alone (an 8 s
   shift) to 0.0001. The fourth referee read's errors fixed (the angle near uniform, not uniform).
+  **The paper is the why** (R561; Tom: "we are explaing why what they are doing is correct, take the median. Our paper
+  is the why."): "What the paper is for" in §1 (practice already takes the median; the paper says why, and when it
+  stops being right) and "Two tests" (scale the world: reading or writing; change what arrives: address or payload),
+  OFS §9 and the submission's §8. Don't look for practitioners who average a Cauchy: the paper explains practice.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
