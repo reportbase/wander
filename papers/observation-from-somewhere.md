@@ -4133,6 +4133,18 @@ The structures of §12.4 met in systems built to read or draw a world, each with
   geometry's. Zooming interfaces arrive at relatives of this: speed coupled to zoom (Igarashi and Hinckley 2000),
   views as points of position and scale (Furnas and Bederson 1995), and smooth zoom-and-pan paths written in the
   hyperbolic functions (van Wijk and Nuij 2003).
+- *Machine arithmetic and the infinite.* Everything a finite machine does to a number is monotone: rounding to the
+  nearest representable value, overflow to the largest or to ∞, a tail cut at the largest draw. None reverses an order;
+  each only merges values, most at the ends. So a machine's world is a monotone image of the one it stands for, and by
+  Theorem 6(c) a statistic computed there is the true one, rounded, exactly when it commutes with increasing maps: the
+  median, the quartiles, ranks and comparisons, up to ties at the machine's resolution. Sums and means do not commute, so
+  on a machine they answer for its squashed world. The Cauchy shows the difference at small n. Its infinity is in the
+  chart v/h, not in the turn: the angle θ lies in [0, π/2], a machine holds it to its resolution, and its mean π/4 is
+  computed correctly; only the tangent chart sends an end to ∞. A draw tan((π/2)U) from a uniform double never exceeds
+  about 3.5·10¹⁵, so the machine's half-Cauchy is truncated and has a mean, (1/π)·ln(1 + M²) ≈ 22.8, where the true one
+  has none. A computation is faithful to an unbounded reality where the infinity is a horizon, a direction kept as the
+  pair [h : v] or the angle, and the operations keep to order; it is unfaithful exactly where the infinity sits in a sum
+  of amounts.
 
 ## Appendix C. Notation
 

@@ -339,6 +339,22 @@ reader, stops being a convention and becomes an interface the compiler checks: n
 Put one on the writer's side and K slots of the reader's own on the other, and the reader's situation is running, as
 `runs/arr/reader.mjs` shows: a world of a million and a world without end give the reader the same slots.
 
+**What "computers can't hold infinity" means, operationally.** Everyone knows a machine cannot represent the
+infinities of reality. The Cauchy says precisely what that costs. First, everything a machine does to a number is
+monotone: rounding, overflow, cutting a tail at the largest value. None of them ever reverses an order. So by the third
+essay's theorem, every answer built from order (a median, a quartile, a rank) comes out on the machine as the true answer
+rounded, and every answer built from sums does not. Second, the Cauchy puts its infinity in the chart, not in the turn.
+Draw a uniform turn and read it two ways (`runs/arr/infinity.mjs`): as an angle, its mean over ten million draws is
+0.78565 against the true π/4 = 0.78540, and its median 0.78555; as a slope v/h, its median is 1.0003 against the true 1,
+and its mean wanders, 1.78, 3.68, 14.3, 13.0 at eleven, a thousand, a hundred thousand and ten million draws, settling on
+nothing. Cap the values at 10, at 1,000 or at 65,504, as a smaller machine would, and the median does not move while the
+mean drops to 2.10, 5.07 and 7.74. Rounded to single precision, the median of the rounded values is exactly the rounded
+median. And the largest slope a double can draw this way is about 3.5·10¹⁵, so the machine's Cauchy is truncated and
+has a mean, about 22.8, where the true one has none. So the precise statement is this: a machine is faithful to an
+infinite reality where the infinity is a horizon, a direction it keeps as a pair or an angle, and its operations keep
+to order; it is unfaithful exactly where the infinity sits in a sum of amounts. The Cauchy has both kinds in one law,
+and shows the difference in ten draws rather than in ten to the three hundred.
+
 **Steer by rate and place.** The dial of the computer-science companion scrolls a list without end: one control sets a
 rate, another a place, and any place up to N is reached in about ln(2N) of the rate's time, the end never drawn. It is the
 horizon made into a control.

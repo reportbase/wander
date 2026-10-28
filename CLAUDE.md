@@ -2491,6 +2491,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   compute with order (medians and quartiles exact, means the operations that need the true tail); reading and writing as
   a type boundary (a direction type with no length, unit or addition; an amount carrying its unit); the world held lazily
   (generators); the dial. No new claims beyond the CS companion's §3, §5, §7, §11.
+  **What "computers can't hold infinity" means operationally** (28 Oct, SPN R576; Tom: "everyone knows computation and
+  computers not capapble of representing the infinities of reality, but i don't think has explained preciscly what that
+  means operationally."; "the cauchy gives a new lense into this question."; "yes"): every machine operation on numbers is
+  monotone (rounding, overflow, truncation), so by Theorem 6(c) order statistics come out as the true ones rounded and sums
+  do not; the Cauchy's infinity is in the chart v/h, not the turn (the angle bounded, its mean π/4 computed right); a
+  double's draw tan((π/2)U) tops at ≈ 3.5·10¹⁵, so a machine's Cauchy has a mean (≈ 22.8). Faithful where the infinity is a
+  horizon kept as a pair or angle and the operations keep to order; unfaithful where it sits in a sum of amounts.
+  `runs/arr/infinity.mjs` (10⁷ draws: angle mean 0.78565, median v/h 1.0003, mean v/h 1.78, 3.68, 14.3, 13.0; caps at 10,
+  10³, 65,504 move the mean to 2.10, 5.07, 7.74 and not the median; float32's median the rounded median). OFS Appendix B
+  "Machine arithmetic and the infinite"; essay 12 §9. Well-studied neighbours (computable analysis, monotone rounding,
+  quantile equivariance) noted, no claim about other work's gaps.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
