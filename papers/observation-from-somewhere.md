@@ -2058,6 +2058,40 @@ what that costs: it comes from the unbounded axis of the reading, not from the w
 rather than laid as addresses, an amount has been formed from the reading by a known length, and the distribution's
 scale is that length, not 1 by assumption.
 
+**What the reading changes.** The theorem is classical in its parts; what the reading adds shows in what it lets one
+say. Four cases, each short and checkable, where reading a Cauchy-type law as the law of addresses gives a sharper
+answer than reading it as a law of what is measured. None says the usual treatment is wrong; each says where its facts
+belong.
+
+- *Water and wine.* Von Mises's problem: a liquid is wine and water, the ratio x of wine to water between 1/3 and 3;
+  what is the chance that x ≤ 2 (von Mises 1928, in Mikkelson's 2004 form)? Indifference over x gives 5/8, over 1/x
+  15/16, and the problem is the standard case of indifference contradicting itself; Jaynes left it open as
+  overdetermined (1973, §8). Read as an address, x is a direction [water : wine]. The exchange of the two liquids
+  carries it to its reciprocal, so every answer that treats them alike puts the chance of x ≤ 1 at ½, the corner,
+  whatever else it assumes. A change of one liquid's unit multiplies x by a constant and moves no direction; if one law
+  is to hold on every range of x, as Jaynes required of the chord, the only law left by both is dx/x, uniform in
+  levels, and the answer is ln 6/ln 9 ≈ 0.8155 (§12.2, question 2).
+- *The marginalization paradox.* Under an improper prior on a scale nuisance, integrating it out of the data and
+  reasoning from statistics free of it can disagree (Stone and Dawid 1972; Dawid, Stone and Zidek 1973). Read with the
+  reader's own measure on the other's size, dη/η, they cannot. For amounts y = η·w, n of them, the first reasoner's
+  likelihood ∫ η^(−n−1) f(y/η | ζ) dη and the second's, from the direction u = y/|y| alone, ∫ r^(n−1) f(r·u | ζ) dr,
+  differ by the factor |y|^n, which carries no ζ: the same conclusion from the same prior, whatever the law f. Reading
+  the data's direction is reading its address, and the scale's invariant measure is what makes the two agree (§12.2, question 7).
+- *Bertrand from a standpoint.* Bertrand's chord has as many answers as procedures; Jaynes's ½ comes from a group that
+  includes translations, a circle that may lie anywhere. A reader that stands somewhere has no translations: its lines
+  all pass through home, and its measure is uniform in direction and in levels of distance. For a circle of radius R
+  whose centre is D ≥ R away, the share of rays cutting a chord longer than the inscribed triangle's side is
+  arcsin(R/2D)/arcsin(R/D): ⅓ from a point of the circle, rising to ½ as the circle recedes. Jaynes's answer is the far
+  reader's, Bertrand's chord between two random ends the near reader's, and the answer depends on where the circle lies
+  relative to the one who asks (§2).
+- *Directions are read by their order.* Robust statistics treats a Cauchy tail as outliers in the data, to be resisted by
+  medians and bounded-influence estimators (Huber 1964). Read as addresses the same readings need no defence: a ratio of
+  two amounts (a slope, a ratio estimate, the tangent of a bearing) is a direction, directions have no sum, and their
+  law has a median and no mean for that reason. Over a uniform turn the readings' median stays at 1 while the mean's
+  integral up to s, (1/π)·ln(1 + s²), grows by (2/π)·ln 10 for every tenfold of s. To summarize directions, take the median or the
+  quartiles; to combine two, compose them by tangent addition; to average, average the angle, which is bounded. The mean
+  belongs to amounts, the median to addresses (Theorem 6(b), (c)).
+
 ### 7.3 In the picture of the hand
 
 Spread the fingers uniformly by turn and read each one as v over h: the readings are the Cauchy, and nothing of the
@@ -3385,6 +3419,30 @@ rescalings). Each relaxation gives a named alternative rather than no geometry:
 
 The main result's core, order surviving and sums failing, with the median at the corner, needs only the first of the
 three; the missing mean needs besides a density of h bounded away from zero near the horizon (Theorem 6(e)).
+
+**What would follow.** If the reading is right, it changes less what is computed than what the results are taken to say. We state the
+consequences as such, and as questions, not as claims about anyone's results.
+
+- *What a missing mean is evidence of.* A law with no mean is usually taken as a fact about what was measured: heavy
+  tails, outliers, an unruly system. On this reading it is first a question: is the variable a direction, a ratio of two
+  amounts whose common scale the reading does not carry? If so, the missing mean says nothing about the system; it is
+  what any law of directions does, and the median and the quartiles are the summaries that mean something. Ratio
+  estimates, slopes fitted with error in both coordinates, and bearings are the obvious places to ask.
+- *Which part of a line shape belongs to the source.* Where a Cauchy appears as a profile beside a strength, the reading
+  splits them: the strength is the amount, the profile a law of addresses fixed by a standpoint m + iγ. A change in the
+  profile is then a change of where the turn is made from, and is to be explained as such before it is read as a change
+  in what is emitted.
+- *What an invariant prior is.* Jaynes's invariant measure, read as a reference for directions rather than a belief, has
+  a plain job: it lays the addresses before anything arrives, and the posterior lives on what arrives at them. Problems
+  of the Bertrand kind then become questions of standpoint: the answer depends on where the one who asks stands, and an
+  answer that ignores the standpoint is the far reader's.
+- *What an address scheme costs.* A reader's addresses are given by its one length and the turn, with no table, no
+  count of what will arrive and no knowledge of how far it reaches. Systems that index directions (cameras, depth
+  buffers, samplers, maps) can be read against that baseline: what they add to it, and what they pay for it.
+
+The reading predicts no new number. What it offers is a test that can fail: for any Cauchy met in practice, find the
+turn and find the amount. A Cauchy-type law for which no turn can be found, read from no standpoint, laying no
+directions, counts against it.
 
 ### 12.2 Assumptions and open questions
 
