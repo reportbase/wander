@@ -3930,6 +3930,19 @@ chance that all k lie inside the corner is a ratio of two Pfaffians of elementar
 confined to half its range, by the Coulomb-gas method of Dean and Majumdar (2006). A frame keeps its near field whole less often the more it holds at
 once, faster than geometrically.
 
+**A shape as a function on the circle** (§7.4). Holding a star-shaped outline as one radius per direction, r(θ) on the
+unit circle, is classical: it is the outline's radial function, its polar coordinates. So is describing it by the
+Fourier series of that function, or of its tangent angle along the outline, made blind to size, position and turn by
+normalising (Fourier descriptors; Zahn and Roskies 1972), and so is taking a shape as what is left when position, scale
+and rotation are removed (Kendall 1984). For a convex body the support function on the circle or sphere plays the same
+part, and the areas carried by its outward normals fix it up to translation (the Minkowski problem, Minkowski 1903; in
+vision, the extended Gaussian image, Horn 1984). In three dimensions, series of spherical harmonics in the radius
+describe planets and asteroids. What §7.4 adds is where each part of the function comes from. The directions are the
+addresses, the same for every shape. The radius along each is an amount, the payload, had only by ranging (a writing) or
+from further standpoints. In ln r = a₀ + f(θ) the constant a₀ is the one term no ratio of radii reads, so the
+normalisation the descriptors make by choice is here what reading leaves. The terms of f, taken in order of n, are a
+level of detail. The classical treatments begin with r(θ) in hand.
+
 **A median in two registers** (§7.6). To a stated accuracy less is needed: a running estimate moved by the sign of each
 comparison alone, m ← m + a_k·sign(x_k − m) with steps a_k falling more slowly than 1/k, and averaged as it goes,
 reaches the sample median's own accuracy with two registers (Robbins and Monro 1951; Polyak and Juditsky 1992; for the
@@ -4275,6 +4288,8 @@ Herschel, J. F. W. (1850). Quetelet on probabilities. *Edinburgh Review* 92, 1�
 Hilbert, D. (1895). Über die gerade Linie als kürzeste Verbindung zweier Punkte. *Mathematische Annalen* 46,
 91–96.
 
+Horn, B. K. P. (1984). Extended Gaussian images. *Proceedings of the IEEE* 72(12), 1671–1686.
+
 Hotelling, H. (1933). Analysis of a complex of statistical variables into principal components. *Journal of
 Educational Psychology* 24, 417–441, 498–520.
 
@@ -4344,6 +4359,9 @@ Keller, J. B. and Vakil, R. (2009). π_p, the value of π in ℓ_p. *The America
 
 Kellogg, O. D. (1929). *Foundations of Potential Theory*. Springer, Berlin.
 
+Kendall, D. G. (1984). Shape manifolds, Procrustean metrics, and complex projective spaces. *Bulletin of the London
+Mathematical Society* 16(2), 81–121.
+
 Klein, F. (1871). Über die sogenannte Nicht-Euklidische Geometrie. *Mathematische Annalen* 4, 573–625.
 
 Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen* (the Erlangen programme).
@@ -4405,6 +4423,8 @@ Microsoft. Bing Maps Tile System (documentation).
 
 Mikkelson, J. M. (2004). Dissolving the wine/water paradox. *British Journal for the Philosophy of Science* 55(1),
 137–145.
+
+Minkowski, H. (1903). Volumen und Oberfläche. *Mathematische Annalen* 57, 447–495.
 
 Secrest, N. J. et al. (2021). A test of the cosmological principle with quasars. *Astrophysical Journal Letters* 908,
 L51.
@@ -4531,3 +4551,6 @@ Whitney, H. (1955). On singularities of mappings of Euclidean spaces. I. Mapping
 Williams, L. (1983). Pyramidal parametrics. *Computer Graphics* (Proceedings of SIGGRAPH '83) 17(3), 1–11.
 
 Yaglom, I. M. (1968). *Complex Numbers in Geometry*. Academic Press, New York.
+
+Zahn, C. T. and Roskies, R. Z. (1972). Fourier descriptors for plane closed curves. *IEEE Transactions on Computers*
+C-21(3), 269–281.

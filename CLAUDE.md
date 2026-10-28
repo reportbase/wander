@@ -2403,6 +2403,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   journal paper is pulled out only once an essay argues its one thing well; the submission waits. OFS stays the source of
   truth. Citations go in as history, never as defence; no new ones unless Tom asks or a referee names one. Plan and
   first sequence in `plans/essays-plan.md`; essay 1, Reading and writing, outlined to Tom first.
+  **A shape as a function on the circle** (28 Oct, SPN R563; Tom: "is recovering a shape from the unit circle address,
+  is that classical?", then "add that to OFS"): OFS Appendix A names the classical side of §7.4 (the radial function,
+  Fourier descriptors, Zahn and Roskies 1972, Kendall's shape 1984, the Minkowski problem 1903 and Horn's extended
+  Gaussian image 1984) and what §7.4 adds: where each part comes from, the radius payload, a₀ the term reading leaves.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
