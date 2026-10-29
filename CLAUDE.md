@@ -2516,6 +2516,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the inscribed type."; "is the central chart the gausssian"; "update papers"): one measure, the turn's, in two charts:
   inscribed the Cauchy, central uniform on the half turn (the foot arcsine); the Gaussian only a payload model. OFS §4
   "One measure, two charts, and no Gaussian in either"; essay 2 §6.
+  **Euler's formula, the reader's notation** (29 Oct, SPN R580; Tom: "does euler's identity offer any insights about the
+  reader situation.", then "its the correct math for readers, why not itegrate it into the essays?"): e^(iπ) = −1 is the
+  square map's image of the horizon, (1 + is)/(1 − is) → −1, notation for a projective fact; z = r·e^(iθ) is address
+  (e^(iθ)) times payload (r), ln z = ln r + iθ puts the scale test on the real part and turns on the imaginary, dθ·dr/r is
+  area on the log plane, and composition is addition (no pole at the horizon). Classical; the reading ours. OFS Appendix A
+  "Polar form and the complex logarithm"; essay 2 §9 "Euler's formula, the reader's notation"; pointers in essays 1 §5, 3 §4.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

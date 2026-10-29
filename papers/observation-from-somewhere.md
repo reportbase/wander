@@ -3890,6 +3890,22 @@ generator of a returning turn, not as an added ingredient. That a returning one-
 generator is classical; Euler's formula and identity are used, not derived. The Cauchy distribution's name has another
 origin, his exchange with Bienaymé in 1853 (Stigler 1974).
 
+**Polar form and the complex logarithm** (§2, §4, §9). Euler's formula puts three things of this paper into one
+notation. In polar form, z = r·e^(iθ), the factor e^(iθ) has modulus 1, a direction with no size: the address, held in
+the reader's one length. The modulus r is an amount, the payload's radius, stated in a unit only by a writer. The
+logarithm, ln z = ln r + iθ, turns the two groups of the reader's ignorance (§2) into translations of one plane:
+scaling the world by k adds ln k to the real part alone, and a turn adds to the imaginary part alone. So the scale
+test of §9 asks which part moved, the imaginary part a reading and the real part a writing, whose origin is the a₀ no
+reading fixes (§7.4); and the measure the turns and dilations keep, dx·dy/(x² + y²) = dθ·dr/r (§2), is uniform area on
+the logarithm's plane. Composition becomes addition: readings from two zeros compose by tangent addition, (s₁ + s₂)/(1 −
+s₁s₂), which has its pole where the turns together reach the horizon, while their turns compose as e^(iα)·e^(iβ) =
+e^(i(α+β)), where nothing is special at the horizon; a reading carries no sign, so θ and θ + π give one reading, and the
+squaring of §4, e^(2iθ), makes that half turn of the ray one whole turn of the central sweep. That squaring is also
+the rational parametrization of the circle, e^(2iθ) = (1 + is)/(1 − is) with s = tan θ, so the horizon, s → ∞, lands
+at −1 with no e or π needed: e^(iπ) = −1 is that fact in Euler's notation. Classical: polar form, the complex
+logarithm, the measure dx·dy/|z|² kept by multiplication on the nonzero complex numbers, the double cover. Ours: reading
+the two factors as address and payload and the two parts of the logarithm as reading and writing.
+
 **π_p** (§5). Among the p-norms the circle is also the extreme case. Measured in its own norm, the unit circle of ℓ_p
 has half-perimeter π_p, which is 4 at p = 1 and as p → ∞ (the line's norm and the square's) and least, π, at p = 2
 (Adler and Tanton 2000); and π_p = π_q whenever 1/p + 1/q = 1 (Keller and Vakil 2009). The sum norm and the

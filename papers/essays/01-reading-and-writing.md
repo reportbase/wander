@@ -352,6 +352,10 @@ standpoint has only directions. The writer's blueprint moves by k in every numbe
 splits down the middle: the writer's equation, read as amounts, moves; the reader's turned length, read as directions,
 does not.
 
+In Euler's notation the test has a picture. Write a thing as a direction times an amount, r·e^(iθ), and take the
+logarithm, ln r + iθ. Scaling the world by k slides the real part by ln k and leaves the imaginary part alone: the
+imaginary part is the reading, the real part the writing (the second essay, section 9).
+
 This test is not new, and the essay claims no credit for it. Henri Poincaré imagined, more than a century ago, all the
 dimensions of the universe becoming a thousand times larger overnight, and observed that "I shall not notice anything
 at all". The physicist P. W. Bridgman, in his book on dimensional analysis of 1922, called the same fact "the absolute

@@ -226,7 +226,10 @@ their mean.
 There is a pretty corollary. In complex form, the central sweep's point is half of e raised to 2iθ. At the start, zero
 turn, it sits at B. At the corner, it sits at the top of the arc, in the direction i. At the end of the quarter turn, the horizon, the radius has made
 a half turn and sits back at A, home. That half turn is e to the power iπ, which equals −1. Euler's identity is the
-central sweep's half turn, seen from the middle of the chord, while the reader's own ray has made only a quarter.
+central sweep's half turn, seen from the middle of the chord, while the reader's own ray has made only a quarter. The e
+and the π are only notation here: the same squaring, written with the reading s, is (1 + is)/(1 − is), and as s runs
+off to infinity that runs to −1. What the identity records is projective: the reader's two ends, zero and the horizon,
+land at the two ends of one diameter. Section 9 comes back to Euler's formula as the reader's notation.
 
 **One turn, two charts.** The even turn belongs to neither sweep. Written as the inscribed sweep's ratio, it is the
 Cauchy: the long tails and the missing mean come from the ratio running off to infinity. Written as the central sweep's
@@ -357,6 +360,41 @@ What the reader cannot do without an amount carried in is place a point at (x, y
 2π times so many metres or the area as so many square metres, or say how large another party's circle is beside its own.
 Those are amounts, and amounts are writing. The reader does every part of circular mathematics except the parts that
 state a size.
+
+### Euler's formula, the reader's notation
+
+One piece of classical notation holds all of this at once: Euler's formula, written in polar form,
+
+> z = r·e^(iθ).
+
+**The two factors are the address and the payload.** The factor e^(iθ) has size exactly 1. It is a direction and
+nothing else: the address, held in the reader's own length, H measured in H. The factor r is an amount, how far, how
+bright, how big, and it means something only in a unit, which only a writer can supply. Polar form has been splitting a
+number into its direction and its amount since the eighteenth century. Read from a standpoint, that split is the
+reader's and the writer's.
+
+**The logarithm makes the scale test a question of which part moved.** Take the logarithm:
+
+> ln z = ln r + iθ.
+
+Scale the world by k and only the real part moves, by ln k. Turn, and only the imaginary part moves. So the first test
+of the series, scale the world, comes down to which part of the logarithm changed: the imaginary part is a reading, the
+real part a writing. The real part's starting point, the one amount that sets every size, is exactly what no reading
+fixes. And the reader's ignorance, which turn it faces and how large anything is, is nothing more than sliding this
+plane up and down and left and right. Sliding keeps area, so the measure that suits that ignorance is plain area on the
+logarithm's plane: uniform in direction, and uniform in levels of distance.
+
+**Composition becomes addition.** In the reader's own chart, readings taken from two zeros combine by tangent addition,
+(s₁ + s₂)/(1 − s₁s₂). That is awkward, and it blows up when the two turns together reach the vertical. In Euler's form
+the same combination is e^(iα)·e^(iβ) = e^(i(α + β)): the angles just add, and nothing is special at the vertical. The
+reader's awkward arithmetic is the turn's plain arithmetic, seen through the tangent. A reading has no sign, so a turn
+and the same turn plus a half turn give the same reading; the reader's line closes after half a turn of its ray, and the
+squaring of section 6 turns that half turn into one whole turn of the central sweep.
+
+All of this is classical: polar form, the complex logarithm, the area that multiplication keeps, the double cover. What is
+the series' own is the reading: e^(iθ) as the address, r as the payload, the logarithm's two parts as reading and
+writing. It is the right notation for a reader because it keeps the two apart. The reader holds the imaginary part; the
+writer needs the real one.
 
 ---
 

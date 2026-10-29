@@ -119,7 +119,8 @@ variable written as a plain number is not among them. So the law of the turn get
 asked of it.
 
 This is a point about notation, not about anyone's results. Unmarked, the two kinds of thing look identical. Marked,
-they separate exactly.
+they separate exactly. Euler's polar form is one such marking: in r·e^(iθ) the factor of size 1 is the address and
+r is the amount (the second essay, section 9).
 
 ---
 
