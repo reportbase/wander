@@ -1816,6 +1816,17 @@ try {
   await page.goto(new URL('index.html', base).href, { waitUntil: 'load' });
   await Promise.all([page.waitForURL(/demos\.html/, { timeout: 15000 }), page.click('#demosOpen')]);
   console.log(`${failures.length === before7 ? 'ok  ' : 'FAIL'} demos.html (${pages.length} pages, ${links.length} links)`);
+  // essays.html: the essays' own page, every page of the site it links to there, thirteen essays
+  const before7e = failures.length;
+  await page.goto(new URL('essays.html', base).href, { waitUntil: 'load' });
+  const elinks = await page.evaluate(() => ({ cards: document.querySelectorAll('main .card').length,
+    local: [...document.querySelectorAll('main a')].map(a => a.href).filter(h => h.startsWith(location.origin)) }));
+  for (const pth of [...new Set(elinks.local.map(h => new URL(h).pathname))]) {
+    const r = await page.request.get(new URL(pth, base).href);
+    if (!r.ok()) failures.push(`[essays.html] ${pth} answers ${r.status()}`);
+  }
+  if (elinks.cards !== 13) failures.push(`[essays.html] ${elinks.cards} essays, not 13`);
+  console.log(`${failures.length === before7e ? 'ok  ' : 'FAIL'} essays.html (${elinks.cards} essays, ${elinks.local.length} links into the site)`);
 } catch (e){
   failures.push(`[${current}] ${e.message.split('\n')[0]}`);
 }

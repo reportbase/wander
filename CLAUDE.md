@@ -777,6 +777,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
 - `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, planes of directions, why the plane is special, arrays on the sweeps, online decisions at the corner and a dynamic array, the focus is the corner, the crosshair is the corner, friend or foe, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
+- `essays.html`: **the essays' own page** (29 Oct 2026, Tom: "lets create an index page just for the essays in
+  wanderer"), styled as `demos.html`, no script: the series' lede and its two ideas and two tests, then a card an essay
+  (number, what it opens on, what it does, after `papers/essays/README.md`), its title opening the essay on GitHub (the
+  essays are kept off the site), and under it the pages the essay names as demos (the draw explainers for essays 3 and
+  10). Linked from `demos.html`'s lede. Add a card when an essay is added. Both pages' "try" links are inline blocks, so
+  a row of them wraps on a phone (it ran 1,400 px wide).
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
@@ -2883,7 +2889,8 @@ In short:
   5. **dial.html:** a sure "two" costs about 3, 2 and 3 at s = 0.5, 1 and 2 (least at one pixel across).
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
-  7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it.
+  7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
+     thirteen essays, every page of the site it links to there.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
