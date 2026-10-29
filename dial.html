@@ -199,7 +199,7 @@
     }
 
     function readout() {
-        const x = s(), where = x < 0.97 ? 'below one pixel across: serial' : x > 1.03 ? 'past one pixel across: parallel' : 'at one pixel across';
+        const x = s(), where = x < 0.97 ? 'below one pixel across: one look at a time' : x > 1.03 ? 'past one pixel across: many pixels at once' : 'at one pixel across';
         const lines = [
             `s = ${x.toFixed(3)}   (${where})`,
             x < 1 ? `each look shows "two" with chance ${x.toFixed(2)}; expect about ${(1 / x).toFixed(1)} looks, each 1 pixel`
