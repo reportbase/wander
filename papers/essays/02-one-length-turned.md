@@ -396,6 +396,15 @@ the series' own is the reading: e^(iθ) as the address, r as the payload, the lo
 writing. It is the right notation for a reader because it keeps the two apart. The reader holds the imaginary part; the
 writer needs the real one.
 
+**The two corners are two mirrors.** The plane of the logarithm also shows the corners plainly. Swap a reading for its
+reciprocal, v/h for h/v, and the angle θ becomes 90° − θ: a reflection of the imaginary part, and the line it leaves
+in place is θ = 45°, the corner in direction. Swap a distance for its reciprocal about the reader's length, d/H for
+H/d, and ln d becomes 2 ln H − ln d: a reflection of the real part, and the line it leaves in place is d = H, the corner
+in distance (the fourth essay's corner of near and far). So the reader has two corners, one on each axis of one plane,
+each a mirror line. Each is moved by sliding the plane along its own axis: turning the head slides the first across
+the world's directions, and choosing H slides the second along the levels of distance. That is why the two corners can
+be set independently: they sit on different axes.
+
 **Where it stops.** Euler's formula is a tool for the flat case, one other party and turns in a plane. With three
 parties, the fifth essay's wedge, only half of it survives. The split survives: a point of space is still an amount
 times a direction, scaling the world still moves only the amount, and the scale test still asks the same question. What

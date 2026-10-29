@@ -3905,6 +3905,12 @@ the rational parametrization of the circle, e^(2iθ) = (1 + is)/(1 − is) with 
 at −1 with no e or π needed: e^(iπ) = −1 is that fact in Euler's notation. Classical: polar form, the complex
 logarithm, the measure dx·dy/|z|² kept by multiplication on the nonzero complex numbers, the double cover. Ours: reading
 the two factors as address and payload and the two parts of the logarithm as reading and writing.
+The two corners (§8, "The corner follows the focus") are two mirror lines on the logarithm's plane. The reciprocal of a
+reading, s ↦ 1/s, is θ ↦ π/2 − θ, a reflection of the imaginary part whose fixed line is θ = π/4, the direction
+corner. The reciprocal of a distance, d/H ↦ H/d, is ln d ↦ 2 ln H − ln d, a reflection of the real part whose fixed line
+is ln d = ln H, the distance corner. Each is moved by a translation along its own axis: turning slides the first
+across the directions of the world, choosing H slides the second along the levels of distance. That both corners are
+free, and independent of each other, is that the two translations are along different axes of one plane.
 The notation is two-dimensional, and only part of it carries to three parties (§3.4, Proposition 5(e)). What
 carries is the split: a point of space is r·u, an amount r times a unit direction u on the sphere, scaling the world
 moves ln r alone, and the measure the turns and dilations keep is dr/r times the sphere's area, so the scale test and
