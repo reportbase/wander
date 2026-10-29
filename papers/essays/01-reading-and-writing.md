@@ -268,8 +268,8 @@ not there. The median, sitting at the corner, is perfectly well defined. It is w
 on the size of anything.
 
 There is a neat way to say all this. Not knowing the size of the far end is exactly what gives the corner its job and
-creates the horizon. The reader's geometry needs V unknown. A writer holding V has neither. Its corner is just a point on the circle, and its circle has no
-horizon, because it closes.
+creates the horizon. The reader's geometry needs V unknown. A writer holding V has neither. Its corner is just a point
+on the circle, and its circle has no horizon, because it closes.
 
 ### What it means
 
@@ -306,10 +306,10 @@ missing mean are textbook facts.
 
 None of these mentions a second breadth, and none needs one. The slope v/h is already a ratio of two shares of one
 radius, so the absence of a V is never remarked. What is new is the reading of who holds what: the reader holds one
-length and never knows V, and each feature of the Cauchy is a feature of the circle that survives without V. The corner is the
-median, the near and far halves are mirrored by the reciprocal, and the missing mean is what the absent V leaves. A
-writer, holding V, has its far end as an amount: no horizon, and the corner only a point. We did not find this assembly
-in print; the pieces are classical.
+length and never knows V, and each feature of the Cauchy is a feature of the circle that survives without V. The corner
+is the median, the near and far halves are mirrored by the reciprocal, and the missing mean is what the absent V leaves.
+A writer, holding V, has its far end as an amount: no horizon, and the corner only a point. We did not find this
+assembly in print; the pieces are classical.
 
 The Cauchy's own story is long, and it has its own essay, the third: how its addresses are kept apart from what arrives,
 why it is the law a reasoner ignorant of scale must assign, and a second test to go with the one below. For now the
@@ -583,5 +583,5 @@ The essay draws on these; each is cited for something it uses.
   Psychology: Human Perception and Performance* 10(5), 683–703.
 
 The geometry is set out with proofs in *Observation from Somewhere*, in the same collection: readers and writers in
-§3.1, the reader's circle in §5, the Cauchy as the law of the uniform turn in §7, reading and writing in §9, and the classical pieces in Appendix A
-("The Cauchy from one length").
+§3.1, the reader's circle in §5, the Cauchy as the law of the uniform turn in §7, reading and writing in §9, and the
+classical pieces in Appendix A ("The Cauchy from one length").

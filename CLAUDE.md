@@ -2534,6 +2534,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Then ("1,2"): `wedge.html` step 6 is "reading and holding" (readout read/written; ids, params, hooks kept) and
   `demos.html`'s wedge card; the corpus's 3D claims audited, none wrong, the boosted sky named the Möbius law alone (OFS
   §11, essay 7, physics companion).
+  **Why the plane is special** (29 Oct, SPN R582; Tom: "Merge 1,3,2"): essay 13, `papers/essays/13-why-the-plane-is-special.md`
+  (Hamilton's canal; the plane's one law in four parts; Liouville; EUL's three laws in space; turns that do not commute;
+  what survives; which law a 3D statement means), a README row, pointers from essays 2 and 5; a pass over essays 1–12
+  (vocabulary and cross-references, none wrong); the CS companion §2.4 "Polar form, and where it stops"; one sentence in
+  the submission after the Cayley transform.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

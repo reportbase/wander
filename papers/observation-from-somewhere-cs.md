@@ -207,6 +207,19 @@ bracket alone is a sort. Tangent addition, though, counts turns only modulo a ha
 close alike after one round and after two, and a program that needs the winding number must count passes through the
 horizon itself.
 
+**Polar form, and where it stops.** The pair composes without the tangent's pole if it is kept as a complex number:
+(h₁ + iv₁)(h₂ + iv₂) is the composed direction, exact in integers (the Gaussian integers of §12), and in angles
+e^(iα)·e^(iβ) = e^(i(α + β)), plain addition with nothing special at the horizon. A point is then r·e^(iθ), its unit
+factor the address and r the payload's amount, and ln z = ln r + iθ puts the scale test on the real part (scaling the
+world moves ln r only) and turns on the imaginary part. This is the right representation in the plane, and only there.
+In three dimensions a point is still r·u, a unit vector times an amount, and scaling still moves only r; but turns of
+space do not commute, so no logarithm makes their composition a sum. Quaternions compose them exactly and keep the
+order; no number system past two dimensions both divides and ignores the order. Within one sweep, altitude
+or azimuth, composition is still the plane's; across the two it is in order. The Cauchy's own conveniences stop in the
+same place: in the plane one law is at once the Möbius image of the uniform turn and harmonic measure, with the
+standpoint for its mean in the circle chart; on the sphere those are two laws, and code about a standpoint off the
+centre has to say which (OFS Appendix A, "Polar form and the complex logarithm").
+
 ## 3. The corner
 
 **Proposition 1.** Let x = v/h ∈ [0, ∞). Then x = 1 is the only point fixed by the reciprocal x ↦ 1/x. The reciprocal

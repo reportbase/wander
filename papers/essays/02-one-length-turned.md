@@ -224,12 +224,13 @@ one sweep's readings are ratios, unbounded and held by their median, and the oth
 their mean.
 
 There is a pretty corollary. In complex form, the central sweep's point is half of e raised to 2iθ. At the start, zero
-turn, it sits at B. At the corner, it sits at the top of the arc, in the direction i. At the end of the quarter turn, the horizon, the radius has made
-a half turn and sits back at A, home. That half turn is e to the power iπ, which equals −1. Euler's identity is the
-central sweep's half turn, seen from the middle of the chord, while the reader's own ray has made only a quarter. The e
-and the π are only notation here: the same squaring, written with the reading s, is (1 + is)/(1 − is), and as s runs
-off to infinity that runs to −1. What the identity records is projective: the reader's two ends, zero and the horizon,
-land at the two ends of one diameter. Section 9 comes back to Euler's formula as the reader's notation.
+turn, it sits at B. At the corner, it sits at the top of the arc, in the direction i. At the end of the quarter turn,
+the horizon, the radius has made a half turn and sits back at A, home. That half turn is e to the power iπ, which equals
+−1. Euler's identity is the central sweep's half turn, seen from the middle of the chord, while the reader's own ray has
+made only a quarter. The e and the π are only notation here: the same squaring, written with the reading s, is (1 +
+is)/(1 − is), and as s runs off to infinity that runs to −1. What the identity records is projective: the reader's two
+ends, zero and the horizon, land at the two ends of one diameter. Section 9 comes back to Euler's formula as the
+reader's notation.
 
 **One turn, two charts.** The even turn belongs to neither sweep. Written as the inscribed sweep's ratio, it is the
 Cauchy: the long tails and the missing mean come from the ratio running off to infinity. Written as the central sweep's
@@ -396,15 +397,15 @@ the series' own is the reading: e^(iθ) as the address, r as the payload, the lo
 writing. It is the right notation for a reader because it keeps the two apart. The reader holds the imaginary part; the
 writer needs the real one.
 
-**The Cauchy in Euler's notation.** The Cauchy itself fits this notation twice over. Write where the reader stands,
-the foot and the height above the line that the third essay (section 6) gives every Cauchy, as one complex number z = m + iγ. The Cauchy's Fourier transform, the
-average of e^(itX), is then Euler's exponential of that point, e^(izt): the foot sets how fast it oscillates and the
-height how fast it dies away. A spectral line with a Lorentzian shape is exactly this, a turning phasor fading out. And
-carry the Cauchy onto the circle, the central sweep's chart, and its averages become the powers of one point w inside
-the circle: the average of Wⁿ is wⁿ. The law with no mean on the line has a mean on the circle, and that mean is where
-the reader stands, carried across. This is section 6's "the missing mean is the chart's", said in Euler's notation. For
-the reader's own quarter turn the mean direction of the landing point is (2/π)·i: it points at the corner, and its
-length is 2/π.
+**The Cauchy in Euler's notation.** The Cauchy itself fits this notation twice over. Write where the reader stands, the
+foot and the height above the line that the third essay (section 6) gives every Cauchy, as one complex number z = m +
+iγ. The Cauchy's Fourier transform, the average of e^(itX), is then Euler's exponential of that point, e^(izt): the foot
+sets how fast it oscillates and the height how fast it dies away. A spectral line with a Lorentzian shape is exactly
+this, a turning phasor fading out. And carry the Cauchy onto the circle, the central sweep's chart, and its averages
+become the powers of one point w inside the circle: the average of Wⁿ is wⁿ. The law with no mean on the line has a mean
+on the circle, and that mean is where the reader stands, carried across. This is section 6's "the missing mean is the
+chart's", said in Euler's notation. For the reader's own quarter turn the mean direction of the landing point is
+(2/π)·i: it points at the corner, and its length is 2/π.
 
 **The two corners are two mirrors.** The plane of the logarithm also shows the corners plainly. Swap a reading for its
 reciprocal, v/h for h/v, and the angle θ becomes 90° − θ: a reflection of the imaginary part, and the line it leaves
@@ -433,7 +434,7 @@ laws. One, harmonic measure, keeps the powers, so its mean is still the standpoi
 seventh essay, keeps the Möbius maps, so boosts still compose, but its mean is no longer a power: at rapidity η its mean
 cosine is coth η − η/sinh² η, where the plane's would be tanh(η/2). The reason is old: only in the plane do the maps that
 keep angles also keep the harmonic functions. So in three dimensions "the law seen from a standpoint" has to say which
-of the two it means.
+of the two it means. The thirteenth essay, *Why the plane is special*, takes this apart in full.
 
 ---
 

@@ -1,6 +1,6 @@
 # What can be known from where one stands
 
-A series of twelve essays, read in order, drafted 28 October 2026. Each opens on something familiar, shows the geometry in
+A series of thirteen essays, read in order, drafted 28 October 2026. Each opens on something familiar, shows the geometry in
 full, says which older work saw which piece, and ends with what it changes. *Observation from Somewhere* (`../observation-from-somewhere.md`)
 holds the proofs and stays the source of truth; where an essay and it differ, the essay is the one to fix.
 
@@ -29,6 +29,7 @@ amount carried in, as no function of invariants can vary) and the vantage that h
 | 10 | [Arrays and the circle](10-arrays-and-the-circle.md) | a closed curve stored as an array | the index as address; one array per facing; reconstruction and what it assumes; the Tangent Bridge kernel in slopes; the doubling and the fast transform; TVF |
 | 11 | [Holding in order](11-holding-in-order.md) | the tide turning against a pier | one slot; the unit rule; reading as seeking; the median by one bit; the races; the turn as a landmark; tested on recorded tides |
 | 12 | [What an array is](12-what-an-array-is.md) | `int a[10]` | `sizeof` as the writer's N; an apple held, which is writing; the reader's sweep, a density and a breadth; the horizon, where no N could be, with no inside or outside, the two ends 0 and ∞; π/2 attained at a point, 2/π approached at the horizon; an array laid on the quarter turn by tan and arctan, the writer's construction, against the reader's turn with no end; the array read twice; what computer science can make real (pairs, order, types, lazy worlds, the dial); `a[i]` |
+| 13 | [Why the plane is special](13-why-the-plane-is-special.md) | Hamilton on the canal | one law, four parts in the plane (the Möbius image of the uniform turn, harmonic measure, the powers of the standpoint, the two sweeps' rates); why (conformal maps, Liouville); what the run found on the sphere, three laws where there was one; turns that do not commute; what survives in space (the split, the corners, the wedge from home); which law a three-dimensional statement means |
 
 The demos named in each essay are the pages of the site (`../../demos.html` lists them). The plan behind the series is
 `../../plans/essays-plan.md`.

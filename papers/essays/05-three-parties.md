@@ -239,6 +239,10 @@ two-dimensional form, every pair keeps its corner, and the near field becomes a 
 The same law is what a pinhole's flat screen records of an even sky. A second party changes the shares and changes
 nothing about the first.
 
+All of this is said from home, at the centre of the directions, where every law of directions in space is the uniform
+one. A standpoint moved off that centre is another matter: there the plane's one Cauchy becomes several laws, and the
+thirteenth essay sorts which.
+
 Back in the corner of the room: three edges, one direction at a time, no distance in any of them. Near in everything for a
 third of where you can look.
 
