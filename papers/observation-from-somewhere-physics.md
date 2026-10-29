@@ -425,7 +425,9 @@ world's.
 
 OFS §11 states the one physics result OFS keeps. Aberration is a map of addresses, z ↦ z/k in the stereographic chart,
 a Möbius map of the celestial sphere (Penrose 1959; Terrell 1959). A sky uniform in its own frame is seen as the spherical
-Cauchy, density (1 − β²)/(4π(1 − β cos θ′)²) = D²/4π (Kato and McCullagh 2020), with parameter ρ = tanh(η/2). Doppler
+Cauchy, density (1 − β²)/(4π(1 − β cos θ′)²) = D²/4π (Kato and McCullagh 2020), with parameter ρ = tanh(η/2). Its mean
+direction cosine is coth η − η/sinh² η [exact]: on the circle the same law would have mean ρ and would also be harmonic
+measure, but on the sphere the Möbius law and harmonic measure part, and the sky is the first (OFS Appendix A). Doppler
 shift and beaming are a weighting of the payload, moving no address. Of the D⁴ by which an isotropic sky brightens ahead,
 D² is the addresses' crowding and D² the payload. On the levels ξ = −ln tan(θ/2), a uniform sky lies as ½·sech²ξ, and
 seen from the moving frame its median is moved to η: the rapidity is read from directions alone, with no clock, no
@@ -700,8 +702,8 @@ computed from the step where π enters matches its source. Sorted:
 | the circle as a shape (a semicircle's area, the arcsine integral) | 7 | an extent given in advance |
 | other (a pole; a dimension; a convention) | 6 | |
 
-So 2/π is not one thing, and a single 2/π does not fingerprint the uniform turn. The address reader of OFS holds shares
-and medians, not means, so most of these 2/π belong to the payload's side: a mean taken over the turn. The even turn shows
+So 2/π is not one thing, and a single 2/π does not fingerprint the uniform turn. OFS's reader, counting by its inscribed
+sweep, holds shares and medians, not means, so most of these 2/π belong to the payload's side: a mean taken over the turn. The even turn shows
 instead in every projection's mean being 2/π at every offset. OFS's π/2 · 2/π = 1, the two sweeps' readings of one line
 whose product returns the reader's own H, is one more: a ratio of two sums over the turn.
 

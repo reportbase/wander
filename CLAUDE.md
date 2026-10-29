@@ -2502,6 +2502,43 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   10³, 65,504 move the mean to 2.10, 5.07, 7.74 and not the median; float32's median the rounded median). OFS Appendix B
   "Machine arithmetic and the infinite"; essay 12 §9. Well-studied neighbours (computable analysis, monotone rounding,
   quantile equivariance) noted, no claim about other work's gaps.
+  **Passive, not a radar** (28 Oct, SPN R577; Tom: "its not pinging, its just addresses that are swept to catch
+  payloads."; "yes, Its passive, the reader must do something useful with those painted fingers, but were not concerned
+  about that."): OFS §3.7's hand bullet says the reader is passive, nothing sent out; what it does with the painted
+  fingers is not the paper's concern (R455). Restates R453, R454, R458.
+  **The situations dropped: readers and writers** (28 Oct, SPN R578; Tom: "its just one reader, with two ways of
+  converting the payload into useful information, the central and inscribed way."; "lets drop it completely.     there
+  are readers and writers."): OFS §3.1 is "Readers and writers", two questions and two vantages (the writer holds V, the
+  circle or a shape; the reader holds H, a standpoint, the addresses and their paint, one read with two sweeps, two
+  charts of one place). No numbered situations remain in OFS or the essays; entries above that cite situations 0–4
+  describe the text before. SPN keeps its numbers as the record; the demos' wording waits.
+  **The Cauchy is the inscribed chart's; the central chart is not the Gaussian** (28 Oct, SPN R579; Tom: "cauchy is of
+  the inscribed type."; "is the central chart the gausssian"; "update papers"): one measure, the turn's, in two charts:
+  inscribed the Cauchy, central uniform on the half turn (the foot arcsine); the Gaussian only a payload model. OFS §4
+  "One measure, two charts, and no Gaussian in either"; essay 2 §6.
+  **Euler's formula, the reader's notation** (29 Oct, SPN R580; Tom: "does euler's identity offer any insights about the
+  reader situation.", then "its the correct math for readers, why not itegrate it into the essays?"): e^(iπ) = −1 is the
+  square map's image of the horizon, (1 + is)/(1 − is) → −1, notation for a projective fact; z = r·e^(iθ) is address
+  (e^(iθ)) times payload (r), ln z = ln r + iθ puts the scale test on the real part and turns on the imaginary, dθ·dr/r is
+  area on the log plane, and composition is addition (no pole at the horizon). Classical; the reading ours. OFS Appendix A
+  "Polar form and the complex logarithm"; essay 2 §9 "Euler's formula, the reader's notation"; pointers in essays 1 §5, 3 §4.
+  Its limit (Tom: "yes, add the limitation"): in 3D the split and the scale test survive (r·u, ln r), composition as
+  addition does not (turns of space do not commute); within one sweep it holds. Both texts; essay 2 §9 "Where it stops".
+  And the two corners as mirror lines on the log plane (Tom: "add them as well"): θ = π/4 fixed by the reading's
+  reciprocal, ln d = ln H by the distance's; turning and choosing H slide them along different axes. Essay 2 §9.
+  `eul-plan.md` (+ `runs/eul/eul.py`, 29 Oct; SPN R581; Tom: "anny connection between cauchy and eulers/", then "Take a
+  look around, see what you find."): exact, nothing killed. The Cauchy's Fourier transform e^(izt), z the standpoint; on
+  the circle its moments wⁿ (the mean the standpoint's Cayley image); the quarter turn's E[e^(2iθ)] = 2i/π. In the plane
+  one law is Möbius image, harmonic measure, powers and the sweeps' rates; on S² harmonic measure (powers, mean = r) and
+  the spherical Cauchy (Möbius, mean cosine coth η − η/sinh² η) part. Classical; no gap found. OFS Appendix A, essay 2 §9.
+  Then ("1,2"): `wedge.html` step 6 is "reading and holding" (readout read/written; ids, params, hooks kept) and
+  `demos.html`'s wedge card; the corpus's 3D claims audited, none wrong, the boosted sky named the Möbius law alone (OFS
+  §11, essay 7, physics companion).
+  **Why the plane is special** (29 Oct, SPN R582; Tom: "Merge 1,3,2"): essay 13, `papers/essays/13-why-the-plane-is-special.md`
+  (Hamilton's canal; the plane's one law in four parts; Liouville; EUL's three laws in space; turns that do not commute;
+  what survives; which law a 3D statement means), a README row, pointers from essays 2 and 5; a pass over essays 1–12
+  (vocabulary and cross-references, none wrong); the CS companion §2.4 "Polar form, and where it stops"; one sentence in
+  the submission after the Cayley transform.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

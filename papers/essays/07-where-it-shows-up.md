@@ -312,7 +312,9 @@ The first is a map of addresses. The third essay showed that Möbius maps carry 
 only its point, and here they do.
 - A sky uniform in the stars' own frame is seen from the moving frame as the spherical Cauchy, with density
   (1 − β²)/(4π(1 − β cos θ′)²) (Kato and McCullagh 2020). Its parameter is ρ = tanh(η/2). With one dimension fewer it is
-  the wrapped Cauchy with the same ρ.
+  the wrapped Cauchy with the same ρ. On the circle that law is also where a random walk from the standpoint lands, its
+  mean ρ; on the sphere those two come apart, and the boosted sky is the Möbius law alone, its mean cosine
+  coth η − η/sinh² η (the second essay, section 9).
 - That density is D²/4π. The Doppler factor squared is the crowding of addresses toward the motion.
 - It keeps the cross ratio of any four stars' places, read as complex numbers in that chart. Three stars seen in both
   frames fix the whole boost and turn, because the Möbius maps of the sphere are the Lorentz group, and a Möbius map is

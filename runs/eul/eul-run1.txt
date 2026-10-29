@@ -1,0 +1,37 @@
+E1 worst |E[e^(itX)] - e^(izt)| = 5.7397e-42
+E1: not killed 
+E2 worst |E[W^n] - w^n| = 1.4349e-41
+E2: not killed 
+E3 E[e^(2i theta)] = (1.3159051385697402031e-43 + 0.63661977236758134308j), 2i/pi = (0.0 + 0.63661977236758134308j), length 0.63661977236758134308
+E3: not killed 
+E4 worst |Poisson - Moebius image| on the circle = 1.9285e-39
+E4: not killed 
+E5a worst |E_H[P_l] - r^l| (l = 0..6) = 1.6816e-44
+E5a: not killed 
+E5b rho 0.1: E_M[t] = 0.1330662844  E_M[P2] = 0.01595420925  (E_M[t])^2 = 0.01770663605
+E5b rho 0.2: E_M[t] = 0.2645209773  E_M[P2] = 0.06326362292  (E_M[t])^2 = 0.06997134743
+E5b rho 0.3: E_M[t] = 0.392704532  E_M[P2] = 0.1402396994  (E_M[t])^2 = 0.1542168495
+E5b rho 0.4: E_M[t] = 0.5158541089  E_M[P2] = 0.2439653738  (E_M[t])^2 = 0.2661054617
+E5b rho 0.5: E_M[t] = 0.6320305876  E_M[P2] = 0.3701147036  (E_M[t])^2 = 0.3994626637
+E5b rho 0.6: E_M[t] = 0.7390096039  E_M[P2] = 0.5126326534  (E_M[t])^2 = 0.5461351947
+E5b rho 0.7: E_M[t] = 0.8340970742  E_M[P2] = 0.6631528013  (E_M[t])^2 = 0.6957179292
+E5b rho 0.8: E_M[t] = 0.9137655058  E_M[P2] = 0.8098289302  (E_M[t])^2 = 0.8349673995
+E5b rho 0.9: E_M[t] = 0.9727486892  E_M[P2] = 0.9344585456  (E_M[t])^2 = 0.9462400122
+E5b E_M[t] against 2rho/(1+rho^2): -0.065, -0.12, -0.158, -0.174, -0.168, -0.143, -0.106, -0.0618, -0.0217
+E5b: not killed 
+E5c rho 0.1: best r 0.131897, least sup gap 0.005458 of P_M's peak
+E5c rho 0.2: best r 0.256874, least sup gap 0.01154 of P_M's peak
+E5c rho 0.3: best r 0.374731, least sup gap 0.01951 of P_M's peak
+E5c rho 0.4: best r 0.4851, least sup gap 0.02886 of P_M's peak
+E5c rho 0.5: best r 0.587815, least sup gap 0.03842 of P_M's peak
+E5c rho 0.6: best r 0.683171, least sup gap 0.04799 of P_M's peak
+E5c rho 0.7: best r 0.771587, least sup gap 0.05746 of P_M's peak
+E5c rho 0.8: best r 0.853548, least sup gap 0.0669 of P_M's peak
+E5c rho 0.9: best r 0.928864, least sup gap 0.05588 of P_M's peak
+E5c: not killed 
+E5d boosted spherical Cauchy against tanh((eta1+eta2)/2): worst 6.8877e-41
+E5d boosted harmonic measure (r 0.3, eta 0.5): best r 0.542578, least sup gap 0.02228
+E5d: not killed 
+E6 r 0.3: best a 1.52185, b -0.521715, residual 0.026 of the peak
+E6 r 0.7: best a 1.66016, b -0.658493, residual 0.0583 of the peak
+E6: not killed 

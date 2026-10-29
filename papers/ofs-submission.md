@@ -611,7 +611,10 @@ means (cos 2θ averages 0 and sin 2θ averages 2/π over a uniform turn). At zer
 point is at +1, i and −1 (times ½): the half turn from zero's landing point, B, to the horizon's, which is home, is
 e^(iπ) = −1. The
 two are one classical map, the Cayley transform w = (s − i)/(s + i), which sends the reading s = tan θ to −e^(2iθ) and
-the standpoint i to the centre of the disc (Cayley 1846); under it the Cauchy is the harmonic measure from i.
+the standpoint i to the centre of the disc (Cayley 1846); under it the Cauchy is the harmonic measure from i. That one
+law is both the Möbius image of the uniform turn and harmonic measure is a fact of the plane: on the sphere the two
+part (Kato and McCullagh 2020 give the first), so a statement about a standpoint off the centre in three dimensions has
+to say which it means.
 
 **What the two sweeps return.** A writer holds a line of true breadth 1 as 1. The central sweep measures it as an arc,
 a half turn about the centre, π/2; the inscribed sweep as its projection over the turn, 2/π. Their product, not their
