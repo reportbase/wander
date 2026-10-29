@@ -77,8 +77,8 @@
                 <option value="line">a perturbed line: h = the unit line</option>
                 <option value="own">my own (edit below)</option>
             </select>
-            <button id="serial" class="on">serial (4)</button>
-            <button id="parallel">parallel (3)</button>
+            <button id="serial" class="on">one at a time</button>
+            <button id="parallel">all at once</button>
             <button id="play">sweep</button>
         </div>
         <textarea id="data" spellcheck="false" aria-label="pairs: label, v, h per line"></textarea>
@@ -202,12 +202,12 @@ function render() {
     let text;
     if (mode === 'parallel') {
         const front = items.filter(i => i.s < 1).length, back = items.filter(i => i.s > 1).length, at = items.length - front - back;
-        text = `parallel (3): all ${items.length} addresses at once\nfront of the corner ${front}   at it ${at}   past it ${back}\n` +
+        text = `all at once: all ${items.length} addresses at once\nfront of the corner ${front}   at it ${at}   past it ${back}\n` +
             items.map(i => `${i.label.padEnd(10)} g = ${i.g.toFixed(3)}   v/h = ${i.s.toPrecision(3)}`).join('\n');
     } else {
         const it = cursor == null ? null : nearest(cursor);
-        text = cursor == null ? 'serial (4): press sweep. The cursor runs from home to the horizon and reads one address at a time.'
-            : `serial (4): cursor at g = ${cursor.toFixed(3)}, ${items.filter(i => i.g <= cursor).length} of ${items.length} read\n` + (it ? describe(it) : 'nothing read yet');
+        text = cursor == null ? 'one at a time: press sweep. The cursor runs from home to the horizon and reads one address at a time.'
+            : `one at a time: cursor at g = ${cursor.toFixed(3)}, ${items.filter(i => i.g <= cursor).length} of ${items.length} read\n` + (it ? describe(it) : 'nothing read yet');
     }
     $('readout').textContent = text;
 }

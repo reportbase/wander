@@ -376,6 +376,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `?N=6|12|24&seed=&k=<log10 k>&zero=&chain=i,j,…&loop=1&misread=<percent>&noise=<levels>&turn=`; hook
   `window.__slideRule` (`things`, `reading`, `level`, `ratio`, `divide`, `slideRead`, `chain`, `turn`, `counts`, `set`,
   `state`). Not in the flying page.
+- `plane-sphere.html`: **why the plane is special** (29 Oct 2026, Tom: "What's next", then "Yes"; SPN R583; essay 13; EUL),
+  a standalone page like `slide-rule.html`, plain canvas. The plane: a reader at z in the unit circle (drag it), its uniform
+  turn's landings L, harmonic measure from z, the uniform law pushed through the disc's Möbius map (numerically, from the
+  map) and 2L − U drawn as one curve; harmonic measure's mean point z, the landings' centroid z/2. The sphere (the reader on
+  the axis at r): harmonic measure (mean r), the spherical Cauchy at ρ = r pushed through a boost (mean coth η − η/sinh² η),
+  the nearest harmonic measure and the best a·L + b on EUL's 401-point grid (run 1's gaps and residuals). Walkers
+  (walk-on-spheres, seeded) histogrammed in both. Turns: two in the plane in either order one place; a book turned about x
+  then y against y then x (120° apart at 90°). `?r=&beta=<degrees>&a=<degrees>&walk=1`; hook `window.__plane` (`plane`,
+  `planeMeans`, `sphere`, `sphereMean`, `bestR`, `fitL`, `boostCheck`, `turnGap`, `walk`, `set`, `state`). Not in the flying page.
 - `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
   "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
   carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
@@ -766,8 +775,20 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first and second octive"). Plain doublings, no depth or recursion (Tom: "its plain doublings, ordinary math. but now we know
   why, its a consequence of setting V = H, which creates the unit circle"; SPN R188 records it, restoring 8 Oct's reading over
   9 Oct's corrections); by metres the edges slide. `?v=&lod=none|metres|vh&still=1`; hook `recoverAt(h, x, y, grain)`; strip folded / h/v / v/h (Tom: "what happens if we don't flip at the corner?": unfolded, one side runs off); `?strip=`; hook also `stripAt(h/v, mode)`; hook `window.__flight`. Not in the flying page.
-- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, planes of directions, arrays on the sweeps, online decisions at the corner and a dynamic array, the focus is the corner, the crosshair is the corner, friend or foe, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
+- `demos.html`: **the list of pages** (7 Oct 2026): the world, the lab and the demos (sweep, dial, sphere, facing, one sweep and three paths, two readers, the pinhole and writing step by step, the room and walking it, the room in ratios, sampling a boosted sky, the payload doesn't matter (in 2D and 3D), an infinite star field, in 2D and 3D, browsing the stars with the dial, one blueprint and three vantages (in 2D and 3D), the writer's box, the stained-glass box, the central reader, one's own height, recovering a body, one moon, the face from home, the floor's depth, one turn and one read, planes of directions, why the plane is special, arrays on the sweeps, online decisions at the corner and a dynamic array, the focus is the corner, the crosshair is the corner, friend or foe, sweeping from zero, the writer and two readers, Theorem 6 at a glance, what is H and the chain from H, levels, walk, the mountain and the thumb, H is a zoom, parallax from the corner, the sphere in the cube, the wedge, browsing the wedge, pool, the infinite table) and the three on the physics correspondence, the gameplay sketches (marbles among them), each
   with a description and a few direct links. No script. Add a card when a page is added. The flying page's "demos" button opens it.
+- `essays.html`: **the essays' own page** (29 Oct 2026, Tom: "lets create an index page just for the essays in
+  wanderer"), styled as `demos.html`, no script: the series' lede and its two ideas and two tests, then a card an essay
+  (number, what it opens on, what it does, after `papers/essays/README.md`), its title opening the essay on GitHub (the
+  essays are kept off the site), and under it the pages the essay names as demos (the draw explainers for essays 3 and
+  10). Linked from `demos.html`'s lede. Add a card when an essay is added. Both pages' "try" links are inline blocks, so
+  a row of them wraps on a phone (it ran 1,400 px wide).
+- `explainers.html`: **the explainers' page**, beside `essays.html` (29 Oct 2026, Tom: "Create an accompying index page
+  for explainers"), the same style: a card an explainer (draw's scrolling explainers, `gallery/explained.html?x=…` in
+  reportbase/draw: reading and writing for essay 1, one length turned for essay 2, addresses for essay 3, the Tangent
+  Bridge and how leaves become a curve for essay 10), the essay it
+  explains, its steps (the scene's beats), and links to the explainer, the essay's card, the essay and the scene's tile;
+  then the essays with none yet. Linked from `essays.html` and `demos.html`. Add a card when an explainer is made.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
@@ -2874,7 +2895,8 @@ In short:
   5. **dial.html:** a sure "two" costs about 3, 2 and 3 at s = 0.5, 1 and 2 (least at one pixel across).
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
-  7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it.
+  7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
+     thirteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
@@ -3103,6 +3125,11 @@ In short:
       thing reads each the same; a chain's links laid end to end equal its ends, a loop closes to 0, a 20% misread link
       leaves log₂ 1.2; tangent subtraction equals the turn from a new zero; scaling the world by 10⁻² and 10² moves no
       reading; 24 places for 276 ratios.
+
+  63. **plane-sphere.html:** harmonic measure, the Möbius image of the uniform turn and 2L − U one curve in the plane (to 10⁻⁶
+      at r = 0.9), its mean point z and the landings' centroid z/2; on the sphere harmonic measure's mean r, the boosted
+      sky's 0.63203 at ρ = ½ (coth η − η/sinh² η), the nearest harmonic measure 3.84% off, a·L + b 2.6% and 5.83% off at
+      r = 0.3 and 0.7, rapidities adding; two quarter turns of space 120° apart, of the plane none.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

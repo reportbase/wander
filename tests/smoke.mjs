@@ -1779,6 +1779,29 @@ try {
   if (!srOk) failures.push(`[slide-rule.html] ${JSON.stringify(sr)}`);
   console.log(`${failures.length === before62 ? 'ok  ' : 'FAIL'} slide-rule.html (every ratio between 24 things read as a gap equals division to ${sr.gap.toExponential(0)}, the slide's to ${sr.slide.toExponential(0)}; a chain telescopes to its ends, a loop to 0, a 20% misread link leaves log₂ 1.2; tangent subtraction the turn; k moves no reading; 24 places for 276 ratios)`);
 
+  // ── 63. plane-sphere.html (SPN R583; EUL): in the plane harmonic measure, the Möbius image of the uniform turn and 2L − U
+  // are one law and its mean point is the standpoint; on the sphere harmonic measure's mean is r, the boosted sky's
+  // coth η − η/sinh² η, no harmonic measure equals it and no a·L + b is harmonic measure (EUL's numbers); turns of space
+  // do not commute
+  current = 'plane-sphere.html';
+  const before63 = failures.length;
+  await page.goto(new URL('plane-sphere.html', base).href, { waitUntil: 'load' });
+  const plsp = await page.evaluate(() => {
+    const P = window.__plane;
+    const pl = Math.max(...[0.1, 0.5, 0.9].map(r => { const o = P.plane(r); return Math.max(o.mobius, o.twoLminusU); }));
+    const m = P.planeMeans(0.6, 1.1), mz = Math.hypot(m.harmonic[0] - m.z[0], m.harmonic[1] - m.z[1]),
+      ml = Math.hypot(m.landing[0] - m.z[0] / 2, m.landing[1] - m.z[1] / 2);
+    const sm = P.sphereMean(0.5), hm = P.sphere(0.5).meanH, b5 = P.bestR(0.5), f3 = P.fitL(0.3), f7 = P.fitL(0.7);
+    return { pl, mz, ml, sm, hm, b5, f3, f7, boost: P.boostCheck(0.4, 0.7), turn: P.turnGap(90), turn0: P.turnGap(0) };
+  });
+  const plspOk = plsp.pl < 1e-6 && plsp.mz < 1e-9 && plsp.ml < 1e-9 && Math.abs(plsp.hm - 0.5) < 1e-8
+    && Math.abs(plsp.sm.numeric - 0.6320305876) < 1e-8 && Math.abs(plsp.sm.closed - 0.6320305876) < 1e-8
+    && Math.abs(plsp.b5.r - 0.5878) < 1e-3 && Math.abs(plsp.b5.gap - 0.03842) < 1e-4
+    && Math.abs(plsp.f3.a - 1.52185) < 1e-4 && Math.abs(plsp.f3.res - 0.0260) < 1e-3 && Math.abs(plsp.f7.res - 0.0583) < 1e-3
+    && plsp.boost < 1e-12 && Math.abs(plsp.turn.space - 120) < 1e-9 && plsp.turn.plane === 0 && plsp.turn0.space < 1e-6;
+  if (!plspOk) failures.push(`[plane-sphere.html] ${JSON.stringify(plsp)}`);
+  console.log(`${failures.length === before63 ? 'ok  ' : 'FAIL'} plane-sphere.html (the plane: harmonic measure, the Möbius image and 2L − U one curve to ${plsp.pl.toExponential(0)}, the mean point z, the landings' centroid z/2; the sphere: harmonic measure's mean r, the boosted sky's ${plsp.sm.closed.toFixed(4)} at ρ = ½, the nearest harmonic measure ${(100 * plsp.b5.gap).toFixed(2)}% off, a·L + b ${(100 * plsp.f3.res).toFixed(1)}% and ${(100 * plsp.f7.res).toFixed(1)}% off; two quarter turns of space 120° apart)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;
@@ -1793,6 +1816,28 @@ try {
   await page.goto(new URL('index.html', base).href, { waitUntil: 'load' });
   await Promise.all([page.waitForURL(/demos\.html/, { timeout: 15000 }), page.click('#demosOpen')]);
   console.log(`${failures.length === before7 ? 'ok  ' : 'FAIL'} demos.html (${pages.length} pages, ${links.length} links)`);
+  // essays.html: the essays' own page, every page of the site it links to there, thirteen essays
+  const before7e = failures.length;
+  await page.goto(new URL('essays.html', base).href, { waitUntil: 'load' });
+  const elinks = await page.evaluate(() => ({ cards: document.querySelectorAll('main .card').length,
+    local: [...document.querySelectorAll('main a')].map(a => a.href).filter(h => h.startsWith(location.origin)) }));
+  for (const pth of [...new Set(elinks.local.map(h => new URL(h).pathname))]) {
+    const r = await page.request.get(new URL(pth, base).href);
+    if (!r.ok()) failures.push(`[essays.html] ${pth} answers ${r.status()}`);
+  }
+  if (elinks.cards !== 13) failures.push(`[essays.html] ${elinks.cards} essays, not 13`);
+  console.log(`${failures.length === before7e ? 'ok  ' : 'FAIL'} essays.html (${elinks.cards} essays, ${elinks.local.length} links into the site)`);
+  // explainers.html: the explainers' page beside it, its links into the site answering
+  const before7x = failures.length;
+  await page.goto(new URL('explainers.html', base).href, { waitUntil: 'load' });
+  const xlinks = await page.evaluate(() => ({ cards: document.querySelectorAll('main .card').length,
+    local: [...document.querySelectorAll('main a')].map(a => a.href).filter(h => h.startsWith(location.origin)) }));
+  for (const pth of [...new Set(xlinks.local.map(h => new URL(h).pathname))]) {
+    const r = await page.request.get(new URL(pth, base).href);
+    if (!r.ok()) failures.push(`[explainers.html] ${pth} answers ${r.status()}`);
+  }
+  if (xlinks.cards < 2) failures.push(`[explainers.html] ${xlinks.cards} cards`);
+  console.log(`${failures.length === before7x ? 'ok  ' : 'FAIL'} explainers.html (${xlinks.cards} cards, ${xlinks.local.length} links into the site)`);
 } catch (e){
   failures.push(`[${current}] ${e.message.split('\n')[0]}`);
 }

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>What can be known from where one stands</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    essays.html: the essays, in order, with what each opens on, what it does, and the pages that show it (29 October
+    2026, at Tom's "lets create an index page just for the essays in wanderer"). A plain list, no script, styled as
+    demos.html is. The essays themselves are Markdown in papers/essays/, kept off the site (_config.yml), so each title
+    opens the essay on GitHub. Add a card when an essay is added, and its demos when an essay names a page.
+    -->
+    <style>
+    :root {
+        color-scheme: dark;
+        --ground: #0c0c11;
+        --panel: #14141b;
+        --line: rgba(255, 255, 255, 0.09);
+        --ink: #c8c8d0;
+        --dim: #8a8a96;
+        --bright: #e6e4ee;
+        --gold: #d4a052;
+        --teal: #8ce6cd;
+    }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.6 'DM Mono', ui-monospace, monospace }
+    main { max-width: 860px; margin: 0 auto; padding: 28px 16px 48px }
+    h1 { font: 400 34px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    h2 { font: 400 22px/1.2 'DM Serif Display', Georgia, serif; margin: 0 0 6px }
+    h2 a { color: var(--bright); text-decoration: none }
+    h2 a:hover { color: var(--gold) }
+    .lede { color: var(--dim); margin: 0 0 22px; max-width: 70ch }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin: 0 0 14px }
+    .card p { margin: 0 0 8px }
+    .tag { color: var(--gold); font-size: 12px; margin: 0 0 6px }
+    .try { color: var(--dim); font-size: 12.5px; margin: 0 }
+    .try a { color: var(--teal); margin-right: 10px; white-space: nowrap; display: inline-block }
+    .open { display: inline-block; margin-top: 4px; color: var(--teal) }
+    footer { color: var(--dim); font-size: 12.5px; margin-top: 22px }
+    footer a { color: var(--teal) }
+    .ideas { margin: 0 0 22px; padding-left: 18px; max-width: 70ch }
+    .ideas li { margin: 0 0 6px }
+    .ideas b { color: var(--bright); font-weight: 500 }
+    </style>
+</head>
+<body>
+<main>
+    <h1>What can be known from where one stands</h1>
+    <p class="lede">Thirteen essays, read in order. Each opens on something familiar, shows the geometry in full, says
+    which older work saw which piece, and ends with what it changes. The proofs are in <a style="color:var(--teal)"
+    href="https://github.com/reportbase/wander/blob/main/papers/observation-from-somewhere.md"><i>Observation from
+    Somewhere</i></a>, which stays the source of truth. Each title opens its essay; the links under it are the pages that show it. Some essays also
+    have a scrolling <a style="color:var(--teal)" href="explainers.html">explainer</a>.</p>
+    <ul class="ideas">
+        <li><b>Reading and writing.</b> A reading is a ratio from a standpoint, free, and unchanged when the world is
+        scaled. A writing states amounts, and costs an amount carried in.</li>
+        <li><b>The Cauchy.</b> The law of a reader's directions, the circle traced by one length turned: its median the
+        corner, its far end the horizon.</li>
+        <li><b>Two tests.</b> Scale the world: is it a reading or a writing? Change what arrives: is it an address or a
+        payload?</li>
+    </ul>
+
+    <section class="card" id="e1">
+        <div class="tag">essay 1 · opens on mapping a room with no ruler</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/01-reading-and-writing.md">Reading and writing</a></h2>
+        <p>Two questions and two vantages: the reader, who holds ratios from where it stands, and the writer, who states amounts. The circle without a second length; the test that sorts them, scale the world; what writing costs, counted; a survey, one's own height as a base, towers of ratios and closing a loop.</p>
+        <p class="try">Demos: <a href="room-ratios.html">the room in ratios</a><a href="writer-box.html">the writer's box</a><a href="blueprint.html">one blueprint</a><a href="blueprint-3d.html">in 3D</a><a href="writer-readers.html">the writer and the reader</a><a href="mountain.html">the mountain and the thumb</a><a href="write.html">writing, step by step</a><a href="ground.html">one's own height</a><a href="room-walk.html">walking the room</a><a href="slide-rule.html">the reader is a slide rule</a><a href="https://reportbase.github.io/draw/gallery/explained.html?x=reading">the scrolling explainer (draw)</a></p>
+    </section>
+
+    <section class="card" id="e2">
+        <div class="tag">essay 2 · opens on an arm held out</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/02-one-length-turned.md">One length turned</a></h2>
+        <p>Why one length, turned, traces a circle; the corner at 45°; the arc from the chord (Thales); the inscribed and central sweeps, one read counted from two pivots; π/2 and 2/π, the writer's 1 read twice; Euler's formula as the reader's notation.</p>
+        <p class="try">Demos: <a href="paths.html">one sweep, three paths</a><a href="facing.html">the facing</a><a href="one-read.html">one turn and one read</a><a href="central-reader.html?step=6">the central reader, one read</a><a href="mountain.html">the two vantages</a><a href="https://reportbase.github.io/draw/gallery/explained.html?x=turned">the scrolling explainer (draw)</a></p>
+    </section>
+
+    <section class="card" id="e3">
+        <div class="tag">essay 3 · opens on a hand at a stained-glass window</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/03-addresses-given-payloads-met.md">Addresses given, payloads met</a></h2>
+        <p>What the Cauchy is a law of: the reader's addresses, fixed before anything arrives, not the payload that arrives at them. How the Cauchy is usually read; Jaynes's invariant measure; the theorem in plain words; what breaks the family; the second test, change what arrives; three cases in data; why practice takes the median.</p>
+        <p class="try">Demos: <a href="central-reader.html">the hand at the window</a><a href="theorem6.html">Theorem 6 at a glance</a><a href="sweep-zero.html">sweeping from zero</a><a href="https://reportbase.github.io/draw/gallery/explained.html?x=addresses">the scrolling explainer (draw)</a></p>
+    </section>
+
+    <section class="card" id="e4">
+        <div class="tag">essay 4 · opens on fence posts on a plain</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/04-near-and-far.md">Near and far</a></h2>
+        <p>Proportion inside the corner, levels past it; the in-place lay; why halving; floating point and Mercator; three rulers on one figure; level of detail; H as a zoom; a fixed count of addresses; the corner follows the focus.</p>
+        <p class="try">Demos: <a href="levels.html">levels</a><a href="h-limits.html">what is H?</a><a href="zoom.html">H is a zoom</a><a href="star-field.html">an infinite star field</a><a href="star-dial.html">browsing the stars</a><a href="focus.html">the focus is the corner</a><a href="fpv.html">the crosshair is the corner</a><a href="fpv-game.html">friend or foe</a></p>
+    </section>
+
+    <section class="card" id="e5">
+        <div class="tag">essay 5 · opens on standing in a room's corner</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/05-three-parties.md">Three parties</a></h2>
+        <p>The reader's space as one wedge; the sum's triangle; altitude and azimuth; the Cauchy wedge, uniform by area, every pair at its corner and the near field a third; the flat screen; more parties; a sphere in a cube.</p>
+        <p class="try">Demos: <a href="room.html">the room</a><a href="wedge.html">the wedge</a><a href="sphere-cube.html?step=7">the sphere in the cube</a><a href="payload-free-3d.html">the payload doesn't matter, in 3D</a><a href="pinhole.html?sky=1">a uniform sky</a></p>
+    </section>
+
+    <section class="card" id="e6">
+        <div class="tag">essay 6 · opens on one eye, then the other</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/06-many-standpoints.md">Many standpoints</a></h2>
+        <p>What one standpoint gives and what a second adds; the ladder; parallax's corner and band; working back from astronomy; shape, place and direction by distance; the visual hull; a shape as a function on the circle.</p>
+        <p class="try">Demos: <a href="parallax.html">parallax from the corner</a><a href="head-turn.html">turning the head</a><a href="moon.html">one moon</a><a href="from-home.html">the face from home</a><a href="room-walk.html">walking the room</a><a href="room-ratios.html">the room in ratios</a><a href="slide-rule.html">a misread link</a></p>
+    </section>
+
+    <section class="card" id="e7">
+        <div class="tag">essay 7 · opens on the lighthouse</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/07-where-it-shows-up.md">Where it shows up</a></h2>
+        <p>The lighthouse and Mercator's map in full; Greenland; c = 1 under other names (standardizing, whitening, square pixels); where c ≠ 1 comes from; the Gaussian payload; special relativity's sky.</p>
+        <p class="try">Demos: <a href="boost-sky.html">sampling a boosted sky</a></p>
+    </section>
+
+    <section class="card" id="e8">
+        <div class="tag">essay 8 · opens on the scrollbar</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/08-what-the-geometry-gives-free.md">What the geometry gives free</a></h2>
+        <p>A dial over a list without end; the depth buffer; the flat screen; what Math.floor throws away; hashing on a turn; tables that need no N; a filter's steady state; an origin, not a claim of performance.</p>
+        <p class="try">Demos: <a href="wedge-browse.html">browsing the wedge</a><a href="star-dial.html">browsing the stars</a><a href="depth.html">the floor's depth</a><a href="boost-sky.html">sampling a boosted sky</a></p>
+    </section>
+
+    <section class="card" id="e9">
+        <div class="tag">essay 9 · opens on each sees the other smaller</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/09-paradoxes-as-vantages.md">Paradoxes as vantages</a></h2>
+        <p>Paradoxes read as two vantages taken for one: the exchange; the denominator family; the whole and the count; no scale preferred; sums against the median; what the reader can tell apart.</p>
+        <p class="try">Demos: <a href="pool.html">pool from inside</a><a href="flight.html">the corner in flight</a></p>
+    </section>
+
+    <section class="card" id="e10">
+        <div class="tag">essay 10 · opens on a closed curve stored as an array</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/10-arrays-and-the-circle.md">Arrays and the circle</a></h2>
+        <p>The index as an address; one array per facing; reconstruction and what it assumes; the Tangent Bridge kernel in slopes; the doubling and the fast transform; TVF.</p>
+        <p class="try">Demos: <a href="array-sweeps.html">arrays on the sweeps</a><a href="https://reportbase.github.io/draw/gallery/explained.html?x=bridge">the Tangent Bridge explainer (draw)</a></p>
+    </section>
+
+    <section class="card" id="e11">
+        <div class="tag">essay 11 · opens on the tide turning against a pier</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/11-holding-in-order.md">Holding in order</a></h2>
+        <p>One slot held in order; the unit rule; reading as seeking; the median by one bit; the races; the turn as a landmark; tested on recorded tides.</p>
+        <p class="try">No demo yet.</p>
+    </section>
+
+    <section class="card" id="e12">
+        <div class="tag">essay 12 · opens on int a[10]</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/12-what-an-array-is.md">What an array is</a></h2>
+        <p>sizeof as the writer's N; an apple held, which is writing; the reader's sweep, a density and a breadth; the horizon, where no N could be; π/2 attained, 2/π approached; laying an array on the quarter turn, and who can; what computer science can make real.</p>
+        <p class="try">Demos: <a href="array-sweeps.html">arrays on the sweeps</a><a href="star-field.html">an infinite star field</a></p>
+    </section>
+
+    <section class="card" id="e13">
+        <div class="tag">essay 13 · opens on Hamilton on the canal</div>
+        <h2><a href="https://github.com/reportbase/wander/blob/main/papers/essays/13-why-the-plane-is-special.md">Why the plane is special</a></h2>
+        <p>In the plane one law plays four parts: the Möbius image of the uniform turn, harmonic measure, the powers of the standpoint and the two sweeps' rates. In space they part (Liouville), turns stop commuting, and a statement must say which law it means.</p>
+        <p class="try">Demos: <a href="plane-sphere.html">why the plane is special</a><a href="central-reader.html">the central reader</a><a href="wedge.html">the wedge</a><a href="sphere-cube.html">the sphere in the cube</a><a href="boost-sky.html">sampling a boosted sky</a></p>
+    </section>
+
+    <footer>The essays are Markdown in the <a href="https://github.com/reportbase/wander/tree/main/papers/essays">repository</a>
+    (<code>papers/essays/</code>), not on the site. Every page of the site is on <a href="demos.html">the demos</a>.</footer>
+</main>
+</body>
+</html>

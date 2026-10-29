@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Explainers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    explainers.html: the scrolling explainers, beside essays.html (29 October 2026, at Tom's "Create an accompying index
+    page for explainers"). An explainer is one scene in draw's leaf editor, played by the TVF player on draw's explainer
+    page with its clock set by scrolling, a beat a step; they live in the draw repository, so each card opens it there.
+    Each card names the essay it explains and lists its steps (the scene's own beats). Then the essays with none yet.
+    Add a card when an explainer is made, and take its essay off the list.
+    -->
+    <style>
+    :root {
+        color-scheme: dark;
+        --ground: #0c0c11;
+        --panel: #14141b;
+        --line: rgba(255, 255, 255, 0.09);
+        --ink: #c8c8d0;
+        --dim: #8a8a96;
+        --bright: #e6e4ee;
+        --gold: #d4a052;
+        --teal: #8ce6cd;
+    }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.6 'DM Mono', ui-monospace, monospace }
+    main { max-width: 860px; margin: 0 auto; padding: 28px 16px 48px }
+    h1 { font: 400 34px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    h2 { font: 400 22px/1.2 'DM Serif Display', Georgia, serif; margin: 0 0 6px }
+    h2 a { color: var(--bright); text-decoration: none }
+    h2 a:hover { color: var(--gold) }
+    .lede { color: var(--dim); margin: 0 0 22px; max-width: 70ch }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin: 0 0 14px }
+    .card p { margin: 0 0 8px }
+    .tag { color: var(--gold); font-size: 12px; margin: 0 0 6px }
+    .try { color: var(--dim); font-size: 12.5px; margin: 0 }
+    .try a { color: var(--teal); margin-right: 10px; white-space: nowrap; display: inline-block }
+    .open { display: inline-block; margin-top: 4px; color: var(--teal) }
+    footer { color: var(--dim); font-size: 12.5px; margin-top: 22px }
+    footer a { color: var(--teal) }
+    .ideas { margin: 0 0 22px; padding-left: 18px; max-width: 70ch }
+    .ideas li { margin: 0 0 6px }
+    .ideas b { color: var(--bright); font-weight: 500 }
+    .steps { margin: 0 0 10px; padding-left: 22px }
+    .steps li { margin: 0 0 2px }
+    .todo a { color: var(--teal) }
+    .lede a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Explainers</h1>
+    <p class="lede">Scroll, and the picture follows. An explainer takes one idea from <a href="essays.html">the
+    essays</a> and shows it a step at a time: the text down one side, a scene beside it whose clock is set by how far
+    you have read, each step a stretch of the scene that can also be played on its own. The scenes are made in the
+    leaf editor of the <a href="https://reportbase.github.io/draw/">draw</a> project and played by its TVF player, so the
+    explainers open there.</p>
+
+    <section class="card" id="reading">
+        <div class="tag">explains essay 1 · 5 steps</div>
+        <h2><a href="https://reportbase.github.io/draw/gallery/explained.html?x=reading">Reading and writing</a></h2>
+        <p>The test that sorts what a reader holds. A room read from one corner, directions only, a room half the size on the very same rays; the world scaled by 1.5 and no ray moving; one step along the wall, the second rays crossing at every thing, the room 3.57 steps wide; the step counted as six strides of 0.7 m, writing the room 15.0 m; scaled again, the steps unmoved and only the metres moving.</p>
+        <ol class="steps"><li>From one place, directions only</li><li>Scale the world</li><li>One step</li><li>Count the stride</li><li>Scale the world again</li></ol>
+        <p class="try">Open: <a href="https://reportbase.github.io/draw/gallery/explained.html?x=reading">the explainer</a><a href="essays.html#e1">the essay's card</a><a href="https://github.com/reportbase/wander/blob/main/papers/essays/01-reading-and-writing.md">the essay</a><a href="https://reportbase.github.io/draw/gallery/animated.html#tile=reading">the scene, in the animated gallery</a></p>
+    </section>
+
+    <section class="card" id="turned">
+        <div class="tag">explains essay 2 · 5 steps</div>
+        <h2><a href="https://reportbase.github.io/draw/gallery/explained.html?x=turned">One length turned</a></h2>
+        <p>An arm raised through a quarter turn traces a circle: one length, turning. Its two shares and the corner where they are equal; a ray from each end of a chord meeting on the circle (Thales) and the radius from the middle at twice the angle; the arc unrolled beside the arm, π/2 × 2/π = 1.</p>
+        <ol class="steps"><li>An arm held out</li><li>Two shares, and the corner</li><li>Two rays, meeting on the circle</li><li>One point, read twice</li><li>π/2 and 2/π</li></ol>
+        <p class="try">Open: <a href="https://reportbase.github.io/draw/gallery/explained.html?x=turned">the explainer</a><a href="essays.html#e2">the essay's card</a><a href="https://github.com/reportbase/wander/blob/main/papers/essays/02-one-length-turned.md">the essay</a><a href="https://reportbase.github.io/draw/gallery/animated.html#tile=turned">the scene, in the animated gallery</a></p>
+    </section>
+
+    <section class="card" id="addresses">
+        <div class="tag">explains essay 3 · 6 steps</div>
+        <h2><a href="https://reportbase.github.io/draw/gallery/explained.html?x=addresses">Addresses given, payloads met</a></h2>
+        <p>Why the Cauchy belongs to the fingers and nothing the window does can move it. A hand at home with twelve fingers laid by an even turn, painted by a stained-glass window; the window moved and changed while no finger moves; the fingers carried on to a line, where they land as the Cauchy with half below the corner; the far ones running off with no mean; amounts arriving and changing while no landing moves.</p>
+        <ol class="steps"><li>A hand at home</li><li>A window paints them</li><li>Another window, the same fingers</li><li>Laid on a line: the Cauchy</li><li>A median, and no mean</li><li>Change what arrives, and no address moves</li></ol>
+        <p class="try">Open: <a href="https://reportbase.github.io/draw/gallery/explained.html?x=addresses">the explainer</a><a href="essays.html#e3">the essay's card</a><a href="https://github.com/reportbase/wander/blob/main/papers/essays/03-addresses-given-payloads-met.md">the essay</a><a href="https://reportbase.github.io/draw/gallery/animated.html#tile=addresses">the scene, in the animated gallery</a></p>
+    </section>
+    <section class="card" id="bridge">
+        <div class="tag">explains essay 10 · 6 steps</div>
+        <h2><a href="https://reportbase.github.io/draw/gallery/explained.html?x=bridge">The Tangent Bridge</a></h2>
+        <p>The theorem behind the curve format: a curve read at eight leaves, one kernel turned to each, their sum through every leaf exactly, a close look at the gap between two leaves, then sixteen and thirty-two leaves closing on the curve. Every curve is computed from the paper&#x27;s formulas.</p>
+        <ol class="steps"><li>A curve is a function on the circle</li><li>Read it at the leaves</li><li>One kernel, turned to every leaf</li><li>Their sum passes through every leaf</li><li>Between the leaves: close, and bounded</li><li>Double the leaves, and the curve closes in</li></ol>
+        <p class="try">Open: <a href="https://reportbase.github.io/draw/gallery/explained.html?x=bridge">the explainer</a><a href="essays.html#e10">the essay's card</a><a href="https://github.com/reportbase/wander/blob/main/papers/essays/10-arrays-and-the-circle.md">the essay</a><a href="https://reportbase.github.io/draw/gallery/animated.html#tile=bridge">the scene, in the animated gallery</a></p>
+    </section>
+    <section class="card" id="leaves">
+        <div class="tag">explains essay 10 · 5 steps</div>
+        <h2><a href="https://reportbase.github.io/draw/gallery/explained.html">How leaves become a curve</a></h2>
+        <p>A shape kept as a handful of points and nothing else: how a curve comes out of them, and why moving them is all an animation needs.</p>
+        <ol class="steps"><li>Eight leaves</li><li>The curve through them</li><li>Move one leaf</li><li>No kink</li><li>A morph is a blend</li></ol>
+        <p class="try">Open: <a href="https://reportbase.github.io/draw/gallery/explained.html">the explainer</a><a href="essays.html#e10">the essay's card</a><a href="https://github.com/reportbase/wander/blob/main/papers/essays/10-arrays-and-the-circle.md">the essay</a><a href="https://reportbase.github.io/draw/gallery/animated.html#tile=leaves">the scene, in the animated gallery</a></p>
+    </section>
+
+    <section class="card todo" id="not-yet">
+        <div class="tag">not yet explained</div>
+        <h2>The other essays</h2>
+        <p>These have demos but no explainer yet. Each opens the essay's card on the essays' page.</p>
+        <p class="try"><a href="essays.html#e4">4. Near and far</a><a href="essays.html#e5">5. Three parties</a><a href="essays.html#e6">6. Many standpoints</a><a href="essays.html#e7">7. Where it shows up</a><a href="essays.html#e8">8. What the geometry gives free</a><a href="essays.html#e9">9. Paradoxes as vantages</a><a href="essays.html#e11">11. Holding in order</a><a href="essays.html#e12">12. What an array is</a><a href="essays.html#e13">13. Why the plane is special</a></p>
+    </section>
+
+    <footer>An explainer is a scene with stops and a beat of words between each two, made with the timeline's
+    <i>beats…</i> panel in draw's leaf editor (<a href="https://reportbase.github.io/draw/draw.html">draw.html</a>) and
+    previewed from there. The essays are on <a href="essays.html">their own page</a>; every page of this site is on
+    <a href="demos.html">the demos</a>.</footer>
+</main>
+</body>
+</html>
