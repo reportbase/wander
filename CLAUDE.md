@@ -2531,6 +2531,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the circle its moments wⁿ (the mean the standpoint's Cayley image); the quarter turn's E[e^(2iθ)] = 2i/π. In the plane
   one law is Möbius image, harmonic measure, powers and the sweeps' rates; on S² harmonic measure (powers, mean = r) and
   the spherical Cauchy (Möbius, mean cosine coth η − η/sinh² η) part. Classical; no gap found. OFS Appendix A, essay 2 §9.
+  Then ("1,2"): `wedge.html` step 6 is "reading and holding" (readout read/written; ids, params, hooks kept) and
+  `demos.html`'s wedge card; the corpus's 3D claims audited, none wrong, the boosted sky named the Möbius law alone (OFS
+  §11, essay 7, physics companion).
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

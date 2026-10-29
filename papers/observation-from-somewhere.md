@@ -3468,7 +3468,9 @@ The first is a map of addresses, and it carries the Cauchy's family onto itself.
 - A sky uniform in the sources' own frame is seen as the spherical Cauchy, density (1 − β²)/(4π(1 − β cos θ′)²)
   (Kato and McCullagh 2020).
 - Its parameter is ρ = tanh(η/2), where η is the rapidity. With one dimension fewer it is the wrapped Cauchy with the
-  same ρ.
+  same ρ. On the circle that law is also harmonic measure, its mean ρ; on the sphere the two part, and the boosted sky
+  is the Möbius law alone, its mean cosine coth η − η/sinh² η, no harmonic measure equal to it (Appendix A, "Polar form
+  and the complex logarithm").
 - That density is D²/4π: the crowding of addresses toward the motion.
 - It keeps the cross ratio of any four sources' places, read as complex numbers in that chart, and three sources seen
   in both frames fix the whole boost and turn: the Möbius maps of the sphere are the Lorentz group, and a Möbius map
