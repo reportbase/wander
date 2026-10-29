@@ -783,6 +783,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   essays are kept off the site), and under it the pages the essay names as demos (the draw explainers for essays 3 and
   10). Linked from `demos.html`'s lede. Add a card when an essay is added. Both pages' "try" links are inline blocks, so
   a row of them wraps on a phone (it ran 1,400 px wide).
+- `explainers.html`: **the explainers' page**, beside `essays.html` (29 Oct 2026, Tom: "Create an accompying index page
+  for explainers"), the same style: a card an explainer (draw's scrolling explainers, `gallery/explained.html?x=…` in
+  reportbase/draw: addresses for essay 3, the Tangent Bridge and how leaves become a curve for essay 10), the essay it
+  explains, its steps (the scene's beats), and links to the explainer, the essay's card, the essay and the scene's tile;
+  then the essays with none yet. Linked from `essays.html` and `demos.html`. Add a card when an explainer is made.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
   (branch, PR, merge, like the page). `serial-parallel-nowhere.md` (SPN) is the
   paper behind the labs (§9.9 the labs, §11.4 the conjecture, §12–§14 their
@@ -2890,7 +2895,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     thirteen essays, every page of the site it links to there.
+     thirteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.

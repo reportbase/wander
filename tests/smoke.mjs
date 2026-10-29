@@ -1827,6 +1827,17 @@ try {
   }
   if (elinks.cards !== 13) failures.push(`[essays.html] ${elinks.cards} essays, not 13`);
   console.log(`${failures.length === before7e ? 'ok  ' : 'FAIL'} essays.html (${elinks.cards} essays, ${elinks.local.length} links into the site)`);
+  // explainers.html: the explainers' page beside it, its links into the site answering
+  const before7x = failures.length;
+  await page.goto(new URL('explainers.html', base).href, { waitUntil: 'load' });
+  const xlinks = await page.evaluate(() => ({ cards: document.querySelectorAll('main .card').length,
+    local: [...document.querySelectorAll('main a')].map(a => a.href).filter(h => h.startsWith(location.origin)) }));
+  for (const pth of [...new Set(xlinks.local.map(h => new URL(h).pathname))]) {
+    const r = await page.request.get(new URL(pth, base).href);
+    if (!r.ok()) failures.push(`[explainers.html] ${pth} answers ${r.status()}`);
+  }
+  if (xlinks.cards < 2) failures.push(`[explainers.html] ${xlinks.cards} cards`);
+  console.log(`${failures.length === before7x ? 'ok  ' : 'FAIL'} explainers.html (${xlinks.cards} cards, ${xlinks.local.length} links into the site)`);
 } catch (e){
   failures.push(`[${current}] ${e.message.split('\n')[0]}`);
 }
