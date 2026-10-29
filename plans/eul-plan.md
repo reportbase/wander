@@ -59,4 +59,32 @@ peak.
 
 ## Runs
 
-(none yet)
+**Run 1** (29 Oct, `runs/eul/eul.py`, mpmath at 40 digits, 83 s; output `runs/eul/eul-run1.txt`). Nothing killed.
+- E1: E[e^(itX)] = e^(izt) to 6·10⁻⁴² at three z and four t (the negative t with z̄).
+- E2: E[Wⁿ] = wⁿ to 1.4·10⁻⁴¹, n = 1 … 6.
+- E3: E[e^(2iθ)] = 0.63662i, exactly 2i/π: the quarter turn's mean in the central chart points at the corner, its length
+  2/π.
+- E4: on the circle the Poisson kernel and the Möbius image of the uniform agree to 2·10⁻³⁹.
+- E5a: in space harmonic measure keeps the powers: E_H[P_l] = r^l to 2·10⁻⁴⁴, l = 0 … 6, so its mean is the standpoint.
+- E5b: the spherical Cauchy does not: E_M[t] above ρ at every ρ (0.1331 at 0.1, 0.6320 at 0.5, 0.9727 at 0.9), and
+  E_M[P₂] below E_M[P₁]² (0.3701 against 0.3995 at 0.5). Post hoc, in closed form (sympy, checked at three ρ to 10⁻¹⁴):
+  with ρ = tanh(η/2), **E_M[t] = coth η − η/sinh² η**, equivalently 1/β − ln((1 + β)/(1 − β))/(2β²γ²) with β = tanh η.
+  In the plane the mean is ρ = tanh(η/2), algebraic in ρ; in space the rapidity η itself, a logarithm, enters.
+- E5c: no harmonic measure equals a spherical Cauchy: the least sup gap over r runs from 0.0055 (ρ 0.1) to 0.067
+  (ρ 0.8) of the peak; the nearest r is above ρ (0.588 at 0.5).
+- E5d: a boost of rapidity 0.7 carries the spherical Cauchy at tanh(0.2) onto tanh(0.55) to 7·10⁻⁴¹ (rapidities add); a
+  boost of 0.5 carries harmonic measure from r = 0.3 onto no harmonic measure (least gap 0.022, nearest r 0.543).
+- E6: no a·L + b/(4π) is the 3D Poisson kernel (residual 0.026 at r = 0.3, 0.058 at r = 0.7 of the peak; best a 1.52 and
+  1.66, against the plane's exact 2 and −1).
+
+**Reading.** In the plane one law holds four roles at once: the Möbius image of the uniform turn (closed under the
+reader's turns and boosts), harmonic measure (where a random path from the standpoint lands), the law whose moments are
+the powers of one point w (Euler's structure, so the standpoint is the mean in the circle chart), and the two sweeps'
+rates combined (CIW). In space they part: harmonic measure keeps the powers and the mean, the spherical Cauchy keeps
+the Möbius maps (the boosted sky), and the rates' combination has no counterpart. The classical reason is the one the
+plan named: Laplace's equation is conformally invariant only in the plane, and in space the conformal maps are only the
+Möbius maps (Liouville). Every piece is classical (the 3D Poisson kernel's Legendre series is the generating function
+of the P_l; Kato and McCullagh's family; Liouville). The mean of an isotropic sky seen under a boost is likely in the
+radiation literature; not searched for. Nothing here suggests a gap in classical mathematics. What it gives the corpus:
+the reader's coincidences between standpoint, mean, Möbius closure and the two sweeps are a fact of the plane, and a
+three-dimensional statement has to say which of the two laws it means.

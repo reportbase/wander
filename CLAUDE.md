@@ -2526,6 +2526,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   addition does not (turns of space do not commute); within one sweep it holds. Both texts; essay 2 §9 "Where it stops".
   And the two corners as mirror lines on the log plane (Tom: "add them as well"): θ = π/4 fixed by the reading's
   reciprocal, ln d = ln H by the distance's; turning and choosing H slide them along different axes. Essay 2 §9.
+  `eul-plan.md` (+ `runs/eul/eul.py`, 29 Oct; SPN R581; Tom: "anny connection between cauchy and eulers/", then "Take a
+  look around, see what you find."): exact, nothing killed. The Cauchy's Fourier transform e^(izt), z the standpoint; on
+  the circle its moments wⁿ (the mean the standpoint's Cayley image); the quarter turn's E[e^(2iθ)] = 2i/π. In the plane
+  one law is Möbius image, harmonic measure, powers and the sweeps' rates; on S² harmonic measure (powers, mean = r) and
+  the spherical Cauchy (Möbius, mean cosine coth η − η/sinh² η) part. Classical; no gap found. OFS Appendix A, essay 2 §9.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the

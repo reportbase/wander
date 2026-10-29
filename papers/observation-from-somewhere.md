@@ -3905,6 +3905,13 @@ the rational parametrization of the circle, e^(2iθ) = (1 + is)/(1 − is) with 
 at −1 with no e or π needed: e^(iπ) = −1 is that fact in Euler's notation. Classical: polar form, the complex
 logarithm, the measure dx·dy/|z|² kept by multiplication on the nonzero complex numbers, the double cover. Ours: reading
 the two factors as address and payload and the two parts of the logarithm as reading and writing.
+The Cauchy is tied to this notation twice. Write its standpoint as one complex number, z = m + iγ (§7.2): then its
+Fourier transform is Euler's exponential of that point, E[e^(itX)] = e^(izt) for t > 0, the foot m setting the
+oscillation and the height γ the decay (a Lorentzian line is a damped phasor). And carried onto the circle by the Cayley
+map, W = (X − i)/(X + i), its moments are the powers of one point, E[Wⁿ] = wⁿ with w = (z − i)/(z + i) inside the disc
+(McCullagh 1996): the law that has no mean on the line has one on the circle, and it is the standpoint's image. That
+is §4's statement that the missing mean is the chart's, in Euler's form; for the reader's own quarter turn the mean of
+the landing point's direction, E[e^(2iθ)], is 2i/π, pointing at the corner with length 2/π.
 The two corners (§8, "The corner follows the focus") are two mirror lines on the logarithm's plane. The reciprocal of a
 reading, s ↦ 1/s, is θ ↦ π/2 − θ, a reflection of the imaginary part whose fixed line is θ = π/4, the direction
 corner. The reciprocal of a distance, d/H ↦ H/d, is ln d ↦ 2 ln H − ln d, a reflection of the real part whose fixed line
@@ -3920,6 +3927,16 @@ from the other order), so there is no angle to add and no logarithm that turns c
 compose turns of space but do not commute, and no number system of three or more dimensions does both. Within one
 sweep, altitude or azimuth, the turn is a turn of a plane and its composition is addition; it is combining the two
 sweeps that is not. The wedge, the triple corner and Lambert's map therefore get no help from this notation.
+The Cauchy's own coincidences part in the same place. In the plane one law is at once the Möbius image of the uniform
+turn, harmonic measure from the standpoint, the law whose moments are the powers of w, and the two sweeps' rates
+combined (§10, 2·dθ/dφ − 1). On the sphere these split in two. Harmonic measure from r·axis, (1 − r²)/(4π(1 + r² −
+2rt)^(3/2)), keeps the powers (its Legendre moments are r^l) and so its mean is the standpoint. The Möbius image of the
+uniform, Kato and McCullagh's spherical Cauchy and the boosted sky of §11, (1 − ρ²)²/(4π(1 + ρ² − 2ρt)²), keeps the
+Möbius maps (boosts compose by adding rapidities) but not the powers: with ρ = tanh(η/2) its mean cosine is
+coth η − η/sinh² η, against ρ in the plane, and no harmonic measure equals it. Nor does any mixture of the landing
+density from an interior point and the uniform give harmonic measure in space. The classical reason is that Laplace's
+equation is conformally invariant only in the plane, and in space the conformal maps are only the Möbius maps
+(Liouville). So a statement about the reader's standpoint in three dimensions has to say which of the two laws it means.
 
 **π_p** (§5). Among the p-norms the circle is also the extreme case. Measured in its own norm, the unit circle of ℓ_p
 has half-perimeter π_p, which is 4 at p = 1 and as p → ∞ (the line's norm and the square's) and least, π, at p = 2
