@@ -3905,6 +3905,15 @@ the rational parametrization of the circle, e^(2iθ) = (1 + is)/(1 − is) with 
 at −1 with no e or π needed: e^(iπ) = −1 is that fact in Euler's notation. Classical: polar form, the complex
 logarithm, the measure dx·dy/|z|² kept by multiplication on the nonzero complex numbers, the double cover. Ours: reading
 the two factors as address and payload and the two parts of the logarithm as reading and writing.
+The notation is two-dimensional, and only part of it carries to three parties (§3.4, Proposition 5(e)). What
+carries is the split: a point of space is r·u, an amount r times a unit direction u on the sphere, scaling the world
+moves ln r alone, and the measure the turns and dilations keep is dr/r times the sphere's area, so the scale test and
+the separation of address and payload stand in every dimension. What does not carry is composition as addition. Turns
+of the plane commute, so their angles add; turns of space do not (a quarter turn about one axis then another differs
+from the other order), so there is no angle to add and no logarithm that turns composition into a sum. Quaternions
+compose turns of space but do not commute, and no number system of three or more dimensions does both. Within one
+sweep, altitude or azimuth, the turn is a turn of a plane and its composition is addition; it is combining the two
+sweeps that is not. The wedge, the triple corner and Lambert's map therefore get no help from this notation.
 
 **π_p** (§5). Among the p-norms the circle is also the extreme case. Measured in its own norm, the unit circle of ℓ_p
 has half-perimeter π_p, which is 4 at p = 1 and as p → ∞ (the line's norm and the square's) and least, π, at p = 2

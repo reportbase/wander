@@ -396,6 +396,17 @@ the series' own is the reading: e^(iθ) as the address, r as the payload, the lo
 writing. It is the right notation for a reader because it keeps the two apart. The reader holds the imaginary part; the
 writer needs the real one.
 
+**Where it stops.** Euler's formula is a tool for the flat case, one other party and turns in a plane. With three
+parties, the fifth essay's wedge, only half of it survives. The split survives: a point of space is still an amount
+times a direction, scaling the world still moves only the amount, and the scale test still asks the same question. What
+fails is composition as addition. Turns in a plane commute, so their angles add. Turns in space do not: a quarter turn
+about one axis and then another ends somewhere different from the same two turns in the other order. With no fixed
+order there is no single angle to add, and no logarithm turns combining them into a sum. Quaternions compose turns of
+space, but they do not commute, and no number system of more than two dimensions does both. Each sweep on its own,
+altitude or azimuth, is still a plane's turn and still adds; it is putting the two together that does not. It can look
+strange that so tidy a tool stops at two dimensions, but the reason is that space has more than one way to turn, and
+the ways do not take turns politely.
+
 ---
 
 ## 10. What it comes to
