@@ -785,8 +785,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   a row of them wraps on a phone (it ran 1,400 px wide).
 - `explainers.html`: **the explainers' page**, beside `essays.html` (29 Oct 2026, Tom: "Create an accompying index page
   for explainers"), the same style: a card an explainer (draw's scrolling explainers, `gallery/explained.html?x=…` in
-  reportbase/draw: reading and writing for essay 1, one length turned for essay 2, addresses for essay 3, the Tangent
-  Bridge and how leaves become a curve for essay 10), the essay it
+  reportbase/draw: reading and writing for essay 1, one length turned for essay 2, addresses for essay 3, near and far
+  for essay 4, many standpoints for essay 6, the Tangent Bridge and how leaves become a curve for essay 10), the essay it
   explains, its steps (the scene's beats), and links to the explainer, the essay's card, the essay and the scene's tile;
   then the essays with none yet. Linked from `essays.html` and `demos.html`. Add a card when an explainer is made.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
